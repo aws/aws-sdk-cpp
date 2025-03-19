@@ -60,7 +60,7 @@ namespace Model
   class ConfigRule
   {
   public:
-    AWS_CONFIGSERVICE_API ConfigRule();
+    AWS_CONFIGSERVICE_API ConfigRule() = default;
     AWS_CONFIGSERVICE_API ConfigRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API ConfigRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -71,56 +71,48 @@ namespace Model
      * <p>The name that you assign to the Config rule. The name is required if you are
      * adding a new rule.</p>
      */
-    inline const Aws::String& GetConfigRuleName() const{ return m_configRuleName; }
+    inline const Aws::String& GetConfigRuleName() const { return m_configRuleName; }
     inline bool ConfigRuleNameHasBeenSet() const { return m_configRuleNameHasBeenSet; }
-    inline void SetConfigRuleName(const Aws::String& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = value; }
-    inline void SetConfigRuleName(Aws::String&& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = std::move(value); }
-    inline void SetConfigRuleName(const char* value) { m_configRuleNameHasBeenSet = true; m_configRuleName.assign(value); }
-    inline ConfigRule& WithConfigRuleName(const Aws::String& value) { SetConfigRuleName(value); return *this;}
-    inline ConfigRule& WithConfigRuleName(Aws::String&& value) { SetConfigRuleName(std::move(value)); return *this;}
-    inline ConfigRule& WithConfigRuleName(const char* value) { SetConfigRuleName(value); return *this;}
+    template<typename ConfigRuleNameT = Aws::String>
+    void SetConfigRuleName(ConfigRuleNameT&& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = std::forward<ConfigRuleNameT>(value); }
+    template<typename ConfigRuleNameT = Aws::String>
+    ConfigRule& WithConfigRuleName(ConfigRuleNameT&& value) { SetConfigRuleName(std::forward<ConfigRuleNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Config rule.</p>
      */
-    inline const Aws::String& GetConfigRuleArn() const{ return m_configRuleArn; }
+    inline const Aws::String& GetConfigRuleArn() const { return m_configRuleArn; }
     inline bool ConfigRuleArnHasBeenSet() const { return m_configRuleArnHasBeenSet; }
-    inline void SetConfigRuleArn(const Aws::String& value) { m_configRuleArnHasBeenSet = true; m_configRuleArn = value; }
-    inline void SetConfigRuleArn(Aws::String&& value) { m_configRuleArnHasBeenSet = true; m_configRuleArn = std::move(value); }
-    inline void SetConfigRuleArn(const char* value) { m_configRuleArnHasBeenSet = true; m_configRuleArn.assign(value); }
-    inline ConfigRule& WithConfigRuleArn(const Aws::String& value) { SetConfigRuleArn(value); return *this;}
-    inline ConfigRule& WithConfigRuleArn(Aws::String&& value) { SetConfigRuleArn(std::move(value)); return *this;}
-    inline ConfigRule& WithConfigRuleArn(const char* value) { SetConfigRuleArn(value); return *this;}
+    template<typename ConfigRuleArnT = Aws::String>
+    void SetConfigRuleArn(ConfigRuleArnT&& value) { m_configRuleArnHasBeenSet = true; m_configRuleArn = std::forward<ConfigRuleArnT>(value); }
+    template<typename ConfigRuleArnT = Aws::String>
+    ConfigRule& WithConfigRuleArn(ConfigRuleArnT&& value) { SetConfigRuleArn(std::forward<ConfigRuleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Config rule.</p>
      */
-    inline const Aws::String& GetConfigRuleId() const{ return m_configRuleId; }
+    inline const Aws::String& GetConfigRuleId() const { return m_configRuleId; }
     inline bool ConfigRuleIdHasBeenSet() const { return m_configRuleIdHasBeenSet; }
-    inline void SetConfigRuleId(const Aws::String& value) { m_configRuleIdHasBeenSet = true; m_configRuleId = value; }
-    inline void SetConfigRuleId(Aws::String&& value) { m_configRuleIdHasBeenSet = true; m_configRuleId = std::move(value); }
-    inline void SetConfigRuleId(const char* value) { m_configRuleIdHasBeenSet = true; m_configRuleId.assign(value); }
-    inline ConfigRule& WithConfigRuleId(const Aws::String& value) { SetConfigRuleId(value); return *this;}
-    inline ConfigRule& WithConfigRuleId(Aws::String&& value) { SetConfigRuleId(std::move(value)); return *this;}
-    inline ConfigRule& WithConfigRuleId(const char* value) { SetConfigRuleId(value); return *this;}
+    template<typename ConfigRuleIdT = Aws::String>
+    void SetConfigRuleId(ConfigRuleIdT&& value) { m_configRuleIdHasBeenSet = true; m_configRuleId = std::forward<ConfigRuleIdT>(value); }
+    template<typename ConfigRuleIdT = Aws::String>
+    ConfigRule& WithConfigRuleId(ConfigRuleIdT&& value) { SetConfigRuleId(std::forward<ConfigRuleIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description that you provide for the Config rule.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline ConfigRule& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ConfigRule& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ConfigRule& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ConfigRule& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -132,12 +124,12 @@ namespace Model
      * not specify a scope, evaluations are triggered when any resource in the
      * recording group changes.</p>  <p>The scope can be empty. </p> 
      */
-    inline const Scope& GetScope() const{ return m_scope; }
+    inline const Scope& GetScope() const { return m_scope; }
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
-    inline void SetScope(const Scope& value) { m_scopeHasBeenSet = true; m_scope = value; }
-    inline void SetScope(Scope&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
-    inline ConfigRule& WithScope(const Scope& value) { SetScope(value); return *this;}
-    inline ConfigRule& WithScope(Scope&& value) { SetScope(std::move(value)); return *this;}
+    template<typename ScopeT = Scope>
+    void SetScope(ScopeT&& value) { m_scopeHasBeenSet = true; m_scope = std::forward<ScopeT>(value); }
+    template<typename ScopeT = Scope>
+    ConfigRule& WithScope(ScopeT&& value) { SetScope(std::forward<ScopeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -148,12 +140,12 @@ namespace Model
      * the notifications that cause the function to evaluate your Amazon Web Services
      * resources.</p>
      */
-    inline const Source& GetSource() const{ return m_source; }
+    inline const Source& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const Source& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(Source&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline ConfigRule& WithSource(const Source& value) { SetSource(value); return *this;}
-    inline ConfigRule& WithSource(Source&& value) { SetSource(std::move(value)); return *this;}
+    template<typename SourceT = Source>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = Source>
+    ConfigRule& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -161,14 +153,12 @@ namespace Model
      * <p>A string, in JSON format, that is passed to the Config rule Lambda
      * function.</p>
      */
-    inline const Aws::String& GetInputParameters() const{ return m_inputParameters; }
+    inline const Aws::String& GetInputParameters() const { return m_inputParameters; }
     inline bool InputParametersHasBeenSet() const { return m_inputParametersHasBeenSet; }
-    inline void SetInputParameters(const Aws::String& value) { m_inputParametersHasBeenSet = true; m_inputParameters = value; }
-    inline void SetInputParameters(Aws::String&& value) { m_inputParametersHasBeenSet = true; m_inputParameters = std::move(value); }
-    inline void SetInputParameters(const char* value) { m_inputParametersHasBeenSet = true; m_inputParameters.assign(value); }
-    inline ConfigRule& WithInputParameters(const Aws::String& value) { SetInputParameters(value); return *this;}
-    inline ConfigRule& WithInputParameters(Aws::String&& value) { SetInputParameters(std::move(value)); return *this;}
-    inline ConfigRule& WithInputParameters(const char* value) { SetInputParameters(value); return *this;}
+    template<typename InputParametersT = Aws::String>
+    void SetInputParameters(InputParametersT&& value) { m_inputParametersHasBeenSet = true; m_inputParameters = std::forward<InputParametersT>(value); }
+    template<typename InputParametersT = Aws::String>
+    ConfigRule& WithInputParameters(InputParametersT&& value) { SetInputParameters(std::forward<InputParametersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -183,12 +173,10 @@ namespace Model
      * frequency, specify a valid value for the <code>MaximumExecutionFrequency</code>
      * parameter.</p> 
      */
-    inline const MaximumExecutionFrequency& GetMaximumExecutionFrequency() const{ return m_maximumExecutionFrequency; }
+    inline MaximumExecutionFrequency GetMaximumExecutionFrequency() const { return m_maximumExecutionFrequency; }
     inline bool MaximumExecutionFrequencyHasBeenSet() const { return m_maximumExecutionFrequencyHasBeenSet; }
-    inline void SetMaximumExecutionFrequency(const MaximumExecutionFrequency& value) { m_maximumExecutionFrequencyHasBeenSet = true; m_maximumExecutionFrequency = value; }
-    inline void SetMaximumExecutionFrequency(MaximumExecutionFrequency&& value) { m_maximumExecutionFrequencyHasBeenSet = true; m_maximumExecutionFrequency = std::move(value); }
-    inline ConfigRule& WithMaximumExecutionFrequency(const MaximumExecutionFrequency& value) { SetMaximumExecutionFrequency(value); return *this;}
-    inline ConfigRule& WithMaximumExecutionFrequency(MaximumExecutionFrequency&& value) { SetMaximumExecutionFrequency(std::move(value)); return *this;}
+    inline void SetMaximumExecutionFrequency(MaximumExecutionFrequency value) { m_maximumExecutionFrequencyHasBeenSet = true; m_maximumExecutionFrequency = value; }
+    inline ConfigRule& WithMaximumExecutionFrequency(MaximumExecutionFrequency value) { SetMaximumExecutionFrequency(value); return *this;}
     ///@}
 
     ///@{
@@ -205,12 +193,10 @@ namespace Model
      * to delete the rule. After Config deletes the rule, the rule and all of its
      * evaluations are erased and are no longer available.</p>
      */
-    inline const ConfigRuleState& GetConfigRuleState() const{ return m_configRuleState; }
+    inline ConfigRuleState GetConfigRuleState() const { return m_configRuleState; }
     inline bool ConfigRuleStateHasBeenSet() const { return m_configRuleStateHasBeenSet; }
-    inline void SetConfigRuleState(const ConfigRuleState& value) { m_configRuleStateHasBeenSet = true; m_configRuleState = value; }
-    inline void SetConfigRuleState(ConfigRuleState&& value) { m_configRuleStateHasBeenSet = true; m_configRuleState = std::move(value); }
-    inline ConfigRule& WithConfigRuleState(const ConfigRuleState& value) { SetConfigRuleState(value); return *this;}
-    inline ConfigRule& WithConfigRuleState(ConfigRuleState&& value) { SetConfigRuleState(std::move(value)); return *this;}
+    inline void SetConfigRuleState(ConfigRuleState value) { m_configRuleStateHasBeenSet = true; m_configRuleState = value; }
+    inline ConfigRule& WithConfigRuleState(ConfigRuleState value) { SetConfigRuleState(value); return *this;}
     ///@}
 
     ///@{
@@ -219,14 +205,12 @@ namespace Model
      * <p>The field is populated only if the service-linked rule is created by a
      * service. The field is empty if you create your own rule.</p> 
      */
-    inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
+    inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
     inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
-    inline void SetCreatedBy(const Aws::String& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
-    inline void SetCreatedBy(Aws::String&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
-    inline void SetCreatedBy(const char* value) { m_createdByHasBeenSet = true; m_createdBy.assign(value); }
-    inline ConfigRule& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
-    inline ConfigRule& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
-    inline ConfigRule& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
+    template<typename CreatedByT = Aws::String>
+    void SetCreatedBy(CreatedByT&& value) { m_createdByHasBeenSet = true; m_createdBy = std::forward<CreatedByT>(value); }
+    template<typename CreatedByT = Aws::String>
+    ConfigRule& WithCreatedBy(CreatedByT&& value) { SetCreatedBy(std::forward<CreatedByT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -234,14 +218,14 @@ namespace Model
      * <p>The modes the Config rule can be evaluated in. The valid values are distinct
      * objects. By default, the value is Detective evaluation mode only.</p>
      */
-    inline const Aws::Vector<EvaluationModeConfiguration>& GetEvaluationModes() const{ return m_evaluationModes; }
+    inline const Aws::Vector<EvaluationModeConfiguration>& GetEvaluationModes() const { return m_evaluationModes; }
     inline bool EvaluationModesHasBeenSet() const { return m_evaluationModesHasBeenSet; }
-    inline void SetEvaluationModes(const Aws::Vector<EvaluationModeConfiguration>& value) { m_evaluationModesHasBeenSet = true; m_evaluationModes = value; }
-    inline void SetEvaluationModes(Aws::Vector<EvaluationModeConfiguration>&& value) { m_evaluationModesHasBeenSet = true; m_evaluationModes = std::move(value); }
-    inline ConfigRule& WithEvaluationModes(const Aws::Vector<EvaluationModeConfiguration>& value) { SetEvaluationModes(value); return *this;}
-    inline ConfigRule& WithEvaluationModes(Aws::Vector<EvaluationModeConfiguration>&& value) { SetEvaluationModes(std::move(value)); return *this;}
-    inline ConfigRule& AddEvaluationModes(const EvaluationModeConfiguration& value) { m_evaluationModesHasBeenSet = true; m_evaluationModes.push_back(value); return *this; }
-    inline ConfigRule& AddEvaluationModes(EvaluationModeConfiguration&& value) { m_evaluationModesHasBeenSet = true; m_evaluationModes.push_back(std::move(value)); return *this; }
+    template<typename EvaluationModesT = Aws::Vector<EvaluationModeConfiguration>>
+    void SetEvaluationModes(EvaluationModesT&& value) { m_evaluationModesHasBeenSet = true; m_evaluationModes = std::forward<EvaluationModesT>(value); }
+    template<typename EvaluationModesT = Aws::Vector<EvaluationModeConfiguration>>
+    ConfigRule& WithEvaluationModes(EvaluationModesT&& value) { SetEvaluationModes(std::forward<EvaluationModesT>(value)); return *this;}
+    template<typename EvaluationModesT = EvaluationModeConfiguration>
+    ConfigRule& AddEvaluationModes(EvaluationModesT&& value) { m_evaluationModesHasBeenSet = true; m_evaluationModes.emplace_back(std::forward<EvaluationModesT>(value)); return *this; }
     ///@}
   private:
 
@@ -266,10 +250,10 @@ namespace Model
     Aws::String m_inputParameters;
     bool m_inputParametersHasBeenSet = false;
 
-    MaximumExecutionFrequency m_maximumExecutionFrequency;
+    MaximumExecutionFrequency m_maximumExecutionFrequency{MaximumExecutionFrequency::NOT_SET};
     bool m_maximumExecutionFrequencyHasBeenSet = false;
 
-    ConfigRuleState m_configRuleState;
+    ConfigRuleState m_configRuleState{ConfigRuleState::NOT_SET};
     bool m_configRuleStateHasBeenSet = false;
 
     Aws::String m_createdBy;

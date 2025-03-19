@@ -12,35 +12,6 @@ using namespace Aws::ECS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RunTaskRequest::RunTaskRequest() : 
-    m_capacityProviderStrategyHasBeenSet(false),
-    m_clusterHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_enableECSManagedTags(false),
-    m_enableECSManagedTagsHasBeenSet(false),
-    m_enableExecuteCommand(false),
-    m_enableExecuteCommandHasBeenSet(false),
-    m_groupHasBeenSet(false),
-    m_launchType(LaunchType::NOT_SET),
-    m_launchTypeHasBeenSet(false),
-    m_networkConfigurationHasBeenSet(false),
-    m_overridesHasBeenSet(false),
-    m_placementConstraintsHasBeenSet(false),
-    m_placementStrategyHasBeenSet(false),
-    m_platformVersionHasBeenSet(false),
-    m_propagateTags(PropagateTags::NOT_SET),
-    m_propagateTagsHasBeenSet(false),
-    m_referenceIdHasBeenSet(false),
-    m_startedByHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_taskDefinitionHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_volumeConfigurationsHasBeenSet(false)
-{
-}
-
 Aws::String RunTaskRequest::SerializePayload() const
 {
   JsonValue payload;

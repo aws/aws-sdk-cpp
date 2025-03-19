@@ -18,13 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-ECSEffectiveRecommendationPreferences::ECSEffectiveRecommendationPreferences() : 
-    m_savingsEstimationModeHasBeenSet(false)
-{
-}
-
 ECSEffectiveRecommendationPreferences::ECSEffectiveRecommendationPreferences(JsonView jsonValue)
-  : ECSEffectiveRecommendationPreferences()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ECSEffectiveRecommendationPreferences& ECSEffectiveRecommendationPreferences::op
   if(jsonValue.ValueExists("savingsEstimationMode"))
   {
     m_savingsEstimationMode = jsonValue.GetObject("savingsEstimationMode");
-
     m_savingsEstimationModeHasBeenSet = true;
   }
-
   return *this;
 }
 

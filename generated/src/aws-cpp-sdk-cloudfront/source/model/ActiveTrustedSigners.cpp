@@ -20,17 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-ActiveTrustedSigners::ActiveTrustedSigners() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_itemsHasBeenSet(false)
-{
-}
-
 ActiveTrustedSigners::ActiveTrustedSigners(const XmlNode& xmlNode)
-  : ActiveTrustedSigners()
 {
   *this = xmlNode;
 }
@@ -57,6 +47,7 @@ ActiveTrustedSigners& ActiveTrustedSigners::operator =(const XmlNode& xmlNode)
     if(!itemsNode.IsNull())
     {
       XmlNode itemsMember = itemsNode.FirstChild("Signer");
+      m_itemsHasBeenSet = !itemsMember.IsNull();
       while(!itemsMember.IsNull())
       {
         m_items.push_back(itemsMember);

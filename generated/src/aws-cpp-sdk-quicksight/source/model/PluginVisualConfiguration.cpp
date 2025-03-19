@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-PluginVisualConfiguration::PluginVisualConfiguration() : 
-    m_fieldWellsHasBeenSet(false),
-    m_visualOptionsHasBeenSet(false),
-    m_sortConfigurationHasBeenSet(false)
-{
-}
-
 PluginVisualConfiguration::PluginVisualConfiguration(JsonView jsonValue)
-  : PluginVisualConfiguration()
 {
   *this = jsonValue;
 }
@@ -42,21 +34,16 @@ PluginVisualConfiguration& PluginVisualConfiguration::operator =(JsonView jsonVa
     }
     m_fieldWellsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VisualOptions"))
   {
     m_visualOptions = jsonValue.GetObject("VisualOptions");
-
     m_visualOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SortConfiguration"))
   {
     m_sortConfiguration = jsonValue.GetObject("SortConfiguration");
-
     m_sortConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

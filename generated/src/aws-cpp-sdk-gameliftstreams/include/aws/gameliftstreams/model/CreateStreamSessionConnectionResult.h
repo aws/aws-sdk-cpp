@@ -27,7 +27,7 @@ namespace Model
   class CreateStreamSessionConnectionResult
   {
   public:
-    AWS_GAMELIFTSTREAMS_API CreateStreamSessionConnectionResult();
+    AWS_GAMELIFTSTREAMS_API CreateStreamSessionConnectionResult() = default;
     AWS_GAMELIFTSTREAMS_API CreateStreamSessionConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GAMELIFTSTREAMS_API CreateStreamSessionConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,30 +37,28 @@ namespace Model
      * <p>The WebRTC answer string that the stream server generates in response to the
      * <code>SignalRequest</code>. </p>
      */
-    inline const Aws::String& GetSignalResponse() const{ return m_signalResponse; }
-    inline void SetSignalResponse(const Aws::String& value) { m_signalResponse = value; }
-    inline void SetSignalResponse(Aws::String&& value) { m_signalResponse = std::move(value); }
-    inline void SetSignalResponse(const char* value) { m_signalResponse.assign(value); }
-    inline CreateStreamSessionConnectionResult& WithSignalResponse(const Aws::String& value) { SetSignalResponse(value); return *this;}
-    inline CreateStreamSessionConnectionResult& WithSignalResponse(Aws::String&& value) { SetSignalResponse(std::move(value)); return *this;}
-    inline CreateStreamSessionConnectionResult& WithSignalResponse(const char* value) { SetSignalResponse(value); return *this;}
+    inline const Aws::String& GetSignalResponse() const { return m_signalResponse; }
+    template<typename SignalResponseT = Aws::String>
+    void SetSignalResponse(SignalResponseT&& value) { m_signalResponseHasBeenSet = true; m_signalResponse = std::forward<SignalResponseT>(value); }
+    template<typename SignalResponseT = Aws::String>
+    CreateStreamSessionConnectionResult& WithSignalResponse(SignalResponseT&& value) { SetSignalResponse(std::forward<SignalResponseT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateStreamSessionConnectionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateStreamSessionConnectionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateStreamSessionConnectionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateStreamSessionConnectionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_signalResponse;
+    bool m_signalResponseHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

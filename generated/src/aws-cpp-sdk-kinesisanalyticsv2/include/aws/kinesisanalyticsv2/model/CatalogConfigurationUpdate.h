@@ -33,7 +33,7 @@ namespace Model
   class CatalogConfigurationUpdate
   {
   public:
-    AWS_KINESISANALYTICSV2_API CatalogConfigurationUpdate();
+    AWS_KINESISANALYTICSV2_API CatalogConfigurationUpdate() = default;
     AWS_KINESISANALYTICSV2_API CatalogConfigurationUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API CatalogConfigurationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * You use this database for SQL queries that you write in a Managed Service for
      * Apache Flink Studio notebook.</p>
      */
-    inline const GlueDataCatalogConfigurationUpdate& GetGlueDataCatalogConfigurationUpdate() const{ return m_glueDataCatalogConfigurationUpdate; }
+    inline const GlueDataCatalogConfigurationUpdate& GetGlueDataCatalogConfigurationUpdate() const { return m_glueDataCatalogConfigurationUpdate; }
     inline bool GlueDataCatalogConfigurationUpdateHasBeenSet() const { return m_glueDataCatalogConfigurationUpdateHasBeenSet; }
-    inline void SetGlueDataCatalogConfigurationUpdate(const GlueDataCatalogConfigurationUpdate& value) { m_glueDataCatalogConfigurationUpdateHasBeenSet = true; m_glueDataCatalogConfigurationUpdate = value; }
-    inline void SetGlueDataCatalogConfigurationUpdate(GlueDataCatalogConfigurationUpdate&& value) { m_glueDataCatalogConfigurationUpdateHasBeenSet = true; m_glueDataCatalogConfigurationUpdate = std::move(value); }
-    inline CatalogConfigurationUpdate& WithGlueDataCatalogConfigurationUpdate(const GlueDataCatalogConfigurationUpdate& value) { SetGlueDataCatalogConfigurationUpdate(value); return *this;}
-    inline CatalogConfigurationUpdate& WithGlueDataCatalogConfigurationUpdate(GlueDataCatalogConfigurationUpdate&& value) { SetGlueDataCatalogConfigurationUpdate(std::move(value)); return *this;}
+    template<typename GlueDataCatalogConfigurationUpdateT = GlueDataCatalogConfigurationUpdate>
+    void SetGlueDataCatalogConfigurationUpdate(GlueDataCatalogConfigurationUpdateT&& value) { m_glueDataCatalogConfigurationUpdateHasBeenSet = true; m_glueDataCatalogConfigurationUpdate = std::forward<GlueDataCatalogConfigurationUpdateT>(value); }
+    template<typename GlueDataCatalogConfigurationUpdateT = GlueDataCatalogConfigurationUpdate>
+    CatalogConfigurationUpdate& WithGlueDataCatalogConfigurationUpdate(GlueDataCatalogConfigurationUpdateT&& value) { SetGlueDataCatalogConfigurationUpdate(std::forward<GlueDataCatalogConfigurationUpdateT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,26 +18,7 @@ namespace Detective
 namespace Model
 {
 
-MemberDetail::MemberDetail() : 
-    m_accountIdHasBeenSet(false),
-    m_emailAddressHasBeenSet(false),
-    m_graphArnHasBeenSet(false),
-    m_administratorIdHasBeenSet(false),
-    m_status(MemberStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_disabledReason(MemberDisabledReason::NOT_SET),
-    m_disabledReasonHasBeenSet(false),
-    m_invitedTimeHasBeenSet(false),
-    m_updatedTimeHasBeenSet(false),
-    m_invitationType(InvitationType::NOT_SET),
-    m_invitationTypeHasBeenSet(false),
-    m_volumeUsageByDatasourcePackageHasBeenSet(false),
-    m_datasourcePackageIngestStatesHasBeenSet(false)
-{
-}
-
 MemberDetail::MemberDetail(JsonView jsonValue)
-  : MemberDetail()
 {
   *this = jsonValue;
 }
@@ -47,66 +28,48 @@ MemberDetail& MemberDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EmailAddress"))
   {
     m_emailAddress = jsonValue.GetString("EmailAddress");
-
     m_emailAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GraphArn"))
   {
     m_graphArn = jsonValue.GetString("GraphArn");
-
     m_graphArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdministratorId"))
   {
     m_administratorId = jsonValue.GetString("AdministratorId");
-
     m_administratorIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = MemberStatusMapper::GetMemberStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisabledReason"))
   {
     m_disabledReason = MemberDisabledReasonMapper::GetMemberDisabledReasonForName(jsonValue.GetString("DisabledReason"));
-
     m_disabledReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InvitedTime"))
   {
     m_invitedTime = jsonValue.GetString("InvitedTime");
-
     m_invitedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedTime"))
   {
     m_updatedTime = jsonValue.GetString("UpdatedTime");
-
     m_updatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InvitationType"))
   {
     m_invitationType = InvitationTypeMapper::GetInvitationTypeForName(jsonValue.GetString("InvitationType"));
-
     m_invitationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeUsageByDatasourcePackage"))
   {
     Aws::Map<Aws::String, JsonView> volumeUsageByDatasourcePackageJsonMap = jsonValue.GetObject("VolumeUsageByDatasourcePackage").GetAllObjects();
@@ -116,7 +79,6 @@ MemberDetail& MemberDetail::operator =(JsonView jsonValue)
     }
     m_volumeUsageByDatasourcePackageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatasourcePackageIngestStates"))
   {
     Aws::Map<Aws::String, JsonView> datasourcePackageIngestStatesJsonMap = jsonValue.GetObject("DatasourcePackageIngestStates").GetAllObjects();
@@ -126,7 +88,6 @@ MemberDetail& MemberDetail::operator =(JsonView jsonValue)
     }
     m_datasourcePackageIngestStatesHasBeenSet = true;
   }
-
   return *this;
 }
 

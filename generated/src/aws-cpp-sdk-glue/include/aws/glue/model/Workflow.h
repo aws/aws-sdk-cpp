@@ -38,7 +38,7 @@ namespace Model
   class Workflow
   {
   public:
-    AWS_GLUE_API Workflow();
+    AWS_GLUE_API Workflow() = default;
     AWS_GLUE_API Workflow(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Workflow& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,28 +48,24 @@ namespace Model
     /**
      * <p>The name of the workflow.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Workflow& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Workflow& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Workflow& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Workflow& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the workflow.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline Workflow& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline Workflow& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline Workflow& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    Workflow& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,55 +74,52 @@ namespace Model
      * workflow. The run properties are made available to each job in the workflow. A
      * job can modify the properties for the next jobs in the flow.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetDefaultRunProperties() const{ return m_defaultRunProperties; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetDefaultRunProperties() const { return m_defaultRunProperties; }
     inline bool DefaultRunPropertiesHasBeenSet() const { return m_defaultRunPropertiesHasBeenSet; }
-    inline void SetDefaultRunProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_defaultRunPropertiesHasBeenSet = true; m_defaultRunProperties = value; }
-    inline void SetDefaultRunProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_defaultRunPropertiesHasBeenSet = true; m_defaultRunProperties = std::move(value); }
-    inline Workflow& WithDefaultRunProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetDefaultRunProperties(value); return *this;}
-    inline Workflow& WithDefaultRunProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetDefaultRunProperties(std::move(value)); return *this;}
-    inline Workflow& AddDefaultRunProperties(const Aws::String& key, const Aws::String& value) { m_defaultRunPropertiesHasBeenSet = true; m_defaultRunProperties.emplace(key, value); return *this; }
-    inline Workflow& AddDefaultRunProperties(Aws::String&& key, const Aws::String& value) { m_defaultRunPropertiesHasBeenSet = true; m_defaultRunProperties.emplace(std::move(key), value); return *this; }
-    inline Workflow& AddDefaultRunProperties(const Aws::String& key, Aws::String&& value) { m_defaultRunPropertiesHasBeenSet = true; m_defaultRunProperties.emplace(key, std::move(value)); return *this; }
-    inline Workflow& AddDefaultRunProperties(Aws::String&& key, Aws::String&& value) { m_defaultRunPropertiesHasBeenSet = true; m_defaultRunProperties.emplace(std::move(key), std::move(value)); return *this; }
-    inline Workflow& AddDefaultRunProperties(const char* key, Aws::String&& value) { m_defaultRunPropertiesHasBeenSet = true; m_defaultRunProperties.emplace(key, std::move(value)); return *this; }
-    inline Workflow& AddDefaultRunProperties(Aws::String&& key, const char* value) { m_defaultRunPropertiesHasBeenSet = true; m_defaultRunProperties.emplace(std::move(key), value); return *this; }
-    inline Workflow& AddDefaultRunProperties(const char* key, const char* value) { m_defaultRunPropertiesHasBeenSet = true; m_defaultRunProperties.emplace(key, value); return *this; }
+    template<typename DefaultRunPropertiesT = Aws::Map<Aws::String, Aws::String>>
+    void SetDefaultRunProperties(DefaultRunPropertiesT&& value) { m_defaultRunPropertiesHasBeenSet = true; m_defaultRunProperties = std::forward<DefaultRunPropertiesT>(value); }
+    template<typename DefaultRunPropertiesT = Aws::Map<Aws::String, Aws::String>>
+    Workflow& WithDefaultRunProperties(DefaultRunPropertiesT&& value) { SetDefaultRunProperties(std::forward<DefaultRunPropertiesT>(value)); return *this;}
+    template<typename DefaultRunPropertiesKeyT = Aws::String, typename DefaultRunPropertiesValueT = Aws::String>
+    Workflow& AddDefaultRunProperties(DefaultRunPropertiesKeyT&& key, DefaultRunPropertiesValueT&& value) {
+      m_defaultRunPropertiesHasBeenSet = true; m_defaultRunProperties.emplace(std::forward<DefaultRunPropertiesKeyT>(key), std::forward<DefaultRunPropertiesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The date and time when the workflow was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedOn() const{ return m_createdOn; }
+    inline const Aws::Utils::DateTime& GetCreatedOn() const { return m_createdOn; }
     inline bool CreatedOnHasBeenSet() const { return m_createdOnHasBeenSet; }
-    inline void SetCreatedOn(const Aws::Utils::DateTime& value) { m_createdOnHasBeenSet = true; m_createdOn = value; }
-    inline void SetCreatedOn(Aws::Utils::DateTime&& value) { m_createdOnHasBeenSet = true; m_createdOn = std::move(value); }
-    inline Workflow& WithCreatedOn(const Aws::Utils::DateTime& value) { SetCreatedOn(value); return *this;}
-    inline Workflow& WithCreatedOn(Aws::Utils::DateTime&& value) { SetCreatedOn(std::move(value)); return *this;}
+    template<typename CreatedOnT = Aws::Utils::DateTime>
+    void SetCreatedOn(CreatedOnT&& value) { m_createdOnHasBeenSet = true; m_createdOn = std::forward<CreatedOnT>(value); }
+    template<typename CreatedOnT = Aws::Utils::DateTime>
+    Workflow& WithCreatedOn(CreatedOnT&& value) { SetCreatedOn(std::forward<CreatedOnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time when the workflow was last modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedOn() const{ return m_lastModifiedOn; }
+    inline const Aws::Utils::DateTime& GetLastModifiedOn() const { return m_lastModifiedOn; }
     inline bool LastModifiedOnHasBeenSet() const { return m_lastModifiedOnHasBeenSet; }
-    inline void SetLastModifiedOn(const Aws::Utils::DateTime& value) { m_lastModifiedOnHasBeenSet = true; m_lastModifiedOn = value; }
-    inline void SetLastModifiedOn(Aws::Utils::DateTime&& value) { m_lastModifiedOnHasBeenSet = true; m_lastModifiedOn = std::move(value); }
-    inline Workflow& WithLastModifiedOn(const Aws::Utils::DateTime& value) { SetLastModifiedOn(value); return *this;}
-    inline Workflow& WithLastModifiedOn(Aws::Utils::DateTime&& value) { SetLastModifiedOn(std::move(value)); return *this;}
+    template<typename LastModifiedOnT = Aws::Utils::DateTime>
+    void SetLastModifiedOn(LastModifiedOnT&& value) { m_lastModifiedOnHasBeenSet = true; m_lastModifiedOn = std::forward<LastModifiedOnT>(value); }
+    template<typename LastModifiedOnT = Aws::Utils::DateTime>
+    Workflow& WithLastModifiedOn(LastModifiedOnT&& value) { SetLastModifiedOn(std::forward<LastModifiedOnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The information about the last execution of the workflow.</p>
      */
-    inline const WorkflowRun& GetLastRun() const{ return m_lastRun; }
+    inline const WorkflowRun& GetLastRun() const { return m_lastRun; }
     inline bool LastRunHasBeenSet() const { return m_lastRunHasBeenSet; }
-    inline void SetLastRun(const WorkflowRun& value) { m_lastRunHasBeenSet = true; m_lastRun = value; }
-    inline void SetLastRun(WorkflowRun&& value) { m_lastRunHasBeenSet = true; m_lastRun = std::move(value); }
-    inline Workflow& WithLastRun(const WorkflowRun& value) { SetLastRun(value); return *this;}
-    inline Workflow& WithLastRun(WorkflowRun&& value) { SetLastRun(std::move(value)); return *this;}
+    template<typename LastRunT = WorkflowRun>
+    void SetLastRun(LastRunT&& value) { m_lastRunHasBeenSet = true; m_lastRun = std::forward<LastRunT>(value); }
+    template<typename LastRunT = WorkflowRun>
+    Workflow& WithLastRun(LastRunT&& value) { SetLastRun(std::forward<LastRunT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,12 +127,12 @@ namespace Model
      * <p>The graph representing all the Glue components that belong to the workflow as
      * nodes and directed connections between them as edges.</p>
      */
-    inline const WorkflowGraph& GetGraph() const{ return m_graph; }
+    inline const WorkflowGraph& GetGraph() const { return m_graph; }
     inline bool GraphHasBeenSet() const { return m_graphHasBeenSet; }
-    inline void SetGraph(const WorkflowGraph& value) { m_graphHasBeenSet = true; m_graph = value; }
-    inline void SetGraph(WorkflowGraph&& value) { m_graphHasBeenSet = true; m_graph = std::move(value); }
-    inline Workflow& WithGraph(const WorkflowGraph& value) { SetGraph(value); return *this;}
-    inline Workflow& WithGraph(WorkflowGraph&& value) { SetGraph(std::move(value)); return *this;}
+    template<typename GraphT = WorkflowGraph>
+    void SetGraph(GraphT&& value) { m_graphHasBeenSet = true; m_graph = std::forward<GraphT>(value); }
+    template<typename GraphT = WorkflowGraph>
+    Workflow& WithGraph(GraphT&& value) { SetGraph(std::forward<GraphT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -149,7 +142,7 @@ namespace Model
      * concurrent runs of any of the component jobs. If you leave this parameter blank,
      * there is no limit to the number of concurrent workflow runs.</p>
      */
-    inline int GetMaxConcurrentRuns() const{ return m_maxConcurrentRuns; }
+    inline int GetMaxConcurrentRuns() const { return m_maxConcurrentRuns; }
     inline bool MaxConcurrentRunsHasBeenSet() const { return m_maxConcurrentRunsHasBeenSet; }
     inline void SetMaxConcurrentRuns(int value) { m_maxConcurrentRunsHasBeenSet = true; m_maxConcurrentRuns = value; }
     inline Workflow& WithMaxConcurrentRuns(int value) { SetMaxConcurrentRuns(value); return *this;}
@@ -160,12 +153,12 @@ namespace Model
      * <p>This structure indicates the details of the blueprint that this particular
      * workflow is created from.</p>
      */
-    inline const BlueprintDetails& GetBlueprintDetails() const{ return m_blueprintDetails; }
+    inline const BlueprintDetails& GetBlueprintDetails() const { return m_blueprintDetails; }
     inline bool BlueprintDetailsHasBeenSet() const { return m_blueprintDetailsHasBeenSet; }
-    inline void SetBlueprintDetails(const BlueprintDetails& value) { m_blueprintDetailsHasBeenSet = true; m_blueprintDetails = value; }
-    inline void SetBlueprintDetails(BlueprintDetails&& value) { m_blueprintDetailsHasBeenSet = true; m_blueprintDetails = std::move(value); }
-    inline Workflow& WithBlueprintDetails(const BlueprintDetails& value) { SetBlueprintDetails(value); return *this;}
-    inline Workflow& WithBlueprintDetails(BlueprintDetails&& value) { SetBlueprintDetails(std::move(value)); return *this;}
+    template<typename BlueprintDetailsT = BlueprintDetails>
+    void SetBlueprintDetails(BlueprintDetailsT&& value) { m_blueprintDetailsHasBeenSet = true; m_blueprintDetails = std::forward<BlueprintDetailsT>(value); }
+    template<typename BlueprintDetailsT = BlueprintDetails>
+    Workflow& WithBlueprintDetails(BlueprintDetailsT&& value) { SetBlueprintDetails(std::forward<BlueprintDetailsT>(value)); return *this;}
     ///@}
   private:
 
@@ -178,10 +171,10 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_defaultRunProperties;
     bool m_defaultRunPropertiesHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdOn;
+    Aws::Utils::DateTime m_createdOn{};
     bool m_createdOnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedOn;
+    Aws::Utils::DateTime m_lastModifiedOn{};
     bool m_lastModifiedOnHasBeenSet = false;
 
     WorkflowRun m_lastRun;
@@ -190,7 +183,7 @@ namespace Model
     WorkflowGraph m_graph;
     bool m_graphHasBeenSet = false;
 
-    int m_maxConcurrentRuns;
+    int m_maxConcurrentRuns{0};
     bool m_maxConcurrentRunsHasBeenSet = false;
 
     BlueprintDetails m_blueprintDetails;

@@ -12,14 +12,6 @@ using namespace Aws::TimestreamWrite::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-WriteRecordsRequest::WriteRecordsRequest() : 
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_commonAttributesHasBeenSet(false),
-    m_recordsHasBeenSet(false)
-{
-}
-
 Aws::String WriteRecordsRequest::SerializePayload() const
 {
   JsonValue payload;

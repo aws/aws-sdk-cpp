@@ -18,20 +18,7 @@ namespace LakeFormation
 namespace Model
 {
 
-PlanningStatistics::PlanningStatistics() : 
-    m_estimatedDataToScanBytes(0),
-    m_estimatedDataToScanBytesHasBeenSet(false),
-    m_planningTimeMillis(0),
-    m_planningTimeMillisHasBeenSet(false),
-    m_queueTimeMillis(0),
-    m_queueTimeMillisHasBeenSet(false),
-    m_workUnitsGeneratedCount(0),
-    m_workUnitsGeneratedCountHasBeenSet(false)
-{
-}
-
 PlanningStatistics::PlanningStatistics(JsonView jsonValue)
-  : PlanningStatistics()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ PlanningStatistics& PlanningStatistics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EstimatedDataToScanBytes"))
   {
     m_estimatedDataToScanBytes = jsonValue.GetInt64("EstimatedDataToScanBytes");
-
     m_estimatedDataToScanBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PlanningTimeMillis"))
   {
     m_planningTimeMillis = jsonValue.GetInt64("PlanningTimeMillis");
-
     m_planningTimeMillisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueueTimeMillis"))
   {
     m_queueTimeMillis = jsonValue.GetInt64("QueueTimeMillis");
-
     m_queueTimeMillisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkUnitsGeneratedCount"))
   {
     m_workUnitsGeneratedCount = jsonValue.GetInt64("WorkUnitsGeneratedCount");
-
     m_workUnitsGeneratedCountHasBeenSet = true;
   }
-
   return *this;
 }
 

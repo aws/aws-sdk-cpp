@@ -18,14 +18,7 @@ namespace AppFabric
 namespace Model
 {
 
-AppBundle::AppBundle() : 
-    m_arnHasBeenSet(false),
-    m_customerManagedKeyArnHasBeenSet(false)
-{
-}
-
 AppBundle::AppBundle(JsonView jsonValue)
-  : AppBundle()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AppBundle& AppBundle::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customerManagedKeyArn"))
   {
     m_customerManagedKeyArn = jsonValue.GetString("customerManagedKeyArn");
-
     m_customerManagedKeyArnHasBeenSet = true;
   }
-
   return *this;
 }
 

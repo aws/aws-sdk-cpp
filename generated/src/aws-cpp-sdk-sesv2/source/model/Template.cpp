@@ -18,17 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-Template::Template() : 
-    m_templateNameHasBeenSet(false),
-    m_templateArnHasBeenSet(false),
-    m_templateContentHasBeenSet(false),
-    m_templateDataHasBeenSet(false),
-    m_headersHasBeenSet(false)
-{
-}
-
 Template::Template(JsonView jsonValue)
-  : Template()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ Template& Template::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TemplateName"))
   {
     m_templateName = jsonValue.GetString("TemplateName");
-
     m_templateNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TemplateArn"))
   {
     m_templateArn = jsonValue.GetString("TemplateArn");
-
     m_templateArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TemplateContent"))
   {
     m_templateContent = jsonValue.GetObject("TemplateContent");
-
     m_templateContentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TemplateData"))
   {
     m_templateData = jsonValue.GetString("TemplateData");
-
     m_templateDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Headers"))
   {
     Aws::Utils::Array<JsonView> headersJsonList = jsonValue.GetArray("Headers");
@@ -72,7 +54,6 @@ Template& Template::operator =(JsonView jsonValue)
     }
     m_headersHasBeenSet = true;
   }
-
   return *this;
 }
 

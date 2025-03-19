@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetPartnerAccountResult::GetPartnerAccountResult() : 
-    m_accountLinked(false)
-{
-}
-
 GetPartnerAccountResult::GetPartnerAccountResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetPartnerAccountResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ GetPartnerAccountResult& GetPartnerAccountResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("Sidewalk"))
   {
     m_sidewalk = jsonValue.GetObject("Sidewalk");
-
+    m_sidewalkHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountLinked"))
   {
     m_accountLinked = jsonValue.GetBool("AccountLinked");
-
+    m_accountLinkedHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

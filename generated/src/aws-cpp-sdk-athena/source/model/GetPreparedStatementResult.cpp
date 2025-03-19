@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetPreparedStatementResult::GetPreparedStatementResult()
-{
-}
-
 GetPreparedStatementResult::GetPreparedStatementResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetPreparedStatementResult& GetPreparedStatementResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("PreparedStatement"))
   {
     m_preparedStatement = jsonValue.GetObject("PreparedStatement");
-
+    m_preparedStatementHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

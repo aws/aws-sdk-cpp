@@ -32,7 +32,7 @@ namespace Model
   class Tiering
   {
   public:
-    AWS_BILLINGCONDUCTOR_API Tiering();
+    AWS_BILLINGCONDUCTOR_API Tiering() = default;
     AWS_BILLINGCONDUCTOR_API Tiering(Aws::Utils::Json::JsonView jsonValue);
     AWS_BILLINGCONDUCTOR_API Tiering& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p> The possible Amazon Web Services Free Tier configurations. </p>
      */
-    inline const FreeTierConfig& GetFreeTier() const{ return m_freeTier; }
+    inline const FreeTierConfig& GetFreeTier() const { return m_freeTier; }
     inline bool FreeTierHasBeenSet() const { return m_freeTierHasBeenSet; }
-    inline void SetFreeTier(const FreeTierConfig& value) { m_freeTierHasBeenSet = true; m_freeTier = value; }
-    inline void SetFreeTier(FreeTierConfig&& value) { m_freeTierHasBeenSet = true; m_freeTier = std::move(value); }
-    inline Tiering& WithFreeTier(const FreeTierConfig& value) { SetFreeTier(value); return *this;}
-    inline Tiering& WithFreeTier(FreeTierConfig&& value) { SetFreeTier(std::move(value)); return *this;}
+    template<typename FreeTierT = FreeTierConfig>
+    void SetFreeTier(FreeTierT&& value) { m_freeTierHasBeenSet = true; m_freeTier = std::forward<FreeTierT>(value); }
+    template<typename FreeTierT = FreeTierConfig>
+    Tiering& WithFreeTier(FreeTierT&& value) { SetFreeTier(std::forward<FreeTierT>(value)); return *this;}
     ///@}
   private:
 

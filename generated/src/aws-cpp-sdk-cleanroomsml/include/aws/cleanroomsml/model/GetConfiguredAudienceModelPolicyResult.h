@@ -27,7 +27,7 @@ namespace Model
   class GetConfiguredAudienceModelPolicyResult
   {
   public:
-    AWS_CLEANROOMSML_API GetConfiguredAudienceModelPolicyResult();
+    AWS_CLEANROOMSML_API GetConfiguredAudienceModelPolicyResult() = default;
     AWS_CLEANROOMSML_API GetConfiguredAudienceModelPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLEANROOMSML_API GetConfiguredAudienceModelPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,26 +36,22 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the configured audience model.</p>
      */
-    inline const Aws::String& GetConfiguredAudienceModelArn() const{ return m_configuredAudienceModelArn; }
-    inline void SetConfiguredAudienceModelArn(const Aws::String& value) { m_configuredAudienceModelArn = value; }
-    inline void SetConfiguredAudienceModelArn(Aws::String&& value) { m_configuredAudienceModelArn = std::move(value); }
-    inline void SetConfiguredAudienceModelArn(const char* value) { m_configuredAudienceModelArn.assign(value); }
-    inline GetConfiguredAudienceModelPolicyResult& WithConfiguredAudienceModelArn(const Aws::String& value) { SetConfiguredAudienceModelArn(value); return *this;}
-    inline GetConfiguredAudienceModelPolicyResult& WithConfiguredAudienceModelArn(Aws::String&& value) { SetConfiguredAudienceModelArn(std::move(value)); return *this;}
-    inline GetConfiguredAudienceModelPolicyResult& WithConfiguredAudienceModelArn(const char* value) { SetConfiguredAudienceModelArn(value); return *this;}
+    inline const Aws::String& GetConfiguredAudienceModelArn() const { return m_configuredAudienceModelArn; }
+    template<typename ConfiguredAudienceModelArnT = Aws::String>
+    void SetConfiguredAudienceModelArn(ConfiguredAudienceModelArnT&& value) { m_configuredAudienceModelArnHasBeenSet = true; m_configuredAudienceModelArn = std::forward<ConfiguredAudienceModelArnT>(value); }
+    template<typename ConfiguredAudienceModelArnT = Aws::String>
+    GetConfiguredAudienceModelPolicyResult& WithConfiguredAudienceModelArn(ConfiguredAudienceModelArnT&& value) { SetConfiguredAudienceModelArn(std::forward<ConfiguredAudienceModelArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configured audience model policy. This is a JSON IAM resource policy.</p>
      */
-    inline const Aws::String& GetConfiguredAudienceModelPolicy() const{ return m_configuredAudienceModelPolicy; }
-    inline void SetConfiguredAudienceModelPolicy(const Aws::String& value) { m_configuredAudienceModelPolicy = value; }
-    inline void SetConfiguredAudienceModelPolicy(Aws::String&& value) { m_configuredAudienceModelPolicy = std::move(value); }
-    inline void SetConfiguredAudienceModelPolicy(const char* value) { m_configuredAudienceModelPolicy.assign(value); }
-    inline GetConfiguredAudienceModelPolicyResult& WithConfiguredAudienceModelPolicy(const Aws::String& value) { SetConfiguredAudienceModelPolicy(value); return *this;}
-    inline GetConfiguredAudienceModelPolicyResult& WithConfiguredAudienceModelPolicy(Aws::String&& value) { SetConfiguredAudienceModelPolicy(std::move(value)); return *this;}
-    inline GetConfiguredAudienceModelPolicyResult& WithConfiguredAudienceModelPolicy(const char* value) { SetConfiguredAudienceModelPolicy(value); return *this;}
+    inline const Aws::String& GetConfiguredAudienceModelPolicy() const { return m_configuredAudienceModelPolicy; }
+    template<typename ConfiguredAudienceModelPolicyT = Aws::String>
+    void SetConfiguredAudienceModelPolicy(ConfiguredAudienceModelPolicyT&& value) { m_configuredAudienceModelPolicyHasBeenSet = true; m_configuredAudienceModelPolicy = std::forward<ConfiguredAudienceModelPolicyT>(value); }
+    template<typename ConfiguredAudienceModelPolicyT = Aws::String>
+    GetConfiguredAudienceModelPolicyResult& WithConfiguredAudienceModelPolicy(ConfiguredAudienceModelPolicyT&& value) { SetConfiguredAudienceModelPolicy(std::forward<ConfiguredAudienceModelPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,34 +59,34 @@ namespace Model
      * <p>A cryptographic hash of the contents of the policy used to prevent unexpected
      * concurrent modification of the policy.</p>
      */
-    inline const Aws::String& GetPolicyHash() const{ return m_policyHash; }
-    inline void SetPolicyHash(const Aws::String& value) { m_policyHash = value; }
-    inline void SetPolicyHash(Aws::String&& value) { m_policyHash = std::move(value); }
-    inline void SetPolicyHash(const char* value) { m_policyHash.assign(value); }
-    inline GetConfiguredAudienceModelPolicyResult& WithPolicyHash(const Aws::String& value) { SetPolicyHash(value); return *this;}
-    inline GetConfiguredAudienceModelPolicyResult& WithPolicyHash(Aws::String&& value) { SetPolicyHash(std::move(value)); return *this;}
-    inline GetConfiguredAudienceModelPolicyResult& WithPolicyHash(const char* value) { SetPolicyHash(value); return *this;}
+    inline const Aws::String& GetPolicyHash() const { return m_policyHash; }
+    template<typename PolicyHashT = Aws::String>
+    void SetPolicyHash(PolicyHashT&& value) { m_policyHashHasBeenSet = true; m_policyHash = std::forward<PolicyHashT>(value); }
+    template<typename PolicyHashT = Aws::String>
+    GetConfiguredAudienceModelPolicyResult& WithPolicyHash(PolicyHashT&& value) { SetPolicyHash(std::forward<PolicyHashT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetConfiguredAudienceModelPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetConfiguredAudienceModelPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetConfiguredAudienceModelPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetConfiguredAudienceModelPolicyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_configuredAudienceModelArn;
+    bool m_configuredAudienceModelArnHasBeenSet = false;
 
     Aws::String m_configuredAudienceModelPolicy;
+    bool m_configuredAudienceModelPolicyHasBeenSet = false;
 
     Aws::String m_policyHash;
+    bool m_policyHashHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

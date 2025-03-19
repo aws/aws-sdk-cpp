@@ -31,7 +31,7 @@ namespace Model
   class AudioStandardExtraction
   {
   public:
-    AWS_BEDROCKDATAAUTOMATION_API AudioStandardExtraction();
+    AWS_BEDROCKDATAAUTOMATION_API AudioStandardExtraction() = default;
     AWS_BEDROCKDATAAUTOMATION_API AudioStandardExtraction(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKDATAAUTOMATION_API AudioStandardExtraction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKDATAAUTOMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,12 +39,12 @@ namespace Model
 
     ///@{
     
-    inline const AudioExtractionCategory& GetCategory() const{ return m_category; }
+    inline const AudioExtractionCategory& GetCategory() const { return m_category; }
     inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
-    inline void SetCategory(const AudioExtractionCategory& value) { m_categoryHasBeenSet = true; m_category = value; }
-    inline void SetCategory(AudioExtractionCategory&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
-    inline AudioStandardExtraction& WithCategory(const AudioExtractionCategory& value) { SetCategory(value); return *this;}
-    inline AudioStandardExtraction& WithCategory(AudioExtractionCategory&& value) { SetCategory(std::move(value)); return *this;}
+    template<typename CategoryT = AudioExtractionCategory>
+    void SetCategory(CategoryT&& value) { m_categoryHasBeenSet = true; m_category = std::forward<CategoryT>(value); }
+    template<typename CategoryT = AudioExtractionCategory>
+    AudioStandardExtraction& WithCategory(CategoryT&& value) { SetCategory(std::forward<CategoryT>(value)); return *this;}
     ///@}
   private:
 

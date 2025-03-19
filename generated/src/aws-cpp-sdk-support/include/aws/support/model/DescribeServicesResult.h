@@ -35,7 +35,7 @@ namespace Model
   class DescribeServicesResult
   {
   public:
-    AWS_SUPPORT_API DescribeServicesResult();
+    AWS_SUPPORT_API DescribeServicesResult() = default;
     AWS_SUPPORT_API DescribeServicesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SUPPORT_API DescribeServicesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,30 +44,30 @@ namespace Model
     /**
      * <p>A JSON-formatted list of Amazon Web Services services.</p>
      */
-    inline const Aws::Vector<Service>& GetServices() const{ return m_services; }
-    inline void SetServices(const Aws::Vector<Service>& value) { m_services = value; }
-    inline void SetServices(Aws::Vector<Service>&& value) { m_services = std::move(value); }
-    inline DescribeServicesResult& WithServices(const Aws::Vector<Service>& value) { SetServices(value); return *this;}
-    inline DescribeServicesResult& WithServices(Aws::Vector<Service>&& value) { SetServices(std::move(value)); return *this;}
-    inline DescribeServicesResult& AddServices(const Service& value) { m_services.push_back(value); return *this; }
-    inline DescribeServicesResult& AddServices(Service&& value) { m_services.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Service>& GetServices() const { return m_services; }
+    template<typename ServicesT = Aws::Vector<Service>>
+    void SetServices(ServicesT&& value) { m_servicesHasBeenSet = true; m_services = std::forward<ServicesT>(value); }
+    template<typename ServicesT = Aws::Vector<Service>>
+    DescribeServicesResult& WithServices(ServicesT&& value) { SetServices(std::forward<ServicesT>(value)); return *this;}
+    template<typename ServicesT = Service>
+    DescribeServicesResult& AddServices(ServicesT&& value) { m_servicesHasBeenSet = true; m_services.emplace_back(std::forward<ServicesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeServicesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeServicesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeServicesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeServicesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Service> m_services;
+    bool m_servicesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,14 +18,7 @@ namespace FSx
 namespace Model
 {
 
-IncompatibleParameterError::IncompatibleParameterError() : 
-    m_parameterHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 IncompatibleParameterError::IncompatibleParameterError(JsonView jsonValue)
-  : IncompatibleParameterError()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ IncompatibleParameterError& IncompatibleParameterError::operator =(JsonView json
   if(jsonValue.ValueExists("Parameter"))
   {
     m_parameter = jsonValue.GetString("Parameter");
-
     m_parameterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

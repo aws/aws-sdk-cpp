@@ -29,7 +29,7 @@ namespace Model
   class IsolineGranularityOptions
   {
   public:
-    AWS_GEOROUTES_API IsolineGranularityOptions();
+    AWS_GEOROUTES_API IsolineGranularityOptions() = default;
     AWS_GEOROUTES_API IsolineGranularityOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API IsolineGranularityOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,7 +39,7 @@ namespace Model
     /**
      * <p>Maximum number of points of returned Isoline.</p>
      */
-    inline int GetMaxPoints() const{ return m_maxPoints; }
+    inline int GetMaxPoints() const { return m_maxPoints; }
     inline bool MaxPointsHasBeenSet() const { return m_maxPointsHasBeenSet; }
     inline void SetMaxPoints(int value) { m_maxPointsHasBeenSet = true; m_maxPoints = value; }
     inline IsolineGranularityOptions& WithMaxPoints(int value) { SetMaxPoints(value); return *this;}
@@ -50,17 +50,17 @@ namespace Model
      * <p>Maximum resolution of the returned isoline.</p> <p> <b>Unit</b>:
      * <code>meters</code> </p>
      */
-    inline long long GetMaxResolution() const{ return m_maxResolution; }
+    inline long long GetMaxResolution() const { return m_maxResolution; }
     inline bool MaxResolutionHasBeenSet() const { return m_maxResolutionHasBeenSet; }
     inline void SetMaxResolution(long long value) { m_maxResolutionHasBeenSet = true; m_maxResolution = value; }
     inline IsolineGranularityOptions& WithMaxResolution(long long value) { SetMaxResolution(value); return *this;}
     ///@}
   private:
 
-    int m_maxPoints;
+    int m_maxPoints{0};
     bool m_maxPointsHasBeenSet = false;
 
-    long long m_maxResolution;
+    long long m_maxResolution{0};
     bool m_maxResolutionHasBeenSet = false;
   };
 

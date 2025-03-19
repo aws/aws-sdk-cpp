@@ -15,19 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListAttachmentsRequest::ListAttachmentsRequest() : 
-    m_coreNetworkIdHasBeenSet(false),
-    m_attachmentType(AttachmentType::NOT_SET),
-    m_attachmentTypeHasBeenSet(false),
-    m_edgeLocationHasBeenSet(false),
-    m_state(AttachmentState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListAttachmentsRequest::SerializePayload() const
 {
   return {};

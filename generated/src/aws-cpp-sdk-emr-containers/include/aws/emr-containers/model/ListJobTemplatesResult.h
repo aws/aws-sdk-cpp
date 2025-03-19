@@ -29,7 +29,7 @@ namespace Model
   class ListJobTemplatesResult
   {
   public:
-    AWS_EMRCONTAINERS_API ListJobTemplatesResult();
+    AWS_EMRCONTAINERS_API ListJobTemplatesResult() = default;
     AWS_EMRCONTAINERS_API ListJobTemplatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_EMRCONTAINERS_API ListJobTemplatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>This output lists information about the specified job templates.</p>
      */
-    inline const Aws::Vector<JobTemplate>& GetTemplates() const{ return m_templates; }
-    inline void SetTemplates(const Aws::Vector<JobTemplate>& value) { m_templates = value; }
-    inline void SetTemplates(Aws::Vector<JobTemplate>&& value) { m_templates = std::move(value); }
-    inline ListJobTemplatesResult& WithTemplates(const Aws::Vector<JobTemplate>& value) { SetTemplates(value); return *this;}
-    inline ListJobTemplatesResult& WithTemplates(Aws::Vector<JobTemplate>&& value) { SetTemplates(std::move(value)); return *this;}
-    inline ListJobTemplatesResult& AddTemplates(const JobTemplate& value) { m_templates.push_back(value); return *this; }
-    inline ListJobTemplatesResult& AddTemplates(JobTemplate&& value) { m_templates.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<JobTemplate>& GetTemplates() const { return m_templates; }
+    template<typename TemplatesT = Aws::Vector<JobTemplate>>
+    void SetTemplates(TemplatesT&& value) { m_templatesHasBeenSet = true; m_templates = std::forward<TemplatesT>(value); }
+    template<typename TemplatesT = Aws::Vector<JobTemplate>>
+    ListJobTemplatesResult& WithTemplates(TemplatesT&& value) { SetTemplates(std::forward<TemplatesT>(value)); return *this;}
+    template<typename TemplatesT = JobTemplate>
+    ListJobTemplatesResult& AddTemplates(TemplatesT&& value) { m_templatesHasBeenSet = true; m_templates.emplace_back(std::forward<TemplatesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> This output displays the token for the next set of job templates.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListJobTemplatesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListJobTemplatesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListJobTemplatesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListJobTemplatesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListJobTemplatesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListJobTemplatesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListJobTemplatesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListJobTemplatesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<JobTemplate> m_templates;
+    bool m_templatesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

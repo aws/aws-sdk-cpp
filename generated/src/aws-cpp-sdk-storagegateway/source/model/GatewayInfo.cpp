@@ -18,24 +18,7 @@ namespace StorageGateway
 namespace Model
 {
 
-GatewayInfo::GatewayInfo() : 
-    m_gatewayIdHasBeenSet(false),
-    m_gatewayARNHasBeenSet(false),
-    m_gatewayTypeHasBeenSet(false),
-    m_gatewayOperationalStateHasBeenSet(false),
-    m_gatewayNameHasBeenSet(false),
-    m_ec2InstanceIdHasBeenSet(false),
-    m_ec2InstanceRegionHasBeenSet(false),
-    m_hostEnvironment(HostEnvironment::NOT_SET),
-    m_hostEnvironmentHasBeenSet(false),
-    m_hostEnvironmentIdHasBeenSet(false),
-    m_deprecationDateHasBeenSet(false),
-    m_softwareVersionHasBeenSet(false)
-{
-}
-
 GatewayInfo::GatewayInfo(JsonView jsonValue)
-  : GatewayInfo()
 {
   *this = jsonValue;
 }
@@ -45,80 +28,58 @@ GatewayInfo& GatewayInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GatewayId"))
   {
     m_gatewayId = jsonValue.GetString("GatewayId");
-
     m_gatewayIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GatewayARN"))
   {
     m_gatewayARN = jsonValue.GetString("GatewayARN");
-
     m_gatewayARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GatewayType"))
   {
     m_gatewayType = jsonValue.GetString("GatewayType");
-
     m_gatewayTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GatewayOperationalState"))
   {
     m_gatewayOperationalState = jsonValue.GetString("GatewayOperationalState");
-
     m_gatewayOperationalStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GatewayName"))
   {
     m_gatewayName = jsonValue.GetString("GatewayName");
-
     m_gatewayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ec2InstanceId"))
   {
     m_ec2InstanceId = jsonValue.GetString("Ec2InstanceId");
-
     m_ec2InstanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ec2InstanceRegion"))
   {
     m_ec2InstanceRegion = jsonValue.GetString("Ec2InstanceRegion");
-
     m_ec2InstanceRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HostEnvironment"))
   {
     m_hostEnvironment = HostEnvironmentMapper::GetHostEnvironmentForName(jsonValue.GetString("HostEnvironment"));
-
     m_hostEnvironmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HostEnvironmentId"))
   {
     m_hostEnvironmentId = jsonValue.GetString("HostEnvironmentId");
-
     m_hostEnvironmentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeprecationDate"))
   {
     m_deprecationDate = jsonValue.GetString("DeprecationDate");
-
     m_deprecationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SoftwareVersion"))
   {
     m_softwareVersion = jsonValue.GetString("SoftwareVersion");
-
     m_softwareVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

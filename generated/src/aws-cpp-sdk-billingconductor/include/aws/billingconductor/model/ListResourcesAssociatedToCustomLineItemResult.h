@@ -29,7 +29,7 @@ namespace Model
   class ListResourcesAssociatedToCustomLineItemResult
   {
   public:
-    AWS_BILLINGCONDUCTOR_API ListResourcesAssociatedToCustomLineItemResult();
+    AWS_BILLINGCONDUCTOR_API ListResourcesAssociatedToCustomLineItemResult() = default;
     AWS_BILLINGCONDUCTOR_API ListResourcesAssociatedToCustomLineItemResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BILLINGCONDUCTOR_API ListResourcesAssociatedToCustomLineItemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,11 @@ namespace Model
      * <p> The custom line item ARN for which the resource associations are listed.
      * </p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline ListResourcesAssociatedToCustomLineItemResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline ListResourcesAssociatedToCustomLineItemResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline ListResourcesAssociatedToCustomLineItemResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    ListResourcesAssociatedToCustomLineItemResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,13 +52,13 @@ namespace Model
      * <code>ListResourcesAssociatedToCustomLineItemResponseElement</code> for each
      * resource association retrieved. </p>
      */
-    inline const Aws::Vector<ListResourcesAssociatedToCustomLineItemResponseElement>& GetAssociatedResources() const{ return m_associatedResources; }
-    inline void SetAssociatedResources(const Aws::Vector<ListResourcesAssociatedToCustomLineItemResponseElement>& value) { m_associatedResources = value; }
-    inline void SetAssociatedResources(Aws::Vector<ListResourcesAssociatedToCustomLineItemResponseElement>&& value) { m_associatedResources = std::move(value); }
-    inline ListResourcesAssociatedToCustomLineItemResult& WithAssociatedResources(const Aws::Vector<ListResourcesAssociatedToCustomLineItemResponseElement>& value) { SetAssociatedResources(value); return *this;}
-    inline ListResourcesAssociatedToCustomLineItemResult& WithAssociatedResources(Aws::Vector<ListResourcesAssociatedToCustomLineItemResponseElement>&& value) { SetAssociatedResources(std::move(value)); return *this;}
-    inline ListResourcesAssociatedToCustomLineItemResult& AddAssociatedResources(const ListResourcesAssociatedToCustomLineItemResponseElement& value) { m_associatedResources.push_back(value); return *this; }
-    inline ListResourcesAssociatedToCustomLineItemResult& AddAssociatedResources(ListResourcesAssociatedToCustomLineItemResponseElement&& value) { m_associatedResources.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ListResourcesAssociatedToCustomLineItemResponseElement>& GetAssociatedResources() const { return m_associatedResources; }
+    template<typename AssociatedResourcesT = Aws::Vector<ListResourcesAssociatedToCustomLineItemResponseElement>>
+    void SetAssociatedResources(AssociatedResourcesT&& value) { m_associatedResourcesHasBeenSet = true; m_associatedResources = std::forward<AssociatedResourcesT>(value); }
+    template<typename AssociatedResourcesT = Aws::Vector<ListResourcesAssociatedToCustomLineItemResponseElement>>
+    ListResourcesAssociatedToCustomLineItemResult& WithAssociatedResources(AssociatedResourcesT&& value) { SetAssociatedResources(std::forward<AssociatedResourcesT>(value)); return *this;}
+    template<typename AssociatedResourcesT = ListResourcesAssociatedToCustomLineItemResponseElement>
+    ListResourcesAssociatedToCustomLineItemResult& AddAssociatedResources(AssociatedResourcesT&& value) { m_associatedResourcesHasBeenSet = true; m_associatedResources.emplace_back(std::forward<AssociatedResourcesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -68,34 +66,34 @@ namespace Model
      * <p> The pagination token to be used in subsequent requests to retrieve
      * additional results. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListResourcesAssociatedToCustomLineItemResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListResourcesAssociatedToCustomLineItemResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListResourcesAssociatedToCustomLineItemResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListResourcesAssociatedToCustomLineItemResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListResourcesAssociatedToCustomLineItemResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListResourcesAssociatedToCustomLineItemResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListResourcesAssociatedToCustomLineItemResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListResourcesAssociatedToCustomLineItemResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::Vector<ListResourcesAssociatedToCustomLineItemResponseElement> m_associatedResources;
+    bool m_associatedResourcesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

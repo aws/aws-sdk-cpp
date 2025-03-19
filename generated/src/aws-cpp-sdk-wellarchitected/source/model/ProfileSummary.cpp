@@ -18,19 +18,7 @@ namespace WellArchitected
 namespace Model
 {
 
-ProfileSummary::ProfileSummary() : 
-    m_profileArnHasBeenSet(false),
-    m_profileVersionHasBeenSet(false),
-    m_profileNameHasBeenSet(false),
-    m_profileDescriptionHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 ProfileSummary::ProfileSummary(JsonView jsonValue)
-  : ProfileSummary()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ ProfileSummary& ProfileSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ProfileArn"))
   {
     m_profileArn = jsonValue.GetString("ProfileArn");
-
     m_profileArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProfileVersion"))
   {
     m_profileVersion = jsonValue.GetString("ProfileVersion");
-
     m_profileVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProfileName"))
   {
     m_profileName = jsonValue.GetString("ProfileName");
-
     m_profileNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProfileDescription"))
   {
     m_profileDescription = jsonValue.GetString("ProfileDescription");
-
     m_profileDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Owner"))
   {
     m_owner = jsonValue.GetString("Owner");
-
     m_ownerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("UpdatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

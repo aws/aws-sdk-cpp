@@ -18,15 +18,7 @@ namespace ECS
 namespace Model
 {
 
-Failure::Failure() : 
-    m_arnHasBeenSet(false),
-    m_reasonHasBeenSet(false),
-    m_detailHasBeenSet(false)
-{
-}
-
 Failure::Failure(JsonView jsonValue)
-  : Failure()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ Failure& Failure::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = jsonValue.GetString("reason");
-
     m_reasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("detail"))
   {
     m_detail = jsonValue.GetString("detail");
-
     m_detailHasBeenSet = true;
   }
-
   return *this;
 }
 

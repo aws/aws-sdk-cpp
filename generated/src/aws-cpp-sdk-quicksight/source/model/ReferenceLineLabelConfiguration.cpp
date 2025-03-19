@@ -18,20 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ReferenceLineLabelConfiguration::ReferenceLineLabelConfiguration() : 
-    m_valueLabelConfigurationHasBeenSet(false),
-    m_customLabelConfigurationHasBeenSet(false),
-    m_fontConfigurationHasBeenSet(false),
-    m_fontColorHasBeenSet(false),
-    m_horizontalPosition(ReferenceLineLabelHorizontalPosition::NOT_SET),
-    m_horizontalPositionHasBeenSet(false),
-    m_verticalPosition(ReferenceLineLabelVerticalPosition::NOT_SET),
-    m_verticalPositionHasBeenSet(false)
-{
-}
-
 ReferenceLineLabelConfiguration::ReferenceLineLabelConfiguration(JsonView jsonValue)
-  : ReferenceLineLabelConfiguration()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ ReferenceLineLabelConfiguration& ReferenceLineLabelConfiguration::operator =(Jso
   if(jsonValue.ValueExists("ValueLabelConfiguration"))
   {
     m_valueLabelConfiguration = jsonValue.GetObject("ValueLabelConfiguration");
-
     m_valueLabelConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomLabelConfiguration"))
   {
     m_customLabelConfiguration = jsonValue.GetObject("CustomLabelConfiguration");
-
     m_customLabelConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FontConfiguration"))
   {
     m_fontConfiguration = jsonValue.GetObject("FontConfiguration");
-
     m_fontConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FontColor"))
   {
     m_fontColor = jsonValue.GetString("FontColor");
-
     m_fontColorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HorizontalPosition"))
   {
     m_horizontalPosition = ReferenceLineLabelHorizontalPositionMapper::GetReferenceLineLabelHorizontalPositionForName(jsonValue.GetString("HorizontalPosition"));
-
     m_horizontalPositionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VerticalPosition"))
   {
     m_verticalPosition = ReferenceLineLabelVerticalPositionMapper::GetReferenceLineLabelVerticalPositionForName(jsonValue.GetString("VerticalPosition"));
-
     m_verticalPositionHasBeenSet = true;
   }
-
   return *this;
 }
 

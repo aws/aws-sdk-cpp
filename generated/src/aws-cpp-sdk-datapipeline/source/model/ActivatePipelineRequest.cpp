@@ -12,13 +12,6 @@ using namespace Aws::DataPipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ActivatePipelineRequest::ActivatePipelineRequest() : 
-    m_pipelineIdHasBeenSet(false),
-    m_parameterValuesHasBeenSet(false),
-    m_startTimestampHasBeenSet(false)
-{
-}
-
 Aws::String ActivatePipelineRequest::SerializePayload() const
 {
   JsonValue payload;

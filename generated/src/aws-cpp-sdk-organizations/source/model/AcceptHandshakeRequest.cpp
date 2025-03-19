@@ -12,11 +12,6 @@ using namespace Aws::Organizations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AcceptHandshakeRequest::AcceptHandshakeRequest() : 
-    m_handshakeIdHasBeenSet(false)
-{
-}
-
 Aws::String AcceptHandshakeRequest::SerializePayload() const
 {
   JsonValue payload;

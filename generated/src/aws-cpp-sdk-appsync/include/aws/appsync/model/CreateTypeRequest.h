@@ -22,7 +22,7 @@ namespace Model
   class CreateTypeRequest : public AppSyncRequest
   {
   public:
-    AWS_APPSYNC_API CreateTypeRequest();
+    AWS_APPSYNC_API CreateTypeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
     /**
      * <p>The API ID.</p>
      */
-    inline const Aws::String& GetApiId() const{ return m_apiId; }
+    inline const Aws::String& GetApiId() const { return m_apiId; }
     inline bool ApiIdHasBeenSet() const { return m_apiIdHasBeenSet; }
-    inline void SetApiId(const Aws::String& value) { m_apiIdHasBeenSet = true; m_apiId = value; }
-    inline void SetApiId(Aws::String&& value) { m_apiIdHasBeenSet = true; m_apiId = std::move(value); }
-    inline void SetApiId(const char* value) { m_apiIdHasBeenSet = true; m_apiId.assign(value); }
-    inline CreateTypeRequest& WithApiId(const Aws::String& value) { SetApiId(value); return *this;}
-    inline CreateTypeRequest& WithApiId(Aws::String&& value) { SetApiId(std::move(value)); return *this;}
-    inline CreateTypeRequest& WithApiId(const char* value) { SetApiId(value); return *this;}
+    template<typename ApiIdT = Aws::String>
+    void SetApiId(ApiIdT&& value) { m_apiIdHasBeenSet = true; m_apiId = std::forward<ApiIdT>(value); }
+    template<typename ApiIdT = Aws::String>
+    CreateTypeRequest& WithApiId(ApiIdT&& value) { SetApiId(std::forward<ApiIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,26 +51,22 @@ namespace Model
      * <p>For more information, see the <a
      * href="http://graphql.org/learn/schema/">GraphQL SDL documentation</a>.</p>
      */
-    inline const Aws::String& GetDefinition() const{ return m_definition; }
+    inline const Aws::String& GetDefinition() const { return m_definition; }
     inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
-    inline void SetDefinition(const Aws::String& value) { m_definitionHasBeenSet = true; m_definition = value; }
-    inline void SetDefinition(Aws::String&& value) { m_definitionHasBeenSet = true; m_definition = std::move(value); }
-    inline void SetDefinition(const char* value) { m_definitionHasBeenSet = true; m_definition.assign(value); }
-    inline CreateTypeRequest& WithDefinition(const Aws::String& value) { SetDefinition(value); return *this;}
-    inline CreateTypeRequest& WithDefinition(Aws::String&& value) { SetDefinition(std::move(value)); return *this;}
-    inline CreateTypeRequest& WithDefinition(const char* value) { SetDefinition(value); return *this;}
+    template<typename DefinitionT = Aws::String>
+    void SetDefinition(DefinitionT&& value) { m_definitionHasBeenSet = true; m_definition = std::forward<DefinitionT>(value); }
+    template<typename DefinitionT = Aws::String>
+    CreateTypeRequest& WithDefinition(DefinitionT&& value) { SetDefinition(std::forward<DefinitionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type format: SDL or JSON.</p>
      */
-    inline const TypeDefinitionFormat& GetFormat() const{ return m_format; }
+    inline TypeDefinitionFormat GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const TypeDefinitionFormat& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(TypeDefinitionFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline CreateTypeRequest& WithFormat(const TypeDefinitionFormat& value) { SetFormat(value); return *this;}
-    inline CreateTypeRequest& WithFormat(TypeDefinitionFormat&& value) { SetFormat(std::move(value)); return *this;}
+    inline void SetFormat(TypeDefinitionFormat value) { m_formatHasBeenSet = true; m_format = value; }
+    inline CreateTypeRequest& WithFormat(TypeDefinitionFormat value) { SetFormat(value); return *this;}
     ///@}
   private:
 
@@ -82,7 +76,7 @@ namespace Model
     Aws::String m_definition;
     bool m_definitionHasBeenSet = false;
 
-    TypeDefinitionFormat m_format;
+    TypeDefinitionFormat m_format{TypeDefinitionFormat::NOT_SET};
     bool m_formatHasBeenSet = false;
   };
 

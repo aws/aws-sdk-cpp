@@ -18,14 +18,7 @@ namespace WAF
 namespace Model
 {
 
-SqlInjectionMatchSetSummary::SqlInjectionMatchSetSummary() : 
-    m_sqlInjectionMatchSetIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 SqlInjectionMatchSetSummary::SqlInjectionMatchSetSummary(JsonView jsonValue)
-  : SqlInjectionMatchSetSummary()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SqlInjectionMatchSetSummary& SqlInjectionMatchSetSummary::operator =(JsonView js
   if(jsonValue.ValueExists("SqlInjectionMatchSetId"))
   {
     m_sqlInjectionMatchSetId = jsonValue.GetString("SqlInjectionMatchSetId");
-
     m_sqlInjectionMatchSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,18 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-WebAuthnCredentialDescription::WebAuthnCredentialDescription() : 
-    m_credentialIdHasBeenSet(false),
-    m_friendlyCredentialNameHasBeenSet(false),
-    m_relyingPartyIdHasBeenSet(false),
-    m_authenticatorAttachmentHasBeenSet(false),
-    m_authenticatorTransportsHasBeenSet(false),
-    m_createdAtHasBeenSet(false)
-{
-}
-
 WebAuthnCredentialDescription::WebAuthnCredentialDescription(JsonView jsonValue)
-  : WebAuthnCredentialDescription()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ WebAuthnCredentialDescription& WebAuthnCredentialDescription::operator =(JsonVie
   if(jsonValue.ValueExists("CredentialId"))
   {
     m_credentialId = jsonValue.GetString("CredentialId");
-
     m_credentialIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FriendlyCredentialName"))
   {
     m_friendlyCredentialName = jsonValue.GetString("FriendlyCredentialName");
-
     m_friendlyCredentialNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RelyingPartyId"))
   {
     m_relyingPartyId = jsonValue.GetString("RelyingPartyId");
-
     m_relyingPartyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthenticatorAttachment"))
   {
     m_authenticatorAttachment = jsonValue.GetString("AuthenticatorAttachment");
-
     m_authenticatorAttachmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthenticatorTransports"))
   {
     Aws::Utils::Array<JsonView> authenticatorTransportsJsonList = jsonValue.GetArray("AuthenticatorTransports");
@@ -73,14 +54,11 @@ WebAuthnCredentialDescription& WebAuthnCredentialDescription::operator =(JsonVie
     }
     m_authenticatorTransportsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   return *this;
 }
 

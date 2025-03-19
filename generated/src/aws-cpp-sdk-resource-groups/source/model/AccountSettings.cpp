@@ -18,17 +18,7 @@ namespace ResourceGroups
 namespace Model
 {
 
-AccountSettings::AccountSettings() : 
-    m_groupLifecycleEventsDesiredStatus(GroupLifecycleEventsDesiredStatus::NOT_SET),
-    m_groupLifecycleEventsDesiredStatusHasBeenSet(false),
-    m_groupLifecycleEventsStatus(GroupLifecycleEventsStatus::NOT_SET),
-    m_groupLifecycleEventsStatusHasBeenSet(false),
-    m_groupLifecycleEventsStatusMessageHasBeenSet(false)
-{
-}
-
 AccountSettings::AccountSettings(JsonView jsonValue)
-  : AccountSettings()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ AccountSettings& AccountSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GroupLifecycleEventsDesiredStatus"))
   {
     m_groupLifecycleEventsDesiredStatus = GroupLifecycleEventsDesiredStatusMapper::GetGroupLifecycleEventsDesiredStatusForName(jsonValue.GetString("GroupLifecycleEventsDesiredStatus"));
-
     m_groupLifecycleEventsDesiredStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupLifecycleEventsStatus"))
   {
     m_groupLifecycleEventsStatus = GroupLifecycleEventsStatusMapper::GetGroupLifecycleEventsStatusForName(jsonValue.GetString("GroupLifecycleEventsStatus"));
-
     m_groupLifecycleEventsStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupLifecycleEventsStatusMessage"))
   {
     m_groupLifecycleEventsStatusMessage = jsonValue.GetString("GroupLifecycleEventsStatusMessage");
-
     m_groupLifecycleEventsStatusMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

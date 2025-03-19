@@ -18,14 +18,7 @@ namespace Transfer
 namespace Model
 {
 
-WorkflowDetail::WorkflowDetail() : 
-    m_workflowIdHasBeenSet(false),
-    m_executionRoleHasBeenSet(false)
-{
-}
-
 WorkflowDetail::WorkflowDetail(JsonView jsonValue)
-  : WorkflowDetail()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ WorkflowDetail& WorkflowDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("WorkflowId"))
   {
     m_workflowId = jsonValue.GetString("WorkflowId");
-
     m_workflowIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutionRole"))
   {
     m_executionRole = jsonValue.GetString("ExecutionRole");
-
     m_executionRoleHasBeenSet = true;
   }
-
   return *this;
 }
 

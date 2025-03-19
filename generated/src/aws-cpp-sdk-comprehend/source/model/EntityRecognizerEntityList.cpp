@@ -18,13 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-EntityRecognizerEntityList::EntityRecognizerEntityList() : 
-    m_s3UriHasBeenSet(false)
-{
-}
-
 EntityRecognizerEntityList::EntityRecognizerEntityList(JsonView jsonValue)
-  : EntityRecognizerEntityList()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EntityRecognizerEntityList& EntityRecognizerEntityList::operator =(JsonView json
   if(jsonValue.ValueExists("S3Uri"))
   {
     m_s3Uri = jsonValue.GetString("S3Uri");
-
     m_s3UriHasBeenSet = true;
   }
-
   return *this;
 }
 

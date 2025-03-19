@@ -23,7 +23,7 @@ namespace Model
   class GetWhatsAppMessageMediaRequest : public SocialMessagingRequest
   {
   public:
-    AWS_SOCIALMESSAGING_API GetWhatsAppMessageMediaRequest();
+    AWS_SOCIALMESSAGING_API GetWhatsAppMessageMediaRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The unique identifier for the media file.</p>
      */
-    inline const Aws::String& GetMediaId() const{ return m_mediaId; }
+    inline const Aws::String& GetMediaId() const { return m_mediaId; }
     inline bool MediaIdHasBeenSet() const { return m_mediaIdHasBeenSet; }
-    inline void SetMediaId(const Aws::String& value) { m_mediaIdHasBeenSet = true; m_mediaId = value; }
-    inline void SetMediaId(Aws::String&& value) { m_mediaIdHasBeenSet = true; m_mediaId = std::move(value); }
-    inline void SetMediaId(const char* value) { m_mediaIdHasBeenSet = true; m_mediaId.assign(value); }
-    inline GetWhatsAppMessageMediaRequest& WithMediaId(const Aws::String& value) { SetMediaId(value); return *this;}
-    inline GetWhatsAppMessageMediaRequest& WithMediaId(Aws::String&& value) { SetMediaId(std::move(value)); return *this;}
-    inline GetWhatsAppMessageMediaRequest& WithMediaId(const char* value) { SetMediaId(value); return *this;}
+    template<typename MediaIdT = Aws::String>
+    void SetMediaId(MediaIdT&& value) { m_mediaIdHasBeenSet = true; m_mediaId = std::forward<MediaIdT>(value); }
+    template<typename MediaIdT = Aws::String>
+    GetWhatsAppMessageMediaRequest& WithMediaId(MediaIdT&& value) { SetMediaId(std::forward<MediaIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,21 +54,19 @@ namespace Model
      * href="https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_GetLinkedWhatsAppBusinessAccountPhoneNumber.html">GetLinkedWhatsAppBusinessAccount</a>
      * to find a phone number's id.</p>
      */
-    inline const Aws::String& GetOriginationPhoneNumberId() const{ return m_originationPhoneNumberId; }
+    inline const Aws::String& GetOriginationPhoneNumberId() const { return m_originationPhoneNumberId; }
     inline bool OriginationPhoneNumberIdHasBeenSet() const { return m_originationPhoneNumberIdHasBeenSet; }
-    inline void SetOriginationPhoneNumberId(const Aws::String& value) { m_originationPhoneNumberIdHasBeenSet = true; m_originationPhoneNumberId = value; }
-    inline void SetOriginationPhoneNumberId(Aws::String&& value) { m_originationPhoneNumberIdHasBeenSet = true; m_originationPhoneNumberId = std::move(value); }
-    inline void SetOriginationPhoneNumberId(const char* value) { m_originationPhoneNumberIdHasBeenSet = true; m_originationPhoneNumberId.assign(value); }
-    inline GetWhatsAppMessageMediaRequest& WithOriginationPhoneNumberId(const Aws::String& value) { SetOriginationPhoneNumberId(value); return *this;}
-    inline GetWhatsAppMessageMediaRequest& WithOriginationPhoneNumberId(Aws::String&& value) { SetOriginationPhoneNumberId(std::move(value)); return *this;}
-    inline GetWhatsAppMessageMediaRequest& WithOriginationPhoneNumberId(const char* value) { SetOriginationPhoneNumberId(value); return *this;}
+    template<typename OriginationPhoneNumberIdT = Aws::String>
+    void SetOriginationPhoneNumberId(OriginationPhoneNumberIdT&& value) { m_originationPhoneNumberIdHasBeenSet = true; m_originationPhoneNumberId = std::forward<OriginationPhoneNumberIdT>(value); }
+    template<typename OriginationPhoneNumberIdT = Aws::String>
+    GetWhatsAppMessageMediaRequest& WithOriginationPhoneNumberId(OriginationPhoneNumberIdT&& value) { SetOriginationPhoneNumberId(std::forward<OriginationPhoneNumberIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Set to <code>True</code> to get only the metadata for the file.</p>
      */
-    inline bool GetMetadataOnly() const{ return m_metadataOnly; }
+    inline bool GetMetadataOnly() const { return m_metadataOnly; }
     inline bool MetadataOnlyHasBeenSet() const { return m_metadataOnlyHasBeenSet; }
     inline void SetMetadataOnly(bool value) { m_metadataOnlyHasBeenSet = true; m_metadataOnly = value; }
     inline GetWhatsAppMessageMediaRequest& WithMetadataOnly(bool value) { SetMetadataOnly(value); return *this;}
@@ -80,24 +76,24 @@ namespace Model
     /**
      * <p>The presign url of the media file.</p>
      */
-    inline const S3PresignedUrl& GetDestinationS3PresignedUrl() const{ return m_destinationS3PresignedUrl; }
+    inline const S3PresignedUrl& GetDestinationS3PresignedUrl() const { return m_destinationS3PresignedUrl; }
     inline bool DestinationS3PresignedUrlHasBeenSet() const { return m_destinationS3PresignedUrlHasBeenSet; }
-    inline void SetDestinationS3PresignedUrl(const S3PresignedUrl& value) { m_destinationS3PresignedUrlHasBeenSet = true; m_destinationS3PresignedUrl = value; }
-    inline void SetDestinationS3PresignedUrl(S3PresignedUrl&& value) { m_destinationS3PresignedUrlHasBeenSet = true; m_destinationS3PresignedUrl = std::move(value); }
-    inline GetWhatsAppMessageMediaRequest& WithDestinationS3PresignedUrl(const S3PresignedUrl& value) { SetDestinationS3PresignedUrl(value); return *this;}
-    inline GetWhatsAppMessageMediaRequest& WithDestinationS3PresignedUrl(S3PresignedUrl&& value) { SetDestinationS3PresignedUrl(std::move(value)); return *this;}
+    template<typename DestinationS3PresignedUrlT = S3PresignedUrl>
+    void SetDestinationS3PresignedUrl(DestinationS3PresignedUrlT&& value) { m_destinationS3PresignedUrlHasBeenSet = true; m_destinationS3PresignedUrl = std::forward<DestinationS3PresignedUrlT>(value); }
+    template<typename DestinationS3PresignedUrlT = S3PresignedUrl>
+    GetWhatsAppMessageMediaRequest& WithDestinationS3PresignedUrl(DestinationS3PresignedUrlT&& value) { SetDestinationS3PresignedUrl(std::forward<DestinationS3PresignedUrlT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The <code>bucketName</code> and <code>key</code> of the S3 media file.</p>
      */
-    inline const S3File& GetDestinationS3File() const{ return m_destinationS3File; }
+    inline const S3File& GetDestinationS3File() const { return m_destinationS3File; }
     inline bool DestinationS3FileHasBeenSet() const { return m_destinationS3FileHasBeenSet; }
-    inline void SetDestinationS3File(const S3File& value) { m_destinationS3FileHasBeenSet = true; m_destinationS3File = value; }
-    inline void SetDestinationS3File(S3File&& value) { m_destinationS3FileHasBeenSet = true; m_destinationS3File = std::move(value); }
-    inline GetWhatsAppMessageMediaRequest& WithDestinationS3File(const S3File& value) { SetDestinationS3File(value); return *this;}
-    inline GetWhatsAppMessageMediaRequest& WithDestinationS3File(S3File&& value) { SetDestinationS3File(std::move(value)); return *this;}
+    template<typename DestinationS3FileT = S3File>
+    void SetDestinationS3File(DestinationS3FileT&& value) { m_destinationS3FileHasBeenSet = true; m_destinationS3File = std::forward<DestinationS3FileT>(value); }
+    template<typename DestinationS3FileT = S3File>
+    GetWhatsAppMessageMediaRequest& WithDestinationS3File(DestinationS3FileT&& value) { SetDestinationS3File(std::forward<DestinationS3FileT>(value)); return *this;}
     ///@}
   private:
 
@@ -107,7 +103,7 @@ namespace Model
     Aws::String m_originationPhoneNumberId;
     bool m_originationPhoneNumberIdHasBeenSet = false;
 
-    bool m_metadataOnly;
+    bool m_metadataOnly{false};
     bool m_metadataOnlyHasBeenSet = false;
 
     S3PresignedUrl m_destinationS3PresignedUrl;

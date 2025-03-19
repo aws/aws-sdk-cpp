@@ -18,35 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-MatchmakingConfiguration::MatchmakingConfiguration() : 
-    m_nameHasBeenSet(false),
-    m_configurationArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_gameSessionQueueArnsHasBeenSet(false),
-    m_requestTimeoutSeconds(0),
-    m_requestTimeoutSecondsHasBeenSet(false),
-    m_acceptanceTimeoutSeconds(0),
-    m_acceptanceTimeoutSecondsHasBeenSet(false),
-    m_acceptanceRequired(false),
-    m_acceptanceRequiredHasBeenSet(false),
-    m_ruleSetNameHasBeenSet(false),
-    m_ruleSetArnHasBeenSet(false),
-    m_notificationTargetHasBeenSet(false),
-    m_additionalPlayerCount(0),
-    m_additionalPlayerCountHasBeenSet(false),
-    m_customEventDataHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_gamePropertiesHasBeenSet(false),
-    m_gameSessionDataHasBeenSet(false),
-    m_backfillMode(BackfillMode::NOT_SET),
-    m_backfillModeHasBeenSet(false),
-    m_flexMatchMode(FlexMatchMode::NOT_SET),
-    m_flexMatchModeHasBeenSet(false)
-{
-}
-
 MatchmakingConfiguration::MatchmakingConfiguration(JsonView jsonValue)
-  : MatchmakingConfiguration()
 {
   *this = jsonValue;
 }
@@ -56,24 +28,18 @@ MatchmakingConfiguration& MatchmakingConfiguration::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConfigurationArn"))
   {
     m_configurationArn = jsonValue.GetString("ConfigurationArn");
-
     m_configurationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GameSessionQueueArns"))
   {
     Aws::Utils::Array<JsonView> gameSessionQueueArnsJsonList = jsonValue.GetArray("GameSessionQueueArns");
@@ -83,70 +49,51 @@ MatchmakingConfiguration& MatchmakingConfiguration::operator =(JsonView jsonValu
     }
     m_gameSessionQueueArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestTimeoutSeconds"))
   {
     m_requestTimeoutSeconds = jsonValue.GetInteger("RequestTimeoutSeconds");
-
     m_requestTimeoutSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AcceptanceTimeoutSeconds"))
   {
     m_acceptanceTimeoutSeconds = jsonValue.GetInteger("AcceptanceTimeoutSeconds");
-
     m_acceptanceTimeoutSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AcceptanceRequired"))
   {
     m_acceptanceRequired = jsonValue.GetBool("AcceptanceRequired");
-
     m_acceptanceRequiredHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleSetName"))
   {
     m_ruleSetName = jsonValue.GetString("RuleSetName");
-
     m_ruleSetNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleSetArn"))
   {
     m_ruleSetArn = jsonValue.GetString("RuleSetArn");
-
     m_ruleSetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotificationTarget"))
   {
     m_notificationTarget = jsonValue.GetString("NotificationTarget");
-
     m_notificationTargetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdditionalPlayerCount"))
   {
     m_additionalPlayerCount = jsonValue.GetInteger("AdditionalPlayerCount");
-
     m_additionalPlayerCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomEventData"))
   {
     m_customEventData = jsonValue.GetString("CustomEventData");
-
     m_customEventDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GameProperties"))
   {
     Aws::Utils::Array<JsonView> gamePropertiesJsonList = jsonValue.GetArray("GameProperties");
@@ -156,28 +103,21 @@ MatchmakingConfiguration& MatchmakingConfiguration::operator =(JsonView jsonValu
     }
     m_gamePropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GameSessionData"))
   {
     m_gameSessionData = jsonValue.GetString("GameSessionData");
-
     m_gameSessionDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackfillMode"))
   {
     m_backfillMode = BackfillModeMapper::GetBackfillModeForName(jsonValue.GetString("BackfillMode"));
-
     m_backfillModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FlexMatchMode"))
   {
     m_flexMatchMode = FlexMatchModeMapper::GetFlexMatchModeForName(jsonValue.GetString("FlexMatchMode"));
-
     m_flexMatchModeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,18 +18,7 @@ namespace Pipes
 namespace Model
 {
 
-PipeLogConfiguration::PipeLogConfiguration() : 
-    m_s3LogDestinationHasBeenSet(false),
-    m_firehoseLogDestinationHasBeenSet(false),
-    m_cloudwatchLogsLogDestinationHasBeenSet(false),
-    m_level(LogLevel::NOT_SET),
-    m_levelHasBeenSet(false),
-    m_includeExecutionDataHasBeenSet(false)
-{
-}
-
 PipeLogConfiguration::PipeLogConfiguration(JsonView jsonValue)
-  : PipeLogConfiguration()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ PipeLogConfiguration& PipeLogConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3LogDestination"))
   {
     m_s3LogDestination = jsonValue.GetObject("S3LogDestination");
-
     m_s3LogDestinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FirehoseLogDestination"))
   {
     m_firehoseLogDestination = jsonValue.GetObject("FirehoseLogDestination");
-
     m_firehoseLogDestinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CloudwatchLogsLogDestination"))
   {
     m_cloudwatchLogsLogDestination = jsonValue.GetObject("CloudwatchLogsLogDestination");
-
     m_cloudwatchLogsLogDestinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Level"))
   {
     m_level = LogLevelMapper::GetLogLevelForName(jsonValue.GetString("Level"));
-
     m_levelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IncludeExecutionData"))
   {
     Aws::Utils::Array<JsonView> includeExecutionDataJsonList = jsonValue.GetArray("IncludeExecutionData");
@@ -73,7 +54,6 @@ PipeLogConfiguration& PipeLogConfiguration::operator =(JsonView jsonValue)
     }
     m_includeExecutionDataHasBeenSet = true;
   }
-
   return *this;
 }
 

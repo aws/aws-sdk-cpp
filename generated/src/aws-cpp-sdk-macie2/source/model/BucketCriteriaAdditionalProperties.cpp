@@ -18,23 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-BucketCriteriaAdditionalProperties::BucketCriteriaAdditionalProperties() : 
-    m_eqHasBeenSet(false),
-    m_gt(0),
-    m_gtHasBeenSet(false),
-    m_gte(0),
-    m_gteHasBeenSet(false),
-    m_lt(0),
-    m_ltHasBeenSet(false),
-    m_lte(0),
-    m_lteHasBeenSet(false),
-    m_neqHasBeenSet(false),
-    m_prefixHasBeenSet(false)
-{
-}
-
 BucketCriteriaAdditionalProperties::BucketCriteriaAdditionalProperties(JsonView jsonValue)
-  : BucketCriteriaAdditionalProperties()
 {
   *this = jsonValue;
 }
@@ -50,35 +34,26 @@ BucketCriteriaAdditionalProperties& BucketCriteriaAdditionalProperties::operator
     }
     m_eqHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("gt"))
   {
     m_gt = jsonValue.GetInt64("gt");
-
     m_gtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("gte"))
   {
     m_gte = jsonValue.GetInt64("gte");
-
     m_gteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lt"))
   {
     m_lt = jsonValue.GetInt64("lt");
-
     m_ltHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lte"))
   {
     m_lte = jsonValue.GetInt64("lte");
-
     m_lteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("neq"))
   {
     Aws::Utils::Array<JsonView> neqJsonList = jsonValue.GetArray("neq");
@@ -88,14 +63,11 @@ BucketCriteriaAdditionalProperties& BucketCriteriaAdditionalProperties::operator
     }
     m_neqHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("prefix"))
   {
     m_prefix = jsonValue.GetString("prefix");
-
     m_prefixHasBeenSet = true;
   }
-
   return *this;
 }
 

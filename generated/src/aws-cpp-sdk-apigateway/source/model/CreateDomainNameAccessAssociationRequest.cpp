@@ -12,15 +12,6 @@ using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDomainNameAccessAssociationRequest::CreateDomainNameAccessAssociationRequest() : 
-    m_domainNameArnHasBeenSet(false),
-    m_accessAssociationSourceType(AccessAssociationSourceType::NOT_SET),
-    m_accessAssociationSourceTypeHasBeenSet(false),
-    m_accessAssociationSourceHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateDomainNameAccessAssociationRequest::SerializePayload() const
 {
   JsonValue payload;

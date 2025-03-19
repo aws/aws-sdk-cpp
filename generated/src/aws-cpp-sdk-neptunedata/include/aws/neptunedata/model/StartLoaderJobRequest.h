@@ -27,7 +27,7 @@ namespace Model
   class StartLoaderJobRequest : public NeptunedataRequest
   {
   public:
-    AWS_NEPTUNEDATA_API StartLoaderJobRequest();
+    AWS_NEPTUNEDATA_API StartLoaderJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -58,14 +58,12 @@ namespace Model
      * and/or folders.</p> <p>The specified folder or folders can contain multiple
      * vertex files and multiple edge files.</p>
      */
-    inline const Aws::String& GetSource() const{ return m_source; }
+    inline const Aws::String& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
-    inline StartLoaderJobRequest& WithSource(const Aws::String& value) { SetSource(value); return *this;}
-    inline StartLoaderJobRequest& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
-    inline StartLoaderJobRequest& WithSource(const char* value) { SetSource(value); return *this;}
+    template<typename SourceT = Aws::String>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = Aws::String>
+    StartLoaderJobRequest& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,12 +86,10 @@ namespace Model
      * format</a>.</p> </li> <li> <p> <b> <code>turtle</code> </b> for the <a
      * href="https://www.w3.org/TR/turtle/">Turtle RDF data format</a>.</p> </li> </ul>
      */
-    inline const Format& GetFormat() const{ return m_format; }
+    inline Format GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const Format& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(Format&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline StartLoaderJobRequest& WithFormat(const Format& value) { SetFormat(value); return *this;}
-    inline StartLoaderJobRequest& WithFormat(Format&& value) { SetFormat(std::move(value)); return *this;}
+    inline void SetFormat(Format value) { m_formatHasBeenSet = true; m_format = value; }
+    inline StartLoaderJobRequest& WithFormat(Format value) { SetFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -101,12 +97,10 @@ namespace Model
      * <p>The Amazon region of the S3 bucket. This must match the Amazon Region of the
      * DB cluster.</p>
      */
-    inline const S3BucketRegion& GetS3BucketRegion() const{ return m_s3BucketRegion; }
+    inline S3BucketRegion GetS3BucketRegion() const { return m_s3BucketRegion; }
     inline bool S3BucketRegionHasBeenSet() const { return m_s3BucketRegionHasBeenSet; }
-    inline void SetS3BucketRegion(const S3BucketRegion& value) { m_s3BucketRegionHasBeenSet = true; m_s3BucketRegion = value; }
-    inline void SetS3BucketRegion(S3BucketRegion&& value) { m_s3BucketRegionHasBeenSet = true; m_s3BucketRegion = std::move(value); }
-    inline StartLoaderJobRequest& WithS3BucketRegion(const S3BucketRegion& value) { SetS3BucketRegion(value); return *this;}
-    inline StartLoaderJobRequest& WithS3BucketRegion(S3BucketRegion&& value) { SetS3BucketRegion(std::move(value)); return *this;}
+    inline void SetS3BucketRegion(S3BucketRegion value) { m_s3BucketRegionHasBeenSet = true; m_s3BucketRegion = value; }
+    inline StartLoaderJobRequest& WithS3BucketRegion(S3BucketRegion value) { SetS3BucketRegion(value); return *this;}
     ///@}
 
     ///@{
@@ -117,14 +111,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-IAM-add-role-cluster.html">Adding
      * the IAM Role to an Amazon Neptune Cluster</a>.</p>
      */
-    inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
+    inline const Aws::String& GetIamRoleArn() const { return m_iamRoleArn; }
     inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
-    inline void SetIamRoleArn(const Aws::String& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = value; }
-    inline void SetIamRoleArn(Aws::String&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::move(value); }
-    inline void SetIamRoleArn(const char* value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn.assign(value); }
-    inline StartLoaderJobRequest& WithIamRoleArn(const Aws::String& value) { SetIamRoleArn(value); return *this;}
-    inline StartLoaderJobRequest& WithIamRoleArn(Aws::String&& value) { SetIamRoleArn(std::move(value)); return *this;}
-    inline StartLoaderJobRequest& WithIamRoleArn(const char* value) { SetIamRoleArn(value); return *this;}
+    template<typename IamRoleArnT = Aws::String>
+    void SetIamRoleArn(IamRoleArnT&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::forward<IamRoleArnT>(value); }
+    template<typename IamRoleArnT = Aws::String>
+    StartLoaderJobRequest& WithIamRoleArn(IamRoleArnT&& value) { SetIamRoleArn(std::forward<IamRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -149,12 +141,10 @@ namespace Model
      * previous load job from the same source, it loads all data from the source, just
      * as in <code>NEW</code> mode.</p> </li> </ul>
      */
-    inline const Mode& GetMode() const{ return m_mode; }
+    inline Mode GetMode() const { return m_mode; }
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-    inline void SetMode(const Mode& value) { m_modeHasBeenSet = true; m_mode = value; }
-    inline void SetMode(Mode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
-    inline StartLoaderJobRequest& WithMode(const Mode& value) { SetMode(value); return *this;}
-    inline StartLoaderJobRequest& WithMode(Mode&& value) { SetMode(std::move(value)); return *this;}
+    inline void SetMode(Mode value) { m_modeHasBeenSet = true; m_mode = value; }
+    inline StartLoaderJobRequest& WithMode(Mode value) { SetMode(value); return *this;}
     ///@}
 
     ///@{
@@ -167,7 +157,7 @@ namespace Model
      * <p>When this parameter is set to <code>"TRUE"</code>, the loader stops as soon
      * as it encounters an error. Data loaded up to that point persists.</p>
      */
-    inline bool GetFailOnError() const{ return m_failOnError; }
+    inline bool GetFailOnError() const { return m_failOnError; }
     inline bool FailOnErrorHasBeenSet() const { return m_failOnErrorHasBeenSet; }
     inline void SetFailOnError(bool value) { m_failOnErrorHasBeenSet = true; m_failOnError = value; }
     inline StartLoaderJobRequest& WithFailOnError(bool value) { SetFailOnError(value); return *this;}
@@ -194,12 +184,10 @@ namespace Model
      * setting <code>parallelism</code> to a lower setting and retrying the load
      * command.</p>
      */
-    inline const Parallelism& GetParallelism() const{ return m_parallelism; }
+    inline Parallelism GetParallelism() const { return m_parallelism; }
     inline bool ParallelismHasBeenSet() const { return m_parallelismHasBeenSet; }
-    inline void SetParallelism(const Parallelism& value) { m_parallelismHasBeenSet = true; m_parallelism = value; }
-    inline void SetParallelism(Parallelism&& value) { m_parallelismHasBeenSet = true; m_parallelism = std::move(value); }
-    inline StartLoaderJobRequest& WithParallelism(const Parallelism& value) { SetParallelism(value); return *this;}
-    inline StartLoaderJobRequest& WithParallelism(Parallelism&& value) { SetParallelism(std::move(value)); return *this;}
+    inline void SetParallelism(Parallelism value) { m_parallelismHasBeenSet = true; m_parallelism = value; }
+    inline StartLoaderJobRequest& WithParallelism(Parallelism value) { SetParallelism(value); return *this;}
     ///@}
 
     ///@{
@@ -222,19 +210,16 @@ namespace Model
      * empty strings as valid property values and loads them accordingly.</p> </li>
      * </ul>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetParserConfiguration() const{ return m_parserConfiguration; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetParserConfiguration() const { return m_parserConfiguration; }
     inline bool ParserConfigurationHasBeenSet() const { return m_parserConfigurationHasBeenSet; }
-    inline void SetParserConfiguration(const Aws::Map<Aws::String, Aws::String>& value) { m_parserConfigurationHasBeenSet = true; m_parserConfiguration = value; }
-    inline void SetParserConfiguration(Aws::Map<Aws::String, Aws::String>&& value) { m_parserConfigurationHasBeenSet = true; m_parserConfiguration = std::move(value); }
-    inline StartLoaderJobRequest& WithParserConfiguration(const Aws::Map<Aws::String, Aws::String>& value) { SetParserConfiguration(value); return *this;}
-    inline StartLoaderJobRequest& WithParserConfiguration(Aws::Map<Aws::String, Aws::String>&& value) { SetParserConfiguration(std::move(value)); return *this;}
-    inline StartLoaderJobRequest& AddParserConfiguration(const Aws::String& key, const Aws::String& value) { m_parserConfigurationHasBeenSet = true; m_parserConfiguration.emplace(key, value); return *this; }
-    inline StartLoaderJobRequest& AddParserConfiguration(Aws::String&& key, const Aws::String& value) { m_parserConfigurationHasBeenSet = true; m_parserConfiguration.emplace(std::move(key), value); return *this; }
-    inline StartLoaderJobRequest& AddParserConfiguration(const Aws::String& key, Aws::String&& value) { m_parserConfigurationHasBeenSet = true; m_parserConfiguration.emplace(key, std::move(value)); return *this; }
-    inline StartLoaderJobRequest& AddParserConfiguration(Aws::String&& key, Aws::String&& value) { m_parserConfigurationHasBeenSet = true; m_parserConfiguration.emplace(std::move(key), std::move(value)); return *this; }
-    inline StartLoaderJobRequest& AddParserConfiguration(const char* key, Aws::String&& value) { m_parserConfigurationHasBeenSet = true; m_parserConfiguration.emplace(key, std::move(value)); return *this; }
-    inline StartLoaderJobRequest& AddParserConfiguration(Aws::String&& key, const char* value) { m_parserConfigurationHasBeenSet = true; m_parserConfiguration.emplace(std::move(key), value); return *this; }
-    inline StartLoaderJobRequest& AddParserConfiguration(const char* key, const char* value) { m_parserConfigurationHasBeenSet = true; m_parserConfiguration.emplace(key, value); return *this; }
+    template<typename ParserConfigurationT = Aws::Map<Aws::String, Aws::String>>
+    void SetParserConfiguration(ParserConfigurationT&& value) { m_parserConfigurationHasBeenSet = true; m_parserConfiguration = std::forward<ParserConfigurationT>(value); }
+    template<typename ParserConfigurationT = Aws::Map<Aws::String, Aws::String>>
+    StartLoaderJobRequest& WithParserConfiguration(ParserConfigurationT&& value) { SetParserConfiguration(std::forward<ParserConfigurationT>(value)); return *this;}
+    template<typename ParserConfigurationKeyT = Aws::String, typename ParserConfigurationValueT = Aws::String>
+    StartLoaderJobRequest& AddParserConfiguration(ParserConfigurationKeyT&& key, ParserConfigurationValueT&& value) {
+      m_parserConfigurationHasBeenSet = true; m_parserConfiguration.emplace(std::forward<ParserConfigurationKeyT>(key), std::forward<ParserConfigurationValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -254,7 +239,7 @@ namespace Model
      * be any one of those new values. The loader only guarantees that the existing
      * value has been replaced by one of the new ones.</p>
      */
-    inline bool GetUpdateSingleCardinalityProperties() const{ return m_updateSingleCardinalityProperties; }
+    inline bool GetUpdateSingleCardinalityProperties() const { return m_updateSingleCardinalityProperties; }
     inline bool UpdateSingleCardinalityPropertiesHasBeenSet() const { return m_updateSingleCardinalityPropertiesHasBeenSet; }
     inline void SetUpdateSingleCardinalityProperties(bool value) { m_updateSingleCardinalityPropertiesHasBeenSet = true; m_updateSingleCardinalityProperties = value; }
     inline StartLoaderJobRequest& WithUpdateSingleCardinalityProperties(bool value) { SetUpdateSingleCardinalityProperties(value); return *this;}
@@ -272,7 +257,7 @@ namespace Model
      * load job is already running.</p> <p> <i>Allowed values</i>: <code>"TRUE"</code>,
      * <code>"FALSE"</code>.</p> <p> <i>Default value</i>: <code>"FALSE"</code>.</p>
      */
-    inline bool GetQueueRequest() const{ return m_queueRequest; }
+    inline bool GetQueueRequest() const { return m_queueRequest; }
     inline bool QueueRequestHasBeenSet() const { return m_queueRequestHasBeenSet; }
     inline void SetQueueRequest(bool value) { m_queueRequestHasBeenSet = true; m_queueRequest = value; }
     inline StartLoaderJobRequest& WithQueueRequest(bool value) { SetQueueRequest(value); return *this;}
@@ -302,15 +287,14 @@ namespace Model
      * cause all requests that are directly or indirectly dependent on it to be
      * cancelled.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDependencies() const{ return m_dependencies; }
+    inline const Aws::Vector<Aws::String>& GetDependencies() const { return m_dependencies; }
     inline bool DependenciesHasBeenSet() const { return m_dependenciesHasBeenSet; }
-    inline void SetDependencies(const Aws::Vector<Aws::String>& value) { m_dependenciesHasBeenSet = true; m_dependencies = value; }
-    inline void SetDependencies(Aws::Vector<Aws::String>&& value) { m_dependenciesHasBeenSet = true; m_dependencies = std::move(value); }
-    inline StartLoaderJobRequest& WithDependencies(const Aws::Vector<Aws::String>& value) { SetDependencies(value); return *this;}
-    inline StartLoaderJobRequest& WithDependencies(Aws::Vector<Aws::String>&& value) { SetDependencies(std::move(value)); return *this;}
-    inline StartLoaderJobRequest& AddDependencies(const Aws::String& value) { m_dependenciesHasBeenSet = true; m_dependencies.push_back(value); return *this; }
-    inline StartLoaderJobRequest& AddDependencies(Aws::String&& value) { m_dependenciesHasBeenSet = true; m_dependencies.push_back(std::move(value)); return *this; }
-    inline StartLoaderJobRequest& AddDependencies(const char* value) { m_dependenciesHasBeenSet = true; m_dependencies.push_back(value); return *this; }
+    template<typename DependenciesT = Aws::Vector<Aws::String>>
+    void SetDependencies(DependenciesT&& value) { m_dependenciesHasBeenSet = true; m_dependencies = std::forward<DependenciesT>(value); }
+    template<typename DependenciesT = Aws::Vector<Aws::String>>
+    StartLoaderJobRequest& WithDependencies(DependenciesT&& value) { SetDependencies(std::forward<DependenciesT>(value)); return *this;}
+    template<typename DependenciesT = Aws::String>
+    StartLoaderJobRequest& AddDependencies(DependenciesT&& value) { m_dependenciesHasBeenSet = true; m_dependencies.emplace_back(std::forward<DependenciesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -330,7 +314,7 @@ namespace Model
      * explicitly assigned, the loader cannot resume a failed load if any relationship
      * file has had to be corrected, and must instead reload all the relationships.</p>
      */
-    inline bool GetUserProvidedEdgeIds() const{ return m_userProvidedEdgeIds; }
+    inline bool GetUserProvidedEdgeIds() const { return m_userProvidedEdgeIds; }
     inline bool UserProvidedEdgeIdsHasBeenSet() const { return m_userProvidedEdgeIdsHasBeenSet; }
     inline void SetUserProvidedEdgeIds(bool value) { m_userProvidedEdgeIdsHasBeenSet = true; m_userProvidedEdgeIds = value; }
     inline StartLoaderJobRequest& WithUserProvidedEdgeIds(bool value) { SetUserProvidedEdgeIds(value); return *this;}
@@ -340,37 +324,37 @@ namespace Model
     Aws::String m_source;
     bool m_sourceHasBeenSet = false;
 
-    Format m_format;
+    Format m_format{Format::NOT_SET};
     bool m_formatHasBeenSet = false;
 
-    S3BucketRegion m_s3BucketRegion;
+    S3BucketRegion m_s3BucketRegion{S3BucketRegion::NOT_SET};
     bool m_s3BucketRegionHasBeenSet = false;
 
     Aws::String m_iamRoleArn;
     bool m_iamRoleArnHasBeenSet = false;
 
-    Mode m_mode;
+    Mode m_mode{Mode::NOT_SET};
     bool m_modeHasBeenSet = false;
 
-    bool m_failOnError;
+    bool m_failOnError{false};
     bool m_failOnErrorHasBeenSet = false;
 
-    Parallelism m_parallelism;
+    Parallelism m_parallelism{Parallelism::NOT_SET};
     bool m_parallelismHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_parserConfiguration;
     bool m_parserConfigurationHasBeenSet = false;
 
-    bool m_updateSingleCardinalityProperties;
+    bool m_updateSingleCardinalityProperties{false};
     bool m_updateSingleCardinalityPropertiesHasBeenSet = false;
 
-    bool m_queueRequest;
+    bool m_queueRequest{false};
     bool m_queueRequestHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dependencies;
     bool m_dependenciesHasBeenSet = false;
 
-    bool m_userProvidedEdgeIds;
+    bool m_userProvidedEdgeIds{false};
     bool m_userProvidedEdgeIdsHasBeenSet = false;
   };
 

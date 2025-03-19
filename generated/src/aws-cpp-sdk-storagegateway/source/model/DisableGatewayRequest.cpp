@@ -12,11 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisableGatewayRequest::DisableGatewayRequest() : 
-    m_gatewayARNHasBeenSet(false)
-{
-}
-
 Aws::String DisableGatewayRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,14 +18,7 @@ namespace Glue
 namespace Model
 {
 
-DataCatalogEncryptionSettings::DataCatalogEncryptionSettings() : 
-    m_encryptionAtRestHasBeenSet(false),
-    m_connectionPasswordEncryptionHasBeenSet(false)
-{
-}
-
 DataCatalogEncryptionSettings::DataCatalogEncryptionSettings(JsonView jsonValue)
-  : DataCatalogEncryptionSettings()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DataCatalogEncryptionSettings& DataCatalogEncryptionSettings::operator =(JsonVie
   if(jsonValue.ValueExists("EncryptionAtRest"))
   {
     m_encryptionAtRest = jsonValue.GetObject("EncryptionAtRest");
-
     m_encryptionAtRestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionPasswordEncryption"))
   {
     m_connectionPasswordEncryption = jsonValue.GetObject("ConnectionPasswordEncryption");
-
     m_connectionPasswordEncryptionHasBeenSet = true;
   }
-
   return *this;
 }
 

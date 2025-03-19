@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetVoiceConnectorEmergencyCallingConfigurationResult::GetVoiceConnectorEmergencyCallingConfigurationResult()
-{
-}
-
 GetVoiceConnectorEmergencyCallingConfigurationResult::GetVoiceConnectorEmergencyCallingConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetVoiceConnectorEmergencyCallingConfigurationResult& GetVoiceConnectorEmergency
   if(jsonValue.ValueExists("EmergencyCallingConfiguration"))
   {
     m_emergencyCallingConfiguration = jsonValue.GetObject("EmergencyCallingConfiguration");
-
+    m_emergencyCallingConfigurationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

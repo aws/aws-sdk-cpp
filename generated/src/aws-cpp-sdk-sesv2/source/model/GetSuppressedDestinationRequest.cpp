@@ -12,11 +12,6 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSuppressedDestinationRequest::GetSuppressedDestinationRequest() : 
-    m_emailAddressHasBeenSet(false)
-{
-}
-
 Aws::String GetSuppressedDestinationRequest::SerializePayload() const
 {
   return {};

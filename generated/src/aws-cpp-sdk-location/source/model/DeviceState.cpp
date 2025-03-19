@@ -18,19 +18,7 @@ namespace LocationService
 namespace Model
 {
 
-DeviceState::DeviceState() : 
-    m_deviceIdHasBeenSet(false),
-    m_sampleTimeHasBeenSet(false),
-    m_positionHasBeenSet(false),
-    m_accuracyHasBeenSet(false),
-    m_ipv4AddressHasBeenSet(false),
-    m_wiFiAccessPointsHasBeenSet(false),
-    m_cellSignalsHasBeenSet(false)
-{
-}
-
 DeviceState::DeviceState(JsonView jsonValue)
-  : DeviceState()
 {
   *this = jsonValue;
 }
@@ -40,17 +28,13 @@ DeviceState& DeviceState::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DeviceId"))
   {
     m_deviceId = jsonValue.GetString("DeviceId");
-
     m_deviceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SampleTime"))
   {
     m_sampleTime = jsonValue.GetString("SampleTime");
-
     m_sampleTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Position"))
   {
     Aws::Utils::Array<JsonView> positionJsonList = jsonValue.GetArray("Position");
@@ -60,21 +44,16 @@ DeviceState& DeviceState::operator =(JsonView jsonValue)
     }
     m_positionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Accuracy"))
   {
     m_accuracy = jsonValue.GetObject("Accuracy");
-
     m_accuracyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ipv4Address"))
   {
     m_ipv4Address = jsonValue.GetString("Ipv4Address");
-
     m_ipv4AddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WiFiAccessPoints"))
   {
     Aws::Utils::Array<JsonView> wiFiAccessPointsJsonList = jsonValue.GetArray("WiFiAccessPoints");
@@ -84,14 +63,11 @@ DeviceState& DeviceState::operator =(JsonView jsonValue)
     }
     m_wiFiAccessPointsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CellSignals"))
   {
     m_cellSignals = jsonValue.GetObject("CellSignals");
-
     m_cellSignalsHasBeenSet = true;
   }
-
   return *this;
 }
 

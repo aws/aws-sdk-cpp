@@ -10,14 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-CreateGeneratedTemplateRequest::CreateGeneratedTemplateRequest() : 
-    m_resourcesHasBeenSet(false),
-    m_generatedTemplateNameHasBeenSet(false),
-    m_stackNameHasBeenSet(false),
-    m_templateConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String CreateGeneratedTemplateRequest::SerializePayload() const
 {
   Aws::StringStream ss;

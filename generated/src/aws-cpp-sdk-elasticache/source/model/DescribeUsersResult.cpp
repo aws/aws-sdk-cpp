@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeUsersResult::DescribeUsersResult()
-{
-}
-
 DescribeUsersResult::DescribeUsersResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ DescribeUsersResult& DescribeUsersResult::operator =(const Aws::AmazonWebService
     if(!usersNode.IsNull())
     {
       XmlNode usersMember = usersNode.FirstChild("member");
+      m_usersHasBeenSet = !usersMember.IsNull();
       while(!usersMember.IsNull())
       {
         m_users.push_back(usersMember);
         usersMember = usersMember.NextNode("member");
       }
 
+      m_usersHasBeenSet = true;
     }
     XmlNode markerNode = resultNode.FirstChild("Marker");
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElastiCache::Model::DescribeUsersResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

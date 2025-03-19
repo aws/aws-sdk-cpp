@@ -18,14 +18,7 @@ namespace MediaConnect
 namespace Model
 {
 
-BridgeSource::BridgeSource() : 
-    m_flowSourceHasBeenSet(false),
-    m_networkSourceHasBeenSet(false)
-{
-}
-
 BridgeSource::BridgeSource(JsonView jsonValue)
-  : BridgeSource()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BridgeSource& BridgeSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("flowSource"))
   {
     m_flowSource = jsonValue.GetObject("flowSource");
-
     m_flowSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkSource"))
   {
     m_networkSource = jsonValue.GetObject("networkSource");
-
     m_networkSourceHasBeenSet = true;
   }
-
   return *this;
 }
 

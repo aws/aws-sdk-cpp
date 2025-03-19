@@ -22,7 +22,7 @@ namespace Model
   class DeleteModelRequest : public FraudDetectorRequest
   {
   public:
-    AWS_FRAUDDETECTOR_API DeleteModelRequest();
+    AWS_FRAUDDETECTOR_API DeleteModelRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,33 +39,29 @@ namespace Model
     /**
      * <p>The model ID of the model to delete.</p>
      */
-    inline const Aws::String& GetModelId() const{ return m_modelId; }
+    inline const Aws::String& GetModelId() const { return m_modelId; }
     inline bool ModelIdHasBeenSet() const { return m_modelIdHasBeenSet; }
-    inline void SetModelId(const Aws::String& value) { m_modelIdHasBeenSet = true; m_modelId = value; }
-    inline void SetModelId(Aws::String&& value) { m_modelIdHasBeenSet = true; m_modelId = std::move(value); }
-    inline void SetModelId(const char* value) { m_modelIdHasBeenSet = true; m_modelId.assign(value); }
-    inline DeleteModelRequest& WithModelId(const Aws::String& value) { SetModelId(value); return *this;}
-    inline DeleteModelRequest& WithModelId(Aws::String&& value) { SetModelId(std::move(value)); return *this;}
-    inline DeleteModelRequest& WithModelId(const char* value) { SetModelId(value); return *this;}
+    template<typename ModelIdT = Aws::String>
+    void SetModelId(ModelIdT&& value) { m_modelIdHasBeenSet = true; m_modelId = std::forward<ModelIdT>(value); }
+    template<typename ModelIdT = Aws::String>
+    DeleteModelRequest& WithModelId(ModelIdT&& value) { SetModelId(std::forward<ModelIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The model type of the model to delete.</p>
      */
-    inline const ModelTypeEnum& GetModelType() const{ return m_modelType; }
+    inline ModelTypeEnum GetModelType() const { return m_modelType; }
     inline bool ModelTypeHasBeenSet() const { return m_modelTypeHasBeenSet; }
-    inline void SetModelType(const ModelTypeEnum& value) { m_modelTypeHasBeenSet = true; m_modelType = value; }
-    inline void SetModelType(ModelTypeEnum&& value) { m_modelTypeHasBeenSet = true; m_modelType = std::move(value); }
-    inline DeleteModelRequest& WithModelType(const ModelTypeEnum& value) { SetModelType(value); return *this;}
-    inline DeleteModelRequest& WithModelType(ModelTypeEnum&& value) { SetModelType(std::move(value)); return *this;}
+    inline void SetModelType(ModelTypeEnum value) { m_modelTypeHasBeenSet = true; m_modelType = value; }
+    inline DeleteModelRequest& WithModelType(ModelTypeEnum value) { SetModelType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_modelId;
     bool m_modelIdHasBeenSet = false;
 
-    ModelTypeEnum m_modelType;
+    ModelTypeEnum m_modelType{ModelTypeEnum::NOT_SET};
     bool m_modelTypeHasBeenSet = false;
   };
 

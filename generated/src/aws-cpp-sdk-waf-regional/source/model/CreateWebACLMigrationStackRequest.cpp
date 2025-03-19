@@ -12,14 +12,6 @@ using namespace Aws::WAFRegional::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateWebACLMigrationStackRequest::CreateWebACLMigrationStackRequest() : 
-    m_webACLIdHasBeenSet(false),
-    m_s3BucketNameHasBeenSet(false),
-    m_ignoreUnsupportedType(false),
-    m_ignoreUnsupportedTypeHasBeenSet(false)
-{
-}
-
 Aws::String CreateWebACLMigrationStackRequest::SerializePayload() const
 {
   JsonValue payload;

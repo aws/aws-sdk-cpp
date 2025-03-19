@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutEmailIdentityDkimSigningAttributesResult::PutEmailIdentityDkimSigningAttributesResult() : 
-    m_dkimStatus(DkimStatus::NOT_SET)
-{
-}
-
 PutEmailIdentityDkimSigningAttributesResult::PutEmailIdentityDkimSigningAttributesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : PutEmailIdentityDkimSigningAttributesResult()
 {
   *this = result;
 }
@@ -34,9 +28,8 @@ PutEmailIdentityDkimSigningAttributesResult& PutEmailIdentityDkimSigningAttribut
   if(jsonValue.ValueExists("DkimStatus"))
   {
     m_dkimStatus = DkimStatusMapper::GetDkimStatusForName(jsonValue.GetString("DkimStatus"));
-
+    m_dkimStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DkimTokens"))
   {
     Aws::Utils::Array<JsonView> dkimTokensJsonList = jsonValue.GetArray("DkimTokens");
@@ -44,14 +37,15 @@ PutEmailIdentityDkimSigningAttributesResult& PutEmailIdentityDkimSigningAttribut
     {
       m_dkimTokens.push_back(dkimTokensJsonList[dkimTokensIndex].AsString());
     }
+    m_dkimTokensHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

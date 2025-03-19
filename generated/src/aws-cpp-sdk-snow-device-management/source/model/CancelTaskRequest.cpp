@@ -12,11 +12,6 @@ using namespace Aws::SnowDeviceManagement::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelTaskRequest::CancelTaskRequest() : 
-    m_taskIdHasBeenSet(false)
-{
-}
-
 Aws::String CancelTaskRequest::SerializePayload() const
 {
   return {};

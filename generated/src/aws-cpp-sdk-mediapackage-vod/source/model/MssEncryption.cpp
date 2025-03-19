@@ -18,13 +18,7 @@ namespace MediaPackageVod
 namespace Model
 {
 
-MssEncryption::MssEncryption() : 
-    m_spekeKeyProviderHasBeenSet(false)
-{
-}
-
 MssEncryption::MssEncryption(JsonView jsonValue)
-  : MssEncryption()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MssEncryption& MssEncryption::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("spekeKeyProvider"))
   {
     m_spekeKeyProvider = jsonValue.GetObject("spekeKeyProvider");
-
     m_spekeKeyProviderHasBeenSet = true;
   }
-
   return *this;
 }
 

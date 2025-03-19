@@ -12,14 +12,6 @@ using namespace Aws::LexModelsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeBotRecommendationRequest::DescribeBotRecommendationRequest() : 
-    m_botIdHasBeenSet(false),
-    m_botVersionHasBeenSet(false),
-    m_localeIdHasBeenSet(false),
-    m_botRecommendationIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeBotRecommendationRequest::SerializePayload() const
 {
   return {};

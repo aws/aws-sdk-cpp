@@ -18,14 +18,7 @@ namespace SFN
 namespace Model
 {
 
-HistoryEventExecutionDataDetails::HistoryEventExecutionDataDetails() : 
-    m_truncated(false),
-    m_truncatedHasBeenSet(false)
-{
-}
-
 HistoryEventExecutionDataDetails::HistoryEventExecutionDataDetails(JsonView jsonValue)
-  : HistoryEventExecutionDataDetails()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ HistoryEventExecutionDataDetails& HistoryEventExecutionDataDetails::operator =(J
   if(jsonValue.ValueExists("truncated"))
   {
     m_truncated = jsonValue.GetBool("truncated");
-
     m_truncatedHasBeenSet = true;
   }
-
   return *this;
 }
 

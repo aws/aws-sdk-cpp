@@ -12,12 +12,6 @@ using namespace Aws::IoTWireless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateWirelessDeviceImportTaskRequest::UpdateWirelessDeviceImportTaskRequest() : 
-    m_idHasBeenSet(false),
-    m_sidewalkHasBeenSet(false)
-{
-}
-
 Aws::String UpdateWirelessDeviceImportTaskRequest::SerializePayload() const
 {
   JsonValue payload;

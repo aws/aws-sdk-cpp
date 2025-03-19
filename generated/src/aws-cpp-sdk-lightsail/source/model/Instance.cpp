@@ -18,37 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-Instance::Instance() : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_supportCodeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_blueprintIdHasBeenSet(false),
-    m_blueprintNameHasBeenSet(false),
-    m_bundleIdHasBeenSet(false),
-    m_addOnsHasBeenSet(false),
-    m_isStaticIp(false),
-    m_isStaticIpHasBeenSet(false),
-    m_privateIpAddressHasBeenSet(false),
-    m_publicIpAddressHasBeenSet(false),
-    m_ipv6AddressesHasBeenSet(false),
-    m_ipAddressType(IpAddressType::NOT_SET),
-    m_ipAddressTypeHasBeenSet(false),
-    m_hardwareHasBeenSet(false),
-    m_networkingHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_sshKeyNameHasBeenSet(false),
-    m_metadataOptionsHasBeenSet(false)
-{
-}
-
 Instance::Instance(JsonView jsonValue)
-  : Instance()
 {
   *this = jsonValue;
 }
@@ -58,45 +28,33 @@ Instance& Instance::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("supportCode"))
   {
     m_supportCode = jsonValue.GetString("supportCode");
-
     m_supportCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("location"))
   {
     m_location = jsonValue.GetObject("location");
-
     m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("resourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -106,28 +64,21 @@ Instance& Instance::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("blueprintId"))
   {
     m_blueprintId = jsonValue.GetString("blueprintId");
-
     m_blueprintIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("blueprintName"))
   {
     m_blueprintName = jsonValue.GetString("blueprintName");
-
     m_blueprintNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bundleId"))
   {
     m_bundleId = jsonValue.GetString("bundleId");
-
     m_bundleIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("addOns"))
   {
     Aws::Utils::Array<JsonView> addOnsJsonList = jsonValue.GetArray("addOns");
@@ -137,28 +88,21 @@ Instance& Instance::operator =(JsonView jsonValue)
     }
     m_addOnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isStaticIp"))
   {
     m_isStaticIp = jsonValue.GetBool("isStaticIp");
-
     m_isStaticIpHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("privateIpAddress"))
   {
     m_privateIpAddress = jsonValue.GetString("privateIpAddress");
-
     m_privateIpAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("publicIpAddress"))
   {
     m_publicIpAddress = jsonValue.GetString("publicIpAddress");
-
     m_publicIpAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ipv6Addresses"))
   {
     Aws::Utils::Array<JsonView> ipv6AddressesJsonList = jsonValue.GetArray("ipv6Addresses");
@@ -168,56 +112,41 @@ Instance& Instance::operator =(JsonView jsonValue)
     }
     m_ipv6AddressesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ipAddressType"))
   {
     m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(jsonValue.GetString("ipAddressType"));
-
     m_ipAddressTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hardware"))
   {
     m_hardware = jsonValue.GetObject("hardware");
-
     m_hardwareHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networking"))
   {
     m_networking = jsonValue.GetObject("networking");
-
     m_networkingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = jsonValue.GetObject("state");
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("username"))
   {
     m_username = jsonValue.GetString("username");
-
     m_usernameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sshKeyName"))
   {
     m_sshKeyName = jsonValue.GetString("sshKeyName");
-
     m_sshKeyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metadataOptions"))
   {
     m_metadataOptions = jsonValue.GetObject("metadataOptions");
-
     m_metadataOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

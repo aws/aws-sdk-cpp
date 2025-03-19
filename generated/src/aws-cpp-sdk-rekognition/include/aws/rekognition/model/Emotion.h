@@ -36,7 +36,7 @@ namespace Model
   class Emotion
   {
   public:
-    AWS_REKOGNITION_API Emotion();
+    AWS_REKOGNITION_API Emotion() = default;
     AWS_REKOGNITION_API Emotion(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Emotion& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,29 +46,27 @@ namespace Model
     /**
      * <p>Type of emotion detected.</p>
      */
-    inline const EmotionName& GetType() const{ return m_type; }
+    inline EmotionName GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const EmotionName& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(EmotionName&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline Emotion& WithType(const EmotionName& value) { SetType(value); return *this;}
-    inline Emotion& WithType(EmotionName&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(EmotionName value) { m_typeHasBeenSet = true; m_type = value; }
+    inline Emotion& WithType(EmotionName value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Level of confidence in the determination.</p>
      */
-    inline double GetConfidence() const{ return m_confidence; }
+    inline double GetConfidence() const { return m_confidence; }
     inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
     inline void SetConfidence(double value) { m_confidenceHasBeenSet = true; m_confidence = value; }
     inline Emotion& WithConfidence(double value) { SetConfidence(value); return *this;}
     ///@}
   private:
 
-    EmotionName m_type;
+    EmotionName m_type{EmotionName::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    double m_confidence;
+    double m_confidence{0.0};
     bool m_confidenceHasBeenSet = false;
   };
 

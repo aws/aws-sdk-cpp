@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeConnectorResult::DescribeConnectorResult() : 
-    m_connectorState(ConnectorState::NOT_SET)
-{
-}
-
 DescribeConnectorResult::DescribeConnectorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeConnectorResult()
 {
   *this = result;
 }
@@ -34,15 +28,13 @@ DescribeConnectorResult& DescribeConnectorResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("capacity"))
   {
     m_capacity = jsonValue.GetObject("capacity");
-
+    m_capacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectorArn"))
   {
     m_connectorArn = jsonValue.GetString("connectorArn");
-
+    m_connectorArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectorConfiguration"))
   {
     Aws::Map<Aws::String, JsonView> connectorConfigurationJsonMap = jsonValue.GetObject("connectorConfiguration").GetAllObjects();
@@ -50,68 +42,58 @@ DescribeConnectorResult& DescribeConnectorResult::operator =(const Aws::AmazonWe
     {
       m_connectorConfiguration[connectorConfigurationItem.first] = connectorConfigurationItem.second.AsString();
     }
+    m_connectorConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectorDescription"))
   {
     m_connectorDescription = jsonValue.GetString("connectorDescription");
-
+    m_connectorDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectorName"))
   {
     m_connectorName = jsonValue.GetString("connectorName");
-
+    m_connectorNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectorState"))
   {
     m_connectorState = ConnectorStateMapper::GetConnectorStateForName(jsonValue.GetString("connectorState"));
-
+    m_connectorStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("currentVersion"))
   {
     m_currentVersion = jsonValue.GetString("currentVersion");
-
+    m_currentVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kafkaCluster"))
   {
     m_kafkaCluster = jsonValue.GetObject("kafkaCluster");
-
+    m_kafkaClusterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kafkaClusterClientAuthentication"))
   {
     m_kafkaClusterClientAuthentication = jsonValue.GetObject("kafkaClusterClientAuthentication");
-
+    m_kafkaClusterClientAuthenticationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kafkaClusterEncryptionInTransit"))
   {
     m_kafkaClusterEncryptionInTransit = jsonValue.GetObject("kafkaClusterEncryptionInTransit");
-
+    m_kafkaClusterEncryptionInTransitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kafkaConnectVersion"))
   {
     m_kafkaConnectVersion = jsonValue.GetString("kafkaConnectVersion");
-
+    m_kafkaConnectVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logDelivery"))
   {
     m_logDelivery = jsonValue.GetObject("logDelivery");
-
+    m_logDeliveryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("plugins"))
   {
     Aws::Utils::Array<JsonView> pluginsJsonList = jsonValue.GetArray("plugins");
@@ -119,32 +101,30 @@ DescribeConnectorResult& DescribeConnectorResult::operator =(const Aws::AmazonWe
     {
       m_plugins.push_back(pluginsJsonList[pluginsIndex].AsObject());
     }
+    m_pluginsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceExecutionRoleArn"))
   {
     m_serviceExecutionRoleArn = jsonValue.GetString("serviceExecutionRoleArn");
-
+    m_serviceExecutionRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workerConfiguration"))
   {
     m_workerConfiguration = jsonValue.GetObject("workerConfiguration");
-
+    m_workerConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stateDescription"))
   {
     m_stateDescription = jsonValue.GetObject("stateDescription");
-
+    m_stateDescriptionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

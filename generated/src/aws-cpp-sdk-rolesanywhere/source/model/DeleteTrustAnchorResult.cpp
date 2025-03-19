@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteTrustAnchorResult::DeleteTrustAnchorResult()
-{
-}
-
 DeleteTrustAnchorResult::DeleteTrustAnchorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DeleteTrustAnchorResult& DeleteTrustAnchorResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("trustAnchor"))
   {
     m_trustAnchor = jsonValue.GetObject("trustAnchor");
-
+    m_trustAnchorHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -35,7 +35,7 @@ namespace Model
   class InputDataConfig
   {
   public:
-    AWS_TRANSCRIBESERVICE_API InputDataConfig();
+    AWS_TRANSCRIBESERVICE_API InputDataConfig() = default;
     AWS_TRANSCRIBESERVICE_API InputDataConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API InputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * custom language model.</p> <p>Here's an example URI path:
      * <code>s3://DOC-EXAMPLE-BUCKET/my-model-training-data/</code> </p>
      */
-    inline const Aws::String& GetS3Uri() const{ return m_s3Uri; }
+    inline const Aws::String& GetS3Uri() const { return m_s3Uri; }
     inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }
-    inline void SetS3Uri(const Aws::String& value) { m_s3UriHasBeenSet = true; m_s3Uri = value; }
-    inline void SetS3Uri(Aws::String&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::move(value); }
-    inline void SetS3Uri(const char* value) { m_s3UriHasBeenSet = true; m_s3Uri.assign(value); }
-    inline InputDataConfig& WithS3Uri(const Aws::String& value) { SetS3Uri(value); return *this;}
-    inline InputDataConfig& WithS3Uri(Aws::String&& value) { SetS3Uri(std::move(value)); return *this;}
-    inline InputDataConfig& WithS3Uri(const char* value) { SetS3Uri(value); return *this;}
+    template<typename S3UriT = Aws::String>
+    void SetS3Uri(S3UriT&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::forward<S3UriT>(value); }
+    template<typename S3UriT = Aws::String>
+    InputDataConfig& WithS3Uri(S3UriT&& value) { SetS3Uri(std::forward<S3UriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * custom language model.</p> <p>Here's an example URI path:
      * <code>s3://DOC-EXAMPLE-BUCKET/my-model-tuning-data/</code> </p>
      */
-    inline const Aws::String& GetTuningDataS3Uri() const{ return m_tuningDataS3Uri; }
+    inline const Aws::String& GetTuningDataS3Uri() const { return m_tuningDataS3Uri; }
     inline bool TuningDataS3UriHasBeenSet() const { return m_tuningDataS3UriHasBeenSet; }
-    inline void SetTuningDataS3Uri(const Aws::String& value) { m_tuningDataS3UriHasBeenSet = true; m_tuningDataS3Uri = value; }
-    inline void SetTuningDataS3Uri(Aws::String&& value) { m_tuningDataS3UriHasBeenSet = true; m_tuningDataS3Uri = std::move(value); }
-    inline void SetTuningDataS3Uri(const char* value) { m_tuningDataS3UriHasBeenSet = true; m_tuningDataS3Uri.assign(value); }
-    inline InputDataConfig& WithTuningDataS3Uri(const Aws::String& value) { SetTuningDataS3Uri(value); return *this;}
-    inline InputDataConfig& WithTuningDataS3Uri(Aws::String&& value) { SetTuningDataS3Uri(std::move(value)); return *this;}
-    inline InputDataConfig& WithTuningDataS3Uri(const char* value) { SetTuningDataS3Uri(value); return *this;}
+    template<typename TuningDataS3UriT = Aws::String>
+    void SetTuningDataS3Uri(TuningDataS3UriT&& value) { m_tuningDataS3UriHasBeenSet = true; m_tuningDataS3Uri = std::forward<TuningDataS3UriT>(value); }
+    template<typename TuningDataS3UriT = Aws::String>
+    InputDataConfig& WithTuningDataS3Uri(TuningDataS3UriT&& value) { SetTuningDataS3Uri(std::forward<TuningDataS3UriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,14 +81,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
      * ARNs</a>.</p>
      */
-    inline const Aws::String& GetDataAccessRoleArn() const{ return m_dataAccessRoleArn; }
+    inline const Aws::String& GetDataAccessRoleArn() const { return m_dataAccessRoleArn; }
     inline bool DataAccessRoleArnHasBeenSet() const { return m_dataAccessRoleArnHasBeenSet; }
-    inline void SetDataAccessRoleArn(const Aws::String& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = value; }
-    inline void SetDataAccessRoleArn(Aws::String&& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = std::move(value); }
-    inline void SetDataAccessRoleArn(const char* value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn.assign(value); }
-    inline InputDataConfig& WithDataAccessRoleArn(const Aws::String& value) { SetDataAccessRoleArn(value); return *this;}
-    inline InputDataConfig& WithDataAccessRoleArn(Aws::String&& value) { SetDataAccessRoleArn(std::move(value)); return *this;}
-    inline InputDataConfig& WithDataAccessRoleArn(const char* value) { SetDataAccessRoleArn(value); return *this;}
+    template<typename DataAccessRoleArnT = Aws::String>
+    void SetDataAccessRoleArn(DataAccessRoleArnT&& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = std::forward<DataAccessRoleArnT>(value); }
+    template<typename DataAccessRoleArnT = Aws::String>
+    InputDataConfig& WithDataAccessRoleArn(DataAccessRoleArnT&& value) { SetDataAccessRoleArn(std::forward<DataAccessRoleArnT>(value)); return *this;}
     ///@}
   private:
 

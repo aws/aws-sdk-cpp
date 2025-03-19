@@ -12,18 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateRuleRequest::UpdateRuleRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_detailHasBeenSet(false),
-    m_domainIdentifierHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_includeChildDomainUnits(false),
-    m_includeChildDomainUnitsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_scopeHasBeenSet(false)
-{
-}
-
 Aws::String UpdateRuleRequest::SerializePayload() const
 {
   JsonValue payload;

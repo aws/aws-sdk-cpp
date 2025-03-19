@@ -10,11 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-DescribeAccountLimitsRequest::DescribeAccountLimitsRequest() : 
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAccountLimitsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

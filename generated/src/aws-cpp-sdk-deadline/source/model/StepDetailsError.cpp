@@ -18,17 +18,7 @@ namespace deadline
 namespace Model
 {
 
-StepDetailsError::StepDetailsError() : 
-    m_jobIdHasBeenSet(false),
-    m_stepIdHasBeenSet(false),
-    m_code(JobEntityErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 StepDetailsError::StepDetailsError(JsonView jsonValue)
-  : StepDetailsError()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ StepDetailsError& StepDetailsError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("jobId"))
   {
     m_jobId = jsonValue.GetString("jobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stepId"))
   {
     m_stepId = jsonValue.GetString("stepId");
-
     m_stepIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("code"))
   {
     m_code = JobEntityErrorCodeMapper::GetJobEntityErrorCodeForName(jsonValue.GetString("code"));
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

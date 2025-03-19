@@ -12,11 +12,6 @@ using namespace Aws::Backup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteBackupVaultLockConfigurationRequest::DeleteBackupVaultLockConfigurationRequest() : 
-    m_backupVaultNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteBackupVaultLockConfigurationRequest::SerializePayload() const
 {
   return {};

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAccountSettingsResult::GetAccountSettingsResult()
-{
-}
-
 GetAccountSettingsResult::GetAccountSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ GetAccountSettingsResult& GetAccountSettingsResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("AccountLimit"))
   {
     m_accountLimit = jsonValue.GetObject("AccountLimit");
-
+    m_accountLimitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountUsage"))
   {
     m_accountUsage = jsonValue.GetObject("AccountUsage");
-
+    m_accountUsageHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

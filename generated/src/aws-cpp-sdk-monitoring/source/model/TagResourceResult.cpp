@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-TagResourceResult::TagResourceResult()
-{
-}
-
 TagResourceResult::TagResourceResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -43,6 +39,7 @@ TagResourceResult& TagResourceResult::operator =(const Aws::AmazonWebServiceResu
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::CloudWatch::Model::TagResourceResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

@@ -18,16 +18,7 @@ namespace SWF
 namespace Model
 {
 
-ChildWorkflowExecutionStartedEventAttributes::ChildWorkflowExecutionStartedEventAttributes() : 
-    m_workflowExecutionHasBeenSet(false),
-    m_workflowTypeHasBeenSet(false),
-    m_initiatedEventId(0),
-    m_initiatedEventIdHasBeenSet(false)
-{
-}
-
 ChildWorkflowExecutionStartedEventAttributes::ChildWorkflowExecutionStartedEventAttributes(JsonView jsonValue)
-  : ChildWorkflowExecutionStartedEventAttributes()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ChildWorkflowExecutionStartedEventAttributes& ChildWorkflowExecutionStartedEvent
   if(jsonValue.ValueExists("workflowExecution"))
   {
     m_workflowExecution = jsonValue.GetObject("workflowExecution");
-
     m_workflowExecutionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workflowType"))
   {
     m_workflowType = jsonValue.GetObject("workflowType");
-
     m_workflowTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("initiatedEventId"))
   {
     m_initiatedEventId = jsonValue.GetInt64("initiatedEventId");
-
     m_initiatedEventIdHasBeenSet = true;
   }
-
   return *this;
 }
 

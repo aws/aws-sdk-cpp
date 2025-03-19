@@ -36,7 +36,7 @@ namespace Model
   class UpgradeHistory
   {
   public:
-    AWS_OPENSEARCHSERVICE_API UpgradeHistory();
+    AWS_OPENSEARCHSERVICE_API UpgradeHistory() = default;
     AWS_OPENSEARCHSERVICE_API UpgradeHistory(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API UpgradeHistory& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>A string that describes the upgrade.</p>
      */
-    inline const Aws::String& GetUpgradeName() const{ return m_upgradeName; }
+    inline const Aws::String& GetUpgradeName() const { return m_upgradeName; }
     inline bool UpgradeNameHasBeenSet() const { return m_upgradeNameHasBeenSet; }
-    inline void SetUpgradeName(const Aws::String& value) { m_upgradeNameHasBeenSet = true; m_upgradeName = value; }
-    inline void SetUpgradeName(Aws::String&& value) { m_upgradeNameHasBeenSet = true; m_upgradeName = std::move(value); }
-    inline void SetUpgradeName(const char* value) { m_upgradeNameHasBeenSet = true; m_upgradeName.assign(value); }
-    inline UpgradeHistory& WithUpgradeName(const Aws::String& value) { SetUpgradeName(value); return *this;}
-    inline UpgradeHistory& WithUpgradeName(Aws::String&& value) { SetUpgradeName(std::move(value)); return *this;}
-    inline UpgradeHistory& WithUpgradeName(const char* value) { SetUpgradeName(value); return *this;}
+    template<typename UpgradeNameT = Aws::String>
+    void SetUpgradeName(UpgradeNameT&& value) { m_upgradeNameHasBeenSet = true; m_upgradeName = std::forward<UpgradeNameT>(value); }
+    template<typename UpgradeNameT = Aws::String>
+    UpgradeHistory& WithUpgradeName(UpgradeNameT&& value) { SetUpgradeName(std::forward<UpgradeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +59,12 @@ namespace Model
      * <p>UTC timestamp at which the upgrade API call was made, in the format
      * <code>yyyy-MM-ddTHH:mm:ssZ</code>.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTimestamp() const{ return m_startTimestamp; }
+    inline const Aws::Utils::DateTime& GetStartTimestamp() const { return m_startTimestamp; }
     inline bool StartTimestampHasBeenSet() const { return m_startTimestampHasBeenSet; }
-    inline void SetStartTimestamp(const Aws::Utils::DateTime& value) { m_startTimestampHasBeenSet = true; m_startTimestamp = value; }
-    inline void SetStartTimestamp(Aws::Utils::DateTime&& value) { m_startTimestampHasBeenSet = true; m_startTimestamp = std::move(value); }
-    inline UpgradeHistory& WithStartTimestamp(const Aws::Utils::DateTime& value) { SetStartTimestamp(value); return *this;}
-    inline UpgradeHistory& WithStartTimestamp(Aws::Utils::DateTime&& value) { SetStartTimestamp(std::move(value)); return *this;}
+    template<typename StartTimestampT = Aws::Utils::DateTime>
+    void SetStartTimestamp(StartTimestampT&& value) { m_startTimestampHasBeenSet = true; m_startTimestamp = std::forward<StartTimestampT>(value); }
+    template<typename StartTimestampT = Aws::Utils::DateTime>
+    UpgradeHistory& WithStartTimestamp(StartTimestampT&& value) { SetStartTimestamp(std::forward<StartTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,12 +73,10 @@ namespace Model
      * values: </p> <ul> <li> <p>In Progress</p> </li> <li> <p>Succeeded</p> </li> <li>
      * <p>Succeeded with Issues</p> </li> <li> <p>Failed</p> </li> </ul>
      */
-    inline const UpgradeStatus& GetUpgradeStatus() const{ return m_upgradeStatus; }
+    inline UpgradeStatus GetUpgradeStatus() const { return m_upgradeStatus; }
     inline bool UpgradeStatusHasBeenSet() const { return m_upgradeStatusHasBeenSet; }
-    inline void SetUpgradeStatus(const UpgradeStatus& value) { m_upgradeStatusHasBeenSet = true; m_upgradeStatus = value; }
-    inline void SetUpgradeStatus(UpgradeStatus&& value) { m_upgradeStatusHasBeenSet = true; m_upgradeStatus = std::move(value); }
-    inline UpgradeHistory& WithUpgradeStatus(const UpgradeStatus& value) { SetUpgradeStatus(value); return *this;}
-    inline UpgradeHistory& WithUpgradeStatus(UpgradeStatus&& value) { SetUpgradeStatus(std::move(value)); return *this;}
+    inline void SetUpgradeStatus(UpgradeStatus value) { m_upgradeStatusHasBeenSet = true; m_upgradeStatus = value; }
+    inline UpgradeHistory& WithUpgradeStatus(UpgradeStatus value) { SetUpgradeStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -88,24 +84,24 @@ namespace Model
      * <p>A list of each step performed as part of a specific upgrade or upgrade
      * eligibility check.</p>
      */
-    inline const Aws::Vector<UpgradeStepItem>& GetStepsList() const{ return m_stepsList; }
+    inline const Aws::Vector<UpgradeStepItem>& GetStepsList() const { return m_stepsList; }
     inline bool StepsListHasBeenSet() const { return m_stepsListHasBeenSet; }
-    inline void SetStepsList(const Aws::Vector<UpgradeStepItem>& value) { m_stepsListHasBeenSet = true; m_stepsList = value; }
-    inline void SetStepsList(Aws::Vector<UpgradeStepItem>&& value) { m_stepsListHasBeenSet = true; m_stepsList = std::move(value); }
-    inline UpgradeHistory& WithStepsList(const Aws::Vector<UpgradeStepItem>& value) { SetStepsList(value); return *this;}
-    inline UpgradeHistory& WithStepsList(Aws::Vector<UpgradeStepItem>&& value) { SetStepsList(std::move(value)); return *this;}
-    inline UpgradeHistory& AddStepsList(const UpgradeStepItem& value) { m_stepsListHasBeenSet = true; m_stepsList.push_back(value); return *this; }
-    inline UpgradeHistory& AddStepsList(UpgradeStepItem&& value) { m_stepsListHasBeenSet = true; m_stepsList.push_back(std::move(value)); return *this; }
+    template<typename StepsListT = Aws::Vector<UpgradeStepItem>>
+    void SetStepsList(StepsListT&& value) { m_stepsListHasBeenSet = true; m_stepsList = std::forward<StepsListT>(value); }
+    template<typename StepsListT = Aws::Vector<UpgradeStepItem>>
+    UpgradeHistory& WithStepsList(StepsListT&& value) { SetStepsList(std::forward<StepsListT>(value)); return *this;}
+    template<typename StepsListT = UpgradeStepItem>
+    UpgradeHistory& AddStepsList(StepsListT&& value) { m_stepsListHasBeenSet = true; m_stepsList.emplace_back(std::forward<StepsListT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_upgradeName;
     bool m_upgradeNameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTimestamp;
+    Aws::Utils::DateTime m_startTimestamp{};
     bool m_startTimestampHasBeenSet = false;
 
-    UpgradeStatus m_upgradeStatus;
+    UpgradeStatus m_upgradeStatus{UpgradeStatus::NOT_SET};
     bool m_upgradeStatusHasBeenSet = false;
 
     Aws::Vector<UpgradeStepItem> m_stepsList;

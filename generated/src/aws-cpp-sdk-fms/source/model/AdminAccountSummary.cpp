@@ -18,17 +18,7 @@ namespace FMS
 namespace Model
 {
 
-AdminAccountSummary::AdminAccountSummary() : 
-    m_adminAccountHasBeenSet(false),
-    m_defaultAdmin(false),
-    m_defaultAdminHasBeenSet(false),
-    m_status(OrganizationStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 AdminAccountSummary::AdminAccountSummary(JsonView jsonValue)
-  : AdminAccountSummary()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ AdminAccountSummary& AdminAccountSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AdminAccount"))
   {
     m_adminAccount = jsonValue.GetString("AdminAccount");
-
     m_adminAccountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultAdmin"))
   {
     m_defaultAdmin = jsonValue.GetBool("DefaultAdmin");
-
     m_defaultAdminHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = OrganizationStatusMapper::GetOrganizationStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

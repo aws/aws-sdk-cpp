@@ -23,7 +23,7 @@ namespace Model
   class UpdateMarketplaceModelEndpointRequest : public BedrockRequest
   {
   public:
-    AWS_BEDROCK_API UpdateMarketplaceModelEndpointRequest();
+    AWS_BEDROCK_API UpdateMarketplaceModelEndpointRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the endpoint you want to update.</p>
      */
-    inline const Aws::String& GetEndpointArn() const{ return m_endpointArn; }
+    inline const Aws::String& GetEndpointArn() const { return m_endpointArn; }
     inline bool EndpointArnHasBeenSet() const { return m_endpointArnHasBeenSet; }
-    inline void SetEndpointArn(const Aws::String& value) { m_endpointArnHasBeenSet = true; m_endpointArn = value; }
-    inline void SetEndpointArn(Aws::String&& value) { m_endpointArnHasBeenSet = true; m_endpointArn = std::move(value); }
-    inline void SetEndpointArn(const char* value) { m_endpointArnHasBeenSet = true; m_endpointArn.assign(value); }
-    inline UpdateMarketplaceModelEndpointRequest& WithEndpointArn(const Aws::String& value) { SetEndpointArn(value); return *this;}
-    inline UpdateMarketplaceModelEndpointRequest& WithEndpointArn(Aws::String&& value) { SetEndpointArn(std::move(value)); return *this;}
-    inline UpdateMarketplaceModelEndpointRequest& WithEndpointArn(const char* value) { SetEndpointArn(value); return *this;}
+    template<typename EndpointArnT = Aws::String>
+    void SetEndpointArn(EndpointArnT&& value) { m_endpointArnHasBeenSet = true; m_endpointArn = std::forward<EndpointArnT>(value); }
+    template<typename EndpointArnT = Aws::String>
+    UpdateMarketplaceModelEndpointRequest& WithEndpointArn(EndpointArnT&& value) { SetEndpointArn(std::forward<EndpointArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,12 +51,12 @@ namespace Model
      * <p>The new configuration for the endpoint, including the number and type of
      * instances to use.</p>
      */
-    inline const EndpointConfig& GetEndpointConfig() const{ return m_endpointConfig; }
+    inline const EndpointConfig& GetEndpointConfig() const { return m_endpointConfig; }
     inline bool EndpointConfigHasBeenSet() const { return m_endpointConfigHasBeenSet; }
-    inline void SetEndpointConfig(const EndpointConfig& value) { m_endpointConfigHasBeenSet = true; m_endpointConfig = value; }
-    inline void SetEndpointConfig(EndpointConfig&& value) { m_endpointConfigHasBeenSet = true; m_endpointConfig = std::move(value); }
-    inline UpdateMarketplaceModelEndpointRequest& WithEndpointConfig(const EndpointConfig& value) { SetEndpointConfig(value); return *this;}
-    inline UpdateMarketplaceModelEndpointRequest& WithEndpointConfig(EndpointConfig&& value) { SetEndpointConfig(std::move(value)); return *this;}
+    template<typename EndpointConfigT = EndpointConfig>
+    void SetEndpointConfig(EndpointConfigT&& value) { m_endpointConfigHasBeenSet = true; m_endpointConfig = std::forward<EndpointConfigT>(value); }
+    template<typename EndpointConfigT = EndpointConfig>
+    UpdateMarketplaceModelEndpointRequest& WithEndpointConfig(EndpointConfigT&& value) { SetEndpointConfig(std::forward<EndpointConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +67,12 @@ namespace Model
      * you're not using the Amazon Web Services SDK or the CLI, you must provide this
      * token or the action will fail.</p>
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline UpdateMarketplaceModelEndpointRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline UpdateMarketplaceModelEndpointRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline UpdateMarketplaceModelEndpointRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    UpdateMarketplaceModelEndpointRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
   private:
 

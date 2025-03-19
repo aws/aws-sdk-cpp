@@ -18,14 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-Region::Region() : 
-    m_regionNameHasBeenSet(false),
-    m_regionNamePathHasBeenSet(false)
-{
-}
-
 Region::Region(JsonView jsonValue)
-  : Region()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Region& Region::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("regionName"))
   {
     m_regionName = jsonValue.GetString("regionName");
-
     m_regionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("regionNamePath"))
   {
     m_regionNamePath = jsonValue.GetString("regionNamePath");
-
     m_regionNamePathHasBeenSet = true;
   }
-
   return *this;
 }
 

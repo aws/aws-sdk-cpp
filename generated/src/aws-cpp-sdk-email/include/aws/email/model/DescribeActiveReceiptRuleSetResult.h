@@ -36,7 +36,7 @@ namespace Model
   class DescribeActiveReceiptRuleSetResult
   {
   public:
-    AWS_SES_API DescribeActiveReceiptRuleSetResult();
+    AWS_SES_API DescribeActiveReceiptRuleSetResult() = default;
     AWS_SES_API DescribeActiveReceiptRuleSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_SES_API DescribeActiveReceiptRuleSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -46,41 +46,44 @@ namespace Model
      * <p>The metadata for the currently active receipt rule set. The metadata consists
      * of the rule set name and a timestamp of when the rule set was created.</p>
      */
-    inline const ReceiptRuleSetMetadata& GetMetadata() const{ return m_metadata; }
-    inline void SetMetadata(const ReceiptRuleSetMetadata& value) { m_metadata = value; }
-    inline void SetMetadata(ReceiptRuleSetMetadata&& value) { m_metadata = std::move(value); }
-    inline DescribeActiveReceiptRuleSetResult& WithMetadata(const ReceiptRuleSetMetadata& value) { SetMetadata(value); return *this;}
-    inline DescribeActiveReceiptRuleSetResult& WithMetadata(ReceiptRuleSetMetadata&& value) { SetMetadata(std::move(value)); return *this;}
+    inline const ReceiptRuleSetMetadata& GetMetadata() const { return m_metadata; }
+    template<typename MetadataT = ReceiptRuleSetMetadata>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = ReceiptRuleSetMetadata>
+    DescribeActiveReceiptRuleSetResult& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The receipt rules that belong to the active rule set.</p>
      */
-    inline const Aws::Vector<ReceiptRule>& GetRules() const{ return m_rules; }
-    inline void SetRules(const Aws::Vector<ReceiptRule>& value) { m_rules = value; }
-    inline void SetRules(Aws::Vector<ReceiptRule>&& value) { m_rules = std::move(value); }
-    inline DescribeActiveReceiptRuleSetResult& WithRules(const Aws::Vector<ReceiptRule>& value) { SetRules(value); return *this;}
-    inline DescribeActiveReceiptRuleSetResult& WithRules(Aws::Vector<ReceiptRule>&& value) { SetRules(std::move(value)); return *this;}
-    inline DescribeActiveReceiptRuleSetResult& AddRules(const ReceiptRule& value) { m_rules.push_back(value); return *this; }
-    inline DescribeActiveReceiptRuleSetResult& AddRules(ReceiptRule&& value) { m_rules.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ReceiptRule>& GetRules() const { return m_rules; }
+    template<typename RulesT = Aws::Vector<ReceiptRule>>
+    void SetRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules = std::forward<RulesT>(value); }
+    template<typename RulesT = Aws::Vector<ReceiptRule>>
+    DescribeActiveReceiptRuleSetResult& WithRules(RulesT&& value) { SetRules(std::forward<RulesT>(value)); return *this;}
+    template<typename RulesT = ReceiptRule>
+    DescribeActiveReceiptRuleSetResult& AddRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules.emplace_back(std::forward<RulesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeActiveReceiptRuleSetResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeActiveReceiptRuleSetResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeActiveReceiptRuleSetResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     ReceiptRuleSetMetadata m_metadata;
+    bool m_metadataHasBeenSet = false;
 
     Aws::Vector<ReceiptRule> m_rules;
+    bool m_rulesHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

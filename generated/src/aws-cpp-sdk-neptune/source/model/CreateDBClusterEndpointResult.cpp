@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateDBClusterEndpointResult::CreateDBClusterEndpointResult()
-{
-}
-
 CreateDBClusterEndpointResult::CreateDBClusterEndpointResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,69 +38,82 @@ CreateDBClusterEndpointResult& CreateDBClusterEndpointResult::operator =(const A
     if(!dBClusterEndpointIdentifierNode.IsNull())
     {
       m_dBClusterEndpointIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(dBClusterEndpointIdentifierNode.GetText());
+      m_dBClusterEndpointIdentifierHasBeenSet = true;
     }
     XmlNode dBClusterIdentifierNode = resultNode.FirstChild("DBClusterIdentifier");
     if(!dBClusterIdentifierNode.IsNull())
     {
       m_dBClusterIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(dBClusterIdentifierNode.GetText());
+      m_dBClusterIdentifierHasBeenSet = true;
     }
     XmlNode dBClusterEndpointResourceIdentifierNode = resultNode.FirstChild("DBClusterEndpointResourceIdentifier");
     if(!dBClusterEndpointResourceIdentifierNode.IsNull())
     {
       m_dBClusterEndpointResourceIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(dBClusterEndpointResourceIdentifierNode.GetText());
+      m_dBClusterEndpointResourceIdentifierHasBeenSet = true;
     }
     XmlNode endpointNode = resultNode.FirstChild("Endpoint");
     if(!endpointNode.IsNull())
     {
       m_endpoint = Aws::Utils::Xml::DecodeEscapedXmlText(endpointNode.GetText());
+      m_endpointHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
+      m_statusHasBeenSet = true;
     }
     XmlNode endpointTypeNode = resultNode.FirstChild("EndpointType");
     if(!endpointTypeNode.IsNull())
     {
       m_endpointType = Aws::Utils::Xml::DecodeEscapedXmlText(endpointTypeNode.GetText());
+      m_endpointTypeHasBeenSet = true;
     }
     XmlNode customEndpointTypeNode = resultNode.FirstChild("CustomEndpointType");
     if(!customEndpointTypeNode.IsNull())
     {
       m_customEndpointType = Aws::Utils::Xml::DecodeEscapedXmlText(customEndpointTypeNode.GetText());
+      m_customEndpointTypeHasBeenSet = true;
     }
     XmlNode staticMembersNode = resultNode.FirstChild("StaticMembers");
     if(!staticMembersNode.IsNull())
     {
       XmlNode staticMembersMember = staticMembersNode.FirstChild("member");
+      m_staticMembersHasBeenSet = !staticMembersMember.IsNull();
       while(!staticMembersMember.IsNull())
       {
         m_staticMembers.push_back(staticMembersMember.GetText());
         staticMembersMember = staticMembersMember.NextNode("member");
       }
 
+      m_staticMembersHasBeenSet = true;
     }
     XmlNode excludedMembersNode = resultNode.FirstChild("ExcludedMembers");
     if(!excludedMembersNode.IsNull())
     {
       XmlNode excludedMembersMember = excludedMembersNode.FirstChild("member");
+      m_excludedMembersHasBeenSet = !excludedMembersMember.IsNull();
       while(!excludedMembersMember.IsNull())
       {
         m_excludedMembers.push_back(excludedMembersMember.GetText());
         excludedMembersMember = excludedMembersMember.NextNode("member");
       }
 
+      m_excludedMembersHasBeenSet = true;
     }
     XmlNode dBClusterEndpointArnNode = resultNode.FirstChild("DBClusterEndpointArn");
     if(!dBClusterEndpointArnNode.IsNull())
     {
       m_dBClusterEndpointArn = Aws::Utils::Xml::DecodeEscapedXmlText(dBClusterEndpointArnNode.GetText());
+      m_dBClusterEndpointArnHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::Neptune::Model::CreateDBClusterEndpointResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

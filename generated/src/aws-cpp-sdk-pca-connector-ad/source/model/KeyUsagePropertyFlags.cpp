@@ -18,18 +18,7 @@ namespace PcaConnectorAd
 namespace Model
 {
 
-KeyUsagePropertyFlags::KeyUsagePropertyFlags() : 
-    m_decrypt(false),
-    m_decryptHasBeenSet(false),
-    m_keyAgreement(false),
-    m_keyAgreementHasBeenSet(false),
-    m_sign(false),
-    m_signHasBeenSet(false)
-{
-}
-
 KeyUsagePropertyFlags::KeyUsagePropertyFlags(JsonView jsonValue)
-  : KeyUsagePropertyFlags()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ KeyUsagePropertyFlags& KeyUsagePropertyFlags::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Decrypt"))
   {
     m_decrypt = jsonValue.GetBool("Decrypt");
-
     m_decryptHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyAgreement"))
   {
     m_keyAgreement = jsonValue.GetBool("KeyAgreement");
-
     m_keyAgreementHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Sign"))
   {
     m_sign = jsonValue.GetBool("Sign");
-
     m_signHasBeenSet = true;
   }
-
   return *this;
 }
 

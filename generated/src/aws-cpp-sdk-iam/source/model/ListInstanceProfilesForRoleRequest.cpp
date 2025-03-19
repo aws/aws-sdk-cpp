@@ -10,14 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-ListInstanceProfilesForRoleRequest::ListInstanceProfilesForRoleRequest() : 
-    m_roleNameHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false)
-{
-}
-
 Aws::String ListInstanceProfilesForRoleRequest::SerializePayload() const
 {
   Aws::StringStream ss;

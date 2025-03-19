@@ -18,16 +18,7 @@ namespace ChimeSDKMeetings
 namespace Model
 {
 
-Attendee::Attendee() : 
-    m_externalUserIdHasBeenSet(false),
-    m_attendeeIdHasBeenSet(false),
-    m_joinTokenHasBeenSet(false),
-    m_capabilitiesHasBeenSet(false)
-{
-}
-
 Attendee::Attendee(JsonView jsonValue)
-  : Attendee()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ Attendee& Attendee::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ExternalUserId"))
   {
     m_externalUserId = jsonValue.GetString("ExternalUserId");
-
     m_externalUserIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttendeeId"))
   {
     m_attendeeId = jsonValue.GetString("AttendeeId");
-
     m_attendeeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JoinToken"))
   {
     m_joinToken = jsonValue.GetString("JoinToken");
-
     m_joinTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Capabilities"))
   {
     m_capabilities = jsonValue.GetObject("Capabilities");
-
     m_capabilitiesHasBeenSet = true;
   }
-
   return *this;
 }
 

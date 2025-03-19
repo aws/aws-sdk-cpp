@@ -35,7 +35,7 @@ namespace Model
   class RerankDocument
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API RerankDocument();
+    AWS_BEDROCKAGENTRUNTIME_API RerankDocument() = default;
     AWS_BEDROCKAGENTRUNTIME_API RerankDocument(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API RerankDocument& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,36 +45,34 @@ namespace Model
     /**
      * <p>Contains a JSON document to rerank.</p>
      */
-    inline Aws::Utils::DocumentView GetJsonDocument() const{ return m_jsonDocument; }
+    inline Aws::Utils::DocumentView GetJsonDocument() const { return m_jsonDocument; }
     inline bool JsonDocumentHasBeenSet() const { return m_jsonDocumentHasBeenSet; }
-    inline void SetJsonDocument(const Aws::Utils::Document& value) { m_jsonDocumentHasBeenSet = true; m_jsonDocument = value; }
-    inline void SetJsonDocument(Aws::Utils::Document&& value) { m_jsonDocumentHasBeenSet = true; m_jsonDocument = std::move(value); }
-    inline RerankDocument& WithJsonDocument(const Aws::Utils::Document& value) { SetJsonDocument(value); return *this;}
-    inline RerankDocument& WithJsonDocument(Aws::Utils::Document&& value) { SetJsonDocument(std::move(value)); return *this;}
+    template<typename JsonDocumentT = Aws::Utils::Document>
+    void SetJsonDocument(JsonDocumentT&& value) { m_jsonDocumentHasBeenSet = true; m_jsonDocument = std::forward<JsonDocumentT>(value); }
+    template<typename JsonDocumentT = Aws::Utils::Document>
+    RerankDocument& WithJsonDocument(JsonDocumentT&& value) { SetJsonDocument(std::forward<JsonDocumentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains information about a text document to rerank.</p>
      */
-    inline const RerankTextDocument& GetTextDocument() const{ return m_textDocument; }
+    inline const RerankTextDocument& GetTextDocument() const { return m_textDocument; }
     inline bool TextDocumentHasBeenSet() const { return m_textDocumentHasBeenSet; }
-    inline void SetTextDocument(const RerankTextDocument& value) { m_textDocumentHasBeenSet = true; m_textDocument = value; }
-    inline void SetTextDocument(RerankTextDocument&& value) { m_textDocumentHasBeenSet = true; m_textDocument = std::move(value); }
-    inline RerankDocument& WithTextDocument(const RerankTextDocument& value) { SetTextDocument(value); return *this;}
-    inline RerankDocument& WithTextDocument(RerankTextDocument&& value) { SetTextDocument(std::move(value)); return *this;}
+    template<typename TextDocumentT = RerankTextDocument>
+    void SetTextDocument(TextDocumentT&& value) { m_textDocumentHasBeenSet = true; m_textDocument = std::forward<TextDocumentT>(value); }
+    template<typename TextDocumentT = RerankTextDocument>
+    RerankDocument& WithTextDocument(TextDocumentT&& value) { SetTextDocument(std::forward<TextDocumentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of document to rerank.</p>
      */
-    inline const RerankDocumentType& GetType() const{ return m_type; }
+    inline RerankDocumentType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const RerankDocumentType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(RerankDocumentType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline RerankDocument& WithType(const RerankDocumentType& value) { SetType(value); return *this;}
-    inline RerankDocument& WithType(RerankDocumentType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(RerankDocumentType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline RerankDocument& WithType(RerankDocumentType value) { SetType(value); return *this;}
     ///@}
   private:
 
@@ -84,7 +82,7 @@ namespace Model
     RerankTextDocument m_textDocument;
     bool m_textDocumentHasBeenSet = false;
 
-    RerankDocumentType m_type;
+    RerankDocumentType m_type{RerankDocumentType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

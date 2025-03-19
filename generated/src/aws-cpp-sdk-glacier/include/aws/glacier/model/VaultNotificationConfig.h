@@ -33,7 +33,7 @@ namespace Model
   class VaultNotificationConfig
   {
   public:
-    AWS_GLACIER_API VaultNotificationConfig();
+    AWS_GLACIER_API VaultNotificationConfig() = default;
     AWS_GLACIER_API VaultNotificationConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLACIER_API VaultNotificationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLACIER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The Amazon Simple Notification Service (Amazon SNS) topic Amazon Resource
      * Name (ARN).</p>
      */
-    inline const Aws::String& GetSNSTopic() const{ return m_sNSTopic; }
+    inline const Aws::String& GetSNSTopic() const { return m_sNSTopic; }
     inline bool SNSTopicHasBeenSet() const { return m_sNSTopicHasBeenSet; }
-    inline void SetSNSTopic(const Aws::String& value) { m_sNSTopicHasBeenSet = true; m_sNSTopic = value; }
-    inline void SetSNSTopic(Aws::String&& value) { m_sNSTopicHasBeenSet = true; m_sNSTopic = std::move(value); }
-    inline void SetSNSTopic(const char* value) { m_sNSTopicHasBeenSet = true; m_sNSTopic.assign(value); }
-    inline VaultNotificationConfig& WithSNSTopic(const Aws::String& value) { SetSNSTopic(value); return *this;}
-    inline VaultNotificationConfig& WithSNSTopic(Aws::String&& value) { SetSNSTopic(std::move(value)); return *this;}
-    inline VaultNotificationConfig& WithSNSTopic(const char* value) { SetSNSTopic(value); return *this;}
+    template<typename SNSTopicT = Aws::String>
+    void SetSNSTopic(SNSTopicT&& value) { m_sNSTopicHasBeenSet = true; m_sNSTopic = std::forward<SNSTopicT>(value); }
+    template<typename SNSTopicT = Aws::String>
+    VaultNotificationConfig& WithSNSTopic(SNSTopicT&& value) { SetSNSTopic(std::forward<SNSTopicT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,15 +57,14 @@ namespace Model
      * <p>A list of one or more events for which Amazon S3 Glacier will send a
      * notification to the specified Amazon SNS topic.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetEvents() const{ return m_events; }
+    inline const Aws::Vector<Aws::String>& GetEvents() const { return m_events; }
     inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
-    inline void SetEvents(const Aws::Vector<Aws::String>& value) { m_eventsHasBeenSet = true; m_events = value; }
-    inline void SetEvents(Aws::Vector<Aws::String>&& value) { m_eventsHasBeenSet = true; m_events = std::move(value); }
-    inline VaultNotificationConfig& WithEvents(const Aws::Vector<Aws::String>& value) { SetEvents(value); return *this;}
-    inline VaultNotificationConfig& WithEvents(Aws::Vector<Aws::String>&& value) { SetEvents(std::move(value)); return *this;}
-    inline VaultNotificationConfig& AddEvents(const Aws::String& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
-    inline VaultNotificationConfig& AddEvents(Aws::String&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
-    inline VaultNotificationConfig& AddEvents(const char* value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
+    template<typename EventsT = Aws::Vector<Aws::String>>
+    void SetEvents(EventsT&& value) { m_eventsHasBeenSet = true; m_events = std::forward<EventsT>(value); }
+    template<typename EventsT = Aws::Vector<Aws::String>>
+    VaultNotificationConfig& WithEvents(EventsT&& value) { SetEvents(std::forward<EventsT>(value)); return *this;}
+    template<typename EventsT = Aws::String>
+    VaultNotificationConfig& AddEvents(EventsT&& value) { m_eventsHasBeenSet = true; m_events.emplace_back(std::forward<EventsT>(value)); return *this; }
     ///@}
   private:
 

@@ -35,7 +35,7 @@ namespace Model
   class RDSDataSpec
   {
   public:
-    AWS_MACHINELEARNING_API RDSDataSpec();
+    AWS_MACHINELEARNING_API RDSDataSpec() = default;
     AWS_MACHINELEARNING_API RDSDataSpec(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACHINELEARNING_API RDSDataSpec& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACHINELEARNING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
      * <p>Describes the <code>DatabaseName</code> and <code>InstanceIdentifier</code>
      * of an Amazon RDS database.</p>
      */
-    inline const RDSDatabase& GetDatabaseInformation() const{ return m_databaseInformation; }
+    inline const RDSDatabase& GetDatabaseInformation() const { return m_databaseInformation; }
     inline bool DatabaseInformationHasBeenSet() const { return m_databaseInformationHasBeenSet; }
-    inline void SetDatabaseInformation(const RDSDatabase& value) { m_databaseInformationHasBeenSet = true; m_databaseInformation = value; }
-    inline void SetDatabaseInformation(RDSDatabase&& value) { m_databaseInformationHasBeenSet = true; m_databaseInformation = std::move(value); }
-    inline RDSDataSpec& WithDatabaseInformation(const RDSDatabase& value) { SetDatabaseInformation(value); return *this;}
-    inline RDSDataSpec& WithDatabaseInformation(RDSDatabase&& value) { SetDatabaseInformation(std::move(value)); return *this;}
+    template<typename DatabaseInformationT = RDSDatabase>
+    void SetDatabaseInformation(DatabaseInformationT&& value) { m_databaseInformationHasBeenSet = true; m_databaseInformation = std::forward<DatabaseInformationT>(value); }
+    template<typename DatabaseInformationT = RDSDatabase>
+    RDSDataSpec& WithDatabaseInformation(DatabaseInformationT&& value) { SetDatabaseInformation(std::forward<DatabaseInformationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +59,12 @@ namespace Model
      * <p>The query that is used to retrieve the observation data for the
      * <code>DataSource</code>.</p>
      */
-    inline const Aws::String& GetSelectSqlQuery() const{ return m_selectSqlQuery; }
+    inline const Aws::String& GetSelectSqlQuery() const { return m_selectSqlQuery; }
     inline bool SelectSqlQueryHasBeenSet() const { return m_selectSqlQueryHasBeenSet; }
-    inline void SetSelectSqlQuery(const Aws::String& value) { m_selectSqlQueryHasBeenSet = true; m_selectSqlQuery = value; }
-    inline void SetSelectSqlQuery(Aws::String&& value) { m_selectSqlQueryHasBeenSet = true; m_selectSqlQuery = std::move(value); }
-    inline void SetSelectSqlQuery(const char* value) { m_selectSqlQueryHasBeenSet = true; m_selectSqlQuery.assign(value); }
-    inline RDSDataSpec& WithSelectSqlQuery(const Aws::String& value) { SetSelectSqlQuery(value); return *this;}
-    inline RDSDataSpec& WithSelectSqlQuery(Aws::String&& value) { SetSelectSqlQuery(std::move(value)); return *this;}
-    inline RDSDataSpec& WithSelectSqlQuery(const char* value) { SetSelectSqlQuery(value); return *this;}
+    template<typename SelectSqlQueryT = Aws::String>
+    void SetSelectSqlQuery(SelectSqlQueryT&& value) { m_selectSqlQueryHasBeenSet = true; m_selectSqlQuery = std::forward<SelectSqlQueryT>(value); }
+    template<typename SelectSqlQueryT = Aws::String>
+    RDSDataSpec& WithSelectSqlQuery(SelectSqlQueryT&& value) { SetSelectSqlQuery(std::forward<SelectSqlQueryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,12 +72,12 @@ namespace Model
      * <p>The AWS Identity and Access Management (IAM) credentials that are used
      * connect to the Amazon RDS database.</p>
      */
-    inline const RDSDatabaseCredentials& GetDatabaseCredentials() const{ return m_databaseCredentials; }
+    inline const RDSDatabaseCredentials& GetDatabaseCredentials() const { return m_databaseCredentials; }
     inline bool DatabaseCredentialsHasBeenSet() const { return m_databaseCredentialsHasBeenSet; }
-    inline void SetDatabaseCredentials(const RDSDatabaseCredentials& value) { m_databaseCredentialsHasBeenSet = true; m_databaseCredentials = value; }
-    inline void SetDatabaseCredentials(RDSDatabaseCredentials&& value) { m_databaseCredentialsHasBeenSet = true; m_databaseCredentials = std::move(value); }
-    inline RDSDataSpec& WithDatabaseCredentials(const RDSDatabaseCredentials& value) { SetDatabaseCredentials(value); return *this;}
-    inline RDSDataSpec& WithDatabaseCredentials(RDSDatabaseCredentials&& value) { SetDatabaseCredentials(std::move(value)); return *this;}
+    template<typename DatabaseCredentialsT = RDSDatabaseCredentials>
+    void SetDatabaseCredentials(DatabaseCredentialsT&& value) { m_databaseCredentialsHasBeenSet = true; m_databaseCredentials = std::forward<DatabaseCredentialsT>(value); }
+    template<typename DatabaseCredentialsT = RDSDatabaseCredentials>
+    RDSDataSpec& WithDatabaseCredentials(DatabaseCredentialsT&& value) { SetDatabaseCredentials(std::forward<DatabaseCredentialsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,14 +85,12 @@ namespace Model
      * <p>The Amazon S3 location for staging Amazon RDS data. The data retrieved from
      * Amazon RDS using <code>SelectSqlQuery</code> is stored in this location.</p>
      */
-    inline const Aws::String& GetS3StagingLocation() const{ return m_s3StagingLocation; }
+    inline const Aws::String& GetS3StagingLocation() const { return m_s3StagingLocation; }
     inline bool S3StagingLocationHasBeenSet() const { return m_s3StagingLocationHasBeenSet; }
-    inline void SetS3StagingLocation(const Aws::String& value) { m_s3StagingLocationHasBeenSet = true; m_s3StagingLocation = value; }
-    inline void SetS3StagingLocation(Aws::String&& value) { m_s3StagingLocationHasBeenSet = true; m_s3StagingLocation = std::move(value); }
-    inline void SetS3StagingLocation(const char* value) { m_s3StagingLocationHasBeenSet = true; m_s3StagingLocation.assign(value); }
-    inline RDSDataSpec& WithS3StagingLocation(const Aws::String& value) { SetS3StagingLocation(value); return *this;}
-    inline RDSDataSpec& WithS3StagingLocation(Aws::String&& value) { SetS3StagingLocation(std::move(value)); return *this;}
-    inline RDSDataSpec& WithS3StagingLocation(const char* value) { SetS3StagingLocation(value); return *this;}
+    template<typename S3StagingLocationT = Aws::String>
+    void SetS3StagingLocation(S3StagingLocationT&& value) { m_s3StagingLocationHasBeenSet = true; m_s3StagingLocation = std::forward<S3StagingLocationT>(value); }
+    template<typename S3StagingLocationT = Aws::String>
+    RDSDataSpec& WithS3StagingLocation(S3StagingLocationT&& value) { SetS3StagingLocation(std::forward<S3StagingLocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -159,14 +155,12 @@ namespace Model
      * "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv",
      * "complement":"true"}}</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetDataRearrangement() const{ return m_dataRearrangement; }
+    inline const Aws::String& GetDataRearrangement() const { return m_dataRearrangement; }
     inline bool DataRearrangementHasBeenSet() const { return m_dataRearrangementHasBeenSet; }
-    inline void SetDataRearrangement(const Aws::String& value) { m_dataRearrangementHasBeenSet = true; m_dataRearrangement = value; }
-    inline void SetDataRearrangement(Aws::String&& value) { m_dataRearrangementHasBeenSet = true; m_dataRearrangement = std::move(value); }
-    inline void SetDataRearrangement(const char* value) { m_dataRearrangementHasBeenSet = true; m_dataRearrangement.assign(value); }
-    inline RDSDataSpec& WithDataRearrangement(const Aws::String& value) { SetDataRearrangement(value); return *this;}
-    inline RDSDataSpec& WithDataRearrangement(Aws::String&& value) { SetDataRearrangement(std::move(value)); return *this;}
-    inline RDSDataSpec& WithDataRearrangement(const char* value) { SetDataRearrangement(value); return *this;}
+    template<typename DataRearrangementT = Aws::String>
+    void SetDataRearrangement(DataRearrangementT&& value) { m_dataRearrangementHasBeenSet = true; m_dataRearrangement = std::forward<DataRearrangementT>(value); }
+    template<typename DataRearrangementT = Aws::String>
+    RDSDataSpec& WithDataRearrangement(DataRearrangementT&& value) { SetDataRearrangement(std::forward<DataRearrangementT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -190,28 +184,24 @@ namespace Model
      * "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],</p>
      * <p>"excludedVariableNames": [ "F6" ] }</p>
      */
-    inline const Aws::String& GetDataSchema() const{ return m_dataSchema; }
+    inline const Aws::String& GetDataSchema() const { return m_dataSchema; }
     inline bool DataSchemaHasBeenSet() const { return m_dataSchemaHasBeenSet; }
-    inline void SetDataSchema(const Aws::String& value) { m_dataSchemaHasBeenSet = true; m_dataSchema = value; }
-    inline void SetDataSchema(Aws::String&& value) { m_dataSchemaHasBeenSet = true; m_dataSchema = std::move(value); }
-    inline void SetDataSchema(const char* value) { m_dataSchemaHasBeenSet = true; m_dataSchema.assign(value); }
-    inline RDSDataSpec& WithDataSchema(const Aws::String& value) { SetDataSchema(value); return *this;}
-    inline RDSDataSpec& WithDataSchema(Aws::String&& value) { SetDataSchema(std::move(value)); return *this;}
-    inline RDSDataSpec& WithDataSchema(const char* value) { SetDataSchema(value); return *this;}
+    template<typename DataSchemaT = Aws::String>
+    void SetDataSchema(DataSchemaT&& value) { m_dataSchemaHasBeenSet = true; m_dataSchema = std::forward<DataSchemaT>(value); }
+    template<typename DataSchemaT = Aws::String>
+    RDSDataSpec& WithDataSchema(DataSchemaT&& value) { SetDataSchema(std::forward<DataSchemaT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon S3 location of the <code>DataSchema</code>. </p>
      */
-    inline const Aws::String& GetDataSchemaUri() const{ return m_dataSchemaUri; }
+    inline const Aws::String& GetDataSchemaUri() const { return m_dataSchemaUri; }
     inline bool DataSchemaUriHasBeenSet() const { return m_dataSchemaUriHasBeenSet; }
-    inline void SetDataSchemaUri(const Aws::String& value) { m_dataSchemaUriHasBeenSet = true; m_dataSchemaUri = value; }
-    inline void SetDataSchemaUri(Aws::String&& value) { m_dataSchemaUriHasBeenSet = true; m_dataSchemaUri = std::move(value); }
-    inline void SetDataSchemaUri(const char* value) { m_dataSchemaUriHasBeenSet = true; m_dataSchemaUri.assign(value); }
-    inline RDSDataSpec& WithDataSchemaUri(const Aws::String& value) { SetDataSchemaUri(value); return *this;}
-    inline RDSDataSpec& WithDataSchemaUri(Aws::String&& value) { SetDataSchemaUri(std::move(value)); return *this;}
-    inline RDSDataSpec& WithDataSchemaUri(const char* value) { SetDataSchemaUri(value); return *this;}
+    template<typename DataSchemaUriT = Aws::String>
+    void SetDataSchemaUri(DataSchemaUriT&& value) { m_dataSchemaUriHasBeenSet = true; m_dataSchemaUri = std::forward<DataSchemaUriT>(value); }
+    template<typename DataSchemaUriT = Aws::String>
+    RDSDataSpec& WithDataSchemaUri(DataSchemaUriT&& value) { SetDataSchemaUri(std::forward<DataSchemaUriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -222,14 +212,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
      * templates</a> for data pipelines.</p>
      */
-    inline const Aws::String& GetResourceRole() const{ return m_resourceRole; }
+    inline const Aws::String& GetResourceRole() const { return m_resourceRole; }
     inline bool ResourceRoleHasBeenSet() const { return m_resourceRoleHasBeenSet; }
-    inline void SetResourceRole(const Aws::String& value) { m_resourceRoleHasBeenSet = true; m_resourceRole = value; }
-    inline void SetResourceRole(Aws::String&& value) { m_resourceRoleHasBeenSet = true; m_resourceRole = std::move(value); }
-    inline void SetResourceRole(const char* value) { m_resourceRoleHasBeenSet = true; m_resourceRole.assign(value); }
-    inline RDSDataSpec& WithResourceRole(const Aws::String& value) { SetResourceRole(value); return *this;}
-    inline RDSDataSpec& WithResourceRole(Aws::String&& value) { SetResourceRole(std::move(value)); return *this;}
-    inline RDSDataSpec& WithResourceRole(const char* value) { SetResourceRole(value); return *this;}
+    template<typename ResourceRoleT = Aws::String>
+    void SetResourceRole(ResourceRoleT&& value) { m_resourceRoleHasBeenSet = true; m_resourceRole = std::forward<ResourceRoleT>(value); }
+    template<typename ResourceRoleT = Aws::String>
+    RDSDataSpec& WithResourceRole(ResourceRoleT&& value) { SetResourceRole(std::forward<ResourceRoleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -240,14 +228,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
      * templates</a> for data pipelines.</p>
      */
-    inline const Aws::String& GetServiceRole() const{ return m_serviceRole; }
+    inline const Aws::String& GetServiceRole() const { return m_serviceRole; }
     inline bool ServiceRoleHasBeenSet() const { return m_serviceRoleHasBeenSet; }
-    inline void SetServiceRole(const Aws::String& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = value; }
-    inline void SetServiceRole(Aws::String&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = std::move(value); }
-    inline void SetServiceRole(const char* value) { m_serviceRoleHasBeenSet = true; m_serviceRole.assign(value); }
-    inline RDSDataSpec& WithServiceRole(const Aws::String& value) { SetServiceRole(value); return *this;}
-    inline RDSDataSpec& WithServiceRole(Aws::String&& value) { SetServiceRole(std::move(value)); return *this;}
-    inline RDSDataSpec& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
+    template<typename ServiceRoleT = Aws::String>
+    void SetServiceRole(ServiceRoleT&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = std::forward<ServiceRoleT>(value); }
+    template<typename ServiceRoleT = Aws::String>
+    RDSDataSpec& WithServiceRole(ServiceRoleT&& value) { SetServiceRole(std::forward<ServiceRoleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -256,14 +242,12 @@ namespace Model
      * attribute is used by Data Pipeline to carry out the copy task from Amazon RDS to
      * Amazon S3.</p>
      */
-    inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
+    inline const Aws::String& GetSubnetId() const { return m_subnetId; }
     inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
-    inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
-    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
-    inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
-    inline RDSDataSpec& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
-    inline RDSDataSpec& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
-    inline RDSDataSpec& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+    template<typename SubnetIdT = Aws::String>
+    void SetSubnetId(SubnetIdT&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::forward<SubnetIdT>(value); }
+    template<typename SubnetIdT = Aws::String>
+    RDSDataSpec& WithSubnetId(SubnetIdT&& value) { SetSubnetId(std::forward<SubnetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -273,15 +257,14 @@ namespace Model
      * RDS DB instance. This attribute is used by Data Pipeline to carry out the copy
      * operation from Amazon RDS to an Amazon S3 task.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const { return m_securityGroupIds; }
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
-    inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
-    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
-    inline RDSDataSpec& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
-    inline RDSDataSpec& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
-    inline RDSDataSpec& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
-    inline RDSDataSpec& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
-    inline RDSDataSpec& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    void SetSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::forward<SecurityGroupIdsT>(value); }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    RDSDataSpec& WithSecurityGroupIds(SecurityGroupIdsT&& value) { SetSecurityGroupIds(std::forward<SecurityGroupIdsT>(value)); return *this;}
+    template<typename SecurityGroupIdsT = Aws::String>
+    RDSDataSpec& AddSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.emplace_back(std::forward<SecurityGroupIdsT>(value)); return *this; }
     ///@}
   private:
 

@@ -18,18 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-EventActionEntry::EventActionEntry() : 
-    m_actionHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_eventHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 EventActionEntry::EventActionEntry(JsonView jsonValue)
-  : EventActionEntry()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ EventActionEntry& EventActionEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Action"))
   {
     m_action = jsonValue.GetObject("Action");
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetString("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Event"))
   {
     m_event = jsonValue.GetObject("Event");
-
     m_eventHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetString("UpdatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

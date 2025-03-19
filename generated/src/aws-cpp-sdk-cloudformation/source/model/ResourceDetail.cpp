@@ -20,19 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-ResourceDetail::ResourceDetail() : 
-    m_resourceTypeHasBeenSet(false),
-    m_logicalResourceIdHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false),
-    m_resourceStatus(GeneratedTemplateResourceStatus::NOT_SET),
-    m_resourceStatusHasBeenSet(false),
-    m_resourceStatusReasonHasBeenSet(false),
-    m_warningsHasBeenSet(false)
-{
-}
-
 ResourceDetail::ResourceDetail(const XmlNode& xmlNode)
-  : ResourceDetail()
 {
   *this = xmlNode;
 }
@@ -60,6 +48,7 @@ ResourceDetail& ResourceDetail::operator =(const XmlNode& xmlNode)
     if(!resourceIdentifierNode.IsNull())
     {
       XmlNode resourceIdentifierEntry = resourceIdentifierNode.FirstChild("entry");
+      m_resourceIdentifierHasBeenSet = !resourceIdentifierEntry.IsNull();
       while(!resourceIdentifierEntry.IsNull())
       {
         XmlNode keyNode = resourceIdentifierEntry.FirstChild("key");
@@ -74,7 +63,7 @@ ResourceDetail& ResourceDetail::operator =(const XmlNode& xmlNode)
     XmlNode resourceStatusNode = resultNode.FirstChild("ResourceStatus");
     if(!resourceStatusNode.IsNull())
     {
-      m_resourceStatus = GeneratedTemplateResourceStatusMapper::GetGeneratedTemplateResourceStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceStatusNode.GetText()).c_str()).c_str());
+      m_resourceStatus = GeneratedTemplateResourceStatusMapper::GetGeneratedTemplateResourceStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceStatusNode.GetText()).c_str()));
       m_resourceStatusHasBeenSet = true;
     }
     XmlNode resourceStatusReasonNode = resultNode.FirstChild("ResourceStatusReason");
@@ -87,6 +76,7 @@ ResourceDetail& ResourceDetail::operator =(const XmlNode& xmlNode)
     if(!warningsNode.IsNull())
     {
       XmlNode warningsMember = warningsNode.FirstChild("member");
+      m_warningsHasBeenSet = !warningsMember.IsNull();
       while(!warningsMember.IsNull())
       {
         m_warnings.push_back(warningsMember);

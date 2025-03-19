@@ -12,26 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListInferenceRecommendationsJobsRequest::ListInferenceRecommendationsJobsRequest() : 
-    m_creationTimeAfterHasBeenSet(false),
-    m_creationTimeBeforeHasBeenSet(false),
-    m_lastModifiedTimeAfterHasBeenSet(false),
-    m_lastModifiedTimeBeforeHasBeenSet(false),
-    m_nameContainsHasBeenSet(false),
-    m_statusEquals(RecommendationJobStatus::NOT_SET),
-    m_statusEqualsHasBeenSet(false),
-    m_sortBy(ListInferenceRecommendationsJobsSortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_modelNameEqualsHasBeenSet(false),
-    m_modelPackageVersionArnEqualsHasBeenSet(false)
-{
-}
-
 Aws::String ListInferenceRecommendationsJobsRequest::SerializePayload() const
 {
   JsonValue payload;

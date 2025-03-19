@@ -31,7 +31,7 @@ namespace Model
   class TrustedAdvisorCheckRefreshStatus
   {
   public:
-    AWS_SUPPORT_API TrustedAdvisorCheckRefreshStatus();
+    AWS_SUPPORT_API TrustedAdvisorCheckRefreshStatus() = default;
     AWS_SUPPORT_API TrustedAdvisorCheckRefreshStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_SUPPORT_API TrustedAdvisorCheckRefreshStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SUPPORT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The unique identifier for the Trusted Advisor check.</p>
      */
-    inline const Aws::String& GetCheckId() const{ return m_checkId; }
+    inline const Aws::String& GetCheckId() const { return m_checkId; }
     inline bool CheckIdHasBeenSet() const { return m_checkIdHasBeenSet; }
-    inline void SetCheckId(const Aws::String& value) { m_checkIdHasBeenSet = true; m_checkId = value; }
-    inline void SetCheckId(Aws::String&& value) { m_checkIdHasBeenSet = true; m_checkId = std::move(value); }
-    inline void SetCheckId(const char* value) { m_checkIdHasBeenSet = true; m_checkId.assign(value); }
-    inline TrustedAdvisorCheckRefreshStatus& WithCheckId(const Aws::String& value) { SetCheckId(value); return *this;}
-    inline TrustedAdvisorCheckRefreshStatus& WithCheckId(Aws::String&& value) { SetCheckId(std::move(value)); return *this;}
-    inline TrustedAdvisorCheckRefreshStatus& WithCheckId(const char* value) { SetCheckId(value); return *this;}
+    template<typename CheckIdT = Aws::String>
+    void SetCheckId(CheckIdT&& value) { m_checkIdHasBeenSet = true; m_checkId = std::forward<CheckIdT>(value); }
+    template<typename CheckIdT = Aws::String>
+    TrustedAdvisorCheckRefreshStatus& WithCheckId(CheckIdT&& value) { SetCheckId(std::forward<CheckIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
      * - The check is successfully refreshed</p> </li> <li> <p> <code>abandoned</code>
      * - The check refresh has failed</p> </li> </ul>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline TrustedAdvisorCheckRefreshStatus& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline TrustedAdvisorCheckRefreshStatus& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline TrustedAdvisorCheckRefreshStatus& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    TrustedAdvisorCheckRefreshStatus& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,7 +73,7 @@ namespace Model
      * <p>The amount of time, in milliseconds, until the Trusted Advisor check is
      * eligible for refresh.</p>
      */
-    inline long long GetMillisUntilNextRefreshable() const{ return m_millisUntilNextRefreshable; }
+    inline long long GetMillisUntilNextRefreshable() const { return m_millisUntilNextRefreshable; }
     inline bool MillisUntilNextRefreshableHasBeenSet() const { return m_millisUntilNextRefreshableHasBeenSet; }
     inline void SetMillisUntilNextRefreshable(long long value) { m_millisUntilNextRefreshableHasBeenSet = true; m_millisUntilNextRefreshable = value; }
     inline TrustedAdvisorCheckRefreshStatus& WithMillisUntilNextRefreshable(long long value) { SetMillisUntilNextRefreshable(value); return *this;}
@@ -90,7 +86,7 @@ namespace Model
     Aws::String m_status;
     bool m_statusHasBeenSet = false;
 
-    long long m_millisUntilNextRefreshable;
+    long long m_millisUntilNextRefreshable{0};
     bool m_millisUntilNextRefreshableHasBeenSet = false;
   };
 

@@ -18,22 +18,7 @@ namespace Batch
 namespace Model
 {
 
-LinuxParameters::LinuxParameters() : 
-    m_devicesHasBeenSet(false),
-    m_initProcessEnabled(false),
-    m_initProcessEnabledHasBeenSet(false),
-    m_sharedMemorySize(0),
-    m_sharedMemorySizeHasBeenSet(false),
-    m_tmpfsHasBeenSet(false),
-    m_maxSwap(0),
-    m_maxSwapHasBeenSet(false),
-    m_swappiness(0),
-    m_swappinessHasBeenSet(false)
-{
-}
-
 LinuxParameters::LinuxParameters(JsonView jsonValue)
-  : LinuxParameters()
 {
   *this = jsonValue;
 }
@@ -49,21 +34,16 @@ LinuxParameters& LinuxParameters::operator =(JsonView jsonValue)
     }
     m_devicesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("initProcessEnabled"))
   {
     m_initProcessEnabled = jsonValue.GetBool("initProcessEnabled");
-
     m_initProcessEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sharedMemorySize"))
   {
     m_sharedMemorySize = jsonValue.GetInteger("sharedMemorySize");
-
     m_sharedMemorySizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tmpfs"))
   {
     Aws::Utils::Array<JsonView> tmpfsJsonList = jsonValue.GetArray("tmpfs");
@@ -73,21 +53,16 @@ LinuxParameters& LinuxParameters::operator =(JsonView jsonValue)
     }
     m_tmpfsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxSwap"))
   {
     m_maxSwap = jsonValue.GetInteger("maxSwap");
-
     m_maxSwapHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("swappiness"))
   {
     m_swappiness = jsonValue.GetInteger("swappiness");
-
     m_swappinessHasBeenSet = true;
   }
-
   return *this;
 }
 

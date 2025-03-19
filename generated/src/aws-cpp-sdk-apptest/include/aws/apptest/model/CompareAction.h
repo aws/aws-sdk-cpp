@@ -32,7 +32,7 @@ namespace Model
   class CompareAction
   {
   public:
-    AWS_APPTEST_API CompareAction();
+    AWS_APPTEST_API CompareAction() = default;
     AWS_APPTEST_API CompareAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API CompareAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p>The input of the compare action.</p>
      */
-    inline const Input& GetInput() const{ return m_input; }
+    inline const Input& GetInput() const { return m_input; }
     inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
-    inline void SetInput(const Input& value) { m_inputHasBeenSet = true; m_input = value; }
-    inline void SetInput(Input&& value) { m_inputHasBeenSet = true; m_input = std::move(value); }
-    inline CompareAction& WithInput(const Input& value) { SetInput(value); return *this;}
-    inline CompareAction& WithInput(Input&& value) { SetInput(std::move(value)); return *this;}
+    template<typename InputT = Input>
+    void SetInput(InputT&& value) { m_inputHasBeenSet = true; m_input = std::forward<InputT>(value); }
+    template<typename InputT = Input>
+    CompareAction& WithInput(InputT&& value) { SetInput(std::forward<InputT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The output of the compare action.</p>
      */
-    inline const Output& GetOutput() const{ return m_output; }
+    inline const Output& GetOutput() const { return m_output; }
     inline bool OutputHasBeenSet() const { return m_outputHasBeenSet; }
-    inline void SetOutput(const Output& value) { m_outputHasBeenSet = true; m_output = value; }
-    inline void SetOutput(Output&& value) { m_outputHasBeenSet = true; m_output = std::move(value); }
-    inline CompareAction& WithOutput(const Output& value) { SetOutput(value); return *this;}
-    inline CompareAction& WithOutput(Output&& value) { SetOutput(std::move(value)); return *this;}
+    template<typename OutputT = Output>
+    void SetOutput(OutputT&& value) { m_outputHasBeenSet = true; m_output = std::forward<OutputT>(value); }
+    template<typename OutputT = Output>
+    CompareAction& WithOutput(OutputT&& value) { SetOutput(std::forward<OutputT>(value)); return *this;}
     ///@}
   private:
 

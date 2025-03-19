@@ -20,32 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-RefreshPreferences::RefreshPreferences() : 
-    m_minHealthyPercentage(0),
-    m_minHealthyPercentageHasBeenSet(false),
-    m_instanceWarmup(0),
-    m_instanceWarmupHasBeenSet(false),
-    m_checkpointPercentagesHasBeenSet(false),
-    m_checkpointDelay(0),
-    m_checkpointDelayHasBeenSet(false),
-    m_skipMatching(false),
-    m_skipMatchingHasBeenSet(false),
-    m_autoRollback(false),
-    m_autoRollbackHasBeenSet(false),
-    m_scaleInProtectedInstances(ScaleInProtectedInstances::NOT_SET),
-    m_scaleInProtectedInstancesHasBeenSet(false),
-    m_standbyInstances(StandbyInstances::NOT_SET),
-    m_standbyInstancesHasBeenSet(false),
-    m_alarmSpecificationHasBeenSet(false),
-    m_maxHealthyPercentage(0),
-    m_maxHealthyPercentageHasBeenSet(false),
-    m_bakeTime(0),
-    m_bakeTimeHasBeenSet(false)
-{
-}
-
 RefreshPreferences::RefreshPreferences(const XmlNode& xmlNode)
-  : RefreshPreferences()
 {
   *this = xmlNode;
 }
@@ -72,6 +47,7 @@ RefreshPreferences& RefreshPreferences::operator =(const XmlNode& xmlNode)
     if(!checkpointPercentagesNode.IsNull())
     {
       XmlNode checkpointPercentagesMember = checkpointPercentagesNode.FirstChild("member");
+      m_checkpointPercentagesHasBeenSet = !checkpointPercentagesMember.IsNull();
       while(!checkpointPercentagesMember.IsNull())
       {
         m_checkpointPercentages.push_back(StringUtils::ConvertToInt32(StringUtils::Trim(checkpointPercentagesMember.GetText().c_str()).c_str()));
@@ -101,13 +77,13 @@ RefreshPreferences& RefreshPreferences::operator =(const XmlNode& xmlNode)
     XmlNode scaleInProtectedInstancesNode = resultNode.FirstChild("ScaleInProtectedInstances");
     if(!scaleInProtectedInstancesNode.IsNull())
     {
-      m_scaleInProtectedInstances = ScaleInProtectedInstancesMapper::GetScaleInProtectedInstancesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(scaleInProtectedInstancesNode.GetText()).c_str()).c_str());
+      m_scaleInProtectedInstances = ScaleInProtectedInstancesMapper::GetScaleInProtectedInstancesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(scaleInProtectedInstancesNode.GetText()).c_str()));
       m_scaleInProtectedInstancesHasBeenSet = true;
     }
     XmlNode standbyInstancesNode = resultNode.FirstChild("StandbyInstances");
     if(!standbyInstancesNode.IsNull())
     {
-      m_standbyInstances = StandbyInstancesMapper::GetStandbyInstancesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(standbyInstancesNode.GetText()).c_str()).c_str());
+      m_standbyInstances = StandbyInstancesMapper::GetStandbyInstancesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(standbyInstancesNode.GetText()).c_str()));
       m_standbyInstancesHasBeenSet = true;
     }
     XmlNode alarmSpecificationNode = resultNode.FirstChild("AlarmSpecification");

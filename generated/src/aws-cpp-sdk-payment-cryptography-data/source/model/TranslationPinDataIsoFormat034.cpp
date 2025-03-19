@@ -18,13 +18,7 @@ namespace PaymentCryptographyData
 namespace Model
 {
 
-TranslationPinDataIsoFormat034::TranslationPinDataIsoFormat034() : 
-    m_primaryAccountNumberHasBeenSet(false)
-{
-}
-
 TranslationPinDataIsoFormat034::TranslationPinDataIsoFormat034(JsonView jsonValue)
-  : TranslationPinDataIsoFormat034()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TranslationPinDataIsoFormat034& TranslationPinDataIsoFormat034::operator =(JsonV
   if(jsonValue.ValueExists("PrimaryAccountNumber"))
   {
     m_primaryAccountNumber = jsonValue.GetString("PrimaryAccountNumber");
-
     m_primaryAccountNumberHasBeenSet = true;
   }
-
   return *this;
 }
 

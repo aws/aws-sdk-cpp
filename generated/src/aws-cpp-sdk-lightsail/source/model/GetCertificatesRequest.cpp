@@ -12,15 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCertificatesRequest::GetCertificatesRequest() : 
-    m_certificateStatusesHasBeenSet(false),
-    m_includeCertificateDetails(false),
-    m_includeCertificateDetailsHasBeenSet(false),
-    m_certificateNameHasBeenSet(false),
-    m_pageTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetCertificatesRequest::SerializePayload() const
 {
   JsonValue payload;

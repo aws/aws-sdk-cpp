@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-LaunchTemplateNetworkPerformanceOptions::LaunchTemplateNetworkPerformanceOptions() : 
-    m_bandwidthWeighting(InstanceBandwidthWeighting::NOT_SET),
-    m_bandwidthWeightingHasBeenSet(false)
-{
-}
-
 LaunchTemplateNetworkPerformanceOptions::LaunchTemplateNetworkPerformanceOptions(const XmlNode& xmlNode)
-  : LaunchTemplateNetworkPerformanceOptions()
 {
   *this = xmlNode;
 }
@@ -41,7 +34,7 @@ LaunchTemplateNetworkPerformanceOptions& LaunchTemplateNetworkPerformanceOptions
     XmlNode bandwidthWeightingNode = resultNode.FirstChild("bandwidthWeighting");
     if(!bandwidthWeightingNode.IsNull())
     {
-      m_bandwidthWeighting = InstanceBandwidthWeightingMapper::GetInstanceBandwidthWeightingForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bandwidthWeightingNode.GetText()).c_str()).c_str());
+      m_bandwidthWeighting = InstanceBandwidthWeightingMapper::GetInstanceBandwidthWeightingForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bandwidthWeightingNode.GetText()).c_str()));
       m_bandwidthWeightingHasBeenSet = true;
     }
   }

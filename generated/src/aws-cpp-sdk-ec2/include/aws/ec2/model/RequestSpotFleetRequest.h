@@ -24,7 +24,7 @@ namespace Model
   class RequestSpotFleetRequest : public EC2Request
   {
   public:
-    AWS_EC2_API RequestSpotFleetRequest();
+    AWS_EC2_API RequestSpotFleetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,7 +46,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline RequestSpotFleetRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -56,16 +56,16 @@ namespace Model
     /**
      * <p>The configuration for the Spot Fleet request.</p>
      */
-    inline const SpotFleetRequestConfigData& GetSpotFleetRequestConfig() const{ return m_spotFleetRequestConfig; }
+    inline const SpotFleetRequestConfigData& GetSpotFleetRequestConfig() const { return m_spotFleetRequestConfig; }
     inline bool SpotFleetRequestConfigHasBeenSet() const { return m_spotFleetRequestConfigHasBeenSet; }
-    inline void SetSpotFleetRequestConfig(const SpotFleetRequestConfigData& value) { m_spotFleetRequestConfigHasBeenSet = true; m_spotFleetRequestConfig = value; }
-    inline void SetSpotFleetRequestConfig(SpotFleetRequestConfigData&& value) { m_spotFleetRequestConfigHasBeenSet = true; m_spotFleetRequestConfig = std::move(value); }
-    inline RequestSpotFleetRequest& WithSpotFleetRequestConfig(const SpotFleetRequestConfigData& value) { SetSpotFleetRequestConfig(value); return *this;}
-    inline RequestSpotFleetRequest& WithSpotFleetRequestConfig(SpotFleetRequestConfigData&& value) { SetSpotFleetRequestConfig(std::move(value)); return *this;}
+    template<typename SpotFleetRequestConfigT = SpotFleetRequestConfigData>
+    void SetSpotFleetRequestConfig(SpotFleetRequestConfigT&& value) { m_spotFleetRequestConfigHasBeenSet = true; m_spotFleetRequestConfig = std::forward<SpotFleetRequestConfigT>(value); }
+    template<typename SpotFleetRequestConfigT = SpotFleetRequestConfigData>
+    RequestSpotFleetRequest& WithSpotFleetRequestConfig(SpotFleetRequestConfigT&& value) { SetSpotFleetRequestConfig(std::forward<SpotFleetRequestConfigT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     SpotFleetRequestConfigData m_spotFleetRequestConfig;

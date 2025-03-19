@@ -18,21 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-S3DataSource::S3DataSource() : 
-    m_s3DataType(S3DataType::NOT_SET),
-    m_s3DataTypeHasBeenSet(false),
-    m_s3UriHasBeenSet(false),
-    m_s3DataDistributionType(S3DataDistribution::NOT_SET),
-    m_s3DataDistributionTypeHasBeenSet(false),
-    m_attributeNamesHasBeenSet(false),
-    m_instanceGroupNamesHasBeenSet(false),
-    m_modelAccessConfigHasBeenSet(false),
-    m_hubAccessConfigHasBeenSet(false)
-{
-}
-
 S3DataSource::S3DataSource(JsonView jsonValue)
-  : S3DataSource()
 {
   *this = jsonValue;
 }
@@ -42,24 +28,18 @@ S3DataSource& S3DataSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3DataType"))
   {
     m_s3DataType = S3DataTypeMapper::GetS3DataTypeForName(jsonValue.GetString("S3DataType"));
-
     m_s3DataTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Uri"))
   {
     m_s3Uri = jsonValue.GetString("S3Uri");
-
     m_s3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3DataDistributionType"))
   {
     m_s3DataDistributionType = S3DataDistributionMapper::GetS3DataDistributionForName(jsonValue.GetString("S3DataDistributionType"));
-
     m_s3DataDistributionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttributeNames"))
   {
     Aws::Utils::Array<JsonView> attributeNamesJsonList = jsonValue.GetArray("AttributeNames");
@@ -69,7 +49,6 @@ S3DataSource& S3DataSource::operator =(JsonView jsonValue)
     }
     m_attributeNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceGroupNames"))
   {
     Aws::Utils::Array<JsonView> instanceGroupNamesJsonList = jsonValue.GetArray("InstanceGroupNames");
@@ -79,21 +58,16 @@ S3DataSource& S3DataSource::operator =(JsonView jsonValue)
     }
     m_instanceGroupNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelAccessConfig"))
   {
     m_modelAccessConfig = jsonValue.GetObject("ModelAccessConfig");
-
     m_modelAccessConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HubAccessConfig"))
   {
     m_hubAccessConfig = jsonValue.GetObject("HubAccessConfig");
-
     m_hubAccessConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

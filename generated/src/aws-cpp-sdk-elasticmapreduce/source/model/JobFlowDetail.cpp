@@ -18,29 +18,7 @@ namespace EMR
 namespace Model
 {
 
-JobFlowDetail::JobFlowDetail() : 
-    m_jobFlowIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_logUriHasBeenSet(false),
-    m_logEncryptionKmsKeyIdHasBeenSet(false),
-    m_amiVersionHasBeenSet(false),
-    m_executionStatusDetailHasBeenSet(false),
-    m_instancesHasBeenSet(false),
-    m_stepsHasBeenSet(false),
-    m_bootstrapActionsHasBeenSet(false),
-    m_supportedProductsHasBeenSet(false),
-    m_visibleToAllUsers(false),
-    m_visibleToAllUsersHasBeenSet(false),
-    m_jobFlowRoleHasBeenSet(false),
-    m_serviceRoleHasBeenSet(false),
-    m_autoScalingRoleHasBeenSet(false),
-    m_scaleDownBehavior(ScaleDownBehavior::NOT_SET),
-    m_scaleDownBehaviorHasBeenSet(false)
-{
-}
-
 JobFlowDetail::JobFlowDetail(JsonView jsonValue)
-  : JobFlowDetail()
 {
   *this = jsonValue;
 }
@@ -50,52 +28,38 @@ JobFlowDetail& JobFlowDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("JobFlowId"))
   {
     m_jobFlowId = jsonValue.GetString("JobFlowId");
-
     m_jobFlowIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogUri"))
   {
     m_logUri = jsonValue.GetString("LogUri");
-
     m_logUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogEncryptionKmsKeyId"))
   {
     m_logEncryptionKmsKeyId = jsonValue.GetString("LogEncryptionKmsKeyId");
-
     m_logEncryptionKmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AmiVersion"))
   {
     m_amiVersion = jsonValue.GetString("AmiVersion");
-
     m_amiVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutionStatusDetail"))
   {
     m_executionStatusDetail = jsonValue.GetObject("ExecutionStatusDetail");
-
     m_executionStatusDetailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Instances"))
   {
     m_instances = jsonValue.GetObject("Instances");
-
     m_instancesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Steps"))
   {
     Aws::Utils::Array<JsonView> stepsJsonList = jsonValue.GetArray("Steps");
@@ -105,7 +69,6 @@ JobFlowDetail& JobFlowDetail::operator =(JsonView jsonValue)
     }
     m_stepsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BootstrapActions"))
   {
     Aws::Utils::Array<JsonView> bootstrapActionsJsonList = jsonValue.GetArray("BootstrapActions");
@@ -115,7 +78,6 @@ JobFlowDetail& JobFlowDetail::operator =(JsonView jsonValue)
     }
     m_bootstrapActionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SupportedProducts"))
   {
     Aws::Utils::Array<JsonView> supportedProductsJsonList = jsonValue.GetArray("SupportedProducts");
@@ -125,42 +87,31 @@ JobFlowDetail& JobFlowDetail::operator =(JsonView jsonValue)
     }
     m_supportedProductsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VisibleToAllUsers"))
   {
     m_visibleToAllUsers = jsonValue.GetBool("VisibleToAllUsers");
-
     m_visibleToAllUsersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobFlowRole"))
   {
     m_jobFlowRole = jsonValue.GetString("JobFlowRole");
-
     m_jobFlowRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceRole"))
   {
     m_serviceRole = jsonValue.GetString("ServiceRole");
-
     m_serviceRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoScalingRole"))
   {
     m_autoScalingRole = jsonValue.GetString("AutoScalingRole");
-
     m_autoScalingRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScaleDownBehavior"))
   {
     m_scaleDownBehavior = ScaleDownBehaviorMapper::GetScaleDownBehaviorForName(jsonValue.GetString("ScaleDownBehavior"));
-
     m_scaleDownBehaviorHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace Greengrass
 namespace Model
 {
 
-CoreDefinitionVersion::CoreDefinitionVersion() : 
-    m_coresHasBeenSet(false)
-{
-}
-
 CoreDefinitionVersion::CoreDefinitionVersion(JsonView jsonValue)
-  : CoreDefinitionVersion()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ CoreDefinitionVersion& CoreDefinitionVersion::operator =(JsonView jsonValue)
     }
     m_coresHasBeenSet = true;
   }
-
   return *this;
 }
 

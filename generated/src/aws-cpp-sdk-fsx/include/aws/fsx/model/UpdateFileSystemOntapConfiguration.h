@@ -34,7 +34,7 @@ namespace Model
   class UpdateFileSystemOntapConfiguration
   {
   public:
-    AWS_FSX_API UpdateFileSystemOntapConfiguration();
+    AWS_FSX_API UpdateFileSystemOntapConfiguration() = default;
     AWS_FSX_API UpdateFileSystemOntapConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API UpdateFileSystemOntapConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
 
     ///@{
     
-    inline int GetAutomaticBackupRetentionDays() const{ return m_automaticBackupRetentionDays; }
+    inline int GetAutomaticBackupRetentionDays() const { return m_automaticBackupRetentionDays; }
     inline bool AutomaticBackupRetentionDaysHasBeenSet() const { return m_automaticBackupRetentionDaysHasBeenSet; }
     inline void SetAutomaticBackupRetentionDays(int value) { m_automaticBackupRetentionDaysHasBeenSet = true; m_automaticBackupRetentionDays = value; }
     inline UpdateFileSystemOntapConfiguration& WithAutomaticBackupRetentionDays(int value) { SetAutomaticBackupRetentionDays(value); return *this;}
@@ -50,14 +50,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetDailyAutomaticBackupStartTime() const{ return m_dailyAutomaticBackupStartTime; }
+    inline const Aws::String& GetDailyAutomaticBackupStartTime() const { return m_dailyAutomaticBackupStartTime; }
     inline bool DailyAutomaticBackupStartTimeHasBeenSet() const { return m_dailyAutomaticBackupStartTimeHasBeenSet; }
-    inline void SetDailyAutomaticBackupStartTime(const Aws::String& value) { m_dailyAutomaticBackupStartTimeHasBeenSet = true; m_dailyAutomaticBackupStartTime = value; }
-    inline void SetDailyAutomaticBackupStartTime(Aws::String&& value) { m_dailyAutomaticBackupStartTimeHasBeenSet = true; m_dailyAutomaticBackupStartTime = std::move(value); }
-    inline void SetDailyAutomaticBackupStartTime(const char* value) { m_dailyAutomaticBackupStartTimeHasBeenSet = true; m_dailyAutomaticBackupStartTime.assign(value); }
-    inline UpdateFileSystemOntapConfiguration& WithDailyAutomaticBackupStartTime(const Aws::String& value) { SetDailyAutomaticBackupStartTime(value); return *this;}
-    inline UpdateFileSystemOntapConfiguration& WithDailyAutomaticBackupStartTime(Aws::String&& value) { SetDailyAutomaticBackupStartTime(std::move(value)); return *this;}
-    inline UpdateFileSystemOntapConfiguration& WithDailyAutomaticBackupStartTime(const char* value) { SetDailyAutomaticBackupStartTime(value); return *this;}
+    template<typename DailyAutomaticBackupStartTimeT = Aws::String>
+    void SetDailyAutomaticBackupStartTime(DailyAutomaticBackupStartTimeT&& value) { m_dailyAutomaticBackupStartTimeHasBeenSet = true; m_dailyAutomaticBackupStartTime = std::forward<DailyAutomaticBackupStartTimeT>(value); }
+    template<typename DailyAutomaticBackupStartTimeT = Aws::String>
+    UpdateFileSystemOntapConfiguration& WithDailyAutomaticBackupStartTime(DailyAutomaticBackupStartTimeT&& value) { SetDailyAutomaticBackupStartTime(std::forward<DailyAutomaticBackupStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,26 +66,22 @@ namespace Model
      * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-resources-ontap-apps.html">Managing
      * resources using NetApp Application</a>.</p>
      */
-    inline const Aws::String& GetFsxAdminPassword() const{ return m_fsxAdminPassword; }
+    inline const Aws::String& GetFsxAdminPassword() const { return m_fsxAdminPassword; }
     inline bool FsxAdminPasswordHasBeenSet() const { return m_fsxAdminPasswordHasBeenSet; }
-    inline void SetFsxAdminPassword(const Aws::String& value) { m_fsxAdminPasswordHasBeenSet = true; m_fsxAdminPassword = value; }
-    inline void SetFsxAdminPassword(Aws::String&& value) { m_fsxAdminPasswordHasBeenSet = true; m_fsxAdminPassword = std::move(value); }
-    inline void SetFsxAdminPassword(const char* value) { m_fsxAdminPasswordHasBeenSet = true; m_fsxAdminPassword.assign(value); }
-    inline UpdateFileSystemOntapConfiguration& WithFsxAdminPassword(const Aws::String& value) { SetFsxAdminPassword(value); return *this;}
-    inline UpdateFileSystemOntapConfiguration& WithFsxAdminPassword(Aws::String&& value) { SetFsxAdminPassword(std::move(value)); return *this;}
-    inline UpdateFileSystemOntapConfiguration& WithFsxAdminPassword(const char* value) { SetFsxAdminPassword(value); return *this;}
+    template<typename FsxAdminPasswordT = Aws::String>
+    void SetFsxAdminPassword(FsxAdminPasswordT&& value) { m_fsxAdminPasswordHasBeenSet = true; m_fsxAdminPassword = std::forward<FsxAdminPasswordT>(value); }
+    template<typename FsxAdminPasswordT = Aws::String>
+    UpdateFileSystemOntapConfiguration& WithFsxAdminPassword(FsxAdminPasswordT&& value) { SetFsxAdminPassword(std::forward<FsxAdminPasswordT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetWeeklyMaintenanceStartTime() const{ return m_weeklyMaintenanceStartTime; }
+    inline const Aws::String& GetWeeklyMaintenanceStartTime() const { return m_weeklyMaintenanceStartTime; }
     inline bool WeeklyMaintenanceStartTimeHasBeenSet() const { return m_weeklyMaintenanceStartTimeHasBeenSet; }
-    inline void SetWeeklyMaintenanceStartTime(const Aws::String& value) { m_weeklyMaintenanceStartTimeHasBeenSet = true; m_weeklyMaintenanceStartTime = value; }
-    inline void SetWeeklyMaintenanceStartTime(Aws::String&& value) { m_weeklyMaintenanceStartTimeHasBeenSet = true; m_weeklyMaintenanceStartTime = std::move(value); }
-    inline void SetWeeklyMaintenanceStartTime(const char* value) { m_weeklyMaintenanceStartTimeHasBeenSet = true; m_weeklyMaintenanceStartTime.assign(value); }
-    inline UpdateFileSystemOntapConfiguration& WithWeeklyMaintenanceStartTime(const Aws::String& value) { SetWeeklyMaintenanceStartTime(value); return *this;}
-    inline UpdateFileSystemOntapConfiguration& WithWeeklyMaintenanceStartTime(Aws::String&& value) { SetWeeklyMaintenanceStartTime(std::move(value)); return *this;}
-    inline UpdateFileSystemOntapConfiguration& WithWeeklyMaintenanceStartTime(const char* value) { SetWeeklyMaintenanceStartTime(value); return *this;}
+    template<typename WeeklyMaintenanceStartTimeT = Aws::String>
+    void SetWeeklyMaintenanceStartTime(WeeklyMaintenanceStartTimeT&& value) { m_weeklyMaintenanceStartTimeHasBeenSet = true; m_weeklyMaintenanceStartTime = std::forward<WeeklyMaintenanceStartTimeT>(value); }
+    template<typename WeeklyMaintenanceStartTimeT = Aws::String>
+    UpdateFileSystemOntapConfiguration& WithWeeklyMaintenanceStartTime(WeeklyMaintenanceStartTimeT&& value) { SetWeeklyMaintenanceStartTime(std::forward<WeeklyMaintenanceStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,12 +95,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/increase-primary-storage.html">Updating
      * SSD storage capacity and IOPS</a>.</p>
      */
-    inline const DiskIopsConfiguration& GetDiskIopsConfiguration() const{ return m_diskIopsConfiguration; }
+    inline const DiskIopsConfiguration& GetDiskIopsConfiguration() const { return m_diskIopsConfiguration; }
     inline bool DiskIopsConfigurationHasBeenSet() const { return m_diskIopsConfigurationHasBeenSet; }
-    inline void SetDiskIopsConfiguration(const DiskIopsConfiguration& value) { m_diskIopsConfigurationHasBeenSet = true; m_diskIopsConfiguration = value; }
-    inline void SetDiskIopsConfiguration(DiskIopsConfiguration&& value) { m_diskIopsConfigurationHasBeenSet = true; m_diskIopsConfiguration = std::move(value); }
-    inline UpdateFileSystemOntapConfiguration& WithDiskIopsConfiguration(const DiskIopsConfiguration& value) { SetDiskIopsConfiguration(value); return *this;}
-    inline UpdateFileSystemOntapConfiguration& WithDiskIopsConfiguration(DiskIopsConfiguration&& value) { SetDiskIopsConfiguration(std::move(value)); return *this;}
+    template<typename DiskIopsConfigurationT = DiskIopsConfiguration>
+    void SetDiskIopsConfiguration(DiskIopsConfigurationT&& value) { m_diskIopsConfigurationHasBeenSet = true; m_diskIopsConfiguration = std::forward<DiskIopsConfigurationT>(value); }
+    template<typename DiskIopsConfigurationT = DiskIopsConfiguration>
+    UpdateFileSystemOntapConfiguration& WithDiskIopsConfiguration(DiskIopsConfigurationT&& value) { SetDiskIopsConfiguration(std::forward<DiskIopsConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -122,7 +116,7 @@ namespace Model
      * <code>HAPairs</code> is outside of the valid range for
      * <code>ThroughputCapacity</code>.</p> </li> </ul>
      */
-    inline int GetThroughputCapacity() const{ return m_throughputCapacity; }
+    inline int GetThroughputCapacity() const { return m_throughputCapacity; }
     inline bool ThroughputCapacityHasBeenSet() const { return m_throughputCapacityHasBeenSet; }
     inline void SetThroughputCapacity(int value) { m_throughputCapacityHasBeenSet = true; m_throughputCapacity = value; }
     inline UpdateFileSystemOntapConfiguration& WithThroughputCapacity(int value) { SetThroughputCapacity(value); return *this;}
@@ -133,15 +127,14 @@ namespace Model
      * <p>(Multi-AZ only) A list of IDs of new virtual private cloud (VPC) route tables
      * to associate (add) with your Amazon FSx for NetApp ONTAP file system.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAddRouteTableIds() const{ return m_addRouteTableIds; }
+    inline const Aws::Vector<Aws::String>& GetAddRouteTableIds() const { return m_addRouteTableIds; }
     inline bool AddRouteTableIdsHasBeenSet() const { return m_addRouteTableIdsHasBeenSet; }
-    inline void SetAddRouteTableIds(const Aws::Vector<Aws::String>& value) { m_addRouteTableIdsHasBeenSet = true; m_addRouteTableIds = value; }
-    inline void SetAddRouteTableIds(Aws::Vector<Aws::String>&& value) { m_addRouteTableIdsHasBeenSet = true; m_addRouteTableIds = std::move(value); }
-    inline UpdateFileSystemOntapConfiguration& WithAddRouteTableIds(const Aws::Vector<Aws::String>& value) { SetAddRouteTableIds(value); return *this;}
-    inline UpdateFileSystemOntapConfiguration& WithAddRouteTableIds(Aws::Vector<Aws::String>&& value) { SetAddRouteTableIds(std::move(value)); return *this;}
-    inline UpdateFileSystemOntapConfiguration& AddAddRouteTableIds(const Aws::String& value) { m_addRouteTableIdsHasBeenSet = true; m_addRouteTableIds.push_back(value); return *this; }
-    inline UpdateFileSystemOntapConfiguration& AddAddRouteTableIds(Aws::String&& value) { m_addRouteTableIdsHasBeenSet = true; m_addRouteTableIds.push_back(std::move(value)); return *this; }
-    inline UpdateFileSystemOntapConfiguration& AddAddRouteTableIds(const char* value) { m_addRouteTableIdsHasBeenSet = true; m_addRouteTableIds.push_back(value); return *this; }
+    template<typename AddRouteTableIdsT = Aws::Vector<Aws::String>>
+    void SetAddRouteTableIds(AddRouteTableIdsT&& value) { m_addRouteTableIdsHasBeenSet = true; m_addRouteTableIds = std::forward<AddRouteTableIdsT>(value); }
+    template<typename AddRouteTableIdsT = Aws::Vector<Aws::String>>
+    UpdateFileSystemOntapConfiguration& WithAddRouteTableIds(AddRouteTableIdsT&& value) { SetAddRouteTableIds(std::forward<AddRouteTableIdsT>(value)); return *this;}
+    template<typename AddRouteTableIdsT = Aws::String>
+    UpdateFileSystemOntapConfiguration& AddAddRouteTableIds(AddRouteTableIdsT&& value) { m_addRouteTableIdsHasBeenSet = true; m_addRouteTableIds.emplace_back(std::forward<AddRouteTableIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -151,15 +144,14 @@ namespace Model
      * system. You can use the API operation to retrieve the list of VPC route table
      * IDs for a file system.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRemoveRouteTableIds() const{ return m_removeRouteTableIds; }
+    inline const Aws::Vector<Aws::String>& GetRemoveRouteTableIds() const { return m_removeRouteTableIds; }
     inline bool RemoveRouteTableIdsHasBeenSet() const { return m_removeRouteTableIdsHasBeenSet; }
-    inline void SetRemoveRouteTableIds(const Aws::Vector<Aws::String>& value) { m_removeRouteTableIdsHasBeenSet = true; m_removeRouteTableIds = value; }
-    inline void SetRemoveRouteTableIds(Aws::Vector<Aws::String>&& value) { m_removeRouteTableIdsHasBeenSet = true; m_removeRouteTableIds = std::move(value); }
-    inline UpdateFileSystemOntapConfiguration& WithRemoveRouteTableIds(const Aws::Vector<Aws::String>& value) { SetRemoveRouteTableIds(value); return *this;}
-    inline UpdateFileSystemOntapConfiguration& WithRemoveRouteTableIds(Aws::Vector<Aws::String>&& value) { SetRemoveRouteTableIds(std::move(value)); return *this;}
-    inline UpdateFileSystemOntapConfiguration& AddRemoveRouteTableIds(const Aws::String& value) { m_removeRouteTableIdsHasBeenSet = true; m_removeRouteTableIds.push_back(value); return *this; }
-    inline UpdateFileSystemOntapConfiguration& AddRemoveRouteTableIds(Aws::String&& value) { m_removeRouteTableIdsHasBeenSet = true; m_removeRouteTableIds.push_back(std::move(value)); return *this; }
-    inline UpdateFileSystemOntapConfiguration& AddRemoveRouteTableIds(const char* value) { m_removeRouteTableIdsHasBeenSet = true; m_removeRouteTableIds.push_back(value); return *this; }
+    template<typename RemoveRouteTableIdsT = Aws::Vector<Aws::String>>
+    void SetRemoveRouteTableIds(RemoveRouteTableIdsT&& value) { m_removeRouteTableIdsHasBeenSet = true; m_removeRouteTableIds = std::forward<RemoveRouteTableIdsT>(value); }
+    template<typename RemoveRouteTableIdsT = Aws::Vector<Aws::String>>
+    UpdateFileSystemOntapConfiguration& WithRemoveRouteTableIds(RemoveRouteTableIdsT&& value) { SetRemoveRouteTableIds(std::forward<RemoveRouteTableIdsT>(value)); return *this;}
+    template<typename RemoveRouteTableIdsT = Aws::String>
+    UpdateFileSystemOntapConfiguration& AddRemoveRouteTableIds(RemoveRouteTableIdsT&& value) { m_removeRouteTableIdsHasBeenSet = true; m_removeRouteTableIds.emplace_back(std::forward<RemoveRouteTableIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -182,7 +174,7 @@ namespace Model
      * 1 and 12).</p> </li> <li> <p>The value of
      * <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p> </li> </ul>
      */
-    inline int GetThroughputCapacityPerHAPair() const{ return m_throughputCapacityPerHAPair; }
+    inline int GetThroughputCapacityPerHAPair() const { return m_throughputCapacityPerHAPair; }
     inline bool ThroughputCapacityPerHAPairHasBeenSet() const { return m_throughputCapacityPerHAPairHasBeenSet; }
     inline void SetThroughputCapacityPerHAPair(int value) { m_throughputCapacityPerHAPairHasBeenSet = true; m_throughputCapacityPerHAPair = value; }
     inline UpdateFileSystemOntapConfiguration& WithThroughputCapacityPerHAPair(int value) { SetThroughputCapacityPerHAPair(value); return *this;}
@@ -202,14 +194,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/supported-fsx-clients.html#using-block-storage">Using
      * block storage protocols</a>.</p>
      */
-    inline int GetHAPairs() const{ return m_hAPairs; }
+    inline int GetHAPairs() const { return m_hAPairs; }
     inline bool HAPairsHasBeenSet() const { return m_hAPairsHasBeenSet; }
     inline void SetHAPairs(int value) { m_hAPairsHasBeenSet = true; m_hAPairs = value; }
     inline UpdateFileSystemOntapConfiguration& WithHAPairs(int value) { SetHAPairs(value); return *this;}
     ///@}
   private:
 
-    int m_automaticBackupRetentionDays;
+    int m_automaticBackupRetentionDays{0};
     bool m_automaticBackupRetentionDaysHasBeenSet = false;
 
     Aws::String m_dailyAutomaticBackupStartTime;
@@ -224,7 +216,7 @@ namespace Model
     DiskIopsConfiguration m_diskIopsConfiguration;
     bool m_diskIopsConfigurationHasBeenSet = false;
 
-    int m_throughputCapacity;
+    int m_throughputCapacity{0};
     bool m_throughputCapacityHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_addRouteTableIds;
@@ -233,10 +225,10 @@ namespace Model
     Aws::Vector<Aws::String> m_removeRouteTableIds;
     bool m_removeRouteTableIdsHasBeenSet = false;
 
-    int m_throughputCapacityPerHAPair;
+    int m_throughputCapacityPerHAPair{0};
     bool m_throughputCapacityPerHAPairHasBeenSet = false;
 
-    int m_hAPairs;
+    int m_hAPairs{0};
     bool m_hAPairsHasBeenSet = false;
   };
 

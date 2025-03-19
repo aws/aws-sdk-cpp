@@ -18,21 +18,7 @@ namespace Connect
 namespace Model
 {
 
-UserData::UserData() : 
-    m_userHasBeenSet(false),
-    m_routingProfileHasBeenSet(false),
-    m_hierarchyPathHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_availableSlotsByChannelHasBeenSet(false),
-    m_maxSlotsByChannelHasBeenSet(false),
-    m_activeSlotsByChannelHasBeenSet(false),
-    m_contactsHasBeenSet(false),
-    m_nextStatusHasBeenSet(false)
-{
-}
-
 UserData::UserData(JsonView jsonValue)
-  : UserData()
 {
   *this = jsonValue;
 }
@@ -42,31 +28,23 @@ UserData& UserData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("User"))
   {
     m_user = jsonValue.GetObject("User");
-
     m_userHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoutingProfile"))
   {
     m_routingProfile = jsonValue.GetObject("RoutingProfile");
-
     m_routingProfileHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HierarchyPath"))
   {
     m_hierarchyPath = jsonValue.GetObject("HierarchyPath");
-
     m_hierarchyPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetObject("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailableSlotsByChannel"))
   {
     Aws::Map<Aws::String, JsonView> availableSlotsByChannelJsonMap = jsonValue.GetObject("AvailableSlotsByChannel").GetAllObjects();
@@ -76,7 +54,6 @@ UserData& UserData::operator =(JsonView jsonValue)
     }
     m_availableSlotsByChannelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxSlotsByChannel"))
   {
     Aws::Map<Aws::String, JsonView> maxSlotsByChannelJsonMap = jsonValue.GetObject("MaxSlotsByChannel").GetAllObjects();
@@ -86,7 +63,6 @@ UserData& UserData::operator =(JsonView jsonValue)
     }
     m_maxSlotsByChannelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActiveSlotsByChannel"))
   {
     Aws::Map<Aws::String, JsonView> activeSlotsByChannelJsonMap = jsonValue.GetObject("ActiveSlotsByChannel").GetAllObjects();
@@ -96,7 +72,6 @@ UserData& UserData::operator =(JsonView jsonValue)
     }
     m_activeSlotsByChannelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Contacts"))
   {
     Aws::Utils::Array<JsonView> contactsJsonList = jsonValue.GetArray("Contacts");
@@ -106,14 +81,11 @@ UserData& UserData::operator =(JsonView jsonValue)
     }
     m_contactsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextStatus"))
   {
     m_nextStatus = jsonValue.GetString("NextStatus");
-
     m_nextStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -43,7 +43,7 @@ namespace Model
   class WafAction
   {
   public:
-    AWS_WAFREGIONAL_API WafAction();
+    AWS_WAFREGIONAL_API WafAction() = default;
     AWS_WAFREGIONAL_API WafAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFREGIONAL_API WafAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFREGIONAL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -61,16 +61,14 @@ namespace Model
      * <code>COUNT</code> for the default action for a <code>WebACL</code>.</p> </li>
      * </ul>
      */
-    inline const WafActionType& GetType() const{ return m_type; }
+    inline WafActionType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const WafActionType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(WafActionType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline WafAction& WithType(const WafActionType& value) { SetType(value); return *this;}
-    inline WafAction& WithType(WafActionType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(WafActionType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline WafAction& WithType(WafActionType value) { SetType(value); return *this;}
     ///@}
   private:
 
-    WafActionType m_type;
+    WafActionType m_type{WafActionType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

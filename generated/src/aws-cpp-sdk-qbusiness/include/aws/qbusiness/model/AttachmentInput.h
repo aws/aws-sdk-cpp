@@ -35,7 +35,7 @@ namespace Model
   class AttachmentInput
   {
   public:
-    AWS_QBUSINESS_API AttachmentInput();
+    AWS_QBUSINESS_API AttachmentInput() = default;
     AWS_QBUSINESS_API AttachmentInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API AttachmentInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,42 +45,40 @@ namespace Model
     /**
      * <p>The contents of the attachment.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetData() const{ return m_data; }
+    inline const Aws::Utils::ByteBuffer& GetData() const { return m_data; }
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
-    inline void SetData(const Aws::Utils::ByteBuffer& value) { m_dataHasBeenSet = true; m_data = value; }
-    inline void SetData(Aws::Utils::ByteBuffer&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
-    inline AttachmentInput& WithData(const Aws::Utils::ByteBuffer& value) { SetData(value); return *this;}
-    inline AttachmentInput& WithData(Aws::Utils::ByteBuffer&& value) { SetData(std::move(value)); return *this;}
+    template<typename DataT = Aws::Utils::ByteBuffer>
+    void SetData(DataT&& value) { m_dataHasBeenSet = true; m_data = std::forward<DataT>(value); }
+    template<typename DataT = Aws::Utils::ByteBuffer>
+    AttachmentInput& WithData(DataT&& value) { SetData(std::forward<DataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The filename of the attachment.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AttachmentInput& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AttachmentInput& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AttachmentInput& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    AttachmentInput& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A reference to an existing attachment.</p>
      */
-    inline const CopyFromSource& GetCopyFrom() const{ return m_copyFrom; }
+    inline const CopyFromSource& GetCopyFrom() const { return m_copyFrom; }
     inline bool CopyFromHasBeenSet() const { return m_copyFromHasBeenSet; }
-    inline void SetCopyFrom(const CopyFromSource& value) { m_copyFromHasBeenSet = true; m_copyFrom = value; }
-    inline void SetCopyFrom(CopyFromSource&& value) { m_copyFromHasBeenSet = true; m_copyFrom = std::move(value); }
-    inline AttachmentInput& WithCopyFrom(const CopyFromSource& value) { SetCopyFrom(value); return *this;}
-    inline AttachmentInput& WithCopyFrom(CopyFromSource&& value) { SetCopyFrom(std::move(value)); return *this;}
+    template<typename CopyFromT = CopyFromSource>
+    void SetCopyFrom(CopyFromT&& value) { m_copyFromHasBeenSet = true; m_copyFrom = std::forward<CopyFromT>(value); }
+    template<typename CopyFromT = CopyFromSource>
+    AttachmentInput& WithCopyFrom(CopyFromT&& value) { SetCopyFrom(std::forward<CopyFromT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::ByteBuffer m_data;
+    Aws::Utils::ByteBuffer m_data{};
     bool m_dataHasBeenSet = false;
 
     Aws::String m_name;

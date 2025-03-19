@@ -12,14 +12,6 @@ using namespace Aws::chatbot::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListMicrosoftTeamsChannelConfigurationsRequest::ListMicrosoftTeamsChannelConfigurationsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_teamIdHasBeenSet(false)
-{
-}
-
 Aws::String ListMicrosoftTeamsChannelConfigurationsRequest::SerializePayload() const
 {
   JsonValue payload;

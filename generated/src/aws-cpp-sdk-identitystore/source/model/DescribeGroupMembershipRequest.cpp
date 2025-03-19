@@ -12,12 +12,6 @@ using namespace Aws::IdentityStore::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeGroupMembershipRequest::DescribeGroupMembershipRequest() : 
-    m_identityStoreIdHasBeenSet(false),
-    m_membershipIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeGroupMembershipRequest::SerializePayload() const
 {
   JsonValue payload;

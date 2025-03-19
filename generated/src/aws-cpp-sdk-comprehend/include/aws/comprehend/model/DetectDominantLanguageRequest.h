@@ -21,7 +21,7 @@ namespace Model
   class DetectDominantLanguageRequest : public ComprehendRequest
   {
   public:
-    AWS_COMPREHEND_API DetectDominantLanguageRequest();
+    AWS_COMPREHEND_API DetectDominantLanguageRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>A UTF-8 text string. The string must contain at least 20 characters. The
      * maximum string size is 100 KB.</p>
      */
-    inline const Aws::String& GetText() const{ return m_text; }
+    inline const Aws::String& GetText() const { return m_text; }
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-    inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-    inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-    inline DetectDominantLanguageRequest& WithText(const Aws::String& value) { SetText(value); return *this;}
-    inline DetectDominantLanguageRequest& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-    inline DetectDominantLanguageRequest& WithText(const char* value) { SetText(value); return *this;}
+    template<typename TextT = Aws::String>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = Aws::String>
+    DetectDominantLanguageRequest& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,15 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-ImageInput::ImageInput() : 
-    m_format(ImageInputFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_sourceHasBeenSet(false)
-{
-}
-
 ImageInput::ImageInput(JsonView jsonValue)
-  : ImageInput()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ImageInput& ImageInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("format"))
   {
     m_format = ImageInputFormatMapper::GetImageInputFormatForName(jsonValue.GetString("format"));
-
     m_formatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("source"))
   {
     m_source = jsonValue.GetObject("source");
-
     m_sourceHasBeenSet = true;
   }
-
   return *this;
 }
 

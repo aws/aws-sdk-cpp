@@ -29,7 +29,7 @@ namespace Model
   class CreateFleetLocationsResult
   {
   public:
-    AWS_GAMELIFT_API CreateFleetLocationsResult();
+    AWS_GAMELIFT_API CreateFleetLocationsResult() = default;
     AWS_GAMELIFT_API CreateFleetLocationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GAMELIFT_API CreateFleetLocationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,11 @@ namespace Model
     /**
      * <p>A unique identifier for the fleet that was updated with new locations.</p>
      */
-    inline const Aws::String& GetFleetId() const{ return m_fleetId; }
-    inline void SetFleetId(const Aws::String& value) { m_fleetId = value; }
-    inline void SetFleetId(Aws::String&& value) { m_fleetId = std::move(value); }
-    inline void SetFleetId(const char* value) { m_fleetId.assign(value); }
-    inline CreateFleetLocationsResult& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
-    inline CreateFleetLocationsResult& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
-    inline CreateFleetLocationsResult& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+    inline const Aws::String& GetFleetId() const { return m_fleetId; }
+    template<typename FleetIdT = Aws::String>
+    void SetFleetId(FleetIdT&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::forward<FleetIdT>(value); }
+    template<typename FleetIdT = Aws::String>
+    CreateFleetLocationsResult& WithFleetId(FleetIdT&& value) { SetFleetId(std::forward<FleetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,13 +54,11 @@ namespace Model
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * </p>
      */
-    inline const Aws::String& GetFleetArn() const{ return m_fleetArn; }
-    inline void SetFleetArn(const Aws::String& value) { m_fleetArn = value; }
-    inline void SetFleetArn(Aws::String&& value) { m_fleetArn = std::move(value); }
-    inline void SetFleetArn(const char* value) { m_fleetArn.assign(value); }
-    inline CreateFleetLocationsResult& WithFleetArn(const Aws::String& value) { SetFleetArn(value); return *this;}
-    inline CreateFleetLocationsResult& WithFleetArn(Aws::String&& value) { SetFleetArn(std::move(value)); return *this;}
-    inline CreateFleetLocationsResult& WithFleetArn(const char* value) { SetFleetArn(value); return *this;}
+    inline const Aws::String& GetFleetArn() const { return m_fleetArn; }
+    template<typename FleetArnT = Aws::String>
+    void SetFleetArn(FleetArnT&& value) { m_fleetArnHasBeenSet = true; m_fleetArn = std::forward<FleetArnT>(value); }
+    template<typename FleetArnT = Aws::String>
+    CreateFleetLocationsResult& WithFleetArn(FleetArnT&& value) { SetFleetArn(std::forward<FleetArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,34 +70,36 @@ namespace Model
      * This list does not include the fleet home Region or any remote locations that
      * were already added to the fleet.</p>
      */
-    inline const Aws::Vector<LocationState>& GetLocationStates() const{ return m_locationStates; }
-    inline void SetLocationStates(const Aws::Vector<LocationState>& value) { m_locationStates = value; }
-    inline void SetLocationStates(Aws::Vector<LocationState>&& value) { m_locationStates = std::move(value); }
-    inline CreateFleetLocationsResult& WithLocationStates(const Aws::Vector<LocationState>& value) { SetLocationStates(value); return *this;}
-    inline CreateFleetLocationsResult& WithLocationStates(Aws::Vector<LocationState>&& value) { SetLocationStates(std::move(value)); return *this;}
-    inline CreateFleetLocationsResult& AddLocationStates(const LocationState& value) { m_locationStates.push_back(value); return *this; }
-    inline CreateFleetLocationsResult& AddLocationStates(LocationState&& value) { m_locationStates.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<LocationState>& GetLocationStates() const { return m_locationStates; }
+    template<typename LocationStatesT = Aws::Vector<LocationState>>
+    void SetLocationStates(LocationStatesT&& value) { m_locationStatesHasBeenSet = true; m_locationStates = std::forward<LocationStatesT>(value); }
+    template<typename LocationStatesT = Aws::Vector<LocationState>>
+    CreateFleetLocationsResult& WithLocationStates(LocationStatesT&& value) { SetLocationStates(std::forward<LocationStatesT>(value)); return *this;}
+    template<typename LocationStatesT = LocationState>
+    CreateFleetLocationsResult& AddLocationStates(LocationStatesT&& value) { m_locationStatesHasBeenSet = true; m_locationStates.emplace_back(std::forward<LocationStatesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateFleetLocationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateFleetLocationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateFleetLocationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateFleetLocationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_fleetId;
+    bool m_fleetIdHasBeenSet = false;
 
     Aws::String m_fleetArn;
+    bool m_fleetArnHasBeenSet = false;
 
     Aws::Vector<LocationState> m_locationStates;
+    bool m_locationStatesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

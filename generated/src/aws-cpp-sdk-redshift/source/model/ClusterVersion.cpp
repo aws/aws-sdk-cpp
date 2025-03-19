@@ -20,15 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-ClusterVersion::ClusterVersion() : 
-    m_clusterVersionHasBeenSet(false),
-    m_clusterParameterGroupFamilyHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 ClusterVersion::ClusterVersion(const XmlNode& xmlNode)
-  : ClusterVersion()
 {
   *this = xmlNode;
 }

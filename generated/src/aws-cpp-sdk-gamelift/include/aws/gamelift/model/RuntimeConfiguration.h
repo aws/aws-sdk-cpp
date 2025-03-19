@@ -42,7 +42,7 @@ namespace Model
   class RuntimeConfiguration
   {
   public:
-    AWS_GAMELIFT_API RuntimeConfiguration();
+    AWS_GAMELIFT_API RuntimeConfiguration() = default;
     AWS_GAMELIFT_API RuntimeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API RuntimeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,14 +53,14 @@ namespace Model
      * <p>A collection of server process configurations that identify what server
      * processes to run on fleet computes.</p>
      */
-    inline const Aws::Vector<ServerProcess>& GetServerProcesses() const{ return m_serverProcesses; }
+    inline const Aws::Vector<ServerProcess>& GetServerProcesses() const { return m_serverProcesses; }
     inline bool ServerProcessesHasBeenSet() const { return m_serverProcessesHasBeenSet; }
-    inline void SetServerProcesses(const Aws::Vector<ServerProcess>& value) { m_serverProcessesHasBeenSet = true; m_serverProcesses = value; }
-    inline void SetServerProcesses(Aws::Vector<ServerProcess>&& value) { m_serverProcessesHasBeenSet = true; m_serverProcesses = std::move(value); }
-    inline RuntimeConfiguration& WithServerProcesses(const Aws::Vector<ServerProcess>& value) { SetServerProcesses(value); return *this;}
-    inline RuntimeConfiguration& WithServerProcesses(Aws::Vector<ServerProcess>&& value) { SetServerProcesses(std::move(value)); return *this;}
-    inline RuntimeConfiguration& AddServerProcesses(const ServerProcess& value) { m_serverProcessesHasBeenSet = true; m_serverProcesses.push_back(value); return *this; }
-    inline RuntimeConfiguration& AddServerProcesses(ServerProcess&& value) { m_serverProcessesHasBeenSet = true; m_serverProcesses.push_back(std::move(value)); return *this; }
+    template<typename ServerProcessesT = Aws::Vector<ServerProcess>>
+    void SetServerProcesses(ServerProcessesT&& value) { m_serverProcessesHasBeenSet = true; m_serverProcesses = std::forward<ServerProcessesT>(value); }
+    template<typename ServerProcessesT = Aws::Vector<ServerProcess>>
+    RuntimeConfiguration& WithServerProcesses(ServerProcessesT&& value) { SetServerProcesses(std::forward<ServerProcessesT>(value)); return *this;}
+    template<typename ServerProcessesT = ServerProcess>
+    RuntimeConfiguration& AddServerProcesses(ServerProcessesT&& value) { m_serverProcessesHasBeenSet = true; m_serverProcesses.emplace_back(std::forward<ServerProcessesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -69,7 +69,7 @@ namespace Model
      * instance or compute. This setting limits the instance resources that can be used
      * for new game activations at any one time.</p>
      */
-    inline int GetMaxConcurrentGameSessionActivations() const{ return m_maxConcurrentGameSessionActivations; }
+    inline int GetMaxConcurrentGameSessionActivations() const { return m_maxConcurrentGameSessionActivations; }
     inline bool MaxConcurrentGameSessionActivationsHasBeenSet() const { return m_maxConcurrentGameSessionActivationsHasBeenSet; }
     inline void SetMaxConcurrentGameSessionActivations(int value) { m_maxConcurrentGameSessionActivationsHasBeenSet = true; m_maxConcurrentGameSessionActivations = value; }
     inline RuntimeConfiguration& WithMaxConcurrentGameSessionActivations(int value) { SetMaxConcurrentGameSessionActivations(value); return *this;}
@@ -83,7 +83,7 @@ namespace Model
      * before the timeout, it is ended and the game session status is changed to
      * <code>TERMINATED</code>.</p>
      */
-    inline int GetGameSessionActivationTimeoutSeconds() const{ return m_gameSessionActivationTimeoutSeconds; }
+    inline int GetGameSessionActivationTimeoutSeconds() const { return m_gameSessionActivationTimeoutSeconds; }
     inline bool GameSessionActivationTimeoutSecondsHasBeenSet() const { return m_gameSessionActivationTimeoutSecondsHasBeenSet; }
     inline void SetGameSessionActivationTimeoutSeconds(int value) { m_gameSessionActivationTimeoutSecondsHasBeenSet = true; m_gameSessionActivationTimeoutSeconds = value; }
     inline RuntimeConfiguration& WithGameSessionActivationTimeoutSeconds(int value) { SetGameSessionActivationTimeoutSeconds(value); return *this;}
@@ -93,10 +93,10 @@ namespace Model
     Aws::Vector<ServerProcess> m_serverProcesses;
     bool m_serverProcessesHasBeenSet = false;
 
-    int m_maxConcurrentGameSessionActivations;
+    int m_maxConcurrentGameSessionActivations{0};
     bool m_maxConcurrentGameSessionActivationsHasBeenSet = false;
 
-    int m_gameSessionActivationTimeoutSeconds;
+    int m_gameSessionActivationTimeoutSeconds{0};
     bool m_gameSessionActivationTimeoutSecondsHasBeenSet = false;
   };
 

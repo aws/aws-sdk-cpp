@@ -18,15 +18,7 @@ namespace signer
 namespace Model
 {
 
-S3Source::S3Source() : 
-    m_bucketNameHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 S3Source::S3Source(JsonView jsonValue)
-  : S3Source()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ S3Source& S3Source::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bucketName"))
   {
     m_bucketName = jsonValue.GetString("bucketName");
-
     m_bucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

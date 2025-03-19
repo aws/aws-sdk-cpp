@@ -18,18 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-IntegerConfigurationOptions::IntegerConfigurationOptions() : 
-    m_defaultValue(0),
-    m_defaultValueHasBeenSet(false),
-    m_min(0),
-    m_minHasBeenSet(false),
-    m_max(0),
-    m_maxHasBeenSet(false)
-{
-}
-
 IntegerConfigurationOptions::IntegerConfigurationOptions(JsonView jsonValue)
-  : IntegerConfigurationOptions()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ IntegerConfigurationOptions& IntegerConfigurationOptions::operator =(JsonView js
   if(jsonValue.ValueExists("DefaultValue"))
   {
     m_defaultValue = jsonValue.GetInteger("DefaultValue");
-
     m_defaultValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Min"))
   {
     m_min = jsonValue.GetInteger("Min");
-
     m_minHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Max"))
   {
     m_max = jsonValue.GetInteger("Max");
-
     m_maxHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -13,18 +13,6 @@ using namespace Aws::BillingConductor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateBillingGroupRequest::CreateBillingGroupRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_nameHasBeenSet(false),
-    m_accountGroupingHasBeenSet(false),
-    m_computationPreferenceHasBeenSet(false),
-    m_primaryAccountIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateBillingGroupRequest::SerializePayload() const
 {
   JsonValue payload;

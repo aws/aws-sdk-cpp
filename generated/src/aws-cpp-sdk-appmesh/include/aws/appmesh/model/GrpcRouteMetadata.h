@@ -33,7 +33,7 @@ namespace Model
   class GrpcRouteMetadata
   {
   public:
-    AWS_APPMESH_API GrpcRouteMetadata();
+    AWS_APPMESH_API GrpcRouteMetadata() = default;
     AWS_APPMESH_API GrpcRouteMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API GrpcRouteMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * <p>Specify <code>True</code> to match anything except the match criteria. The
      * default value is <code>False</code>.</p>
      */
-    inline bool GetInvert() const{ return m_invert; }
+    inline bool GetInvert() const { return m_invert; }
     inline bool InvertHasBeenSet() const { return m_invertHasBeenSet; }
     inline void SetInvert(bool value) { m_invertHasBeenSet = true; m_invert = value; }
     inline GrpcRouteMetadata& WithInvert(bool value) { SetInvert(value); return *this;}
@@ -54,30 +54,28 @@ namespace Model
     /**
      * <p>An object that represents the data to match from the request.</p>
      */
-    inline const GrpcRouteMetadataMatchMethod& GetMatch() const{ return m_match; }
+    inline const GrpcRouteMetadataMatchMethod& GetMatch() const { return m_match; }
     inline bool MatchHasBeenSet() const { return m_matchHasBeenSet; }
-    inline void SetMatch(const GrpcRouteMetadataMatchMethod& value) { m_matchHasBeenSet = true; m_match = value; }
-    inline void SetMatch(GrpcRouteMetadataMatchMethod&& value) { m_matchHasBeenSet = true; m_match = std::move(value); }
-    inline GrpcRouteMetadata& WithMatch(const GrpcRouteMetadataMatchMethod& value) { SetMatch(value); return *this;}
-    inline GrpcRouteMetadata& WithMatch(GrpcRouteMetadataMatchMethod&& value) { SetMatch(std::move(value)); return *this;}
+    template<typename MatchT = GrpcRouteMetadataMatchMethod>
+    void SetMatch(MatchT&& value) { m_matchHasBeenSet = true; m_match = std::forward<MatchT>(value); }
+    template<typename MatchT = GrpcRouteMetadataMatchMethod>
+    GrpcRouteMetadata& WithMatch(MatchT&& value) { SetMatch(std::forward<MatchT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the route.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline GrpcRouteMetadata& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GrpcRouteMetadata& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GrpcRouteMetadata& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GrpcRouteMetadata& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_invert;
+    bool m_invert{false};
     bool m_invertHasBeenSet = false;
 
     GrpcRouteMetadataMatchMethod m_match;

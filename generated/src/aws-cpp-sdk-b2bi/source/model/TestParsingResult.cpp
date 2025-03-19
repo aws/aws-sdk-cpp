@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-TestParsingResult::TestParsingResult()
-{
-}
-
 TestParsingResult::TestParsingResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ TestParsingResult& TestParsingResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("parsedFileContent"))
   {
     m_parsedFileContent = jsonValue.GetString("parsedFileContent");
-
+    m_parsedFileContentHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

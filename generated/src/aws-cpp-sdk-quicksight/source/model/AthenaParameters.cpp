@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-AthenaParameters::AthenaParameters() : 
-    m_workGroupHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 AthenaParameters::AthenaParameters(JsonView jsonValue)
-  : AthenaParameters()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AthenaParameters& AthenaParameters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("WorkGroup"))
   {
     m_workGroup = jsonValue.GetString("WorkGroup");
-
     m_workGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

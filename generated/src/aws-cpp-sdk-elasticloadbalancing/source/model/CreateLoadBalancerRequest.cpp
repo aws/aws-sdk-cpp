@@ -10,17 +10,6 @@
 using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils;
 
-CreateLoadBalancerRequest::CreateLoadBalancerRequest() : 
-    m_loadBalancerNameHasBeenSet(false),
-    m_listenersHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false),
-    m_subnetsHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_schemeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateLoadBalancerRequest::SerializePayload() const
 {
   Aws::StringStream ss;

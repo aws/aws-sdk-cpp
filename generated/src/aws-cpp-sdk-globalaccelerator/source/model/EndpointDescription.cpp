@@ -18,20 +18,7 @@ namespace GlobalAccelerator
 namespace Model
 {
 
-EndpointDescription::EndpointDescription() : 
-    m_endpointIdHasBeenSet(false),
-    m_weight(0),
-    m_weightHasBeenSet(false),
-    m_healthState(HealthState::NOT_SET),
-    m_healthStateHasBeenSet(false),
-    m_healthReasonHasBeenSet(false),
-    m_clientIPPreservationEnabled(false),
-    m_clientIPPreservationEnabledHasBeenSet(false)
-{
-}
-
 EndpointDescription::EndpointDescription(JsonView jsonValue)
-  : EndpointDescription()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ EndpointDescription& EndpointDescription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EndpointId"))
   {
     m_endpointId = jsonValue.GetString("EndpointId");
-
     m_endpointIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Weight"))
   {
     m_weight = jsonValue.GetInteger("Weight");
-
     m_weightHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HealthState"))
   {
     m_healthState = HealthStateMapper::GetHealthStateForName(jsonValue.GetString("HealthState"));
-
     m_healthStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HealthReason"))
   {
     m_healthReason = jsonValue.GetString("HealthReason");
-
     m_healthReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClientIPPreservationEnabled"))
   {
     m_clientIPPreservationEnabled = jsonValue.GetBool("ClientIPPreservationEnabled");
-
     m_clientIPPreservationEnabledHasBeenSet = true;
   }
-
   return *this;
 }
 

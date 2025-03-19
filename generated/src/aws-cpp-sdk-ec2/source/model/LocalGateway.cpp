@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-LocalGateway::LocalGateway() : 
-    m_localGatewayIdHasBeenSet(false),
-    m_outpostArnHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 LocalGateway::LocalGateway(const XmlNode& xmlNode)
-  : LocalGateway()
 {
   *this = xmlNode;
 }
@@ -69,6 +59,7 @@ LocalGateway& LocalGateway::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

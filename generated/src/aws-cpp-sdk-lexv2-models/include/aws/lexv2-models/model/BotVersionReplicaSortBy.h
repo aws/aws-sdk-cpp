@@ -33,7 +33,7 @@ namespace Model
   class BotVersionReplicaSortBy
   {
   public:
-    AWS_LEXMODELSV2_API BotVersionReplicaSortBy();
+    AWS_LEXMODELSV2_API BotVersionReplicaSortBy() = default;
     AWS_LEXMODELSV2_API BotVersionReplicaSortBy(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API BotVersionReplicaSortBy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,31 +43,27 @@ namespace Model
     /**
      * <p>The attribute of the sort category for the version replicated bots.</p>
      */
-    inline const BotVersionReplicaSortAttribute& GetAttribute() const{ return m_attribute; }
+    inline BotVersionReplicaSortAttribute GetAttribute() const { return m_attribute; }
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-    inline void SetAttribute(const BotVersionReplicaSortAttribute& value) { m_attributeHasBeenSet = true; m_attribute = value; }
-    inline void SetAttribute(BotVersionReplicaSortAttribute&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-    inline BotVersionReplicaSortBy& WithAttribute(const BotVersionReplicaSortAttribute& value) { SetAttribute(value); return *this;}
-    inline BotVersionReplicaSortBy& WithAttribute(BotVersionReplicaSortAttribute&& value) { SetAttribute(std::move(value)); return *this;}
+    inline void SetAttribute(BotVersionReplicaSortAttribute value) { m_attributeHasBeenSet = true; m_attribute = value; }
+    inline BotVersionReplicaSortBy& WithAttribute(BotVersionReplicaSortAttribute value) { SetAttribute(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The order of the sort category for the version replicated bots.</p>
      */
-    inline const SortOrder& GetOrder() const{ return m_order; }
+    inline SortOrder GetOrder() const { return m_order; }
     inline bool OrderHasBeenSet() const { return m_orderHasBeenSet; }
-    inline void SetOrder(const SortOrder& value) { m_orderHasBeenSet = true; m_order = value; }
-    inline void SetOrder(SortOrder&& value) { m_orderHasBeenSet = true; m_order = std::move(value); }
-    inline BotVersionReplicaSortBy& WithOrder(const SortOrder& value) { SetOrder(value); return *this;}
-    inline BotVersionReplicaSortBy& WithOrder(SortOrder&& value) { SetOrder(std::move(value)); return *this;}
+    inline void SetOrder(SortOrder value) { m_orderHasBeenSet = true; m_order = value; }
+    inline BotVersionReplicaSortBy& WithOrder(SortOrder value) { SetOrder(value); return *this;}
     ///@}
   private:
 
-    BotVersionReplicaSortAttribute m_attribute;
+    BotVersionReplicaSortAttribute m_attribute{BotVersionReplicaSortAttribute::NOT_SET};
     bool m_attributeHasBeenSet = false;
 
-    SortOrder m_order;
+    SortOrder m_order{SortOrder::NOT_SET};
     bool m_orderHasBeenSet = false;
   };
 

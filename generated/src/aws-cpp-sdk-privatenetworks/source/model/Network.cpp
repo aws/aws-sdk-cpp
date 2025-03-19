@@ -18,19 +18,7 @@ namespace PrivateNetworks
 namespace Model
 {
 
-Network::Network() : 
-    m_createdAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_networkArnHasBeenSet(false),
-    m_networkNameHasBeenSet(false),
-    m_status(NetworkStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false)
-{
-}
-
 Network::Network(JsonView jsonValue)
-  : Network()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ Network& Network::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkArn"))
   {
     m_networkArn = jsonValue.GetString("networkArn");
-
     m_networkArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkName"))
   {
     m_networkName = jsonValue.GetString("networkName");
-
     m_networkNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = NetworkStatusMapper::GetNetworkStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusReason"))
   {
     m_statusReason = jsonValue.GetString("statusReason");
-
     m_statusReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

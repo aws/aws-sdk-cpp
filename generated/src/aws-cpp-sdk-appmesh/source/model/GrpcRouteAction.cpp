@@ -18,13 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-GrpcRouteAction::GrpcRouteAction() : 
-    m_weightedTargetsHasBeenSet(false)
-{
-}
-
 GrpcRouteAction::GrpcRouteAction(JsonView jsonValue)
-  : GrpcRouteAction()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ GrpcRouteAction& GrpcRouteAction::operator =(JsonView jsonValue)
     }
     m_weightedTargetsHasBeenSet = true;
   }
-
   return *this;
 }
 

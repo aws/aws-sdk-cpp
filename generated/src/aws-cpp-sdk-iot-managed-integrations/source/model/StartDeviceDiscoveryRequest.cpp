@@ -12,19 +12,6 @@ using namespace Aws::IoTManagedIntegrations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartDeviceDiscoveryRequest::StartDeviceDiscoveryRequest() : 
-    m_discoveryType(DiscoveryType::NOT_SET),
-    m_discoveryTypeHasBeenSet(false),
-    m_controllerIdentifierHasBeenSet(false),
-    m_connectorAssociationIdentifierHasBeenSet(false),
-    m_authenticationMaterialHasBeenSet(false),
-    m_authenticationMaterialType(DiscoveryAuthMaterialType::NOT_SET),
-    m_authenticationMaterialTypeHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String StartDeviceDiscoveryRequest::SerializePayload() const
 {
   JsonValue payload;

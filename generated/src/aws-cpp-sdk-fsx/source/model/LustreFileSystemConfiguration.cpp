@@ -18,33 +18,7 @@ namespace FSx
 namespace Model
 {
 
-LustreFileSystemConfiguration::LustreFileSystemConfiguration() : 
-    m_weeklyMaintenanceStartTimeHasBeenSet(false),
-    m_dataRepositoryConfigurationHasBeenSet(false),
-    m_deploymentType(LustreDeploymentType::NOT_SET),
-    m_deploymentTypeHasBeenSet(false),
-    m_perUnitStorageThroughput(0),
-    m_perUnitStorageThroughputHasBeenSet(false),
-    m_mountNameHasBeenSet(false),
-    m_dailyAutomaticBackupStartTimeHasBeenSet(false),
-    m_automaticBackupRetentionDays(0),
-    m_automaticBackupRetentionDaysHasBeenSet(false),
-    m_copyTagsToBackups(false),
-    m_copyTagsToBackupsHasBeenSet(false),
-    m_driveCacheType(DriveCacheType::NOT_SET),
-    m_driveCacheTypeHasBeenSet(false),
-    m_dataCompressionType(DataCompressionType::NOT_SET),
-    m_dataCompressionTypeHasBeenSet(false),
-    m_logConfigurationHasBeenSet(false),
-    m_rootSquashConfigurationHasBeenSet(false),
-    m_metadataConfigurationHasBeenSet(false),
-    m_efaEnabled(false),
-    m_efaEnabledHasBeenSet(false)
-{
-}
-
 LustreFileSystemConfiguration::LustreFileSystemConfiguration(JsonView jsonValue)
-  : LustreFileSystemConfiguration()
 {
   *this = jsonValue;
 }
@@ -54,101 +28,73 @@ LustreFileSystemConfiguration& LustreFileSystemConfiguration::operator =(JsonVie
   if(jsonValue.ValueExists("WeeklyMaintenanceStartTime"))
   {
     m_weeklyMaintenanceStartTime = jsonValue.GetString("WeeklyMaintenanceStartTime");
-
     m_weeklyMaintenanceStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataRepositoryConfiguration"))
   {
     m_dataRepositoryConfiguration = jsonValue.GetObject("DataRepositoryConfiguration");
-
     m_dataRepositoryConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeploymentType"))
   {
     m_deploymentType = LustreDeploymentTypeMapper::GetLustreDeploymentTypeForName(jsonValue.GetString("DeploymentType"));
-
     m_deploymentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PerUnitStorageThroughput"))
   {
     m_perUnitStorageThroughput = jsonValue.GetInteger("PerUnitStorageThroughput");
-
     m_perUnitStorageThroughputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MountName"))
   {
     m_mountName = jsonValue.GetString("MountName");
-
     m_mountNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DailyAutomaticBackupStartTime"))
   {
     m_dailyAutomaticBackupStartTime = jsonValue.GetString("DailyAutomaticBackupStartTime");
-
     m_dailyAutomaticBackupStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutomaticBackupRetentionDays"))
   {
     m_automaticBackupRetentionDays = jsonValue.GetInteger("AutomaticBackupRetentionDays");
-
     m_automaticBackupRetentionDaysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CopyTagsToBackups"))
   {
     m_copyTagsToBackups = jsonValue.GetBool("CopyTagsToBackups");
-
     m_copyTagsToBackupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DriveCacheType"))
   {
     m_driveCacheType = DriveCacheTypeMapper::GetDriveCacheTypeForName(jsonValue.GetString("DriveCacheType"));
-
     m_driveCacheTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataCompressionType"))
   {
     m_dataCompressionType = DataCompressionTypeMapper::GetDataCompressionTypeForName(jsonValue.GetString("DataCompressionType"));
-
     m_dataCompressionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogConfiguration"))
   {
     m_logConfiguration = jsonValue.GetObject("LogConfiguration");
-
     m_logConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RootSquashConfiguration"))
   {
     m_rootSquashConfiguration = jsonValue.GetObject("RootSquashConfiguration");
-
     m_rootSquashConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetadataConfiguration"))
   {
     m_metadataConfiguration = jsonValue.GetObject("MetadataConfiguration");
-
     m_metadataConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EfaEnabled"))
   {
     m_efaEnabled = jsonValue.GetBool("EfaEnabled");
-
     m_efaEnabledHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,12 +12,6 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartImageBuilderRequest::StartImageBuilderRequest() : 
-    m_nameHasBeenSet(false),
-    m_appstreamAgentVersionHasBeenSet(false)
-{
-}
-
 Aws::String StartImageBuilderRequest::SerializePayload() const
 {
   JsonValue payload;

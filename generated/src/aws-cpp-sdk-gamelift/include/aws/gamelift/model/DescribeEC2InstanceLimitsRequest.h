@@ -22,7 +22,7 @@ namespace Model
   class DescribeEC2InstanceLimitsRequest : public GameLiftRequest
   {
   public:
-    AWS_GAMELIFT_API DescribeEC2InstanceLimitsRequest();
+    AWS_GAMELIFT_API DescribeEC2InstanceLimitsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,12 +42,10 @@ namespace Model
      * fleet, including CPU, memory, storage, and networking capacity. Do not specify a
      * value for this parameter to retrieve limits for all instance types.</p>
      */
-    inline const EC2InstanceType& GetEC2InstanceType() const{ return m_eC2InstanceType; }
+    inline EC2InstanceType GetEC2InstanceType() const { return m_eC2InstanceType; }
     inline bool EC2InstanceTypeHasBeenSet() const { return m_eC2InstanceTypeHasBeenSet; }
-    inline void SetEC2InstanceType(const EC2InstanceType& value) { m_eC2InstanceTypeHasBeenSet = true; m_eC2InstanceType = value; }
-    inline void SetEC2InstanceType(EC2InstanceType&& value) { m_eC2InstanceTypeHasBeenSet = true; m_eC2InstanceType = std::move(value); }
-    inline DescribeEC2InstanceLimitsRequest& WithEC2InstanceType(const EC2InstanceType& value) { SetEC2InstanceType(value); return *this;}
-    inline DescribeEC2InstanceLimitsRequest& WithEC2InstanceType(EC2InstanceType&& value) { SetEC2InstanceType(std::move(value)); return *this;}
+    inline void SetEC2InstanceType(EC2InstanceType value) { m_eC2InstanceTypeHasBeenSet = true; m_eC2InstanceType = value; }
+    inline DescribeEC2InstanceLimitsRequest& WithEC2InstanceType(EC2InstanceType value) { SetEC2InstanceType(value); return *this;}
     ///@}
 
     ///@{
@@ -55,18 +53,16 @@ namespace Model
      * <p>The name of a remote location to request instance limits for, in the form of
      * an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
      */
-    inline const Aws::String& GetLocation() const{ return m_location; }
+    inline const Aws::String& GetLocation() const { return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-    inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
-    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-    inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
-    inline DescribeEC2InstanceLimitsRequest& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-    inline DescribeEC2InstanceLimitsRequest& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-    inline DescribeEC2InstanceLimitsRequest& WithLocation(const char* value) { SetLocation(value); return *this;}
+    template<typename LocationT = Aws::String>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Aws::String>
+    DescribeEC2InstanceLimitsRequest& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
   private:
 
-    EC2InstanceType m_eC2InstanceType;
+    EC2InstanceType m_eC2InstanceType{EC2InstanceType::NOT_SET};
     bool m_eC2InstanceTypeHasBeenSet = false;
 
     Aws::String m_location;

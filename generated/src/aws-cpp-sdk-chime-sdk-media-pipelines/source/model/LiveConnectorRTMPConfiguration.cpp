@@ -18,16 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-LiveConnectorRTMPConfiguration::LiveConnectorRTMPConfiguration() : 
-    m_urlHasBeenSet(false),
-    m_audioChannels(AudioChannelsOption::NOT_SET),
-    m_audioChannelsHasBeenSet(false),
-    m_audioSampleRateHasBeenSet(false)
-{
-}
-
 LiveConnectorRTMPConfiguration::LiveConnectorRTMPConfiguration(JsonView jsonValue)
-  : LiveConnectorRTMPConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ LiveConnectorRTMPConfiguration& LiveConnectorRTMPConfiguration::operator =(JsonV
   if(jsonValue.ValueExists("Url"))
   {
     m_url = jsonValue.GetString("Url");
-
     m_urlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AudioChannels"))
   {
     m_audioChannels = AudioChannelsOptionMapper::GetAudioChannelsOptionForName(jsonValue.GetString("AudioChannels"));
-
     m_audioChannelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AudioSampleRate"))
   {
     m_audioSampleRate = jsonValue.GetString("AudioSampleRate");
-
     m_audioSampleRateHasBeenSet = true;
   }
-
   return *this;
 }
 

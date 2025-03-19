@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateSolFunctionPackageResult::UpdateSolFunctionPackageResult() : 
-    m_operationalState(OperationalState::NOT_SET)
-{
-}
-
 UpdateSolFunctionPackageResult::UpdateSolFunctionPackageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateSolFunctionPackageResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ UpdateSolFunctionPackageResult& UpdateSolFunctionPackageResult::operator =(const
   if(jsonValue.ValueExists("operationalState"))
   {
     m_operationalState = OperationalStateMapper::GetOperationalStateForName(jsonValue.GetString("operationalState"));
-
+    m_operationalStateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,32 +18,10 @@ namespace QBusiness
 namespace Model
 {
 
-AttributeFilter::AttributeFilter() : 
-    m_andAllFiltersHasBeenSet(false),
-    m_orAllFiltersHasBeenSet(false),
-    m_notFilterHasBeenSet(false),
-    m_equalsToHasBeenSet(false),
-    m_containsAllHasBeenSet(false),
-    m_containsAnyHasBeenSet(false),
-    m_greaterThanHasBeenSet(false),
-    m_greaterThanOrEqualsHasBeenSet(false),
-    m_lessThanHasBeenSet(false),
-    m_lessThanOrEqualsHasBeenSet(false)
-{
-}
-
 AttributeFilter::AttributeFilter(JsonView jsonValue)
-  : AttributeFilter()
 {
   *this = jsonValue;
 }
-
-const AttributeFilter& AttributeFilter::GetNotFilter() const{ return *m_notFilter; }
-bool AttributeFilter::NotFilterHasBeenSet() const { return m_notFilterHasBeenSet; }
-void AttributeFilter::SetNotFilter(const AttributeFilter& value) { m_notFilterHasBeenSet = true; m_notFilter = Aws::MakeShared<AttributeFilter>("AttributeFilter", value); }
-void AttributeFilter::SetNotFilter(AttributeFilter&& value) { m_notFilterHasBeenSet = true; m_notFilter = Aws::MakeShared<AttributeFilter>("AttributeFilter", std::move(value)); }
-AttributeFilter& AttributeFilter::WithNotFilter(const AttributeFilter& value) { SetNotFilter(value); return *this;}
-AttributeFilter& AttributeFilter::WithNotFilter(AttributeFilter&& value) { SetNotFilter(std::move(value)); return *this;}
 
 AttributeFilter& AttributeFilter::operator =(JsonView jsonValue)
 {
@@ -56,7 +34,6 @@ AttributeFilter& AttributeFilter::operator =(JsonView jsonValue)
     }
     m_andAllFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("orAllFilters"))
   {
     Aws::Utils::Array<JsonView> orAllFiltersJsonList = jsonValue.GetArray("orAllFilters");
@@ -66,63 +43,46 @@ AttributeFilter& AttributeFilter::operator =(JsonView jsonValue)
     }
     m_orAllFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("notFilter"))
   {
     m_notFilter = Aws::MakeShared<AttributeFilter>("AttributeFilter", jsonValue.GetObject("notFilter"));
-
     m_notFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("equalsTo"))
   {
     m_equalsTo = jsonValue.GetObject("equalsTo");
-
     m_equalsToHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("containsAll"))
   {
     m_containsAll = jsonValue.GetObject("containsAll");
-
     m_containsAllHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("containsAny"))
   {
     m_containsAny = jsonValue.GetObject("containsAny");
-
     m_containsAnyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("greaterThan"))
   {
     m_greaterThan = jsonValue.GetObject("greaterThan");
-
     m_greaterThanHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("greaterThanOrEquals"))
   {
     m_greaterThanOrEquals = jsonValue.GetObject("greaterThanOrEquals");
-
     m_greaterThanOrEqualsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lessThan"))
   {
     m_lessThan = jsonValue.GetObject("lessThan");
-
     m_lessThanHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lessThanOrEquals"))
   {
     m_lessThanOrEquals = jsonValue.GetObject("lessThanOrEquals");
-
     m_lessThanOrEqualsHasBeenSet = true;
   }
-
   return *this;
 }
 

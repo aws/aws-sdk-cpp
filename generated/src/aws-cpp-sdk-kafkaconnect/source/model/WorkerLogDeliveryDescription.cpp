@@ -18,15 +18,7 @@ namespace KafkaConnect
 namespace Model
 {
 
-WorkerLogDeliveryDescription::WorkerLogDeliveryDescription() : 
-    m_cloudWatchLogsHasBeenSet(false),
-    m_firehoseHasBeenSet(false),
-    m_s3HasBeenSet(false)
-{
-}
-
 WorkerLogDeliveryDescription::WorkerLogDeliveryDescription(JsonView jsonValue)
-  : WorkerLogDeliveryDescription()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ WorkerLogDeliveryDescription& WorkerLogDeliveryDescription::operator =(JsonView 
   if(jsonValue.ValueExists("cloudWatchLogs"))
   {
     m_cloudWatchLogs = jsonValue.GetObject("cloudWatchLogs");
-
     m_cloudWatchLogsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("firehose"))
   {
     m_firehose = jsonValue.GetObject("firehose");
-
     m_firehoseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3"))
   {
     m_s3 = jsonValue.GetObject("s3");
-
     m_s3HasBeenSet = true;
   }
-
   return *this;
 }
 

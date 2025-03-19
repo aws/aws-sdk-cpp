@@ -12,12 +12,6 @@ using namespace Aws::SSMContacts::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListPageResolutionsRequest::ListPageResolutionsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_pageIdHasBeenSet(false)
-{
-}
-
 Aws::String ListPageResolutionsRequest::SerializePayload() const
 {
   JsonValue payload;

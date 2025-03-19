@@ -18,18 +18,7 @@ namespace IoTTwinMaker
 namespace Model
 {
 
-FunctionResponse::FunctionResponse() : 
-    m_requiredPropertiesHasBeenSet(false),
-    m_scope(Scope::NOT_SET),
-    m_scopeHasBeenSet(false),
-    m_implementedByHasBeenSet(false),
-    m_isInherited(false),
-    m_isInheritedHasBeenSet(false)
-{
-}
-
 FunctionResponse::FunctionResponse(JsonView jsonValue)
-  : FunctionResponse()
 {
   *this = jsonValue;
 }
@@ -45,28 +34,21 @@ FunctionResponse& FunctionResponse::operator =(JsonView jsonValue)
     }
     m_requiredPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scope"))
   {
     m_scope = ScopeMapper::GetScopeForName(jsonValue.GetString("scope"));
-
     m_scopeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("implementedBy"))
   {
     m_implementedBy = jsonValue.GetObject("implementedBy");
-
     m_implementedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isInherited"))
   {
     m_isInherited = jsonValue.GetBool("isInherited");
-
     m_isInheritedHasBeenSet = true;
   }
-
   return *this;
 }
 

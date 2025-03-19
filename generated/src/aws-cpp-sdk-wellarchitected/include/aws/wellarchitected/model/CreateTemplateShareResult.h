@@ -27,7 +27,7 @@ namespace Model
   class CreateTemplateShareResult
   {
   public:
-    AWS_WELLARCHITECTED_API CreateTemplateShareResult();
+    AWS_WELLARCHITECTED_API CreateTemplateShareResult() = default;
     AWS_WELLARCHITECTED_API CreateTemplateShareResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WELLARCHITECTED_API CreateTemplateShareResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,43 +36,40 @@ namespace Model
     /**
      * <p>The review template ARN.</p>
      */
-    inline const Aws::String& GetTemplateArn() const{ return m_templateArn; }
-    inline void SetTemplateArn(const Aws::String& value) { m_templateArn = value; }
-    inline void SetTemplateArn(Aws::String&& value) { m_templateArn = std::move(value); }
-    inline void SetTemplateArn(const char* value) { m_templateArn.assign(value); }
-    inline CreateTemplateShareResult& WithTemplateArn(const Aws::String& value) { SetTemplateArn(value); return *this;}
-    inline CreateTemplateShareResult& WithTemplateArn(Aws::String&& value) { SetTemplateArn(std::move(value)); return *this;}
-    inline CreateTemplateShareResult& WithTemplateArn(const char* value) { SetTemplateArn(value); return *this;}
+    inline const Aws::String& GetTemplateArn() const { return m_templateArn; }
+    template<typename TemplateArnT = Aws::String>
+    void SetTemplateArn(TemplateArnT&& value) { m_templateArnHasBeenSet = true; m_templateArn = std::forward<TemplateArnT>(value); }
+    template<typename TemplateArnT = Aws::String>
+    CreateTemplateShareResult& WithTemplateArn(TemplateArnT&& value) { SetTemplateArn(std::forward<TemplateArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetShareId() const{ return m_shareId; }
-    inline void SetShareId(const Aws::String& value) { m_shareId = value; }
-    inline void SetShareId(Aws::String&& value) { m_shareId = std::move(value); }
-    inline void SetShareId(const char* value) { m_shareId.assign(value); }
-    inline CreateTemplateShareResult& WithShareId(const Aws::String& value) { SetShareId(value); return *this;}
-    inline CreateTemplateShareResult& WithShareId(Aws::String&& value) { SetShareId(std::move(value)); return *this;}
-    inline CreateTemplateShareResult& WithShareId(const char* value) { SetShareId(value); return *this;}
+    inline const Aws::String& GetShareId() const { return m_shareId; }
+    template<typename ShareIdT = Aws::String>
+    void SetShareId(ShareIdT&& value) { m_shareIdHasBeenSet = true; m_shareId = std::forward<ShareIdT>(value); }
+    template<typename ShareIdT = Aws::String>
+    CreateTemplateShareResult& WithShareId(ShareIdT&& value) { SetShareId(std::forward<ShareIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateTemplateShareResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateTemplateShareResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateTemplateShareResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateTemplateShareResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_templateArn;
+    bool m_templateArnHasBeenSet = false;
 
     Aws::String m_shareId;
+    bool m_shareIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

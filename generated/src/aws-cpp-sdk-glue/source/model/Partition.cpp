@@ -18,21 +18,7 @@ namespace Glue
 namespace Model
 {
 
-Partition::Partition() : 
-    m_valuesHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastAccessTimeHasBeenSet(false),
-    m_storageDescriptorHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_lastAnalyzedTimeHasBeenSet(false),
-    m_catalogIdHasBeenSet(false)
-{
-}
-
 Partition::Partition(JsonView jsonValue)
-  : Partition()
 {
   *this = jsonValue;
 }
@@ -48,42 +34,31 @@ Partition& Partition::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseName"))
   {
     m_databaseName = jsonValue.GetString("DatabaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableName"))
   {
     m_tableName = jsonValue.GetString("TableName");
-
     m_tableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastAccessTime"))
   {
     m_lastAccessTime = jsonValue.GetDouble("LastAccessTime");
-
     m_lastAccessTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StorageDescriptor"))
   {
     m_storageDescriptor = jsonValue.GetObject("StorageDescriptor");
-
     m_storageDescriptorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
@@ -93,21 +68,16 @@ Partition& Partition::operator =(JsonView jsonValue)
     }
     m_parametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastAnalyzedTime"))
   {
     m_lastAnalyzedTime = jsonValue.GetDouble("LastAnalyzedTime");
-
     m_lastAnalyzedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CatalogId"))
   {
     m_catalogId = jsonValue.GetString("CatalogId");
-
     m_catalogIdHasBeenSet = true;
   }
-
   return *this;
 }
 

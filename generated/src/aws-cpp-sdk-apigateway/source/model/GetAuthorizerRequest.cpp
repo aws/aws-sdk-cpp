@@ -12,12 +12,6 @@ using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAuthorizerRequest::GetAuthorizerRequest() : 
-    m_restApiIdHasBeenSet(false),
-    m_authorizerIdHasBeenSet(false)
-{
-}
-
 Aws::String GetAuthorizerRequest::SerializePayload() const
 {
   return {};

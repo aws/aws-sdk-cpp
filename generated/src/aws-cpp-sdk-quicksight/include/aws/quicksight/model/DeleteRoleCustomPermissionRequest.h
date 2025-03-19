@@ -22,7 +22,7 @@ namespace Model
   class DeleteRoleCustomPermissionRequest : public QuickSightRequest
   {
   public:
-    AWS_QUICKSIGHT_API DeleteRoleCustomPermissionRequest();
+    AWS_QUICKSIGHT_API DeleteRoleCustomPermissionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,12 +37,10 @@ namespace Model
     /**
      * <p>The role that you want to remove permissions from.</p>
      */
-    inline const Role& GetRole() const{ return m_role; }
+    inline Role GetRole() const { return m_role; }
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
-    inline void SetRole(const Role& value) { m_roleHasBeenSet = true; m_role = value; }
-    inline void SetRole(Role&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
-    inline DeleteRoleCustomPermissionRequest& WithRole(const Role& value) { SetRole(value); return *this;}
-    inline DeleteRoleCustomPermissionRequest& WithRole(Role&& value) { SetRole(std::move(value)); return *this;}
+    inline void SetRole(Role value) { m_roleHasBeenSet = true; m_role = value; }
+    inline DeleteRoleCustomPermissionRequest& WithRole(Role value) { SetRole(value); return *this;}
     ///@}
 
     ///@{
@@ -51,32 +49,28 @@ namespace Model
      * you use the ID for the Amazon Web Services account that contains your Amazon
      * QuickSight account.</p>
      */
-    inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
+    inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-    inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
-    inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
-    inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
-    inline DeleteRoleCustomPermissionRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
-    inline DeleteRoleCustomPermissionRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
-    inline DeleteRoleCustomPermissionRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+    template<typename AwsAccountIdT = Aws::String>
+    void SetAwsAccountId(AwsAccountIdT&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::forward<AwsAccountIdT>(value); }
+    template<typename AwsAccountIdT = Aws::String>
+    DeleteRoleCustomPermissionRequest& WithAwsAccountId(AwsAccountIdT&& value) { SetAwsAccountId(std::forward<AwsAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The namespace that includes the role.</p>
      */
-    inline const Aws::String& GetNamespace() const{ return m_namespace; }
+    inline const Aws::String& GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
-    inline DeleteRoleCustomPermissionRequest& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-    inline DeleteRoleCustomPermissionRequest& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-    inline DeleteRoleCustomPermissionRequest& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+    template<typename NamespaceT = Aws::String>
+    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
+    template<typename NamespaceT = Aws::String>
+    DeleteRoleCustomPermissionRequest& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
     ///@}
   private:
 
-    Role m_role;
+    Role m_role{Role::NOT_SET};
     bool m_roleHasBeenSet = false;
 
     Aws::String m_awsAccountId;

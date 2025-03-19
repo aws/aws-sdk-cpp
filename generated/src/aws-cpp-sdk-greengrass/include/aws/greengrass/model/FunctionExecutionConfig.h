@@ -33,7 +33,7 @@ namespace Model
   class FunctionExecutionConfig
   {
   public:
-    AWS_GREENGRASS_API FunctionExecutionConfig();
+    AWS_GREENGRASS_API FunctionExecutionConfig() = default;
     AWS_GREENGRASS_API FunctionExecutionConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASS_API FunctionExecutionConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,26 +41,24 @@ namespace Model
 
     ///@{
     
-    inline const FunctionIsolationMode& GetIsolationMode() const{ return m_isolationMode; }
+    inline FunctionIsolationMode GetIsolationMode() const { return m_isolationMode; }
     inline bool IsolationModeHasBeenSet() const { return m_isolationModeHasBeenSet; }
-    inline void SetIsolationMode(const FunctionIsolationMode& value) { m_isolationModeHasBeenSet = true; m_isolationMode = value; }
-    inline void SetIsolationMode(FunctionIsolationMode&& value) { m_isolationModeHasBeenSet = true; m_isolationMode = std::move(value); }
-    inline FunctionExecutionConfig& WithIsolationMode(const FunctionIsolationMode& value) { SetIsolationMode(value); return *this;}
-    inline FunctionExecutionConfig& WithIsolationMode(FunctionIsolationMode&& value) { SetIsolationMode(std::move(value)); return *this;}
+    inline void SetIsolationMode(FunctionIsolationMode value) { m_isolationModeHasBeenSet = true; m_isolationMode = value; }
+    inline FunctionExecutionConfig& WithIsolationMode(FunctionIsolationMode value) { SetIsolationMode(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const FunctionRunAsConfig& GetRunAs() const{ return m_runAs; }
+    inline const FunctionRunAsConfig& GetRunAs() const { return m_runAs; }
     inline bool RunAsHasBeenSet() const { return m_runAsHasBeenSet; }
-    inline void SetRunAs(const FunctionRunAsConfig& value) { m_runAsHasBeenSet = true; m_runAs = value; }
-    inline void SetRunAs(FunctionRunAsConfig&& value) { m_runAsHasBeenSet = true; m_runAs = std::move(value); }
-    inline FunctionExecutionConfig& WithRunAs(const FunctionRunAsConfig& value) { SetRunAs(value); return *this;}
-    inline FunctionExecutionConfig& WithRunAs(FunctionRunAsConfig&& value) { SetRunAs(std::move(value)); return *this;}
+    template<typename RunAsT = FunctionRunAsConfig>
+    void SetRunAs(RunAsT&& value) { m_runAsHasBeenSet = true; m_runAs = std::forward<RunAsT>(value); }
+    template<typename RunAsT = FunctionRunAsConfig>
+    FunctionExecutionConfig& WithRunAs(RunAsT&& value) { SetRunAs(std::forward<RunAsT>(value)); return *this;}
     ///@}
   private:
 
-    FunctionIsolationMode m_isolationMode;
+    FunctionIsolationMode m_isolationMode{FunctionIsolationMode::NOT_SET};
     bool m_isolationModeHasBeenSet = false;
 
     FunctionRunAsConfig m_runAs;

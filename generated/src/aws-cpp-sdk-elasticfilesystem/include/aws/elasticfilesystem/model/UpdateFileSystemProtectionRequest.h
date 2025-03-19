@@ -22,7 +22,7 @@ namespace Model
   class UpdateFileSystemProtectionRequest : public EFSRequest
   {
   public:
-    AWS_EFS_API UpdateFileSystemProtectionRequest();
+    AWS_EFS_API UpdateFileSystemProtectionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
     /**
      * <p>The ID of the file system to update. </p>
      */
-    inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
+    inline const Aws::String& GetFileSystemId() const { return m_fileSystemId; }
     inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
-    inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
-    inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::move(value); }
-    inline void SetFileSystemId(const char* value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId.assign(value); }
-    inline UpdateFileSystemProtectionRequest& WithFileSystemId(const Aws::String& value) { SetFileSystemId(value); return *this;}
-    inline UpdateFileSystemProtectionRequest& WithFileSystemId(Aws::String&& value) { SetFileSystemId(std::move(value)); return *this;}
-    inline UpdateFileSystemProtectionRequest& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
+    template<typename FileSystemIdT = Aws::String>
+    void SetFileSystemId(FileSystemIdT&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::forward<FileSystemIdT>(value); }
+    template<typename FileSystemIdT = Aws::String>
+    UpdateFileSystemProtectionRequest& WithFileSystemId(FileSystemIdT&& value) { SetFileSystemId(std::forward<FileSystemIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,19 +60,17 @@ namespace Model
      * configuration is deleted, the file system's replication overwrite protection is
      * re-enabled and the file system becomes writeable.</p>
      */
-    inline const ReplicationOverwriteProtection& GetReplicationOverwriteProtection() const{ return m_replicationOverwriteProtection; }
+    inline ReplicationOverwriteProtection GetReplicationOverwriteProtection() const { return m_replicationOverwriteProtection; }
     inline bool ReplicationOverwriteProtectionHasBeenSet() const { return m_replicationOverwriteProtectionHasBeenSet; }
-    inline void SetReplicationOverwriteProtection(const ReplicationOverwriteProtection& value) { m_replicationOverwriteProtectionHasBeenSet = true; m_replicationOverwriteProtection = value; }
-    inline void SetReplicationOverwriteProtection(ReplicationOverwriteProtection&& value) { m_replicationOverwriteProtectionHasBeenSet = true; m_replicationOverwriteProtection = std::move(value); }
-    inline UpdateFileSystemProtectionRequest& WithReplicationOverwriteProtection(const ReplicationOverwriteProtection& value) { SetReplicationOverwriteProtection(value); return *this;}
-    inline UpdateFileSystemProtectionRequest& WithReplicationOverwriteProtection(ReplicationOverwriteProtection&& value) { SetReplicationOverwriteProtection(std::move(value)); return *this;}
+    inline void SetReplicationOverwriteProtection(ReplicationOverwriteProtection value) { m_replicationOverwriteProtectionHasBeenSet = true; m_replicationOverwriteProtection = value; }
+    inline UpdateFileSystemProtectionRequest& WithReplicationOverwriteProtection(ReplicationOverwriteProtection value) { SetReplicationOverwriteProtection(value); return *this;}
     ///@}
   private:
 
     Aws::String m_fileSystemId;
     bool m_fileSystemIdHasBeenSet = false;
 
-    ReplicationOverwriteProtection m_replicationOverwriteProtection;
+    ReplicationOverwriteProtection m_replicationOverwriteProtection{ReplicationOverwriteProtection::NOT_SET};
     bool m_replicationOverwriteProtectionHasBeenSet = false;
   };
 

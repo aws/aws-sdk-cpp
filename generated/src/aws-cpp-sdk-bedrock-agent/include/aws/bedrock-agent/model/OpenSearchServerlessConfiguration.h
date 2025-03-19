@@ -35,7 +35,7 @@ namespace Model
   class OpenSearchServerlessConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API OpenSearchServerlessConfiguration();
+    AWS_BEDROCKAGENT_API OpenSearchServerlessConfiguration() = default;
     AWS_BEDROCKAGENT_API OpenSearchServerlessConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API OpenSearchServerlessConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the OpenSearch Service vector store.</p>
      */
-    inline const Aws::String& GetCollectionArn() const{ return m_collectionArn; }
+    inline const Aws::String& GetCollectionArn() const { return m_collectionArn; }
     inline bool CollectionArnHasBeenSet() const { return m_collectionArnHasBeenSet; }
-    inline void SetCollectionArn(const Aws::String& value) { m_collectionArnHasBeenSet = true; m_collectionArn = value; }
-    inline void SetCollectionArn(Aws::String&& value) { m_collectionArnHasBeenSet = true; m_collectionArn = std::move(value); }
-    inline void SetCollectionArn(const char* value) { m_collectionArnHasBeenSet = true; m_collectionArn.assign(value); }
-    inline OpenSearchServerlessConfiguration& WithCollectionArn(const Aws::String& value) { SetCollectionArn(value); return *this;}
-    inline OpenSearchServerlessConfiguration& WithCollectionArn(Aws::String&& value) { SetCollectionArn(std::move(value)); return *this;}
-    inline OpenSearchServerlessConfiguration& WithCollectionArn(const char* value) { SetCollectionArn(value); return *this;}
+    template<typename CollectionArnT = Aws::String>
+    void SetCollectionArn(CollectionArnT&& value) { m_collectionArnHasBeenSet = true; m_collectionArn = std::forward<CollectionArnT>(value); }
+    template<typename CollectionArnT = Aws::String>
+    OpenSearchServerlessConfiguration& WithCollectionArn(CollectionArnT&& value) { SetCollectionArn(std::forward<CollectionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,26 +58,24 @@ namespace Model
      * <p>Contains the names of the fields to which to map information about the vector
      * store.</p>
      */
-    inline const OpenSearchServerlessFieldMapping& GetFieldMapping() const{ return m_fieldMapping; }
+    inline const OpenSearchServerlessFieldMapping& GetFieldMapping() const { return m_fieldMapping; }
     inline bool FieldMappingHasBeenSet() const { return m_fieldMappingHasBeenSet; }
-    inline void SetFieldMapping(const OpenSearchServerlessFieldMapping& value) { m_fieldMappingHasBeenSet = true; m_fieldMapping = value; }
-    inline void SetFieldMapping(OpenSearchServerlessFieldMapping&& value) { m_fieldMappingHasBeenSet = true; m_fieldMapping = std::move(value); }
-    inline OpenSearchServerlessConfiguration& WithFieldMapping(const OpenSearchServerlessFieldMapping& value) { SetFieldMapping(value); return *this;}
-    inline OpenSearchServerlessConfiguration& WithFieldMapping(OpenSearchServerlessFieldMapping&& value) { SetFieldMapping(std::move(value)); return *this;}
+    template<typename FieldMappingT = OpenSearchServerlessFieldMapping>
+    void SetFieldMapping(FieldMappingT&& value) { m_fieldMappingHasBeenSet = true; m_fieldMapping = std::forward<FieldMappingT>(value); }
+    template<typename FieldMappingT = OpenSearchServerlessFieldMapping>
+    OpenSearchServerlessConfiguration& WithFieldMapping(FieldMappingT&& value) { SetFieldMapping(std::forward<FieldMappingT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the vector store.</p>
      */
-    inline const Aws::String& GetVectorIndexName() const{ return m_vectorIndexName; }
+    inline const Aws::String& GetVectorIndexName() const { return m_vectorIndexName; }
     inline bool VectorIndexNameHasBeenSet() const { return m_vectorIndexNameHasBeenSet; }
-    inline void SetVectorIndexName(const Aws::String& value) { m_vectorIndexNameHasBeenSet = true; m_vectorIndexName = value; }
-    inline void SetVectorIndexName(Aws::String&& value) { m_vectorIndexNameHasBeenSet = true; m_vectorIndexName = std::move(value); }
-    inline void SetVectorIndexName(const char* value) { m_vectorIndexNameHasBeenSet = true; m_vectorIndexName.assign(value); }
-    inline OpenSearchServerlessConfiguration& WithVectorIndexName(const Aws::String& value) { SetVectorIndexName(value); return *this;}
-    inline OpenSearchServerlessConfiguration& WithVectorIndexName(Aws::String&& value) { SetVectorIndexName(std::move(value)); return *this;}
-    inline OpenSearchServerlessConfiguration& WithVectorIndexName(const char* value) { SetVectorIndexName(value); return *this;}
+    template<typename VectorIndexNameT = Aws::String>
+    void SetVectorIndexName(VectorIndexNameT&& value) { m_vectorIndexNameHasBeenSet = true; m_vectorIndexName = std::forward<VectorIndexNameT>(value); }
+    template<typename VectorIndexNameT = Aws::String>
+    OpenSearchServerlessConfiguration& WithVectorIndexName(VectorIndexNameT&& value) { SetVectorIndexName(std::forward<VectorIndexNameT>(value)); return *this;}
     ///@}
   private:
 

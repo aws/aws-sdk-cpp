@@ -17,13 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListOriginRequestPolicies2020_05_31Request::ListOriginRequestPolicies2020_05_31Request() : 
-    m_type(OriginRequestPolicyType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_maxItemsHasBeenSet(false)
-{
-}
 
 Aws::String ListOriginRequestPolicies2020_05_31Request::SerializePayload() const
 {

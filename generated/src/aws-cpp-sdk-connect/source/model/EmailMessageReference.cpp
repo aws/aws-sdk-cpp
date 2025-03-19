@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-EmailMessageReference::EmailMessageReference() : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false)
-{
-}
-
 EmailMessageReference::EmailMessageReference(JsonView jsonValue)
-  : EmailMessageReference()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EmailMessageReference& EmailMessageReference::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

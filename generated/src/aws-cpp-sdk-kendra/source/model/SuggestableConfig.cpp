@@ -18,15 +18,7 @@ namespace kendra
 namespace Model
 {
 
-SuggestableConfig::SuggestableConfig() : 
-    m_attributeNameHasBeenSet(false),
-    m_suggestable(false),
-    m_suggestableHasBeenSet(false)
-{
-}
-
 SuggestableConfig::SuggestableConfig(JsonView jsonValue)
-  : SuggestableConfig()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SuggestableConfig& SuggestableConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AttributeName"))
   {
     m_attributeName = jsonValue.GetString("AttributeName");
-
     m_attributeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Suggestable"))
   {
     m_suggestable = jsonValue.GetBool("Suggestable");
-
     m_suggestableHasBeenSet = true;
   }
-
   return *this;
 }
 

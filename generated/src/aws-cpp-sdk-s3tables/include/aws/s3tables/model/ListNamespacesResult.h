@@ -29,7 +29,7 @@ namespace Model
   class ListNamespacesResult
   {
   public:
-    AWS_S3TABLES_API ListNamespacesResult();
+    AWS_S3TABLES_API ListNamespacesResult() = default;
     AWS_S3TABLES_API ListNamespacesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_S3TABLES_API ListNamespacesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>A list of namespaces.</p>
      */
-    inline const Aws::Vector<NamespaceSummary>& GetNamespaces() const{ return m_namespaces; }
-    inline void SetNamespaces(const Aws::Vector<NamespaceSummary>& value) { m_namespaces = value; }
-    inline void SetNamespaces(Aws::Vector<NamespaceSummary>&& value) { m_namespaces = std::move(value); }
-    inline ListNamespacesResult& WithNamespaces(const Aws::Vector<NamespaceSummary>& value) { SetNamespaces(value); return *this;}
-    inline ListNamespacesResult& WithNamespaces(Aws::Vector<NamespaceSummary>&& value) { SetNamespaces(std::move(value)); return *this;}
-    inline ListNamespacesResult& AddNamespaces(const NamespaceSummary& value) { m_namespaces.push_back(value); return *this; }
-    inline ListNamespacesResult& AddNamespaces(NamespaceSummary&& value) { m_namespaces.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<NamespaceSummary>& GetNamespaces() const { return m_namespaces; }
+    template<typename NamespacesT = Aws::Vector<NamespaceSummary>>
+    void SetNamespaces(NamespacesT&& value) { m_namespacesHasBeenSet = true; m_namespaces = std::forward<NamespacesT>(value); }
+    template<typename NamespacesT = Aws::Vector<NamespaceSummary>>
+    ListNamespacesResult& WithNamespaces(NamespacesT&& value) { SetNamespaces(std::forward<NamespacesT>(value)); return *this;}
+    template<typename NamespacesT = NamespaceSummary>
+    ListNamespacesResult& AddNamespaces(NamespacesT&& value) { m_namespacesHasBeenSet = true; m_namespaces.emplace_back(std::forward<NamespacesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The <code>ContinuationToken</code> for pagination of the list results.</p>
      */
-    inline const Aws::String& GetContinuationToken() const{ return m_continuationToken; }
-    inline void SetContinuationToken(const Aws::String& value) { m_continuationToken = value; }
-    inline void SetContinuationToken(Aws::String&& value) { m_continuationToken = std::move(value); }
-    inline void SetContinuationToken(const char* value) { m_continuationToken.assign(value); }
-    inline ListNamespacesResult& WithContinuationToken(const Aws::String& value) { SetContinuationToken(value); return *this;}
-    inline ListNamespacesResult& WithContinuationToken(Aws::String&& value) { SetContinuationToken(std::move(value)); return *this;}
-    inline ListNamespacesResult& WithContinuationToken(const char* value) { SetContinuationToken(value); return *this;}
+    inline const Aws::String& GetContinuationToken() const { return m_continuationToken; }
+    template<typename ContinuationTokenT = Aws::String>
+    void SetContinuationToken(ContinuationTokenT&& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = std::forward<ContinuationTokenT>(value); }
+    template<typename ContinuationTokenT = Aws::String>
+    ListNamespacesResult& WithContinuationToken(ContinuationTokenT&& value) { SetContinuationToken(std::forward<ContinuationTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListNamespacesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListNamespacesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListNamespacesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListNamespacesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<NamespaceSummary> m_namespaces;
+    bool m_namespacesHasBeenSet = false;
 
     Aws::String m_continuationToken;
+    bool m_continuationTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,7 +29,7 @@ namespace Model
   class AdminCreateUserRequest : public CognitoIdentityProviderRequest
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API AdminCreateUserRequest();
+    AWS_COGNITOIDENTITYPROVIDER_API AdminCreateUserRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The ID of the user pool where you want to create a user.</p>
      */
-    inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
+    inline const Aws::String& GetUserPoolId() const { return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
-    inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
-    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
-    inline void SetUserPoolId(const char* value) { m_userPoolIdHasBeenSet = true; m_userPoolId.assign(value); }
-    inline AdminCreateUserRequest& WithUserPoolId(const Aws::String& value) { SetUserPoolId(value); return *this;}
-    inline AdminCreateUserRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
-    inline AdminCreateUserRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+    template<typename UserPoolIdT = Aws::String>
+    void SetUserPoolId(UserPoolIdT&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::forward<UserPoolIdT>(value); }
+    template<typename UserPoolIdT = Aws::String>
+    AdminCreateUserRequest& WithUserPoolId(UserPoolIdT&& value) { SetUserPoolId(std::forward<UserPoolIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +67,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#user-pool-settings-aliases">Customizing
      * sign-in attributes</a>.</p> </li> </ul>
      */
-    inline const Aws::String& GetUsername() const{ return m_username; }
+    inline const Aws::String& GetUsername() const { return m_username; }
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
-    inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
-    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
-    inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
-    inline AdminCreateUserRequest& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
-    inline AdminCreateUserRequest& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
-    inline AdminCreateUserRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
+    template<typename UsernameT = Aws::String>
+    void SetUsername(UsernameT&& value) { m_usernameHasBeenSet = true; m_username = std::forward<UsernameT>(value); }
+    template<typename UsernameT = Aws::String>
+    AdminCreateUserRequest& WithUsername(UsernameT&& value) { SetUsername(std::forward<UsernameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,14 +106,14 @@ namespace Model
      * <code>SMS</code> in the <code>DesiredDeliveryMediums</code> parameter.</p> </dd>
      * </dl>
      */
-    inline const Aws::Vector<AttributeType>& GetUserAttributes() const{ return m_userAttributes; }
+    inline const Aws::Vector<AttributeType>& GetUserAttributes() const { return m_userAttributes; }
     inline bool UserAttributesHasBeenSet() const { return m_userAttributesHasBeenSet; }
-    inline void SetUserAttributes(const Aws::Vector<AttributeType>& value) { m_userAttributesHasBeenSet = true; m_userAttributes = value; }
-    inline void SetUserAttributes(Aws::Vector<AttributeType>&& value) { m_userAttributesHasBeenSet = true; m_userAttributes = std::move(value); }
-    inline AdminCreateUserRequest& WithUserAttributes(const Aws::Vector<AttributeType>& value) { SetUserAttributes(value); return *this;}
-    inline AdminCreateUserRequest& WithUserAttributes(Aws::Vector<AttributeType>&& value) { SetUserAttributes(std::move(value)); return *this;}
-    inline AdminCreateUserRequest& AddUserAttributes(const AttributeType& value) { m_userAttributesHasBeenSet = true; m_userAttributes.push_back(value); return *this; }
-    inline AdminCreateUserRequest& AddUserAttributes(AttributeType&& value) { m_userAttributesHasBeenSet = true; m_userAttributes.push_back(std::move(value)); return *this; }
+    template<typename UserAttributesT = Aws::Vector<AttributeType>>
+    void SetUserAttributes(UserAttributesT&& value) { m_userAttributesHasBeenSet = true; m_userAttributes = std::forward<UserAttributesT>(value); }
+    template<typename UserAttributesT = Aws::Vector<AttributeType>>
+    AdminCreateUserRequest& WithUserAttributes(UserAttributesT&& value) { SetUserAttributes(std::forward<UserAttributesT>(value)); return *this;}
+    template<typename UserAttributesT = AttributeType>
+    AdminCreateUserRequest& AddUserAttributes(UserAttributesT&& value) { m_userAttributesHasBeenSet = true; m_userAttributes.emplace_back(std::forward<UserAttributesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -133,14 +129,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">Pre
      * sign-up Lambda trigger</a>.</p>
      */
-    inline const Aws::Vector<AttributeType>& GetValidationData() const{ return m_validationData; }
+    inline const Aws::Vector<AttributeType>& GetValidationData() const { return m_validationData; }
     inline bool ValidationDataHasBeenSet() const { return m_validationDataHasBeenSet; }
-    inline void SetValidationData(const Aws::Vector<AttributeType>& value) { m_validationDataHasBeenSet = true; m_validationData = value; }
-    inline void SetValidationData(Aws::Vector<AttributeType>&& value) { m_validationDataHasBeenSet = true; m_validationData = std::move(value); }
-    inline AdminCreateUserRequest& WithValidationData(const Aws::Vector<AttributeType>& value) { SetValidationData(value); return *this;}
-    inline AdminCreateUserRequest& WithValidationData(Aws::Vector<AttributeType>&& value) { SetValidationData(std::move(value)); return *this;}
-    inline AdminCreateUserRequest& AddValidationData(const AttributeType& value) { m_validationDataHasBeenSet = true; m_validationData.push_back(value); return *this; }
-    inline AdminCreateUserRequest& AddValidationData(AttributeType&& value) { m_validationDataHasBeenSet = true; m_validationData.push_back(std::move(value)); return *this; }
+    template<typename ValidationDataT = Aws::Vector<AttributeType>>
+    void SetValidationData(ValidationDataT&& value) { m_validationDataHasBeenSet = true; m_validationData = std::forward<ValidationDataT>(value); }
+    template<typename ValidationDataT = Aws::Vector<AttributeType>>
+    AdminCreateUserRequest& WithValidationData(ValidationDataT&& value) { SetValidationData(std::forward<ValidationDataT>(value)); return *this;}
+    template<typename ValidationDataT = AttributeType>
+    AdminCreateUserRequest& AddValidationData(ValidationDataT&& value) { m_validationDataHasBeenSet = true; m_validationData.emplace_back(std::forward<ValidationDataT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -160,14 +156,12 @@ namespace Model
      * call <code>AdminCreateUser</code> again and specify <code>RESEND</code> for the
      * <code>MessageAction</code> parameter.</p>
      */
-    inline const Aws::String& GetTemporaryPassword() const{ return m_temporaryPassword; }
+    inline const Aws::String& GetTemporaryPassword() const { return m_temporaryPassword; }
     inline bool TemporaryPasswordHasBeenSet() const { return m_temporaryPasswordHasBeenSet; }
-    inline void SetTemporaryPassword(const Aws::String& value) { m_temporaryPasswordHasBeenSet = true; m_temporaryPassword = value; }
-    inline void SetTemporaryPassword(Aws::String&& value) { m_temporaryPasswordHasBeenSet = true; m_temporaryPassword = std::move(value); }
-    inline void SetTemporaryPassword(const char* value) { m_temporaryPasswordHasBeenSet = true; m_temporaryPassword.assign(value); }
-    inline AdminCreateUserRequest& WithTemporaryPassword(const Aws::String& value) { SetTemporaryPassword(value); return *this;}
-    inline AdminCreateUserRequest& WithTemporaryPassword(Aws::String&& value) { SetTemporaryPassword(std::move(value)); return *this;}
-    inline AdminCreateUserRequest& WithTemporaryPassword(const char* value) { SetTemporaryPassword(value); return *this;}
+    template<typename TemporaryPasswordT = Aws::String>
+    void SetTemporaryPassword(TemporaryPasswordT&& value) { m_temporaryPasswordHasBeenSet = true; m_temporaryPassword = std::forward<TemporaryPasswordT>(value); }
+    template<typename TemporaryPasswordT = Aws::String>
+    AdminCreateUserRequest& WithTemporaryPassword(TemporaryPasswordT&& value) { SetTemporaryPassword(std::forward<TemporaryPasswordT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -182,7 +176,7 @@ namespace Model
      * <code>False</code>, the API throws an <code>AliasExistsException</code> error if
      * the alias already exists. The default value is <code>False</code>.</p>
      */
-    inline bool GetForceAliasCreation() const{ return m_forceAliasCreation; }
+    inline bool GetForceAliasCreation() const { return m_forceAliasCreation; }
     inline bool ForceAliasCreationHasBeenSet() const { return m_forceAliasCreationHasBeenSet; }
     inline void SetForceAliasCreation(bool value) { m_forceAliasCreationHasBeenSet = true; m_forceAliasCreation = value; }
     inline AdminCreateUserRequest& WithForceAliasCreation(bool value) { SetForceAliasCreation(value); return *this;}
@@ -195,12 +189,10 @@ namespace Model
      * temporary password. Set to <code>SUPPRESS</code> to suppress sending the
      * message. You can specify only one value.</p>
      */
-    inline const MessageActionType& GetMessageAction() const{ return m_messageAction; }
+    inline MessageActionType GetMessageAction() const { return m_messageAction; }
     inline bool MessageActionHasBeenSet() const { return m_messageActionHasBeenSet; }
-    inline void SetMessageAction(const MessageActionType& value) { m_messageActionHasBeenSet = true; m_messageAction = value; }
-    inline void SetMessageAction(MessageActionType&& value) { m_messageActionHasBeenSet = true; m_messageAction = std::move(value); }
-    inline AdminCreateUserRequest& WithMessageAction(const MessageActionType& value) { SetMessageAction(value); return *this;}
-    inline AdminCreateUserRequest& WithMessageAction(MessageActionType&& value) { SetMessageAction(std::move(value)); return *this;}
+    inline void SetMessageAction(MessageActionType value) { m_messageActionHasBeenSet = true; m_messageAction = value; }
+    inline AdminCreateUserRequest& WithMessageAction(MessageActionType value) { SetMessageAction(value); return *this;}
     ///@}
 
     ///@{
@@ -209,14 +201,13 @@ namespace Model
      * Specify <code>SMS</code> if the phone number will be used. The default value is
      * <code>SMS</code>. You can specify more than one value.</p>
      */
-    inline const Aws::Vector<DeliveryMediumType>& GetDesiredDeliveryMediums() const{ return m_desiredDeliveryMediums; }
+    inline const Aws::Vector<DeliveryMediumType>& GetDesiredDeliveryMediums() const { return m_desiredDeliveryMediums; }
     inline bool DesiredDeliveryMediumsHasBeenSet() const { return m_desiredDeliveryMediumsHasBeenSet; }
-    inline void SetDesiredDeliveryMediums(const Aws::Vector<DeliveryMediumType>& value) { m_desiredDeliveryMediumsHasBeenSet = true; m_desiredDeliveryMediums = value; }
-    inline void SetDesiredDeliveryMediums(Aws::Vector<DeliveryMediumType>&& value) { m_desiredDeliveryMediumsHasBeenSet = true; m_desiredDeliveryMediums = std::move(value); }
-    inline AdminCreateUserRequest& WithDesiredDeliveryMediums(const Aws::Vector<DeliveryMediumType>& value) { SetDesiredDeliveryMediums(value); return *this;}
-    inline AdminCreateUserRequest& WithDesiredDeliveryMediums(Aws::Vector<DeliveryMediumType>&& value) { SetDesiredDeliveryMediums(std::move(value)); return *this;}
-    inline AdminCreateUserRequest& AddDesiredDeliveryMediums(const DeliveryMediumType& value) { m_desiredDeliveryMediumsHasBeenSet = true; m_desiredDeliveryMediums.push_back(value); return *this; }
-    inline AdminCreateUserRequest& AddDesiredDeliveryMediums(DeliveryMediumType&& value) { m_desiredDeliveryMediumsHasBeenSet = true; m_desiredDeliveryMediums.push_back(std::move(value)); return *this; }
+    template<typename DesiredDeliveryMediumsT = Aws::Vector<DeliveryMediumType>>
+    void SetDesiredDeliveryMediums(DesiredDeliveryMediumsT&& value) { m_desiredDeliveryMediumsHasBeenSet = true; m_desiredDeliveryMediums = std::forward<DesiredDeliveryMediumsT>(value); }
+    template<typename DesiredDeliveryMediumsT = Aws::Vector<DeliveryMediumType>>
+    AdminCreateUserRequest& WithDesiredDeliveryMediums(DesiredDeliveryMediumsT&& value) { SetDesiredDeliveryMediums(std::forward<DesiredDeliveryMediumsT>(value)); return *this;}
+    inline AdminCreateUserRequest& AddDesiredDeliveryMediums(DeliveryMediumType value) { m_desiredDeliveryMediumsHasBeenSet = true; m_desiredDeliveryMediums.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -244,19 +235,16 @@ namespace Model
      * <code>ClientMetadata</code> value. Don't send sensitive information in this
      * parameter.</p> </li> </ul> 
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetClientMetadata() const{ return m_clientMetadata; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetClientMetadata() const { return m_clientMetadata; }
     inline bool ClientMetadataHasBeenSet() const { return m_clientMetadataHasBeenSet; }
-    inline void SetClientMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata = value; }
-    inline void SetClientMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata = std::move(value); }
-    inline AdminCreateUserRequest& WithClientMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetClientMetadata(value); return *this;}
-    inline AdminCreateUserRequest& WithClientMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetClientMetadata(std::move(value)); return *this;}
-    inline AdminCreateUserRequest& AddClientMetadata(const Aws::String& key, const Aws::String& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(key, value); return *this; }
-    inline AdminCreateUserRequest& AddClientMetadata(Aws::String&& key, const Aws::String& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(std::move(key), value); return *this; }
-    inline AdminCreateUserRequest& AddClientMetadata(const Aws::String& key, Aws::String&& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(key, std::move(value)); return *this; }
-    inline AdminCreateUserRequest& AddClientMetadata(Aws::String&& key, Aws::String&& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(std::move(key), std::move(value)); return *this; }
-    inline AdminCreateUserRequest& AddClientMetadata(const char* key, Aws::String&& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(key, std::move(value)); return *this; }
-    inline AdminCreateUserRequest& AddClientMetadata(Aws::String&& key, const char* value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(std::move(key), value); return *this; }
-    inline AdminCreateUserRequest& AddClientMetadata(const char* key, const char* value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(key, value); return *this; }
+    template<typename ClientMetadataT = Aws::Map<Aws::String, Aws::String>>
+    void SetClientMetadata(ClientMetadataT&& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata = std::forward<ClientMetadataT>(value); }
+    template<typename ClientMetadataT = Aws::Map<Aws::String, Aws::String>>
+    AdminCreateUserRequest& WithClientMetadata(ClientMetadataT&& value) { SetClientMetadata(std::forward<ClientMetadataT>(value)); return *this;}
+    template<typename ClientMetadataKeyT = Aws::String, typename ClientMetadataValueT = Aws::String>
+    AdminCreateUserRequest& AddClientMetadata(ClientMetadataKeyT&& key, ClientMetadataValueT&& value) {
+      m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(std::forward<ClientMetadataKeyT>(key), std::forward<ClientMetadataValueT>(value)); return *this;
+    }
     ///@}
   private:
 
@@ -275,10 +263,10 @@ namespace Model
     Aws::String m_temporaryPassword;
     bool m_temporaryPasswordHasBeenSet = false;
 
-    bool m_forceAliasCreation;
+    bool m_forceAliasCreation{false};
     bool m_forceAliasCreationHasBeenSet = false;
 
-    MessageActionType m_messageAction;
+    MessageActionType m_messageAction{MessageActionType::NOT_SET};
     bool m_messageActionHasBeenSet = false;
 
     Aws::Vector<DeliveryMediumType> m_desiredDeliveryMediums;

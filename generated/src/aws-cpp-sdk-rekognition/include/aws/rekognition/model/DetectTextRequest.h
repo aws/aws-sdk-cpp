@@ -22,7 +22,7 @@ namespace Model
   class DetectTextRequest : public RekognitionRequest
   {
   public:
-    AWS_REKOGNITION_API DetectTextRequest();
+    AWS_REKOGNITION_API DetectTextRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,12 +43,12 @@ namespace Model
      * need to base64-encode image bytes passed using the <code>Bytes</code> field. For
      * more information, see Images in the Amazon Rekognition developer guide.</p>
      */
-    inline const Image& GetImage() const{ return m_image; }
+    inline const Image& GetImage() const { return m_image; }
     inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
-    inline void SetImage(const Image& value) { m_imageHasBeenSet = true; m_image = value; }
-    inline void SetImage(Image&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
-    inline DetectTextRequest& WithImage(const Image& value) { SetImage(value); return *this;}
-    inline DetectTextRequest& WithImage(Image&& value) { SetImage(std::move(value)); return *this;}
+    template<typename ImageT = Image>
+    void SetImage(ImageT&& value) { m_imageHasBeenSet = true; m_image = std::forward<ImageT>(value); }
+    template<typename ImageT = Image>
+    DetectTextRequest& WithImage(ImageT&& value) { SetImage(std::forward<ImageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,12 +56,12 @@ namespace Model
      * <p>Optional parameters that let you set the criteria that the text must meet to
      * be included in your response.</p>
      */
-    inline const DetectTextFilters& GetFilters() const{ return m_filters; }
+    inline const DetectTextFilters& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const DetectTextFilters& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(DetectTextFilters&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline DetectTextRequest& WithFilters(const DetectTextFilters& value) { SetFilters(value); return *this;}
-    inline DetectTextRequest& WithFilters(DetectTextFilters&& value) { SetFilters(std::move(value)); return *this;}
+    template<typename FiltersT = DetectTextFilters>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = DetectTextFilters>
+    DetectTextRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
     ///@}
   private:
 

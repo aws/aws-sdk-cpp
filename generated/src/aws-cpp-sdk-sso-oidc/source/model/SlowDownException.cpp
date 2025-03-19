@@ -18,14 +18,7 @@ namespace SSOOIDC
 namespace Model
 {
 
-SlowDownException::SlowDownException() : 
-    m_errorHasBeenSet(false),
-    m_error_descriptionHasBeenSet(false)
-{
-}
-
 SlowDownException::SlowDownException(JsonView jsonValue)
-  : SlowDownException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SlowDownException& SlowDownException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("error"))
   {
     m_error = jsonValue.GetString("error");
-
     m_errorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("error_description"))
   {
     m_error_description = jsonValue.GetString("error_description");
-
     m_error_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

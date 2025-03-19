@@ -18,18 +18,7 @@ namespace WAF
 namespace Model
 {
 
-WebACL::WebACL() : 
-    m_webACLIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_defaultActionHasBeenSet(false),
-    m_rulesHasBeenSet(false),
-    m_webACLArnHasBeenSet(false)
-{
-}
-
 WebACL::WebACL(JsonView jsonValue)
-  : WebACL()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ WebACL& WebACL::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("WebACLId"))
   {
     m_webACLId = jsonValue.GetString("WebACLId");
-
     m_webACLIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricName"))
   {
     m_metricName = jsonValue.GetString("MetricName");
-
     m_metricNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultAction"))
   {
     m_defaultAction = jsonValue.GetObject("DefaultAction");
-
     m_defaultActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Rules"))
   {
     Aws::Utils::Array<JsonView> rulesJsonList = jsonValue.GetArray("Rules");
@@ -73,14 +54,11 @@ WebACL& WebACL::operator =(JsonView jsonValue)
     }
     m_rulesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WebACLArn"))
   {
     m_webACLArn = jsonValue.GetString("WebACLArn");
-
     m_webACLArnHasBeenSet = true;
   }
-
   return *this;
 }
 

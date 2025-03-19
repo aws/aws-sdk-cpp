@@ -18,15 +18,7 @@ namespace Panorama
 namespace Model
 {
 
-OTAJobConfig::OTAJobConfig() : 
-    m_allowMajorVersionUpdate(false),
-    m_allowMajorVersionUpdateHasBeenSet(false),
-    m_imageVersionHasBeenSet(false)
-{
-}
-
 OTAJobConfig::OTAJobConfig(JsonView jsonValue)
-  : OTAJobConfig()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ OTAJobConfig& OTAJobConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AllowMajorVersionUpdate"))
   {
     m_allowMajorVersionUpdate = jsonValue.GetBool("AllowMajorVersionUpdate");
-
     m_allowMajorVersionUpdateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImageVersion"))
   {
     m_imageVersion = jsonValue.GetString("ImageVersion");
-
     m_imageVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,17 +18,7 @@ namespace MigrationHub
 namespace Model
 {
 
-MigrationTask::MigrationTask() : 
-    m_progressUpdateStreamHasBeenSet(false),
-    m_migrationTaskNameHasBeenSet(false),
-    m_taskHasBeenSet(false),
-    m_updateDateTimeHasBeenSet(false),
-    m_resourceAttributeListHasBeenSet(false)
-{
-}
-
 MigrationTask::MigrationTask(JsonView jsonValue)
-  : MigrationTask()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ MigrationTask& MigrationTask::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ProgressUpdateStream"))
   {
     m_progressUpdateStream = jsonValue.GetString("ProgressUpdateStream");
-
     m_progressUpdateStreamHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MigrationTaskName"))
   {
     m_migrationTaskName = jsonValue.GetString("MigrationTaskName");
-
     m_migrationTaskNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Task"))
   {
     m_task = jsonValue.GetObject("Task");
-
     m_taskHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdateDateTime"))
   {
     m_updateDateTime = jsonValue.GetDouble("UpdateDateTime");
-
     m_updateDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceAttributeList"))
   {
     Aws::Utils::Array<JsonView> resourceAttributeListJsonList = jsonValue.GetArray("ResourceAttributeList");
@@ -72,7 +54,6 @@ MigrationTask& MigrationTask::operator =(JsonView jsonValue)
     }
     m_resourceAttributeListHasBeenSet = true;
   }
-
   return *this;
 }
 

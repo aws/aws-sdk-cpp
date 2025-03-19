@@ -18,16 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-ArtifactsConfiguration::ArtifactsConfiguration() : 
-    m_audioHasBeenSet(false),
-    m_videoHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_compositedVideoHasBeenSet(false)
-{
-}
-
 ArtifactsConfiguration::ArtifactsConfiguration(JsonView jsonValue)
-  : ArtifactsConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ArtifactsConfiguration& ArtifactsConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Audio"))
   {
     m_audio = jsonValue.GetObject("Audio");
-
     m_audioHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Video"))
   {
     m_video = jsonValue.GetObject("Video");
-
     m_videoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Content"))
   {
     m_content = jsonValue.GetObject("Content");
-
     m_contentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompositedVideo"))
   {
     m_compositedVideo = jsonValue.GetObject("CompositedVideo");
-
     m_compositedVideoHasBeenSet = true;
   }
-
   return *this;
 }
 

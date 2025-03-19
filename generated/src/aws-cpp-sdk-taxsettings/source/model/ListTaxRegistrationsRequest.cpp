@@ -12,13 +12,6 @@ using namespace Aws::TaxSettings::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListTaxRegistrationsRequest::ListTaxRegistrationsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListTaxRegistrationsRequest::SerializePayload() const
 {
   JsonValue payload;

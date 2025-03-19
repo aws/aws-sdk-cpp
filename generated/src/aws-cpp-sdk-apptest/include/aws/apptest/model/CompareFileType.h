@@ -32,7 +32,7 @@ namespace Model
   class CompareFileType
   {
   public:
-    AWS_APPTEST_API CompareFileType();
+    AWS_APPTEST_API CompareFileType() = default;
     AWS_APPTEST_API CompareFileType(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API CompareFileType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p>The data sets in the compare file type.</p>
      */
-    inline const CompareDataSetsSummary& GetDatasets() const{ return m_datasets; }
+    inline const CompareDataSetsSummary& GetDatasets() const { return m_datasets; }
     inline bool DatasetsHasBeenSet() const { return m_datasetsHasBeenSet; }
-    inline void SetDatasets(const CompareDataSetsSummary& value) { m_datasetsHasBeenSet = true; m_datasets = value; }
-    inline void SetDatasets(CompareDataSetsSummary&& value) { m_datasetsHasBeenSet = true; m_datasets = std::move(value); }
-    inline CompareFileType& WithDatasets(const CompareDataSetsSummary& value) { SetDatasets(value); return *this;}
-    inline CompareFileType& WithDatasets(CompareDataSetsSummary&& value) { SetDatasets(std::move(value)); return *this;}
+    template<typename DatasetsT = CompareDataSetsSummary>
+    void SetDatasets(DatasetsT&& value) { m_datasetsHasBeenSet = true; m_datasets = std::forward<DatasetsT>(value); }
+    template<typename DatasetsT = CompareDataSetsSummary>
+    CompareFileType& WithDatasets(DatasetsT&& value) { SetDatasets(std::forward<DatasetsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The database CDC of the compare file type.</p>
      */
-    inline const CompareDatabaseCDCSummary& GetDatabaseCDC() const{ return m_databaseCDC; }
+    inline const CompareDatabaseCDCSummary& GetDatabaseCDC() const { return m_databaseCDC; }
     inline bool DatabaseCDCHasBeenSet() const { return m_databaseCDCHasBeenSet; }
-    inline void SetDatabaseCDC(const CompareDatabaseCDCSummary& value) { m_databaseCDCHasBeenSet = true; m_databaseCDC = value; }
-    inline void SetDatabaseCDC(CompareDatabaseCDCSummary&& value) { m_databaseCDCHasBeenSet = true; m_databaseCDC = std::move(value); }
-    inline CompareFileType& WithDatabaseCDC(const CompareDatabaseCDCSummary& value) { SetDatabaseCDC(value); return *this;}
-    inline CompareFileType& WithDatabaseCDC(CompareDatabaseCDCSummary&& value) { SetDatabaseCDC(std::move(value)); return *this;}
+    template<typename DatabaseCDCT = CompareDatabaseCDCSummary>
+    void SetDatabaseCDC(DatabaseCDCT&& value) { m_databaseCDCHasBeenSet = true; m_databaseCDC = std::forward<DatabaseCDCT>(value); }
+    template<typename DatabaseCDCT = CompareDatabaseCDCSummary>
+    CompareFileType& WithDatabaseCDC(DatabaseCDCT&& value) { SetDatabaseCDC(std::forward<DatabaseCDCT>(value)); return *this;}
     ///@}
   private:
 

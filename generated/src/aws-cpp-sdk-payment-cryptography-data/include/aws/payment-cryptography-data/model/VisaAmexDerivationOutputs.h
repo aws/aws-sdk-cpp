@@ -32,7 +32,7 @@ namespace Model
   class VisaAmexDerivationOutputs
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHYDATA_API VisaAmexDerivationOutputs();
+    AWS_PAYMENTCRYPTOGRAPHYDATA_API VisaAmexDerivationOutputs() = default;
     AWS_PAYMENTCRYPTOGRAPHYDATA_API VisaAmexDerivationOutputs(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API VisaAmexDerivationOutputs& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The <code>keyArn</code> of the issuer master key for cryptogram (IMK-AC) used
      * by the operation.</p>
      */
-    inline const Aws::String& GetAuthorizationRequestKeyArn() const{ return m_authorizationRequestKeyArn; }
+    inline const Aws::String& GetAuthorizationRequestKeyArn() const { return m_authorizationRequestKeyArn; }
     inline bool AuthorizationRequestKeyArnHasBeenSet() const { return m_authorizationRequestKeyArnHasBeenSet; }
-    inline void SetAuthorizationRequestKeyArn(const Aws::String& value) { m_authorizationRequestKeyArnHasBeenSet = true; m_authorizationRequestKeyArn = value; }
-    inline void SetAuthorizationRequestKeyArn(Aws::String&& value) { m_authorizationRequestKeyArnHasBeenSet = true; m_authorizationRequestKeyArn = std::move(value); }
-    inline void SetAuthorizationRequestKeyArn(const char* value) { m_authorizationRequestKeyArnHasBeenSet = true; m_authorizationRequestKeyArn.assign(value); }
-    inline VisaAmexDerivationOutputs& WithAuthorizationRequestKeyArn(const Aws::String& value) { SetAuthorizationRequestKeyArn(value); return *this;}
-    inline VisaAmexDerivationOutputs& WithAuthorizationRequestKeyArn(Aws::String&& value) { SetAuthorizationRequestKeyArn(std::move(value)); return *this;}
-    inline VisaAmexDerivationOutputs& WithAuthorizationRequestKeyArn(const char* value) { SetAuthorizationRequestKeyArn(value); return *this;}
+    template<typename AuthorizationRequestKeyArnT = Aws::String>
+    void SetAuthorizationRequestKeyArn(AuthorizationRequestKeyArnT&& value) { m_authorizationRequestKeyArnHasBeenSet = true; m_authorizationRequestKeyArn = std::forward<AuthorizationRequestKeyArnT>(value); }
+    template<typename AuthorizationRequestKeyArnT = Aws::String>
+    VisaAmexDerivationOutputs& WithAuthorizationRequestKeyArn(AuthorizationRequestKeyArnT&& value) { SetAuthorizationRequestKeyArn(std::forward<AuthorizationRequestKeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,42 +56,36 @@ namespace Model
      * <p>The key check value (KCV) of the issuer master key for cryptogram (IMK-AC)
      * used by the operation.</p>
      */
-    inline const Aws::String& GetAuthorizationRequestKeyCheckValue() const{ return m_authorizationRequestKeyCheckValue; }
+    inline const Aws::String& GetAuthorizationRequestKeyCheckValue() const { return m_authorizationRequestKeyCheckValue; }
     inline bool AuthorizationRequestKeyCheckValueHasBeenSet() const { return m_authorizationRequestKeyCheckValueHasBeenSet; }
-    inline void SetAuthorizationRequestKeyCheckValue(const Aws::String& value) { m_authorizationRequestKeyCheckValueHasBeenSet = true; m_authorizationRequestKeyCheckValue = value; }
-    inline void SetAuthorizationRequestKeyCheckValue(Aws::String&& value) { m_authorizationRequestKeyCheckValueHasBeenSet = true; m_authorizationRequestKeyCheckValue = std::move(value); }
-    inline void SetAuthorizationRequestKeyCheckValue(const char* value) { m_authorizationRequestKeyCheckValueHasBeenSet = true; m_authorizationRequestKeyCheckValue.assign(value); }
-    inline VisaAmexDerivationOutputs& WithAuthorizationRequestKeyCheckValue(const Aws::String& value) { SetAuthorizationRequestKeyCheckValue(value); return *this;}
-    inline VisaAmexDerivationOutputs& WithAuthorizationRequestKeyCheckValue(Aws::String&& value) { SetAuthorizationRequestKeyCheckValue(std::move(value)); return *this;}
-    inline VisaAmexDerivationOutputs& WithAuthorizationRequestKeyCheckValue(const char* value) { SetAuthorizationRequestKeyCheckValue(value); return *this;}
+    template<typename AuthorizationRequestKeyCheckValueT = Aws::String>
+    void SetAuthorizationRequestKeyCheckValue(AuthorizationRequestKeyCheckValueT&& value) { m_authorizationRequestKeyCheckValueHasBeenSet = true; m_authorizationRequestKeyCheckValue = std::forward<AuthorizationRequestKeyCheckValueT>(value); }
+    template<typename AuthorizationRequestKeyCheckValueT = Aws::String>
+    VisaAmexDerivationOutputs& WithAuthorizationRequestKeyCheckValue(AuthorizationRequestKeyCheckValueT&& value) { SetAuthorizationRequestKeyCheckValue(std::forward<AuthorizationRequestKeyCheckValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The <code>keyArn</code> of the current PIN PEK.</p>
      */
-    inline const Aws::String& GetCurrentPinPekArn() const{ return m_currentPinPekArn; }
+    inline const Aws::String& GetCurrentPinPekArn() const { return m_currentPinPekArn; }
     inline bool CurrentPinPekArnHasBeenSet() const { return m_currentPinPekArnHasBeenSet; }
-    inline void SetCurrentPinPekArn(const Aws::String& value) { m_currentPinPekArnHasBeenSet = true; m_currentPinPekArn = value; }
-    inline void SetCurrentPinPekArn(Aws::String&& value) { m_currentPinPekArnHasBeenSet = true; m_currentPinPekArn = std::move(value); }
-    inline void SetCurrentPinPekArn(const char* value) { m_currentPinPekArnHasBeenSet = true; m_currentPinPekArn.assign(value); }
-    inline VisaAmexDerivationOutputs& WithCurrentPinPekArn(const Aws::String& value) { SetCurrentPinPekArn(value); return *this;}
-    inline VisaAmexDerivationOutputs& WithCurrentPinPekArn(Aws::String&& value) { SetCurrentPinPekArn(std::move(value)); return *this;}
-    inline VisaAmexDerivationOutputs& WithCurrentPinPekArn(const char* value) { SetCurrentPinPekArn(value); return *this;}
+    template<typename CurrentPinPekArnT = Aws::String>
+    void SetCurrentPinPekArn(CurrentPinPekArnT&& value) { m_currentPinPekArnHasBeenSet = true; m_currentPinPekArn = std::forward<CurrentPinPekArnT>(value); }
+    template<typename CurrentPinPekArnT = Aws::String>
+    VisaAmexDerivationOutputs& WithCurrentPinPekArn(CurrentPinPekArnT&& value) { SetCurrentPinPekArn(std::forward<CurrentPinPekArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The key check value (KCV) of the current PIN PEK.</p>
      */
-    inline const Aws::String& GetCurrentPinPekKeyCheckValue() const{ return m_currentPinPekKeyCheckValue; }
+    inline const Aws::String& GetCurrentPinPekKeyCheckValue() const { return m_currentPinPekKeyCheckValue; }
     inline bool CurrentPinPekKeyCheckValueHasBeenSet() const { return m_currentPinPekKeyCheckValueHasBeenSet; }
-    inline void SetCurrentPinPekKeyCheckValue(const Aws::String& value) { m_currentPinPekKeyCheckValueHasBeenSet = true; m_currentPinPekKeyCheckValue = value; }
-    inline void SetCurrentPinPekKeyCheckValue(Aws::String&& value) { m_currentPinPekKeyCheckValueHasBeenSet = true; m_currentPinPekKeyCheckValue = std::move(value); }
-    inline void SetCurrentPinPekKeyCheckValue(const char* value) { m_currentPinPekKeyCheckValueHasBeenSet = true; m_currentPinPekKeyCheckValue.assign(value); }
-    inline VisaAmexDerivationOutputs& WithCurrentPinPekKeyCheckValue(const Aws::String& value) { SetCurrentPinPekKeyCheckValue(value); return *this;}
-    inline VisaAmexDerivationOutputs& WithCurrentPinPekKeyCheckValue(Aws::String&& value) { SetCurrentPinPekKeyCheckValue(std::move(value)); return *this;}
-    inline VisaAmexDerivationOutputs& WithCurrentPinPekKeyCheckValue(const char* value) { SetCurrentPinPekKeyCheckValue(value); return *this;}
+    template<typename CurrentPinPekKeyCheckValueT = Aws::String>
+    void SetCurrentPinPekKeyCheckValue(CurrentPinPekKeyCheckValueT&& value) { m_currentPinPekKeyCheckValueHasBeenSet = true; m_currentPinPekKeyCheckValue = std::forward<CurrentPinPekKeyCheckValueT>(value); }
+    template<typename CurrentPinPekKeyCheckValueT = Aws::String>
+    VisaAmexDerivationOutputs& WithCurrentPinPekKeyCheckValue(CurrentPinPekKeyCheckValueT&& value) { SetCurrentPinPekKeyCheckValue(std::forward<CurrentPinPekKeyCheckValueT>(value)); return *this;}
     ///@}
   private:
 

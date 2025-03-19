@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListVoiceConnectorTerminationCredentialsResult::ListVoiceConnectorTerminationCredentialsResult()
-{
-}
-
 ListVoiceConnectorTerminationCredentialsResult::ListVoiceConnectorTerminationCredentialsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ ListVoiceConnectorTerminationCredentialsResult& ListVoiceConnectorTerminationCre
     {
       m_usernames.push_back(usernamesJsonList[usernamesIndex].AsString());
     }
+    m_usernamesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

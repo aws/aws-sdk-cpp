@@ -28,33 +28,35 @@ namespace Model
   class DescribeDefaultClusterParametersResult
   {
   public:
-    AWS_REDSHIFT_API DescribeDefaultClusterParametersResult();
+    AWS_REDSHIFT_API DescribeDefaultClusterParametersResult() = default;
     AWS_REDSHIFT_API DescribeDefaultClusterParametersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_REDSHIFT_API DescribeDefaultClusterParametersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const DefaultClusterParameters& GetDefaultClusterParameters() const{ return m_defaultClusterParameters; }
-    inline void SetDefaultClusterParameters(const DefaultClusterParameters& value) { m_defaultClusterParameters = value; }
-    inline void SetDefaultClusterParameters(DefaultClusterParameters&& value) { m_defaultClusterParameters = std::move(value); }
-    inline DescribeDefaultClusterParametersResult& WithDefaultClusterParameters(const DefaultClusterParameters& value) { SetDefaultClusterParameters(value); return *this;}
-    inline DescribeDefaultClusterParametersResult& WithDefaultClusterParameters(DefaultClusterParameters&& value) { SetDefaultClusterParameters(std::move(value)); return *this;}
+    inline const DefaultClusterParameters& GetDefaultClusterParameters() const { return m_defaultClusterParameters; }
+    template<typename DefaultClusterParametersT = DefaultClusterParameters>
+    void SetDefaultClusterParameters(DefaultClusterParametersT&& value) { m_defaultClusterParametersHasBeenSet = true; m_defaultClusterParameters = std::forward<DefaultClusterParametersT>(value); }
+    template<typename DefaultClusterParametersT = DefaultClusterParameters>
+    DescribeDefaultClusterParametersResult& WithDefaultClusterParameters(DefaultClusterParametersT&& value) { SetDefaultClusterParameters(std::forward<DefaultClusterParametersT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeDefaultClusterParametersResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeDefaultClusterParametersResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeDefaultClusterParametersResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     DefaultClusterParameters m_defaultClusterParameters;
+    bool m_defaultClusterParametersHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

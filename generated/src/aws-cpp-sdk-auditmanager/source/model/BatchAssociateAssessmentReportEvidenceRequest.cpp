@@ -12,13 +12,6 @@ using namespace Aws::AuditManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchAssociateAssessmentReportEvidenceRequest::BatchAssociateAssessmentReportEvidenceRequest() : 
-    m_assessmentIdHasBeenSet(false),
-    m_evidenceFolderIdHasBeenSet(false),
-    m_evidenceIdsHasBeenSet(false)
-{
-}
-
 Aws::String BatchAssociateAssessmentReportEvidenceRequest::SerializePayload() const
 {
   JsonValue payload;

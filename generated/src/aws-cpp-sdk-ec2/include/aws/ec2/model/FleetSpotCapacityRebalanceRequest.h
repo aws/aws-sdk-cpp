@@ -36,7 +36,7 @@ namespace Model
   class FleetSpotCapacityRebalanceRequest
   {
   public:
-    AWS_EC2_API FleetSpotCapacityRebalanceRequest();
+    AWS_EC2_API FleetSpotCapacityRebalanceRequest() = default;
     AWS_EC2_API FleetSpotCapacityRebalanceRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API FleetSpotCapacityRebalanceRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -58,12 +58,10 @@ namespace Model
      * (in <code>TerminationDelay</code>), terminates the instances that received a
      * rebalance notification.</p>
      */
-    inline const FleetReplacementStrategy& GetReplacementStrategy() const{ return m_replacementStrategy; }
+    inline FleetReplacementStrategy GetReplacementStrategy() const { return m_replacementStrategy; }
     inline bool ReplacementStrategyHasBeenSet() const { return m_replacementStrategyHasBeenSet; }
-    inline void SetReplacementStrategy(const FleetReplacementStrategy& value) { m_replacementStrategyHasBeenSet = true; m_replacementStrategy = value; }
-    inline void SetReplacementStrategy(FleetReplacementStrategy&& value) { m_replacementStrategyHasBeenSet = true; m_replacementStrategy = std::move(value); }
-    inline FleetSpotCapacityRebalanceRequest& WithReplacementStrategy(const FleetReplacementStrategy& value) { SetReplacementStrategy(value); return *this;}
-    inline FleetSpotCapacityRebalanceRequest& WithReplacementStrategy(FleetReplacementStrategy&& value) { SetReplacementStrategy(std::move(value)); return *this;}
+    inline void SetReplacementStrategy(FleetReplacementStrategy value) { m_replacementStrategyHasBeenSet = true; m_replacementStrategy = value; }
+    inline FleetSpotCapacityRebalanceRequest& WithReplacementStrategy(FleetReplacementStrategy value) { SetReplacementStrategy(value); return *this;}
     ///@}
 
     ///@{
@@ -76,17 +74,17 @@ namespace Model
      * values: Minimum value of <code>120</code> seconds. Maximum value of
      * <code>7200</code> seconds.</p>
      */
-    inline int GetTerminationDelay() const{ return m_terminationDelay; }
+    inline int GetTerminationDelay() const { return m_terminationDelay; }
     inline bool TerminationDelayHasBeenSet() const { return m_terminationDelayHasBeenSet; }
     inline void SetTerminationDelay(int value) { m_terminationDelayHasBeenSet = true; m_terminationDelay = value; }
     inline FleetSpotCapacityRebalanceRequest& WithTerminationDelay(int value) { SetTerminationDelay(value); return *this;}
     ///@}
   private:
 
-    FleetReplacementStrategy m_replacementStrategy;
+    FleetReplacementStrategy m_replacementStrategy{FleetReplacementStrategy::NOT_SET};
     bool m_replacementStrategyHasBeenSet = false;
 
-    int m_terminationDelay;
+    int m_terminationDelay{0};
     bool m_terminationDelayHasBeenSet = false;
   };
 

@@ -28,7 +28,7 @@ namespace Model
   class ListFirewallDomainsResult
   {
   public:
-    AWS_ROUTE53RESOLVER_API ListFirewallDomainsResult();
+    AWS_ROUTE53RESOLVER_API ListFirewallDomainsResult() = default;
     AWS_ROUTE53RESOLVER_API ListFirewallDomainsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROUTE53RESOLVER_API ListFirewallDomainsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,11 @@ namespace Model
      * the response. To retrieve the next batch of objects, provide this token in your
      * next request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListFirewallDomainsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListFirewallDomainsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListFirewallDomainsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListFirewallDomainsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,33 +52,33 @@ namespace Model
      * partial list of the domains that you've defined in the domain list. For
      * information, see <code>MaxResults</code>. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetDomains() const{ return m_domains; }
-    inline void SetDomains(const Aws::Vector<Aws::String>& value) { m_domains = value; }
-    inline void SetDomains(Aws::Vector<Aws::String>&& value) { m_domains = std::move(value); }
-    inline ListFirewallDomainsResult& WithDomains(const Aws::Vector<Aws::String>& value) { SetDomains(value); return *this;}
-    inline ListFirewallDomainsResult& WithDomains(Aws::Vector<Aws::String>&& value) { SetDomains(std::move(value)); return *this;}
-    inline ListFirewallDomainsResult& AddDomains(const Aws::String& value) { m_domains.push_back(value); return *this; }
-    inline ListFirewallDomainsResult& AddDomains(Aws::String&& value) { m_domains.push_back(std::move(value)); return *this; }
-    inline ListFirewallDomainsResult& AddDomains(const char* value) { m_domains.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetDomains() const { return m_domains; }
+    template<typename DomainsT = Aws::Vector<Aws::String>>
+    void SetDomains(DomainsT&& value) { m_domainsHasBeenSet = true; m_domains = std::forward<DomainsT>(value); }
+    template<typename DomainsT = Aws::Vector<Aws::String>>
+    ListFirewallDomainsResult& WithDomains(DomainsT&& value) { SetDomains(std::forward<DomainsT>(value)); return *this;}
+    template<typename DomainsT = Aws::String>
+    ListFirewallDomainsResult& AddDomains(DomainsT&& value) { m_domainsHasBeenSet = true; m_domains.emplace_back(std::forward<DomainsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListFirewallDomainsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListFirewallDomainsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListFirewallDomainsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListFirewallDomainsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_domains;
+    bool m_domainsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

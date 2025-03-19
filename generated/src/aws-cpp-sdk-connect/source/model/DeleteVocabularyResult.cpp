@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteVocabularyResult::DeleteVocabularyResult() : 
-    m_state(VocabularyState::NOT_SET)
-{
-}
-
 DeleteVocabularyResult::DeleteVocabularyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteVocabularyResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ DeleteVocabularyResult& DeleteVocabularyResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("VocabularyArn"))
   {
     m_vocabularyArn = jsonValue.GetString("VocabularyArn");
-
+    m_vocabularyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VocabularyId"))
   {
     m_vocabularyId = jsonValue.GetString("VocabularyId");
-
+    m_vocabularyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = VocabularyStateMapper::GetVocabularyStateForName(jsonValue.GetString("State"));
-
+    m_stateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

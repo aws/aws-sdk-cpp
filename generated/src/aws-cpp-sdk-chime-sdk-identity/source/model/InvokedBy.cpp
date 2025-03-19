@@ -18,16 +18,7 @@ namespace ChimeSDKIdentity
 namespace Model
 {
 
-InvokedBy::InvokedBy() : 
-    m_standardMessages(StandardMessages::NOT_SET),
-    m_standardMessagesHasBeenSet(false),
-    m_targetedMessages(TargetedMessages::NOT_SET),
-    m_targetedMessagesHasBeenSet(false)
-{
-}
-
 InvokedBy::InvokedBy(JsonView jsonValue)
-  : InvokedBy()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ InvokedBy& InvokedBy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StandardMessages"))
   {
     m_standardMessages = StandardMessagesMapper::GetStandardMessagesForName(jsonValue.GetString("StandardMessages"));
-
     m_standardMessagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetedMessages"))
   {
     m_targetedMessages = TargetedMessagesMapper::GetTargetedMessagesForName(jsonValue.GetString("TargetedMessages"));
-
     m_targetedMessagesHasBeenSet = true;
   }
-
   return *this;
 }
 

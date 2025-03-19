@@ -20,17 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-ClusterSecurityGroup::ClusterSecurityGroup() : 
-    m_clusterSecurityGroupNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_eC2SecurityGroupsHasBeenSet(false),
-    m_iPRangesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 ClusterSecurityGroup::ClusterSecurityGroup(const XmlNode& xmlNode)
-  : ClusterSecurityGroup()
 {
   *this = xmlNode;
 }
@@ -57,6 +47,7 @@ ClusterSecurityGroup& ClusterSecurityGroup::operator =(const XmlNode& xmlNode)
     if(!eC2SecurityGroupsNode.IsNull())
     {
       XmlNode eC2SecurityGroupsMember = eC2SecurityGroupsNode.FirstChild("EC2SecurityGroup");
+      m_eC2SecurityGroupsHasBeenSet = !eC2SecurityGroupsMember.IsNull();
       while(!eC2SecurityGroupsMember.IsNull())
       {
         m_eC2SecurityGroups.push_back(eC2SecurityGroupsMember);
@@ -69,6 +60,7 @@ ClusterSecurityGroup& ClusterSecurityGroup::operator =(const XmlNode& xmlNode)
     if(!iPRangesNode.IsNull())
     {
       XmlNode iPRangesMember = iPRangesNode.FirstChild("IPRange");
+      m_iPRangesHasBeenSet = !iPRangesMember.IsNull();
       while(!iPRangesMember.IsNull())
       {
         m_iPRanges.push_back(iPRangesMember);
@@ -81,6 +73,7 @@ ClusterSecurityGroup& ClusterSecurityGroup::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("Tag");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

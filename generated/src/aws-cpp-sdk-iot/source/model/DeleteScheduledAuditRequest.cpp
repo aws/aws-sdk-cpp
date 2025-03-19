@@ -12,11 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteScheduledAuditRequest::DeleteScheduledAuditRequest() : 
-    m_scheduledAuditNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteScheduledAuditRequest::SerializePayload() const
 {
   return {};

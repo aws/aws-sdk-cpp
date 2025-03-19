@@ -18,17 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-CisScanResultDetailsFilterCriteria::CisScanResultDetailsFilterCriteria() : 
-    m_checkIdFiltersHasBeenSet(false),
-    m_findingArnFiltersHasBeenSet(false),
-    m_findingStatusFiltersHasBeenSet(false),
-    m_securityLevelFiltersHasBeenSet(false),
-    m_titleFiltersHasBeenSet(false)
-{
-}
-
 CisScanResultDetailsFilterCriteria::CisScanResultDetailsFilterCriteria(JsonView jsonValue)
-  : CisScanResultDetailsFilterCriteria()
 {
   *this = jsonValue;
 }
@@ -44,7 +34,6 @@ CisScanResultDetailsFilterCriteria& CisScanResultDetailsFilterCriteria::operator
     }
     m_checkIdFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("findingArnFilters"))
   {
     Aws::Utils::Array<JsonView> findingArnFiltersJsonList = jsonValue.GetArray("findingArnFilters");
@@ -54,7 +43,6 @@ CisScanResultDetailsFilterCriteria& CisScanResultDetailsFilterCriteria::operator
     }
     m_findingArnFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("findingStatusFilters"))
   {
     Aws::Utils::Array<JsonView> findingStatusFiltersJsonList = jsonValue.GetArray("findingStatusFilters");
@@ -64,7 +52,6 @@ CisScanResultDetailsFilterCriteria& CisScanResultDetailsFilterCriteria::operator
     }
     m_findingStatusFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("securityLevelFilters"))
   {
     Aws::Utils::Array<JsonView> securityLevelFiltersJsonList = jsonValue.GetArray("securityLevelFilters");
@@ -74,7 +61,6 @@ CisScanResultDetailsFilterCriteria& CisScanResultDetailsFilterCriteria::operator
     }
     m_securityLevelFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("titleFilters"))
   {
     Aws::Utils::Array<JsonView> titleFiltersJsonList = jsonValue.GetArray("titleFilters");
@@ -84,7 +70,6 @@ CisScanResultDetailsFilterCriteria& CisScanResultDetailsFilterCriteria::operator
     }
     m_titleFiltersHasBeenSet = true;
   }
-
   return *this;
 }
 

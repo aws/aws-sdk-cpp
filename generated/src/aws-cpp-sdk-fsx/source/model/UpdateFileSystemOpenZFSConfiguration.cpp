@@ -18,26 +18,7 @@ namespace FSx
 namespace Model
 {
 
-UpdateFileSystemOpenZFSConfiguration::UpdateFileSystemOpenZFSConfiguration() : 
-    m_automaticBackupRetentionDays(0),
-    m_automaticBackupRetentionDaysHasBeenSet(false),
-    m_copyTagsToBackups(false),
-    m_copyTagsToBackupsHasBeenSet(false),
-    m_copyTagsToVolumes(false),
-    m_copyTagsToVolumesHasBeenSet(false),
-    m_dailyAutomaticBackupStartTimeHasBeenSet(false),
-    m_throughputCapacity(0),
-    m_throughputCapacityHasBeenSet(false),
-    m_weeklyMaintenanceStartTimeHasBeenSet(false),
-    m_diskIopsConfigurationHasBeenSet(false),
-    m_addRouteTableIdsHasBeenSet(false),
-    m_removeRouteTableIdsHasBeenSet(false),
-    m_readCacheConfigurationHasBeenSet(false)
-{
-}
-
 UpdateFileSystemOpenZFSConfiguration::UpdateFileSystemOpenZFSConfiguration(JsonView jsonValue)
-  : UpdateFileSystemOpenZFSConfiguration()
 {
   *this = jsonValue;
 }
@@ -47,52 +28,38 @@ UpdateFileSystemOpenZFSConfiguration& UpdateFileSystemOpenZFSConfiguration::oper
   if(jsonValue.ValueExists("AutomaticBackupRetentionDays"))
   {
     m_automaticBackupRetentionDays = jsonValue.GetInteger("AutomaticBackupRetentionDays");
-
     m_automaticBackupRetentionDaysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CopyTagsToBackups"))
   {
     m_copyTagsToBackups = jsonValue.GetBool("CopyTagsToBackups");
-
     m_copyTagsToBackupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CopyTagsToVolumes"))
   {
     m_copyTagsToVolumes = jsonValue.GetBool("CopyTagsToVolumes");
-
     m_copyTagsToVolumesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DailyAutomaticBackupStartTime"))
   {
     m_dailyAutomaticBackupStartTime = jsonValue.GetString("DailyAutomaticBackupStartTime");
-
     m_dailyAutomaticBackupStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ThroughputCapacity"))
   {
     m_throughputCapacity = jsonValue.GetInteger("ThroughputCapacity");
-
     m_throughputCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WeeklyMaintenanceStartTime"))
   {
     m_weeklyMaintenanceStartTime = jsonValue.GetString("WeeklyMaintenanceStartTime");
-
     m_weeklyMaintenanceStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DiskIopsConfiguration"))
   {
     m_diskIopsConfiguration = jsonValue.GetObject("DiskIopsConfiguration");
-
     m_diskIopsConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AddRouteTableIds"))
   {
     Aws::Utils::Array<JsonView> addRouteTableIdsJsonList = jsonValue.GetArray("AddRouteTableIds");
@@ -102,7 +69,6 @@ UpdateFileSystemOpenZFSConfiguration& UpdateFileSystemOpenZFSConfiguration::oper
     }
     m_addRouteTableIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RemoveRouteTableIds"))
   {
     Aws::Utils::Array<JsonView> removeRouteTableIdsJsonList = jsonValue.GetArray("RemoveRouteTableIds");
@@ -112,14 +78,11 @@ UpdateFileSystemOpenZFSConfiguration& UpdateFileSystemOpenZFSConfiguration::oper
     }
     m_removeRouteTableIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReadCacheConfiguration"))
   {
     m_readCacheConfiguration = jsonValue.GetObject("ReadCacheConfiguration");
-
     m_readCacheConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

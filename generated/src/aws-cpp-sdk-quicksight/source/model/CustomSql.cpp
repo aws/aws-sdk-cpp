@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-CustomSql::CustomSql() : 
-    m_dataSourceArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_sqlQueryHasBeenSet(false),
-    m_columnsHasBeenSet(false)
-{
-}
-
 CustomSql::CustomSql(JsonView jsonValue)
-  : CustomSql()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ CustomSql& CustomSql::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DataSourceArn"))
   {
     m_dataSourceArn = jsonValue.GetString("DataSourceArn");
-
     m_dataSourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SqlQuery"))
   {
     m_sqlQuery = jsonValue.GetString("SqlQuery");
-
     m_sqlQueryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Columns"))
   {
     Aws::Utils::Array<JsonView> columnsJsonList = jsonValue.GetArray("Columns");
@@ -64,7 +49,6 @@ CustomSql& CustomSql::operator =(JsonView jsonValue)
     }
     m_columnsHasBeenSet = true;
   }
-
   return *this;
 }
 

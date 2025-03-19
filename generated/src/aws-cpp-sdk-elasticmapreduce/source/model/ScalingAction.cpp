@@ -18,15 +18,7 @@ namespace EMR
 namespace Model
 {
 
-ScalingAction::ScalingAction() : 
-    m_market(MarketType::NOT_SET),
-    m_marketHasBeenSet(false),
-    m_simpleScalingPolicyConfigurationHasBeenSet(false)
-{
-}
-
 ScalingAction::ScalingAction(JsonView jsonValue)
-  : ScalingAction()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ScalingAction& ScalingAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Market"))
   {
     m_market = MarketTypeMapper::GetMarketTypeForName(jsonValue.GetString("Market"));
-
     m_marketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SimpleScalingPolicyConfiguration"))
   {
     m_simpleScalingPolicyConfiguration = jsonValue.GetObject("SimpleScalingPolicyConfiguration");
-
     m_simpleScalingPolicyConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,23 +18,7 @@ namespace EMR
 namespace Model
 {
 
-InstanceTypeConfig::InstanceTypeConfig() : 
-    m_instanceTypeHasBeenSet(false),
-    m_weightedCapacity(0),
-    m_weightedCapacityHasBeenSet(false),
-    m_bidPriceHasBeenSet(false),
-    m_bidPriceAsPercentageOfOnDemandPrice(0.0),
-    m_bidPriceAsPercentageOfOnDemandPriceHasBeenSet(false),
-    m_ebsConfigurationHasBeenSet(false),
-    m_configurationsHasBeenSet(false),
-    m_customAmiIdHasBeenSet(false),
-    m_priority(0.0),
-    m_priorityHasBeenSet(false)
-{
-}
-
 InstanceTypeConfig::InstanceTypeConfig(JsonView jsonValue)
-  : InstanceTypeConfig()
 {
   *this = jsonValue;
 }
@@ -44,38 +28,28 @@ InstanceTypeConfig& InstanceTypeConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InstanceType"))
   {
     m_instanceType = jsonValue.GetString("InstanceType");
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WeightedCapacity"))
   {
     m_weightedCapacity = jsonValue.GetInteger("WeightedCapacity");
-
     m_weightedCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BidPrice"))
   {
     m_bidPrice = jsonValue.GetString("BidPrice");
-
     m_bidPriceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BidPriceAsPercentageOfOnDemandPrice"))
   {
     m_bidPriceAsPercentageOfOnDemandPrice = jsonValue.GetDouble("BidPriceAsPercentageOfOnDemandPrice");
-
     m_bidPriceAsPercentageOfOnDemandPriceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EbsConfiguration"))
   {
     m_ebsConfiguration = jsonValue.GetObject("EbsConfiguration");
-
     m_ebsConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Configurations"))
   {
     Aws::Utils::Array<JsonView> configurationsJsonList = jsonValue.GetArray("Configurations");
@@ -85,21 +59,16 @@ InstanceTypeConfig& InstanceTypeConfig::operator =(JsonView jsonValue)
     }
     m_configurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomAmiId"))
   {
     m_customAmiId = jsonValue.GetString("CustomAmiId");
-
     m_customAmiIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Priority"))
   {
     m_priority = jsonValue.GetDouble("Priority");
-
     m_priorityHasBeenSet = true;
   }
-
   return *this;
 }
 

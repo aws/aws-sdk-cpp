@@ -33,7 +33,7 @@ namespace Model
   class ResourceErrorsDetails
   {
   public:
-    AWS_RESILIENCEHUB_API ResourceErrorsDetails();
+    AWS_RESILIENCEHUB_API ResourceErrorsDetails() = default;
     AWS_RESILIENCEHUB_API ResourceErrorsDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API ResourceErrorsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * <p> This indicates if there are more errors not listed in the
      * <code>resourceErrors</code> list. </p>
      */
-    inline bool GetHasMoreErrors() const{ return m_hasMoreErrors; }
+    inline bool GetHasMoreErrors() const { return m_hasMoreErrors; }
     inline bool HasMoreErrorsHasBeenSet() const { return m_hasMoreErrorsHasBeenSet; }
     inline void SetHasMoreErrors(bool value) { m_hasMoreErrorsHasBeenSet = true; m_hasMoreErrors = value; }
     inline ResourceErrorsDetails& WithHasMoreErrors(bool value) { SetHasMoreErrors(value); return *this;}
@@ -54,18 +54,18 @@ namespace Model
     /**
      * <p> A list of errors retrieving an application's resources. </p>
      */
-    inline const Aws::Vector<ResourceError>& GetResourceErrors() const{ return m_resourceErrors; }
+    inline const Aws::Vector<ResourceError>& GetResourceErrors() const { return m_resourceErrors; }
     inline bool ResourceErrorsHasBeenSet() const { return m_resourceErrorsHasBeenSet; }
-    inline void SetResourceErrors(const Aws::Vector<ResourceError>& value) { m_resourceErrorsHasBeenSet = true; m_resourceErrors = value; }
-    inline void SetResourceErrors(Aws::Vector<ResourceError>&& value) { m_resourceErrorsHasBeenSet = true; m_resourceErrors = std::move(value); }
-    inline ResourceErrorsDetails& WithResourceErrors(const Aws::Vector<ResourceError>& value) { SetResourceErrors(value); return *this;}
-    inline ResourceErrorsDetails& WithResourceErrors(Aws::Vector<ResourceError>&& value) { SetResourceErrors(std::move(value)); return *this;}
-    inline ResourceErrorsDetails& AddResourceErrors(const ResourceError& value) { m_resourceErrorsHasBeenSet = true; m_resourceErrors.push_back(value); return *this; }
-    inline ResourceErrorsDetails& AddResourceErrors(ResourceError&& value) { m_resourceErrorsHasBeenSet = true; m_resourceErrors.push_back(std::move(value)); return *this; }
+    template<typename ResourceErrorsT = Aws::Vector<ResourceError>>
+    void SetResourceErrors(ResourceErrorsT&& value) { m_resourceErrorsHasBeenSet = true; m_resourceErrors = std::forward<ResourceErrorsT>(value); }
+    template<typename ResourceErrorsT = Aws::Vector<ResourceError>>
+    ResourceErrorsDetails& WithResourceErrors(ResourceErrorsT&& value) { SetResourceErrors(std::forward<ResourceErrorsT>(value)); return *this;}
+    template<typename ResourceErrorsT = ResourceError>
+    ResourceErrorsDetails& AddResourceErrors(ResourceErrorsT&& value) { m_resourceErrorsHasBeenSet = true; m_resourceErrors.emplace_back(std::forward<ResourceErrorsT>(value)); return *this; }
     ///@}
   private:
 
-    bool m_hasMoreErrors;
+    bool m_hasMoreErrors{false};
     bool m_hasMoreErrorsHasBeenSet = false;
 
     Aws::Vector<ResourceError> m_resourceErrors;

@@ -28,7 +28,7 @@ namespace Model
   class GetImportJobResult
   {
   public:
-    AWS_QCONNECT_API GetImportJobResult();
+    AWS_QCONNECT_API GetImportJobResult() = default;
     AWS_QCONNECT_API GetImportJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QCONNECT_API GetImportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The import job.</p>
      */
-    inline const ImportJobData& GetImportJob() const{ return m_importJob; }
-    inline void SetImportJob(const ImportJobData& value) { m_importJob = value; }
-    inline void SetImportJob(ImportJobData&& value) { m_importJob = std::move(value); }
-    inline GetImportJobResult& WithImportJob(const ImportJobData& value) { SetImportJob(value); return *this;}
-    inline GetImportJobResult& WithImportJob(ImportJobData&& value) { SetImportJob(std::move(value)); return *this;}
+    inline const ImportJobData& GetImportJob() const { return m_importJob; }
+    template<typename ImportJobT = ImportJobData>
+    void SetImportJob(ImportJobT&& value) { m_importJobHasBeenSet = true; m_importJob = std::forward<ImportJobT>(value); }
+    template<typename ImportJobT = ImportJobData>
+    GetImportJobResult& WithImportJob(ImportJobT&& value) { SetImportJob(std::forward<ImportJobT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetImportJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetImportJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetImportJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetImportJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ImportJobData m_importJob;
+    bool m_importJobHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

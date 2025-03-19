@@ -12,12 +12,6 @@ using namespace Aws::SSMIncidents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteTimelineEventRequest::DeleteTimelineEventRequest() : 
-    m_eventIdHasBeenSet(false),
-    m_incidentRecordArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTimelineEventRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,11 +12,6 @@ using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteTableRequest::DeleteTableRequest() : 
-    m_tableNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTableRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,17 +18,7 @@ namespace DLM
 namespace Model
 {
 
-ShareRule::ShareRule() : 
-    m_targetAccountsHasBeenSet(false),
-    m_unshareInterval(0),
-    m_unshareIntervalHasBeenSet(false),
-    m_unshareIntervalUnit(RetentionIntervalUnitValues::NOT_SET),
-    m_unshareIntervalUnitHasBeenSet(false)
-{
-}
-
 ShareRule::ShareRule(JsonView jsonValue)
-  : ShareRule()
 {
   *this = jsonValue;
 }
@@ -44,21 +34,16 @@ ShareRule& ShareRule::operator =(JsonView jsonValue)
     }
     m_targetAccountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UnshareInterval"))
   {
     m_unshareInterval = jsonValue.GetInteger("UnshareInterval");
-
     m_unshareIntervalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UnshareIntervalUnit"))
   {
     m_unshareIntervalUnit = RetentionIntervalUnitValuesMapper::GetRetentionIntervalUnitValuesForName(jsonValue.GetString("UnshareIntervalUnit"));
-
     m_unshareIntervalUnitHasBeenSet = true;
   }
-
   return *this;
 }
 

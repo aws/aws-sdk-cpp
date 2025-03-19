@@ -28,7 +28,7 @@ namespace Model
   class ImportLensResult
   {
   public:
-    AWS_WELLARCHITECTED_API ImportLensResult();
+    AWS_WELLARCHITECTED_API ImportLensResult() = default;
     AWS_WELLARCHITECTED_API ImportLensResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WELLARCHITECTED_API ImportLensResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,43 +37,40 @@ namespace Model
     /**
      * <p>The ARN for the lens that was created or updated.</p>
      */
-    inline const Aws::String& GetLensArn() const{ return m_lensArn; }
-    inline void SetLensArn(const Aws::String& value) { m_lensArn = value; }
-    inline void SetLensArn(Aws::String&& value) { m_lensArn = std::move(value); }
-    inline void SetLensArn(const char* value) { m_lensArn.assign(value); }
-    inline ImportLensResult& WithLensArn(const Aws::String& value) { SetLensArn(value); return *this;}
-    inline ImportLensResult& WithLensArn(Aws::String&& value) { SetLensArn(std::move(value)); return *this;}
-    inline ImportLensResult& WithLensArn(const char* value) { SetLensArn(value); return *this;}
+    inline const Aws::String& GetLensArn() const { return m_lensArn; }
+    template<typename LensArnT = Aws::String>
+    void SetLensArn(LensArnT&& value) { m_lensArnHasBeenSet = true; m_lensArn = std::forward<LensArnT>(value); }
+    template<typename LensArnT = Aws::String>
+    ImportLensResult& WithLensArn(LensArnT&& value) { SetLensArn(std::forward<LensArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the imported lens.</p>
      */
-    inline const ImportLensStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const ImportLensStatus& value) { m_status = value; }
-    inline void SetStatus(ImportLensStatus&& value) { m_status = std::move(value); }
-    inline ImportLensResult& WithStatus(const ImportLensStatus& value) { SetStatus(value); return *this;}
-    inline ImportLensResult& WithStatus(ImportLensStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline ImportLensStatus GetStatus() const { return m_status; }
+    inline void SetStatus(ImportLensStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ImportLensResult& WithStatus(ImportLensStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ImportLensResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ImportLensResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ImportLensResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ImportLensResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_lensArn;
+    bool m_lensArnHasBeenSet = false;
 
-    ImportLensStatus m_status;
+    ImportLensStatus m_status{ImportLensStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

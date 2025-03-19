@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ExasolParameters::ExasolParameters() : 
-    m_hostHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false)
-{
-}
-
 ExasolParameters::ExasolParameters(JsonView jsonValue)
-  : ExasolParameters()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ExasolParameters& ExasolParameters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Host"))
   {
     m_host = jsonValue.GetString("Host");
-
     m_hostHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Port"))
   {
     m_port = jsonValue.GetInteger("Port");
-
     m_portHasBeenSet = true;
   }
-
   return *this;
 }
 

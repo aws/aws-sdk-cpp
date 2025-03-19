@@ -18,18 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-BucketCountPolicyAllowsUnencryptedObjectUploads::BucketCountPolicyAllowsUnencryptedObjectUploads() : 
-    m_allowsUnencryptedObjectUploads(0),
-    m_allowsUnencryptedObjectUploadsHasBeenSet(false),
-    m_deniesUnencryptedObjectUploads(0),
-    m_deniesUnencryptedObjectUploadsHasBeenSet(false),
-    m_unknown(0),
-    m_unknownHasBeenSet(false)
-{
-}
-
 BucketCountPolicyAllowsUnencryptedObjectUploads::BucketCountPolicyAllowsUnencryptedObjectUploads(JsonView jsonValue)
-  : BucketCountPolicyAllowsUnencryptedObjectUploads()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ BucketCountPolicyAllowsUnencryptedObjectUploads& BucketCountPolicyAllowsUnencryp
   if(jsonValue.ValueExists("allowsUnencryptedObjectUploads"))
   {
     m_allowsUnencryptedObjectUploads = jsonValue.GetInt64("allowsUnencryptedObjectUploads");
-
     m_allowsUnencryptedObjectUploadsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deniesUnencryptedObjectUploads"))
   {
     m_deniesUnencryptedObjectUploads = jsonValue.GetInt64("deniesUnencryptedObjectUploads");
-
     m_deniesUnencryptedObjectUploadsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unknown"))
   {
     m_unknown = jsonValue.GetInt64("unknown");
-
     m_unknownHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-ParseVPC::ParseVPC() : 
-    m_sourceHasBeenSet(false)
-{
-}
-
 ParseVPC::ParseVPC(JsonView jsonValue)
-  : ParseVPC()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ParseVPC& ParseVPC::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("source"))
   {
     m_source = jsonValue.GetString("source");
-
     m_sourceHasBeenSet = true;
   }
-
   return *this;
 }
 

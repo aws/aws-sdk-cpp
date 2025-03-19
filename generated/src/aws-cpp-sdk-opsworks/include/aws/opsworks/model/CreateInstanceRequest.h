@@ -26,7 +26,7 @@ namespace Model
   class CreateInstanceRequest : public OpsWorksRequest
   {
   public:
-    AWS_OPSWORKS_API CreateInstanceRequest();
+    AWS_OPSWORKS_API CreateInstanceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,29 +43,26 @@ namespace Model
     /**
      * <p>The stack ID.</p>
      */
-    inline const Aws::String& GetStackId() const{ return m_stackId; }
+    inline const Aws::String& GetStackId() const { return m_stackId; }
     inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
-    inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
-    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = std::move(value); }
-    inline void SetStackId(const char* value) { m_stackIdHasBeenSet = true; m_stackId.assign(value); }
-    inline CreateInstanceRequest& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
-    inline CreateInstanceRequest& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
-    inline CreateInstanceRequest& WithStackId(const char* value) { SetStackId(value); return *this;}
+    template<typename StackIdT = Aws::String>
+    void SetStackId(StackIdT&& value) { m_stackIdHasBeenSet = true; m_stackId = std::forward<StackIdT>(value); }
+    template<typename StackIdT = Aws::String>
+    CreateInstanceRequest& WithStackId(StackIdT&& value) { SetStackId(std::forward<StackIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array that contains the instance's layer IDs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetLayerIds() const{ return m_layerIds; }
+    inline const Aws::Vector<Aws::String>& GetLayerIds() const { return m_layerIds; }
     inline bool LayerIdsHasBeenSet() const { return m_layerIdsHasBeenSet; }
-    inline void SetLayerIds(const Aws::Vector<Aws::String>& value) { m_layerIdsHasBeenSet = true; m_layerIds = value; }
-    inline void SetLayerIds(Aws::Vector<Aws::String>&& value) { m_layerIdsHasBeenSet = true; m_layerIds = std::move(value); }
-    inline CreateInstanceRequest& WithLayerIds(const Aws::Vector<Aws::String>& value) { SetLayerIds(value); return *this;}
-    inline CreateInstanceRequest& WithLayerIds(Aws::Vector<Aws::String>&& value) { SetLayerIds(std::move(value)); return *this;}
-    inline CreateInstanceRequest& AddLayerIds(const Aws::String& value) { m_layerIdsHasBeenSet = true; m_layerIds.push_back(value); return *this; }
-    inline CreateInstanceRequest& AddLayerIds(Aws::String&& value) { m_layerIdsHasBeenSet = true; m_layerIds.push_back(std::move(value)); return *this; }
-    inline CreateInstanceRequest& AddLayerIds(const char* value) { m_layerIdsHasBeenSet = true; m_layerIds.push_back(value); return *this; }
+    template<typename LayerIdsT = Aws::Vector<Aws::String>>
+    void SetLayerIds(LayerIdsT&& value) { m_layerIdsHasBeenSet = true; m_layerIds = std::forward<LayerIdsT>(value); }
+    template<typename LayerIdsT = Aws::Vector<Aws::String>>
+    CreateInstanceRequest& WithLayerIds(LayerIdsT&& value) { SetLayerIds(std::forward<LayerIdsT>(value)); return *this;}
+    template<typename LayerIdsT = Aws::String>
+    CreateInstanceRequest& AddLayerIds(LayerIdsT&& value) { m_layerIdsHasBeenSet = true; m_layerIds.emplace_back(std::forward<LayerIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -79,14 +76,12 @@ namespace Model
      * types are in the <b>API Name</b> column of the <b>Available Instance Types</b>
      * table.</p>
      */
-    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+    inline const Aws::String& GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
-    inline CreateInstanceRequest& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
-    inline CreateInstanceRequest& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
-    inline CreateInstanceRequest& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+    template<typename InstanceTypeT = Aws::String>
+    void SetInstanceType(InstanceTypeT&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::forward<InstanceTypeT>(value); }
+    template<typename InstanceTypeT = Aws::String>
+    CreateInstanceRequest& WithInstanceType(InstanceTypeT&& value) { SetInstanceType(std::forward<InstanceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,12 +89,10 @@ namespace Model
      * <p>For load-based or time-based instances, the type. Windows stacks can use only
      * time-based instances.</p>
      */
-    inline const AutoScalingType& GetAutoScalingType() const{ return m_autoScalingType; }
+    inline AutoScalingType GetAutoScalingType() const { return m_autoScalingType; }
     inline bool AutoScalingTypeHasBeenSet() const { return m_autoScalingTypeHasBeenSet; }
-    inline void SetAutoScalingType(const AutoScalingType& value) { m_autoScalingTypeHasBeenSet = true; m_autoScalingType = value; }
-    inline void SetAutoScalingType(AutoScalingType&& value) { m_autoScalingTypeHasBeenSet = true; m_autoScalingType = std::move(value); }
-    inline CreateInstanceRequest& WithAutoScalingType(const AutoScalingType& value) { SetAutoScalingType(value); return *this;}
-    inline CreateInstanceRequest& WithAutoScalingType(AutoScalingType&& value) { SetAutoScalingType(std::move(value)); return *this;}
+    inline void SetAutoScalingType(AutoScalingType value) { m_autoScalingTypeHasBeenSet = true; m_autoScalingType = value; }
+    inline CreateInstanceRequest& WithAutoScalingType(AutoScalingType value) { SetAutoScalingType(value); return *this;}
     ///@}
 
     ///@{
@@ -108,14 +101,12 @@ namespace Model
      * names.</p> <ul> <li> <p>Linux-based instances: 63 characters</p> </li> <li>
      * <p>Windows-based instances: 15 characters</p> </li> </ul>
      */
-    inline const Aws::String& GetHostname() const{ return m_hostname; }
+    inline const Aws::String& GetHostname() const { return m_hostname; }
     inline bool HostnameHasBeenSet() const { return m_hostnameHasBeenSet; }
-    inline void SetHostname(const Aws::String& value) { m_hostnameHasBeenSet = true; m_hostname = value; }
-    inline void SetHostname(Aws::String&& value) { m_hostnameHasBeenSet = true; m_hostname = std::move(value); }
-    inline void SetHostname(const char* value) { m_hostnameHasBeenSet = true; m_hostname.assign(value); }
-    inline CreateInstanceRequest& WithHostname(const Aws::String& value) { SetHostname(value); return *this;}
-    inline CreateInstanceRequest& WithHostname(Aws::String&& value) { SetHostname(std::move(value)); return *this;}
-    inline CreateInstanceRequest& WithHostname(const char* value) { SetHostname(value); return *this;}
+    template<typename HostnameT = Aws::String>
+    void SetHostname(HostnameT&& value) { m_hostnameHasBeenSet = true; m_hostname = std::forward<HostnameT>(value); }
+    template<typename HostnameT = Aws::String>
+    CreateInstanceRequest& WithHostname(HostnameT&& value) { SetHostname(std::forward<HostnameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -147,14 +138,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      * Custom AMIs</a>.</p>
      */
-    inline const Aws::String& GetOs() const{ return m_os; }
+    inline const Aws::String& GetOs() const { return m_os; }
     inline bool OsHasBeenSet() const { return m_osHasBeenSet; }
-    inline void SetOs(const Aws::String& value) { m_osHasBeenSet = true; m_os = value; }
-    inline void SetOs(Aws::String&& value) { m_osHasBeenSet = true; m_os = std::move(value); }
-    inline void SetOs(const char* value) { m_osHasBeenSet = true; m_os.assign(value); }
-    inline CreateInstanceRequest& WithOs(const Aws::String& value) { SetOs(value); return *this;}
-    inline CreateInstanceRequest& WithOs(Aws::String&& value) { SetOs(std::move(value)); return *this;}
-    inline CreateInstanceRequest& WithOs(const char* value) { SetOs(value); return *this;}
+    template<typename OsT = Aws::String>
+    void SetOs(OsT&& value) { m_osHasBeenSet = true; m_os = std::forward<OsT>(value); }
+    template<typename OsT = Aws::String>
+    CreateInstanceRequest& WithOs(OsT&& value) { SetOs(std::forward<OsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -165,28 +154,24 @@ namespace Model
      * Custom AMIs</a>.</p>  <p>If you specify a custom AMI, you must set
      * <code>Os</code> to <code>Custom</code>.</p> 
      */
-    inline const Aws::String& GetAmiId() const{ return m_amiId; }
+    inline const Aws::String& GetAmiId() const { return m_amiId; }
     inline bool AmiIdHasBeenSet() const { return m_amiIdHasBeenSet; }
-    inline void SetAmiId(const Aws::String& value) { m_amiIdHasBeenSet = true; m_amiId = value; }
-    inline void SetAmiId(Aws::String&& value) { m_amiIdHasBeenSet = true; m_amiId = std::move(value); }
-    inline void SetAmiId(const char* value) { m_amiIdHasBeenSet = true; m_amiId.assign(value); }
-    inline CreateInstanceRequest& WithAmiId(const Aws::String& value) { SetAmiId(value); return *this;}
-    inline CreateInstanceRequest& WithAmiId(Aws::String&& value) { SetAmiId(std::move(value)); return *this;}
-    inline CreateInstanceRequest& WithAmiId(const char* value) { SetAmiId(value); return *this;}
+    template<typename AmiIdT = Aws::String>
+    void SetAmiId(AmiIdT&& value) { m_amiIdHasBeenSet = true; m_amiId = std::forward<AmiIdT>(value); }
+    template<typename AmiIdT = Aws::String>
+    CreateInstanceRequest& WithAmiId(AmiIdT&& value) { SetAmiId(std::forward<AmiIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The instance's Amazon EC2 key-pair name.</p>
      */
-    inline const Aws::String& GetSshKeyName() const{ return m_sshKeyName; }
+    inline const Aws::String& GetSshKeyName() const { return m_sshKeyName; }
     inline bool SshKeyNameHasBeenSet() const { return m_sshKeyNameHasBeenSet; }
-    inline void SetSshKeyName(const Aws::String& value) { m_sshKeyNameHasBeenSet = true; m_sshKeyName = value; }
-    inline void SetSshKeyName(Aws::String&& value) { m_sshKeyNameHasBeenSet = true; m_sshKeyName = std::move(value); }
-    inline void SetSshKeyName(const char* value) { m_sshKeyNameHasBeenSet = true; m_sshKeyName.assign(value); }
-    inline CreateInstanceRequest& WithSshKeyName(const Aws::String& value) { SetSshKeyName(value); return *this;}
-    inline CreateInstanceRequest& WithSshKeyName(Aws::String&& value) { SetSshKeyName(std::move(value)); return *this;}
-    inline CreateInstanceRequest& WithSshKeyName(const char* value) { SetSshKeyName(value); return *this;}
+    template<typename SshKeyNameT = Aws::String>
+    void SetSshKeyName(SshKeyNameT&& value) { m_sshKeyNameHasBeenSet = true; m_sshKeyName = std::forward<SshKeyNameT>(value); }
+    template<typename SshKeyNameT = Aws::String>
+    CreateInstanceRequest& WithSshKeyName(SshKeyNameT&& value) { SetSshKeyName(std::forward<SshKeyNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -195,14 +180,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
-    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+    inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
-    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
-    inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
-    inline CreateInstanceRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
-    inline CreateInstanceRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
-    inline CreateInstanceRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+    template<typename AvailabilityZoneT = Aws::String>
+    void SetAvailabilityZone(AvailabilityZoneT&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::forward<AvailabilityZoneT>(value); }
+    template<typename AvailabilityZoneT = Aws::String>
+    CreateInstanceRequest& WithAvailabilityZone(AvailabilityZoneT&& value) { SetAvailabilityZone(std::forward<AvailabilityZoneT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -210,14 +193,12 @@ namespace Model
      * <p>The instance's virtualization type, <code>paravirtual</code> or
      * <code>hvm</code>.</p>
      */
-    inline const Aws::String& GetVirtualizationType() const{ return m_virtualizationType; }
+    inline const Aws::String& GetVirtualizationType() const { return m_virtualizationType; }
     inline bool VirtualizationTypeHasBeenSet() const { return m_virtualizationTypeHasBeenSet; }
-    inline void SetVirtualizationType(const Aws::String& value) { m_virtualizationTypeHasBeenSet = true; m_virtualizationType = value; }
-    inline void SetVirtualizationType(Aws::String&& value) { m_virtualizationTypeHasBeenSet = true; m_virtualizationType = std::move(value); }
-    inline void SetVirtualizationType(const char* value) { m_virtualizationTypeHasBeenSet = true; m_virtualizationType.assign(value); }
-    inline CreateInstanceRequest& WithVirtualizationType(const Aws::String& value) { SetVirtualizationType(value); return *this;}
-    inline CreateInstanceRequest& WithVirtualizationType(Aws::String&& value) { SetVirtualizationType(std::move(value)); return *this;}
-    inline CreateInstanceRequest& WithVirtualizationType(const char* value) { SetVirtualizationType(value); return *this;}
+    template<typename VirtualizationTypeT = Aws::String>
+    void SetVirtualizationType(VirtualizationTypeT&& value) { m_virtualizationTypeHasBeenSet = true; m_virtualizationType = std::forward<VirtualizationTypeT>(value); }
+    template<typename VirtualizationTypeT = Aws::String>
+    CreateInstanceRequest& WithVirtualizationType(VirtualizationTypeT&& value) { SetVirtualizationType(std::forward<VirtualizationTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -226,14 +207,12 @@ namespace Model
      * use this parameter to override the stack's default subnet ID value and direct
      * OpsWorks Stacks to launch the instance in a different subnet.</p>
      */
-    inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
+    inline const Aws::String& GetSubnetId() const { return m_subnetId; }
     inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
-    inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
-    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
-    inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
-    inline CreateInstanceRequest& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
-    inline CreateInstanceRequest& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
-    inline CreateInstanceRequest& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+    template<typename SubnetIdT = Aws::String>
+    void SetSubnetId(SubnetIdT&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::forward<SubnetIdT>(value); }
+    template<typename SubnetIdT = Aws::String>
+    CreateInstanceRequest& WithSubnetId(SubnetIdT&& value) { SetSubnetId(std::forward<SubnetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -244,12 +223,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * Families and Types</a>.</p>
      */
-    inline const Architecture& GetArchitecture() const{ return m_architecture; }
+    inline Architecture GetArchitecture() const { return m_architecture; }
     inline bool ArchitectureHasBeenSet() const { return m_architectureHasBeenSet; }
-    inline void SetArchitecture(const Architecture& value) { m_architectureHasBeenSet = true; m_architecture = value; }
-    inline void SetArchitecture(Architecture&& value) { m_architectureHasBeenSet = true; m_architecture = std::move(value); }
-    inline CreateInstanceRequest& WithArchitecture(const Architecture& value) { SetArchitecture(value); return *this;}
-    inline CreateInstanceRequest& WithArchitecture(Architecture&& value) { SetArchitecture(std::move(value)); return *this;}
+    inline void SetArchitecture(Architecture value) { m_architectureHasBeenSet = true; m_architecture = value; }
+    inline CreateInstanceRequest& WithArchitecture(Architecture value) { SetArchitecture(value); return *this;}
     ///@}
 
     ///@{
@@ -258,12 +235,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      * for the Root Device</a>.</p>
      */
-    inline const RootDeviceType& GetRootDeviceType() const{ return m_rootDeviceType; }
+    inline RootDeviceType GetRootDeviceType() const { return m_rootDeviceType; }
     inline bool RootDeviceTypeHasBeenSet() const { return m_rootDeviceTypeHasBeenSet; }
-    inline void SetRootDeviceType(const RootDeviceType& value) { m_rootDeviceTypeHasBeenSet = true; m_rootDeviceType = value; }
-    inline void SetRootDeviceType(RootDeviceType&& value) { m_rootDeviceTypeHasBeenSet = true; m_rootDeviceType = std::move(value); }
-    inline CreateInstanceRequest& WithRootDeviceType(const RootDeviceType& value) { SetRootDeviceType(value); return *this;}
-    inline CreateInstanceRequest& WithRootDeviceType(RootDeviceType&& value) { SetRootDeviceType(std::move(value)); return *this;}
+    inline void SetRootDeviceType(RootDeviceType value) { m_rootDeviceTypeHasBeenSet = true; m_rootDeviceType = value; }
+    inline CreateInstanceRequest& WithRootDeviceType(RootDeviceType value) { SetRootDeviceType(value); return *this;}
     ///@}
 
     ///@{
@@ -274,14 +249,14 @@ namespace Model
      * Device Mapping</a>. Note that block device mappings are not supported for custom
      * AMIs.</p>
      */
-    inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
+    inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const { return m_blockDeviceMappings; }
     inline bool BlockDeviceMappingsHasBeenSet() const { return m_blockDeviceMappingsHasBeenSet; }
-    inline void SetBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
-    inline void SetBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::move(value); }
-    inline CreateInstanceRequest& WithBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { SetBlockDeviceMappings(value); return *this;}
-    inline CreateInstanceRequest& WithBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
-    inline CreateInstanceRequest& AddBlockDeviceMappings(const BlockDeviceMapping& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
-    inline CreateInstanceRequest& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
+    template<typename BlockDeviceMappingsT = Aws::Vector<BlockDeviceMapping>>
+    void SetBlockDeviceMappings(BlockDeviceMappingsT&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::forward<BlockDeviceMappingsT>(value); }
+    template<typename BlockDeviceMappingsT = Aws::Vector<BlockDeviceMapping>>
+    CreateInstanceRequest& WithBlockDeviceMappings(BlockDeviceMappingsT&& value) { SetBlockDeviceMappings(std::forward<BlockDeviceMappingsT>(value)); return *this;}
+    template<typename BlockDeviceMappingsT = BlockDeviceMapping>
+    CreateInstanceRequest& AddBlockDeviceMappings(BlockDeviceMappingsT&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.emplace_back(std::forward<BlockDeviceMappingsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -296,7 +271,7 @@ namespace Model
      * <code>true</code> to ensure that your instances have the latest security
      * updates.</p> 
      */
-    inline bool GetInstallUpdatesOnBoot() const{ return m_installUpdatesOnBoot; }
+    inline bool GetInstallUpdatesOnBoot() const { return m_installUpdatesOnBoot; }
     inline bool InstallUpdatesOnBootHasBeenSet() const { return m_installUpdatesOnBootHasBeenSet; }
     inline void SetInstallUpdatesOnBoot(bool value) { m_installUpdatesOnBootHasBeenSet = true; m_installUpdatesOnBoot = value; }
     inline CreateInstanceRequest& WithInstallUpdatesOnBoot(bool value) { SetInstallUpdatesOnBoot(value); return *this;}
@@ -306,7 +281,7 @@ namespace Model
     /**
      * <p>Whether to create an Amazon EBS-optimized instance.</p>
      */
-    inline bool GetEbsOptimized() const{ return m_ebsOptimized; }
+    inline bool GetEbsOptimized() const { return m_ebsOptimized; }
     inline bool EbsOptimizedHasBeenSet() const { return m_ebsOptimizedHasBeenSet; }
     inline void SetEbsOptimized(bool value) { m_ebsOptimizedHasBeenSet = true; m_ebsOptimized = value; }
     inline CreateInstanceRequest& WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
@@ -325,14 +300,12 @@ namespace Model
      * console. For a list of available agent version numbers, call
      * <a>DescribeAgentVersions</a>. AgentVersion cannot be set to Chef 12.2.</p>
      */
-    inline const Aws::String& GetAgentVersion() const{ return m_agentVersion; }
+    inline const Aws::String& GetAgentVersion() const { return m_agentVersion; }
     inline bool AgentVersionHasBeenSet() const { return m_agentVersionHasBeenSet; }
-    inline void SetAgentVersion(const Aws::String& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
-    inline void SetAgentVersion(Aws::String&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = std::move(value); }
-    inline void SetAgentVersion(const char* value) { m_agentVersionHasBeenSet = true; m_agentVersion.assign(value); }
-    inline CreateInstanceRequest& WithAgentVersion(const Aws::String& value) { SetAgentVersion(value); return *this;}
-    inline CreateInstanceRequest& WithAgentVersion(Aws::String&& value) { SetAgentVersion(std::move(value)); return *this;}
-    inline CreateInstanceRequest& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
+    template<typename AgentVersionT = Aws::String>
+    void SetAgentVersion(AgentVersionT&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = std::forward<AgentVersionT>(value); }
+    template<typename AgentVersionT = Aws::String>
+    CreateInstanceRequest& WithAgentVersion(AgentVersionT&& value) { SetAgentVersion(std::forward<AgentVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -351,14 +324,12 @@ namespace Model
      * href="http://aws.amazon.com/ec2/purchasing-options/dedicated-instances/">Amazon
      * EC2 Dedicated Instances</a>.</p>
      */
-    inline const Aws::String& GetTenancy() const{ return m_tenancy; }
+    inline const Aws::String& GetTenancy() const { return m_tenancy; }
     inline bool TenancyHasBeenSet() const { return m_tenancyHasBeenSet; }
-    inline void SetTenancy(const Aws::String& value) { m_tenancyHasBeenSet = true; m_tenancy = value; }
-    inline void SetTenancy(Aws::String&& value) { m_tenancyHasBeenSet = true; m_tenancy = std::move(value); }
-    inline void SetTenancy(const char* value) { m_tenancyHasBeenSet = true; m_tenancy.assign(value); }
-    inline CreateInstanceRequest& WithTenancy(const Aws::String& value) { SetTenancy(value); return *this;}
-    inline CreateInstanceRequest& WithTenancy(Aws::String&& value) { SetTenancy(std::move(value)); return *this;}
-    inline CreateInstanceRequest& WithTenancy(const char* value) { SetTenancy(value); return *this;}
+    template<typename TenancyT = Aws::String>
+    void SetTenancy(TenancyT&& value) { m_tenancyHasBeenSet = true; m_tenancy = std::forward<TenancyT>(value); }
+    template<typename TenancyT = Aws::String>
+    CreateInstanceRequest& WithTenancy(TenancyT&& value) { SetTenancy(std::forward<TenancyT>(value)); return *this;}
     ///@}
   private:
 
@@ -371,7 +342,7 @@ namespace Model
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet = false;
 
-    AutoScalingType m_autoScalingType;
+    AutoScalingType m_autoScalingType{AutoScalingType::NOT_SET};
     bool m_autoScalingTypeHasBeenSet = false;
 
     Aws::String m_hostname;
@@ -395,19 +366,19 @@ namespace Model
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet = false;
 
-    Architecture m_architecture;
+    Architecture m_architecture{Architecture::NOT_SET};
     bool m_architectureHasBeenSet = false;
 
-    RootDeviceType m_rootDeviceType;
+    RootDeviceType m_rootDeviceType{RootDeviceType::NOT_SET};
     bool m_rootDeviceTypeHasBeenSet = false;
 
     Aws::Vector<BlockDeviceMapping> m_blockDeviceMappings;
     bool m_blockDeviceMappingsHasBeenSet = false;
 
-    bool m_installUpdatesOnBoot;
+    bool m_installUpdatesOnBoot{false};
     bool m_installUpdatesOnBootHasBeenSet = false;
 
-    bool m_ebsOptimized;
+    bool m_ebsOptimized{false};
     bool m_ebsOptimizedHasBeenSet = false;
 
     Aws::String m_agentVersion;

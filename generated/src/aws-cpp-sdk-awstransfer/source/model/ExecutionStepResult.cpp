@@ -18,16 +18,7 @@ namespace Transfer
 namespace Model
 {
 
-ExecutionStepResult::ExecutionStepResult() : 
-    m_stepType(WorkflowStepType::NOT_SET),
-    m_stepTypeHasBeenSet(false),
-    m_outputsHasBeenSet(false),
-    m_errorHasBeenSet(false)
-{
-}
-
 ExecutionStepResult::ExecutionStepResult(JsonView jsonValue)
-  : ExecutionStepResult()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ExecutionStepResult& ExecutionStepResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StepType"))
   {
     m_stepType = WorkflowStepTypeMapper::GetWorkflowStepTypeForName(jsonValue.GetString("StepType"));
-
     m_stepTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Outputs"))
   {
     m_outputs = jsonValue.GetString("Outputs");
-
     m_outputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Error"))
   {
     m_error = jsonValue.GetObject("Error");
-
     m_errorHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsAutoScalingLaunchConfigurationMetadataOptions::AwsAutoScalingLaunchConfigurationMetadataOptions() : 
-    m_httpEndpointHasBeenSet(false),
-    m_httpPutResponseHopLimit(0),
-    m_httpPutResponseHopLimitHasBeenSet(false),
-    m_httpTokensHasBeenSet(false)
-{
-}
-
 AwsAutoScalingLaunchConfigurationMetadataOptions::AwsAutoScalingLaunchConfigurationMetadataOptions(JsonView jsonValue)
-  : AwsAutoScalingLaunchConfigurationMetadataOptions()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ AwsAutoScalingLaunchConfigurationMetadataOptions& AwsAutoScalingLaunchConfigurat
   if(jsonValue.ValueExists("HttpEndpoint"))
   {
     m_httpEndpoint = jsonValue.GetString("HttpEndpoint");
-
     m_httpEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HttpPutResponseHopLimit"))
   {
     m_httpPutResponseHopLimit = jsonValue.GetInteger("HttpPutResponseHopLimit");
-
     m_httpPutResponseHopLimitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HttpTokens"))
   {
     m_httpTokens = jsonValue.GetString("HttpTokens");
-
     m_httpTokensHasBeenSet = true;
   }
-
   return *this;
 }
 

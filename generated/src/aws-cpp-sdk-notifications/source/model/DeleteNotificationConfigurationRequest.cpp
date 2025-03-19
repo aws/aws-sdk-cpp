@@ -12,11 +12,6 @@ using namespace Aws::Notifications::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteNotificationConfigurationRequest::DeleteNotificationConfigurationRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteNotificationConfigurationRequest::SerializePayload() const
 {
   return {};

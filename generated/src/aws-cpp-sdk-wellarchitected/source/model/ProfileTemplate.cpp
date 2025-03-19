@@ -18,16 +18,7 @@ namespace WellArchitected
 namespace Model
 {
 
-ProfileTemplate::ProfileTemplate() : 
-    m_templateNameHasBeenSet(false),
-    m_templateQuestionsHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 ProfileTemplate::ProfileTemplate(JsonView jsonValue)
-  : ProfileTemplate()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ ProfileTemplate& ProfileTemplate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TemplateName"))
   {
     m_templateName = jsonValue.GetString("TemplateName");
-
     m_templateNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TemplateQuestions"))
   {
     Aws::Utils::Array<JsonView> templateQuestionsJsonList = jsonValue.GetArray("TemplateQuestions");
@@ -50,21 +39,16 @@ ProfileTemplate& ProfileTemplate::operator =(JsonView jsonValue)
     }
     m_templateQuestionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("UpdatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

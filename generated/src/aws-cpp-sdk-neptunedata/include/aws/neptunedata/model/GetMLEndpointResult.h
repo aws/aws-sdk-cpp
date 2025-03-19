@@ -29,7 +29,7 @@ namespace Model
   class GetMLEndpointResult
   {
   public:
-    AWS_NEPTUNEDATA_API GetMLEndpointResult();
+    AWS_NEPTUNEDATA_API GetMLEndpointResult() = default;
     AWS_NEPTUNEDATA_API GetMLEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NEPTUNEDATA_API GetMLEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,71 +38,70 @@ namespace Model
     /**
      * <p>The status of the inference endpoint.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
-    inline void SetStatus(const Aws::String& value) { m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_status.assign(value); }
-    inline GetMLEndpointResult& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline GetMLEndpointResult& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline GetMLEndpointResult& WithStatus(const char* value) { SetStatus(value); return *this;}
+    inline const Aws::String& GetStatus() const { return m_status; }
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    GetMLEndpointResult& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the inference endpoint.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline GetMLEndpointResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline GetMLEndpointResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline GetMLEndpointResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    GetMLEndpointResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The endpoint definition.</p>
      */
-    inline const MlResourceDefinition& GetEndpoint() const{ return m_endpoint; }
-    inline void SetEndpoint(const MlResourceDefinition& value) { m_endpoint = value; }
-    inline void SetEndpoint(MlResourceDefinition&& value) { m_endpoint = std::move(value); }
-    inline GetMLEndpointResult& WithEndpoint(const MlResourceDefinition& value) { SetEndpoint(value); return *this;}
-    inline GetMLEndpointResult& WithEndpoint(MlResourceDefinition&& value) { SetEndpoint(std::move(value)); return *this;}
+    inline const MlResourceDefinition& GetEndpoint() const { return m_endpoint; }
+    template<typename EndpointT = MlResourceDefinition>
+    void SetEndpoint(EndpointT&& value) { m_endpointHasBeenSet = true; m_endpoint = std::forward<EndpointT>(value); }
+    template<typename EndpointT = MlResourceDefinition>
+    GetMLEndpointResult& WithEndpoint(EndpointT&& value) { SetEndpoint(std::forward<EndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The endpoint configuration</p>
      */
-    inline const MlConfigDefinition& GetEndpointConfig() const{ return m_endpointConfig; }
-    inline void SetEndpointConfig(const MlConfigDefinition& value) { m_endpointConfig = value; }
-    inline void SetEndpointConfig(MlConfigDefinition&& value) { m_endpointConfig = std::move(value); }
-    inline GetMLEndpointResult& WithEndpointConfig(const MlConfigDefinition& value) { SetEndpointConfig(value); return *this;}
-    inline GetMLEndpointResult& WithEndpointConfig(MlConfigDefinition&& value) { SetEndpointConfig(std::move(value)); return *this;}
+    inline const MlConfigDefinition& GetEndpointConfig() const { return m_endpointConfig; }
+    template<typename EndpointConfigT = MlConfigDefinition>
+    void SetEndpointConfig(EndpointConfigT&& value) { m_endpointConfigHasBeenSet = true; m_endpointConfig = std::forward<EndpointConfigT>(value); }
+    template<typename EndpointConfigT = MlConfigDefinition>
+    GetMLEndpointResult& WithEndpointConfig(EndpointConfigT&& value) { SetEndpointConfig(std::forward<EndpointConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetMLEndpointResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetMLEndpointResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetMLEndpointResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetMLEndpointResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_status;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     MlResourceDefinition m_endpoint;
+    bool m_endpointHasBeenSet = false;
 
     MlConfigDefinition m_endpointConfig;
+    bool m_endpointConfigHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

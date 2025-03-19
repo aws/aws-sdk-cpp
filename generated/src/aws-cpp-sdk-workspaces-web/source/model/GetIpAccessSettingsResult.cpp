@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetIpAccessSettingsResult::GetIpAccessSettingsResult()
-{
-}
-
 GetIpAccessSettingsResult::GetIpAccessSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetIpAccessSettingsResult& GetIpAccessSettingsResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("ipAccessSettings"))
   {
     m_ipAccessSettings = jsonValue.GetObject("ipAccessSettings");
-
+    m_ipAccessSettingsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

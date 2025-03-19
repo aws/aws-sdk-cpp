@@ -12,16 +12,6 @@ using namespace Aws::MemoryDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeServiceUpdatesRequest::DescribeServiceUpdatesRequest() : 
-    m_serviceUpdateNameHasBeenSet(false),
-    m_clusterNamesHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeServiceUpdatesRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -33,7 +33,7 @@ namespace Model
   class SitePlan
   {
   public:
-    AWS_PRIVATENETWORKS_API SitePlan();
+    AWS_PRIVATENETWORKS_API SitePlan() = default;
     AWS_PRIVATENETWORKS_API SitePlan(Aws::Utils::Json::JsonView jsonValue);
     AWS_PRIVATENETWORKS_API SitePlan& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PRIVATENETWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,28 @@ namespace Model
     /**
      * <p>The options of the plan.</p>
      */
-    inline const Aws::Vector<NameValuePair>& GetOptions() const{ return m_options; }
+    inline const Aws::Vector<NameValuePair>& GetOptions() const { return m_options; }
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-    inline void SetOptions(const Aws::Vector<NameValuePair>& value) { m_optionsHasBeenSet = true; m_options = value; }
-    inline void SetOptions(Aws::Vector<NameValuePair>&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-    inline SitePlan& WithOptions(const Aws::Vector<NameValuePair>& value) { SetOptions(value); return *this;}
-    inline SitePlan& WithOptions(Aws::Vector<NameValuePair>&& value) { SetOptions(std::move(value)); return *this;}
-    inline SitePlan& AddOptions(const NameValuePair& value) { m_optionsHasBeenSet = true; m_options.push_back(value); return *this; }
-    inline SitePlan& AddOptions(NameValuePair&& value) { m_optionsHasBeenSet = true; m_options.push_back(std::move(value)); return *this; }
+    template<typename OptionsT = Aws::Vector<NameValuePair>>
+    void SetOptions(OptionsT&& value) { m_optionsHasBeenSet = true; m_options = std::forward<OptionsT>(value); }
+    template<typename OptionsT = Aws::Vector<NameValuePair>>
+    SitePlan& WithOptions(OptionsT&& value) { SetOptions(std::forward<OptionsT>(value)); return *this;}
+    template<typename OptionsT = NameValuePair>
+    SitePlan& AddOptions(OptionsT&& value) { m_optionsHasBeenSet = true; m_options.emplace_back(std::forward<OptionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The resource definitions of the plan.</p>
      */
-    inline const Aws::Vector<NetworkResourceDefinition>& GetResourceDefinitions() const{ return m_resourceDefinitions; }
+    inline const Aws::Vector<NetworkResourceDefinition>& GetResourceDefinitions() const { return m_resourceDefinitions; }
     inline bool ResourceDefinitionsHasBeenSet() const { return m_resourceDefinitionsHasBeenSet; }
-    inline void SetResourceDefinitions(const Aws::Vector<NetworkResourceDefinition>& value) { m_resourceDefinitionsHasBeenSet = true; m_resourceDefinitions = value; }
-    inline void SetResourceDefinitions(Aws::Vector<NetworkResourceDefinition>&& value) { m_resourceDefinitionsHasBeenSet = true; m_resourceDefinitions = std::move(value); }
-    inline SitePlan& WithResourceDefinitions(const Aws::Vector<NetworkResourceDefinition>& value) { SetResourceDefinitions(value); return *this;}
-    inline SitePlan& WithResourceDefinitions(Aws::Vector<NetworkResourceDefinition>&& value) { SetResourceDefinitions(std::move(value)); return *this;}
-    inline SitePlan& AddResourceDefinitions(const NetworkResourceDefinition& value) { m_resourceDefinitionsHasBeenSet = true; m_resourceDefinitions.push_back(value); return *this; }
-    inline SitePlan& AddResourceDefinitions(NetworkResourceDefinition&& value) { m_resourceDefinitionsHasBeenSet = true; m_resourceDefinitions.push_back(std::move(value)); return *this; }
+    template<typename ResourceDefinitionsT = Aws::Vector<NetworkResourceDefinition>>
+    void SetResourceDefinitions(ResourceDefinitionsT&& value) { m_resourceDefinitionsHasBeenSet = true; m_resourceDefinitions = std::forward<ResourceDefinitionsT>(value); }
+    template<typename ResourceDefinitionsT = Aws::Vector<NetworkResourceDefinition>>
+    SitePlan& WithResourceDefinitions(ResourceDefinitionsT&& value) { SetResourceDefinitions(std::forward<ResourceDefinitionsT>(value)); return *this;}
+    template<typename ResourceDefinitionsT = NetworkResourceDefinition>
+    SitePlan& AddResourceDefinitions(ResourceDefinitionsT&& value) { m_resourceDefinitionsHasBeenSet = true; m_resourceDefinitions.emplace_back(std::forward<ResourceDefinitionsT>(value)); return *this; }
     ///@}
   private:
 

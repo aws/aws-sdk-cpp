@@ -30,7 +30,7 @@ namespace Model
   class EvaluateSessionResult
   {
   public:
-    AWS_VOICEID_API EvaluateSessionResult();
+    AWS_VOICEID_API EvaluateSessionResult() = default;
     AWS_VOICEID_API EvaluateSessionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_VOICEID_API EvaluateSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,24 +40,22 @@ namespace Model
      * <p>Details resulting from the authentication process, such as authentication
      * decision and authentication score.</p>
      */
-    inline const AuthenticationResult& GetAuthenticationResult() const{ return m_authenticationResult; }
-    inline void SetAuthenticationResult(const AuthenticationResult& value) { m_authenticationResult = value; }
-    inline void SetAuthenticationResult(AuthenticationResult&& value) { m_authenticationResult = std::move(value); }
-    inline EvaluateSessionResult& WithAuthenticationResult(const AuthenticationResult& value) { SetAuthenticationResult(value); return *this;}
-    inline EvaluateSessionResult& WithAuthenticationResult(AuthenticationResult&& value) { SetAuthenticationResult(std::move(value)); return *this;}
+    inline const AuthenticationResult& GetAuthenticationResult() const { return m_authenticationResult; }
+    template<typename AuthenticationResultT = AuthenticationResult>
+    void SetAuthenticationResult(AuthenticationResultT&& value) { m_authenticationResultHasBeenSet = true; m_authenticationResult = std::forward<AuthenticationResultT>(value); }
+    template<typename AuthenticationResultT = AuthenticationResult>
+    EvaluateSessionResult& WithAuthenticationResult(AuthenticationResultT&& value) { SetAuthenticationResult(std::forward<AuthenticationResultT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the domain that contains the session.</p>
      */
-    inline const Aws::String& GetDomainId() const{ return m_domainId; }
-    inline void SetDomainId(const Aws::String& value) { m_domainId = value; }
-    inline void SetDomainId(Aws::String&& value) { m_domainId = std::move(value); }
-    inline void SetDomainId(const char* value) { m_domainId.assign(value); }
-    inline EvaluateSessionResult& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
-    inline EvaluateSessionResult& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
-    inline EvaluateSessionResult& WithDomainId(const char* value) { SetDomainId(value); return *this;}
+    inline const Aws::String& GetDomainId() const { return m_domainId; }
+    template<typename DomainIdT = Aws::String>
+    void SetDomainId(DomainIdT&& value) { m_domainIdHasBeenSet = true; m_domainId = std::forward<DomainIdT>(value); }
+    template<typename DomainIdT = Aws::String>
+    EvaluateSessionResult& WithDomainId(DomainIdT&& value) { SetDomainId(std::forward<DomainIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,37 +63,33 @@ namespace Model
      * <p>Details resulting from the fraud detection process, such as fraud detection
      * decision and risk score.</p>
      */
-    inline const FraudDetectionResult& GetFraudDetectionResult() const{ return m_fraudDetectionResult; }
-    inline void SetFraudDetectionResult(const FraudDetectionResult& value) { m_fraudDetectionResult = value; }
-    inline void SetFraudDetectionResult(FraudDetectionResult&& value) { m_fraudDetectionResult = std::move(value); }
-    inline EvaluateSessionResult& WithFraudDetectionResult(const FraudDetectionResult& value) { SetFraudDetectionResult(value); return *this;}
-    inline EvaluateSessionResult& WithFraudDetectionResult(FraudDetectionResult&& value) { SetFraudDetectionResult(std::move(value)); return *this;}
+    inline const FraudDetectionResult& GetFraudDetectionResult() const { return m_fraudDetectionResult; }
+    template<typename FraudDetectionResultT = FraudDetectionResult>
+    void SetFraudDetectionResult(FraudDetectionResultT&& value) { m_fraudDetectionResultHasBeenSet = true; m_fraudDetectionResult = std::forward<FraudDetectionResultT>(value); }
+    template<typename FraudDetectionResultT = FraudDetectionResult>
+    EvaluateSessionResult& WithFraudDetectionResult(FraudDetectionResultT&& value) { SetFraudDetectionResult(std::forward<FraudDetectionResultT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The service-generated identifier of the session.</p>
      */
-    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
-    inline void SetSessionId(const Aws::String& value) { m_sessionId = value; }
-    inline void SetSessionId(Aws::String&& value) { m_sessionId = std::move(value); }
-    inline void SetSessionId(const char* value) { m_sessionId.assign(value); }
-    inline EvaluateSessionResult& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-    inline EvaluateSessionResult& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-    inline EvaluateSessionResult& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    EvaluateSessionResult& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The client-provided name of the session.</p>
      */
-    inline const Aws::String& GetSessionName() const{ return m_sessionName; }
-    inline void SetSessionName(const Aws::String& value) { m_sessionName = value; }
-    inline void SetSessionName(Aws::String&& value) { m_sessionName = std::move(value); }
-    inline void SetSessionName(const char* value) { m_sessionName.assign(value); }
-    inline EvaluateSessionResult& WithSessionName(const Aws::String& value) { SetSessionName(value); return *this;}
-    inline EvaluateSessionResult& WithSessionName(Aws::String&& value) { SetSessionName(std::move(value)); return *this;}
-    inline EvaluateSessionResult& WithSessionName(const char* value) { SetSessionName(value); return *this;}
+    inline const Aws::String& GetSessionName() const { return m_sessionName; }
+    template<typename SessionNameT = Aws::String>
+    void SetSessionName(SessionNameT&& value) { m_sessionNameHasBeenSet = true; m_sessionName = std::forward<SessionNameT>(value); }
+    template<typename SessionNameT = Aws::String>
+    EvaluateSessionResult& WithSessionName(SessionNameT&& value) { SetSessionName(std::forward<SessionNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,38 +105,41 @@ namespace Model
      * enough speech to perform evaluation, and a new streaming session is needed to
      * try again.</p>
      */
-    inline const StreamingStatus& GetStreamingStatus() const{ return m_streamingStatus; }
-    inline void SetStreamingStatus(const StreamingStatus& value) { m_streamingStatus = value; }
-    inline void SetStreamingStatus(StreamingStatus&& value) { m_streamingStatus = std::move(value); }
-    inline EvaluateSessionResult& WithStreamingStatus(const StreamingStatus& value) { SetStreamingStatus(value); return *this;}
-    inline EvaluateSessionResult& WithStreamingStatus(StreamingStatus&& value) { SetStreamingStatus(std::move(value)); return *this;}
+    inline StreamingStatus GetStreamingStatus() const { return m_streamingStatus; }
+    inline void SetStreamingStatus(StreamingStatus value) { m_streamingStatusHasBeenSet = true; m_streamingStatus = value; }
+    inline EvaluateSessionResult& WithStreamingStatus(StreamingStatus value) { SetStreamingStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline EvaluateSessionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline EvaluateSessionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline EvaluateSessionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    EvaluateSessionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AuthenticationResult m_authenticationResult;
+    bool m_authenticationResultHasBeenSet = false;
 
     Aws::String m_domainId;
+    bool m_domainIdHasBeenSet = false;
 
     FraudDetectionResult m_fraudDetectionResult;
+    bool m_fraudDetectionResultHasBeenSet = false;
 
     Aws::String m_sessionId;
+    bool m_sessionIdHasBeenSet = false;
 
     Aws::String m_sessionName;
+    bool m_sessionNameHasBeenSet = false;
 
-    StreamingStatus m_streamingStatus;
+    StreamingStatus m_streamingStatus{StreamingStatus::NOT_SET};
+    bool m_streamingStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

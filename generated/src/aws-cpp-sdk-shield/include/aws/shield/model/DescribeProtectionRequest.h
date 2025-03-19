@@ -21,7 +21,7 @@ namespace Model
   class DescribeProtectionRequest : public ShieldRequest
   {
   public:
-    AWS_SHIELD_API DescribeProtectionRequest();
+    AWS_SHIELD_API DescribeProtectionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * must provide either the <code>ResourceArn</code> of the protected resource or
      * the <code>ProtectionID</code> of the protection, but not both.</p>
      */
-    inline const Aws::String& GetProtectionId() const{ return m_protectionId; }
+    inline const Aws::String& GetProtectionId() const { return m_protectionId; }
     inline bool ProtectionIdHasBeenSet() const { return m_protectionIdHasBeenSet; }
-    inline void SetProtectionId(const Aws::String& value) { m_protectionIdHasBeenSet = true; m_protectionId = value; }
-    inline void SetProtectionId(Aws::String&& value) { m_protectionIdHasBeenSet = true; m_protectionId = std::move(value); }
-    inline void SetProtectionId(const char* value) { m_protectionIdHasBeenSet = true; m_protectionId.assign(value); }
-    inline DescribeProtectionRequest& WithProtectionId(const Aws::String& value) { SetProtectionId(value); return *this;}
-    inline DescribeProtectionRequest& WithProtectionId(Aws::String&& value) { SetProtectionId(std::move(value)); return *this;}
-    inline DescribeProtectionRequest& WithProtectionId(const char* value) { SetProtectionId(value); return *this;}
+    template<typename ProtectionIdT = Aws::String>
+    void SetProtectionId(ProtectionIdT&& value) { m_protectionIdHasBeenSet = true; m_protectionId = std::forward<ProtectionIdT>(value); }
+    template<typename ProtectionIdT = Aws::String>
+    DescribeProtectionRequest& WithProtectionId(ProtectionIdT&& value) { SetProtectionId(std::forward<ProtectionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * You must provide either the <code>ResourceArn</code> of the protected resource
      * or the <code>ProtectionID</code> of the protection, but not both.</p>
      */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-    inline DescribeProtectionRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-    inline DescribeProtectionRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-    inline DescribeProtectionRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    DescribeProtectionRequest& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
     ///@}
   private:
 

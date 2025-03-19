@@ -20,15 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-TopicConfigurationDeprecated::TopicConfigurationDeprecated() : 
-    m_idHasBeenSet(false),
-    m_eventsHasBeenSet(false),
-    m_topicHasBeenSet(false)
-{
-}
-
 TopicConfigurationDeprecated::TopicConfigurationDeprecated(const XmlNode& xmlNode)
-  : TopicConfigurationDeprecated()
 {
   *this = xmlNode;
 }
@@ -49,6 +41,7 @@ TopicConfigurationDeprecated& TopicConfigurationDeprecated::operator =(const Xml
     if(!eventsNode.IsNull())
     {
       XmlNode eventMember = eventsNode;
+      m_eventsHasBeenSet = !eventMember.IsNull();
       while(!eventMember.IsNull())
       {
         m_events.push_back(EventMapper::GetEventForName(StringUtils::Trim(eventMember.GetText().c_str())));

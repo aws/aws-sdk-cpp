@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateStreamingDistributionWithTags2020_05_31Result::CreateStreamingDistributionWithTags2020_05_31Result()
-{
-}
-
 CreateStreamingDistributionWithTags2020_05_31Result::CreateStreamingDistributionWithTags2020_05_31Result(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -33,6 +29,7 @@ CreateStreamingDistributionWithTags2020_05_31Result& CreateStreamingDistribution
   if(!resultNode.IsNull())
   {
     m_streamingDistribution = resultNode;
+    m_streamingDistributionHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
@@ -40,18 +37,21 @@ CreateStreamingDistributionWithTags2020_05_31Result& CreateStreamingDistribution
   if(locationIter != headers.end())
   {
     m_location = locationIter->second;
+    m_locationHasBeenSet = true;
   }
 
   const auto& eTagIter = headers.find("etag");
   if(eTagIter != headers.end())
   {
     m_eTag = eTagIter->second;
+    m_eTagHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

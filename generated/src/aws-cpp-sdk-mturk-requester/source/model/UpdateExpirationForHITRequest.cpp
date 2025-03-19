@@ -12,12 +12,6 @@ using namespace Aws::MTurk::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateExpirationForHITRequest::UpdateExpirationForHITRequest() : 
-    m_hITIdHasBeenSet(false),
-    m_expireAtHasBeenSet(false)
-{
-}
-
 Aws::String UpdateExpirationForHITRequest::SerializePayload() const
 {
   JsonValue payload;

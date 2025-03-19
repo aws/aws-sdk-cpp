@@ -33,7 +33,7 @@ namespace Model
   class LayoutConfiguration
   {
   public:
-    AWS_IVSREALTIME_API LayoutConfiguration();
+    AWS_IVSREALTIME_API LayoutConfiguration() = default;
     AWS_IVSREALTIME_API LayoutConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVSREALTIME_API LayoutConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVSREALTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>Configuration related to grid layout. Default: Grid layout.</p>
      */
-    inline const GridConfiguration& GetGrid() const{ return m_grid; }
+    inline const GridConfiguration& GetGrid() const { return m_grid; }
     inline bool GridHasBeenSet() const { return m_gridHasBeenSet; }
-    inline void SetGrid(const GridConfiguration& value) { m_gridHasBeenSet = true; m_grid = value; }
-    inline void SetGrid(GridConfiguration&& value) { m_gridHasBeenSet = true; m_grid = std::move(value); }
-    inline LayoutConfiguration& WithGrid(const GridConfiguration& value) { SetGrid(value); return *this;}
-    inline LayoutConfiguration& WithGrid(GridConfiguration&& value) { SetGrid(std::move(value)); return *this;}
+    template<typename GridT = GridConfiguration>
+    void SetGrid(GridT&& value) { m_gridHasBeenSet = true; m_grid = std::forward<GridT>(value); }
+    template<typename GridT = GridConfiguration>
+    LayoutConfiguration& WithGrid(GridT&& value) { SetGrid(std::forward<GridT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Configuration related to PiP layout.</p>
      */
-    inline const PipConfiguration& GetPip() const{ return m_pip; }
+    inline const PipConfiguration& GetPip() const { return m_pip; }
     inline bool PipHasBeenSet() const { return m_pipHasBeenSet; }
-    inline void SetPip(const PipConfiguration& value) { m_pipHasBeenSet = true; m_pip = value; }
-    inline void SetPip(PipConfiguration&& value) { m_pipHasBeenSet = true; m_pip = std::move(value); }
-    inline LayoutConfiguration& WithPip(const PipConfiguration& value) { SetPip(value); return *this;}
-    inline LayoutConfiguration& WithPip(PipConfiguration&& value) { SetPip(std::move(value)); return *this;}
+    template<typename PipT = PipConfiguration>
+    void SetPip(PipT&& value) { m_pipHasBeenSet = true; m_pip = std::forward<PipT>(value); }
+    template<typename PipT = PipConfiguration>
+    LayoutConfiguration& WithPip(PipT&& value) { SetPip(std::forward<PipT>(value)); return *this;}
     ///@}
   private:
 

@@ -33,7 +33,7 @@ namespace Model
   class ConformancePackComplianceScoresFilters
   {
   public:
-    AWS_CONFIGSERVICE_API ConformancePackComplianceScoresFilters();
+    AWS_CONFIGSERVICE_API ConformancePackComplianceScoresFilters() = default;
     AWS_CONFIGSERVICE_API ConformancePackComplianceScoresFilters(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API ConformancePackComplianceScoresFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,15 +47,14 @@ namespace Model
      * strings, each with a character limit of 256 characters for the conformance pack
      * name.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetConformancePackNames() const{ return m_conformancePackNames; }
+    inline const Aws::Vector<Aws::String>& GetConformancePackNames() const { return m_conformancePackNames; }
     inline bool ConformancePackNamesHasBeenSet() const { return m_conformancePackNamesHasBeenSet; }
-    inline void SetConformancePackNames(const Aws::Vector<Aws::String>& value) { m_conformancePackNamesHasBeenSet = true; m_conformancePackNames = value; }
-    inline void SetConformancePackNames(Aws::Vector<Aws::String>&& value) { m_conformancePackNamesHasBeenSet = true; m_conformancePackNames = std::move(value); }
-    inline ConformancePackComplianceScoresFilters& WithConformancePackNames(const Aws::Vector<Aws::String>& value) { SetConformancePackNames(value); return *this;}
-    inline ConformancePackComplianceScoresFilters& WithConformancePackNames(Aws::Vector<Aws::String>&& value) { SetConformancePackNames(std::move(value)); return *this;}
-    inline ConformancePackComplianceScoresFilters& AddConformancePackNames(const Aws::String& value) { m_conformancePackNamesHasBeenSet = true; m_conformancePackNames.push_back(value); return *this; }
-    inline ConformancePackComplianceScoresFilters& AddConformancePackNames(Aws::String&& value) { m_conformancePackNamesHasBeenSet = true; m_conformancePackNames.push_back(std::move(value)); return *this; }
-    inline ConformancePackComplianceScoresFilters& AddConformancePackNames(const char* value) { m_conformancePackNamesHasBeenSet = true; m_conformancePackNames.push_back(value); return *this; }
+    template<typename ConformancePackNamesT = Aws::Vector<Aws::String>>
+    void SetConformancePackNames(ConformancePackNamesT&& value) { m_conformancePackNamesHasBeenSet = true; m_conformancePackNames = std::forward<ConformancePackNamesT>(value); }
+    template<typename ConformancePackNamesT = Aws::Vector<Aws::String>>
+    ConformancePackComplianceScoresFilters& WithConformancePackNames(ConformancePackNamesT&& value) { SetConformancePackNames(std::forward<ConformancePackNamesT>(value)); return *this;}
+    template<typename ConformancePackNamesT = Aws::String>
+    ConformancePackComplianceScoresFilters& AddConformancePackNames(ConformancePackNamesT&& value) { m_conformancePackNamesHasBeenSet = true; m_conformancePackNames.emplace_back(std::forward<ConformancePackNamesT>(value)); return *this; }
     ///@}
   private:
 

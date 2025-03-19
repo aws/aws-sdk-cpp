@@ -12,11 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteOrganizationConfigRuleRequest::DeleteOrganizationConfigRuleRequest() : 
-    m_organizationConfigRuleNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteOrganizationConfigRuleRequest::SerializePayload() const
 {
   JsonValue payload;

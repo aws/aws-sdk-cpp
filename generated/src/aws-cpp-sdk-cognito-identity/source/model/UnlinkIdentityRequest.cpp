@@ -12,13 +12,6 @@ using namespace Aws::CognitoIdentity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UnlinkIdentityRequest::UnlinkIdentityRequest() : 
-    m_identityIdHasBeenSet(false),
-    m_loginsHasBeenSet(false),
-    m_loginsToRemoveHasBeenSet(false)
-{
-}
-
 Aws::String UnlinkIdentityRequest::SerializePayload() const
 {
   JsonValue payload;

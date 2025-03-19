@@ -18,13 +18,7 @@ namespace FSx
 namespace Model
 {
 
-DataRepositoryFailureDetails::DataRepositoryFailureDetails() : 
-    m_messageHasBeenSet(false)
-{
-}
-
 DataRepositoryFailureDetails::DataRepositoryFailureDetails(JsonView jsonValue)
-  : DataRepositoryFailureDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DataRepositoryFailureDetails& DataRepositoryFailureDetails::operator =(JsonView 
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

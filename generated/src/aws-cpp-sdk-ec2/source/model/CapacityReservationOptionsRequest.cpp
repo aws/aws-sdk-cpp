@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CapacityReservationOptionsRequest::CapacityReservationOptionsRequest() : 
-    m_usageStrategy(FleetCapacityReservationUsageStrategy::NOT_SET),
-    m_usageStrategyHasBeenSet(false)
-{
-}
-
 CapacityReservationOptionsRequest::CapacityReservationOptionsRequest(const XmlNode& xmlNode)
-  : CapacityReservationOptionsRequest()
 {
   *this = xmlNode;
 }
@@ -41,7 +34,7 @@ CapacityReservationOptionsRequest& CapacityReservationOptionsRequest::operator =
     XmlNode usageStrategyNode = resultNode.FirstChild("UsageStrategy");
     if(!usageStrategyNode.IsNull())
     {
-      m_usageStrategy = FleetCapacityReservationUsageStrategyMapper::GetFleetCapacityReservationUsageStrategyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(usageStrategyNode.GetText()).c_str()).c_str());
+      m_usageStrategy = FleetCapacityReservationUsageStrategyMapper::GetFleetCapacityReservationUsageStrategyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(usageStrategyNode.GetText()).c_str()));
       m_usageStrategyHasBeenSet = true;
     }
   }

@@ -18,14 +18,7 @@ namespace BCMPricingCalculator
 namespace Model
 {
 
-CostDifference::CostDifference() : 
-    m_historicalCostHasBeenSet(false),
-    m_estimatedCostHasBeenSet(false)
-{
-}
-
 CostDifference::CostDifference(JsonView jsonValue)
-  : CostDifference()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CostDifference& CostDifference::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("historicalCost"))
   {
     m_historicalCost = jsonValue.GetObject("historicalCost");
-
     m_historicalCostHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("estimatedCost"))
   {
     m_estimatedCost = jsonValue.GetObject("estimatedCost");
-
     m_estimatedCostHasBeenSet = true;
   }
-
   return *this;
 }
 

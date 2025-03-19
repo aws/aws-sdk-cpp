@@ -32,7 +32,7 @@ namespace Model
   class S3Origin
   {
   public:
-    AWS_CLOUDFRONT_API S3Origin();
+    AWS_CLOUDFRONT_API S3Origin() = default;
     AWS_CLOUDFRONT_API S3Origin(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API S3Origin& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The DNS name of the Amazon S3 origin.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline S3Origin& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline S3Origin& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline S3Origin& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    S3Origin& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +67,12 @@ namespace Model
      * an Origin Access Identity to Restrict Access to Your Amazon S3 Content</a> in
      * the <i> Amazon CloudFront Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetOriginAccessIdentity() const{ return m_originAccessIdentity; }
+    inline const Aws::String& GetOriginAccessIdentity() const { return m_originAccessIdentity; }
     inline bool OriginAccessIdentityHasBeenSet() const { return m_originAccessIdentityHasBeenSet; }
-    inline void SetOriginAccessIdentity(const Aws::String& value) { m_originAccessIdentityHasBeenSet = true; m_originAccessIdentity = value; }
-    inline void SetOriginAccessIdentity(Aws::String&& value) { m_originAccessIdentityHasBeenSet = true; m_originAccessIdentity = std::move(value); }
-    inline void SetOriginAccessIdentity(const char* value) { m_originAccessIdentityHasBeenSet = true; m_originAccessIdentity.assign(value); }
-    inline S3Origin& WithOriginAccessIdentity(const Aws::String& value) { SetOriginAccessIdentity(value); return *this;}
-    inline S3Origin& WithOriginAccessIdentity(Aws::String&& value) { SetOriginAccessIdentity(std::move(value)); return *this;}
-    inline S3Origin& WithOriginAccessIdentity(const char* value) { SetOriginAccessIdentity(value); return *this;}
+    template<typename OriginAccessIdentityT = Aws::String>
+    void SetOriginAccessIdentity(OriginAccessIdentityT&& value) { m_originAccessIdentityHasBeenSet = true; m_originAccessIdentity = std::forward<OriginAccessIdentityT>(value); }
+    template<typename OriginAccessIdentityT = Aws::String>
+    S3Origin& WithOriginAccessIdentity(OriginAccessIdentityT&& value) { SetOriginAccessIdentity(std::forward<OriginAccessIdentityT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,17 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-Criterion::Criterion() : 
-    m_eqHasBeenSet(false),
-    m_neqHasBeenSet(false),
-    m_containsHasBeenSet(false),
-    m_exists(false),
-    m_existsHasBeenSet(false)
-{
-}
-
 Criterion::Criterion(JsonView jsonValue)
-  : Criterion()
 {
   *this = jsonValue;
 }
@@ -44,7 +34,6 @@ Criterion& Criterion::operator =(JsonView jsonValue)
     }
     m_eqHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("neq"))
   {
     Aws::Utils::Array<JsonView> neqJsonList = jsonValue.GetArray("neq");
@@ -54,7 +43,6 @@ Criterion& Criterion::operator =(JsonView jsonValue)
     }
     m_neqHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("contains"))
   {
     Aws::Utils::Array<JsonView> containsJsonList = jsonValue.GetArray("contains");
@@ -64,14 +52,11 @@ Criterion& Criterion::operator =(JsonView jsonValue)
     }
     m_containsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("exists"))
   {
     m_exists = jsonValue.GetBool("exists");
-
     m_existsHasBeenSet = true;
   }
-
   return *this;
 }
 

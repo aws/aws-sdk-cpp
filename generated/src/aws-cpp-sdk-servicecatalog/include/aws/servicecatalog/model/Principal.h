@@ -32,7 +32,7 @@ namespace Model
   class Principal
   {
   public:
-    AWS_SERVICECATALOG_API Principal();
+    AWS_SERVICECATALOG_API Principal() = default;
     AWS_SERVICECATALOG_API Principal(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICECATALOG_API Principal& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/cli/latest/reference/servicecatalog/associate-principal-with-portfolio.html#options">associate-principal-with-portfolio</a>
      * in the Amazon Web Services CLI Command Reference. </p>
      */
-    inline const Aws::String& GetPrincipalARN() const{ return m_principalARN; }
+    inline const Aws::String& GetPrincipalARN() const { return m_principalARN; }
     inline bool PrincipalARNHasBeenSet() const { return m_principalARNHasBeenSet; }
-    inline void SetPrincipalARN(const Aws::String& value) { m_principalARNHasBeenSet = true; m_principalARN = value; }
-    inline void SetPrincipalARN(Aws::String&& value) { m_principalARNHasBeenSet = true; m_principalARN = std::move(value); }
-    inline void SetPrincipalARN(const char* value) { m_principalARNHasBeenSet = true; m_principalARN.assign(value); }
-    inline Principal& WithPrincipalARN(const Aws::String& value) { SetPrincipalARN(value); return *this;}
-    inline Principal& WithPrincipalARN(Aws::String&& value) { SetPrincipalARN(std::move(value)); return *this;}
-    inline Principal& WithPrincipalARN(const char* value) { SetPrincipalARN(value); return *this;}
+    template<typename PrincipalARNT = Aws::String>
+    void SetPrincipalARN(PrincipalARNT&& value) { m_principalARNHasBeenSet = true; m_principalARN = std::forward<PrincipalARNT>(value); }
+    template<typename PrincipalARNT = Aws::String>
+    Principal& WithPrincipalARN(PrincipalARNT&& value) { SetPrincipalARN(std::forward<PrincipalARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,19 +61,17 @@ namespace Model
      * fully defined ARN, or <code>IAM_PATTERN</code> if you use an ARN with no
      * <code>accountID</code>, with or without wildcard characters. </p>
      */
-    inline const PrincipalType& GetPrincipalType() const{ return m_principalType; }
+    inline PrincipalType GetPrincipalType() const { return m_principalType; }
     inline bool PrincipalTypeHasBeenSet() const { return m_principalTypeHasBeenSet; }
-    inline void SetPrincipalType(const PrincipalType& value) { m_principalTypeHasBeenSet = true; m_principalType = value; }
-    inline void SetPrincipalType(PrincipalType&& value) { m_principalTypeHasBeenSet = true; m_principalType = std::move(value); }
-    inline Principal& WithPrincipalType(const PrincipalType& value) { SetPrincipalType(value); return *this;}
-    inline Principal& WithPrincipalType(PrincipalType&& value) { SetPrincipalType(std::move(value)); return *this;}
+    inline void SetPrincipalType(PrincipalType value) { m_principalTypeHasBeenSet = true; m_principalType = value; }
+    inline Principal& WithPrincipalType(PrincipalType value) { SetPrincipalType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_principalARN;
     bool m_principalARNHasBeenSet = false;
 
-    PrincipalType m_principalType;
+    PrincipalType m_principalType{PrincipalType::NOT_SET};
     bool m_principalTypeHasBeenSet = false;
   };
 

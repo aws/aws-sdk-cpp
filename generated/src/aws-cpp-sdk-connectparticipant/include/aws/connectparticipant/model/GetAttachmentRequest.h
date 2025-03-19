@@ -21,7 +21,7 @@ namespace Model
   class GetAttachmentRequest : public ConnectParticipantRequest
   {
   public:
-    AWS_CONNECTPARTICIPANT_API GetAttachmentRequest();
+    AWS_CONNECTPARTICIPANT_API GetAttachmentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
     /**
      * <p>A unique identifier for the attachment.</p>
      */
-    inline const Aws::String& GetAttachmentId() const{ return m_attachmentId; }
+    inline const Aws::String& GetAttachmentId() const { return m_attachmentId; }
     inline bool AttachmentIdHasBeenSet() const { return m_attachmentIdHasBeenSet; }
-    inline void SetAttachmentId(const Aws::String& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = value; }
-    inline void SetAttachmentId(Aws::String&& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = std::move(value); }
-    inline void SetAttachmentId(const char* value) { m_attachmentIdHasBeenSet = true; m_attachmentId.assign(value); }
-    inline GetAttachmentRequest& WithAttachmentId(const Aws::String& value) { SetAttachmentId(value); return *this;}
-    inline GetAttachmentRequest& WithAttachmentId(Aws::String&& value) { SetAttachmentId(std::move(value)); return *this;}
-    inline GetAttachmentRequest& WithAttachmentId(const char* value) { SetAttachmentId(value); return *this;}
+    template<typename AttachmentIdT = Aws::String>
+    void SetAttachmentId(AttachmentIdT&& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = std::forward<AttachmentIdT>(value); }
+    template<typename AttachmentIdT = Aws::String>
+    GetAttachmentRequest& WithAttachmentId(AttachmentIdT&& value) { SetAttachmentId(std::forward<AttachmentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The authentication token associated with the participant's connection.</p>
      */
-    inline const Aws::String& GetConnectionToken() const{ return m_connectionToken; }
+    inline const Aws::String& GetConnectionToken() const { return m_connectionToken; }
     inline bool ConnectionTokenHasBeenSet() const { return m_connectionTokenHasBeenSet; }
-    inline void SetConnectionToken(const Aws::String& value) { m_connectionTokenHasBeenSet = true; m_connectionToken = value; }
-    inline void SetConnectionToken(Aws::String&& value) { m_connectionTokenHasBeenSet = true; m_connectionToken = std::move(value); }
-    inline void SetConnectionToken(const char* value) { m_connectionTokenHasBeenSet = true; m_connectionToken.assign(value); }
-    inline GetAttachmentRequest& WithConnectionToken(const Aws::String& value) { SetConnectionToken(value); return *this;}
-    inline GetAttachmentRequest& WithConnectionToken(Aws::String&& value) { SetConnectionToken(std::move(value)); return *this;}
-    inline GetAttachmentRequest& WithConnectionToken(const char* value) { SetConnectionToken(value); return *this;}
+    template<typename ConnectionTokenT = Aws::String>
+    void SetConnectionToken(ConnectionTokenT&& value) { m_connectionTokenHasBeenSet = true; m_connectionToken = std::forward<ConnectionTokenT>(value); }
+    template<typename ConnectionTokenT = Aws::String>
+    GetAttachmentRequest& WithConnectionToken(ConnectionTokenT&& value) { SetConnectionToken(std::forward<ConnectionTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,7 +63,7 @@ namespace Model
      * <p>The expiration time of the URL in ISO timestamp. It's specified in ISO 8601
      * format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
      */
-    inline int GetUrlExpiryInSeconds() const{ return m_urlExpiryInSeconds; }
+    inline int GetUrlExpiryInSeconds() const { return m_urlExpiryInSeconds; }
     inline bool UrlExpiryInSecondsHasBeenSet() const { return m_urlExpiryInSecondsHasBeenSet; }
     inline void SetUrlExpiryInSeconds(int value) { m_urlExpiryInSecondsHasBeenSet = true; m_urlExpiryInSeconds = value; }
     inline GetAttachmentRequest& WithUrlExpiryInSeconds(int value) { SetUrlExpiryInSeconds(value); return *this;}
@@ -80,7 +76,7 @@ namespace Model
     Aws::String m_connectionToken;
     bool m_connectionTokenHasBeenSet = false;
 
-    int m_urlExpiryInSeconds;
+    int m_urlExpiryInSeconds{0};
     bool m_urlExpiryInSecondsHasBeenSet = false;
   };
 

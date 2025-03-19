@@ -32,7 +32,7 @@ namespace Model
   class AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails();
+    AWS_SECURITYHUB_API AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails() = default;
     AWS_SECURITYHUB_API AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p> The number of Elastic Inference accelerators to attach to the instance. </p>
      */
-    inline int GetCount() const{ return m_count; }
+    inline int GetCount() const { return m_count; }
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
     inline AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails& WithCount(int value) { SetCount(value); return *this;}
@@ -52,18 +52,16 @@ namespace Model
     /**
      * <p> The type of Elastic Inference accelerator. </p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
   private:
 
-    int m_count;
+    int m_count{0};
     bool m_countHasBeenSet = false;
 
     Aws::String m_type;

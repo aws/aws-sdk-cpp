@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopTransformJobRequest::StopTransformJobRequest() : 
-    m_transformJobNameHasBeenSet(false)
-{
-}
-
 Aws::String StopTransformJobRequest::SerializePayload() const
 {
   JsonValue payload;

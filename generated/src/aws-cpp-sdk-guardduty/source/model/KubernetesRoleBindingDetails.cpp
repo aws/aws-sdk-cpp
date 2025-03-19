@@ -18,17 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-KubernetesRoleBindingDetails::KubernetesRoleBindingDetails() : 
-    m_kindHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_uidHasBeenSet(false),
-    m_roleRefNameHasBeenSet(false),
-    m_roleRefKindHasBeenSet(false)
-{
-}
-
 KubernetesRoleBindingDetails::KubernetesRoleBindingDetails(JsonView jsonValue)
-  : KubernetesRoleBindingDetails()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ KubernetesRoleBindingDetails& KubernetesRoleBindingDetails::operator =(JsonView 
   if(jsonValue.ValueExists("kind"))
   {
     m_kind = jsonValue.GetString("kind");
-
     m_kindHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("uid"))
   {
     m_uid = jsonValue.GetString("uid");
-
     m_uidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleRefName"))
   {
     m_roleRefName = jsonValue.GetString("roleRefName");
-
     m_roleRefNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleRefKind"))
   {
     m_roleRefKind = jsonValue.GetString("roleRefKind");
-
     m_roleRefKindHasBeenSet = true;
   }
-
   return *this;
 }
 

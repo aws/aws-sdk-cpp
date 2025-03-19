@@ -18,15 +18,7 @@ namespace DeviceFarm
 namespace Model
 {
 
-RecurringCharge::RecurringCharge() : 
-    m_costHasBeenSet(false),
-    m_frequency(RecurringChargeFrequency::NOT_SET),
-    m_frequencyHasBeenSet(false)
-{
-}
-
 RecurringCharge::RecurringCharge(JsonView jsonValue)
-  : RecurringCharge()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ RecurringCharge& RecurringCharge::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("cost"))
   {
     m_cost = jsonValue.GetObject("cost");
-
     m_costHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("frequency"))
   {
     m_frequency = RecurringChargeFrequencyMapper::GetRecurringChargeFrequencyForName(jsonValue.GetString("frequency"));
-
     m_frequencyHasBeenSet = true;
   }
-
   return *this;
 }
 

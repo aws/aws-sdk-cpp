@@ -18,19 +18,7 @@ namespace CloudWatchEvents
 namespace Model
 {
 
-EventSource::EventSource() : 
-    m_arnHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_expirationTimeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_state(EventSourceState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 EventSource::EventSource(JsonView jsonValue)
-  : EventSource()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ EventSource& EventSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedBy"))
   {
     m_createdBy = jsonValue.GetString("CreatedBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpirationTime"))
   {
     m_expirationTime = jsonValue.GetDouble("ExpirationTime");
-
     m_expirationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = EventSourceStateMapper::GetEventSourceStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class FailedRemediationBatch
   {
   public:
-    AWS_CONFIGSERVICE_API FailedRemediationBatch();
+    AWS_CONFIGSERVICE_API FailedRemediationBatch() = default;
     AWS_CONFIGSERVICE_API FailedRemediationBatch(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API FailedRemediationBatch& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,26 @@ namespace Model
      * <p>Returns a failure message. For example, the resource is already
      * compliant.</p>
      */
-    inline const Aws::String& GetFailureMessage() const{ return m_failureMessage; }
+    inline const Aws::String& GetFailureMessage() const { return m_failureMessage; }
     inline bool FailureMessageHasBeenSet() const { return m_failureMessageHasBeenSet; }
-    inline void SetFailureMessage(const Aws::String& value) { m_failureMessageHasBeenSet = true; m_failureMessage = value; }
-    inline void SetFailureMessage(Aws::String&& value) { m_failureMessageHasBeenSet = true; m_failureMessage = std::move(value); }
-    inline void SetFailureMessage(const char* value) { m_failureMessageHasBeenSet = true; m_failureMessage.assign(value); }
-    inline FailedRemediationBatch& WithFailureMessage(const Aws::String& value) { SetFailureMessage(value); return *this;}
-    inline FailedRemediationBatch& WithFailureMessage(Aws::String&& value) { SetFailureMessage(std::move(value)); return *this;}
-    inline FailedRemediationBatch& WithFailureMessage(const char* value) { SetFailureMessage(value); return *this;}
+    template<typename FailureMessageT = Aws::String>
+    void SetFailureMessage(FailureMessageT&& value) { m_failureMessageHasBeenSet = true; m_failureMessage = std::forward<FailureMessageT>(value); }
+    template<typename FailureMessageT = Aws::String>
+    FailedRemediationBatch& WithFailureMessage(FailureMessageT&& value) { SetFailureMessage(std::forward<FailureMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Returns remediation configurations of the failed items.</p>
      */
-    inline const Aws::Vector<RemediationConfiguration>& GetFailedItems() const{ return m_failedItems; }
+    inline const Aws::Vector<RemediationConfiguration>& GetFailedItems() const { return m_failedItems; }
     inline bool FailedItemsHasBeenSet() const { return m_failedItemsHasBeenSet; }
-    inline void SetFailedItems(const Aws::Vector<RemediationConfiguration>& value) { m_failedItemsHasBeenSet = true; m_failedItems = value; }
-    inline void SetFailedItems(Aws::Vector<RemediationConfiguration>&& value) { m_failedItemsHasBeenSet = true; m_failedItems = std::move(value); }
-    inline FailedRemediationBatch& WithFailedItems(const Aws::Vector<RemediationConfiguration>& value) { SetFailedItems(value); return *this;}
-    inline FailedRemediationBatch& WithFailedItems(Aws::Vector<RemediationConfiguration>&& value) { SetFailedItems(std::move(value)); return *this;}
-    inline FailedRemediationBatch& AddFailedItems(const RemediationConfiguration& value) { m_failedItemsHasBeenSet = true; m_failedItems.push_back(value); return *this; }
-    inline FailedRemediationBatch& AddFailedItems(RemediationConfiguration&& value) { m_failedItemsHasBeenSet = true; m_failedItems.push_back(std::move(value)); return *this; }
+    template<typename FailedItemsT = Aws::Vector<RemediationConfiguration>>
+    void SetFailedItems(FailedItemsT&& value) { m_failedItemsHasBeenSet = true; m_failedItems = std::forward<FailedItemsT>(value); }
+    template<typename FailedItemsT = Aws::Vector<RemediationConfiguration>>
+    FailedRemediationBatch& WithFailedItems(FailedItemsT&& value) { SetFailedItems(std::forward<FailedItemsT>(value)); return *this;}
+    template<typename FailedItemsT = RemediationConfiguration>
+    FailedRemediationBatch& AddFailedItems(FailedItemsT&& value) { m_failedItemsHasBeenSet = true; m_failedItems.emplace_back(std::forward<FailedItemsT>(value)); return *this; }
     ///@}
   private:
 

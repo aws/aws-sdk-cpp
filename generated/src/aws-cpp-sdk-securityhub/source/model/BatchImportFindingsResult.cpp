@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchImportFindingsResult::BatchImportFindingsResult() : 
-    m_failedCount(0),
-    m_successCount(0)
-{
-}
-
 BatchImportFindingsResult::BatchImportFindingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : BatchImportFindingsResult()
 {
   *this = result;
 }
@@ -35,15 +28,13 @@ BatchImportFindingsResult& BatchImportFindingsResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("FailedCount"))
   {
     m_failedCount = jsonValue.GetInteger("FailedCount");
-
+    m_failedCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SuccessCount"))
   {
     m_successCount = jsonValue.GetInteger("SuccessCount");
-
+    m_successCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailedFindings"))
   {
     Aws::Utils::Array<JsonView> failedFindingsJsonList = jsonValue.GetArray("FailedFindings");
@@ -51,14 +42,15 @@ BatchImportFindingsResult& BatchImportFindingsResult::operator =(const Aws::Amaz
     {
       m_failedFindings.push_back(failedFindingsJsonList[failedFindingsIndex].AsObject());
     }
+    m_failedFindingsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

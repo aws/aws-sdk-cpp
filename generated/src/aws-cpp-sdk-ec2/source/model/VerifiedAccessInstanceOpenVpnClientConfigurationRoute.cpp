@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VerifiedAccessInstanceOpenVpnClientConfigurationRoute::VerifiedAccessInstanceOpenVpnClientConfigurationRoute() : 
-    m_cidrHasBeenSet(false)
-{
-}
-
 VerifiedAccessInstanceOpenVpnClientConfigurationRoute::VerifiedAccessInstanceOpenVpnClientConfigurationRoute(const XmlNode& xmlNode)
-  : VerifiedAccessInstanceOpenVpnClientConfigurationRoute()
 {
   *this = xmlNode;
 }

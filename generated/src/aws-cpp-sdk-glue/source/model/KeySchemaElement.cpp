@@ -18,14 +18,7 @@ namespace Glue
 namespace Model
 {
 
-KeySchemaElement::KeySchemaElement() : 
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 KeySchemaElement::KeySchemaElement(JsonView jsonValue)
-  : KeySchemaElement()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ KeySchemaElement& KeySchemaElement::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

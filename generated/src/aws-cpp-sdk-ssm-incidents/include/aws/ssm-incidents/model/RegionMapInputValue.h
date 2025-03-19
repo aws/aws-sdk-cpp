@@ -32,7 +32,7 @@ namespace Model
   class RegionMapInputValue
   {
   public:
-    AWS_SSMINCIDENTS_API RegionMapInputValue();
+    AWS_SSMINCIDENTS_API RegionMapInputValue() = default;
     AWS_SSMINCIDENTS_API RegionMapInputValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMINCIDENTS_API RegionMapInputValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The KMS key used to encrypt the data in your replication set.</p>
      */
-    inline const Aws::String& GetSseKmsKeyId() const{ return m_sseKmsKeyId; }
+    inline const Aws::String& GetSseKmsKeyId() const { return m_sseKmsKeyId; }
     inline bool SseKmsKeyIdHasBeenSet() const { return m_sseKmsKeyIdHasBeenSet; }
-    inline void SetSseKmsKeyId(const Aws::String& value) { m_sseKmsKeyIdHasBeenSet = true; m_sseKmsKeyId = value; }
-    inline void SetSseKmsKeyId(Aws::String&& value) { m_sseKmsKeyIdHasBeenSet = true; m_sseKmsKeyId = std::move(value); }
-    inline void SetSseKmsKeyId(const char* value) { m_sseKmsKeyIdHasBeenSet = true; m_sseKmsKeyId.assign(value); }
-    inline RegionMapInputValue& WithSseKmsKeyId(const Aws::String& value) { SetSseKmsKeyId(value); return *this;}
-    inline RegionMapInputValue& WithSseKmsKeyId(Aws::String&& value) { SetSseKmsKeyId(std::move(value)); return *this;}
-    inline RegionMapInputValue& WithSseKmsKeyId(const char* value) { SetSseKmsKeyId(value); return *this;}
+    template<typename SseKmsKeyIdT = Aws::String>
+    void SetSseKmsKeyId(SseKmsKeyIdT&& value) { m_sseKmsKeyIdHasBeenSet = true; m_sseKmsKeyId = std::forward<SseKmsKeyIdT>(value); }
+    template<typename SseKmsKeyIdT = Aws::String>
+    RegionMapInputValue& WithSseKmsKeyId(SseKmsKeyIdT&& value) { SetSseKmsKeyId(std::forward<SseKmsKeyIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -24,7 +24,7 @@ namespace Model
   class UpdateManagedLoginBrandingRequest : public CognitoIdentityProviderRequest
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API UpdateManagedLoginBrandingRequest();
+    AWS_COGNITOIDENTITYPROVIDER_API UpdateManagedLoginBrandingRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
      * <p>The ID of the user pool that contains the managed login branding style that
      * you want to update.</p>
      */
-    inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
+    inline const Aws::String& GetUserPoolId() const { return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
-    inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
-    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
-    inline void SetUserPoolId(const char* value) { m_userPoolIdHasBeenSet = true; m_userPoolId.assign(value); }
-    inline UpdateManagedLoginBrandingRequest& WithUserPoolId(const Aws::String& value) { SetUserPoolId(value); return *this;}
-    inline UpdateManagedLoginBrandingRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
-    inline UpdateManagedLoginBrandingRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+    template<typename UserPoolIdT = Aws::String>
+    void SetUserPoolId(UserPoolIdT&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::forward<UserPoolIdT>(value); }
+    template<typename UserPoolIdT = Aws::String>
+    UpdateManagedLoginBrandingRequest& WithUserPoolId(UserPoolIdT&& value) { SetUserPoolId(std::forward<UserPoolIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the managed login branding style that you want to update.</p>
      */
-    inline const Aws::String& GetManagedLoginBrandingId() const{ return m_managedLoginBrandingId; }
+    inline const Aws::String& GetManagedLoginBrandingId() const { return m_managedLoginBrandingId; }
     inline bool ManagedLoginBrandingIdHasBeenSet() const { return m_managedLoginBrandingIdHasBeenSet; }
-    inline void SetManagedLoginBrandingId(const Aws::String& value) { m_managedLoginBrandingIdHasBeenSet = true; m_managedLoginBrandingId = value; }
-    inline void SetManagedLoginBrandingId(Aws::String&& value) { m_managedLoginBrandingIdHasBeenSet = true; m_managedLoginBrandingId = std::move(value); }
-    inline void SetManagedLoginBrandingId(const char* value) { m_managedLoginBrandingIdHasBeenSet = true; m_managedLoginBrandingId.assign(value); }
-    inline UpdateManagedLoginBrandingRequest& WithManagedLoginBrandingId(const Aws::String& value) { SetManagedLoginBrandingId(value); return *this;}
-    inline UpdateManagedLoginBrandingRequest& WithManagedLoginBrandingId(Aws::String&& value) { SetManagedLoginBrandingId(std::move(value)); return *this;}
-    inline UpdateManagedLoginBrandingRequest& WithManagedLoginBrandingId(const char* value) { SetManagedLoginBrandingId(value); return *this;}
+    template<typename ManagedLoginBrandingIdT = Aws::String>
+    void SetManagedLoginBrandingId(ManagedLoginBrandingIdT&& value) { m_managedLoginBrandingIdHasBeenSet = true; m_managedLoginBrandingId = std::forward<ManagedLoginBrandingIdT>(value); }
+    template<typename ManagedLoginBrandingIdT = Aws::String>
+    UpdateManagedLoginBrandingRequest& WithManagedLoginBrandingId(ManagedLoginBrandingIdT&& value) { SetManagedLoginBrandingId(std::forward<ManagedLoginBrandingIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,7 +70,7 @@ namespace Model
      * <code>true</code> for this option, you must also omit values for
      * <code>Settings</code> and <code>Assets</code> in the request.</p>
      */
-    inline bool GetUseCognitoProvidedValues() const{ return m_useCognitoProvidedValues; }
+    inline bool GetUseCognitoProvidedValues() const { return m_useCognitoProvidedValues; }
     inline bool UseCognitoProvidedValuesHasBeenSet() const { return m_useCognitoProvidedValuesHasBeenSet; }
     inline void SetUseCognitoProvidedValues(bool value) { m_useCognitoProvidedValuesHasBeenSet = true; m_useCognitoProvidedValues = value; }
     inline UpdateManagedLoginBrandingRequest& WithUseCognitoProvidedValues(bool value) { SetUseCognitoProvidedValues(value); return *this;}
@@ -85,12 +81,12 @@ namespace Model
      * <p>A JSON file, encoded as a <code>Document</code> type, with the the settings
      * that you want to apply to your style.</p>
      */
-    inline Aws::Utils::DocumentView GetSettings() const{ return m_settings; }
+    inline Aws::Utils::DocumentView GetSettings() const { return m_settings; }
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
-    inline void SetSettings(const Aws::Utils::Document& value) { m_settingsHasBeenSet = true; m_settings = value; }
-    inline void SetSettings(Aws::Utils::Document&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
-    inline UpdateManagedLoginBrandingRequest& WithSettings(const Aws::Utils::Document& value) { SetSettings(value); return *this;}
-    inline UpdateManagedLoginBrandingRequest& WithSettings(Aws::Utils::Document&& value) { SetSettings(std::move(value)); return *this;}
+    template<typename SettingsT = Aws::Utils::Document>
+    void SetSettings(SettingsT&& value) { m_settingsHasBeenSet = true; m_settings = std::forward<SettingsT>(value); }
+    template<typename SettingsT = Aws::Utils::Document>
+    UpdateManagedLoginBrandingRequest& WithSettings(SettingsT&& value) { SetSettings(std::forward<SettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,14 +95,14 @@ namespace Model
      * logos, and icons. Each object must also indicate whether it is for dark mode,
      * light mode, or browser-adaptive mode.</p>
      */
-    inline const Aws::Vector<AssetType>& GetAssets() const{ return m_assets; }
+    inline const Aws::Vector<AssetType>& GetAssets() const { return m_assets; }
     inline bool AssetsHasBeenSet() const { return m_assetsHasBeenSet; }
-    inline void SetAssets(const Aws::Vector<AssetType>& value) { m_assetsHasBeenSet = true; m_assets = value; }
-    inline void SetAssets(Aws::Vector<AssetType>&& value) { m_assetsHasBeenSet = true; m_assets = std::move(value); }
-    inline UpdateManagedLoginBrandingRequest& WithAssets(const Aws::Vector<AssetType>& value) { SetAssets(value); return *this;}
-    inline UpdateManagedLoginBrandingRequest& WithAssets(Aws::Vector<AssetType>&& value) { SetAssets(std::move(value)); return *this;}
-    inline UpdateManagedLoginBrandingRequest& AddAssets(const AssetType& value) { m_assetsHasBeenSet = true; m_assets.push_back(value); return *this; }
-    inline UpdateManagedLoginBrandingRequest& AddAssets(AssetType&& value) { m_assetsHasBeenSet = true; m_assets.push_back(std::move(value)); return *this; }
+    template<typename AssetsT = Aws::Vector<AssetType>>
+    void SetAssets(AssetsT&& value) { m_assetsHasBeenSet = true; m_assets = std::forward<AssetsT>(value); }
+    template<typename AssetsT = Aws::Vector<AssetType>>
+    UpdateManagedLoginBrandingRequest& WithAssets(AssetsT&& value) { SetAssets(std::forward<AssetsT>(value)); return *this;}
+    template<typename AssetsT = AssetType>
+    UpdateManagedLoginBrandingRequest& AddAssets(AssetsT&& value) { m_assetsHasBeenSet = true; m_assets.emplace_back(std::forward<AssetsT>(value)); return *this; }
     ///@}
   private:
 
@@ -116,7 +112,7 @@ namespace Model
     Aws::String m_managedLoginBrandingId;
     bool m_managedLoginBrandingIdHasBeenSet = false;
 
-    bool m_useCognitoProvidedValues;
+    bool m_useCognitoProvidedValues{false};
     bool m_useCognitoProvidedValuesHasBeenSet = false;
 
     Aws::Utils::Document m_settings;

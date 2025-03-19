@@ -12,13 +12,6 @@ using namespace Aws::FMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAppsListRequest::GetAppsListRequest() : 
-    m_listIdHasBeenSet(false),
-    m_defaultList(false),
-    m_defaultListHasBeenSet(false)
-{
-}
-
 Aws::String GetAppsListRequest::SerializePayload() const
 {
   JsonValue payload;

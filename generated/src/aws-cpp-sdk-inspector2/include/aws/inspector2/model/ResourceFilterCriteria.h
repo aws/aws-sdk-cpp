@@ -34,7 +34,7 @@ namespace Model
   class ResourceFilterCriteria
   {
   public:
-    AWS_INSPECTOR2_API ResourceFilterCriteria();
+    AWS_INSPECTOR2_API ResourceFilterCriteria() = default;
     AWS_INSPECTOR2_API ResourceFilterCriteria(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API ResourceFilterCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,56 +44,56 @@ namespace Model
     /**
      * <p>The account IDs used as resource filter criteria.</p>
      */
-    inline const Aws::Vector<ResourceStringFilter>& GetAccountId() const{ return m_accountId; }
+    inline const Aws::Vector<ResourceStringFilter>& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::Vector<ResourceStringFilter>& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::Vector<ResourceStringFilter>&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline ResourceFilterCriteria& WithAccountId(const Aws::Vector<ResourceStringFilter>& value) { SetAccountId(value); return *this;}
-    inline ResourceFilterCriteria& WithAccountId(Aws::Vector<ResourceStringFilter>&& value) { SetAccountId(std::move(value)); return *this;}
-    inline ResourceFilterCriteria& AddAccountId(const ResourceStringFilter& value) { m_accountIdHasBeenSet = true; m_accountId.push_back(value); return *this; }
-    inline ResourceFilterCriteria& AddAccountId(ResourceStringFilter&& value) { m_accountIdHasBeenSet = true; m_accountId.push_back(std::move(value)); return *this; }
+    template<typename AccountIdT = Aws::Vector<ResourceStringFilter>>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::Vector<ResourceStringFilter>>
+    ResourceFilterCriteria& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
+    template<typename AccountIdT = ResourceStringFilter>
+    ResourceFilterCriteria& AddAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId.emplace_back(std::forward<AccountIdT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The EC2 instance tags used as resource filter criteria.</p>
      */
-    inline const Aws::Vector<ResourceMapFilter>& GetEc2InstanceTags() const{ return m_ec2InstanceTags; }
+    inline const Aws::Vector<ResourceMapFilter>& GetEc2InstanceTags() const { return m_ec2InstanceTags; }
     inline bool Ec2InstanceTagsHasBeenSet() const { return m_ec2InstanceTagsHasBeenSet; }
-    inline void SetEc2InstanceTags(const Aws::Vector<ResourceMapFilter>& value) { m_ec2InstanceTagsHasBeenSet = true; m_ec2InstanceTags = value; }
-    inline void SetEc2InstanceTags(Aws::Vector<ResourceMapFilter>&& value) { m_ec2InstanceTagsHasBeenSet = true; m_ec2InstanceTags = std::move(value); }
-    inline ResourceFilterCriteria& WithEc2InstanceTags(const Aws::Vector<ResourceMapFilter>& value) { SetEc2InstanceTags(value); return *this;}
-    inline ResourceFilterCriteria& WithEc2InstanceTags(Aws::Vector<ResourceMapFilter>&& value) { SetEc2InstanceTags(std::move(value)); return *this;}
-    inline ResourceFilterCriteria& AddEc2InstanceTags(const ResourceMapFilter& value) { m_ec2InstanceTagsHasBeenSet = true; m_ec2InstanceTags.push_back(value); return *this; }
-    inline ResourceFilterCriteria& AddEc2InstanceTags(ResourceMapFilter&& value) { m_ec2InstanceTagsHasBeenSet = true; m_ec2InstanceTags.push_back(std::move(value)); return *this; }
+    template<typename Ec2InstanceTagsT = Aws::Vector<ResourceMapFilter>>
+    void SetEc2InstanceTags(Ec2InstanceTagsT&& value) { m_ec2InstanceTagsHasBeenSet = true; m_ec2InstanceTags = std::forward<Ec2InstanceTagsT>(value); }
+    template<typename Ec2InstanceTagsT = Aws::Vector<ResourceMapFilter>>
+    ResourceFilterCriteria& WithEc2InstanceTags(Ec2InstanceTagsT&& value) { SetEc2InstanceTags(std::forward<Ec2InstanceTagsT>(value)); return *this;}
+    template<typename Ec2InstanceTagsT = ResourceMapFilter>
+    ResourceFilterCriteria& AddEc2InstanceTags(Ec2InstanceTagsT&& value) { m_ec2InstanceTagsHasBeenSet = true; m_ec2InstanceTags.emplace_back(std::forward<Ec2InstanceTagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The ECR image tags used as resource filter criteria.</p>
      */
-    inline const Aws::Vector<ResourceStringFilter>& GetEcrImageTags() const{ return m_ecrImageTags; }
+    inline const Aws::Vector<ResourceStringFilter>& GetEcrImageTags() const { return m_ecrImageTags; }
     inline bool EcrImageTagsHasBeenSet() const { return m_ecrImageTagsHasBeenSet; }
-    inline void SetEcrImageTags(const Aws::Vector<ResourceStringFilter>& value) { m_ecrImageTagsHasBeenSet = true; m_ecrImageTags = value; }
-    inline void SetEcrImageTags(Aws::Vector<ResourceStringFilter>&& value) { m_ecrImageTagsHasBeenSet = true; m_ecrImageTags = std::move(value); }
-    inline ResourceFilterCriteria& WithEcrImageTags(const Aws::Vector<ResourceStringFilter>& value) { SetEcrImageTags(value); return *this;}
-    inline ResourceFilterCriteria& WithEcrImageTags(Aws::Vector<ResourceStringFilter>&& value) { SetEcrImageTags(std::move(value)); return *this;}
-    inline ResourceFilterCriteria& AddEcrImageTags(const ResourceStringFilter& value) { m_ecrImageTagsHasBeenSet = true; m_ecrImageTags.push_back(value); return *this; }
-    inline ResourceFilterCriteria& AddEcrImageTags(ResourceStringFilter&& value) { m_ecrImageTagsHasBeenSet = true; m_ecrImageTags.push_back(std::move(value)); return *this; }
+    template<typename EcrImageTagsT = Aws::Vector<ResourceStringFilter>>
+    void SetEcrImageTags(EcrImageTagsT&& value) { m_ecrImageTagsHasBeenSet = true; m_ecrImageTags = std::forward<EcrImageTagsT>(value); }
+    template<typename EcrImageTagsT = Aws::Vector<ResourceStringFilter>>
+    ResourceFilterCriteria& WithEcrImageTags(EcrImageTagsT&& value) { SetEcrImageTags(std::forward<EcrImageTagsT>(value)); return *this;}
+    template<typename EcrImageTagsT = ResourceStringFilter>
+    ResourceFilterCriteria& AddEcrImageTags(EcrImageTagsT&& value) { m_ecrImageTagsHasBeenSet = true; m_ecrImageTags.emplace_back(std::forward<EcrImageTagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The ECR repository names used as resource filter criteria.</p>
      */
-    inline const Aws::Vector<ResourceStringFilter>& GetEcrRepositoryName() const{ return m_ecrRepositoryName; }
+    inline const Aws::Vector<ResourceStringFilter>& GetEcrRepositoryName() const { return m_ecrRepositoryName; }
     inline bool EcrRepositoryNameHasBeenSet() const { return m_ecrRepositoryNameHasBeenSet; }
-    inline void SetEcrRepositoryName(const Aws::Vector<ResourceStringFilter>& value) { m_ecrRepositoryNameHasBeenSet = true; m_ecrRepositoryName = value; }
-    inline void SetEcrRepositoryName(Aws::Vector<ResourceStringFilter>&& value) { m_ecrRepositoryNameHasBeenSet = true; m_ecrRepositoryName = std::move(value); }
-    inline ResourceFilterCriteria& WithEcrRepositoryName(const Aws::Vector<ResourceStringFilter>& value) { SetEcrRepositoryName(value); return *this;}
-    inline ResourceFilterCriteria& WithEcrRepositoryName(Aws::Vector<ResourceStringFilter>&& value) { SetEcrRepositoryName(std::move(value)); return *this;}
-    inline ResourceFilterCriteria& AddEcrRepositoryName(const ResourceStringFilter& value) { m_ecrRepositoryNameHasBeenSet = true; m_ecrRepositoryName.push_back(value); return *this; }
-    inline ResourceFilterCriteria& AddEcrRepositoryName(ResourceStringFilter&& value) { m_ecrRepositoryNameHasBeenSet = true; m_ecrRepositoryName.push_back(std::move(value)); return *this; }
+    template<typename EcrRepositoryNameT = Aws::Vector<ResourceStringFilter>>
+    void SetEcrRepositoryName(EcrRepositoryNameT&& value) { m_ecrRepositoryNameHasBeenSet = true; m_ecrRepositoryName = std::forward<EcrRepositoryNameT>(value); }
+    template<typename EcrRepositoryNameT = Aws::Vector<ResourceStringFilter>>
+    ResourceFilterCriteria& WithEcrRepositoryName(EcrRepositoryNameT&& value) { SetEcrRepositoryName(std::forward<EcrRepositoryNameT>(value)); return *this;}
+    template<typename EcrRepositoryNameT = ResourceStringFilter>
+    ResourceFilterCriteria& AddEcrRepositoryName(EcrRepositoryNameT&& value) { m_ecrRepositoryNameHasBeenSet = true; m_ecrRepositoryName.emplace_back(std::forward<EcrRepositoryNameT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -101,14 +101,14 @@ namespace Model
      * <p>The Amazon Web Services Lambda function name used as resource filter
      * criteria.</p>
      */
-    inline const Aws::Vector<ResourceStringFilter>& GetLambdaFunctionName() const{ return m_lambdaFunctionName; }
+    inline const Aws::Vector<ResourceStringFilter>& GetLambdaFunctionName() const { return m_lambdaFunctionName; }
     inline bool LambdaFunctionNameHasBeenSet() const { return m_lambdaFunctionNameHasBeenSet; }
-    inline void SetLambdaFunctionName(const Aws::Vector<ResourceStringFilter>& value) { m_lambdaFunctionNameHasBeenSet = true; m_lambdaFunctionName = value; }
-    inline void SetLambdaFunctionName(Aws::Vector<ResourceStringFilter>&& value) { m_lambdaFunctionNameHasBeenSet = true; m_lambdaFunctionName = std::move(value); }
-    inline ResourceFilterCriteria& WithLambdaFunctionName(const Aws::Vector<ResourceStringFilter>& value) { SetLambdaFunctionName(value); return *this;}
-    inline ResourceFilterCriteria& WithLambdaFunctionName(Aws::Vector<ResourceStringFilter>&& value) { SetLambdaFunctionName(std::move(value)); return *this;}
-    inline ResourceFilterCriteria& AddLambdaFunctionName(const ResourceStringFilter& value) { m_lambdaFunctionNameHasBeenSet = true; m_lambdaFunctionName.push_back(value); return *this; }
-    inline ResourceFilterCriteria& AddLambdaFunctionName(ResourceStringFilter&& value) { m_lambdaFunctionNameHasBeenSet = true; m_lambdaFunctionName.push_back(std::move(value)); return *this; }
+    template<typename LambdaFunctionNameT = Aws::Vector<ResourceStringFilter>>
+    void SetLambdaFunctionName(LambdaFunctionNameT&& value) { m_lambdaFunctionNameHasBeenSet = true; m_lambdaFunctionName = std::forward<LambdaFunctionNameT>(value); }
+    template<typename LambdaFunctionNameT = Aws::Vector<ResourceStringFilter>>
+    ResourceFilterCriteria& WithLambdaFunctionName(LambdaFunctionNameT&& value) { SetLambdaFunctionName(std::forward<LambdaFunctionNameT>(value)); return *this;}
+    template<typename LambdaFunctionNameT = ResourceStringFilter>
+    ResourceFilterCriteria& AddLambdaFunctionName(LambdaFunctionNameT&& value) { m_lambdaFunctionNameHasBeenSet = true; m_lambdaFunctionName.emplace_back(std::forward<LambdaFunctionNameT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -116,42 +116,42 @@ namespace Model
      * <p>The Amazon Web Services Lambda function tags used as resource filter
      * criteria.</p>
      */
-    inline const Aws::Vector<ResourceMapFilter>& GetLambdaFunctionTags() const{ return m_lambdaFunctionTags; }
+    inline const Aws::Vector<ResourceMapFilter>& GetLambdaFunctionTags() const { return m_lambdaFunctionTags; }
     inline bool LambdaFunctionTagsHasBeenSet() const { return m_lambdaFunctionTagsHasBeenSet; }
-    inline void SetLambdaFunctionTags(const Aws::Vector<ResourceMapFilter>& value) { m_lambdaFunctionTagsHasBeenSet = true; m_lambdaFunctionTags = value; }
-    inline void SetLambdaFunctionTags(Aws::Vector<ResourceMapFilter>&& value) { m_lambdaFunctionTagsHasBeenSet = true; m_lambdaFunctionTags = std::move(value); }
-    inline ResourceFilterCriteria& WithLambdaFunctionTags(const Aws::Vector<ResourceMapFilter>& value) { SetLambdaFunctionTags(value); return *this;}
-    inline ResourceFilterCriteria& WithLambdaFunctionTags(Aws::Vector<ResourceMapFilter>&& value) { SetLambdaFunctionTags(std::move(value)); return *this;}
-    inline ResourceFilterCriteria& AddLambdaFunctionTags(const ResourceMapFilter& value) { m_lambdaFunctionTagsHasBeenSet = true; m_lambdaFunctionTags.push_back(value); return *this; }
-    inline ResourceFilterCriteria& AddLambdaFunctionTags(ResourceMapFilter&& value) { m_lambdaFunctionTagsHasBeenSet = true; m_lambdaFunctionTags.push_back(std::move(value)); return *this; }
+    template<typename LambdaFunctionTagsT = Aws::Vector<ResourceMapFilter>>
+    void SetLambdaFunctionTags(LambdaFunctionTagsT&& value) { m_lambdaFunctionTagsHasBeenSet = true; m_lambdaFunctionTags = std::forward<LambdaFunctionTagsT>(value); }
+    template<typename LambdaFunctionTagsT = Aws::Vector<ResourceMapFilter>>
+    ResourceFilterCriteria& WithLambdaFunctionTags(LambdaFunctionTagsT&& value) { SetLambdaFunctionTags(std::forward<LambdaFunctionTagsT>(value)); return *this;}
+    template<typename LambdaFunctionTagsT = ResourceMapFilter>
+    ResourceFilterCriteria& AddLambdaFunctionTags(LambdaFunctionTagsT&& value) { m_lambdaFunctionTagsHasBeenSet = true; m_lambdaFunctionTags.emplace_back(std::forward<LambdaFunctionTagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The resource IDs used as resource filter criteria.</p>
      */
-    inline const Aws::Vector<ResourceStringFilter>& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::Vector<ResourceStringFilter>& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::Vector<ResourceStringFilter>& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::Vector<ResourceStringFilter>&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline ResourceFilterCriteria& WithResourceId(const Aws::Vector<ResourceStringFilter>& value) { SetResourceId(value); return *this;}
-    inline ResourceFilterCriteria& WithResourceId(Aws::Vector<ResourceStringFilter>&& value) { SetResourceId(std::move(value)); return *this;}
-    inline ResourceFilterCriteria& AddResourceId(const ResourceStringFilter& value) { m_resourceIdHasBeenSet = true; m_resourceId.push_back(value); return *this; }
-    inline ResourceFilterCriteria& AddResourceId(ResourceStringFilter&& value) { m_resourceIdHasBeenSet = true; m_resourceId.push_back(std::move(value)); return *this; }
+    template<typename ResourceIdT = Aws::Vector<ResourceStringFilter>>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::Vector<ResourceStringFilter>>
+    ResourceFilterCriteria& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
+    template<typename ResourceIdT = ResourceStringFilter>
+    ResourceFilterCriteria& AddResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId.emplace_back(std::forward<ResourceIdT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The resource types used as resource filter criteria.</p>
      */
-    inline const Aws::Vector<ResourceStringFilter>& GetResourceType() const{ return m_resourceType; }
+    inline const Aws::Vector<ResourceStringFilter>& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const Aws::Vector<ResourceStringFilter>& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(Aws::Vector<ResourceStringFilter>&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline ResourceFilterCriteria& WithResourceType(const Aws::Vector<ResourceStringFilter>& value) { SetResourceType(value); return *this;}
-    inline ResourceFilterCriteria& WithResourceType(Aws::Vector<ResourceStringFilter>&& value) { SetResourceType(std::move(value)); return *this;}
-    inline ResourceFilterCriteria& AddResourceType(const ResourceStringFilter& value) { m_resourceTypeHasBeenSet = true; m_resourceType.push_back(value); return *this; }
-    inline ResourceFilterCriteria& AddResourceType(ResourceStringFilter&& value) { m_resourceTypeHasBeenSet = true; m_resourceType.push_back(std::move(value)); return *this; }
+    template<typename ResourceTypeT = Aws::Vector<ResourceStringFilter>>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = Aws::Vector<ResourceStringFilter>>
+    ResourceFilterCriteria& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
+    template<typename ResourceTypeT = ResourceStringFilter>
+    ResourceFilterCriteria& AddResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType.emplace_back(std::forward<ResourceTypeT>(value)); return *this; }
     ///@}
   private:
 

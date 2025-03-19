@@ -12,14 +12,6 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateCertificateRequest::UpdateCertificateRequest() : 
-    m_certificateIdHasBeenSet(false),
-    m_activeDateHasBeenSet(false),
-    m_inactiveDateHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateCertificateRequest::SerializePayload() const
 {
   JsonValue payload;

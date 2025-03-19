@@ -44,7 +44,7 @@ namespace Model
   class AvcIntraSettings
   {
   public:
-    AWS_MEDIACONVERT_API AvcIntraSettings();
+    AWS_MEDIACONVERT_API AvcIntraSettings() = default;
     AWS_MEDIACONVERT_API AvcIntraSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API AvcIntraSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -58,12 +58,10 @@ namespace Model
      * quality. Note that for Class 4K/2K, MediaConvert supports only 4:2:2 chroma
      * subsampling.
      */
-    inline const AvcIntraClass& GetAvcIntraClass() const{ return m_avcIntraClass; }
+    inline AvcIntraClass GetAvcIntraClass() const { return m_avcIntraClass; }
     inline bool AvcIntraClassHasBeenSet() const { return m_avcIntraClassHasBeenSet; }
-    inline void SetAvcIntraClass(const AvcIntraClass& value) { m_avcIntraClassHasBeenSet = true; m_avcIntraClass = value; }
-    inline void SetAvcIntraClass(AvcIntraClass&& value) { m_avcIntraClassHasBeenSet = true; m_avcIntraClass = std::move(value); }
-    inline AvcIntraSettings& WithAvcIntraClass(const AvcIntraClass& value) { SetAvcIntraClass(value); return *this;}
-    inline AvcIntraSettings& WithAvcIntraClass(AvcIntraClass&& value) { SetAvcIntraClass(std::move(value)); return *this;}
+    inline void SetAvcIntraClass(AvcIntraClass value) { m_avcIntraClassHasBeenSet = true; m_avcIntraClass = value; }
+    inline AvcIntraSettings& WithAvcIntraClass(AvcIntraClass value) { SetAvcIntraClass(value); return *this;}
     ///@}
 
     ///@{
@@ -71,12 +69,12 @@ namespace Model
      * Optional when you set AVC-Intra class to Class 4K/2K. When you set AVC-Intra
      * class to a different value, this object isn't allowed.
      */
-    inline const AvcIntraUhdSettings& GetAvcIntraUhdSettings() const{ return m_avcIntraUhdSettings; }
+    inline const AvcIntraUhdSettings& GetAvcIntraUhdSettings() const { return m_avcIntraUhdSettings; }
     inline bool AvcIntraUhdSettingsHasBeenSet() const { return m_avcIntraUhdSettingsHasBeenSet; }
-    inline void SetAvcIntraUhdSettings(const AvcIntraUhdSettings& value) { m_avcIntraUhdSettingsHasBeenSet = true; m_avcIntraUhdSettings = value; }
-    inline void SetAvcIntraUhdSettings(AvcIntraUhdSettings&& value) { m_avcIntraUhdSettingsHasBeenSet = true; m_avcIntraUhdSettings = std::move(value); }
-    inline AvcIntraSettings& WithAvcIntraUhdSettings(const AvcIntraUhdSettings& value) { SetAvcIntraUhdSettings(value); return *this;}
-    inline AvcIntraSettings& WithAvcIntraUhdSettings(AvcIntraUhdSettings&& value) { SetAvcIntraUhdSettings(std::move(value)); return *this;}
+    template<typename AvcIntraUhdSettingsT = AvcIntraUhdSettings>
+    void SetAvcIntraUhdSettings(AvcIntraUhdSettingsT&& value) { m_avcIntraUhdSettingsHasBeenSet = true; m_avcIntraUhdSettings = std::forward<AvcIntraUhdSettingsT>(value); }
+    template<typename AvcIntraUhdSettingsT = AvcIntraUhdSettings>
+    AvcIntraSettings& WithAvcIntraUhdSettings(AvcIntraUhdSettingsT&& value) { SetAvcIntraUhdSettings(std::forward<AvcIntraUhdSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,12 +86,10 @@ namespace Model
      * dropdown list are decimal approximations of fractions. If you choose Custom,
      * specify your frame rate as a fraction.
      */
-    inline const AvcIntraFramerateControl& GetFramerateControl() const{ return m_framerateControl; }
+    inline AvcIntraFramerateControl GetFramerateControl() const { return m_framerateControl; }
     inline bool FramerateControlHasBeenSet() const { return m_framerateControlHasBeenSet; }
-    inline void SetFramerateControl(const AvcIntraFramerateControl& value) { m_framerateControlHasBeenSet = true; m_framerateControl = value; }
-    inline void SetFramerateControl(AvcIntraFramerateControl&& value) { m_framerateControlHasBeenSet = true; m_framerateControl = std::move(value); }
-    inline AvcIntraSettings& WithFramerateControl(const AvcIntraFramerateControl& value) { SetFramerateControl(value); return *this;}
-    inline AvcIntraSettings& WithFramerateControl(AvcIntraFramerateControl&& value) { SetFramerateControl(std::move(value)); return *this;}
+    inline void SetFramerateControl(AvcIntraFramerateControl value) { m_framerateControlHasBeenSet = true; m_framerateControl = value; }
+    inline AvcIntraSettings& WithFramerateControl(AvcIntraFramerateControl value) { SetFramerateControl(value); return *this;}
     ///@}
 
     ///@{
@@ -115,12 +111,10 @@ namespace Model
      * duration of your output will become shorter at higher frame rates and longer at
      * lower frame rates.
      */
-    inline const AvcIntraFramerateConversionAlgorithm& GetFramerateConversionAlgorithm() const{ return m_framerateConversionAlgorithm; }
+    inline AvcIntraFramerateConversionAlgorithm GetFramerateConversionAlgorithm() const { return m_framerateConversionAlgorithm; }
     inline bool FramerateConversionAlgorithmHasBeenSet() const { return m_framerateConversionAlgorithmHasBeenSet; }
-    inline void SetFramerateConversionAlgorithm(const AvcIntraFramerateConversionAlgorithm& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = value; }
-    inline void SetFramerateConversionAlgorithm(AvcIntraFramerateConversionAlgorithm&& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = std::move(value); }
-    inline AvcIntraSettings& WithFramerateConversionAlgorithm(const AvcIntraFramerateConversionAlgorithm& value) { SetFramerateConversionAlgorithm(value); return *this;}
-    inline AvcIntraSettings& WithFramerateConversionAlgorithm(AvcIntraFramerateConversionAlgorithm&& value) { SetFramerateConversionAlgorithm(std::move(value)); return *this;}
+    inline void SetFramerateConversionAlgorithm(AvcIntraFramerateConversionAlgorithm value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = value; }
+    inline AvcIntraSettings& WithFramerateConversionAlgorithm(AvcIntraFramerateConversionAlgorithm value) { SetFramerateConversionAlgorithm(value); return *this;}
     ///@}
 
     ///@{
@@ -132,7 +126,7 @@ namespace Model
      * console for transcode jobs that use frame rate conversion, provide the value as
      * a decimal number for Framerate. In this example, specify 23.976.
      */
-    inline int GetFramerateDenominator() const{ return m_framerateDenominator; }
+    inline int GetFramerateDenominator() const { return m_framerateDenominator; }
     inline bool FramerateDenominatorHasBeenSet() const { return m_framerateDenominatorHasBeenSet; }
     inline void SetFramerateDenominator(int value) { m_framerateDenominatorHasBeenSet = true; m_framerateDenominator = value; }
     inline AvcIntraSettings& WithFramerateDenominator(int value) { SetFramerateDenominator(value); return *this;}
@@ -147,7 +141,7 @@ namespace Model
      * transcode jobs that use frame rate conversion, provide the value as a decimal
      * number for Framerate. In this example, specify 23.976.
      */
-    inline int GetFramerateNumerator() const{ return m_framerateNumerator; }
+    inline int GetFramerateNumerator() const { return m_framerateNumerator; }
     inline bool FramerateNumeratorHasBeenSet() const { return m_framerateNumeratorHasBeenSet; }
     inline void SetFramerateNumerator(int value) { m_framerateNumeratorHasBeenSet = true; m_framerateNumerator = value; }
     inline AvcIntraSettings& WithFramerateNumerator(int value) { SetFramerateNumerator(value); return *this;}
@@ -166,12 +160,10 @@ namespace Model
      * the source. If the source is progressive, the output will be interlaced with top
      * field bottom field first, depending on which of the Follow options you choose.
      */
-    inline const AvcIntraInterlaceMode& GetInterlaceMode() const{ return m_interlaceMode; }
+    inline AvcIntraInterlaceMode GetInterlaceMode() const { return m_interlaceMode; }
     inline bool InterlaceModeHasBeenSet() const { return m_interlaceModeHasBeenSet; }
-    inline void SetInterlaceMode(const AvcIntraInterlaceMode& value) { m_interlaceModeHasBeenSet = true; m_interlaceMode = value; }
-    inline void SetInterlaceMode(AvcIntraInterlaceMode&& value) { m_interlaceModeHasBeenSet = true; m_interlaceMode = std::move(value); }
-    inline AvcIntraSettings& WithInterlaceMode(const AvcIntraInterlaceMode& value) { SetInterlaceMode(value); return *this;}
-    inline AvcIntraSettings& WithInterlaceMode(AvcIntraInterlaceMode&& value) { SetInterlaceMode(std::move(value)); return *this;}
+    inline void SetInterlaceMode(AvcIntraInterlaceMode value) { m_interlaceModeHasBeenSet = true; m_interlaceMode = value; }
+    inline AvcIntraSettings& WithInterlaceMode(AvcIntraInterlaceMode value) { SetInterlaceMode(value); return *this;}
     ///@}
 
     ///@{
@@ -189,12 +181,10 @@ namespace Model
      * use optimized interlacing for hard telecine outputs. You must also set Interlace
      * mode to a value other than Progressive.
      */
-    inline const AvcIntraScanTypeConversionMode& GetScanTypeConversionMode() const{ return m_scanTypeConversionMode; }
+    inline AvcIntraScanTypeConversionMode GetScanTypeConversionMode() const { return m_scanTypeConversionMode; }
     inline bool ScanTypeConversionModeHasBeenSet() const { return m_scanTypeConversionModeHasBeenSet; }
-    inline void SetScanTypeConversionMode(const AvcIntraScanTypeConversionMode& value) { m_scanTypeConversionModeHasBeenSet = true; m_scanTypeConversionMode = value; }
-    inline void SetScanTypeConversionMode(AvcIntraScanTypeConversionMode&& value) { m_scanTypeConversionModeHasBeenSet = true; m_scanTypeConversionMode = std::move(value); }
-    inline AvcIntraSettings& WithScanTypeConversionMode(const AvcIntraScanTypeConversionMode& value) { SetScanTypeConversionMode(value); return *this;}
-    inline AvcIntraSettings& WithScanTypeConversionMode(AvcIntraScanTypeConversionMode&& value) { SetScanTypeConversionMode(std::move(value)); return *this;}
+    inline void SetScanTypeConversionMode(AvcIntraScanTypeConversionMode value) { m_scanTypeConversionModeHasBeenSet = true; m_scanTypeConversionMode = value; }
+    inline AvcIntraSettings& WithScanTypeConversionMode(AvcIntraScanTypeConversionMode value) { SetScanTypeConversionMode(value); return *this;}
     ///@}
 
     ///@{
@@ -206,12 +196,10 @@ namespace Model
      * slightly reduce the duration of your video. Required settings: You must also set
      * Framerate to 25.
      */
-    inline const AvcIntraSlowPal& GetSlowPal() const{ return m_slowPal; }
+    inline AvcIntraSlowPal GetSlowPal() const { return m_slowPal; }
     inline bool SlowPalHasBeenSet() const { return m_slowPalHasBeenSet; }
-    inline void SetSlowPal(const AvcIntraSlowPal& value) { m_slowPalHasBeenSet = true; m_slowPal = value; }
-    inline void SetSlowPal(AvcIntraSlowPal&& value) { m_slowPalHasBeenSet = true; m_slowPal = std::move(value); }
-    inline AvcIntraSettings& WithSlowPal(const AvcIntraSlowPal& value) { SetSlowPal(value); return *this;}
-    inline AvcIntraSettings& WithSlowPal(AvcIntraSlowPal&& value) { SetSlowPal(std::move(value)); return *this;}
+    inline void SetSlowPal(AvcIntraSlowPal value) { m_slowPalHasBeenSet = true; m_slowPal = value; }
+    inline AvcIntraSettings& WithSlowPal(AvcIntraSlowPal value) { SetSlowPal(value); return *this;}
     ///@}
 
     ///@{
@@ -222,43 +210,41 @@ namespace Model
      * MediaConvert does a standard frame rate conversion to 29.97 without doing
      * anything with the field polarity to create a smoother picture.
      */
-    inline const AvcIntraTelecine& GetTelecine() const{ return m_telecine; }
+    inline AvcIntraTelecine GetTelecine() const { return m_telecine; }
     inline bool TelecineHasBeenSet() const { return m_telecineHasBeenSet; }
-    inline void SetTelecine(const AvcIntraTelecine& value) { m_telecineHasBeenSet = true; m_telecine = value; }
-    inline void SetTelecine(AvcIntraTelecine&& value) { m_telecineHasBeenSet = true; m_telecine = std::move(value); }
-    inline AvcIntraSettings& WithTelecine(const AvcIntraTelecine& value) { SetTelecine(value); return *this;}
-    inline AvcIntraSettings& WithTelecine(AvcIntraTelecine&& value) { SetTelecine(std::move(value)); return *this;}
+    inline void SetTelecine(AvcIntraTelecine value) { m_telecineHasBeenSet = true; m_telecine = value; }
+    inline AvcIntraSettings& WithTelecine(AvcIntraTelecine value) { SetTelecine(value); return *this;}
     ///@}
   private:
 
-    AvcIntraClass m_avcIntraClass;
+    AvcIntraClass m_avcIntraClass{AvcIntraClass::NOT_SET};
     bool m_avcIntraClassHasBeenSet = false;
 
     AvcIntraUhdSettings m_avcIntraUhdSettings;
     bool m_avcIntraUhdSettingsHasBeenSet = false;
 
-    AvcIntraFramerateControl m_framerateControl;
+    AvcIntraFramerateControl m_framerateControl{AvcIntraFramerateControl::NOT_SET};
     bool m_framerateControlHasBeenSet = false;
 
-    AvcIntraFramerateConversionAlgorithm m_framerateConversionAlgorithm;
+    AvcIntraFramerateConversionAlgorithm m_framerateConversionAlgorithm{AvcIntraFramerateConversionAlgorithm::NOT_SET};
     bool m_framerateConversionAlgorithmHasBeenSet = false;
 
-    int m_framerateDenominator;
+    int m_framerateDenominator{0};
     bool m_framerateDenominatorHasBeenSet = false;
 
-    int m_framerateNumerator;
+    int m_framerateNumerator{0};
     bool m_framerateNumeratorHasBeenSet = false;
 
-    AvcIntraInterlaceMode m_interlaceMode;
+    AvcIntraInterlaceMode m_interlaceMode{AvcIntraInterlaceMode::NOT_SET};
     bool m_interlaceModeHasBeenSet = false;
 
-    AvcIntraScanTypeConversionMode m_scanTypeConversionMode;
+    AvcIntraScanTypeConversionMode m_scanTypeConversionMode{AvcIntraScanTypeConversionMode::NOT_SET};
     bool m_scanTypeConversionModeHasBeenSet = false;
 
-    AvcIntraSlowPal m_slowPal;
+    AvcIntraSlowPal m_slowPal{AvcIntraSlowPal::NOT_SET};
     bool m_slowPalHasBeenSet = false;
 
-    AvcIntraTelecine m_telecine;
+    AvcIntraTelecine m_telecine{AvcIntraTelecine::NOT_SET};
     bool m_telecineHasBeenSet = false;
   };
 

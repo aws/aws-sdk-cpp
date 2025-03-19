@@ -17,15 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetImportJobResult::GetImportJobResult() : 
-    m_jobStatus(JobStatus::NOT_SET),
-    m_processedRecordsCount(0),
-    m_failedRecordsCount(0)
-{
-}
-
 GetImportJobResult::GetImportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetImportJobResult()
 {
   *this = result;
 }
@@ -36,63 +28,55 @@ GetImportJobResult& GetImportJobResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("JobId"))
   {
     m_jobId = jsonValue.GetString("JobId");
-
+    m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImportDestination"))
   {
     m_importDestination = jsonValue.GetObject("ImportDestination");
-
+    m_importDestinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImportDataSource"))
   {
     m_importDataSource = jsonValue.GetObject("ImportDataSource");
-
+    m_importDataSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureInfo"))
   {
     m_failureInfo = jsonValue.GetObject("FailureInfo");
-
+    m_failureInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobStatus"))
   {
     m_jobStatus = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("JobStatus"));
-
+    m_jobStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
-
+    m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompletedTimestamp"))
   {
     m_completedTimestamp = jsonValue.GetDouble("CompletedTimestamp");
-
+    m_completedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProcessedRecordsCount"))
   {
     m_processedRecordsCount = jsonValue.GetInteger("ProcessedRecordsCount");
-
+    m_processedRecordsCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailedRecordsCount"))
   {
     m_failedRecordsCount = jsonValue.GetInteger("FailedRecordsCount");
-
+    m_failedRecordsCountHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

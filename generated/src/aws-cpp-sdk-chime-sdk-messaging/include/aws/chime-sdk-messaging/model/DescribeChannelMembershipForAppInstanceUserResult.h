@@ -28,7 +28,7 @@ namespace Model
   class DescribeChannelMembershipForAppInstanceUserResult
   {
   public:
-    AWS_CHIMESDKMESSAGING_API DescribeChannelMembershipForAppInstanceUserResult();
+    AWS_CHIMESDKMESSAGING_API DescribeChannelMembershipForAppInstanceUserResult() = default;
     AWS_CHIMESDKMESSAGING_API DescribeChannelMembershipForAppInstanceUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHIMESDKMESSAGING_API DescribeChannelMembershipForAppInstanceUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The channel to which a user belongs.</p>
      */
-    inline const ChannelMembershipForAppInstanceUserSummary& GetChannelMembership() const{ return m_channelMembership; }
-    inline void SetChannelMembership(const ChannelMembershipForAppInstanceUserSummary& value) { m_channelMembership = value; }
-    inline void SetChannelMembership(ChannelMembershipForAppInstanceUserSummary&& value) { m_channelMembership = std::move(value); }
-    inline DescribeChannelMembershipForAppInstanceUserResult& WithChannelMembership(const ChannelMembershipForAppInstanceUserSummary& value) { SetChannelMembership(value); return *this;}
-    inline DescribeChannelMembershipForAppInstanceUserResult& WithChannelMembership(ChannelMembershipForAppInstanceUserSummary&& value) { SetChannelMembership(std::move(value)); return *this;}
+    inline const ChannelMembershipForAppInstanceUserSummary& GetChannelMembership() const { return m_channelMembership; }
+    template<typename ChannelMembershipT = ChannelMembershipForAppInstanceUserSummary>
+    void SetChannelMembership(ChannelMembershipT&& value) { m_channelMembershipHasBeenSet = true; m_channelMembership = std::forward<ChannelMembershipT>(value); }
+    template<typename ChannelMembershipT = ChannelMembershipForAppInstanceUserSummary>
+    DescribeChannelMembershipForAppInstanceUserResult& WithChannelMembership(ChannelMembershipT&& value) { SetChannelMembership(std::forward<ChannelMembershipT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeChannelMembershipForAppInstanceUserResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeChannelMembershipForAppInstanceUserResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeChannelMembershipForAppInstanceUserResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeChannelMembershipForAppInstanceUserResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ChannelMembershipForAppInstanceUserSummary m_channelMembership;
+    bool m_channelMembershipHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

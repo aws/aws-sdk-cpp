@@ -18,13 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RoadSnapTravelModeOptions::RoadSnapTravelModeOptions() : 
-    m_truckHasBeenSet(false)
-{
-}
-
 RoadSnapTravelModeOptions::RoadSnapTravelModeOptions(JsonView jsonValue)
-  : RoadSnapTravelModeOptions()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RoadSnapTravelModeOptions& RoadSnapTravelModeOptions::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Truck"))
   {
     m_truck = jsonValue.GetObject("Truck");
-
     m_truckHasBeenSet = true;
   }
-
   return *this;
 }
 

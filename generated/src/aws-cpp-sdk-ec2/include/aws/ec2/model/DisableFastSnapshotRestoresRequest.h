@@ -22,7 +22,7 @@ namespace Model
   class DisableFastSnapshotRestoresRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DisableFastSnapshotRestoresRequest();
+    AWS_EC2_API DisableFastSnapshotRestoresRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,15 +41,14 @@ namespace Model
     /**
      * <p>One or more Availability Zones. For example, <code>us-east-2a</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const{ return m_availabilityZones; }
+    inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const { return m_availabilityZones; }
     inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
-    inline void SetAvailabilityZones(const Aws::Vector<Aws::String>& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
-    inline void SetAvailabilityZones(Aws::Vector<Aws::String>&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = std::move(value); }
-    inline DisableFastSnapshotRestoresRequest& WithAvailabilityZones(const Aws::Vector<Aws::String>& value) { SetAvailabilityZones(value); return *this;}
-    inline DisableFastSnapshotRestoresRequest& WithAvailabilityZones(Aws::Vector<Aws::String>&& value) { SetAvailabilityZones(std::move(value)); return *this;}
-    inline DisableFastSnapshotRestoresRequest& AddAvailabilityZones(const Aws::String& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
-    inline DisableFastSnapshotRestoresRequest& AddAvailabilityZones(Aws::String&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(std::move(value)); return *this; }
-    inline DisableFastSnapshotRestoresRequest& AddAvailabilityZones(const char* value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
+    template<typename AvailabilityZonesT = Aws::Vector<Aws::String>>
+    void SetAvailabilityZones(AvailabilityZonesT&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = std::forward<AvailabilityZonesT>(value); }
+    template<typename AvailabilityZonesT = Aws::Vector<Aws::String>>
+    DisableFastSnapshotRestoresRequest& WithAvailabilityZones(AvailabilityZonesT&& value) { SetAvailabilityZones(std::forward<AvailabilityZonesT>(value)); return *this;}
+    template<typename AvailabilityZonesT = Aws::String>
+    DisableFastSnapshotRestoresRequest& AddAvailabilityZones(AvailabilityZonesT&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.emplace_back(std::forward<AvailabilityZonesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -57,15 +56,14 @@ namespace Model
      * <p>The IDs of one or more snapshots. For example,
      * <code>snap-1234567890abcdef0</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSourceSnapshotIds() const{ return m_sourceSnapshotIds; }
+    inline const Aws::Vector<Aws::String>& GetSourceSnapshotIds() const { return m_sourceSnapshotIds; }
     inline bool SourceSnapshotIdsHasBeenSet() const { return m_sourceSnapshotIdsHasBeenSet; }
-    inline void SetSourceSnapshotIds(const Aws::Vector<Aws::String>& value) { m_sourceSnapshotIdsHasBeenSet = true; m_sourceSnapshotIds = value; }
-    inline void SetSourceSnapshotIds(Aws::Vector<Aws::String>&& value) { m_sourceSnapshotIdsHasBeenSet = true; m_sourceSnapshotIds = std::move(value); }
-    inline DisableFastSnapshotRestoresRequest& WithSourceSnapshotIds(const Aws::Vector<Aws::String>& value) { SetSourceSnapshotIds(value); return *this;}
-    inline DisableFastSnapshotRestoresRequest& WithSourceSnapshotIds(Aws::Vector<Aws::String>&& value) { SetSourceSnapshotIds(std::move(value)); return *this;}
-    inline DisableFastSnapshotRestoresRequest& AddSourceSnapshotIds(const Aws::String& value) { m_sourceSnapshotIdsHasBeenSet = true; m_sourceSnapshotIds.push_back(value); return *this; }
-    inline DisableFastSnapshotRestoresRequest& AddSourceSnapshotIds(Aws::String&& value) { m_sourceSnapshotIdsHasBeenSet = true; m_sourceSnapshotIds.push_back(std::move(value)); return *this; }
-    inline DisableFastSnapshotRestoresRequest& AddSourceSnapshotIds(const char* value) { m_sourceSnapshotIdsHasBeenSet = true; m_sourceSnapshotIds.push_back(value); return *this; }
+    template<typename SourceSnapshotIdsT = Aws::Vector<Aws::String>>
+    void SetSourceSnapshotIds(SourceSnapshotIdsT&& value) { m_sourceSnapshotIdsHasBeenSet = true; m_sourceSnapshotIds = std::forward<SourceSnapshotIdsT>(value); }
+    template<typename SourceSnapshotIdsT = Aws::Vector<Aws::String>>
+    DisableFastSnapshotRestoresRequest& WithSourceSnapshotIds(SourceSnapshotIdsT&& value) { SetSourceSnapshotIds(std::forward<SourceSnapshotIdsT>(value)); return *this;}
+    template<typename SourceSnapshotIdsT = Aws::String>
+    DisableFastSnapshotRestoresRequest& AddSourceSnapshotIds(SourceSnapshotIdsT&& value) { m_sourceSnapshotIdsHasBeenSet = true; m_sourceSnapshotIds.emplace_back(std::forward<SourceSnapshotIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -75,7 +73,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DisableFastSnapshotRestoresRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -88,7 +86,7 @@ namespace Model
     Aws::Vector<Aws::String> m_sourceSnapshotIds;
     bool m_sourceSnapshotIdsHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

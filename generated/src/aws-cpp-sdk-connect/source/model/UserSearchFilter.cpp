@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-UserSearchFilter::UserSearchFilter() : 
-    m_tagFilterHasBeenSet(false),
-    m_userAttributeFilterHasBeenSet(false)
-{
-}
-
 UserSearchFilter::UserSearchFilter(JsonView jsonValue)
-  : UserSearchFilter()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ UserSearchFilter& UserSearchFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TagFilter"))
   {
     m_tagFilter = jsonValue.GetObject("TagFilter");
-
     m_tagFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserAttributeFilter"))
   {
     m_userAttributeFilter = jsonValue.GetObject("UserAttributeFilter");
-
     m_userAttributeFilterHasBeenSet = true;
   }
-
   return *this;
 }
 

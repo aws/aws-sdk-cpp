@@ -12,11 +12,6 @@ using namespace Aws::LexModelsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeExportRequest::DescribeExportRequest() : 
-    m_exportIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeExportRequest::SerializePayload() const
 {
   return {};

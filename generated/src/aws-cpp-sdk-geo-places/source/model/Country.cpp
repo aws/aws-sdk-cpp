@@ -18,15 +18,7 @@ namespace GeoPlaces
 namespace Model
 {
 
-Country::Country() : 
-    m_code2HasBeenSet(false),
-    m_code3HasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Country::Country(JsonView jsonValue)
-  : Country()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ Country& Country::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Code2"))
   {
     m_code2 = jsonValue.GetString("Code2");
-
     m_code2HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Code3"))
   {
     m_code3 = jsonValue.GetString("Code3");
-
     m_code3HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

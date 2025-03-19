@@ -33,7 +33,7 @@ namespace Model
   class WorkspacesIpGroup
   {
   public:
-    AWS_WORKSPACES_API WorkspacesIpGroup();
+    AWS_WORKSPACES_API WorkspacesIpGroup() = default;
     AWS_WORKSPACES_API WorkspacesIpGroup(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API WorkspacesIpGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,56 +43,50 @@ namespace Model
     /**
      * <p>The identifier of the group.</p>
      */
-    inline const Aws::String& GetGroupId() const{ return m_groupId; }
+    inline const Aws::String& GetGroupId() const { return m_groupId; }
     inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
-    inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
-    inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
-    inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
-    inline WorkspacesIpGroup& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
-    inline WorkspacesIpGroup& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
-    inline WorkspacesIpGroup& WithGroupId(const char* value) { SetGroupId(value); return *this;}
+    template<typename GroupIdT = Aws::String>
+    void SetGroupId(GroupIdT&& value) { m_groupIdHasBeenSet = true; m_groupId = std::forward<GroupIdT>(value); }
+    template<typename GroupIdT = Aws::String>
+    WorkspacesIpGroup& WithGroupId(GroupIdT&& value) { SetGroupId(std::forward<GroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the group.</p>
      */
-    inline const Aws::String& GetGroupName() const{ return m_groupName; }
+    inline const Aws::String& GetGroupName() const { return m_groupName; }
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
-    inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
-    inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
-    inline WorkspacesIpGroup& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
-    inline WorkspacesIpGroup& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
-    inline WorkspacesIpGroup& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+    template<typename GroupNameT = Aws::String>
+    void SetGroupName(GroupNameT&& value) { m_groupNameHasBeenSet = true; m_groupName = std::forward<GroupNameT>(value); }
+    template<typename GroupNameT = Aws::String>
+    WorkspacesIpGroup& WithGroupName(GroupNameT&& value) { SetGroupName(std::forward<GroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the group.</p>
      */
-    inline const Aws::String& GetGroupDesc() const{ return m_groupDesc; }
+    inline const Aws::String& GetGroupDesc() const { return m_groupDesc; }
     inline bool GroupDescHasBeenSet() const { return m_groupDescHasBeenSet; }
-    inline void SetGroupDesc(const Aws::String& value) { m_groupDescHasBeenSet = true; m_groupDesc = value; }
-    inline void SetGroupDesc(Aws::String&& value) { m_groupDescHasBeenSet = true; m_groupDesc = std::move(value); }
-    inline void SetGroupDesc(const char* value) { m_groupDescHasBeenSet = true; m_groupDesc.assign(value); }
-    inline WorkspacesIpGroup& WithGroupDesc(const Aws::String& value) { SetGroupDesc(value); return *this;}
-    inline WorkspacesIpGroup& WithGroupDesc(Aws::String&& value) { SetGroupDesc(std::move(value)); return *this;}
-    inline WorkspacesIpGroup& WithGroupDesc(const char* value) { SetGroupDesc(value); return *this;}
+    template<typename GroupDescT = Aws::String>
+    void SetGroupDesc(GroupDescT&& value) { m_groupDescHasBeenSet = true; m_groupDesc = std::forward<GroupDescT>(value); }
+    template<typename GroupDescT = Aws::String>
+    WorkspacesIpGroup& WithGroupDesc(GroupDescT&& value) { SetGroupDesc(std::forward<GroupDescT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The rules.</p>
      */
-    inline const Aws::Vector<IpRuleItem>& GetUserRules() const{ return m_userRules; }
+    inline const Aws::Vector<IpRuleItem>& GetUserRules() const { return m_userRules; }
     inline bool UserRulesHasBeenSet() const { return m_userRulesHasBeenSet; }
-    inline void SetUserRules(const Aws::Vector<IpRuleItem>& value) { m_userRulesHasBeenSet = true; m_userRules = value; }
-    inline void SetUserRules(Aws::Vector<IpRuleItem>&& value) { m_userRulesHasBeenSet = true; m_userRules = std::move(value); }
-    inline WorkspacesIpGroup& WithUserRules(const Aws::Vector<IpRuleItem>& value) { SetUserRules(value); return *this;}
-    inline WorkspacesIpGroup& WithUserRules(Aws::Vector<IpRuleItem>&& value) { SetUserRules(std::move(value)); return *this;}
-    inline WorkspacesIpGroup& AddUserRules(const IpRuleItem& value) { m_userRulesHasBeenSet = true; m_userRules.push_back(value); return *this; }
-    inline WorkspacesIpGroup& AddUserRules(IpRuleItem&& value) { m_userRulesHasBeenSet = true; m_userRules.push_back(std::move(value)); return *this; }
+    template<typename UserRulesT = Aws::Vector<IpRuleItem>>
+    void SetUserRules(UserRulesT&& value) { m_userRulesHasBeenSet = true; m_userRules = std::forward<UserRulesT>(value); }
+    template<typename UserRulesT = Aws::Vector<IpRuleItem>>
+    WorkspacesIpGroup& WithUserRules(UserRulesT&& value) { SetUserRules(std::forward<UserRulesT>(value)); return *this;}
+    template<typename UserRulesT = IpRuleItem>
+    WorkspacesIpGroup& AddUserRules(UserRulesT&& value) { m_userRulesHasBeenSet = true; m_userRules.emplace_back(std::forward<UserRulesT>(value)); return *this; }
     ///@}
   private:
 

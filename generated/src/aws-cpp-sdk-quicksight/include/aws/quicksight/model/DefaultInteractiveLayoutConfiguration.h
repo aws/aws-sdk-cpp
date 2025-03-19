@@ -33,7 +33,7 @@ namespace Model
   class DefaultInteractiveLayoutConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API DefaultInteractiveLayoutConfiguration();
+    AWS_QUICKSIGHT_API DefaultInteractiveLayoutConfiguration() = default;
     AWS_QUICKSIGHT_API DefaultInteractiveLayoutConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API DefaultInteractiveLayoutConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p>The options that determine the default settings for a grid layout
      * configuration.</p>
      */
-    inline const DefaultGridLayoutConfiguration& GetGrid() const{ return m_grid; }
+    inline const DefaultGridLayoutConfiguration& GetGrid() const { return m_grid; }
     inline bool GridHasBeenSet() const { return m_gridHasBeenSet; }
-    inline void SetGrid(const DefaultGridLayoutConfiguration& value) { m_gridHasBeenSet = true; m_grid = value; }
-    inline void SetGrid(DefaultGridLayoutConfiguration&& value) { m_gridHasBeenSet = true; m_grid = std::move(value); }
-    inline DefaultInteractiveLayoutConfiguration& WithGrid(const DefaultGridLayoutConfiguration& value) { SetGrid(value); return *this;}
-    inline DefaultInteractiveLayoutConfiguration& WithGrid(DefaultGridLayoutConfiguration&& value) { SetGrid(std::move(value)); return *this;}
+    template<typename GridT = DefaultGridLayoutConfiguration>
+    void SetGrid(GridT&& value) { m_gridHasBeenSet = true; m_grid = std::forward<GridT>(value); }
+    template<typename GridT = DefaultGridLayoutConfiguration>
+    DefaultInteractiveLayoutConfiguration& WithGrid(GridT&& value) { SetGrid(std::forward<GridT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +57,12 @@ namespace Model
      * <p>The options that determine the default settings of a free-form layout
      * configuration.</p>
      */
-    inline const DefaultFreeFormLayoutConfiguration& GetFreeForm() const{ return m_freeForm; }
+    inline const DefaultFreeFormLayoutConfiguration& GetFreeForm() const { return m_freeForm; }
     inline bool FreeFormHasBeenSet() const { return m_freeFormHasBeenSet; }
-    inline void SetFreeForm(const DefaultFreeFormLayoutConfiguration& value) { m_freeFormHasBeenSet = true; m_freeForm = value; }
-    inline void SetFreeForm(DefaultFreeFormLayoutConfiguration&& value) { m_freeFormHasBeenSet = true; m_freeForm = std::move(value); }
-    inline DefaultInteractiveLayoutConfiguration& WithFreeForm(const DefaultFreeFormLayoutConfiguration& value) { SetFreeForm(value); return *this;}
-    inline DefaultInteractiveLayoutConfiguration& WithFreeForm(DefaultFreeFormLayoutConfiguration&& value) { SetFreeForm(std::move(value)); return *this;}
+    template<typename FreeFormT = DefaultFreeFormLayoutConfiguration>
+    void SetFreeForm(FreeFormT&& value) { m_freeFormHasBeenSet = true; m_freeForm = std::forward<FreeFormT>(value); }
+    template<typename FreeFormT = DefaultFreeFormLayoutConfiguration>
+    DefaultInteractiveLayoutConfiguration& WithFreeForm(FreeFormT&& value) { SetFreeForm(std::forward<FreeFormT>(value)); return *this;}
     ///@}
   private:
 

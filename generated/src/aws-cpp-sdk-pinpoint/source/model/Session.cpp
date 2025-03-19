@@ -18,17 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-Session::Session() : 
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_startTimestampHasBeenSet(false),
-    m_stopTimestampHasBeenSet(false)
-{
-}
-
 Session::Session(JsonView jsonValue)
-  : Session()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ Session& Session::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Duration"))
   {
     m_duration = jsonValue.GetInteger("Duration");
-
     m_durationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTimestamp"))
   {
     m_startTimestamp = jsonValue.GetString("StartTimestamp");
-
     m_startTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StopTimestamp"))
   {
     m_stopTimestamp = jsonValue.GetString("StopTimestamp");
-
     m_stopTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

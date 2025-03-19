@@ -23,7 +23,7 @@ namespace Model
   class CreateConnectionRequest : public CloudWatchEventsRequest
   {
   public:
-    AWS_CLOUDWATCHEVENTS_API CreateConnectionRequest();
+    AWS_CLOUDWATCHEVENTS_API CreateConnectionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,40 +40,34 @@ namespace Model
     /**
      * <p>The name for the connection to create.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateConnectionRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateConnectionRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateConnectionRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateConnectionRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description for the connection to create.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateConnectionRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateConnectionRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateConnectionRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateConnectionRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of authorization to use for the connection.</p>
      */
-    inline const ConnectionAuthorizationType& GetAuthorizationType() const{ return m_authorizationType; }
+    inline ConnectionAuthorizationType GetAuthorizationType() const { return m_authorizationType; }
     inline bool AuthorizationTypeHasBeenSet() const { return m_authorizationTypeHasBeenSet; }
-    inline void SetAuthorizationType(const ConnectionAuthorizationType& value) { m_authorizationTypeHasBeenSet = true; m_authorizationType = value; }
-    inline void SetAuthorizationType(ConnectionAuthorizationType&& value) { m_authorizationTypeHasBeenSet = true; m_authorizationType = std::move(value); }
-    inline CreateConnectionRequest& WithAuthorizationType(const ConnectionAuthorizationType& value) { SetAuthorizationType(value); return *this;}
-    inline CreateConnectionRequest& WithAuthorizationType(ConnectionAuthorizationType&& value) { SetAuthorizationType(std::move(value)); return *this;}
+    inline void SetAuthorizationType(ConnectionAuthorizationType value) { m_authorizationTypeHasBeenSet = true; m_authorizationType = value; }
+    inline CreateConnectionRequest& WithAuthorizationType(ConnectionAuthorizationType value) { SetAuthorizationType(value); return *this;}
     ///@}
 
     ///@{
@@ -81,12 +75,12 @@ namespace Model
      * <p>A <code>CreateConnectionAuthRequestParameters</code> object that contains the
      * authorization parameters to use to authorize with the endpoint. </p>
      */
-    inline const CreateConnectionAuthRequestParameters& GetAuthParameters() const{ return m_authParameters; }
+    inline const CreateConnectionAuthRequestParameters& GetAuthParameters() const { return m_authParameters; }
     inline bool AuthParametersHasBeenSet() const { return m_authParametersHasBeenSet; }
-    inline void SetAuthParameters(const CreateConnectionAuthRequestParameters& value) { m_authParametersHasBeenSet = true; m_authParameters = value; }
-    inline void SetAuthParameters(CreateConnectionAuthRequestParameters&& value) { m_authParametersHasBeenSet = true; m_authParameters = std::move(value); }
-    inline CreateConnectionRequest& WithAuthParameters(const CreateConnectionAuthRequestParameters& value) { SetAuthParameters(value); return *this;}
-    inline CreateConnectionRequest& WithAuthParameters(CreateConnectionAuthRequestParameters&& value) { SetAuthParameters(std::move(value)); return *this;}
+    template<typename AuthParametersT = CreateConnectionAuthRequestParameters>
+    void SetAuthParameters(AuthParametersT&& value) { m_authParametersHasBeenSet = true; m_authParameters = std::forward<AuthParametersT>(value); }
+    template<typename AuthParametersT = CreateConnectionAuthRequestParameters>
+    CreateConnectionRequest& WithAuthParameters(AuthParametersT&& value) { SetAuthParameters(std::forward<AuthParametersT>(value)); return *this;}
     ///@}
   private:
 
@@ -96,7 +90,7 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    ConnectionAuthorizationType m_authorizationType;
+    ConnectionAuthorizationType m_authorizationType{ConnectionAuthorizationType::NOT_SET};
     bool m_authorizationTypeHasBeenSet = false;
 
     CreateConnectionAuthRequestParameters m_authParameters;

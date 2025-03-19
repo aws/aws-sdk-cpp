@@ -12,12 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAccountLinkInvitationRequest::CreateAccountLinkInvitationRequest() : 
-    m_targetAccountIdHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
-{
-}
-
 Aws::String CreateAccountLinkInvitationRequest::SerializePayload() const
 {
   JsonValue payload;

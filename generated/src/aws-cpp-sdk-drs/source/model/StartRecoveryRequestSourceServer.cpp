@@ -18,14 +18,7 @@ namespace drs
 namespace Model
 {
 
-StartRecoveryRequestSourceServer::StartRecoveryRequestSourceServer() : 
-    m_recoverySnapshotIDHasBeenSet(false),
-    m_sourceServerIDHasBeenSet(false)
-{
-}
-
 StartRecoveryRequestSourceServer::StartRecoveryRequestSourceServer(JsonView jsonValue)
-  : StartRecoveryRequestSourceServer()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ StartRecoveryRequestSourceServer& StartRecoveryRequestSourceServer::operator =(J
   if(jsonValue.ValueExists("recoverySnapshotID"))
   {
     m_recoverySnapshotID = jsonValue.GetString("recoverySnapshotID");
-
     m_recoverySnapshotIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceServerID"))
   {
     m_sourceServerID = jsonValue.GetString("sourceServerID");
-
     m_sourceServerIDHasBeenSet = true;
   }
-
   return *this;
 }
 

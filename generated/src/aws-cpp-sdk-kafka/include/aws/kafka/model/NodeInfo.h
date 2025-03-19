@@ -37,7 +37,7 @@ namespace Model
   class NodeInfo
   {
   public:
-    AWS_KAFKA_API NodeInfo();
+    AWS_KAFKA_API NodeInfo() = default;
     AWS_KAFKA_API NodeInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API NodeInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
             <p>The start time.</p>
          
      */
-    inline const Aws::String& GetAddedToClusterTime() const{ return m_addedToClusterTime; }
+    inline const Aws::String& GetAddedToClusterTime() const { return m_addedToClusterTime; }
     inline bool AddedToClusterTimeHasBeenSet() const { return m_addedToClusterTimeHasBeenSet; }
-    inline void SetAddedToClusterTime(const Aws::String& value) { m_addedToClusterTimeHasBeenSet = true; m_addedToClusterTime = value; }
-    inline void SetAddedToClusterTime(Aws::String&& value) { m_addedToClusterTimeHasBeenSet = true; m_addedToClusterTime = std::move(value); }
-    inline void SetAddedToClusterTime(const char* value) { m_addedToClusterTimeHasBeenSet = true; m_addedToClusterTime.assign(value); }
-    inline NodeInfo& WithAddedToClusterTime(const Aws::String& value) { SetAddedToClusterTime(value); return *this;}
-    inline NodeInfo& WithAddedToClusterTime(Aws::String&& value) { SetAddedToClusterTime(std::move(value)); return *this;}
-    inline NodeInfo& WithAddedToClusterTime(const char* value) { SetAddedToClusterTime(value); return *this;}
+    template<typename AddedToClusterTimeT = Aws::String>
+    void SetAddedToClusterTime(AddedToClusterTimeT&& value) { m_addedToClusterTimeHasBeenSet = true; m_addedToClusterTime = std::forward<AddedToClusterTimeT>(value); }
+    template<typename AddedToClusterTimeT = Aws::String>
+    NodeInfo& WithAddedToClusterTime(AddedToClusterTimeT&& value) { SetAddedToClusterTime(std::forward<AddedToClusterTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,12 +63,12 @@ namespace Model
             <p>The broker node info.</p>
          
      */
-    inline const BrokerNodeInfo& GetBrokerNodeInfo() const{ return m_brokerNodeInfo; }
+    inline const BrokerNodeInfo& GetBrokerNodeInfo() const { return m_brokerNodeInfo; }
     inline bool BrokerNodeInfoHasBeenSet() const { return m_brokerNodeInfoHasBeenSet; }
-    inline void SetBrokerNodeInfo(const BrokerNodeInfo& value) { m_brokerNodeInfoHasBeenSet = true; m_brokerNodeInfo = value; }
-    inline void SetBrokerNodeInfo(BrokerNodeInfo&& value) { m_brokerNodeInfoHasBeenSet = true; m_brokerNodeInfo = std::move(value); }
-    inline NodeInfo& WithBrokerNodeInfo(const BrokerNodeInfo& value) { SetBrokerNodeInfo(value); return *this;}
-    inline NodeInfo& WithBrokerNodeInfo(BrokerNodeInfo&& value) { SetBrokerNodeInfo(std::move(value)); return *this;}
+    template<typename BrokerNodeInfoT = BrokerNodeInfo>
+    void SetBrokerNodeInfo(BrokerNodeInfoT&& value) { m_brokerNodeInfoHasBeenSet = true; m_brokerNodeInfo = std::forward<BrokerNodeInfoT>(value); }
+    template<typename BrokerNodeInfoT = BrokerNodeInfo>
+    NodeInfo& WithBrokerNodeInfo(BrokerNodeInfoT&& value) { SetBrokerNodeInfo(std::forward<BrokerNodeInfoT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,12 +77,12 @@ namespace Model
             <p>The ControllerNodeInfo.</p>
          
      */
-    inline const ControllerNodeInfo& GetControllerNodeInfo() const{ return m_controllerNodeInfo; }
+    inline const ControllerNodeInfo& GetControllerNodeInfo() const { return m_controllerNodeInfo; }
     inline bool ControllerNodeInfoHasBeenSet() const { return m_controllerNodeInfoHasBeenSet; }
-    inline void SetControllerNodeInfo(const ControllerNodeInfo& value) { m_controllerNodeInfoHasBeenSet = true; m_controllerNodeInfo = value; }
-    inline void SetControllerNodeInfo(ControllerNodeInfo&& value) { m_controllerNodeInfoHasBeenSet = true; m_controllerNodeInfo = std::move(value); }
-    inline NodeInfo& WithControllerNodeInfo(const ControllerNodeInfo& value) { SetControllerNodeInfo(value); return *this;}
-    inline NodeInfo& WithControllerNodeInfo(ControllerNodeInfo&& value) { SetControllerNodeInfo(std::move(value)); return *this;}
+    template<typename ControllerNodeInfoT = ControllerNodeInfo>
+    void SetControllerNodeInfo(ControllerNodeInfoT&& value) { m_controllerNodeInfoHasBeenSet = true; m_controllerNodeInfo = std::forward<ControllerNodeInfoT>(value); }
+    template<typename ControllerNodeInfoT = ControllerNodeInfo>
+    NodeInfo& WithControllerNodeInfo(ControllerNodeInfoT&& value) { SetControllerNodeInfo(std::forward<ControllerNodeInfoT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,14 +91,12 @@ namespace Model
             <p>The instance type.</p>
          
      */
-    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+    inline const Aws::String& GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
-    inline NodeInfo& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
-    inline NodeInfo& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
-    inline NodeInfo& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+    template<typename InstanceTypeT = Aws::String>
+    void SetInstanceType(InstanceTypeT&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::forward<InstanceTypeT>(value); }
+    template<typename InstanceTypeT = Aws::String>
+    NodeInfo& WithInstanceType(InstanceTypeT&& value) { SetInstanceType(std::forward<InstanceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,14 +105,12 @@ namespace Model
             <p>The Amazon Resource Name (ARN) of the node.</p>
          
      */
-    inline const Aws::String& GetNodeARN() const{ return m_nodeARN; }
+    inline const Aws::String& GetNodeARN() const { return m_nodeARN; }
     inline bool NodeARNHasBeenSet() const { return m_nodeARNHasBeenSet; }
-    inline void SetNodeARN(const Aws::String& value) { m_nodeARNHasBeenSet = true; m_nodeARN = value; }
-    inline void SetNodeARN(Aws::String&& value) { m_nodeARNHasBeenSet = true; m_nodeARN = std::move(value); }
-    inline void SetNodeARN(const char* value) { m_nodeARNHasBeenSet = true; m_nodeARN.assign(value); }
-    inline NodeInfo& WithNodeARN(const Aws::String& value) { SetNodeARN(value); return *this;}
-    inline NodeInfo& WithNodeARN(Aws::String&& value) { SetNodeARN(std::move(value)); return *this;}
-    inline NodeInfo& WithNodeARN(const char* value) { SetNodeARN(value); return *this;}
+    template<typename NodeARNT = Aws::String>
+    void SetNodeARN(NodeARNT&& value) { m_nodeARNHasBeenSet = true; m_nodeARN = std::forward<NodeARNT>(value); }
+    template<typename NodeARNT = Aws::String>
+    NodeInfo& WithNodeARN(NodeARNT&& value) { SetNodeARN(std::forward<NodeARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -125,12 +119,10 @@ namespace Model
             <p>The node type.</p>
          
      */
-    inline const NodeType& GetNodeType() const{ return m_nodeType; }
+    inline NodeType GetNodeType() const { return m_nodeType; }
     inline bool NodeTypeHasBeenSet() const { return m_nodeTypeHasBeenSet; }
-    inline void SetNodeType(const NodeType& value) { m_nodeTypeHasBeenSet = true; m_nodeType = value; }
-    inline void SetNodeType(NodeType&& value) { m_nodeTypeHasBeenSet = true; m_nodeType = std::move(value); }
-    inline NodeInfo& WithNodeType(const NodeType& value) { SetNodeType(value); return *this;}
-    inline NodeInfo& WithNodeType(NodeType&& value) { SetNodeType(std::move(value)); return *this;}
+    inline void SetNodeType(NodeType value) { m_nodeTypeHasBeenSet = true; m_nodeType = value; }
+    inline NodeInfo& WithNodeType(NodeType value) { SetNodeType(value); return *this;}
     ///@}
 
     ///@{
@@ -139,12 +131,12 @@ namespace Model
             <p>The ZookeeperNodeInfo.</p>
          
      */
-    inline const ZookeeperNodeInfo& GetZookeeperNodeInfo() const{ return m_zookeeperNodeInfo; }
+    inline const ZookeeperNodeInfo& GetZookeeperNodeInfo() const { return m_zookeeperNodeInfo; }
     inline bool ZookeeperNodeInfoHasBeenSet() const { return m_zookeeperNodeInfoHasBeenSet; }
-    inline void SetZookeeperNodeInfo(const ZookeeperNodeInfo& value) { m_zookeeperNodeInfoHasBeenSet = true; m_zookeeperNodeInfo = value; }
-    inline void SetZookeeperNodeInfo(ZookeeperNodeInfo&& value) { m_zookeeperNodeInfoHasBeenSet = true; m_zookeeperNodeInfo = std::move(value); }
-    inline NodeInfo& WithZookeeperNodeInfo(const ZookeeperNodeInfo& value) { SetZookeeperNodeInfo(value); return *this;}
-    inline NodeInfo& WithZookeeperNodeInfo(ZookeeperNodeInfo&& value) { SetZookeeperNodeInfo(std::move(value)); return *this;}
+    template<typename ZookeeperNodeInfoT = ZookeeperNodeInfo>
+    void SetZookeeperNodeInfo(ZookeeperNodeInfoT&& value) { m_zookeeperNodeInfoHasBeenSet = true; m_zookeeperNodeInfo = std::forward<ZookeeperNodeInfoT>(value); }
+    template<typename ZookeeperNodeInfoT = ZookeeperNodeInfo>
+    NodeInfo& WithZookeeperNodeInfo(ZookeeperNodeInfoT&& value) { SetZookeeperNodeInfo(std::forward<ZookeeperNodeInfoT>(value)); return *this;}
     ///@}
   private:
 
@@ -163,7 +155,7 @@ namespace Model
     Aws::String m_nodeARN;
     bool m_nodeARNHasBeenSet = false;
 
-    NodeType m_nodeType;
+    NodeType m_nodeType{NodeType::NOT_SET};
     bool m_nodeTypeHasBeenSet = false;
 
     ZookeeperNodeInfo m_zookeeperNodeInfo;

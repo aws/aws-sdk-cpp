@@ -31,7 +31,7 @@ namespace Model
   class ImportOptions
   {
   public:
-    AWS_NEPTUNEGRAPH_API ImportOptions();
+    AWS_NEPTUNEGRAPH_API ImportOptions() = default;
     AWS_NEPTUNEGRAPH_API ImportOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_NEPTUNEGRAPH_API ImportOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NEPTUNEGRAPH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>Options for importing data from a Neptune database.</p>
      */
-    inline const NeptuneImportOptions& GetNeptune() const{ return m_neptune; }
+    inline const NeptuneImportOptions& GetNeptune() const { return m_neptune; }
     inline bool NeptuneHasBeenSet() const { return m_neptuneHasBeenSet; }
-    inline void SetNeptune(const NeptuneImportOptions& value) { m_neptuneHasBeenSet = true; m_neptune = value; }
-    inline void SetNeptune(NeptuneImportOptions&& value) { m_neptuneHasBeenSet = true; m_neptune = std::move(value); }
-    inline ImportOptions& WithNeptune(const NeptuneImportOptions& value) { SetNeptune(value); return *this;}
-    inline ImportOptions& WithNeptune(NeptuneImportOptions&& value) { SetNeptune(std::move(value)); return *this;}
+    template<typename NeptuneT = NeptuneImportOptions>
+    void SetNeptune(NeptuneT&& value) { m_neptuneHasBeenSet = true; m_neptune = std::forward<NeptuneT>(value); }
+    template<typename NeptuneT = NeptuneImportOptions>
+    ImportOptions& WithNeptune(NeptuneT&& value) { SetNeptune(std::forward<NeptuneT>(value)); return *this;}
     ///@}
   private:
 

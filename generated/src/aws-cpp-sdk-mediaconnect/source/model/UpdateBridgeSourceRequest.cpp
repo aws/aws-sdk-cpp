@@ -12,14 +12,6 @@ using namespace Aws::MediaConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateBridgeSourceRequest::UpdateBridgeSourceRequest() : 
-    m_bridgeArnHasBeenSet(false),
-    m_flowSourceHasBeenSet(false),
-    m_networkSourceHasBeenSet(false),
-    m_sourceNameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateBridgeSourceRequest::SerializePayload() const
 {
   JsonValue payload;

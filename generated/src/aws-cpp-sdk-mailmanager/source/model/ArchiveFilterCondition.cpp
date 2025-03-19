@@ -18,14 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-ArchiveFilterCondition::ArchiveFilterCondition() : 
-    m_booleanExpressionHasBeenSet(false),
-    m_stringExpressionHasBeenSet(false)
-{
-}
-
 ArchiveFilterCondition::ArchiveFilterCondition(JsonView jsonValue)
-  : ArchiveFilterCondition()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ArchiveFilterCondition& ArchiveFilterCondition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BooleanExpression"))
   {
     m_booleanExpression = jsonValue.GetObject("BooleanExpression");
-
     m_booleanExpressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StringExpression"))
   {
     m_stringExpression = jsonValue.GetObject("StringExpression");
-
     m_stringExpressionHasBeenSet = true;
   }
-
   return *this;
 }
 

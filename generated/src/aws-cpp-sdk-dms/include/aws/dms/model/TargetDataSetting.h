@@ -32,7 +32,7 @@ namespace Model
   class TargetDataSetting
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API TargetDataSetting();
+    AWS_DATABASEMIGRATIONSERVICE_API TargetDataSetting() = default;
     AWS_DATABASEMIGRATIONSERVICE_API TargetDataSetting(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API TargetDataSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,16 +44,14 @@ namespace Model
      * data migration, either by leaving them untouched, dropping and recreating them,
      * or truncating the existing data in the target tables.</p>
      */
-    inline const TablePreparationMode& GetTablePreparationMode() const{ return m_tablePreparationMode; }
+    inline TablePreparationMode GetTablePreparationMode() const { return m_tablePreparationMode; }
     inline bool TablePreparationModeHasBeenSet() const { return m_tablePreparationModeHasBeenSet; }
-    inline void SetTablePreparationMode(const TablePreparationMode& value) { m_tablePreparationModeHasBeenSet = true; m_tablePreparationMode = value; }
-    inline void SetTablePreparationMode(TablePreparationMode&& value) { m_tablePreparationModeHasBeenSet = true; m_tablePreparationMode = std::move(value); }
-    inline TargetDataSetting& WithTablePreparationMode(const TablePreparationMode& value) { SetTablePreparationMode(value); return *this;}
-    inline TargetDataSetting& WithTablePreparationMode(TablePreparationMode&& value) { SetTablePreparationMode(std::move(value)); return *this;}
+    inline void SetTablePreparationMode(TablePreparationMode value) { m_tablePreparationModeHasBeenSet = true; m_tablePreparationMode = value; }
+    inline TargetDataSetting& WithTablePreparationMode(TablePreparationMode value) { SetTablePreparationMode(value); return *this;}
     ///@}
   private:
 
-    TablePreparationMode m_tablePreparationMode;
+    TablePreparationMode m_tablePreparationMode{TablePreparationMode::NOT_SET};
     bool m_tablePreparationModeHasBeenSet = false;
   };
 

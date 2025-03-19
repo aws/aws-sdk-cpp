@@ -10,11 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DescribeResizeRequest::DescribeResizeRequest() : 
-    m_clusterIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DescribeResizeRequest::SerializePayload() const
 {
   Aws::StringStream ss;

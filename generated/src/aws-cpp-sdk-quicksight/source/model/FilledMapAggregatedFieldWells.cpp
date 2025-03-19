@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-FilledMapAggregatedFieldWells::FilledMapAggregatedFieldWells() : 
-    m_geospatialHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 FilledMapAggregatedFieldWells::FilledMapAggregatedFieldWells(JsonView jsonValue)
-  : FilledMapAggregatedFieldWells()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ FilledMapAggregatedFieldWells& FilledMapAggregatedFieldWells::operator =(JsonVie
     }
     m_geospatialHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -51,7 +43,6 @@ FilledMapAggregatedFieldWells& FilledMapAggregatedFieldWells::operator =(JsonVie
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

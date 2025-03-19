@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-MetadataProperties::MetadataProperties() : 
-    m_commitIdHasBeenSet(false),
-    m_repositoryHasBeenSet(false),
-    m_generatedByHasBeenSet(false),
-    m_projectIdHasBeenSet(false)
-{
-}
-
 MetadataProperties::MetadataProperties(JsonView jsonValue)
-  : MetadataProperties()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ MetadataProperties& MetadataProperties::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CommitId"))
   {
     m_commitId = jsonValue.GetString("CommitId");
-
     m_commitIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Repository"))
   {
     m_repository = jsonValue.GetString("Repository");
-
     m_repositoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GeneratedBy"))
   {
     m_generatedBy = jsonValue.GetString("GeneratedBy");
-
     m_generatedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProjectId"))
   {
     m_projectId = jsonValue.GetString("ProjectId");
-
     m_projectIdHasBeenSet = true;
   }
-
   return *this;
 }
 

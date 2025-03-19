@@ -31,7 +31,7 @@ namespace Model
   class NotificationConfiguration
   {
   public:
-    AWS_BEDROCKDATAAUTOMATIONRUNTIME_API NotificationConfiguration();
+    AWS_BEDROCKDATAAUTOMATIONRUNTIME_API NotificationConfiguration() = default;
     AWS_BEDROCKDATAAUTOMATIONRUNTIME_API NotificationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKDATAAUTOMATIONRUNTIME_API NotificationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKDATAAUTOMATIONRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>Event bridge configuration.</p>
      */
-    inline const EventBridgeConfiguration& GetEventBridgeConfiguration() const{ return m_eventBridgeConfiguration; }
+    inline const EventBridgeConfiguration& GetEventBridgeConfiguration() const { return m_eventBridgeConfiguration; }
     inline bool EventBridgeConfigurationHasBeenSet() const { return m_eventBridgeConfigurationHasBeenSet; }
-    inline void SetEventBridgeConfiguration(const EventBridgeConfiguration& value) { m_eventBridgeConfigurationHasBeenSet = true; m_eventBridgeConfiguration = value; }
-    inline void SetEventBridgeConfiguration(EventBridgeConfiguration&& value) { m_eventBridgeConfigurationHasBeenSet = true; m_eventBridgeConfiguration = std::move(value); }
-    inline NotificationConfiguration& WithEventBridgeConfiguration(const EventBridgeConfiguration& value) { SetEventBridgeConfiguration(value); return *this;}
-    inline NotificationConfiguration& WithEventBridgeConfiguration(EventBridgeConfiguration&& value) { SetEventBridgeConfiguration(std::move(value)); return *this;}
+    template<typename EventBridgeConfigurationT = EventBridgeConfiguration>
+    void SetEventBridgeConfiguration(EventBridgeConfigurationT&& value) { m_eventBridgeConfigurationHasBeenSet = true; m_eventBridgeConfiguration = std::forward<EventBridgeConfigurationT>(value); }
+    template<typename EventBridgeConfigurationT = EventBridgeConfiguration>
+    NotificationConfiguration& WithEventBridgeConfiguration(EventBridgeConfigurationT&& value) { SetEventBridgeConfiguration(std::forward<EventBridgeConfigurationT>(value)); return *this;}
     ///@}
   private:
 

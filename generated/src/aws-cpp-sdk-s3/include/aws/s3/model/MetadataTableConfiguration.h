@@ -31,7 +31,7 @@ namespace Model
   class MetadataTableConfiguration
   {
   public:
-    AWS_S3_API MetadataTableConfiguration();
+    AWS_S3_API MetadataTableConfiguration() = default;
     AWS_S3_API MetadataTableConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3_API MetadataTableConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,12 +46,12 @@ namespace Model
      * unique within the <code>aws_s3_metadata</code> namespace in the destination
      * table bucket. </p>
      */
-    inline const S3TablesDestination& GetS3TablesDestination() const{ return m_s3TablesDestination; }
+    inline const S3TablesDestination& GetS3TablesDestination() const { return m_s3TablesDestination; }
     inline bool S3TablesDestinationHasBeenSet() const { return m_s3TablesDestinationHasBeenSet; }
-    inline void SetS3TablesDestination(const S3TablesDestination& value) { m_s3TablesDestinationHasBeenSet = true; m_s3TablesDestination = value; }
-    inline void SetS3TablesDestination(S3TablesDestination&& value) { m_s3TablesDestinationHasBeenSet = true; m_s3TablesDestination = std::move(value); }
-    inline MetadataTableConfiguration& WithS3TablesDestination(const S3TablesDestination& value) { SetS3TablesDestination(value); return *this;}
-    inline MetadataTableConfiguration& WithS3TablesDestination(S3TablesDestination&& value) { SetS3TablesDestination(std::move(value)); return *this;}
+    template<typename S3TablesDestinationT = S3TablesDestination>
+    void SetS3TablesDestination(S3TablesDestinationT&& value) { m_s3TablesDestinationHasBeenSet = true; m_s3TablesDestination = std::forward<S3TablesDestinationT>(value); }
+    template<typename S3TablesDestinationT = S3TablesDestination>
+    MetadataTableConfiguration& WithS3TablesDestination(S3TablesDestinationT&& value) { SetS3TablesDestination(std::forward<S3TablesDestinationT>(value)); return *this;}
     ///@}
   private:
 

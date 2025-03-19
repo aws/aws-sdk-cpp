@@ -18,10 +18,6 @@ namespace IoTAnalytics
 namespace Model
 {
 
-JsonConfiguration::JsonConfiguration()
-{
-}
-
 JsonConfiguration::JsonConfiguration(JsonView jsonValue)
 {
   *this = jsonValue;

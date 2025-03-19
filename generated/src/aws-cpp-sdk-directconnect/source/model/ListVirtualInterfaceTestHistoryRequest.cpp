@@ -12,17 +12,6 @@ using namespace Aws::DirectConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListVirtualInterfaceTestHistoryRequest::ListVirtualInterfaceTestHistoryRequest() : 
-    m_testIdHasBeenSet(false),
-    m_virtualInterfaceIdHasBeenSet(false),
-    m_bgpPeersHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListVirtualInterfaceTestHistoryRequest::SerializePayload() const
 {
   JsonValue payload;

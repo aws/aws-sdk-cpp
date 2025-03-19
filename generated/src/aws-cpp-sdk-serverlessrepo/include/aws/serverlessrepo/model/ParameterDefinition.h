@@ -32,7 +32,7 @@ namespace Model
   class ParameterDefinition
   {
   public:
-    AWS_SERVERLESSAPPLICATIONREPOSITORY_API ParameterDefinition();
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API ParameterDefinition() = default;
     AWS_SERVERLESSAPPLICATIONREPOSITORY_API ParameterDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVERLESSAPPLICATIONREPOSITORY_API ParameterDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVERLESSAPPLICATIONREPOSITORY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,29 +43,26 @@ namespace Model
      * <p>A regular expression that represents the patterns to allow for String
      * types.</p>
      */
-    inline const Aws::String& GetAllowedPattern() const{ return m_allowedPattern; }
+    inline const Aws::String& GetAllowedPattern() const { return m_allowedPattern; }
     inline bool AllowedPatternHasBeenSet() const { return m_allowedPatternHasBeenSet; }
-    inline void SetAllowedPattern(const Aws::String& value) { m_allowedPatternHasBeenSet = true; m_allowedPattern = value; }
-    inline void SetAllowedPattern(Aws::String&& value) { m_allowedPatternHasBeenSet = true; m_allowedPattern = std::move(value); }
-    inline void SetAllowedPattern(const char* value) { m_allowedPatternHasBeenSet = true; m_allowedPattern.assign(value); }
-    inline ParameterDefinition& WithAllowedPattern(const Aws::String& value) { SetAllowedPattern(value); return *this;}
-    inline ParameterDefinition& WithAllowedPattern(Aws::String&& value) { SetAllowedPattern(std::move(value)); return *this;}
-    inline ParameterDefinition& WithAllowedPattern(const char* value) { SetAllowedPattern(value); return *this;}
+    template<typename AllowedPatternT = Aws::String>
+    void SetAllowedPattern(AllowedPatternT&& value) { m_allowedPatternHasBeenSet = true; m_allowedPattern = std::forward<AllowedPatternT>(value); }
+    template<typename AllowedPatternT = Aws::String>
+    ParameterDefinition& WithAllowedPattern(AllowedPatternT&& value) { SetAllowedPattern(std::forward<AllowedPatternT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array containing the list of values allowed for the parameter.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAllowedValues() const{ return m_allowedValues; }
+    inline const Aws::Vector<Aws::String>& GetAllowedValues() const { return m_allowedValues; }
     inline bool AllowedValuesHasBeenSet() const { return m_allowedValuesHasBeenSet; }
-    inline void SetAllowedValues(const Aws::Vector<Aws::String>& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = value; }
-    inline void SetAllowedValues(Aws::Vector<Aws::String>&& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = std::move(value); }
-    inline ParameterDefinition& WithAllowedValues(const Aws::Vector<Aws::String>& value) { SetAllowedValues(value); return *this;}
-    inline ParameterDefinition& WithAllowedValues(Aws::Vector<Aws::String>&& value) { SetAllowedValues(std::move(value)); return *this;}
-    inline ParameterDefinition& AddAllowedValues(const Aws::String& value) { m_allowedValuesHasBeenSet = true; m_allowedValues.push_back(value); return *this; }
-    inline ParameterDefinition& AddAllowedValues(Aws::String&& value) { m_allowedValuesHasBeenSet = true; m_allowedValues.push_back(std::move(value)); return *this; }
-    inline ParameterDefinition& AddAllowedValues(const char* value) { m_allowedValuesHasBeenSet = true; m_allowedValues.push_back(value); return *this; }
+    template<typename AllowedValuesT = Aws::Vector<Aws::String>>
+    void SetAllowedValues(AllowedValuesT&& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = std::forward<AllowedValuesT>(value); }
+    template<typename AllowedValuesT = Aws::Vector<Aws::String>>
+    ParameterDefinition& WithAllowedValues(AllowedValuesT&& value) { SetAllowedValues(std::forward<AllowedValuesT>(value)); return *this;}
+    template<typename AllowedValuesT = Aws::String>
+    ParameterDefinition& AddAllowedValues(AllowedValuesT&& value) { m_allowedValuesHasBeenSet = true; m_allowedValues.emplace_back(std::forward<AllowedValuesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -87,14 +84,12 @@ namespace Model
      * and numbers.
  </p>
      */
-    inline const Aws::String& GetConstraintDescription() const{ return m_constraintDescription; }
+    inline const Aws::String& GetConstraintDescription() const { return m_constraintDescription; }
     inline bool ConstraintDescriptionHasBeenSet() const { return m_constraintDescriptionHasBeenSet; }
-    inline void SetConstraintDescription(const Aws::String& value) { m_constraintDescriptionHasBeenSet = true; m_constraintDescription = value; }
-    inline void SetConstraintDescription(Aws::String&& value) { m_constraintDescriptionHasBeenSet = true; m_constraintDescription = std::move(value); }
-    inline void SetConstraintDescription(const char* value) { m_constraintDescriptionHasBeenSet = true; m_constraintDescription.assign(value); }
-    inline ParameterDefinition& WithConstraintDescription(const Aws::String& value) { SetConstraintDescription(value); return *this;}
-    inline ParameterDefinition& WithConstraintDescription(Aws::String&& value) { SetConstraintDescription(std::move(value)); return *this;}
-    inline ParameterDefinition& WithConstraintDescription(const char* value) { SetConstraintDescription(value); return *this;}
+    template<typename ConstraintDescriptionT = Aws::String>
+    void SetConstraintDescription(ConstraintDescriptionT&& value) { m_constraintDescriptionHasBeenSet = true; m_constraintDescription = std::forward<ConstraintDescriptionT>(value); }
+    template<typename ConstraintDescriptionT = Aws::String>
+    ParameterDefinition& WithConstraintDescription(ConstraintDescriptionT&& value) { SetConstraintDescription(std::forward<ConstraintDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,28 +99,24 @@ namespace Model
  If you define constraints for the parameter,
      * you must specify a value that adheres to those constraints.</p>
      */
-    inline const Aws::String& GetDefaultValue() const{ return m_defaultValue; }
+    inline const Aws::String& GetDefaultValue() const { return m_defaultValue; }
     inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
-    inline void SetDefaultValue(const Aws::String& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
-    inline void SetDefaultValue(Aws::String&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::move(value); }
-    inline void SetDefaultValue(const char* value) { m_defaultValueHasBeenSet = true; m_defaultValue.assign(value); }
-    inline ParameterDefinition& WithDefaultValue(const Aws::String& value) { SetDefaultValue(value); return *this;}
-    inline ParameterDefinition& WithDefaultValue(Aws::String&& value) { SetDefaultValue(std::move(value)); return *this;}
-    inline ParameterDefinition& WithDefaultValue(const char* value) { SetDefaultValue(value); return *this;}
+    template<typename DefaultValueT = Aws::String>
+    void SetDefaultValue(DefaultValueT&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::forward<DefaultValueT>(value); }
+    template<typename DefaultValueT = Aws::String>
+    ParameterDefinition& WithDefaultValue(DefaultValueT&& value) { SetDefaultValue(std::forward<DefaultValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A string of up to 4,000 characters that describes the parameter.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline ParameterDefinition& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ParameterDefinition& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ParameterDefinition& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ParameterDefinition& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -133,7 +124,7 @@ namespace Model
      * <p>An integer value that determines the largest number of characters that you
      * want to allow for String types.</p>
      */
-    inline int GetMaxLength() const{ return m_maxLength; }
+    inline int GetMaxLength() const { return m_maxLength; }
     inline bool MaxLengthHasBeenSet() const { return m_maxLengthHasBeenSet; }
     inline void SetMaxLength(int value) { m_maxLengthHasBeenSet = true; m_maxLength = value; }
     inline ParameterDefinition& WithMaxLength(int value) { SetMaxLength(value); return *this;}
@@ -144,7 +135,7 @@ namespace Model
      * <p>A numeric value that determines the largest numeric value that you want to
      * allow for Number types.</p>
      */
-    inline int GetMaxValue() const{ return m_maxValue; }
+    inline int GetMaxValue() const { return m_maxValue; }
     inline bool MaxValueHasBeenSet() const { return m_maxValueHasBeenSet; }
     inline void SetMaxValue(int value) { m_maxValueHasBeenSet = true; m_maxValue = value; }
     inline ParameterDefinition& WithMaxValue(int value) { SetMaxValue(value); return *this;}
@@ -155,7 +146,7 @@ namespace Model
      * <p>An integer value that determines the smallest number of characters that you
      * want to allow for String types.</p>
      */
-    inline int GetMinLength() const{ return m_minLength; }
+    inline int GetMinLength() const { return m_minLength; }
     inline bool MinLengthHasBeenSet() const { return m_minLengthHasBeenSet; }
     inline void SetMinLength(int value) { m_minLengthHasBeenSet = true; m_minLength = value; }
     inline ParameterDefinition& WithMinLength(int value) { SetMinLength(value); return *this;}
@@ -166,7 +157,7 @@ namespace Model
      * <p>A numeric value that determines the smallest numeric value that you want to
      * allow for Number types.</p>
      */
-    inline int GetMinValue() const{ return m_minValue; }
+    inline int GetMinValue() const { return m_minValue; }
     inline bool MinValueHasBeenSet() const { return m_minValueHasBeenSet; }
     inline void SetMinValue(int value) { m_minValueHasBeenSet = true; m_minValue = value; }
     inline ParameterDefinition& WithMinValue(int value) { SetMinValue(value); return *this;}
@@ -176,14 +167,12 @@ namespace Model
     /**
      * <p>The name of the parameter.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ParameterDefinition& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ParameterDefinition& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ParameterDefinition& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ParameterDefinition& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -193,7 +182,7 @@ namespace Model
  value to true, the parameter value is
      * masked with asterisks (*****).</p>
      */
-    inline bool GetNoEcho() const{ return m_noEcho; }
+    inline bool GetNoEcho() const { return m_noEcho; }
     inline bool NoEchoHasBeenSet() const { return m_noEchoHasBeenSet; }
     inline void SetNoEcho(bool value) { m_noEchoHasBeenSet = true; m_noEcho = value; }
     inline ParameterDefinition& WithNoEcho(bool value) { SetNoEcho(value); return *this;}
@@ -203,15 +192,14 @@ namespace Model
     /**
      * <p>A list of AWS SAM resources that use this parameter.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetReferencedByResources() const{ return m_referencedByResources; }
+    inline const Aws::Vector<Aws::String>& GetReferencedByResources() const { return m_referencedByResources; }
     inline bool ReferencedByResourcesHasBeenSet() const { return m_referencedByResourcesHasBeenSet; }
-    inline void SetReferencedByResources(const Aws::Vector<Aws::String>& value) { m_referencedByResourcesHasBeenSet = true; m_referencedByResources = value; }
-    inline void SetReferencedByResources(Aws::Vector<Aws::String>&& value) { m_referencedByResourcesHasBeenSet = true; m_referencedByResources = std::move(value); }
-    inline ParameterDefinition& WithReferencedByResources(const Aws::Vector<Aws::String>& value) { SetReferencedByResources(value); return *this;}
-    inline ParameterDefinition& WithReferencedByResources(Aws::Vector<Aws::String>&& value) { SetReferencedByResources(std::move(value)); return *this;}
-    inline ParameterDefinition& AddReferencedByResources(const Aws::String& value) { m_referencedByResourcesHasBeenSet = true; m_referencedByResources.push_back(value); return *this; }
-    inline ParameterDefinition& AddReferencedByResources(Aws::String&& value) { m_referencedByResourcesHasBeenSet = true; m_referencedByResources.push_back(std::move(value)); return *this; }
-    inline ParameterDefinition& AddReferencedByResources(const char* value) { m_referencedByResourcesHasBeenSet = true; m_referencedByResources.push_back(value); return *this; }
+    template<typename ReferencedByResourcesT = Aws::Vector<Aws::String>>
+    void SetReferencedByResources(ReferencedByResourcesT&& value) { m_referencedByResourcesHasBeenSet = true; m_referencedByResources = std::forward<ReferencedByResourcesT>(value); }
+    template<typename ReferencedByResourcesT = Aws::Vector<Aws::String>>
+    ParameterDefinition& WithReferencedByResources(ReferencedByResourcesT&& value) { SetReferencedByResources(std::forward<ReferencedByResourcesT>(value)); return *this;}
+    template<typename ReferencedByResourcesT = Aws::String>
+    ParameterDefinition& AddReferencedByResources(ReferencedByResourcesT&& value) { m_referencedByResourcesHasBeenSet = true; m_referencedByResources.emplace_back(std::forward<ReferencedByResourcesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -241,14 +229,12 @@ namespace Model
      * Also, each member string is space-trimmed.</p><p>For example, users might
      * specify "test,dev,prod", and then Ref results in ["test","dev","prod"].</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline ParameterDefinition& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline ParameterDefinition& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline ParameterDefinition& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    ParameterDefinition& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
   private:
 
@@ -267,22 +253,22 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    int m_maxLength;
+    int m_maxLength{0};
     bool m_maxLengthHasBeenSet = false;
 
-    int m_maxValue;
+    int m_maxValue{0};
     bool m_maxValueHasBeenSet = false;
 
-    int m_minLength;
+    int m_minLength{0};
     bool m_minLengthHasBeenSet = false;
 
-    int m_minValue;
+    int m_minValue{0};
     bool m_minValueHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    bool m_noEcho;
+    bool m_noEcho{false};
     bool m_noEchoHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_referencedByResources;

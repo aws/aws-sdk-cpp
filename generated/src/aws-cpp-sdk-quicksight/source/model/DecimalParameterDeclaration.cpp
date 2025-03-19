@@ -18,18 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DecimalParameterDeclaration::DecimalParameterDeclaration() : 
-    m_parameterValueType(ParameterValueType::NOT_SET),
-    m_parameterValueTypeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_defaultValuesHasBeenSet(false),
-    m_valueWhenUnsetHasBeenSet(false),
-    m_mappedDataSetParametersHasBeenSet(false)
-{
-}
-
 DecimalParameterDeclaration::DecimalParameterDeclaration(JsonView jsonValue)
-  : DecimalParameterDeclaration()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ DecimalParameterDeclaration& DecimalParameterDeclaration::operator =(JsonView js
   if(jsonValue.ValueExists("ParameterValueType"))
   {
     m_parameterValueType = ParameterValueTypeMapper::GetParameterValueTypeForName(jsonValue.GetString("ParameterValueType"));
-
     m_parameterValueTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultValues"))
   {
     m_defaultValues = jsonValue.GetObject("DefaultValues");
-
     m_defaultValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValueWhenUnset"))
   {
     m_valueWhenUnset = jsonValue.GetObject("ValueWhenUnset");
-
     m_valueWhenUnsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MappedDataSetParameters"))
   {
     Aws::Utils::Array<JsonView> mappedDataSetParametersJsonList = jsonValue.GetArray("MappedDataSetParameters");
@@ -73,7 +54,6 @@ DecimalParameterDeclaration& DecimalParameterDeclaration::operator =(JsonView js
     }
     m_mappedDataSetParametersHasBeenSet = true;
   }
-
   return *this;
 }
 

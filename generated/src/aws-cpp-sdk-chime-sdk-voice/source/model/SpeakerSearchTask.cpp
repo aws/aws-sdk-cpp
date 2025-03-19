@@ -18,20 +18,7 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
-SpeakerSearchTask::SpeakerSearchTask() : 
-    m_speakerSearchTaskIdHasBeenSet(false),
-    m_speakerSearchTaskStatusHasBeenSet(false),
-    m_callDetailsHasBeenSet(false),
-    m_speakerSearchDetailsHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_updatedTimestampHasBeenSet(false),
-    m_startedTimestampHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
-{
-}
-
 SpeakerSearchTask::SpeakerSearchTask(JsonView jsonValue)
-  : SpeakerSearchTask()
 {
   *this = jsonValue;
 }
@@ -41,59 +28,43 @@ SpeakerSearchTask& SpeakerSearchTask::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SpeakerSearchTaskId"))
   {
     m_speakerSearchTaskId = jsonValue.GetString("SpeakerSearchTaskId");
-
     m_speakerSearchTaskIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SpeakerSearchTaskStatus"))
   {
     m_speakerSearchTaskStatus = jsonValue.GetString("SpeakerSearchTaskStatus");
-
     m_speakerSearchTaskStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CallDetails"))
   {
     m_callDetails = jsonValue.GetObject("CallDetails");
-
     m_callDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SpeakerSearchDetails"))
   {
     m_speakerSearchDetails = jsonValue.GetObject("SpeakerSearchDetails");
-
     m_speakerSearchDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetString("CreatedTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedTimestamp"))
   {
     m_updatedTimestamp = jsonValue.GetString("UpdatedTimestamp");
-
     m_updatedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartedTimestamp"))
   {
     m_startedTimestamp = jsonValue.GetString("StartedTimestamp");
-
     m_startedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

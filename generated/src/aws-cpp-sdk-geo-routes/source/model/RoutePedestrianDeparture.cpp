@@ -18,14 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RoutePedestrianDeparture::RoutePedestrianDeparture() : 
-    m_placeHasBeenSet(false),
-    m_timeHasBeenSet(false)
-{
-}
-
 RoutePedestrianDeparture::RoutePedestrianDeparture(JsonView jsonValue)
-  : RoutePedestrianDeparture()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RoutePedestrianDeparture& RoutePedestrianDeparture::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Place"))
   {
     m_place = jsonValue.GetObject("Place");
-
     m_placeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Time"))
   {
     m_time = jsonValue.GetString("Time");
-
     m_timeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace ServiceCatalog
 namespace Model
 {
 
-RecordError::RecordError() : 
-    m_codeHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 RecordError::RecordError(JsonView jsonValue)
-  : RecordError()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RecordError& RecordError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Code"))
   {
     m_code = jsonValue.GetString("Code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

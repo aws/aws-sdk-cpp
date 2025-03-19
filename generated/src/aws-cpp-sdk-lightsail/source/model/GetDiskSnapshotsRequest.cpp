@@ -12,11 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDiskSnapshotsRequest::GetDiskSnapshotsRequest() : 
-    m_pageTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetDiskSnapshotsRequest::SerializePayload() const
 {
   JsonValue payload;

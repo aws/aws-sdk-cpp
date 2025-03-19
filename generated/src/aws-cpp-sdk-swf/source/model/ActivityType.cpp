@@ -18,14 +18,7 @@ namespace SWF
 namespace Model
 {
 
-ActivityType::ActivityType() : 
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 ActivityType::ActivityType(JsonView jsonValue)
-  : ActivityType()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ActivityType& ActivityType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,17 +18,7 @@ namespace drs
 namespace Model
 {
 
-LifeCycle::LifeCycle() : 
-    m_addedToServiceDateTimeHasBeenSet(false),
-    m_elapsedReplicationDurationHasBeenSet(false),
-    m_firstByteDateTimeHasBeenSet(false),
-    m_lastLaunchHasBeenSet(false),
-    m_lastSeenByServiceDateTimeHasBeenSet(false)
-{
-}
-
 LifeCycle::LifeCycle(JsonView jsonValue)
-  : LifeCycle()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ LifeCycle& LifeCycle::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("addedToServiceDateTime"))
   {
     m_addedToServiceDateTime = jsonValue.GetString("addedToServiceDateTime");
-
     m_addedToServiceDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("elapsedReplicationDuration"))
   {
     m_elapsedReplicationDuration = jsonValue.GetString("elapsedReplicationDuration");
-
     m_elapsedReplicationDurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("firstByteDateTime"))
   {
     m_firstByteDateTime = jsonValue.GetString("firstByteDateTime");
-
     m_firstByteDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastLaunch"))
   {
     m_lastLaunch = jsonValue.GetObject("lastLaunch");
-
     m_lastLaunchHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastSeenByServiceDateTime"))
   {
     m_lastSeenByServiceDateTime = jsonValue.GetString("lastSeenByServiceDateTime");
-
     m_lastSeenByServiceDateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

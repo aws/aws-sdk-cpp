@@ -34,7 +34,7 @@ namespace Model
   class PartnerAppConfig
   {
   public:
-    AWS_SAGEMAKER_API PartnerAppConfig();
+    AWS_SAGEMAKER_API PartnerAppConfig() = default;
     AWS_SAGEMAKER_API PartnerAppConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API PartnerAppConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,15 +45,14 @@ namespace Model
      * <p>The list of users that are given admin access to the SageMaker Partner AI
      * App.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAdminUsers() const{ return m_adminUsers; }
+    inline const Aws::Vector<Aws::String>& GetAdminUsers() const { return m_adminUsers; }
     inline bool AdminUsersHasBeenSet() const { return m_adminUsersHasBeenSet; }
-    inline void SetAdminUsers(const Aws::Vector<Aws::String>& value) { m_adminUsersHasBeenSet = true; m_adminUsers = value; }
-    inline void SetAdminUsers(Aws::Vector<Aws::String>&& value) { m_adminUsersHasBeenSet = true; m_adminUsers = std::move(value); }
-    inline PartnerAppConfig& WithAdminUsers(const Aws::Vector<Aws::String>& value) { SetAdminUsers(value); return *this;}
-    inline PartnerAppConfig& WithAdminUsers(Aws::Vector<Aws::String>&& value) { SetAdminUsers(std::move(value)); return *this;}
-    inline PartnerAppConfig& AddAdminUsers(const Aws::String& value) { m_adminUsersHasBeenSet = true; m_adminUsers.push_back(value); return *this; }
-    inline PartnerAppConfig& AddAdminUsers(Aws::String&& value) { m_adminUsersHasBeenSet = true; m_adminUsers.push_back(std::move(value)); return *this; }
-    inline PartnerAppConfig& AddAdminUsers(const char* value) { m_adminUsersHasBeenSet = true; m_adminUsers.push_back(value); return *this; }
+    template<typename AdminUsersT = Aws::Vector<Aws::String>>
+    void SetAdminUsers(AdminUsersT&& value) { m_adminUsersHasBeenSet = true; m_adminUsers = std::forward<AdminUsersT>(value); }
+    template<typename AdminUsersT = Aws::Vector<Aws::String>>
+    PartnerAppConfig& WithAdminUsers(AdminUsersT&& value) { SetAdminUsers(std::forward<AdminUsersT>(value)); return *this;}
+    template<typename AdminUsersT = Aws::String>
+    PartnerAppConfig& AddAdminUsers(AdminUsersT&& value) { m_adminUsersHasBeenSet = true; m_adminUsers.emplace_back(std::forward<AdminUsersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -62,19 +61,16 @@ namespace Model
      * application type, the map is populated with a key and value pair that is
      * specific to the user and application.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetArguments() const{ return m_arguments; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetArguments() const { return m_arguments; }
     inline bool ArgumentsHasBeenSet() const { return m_argumentsHasBeenSet; }
-    inline void SetArguments(const Aws::Map<Aws::String, Aws::String>& value) { m_argumentsHasBeenSet = true; m_arguments = value; }
-    inline void SetArguments(Aws::Map<Aws::String, Aws::String>&& value) { m_argumentsHasBeenSet = true; m_arguments = std::move(value); }
-    inline PartnerAppConfig& WithArguments(const Aws::Map<Aws::String, Aws::String>& value) { SetArguments(value); return *this;}
-    inline PartnerAppConfig& WithArguments(Aws::Map<Aws::String, Aws::String>&& value) { SetArguments(std::move(value)); return *this;}
-    inline PartnerAppConfig& AddArguments(const Aws::String& key, const Aws::String& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, value); return *this; }
-    inline PartnerAppConfig& AddArguments(Aws::String&& key, const Aws::String& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(std::move(key), value); return *this; }
-    inline PartnerAppConfig& AddArguments(const Aws::String& key, Aws::String&& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, std::move(value)); return *this; }
-    inline PartnerAppConfig& AddArguments(Aws::String&& key, Aws::String&& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(std::move(key), std::move(value)); return *this; }
-    inline PartnerAppConfig& AddArguments(const char* key, Aws::String&& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, std::move(value)); return *this; }
-    inline PartnerAppConfig& AddArguments(Aws::String&& key, const char* value) { m_argumentsHasBeenSet = true; m_arguments.emplace(std::move(key), value); return *this; }
-    inline PartnerAppConfig& AddArguments(const char* key, const char* value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, value); return *this; }
+    template<typename ArgumentsT = Aws::Map<Aws::String, Aws::String>>
+    void SetArguments(ArgumentsT&& value) { m_argumentsHasBeenSet = true; m_arguments = std::forward<ArgumentsT>(value); }
+    template<typename ArgumentsT = Aws::Map<Aws::String, Aws::String>>
+    PartnerAppConfig& WithArguments(ArgumentsT&& value) { SetArguments(std::forward<ArgumentsT>(value)); return *this;}
+    template<typename ArgumentsKeyT = Aws::String, typename ArgumentsValueT = Aws::String>
+    PartnerAppConfig& AddArguments(ArgumentsKeyT&& key, ArgumentsValueT&& value) {
+      m_argumentsHasBeenSet = true; m_arguments.emplace(std::forward<ArgumentsKeyT>(key), std::forward<ArgumentsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

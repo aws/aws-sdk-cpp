@@ -34,7 +34,7 @@ namespace Model
   class Archive
   {
   public:
-    AWS_MAILMANAGER_API Archive();
+    AWS_MAILMANAGER_API Archive() = default;
     AWS_MAILMANAGER_API Archive(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API Archive& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p>The unique identifier of the archive.</p>
      */
-    inline const Aws::String& GetArchiveId() const{ return m_archiveId; }
+    inline const Aws::String& GetArchiveId() const { return m_archiveId; }
     inline bool ArchiveIdHasBeenSet() const { return m_archiveIdHasBeenSet; }
-    inline void SetArchiveId(const Aws::String& value) { m_archiveIdHasBeenSet = true; m_archiveId = value; }
-    inline void SetArchiveId(Aws::String&& value) { m_archiveIdHasBeenSet = true; m_archiveId = std::move(value); }
-    inline void SetArchiveId(const char* value) { m_archiveIdHasBeenSet = true; m_archiveId.assign(value); }
-    inline Archive& WithArchiveId(const Aws::String& value) { SetArchiveId(value); return *this;}
-    inline Archive& WithArchiveId(Aws::String&& value) { SetArchiveId(std::move(value)); return *this;}
-    inline Archive& WithArchiveId(const char* value) { SetArchiveId(value); return *this;}
+    template<typename ArchiveIdT = Aws::String>
+    void SetArchiveId(ArchiveIdT&& value) { m_archiveIdHasBeenSet = true; m_archiveId = std::forward<ArchiveIdT>(value); }
+    template<typename ArchiveIdT = Aws::String>
+    Archive& WithArchiveId(ArchiveIdT&& value) { SetArchiveId(std::forward<ArchiveIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique name assigned to the archive.</p>
      */
-    inline const Aws::String& GetArchiveName() const{ return m_archiveName; }
+    inline const Aws::String& GetArchiveName() const { return m_archiveName; }
     inline bool ArchiveNameHasBeenSet() const { return m_archiveNameHasBeenSet; }
-    inline void SetArchiveName(const Aws::String& value) { m_archiveNameHasBeenSet = true; m_archiveName = value; }
-    inline void SetArchiveName(Aws::String&& value) { m_archiveNameHasBeenSet = true; m_archiveName = std::move(value); }
-    inline void SetArchiveName(const char* value) { m_archiveNameHasBeenSet = true; m_archiveName.assign(value); }
-    inline Archive& WithArchiveName(const Aws::String& value) { SetArchiveName(value); return *this;}
-    inline Archive& WithArchiveName(Aws::String&& value) { SetArchiveName(std::move(value)); return *this;}
-    inline Archive& WithArchiveName(const char* value) { SetArchiveName(value); return *this;}
+    template<typename ArchiveNameT = Aws::String>
+    void SetArchiveName(ArchiveNameT&& value) { m_archiveNameHasBeenSet = true; m_archiveName = std::forward<ArchiveNameT>(value); }
+    template<typename ArchiveNameT = Aws::String>
+    Archive& WithArchiveName(ArchiveNameT&& value) { SetArchiveName(std::forward<ArchiveNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,24 +72,22 @@ namespace Model
      * will be permanently deleted in 30 days. No further modifications can be made in
      * this state. </p> </li> </ul>
      */
-    inline const ArchiveState& GetArchiveState() const{ return m_archiveState; }
+    inline ArchiveState GetArchiveState() const { return m_archiveState; }
     inline bool ArchiveStateHasBeenSet() const { return m_archiveStateHasBeenSet; }
-    inline void SetArchiveState(const ArchiveState& value) { m_archiveStateHasBeenSet = true; m_archiveState = value; }
-    inline void SetArchiveState(ArchiveState&& value) { m_archiveStateHasBeenSet = true; m_archiveState = std::move(value); }
-    inline Archive& WithArchiveState(const ArchiveState& value) { SetArchiveState(value); return *this;}
-    inline Archive& WithArchiveState(ArchiveState&& value) { SetArchiveState(std::move(value)); return *this;}
+    inline void SetArchiveState(ArchiveState value) { m_archiveStateHasBeenSet = true; m_archiveState = value; }
+    inline Archive& WithArchiveState(ArchiveState value) { SetArchiveState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp of when the archive was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedTimestamp() const{ return m_lastUpdatedTimestamp; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedTimestamp() const { return m_lastUpdatedTimestamp; }
     inline bool LastUpdatedTimestampHasBeenSet() const { return m_lastUpdatedTimestampHasBeenSet; }
-    inline void SetLastUpdatedTimestamp(const Aws::Utils::DateTime& value) { m_lastUpdatedTimestampHasBeenSet = true; m_lastUpdatedTimestamp = value; }
-    inline void SetLastUpdatedTimestamp(Aws::Utils::DateTime&& value) { m_lastUpdatedTimestampHasBeenSet = true; m_lastUpdatedTimestamp = std::move(value); }
-    inline Archive& WithLastUpdatedTimestamp(const Aws::Utils::DateTime& value) { SetLastUpdatedTimestamp(value); return *this;}
-    inline Archive& WithLastUpdatedTimestamp(Aws::Utils::DateTime&& value) { SetLastUpdatedTimestamp(std::move(value)); return *this;}
+    template<typename LastUpdatedTimestampT = Aws::Utils::DateTime>
+    void SetLastUpdatedTimestamp(LastUpdatedTimestampT&& value) { m_lastUpdatedTimestampHasBeenSet = true; m_lastUpdatedTimestamp = std::forward<LastUpdatedTimestampT>(value); }
+    template<typename LastUpdatedTimestampT = Aws::Utils::DateTime>
+    Archive& WithLastUpdatedTimestamp(LastUpdatedTimestampT&& value) { SetLastUpdatedTimestamp(std::forward<LastUpdatedTimestampT>(value)); return *this;}
     ///@}
   private:
 
@@ -103,10 +97,10 @@ namespace Model
     Aws::String m_archiveName;
     bool m_archiveNameHasBeenSet = false;
 
-    ArchiveState m_archiveState;
+    ArchiveState m_archiveState{ArchiveState::NOT_SET};
     bool m_archiveStateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedTimestamp;
+    Aws::Utils::DateTime m_lastUpdatedTimestamp{};
     bool m_lastUpdatedTimestampHasBeenSet = false;
   };
 

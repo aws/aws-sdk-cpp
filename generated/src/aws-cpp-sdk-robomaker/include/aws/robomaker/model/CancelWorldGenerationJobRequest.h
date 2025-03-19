@@ -21,7 +21,7 @@ namespace Model
   class CancelWorldGenerationJobRequest : public RoboMakerRequest
   {
   public:
-    AWS_ROBOMAKER_API CancelWorldGenerationJobRequest();
+    AWS_ROBOMAKER_API CancelWorldGenerationJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (arn) of the world generator job to cancel.</p>
      */
-    inline const Aws::String& GetJob() const{ return m_job; }
+    inline const Aws::String& GetJob() const { return m_job; }
     inline bool JobHasBeenSet() const { return m_jobHasBeenSet; }
-    inline void SetJob(const Aws::String& value) { m_jobHasBeenSet = true; m_job = value; }
-    inline void SetJob(Aws::String&& value) { m_jobHasBeenSet = true; m_job = std::move(value); }
-    inline void SetJob(const char* value) { m_jobHasBeenSet = true; m_job.assign(value); }
-    inline CancelWorldGenerationJobRequest& WithJob(const Aws::String& value) { SetJob(value); return *this;}
-    inline CancelWorldGenerationJobRequest& WithJob(Aws::String&& value) { SetJob(std::move(value)); return *this;}
-    inline CancelWorldGenerationJobRequest& WithJob(const char* value) { SetJob(value); return *this;}
+    template<typename JobT = Aws::String>
+    void SetJob(JobT&& value) { m_jobHasBeenSet = true; m_job = std::forward<JobT>(value); }
+    template<typename JobT = Aws::String>
+    CancelWorldGenerationJobRequest& WithJob(JobT&& value) { SetJob(std::forward<JobT>(value)); return *this;}
     ///@}
   private:
 

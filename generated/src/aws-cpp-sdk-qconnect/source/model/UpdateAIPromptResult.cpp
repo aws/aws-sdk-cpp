@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateAIPromptResult::UpdateAIPromptResult()
-{
-}
-
 UpdateAIPromptResult::UpdateAIPromptResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ UpdateAIPromptResult& UpdateAIPromptResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("aiPrompt"))
   {
     m_aiPrompt = jsonValue.GetObject("aiPrompt");
-
+    m_aiPromptHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

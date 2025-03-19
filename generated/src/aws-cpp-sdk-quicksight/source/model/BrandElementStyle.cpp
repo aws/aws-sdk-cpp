@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-BrandElementStyle::BrandElementStyle() : 
-    m_navbarStyleHasBeenSet(false)
-{
-}
-
 BrandElementStyle::BrandElementStyle(JsonView jsonValue)
-  : BrandElementStyle()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ BrandElementStyle& BrandElementStyle::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("NavbarStyle"))
   {
     m_navbarStyle = jsonValue.GetObject("NavbarStyle");
-
     m_navbarStyleHasBeenSet = true;
   }
-
   return *this;
 }
 

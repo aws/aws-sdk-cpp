@@ -18,16 +18,7 @@ namespace CloudWatchEvents
 namespace Model
 {
 
-BatchParameters::BatchParameters() : 
-    m_jobDefinitionHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_arrayPropertiesHasBeenSet(false),
-    m_retryStrategyHasBeenSet(false)
-{
-}
-
 BatchParameters::BatchParameters(JsonView jsonValue)
-  : BatchParameters()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ BatchParameters& BatchParameters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("JobDefinition"))
   {
     m_jobDefinition = jsonValue.GetString("JobDefinition");
-
     m_jobDefinitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobName"))
   {
     m_jobName = jsonValue.GetString("JobName");
-
     m_jobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ArrayProperties"))
   {
     m_arrayProperties = jsonValue.GetObject("ArrayProperties");
-
     m_arrayPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RetryStrategy"))
   {
     m_retryStrategy = jsonValue.GetObject("RetryStrategy");
-
     m_retryStrategyHasBeenSet = true;
   }
-
   return *this;
 }
 

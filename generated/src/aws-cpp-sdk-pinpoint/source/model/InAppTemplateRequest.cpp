@@ -18,18 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-InAppTemplateRequest::InAppTemplateRequest() : 
-    m_contentHasBeenSet(false),
-    m_customConfigHasBeenSet(false),
-    m_layout(Layout::NOT_SET),
-    m_layoutHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_templateDescriptionHasBeenSet(false)
-{
-}
-
 InAppTemplateRequest::InAppTemplateRequest(JsonView jsonValue)
-  : InAppTemplateRequest()
 {
   *this = jsonValue;
 }
@@ -45,7 +34,6 @@ InAppTemplateRequest& InAppTemplateRequest::operator =(JsonView jsonValue)
     }
     m_contentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomConfig"))
   {
     Aws::Map<Aws::String, JsonView> customConfigJsonMap = jsonValue.GetObject("CustomConfig").GetAllObjects();
@@ -55,14 +43,11 @@ InAppTemplateRequest& InAppTemplateRequest::operator =(JsonView jsonValue)
     }
     m_customConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Layout"))
   {
     m_layout = LayoutMapper::GetLayoutForName(jsonValue.GetString("Layout"));
-
     m_layoutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -72,14 +57,11 @@ InAppTemplateRequest& InAppTemplateRequest::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TemplateDescription"))
   {
     m_templateDescription = jsonValue.GetString("TemplateDescription");
-
     m_templateDescriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

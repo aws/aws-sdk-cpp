@@ -18,15 +18,7 @@ namespace SSM
 namespace Model
 {
 
-InstanceInformationFilter::InstanceInformationFilter() : 
-    m_key(InstanceInformationFilterKey::NOT_SET),
-    m_keyHasBeenSet(false),
-    m_valueSetHasBeenSet(false)
-{
-}
-
 InstanceInformationFilter::InstanceInformationFilter(JsonView jsonValue)
-  : InstanceInformationFilter()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ InstanceInformationFilter& InstanceInformationFilter::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("key"))
   {
     m_key = InstanceInformationFilterKeyMapper::GetInstanceInformationFilterKeyForName(jsonValue.GetString("key"));
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("valueSet"))
   {
     Aws::Utils::Array<JsonView> valueSetJsonList = jsonValue.GetArray("valueSet");
@@ -49,7 +39,6 @@ InstanceInformationFilter& InstanceInformationFilter::operator =(JsonView jsonVa
     }
     m_valueSetHasBeenSet = true;
   }
-
   return *this;
 }
 

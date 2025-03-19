@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-FindingAggregator::FindingAggregator() : 
-    m_findingAggregatorArnHasBeenSet(false)
-{
-}
-
 FindingAggregator::FindingAggregator(JsonView jsonValue)
-  : FindingAggregator()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ FindingAggregator& FindingAggregator::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FindingAggregatorArn"))
   {
     m_findingAggregatorArn = jsonValue.GetString("FindingAggregatorArn");
-
     m_findingAggregatorArnHasBeenSet = true;
   }
-
   return *this;
 }
 

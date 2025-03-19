@@ -18,21 +18,7 @@ namespace ElasticsearchService
 namespace Model
 {
 
-SAMLOptionsInput::SAMLOptionsInput() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_idpHasBeenSet(false),
-    m_masterUserNameHasBeenSet(false),
-    m_masterBackendRoleHasBeenSet(false),
-    m_subjectKeyHasBeenSet(false),
-    m_rolesKeyHasBeenSet(false),
-    m_sessionTimeoutMinutes(0),
-    m_sessionTimeoutMinutesHasBeenSet(false)
-{
-}
-
 SAMLOptionsInput::SAMLOptionsInput(JsonView jsonValue)
-  : SAMLOptionsInput()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ SAMLOptionsInput& SAMLOptionsInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Idp"))
   {
     m_idp = jsonValue.GetObject("Idp");
-
     m_idpHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MasterUserName"))
   {
     m_masterUserName = jsonValue.GetString("MasterUserName");
-
     m_masterUserNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MasterBackendRole"))
   {
     m_masterBackendRole = jsonValue.GetString("MasterBackendRole");
-
     m_masterBackendRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubjectKey"))
   {
     m_subjectKey = jsonValue.GetString("SubjectKey");
-
     m_subjectKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RolesKey"))
   {
     m_rolesKey = jsonValue.GetString("RolesKey");
-
     m_rolesKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SessionTimeoutMinutes"))
   {
     m_sessionTimeoutMinutes = jsonValue.GetInteger("SessionTimeoutMinutes");
-
     m_sessionTimeoutMinutesHasBeenSet = true;
   }
-
   return *this;
 }
 

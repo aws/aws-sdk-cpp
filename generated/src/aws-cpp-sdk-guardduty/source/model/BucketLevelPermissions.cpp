@@ -18,15 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-BucketLevelPermissions::BucketLevelPermissions() : 
-    m_accessControlListHasBeenSet(false),
-    m_bucketPolicyHasBeenSet(false),
-    m_blockPublicAccessHasBeenSet(false)
-{
-}
-
 BucketLevelPermissions::BucketLevelPermissions(JsonView jsonValue)
-  : BucketLevelPermissions()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ BucketLevelPermissions& BucketLevelPermissions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accessControlList"))
   {
     m_accessControlList = jsonValue.GetObject("accessControlList");
-
     m_accessControlListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bucketPolicy"))
   {
     m_bucketPolicy = jsonValue.GetObject("bucketPolicy");
-
     m_bucketPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("blockPublicAccess"))
   {
     m_blockPublicAccess = jsonValue.GetObject("blockPublicAccess");
-
     m_blockPublicAccessHasBeenSet = true;
   }
-
   return *this;
 }
 

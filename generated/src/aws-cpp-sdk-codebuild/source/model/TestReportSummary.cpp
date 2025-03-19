@@ -18,17 +18,7 @@ namespace CodeBuild
 namespace Model
 {
 
-TestReportSummary::TestReportSummary() : 
-    m_total(0),
-    m_totalHasBeenSet(false),
-    m_statusCountsHasBeenSet(false),
-    m_durationInNanoSeconds(0),
-    m_durationInNanoSecondsHasBeenSet(false)
-{
-}
-
 TestReportSummary::TestReportSummary(JsonView jsonValue)
-  : TestReportSummary()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ TestReportSummary& TestReportSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("total"))
   {
     m_total = jsonValue.GetInteger("total");
-
     m_totalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusCounts"))
   {
     Aws::Map<Aws::String, JsonView> statusCountsJsonMap = jsonValue.GetObject("statusCounts").GetAllObjects();
@@ -51,14 +39,11 @@ TestReportSummary& TestReportSummary::operator =(JsonView jsonValue)
     }
     m_statusCountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("durationInNanoSeconds"))
   {
     m_durationInNanoSeconds = jsonValue.GetInt64("durationInNanoSeconds");
-
     m_durationInNanoSecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

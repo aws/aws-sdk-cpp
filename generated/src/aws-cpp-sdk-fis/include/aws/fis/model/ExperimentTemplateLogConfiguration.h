@@ -33,7 +33,7 @@ namespace Model
   class ExperimentTemplateLogConfiguration
   {
   public:
-    AWS_FIS_API ExperimentTemplateLogConfiguration();
+    AWS_FIS_API ExperimentTemplateLogConfiguration() = default;
     AWS_FIS_API ExperimentTemplateLogConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIS_API ExperimentTemplateLogConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,31 +43,31 @@ namespace Model
     /**
      * <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
      */
-    inline const ExperimentTemplateCloudWatchLogsLogConfiguration& GetCloudWatchLogsConfiguration() const{ return m_cloudWatchLogsConfiguration; }
+    inline const ExperimentTemplateCloudWatchLogsLogConfiguration& GetCloudWatchLogsConfiguration() const { return m_cloudWatchLogsConfiguration; }
     inline bool CloudWatchLogsConfigurationHasBeenSet() const { return m_cloudWatchLogsConfigurationHasBeenSet; }
-    inline void SetCloudWatchLogsConfiguration(const ExperimentTemplateCloudWatchLogsLogConfiguration& value) { m_cloudWatchLogsConfigurationHasBeenSet = true; m_cloudWatchLogsConfiguration = value; }
-    inline void SetCloudWatchLogsConfiguration(ExperimentTemplateCloudWatchLogsLogConfiguration&& value) { m_cloudWatchLogsConfigurationHasBeenSet = true; m_cloudWatchLogsConfiguration = std::move(value); }
-    inline ExperimentTemplateLogConfiguration& WithCloudWatchLogsConfiguration(const ExperimentTemplateCloudWatchLogsLogConfiguration& value) { SetCloudWatchLogsConfiguration(value); return *this;}
-    inline ExperimentTemplateLogConfiguration& WithCloudWatchLogsConfiguration(ExperimentTemplateCloudWatchLogsLogConfiguration&& value) { SetCloudWatchLogsConfiguration(std::move(value)); return *this;}
+    template<typename CloudWatchLogsConfigurationT = ExperimentTemplateCloudWatchLogsLogConfiguration>
+    void SetCloudWatchLogsConfiguration(CloudWatchLogsConfigurationT&& value) { m_cloudWatchLogsConfigurationHasBeenSet = true; m_cloudWatchLogsConfiguration = std::forward<CloudWatchLogsConfigurationT>(value); }
+    template<typename CloudWatchLogsConfigurationT = ExperimentTemplateCloudWatchLogsLogConfiguration>
+    ExperimentTemplateLogConfiguration& WithCloudWatchLogsConfiguration(CloudWatchLogsConfigurationT&& value) { SetCloudWatchLogsConfiguration(std::forward<CloudWatchLogsConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration for experiment logging to Amazon S3.</p>
      */
-    inline const ExperimentTemplateS3LogConfiguration& GetS3Configuration() const{ return m_s3Configuration; }
+    inline const ExperimentTemplateS3LogConfiguration& GetS3Configuration() const { return m_s3Configuration; }
     inline bool S3ConfigurationHasBeenSet() const { return m_s3ConfigurationHasBeenSet; }
-    inline void SetS3Configuration(const ExperimentTemplateS3LogConfiguration& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = value; }
-    inline void SetS3Configuration(ExperimentTemplateS3LogConfiguration&& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = std::move(value); }
-    inline ExperimentTemplateLogConfiguration& WithS3Configuration(const ExperimentTemplateS3LogConfiguration& value) { SetS3Configuration(value); return *this;}
-    inline ExperimentTemplateLogConfiguration& WithS3Configuration(ExperimentTemplateS3LogConfiguration&& value) { SetS3Configuration(std::move(value)); return *this;}
+    template<typename S3ConfigurationT = ExperimentTemplateS3LogConfiguration>
+    void SetS3Configuration(S3ConfigurationT&& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = std::forward<S3ConfigurationT>(value); }
+    template<typename S3ConfigurationT = ExperimentTemplateS3LogConfiguration>
+    ExperimentTemplateLogConfiguration& WithS3Configuration(S3ConfigurationT&& value) { SetS3Configuration(std::forward<S3ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The schema version.</p>
      */
-    inline int GetLogSchemaVersion() const{ return m_logSchemaVersion; }
+    inline int GetLogSchemaVersion() const { return m_logSchemaVersion; }
     inline bool LogSchemaVersionHasBeenSet() const { return m_logSchemaVersionHasBeenSet; }
     inline void SetLogSchemaVersion(int value) { m_logSchemaVersionHasBeenSet = true; m_logSchemaVersion = value; }
     inline ExperimentTemplateLogConfiguration& WithLogSchemaVersion(int value) { SetLogSchemaVersion(value); return *this;}
@@ -80,7 +80,7 @@ namespace Model
     ExperimentTemplateS3LogConfiguration m_s3Configuration;
     bool m_s3ConfigurationHasBeenSet = false;
 
-    int m_logSchemaVersion;
+    int m_logSchemaVersion{0};
     bool m_logSchemaVersionHasBeenSet = false;
   };
 

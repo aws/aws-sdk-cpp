@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AcceptAccountLinkInvitationResult::AcceptAccountLinkInvitationResult()
-{
-}
-
 AcceptAccountLinkInvitationResult::AcceptAccountLinkInvitationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ AcceptAccountLinkInvitationResult& AcceptAccountLinkInvitationResult::operator =
   if(jsonValue.ValueExists("AccountLink"))
   {
     m_accountLink = jsonValue.GetObject("AccountLink");
-
+    m_accountLinkHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

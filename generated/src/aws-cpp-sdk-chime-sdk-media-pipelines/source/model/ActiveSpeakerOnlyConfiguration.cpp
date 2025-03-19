@@ -18,14 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-ActiveSpeakerOnlyConfiguration::ActiveSpeakerOnlyConfiguration() : 
-    m_activeSpeakerPosition(ActiveSpeakerPosition::NOT_SET),
-    m_activeSpeakerPositionHasBeenSet(false)
-{
-}
-
 ActiveSpeakerOnlyConfiguration::ActiveSpeakerOnlyConfiguration(JsonView jsonValue)
-  : ActiveSpeakerOnlyConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ActiveSpeakerOnlyConfiguration& ActiveSpeakerOnlyConfiguration::operator =(JsonV
   if(jsonValue.ValueExists("ActiveSpeakerPosition"))
   {
     m_activeSpeakerPosition = ActiveSpeakerPositionMapper::GetActiveSpeakerPositionForName(jsonValue.GetString("ActiveSpeakerPosition"));
-
     m_activeSpeakerPositionHasBeenSet = true;
   }
-
   return *this;
 }
 

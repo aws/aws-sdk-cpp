@@ -45,7 +45,7 @@ namespace Model
   class RateBasedStatementManagedKeysIPSet
   {
   public:
-    AWS_WAFV2_API RateBasedStatementManagedKeysIPSet();
+    AWS_WAFV2_API RateBasedStatementManagedKeysIPSet() = default;
     AWS_WAFV2_API RateBasedStatementManagedKeysIPSet(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API RateBasedStatementManagedKeysIPSet& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,31 +56,28 @@ namespace Model
      * <p>The version of the IP addresses, either <code>IPV4</code> or
      * <code>IPV6</code>. </p>
      */
-    inline const IPAddressVersion& GetIPAddressVersion() const{ return m_iPAddressVersion; }
+    inline IPAddressVersion GetIPAddressVersion() const { return m_iPAddressVersion; }
     inline bool IPAddressVersionHasBeenSet() const { return m_iPAddressVersionHasBeenSet; }
-    inline void SetIPAddressVersion(const IPAddressVersion& value) { m_iPAddressVersionHasBeenSet = true; m_iPAddressVersion = value; }
-    inline void SetIPAddressVersion(IPAddressVersion&& value) { m_iPAddressVersionHasBeenSet = true; m_iPAddressVersion = std::move(value); }
-    inline RateBasedStatementManagedKeysIPSet& WithIPAddressVersion(const IPAddressVersion& value) { SetIPAddressVersion(value); return *this;}
-    inline RateBasedStatementManagedKeysIPSet& WithIPAddressVersion(IPAddressVersion&& value) { SetIPAddressVersion(std::move(value)); return *this;}
+    inline void SetIPAddressVersion(IPAddressVersion value) { m_iPAddressVersionHasBeenSet = true; m_iPAddressVersion = value; }
+    inline RateBasedStatementManagedKeysIPSet& WithIPAddressVersion(IPAddressVersion value) { SetIPAddressVersion(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The IP addresses that are currently blocked.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAddresses() const{ return m_addresses; }
+    inline const Aws::Vector<Aws::String>& GetAddresses() const { return m_addresses; }
     inline bool AddressesHasBeenSet() const { return m_addressesHasBeenSet; }
-    inline void SetAddresses(const Aws::Vector<Aws::String>& value) { m_addressesHasBeenSet = true; m_addresses = value; }
-    inline void SetAddresses(Aws::Vector<Aws::String>&& value) { m_addressesHasBeenSet = true; m_addresses = std::move(value); }
-    inline RateBasedStatementManagedKeysIPSet& WithAddresses(const Aws::Vector<Aws::String>& value) { SetAddresses(value); return *this;}
-    inline RateBasedStatementManagedKeysIPSet& WithAddresses(Aws::Vector<Aws::String>&& value) { SetAddresses(std::move(value)); return *this;}
-    inline RateBasedStatementManagedKeysIPSet& AddAddresses(const Aws::String& value) { m_addressesHasBeenSet = true; m_addresses.push_back(value); return *this; }
-    inline RateBasedStatementManagedKeysIPSet& AddAddresses(Aws::String&& value) { m_addressesHasBeenSet = true; m_addresses.push_back(std::move(value)); return *this; }
-    inline RateBasedStatementManagedKeysIPSet& AddAddresses(const char* value) { m_addressesHasBeenSet = true; m_addresses.push_back(value); return *this; }
+    template<typename AddressesT = Aws::Vector<Aws::String>>
+    void SetAddresses(AddressesT&& value) { m_addressesHasBeenSet = true; m_addresses = std::forward<AddressesT>(value); }
+    template<typename AddressesT = Aws::Vector<Aws::String>>
+    RateBasedStatementManagedKeysIPSet& WithAddresses(AddressesT&& value) { SetAddresses(std::forward<AddressesT>(value)); return *this;}
+    template<typename AddressesT = Aws::String>
+    RateBasedStatementManagedKeysIPSet& AddAddresses(AddressesT&& value) { m_addressesHasBeenSet = true; m_addresses.emplace_back(std::forward<AddressesT>(value)); return *this; }
     ///@}
   private:
 
-    IPAddressVersion m_iPAddressVersion;
+    IPAddressVersion m_iPAddressVersion{IPAddressVersion::NOT_SET};
     bool m_iPAddressVersionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_addresses;

@@ -18,15 +18,7 @@ namespace Omics
 namespace Model
 {
 
-ReadSetBatchError::ReadSetBatchError() : 
-    m_idHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 ReadSetBatchError::ReadSetBatchError(JsonView jsonValue)
-  : ReadSetBatchError()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ReadSetBatchError& ReadSetBatchError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("code"))
   {
     m_code = jsonValue.GetString("code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

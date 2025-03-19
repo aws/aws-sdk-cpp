@@ -30,7 +30,7 @@ namespace Model
   class GetTestRunStepResult
   {
   public:
-    AWS_APPTEST_API GetTestRunStepResult();
+    AWS_APPTEST_API GetTestRunStepResult() = default;
     AWS_APPTEST_API GetTestRunStepResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPTEST_API GetTestRunStepResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,47 +39,41 @@ namespace Model
     /**
      * <p>The step name of the test run step.</p>
      */
-    inline const Aws::String& GetStepName() const{ return m_stepName; }
-    inline void SetStepName(const Aws::String& value) { m_stepName = value; }
-    inline void SetStepName(Aws::String&& value) { m_stepName = std::move(value); }
-    inline void SetStepName(const char* value) { m_stepName.assign(value); }
-    inline GetTestRunStepResult& WithStepName(const Aws::String& value) { SetStepName(value); return *this;}
-    inline GetTestRunStepResult& WithStepName(Aws::String&& value) { SetStepName(std::move(value)); return *this;}
-    inline GetTestRunStepResult& WithStepName(const char* value) { SetStepName(value); return *this;}
+    inline const Aws::String& GetStepName() const { return m_stepName; }
+    template<typename StepNameT = Aws::String>
+    void SetStepName(StepNameT&& value) { m_stepNameHasBeenSet = true; m_stepName = std::forward<StepNameT>(value); }
+    template<typename StepNameT = Aws::String>
+    GetTestRunStepResult& WithStepName(StepNameT&& value) { SetStepName(std::forward<StepNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The test run ID of the test run step.</p>
      */
-    inline const Aws::String& GetTestRunId() const{ return m_testRunId; }
-    inline void SetTestRunId(const Aws::String& value) { m_testRunId = value; }
-    inline void SetTestRunId(Aws::String&& value) { m_testRunId = std::move(value); }
-    inline void SetTestRunId(const char* value) { m_testRunId.assign(value); }
-    inline GetTestRunStepResult& WithTestRunId(const Aws::String& value) { SetTestRunId(value); return *this;}
-    inline GetTestRunStepResult& WithTestRunId(Aws::String&& value) { SetTestRunId(std::move(value)); return *this;}
-    inline GetTestRunStepResult& WithTestRunId(const char* value) { SetTestRunId(value); return *this;}
+    inline const Aws::String& GetTestRunId() const { return m_testRunId; }
+    template<typename TestRunIdT = Aws::String>
+    void SetTestRunId(TestRunIdT&& value) { m_testRunIdHasBeenSet = true; m_testRunId = std::forward<TestRunIdT>(value); }
+    template<typename TestRunIdT = Aws::String>
+    GetTestRunStepResult& WithTestRunId(TestRunIdT&& value) { SetTestRunId(std::forward<TestRunIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The test case ID of the test run step.</p>
      */
-    inline const Aws::String& GetTestCaseId() const{ return m_testCaseId; }
-    inline void SetTestCaseId(const Aws::String& value) { m_testCaseId = value; }
-    inline void SetTestCaseId(Aws::String&& value) { m_testCaseId = std::move(value); }
-    inline void SetTestCaseId(const char* value) { m_testCaseId.assign(value); }
-    inline GetTestRunStepResult& WithTestCaseId(const Aws::String& value) { SetTestCaseId(value); return *this;}
-    inline GetTestRunStepResult& WithTestCaseId(Aws::String&& value) { SetTestCaseId(std::move(value)); return *this;}
-    inline GetTestRunStepResult& WithTestCaseId(const char* value) { SetTestCaseId(value); return *this;}
+    inline const Aws::String& GetTestCaseId() const { return m_testCaseId; }
+    template<typename TestCaseIdT = Aws::String>
+    void SetTestCaseId(TestCaseIdT&& value) { m_testCaseIdHasBeenSet = true; m_testCaseId = std::forward<TestCaseIdT>(value); }
+    template<typename TestCaseIdT = Aws::String>
+    GetTestRunStepResult& WithTestCaseId(TestCaseIdT&& value) { SetTestCaseId(std::forward<TestCaseIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The test case version of the test run step.</p>
      */
-    inline int GetTestCaseVersion() const{ return m_testCaseVersion; }
-    inline void SetTestCaseVersion(int value) { m_testCaseVersion = value; }
+    inline int GetTestCaseVersion() const { return m_testCaseVersion; }
+    inline void SetTestCaseVersion(int value) { m_testCaseVersionHasBeenSet = true; m_testCaseVersion = value; }
     inline GetTestRunStepResult& WithTestCaseVersion(int value) { SetTestCaseVersion(value); return *this;}
     ///@}
 
@@ -87,21 +81,19 @@ namespace Model
     /**
      * <p>The test suite ID of the test run step.</p>
      */
-    inline const Aws::String& GetTestSuiteId() const{ return m_testSuiteId; }
-    inline void SetTestSuiteId(const Aws::String& value) { m_testSuiteId = value; }
-    inline void SetTestSuiteId(Aws::String&& value) { m_testSuiteId = std::move(value); }
-    inline void SetTestSuiteId(const char* value) { m_testSuiteId.assign(value); }
-    inline GetTestRunStepResult& WithTestSuiteId(const Aws::String& value) { SetTestSuiteId(value); return *this;}
-    inline GetTestRunStepResult& WithTestSuiteId(Aws::String&& value) { SetTestSuiteId(std::move(value)); return *this;}
-    inline GetTestRunStepResult& WithTestSuiteId(const char* value) { SetTestSuiteId(value); return *this;}
+    inline const Aws::String& GetTestSuiteId() const { return m_testSuiteId; }
+    template<typename TestSuiteIdT = Aws::String>
+    void SetTestSuiteId(TestSuiteIdT&& value) { m_testSuiteIdHasBeenSet = true; m_testSuiteId = std::forward<TestSuiteIdT>(value); }
+    template<typename TestSuiteIdT = Aws::String>
+    GetTestRunStepResult& WithTestSuiteId(TestSuiteIdT&& value) { SetTestSuiteId(std::forward<TestSuiteIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The test suite version of the test run step.</p>
      */
-    inline int GetTestSuiteVersion() const{ return m_testSuiteVersion; }
-    inline void SetTestSuiteVersion(int value) { m_testSuiteVersion = value; }
+    inline int GetTestSuiteVersion() const { return m_testSuiteVersion; }
+    inline void SetTestSuiteVersion(int value) { m_testSuiteVersionHasBeenSet = true; m_testSuiteVersion = value; }
     inline GetTestRunStepResult& WithTestSuiteVersion(int value) { SetTestSuiteVersion(value); return *this;}
     ///@}
 
@@ -109,8 +101,8 @@ namespace Model
     /**
      * <p>The before steps of the test run step.</p>
      */
-    inline bool GetBeforeStep() const{ return m_beforeStep; }
-    inline void SetBeforeStep(bool value) { m_beforeStep = value; }
+    inline bool GetBeforeStep() const { return m_beforeStep; }
+    inline void SetBeforeStep(bool value) { m_beforeStepHasBeenSet = true; m_beforeStep = value; }
     inline GetTestRunStepResult& WithBeforeStep(bool value) { SetBeforeStep(value); return *this;}
     ///@}
 
@@ -118,8 +110,8 @@ namespace Model
     /**
      * <p>The after steps of the test run step.</p>
      */
-    inline bool GetAfterStep() const{ return m_afterStep; }
-    inline void SetAfterStep(bool value) { m_afterStep = value; }
+    inline bool GetAfterStep() const { return m_afterStep; }
+    inline void SetAfterStep(bool value) { m_afterStepHasBeenSet = true; m_afterStep = value; }
     inline GetTestRunStepResult& WithAfterStep(bool value) { SetAfterStep(value); return *this;}
     ///@}
 
@@ -127,98 +119,106 @@ namespace Model
     /**
      * <p>The status of the test run step.</p>
      */
-    inline const StepRunStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const StepRunStatus& value) { m_status = value; }
-    inline void SetStatus(StepRunStatus&& value) { m_status = std::move(value); }
-    inline GetTestRunStepResult& WithStatus(const StepRunStatus& value) { SetStatus(value); return *this;}
-    inline GetTestRunStepResult& WithStatus(StepRunStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline StepRunStatus GetStatus() const { return m_status; }
+    inline void SetStatus(StepRunStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetTestRunStepResult& WithStatus(StepRunStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status reason of the test run step.</p>
      */
-    inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
-    inline void SetStatusReason(const Aws::String& value) { m_statusReason = value; }
-    inline void SetStatusReason(Aws::String&& value) { m_statusReason = std::move(value); }
-    inline void SetStatusReason(const char* value) { m_statusReason.assign(value); }
-    inline GetTestRunStepResult& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
-    inline GetTestRunStepResult& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
-    inline GetTestRunStepResult& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
+    inline const Aws::String& GetStatusReason() const { return m_statusReason; }
+    template<typename StatusReasonT = Aws::String>
+    void SetStatusReason(StatusReasonT&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::forward<StatusReasonT>(value); }
+    template<typename StatusReasonT = Aws::String>
+    GetTestRunStepResult& WithStatusReason(StatusReasonT&& value) { SetStatusReason(std::forward<StatusReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The run start time of the test run step.</p>
      */
-    inline const Aws::Utils::DateTime& GetRunStartTime() const{ return m_runStartTime; }
-    inline void SetRunStartTime(const Aws::Utils::DateTime& value) { m_runStartTime = value; }
-    inline void SetRunStartTime(Aws::Utils::DateTime&& value) { m_runStartTime = std::move(value); }
-    inline GetTestRunStepResult& WithRunStartTime(const Aws::Utils::DateTime& value) { SetRunStartTime(value); return *this;}
-    inline GetTestRunStepResult& WithRunStartTime(Aws::Utils::DateTime&& value) { SetRunStartTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetRunStartTime() const { return m_runStartTime; }
+    template<typename RunStartTimeT = Aws::Utils::DateTime>
+    void SetRunStartTime(RunStartTimeT&& value) { m_runStartTimeHasBeenSet = true; m_runStartTime = std::forward<RunStartTimeT>(value); }
+    template<typename RunStartTimeT = Aws::Utils::DateTime>
+    GetTestRunStepResult& WithRunStartTime(RunStartTimeT&& value) { SetRunStartTime(std::forward<RunStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The run end time of the test run step.</p>
      */
-    inline const Aws::Utils::DateTime& GetRunEndTime() const{ return m_runEndTime; }
-    inline void SetRunEndTime(const Aws::Utils::DateTime& value) { m_runEndTime = value; }
-    inline void SetRunEndTime(Aws::Utils::DateTime&& value) { m_runEndTime = std::move(value); }
-    inline GetTestRunStepResult& WithRunEndTime(const Aws::Utils::DateTime& value) { SetRunEndTime(value); return *this;}
-    inline GetTestRunStepResult& WithRunEndTime(Aws::Utils::DateTime&& value) { SetRunEndTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetRunEndTime() const { return m_runEndTime; }
+    template<typename RunEndTimeT = Aws::Utils::DateTime>
+    void SetRunEndTime(RunEndTimeT&& value) { m_runEndTimeHasBeenSet = true; m_runEndTime = std::forward<RunEndTimeT>(value); }
+    template<typename RunEndTimeT = Aws::Utils::DateTime>
+    GetTestRunStepResult& WithRunEndTime(RunEndTimeT&& value) { SetRunEndTime(std::forward<RunEndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The step run summary of the test run step.</p>
      */
-    inline const StepRunSummary& GetStepRunSummary() const{ return m_stepRunSummary; }
-    inline void SetStepRunSummary(const StepRunSummary& value) { m_stepRunSummary = value; }
-    inline void SetStepRunSummary(StepRunSummary&& value) { m_stepRunSummary = std::move(value); }
-    inline GetTestRunStepResult& WithStepRunSummary(const StepRunSummary& value) { SetStepRunSummary(value); return *this;}
-    inline GetTestRunStepResult& WithStepRunSummary(StepRunSummary&& value) { SetStepRunSummary(std::move(value)); return *this;}
+    inline const StepRunSummary& GetStepRunSummary() const { return m_stepRunSummary; }
+    template<typename StepRunSummaryT = StepRunSummary>
+    void SetStepRunSummary(StepRunSummaryT&& value) { m_stepRunSummaryHasBeenSet = true; m_stepRunSummary = std::forward<StepRunSummaryT>(value); }
+    template<typename StepRunSummaryT = StepRunSummary>
+    GetTestRunStepResult& WithStepRunSummary(StepRunSummaryT&& value) { SetStepRunSummary(std::forward<StepRunSummaryT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetTestRunStepResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetTestRunStepResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetTestRunStepResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetTestRunStepResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_stepName;
+    bool m_stepNameHasBeenSet = false;
 
     Aws::String m_testRunId;
+    bool m_testRunIdHasBeenSet = false;
 
     Aws::String m_testCaseId;
+    bool m_testCaseIdHasBeenSet = false;
 
-    int m_testCaseVersion;
+    int m_testCaseVersion{0};
+    bool m_testCaseVersionHasBeenSet = false;
 
     Aws::String m_testSuiteId;
+    bool m_testSuiteIdHasBeenSet = false;
 
-    int m_testSuiteVersion;
+    int m_testSuiteVersion{0};
+    bool m_testSuiteVersionHasBeenSet = false;
 
-    bool m_beforeStep;
+    bool m_beforeStep{false};
+    bool m_beforeStepHasBeenSet = false;
 
-    bool m_afterStep;
+    bool m_afterStep{false};
+    bool m_afterStepHasBeenSet = false;
 
-    StepRunStatus m_status;
+    StepRunStatus m_status{StepRunStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;
+    bool m_statusReasonHasBeenSet = false;
 
-    Aws::Utils::DateTime m_runStartTime;
+    Aws::Utils::DateTime m_runStartTime{};
+    bool m_runStartTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_runEndTime;
+    Aws::Utils::DateTime m_runEndTime{};
+    bool m_runEndTimeHasBeenSet = false;
 
     StepRunSummary m_stepRunSummary;
+    bool m_stepRunSummaryHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,23 +18,7 @@ namespace MediaConnect
 namespace Model
 {
 
-FmtpRequest::FmtpRequest() : 
-    m_channelOrderHasBeenSet(false),
-    m_colorimetry(Colorimetry::NOT_SET),
-    m_colorimetryHasBeenSet(false),
-    m_exactFramerateHasBeenSet(false),
-    m_parHasBeenSet(false),
-    m_range(Range::NOT_SET),
-    m_rangeHasBeenSet(false),
-    m_scanMode(ScanMode::NOT_SET),
-    m_scanModeHasBeenSet(false),
-    m_tcs(Tcs::NOT_SET),
-    m_tcsHasBeenSet(false)
-{
-}
-
 FmtpRequest::FmtpRequest(JsonView jsonValue)
-  : FmtpRequest()
 {
   *this = jsonValue;
 }
@@ -44,52 +28,38 @@ FmtpRequest& FmtpRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("channelOrder"))
   {
     m_channelOrder = jsonValue.GetString("channelOrder");
-
     m_channelOrderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("colorimetry"))
   {
     m_colorimetry = ColorimetryMapper::GetColorimetryForName(jsonValue.GetString("colorimetry"));
-
     m_colorimetryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("exactFramerate"))
   {
     m_exactFramerate = jsonValue.GetString("exactFramerate");
-
     m_exactFramerateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("par"))
   {
     m_par = jsonValue.GetString("par");
-
     m_parHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("range"))
   {
     m_range = RangeMapper::GetRangeForName(jsonValue.GetString("range"));
-
     m_rangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scanMode"))
   {
     m_scanMode = ScanModeMapper::GetScanModeForName(jsonValue.GetString("scanMode"));
-
     m_scanModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tcs"))
   {
     m_tcs = TcsMapper::GetTcsForName(jsonValue.GetString("tcs"));
-
     m_tcsHasBeenSet = true;
   }
-
   return *this;
 }
 

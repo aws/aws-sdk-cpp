@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListCertificateProvidersRequest::ListCertificateProvidersRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_ascendingOrder(false),
-    m_ascendingOrderHasBeenSet(false)
-{
-}
-
 Aws::String ListCertificateProvidersRequest::SerializePayload() const
 {
   return {};

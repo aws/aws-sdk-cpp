@@ -18,13 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-PartitionField::PartitionField() : 
-    m_sourceNameHasBeenSet(false)
-{
-}
-
 PartitionField::PartitionField(JsonView jsonValue)
-  : PartitionField()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PartitionField& PartitionField::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SourceName"))
   {
     m_sourceName = jsonValue.GetString("SourceName");
-
     m_sourceNameHasBeenSet = true;
   }
-
   return *this;
 }
 

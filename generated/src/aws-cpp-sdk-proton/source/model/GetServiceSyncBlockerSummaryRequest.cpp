@@ -12,12 +12,6 @@ using namespace Aws::Proton::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetServiceSyncBlockerSummaryRequest::GetServiceSyncBlockerSummaryRequest() : 
-    m_serviceInstanceNameHasBeenSet(false),
-    m_serviceNameHasBeenSet(false)
-{
-}
-
 Aws::String GetServiceSyncBlockerSummaryRequest::SerializePayload() const
 {
   JsonValue payload;

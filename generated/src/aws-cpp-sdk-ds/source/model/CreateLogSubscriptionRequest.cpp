@@ -12,12 +12,6 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateLogSubscriptionRequest::CreateLogSubscriptionRequest() : 
-    m_directoryIdHasBeenSet(false),
-    m_logGroupNameHasBeenSet(false)
-{
-}
-
 Aws::String CreateLogSubscriptionRequest::SerializePayload() const
 {
   JsonValue payload;

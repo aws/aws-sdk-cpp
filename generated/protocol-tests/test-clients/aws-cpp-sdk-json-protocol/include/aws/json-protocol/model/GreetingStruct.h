@@ -26,7 +26,7 @@ namespace Model
   class GreetingStruct
   {
   public:
-    AWS_JSONPROTOCOL_API GreetingStruct();
+    AWS_JSONPROTOCOL_API GreetingStruct() = default;
     AWS_JSONPROTOCOL_API GreetingStruct(Aws::Utils::Json::JsonView jsonValue);
     AWS_JSONPROTOCOL_API GreetingStruct& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_JSONPROTOCOL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -34,14 +34,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetHi() const{ return m_hi; }
+    inline const Aws::String& GetHi() const { return m_hi; }
     inline bool HiHasBeenSet() const { return m_hiHasBeenSet; }
-    inline void SetHi(const Aws::String& value) { m_hiHasBeenSet = true; m_hi = value; }
-    inline void SetHi(Aws::String&& value) { m_hiHasBeenSet = true; m_hi = std::move(value); }
-    inline void SetHi(const char* value) { m_hiHasBeenSet = true; m_hi.assign(value); }
-    inline GreetingStruct& WithHi(const Aws::String& value) { SetHi(value); return *this;}
-    inline GreetingStruct& WithHi(Aws::String&& value) { SetHi(std::move(value)); return *this;}
-    inline GreetingStruct& WithHi(const char* value) { SetHi(value); return *this;}
+    template<typename HiT = Aws::String>
+    void SetHi(HiT&& value) { m_hiHasBeenSet = true; m_hi = std::forward<HiT>(value); }
+    template<typename HiT = Aws::String>
+    GreetingStruct& WithHi(HiT&& value) { SetHi(std::forward<HiT>(value)); return *this;}
     ///@}
   private:
 

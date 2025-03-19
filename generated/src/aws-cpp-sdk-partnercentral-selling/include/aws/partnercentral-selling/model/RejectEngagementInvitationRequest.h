@@ -21,7 +21,7 @@ namespace Model
   class RejectEngagementInvitationRequest : public PartnerCentralSellingRequest
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API RejectEngagementInvitationRequest();
+    AWS_PARTNERCENTRALSELLING_API RejectEngagementInvitationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * Acceptable values are <code>AWS</code> or <code>Sandbox</code>, and these values
      * determine the environment in which the opportunity is managed.</p>
      */
-    inline const Aws::String& GetCatalog() const{ return m_catalog; }
+    inline const Aws::String& GetCatalog() const { return m_catalog; }
     inline bool CatalogHasBeenSet() const { return m_catalogHasBeenSet; }
-    inline void SetCatalog(const Aws::String& value) { m_catalogHasBeenSet = true; m_catalog = value; }
-    inline void SetCatalog(Aws::String&& value) { m_catalogHasBeenSet = true; m_catalog = std::move(value); }
-    inline void SetCatalog(const char* value) { m_catalogHasBeenSet = true; m_catalog.assign(value); }
-    inline RejectEngagementInvitationRequest& WithCatalog(const Aws::String& value) { SetCatalog(value); return *this;}
-    inline RejectEngagementInvitationRequest& WithCatalog(Aws::String&& value) { SetCatalog(std::move(value)); return *this;}
-    inline RejectEngagementInvitationRequest& WithCatalog(const char* value) { SetCatalog(value); return *this;}
+    template<typename CatalogT = Aws::String>
+    void SetCatalog(CatalogT&& value) { m_catalogHasBeenSet = true; m_catalog = std::forward<CatalogT>(value); }
+    template<typename CatalogT = Aws::String>
+    RejectEngagementInvitationRequest& WithCatalog(CatalogT&& value) { SetCatalog(std::forward<CatalogT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * <code>EngagementInvitation</code>. Providing the correct identifier helps to
      * ensure that the intended invitation is rejected.</p>
      */
-    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-    inline RejectEngagementInvitationRequest& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-    inline RejectEngagementInvitationRequest& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline RejectEngagementInvitationRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    RejectEngagementInvitationRequest& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,14 +74,12 @@ namespace Model
      * The opportunity is a duplicate of an existing referral.</p> </li> <li> <p>
      * <i>Other:</i> Any reason not covered by other values.</p> </li> </ul>
      */
-    inline const Aws::String& GetRejectionReason() const{ return m_rejectionReason; }
+    inline const Aws::String& GetRejectionReason() const { return m_rejectionReason; }
     inline bool RejectionReasonHasBeenSet() const { return m_rejectionReasonHasBeenSet; }
-    inline void SetRejectionReason(const Aws::String& value) { m_rejectionReasonHasBeenSet = true; m_rejectionReason = value; }
-    inline void SetRejectionReason(Aws::String&& value) { m_rejectionReasonHasBeenSet = true; m_rejectionReason = std::move(value); }
-    inline void SetRejectionReason(const char* value) { m_rejectionReasonHasBeenSet = true; m_rejectionReason.assign(value); }
-    inline RejectEngagementInvitationRequest& WithRejectionReason(const Aws::String& value) { SetRejectionReason(value); return *this;}
-    inline RejectEngagementInvitationRequest& WithRejectionReason(Aws::String&& value) { SetRejectionReason(std::move(value)); return *this;}
-    inline RejectEngagementInvitationRequest& WithRejectionReason(const char* value) { SetRejectionReason(value); return *this;}
+    template<typename RejectionReasonT = Aws::String>
+    void SetRejectionReason(RejectionReasonT&& value) { m_rejectionReasonHasBeenSet = true; m_rejectionReason = std::forward<RejectionReasonT>(value); }
+    template<typename RejectionReasonT = Aws::String>
+    RejectEngagementInvitationRequest& WithRejectionReason(RejectionReasonT&& value) { SetRejectionReason(std::forward<RejectionReasonT>(value)); return *this;}
     ///@}
   private:
 

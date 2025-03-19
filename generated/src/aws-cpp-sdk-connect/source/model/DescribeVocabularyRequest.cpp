@@ -12,12 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeVocabularyRequest::DescribeVocabularyRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_vocabularyIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeVocabularyRequest::SerializePayload() const
 {
   return {};

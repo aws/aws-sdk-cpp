@@ -12,12 +12,6 @@ using namespace Aws::ChimeSDKMeetings::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAttendeeRequest::DeleteAttendeeRequest() : 
-    m_meetingIdHasBeenSet(false),
-    m_attendeeIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAttendeeRequest::SerializePayload() const
 {
   return {};

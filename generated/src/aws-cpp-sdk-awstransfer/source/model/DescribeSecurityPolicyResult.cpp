@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeSecurityPolicyResult::DescribeSecurityPolicyResult()
-{
-}
-
 DescribeSecurityPolicyResult::DescribeSecurityPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeSecurityPolicyResult& DescribeSecurityPolicyResult::operator =(const Aws
   if(jsonValue.ValueExists("SecurityPolicy"))
   {
     m_securityPolicy = jsonValue.GetObject("SecurityPolicy");
-
+    m_securityPolicyHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

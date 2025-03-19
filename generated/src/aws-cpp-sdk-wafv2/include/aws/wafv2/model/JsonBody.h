@@ -43,7 +43,7 @@ namespace Model
   class JsonBody
   {
   public:
-    AWS_WAFV2_API JsonBody();
+    AWS_WAFV2_API JsonBody() = default;
     AWS_WAFV2_API JsonBody(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API JsonBody& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,12 +54,12 @@ namespace Model
      * <p>The patterns to look for in the JSON body. WAF inspects the results of these
      * pattern matches against the rule inspection criteria. </p>
      */
-    inline const JsonMatchPattern& GetMatchPattern() const{ return m_matchPattern; }
+    inline const JsonMatchPattern& GetMatchPattern() const { return m_matchPattern; }
     inline bool MatchPatternHasBeenSet() const { return m_matchPatternHasBeenSet; }
-    inline void SetMatchPattern(const JsonMatchPattern& value) { m_matchPatternHasBeenSet = true; m_matchPattern = value; }
-    inline void SetMatchPattern(JsonMatchPattern&& value) { m_matchPatternHasBeenSet = true; m_matchPattern = std::move(value); }
-    inline JsonBody& WithMatchPattern(const JsonMatchPattern& value) { SetMatchPattern(value); return *this;}
-    inline JsonBody& WithMatchPattern(JsonMatchPattern&& value) { SetMatchPattern(std::move(value)); return *this;}
+    template<typename MatchPatternT = JsonMatchPattern>
+    void SetMatchPattern(MatchPatternT&& value) { m_matchPatternHasBeenSet = true; m_matchPattern = std::forward<MatchPatternT>(value); }
+    template<typename MatchPatternT = JsonMatchPattern>
+    JsonBody& WithMatchPattern(MatchPatternT&& value) { SetMatchPattern(std::forward<MatchPatternT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +72,10 @@ namespace Model
      * <code>AND</code> statement to combine two match rules, one that inspects the
      * keys and another that inspects the values. </p>
      */
-    inline const JsonMatchScope& GetMatchScope() const{ return m_matchScope; }
+    inline JsonMatchScope GetMatchScope() const { return m_matchScope; }
     inline bool MatchScopeHasBeenSet() const { return m_matchScopeHasBeenSet; }
-    inline void SetMatchScope(const JsonMatchScope& value) { m_matchScopeHasBeenSet = true; m_matchScope = value; }
-    inline void SetMatchScope(JsonMatchScope&& value) { m_matchScopeHasBeenSet = true; m_matchScope = std::move(value); }
-    inline JsonBody& WithMatchScope(const JsonMatchScope& value) { SetMatchScope(value); return *this;}
-    inline JsonBody& WithMatchScope(JsonMatchScope&& value) { SetMatchScope(std::move(value)); return *this;}
+    inline void SetMatchScope(JsonMatchScope value) { m_matchScopeHasBeenSet = true; m_matchScope = value; }
+    inline JsonBody& WithMatchScope(JsonMatchScope value) { SetMatchScope(value); return *this;}
     ///@}
 
     ///@{
@@ -97,12 +95,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-fields-list.html#waf-rule-statement-request-component-json-body">JSON
      * body</a> in the <i>WAF Developer Guide</i>.</p> 
      */
-    inline const BodyParsingFallbackBehavior& GetInvalidFallbackBehavior() const{ return m_invalidFallbackBehavior; }
+    inline BodyParsingFallbackBehavior GetInvalidFallbackBehavior() const { return m_invalidFallbackBehavior; }
     inline bool InvalidFallbackBehaviorHasBeenSet() const { return m_invalidFallbackBehaviorHasBeenSet; }
-    inline void SetInvalidFallbackBehavior(const BodyParsingFallbackBehavior& value) { m_invalidFallbackBehaviorHasBeenSet = true; m_invalidFallbackBehavior = value; }
-    inline void SetInvalidFallbackBehavior(BodyParsingFallbackBehavior&& value) { m_invalidFallbackBehaviorHasBeenSet = true; m_invalidFallbackBehavior = std::move(value); }
-    inline JsonBody& WithInvalidFallbackBehavior(const BodyParsingFallbackBehavior& value) { SetInvalidFallbackBehavior(value); return *this;}
-    inline JsonBody& WithInvalidFallbackBehavior(BodyParsingFallbackBehavior&& value) { SetInvalidFallbackBehavior(std::move(value)); return *this;}
+    inline void SetInvalidFallbackBehavior(BodyParsingFallbackBehavior value) { m_invalidFallbackBehaviorHasBeenSet = true; m_invalidFallbackBehavior = value; }
+    inline JsonBody& WithInvalidFallbackBehavior(BodyParsingFallbackBehavior value) { SetInvalidFallbackBehavior(value); return *this;}
     ///@}
 
     ///@{
@@ -127,25 +123,23 @@ namespace Model
      * action settings, so that you block any request whose body is over the limit.
      * </p> <p>Default: <code>CONTINUE</code> </p>
      */
-    inline const OversizeHandling& GetOversizeHandling() const{ return m_oversizeHandling; }
+    inline OversizeHandling GetOversizeHandling() const { return m_oversizeHandling; }
     inline bool OversizeHandlingHasBeenSet() const { return m_oversizeHandlingHasBeenSet; }
-    inline void SetOversizeHandling(const OversizeHandling& value) { m_oversizeHandlingHasBeenSet = true; m_oversizeHandling = value; }
-    inline void SetOversizeHandling(OversizeHandling&& value) { m_oversizeHandlingHasBeenSet = true; m_oversizeHandling = std::move(value); }
-    inline JsonBody& WithOversizeHandling(const OversizeHandling& value) { SetOversizeHandling(value); return *this;}
-    inline JsonBody& WithOversizeHandling(OversizeHandling&& value) { SetOversizeHandling(std::move(value)); return *this;}
+    inline void SetOversizeHandling(OversizeHandling value) { m_oversizeHandlingHasBeenSet = true; m_oversizeHandling = value; }
+    inline JsonBody& WithOversizeHandling(OversizeHandling value) { SetOversizeHandling(value); return *this;}
     ///@}
   private:
 
     JsonMatchPattern m_matchPattern;
     bool m_matchPatternHasBeenSet = false;
 
-    JsonMatchScope m_matchScope;
+    JsonMatchScope m_matchScope{JsonMatchScope::NOT_SET};
     bool m_matchScopeHasBeenSet = false;
 
-    BodyParsingFallbackBehavior m_invalidFallbackBehavior;
+    BodyParsingFallbackBehavior m_invalidFallbackBehavior{BodyParsingFallbackBehavior::NOT_SET};
     bool m_invalidFallbackBehaviorHasBeenSet = false;
 
-    OversizeHandling m_oversizeHandling;
+    OversizeHandling m_oversizeHandling{OversizeHandling::NOT_SET};
     bool m_oversizeHandlingHasBeenSet = false;
   };
 

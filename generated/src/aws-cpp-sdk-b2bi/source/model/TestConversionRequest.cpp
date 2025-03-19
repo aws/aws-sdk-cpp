@@ -12,12 +12,6 @@ using namespace Aws::B2BI::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-TestConversionRequest::TestConversionRequest() : 
-    m_sourceHasBeenSet(false),
-    m_targetHasBeenSet(false)
-{
-}
-
 Aws::String TestConversionRequest::SerializePayload() const
 {
   JsonValue payload;

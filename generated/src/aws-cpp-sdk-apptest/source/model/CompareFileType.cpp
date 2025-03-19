@@ -18,14 +18,7 @@ namespace AppTest
 namespace Model
 {
 
-CompareFileType::CompareFileType() : 
-    m_datasetsHasBeenSet(false),
-    m_databaseCDCHasBeenSet(false)
-{
-}
-
 CompareFileType::CompareFileType(JsonView jsonValue)
-  : CompareFileType()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CompareFileType& CompareFileType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("datasets"))
   {
     m_datasets = jsonValue.GetObject("datasets");
-
     m_datasetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("databaseCDC"))
   {
     m_databaseCDC = jsonValue.GetObject("databaseCDC");
-
     m_databaseCDCHasBeenSet = true;
   }
-
   return *this;
 }
 

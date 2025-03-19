@@ -18,13 +18,7 @@ namespace IoTTwinMaker
 namespace Model
 {
 
-IotSiteWiseSourceConfiguration::IotSiteWiseSourceConfiguration() : 
-    m_filtersHasBeenSet(false)
-{
-}
-
 IotSiteWiseSourceConfiguration::IotSiteWiseSourceConfiguration(JsonView jsonValue)
-  : IotSiteWiseSourceConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ IotSiteWiseSourceConfiguration& IotSiteWiseSourceConfiguration::operator =(JsonV
     }
     m_filtersHasBeenSet = true;
   }
-
   return *this;
 }
 

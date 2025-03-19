@@ -36,7 +36,7 @@ namespace Model
   class StreamingDistributionConfig
   {
   public:
-    AWS_CLOUDFRONT_API StreamingDistributionConfig();
+    AWS_CLOUDFRONT_API StreamingDistributionConfig() = default;
     AWS_CLOUDFRONT_API StreamingDistributionConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API StreamingDistributionConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -53,14 +53,12 @@ namespace Model
      * request to create a distribution, CloudFront returns a
      * <code>DistributionAlreadyExists</code> error.</p>
      */
-    inline const Aws::String& GetCallerReference() const{ return m_callerReference; }
+    inline const Aws::String& GetCallerReference() const { return m_callerReference; }
     inline bool CallerReferenceHasBeenSet() const { return m_callerReferenceHasBeenSet; }
-    inline void SetCallerReference(const Aws::String& value) { m_callerReferenceHasBeenSet = true; m_callerReference = value; }
-    inline void SetCallerReference(Aws::String&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = std::move(value); }
-    inline void SetCallerReference(const char* value) { m_callerReferenceHasBeenSet = true; m_callerReference.assign(value); }
-    inline StreamingDistributionConfig& WithCallerReference(const Aws::String& value) { SetCallerReference(value); return *this;}
-    inline StreamingDistributionConfig& WithCallerReference(Aws::String&& value) { SetCallerReference(std::move(value)); return *this;}
-    inline StreamingDistributionConfig& WithCallerReference(const char* value) { SetCallerReference(value); return *this;}
+    template<typename CallerReferenceT = Aws::String>
+    void SetCallerReference(CallerReferenceT&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = std::forward<CallerReferenceT>(value); }
+    template<typename CallerReferenceT = Aws::String>
+    StreamingDistributionConfig& WithCallerReference(CallerReferenceT&& value) { SetCallerReference(std::forward<CallerReferenceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,12 +66,12 @@ namespace Model
      * <p>A complex type that contains information about the Amazon S3 bucket from
      * which you want CloudFront to get your media files for distribution.</p>
      */
-    inline const S3Origin& GetS3Origin() const{ return m_s3Origin; }
+    inline const S3Origin& GetS3Origin() const { return m_s3Origin; }
     inline bool S3OriginHasBeenSet() const { return m_s3OriginHasBeenSet; }
-    inline void SetS3Origin(const S3Origin& value) { m_s3OriginHasBeenSet = true; m_s3Origin = value; }
-    inline void SetS3Origin(S3Origin&& value) { m_s3OriginHasBeenSet = true; m_s3Origin = std::move(value); }
-    inline StreamingDistributionConfig& WithS3Origin(const S3Origin& value) { SetS3Origin(value); return *this;}
-    inline StreamingDistributionConfig& WithS3Origin(S3Origin&& value) { SetS3Origin(std::move(value)); return *this;}
+    template<typename S3OriginT = S3Origin>
+    void SetS3Origin(S3OriginT&& value) { m_s3OriginHasBeenSet = true; m_s3Origin = std::forward<S3OriginT>(value); }
+    template<typename S3OriginT = S3Origin>
+    StreamingDistributionConfig& WithS3Origin(S3OriginT&& value) { SetS3Origin(std::forward<S3OriginT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,26 +79,24 @@ namespace Model
      * <p>A complex type that contains information about CNAMEs (alternate domain
      * names), if any, for this streaming distribution.</p>
      */
-    inline const Aliases& GetAliases() const{ return m_aliases; }
+    inline const Aliases& GetAliases() const { return m_aliases; }
     inline bool AliasesHasBeenSet() const { return m_aliasesHasBeenSet; }
-    inline void SetAliases(const Aliases& value) { m_aliasesHasBeenSet = true; m_aliases = value; }
-    inline void SetAliases(Aliases&& value) { m_aliasesHasBeenSet = true; m_aliases = std::move(value); }
-    inline StreamingDistributionConfig& WithAliases(const Aliases& value) { SetAliases(value); return *this;}
-    inline StreamingDistributionConfig& WithAliases(Aliases&& value) { SetAliases(std::move(value)); return *this;}
+    template<typename AliasesT = Aliases>
+    void SetAliases(AliasesT&& value) { m_aliasesHasBeenSet = true; m_aliases = std::forward<AliasesT>(value); }
+    template<typename AliasesT = Aliases>
+    StreamingDistributionConfig& WithAliases(AliasesT&& value) { SetAliases(std::forward<AliasesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Any comments you want to include about the streaming distribution.</p>
      */
-    inline const Aws::String& GetComment() const{ return m_comment; }
+    inline const Aws::String& GetComment() const { return m_comment; }
     inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
-    inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
-    inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
-    inline void SetComment(const char* value) { m_commentHasBeenSet = true; m_comment.assign(value); }
-    inline StreamingDistributionConfig& WithComment(const Aws::String& value) { SetComment(value); return *this;}
-    inline StreamingDistributionConfig& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
-    inline StreamingDistributionConfig& WithComment(const char* value) { SetComment(value); return *this;}
+    template<typename CommentT = Aws::String>
+    void SetComment(CommentT&& value) { m_commentHasBeenSet = true; m_comment = std::forward<CommentT>(value); }
+    template<typename CommentT = Aws::String>
+    StreamingDistributionConfig& WithComment(CommentT&& value) { SetComment(std::forward<CommentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,12 +104,12 @@ namespace Model
      * <p>A complex type that controls whether access logs are written for the
      * streaming distribution.</p>
      */
-    inline const StreamingLoggingConfig& GetLogging() const{ return m_logging; }
+    inline const StreamingLoggingConfig& GetLogging() const { return m_logging; }
     inline bool LoggingHasBeenSet() const { return m_loggingHasBeenSet; }
-    inline void SetLogging(const StreamingLoggingConfig& value) { m_loggingHasBeenSet = true; m_logging = value; }
-    inline void SetLogging(StreamingLoggingConfig&& value) { m_loggingHasBeenSet = true; m_logging = std::move(value); }
-    inline StreamingDistributionConfig& WithLogging(const StreamingLoggingConfig& value) { SetLogging(value); return *this;}
-    inline StreamingDistributionConfig& WithLogging(StreamingLoggingConfig&& value) { SetLogging(std::move(value)); return *this;}
+    template<typename LoggingT = StreamingLoggingConfig>
+    void SetLogging(LoggingT&& value) { m_loggingHasBeenSet = true; m_logging = std::forward<LoggingT>(value); }
+    template<typename LoggingT = StreamingLoggingConfig>
+    StreamingDistributionConfig& WithLogging(LoggingT&& value) { SetLogging(std::forward<LoggingT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -127,12 +123,12 @@ namespace Model
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
      * Guide</i>.</p>
      */
-    inline const TrustedSigners& GetTrustedSigners() const{ return m_trustedSigners; }
+    inline const TrustedSigners& GetTrustedSigners() const { return m_trustedSigners; }
     inline bool TrustedSignersHasBeenSet() const { return m_trustedSignersHasBeenSet; }
-    inline void SetTrustedSigners(const TrustedSigners& value) { m_trustedSignersHasBeenSet = true; m_trustedSigners = value; }
-    inline void SetTrustedSigners(TrustedSigners&& value) { m_trustedSignersHasBeenSet = true; m_trustedSigners = std::move(value); }
-    inline StreamingDistributionConfig& WithTrustedSigners(const TrustedSigners& value) { SetTrustedSigners(value); return *this;}
-    inline StreamingDistributionConfig& WithTrustedSigners(TrustedSigners&& value) { SetTrustedSigners(std::move(value)); return *this;}
+    template<typename TrustedSignersT = TrustedSigners>
+    void SetTrustedSigners(TrustedSignersT&& value) { m_trustedSignersHasBeenSet = true; m_trustedSigners = std::forward<TrustedSignersT>(value); }
+    template<typename TrustedSignersT = TrustedSigners>
+    StreamingDistributionConfig& WithTrustedSigners(TrustedSignersT&& value) { SetTrustedSigners(std::forward<TrustedSignersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -140,12 +136,10 @@ namespace Model
      * <p>A complex type that contains information about price class for this streaming
      * distribution.</p>
      */
-    inline const PriceClass& GetPriceClass() const{ return m_priceClass; }
+    inline PriceClass GetPriceClass() const { return m_priceClass; }
     inline bool PriceClassHasBeenSet() const { return m_priceClassHasBeenSet; }
-    inline void SetPriceClass(const PriceClass& value) { m_priceClassHasBeenSet = true; m_priceClass = value; }
-    inline void SetPriceClass(PriceClass&& value) { m_priceClassHasBeenSet = true; m_priceClass = std::move(value); }
-    inline StreamingDistributionConfig& WithPriceClass(const PriceClass& value) { SetPriceClass(value); return *this;}
-    inline StreamingDistributionConfig& WithPriceClass(PriceClass&& value) { SetPriceClass(std::move(value)); return *this;}
+    inline void SetPriceClass(PriceClass value) { m_priceClassHasBeenSet = true; m_priceClass = value; }
+    inline StreamingDistributionConfig& WithPriceClass(PriceClass value) { SetPriceClass(value); return *this;}
     ///@}
 
     ///@{
@@ -153,7 +147,7 @@ namespace Model
      * <p>Whether the streaming distribution is enabled to accept user requests for
      * content.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline StreamingDistributionConfig& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -178,10 +172,10 @@ namespace Model
     TrustedSigners m_trustedSigners;
     bool m_trustedSignersHasBeenSet = false;
 
-    PriceClass m_priceClass;
+    PriceClass m_priceClass{PriceClass::NOT_SET};
     bool m_priceClassHasBeenSet = false;
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
   };
 

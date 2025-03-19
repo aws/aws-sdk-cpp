@@ -28,7 +28,7 @@ namespace Model
   class CreateDashboardResult
   {
   public:
-    AWS_QUICKSIGHT_API CreateDashboardResult();
+    AWS_QUICKSIGHT_API CreateDashboardResult() = default;
     AWS_QUICKSIGHT_API CreateDashboardResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QUICKSIGHT_API CreateDashboardResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,13 +37,11 @@ namespace Model
     /**
      * <p>The ARN of the dashboard.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline CreateDashboardResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline CreateDashboardResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline CreateDashboardResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    CreateDashboardResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,71 +49,69 @@ namespace Model
      * <p>The ARN of the dashboard, including the version number of the first version
      * that is created.</p>
      */
-    inline const Aws::String& GetVersionArn() const{ return m_versionArn; }
-    inline void SetVersionArn(const Aws::String& value) { m_versionArn = value; }
-    inline void SetVersionArn(Aws::String&& value) { m_versionArn = std::move(value); }
-    inline void SetVersionArn(const char* value) { m_versionArn.assign(value); }
-    inline CreateDashboardResult& WithVersionArn(const Aws::String& value) { SetVersionArn(value); return *this;}
-    inline CreateDashboardResult& WithVersionArn(Aws::String&& value) { SetVersionArn(std::move(value)); return *this;}
-    inline CreateDashboardResult& WithVersionArn(const char* value) { SetVersionArn(value); return *this;}
+    inline const Aws::String& GetVersionArn() const { return m_versionArn; }
+    template<typename VersionArnT = Aws::String>
+    void SetVersionArn(VersionArnT&& value) { m_versionArnHasBeenSet = true; m_versionArn = std::forward<VersionArnT>(value); }
+    template<typename VersionArnT = Aws::String>
+    CreateDashboardResult& WithVersionArn(VersionArnT&& value) { SetVersionArn(std::forward<VersionArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID for the dashboard.</p>
      */
-    inline const Aws::String& GetDashboardId() const{ return m_dashboardId; }
-    inline void SetDashboardId(const Aws::String& value) { m_dashboardId = value; }
-    inline void SetDashboardId(Aws::String&& value) { m_dashboardId = std::move(value); }
-    inline void SetDashboardId(const char* value) { m_dashboardId.assign(value); }
-    inline CreateDashboardResult& WithDashboardId(const Aws::String& value) { SetDashboardId(value); return *this;}
-    inline CreateDashboardResult& WithDashboardId(Aws::String&& value) { SetDashboardId(std::move(value)); return *this;}
-    inline CreateDashboardResult& WithDashboardId(const char* value) { SetDashboardId(value); return *this;}
+    inline const Aws::String& GetDashboardId() const { return m_dashboardId; }
+    template<typename DashboardIdT = Aws::String>
+    void SetDashboardId(DashboardIdT&& value) { m_dashboardIdHasBeenSet = true; m_dashboardId = std::forward<DashboardIdT>(value); }
+    template<typename DashboardIdT = Aws::String>
+    CreateDashboardResult& WithDashboardId(DashboardIdT&& value) { SetDashboardId(std::forward<DashboardIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the dashboard creation request.</p>
      */
-    inline const ResourceStatus& GetCreationStatus() const{ return m_creationStatus; }
-    inline void SetCreationStatus(const ResourceStatus& value) { m_creationStatus = value; }
-    inline void SetCreationStatus(ResourceStatus&& value) { m_creationStatus = std::move(value); }
-    inline CreateDashboardResult& WithCreationStatus(const ResourceStatus& value) { SetCreationStatus(value); return *this;}
-    inline CreateDashboardResult& WithCreationStatus(ResourceStatus&& value) { SetCreationStatus(std::move(value)); return *this;}
+    inline ResourceStatus GetCreationStatus() const { return m_creationStatus; }
+    inline void SetCreationStatus(ResourceStatus value) { m_creationStatusHasBeenSet = true; m_creationStatus = value; }
+    inline CreateDashboardResult& WithCreationStatus(ResourceStatus value) { SetCreationStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The HTTP status of the request.</p>
      */
-    inline int GetStatus() const{ return m_status; }
-    inline void SetStatus(int value) { m_status = value; }
+    inline int GetStatus() const { return m_status; }
+    inline void SetStatus(int value) { m_statusHasBeenSet = true; m_status = value; }
     inline CreateDashboardResult& WithStatus(int value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateDashboardResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateDashboardResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateDashboardResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateDashboardResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_versionArn;
+    bool m_versionArnHasBeenSet = false;
 
     Aws::String m_dashboardId;
+    bool m_dashboardIdHasBeenSet = false;
 
-    ResourceStatus m_creationStatus;
+    ResourceStatus m_creationStatus{ResourceStatus::NOT_SET};
+    bool m_creationStatusHasBeenSet = false;
 
-    int m_status;
+    int m_status{0};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

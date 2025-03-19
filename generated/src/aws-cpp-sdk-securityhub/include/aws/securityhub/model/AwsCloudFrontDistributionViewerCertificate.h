@@ -32,7 +32,7 @@ namespace Model
   class AwsCloudFrontDistributionViewerCertificate
   {
   public:
-    AWS_SECURITYHUB_API AwsCloudFrontDistributionViewerCertificate();
+    AWS_SECURITYHUB_API AwsCloudFrontDistributionViewerCertificate() = default;
     AWS_SECURITYHUB_API AwsCloudFrontDistributionViewerCertificate(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsCloudFrontDistributionViewerCertificate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * you provide an ACM certificate ARN, you must also provide
      * <code>MinimumCertificateVersion</code> and <code>SslSupportMethod</code>.</p>
      */
-    inline const Aws::String& GetAcmCertificateArn() const{ return m_acmCertificateArn; }
+    inline const Aws::String& GetAcmCertificateArn() const { return m_acmCertificateArn; }
     inline bool AcmCertificateArnHasBeenSet() const { return m_acmCertificateArnHasBeenSet; }
-    inline void SetAcmCertificateArn(const Aws::String& value) { m_acmCertificateArnHasBeenSet = true; m_acmCertificateArn = value; }
-    inline void SetAcmCertificateArn(Aws::String&& value) { m_acmCertificateArnHasBeenSet = true; m_acmCertificateArn = std::move(value); }
-    inline void SetAcmCertificateArn(const char* value) { m_acmCertificateArnHasBeenSet = true; m_acmCertificateArn.assign(value); }
-    inline AwsCloudFrontDistributionViewerCertificate& WithAcmCertificateArn(const Aws::String& value) { SetAcmCertificateArn(value); return *this;}
-    inline AwsCloudFrontDistributionViewerCertificate& WithAcmCertificateArn(Aws::String&& value) { SetAcmCertificateArn(std::move(value)); return *this;}
-    inline AwsCloudFrontDistributionViewerCertificate& WithAcmCertificateArn(const char* value) { SetAcmCertificateArn(value); return *this;}
+    template<typename AcmCertificateArnT = Aws::String>
+    void SetAcmCertificateArn(AcmCertificateArnT&& value) { m_acmCertificateArnHasBeenSet = true; m_acmCertificateArn = std::forward<AcmCertificateArnT>(value); }
+    template<typename AcmCertificateArnT = Aws::String>
+    AwsCloudFrontDistributionViewerCertificate& WithAcmCertificateArn(AcmCertificateArnT&& value) { SetAcmCertificateArn(std::forward<AcmCertificateArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>The identifier of the certificate. Note that in CloudFront, this attribute is
      * deprecated.</p>
      */
-    inline const Aws::String& GetCertificate() const{ return m_certificate; }
+    inline const Aws::String& GetCertificate() const { return m_certificate; }
     inline bool CertificateHasBeenSet() const { return m_certificateHasBeenSet; }
-    inline void SetCertificate(const Aws::String& value) { m_certificateHasBeenSet = true; m_certificate = value; }
-    inline void SetCertificate(Aws::String&& value) { m_certificateHasBeenSet = true; m_certificate = std::move(value); }
-    inline void SetCertificate(const char* value) { m_certificateHasBeenSet = true; m_certificate.assign(value); }
-    inline AwsCloudFrontDistributionViewerCertificate& WithCertificate(const Aws::String& value) { SetCertificate(value); return *this;}
-    inline AwsCloudFrontDistributionViewerCertificate& WithCertificate(Aws::String&& value) { SetCertificate(std::move(value)); return *this;}
-    inline AwsCloudFrontDistributionViewerCertificate& WithCertificate(const char* value) { SetCertificate(value); return *this;}
+    template<typename CertificateT = Aws::String>
+    void SetCertificate(CertificateT&& value) { m_certificateHasBeenSet = true; m_certificate = std::forward<CertificateT>(value); }
+    template<typename CertificateT = Aws::String>
+    AwsCloudFrontDistributionViewerCertificate& WithCertificate(CertificateT&& value) { SetCertificate(std::forward<CertificateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +70,12 @@ namespace Model
      * <p>The source of the certificate identified by <code>Certificate</code>. Note
      * that in CloudFront, this attribute is deprecated.</p>
      */
-    inline const Aws::String& GetCertificateSource() const{ return m_certificateSource; }
+    inline const Aws::String& GetCertificateSource() const { return m_certificateSource; }
     inline bool CertificateSourceHasBeenSet() const { return m_certificateSourceHasBeenSet; }
-    inline void SetCertificateSource(const Aws::String& value) { m_certificateSourceHasBeenSet = true; m_certificateSource = value; }
-    inline void SetCertificateSource(Aws::String&& value) { m_certificateSourceHasBeenSet = true; m_certificateSource = std::move(value); }
-    inline void SetCertificateSource(const char* value) { m_certificateSourceHasBeenSet = true; m_certificateSource.assign(value); }
-    inline AwsCloudFrontDistributionViewerCertificate& WithCertificateSource(const Aws::String& value) { SetCertificateSource(value); return *this;}
-    inline AwsCloudFrontDistributionViewerCertificate& WithCertificateSource(Aws::String&& value) { SetCertificateSource(std::move(value)); return *this;}
-    inline AwsCloudFrontDistributionViewerCertificate& WithCertificateSource(const char* value) { SetCertificateSource(value); return *this;}
+    template<typename CertificateSourceT = Aws::String>
+    void SetCertificateSource(CertificateSourceT&& value) { m_certificateSourceHasBeenSet = true; m_certificateSource = std::forward<CertificateSourceT>(value); }
+    template<typename CertificateSourceT = Aws::String>
+    AwsCloudFrontDistributionViewerCertificate& WithCertificateSource(CertificateSourceT&& value) { SetCertificateSource(std::forward<CertificateSourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,7 +84,7 @@ namespace Model
      * <code>false</code>, then you provide either <code>AcmCertificateArn</code> or
      * <code>IamCertificateId</code>.</p>
      */
-    inline bool GetCloudFrontDefaultCertificate() const{ return m_cloudFrontDefaultCertificate; }
+    inline bool GetCloudFrontDefaultCertificate() const { return m_cloudFrontDefaultCertificate; }
     inline bool CloudFrontDefaultCertificateHasBeenSet() const { return m_cloudFrontDefaultCertificateHasBeenSet; }
     inline void SetCloudFrontDefaultCertificate(bool value) { m_cloudFrontDefaultCertificateHasBeenSet = true; m_cloudFrontDefaultCertificate = value; }
     inline AwsCloudFrontDistributionViewerCertificate& WithCloudFrontDefaultCertificate(bool value) { SetCloudFrontDefaultCertificate(value); return *this;}
@@ -102,14 +96,12 @@ namespace Model
      * IAM. If you provide <code>IamCertificateId</code>, then you also must provide
      * <code>MinimumProtocolVersion</code> and <code>SslSupportMethod</code>.</p>
      */
-    inline const Aws::String& GetIamCertificateId() const{ return m_iamCertificateId; }
+    inline const Aws::String& GetIamCertificateId() const { return m_iamCertificateId; }
     inline bool IamCertificateIdHasBeenSet() const { return m_iamCertificateIdHasBeenSet; }
-    inline void SetIamCertificateId(const Aws::String& value) { m_iamCertificateIdHasBeenSet = true; m_iamCertificateId = value; }
-    inline void SetIamCertificateId(Aws::String&& value) { m_iamCertificateIdHasBeenSet = true; m_iamCertificateId = std::move(value); }
-    inline void SetIamCertificateId(const char* value) { m_iamCertificateIdHasBeenSet = true; m_iamCertificateId.assign(value); }
-    inline AwsCloudFrontDistributionViewerCertificate& WithIamCertificateId(const Aws::String& value) { SetIamCertificateId(value); return *this;}
-    inline AwsCloudFrontDistributionViewerCertificate& WithIamCertificateId(Aws::String&& value) { SetIamCertificateId(std::move(value)); return *this;}
-    inline AwsCloudFrontDistributionViewerCertificate& WithIamCertificateId(const char* value) { SetIamCertificateId(value); return *this;}
+    template<typename IamCertificateIdT = Aws::String>
+    void SetIamCertificateId(IamCertificateIdT&& value) { m_iamCertificateIdHasBeenSet = true; m_iamCertificateId = std::forward<IamCertificateIdT>(value); }
+    template<typename IamCertificateIdT = Aws::String>
+    AwsCloudFrontDistributionViewerCertificate& WithIamCertificateId(IamCertificateIdT&& value) { SetIamCertificateId(std::forward<IamCertificateIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -118,28 +110,24 @@ namespace Model
      * If <code>SslSupportMethod</code> is <code>sni-only</code>, then
      * <code>MinimumProtocolVersion</code> must be <code>TLSv1</code> or higher.</p>
      */
-    inline const Aws::String& GetMinimumProtocolVersion() const{ return m_minimumProtocolVersion; }
+    inline const Aws::String& GetMinimumProtocolVersion() const { return m_minimumProtocolVersion; }
     inline bool MinimumProtocolVersionHasBeenSet() const { return m_minimumProtocolVersionHasBeenSet; }
-    inline void SetMinimumProtocolVersion(const Aws::String& value) { m_minimumProtocolVersionHasBeenSet = true; m_minimumProtocolVersion = value; }
-    inline void SetMinimumProtocolVersion(Aws::String&& value) { m_minimumProtocolVersionHasBeenSet = true; m_minimumProtocolVersion = std::move(value); }
-    inline void SetMinimumProtocolVersion(const char* value) { m_minimumProtocolVersionHasBeenSet = true; m_minimumProtocolVersion.assign(value); }
-    inline AwsCloudFrontDistributionViewerCertificate& WithMinimumProtocolVersion(const Aws::String& value) { SetMinimumProtocolVersion(value); return *this;}
-    inline AwsCloudFrontDistributionViewerCertificate& WithMinimumProtocolVersion(Aws::String&& value) { SetMinimumProtocolVersion(std::move(value)); return *this;}
-    inline AwsCloudFrontDistributionViewerCertificate& WithMinimumProtocolVersion(const char* value) { SetMinimumProtocolVersion(value); return *this;}
+    template<typename MinimumProtocolVersionT = Aws::String>
+    void SetMinimumProtocolVersion(MinimumProtocolVersionT&& value) { m_minimumProtocolVersionHasBeenSet = true; m_minimumProtocolVersion = std::forward<MinimumProtocolVersionT>(value); }
+    template<typename MinimumProtocolVersionT = Aws::String>
+    AwsCloudFrontDistributionViewerCertificate& WithMinimumProtocolVersion(MinimumProtocolVersionT&& value) { SetMinimumProtocolVersion(std::forward<MinimumProtocolVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The viewers that the distribution accepts HTTPS connections from.</p>
      */
-    inline const Aws::String& GetSslSupportMethod() const{ return m_sslSupportMethod; }
+    inline const Aws::String& GetSslSupportMethod() const { return m_sslSupportMethod; }
     inline bool SslSupportMethodHasBeenSet() const { return m_sslSupportMethodHasBeenSet; }
-    inline void SetSslSupportMethod(const Aws::String& value) { m_sslSupportMethodHasBeenSet = true; m_sslSupportMethod = value; }
-    inline void SetSslSupportMethod(Aws::String&& value) { m_sslSupportMethodHasBeenSet = true; m_sslSupportMethod = std::move(value); }
-    inline void SetSslSupportMethod(const char* value) { m_sslSupportMethodHasBeenSet = true; m_sslSupportMethod.assign(value); }
-    inline AwsCloudFrontDistributionViewerCertificate& WithSslSupportMethod(const Aws::String& value) { SetSslSupportMethod(value); return *this;}
-    inline AwsCloudFrontDistributionViewerCertificate& WithSslSupportMethod(Aws::String&& value) { SetSslSupportMethod(std::move(value)); return *this;}
-    inline AwsCloudFrontDistributionViewerCertificate& WithSslSupportMethod(const char* value) { SetSslSupportMethod(value); return *this;}
+    template<typename SslSupportMethodT = Aws::String>
+    void SetSslSupportMethod(SslSupportMethodT&& value) { m_sslSupportMethodHasBeenSet = true; m_sslSupportMethod = std::forward<SslSupportMethodT>(value); }
+    template<typename SslSupportMethodT = Aws::String>
+    AwsCloudFrontDistributionViewerCertificate& WithSslSupportMethod(SslSupportMethodT&& value) { SetSslSupportMethod(std::forward<SslSupportMethodT>(value)); return *this;}
     ///@}
   private:
 
@@ -152,7 +140,7 @@ namespace Model
     Aws::String m_certificateSource;
     bool m_certificateSourceHasBeenSet = false;
 
-    bool m_cloudFrontDefaultCertificate;
+    bool m_cloudFrontDefaultCertificate{false};
     bool m_cloudFrontDefaultCertificateHasBeenSet = false;
 
     Aws::String m_iamCertificateId;

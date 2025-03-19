@@ -20,15 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-LaunchTemplateSpecification::LaunchTemplateSpecification() : 
-    m_launchTemplateIdHasBeenSet(false),
-    m_launchTemplateNameHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 LaunchTemplateSpecification::LaunchTemplateSpecification(const XmlNode& xmlNode)
-  : LaunchTemplateSpecification()
 {
   *this = xmlNode;
 }

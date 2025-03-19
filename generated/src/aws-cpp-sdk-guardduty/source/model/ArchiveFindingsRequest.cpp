@@ -12,12 +12,6 @@ using namespace Aws::GuardDuty::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ArchiveFindingsRequest::ArchiveFindingsRequest() : 
-    m_detectorIdHasBeenSet(false),
-    m_findingIdsHasBeenSet(false)
-{
-}
-
 Aws::String ArchiveFindingsRequest::SerializePayload() const
 {
   JsonValue payload;

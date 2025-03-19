@@ -18,18 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ResourceSpec::ResourceSpec() : 
-    m_sageMakerImageArnHasBeenSet(false),
-    m_sageMakerImageVersionArnHasBeenSet(false),
-    m_sageMakerImageVersionAliasHasBeenSet(false),
-    m_instanceType(AppInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_lifecycleConfigArnHasBeenSet(false)
-{
-}
-
 ResourceSpec::ResourceSpec(JsonView jsonValue)
-  : ResourceSpec()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ ResourceSpec& ResourceSpec::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SageMakerImageArn"))
   {
     m_sageMakerImageArn = jsonValue.GetString("SageMakerImageArn");
-
     m_sageMakerImageArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SageMakerImageVersionArn"))
   {
     m_sageMakerImageVersionArn = jsonValue.GetString("SageMakerImageVersionArn");
-
     m_sageMakerImageVersionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SageMakerImageVersionAlias"))
   {
     m_sageMakerImageVersionAlias = jsonValue.GetString("SageMakerImageVersionAlias");
-
     m_sageMakerImageVersionAliasHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceType"))
   {
     m_instanceType = AppInstanceTypeMapper::GetAppInstanceTypeForName(jsonValue.GetString("InstanceType"));
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LifecycleConfigArn"))
   {
     m_lifecycleConfigArn = jsonValue.GetString("LifecycleConfigArn");
-
     m_lifecycleConfigArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class ImportLabelsTaskRunProperties
   {
   public:
-    AWS_GLUE_API ImportLabelsTaskRunProperties();
+    AWS_GLUE_API ImportLabelsTaskRunProperties() = default;
     AWS_GLUE_API ImportLabelsTaskRunProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API ImportLabelsTaskRunProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,21 +43,19 @@ namespace Model
      * <p>The Amazon Simple Storage Service (Amazon S3) path from where you will import
      * the labels.</p>
      */
-    inline const Aws::String& GetInputS3Path() const{ return m_inputS3Path; }
+    inline const Aws::String& GetInputS3Path() const { return m_inputS3Path; }
     inline bool InputS3PathHasBeenSet() const { return m_inputS3PathHasBeenSet; }
-    inline void SetInputS3Path(const Aws::String& value) { m_inputS3PathHasBeenSet = true; m_inputS3Path = value; }
-    inline void SetInputS3Path(Aws::String&& value) { m_inputS3PathHasBeenSet = true; m_inputS3Path = std::move(value); }
-    inline void SetInputS3Path(const char* value) { m_inputS3PathHasBeenSet = true; m_inputS3Path.assign(value); }
-    inline ImportLabelsTaskRunProperties& WithInputS3Path(const Aws::String& value) { SetInputS3Path(value); return *this;}
-    inline ImportLabelsTaskRunProperties& WithInputS3Path(Aws::String&& value) { SetInputS3Path(std::move(value)); return *this;}
-    inline ImportLabelsTaskRunProperties& WithInputS3Path(const char* value) { SetInputS3Path(value); return *this;}
+    template<typename InputS3PathT = Aws::String>
+    void SetInputS3Path(InputS3PathT&& value) { m_inputS3PathHasBeenSet = true; m_inputS3Path = std::forward<InputS3PathT>(value); }
+    template<typename InputS3PathT = Aws::String>
+    ImportLabelsTaskRunProperties& WithInputS3Path(InputS3PathT&& value) { SetInputS3Path(std::forward<InputS3PathT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether to overwrite your existing labels.</p>
      */
-    inline bool GetReplace() const{ return m_replace; }
+    inline bool GetReplace() const { return m_replace; }
     inline bool ReplaceHasBeenSet() const { return m_replaceHasBeenSet; }
     inline void SetReplace(bool value) { m_replaceHasBeenSet = true; m_replace = value; }
     inline ImportLabelsTaskRunProperties& WithReplace(bool value) { SetReplace(value); return *this;}
@@ -67,7 +65,7 @@ namespace Model
     Aws::String m_inputS3Path;
     bool m_inputS3PathHasBeenSet = false;
 
-    bool m_replace;
+    bool m_replace{false};
     bool m_replaceHasBeenSet = false;
   };
 

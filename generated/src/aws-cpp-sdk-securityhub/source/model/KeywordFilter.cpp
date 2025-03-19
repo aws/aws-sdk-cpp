@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-KeywordFilter::KeywordFilter() : 
-    m_valueHasBeenSet(false)
-{
-}
-
 KeywordFilter::KeywordFilter(JsonView jsonValue)
-  : KeywordFilter()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ KeywordFilter& KeywordFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

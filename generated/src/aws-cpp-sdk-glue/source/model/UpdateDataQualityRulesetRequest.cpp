@@ -12,13 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDataQualityRulesetRequest::UpdateDataQualityRulesetRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_rulesetHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDataQualityRulesetRequest::SerializePayload() const
 {
   JsonValue payload;

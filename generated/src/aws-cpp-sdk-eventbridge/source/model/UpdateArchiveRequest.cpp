@@ -12,15 +12,6 @@ using namespace Aws::EventBridge::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateArchiveRequest::UpdateArchiveRequest() : 
-    m_archiveNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_eventPatternHasBeenSet(false),
-    m_retentionDays(0),
-    m_retentionDaysHasBeenSet(false)
-{
-}
-
 Aws::String UpdateArchiveRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -23,7 +23,7 @@ namespace Model
   class CreateEnvironmentRequest : public DataZoneRequest
   {
   public:
-    AWS_DATAZONE_API CreateEnvironmentRequest();
+    AWS_DATAZONE_API CreateEnvironmentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,7 +38,7 @@ namespace Model
     /**
      * <p>The deployment order of the environment.</p>
      */
-    inline int GetDeploymentOrder() const{ return m_deploymentOrder; }
+    inline int GetDeploymentOrder() const { return m_deploymentOrder; }
     inline bool DeploymentOrderHasBeenSet() const { return m_deploymentOrderHasBeenSet; }
     inline void SetDeploymentOrder(int value) { m_deploymentOrderHasBeenSet = true; m_deploymentOrder = value; }
     inline CreateEnvironmentRequest& WithDeploymentOrder(int value) { SetDeploymentOrder(value); return *this;}
@@ -48,14 +48,12 @@ namespace Model
     /**
      * <p>The description of the Amazon DataZone environment.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateEnvironmentRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateEnvironmentRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateEnvironmentRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateEnvironmentRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,70 +61,60 @@ namespace Model
      * <p>The identifier of the Amazon DataZone domain in which the environment is
      * created.</p>
      */
-    inline const Aws::String& GetDomainIdentifier() const{ return m_domainIdentifier; }
+    inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
     inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
-    inline void SetDomainIdentifier(const Aws::String& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = value; }
-    inline void SetDomainIdentifier(Aws::String&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::move(value); }
-    inline void SetDomainIdentifier(const char* value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier.assign(value); }
-    inline CreateEnvironmentRequest& WithDomainIdentifier(const Aws::String& value) { SetDomainIdentifier(value); return *this;}
-    inline CreateEnvironmentRequest& WithDomainIdentifier(Aws::String&& value) { SetDomainIdentifier(std::move(value)); return *this;}
-    inline CreateEnvironmentRequest& WithDomainIdentifier(const char* value) { SetDomainIdentifier(value); return *this;}
+    template<typename DomainIdentifierT = Aws::String>
+    void SetDomainIdentifier(DomainIdentifierT&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::forward<DomainIdentifierT>(value); }
+    template<typename DomainIdentifierT = Aws::String>
+    CreateEnvironmentRequest& WithDomainIdentifier(DomainIdentifierT&& value) { SetDomainIdentifier(std::forward<DomainIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the account in which the environment is being created.</p>
      */
-    inline const Aws::String& GetEnvironmentAccountIdentifier() const{ return m_environmentAccountIdentifier; }
+    inline const Aws::String& GetEnvironmentAccountIdentifier() const { return m_environmentAccountIdentifier; }
     inline bool EnvironmentAccountIdentifierHasBeenSet() const { return m_environmentAccountIdentifierHasBeenSet; }
-    inline void SetEnvironmentAccountIdentifier(const Aws::String& value) { m_environmentAccountIdentifierHasBeenSet = true; m_environmentAccountIdentifier = value; }
-    inline void SetEnvironmentAccountIdentifier(Aws::String&& value) { m_environmentAccountIdentifierHasBeenSet = true; m_environmentAccountIdentifier = std::move(value); }
-    inline void SetEnvironmentAccountIdentifier(const char* value) { m_environmentAccountIdentifierHasBeenSet = true; m_environmentAccountIdentifier.assign(value); }
-    inline CreateEnvironmentRequest& WithEnvironmentAccountIdentifier(const Aws::String& value) { SetEnvironmentAccountIdentifier(value); return *this;}
-    inline CreateEnvironmentRequest& WithEnvironmentAccountIdentifier(Aws::String&& value) { SetEnvironmentAccountIdentifier(std::move(value)); return *this;}
-    inline CreateEnvironmentRequest& WithEnvironmentAccountIdentifier(const char* value) { SetEnvironmentAccountIdentifier(value); return *this;}
+    template<typename EnvironmentAccountIdentifierT = Aws::String>
+    void SetEnvironmentAccountIdentifier(EnvironmentAccountIdentifierT&& value) { m_environmentAccountIdentifierHasBeenSet = true; m_environmentAccountIdentifier = std::forward<EnvironmentAccountIdentifierT>(value); }
+    template<typename EnvironmentAccountIdentifierT = Aws::String>
+    CreateEnvironmentRequest& WithEnvironmentAccountIdentifier(EnvironmentAccountIdentifierT&& value) { SetEnvironmentAccountIdentifier(std::forward<EnvironmentAccountIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The region of the account in which the environment is being created.</p>
      */
-    inline const Aws::String& GetEnvironmentAccountRegion() const{ return m_environmentAccountRegion; }
+    inline const Aws::String& GetEnvironmentAccountRegion() const { return m_environmentAccountRegion; }
     inline bool EnvironmentAccountRegionHasBeenSet() const { return m_environmentAccountRegionHasBeenSet; }
-    inline void SetEnvironmentAccountRegion(const Aws::String& value) { m_environmentAccountRegionHasBeenSet = true; m_environmentAccountRegion = value; }
-    inline void SetEnvironmentAccountRegion(Aws::String&& value) { m_environmentAccountRegionHasBeenSet = true; m_environmentAccountRegion = std::move(value); }
-    inline void SetEnvironmentAccountRegion(const char* value) { m_environmentAccountRegionHasBeenSet = true; m_environmentAccountRegion.assign(value); }
-    inline CreateEnvironmentRequest& WithEnvironmentAccountRegion(const Aws::String& value) { SetEnvironmentAccountRegion(value); return *this;}
-    inline CreateEnvironmentRequest& WithEnvironmentAccountRegion(Aws::String&& value) { SetEnvironmentAccountRegion(std::move(value)); return *this;}
-    inline CreateEnvironmentRequest& WithEnvironmentAccountRegion(const char* value) { SetEnvironmentAccountRegion(value); return *this;}
+    template<typename EnvironmentAccountRegionT = Aws::String>
+    void SetEnvironmentAccountRegion(EnvironmentAccountRegionT&& value) { m_environmentAccountRegionHasBeenSet = true; m_environmentAccountRegion = std::forward<EnvironmentAccountRegionT>(value); }
+    template<typename EnvironmentAccountRegionT = Aws::String>
+    CreateEnvironmentRequest& WithEnvironmentAccountRegion(EnvironmentAccountRegionT&& value) { SetEnvironmentAccountRegion(std::forward<EnvironmentAccountRegionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the blueprint with which the environment is being created.</p>
      */
-    inline const Aws::String& GetEnvironmentBlueprintIdentifier() const{ return m_environmentBlueprintIdentifier; }
+    inline const Aws::String& GetEnvironmentBlueprintIdentifier() const { return m_environmentBlueprintIdentifier; }
     inline bool EnvironmentBlueprintIdentifierHasBeenSet() const { return m_environmentBlueprintIdentifierHasBeenSet; }
-    inline void SetEnvironmentBlueprintIdentifier(const Aws::String& value) { m_environmentBlueprintIdentifierHasBeenSet = true; m_environmentBlueprintIdentifier = value; }
-    inline void SetEnvironmentBlueprintIdentifier(Aws::String&& value) { m_environmentBlueprintIdentifierHasBeenSet = true; m_environmentBlueprintIdentifier = std::move(value); }
-    inline void SetEnvironmentBlueprintIdentifier(const char* value) { m_environmentBlueprintIdentifierHasBeenSet = true; m_environmentBlueprintIdentifier.assign(value); }
-    inline CreateEnvironmentRequest& WithEnvironmentBlueprintIdentifier(const Aws::String& value) { SetEnvironmentBlueprintIdentifier(value); return *this;}
-    inline CreateEnvironmentRequest& WithEnvironmentBlueprintIdentifier(Aws::String&& value) { SetEnvironmentBlueprintIdentifier(std::move(value)); return *this;}
-    inline CreateEnvironmentRequest& WithEnvironmentBlueprintIdentifier(const char* value) { SetEnvironmentBlueprintIdentifier(value); return *this;}
+    template<typename EnvironmentBlueprintIdentifierT = Aws::String>
+    void SetEnvironmentBlueprintIdentifier(EnvironmentBlueprintIdentifierT&& value) { m_environmentBlueprintIdentifierHasBeenSet = true; m_environmentBlueprintIdentifier = std::forward<EnvironmentBlueprintIdentifierT>(value); }
+    template<typename EnvironmentBlueprintIdentifierT = Aws::String>
+    CreateEnvironmentRequest& WithEnvironmentBlueprintIdentifier(EnvironmentBlueprintIdentifierT&& value) { SetEnvironmentBlueprintIdentifier(std::forward<EnvironmentBlueprintIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration ID of the environment.</p>
      */
-    inline const Aws::String& GetEnvironmentConfigurationId() const{ return m_environmentConfigurationId; }
+    inline const Aws::String& GetEnvironmentConfigurationId() const { return m_environmentConfigurationId; }
     inline bool EnvironmentConfigurationIdHasBeenSet() const { return m_environmentConfigurationIdHasBeenSet; }
-    inline void SetEnvironmentConfigurationId(const Aws::String& value) { m_environmentConfigurationIdHasBeenSet = true; m_environmentConfigurationId = value; }
-    inline void SetEnvironmentConfigurationId(Aws::String&& value) { m_environmentConfigurationIdHasBeenSet = true; m_environmentConfigurationId = std::move(value); }
-    inline void SetEnvironmentConfigurationId(const char* value) { m_environmentConfigurationIdHasBeenSet = true; m_environmentConfigurationId.assign(value); }
-    inline CreateEnvironmentRequest& WithEnvironmentConfigurationId(const Aws::String& value) { SetEnvironmentConfigurationId(value); return *this;}
-    inline CreateEnvironmentRequest& WithEnvironmentConfigurationId(Aws::String&& value) { SetEnvironmentConfigurationId(std::move(value)); return *this;}
-    inline CreateEnvironmentRequest& WithEnvironmentConfigurationId(const char* value) { SetEnvironmentConfigurationId(value); return *this;}
+    template<typename EnvironmentConfigurationIdT = Aws::String>
+    void SetEnvironmentConfigurationId(EnvironmentConfigurationIdT&& value) { m_environmentConfigurationIdHasBeenSet = true; m_environmentConfigurationId = std::forward<EnvironmentConfigurationIdT>(value); }
+    template<typename EnvironmentConfigurationIdT = Aws::String>
+    CreateEnvironmentRequest& WithEnvironmentConfigurationId(EnvironmentConfigurationIdT&& value) { SetEnvironmentConfigurationId(std::forward<EnvironmentConfigurationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,43 +122,38 @@ namespace Model
      * <p>The identifier of the environment profile that is used to create this Amazon
      * DataZone environment.</p>
      */
-    inline const Aws::String& GetEnvironmentProfileIdentifier() const{ return m_environmentProfileIdentifier; }
+    inline const Aws::String& GetEnvironmentProfileIdentifier() const { return m_environmentProfileIdentifier; }
     inline bool EnvironmentProfileIdentifierHasBeenSet() const { return m_environmentProfileIdentifierHasBeenSet; }
-    inline void SetEnvironmentProfileIdentifier(const Aws::String& value) { m_environmentProfileIdentifierHasBeenSet = true; m_environmentProfileIdentifier = value; }
-    inline void SetEnvironmentProfileIdentifier(Aws::String&& value) { m_environmentProfileIdentifierHasBeenSet = true; m_environmentProfileIdentifier = std::move(value); }
-    inline void SetEnvironmentProfileIdentifier(const char* value) { m_environmentProfileIdentifierHasBeenSet = true; m_environmentProfileIdentifier.assign(value); }
-    inline CreateEnvironmentRequest& WithEnvironmentProfileIdentifier(const Aws::String& value) { SetEnvironmentProfileIdentifier(value); return *this;}
-    inline CreateEnvironmentRequest& WithEnvironmentProfileIdentifier(Aws::String&& value) { SetEnvironmentProfileIdentifier(std::move(value)); return *this;}
-    inline CreateEnvironmentRequest& WithEnvironmentProfileIdentifier(const char* value) { SetEnvironmentProfileIdentifier(value); return *this;}
+    template<typename EnvironmentProfileIdentifierT = Aws::String>
+    void SetEnvironmentProfileIdentifier(EnvironmentProfileIdentifierT&& value) { m_environmentProfileIdentifierHasBeenSet = true; m_environmentProfileIdentifier = std::forward<EnvironmentProfileIdentifierT>(value); }
+    template<typename EnvironmentProfileIdentifierT = Aws::String>
+    CreateEnvironmentRequest& WithEnvironmentProfileIdentifier(EnvironmentProfileIdentifierT&& value) { SetEnvironmentProfileIdentifier(std::forward<EnvironmentProfileIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The glossary terms that can be used in this Amazon DataZone environment.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetGlossaryTerms() const{ return m_glossaryTerms; }
+    inline const Aws::Vector<Aws::String>& GetGlossaryTerms() const { return m_glossaryTerms; }
     inline bool GlossaryTermsHasBeenSet() const { return m_glossaryTermsHasBeenSet; }
-    inline void SetGlossaryTerms(const Aws::Vector<Aws::String>& value) { m_glossaryTermsHasBeenSet = true; m_glossaryTerms = value; }
-    inline void SetGlossaryTerms(Aws::Vector<Aws::String>&& value) { m_glossaryTermsHasBeenSet = true; m_glossaryTerms = std::move(value); }
-    inline CreateEnvironmentRequest& WithGlossaryTerms(const Aws::Vector<Aws::String>& value) { SetGlossaryTerms(value); return *this;}
-    inline CreateEnvironmentRequest& WithGlossaryTerms(Aws::Vector<Aws::String>&& value) { SetGlossaryTerms(std::move(value)); return *this;}
-    inline CreateEnvironmentRequest& AddGlossaryTerms(const Aws::String& value) { m_glossaryTermsHasBeenSet = true; m_glossaryTerms.push_back(value); return *this; }
-    inline CreateEnvironmentRequest& AddGlossaryTerms(Aws::String&& value) { m_glossaryTermsHasBeenSet = true; m_glossaryTerms.push_back(std::move(value)); return *this; }
-    inline CreateEnvironmentRequest& AddGlossaryTerms(const char* value) { m_glossaryTermsHasBeenSet = true; m_glossaryTerms.push_back(value); return *this; }
+    template<typename GlossaryTermsT = Aws::Vector<Aws::String>>
+    void SetGlossaryTerms(GlossaryTermsT&& value) { m_glossaryTermsHasBeenSet = true; m_glossaryTerms = std::forward<GlossaryTermsT>(value); }
+    template<typename GlossaryTermsT = Aws::Vector<Aws::String>>
+    CreateEnvironmentRequest& WithGlossaryTerms(GlossaryTermsT&& value) { SetGlossaryTerms(std::forward<GlossaryTermsT>(value)); return *this;}
+    template<typename GlossaryTermsT = Aws::String>
+    CreateEnvironmentRequest& AddGlossaryTerms(GlossaryTermsT&& value) { m_glossaryTermsHasBeenSet = true; m_glossaryTerms.emplace_back(std::forward<GlossaryTermsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The name of the Amazon DataZone environment.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateEnvironmentRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateEnvironmentRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateEnvironmentRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateEnvironmentRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -178,32 +161,30 @@ namespace Model
      * <p>The identifier of the Amazon DataZone project in which this environment is
      * created.</p>
      */
-    inline const Aws::String& GetProjectIdentifier() const{ return m_projectIdentifier; }
+    inline const Aws::String& GetProjectIdentifier() const { return m_projectIdentifier; }
     inline bool ProjectIdentifierHasBeenSet() const { return m_projectIdentifierHasBeenSet; }
-    inline void SetProjectIdentifier(const Aws::String& value) { m_projectIdentifierHasBeenSet = true; m_projectIdentifier = value; }
-    inline void SetProjectIdentifier(Aws::String&& value) { m_projectIdentifierHasBeenSet = true; m_projectIdentifier = std::move(value); }
-    inline void SetProjectIdentifier(const char* value) { m_projectIdentifierHasBeenSet = true; m_projectIdentifier.assign(value); }
-    inline CreateEnvironmentRequest& WithProjectIdentifier(const Aws::String& value) { SetProjectIdentifier(value); return *this;}
-    inline CreateEnvironmentRequest& WithProjectIdentifier(Aws::String&& value) { SetProjectIdentifier(std::move(value)); return *this;}
-    inline CreateEnvironmentRequest& WithProjectIdentifier(const char* value) { SetProjectIdentifier(value); return *this;}
+    template<typename ProjectIdentifierT = Aws::String>
+    void SetProjectIdentifier(ProjectIdentifierT&& value) { m_projectIdentifierHasBeenSet = true; m_projectIdentifier = std::forward<ProjectIdentifierT>(value); }
+    template<typename ProjectIdentifierT = Aws::String>
+    CreateEnvironmentRequest& WithProjectIdentifier(ProjectIdentifierT&& value) { SetProjectIdentifier(std::forward<ProjectIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The user parameters of this Amazon DataZone environment.</p>
      */
-    inline const Aws::Vector<EnvironmentParameter>& GetUserParameters() const{ return m_userParameters; }
+    inline const Aws::Vector<EnvironmentParameter>& GetUserParameters() const { return m_userParameters; }
     inline bool UserParametersHasBeenSet() const { return m_userParametersHasBeenSet; }
-    inline void SetUserParameters(const Aws::Vector<EnvironmentParameter>& value) { m_userParametersHasBeenSet = true; m_userParameters = value; }
-    inline void SetUserParameters(Aws::Vector<EnvironmentParameter>&& value) { m_userParametersHasBeenSet = true; m_userParameters = std::move(value); }
-    inline CreateEnvironmentRequest& WithUserParameters(const Aws::Vector<EnvironmentParameter>& value) { SetUserParameters(value); return *this;}
-    inline CreateEnvironmentRequest& WithUserParameters(Aws::Vector<EnvironmentParameter>&& value) { SetUserParameters(std::move(value)); return *this;}
-    inline CreateEnvironmentRequest& AddUserParameters(const EnvironmentParameter& value) { m_userParametersHasBeenSet = true; m_userParameters.push_back(value); return *this; }
-    inline CreateEnvironmentRequest& AddUserParameters(EnvironmentParameter&& value) { m_userParametersHasBeenSet = true; m_userParameters.push_back(std::move(value)); return *this; }
+    template<typename UserParametersT = Aws::Vector<EnvironmentParameter>>
+    void SetUserParameters(UserParametersT&& value) { m_userParametersHasBeenSet = true; m_userParameters = std::forward<UserParametersT>(value); }
+    template<typename UserParametersT = Aws::Vector<EnvironmentParameter>>
+    CreateEnvironmentRequest& WithUserParameters(UserParametersT&& value) { SetUserParameters(std::forward<UserParametersT>(value)); return *this;}
+    template<typename UserParametersT = EnvironmentParameter>
+    CreateEnvironmentRequest& AddUserParameters(UserParametersT&& value) { m_userParametersHasBeenSet = true; m_userParameters.emplace_back(std::forward<UserParametersT>(value)); return *this; }
     ///@}
   private:
 
-    int m_deploymentOrder;
+    int m_deploymentOrder{0};
     bool m_deploymentOrderHasBeenSet = false;
 
     Aws::String m_description;

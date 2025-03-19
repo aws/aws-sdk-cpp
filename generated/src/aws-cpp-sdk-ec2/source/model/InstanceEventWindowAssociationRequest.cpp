@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InstanceEventWindowAssociationRequest::InstanceEventWindowAssociationRequest() : 
-    m_instanceIdsHasBeenSet(false),
-    m_instanceTagsHasBeenSet(false),
-    m_dedicatedHostIdsHasBeenSet(false)
-{
-}
-
 InstanceEventWindowAssociationRequest::InstanceEventWindowAssociationRequest(const XmlNode& xmlNode)
-  : InstanceEventWindowAssociationRequest()
 {
   *this = xmlNode;
 }
@@ -43,6 +35,7 @@ InstanceEventWindowAssociationRequest& InstanceEventWindowAssociationRequest::op
     if(!instanceIdsNode.IsNull())
     {
       XmlNode instanceIdsMember = instanceIdsNode.FirstChild("item");
+      m_instanceIdsHasBeenSet = !instanceIdsMember.IsNull();
       while(!instanceIdsMember.IsNull())
       {
         m_instanceIds.push_back(instanceIdsMember.GetText());
@@ -55,6 +48,7 @@ InstanceEventWindowAssociationRequest& InstanceEventWindowAssociationRequest::op
     if(!instanceTagsNode.IsNull())
     {
       XmlNode instanceTagsMember = instanceTagsNode.FirstChild("item");
+      m_instanceTagsHasBeenSet = !instanceTagsMember.IsNull();
       while(!instanceTagsMember.IsNull())
       {
         m_instanceTags.push_back(instanceTagsMember);
@@ -67,6 +61,7 @@ InstanceEventWindowAssociationRequest& InstanceEventWindowAssociationRequest::op
     if(!dedicatedHostIdsNode.IsNull())
     {
       XmlNode dedicatedHostIdsMember = dedicatedHostIdsNode.FirstChild("item");
+      m_dedicatedHostIdsHasBeenSet = !dedicatedHostIdsMember.IsNull();
       while(!dedicatedHostIdsMember.IsNull())
       {
         m_dedicatedHostIds.push_back(dedicatedHostIdsMember.GetText());

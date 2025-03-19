@@ -18,17 +18,7 @@ namespace FMS
 namespace Model
 {
 
-InvalidNetworkAclEntriesViolation::InvalidNetworkAclEntriesViolation() : 
-    m_vpcHasBeenSet(false),
-    m_subnetHasBeenSet(false),
-    m_subnetAvailabilityZoneHasBeenSet(false),
-    m_currentAssociatedNetworkAclHasBeenSet(false),
-    m_entryViolationsHasBeenSet(false)
-{
-}
-
 InvalidNetworkAclEntriesViolation::InvalidNetworkAclEntriesViolation(JsonView jsonValue)
-  : InvalidNetworkAclEntriesViolation()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ InvalidNetworkAclEntriesViolation& InvalidNetworkAclEntriesViolation::operator =
   if(jsonValue.ValueExists("Vpc"))
   {
     m_vpc = jsonValue.GetString("Vpc");
-
     m_vpcHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Subnet"))
   {
     m_subnet = jsonValue.GetString("Subnet");
-
     m_subnetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetAvailabilityZone"))
   {
     m_subnetAvailabilityZone = jsonValue.GetString("SubnetAvailabilityZone");
-
     m_subnetAvailabilityZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentAssociatedNetworkAcl"))
   {
     m_currentAssociatedNetworkAcl = jsonValue.GetString("CurrentAssociatedNetworkAcl");
-
     m_currentAssociatedNetworkAclHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EntryViolations"))
   {
     Aws::Utils::Array<JsonView> entryViolationsJsonList = jsonValue.GetArray("EntryViolations");
@@ -72,7 +54,6 @@ InvalidNetworkAclEntriesViolation& InvalidNetworkAclEntriesViolation::operator =
     }
     m_entryViolationsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-SnippetExcerpt::SnippetExcerpt() : 
-    m_textHasBeenSet(false)
-{
-}
-
 SnippetExcerpt::SnippetExcerpt(JsonView jsonValue)
-  : SnippetExcerpt()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SnippetExcerpt& SnippetExcerpt::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetString("text");
-
     m_textHasBeenSet = true;
   }
-
   return *this;
 }
 

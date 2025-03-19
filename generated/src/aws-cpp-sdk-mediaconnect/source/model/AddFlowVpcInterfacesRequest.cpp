@@ -12,12 +12,6 @@ using namespace Aws::MediaConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AddFlowVpcInterfacesRequest::AddFlowVpcInterfacesRequest() : 
-    m_flowArnHasBeenSet(false),
-    m_vpcInterfacesHasBeenSet(false)
-{
-}
-
 Aws::String AddFlowVpcInterfacesRequest::SerializePayload() const
 {
   JsonValue payload;

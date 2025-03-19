@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateBranchResult::CreateBranchResult()
-{
-}
-
 CreateBranchResult::CreateBranchResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateBranchResult& CreateBranchResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("branch"))
   {
     m_branch = jsonValue.GetObject("branch");
-
+    m_branchHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-LaunchTemplateInstanceMaintenanceOptions::LaunchTemplateInstanceMaintenanceOptions() : 
-    m_autoRecovery(LaunchTemplateAutoRecoveryState::NOT_SET),
-    m_autoRecoveryHasBeenSet(false)
-{
-}
-
 LaunchTemplateInstanceMaintenanceOptions::LaunchTemplateInstanceMaintenanceOptions(const XmlNode& xmlNode)
-  : LaunchTemplateInstanceMaintenanceOptions()
 {
   *this = xmlNode;
 }
@@ -41,7 +34,7 @@ LaunchTemplateInstanceMaintenanceOptions& LaunchTemplateInstanceMaintenanceOptio
     XmlNode autoRecoveryNode = resultNode.FirstChild("autoRecovery");
     if(!autoRecoveryNode.IsNull())
     {
-      m_autoRecovery = LaunchTemplateAutoRecoveryStateMapper::GetLaunchTemplateAutoRecoveryStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(autoRecoveryNode.GetText()).c_str()).c_str());
+      m_autoRecovery = LaunchTemplateAutoRecoveryStateMapper::GetLaunchTemplateAutoRecoveryStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(autoRecoveryNode.GetText()).c_str()));
       m_autoRecoveryHasBeenSet = true;
     }
   }

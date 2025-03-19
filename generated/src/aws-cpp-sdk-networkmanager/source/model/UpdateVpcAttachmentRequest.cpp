@@ -12,14 +12,6 @@ using namespace Aws::NetworkManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateVpcAttachmentRequest::UpdateVpcAttachmentRequest() : 
-    m_attachmentIdHasBeenSet(false),
-    m_addSubnetArnsHasBeenSet(false),
-    m_removeSubnetArnsHasBeenSet(false),
-    m_optionsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateVpcAttachmentRequest::SerializePayload() const
 {
   JsonValue payload;

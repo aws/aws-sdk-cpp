@@ -18,21 +18,7 @@ namespace LookoutMetrics
 namespace Model
 {
 
-RedshiftSourceConfig::RedshiftSourceConfig() : 
-    m_clusterIdentifierHasBeenSet(false),
-    m_databaseHostHasBeenSet(false),
-    m_databasePort(0),
-    m_databasePortHasBeenSet(false),
-    m_secretManagerArnHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_vpcConfigurationHasBeenSet(false)
-{
-}
-
 RedshiftSourceConfig::RedshiftSourceConfig(JsonView jsonValue)
-  : RedshiftSourceConfig()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ RedshiftSourceConfig& RedshiftSourceConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ClusterIdentifier"))
   {
     m_clusterIdentifier = jsonValue.GetString("ClusterIdentifier");
-
     m_clusterIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseHost"))
   {
     m_databaseHost = jsonValue.GetString("DatabaseHost");
-
     m_databaseHostHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabasePort"))
   {
     m_databasePort = jsonValue.GetInteger("DatabasePort");
-
     m_databasePortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretManagerArn"))
   {
     m_secretManagerArn = jsonValue.GetString("SecretManagerArn");
-
     m_secretManagerArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseName"))
   {
     m_databaseName = jsonValue.GetString("DatabaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableName"))
   {
     m_tableName = jsonValue.GetString("TableName");
-
     m_tableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcConfiguration"))
   {
     m_vpcConfiguration = jsonValue.GetObject("VpcConfiguration");
-
     m_vpcConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

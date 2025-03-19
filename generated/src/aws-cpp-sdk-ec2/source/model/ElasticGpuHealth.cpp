@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ElasticGpuHealth::ElasticGpuHealth() : 
-    m_status(ElasticGpuStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 ElasticGpuHealth::ElasticGpuHealth(const XmlNode& xmlNode)
-  : ElasticGpuHealth()
 {
   *this = xmlNode;
 }
@@ -41,7 +34,7 @@ ElasticGpuHealth& ElasticGpuHealth::operator =(const XmlNode& xmlNode)
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
-      m_status = ElasticGpuStatusMapper::GetElasticGpuStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = ElasticGpuStatusMapper::GetElasticGpuStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
   }

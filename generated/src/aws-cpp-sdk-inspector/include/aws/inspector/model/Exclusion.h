@@ -35,7 +35,7 @@ namespace Model
   class Exclusion
   {
   public:
-    AWS_INSPECTOR_API Exclusion();
+    AWS_INSPECTOR_API Exclusion() = default;
     AWS_INSPECTOR_API Exclusion(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR_API Exclusion& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,84 +45,76 @@ namespace Model
     /**
      * <p>The ARN that specifies the exclusion.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline Exclusion& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline Exclusion& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline Exclusion& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    Exclusion& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the exclusion.</p>
      */
-    inline const Aws::String& GetTitle() const{ return m_title; }
+    inline const Aws::String& GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-    inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
-    inline Exclusion& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-    inline Exclusion& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-    inline Exclusion& WithTitle(const char* value) { SetTitle(value); return *this;}
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    Exclusion& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the exclusion.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline Exclusion& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline Exclusion& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline Exclusion& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    Exclusion& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The recommendation for the exclusion.</p>
      */
-    inline const Aws::String& GetRecommendation() const{ return m_recommendation; }
+    inline const Aws::String& GetRecommendation() const { return m_recommendation; }
     inline bool RecommendationHasBeenSet() const { return m_recommendationHasBeenSet; }
-    inline void SetRecommendation(const Aws::String& value) { m_recommendationHasBeenSet = true; m_recommendation = value; }
-    inline void SetRecommendation(Aws::String&& value) { m_recommendationHasBeenSet = true; m_recommendation = std::move(value); }
-    inline void SetRecommendation(const char* value) { m_recommendationHasBeenSet = true; m_recommendation.assign(value); }
-    inline Exclusion& WithRecommendation(const Aws::String& value) { SetRecommendation(value); return *this;}
-    inline Exclusion& WithRecommendation(Aws::String&& value) { SetRecommendation(std::move(value)); return *this;}
-    inline Exclusion& WithRecommendation(const char* value) { SetRecommendation(value); return *this;}
+    template<typename RecommendationT = Aws::String>
+    void SetRecommendation(RecommendationT&& value) { m_recommendationHasBeenSet = true; m_recommendation = std::forward<RecommendationT>(value); }
+    template<typename RecommendationT = Aws::String>
+    Exclusion& WithRecommendation(RecommendationT&& value) { SetRecommendation(std::forward<RecommendationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The AWS resources for which the exclusion pertains.</p>
      */
-    inline const Aws::Vector<Scope>& GetScopes() const{ return m_scopes; }
+    inline const Aws::Vector<Scope>& GetScopes() const { return m_scopes; }
     inline bool ScopesHasBeenSet() const { return m_scopesHasBeenSet; }
-    inline void SetScopes(const Aws::Vector<Scope>& value) { m_scopesHasBeenSet = true; m_scopes = value; }
-    inline void SetScopes(Aws::Vector<Scope>&& value) { m_scopesHasBeenSet = true; m_scopes = std::move(value); }
-    inline Exclusion& WithScopes(const Aws::Vector<Scope>& value) { SetScopes(value); return *this;}
-    inline Exclusion& WithScopes(Aws::Vector<Scope>&& value) { SetScopes(std::move(value)); return *this;}
-    inline Exclusion& AddScopes(const Scope& value) { m_scopesHasBeenSet = true; m_scopes.push_back(value); return *this; }
-    inline Exclusion& AddScopes(Scope&& value) { m_scopesHasBeenSet = true; m_scopes.push_back(std::move(value)); return *this; }
+    template<typename ScopesT = Aws::Vector<Scope>>
+    void SetScopes(ScopesT&& value) { m_scopesHasBeenSet = true; m_scopes = std::forward<ScopesT>(value); }
+    template<typename ScopesT = Aws::Vector<Scope>>
+    Exclusion& WithScopes(ScopesT&& value) { SetScopes(std::forward<ScopesT>(value)); return *this;}
+    template<typename ScopesT = Scope>
+    Exclusion& AddScopes(ScopesT&& value) { m_scopesHasBeenSet = true; m_scopes.emplace_back(std::forward<ScopesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The system-defined attributes for the exclusion.</p>
      */
-    inline const Aws::Vector<Attribute>& GetAttributes() const{ return m_attributes; }
+    inline const Aws::Vector<Attribute>& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const Aws::Vector<Attribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(Aws::Vector<Attribute>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline Exclusion& WithAttributes(const Aws::Vector<Attribute>& value) { SetAttributes(value); return *this;}
-    inline Exclusion& WithAttributes(Aws::Vector<Attribute>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline Exclusion& AddAttributes(const Attribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
-    inline Exclusion& AddAttributes(Attribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
+    template<typename AttributesT = Aws::Vector<Attribute>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Vector<Attribute>>
+    Exclusion& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    template<typename AttributesT = Attribute>
+    Exclusion& AddAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes.emplace_back(std::forward<AttributesT>(value)); return *this; }
     ///@}
   private:
 

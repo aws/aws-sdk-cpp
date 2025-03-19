@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeleteManagedPrefixListRequest::DeleteManagedPrefixListRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_prefixListIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteManagedPrefixListRequest::SerializePayload() const
 {
   Aws::StringStream ss;

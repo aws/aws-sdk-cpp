@@ -18,13 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-CloudWatchDirectQueryDataSource::CloudWatchDirectQueryDataSource() : 
-    m_roleArnHasBeenSet(false)
-{
-}
-
 CloudWatchDirectQueryDataSource::CloudWatchDirectQueryDataSource(JsonView jsonValue)
-  : CloudWatchDirectQueryDataSource()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CloudWatchDirectQueryDataSource& CloudWatchDirectQueryDataSource::operator =(Jso
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

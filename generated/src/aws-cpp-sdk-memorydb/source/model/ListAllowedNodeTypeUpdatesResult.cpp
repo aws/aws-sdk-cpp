@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListAllowedNodeTypeUpdatesResult::ListAllowedNodeTypeUpdatesResult()
-{
-}
-
 ListAllowedNodeTypeUpdatesResult::ListAllowedNodeTypeUpdatesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ ListAllowedNodeTypeUpdatesResult& ListAllowedNodeTypeUpdatesResult::operator =(c
     {
       m_scaleUpNodeTypes.push_back(scaleUpNodeTypesJsonList[scaleUpNodeTypesIndex].AsString());
     }
+    m_scaleUpNodeTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScaleDownNodeTypes"))
   {
     Aws::Utils::Array<JsonView> scaleDownNodeTypesJsonList = jsonValue.GetArray("ScaleDownNodeTypes");
@@ -45,14 +41,15 @@ ListAllowedNodeTypeUpdatesResult& ListAllowedNodeTypeUpdatesResult::operator =(c
     {
       m_scaleDownNodeTypes.push_back(scaleDownNodeTypesJsonList[scaleDownNodeTypesIndex].AsString());
     }
+    m_scaleDownNodeTypesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

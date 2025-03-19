@@ -33,7 +33,7 @@ namespace Model
   class RealTimeContactAnalysisSegmentCategories
   {
   public:
-    AWS_CONNECT_API RealTimeContactAnalysisSegmentCategories();
+    AWS_CONNECT_API RealTimeContactAnalysisSegmentCategories() = default;
     AWS_CONNECT_API RealTimeContactAnalysisSegmentCategories(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API RealTimeContactAnalysisSegmentCategories& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,18 +44,16 @@ namespace Model
      * <p>Map between the name of the matched rule and
      * RealTimeContactAnalysisCategoryDetails.</p>
      */
-    inline const Aws::Map<Aws::String, RealTimeContactAnalysisCategoryDetails>& GetMatchedDetails() const{ return m_matchedDetails; }
+    inline const Aws::Map<Aws::String, RealTimeContactAnalysisCategoryDetails>& GetMatchedDetails() const { return m_matchedDetails; }
     inline bool MatchedDetailsHasBeenSet() const { return m_matchedDetailsHasBeenSet; }
-    inline void SetMatchedDetails(const Aws::Map<Aws::String, RealTimeContactAnalysisCategoryDetails>& value) { m_matchedDetailsHasBeenSet = true; m_matchedDetails = value; }
-    inline void SetMatchedDetails(Aws::Map<Aws::String, RealTimeContactAnalysisCategoryDetails>&& value) { m_matchedDetailsHasBeenSet = true; m_matchedDetails = std::move(value); }
-    inline RealTimeContactAnalysisSegmentCategories& WithMatchedDetails(const Aws::Map<Aws::String, RealTimeContactAnalysisCategoryDetails>& value) { SetMatchedDetails(value); return *this;}
-    inline RealTimeContactAnalysisSegmentCategories& WithMatchedDetails(Aws::Map<Aws::String, RealTimeContactAnalysisCategoryDetails>&& value) { SetMatchedDetails(std::move(value)); return *this;}
-    inline RealTimeContactAnalysisSegmentCategories& AddMatchedDetails(const Aws::String& key, const RealTimeContactAnalysisCategoryDetails& value) { m_matchedDetailsHasBeenSet = true; m_matchedDetails.emplace(key, value); return *this; }
-    inline RealTimeContactAnalysisSegmentCategories& AddMatchedDetails(Aws::String&& key, const RealTimeContactAnalysisCategoryDetails& value) { m_matchedDetailsHasBeenSet = true; m_matchedDetails.emplace(std::move(key), value); return *this; }
-    inline RealTimeContactAnalysisSegmentCategories& AddMatchedDetails(const Aws::String& key, RealTimeContactAnalysisCategoryDetails&& value) { m_matchedDetailsHasBeenSet = true; m_matchedDetails.emplace(key, std::move(value)); return *this; }
-    inline RealTimeContactAnalysisSegmentCategories& AddMatchedDetails(Aws::String&& key, RealTimeContactAnalysisCategoryDetails&& value) { m_matchedDetailsHasBeenSet = true; m_matchedDetails.emplace(std::move(key), std::move(value)); return *this; }
-    inline RealTimeContactAnalysisSegmentCategories& AddMatchedDetails(const char* key, RealTimeContactAnalysisCategoryDetails&& value) { m_matchedDetailsHasBeenSet = true; m_matchedDetails.emplace(key, std::move(value)); return *this; }
-    inline RealTimeContactAnalysisSegmentCategories& AddMatchedDetails(const char* key, const RealTimeContactAnalysisCategoryDetails& value) { m_matchedDetailsHasBeenSet = true; m_matchedDetails.emplace(key, value); return *this; }
+    template<typename MatchedDetailsT = Aws::Map<Aws::String, RealTimeContactAnalysisCategoryDetails>>
+    void SetMatchedDetails(MatchedDetailsT&& value) { m_matchedDetailsHasBeenSet = true; m_matchedDetails = std::forward<MatchedDetailsT>(value); }
+    template<typename MatchedDetailsT = Aws::Map<Aws::String, RealTimeContactAnalysisCategoryDetails>>
+    RealTimeContactAnalysisSegmentCategories& WithMatchedDetails(MatchedDetailsT&& value) { SetMatchedDetails(std::forward<MatchedDetailsT>(value)); return *this;}
+    template<typename MatchedDetailsKeyT = Aws::String, typename MatchedDetailsValueT = RealTimeContactAnalysisCategoryDetails>
+    RealTimeContactAnalysisSegmentCategories& AddMatchedDetails(MatchedDetailsKeyT&& key, MatchedDetailsValueT&& value) {
+      m_matchedDetailsHasBeenSet = true; m_matchedDetails.emplace(std::forward<MatchedDetailsKeyT>(key), std::forward<MatchedDetailsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

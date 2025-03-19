@@ -12,12 +12,6 @@ using namespace Aws::VoiceID::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-OptOutSpeakerRequest::OptOutSpeakerRequest() : 
-    m_domainIdHasBeenSet(false),
-    m_speakerIdHasBeenSet(false)
-{
-}
-
 Aws::String OptOutSpeakerRequest::SerializePayload() const
 {
   JsonValue payload;

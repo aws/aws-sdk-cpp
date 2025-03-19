@@ -12,14 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateQuickConnectNameRequest::UpdateQuickConnectNameRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_quickConnectIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateQuickConnectNameRequest::SerializePayload() const
 {
   JsonValue payload;

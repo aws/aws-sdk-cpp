@@ -12,12 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateBrandAssignmentRequest::UpdateBrandAssignmentRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_brandArnHasBeenSet(false)
-{
-}
-
 Aws::String UpdateBrandAssignmentRequest::SerializePayload() const
 {
   JsonValue payload;

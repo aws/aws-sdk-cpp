@@ -28,7 +28,7 @@ namespace Model
   class GetSpeakerSearchTaskResult
   {
   public:
-    AWS_CHIMESDKMEDIAPIPELINES_API GetSpeakerSearchTaskResult();
+    AWS_CHIMESDKMEDIAPIPELINES_API GetSpeakerSearchTaskResult() = default;
     AWS_CHIMESDKMEDIAPIPELINES_API GetSpeakerSearchTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHIMESDKMEDIAPIPELINES_API GetSpeakerSearchTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The details of the speaker search task.</p>
      */
-    inline const SpeakerSearchTask& GetSpeakerSearchTask() const{ return m_speakerSearchTask; }
-    inline void SetSpeakerSearchTask(const SpeakerSearchTask& value) { m_speakerSearchTask = value; }
-    inline void SetSpeakerSearchTask(SpeakerSearchTask&& value) { m_speakerSearchTask = std::move(value); }
-    inline GetSpeakerSearchTaskResult& WithSpeakerSearchTask(const SpeakerSearchTask& value) { SetSpeakerSearchTask(value); return *this;}
-    inline GetSpeakerSearchTaskResult& WithSpeakerSearchTask(SpeakerSearchTask&& value) { SetSpeakerSearchTask(std::move(value)); return *this;}
+    inline const SpeakerSearchTask& GetSpeakerSearchTask() const { return m_speakerSearchTask; }
+    template<typename SpeakerSearchTaskT = SpeakerSearchTask>
+    void SetSpeakerSearchTask(SpeakerSearchTaskT&& value) { m_speakerSearchTaskHasBeenSet = true; m_speakerSearchTask = std::forward<SpeakerSearchTaskT>(value); }
+    template<typename SpeakerSearchTaskT = SpeakerSearchTask>
+    GetSpeakerSearchTaskResult& WithSpeakerSearchTask(SpeakerSearchTaskT&& value) { SetSpeakerSearchTask(std::forward<SpeakerSearchTaskT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetSpeakerSearchTaskResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetSpeakerSearchTaskResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetSpeakerSearchTaskResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetSpeakerSearchTaskResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     SpeakerSearchTask m_speakerSearchTask;
+    bool m_speakerSearchTaskHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

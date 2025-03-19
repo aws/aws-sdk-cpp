@@ -18,13 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-SupportedFieldTypeDetails::SupportedFieldTypeDetails() : 
-    m_v1HasBeenSet(false)
-{
-}
-
 SupportedFieldTypeDetails::SupportedFieldTypeDetails(JsonView jsonValue)
-  : SupportedFieldTypeDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SupportedFieldTypeDetails& SupportedFieldTypeDetails::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("v1"))
   {
     m_v1 = jsonValue.GetObject("v1");
-
     m_v1HasBeenSet = true;
   }
-
   return *this;
 }
 

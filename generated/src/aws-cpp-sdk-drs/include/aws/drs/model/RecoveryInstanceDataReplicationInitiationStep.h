@@ -32,7 +32,7 @@ namespace Model
   class RecoveryInstanceDataReplicationInitiationStep
   {
   public:
-    AWS_DRS_API RecoveryInstanceDataReplicationInitiationStep();
+    AWS_DRS_API RecoveryInstanceDataReplicationInitiationStep() = default;
     AWS_DRS_API RecoveryInstanceDataReplicationInitiationStep(Aws::Utils::Json::JsonView jsonValue);
     AWS_DRS_API RecoveryInstanceDataReplicationInitiationStep& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,31 +42,27 @@ namespace Model
     /**
      * <p>The name of the step.</p>
      */
-    inline const RecoveryInstanceDataReplicationInitiationStepName& GetName() const{ return m_name; }
+    inline RecoveryInstanceDataReplicationInitiationStepName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const RecoveryInstanceDataReplicationInitiationStepName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(RecoveryInstanceDataReplicationInitiationStepName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline RecoveryInstanceDataReplicationInitiationStep& WithName(const RecoveryInstanceDataReplicationInitiationStepName& value) { SetName(value); return *this;}
-    inline RecoveryInstanceDataReplicationInitiationStep& WithName(RecoveryInstanceDataReplicationInitiationStepName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(RecoveryInstanceDataReplicationInitiationStepName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline RecoveryInstanceDataReplicationInitiationStep& WithName(RecoveryInstanceDataReplicationInitiationStepName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the step.</p>
      */
-    inline const RecoveryInstanceDataReplicationInitiationStepStatus& GetStatus() const{ return m_status; }
+    inline RecoveryInstanceDataReplicationInitiationStepStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const RecoveryInstanceDataReplicationInitiationStepStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(RecoveryInstanceDataReplicationInitiationStepStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline RecoveryInstanceDataReplicationInitiationStep& WithStatus(const RecoveryInstanceDataReplicationInitiationStepStatus& value) { SetStatus(value); return *this;}
-    inline RecoveryInstanceDataReplicationInitiationStep& WithStatus(RecoveryInstanceDataReplicationInitiationStepStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(RecoveryInstanceDataReplicationInitiationStepStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline RecoveryInstanceDataReplicationInitiationStep& WithStatus(RecoveryInstanceDataReplicationInitiationStepStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    RecoveryInstanceDataReplicationInitiationStepName m_name;
+    RecoveryInstanceDataReplicationInitiationStepName m_name{RecoveryInstanceDataReplicationInitiationStepName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
-    RecoveryInstanceDataReplicationInitiationStepStatus m_status;
+    RecoveryInstanceDataReplicationInitiationStepStatus m_status{RecoveryInstanceDataReplicationInitiationStepStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

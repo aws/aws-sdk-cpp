@@ -18,16 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-WaypointOptimizationRestCycleDurations::WaypointOptimizationRestCycleDurations() : 
-    m_restDuration(0),
-    m_restDurationHasBeenSet(false),
-    m_workDuration(0),
-    m_workDurationHasBeenSet(false)
-{
-}
-
 WaypointOptimizationRestCycleDurations::WaypointOptimizationRestCycleDurations(JsonView jsonValue)
-  : WaypointOptimizationRestCycleDurations()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ WaypointOptimizationRestCycleDurations& WaypointOptimizationRestCycleDurations::
   if(jsonValue.ValueExists("RestDuration"))
   {
     m_restDuration = jsonValue.GetInt64("RestDuration");
-
     m_restDurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkDuration"))
   {
     m_workDuration = jsonValue.GetInt64("WorkDuration");
-
     m_workDurationHasBeenSet = true;
   }
-
   return *this;
 }
 

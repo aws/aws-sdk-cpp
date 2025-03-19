@@ -12,16 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListDevicesRequest::ListDevicesRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_latestHeartbeatAfterHasBeenSet(false),
-    m_modelNameHasBeenSet(false),
-    m_deviceFleetNameHasBeenSet(false)
-{
-}
-
 Aws::String ListDevicesRequest::SerializePayload() const
 {
   JsonValue payload;

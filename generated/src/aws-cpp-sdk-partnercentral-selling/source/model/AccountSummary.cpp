@@ -18,18 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-AccountSummary::AccountSummary() : 
-    m_addressHasBeenSet(false),
-    m_companyNameHasBeenSet(false),
-    m_industry(Industry::NOT_SET),
-    m_industryHasBeenSet(false),
-    m_otherIndustryHasBeenSet(false),
-    m_websiteUrlHasBeenSet(false)
-{
-}
-
 AccountSummary::AccountSummary(JsonView jsonValue)
-  : AccountSummary()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ AccountSummary& AccountSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Address"))
   {
     m_address = jsonValue.GetObject("Address");
-
     m_addressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompanyName"))
   {
     m_companyName = jsonValue.GetString("CompanyName");
-
     m_companyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Industry"))
   {
     m_industry = IndustryMapper::GetIndustryForName(jsonValue.GetString("Industry"));
-
     m_industryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OtherIndustry"))
   {
     m_otherIndustry = jsonValue.GetString("OtherIndustry");
-
     m_otherIndustryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WebsiteUrl"))
   {
     m_websiteUrl = jsonValue.GetString("WebsiteUrl");
-
     m_websiteUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

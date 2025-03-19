@@ -12,13 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-TestAlarmRequest::TestAlarmRequest() : 
-    m_alarmNameHasBeenSet(false),
-    m_state(AlarmState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 Aws::String TestAlarmRequest::SerializePayload() const
 {
   JsonValue payload;

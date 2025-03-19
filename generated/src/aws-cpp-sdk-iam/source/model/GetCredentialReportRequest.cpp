@@ -10,10 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-GetCredentialReportRequest::GetCredentialReportRequest()
-{
-}
-
 Aws::String GetCredentialReportRequest::SerializePayload() const
 {
   Aws::StringStream ss;

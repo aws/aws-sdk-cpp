@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListAnomaliesForInsightResult::ListAnomaliesForInsightResult()
-{
-}
-
 ListAnomaliesForInsightResult::ListAnomaliesForInsightResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ ListAnomaliesForInsightResult& ListAnomaliesForInsightResult::operator =(const A
     {
       m_proactiveAnomalies.push_back(proactiveAnomaliesJsonList[proactiveAnomaliesIndex].AsObject());
     }
+    m_proactiveAnomaliesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReactiveAnomalies"))
   {
     Aws::Utils::Array<JsonView> reactiveAnomaliesJsonList = jsonValue.GetArray("ReactiveAnomalies");
@@ -45,20 +41,20 @@ ListAnomaliesForInsightResult& ListAnomaliesForInsightResult::operator =(const A
     {
       m_reactiveAnomalies.push_back(reactiveAnomaliesJsonList[reactiveAnomaliesIndex].AsObject());
     }
+    m_reactiveAnomaliesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

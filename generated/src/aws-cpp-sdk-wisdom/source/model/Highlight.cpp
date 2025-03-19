@@ -18,16 +18,7 @@ namespace ConnectWisdomService
 namespace Model
 {
 
-Highlight::Highlight() : 
-    m_beginOffsetInclusive(0),
-    m_beginOffsetInclusiveHasBeenSet(false),
-    m_endOffsetExclusive(0),
-    m_endOffsetExclusiveHasBeenSet(false)
-{
-}
-
 Highlight::Highlight(JsonView jsonValue)
-  : Highlight()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ Highlight& Highlight::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("beginOffsetInclusive"))
   {
     m_beginOffsetInclusive = jsonValue.GetInteger("beginOffsetInclusive");
-
     m_beginOffsetInclusiveHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endOffsetExclusive"))
   {
     m_endOffsetExclusive = jsonValue.GetInteger("endOffsetExclusive");
-
     m_endOffsetExclusiveHasBeenSet = true;
   }
-
   return *this;
 }
 

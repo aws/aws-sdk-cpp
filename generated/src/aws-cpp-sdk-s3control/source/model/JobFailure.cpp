@@ -20,14 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-JobFailure::JobFailure() : 
-    m_failureCodeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
-{
-}
-
 JobFailure::JobFailure(const XmlNode& xmlNode)
-  : JobFailure()
 {
   *this = xmlNode;
 }

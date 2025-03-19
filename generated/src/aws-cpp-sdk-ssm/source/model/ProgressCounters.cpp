@@ -18,22 +18,7 @@ namespace SSM
 namespace Model
 {
 
-ProgressCounters::ProgressCounters() : 
-    m_totalSteps(0),
-    m_totalStepsHasBeenSet(false),
-    m_successSteps(0),
-    m_successStepsHasBeenSet(false),
-    m_failedSteps(0),
-    m_failedStepsHasBeenSet(false),
-    m_cancelledSteps(0),
-    m_cancelledStepsHasBeenSet(false),
-    m_timedOutSteps(0),
-    m_timedOutStepsHasBeenSet(false)
-{
-}
-
 ProgressCounters::ProgressCounters(JsonView jsonValue)
-  : ProgressCounters()
 {
   *this = jsonValue;
 }
@@ -43,38 +28,28 @@ ProgressCounters& ProgressCounters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TotalSteps"))
   {
     m_totalSteps = jsonValue.GetInteger("TotalSteps");
-
     m_totalStepsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SuccessSteps"))
   {
     m_successSteps = jsonValue.GetInteger("SuccessSteps");
-
     m_successStepsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailedSteps"))
   {
     m_failedSteps = jsonValue.GetInteger("FailedSteps");
-
     m_failedStepsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CancelledSteps"))
   {
     m_cancelledSteps = jsonValue.GetInteger("CancelledSteps");
-
     m_cancelledStepsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimedOutSteps"))
   {
     m_timedOutSteps = jsonValue.GetInteger("TimedOutSteps");
-
     m_timedOutStepsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -27,7 +27,7 @@ namespace Model
   class StartReportJobResult
   {
   public:
-    AWS_BACKUP_API StartReportJobResult();
+    AWS_BACKUP_API StartReportJobResult() = default;
     AWS_BACKUP_API StartReportJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BACKUP_API StartReportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,28 @@ namespace Model
      * UTF-8 encoded string that is at most 1,024 bytes long. The report job ID cannot
      * be edited.</p>
      */
-    inline const Aws::String& GetReportJobId() const{ return m_reportJobId; }
-    inline void SetReportJobId(const Aws::String& value) { m_reportJobId = value; }
-    inline void SetReportJobId(Aws::String&& value) { m_reportJobId = std::move(value); }
-    inline void SetReportJobId(const char* value) { m_reportJobId.assign(value); }
-    inline StartReportJobResult& WithReportJobId(const Aws::String& value) { SetReportJobId(value); return *this;}
-    inline StartReportJobResult& WithReportJobId(Aws::String&& value) { SetReportJobId(std::move(value)); return *this;}
-    inline StartReportJobResult& WithReportJobId(const char* value) { SetReportJobId(value); return *this;}
+    inline const Aws::String& GetReportJobId() const { return m_reportJobId; }
+    template<typename ReportJobIdT = Aws::String>
+    void SetReportJobId(ReportJobIdT&& value) { m_reportJobIdHasBeenSet = true; m_reportJobId = std::forward<ReportJobIdT>(value); }
+    template<typename ReportJobIdT = Aws::String>
+    StartReportJobResult& WithReportJobId(ReportJobIdT&& value) { SetReportJobId(std::forward<ReportJobIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartReportJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartReportJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartReportJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartReportJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_reportJobId;
+    bool m_reportJobIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

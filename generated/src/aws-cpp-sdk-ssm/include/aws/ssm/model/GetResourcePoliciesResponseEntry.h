@@ -36,7 +36,7 @@ namespace Model
   class GetResourcePoliciesResponseEntry
   {
   public:
-    AWS_SSM_API GetResourcePoliciesResponseEntry();
+    AWS_SSM_API GetResourcePoliciesResponseEntry() = default;
     AWS_SSM_API GetResourcePoliciesResponseEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API GetResourcePoliciesResponseEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>A policy ID.</p>
      */
-    inline const Aws::String& GetPolicyId() const{ return m_policyId; }
+    inline const Aws::String& GetPolicyId() const { return m_policyId; }
     inline bool PolicyIdHasBeenSet() const { return m_policyIdHasBeenSet; }
-    inline void SetPolicyId(const Aws::String& value) { m_policyIdHasBeenSet = true; m_policyId = value; }
-    inline void SetPolicyId(Aws::String&& value) { m_policyIdHasBeenSet = true; m_policyId = std::move(value); }
-    inline void SetPolicyId(const char* value) { m_policyIdHasBeenSet = true; m_policyId.assign(value); }
-    inline GetResourcePoliciesResponseEntry& WithPolicyId(const Aws::String& value) { SetPolicyId(value); return *this;}
-    inline GetResourcePoliciesResponseEntry& WithPolicyId(Aws::String&& value) { SetPolicyId(std::move(value)); return *this;}
-    inline GetResourcePoliciesResponseEntry& WithPolicyId(const char* value) { SetPolicyId(value); return *this;}
+    template<typename PolicyIdT = Aws::String>
+    void SetPolicyId(PolicyIdT&& value) { m_policyIdHasBeenSet = true; m_policyId = std::forward<PolicyIdT>(value); }
+    template<typename PolicyIdT = Aws::String>
+    GetResourcePoliciesResponseEntry& WithPolicyId(PolicyIdT&& value) { SetPolicyId(std::forward<PolicyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
      * multiple users attempt to overwrite a policy. You must provide this hash when
      * updating or deleting a policy.</p>
      */
-    inline const Aws::String& GetPolicyHash() const{ return m_policyHash; }
+    inline const Aws::String& GetPolicyHash() const { return m_policyHash; }
     inline bool PolicyHashHasBeenSet() const { return m_policyHashHasBeenSet; }
-    inline void SetPolicyHash(const Aws::String& value) { m_policyHashHasBeenSet = true; m_policyHash = value; }
-    inline void SetPolicyHash(Aws::String&& value) { m_policyHashHasBeenSet = true; m_policyHash = std::move(value); }
-    inline void SetPolicyHash(const char* value) { m_policyHashHasBeenSet = true; m_policyHash.assign(value); }
-    inline GetResourcePoliciesResponseEntry& WithPolicyHash(const Aws::String& value) { SetPolicyHash(value); return *this;}
-    inline GetResourcePoliciesResponseEntry& WithPolicyHash(Aws::String&& value) { SetPolicyHash(std::move(value)); return *this;}
-    inline GetResourcePoliciesResponseEntry& WithPolicyHash(const char* value) { SetPolicyHash(value); return *this;}
+    template<typename PolicyHashT = Aws::String>
+    void SetPolicyHash(PolicyHashT&& value) { m_policyHashHasBeenSet = true; m_policyHash = std::forward<PolicyHashT>(value); }
+    template<typename PolicyHashT = Aws::String>
+    GetResourcePoliciesResponseEntry& WithPolicyHash(PolicyHashT&& value) { SetPolicyHash(std::forward<PolicyHashT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,14 +77,12 @@ namespace Model
      * Amazon Web Services accounts to view and interact with OpsCenter operational
      * work items (OpsItems).</p>
      */
-    inline const Aws::String& GetPolicy() const{ return m_policy; }
+    inline const Aws::String& GetPolicy() const { return m_policy; }
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
-    inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
-    inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
-    inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
-    inline GetResourcePoliciesResponseEntry& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
-    inline GetResourcePoliciesResponseEntry& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
-    inline GetResourcePoliciesResponseEntry& WithPolicy(const char* value) { SetPolicy(value); return *this;}
+    template<typename PolicyT = Aws::String>
+    void SetPolicy(PolicyT&& value) { m_policyHasBeenSet = true; m_policy = std::forward<PolicyT>(value); }
+    template<typename PolicyT = Aws::String>
+    GetResourcePoliciesResponseEntry& WithPolicy(PolicyT&& value) { SetPolicy(std::forward<PolicyT>(value)); return *this;}
     ///@}
   private:
 

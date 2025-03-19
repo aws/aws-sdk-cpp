@@ -22,7 +22,7 @@ namespace Model
   class DeleteAccountSettingRequest : public ECSRequest
   {
   public:
-    AWS_ECS_API DeleteAccountSettingRequest();
+    AWS_ECS_API DeleteAccountSettingRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,12 +46,10 @@ namespace Model
      * <code>awsvpcTrunking</code> is specified, the ENI limit for your Amazon ECS
      * container instances is affected.</p>
      */
-    inline const SettingName& GetName() const{ return m_name; }
+    inline SettingName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const SettingName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(SettingName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline DeleteAccountSettingRequest& WithName(const SettingName& value) { SetName(value); return *this;}
-    inline DeleteAccountSettingRequest& WithName(SettingName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(SettingName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline DeleteAccountSettingRequest& WithName(SettingName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -62,18 +60,16 @@ namespace Model
      * explicitly overrides these settings. If this field is omitted, the setting is
      * changed only for the authenticated user.</p>
      */
-    inline const Aws::String& GetPrincipalArn() const{ return m_principalArn; }
+    inline const Aws::String& GetPrincipalArn() const { return m_principalArn; }
     inline bool PrincipalArnHasBeenSet() const { return m_principalArnHasBeenSet; }
-    inline void SetPrincipalArn(const Aws::String& value) { m_principalArnHasBeenSet = true; m_principalArn = value; }
-    inline void SetPrincipalArn(Aws::String&& value) { m_principalArnHasBeenSet = true; m_principalArn = std::move(value); }
-    inline void SetPrincipalArn(const char* value) { m_principalArnHasBeenSet = true; m_principalArn.assign(value); }
-    inline DeleteAccountSettingRequest& WithPrincipalArn(const Aws::String& value) { SetPrincipalArn(value); return *this;}
-    inline DeleteAccountSettingRequest& WithPrincipalArn(Aws::String&& value) { SetPrincipalArn(std::move(value)); return *this;}
-    inline DeleteAccountSettingRequest& WithPrincipalArn(const char* value) { SetPrincipalArn(value); return *this;}
+    template<typename PrincipalArnT = Aws::String>
+    void SetPrincipalArn(PrincipalArnT&& value) { m_principalArnHasBeenSet = true; m_principalArn = std::forward<PrincipalArnT>(value); }
+    template<typename PrincipalArnT = Aws::String>
+    DeleteAccountSettingRequest& WithPrincipalArn(PrincipalArnT&& value) { SetPrincipalArn(std::forward<PrincipalArnT>(value)); return *this;}
     ///@}
   private:
 
-    SettingName m_name;
+    SettingName m_name{SettingName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::String m_principalArn;

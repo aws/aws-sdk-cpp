@@ -12,12 +12,6 @@ using namespace Aws::Bedrock::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterMarketplaceModelEndpointRequest::RegisterMarketplaceModelEndpointRequest() : 
-    m_endpointIdentifierHasBeenSet(false),
-    m_modelSourceIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String RegisterMarketplaceModelEndpointRequest::SerializePayload() const
 {
   JsonValue payload;

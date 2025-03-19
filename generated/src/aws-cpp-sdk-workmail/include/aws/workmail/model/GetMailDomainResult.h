@@ -30,7 +30,7 @@ namespace Model
   class GetMailDomainResult
   {
   public:
-    AWS_WORKMAIL_API GetMailDomainResult();
+    AWS_WORKMAIL_API GetMailDomainResult() = default;
     AWS_WORKMAIL_API GetMailDomainResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WORKMAIL_API GetMailDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,13 +42,13 @@ namespace Model
      * DMARC, SPF, DKIM, and direct incoming email traffic to SES. See admin guide for
      * more details.</p>
      */
-    inline const Aws::Vector<DnsRecord>& GetRecords() const{ return m_records; }
-    inline void SetRecords(const Aws::Vector<DnsRecord>& value) { m_records = value; }
-    inline void SetRecords(Aws::Vector<DnsRecord>&& value) { m_records = std::move(value); }
-    inline GetMailDomainResult& WithRecords(const Aws::Vector<DnsRecord>& value) { SetRecords(value); return *this;}
-    inline GetMailDomainResult& WithRecords(Aws::Vector<DnsRecord>&& value) { SetRecords(std::move(value)); return *this;}
-    inline GetMailDomainResult& AddRecords(const DnsRecord& value) { m_records.push_back(value); return *this; }
-    inline GetMailDomainResult& AddRecords(DnsRecord&& value) { m_records.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DnsRecord>& GetRecords() const { return m_records; }
+    template<typename RecordsT = Aws::Vector<DnsRecord>>
+    void SetRecords(RecordsT&& value) { m_recordsHasBeenSet = true; m_records = std::forward<RecordsT>(value); }
+    template<typename RecordsT = Aws::Vector<DnsRecord>>
+    GetMailDomainResult& WithRecords(RecordsT&& value) { SetRecords(std::forward<RecordsT>(value)); return *this;}
+    template<typename RecordsT = DnsRecord>
+    GetMailDomainResult& AddRecords(RecordsT&& value) { m_recordsHasBeenSet = true; m_records.emplace_back(std::forward<RecordsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -56,8 +56,8 @@ namespace Model
      * <p>Specifies whether the domain is a test domain provided by WorkMail, or a
      * custom domain.</p>
      */
-    inline bool GetIsTestDomain() const{ return m_isTestDomain; }
-    inline void SetIsTestDomain(bool value) { m_isTestDomain = value; }
+    inline bool GetIsTestDomain() const { return m_isTestDomain; }
+    inline void SetIsTestDomain(bool value) { m_isTestDomainHasBeenSet = true; m_isTestDomain = value; }
     inline GetMailDomainResult& WithIsTestDomain(bool value) { SetIsTestDomain(value); return *this;}
     ///@}
 
@@ -65,8 +65,8 @@ namespace Model
     /**
      * <p>Specifies whether the domain is the default domain for your organization.</p>
      */
-    inline bool GetIsDefault() const{ return m_isDefault; }
-    inline void SetIsDefault(bool value) { m_isDefault = value; }
+    inline bool GetIsDefault() const { return m_isDefault; }
+    inline void SetIsDefault(bool value) { m_isDefaultHasBeenSet = true; m_isDefault = value; }
     inline GetMailDomainResult& WithIsDefault(bool value) { SetIsDefault(value); return *this;}
     ///@}
 
@@ -74,47 +74,47 @@ namespace Model
     /**
      * <p> Indicates the status of the domain ownership verification.</p>
      */
-    inline const DnsRecordVerificationStatus& GetOwnershipVerificationStatus() const{ return m_ownershipVerificationStatus; }
-    inline void SetOwnershipVerificationStatus(const DnsRecordVerificationStatus& value) { m_ownershipVerificationStatus = value; }
-    inline void SetOwnershipVerificationStatus(DnsRecordVerificationStatus&& value) { m_ownershipVerificationStatus = std::move(value); }
-    inline GetMailDomainResult& WithOwnershipVerificationStatus(const DnsRecordVerificationStatus& value) { SetOwnershipVerificationStatus(value); return *this;}
-    inline GetMailDomainResult& WithOwnershipVerificationStatus(DnsRecordVerificationStatus&& value) { SetOwnershipVerificationStatus(std::move(value)); return *this;}
+    inline DnsRecordVerificationStatus GetOwnershipVerificationStatus() const { return m_ownershipVerificationStatus; }
+    inline void SetOwnershipVerificationStatus(DnsRecordVerificationStatus value) { m_ownershipVerificationStatusHasBeenSet = true; m_ownershipVerificationStatus = value; }
+    inline GetMailDomainResult& WithOwnershipVerificationStatus(DnsRecordVerificationStatus value) { SetOwnershipVerificationStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates the status of a DKIM verification.</p>
      */
-    inline const DnsRecordVerificationStatus& GetDkimVerificationStatus() const{ return m_dkimVerificationStatus; }
-    inline void SetDkimVerificationStatus(const DnsRecordVerificationStatus& value) { m_dkimVerificationStatus = value; }
-    inline void SetDkimVerificationStatus(DnsRecordVerificationStatus&& value) { m_dkimVerificationStatus = std::move(value); }
-    inline GetMailDomainResult& WithDkimVerificationStatus(const DnsRecordVerificationStatus& value) { SetDkimVerificationStatus(value); return *this;}
-    inline GetMailDomainResult& WithDkimVerificationStatus(DnsRecordVerificationStatus&& value) { SetDkimVerificationStatus(std::move(value)); return *this;}
+    inline DnsRecordVerificationStatus GetDkimVerificationStatus() const { return m_dkimVerificationStatus; }
+    inline void SetDkimVerificationStatus(DnsRecordVerificationStatus value) { m_dkimVerificationStatusHasBeenSet = true; m_dkimVerificationStatus = value; }
+    inline GetMailDomainResult& WithDkimVerificationStatus(DnsRecordVerificationStatus value) { SetDkimVerificationStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetMailDomainResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetMailDomainResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetMailDomainResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetMailDomainResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DnsRecord> m_records;
+    bool m_recordsHasBeenSet = false;
 
-    bool m_isTestDomain;
+    bool m_isTestDomain{false};
+    bool m_isTestDomainHasBeenSet = false;
 
-    bool m_isDefault;
+    bool m_isDefault{false};
+    bool m_isDefaultHasBeenSet = false;
 
-    DnsRecordVerificationStatus m_ownershipVerificationStatus;
+    DnsRecordVerificationStatus m_ownershipVerificationStatus{DnsRecordVerificationStatus::NOT_SET};
+    bool m_ownershipVerificationStatusHasBeenSet = false;
 
-    DnsRecordVerificationStatus m_dkimVerificationStatus;
+    DnsRecordVerificationStatus m_dkimVerificationStatus{DnsRecordVerificationStatus::NOT_SET};
+    bool m_dkimVerificationStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,14 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-SccDestinationSettings::SccDestinationSettings() : 
-    m_framerate(SccDestinationFramerate::NOT_SET),
-    m_framerateHasBeenSet(false)
-{
-}
-
 SccDestinationSettings::SccDestinationSettings(JsonView jsonValue)
-  : SccDestinationSettings()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SccDestinationSettings& SccDestinationSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("framerate"))
   {
     m_framerate = SccDestinationFramerateMapper::GetSccDestinationFramerateForName(jsonValue.GetString("framerate"));
-
     m_framerateHasBeenSet = true;
   }
-
   return *this;
 }
 

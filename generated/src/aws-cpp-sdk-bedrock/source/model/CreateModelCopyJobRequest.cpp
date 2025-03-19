@@ -12,16 +12,6 @@ using namespace Aws::Bedrock::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateModelCopyJobRequest::CreateModelCopyJobRequest() : 
-    m_sourceModelArnHasBeenSet(false),
-    m_targetModelNameHasBeenSet(false),
-    m_modelKmsKeyIdHasBeenSet(false),
-    m_targetModelTagsHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateModelCopyJobRequest::SerializePayload() const
 {
   JsonValue payload;

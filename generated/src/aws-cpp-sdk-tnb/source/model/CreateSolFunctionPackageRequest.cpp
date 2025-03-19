@@ -12,11 +12,6 @@ using namespace Aws::tnb::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSolFunctionPackageRequest::CreateSolFunctionPackageRequest() : 
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateSolFunctionPackageRequest::SerializePayload() const
 {
   JsonValue payload;

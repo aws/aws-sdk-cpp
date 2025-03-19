@@ -28,7 +28,7 @@ namespace Model
   class GetPermissionResult
   {
   public:
-    AWS_RAM_API GetPermissionResult();
+    AWS_RAM_API GetPermissionResult() = default;
     AWS_RAM_API GetPermissionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RAM_API GetPermissionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>An object with details about the permission.</p>
      */
-    inline const ResourceSharePermissionDetail& GetPermission() const{ return m_permission; }
-    inline void SetPermission(const ResourceSharePermissionDetail& value) { m_permission = value; }
-    inline void SetPermission(ResourceSharePermissionDetail&& value) { m_permission = std::move(value); }
-    inline GetPermissionResult& WithPermission(const ResourceSharePermissionDetail& value) { SetPermission(value); return *this;}
-    inline GetPermissionResult& WithPermission(ResourceSharePermissionDetail&& value) { SetPermission(std::move(value)); return *this;}
+    inline const ResourceSharePermissionDetail& GetPermission() const { return m_permission; }
+    template<typename PermissionT = ResourceSharePermissionDetail>
+    void SetPermission(PermissionT&& value) { m_permissionHasBeenSet = true; m_permission = std::forward<PermissionT>(value); }
+    template<typename PermissionT = ResourceSharePermissionDetail>
+    GetPermissionResult& WithPermission(PermissionT&& value) { SetPermission(std::forward<PermissionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetPermissionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetPermissionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetPermissionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetPermissionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ResourceSharePermissionDetail m_permission;
+    bool m_permissionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,7 +32,7 @@ namespace Model
   class DestinationOptionsResponse
   {
   public:
-    AWS_EC2_API DestinationOptionsResponse();
+    AWS_EC2_API DestinationOptionsResponse() = default;
     AWS_EC2_API DestinationOptionsResponse(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API DestinationOptionsResponse& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,12 +44,10 @@ namespace Model
     /**
      * <p>The format for the flow log.</p>
      */
-    inline const DestinationFileFormat& GetFileFormat() const{ return m_fileFormat; }
+    inline DestinationFileFormat GetFileFormat() const { return m_fileFormat; }
     inline bool FileFormatHasBeenSet() const { return m_fileFormatHasBeenSet; }
-    inline void SetFileFormat(const DestinationFileFormat& value) { m_fileFormatHasBeenSet = true; m_fileFormat = value; }
-    inline void SetFileFormat(DestinationFileFormat&& value) { m_fileFormatHasBeenSet = true; m_fileFormat = std::move(value); }
-    inline DestinationOptionsResponse& WithFileFormat(const DestinationFileFormat& value) { SetFileFormat(value); return *this;}
-    inline DestinationOptionsResponse& WithFileFormat(DestinationFileFormat&& value) { SetFileFormat(std::move(value)); return *this;}
+    inline void SetFileFormat(DestinationFileFormat value) { m_fileFormatHasBeenSet = true; m_fileFormat = value; }
+    inline DestinationOptionsResponse& WithFileFormat(DestinationFileFormat value) { SetFileFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -57,7 +55,7 @@ namespace Model
      * <p>Indicates whether to use Hive-compatible prefixes for flow logs stored in
      * Amazon S3.</p>
      */
-    inline bool GetHiveCompatiblePartitions() const{ return m_hiveCompatiblePartitions; }
+    inline bool GetHiveCompatiblePartitions() const { return m_hiveCompatiblePartitions; }
     inline bool HiveCompatiblePartitionsHasBeenSet() const { return m_hiveCompatiblePartitionsHasBeenSet; }
     inline void SetHiveCompatiblePartitions(bool value) { m_hiveCompatiblePartitionsHasBeenSet = true; m_hiveCompatiblePartitions = value; }
     inline DestinationOptionsResponse& WithHiveCompatiblePartitions(bool value) { SetHiveCompatiblePartitions(value); return *this;}
@@ -67,20 +65,20 @@ namespace Model
     /**
      * <p>Indicates whether to partition the flow log per hour.</p>
      */
-    inline bool GetPerHourPartition() const{ return m_perHourPartition; }
+    inline bool GetPerHourPartition() const { return m_perHourPartition; }
     inline bool PerHourPartitionHasBeenSet() const { return m_perHourPartitionHasBeenSet; }
     inline void SetPerHourPartition(bool value) { m_perHourPartitionHasBeenSet = true; m_perHourPartition = value; }
     inline DestinationOptionsResponse& WithPerHourPartition(bool value) { SetPerHourPartition(value); return *this;}
     ///@}
   private:
 
-    DestinationFileFormat m_fileFormat;
+    DestinationFileFormat m_fileFormat{DestinationFileFormat::NOT_SET};
     bool m_fileFormatHasBeenSet = false;
 
-    bool m_hiveCompatiblePartitions;
+    bool m_hiveCompatiblePartitions{false};
     bool m_hiveCompatiblePartitionsHasBeenSet = false;
 
-    bool m_perHourPartition;
+    bool m_perHourPartition{false};
     bool m_perHourPartitionHasBeenSet = false;
   };
 

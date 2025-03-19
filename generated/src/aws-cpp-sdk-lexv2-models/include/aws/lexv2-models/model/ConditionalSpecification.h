@@ -38,7 +38,7 @@ namespace Model
   class ConditionalSpecification
   {
   public:
-    AWS_LEXMODELSV2_API ConditionalSpecification();
+    AWS_LEXMODELSV2_API ConditionalSpecification() = default;
     AWS_LEXMODELSV2_API ConditionalSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API ConditionalSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,7 +49,7 @@ namespace Model
      * <p>Determines whether a conditional branch is active. When <code>active</code>
      * is false, the conditions are not evaluated.</p>
      */
-    inline bool GetActive() const{ return m_active; }
+    inline bool GetActive() const { return m_active; }
     inline bool ActiveHasBeenSet() const { return m_activeHasBeenSet; }
     inline void SetActive(bool value) { m_activeHasBeenSet = true; m_active = value; }
     inline ConditionalSpecification& WithActive(bool value) { SetActive(value); return *this;}
@@ -61,14 +61,14 @@ namespace Model
      * condition, a response and a next step. The response and next step are executed
      * when the condition is true.</p>
      */
-    inline const Aws::Vector<ConditionalBranch>& GetConditionalBranches() const{ return m_conditionalBranches; }
+    inline const Aws::Vector<ConditionalBranch>& GetConditionalBranches() const { return m_conditionalBranches; }
     inline bool ConditionalBranchesHasBeenSet() const { return m_conditionalBranchesHasBeenSet; }
-    inline void SetConditionalBranches(const Aws::Vector<ConditionalBranch>& value) { m_conditionalBranchesHasBeenSet = true; m_conditionalBranches = value; }
-    inline void SetConditionalBranches(Aws::Vector<ConditionalBranch>&& value) { m_conditionalBranchesHasBeenSet = true; m_conditionalBranches = std::move(value); }
-    inline ConditionalSpecification& WithConditionalBranches(const Aws::Vector<ConditionalBranch>& value) { SetConditionalBranches(value); return *this;}
-    inline ConditionalSpecification& WithConditionalBranches(Aws::Vector<ConditionalBranch>&& value) { SetConditionalBranches(std::move(value)); return *this;}
-    inline ConditionalSpecification& AddConditionalBranches(const ConditionalBranch& value) { m_conditionalBranchesHasBeenSet = true; m_conditionalBranches.push_back(value); return *this; }
-    inline ConditionalSpecification& AddConditionalBranches(ConditionalBranch&& value) { m_conditionalBranchesHasBeenSet = true; m_conditionalBranches.push_back(std::move(value)); return *this; }
+    template<typename ConditionalBranchesT = Aws::Vector<ConditionalBranch>>
+    void SetConditionalBranches(ConditionalBranchesT&& value) { m_conditionalBranchesHasBeenSet = true; m_conditionalBranches = std::forward<ConditionalBranchesT>(value); }
+    template<typename ConditionalBranchesT = Aws::Vector<ConditionalBranch>>
+    ConditionalSpecification& WithConditionalBranches(ConditionalBranchesT&& value) { SetConditionalBranches(std::forward<ConditionalBranchesT>(value)); return *this;}
+    template<typename ConditionalBranchesT = ConditionalBranch>
+    ConditionalSpecification& AddConditionalBranches(ConditionalBranchesT&& value) { m_conditionalBranchesHasBeenSet = true; m_conditionalBranches.emplace_back(std::forward<ConditionalBranchesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -77,16 +77,16 @@ namespace Model
      * branches are not satisfied. A conditional branch is made up of a condition, a
      * response and a next step.</p>
      */
-    inline const DefaultConditionalBranch& GetDefaultBranch() const{ return m_defaultBranch; }
+    inline const DefaultConditionalBranch& GetDefaultBranch() const { return m_defaultBranch; }
     inline bool DefaultBranchHasBeenSet() const { return m_defaultBranchHasBeenSet; }
-    inline void SetDefaultBranch(const DefaultConditionalBranch& value) { m_defaultBranchHasBeenSet = true; m_defaultBranch = value; }
-    inline void SetDefaultBranch(DefaultConditionalBranch&& value) { m_defaultBranchHasBeenSet = true; m_defaultBranch = std::move(value); }
-    inline ConditionalSpecification& WithDefaultBranch(const DefaultConditionalBranch& value) { SetDefaultBranch(value); return *this;}
-    inline ConditionalSpecification& WithDefaultBranch(DefaultConditionalBranch&& value) { SetDefaultBranch(std::move(value)); return *this;}
+    template<typename DefaultBranchT = DefaultConditionalBranch>
+    void SetDefaultBranch(DefaultBranchT&& value) { m_defaultBranchHasBeenSet = true; m_defaultBranch = std::forward<DefaultBranchT>(value); }
+    template<typename DefaultBranchT = DefaultConditionalBranch>
+    ConditionalSpecification& WithDefaultBranch(DefaultBranchT&& value) { SetDefaultBranch(std::forward<DefaultBranchT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_active;
+    bool m_active{false};
     bool m_activeHasBeenSet = false;
 
     Aws::Vector<ConditionalBranch> m_conditionalBranches;

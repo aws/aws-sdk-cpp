@@ -18,13 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-VirtualRouterServiceProvider::VirtualRouterServiceProvider() : 
-    m_virtualRouterNameHasBeenSet(false)
-{
-}
-
 VirtualRouterServiceProvider::VirtualRouterServiceProvider(JsonView jsonValue)
-  : VirtualRouterServiceProvider()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ VirtualRouterServiceProvider& VirtualRouterServiceProvider::operator =(JsonView 
   if(jsonValue.ValueExists("virtualRouterName"))
   {
     m_virtualRouterName = jsonValue.GetString("virtualRouterName");
-
     m_virtualRouterNameHasBeenSet = true;
   }
-
   return *this;
 }
 

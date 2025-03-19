@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-GeospatialMapFieldWells::GeospatialMapFieldWells() : 
-    m_geospatialMapAggregatedFieldWellsHasBeenSet(false)
-{
-}
-
 GeospatialMapFieldWells::GeospatialMapFieldWells(JsonView jsonValue)
-  : GeospatialMapFieldWells()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ GeospatialMapFieldWells& GeospatialMapFieldWells::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GeospatialMapAggregatedFieldWells"))
   {
     m_geospatialMapAggregatedFieldWells = jsonValue.GetObject("GeospatialMapAggregatedFieldWells");
-
     m_geospatialMapAggregatedFieldWellsHasBeenSet = true;
   }
-
   return *this;
 }
 

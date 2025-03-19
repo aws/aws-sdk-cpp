@@ -29,7 +29,7 @@ namespace Model
   class DescribeImagesResult
   {
   public:
-    AWS_ECRPUBLIC_API DescribeImagesResult();
+    AWS_ECRPUBLIC_API DescribeImagesResult() = default;
     AWS_ECRPUBLIC_API DescribeImagesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ECRPUBLIC_API DescribeImagesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list of <a>ImageDetail</a> objects that contain data about the image.</p>
      */
-    inline const Aws::Vector<ImageDetail>& GetImageDetails() const{ return m_imageDetails; }
-    inline void SetImageDetails(const Aws::Vector<ImageDetail>& value) { m_imageDetails = value; }
-    inline void SetImageDetails(Aws::Vector<ImageDetail>&& value) { m_imageDetails = std::move(value); }
-    inline DescribeImagesResult& WithImageDetails(const Aws::Vector<ImageDetail>& value) { SetImageDetails(value); return *this;}
-    inline DescribeImagesResult& WithImageDetails(Aws::Vector<ImageDetail>&& value) { SetImageDetails(std::move(value)); return *this;}
-    inline DescribeImagesResult& AddImageDetails(const ImageDetail& value) { m_imageDetails.push_back(value); return *this; }
-    inline DescribeImagesResult& AddImageDetails(ImageDetail&& value) { m_imageDetails.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ImageDetail>& GetImageDetails() const { return m_imageDetails; }
+    template<typename ImageDetailsT = Aws::Vector<ImageDetail>>
+    void SetImageDetails(ImageDetailsT&& value) { m_imageDetailsHasBeenSet = true; m_imageDetails = std::forward<ImageDetailsT>(value); }
+    template<typename ImageDetailsT = Aws::Vector<ImageDetail>>
+    DescribeImagesResult& WithImageDetails(ImageDetailsT&& value) { SetImageDetails(std::forward<ImageDetailsT>(value)); return *this;}
+    template<typename ImageDetailsT = ImageDetail>
+    DescribeImagesResult& AddImageDetails(ImageDetailsT&& value) { m_imageDetailsHasBeenSet = true; m_imageDetails.emplace_back(std::forward<ImageDetailsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,32 +55,31 @@ namespace Model
      * this value to retrieve the next page of results. If there are no more results to
      * return, this value is <code>null</code>.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeImagesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeImagesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeImagesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeImagesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeImagesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeImagesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeImagesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeImagesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ImageDetail> m_imageDetails;
+    bool m_imageDetailsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

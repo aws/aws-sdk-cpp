@@ -26,7 +26,7 @@ namespace Model
   class SearchPlaceIndexForSuggestionsRequest : public LocationServiceRequest
   {
   public:
-    AWS_LOCATIONSERVICE_API SearchPlaceIndexForSuggestionsRequest();
+    AWS_LOCATIONSERVICE_API SearchPlaceIndexForSuggestionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The name of the place index resource you want to use for the search.</p>
      */
-    inline const Aws::String& GetIndexName() const{ return m_indexName; }
+    inline const Aws::String& GetIndexName() const { return m_indexName; }
     inline bool IndexNameHasBeenSet() const { return m_indexNameHasBeenSet; }
-    inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
-    inline void SetIndexName(Aws::String&& value) { m_indexNameHasBeenSet = true; m_indexName = std::move(value); }
-    inline void SetIndexName(const char* value) { m_indexNameHasBeenSet = true; m_indexName.assign(value); }
-    inline SearchPlaceIndexForSuggestionsRequest& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
-    inline SearchPlaceIndexForSuggestionsRequest& WithIndexName(Aws::String&& value) { SetIndexName(std::move(value)); return *this;}
-    inline SearchPlaceIndexForSuggestionsRequest& WithIndexName(const char* value) { SetIndexName(value); return *this;}
+    template<typename IndexNameT = Aws::String>
+    void SetIndexName(IndexNameT&& value) { m_indexNameHasBeenSet = true; m_indexName = std::forward<IndexNameT>(value); }
+    template<typename IndexNameT = Aws::String>
+    SearchPlaceIndexForSuggestionsRequest& WithIndexName(IndexNameT&& value) { SetIndexName(std::forward<IndexNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The free-form partial text to use to generate place suggestions. For example,
      * <code>eiffel tow</code>.</p>
      */
-    inline const Aws::String& GetText() const{ return m_text; }
+    inline const Aws::String& GetText() const { return m_text; }
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-    inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-    inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-    inline SearchPlaceIndexForSuggestionsRequest& WithText(const Aws::String& value) { SetText(value); return *this;}
-    inline SearchPlaceIndexForSuggestionsRequest& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-    inline SearchPlaceIndexForSuggestionsRequest& WithText(const char* value) { SetText(value); return *this;}
+    template<typename TextT = Aws::String>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = Aws::String>
+    SearchPlaceIndexForSuggestionsRequest& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,12 +75,12 @@ namespace Model
      * <p> <code>BiasPosition</code> and <code>FilterBBox</code> are mutually
      * exclusive. Specifying both options results in an error. </p> 
      */
-    inline const Aws::Vector<double>& GetBiasPosition() const{ return m_biasPosition; }
+    inline const Aws::Vector<double>& GetBiasPosition() const { return m_biasPosition; }
     inline bool BiasPositionHasBeenSet() const { return m_biasPositionHasBeenSet; }
-    inline void SetBiasPosition(const Aws::Vector<double>& value) { m_biasPositionHasBeenSet = true; m_biasPosition = value; }
-    inline void SetBiasPosition(Aws::Vector<double>&& value) { m_biasPositionHasBeenSet = true; m_biasPosition = std::move(value); }
-    inline SearchPlaceIndexForSuggestionsRequest& WithBiasPosition(const Aws::Vector<double>& value) { SetBiasPosition(value); return *this;}
-    inline SearchPlaceIndexForSuggestionsRequest& WithBiasPosition(Aws::Vector<double>&& value) { SetBiasPosition(std::move(value)); return *this;}
+    template<typename BiasPositionT = Aws::Vector<double>>
+    void SetBiasPosition(BiasPositionT&& value) { m_biasPositionHasBeenSet = true; m_biasPosition = std::forward<BiasPositionT>(value); }
+    template<typename BiasPositionT = Aws::Vector<double>>
+    SearchPlaceIndexForSuggestionsRequest& WithBiasPosition(BiasPositionT&& value) { SetBiasPosition(std::forward<BiasPositionT>(value)); return *this;}
     inline SearchPlaceIndexForSuggestionsRequest& AddBiasPosition(double value) { m_biasPositionHasBeenSet = true; m_biasPosition.push_back(value); return *this; }
     ///@}
 
@@ -104,12 +100,12 @@ namespace Model
      * <code>FilterBBox</code> and <code>BiasPosition</code> are mutually exclusive.
      * Specifying both options results in an error. </p> 
      */
-    inline const Aws::Vector<double>& GetFilterBBox() const{ return m_filterBBox; }
+    inline const Aws::Vector<double>& GetFilterBBox() const { return m_filterBBox; }
     inline bool FilterBBoxHasBeenSet() const { return m_filterBBoxHasBeenSet; }
-    inline void SetFilterBBox(const Aws::Vector<double>& value) { m_filterBBoxHasBeenSet = true; m_filterBBox = value; }
-    inline void SetFilterBBox(Aws::Vector<double>&& value) { m_filterBBoxHasBeenSet = true; m_filterBBox = std::move(value); }
-    inline SearchPlaceIndexForSuggestionsRequest& WithFilterBBox(const Aws::Vector<double>& value) { SetFilterBBox(value); return *this;}
-    inline SearchPlaceIndexForSuggestionsRequest& WithFilterBBox(Aws::Vector<double>&& value) { SetFilterBBox(std::move(value)); return *this;}
+    template<typename FilterBBoxT = Aws::Vector<double>>
+    void SetFilterBBox(FilterBBoxT&& value) { m_filterBBoxHasBeenSet = true; m_filterBBox = std::forward<FilterBBoxT>(value); }
+    template<typename FilterBBoxT = Aws::Vector<double>>
+    SearchPlaceIndexForSuggestionsRequest& WithFilterBBox(FilterBBoxT&& value) { SetFilterBBox(std::forward<FilterBBoxT>(value)); return *this;}
     inline SearchPlaceIndexForSuggestionsRequest& AddFilterBBox(double value) { m_filterBBoxHasBeenSet = true; m_filterBBox.push_back(value); return *this; }
     ///@}
 
@@ -121,15 +117,14 @@ namespace Model
      * country code. For example, Australia uses three upper-case characters:
      * <code>AUS</code>.</p> </li> </ul>
      */
-    inline const Aws::Vector<Aws::String>& GetFilterCountries() const{ return m_filterCountries; }
+    inline const Aws::Vector<Aws::String>& GetFilterCountries() const { return m_filterCountries; }
     inline bool FilterCountriesHasBeenSet() const { return m_filterCountriesHasBeenSet; }
-    inline void SetFilterCountries(const Aws::Vector<Aws::String>& value) { m_filterCountriesHasBeenSet = true; m_filterCountries = value; }
-    inline void SetFilterCountries(Aws::Vector<Aws::String>&& value) { m_filterCountriesHasBeenSet = true; m_filterCountries = std::move(value); }
-    inline SearchPlaceIndexForSuggestionsRequest& WithFilterCountries(const Aws::Vector<Aws::String>& value) { SetFilterCountries(value); return *this;}
-    inline SearchPlaceIndexForSuggestionsRequest& WithFilterCountries(Aws::Vector<Aws::String>&& value) { SetFilterCountries(std::move(value)); return *this;}
-    inline SearchPlaceIndexForSuggestionsRequest& AddFilterCountries(const Aws::String& value) { m_filterCountriesHasBeenSet = true; m_filterCountries.push_back(value); return *this; }
-    inline SearchPlaceIndexForSuggestionsRequest& AddFilterCountries(Aws::String&& value) { m_filterCountriesHasBeenSet = true; m_filterCountries.push_back(std::move(value)); return *this; }
-    inline SearchPlaceIndexForSuggestionsRequest& AddFilterCountries(const char* value) { m_filterCountriesHasBeenSet = true; m_filterCountries.push_back(value); return *this; }
+    template<typename FilterCountriesT = Aws::Vector<Aws::String>>
+    void SetFilterCountries(FilterCountriesT&& value) { m_filterCountriesHasBeenSet = true; m_filterCountries = std::forward<FilterCountriesT>(value); }
+    template<typename FilterCountriesT = Aws::Vector<Aws::String>>
+    SearchPlaceIndexForSuggestionsRequest& WithFilterCountries(FilterCountriesT&& value) { SetFilterCountries(std::forward<FilterCountriesT>(value)); return *this;}
+    template<typename FilterCountriesT = Aws::String>
+    SearchPlaceIndexForSuggestionsRequest& AddFilterCountries(FilterCountriesT&& value) { m_filterCountriesHasBeenSet = true; m_filterCountries.emplace_back(std::forward<FilterCountriesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -137,7 +132,7 @@ namespace Model
      * <p>An optional parameter. The maximum number of results returned per request.
      * </p> <p>The default: <code>5</code> </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline SearchPlaceIndexForSuggestionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -158,14 +153,12 @@ namespace Model
      * as <code>Αθήνα, Ελλάδα</code>.</p> <p>If the data provider does not have a value
      * for Greek, the result will be in a language that the provider does support.</p>
      */
-    inline const Aws::String& GetLanguage() const{ return m_language; }
+    inline const Aws::String& GetLanguage() const { return m_language; }
     inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
-    inline void SetLanguage(const Aws::String& value) { m_languageHasBeenSet = true; m_language = value; }
-    inline void SetLanguage(Aws::String&& value) { m_languageHasBeenSet = true; m_language = std::move(value); }
-    inline void SetLanguage(const char* value) { m_languageHasBeenSet = true; m_language.assign(value); }
-    inline SearchPlaceIndexForSuggestionsRequest& WithLanguage(const Aws::String& value) { SetLanguage(value); return *this;}
-    inline SearchPlaceIndexForSuggestionsRequest& WithLanguage(Aws::String&& value) { SetLanguage(std::move(value)); return *this;}
-    inline SearchPlaceIndexForSuggestionsRequest& WithLanguage(const char* value) { SetLanguage(value); return *this;}
+    template<typename LanguageT = Aws::String>
+    void SetLanguage(LanguageT&& value) { m_languageHasBeenSet = true; m_language = std::forward<LanguageT>(value); }
+    template<typename LanguageT = Aws::String>
+    SearchPlaceIndexForSuggestionsRequest& WithLanguage(LanguageT&& value) { SetLanguage(std::forward<LanguageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -177,15 +170,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
      * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetFilterCategories() const{ return m_filterCategories; }
+    inline const Aws::Vector<Aws::String>& GetFilterCategories() const { return m_filterCategories; }
     inline bool FilterCategoriesHasBeenSet() const { return m_filterCategoriesHasBeenSet; }
-    inline void SetFilterCategories(const Aws::Vector<Aws::String>& value) { m_filterCategoriesHasBeenSet = true; m_filterCategories = value; }
-    inline void SetFilterCategories(Aws::Vector<Aws::String>&& value) { m_filterCategoriesHasBeenSet = true; m_filterCategories = std::move(value); }
-    inline SearchPlaceIndexForSuggestionsRequest& WithFilterCategories(const Aws::Vector<Aws::String>& value) { SetFilterCategories(value); return *this;}
-    inline SearchPlaceIndexForSuggestionsRequest& WithFilterCategories(Aws::Vector<Aws::String>&& value) { SetFilterCategories(std::move(value)); return *this;}
-    inline SearchPlaceIndexForSuggestionsRequest& AddFilterCategories(const Aws::String& value) { m_filterCategoriesHasBeenSet = true; m_filterCategories.push_back(value); return *this; }
-    inline SearchPlaceIndexForSuggestionsRequest& AddFilterCategories(Aws::String&& value) { m_filterCategoriesHasBeenSet = true; m_filterCategories.push_back(std::move(value)); return *this; }
-    inline SearchPlaceIndexForSuggestionsRequest& AddFilterCategories(const char* value) { m_filterCategoriesHasBeenSet = true; m_filterCategories.push_back(value); return *this; }
+    template<typename FilterCategoriesT = Aws::Vector<Aws::String>>
+    void SetFilterCategories(FilterCategoriesT&& value) { m_filterCategoriesHasBeenSet = true; m_filterCategories = std::forward<FilterCategoriesT>(value); }
+    template<typename FilterCategoriesT = Aws::Vector<Aws::String>>
+    SearchPlaceIndexForSuggestionsRequest& WithFilterCategories(FilterCategoriesT&& value) { SetFilterCategories(std::forward<FilterCategoriesT>(value)); return *this;}
+    template<typename FilterCategoriesT = Aws::String>
+    SearchPlaceIndexForSuggestionsRequest& AddFilterCategories(FilterCategoriesT&& value) { m_filterCategoriesHasBeenSet = true; m_filterCategories.emplace_back(std::forward<FilterCategoriesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -194,14 +186,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
      * key</a> to authorize the request.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline SearchPlaceIndexForSuggestionsRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline SearchPlaceIndexForSuggestionsRequest& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline SearchPlaceIndexForSuggestionsRequest& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    SearchPlaceIndexForSuggestionsRequest& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
   private:
 
@@ -220,7 +210,7 @@ namespace Model
     Aws::Vector<Aws::String> m_filterCountries;
     bool m_filterCountriesHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_language;

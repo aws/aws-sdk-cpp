@@ -31,7 +31,7 @@ namespace Model
   class Model
   {
   public:
-    AWS_DATAZONE_API Model();
+    AWS_DATAZONE_API Model() = default;
     AWS_DATAZONE_API Model(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Model& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>Indicates the smithy model of the API.</p>
      */
-    inline const Aws::String& GetSmithy() const{ return m_smithy; }
+    inline const Aws::String& GetSmithy() const { return m_smithy; }
     inline bool SmithyHasBeenSet() const { return m_smithyHasBeenSet; }
-    inline void SetSmithy(const Aws::String& value) { m_smithyHasBeenSet = true; m_smithy = value; }
-    inline void SetSmithy(Aws::String&& value) { m_smithyHasBeenSet = true; m_smithy = std::move(value); }
-    inline void SetSmithy(const char* value) { m_smithyHasBeenSet = true; m_smithy.assign(value); }
-    inline Model& WithSmithy(const Aws::String& value) { SetSmithy(value); return *this;}
-    inline Model& WithSmithy(Aws::String&& value) { SetSmithy(std::move(value)); return *this;}
-    inline Model& WithSmithy(const char* value) { SetSmithy(value); return *this;}
+    template<typename SmithyT = Aws::String>
+    void SetSmithy(SmithyT&& value) { m_smithyHasBeenSet = true; m_smithy = std::forward<SmithyT>(value); }
+    template<typename SmithyT = Aws::String>
+    Model& WithSmithy(SmithyT&& value) { SetSmithy(std::forward<SmithyT>(value)); return *this;}
     ///@}
   private:
 

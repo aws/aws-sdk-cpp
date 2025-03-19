@@ -29,7 +29,7 @@ namespace Model
   class ListMetadataTransferJobsResult
   {
   public:
-    AWS_IOTTWINMAKER_API ListMetadataTransferJobsResult();
+    AWS_IOTTWINMAKER_API ListMetadataTransferJobsResult() = default;
     AWS_IOTTWINMAKER_API ListMetadataTransferJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTTWINMAKER_API ListMetadataTransferJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>The metadata transfer job summaries.</p>
      */
-    inline const Aws::Vector<MetadataTransferJobSummary>& GetMetadataTransferJobSummaries() const{ return m_metadataTransferJobSummaries; }
-    inline void SetMetadataTransferJobSummaries(const Aws::Vector<MetadataTransferJobSummary>& value) { m_metadataTransferJobSummaries = value; }
-    inline void SetMetadataTransferJobSummaries(Aws::Vector<MetadataTransferJobSummary>&& value) { m_metadataTransferJobSummaries = std::move(value); }
-    inline ListMetadataTransferJobsResult& WithMetadataTransferJobSummaries(const Aws::Vector<MetadataTransferJobSummary>& value) { SetMetadataTransferJobSummaries(value); return *this;}
-    inline ListMetadataTransferJobsResult& WithMetadataTransferJobSummaries(Aws::Vector<MetadataTransferJobSummary>&& value) { SetMetadataTransferJobSummaries(std::move(value)); return *this;}
-    inline ListMetadataTransferJobsResult& AddMetadataTransferJobSummaries(const MetadataTransferJobSummary& value) { m_metadataTransferJobSummaries.push_back(value); return *this; }
-    inline ListMetadataTransferJobsResult& AddMetadataTransferJobSummaries(MetadataTransferJobSummary&& value) { m_metadataTransferJobSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<MetadataTransferJobSummary>& GetMetadataTransferJobSummaries() const { return m_metadataTransferJobSummaries; }
+    template<typename MetadataTransferJobSummariesT = Aws::Vector<MetadataTransferJobSummary>>
+    void SetMetadataTransferJobSummaries(MetadataTransferJobSummariesT&& value) { m_metadataTransferJobSummariesHasBeenSet = true; m_metadataTransferJobSummaries = std::forward<MetadataTransferJobSummariesT>(value); }
+    template<typename MetadataTransferJobSummariesT = Aws::Vector<MetadataTransferJobSummary>>
+    ListMetadataTransferJobsResult& WithMetadataTransferJobSummaries(MetadataTransferJobSummariesT&& value) { SetMetadataTransferJobSummaries(std::forward<MetadataTransferJobSummariesT>(value)); return *this;}
+    template<typename MetadataTransferJobSummariesT = MetadataTransferJobSummary>
+    ListMetadataTransferJobsResult& AddMetadataTransferJobSummaries(MetadataTransferJobSummariesT&& value) { m_metadataTransferJobSummariesHasBeenSet = true; m_metadataTransferJobSummaries.emplace_back(std::forward<MetadataTransferJobSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The string that specifies the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListMetadataTransferJobsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListMetadataTransferJobsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListMetadataTransferJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListMetadataTransferJobsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListMetadataTransferJobsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListMetadataTransferJobsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListMetadataTransferJobsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListMetadataTransferJobsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<MetadataTransferJobSummary> m_metadataTransferJobSummaries;
+    bool m_metadataTransferJobSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

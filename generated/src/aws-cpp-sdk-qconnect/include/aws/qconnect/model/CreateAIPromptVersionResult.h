@@ -28,7 +28,7 @@ namespace Model
   class CreateAIPromptVersionResult
   {
   public:
-    AWS_QCONNECT_API CreateAIPromptVersionResult();
+    AWS_QCONNECT_API CreateAIPromptVersionResult() = default;
     AWS_QCONNECT_API CreateAIPromptVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QCONNECT_API CreateAIPromptVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,39 +37,40 @@ namespace Model
     /**
      * <p>The data of the AI Prompt version.</p>
      */
-    inline const AIPromptData& GetAiPrompt() const{ return m_aiPrompt; }
-    inline void SetAiPrompt(const AIPromptData& value) { m_aiPrompt = value; }
-    inline void SetAiPrompt(AIPromptData&& value) { m_aiPrompt = std::move(value); }
-    inline CreateAIPromptVersionResult& WithAiPrompt(const AIPromptData& value) { SetAiPrompt(value); return *this;}
-    inline CreateAIPromptVersionResult& WithAiPrompt(AIPromptData&& value) { SetAiPrompt(std::move(value)); return *this;}
+    inline const AIPromptData& GetAiPrompt() const { return m_aiPrompt; }
+    template<typename AiPromptT = AIPromptData>
+    void SetAiPrompt(AiPromptT&& value) { m_aiPromptHasBeenSet = true; m_aiPrompt = std::forward<AiPromptT>(value); }
+    template<typename AiPromptT = AIPromptData>
+    CreateAIPromptVersionResult& WithAiPrompt(AiPromptT&& value) { SetAiPrompt(std::forward<AiPromptT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version number of the AI Prompt version.</p>
      */
-    inline long long GetVersionNumber() const{ return m_versionNumber; }
-    inline void SetVersionNumber(long long value) { m_versionNumber = value; }
+    inline long long GetVersionNumber() const { return m_versionNumber; }
+    inline void SetVersionNumber(long long value) { m_versionNumberHasBeenSet = true; m_versionNumber = value; }
     inline CreateAIPromptVersionResult& WithVersionNumber(long long value) { SetVersionNumber(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateAIPromptVersionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateAIPromptVersionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateAIPromptVersionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateAIPromptVersionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AIPromptData m_aiPrompt;
+    bool m_aiPromptHasBeenSet = false;
 
-    long long m_versionNumber;
+    long long m_versionNumber{0};
+    bool m_versionNumberHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

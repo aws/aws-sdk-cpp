@@ -14,11 +14,6 @@ using namespace Aws::Route53::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-DeleteVPCAssociationAuthorizationRequest::DeleteVPCAssociationAuthorizationRequest() : 
-    m_hostedZoneIdHasBeenSet(false),
-    m_vPCHasBeenSet(false)
-{
-}
 
 Aws::String DeleteVPCAssociationAuthorizationRequest::SerializePayload() const
 {

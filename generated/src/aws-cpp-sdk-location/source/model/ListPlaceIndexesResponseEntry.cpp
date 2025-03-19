@@ -18,17 +18,7 @@ namespace LocationService
 namespace Model
 {
 
-ListPlaceIndexesResponseEntry::ListPlaceIndexesResponseEntry() : 
-    m_indexNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_dataSourceHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
-{
-}
-
 ListPlaceIndexesResponseEntry::ListPlaceIndexesResponseEntry(JsonView jsonValue)
-  : ListPlaceIndexesResponseEntry()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ ListPlaceIndexesResponseEntry& ListPlaceIndexesResponseEntry::operator =(JsonVie
   if(jsonValue.ValueExists("IndexName"))
   {
     m_indexName = jsonValue.GetString("IndexName");
-
     m_indexNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSource"))
   {
     m_dataSource = jsonValue.GetString("DataSource");
-
     m_dataSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateTime"))
   {
     m_createTime = jsonValue.GetString("CreateTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdateTime"))
   {
     m_updateTime = jsonValue.GetString("UpdateTime");
-
     m_updateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

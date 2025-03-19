@@ -18,21 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-AwsEcrContainerAggregation::AwsEcrContainerAggregation() : 
-    m_architecturesHasBeenSet(false),
-    m_imageShasHasBeenSet(false),
-    m_imageTagsHasBeenSet(false),
-    m_repositoriesHasBeenSet(false),
-    m_resourceIdsHasBeenSet(false),
-    m_sortBy(AwsEcrContainerSortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
-{
-}
-
 AwsEcrContainerAggregation::AwsEcrContainerAggregation(JsonView jsonValue)
-  : AwsEcrContainerAggregation()
 {
   *this = jsonValue;
 }
@@ -48,7 +34,6 @@ AwsEcrContainerAggregation& AwsEcrContainerAggregation::operator =(JsonView json
     }
     m_architecturesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageShas"))
   {
     Aws::Utils::Array<JsonView> imageShasJsonList = jsonValue.GetArray("imageShas");
@@ -58,7 +43,6 @@ AwsEcrContainerAggregation& AwsEcrContainerAggregation::operator =(JsonView json
     }
     m_imageShasHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageTags"))
   {
     Aws::Utils::Array<JsonView> imageTagsJsonList = jsonValue.GetArray("imageTags");
@@ -68,7 +52,6 @@ AwsEcrContainerAggregation& AwsEcrContainerAggregation::operator =(JsonView json
     }
     m_imageTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("repositories"))
   {
     Aws::Utils::Array<JsonView> repositoriesJsonList = jsonValue.GetArray("repositories");
@@ -78,7 +61,6 @@ AwsEcrContainerAggregation& AwsEcrContainerAggregation::operator =(JsonView json
     }
     m_repositoriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceIds"))
   {
     Aws::Utils::Array<JsonView> resourceIdsJsonList = jsonValue.GetArray("resourceIds");
@@ -88,21 +70,16 @@ AwsEcrContainerAggregation& AwsEcrContainerAggregation::operator =(JsonView json
     }
     m_resourceIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sortBy"))
   {
     m_sortBy = AwsEcrContainerSortByMapper::GetAwsEcrContainerSortByForName(jsonValue.GetString("sortBy"));
-
     m_sortByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sortOrder"))
   {
     m_sortOrder = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("sortOrder"));
-
     m_sortOrderHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -21,7 +21,7 @@ namespace Model
   class DeleteCustomRoutingAcceleratorRequest : public GlobalAcceleratorRequest
   {
   public:
-    AWS_GLOBALACCELERATOR_API DeleteCustomRoutingAcceleratorRequest();
+    AWS_GLOBALACCELERATOR_API DeleteCustomRoutingAcceleratorRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the custom routing accelerator to
      * delete.</p>
      */
-    inline const Aws::String& GetAcceleratorArn() const{ return m_acceleratorArn; }
+    inline const Aws::String& GetAcceleratorArn() const { return m_acceleratorArn; }
     inline bool AcceleratorArnHasBeenSet() const { return m_acceleratorArnHasBeenSet; }
-    inline void SetAcceleratorArn(const Aws::String& value) { m_acceleratorArnHasBeenSet = true; m_acceleratorArn = value; }
-    inline void SetAcceleratorArn(Aws::String&& value) { m_acceleratorArnHasBeenSet = true; m_acceleratorArn = std::move(value); }
-    inline void SetAcceleratorArn(const char* value) { m_acceleratorArnHasBeenSet = true; m_acceleratorArn.assign(value); }
-    inline DeleteCustomRoutingAcceleratorRequest& WithAcceleratorArn(const Aws::String& value) { SetAcceleratorArn(value); return *this;}
-    inline DeleteCustomRoutingAcceleratorRequest& WithAcceleratorArn(Aws::String&& value) { SetAcceleratorArn(std::move(value)); return *this;}
-    inline DeleteCustomRoutingAcceleratorRequest& WithAcceleratorArn(const char* value) { SetAcceleratorArn(value); return *this;}
+    template<typename AcceleratorArnT = Aws::String>
+    void SetAcceleratorArn(AcceleratorArnT&& value) { m_acceleratorArnHasBeenSet = true; m_acceleratorArn = std::forward<AcceleratorArnT>(value); }
+    template<typename AcceleratorArnT = Aws::String>
+    DeleteCustomRoutingAcceleratorRequest& WithAcceleratorArn(AcceleratorArnT&& value) { SetAcceleratorArn(std::forward<AcceleratorArnT>(value)); return *this;}
     ///@}
   private:
 

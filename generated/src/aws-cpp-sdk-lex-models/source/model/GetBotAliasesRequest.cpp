@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetBotAliasesRequest::GetBotAliasesRequest() : 
-    m_botNameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nameContainsHasBeenSet(false)
-{
-}
-
 Aws::String GetBotAliasesRequest::SerializePayload() const
 {
   return {};

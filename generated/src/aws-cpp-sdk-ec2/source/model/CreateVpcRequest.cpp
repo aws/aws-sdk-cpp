@@ -10,27 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateVpcRequest::CreateVpcRequest() : 
-    m_cidrBlockHasBeenSet(false),
-    m_ipv6PoolHasBeenSet(false),
-    m_ipv6CidrBlockHasBeenSet(false),
-    m_ipv4IpamPoolIdHasBeenSet(false),
-    m_ipv4NetmaskLength(0),
-    m_ipv4NetmaskLengthHasBeenSet(false),
-    m_ipv6IpamPoolIdHasBeenSet(false),
-    m_ipv6NetmaskLength(0),
-    m_ipv6NetmaskLengthHasBeenSet(false),
-    m_ipv6CidrBlockNetworkBorderGroupHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_instanceTenancy(Tenancy::NOT_SET),
-    m_instanceTenancyHasBeenSet(false),
-    m_amazonProvidedIpv6CidrBlock(false),
-    m_amazonProvidedIpv6CidrBlockHasBeenSet(false)
-{
-}
-
 Aws::String CreateVpcRequest::SerializePayload() const
 {
   Aws::StringStream ss;

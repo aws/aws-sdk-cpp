@@ -18,17 +18,7 @@ namespace Kinesis
 namespace Model
 {
 
-Consumer::Consumer() : 
-    m_consumerNameHasBeenSet(false),
-    m_consumerARNHasBeenSet(false),
-    m_consumerStatus(ConsumerStatus::NOT_SET),
-    m_consumerStatusHasBeenSet(false),
-    m_consumerCreationTimestampHasBeenSet(false)
-{
-}
-
 Consumer::Consumer(JsonView jsonValue)
-  : Consumer()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ Consumer& Consumer::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ConsumerName"))
   {
     m_consumerName = jsonValue.GetString("ConsumerName");
-
     m_consumerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConsumerARN"))
   {
     m_consumerARN = jsonValue.GetString("ConsumerARN");
-
     m_consumerARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConsumerStatus"))
   {
     m_consumerStatus = ConsumerStatusMapper::GetConsumerStatusForName(jsonValue.GetString("ConsumerStatus"));
-
     m_consumerStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConsumerCreationTimestamp"))
   {
     m_consumerCreationTimestamp = jsonValue.GetDouble("ConsumerCreationTimestamp");
-
     m_consumerCreationTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

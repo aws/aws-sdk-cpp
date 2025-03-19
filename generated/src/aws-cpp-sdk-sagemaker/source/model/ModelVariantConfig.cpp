@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ModelVariantConfig::ModelVariantConfig() : 
-    m_modelNameHasBeenSet(false),
-    m_variantNameHasBeenSet(false),
-    m_infrastructureConfigHasBeenSet(false)
-{
-}
-
 ModelVariantConfig::ModelVariantConfig(JsonView jsonValue)
-  : ModelVariantConfig()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ModelVariantConfig& ModelVariantConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ModelName"))
   {
     m_modelName = jsonValue.GetString("ModelName");
-
     m_modelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VariantName"))
   {
     m_variantName = jsonValue.GetString("VariantName");
-
     m_variantNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InfrastructureConfig"))
   {
     m_infrastructureConfig = jsonValue.GetObject("InfrastructureConfig");
-
     m_infrastructureConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class DatasourcePackageUsageInfo
   {
   public:
-    AWS_DETECTIVE_API DatasourcePackageUsageInfo();
+    AWS_DETECTIVE_API DatasourcePackageUsageInfo() = default;
     AWS_DETECTIVE_API DatasourcePackageUsageInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_DETECTIVE_API DatasourcePackageUsageInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DETECTIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * <p>Total volume of data in bytes per day ingested for a given data source
      * package.</p>
      */
-    inline long long GetVolumeUsageInBytes() const{ return m_volumeUsageInBytes; }
+    inline long long GetVolumeUsageInBytes() const { return m_volumeUsageInBytes; }
     inline bool VolumeUsageInBytesHasBeenSet() const { return m_volumeUsageInBytesHasBeenSet; }
     inline void SetVolumeUsageInBytes(long long value) { m_volumeUsageInBytesHasBeenSet = true; m_volumeUsageInBytes = value; }
     inline DatasourcePackageUsageInfo& WithVolumeUsageInBytes(long long value) { SetVolumeUsageInBytes(value); return *this;}
@@ -55,19 +55,19 @@ namespace Model
      * value is an ISO8601 formatted string. For example,
      * <code>2021-08-18T16:35:56.284Z</code>.</p>
      */
-    inline const Aws::Utils::DateTime& GetVolumeUsageUpdateTime() const{ return m_volumeUsageUpdateTime; }
+    inline const Aws::Utils::DateTime& GetVolumeUsageUpdateTime() const { return m_volumeUsageUpdateTime; }
     inline bool VolumeUsageUpdateTimeHasBeenSet() const { return m_volumeUsageUpdateTimeHasBeenSet; }
-    inline void SetVolumeUsageUpdateTime(const Aws::Utils::DateTime& value) { m_volumeUsageUpdateTimeHasBeenSet = true; m_volumeUsageUpdateTime = value; }
-    inline void SetVolumeUsageUpdateTime(Aws::Utils::DateTime&& value) { m_volumeUsageUpdateTimeHasBeenSet = true; m_volumeUsageUpdateTime = std::move(value); }
-    inline DatasourcePackageUsageInfo& WithVolumeUsageUpdateTime(const Aws::Utils::DateTime& value) { SetVolumeUsageUpdateTime(value); return *this;}
-    inline DatasourcePackageUsageInfo& WithVolumeUsageUpdateTime(Aws::Utils::DateTime&& value) { SetVolumeUsageUpdateTime(std::move(value)); return *this;}
+    template<typename VolumeUsageUpdateTimeT = Aws::Utils::DateTime>
+    void SetVolumeUsageUpdateTime(VolumeUsageUpdateTimeT&& value) { m_volumeUsageUpdateTimeHasBeenSet = true; m_volumeUsageUpdateTime = std::forward<VolumeUsageUpdateTimeT>(value); }
+    template<typename VolumeUsageUpdateTimeT = Aws::Utils::DateTime>
+    DatasourcePackageUsageInfo& WithVolumeUsageUpdateTime(VolumeUsageUpdateTimeT&& value) { SetVolumeUsageUpdateTime(std::forward<VolumeUsageUpdateTimeT>(value)); return *this;}
     ///@}
   private:
 
-    long long m_volumeUsageInBytes;
+    long long m_volumeUsageInBytes{0};
     bool m_volumeUsageInBytesHasBeenSet = false;
 
-    Aws::Utils::DateTime m_volumeUsageUpdateTime;
+    Aws::Utils::DateTime m_volumeUsageUpdateTime{};
     bool m_volumeUsageUpdateTimeHasBeenSet = false;
   };
 

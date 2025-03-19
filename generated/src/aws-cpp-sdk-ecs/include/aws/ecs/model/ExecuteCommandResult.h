@@ -28,7 +28,7 @@ namespace Model
   class ExecuteCommandResult
   {
   public:
-    AWS_ECS_API ExecuteCommandResult();
+    AWS_ECS_API ExecuteCommandResult() = default;
     AWS_ECS_API ExecuteCommandResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ECS_API ExecuteCommandResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,39 +37,33 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the cluster.</p>
      */
-    inline const Aws::String& GetClusterArn() const{ return m_clusterArn; }
-    inline void SetClusterArn(const Aws::String& value) { m_clusterArn = value; }
-    inline void SetClusterArn(Aws::String&& value) { m_clusterArn = std::move(value); }
-    inline void SetClusterArn(const char* value) { m_clusterArn.assign(value); }
-    inline ExecuteCommandResult& WithClusterArn(const Aws::String& value) { SetClusterArn(value); return *this;}
-    inline ExecuteCommandResult& WithClusterArn(Aws::String&& value) { SetClusterArn(std::move(value)); return *this;}
-    inline ExecuteCommandResult& WithClusterArn(const char* value) { SetClusterArn(value); return *this;}
+    inline const Aws::String& GetClusterArn() const { return m_clusterArn; }
+    template<typename ClusterArnT = Aws::String>
+    void SetClusterArn(ClusterArnT&& value) { m_clusterArnHasBeenSet = true; m_clusterArn = std::forward<ClusterArnT>(value); }
+    template<typename ClusterArnT = Aws::String>
+    ExecuteCommandResult& WithClusterArn(ClusterArnT&& value) { SetClusterArn(std::forward<ClusterArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the container.</p>
      */
-    inline const Aws::String& GetContainerArn() const{ return m_containerArn; }
-    inline void SetContainerArn(const Aws::String& value) { m_containerArn = value; }
-    inline void SetContainerArn(Aws::String&& value) { m_containerArn = std::move(value); }
-    inline void SetContainerArn(const char* value) { m_containerArn.assign(value); }
-    inline ExecuteCommandResult& WithContainerArn(const Aws::String& value) { SetContainerArn(value); return *this;}
-    inline ExecuteCommandResult& WithContainerArn(Aws::String&& value) { SetContainerArn(std::move(value)); return *this;}
-    inline ExecuteCommandResult& WithContainerArn(const char* value) { SetContainerArn(value); return *this;}
+    inline const Aws::String& GetContainerArn() const { return m_containerArn; }
+    template<typename ContainerArnT = Aws::String>
+    void SetContainerArn(ContainerArnT&& value) { m_containerArnHasBeenSet = true; m_containerArn = std::forward<ContainerArnT>(value); }
+    template<typename ContainerArnT = Aws::String>
+    ExecuteCommandResult& WithContainerArn(ContainerArnT&& value) { SetContainerArn(std::forward<ContainerArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the container.</p>
      */
-    inline const Aws::String& GetContainerName() const{ return m_containerName; }
-    inline void SetContainerName(const Aws::String& value) { m_containerName = value; }
-    inline void SetContainerName(Aws::String&& value) { m_containerName = std::move(value); }
-    inline void SetContainerName(const char* value) { m_containerName.assign(value); }
-    inline ExecuteCommandResult& WithContainerName(const Aws::String& value) { SetContainerName(value); return *this;}
-    inline ExecuteCommandResult& WithContainerName(Aws::String&& value) { SetContainerName(std::move(value)); return *this;}
-    inline ExecuteCommandResult& WithContainerName(const char* value) { SetContainerName(value); return *this;}
+    inline const Aws::String& GetContainerName() const { return m_containerName; }
+    template<typename ContainerNameT = Aws::String>
+    void SetContainerName(ContainerNameT&& value) { m_containerNameHasBeenSet = true; m_containerName = std::forward<ContainerNameT>(value); }
+    template<typename ContainerNameT = Aws::String>
+    ExecuteCommandResult& WithContainerName(ContainerNameT&& value) { SetContainerName(std::forward<ContainerNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,8 +72,8 @@ namespace Model
      * mode. Amazon ECS only supports initiating interactive sessions, so you must
      * specify <code>true</code> for this value.</p>
      */
-    inline bool GetInteractive() const{ return m_interactive; }
-    inline void SetInteractive(bool value) { m_interactive = value; }
+    inline bool GetInteractive() const { return m_interactive; }
+    inline void SetInteractive(bool value) { m_interactiveHasBeenSet = true; m_interactive = value; }
     inline ExecuteCommandResult& WithInteractive(bool value) { SetInteractive(value); return *this;}
     ///@}
 
@@ -88,51 +82,54 @@ namespace Model
      * <p>The details of the SSM session that was created for this instance of
      * execute-command.</p>
      */
-    inline const Session& GetSession() const{ return m_session; }
-    inline void SetSession(const Session& value) { m_session = value; }
-    inline void SetSession(Session&& value) { m_session = std::move(value); }
-    inline ExecuteCommandResult& WithSession(const Session& value) { SetSession(value); return *this;}
-    inline ExecuteCommandResult& WithSession(Session&& value) { SetSession(std::move(value)); return *this;}
+    inline const Session& GetSession() const { return m_session; }
+    template<typename SessionT = Session>
+    void SetSession(SessionT&& value) { m_sessionHasBeenSet = true; m_session = std::forward<SessionT>(value); }
+    template<typename SessionT = Session>
+    ExecuteCommandResult& WithSession(SessionT&& value) { SetSession(std::forward<SessionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the task.</p>
      */
-    inline const Aws::String& GetTaskArn() const{ return m_taskArn; }
-    inline void SetTaskArn(const Aws::String& value) { m_taskArn = value; }
-    inline void SetTaskArn(Aws::String&& value) { m_taskArn = std::move(value); }
-    inline void SetTaskArn(const char* value) { m_taskArn.assign(value); }
-    inline ExecuteCommandResult& WithTaskArn(const Aws::String& value) { SetTaskArn(value); return *this;}
-    inline ExecuteCommandResult& WithTaskArn(Aws::String&& value) { SetTaskArn(std::move(value)); return *this;}
-    inline ExecuteCommandResult& WithTaskArn(const char* value) { SetTaskArn(value); return *this;}
+    inline const Aws::String& GetTaskArn() const { return m_taskArn; }
+    template<typename TaskArnT = Aws::String>
+    void SetTaskArn(TaskArnT&& value) { m_taskArnHasBeenSet = true; m_taskArn = std::forward<TaskArnT>(value); }
+    template<typename TaskArnT = Aws::String>
+    ExecuteCommandResult& WithTaskArn(TaskArnT&& value) { SetTaskArn(std::forward<TaskArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ExecuteCommandResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ExecuteCommandResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ExecuteCommandResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ExecuteCommandResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_clusterArn;
+    bool m_clusterArnHasBeenSet = false;
 
     Aws::String m_containerArn;
+    bool m_containerArnHasBeenSet = false;
 
     Aws::String m_containerName;
+    bool m_containerNameHasBeenSet = false;
 
-    bool m_interactive;
+    bool m_interactive{false};
+    bool m_interactiveHasBeenSet = false;
 
     Session m_session;
+    bool m_sessionHasBeenSet = false;
 
     Aws::String m_taskArn;
+    bool m_taskArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

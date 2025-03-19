@@ -28,7 +28,7 @@ namespace Model
   class StopKeyUsageResult
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHY_API StopKeyUsageResult();
+    AWS_PAYMENTCRYPTOGRAPHY_API StopKeyUsageResult() = default;
     AWS_PAYMENTCRYPTOGRAPHY_API StopKeyUsageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PAYMENTCRYPTOGRAPHY_API StopKeyUsageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The <code>KeyARN</code> of the key.</p>
      */
-    inline const Key& GetKey() const{ return m_key; }
-    inline void SetKey(const Key& value) { m_key = value; }
-    inline void SetKey(Key&& value) { m_key = std::move(value); }
-    inline StopKeyUsageResult& WithKey(const Key& value) { SetKey(value); return *this;}
-    inline StopKeyUsageResult& WithKey(Key&& value) { SetKey(std::move(value)); return *this;}
+    inline const Key& GetKey() const { return m_key; }
+    template<typename KeyT = Key>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Key>
+    StopKeyUsageResult& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StopKeyUsageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StopKeyUsageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StopKeyUsageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StopKeyUsageResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Key m_key;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

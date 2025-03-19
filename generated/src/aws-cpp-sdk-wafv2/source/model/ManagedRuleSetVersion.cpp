@@ -18,20 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-ManagedRuleSetVersion::ManagedRuleSetVersion() : 
-    m_associatedRuleGroupArnHasBeenSet(false),
-    m_capacity(0),
-    m_capacityHasBeenSet(false),
-    m_forecastedLifetime(0),
-    m_forecastedLifetimeHasBeenSet(false),
-    m_publishTimestampHasBeenSet(false),
-    m_lastUpdateTimestampHasBeenSet(false),
-    m_expiryTimestampHasBeenSet(false)
-{
-}
-
 ManagedRuleSetVersion::ManagedRuleSetVersion(JsonView jsonValue)
-  : ManagedRuleSetVersion()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ ManagedRuleSetVersion& ManagedRuleSetVersion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AssociatedRuleGroupArn"))
   {
     m_associatedRuleGroupArn = jsonValue.GetString("AssociatedRuleGroupArn");
-
     m_associatedRuleGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Capacity"))
   {
     m_capacity = jsonValue.GetInt64("Capacity");
-
     m_capacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ForecastedLifetime"))
   {
     m_forecastedLifetime = jsonValue.GetInteger("ForecastedLifetime");
-
     m_forecastedLifetimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PublishTimestamp"))
   {
     m_publishTimestamp = jsonValue.GetDouble("PublishTimestamp");
-
     m_publishTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdateTimestamp"))
   {
     m_lastUpdateTimestamp = jsonValue.GetDouble("LastUpdateTimestamp");
-
     m_lastUpdateTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpiryTimestamp"))
   {
     m_expiryTimestamp = jsonValue.GetDouble("ExpiryTimestamp");
-
     m_expiryTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

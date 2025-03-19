@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateUserResult::UpdateUserResult()
-{
-}
-
 UpdateUserResult::UpdateUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ UpdateUserResult& UpdateUserResult::operator =(const Aws::AmazonWebServiceResult
     {
       m_userAliasesAdded.push_back(userAliasesAddedJsonList[userAliasesAddedIndex].AsObject());
     }
+    m_userAliasesAddedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userAliasesUpdated"))
   {
     Aws::Utils::Array<JsonView> userAliasesUpdatedJsonList = jsonValue.GetArray("userAliasesUpdated");
@@ -45,8 +41,8 @@ UpdateUserResult& UpdateUserResult::operator =(const Aws::AmazonWebServiceResult
     {
       m_userAliasesUpdated.push_back(userAliasesUpdatedJsonList[userAliasesUpdatedIndex].AsObject());
     }
+    m_userAliasesUpdatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userAliasesDeleted"))
   {
     Aws::Utils::Array<JsonView> userAliasesDeletedJsonList = jsonValue.GetArray("userAliasesDeleted");
@@ -54,14 +50,15 @@ UpdateUserResult& UpdateUserResult::operator =(const Aws::AmazonWebServiceResult
     {
       m_userAliasesDeleted.push_back(userAliasesDeletedJsonList[userAliasesDeletedIndex].AsObject());
     }
+    m_userAliasesDeletedHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

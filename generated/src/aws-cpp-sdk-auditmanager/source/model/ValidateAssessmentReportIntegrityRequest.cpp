@@ -12,11 +12,6 @@ using namespace Aws::AuditManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ValidateAssessmentReportIntegrityRequest::ValidateAssessmentReportIntegrityRequest() : 
-    m_s3RelativePathHasBeenSet(false)
-{
-}
-
 Aws::String ValidateAssessmentReportIntegrityRequest::SerializePayload() const
 {
   JsonValue payload;

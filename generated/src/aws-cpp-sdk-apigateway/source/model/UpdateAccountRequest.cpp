@@ -12,11 +12,6 @@ using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAccountRequest::UpdateAccountRequest() : 
-    m_patchOperationsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAccountRequest::SerializePayload() const
 {
   JsonValue payload;

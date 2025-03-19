@@ -28,7 +28,7 @@ namespace Model
   class CreatePortalRequest : public IoTSiteWiseRequest
   {
   public:
-    AWS_IOTSITEWISE_API CreatePortalRequest();
+    AWS_IOTSITEWISE_API CreatePortalRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,42 +43,36 @@ namespace Model
     /**
      * <p>A friendly name for the portal.</p>
      */
-    inline const Aws::String& GetPortalName() const{ return m_portalName; }
+    inline const Aws::String& GetPortalName() const { return m_portalName; }
     inline bool PortalNameHasBeenSet() const { return m_portalNameHasBeenSet; }
-    inline void SetPortalName(const Aws::String& value) { m_portalNameHasBeenSet = true; m_portalName = value; }
-    inline void SetPortalName(Aws::String&& value) { m_portalNameHasBeenSet = true; m_portalName = std::move(value); }
-    inline void SetPortalName(const char* value) { m_portalNameHasBeenSet = true; m_portalName.assign(value); }
-    inline CreatePortalRequest& WithPortalName(const Aws::String& value) { SetPortalName(value); return *this;}
-    inline CreatePortalRequest& WithPortalName(Aws::String&& value) { SetPortalName(std::move(value)); return *this;}
-    inline CreatePortalRequest& WithPortalName(const char* value) { SetPortalName(value); return *this;}
+    template<typename PortalNameT = Aws::String>
+    void SetPortalName(PortalNameT&& value) { m_portalNameHasBeenSet = true; m_portalName = std::forward<PortalNameT>(value); }
+    template<typename PortalNameT = Aws::String>
+    CreatePortalRequest& WithPortalName(PortalNameT&& value) { SetPortalName(std::forward<PortalNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description for the portal.</p>
      */
-    inline const Aws::String& GetPortalDescription() const{ return m_portalDescription; }
+    inline const Aws::String& GetPortalDescription() const { return m_portalDescription; }
     inline bool PortalDescriptionHasBeenSet() const { return m_portalDescriptionHasBeenSet; }
-    inline void SetPortalDescription(const Aws::String& value) { m_portalDescriptionHasBeenSet = true; m_portalDescription = value; }
-    inline void SetPortalDescription(Aws::String&& value) { m_portalDescriptionHasBeenSet = true; m_portalDescription = std::move(value); }
-    inline void SetPortalDescription(const char* value) { m_portalDescriptionHasBeenSet = true; m_portalDescription.assign(value); }
-    inline CreatePortalRequest& WithPortalDescription(const Aws::String& value) { SetPortalDescription(value); return *this;}
-    inline CreatePortalRequest& WithPortalDescription(Aws::String&& value) { SetPortalDescription(std::move(value)); return *this;}
-    inline CreatePortalRequest& WithPortalDescription(const char* value) { SetPortalDescription(value); return *this;}
+    template<typename PortalDescriptionT = Aws::String>
+    void SetPortalDescription(PortalDescriptionT&& value) { m_portalDescriptionHasBeenSet = true; m_portalDescription = std::forward<PortalDescriptionT>(value); }
+    template<typename PortalDescriptionT = Aws::String>
+    CreatePortalRequest& WithPortalDescription(PortalDescriptionT&& value) { SetPortalDescription(std::forward<PortalDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services administrator's contact email address.</p>
      */
-    inline const Aws::String& GetPortalContactEmail() const{ return m_portalContactEmail; }
+    inline const Aws::String& GetPortalContactEmail() const { return m_portalContactEmail; }
     inline bool PortalContactEmailHasBeenSet() const { return m_portalContactEmailHasBeenSet; }
-    inline void SetPortalContactEmail(const Aws::String& value) { m_portalContactEmailHasBeenSet = true; m_portalContactEmail = value; }
-    inline void SetPortalContactEmail(Aws::String&& value) { m_portalContactEmailHasBeenSet = true; m_portalContactEmail = std::move(value); }
-    inline void SetPortalContactEmail(const char* value) { m_portalContactEmailHasBeenSet = true; m_portalContactEmail.assign(value); }
-    inline CreatePortalRequest& WithPortalContactEmail(const Aws::String& value) { SetPortalContactEmail(value); return *this;}
-    inline CreatePortalRequest& WithPortalContactEmail(Aws::String&& value) { SetPortalContactEmail(std::move(value)); return *this;}
-    inline CreatePortalRequest& WithPortalContactEmail(const char* value) { SetPortalContactEmail(value); return *this;}
+    template<typename PortalContactEmailT = Aws::String>
+    void SetPortalContactEmail(PortalContactEmailT&& value) { m_portalContactEmailHasBeenSet = true; m_portalContactEmail = std::forward<PortalContactEmailT>(value); }
+    template<typename PortalContactEmailT = Aws::String>
+    CreatePortalRequest& WithPortalContactEmail(PortalContactEmailT&& value) { SetPortalContactEmail(std::forward<PortalContactEmailT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,14 +81,12 @@ namespace Model
      * idempotency of the request. Don't reuse this client token if a new idempotent
      * request is required.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreatePortalRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreatePortalRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreatePortalRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreatePortalRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,12 +94,12 @@ namespace Model
      * <p>A logo image to display in the portal. Upload a square, high-resolution
      * image. The image is displayed on a dark background.</p>
      */
-    inline const ImageFile& GetPortalLogoImageFile() const{ return m_portalLogoImageFile; }
+    inline const ImageFile& GetPortalLogoImageFile() const { return m_portalLogoImageFile; }
     inline bool PortalLogoImageFileHasBeenSet() const { return m_portalLogoImageFileHasBeenSet; }
-    inline void SetPortalLogoImageFile(const ImageFile& value) { m_portalLogoImageFileHasBeenSet = true; m_portalLogoImageFile = value; }
-    inline void SetPortalLogoImageFile(ImageFile&& value) { m_portalLogoImageFileHasBeenSet = true; m_portalLogoImageFile = std::move(value); }
-    inline CreatePortalRequest& WithPortalLogoImageFile(const ImageFile& value) { SetPortalLogoImageFile(value); return *this;}
-    inline CreatePortalRequest& WithPortalLogoImageFile(ImageFile&& value) { SetPortalLogoImageFile(std::move(value)); return *this;}
+    template<typename PortalLogoImageFileT = ImageFile>
+    void SetPortalLogoImageFile(PortalLogoImageFileT&& value) { m_portalLogoImageFileHasBeenSet = true; m_portalLogoImageFile = std::forward<PortalLogoImageFileT>(value); }
+    template<typename PortalLogoImageFileT = ImageFile>
+    CreatePortalRequest& WithPortalLogoImageFile(PortalLogoImageFileT&& value) { SetPortalLogoImageFile(std::forward<PortalLogoImageFileT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,14 +112,12 @@ namespace Model
      * service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User
      * Guide</i>.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline CreatePortalRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline CreatePortalRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline CreatePortalRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    CreatePortalRequest& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -137,19 +127,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
      * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreatePortalRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreatePortalRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreatePortalRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreatePortalRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreatePortalRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreatePortalRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreatePortalRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreatePortalRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreatePortalRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreatePortalRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreatePortalRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -167,12 +154,10 @@ namespace Model
      * change this value after you create a portal.</p> <p>Default: <code>SSO</code>
      * </p>
      */
-    inline const AuthMode& GetPortalAuthMode() const{ return m_portalAuthMode; }
+    inline AuthMode GetPortalAuthMode() const { return m_portalAuthMode; }
     inline bool PortalAuthModeHasBeenSet() const { return m_portalAuthModeHasBeenSet; }
-    inline void SetPortalAuthMode(const AuthMode& value) { m_portalAuthModeHasBeenSet = true; m_portalAuthMode = value; }
-    inline void SetPortalAuthMode(AuthMode&& value) { m_portalAuthModeHasBeenSet = true; m_portalAuthMode = std::move(value); }
-    inline CreatePortalRequest& WithPortalAuthMode(const AuthMode& value) { SetPortalAuthMode(value); return *this;}
-    inline CreatePortalRequest& WithPortalAuthMode(AuthMode&& value) { SetPortalAuthMode(std::move(value)); return *this;}
+    inline void SetPortalAuthMode(AuthMode value) { m_portalAuthModeHasBeenSet = true; m_portalAuthMode = value; }
+    inline CreatePortalRequest& WithPortalAuthMode(AuthMode value) { SetPortalAuthMode(value); return *this;}
     ///@}
 
     ///@{
@@ -184,14 +169,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify
      * the sender email address in Amazon SES</a>.</p> 
      */
-    inline const Aws::String& GetNotificationSenderEmail() const{ return m_notificationSenderEmail; }
+    inline const Aws::String& GetNotificationSenderEmail() const { return m_notificationSenderEmail; }
     inline bool NotificationSenderEmailHasBeenSet() const { return m_notificationSenderEmailHasBeenSet; }
-    inline void SetNotificationSenderEmail(const Aws::String& value) { m_notificationSenderEmailHasBeenSet = true; m_notificationSenderEmail = value; }
-    inline void SetNotificationSenderEmail(Aws::String&& value) { m_notificationSenderEmailHasBeenSet = true; m_notificationSenderEmail = std::move(value); }
-    inline void SetNotificationSenderEmail(const char* value) { m_notificationSenderEmailHasBeenSet = true; m_notificationSenderEmail.assign(value); }
-    inline CreatePortalRequest& WithNotificationSenderEmail(const Aws::String& value) { SetNotificationSenderEmail(value); return *this;}
-    inline CreatePortalRequest& WithNotificationSenderEmail(Aws::String&& value) { SetNotificationSenderEmail(std::move(value)); return *this;}
-    inline CreatePortalRequest& WithNotificationSenderEmail(const char* value) { SetNotificationSenderEmail(value); return *this;}
+    template<typename NotificationSenderEmailT = Aws::String>
+    void SetNotificationSenderEmail(NotificationSenderEmailT&& value) { m_notificationSenderEmailHasBeenSet = true; m_notificationSenderEmail = std::forward<NotificationSenderEmailT>(value); }
+    template<typename NotificationSenderEmailT = Aws::String>
+    CreatePortalRequest& WithNotificationSenderEmail(NotificationSenderEmailT&& value) { SetNotificationSenderEmail(std::forward<NotificationSenderEmailT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -203,12 +186,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring
      * with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
      */
-    inline const Alarms& GetAlarms() const{ return m_alarms; }
+    inline const Alarms& GetAlarms() const { return m_alarms; }
     inline bool AlarmsHasBeenSet() const { return m_alarmsHasBeenSet; }
-    inline void SetAlarms(const Alarms& value) { m_alarmsHasBeenSet = true; m_alarms = value; }
-    inline void SetAlarms(Alarms&& value) { m_alarmsHasBeenSet = true; m_alarms = std::move(value); }
-    inline CreatePortalRequest& WithAlarms(const Alarms& value) { SetAlarms(value); return *this;}
-    inline CreatePortalRequest& WithAlarms(Alarms&& value) { SetAlarms(std::move(value)); return *this;}
+    template<typename AlarmsT = Alarms>
+    void SetAlarms(AlarmsT&& value) { m_alarmsHasBeenSet = true; m_alarms = std::forward<AlarmsT>(value); }
+    template<typename AlarmsT = Alarms>
+    CreatePortalRequest& WithAlarms(AlarmsT&& value) { SetAlarms(std::forward<AlarmsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -217,12 +200,10 @@ namespace Model
      * <code>SITEWISE_PORTAL_V1</code>. The value for IoT SiteWise Monitor (AI-aware)
      * is <code>SITEWISE_PORTAL_V2</code>.</p>
      */
-    inline const PortalType& GetPortalType() const{ return m_portalType; }
+    inline PortalType GetPortalType() const { return m_portalType; }
     inline bool PortalTypeHasBeenSet() const { return m_portalTypeHasBeenSet; }
-    inline void SetPortalType(const PortalType& value) { m_portalTypeHasBeenSet = true; m_portalType = value; }
-    inline void SetPortalType(PortalType&& value) { m_portalTypeHasBeenSet = true; m_portalType = std::move(value); }
-    inline CreatePortalRequest& WithPortalType(const PortalType& value) { SetPortalType(value); return *this;}
-    inline CreatePortalRequest& WithPortalType(PortalType&& value) { SetPortalType(std::move(value)); return *this;}
+    inline void SetPortalType(PortalType value) { m_portalTypeHasBeenSet = true; m_portalType = value; }
+    inline CreatePortalRequest& WithPortalType(PortalType value) { SetPortalType(value); return *this;}
     ///@}
 
     ///@{
@@ -231,18 +212,16 @@ namespace Model
      * for IoT SiteWise Monitor (Classic) is <code>SITEWISE_PORTAL_V1</code>. The value
      * for IoT SiteWise Monitor (AI-aware) is <code>SITEWISE_PORTAL_V2</code>.</p>
      */
-    inline const Aws::Map<Aws::String, PortalTypeEntry>& GetPortalTypeConfiguration() const{ return m_portalTypeConfiguration; }
+    inline const Aws::Map<Aws::String, PortalTypeEntry>& GetPortalTypeConfiguration() const { return m_portalTypeConfiguration; }
     inline bool PortalTypeConfigurationHasBeenSet() const { return m_portalTypeConfigurationHasBeenSet; }
-    inline void SetPortalTypeConfiguration(const Aws::Map<Aws::String, PortalTypeEntry>& value) { m_portalTypeConfigurationHasBeenSet = true; m_portalTypeConfiguration = value; }
-    inline void SetPortalTypeConfiguration(Aws::Map<Aws::String, PortalTypeEntry>&& value) { m_portalTypeConfigurationHasBeenSet = true; m_portalTypeConfiguration = std::move(value); }
-    inline CreatePortalRequest& WithPortalTypeConfiguration(const Aws::Map<Aws::String, PortalTypeEntry>& value) { SetPortalTypeConfiguration(value); return *this;}
-    inline CreatePortalRequest& WithPortalTypeConfiguration(Aws::Map<Aws::String, PortalTypeEntry>&& value) { SetPortalTypeConfiguration(std::move(value)); return *this;}
-    inline CreatePortalRequest& AddPortalTypeConfiguration(const Aws::String& key, const PortalTypeEntry& value) { m_portalTypeConfigurationHasBeenSet = true; m_portalTypeConfiguration.emplace(key, value); return *this; }
-    inline CreatePortalRequest& AddPortalTypeConfiguration(Aws::String&& key, const PortalTypeEntry& value) { m_portalTypeConfigurationHasBeenSet = true; m_portalTypeConfiguration.emplace(std::move(key), value); return *this; }
-    inline CreatePortalRequest& AddPortalTypeConfiguration(const Aws::String& key, PortalTypeEntry&& value) { m_portalTypeConfigurationHasBeenSet = true; m_portalTypeConfiguration.emplace(key, std::move(value)); return *this; }
-    inline CreatePortalRequest& AddPortalTypeConfiguration(Aws::String&& key, PortalTypeEntry&& value) { m_portalTypeConfigurationHasBeenSet = true; m_portalTypeConfiguration.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreatePortalRequest& AddPortalTypeConfiguration(const char* key, PortalTypeEntry&& value) { m_portalTypeConfigurationHasBeenSet = true; m_portalTypeConfiguration.emplace(key, std::move(value)); return *this; }
-    inline CreatePortalRequest& AddPortalTypeConfiguration(const char* key, const PortalTypeEntry& value) { m_portalTypeConfigurationHasBeenSet = true; m_portalTypeConfiguration.emplace(key, value); return *this; }
+    template<typename PortalTypeConfigurationT = Aws::Map<Aws::String, PortalTypeEntry>>
+    void SetPortalTypeConfiguration(PortalTypeConfigurationT&& value) { m_portalTypeConfigurationHasBeenSet = true; m_portalTypeConfiguration = std::forward<PortalTypeConfigurationT>(value); }
+    template<typename PortalTypeConfigurationT = Aws::Map<Aws::String, PortalTypeEntry>>
+    CreatePortalRequest& WithPortalTypeConfiguration(PortalTypeConfigurationT&& value) { SetPortalTypeConfiguration(std::forward<PortalTypeConfigurationT>(value)); return *this;}
+    template<typename PortalTypeConfigurationKeyT = Aws::String, typename PortalTypeConfigurationValueT = PortalTypeEntry>
+    CreatePortalRequest& AddPortalTypeConfiguration(PortalTypeConfigurationKeyT&& key, PortalTypeConfigurationValueT&& value) {
+      m_portalTypeConfigurationHasBeenSet = true; m_portalTypeConfiguration.emplace(std::forward<PortalTypeConfigurationKeyT>(key), std::forward<PortalTypeConfigurationValueT>(value)); return *this;
+    }
     ///@}
   private:
 
@@ -267,7 +246,7 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    AuthMode m_portalAuthMode;
+    AuthMode m_portalAuthMode{AuthMode::NOT_SET};
     bool m_portalAuthModeHasBeenSet = false;
 
     Aws::String m_notificationSenderEmail;
@@ -276,7 +255,7 @@ namespace Model
     Alarms m_alarms;
     bool m_alarmsHasBeenSet = false;
 
-    PortalType m_portalType;
+    PortalType m_portalType{PortalType::NOT_SET};
     bool m_portalTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, PortalTypeEntry> m_portalTypeConfiguration;

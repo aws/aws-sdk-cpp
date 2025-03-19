@@ -18,15 +18,7 @@ namespace Chime
 namespace Model
 {
 
-MembershipItem::MembershipItem() : 
-    m_memberIdHasBeenSet(false),
-    m_role(RoomMembershipRole::NOT_SET),
-    m_roleHasBeenSet(false)
-{
-}
-
 MembershipItem::MembershipItem(JsonView jsonValue)
-  : MembershipItem()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ MembershipItem& MembershipItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MemberId"))
   {
     m_memberId = jsonValue.GetString("MemberId");
-
     m_memberIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Role"))
   {
     m_role = RoomMembershipRoleMapper::GetRoomMembershipRoleForName(jsonValue.GetString("Role"));
-
     m_roleHasBeenSet = true;
   }
-
   return *this;
 }
 

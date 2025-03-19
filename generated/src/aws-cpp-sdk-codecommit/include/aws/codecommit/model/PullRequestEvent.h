@@ -40,7 +40,7 @@ namespace Model
   class PullRequestEvent
   {
   public:
-    AWS_CODECOMMIT_API PullRequestEvent();
+    AWS_CODECOMMIT_API PullRequestEvent() = default;
     AWS_CODECOMMIT_API PullRequestEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECOMMIT_API PullRequestEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,26 +50,24 @@ namespace Model
     /**
      * <p>The system-generated ID of the pull request.</p>
      */
-    inline const Aws::String& GetPullRequestId() const{ return m_pullRequestId; }
+    inline const Aws::String& GetPullRequestId() const { return m_pullRequestId; }
     inline bool PullRequestIdHasBeenSet() const { return m_pullRequestIdHasBeenSet; }
-    inline void SetPullRequestId(const Aws::String& value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId = value; }
-    inline void SetPullRequestId(Aws::String&& value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId = std::move(value); }
-    inline void SetPullRequestId(const char* value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId.assign(value); }
-    inline PullRequestEvent& WithPullRequestId(const Aws::String& value) { SetPullRequestId(value); return *this;}
-    inline PullRequestEvent& WithPullRequestId(Aws::String&& value) { SetPullRequestId(std::move(value)); return *this;}
-    inline PullRequestEvent& WithPullRequestId(const char* value) { SetPullRequestId(value); return *this;}
+    template<typename PullRequestIdT = Aws::String>
+    void SetPullRequestId(PullRequestIdT&& value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId = std::forward<PullRequestIdT>(value); }
+    template<typename PullRequestIdT = Aws::String>
+    PullRequestEvent& WithPullRequestId(PullRequestIdT&& value) { SetPullRequestId(std::forward<PullRequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The day and time of the pull request event, in timestamp format.</p>
      */
-    inline const Aws::Utils::DateTime& GetEventDate() const{ return m_eventDate; }
+    inline const Aws::Utils::DateTime& GetEventDate() const { return m_eventDate; }
     inline bool EventDateHasBeenSet() const { return m_eventDateHasBeenSet; }
-    inline void SetEventDate(const Aws::Utils::DateTime& value) { m_eventDateHasBeenSet = true; m_eventDate = value; }
-    inline void SetEventDate(Aws::Utils::DateTime&& value) { m_eventDateHasBeenSet = true; m_eventDate = std::move(value); }
-    inline PullRequestEvent& WithEventDate(const Aws::Utils::DateTime& value) { SetEventDate(value); return *this;}
-    inline PullRequestEvent& WithEventDate(Aws::Utils::DateTime&& value) { SetEventDate(std::move(value)); return *this;}
+    template<typename EventDateT = Aws::Utils::DateTime>
+    void SetEventDate(EventDateT&& value) { m_eventDateHasBeenSet = true; m_eventDate = std::forward<EventDateT>(value); }
+    template<typename EventDateT = Aws::Utils::DateTime>
+    PullRequestEvent& WithEventDate(EventDateT&& value) { SetEventDate(std::forward<EventDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,12 +76,10 @@ namespace Model
      * (PULL_REQUEST_STATUS_CHANGED) or update event
      * (PULL_REQUEST_SOURCE_REFERENCE_UPDATED)).</p>
      */
-    inline const PullRequestEventType& GetPullRequestEventType() const{ return m_pullRequestEventType; }
+    inline PullRequestEventType GetPullRequestEventType() const { return m_pullRequestEventType; }
     inline bool PullRequestEventTypeHasBeenSet() const { return m_pullRequestEventTypeHasBeenSet; }
-    inline void SetPullRequestEventType(const PullRequestEventType& value) { m_pullRequestEventTypeHasBeenSet = true; m_pullRequestEventType = value; }
-    inline void SetPullRequestEventType(PullRequestEventType&& value) { m_pullRequestEventTypeHasBeenSet = true; m_pullRequestEventType = std::move(value); }
-    inline PullRequestEvent& WithPullRequestEventType(const PullRequestEventType& value) { SetPullRequestEventType(value); return *this;}
-    inline PullRequestEvent& WithPullRequestEventType(PullRequestEventType&& value) { SetPullRequestEventType(std::move(value)); return *this;}
+    inline void SetPullRequestEventType(PullRequestEventType value) { m_pullRequestEventTypeHasBeenSet = true; m_pullRequestEventType = value; }
+    inline PullRequestEvent& WithPullRequestEventType(PullRequestEventType value) { SetPullRequestEventType(value); return *this;}
     ///@}
 
     ///@{
@@ -92,14 +88,12 @@ namespace Model
      * event. Examples include updating the pull request with more commits or changing
      * the status of a pull request.</p>
      */
-    inline const Aws::String& GetActorArn() const{ return m_actorArn; }
+    inline const Aws::String& GetActorArn() const { return m_actorArn; }
     inline bool ActorArnHasBeenSet() const { return m_actorArnHasBeenSet; }
-    inline void SetActorArn(const Aws::String& value) { m_actorArnHasBeenSet = true; m_actorArn = value; }
-    inline void SetActorArn(Aws::String&& value) { m_actorArnHasBeenSet = true; m_actorArn = std::move(value); }
-    inline void SetActorArn(const char* value) { m_actorArnHasBeenSet = true; m_actorArn.assign(value); }
-    inline PullRequestEvent& WithActorArn(const Aws::String& value) { SetActorArn(value); return *this;}
-    inline PullRequestEvent& WithActorArn(Aws::String&& value) { SetActorArn(std::move(value)); return *this;}
-    inline PullRequestEvent& WithActorArn(const char* value) { SetActorArn(value); return *this;}
+    template<typename ActorArnT = Aws::String>
+    void SetActorArn(ActorArnT&& value) { m_actorArnHasBeenSet = true; m_actorArn = std::forward<ActorArnT>(value); }
+    template<typename ActorArnT = Aws::String>
+    PullRequestEvent& WithActorArn(ActorArnT&& value) { SetActorArn(std::forward<ActorArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,36 +101,36 @@ namespace Model
      * <p>Information about the source and destination branches for the pull
      * request.</p>
      */
-    inline const PullRequestCreatedEventMetadata& GetPullRequestCreatedEventMetadata() const{ return m_pullRequestCreatedEventMetadata; }
+    inline const PullRequestCreatedEventMetadata& GetPullRequestCreatedEventMetadata() const { return m_pullRequestCreatedEventMetadata; }
     inline bool PullRequestCreatedEventMetadataHasBeenSet() const { return m_pullRequestCreatedEventMetadataHasBeenSet; }
-    inline void SetPullRequestCreatedEventMetadata(const PullRequestCreatedEventMetadata& value) { m_pullRequestCreatedEventMetadataHasBeenSet = true; m_pullRequestCreatedEventMetadata = value; }
-    inline void SetPullRequestCreatedEventMetadata(PullRequestCreatedEventMetadata&& value) { m_pullRequestCreatedEventMetadataHasBeenSet = true; m_pullRequestCreatedEventMetadata = std::move(value); }
-    inline PullRequestEvent& WithPullRequestCreatedEventMetadata(const PullRequestCreatedEventMetadata& value) { SetPullRequestCreatedEventMetadata(value); return *this;}
-    inline PullRequestEvent& WithPullRequestCreatedEventMetadata(PullRequestCreatedEventMetadata&& value) { SetPullRequestCreatedEventMetadata(std::move(value)); return *this;}
+    template<typename PullRequestCreatedEventMetadataT = PullRequestCreatedEventMetadata>
+    void SetPullRequestCreatedEventMetadata(PullRequestCreatedEventMetadataT&& value) { m_pullRequestCreatedEventMetadataHasBeenSet = true; m_pullRequestCreatedEventMetadata = std::forward<PullRequestCreatedEventMetadataT>(value); }
+    template<typename PullRequestCreatedEventMetadataT = PullRequestCreatedEventMetadata>
+    PullRequestEvent& WithPullRequestCreatedEventMetadata(PullRequestCreatedEventMetadataT&& value) { SetPullRequestCreatedEventMetadata(std::forward<PullRequestCreatedEventMetadataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the change in status for the pull request event.</p>
      */
-    inline const PullRequestStatusChangedEventMetadata& GetPullRequestStatusChangedEventMetadata() const{ return m_pullRequestStatusChangedEventMetadata; }
+    inline const PullRequestStatusChangedEventMetadata& GetPullRequestStatusChangedEventMetadata() const { return m_pullRequestStatusChangedEventMetadata; }
     inline bool PullRequestStatusChangedEventMetadataHasBeenSet() const { return m_pullRequestStatusChangedEventMetadataHasBeenSet; }
-    inline void SetPullRequestStatusChangedEventMetadata(const PullRequestStatusChangedEventMetadata& value) { m_pullRequestStatusChangedEventMetadataHasBeenSet = true; m_pullRequestStatusChangedEventMetadata = value; }
-    inline void SetPullRequestStatusChangedEventMetadata(PullRequestStatusChangedEventMetadata&& value) { m_pullRequestStatusChangedEventMetadataHasBeenSet = true; m_pullRequestStatusChangedEventMetadata = std::move(value); }
-    inline PullRequestEvent& WithPullRequestStatusChangedEventMetadata(const PullRequestStatusChangedEventMetadata& value) { SetPullRequestStatusChangedEventMetadata(value); return *this;}
-    inline PullRequestEvent& WithPullRequestStatusChangedEventMetadata(PullRequestStatusChangedEventMetadata&& value) { SetPullRequestStatusChangedEventMetadata(std::move(value)); return *this;}
+    template<typename PullRequestStatusChangedEventMetadataT = PullRequestStatusChangedEventMetadata>
+    void SetPullRequestStatusChangedEventMetadata(PullRequestStatusChangedEventMetadataT&& value) { m_pullRequestStatusChangedEventMetadataHasBeenSet = true; m_pullRequestStatusChangedEventMetadata = std::forward<PullRequestStatusChangedEventMetadataT>(value); }
+    template<typename PullRequestStatusChangedEventMetadataT = PullRequestStatusChangedEventMetadata>
+    PullRequestEvent& WithPullRequestStatusChangedEventMetadata(PullRequestStatusChangedEventMetadataT&& value) { SetPullRequestStatusChangedEventMetadata(std::forward<PullRequestStatusChangedEventMetadataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the updated source branch for the pull request event. </p>
      */
-    inline const PullRequestSourceReferenceUpdatedEventMetadata& GetPullRequestSourceReferenceUpdatedEventMetadata() const{ return m_pullRequestSourceReferenceUpdatedEventMetadata; }
+    inline const PullRequestSourceReferenceUpdatedEventMetadata& GetPullRequestSourceReferenceUpdatedEventMetadata() const { return m_pullRequestSourceReferenceUpdatedEventMetadata; }
     inline bool PullRequestSourceReferenceUpdatedEventMetadataHasBeenSet() const { return m_pullRequestSourceReferenceUpdatedEventMetadataHasBeenSet; }
-    inline void SetPullRequestSourceReferenceUpdatedEventMetadata(const PullRequestSourceReferenceUpdatedEventMetadata& value) { m_pullRequestSourceReferenceUpdatedEventMetadataHasBeenSet = true; m_pullRequestSourceReferenceUpdatedEventMetadata = value; }
-    inline void SetPullRequestSourceReferenceUpdatedEventMetadata(PullRequestSourceReferenceUpdatedEventMetadata&& value) { m_pullRequestSourceReferenceUpdatedEventMetadataHasBeenSet = true; m_pullRequestSourceReferenceUpdatedEventMetadata = std::move(value); }
-    inline PullRequestEvent& WithPullRequestSourceReferenceUpdatedEventMetadata(const PullRequestSourceReferenceUpdatedEventMetadata& value) { SetPullRequestSourceReferenceUpdatedEventMetadata(value); return *this;}
-    inline PullRequestEvent& WithPullRequestSourceReferenceUpdatedEventMetadata(PullRequestSourceReferenceUpdatedEventMetadata&& value) { SetPullRequestSourceReferenceUpdatedEventMetadata(std::move(value)); return *this;}
+    template<typename PullRequestSourceReferenceUpdatedEventMetadataT = PullRequestSourceReferenceUpdatedEventMetadata>
+    void SetPullRequestSourceReferenceUpdatedEventMetadata(PullRequestSourceReferenceUpdatedEventMetadataT&& value) { m_pullRequestSourceReferenceUpdatedEventMetadataHasBeenSet = true; m_pullRequestSourceReferenceUpdatedEventMetadata = std::forward<PullRequestSourceReferenceUpdatedEventMetadataT>(value); }
+    template<typename PullRequestSourceReferenceUpdatedEventMetadataT = PullRequestSourceReferenceUpdatedEventMetadata>
+    PullRequestEvent& WithPullRequestSourceReferenceUpdatedEventMetadata(PullRequestSourceReferenceUpdatedEventMetadataT&& value) { SetPullRequestSourceReferenceUpdatedEventMetadata(std::forward<PullRequestSourceReferenceUpdatedEventMetadataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -144,58 +138,58 @@ namespace Model
      * <p>Information about the change in mergability state for the pull request
      * event.</p>
      */
-    inline const PullRequestMergedStateChangedEventMetadata& GetPullRequestMergedStateChangedEventMetadata() const{ return m_pullRequestMergedStateChangedEventMetadata; }
+    inline const PullRequestMergedStateChangedEventMetadata& GetPullRequestMergedStateChangedEventMetadata() const { return m_pullRequestMergedStateChangedEventMetadata; }
     inline bool PullRequestMergedStateChangedEventMetadataHasBeenSet() const { return m_pullRequestMergedStateChangedEventMetadataHasBeenSet; }
-    inline void SetPullRequestMergedStateChangedEventMetadata(const PullRequestMergedStateChangedEventMetadata& value) { m_pullRequestMergedStateChangedEventMetadataHasBeenSet = true; m_pullRequestMergedStateChangedEventMetadata = value; }
-    inline void SetPullRequestMergedStateChangedEventMetadata(PullRequestMergedStateChangedEventMetadata&& value) { m_pullRequestMergedStateChangedEventMetadataHasBeenSet = true; m_pullRequestMergedStateChangedEventMetadata = std::move(value); }
-    inline PullRequestEvent& WithPullRequestMergedStateChangedEventMetadata(const PullRequestMergedStateChangedEventMetadata& value) { SetPullRequestMergedStateChangedEventMetadata(value); return *this;}
-    inline PullRequestEvent& WithPullRequestMergedStateChangedEventMetadata(PullRequestMergedStateChangedEventMetadata&& value) { SetPullRequestMergedStateChangedEventMetadata(std::move(value)); return *this;}
+    template<typename PullRequestMergedStateChangedEventMetadataT = PullRequestMergedStateChangedEventMetadata>
+    void SetPullRequestMergedStateChangedEventMetadata(PullRequestMergedStateChangedEventMetadataT&& value) { m_pullRequestMergedStateChangedEventMetadataHasBeenSet = true; m_pullRequestMergedStateChangedEventMetadata = std::forward<PullRequestMergedStateChangedEventMetadataT>(value); }
+    template<typename PullRequestMergedStateChangedEventMetadataT = PullRequestMergedStateChangedEventMetadata>
+    PullRequestEvent& WithPullRequestMergedStateChangedEventMetadata(PullRequestMergedStateChangedEventMetadataT&& value) { SetPullRequestMergedStateChangedEventMetadata(std::forward<PullRequestMergedStateChangedEventMetadataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about a pull request event.</p>
      */
-    inline const ApprovalRuleEventMetadata& GetApprovalRuleEventMetadata() const{ return m_approvalRuleEventMetadata; }
+    inline const ApprovalRuleEventMetadata& GetApprovalRuleEventMetadata() const { return m_approvalRuleEventMetadata; }
     inline bool ApprovalRuleEventMetadataHasBeenSet() const { return m_approvalRuleEventMetadataHasBeenSet; }
-    inline void SetApprovalRuleEventMetadata(const ApprovalRuleEventMetadata& value) { m_approvalRuleEventMetadataHasBeenSet = true; m_approvalRuleEventMetadata = value; }
-    inline void SetApprovalRuleEventMetadata(ApprovalRuleEventMetadata&& value) { m_approvalRuleEventMetadataHasBeenSet = true; m_approvalRuleEventMetadata = std::move(value); }
-    inline PullRequestEvent& WithApprovalRuleEventMetadata(const ApprovalRuleEventMetadata& value) { SetApprovalRuleEventMetadata(value); return *this;}
-    inline PullRequestEvent& WithApprovalRuleEventMetadata(ApprovalRuleEventMetadata&& value) { SetApprovalRuleEventMetadata(std::move(value)); return *this;}
+    template<typename ApprovalRuleEventMetadataT = ApprovalRuleEventMetadata>
+    void SetApprovalRuleEventMetadata(ApprovalRuleEventMetadataT&& value) { m_approvalRuleEventMetadataHasBeenSet = true; m_approvalRuleEventMetadata = std::forward<ApprovalRuleEventMetadataT>(value); }
+    template<typename ApprovalRuleEventMetadataT = ApprovalRuleEventMetadata>
+    PullRequestEvent& WithApprovalRuleEventMetadata(ApprovalRuleEventMetadataT&& value) { SetApprovalRuleEventMetadata(std::forward<ApprovalRuleEventMetadataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about an approval state change for a pull request.</p>
      */
-    inline const ApprovalStateChangedEventMetadata& GetApprovalStateChangedEventMetadata() const{ return m_approvalStateChangedEventMetadata; }
+    inline const ApprovalStateChangedEventMetadata& GetApprovalStateChangedEventMetadata() const { return m_approvalStateChangedEventMetadata; }
     inline bool ApprovalStateChangedEventMetadataHasBeenSet() const { return m_approvalStateChangedEventMetadataHasBeenSet; }
-    inline void SetApprovalStateChangedEventMetadata(const ApprovalStateChangedEventMetadata& value) { m_approvalStateChangedEventMetadataHasBeenSet = true; m_approvalStateChangedEventMetadata = value; }
-    inline void SetApprovalStateChangedEventMetadata(ApprovalStateChangedEventMetadata&& value) { m_approvalStateChangedEventMetadataHasBeenSet = true; m_approvalStateChangedEventMetadata = std::move(value); }
-    inline PullRequestEvent& WithApprovalStateChangedEventMetadata(const ApprovalStateChangedEventMetadata& value) { SetApprovalStateChangedEventMetadata(value); return *this;}
-    inline PullRequestEvent& WithApprovalStateChangedEventMetadata(ApprovalStateChangedEventMetadata&& value) { SetApprovalStateChangedEventMetadata(std::move(value)); return *this;}
+    template<typename ApprovalStateChangedEventMetadataT = ApprovalStateChangedEventMetadata>
+    void SetApprovalStateChangedEventMetadata(ApprovalStateChangedEventMetadataT&& value) { m_approvalStateChangedEventMetadataHasBeenSet = true; m_approvalStateChangedEventMetadata = std::forward<ApprovalStateChangedEventMetadataT>(value); }
+    template<typename ApprovalStateChangedEventMetadataT = ApprovalStateChangedEventMetadata>
+    PullRequestEvent& WithApprovalStateChangedEventMetadata(ApprovalStateChangedEventMetadataT&& value) { SetApprovalStateChangedEventMetadata(std::forward<ApprovalStateChangedEventMetadataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about an approval rule override event for a pull request.</p>
      */
-    inline const ApprovalRuleOverriddenEventMetadata& GetApprovalRuleOverriddenEventMetadata() const{ return m_approvalRuleOverriddenEventMetadata; }
+    inline const ApprovalRuleOverriddenEventMetadata& GetApprovalRuleOverriddenEventMetadata() const { return m_approvalRuleOverriddenEventMetadata; }
     inline bool ApprovalRuleOverriddenEventMetadataHasBeenSet() const { return m_approvalRuleOverriddenEventMetadataHasBeenSet; }
-    inline void SetApprovalRuleOverriddenEventMetadata(const ApprovalRuleOverriddenEventMetadata& value) { m_approvalRuleOverriddenEventMetadataHasBeenSet = true; m_approvalRuleOverriddenEventMetadata = value; }
-    inline void SetApprovalRuleOverriddenEventMetadata(ApprovalRuleOverriddenEventMetadata&& value) { m_approvalRuleOverriddenEventMetadataHasBeenSet = true; m_approvalRuleOverriddenEventMetadata = std::move(value); }
-    inline PullRequestEvent& WithApprovalRuleOverriddenEventMetadata(const ApprovalRuleOverriddenEventMetadata& value) { SetApprovalRuleOverriddenEventMetadata(value); return *this;}
-    inline PullRequestEvent& WithApprovalRuleOverriddenEventMetadata(ApprovalRuleOverriddenEventMetadata&& value) { SetApprovalRuleOverriddenEventMetadata(std::move(value)); return *this;}
+    template<typename ApprovalRuleOverriddenEventMetadataT = ApprovalRuleOverriddenEventMetadata>
+    void SetApprovalRuleOverriddenEventMetadata(ApprovalRuleOverriddenEventMetadataT&& value) { m_approvalRuleOverriddenEventMetadataHasBeenSet = true; m_approvalRuleOverriddenEventMetadata = std::forward<ApprovalRuleOverriddenEventMetadataT>(value); }
+    template<typename ApprovalRuleOverriddenEventMetadataT = ApprovalRuleOverriddenEventMetadata>
+    PullRequestEvent& WithApprovalRuleOverriddenEventMetadata(ApprovalRuleOverriddenEventMetadataT&& value) { SetApprovalRuleOverriddenEventMetadata(std::forward<ApprovalRuleOverriddenEventMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_pullRequestId;
     bool m_pullRequestIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_eventDate;
+    Aws::Utils::DateTime m_eventDate{};
     bool m_eventDateHasBeenSet = false;
 
-    PullRequestEventType m_pullRequestEventType;
+    PullRequestEventType m_pullRequestEventType{PullRequestEventType::NOT_SET};
     bool m_pullRequestEventTypeHasBeenSet = false;
 
     Aws::String m_actorArn;

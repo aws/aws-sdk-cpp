@@ -28,7 +28,7 @@ namespace Model
   class UpdateCustomDomainAssociationResult
   {
   public:
-    AWS_REDSHIFTSERVERLESS_API UpdateCustomDomainAssociationResult();
+    AWS_REDSHIFTSERVERLESS_API UpdateCustomDomainAssociationResult() = default;
     AWS_REDSHIFTSERVERLESS_API UpdateCustomDomainAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_REDSHIFTSERVERLESS_API UpdateCustomDomainAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,73 +37,70 @@ namespace Model
     /**
      * <p>The custom domain name’s certificate Amazon resource name (ARN).</p>
      */
-    inline const Aws::String& GetCustomDomainCertificateArn() const{ return m_customDomainCertificateArn; }
-    inline void SetCustomDomainCertificateArn(const Aws::String& value) { m_customDomainCertificateArn = value; }
-    inline void SetCustomDomainCertificateArn(Aws::String&& value) { m_customDomainCertificateArn = std::move(value); }
-    inline void SetCustomDomainCertificateArn(const char* value) { m_customDomainCertificateArn.assign(value); }
-    inline UpdateCustomDomainAssociationResult& WithCustomDomainCertificateArn(const Aws::String& value) { SetCustomDomainCertificateArn(value); return *this;}
-    inline UpdateCustomDomainAssociationResult& WithCustomDomainCertificateArn(Aws::String&& value) { SetCustomDomainCertificateArn(std::move(value)); return *this;}
-    inline UpdateCustomDomainAssociationResult& WithCustomDomainCertificateArn(const char* value) { SetCustomDomainCertificateArn(value); return *this;}
+    inline const Aws::String& GetCustomDomainCertificateArn() const { return m_customDomainCertificateArn; }
+    template<typename CustomDomainCertificateArnT = Aws::String>
+    void SetCustomDomainCertificateArn(CustomDomainCertificateArnT&& value) { m_customDomainCertificateArnHasBeenSet = true; m_customDomainCertificateArn = std::forward<CustomDomainCertificateArnT>(value); }
+    template<typename CustomDomainCertificateArnT = Aws::String>
+    UpdateCustomDomainAssociationResult& WithCustomDomainCertificateArn(CustomDomainCertificateArnT&& value) { SetCustomDomainCertificateArn(std::forward<CustomDomainCertificateArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The expiration time for the certificate.</p>
      */
-    inline const Aws::Utils::DateTime& GetCustomDomainCertificateExpiryTime() const{ return m_customDomainCertificateExpiryTime; }
-    inline void SetCustomDomainCertificateExpiryTime(const Aws::Utils::DateTime& value) { m_customDomainCertificateExpiryTime = value; }
-    inline void SetCustomDomainCertificateExpiryTime(Aws::Utils::DateTime&& value) { m_customDomainCertificateExpiryTime = std::move(value); }
-    inline UpdateCustomDomainAssociationResult& WithCustomDomainCertificateExpiryTime(const Aws::Utils::DateTime& value) { SetCustomDomainCertificateExpiryTime(value); return *this;}
-    inline UpdateCustomDomainAssociationResult& WithCustomDomainCertificateExpiryTime(Aws::Utils::DateTime&& value) { SetCustomDomainCertificateExpiryTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCustomDomainCertificateExpiryTime() const { return m_customDomainCertificateExpiryTime; }
+    template<typename CustomDomainCertificateExpiryTimeT = Aws::Utils::DateTime>
+    void SetCustomDomainCertificateExpiryTime(CustomDomainCertificateExpiryTimeT&& value) { m_customDomainCertificateExpiryTimeHasBeenSet = true; m_customDomainCertificateExpiryTime = std::forward<CustomDomainCertificateExpiryTimeT>(value); }
+    template<typename CustomDomainCertificateExpiryTimeT = Aws::Utils::DateTime>
+    UpdateCustomDomainAssociationResult& WithCustomDomainCertificateExpiryTime(CustomDomainCertificateExpiryTimeT&& value) { SetCustomDomainCertificateExpiryTime(std::forward<CustomDomainCertificateExpiryTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The custom domain name associated with the workgroup.</p>
      */
-    inline const Aws::String& GetCustomDomainName() const{ return m_customDomainName; }
-    inline void SetCustomDomainName(const Aws::String& value) { m_customDomainName = value; }
-    inline void SetCustomDomainName(Aws::String&& value) { m_customDomainName = std::move(value); }
-    inline void SetCustomDomainName(const char* value) { m_customDomainName.assign(value); }
-    inline UpdateCustomDomainAssociationResult& WithCustomDomainName(const Aws::String& value) { SetCustomDomainName(value); return *this;}
-    inline UpdateCustomDomainAssociationResult& WithCustomDomainName(Aws::String&& value) { SetCustomDomainName(std::move(value)); return *this;}
-    inline UpdateCustomDomainAssociationResult& WithCustomDomainName(const char* value) { SetCustomDomainName(value); return *this;}
+    inline const Aws::String& GetCustomDomainName() const { return m_customDomainName; }
+    template<typename CustomDomainNameT = Aws::String>
+    void SetCustomDomainName(CustomDomainNameT&& value) { m_customDomainNameHasBeenSet = true; m_customDomainName = std::forward<CustomDomainNameT>(value); }
+    template<typename CustomDomainNameT = Aws::String>
+    UpdateCustomDomainAssociationResult& WithCustomDomainName(CustomDomainNameT&& value) { SetCustomDomainName(std::forward<CustomDomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the workgroup associated with the database.</p>
      */
-    inline const Aws::String& GetWorkgroupName() const{ return m_workgroupName; }
-    inline void SetWorkgroupName(const Aws::String& value) { m_workgroupName = value; }
-    inline void SetWorkgroupName(Aws::String&& value) { m_workgroupName = std::move(value); }
-    inline void SetWorkgroupName(const char* value) { m_workgroupName.assign(value); }
-    inline UpdateCustomDomainAssociationResult& WithWorkgroupName(const Aws::String& value) { SetWorkgroupName(value); return *this;}
-    inline UpdateCustomDomainAssociationResult& WithWorkgroupName(Aws::String&& value) { SetWorkgroupName(std::move(value)); return *this;}
-    inline UpdateCustomDomainAssociationResult& WithWorkgroupName(const char* value) { SetWorkgroupName(value); return *this;}
+    inline const Aws::String& GetWorkgroupName() const { return m_workgroupName; }
+    template<typename WorkgroupNameT = Aws::String>
+    void SetWorkgroupName(WorkgroupNameT&& value) { m_workgroupNameHasBeenSet = true; m_workgroupName = std::forward<WorkgroupNameT>(value); }
+    template<typename WorkgroupNameT = Aws::String>
+    UpdateCustomDomainAssociationResult& WithWorkgroupName(WorkgroupNameT&& value) { SetWorkgroupName(std::forward<WorkgroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateCustomDomainAssociationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateCustomDomainAssociationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateCustomDomainAssociationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateCustomDomainAssociationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_customDomainCertificateArn;
+    bool m_customDomainCertificateArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_customDomainCertificateExpiryTime;
+    Aws::Utils::DateTime m_customDomainCertificateExpiryTime{};
+    bool m_customDomainCertificateExpiryTimeHasBeenSet = false;
 
     Aws::String m_customDomainName;
+    bool m_customDomainNameHasBeenSet = false;
 
     Aws::String m_workgroupName;
+    bool m_workgroupNameHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

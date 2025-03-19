@@ -18,13 +18,7 @@ namespace MediaPackageVod
 namespace Model
 {
 
-DashEncryption::DashEncryption() : 
-    m_spekeKeyProviderHasBeenSet(false)
-{
-}
-
 DashEncryption::DashEncryption(JsonView jsonValue)
-  : DashEncryption()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DashEncryption& DashEncryption::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("spekeKeyProvider"))
   {
     m_spekeKeyProvider = jsonValue.GetObject("spekeKeyProvider");
-
     m_spekeKeyProviderHasBeenSet = true;
   }
-
   return *this;
 }
 

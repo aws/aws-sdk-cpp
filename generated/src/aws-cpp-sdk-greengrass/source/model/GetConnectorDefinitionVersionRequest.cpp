@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetConnectorDefinitionVersionRequest::GetConnectorDefinitionVersionRequest() : 
-    m_connectorDefinitionIdHasBeenSet(false),
-    m_connectorDefinitionVersionIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetConnectorDefinitionVersionRequest::SerializePayload() const
 {
   return {};

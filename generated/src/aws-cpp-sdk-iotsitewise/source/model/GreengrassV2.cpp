@@ -18,15 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-GreengrassV2::GreengrassV2() : 
-    m_coreDeviceThingNameHasBeenSet(false),
-    m_coreDeviceOperatingSystem(CoreDeviceOperatingSystem::NOT_SET),
-    m_coreDeviceOperatingSystemHasBeenSet(false)
-{
-}
-
 GreengrassV2::GreengrassV2(JsonView jsonValue)
-  : GreengrassV2()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ GreengrassV2& GreengrassV2::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("coreDeviceThingName"))
   {
     m_coreDeviceThingName = jsonValue.GetString("coreDeviceThingName");
-
     m_coreDeviceThingNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("coreDeviceOperatingSystem"))
   {
     m_coreDeviceOperatingSystem = CoreDeviceOperatingSystemMapper::GetCoreDeviceOperatingSystemForName(jsonValue.GetString("coreDeviceOperatingSystem"));
-
     m_coreDeviceOperatingSystemHasBeenSet = true;
   }
-
   return *this;
 }
 

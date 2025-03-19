@@ -33,7 +33,7 @@ namespace Model
   class AddressIdentifierFilter
   {
   public:
-    AWS_MANAGEDBLOCKCHAINQUERY_API AddressIdentifierFilter();
+    AWS_MANAGEDBLOCKCHAINQUERY_API AddressIdentifierFilter() = default;
     AWS_MANAGEDBLOCKCHAINQUERY_API AddressIdentifierFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAINQUERY_API AddressIdentifierFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAINQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,15 +43,14 @@ namespace Model
     /**
      * <p>The container for the recipient address of the transaction. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetTransactionEventToAddress() const{ return m_transactionEventToAddress; }
+    inline const Aws::Vector<Aws::String>& GetTransactionEventToAddress() const { return m_transactionEventToAddress; }
     inline bool TransactionEventToAddressHasBeenSet() const { return m_transactionEventToAddressHasBeenSet; }
-    inline void SetTransactionEventToAddress(const Aws::Vector<Aws::String>& value) { m_transactionEventToAddressHasBeenSet = true; m_transactionEventToAddress = value; }
-    inline void SetTransactionEventToAddress(Aws::Vector<Aws::String>&& value) { m_transactionEventToAddressHasBeenSet = true; m_transactionEventToAddress = std::move(value); }
-    inline AddressIdentifierFilter& WithTransactionEventToAddress(const Aws::Vector<Aws::String>& value) { SetTransactionEventToAddress(value); return *this;}
-    inline AddressIdentifierFilter& WithTransactionEventToAddress(Aws::Vector<Aws::String>&& value) { SetTransactionEventToAddress(std::move(value)); return *this;}
-    inline AddressIdentifierFilter& AddTransactionEventToAddress(const Aws::String& value) { m_transactionEventToAddressHasBeenSet = true; m_transactionEventToAddress.push_back(value); return *this; }
-    inline AddressIdentifierFilter& AddTransactionEventToAddress(Aws::String&& value) { m_transactionEventToAddressHasBeenSet = true; m_transactionEventToAddress.push_back(std::move(value)); return *this; }
-    inline AddressIdentifierFilter& AddTransactionEventToAddress(const char* value) { m_transactionEventToAddressHasBeenSet = true; m_transactionEventToAddress.push_back(value); return *this; }
+    template<typename TransactionEventToAddressT = Aws::Vector<Aws::String>>
+    void SetTransactionEventToAddress(TransactionEventToAddressT&& value) { m_transactionEventToAddressHasBeenSet = true; m_transactionEventToAddress = std::forward<TransactionEventToAddressT>(value); }
+    template<typename TransactionEventToAddressT = Aws::Vector<Aws::String>>
+    AddressIdentifierFilter& WithTransactionEventToAddress(TransactionEventToAddressT&& value) { SetTransactionEventToAddress(std::forward<TransactionEventToAddressT>(value)); return *this;}
+    template<typename TransactionEventToAddressT = Aws::String>
+    AddressIdentifierFilter& AddTransactionEventToAddress(TransactionEventToAddressT&& value) { m_transactionEventToAddressHasBeenSet = true; m_transactionEventToAddress.emplace_back(std::forward<TransactionEventToAddressT>(value)); return *this; }
     ///@}
   private:
 

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RevokeSecurityGroupIngressResponse::RevokeSecurityGroupIngressResponse() : 
-    m_return(false)
-{
-}
-
 RevokeSecurityGroupIngressResponse::RevokeSecurityGroupIngressResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : RevokeSecurityGroupIngressResponse()
 {
   *this = result;
 }
@@ -44,28 +38,33 @@ RevokeSecurityGroupIngressResponse& RevokeSecurityGroupIngressResponse::operator
     if(!returnNode.IsNull())
     {
       m_return = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(returnNode.GetText()).c_str()).c_str());
+      m_returnHasBeenSet = true;
     }
     XmlNode unknownIpPermissionsNode = resultNode.FirstChild("unknownIpPermissionSet");
     if(!unknownIpPermissionsNode.IsNull())
     {
       XmlNode unknownIpPermissionsMember = unknownIpPermissionsNode.FirstChild("item");
+      m_unknownIpPermissionsHasBeenSet = !unknownIpPermissionsMember.IsNull();
       while(!unknownIpPermissionsMember.IsNull())
       {
         m_unknownIpPermissions.push_back(unknownIpPermissionsMember);
         unknownIpPermissionsMember = unknownIpPermissionsMember.NextNode("item");
       }
 
+      m_unknownIpPermissionsHasBeenSet = true;
     }
     XmlNode revokedSecurityGroupRulesNode = resultNode.FirstChild("revokedSecurityGroupRuleSet");
     if(!revokedSecurityGroupRulesNode.IsNull())
     {
       XmlNode revokedSecurityGroupRulesMember = revokedSecurityGroupRulesNode.FirstChild("item");
+      m_revokedSecurityGroupRulesHasBeenSet = !revokedSecurityGroupRulesMember.IsNull();
       while(!revokedSecurityGroupRulesMember.IsNull())
       {
         m_revokedSecurityGroupRules.push_back(revokedSecurityGroupRulesMember);
         revokedSecurityGroupRulesMember = revokedSecurityGroupRulesMember.NextNode("item");
       }
 
+      m_revokedSecurityGroupRulesHasBeenSet = true;
     }
   }
 
@@ -74,6 +73,7 @@ RevokeSecurityGroupIngressResponse& RevokeSecurityGroupIngressResponse::operator
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::RevokeSecurityGroupIngressResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

@@ -32,7 +32,7 @@ namespace Model
   class RuleAction
   {
   public:
-    AWS_VPCLATTICE_API RuleAction();
+    AWS_VPCLATTICE_API RuleAction() = default;
     AWS_VPCLATTICE_API RuleAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_VPCLATTICE_API RuleAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VPCLATTICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The fixed response action. The rule returns a custom HTTP response.</p>
      */
-    inline const FixedResponseAction& GetFixedResponse() const{ return m_fixedResponse; }
+    inline const FixedResponseAction& GetFixedResponse() const { return m_fixedResponse; }
     inline bool FixedResponseHasBeenSet() const { return m_fixedResponseHasBeenSet; }
-    inline void SetFixedResponse(const FixedResponseAction& value) { m_fixedResponseHasBeenSet = true; m_fixedResponse = value; }
-    inline void SetFixedResponse(FixedResponseAction&& value) { m_fixedResponseHasBeenSet = true; m_fixedResponse = std::move(value); }
-    inline RuleAction& WithFixedResponse(const FixedResponseAction& value) { SetFixedResponse(value); return *this;}
-    inline RuleAction& WithFixedResponse(FixedResponseAction&& value) { SetFixedResponse(std::move(value)); return *this;}
+    template<typename FixedResponseT = FixedResponseAction>
+    void SetFixedResponse(FixedResponseT&& value) { m_fixedResponseHasBeenSet = true; m_fixedResponse = std::forward<FixedResponseT>(value); }
+    template<typename FixedResponseT = FixedResponseAction>
+    RuleAction& WithFixedResponse(FixedResponseT&& value) { SetFixedResponse(std::forward<FixedResponseT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,12 +55,12 @@ namespace Model
      * <p>The forward action. Traffic that matches the rule is forwarded to the
      * specified target groups.</p>
      */
-    inline const ForwardAction& GetForward() const{ return m_forward; }
+    inline const ForwardAction& GetForward() const { return m_forward; }
     inline bool ForwardHasBeenSet() const { return m_forwardHasBeenSet; }
-    inline void SetForward(const ForwardAction& value) { m_forwardHasBeenSet = true; m_forward = value; }
-    inline void SetForward(ForwardAction&& value) { m_forwardHasBeenSet = true; m_forward = std::move(value); }
-    inline RuleAction& WithForward(const ForwardAction& value) { SetForward(value); return *this;}
-    inline RuleAction& WithForward(ForwardAction&& value) { SetForward(std::move(value)); return *this;}
+    template<typename ForwardT = ForwardAction>
+    void SetForward(ForwardT&& value) { m_forwardHasBeenSet = true; m_forward = std::forward<ForwardT>(value); }
+    template<typename ForwardT = ForwardAction>
+    RuleAction& WithForward(ForwardT&& value) { SetForward(std::forward<ForwardT>(value)); return *this;}
     ///@}
   private:
 

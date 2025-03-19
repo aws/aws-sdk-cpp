@@ -31,7 +31,7 @@ namespace Model
   class QueryArgProfile
   {
   public:
-    AWS_CLOUDFRONT_API QueryArgProfile();
+    AWS_CLOUDFRONT_API QueryArgProfile() = default;
     AWS_CLOUDFRONT_API QueryArgProfile(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API QueryArgProfile& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>Query argument for field-level encryption query argument-profile mapping.</p>
      */
-    inline const Aws::String& GetQueryArg() const{ return m_queryArg; }
+    inline const Aws::String& GetQueryArg() const { return m_queryArg; }
     inline bool QueryArgHasBeenSet() const { return m_queryArgHasBeenSet; }
-    inline void SetQueryArg(const Aws::String& value) { m_queryArgHasBeenSet = true; m_queryArg = value; }
-    inline void SetQueryArg(Aws::String&& value) { m_queryArgHasBeenSet = true; m_queryArg = std::move(value); }
-    inline void SetQueryArg(const char* value) { m_queryArgHasBeenSet = true; m_queryArg.assign(value); }
-    inline QueryArgProfile& WithQueryArg(const Aws::String& value) { SetQueryArg(value); return *this;}
-    inline QueryArgProfile& WithQueryArg(Aws::String&& value) { SetQueryArg(std::move(value)); return *this;}
-    inline QueryArgProfile& WithQueryArg(const char* value) { SetQueryArg(value); return *this;}
+    template<typename QueryArgT = Aws::String>
+    void SetQueryArg(QueryArgT&& value) { m_queryArgHasBeenSet = true; m_queryArg = std::forward<QueryArgT>(value); }
+    template<typename QueryArgT = Aws::String>
+    QueryArgProfile& WithQueryArg(QueryArgT&& value) { SetQueryArg(std::forward<QueryArgT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>ID of profile to use for field-level encryption query argument-profile
      * mapping</p>
      */
-    inline const Aws::String& GetProfileId() const{ return m_profileId; }
+    inline const Aws::String& GetProfileId() const { return m_profileId; }
     inline bool ProfileIdHasBeenSet() const { return m_profileIdHasBeenSet; }
-    inline void SetProfileId(const Aws::String& value) { m_profileIdHasBeenSet = true; m_profileId = value; }
-    inline void SetProfileId(Aws::String&& value) { m_profileIdHasBeenSet = true; m_profileId = std::move(value); }
-    inline void SetProfileId(const char* value) { m_profileIdHasBeenSet = true; m_profileId.assign(value); }
-    inline QueryArgProfile& WithProfileId(const Aws::String& value) { SetProfileId(value); return *this;}
-    inline QueryArgProfile& WithProfileId(Aws::String&& value) { SetProfileId(std::move(value)); return *this;}
-    inline QueryArgProfile& WithProfileId(const char* value) { SetProfileId(value); return *this;}
+    template<typename ProfileIdT = Aws::String>
+    void SetProfileId(ProfileIdT&& value) { m_profileIdHasBeenSet = true; m_profileId = std::forward<ProfileIdT>(value); }
+    template<typename ProfileIdT = Aws::String>
+    QueryArgProfile& WithProfileId(ProfileIdT&& value) { SetProfileId(std::forward<ProfileIdT>(value)); return *this;}
     ///@}
   private:
 

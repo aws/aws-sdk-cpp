@@ -18,15 +18,7 @@ namespace Athena
 namespace Model
 {
 
-CalculationSummary::CalculationSummary() : 
-    m_calculationExecutionIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 CalculationSummary::CalculationSummary(JsonView jsonValue)
-  : CalculationSummary()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ CalculationSummary& CalculationSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CalculationExecutionId"))
   {
     m_calculationExecutionId = jsonValue.GetString("CalculationExecutionId");
-
     m_calculationExecutionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetObject("Status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

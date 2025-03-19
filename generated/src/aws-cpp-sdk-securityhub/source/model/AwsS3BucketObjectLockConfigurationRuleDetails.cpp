@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsS3BucketObjectLockConfigurationRuleDetails::AwsS3BucketObjectLockConfigurationRuleDetails() : 
-    m_defaultRetentionHasBeenSet(false)
-{
-}
-
 AwsS3BucketObjectLockConfigurationRuleDetails::AwsS3BucketObjectLockConfigurationRuleDetails(JsonView jsonValue)
-  : AwsS3BucketObjectLockConfigurationRuleDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AwsS3BucketObjectLockConfigurationRuleDetails& AwsS3BucketObjectLockConfiguratio
   if(jsonValue.ValueExists("DefaultRetention"))
   {
     m_defaultRetention = jsonValue.GetObject("DefaultRetention");
-
     m_defaultRetentionHasBeenSet = true;
   }
-
   return *this;
 }
 

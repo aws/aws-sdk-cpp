@@ -33,7 +33,7 @@ namespace Model
   class JobExecutionSummaryForJob
   {
   public:
-    AWS_IOT_API JobExecutionSummaryForJob();
+    AWS_IOT_API JobExecutionSummaryForJob() = default;
     AWS_IOT_API JobExecutionSummaryForJob(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API JobExecutionSummaryForJob& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,24 @@ namespace Model
     /**
      * <p>The ARN of the thing on which the job execution is running.</p>
      */
-    inline const Aws::String& GetThingArn() const{ return m_thingArn; }
+    inline const Aws::String& GetThingArn() const { return m_thingArn; }
     inline bool ThingArnHasBeenSet() const { return m_thingArnHasBeenSet; }
-    inline void SetThingArn(const Aws::String& value) { m_thingArnHasBeenSet = true; m_thingArn = value; }
-    inline void SetThingArn(Aws::String&& value) { m_thingArnHasBeenSet = true; m_thingArn = std::move(value); }
-    inline void SetThingArn(const char* value) { m_thingArnHasBeenSet = true; m_thingArn.assign(value); }
-    inline JobExecutionSummaryForJob& WithThingArn(const Aws::String& value) { SetThingArn(value); return *this;}
-    inline JobExecutionSummaryForJob& WithThingArn(Aws::String&& value) { SetThingArn(std::move(value)); return *this;}
-    inline JobExecutionSummaryForJob& WithThingArn(const char* value) { SetThingArn(value); return *this;}
+    template<typename ThingArnT = Aws::String>
+    void SetThingArn(ThingArnT&& value) { m_thingArnHasBeenSet = true; m_thingArn = std::forward<ThingArnT>(value); }
+    template<typename ThingArnT = Aws::String>
+    JobExecutionSummaryForJob& WithThingArn(ThingArnT&& value) { SetThingArn(std::forward<ThingArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains a subset of information about a job execution.</p>
      */
-    inline const JobExecutionSummary& GetJobExecutionSummary() const{ return m_jobExecutionSummary; }
+    inline const JobExecutionSummary& GetJobExecutionSummary() const { return m_jobExecutionSummary; }
     inline bool JobExecutionSummaryHasBeenSet() const { return m_jobExecutionSummaryHasBeenSet; }
-    inline void SetJobExecutionSummary(const JobExecutionSummary& value) { m_jobExecutionSummaryHasBeenSet = true; m_jobExecutionSummary = value; }
-    inline void SetJobExecutionSummary(JobExecutionSummary&& value) { m_jobExecutionSummaryHasBeenSet = true; m_jobExecutionSummary = std::move(value); }
-    inline JobExecutionSummaryForJob& WithJobExecutionSummary(const JobExecutionSummary& value) { SetJobExecutionSummary(value); return *this;}
-    inline JobExecutionSummaryForJob& WithJobExecutionSummary(JobExecutionSummary&& value) { SetJobExecutionSummary(std::move(value)); return *this;}
+    template<typename JobExecutionSummaryT = JobExecutionSummary>
+    void SetJobExecutionSummary(JobExecutionSummaryT&& value) { m_jobExecutionSummaryHasBeenSet = true; m_jobExecutionSummary = std::forward<JobExecutionSummaryT>(value); }
+    template<typename JobExecutionSummaryT = JobExecutionSummary>
+    JobExecutionSummaryForJob& WithJobExecutionSummary(JobExecutionSummaryT&& value) { SetJobExecutionSummary(std::forward<JobExecutionSummaryT>(value)); return *this;}
     ///@}
   private:
 

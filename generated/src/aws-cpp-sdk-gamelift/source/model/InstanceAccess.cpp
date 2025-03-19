@@ -18,18 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-InstanceAccess::InstanceAccess() : 
-    m_fleetIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_operatingSystem(OperatingSystem::NOT_SET),
-    m_operatingSystemHasBeenSet(false),
-    m_credentialsHasBeenSet(false)
-{
-}
-
 InstanceAccess::InstanceAccess(JsonView jsonValue)
-  : InstanceAccess()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ InstanceAccess& InstanceAccess::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FleetId"))
   {
     m_fleetId = jsonValue.GetString("FleetId");
-
     m_fleetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceId"))
   {
     m_instanceId = jsonValue.GetString("InstanceId");
-
     m_instanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IpAddress"))
   {
     m_ipAddress = jsonValue.GetString("IpAddress");
-
     m_ipAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OperatingSystem"))
   {
     m_operatingSystem = OperatingSystemMapper::GetOperatingSystemForName(jsonValue.GetString("OperatingSystem"));
-
     m_operatingSystemHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Credentials"))
   {
     m_credentials = jsonValue.GetObject("Credentials");
-
     m_credentialsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class PipelineMetadata
   {
   public:
-    AWS_CODEPIPELINE_API PipelineMetadata();
+    AWS_CODEPIPELINE_API PipelineMetadata() = default;
     AWS_CODEPIPELINE_API PipelineMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API PipelineMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,38 +42,36 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the pipeline.</p>
      */
-    inline const Aws::String& GetPipelineArn() const{ return m_pipelineArn; }
+    inline const Aws::String& GetPipelineArn() const { return m_pipelineArn; }
     inline bool PipelineArnHasBeenSet() const { return m_pipelineArnHasBeenSet; }
-    inline void SetPipelineArn(const Aws::String& value) { m_pipelineArnHasBeenSet = true; m_pipelineArn = value; }
-    inline void SetPipelineArn(Aws::String&& value) { m_pipelineArnHasBeenSet = true; m_pipelineArn = std::move(value); }
-    inline void SetPipelineArn(const char* value) { m_pipelineArnHasBeenSet = true; m_pipelineArn.assign(value); }
-    inline PipelineMetadata& WithPipelineArn(const Aws::String& value) { SetPipelineArn(value); return *this;}
-    inline PipelineMetadata& WithPipelineArn(Aws::String&& value) { SetPipelineArn(std::move(value)); return *this;}
-    inline PipelineMetadata& WithPipelineArn(const char* value) { SetPipelineArn(value); return *this;}
+    template<typename PipelineArnT = Aws::String>
+    void SetPipelineArn(PipelineArnT&& value) { m_pipelineArnHasBeenSet = true; m_pipelineArn = std::forward<PipelineArnT>(value); }
+    template<typename PipelineArnT = Aws::String>
+    PipelineMetadata& WithPipelineArn(PipelineArnT&& value) { SetPipelineArn(std::forward<PipelineArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time the pipeline was created, in timestamp format.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreated() const{ return m_created; }
+    inline const Aws::Utils::DateTime& GetCreated() const { return m_created; }
     inline bool CreatedHasBeenSet() const { return m_createdHasBeenSet; }
-    inline void SetCreated(const Aws::Utils::DateTime& value) { m_createdHasBeenSet = true; m_created = value; }
-    inline void SetCreated(Aws::Utils::DateTime&& value) { m_createdHasBeenSet = true; m_created = std::move(value); }
-    inline PipelineMetadata& WithCreated(const Aws::Utils::DateTime& value) { SetCreated(value); return *this;}
-    inline PipelineMetadata& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(std::move(value)); return *this;}
+    template<typename CreatedT = Aws::Utils::DateTime>
+    void SetCreated(CreatedT&& value) { m_createdHasBeenSet = true; m_created = std::forward<CreatedT>(value); }
+    template<typename CreatedT = Aws::Utils::DateTime>
+    PipelineMetadata& WithCreated(CreatedT&& value) { SetCreated(std::forward<CreatedT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time the pipeline was last updated, in timestamp format.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdated() const{ return m_updated; }
+    inline const Aws::Utils::DateTime& GetUpdated() const { return m_updated; }
     inline bool UpdatedHasBeenSet() const { return m_updatedHasBeenSet; }
-    inline void SetUpdated(const Aws::Utils::DateTime& value) { m_updatedHasBeenSet = true; m_updated = value; }
-    inline void SetUpdated(Aws::Utils::DateTime&& value) { m_updatedHasBeenSet = true; m_updated = std::move(value); }
-    inline PipelineMetadata& WithUpdated(const Aws::Utils::DateTime& value) { SetUpdated(value); return *this;}
-    inline PipelineMetadata& WithUpdated(Aws::Utils::DateTime&& value) { SetUpdated(std::move(value)); return *this;}
+    template<typename UpdatedT = Aws::Utils::DateTime>
+    void SetUpdated(UpdatedT&& value) { m_updatedHasBeenSet = true; m_updated = std::forward<UpdatedT>(value); }
+    template<typename UpdatedT = Aws::Utils::DateTime>
+    PipelineMetadata& WithUpdated(UpdatedT&& value) { SetUpdated(std::forward<UpdatedT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,25 +85,25 @@ namespace Model
      * polling pipelines to use event-based change detection</a> in the CodePipeline
      * User Guide.</p>
      */
-    inline const Aws::Utils::DateTime& GetPollingDisabledAt() const{ return m_pollingDisabledAt; }
+    inline const Aws::Utils::DateTime& GetPollingDisabledAt() const { return m_pollingDisabledAt; }
     inline bool PollingDisabledAtHasBeenSet() const { return m_pollingDisabledAtHasBeenSet; }
-    inline void SetPollingDisabledAt(const Aws::Utils::DateTime& value) { m_pollingDisabledAtHasBeenSet = true; m_pollingDisabledAt = value; }
-    inline void SetPollingDisabledAt(Aws::Utils::DateTime&& value) { m_pollingDisabledAtHasBeenSet = true; m_pollingDisabledAt = std::move(value); }
-    inline PipelineMetadata& WithPollingDisabledAt(const Aws::Utils::DateTime& value) { SetPollingDisabledAt(value); return *this;}
-    inline PipelineMetadata& WithPollingDisabledAt(Aws::Utils::DateTime&& value) { SetPollingDisabledAt(std::move(value)); return *this;}
+    template<typename PollingDisabledAtT = Aws::Utils::DateTime>
+    void SetPollingDisabledAt(PollingDisabledAtT&& value) { m_pollingDisabledAtHasBeenSet = true; m_pollingDisabledAt = std::forward<PollingDisabledAtT>(value); }
+    template<typename PollingDisabledAtT = Aws::Utils::DateTime>
+    PipelineMetadata& WithPollingDisabledAt(PollingDisabledAtT&& value) { SetPollingDisabledAt(std::forward<PollingDisabledAtT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_pipelineArn;
     bool m_pipelineArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_created;
+    Aws::Utils::DateTime m_created{};
     bool m_createdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updated;
+    Aws::Utils::DateTime m_updated{};
     bool m_updatedHasBeenSet = false;
 
-    Aws::Utils::DateTime m_pollingDisabledAt;
+    Aws::Utils::DateTime m_pollingDisabledAt{};
     bool m_pollingDisabledAtHasBeenSet = false;
   };
 

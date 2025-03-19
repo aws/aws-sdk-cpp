@@ -36,7 +36,7 @@ namespace Model
   class IosImportClientBrandingAttributes
   {
   public:
-    AWS_WORKSPACES_API IosImportClientBrandingAttributes();
+    AWS_WORKSPACES_API IosImportClientBrandingAttributes() = default;
     AWS_WORKSPACES_API IosImportClientBrandingAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API IosImportClientBrandingAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,12 @@ namespace Model
      * accepted is a binary data object that is converted from a <code>.png</code>
      * file.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetLogo() const{ return m_logo; }
+    inline const Aws::Utils::ByteBuffer& GetLogo() const { return m_logo; }
     inline bool LogoHasBeenSet() const { return m_logoHasBeenSet; }
-    inline void SetLogo(const Aws::Utils::ByteBuffer& value) { m_logoHasBeenSet = true; m_logo = value; }
-    inline void SetLogo(Aws::Utils::ByteBuffer&& value) { m_logoHasBeenSet = true; m_logo = std::move(value); }
-    inline IosImportClientBrandingAttributes& WithLogo(const Aws::Utils::ByteBuffer& value) { SetLogo(value); return *this;}
-    inline IosImportClientBrandingAttributes& WithLogo(Aws::Utils::ByteBuffer&& value) { SetLogo(std::move(value)); return *this;}
+    template<typename LogoT = Aws::Utils::ByteBuffer>
+    void SetLogo(LogoT&& value) { m_logoHasBeenSet = true; m_logo = std::forward<LogoT>(value); }
+    template<typename LogoT = Aws::Utils::ByteBuffer>
+    IosImportClientBrandingAttributes& WithLogo(LogoT&& value) { SetLogo(std::forward<LogoT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,12 +67,12 @@ namespace Model
      * Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
      * 
      */
-    inline const Aws::Utils::ByteBuffer& GetLogo2x() const{ return m_logo2x; }
+    inline const Aws::Utils::ByteBuffer& GetLogo2x() const { return m_logo2x; }
     inline bool Logo2xHasBeenSet() const { return m_logo2xHasBeenSet; }
-    inline void SetLogo2x(const Aws::Utils::ByteBuffer& value) { m_logo2xHasBeenSet = true; m_logo2x = value; }
-    inline void SetLogo2x(Aws::Utils::ByteBuffer&& value) { m_logo2xHasBeenSet = true; m_logo2x = std::move(value); }
-    inline IosImportClientBrandingAttributes& WithLogo2x(const Aws::Utils::ByteBuffer& value) { SetLogo2x(value); return *this;}
-    inline IosImportClientBrandingAttributes& WithLogo2x(Aws::Utils::ByteBuffer&& value) { SetLogo2x(std::move(value)); return *this;}
+    template<typename Logo2xT = Aws::Utils::ByteBuffer>
+    void SetLogo2x(Logo2xT&& value) { m_logo2xHasBeenSet = true; m_logo2x = std::forward<Logo2xT>(value); }
+    template<typename Logo2xT = Aws::Utils::ByteBuffer>
+    IosImportClientBrandingAttributes& WithLogo2x(Logo2xT&& value) { SetLogo2x(std::forward<Logo2xT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,12 +85,12 @@ namespace Model
      * Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
      * 
      */
-    inline const Aws::Utils::ByteBuffer& GetLogo3x() const{ return m_logo3x; }
+    inline const Aws::Utils::ByteBuffer& GetLogo3x() const { return m_logo3x; }
     inline bool Logo3xHasBeenSet() const { return m_logo3xHasBeenSet; }
-    inline void SetLogo3x(const Aws::Utils::ByteBuffer& value) { m_logo3xHasBeenSet = true; m_logo3x = value; }
-    inline void SetLogo3x(Aws::Utils::ByteBuffer&& value) { m_logo3xHasBeenSet = true; m_logo3x = std::move(value); }
-    inline IosImportClientBrandingAttributes& WithLogo3x(const Aws::Utils::ByteBuffer& value) { SetLogo3x(value); return *this;}
-    inline IosImportClientBrandingAttributes& WithLogo3x(Aws::Utils::ByteBuffer&& value) { SetLogo3x(std::move(value)); return *this;}
+    template<typename Logo3xT = Aws::Utils::ByteBuffer>
+    void SetLogo3x(Logo3xT&& value) { m_logo3xHasBeenSet = true; m_logo3x = std::forward<Logo3xT>(value); }
+    template<typename Logo3xT = Aws::Utils::ByteBuffer>
+    IosImportClientBrandingAttributes& WithLogo3x(Logo3xT&& value) { SetLogo3x(std::forward<Logo3xT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,14 +101,12 @@ namespace Model
      * parameter for each platform type, but not both.</p> </li> <li> <p>The default
      * email is <code>workspaces-feedback@amazon.com</code>.</p> </li> </ul> 
      */
-    inline const Aws::String& GetSupportEmail() const{ return m_supportEmail; }
+    inline const Aws::String& GetSupportEmail() const { return m_supportEmail; }
     inline bool SupportEmailHasBeenSet() const { return m_supportEmailHasBeenSet; }
-    inline void SetSupportEmail(const Aws::String& value) { m_supportEmailHasBeenSet = true; m_supportEmail = value; }
-    inline void SetSupportEmail(Aws::String&& value) { m_supportEmailHasBeenSet = true; m_supportEmail = std::move(value); }
-    inline void SetSupportEmail(const char* value) { m_supportEmailHasBeenSet = true; m_supportEmail.assign(value); }
-    inline IosImportClientBrandingAttributes& WithSupportEmail(const Aws::String& value) { SetSupportEmail(value); return *this;}
-    inline IosImportClientBrandingAttributes& WithSupportEmail(Aws::String&& value) { SetSupportEmail(std::move(value)); return *this;}
-    inline IosImportClientBrandingAttributes& WithSupportEmail(const char* value) { SetSupportEmail(value); return *this;}
+    template<typename SupportEmailT = Aws::String>
+    void SetSupportEmail(SupportEmailT&& value) { m_supportEmailHasBeenSet = true; m_supportEmail = std::forward<SupportEmailT>(value); }
+    template<typename SupportEmailT = Aws::String>
+    IosImportClientBrandingAttributes& WithSupportEmail(SupportEmailT&& value) { SetSupportEmail(std::forward<SupportEmailT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,14 +118,12 @@ namespace Model
      * both.</p> </li> <li> <p>The default support link is
      * <code>workspaces-feedback@amazon.com</code>.</p> </li> </ul> 
      */
-    inline const Aws::String& GetSupportLink() const{ return m_supportLink; }
+    inline const Aws::String& GetSupportLink() const { return m_supportLink; }
     inline bool SupportLinkHasBeenSet() const { return m_supportLinkHasBeenSet; }
-    inline void SetSupportLink(const Aws::String& value) { m_supportLinkHasBeenSet = true; m_supportLink = value; }
-    inline void SetSupportLink(Aws::String&& value) { m_supportLinkHasBeenSet = true; m_supportLink = std::move(value); }
-    inline void SetSupportLink(const char* value) { m_supportLinkHasBeenSet = true; m_supportLink.assign(value); }
-    inline IosImportClientBrandingAttributes& WithSupportLink(const Aws::String& value) { SetSupportLink(value); return *this;}
-    inline IosImportClientBrandingAttributes& WithSupportLink(Aws::String&& value) { SetSupportLink(std::move(value)); return *this;}
-    inline IosImportClientBrandingAttributes& WithSupportLink(const char* value) { SetSupportLink(value); return *this;}
+    template<typename SupportLinkT = Aws::String>
+    void SetSupportLink(SupportLinkT&& value) { m_supportLinkHasBeenSet = true; m_supportLink = std::forward<SupportLinkT>(value); }
+    template<typename SupportLinkT = Aws::String>
+    IosImportClientBrandingAttributes& WithSupportLink(SupportLinkT&& value) { SetSupportLink(std::forward<SupportLinkT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -135,14 +131,12 @@ namespace Model
      * <p>The forgotten password link. This is the web address that users can go to if
      * they forget the password for their WorkSpace.</p>
      */
-    inline const Aws::String& GetForgotPasswordLink() const{ return m_forgotPasswordLink; }
+    inline const Aws::String& GetForgotPasswordLink() const { return m_forgotPasswordLink; }
     inline bool ForgotPasswordLinkHasBeenSet() const { return m_forgotPasswordLinkHasBeenSet; }
-    inline void SetForgotPasswordLink(const Aws::String& value) { m_forgotPasswordLinkHasBeenSet = true; m_forgotPasswordLink = value; }
-    inline void SetForgotPasswordLink(Aws::String&& value) { m_forgotPasswordLinkHasBeenSet = true; m_forgotPasswordLink = std::move(value); }
-    inline void SetForgotPasswordLink(const char* value) { m_forgotPasswordLinkHasBeenSet = true; m_forgotPasswordLink.assign(value); }
-    inline IosImportClientBrandingAttributes& WithForgotPasswordLink(const Aws::String& value) { SetForgotPasswordLink(value); return *this;}
-    inline IosImportClientBrandingAttributes& WithForgotPasswordLink(Aws::String&& value) { SetForgotPasswordLink(std::move(value)); return *this;}
-    inline IosImportClientBrandingAttributes& WithForgotPasswordLink(const char* value) { SetForgotPasswordLink(value); return *this;}
+    template<typename ForgotPasswordLinkT = Aws::String>
+    void SetForgotPasswordLink(ForgotPasswordLinkT&& value) { m_forgotPasswordLinkHasBeenSet = true; m_forgotPasswordLink = std::forward<ForgotPasswordLinkT>(value); }
+    template<typename ForgotPasswordLinkT = Aws::String>
+    IosImportClientBrandingAttributes& WithForgotPasswordLink(ForgotPasswordLinkT&& value) { SetForgotPasswordLink(std::forward<ForgotPasswordLinkT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -153,29 +147,26 @@ namespace Model
      * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre,
      * q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetLoginMessage() const{ return m_loginMessage; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetLoginMessage() const { return m_loginMessage; }
     inline bool LoginMessageHasBeenSet() const { return m_loginMessageHasBeenSet; }
-    inline void SetLoginMessage(const Aws::Map<Aws::String, Aws::String>& value) { m_loginMessageHasBeenSet = true; m_loginMessage = value; }
-    inline void SetLoginMessage(Aws::Map<Aws::String, Aws::String>&& value) { m_loginMessageHasBeenSet = true; m_loginMessage = std::move(value); }
-    inline IosImportClientBrandingAttributes& WithLoginMessage(const Aws::Map<Aws::String, Aws::String>& value) { SetLoginMessage(value); return *this;}
-    inline IosImportClientBrandingAttributes& WithLoginMessage(Aws::Map<Aws::String, Aws::String>&& value) { SetLoginMessage(std::move(value)); return *this;}
-    inline IosImportClientBrandingAttributes& AddLoginMessage(const Aws::String& key, const Aws::String& value) { m_loginMessageHasBeenSet = true; m_loginMessage.emplace(key, value); return *this; }
-    inline IosImportClientBrandingAttributes& AddLoginMessage(Aws::String&& key, const Aws::String& value) { m_loginMessageHasBeenSet = true; m_loginMessage.emplace(std::move(key), value); return *this; }
-    inline IosImportClientBrandingAttributes& AddLoginMessage(const Aws::String& key, Aws::String&& value) { m_loginMessageHasBeenSet = true; m_loginMessage.emplace(key, std::move(value)); return *this; }
-    inline IosImportClientBrandingAttributes& AddLoginMessage(Aws::String&& key, Aws::String&& value) { m_loginMessageHasBeenSet = true; m_loginMessage.emplace(std::move(key), std::move(value)); return *this; }
-    inline IosImportClientBrandingAttributes& AddLoginMessage(const char* key, Aws::String&& value) { m_loginMessageHasBeenSet = true; m_loginMessage.emplace(key, std::move(value)); return *this; }
-    inline IosImportClientBrandingAttributes& AddLoginMessage(Aws::String&& key, const char* value) { m_loginMessageHasBeenSet = true; m_loginMessage.emplace(std::move(key), value); return *this; }
-    inline IosImportClientBrandingAttributes& AddLoginMessage(const char* key, const char* value) { m_loginMessageHasBeenSet = true; m_loginMessage.emplace(key, value); return *this; }
+    template<typename LoginMessageT = Aws::Map<Aws::String, Aws::String>>
+    void SetLoginMessage(LoginMessageT&& value) { m_loginMessageHasBeenSet = true; m_loginMessage = std::forward<LoginMessageT>(value); }
+    template<typename LoginMessageT = Aws::Map<Aws::String, Aws::String>>
+    IosImportClientBrandingAttributes& WithLoginMessage(LoginMessageT&& value) { SetLoginMessage(std::forward<LoginMessageT>(value)); return *this;}
+    template<typename LoginMessageKeyT = Aws::String, typename LoginMessageValueT = Aws::String>
+    IosImportClientBrandingAttributes& AddLoginMessage(LoginMessageKeyT&& key, LoginMessageValueT&& value) {
+      m_loginMessageHasBeenSet = true; m_loginMessage.emplace(std::forward<LoginMessageKeyT>(key), std::forward<LoginMessageValueT>(value)); return *this;
+    }
     ///@}
   private:
 
-    Aws::Utils::ByteBuffer m_logo;
+    Aws::Utils::ByteBuffer m_logo{};
     bool m_logoHasBeenSet = false;
 
-    Aws::Utils::ByteBuffer m_logo2x;
+    Aws::Utils::ByteBuffer m_logo2x{};
     bool m_logo2xHasBeenSet = false;
 
-    Aws::Utils::ByteBuffer m_logo3x;
+    Aws::Utils::ByteBuffer m_logo3x{};
     bool m_logo3xHasBeenSet = false;
 
     Aws::String m_supportEmail;

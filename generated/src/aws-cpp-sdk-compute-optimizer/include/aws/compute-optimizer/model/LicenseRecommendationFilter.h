@@ -35,7 +35,7 @@ namespace Model
   class LicenseRecommendationFilter
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API LicenseRecommendationFilter();
+    AWS_COMPUTEOPTIMIZER_API LicenseRecommendationFilter() = default;
     AWS_COMPUTEOPTIMIZER_API LicenseRecommendationFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API LicenseRecommendationFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -59,12 +59,10 @@ namespace Model
      * tag value. For example, you can find your license recommendations with a tag key
      * value of <code>Owner</code> or without any tag keys assigned.</p>
      */
-    inline const LicenseRecommendationFilterName& GetName() const{ return m_name; }
+    inline LicenseRecommendationFilterName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const LicenseRecommendationFilterName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(LicenseRecommendationFilterName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline LicenseRecommendationFilter& WithName(const LicenseRecommendationFilterName& value) { SetName(value); return *this;}
-    inline LicenseRecommendationFilter& WithName(LicenseRecommendationFilterName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(LicenseRecommendationFilterName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline LicenseRecommendationFilter& WithName(LicenseRecommendationFilterName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -80,19 +78,18 @@ namespace Model
      * <code>InvalidCloudwatchApplicationInsights</code>, or
      * <code>CloudwatchApplicationInsightsError</code>.</p> </li> </ul>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline LicenseRecommendationFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline LicenseRecommendationFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline LicenseRecommendationFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline LicenseRecommendationFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline LicenseRecommendationFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    LicenseRecommendationFilter& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    LicenseRecommendationFilter& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
   private:
 
-    LicenseRecommendationFilterName m_name;
+    LicenseRecommendationFilterName m_name{LicenseRecommendationFilterName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;

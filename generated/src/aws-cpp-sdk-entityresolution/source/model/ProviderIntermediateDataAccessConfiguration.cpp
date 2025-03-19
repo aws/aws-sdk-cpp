@@ -18,14 +18,7 @@ namespace EntityResolution
 namespace Model
 {
 
-ProviderIntermediateDataAccessConfiguration::ProviderIntermediateDataAccessConfiguration() : 
-    m_awsAccountIdsHasBeenSet(false),
-    m_requiredBucketActionsHasBeenSet(false)
-{
-}
-
 ProviderIntermediateDataAccessConfiguration::ProviderIntermediateDataAccessConfiguration(JsonView jsonValue)
-  : ProviderIntermediateDataAccessConfiguration()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ ProviderIntermediateDataAccessConfiguration& ProviderIntermediateDataAccessConfi
     }
     m_awsAccountIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("requiredBucketActions"))
   {
     Aws::Utils::Array<JsonView> requiredBucketActionsJsonList = jsonValue.GetArray("requiredBucketActions");
@@ -51,7 +43,6 @@ ProviderIntermediateDataAccessConfiguration& ProviderIntermediateDataAccessConfi
     }
     m_requiredBucketActionsHasBeenSet = true;
   }
-
   return *this;
 }
 

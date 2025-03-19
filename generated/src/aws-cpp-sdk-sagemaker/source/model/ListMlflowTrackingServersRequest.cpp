@@ -12,22 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListMlflowTrackingServersRequest::ListMlflowTrackingServersRequest() : 
-    m_createdAfterHasBeenSet(false),
-    m_createdBeforeHasBeenSet(false),
-    m_trackingServerStatus(TrackingServerStatus::NOT_SET),
-    m_trackingServerStatusHasBeenSet(false),
-    m_mlflowVersionHasBeenSet(false),
-    m_sortBy(SortTrackingServerBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListMlflowTrackingServersRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -20,18 +20,7 @@ namespace EC2
 namespace Model
 {
 
-SecurityGroupForVpc::SecurityGroupForVpc() : 
-    m_descriptionHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_groupIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_primaryVpcIdHasBeenSet(false)
-{
-}
-
 SecurityGroupForVpc::SecurityGroupForVpc(const XmlNode& xmlNode)
-  : SecurityGroupForVpc()
 {
   *this = xmlNode;
 }
@@ -70,6 +59,7 @@ SecurityGroupForVpc& SecurityGroupForVpc::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

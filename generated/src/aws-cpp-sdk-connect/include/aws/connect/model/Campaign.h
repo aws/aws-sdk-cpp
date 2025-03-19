@@ -31,7 +31,7 @@ namespace Model
   class Campaign
   {
   public:
-    AWS_CONNECT_API Campaign();
+    AWS_CONNECT_API Campaign() = default;
     AWS_CONNECT_API Campaign(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Campaign& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>A unique identifier for a campaign.</p>
      */
-    inline const Aws::String& GetCampaignId() const{ return m_campaignId; }
+    inline const Aws::String& GetCampaignId() const { return m_campaignId; }
     inline bool CampaignIdHasBeenSet() const { return m_campaignIdHasBeenSet; }
-    inline void SetCampaignId(const Aws::String& value) { m_campaignIdHasBeenSet = true; m_campaignId = value; }
-    inline void SetCampaignId(Aws::String&& value) { m_campaignIdHasBeenSet = true; m_campaignId = std::move(value); }
-    inline void SetCampaignId(const char* value) { m_campaignIdHasBeenSet = true; m_campaignId.assign(value); }
-    inline Campaign& WithCampaignId(const Aws::String& value) { SetCampaignId(value); return *this;}
-    inline Campaign& WithCampaignId(Aws::String&& value) { SetCampaignId(std::move(value)); return *this;}
-    inline Campaign& WithCampaignId(const char* value) { SetCampaignId(value); return *this;}
+    template<typename CampaignIdT = Aws::String>
+    void SetCampaignId(CampaignIdT&& value) { m_campaignIdHasBeenSet = true; m_campaignId = std::forward<CampaignIdT>(value); }
+    template<typename CampaignIdT = Aws::String>
+    Campaign& WithCampaignId(CampaignIdT&& value) { SetCampaignId(std::forward<CampaignIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -10,11 +10,6 @@
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-DeleteEndpointRequest::DeleteEndpointRequest() : 
-    m_endpointArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteEndpointRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateDashboardPublishedVersionResult::UpdateDashboardPublishedVersionResult() : 
-    m_status(0)
-{
-}
-
 UpdateDashboardPublishedVersionResult::UpdateDashboardPublishedVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateDashboardPublishedVersionResult()
 {
   *this = result;
 }
@@ -34,25 +28,24 @@ UpdateDashboardPublishedVersionResult& UpdateDashboardPublishedVersionResult::op
   if(jsonValue.ValueExists("DashboardId"))
   {
     m_dashboardId = jsonValue.GetString("DashboardId");
-
+    m_dashboardIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DashboardArn"))
   {
     m_dashboardArn = jsonValue.GetString("DashboardArn");
-
+    m_dashboardArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

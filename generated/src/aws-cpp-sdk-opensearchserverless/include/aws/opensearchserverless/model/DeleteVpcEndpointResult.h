@@ -28,7 +28,7 @@ namespace Model
   class DeleteVpcEndpointResult
   {
   public:
-    AWS_OPENSEARCHSERVERLESS_API DeleteVpcEndpointResult();
+    AWS_OPENSEARCHSERVERLESS_API DeleteVpcEndpointResult() = default;
     AWS_OPENSEARCHSERVERLESS_API DeleteVpcEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OPENSEARCHSERVERLESS_API DeleteVpcEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Details about the deleted endpoint.</p>
      */
-    inline const DeleteVpcEndpointDetail& GetDeleteVpcEndpointDetail() const{ return m_deleteVpcEndpointDetail; }
-    inline void SetDeleteVpcEndpointDetail(const DeleteVpcEndpointDetail& value) { m_deleteVpcEndpointDetail = value; }
-    inline void SetDeleteVpcEndpointDetail(DeleteVpcEndpointDetail&& value) { m_deleteVpcEndpointDetail = std::move(value); }
-    inline DeleteVpcEndpointResult& WithDeleteVpcEndpointDetail(const DeleteVpcEndpointDetail& value) { SetDeleteVpcEndpointDetail(value); return *this;}
-    inline DeleteVpcEndpointResult& WithDeleteVpcEndpointDetail(DeleteVpcEndpointDetail&& value) { SetDeleteVpcEndpointDetail(std::move(value)); return *this;}
+    inline const DeleteVpcEndpointDetail& GetDeleteVpcEndpointDetail() const { return m_deleteVpcEndpointDetail; }
+    template<typename DeleteVpcEndpointDetailT = DeleteVpcEndpointDetail>
+    void SetDeleteVpcEndpointDetail(DeleteVpcEndpointDetailT&& value) { m_deleteVpcEndpointDetailHasBeenSet = true; m_deleteVpcEndpointDetail = std::forward<DeleteVpcEndpointDetailT>(value); }
+    template<typename DeleteVpcEndpointDetailT = DeleteVpcEndpointDetail>
+    DeleteVpcEndpointResult& WithDeleteVpcEndpointDetail(DeleteVpcEndpointDetailT&& value) { SetDeleteVpcEndpointDetail(std::forward<DeleteVpcEndpointDetailT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteVpcEndpointResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteVpcEndpointResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteVpcEndpointResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteVpcEndpointResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DeleteVpcEndpointDetail m_deleteVpcEndpointDetail;
+    bool m_deleteVpcEndpointDetailHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

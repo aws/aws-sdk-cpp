@@ -32,7 +32,7 @@ namespace Model
   class ActionDefinition
   {
   public:
-    AWS_NETWORKFIREWALL_API ActionDefinition();
+    AWS_NETWORKFIREWALL_API ActionDefinition() = default;
     AWS_NETWORKFIREWALL_API ActionDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API ActionDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,12 @@ namespace Model
      * inspection. Then, when a packet matches the rule, Network Firewall publishes
      * metrics for the packet and forwards it. </p>
      */
-    inline const PublishMetricAction& GetPublishMetricAction() const{ return m_publishMetricAction; }
+    inline const PublishMetricAction& GetPublishMetricAction() const { return m_publishMetricAction; }
     inline bool PublishMetricActionHasBeenSet() const { return m_publishMetricActionHasBeenSet; }
-    inline void SetPublishMetricAction(const PublishMetricAction& value) { m_publishMetricActionHasBeenSet = true; m_publishMetricAction = value; }
-    inline void SetPublishMetricAction(PublishMetricAction&& value) { m_publishMetricActionHasBeenSet = true; m_publishMetricAction = std::move(value); }
-    inline ActionDefinition& WithPublishMetricAction(const PublishMetricAction& value) { SetPublishMetricAction(value); return *this;}
-    inline ActionDefinition& WithPublishMetricAction(PublishMetricAction&& value) { SetPublishMetricAction(std::move(value)); return *this;}
+    template<typename PublishMetricActionT = PublishMetricAction>
+    void SetPublishMetricAction(PublishMetricActionT&& value) { m_publishMetricActionHasBeenSet = true; m_publishMetricAction = std::forward<PublishMetricActionT>(value); }
+    template<typename PublishMetricActionT = PublishMetricAction>
+    ActionDefinition& WithPublishMetricAction(PublishMetricActionT&& value) { SetPublishMetricAction(std::forward<PublishMetricActionT>(value)); return *this;}
     ///@}
   private:
 

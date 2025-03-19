@@ -33,7 +33,7 @@ namespace Model
   class CustomLineItemPercentageChargeDetails
   {
   public:
-    AWS_BILLINGCONDUCTOR_API CustomLineItemPercentageChargeDetails();
+    AWS_BILLINGCONDUCTOR_API CustomLineItemPercentageChargeDetails() = default;
     AWS_BILLINGCONDUCTOR_API CustomLineItemPercentageChargeDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_BILLINGCONDUCTOR_API CustomLineItemPercentageChargeDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * <p>The custom line item's percentage value. This will be multiplied against the
      * combined value of its associated resources to determine its charge value. </p>
      */
-    inline double GetPercentageValue() const{ return m_percentageValue; }
+    inline double GetPercentageValue() const { return m_percentageValue; }
     inline bool PercentageValueHasBeenSet() const { return m_percentageValueHasBeenSet; }
     inline void SetPercentageValue(double value) { m_percentageValueHasBeenSet = true; m_percentageValue = value; }
     inline CustomLineItemPercentageChargeDetails& WithPercentageValue(double value) { SetPercentageValue(value); return *this;}
@@ -54,19 +54,18 @@ namespace Model
     /**
      * <p>A list of resource ARNs to associate to the percentage custom line item.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAssociatedValues() const{ return m_associatedValues; }
+    inline const Aws::Vector<Aws::String>& GetAssociatedValues() const { return m_associatedValues; }
     inline bool AssociatedValuesHasBeenSet() const { return m_associatedValuesHasBeenSet; }
-    inline void SetAssociatedValues(const Aws::Vector<Aws::String>& value) { m_associatedValuesHasBeenSet = true; m_associatedValues = value; }
-    inline void SetAssociatedValues(Aws::Vector<Aws::String>&& value) { m_associatedValuesHasBeenSet = true; m_associatedValues = std::move(value); }
-    inline CustomLineItemPercentageChargeDetails& WithAssociatedValues(const Aws::Vector<Aws::String>& value) { SetAssociatedValues(value); return *this;}
-    inline CustomLineItemPercentageChargeDetails& WithAssociatedValues(Aws::Vector<Aws::String>&& value) { SetAssociatedValues(std::move(value)); return *this;}
-    inline CustomLineItemPercentageChargeDetails& AddAssociatedValues(const Aws::String& value) { m_associatedValuesHasBeenSet = true; m_associatedValues.push_back(value); return *this; }
-    inline CustomLineItemPercentageChargeDetails& AddAssociatedValues(Aws::String&& value) { m_associatedValuesHasBeenSet = true; m_associatedValues.push_back(std::move(value)); return *this; }
-    inline CustomLineItemPercentageChargeDetails& AddAssociatedValues(const char* value) { m_associatedValuesHasBeenSet = true; m_associatedValues.push_back(value); return *this; }
+    template<typename AssociatedValuesT = Aws::Vector<Aws::String>>
+    void SetAssociatedValues(AssociatedValuesT&& value) { m_associatedValuesHasBeenSet = true; m_associatedValues = std::forward<AssociatedValuesT>(value); }
+    template<typename AssociatedValuesT = Aws::Vector<Aws::String>>
+    CustomLineItemPercentageChargeDetails& WithAssociatedValues(AssociatedValuesT&& value) { SetAssociatedValues(std::forward<AssociatedValuesT>(value)); return *this;}
+    template<typename AssociatedValuesT = Aws::String>
+    CustomLineItemPercentageChargeDetails& AddAssociatedValues(AssociatedValuesT&& value) { m_associatedValuesHasBeenSet = true; m_associatedValues.emplace_back(std::forward<AssociatedValuesT>(value)); return *this; }
     ///@}
   private:
 
-    double m_percentageValue;
+    double m_percentageValue{0.0};
     bool m_percentageValueHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_associatedValues;

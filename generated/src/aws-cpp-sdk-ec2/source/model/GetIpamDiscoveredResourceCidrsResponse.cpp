@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetIpamDiscoveredResourceCidrsResponse::GetIpamDiscoveredResourceCidrsResponse()
-{
-}
-
 GetIpamDiscoveredResourceCidrsResponse::GetIpamDiscoveredResourceCidrsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ GetIpamDiscoveredResourceCidrsResponse& GetIpamDiscoveredResourceCidrsResponse::
     if(!ipamDiscoveredResourceCidrsNode.IsNull())
     {
       XmlNode ipamDiscoveredResourceCidrsMember = ipamDiscoveredResourceCidrsNode.FirstChild("item");
+      m_ipamDiscoveredResourceCidrsHasBeenSet = !ipamDiscoveredResourceCidrsMember.IsNull();
       while(!ipamDiscoveredResourceCidrsMember.IsNull())
       {
         m_ipamDiscoveredResourceCidrs.push_back(ipamDiscoveredResourceCidrsMember);
         ipamDiscoveredResourceCidrsMember = ipamDiscoveredResourceCidrsMember.NextNode("item");
       }
 
+      m_ipamDiscoveredResourceCidrsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ GetIpamDiscoveredResourceCidrsResponse& GetIpamDiscoveredResourceCidrsResponse::
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::GetIpamDiscoveredResourceCidrsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

@@ -35,7 +35,7 @@ namespace Model
   class Invitation
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API Invitation();
+    AWS_PARTNERCENTRALSELLING_API Invitation() = default;
     AWS_PARTNERCENTRALSELLING_API Invitation(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API Invitation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,34 +45,32 @@ namespace Model
     /**
      * <p> A message accompanying the invitation. </p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline Invitation& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline Invitation& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline Invitation& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    Invitation& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Payload& GetPayload() const{ return m_payload; }
+    inline const Payload& GetPayload() const { return m_payload; }
     inline bool PayloadHasBeenSet() const { return m_payloadHasBeenSet; }
-    inline void SetPayload(const Payload& value) { m_payloadHasBeenSet = true; m_payload = value; }
-    inline void SetPayload(Payload&& value) { m_payloadHasBeenSet = true; m_payload = std::move(value); }
-    inline Invitation& WithPayload(const Payload& value) { SetPayload(value); return *this;}
-    inline Invitation& WithPayload(Payload&& value) { SetPayload(std::move(value)); return *this;}
+    template<typename PayloadT = Payload>
+    void SetPayload(PayloadT&& value) { m_payloadHasBeenSet = true; m_payload = std::forward<PayloadT>(value); }
+    template<typename PayloadT = Payload>
+    Invitation& WithPayload(PayloadT&& value) { SetPayload(std::forward<PayloadT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Receiver& GetReceiver() const{ return m_receiver; }
+    inline const Receiver& GetReceiver() const { return m_receiver; }
     inline bool ReceiverHasBeenSet() const { return m_receiverHasBeenSet; }
-    inline void SetReceiver(const Receiver& value) { m_receiverHasBeenSet = true; m_receiver = value; }
-    inline void SetReceiver(Receiver&& value) { m_receiverHasBeenSet = true; m_receiver = std::move(value); }
-    inline Invitation& WithReceiver(const Receiver& value) { SetReceiver(value); return *this;}
-    inline Invitation& WithReceiver(Receiver&& value) { SetReceiver(std::move(value)); return *this;}
+    template<typename ReceiverT = Receiver>
+    void SetReceiver(ReceiverT&& value) { m_receiverHasBeenSet = true; m_receiver = std::forward<ReceiverT>(value); }
+    template<typename ReceiverT = Receiver>
+    Invitation& WithReceiver(ReceiverT&& value) { SetReceiver(std::forward<ReceiverT>(value)); return *this;}
     ///@}
   private:
 

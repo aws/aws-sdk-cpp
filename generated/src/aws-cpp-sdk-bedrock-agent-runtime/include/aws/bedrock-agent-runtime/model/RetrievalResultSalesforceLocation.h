@@ -31,7 +31,7 @@ namespace Model
   class RetrievalResultSalesforceLocation
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API RetrievalResultSalesforceLocation();
+    AWS_BEDROCKAGENTRUNTIME_API RetrievalResultSalesforceLocation() = default;
     AWS_BEDROCKAGENTRUNTIME_API RetrievalResultSalesforceLocation(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API RetrievalResultSalesforceLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The Salesforce host URL for the data source location.</p>
      */
-    inline const Aws::String& GetUrl() const{ return m_url; }
+    inline const Aws::String& GetUrl() const { return m_url; }
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
-    inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
-    inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
-    inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
-    inline RetrievalResultSalesforceLocation& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
-    inline RetrievalResultSalesforceLocation& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
-    inline RetrievalResultSalesforceLocation& WithUrl(const char* value) { SetUrl(value); return *this;}
+    template<typename UrlT = Aws::String>
+    void SetUrl(UrlT&& value) { m_urlHasBeenSet = true; m_url = std::forward<UrlT>(value); }
+    template<typename UrlT = Aws::String>
+    RetrievalResultSalesforceLocation& WithUrl(UrlT&& value) { SetUrl(std::forward<UrlT>(value)); return *this;}
     ///@}
   private:
 

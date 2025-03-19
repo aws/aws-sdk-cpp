@@ -12,14 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetWorkflowRunRequest::GetWorkflowRunRequest() : 
-    m_nameHasBeenSet(false),
-    m_runIdHasBeenSet(false),
-    m_includeGraph(false),
-    m_includeGraphHasBeenSet(false)
-{
-}
-
 Aws::String GetWorkflowRunRequest::SerializePayload() const
 {
   JsonValue payload;

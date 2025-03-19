@@ -18,16 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-Av1ColorSpaceSettings::Av1ColorSpaceSettings() : 
-    m_colorSpacePassthroughSettingsHasBeenSet(false),
-    m_hdr10SettingsHasBeenSet(false),
-    m_rec601SettingsHasBeenSet(false),
-    m_rec709SettingsHasBeenSet(false)
-{
-}
-
 Av1ColorSpaceSettings::Av1ColorSpaceSettings(JsonView jsonValue)
-  : Av1ColorSpaceSettings()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ Av1ColorSpaceSettings& Av1ColorSpaceSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("colorSpacePassthroughSettings"))
   {
     m_colorSpacePassthroughSettings = jsonValue.GetObject("colorSpacePassthroughSettings");
-
     m_colorSpacePassthroughSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hdr10Settings"))
   {
     m_hdr10Settings = jsonValue.GetObject("hdr10Settings");
-
     m_hdr10SettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rec601Settings"))
   {
     m_rec601Settings = jsonValue.GetObject("rec601Settings");
-
     m_rec601SettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rec709Settings"))
   {
     m_rec709Settings = jsonValue.GetObject("rec709Settings");
-
     m_rec709SettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

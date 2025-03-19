@@ -18,14 +18,7 @@ namespace CleanRoomsML
 namespace Model
 {
 
-LogsConfigurationPolicy::LogsConfigurationPolicy() : 
-    m_allowedAccountIdsHasBeenSet(false),
-    m_filterPatternHasBeenSet(false)
-{
-}
-
 LogsConfigurationPolicy::LogsConfigurationPolicy(JsonView jsonValue)
-  : LogsConfigurationPolicy()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ LogsConfigurationPolicy& LogsConfigurationPolicy::operator =(JsonView jsonValue)
     }
     m_allowedAccountIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("filterPattern"))
   {
     m_filterPattern = jsonValue.GetString("filterPattern");
-
     m_filterPatternHasBeenSet = true;
   }
-
   return *this;
 }
 

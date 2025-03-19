@@ -18,18 +18,7 @@ namespace ECRPublic
 namespace Model
 {
 
-Layer::Layer() : 
-    m_layerDigestHasBeenSet(false),
-    m_layerAvailability(LayerAvailability::NOT_SET),
-    m_layerAvailabilityHasBeenSet(false),
-    m_layerSize(0),
-    m_layerSizeHasBeenSet(false),
-    m_mediaTypeHasBeenSet(false)
-{
-}
-
 Layer::Layer(JsonView jsonValue)
-  : Layer()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ Layer& Layer::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("layerDigest"))
   {
     m_layerDigest = jsonValue.GetString("layerDigest");
-
     m_layerDigestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("layerAvailability"))
   {
     m_layerAvailability = LayerAvailabilityMapper::GetLayerAvailabilityForName(jsonValue.GetString("layerAvailability"));
-
     m_layerAvailabilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("layerSize"))
   {
     m_layerSize = jsonValue.GetInt64("layerSize");
-
     m_layerSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mediaType"))
   {
     m_mediaType = jsonValue.GetString("mediaType");
-
     m_mediaTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

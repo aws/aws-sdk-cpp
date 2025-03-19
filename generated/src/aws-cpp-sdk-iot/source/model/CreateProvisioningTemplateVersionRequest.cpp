@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-CreateProvisioningTemplateVersionRequest::CreateProvisioningTemplateVersionRequest() : 
-    m_templateNameHasBeenSet(false),
-    m_templateBodyHasBeenSet(false),
-    m_setAsDefault(false),
-    m_setAsDefaultHasBeenSet(false)
-{
-}
-
 Aws::String CreateProvisioningTemplateVersionRequest::SerializePayload() const
 {
   JsonValue payload;

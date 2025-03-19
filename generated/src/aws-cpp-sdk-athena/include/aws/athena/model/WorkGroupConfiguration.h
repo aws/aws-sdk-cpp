@@ -45,7 +45,7 @@ namespace Model
   class WorkGroupConfiguration
   {
   public:
-    AWS_ATHENA_API WorkGroupConfiguration();
+    AWS_ATHENA_API WorkGroupConfiguration() = default;
     AWS_ATHENA_API WorkGroupConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_ATHENA_API WorkGroupConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -61,12 +61,12 @@ namespace Model
      * <a>ResultConfiguration$OutputLocation</a>. If none of them is set, Athena issues
      * an error that no output location is provided.</p>
      */
-    inline const ResultConfiguration& GetResultConfiguration() const{ return m_resultConfiguration; }
+    inline const ResultConfiguration& GetResultConfiguration() const { return m_resultConfiguration; }
     inline bool ResultConfigurationHasBeenSet() const { return m_resultConfigurationHasBeenSet; }
-    inline void SetResultConfiguration(const ResultConfiguration& value) { m_resultConfigurationHasBeenSet = true; m_resultConfiguration = value; }
-    inline void SetResultConfiguration(ResultConfiguration&& value) { m_resultConfigurationHasBeenSet = true; m_resultConfiguration = std::move(value); }
-    inline WorkGroupConfiguration& WithResultConfiguration(const ResultConfiguration& value) { SetResultConfiguration(value); return *this;}
-    inline WorkGroupConfiguration& WithResultConfiguration(ResultConfiguration&& value) { SetResultConfiguration(std::move(value)); return *this;}
+    template<typename ResultConfigurationT = ResultConfiguration>
+    void SetResultConfiguration(ResultConfigurationT&& value) { m_resultConfigurationHasBeenSet = true; m_resultConfiguration = std::forward<ResultConfigurationT>(value); }
+    template<typename ResultConfigurationT = ResultConfiguration>
+    WorkGroupConfiguration& WithResultConfiguration(ResultConfigurationT&& value) { SetResultConfiguration(std::forward<ResultConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,7 +77,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
      * Settings Override Client-Side Settings</a>.</p>
      */
-    inline bool GetEnforceWorkGroupConfiguration() const{ return m_enforceWorkGroupConfiguration; }
+    inline bool GetEnforceWorkGroupConfiguration() const { return m_enforceWorkGroupConfiguration; }
     inline bool EnforceWorkGroupConfigurationHasBeenSet() const { return m_enforceWorkGroupConfigurationHasBeenSet; }
     inline void SetEnforceWorkGroupConfiguration(bool value) { m_enforceWorkGroupConfigurationHasBeenSet = true; m_enforceWorkGroupConfiguration = value; }
     inline WorkGroupConfiguration& WithEnforceWorkGroupConfiguration(bool value) { SetEnforceWorkGroupConfiguration(value); return *this;}
@@ -88,7 +88,7 @@ namespace Model
      * <p>Indicates that the Amazon CloudWatch metrics are enabled for the
      * workgroup.</p>
      */
-    inline bool GetPublishCloudWatchMetricsEnabled() const{ return m_publishCloudWatchMetricsEnabled; }
+    inline bool GetPublishCloudWatchMetricsEnabled() const { return m_publishCloudWatchMetricsEnabled; }
     inline bool PublishCloudWatchMetricsEnabledHasBeenSet() const { return m_publishCloudWatchMetricsEnabledHasBeenSet; }
     inline void SetPublishCloudWatchMetricsEnabled(bool value) { m_publishCloudWatchMetricsEnabledHasBeenSet = true; m_publishCloudWatchMetricsEnabled = value; }
     inline WorkGroupConfiguration& WithPublishCloudWatchMetricsEnabled(bool value) { SetPublishCloudWatchMetricsEnabled(value); return *this;}
@@ -99,7 +99,7 @@ namespace Model
      * <p>The upper data usage limit (cutoff) for the amount of bytes a single query in
      * a workgroup is allowed to scan.</p>
      */
-    inline long long GetBytesScannedCutoffPerQuery() const{ return m_bytesScannedCutoffPerQuery; }
+    inline long long GetBytesScannedCutoffPerQuery() const { return m_bytesScannedCutoffPerQuery; }
     inline bool BytesScannedCutoffPerQueryHasBeenSet() const { return m_bytesScannedCutoffPerQueryHasBeenSet; }
     inline void SetBytesScannedCutoffPerQuery(long long value) { m_bytesScannedCutoffPerQueryHasBeenSet = true; m_bytesScannedCutoffPerQuery = value; }
     inline WorkGroupConfiguration& WithBytesScannedCutoffPerQuery(long long value) { SetBytesScannedCutoffPerQuery(value); return *this;}
@@ -117,7 +117,7 @@ namespace Model
      * Pays Buckets</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p>
      */
-    inline bool GetRequesterPaysEnabled() const{ return m_requesterPaysEnabled; }
+    inline bool GetRequesterPaysEnabled() const { return m_requesterPaysEnabled; }
     inline bool RequesterPaysEnabledHasBeenSet() const { return m_requesterPaysEnabledHasBeenSet; }
     inline void SetRequesterPaysEnabled(bool value) { m_requesterPaysEnabledHasBeenSet = true; m_requesterPaysEnabled = value; }
     inline WorkGroupConfiguration& WithRequesterPaysEnabled(bool value) { SetRequesterPaysEnabled(value); return *this;}
@@ -129,12 +129,12 @@ namespace Model
      * the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview
      * engine regardless of this setting.</p>
      */
-    inline const EngineVersion& GetEngineVersion() const{ return m_engineVersion; }
+    inline const EngineVersion& GetEngineVersion() const { return m_engineVersion; }
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
-    inline void SetEngineVersion(const EngineVersion& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
-    inline void SetEngineVersion(EngineVersion&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
-    inline WorkGroupConfiguration& WithEngineVersion(const EngineVersion& value) { SetEngineVersion(value); return *this;}
-    inline WorkGroupConfiguration& WithEngineVersion(EngineVersion&& value) { SetEngineVersion(std::move(value)); return *this;}
+    template<typename EngineVersionT = EngineVersion>
+    void SetEngineVersion(EngineVersionT&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::forward<EngineVersionT>(value); }
+    template<typename EngineVersionT = EngineVersion>
+    WorkGroupConfiguration& WithEngineVersion(EngineVersionT&& value) { SetEngineVersion(std::forward<EngineVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -142,14 +142,12 @@ namespace Model
      * <p>Specifies a user defined JSON string that is passed to the notebook
      * engine.</p>
      */
-    inline const Aws::String& GetAdditionalConfiguration() const{ return m_additionalConfiguration; }
+    inline const Aws::String& GetAdditionalConfiguration() const { return m_additionalConfiguration; }
     inline bool AdditionalConfigurationHasBeenSet() const { return m_additionalConfigurationHasBeenSet; }
-    inline void SetAdditionalConfiguration(const Aws::String& value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration = value; }
-    inline void SetAdditionalConfiguration(Aws::String&& value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration = std::move(value); }
-    inline void SetAdditionalConfiguration(const char* value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration.assign(value); }
-    inline WorkGroupConfiguration& WithAdditionalConfiguration(const Aws::String& value) { SetAdditionalConfiguration(value); return *this;}
-    inline WorkGroupConfiguration& WithAdditionalConfiguration(Aws::String&& value) { SetAdditionalConfiguration(std::move(value)); return *this;}
-    inline WorkGroupConfiguration& WithAdditionalConfiguration(const char* value) { SetAdditionalConfiguration(value); return *this;}
+    template<typename AdditionalConfigurationT = Aws::String>
+    void SetAdditionalConfiguration(AdditionalConfigurationT&& value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration = std::forward<AdditionalConfigurationT>(value); }
+    template<typename AdditionalConfigurationT = Aws::String>
+    WorkGroupConfiguration& WithAdditionalConfiguration(AdditionalConfigurationT&& value) { SetAdditionalConfiguration(std::forward<AdditionalConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -159,14 +157,12 @@ namespace Model
      * to Spark enabled workgroups and IAM Identity Center enabled workgroups. The
      * property is required for IAM Identity Center enabled workgroups.</p>
      */
-    inline const Aws::String& GetExecutionRole() const{ return m_executionRole; }
+    inline const Aws::String& GetExecutionRole() const { return m_executionRole; }
     inline bool ExecutionRoleHasBeenSet() const { return m_executionRoleHasBeenSet; }
-    inline void SetExecutionRole(const Aws::String& value) { m_executionRoleHasBeenSet = true; m_executionRole = value; }
-    inline void SetExecutionRole(Aws::String&& value) { m_executionRoleHasBeenSet = true; m_executionRole = std::move(value); }
-    inline void SetExecutionRole(const char* value) { m_executionRoleHasBeenSet = true; m_executionRole.assign(value); }
-    inline WorkGroupConfiguration& WithExecutionRole(const Aws::String& value) { SetExecutionRole(value); return *this;}
-    inline WorkGroupConfiguration& WithExecutionRole(Aws::String&& value) { SetExecutionRole(std::move(value)); return *this;}
-    inline WorkGroupConfiguration& WithExecutionRole(const char* value) { SetExecutionRole(value); return *this;}
+    template<typename ExecutionRoleT = Aws::String>
+    void SetExecutionRole(ExecutionRoleT&& value) { m_executionRoleHasBeenSet = true; m_executionRole = std::forward<ExecutionRoleT>(value); }
+    template<typename ExecutionRoleT = Aws::String>
+    WorkGroupConfiguration& WithExecutionRole(ExecutionRoleT&& value) { SetExecutionRole(std::forward<ExecutionRoleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -174,12 +170,12 @@ namespace Model
      * <p>Specifies the KMS key that is used to encrypt the user's data stores in
      * Athena. This setting does not apply to Athena SQL workgroups.</p>
      */
-    inline const CustomerContentEncryptionConfiguration& GetCustomerContentEncryptionConfiguration() const{ return m_customerContentEncryptionConfiguration; }
+    inline const CustomerContentEncryptionConfiguration& GetCustomerContentEncryptionConfiguration() const { return m_customerContentEncryptionConfiguration; }
     inline bool CustomerContentEncryptionConfigurationHasBeenSet() const { return m_customerContentEncryptionConfigurationHasBeenSet; }
-    inline void SetCustomerContentEncryptionConfiguration(const CustomerContentEncryptionConfiguration& value) { m_customerContentEncryptionConfigurationHasBeenSet = true; m_customerContentEncryptionConfiguration = value; }
-    inline void SetCustomerContentEncryptionConfiguration(CustomerContentEncryptionConfiguration&& value) { m_customerContentEncryptionConfigurationHasBeenSet = true; m_customerContentEncryptionConfiguration = std::move(value); }
-    inline WorkGroupConfiguration& WithCustomerContentEncryptionConfiguration(const CustomerContentEncryptionConfiguration& value) { SetCustomerContentEncryptionConfiguration(value); return *this;}
-    inline WorkGroupConfiguration& WithCustomerContentEncryptionConfiguration(CustomerContentEncryptionConfiguration&& value) { SetCustomerContentEncryptionConfiguration(std::move(value)); return *this;}
+    template<typename CustomerContentEncryptionConfigurationT = CustomerContentEncryptionConfiguration>
+    void SetCustomerContentEncryptionConfiguration(CustomerContentEncryptionConfigurationT&& value) { m_customerContentEncryptionConfigurationHasBeenSet = true; m_customerContentEncryptionConfiguration = std::forward<CustomerContentEncryptionConfigurationT>(value); }
+    template<typename CustomerContentEncryptionConfigurationT = CustomerContentEncryptionConfiguration>
+    WorkGroupConfiguration& WithCustomerContentEncryptionConfiguration(CustomerContentEncryptionConfigurationT&& value) { SetCustomerContentEncryptionConfiguration(std::forward<CustomerContentEncryptionConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -194,7 +190,7 @@ namespace Model
      * <code>EnableMinimumEncryptionConfiguration</code> flag is ignored, and the
      * workgroup configuration for encryption is used.</p>
      */
-    inline bool GetEnableMinimumEncryptionConfiguration() const{ return m_enableMinimumEncryptionConfiguration; }
+    inline bool GetEnableMinimumEncryptionConfiguration() const { return m_enableMinimumEncryptionConfiguration; }
     inline bool EnableMinimumEncryptionConfigurationHasBeenSet() const { return m_enableMinimumEncryptionConfigurationHasBeenSet; }
     inline void SetEnableMinimumEncryptionConfiguration(bool value) { m_enableMinimumEncryptionConfigurationHasBeenSet = true; m_enableMinimumEncryptionConfiguration = value; }
     inline WorkGroupConfiguration& WithEnableMinimumEncryptionConfiguration(bool value) { SetEnableMinimumEncryptionConfiguration(value); return *this;}
@@ -204,40 +200,40 @@ namespace Model
     /**
      * <p>Specifies whether the workgroup is IAM Identity Center supported.</p>
      */
-    inline const IdentityCenterConfiguration& GetIdentityCenterConfiguration() const{ return m_identityCenterConfiguration; }
+    inline const IdentityCenterConfiguration& GetIdentityCenterConfiguration() const { return m_identityCenterConfiguration; }
     inline bool IdentityCenterConfigurationHasBeenSet() const { return m_identityCenterConfigurationHasBeenSet; }
-    inline void SetIdentityCenterConfiguration(const IdentityCenterConfiguration& value) { m_identityCenterConfigurationHasBeenSet = true; m_identityCenterConfiguration = value; }
-    inline void SetIdentityCenterConfiguration(IdentityCenterConfiguration&& value) { m_identityCenterConfigurationHasBeenSet = true; m_identityCenterConfiguration = std::move(value); }
-    inline WorkGroupConfiguration& WithIdentityCenterConfiguration(const IdentityCenterConfiguration& value) { SetIdentityCenterConfiguration(value); return *this;}
-    inline WorkGroupConfiguration& WithIdentityCenterConfiguration(IdentityCenterConfiguration&& value) { SetIdentityCenterConfiguration(std::move(value)); return *this;}
+    template<typename IdentityCenterConfigurationT = IdentityCenterConfiguration>
+    void SetIdentityCenterConfiguration(IdentityCenterConfigurationT&& value) { m_identityCenterConfigurationHasBeenSet = true; m_identityCenterConfiguration = std::forward<IdentityCenterConfigurationT>(value); }
+    template<typename IdentityCenterConfigurationT = IdentityCenterConfiguration>
+    WorkGroupConfiguration& WithIdentityCenterConfiguration(IdentityCenterConfigurationT&& value) { SetIdentityCenterConfiguration(std::forward<IdentityCenterConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies whether Amazon S3 access grants are enabled for query results.</p>
      */
-    inline const QueryResultsS3AccessGrantsConfiguration& GetQueryResultsS3AccessGrantsConfiguration() const{ return m_queryResultsS3AccessGrantsConfiguration; }
+    inline const QueryResultsS3AccessGrantsConfiguration& GetQueryResultsS3AccessGrantsConfiguration() const { return m_queryResultsS3AccessGrantsConfiguration; }
     inline bool QueryResultsS3AccessGrantsConfigurationHasBeenSet() const { return m_queryResultsS3AccessGrantsConfigurationHasBeenSet; }
-    inline void SetQueryResultsS3AccessGrantsConfiguration(const QueryResultsS3AccessGrantsConfiguration& value) { m_queryResultsS3AccessGrantsConfigurationHasBeenSet = true; m_queryResultsS3AccessGrantsConfiguration = value; }
-    inline void SetQueryResultsS3AccessGrantsConfiguration(QueryResultsS3AccessGrantsConfiguration&& value) { m_queryResultsS3AccessGrantsConfigurationHasBeenSet = true; m_queryResultsS3AccessGrantsConfiguration = std::move(value); }
-    inline WorkGroupConfiguration& WithQueryResultsS3AccessGrantsConfiguration(const QueryResultsS3AccessGrantsConfiguration& value) { SetQueryResultsS3AccessGrantsConfiguration(value); return *this;}
-    inline WorkGroupConfiguration& WithQueryResultsS3AccessGrantsConfiguration(QueryResultsS3AccessGrantsConfiguration&& value) { SetQueryResultsS3AccessGrantsConfiguration(std::move(value)); return *this;}
+    template<typename QueryResultsS3AccessGrantsConfigurationT = QueryResultsS3AccessGrantsConfiguration>
+    void SetQueryResultsS3AccessGrantsConfiguration(QueryResultsS3AccessGrantsConfigurationT&& value) { m_queryResultsS3AccessGrantsConfigurationHasBeenSet = true; m_queryResultsS3AccessGrantsConfiguration = std::forward<QueryResultsS3AccessGrantsConfigurationT>(value); }
+    template<typename QueryResultsS3AccessGrantsConfigurationT = QueryResultsS3AccessGrantsConfiguration>
+    WorkGroupConfiguration& WithQueryResultsS3AccessGrantsConfiguration(QueryResultsS3AccessGrantsConfigurationT&& value) { SetQueryResultsS3AccessGrantsConfiguration(std::forward<QueryResultsS3AccessGrantsConfigurationT>(value)); return *this;}
     ///@}
   private:
 
     ResultConfiguration m_resultConfiguration;
     bool m_resultConfigurationHasBeenSet = false;
 
-    bool m_enforceWorkGroupConfiguration;
+    bool m_enforceWorkGroupConfiguration{false};
     bool m_enforceWorkGroupConfigurationHasBeenSet = false;
 
-    bool m_publishCloudWatchMetricsEnabled;
+    bool m_publishCloudWatchMetricsEnabled{false};
     bool m_publishCloudWatchMetricsEnabledHasBeenSet = false;
 
-    long long m_bytesScannedCutoffPerQuery;
+    long long m_bytesScannedCutoffPerQuery{0};
     bool m_bytesScannedCutoffPerQueryHasBeenSet = false;
 
-    bool m_requesterPaysEnabled;
+    bool m_requesterPaysEnabled{false};
     bool m_requesterPaysEnabledHasBeenSet = false;
 
     EngineVersion m_engineVersion;
@@ -252,7 +248,7 @@ namespace Model
     CustomerContentEncryptionConfiguration m_customerContentEncryptionConfiguration;
     bool m_customerContentEncryptionConfigurationHasBeenSet = false;
 
-    bool m_enableMinimumEncryptionConfiguration;
+    bool m_enableMinimumEncryptionConfiguration{false};
     bool m_enableMinimumEncryptionConfigurationHasBeenSet = false;
 
     IdentityCenterConfiguration m_identityCenterConfiguration;

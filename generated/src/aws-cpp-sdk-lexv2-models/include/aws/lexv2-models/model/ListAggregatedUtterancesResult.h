@@ -31,7 +31,7 @@ namespace Model
   class ListAggregatedUtterancesResult
   {
   public:
-    AWS_LEXMODELSV2_API ListAggregatedUtterancesResult();
+    AWS_LEXMODELSV2_API ListAggregatedUtterancesResult() = default;
     AWS_LEXMODELSV2_API ListAggregatedUtterancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LEXMODELSV2_API ListAggregatedUtterancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,11 @@ namespace Model
     /**
      * <p>The identifier of the bot that contains the utterances.</p>
      */
-    inline const Aws::String& GetBotId() const{ return m_botId; }
-    inline void SetBotId(const Aws::String& value) { m_botId = value; }
-    inline void SetBotId(Aws::String&& value) { m_botId = std::move(value); }
-    inline void SetBotId(const char* value) { m_botId.assign(value); }
-    inline ListAggregatedUtterancesResult& WithBotId(const Aws::String& value) { SetBotId(value); return *this;}
-    inline ListAggregatedUtterancesResult& WithBotId(Aws::String&& value) { SetBotId(std::move(value)); return *this;}
-    inline ListAggregatedUtterancesResult& WithBotId(const char* value) { SetBotId(value); return *this;}
+    inline const Aws::String& GetBotId() const { return m_botId; }
+    template<typename BotIdT = Aws::String>
+    void SetBotId(BotIdT&& value) { m_botIdHasBeenSet = true; m_botId = std::forward<BotIdT>(value); }
+    template<typename BotIdT = Aws::String>
+    ListAggregatedUtterancesResult& WithBotId(BotIdT&& value) { SetBotId(std::forward<BotIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,13 +52,11 @@ namespace Model
      * <p>The identifier of the bot alias that contains the utterances. If you
      * specified the bot version, the bot alias ID isn't returned.</p>
      */
-    inline const Aws::String& GetBotAliasId() const{ return m_botAliasId; }
-    inline void SetBotAliasId(const Aws::String& value) { m_botAliasId = value; }
-    inline void SetBotAliasId(Aws::String&& value) { m_botAliasId = std::move(value); }
-    inline void SetBotAliasId(const char* value) { m_botAliasId.assign(value); }
-    inline ListAggregatedUtterancesResult& WithBotAliasId(const Aws::String& value) { SetBotAliasId(value); return *this;}
-    inline ListAggregatedUtterancesResult& WithBotAliasId(Aws::String&& value) { SetBotAliasId(std::move(value)); return *this;}
-    inline ListAggregatedUtterancesResult& WithBotAliasId(const char* value) { SetBotAliasId(value); return *this;}
+    inline const Aws::String& GetBotAliasId() const { return m_botAliasId; }
+    template<typename BotAliasIdT = Aws::String>
+    void SetBotAliasId(BotAliasIdT&& value) { m_botAliasIdHasBeenSet = true; m_botAliasId = std::forward<BotAliasIdT>(value); }
+    template<typename BotAliasIdT = Aws::String>
+    ListAggregatedUtterancesResult& WithBotAliasId(BotAliasIdT&& value) { SetBotAliasId(std::forward<BotAliasIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,37 +64,33 @@ namespace Model
      * <p>The identifier of the bot version that contains the utterances. If you
      * specified the bot alias, the bot version isn't returned.</p>
      */
-    inline const Aws::String& GetBotVersion() const{ return m_botVersion; }
-    inline void SetBotVersion(const Aws::String& value) { m_botVersion = value; }
-    inline void SetBotVersion(Aws::String&& value) { m_botVersion = std::move(value); }
-    inline void SetBotVersion(const char* value) { m_botVersion.assign(value); }
-    inline ListAggregatedUtterancesResult& WithBotVersion(const Aws::String& value) { SetBotVersion(value); return *this;}
-    inline ListAggregatedUtterancesResult& WithBotVersion(Aws::String&& value) { SetBotVersion(std::move(value)); return *this;}
-    inline ListAggregatedUtterancesResult& WithBotVersion(const char* value) { SetBotVersion(value); return *this;}
+    inline const Aws::String& GetBotVersion() const { return m_botVersion; }
+    template<typename BotVersionT = Aws::String>
+    void SetBotVersion(BotVersionT&& value) { m_botVersionHasBeenSet = true; m_botVersion = std::forward<BotVersionT>(value); }
+    template<typename BotVersionT = Aws::String>
+    ListAggregatedUtterancesResult& WithBotVersion(BotVersionT&& value) { SetBotVersion(std::forward<BotVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the language and locale that the utterances are in.</p>
      */
-    inline const Aws::String& GetLocaleId() const{ return m_localeId; }
-    inline void SetLocaleId(const Aws::String& value) { m_localeId = value; }
-    inline void SetLocaleId(Aws::String&& value) { m_localeId = std::move(value); }
-    inline void SetLocaleId(const char* value) { m_localeId.assign(value); }
-    inline ListAggregatedUtterancesResult& WithLocaleId(const Aws::String& value) { SetLocaleId(value); return *this;}
-    inline ListAggregatedUtterancesResult& WithLocaleId(Aws::String&& value) { SetLocaleId(std::move(value)); return *this;}
-    inline ListAggregatedUtterancesResult& WithLocaleId(const char* value) { SetLocaleId(value); return *this;}
+    inline const Aws::String& GetLocaleId() const { return m_localeId; }
+    template<typename LocaleIdT = Aws::String>
+    void SetLocaleId(LocaleIdT&& value) { m_localeIdHasBeenSet = true; m_localeId = std::forward<LocaleIdT>(value); }
+    template<typename LocaleIdT = Aws::String>
+    ListAggregatedUtterancesResult& WithLocaleId(LocaleIdT&& value) { SetLocaleId(std::forward<LocaleIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time period used to aggregate the utterance data.</p>
      */
-    inline const UtteranceAggregationDuration& GetAggregationDuration() const{ return m_aggregationDuration; }
-    inline void SetAggregationDuration(const UtteranceAggregationDuration& value) { m_aggregationDuration = value; }
-    inline void SetAggregationDuration(UtteranceAggregationDuration&& value) { m_aggregationDuration = std::move(value); }
-    inline ListAggregatedUtterancesResult& WithAggregationDuration(const UtteranceAggregationDuration& value) { SetAggregationDuration(value); return *this;}
-    inline ListAggregatedUtterancesResult& WithAggregationDuration(UtteranceAggregationDuration&& value) { SetAggregationDuration(std::move(value)); return *this;}
+    inline const UtteranceAggregationDuration& GetAggregationDuration() const { return m_aggregationDuration; }
+    template<typename AggregationDurationT = UtteranceAggregationDuration>
+    void SetAggregationDuration(AggregationDurationT&& value) { m_aggregationDurationHasBeenSet = true; m_aggregationDuration = std::forward<AggregationDurationT>(value); }
+    template<typename AggregationDurationT = UtteranceAggregationDuration>
+    ListAggregatedUtterancesResult& WithAggregationDuration(AggregationDurationT&& value) { SetAggregationDuration(std::forward<AggregationDurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,11 +98,11 @@ namespace Model
      * <p>The date and time that the aggregation window begins. Only data collected
      * after this time is returned in the results.</p>
      */
-    inline const Aws::Utils::DateTime& GetAggregationWindowStartTime() const{ return m_aggregationWindowStartTime; }
-    inline void SetAggregationWindowStartTime(const Aws::Utils::DateTime& value) { m_aggregationWindowStartTime = value; }
-    inline void SetAggregationWindowStartTime(Aws::Utils::DateTime&& value) { m_aggregationWindowStartTime = std::move(value); }
-    inline ListAggregatedUtterancesResult& WithAggregationWindowStartTime(const Aws::Utils::DateTime& value) { SetAggregationWindowStartTime(value); return *this;}
-    inline ListAggregatedUtterancesResult& WithAggregationWindowStartTime(Aws::Utils::DateTime&& value) { SetAggregationWindowStartTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetAggregationWindowStartTime() const { return m_aggregationWindowStartTime; }
+    template<typename AggregationWindowStartTimeT = Aws::Utils::DateTime>
+    void SetAggregationWindowStartTime(AggregationWindowStartTimeT&& value) { m_aggregationWindowStartTimeHasBeenSet = true; m_aggregationWindowStartTime = std::forward<AggregationWindowStartTimeT>(value); }
+    template<typename AggregationWindowStartTimeT = Aws::Utils::DateTime>
+    ListAggregatedUtterancesResult& WithAggregationWindowStartTime(AggregationWindowStartTimeT&& value) { SetAggregationWindowStartTime(std::forward<AggregationWindowStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -118,11 +110,11 @@ namespace Model
      * <p>The date and time that the aggregation window ends. Only data collected
      * between the start time and the end time are returned in the results. </p>
      */
-    inline const Aws::Utils::DateTime& GetAggregationWindowEndTime() const{ return m_aggregationWindowEndTime; }
-    inline void SetAggregationWindowEndTime(const Aws::Utils::DateTime& value) { m_aggregationWindowEndTime = value; }
-    inline void SetAggregationWindowEndTime(Aws::Utils::DateTime&& value) { m_aggregationWindowEndTime = std::move(value); }
-    inline ListAggregatedUtterancesResult& WithAggregationWindowEndTime(const Aws::Utils::DateTime& value) { SetAggregationWindowEndTime(value); return *this;}
-    inline ListAggregatedUtterancesResult& WithAggregationWindowEndTime(Aws::Utils::DateTime&& value) { SetAggregationWindowEndTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetAggregationWindowEndTime() const { return m_aggregationWindowEndTime; }
+    template<typename AggregationWindowEndTimeT = Aws::Utils::DateTime>
+    void SetAggregationWindowEndTime(AggregationWindowEndTimeT&& value) { m_aggregationWindowEndTimeHasBeenSet = true; m_aggregationWindowEndTime = std::forward<AggregationWindowEndTimeT>(value); }
+    template<typename AggregationWindowEndTimeT = Aws::Utils::DateTime>
+    ListAggregatedUtterancesResult& WithAggregationWindowEndTime(AggregationWindowEndTimeT&& value) { SetAggregationWindowEndTime(std::forward<AggregationWindowEndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,11 +126,11 @@ namespace Model
      * <b>Weeks</b> - for a one week time window, every 12 hours; otherwise, every
      * day</p> </li> </ul>
      */
-    inline const Aws::Utils::DateTime& GetAggregationLastRefreshedDateTime() const{ return m_aggregationLastRefreshedDateTime; }
-    inline void SetAggregationLastRefreshedDateTime(const Aws::Utils::DateTime& value) { m_aggregationLastRefreshedDateTime = value; }
-    inline void SetAggregationLastRefreshedDateTime(Aws::Utils::DateTime&& value) { m_aggregationLastRefreshedDateTime = std::move(value); }
-    inline ListAggregatedUtterancesResult& WithAggregationLastRefreshedDateTime(const Aws::Utils::DateTime& value) { SetAggregationLastRefreshedDateTime(value); return *this;}
-    inline ListAggregatedUtterancesResult& WithAggregationLastRefreshedDateTime(Aws::Utils::DateTime&& value) { SetAggregationLastRefreshedDateTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetAggregationLastRefreshedDateTime() const { return m_aggregationLastRefreshedDateTime; }
+    template<typename AggregationLastRefreshedDateTimeT = Aws::Utils::DateTime>
+    void SetAggregationLastRefreshedDateTime(AggregationLastRefreshedDateTimeT&& value) { m_aggregationLastRefreshedDateTimeHasBeenSet = true; m_aggregationLastRefreshedDateTime = std::forward<AggregationLastRefreshedDateTimeT>(value); }
+    template<typename AggregationLastRefreshedDateTimeT = Aws::Utils::DateTime>
+    ListAggregatedUtterancesResult& WithAggregationLastRefreshedDateTime(AggregationLastRefreshedDateTimeT&& value) { SetAggregationLastRefreshedDateTime(std::forward<AggregationLastRefreshedDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -148,13 +140,13 @@ namespace Model
      * time period, whether it was detected or missed, and when it was seen during the
      * time period.</p>
      */
-    inline const Aws::Vector<AggregatedUtterancesSummary>& GetAggregatedUtterancesSummaries() const{ return m_aggregatedUtterancesSummaries; }
-    inline void SetAggregatedUtterancesSummaries(const Aws::Vector<AggregatedUtterancesSummary>& value) { m_aggregatedUtterancesSummaries = value; }
-    inline void SetAggregatedUtterancesSummaries(Aws::Vector<AggregatedUtterancesSummary>&& value) { m_aggregatedUtterancesSummaries = std::move(value); }
-    inline ListAggregatedUtterancesResult& WithAggregatedUtterancesSummaries(const Aws::Vector<AggregatedUtterancesSummary>& value) { SetAggregatedUtterancesSummaries(value); return *this;}
-    inline ListAggregatedUtterancesResult& WithAggregatedUtterancesSummaries(Aws::Vector<AggregatedUtterancesSummary>&& value) { SetAggregatedUtterancesSummaries(std::move(value)); return *this;}
-    inline ListAggregatedUtterancesResult& AddAggregatedUtterancesSummaries(const AggregatedUtterancesSummary& value) { m_aggregatedUtterancesSummaries.push_back(value); return *this; }
-    inline ListAggregatedUtterancesResult& AddAggregatedUtterancesSummaries(AggregatedUtterancesSummary&& value) { m_aggregatedUtterancesSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AggregatedUtterancesSummary>& GetAggregatedUtterancesSummaries() const { return m_aggregatedUtterancesSummaries; }
+    template<typename AggregatedUtterancesSummariesT = Aws::Vector<AggregatedUtterancesSummary>>
+    void SetAggregatedUtterancesSummaries(AggregatedUtterancesSummariesT&& value) { m_aggregatedUtterancesSummariesHasBeenSet = true; m_aggregatedUtterancesSummaries = std::forward<AggregatedUtterancesSummariesT>(value); }
+    template<typename AggregatedUtterancesSummariesT = Aws::Vector<AggregatedUtterancesSummary>>
+    ListAggregatedUtterancesResult& WithAggregatedUtterancesSummaries(AggregatedUtterancesSummariesT&& value) { SetAggregatedUtterancesSummaries(std::forward<AggregatedUtterancesSummariesT>(value)); return *this;}
+    template<typename AggregatedUtterancesSummariesT = AggregatedUtterancesSummary>
+    ListAggregatedUtterancesResult& AddAggregatedUtterancesSummaries(AggregatedUtterancesSummariesT&& value) { m_aggregatedUtterancesSummariesHasBeenSet = true; m_aggregatedUtterancesSummaries.emplace_back(std::forward<AggregatedUtterancesSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -165,48 +157,55 @@ namespace Model
      * <code>nextToken</code> parameter of a <code>ListAggregatedUtterances</code>
      * operation request to get the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListAggregatedUtterancesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAggregatedUtterancesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAggregatedUtterancesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAggregatedUtterancesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListAggregatedUtterancesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListAggregatedUtterancesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListAggregatedUtterancesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListAggregatedUtterancesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_botId;
+    bool m_botIdHasBeenSet = false;
 
     Aws::String m_botAliasId;
+    bool m_botAliasIdHasBeenSet = false;
 
     Aws::String m_botVersion;
+    bool m_botVersionHasBeenSet = false;
 
     Aws::String m_localeId;
+    bool m_localeIdHasBeenSet = false;
 
     UtteranceAggregationDuration m_aggregationDuration;
+    bool m_aggregationDurationHasBeenSet = false;
 
-    Aws::Utils::DateTime m_aggregationWindowStartTime;
+    Aws::Utils::DateTime m_aggregationWindowStartTime{};
+    bool m_aggregationWindowStartTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_aggregationWindowEndTime;
+    Aws::Utils::DateTime m_aggregationWindowEndTime{};
+    bool m_aggregationWindowEndTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_aggregationLastRefreshedDateTime;
+    Aws::Utils::DateTime m_aggregationLastRefreshedDateTime{};
+    bool m_aggregationLastRefreshedDateTimeHasBeenSet = false;
 
     Aws::Vector<AggregatedUtterancesSummary> m_aggregatedUtterancesSummaries;
+    bool m_aggregatedUtterancesSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

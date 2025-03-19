@@ -35,7 +35,7 @@ namespace Model
   class CapacityReservationBillingRequest
   {
   public:
-    AWS_EC2_API CapacityReservationBillingRequest();
+    AWS_EC2_API CapacityReservationBillingRequest() = default;
     AWS_EC2_API CapacityReservationBillingRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API CapacityReservationBillingRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,42 +47,36 @@ namespace Model
     /**
      * <p>The ID of the Capacity Reservation.</p>
      */
-    inline const Aws::String& GetCapacityReservationId() const{ return m_capacityReservationId; }
+    inline const Aws::String& GetCapacityReservationId() const { return m_capacityReservationId; }
     inline bool CapacityReservationIdHasBeenSet() const { return m_capacityReservationIdHasBeenSet; }
-    inline void SetCapacityReservationId(const Aws::String& value) { m_capacityReservationIdHasBeenSet = true; m_capacityReservationId = value; }
-    inline void SetCapacityReservationId(Aws::String&& value) { m_capacityReservationIdHasBeenSet = true; m_capacityReservationId = std::move(value); }
-    inline void SetCapacityReservationId(const char* value) { m_capacityReservationIdHasBeenSet = true; m_capacityReservationId.assign(value); }
-    inline CapacityReservationBillingRequest& WithCapacityReservationId(const Aws::String& value) { SetCapacityReservationId(value); return *this;}
-    inline CapacityReservationBillingRequest& WithCapacityReservationId(Aws::String&& value) { SetCapacityReservationId(std::move(value)); return *this;}
-    inline CapacityReservationBillingRequest& WithCapacityReservationId(const char* value) { SetCapacityReservationId(value); return *this;}
+    template<typename CapacityReservationIdT = Aws::String>
+    void SetCapacityReservationId(CapacityReservationIdT&& value) { m_capacityReservationIdHasBeenSet = true; m_capacityReservationId = std::forward<CapacityReservationIdT>(value); }
+    template<typename CapacityReservationIdT = Aws::String>
+    CapacityReservationBillingRequest& WithCapacityReservationId(CapacityReservationIdT&& value) { SetCapacityReservationId(std::forward<CapacityReservationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Amazon Web Services account that initiated the request.</p>
      */
-    inline const Aws::String& GetRequestedBy() const{ return m_requestedBy; }
+    inline const Aws::String& GetRequestedBy() const { return m_requestedBy; }
     inline bool RequestedByHasBeenSet() const { return m_requestedByHasBeenSet; }
-    inline void SetRequestedBy(const Aws::String& value) { m_requestedByHasBeenSet = true; m_requestedBy = value; }
-    inline void SetRequestedBy(Aws::String&& value) { m_requestedByHasBeenSet = true; m_requestedBy = std::move(value); }
-    inline void SetRequestedBy(const char* value) { m_requestedByHasBeenSet = true; m_requestedBy.assign(value); }
-    inline CapacityReservationBillingRequest& WithRequestedBy(const Aws::String& value) { SetRequestedBy(value); return *this;}
-    inline CapacityReservationBillingRequest& WithRequestedBy(Aws::String&& value) { SetRequestedBy(std::move(value)); return *this;}
-    inline CapacityReservationBillingRequest& WithRequestedBy(const char* value) { SetRequestedBy(value); return *this;}
+    template<typename RequestedByT = Aws::String>
+    void SetRequestedBy(RequestedByT&& value) { m_requestedByHasBeenSet = true; m_requestedBy = std::forward<RequestedByT>(value); }
+    template<typename RequestedByT = Aws::String>
+    CapacityReservationBillingRequest& WithRequestedBy(RequestedByT&& value) { SetRequestedBy(std::forward<RequestedByT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Amazon Web Services account to which the request was sent.</p>
      */
-    inline const Aws::String& GetUnusedReservationBillingOwnerId() const{ return m_unusedReservationBillingOwnerId; }
+    inline const Aws::String& GetUnusedReservationBillingOwnerId() const { return m_unusedReservationBillingOwnerId; }
     inline bool UnusedReservationBillingOwnerIdHasBeenSet() const { return m_unusedReservationBillingOwnerIdHasBeenSet; }
-    inline void SetUnusedReservationBillingOwnerId(const Aws::String& value) { m_unusedReservationBillingOwnerIdHasBeenSet = true; m_unusedReservationBillingOwnerId = value; }
-    inline void SetUnusedReservationBillingOwnerId(Aws::String&& value) { m_unusedReservationBillingOwnerIdHasBeenSet = true; m_unusedReservationBillingOwnerId = std::move(value); }
-    inline void SetUnusedReservationBillingOwnerId(const char* value) { m_unusedReservationBillingOwnerIdHasBeenSet = true; m_unusedReservationBillingOwnerId.assign(value); }
-    inline CapacityReservationBillingRequest& WithUnusedReservationBillingOwnerId(const Aws::String& value) { SetUnusedReservationBillingOwnerId(value); return *this;}
-    inline CapacityReservationBillingRequest& WithUnusedReservationBillingOwnerId(Aws::String&& value) { SetUnusedReservationBillingOwnerId(std::move(value)); return *this;}
-    inline CapacityReservationBillingRequest& WithUnusedReservationBillingOwnerId(const char* value) { SetUnusedReservationBillingOwnerId(value); return *this;}
+    template<typename UnusedReservationBillingOwnerIdT = Aws::String>
+    void SetUnusedReservationBillingOwnerId(UnusedReservationBillingOwnerIdT&& value) { m_unusedReservationBillingOwnerIdHasBeenSet = true; m_unusedReservationBillingOwnerId = std::forward<UnusedReservationBillingOwnerIdT>(value); }
+    template<typename UnusedReservationBillingOwnerIdT = Aws::String>
+    CapacityReservationBillingRequest& WithUnusedReservationBillingOwnerId(UnusedReservationBillingOwnerIdT&& value) { SetUnusedReservationBillingOwnerId(std::forward<UnusedReservationBillingOwnerIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,12 +84,12 @@ namespace Model
      * <p>The date and time, in UTC time format, at which the request was
      * initiated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdateTime() const{ return m_lastUpdateTime; }
+    inline const Aws::Utils::DateTime& GetLastUpdateTime() const { return m_lastUpdateTime; }
     inline bool LastUpdateTimeHasBeenSet() const { return m_lastUpdateTimeHasBeenSet; }
-    inline void SetLastUpdateTime(const Aws::Utils::DateTime& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = value; }
-    inline void SetLastUpdateTime(Aws::Utils::DateTime&& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = std::move(value); }
-    inline CapacityReservationBillingRequest& WithLastUpdateTime(const Aws::Utils::DateTime& value) { SetLastUpdateTime(value); return *this;}
-    inline CapacityReservationBillingRequest& WithLastUpdateTime(Aws::Utils::DateTime&& value) { SetLastUpdateTime(std::move(value)); return *this;}
+    template<typename LastUpdateTimeT = Aws::Utils::DateTime>
+    void SetLastUpdateTime(LastUpdateTimeT&& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = std::forward<LastUpdateTimeT>(value); }
+    template<typename LastUpdateTimeT = Aws::Utils::DateTime>
+    CapacityReservationBillingRequest& WithLastUpdateTime(LastUpdateTimeT&& value) { SetLastUpdateTime(std::forward<LastUpdateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,38 +99,34 @@ namespace Model
      * View billing assignment requests for a shared Amazon EC2 Capacity
      * Reservation</a>.</p>
      */
-    inline const CapacityReservationBillingRequestStatus& GetStatus() const{ return m_status; }
+    inline CapacityReservationBillingRequestStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const CapacityReservationBillingRequestStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(CapacityReservationBillingRequestStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline CapacityReservationBillingRequest& WithStatus(const CapacityReservationBillingRequestStatus& value) { SetStatus(value); return *this;}
-    inline CapacityReservationBillingRequest& WithStatus(CapacityReservationBillingRequestStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(CapacityReservationBillingRequestStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline CapacityReservationBillingRequest& WithStatus(CapacityReservationBillingRequestStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the status.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-    inline CapacityReservationBillingRequest& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline CapacityReservationBillingRequest& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline CapacityReservationBillingRequest& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    CapacityReservationBillingRequest& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the Capacity Reservation.</p>
      */
-    inline const CapacityReservationInfo& GetCapacityReservationInfo() const{ return m_capacityReservationInfo; }
+    inline const CapacityReservationInfo& GetCapacityReservationInfo() const { return m_capacityReservationInfo; }
     inline bool CapacityReservationInfoHasBeenSet() const { return m_capacityReservationInfoHasBeenSet; }
-    inline void SetCapacityReservationInfo(const CapacityReservationInfo& value) { m_capacityReservationInfoHasBeenSet = true; m_capacityReservationInfo = value; }
-    inline void SetCapacityReservationInfo(CapacityReservationInfo&& value) { m_capacityReservationInfoHasBeenSet = true; m_capacityReservationInfo = std::move(value); }
-    inline CapacityReservationBillingRequest& WithCapacityReservationInfo(const CapacityReservationInfo& value) { SetCapacityReservationInfo(value); return *this;}
-    inline CapacityReservationBillingRequest& WithCapacityReservationInfo(CapacityReservationInfo&& value) { SetCapacityReservationInfo(std::move(value)); return *this;}
+    template<typename CapacityReservationInfoT = CapacityReservationInfo>
+    void SetCapacityReservationInfo(CapacityReservationInfoT&& value) { m_capacityReservationInfoHasBeenSet = true; m_capacityReservationInfo = std::forward<CapacityReservationInfoT>(value); }
+    template<typename CapacityReservationInfoT = CapacityReservationInfo>
+    CapacityReservationBillingRequest& WithCapacityReservationInfo(CapacityReservationInfoT&& value) { SetCapacityReservationInfo(std::forward<CapacityReservationInfoT>(value)); return *this;}
     ///@}
   private:
 
@@ -149,10 +139,10 @@ namespace Model
     Aws::String m_unusedReservationBillingOwnerId;
     bool m_unusedReservationBillingOwnerIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdateTime;
+    Aws::Utils::DateTime m_lastUpdateTime{};
     bool m_lastUpdateTimeHasBeenSet = false;
 
-    CapacityReservationBillingRequestStatus m_status;
+    CapacityReservationBillingRequestStatus m_status{CapacityReservationBillingRequestStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;

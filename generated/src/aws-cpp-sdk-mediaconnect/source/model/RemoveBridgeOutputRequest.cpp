@@ -12,12 +12,6 @@ using namespace Aws::MediaConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RemoveBridgeOutputRequest::RemoveBridgeOutputRequest() : 
-    m_bridgeArnHasBeenSet(false),
-    m_outputNameHasBeenSet(false)
-{
-}
-
 Aws::String RemoveBridgeOutputRequest::SerializePayload() const
 {
   return {};

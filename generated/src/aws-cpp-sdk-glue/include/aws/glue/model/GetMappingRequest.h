@@ -23,7 +23,7 @@ namespace Model
   class GetMappingRequest : public GlueRequest
   {
   public:
-    AWS_GLUE_API GetMappingRequest();
+    AWS_GLUE_API GetMappingRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,38 +40,38 @@ namespace Model
     /**
      * <p>Specifies the source table.</p>
      */
-    inline const CatalogEntry& GetSource() const{ return m_source; }
+    inline const CatalogEntry& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const CatalogEntry& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(CatalogEntry&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline GetMappingRequest& WithSource(const CatalogEntry& value) { SetSource(value); return *this;}
-    inline GetMappingRequest& WithSource(CatalogEntry&& value) { SetSource(std::move(value)); return *this;}
+    template<typename SourceT = CatalogEntry>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = CatalogEntry>
+    GetMappingRequest& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of target tables.</p>
      */
-    inline const Aws::Vector<CatalogEntry>& GetSinks() const{ return m_sinks; }
+    inline const Aws::Vector<CatalogEntry>& GetSinks() const { return m_sinks; }
     inline bool SinksHasBeenSet() const { return m_sinksHasBeenSet; }
-    inline void SetSinks(const Aws::Vector<CatalogEntry>& value) { m_sinksHasBeenSet = true; m_sinks = value; }
-    inline void SetSinks(Aws::Vector<CatalogEntry>&& value) { m_sinksHasBeenSet = true; m_sinks = std::move(value); }
-    inline GetMappingRequest& WithSinks(const Aws::Vector<CatalogEntry>& value) { SetSinks(value); return *this;}
-    inline GetMappingRequest& WithSinks(Aws::Vector<CatalogEntry>&& value) { SetSinks(std::move(value)); return *this;}
-    inline GetMappingRequest& AddSinks(const CatalogEntry& value) { m_sinksHasBeenSet = true; m_sinks.push_back(value); return *this; }
-    inline GetMappingRequest& AddSinks(CatalogEntry&& value) { m_sinksHasBeenSet = true; m_sinks.push_back(std::move(value)); return *this; }
+    template<typename SinksT = Aws::Vector<CatalogEntry>>
+    void SetSinks(SinksT&& value) { m_sinksHasBeenSet = true; m_sinks = std::forward<SinksT>(value); }
+    template<typename SinksT = Aws::Vector<CatalogEntry>>
+    GetMappingRequest& WithSinks(SinksT&& value) { SetSinks(std::forward<SinksT>(value)); return *this;}
+    template<typename SinksT = CatalogEntry>
+    GetMappingRequest& AddSinks(SinksT&& value) { m_sinksHasBeenSet = true; m_sinks.emplace_back(std::forward<SinksT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Parameters for the mapping.</p>
      */
-    inline const Location& GetLocation() const{ return m_location; }
+    inline const Location& GetLocation() const { return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-    inline void SetLocation(const Location& value) { m_locationHasBeenSet = true; m_location = value; }
-    inline void SetLocation(Location&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-    inline GetMappingRequest& WithLocation(const Location& value) { SetLocation(value); return *this;}
-    inline GetMappingRequest& WithLocation(Location&& value) { SetLocation(std::move(value)); return *this;}
+    template<typename LocationT = Location>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Location>
+    GetMappingRequest& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
   private:
 

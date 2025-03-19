@@ -18,14 +18,7 @@ namespace GeoPlaces
 namespace Model
 {
 
-RegionHighlights::RegionHighlights() : 
-    m_codeHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 RegionHighlights::RegionHighlights(JsonView jsonValue)
-  : RegionHighlights()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ RegionHighlights& RegionHighlights::operator =(JsonView jsonValue)
     }
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     Aws::Utils::Array<JsonView> nameJsonList = jsonValue.GetArray("Name");
@@ -51,7 +43,6 @@ RegionHighlights& RegionHighlights::operator =(JsonView jsonValue)
     }
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

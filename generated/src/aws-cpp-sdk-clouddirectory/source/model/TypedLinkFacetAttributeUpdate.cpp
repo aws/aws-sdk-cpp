@@ -18,15 +18,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-TypedLinkFacetAttributeUpdate::TypedLinkFacetAttributeUpdate() : 
-    m_attributeHasBeenSet(false),
-    m_action(UpdateActionType::NOT_SET),
-    m_actionHasBeenSet(false)
-{
-}
-
 TypedLinkFacetAttributeUpdate::TypedLinkFacetAttributeUpdate(JsonView jsonValue)
-  : TypedLinkFacetAttributeUpdate()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ TypedLinkFacetAttributeUpdate& TypedLinkFacetAttributeUpdate::operator =(JsonVie
   if(jsonValue.ValueExists("Attribute"))
   {
     m_attribute = jsonValue.GetObject("Attribute");
-
     m_attributeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Action"))
   {
     m_action = UpdateActionTypeMapper::GetUpdateActionTypeForName(jsonValue.GetString("Action"));
-
     m_actionHasBeenSet = true;
   }
-
   return *this;
 }
 

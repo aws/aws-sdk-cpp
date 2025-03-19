@@ -32,7 +32,7 @@ namespace Model
   class IntegerListConfigurationOptions
   {
   public:
-    AWS_SECURITYHUB_API IntegerListConfigurationOptions();
+    AWS_SECURITYHUB_API IntegerListConfigurationOptions() = default;
     AWS_SECURITYHUB_API IntegerListConfigurationOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API IntegerListConfigurationOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p> The Security Hub default value for a control parameter that is a list of
      * integers. </p>
      */
-    inline const Aws::Vector<int>& GetDefaultValue() const{ return m_defaultValue; }
+    inline const Aws::Vector<int>& GetDefaultValue() const { return m_defaultValue; }
     inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
-    inline void SetDefaultValue(const Aws::Vector<int>& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
-    inline void SetDefaultValue(Aws::Vector<int>&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::move(value); }
-    inline IntegerListConfigurationOptions& WithDefaultValue(const Aws::Vector<int>& value) { SetDefaultValue(value); return *this;}
-    inline IntegerListConfigurationOptions& WithDefaultValue(Aws::Vector<int>&& value) { SetDefaultValue(std::move(value)); return *this;}
+    template<typename DefaultValueT = Aws::Vector<int>>
+    void SetDefaultValue(DefaultValueT&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::forward<DefaultValueT>(value); }
+    template<typename DefaultValueT = Aws::Vector<int>>
+    IntegerListConfigurationOptions& WithDefaultValue(DefaultValueT&& value) { SetDefaultValue(std::forward<DefaultValueT>(value)); return *this;}
     inline IntegerListConfigurationOptions& AddDefaultValue(int value) { m_defaultValueHasBeenSet = true; m_defaultValue.push_back(value); return *this; }
     ///@}
 
@@ -57,7 +57,7 @@ namespace Model
      * <p> The minimum valid value for a control parameter that is a list of integers.
      * </p>
      */
-    inline int GetMin() const{ return m_min; }
+    inline int GetMin() const { return m_min; }
     inline bool MinHasBeenSet() const { return m_minHasBeenSet; }
     inline void SetMin(int value) { m_minHasBeenSet = true; m_min = value; }
     inline IntegerListConfigurationOptions& WithMin(int value) { SetMin(value); return *this;}
@@ -68,7 +68,7 @@ namespace Model
      * <p> The maximum valid value for a control parameter that is a list of integers.
      * </p>
      */
-    inline int GetMax() const{ return m_max; }
+    inline int GetMax() const { return m_max; }
     inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
     inline void SetMax(int value) { m_maxHasBeenSet = true; m_max = value; }
     inline IntegerListConfigurationOptions& WithMax(int value) { SetMax(value); return *this;}
@@ -79,7 +79,7 @@ namespace Model
      * <p> The maximum number of list items that an interger list control parameter can
      * accept. </p>
      */
-    inline int GetMaxItems() const{ return m_maxItems; }
+    inline int GetMaxItems() const { return m_maxItems; }
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
     inline IntegerListConfigurationOptions& WithMaxItems(int value) { SetMaxItems(value); return *this;}
@@ -89,13 +89,13 @@ namespace Model
     Aws::Vector<int> m_defaultValue;
     bool m_defaultValueHasBeenSet = false;
 
-    int m_min;
+    int m_min{0};
     bool m_minHasBeenSet = false;
 
-    int m_max;
+    int m_max{0};
     bool m_maxHasBeenSet = false;
 
-    int m_maxItems;
+    int m_maxItems{0};
     bool m_maxItemsHasBeenSet = false;
   };
 

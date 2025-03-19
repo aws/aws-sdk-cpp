@@ -18,13 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-PrivacyBudgetTemplateParametersInput::PrivacyBudgetTemplateParametersInput() : 
-    m_differentialPrivacyHasBeenSet(false)
-{
-}
-
 PrivacyBudgetTemplateParametersInput::PrivacyBudgetTemplateParametersInput(JsonView jsonValue)
-  : PrivacyBudgetTemplateParametersInput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PrivacyBudgetTemplateParametersInput& PrivacyBudgetTemplateParametersInput::oper
   if(jsonValue.ValueExists("differentialPrivacy"))
   {
     m_differentialPrivacy = jsonValue.GetObject("differentialPrivacy");
-
     m_differentialPrivacyHasBeenSet = true;
   }
-
   return *this;
 }
 

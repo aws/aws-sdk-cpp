@@ -18,18 +18,7 @@ namespace PinpointSMSVoiceV2
 namespace Model
 {
 
-ProtectConfigurationRuleSetNumberOverride::ProtectConfigurationRuleSetNumberOverride() : 
-    m_destinationPhoneNumberHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_action(ProtectConfigurationRuleOverrideAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_isoCountryCodeHasBeenSet(false),
-    m_expirationTimestampHasBeenSet(false)
-{
-}
-
 ProtectConfigurationRuleSetNumberOverride::ProtectConfigurationRuleSetNumberOverride(JsonView jsonValue)
-  : ProtectConfigurationRuleSetNumberOverride()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ ProtectConfigurationRuleSetNumberOverride& ProtectConfigurationRuleSetNumberOver
   if(jsonValue.ValueExists("DestinationPhoneNumber"))
   {
     m_destinationPhoneNumber = jsonValue.GetString("DestinationPhoneNumber");
-
     m_destinationPhoneNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Action"))
   {
     m_action = ProtectConfigurationRuleOverrideActionMapper::GetProtectConfigurationRuleOverrideActionForName(jsonValue.GetString("Action"));
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsoCountryCode"))
   {
     m_isoCountryCode = jsonValue.GetString("IsoCountryCode");
-
     m_isoCountryCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpirationTimestamp"))
   {
     m_expirationTimestamp = jsonValue.GetDouble("ExpirationTimestamp");
-
     m_expirationTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

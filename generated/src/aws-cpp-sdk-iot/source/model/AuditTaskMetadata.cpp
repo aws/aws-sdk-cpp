@@ -18,17 +18,7 @@ namespace IoT
 namespace Model
 {
 
-AuditTaskMetadata::AuditTaskMetadata() : 
-    m_taskIdHasBeenSet(false),
-    m_taskStatus(AuditTaskStatus::NOT_SET),
-    m_taskStatusHasBeenSet(false),
-    m_taskType(AuditTaskType::NOT_SET),
-    m_taskTypeHasBeenSet(false)
-{
-}
-
 AuditTaskMetadata::AuditTaskMetadata(JsonView jsonValue)
-  : AuditTaskMetadata()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ AuditTaskMetadata& AuditTaskMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("taskId"))
   {
     m_taskId = jsonValue.GetString("taskId");
-
     m_taskIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskStatus"))
   {
     m_taskStatus = AuditTaskStatusMapper::GetAuditTaskStatusForName(jsonValue.GetString("taskStatus"));
-
     m_taskStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskType"))
   {
     m_taskType = AuditTaskTypeMapper::GetAuditTaskTypeForName(jsonValue.GetString("taskType"));
-
     m_taskTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -29,7 +29,7 @@ namespace Model
   class ListImportJobsResult
   {
   public:
-    AWS_CONNECTWISDOMSERVICE_API ListImportJobsResult();
+    AWS_CONNECTWISDOMSERVICE_API ListImportJobsResult() = default;
     AWS_CONNECTWISDOMSERVICE_API ListImportJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECTWISDOMSERVICE_API ListImportJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Summary information about the import jobs.</p>
      */
-    inline const Aws::Vector<ImportJobSummary>& GetImportJobSummaries() const{ return m_importJobSummaries; }
-    inline void SetImportJobSummaries(const Aws::Vector<ImportJobSummary>& value) { m_importJobSummaries = value; }
-    inline void SetImportJobSummaries(Aws::Vector<ImportJobSummary>&& value) { m_importJobSummaries = std::move(value); }
-    inline ListImportJobsResult& WithImportJobSummaries(const Aws::Vector<ImportJobSummary>& value) { SetImportJobSummaries(value); return *this;}
-    inline ListImportJobsResult& WithImportJobSummaries(Aws::Vector<ImportJobSummary>&& value) { SetImportJobSummaries(std::move(value)); return *this;}
-    inline ListImportJobsResult& AddImportJobSummaries(const ImportJobSummary& value) { m_importJobSummaries.push_back(value); return *this; }
-    inline ListImportJobsResult& AddImportJobSummaries(ImportJobSummary&& value) { m_importJobSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ImportJobSummary>& GetImportJobSummaries() const { return m_importJobSummaries; }
+    template<typename ImportJobSummariesT = Aws::Vector<ImportJobSummary>>
+    void SetImportJobSummaries(ImportJobSummariesT&& value) { m_importJobSummariesHasBeenSet = true; m_importJobSummaries = std::forward<ImportJobSummariesT>(value); }
+    template<typename ImportJobSummariesT = Aws::Vector<ImportJobSummary>>
+    ListImportJobsResult& WithImportJobSummaries(ImportJobSummariesT&& value) { SetImportJobSummaries(std::forward<ImportJobSummariesT>(value)); return *this;}
+    template<typename ImportJobSummariesT = ImportJobSummary>
+    ListImportJobsResult& AddImportJobSummaries(ImportJobSummariesT&& value) { m_importJobSummariesHasBeenSet = true; m_importJobSummaries.emplace_back(std::forward<ImportJobSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The token for the next set of results. Use the value returned in the previous
      * response in the next request to retrieve the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListImportJobsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListImportJobsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListImportJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListImportJobsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListImportJobsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListImportJobsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListImportJobsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListImportJobsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ImportJobSummary> m_importJobSummaries;
+    bool m_importJobSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

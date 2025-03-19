@@ -18,18 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-AWSManagedRulesACFPRuleSet::AWSManagedRulesACFPRuleSet() : 
-    m_creationPathHasBeenSet(false),
-    m_registrationPagePathHasBeenSet(false),
-    m_requestInspectionHasBeenSet(false),
-    m_responseInspectionHasBeenSet(false),
-    m_enableRegexInPath(false),
-    m_enableRegexInPathHasBeenSet(false)
-{
-}
-
 AWSManagedRulesACFPRuleSet::AWSManagedRulesACFPRuleSet(JsonView jsonValue)
-  : AWSManagedRulesACFPRuleSet()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ AWSManagedRulesACFPRuleSet& AWSManagedRulesACFPRuleSet::operator =(JsonView json
   if(jsonValue.ValueExists("CreationPath"))
   {
     m_creationPath = jsonValue.GetString("CreationPath");
-
     m_creationPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegistrationPagePath"))
   {
     m_registrationPagePath = jsonValue.GetString("RegistrationPagePath");
-
     m_registrationPagePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestInspection"))
   {
     m_requestInspection = jsonValue.GetObject("RequestInspection");
-
     m_requestInspectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResponseInspection"))
   {
     m_responseInspection = jsonValue.GetObject("ResponseInspection");
-
     m_responseInspectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnableRegexInPath"))
   {
     m_enableRegexInPath = jsonValue.GetBool("EnableRegexInPath");
-
     m_enableRegexInPathHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ExitStandbyResult::ExitStandbyResult()
-{
-}
-
 ExitStandbyResult::ExitStandbyResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,18 +38,21 @@ ExitStandbyResult& ExitStandbyResult::operator =(const Aws::AmazonWebServiceResu
     if(!activitiesNode.IsNull())
     {
       XmlNode activitiesMember = activitiesNode.FirstChild("member");
+      m_activitiesHasBeenSet = !activitiesMember.IsNull();
       while(!activitiesMember.IsNull())
       {
         m_activities.push_back(activitiesMember);
         activitiesMember = activitiesMember.NextNode("member");
       }
 
+      m_activitiesHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::AutoScaling::Model::ExitStandbyResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

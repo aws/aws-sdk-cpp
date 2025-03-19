@@ -35,7 +35,7 @@ namespace Model
   class CalculatedAttributeDimension
   {
   public:
-    AWS_CUSTOMERPROFILES_API CalculatedAttributeDimension();
+    AWS_CUSTOMERPROFILES_API CalculatedAttributeDimension() = default;
     AWS_CUSTOMERPROFILES_API CalculatedAttributeDimension(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API CalculatedAttributeDimension& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,27 +45,24 @@ namespace Model
     /**
      * <p>The action to segment with.</p>
      */
-    inline const AttributeDimensionType& GetDimensionType() const{ return m_dimensionType; }
+    inline AttributeDimensionType GetDimensionType() const { return m_dimensionType; }
     inline bool DimensionTypeHasBeenSet() const { return m_dimensionTypeHasBeenSet; }
-    inline void SetDimensionType(const AttributeDimensionType& value) { m_dimensionTypeHasBeenSet = true; m_dimensionType = value; }
-    inline void SetDimensionType(AttributeDimensionType&& value) { m_dimensionTypeHasBeenSet = true; m_dimensionType = std::move(value); }
-    inline CalculatedAttributeDimension& WithDimensionType(const AttributeDimensionType& value) { SetDimensionType(value); return *this;}
-    inline CalculatedAttributeDimension& WithDimensionType(AttributeDimensionType&& value) { SetDimensionType(std::move(value)); return *this;}
+    inline void SetDimensionType(AttributeDimensionType value) { m_dimensionTypeHasBeenSet = true; m_dimensionType = value; }
+    inline CalculatedAttributeDimension& WithDimensionType(AttributeDimensionType value) { SetDimensionType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The values to apply the DimensionType with.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline CalculatedAttributeDimension& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline CalculatedAttributeDimension& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline CalculatedAttributeDimension& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline CalculatedAttributeDimension& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline CalculatedAttributeDimension& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    CalculatedAttributeDimension& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    CalculatedAttributeDimension& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -73,16 +70,16 @@ namespace Model
      * <p>Applies the given condition over the initial Calculated Attribute's
      * definition.</p>
      */
-    inline const ConditionOverrides& GetConditionOverrides() const{ return m_conditionOverrides; }
+    inline const ConditionOverrides& GetConditionOverrides() const { return m_conditionOverrides; }
     inline bool ConditionOverridesHasBeenSet() const { return m_conditionOverridesHasBeenSet; }
-    inline void SetConditionOverrides(const ConditionOverrides& value) { m_conditionOverridesHasBeenSet = true; m_conditionOverrides = value; }
-    inline void SetConditionOverrides(ConditionOverrides&& value) { m_conditionOverridesHasBeenSet = true; m_conditionOverrides = std::move(value); }
-    inline CalculatedAttributeDimension& WithConditionOverrides(const ConditionOverrides& value) { SetConditionOverrides(value); return *this;}
-    inline CalculatedAttributeDimension& WithConditionOverrides(ConditionOverrides&& value) { SetConditionOverrides(std::move(value)); return *this;}
+    template<typename ConditionOverridesT = ConditionOverrides>
+    void SetConditionOverrides(ConditionOverridesT&& value) { m_conditionOverridesHasBeenSet = true; m_conditionOverrides = std::forward<ConditionOverridesT>(value); }
+    template<typename ConditionOverridesT = ConditionOverrides>
+    CalculatedAttributeDimension& WithConditionOverrides(ConditionOverridesT&& value) { SetConditionOverrides(std::forward<ConditionOverridesT>(value)); return *this;}
     ///@}
   private:
 
-    AttributeDimensionType m_dimensionType;
+    AttributeDimensionType m_dimensionType{AttributeDimensionType::NOT_SET};
     bool m_dimensionTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;

@@ -32,7 +32,7 @@ namespace Model
   class MachineLearningDetectionConfig
   {
   public:
-    AWS_IOT_API MachineLearningDetectionConfig();
+    AWS_IOT_API MachineLearningDetectionConfig() = default;
     AWS_IOT_API MachineLearningDetectionConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API MachineLearningDetectionConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,16 +43,14 @@ namespace Model
      * <p> The sensitivity of anomalous behavior evaluation. Can be <code>Low</code>,
      * <code>Medium</code>, or <code>High</code>. </p>
      */
-    inline const ConfidenceLevel& GetConfidenceLevel() const{ return m_confidenceLevel; }
+    inline ConfidenceLevel GetConfidenceLevel() const { return m_confidenceLevel; }
     inline bool ConfidenceLevelHasBeenSet() const { return m_confidenceLevelHasBeenSet; }
-    inline void SetConfidenceLevel(const ConfidenceLevel& value) { m_confidenceLevelHasBeenSet = true; m_confidenceLevel = value; }
-    inline void SetConfidenceLevel(ConfidenceLevel&& value) { m_confidenceLevelHasBeenSet = true; m_confidenceLevel = std::move(value); }
-    inline MachineLearningDetectionConfig& WithConfidenceLevel(const ConfidenceLevel& value) { SetConfidenceLevel(value); return *this;}
-    inline MachineLearningDetectionConfig& WithConfidenceLevel(ConfidenceLevel&& value) { SetConfidenceLevel(std::move(value)); return *this;}
+    inline void SetConfidenceLevel(ConfidenceLevel value) { m_confidenceLevelHasBeenSet = true; m_confidenceLevel = value; }
+    inline MachineLearningDetectionConfig& WithConfidenceLevel(ConfidenceLevel value) { SetConfidenceLevel(value); return *this;}
     ///@}
   private:
 
-    ConfidenceLevel m_confidenceLevel;
+    ConfidenceLevel m_confidenceLevel{ConfidenceLevel::NOT_SET};
     bool m_confidenceLevelHasBeenSet = false;
   };
 

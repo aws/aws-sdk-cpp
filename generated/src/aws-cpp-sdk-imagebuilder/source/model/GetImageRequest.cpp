@@ -15,11 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetImageRequest::GetImageRequest() : 
-    m_imageBuildVersionArnHasBeenSet(false)
-{
-}
-
 Aws::String GetImageRequest::SerializePayload() const
 {
   return {};

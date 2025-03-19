@@ -12,12 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAccountLinkInvitationRequest::DeleteAccountLinkInvitationRequest() : 
-    m_linkIdHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAccountLinkInvitationRequest::SerializePayload() const
 {
   JsonValue payload;

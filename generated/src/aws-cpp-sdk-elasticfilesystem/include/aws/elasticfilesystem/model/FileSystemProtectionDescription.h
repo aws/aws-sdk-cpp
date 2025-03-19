@@ -32,7 +32,7 @@ namespace Model
   class FileSystemProtectionDescription
   {
   public:
-    AWS_EFS_API FileSystemProtectionDescription();
+    AWS_EFS_API FileSystemProtectionDescription() = default;
     AWS_EFS_API FileSystemProtectionDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_EFS_API FileSystemProtectionDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EFS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,28 +53,24 @@ namespace Model
      * configuration is deleted, the file system's replication overwrite protection is
      * re-enabled, the file system becomes writeable.</p>
      */
-    inline const ReplicationOverwriteProtection& GetReplicationOverwriteProtection() const{ return m_replicationOverwriteProtection; }
+    inline ReplicationOverwriteProtection GetReplicationOverwriteProtection() const { return m_replicationOverwriteProtection; }
     inline bool ReplicationOverwriteProtectionHasBeenSet() const { return m_replicationOverwriteProtectionHasBeenSet; }
-    inline void SetReplicationOverwriteProtection(const ReplicationOverwriteProtection& value) { m_replicationOverwriteProtectionHasBeenSet = true; m_replicationOverwriteProtection = value; }
-    inline void SetReplicationOverwriteProtection(ReplicationOverwriteProtection&& value) { m_replicationOverwriteProtectionHasBeenSet = true; m_replicationOverwriteProtection = std::move(value); }
-    inline FileSystemProtectionDescription& WithReplicationOverwriteProtection(const ReplicationOverwriteProtection& value) { SetReplicationOverwriteProtection(value); return *this;}
-    inline FileSystemProtectionDescription& WithReplicationOverwriteProtection(ReplicationOverwriteProtection&& value) { SetReplicationOverwriteProtection(std::move(value)); return *this;}
+    inline void SetReplicationOverwriteProtection(ReplicationOverwriteProtection value) { m_replicationOverwriteProtectionHasBeenSet = true; m_replicationOverwriteProtection = value; }
+    inline FileSystemProtectionDescription& WithReplicationOverwriteProtection(ReplicationOverwriteProtection value) { SetReplicationOverwriteProtection(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
-    inline FileSystemProtectionDescription& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline FileSystemProtectionDescription& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline FileSystemProtectionDescription& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    FileSystemProtectionDescription& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    ReplicationOverwriteProtection m_replicationOverwriteProtection;
+    ReplicationOverwriteProtection m_replicationOverwriteProtection{ReplicationOverwriteProtection::NOT_SET};
     bool m_replicationOverwriteProtectionHasBeenSet = false;
 
     Aws::String m_requestId;

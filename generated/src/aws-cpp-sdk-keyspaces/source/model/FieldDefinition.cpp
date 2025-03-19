@@ -18,14 +18,7 @@ namespace Keyspaces
 namespace Model
 {
 
-FieldDefinition::FieldDefinition() : 
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 FieldDefinition::FieldDefinition(JsonView jsonValue)
-  : FieldDefinition()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ FieldDefinition& FieldDefinition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

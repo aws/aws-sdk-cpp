@@ -18,13 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-CyclicConnectionFlowValidationDetails::CyclicConnectionFlowValidationDetails() : 
-    m_connectionHasBeenSet(false)
-{
-}
-
 CyclicConnectionFlowValidationDetails::CyclicConnectionFlowValidationDetails(JsonView jsonValue)
-  : CyclicConnectionFlowValidationDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CyclicConnectionFlowValidationDetails& CyclicConnectionFlowValidationDetails::op
   if(jsonValue.ValueExists("connection"))
   {
     m_connection = jsonValue.GetString("connection");
-
     m_connectionHasBeenSet = true;
   }
-
   return *this;
 }
 

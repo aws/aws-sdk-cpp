@@ -18,17 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-User::User() : 
-    m_nameHasBeenSet(false),
-    m_uidHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_credentialUidHasBeenSet(false),
-    m_accountHasBeenSet(false)
-{
-}
-
 User::User(JsonView jsonValue)
-  : User()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ User& User::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("uid"))
   {
     m_uid = jsonValue.GetString("uid");
-
     m_uidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("credentialUid"))
   {
     m_credentialUid = jsonValue.GetString("credentialUid");
-
     m_credentialUidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("account"))
   {
     m_account = jsonValue.GetObject("account");
-
     m_accountHasBeenSet = true;
   }
-
   return *this;
 }
 

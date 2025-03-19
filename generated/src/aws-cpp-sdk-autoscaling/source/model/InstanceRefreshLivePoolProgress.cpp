@@ -20,16 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-InstanceRefreshLivePoolProgress::InstanceRefreshLivePoolProgress() : 
-    m_percentageComplete(0),
-    m_percentageCompleteHasBeenSet(false),
-    m_instancesToUpdate(0),
-    m_instancesToUpdateHasBeenSet(false)
-{
-}
-
 InstanceRefreshLivePoolProgress::InstanceRefreshLivePoolProgress(const XmlNode& xmlNode)
-  : InstanceRefreshLivePoolProgress()
 {
   *this = xmlNode;
 }

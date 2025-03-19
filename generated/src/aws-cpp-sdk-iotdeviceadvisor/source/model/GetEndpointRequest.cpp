@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetEndpointRequest::GetEndpointRequest() : 
-    m_thingArnHasBeenSet(false),
-    m_certificateArnHasBeenSet(false),
-    m_deviceRoleArnHasBeenSet(false),
-    m_authenticationMethod(AuthenticationMethod::NOT_SET),
-    m_authenticationMethodHasBeenSet(false)
-{
-}
-
 Aws::String GetEndpointRequest::SerializePayload() const
 {
   return {};

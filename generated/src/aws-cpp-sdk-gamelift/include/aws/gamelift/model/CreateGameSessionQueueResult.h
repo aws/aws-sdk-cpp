@@ -28,7 +28,7 @@ namespace Model
   class CreateGameSessionQueueResult
   {
   public:
-    AWS_GAMELIFT_API CreateGameSessionQueueResult();
+    AWS_GAMELIFT_API CreateGameSessionQueueResult() = default;
     AWS_GAMELIFT_API CreateGameSessionQueueResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GAMELIFT_API CreateGameSessionQueueResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>An object that describes the newly created game session queue.</p>
      */
-    inline const GameSessionQueue& GetGameSessionQueue() const{ return m_gameSessionQueue; }
-    inline void SetGameSessionQueue(const GameSessionQueue& value) { m_gameSessionQueue = value; }
-    inline void SetGameSessionQueue(GameSessionQueue&& value) { m_gameSessionQueue = std::move(value); }
-    inline CreateGameSessionQueueResult& WithGameSessionQueue(const GameSessionQueue& value) { SetGameSessionQueue(value); return *this;}
-    inline CreateGameSessionQueueResult& WithGameSessionQueue(GameSessionQueue&& value) { SetGameSessionQueue(std::move(value)); return *this;}
+    inline const GameSessionQueue& GetGameSessionQueue() const { return m_gameSessionQueue; }
+    template<typename GameSessionQueueT = GameSessionQueue>
+    void SetGameSessionQueue(GameSessionQueueT&& value) { m_gameSessionQueueHasBeenSet = true; m_gameSessionQueue = std::forward<GameSessionQueueT>(value); }
+    template<typename GameSessionQueueT = GameSessionQueue>
+    CreateGameSessionQueueResult& WithGameSessionQueue(GameSessionQueueT&& value) { SetGameSessionQueue(std::forward<GameSessionQueueT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateGameSessionQueueResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateGameSessionQueueResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateGameSessionQueueResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateGameSessionQueueResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     GameSessionQueue m_gameSessionQueue;
+    bool m_gameSessionQueueHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,7 +28,7 @@ namespace Model
   class GetFlowLogsIntegrationTemplateResponse
   {
   public:
-    AWS_EC2_API GetFlowLogsIntegrationTemplateResponse();
+    AWS_EC2_API GetFlowLogsIntegrationTemplateResponse() = default;
     AWS_EC2_API GetFlowLogsIntegrationTemplateResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API GetFlowLogsIntegrationTemplateResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The generated CloudFormation template.</p>
      */
-    inline const Aws::String& GetResult() const{ return m_result; }
-    inline void SetResult(const Aws::String& value) { m_result = value; }
-    inline void SetResult(Aws::String&& value) { m_result = std::move(value); }
-    inline void SetResult(const char* value) { m_result.assign(value); }
-    inline GetFlowLogsIntegrationTemplateResponse& WithResult(const Aws::String& value) { SetResult(value); return *this;}
-    inline GetFlowLogsIntegrationTemplateResponse& WithResult(Aws::String&& value) { SetResult(std::move(value)); return *this;}
-    inline GetFlowLogsIntegrationTemplateResponse& WithResult(const char* value) { SetResult(value); return *this;}
+    inline const Aws::String& GetResult() const { return m_result; }
+    template<typename ResultT = Aws::String>
+    void SetResult(ResultT&& value) { m_resultHasBeenSet = true; m_result = std::forward<ResultT>(value); }
+    template<typename ResultT = Aws::String>
+    GetFlowLogsIntegrationTemplateResponse& WithResult(ResultT&& value) { SetResult(std::forward<ResultT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline GetFlowLogsIntegrationTemplateResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline GetFlowLogsIntegrationTemplateResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    GetFlowLogsIntegrationTemplateResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_result;
+    bool m_resultHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

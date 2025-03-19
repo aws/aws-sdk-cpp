@@ -32,7 +32,7 @@ namespace Model
   class ReplicationInfoSummary
   {
   public:
-    AWS_KAFKA_API ReplicationInfoSummary();
+    AWS_KAFKA_API ReplicationInfoSummary() = default;
     AWS_KAFKA_API ReplicationInfoSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API ReplicationInfoSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The alias of the source Kafka cluster.</p>
      */
-    inline const Aws::String& GetSourceKafkaClusterAlias() const{ return m_sourceKafkaClusterAlias; }
+    inline const Aws::String& GetSourceKafkaClusterAlias() const { return m_sourceKafkaClusterAlias; }
     inline bool SourceKafkaClusterAliasHasBeenSet() const { return m_sourceKafkaClusterAliasHasBeenSet; }
-    inline void SetSourceKafkaClusterAlias(const Aws::String& value) { m_sourceKafkaClusterAliasHasBeenSet = true; m_sourceKafkaClusterAlias = value; }
-    inline void SetSourceKafkaClusterAlias(Aws::String&& value) { m_sourceKafkaClusterAliasHasBeenSet = true; m_sourceKafkaClusterAlias = std::move(value); }
-    inline void SetSourceKafkaClusterAlias(const char* value) { m_sourceKafkaClusterAliasHasBeenSet = true; m_sourceKafkaClusterAlias.assign(value); }
-    inline ReplicationInfoSummary& WithSourceKafkaClusterAlias(const Aws::String& value) { SetSourceKafkaClusterAlias(value); return *this;}
-    inline ReplicationInfoSummary& WithSourceKafkaClusterAlias(Aws::String&& value) { SetSourceKafkaClusterAlias(std::move(value)); return *this;}
-    inline ReplicationInfoSummary& WithSourceKafkaClusterAlias(const char* value) { SetSourceKafkaClusterAlias(value); return *this;}
+    template<typename SourceKafkaClusterAliasT = Aws::String>
+    void SetSourceKafkaClusterAlias(SourceKafkaClusterAliasT&& value) { m_sourceKafkaClusterAliasHasBeenSet = true; m_sourceKafkaClusterAlias = std::forward<SourceKafkaClusterAliasT>(value); }
+    template<typename SourceKafkaClusterAliasT = Aws::String>
+    ReplicationInfoSummary& WithSourceKafkaClusterAlias(SourceKafkaClusterAliasT&& value) { SetSourceKafkaClusterAlias(std::forward<SourceKafkaClusterAliasT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The alias of the target Kafka cluster.</p>
      */
-    inline const Aws::String& GetTargetKafkaClusterAlias() const{ return m_targetKafkaClusterAlias; }
+    inline const Aws::String& GetTargetKafkaClusterAlias() const { return m_targetKafkaClusterAlias; }
     inline bool TargetKafkaClusterAliasHasBeenSet() const { return m_targetKafkaClusterAliasHasBeenSet; }
-    inline void SetTargetKafkaClusterAlias(const Aws::String& value) { m_targetKafkaClusterAliasHasBeenSet = true; m_targetKafkaClusterAlias = value; }
-    inline void SetTargetKafkaClusterAlias(Aws::String&& value) { m_targetKafkaClusterAliasHasBeenSet = true; m_targetKafkaClusterAlias = std::move(value); }
-    inline void SetTargetKafkaClusterAlias(const char* value) { m_targetKafkaClusterAliasHasBeenSet = true; m_targetKafkaClusterAlias.assign(value); }
-    inline ReplicationInfoSummary& WithTargetKafkaClusterAlias(const Aws::String& value) { SetTargetKafkaClusterAlias(value); return *this;}
-    inline ReplicationInfoSummary& WithTargetKafkaClusterAlias(Aws::String&& value) { SetTargetKafkaClusterAlias(std::move(value)); return *this;}
-    inline ReplicationInfoSummary& WithTargetKafkaClusterAlias(const char* value) { SetTargetKafkaClusterAlias(value); return *this;}
+    template<typename TargetKafkaClusterAliasT = Aws::String>
+    void SetTargetKafkaClusterAlias(TargetKafkaClusterAliasT&& value) { m_targetKafkaClusterAliasHasBeenSet = true; m_targetKafkaClusterAlias = std::forward<TargetKafkaClusterAliasT>(value); }
+    template<typename TargetKafkaClusterAliasT = Aws::String>
+    ReplicationInfoSummary& WithTargetKafkaClusterAlias(TargetKafkaClusterAliasT&& value) { SetTargetKafkaClusterAlias(std::forward<TargetKafkaClusterAliasT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,16 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-SMSChannelRequest::SMSChannelRequest() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_senderIdHasBeenSet(false),
-    m_shortCodeHasBeenSet(false)
-{
-}
-
 SMSChannelRequest::SMSChannelRequest(JsonView jsonValue)
-  : SMSChannelRequest()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ SMSChannelRequest& SMSChannelRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SenderId"))
   {
     m_senderId = jsonValue.GetString("SenderId");
-
     m_senderIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ShortCode"))
   {
     m_shortCode = jsonValue.GetString("ShortCode");
-
     m_shortCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

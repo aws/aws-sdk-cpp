@@ -12,20 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateInstancesRequest::CreateInstancesRequest() : 
-    m_instanceNamesHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_blueprintIdHasBeenSet(false),
-    m_bundleIdHasBeenSet(false),
-    m_userDataHasBeenSet(false),
-    m_keyPairNameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_addOnsHasBeenSet(false),
-    m_ipAddressType(IpAddressType::NOT_SET),
-    m_ipAddressTypeHasBeenSet(false)
-{
-}
-
 Aws::String CreateInstancesRequest::SerializePayload() const
 {
   JsonValue payload;

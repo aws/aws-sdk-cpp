@@ -18,17 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-GuardrailRegexConfig::GuardrailRegexConfig() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_patternHasBeenSet(false),
-    m_action(GuardrailSensitiveInformationAction::NOT_SET),
-    m_actionHasBeenSet(false)
-{
-}
-
 GuardrailRegexConfig::GuardrailRegexConfig(JsonView jsonValue)
-  : GuardrailRegexConfig()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ GuardrailRegexConfig& GuardrailRegexConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pattern"))
   {
     m_pattern = jsonValue.GetString("pattern");
-
     m_patternHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("action"))
   {
     m_action = GuardrailSensitiveInformationActionMapper::GetGuardrailSensitiveInformationActionForName(jsonValue.GetString("action"));
-
     m_actionHasBeenSet = true;
   }
-
   return *this;
 }
 

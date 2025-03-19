@@ -34,7 +34,7 @@ namespace Model
   class DataPathSort
   {
   public:
-    AWS_QUICKSIGHT_API DataPathSort();
+    AWS_QUICKSIGHT_API DataPathSort() = default;
     AWS_QUICKSIGHT_API DataPathSort(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API DataPathSort& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,30 +44,28 @@ namespace Model
     /**
      * <p>Determines the sort direction.</p>
      */
-    inline const SortDirection& GetDirection() const{ return m_direction; }
+    inline SortDirection GetDirection() const { return m_direction; }
     inline bool DirectionHasBeenSet() const { return m_directionHasBeenSet; }
-    inline void SetDirection(const SortDirection& value) { m_directionHasBeenSet = true; m_direction = value; }
-    inline void SetDirection(SortDirection&& value) { m_directionHasBeenSet = true; m_direction = std::move(value); }
-    inline DataPathSort& WithDirection(const SortDirection& value) { SetDirection(value); return *this;}
-    inline DataPathSort& WithDirection(SortDirection&& value) { SetDirection(std::move(value)); return *this;}
+    inline void SetDirection(SortDirection value) { m_directionHasBeenSet = true; m_direction = value; }
+    inline DataPathSort& WithDirection(SortDirection value) { SetDirection(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of data paths that need to be sorted.</p>
      */
-    inline const Aws::Vector<DataPathValue>& GetSortPaths() const{ return m_sortPaths; }
+    inline const Aws::Vector<DataPathValue>& GetSortPaths() const { return m_sortPaths; }
     inline bool SortPathsHasBeenSet() const { return m_sortPathsHasBeenSet; }
-    inline void SetSortPaths(const Aws::Vector<DataPathValue>& value) { m_sortPathsHasBeenSet = true; m_sortPaths = value; }
-    inline void SetSortPaths(Aws::Vector<DataPathValue>&& value) { m_sortPathsHasBeenSet = true; m_sortPaths = std::move(value); }
-    inline DataPathSort& WithSortPaths(const Aws::Vector<DataPathValue>& value) { SetSortPaths(value); return *this;}
-    inline DataPathSort& WithSortPaths(Aws::Vector<DataPathValue>&& value) { SetSortPaths(std::move(value)); return *this;}
-    inline DataPathSort& AddSortPaths(const DataPathValue& value) { m_sortPathsHasBeenSet = true; m_sortPaths.push_back(value); return *this; }
-    inline DataPathSort& AddSortPaths(DataPathValue&& value) { m_sortPathsHasBeenSet = true; m_sortPaths.push_back(std::move(value)); return *this; }
+    template<typename SortPathsT = Aws::Vector<DataPathValue>>
+    void SetSortPaths(SortPathsT&& value) { m_sortPathsHasBeenSet = true; m_sortPaths = std::forward<SortPathsT>(value); }
+    template<typename SortPathsT = Aws::Vector<DataPathValue>>
+    DataPathSort& WithSortPaths(SortPathsT&& value) { SetSortPaths(std::forward<SortPathsT>(value)); return *this;}
+    template<typename SortPathsT = DataPathValue>
+    DataPathSort& AddSortPaths(SortPathsT&& value) { m_sortPathsHasBeenSet = true; m_sortPaths.emplace_back(std::forward<SortPathsT>(value)); return *this; }
     ///@}
   private:
 
-    SortDirection m_direction;
+    SortDirection m_direction{SortDirection::NOT_SET};
     bool m_directionHasBeenSet = false;
 
     Aws::Vector<DataPathValue> m_sortPaths;

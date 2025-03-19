@@ -19,13 +19,7 @@ namespace Pinpoint
 namespace Model
 {
 
-RawEmail::RawEmail() : 
-    m_dataHasBeenSet(false)
-{
-}
-
 RawEmail::RawEmail(JsonView jsonValue)
-  : RawEmail()
 {
   *this = jsonValue;
 }
@@ -37,7 +31,6 @@ RawEmail& RawEmail::operator =(JsonView jsonValue)
     m_data = HashingUtils::Base64Decode(jsonValue.GetString("Data"));
     m_dataHasBeenSet = true;
   }
-
   return *this;
 }
 

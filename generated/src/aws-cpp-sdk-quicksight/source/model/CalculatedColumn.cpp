@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-CalculatedColumn::CalculatedColumn() : 
-    m_columnNameHasBeenSet(false),
-    m_columnIdHasBeenSet(false),
-    m_expressionHasBeenSet(false)
-{
-}
-
 CalculatedColumn::CalculatedColumn(JsonView jsonValue)
-  : CalculatedColumn()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ CalculatedColumn& CalculatedColumn::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ColumnName"))
   {
     m_columnName = jsonValue.GetString("ColumnName");
-
     m_columnNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColumnId"))
   {
     m_columnId = jsonValue.GetString("ColumnId");
-
     m_columnIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Expression"))
   {
     m_expression = jsonValue.GetString("Expression");
-
     m_expressionHasBeenSet = true;
   }
-
   return *this;
 }
 

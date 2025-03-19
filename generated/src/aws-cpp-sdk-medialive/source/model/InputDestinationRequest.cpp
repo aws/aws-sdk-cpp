@@ -18,16 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-InputDestinationRequest::InputDestinationRequest() : 
-    m_streamNameHasBeenSet(false),
-    m_networkHasBeenSet(false),
-    m_networkRoutesHasBeenSet(false),
-    m_staticIpAddressHasBeenSet(false)
-{
-}
-
 InputDestinationRequest::InputDestinationRequest(JsonView jsonValue)
-  : InputDestinationRequest()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ InputDestinationRequest& InputDestinationRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("streamName"))
   {
     m_streamName = jsonValue.GetString("streamName");
-
     m_streamNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("network"))
   {
     m_network = jsonValue.GetString("network");
-
     m_networkHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkRoutes"))
   {
     Aws::Utils::Array<JsonView> networkRoutesJsonList = jsonValue.GetArray("networkRoutes");
@@ -57,14 +44,11 @@ InputDestinationRequest& InputDestinationRequest::operator =(JsonView jsonValue)
     }
     m_networkRoutesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("staticIpAddress"))
   {
     m_staticIpAddress = jsonValue.GetString("staticIpAddress");
-
     m_staticIpAddressHasBeenSet = true;
   }
-
   return *this;
 }
 

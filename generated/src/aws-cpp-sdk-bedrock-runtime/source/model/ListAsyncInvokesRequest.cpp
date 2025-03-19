@@ -15,21 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListAsyncInvokesRequest::ListAsyncInvokesRequest() : 
-    m_submitTimeAfterHasBeenSet(false),
-    m_submitTimeBeforeHasBeenSet(false),
-    m_statusEquals(AsyncInvokeStatus::NOT_SET),
-    m_statusEqualsHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_sortBy(SortAsyncInvocationBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
-{
-}
-
 Aws::String ListAsyncInvokesRequest::SerializePayload() const
 {
   return {};

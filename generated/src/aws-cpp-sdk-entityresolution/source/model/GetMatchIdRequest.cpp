@@ -12,14 +12,6 @@ using namespace Aws::EntityResolution::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetMatchIdRequest::GetMatchIdRequest() : 
-    m_applyNormalization(false),
-    m_applyNormalizationHasBeenSet(false),
-    m_recordHasBeenSet(false),
-    m_workflowNameHasBeenSet(false)
-{
-}
-
 Aws::String GetMatchIdRequest::SerializePayload() const
 {
   JsonValue payload;

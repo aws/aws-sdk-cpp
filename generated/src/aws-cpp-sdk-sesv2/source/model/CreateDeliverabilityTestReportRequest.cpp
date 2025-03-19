@@ -12,14 +12,6 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDeliverabilityTestReportRequest::CreateDeliverabilityTestReportRequest() : 
-    m_reportNameHasBeenSet(false),
-    m_fromEmailAddressHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateDeliverabilityTestReportRequest::SerializePayload() const
 {
   JsonValue payload;

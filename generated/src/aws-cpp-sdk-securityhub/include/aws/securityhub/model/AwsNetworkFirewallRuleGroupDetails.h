@@ -36,7 +36,7 @@ namespace Model
   class AwsNetworkFirewallRuleGroupDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsNetworkFirewallRuleGroupDetails();
+    AWS_SECURITYHUB_API AwsNetworkFirewallRuleGroupDetails() = default;
     AWS_SECURITYHUB_API AwsNetworkFirewallRuleGroupDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsNetworkFirewallRuleGroupDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,7 +46,7 @@ namespace Model
     /**
      * <p>The maximum number of operating resources that this rule group can use.</p>
      */
-    inline int GetCapacity() const{ return m_capacity; }
+    inline int GetCapacity() const { return m_capacity; }
     inline bool CapacityHasBeenSet() const { return m_capacityHasBeenSet; }
     inline void SetCapacity(int value) { m_capacityHasBeenSet = true; m_capacity = value; }
     inline AwsNetworkFirewallRuleGroupDetails& WithCapacity(int value) { SetCapacity(value); return *this;}
@@ -56,86 +56,76 @@ namespace Model
     /**
      * <p>A description of the rule group.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline AwsNetworkFirewallRuleGroupDetails& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline AwsNetworkFirewallRuleGroupDetails& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline AwsNetworkFirewallRuleGroupDetails& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    AwsNetworkFirewallRuleGroupDetails& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about the rule group.</p>
      */
-    inline const RuleGroupDetails& GetRuleGroup() const{ return m_ruleGroup; }
+    inline const RuleGroupDetails& GetRuleGroup() const { return m_ruleGroup; }
     inline bool RuleGroupHasBeenSet() const { return m_ruleGroupHasBeenSet; }
-    inline void SetRuleGroup(const RuleGroupDetails& value) { m_ruleGroupHasBeenSet = true; m_ruleGroup = value; }
-    inline void SetRuleGroup(RuleGroupDetails&& value) { m_ruleGroupHasBeenSet = true; m_ruleGroup = std::move(value); }
-    inline AwsNetworkFirewallRuleGroupDetails& WithRuleGroup(const RuleGroupDetails& value) { SetRuleGroup(value); return *this;}
-    inline AwsNetworkFirewallRuleGroupDetails& WithRuleGroup(RuleGroupDetails&& value) { SetRuleGroup(std::move(value)); return *this;}
+    template<typename RuleGroupT = RuleGroupDetails>
+    void SetRuleGroup(RuleGroupT&& value) { m_ruleGroupHasBeenSet = true; m_ruleGroup = std::forward<RuleGroupT>(value); }
+    template<typename RuleGroupT = RuleGroupDetails>
+    AwsNetworkFirewallRuleGroupDetails& WithRuleGroup(RuleGroupT&& value) { SetRuleGroup(std::forward<RuleGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the rule group.</p>
      */
-    inline const Aws::String& GetRuleGroupArn() const{ return m_ruleGroupArn; }
+    inline const Aws::String& GetRuleGroupArn() const { return m_ruleGroupArn; }
     inline bool RuleGroupArnHasBeenSet() const { return m_ruleGroupArnHasBeenSet; }
-    inline void SetRuleGroupArn(const Aws::String& value) { m_ruleGroupArnHasBeenSet = true; m_ruleGroupArn = value; }
-    inline void SetRuleGroupArn(Aws::String&& value) { m_ruleGroupArnHasBeenSet = true; m_ruleGroupArn = std::move(value); }
-    inline void SetRuleGroupArn(const char* value) { m_ruleGroupArnHasBeenSet = true; m_ruleGroupArn.assign(value); }
-    inline AwsNetworkFirewallRuleGroupDetails& WithRuleGroupArn(const Aws::String& value) { SetRuleGroupArn(value); return *this;}
-    inline AwsNetworkFirewallRuleGroupDetails& WithRuleGroupArn(Aws::String&& value) { SetRuleGroupArn(std::move(value)); return *this;}
-    inline AwsNetworkFirewallRuleGroupDetails& WithRuleGroupArn(const char* value) { SetRuleGroupArn(value); return *this;}
+    template<typename RuleGroupArnT = Aws::String>
+    void SetRuleGroupArn(RuleGroupArnT&& value) { m_ruleGroupArnHasBeenSet = true; m_ruleGroupArn = std::forward<RuleGroupArnT>(value); }
+    template<typename RuleGroupArnT = Aws::String>
+    AwsNetworkFirewallRuleGroupDetails& WithRuleGroupArn(RuleGroupArnT&& value) { SetRuleGroupArn(std::forward<RuleGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the rule group.</p>
      */
-    inline const Aws::String& GetRuleGroupId() const{ return m_ruleGroupId; }
+    inline const Aws::String& GetRuleGroupId() const { return m_ruleGroupId; }
     inline bool RuleGroupIdHasBeenSet() const { return m_ruleGroupIdHasBeenSet; }
-    inline void SetRuleGroupId(const Aws::String& value) { m_ruleGroupIdHasBeenSet = true; m_ruleGroupId = value; }
-    inline void SetRuleGroupId(Aws::String&& value) { m_ruleGroupIdHasBeenSet = true; m_ruleGroupId = std::move(value); }
-    inline void SetRuleGroupId(const char* value) { m_ruleGroupIdHasBeenSet = true; m_ruleGroupId.assign(value); }
-    inline AwsNetworkFirewallRuleGroupDetails& WithRuleGroupId(const Aws::String& value) { SetRuleGroupId(value); return *this;}
-    inline AwsNetworkFirewallRuleGroupDetails& WithRuleGroupId(Aws::String&& value) { SetRuleGroupId(std::move(value)); return *this;}
-    inline AwsNetworkFirewallRuleGroupDetails& WithRuleGroupId(const char* value) { SetRuleGroupId(value); return *this;}
+    template<typename RuleGroupIdT = Aws::String>
+    void SetRuleGroupId(RuleGroupIdT&& value) { m_ruleGroupIdHasBeenSet = true; m_ruleGroupId = std::forward<RuleGroupIdT>(value); }
+    template<typename RuleGroupIdT = Aws::String>
+    AwsNetworkFirewallRuleGroupDetails& WithRuleGroupId(RuleGroupIdT&& value) { SetRuleGroupId(std::forward<RuleGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The descriptive name of the rule group.</p>
      */
-    inline const Aws::String& GetRuleGroupName() const{ return m_ruleGroupName; }
+    inline const Aws::String& GetRuleGroupName() const { return m_ruleGroupName; }
     inline bool RuleGroupNameHasBeenSet() const { return m_ruleGroupNameHasBeenSet; }
-    inline void SetRuleGroupName(const Aws::String& value) { m_ruleGroupNameHasBeenSet = true; m_ruleGroupName = value; }
-    inline void SetRuleGroupName(Aws::String&& value) { m_ruleGroupNameHasBeenSet = true; m_ruleGroupName = std::move(value); }
-    inline void SetRuleGroupName(const char* value) { m_ruleGroupNameHasBeenSet = true; m_ruleGroupName.assign(value); }
-    inline AwsNetworkFirewallRuleGroupDetails& WithRuleGroupName(const Aws::String& value) { SetRuleGroupName(value); return *this;}
-    inline AwsNetworkFirewallRuleGroupDetails& WithRuleGroupName(Aws::String&& value) { SetRuleGroupName(std::move(value)); return *this;}
-    inline AwsNetworkFirewallRuleGroupDetails& WithRuleGroupName(const char* value) { SetRuleGroupName(value); return *this;}
+    template<typename RuleGroupNameT = Aws::String>
+    void SetRuleGroupName(RuleGroupNameT&& value) { m_ruleGroupNameHasBeenSet = true; m_ruleGroupName = std::forward<RuleGroupNameT>(value); }
+    template<typename RuleGroupNameT = Aws::String>
+    AwsNetworkFirewallRuleGroupDetails& WithRuleGroupName(RuleGroupNameT&& value) { SetRuleGroupName(std::forward<RuleGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of rule group. A rule group can be stateful or stateless.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline AwsNetworkFirewallRuleGroupDetails& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline AwsNetworkFirewallRuleGroupDetails& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline AwsNetworkFirewallRuleGroupDetails& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    AwsNetworkFirewallRuleGroupDetails& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
   private:
 
-    int m_capacity;
+    int m_capacity{0};
     bool m_capacityHasBeenSet = false;
 
     Aws::String m_description;

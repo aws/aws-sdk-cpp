@@ -18,14 +18,7 @@ namespace KinesisVideo
 namespace Model
 {
 
-ImageGenerationDestinationConfig::ImageGenerationDestinationConfig() : 
-    m_uriHasBeenSet(false),
-    m_destinationRegionHasBeenSet(false)
-{
-}
-
 ImageGenerationDestinationConfig::ImageGenerationDestinationConfig(JsonView jsonValue)
-  : ImageGenerationDestinationConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ImageGenerationDestinationConfig& ImageGenerationDestinationConfig::operator =(J
   if(jsonValue.ValueExists("Uri"))
   {
     m_uri = jsonValue.GetString("Uri");
-
     m_uriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationRegion"))
   {
     m_destinationRegion = jsonValue.GetString("DestinationRegion");
-
     m_destinationRegionHasBeenSet = true;
   }
-
   return *this;
 }
 

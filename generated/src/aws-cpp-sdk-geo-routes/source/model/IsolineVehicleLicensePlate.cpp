@@ -18,13 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-IsolineVehicleLicensePlate::IsolineVehicleLicensePlate() : 
-    m_lastCharacterHasBeenSet(false)
-{
-}
-
 IsolineVehicleLicensePlate::IsolineVehicleLicensePlate(JsonView jsonValue)
-  : IsolineVehicleLicensePlate()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ IsolineVehicleLicensePlate& IsolineVehicleLicensePlate::operator =(JsonView json
   if(jsonValue.ValueExists("LastCharacter"))
   {
     m_lastCharacter = jsonValue.GetString("LastCharacter");
-
     m_lastCharacterHasBeenSet = true;
   }
-
   return *this;
 }
 

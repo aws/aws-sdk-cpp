@@ -18,14 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-Tool::Tool() : 
-    m_cachePointHasBeenSet(false),
-    m_toolSpecHasBeenSet(false)
-{
-}
-
 Tool::Tool(JsonView jsonValue)
-  : Tool()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Tool& Tool::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("cachePoint"))
   {
     m_cachePoint = jsonValue.GetObject("cachePoint");
-
     m_cachePointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("toolSpec"))
   {
     m_toolSpec = jsonValue.GetObject("toolSpec");
-
     m_toolSpecHasBeenSet = true;
   }
-
   return *this;
 }
 

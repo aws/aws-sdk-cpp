@@ -12,11 +12,6 @@ using namespace Aws::ServerlessApplicationRepository::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetApplicationPolicyRequest::GetApplicationPolicyRequest() : 
-    m_applicationIdHasBeenSet(false)
-{
-}
-
 Aws::String GetApplicationPolicyRequest::SerializePayload() const
 {
   return {};

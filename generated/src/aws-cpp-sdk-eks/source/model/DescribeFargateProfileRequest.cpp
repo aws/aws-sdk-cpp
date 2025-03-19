@@ -12,12 +12,6 @@ using namespace Aws::EKS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeFargateProfileRequest::DescribeFargateProfileRequest() : 
-    m_clusterNameHasBeenSet(false),
-    m_fargateProfileNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeFargateProfileRequest::SerializePayload() const
 {
   return {};

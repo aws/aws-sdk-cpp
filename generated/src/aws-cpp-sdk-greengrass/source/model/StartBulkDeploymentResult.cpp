@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartBulkDeploymentResult::StartBulkDeploymentResult()
-{
-}
-
 StartBulkDeploymentResult::StartBulkDeploymentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ StartBulkDeploymentResult& StartBulkDeploymentResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("BulkDeploymentArn"))
   {
     m_bulkDeploymentArn = jsonValue.GetString("BulkDeploymentArn");
-
+    m_bulkDeploymentArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BulkDeploymentId"))
   {
     m_bulkDeploymentId = jsonValue.GetString("BulkDeploymentId");
-
+    m_bulkDeploymentIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -32,7 +32,7 @@ namespace Model
   class ClusterMarker
   {
   public:
-    AWS_QUICKSIGHT_API ClusterMarker();
+    AWS_QUICKSIGHT_API ClusterMarker() = default;
     AWS_QUICKSIGHT_API ClusterMarker(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API ClusterMarker& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The simple cluster marker of the cluster marker.</p>
      */
-    inline const SimpleClusterMarker& GetSimpleClusterMarker() const{ return m_simpleClusterMarker; }
+    inline const SimpleClusterMarker& GetSimpleClusterMarker() const { return m_simpleClusterMarker; }
     inline bool SimpleClusterMarkerHasBeenSet() const { return m_simpleClusterMarkerHasBeenSet; }
-    inline void SetSimpleClusterMarker(const SimpleClusterMarker& value) { m_simpleClusterMarkerHasBeenSet = true; m_simpleClusterMarker = value; }
-    inline void SetSimpleClusterMarker(SimpleClusterMarker&& value) { m_simpleClusterMarkerHasBeenSet = true; m_simpleClusterMarker = std::move(value); }
-    inline ClusterMarker& WithSimpleClusterMarker(const SimpleClusterMarker& value) { SetSimpleClusterMarker(value); return *this;}
-    inline ClusterMarker& WithSimpleClusterMarker(SimpleClusterMarker&& value) { SetSimpleClusterMarker(std::move(value)); return *this;}
+    template<typename SimpleClusterMarkerT = SimpleClusterMarker>
+    void SetSimpleClusterMarker(SimpleClusterMarkerT&& value) { m_simpleClusterMarkerHasBeenSet = true; m_simpleClusterMarker = std::forward<SimpleClusterMarkerT>(value); }
+    template<typename SimpleClusterMarkerT = SimpleClusterMarker>
+    ClusterMarker& WithSimpleClusterMarker(SimpleClusterMarkerT&& value) { SetSimpleClusterMarker(std::forward<SimpleClusterMarkerT>(value)); return *this;}
     ///@}
   private:
 

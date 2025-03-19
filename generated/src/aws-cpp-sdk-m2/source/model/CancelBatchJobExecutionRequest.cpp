@@ -12,13 +12,6 @@ using namespace Aws::MainframeModernization::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelBatchJobExecutionRequest::CancelBatchJobExecutionRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_authSecretsManagerArnHasBeenSet(false),
-    m_executionIdHasBeenSet(false)
-{
-}
-
 Aws::String CancelBatchJobExecutionRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -31,7 +31,7 @@ namespace Model
   class PivotTableFieldSubtotalOptions
   {
   public:
-    AWS_QUICKSIGHT_API PivotTableFieldSubtotalOptions();
+    AWS_QUICKSIGHT_API PivotTableFieldSubtotalOptions() = default;
     AWS_QUICKSIGHT_API PivotTableFieldSubtotalOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API PivotTableFieldSubtotalOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The field ID of the subtotal options.</p>
      */
-    inline const Aws::String& GetFieldId() const{ return m_fieldId; }
+    inline const Aws::String& GetFieldId() const { return m_fieldId; }
     inline bool FieldIdHasBeenSet() const { return m_fieldIdHasBeenSet; }
-    inline void SetFieldId(const Aws::String& value) { m_fieldIdHasBeenSet = true; m_fieldId = value; }
-    inline void SetFieldId(Aws::String&& value) { m_fieldIdHasBeenSet = true; m_fieldId = std::move(value); }
-    inline void SetFieldId(const char* value) { m_fieldIdHasBeenSet = true; m_fieldId.assign(value); }
-    inline PivotTableFieldSubtotalOptions& WithFieldId(const Aws::String& value) { SetFieldId(value); return *this;}
-    inline PivotTableFieldSubtotalOptions& WithFieldId(Aws::String&& value) { SetFieldId(std::move(value)); return *this;}
-    inline PivotTableFieldSubtotalOptions& WithFieldId(const char* value) { SetFieldId(value); return *this;}
+    template<typename FieldIdT = Aws::String>
+    void SetFieldId(FieldIdT&& value) { m_fieldIdHasBeenSet = true; m_fieldId = std::forward<FieldIdT>(value); }
+    template<typename FieldIdT = Aws::String>
+    PivotTableFieldSubtotalOptions& WithFieldId(FieldIdT&& value) { SetFieldId(std::forward<FieldIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,15 +18,7 @@ namespace Connect
 namespace Model
 {
 
-HierarchyGroupCondition::HierarchyGroupCondition() : 
-    m_valueHasBeenSet(false),
-    m_hierarchyGroupMatchType(HierarchyGroupMatchType::NOT_SET),
-    m_hierarchyGroupMatchTypeHasBeenSet(false)
-{
-}
-
 HierarchyGroupCondition::HierarchyGroupCondition(JsonView jsonValue)
-  : HierarchyGroupCondition()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ HierarchyGroupCondition& HierarchyGroupCondition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HierarchyGroupMatchType"))
   {
     m_hierarchyGroupMatchType = HierarchyGroupMatchTypeMapper::GetHierarchyGroupMatchTypeForName(jsonValue.GetString("HierarchyGroupMatchType"));
-
     m_hierarchyGroupMatchTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

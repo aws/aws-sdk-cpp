@@ -18,13 +18,7 @@ namespace AgreementService
 namespace Model
 {
 
-ByolPricingTerm::ByolPricingTerm() : 
-    m_typeHasBeenSet(false)
-{
-}
-
 ByolPricingTerm::ByolPricingTerm(JsonView jsonValue)
-  : ByolPricingTerm()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ByolPricingTerm& ByolPricingTerm::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

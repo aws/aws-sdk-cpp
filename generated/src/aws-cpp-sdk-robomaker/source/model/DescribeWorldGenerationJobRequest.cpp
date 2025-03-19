@@ -12,11 +12,6 @@ using namespace Aws::RoboMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeWorldGenerationJobRequest::DescribeWorldGenerationJobRequest() : 
-    m_jobHasBeenSet(false)
-{
-}
-
 Aws::String DescribeWorldGenerationJobRequest::SerializePayload() const
 {
   JsonValue payload;

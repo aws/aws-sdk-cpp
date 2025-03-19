@@ -18,15 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-S3ClassificationScopeExclusionUpdate::S3ClassificationScopeExclusionUpdate() : 
-    m_bucketNamesHasBeenSet(false),
-    m_operation(ClassificationScopeUpdateOperation::NOT_SET),
-    m_operationHasBeenSet(false)
-{
-}
-
 S3ClassificationScopeExclusionUpdate::S3ClassificationScopeExclusionUpdate(JsonView jsonValue)
-  : S3ClassificationScopeExclusionUpdate()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ S3ClassificationScopeExclusionUpdate& S3ClassificationScopeExclusionUpdate::oper
     }
     m_bucketNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operation"))
   {
     m_operation = ClassificationScopeUpdateOperationMapper::GetClassificationScopeUpdateOperationForName(jsonValue.GetString("operation"));
-
     m_operationHasBeenSet = true;
   }
-
   return *this;
 }
 

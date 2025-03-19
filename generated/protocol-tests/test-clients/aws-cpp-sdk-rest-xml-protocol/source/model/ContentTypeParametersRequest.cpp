@@ -14,11 +14,6 @@ using namespace Aws::RestXmlProtocol::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-ContentTypeParametersRequest::ContentTypeParametersRequest() : 
-    m_value(0),
-    m_valueHasBeenSet(false)
-{
-}
 
 Aws::String ContentTypeParametersRequest::SerializePayload() const
 {

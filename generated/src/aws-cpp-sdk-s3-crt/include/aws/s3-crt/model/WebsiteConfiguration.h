@@ -35,7 +35,7 @@ namespace Model
   class WebsiteConfiguration
   {
   public:
-    AWS_S3CRT_API WebsiteConfiguration();
+    AWS_S3CRT_API WebsiteConfiguration() = default;
     AWS_S3CRT_API WebsiteConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CRT_API WebsiteConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,24 +46,24 @@ namespace Model
     /**
      * <p>The name of the error document for the website.</p>
      */
-    inline const ErrorDocument& GetErrorDocument() const{ return m_errorDocument; }
+    inline const ErrorDocument& GetErrorDocument() const { return m_errorDocument; }
     inline bool ErrorDocumentHasBeenSet() const { return m_errorDocumentHasBeenSet; }
-    inline void SetErrorDocument(const ErrorDocument& value) { m_errorDocumentHasBeenSet = true; m_errorDocument = value; }
-    inline void SetErrorDocument(ErrorDocument&& value) { m_errorDocumentHasBeenSet = true; m_errorDocument = std::move(value); }
-    inline WebsiteConfiguration& WithErrorDocument(const ErrorDocument& value) { SetErrorDocument(value); return *this;}
-    inline WebsiteConfiguration& WithErrorDocument(ErrorDocument&& value) { SetErrorDocument(std::move(value)); return *this;}
+    template<typename ErrorDocumentT = ErrorDocument>
+    void SetErrorDocument(ErrorDocumentT&& value) { m_errorDocumentHasBeenSet = true; m_errorDocument = std::forward<ErrorDocumentT>(value); }
+    template<typename ErrorDocumentT = ErrorDocument>
+    WebsiteConfiguration& WithErrorDocument(ErrorDocumentT&& value) { SetErrorDocument(std::forward<ErrorDocumentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the index document for the website.</p>
      */
-    inline const IndexDocument& GetIndexDocument() const{ return m_indexDocument; }
+    inline const IndexDocument& GetIndexDocument() const { return m_indexDocument; }
     inline bool IndexDocumentHasBeenSet() const { return m_indexDocumentHasBeenSet; }
-    inline void SetIndexDocument(const IndexDocument& value) { m_indexDocumentHasBeenSet = true; m_indexDocument = value; }
-    inline void SetIndexDocument(IndexDocument&& value) { m_indexDocumentHasBeenSet = true; m_indexDocument = std::move(value); }
-    inline WebsiteConfiguration& WithIndexDocument(const IndexDocument& value) { SetIndexDocument(value); return *this;}
-    inline WebsiteConfiguration& WithIndexDocument(IndexDocument&& value) { SetIndexDocument(std::move(value)); return *this;}
+    template<typename IndexDocumentT = IndexDocument>
+    void SetIndexDocument(IndexDocumentT&& value) { m_indexDocumentHasBeenSet = true; m_indexDocument = std::forward<IndexDocumentT>(value); }
+    template<typename IndexDocumentT = IndexDocument>
+    WebsiteConfiguration& WithIndexDocument(IndexDocumentT&& value) { SetIndexDocument(std::forward<IndexDocumentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,26 +72,26 @@ namespace Model
      * endpoint.</p>  <p>If you specify this property, you can't specify any
      * other property.</p> 
      */
-    inline const RedirectAllRequestsTo& GetRedirectAllRequestsTo() const{ return m_redirectAllRequestsTo; }
+    inline const RedirectAllRequestsTo& GetRedirectAllRequestsTo() const { return m_redirectAllRequestsTo; }
     inline bool RedirectAllRequestsToHasBeenSet() const { return m_redirectAllRequestsToHasBeenSet; }
-    inline void SetRedirectAllRequestsTo(const RedirectAllRequestsTo& value) { m_redirectAllRequestsToHasBeenSet = true; m_redirectAllRequestsTo = value; }
-    inline void SetRedirectAllRequestsTo(RedirectAllRequestsTo&& value) { m_redirectAllRequestsToHasBeenSet = true; m_redirectAllRequestsTo = std::move(value); }
-    inline WebsiteConfiguration& WithRedirectAllRequestsTo(const RedirectAllRequestsTo& value) { SetRedirectAllRequestsTo(value); return *this;}
-    inline WebsiteConfiguration& WithRedirectAllRequestsTo(RedirectAllRequestsTo&& value) { SetRedirectAllRequestsTo(std::move(value)); return *this;}
+    template<typename RedirectAllRequestsToT = RedirectAllRequestsTo>
+    void SetRedirectAllRequestsTo(RedirectAllRequestsToT&& value) { m_redirectAllRequestsToHasBeenSet = true; m_redirectAllRequestsTo = std::forward<RedirectAllRequestsToT>(value); }
+    template<typename RedirectAllRequestsToT = RedirectAllRequestsTo>
+    WebsiteConfiguration& WithRedirectAllRequestsTo(RedirectAllRequestsToT&& value) { SetRedirectAllRequestsTo(std::forward<RedirectAllRequestsToT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Rules that define when a redirect is applied and the redirect behavior.</p>
      */
-    inline const Aws::Vector<RoutingRule>& GetRoutingRules() const{ return m_routingRules; }
+    inline const Aws::Vector<RoutingRule>& GetRoutingRules() const { return m_routingRules; }
     inline bool RoutingRulesHasBeenSet() const { return m_routingRulesHasBeenSet; }
-    inline void SetRoutingRules(const Aws::Vector<RoutingRule>& value) { m_routingRulesHasBeenSet = true; m_routingRules = value; }
-    inline void SetRoutingRules(Aws::Vector<RoutingRule>&& value) { m_routingRulesHasBeenSet = true; m_routingRules = std::move(value); }
-    inline WebsiteConfiguration& WithRoutingRules(const Aws::Vector<RoutingRule>& value) { SetRoutingRules(value); return *this;}
-    inline WebsiteConfiguration& WithRoutingRules(Aws::Vector<RoutingRule>&& value) { SetRoutingRules(std::move(value)); return *this;}
-    inline WebsiteConfiguration& AddRoutingRules(const RoutingRule& value) { m_routingRulesHasBeenSet = true; m_routingRules.push_back(value); return *this; }
-    inline WebsiteConfiguration& AddRoutingRules(RoutingRule&& value) { m_routingRulesHasBeenSet = true; m_routingRules.push_back(std::move(value)); return *this; }
+    template<typename RoutingRulesT = Aws::Vector<RoutingRule>>
+    void SetRoutingRules(RoutingRulesT&& value) { m_routingRulesHasBeenSet = true; m_routingRules = std::forward<RoutingRulesT>(value); }
+    template<typename RoutingRulesT = Aws::Vector<RoutingRule>>
+    WebsiteConfiguration& WithRoutingRules(RoutingRulesT&& value) { SetRoutingRules(std::forward<RoutingRulesT>(value)); return *this;}
+    template<typename RoutingRulesT = RoutingRule>
+    WebsiteConfiguration& AddRoutingRules(RoutingRulesT&& value) { m_routingRulesHasBeenSet = true; m_routingRules.emplace_back(std::forward<RoutingRulesT>(value)); return *this; }
     ///@}
   private:
 

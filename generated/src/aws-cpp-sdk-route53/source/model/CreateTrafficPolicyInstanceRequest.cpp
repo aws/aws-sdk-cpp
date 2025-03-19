@@ -14,16 +14,6 @@ using namespace Aws::Route53::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-CreateTrafficPolicyInstanceRequest::CreateTrafficPolicyInstanceRequest() : 
-    m_hostedZoneIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tTL(0),
-    m_tTLHasBeenSet(false),
-    m_trafficPolicyIdHasBeenSet(false),
-    m_trafficPolicyVersion(0),
-    m_trafficPolicyVersionHasBeenSet(false)
-{
-}
 
 Aws::String CreateTrafficPolicyInstanceRequest::SerializePayload() const
 {

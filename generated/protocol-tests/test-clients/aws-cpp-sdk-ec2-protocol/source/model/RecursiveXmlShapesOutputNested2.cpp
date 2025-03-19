@@ -21,14 +21,7 @@ namespace EC2Protocol
 namespace Model
 {
 
-RecursiveXmlShapesOutputNested2::RecursiveXmlShapesOutputNested2() : 
-    m_barHasBeenSet(false),
-    m_recursiveMemberHasBeenSet(false)
-{
-}
-
 RecursiveXmlShapesOutputNested2::RecursiveXmlShapesOutputNested2(const XmlNode& xmlNode)
-  : RecursiveXmlShapesOutputNested2()
 {
   *this = xmlNode;
 }

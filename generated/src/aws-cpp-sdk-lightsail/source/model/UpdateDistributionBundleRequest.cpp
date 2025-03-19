@@ -12,12 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDistributionBundleRequest::UpdateDistributionBundleRequest() : 
-    m_distributionNameHasBeenSet(false),
-    m_bundleIdHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDistributionBundleRequest::SerializePayload() const
 {
   JsonValue payload;

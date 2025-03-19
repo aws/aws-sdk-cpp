@@ -31,7 +31,7 @@ namespace Model
   class ChoiceImprovementPlan
   {
   public:
-    AWS_WELLARCHITECTED_API ChoiceImprovementPlan();
+    AWS_WELLARCHITECTED_API ChoiceImprovementPlan() = default;
     AWS_WELLARCHITECTED_API ChoiceImprovementPlan(Aws::Utils::Json::JsonView jsonValue);
     AWS_WELLARCHITECTED_API ChoiceImprovementPlan& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,40 +39,34 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetChoiceId() const{ return m_choiceId; }
+    inline const Aws::String& GetChoiceId() const { return m_choiceId; }
     inline bool ChoiceIdHasBeenSet() const { return m_choiceIdHasBeenSet; }
-    inline void SetChoiceId(const Aws::String& value) { m_choiceIdHasBeenSet = true; m_choiceId = value; }
-    inline void SetChoiceId(Aws::String&& value) { m_choiceIdHasBeenSet = true; m_choiceId = std::move(value); }
-    inline void SetChoiceId(const char* value) { m_choiceIdHasBeenSet = true; m_choiceId.assign(value); }
-    inline ChoiceImprovementPlan& WithChoiceId(const Aws::String& value) { SetChoiceId(value); return *this;}
-    inline ChoiceImprovementPlan& WithChoiceId(Aws::String&& value) { SetChoiceId(std::move(value)); return *this;}
-    inline ChoiceImprovementPlan& WithChoiceId(const char* value) { SetChoiceId(value); return *this;}
+    template<typename ChoiceIdT = Aws::String>
+    void SetChoiceId(ChoiceIdT&& value) { m_choiceIdHasBeenSet = true; m_choiceId = std::forward<ChoiceIdT>(value); }
+    template<typename ChoiceIdT = Aws::String>
+    ChoiceImprovementPlan& WithChoiceId(ChoiceIdT&& value) { SetChoiceId(std::forward<ChoiceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The display text for the improvement plan.</p>
      */
-    inline const Aws::String& GetDisplayText() const{ return m_displayText; }
+    inline const Aws::String& GetDisplayText() const { return m_displayText; }
     inline bool DisplayTextHasBeenSet() const { return m_displayTextHasBeenSet; }
-    inline void SetDisplayText(const Aws::String& value) { m_displayTextHasBeenSet = true; m_displayText = value; }
-    inline void SetDisplayText(Aws::String&& value) { m_displayTextHasBeenSet = true; m_displayText = std::move(value); }
-    inline void SetDisplayText(const char* value) { m_displayTextHasBeenSet = true; m_displayText.assign(value); }
-    inline ChoiceImprovementPlan& WithDisplayText(const Aws::String& value) { SetDisplayText(value); return *this;}
-    inline ChoiceImprovementPlan& WithDisplayText(Aws::String&& value) { SetDisplayText(std::move(value)); return *this;}
-    inline ChoiceImprovementPlan& WithDisplayText(const char* value) { SetDisplayText(value); return *this;}
+    template<typename DisplayTextT = Aws::String>
+    void SetDisplayText(DisplayTextT&& value) { m_displayTextHasBeenSet = true; m_displayText = std::forward<DisplayTextT>(value); }
+    template<typename DisplayTextT = Aws::String>
+    ChoiceImprovementPlan& WithDisplayText(DisplayTextT&& value) { SetDisplayText(std::forward<DisplayTextT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetImprovementPlanUrl() const{ return m_improvementPlanUrl; }
+    inline const Aws::String& GetImprovementPlanUrl() const { return m_improvementPlanUrl; }
     inline bool ImprovementPlanUrlHasBeenSet() const { return m_improvementPlanUrlHasBeenSet; }
-    inline void SetImprovementPlanUrl(const Aws::String& value) { m_improvementPlanUrlHasBeenSet = true; m_improvementPlanUrl = value; }
-    inline void SetImprovementPlanUrl(Aws::String&& value) { m_improvementPlanUrlHasBeenSet = true; m_improvementPlanUrl = std::move(value); }
-    inline void SetImprovementPlanUrl(const char* value) { m_improvementPlanUrlHasBeenSet = true; m_improvementPlanUrl.assign(value); }
-    inline ChoiceImprovementPlan& WithImprovementPlanUrl(const Aws::String& value) { SetImprovementPlanUrl(value); return *this;}
-    inline ChoiceImprovementPlan& WithImprovementPlanUrl(Aws::String&& value) { SetImprovementPlanUrl(std::move(value)); return *this;}
-    inline ChoiceImprovementPlan& WithImprovementPlanUrl(const char* value) { SetImprovementPlanUrl(value); return *this;}
+    template<typename ImprovementPlanUrlT = Aws::String>
+    void SetImprovementPlanUrl(ImprovementPlanUrlT&& value) { m_improvementPlanUrlHasBeenSet = true; m_improvementPlanUrl = std::forward<ImprovementPlanUrlT>(value); }
+    template<typename ImprovementPlanUrlT = Aws::String>
+    ChoiceImprovementPlan& WithImprovementPlanUrl(ImprovementPlanUrlT&& value) { SetImprovementPlanUrl(std::forward<ImprovementPlanUrlT>(value)); return *this;}
     ///@}
   private:
 

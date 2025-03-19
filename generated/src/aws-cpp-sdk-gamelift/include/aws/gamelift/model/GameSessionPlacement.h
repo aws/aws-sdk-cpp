@@ -48,7 +48,7 @@ namespace Model
   class GameSessionPlacement
   {
   public:
-    AWS_GAMELIFT_API GameSessionPlacement();
+    AWS_GAMELIFT_API GameSessionPlacement() = default;
     AWS_GAMELIFT_API GameSessionPlacement(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API GameSessionPlacement& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -58,14 +58,12 @@ namespace Model
     /**
      * <p>A unique identifier for a game session placement.</p>
      */
-    inline const Aws::String& GetPlacementId() const{ return m_placementId; }
+    inline const Aws::String& GetPlacementId() const { return m_placementId; }
     inline bool PlacementIdHasBeenSet() const { return m_placementIdHasBeenSet; }
-    inline void SetPlacementId(const Aws::String& value) { m_placementIdHasBeenSet = true; m_placementId = value; }
-    inline void SetPlacementId(Aws::String&& value) { m_placementIdHasBeenSet = true; m_placementId = std::move(value); }
-    inline void SetPlacementId(const char* value) { m_placementIdHasBeenSet = true; m_placementId.assign(value); }
-    inline GameSessionPlacement& WithPlacementId(const Aws::String& value) { SetPlacementId(value); return *this;}
-    inline GameSessionPlacement& WithPlacementId(Aws::String&& value) { SetPlacementId(std::move(value)); return *this;}
-    inline GameSessionPlacement& WithPlacementId(const char* value) { SetPlacementId(value); return *this;}
+    template<typename PlacementIdT = Aws::String>
+    void SetPlacementId(PlacementIdT&& value) { m_placementIdHasBeenSet = true; m_placementId = std::forward<PlacementIdT>(value); }
+    template<typename PlacementIdT = Aws::String>
+    GameSessionPlacement& WithPlacementId(PlacementIdT&& value) { SetPlacementId(std::forward<PlacementIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +71,12 @@ namespace Model
      * <p>A descriptive label that is associated with game session queue. Queue names
      * must be unique within each Region.</p>
      */
-    inline const Aws::String& GetGameSessionQueueName() const{ return m_gameSessionQueueName; }
+    inline const Aws::String& GetGameSessionQueueName() const { return m_gameSessionQueueName; }
     inline bool GameSessionQueueNameHasBeenSet() const { return m_gameSessionQueueNameHasBeenSet; }
-    inline void SetGameSessionQueueName(const Aws::String& value) { m_gameSessionQueueNameHasBeenSet = true; m_gameSessionQueueName = value; }
-    inline void SetGameSessionQueueName(Aws::String&& value) { m_gameSessionQueueNameHasBeenSet = true; m_gameSessionQueueName = std::move(value); }
-    inline void SetGameSessionQueueName(const char* value) { m_gameSessionQueueNameHasBeenSet = true; m_gameSessionQueueName.assign(value); }
-    inline GameSessionPlacement& WithGameSessionQueueName(const Aws::String& value) { SetGameSessionQueueName(value); return *this;}
-    inline GameSessionPlacement& WithGameSessionQueueName(Aws::String&& value) { SetGameSessionQueueName(std::move(value)); return *this;}
-    inline GameSessionPlacement& WithGameSessionQueueName(const char* value) { SetGameSessionQueueName(value); return *this;}
+    template<typename GameSessionQueueNameT = Aws::String>
+    void SetGameSessionQueueName(GameSessionQueueNameT&& value) { m_gameSessionQueueNameHasBeenSet = true; m_gameSessionQueueName = std::forward<GameSessionQueueNameT>(value); }
+    template<typename GameSessionQueueNameT = Aws::String>
+    GameSessionPlacement& WithGameSessionQueueName(GameSessionQueueNameT&& value) { SetGameSessionQueueName(std::forward<GameSessionQueueNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,12 +93,10 @@ namespace Model
      * are the game session terminated before the placement process was completed, or
      * an unexpected internal error.</p> </li> </ul>
      */
-    inline const GameSessionPlacementState& GetStatus() const{ return m_status; }
+    inline GameSessionPlacementState GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const GameSessionPlacementState& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(GameSessionPlacementState&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline GameSessionPlacement& WithStatus(const GameSessionPlacementState& value) { SetStatus(value); return *this;}
-    inline GameSessionPlacement& WithStatus(GameSessionPlacementState&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(GameSessionPlacementState value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GameSessionPlacement& WithStatus(GameSessionPlacementState value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -110,14 +104,14 @@ namespace Model
      * <p>A set of key-value pairs that can store custom data in a game session. For
      * example: <code>{"Key": "difficulty", "Value": "novice"}</code>.</p>
      */
-    inline const Aws::Vector<GameProperty>& GetGameProperties() const{ return m_gameProperties; }
+    inline const Aws::Vector<GameProperty>& GetGameProperties() const { return m_gameProperties; }
     inline bool GamePropertiesHasBeenSet() const { return m_gamePropertiesHasBeenSet; }
-    inline void SetGameProperties(const Aws::Vector<GameProperty>& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties = value; }
-    inline void SetGameProperties(Aws::Vector<GameProperty>&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties = std::move(value); }
-    inline GameSessionPlacement& WithGameProperties(const Aws::Vector<GameProperty>& value) { SetGameProperties(value); return *this;}
-    inline GameSessionPlacement& WithGameProperties(Aws::Vector<GameProperty>&& value) { SetGameProperties(std::move(value)); return *this;}
-    inline GameSessionPlacement& AddGameProperties(const GameProperty& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties.push_back(value); return *this; }
-    inline GameSessionPlacement& AddGameProperties(GameProperty&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties.push_back(std::move(value)); return *this; }
+    template<typename GamePropertiesT = Aws::Vector<GameProperty>>
+    void SetGameProperties(GamePropertiesT&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties = std::forward<GamePropertiesT>(value); }
+    template<typename GamePropertiesT = Aws::Vector<GameProperty>>
+    GameSessionPlacement& WithGameProperties(GamePropertiesT&& value) { SetGameProperties(std::forward<GamePropertiesT>(value)); return *this;}
+    template<typename GamePropertiesT = GameProperty>
+    GameSessionPlacement& AddGameProperties(GamePropertiesT&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties.emplace_back(std::forward<GamePropertiesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -125,7 +119,7 @@ namespace Model
      * <p>The maximum number of players that can be connected simultaneously to the
      * game session.</p>
      */
-    inline int GetMaximumPlayerSessionCount() const{ return m_maximumPlayerSessionCount; }
+    inline int GetMaximumPlayerSessionCount() const { return m_maximumPlayerSessionCount; }
     inline bool MaximumPlayerSessionCountHasBeenSet() const { return m_maximumPlayerSessionCountHasBeenSet; }
     inline void SetMaximumPlayerSessionCount(int value) { m_maximumPlayerSessionCountHasBeenSet = true; m_maximumPlayerSessionCount = value; }
     inline GameSessionPlacement& WithMaximumPlayerSessionCount(int value) { SetMaximumPlayerSessionCount(value); return *this;}
@@ -136,14 +130,12 @@ namespace Model
      * <p>A descriptive label that is associated with a game session. Session names do
      * not need to be unique.</p>
      */
-    inline const Aws::String& GetGameSessionName() const{ return m_gameSessionName; }
+    inline const Aws::String& GetGameSessionName() const { return m_gameSessionName; }
     inline bool GameSessionNameHasBeenSet() const { return m_gameSessionNameHasBeenSet; }
-    inline void SetGameSessionName(const Aws::String& value) { m_gameSessionNameHasBeenSet = true; m_gameSessionName = value; }
-    inline void SetGameSessionName(Aws::String&& value) { m_gameSessionNameHasBeenSet = true; m_gameSessionName = std::move(value); }
-    inline void SetGameSessionName(const char* value) { m_gameSessionNameHasBeenSet = true; m_gameSessionName.assign(value); }
-    inline GameSessionPlacement& WithGameSessionName(const Aws::String& value) { SetGameSessionName(value); return *this;}
-    inline GameSessionPlacement& WithGameSessionName(Aws::String&& value) { SetGameSessionName(std::move(value)); return *this;}
-    inline GameSessionPlacement& WithGameSessionName(const char* value) { SetGameSessionName(value); return *this;}
+    template<typename GameSessionNameT = Aws::String>
+    void SetGameSessionName(GameSessionNameT&& value) { m_gameSessionNameHasBeenSet = true; m_gameSessionName = std::forward<GameSessionNameT>(value); }
+    template<typename GameSessionNameT = Aws::String>
+    GameSessionPlacement& WithGameSessionName(GameSessionNameT&& value) { SetGameSessionName(std::forward<GameSessionNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -151,14 +143,12 @@ namespace Model
      * <p>A unique identifier for the game session. This value isn't final until
      * placement status is <code>FULFILLED</code>.</p>
      */
-    inline const Aws::String& GetGameSessionId() const{ return m_gameSessionId; }
+    inline const Aws::String& GetGameSessionId() const { return m_gameSessionId; }
     inline bool GameSessionIdHasBeenSet() const { return m_gameSessionIdHasBeenSet; }
-    inline void SetGameSessionId(const Aws::String& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = value; }
-    inline void SetGameSessionId(Aws::String&& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = std::move(value); }
-    inline void SetGameSessionId(const char* value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId.assign(value); }
-    inline GameSessionPlacement& WithGameSessionId(const Aws::String& value) { SetGameSessionId(value); return *this;}
-    inline GameSessionPlacement& WithGameSessionId(Aws::String&& value) { SetGameSessionId(std::move(value)); return *this;}
-    inline GameSessionPlacement& WithGameSessionId(const char* value) { SetGameSessionId(value); return *this;}
+    template<typename GameSessionIdT = Aws::String>
+    void SetGameSessionId(GameSessionIdT&& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = std::forward<GameSessionIdT>(value); }
+    template<typename GameSessionIdT = Aws::String>
+    GameSessionPlacement& WithGameSessionId(GameSessionIdT&& value) { SetGameSessionId(std::forward<GameSessionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -167,14 +157,12 @@ namespace Model
      * identifier is unique across all Regions. This value isn't final until placement
      * status is <code>FULFILLED</code>.</p>
      */
-    inline const Aws::String& GetGameSessionArn() const{ return m_gameSessionArn; }
+    inline const Aws::String& GetGameSessionArn() const { return m_gameSessionArn; }
     inline bool GameSessionArnHasBeenSet() const { return m_gameSessionArnHasBeenSet; }
-    inline void SetGameSessionArn(const Aws::String& value) { m_gameSessionArnHasBeenSet = true; m_gameSessionArn = value; }
-    inline void SetGameSessionArn(Aws::String&& value) { m_gameSessionArnHasBeenSet = true; m_gameSessionArn = std::move(value); }
-    inline void SetGameSessionArn(const char* value) { m_gameSessionArnHasBeenSet = true; m_gameSessionArn.assign(value); }
-    inline GameSessionPlacement& WithGameSessionArn(const Aws::String& value) { SetGameSessionArn(value); return *this;}
-    inline GameSessionPlacement& WithGameSessionArn(Aws::String&& value) { SetGameSessionArn(std::move(value)); return *this;}
-    inline GameSessionPlacement& WithGameSessionArn(const char* value) { SetGameSessionArn(value); return *this;}
+    template<typename GameSessionArnT = Aws::String>
+    void SetGameSessionArn(GameSessionArnT&& value) { m_gameSessionArnHasBeenSet = true; m_gameSessionArn = std::forward<GameSessionArnT>(value); }
+    template<typename GameSessionArnT = Aws::String>
+    GameSessionPlacement& WithGameSessionArn(GameSessionArnT&& value) { SetGameSessionArn(std::forward<GameSessionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -183,14 +171,12 @@ namespace Model
      * is running. This value isn't final until placement status is
      * <code>FULFILLED</code>.</p>
      */
-    inline const Aws::String& GetGameSessionRegion() const{ return m_gameSessionRegion; }
+    inline const Aws::String& GetGameSessionRegion() const { return m_gameSessionRegion; }
     inline bool GameSessionRegionHasBeenSet() const { return m_gameSessionRegionHasBeenSet; }
-    inline void SetGameSessionRegion(const Aws::String& value) { m_gameSessionRegionHasBeenSet = true; m_gameSessionRegion = value; }
-    inline void SetGameSessionRegion(Aws::String&& value) { m_gameSessionRegionHasBeenSet = true; m_gameSessionRegion = std::move(value); }
-    inline void SetGameSessionRegion(const char* value) { m_gameSessionRegionHasBeenSet = true; m_gameSessionRegion.assign(value); }
-    inline GameSessionPlacement& WithGameSessionRegion(const Aws::String& value) { SetGameSessionRegion(value); return *this;}
-    inline GameSessionPlacement& WithGameSessionRegion(Aws::String&& value) { SetGameSessionRegion(std::move(value)); return *this;}
-    inline GameSessionPlacement& WithGameSessionRegion(const char* value) { SetGameSessionRegion(value); return *this;}
+    template<typename GameSessionRegionT = Aws::String>
+    void SetGameSessionRegion(GameSessionRegionT&& value) { m_gameSessionRegionHasBeenSet = true; m_gameSessionRegion = std::forward<GameSessionRegionT>(value); }
+    template<typename GameSessionRegionT = Aws::String>
+    GameSessionPlacement& WithGameSessionRegion(GameSessionRegionT&& value) { SetGameSessionRegion(std::forward<GameSessionRegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -199,14 +185,14 @@ namespace Model
      * latency that a player experiences when connected to Amazon Web Services
      * Regions.</p>
      */
-    inline const Aws::Vector<PlayerLatency>& GetPlayerLatencies() const{ return m_playerLatencies; }
+    inline const Aws::Vector<PlayerLatency>& GetPlayerLatencies() const { return m_playerLatencies; }
     inline bool PlayerLatenciesHasBeenSet() const { return m_playerLatenciesHasBeenSet; }
-    inline void SetPlayerLatencies(const Aws::Vector<PlayerLatency>& value) { m_playerLatenciesHasBeenSet = true; m_playerLatencies = value; }
-    inline void SetPlayerLatencies(Aws::Vector<PlayerLatency>&& value) { m_playerLatenciesHasBeenSet = true; m_playerLatencies = std::move(value); }
-    inline GameSessionPlacement& WithPlayerLatencies(const Aws::Vector<PlayerLatency>& value) { SetPlayerLatencies(value); return *this;}
-    inline GameSessionPlacement& WithPlayerLatencies(Aws::Vector<PlayerLatency>&& value) { SetPlayerLatencies(std::move(value)); return *this;}
-    inline GameSessionPlacement& AddPlayerLatencies(const PlayerLatency& value) { m_playerLatenciesHasBeenSet = true; m_playerLatencies.push_back(value); return *this; }
-    inline GameSessionPlacement& AddPlayerLatencies(PlayerLatency&& value) { m_playerLatenciesHasBeenSet = true; m_playerLatencies.push_back(std::move(value)); return *this; }
+    template<typename PlayerLatenciesT = Aws::Vector<PlayerLatency>>
+    void SetPlayerLatencies(PlayerLatenciesT&& value) { m_playerLatenciesHasBeenSet = true; m_playerLatencies = std::forward<PlayerLatenciesT>(value); }
+    template<typename PlayerLatenciesT = Aws::Vector<PlayerLatency>>
+    GameSessionPlacement& WithPlayerLatencies(PlayerLatenciesT&& value) { SetPlayerLatencies(std::forward<PlayerLatenciesT>(value)); return *this;}
+    template<typename PlayerLatenciesT = PlayerLatency>
+    GameSessionPlacement& AddPlayerLatencies(PlayerLatenciesT&& value) { m_playerLatenciesHasBeenSet = true; m_playerLatencies.emplace_back(std::forward<PlayerLatenciesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -215,12 +201,12 @@ namespace Model
      * number expressed in Unix time as milliseconds (for example
      * <code>"1469498468.057"</code>).</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline GameSessionPlacement& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline GameSessionPlacement& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    GameSessionPlacement& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -228,12 +214,12 @@ namespace Model
      * <p>Time stamp indicating when this request was completed, canceled, or timed
      * out.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline GameSessionPlacement& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline GameSessionPlacement& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    GameSessionPlacement& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -242,14 +228,12 @@ namespace Model
      * server, an app needs both the IP address and port number. This value isn't final
      * until placement status is <code>FULFILLED</code>. </p>
      */
-    inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
+    inline const Aws::String& GetIpAddress() const { return m_ipAddress; }
     inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
-    inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
-    inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
-    inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
-    inline GameSessionPlacement& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
-    inline GameSessionPlacement& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
-    inline GameSessionPlacement& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
+    template<typename IpAddressT = Aws::String>
+    void SetIpAddress(IpAddressT&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::forward<IpAddressT>(value); }
+    template<typename IpAddressT = Aws::String>
+    GameSessionPlacement& WithIpAddress(IpAddressT&& value) { SetIpAddress(std::forward<IpAddressT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -265,14 +249,12 @@ namespace Model
      * session that is running on a TLS-enabled fleet, you must use the DNS name, not
      * the IP address.</p>
      */
-    inline const Aws::String& GetDnsName() const{ return m_dnsName; }
+    inline const Aws::String& GetDnsName() const { return m_dnsName; }
     inline bool DnsNameHasBeenSet() const { return m_dnsNameHasBeenSet; }
-    inline void SetDnsName(const Aws::String& value) { m_dnsNameHasBeenSet = true; m_dnsName = value; }
-    inline void SetDnsName(Aws::String&& value) { m_dnsNameHasBeenSet = true; m_dnsName = std::move(value); }
-    inline void SetDnsName(const char* value) { m_dnsNameHasBeenSet = true; m_dnsName.assign(value); }
-    inline GameSessionPlacement& WithDnsName(const Aws::String& value) { SetDnsName(value); return *this;}
-    inline GameSessionPlacement& WithDnsName(Aws::String&& value) { SetDnsName(std::move(value)); return *this;}
-    inline GameSessionPlacement& WithDnsName(const char* value) { SetDnsName(value); return *this;}
+    template<typename DnsNameT = Aws::String>
+    void SetDnsName(DnsNameT&& value) { m_dnsNameHasBeenSet = true; m_dnsName = std::forward<DnsNameT>(value); }
+    template<typename DnsNameT = Aws::String>
+    GameSessionPlacement& WithDnsName(DnsNameT&& value) { SetDnsName(std::forward<DnsNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -281,7 +263,7 @@ namespace Model
      * server, an app needs both the IP address and port number. This value isn't final
      * until placement status is <code>FULFILLED</code>.</p>
      */
-    inline int GetPort() const{ return m_port; }
+    inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline GameSessionPlacement& WithPort(int value) { SetPort(value); return *this;}
@@ -295,14 +277,14 @@ namespace Model
      * <code>FULFILLED</code>). This information includes the player ID, provided in
      * the placement request, and a corresponding player session ID.</p>
      */
-    inline const Aws::Vector<PlacedPlayerSession>& GetPlacedPlayerSessions() const{ return m_placedPlayerSessions; }
+    inline const Aws::Vector<PlacedPlayerSession>& GetPlacedPlayerSessions() const { return m_placedPlayerSessions; }
     inline bool PlacedPlayerSessionsHasBeenSet() const { return m_placedPlayerSessionsHasBeenSet; }
-    inline void SetPlacedPlayerSessions(const Aws::Vector<PlacedPlayerSession>& value) { m_placedPlayerSessionsHasBeenSet = true; m_placedPlayerSessions = value; }
-    inline void SetPlacedPlayerSessions(Aws::Vector<PlacedPlayerSession>&& value) { m_placedPlayerSessionsHasBeenSet = true; m_placedPlayerSessions = std::move(value); }
-    inline GameSessionPlacement& WithPlacedPlayerSessions(const Aws::Vector<PlacedPlayerSession>& value) { SetPlacedPlayerSessions(value); return *this;}
-    inline GameSessionPlacement& WithPlacedPlayerSessions(Aws::Vector<PlacedPlayerSession>&& value) { SetPlacedPlayerSessions(std::move(value)); return *this;}
-    inline GameSessionPlacement& AddPlacedPlayerSessions(const PlacedPlayerSession& value) { m_placedPlayerSessionsHasBeenSet = true; m_placedPlayerSessions.push_back(value); return *this; }
-    inline GameSessionPlacement& AddPlacedPlayerSessions(PlacedPlayerSession&& value) { m_placedPlayerSessionsHasBeenSet = true; m_placedPlayerSessions.push_back(std::move(value)); return *this; }
+    template<typename PlacedPlayerSessionsT = Aws::Vector<PlacedPlayerSession>>
+    void SetPlacedPlayerSessions(PlacedPlayerSessionsT&& value) { m_placedPlayerSessionsHasBeenSet = true; m_placedPlayerSessions = std::forward<PlacedPlayerSessionsT>(value); }
+    template<typename PlacedPlayerSessionsT = Aws::Vector<PlacedPlayerSession>>
+    GameSessionPlacement& WithPlacedPlayerSessions(PlacedPlayerSessionsT&& value) { SetPlacedPlayerSessions(std::forward<PlacedPlayerSessionsT>(value)); return *this;}
+    template<typename PlacedPlayerSessionsT = PlacedPlayerSession>
+    GameSessionPlacement& AddPlacedPlayerSessions(PlacedPlayerSessionsT&& value) { m_placedPlayerSessionsHasBeenSet = true; m_placedPlayerSessions.emplace_back(std::forward<PlacedPlayerSessionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -313,14 +295,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a game session</a>.</p>
      */
-    inline const Aws::String& GetGameSessionData() const{ return m_gameSessionData; }
+    inline const Aws::String& GetGameSessionData() const { return m_gameSessionData; }
     inline bool GameSessionDataHasBeenSet() const { return m_gameSessionDataHasBeenSet; }
-    inline void SetGameSessionData(const Aws::String& value) { m_gameSessionDataHasBeenSet = true; m_gameSessionData = value; }
-    inline void SetGameSessionData(Aws::String&& value) { m_gameSessionDataHasBeenSet = true; m_gameSessionData = std::move(value); }
-    inline void SetGameSessionData(const char* value) { m_gameSessionDataHasBeenSet = true; m_gameSessionData.assign(value); }
-    inline GameSessionPlacement& WithGameSessionData(const Aws::String& value) { SetGameSessionData(value); return *this;}
-    inline GameSessionPlacement& WithGameSessionData(Aws::String&& value) { SetGameSessionData(std::move(value)); return *this;}
-    inline GameSessionPlacement& WithGameSessionData(const char* value) { SetGameSessionData(value); return *this;}
+    template<typename GameSessionDataT = Aws::String>
+    void SetGameSessionData(GameSessionDataT&& value) { m_gameSessionDataHasBeenSet = true; m_gameSessionData = std::forward<GameSessionDataT>(value); }
+    template<typename GameSessionDataT = Aws::String>
+    GameSessionPlacement& WithGameSessionData(GameSessionDataT&& value) { SetGameSessionData(std::forward<GameSessionDataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -333,14 +313,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
      * Data</a>.</p>
      */
-    inline const Aws::String& GetMatchmakerData() const{ return m_matchmakerData; }
+    inline const Aws::String& GetMatchmakerData() const { return m_matchmakerData; }
     inline bool MatchmakerDataHasBeenSet() const { return m_matchmakerDataHasBeenSet; }
-    inline void SetMatchmakerData(const Aws::String& value) { m_matchmakerDataHasBeenSet = true; m_matchmakerData = value; }
-    inline void SetMatchmakerData(Aws::String&& value) { m_matchmakerDataHasBeenSet = true; m_matchmakerData = std::move(value); }
-    inline void SetMatchmakerData(const char* value) { m_matchmakerDataHasBeenSet = true; m_matchmakerData.assign(value); }
-    inline GameSessionPlacement& WithMatchmakerData(const Aws::String& value) { SetMatchmakerData(value); return *this;}
-    inline GameSessionPlacement& WithMatchmakerData(Aws::String&& value) { SetMatchmakerData(std::move(value)); return *this;}
-    inline GameSessionPlacement& WithMatchmakerData(const char* value) { SetMatchmakerData(value); return *this;}
+    template<typename MatchmakerDataT = Aws::String>
+    void SetMatchmakerData(MatchmakerDataT&& value) { m_matchmakerDataHasBeenSet = true; m_matchmakerData = std::forward<MatchmakerDataT>(value); }
+    template<typename MatchmakerDataT = Aws::String>
+    GameSessionPlacement& WithMatchmakerData(MatchmakerDataT&& value) { SetMatchmakerData(std::forward<MatchmakerDataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -353,12 +331,12 @@ namespace Model
      * override list for the first placement attempt only or for all placement
      * attempts.</p>
      */
-    inline const PriorityConfigurationOverride& GetPriorityConfigurationOverride() const{ return m_priorityConfigurationOverride; }
+    inline const PriorityConfigurationOverride& GetPriorityConfigurationOverride() const { return m_priorityConfigurationOverride; }
     inline bool PriorityConfigurationOverrideHasBeenSet() const { return m_priorityConfigurationOverrideHasBeenSet; }
-    inline void SetPriorityConfigurationOverride(const PriorityConfigurationOverride& value) { m_priorityConfigurationOverrideHasBeenSet = true; m_priorityConfigurationOverride = value; }
-    inline void SetPriorityConfigurationOverride(PriorityConfigurationOverride&& value) { m_priorityConfigurationOverrideHasBeenSet = true; m_priorityConfigurationOverride = std::move(value); }
-    inline GameSessionPlacement& WithPriorityConfigurationOverride(const PriorityConfigurationOverride& value) { SetPriorityConfigurationOverride(value); return *this;}
-    inline GameSessionPlacement& WithPriorityConfigurationOverride(PriorityConfigurationOverride&& value) { SetPriorityConfigurationOverride(std::move(value)); return *this;}
+    template<typename PriorityConfigurationOverrideT = PriorityConfigurationOverride>
+    void SetPriorityConfigurationOverride(PriorityConfigurationOverrideT&& value) { m_priorityConfigurationOverrideHasBeenSet = true; m_priorityConfigurationOverride = std::forward<PriorityConfigurationOverrideT>(value); }
+    template<typename PriorityConfigurationOverrideT = PriorityConfigurationOverride>
+    GameSessionPlacement& WithPriorityConfigurationOverride(PriorityConfigurationOverrideT&& value) { SetPriorityConfigurationOverride(std::forward<PriorityConfigurationOverrideT>(value)); return *this;}
     ///@}
   private:
 
@@ -368,13 +346,13 @@ namespace Model
     Aws::String m_gameSessionQueueName;
     bool m_gameSessionQueueNameHasBeenSet = false;
 
-    GameSessionPlacementState m_status;
+    GameSessionPlacementState m_status{GameSessionPlacementState::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::Vector<GameProperty> m_gameProperties;
     bool m_gamePropertiesHasBeenSet = false;
 
-    int m_maximumPlayerSessionCount;
+    int m_maximumPlayerSessionCount{0};
     bool m_maximumPlayerSessionCountHasBeenSet = false;
 
     Aws::String m_gameSessionName;
@@ -392,10 +370,10 @@ namespace Model
     Aws::Vector<PlayerLatency> m_playerLatencies;
     bool m_playerLatenciesHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
 
     Aws::String m_ipAddress;
@@ -404,7 +382,7 @@ namespace Model
     Aws::String m_dnsName;
     bool m_dnsNameHasBeenSet = false;
 
-    int m_port;
+    int m_port{0};
     bool m_portHasBeenSet = false;
 
     Aws::Vector<PlacedPlayerSession> m_placedPlayerSessions;

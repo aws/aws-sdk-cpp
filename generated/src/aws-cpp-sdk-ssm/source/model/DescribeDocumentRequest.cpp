@@ -12,13 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeDocumentRequest::DescribeDocumentRequest() : 
-    m_nameHasBeenSet(false),
-    m_documentVersionHasBeenSet(false),
-    m_versionNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDocumentRequest::SerializePayload() const
 {
   JsonValue payload;

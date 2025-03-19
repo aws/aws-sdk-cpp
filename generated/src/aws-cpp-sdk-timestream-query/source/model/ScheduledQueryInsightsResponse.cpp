@@ -18,20 +18,7 @@ namespace TimestreamQuery
 namespace Model
 {
 
-ScheduledQueryInsightsResponse::ScheduledQueryInsightsResponse() : 
-    m_querySpatialCoverageHasBeenSet(false),
-    m_queryTemporalRangeHasBeenSet(false),
-    m_queryTableCount(0),
-    m_queryTableCountHasBeenSet(false),
-    m_outputRows(0),
-    m_outputRowsHasBeenSet(false),
-    m_outputBytes(0),
-    m_outputBytesHasBeenSet(false)
-{
-}
-
 ScheduledQueryInsightsResponse::ScheduledQueryInsightsResponse(JsonView jsonValue)
-  : ScheduledQueryInsightsResponse()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ ScheduledQueryInsightsResponse& ScheduledQueryInsightsResponse::operator =(JsonV
   if(jsonValue.ValueExists("QuerySpatialCoverage"))
   {
     m_querySpatialCoverage = jsonValue.GetObject("QuerySpatialCoverage");
-
     m_querySpatialCoverageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueryTemporalRange"))
   {
     m_queryTemporalRange = jsonValue.GetObject("QueryTemporalRange");
-
     m_queryTemporalRangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueryTableCount"))
   {
     m_queryTableCount = jsonValue.GetInt64("QueryTableCount");
-
     m_queryTableCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputRows"))
   {
     m_outputRows = jsonValue.GetInt64("OutputRows");
-
     m_outputRowsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputBytes"))
   {
     m_outputBytes = jsonValue.GetInt64("OutputBytes");
-
     m_outputBytesHasBeenSet = true;
   }
-
   return *this;
 }
 

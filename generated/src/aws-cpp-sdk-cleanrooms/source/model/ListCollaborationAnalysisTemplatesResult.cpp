@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListCollaborationAnalysisTemplatesResult::ListCollaborationAnalysisTemplatesResult()
-{
-}
-
 ListCollaborationAnalysisTemplatesResult::ListCollaborationAnalysisTemplatesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListCollaborationAnalysisTemplatesResult& ListCollaborationAnalysisTemplatesResu
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("collaborationAnalysisTemplateSummaries"))
   {
     Aws::Utils::Array<JsonView> collaborationAnalysisTemplateSummariesJsonList = jsonValue.GetArray("collaborationAnalysisTemplateSummaries");
@@ -42,14 +37,15 @@ ListCollaborationAnalysisTemplatesResult& ListCollaborationAnalysisTemplatesResu
     {
       m_collaborationAnalysisTemplateSummaries.push_back(collaborationAnalysisTemplateSummariesJsonList[collaborationAnalysisTemplateSummariesIndex].AsObject());
     }
+    m_collaborationAnalysisTemplateSummariesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

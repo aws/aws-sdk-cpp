@@ -18,14 +18,7 @@ namespace CostOptimizationHub
 namespace Model
 {
 
-Ec2InstanceSavingsPlans::Ec2InstanceSavingsPlans() : 
-    m_configurationHasBeenSet(false),
-    m_costCalculationHasBeenSet(false)
-{
-}
-
 Ec2InstanceSavingsPlans::Ec2InstanceSavingsPlans(JsonView jsonValue)
-  : Ec2InstanceSavingsPlans()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Ec2InstanceSavingsPlans& Ec2InstanceSavingsPlans::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("configuration"))
   {
     m_configuration = jsonValue.GetObject("configuration");
-
     m_configurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("costCalculation"))
   {
     m_costCalculation = jsonValue.GetObject("costCalculation");
-
     m_costCalculationHasBeenSet = true;
   }
-
   return *this;
 }
 

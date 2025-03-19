@@ -12,14 +12,6 @@ using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutLifecycleEventHookExecutionStatusRequest::PutLifecycleEventHookExecutionStatusRequest() : 
-    m_deploymentIdHasBeenSet(false),
-    m_lifecycleEventHookExecutionIdHasBeenSet(false),
-    m_status(LifecycleEventStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 Aws::String PutLifecycleEventHookExecutionStatusRequest::SerializePayload() const
 {
   JsonValue payload;

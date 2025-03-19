@@ -19,14 +19,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-ReasoningContentBlock::ReasoningContentBlock() : 
-    m_reasoningTextHasBeenSet(false),
-    m_redactedContentHasBeenSet(false)
-{
-}
-
 ReasoningContentBlock::ReasoningContentBlock(JsonView jsonValue)
-  : ReasoningContentBlock()
 {
   *this = jsonValue;
 }
@@ -36,16 +29,13 @@ ReasoningContentBlock& ReasoningContentBlock::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("reasoningText"))
   {
     m_reasoningText = jsonValue.GetObject("reasoningText");
-
     m_reasoningTextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("redactedContent"))
   {
     m_redactedContent = HashingUtils::Base64Decode(jsonValue.GetString("redactedContent"));
     m_redactedContentHasBeenSet = true;
   }
-
   return *this;
 }
 

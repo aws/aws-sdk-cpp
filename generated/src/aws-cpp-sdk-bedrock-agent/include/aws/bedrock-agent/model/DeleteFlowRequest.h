@@ -25,7 +25,7 @@ namespace Model
   class DeleteFlowRequest : public BedrockAgentRequest
   {
   public:
-    AWS_BEDROCKAGENT_API DeleteFlowRequest();
+    AWS_BEDROCKAGENT_API DeleteFlowRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The unique identifier of the flow.</p>
      */
-    inline const Aws::String& GetFlowIdentifier() const{ return m_flowIdentifier; }
+    inline const Aws::String& GetFlowIdentifier() const { return m_flowIdentifier; }
     inline bool FlowIdentifierHasBeenSet() const { return m_flowIdentifierHasBeenSet; }
-    inline void SetFlowIdentifier(const Aws::String& value) { m_flowIdentifierHasBeenSet = true; m_flowIdentifier = value; }
-    inline void SetFlowIdentifier(Aws::String&& value) { m_flowIdentifierHasBeenSet = true; m_flowIdentifier = std::move(value); }
-    inline void SetFlowIdentifier(const char* value) { m_flowIdentifierHasBeenSet = true; m_flowIdentifier.assign(value); }
-    inline DeleteFlowRequest& WithFlowIdentifier(const Aws::String& value) { SetFlowIdentifier(value); return *this;}
-    inline DeleteFlowRequest& WithFlowIdentifier(Aws::String&& value) { SetFlowIdentifier(std::move(value)); return *this;}
-    inline DeleteFlowRequest& WithFlowIdentifier(const char* value) { SetFlowIdentifier(value); return *this;}
+    template<typename FlowIdentifierT = Aws::String>
+    void SetFlowIdentifier(FlowIdentifierT&& value) { m_flowIdentifierHasBeenSet = true; m_flowIdentifier = std::forward<FlowIdentifierT>(value); }
+    template<typename FlowIdentifierT = Aws::String>
+    DeleteFlowRequest& WithFlowIdentifier(FlowIdentifierT&& value) { SetFlowIdentifier(std::forward<FlowIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,7 +56,7 @@ namespace Model
      * resource is in use. If you set it to <code>true</code>, the resource will be
      * deleted even if the resource is in use.</p>
      */
-    inline bool GetSkipResourceInUseCheck() const{ return m_skipResourceInUseCheck; }
+    inline bool GetSkipResourceInUseCheck() const { return m_skipResourceInUseCheck; }
     inline bool SkipResourceInUseCheckHasBeenSet() const { return m_skipResourceInUseCheckHasBeenSet; }
     inline void SetSkipResourceInUseCheck(bool value) { m_skipResourceInUseCheckHasBeenSet = true; m_skipResourceInUseCheck = value; }
     inline DeleteFlowRequest& WithSkipResourceInUseCheck(bool value) { SetSkipResourceInUseCheck(value); return *this;}
@@ -68,7 +66,7 @@ namespace Model
     Aws::String m_flowIdentifier;
     bool m_flowIdentifierHasBeenSet = false;
 
-    bool m_skipResourceInUseCheck;
+    bool m_skipResourceInUseCheck{false};
     bool m_skipResourceInUseCheckHasBeenSet = false;
   };
 

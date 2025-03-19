@@ -34,7 +34,7 @@ namespace Model
   class ListDataflowEndpointGroupsResult
   {
   public:
-    AWS_GROUNDSTATION_API ListDataflowEndpointGroupsResult();
+    AWS_GROUNDSTATION_API ListDataflowEndpointGroupsResult() = default;
     AWS_GROUNDSTATION_API ListDataflowEndpointGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GROUNDSTATION_API ListDataflowEndpointGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,13 +43,13 @@ namespace Model
     /**
      * <p>A list of dataflow endpoint groups.</p>
      */
-    inline const Aws::Vector<DataflowEndpointListItem>& GetDataflowEndpointGroupList() const{ return m_dataflowEndpointGroupList; }
-    inline void SetDataflowEndpointGroupList(const Aws::Vector<DataflowEndpointListItem>& value) { m_dataflowEndpointGroupList = value; }
-    inline void SetDataflowEndpointGroupList(Aws::Vector<DataflowEndpointListItem>&& value) { m_dataflowEndpointGroupList = std::move(value); }
-    inline ListDataflowEndpointGroupsResult& WithDataflowEndpointGroupList(const Aws::Vector<DataflowEndpointListItem>& value) { SetDataflowEndpointGroupList(value); return *this;}
-    inline ListDataflowEndpointGroupsResult& WithDataflowEndpointGroupList(Aws::Vector<DataflowEndpointListItem>&& value) { SetDataflowEndpointGroupList(std::move(value)); return *this;}
-    inline ListDataflowEndpointGroupsResult& AddDataflowEndpointGroupList(const DataflowEndpointListItem& value) { m_dataflowEndpointGroupList.push_back(value); return *this; }
-    inline ListDataflowEndpointGroupsResult& AddDataflowEndpointGroupList(DataflowEndpointListItem&& value) { m_dataflowEndpointGroupList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DataflowEndpointListItem>& GetDataflowEndpointGroupList() const { return m_dataflowEndpointGroupList; }
+    template<typename DataflowEndpointGroupListT = Aws::Vector<DataflowEndpointListItem>>
+    void SetDataflowEndpointGroupList(DataflowEndpointGroupListT&& value) { m_dataflowEndpointGroupListHasBeenSet = true; m_dataflowEndpointGroupList = std::forward<DataflowEndpointGroupListT>(value); }
+    template<typename DataflowEndpointGroupListT = Aws::Vector<DataflowEndpointListItem>>
+    ListDataflowEndpointGroupsResult& WithDataflowEndpointGroupList(DataflowEndpointGroupListT&& value) { SetDataflowEndpointGroupList(std::forward<DataflowEndpointGroupListT>(value)); return *this;}
+    template<typename DataflowEndpointGroupListT = DataflowEndpointListItem>
+    ListDataflowEndpointGroupsResult& AddDataflowEndpointGroupList(DataflowEndpointGroupListT&& value) { m_dataflowEndpointGroupListHasBeenSet = true; m_dataflowEndpointGroupList.emplace_back(std::forward<DataflowEndpointGroupListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -58,32 +58,31 @@ namespace Model
      * <code>ListDataflowEndpointGroups</code> call. Used to get the next page of
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListDataflowEndpointGroupsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListDataflowEndpointGroupsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListDataflowEndpointGroupsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListDataflowEndpointGroupsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListDataflowEndpointGroupsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListDataflowEndpointGroupsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListDataflowEndpointGroupsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListDataflowEndpointGroupsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DataflowEndpointListItem> m_dataflowEndpointGroupList;
+    bool m_dataflowEndpointGroupListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

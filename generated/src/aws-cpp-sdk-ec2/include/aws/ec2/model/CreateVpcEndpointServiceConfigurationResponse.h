@@ -29,7 +29,7 @@ namespace Model
   class CreateVpcEndpointServiceConfigurationResponse
   {
   public:
-    AWS_EC2_API CreateVpcEndpointServiceConfigurationResponse();
+    AWS_EC2_API CreateVpcEndpointServiceConfigurationResponse() = default;
     AWS_EC2_API CreateVpcEndpointServiceConfigurationResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API CreateVpcEndpointServiceConfigurationResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,11 +38,11 @@ namespace Model
     /**
      * <p>Information about the service configuration.</p>
      */
-    inline const ServiceConfiguration& GetServiceConfiguration() const{ return m_serviceConfiguration; }
-    inline void SetServiceConfiguration(const ServiceConfiguration& value) { m_serviceConfiguration = value; }
-    inline void SetServiceConfiguration(ServiceConfiguration&& value) { m_serviceConfiguration = std::move(value); }
-    inline CreateVpcEndpointServiceConfigurationResponse& WithServiceConfiguration(const ServiceConfiguration& value) { SetServiceConfiguration(value); return *this;}
-    inline CreateVpcEndpointServiceConfigurationResponse& WithServiceConfiguration(ServiceConfiguration&& value) { SetServiceConfiguration(std::move(value)); return *this;}
+    inline const ServiceConfiguration& GetServiceConfiguration() const { return m_serviceConfiguration; }
+    template<typename ServiceConfigurationT = ServiceConfiguration>
+    void SetServiceConfiguration(ServiceConfigurationT&& value) { m_serviceConfigurationHasBeenSet = true; m_serviceConfiguration = std::forward<ServiceConfigurationT>(value); }
+    template<typename ServiceConfigurationT = ServiceConfiguration>
+    CreateVpcEndpointServiceConfigurationResponse& WithServiceConfiguration(ServiceConfigurationT&& value) { SetServiceConfiguration(std::forward<ServiceConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -50,30 +50,31 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-    inline void SetClientToken(const Aws::String& value) { m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientToken.assign(value); }
-    inline CreateVpcEndpointServiceConfigurationResponse& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateVpcEndpointServiceConfigurationResponse& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateVpcEndpointServiceConfigurationResponse& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateVpcEndpointServiceConfigurationResponse& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CreateVpcEndpointServiceConfigurationResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CreateVpcEndpointServiceConfigurationResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CreateVpcEndpointServiceConfigurationResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     ServiceConfiguration m_serviceConfiguration;
+    bool m_serviceConfigurationHasBeenSet = false;
 
     Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

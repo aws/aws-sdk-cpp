@@ -12,11 +12,6 @@ using namespace Aws::SSMQuickSetup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteConfigurationManagerRequest::DeleteConfigurationManagerRequest() : 
-    m_managerArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteConfigurationManagerRequest::SerializePayload() const
 {
   return {};

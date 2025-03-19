@@ -12,16 +12,6 @@ using namespace Aws::CodeStarconnections::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListSyncConfigurationsRequest::ListSyncConfigurationsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_repositoryLinkIdHasBeenSet(false),
-    m_syncType(SyncConfigurationType::NOT_SET),
-    m_syncTypeHasBeenSet(false)
-{
-}
-
 Aws::String ListSyncConfigurationsRequest::SerializePayload() const
 {
   JsonValue payload;

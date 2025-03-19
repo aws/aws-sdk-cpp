@@ -18,15 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-SupplementalDataStorageLocation::SupplementalDataStorageLocation() : 
-    m_s3LocationHasBeenSet(false),
-    m_type(SupplementalDataStorageLocationType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 SupplementalDataStorageLocation::SupplementalDataStorageLocation(JsonView jsonValue)
-  : SupplementalDataStorageLocation()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SupplementalDataStorageLocation& SupplementalDataStorageLocation::operator =(Jso
   if(jsonValue.ValueExists("s3Location"))
   {
     m_s3Location = jsonValue.GetObject("s3Location");
-
     m_s3LocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = SupplementalDataStorageLocationTypeMapper::GetSupplementalDataStorageLocationTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

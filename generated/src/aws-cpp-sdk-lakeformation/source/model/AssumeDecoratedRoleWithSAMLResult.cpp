@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AssumeDecoratedRoleWithSAMLResult::AssumeDecoratedRoleWithSAMLResult()
-{
-}
-
 AssumeDecoratedRoleWithSAMLResult::AssumeDecoratedRoleWithSAMLResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,33 +28,30 @@ AssumeDecoratedRoleWithSAMLResult& AssumeDecoratedRoleWithSAMLResult::operator =
   if(jsonValue.ValueExists("AccessKeyId"))
   {
     m_accessKeyId = jsonValue.GetString("AccessKeyId");
-
+    m_accessKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretAccessKey"))
   {
     m_secretAccessKey = jsonValue.GetString("SecretAccessKey");
-
+    m_secretAccessKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SessionToken"))
   {
     m_sessionToken = jsonValue.GetString("SessionToken");
-
+    m_sessionTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Expiration"))
   {
     m_expiration = jsonValue.GetDouble("Expiration");
-
+    m_expirationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

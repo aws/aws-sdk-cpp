@@ -18,34 +18,7 @@ namespace TranscribeService
 namespace Model
 {
 
-CallAnalyticsJob::CallAnalyticsJob() : 
-    m_callAnalyticsJobNameHasBeenSet(false),
-    m_callAnalyticsJobStatus(CallAnalyticsJobStatus::NOT_SET),
-    m_callAnalyticsJobStatusHasBeenSet(false),
-    m_callAnalyticsJobDetailsHasBeenSet(false),
-    m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_mediaSampleRateHertz(0),
-    m_mediaSampleRateHertzHasBeenSet(false),
-    m_mediaFormat(MediaFormat::NOT_SET),
-    m_mediaFormatHasBeenSet(false),
-    m_mediaHasBeenSet(false),
-    m_transcriptHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_completionTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_dataAccessRoleArnHasBeenSet(false),
-    m_identifiedLanguageScore(0.0),
-    m_identifiedLanguageScoreHasBeenSet(false),
-    m_settingsHasBeenSet(false),
-    m_channelDefinitionsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 CallAnalyticsJob::CallAnalyticsJob(JsonView jsonValue)
-  : CallAnalyticsJob()
 {
   *this = jsonValue;
 }
@@ -55,108 +28,78 @@ CallAnalyticsJob& CallAnalyticsJob::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CallAnalyticsJobName"))
   {
     m_callAnalyticsJobName = jsonValue.GetString("CallAnalyticsJobName");
-
     m_callAnalyticsJobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CallAnalyticsJobStatus"))
   {
     m_callAnalyticsJobStatus = CallAnalyticsJobStatusMapper::GetCallAnalyticsJobStatusForName(jsonValue.GetString("CallAnalyticsJobStatus"));
-
     m_callAnalyticsJobStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CallAnalyticsJobDetails"))
   {
     m_callAnalyticsJobDetails = jsonValue.GetObject("CallAnalyticsJobDetails");
-
     m_callAnalyticsJobDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LanguageCode"))
   {
     m_languageCode = LanguageCodeMapper::GetLanguageCodeForName(jsonValue.GetString("LanguageCode"));
-
     m_languageCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MediaSampleRateHertz"))
   {
     m_mediaSampleRateHertz = jsonValue.GetInteger("MediaSampleRateHertz");
-
     m_mediaSampleRateHertzHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MediaFormat"))
   {
     m_mediaFormat = MediaFormatMapper::GetMediaFormatForName(jsonValue.GetString("MediaFormat"));
-
     m_mediaFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Media"))
   {
     m_media = jsonValue.GetObject("Media");
-
     m_mediaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Transcript"))
   {
     m_transcript = jsonValue.GetObject("Transcript");
-
     m_transcriptHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompletionTime"))
   {
     m_completionTime = jsonValue.GetDouble("CompletionTime");
-
     m_completionTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = jsonValue.GetString("FailureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataAccessRoleArn"))
   {
     m_dataAccessRoleArn = jsonValue.GetString("DataAccessRoleArn");
-
     m_dataAccessRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdentifiedLanguageScore"))
   {
     m_identifiedLanguageScore = jsonValue.GetDouble("IdentifiedLanguageScore");
-
     m_identifiedLanguageScoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Settings"))
   {
     m_settings = jsonValue.GetObject("Settings");
-
     m_settingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChannelDefinitions"))
   {
     Aws::Utils::Array<JsonView> channelDefinitionsJsonList = jsonValue.GetArray("ChannelDefinitions");
@@ -166,7 +109,6 @@ CallAnalyticsJob& CallAnalyticsJob::operator =(JsonView jsonValue)
     }
     m_channelDefinitionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -176,7 +118,6 @@ CallAnalyticsJob& CallAnalyticsJob::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

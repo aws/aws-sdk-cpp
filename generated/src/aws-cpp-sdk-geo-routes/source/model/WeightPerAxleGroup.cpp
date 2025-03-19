@@ -18,22 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-WeightPerAxleGroup::WeightPerAxleGroup() : 
-    m_single(0),
-    m_singleHasBeenSet(false),
-    m_tandem(0),
-    m_tandemHasBeenSet(false),
-    m_triple(0),
-    m_tripleHasBeenSet(false),
-    m_quad(0),
-    m_quadHasBeenSet(false),
-    m_quint(0),
-    m_quintHasBeenSet(false)
-{
-}
-
 WeightPerAxleGroup::WeightPerAxleGroup(JsonView jsonValue)
-  : WeightPerAxleGroup()
 {
   *this = jsonValue;
 }
@@ -43,38 +28,28 @@ WeightPerAxleGroup& WeightPerAxleGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Single"))
   {
     m_single = jsonValue.GetInt64("Single");
-
     m_singleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tandem"))
   {
     m_tandem = jsonValue.GetInt64("Tandem");
-
     m_tandemHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Triple"))
   {
     m_triple = jsonValue.GetInt64("Triple");
-
     m_tripleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Quad"))
   {
     m_quad = jsonValue.GetInt64("Quad");
-
     m_quadHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Quint"))
   {
     m_quint = jsonValue.GetInt64("Quint");
-
     m_quintHasBeenSet = true;
   }
-
   return *this;
 }
 

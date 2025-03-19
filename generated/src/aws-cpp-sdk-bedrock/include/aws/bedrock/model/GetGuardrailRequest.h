@@ -25,7 +25,7 @@ namespace Model
   class GetGuardrailRequest : public BedrockRequest
   {
   public:
-    AWS_BEDROCK_API GetGuardrailRequest();
+    AWS_BEDROCK_API GetGuardrailRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p>The unique identifier of the guardrail for which to get details. This can be
      * an ID or the ARN.</p>
      */
-    inline const Aws::String& GetGuardrailIdentifier() const{ return m_guardrailIdentifier; }
+    inline const Aws::String& GetGuardrailIdentifier() const { return m_guardrailIdentifier; }
     inline bool GuardrailIdentifierHasBeenSet() const { return m_guardrailIdentifierHasBeenSet; }
-    inline void SetGuardrailIdentifier(const Aws::String& value) { m_guardrailIdentifierHasBeenSet = true; m_guardrailIdentifier = value; }
-    inline void SetGuardrailIdentifier(Aws::String&& value) { m_guardrailIdentifierHasBeenSet = true; m_guardrailIdentifier = std::move(value); }
-    inline void SetGuardrailIdentifier(const char* value) { m_guardrailIdentifierHasBeenSet = true; m_guardrailIdentifier.assign(value); }
-    inline GetGuardrailRequest& WithGuardrailIdentifier(const Aws::String& value) { SetGuardrailIdentifier(value); return *this;}
-    inline GetGuardrailRequest& WithGuardrailIdentifier(Aws::String&& value) { SetGuardrailIdentifier(std::move(value)); return *this;}
-    inline GetGuardrailRequest& WithGuardrailIdentifier(const char* value) { SetGuardrailIdentifier(value); return *this;}
+    template<typename GuardrailIdentifierT = Aws::String>
+    void SetGuardrailIdentifier(GuardrailIdentifierT&& value) { m_guardrailIdentifierHasBeenSet = true; m_guardrailIdentifier = std::forward<GuardrailIdentifierT>(value); }
+    template<typename GuardrailIdentifierT = Aws::String>
+    GetGuardrailRequest& WithGuardrailIdentifier(GuardrailIdentifierT&& value) { SetGuardrailIdentifier(std::forward<GuardrailIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The version of the guardrail for which to get details. If you don't specify a
      * version, the response returns details for the <code>DRAFT</code> version.</p>
      */
-    inline const Aws::String& GetGuardrailVersion() const{ return m_guardrailVersion; }
+    inline const Aws::String& GetGuardrailVersion() const { return m_guardrailVersion; }
     inline bool GuardrailVersionHasBeenSet() const { return m_guardrailVersionHasBeenSet; }
-    inline void SetGuardrailVersion(const Aws::String& value) { m_guardrailVersionHasBeenSet = true; m_guardrailVersion = value; }
-    inline void SetGuardrailVersion(Aws::String&& value) { m_guardrailVersionHasBeenSet = true; m_guardrailVersion = std::move(value); }
-    inline void SetGuardrailVersion(const char* value) { m_guardrailVersionHasBeenSet = true; m_guardrailVersion.assign(value); }
-    inline GetGuardrailRequest& WithGuardrailVersion(const Aws::String& value) { SetGuardrailVersion(value); return *this;}
-    inline GetGuardrailRequest& WithGuardrailVersion(Aws::String&& value) { SetGuardrailVersion(std::move(value)); return *this;}
-    inline GetGuardrailRequest& WithGuardrailVersion(const char* value) { SetGuardrailVersion(value); return *this;}
+    template<typename GuardrailVersionT = Aws::String>
+    void SetGuardrailVersion(GuardrailVersionT&& value) { m_guardrailVersionHasBeenSet = true; m_guardrailVersion = std::forward<GuardrailVersionT>(value); }
+    template<typename GuardrailVersionT = Aws::String>
+    GetGuardrailRequest& WithGuardrailVersion(GuardrailVersionT&& value) { SetGuardrailVersion(std::forward<GuardrailVersionT>(value)); return *this;}
     ///@}
   private:
 

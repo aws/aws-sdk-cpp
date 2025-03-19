@@ -12,10 +12,6 @@ using namespace Aws::FraudDetector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetKMSEncryptionKeyRequest::GetKMSEncryptionKeyRequest()
-{
-}
-
 Aws::String GetKMSEncryptionKeyRequest::SerializePayload() const
 {
   return "{}";

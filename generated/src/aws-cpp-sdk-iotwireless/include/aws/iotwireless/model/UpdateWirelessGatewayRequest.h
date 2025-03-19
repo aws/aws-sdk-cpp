@@ -22,7 +22,7 @@ namespace Model
   class UpdateWirelessGatewayRequest : public IoTWirelessRequest
   {
   public:
-    AWS_IOTWIRELESS_API UpdateWirelessGatewayRequest();
+    AWS_IOTWIRELESS_API UpdateWirelessGatewayRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,74 +37,67 @@ namespace Model
     /**
      * <p>The ID of the resource to update.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline UpdateWirelessGatewayRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline UpdateWirelessGatewayRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline UpdateWirelessGatewayRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    UpdateWirelessGatewayRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The new name of the resource.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateWirelessGatewayRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateWirelessGatewayRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateWirelessGatewayRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateWirelessGatewayRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A new description of the resource.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateWirelessGatewayRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateWirelessGatewayRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateWirelessGatewayRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateWirelessGatewayRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<Aws::Vector<Aws::String>>& GetJoinEuiFilters() const{ return m_joinEuiFilters; }
+    inline const Aws::Vector<Aws::Vector<Aws::String>>& GetJoinEuiFilters() const { return m_joinEuiFilters; }
     inline bool JoinEuiFiltersHasBeenSet() const { return m_joinEuiFiltersHasBeenSet; }
-    inline void SetJoinEuiFilters(const Aws::Vector<Aws::Vector<Aws::String>>& value) { m_joinEuiFiltersHasBeenSet = true; m_joinEuiFilters = value; }
-    inline void SetJoinEuiFilters(Aws::Vector<Aws::Vector<Aws::String>>&& value) { m_joinEuiFiltersHasBeenSet = true; m_joinEuiFilters = std::move(value); }
-    inline UpdateWirelessGatewayRequest& WithJoinEuiFilters(const Aws::Vector<Aws::Vector<Aws::String>>& value) { SetJoinEuiFilters(value); return *this;}
-    inline UpdateWirelessGatewayRequest& WithJoinEuiFilters(Aws::Vector<Aws::Vector<Aws::String>>&& value) { SetJoinEuiFilters(std::move(value)); return *this;}
-    inline UpdateWirelessGatewayRequest& AddJoinEuiFilters(const Aws::Vector<Aws::String>& value) { m_joinEuiFiltersHasBeenSet = true; m_joinEuiFilters.push_back(value); return *this; }
-    inline UpdateWirelessGatewayRequest& AddJoinEuiFilters(Aws::Vector<Aws::String>&& value) { m_joinEuiFiltersHasBeenSet = true; m_joinEuiFilters.push_back(std::move(value)); return *this; }
+    template<typename JoinEuiFiltersT = Aws::Vector<Aws::Vector<Aws::String>>>
+    void SetJoinEuiFilters(JoinEuiFiltersT&& value) { m_joinEuiFiltersHasBeenSet = true; m_joinEuiFilters = std::forward<JoinEuiFiltersT>(value); }
+    template<typename JoinEuiFiltersT = Aws::Vector<Aws::Vector<Aws::String>>>
+    UpdateWirelessGatewayRequest& WithJoinEuiFilters(JoinEuiFiltersT&& value) { SetJoinEuiFilters(std::forward<JoinEuiFiltersT>(value)); return *this;}
+    template<typename JoinEuiFiltersT = Aws::Vector<Aws::String>>
+    UpdateWirelessGatewayRequest& AddJoinEuiFilters(JoinEuiFiltersT&& value) { m_joinEuiFiltersHasBeenSet = true; m_joinEuiFilters.emplace_back(std::forward<JoinEuiFiltersT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<Aws::String>& GetNetIdFilters() const{ return m_netIdFilters; }
+    inline const Aws::Vector<Aws::String>& GetNetIdFilters() const { return m_netIdFilters; }
     inline bool NetIdFiltersHasBeenSet() const { return m_netIdFiltersHasBeenSet; }
-    inline void SetNetIdFilters(const Aws::Vector<Aws::String>& value) { m_netIdFiltersHasBeenSet = true; m_netIdFilters = value; }
-    inline void SetNetIdFilters(Aws::Vector<Aws::String>&& value) { m_netIdFiltersHasBeenSet = true; m_netIdFilters = std::move(value); }
-    inline UpdateWirelessGatewayRequest& WithNetIdFilters(const Aws::Vector<Aws::String>& value) { SetNetIdFilters(value); return *this;}
-    inline UpdateWirelessGatewayRequest& WithNetIdFilters(Aws::Vector<Aws::String>&& value) { SetNetIdFilters(std::move(value)); return *this;}
-    inline UpdateWirelessGatewayRequest& AddNetIdFilters(const Aws::String& value) { m_netIdFiltersHasBeenSet = true; m_netIdFilters.push_back(value); return *this; }
-    inline UpdateWirelessGatewayRequest& AddNetIdFilters(Aws::String&& value) { m_netIdFiltersHasBeenSet = true; m_netIdFilters.push_back(std::move(value)); return *this; }
-    inline UpdateWirelessGatewayRequest& AddNetIdFilters(const char* value) { m_netIdFiltersHasBeenSet = true; m_netIdFilters.push_back(value); return *this; }
+    template<typename NetIdFiltersT = Aws::Vector<Aws::String>>
+    void SetNetIdFilters(NetIdFiltersT&& value) { m_netIdFiltersHasBeenSet = true; m_netIdFilters = std::forward<NetIdFiltersT>(value); }
+    template<typename NetIdFiltersT = Aws::Vector<Aws::String>>
+    UpdateWirelessGatewayRequest& WithNetIdFilters(NetIdFiltersT&& value) { SetNetIdFilters(std::forward<NetIdFiltersT>(value)); return *this;}
+    template<typename NetIdFiltersT = Aws::String>
+    UpdateWirelessGatewayRequest& AddNetIdFilters(NetIdFiltersT&& value) { m_netIdFiltersHasBeenSet = true; m_netIdFilters.emplace_back(std::forward<NetIdFiltersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The MaxEIRP value.</p>
      */
-    inline double GetMaxEirp() const{ return m_maxEirp; }
+    inline double GetMaxEirp() const { return m_maxEirp; }
     inline bool MaxEirpHasBeenSet() const { return m_maxEirpHasBeenSet; }
     inline void SetMaxEirp(double value) { m_maxEirpHasBeenSet = true; m_maxEirp = value; }
     inline UpdateWirelessGatewayRequest& WithMaxEirp(double value) { SetMaxEirp(value); return *this;}
@@ -126,7 +119,7 @@ namespace Model
     Aws::Vector<Aws::String> m_netIdFilters;
     bool m_netIdFiltersHasBeenSet = false;
 
-    double m_maxEirp;
+    double m_maxEirp{0.0};
     bool m_maxEirpHasBeenSet = false;
   };
 

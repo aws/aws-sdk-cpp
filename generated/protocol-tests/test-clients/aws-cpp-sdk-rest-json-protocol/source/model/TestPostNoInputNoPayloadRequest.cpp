@@ -12,10 +12,6 @@ using namespace Aws::RestJsonProtocol::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-TestPostNoInputNoPayloadRequest::TestPostNoInputNoPayloadRequest()
-{
-}
-
 Aws::String TestPostNoInputNoPayloadRequest::SerializePayload() const
 {
   return {};

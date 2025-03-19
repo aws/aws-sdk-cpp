@@ -30,7 +30,7 @@ namespace Model
   class BatchModifyClusterSnapshotsResult
   {
   public:
-    AWS_REDSHIFT_API BatchModifyClusterSnapshotsResult();
+    AWS_REDSHIFT_API BatchModifyClusterSnapshotsResult() = default;
     AWS_REDSHIFT_API BatchModifyClusterSnapshotsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_REDSHIFT_API BatchModifyClusterSnapshotsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,44 +39,46 @@ namespace Model
     /**
      * <p>A list of the snapshots that were modified.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetResources() const{ return m_resources; }
-    inline void SetResources(const Aws::Vector<Aws::String>& value) { m_resources = value; }
-    inline void SetResources(Aws::Vector<Aws::String>&& value) { m_resources = std::move(value); }
-    inline BatchModifyClusterSnapshotsResult& WithResources(const Aws::Vector<Aws::String>& value) { SetResources(value); return *this;}
-    inline BatchModifyClusterSnapshotsResult& WithResources(Aws::Vector<Aws::String>&& value) { SetResources(std::move(value)); return *this;}
-    inline BatchModifyClusterSnapshotsResult& AddResources(const Aws::String& value) { m_resources.push_back(value); return *this; }
-    inline BatchModifyClusterSnapshotsResult& AddResources(Aws::String&& value) { m_resources.push_back(std::move(value)); return *this; }
-    inline BatchModifyClusterSnapshotsResult& AddResources(const char* value) { m_resources.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetResources() const { return m_resources; }
+    template<typename ResourcesT = Aws::Vector<Aws::String>>
+    void SetResources(ResourcesT&& value) { m_resourcesHasBeenSet = true; m_resources = std::forward<ResourcesT>(value); }
+    template<typename ResourcesT = Aws::Vector<Aws::String>>
+    BatchModifyClusterSnapshotsResult& WithResources(ResourcesT&& value) { SetResources(std::forward<ResourcesT>(value)); return *this;}
+    template<typename ResourcesT = Aws::String>
+    BatchModifyClusterSnapshotsResult& AddResources(ResourcesT&& value) { m_resourcesHasBeenSet = true; m_resources.emplace_back(std::forward<ResourcesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of any errors returned.</p>
      */
-    inline const Aws::Vector<SnapshotErrorMessage>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<SnapshotErrorMessage>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<SnapshotErrorMessage>&& value) { m_errors = std::move(value); }
-    inline BatchModifyClusterSnapshotsResult& WithErrors(const Aws::Vector<SnapshotErrorMessage>& value) { SetErrors(value); return *this;}
-    inline BatchModifyClusterSnapshotsResult& WithErrors(Aws::Vector<SnapshotErrorMessage>&& value) { SetErrors(std::move(value)); return *this;}
-    inline BatchModifyClusterSnapshotsResult& AddErrors(const SnapshotErrorMessage& value) { m_errors.push_back(value); return *this; }
-    inline BatchModifyClusterSnapshotsResult& AddErrors(SnapshotErrorMessage&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SnapshotErrorMessage>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<SnapshotErrorMessage>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<SnapshotErrorMessage>>
+    BatchModifyClusterSnapshotsResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = SnapshotErrorMessage>
+    BatchModifyClusterSnapshotsResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline BatchModifyClusterSnapshotsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline BatchModifyClusterSnapshotsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    BatchModifyClusterSnapshotsResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_resources;
+    bool m_resourcesHasBeenSet = false;
 
     Aws::Vector<SnapshotErrorMessage> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

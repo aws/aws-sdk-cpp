@@ -18,14 +18,7 @@ namespace mgn
 namespace Model
 {
 
-SourceServerConnectorAction::SourceServerConnectorAction() : 
-    m_connectorArnHasBeenSet(false),
-    m_credentialsSecretArnHasBeenSet(false)
-{
-}
-
 SourceServerConnectorAction::SourceServerConnectorAction(JsonView jsonValue)
-  : SourceServerConnectorAction()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SourceServerConnectorAction& SourceServerConnectorAction::operator =(JsonView js
   if(jsonValue.ValueExists("connectorArn"))
   {
     m_connectorArn = jsonValue.GetString("connectorArn");
-
     m_connectorArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("credentialsSecretArn"))
   {
     m_credentialsSecretArn = jsonValue.GetString("credentialsSecretArn");
-
     m_credentialsSecretArnHasBeenSet = true;
   }
-
   return *this;
 }
 

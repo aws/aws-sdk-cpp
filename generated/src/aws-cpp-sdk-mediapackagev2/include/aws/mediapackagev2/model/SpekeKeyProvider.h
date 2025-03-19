@@ -34,7 +34,7 @@ namespace Model
   class SpekeKeyProvider
   {
   public:
-    AWS_MEDIAPACKAGEV2_API SpekeKeyProvider();
+    AWS_MEDIAPACKAGEV2_API SpekeKeyProvider() = default;
     AWS_MEDIAPACKAGEV2_API SpekeKeyProvider(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGEV2_API SpekeKeyProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,12 @@ namespace Model
      * encryption contract, specify which audio and video encryption presets to
      * use.</p>
      */
-    inline const EncryptionContractConfiguration& GetEncryptionContractConfiguration() const{ return m_encryptionContractConfiguration; }
+    inline const EncryptionContractConfiguration& GetEncryptionContractConfiguration() const { return m_encryptionContractConfiguration; }
     inline bool EncryptionContractConfigurationHasBeenSet() const { return m_encryptionContractConfigurationHasBeenSet; }
-    inline void SetEncryptionContractConfiguration(const EncryptionContractConfiguration& value) { m_encryptionContractConfigurationHasBeenSet = true; m_encryptionContractConfiguration = value; }
-    inline void SetEncryptionContractConfiguration(EncryptionContractConfiguration&& value) { m_encryptionContractConfigurationHasBeenSet = true; m_encryptionContractConfiguration = std::move(value); }
-    inline SpekeKeyProvider& WithEncryptionContractConfiguration(const EncryptionContractConfiguration& value) { SetEncryptionContractConfiguration(value); return *this;}
-    inline SpekeKeyProvider& WithEncryptionContractConfiguration(EncryptionContractConfiguration&& value) { SetEncryptionContractConfiguration(std::move(value)); return *this;}
+    template<typename EncryptionContractConfigurationT = EncryptionContractConfiguration>
+    void SetEncryptionContractConfiguration(EncryptionContractConfigurationT&& value) { m_encryptionContractConfigurationHasBeenSet = true; m_encryptionContractConfiguration = std::forward<EncryptionContractConfigurationT>(value); }
+    template<typename EncryptionContractConfigurationT = EncryptionContractConfiguration>
+    SpekeKeyProvider& WithEncryptionContractConfiguration(EncryptionContractConfigurationT&& value) { SetEncryptionContractConfiguration(std::forward<EncryptionContractConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +65,12 @@ namespace Model
      * also known as the content ID.</p> <p>The following example shows a resource ID:
      * <code>MovieNight20171126093045</code> </p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline SpekeKeyProvider& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline SpekeKeyProvider& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline SpekeKeyProvider& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    SpekeKeyProvider& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,14 +78,13 @@ namespace Model
      * <p>The DRM solution provider you're using to protect your content during
      * distribution.</p>
      */
-    inline const Aws::Vector<DrmSystem>& GetDrmSystems() const{ return m_drmSystems; }
+    inline const Aws::Vector<DrmSystem>& GetDrmSystems() const { return m_drmSystems; }
     inline bool DrmSystemsHasBeenSet() const { return m_drmSystemsHasBeenSet; }
-    inline void SetDrmSystems(const Aws::Vector<DrmSystem>& value) { m_drmSystemsHasBeenSet = true; m_drmSystems = value; }
-    inline void SetDrmSystems(Aws::Vector<DrmSystem>&& value) { m_drmSystemsHasBeenSet = true; m_drmSystems = std::move(value); }
-    inline SpekeKeyProvider& WithDrmSystems(const Aws::Vector<DrmSystem>& value) { SetDrmSystems(value); return *this;}
-    inline SpekeKeyProvider& WithDrmSystems(Aws::Vector<DrmSystem>&& value) { SetDrmSystems(std::move(value)); return *this;}
-    inline SpekeKeyProvider& AddDrmSystems(const DrmSystem& value) { m_drmSystemsHasBeenSet = true; m_drmSystems.push_back(value); return *this; }
-    inline SpekeKeyProvider& AddDrmSystems(DrmSystem&& value) { m_drmSystemsHasBeenSet = true; m_drmSystems.push_back(std::move(value)); return *this; }
+    template<typename DrmSystemsT = Aws::Vector<DrmSystem>>
+    void SetDrmSystems(DrmSystemsT&& value) { m_drmSystemsHasBeenSet = true; m_drmSystems = std::forward<DrmSystemsT>(value); }
+    template<typename DrmSystemsT = Aws::Vector<DrmSystem>>
+    SpekeKeyProvider& WithDrmSystems(DrmSystemsT&& value) { SetDrmSystems(std::forward<DrmSystemsT>(value)); return *this;}
+    inline SpekeKeyProvider& AddDrmSystems(DrmSystem value) { m_drmSystemsHasBeenSet = true; m_drmSystems.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -100,14 +97,12 @@ namespace Model
      * <code>arn:aws:iam::{accountID}:role/{name}</code>. The following example shows a
      * role ARN: <code>arn:aws:iam::444455556666:role/SpekeAccess</code> </p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline SpekeKeyProvider& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline SpekeKeyProvider& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline SpekeKeyProvider& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    SpekeKeyProvider& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -118,14 +113,12 @@ namespace Model
      * <code>https://1wm2dx1f33.execute-api.us-west-2.amazonaws.com/SpekeSample/copyProtection</code>
      * </p>
      */
-    inline const Aws::String& GetUrl() const{ return m_url; }
+    inline const Aws::String& GetUrl() const { return m_url; }
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
-    inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
-    inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
-    inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
-    inline SpekeKeyProvider& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
-    inline SpekeKeyProvider& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
-    inline SpekeKeyProvider& WithUrl(const char* value) { SetUrl(value); return *this;}
+    template<typename UrlT = Aws::String>
+    void SetUrl(UrlT&& value) { m_urlHasBeenSet = true; m_url = std::forward<UrlT>(value); }
+    template<typename UrlT = Aws::String>
+    SpekeKeyProvider& WithUrl(UrlT&& value) { SetUrl(std::forward<UrlT>(value)); return *this;}
     ///@}
   private:
 

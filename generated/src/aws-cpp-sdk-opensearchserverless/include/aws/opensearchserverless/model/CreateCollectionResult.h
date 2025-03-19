@@ -28,7 +28,7 @@ namespace Model
   class CreateCollectionResult
   {
   public:
-    AWS_OPENSEARCHSERVERLESS_API CreateCollectionResult();
+    AWS_OPENSEARCHSERVERLESS_API CreateCollectionResult() = default;
     AWS_OPENSEARCHSERVERLESS_API CreateCollectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OPENSEARCHSERVERLESS_API CreateCollectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Details about the collection.</p>
      */
-    inline const CreateCollectionDetail& GetCreateCollectionDetail() const{ return m_createCollectionDetail; }
-    inline void SetCreateCollectionDetail(const CreateCollectionDetail& value) { m_createCollectionDetail = value; }
-    inline void SetCreateCollectionDetail(CreateCollectionDetail&& value) { m_createCollectionDetail = std::move(value); }
-    inline CreateCollectionResult& WithCreateCollectionDetail(const CreateCollectionDetail& value) { SetCreateCollectionDetail(value); return *this;}
-    inline CreateCollectionResult& WithCreateCollectionDetail(CreateCollectionDetail&& value) { SetCreateCollectionDetail(std::move(value)); return *this;}
+    inline const CreateCollectionDetail& GetCreateCollectionDetail() const { return m_createCollectionDetail; }
+    template<typename CreateCollectionDetailT = CreateCollectionDetail>
+    void SetCreateCollectionDetail(CreateCollectionDetailT&& value) { m_createCollectionDetailHasBeenSet = true; m_createCollectionDetail = std::forward<CreateCollectionDetailT>(value); }
+    template<typename CreateCollectionDetailT = CreateCollectionDetail>
+    CreateCollectionResult& WithCreateCollectionDetail(CreateCollectionDetailT&& value) { SetCreateCollectionDetail(std::forward<CreateCollectionDetailT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateCollectionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateCollectionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateCollectionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateCollectionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     CreateCollectionDetail m_createCollectionDetail;
+    bool m_createCollectionDetailHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

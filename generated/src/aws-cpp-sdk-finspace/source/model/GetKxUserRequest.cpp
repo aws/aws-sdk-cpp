@@ -12,12 +12,6 @@ using namespace Aws::finspace::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetKxUserRequest::GetKxUserRequest() : 
-    m_userNameHasBeenSet(false),
-    m_environmentIdHasBeenSet(false)
-{
-}
-
 Aws::String GetKxUserRequest::SerializePayload() const
 {
   return {};

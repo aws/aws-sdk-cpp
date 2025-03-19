@@ -29,7 +29,7 @@ namespace Model
   class DescribeTLSInspectionConfigurationResult
   {
   public:
-    AWS_NETWORKFIREWALL_API DescribeTLSInspectionConfigurationResult();
+    AWS_NETWORKFIREWALL_API DescribeTLSInspectionConfigurationResult() = default;
     AWS_NETWORKFIREWALL_API DescribeTLSInspectionConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NETWORKFIREWALL_API DescribeTLSInspectionConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -47,13 +47,11 @@ namespace Model
      * a current token. Reapply your changes as needed, then try the operation again
      * using the new token. </p>
      */
-    inline const Aws::String& GetUpdateToken() const{ return m_updateToken; }
-    inline void SetUpdateToken(const Aws::String& value) { m_updateToken = value; }
-    inline void SetUpdateToken(Aws::String&& value) { m_updateToken = std::move(value); }
-    inline void SetUpdateToken(const char* value) { m_updateToken.assign(value); }
-    inline DescribeTLSInspectionConfigurationResult& WithUpdateToken(const Aws::String& value) { SetUpdateToken(value); return *this;}
-    inline DescribeTLSInspectionConfigurationResult& WithUpdateToken(Aws::String&& value) { SetUpdateToken(std::move(value)); return *this;}
-    inline DescribeTLSInspectionConfigurationResult& WithUpdateToken(const char* value) { SetUpdateToken(value); return *this;}
+    inline const Aws::String& GetUpdateToken() const { return m_updateToken; }
+    template<typename UpdateTokenT = Aws::String>
+    void SetUpdateToken(UpdateTokenT&& value) { m_updateTokenHasBeenSet = true; m_updateToken = std::forward<UpdateTokenT>(value); }
+    template<typename UpdateTokenT = Aws::String>
+    DescribeTLSInspectionConfigurationResult& WithUpdateToken(UpdateTokenT&& value) { SetUpdateToken(std::forward<UpdateTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,11 +72,11 @@ namespace Model
      * SSL/TLS traffic with TLS inspection configurations</a> in the <i>Network
      * Firewall Developer Guide</i>.</p>
      */
-    inline const TLSInspectionConfiguration& GetTLSInspectionConfiguration() const{ return m_tLSInspectionConfiguration; }
-    inline void SetTLSInspectionConfiguration(const TLSInspectionConfiguration& value) { m_tLSInspectionConfiguration = value; }
-    inline void SetTLSInspectionConfiguration(TLSInspectionConfiguration&& value) { m_tLSInspectionConfiguration = std::move(value); }
-    inline DescribeTLSInspectionConfigurationResult& WithTLSInspectionConfiguration(const TLSInspectionConfiguration& value) { SetTLSInspectionConfiguration(value); return *this;}
-    inline DescribeTLSInspectionConfigurationResult& WithTLSInspectionConfiguration(TLSInspectionConfiguration&& value) { SetTLSInspectionConfiguration(std::move(value)); return *this;}
+    inline const TLSInspectionConfiguration& GetTLSInspectionConfiguration() const { return m_tLSInspectionConfiguration; }
+    template<typename TLSInspectionConfigurationT = TLSInspectionConfiguration>
+    void SetTLSInspectionConfiguration(TLSInspectionConfigurationT&& value) { m_tLSInspectionConfigurationHasBeenSet = true; m_tLSInspectionConfiguration = std::forward<TLSInspectionConfigurationT>(value); }
+    template<typename TLSInspectionConfigurationT = TLSInspectionConfiguration>
+    DescribeTLSInspectionConfigurationResult& WithTLSInspectionConfiguration(TLSInspectionConfigurationT&& value) { SetTLSInspectionConfiguration(std::forward<TLSInspectionConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,32 +86,34 @@ namespace Model
      * You can retrieve all objects for a TLS inspection configuration by calling
      * <a>DescribeTLSInspectionConfiguration</a>. </p>
      */
-    inline const TLSInspectionConfigurationResponse& GetTLSInspectionConfigurationResponse() const{ return m_tLSInspectionConfigurationResponse; }
-    inline void SetTLSInspectionConfigurationResponse(const TLSInspectionConfigurationResponse& value) { m_tLSInspectionConfigurationResponse = value; }
-    inline void SetTLSInspectionConfigurationResponse(TLSInspectionConfigurationResponse&& value) { m_tLSInspectionConfigurationResponse = std::move(value); }
-    inline DescribeTLSInspectionConfigurationResult& WithTLSInspectionConfigurationResponse(const TLSInspectionConfigurationResponse& value) { SetTLSInspectionConfigurationResponse(value); return *this;}
-    inline DescribeTLSInspectionConfigurationResult& WithTLSInspectionConfigurationResponse(TLSInspectionConfigurationResponse&& value) { SetTLSInspectionConfigurationResponse(std::move(value)); return *this;}
+    inline const TLSInspectionConfigurationResponse& GetTLSInspectionConfigurationResponse() const { return m_tLSInspectionConfigurationResponse; }
+    template<typename TLSInspectionConfigurationResponseT = TLSInspectionConfigurationResponse>
+    void SetTLSInspectionConfigurationResponse(TLSInspectionConfigurationResponseT&& value) { m_tLSInspectionConfigurationResponseHasBeenSet = true; m_tLSInspectionConfigurationResponse = std::forward<TLSInspectionConfigurationResponseT>(value); }
+    template<typename TLSInspectionConfigurationResponseT = TLSInspectionConfigurationResponse>
+    DescribeTLSInspectionConfigurationResult& WithTLSInspectionConfigurationResponse(TLSInspectionConfigurationResponseT&& value) { SetTLSInspectionConfigurationResponse(std::forward<TLSInspectionConfigurationResponseT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeTLSInspectionConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeTLSInspectionConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeTLSInspectionConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeTLSInspectionConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_updateToken;
+    bool m_updateTokenHasBeenSet = false;
 
     TLSInspectionConfiguration m_tLSInspectionConfiguration;
+    bool m_tLSInspectionConfigurationHasBeenSet = false;
 
     TLSInspectionConfigurationResponse m_tLSInspectionConfigurationResponse;
+    bool m_tLSInspectionConfigurationResponseHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

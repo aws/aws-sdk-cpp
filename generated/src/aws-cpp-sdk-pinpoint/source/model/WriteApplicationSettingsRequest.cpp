@@ -18,20 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-WriteApplicationSettingsRequest::WriteApplicationSettingsRequest() : 
-    m_campaignHookHasBeenSet(false),
-    m_cloudWatchMetricsEnabled(false),
-    m_cloudWatchMetricsEnabledHasBeenSet(false),
-    m_eventTaggingEnabled(false),
-    m_eventTaggingEnabledHasBeenSet(false),
-    m_limitsHasBeenSet(false),
-    m_quietTimeHasBeenSet(false),
-    m_journeyLimitsHasBeenSet(false)
-{
-}
-
 WriteApplicationSettingsRequest::WriteApplicationSettingsRequest(JsonView jsonValue)
-  : WriteApplicationSettingsRequest()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ WriteApplicationSettingsRequest& WriteApplicationSettingsRequest::operator =(Jso
   if(jsonValue.ValueExists("CampaignHook"))
   {
     m_campaignHook = jsonValue.GetObject("CampaignHook");
-
     m_campaignHookHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CloudWatchMetricsEnabled"))
   {
     m_cloudWatchMetricsEnabled = jsonValue.GetBool("CloudWatchMetricsEnabled");
-
     m_cloudWatchMetricsEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventTaggingEnabled"))
   {
     m_eventTaggingEnabled = jsonValue.GetBool("EventTaggingEnabled");
-
     m_eventTaggingEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Limits"))
   {
     m_limits = jsonValue.GetObject("Limits");
-
     m_limitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QuietTime"))
   {
     m_quietTime = jsonValue.GetObject("QuietTime");
-
     m_quietTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JourneyLimits"))
   {
     m_journeyLimits = jsonValue.GetObject("JourneyLimits");
-
     m_journeyLimitsHasBeenSet = true;
   }
-
   return *this;
 }
 

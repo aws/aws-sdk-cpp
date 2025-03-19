@@ -21,7 +21,7 @@ namespace Model
   class DescribeTrafficSourcesRequest : public AutoScalingRequest
   {
   public:
-    AWS_AUTOSCALING_API DescribeTrafficSourcesRequest();
+    AWS_AUTOSCALING_API DescribeTrafficSourcesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The name of the Auto Scaling group.</p>
      */
-    inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
+    inline const Aws::String& GetAutoScalingGroupName() const { return m_autoScalingGroupName; }
     inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
-    inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
-    inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::move(value); }
-    inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName.assign(value); }
-    inline DescribeTrafficSourcesRequest& WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
-    inline DescribeTrafficSourcesRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(std::move(value)); return *this;}
-    inline DescribeTrafficSourcesRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
+    template<typename AutoScalingGroupNameT = Aws::String>
+    void SetAutoScalingGroupName(AutoScalingGroupNameT&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::forward<AutoScalingGroupNameT>(value); }
+    template<typename AutoScalingGroupNameT = Aws::String>
+    DescribeTrafficSourcesRequest& WithAutoScalingGroupName(AutoScalingGroupNameT&& value) { SetAutoScalingGroupName(std::forward<AutoScalingGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * Balancer.</p> </li> <li> <p> <code>vpc-lattice</code> if the traffic source is
      * VPC Lattice.</p> </li> </ul>
      */
-    inline const Aws::String& GetTrafficSourceType() const{ return m_trafficSourceType; }
+    inline const Aws::String& GetTrafficSourceType() const { return m_trafficSourceType; }
     inline bool TrafficSourceTypeHasBeenSet() const { return m_trafficSourceTypeHasBeenSet; }
-    inline void SetTrafficSourceType(const Aws::String& value) { m_trafficSourceTypeHasBeenSet = true; m_trafficSourceType = value; }
-    inline void SetTrafficSourceType(Aws::String&& value) { m_trafficSourceTypeHasBeenSet = true; m_trafficSourceType = std::move(value); }
-    inline void SetTrafficSourceType(const char* value) { m_trafficSourceTypeHasBeenSet = true; m_trafficSourceType.assign(value); }
-    inline DescribeTrafficSourcesRequest& WithTrafficSourceType(const Aws::String& value) { SetTrafficSourceType(value); return *this;}
-    inline DescribeTrafficSourcesRequest& WithTrafficSourceType(Aws::String&& value) { SetTrafficSourceType(std::move(value)); return *this;}
-    inline DescribeTrafficSourcesRequest& WithTrafficSourceType(const char* value) { SetTrafficSourceType(value); return *this;}
+    template<typename TrafficSourceTypeT = Aws::String>
+    void SetTrafficSourceType(TrafficSourceTypeT&& value) { m_trafficSourceTypeHasBeenSet = true; m_trafficSourceType = std::forward<TrafficSourceTypeT>(value); }
+    template<typename TrafficSourceTypeT = Aws::String>
+    DescribeTrafficSourcesRequest& WithTrafficSourceType(TrafficSourceTypeT&& value) { SetTrafficSourceType(std::forward<TrafficSourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +70,12 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeTrafficSourcesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeTrafficSourcesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeTrafficSourcesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeTrafficSourcesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,7 +83,7 @@ namespace Model
      * <p>The maximum number of items to return with this call. The maximum value is
      * <code>50</code>.</p>
      */
-    inline int GetMaxRecords() const{ return m_maxRecords; }
+    inline int GetMaxRecords() const { return m_maxRecords; }
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
     inline DescribeTrafficSourcesRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
@@ -105,7 +99,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxRecords;
+    int m_maxRecords{0};
     bool m_maxRecordsHasBeenSet = false;
   };
 

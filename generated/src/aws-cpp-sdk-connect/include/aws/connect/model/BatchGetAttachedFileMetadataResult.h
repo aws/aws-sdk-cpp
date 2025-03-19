@@ -30,7 +30,7 @@ namespace Model
   class BatchGetAttachedFileMetadataResult
   {
   public:
-    AWS_CONNECT_API BatchGetAttachedFileMetadataResult();
+    AWS_CONNECT_API BatchGetAttachedFileMetadataResult() = default;
     AWS_CONNECT_API BatchGetAttachedFileMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECT_API BatchGetAttachedFileMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,46 @@ namespace Model
     /**
      * <p>List of attached files that were successfully retrieved. </p>
      */
-    inline const Aws::Vector<AttachedFile>& GetFiles() const{ return m_files; }
-    inline void SetFiles(const Aws::Vector<AttachedFile>& value) { m_files = value; }
-    inline void SetFiles(Aws::Vector<AttachedFile>&& value) { m_files = std::move(value); }
-    inline BatchGetAttachedFileMetadataResult& WithFiles(const Aws::Vector<AttachedFile>& value) { SetFiles(value); return *this;}
-    inline BatchGetAttachedFileMetadataResult& WithFiles(Aws::Vector<AttachedFile>&& value) { SetFiles(std::move(value)); return *this;}
-    inline BatchGetAttachedFileMetadataResult& AddFiles(const AttachedFile& value) { m_files.push_back(value); return *this; }
-    inline BatchGetAttachedFileMetadataResult& AddFiles(AttachedFile&& value) { m_files.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AttachedFile>& GetFiles() const { return m_files; }
+    template<typename FilesT = Aws::Vector<AttachedFile>>
+    void SetFiles(FilesT&& value) { m_filesHasBeenSet = true; m_files = std::forward<FilesT>(value); }
+    template<typename FilesT = Aws::Vector<AttachedFile>>
+    BatchGetAttachedFileMetadataResult& WithFiles(FilesT&& value) { SetFiles(std::forward<FilesT>(value)); return *this;}
+    template<typename FilesT = AttachedFile>
+    BatchGetAttachedFileMetadataResult& AddFiles(FilesT&& value) { m_filesHasBeenSet = true; m_files.emplace_back(std::forward<FilesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>List of errors of attached files that could not be retrieved. </p>
      */
-    inline const Aws::Vector<AttachedFileError>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<AttachedFileError>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<AttachedFileError>&& value) { m_errors = std::move(value); }
-    inline BatchGetAttachedFileMetadataResult& WithErrors(const Aws::Vector<AttachedFileError>& value) { SetErrors(value); return *this;}
-    inline BatchGetAttachedFileMetadataResult& WithErrors(Aws::Vector<AttachedFileError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline BatchGetAttachedFileMetadataResult& AddErrors(const AttachedFileError& value) { m_errors.push_back(value); return *this; }
-    inline BatchGetAttachedFileMetadataResult& AddErrors(AttachedFileError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AttachedFileError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<AttachedFileError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<AttachedFileError>>
+    BatchGetAttachedFileMetadataResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = AttachedFileError>
+    BatchGetAttachedFileMetadataResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchGetAttachedFileMetadataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchGetAttachedFileMetadataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchGetAttachedFileMetadataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchGetAttachedFileMetadataResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AttachedFile> m_files;
+    bool m_filesHasBeenSet = false;
 
     Aws::Vector<AttachedFileError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

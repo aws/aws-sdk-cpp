@@ -34,7 +34,7 @@ namespace Model
   class CreateTrafficPolicyVersionResult
   {
   public:
-    AWS_ROUTE53_API CreateTrafficPolicyVersionResult();
+    AWS_ROUTE53_API CreateTrafficPolicyVersionResult() = default;
     AWS_ROUTE53_API CreateTrafficPolicyVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ROUTE53_API CreateTrafficPolicyVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -44,43 +44,42 @@ namespace Model
      * <p>A complex type that contains settings for the new version of the traffic
      * policy.</p>
      */
-    inline const TrafficPolicy& GetTrafficPolicy() const{ return m_trafficPolicy; }
-    inline void SetTrafficPolicy(const TrafficPolicy& value) { m_trafficPolicy = value; }
-    inline void SetTrafficPolicy(TrafficPolicy&& value) { m_trafficPolicy = std::move(value); }
-    inline CreateTrafficPolicyVersionResult& WithTrafficPolicy(const TrafficPolicy& value) { SetTrafficPolicy(value); return *this;}
-    inline CreateTrafficPolicyVersionResult& WithTrafficPolicy(TrafficPolicy&& value) { SetTrafficPolicy(std::move(value)); return *this;}
+    inline const TrafficPolicy& GetTrafficPolicy() const { return m_trafficPolicy; }
+    template<typename TrafficPolicyT = TrafficPolicy>
+    void SetTrafficPolicy(TrafficPolicyT&& value) { m_trafficPolicyHasBeenSet = true; m_trafficPolicy = std::forward<TrafficPolicyT>(value); }
+    template<typename TrafficPolicyT = TrafficPolicy>
+    CreateTrafficPolicyVersionResult& WithTrafficPolicy(TrafficPolicyT&& value) { SetTrafficPolicy(std::forward<TrafficPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique URL that represents a new traffic policy version.</p>
      */
-    inline const Aws::String& GetLocation() const{ return m_location; }
-    inline void SetLocation(const Aws::String& value) { m_location = value; }
-    inline void SetLocation(Aws::String&& value) { m_location = std::move(value); }
-    inline void SetLocation(const char* value) { m_location.assign(value); }
-    inline CreateTrafficPolicyVersionResult& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-    inline CreateTrafficPolicyVersionResult& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-    inline CreateTrafficPolicyVersionResult& WithLocation(const char* value) { SetLocation(value); return *this;}
+    inline const Aws::String& GetLocation() const { return m_location; }
+    template<typename LocationT = Aws::String>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Aws::String>
+    CreateTrafficPolicyVersionResult& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateTrafficPolicyVersionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateTrafficPolicyVersionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateTrafficPolicyVersionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateTrafficPolicyVersionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     TrafficPolicy m_trafficPolicy;
+    bool m_trafficPolicyHasBeenSet = false;
 
     Aws::String m_location;
+    bool m_locationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

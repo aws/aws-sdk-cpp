@@ -31,7 +31,7 @@ namespace Model
   class StreamFile
   {
   public:
-    AWS_IOT_API StreamFile();
+    AWS_IOT_API StreamFile() = default;
     AWS_IOT_API StreamFile(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API StreamFile& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>The file ID.</p>
      */
-    inline int GetFileId() const{ return m_fileId; }
+    inline int GetFileId() const { return m_fileId; }
     inline bool FileIdHasBeenSet() const { return m_fileIdHasBeenSet; }
     inline void SetFileId(int value) { m_fileIdHasBeenSet = true; m_fileId = value; }
     inline StreamFile& WithFileId(int value) { SetFileId(value); return *this;}
@@ -51,16 +51,16 @@ namespace Model
     /**
      * <p>The location of the file in S3.</p>
      */
-    inline const S3Location& GetS3Location() const{ return m_s3Location; }
+    inline const S3Location& GetS3Location() const { return m_s3Location; }
     inline bool S3LocationHasBeenSet() const { return m_s3LocationHasBeenSet; }
-    inline void SetS3Location(const S3Location& value) { m_s3LocationHasBeenSet = true; m_s3Location = value; }
-    inline void SetS3Location(S3Location&& value) { m_s3LocationHasBeenSet = true; m_s3Location = std::move(value); }
-    inline StreamFile& WithS3Location(const S3Location& value) { SetS3Location(value); return *this;}
-    inline StreamFile& WithS3Location(S3Location&& value) { SetS3Location(std::move(value)); return *this;}
+    template<typename S3LocationT = S3Location>
+    void SetS3Location(S3LocationT&& value) { m_s3LocationHasBeenSet = true; m_s3Location = std::forward<S3LocationT>(value); }
+    template<typename S3LocationT = S3Location>
+    StreamFile& WithS3Location(S3LocationT&& value) { SetS3Location(std::forward<S3LocationT>(value)); return *this;}
     ///@}
   private:
 
-    int m_fileId;
+    int m_fileId{0};
     bool m_fileIdHasBeenSet = false;
 
     S3Location m_s3Location;

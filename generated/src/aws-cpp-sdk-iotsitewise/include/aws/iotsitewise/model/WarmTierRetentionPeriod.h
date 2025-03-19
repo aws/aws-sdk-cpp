@@ -31,7 +31,7 @@ namespace Model
   class WarmTierRetentionPeriod
   {
   public:
-    AWS_IOTSITEWISE_API WarmTierRetentionPeriod();
+    AWS_IOTSITEWISE_API WarmTierRetentionPeriod() = default;
     AWS_IOTSITEWISE_API WarmTierRetentionPeriod(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API WarmTierRetentionPeriod& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>The number of days the data is stored in the warm tier.</p>
      */
-    inline int GetNumberOfDays() const{ return m_numberOfDays; }
+    inline int GetNumberOfDays() const { return m_numberOfDays; }
     inline bool NumberOfDaysHasBeenSet() const { return m_numberOfDaysHasBeenSet; }
     inline void SetNumberOfDays(int value) { m_numberOfDaysHasBeenSet = true; m_numberOfDays = value; }
     inline WarmTierRetentionPeriod& WithNumberOfDays(int value) { SetNumberOfDays(value); return *this;}
@@ -51,17 +51,17 @@ namespace Model
     /**
      * <p>If set to true, the data is stored indefinitely in the warm tier.</p>
      */
-    inline bool GetUnlimited() const{ return m_unlimited; }
+    inline bool GetUnlimited() const { return m_unlimited; }
     inline bool UnlimitedHasBeenSet() const { return m_unlimitedHasBeenSet; }
     inline void SetUnlimited(bool value) { m_unlimitedHasBeenSet = true; m_unlimited = value; }
     inline WarmTierRetentionPeriod& WithUnlimited(bool value) { SetUnlimited(value); return *this;}
     ///@}
   private:
 
-    int m_numberOfDays;
+    int m_numberOfDays{0};
     bool m_numberOfDaysHasBeenSet = false;
 
-    bool m_unlimited;
+    bool m_unlimited{false};
     bool m_unlimitedHasBeenSet = false;
   };
 

@@ -18,21 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteLeg::RouteLeg() : 
-    m_ferryLegDetailsHasBeenSet(false),
-    m_geometryHasBeenSet(false),
-    m_languageHasBeenSet(false),
-    m_pedestrianLegDetailsHasBeenSet(false),
-    m_travelMode(RouteLegTravelMode::NOT_SET),
-    m_travelModeHasBeenSet(false),
-    m_type(RouteLegType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_vehicleLegDetailsHasBeenSet(false)
-{
-}
-
 RouteLeg::RouteLeg(JsonView jsonValue)
-  : RouteLeg()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ RouteLeg& RouteLeg::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FerryLegDetails"))
   {
     m_ferryLegDetails = jsonValue.GetObject("FerryLegDetails");
-
     m_ferryLegDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Geometry"))
   {
     m_geometry = jsonValue.GetObject("Geometry");
-
     m_geometryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Language"))
   {
     m_language = jsonValue.GetString("Language");
-
     m_languageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PedestrianLegDetails"))
   {
     m_pedestrianLegDetails = jsonValue.GetObject("PedestrianLegDetails");
-
     m_pedestrianLegDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TravelMode"))
   {
     m_travelMode = RouteLegTravelModeMapper::GetRouteLegTravelModeForName(jsonValue.GetString("TravelMode"));
-
     m_travelModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = RouteLegTypeMapper::GetRouteLegTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VehicleLegDetails"))
   {
     m_vehicleLegDetails = jsonValue.GetObject("VehicleLegDetails");
-
     m_vehicleLegDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

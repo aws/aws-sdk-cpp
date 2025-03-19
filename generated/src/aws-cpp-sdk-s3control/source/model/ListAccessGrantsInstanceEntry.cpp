@@ -20,17 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-ListAccessGrantsInstanceEntry::ListAccessGrantsInstanceEntry() : 
-    m_accessGrantsInstanceIdHasBeenSet(false),
-    m_accessGrantsInstanceArnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_identityCenterInstanceArnHasBeenSet(false),
-    m_identityCenterApplicationArnHasBeenSet(false)
-{
-}
-
 ListAccessGrantsInstanceEntry::ListAccessGrantsInstanceEntry(const XmlNode& xmlNode)
-  : ListAccessGrantsInstanceEntry()
 {
   *this = xmlNode;
 }

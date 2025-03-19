@@ -20,15 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-ResponseHeadersPolicyAccessControlAllowOrigins::ResponseHeadersPolicyAccessControlAllowOrigins() : 
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_itemsHasBeenSet(false)
-{
-}
-
 ResponseHeadersPolicyAccessControlAllowOrigins::ResponseHeadersPolicyAccessControlAllowOrigins(const XmlNode& xmlNode)
-  : ResponseHeadersPolicyAccessControlAllowOrigins()
 {
   *this = xmlNode;
 }
@@ -49,6 +41,7 @@ ResponseHeadersPolicyAccessControlAllowOrigins& ResponseHeadersPolicyAccessContr
     if(!itemsNode.IsNull())
     {
       XmlNode itemsMember = itemsNode.FirstChild("Origin");
+      m_itemsHasBeenSet = !itemsMember.IsNull();
       while(!itemsMember.IsNull())
       {
         m_items.push_back(itemsMember.GetText());

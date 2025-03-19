@@ -18,31 +18,7 @@ namespace FSx
 namespace Model
 {
 
-OpenZFSFileSystemConfiguration::OpenZFSFileSystemConfiguration() : 
-    m_automaticBackupRetentionDays(0),
-    m_automaticBackupRetentionDaysHasBeenSet(false),
-    m_copyTagsToBackups(false),
-    m_copyTagsToBackupsHasBeenSet(false),
-    m_copyTagsToVolumes(false),
-    m_copyTagsToVolumesHasBeenSet(false),
-    m_dailyAutomaticBackupStartTimeHasBeenSet(false),
-    m_deploymentType(OpenZFSDeploymentType::NOT_SET),
-    m_deploymentTypeHasBeenSet(false),
-    m_throughputCapacity(0),
-    m_throughputCapacityHasBeenSet(false),
-    m_weeklyMaintenanceStartTimeHasBeenSet(false),
-    m_diskIopsConfigurationHasBeenSet(false),
-    m_rootVolumeIdHasBeenSet(false),
-    m_preferredSubnetIdHasBeenSet(false),
-    m_endpointIpAddressRangeHasBeenSet(false),
-    m_routeTableIdsHasBeenSet(false),
-    m_endpointIpAddressHasBeenSet(false),
-    m_readCacheConfigurationHasBeenSet(false)
-{
-}
-
 OpenZFSFileSystemConfiguration::OpenZFSFileSystemConfiguration(JsonView jsonValue)
-  : OpenZFSFileSystemConfiguration()
 {
   *this = jsonValue;
 }
@@ -52,80 +28,58 @@ OpenZFSFileSystemConfiguration& OpenZFSFileSystemConfiguration::operator =(JsonV
   if(jsonValue.ValueExists("AutomaticBackupRetentionDays"))
   {
     m_automaticBackupRetentionDays = jsonValue.GetInteger("AutomaticBackupRetentionDays");
-
     m_automaticBackupRetentionDaysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CopyTagsToBackups"))
   {
     m_copyTagsToBackups = jsonValue.GetBool("CopyTagsToBackups");
-
     m_copyTagsToBackupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CopyTagsToVolumes"))
   {
     m_copyTagsToVolumes = jsonValue.GetBool("CopyTagsToVolumes");
-
     m_copyTagsToVolumesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DailyAutomaticBackupStartTime"))
   {
     m_dailyAutomaticBackupStartTime = jsonValue.GetString("DailyAutomaticBackupStartTime");
-
     m_dailyAutomaticBackupStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeploymentType"))
   {
     m_deploymentType = OpenZFSDeploymentTypeMapper::GetOpenZFSDeploymentTypeForName(jsonValue.GetString("DeploymentType"));
-
     m_deploymentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ThroughputCapacity"))
   {
     m_throughputCapacity = jsonValue.GetInteger("ThroughputCapacity");
-
     m_throughputCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WeeklyMaintenanceStartTime"))
   {
     m_weeklyMaintenanceStartTime = jsonValue.GetString("WeeklyMaintenanceStartTime");
-
     m_weeklyMaintenanceStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DiskIopsConfiguration"))
   {
     m_diskIopsConfiguration = jsonValue.GetObject("DiskIopsConfiguration");
-
     m_diskIopsConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RootVolumeId"))
   {
     m_rootVolumeId = jsonValue.GetString("RootVolumeId");
-
     m_rootVolumeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreferredSubnetId"))
   {
     m_preferredSubnetId = jsonValue.GetString("PreferredSubnetId");
-
     m_preferredSubnetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointIpAddressRange"))
   {
     m_endpointIpAddressRange = jsonValue.GetString("EndpointIpAddressRange");
-
     m_endpointIpAddressRangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RouteTableIds"))
   {
     Aws::Utils::Array<JsonView> routeTableIdsJsonList = jsonValue.GetArray("RouteTableIds");
@@ -135,21 +89,16 @@ OpenZFSFileSystemConfiguration& OpenZFSFileSystemConfiguration::operator =(JsonV
     }
     m_routeTableIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointIpAddress"))
   {
     m_endpointIpAddress = jsonValue.GetString("EndpointIpAddress");
-
     m_endpointIpAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReadCacheConfiguration"))
   {
     m_readCacheConfiguration = jsonValue.GetObject("ReadCacheConfiguration");
-
     m_readCacheConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

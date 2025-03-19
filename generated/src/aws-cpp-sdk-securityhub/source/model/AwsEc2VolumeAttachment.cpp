@@ -18,17 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2VolumeAttachment::AwsEc2VolumeAttachment() : 
-    m_attachTimeHasBeenSet(false),
-    m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 AwsEc2VolumeAttachment::AwsEc2VolumeAttachment(JsonView jsonValue)
-  : AwsEc2VolumeAttachment()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ AwsEc2VolumeAttachment& AwsEc2VolumeAttachment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AttachTime"))
   {
     m_attachTime = jsonValue.GetString("AttachTime");
-
     m_attachTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeleteOnTermination"))
   {
     m_deleteOnTermination = jsonValue.GetBool("DeleteOnTermination");
-
     m_deleteOnTerminationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceId"))
   {
     m_instanceId = jsonValue.GetString("InstanceId");
-
     m_instanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

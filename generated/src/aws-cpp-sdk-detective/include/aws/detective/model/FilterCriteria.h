@@ -33,7 +33,7 @@ namespace Model
   class FilterCriteria
   {
   public:
-    AWS_DETECTIVE_API FilterCriteria();
+    AWS_DETECTIVE_API FilterCriteria() = default;
     AWS_DETECTIVE_API FilterCriteria(Aws::Utils::Json::JsonView jsonValue);
     AWS_DETECTIVE_API FilterCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DETECTIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,36 +43,36 @@ namespace Model
     /**
      * <p>Filter the investigation results based on the severity.</p>
      */
-    inline const StringFilter& GetSeverity() const{ return m_severity; }
+    inline const StringFilter& GetSeverity() const { return m_severity; }
     inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
-    inline void SetSeverity(const StringFilter& value) { m_severityHasBeenSet = true; m_severity = value; }
-    inline void SetSeverity(StringFilter&& value) { m_severityHasBeenSet = true; m_severity = std::move(value); }
-    inline FilterCriteria& WithSeverity(const StringFilter& value) { SetSeverity(value); return *this;}
-    inline FilterCriteria& WithSeverity(StringFilter&& value) { SetSeverity(std::move(value)); return *this;}
+    template<typename SeverityT = StringFilter>
+    void SetSeverity(SeverityT&& value) { m_severityHasBeenSet = true; m_severity = std::forward<SeverityT>(value); }
+    template<typename SeverityT = StringFilter>
+    FilterCriteria& WithSeverity(SeverityT&& value) { SetSeverity(std::forward<SeverityT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Filter the investigation results based on the status.</p>
      */
-    inline const StringFilter& GetStatus() const{ return m_status; }
+    inline const StringFilter& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const StringFilter& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(StringFilter&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline FilterCriteria& WithStatus(const StringFilter& value) { SetStatus(value); return *this;}
-    inline FilterCriteria& WithStatus(StringFilter&& value) { SetStatus(std::move(value)); return *this;}
+    template<typename StatusT = StringFilter>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = StringFilter>
+    FilterCriteria& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Filter the investigation results based on the state.</p>
      */
-    inline const StringFilter& GetState() const{ return m_state; }
+    inline const StringFilter& GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const StringFilter& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(StringFilter&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline FilterCriteria& WithState(const StringFilter& value) { SetState(value); return *this;}
-    inline FilterCriteria& WithState(StringFilter&& value) { SetState(std::move(value)); return *this;}
+    template<typename StateT = StringFilter>
+    void SetState(StateT&& value) { m_stateHasBeenSet = true; m_state = std::forward<StateT>(value); }
+    template<typename StateT = StringFilter>
+    FilterCriteria& WithState(StateT&& value) { SetState(std::forward<StateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,12 +80,12 @@ namespace Model
      * <p>Filter the investigation results based on the Amazon Resource Name (ARN) of
      * the entity.</p>
      */
-    inline const StringFilter& GetEntityArn() const{ return m_entityArn; }
+    inline const StringFilter& GetEntityArn() const { return m_entityArn; }
     inline bool EntityArnHasBeenSet() const { return m_entityArnHasBeenSet; }
-    inline void SetEntityArn(const StringFilter& value) { m_entityArnHasBeenSet = true; m_entityArn = value; }
-    inline void SetEntityArn(StringFilter&& value) { m_entityArnHasBeenSet = true; m_entityArn = std::move(value); }
-    inline FilterCriteria& WithEntityArn(const StringFilter& value) { SetEntityArn(value); return *this;}
-    inline FilterCriteria& WithEntityArn(StringFilter&& value) { SetEntityArn(std::move(value)); return *this;}
+    template<typename EntityArnT = StringFilter>
+    void SetEntityArn(EntityArnT&& value) { m_entityArnHasBeenSet = true; m_entityArn = std::forward<EntityArnT>(value); }
+    template<typename EntityArnT = StringFilter>
+    FilterCriteria& WithEntityArn(EntityArnT&& value) { SetEntityArn(std::forward<EntityArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,12 +93,12 @@ namespace Model
      * <p>Filter the investigation results based on when the investigation was
      * created.</p>
      */
-    inline const DateFilter& GetCreatedTime() const{ return m_createdTime; }
+    inline const DateFilter& GetCreatedTime() const { return m_createdTime; }
     inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
-    inline void SetCreatedTime(const DateFilter& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
-    inline void SetCreatedTime(DateFilter&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
-    inline FilterCriteria& WithCreatedTime(const DateFilter& value) { SetCreatedTime(value); return *this;}
-    inline FilterCriteria& WithCreatedTime(DateFilter&& value) { SetCreatedTime(std::move(value)); return *this;}
+    template<typename CreatedTimeT = DateFilter>
+    void SetCreatedTime(CreatedTimeT&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::forward<CreatedTimeT>(value); }
+    template<typename CreatedTimeT = DateFilter>
+    FilterCriteria& WithCreatedTime(CreatedTimeT&& value) { SetCreatedTime(std::forward<CreatedTimeT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,21 +18,7 @@ namespace deadline
 namespace Model
 {
 
-JobMember::JobMember() : 
-    m_farmIdHasBeenSet(false),
-    m_queueIdHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_principalIdHasBeenSet(false),
-    m_principalType(PrincipalType::NOT_SET),
-    m_principalTypeHasBeenSet(false),
-    m_identityStoreIdHasBeenSet(false),
-    m_membershipLevel(MembershipLevel::NOT_SET),
-    m_membershipLevelHasBeenSet(false)
-{
-}
-
 JobMember::JobMember(JsonView jsonValue)
-  : JobMember()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ JobMember& JobMember::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("farmId"))
   {
     m_farmId = jsonValue.GetString("farmId");
-
     m_farmIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queueId"))
   {
     m_queueId = jsonValue.GetString("queueId");
-
     m_queueIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobId"))
   {
     m_jobId = jsonValue.GetString("jobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("principalId"))
   {
     m_principalId = jsonValue.GetString("principalId");
-
     m_principalIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("principalType"))
   {
     m_principalType = PrincipalTypeMapper::GetPrincipalTypeForName(jsonValue.GetString("principalType"));
-
     m_principalTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("identityStoreId"))
   {
     m_identityStoreId = jsonValue.GetString("identityStoreId");
-
     m_identityStoreIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("membershipLevel"))
   {
     m_membershipLevel = MembershipLevelMapper::GetMembershipLevelForName(jsonValue.GetString("membershipLevel"));
-
     m_membershipLevelHasBeenSet = true;
   }
-
   return *this;
 }
 

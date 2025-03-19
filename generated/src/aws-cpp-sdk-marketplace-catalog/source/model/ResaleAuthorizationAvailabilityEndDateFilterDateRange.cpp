@@ -18,14 +18,7 @@ namespace MarketplaceCatalog
 namespace Model
 {
 
-ResaleAuthorizationAvailabilityEndDateFilterDateRange::ResaleAuthorizationAvailabilityEndDateFilterDateRange() : 
-    m_afterValueHasBeenSet(false),
-    m_beforeValueHasBeenSet(false)
-{
-}
-
 ResaleAuthorizationAvailabilityEndDateFilterDateRange::ResaleAuthorizationAvailabilityEndDateFilterDateRange(JsonView jsonValue)
-  : ResaleAuthorizationAvailabilityEndDateFilterDateRange()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ResaleAuthorizationAvailabilityEndDateFilterDateRange& ResaleAuthorizationAvaila
   if(jsonValue.ValueExists("AfterValue"))
   {
     m_afterValue = jsonValue.GetString("AfterValue");
-
     m_afterValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BeforeValue"))
   {
     m_beforeValue = jsonValue.GetString("BeforeValue");
-
     m_beforeValueHasBeenSet = true;
   }
-
   return *this;
 }
 

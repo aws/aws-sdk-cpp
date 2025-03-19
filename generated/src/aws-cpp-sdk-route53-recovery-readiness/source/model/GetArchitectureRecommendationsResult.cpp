@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetArchitectureRecommendationsResult::GetArchitectureRecommendationsResult()
-{
-}
-
 GetArchitectureRecommendationsResult::GetArchitectureRecommendationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,13 @@ GetArchitectureRecommendationsResult& GetArchitectureRecommendationsResult::oper
   if(jsonValue.ValueExists("lastAuditTimestamp"))
   {
     m_lastAuditTimestamp = jsonValue.GetString("lastAuditTimestamp");
-
+    m_lastAuditTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recommendations"))
   {
     Aws::Utils::Array<JsonView> recommendationsJsonList = jsonValue.GetArray("recommendations");
@@ -48,14 +42,15 @@ GetArchitectureRecommendationsResult& GetArchitectureRecommendationsResult::oper
     {
       m_recommendations.push_back(recommendationsJsonList[recommendationsIndex].AsObject());
     }
+    m_recommendationsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

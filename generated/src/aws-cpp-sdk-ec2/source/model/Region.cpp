@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-Region::Region() : 
-    m_optInStatusHasBeenSet(false),
-    m_regionNameHasBeenSet(false),
-    m_endpointHasBeenSet(false)
-{
-}
-
 Region::Region(const XmlNode& xmlNode)
-  : Region()
 {
   *this = xmlNode;
 }

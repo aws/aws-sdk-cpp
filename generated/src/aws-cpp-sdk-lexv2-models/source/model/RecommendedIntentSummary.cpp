@@ -18,16 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-RecommendedIntentSummary::RecommendedIntentSummary() : 
-    m_intentIdHasBeenSet(false),
-    m_intentNameHasBeenSet(false),
-    m_sampleUtterancesCount(0),
-    m_sampleUtterancesCountHasBeenSet(false)
-{
-}
-
 RecommendedIntentSummary::RecommendedIntentSummary(JsonView jsonValue)
-  : RecommendedIntentSummary()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ RecommendedIntentSummary& RecommendedIntentSummary::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("intentId"))
   {
     m_intentId = jsonValue.GetString("intentId");
-
     m_intentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("intentName"))
   {
     m_intentName = jsonValue.GetString("intentName");
-
     m_intentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sampleUtterancesCount"))
   {
     m_sampleUtterancesCount = jsonValue.GetInteger("sampleUtterancesCount");
-
     m_sampleUtterancesCountHasBeenSet = true;
   }
-
   return *this;
 }
 

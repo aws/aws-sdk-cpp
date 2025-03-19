@@ -18,15 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-Condition::Condition() : 
-    m_conditionsHasBeenSet(false),
-    m_operator(Operator::NOT_SET),
-    m_operatorHasBeenSet(false)
-{
-}
-
 Condition::Condition(JsonView jsonValue)
-  : Condition()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ Condition& Condition::operator =(JsonView jsonValue)
     }
     m_conditionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Operator"))
   {
     m_operator = OperatorMapper::GetOperatorForName(jsonValue.GetString("Operator"));
-
     m_operatorHasBeenSet = true;
   }
-
   return *this;
 }
 

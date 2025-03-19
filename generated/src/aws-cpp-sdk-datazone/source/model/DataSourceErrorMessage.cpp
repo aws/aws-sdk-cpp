@@ -18,15 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-DataSourceErrorMessage::DataSourceErrorMessage() : 
-    m_errorDetailHasBeenSet(false),
-    m_errorType(DataSourceErrorType::NOT_SET),
-    m_errorTypeHasBeenSet(false)
-{
-}
-
 DataSourceErrorMessage::DataSourceErrorMessage(JsonView jsonValue)
-  : DataSourceErrorMessage()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DataSourceErrorMessage& DataSourceErrorMessage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("errorDetail"))
   {
     m_errorDetail = jsonValue.GetString("errorDetail");
-
     m_errorDetailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorType"))
   {
     m_errorType = DataSourceErrorTypeMapper::GetDataSourceErrorTypeForName(jsonValue.GetString("errorType"));
-
     m_errorTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

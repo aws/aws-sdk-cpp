@@ -18,13 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-RenderingConfiguration::RenderingConfiguration() : 
-    m_templateUriHasBeenSet(false)
-{
-}
-
 RenderingConfiguration::RenderingConfiguration(JsonView jsonValue)
-  : RenderingConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RenderingConfiguration& RenderingConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("templateUri"))
   {
     m_templateUri = jsonValue.GetString("templateUri");
-
     m_templateUriHasBeenSet = true;
   }
-
   return *this;
 }
 

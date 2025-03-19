@@ -33,7 +33,7 @@ namespace Model
   class OrCondition
   {
   public:
-    AWS_QCONNECT_API OrCondition();
+    AWS_QCONNECT_API OrCondition() = default;
     AWS_QCONNECT_API OrCondition(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API OrCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,26 +44,26 @@ namespace Model
      * <p>A list of conditions which would be applied together with an <code>AND</code>
      * condition.</p>
      */
-    inline const Aws::Vector<TagCondition>& GetAndConditions() const{ return m_andConditions; }
+    inline const Aws::Vector<TagCondition>& GetAndConditions() const { return m_andConditions; }
     inline bool AndConditionsHasBeenSet() const { return m_andConditionsHasBeenSet; }
-    inline void SetAndConditions(const Aws::Vector<TagCondition>& value) { m_andConditionsHasBeenSet = true; m_andConditions = value; }
-    inline void SetAndConditions(Aws::Vector<TagCondition>&& value) { m_andConditionsHasBeenSet = true; m_andConditions = std::move(value); }
-    inline OrCondition& WithAndConditions(const Aws::Vector<TagCondition>& value) { SetAndConditions(value); return *this;}
-    inline OrCondition& WithAndConditions(Aws::Vector<TagCondition>&& value) { SetAndConditions(std::move(value)); return *this;}
-    inline OrCondition& AddAndConditions(const TagCondition& value) { m_andConditionsHasBeenSet = true; m_andConditions.push_back(value); return *this; }
-    inline OrCondition& AddAndConditions(TagCondition&& value) { m_andConditionsHasBeenSet = true; m_andConditions.push_back(std::move(value)); return *this; }
+    template<typename AndConditionsT = Aws::Vector<TagCondition>>
+    void SetAndConditions(AndConditionsT&& value) { m_andConditionsHasBeenSet = true; m_andConditions = std::forward<AndConditionsT>(value); }
+    template<typename AndConditionsT = Aws::Vector<TagCondition>>
+    OrCondition& WithAndConditions(AndConditionsT&& value) { SetAndConditions(std::forward<AndConditionsT>(value)); return *this;}
+    template<typename AndConditionsT = TagCondition>
+    OrCondition& AddAndConditions(AndConditionsT&& value) { m_andConditionsHasBeenSet = true; m_andConditions.emplace_back(std::forward<AndConditionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A leaf node condition which can be used to specify a tag condition.</p>
      */
-    inline const TagCondition& GetTagCondition() const{ return m_tagCondition; }
+    inline const TagCondition& GetTagCondition() const { return m_tagCondition; }
     inline bool TagConditionHasBeenSet() const { return m_tagConditionHasBeenSet; }
-    inline void SetTagCondition(const TagCondition& value) { m_tagConditionHasBeenSet = true; m_tagCondition = value; }
-    inline void SetTagCondition(TagCondition&& value) { m_tagConditionHasBeenSet = true; m_tagCondition = std::move(value); }
-    inline OrCondition& WithTagCondition(const TagCondition& value) { SetTagCondition(value); return *this;}
-    inline OrCondition& WithTagCondition(TagCondition&& value) { SetTagCondition(std::move(value)); return *this;}
+    template<typename TagConditionT = TagCondition>
+    void SetTagCondition(TagConditionT&& value) { m_tagConditionHasBeenSet = true; m_tagCondition = std::forward<TagConditionT>(value); }
+    template<typename TagConditionT = TagCondition>
+    OrCondition& WithTagCondition(TagConditionT&& value) { SetTagCondition(std::forward<TagConditionT>(value)); return *this;}
     ///@}
   private:
 

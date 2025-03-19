@@ -12,11 +12,6 @@ using namespace Aws::AppFabric::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAppBundleRequest::GetAppBundleRequest() : 
-    m_appBundleIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String GetAppBundleRequest::SerializePayload() const
 {
   return {};

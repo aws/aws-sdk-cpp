@@ -18,14 +18,7 @@ namespace Batch
 namespace Model
 {
 
-TaskContainerDependency::TaskContainerDependency() : 
-    m_containerNameHasBeenSet(false),
-    m_conditionHasBeenSet(false)
-{
-}
-
 TaskContainerDependency::TaskContainerDependency(JsonView jsonValue)
-  : TaskContainerDependency()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TaskContainerDependency& TaskContainerDependency::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("containerName"))
   {
     m_containerName = jsonValue.GetString("containerName");
-
     m_containerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("condition"))
   {
     m_condition = jsonValue.GetString("condition");
-
     m_conditionHasBeenSet = true;
   }
-
   return *this;
 }
 

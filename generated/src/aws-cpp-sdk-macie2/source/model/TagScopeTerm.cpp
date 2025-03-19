@@ -18,18 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-TagScopeTerm::TagScopeTerm() : 
-    m_comparator(JobComparator::NOT_SET),
-    m_comparatorHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_tagValuesHasBeenSet(false),
-    m_target(TagTarget::NOT_SET),
-    m_targetHasBeenSet(false)
-{
-}
-
 TagScopeTerm::TagScopeTerm(JsonView jsonValue)
-  : TagScopeTerm()
 {
   *this = jsonValue;
 }
@@ -39,17 +28,13 @@ TagScopeTerm& TagScopeTerm::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("comparator"))
   {
     m_comparator = JobComparatorMapper::GetJobComparatorForName(jsonValue.GetString("comparator"));
-
     m_comparatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tagValues"))
   {
     Aws::Utils::Array<JsonView> tagValuesJsonList = jsonValue.GetArray("tagValues");
@@ -59,14 +44,11 @@ TagScopeTerm& TagScopeTerm::operator =(JsonView jsonValue)
     }
     m_tagValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("target"))
   {
     m_target = TagTargetMapper::GetTagTargetForName(jsonValue.GetString("target"));
-
     m_targetHasBeenSet = true;
   }
-
   return *this;
 }
 

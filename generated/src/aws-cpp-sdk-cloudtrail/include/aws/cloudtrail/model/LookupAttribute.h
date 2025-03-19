@@ -33,7 +33,7 @@ namespace Model
   class LookupAttribute
   {
   public:
-    AWS_CLOUDTRAIL_API LookupAttribute();
+    AWS_CLOUDTRAIL_API LookupAttribute() = default;
     AWS_CLOUDTRAIL_API LookupAttribute(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDTRAIL_API LookupAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDTRAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
     /**
      * <p>Specifies an attribute on which to filter the events returned.</p>
      */
-    inline const LookupAttributeKey& GetAttributeKey() const{ return m_attributeKey; }
+    inline LookupAttributeKey GetAttributeKey() const { return m_attributeKey; }
     inline bool AttributeKeyHasBeenSet() const { return m_attributeKeyHasBeenSet; }
-    inline void SetAttributeKey(const LookupAttributeKey& value) { m_attributeKeyHasBeenSet = true; m_attributeKey = value; }
-    inline void SetAttributeKey(LookupAttributeKey&& value) { m_attributeKeyHasBeenSet = true; m_attributeKey = std::move(value); }
-    inline LookupAttribute& WithAttributeKey(const LookupAttributeKey& value) { SetAttributeKey(value); return *this;}
-    inline LookupAttribute& WithAttributeKey(LookupAttributeKey&& value) { SetAttributeKey(std::move(value)); return *this;}
+    inline void SetAttributeKey(LookupAttributeKey value) { m_attributeKeyHasBeenSet = true; m_attributeKey = value; }
+    inline LookupAttribute& WithAttributeKey(LookupAttributeKey value) { SetAttributeKey(value); return *this;}
     ///@}
 
     ///@{
@@ -59,18 +57,16 @@ namespace Model
      * '<code>\\n</code>') count as two characters towards the 2000 character
      * limit.</p>
      */
-    inline const Aws::String& GetAttributeValue() const{ return m_attributeValue; }
+    inline const Aws::String& GetAttributeValue() const { return m_attributeValue; }
     inline bool AttributeValueHasBeenSet() const { return m_attributeValueHasBeenSet; }
-    inline void SetAttributeValue(const Aws::String& value) { m_attributeValueHasBeenSet = true; m_attributeValue = value; }
-    inline void SetAttributeValue(Aws::String&& value) { m_attributeValueHasBeenSet = true; m_attributeValue = std::move(value); }
-    inline void SetAttributeValue(const char* value) { m_attributeValueHasBeenSet = true; m_attributeValue.assign(value); }
-    inline LookupAttribute& WithAttributeValue(const Aws::String& value) { SetAttributeValue(value); return *this;}
-    inline LookupAttribute& WithAttributeValue(Aws::String&& value) { SetAttributeValue(std::move(value)); return *this;}
-    inline LookupAttribute& WithAttributeValue(const char* value) { SetAttributeValue(value); return *this;}
+    template<typename AttributeValueT = Aws::String>
+    void SetAttributeValue(AttributeValueT&& value) { m_attributeValueHasBeenSet = true; m_attributeValue = std::forward<AttributeValueT>(value); }
+    template<typename AttributeValueT = Aws::String>
+    LookupAttribute& WithAttributeValue(AttributeValueT&& value) { SetAttributeValue(std::forward<AttributeValueT>(value)); return *this;}
     ///@}
   private:
 
-    LookupAttributeKey m_attributeKey;
+    LookupAttributeKey m_attributeKey{LookupAttributeKey::NOT_SET};
     bool m_attributeKeyHasBeenSet = false;
 
     Aws::String m_attributeValue;

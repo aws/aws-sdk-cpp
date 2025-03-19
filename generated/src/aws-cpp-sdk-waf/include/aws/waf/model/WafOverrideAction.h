@@ -40,7 +40,7 @@ namespace Model
   class WafOverrideAction
   {
   public:
-    AWS_WAF_API WafOverrideAction();
+    AWS_WAF_API WafOverrideAction() = default;
     AWS_WAF_API WafOverrideAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAF_API WafOverrideAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,16 +52,14 @@ namespace Model
      * within a <code>RuleGroup</code> . If set to <code>NONE</code>, the rule's action
      * will take place.</p>
      */
-    inline const WafOverrideActionType& GetType() const{ return m_type; }
+    inline WafOverrideActionType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const WafOverrideActionType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(WafOverrideActionType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline WafOverrideAction& WithType(const WafOverrideActionType& value) { SetType(value); return *this;}
-    inline WafOverrideAction& WithType(WafOverrideActionType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(WafOverrideActionType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline WafOverrideAction& WithType(WafOverrideActionType value) { SetType(value); return *this;}
     ///@}
   private:
 
-    WafOverrideActionType m_type;
+    WafOverrideActionType m_type{WafOverrideActionType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

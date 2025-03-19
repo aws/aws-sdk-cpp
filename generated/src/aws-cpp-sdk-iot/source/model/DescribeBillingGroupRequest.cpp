@@ -12,11 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeBillingGroupRequest::DescribeBillingGroupRequest() : 
-    m_billingGroupNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeBillingGroupRequest::SerializePayload() const
 {
   return {};

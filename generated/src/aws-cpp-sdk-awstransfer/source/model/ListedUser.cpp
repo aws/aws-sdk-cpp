@@ -18,20 +18,7 @@ namespace Transfer
 namespace Model
 {
 
-ListedUser::ListedUser() : 
-    m_arnHasBeenSet(false),
-    m_homeDirectoryHasBeenSet(false),
-    m_homeDirectoryType(HomeDirectoryType::NOT_SET),
-    m_homeDirectoryTypeHasBeenSet(false),
-    m_roleHasBeenSet(false),
-    m_sshPublicKeyCount(0),
-    m_sshPublicKeyCountHasBeenSet(false),
-    m_userNameHasBeenSet(false)
-{
-}
-
 ListedUser::ListedUser(JsonView jsonValue)
-  : ListedUser()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ ListedUser& ListedUser::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HomeDirectory"))
   {
     m_homeDirectory = jsonValue.GetString("HomeDirectory");
-
     m_homeDirectoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HomeDirectoryType"))
   {
     m_homeDirectoryType = HomeDirectoryTypeMapper::GetHomeDirectoryTypeForName(jsonValue.GetString("HomeDirectoryType"));
-
     m_homeDirectoryTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Role"))
   {
     m_role = jsonValue.GetString("Role");
-
     m_roleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SshPublicKeyCount"))
   {
     m_sshPublicKeyCount = jsonValue.GetInteger("SshPublicKeyCount");
-
     m_sshPublicKeyCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserName"))
   {
     m_userName = jsonValue.GetString("UserName");
-
     m_userNameHasBeenSet = true;
   }
-
   return *this;
 }
 

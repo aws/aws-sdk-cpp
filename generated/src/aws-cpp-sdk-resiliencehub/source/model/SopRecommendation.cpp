@@ -18,23 +18,7 @@ namespace ResilienceHub
 namespace Model
 {
 
-SopRecommendation::SopRecommendation() : 
-    m_appComponentNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_itemsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_prerequisiteHasBeenSet(false),
-    m_recommendationIdHasBeenSet(false),
-    m_recommendationStatus(RecommendationStatus::NOT_SET),
-    m_recommendationStatusHasBeenSet(false),
-    m_referenceIdHasBeenSet(false),
-    m_serviceType(SopServiceType::NOT_SET),
-    m_serviceTypeHasBeenSet(false)
-{
-}
-
 SopRecommendation::SopRecommendation(JsonView jsonValue)
-  : SopRecommendation()
 {
   *this = jsonValue;
 }
@@ -44,17 +28,13 @@ SopRecommendation& SopRecommendation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("appComponentName"))
   {
     m_appComponentName = jsonValue.GetString("appComponentName");
-
     m_appComponentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("items"))
   {
     Aws::Utils::Array<JsonView> itemsJsonList = jsonValue.GetArray("items");
@@ -64,49 +44,36 @@ SopRecommendation& SopRecommendation::operator =(JsonView jsonValue)
     }
     m_itemsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("prerequisite"))
   {
     m_prerequisite = jsonValue.GetString("prerequisite");
-
     m_prerequisiteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recommendationId"))
   {
     m_recommendationId = jsonValue.GetString("recommendationId");
-
     m_recommendationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recommendationStatus"))
   {
     m_recommendationStatus = RecommendationStatusMapper::GetRecommendationStatusForName(jsonValue.GetString("recommendationStatus"));
-
     m_recommendationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("referenceId"))
   {
     m_referenceId = jsonValue.GetString("referenceId");
-
     m_referenceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceType"))
   {
     m_serviceType = SopServiceTypeMapper::GetSopServiceTypeForName(jsonValue.GetString("serviceType"));
-
     m_serviceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

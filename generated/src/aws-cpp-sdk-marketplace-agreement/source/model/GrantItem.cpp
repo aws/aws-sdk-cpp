@@ -18,15 +18,7 @@ namespace AgreementService
 namespace Model
 {
 
-GrantItem::GrantItem() : 
-    m_dimensionKeyHasBeenSet(false),
-    m_maxQuantity(0),
-    m_maxQuantityHasBeenSet(false)
-{
-}
-
 GrantItem::GrantItem(JsonView jsonValue)
-  : GrantItem()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ GrantItem& GrantItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("dimensionKey"))
   {
     m_dimensionKey = jsonValue.GetString("dimensionKey");
-
     m_dimensionKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxQuantity"))
   {
     m_maxQuantity = jsonValue.GetInteger("maxQuantity");
-
     m_maxQuantityHasBeenSet = true;
   }
-
   return *this;
 }
 

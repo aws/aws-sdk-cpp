@@ -14,10 +14,6 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-DescribeKeyValueStore2020_05_31Request::DescribeKeyValueStore2020_05_31Request() : 
-    m_nameHasBeenSet(false)
-{
-}
 
 Aws::String DescribeKeyValueStore2020_05_31Request::SerializePayload() const
 {

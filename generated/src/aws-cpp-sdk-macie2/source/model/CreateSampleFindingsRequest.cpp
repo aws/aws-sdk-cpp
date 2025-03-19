@@ -12,11 +12,6 @@ using namespace Aws::Macie2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSampleFindingsRequest::CreateSampleFindingsRequest() : 
-    m_findingTypesHasBeenSet(false)
-{
-}
-
 Aws::String CreateSampleFindingsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,17 +18,7 @@ namespace finspace
 namespace Model
 {
 
-KxDataviewActiveVersion::KxDataviewActiveVersion() : 
-    m_changesetIdHasBeenSet(false),
-    m_segmentConfigurationsHasBeenSet(false),
-    m_attachedClustersHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_versionIdHasBeenSet(false)
-{
-}
-
 KxDataviewActiveVersion::KxDataviewActiveVersion(JsonView jsonValue)
-  : KxDataviewActiveVersion()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ KxDataviewActiveVersion& KxDataviewActiveVersion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("changesetId"))
   {
     m_changesetId = jsonValue.GetString("changesetId");
-
     m_changesetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("segmentConfigurations"))
   {
     Aws::Utils::Array<JsonView> segmentConfigurationsJsonList = jsonValue.GetArray("segmentConfigurations");
@@ -51,7 +39,6 @@ KxDataviewActiveVersion& KxDataviewActiveVersion::operator =(JsonView jsonValue)
     }
     m_segmentConfigurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attachedClusters"))
   {
     Aws::Utils::Array<JsonView> attachedClustersJsonList = jsonValue.GetArray("attachedClusters");
@@ -61,21 +48,16 @@ KxDataviewActiveVersion& KxDataviewActiveVersion::operator =(JsonView jsonValue)
     }
     m_attachedClustersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("createdTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("versionId"))
   {
     m_versionId = jsonValue.GetString("versionId");
-
     m_versionIdHasBeenSet = true;
   }
-
   return *this;
 }
 

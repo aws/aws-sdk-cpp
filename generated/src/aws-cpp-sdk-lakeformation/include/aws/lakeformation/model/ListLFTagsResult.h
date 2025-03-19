@@ -29,7 +29,7 @@ namespace Model
   class ListLFTagsResult
   {
   public:
-    AWS_LAKEFORMATION_API ListLFTagsResult();
+    AWS_LAKEFORMATION_API ListLFTagsResult() = default;
     AWS_LAKEFORMATION_API ListLFTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LAKEFORMATION_API ListLFTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list of LF-tags that the requested has permission to view.</p>
      */
-    inline const Aws::Vector<LFTagPair>& GetLFTags() const{ return m_lFTags; }
-    inline void SetLFTags(const Aws::Vector<LFTagPair>& value) { m_lFTags = value; }
-    inline void SetLFTags(Aws::Vector<LFTagPair>&& value) { m_lFTags = std::move(value); }
-    inline ListLFTagsResult& WithLFTags(const Aws::Vector<LFTagPair>& value) { SetLFTags(value); return *this;}
-    inline ListLFTagsResult& WithLFTags(Aws::Vector<LFTagPair>&& value) { SetLFTags(std::move(value)); return *this;}
-    inline ListLFTagsResult& AddLFTags(const LFTagPair& value) { m_lFTags.push_back(value); return *this; }
-    inline ListLFTagsResult& AddLFTags(LFTagPair&& value) { m_lFTags.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<LFTagPair>& GetLFTags() const { return m_lFTags; }
+    template<typename LFTagsT = Aws::Vector<LFTagPair>>
+    void SetLFTags(LFTagsT&& value) { m_lFTagsHasBeenSet = true; m_lFTags = std::forward<LFTagsT>(value); }
+    template<typename LFTagsT = Aws::Vector<LFTagPair>>
+    ListLFTagsResult& WithLFTags(LFTagsT&& value) { SetLFTags(std::forward<LFTagsT>(value)); return *this;}
+    template<typename LFTagsT = LFTagPair>
+    ListLFTagsResult& AddLFTags(LFTagsT&& value) { m_lFTagsHasBeenSet = true; m_lFTags.emplace_back(std::forward<LFTagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>A continuation token, present if the current list segment is not the
      * last.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListLFTagsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListLFTagsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListLFTagsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListLFTagsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListLFTagsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListLFTagsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListLFTagsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListLFTagsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<LFTagPair> m_lFTags;
+    bool m_lFTagsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

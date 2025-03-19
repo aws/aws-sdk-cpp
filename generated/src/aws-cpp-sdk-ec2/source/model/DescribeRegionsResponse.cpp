@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeRegionsResponse::DescribeRegionsResponse()
-{
-}
-
 DescribeRegionsResponse::DescribeRegionsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ DescribeRegionsResponse& DescribeRegionsResponse::operator =(const Aws::AmazonWe
     if(!regionsNode.IsNull())
     {
       XmlNode regionsMember = regionsNode.FirstChild("item");
+      m_regionsHasBeenSet = !regionsMember.IsNull();
       while(!regionsMember.IsNull())
       {
         m_regions.push_back(regionsMember);
         regionsMember = regionsMember.NextNode("item");
       }
 
+      m_regionsHasBeenSet = true;
     }
   }
 
@@ -56,6 +54,7 @@ DescribeRegionsResponse& DescribeRegionsResponse::operator =(const Aws::AmazonWe
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeRegionsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

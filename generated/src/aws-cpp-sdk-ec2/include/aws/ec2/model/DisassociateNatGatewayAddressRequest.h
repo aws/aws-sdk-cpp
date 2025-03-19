@@ -22,7 +22,7 @@ namespace Model
   class DisassociateNatGatewayAddressRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DisassociateNatGatewayAddressRequest();
+    AWS_EC2_API DisassociateNatGatewayAddressRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The ID of the NAT gateway.</p>
      */
-    inline const Aws::String& GetNatGatewayId() const{ return m_natGatewayId; }
+    inline const Aws::String& GetNatGatewayId() const { return m_natGatewayId; }
     inline bool NatGatewayIdHasBeenSet() const { return m_natGatewayIdHasBeenSet; }
-    inline void SetNatGatewayId(const Aws::String& value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId = value; }
-    inline void SetNatGatewayId(Aws::String&& value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId = std::move(value); }
-    inline void SetNatGatewayId(const char* value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId.assign(value); }
-    inline DisassociateNatGatewayAddressRequest& WithNatGatewayId(const Aws::String& value) { SetNatGatewayId(value); return *this;}
-    inline DisassociateNatGatewayAddressRequest& WithNatGatewayId(Aws::String&& value) { SetNatGatewayId(std::move(value)); return *this;}
-    inline DisassociateNatGatewayAddressRequest& WithNatGatewayId(const char* value) { SetNatGatewayId(value); return *this;}
+    template<typename NatGatewayIdT = Aws::String>
+    void SetNatGatewayId(NatGatewayIdT&& value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId = std::forward<NatGatewayIdT>(value); }
+    template<typename NatGatewayIdT = Aws::String>
+    DisassociateNatGatewayAddressRequest& WithNatGatewayId(NatGatewayIdT&& value) { SetNatGatewayId(std::forward<NatGatewayIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,15 +54,14 @@ namespace Model
      * <p>The association IDs of EIPs that have been associated with the NAT
      * gateway.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAssociationIds() const{ return m_associationIds; }
+    inline const Aws::Vector<Aws::String>& GetAssociationIds() const { return m_associationIds; }
     inline bool AssociationIdsHasBeenSet() const { return m_associationIdsHasBeenSet; }
-    inline void SetAssociationIds(const Aws::Vector<Aws::String>& value) { m_associationIdsHasBeenSet = true; m_associationIds = value; }
-    inline void SetAssociationIds(Aws::Vector<Aws::String>&& value) { m_associationIdsHasBeenSet = true; m_associationIds = std::move(value); }
-    inline DisassociateNatGatewayAddressRequest& WithAssociationIds(const Aws::Vector<Aws::String>& value) { SetAssociationIds(value); return *this;}
-    inline DisassociateNatGatewayAddressRequest& WithAssociationIds(Aws::Vector<Aws::String>&& value) { SetAssociationIds(std::move(value)); return *this;}
-    inline DisassociateNatGatewayAddressRequest& AddAssociationIds(const Aws::String& value) { m_associationIdsHasBeenSet = true; m_associationIds.push_back(value); return *this; }
-    inline DisassociateNatGatewayAddressRequest& AddAssociationIds(Aws::String&& value) { m_associationIdsHasBeenSet = true; m_associationIds.push_back(std::move(value)); return *this; }
-    inline DisassociateNatGatewayAddressRequest& AddAssociationIds(const char* value) { m_associationIdsHasBeenSet = true; m_associationIds.push_back(value); return *this; }
+    template<typename AssociationIdsT = Aws::Vector<Aws::String>>
+    void SetAssociationIds(AssociationIdsT&& value) { m_associationIdsHasBeenSet = true; m_associationIds = std::forward<AssociationIdsT>(value); }
+    template<typename AssociationIdsT = Aws::Vector<Aws::String>>
+    DisassociateNatGatewayAddressRequest& WithAssociationIds(AssociationIdsT&& value) { SetAssociationIds(std::forward<AssociationIdsT>(value)); return *this;}
+    template<typename AssociationIdsT = Aws::String>
+    DisassociateNatGatewayAddressRequest& AddAssociationIds(AssociationIdsT&& value) { m_associationIdsHasBeenSet = true; m_associationIds.emplace_back(std::forward<AssociationIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -73,7 +70,7 @@ namespace Model
      * IP addresses if connections are still in progress. Default value is 350
      * seconds.</p>
      */
-    inline int GetMaxDrainDurationSeconds() const{ return m_maxDrainDurationSeconds; }
+    inline int GetMaxDrainDurationSeconds() const { return m_maxDrainDurationSeconds; }
     inline bool MaxDrainDurationSecondsHasBeenSet() const { return m_maxDrainDurationSecondsHasBeenSet; }
     inline void SetMaxDrainDurationSeconds(int value) { m_maxDrainDurationSecondsHasBeenSet = true; m_maxDrainDurationSeconds = value; }
     inline DisassociateNatGatewayAddressRequest& WithMaxDrainDurationSeconds(int value) { SetMaxDrainDurationSeconds(value); return *this;}
@@ -86,7 +83,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DisassociateNatGatewayAddressRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -99,10 +96,10 @@ namespace Model
     Aws::Vector<Aws::String> m_associationIds;
     bool m_associationIdsHasBeenSet = false;
 
-    int m_maxDrainDurationSeconds;
+    int m_maxDrainDurationSeconds{0};
     bool m_maxDrainDurationSecondsHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

@@ -18,19 +18,7 @@ namespace MediaConnect
 namespace Model
 {
 
-Gateway::Gateway() : 
-    m_egressCidrBlocksHasBeenSet(false),
-    m_gatewayArnHasBeenSet(false),
-    m_gatewayMessagesHasBeenSet(false),
-    m_gatewayState(GatewayState::NOT_SET),
-    m_gatewayStateHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_networksHasBeenSet(false)
-{
-}
-
 Gateway::Gateway(JsonView jsonValue)
-  : Gateway()
 {
   *this = jsonValue;
 }
@@ -46,14 +34,11 @@ Gateway& Gateway::operator =(JsonView jsonValue)
     }
     m_egressCidrBlocksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("gatewayArn"))
   {
     m_gatewayArn = jsonValue.GetString("gatewayArn");
-
     m_gatewayArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("gatewayMessages"))
   {
     Aws::Utils::Array<JsonView> gatewayMessagesJsonList = jsonValue.GetArray("gatewayMessages");
@@ -63,21 +48,16 @@ Gateway& Gateway::operator =(JsonView jsonValue)
     }
     m_gatewayMessagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("gatewayState"))
   {
     m_gatewayState = GatewayStateMapper::GetGatewayStateForName(jsonValue.GetString("gatewayState"));
-
     m_gatewayStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networks"))
   {
     Aws::Utils::Array<JsonView> networksJsonList = jsonValue.GetArray("networks");
@@ -87,7 +67,6 @@ Gateway& Gateway::operator =(JsonView jsonValue)
     }
     m_networksHasBeenSet = true;
   }
-
   return *this;
 }
 

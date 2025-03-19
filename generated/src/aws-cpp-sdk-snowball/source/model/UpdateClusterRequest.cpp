@@ -12,20 +12,6 @@ using namespace Aws::Snowball::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateClusterRequest::UpdateClusterRequest() : 
-    m_clusterIdHasBeenSet(false),
-    m_roleARNHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_resourcesHasBeenSet(false),
-    m_onDeviceServiceConfigurationHasBeenSet(false),
-    m_addressIdHasBeenSet(false),
-    m_shippingOption(ShippingOption::NOT_SET),
-    m_shippingOptionHasBeenSet(false),
-    m_notificationHasBeenSet(false),
-    m_forwardingAddressIdHasBeenSet(false)
-{
-}
-
 Aws::String UpdateClusterRequest::SerializePayload() const
 {
   JsonValue payload;

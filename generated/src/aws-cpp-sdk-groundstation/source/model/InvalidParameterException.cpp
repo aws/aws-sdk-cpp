@@ -18,14 +18,7 @@ namespace GroundStation
 namespace Model
 {
 
-InvalidParameterException::InvalidParameterException() : 
-    m_messageHasBeenSet(false),
-    m_parameterNameHasBeenSet(false)
-{
-}
-
 InvalidParameterException::InvalidParameterException(JsonView jsonValue)
-  : InvalidParameterException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ InvalidParameterException& InvalidParameterException::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameterName"))
   {
     m_parameterName = jsonValue.GetString("parameterName");
-
     m_parameterNameHasBeenSet = true;
   }
-
   return *this;
 }
 

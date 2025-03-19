@@ -18,17 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-LineChartSortConfiguration::LineChartSortConfiguration() : 
-    m_categorySortHasBeenSet(false),
-    m_categoryItemsLimitConfigurationHasBeenSet(false),
-    m_colorItemsLimitConfigurationHasBeenSet(false),
-    m_smallMultiplesSortHasBeenSet(false),
-    m_smallMultiplesLimitConfigurationHasBeenSet(false)
-{
-}
-
 LineChartSortConfiguration::LineChartSortConfiguration(JsonView jsonValue)
-  : LineChartSortConfiguration()
 {
   *this = jsonValue;
 }
@@ -44,21 +34,16 @@ LineChartSortConfiguration& LineChartSortConfiguration::operator =(JsonView json
     }
     m_categorySortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CategoryItemsLimitConfiguration"))
   {
     m_categoryItemsLimitConfiguration = jsonValue.GetObject("CategoryItemsLimitConfiguration");
-
     m_categoryItemsLimitConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColorItemsLimitConfiguration"))
   {
     m_colorItemsLimitConfiguration = jsonValue.GetObject("ColorItemsLimitConfiguration");
-
     m_colorItemsLimitConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SmallMultiplesSort"))
   {
     Aws::Utils::Array<JsonView> smallMultiplesSortJsonList = jsonValue.GetArray("SmallMultiplesSort");
@@ -68,14 +53,11 @@ LineChartSortConfiguration& LineChartSortConfiguration::operator =(JsonView json
     }
     m_smallMultiplesSortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SmallMultiplesLimitConfiguration"))
   {
     m_smallMultiplesLimitConfiguration = jsonValue.GetObject("SmallMultiplesLimitConfiguration");
-
     m_smallMultiplesLimitConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

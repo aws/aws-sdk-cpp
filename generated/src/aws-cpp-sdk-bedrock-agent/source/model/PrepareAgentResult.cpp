@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PrepareAgentResult::PrepareAgentResult() : 
-    m_agentStatus(AgentStatus::NOT_SET)
-{
-}
-
 PrepareAgentResult::PrepareAgentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : PrepareAgentResult()
 {
   *this = result;
 }
@@ -34,33 +28,30 @@ PrepareAgentResult& PrepareAgentResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("agentId"))
   {
     m_agentId = jsonValue.GetString("agentId");
-
+    m_agentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("agentStatus"))
   {
     m_agentStatus = AgentStatusMapper::GetAgentStatusForName(jsonValue.GetString("agentStatus"));
-
+    m_agentStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("agentVersion"))
   {
     m_agentVersion = jsonValue.GetString("agentVersion");
-
+    m_agentVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("preparedAt"))
   {
     m_preparedAt = jsonValue.GetString("preparedAt");
-
+    m_preparedAtHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

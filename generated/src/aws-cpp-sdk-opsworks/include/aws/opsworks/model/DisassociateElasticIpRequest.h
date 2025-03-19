@@ -21,7 +21,7 @@ namespace Model
   class DisassociateElasticIpRequest : public OpsWorksRequest
   {
   public:
-    AWS_OPSWORKS_API DisassociateElasticIpRequest();
+    AWS_OPSWORKS_API DisassociateElasticIpRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The Elastic IP address.</p>
      */
-    inline const Aws::String& GetElasticIp() const{ return m_elasticIp; }
+    inline const Aws::String& GetElasticIp() const { return m_elasticIp; }
     inline bool ElasticIpHasBeenSet() const { return m_elasticIpHasBeenSet; }
-    inline void SetElasticIp(const Aws::String& value) { m_elasticIpHasBeenSet = true; m_elasticIp = value; }
-    inline void SetElasticIp(Aws::String&& value) { m_elasticIpHasBeenSet = true; m_elasticIp = std::move(value); }
-    inline void SetElasticIp(const char* value) { m_elasticIpHasBeenSet = true; m_elasticIp.assign(value); }
-    inline DisassociateElasticIpRequest& WithElasticIp(const Aws::String& value) { SetElasticIp(value); return *this;}
-    inline DisassociateElasticIpRequest& WithElasticIp(Aws::String&& value) { SetElasticIp(std::move(value)); return *this;}
-    inline DisassociateElasticIpRequest& WithElasticIp(const char* value) { SetElasticIp(value); return *this;}
+    template<typename ElasticIpT = Aws::String>
+    void SetElasticIp(ElasticIpT&& value) { m_elasticIpHasBeenSet = true; m_elasticIp = std::forward<ElasticIpT>(value); }
+    template<typename ElasticIpT = Aws::String>
+    DisassociateElasticIpRequest& WithElasticIp(ElasticIpT&& value) { SetElasticIp(std::forward<ElasticIpT>(value)); return *this;}
     ///@}
   private:
 

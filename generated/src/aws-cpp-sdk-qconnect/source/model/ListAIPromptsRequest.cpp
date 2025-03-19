@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListAIPromptsRequest::ListAIPromptsRequest() : 
-    m_assistantIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_origin(Origin::NOT_SET),
-    m_originHasBeenSet(false)
-{
-}
-
 Aws::String ListAIPromptsRequest::SerializePayload() const
 {
   return {};

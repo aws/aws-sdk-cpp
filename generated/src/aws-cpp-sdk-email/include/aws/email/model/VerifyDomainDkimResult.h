@@ -35,7 +35,7 @@ namespace Model
   class VerifyDomainDkimResult
   {
   public:
-    AWS_SES_API VerifyDomainDkimResult();
+    AWS_SES_API VerifyDomainDkimResult() = default;
     AWS_SES_API VerifyDomainDkimResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_SES_API VerifyDomainDkimResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -54,29 +54,30 @@ namespace Model
      * href="https://docs.aws.amazon.com/ses/latest/dg/send-email-authentication-dkim-easy.html">Amazon
      * SES Developer Guide</a>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDkimTokens() const{ return m_dkimTokens; }
-    inline void SetDkimTokens(const Aws::Vector<Aws::String>& value) { m_dkimTokens = value; }
-    inline void SetDkimTokens(Aws::Vector<Aws::String>&& value) { m_dkimTokens = std::move(value); }
-    inline VerifyDomainDkimResult& WithDkimTokens(const Aws::Vector<Aws::String>& value) { SetDkimTokens(value); return *this;}
-    inline VerifyDomainDkimResult& WithDkimTokens(Aws::Vector<Aws::String>&& value) { SetDkimTokens(std::move(value)); return *this;}
-    inline VerifyDomainDkimResult& AddDkimTokens(const Aws::String& value) { m_dkimTokens.push_back(value); return *this; }
-    inline VerifyDomainDkimResult& AddDkimTokens(Aws::String&& value) { m_dkimTokens.push_back(std::move(value)); return *this; }
-    inline VerifyDomainDkimResult& AddDkimTokens(const char* value) { m_dkimTokens.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetDkimTokens() const { return m_dkimTokens; }
+    template<typename DkimTokensT = Aws::Vector<Aws::String>>
+    void SetDkimTokens(DkimTokensT&& value) { m_dkimTokensHasBeenSet = true; m_dkimTokens = std::forward<DkimTokensT>(value); }
+    template<typename DkimTokensT = Aws::Vector<Aws::String>>
+    VerifyDomainDkimResult& WithDkimTokens(DkimTokensT&& value) { SetDkimTokens(std::forward<DkimTokensT>(value)); return *this;}
+    template<typename DkimTokensT = Aws::String>
+    VerifyDomainDkimResult& AddDkimTokens(DkimTokensT&& value) { m_dkimTokensHasBeenSet = true; m_dkimTokens.emplace_back(std::forward<DkimTokensT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline VerifyDomainDkimResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline VerifyDomainDkimResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    VerifyDomainDkimResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_dkimTokens;
+    bool m_dkimTokensHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

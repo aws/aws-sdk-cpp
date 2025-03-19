@@ -18,14 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-InputDestinationVpc::InputDestinationVpc() : 
-    m_availabilityZoneHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false)
-{
-}
-
 InputDestinationVpc::InputDestinationVpc(JsonView jsonValue)
-  : InputDestinationVpc()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ InputDestinationVpc& InputDestinationVpc::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("availabilityZone"))
   {
     m_availabilityZone = jsonValue.GetString("availabilityZone");
-
     m_availabilityZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkInterfaceId"))
   {
     m_networkInterfaceId = jsonValue.GetString("networkInterfaceId");
-
     m_networkInterfaceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

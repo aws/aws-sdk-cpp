@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListInputDeviceTransfersRequest::ListInputDeviceTransfersRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_transferTypeHasBeenSet(false)
-{
-}
-
 Aws::String ListInputDeviceTransfersRequest::SerializePayload() const
 {
   return {};

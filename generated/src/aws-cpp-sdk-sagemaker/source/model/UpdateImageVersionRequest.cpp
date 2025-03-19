@@ -12,27 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateImageVersionRequest::UpdateImageVersionRequest() : 
-    m_imageNameHasBeenSet(false),
-    m_aliasHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false),
-    m_aliasesToAddHasBeenSet(false),
-    m_aliasesToDeleteHasBeenSet(false),
-    m_vendorGuidance(VendorGuidance::NOT_SET),
-    m_vendorGuidanceHasBeenSet(false),
-    m_jobType(JobType::NOT_SET),
-    m_jobTypeHasBeenSet(false),
-    m_mLFrameworkHasBeenSet(false),
-    m_programmingLangHasBeenSet(false),
-    m_processor(Processor::NOT_SET),
-    m_processorHasBeenSet(false),
-    m_horovod(false),
-    m_horovodHasBeenSet(false),
-    m_releaseNotesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateImageVersionRequest::SerializePayload() const
 {
   JsonValue payload;

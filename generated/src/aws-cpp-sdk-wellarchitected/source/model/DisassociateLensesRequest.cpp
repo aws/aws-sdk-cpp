@@ -12,12 +12,6 @@ using namespace Aws::WellArchitected::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateLensesRequest::DisassociateLensesRequest() : 
-    m_workloadIdHasBeenSet(false),
-    m_lensAliasesHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateLensesRequest::SerializePayload() const
 {
   JsonValue payload;

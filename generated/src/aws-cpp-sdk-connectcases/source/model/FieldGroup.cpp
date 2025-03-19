@@ -18,14 +18,7 @@ namespace ConnectCases
 namespace Model
 {
 
-FieldGroup::FieldGroup() : 
-    m_fieldsHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 FieldGroup::FieldGroup(JsonView jsonValue)
-  : FieldGroup()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ FieldGroup& FieldGroup::operator =(JsonView jsonValue)
     }
     m_fieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

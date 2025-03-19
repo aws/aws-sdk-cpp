@@ -20,14 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-ReferenceLink::ReferenceLink() : 
-    m_textHasBeenSet(false),
-    m_linkHasBeenSet(false)
-{
-}
-
 ReferenceLink::ReferenceLink(const XmlNode& xmlNode)
-  : ReferenceLink()
 {
   *this = xmlNode;
 }

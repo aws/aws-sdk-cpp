@@ -16,10 +16,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteImagePipelineResult::DeleteImagePipelineResult()
-{
-}
-
 DeleteImagePipelineResult::DeleteImagePipelineResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -31,15 +27,13 @@ DeleteImagePipelineResult& DeleteImagePipelineResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("requestId"))
   {
     m_requestId = jsonValue.GetString("requestId");
-
+    m_requestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imagePipelineArn"))
   {
     m_imagePipelineArn = jsonValue.GetString("imagePipelineArn");
-
+    m_imagePipelineArnHasBeenSet = true;
   }
-
 
 
   return *this;

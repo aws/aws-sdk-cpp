@@ -12,19 +12,6 @@ using namespace Aws::Support::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateCaseRequest::CreateCaseRequest() : 
-    m_subjectHasBeenSet(false),
-    m_serviceCodeHasBeenSet(false),
-    m_severityCodeHasBeenSet(false),
-    m_categoryCodeHasBeenSet(false),
-    m_communicationBodyHasBeenSet(false),
-    m_ccEmailAddressesHasBeenSet(false),
-    m_languageHasBeenSet(false),
-    m_issueTypeHasBeenSet(false),
-    m_attachmentSetIdHasBeenSet(false)
-{
-}
-
 Aws::String CreateCaseRequest::SerializePayload() const
 {
   JsonValue payload;

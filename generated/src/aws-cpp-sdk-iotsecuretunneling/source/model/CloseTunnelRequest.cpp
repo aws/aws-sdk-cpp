@@ -12,13 +12,6 @@ using namespace Aws::IoTSecureTunneling::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CloseTunnelRequest::CloseTunnelRequest() : 
-    m_tunnelIdHasBeenSet(false),
-    m_delete(false),
-    m_deleteHasBeenSet(false)
-{
-}
-
 Aws::String CloseTunnelRequest::SerializePayload() const
 {
   JsonValue payload;

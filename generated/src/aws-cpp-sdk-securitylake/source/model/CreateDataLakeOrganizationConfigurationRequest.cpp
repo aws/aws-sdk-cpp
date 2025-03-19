@@ -12,11 +12,6 @@ using namespace Aws::SecurityLake::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDataLakeOrganizationConfigurationRequest::CreateDataLakeOrganizationConfigurationRequest() : 
-    m_autoEnableNewAccountHasBeenSet(false)
-{
-}
-
 Aws::String CreateDataLakeOrganizationConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeFleetDeploymentResult::DescribeFleetDeploymentResult()
-{
-}
-
 DescribeFleetDeploymentResult::DescribeFleetDeploymentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DescribeFleetDeploymentResult& DescribeFleetDeploymentResult::operator =(const A
   if(jsonValue.ValueExists("FleetDeployment"))
   {
     m_fleetDeployment = jsonValue.GetObject("FleetDeployment");
-
+    m_fleetDeploymentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LocationalDeployments"))
   {
     Aws::Map<Aws::String, JsonView> locationalDeploymentsJsonMap = jsonValue.GetObject("LocationalDeployments").GetAllObjects();
@@ -42,14 +37,15 @@ DescribeFleetDeploymentResult& DescribeFleetDeploymentResult::operator =(const A
     {
       m_locationalDeployments[locationalDeploymentsItem.first] = locationalDeploymentsItem.second.AsObject();
     }
+    m_locationalDeploymentsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

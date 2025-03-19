@@ -29,7 +29,7 @@ namespace Model
   class StartRemediationExecutionResult
   {
   public:
-    AWS_CONFIGSERVICE_API StartRemediationExecutionResult();
+    AWS_CONFIGSERVICE_API StartRemediationExecutionResult() = default;
     AWS_CONFIGSERVICE_API StartRemediationExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONFIGSERVICE_API StartRemediationExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,11 @@ namespace Model
      * <p>Returns a failure message. For example, the resource is already
      * compliant.</p>
      */
-    inline const Aws::String& GetFailureMessage() const{ return m_failureMessage; }
-    inline void SetFailureMessage(const Aws::String& value) { m_failureMessage = value; }
-    inline void SetFailureMessage(Aws::String&& value) { m_failureMessage = std::move(value); }
-    inline void SetFailureMessage(const char* value) { m_failureMessage.assign(value); }
-    inline StartRemediationExecutionResult& WithFailureMessage(const Aws::String& value) { SetFailureMessage(value); return *this;}
-    inline StartRemediationExecutionResult& WithFailureMessage(Aws::String&& value) { SetFailureMessage(std::move(value)); return *this;}
-    inline StartRemediationExecutionResult& WithFailureMessage(const char* value) { SetFailureMessage(value); return *this;}
+    inline const Aws::String& GetFailureMessage() const { return m_failureMessage; }
+    template<typename FailureMessageT = Aws::String>
+    void SetFailureMessage(FailureMessageT&& value) { m_failureMessageHasBeenSet = true; m_failureMessage = std::forward<FailureMessageT>(value); }
+    template<typename FailureMessageT = Aws::String>
+    StartRemediationExecutionResult& WithFailureMessage(FailureMessageT&& value) { SetFailureMessage(std::forward<FailureMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,32 +51,33 @@ namespace Model
      * <p>For resources that have failed to start execution, the API returns a resource
      * key object.</p>
      */
-    inline const Aws::Vector<ResourceKey>& GetFailedItems() const{ return m_failedItems; }
-    inline void SetFailedItems(const Aws::Vector<ResourceKey>& value) { m_failedItems = value; }
-    inline void SetFailedItems(Aws::Vector<ResourceKey>&& value) { m_failedItems = std::move(value); }
-    inline StartRemediationExecutionResult& WithFailedItems(const Aws::Vector<ResourceKey>& value) { SetFailedItems(value); return *this;}
-    inline StartRemediationExecutionResult& WithFailedItems(Aws::Vector<ResourceKey>&& value) { SetFailedItems(std::move(value)); return *this;}
-    inline StartRemediationExecutionResult& AddFailedItems(const ResourceKey& value) { m_failedItems.push_back(value); return *this; }
-    inline StartRemediationExecutionResult& AddFailedItems(ResourceKey&& value) { m_failedItems.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ResourceKey>& GetFailedItems() const { return m_failedItems; }
+    template<typename FailedItemsT = Aws::Vector<ResourceKey>>
+    void SetFailedItems(FailedItemsT&& value) { m_failedItemsHasBeenSet = true; m_failedItems = std::forward<FailedItemsT>(value); }
+    template<typename FailedItemsT = Aws::Vector<ResourceKey>>
+    StartRemediationExecutionResult& WithFailedItems(FailedItemsT&& value) { SetFailedItems(std::forward<FailedItemsT>(value)); return *this;}
+    template<typename FailedItemsT = ResourceKey>
+    StartRemediationExecutionResult& AddFailedItems(FailedItemsT&& value) { m_failedItemsHasBeenSet = true; m_failedItems.emplace_back(std::forward<FailedItemsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartRemediationExecutionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartRemediationExecutionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartRemediationExecutionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartRemediationExecutionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_failureMessage;
+    bool m_failureMessageHasBeenSet = false;
 
     Aws::Vector<ResourceKey> m_failedItems;
+    bool m_failedItemsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

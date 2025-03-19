@@ -18,22 +18,7 @@ namespace NeptuneGraph
 namespace Model
 {
 
-ImportTaskSummary::ImportTaskSummary() : 
-    m_graphIdHasBeenSet(false),
-    m_taskIdHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_format(Format::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_parquetType(ParquetType::NOT_SET),
-    m_parquetTypeHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_status(ImportTaskStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 ImportTaskSummary::ImportTaskSummary(JsonView jsonValue)
-  : ImportTaskSummary()
 {
   *this = jsonValue;
 }
@@ -43,52 +28,38 @@ ImportTaskSummary& ImportTaskSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("graphId"))
   {
     m_graphId = jsonValue.GetString("graphId");
-
     m_graphIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskId"))
   {
     m_taskId = jsonValue.GetString("taskId");
-
     m_taskIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("source"))
   {
     m_source = jsonValue.GetString("source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("format"))
   {
     m_format = FormatMapper::GetFormatForName(jsonValue.GetString("format"));
-
     m_formatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parquetType"))
   {
     m_parquetType = ParquetTypeMapper::GetParquetTypeForName(jsonValue.GetString("parquetType"));
-
     m_parquetTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ImportTaskStatusMapper::GetImportTaskStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

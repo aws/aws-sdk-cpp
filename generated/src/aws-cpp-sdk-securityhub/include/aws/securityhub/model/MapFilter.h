@@ -34,7 +34,7 @@ namespace Model
   class MapFilter
   {
   public:
-    AWS_SECURITYHUB_API MapFilter();
+    AWS_SECURITYHUB_API MapFilter() = default;
     AWS_SECURITYHUB_API MapFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API MapFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * <code>Key</code> identifies the name of the tag. For
      * <code>UserDefinedFields</code>, <code>Key</code> is the name of the field.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline MapFilter& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline MapFilter& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline MapFilter& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    MapFilter& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * <code>Security</code>. If you provide <code>security</code> as the filter value,
      * then there's no match.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline MapFilter& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline MapFilter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline MapFilter& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    MapFilter& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -118,12 +114,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/securityhub/latest/userguide/automation-rules.html">Automation
      * rules</a> in the <i>Security Hub User Guide</i>.</p>
      */
-    inline const MapFilterComparison& GetComparison() const{ return m_comparison; }
+    inline MapFilterComparison GetComparison() const { return m_comparison; }
     inline bool ComparisonHasBeenSet() const { return m_comparisonHasBeenSet; }
-    inline void SetComparison(const MapFilterComparison& value) { m_comparisonHasBeenSet = true; m_comparison = value; }
-    inline void SetComparison(MapFilterComparison&& value) { m_comparisonHasBeenSet = true; m_comparison = std::move(value); }
-    inline MapFilter& WithComparison(const MapFilterComparison& value) { SetComparison(value); return *this;}
-    inline MapFilter& WithComparison(MapFilterComparison&& value) { SetComparison(std::move(value)); return *this;}
+    inline void SetComparison(MapFilterComparison value) { m_comparisonHasBeenSet = true; m_comparison = value; }
+    inline MapFilter& WithComparison(MapFilterComparison value) { SetComparison(value); return *this;}
     ///@}
   private:
 
@@ -133,7 +127,7 @@ namespace Model
     Aws::String m_value;
     bool m_valueHasBeenSet = false;
 
-    MapFilterComparison m_comparison;
+    MapFilterComparison m_comparison{MapFilterComparison::NOT_SET};
     bool m_comparisonHasBeenSet = false;
   };
 

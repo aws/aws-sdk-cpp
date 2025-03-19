@@ -18,14 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-QAppsConfiguration::QAppsConfiguration() : 
-    m_qAppsControlMode(QAppsControlMode::NOT_SET),
-    m_qAppsControlModeHasBeenSet(false)
-{
-}
-
 QAppsConfiguration::QAppsConfiguration(JsonView jsonValue)
-  : QAppsConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ QAppsConfiguration& QAppsConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("qAppsControlMode"))
   {
     m_qAppsControlMode = QAppsControlModeMapper::GetQAppsControlModeForName(jsonValue.GetString("qAppsControlMode"));
-
     m_qAppsControlModeHasBeenSet = true;
   }
-
   return *this;
 }
 

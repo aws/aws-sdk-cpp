@@ -18,15 +18,7 @@ namespace AmplifyUIBuilder
 namespace Model
 {
 
-ComponentEvent::ComponentEvent() : 
-    m_actionHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_bindingEventHasBeenSet(false)
-{
-}
-
 ComponentEvent::ComponentEvent(JsonView jsonValue)
-  : ComponentEvent()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ComponentEvent& ComponentEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("action"))
   {
     m_action = jsonValue.GetString("action");
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameters"))
   {
     m_parameters = jsonValue.GetObject("parameters");
-
     m_parametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bindingEvent"))
   {
     m_bindingEvent = jsonValue.GetString("bindingEvent");
-
     m_bindingEventHasBeenSet = true;
   }
-
   return *this;
 }
 

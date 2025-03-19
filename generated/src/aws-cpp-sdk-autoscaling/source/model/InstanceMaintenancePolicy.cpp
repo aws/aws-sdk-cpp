@@ -20,16 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-InstanceMaintenancePolicy::InstanceMaintenancePolicy() : 
-    m_minHealthyPercentage(0),
-    m_minHealthyPercentageHasBeenSet(false),
-    m_maxHealthyPercentage(0),
-    m_maxHealthyPercentageHasBeenSet(false)
-{
-}
-
 InstanceMaintenancePolicy::InstanceMaintenancePolicy(const XmlNode& xmlNode)
-  : InstanceMaintenancePolicy()
 {
   *this = xmlNode;
 }

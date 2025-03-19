@@ -18,13 +18,7 @@ namespace LakeFormation
 namespace Model
 {
 
-PartitionValueList::PartitionValueList() : 
-    m_valuesHasBeenSet(false)
-{
-}
-
 PartitionValueList::PartitionValueList(JsonView jsonValue)
-  : PartitionValueList()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ PartitionValueList& PartitionValueList::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

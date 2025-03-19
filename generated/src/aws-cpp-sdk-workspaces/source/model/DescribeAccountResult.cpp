@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAccountResult::DescribeAccountResult() : 
-    m_dedicatedTenancySupport(DedicatedTenancySupportResultEnum::NOT_SET),
-    m_dedicatedTenancyAccountType(DedicatedTenancyAccountType::NOT_SET)
-{
-}
-
 DescribeAccountResult::DescribeAccountResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeAccountResult()
 {
   *this = result;
 }
@@ -35,27 +28,25 @@ DescribeAccountResult& DescribeAccountResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("DedicatedTenancySupport"))
   {
     m_dedicatedTenancySupport = DedicatedTenancySupportResultEnumMapper::GetDedicatedTenancySupportResultEnumForName(jsonValue.GetString("DedicatedTenancySupport"));
-
+    m_dedicatedTenancySupportHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DedicatedTenancyManagementCidrRange"))
   {
     m_dedicatedTenancyManagementCidrRange = jsonValue.GetString("DedicatedTenancyManagementCidrRange");
-
+    m_dedicatedTenancyManagementCidrRangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DedicatedTenancyAccountType"))
   {
     m_dedicatedTenancyAccountType = DedicatedTenancyAccountTypeMapper::GetDedicatedTenancyAccountTypeForName(jsonValue.GetString("DedicatedTenancyAccountType"));
-
+    m_dedicatedTenancyAccountTypeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

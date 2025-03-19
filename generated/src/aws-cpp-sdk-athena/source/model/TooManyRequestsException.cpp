@@ -18,15 +18,7 @@ namespace Athena
 namespace Model
 {
 
-TooManyRequestsException::TooManyRequestsException() : 
-    m_messageHasBeenSet(false),
-    m_reason(ThrottleReason::NOT_SET),
-    m_reasonHasBeenSet(false)
-{
-}
-
 TooManyRequestsException::TooManyRequestsException(JsonView jsonValue)
-  : TooManyRequestsException()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ TooManyRequestsException& TooManyRequestsException::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Reason"))
   {
     m_reason = ThrottleReasonMapper::GetThrottleReasonForName(jsonValue.GetString("Reason"));
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

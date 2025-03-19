@@ -21,7 +21,7 @@ namespace Model
   class AssociateAccessGrantsIdentityCenterRequest : public S3ControlRequest
   {
   public:
-    AWS_S3CONTROL_API AssociateAccessGrantsIdentityCenterRequest();
+    AWS_S3CONTROL_API AssociateAccessGrantsIdentityCenterRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline AssociateAccessGrantsIdentityCenterRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline AssociateAccessGrantsIdentityCenterRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline AssociateAccessGrantsIdentityCenterRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    AssociateAccessGrantsIdentityCenterRequest& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * API operation to retrieve a list of your Identity Center instances and their
      * ARNs.</p>
      */
-    inline const Aws::String& GetIdentityCenterArn() const{ return m_identityCenterArn; }
+    inline const Aws::String& GetIdentityCenterArn() const { return m_identityCenterArn; }
     inline bool IdentityCenterArnHasBeenSet() const { return m_identityCenterArnHasBeenSet; }
-    inline void SetIdentityCenterArn(const Aws::String& value) { m_identityCenterArnHasBeenSet = true; m_identityCenterArn = value; }
-    inline void SetIdentityCenterArn(Aws::String&& value) { m_identityCenterArnHasBeenSet = true; m_identityCenterArn = std::move(value); }
-    inline void SetIdentityCenterArn(const char* value) { m_identityCenterArnHasBeenSet = true; m_identityCenterArn.assign(value); }
-    inline AssociateAccessGrantsIdentityCenterRequest& WithIdentityCenterArn(const Aws::String& value) { SetIdentityCenterArn(value); return *this;}
-    inline AssociateAccessGrantsIdentityCenterRequest& WithIdentityCenterArn(Aws::String&& value) { SetIdentityCenterArn(std::move(value)); return *this;}
-    inline AssociateAccessGrantsIdentityCenterRequest& WithIdentityCenterArn(const char* value) { SetIdentityCenterArn(value); return *this;}
+    template<typename IdentityCenterArnT = Aws::String>
+    void SetIdentityCenterArn(IdentityCenterArnT&& value) { m_identityCenterArnHasBeenSet = true; m_identityCenterArn = std::forward<IdentityCenterArnT>(value); }
+    template<typename IdentityCenterArnT = Aws::String>
+    AssociateAccessGrantsIdentityCenterRequest& WithIdentityCenterArn(IdentityCenterArnT&& value) { SetIdentityCenterArn(std::forward<IdentityCenterArnT>(value)); return *this;}
     ///@}
   private:
 

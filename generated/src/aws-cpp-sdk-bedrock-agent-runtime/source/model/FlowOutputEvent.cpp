@@ -18,16 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-FlowOutputEvent::FlowOutputEvent() : 
-    m_contentHasBeenSet(false),
-    m_nodeNameHasBeenSet(false),
-    m_nodeType(NodeType::NOT_SET),
-    m_nodeTypeHasBeenSet(false)
-{
-}
-
 FlowOutputEvent::FlowOutputEvent(JsonView jsonValue)
-  : FlowOutputEvent()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ FlowOutputEvent& FlowOutputEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("content"))
   {
     m_content = jsonValue.GetObject("content");
-
     m_contentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nodeName"))
   {
     m_nodeName = jsonValue.GetString("nodeName");
-
     m_nodeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nodeType"))
   {
     m_nodeType = NodeTypeMapper::GetNodeTypeForName(jsonValue.GetString("nodeType"));
-
     m_nodeTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

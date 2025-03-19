@@ -44,7 +44,7 @@ namespace Model
   class JobSettings
   {
   public:
-    AWS_MEDIACONVERT_API JobSettings();
+    AWS_MEDIACONVERT_API JobSettings() = default;
     AWS_MEDIACONVERT_API JobSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API JobSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,7 +55,7 @@ namespace Model
      * When specified, this offset (in milliseconds) is added to the input Ad Avail PTS
      * time.
      */
-    inline int GetAdAvailOffset() const{ return m_adAvailOffset; }
+    inline int GetAdAvailOffset() const { return m_adAvailOffset; }
     inline bool AdAvailOffsetHasBeenSet() const { return m_adAvailOffsetHasBeenSet; }
     inline void SetAdAvailOffset(int value) { m_adAvailOffsetHasBeenSet = true; m_adAvailOffset = value; }
     inline JobSettings& WithAdAvailOffset(int value) { SetAdAvailOffset(value); return *this;}
@@ -66,12 +66,12 @@ namespace Model
      * Settings for ad avail blanking. Video can be blanked or overlaid with an image,
      * and audio muted during SCTE-35 triggered ad avails.
      */
-    inline const AvailBlanking& GetAvailBlanking() const{ return m_availBlanking; }
+    inline const AvailBlanking& GetAvailBlanking() const { return m_availBlanking; }
     inline bool AvailBlankingHasBeenSet() const { return m_availBlankingHasBeenSet; }
-    inline void SetAvailBlanking(const AvailBlanking& value) { m_availBlankingHasBeenSet = true; m_availBlanking = value; }
-    inline void SetAvailBlanking(AvailBlanking&& value) { m_availBlankingHasBeenSet = true; m_availBlanking = std::move(value); }
-    inline JobSettings& WithAvailBlanking(const AvailBlanking& value) { SetAvailBlanking(value); return *this;}
-    inline JobSettings& WithAvailBlanking(AvailBlanking&& value) { SetAvailBlanking(std::move(value)); return *this;}
+    template<typename AvailBlankingT = AvailBlanking>
+    void SetAvailBlanking(AvailBlankingT&& value) { m_availBlankingHasBeenSet = true; m_availBlanking = std::forward<AvailBlankingT>(value); }
+    template<typename AvailBlankingT = AvailBlanking>
+    JobSettings& WithAvailBlanking(AvailBlankingT&& value) { SetAvailBlanking(std::forward<AvailBlankingT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,14 +81,14 @@ namespace Model
      * information, see:
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/3d-luts.html
      */
-    inline const Aws::Vector<ColorConversion3DLUTSetting>& GetColorConversion3DLUTSettings() const{ return m_colorConversion3DLUTSettings; }
+    inline const Aws::Vector<ColorConversion3DLUTSetting>& GetColorConversion3DLUTSettings() const { return m_colorConversion3DLUTSettings; }
     inline bool ColorConversion3DLUTSettingsHasBeenSet() const { return m_colorConversion3DLUTSettingsHasBeenSet; }
-    inline void SetColorConversion3DLUTSettings(const Aws::Vector<ColorConversion3DLUTSetting>& value) { m_colorConversion3DLUTSettingsHasBeenSet = true; m_colorConversion3DLUTSettings = value; }
-    inline void SetColorConversion3DLUTSettings(Aws::Vector<ColorConversion3DLUTSetting>&& value) { m_colorConversion3DLUTSettingsHasBeenSet = true; m_colorConversion3DLUTSettings = std::move(value); }
-    inline JobSettings& WithColorConversion3DLUTSettings(const Aws::Vector<ColorConversion3DLUTSetting>& value) { SetColorConversion3DLUTSettings(value); return *this;}
-    inline JobSettings& WithColorConversion3DLUTSettings(Aws::Vector<ColorConversion3DLUTSetting>&& value) { SetColorConversion3DLUTSettings(std::move(value)); return *this;}
-    inline JobSettings& AddColorConversion3DLUTSettings(const ColorConversion3DLUTSetting& value) { m_colorConversion3DLUTSettingsHasBeenSet = true; m_colorConversion3DLUTSettings.push_back(value); return *this; }
-    inline JobSettings& AddColorConversion3DLUTSettings(ColorConversion3DLUTSetting&& value) { m_colorConversion3DLUTSettingsHasBeenSet = true; m_colorConversion3DLUTSettings.push_back(std::move(value)); return *this; }
+    template<typename ColorConversion3DLUTSettingsT = Aws::Vector<ColorConversion3DLUTSetting>>
+    void SetColorConversion3DLUTSettings(ColorConversion3DLUTSettingsT&& value) { m_colorConversion3DLUTSettingsHasBeenSet = true; m_colorConversion3DLUTSettings = std::forward<ColorConversion3DLUTSettingsT>(value); }
+    template<typename ColorConversion3DLUTSettingsT = Aws::Vector<ColorConversion3DLUTSetting>>
+    JobSettings& WithColorConversion3DLUTSettings(ColorConversion3DLUTSettingsT&& value) { SetColorConversion3DLUTSettings(std::forward<ColorConversion3DLUTSettingsT>(value)); return *this;}
+    template<typename ColorConversion3DLUTSettingsT = ColorConversion3DLUTSetting>
+    JobSettings& AddColorConversion3DLUTSettings(ColorConversion3DLUTSettingsT&& value) { m_colorConversion3DLUTSettingsHasBeenSet = true; m_colorConversion3DLUTSettings.emplace_back(std::forward<ColorConversion3DLUTSettingsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -96,12 +96,12 @@ namespace Model
      * Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion,
      * you can ignore these settings.
      */
-    inline const EsamSettings& GetEsam() const{ return m_esam; }
+    inline const EsamSettings& GetEsam() const { return m_esam; }
     inline bool EsamHasBeenSet() const { return m_esamHasBeenSet; }
-    inline void SetEsam(const EsamSettings& value) { m_esamHasBeenSet = true; m_esam = value; }
-    inline void SetEsam(EsamSettings&& value) { m_esamHasBeenSet = true; m_esam = std::move(value); }
-    inline JobSettings& WithEsam(const EsamSettings& value) { SetEsam(value); return *this;}
-    inline JobSettings& WithEsam(EsamSettings&& value) { SetEsam(std::move(value)); return *this;}
+    template<typename EsamT = EsamSettings>
+    void SetEsam(EsamT&& value) { m_esamHasBeenSet = true; m_esam = std::forward<EsamT>(value); }
+    template<typename EsamT = EsamSettings>
+    JobSettings& WithEsam(EsamT&& value) { SetEsam(std::forward<EsamT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,12 +112,12 @@ namespace Model
      * more information about XDS, see EIA-608 Line Data Services, section 9.5.1.5 05h
      * Content Advisory.
      */
-    inline const ExtendedDataServices& GetExtendedDataServices() const{ return m_extendedDataServices; }
+    inline const ExtendedDataServices& GetExtendedDataServices() const { return m_extendedDataServices; }
     inline bool ExtendedDataServicesHasBeenSet() const { return m_extendedDataServicesHasBeenSet; }
-    inline void SetExtendedDataServices(const ExtendedDataServices& value) { m_extendedDataServicesHasBeenSet = true; m_extendedDataServices = value; }
-    inline void SetExtendedDataServices(ExtendedDataServices&& value) { m_extendedDataServicesHasBeenSet = true; m_extendedDataServices = std::move(value); }
-    inline JobSettings& WithExtendedDataServices(const ExtendedDataServices& value) { SetExtendedDataServices(value); return *this;}
-    inline JobSettings& WithExtendedDataServices(ExtendedDataServices&& value) { SetExtendedDataServices(std::move(value)); return *this;}
+    template<typename ExtendedDataServicesT = ExtendedDataServices>
+    void SetExtendedDataServices(ExtendedDataServicesT&& value) { m_extendedDataServicesHasBeenSet = true; m_extendedDataServices = std::forward<ExtendedDataServicesT>(value); }
+    template<typename ExtendedDataServicesT = ExtendedDataServices>
+    JobSettings& WithExtendedDataServices(ExtendedDataServicesT&& value) { SetExtendedDataServices(std::forward<ExtendedDataServicesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -131,7 +131,7 @@ namespace Model
      * specification, enter an integer from 1 to 150 corresponding  to the order of
      * your inputs.
      */
-    inline int GetFollowSource() const{ return m_followSource; }
+    inline int GetFollowSource() const { return m_followSource; }
     inline bool FollowSourceHasBeenSet() const { return m_followSourceHasBeenSet; }
     inline void SetFollowSource(int value) { m_followSourceHasBeenSet = true; m_followSource = value; }
     inline JobSettings& WithFollowSource(int value) { SetFollowSource(value); return *this;}
@@ -143,14 +143,14 @@ namespace Model
      * multiple inputs add in a job. These inputs will be concantenated together to
      * create the output.
      */
-    inline const Aws::Vector<Input>& GetInputs() const{ return m_inputs; }
+    inline const Aws::Vector<Input>& GetInputs() const { return m_inputs; }
     inline bool InputsHasBeenSet() const { return m_inputsHasBeenSet; }
-    inline void SetInputs(const Aws::Vector<Input>& value) { m_inputsHasBeenSet = true; m_inputs = value; }
-    inline void SetInputs(Aws::Vector<Input>&& value) { m_inputsHasBeenSet = true; m_inputs = std::move(value); }
-    inline JobSettings& WithInputs(const Aws::Vector<Input>& value) { SetInputs(value); return *this;}
-    inline JobSettings& WithInputs(Aws::Vector<Input>&& value) { SetInputs(std::move(value)); return *this;}
-    inline JobSettings& AddInputs(const Input& value) { m_inputsHasBeenSet = true; m_inputs.push_back(value); return *this; }
-    inline JobSettings& AddInputs(Input&& value) { m_inputsHasBeenSet = true; m_inputs.push_back(std::move(value)); return *this; }
+    template<typename InputsT = Aws::Vector<Input>>
+    void SetInputs(InputsT&& value) { m_inputsHasBeenSet = true; m_inputs = std::forward<InputsT>(value); }
+    template<typename InputsT = Aws::Vector<Input>>
+    JobSettings& WithInputs(InputsT&& value) { SetInputs(std::forward<InputsT>(value)); return *this;}
+    template<typename InputsT = Input>
+    JobSettings& AddInputs(InputsT&& value) { m_inputsHasBeenSet = true; m_inputs.emplace_back(std::forward<InputsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -162,12 +162,12 @@ namespace Model
      * Secrets Manager. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/kantar-watermarking.html.
      */
-    inline const KantarWatermarkSettings& GetKantarWatermark() const{ return m_kantarWatermark; }
+    inline const KantarWatermarkSettings& GetKantarWatermark() const { return m_kantarWatermark; }
     inline bool KantarWatermarkHasBeenSet() const { return m_kantarWatermarkHasBeenSet; }
-    inline void SetKantarWatermark(const KantarWatermarkSettings& value) { m_kantarWatermarkHasBeenSet = true; m_kantarWatermark = value; }
-    inline void SetKantarWatermark(KantarWatermarkSettings&& value) { m_kantarWatermarkHasBeenSet = true; m_kantarWatermark = std::move(value); }
-    inline JobSettings& WithKantarWatermark(const KantarWatermarkSettings& value) { SetKantarWatermark(value); return *this;}
-    inline JobSettings& WithKantarWatermark(KantarWatermarkSettings&& value) { SetKantarWatermark(std::move(value)); return *this;}
+    template<typename KantarWatermarkT = KantarWatermarkSettings>
+    void SetKantarWatermark(KantarWatermarkT&& value) { m_kantarWatermarkHasBeenSet = true; m_kantarWatermark = std::forward<KantarWatermarkT>(value); }
+    template<typename KantarWatermarkT = KantarWatermarkSettings>
+    JobSettings& WithKantarWatermark(KantarWatermarkT&& value) { SetKantarWatermark(std::forward<KantarWatermarkT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -177,12 +177,12 @@ namespace Model
      * see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/motion-graphic-overlay.html.
      */
-    inline const MotionImageInserter& GetMotionImageInserter() const{ return m_motionImageInserter; }
+    inline const MotionImageInserter& GetMotionImageInserter() const { return m_motionImageInserter; }
     inline bool MotionImageInserterHasBeenSet() const { return m_motionImageInserterHasBeenSet; }
-    inline void SetMotionImageInserter(const MotionImageInserter& value) { m_motionImageInserterHasBeenSet = true; m_motionImageInserter = value; }
-    inline void SetMotionImageInserter(MotionImageInserter&& value) { m_motionImageInserterHasBeenSet = true; m_motionImageInserter = std::move(value); }
-    inline JobSettings& WithMotionImageInserter(const MotionImageInserter& value) { SetMotionImageInserter(value); return *this;}
-    inline JobSettings& WithMotionImageInserter(MotionImageInserter&& value) { SetMotionImageInserter(std::move(value)); return *this;}
+    template<typename MotionImageInserterT = MotionImageInserter>
+    void SetMotionImageInserter(MotionImageInserterT&& value) { m_motionImageInserterHasBeenSet = true; m_motionImageInserter = std::forward<MotionImageInserterT>(value); }
+    template<typename MotionImageInserterT = MotionImageInserter>
+    JobSettings& WithMotionImageInserter(MotionImageInserterT&& value) { SetMotionImageInserter(std::forward<MotionImageInserterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -191,12 +191,12 @@ namespace Model
      * analytics, ignore these settings. When you enable Nielsen configuration,
      * MediaConvert enables PCM to ID3 tagging for all outputs in the job.
      */
-    inline const NielsenConfiguration& GetNielsenConfiguration() const{ return m_nielsenConfiguration; }
+    inline const NielsenConfiguration& GetNielsenConfiguration() const { return m_nielsenConfiguration; }
     inline bool NielsenConfigurationHasBeenSet() const { return m_nielsenConfigurationHasBeenSet; }
-    inline void SetNielsenConfiguration(const NielsenConfiguration& value) { m_nielsenConfigurationHasBeenSet = true; m_nielsenConfiguration = value; }
-    inline void SetNielsenConfiguration(NielsenConfiguration&& value) { m_nielsenConfigurationHasBeenSet = true; m_nielsenConfiguration = std::move(value); }
-    inline JobSettings& WithNielsenConfiguration(const NielsenConfiguration& value) { SetNielsenConfiguration(value); return *this;}
-    inline JobSettings& WithNielsenConfiguration(NielsenConfiguration&& value) { SetNielsenConfiguration(std::move(value)); return *this;}
+    template<typename NielsenConfigurationT = NielsenConfiguration>
+    void SetNielsenConfiguration(NielsenConfigurationT&& value) { m_nielsenConfigurationHasBeenSet = true; m_nielsenConfiguration = std::forward<NielsenConfigurationT>(value); }
+    template<typename NielsenConfigurationT = NielsenConfiguration>
+    JobSettings& WithNielsenConfiguration(NielsenConfigurationT&& value) { SetNielsenConfiguration(std::forward<NielsenConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -209,12 +209,12 @@ namespace Model
      * Nielsen versions: Nielsen Watermark SDK Version 6.0.13 Nielsen NLM Watermark
      * Engine Version 1.3.3 Nielsen Watermark Authenticator [SID_TIC] Version [7.0.0]
      */
-    inline const NielsenNonLinearWatermarkSettings& GetNielsenNonLinearWatermark() const{ return m_nielsenNonLinearWatermark; }
+    inline const NielsenNonLinearWatermarkSettings& GetNielsenNonLinearWatermark() const { return m_nielsenNonLinearWatermark; }
     inline bool NielsenNonLinearWatermarkHasBeenSet() const { return m_nielsenNonLinearWatermarkHasBeenSet; }
-    inline void SetNielsenNonLinearWatermark(const NielsenNonLinearWatermarkSettings& value) { m_nielsenNonLinearWatermarkHasBeenSet = true; m_nielsenNonLinearWatermark = value; }
-    inline void SetNielsenNonLinearWatermark(NielsenNonLinearWatermarkSettings&& value) { m_nielsenNonLinearWatermarkHasBeenSet = true; m_nielsenNonLinearWatermark = std::move(value); }
-    inline JobSettings& WithNielsenNonLinearWatermark(const NielsenNonLinearWatermarkSettings& value) { SetNielsenNonLinearWatermark(value); return *this;}
-    inline JobSettings& WithNielsenNonLinearWatermark(NielsenNonLinearWatermarkSettings&& value) { SetNielsenNonLinearWatermark(std::move(value)); return *this;}
+    template<typename NielsenNonLinearWatermarkT = NielsenNonLinearWatermarkSettings>
+    void SetNielsenNonLinearWatermark(NielsenNonLinearWatermarkT&& value) { m_nielsenNonLinearWatermarkHasBeenSet = true; m_nielsenNonLinearWatermark = std::forward<NielsenNonLinearWatermarkT>(value); }
+    template<typename NielsenNonLinearWatermarkT = NielsenNonLinearWatermarkSettings>
+    JobSettings& WithNielsenNonLinearWatermark(NielsenNonLinearWatermarkT&& value) { SetNielsenNonLinearWatermark(std::forward<NielsenNonLinearWatermarkT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -228,14 +228,14 @@ namespace Model
      * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS,
      * MsSmoothGroupSettings * CMAF_GROUP_SETTINGS, CmafGroupSettings
      */
-    inline const Aws::Vector<OutputGroup>& GetOutputGroups() const{ return m_outputGroups; }
+    inline const Aws::Vector<OutputGroup>& GetOutputGroups() const { return m_outputGroups; }
     inline bool OutputGroupsHasBeenSet() const { return m_outputGroupsHasBeenSet; }
-    inline void SetOutputGroups(const Aws::Vector<OutputGroup>& value) { m_outputGroupsHasBeenSet = true; m_outputGroups = value; }
-    inline void SetOutputGroups(Aws::Vector<OutputGroup>&& value) { m_outputGroupsHasBeenSet = true; m_outputGroups = std::move(value); }
-    inline JobSettings& WithOutputGroups(const Aws::Vector<OutputGroup>& value) { SetOutputGroups(value); return *this;}
-    inline JobSettings& WithOutputGroups(Aws::Vector<OutputGroup>&& value) { SetOutputGroups(std::move(value)); return *this;}
-    inline JobSettings& AddOutputGroups(const OutputGroup& value) { m_outputGroupsHasBeenSet = true; m_outputGroups.push_back(value); return *this; }
-    inline JobSettings& AddOutputGroups(OutputGroup&& value) { m_outputGroupsHasBeenSet = true; m_outputGroups.push_back(std::move(value)); return *this; }
+    template<typename OutputGroupsT = Aws::Vector<OutputGroup>>
+    void SetOutputGroups(OutputGroupsT&& value) { m_outputGroupsHasBeenSet = true; m_outputGroups = std::forward<OutputGroupsT>(value); }
+    template<typename OutputGroupsT = Aws::Vector<OutputGroup>>
+    JobSettings& WithOutputGroups(OutputGroupsT&& value) { SetOutputGroups(std::forward<OutputGroupsT>(value)); return *this;}
+    template<typename OutputGroupsT = OutputGroup>
+    JobSettings& AddOutputGroups(OutputGroupsT&& value) { m_outputGroupsHasBeenSet = true; m_outputGroups.emplace_back(std::forward<OutputGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -243,12 +243,12 @@ namespace Model
      * These settings control how the service handles timecodes throughout the job.
      * These settings don't affect input clipping.
      */
-    inline const TimecodeConfig& GetTimecodeConfig() const{ return m_timecodeConfig; }
+    inline const TimecodeConfig& GetTimecodeConfig() const { return m_timecodeConfig; }
     inline bool TimecodeConfigHasBeenSet() const { return m_timecodeConfigHasBeenSet; }
-    inline void SetTimecodeConfig(const TimecodeConfig& value) { m_timecodeConfigHasBeenSet = true; m_timecodeConfig = value; }
-    inline void SetTimecodeConfig(TimecodeConfig&& value) { m_timecodeConfigHasBeenSet = true; m_timecodeConfig = std::move(value); }
-    inline JobSettings& WithTimecodeConfig(const TimecodeConfig& value) { SetTimecodeConfig(value); return *this;}
-    inline JobSettings& WithTimecodeConfig(TimecodeConfig&& value) { SetTimecodeConfig(std::move(value)); return *this;}
+    template<typename TimecodeConfigT = TimecodeConfig>
+    void SetTimecodeConfig(TimecodeConfigT&& value) { m_timecodeConfigHasBeenSet = true; m_timecodeConfig = std::forward<TimecodeConfigT>(value); }
+    template<typename TimecodeConfigT = TimecodeConfig>
+    JobSettings& WithTimecodeConfig(TimecodeConfigT&& value) { SetTimecodeConfig(std::forward<TimecodeConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -257,16 +257,16 @@ namespace Model
      * output that you want to include this metadata, you must set ID3 metadata to
      * Passthrough.
      */
-    inline const TimedMetadataInsertion& GetTimedMetadataInsertion() const{ return m_timedMetadataInsertion; }
+    inline const TimedMetadataInsertion& GetTimedMetadataInsertion() const { return m_timedMetadataInsertion; }
     inline bool TimedMetadataInsertionHasBeenSet() const { return m_timedMetadataInsertionHasBeenSet; }
-    inline void SetTimedMetadataInsertion(const TimedMetadataInsertion& value) { m_timedMetadataInsertionHasBeenSet = true; m_timedMetadataInsertion = value; }
-    inline void SetTimedMetadataInsertion(TimedMetadataInsertion&& value) { m_timedMetadataInsertionHasBeenSet = true; m_timedMetadataInsertion = std::move(value); }
-    inline JobSettings& WithTimedMetadataInsertion(const TimedMetadataInsertion& value) { SetTimedMetadataInsertion(value); return *this;}
-    inline JobSettings& WithTimedMetadataInsertion(TimedMetadataInsertion&& value) { SetTimedMetadataInsertion(std::move(value)); return *this;}
+    template<typename TimedMetadataInsertionT = TimedMetadataInsertion>
+    void SetTimedMetadataInsertion(TimedMetadataInsertionT&& value) { m_timedMetadataInsertionHasBeenSet = true; m_timedMetadataInsertion = std::forward<TimedMetadataInsertionT>(value); }
+    template<typename TimedMetadataInsertionT = TimedMetadataInsertion>
+    JobSettings& WithTimedMetadataInsertion(TimedMetadataInsertionT&& value) { SetTimedMetadataInsertion(std::forward<TimedMetadataInsertionT>(value)); return *this;}
     ///@}
   private:
 
-    int m_adAvailOffset;
+    int m_adAvailOffset{0};
     bool m_adAvailOffsetHasBeenSet = false;
 
     AvailBlanking m_availBlanking;
@@ -281,7 +281,7 @@ namespace Model
     ExtendedDataServices m_extendedDataServices;
     bool m_extendedDataServicesHasBeenSet = false;
 
-    int m_followSource;
+    int m_followSource{0};
     bool m_followSourceHasBeenSet = false;
 
     Aws::Vector<Input> m_inputs;

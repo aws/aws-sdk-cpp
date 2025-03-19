@@ -15,19 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListShareInvitationsRequest::ListShareInvitationsRequest() : 
-    m_workloadNamePrefixHasBeenSet(false),
-    m_lensNamePrefixHasBeenSet(false),
-    m_shareResourceType(ShareResourceType::NOT_SET),
-    m_shareResourceTypeHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_profileNamePrefixHasBeenSet(false),
-    m_templateNamePrefixHasBeenSet(false)
-{
-}
-
 Aws::String ListShareInvitationsRequest::SerializePayload() const
 {
   return {};

@@ -12,11 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteOpsItemRequest::DeleteOpsItemRequest() : 
-    m_opsItemIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteOpsItemRequest::SerializePayload() const
 {
   JsonValue payload;

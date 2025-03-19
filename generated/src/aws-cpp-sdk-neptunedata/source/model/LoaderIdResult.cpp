@@ -18,13 +18,7 @@ namespace neptunedata
 namespace Model
 {
 
-LoaderIdResult::LoaderIdResult() : 
-    m_loadIdsHasBeenSet(false)
-{
-}
-
 LoaderIdResult::LoaderIdResult(JsonView jsonValue)
-  : LoaderIdResult()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ LoaderIdResult& LoaderIdResult::operator =(JsonView jsonValue)
     }
     m_loadIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

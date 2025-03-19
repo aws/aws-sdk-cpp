@@ -20,18 +20,7 @@ namespace IAM
 namespace Model
 {
 
-AccessKey::AccessKey() : 
-    m_userNameHasBeenSet(false),
-    m_accessKeyIdHasBeenSet(false),
-    m_status(StatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_secretAccessKeyHasBeenSet(false),
-    m_createDateHasBeenSet(false)
-{
-}
-
 AccessKey::AccessKey(const XmlNode& xmlNode)
-  : AccessKey()
 {
   *this = xmlNode;
 }
@@ -57,7 +46,7 @@ AccessKey& AccessKey::operator =(const XmlNode& xmlNode)
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = StatusTypeMapper::GetStatusTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = StatusTypeMapper::GetStatusTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
     XmlNode secretAccessKeyNode = resultNode.FirstChild("SecretAccessKey");

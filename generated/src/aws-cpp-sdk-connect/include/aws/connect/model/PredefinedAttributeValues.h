@@ -33,7 +33,7 @@ namespace Model
   class PredefinedAttributeValues
   {
   public:
-    AWS_CONNECT_API PredefinedAttributeValues();
+    AWS_CONNECT_API PredefinedAttributeValues() = default;
     AWS_CONNECT_API PredefinedAttributeValues(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API PredefinedAttributeValues& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,15 +43,14 @@ namespace Model
     /**
      * <p>Predefined attribute values of type string list.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetStringList() const{ return m_stringList; }
+    inline const Aws::Vector<Aws::String>& GetStringList() const { return m_stringList; }
     inline bool StringListHasBeenSet() const { return m_stringListHasBeenSet; }
-    inline void SetStringList(const Aws::Vector<Aws::String>& value) { m_stringListHasBeenSet = true; m_stringList = value; }
-    inline void SetStringList(Aws::Vector<Aws::String>&& value) { m_stringListHasBeenSet = true; m_stringList = std::move(value); }
-    inline PredefinedAttributeValues& WithStringList(const Aws::Vector<Aws::String>& value) { SetStringList(value); return *this;}
-    inline PredefinedAttributeValues& WithStringList(Aws::Vector<Aws::String>&& value) { SetStringList(std::move(value)); return *this;}
-    inline PredefinedAttributeValues& AddStringList(const Aws::String& value) { m_stringListHasBeenSet = true; m_stringList.push_back(value); return *this; }
-    inline PredefinedAttributeValues& AddStringList(Aws::String&& value) { m_stringListHasBeenSet = true; m_stringList.push_back(std::move(value)); return *this; }
-    inline PredefinedAttributeValues& AddStringList(const char* value) { m_stringListHasBeenSet = true; m_stringList.push_back(value); return *this; }
+    template<typename StringListT = Aws::Vector<Aws::String>>
+    void SetStringList(StringListT&& value) { m_stringListHasBeenSet = true; m_stringList = std::forward<StringListT>(value); }
+    template<typename StringListT = Aws::Vector<Aws::String>>
+    PredefinedAttributeValues& WithStringList(StringListT&& value) { SetStringList(std::forward<StringListT>(value)); return *this;}
+    template<typename StringListT = Aws::String>
+    PredefinedAttributeValues& AddStringList(StringListT&& value) { m_stringListHasBeenSet = true; m_stringList.emplace_back(std::forward<StringListT>(value)); return *this; }
     ///@}
   private:
 

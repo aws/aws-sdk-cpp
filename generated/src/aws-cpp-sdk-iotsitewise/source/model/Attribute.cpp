@@ -18,13 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-Attribute::Attribute() : 
-    m_defaultValueHasBeenSet(false)
-{
-}
-
 Attribute::Attribute(JsonView jsonValue)
-  : Attribute()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Attribute& Attribute::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("defaultValue"))
   {
     m_defaultValue = jsonValue.GetString("defaultValue");
-
     m_defaultValueHasBeenSet = true;
   }
-
   return *this;
 }
 

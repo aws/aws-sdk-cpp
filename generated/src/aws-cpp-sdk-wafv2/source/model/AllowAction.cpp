@@ -18,13 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-AllowAction::AllowAction() : 
-    m_customRequestHandlingHasBeenSet(false)
-{
-}
-
 AllowAction::AllowAction(JsonView jsonValue)
-  : AllowAction()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AllowAction& AllowAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CustomRequestHandling"))
   {
     m_customRequestHandling = jsonValue.GetObject("CustomRequestHandling");
-
     m_customRequestHandlingHasBeenSet = true;
   }
-
   return *this;
 }
 

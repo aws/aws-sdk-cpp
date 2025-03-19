@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteModelPackageGroupPolicyRequest::DeleteModelPackageGroupPolicyRequest() : 
-    m_modelPackageGroupNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteModelPackageGroupPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

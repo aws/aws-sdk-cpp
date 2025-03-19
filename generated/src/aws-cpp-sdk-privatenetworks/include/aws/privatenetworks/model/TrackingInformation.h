@@ -31,7 +31,7 @@ namespace Model
   class TrackingInformation
   {
   public:
-    AWS_PRIVATENETWORKS_API TrackingInformation();
+    AWS_PRIVATENETWORKS_API TrackingInformation() = default;
     AWS_PRIVATENETWORKS_API TrackingInformation(Aws::Utils::Json::JsonView jsonValue);
     AWS_PRIVATENETWORKS_API TrackingInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PRIVATENETWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The tracking number of the shipment.</p>
      */
-    inline const Aws::String& GetTrackingNumber() const{ return m_trackingNumber; }
+    inline const Aws::String& GetTrackingNumber() const { return m_trackingNumber; }
     inline bool TrackingNumberHasBeenSet() const { return m_trackingNumberHasBeenSet; }
-    inline void SetTrackingNumber(const Aws::String& value) { m_trackingNumberHasBeenSet = true; m_trackingNumber = value; }
-    inline void SetTrackingNumber(Aws::String&& value) { m_trackingNumberHasBeenSet = true; m_trackingNumber = std::move(value); }
-    inline void SetTrackingNumber(const char* value) { m_trackingNumberHasBeenSet = true; m_trackingNumber.assign(value); }
-    inline TrackingInformation& WithTrackingNumber(const Aws::String& value) { SetTrackingNumber(value); return *this;}
-    inline TrackingInformation& WithTrackingNumber(Aws::String&& value) { SetTrackingNumber(std::move(value)); return *this;}
-    inline TrackingInformation& WithTrackingNumber(const char* value) { SetTrackingNumber(value); return *this;}
+    template<typename TrackingNumberT = Aws::String>
+    void SetTrackingNumber(TrackingNumberT&& value) { m_trackingNumberHasBeenSet = true; m_trackingNumber = std::forward<TrackingNumberT>(value); }
+    template<typename TrackingNumberT = Aws::String>
+    TrackingInformation& WithTrackingNumber(TrackingNumberT&& value) { SetTrackingNumber(std::forward<TrackingNumberT>(value)); return *this;}
     ///@}
   private:
 

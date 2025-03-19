@@ -35,7 +35,7 @@ namespace Model
   class ConfigurationOptionDescription
   {
   public:
-    AWS_ELASTICBEANSTALK_API ConfigurationOptionDescription();
+    AWS_ELASTICBEANSTALK_API ConfigurationOptionDescription() = default;
     AWS_ELASTICBEANSTALK_API ConfigurationOptionDescription(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICBEANSTALK_API ConfigurationOptionDescription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,42 +47,36 @@ namespace Model
     /**
      * <p>A unique namespace identifying the option's associated AWS resource.</p>
      */
-    inline const Aws::String& GetNamespace() const{ return m_namespace; }
+    inline const Aws::String& GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
-    inline ConfigurationOptionDescription& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-    inline ConfigurationOptionDescription& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-    inline ConfigurationOptionDescription& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+    template<typename NamespaceT = Aws::String>
+    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
+    template<typename NamespaceT = Aws::String>
+    ConfigurationOptionDescription& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the configuration option.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ConfigurationOptionDescription& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ConfigurationOptionDescription& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ConfigurationOptionDescription& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ConfigurationOptionDescription& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The default value for this configuration option.</p>
      */
-    inline const Aws::String& GetDefaultValue() const{ return m_defaultValue; }
+    inline const Aws::String& GetDefaultValue() const { return m_defaultValue; }
     inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
-    inline void SetDefaultValue(const Aws::String& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
-    inline void SetDefaultValue(Aws::String&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::move(value); }
-    inline void SetDefaultValue(const char* value) { m_defaultValueHasBeenSet = true; m_defaultValue.assign(value); }
-    inline ConfigurationOptionDescription& WithDefaultValue(const Aws::String& value) { SetDefaultValue(value); return *this;}
-    inline ConfigurationOptionDescription& WithDefaultValue(Aws::String&& value) { SetDefaultValue(std::move(value)); return *this;}
-    inline ConfigurationOptionDescription& WithDefaultValue(const char* value) { SetDefaultValue(value); return *this;}
+    template<typename DefaultValueT = Aws::String>
+    void SetDefaultValue(DefaultValueT&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::forward<DefaultValueT>(value); }
+    template<typename DefaultValueT = Aws::String>
+    ConfigurationOptionDescription& WithDefaultValue(DefaultValueT&& value) { SetDefaultValue(std::forward<DefaultValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,14 +91,12 @@ namespace Model
      * occurs when the application servers on the running Amazon EC2 instances are
      * restarted.</p> </li> </ul>
      */
-    inline const Aws::String& GetChangeSeverity() const{ return m_changeSeverity; }
+    inline const Aws::String& GetChangeSeverity() const { return m_changeSeverity; }
     inline bool ChangeSeverityHasBeenSet() const { return m_changeSeverityHasBeenSet; }
-    inline void SetChangeSeverity(const Aws::String& value) { m_changeSeverityHasBeenSet = true; m_changeSeverity = value; }
-    inline void SetChangeSeverity(Aws::String&& value) { m_changeSeverityHasBeenSet = true; m_changeSeverity = std::move(value); }
-    inline void SetChangeSeverity(const char* value) { m_changeSeverityHasBeenSet = true; m_changeSeverity.assign(value); }
-    inline ConfigurationOptionDescription& WithChangeSeverity(const Aws::String& value) { SetChangeSeverity(value); return *this;}
-    inline ConfigurationOptionDescription& WithChangeSeverity(Aws::String&& value) { SetChangeSeverity(std::move(value)); return *this;}
-    inline ConfigurationOptionDescription& WithChangeSeverity(const char* value) { SetChangeSeverity(value); return *this;}
+    template<typename ChangeSeverityT = Aws::String>
+    void SetChangeSeverity(ChangeSeverityT&& value) { m_changeSeverityHasBeenSet = true; m_changeSeverity = std::forward<ChangeSeverityT>(value); }
+    template<typename ChangeSeverityT = Aws::String>
+    ConfigurationOptionDescription& WithChangeSeverity(ChangeSeverityT&& value) { SetChangeSeverity(std::forward<ChangeSeverityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -117,7 +109,7 @@ namespace Model
      * You can remove only <code>UserDefined</code> options from a configuration. </p>
      * <p> Valid Values: <code>true</code> | <code>false</code> </p>
      */
-    inline bool GetUserDefined() const{ return m_userDefined; }
+    inline bool GetUserDefined() const { return m_userDefined; }
     inline bool UserDefinedHasBeenSet() const { return m_userDefinedHasBeenSet; }
     inline void SetUserDefined(bool value) { m_userDefinedHasBeenSet = true; m_userDefined = value; }
     inline ConfigurationOptionDescription& WithUserDefined(bool value) { SetUserDefined(value); return *this;}
@@ -136,12 +128,10 @@ namespace Model
      * Values for this option are a JSON representation of a
      * <code>ConfigDocument</code>.</p> </li> </ul>
      */
-    inline const ConfigurationOptionValueType& GetValueType() const{ return m_valueType; }
+    inline ConfigurationOptionValueType GetValueType() const { return m_valueType; }
     inline bool ValueTypeHasBeenSet() const { return m_valueTypeHasBeenSet; }
-    inline void SetValueType(const ConfigurationOptionValueType& value) { m_valueTypeHasBeenSet = true; m_valueType = value; }
-    inline void SetValueType(ConfigurationOptionValueType&& value) { m_valueTypeHasBeenSet = true; m_valueType = std::move(value); }
-    inline ConfigurationOptionDescription& WithValueType(const ConfigurationOptionValueType& value) { SetValueType(value); return *this;}
-    inline ConfigurationOptionDescription& WithValueType(ConfigurationOptionValueType&& value) { SetValueType(std::move(value)); return *this;}
+    inline void SetValueType(ConfigurationOptionValueType value) { m_valueTypeHasBeenSet = true; m_valueType = value; }
+    inline ConfigurationOptionDescription& WithValueType(ConfigurationOptionValueType value) { SetValueType(value); return *this;}
     ///@}
 
     ///@{
@@ -149,15 +139,14 @@ namespace Model
      * <p>If specified, values for the configuration option are selected from this
      * list.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValueOptions() const{ return m_valueOptions; }
+    inline const Aws::Vector<Aws::String>& GetValueOptions() const { return m_valueOptions; }
     inline bool ValueOptionsHasBeenSet() const { return m_valueOptionsHasBeenSet; }
-    inline void SetValueOptions(const Aws::Vector<Aws::String>& value) { m_valueOptionsHasBeenSet = true; m_valueOptions = value; }
-    inline void SetValueOptions(Aws::Vector<Aws::String>&& value) { m_valueOptionsHasBeenSet = true; m_valueOptions = std::move(value); }
-    inline ConfigurationOptionDescription& WithValueOptions(const Aws::Vector<Aws::String>& value) { SetValueOptions(value); return *this;}
-    inline ConfigurationOptionDescription& WithValueOptions(Aws::Vector<Aws::String>&& value) { SetValueOptions(std::move(value)); return *this;}
-    inline ConfigurationOptionDescription& AddValueOptions(const Aws::String& value) { m_valueOptionsHasBeenSet = true; m_valueOptions.push_back(value); return *this; }
-    inline ConfigurationOptionDescription& AddValueOptions(Aws::String&& value) { m_valueOptionsHasBeenSet = true; m_valueOptions.push_back(std::move(value)); return *this; }
-    inline ConfigurationOptionDescription& AddValueOptions(const char* value) { m_valueOptionsHasBeenSet = true; m_valueOptions.push_back(value); return *this; }
+    template<typename ValueOptionsT = Aws::Vector<Aws::String>>
+    void SetValueOptions(ValueOptionsT&& value) { m_valueOptionsHasBeenSet = true; m_valueOptions = std::forward<ValueOptionsT>(value); }
+    template<typename ValueOptionsT = Aws::Vector<Aws::String>>
+    ConfigurationOptionDescription& WithValueOptions(ValueOptionsT&& value) { SetValueOptions(std::forward<ValueOptionsT>(value)); return *this;}
+    template<typename ValueOptionsT = Aws::String>
+    ConfigurationOptionDescription& AddValueOptions(ValueOptionsT&& value) { m_valueOptionsHasBeenSet = true; m_valueOptions.emplace_back(std::forward<ValueOptionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -165,7 +154,7 @@ namespace Model
      * <p>If specified, the configuration option must be a numeric value greater than
      * this value.</p>
      */
-    inline int GetMinValue() const{ return m_minValue; }
+    inline int GetMinValue() const { return m_minValue; }
     inline bool MinValueHasBeenSet() const { return m_minValueHasBeenSet; }
     inline void SetMinValue(int value) { m_minValueHasBeenSet = true; m_minValue = value; }
     inline ConfigurationOptionDescription& WithMinValue(int value) { SetMinValue(value); return *this;}
@@ -176,7 +165,7 @@ namespace Model
      * <p>If specified, the configuration option must be a numeric value less than this
      * value.</p>
      */
-    inline int GetMaxValue() const{ return m_maxValue; }
+    inline int GetMaxValue() const { return m_maxValue; }
     inline bool MaxValueHasBeenSet() const { return m_maxValueHasBeenSet; }
     inline void SetMaxValue(int value) { m_maxValueHasBeenSet = true; m_maxValue = value; }
     inline ConfigurationOptionDescription& WithMaxValue(int value) { SetMaxValue(value); return *this;}
@@ -187,7 +176,7 @@ namespace Model
      * <p>If specified, the configuration option must be a string value no longer than
      * this value.</p>
      */
-    inline int GetMaxLength() const{ return m_maxLength; }
+    inline int GetMaxLength() const { return m_maxLength; }
     inline bool MaxLengthHasBeenSet() const { return m_maxLengthHasBeenSet; }
     inline void SetMaxLength(int value) { m_maxLengthHasBeenSet = true; m_maxLength = value; }
     inline ConfigurationOptionDescription& WithMaxLength(int value) { SetMaxLength(value); return *this;}
@@ -198,12 +187,12 @@ namespace Model
      * <p>If specified, the configuration option must be a string value that satisfies
      * this regular expression.</p>
      */
-    inline const OptionRestrictionRegex& GetRegex() const{ return m_regex; }
+    inline const OptionRestrictionRegex& GetRegex() const { return m_regex; }
     inline bool RegexHasBeenSet() const { return m_regexHasBeenSet; }
-    inline void SetRegex(const OptionRestrictionRegex& value) { m_regexHasBeenSet = true; m_regex = value; }
-    inline void SetRegex(OptionRestrictionRegex&& value) { m_regexHasBeenSet = true; m_regex = std::move(value); }
-    inline ConfigurationOptionDescription& WithRegex(const OptionRestrictionRegex& value) { SetRegex(value); return *this;}
-    inline ConfigurationOptionDescription& WithRegex(OptionRestrictionRegex&& value) { SetRegex(std::move(value)); return *this;}
+    template<typename RegexT = OptionRestrictionRegex>
+    void SetRegex(RegexT&& value) { m_regexHasBeenSet = true; m_regex = std::forward<RegexT>(value); }
+    template<typename RegexT = OptionRestrictionRegex>
+    ConfigurationOptionDescription& WithRegex(RegexT&& value) { SetRegex(std::forward<RegexT>(value)); return *this;}
     ///@}
   private:
 
@@ -219,22 +208,22 @@ namespace Model
     Aws::String m_changeSeverity;
     bool m_changeSeverityHasBeenSet = false;
 
-    bool m_userDefined;
+    bool m_userDefined{false};
     bool m_userDefinedHasBeenSet = false;
 
-    ConfigurationOptionValueType m_valueType;
+    ConfigurationOptionValueType m_valueType{ConfigurationOptionValueType::NOT_SET};
     bool m_valueTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_valueOptions;
     bool m_valueOptionsHasBeenSet = false;
 
-    int m_minValue;
+    int m_minValue{0};
     bool m_minValueHasBeenSet = false;
 
-    int m_maxValue;
+    int m_maxValue{0};
     bool m_maxValueHasBeenSet = false;
 
-    int m_maxLength;
+    int m_maxLength{0};
     bool m_maxLengthHasBeenSet = false;
 
     OptionRestrictionRegex m_regex;

@@ -34,7 +34,7 @@ namespace Model
   class ShareDetails
   {
   public:
-    AWS_SERVICECATALOG_API ShareDetails();
+    AWS_SERVICECATALOG_API ShareDetails() = default;
     AWS_SERVICECATALOG_API ShareDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICECATALOG_API ShareDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,29 +44,28 @@ namespace Model
     /**
      * <p>List of accounts for whom the operation succeeded.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSuccessfulShares() const{ return m_successfulShares; }
+    inline const Aws::Vector<Aws::String>& GetSuccessfulShares() const { return m_successfulShares; }
     inline bool SuccessfulSharesHasBeenSet() const { return m_successfulSharesHasBeenSet; }
-    inline void SetSuccessfulShares(const Aws::Vector<Aws::String>& value) { m_successfulSharesHasBeenSet = true; m_successfulShares = value; }
-    inline void SetSuccessfulShares(Aws::Vector<Aws::String>&& value) { m_successfulSharesHasBeenSet = true; m_successfulShares = std::move(value); }
-    inline ShareDetails& WithSuccessfulShares(const Aws::Vector<Aws::String>& value) { SetSuccessfulShares(value); return *this;}
-    inline ShareDetails& WithSuccessfulShares(Aws::Vector<Aws::String>&& value) { SetSuccessfulShares(std::move(value)); return *this;}
-    inline ShareDetails& AddSuccessfulShares(const Aws::String& value) { m_successfulSharesHasBeenSet = true; m_successfulShares.push_back(value); return *this; }
-    inline ShareDetails& AddSuccessfulShares(Aws::String&& value) { m_successfulSharesHasBeenSet = true; m_successfulShares.push_back(std::move(value)); return *this; }
-    inline ShareDetails& AddSuccessfulShares(const char* value) { m_successfulSharesHasBeenSet = true; m_successfulShares.push_back(value); return *this; }
+    template<typename SuccessfulSharesT = Aws::Vector<Aws::String>>
+    void SetSuccessfulShares(SuccessfulSharesT&& value) { m_successfulSharesHasBeenSet = true; m_successfulShares = std::forward<SuccessfulSharesT>(value); }
+    template<typename SuccessfulSharesT = Aws::Vector<Aws::String>>
+    ShareDetails& WithSuccessfulShares(SuccessfulSharesT&& value) { SetSuccessfulShares(std::forward<SuccessfulSharesT>(value)); return *this;}
+    template<typename SuccessfulSharesT = Aws::String>
+    ShareDetails& AddSuccessfulShares(SuccessfulSharesT&& value) { m_successfulSharesHasBeenSet = true; m_successfulShares.emplace_back(std::forward<SuccessfulSharesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>List of errors.</p>
      */
-    inline const Aws::Vector<ShareError>& GetShareErrors() const{ return m_shareErrors; }
+    inline const Aws::Vector<ShareError>& GetShareErrors() const { return m_shareErrors; }
     inline bool ShareErrorsHasBeenSet() const { return m_shareErrorsHasBeenSet; }
-    inline void SetShareErrors(const Aws::Vector<ShareError>& value) { m_shareErrorsHasBeenSet = true; m_shareErrors = value; }
-    inline void SetShareErrors(Aws::Vector<ShareError>&& value) { m_shareErrorsHasBeenSet = true; m_shareErrors = std::move(value); }
-    inline ShareDetails& WithShareErrors(const Aws::Vector<ShareError>& value) { SetShareErrors(value); return *this;}
-    inline ShareDetails& WithShareErrors(Aws::Vector<ShareError>&& value) { SetShareErrors(std::move(value)); return *this;}
-    inline ShareDetails& AddShareErrors(const ShareError& value) { m_shareErrorsHasBeenSet = true; m_shareErrors.push_back(value); return *this; }
-    inline ShareDetails& AddShareErrors(ShareError&& value) { m_shareErrorsHasBeenSet = true; m_shareErrors.push_back(std::move(value)); return *this; }
+    template<typename ShareErrorsT = Aws::Vector<ShareError>>
+    void SetShareErrors(ShareErrorsT&& value) { m_shareErrorsHasBeenSet = true; m_shareErrors = std::forward<ShareErrorsT>(value); }
+    template<typename ShareErrorsT = Aws::Vector<ShareError>>
+    ShareDetails& WithShareErrors(ShareErrorsT&& value) { SetShareErrors(std::forward<ShareErrorsT>(value)); return *this;}
+    template<typename ShareErrorsT = ShareError>
+    ShareDetails& AddShareErrors(ShareErrorsT&& value) { m_shareErrorsHasBeenSet = true; m_shareErrors.emplace_back(std::forward<ShareErrorsT>(value)); return *this; }
     ///@}
   private:
 

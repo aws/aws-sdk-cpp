@@ -18,13 +18,7 @@ namespace Lambda
 namespace Model
 {
 
-EventSourceMappingMetricsConfig::EventSourceMappingMetricsConfig() : 
-    m_metricsHasBeenSet(false)
-{
-}
-
 EventSourceMappingMetricsConfig::EventSourceMappingMetricsConfig(JsonView jsonValue)
-  : EventSourceMappingMetricsConfig()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ EventSourceMappingMetricsConfig& EventSourceMappingMetricsConfig::operator =(Jso
     }
     m_metricsHasBeenSet = true;
   }
-
   return *this;
 }
 

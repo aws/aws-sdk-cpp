@@ -18,27 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-NumberValidateResponse::NumberValidateResponse() : 
-    m_carrierHasBeenSet(false),
-    m_cityHasBeenSet(false),
-    m_cleansedPhoneNumberE164HasBeenSet(false),
-    m_cleansedPhoneNumberNationalHasBeenSet(false),
-    m_countryHasBeenSet(false),
-    m_countryCodeIso2HasBeenSet(false),
-    m_countryCodeNumericHasBeenSet(false),
-    m_countyHasBeenSet(false),
-    m_originalCountryCodeIso2HasBeenSet(false),
-    m_originalPhoneNumberHasBeenSet(false),
-    m_phoneTypeHasBeenSet(false),
-    m_phoneTypeCode(0),
-    m_phoneTypeCodeHasBeenSet(false),
-    m_timezoneHasBeenSet(false),
-    m_zipCodeHasBeenSet(false)
-{
-}
-
 NumberValidateResponse::NumberValidateResponse(JsonView jsonValue)
-  : NumberValidateResponse()
 {
   *this = jsonValue;
 }
@@ -48,101 +28,73 @@ NumberValidateResponse& NumberValidateResponse::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Carrier"))
   {
     m_carrier = jsonValue.GetString("Carrier");
-
     m_carrierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("City"))
   {
     m_city = jsonValue.GetString("City");
-
     m_cityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CleansedPhoneNumberE164"))
   {
     m_cleansedPhoneNumberE164 = jsonValue.GetString("CleansedPhoneNumberE164");
-
     m_cleansedPhoneNumberE164HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CleansedPhoneNumberNational"))
   {
     m_cleansedPhoneNumberNational = jsonValue.GetString("CleansedPhoneNumberNational");
-
     m_cleansedPhoneNumberNationalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Country"))
   {
     m_country = jsonValue.GetString("Country");
-
     m_countryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CountryCodeIso2"))
   {
     m_countryCodeIso2 = jsonValue.GetString("CountryCodeIso2");
-
     m_countryCodeIso2HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CountryCodeNumeric"))
   {
     m_countryCodeNumeric = jsonValue.GetString("CountryCodeNumeric");
-
     m_countryCodeNumericHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("County"))
   {
     m_county = jsonValue.GetString("County");
-
     m_countyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OriginalCountryCodeIso2"))
   {
     m_originalCountryCodeIso2 = jsonValue.GetString("OriginalCountryCodeIso2");
-
     m_originalCountryCodeIso2HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OriginalPhoneNumber"))
   {
     m_originalPhoneNumber = jsonValue.GetString("OriginalPhoneNumber");
-
     m_originalPhoneNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PhoneType"))
   {
     m_phoneType = jsonValue.GetString("PhoneType");
-
     m_phoneTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PhoneTypeCode"))
   {
     m_phoneTypeCode = jsonValue.GetInteger("PhoneTypeCode");
-
     m_phoneTypeCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Timezone"))
   {
     m_timezone = jsonValue.GetString("Timezone");
-
     m_timezoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ZipCode"))
   {
     m_zipCode = jsonValue.GetString("ZipCode");
-
     m_zipCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

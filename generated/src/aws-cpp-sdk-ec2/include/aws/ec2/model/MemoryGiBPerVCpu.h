@@ -30,7 +30,7 @@ namespace Model
   class MemoryGiBPerVCpu
   {
   public:
-    AWS_EC2_API MemoryGiBPerVCpu();
+    AWS_EC2_API MemoryGiBPerVCpu() = default;
     AWS_EC2_API MemoryGiBPerVCpu(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API MemoryGiBPerVCpu& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,7 +43,7 @@ namespace Model
      * <p>The minimum amount of memory per vCPU, in GiB. If this parameter is not
      * specified, there is no minimum limit.</p>
      */
-    inline double GetMin() const{ return m_min; }
+    inline double GetMin() const { return m_min; }
     inline bool MinHasBeenSet() const { return m_minHasBeenSet; }
     inline void SetMin(double value) { m_minHasBeenSet = true; m_min = value; }
     inline MemoryGiBPerVCpu& WithMin(double value) { SetMin(value); return *this;}
@@ -54,17 +54,17 @@ namespace Model
      * <p>The maximum amount of memory per vCPU, in GiB. If this parameter is not
      * specified, there is no maximum limit.</p>
      */
-    inline double GetMax() const{ return m_max; }
+    inline double GetMax() const { return m_max; }
     inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
     inline void SetMax(double value) { m_maxHasBeenSet = true; m_max = value; }
     inline MemoryGiBPerVCpu& WithMax(double value) { SetMax(value); return *this;}
     ///@}
   private:
 
-    double m_min;
+    double m_min{0.0};
     bool m_minHasBeenSet = false;
 
-    double m_max;
+    double m_max{0.0};
     bool m_maxHasBeenSet = false;
   };
 

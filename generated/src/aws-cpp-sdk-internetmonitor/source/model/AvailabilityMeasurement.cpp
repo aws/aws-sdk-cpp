@@ -18,18 +18,7 @@ namespace InternetMonitor
 namespace Model
 {
 
-AvailabilityMeasurement::AvailabilityMeasurement() : 
-    m_experienceScore(0.0),
-    m_experienceScoreHasBeenSet(false),
-    m_percentOfTotalTrafficImpacted(0.0),
-    m_percentOfTotalTrafficImpactedHasBeenSet(false),
-    m_percentOfClientLocationImpacted(0.0),
-    m_percentOfClientLocationImpactedHasBeenSet(false)
-{
-}
-
 AvailabilityMeasurement::AvailabilityMeasurement(JsonView jsonValue)
-  : AvailabilityMeasurement()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ AvailabilityMeasurement& AvailabilityMeasurement::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ExperienceScore"))
   {
     m_experienceScore = jsonValue.GetDouble("ExperienceScore");
-
     m_experienceScoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PercentOfTotalTrafficImpacted"))
   {
     m_percentOfTotalTrafficImpacted = jsonValue.GetDouble("PercentOfTotalTrafficImpacted");
-
     m_percentOfTotalTrafficImpactedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PercentOfClientLocationImpacted"))
   {
     m_percentOfClientLocationImpacted = jsonValue.GetDouble("PercentOfClientLocationImpacted");
-
     m_percentOfClientLocationImpactedHasBeenSet = true;
   }
-
   return *this;
 }
 

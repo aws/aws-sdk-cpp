@@ -20,13 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-PrefixLevel::PrefixLevel() : 
-    m_storageMetricsHasBeenSet(false)
-{
-}
-
 PrefixLevel::PrefixLevel(const XmlNode& xmlNode)
-  : PrefixLevel()
 {
   *this = xmlNode;
 }

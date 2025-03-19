@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetPersonalAccessTokenMetadataResult::GetPersonalAccessTokenMetadataResult()
-{
-}
-
 GetPersonalAccessTokenMetadataResult::GetPersonalAccessTokenMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,39 +28,33 @@ GetPersonalAccessTokenMetadataResult& GetPersonalAccessTokenMetadataResult::oper
   if(jsonValue.ValueExists("PersonalAccessTokenId"))
   {
     m_personalAccessTokenId = jsonValue.GetString("PersonalAccessTokenId");
-
+    m_personalAccessTokenIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserId"))
   {
     m_userId = jsonValue.GetString("UserId");
-
+    m_userIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DateCreated"))
   {
     m_dateCreated = jsonValue.GetDouble("DateCreated");
-
+    m_dateCreatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DateLastUsed"))
   {
     m_dateLastUsed = jsonValue.GetDouble("DateLastUsed");
-
+    m_dateLastUsedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpiresTime"))
   {
     m_expiresTime = jsonValue.GetDouble("ExpiresTime");
-
+    m_expiresTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Scopes"))
   {
     Aws::Utils::Array<JsonView> scopesJsonList = jsonValue.GetArray("Scopes");
@@ -72,14 +62,15 @@ GetPersonalAccessTokenMetadataResult& GetPersonalAccessTokenMetadataResult::oper
     {
       m_scopes.push_back(scopesJsonList[scopesIndex].AsString());
     }
+    m_scopesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

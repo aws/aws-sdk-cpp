@@ -34,7 +34,7 @@ namespace Model
   class ClaimFilterOption
   {
   public:
-    AWS_GAMELIFT_API ClaimFilterOption();
+    AWS_GAMELIFT_API ClaimFilterOption() = default;
     AWS_GAMELIFT_API ClaimFilterOption(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API ClaimFilterOption& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,13 @@ namespace Model
      * <p>List of instance statuses that game servers may be claimed on. If provided,
      * the list must contain the <code>ACTIVE</code> status.</p>
      */
-    inline const Aws::Vector<FilterInstanceStatus>& GetInstanceStatuses() const{ return m_instanceStatuses; }
+    inline const Aws::Vector<FilterInstanceStatus>& GetInstanceStatuses() const { return m_instanceStatuses; }
     inline bool InstanceStatusesHasBeenSet() const { return m_instanceStatusesHasBeenSet; }
-    inline void SetInstanceStatuses(const Aws::Vector<FilterInstanceStatus>& value) { m_instanceStatusesHasBeenSet = true; m_instanceStatuses = value; }
-    inline void SetInstanceStatuses(Aws::Vector<FilterInstanceStatus>&& value) { m_instanceStatusesHasBeenSet = true; m_instanceStatuses = std::move(value); }
-    inline ClaimFilterOption& WithInstanceStatuses(const Aws::Vector<FilterInstanceStatus>& value) { SetInstanceStatuses(value); return *this;}
-    inline ClaimFilterOption& WithInstanceStatuses(Aws::Vector<FilterInstanceStatus>&& value) { SetInstanceStatuses(std::move(value)); return *this;}
-    inline ClaimFilterOption& AddInstanceStatuses(const FilterInstanceStatus& value) { m_instanceStatusesHasBeenSet = true; m_instanceStatuses.push_back(value); return *this; }
-    inline ClaimFilterOption& AddInstanceStatuses(FilterInstanceStatus&& value) { m_instanceStatusesHasBeenSet = true; m_instanceStatuses.push_back(std::move(value)); return *this; }
+    template<typename InstanceStatusesT = Aws::Vector<FilterInstanceStatus>>
+    void SetInstanceStatuses(InstanceStatusesT&& value) { m_instanceStatusesHasBeenSet = true; m_instanceStatuses = std::forward<InstanceStatusesT>(value); }
+    template<typename InstanceStatusesT = Aws::Vector<FilterInstanceStatus>>
+    ClaimFilterOption& WithInstanceStatuses(InstanceStatusesT&& value) { SetInstanceStatuses(std::forward<InstanceStatusesT>(value)); return *this;}
+    inline ClaimFilterOption& AddInstanceStatuses(FilterInstanceStatus value) { m_instanceStatusesHasBeenSet = true; m_instanceStatuses.push_back(value); return *this; }
     ///@}
   private:
 

@@ -29,7 +29,7 @@ namespace Model
   class VCpuCountRange
   {
   public:
-    AWS_EC2_API VCpuCountRange();
+    AWS_EC2_API VCpuCountRange() = default;
     AWS_EC2_API VCpuCountRange(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API VCpuCountRange& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -42,7 +42,7 @@ namespace Model
      * <p>The minimum number of vCPUs. If the value is <code>0</code>, there is no
      * minimum limit.</p>
      */
-    inline int GetMin() const{ return m_min; }
+    inline int GetMin() const { return m_min; }
     inline bool MinHasBeenSet() const { return m_minHasBeenSet; }
     inline void SetMin(int value) { m_minHasBeenSet = true; m_min = value; }
     inline VCpuCountRange& WithMin(int value) { SetMin(value); return *this;}
@@ -53,17 +53,17 @@ namespace Model
      * <p>The maximum number of vCPUs. If this parameter is not specified, there is no
      * maximum limit.</p>
      */
-    inline int GetMax() const{ return m_max; }
+    inline int GetMax() const { return m_max; }
     inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
     inline void SetMax(int value) { m_maxHasBeenSet = true; m_max = value; }
     inline VCpuCountRange& WithMax(int value) { SetMax(value); return *this;}
     ///@}
   private:
 
-    int m_min;
+    int m_min{0};
     bool m_minHasBeenSet = false;
 
-    int m_max;
+    int m_max{0};
     bool m_maxHasBeenSet = false;
   };
 

@@ -20,16 +20,7 @@ namespace CloudSearch
 namespace Model
 {
 
-DomainEndpointOptions::DomainEndpointOptions() : 
-    m_enforceHTTPS(false),
-    m_enforceHTTPSHasBeenSet(false),
-    m_tLSSecurityPolicy(TLSSecurityPolicy::NOT_SET),
-    m_tLSSecurityPolicyHasBeenSet(false)
-{
-}
-
 DomainEndpointOptions::DomainEndpointOptions(const XmlNode& xmlNode)
-  : DomainEndpointOptions()
 {
   *this = xmlNode;
 }
@@ -49,7 +40,7 @@ DomainEndpointOptions& DomainEndpointOptions::operator =(const XmlNode& xmlNode)
     XmlNode tLSSecurityPolicyNode = resultNode.FirstChild("TLSSecurityPolicy");
     if(!tLSSecurityPolicyNode.IsNull())
     {
-      m_tLSSecurityPolicy = TLSSecurityPolicyMapper::GetTLSSecurityPolicyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tLSSecurityPolicyNode.GetText()).c_str()).c_str());
+      m_tLSSecurityPolicy = TLSSecurityPolicyMapper::GetTLSSecurityPolicyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tLSSecurityPolicyNode.GetText()).c_str()));
       m_tLSSecurityPolicyHasBeenSet = true;
     }
   }

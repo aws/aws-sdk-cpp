@@ -12,11 +12,6 @@ using namespace Aws::Bedrock::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetFoundationModelRequest::GetFoundationModelRequest() : 
-    m_modelIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String GetFoundationModelRequest::SerializePayload() const
 {
   return {};

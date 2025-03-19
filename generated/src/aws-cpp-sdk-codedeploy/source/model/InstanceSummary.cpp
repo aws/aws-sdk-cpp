@@ -18,20 +18,7 @@ namespace CodeDeploy
 namespace Model
 {
 
-InstanceSummary::InstanceSummary() : 
-    m_deploymentIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_status(InstanceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_lifecycleEventsHasBeenSet(false),
-    m_instanceType(InstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false)
-{
-}
-
 InstanceSummary::InstanceSummary(JsonView jsonValue)
-  : InstanceSummary()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ InstanceSummary& InstanceSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("deploymentId"))
   {
     m_deploymentId = jsonValue.GetString("deploymentId");
-
     m_deploymentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceId"))
   {
     m_instanceId = jsonValue.GetString("instanceId");
-
     m_instanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = InstanceStatusMapper::GetInstanceStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetDouble("lastUpdatedAt");
-
     m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lifecycleEvents"))
   {
     Aws::Utils::Array<JsonView> lifecycleEventsJsonList = jsonValue.GetArray("lifecycleEvents");
@@ -75,14 +54,11 @@ InstanceSummary& InstanceSummary::operator =(JsonView jsonValue)
     }
     m_lifecycleEventsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceType"))
   {
     m_instanceType = InstanceTypeMapper::GetInstanceTypeForName(jsonValue.GetString("instanceType"));
-
     m_instanceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

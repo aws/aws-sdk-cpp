@@ -12,11 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteScriptRequest::DeleteScriptRequest() : 
-    m_scriptIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteScriptRequest::SerializePayload() const
 {
   JsonValue payload;

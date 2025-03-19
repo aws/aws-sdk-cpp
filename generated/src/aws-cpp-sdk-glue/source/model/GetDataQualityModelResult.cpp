@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDataQualityModelResult::GetDataQualityModelResult() : 
-    m_status(DataQualityModelStatus::NOT_SET)
-{
-}
-
 GetDataQualityModelResult::GetDataQualityModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetDataQualityModelResult()
 {
   *this = result;
 }
@@ -34,33 +28,30 @@ GetDataQualityModelResult& GetDataQualityModelResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("Status"))
   {
     m_status = DataQualityModelStatusMapper::GetDataQualityModelStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartedOn"))
   {
     m_startedOn = jsonValue.GetDouble("StartedOn");
-
+    m_startedOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompletedOn"))
   {
     m_completedOn = jsonValue.GetDouble("CompletedOn");
-
+    m_completedOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = jsonValue.GetString("FailureReason");
-
+    m_failureReasonHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

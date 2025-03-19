@@ -31,7 +31,7 @@ namespace Model
   class InstanceIpv4Prefix
   {
   public:
-    AWS_EC2_API InstanceIpv4Prefix();
+    AWS_EC2_API InstanceIpv4Prefix() = default;
     AWS_EC2_API InstanceIpv4Prefix(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API InstanceIpv4Prefix& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>One or more IPv4 prefixes assigned to the network interface.</p>
      */
-    inline const Aws::String& GetIpv4Prefix() const{ return m_ipv4Prefix; }
+    inline const Aws::String& GetIpv4Prefix() const { return m_ipv4Prefix; }
     inline bool Ipv4PrefixHasBeenSet() const { return m_ipv4PrefixHasBeenSet; }
-    inline void SetIpv4Prefix(const Aws::String& value) { m_ipv4PrefixHasBeenSet = true; m_ipv4Prefix = value; }
-    inline void SetIpv4Prefix(Aws::String&& value) { m_ipv4PrefixHasBeenSet = true; m_ipv4Prefix = std::move(value); }
-    inline void SetIpv4Prefix(const char* value) { m_ipv4PrefixHasBeenSet = true; m_ipv4Prefix.assign(value); }
-    inline InstanceIpv4Prefix& WithIpv4Prefix(const Aws::String& value) { SetIpv4Prefix(value); return *this;}
-    inline InstanceIpv4Prefix& WithIpv4Prefix(Aws::String&& value) { SetIpv4Prefix(std::move(value)); return *this;}
-    inline InstanceIpv4Prefix& WithIpv4Prefix(const char* value) { SetIpv4Prefix(value); return *this;}
+    template<typename Ipv4PrefixT = Aws::String>
+    void SetIpv4Prefix(Ipv4PrefixT&& value) { m_ipv4PrefixHasBeenSet = true; m_ipv4Prefix = std::forward<Ipv4PrefixT>(value); }
+    template<typename Ipv4PrefixT = Aws::String>
+    InstanceIpv4Prefix& WithIpv4Prefix(Ipv4PrefixT&& value) { SetIpv4Prefix(std::forward<Ipv4PrefixT>(value)); return *this;}
     ///@}
   private:
 

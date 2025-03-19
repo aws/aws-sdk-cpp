@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAutoTerminationPolicyResult::GetAutoTerminationPolicyResult()
-{
-}
-
 GetAutoTerminationPolicyResult::GetAutoTerminationPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetAutoTerminationPolicyResult& GetAutoTerminationPolicyResult::operator =(const
   if(jsonValue.ValueExists("AutoTerminationPolicy"))
   {
     m_autoTerminationPolicy = jsonValue.GetObject("AutoTerminationPolicy");
-
+    m_autoTerminationPolicyHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

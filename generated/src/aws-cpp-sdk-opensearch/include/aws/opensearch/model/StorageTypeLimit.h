@@ -33,7 +33,7 @@ namespace Model
   class StorageTypeLimit
   {
   public:
-    AWS_OPENSEARCHSERVICE_API StorageTypeLimit();
+    AWS_OPENSEARCHSERVICE_API StorageTypeLimit() = default;
     AWS_OPENSEARCHSERVICE_API StorageTypeLimit(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API StorageTypeLimit& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,29 +56,26 @@ namespace Model
      * <b>MinimumThroughput</b> - Minimum amount of throughput that is available for
      * the given the storage type. Can be empty if not applicable.</p> </li> </ul>
      */
-    inline const Aws::String& GetLimitName() const{ return m_limitName; }
+    inline const Aws::String& GetLimitName() const { return m_limitName; }
     inline bool LimitNameHasBeenSet() const { return m_limitNameHasBeenSet; }
-    inline void SetLimitName(const Aws::String& value) { m_limitNameHasBeenSet = true; m_limitName = value; }
-    inline void SetLimitName(Aws::String&& value) { m_limitNameHasBeenSet = true; m_limitName = std::move(value); }
-    inline void SetLimitName(const char* value) { m_limitNameHasBeenSet = true; m_limitName.assign(value); }
-    inline StorageTypeLimit& WithLimitName(const Aws::String& value) { SetLimitName(value); return *this;}
-    inline StorageTypeLimit& WithLimitName(Aws::String&& value) { SetLimitName(std::move(value)); return *this;}
-    inline StorageTypeLimit& WithLimitName(const char* value) { SetLimitName(value); return *this;}
+    template<typename LimitNameT = Aws::String>
+    void SetLimitName(LimitNameT&& value) { m_limitNameHasBeenSet = true; m_limitName = std::forward<LimitNameT>(value); }
+    template<typename LimitNameT = Aws::String>
+    StorageTypeLimit& WithLimitName(LimitNameT&& value) { SetLimitName(std::forward<LimitNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The limit values.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetLimitValues() const{ return m_limitValues; }
+    inline const Aws::Vector<Aws::String>& GetLimitValues() const { return m_limitValues; }
     inline bool LimitValuesHasBeenSet() const { return m_limitValuesHasBeenSet; }
-    inline void SetLimitValues(const Aws::Vector<Aws::String>& value) { m_limitValuesHasBeenSet = true; m_limitValues = value; }
-    inline void SetLimitValues(Aws::Vector<Aws::String>&& value) { m_limitValuesHasBeenSet = true; m_limitValues = std::move(value); }
-    inline StorageTypeLimit& WithLimitValues(const Aws::Vector<Aws::String>& value) { SetLimitValues(value); return *this;}
-    inline StorageTypeLimit& WithLimitValues(Aws::Vector<Aws::String>&& value) { SetLimitValues(std::move(value)); return *this;}
-    inline StorageTypeLimit& AddLimitValues(const Aws::String& value) { m_limitValuesHasBeenSet = true; m_limitValues.push_back(value); return *this; }
-    inline StorageTypeLimit& AddLimitValues(Aws::String&& value) { m_limitValuesHasBeenSet = true; m_limitValues.push_back(std::move(value)); return *this; }
-    inline StorageTypeLimit& AddLimitValues(const char* value) { m_limitValuesHasBeenSet = true; m_limitValues.push_back(value); return *this; }
+    template<typename LimitValuesT = Aws::Vector<Aws::String>>
+    void SetLimitValues(LimitValuesT&& value) { m_limitValuesHasBeenSet = true; m_limitValues = std::forward<LimitValuesT>(value); }
+    template<typename LimitValuesT = Aws::Vector<Aws::String>>
+    StorageTypeLimit& WithLimitValues(LimitValuesT&& value) { SetLimitValues(std::forward<LimitValuesT>(value)); return *this;}
+    template<typename LimitValuesT = Aws::String>
+    StorageTypeLimit& AddLimitValues(LimitValuesT&& value) { m_limitValuesHasBeenSet = true; m_limitValues.emplace_back(std::forward<LimitValuesT>(value)); return *this; }
     ///@}
   private:
 

@@ -20,13 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-ProvisionedIdentifier::ProvisionedIdentifier() : 
-    m_clusterIdentifierHasBeenSet(false)
-{
-}
-
 ProvisionedIdentifier::ProvisionedIdentifier(const XmlNode& xmlNode)
-  : ProvisionedIdentifier()
 {
   *this = xmlNode;
 }

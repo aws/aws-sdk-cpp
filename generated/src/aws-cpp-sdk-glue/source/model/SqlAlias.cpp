@@ -18,14 +18,7 @@ namespace Glue
 namespace Model
 {
 
-SqlAlias::SqlAlias() : 
-    m_fromHasBeenSet(false),
-    m_aliasHasBeenSet(false)
-{
-}
-
 SqlAlias::SqlAlias(JsonView jsonValue)
-  : SqlAlias()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SqlAlias& SqlAlias::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("From"))
   {
     m_from = jsonValue.GetString("From");
-
     m_fromHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Alias"))
   {
     m_alias = jsonValue.GetString("Alias");
-
     m_aliasHasBeenSet = true;
   }
-
   return *this;
 }
 

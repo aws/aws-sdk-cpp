@@ -18,15 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-SampleUtteranceGenerationSpecification::SampleUtteranceGenerationSpecification() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_bedrockModelSpecificationHasBeenSet(false)
-{
-}
-
 SampleUtteranceGenerationSpecification::SampleUtteranceGenerationSpecification(JsonView jsonValue)
-  : SampleUtteranceGenerationSpecification()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SampleUtteranceGenerationSpecification& SampleUtteranceGenerationSpecification::
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bedrockModelSpecification"))
   {
     m_bedrockModelSpecification = jsonValue.GetObject("bedrockModelSpecification");
-
     m_bedrockModelSpecificationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class RouteWaypoint
   {
   public:
-    AWS_GEOROUTES_API RouteWaypoint();
+    AWS_GEOROUTES_API RouteWaypoint() = default;
     AWS_GEOROUTES_API RouteWaypoint(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RouteWaypoint& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
      * users in moving vehicles who may not have sufficient time to make an action at
      * an origin or a destination.</p>
      */
-    inline long long GetAvoidActionsForDistance() const{ return m_avoidActionsForDistance; }
+    inline long long GetAvoidActionsForDistance() const { return m_avoidActionsForDistance; }
     inline bool AvoidActionsForDistanceHasBeenSet() const { return m_avoidActionsForDistanceHasBeenSet; }
     inline void SetAvoidActionsForDistance(long long value) { m_avoidActionsForDistanceHasBeenSet = true; m_avoidActionsForDistance = value; }
     inline RouteWaypoint& WithAvoidActionsForDistance(long long value) { SetAvoidActionsForDistance(value); return *this;}
@@ -55,7 +55,7 @@ namespace Model
     /**
      * <p>Avoid U-turns for calculation on highways and motorways.</p>
      */
-    inline bool GetAvoidUTurns() const{ return m_avoidUTurns; }
+    inline bool GetAvoidUTurns() const { return m_avoidUTurns; }
     inline bool AvoidUTurnsHasBeenSet() const { return m_avoidUTurnsHasBeenSet; }
     inline void SetAvoidUTurns(bool value) { m_avoidUTurnsHasBeenSet = true; m_avoidUTurns = value; }
     inline RouteWaypoint& WithAvoidUTurns(bool value) { SetAvoidUTurns(value); return *this;}
@@ -65,7 +65,7 @@ namespace Model
     /**
      * <p>GPS Heading at the position.</p>
      */
-    inline double GetHeading() const{ return m_heading; }
+    inline double GetHeading() const { return m_heading; }
     inline bool HeadingHasBeenSet() const { return m_headingHasBeenSet; }
     inline void SetHeading(double value) { m_headingHasBeenSet = true; m_heading = value; }
     inline RouteWaypoint& WithHeading(double value) { SetHeading(value); return *this;}
@@ -75,12 +75,12 @@ namespace Model
     /**
      * <p>Options to configure matching the provided position to the road network.</p>
      */
-    inline const RouteMatchingOptions& GetMatching() const{ return m_matching; }
+    inline const RouteMatchingOptions& GetMatching() const { return m_matching; }
     inline bool MatchingHasBeenSet() const { return m_matchingHasBeenSet; }
-    inline void SetMatching(const RouteMatchingOptions& value) { m_matchingHasBeenSet = true; m_matching = value; }
-    inline void SetMatching(RouteMatchingOptions&& value) { m_matchingHasBeenSet = true; m_matching = std::move(value); }
-    inline RouteWaypoint& WithMatching(const RouteMatchingOptions& value) { SetMatching(value); return *this;}
-    inline RouteWaypoint& WithMatching(RouteMatchingOptions&& value) { SetMatching(std::move(value)); return *this;}
+    template<typename MatchingT = RouteMatchingOptions>
+    void SetMatching(MatchingT&& value) { m_matchingHasBeenSet = true; m_matching = std::forward<MatchingT>(value); }
+    template<typename MatchingT = RouteMatchingOptions>
+    RouteWaypoint& WithMatching(MatchingT&& value) { SetMatching(std::forward<MatchingT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,7 +88,7 @@ namespace Model
      * <p>If the waypoint should not be treated as a stop. If yes, the waypoint is
      * passed through and doesn't split the route into different legs.</p>
      */
-    inline bool GetPassThrough() const{ return m_passThrough; }
+    inline bool GetPassThrough() const { return m_passThrough; }
     inline bool PassThroughHasBeenSet() const { return m_passThroughHasBeenSet; }
     inline void SetPassThrough(bool value) { m_passThroughHasBeenSet = true; m_passThrough = value; }
     inline RouteWaypoint& WithPassThrough(bool value) { SetPassThrough(value); return *this;}
@@ -98,12 +98,12 @@ namespace Model
     /**
      * <p>Position defined as <code>[longitude, latitude]</code>.</p>
      */
-    inline const Aws::Vector<double>& GetPosition() const{ return m_position; }
+    inline const Aws::Vector<double>& GetPosition() const { return m_position; }
     inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
-    inline void SetPosition(const Aws::Vector<double>& value) { m_positionHasBeenSet = true; m_position = value; }
-    inline void SetPosition(Aws::Vector<double>&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
-    inline RouteWaypoint& WithPosition(const Aws::Vector<double>& value) { SetPosition(value); return *this;}
-    inline RouteWaypoint& WithPosition(Aws::Vector<double>&& value) { SetPosition(std::move(value)); return *this;}
+    template<typename PositionT = Aws::Vector<double>>
+    void SetPosition(PositionT&& value) { m_positionHasBeenSet = true; m_position = std::forward<PositionT>(value); }
+    template<typename PositionT = Aws::Vector<double>>
+    RouteWaypoint& WithPosition(PositionT&& value) { SetPosition(std::forward<PositionT>(value)); return *this;}
     inline RouteWaypoint& AddPosition(double value) { m_positionHasBeenSet = true; m_position.push_back(value); return *this; }
     ///@}
 
@@ -112,38 +112,38 @@ namespace Model
      * <p>Options to configure matching the provided position to a side of the
      * street.</p>
      */
-    inline const RouteSideOfStreetOptions& GetSideOfStreet() const{ return m_sideOfStreet; }
+    inline const RouteSideOfStreetOptions& GetSideOfStreet() const { return m_sideOfStreet; }
     inline bool SideOfStreetHasBeenSet() const { return m_sideOfStreetHasBeenSet; }
-    inline void SetSideOfStreet(const RouteSideOfStreetOptions& value) { m_sideOfStreetHasBeenSet = true; m_sideOfStreet = value; }
-    inline void SetSideOfStreet(RouteSideOfStreetOptions&& value) { m_sideOfStreetHasBeenSet = true; m_sideOfStreet = std::move(value); }
-    inline RouteWaypoint& WithSideOfStreet(const RouteSideOfStreetOptions& value) { SetSideOfStreet(value); return *this;}
-    inline RouteWaypoint& WithSideOfStreet(RouteSideOfStreetOptions&& value) { SetSideOfStreet(std::move(value)); return *this;}
+    template<typename SideOfStreetT = RouteSideOfStreetOptions>
+    void SetSideOfStreet(SideOfStreetT&& value) { m_sideOfStreetHasBeenSet = true; m_sideOfStreet = std::forward<SideOfStreetT>(value); }
+    template<typename SideOfStreetT = RouteSideOfStreetOptions>
+    RouteWaypoint& WithSideOfStreet(SideOfStreetT&& value) { SetSideOfStreet(std::forward<SideOfStreetT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Duration of the stop.</p> <p> <b>Unit</b>: <code>seconds</code> </p>
      */
-    inline long long GetStopDuration() const{ return m_stopDuration; }
+    inline long long GetStopDuration() const { return m_stopDuration; }
     inline bool StopDurationHasBeenSet() const { return m_stopDurationHasBeenSet; }
     inline void SetStopDuration(long long value) { m_stopDurationHasBeenSet = true; m_stopDuration = value; }
     inline RouteWaypoint& WithStopDuration(long long value) { SetStopDuration(value); return *this;}
     ///@}
   private:
 
-    long long m_avoidActionsForDistance;
+    long long m_avoidActionsForDistance{0};
     bool m_avoidActionsForDistanceHasBeenSet = false;
 
-    bool m_avoidUTurns;
+    bool m_avoidUTurns{false};
     bool m_avoidUTurnsHasBeenSet = false;
 
-    double m_heading;
+    double m_heading{0.0};
     bool m_headingHasBeenSet = false;
 
     RouteMatchingOptions m_matching;
     bool m_matchingHasBeenSet = false;
 
-    bool m_passThrough;
+    bool m_passThrough{false};
     bool m_passThroughHasBeenSet = false;
 
     Aws::Vector<double> m_position;
@@ -152,7 +152,7 @@ namespace Model
     RouteSideOfStreetOptions m_sideOfStreet;
     bool m_sideOfStreetHasBeenSet = false;
 
-    long long m_stopDuration;
+    long long m_stopDuration{0};
     bool m_stopDurationHasBeenSet = false;
   };
 

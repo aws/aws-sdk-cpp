@@ -18,15 +18,7 @@ namespace mediapackagev2
 namespace Model
 {
 
-ConflictException::ConflictException() : 
-    m_messageHasBeenSet(false),
-    m_conflictExceptionType(ConflictExceptionType::NOT_SET),
-    m_conflictExceptionTypeHasBeenSet(false)
-{
-}
-
 ConflictException::ConflictException(JsonView jsonValue)
-  : ConflictException()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ConflictException& ConflictException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConflictExceptionType"))
   {
     m_conflictExceptionType = ConflictExceptionTypeMapper::GetConflictExceptionTypeForName(jsonValue.GetString("ConflictExceptionType"));
-
     m_conflictExceptionTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

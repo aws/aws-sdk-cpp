@@ -36,7 +36,7 @@ namespace Model
   class UserDefinedFunction
   {
   public:
-    AWS_GLUE_API UserDefinedFunction();
+    AWS_GLUE_API UserDefinedFunction() = default;
     AWS_GLUE_API UserDefinedFunction(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API UserDefinedFunction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,108 +46,96 @@ namespace Model
     /**
      * <p>The name of the function.</p>
      */
-    inline const Aws::String& GetFunctionName() const{ return m_functionName; }
+    inline const Aws::String& GetFunctionName() const { return m_functionName; }
     inline bool FunctionNameHasBeenSet() const { return m_functionNameHasBeenSet; }
-    inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
-    inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
-    inline void SetFunctionName(const char* value) { m_functionNameHasBeenSet = true; m_functionName.assign(value); }
-    inline UserDefinedFunction& WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
-    inline UserDefinedFunction& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
-    inline UserDefinedFunction& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
+    template<typename FunctionNameT = Aws::String>
+    void SetFunctionName(FunctionNameT&& value) { m_functionNameHasBeenSet = true; m_functionName = std::forward<FunctionNameT>(value); }
+    template<typename FunctionNameT = Aws::String>
+    UserDefinedFunction& WithFunctionName(FunctionNameT&& value) { SetFunctionName(std::forward<FunctionNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the catalog database that contains the function.</p>
      */
-    inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+    inline const Aws::String& GetDatabaseName() const { return m_databaseName; }
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
-    inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
-    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
-    inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
-    inline UserDefinedFunction& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
-    inline UserDefinedFunction& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
-    inline UserDefinedFunction& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+    template<typename DatabaseNameT = Aws::String>
+    void SetDatabaseName(DatabaseNameT&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::forward<DatabaseNameT>(value); }
+    template<typename DatabaseNameT = Aws::String>
+    UserDefinedFunction& WithDatabaseName(DatabaseNameT&& value) { SetDatabaseName(std::forward<DatabaseNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Java class that contains the function code.</p>
      */
-    inline const Aws::String& GetClassName() const{ return m_className; }
+    inline const Aws::String& GetClassName() const { return m_className; }
     inline bool ClassNameHasBeenSet() const { return m_classNameHasBeenSet; }
-    inline void SetClassName(const Aws::String& value) { m_classNameHasBeenSet = true; m_className = value; }
-    inline void SetClassName(Aws::String&& value) { m_classNameHasBeenSet = true; m_className = std::move(value); }
-    inline void SetClassName(const char* value) { m_classNameHasBeenSet = true; m_className.assign(value); }
-    inline UserDefinedFunction& WithClassName(const Aws::String& value) { SetClassName(value); return *this;}
-    inline UserDefinedFunction& WithClassName(Aws::String&& value) { SetClassName(std::move(value)); return *this;}
-    inline UserDefinedFunction& WithClassName(const char* value) { SetClassName(value); return *this;}
+    template<typename ClassNameT = Aws::String>
+    void SetClassName(ClassNameT&& value) { m_classNameHasBeenSet = true; m_className = std::forward<ClassNameT>(value); }
+    template<typename ClassNameT = Aws::String>
+    UserDefinedFunction& WithClassName(ClassNameT&& value) { SetClassName(std::forward<ClassNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The owner of the function.</p>
      */
-    inline const Aws::String& GetOwnerName() const{ return m_ownerName; }
+    inline const Aws::String& GetOwnerName() const { return m_ownerName; }
     inline bool OwnerNameHasBeenSet() const { return m_ownerNameHasBeenSet; }
-    inline void SetOwnerName(const Aws::String& value) { m_ownerNameHasBeenSet = true; m_ownerName = value; }
-    inline void SetOwnerName(Aws::String&& value) { m_ownerNameHasBeenSet = true; m_ownerName = std::move(value); }
-    inline void SetOwnerName(const char* value) { m_ownerNameHasBeenSet = true; m_ownerName.assign(value); }
-    inline UserDefinedFunction& WithOwnerName(const Aws::String& value) { SetOwnerName(value); return *this;}
-    inline UserDefinedFunction& WithOwnerName(Aws::String&& value) { SetOwnerName(std::move(value)); return *this;}
-    inline UserDefinedFunction& WithOwnerName(const char* value) { SetOwnerName(value); return *this;}
+    template<typename OwnerNameT = Aws::String>
+    void SetOwnerName(OwnerNameT&& value) { m_ownerNameHasBeenSet = true; m_ownerName = std::forward<OwnerNameT>(value); }
+    template<typename OwnerNameT = Aws::String>
+    UserDefinedFunction& WithOwnerName(OwnerNameT&& value) { SetOwnerName(std::forward<OwnerNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The owner type.</p>
      */
-    inline const PrincipalType& GetOwnerType() const{ return m_ownerType; }
+    inline PrincipalType GetOwnerType() const { return m_ownerType; }
     inline bool OwnerTypeHasBeenSet() const { return m_ownerTypeHasBeenSet; }
-    inline void SetOwnerType(const PrincipalType& value) { m_ownerTypeHasBeenSet = true; m_ownerType = value; }
-    inline void SetOwnerType(PrincipalType&& value) { m_ownerTypeHasBeenSet = true; m_ownerType = std::move(value); }
-    inline UserDefinedFunction& WithOwnerType(const PrincipalType& value) { SetOwnerType(value); return *this;}
-    inline UserDefinedFunction& WithOwnerType(PrincipalType&& value) { SetOwnerType(std::move(value)); return *this;}
+    inline void SetOwnerType(PrincipalType value) { m_ownerTypeHasBeenSet = true; m_ownerType = value; }
+    inline UserDefinedFunction& WithOwnerType(PrincipalType value) { SetOwnerType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time at which the function was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
+    inline const Aws::Utils::DateTime& GetCreateTime() const { return m_createTime; }
     inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
-    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
-    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = std::move(value); }
-    inline UserDefinedFunction& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
-    inline UserDefinedFunction& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    void SetCreateTime(CreateTimeT&& value) { m_createTimeHasBeenSet = true; m_createTime = std::forward<CreateTimeT>(value); }
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    UserDefinedFunction& WithCreateTime(CreateTimeT&& value) { SetCreateTime(std::forward<CreateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resource URIs for the function.</p>
      */
-    inline const Aws::Vector<ResourceUri>& GetResourceUris() const{ return m_resourceUris; }
+    inline const Aws::Vector<ResourceUri>& GetResourceUris() const { return m_resourceUris; }
     inline bool ResourceUrisHasBeenSet() const { return m_resourceUrisHasBeenSet; }
-    inline void SetResourceUris(const Aws::Vector<ResourceUri>& value) { m_resourceUrisHasBeenSet = true; m_resourceUris = value; }
-    inline void SetResourceUris(Aws::Vector<ResourceUri>&& value) { m_resourceUrisHasBeenSet = true; m_resourceUris = std::move(value); }
-    inline UserDefinedFunction& WithResourceUris(const Aws::Vector<ResourceUri>& value) { SetResourceUris(value); return *this;}
-    inline UserDefinedFunction& WithResourceUris(Aws::Vector<ResourceUri>&& value) { SetResourceUris(std::move(value)); return *this;}
-    inline UserDefinedFunction& AddResourceUris(const ResourceUri& value) { m_resourceUrisHasBeenSet = true; m_resourceUris.push_back(value); return *this; }
-    inline UserDefinedFunction& AddResourceUris(ResourceUri&& value) { m_resourceUrisHasBeenSet = true; m_resourceUris.push_back(std::move(value)); return *this; }
+    template<typename ResourceUrisT = Aws::Vector<ResourceUri>>
+    void SetResourceUris(ResourceUrisT&& value) { m_resourceUrisHasBeenSet = true; m_resourceUris = std::forward<ResourceUrisT>(value); }
+    template<typename ResourceUrisT = Aws::Vector<ResourceUri>>
+    UserDefinedFunction& WithResourceUris(ResourceUrisT&& value) { SetResourceUris(std::forward<ResourceUrisT>(value)); return *this;}
+    template<typename ResourceUrisT = ResourceUri>
+    UserDefinedFunction& AddResourceUris(ResourceUrisT&& value) { m_resourceUrisHasBeenSet = true; m_resourceUris.emplace_back(std::forward<ResourceUrisT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Data Catalog in which the function resides.</p>
      */
-    inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
+    inline const Aws::String& GetCatalogId() const { return m_catalogId; }
     inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
-    inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
-    inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
-    inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
-    inline UserDefinedFunction& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
-    inline UserDefinedFunction& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
-    inline UserDefinedFunction& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
+    template<typename CatalogIdT = Aws::String>
+    void SetCatalogId(CatalogIdT&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::forward<CatalogIdT>(value); }
+    template<typename CatalogIdT = Aws::String>
+    UserDefinedFunction& WithCatalogId(CatalogIdT&& value) { SetCatalogId(std::forward<CatalogIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -163,10 +151,10 @@ namespace Model
     Aws::String m_ownerName;
     bool m_ownerNameHasBeenSet = false;
 
-    PrincipalType m_ownerType;
+    PrincipalType m_ownerType{PrincipalType::NOT_SET};
     bool m_ownerTypeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createTime;
+    Aws::Utils::DateTime m_createTime{};
     bool m_createTimeHasBeenSet = false;
 
     Aws::Vector<ResourceUri> m_resourceUris;

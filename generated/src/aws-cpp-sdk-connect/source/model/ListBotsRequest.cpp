@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListBotsRequest::ListBotsRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_lexVersion(LexVersion::NOT_SET),
-    m_lexVersionHasBeenSet(false)
-{
-}
-
 Aws::String ListBotsRequest::SerializePayload() const
 {
   return {};

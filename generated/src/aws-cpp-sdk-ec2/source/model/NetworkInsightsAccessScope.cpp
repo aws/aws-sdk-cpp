@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-NetworkInsightsAccessScope::NetworkInsightsAccessScope() : 
-    m_networkInsightsAccessScopeIdHasBeenSet(false),
-    m_networkInsightsAccessScopeArnHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_updatedDateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 NetworkInsightsAccessScope::NetworkInsightsAccessScope(const XmlNode& xmlNode)
-  : NetworkInsightsAccessScope()
 {
   *this = xmlNode;
 }
@@ -69,6 +59,7 @@ NetworkInsightsAccessScope& NetworkInsightsAccessScope::operator =(const XmlNode
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

@@ -34,7 +34,7 @@ namespace Model
   class UpdateRecommenderConfiguration
   {
   public:
-    AWS_PINPOINT_API UpdateRecommenderConfiguration();
+    AWS_PINPOINT_API UpdateRecommenderConfiguration() = default;
     AWS_PINPOINT_API UpdateRecommenderConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API UpdateRecommenderConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -61,19 +61,16 @@ namespace Model
      * (RecommendationTransformerUri) to process recommendation data. Otherwise, don't
      * include this object in your request.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline UpdateRecommenderConfiguration& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
-    inline UpdateRecommenderConfiguration& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline UpdateRecommenderConfiguration& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
-    inline UpdateRecommenderConfiguration& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
-    inline UpdateRecommenderConfiguration& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
-    inline UpdateRecommenderConfiguration& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline UpdateRecommenderConfiguration& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
-    inline UpdateRecommenderConfiguration& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
-    inline UpdateRecommenderConfiguration& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
+    template<typename AttributesT = Aws::Map<Aws::String, Aws::String>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Map<Aws::String, Aws::String>>
+    UpdateRecommenderConfiguration& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    template<typename AttributesKeyT = Aws::String, typename AttributesValueT = Aws::String>
+    UpdateRecommenderConfiguration& AddAttributes(AttributesKeyT&& key, AttributesValueT&& value) {
+      m_attributesHasBeenSet = true; m_attributes.emplace(std::forward<AttributesKeyT>(key), std::forward<AttributesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -82,14 +79,12 @@ namespace Model
      * description can contain up to 128 characters. The characters can be letters,
      * numbers, spaces, or the following symbols: _ ; () , ‐.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateRecommenderConfiguration& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateRecommenderConfiguration& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateRecommenderConfiguration& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateRecommenderConfiguration& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,14 +93,12 @@ namespace Model
      * start with a letter or number and it can contain up to 128 characters. The
      * characters can be letters, numbers, spaces, underscores (_), or hyphens (-).</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateRecommenderConfiguration& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateRecommenderConfiguration& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateRecommenderConfiguration& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateRecommenderConfiguration& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -123,14 +116,12 @@ namespace Model
      * endpoint ID. Otherwise, messages won’t be sent to the user's
      * endpoint.</p></li></ul>
      */
-    inline const Aws::String& GetRecommendationProviderIdType() const{ return m_recommendationProviderIdType; }
+    inline const Aws::String& GetRecommendationProviderIdType() const { return m_recommendationProviderIdType; }
     inline bool RecommendationProviderIdTypeHasBeenSet() const { return m_recommendationProviderIdTypeHasBeenSet; }
-    inline void SetRecommendationProviderIdType(const Aws::String& value) { m_recommendationProviderIdTypeHasBeenSet = true; m_recommendationProviderIdType = value; }
-    inline void SetRecommendationProviderIdType(Aws::String&& value) { m_recommendationProviderIdTypeHasBeenSet = true; m_recommendationProviderIdType = std::move(value); }
-    inline void SetRecommendationProviderIdType(const char* value) { m_recommendationProviderIdTypeHasBeenSet = true; m_recommendationProviderIdType.assign(value); }
-    inline UpdateRecommenderConfiguration& WithRecommendationProviderIdType(const Aws::String& value) { SetRecommendationProviderIdType(value); return *this;}
-    inline UpdateRecommenderConfiguration& WithRecommendationProviderIdType(Aws::String&& value) { SetRecommendationProviderIdType(std::move(value)); return *this;}
-    inline UpdateRecommenderConfiguration& WithRecommendationProviderIdType(const char* value) { SetRecommendationProviderIdType(value); return *this;}
+    template<typename RecommendationProviderIdTypeT = Aws::String>
+    void SetRecommendationProviderIdType(RecommendationProviderIdTypeT&& value) { m_recommendationProviderIdTypeHasBeenSet = true; m_recommendationProviderIdType = std::forward<RecommendationProviderIdTypeT>(value); }
+    template<typename RecommendationProviderIdTypeT = Aws::String>
+    UpdateRecommenderConfiguration& WithRecommendationProviderIdType(RecommendationProviderIdTypeT&& value) { SetRecommendationProviderIdType(std::forward<RecommendationProviderIdTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -139,14 +130,12 @@ namespace Model
      * (IAM) role that authorizes Amazon Pinpoint to retrieve recommendation data from
      * the recommender model.</p>
      */
-    inline const Aws::String& GetRecommendationProviderRoleArn() const{ return m_recommendationProviderRoleArn; }
+    inline const Aws::String& GetRecommendationProviderRoleArn() const { return m_recommendationProviderRoleArn; }
     inline bool RecommendationProviderRoleArnHasBeenSet() const { return m_recommendationProviderRoleArnHasBeenSet; }
-    inline void SetRecommendationProviderRoleArn(const Aws::String& value) { m_recommendationProviderRoleArnHasBeenSet = true; m_recommendationProviderRoleArn = value; }
-    inline void SetRecommendationProviderRoleArn(Aws::String&& value) { m_recommendationProviderRoleArnHasBeenSet = true; m_recommendationProviderRoleArn = std::move(value); }
-    inline void SetRecommendationProviderRoleArn(const char* value) { m_recommendationProviderRoleArnHasBeenSet = true; m_recommendationProviderRoleArn.assign(value); }
-    inline UpdateRecommenderConfiguration& WithRecommendationProviderRoleArn(const Aws::String& value) { SetRecommendationProviderRoleArn(value); return *this;}
-    inline UpdateRecommenderConfiguration& WithRecommendationProviderRoleArn(Aws::String&& value) { SetRecommendationProviderRoleArn(std::move(value)); return *this;}
-    inline UpdateRecommenderConfiguration& WithRecommendationProviderRoleArn(const char* value) { SetRecommendationProviderRoleArn(value); return *this;}
+    template<typename RecommendationProviderRoleArnT = Aws::String>
+    void SetRecommendationProviderRoleArn(RecommendationProviderRoleArnT&& value) { m_recommendationProviderRoleArnHasBeenSet = true; m_recommendationProviderRoleArn = std::forward<RecommendationProviderRoleArnT>(value); }
+    template<typename RecommendationProviderRoleArnT = Aws::String>
+    UpdateRecommenderConfiguration& WithRecommendationProviderRoleArn(RecommendationProviderRoleArnT&& value) { SetRecommendationProviderRoleArn(std::forward<RecommendationProviderRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -155,14 +144,12 @@ namespace Model
      * recommendation data from. This value must match the ARN of an Amazon Personalize
      * campaign.</p>
      */
-    inline const Aws::String& GetRecommendationProviderUri() const{ return m_recommendationProviderUri; }
+    inline const Aws::String& GetRecommendationProviderUri() const { return m_recommendationProviderUri; }
     inline bool RecommendationProviderUriHasBeenSet() const { return m_recommendationProviderUriHasBeenSet; }
-    inline void SetRecommendationProviderUri(const Aws::String& value) { m_recommendationProviderUriHasBeenSet = true; m_recommendationProviderUri = value; }
-    inline void SetRecommendationProviderUri(Aws::String&& value) { m_recommendationProviderUriHasBeenSet = true; m_recommendationProviderUri = std::move(value); }
-    inline void SetRecommendationProviderUri(const char* value) { m_recommendationProviderUriHasBeenSet = true; m_recommendationProviderUri.assign(value); }
-    inline UpdateRecommenderConfiguration& WithRecommendationProviderUri(const Aws::String& value) { SetRecommendationProviderUri(value); return *this;}
-    inline UpdateRecommenderConfiguration& WithRecommendationProviderUri(Aws::String&& value) { SetRecommendationProviderUri(std::move(value)); return *this;}
-    inline UpdateRecommenderConfiguration& WithRecommendationProviderUri(const char* value) { SetRecommendationProviderUri(value); return *this;}
+    template<typename RecommendationProviderUriT = Aws::String>
+    void SetRecommendationProviderUri(RecommendationProviderUriT&& value) { m_recommendationProviderUriHasBeenSet = true; m_recommendationProviderUri = std::forward<RecommendationProviderUriT>(value); }
+    template<typename RecommendationProviderUriT = Aws::String>
+    UpdateRecommenderConfiguration& WithRecommendationProviderUri(RecommendationProviderUriT&& value) { SetRecommendationProviderUri(std::forward<RecommendationProviderUriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -171,14 +158,12 @@ namespace Model
      * for additional processing of recommendation data that's retrieved from the
      * recommender model.</p>
      */
-    inline const Aws::String& GetRecommendationTransformerUri() const{ return m_recommendationTransformerUri; }
+    inline const Aws::String& GetRecommendationTransformerUri() const { return m_recommendationTransformerUri; }
     inline bool RecommendationTransformerUriHasBeenSet() const { return m_recommendationTransformerUriHasBeenSet; }
-    inline void SetRecommendationTransformerUri(const Aws::String& value) { m_recommendationTransformerUriHasBeenSet = true; m_recommendationTransformerUri = value; }
-    inline void SetRecommendationTransformerUri(Aws::String&& value) { m_recommendationTransformerUriHasBeenSet = true; m_recommendationTransformerUri = std::move(value); }
-    inline void SetRecommendationTransformerUri(const char* value) { m_recommendationTransformerUriHasBeenSet = true; m_recommendationTransformerUri.assign(value); }
-    inline UpdateRecommenderConfiguration& WithRecommendationTransformerUri(const Aws::String& value) { SetRecommendationTransformerUri(value); return *this;}
-    inline UpdateRecommenderConfiguration& WithRecommendationTransformerUri(Aws::String&& value) { SetRecommendationTransformerUri(std::move(value)); return *this;}
-    inline UpdateRecommenderConfiguration& WithRecommendationTransformerUri(const char* value) { SetRecommendationTransformerUri(value); return *this;}
+    template<typename RecommendationTransformerUriT = Aws::String>
+    void SetRecommendationTransformerUri(RecommendationTransformerUriT&& value) { m_recommendationTransformerUriHasBeenSet = true; m_recommendationTransformerUri = std::forward<RecommendationTransformerUriT>(value); }
+    template<typename RecommendationTransformerUriT = Aws::String>
+    UpdateRecommenderConfiguration& WithRecommendationTransformerUri(RecommendationTransformerUriT&& value) { SetRecommendationTransformerUri(std::forward<RecommendationTransformerUriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -193,14 +178,12 @@ namespace Model
      * to 25 characters. The characters can be letters, numbers, spaces, underscores
      * (_), or hyphens (-). These restrictions don't apply to attribute values.</p>
      */
-    inline const Aws::String& GetRecommendationsDisplayName() const{ return m_recommendationsDisplayName; }
+    inline const Aws::String& GetRecommendationsDisplayName() const { return m_recommendationsDisplayName; }
     inline bool RecommendationsDisplayNameHasBeenSet() const { return m_recommendationsDisplayNameHasBeenSet; }
-    inline void SetRecommendationsDisplayName(const Aws::String& value) { m_recommendationsDisplayNameHasBeenSet = true; m_recommendationsDisplayName = value; }
-    inline void SetRecommendationsDisplayName(Aws::String&& value) { m_recommendationsDisplayNameHasBeenSet = true; m_recommendationsDisplayName = std::move(value); }
-    inline void SetRecommendationsDisplayName(const char* value) { m_recommendationsDisplayNameHasBeenSet = true; m_recommendationsDisplayName.assign(value); }
-    inline UpdateRecommenderConfiguration& WithRecommendationsDisplayName(const Aws::String& value) { SetRecommendationsDisplayName(value); return *this;}
-    inline UpdateRecommenderConfiguration& WithRecommendationsDisplayName(Aws::String&& value) { SetRecommendationsDisplayName(std::move(value)); return *this;}
-    inline UpdateRecommenderConfiguration& WithRecommendationsDisplayName(const char* value) { SetRecommendationsDisplayName(value); return *this;}
+    template<typename RecommendationsDisplayNameT = Aws::String>
+    void SetRecommendationsDisplayName(RecommendationsDisplayNameT&& value) { m_recommendationsDisplayNameHasBeenSet = true; m_recommendationsDisplayName = std::forward<RecommendationsDisplayNameT>(value); }
+    template<typename RecommendationsDisplayNameT = Aws::String>
+    UpdateRecommenderConfiguration& WithRecommendationsDisplayName(RecommendationsDisplayNameT&& value) { SetRecommendationsDisplayName(std::forward<RecommendationsDisplayNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -214,7 +197,7 @@ namespace Model
      * (RecommendationTransformerUri) to perform additional processing of
      * recommendation data.</p>
      */
-    inline int GetRecommendationsPerMessage() const{ return m_recommendationsPerMessage; }
+    inline int GetRecommendationsPerMessage() const { return m_recommendationsPerMessage; }
     inline bool RecommendationsPerMessageHasBeenSet() const { return m_recommendationsPerMessageHasBeenSet; }
     inline void SetRecommendationsPerMessage(int value) { m_recommendationsPerMessageHasBeenSet = true; m_recommendationsPerMessage = value; }
     inline UpdateRecommenderConfiguration& WithRecommendationsPerMessage(int value) { SetRecommendationsPerMessage(value); return *this;}
@@ -245,7 +228,7 @@ namespace Model
     Aws::String m_recommendationsDisplayName;
     bool m_recommendationsDisplayNameHasBeenSet = false;
 
-    int m_recommendationsPerMessage;
+    int m_recommendationsPerMessage{0};
     bool m_recommendationsPerMessageHasBeenSet = false;
   };
 

@@ -18,13 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-EcrRepositoryConfiguration::EcrRepositoryConfiguration() : 
-    m_repositoryPolicyHasBeenSet(false)
-{
-}
-
 EcrRepositoryConfiguration::EcrRepositoryConfiguration(JsonView jsonValue)
-  : EcrRepositoryConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EcrRepositoryConfiguration& EcrRepositoryConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("repositoryPolicy"))
   {
     m_repositoryPolicy = jsonValue.GetString("repositoryPolicy");
-
     m_repositoryPolicyHasBeenSet = true;
   }
-
   return *this;
 }
 

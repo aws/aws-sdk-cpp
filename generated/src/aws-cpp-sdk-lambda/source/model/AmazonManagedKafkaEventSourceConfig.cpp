@@ -18,13 +18,7 @@ namespace Lambda
 namespace Model
 {
 
-AmazonManagedKafkaEventSourceConfig::AmazonManagedKafkaEventSourceConfig() : 
-    m_consumerGroupIdHasBeenSet(false)
-{
-}
-
 AmazonManagedKafkaEventSourceConfig::AmazonManagedKafkaEventSourceConfig(JsonView jsonValue)
-  : AmazonManagedKafkaEventSourceConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AmazonManagedKafkaEventSourceConfig& AmazonManagedKafkaEventSourceConfig::operat
   if(jsonValue.ValueExists("ConsumerGroupId"))
   {
     m_consumerGroupId = jsonValue.GetString("ConsumerGroupId");
-
     m_consumerGroupIdHasBeenSet = true;
   }
-
   return *this;
 }
 

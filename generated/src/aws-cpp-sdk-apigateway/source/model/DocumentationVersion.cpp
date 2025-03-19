@@ -19,16 +19,7 @@ namespace APIGateway
 namespace Model
 {
 
-DocumentationVersion::DocumentationVersion() : 
-    m_versionHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 DocumentationVersion::DocumentationVersion(JsonView jsonValue)
-  : DocumentationVersion()
 {
   *this = jsonValue;
 }
@@ -38,24 +29,18 @@ DocumentationVersion& DocumentationVersion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdDate"))
   {
     m_createdDate = jsonValue.GetDouble("createdDate");
-
     m_createdDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

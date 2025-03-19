@@ -18,22 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-SubtotalOptions::SubtotalOptions() : 
-    m_totalsVisibility(Visibility::NOT_SET),
-    m_totalsVisibilityHasBeenSet(false),
-    m_customLabelHasBeenSet(false),
-    m_fieldLevel(PivotTableSubtotalLevel::NOT_SET),
-    m_fieldLevelHasBeenSet(false),
-    m_fieldLevelOptionsHasBeenSet(false),
-    m_totalCellStyleHasBeenSet(false),
-    m_valueCellStyleHasBeenSet(false),
-    m_metricHeaderCellStyleHasBeenSet(false),
-    m_styleTargetsHasBeenSet(false)
-{
-}
-
 SubtotalOptions::SubtotalOptions(JsonView jsonValue)
-  : SubtotalOptions()
 {
   *this = jsonValue;
 }
@@ -43,24 +28,18 @@ SubtotalOptions& SubtotalOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TotalsVisibility"))
   {
     m_totalsVisibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("TotalsVisibility"));
-
     m_totalsVisibilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomLabel"))
   {
     m_customLabel = jsonValue.GetString("CustomLabel");
-
     m_customLabelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FieldLevel"))
   {
     m_fieldLevel = PivotTableSubtotalLevelMapper::GetPivotTableSubtotalLevelForName(jsonValue.GetString("FieldLevel"));
-
     m_fieldLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FieldLevelOptions"))
   {
     Aws::Utils::Array<JsonView> fieldLevelOptionsJsonList = jsonValue.GetArray("FieldLevelOptions");
@@ -70,28 +49,21 @@ SubtotalOptions& SubtotalOptions::operator =(JsonView jsonValue)
     }
     m_fieldLevelOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalCellStyle"))
   {
     m_totalCellStyle = jsonValue.GetObject("TotalCellStyle");
-
     m_totalCellStyleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValueCellStyle"))
   {
     m_valueCellStyle = jsonValue.GetObject("ValueCellStyle");
-
     m_valueCellStyleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricHeaderCellStyle"))
   {
     m_metricHeaderCellStyle = jsonValue.GetObject("MetricHeaderCellStyle");
-
     m_metricHeaderCellStyleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StyleTargets"))
   {
     Aws::Utils::Array<JsonView> styleTargetsJsonList = jsonValue.GetArray("StyleTargets");
@@ -101,7 +73,6 @@ SubtotalOptions& SubtotalOptions::operator =(JsonView jsonValue)
     }
     m_styleTargetsHasBeenSet = true;
   }
-
   return *this;
 }
 

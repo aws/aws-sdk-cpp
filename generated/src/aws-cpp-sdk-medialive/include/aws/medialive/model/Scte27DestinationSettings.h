@@ -29,7 +29,7 @@ namespace Model
   class Scte27DestinationSettings
   {
   public:
-    AWS_MEDIALIVE_API Scte27DestinationSettings();
+    AWS_MEDIALIVE_API Scte27DestinationSettings() = default;
     AWS_MEDIALIVE_API Scte27DestinationSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Scte27DestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;

@@ -18,19 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-Retriever::Retriever() : 
-    m_applicationIdHasBeenSet(false),
-    m_retrieverIdHasBeenSet(false),
-    m_type(RetrieverType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_status(RetrieverStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_displayNameHasBeenSet(false)
-{
-}
-
 Retriever::Retriever(JsonView jsonValue)
-  : Retriever()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ Retriever& Retriever::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("applicationId"))
   {
     m_applicationId = jsonValue.GetString("applicationId");
-
     m_applicationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("retrieverId"))
   {
     m_retrieverId = jsonValue.GetString("retrieverId");
-
     m_retrieverIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = RetrieverTypeMapper::GetRetrieverTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = RetrieverStatusMapper::GetRetrieverStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("displayName"))
   {
     m_displayName = jsonValue.GetString("displayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,22 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-RedshiftConnectorProfileProperties::RedshiftConnectorProfileProperties() : 
-    m_databaseUrlHasBeenSet(false),
-    m_bucketNameHasBeenSet(false),
-    m_bucketPrefixHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_dataApiRoleArnHasBeenSet(false),
-    m_isRedshiftServerless(false),
-    m_isRedshiftServerlessHasBeenSet(false),
-    m_clusterIdentifierHasBeenSet(false),
-    m_workgroupNameHasBeenSet(false),
-    m_databaseNameHasBeenSet(false)
-{
-}
-
 RedshiftConnectorProfileProperties::RedshiftConnectorProfileProperties(JsonView jsonValue)
-  : RedshiftConnectorProfileProperties()
 {
   *this = jsonValue;
 }
@@ -43,66 +28,48 @@ RedshiftConnectorProfileProperties& RedshiftConnectorProfileProperties::operator
   if(jsonValue.ValueExists("databaseUrl"))
   {
     m_databaseUrl = jsonValue.GetString("databaseUrl");
-
     m_databaseUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bucketName"))
   {
     m_bucketName = jsonValue.GetString("bucketName");
-
     m_bucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bucketPrefix"))
   {
     m_bucketPrefix = jsonValue.GetString("bucketPrefix");
-
     m_bucketPrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataApiRoleArn"))
   {
     m_dataApiRoleArn = jsonValue.GetString("dataApiRoleArn");
-
     m_dataApiRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isRedshiftServerless"))
   {
     m_isRedshiftServerless = jsonValue.GetBool("isRedshiftServerless");
-
     m_isRedshiftServerlessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clusterIdentifier"))
   {
     m_clusterIdentifier = jsonValue.GetString("clusterIdentifier");
-
     m_clusterIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workgroupName"))
   {
     m_workgroupName = jsonValue.GetString("workgroupName");
-
     m_workgroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("databaseName"))
   {
     m_databaseName = jsonValue.GetString("databaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   return *this;
 }
 

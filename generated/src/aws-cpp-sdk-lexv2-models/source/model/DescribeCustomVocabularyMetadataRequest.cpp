@@ -12,13 +12,6 @@ using namespace Aws::LexModelsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeCustomVocabularyMetadataRequest::DescribeCustomVocabularyMetadataRequest() : 
-    m_botIdHasBeenSet(false),
-    m_botVersionHasBeenSet(false),
-    m_localeIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeCustomVocabularyMetadataRequest::SerializePayload() const
 {
   return {};

@@ -32,7 +32,7 @@ namespace Model
   class InnerFilter
   {
   public:
-    AWS_QUICKSIGHT_API InnerFilter();
+    AWS_QUICKSIGHT_API InnerFilter() = default;
     AWS_QUICKSIGHT_API InnerFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API InnerFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>A <code>CategoryInnerFilter</code> filters text values for the
      * <code>NestedFilter</code>.</p>
      */
-    inline const CategoryInnerFilter& GetCategoryInnerFilter() const{ return m_categoryInnerFilter; }
+    inline const CategoryInnerFilter& GetCategoryInnerFilter() const { return m_categoryInnerFilter; }
     inline bool CategoryInnerFilterHasBeenSet() const { return m_categoryInnerFilterHasBeenSet; }
-    inline void SetCategoryInnerFilter(const CategoryInnerFilter& value) { m_categoryInnerFilterHasBeenSet = true; m_categoryInnerFilter = value; }
-    inline void SetCategoryInnerFilter(CategoryInnerFilter&& value) { m_categoryInnerFilterHasBeenSet = true; m_categoryInnerFilter = std::move(value); }
-    inline InnerFilter& WithCategoryInnerFilter(const CategoryInnerFilter& value) { SetCategoryInnerFilter(value); return *this;}
-    inline InnerFilter& WithCategoryInnerFilter(CategoryInnerFilter&& value) { SetCategoryInnerFilter(std::move(value)); return *this;}
+    template<typename CategoryInnerFilterT = CategoryInnerFilter>
+    void SetCategoryInnerFilter(CategoryInnerFilterT&& value) { m_categoryInnerFilterHasBeenSet = true; m_categoryInnerFilter = std::forward<CategoryInnerFilterT>(value); }
+    template<typename CategoryInnerFilterT = CategoryInnerFilter>
+    InnerFilter& WithCategoryInnerFilter(CategoryInnerFilterT&& value) { SetCategoryInnerFilter(std::forward<CategoryInnerFilterT>(value)); return *this;}
     ///@}
   private:
 

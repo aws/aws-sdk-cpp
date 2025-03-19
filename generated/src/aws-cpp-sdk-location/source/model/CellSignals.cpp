@@ -18,13 +18,7 @@ namespace LocationService
 namespace Model
 {
 
-CellSignals::CellSignals() : 
-    m_lteCellDetailsHasBeenSet(false)
-{
-}
-
 CellSignals::CellSignals(JsonView jsonValue)
-  : CellSignals()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ CellSignals& CellSignals::operator =(JsonView jsonValue)
     }
     m_lteCellDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

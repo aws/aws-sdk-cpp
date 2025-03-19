@@ -20,14 +20,7 @@ namespace EC2Protocol
 namespace Model
 {
 
-ComplexError::ComplexError() : 
-    m_topLevelHasBeenSet(false),
-    m_nestedHasBeenSet(false)
-{
-}
-
 ComplexError::ComplexError(const XmlNode& xmlNode)
-  : ComplexError()
 {
   *this = xmlNode;
 }

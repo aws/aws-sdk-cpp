@@ -18,17 +18,7 @@ namespace MigrationHubStrategyRecommendations
 namespace Model
 {
 
-AntipatternReportResult::AntipatternReportResult() : 
-    m_analyzerNameHasBeenSet(false),
-    m_antiPatternReportS3ObjectHasBeenSet(false),
-    m_antipatternReportStatus(AntipatternReportStatus::NOT_SET),
-    m_antipatternReportStatusHasBeenSet(false),
-    m_antipatternReportStatusMessageHasBeenSet(false)
-{
-}
-
 AntipatternReportResult::AntipatternReportResult(JsonView jsonValue)
-  : AntipatternReportResult()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ AntipatternReportResult& AntipatternReportResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("analyzerName"))
   {
     m_analyzerName = jsonValue.GetObject("analyzerName");
-
     m_analyzerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("antiPatternReportS3Object"))
   {
     m_antiPatternReportS3Object = jsonValue.GetObject("antiPatternReportS3Object");
-
     m_antiPatternReportS3ObjectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("antipatternReportStatus"))
   {
     m_antipatternReportStatus = AntipatternReportStatusMapper::GetAntipatternReportStatusForName(jsonValue.GetString("antipatternReportStatus"));
-
     m_antipatternReportStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("antipatternReportStatusMessage"))
   {
     m_antipatternReportStatusMessage = jsonValue.GetString("antipatternReportStatusMessage");
-
     m_antipatternReportStatusMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

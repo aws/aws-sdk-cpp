@@ -12,12 +12,6 @@ using namespace Aws::WAFRegional::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteRegexMatchSetRequest::DeleteRegexMatchSetRequest() : 
-    m_regexMatchSetIdHasBeenSet(false),
-    m_changeTokenHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRegexMatchSetRequest::SerializePayload() const
 {
   JsonValue payload;

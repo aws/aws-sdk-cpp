@@ -20,13 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-LifecycleConfiguration::LifecycleConfiguration() : 
-    m_rulesHasBeenSet(false)
-{
-}
-
 LifecycleConfiguration::LifecycleConfiguration(const XmlNode& xmlNode)
-  : LifecycleConfiguration()
 {
   *this = xmlNode;
 }
@@ -41,6 +35,7 @@ LifecycleConfiguration& LifecycleConfiguration::operator =(const XmlNode& xmlNod
     if(!rulesNode.IsNull())
     {
       XmlNode rulesMember = rulesNode.FirstChild("Rule");
+      m_rulesHasBeenSet = !rulesMember.IsNull();
       while(!rulesMember.IsNull())
       {
         m_rules.push_back(rulesMember);

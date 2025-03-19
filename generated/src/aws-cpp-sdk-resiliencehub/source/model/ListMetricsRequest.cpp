@@ -12,17 +12,6 @@ using namespace Aws::ResilienceHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListMetricsRequest::ListMetricsRequest() : 
-    m_conditionsHasBeenSet(false),
-    m_dataSourceHasBeenSet(false),
-    m_fieldsHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_sortsHasBeenSet(false)
-{
-}
-
 Aws::String ListMetricsRequest::SerializePayload() const
 {
   JsonValue payload;

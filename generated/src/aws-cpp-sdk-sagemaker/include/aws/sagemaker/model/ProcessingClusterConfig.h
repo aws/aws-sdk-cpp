@@ -33,7 +33,7 @@ namespace Model
   class ProcessingClusterConfig
   {
   public:
-    AWS_SAGEMAKER_API ProcessingClusterConfig();
+    AWS_SAGEMAKER_API ProcessingClusterConfig() = default;
     AWS_SAGEMAKER_API ProcessingClusterConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ProcessingClusterConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
      * distributed processing jobs, specify a value greater than 1. The default value
      * is 1.</p>
      */
-    inline int GetInstanceCount() const{ return m_instanceCount; }
+    inline int GetInstanceCount() const { return m_instanceCount; }
     inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
     inline ProcessingClusterConfig& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
@@ -55,12 +55,10 @@ namespace Model
     /**
      * <p>The ML compute instance type for the processing job.</p>
      */
-    inline const ProcessingInstanceType& GetInstanceType() const{ return m_instanceType; }
+    inline ProcessingInstanceType GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const ProcessingInstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(ProcessingInstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline ProcessingClusterConfig& WithInstanceType(const ProcessingInstanceType& value) { SetInstanceType(value); return *this;}
-    inline ProcessingClusterConfig& WithInstanceType(ProcessingInstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
+    inline void SetInstanceType(ProcessingInstanceType value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline ProcessingClusterConfig& WithInstanceType(ProcessingInstanceType value) { SetInstanceType(value); return *this;}
     ///@}
 
     ///@{
@@ -76,7 +74,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance
      * Store Volumes</a>.</p> 
      */
-    inline int GetVolumeSizeInGB() const{ return m_volumeSizeInGB; }
+    inline int GetVolumeSizeInGB() const { return m_volumeSizeInGB; }
     inline bool VolumeSizeInGBHasBeenSet() const { return m_volumeSizeInGBHasBeenSet; }
     inline void SetVolumeSizeInGB(int value) { m_volumeSizeInGBHasBeenSet = true; m_volumeSizeInGB = value; }
     inline ProcessingClusterConfig& WithVolumeSizeInGB(int value) { SetVolumeSizeInGB(value); return *this;}
@@ -98,24 +96,22 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD
      * Instance Store Volumes</a>.</p> 
      */
-    inline const Aws::String& GetVolumeKmsKeyId() const{ return m_volumeKmsKeyId; }
+    inline const Aws::String& GetVolumeKmsKeyId() const { return m_volumeKmsKeyId; }
     inline bool VolumeKmsKeyIdHasBeenSet() const { return m_volumeKmsKeyIdHasBeenSet; }
-    inline void SetVolumeKmsKeyId(const Aws::String& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = value; }
-    inline void SetVolumeKmsKeyId(Aws::String&& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = std::move(value); }
-    inline void SetVolumeKmsKeyId(const char* value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId.assign(value); }
-    inline ProcessingClusterConfig& WithVolumeKmsKeyId(const Aws::String& value) { SetVolumeKmsKeyId(value); return *this;}
-    inline ProcessingClusterConfig& WithVolumeKmsKeyId(Aws::String&& value) { SetVolumeKmsKeyId(std::move(value)); return *this;}
-    inline ProcessingClusterConfig& WithVolumeKmsKeyId(const char* value) { SetVolumeKmsKeyId(value); return *this;}
+    template<typename VolumeKmsKeyIdT = Aws::String>
+    void SetVolumeKmsKeyId(VolumeKmsKeyIdT&& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = std::forward<VolumeKmsKeyIdT>(value); }
+    template<typename VolumeKmsKeyIdT = Aws::String>
+    ProcessingClusterConfig& WithVolumeKmsKeyId(VolumeKmsKeyIdT&& value) { SetVolumeKmsKeyId(std::forward<VolumeKmsKeyIdT>(value)); return *this;}
     ///@}
   private:
 
-    int m_instanceCount;
+    int m_instanceCount{0};
     bool m_instanceCountHasBeenSet = false;
 
-    ProcessingInstanceType m_instanceType;
+    ProcessingInstanceType m_instanceType{ProcessingInstanceType::NOT_SET};
     bool m_instanceTypeHasBeenSet = false;
 
-    int m_volumeSizeInGB;
+    int m_volumeSizeInGB{0};
     bool m_volumeSizeInGBHasBeenSet = false;
 
     Aws::String m_volumeKmsKeyId;

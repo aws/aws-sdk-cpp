@@ -18,10 +18,6 @@ namespace BedrockAgent
 namespace Model
 {
 
-UnspecifiedFlowValidationDetails::UnspecifiedFlowValidationDetails()
-{
-}
-
 UnspecifiedFlowValidationDetails::UnspecifiedFlowValidationDetails(JsonView jsonValue)
 {
   *this = jsonValue;

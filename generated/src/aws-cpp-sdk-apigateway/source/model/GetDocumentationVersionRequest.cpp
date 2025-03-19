@@ -12,12 +12,6 @@ using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDocumentationVersionRequest::GetDocumentationVersionRequest() : 
-    m_restApiIdHasBeenSet(false),
-    m_documentationVersionHasBeenSet(false)
-{
-}
-
 Aws::String GetDocumentationVersionRequest::SerializePayload() const
 {
   return {};

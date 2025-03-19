@@ -36,7 +36,7 @@ namespace Model
   class TargetGroup
   {
   public:
-    AWS_ELASTICLOADBALANCINGV2_API TargetGroup();
+    AWS_ELASTICLOADBALANCINGV2_API TargetGroup() = default;
     AWS_ELASTICLOADBALANCINGV2_API TargetGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICLOADBALANCINGV2_API TargetGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,40 +48,34 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the target group.</p>
      */
-    inline const Aws::String& GetTargetGroupArn() const{ return m_targetGroupArn; }
+    inline const Aws::String& GetTargetGroupArn() const { return m_targetGroupArn; }
     inline bool TargetGroupArnHasBeenSet() const { return m_targetGroupArnHasBeenSet; }
-    inline void SetTargetGroupArn(const Aws::String& value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn = value; }
-    inline void SetTargetGroupArn(Aws::String&& value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn = std::move(value); }
-    inline void SetTargetGroupArn(const char* value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn.assign(value); }
-    inline TargetGroup& WithTargetGroupArn(const Aws::String& value) { SetTargetGroupArn(value); return *this;}
-    inline TargetGroup& WithTargetGroupArn(Aws::String&& value) { SetTargetGroupArn(std::move(value)); return *this;}
-    inline TargetGroup& WithTargetGroupArn(const char* value) { SetTargetGroupArn(value); return *this;}
+    template<typename TargetGroupArnT = Aws::String>
+    void SetTargetGroupArn(TargetGroupArnT&& value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn = std::forward<TargetGroupArnT>(value); }
+    template<typename TargetGroupArnT = Aws::String>
+    TargetGroup& WithTargetGroupArn(TargetGroupArnT&& value) { SetTargetGroupArn(std::forward<TargetGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the target group.</p>
      */
-    inline const Aws::String& GetTargetGroupName() const{ return m_targetGroupName; }
+    inline const Aws::String& GetTargetGroupName() const { return m_targetGroupName; }
     inline bool TargetGroupNameHasBeenSet() const { return m_targetGroupNameHasBeenSet; }
-    inline void SetTargetGroupName(const Aws::String& value) { m_targetGroupNameHasBeenSet = true; m_targetGroupName = value; }
-    inline void SetTargetGroupName(Aws::String&& value) { m_targetGroupNameHasBeenSet = true; m_targetGroupName = std::move(value); }
-    inline void SetTargetGroupName(const char* value) { m_targetGroupNameHasBeenSet = true; m_targetGroupName.assign(value); }
-    inline TargetGroup& WithTargetGroupName(const Aws::String& value) { SetTargetGroupName(value); return *this;}
-    inline TargetGroup& WithTargetGroupName(Aws::String&& value) { SetTargetGroupName(std::move(value)); return *this;}
-    inline TargetGroup& WithTargetGroupName(const char* value) { SetTargetGroupName(value); return *this;}
+    template<typename TargetGroupNameT = Aws::String>
+    void SetTargetGroupName(TargetGroupNameT&& value) { m_targetGroupNameHasBeenSet = true; m_targetGroupName = std::forward<TargetGroupNameT>(value); }
+    template<typename TargetGroupNameT = Aws::String>
+    TargetGroup& WithTargetGroupName(TargetGroupNameT&& value) { SetTargetGroupName(std::forward<TargetGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The protocol to use for routing traffic to the targets.</p>
      */
-    inline const ProtocolEnum& GetProtocol() const{ return m_protocol; }
+    inline ProtocolEnum GetProtocol() const { return m_protocol; }
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-    inline void SetProtocol(const ProtocolEnum& value) { m_protocolHasBeenSet = true; m_protocol = value; }
-    inline void SetProtocol(ProtocolEnum&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
-    inline TargetGroup& WithProtocol(const ProtocolEnum& value) { SetProtocol(value); return *this;}
-    inline TargetGroup& WithProtocol(ProtocolEnum&& value) { SetProtocol(std::move(value)); return *this;}
+    inline void SetProtocol(ProtocolEnum value) { m_protocolHasBeenSet = true; m_protocol = value; }
+    inline TargetGroup& WithProtocol(ProtocolEnum value) { SetProtocol(value); return *this;}
     ///@}
 
     ///@{
@@ -89,7 +83,7 @@ namespace Model
      * <p>The port on which the targets are listening. This parameter is not used if
      * the target is a Lambda function.</p>
      */
-    inline int GetPort() const{ return m_port; }
+    inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline TargetGroup& WithPort(int value) { SetPort(value); return *this;}
@@ -99,14 +93,12 @@ namespace Model
     /**
      * <p>The ID of the VPC for the targets.</p>
      */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+    inline const Aws::String& GetVpcId() const { return m_vpcId; }
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
-    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
-    inline TargetGroup& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-    inline TargetGroup& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-    inline TargetGroup& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+    template<typename VpcIdT = Aws::String>
+    void SetVpcId(VpcIdT&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::forward<VpcIdT>(value); }
+    template<typename VpcIdT = Aws::String>
+    TargetGroup& WithVpcId(VpcIdT&& value) { SetVpcId(std::forward<VpcIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,33 +106,29 @@ namespace Model
      * <p>The protocol to use to connect with the target. The GENEVE, TLS, UDP, and
      * TCP_UDP protocols are not supported for health checks.</p>
      */
-    inline const ProtocolEnum& GetHealthCheckProtocol() const{ return m_healthCheckProtocol; }
+    inline ProtocolEnum GetHealthCheckProtocol() const { return m_healthCheckProtocol; }
     inline bool HealthCheckProtocolHasBeenSet() const { return m_healthCheckProtocolHasBeenSet; }
-    inline void SetHealthCheckProtocol(const ProtocolEnum& value) { m_healthCheckProtocolHasBeenSet = true; m_healthCheckProtocol = value; }
-    inline void SetHealthCheckProtocol(ProtocolEnum&& value) { m_healthCheckProtocolHasBeenSet = true; m_healthCheckProtocol = std::move(value); }
-    inline TargetGroup& WithHealthCheckProtocol(const ProtocolEnum& value) { SetHealthCheckProtocol(value); return *this;}
-    inline TargetGroup& WithHealthCheckProtocol(ProtocolEnum&& value) { SetHealthCheckProtocol(std::move(value)); return *this;}
+    inline void SetHealthCheckProtocol(ProtocolEnum value) { m_healthCheckProtocolHasBeenSet = true; m_healthCheckProtocol = value; }
+    inline TargetGroup& WithHealthCheckProtocol(ProtocolEnum value) { SetHealthCheckProtocol(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The port to use to connect with the target.</p>
      */
-    inline const Aws::String& GetHealthCheckPort() const{ return m_healthCheckPort; }
+    inline const Aws::String& GetHealthCheckPort() const { return m_healthCheckPort; }
     inline bool HealthCheckPortHasBeenSet() const { return m_healthCheckPortHasBeenSet; }
-    inline void SetHealthCheckPort(const Aws::String& value) { m_healthCheckPortHasBeenSet = true; m_healthCheckPort = value; }
-    inline void SetHealthCheckPort(Aws::String&& value) { m_healthCheckPortHasBeenSet = true; m_healthCheckPort = std::move(value); }
-    inline void SetHealthCheckPort(const char* value) { m_healthCheckPortHasBeenSet = true; m_healthCheckPort.assign(value); }
-    inline TargetGroup& WithHealthCheckPort(const Aws::String& value) { SetHealthCheckPort(value); return *this;}
-    inline TargetGroup& WithHealthCheckPort(Aws::String&& value) { SetHealthCheckPort(std::move(value)); return *this;}
-    inline TargetGroup& WithHealthCheckPort(const char* value) { SetHealthCheckPort(value); return *this;}
+    template<typename HealthCheckPortT = Aws::String>
+    void SetHealthCheckPort(HealthCheckPortT&& value) { m_healthCheckPortHasBeenSet = true; m_healthCheckPort = std::forward<HealthCheckPortT>(value); }
+    template<typename HealthCheckPortT = Aws::String>
+    TargetGroup& WithHealthCheckPort(HealthCheckPortT&& value) { SetHealthCheckPort(std::forward<HealthCheckPortT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether health checks are enabled.</p>
      */
-    inline bool GetHealthCheckEnabled() const{ return m_healthCheckEnabled; }
+    inline bool GetHealthCheckEnabled() const { return m_healthCheckEnabled; }
     inline bool HealthCheckEnabledHasBeenSet() const { return m_healthCheckEnabledHasBeenSet; }
     inline void SetHealthCheckEnabled(bool value) { m_healthCheckEnabledHasBeenSet = true; m_healthCheckEnabled = value; }
     inline TargetGroup& WithHealthCheckEnabled(bool value) { SetHealthCheckEnabled(value); return *this;}
@@ -151,7 +139,7 @@ namespace Model
      * <p>The approximate amount of time, in seconds, between health checks of an
      * individual target.</p>
      */
-    inline int GetHealthCheckIntervalSeconds() const{ return m_healthCheckIntervalSeconds; }
+    inline int GetHealthCheckIntervalSeconds() const { return m_healthCheckIntervalSeconds; }
     inline bool HealthCheckIntervalSecondsHasBeenSet() const { return m_healthCheckIntervalSecondsHasBeenSet; }
     inline void SetHealthCheckIntervalSeconds(int value) { m_healthCheckIntervalSecondsHasBeenSet = true; m_healthCheckIntervalSeconds = value; }
     inline TargetGroup& WithHealthCheckIntervalSeconds(int value) { SetHealthCheckIntervalSeconds(value); return *this;}
@@ -162,7 +150,7 @@ namespace Model
      * <p>The amount of time, in seconds, during which no response means a failed
      * health check.</p>
      */
-    inline int GetHealthCheckTimeoutSeconds() const{ return m_healthCheckTimeoutSeconds; }
+    inline int GetHealthCheckTimeoutSeconds() const { return m_healthCheckTimeoutSeconds; }
     inline bool HealthCheckTimeoutSecondsHasBeenSet() const { return m_healthCheckTimeoutSecondsHasBeenSet; }
     inline void SetHealthCheckTimeoutSeconds(int value) { m_healthCheckTimeoutSecondsHasBeenSet = true; m_healthCheckTimeoutSeconds = value; }
     inline TargetGroup& WithHealthCheckTimeoutSeconds(int value) { SetHealthCheckTimeoutSeconds(value); return *this;}
@@ -173,7 +161,7 @@ namespace Model
      * <p>The number of consecutive health checks successes required before considering
      * an unhealthy target healthy.</p>
      */
-    inline int GetHealthyThresholdCount() const{ return m_healthyThresholdCount; }
+    inline int GetHealthyThresholdCount() const { return m_healthyThresholdCount; }
     inline bool HealthyThresholdCountHasBeenSet() const { return m_healthyThresholdCountHasBeenSet; }
     inline void SetHealthyThresholdCount(int value) { m_healthyThresholdCountHasBeenSet = true; m_healthyThresholdCount = value; }
     inline TargetGroup& WithHealthyThresholdCount(int value) { SetHealthyThresholdCount(value); return *this;}
@@ -184,7 +172,7 @@ namespace Model
      * <p>The number of consecutive health check failures required before considering
      * the target unhealthy.</p>
      */
-    inline int GetUnhealthyThresholdCount() const{ return m_unhealthyThresholdCount; }
+    inline int GetUnhealthyThresholdCount() const { return m_unhealthyThresholdCount; }
     inline bool UnhealthyThresholdCountHasBeenSet() const { return m_unhealthyThresholdCountHasBeenSet; }
     inline void SetUnhealthyThresholdCount(int value) { m_unhealthyThresholdCountHasBeenSet = true; m_unhealthyThresholdCount = value; }
     inline TargetGroup& WithUnhealthyThresholdCount(int value) { SetUnhealthyThresholdCount(value); return *this;}
@@ -194,14 +182,12 @@ namespace Model
     /**
      * <p>The destination for health checks on the targets.</p>
      */
-    inline const Aws::String& GetHealthCheckPath() const{ return m_healthCheckPath; }
+    inline const Aws::String& GetHealthCheckPath() const { return m_healthCheckPath; }
     inline bool HealthCheckPathHasBeenSet() const { return m_healthCheckPathHasBeenSet; }
-    inline void SetHealthCheckPath(const Aws::String& value) { m_healthCheckPathHasBeenSet = true; m_healthCheckPath = value; }
-    inline void SetHealthCheckPath(Aws::String&& value) { m_healthCheckPathHasBeenSet = true; m_healthCheckPath = std::move(value); }
-    inline void SetHealthCheckPath(const char* value) { m_healthCheckPathHasBeenSet = true; m_healthCheckPath.assign(value); }
-    inline TargetGroup& WithHealthCheckPath(const Aws::String& value) { SetHealthCheckPath(value); return *this;}
-    inline TargetGroup& WithHealthCheckPath(Aws::String&& value) { SetHealthCheckPath(std::move(value)); return *this;}
-    inline TargetGroup& WithHealthCheckPath(const char* value) { SetHealthCheckPath(value); return *this;}
+    template<typename HealthCheckPathT = Aws::String>
+    void SetHealthCheckPath(HealthCheckPathT&& value) { m_healthCheckPathHasBeenSet = true; m_healthCheckPath = std::forward<HealthCheckPathT>(value); }
+    template<typename HealthCheckPathT = Aws::String>
+    TargetGroup& WithHealthCheckPath(HealthCheckPathT&& value) { SetHealthCheckPath(std::forward<HealthCheckPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -209,12 +195,12 @@ namespace Model
      * <p>The HTTP or gRPC codes to use when checking for a successful response from a
      * target.</p>
      */
-    inline const Matcher& GetMatcher() const{ return m_matcher; }
+    inline const Matcher& GetMatcher() const { return m_matcher; }
     inline bool MatcherHasBeenSet() const { return m_matcherHasBeenSet; }
-    inline void SetMatcher(const Matcher& value) { m_matcherHasBeenSet = true; m_matcher = value; }
-    inline void SetMatcher(Matcher&& value) { m_matcherHasBeenSet = true; m_matcher = std::move(value); }
-    inline TargetGroup& WithMatcher(const Matcher& value) { SetMatcher(value); return *this;}
-    inline TargetGroup& WithMatcher(Matcher&& value) { SetMatcher(std::move(value)); return *this;}
+    template<typename MatcherT = Matcher>
+    void SetMatcher(MatcherT&& value) { m_matcherHasBeenSet = true; m_matcher = std::forward<MatcherT>(value); }
+    template<typename MatcherT = Matcher>
+    TargetGroup& WithMatcher(MatcherT&& value) { SetMatcher(std::forward<MatcherT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -223,15 +209,14 @@ namespace Model
      * this target group. You can use each target group with only one load
      * balancer.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetLoadBalancerArns() const{ return m_loadBalancerArns; }
+    inline const Aws::Vector<Aws::String>& GetLoadBalancerArns() const { return m_loadBalancerArns; }
     inline bool LoadBalancerArnsHasBeenSet() const { return m_loadBalancerArnsHasBeenSet; }
-    inline void SetLoadBalancerArns(const Aws::Vector<Aws::String>& value) { m_loadBalancerArnsHasBeenSet = true; m_loadBalancerArns = value; }
-    inline void SetLoadBalancerArns(Aws::Vector<Aws::String>&& value) { m_loadBalancerArnsHasBeenSet = true; m_loadBalancerArns = std::move(value); }
-    inline TargetGroup& WithLoadBalancerArns(const Aws::Vector<Aws::String>& value) { SetLoadBalancerArns(value); return *this;}
-    inline TargetGroup& WithLoadBalancerArns(Aws::Vector<Aws::String>&& value) { SetLoadBalancerArns(std::move(value)); return *this;}
-    inline TargetGroup& AddLoadBalancerArns(const Aws::String& value) { m_loadBalancerArnsHasBeenSet = true; m_loadBalancerArns.push_back(value); return *this; }
-    inline TargetGroup& AddLoadBalancerArns(Aws::String&& value) { m_loadBalancerArnsHasBeenSet = true; m_loadBalancerArns.push_back(std::move(value)); return *this; }
-    inline TargetGroup& AddLoadBalancerArns(const char* value) { m_loadBalancerArnsHasBeenSet = true; m_loadBalancerArns.push_back(value); return *this; }
+    template<typename LoadBalancerArnsT = Aws::Vector<Aws::String>>
+    void SetLoadBalancerArns(LoadBalancerArnsT&& value) { m_loadBalancerArnsHasBeenSet = true; m_loadBalancerArns = std::forward<LoadBalancerArnsT>(value); }
+    template<typename LoadBalancerArnsT = Aws::Vector<Aws::String>>
+    TargetGroup& WithLoadBalancerArns(LoadBalancerArnsT&& value) { SetLoadBalancerArns(std::forward<LoadBalancerArnsT>(value)); return *this;}
+    template<typename LoadBalancerArnsT = Aws::String>
+    TargetGroup& AddLoadBalancerArns(LoadBalancerArnsT&& value) { m_loadBalancerArnsHasBeenSet = true; m_loadBalancerArns.emplace_back(std::forward<LoadBalancerArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -242,12 +227,10 @@ namespace Model
      * <code>lambda</code> (register a single Lambda function as a target), or
      * <code>alb</code> (register a single Application Load Balancer as a target).</p>
      */
-    inline const TargetTypeEnum& GetTargetType() const{ return m_targetType; }
+    inline TargetTypeEnum GetTargetType() const { return m_targetType; }
     inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
-    inline void SetTargetType(const TargetTypeEnum& value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
-    inline void SetTargetType(TargetTypeEnum&& value) { m_targetTypeHasBeenSet = true; m_targetType = std::move(value); }
-    inline TargetGroup& WithTargetType(const TargetTypeEnum& value) { SetTargetType(value); return *this;}
-    inline TargetGroup& WithTargetType(TargetTypeEnum&& value) { SetTargetType(std::move(value)); return *this;}
+    inline void SetTargetType(TargetTypeEnum value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
+    inline TargetGroup& WithTargetType(TargetTypeEnum value) { SetTargetType(value); return *this;}
     ///@}
 
     ///@{
@@ -255,26 +238,22 @@ namespace Model
      * <p>[HTTP/HTTPS protocol] The protocol version. The possible values are
      * <code>GRPC</code>, <code>HTTP1</code>, and <code>HTTP2</code>.</p>
      */
-    inline const Aws::String& GetProtocolVersion() const{ return m_protocolVersion; }
+    inline const Aws::String& GetProtocolVersion() const { return m_protocolVersion; }
     inline bool ProtocolVersionHasBeenSet() const { return m_protocolVersionHasBeenSet; }
-    inline void SetProtocolVersion(const Aws::String& value) { m_protocolVersionHasBeenSet = true; m_protocolVersion = value; }
-    inline void SetProtocolVersion(Aws::String&& value) { m_protocolVersionHasBeenSet = true; m_protocolVersion = std::move(value); }
-    inline void SetProtocolVersion(const char* value) { m_protocolVersionHasBeenSet = true; m_protocolVersion.assign(value); }
-    inline TargetGroup& WithProtocolVersion(const Aws::String& value) { SetProtocolVersion(value); return *this;}
-    inline TargetGroup& WithProtocolVersion(Aws::String&& value) { SetProtocolVersion(std::move(value)); return *this;}
-    inline TargetGroup& WithProtocolVersion(const char* value) { SetProtocolVersion(value); return *this;}
+    template<typename ProtocolVersionT = Aws::String>
+    void SetProtocolVersion(ProtocolVersionT&& value) { m_protocolVersionHasBeenSet = true; m_protocolVersion = std::forward<ProtocolVersionT>(value); }
+    template<typename ProtocolVersionT = Aws::String>
+    TargetGroup& WithProtocolVersion(ProtocolVersionT&& value) { SetProtocolVersion(std::forward<ProtocolVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The IP address type. The default value is <code>ipv4</code>.</p>
      */
-    inline const TargetGroupIpAddressTypeEnum& GetIpAddressType() const{ return m_ipAddressType; }
+    inline TargetGroupIpAddressTypeEnum GetIpAddressType() const { return m_ipAddressType; }
     inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
-    inline void SetIpAddressType(const TargetGroupIpAddressTypeEnum& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
-    inline void SetIpAddressType(TargetGroupIpAddressTypeEnum&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
-    inline TargetGroup& WithIpAddressType(const TargetGroupIpAddressTypeEnum& value) { SetIpAddressType(value); return *this;}
-    inline TargetGroup& WithIpAddressType(TargetGroupIpAddressTypeEnum&& value) { SetIpAddressType(std::move(value)); return *this;}
+    inline void SetIpAddressType(TargetGroupIpAddressTypeEnum value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+    inline TargetGroup& WithIpAddressType(TargetGroupIpAddressTypeEnum value) { SetIpAddressType(value); return *this;}
     ///@}
   private:
 
@@ -284,34 +263,34 @@ namespace Model
     Aws::String m_targetGroupName;
     bool m_targetGroupNameHasBeenSet = false;
 
-    ProtocolEnum m_protocol;
+    ProtocolEnum m_protocol{ProtocolEnum::NOT_SET};
     bool m_protocolHasBeenSet = false;
 
-    int m_port;
+    int m_port{0};
     bool m_portHasBeenSet = false;
 
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet = false;
 
-    ProtocolEnum m_healthCheckProtocol;
+    ProtocolEnum m_healthCheckProtocol{ProtocolEnum::NOT_SET};
     bool m_healthCheckProtocolHasBeenSet = false;
 
     Aws::String m_healthCheckPort;
     bool m_healthCheckPortHasBeenSet = false;
 
-    bool m_healthCheckEnabled;
+    bool m_healthCheckEnabled{false};
     bool m_healthCheckEnabledHasBeenSet = false;
 
-    int m_healthCheckIntervalSeconds;
+    int m_healthCheckIntervalSeconds{0};
     bool m_healthCheckIntervalSecondsHasBeenSet = false;
 
-    int m_healthCheckTimeoutSeconds;
+    int m_healthCheckTimeoutSeconds{0};
     bool m_healthCheckTimeoutSecondsHasBeenSet = false;
 
-    int m_healthyThresholdCount;
+    int m_healthyThresholdCount{0};
     bool m_healthyThresholdCountHasBeenSet = false;
 
-    int m_unhealthyThresholdCount;
+    int m_unhealthyThresholdCount{0};
     bool m_unhealthyThresholdCountHasBeenSet = false;
 
     Aws::String m_healthCheckPath;
@@ -323,13 +302,13 @@ namespace Model
     Aws::Vector<Aws::String> m_loadBalancerArns;
     bool m_loadBalancerArnsHasBeenSet = false;
 
-    TargetTypeEnum m_targetType;
+    TargetTypeEnum m_targetType{TargetTypeEnum::NOT_SET};
     bool m_targetTypeHasBeenSet = false;
 
     Aws::String m_protocolVersion;
     bool m_protocolVersionHasBeenSet = false;
 
-    TargetGroupIpAddressTypeEnum m_ipAddressType;
+    TargetGroupIpAddressTypeEnum m_ipAddressType{TargetGroupIpAddressTypeEnum::NOT_SET};
     bool m_ipAddressTypeHasBeenSet = false;
   };
 

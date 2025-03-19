@@ -12,25 +12,6 @@ using namespace Aws::IoTSiteWise::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreatePortalRequest::CreatePortalRequest() : 
-    m_portalNameHasBeenSet(false),
-    m_portalDescriptionHasBeenSet(false),
-    m_portalContactEmailHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_portalLogoImageFileHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_portalAuthMode(AuthMode::NOT_SET),
-    m_portalAuthModeHasBeenSet(false),
-    m_notificationSenderEmailHasBeenSet(false),
-    m_alarmsHasBeenSet(false),
-    m_portalType(PortalType::NOT_SET),
-    m_portalTypeHasBeenSet(false),
-    m_portalTypeConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String CreatePortalRequest::SerializePayload() const
 {
   JsonValue payload;

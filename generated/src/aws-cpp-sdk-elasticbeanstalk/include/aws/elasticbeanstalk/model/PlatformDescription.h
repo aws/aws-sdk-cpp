@@ -37,7 +37,7 @@ namespace Model
   class PlatformDescription
   {
   public:
-    AWS_ELASTICBEANSTALK_API PlatformDescription();
+    AWS_ELASTICBEANSTALK_API PlatformDescription() = default;
     AWS_ELASTICBEANSTALK_API PlatformDescription(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICBEANSTALK_API PlatformDescription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -49,248 +49,224 @@ namespace Model
     /**
      * <p>The ARN of the platform version.</p>
      */
-    inline const Aws::String& GetPlatformArn() const{ return m_platformArn; }
+    inline const Aws::String& GetPlatformArn() const { return m_platformArn; }
     inline bool PlatformArnHasBeenSet() const { return m_platformArnHasBeenSet; }
-    inline void SetPlatformArn(const Aws::String& value) { m_platformArnHasBeenSet = true; m_platformArn = value; }
-    inline void SetPlatformArn(Aws::String&& value) { m_platformArnHasBeenSet = true; m_platformArn = std::move(value); }
-    inline void SetPlatformArn(const char* value) { m_platformArnHasBeenSet = true; m_platformArn.assign(value); }
-    inline PlatformDescription& WithPlatformArn(const Aws::String& value) { SetPlatformArn(value); return *this;}
-    inline PlatformDescription& WithPlatformArn(Aws::String&& value) { SetPlatformArn(std::move(value)); return *this;}
-    inline PlatformDescription& WithPlatformArn(const char* value) { SetPlatformArn(value); return *this;}
+    template<typename PlatformArnT = Aws::String>
+    void SetPlatformArn(PlatformArnT&& value) { m_platformArnHasBeenSet = true; m_platformArn = std::forward<PlatformArnT>(value); }
+    template<typename PlatformArnT = Aws::String>
+    PlatformDescription& WithPlatformArn(PlatformArnT&& value) { SetPlatformArn(std::forward<PlatformArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The AWS account ID of the person who created the platform version.</p>
      */
-    inline const Aws::String& GetPlatformOwner() const{ return m_platformOwner; }
+    inline const Aws::String& GetPlatformOwner() const { return m_platformOwner; }
     inline bool PlatformOwnerHasBeenSet() const { return m_platformOwnerHasBeenSet; }
-    inline void SetPlatformOwner(const Aws::String& value) { m_platformOwnerHasBeenSet = true; m_platformOwner = value; }
-    inline void SetPlatformOwner(Aws::String&& value) { m_platformOwnerHasBeenSet = true; m_platformOwner = std::move(value); }
-    inline void SetPlatformOwner(const char* value) { m_platformOwnerHasBeenSet = true; m_platformOwner.assign(value); }
-    inline PlatformDescription& WithPlatformOwner(const Aws::String& value) { SetPlatformOwner(value); return *this;}
-    inline PlatformDescription& WithPlatformOwner(Aws::String&& value) { SetPlatformOwner(std::move(value)); return *this;}
-    inline PlatformDescription& WithPlatformOwner(const char* value) { SetPlatformOwner(value); return *this;}
+    template<typename PlatformOwnerT = Aws::String>
+    void SetPlatformOwner(PlatformOwnerT&& value) { m_platformOwnerHasBeenSet = true; m_platformOwner = std::forward<PlatformOwnerT>(value); }
+    template<typename PlatformOwnerT = Aws::String>
+    PlatformDescription& WithPlatformOwner(PlatformOwnerT&& value) { SetPlatformOwner(std::forward<PlatformOwnerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the platform version.</p>
      */
-    inline const Aws::String& GetPlatformName() const{ return m_platformName; }
+    inline const Aws::String& GetPlatformName() const { return m_platformName; }
     inline bool PlatformNameHasBeenSet() const { return m_platformNameHasBeenSet; }
-    inline void SetPlatformName(const Aws::String& value) { m_platformNameHasBeenSet = true; m_platformName = value; }
-    inline void SetPlatformName(Aws::String&& value) { m_platformNameHasBeenSet = true; m_platformName = std::move(value); }
-    inline void SetPlatformName(const char* value) { m_platformNameHasBeenSet = true; m_platformName.assign(value); }
-    inline PlatformDescription& WithPlatformName(const Aws::String& value) { SetPlatformName(value); return *this;}
-    inline PlatformDescription& WithPlatformName(Aws::String&& value) { SetPlatformName(std::move(value)); return *this;}
-    inline PlatformDescription& WithPlatformName(const char* value) { SetPlatformName(value); return *this;}
+    template<typename PlatformNameT = Aws::String>
+    void SetPlatformName(PlatformNameT&& value) { m_platformNameHasBeenSet = true; m_platformName = std::forward<PlatformNameT>(value); }
+    template<typename PlatformNameT = Aws::String>
+    PlatformDescription& WithPlatformName(PlatformNameT&& value) { SetPlatformName(std::forward<PlatformNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the platform version.</p>
      */
-    inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
+    inline const Aws::String& GetPlatformVersion() const { return m_platformVersion; }
     inline bool PlatformVersionHasBeenSet() const { return m_platformVersionHasBeenSet; }
-    inline void SetPlatformVersion(const Aws::String& value) { m_platformVersionHasBeenSet = true; m_platformVersion = value; }
-    inline void SetPlatformVersion(Aws::String&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::move(value); }
-    inline void SetPlatformVersion(const char* value) { m_platformVersionHasBeenSet = true; m_platformVersion.assign(value); }
-    inline PlatformDescription& WithPlatformVersion(const Aws::String& value) { SetPlatformVersion(value); return *this;}
-    inline PlatformDescription& WithPlatformVersion(Aws::String&& value) { SetPlatformVersion(std::move(value)); return *this;}
-    inline PlatformDescription& WithPlatformVersion(const char* value) { SetPlatformVersion(value); return *this;}
+    template<typename PlatformVersionT = Aws::String>
+    void SetPlatformVersion(PlatformVersionT&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::forward<PlatformVersionT>(value); }
+    template<typename PlatformVersionT = Aws::String>
+    PlatformDescription& WithPlatformVersion(PlatformVersionT&& value) { SetPlatformVersion(std::forward<PlatformVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the solution stack used by the platform version.</p>
      */
-    inline const Aws::String& GetSolutionStackName() const{ return m_solutionStackName; }
+    inline const Aws::String& GetSolutionStackName() const { return m_solutionStackName; }
     inline bool SolutionStackNameHasBeenSet() const { return m_solutionStackNameHasBeenSet; }
-    inline void SetSolutionStackName(const Aws::String& value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName = value; }
-    inline void SetSolutionStackName(Aws::String&& value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName = std::move(value); }
-    inline void SetSolutionStackName(const char* value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName.assign(value); }
-    inline PlatformDescription& WithSolutionStackName(const Aws::String& value) { SetSolutionStackName(value); return *this;}
-    inline PlatformDescription& WithSolutionStackName(Aws::String&& value) { SetSolutionStackName(std::move(value)); return *this;}
-    inline PlatformDescription& WithSolutionStackName(const char* value) { SetSolutionStackName(value); return *this;}
+    template<typename SolutionStackNameT = Aws::String>
+    void SetSolutionStackName(SolutionStackNameT&& value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName = std::forward<SolutionStackNameT>(value); }
+    template<typename SolutionStackNameT = Aws::String>
+    PlatformDescription& WithSolutionStackName(SolutionStackNameT&& value) { SetSolutionStackName(std::forward<SolutionStackNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the platform version.</p>
      */
-    inline const PlatformStatus& GetPlatformStatus() const{ return m_platformStatus; }
+    inline PlatformStatus GetPlatformStatus() const { return m_platformStatus; }
     inline bool PlatformStatusHasBeenSet() const { return m_platformStatusHasBeenSet; }
-    inline void SetPlatformStatus(const PlatformStatus& value) { m_platformStatusHasBeenSet = true; m_platformStatus = value; }
-    inline void SetPlatformStatus(PlatformStatus&& value) { m_platformStatusHasBeenSet = true; m_platformStatus = std::move(value); }
-    inline PlatformDescription& WithPlatformStatus(const PlatformStatus& value) { SetPlatformStatus(value); return *this;}
-    inline PlatformDescription& WithPlatformStatus(PlatformStatus&& value) { SetPlatformStatus(std::move(value)); return *this;}
+    inline void SetPlatformStatus(PlatformStatus value) { m_platformStatusHasBeenSet = true; m_platformStatus = value; }
+    inline PlatformDescription& WithPlatformStatus(PlatformStatus value) { SetPlatformStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date when the platform version was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetDateCreated() const{ return m_dateCreated; }
+    inline const Aws::Utils::DateTime& GetDateCreated() const { return m_dateCreated; }
     inline bool DateCreatedHasBeenSet() const { return m_dateCreatedHasBeenSet; }
-    inline void SetDateCreated(const Aws::Utils::DateTime& value) { m_dateCreatedHasBeenSet = true; m_dateCreated = value; }
-    inline void SetDateCreated(Aws::Utils::DateTime&& value) { m_dateCreatedHasBeenSet = true; m_dateCreated = std::move(value); }
-    inline PlatformDescription& WithDateCreated(const Aws::Utils::DateTime& value) { SetDateCreated(value); return *this;}
-    inline PlatformDescription& WithDateCreated(Aws::Utils::DateTime&& value) { SetDateCreated(std::move(value)); return *this;}
+    template<typename DateCreatedT = Aws::Utils::DateTime>
+    void SetDateCreated(DateCreatedT&& value) { m_dateCreatedHasBeenSet = true; m_dateCreated = std::forward<DateCreatedT>(value); }
+    template<typename DateCreatedT = Aws::Utils::DateTime>
+    PlatformDescription& WithDateCreated(DateCreatedT&& value) { SetDateCreated(std::forward<DateCreatedT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date when the platform version was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetDateUpdated() const{ return m_dateUpdated; }
+    inline const Aws::Utils::DateTime& GetDateUpdated() const { return m_dateUpdated; }
     inline bool DateUpdatedHasBeenSet() const { return m_dateUpdatedHasBeenSet; }
-    inline void SetDateUpdated(const Aws::Utils::DateTime& value) { m_dateUpdatedHasBeenSet = true; m_dateUpdated = value; }
-    inline void SetDateUpdated(Aws::Utils::DateTime&& value) { m_dateUpdatedHasBeenSet = true; m_dateUpdated = std::move(value); }
-    inline PlatformDescription& WithDateUpdated(const Aws::Utils::DateTime& value) { SetDateUpdated(value); return *this;}
-    inline PlatformDescription& WithDateUpdated(Aws::Utils::DateTime&& value) { SetDateUpdated(std::move(value)); return *this;}
+    template<typename DateUpdatedT = Aws::Utils::DateTime>
+    void SetDateUpdated(DateUpdatedT&& value) { m_dateUpdatedHasBeenSet = true; m_dateUpdated = std::forward<DateUpdatedT>(value); }
+    template<typename DateUpdatedT = Aws::Utils::DateTime>
+    PlatformDescription& WithDateUpdated(DateUpdatedT&& value) { SetDateUpdated(std::forward<DateUpdatedT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The category of the platform version.</p>
      */
-    inline const Aws::String& GetPlatformCategory() const{ return m_platformCategory; }
+    inline const Aws::String& GetPlatformCategory() const { return m_platformCategory; }
     inline bool PlatformCategoryHasBeenSet() const { return m_platformCategoryHasBeenSet; }
-    inline void SetPlatformCategory(const Aws::String& value) { m_platformCategoryHasBeenSet = true; m_platformCategory = value; }
-    inline void SetPlatformCategory(Aws::String&& value) { m_platformCategoryHasBeenSet = true; m_platformCategory = std::move(value); }
-    inline void SetPlatformCategory(const char* value) { m_platformCategoryHasBeenSet = true; m_platformCategory.assign(value); }
-    inline PlatformDescription& WithPlatformCategory(const Aws::String& value) { SetPlatformCategory(value); return *this;}
-    inline PlatformDescription& WithPlatformCategory(Aws::String&& value) { SetPlatformCategory(std::move(value)); return *this;}
-    inline PlatformDescription& WithPlatformCategory(const char* value) { SetPlatformCategory(value); return *this;}
+    template<typename PlatformCategoryT = Aws::String>
+    void SetPlatformCategory(PlatformCategoryT&& value) { m_platformCategoryHasBeenSet = true; m_platformCategory = std::forward<PlatformCategoryT>(value); }
+    template<typename PlatformCategoryT = Aws::String>
+    PlatformDescription& WithPlatformCategory(PlatformCategoryT&& value) { SetPlatformCategory(std::forward<PlatformCategoryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the platform version.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline PlatformDescription& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline PlatformDescription& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline PlatformDescription& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    PlatformDescription& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the maintainer of the platform version.</p>
      */
-    inline const Aws::String& GetMaintainer() const{ return m_maintainer; }
+    inline const Aws::String& GetMaintainer() const { return m_maintainer; }
     inline bool MaintainerHasBeenSet() const { return m_maintainerHasBeenSet; }
-    inline void SetMaintainer(const Aws::String& value) { m_maintainerHasBeenSet = true; m_maintainer = value; }
-    inline void SetMaintainer(Aws::String&& value) { m_maintainerHasBeenSet = true; m_maintainer = std::move(value); }
-    inline void SetMaintainer(const char* value) { m_maintainerHasBeenSet = true; m_maintainer.assign(value); }
-    inline PlatformDescription& WithMaintainer(const Aws::String& value) { SetMaintainer(value); return *this;}
-    inline PlatformDescription& WithMaintainer(Aws::String&& value) { SetMaintainer(std::move(value)); return *this;}
-    inline PlatformDescription& WithMaintainer(const char* value) { SetMaintainer(value); return *this;}
+    template<typename MaintainerT = Aws::String>
+    void SetMaintainer(MaintainerT&& value) { m_maintainerHasBeenSet = true; m_maintainer = std::forward<MaintainerT>(value); }
+    template<typename MaintainerT = Aws::String>
+    PlatformDescription& WithMaintainer(MaintainerT&& value) { SetMaintainer(std::forward<MaintainerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The operating system used by the platform version.</p>
      */
-    inline const Aws::String& GetOperatingSystemName() const{ return m_operatingSystemName; }
+    inline const Aws::String& GetOperatingSystemName() const { return m_operatingSystemName; }
     inline bool OperatingSystemNameHasBeenSet() const { return m_operatingSystemNameHasBeenSet; }
-    inline void SetOperatingSystemName(const Aws::String& value) { m_operatingSystemNameHasBeenSet = true; m_operatingSystemName = value; }
-    inline void SetOperatingSystemName(Aws::String&& value) { m_operatingSystemNameHasBeenSet = true; m_operatingSystemName = std::move(value); }
-    inline void SetOperatingSystemName(const char* value) { m_operatingSystemNameHasBeenSet = true; m_operatingSystemName.assign(value); }
-    inline PlatformDescription& WithOperatingSystemName(const Aws::String& value) { SetOperatingSystemName(value); return *this;}
-    inline PlatformDescription& WithOperatingSystemName(Aws::String&& value) { SetOperatingSystemName(std::move(value)); return *this;}
-    inline PlatformDescription& WithOperatingSystemName(const char* value) { SetOperatingSystemName(value); return *this;}
+    template<typename OperatingSystemNameT = Aws::String>
+    void SetOperatingSystemName(OperatingSystemNameT&& value) { m_operatingSystemNameHasBeenSet = true; m_operatingSystemName = std::forward<OperatingSystemNameT>(value); }
+    template<typename OperatingSystemNameT = Aws::String>
+    PlatformDescription& WithOperatingSystemName(OperatingSystemNameT&& value) { SetOperatingSystemName(std::forward<OperatingSystemNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the operating system used by the platform version.</p>
      */
-    inline const Aws::String& GetOperatingSystemVersion() const{ return m_operatingSystemVersion; }
+    inline const Aws::String& GetOperatingSystemVersion() const { return m_operatingSystemVersion; }
     inline bool OperatingSystemVersionHasBeenSet() const { return m_operatingSystemVersionHasBeenSet; }
-    inline void SetOperatingSystemVersion(const Aws::String& value) { m_operatingSystemVersionHasBeenSet = true; m_operatingSystemVersion = value; }
-    inline void SetOperatingSystemVersion(Aws::String&& value) { m_operatingSystemVersionHasBeenSet = true; m_operatingSystemVersion = std::move(value); }
-    inline void SetOperatingSystemVersion(const char* value) { m_operatingSystemVersionHasBeenSet = true; m_operatingSystemVersion.assign(value); }
-    inline PlatformDescription& WithOperatingSystemVersion(const Aws::String& value) { SetOperatingSystemVersion(value); return *this;}
-    inline PlatformDescription& WithOperatingSystemVersion(Aws::String&& value) { SetOperatingSystemVersion(std::move(value)); return *this;}
-    inline PlatformDescription& WithOperatingSystemVersion(const char* value) { SetOperatingSystemVersion(value); return *this;}
+    template<typename OperatingSystemVersionT = Aws::String>
+    void SetOperatingSystemVersion(OperatingSystemVersionT&& value) { m_operatingSystemVersionHasBeenSet = true; m_operatingSystemVersion = std::forward<OperatingSystemVersionT>(value); }
+    template<typename OperatingSystemVersionT = Aws::String>
+    PlatformDescription& WithOperatingSystemVersion(OperatingSystemVersionT&& value) { SetOperatingSystemVersion(std::forward<OperatingSystemVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The programming languages supported by the platform version.</p>
      */
-    inline const Aws::Vector<PlatformProgrammingLanguage>& GetProgrammingLanguages() const{ return m_programmingLanguages; }
+    inline const Aws::Vector<PlatformProgrammingLanguage>& GetProgrammingLanguages() const { return m_programmingLanguages; }
     inline bool ProgrammingLanguagesHasBeenSet() const { return m_programmingLanguagesHasBeenSet; }
-    inline void SetProgrammingLanguages(const Aws::Vector<PlatformProgrammingLanguage>& value) { m_programmingLanguagesHasBeenSet = true; m_programmingLanguages = value; }
-    inline void SetProgrammingLanguages(Aws::Vector<PlatformProgrammingLanguage>&& value) { m_programmingLanguagesHasBeenSet = true; m_programmingLanguages = std::move(value); }
-    inline PlatformDescription& WithProgrammingLanguages(const Aws::Vector<PlatformProgrammingLanguage>& value) { SetProgrammingLanguages(value); return *this;}
-    inline PlatformDescription& WithProgrammingLanguages(Aws::Vector<PlatformProgrammingLanguage>&& value) { SetProgrammingLanguages(std::move(value)); return *this;}
-    inline PlatformDescription& AddProgrammingLanguages(const PlatformProgrammingLanguage& value) { m_programmingLanguagesHasBeenSet = true; m_programmingLanguages.push_back(value); return *this; }
-    inline PlatformDescription& AddProgrammingLanguages(PlatformProgrammingLanguage&& value) { m_programmingLanguagesHasBeenSet = true; m_programmingLanguages.push_back(std::move(value)); return *this; }
+    template<typename ProgrammingLanguagesT = Aws::Vector<PlatformProgrammingLanguage>>
+    void SetProgrammingLanguages(ProgrammingLanguagesT&& value) { m_programmingLanguagesHasBeenSet = true; m_programmingLanguages = std::forward<ProgrammingLanguagesT>(value); }
+    template<typename ProgrammingLanguagesT = Aws::Vector<PlatformProgrammingLanguage>>
+    PlatformDescription& WithProgrammingLanguages(ProgrammingLanguagesT&& value) { SetProgrammingLanguages(std::forward<ProgrammingLanguagesT>(value)); return *this;}
+    template<typename ProgrammingLanguagesT = PlatformProgrammingLanguage>
+    PlatformDescription& AddProgrammingLanguages(ProgrammingLanguagesT&& value) { m_programmingLanguagesHasBeenSet = true; m_programmingLanguages.emplace_back(std::forward<ProgrammingLanguagesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The frameworks supported by the platform version.</p>
      */
-    inline const Aws::Vector<PlatformFramework>& GetFrameworks() const{ return m_frameworks; }
+    inline const Aws::Vector<PlatformFramework>& GetFrameworks() const { return m_frameworks; }
     inline bool FrameworksHasBeenSet() const { return m_frameworksHasBeenSet; }
-    inline void SetFrameworks(const Aws::Vector<PlatformFramework>& value) { m_frameworksHasBeenSet = true; m_frameworks = value; }
-    inline void SetFrameworks(Aws::Vector<PlatformFramework>&& value) { m_frameworksHasBeenSet = true; m_frameworks = std::move(value); }
-    inline PlatformDescription& WithFrameworks(const Aws::Vector<PlatformFramework>& value) { SetFrameworks(value); return *this;}
-    inline PlatformDescription& WithFrameworks(Aws::Vector<PlatformFramework>&& value) { SetFrameworks(std::move(value)); return *this;}
-    inline PlatformDescription& AddFrameworks(const PlatformFramework& value) { m_frameworksHasBeenSet = true; m_frameworks.push_back(value); return *this; }
-    inline PlatformDescription& AddFrameworks(PlatformFramework&& value) { m_frameworksHasBeenSet = true; m_frameworks.push_back(std::move(value)); return *this; }
+    template<typename FrameworksT = Aws::Vector<PlatformFramework>>
+    void SetFrameworks(FrameworksT&& value) { m_frameworksHasBeenSet = true; m_frameworks = std::forward<FrameworksT>(value); }
+    template<typename FrameworksT = Aws::Vector<PlatformFramework>>
+    PlatformDescription& WithFrameworks(FrameworksT&& value) { SetFrameworks(std::forward<FrameworksT>(value)); return *this;}
+    template<typename FrameworksT = PlatformFramework>
+    PlatformDescription& AddFrameworks(FrameworksT&& value) { m_frameworksHasBeenSet = true; m_frameworks.emplace_back(std::forward<FrameworksT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The custom AMIs supported by the platform version.</p>
      */
-    inline const Aws::Vector<CustomAmi>& GetCustomAmiList() const{ return m_customAmiList; }
+    inline const Aws::Vector<CustomAmi>& GetCustomAmiList() const { return m_customAmiList; }
     inline bool CustomAmiListHasBeenSet() const { return m_customAmiListHasBeenSet; }
-    inline void SetCustomAmiList(const Aws::Vector<CustomAmi>& value) { m_customAmiListHasBeenSet = true; m_customAmiList = value; }
-    inline void SetCustomAmiList(Aws::Vector<CustomAmi>&& value) { m_customAmiListHasBeenSet = true; m_customAmiList = std::move(value); }
-    inline PlatformDescription& WithCustomAmiList(const Aws::Vector<CustomAmi>& value) { SetCustomAmiList(value); return *this;}
-    inline PlatformDescription& WithCustomAmiList(Aws::Vector<CustomAmi>&& value) { SetCustomAmiList(std::move(value)); return *this;}
-    inline PlatformDescription& AddCustomAmiList(const CustomAmi& value) { m_customAmiListHasBeenSet = true; m_customAmiList.push_back(value); return *this; }
-    inline PlatformDescription& AddCustomAmiList(CustomAmi&& value) { m_customAmiListHasBeenSet = true; m_customAmiList.push_back(std::move(value)); return *this; }
+    template<typename CustomAmiListT = Aws::Vector<CustomAmi>>
+    void SetCustomAmiList(CustomAmiListT&& value) { m_customAmiListHasBeenSet = true; m_customAmiList = std::forward<CustomAmiListT>(value); }
+    template<typename CustomAmiListT = Aws::Vector<CustomAmi>>
+    PlatformDescription& WithCustomAmiList(CustomAmiListT&& value) { SetCustomAmiList(std::forward<CustomAmiListT>(value)); return *this;}
+    template<typename CustomAmiListT = CustomAmi>
+    PlatformDescription& AddCustomAmiList(CustomAmiListT&& value) { m_customAmiListHasBeenSet = true; m_customAmiList.emplace_back(std::forward<CustomAmiListT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The tiers supported by the platform version.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSupportedTierList() const{ return m_supportedTierList; }
+    inline const Aws::Vector<Aws::String>& GetSupportedTierList() const { return m_supportedTierList; }
     inline bool SupportedTierListHasBeenSet() const { return m_supportedTierListHasBeenSet; }
-    inline void SetSupportedTierList(const Aws::Vector<Aws::String>& value) { m_supportedTierListHasBeenSet = true; m_supportedTierList = value; }
-    inline void SetSupportedTierList(Aws::Vector<Aws::String>&& value) { m_supportedTierListHasBeenSet = true; m_supportedTierList = std::move(value); }
-    inline PlatformDescription& WithSupportedTierList(const Aws::Vector<Aws::String>& value) { SetSupportedTierList(value); return *this;}
-    inline PlatformDescription& WithSupportedTierList(Aws::Vector<Aws::String>&& value) { SetSupportedTierList(std::move(value)); return *this;}
-    inline PlatformDescription& AddSupportedTierList(const Aws::String& value) { m_supportedTierListHasBeenSet = true; m_supportedTierList.push_back(value); return *this; }
-    inline PlatformDescription& AddSupportedTierList(Aws::String&& value) { m_supportedTierListHasBeenSet = true; m_supportedTierList.push_back(std::move(value)); return *this; }
-    inline PlatformDescription& AddSupportedTierList(const char* value) { m_supportedTierListHasBeenSet = true; m_supportedTierList.push_back(value); return *this; }
+    template<typename SupportedTierListT = Aws::Vector<Aws::String>>
+    void SetSupportedTierList(SupportedTierListT&& value) { m_supportedTierListHasBeenSet = true; m_supportedTierList = std::forward<SupportedTierListT>(value); }
+    template<typename SupportedTierListT = Aws::Vector<Aws::String>>
+    PlatformDescription& WithSupportedTierList(SupportedTierListT&& value) { SetSupportedTierList(std::forward<SupportedTierListT>(value)); return *this;}
+    template<typename SupportedTierListT = Aws::String>
+    PlatformDescription& AddSupportedTierList(SupportedTierListT&& value) { m_supportedTierListHasBeenSet = true; m_supportedTierList.emplace_back(std::forward<SupportedTierListT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The additions supported by the platform version.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSupportedAddonList() const{ return m_supportedAddonList; }
+    inline const Aws::Vector<Aws::String>& GetSupportedAddonList() const { return m_supportedAddonList; }
     inline bool SupportedAddonListHasBeenSet() const { return m_supportedAddonListHasBeenSet; }
-    inline void SetSupportedAddonList(const Aws::Vector<Aws::String>& value) { m_supportedAddonListHasBeenSet = true; m_supportedAddonList = value; }
-    inline void SetSupportedAddonList(Aws::Vector<Aws::String>&& value) { m_supportedAddonListHasBeenSet = true; m_supportedAddonList = std::move(value); }
-    inline PlatformDescription& WithSupportedAddonList(const Aws::Vector<Aws::String>& value) { SetSupportedAddonList(value); return *this;}
-    inline PlatformDescription& WithSupportedAddonList(Aws::Vector<Aws::String>&& value) { SetSupportedAddonList(std::move(value)); return *this;}
-    inline PlatformDescription& AddSupportedAddonList(const Aws::String& value) { m_supportedAddonListHasBeenSet = true; m_supportedAddonList.push_back(value); return *this; }
-    inline PlatformDescription& AddSupportedAddonList(Aws::String&& value) { m_supportedAddonListHasBeenSet = true; m_supportedAddonList.push_back(std::move(value)); return *this; }
-    inline PlatformDescription& AddSupportedAddonList(const char* value) { m_supportedAddonListHasBeenSet = true; m_supportedAddonList.push_back(value); return *this; }
+    template<typename SupportedAddonListT = Aws::Vector<Aws::String>>
+    void SetSupportedAddonList(SupportedAddonListT&& value) { m_supportedAddonListHasBeenSet = true; m_supportedAddonList = std::forward<SupportedAddonListT>(value); }
+    template<typename SupportedAddonListT = Aws::Vector<Aws::String>>
+    PlatformDescription& WithSupportedAddonList(SupportedAddonListT&& value) { SetSupportedAddonList(std::forward<SupportedAddonListT>(value)); return *this;}
+    template<typename SupportedAddonListT = Aws::String>
+    PlatformDescription& AddSupportedAddonList(SupportedAddonListT&& value) { m_supportedAddonListHasBeenSet = true; m_supportedAddonList.emplace_back(std::forward<SupportedAddonListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -301,28 +277,24 @@ namespace Model
      * platform branch has a single recommended platform version, typically the most
      * recent one.</p>
      */
-    inline const Aws::String& GetPlatformLifecycleState() const{ return m_platformLifecycleState; }
+    inline const Aws::String& GetPlatformLifecycleState() const { return m_platformLifecycleState; }
     inline bool PlatformLifecycleStateHasBeenSet() const { return m_platformLifecycleStateHasBeenSet; }
-    inline void SetPlatformLifecycleState(const Aws::String& value) { m_platformLifecycleStateHasBeenSet = true; m_platformLifecycleState = value; }
-    inline void SetPlatformLifecycleState(Aws::String&& value) { m_platformLifecycleStateHasBeenSet = true; m_platformLifecycleState = std::move(value); }
-    inline void SetPlatformLifecycleState(const char* value) { m_platformLifecycleStateHasBeenSet = true; m_platformLifecycleState.assign(value); }
-    inline PlatformDescription& WithPlatformLifecycleState(const Aws::String& value) { SetPlatformLifecycleState(value); return *this;}
-    inline PlatformDescription& WithPlatformLifecycleState(Aws::String&& value) { SetPlatformLifecycleState(std::move(value)); return *this;}
-    inline PlatformDescription& WithPlatformLifecycleState(const char* value) { SetPlatformLifecycleState(value); return *this;}
+    template<typename PlatformLifecycleStateT = Aws::String>
+    void SetPlatformLifecycleState(PlatformLifecycleStateT&& value) { m_platformLifecycleStateHasBeenSet = true; m_platformLifecycleState = std::forward<PlatformLifecycleStateT>(value); }
+    template<typename PlatformLifecycleStateT = Aws::String>
+    PlatformDescription& WithPlatformLifecycleState(PlatformLifecycleStateT&& value) { SetPlatformLifecycleState(std::forward<PlatformLifecycleStateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The platform branch to which the platform version belongs.</p>
      */
-    inline const Aws::String& GetPlatformBranchName() const{ return m_platformBranchName; }
+    inline const Aws::String& GetPlatformBranchName() const { return m_platformBranchName; }
     inline bool PlatformBranchNameHasBeenSet() const { return m_platformBranchNameHasBeenSet; }
-    inline void SetPlatformBranchName(const Aws::String& value) { m_platformBranchNameHasBeenSet = true; m_platformBranchName = value; }
-    inline void SetPlatformBranchName(Aws::String&& value) { m_platformBranchNameHasBeenSet = true; m_platformBranchName = std::move(value); }
-    inline void SetPlatformBranchName(const char* value) { m_platformBranchNameHasBeenSet = true; m_platformBranchName.assign(value); }
-    inline PlatformDescription& WithPlatformBranchName(const Aws::String& value) { SetPlatformBranchName(value); return *this;}
-    inline PlatformDescription& WithPlatformBranchName(Aws::String&& value) { SetPlatformBranchName(std::move(value)); return *this;}
-    inline PlatformDescription& WithPlatformBranchName(const char* value) { SetPlatformBranchName(value); return *this;}
+    template<typename PlatformBranchNameT = Aws::String>
+    void SetPlatformBranchName(PlatformBranchNameT&& value) { m_platformBranchNameHasBeenSet = true; m_platformBranchName = std::forward<PlatformBranchNameT>(value); }
+    template<typename PlatformBranchNameT = Aws::String>
+    PlatformDescription& WithPlatformBranchName(PlatformBranchNameT&& value) { SetPlatformBranchName(std::forward<PlatformBranchNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -331,14 +303,12 @@ namespace Model
      * values: <code>Beta</code> | <code>Supported</code> | <code>Deprecated</code> |
      * <code>Retired</code> </p>
      */
-    inline const Aws::String& GetPlatformBranchLifecycleState() const{ return m_platformBranchLifecycleState; }
+    inline const Aws::String& GetPlatformBranchLifecycleState() const { return m_platformBranchLifecycleState; }
     inline bool PlatformBranchLifecycleStateHasBeenSet() const { return m_platformBranchLifecycleStateHasBeenSet; }
-    inline void SetPlatformBranchLifecycleState(const Aws::String& value) { m_platformBranchLifecycleStateHasBeenSet = true; m_platformBranchLifecycleState = value; }
-    inline void SetPlatformBranchLifecycleState(Aws::String&& value) { m_platformBranchLifecycleStateHasBeenSet = true; m_platformBranchLifecycleState = std::move(value); }
-    inline void SetPlatformBranchLifecycleState(const char* value) { m_platformBranchLifecycleStateHasBeenSet = true; m_platformBranchLifecycleState.assign(value); }
-    inline PlatformDescription& WithPlatformBranchLifecycleState(const Aws::String& value) { SetPlatformBranchLifecycleState(value); return *this;}
-    inline PlatformDescription& WithPlatformBranchLifecycleState(Aws::String&& value) { SetPlatformBranchLifecycleState(std::move(value)); return *this;}
-    inline PlatformDescription& WithPlatformBranchLifecycleState(const char* value) { SetPlatformBranchLifecycleState(value); return *this;}
+    template<typename PlatformBranchLifecycleStateT = Aws::String>
+    void SetPlatformBranchLifecycleState(PlatformBranchLifecycleStateT&& value) { m_platformBranchLifecycleStateHasBeenSet = true; m_platformBranchLifecycleState = std::forward<PlatformBranchLifecycleStateT>(value); }
+    template<typename PlatformBranchLifecycleStateT = Aws::String>
+    PlatformDescription& WithPlatformBranchLifecycleState(PlatformBranchLifecycleStateT&& value) { SetPlatformBranchLifecycleState(std::forward<PlatformBranchLifecycleStateT>(value)); return *this;}
     ///@}
   private:
 
@@ -357,13 +327,13 @@ namespace Model
     Aws::String m_solutionStackName;
     bool m_solutionStackNameHasBeenSet = false;
 
-    PlatformStatus m_platformStatus;
+    PlatformStatus m_platformStatus{PlatformStatus::NOT_SET};
     bool m_platformStatusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_dateCreated;
+    Aws::Utils::DateTime m_dateCreated{};
     bool m_dateCreatedHasBeenSet = false;
 
-    Aws::Utils::DateTime m_dateUpdated;
+    Aws::Utils::DateTime m_dateUpdated{};
     bool m_dateUpdatedHasBeenSet = false;
 
     Aws::String m_platformCategory;

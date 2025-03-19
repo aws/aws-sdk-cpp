@@ -36,7 +36,7 @@ namespace Model
   class ColumnStatisticsTaskSettings
   {
   public:
-    AWS_GLUE_API ColumnStatisticsTaskSettings();
+    AWS_GLUE_API ColumnStatisticsTaskSettings() = default;
     AWS_GLUE_API ColumnStatisticsTaskSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API ColumnStatisticsTaskSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,90 +46,81 @@ namespace Model
     /**
      * <p>The name of the database where the table resides.</p>
      */
-    inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+    inline const Aws::String& GetDatabaseName() const { return m_databaseName; }
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
-    inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
-    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
-    inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
-    inline ColumnStatisticsTaskSettings& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
-    inline ColumnStatisticsTaskSettings& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
-    inline ColumnStatisticsTaskSettings& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+    template<typename DatabaseNameT = Aws::String>
+    void SetDatabaseName(DatabaseNameT&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::forward<DatabaseNameT>(value); }
+    template<typename DatabaseNameT = Aws::String>
+    ColumnStatisticsTaskSettings& WithDatabaseName(DatabaseNameT&& value) { SetDatabaseName(std::forward<DatabaseNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the table for which to generate column statistics.</p>
      */
-    inline const Aws::String& GetTableName() const{ return m_tableName; }
+    inline const Aws::String& GetTableName() const { return m_tableName; }
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
-    inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
-    inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
-    inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
-    inline ColumnStatisticsTaskSettings& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-    inline ColumnStatisticsTaskSettings& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-    inline ColumnStatisticsTaskSettings& WithTableName(const char* value) { SetTableName(value); return *this;}
+    template<typename TableNameT = Aws::String>
+    void SetTableName(TableNameT&& value) { m_tableNameHasBeenSet = true; m_tableName = std::forward<TableNameT>(value); }
+    template<typename TableNameT = Aws::String>
+    ColumnStatisticsTaskSettings& WithTableName(TableNameT&& value) { SetTableName(std::forward<TableNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A schedule for running the column statistics, specified in CRON syntax.</p>
      */
-    inline const Schedule& GetSchedule() const{ return m_schedule; }
+    inline const Schedule& GetSchedule() const { return m_schedule; }
     inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
-    inline void SetSchedule(const Schedule& value) { m_scheduleHasBeenSet = true; m_schedule = value; }
-    inline void SetSchedule(Schedule&& value) { m_scheduleHasBeenSet = true; m_schedule = std::move(value); }
-    inline ColumnStatisticsTaskSettings& WithSchedule(const Schedule& value) { SetSchedule(value); return *this;}
-    inline ColumnStatisticsTaskSettings& WithSchedule(Schedule&& value) { SetSchedule(std::move(value)); return *this;}
+    template<typename ScheduleT = Schedule>
+    void SetSchedule(ScheduleT&& value) { m_scheduleHasBeenSet = true; m_schedule = std::forward<ScheduleT>(value); }
+    template<typename ScheduleT = Schedule>
+    ColumnStatisticsTaskSettings& WithSchedule(ScheduleT&& value) { SetSchedule(std::forward<ScheduleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of column names for which to run statistics.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetColumnNameList() const{ return m_columnNameList; }
+    inline const Aws::Vector<Aws::String>& GetColumnNameList() const { return m_columnNameList; }
     inline bool ColumnNameListHasBeenSet() const { return m_columnNameListHasBeenSet; }
-    inline void SetColumnNameList(const Aws::Vector<Aws::String>& value) { m_columnNameListHasBeenSet = true; m_columnNameList = value; }
-    inline void SetColumnNameList(Aws::Vector<Aws::String>&& value) { m_columnNameListHasBeenSet = true; m_columnNameList = std::move(value); }
-    inline ColumnStatisticsTaskSettings& WithColumnNameList(const Aws::Vector<Aws::String>& value) { SetColumnNameList(value); return *this;}
-    inline ColumnStatisticsTaskSettings& WithColumnNameList(Aws::Vector<Aws::String>&& value) { SetColumnNameList(std::move(value)); return *this;}
-    inline ColumnStatisticsTaskSettings& AddColumnNameList(const Aws::String& value) { m_columnNameListHasBeenSet = true; m_columnNameList.push_back(value); return *this; }
-    inline ColumnStatisticsTaskSettings& AddColumnNameList(Aws::String&& value) { m_columnNameListHasBeenSet = true; m_columnNameList.push_back(std::move(value)); return *this; }
-    inline ColumnStatisticsTaskSettings& AddColumnNameList(const char* value) { m_columnNameListHasBeenSet = true; m_columnNameList.push_back(value); return *this; }
+    template<typename ColumnNameListT = Aws::Vector<Aws::String>>
+    void SetColumnNameList(ColumnNameListT&& value) { m_columnNameListHasBeenSet = true; m_columnNameList = std::forward<ColumnNameListT>(value); }
+    template<typename ColumnNameListT = Aws::Vector<Aws::String>>
+    ColumnStatisticsTaskSettings& WithColumnNameList(ColumnNameListT&& value) { SetColumnNameList(std::forward<ColumnNameListT>(value)); return *this;}
+    template<typename ColumnNameListT = Aws::String>
+    ColumnStatisticsTaskSettings& AddColumnNameList(ColumnNameListT&& value) { m_columnNameListHasBeenSet = true; m_columnNameList.emplace_back(std::forward<ColumnNameListT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Data Catalog in which the database resides.</p>
      */
-    inline const Aws::String& GetCatalogID() const{ return m_catalogID; }
+    inline const Aws::String& GetCatalogID() const { return m_catalogID; }
     inline bool CatalogIDHasBeenSet() const { return m_catalogIDHasBeenSet; }
-    inline void SetCatalogID(const Aws::String& value) { m_catalogIDHasBeenSet = true; m_catalogID = value; }
-    inline void SetCatalogID(Aws::String&& value) { m_catalogIDHasBeenSet = true; m_catalogID = std::move(value); }
-    inline void SetCatalogID(const char* value) { m_catalogIDHasBeenSet = true; m_catalogID.assign(value); }
-    inline ColumnStatisticsTaskSettings& WithCatalogID(const Aws::String& value) { SetCatalogID(value); return *this;}
-    inline ColumnStatisticsTaskSettings& WithCatalogID(Aws::String&& value) { SetCatalogID(std::move(value)); return *this;}
-    inline ColumnStatisticsTaskSettings& WithCatalogID(const char* value) { SetCatalogID(value); return *this;}
+    template<typename CatalogIDT = Aws::String>
+    void SetCatalogID(CatalogIDT&& value) { m_catalogIDHasBeenSet = true; m_catalogID = std::forward<CatalogIDT>(value); }
+    template<typename CatalogIDT = Aws::String>
+    ColumnStatisticsTaskSettings& WithCatalogID(CatalogIDT&& value) { SetCatalogID(std::forward<CatalogIDT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The role used for running the column statistics.</p>
      */
-    inline const Aws::String& GetRole() const{ return m_role; }
+    inline const Aws::String& GetRole() const { return m_role; }
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
-    inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
-    inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
-    inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
-    inline ColumnStatisticsTaskSettings& WithRole(const Aws::String& value) { SetRole(value); return *this;}
-    inline ColumnStatisticsTaskSettings& WithRole(Aws::String&& value) { SetRole(std::move(value)); return *this;}
-    inline ColumnStatisticsTaskSettings& WithRole(const char* value) { SetRole(value); return *this;}
+    template<typename RoleT = Aws::String>
+    void SetRole(RoleT&& value) { m_roleHasBeenSet = true; m_role = std::forward<RoleT>(value); }
+    template<typename RoleT = Aws::String>
+    ColumnStatisticsTaskSettings& WithRole(RoleT&& value) { SetRole(std::forward<RoleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The percentage of data to sample.</p>
      */
-    inline double GetSampleSize() const{ return m_sampleSize; }
+    inline double GetSampleSize() const { return m_sampleSize; }
     inline bool SampleSizeHasBeenSet() const { return m_sampleSizeHasBeenSet; }
     inline void SetSampleSize(double value) { m_sampleSizeHasBeenSet = true; m_sampleSize = value; }
     inline ColumnStatisticsTaskSettings& WithSampleSize(double value) { SetSampleSize(value); return *this;}
@@ -140,14 +131,12 @@ namespace Model
      * <p>Name of the security configuration that is used to encrypt CloudWatch
      * logs.</p>
      */
-    inline const Aws::String& GetSecurityConfiguration() const{ return m_securityConfiguration; }
+    inline const Aws::String& GetSecurityConfiguration() const { return m_securityConfiguration; }
     inline bool SecurityConfigurationHasBeenSet() const { return m_securityConfigurationHasBeenSet; }
-    inline void SetSecurityConfiguration(const Aws::String& value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration = value; }
-    inline void SetSecurityConfiguration(Aws::String&& value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration = std::move(value); }
-    inline void SetSecurityConfiguration(const char* value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration.assign(value); }
-    inline ColumnStatisticsTaskSettings& WithSecurityConfiguration(const Aws::String& value) { SetSecurityConfiguration(value); return *this;}
-    inline ColumnStatisticsTaskSettings& WithSecurityConfiguration(Aws::String&& value) { SetSecurityConfiguration(std::move(value)); return *this;}
-    inline ColumnStatisticsTaskSettings& WithSecurityConfiguration(const char* value) { SetSecurityConfiguration(value); return *this;}
+    template<typename SecurityConfigurationT = Aws::String>
+    void SetSecurityConfiguration(SecurityConfigurationT&& value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration = std::forward<SecurityConfigurationT>(value); }
+    template<typename SecurityConfigurationT = Aws::String>
+    ColumnStatisticsTaskSettings& WithSecurityConfiguration(SecurityConfigurationT&& value) { SetSecurityConfiguration(std::forward<SecurityConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -155,12 +144,10 @@ namespace Model
      * <p>The type of schedule for a column statistics task. Possible values may be
      * <code>CRON</code> or <code>AUTO</code>.</p>
      */
-    inline const ScheduleType& GetScheduleType() const{ return m_scheduleType; }
+    inline ScheduleType GetScheduleType() const { return m_scheduleType; }
     inline bool ScheduleTypeHasBeenSet() const { return m_scheduleTypeHasBeenSet; }
-    inline void SetScheduleType(const ScheduleType& value) { m_scheduleTypeHasBeenSet = true; m_scheduleType = value; }
-    inline void SetScheduleType(ScheduleType&& value) { m_scheduleTypeHasBeenSet = true; m_scheduleType = std::move(value); }
-    inline ColumnStatisticsTaskSettings& WithScheduleType(const ScheduleType& value) { SetScheduleType(value); return *this;}
-    inline ColumnStatisticsTaskSettings& WithScheduleType(ScheduleType&& value) { SetScheduleType(std::move(value)); return *this;}
+    inline void SetScheduleType(ScheduleType value) { m_scheduleTypeHasBeenSet = true; m_scheduleType = value; }
+    inline ColumnStatisticsTaskSettings& WithScheduleType(ScheduleType value) { SetScheduleType(value); return *this;}
     ///@}
 
     ///@{
@@ -168,12 +155,10 @@ namespace Model
      * <p>The source of setting the column statistics task. Possible values may be
      * <code>CATALOG</code> or <code>TABLE</code>.</p>
      */
-    inline const SettingSource& GetSettingSource() const{ return m_settingSource; }
+    inline SettingSource GetSettingSource() const { return m_settingSource; }
     inline bool SettingSourceHasBeenSet() const { return m_settingSourceHasBeenSet; }
-    inline void SetSettingSource(const SettingSource& value) { m_settingSourceHasBeenSet = true; m_settingSource = value; }
-    inline void SetSettingSource(SettingSource&& value) { m_settingSourceHasBeenSet = true; m_settingSource = std::move(value); }
-    inline ColumnStatisticsTaskSettings& WithSettingSource(const SettingSource& value) { SetSettingSource(value); return *this;}
-    inline ColumnStatisticsTaskSettings& WithSettingSource(SettingSource&& value) { SetSettingSource(std::move(value)); return *this;}
+    inline void SetSettingSource(SettingSource value) { m_settingSourceHasBeenSet = true; m_settingSource = value; }
+    inline ColumnStatisticsTaskSettings& WithSettingSource(SettingSource value) { SetSettingSource(value); return *this;}
     ///@}
 
     ///@{
@@ -181,12 +166,12 @@ namespace Model
      * <p>The last <code>ExecutionAttempt</code> for the column statistics task
      * run.</p>
      */
-    inline const ExecutionAttempt& GetLastExecutionAttempt() const{ return m_lastExecutionAttempt; }
+    inline const ExecutionAttempt& GetLastExecutionAttempt() const { return m_lastExecutionAttempt; }
     inline bool LastExecutionAttemptHasBeenSet() const { return m_lastExecutionAttemptHasBeenSet; }
-    inline void SetLastExecutionAttempt(const ExecutionAttempt& value) { m_lastExecutionAttemptHasBeenSet = true; m_lastExecutionAttempt = value; }
-    inline void SetLastExecutionAttempt(ExecutionAttempt&& value) { m_lastExecutionAttemptHasBeenSet = true; m_lastExecutionAttempt = std::move(value); }
-    inline ColumnStatisticsTaskSettings& WithLastExecutionAttempt(const ExecutionAttempt& value) { SetLastExecutionAttempt(value); return *this;}
-    inline ColumnStatisticsTaskSettings& WithLastExecutionAttempt(ExecutionAttempt&& value) { SetLastExecutionAttempt(std::move(value)); return *this;}
+    template<typename LastExecutionAttemptT = ExecutionAttempt>
+    void SetLastExecutionAttempt(LastExecutionAttemptT&& value) { m_lastExecutionAttemptHasBeenSet = true; m_lastExecutionAttempt = std::forward<LastExecutionAttemptT>(value); }
+    template<typename LastExecutionAttemptT = ExecutionAttempt>
+    ColumnStatisticsTaskSettings& WithLastExecutionAttempt(LastExecutionAttemptT&& value) { SetLastExecutionAttempt(std::forward<LastExecutionAttemptT>(value)); return *this;}
     ///@}
   private:
 
@@ -208,16 +193,16 @@ namespace Model
     Aws::String m_role;
     bool m_roleHasBeenSet = false;
 
-    double m_sampleSize;
+    double m_sampleSize{0.0};
     bool m_sampleSizeHasBeenSet = false;
 
     Aws::String m_securityConfiguration;
     bool m_securityConfigurationHasBeenSet = false;
 
-    ScheduleType m_scheduleType;
+    ScheduleType m_scheduleType{ScheduleType::NOT_SET};
     bool m_scheduleTypeHasBeenSet = false;
 
-    SettingSource m_settingSource;
+    SettingSource m_settingSource{SettingSource::NOT_SET};
     bool m_settingSourceHasBeenSet = false;
 
     ExecutionAttempt m_lastExecutionAttempt;

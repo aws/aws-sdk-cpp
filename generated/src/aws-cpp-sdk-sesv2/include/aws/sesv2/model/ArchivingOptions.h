@@ -32,7 +32,7 @@ namespace Model
   class ArchivingOptions
   {
   public:
-    AWS_SESV2_API ArchivingOptions();
+    AWS_SESV2_API ArchivingOptions() = default;
     AWS_SESV2_API ArchivingOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API ArchivingOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the MailManager archive where the Amazon
      * SES API v2 will archive sent emails.</p>
      */
-    inline const Aws::String& GetArchiveArn() const{ return m_archiveArn; }
+    inline const Aws::String& GetArchiveArn() const { return m_archiveArn; }
     inline bool ArchiveArnHasBeenSet() const { return m_archiveArnHasBeenSet; }
-    inline void SetArchiveArn(const Aws::String& value) { m_archiveArnHasBeenSet = true; m_archiveArn = value; }
-    inline void SetArchiveArn(Aws::String&& value) { m_archiveArnHasBeenSet = true; m_archiveArn = std::move(value); }
-    inline void SetArchiveArn(const char* value) { m_archiveArnHasBeenSet = true; m_archiveArn.assign(value); }
-    inline ArchivingOptions& WithArchiveArn(const Aws::String& value) { SetArchiveArn(value); return *this;}
-    inline ArchivingOptions& WithArchiveArn(Aws::String&& value) { SetArchiveArn(std::move(value)); return *this;}
-    inline ArchivingOptions& WithArchiveArn(const char* value) { SetArchiveArn(value); return *this;}
+    template<typename ArchiveArnT = Aws::String>
+    void SetArchiveArn(ArchiveArnT&& value) { m_archiveArnHasBeenSet = true; m_archiveArn = std::forward<ArchiveArnT>(value); }
+    template<typename ArchiveArnT = Aws::String>
+    ArchivingOptions& WithArchiveArn(ArchiveArnT&& value) { SetArchiveArn(std::forward<ArchiveArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -34,7 +34,7 @@ namespace Model
   class ComplianceViolator
   {
   public:
-    AWS_FMS_API ComplianceViolator();
+    AWS_FMS_API ComplianceViolator() = default;
     AWS_FMS_API ComplianceViolator(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API ComplianceViolator& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,26 +44,22 @@ namespace Model
     /**
      * <p>The resource ID.</p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline ComplianceViolator& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline ComplianceViolator& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline ComplianceViolator& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    ComplianceViolator& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The reason that the resource is not protected by the policy.</p>
      */
-    inline const ViolationReason& GetViolationReason() const{ return m_violationReason; }
+    inline ViolationReason GetViolationReason() const { return m_violationReason; }
     inline bool ViolationReasonHasBeenSet() const { return m_violationReasonHasBeenSet; }
-    inline void SetViolationReason(const ViolationReason& value) { m_violationReasonHasBeenSet = true; m_violationReason = value; }
-    inline void SetViolationReason(ViolationReason&& value) { m_violationReasonHasBeenSet = true; m_violationReason = std::move(value); }
-    inline ComplianceViolator& WithViolationReason(const ViolationReason& value) { SetViolationReason(value); return *this;}
-    inline ComplianceViolator& WithViolationReason(ViolationReason&& value) { SetViolationReason(std::move(value)); return *this;}
+    inline void SetViolationReason(ViolationReason value) { m_violationReasonHasBeenSet = true; m_violationReason = value; }
+    inline ComplianceViolator& WithViolationReason(ViolationReason value) { SetViolationReason(value); return *this;}
     ///@}
 
     ///@{
@@ -75,40 +71,35 @@ namespace Model
      * <code>AWS::CloudFront::Distribution</code>, or
      * <code>AWS::NetworkFirewall::FirewallPolicy</code>.</p>
      */
-    inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+    inline const Aws::String& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
-    inline ComplianceViolator& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-    inline ComplianceViolator& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-    inline ComplianceViolator& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+    template<typename ResourceTypeT = Aws::String>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = Aws::String>
+    ComplianceViolator& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Metadata about the resource that doesn't comply with the policy scope.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetMetadata() const{ return m_metadata; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetMetadata() const { return m_metadata; }
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
-    inline void SetMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_metadataHasBeenSet = true; m_metadata = value; }
-    inline void SetMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
-    inline ComplianceViolator& WithMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetMetadata(value); return *this;}
-    inline ComplianceViolator& WithMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetMetadata(std::move(value)); return *this;}
-    inline ComplianceViolator& AddMetadata(const Aws::String& key, const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
-    inline ComplianceViolator& AddMetadata(Aws::String&& key, const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), value); return *this; }
-    inline ComplianceViolator& AddMetadata(const Aws::String& key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, std::move(value)); return *this; }
-    inline ComplianceViolator& AddMetadata(Aws::String&& key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), std::move(value)); return *this; }
-    inline ComplianceViolator& AddMetadata(const char* key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, std::move(value)); return *this; }
-    inline ComplianceViolator& AddMetadata(Aws::String&& key, const char* value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), value); return *this; }
-    inline ComplianceViolator& AddMetadata(const char* key, const char* value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
+    template<typename MetadataT = Aws::Map<Aws::String, Aws::String>>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = Aws::Map<Aws::String, Aws::String>>
+    ComplianceViolator& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
+    template<typename MetadataKeyT = Aws::String, typename MetadataValueT = Aws::String>
+    ComplianceViolator& AddMetadata(MetadataKeyT&& key, MetadataValueT&& value) {
+      m_metadataHasBeenSet = true; m_metadata.emplace(std::forward<MetadataKeyT>(key), std::forward<MetadataValueT>(value)); return *this;
+    }
     ///@}
   private:
 
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet = false;
 
-    ViolationReason m_violationReason;
+    ViolationReason m_violationReason{ViolationReason::NOT_SET};
     bool m_violationReasonHasBeenSet = false;
 
     Aws::String m_resourceType;

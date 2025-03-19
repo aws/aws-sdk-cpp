@@ -18,15 +18,7 @@ namespace Connect
 namespace Model
 {
 
-UserHierarchyGroupSearchCriteria::UserHierarchyGroupSearchCriteria() : 
-    m_orConditionsHasBeenSet(false),
-    m_andConditionsHasBeenSet(false),
-    m_stringConditionHasBeenSet(false)
-{
-}
-
 UserHierarchyGroupSearchCriteria::UserHierarchyGroupSearchCriteria(JsonView jsonValue)
-  : UserHierarchyGroupSearchCriteria()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ UserHierarchyGroupSearchCriteria& UserHierarchyGroupSearchCriteria::operator =(J
     }
     m_orConditionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AndConditions"))
   {
     Aws::Utils::Array<JsonView> andConditionsJsonList = jsonValue.GetArray("AndConditions");
@@ -52,14 +43,11 @@ UserHierarchyGroupSearchCriteria& UserHierarchyGroupSearchCriteria::operator =(J
     }
     m_andConditionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StringCondition"))
   {
     m_stringCondition = jsonValue.GetObject("StringCondition");
-
     m_stringConditionHasBeenSet = true;
   }
-
   return *this;
 }
 

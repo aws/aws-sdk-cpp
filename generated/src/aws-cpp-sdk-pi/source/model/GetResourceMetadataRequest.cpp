@@ -12,13 +12,6 @@ using namespace Aws::PI::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetResourceMetadataRequest::GetResourceMetadataRequest() : 
-    m_serviceType(ServiceType::NOT_SET),
-    m_serviceTypeHasBeenSet(false),
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String GetResourceMetadataRequest::SerializePayload() const
 {
   JsonValue payload;

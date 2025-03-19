@@ -18,10 +18,6 @@ namespace Appflow
 namespace Model
 {
 
-AmplitudeMetadata::AmplitudeMetadata()
-{
-}
-
 AmplitudeMetadata::AmplitudeMetadata(JsonView jsonValue)
 {
   *this = jsonValue;

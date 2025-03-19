@@ -34,7 +34,7 @@ namespace Model
   class ContentBlockerRule
   {
   public:
-    AWS_QBUSINESS_API ContentBlockerRule();
+    AWS_QBUSINESS_API ContentBlockerRule() = default;
     AWS_QBUSINESS_API ContentBlockerRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API ContentBlockerRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * <p>The configured custom message displayed to an end user informing them that
      * they've used a blocked phrase during chat.</p>
      */
-    inline const Aws::String& GetSystemMessageOverride() const{ return m_systemMessageOverride; }
+    inline const Aws::String& GetSystemMessageOverride() const { return m_systemMessageOverride; }
     inline bool SystemMessageOverrideHasBeenSet() const { return m_systemMessageOverrideHasBeenSet; }
-    inline void SetSystemMessageOverride(const Aws::String& value) { m_systemMessageOverrideHasBeenSet = true; m_systemMessageOverride = value; }
-    inline void SetSystemMessageOverride(Aws::String&& value) { m_systemMessageOverrideHasBeenSet = true; m_systemMessageOverride = std::move(value); }
-    inline void SetSystemMessageOverride(const char* value) { m_systemMessageOverrideHasBeenSet = true; m_systemMessageOverride.assign(value); }
-    inline ContentBlockerRule& WithSystemMessageOverride(const Aws::String& value) { SetSystemMessageOverride(value); return *this;}
-    inline ContentBlockerRule& WithSystemMessageOverride(Aws::String&& value) { SetSystemMessageOverride(std::move(value)); return *this;}
-    inline ContentBlockerRule& WithSystemMessageOverride(const char* value) { SetSystemMessageOverride(value); return *this;}
+    template<typename SystemMessageOverrideT = Aws::String>
+    void SetSystemMessageOverride(SystemMessageOverrideT&& value) { m_systemMessageOverrideHasBeenSet = true; m_systemMessageOverride = std::forward<SystemMessageOverrideT>(value); }
+    template<typename SystemMessageOverrideT = Aws::String>
+    ContentBlockerRule& WithSystemMessageOverride(SystemMessageOverrideT&& value) { SetSystemMessageOverride(std::forward<SystemMessageOverrideT>(value)); return *this;}
     ///@}
   private:
 

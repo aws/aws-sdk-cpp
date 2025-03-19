@@ -12,14 +12,6 @@ using namespace Aws::MTurk::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ApproveAssignmentRequest::ApproveAssignmentRequest() : 
-    m_assignmentIdHasBeenSet(false),
-    m_requesterFeedbackHasBeenSet(false),
-    m_overrideRejection(false),
-    m_overrideRejectionHasBeenSet(false)
-{
-}
-
 Aws::String ApproveAssignmentRequest::SerializePayload() const
 {
   JsonValue payload;

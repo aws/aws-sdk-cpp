@@ -18,18 +18,7 @@ namespace FSx
 namespace Model
 {
 
-OpenZFSUserOrGroupQuota::OpenZFSUserOrGroupQuota() : 
-    m_type(OpenZFSQuotaType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_id(0),
-    m_idHasBeenSet(false),
-    m_storageCapacityQuotaGiB(0),
-    m_storageCapacityQuotaGiBHasBeenSet(false)
-{
-}
-
 OpenZFSUserOrGroupQuota::OpenZFSUserOrGroupQuota(JsonView jsonValue)
-  : OpenZFSUserOrGroupQuota()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ OpenZFSUserOrGroupQuota& OpenZFSUserOrGroupQuota::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = OpenZFSQuotaTypeMapper::GetOpenZFSQuotaTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetInteger("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StorageCapacityQuotaGiB"))
   {
     m_storageCapacityQuotaGiB = jsonValue.GetInteger("StorageCapacityQuotaGiB");
-
     m_storageCapacityQuotaGiBHasBeenSet = true;
   }
-
   return *this;
 }
 

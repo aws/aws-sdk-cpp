@@ -18,15 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-AccessControl::AccessControl() : 
-    m_principalsHasBeenSet(false),
-    m_memberRelation(MemberRelation::NOT_SET),
-    m_memberRelationHasBeenSet(false)
-{
-}
-
 AccessControl::AccessControl(JsonView jsonValue)
-  : AccessControl()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ AccessControl& AccessControl::operator =(JsonView jsonValue)
     }
     m_principalsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("memberRelation"))
   {
     m_memberRelation = MemberRelationMapper::GetMemberRelationForName(jsonValue.GetString("memberRelation"));
-
     m_memberRelationHasBeenSet = true;
   }
-
   return *this;
 }
 

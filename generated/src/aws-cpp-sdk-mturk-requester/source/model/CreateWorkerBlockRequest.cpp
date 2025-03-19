@@ -12,12 +12,6 @@ using namespace Aws::MTurk::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateWorkerBlockRequest::CreateWorkerBlockRequest() : 
-    m_workerIdHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 Aws::String CreateWorkerBlockRequest::SerializePayload() const
 {
   JsonValue payload;

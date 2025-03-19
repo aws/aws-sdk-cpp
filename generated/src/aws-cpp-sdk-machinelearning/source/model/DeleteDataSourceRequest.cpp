@@ -12,11 +12,6 @@ using namespace Aws::MachineLearning::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDataSourceRequest::DeleteDataSourceRequest() : 
-    m_dataSourceIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDataSourceRequest::SerializePayload() const
 {
   JsonValue payload;

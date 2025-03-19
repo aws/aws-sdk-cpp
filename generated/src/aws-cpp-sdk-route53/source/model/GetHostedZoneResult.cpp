@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetHostedZoneResult::GetHostedZoneResult()
-{
-}
-
 GetHostedZoneResult::GetHostedZoneResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,22 +32,26 @@ GetHostedZoneResult& GetHostedZoneResult::operator =(const Aws::AmazonWebService
     if(!hostedZoneNode.IsNull())
     {
       m_hostedZone = hostedZoneNode;
+      m_hostedZoneHasBeenSet = true;
     }
     XmlNode delegationSetNode = resultNode.FirstChild("DelegationSet");
     if(!delegationSetNode.IsNull())
     {
       m_delegationSet = delegationSetNode;
+      m_delegationSetHasBeenSet = true;
     }
     XmlNode vPCsNode = resultNode.FirstChild("VPCs");
     if(!vPCsNode.IsNull())
     {
       XmlNode vPCsMember = vPCsNode.FirstChild("VPC");
+      m_vPCsHasBeenSet = !vPCsMember.IsNull();
       while(!vPCsMember.IsNull())
       {
         m_vPCs.push_back(vPCsMember);
         vPCsMember = vPCsMember.NextNode("VPC");
       }
 
+      m_vPCsHasBeenSet = true;
     }
   }
 
@@ -60,6 +60,7 @@ GetHostedZoneResult& GetHostedZoneResult::operator =(const Aws::AmazonWebService
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

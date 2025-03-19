@@ -18,31 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2ClientVpnEndpointDetails::AwsEc2ClientVpnEndpointDetails() : 
-    m_clientVpnEndpointIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_clientCidrBlockHasBeenSet(false),
-    m_dnsServerHasBeenSet(false),
-    m_splitTunnel(false),
-    m_splitTunnelHasBeenSet(false),
-    m_transportProtocolHasBeenSet(false),
-    m_vpnPort(0),
-    m_vpnPortHasBeenSet(false),
-    m_serverCertificateArnHasBeenSet(false),
-    m_authenticationOptionsHasBeenSet(false),
-    m_connectionLogOptionsHasBeenSet(false),
-    m_securityGroupIdSetHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_selfServicePortalUrlHasBeenSet(false),
-    m_clientConnectOptionsHasBeenSet(false),
-    m_sessionTimeoutHours(0),
-    m_sessionTimeoutHoursHasBeenSet(false),
-    m_clientLoginBannerOptionsHasBeenSet(false)
-{
-}
-
 AwsEc2ClientVpnEndpointDetails::AwsEc2ClientVpnEndpointDetails(JsonView jsonValue)
-  : AwsEc2ClientVpnEndpointDetails()
 {
   *this = jsonValue;
 }
@@ -52,24 +28,18 @@ AwsEc2ClientVpnEndpointDetails& AwsEc2ClientVpnEndpointDetails::operator =(JsonV
   if(jsonValue.ValueExists("ClientVpnEndpointId"))
   {
     m_clientVpnEndpointId = jsonValue.GetString("ClientVpnEndpointId");
-
     m_clientVpnEndpointIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClientCidrBlock"))
   {
     m_clientCidrBlock = jsonValue.GetString("ClientCidrBlock");
-
     m_clientCidrBlockHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DnsServer"))
   {
     Aws::Utils::Array<JsonView> dnsServerJsonList = jsonValue.GetArray("DnsServer");
@@ -79,35 +49,26 @@ AwsEc2ClientVpnEndpointDetails& AwsEc2ClientVpnEndpointDetails::operator =(JsonV
     }
     m_dnsServerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SplitTunnel"))
   {
     m_splitTunnel = jsonValue.GetBool("SplitTunnel");
-
     m_splitTunnelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TransportProtocol"))
   {
     m_transportProtocol = jsonValue.GetString("TransportProtocol");
-
     m_transportProtocolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpnPort"))
   {
     m_vpnPort = jsonValue.GetInteger("VpnPort");
-
     m_vpnPortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServerCertificateArn"))
   {
     m_serverCertificateArn = jsonValue.GetString("ServerCertificateArn");
-
     m_serverCertificateArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthenticationOptions"))
   {
     Aws::Utils::Array<JsonView> authenticationOptionsJsonList = jsonValue.GetArray("AuthenticationOptions");
@@ -117,14 +78,11 @@ AwsEc2ClientVpnEndpointDetails& AwsEc2ClientVpnEndpointDetails::operator =(JsonV
     }
     m_authenticationOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionLogOptions"))
   {
     m_connectionLogOptions = jsonValue.GetObject("ConnectionLogOptions");
-
     m_connectionLogOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityGroupIdSet"))
   {
     Aws::Utils::Array<JsonView> securityGroupIdSetJsonList = jsonValue.GetArray("SecurityGroupIdSet");
@@ -134,42 +92,31 @@ AwsEc2ClientVpnEndpointDetails& AwsEc2ClientVpnEndpointDetails::operator =(JsonV
     }
     m_securityGroupIdSetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcId"))
   {
     m_vpcId = jsonValue.GetString("VpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SelfServicePortalUrl"))
   {
     m_selfServicePortalUrl = jsonValue.GetString("SelfServicePortalUrl");
-
     m_selfServicePortalUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClientConnectOptions"))
   {
     m_clientConnectOptions = jsonValue.GetObject("ClientConnectOptions");
-
     m_clientConnectOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SessionTimeoutHours"))
   {
     m_sessionTimeoutHours = jsonValue.GetInteger("SessionTimeoutHours");
-
     m_sessionTimeoutHoursHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClientLoginBannerOptions"))
   {
     m_clientLoginBannerOptions = jsonValue.GetObject("ClientLoginBannerOptions");
-
     m_clientLoginBannerOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

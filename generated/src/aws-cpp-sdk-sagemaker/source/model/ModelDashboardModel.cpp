@@ -18,17 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ModelDashboardModel::ModelDashboardModel() : 
-    m_modelHasBeenSet(false),
-    m_endpointsHasBeenSet(false),
-    m_lastBatchTransformJobHasBeenSet(false),
-    m_monitoringSchedulesHasBeenSet(false),
-    m_modelCardHasBeenSet(false)
-{
-}
-
 ModelDashboardModel::ModelDashboardModel(JsonView jsonValue)
-  : ModelDashboardModel()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ ModelDashboardModel& ModelDashboardModel::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Model"))
   {
     m_model = jsonValue.GetObject("Model");
-
     m_modelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Endpoints"))
   {
     Aws::Utils::Array<JsonView> endpointsJsonList = jsonValue.GetArray("Endpoints");
@@ -51,14 +39,11 @@ ModelDashboardModel& ModelDashboardModel::operator =(JsonView jsonValue)
     }
     m_endpointsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastBatchTransformJob"))
   {
     m_lastBatchTransformJob = jsonValue.GetObject("LastBatchTransformJob");
-
     m_lastBatchTransformJobHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MonitoringSchedules"))
   {
     Aws::Utils::Array<JsonView> monitoringSchedulesJsonList = jsonValue.GetArray("MonitoringSchedules");
@@ -68,14 +53,11 @@ ModelDashboardModel& ModelDashboardModel::operator =(JsonView jsonValue)
     }
     m_monitoringSchedulesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelCard"))
   {
     m_modelCard = jsonValue.GetObject("ModelCard");
-
     m_modelCardHasBeenSet = true;
   }
-
   return *this;
 }
 

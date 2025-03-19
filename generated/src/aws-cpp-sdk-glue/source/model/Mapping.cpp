@@ -18,19 +18,7 @@ namespace Glue
 namespace Model
 {
 
-Mapping::Mapping() : 
-    m_toKeyHasBeenSet(false),
-    m_fromPathHasBeenSet(false),
-    m_fromTypeHasBeenSet(false),
-    m_toTypeHasBeenSet(false),
-    m_dropped(false),
-    m_droppedHasBeenSet(false),
-    m_childrenHasBeenSet(false)
-{
-}
-
 Mapping::Mapping(JsonView jsonValue)
-  : Mapping()
 {
   *this = jsonValue;
 }
@@ -40,10 +28,8 @@ Mapping& Mapping::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ToKey"))
   {
     m_toKey = jsonValue.GetString("ToKey");
-
     m_toKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FromPath"))
   {
     Aws::Utils::Array<JsonView> fromPathJsonList = jsonValue.GetArray("FromPath");
@@ -53,28 +39,21 @@ Mapping& Mapping::operator =(JsonView jsonValue)
     }
     m_fromPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FromType"))
   {
     m_fromType = jsonValue.GetString("FromType");
-
     m_fromTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ToType"))
   {
     m_toType = jsonValue.GetString("ToType");
-
     m_toTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Dropped"))
   {
     m_dropped = jsonValue.GetBool("Dropped");
-
     m_droppedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Children"))
   {
     Aws::Utils::Array<JsonView> childrenJsonList = jsonValue.GetArray("Children");
@@ -84,7 +63,6 @@ Mapping& Mapping::operator =(JsonView jsonValue)
     }
     m_childrenHasBeenSet = true;
   }
-
   return *this;
 }
 

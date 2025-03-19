@@ -18,14 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-MultiplexProgramPipelineDetail::MultiplexProgramPipelineDetail() : 
-    m_activeChannelPipelineHasBeenSet(false),
-    m_pipelineIdHasBeenSet(false)
-{
-}
-
 MultiplexProgramPipelineDetail::MultiplexProgramPipelineDetail(JsonView jsonValue)
-  : MultiplexProgramPipelineDetail()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ MultiplexProgramPipelineDetail& MultiplexProgramPipelineDetail::operator =(JsonV
   if(jsonValue.ValueExists("activeChannelPipeline"))
   {
     m_activeChannelPipeline = jsonValue.GetString("activeChannelPipeline");
-
     m_activeChannelPipelineHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pipelineId"))
   {
     m_pipelineId = jsonValue.GetString("pipelineId");
-
     m_pipelineIdHasBeenSet = true;
   }
-
   return *this;
 }
 

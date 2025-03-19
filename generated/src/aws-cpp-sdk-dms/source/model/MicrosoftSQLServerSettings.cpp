@@ -18,41 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-MicrosoftSQLServerSettings::MicrosoftSQLServerSettings() : 
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_bcpPacketSize(0),
-    m_bcpPacketSizeHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_controlTablesFileGroupHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_querySingleAlwaysOnNode(false),
-    m_querySingleAlwaysOnNodeHasBeenSet(false),
-    m_readBackupOnly(false),
-    m_readBackupOnlyHasBeenSet(false),
-    m_safeguardPolicy(SafeguardPolicy::NOT_SET),
-    m_safeguardPolicyHasBeenSet(false),
-    m_serverNameHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_useBcpFullLoad(false),
-    m_useBcpFullLoadHasBeenSet(false),
-    m_useThirdPartyBackupDevice(false),
-    m_useThirdPartyBackupDeviceHasBeenSet(false),
-    m_secretsManagerAccessRoleArnHasBeenSet(false),
-    m_secretsManagerSecretIdHasBeenSet(false),
-    m_trimSpaceInChar(false),
-    m_trimSpaceInCharHasBeenSet(false),
-    m_tlogAccessMode(TlogAccessMode::NOT_SET),
-    m_tlogAccessModeHasBeenSet(false),
-    m_forceLobLookup(false),
-    m_forceLobLookupHasBeenSet(false),
-    m_authenticationMethod(SqlServerAuthenticationMethod::NOT_SET),
-    m_authenticationMethodHasBeenSet(false)
-{
-}
-
 MicrosoftSQLServerSettings::MicrosoftSQLServerSettings(JsonView jsonValue)
-  : MicrosoftSQLServerSettings()
 {
   *this = jsonValue;
 }
@@ -62,129 +28,93 @@ MicrosoftSQLServerSettings& MicrosoftSQLServerSettings::operator =(JsonView json
   if(jsonValue.ValueExists("Port"))
   {
     m_port = jsonValue.GetInteger("Port");
-
     m_portHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BcpPacketSize"))
   {
     m_bcpPacketSize = jsonValue.GetInteger("BcpPacketSize");
-
     m_bcpPacketSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseName"))
   {
     m_databaseName = jsonValue.GetString("DatabaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ControlTablesFileGroup"))
   {
     m_controlTablesFileGroup = jsonValue.GetString("ControlTablesFileGroup");
-
     m_controlTablesFileGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Password"))
   {
     m_password = jsonValue.GetString("Password");
-
     m_passwordHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QuerySingleAlwaysOnNode"))
   {
     m_querySingleAlwaysOnNode = jsonValue.GetBool("QuerySingleAlwaysOnNode");
-
     m_querySingleAlwaysOnNodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReadBackupOnly"))
   {
     m_readBackupOnly = jsonValue.GetBool("ReadBackupOnly");
-
     m_readBackupOnlyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SafeguardPolicy"))
   {
     m_safeguardPolicy = SafeguardPolicyMapper::GetSafeguardPolicyForName(jsonValue.GetString("SafeguardPolicy"));
-
     m_safeguardPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServerName"))
   {
     m_serverName = jsonValue.GetString("ServerName");
-
     m_serverNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Username"))
   {
     m_username = jsonValue.GetString("Username");
-
     m_usernameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UseBcpFullLoad"))
   {
     m_useBcpFullLoad = jsonValue.GetBool("UseBcpFullLoad");
-
     m_useBcpFullLoadHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UseThirdPartyBackupDevice"))
   {
     m_useThirdPartyBackupDevice = jsonValue.GetBool("UseThirdPartyBackupDevice");
-
     m_useThirdPartyBackupDeviceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretsManagerAccessRoleArn"))
   {
     m_secretsManagerAccessRoleArn = jsonValue.GetString("SecretsManagerAccessRoleArn");
-
     m_secretsManagerAccessRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretsManagerSecretId"))
   {
     m_secretsManagerSecretId = jsonValue.GetString("SecretsManagerSecretId");
-
     m_secretsManagerSecretIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrimSpaceInChar"))
   {
     m_trimSpaceInChar = jsonValue.GetBool("TrimSpaceInChar");
-
     m_trimSpaceInCharHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TlogAccessMode"))
   {
     m_tlogAccessMode = TlogAccessModeMapper::GetTlogAccessModeForName(jsonValue.GetString("TlogAccessMode"));
-
     m_tlogAccessModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ForceLobLookup"))
   {
     m_forceLobLookup = jsonValue.GetBool("ForceLobLookup");
-
     m_forceLobLookupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthenticationMethod"))
   {
     m_authenticationMethod = SqlServerAuthenticationMethodMapper::GetSqlServerAuthenticationMethodForName(jsonValue.GetString("AuthenticationMethod"));
-
     m_authenticationMethodHasBeenSet = true;
   }
-
   return *this;
 }
 

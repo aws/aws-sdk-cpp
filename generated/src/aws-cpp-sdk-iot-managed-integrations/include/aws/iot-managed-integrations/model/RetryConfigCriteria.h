@@ -32,7 +32,7 @@ namespace Model
   class RetryConfigCriteria
   {
   public:
-    AWS_IOTMANAGEDINTEGRATIONS_API RetryConfigCriteria();
+    AWS_IOTMANAGEDINTEGRATIONS_API RetryConfigCriteria() = default;
     AWS_IOTMANAGEDINTEGRATIONS_API RetryConfigCriteria(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTMANAGEDINTEGRATIONS_API RetryConfigCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTMANAGEDINTEGRATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,10 @@ namespace Model
     /**
      * <p>Over-the-air (OTA) retry criteria failure type.</p>
      */
-    inline const RetryCriteriaFailureType& GetFailureType() const{ return m_failureType; }
+    inline RetryCriteriaFailureType GetFailureType() const { return m_failureType; }
     inline bool FailureTypeHasBeenSet() const { return m_failureTypeHasBeenSet; }
-    inline void SetFailureType(const RetryCriteriaFailureType& value) { m_failureTypeHasBeenSet = true; m_failureType = value; }
-    inline void SetFailureType(RetryCriteriaFailureType&& value) { m_failureTypeHasBeenSet = true; m_failureType = std::move(value); }
-    inline RetryConfigCriteria& WithFailureType(const RetryCriteriaFailureType& value) { SetFailureType(value); return *this;}
-    inline RetryConfigCriteria& WithFailureType(RetryCriteriaFailureType&& value) { SetFailureType(std::move(value)); return *this;}
+    inline void SetFailureType(RetryCriteriaFailureType value) { m_failureTypeHasBeenSet = true; m_failureType = value; }
+    inline RetryConfigCriteria& WithFailureType(RetryCriteriaFailureType value) { SetFailureType(value); return *this;}
     ///@}
 
     ///@{
@@ -55,17 +53,17 @@ namespace Model
      * <p>The number of retries allowed for a failure type for the over-the-air (OTA)
      * task.</p>
      */
-    inline int GetMinNumberOfRetries() const{ return m_minNumberOfRetries; }
+    inline int GetMinNumberOfRetries() const { return m_minNumberOfRetries; }
     inline bool MinNumberOfRetriesHasBeenSet() const { return m_minNumberOfRetriesHasBeenSet; }
     inline void SetMinNumberOfRetries(int value) { m_minNumberOfRetriesHasBeenSet = true; m_minNumberOfRetries = value; }
     inline RetryConfigCriteria& WithMinNumberOfRetries(int value) { SetMinNumberOfRetries(value); return *this;}
     ///@}
   private:
 
-    RetryCriteriaFailureType m_failureType;
+    RetryCriteriaFailureType m_failureType{RetryCriteriaFailureType::NOT_SET};
     bool m_failureTypeHasBeenSet = false;
 
-    int m_minNumberOfRetries;
+    int m_minNumberOfRetries{0};
     bool m_minNumberOfRetriesHasBeenSet = false;
   };
 

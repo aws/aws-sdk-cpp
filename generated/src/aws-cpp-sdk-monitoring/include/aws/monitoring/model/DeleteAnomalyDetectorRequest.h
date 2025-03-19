@@ -22,7 +22,7 @@ namespace Model
   class DeleteAnomalyDetectorRequest : public CloudWatchRequest
   {
   public:
-    AWS_CLOUDWATCH_API DeleteAnomalyDetectorRequest();
+    AWS_CLOUDWATCH_API DeleteAnomalyDetectorRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -49,12 +49,12 @@ namespace Model
      * single metric anomaly detector attributes as part of the
      * <code>SingleMetricAnomalyDetector</code> property.</p>
      */
-    inline const SingleMetricAnomalyDetector& GetSingleMetricAnomalyDetector() const{ return m_singleMetricAnomalyDetector; }
+    inline const SingleMetricAnomalyDetector& GetSingleMetricAnomalyDetector() const { return m_singleMetricAnomalyDetector; }
     inline bool SingleMetricAnomalyDetectorHasBeenSet() const { return m_singleMetricAnomalyDetectorHasBeenSet; }
-    inline void SetSingleMetricAnomalyDetector(const SingleMetricAnomalyDetector& value) { m_singleMetricAnomalyDetectorHasBeenSet = true; m_singleMetricAnomalyDetector = value; }
-    inline void SetSingleMetricAnomalyDetector(SingleMetricAnomalyDetector&& value) { m_singleMetricAnomalyDetectorHasBeenSet = true; m_singleMetricAnomalyDetector = std::move(value); }
-    inline DeleteAnomalyDetectorRequest& WithSingleMetricAnomalyDetector(const SingleMetricAnomalyDetector& value) { SetSingleMetricAnomalyDetector(value); return *this;}
-    inline DeleteAnomalyDetectorRequest& WithSingleMetricAnomalyDetector(SingleMetricAnomalyDetector&& value) { SetSingleMetricAnomalyDetector(std::move(value)); return *this;}
+    template<typename SingleMetricAnomalyDetectorT = SingleMetricAnomalyDetector>
+    void SetSingleMetricAnomalyDetector(SingleMetricAnomalyDetectorT&& value) { m_singleMetricAnomalyDetectorHasBeenSet = true; m_singleMetricAnomalyDetector = std::forward<SingleMetricAnomalyDetectorT>(value); }
+    template<typename SingleMetricAnomalyDetectorT = SingleMetricAnomalyDetector>
+    DeleteAnomalyDetectorRequest& WithSingleMetricAnomalyDetector(SingleMetricAnomalyDetectorT&& value) { SetSingleMetricAnomalyDetector(std::forward<SingleMetricAnomalyDetectorT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,12 +69,12 @@ namespace Model
      * metric math anomaly detector attributes as part of the
      * <code>MetricMathAnomalyDetector</code> property.</p>
      */
-    inline const MetricMathAnomalyDetector& GetMetricMathAnomalyDetector() const{ return m_metricMathAnomalyDetector; }
+    inline const MetricMathAnomalyDetector& GetMetricMathAnomalyDetector() const { return m_metricMathAnomalyDetector; }
     inline bool MetricMathAnomalyDetectorHasBeenSet() const { return m_metricMathAnomalyDetectorHasBeenSet; }
-    inline void SetMetricMathAnomalyDetector(const MetricMathAnomalyDetector& value) { m_metricMathAnomalyDetectorHasBeenSet = true; m_metricMathAnomalyDetector = value; }
-    inline void SetMetricMathAnomalyDetector(MetricMathAnomalyDetector&& value) { m_metricMathAnomalyDetectorHasBeenSet = true; m_metricMathAnomalyDetector = std::move(value); }
-    inline DeleteAnomalyDetectorRequest& WithMetricMathAnomalyDetector(const MetricMathAnomalyDetector& value) { SetMetricMathAnomalyDetector(value); return *this;}
-    inline DeleteAnomalyDetectorRequest& WithMetricMathAnomalyDetector(MetricMathAnomalyDetector&& value) { SetMetricMathAnomalyDetector(std::move(value)); return *this;}
+    template<typename MetricMathAnomalyDetectorT = MetricMathAnomalyDetector>
+    void SetMetricMathAnomalyDetector(MetricMathAnomalyDetectorT&& value) { m_metricMathAnomalyDetectorHasBeenSet = true; m_metricMathAnomalyDetector = std::forward<MetricMathAnomalyDetectorT>(value); }
+    template<typename MetricMathAnomalyDetectorT = MetricMathAnomalyDetector>
+    DeleteAnomalyDetectorRequest& WithMetricMathAnomalyDetector(MetricMathAnomalyDetectorT&& value) { SetMetricMathAnomalyDetector(std::forward<MetricMathAnomalyDetectorT>(value)); return *this;}
     ///@}
   private:
 

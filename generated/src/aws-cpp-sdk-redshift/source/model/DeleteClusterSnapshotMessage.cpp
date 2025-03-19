@@ -20,14 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-DeleteClusterSnapshotMessage::DeleteClusterSnapshotMessage() : 
-    m_snapshotIdentifierHasBeenSet(false),
-    m_snapshotClusterIdentifierHasBeenSet(false)
-{
-}
-
 DeleteClusterSnapshotMessage::DeleteClusterSnapshotMessage(const XmlNode& xmlNode)
-  : DeleteClusterSnapshotMessage()
 {
   *this = xmlNode;
 }

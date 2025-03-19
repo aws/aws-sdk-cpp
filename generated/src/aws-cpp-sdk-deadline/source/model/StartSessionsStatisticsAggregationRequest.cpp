@@ -12,19 +12,6 @@ using namespace Aws::deadline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartSessionsStatisticsAggregationRequest::StartSessionsStatisticsAggregationRequest() : 
-    m_farmIdHasBeenSet(false),
-    m_resourceIdsHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_timezoneHasBeenSet(false),
-    m_period(Period::NOT_SET),
-    m_periodHasBeenSet(false),
-    m_groupByHasBeenSet(false),
-    m_statisticsHasBeenSet(false)
-{
-}
-
 Aws::String StartSessionsStatisticsAggregationRequest::SerializePayload() const
 {
   JsonValue payload;

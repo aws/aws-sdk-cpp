@@ -18,14 +18,7 @@ namespace ACM
 namespace Model
 {
 
-KeyUsage::KeyUsage() : 
-    m_name(KeyUsageName::NOT_SET),
-    m_nameHasBeenSet(false)
-{
-}
-
 KeyUsage::KeyUsage(JsonView jsonValue)
-  : KeyUsage()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ KeyUsage& KeyUsage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = KeyUsageNameMapper::GetKeyUsageNameForName(jsonValue.GetString("Name"));
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

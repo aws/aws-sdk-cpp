@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListManagedNotificationChannelAssociationsResult::ListManagedNotificationChannelAssociationsResult()
-{
-}
-
 ListManagedNotificationChannelAssociationsResult::ListManagedNotificationChannelAssociationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListManagedNotificationChannelAssociationsResult& ListManagedNotificationChannel
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("channelAssociations"))
   {
     Aws::Utils::Array<JsonView> channelAssociationsJsonList = jsonValue.GetArray("channelAssociations");
@@ -42,14 +37,15 @@ ListManagedNotificationChannelAssociationsResult& ListManagedNotificationChannel
     {
       m_channelAssociations.push_back(channelAssociationsJsonList[channelAssociationsIndex].AsObject());
     }
+    m_channelAssociationsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

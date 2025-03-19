@@ -18,18 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-OrganizationConfigRuleStatus::OrganizationConfigRuleStatus() : 
-    m_organizationConfigRuleNameHasBeenSet(false),
-    m_organizationRuleStatus(OrganizationRuleStatus::NOT_SET),
-    m_organizationRuleStatusHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
-{
-}
-
 OrganizationConfigRuleStatus::OrganizationConfigRuleStatus(JsonView jsonValue)
-  : OrganizationConfigRuleStatus()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ OrganizationConfigRuleStatus& OrganizationConfigRuleStatus::operator =(JsonView 
   if(jsonValue.ValueExists("OrganizationConfigRuleName"))
   {
     m_organizationConfigRuleName = jsonValue.GetString("OrganizationConfigRuleName");
-
     m_organizationConfigRuleNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrganizationRuleStatus"))
   {
     m_organizationRuleStatus = OrganizationRuleStatusMapper::GetOrganizationRuleStatusForName(jsonValue.GetString("OrganizationRuleStatus"));
-
     m_organizationRuleStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = jsonValue.GetString("ErrorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdateTime"))
   {
     m_lastUpdateTime = jsonValue.GetDouble("LastUpdateTime");
-
     m_lastUpdateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

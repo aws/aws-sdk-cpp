@@ -18,25 +18,7 @@ namespace EMR
 namespace Model
 {
 
-Instance::Instance() : 
-    m_idHasBeenSet(false),
-    m_ec2InstanceIdHasBeenSet(false),
-    m_publicDnsNameHasBeenSet(false),
-    m_publicIpAddressHasBeenSet(false),
-    m_privateDnsNameHasBeenSet(false),
-    m_privateIpAddressHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_instanceGroupIdHasBeenSet(false),
-    m_instanceFleetIdHasBeenSet(false),
-    m_market(MarketType::NOT_SET),
-    m_marketHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_ebsVolumesHasBeenSet(false)
-{
-}
-
 Instance::Instance(JsonView jsonValue)
-  : Instance()
 {
   *this = jsonValue;
 }
@@ -46,80 +28,58 @@ Instance& Instance::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ec2InstanceId"))
   {
     m_ec2InstanceId = jsonValue.GetString("Ec2InstanceId");
-
     m_ec2InstanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PublicDnsName"))
   {
     m_publicDnsName = jsonValue.GetString("PublicDnsName");
-
     m_publicDnsNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PublicIpAddress"))
   {
     m_publicIpAddress = jsonValue.GetString("PublicIpAddress");
-
     m_publicIpAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrivateDnsName"))
   {
     m_privateDnsName = jsonValue.GetString("PrivateDnsName");
-
     m_privateDnsNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrivateIpAddress"))
   {
     m_privateIpAddress = jsonValue.GetString("PrivateIpAddress");
-
     m_privateIpAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetObject("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceGroupId"))
   {
     m_instanceGroupId = jsonValue.GetString("InstanceGroupId");
-
     m_instanceGroupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceFleetId"))
   {
     m_instanceFleetId = jsonValue.GetString("InstanceFleetId");
-
     m_instanceFleetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Market"))
   {
     m_market = MarketTypeMapper::GetMarketTypeForName(jsonValue.GetString("Market"));
-
     m_marketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceType"))
   {
     m_instanceType = jsonValue.GetString("InstanceType");
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EbsVolumes"))
   {
     Aws::Utils::Array<JsonView> ebsVolumesJsonList = jsonValue.GetArray("EbsVolumes");
@@ -129,7 +89,6 @@ Instance& Instance::operator =(JsonView jsonValue)
     }
     m_ebsVolumesHasBeenSet = true;
   }
-
   return *this;
 }
 

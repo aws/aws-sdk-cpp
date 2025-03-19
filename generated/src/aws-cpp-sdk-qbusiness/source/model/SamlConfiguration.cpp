@@ -18,16 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-SamlConfiguration::SamlConfiguration() : 
-    m_metadataXMLHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_userIdAttributeHasBeenSet(false),
-    m_userGroupAttributeHasBeenSet(false)
-{
-}
-
 SamlConfiguration::SamlConfiguration(JsonView jsonValue)
-  : SamlConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ SamlConfiguration& SamlConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("metadataXML"))
   {
     m_metadataXML = jsonValue.GetString("metadataXML");
-
     m_metadataXMLHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userIdAttribute"))
   {
     m_userIdAttribute = jsonValue.GetString("userIdAttribute");
-
     m_userIdAttributeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userGroupAttribute"))
   {
     m_userGroupAttribute = jsonValue.GetString("userGroupAttribute");
-
     m_userGroupAttributeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -22,7 +22,7 @@ namespace Model
   class UpdateResolverRuleRequest : public Route53ResolverRequest
   {
   public:
-    AWS_ROUTE53RESOLVER_API UpdateResolverRuleRequest();
+    AWS_ROUTE53RESOLVER_API UpdateResolverRuleRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,26 +39,24 @@ namespace Model
     /**
      * <p>The ID of the Resolver rule that you want to update.</p>
      */
-    inline const Aws::String& GetResolverRuleId() const{ return m_resolverRuleId; }
+    inline const Aws::String& GetResolverRuleId() const { return m_resolverRuleId; }
     inline bool ResolverRuleIdHasBeenSet() const { return m_resolverRuleIdHasBeenSet; }
-    inline void SetResolverRuleId(const Aws::String& value) { m_resolverRuleIdHasBeenSet = true; m_resolverRuleId = value; }
-    inline void SetResolverRuleId(Aws::String&& value) { m_resolverRuleIdHasBeenSet = true; m_resolverRuleId = std::move(value); }
-    inline void SetResolverRuleId(const char* value) { m_resolverRuleIdHasBeenSet = true; m_resolverRuleId.assign(value); }
-    inline UpdateResolverRuleRequest& WithResolverRuleId(const Aws::String& value) { SetResolverRuleId(value); return *this;}
-    inline UpdateResolverRuleRequest& WithResolverRuleId(Aws::String&& value) { SetResolverRuleId(std::move(value)); return *this;}
-    inline UpdateResolverRuleRequest& WithResolverRuleId(const char* value) { SetResolverRuleId(value); return *this;}
+    template<typename ResolverRuleIdT = Aws::String>
+    void SetResolverRuleId(ResolverRuleIdT&& value) { m_resolverRuleIdHasBeenSet = true; m_resolverRuleId = std::forward<ResolverRuleIdT>(value); }
+    template<typename ResolverRuleIdT = Aws::String>
+    UpdateResolverRuleRequest& WithResolverRuleId(ResolverRuleIdT&& value) { SetResolverRuleId(std::forward<ResolverRuleIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The new settings for the Resolver rule.</p>
      */
-    inline const ResolverRuleConfig& GetConfig() const{ return m_config; }
+    inline const ResolverRuleConfig& GetConfig() const { return m_config; }
     inline bool ConfigHasBeenSet() const { return m_configHasBeenSet; }
-    inline void SetConfig(const ResolverRuleConfig& value) { m_configHasBeenSet = true; m_config = value; }
-    inline void SetConfig(ResolverRuleConfig&& value) { m_configHasBeenSet = true; m_config = std::move(value); }
-    inline UpdateResolverRuleRequest& WithConfig(const ResolverRuleConfig& value) { SetConfig(value); return *this;}
-    inline UpdateResolverRuleRequest& WithConfig(ResolverRuleConfig&& value) { SetConfig(std::move(value)); return *this;}
+    template<typename ConfigT = ResolverRuleConfig>
+    void SetConfig(ConfigT&& value) { m_configHasBeenSet = true; m_config = std::forward<ConfigT>(value); }
+    template<typename ConfigT = ResolverRuleConfig>
+    UpdateResolverRuleRequest& WithConfig(ConfigT&& value) { SetConfig(std::forward<ConfigT>(value)); return *this;}
     ///@}
   private:
 

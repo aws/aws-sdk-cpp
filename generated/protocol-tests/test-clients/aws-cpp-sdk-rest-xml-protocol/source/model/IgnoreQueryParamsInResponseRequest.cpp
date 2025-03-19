@@ -14,9 +14,6 @@ using namespace Aws::RestXmlProtocol::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-IgnoreQueryParamsInResponseRequest::IgnoreQueryParamsInResponseRequest()
-{
-}
 
 Aws::String IgnoreQueryParamsInResponseRequest::SerializePayload() const
 {

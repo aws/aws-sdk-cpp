@@ -28,7 +28,7 @@ namespace Model
   class DescribeHoursOfOperationOverrideResult
   {
   public:
-    AWS_CONNECT_API DescribeHoursOfOperationOverrideResult();
+    AWS_CONNECT_API DescribeHoursOfOperationOverrideResult() = default;
     AWS_CONNECT_API DescribeHoursOfOperationOverrideResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECT_API DescribeHoursOfOperationOverrideResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the hours of operations override. </p>
      */
-    inline const HoursOfOperationOverride& GetHoursOfOperationOverride() const{ return m_hoursOfOperationOverride; }
-    inline void SetHoursOfOperationOverride(const HoursOfOperationOverride& value) { m_hoursOfOperationOverride = value; }
-    inline void SetHoursOfOperationOverride(HoursOfOperationOverride&& value) { m_hoursOfOperationOverride = std::move(value); }
-    inline DescribeHoursOfOperationOverrideResult& WithHoursOfOperationOverride(const HoursOfOperationOverride& value) { SetHoursOfOperationOverride(value); return *this;}
-    inline DescribeHoursOfOperationOverrideResult& WithHoursOfOperationOverride(HoursOfOperationOverride&& value) { SetHoursOfOperationOverride(std::move(value)); return *this;}
+    inline const HoursOfOperationOverride& GetHoursOfOperationOverride() const { return m_hoursOfOperationOverride; }
+    template<typename HoursOfOperationOverrideT = HoursOfOperationOverride>
+    void SetHoursOfOperationOverride(HoursOfOperationOverrideT&& value) { m_hoursOfOperationOverrideHasBeenSet = true; m_hoursOfOperationOverride = std::forward<HoursOfOperationOverrideT>(value); }
+    template<typename HoursOfOperationOverrideT = HoursOfOperationOverride>
+    DescribeHoursOfOperationOverrideResult& WithHoursOfOperationOverride(HoursOfOperationOverrideT&& value) { SetHoursOfOperationOverride(std::forward<HoursOfOperationOverrideT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeHoursOfOperationOverrideResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeHoursOfOperationOverrideResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeHoursOfOperationOverrideResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeHoursOfOperationOverrideResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     HoursOfOperationOverride m_hoursOfOperationOverride;
+    bool m_hoursOfOperationOverrideHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

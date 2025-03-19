@@ -20,17 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-AvailabilityZone::AvailabilityZone() : 
-    m_zoneNameHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_outpostIdHasBeenSet(false),
-    m_loadBalancerAddressesHasBeenSet(false),
-    m_sourceNatIpv6PrefixesHasBeenSet(false)
-{
-}
-
 AvailabilityZone::AvailabilityZone(const XmlNode& xmlNode)
-  : AvailabilityZone()
 {
   *this = xmlNode;
 }
@@ -63,6 +53,7 @@ AvailabilityZone& AvailabilityZone::operator =(const XmlNode& xmlNode)
     if(!loadBalancerAddressesNode.IsNull())
     {
       XmlNode loadBalancerAddressesMember = loadBalancerAddressesNode.FirstChild("member");
+      m_loadBalancerAddressesHasBeenSet = !loadBalancerAddressesMember.IsNull();
       while(!loadBalancerAddressesMember.IsNull())
       {
         m_loadBalancerAddresses.push_back(loadBalancerAddressesMember);
@@ -75,6 +66,7 @@ AvailabilityZone& AvailabilityZone::operator =(const XmlNode& xmlNode)
     if(!sourceNatIpv6PrefixesNode.IsNull())
     {
       XmlNode sourceNatIpv6PrefixesMember = sourceNatIpv6PrefixesNode.FirstChild("member");
+      m_sourceNatIpv6PrefixesHasBeenSet = !sourceNatIpv6PrefixesMember.IsNull();
       while(!sourceNatIpv6PrefixesMember.IsNull())
       {
         m_sourceNatIpv6Prefixes.push_back(sourceNatIpv6PrefixesMember.GetText());

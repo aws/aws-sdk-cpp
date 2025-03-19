@@ -27,7 +27,7 @@ namespace Model
   class UpdateImageResult
   {
   public:
-    AWS_SAGEMAKER_API UpdateImageResult();
+    AWS_SAGEMAKER_API UpdateImageResult() = default;
     AWS_SAGEMAKER_API UpdateImageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API UpdateImageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The ARN of the image.</p>
      */
-    inline const Aws::String& GetImageArn() const{ return m_imageArn; }
-    inline void SetImageArn(const Aws::String& value) { m_imageArn = value; }
-    inline void SetImageArn(Aws::String&& value) { m_imageArn = std::move(value); }
-    inline void SetImageArn(const char* value) { m_imageArn.assign(value); }
-    inline UpdateImageResult& WithImageArn(const Aws::String& value) { SetImageArn(value); return *this;}
-    inline UpdateImageResult& WithImageArn(Aws::String&& value) { SetImageArn(std::move(value)); return *this;}
-    inline UpdateImageResult& WithImageArn(const char* value) { SetImageArn(value); return *this;}
+    inline const Aws::String& GetImageArn() const { return m_imageArn; }
+    template<typename ImageArnT = Aws::String>
+    void SetImageArn(ImageArnT&& value) { m_imageArnHasBeenSet = true; m_imageArn = std::forward<ImageArnT>(value); }
+    template<typename ImageArnT = Aws::String>
+    UpdateImageResult& WithImageArn(ImageArnT&& value) { SetImageArn(std::forward<ImageArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateImageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateImageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateImageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateImageResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_imageArn;
+    bool m_imageArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

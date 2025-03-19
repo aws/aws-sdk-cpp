@@ -18,15 +18,7 @@ namespace MemoryDB
 namespace Model
 {
 
-RecurringCharge::RecurringCharge() : 
-    m_recurringChargeAmount(0.0),
-    m_recurringChargeAmountHasBeenSet(false),
-    m_recurringChargeFrequencyHasBeenSet(false)
-{
-}
-
 RecurringCharge::RecurringCharge(JsonView jsonValue)
-  : RecurringCharge()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ RecurringCharge& RecurringCharge::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RecurringChargeAmount"))
   {
     m_recurringChargeAmount = jsonValue.GetDouble("RecurringChargeAmount");
-
     m_recurringChargeAmountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecurringChargeFrequency"))
   {
     m_recurringChargeFrequency = jsonValue.GetString("RecurringChargeFrequency");
-
     m_recurringChargeFrequencyHasBeenSet = true;
   }
-
   return *this;
 }
 

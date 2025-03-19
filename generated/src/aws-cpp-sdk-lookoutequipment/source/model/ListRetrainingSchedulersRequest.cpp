@@ -12,16 +12,6 @@ using namespace Aws::LookoutEquipment::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListRetrainingSchedulersRequest::ListRetrainingSchedulersRequest() : 
-    m_modelNameBeginsWithHasBeenSet(false),
-    m_status(RetrainingSchedulerStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListRetrainingSchedulersRequest::SerializePayload() const
 {
   JsonValue payload;

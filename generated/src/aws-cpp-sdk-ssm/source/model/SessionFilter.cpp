@@ -18,15 +18,7 @@ namespace SSM
 namespace Model
 {
 
-SessionFilter::SessionFilter() : 
-    m_key(SessionFilterKey::NOT_SET),
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 SessionFilter::SessionFilter(JsonView jsonValue)
-  : SessionFilter()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SessionFilter& SessionFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("key"))
   {
     m_key = SessionFilterKeyMapper::GetSessionFilterKeyForName(jsonValue.GetString("key"));
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

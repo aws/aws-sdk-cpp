@@ -28,7 +28,7 @@ namespace Model
   class GetResourceResult
   {
   public:
-    AWS_CLOUDCONTROLAPI_API GetResourceResult();
+    AWS_CLOUDCONTROLAPI_API GetResourceResult() = default;
     AWS_CLOUDCONTROLAPI_API GetResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDCONTROLAPI_API GetResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,41 +37,40 @@ namespace Model
     /**
      * <p>The name of the resource type.</p>
      */
-    inline const Aws::String& GetTypeName() const{ return m_typeName; }
-    inline void SetTypeName(const Aws::String& value) { m_typeName = value; }
-    inline void SetTypeName(Aws::String&& value) { m_typeName = std::move(value); }
-    inline void SetTypeName(const char* value) { m_typeName.assign(value); }
-    inline GetResourceResult& WithTypeName(const Aws::String& value) { SetTypeName(value); return *this;}
-    inline GetResourceResult& WithTypeName(Aws::String&& value) { SetTypeName(std::move(value)); return *this;}
-    inline GetResourceResult& WithTypeName(const char* value) { SetTypeName(value); return *this;}
+    inline const Aws::String& GetTypeName() const { return m_typeName; }
+    template<typename TypeNameT = Aws::String>
+    void SetTypeName(TypeNameT&& value) { m_typeNameHasBeenSet = true; m_typeName = std::forward<TypeNameT>(value); }
+    template<typename TypeNameT = Aws::String>
+    GetResourceResult& WithTypeName(TypeNameT&& value) { SetTypeName(std::forward<TypeNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResourceDescription& GetResourceDescription() const{ return m_resourceDescription; }
-    inline void SetResourceDescription(const ResourceDescription& value) { m_resourceDescription = value; }
-    inline void SetResourceDescription(ResourceDescription&& value) { m_resourceDescription = std::move(value); }
-    inline GetResourceResult& WithResourceDescription(const ResourceDescription& value) { SetResourceDescription(value); return *this;}
-    inline GetResourceResult& WithResourceDescription(ResourceDescription&& value) { SetResourceDescription(std::move(value)); return *this;}
+    inline const ResourceDescription& GetResourceDescription() const { return m_resourceDescription; }
+    template<typename ResourceDescriptionT = ResourceDescription>
+    void SetResourceDescription(ResourceDescriptionT&& value) { m_resourceDescriptionHasBeenSet = true; m_resourceDescription = std::forward<ResourceDescriptionT>(value); }
+    template<typename ResourceDescriptionT = ResourceDescription>
+    GetResourceResult& WithResourceDescription(ResourceDescriptionT&& value) { SetResourceDescription(std::forward<ResourceDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetResourceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetResourceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetResourceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetResourceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_typeName;
+    bool m_typeNameHasBeenSet = false;
 
     ResourceDescription m_resourceDescription;
+    bool m_resourceDescriptionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,7 +32,7 @@ namespace Model
   class DICOMUpdates
   {
   public:
-    AWS_MEDICALIMAGING_API DICOMUpdates();
+    AWS_MEDICALIMAGING_API DICOMUpdates() = default;
     AWS_MEDICALIMAGING_API DICOMUpdates(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDICALIMAGING_API DICOMUpdates& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDICALIMAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,31 +42,31 @@ namespace Model
     /**
      * <p>The DICOM tags to be removed from <code>ImageSetMetadata</code>.</p>
      */
-    inline const Aws::Utils::CryptoBuffer& GetRemovableAttributes() const{ return m_removableAttributes; }
+    inline const Aws::Utils::CryptoBuffer& GetRemovableAttributes() const { return m_removableAttributes; }
     inline bool RemovableAttributesHasBeenSet() const { return m_removableAttributesHasBeenSet; }
-    inline void SetRemovableAttributes(const Aws::Utils::CryptoBuffer& value) { m_removableAttributesHasBeenSet = true; m_removableAttributes = value; }
-    inline void SetRemovableAttributes(Aws::Utils::CryptoBuffer&& value) { m_removableAttributesHasBeenSet = true; m_removableAttributes = std::move(value); }
-    inline DICOMUpdates& WithRemovableAttributes(const Aws::Utils::CryptoBuffer& value) { SetRemovableAttributes(value); return *this;}
-    inline DICOMUpdates& WithRemovableAttributes(Aws::Utils::CryptoBuffer&& value) { SetRemovableAttributes(std::move(value)); return *this;}
+    template<typename RemovableAttributesT = Aws::Utils::CryptoBuffer>
+    void SetRemovableAttributes(RemovableAttributesT&& value) { m_removableAttributesHasBeenSet = true; m_removableAttributes = std::forward<RemovableAttributesT>(value); }
+    template<typename RemovableAttributesT = Aws::Utils::CryptoBuffer>
+    DICOMUpdates& WithRemovableAttributes(RemovableAttributesT&& value) { SetRemovableAttributes(std::forward<RemovableAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The DICOM tags that need to be updated in <code>ImageSetMetadata</code>.</p>
      */
-    inline const Aws::Utils::CryptoBuffer& GetUpdatableAttributes() const{ return m_updatableAttributes; }
+    inline const Aws::Utils::CryptoBuffer& GetUpdatableAttributes() const { return m_updatableAttributes; }
     inline bool UpdatableAttributesHasBeenSet() const { return m_updatableAttributesHasBeenSet; }
-    inline void SetUpdatableAttributes(const Aws::Utils::CryptoBuffer& value) { m_updatableAttributesHasBeenSet = true; m_updatableAttributes = value; }
-    inline void SetUpdatableAttributes(Aws::Utils::CryptoBuffer&& value) { m_updatableAttributesHasBeenSet = true; m_updatableAttributes = std::move(value); }
-    inline DICOMUpdates& WithUpdatableAttributes(const Aws::Utils::CryptoBuffer& value) { SetUpdatableAttributes(value); return *this;}
-    inline DICOMUpdates& WithUpdatableAttributes(Aws::Utils::CryptoBuffer&& value) { SetUpdatableAttributes(std::move(value)); return *this;}
+    template<typename UpdatableAttributesT = Aws::Utils::CryptoBuffer>
+    void SetUpdatableAttributes(UpdatableAttributesT&& value) { m_updatableAttributesHasBeenSet = true; m_updatableAttributes = std::forward<UpdatableAttributesT>(value); }
+    template<typename UpdatableAttributesT = Aws::Utils::CryptoBuffer>
+    DICOMUpdates& WithUpdatableAttributes(UpdatableAttributesT&& value) { SetUpdatableAttributes(std::forward<UpdatableAttributesT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::CryptoBuffer m_removableAttributes;
+    Aws::Utils::CryptoBuffer m_removableAttributes{};
     bool m_removableAttributesHasBeenSet = false;
 
-    Aws::Utils::CryptoBuffer m_updatableAttributes;
+    Aws::Utils::CryptoBuffer m_updatableAttributes{};
     bool m_updatableAttributesHasBeenSet = false;
   };
 

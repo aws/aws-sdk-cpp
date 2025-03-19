@@ -21,7 +21,7 @@ namespace Model
   class DescribeViewRequest : public ConnectParticipantRequest
   {
   public:
-    AWS_CONNECTPARTICIPANT_API DescribeViewRequest();
+    AWS_CONNECTPARTICIPANT_API DescribeViewRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,24 @@ namespace Model
      * <p>An encrypted token originating from the interactive message of a ShowView
      * block operation. Represents the desired view.</p>
      */
-    inline const Aws::String& GetViewToken() const{ return m_viewToken; }
+    inline const Aws::String& GetViewToken() const { return m_viewToken; }
     inline bool ViewTokenHasBeenSet() const { return m_viewTokenHasBeenSet; }
-    inline void SetViewToken(const Aws::String& value) { m_viewTokenHasBeenSet = true; m_viewToken = value; }
-    inline void SetViewToken(Aws::String&& value) { m_viewTokenHasBeenSet = true; m_viewToken = std::move(value); }
-    inline void SetViewToken(const char* value) { m_viewTokenHasBeenSet = true; m_viewToken.assign(value); }
-    inline DescribeViewRequest& WithViewToken(const Aws::String& value) { SetViewToken(value); return *this;}
-    inline DescribeViewRequest& WithViewToken(Aws::String&& value) { SetViewToken(std::move(value)); return *this;}
-    inline DescribeViewRequest& WithViewToken(const char* value) { SetViewToken(value); return *this;}
+    template<typename ViewTokenT = Aws::String>
+    void SetViewToken(ViewTokenT&& value) { m_viewTokenHasBeenSet = true; m_viewToken = std::forward<ViewTokenT>(value); }
+    template<typename ViewTokenT = Aws::String>
+    DescribeViewRequest& WithViewToken(ViewTokenT&& value) { SetViewToken(std::forward<ViewTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The connection token.</p>
      */
-    inline const Aws::String& GetConnectionToken() const{ return m_connectionToken; }
+    inline const Aws::String& GetConnectionToken() const { return m_connectionToken; }
     inline bool ConnectionTokenHasBeenSet() const { return m_connectionTokenHasBeenSet; }
-    inline void SetConnectionToken(const Aws::String& value) { m_connectionTokenHasBeenSet = true; m_connectionToken = value; }
-    inline void SetConnectionToken(Aws::String&& value) { m_connectionTokenHasBeenSet = true; m_connectionToken = std::move(value); }
-    inline void SetConnectionToken(const char* value) { m_connectionTokenHasBeenSet = true; m_connectionToken.assign(value); }
-    inline DescribeViewRequest& WithConnectionToken(const Aws::String& value) { SetConnectionToken(value); return *this;}
-    inline DescribeViewRequest& WithConnectionToken(Aws::String&& value) { SetConnectionToken(std::move(value)); return *this;}
-    inline DescribeViewRequest& WithConnectionToken(const char* value) { SetConnectionToken(value); return *this;}
+    template<typename ConnectionTokenT = Aws::String>
+    void SetConnectionToken(ConnectionTokenT&& value) { m_connectionTokenHasBeenSet = true; m_connectionToken = std::forward<ConnectionTokenT>(value); }
+    template<typename ConnectionTokenT = Aws::String>
+    DescribeViewRequest& WithConnectionToken(ConnectionTokenT&& value) { SetConnectionToken(std::forward<ConnectionTokenT>(value)); return *this;}
     ///@}
   private:
 

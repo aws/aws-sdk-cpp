@@ -18,10 +18,6 @@ namespace QLDBSession
 namespace Model
 {
 
-EndSessionRequest::EndSessionRequest()
-{
-}
-
 EndSessionRequest::EndSessionRequest(JsonView jsonValue)
 {
   *this = jsonValue;

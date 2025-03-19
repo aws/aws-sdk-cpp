@@ -18,33 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-ProfileAttributes::ProfileAttributes() : 
-    m_accountNumberHasBeenSet(false),
-    m_additionalInformationHasBeenSet(false),
-    m_firstNameHasBeenSet(false),
-    m_lastNameHasBeenSet(false),
-    m_middleNameHasBeenSet(false),
-    m_genderStringHasBeenSet(false),
-    m_partyTypeStringHasBeenSet(false),
-    m_birthDateHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false),
-    m_businessNameHasBeenSet(false),
-    m_businessPhoneNumberHasBeenSet(false),
-    m_homePhoneNumberHasBeenSet(false),
-    m_mobilePhoneNumberHasBeenSet(false),
-    m_emailAddressHasBeenSet(false),
-    m_personalEmailAddressHasBeenSet(false),
-    m_businessEmailAddressHasBeenSet(false),
-    m_addressHasBeenSet(false),
-    m_shippingAddressHasBeenSet(false),
-    m_mailingAddressHasBeenSet(false),
-    m_billingAddressHasBeenSet(false),
-    m_attributesHasBeenSet(false)
-{
-}
-
 ProfileAttributes::ProfileAttributes(JsonView jsonValue)
-  : ProfileAttributes()
 {
   *this = jsonValue;
 }
@@ -54,143 +28,103 @@ ProfileAttributes& ProfileAttributes::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AccountNumber"))
   {
     m_accountNumber = jsonValue.GetObject("AccountNumber");
-
     m_accountNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdditionalInformation"))
   {
     m_additionalInformation = jsonValue.GetObject("AdditionalInformation");
-
     m_additionalInformationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FirstName"))
   {
     m_firstName = jsonValue.GetObject("FirstName");
-
     m_firstNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastName"))
   {
     m_lastName = jsonValue.GetObject("LastName");
-
     m_lastNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MiddleName"))
   {
     m_middleName = jsonValue.GetObject("MiddleName");
-
     m_middleNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GenderString"))
   {
     m_genderString = jsonValue.GetObject("GenderString");
-
     m_genderStringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PartyTypeString"))
   {
     m_partyTypeString = jsonValue.GetObject("PartyTypeString");
-
     m_partyTypeStringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BirthDate"))
   {
     m_birthDate = jsonValue.GetObject("BirthDate");
-
     m_birthDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PhoneNumber"))
   {
     m_phoneNumber = jsonValue.GetObject("PhoneNumber");
-
     m_phoneNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BusinessName"))
   {
     m_businessName = jsonValue.GetObject("BusinessName");
-
     m_businessNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BusinessPhoneNumber"))
   {
     m_businessPhoneNumber = jsonValue.GetObject("BusinessPhoneNumber");
-
     m_businessPhoneNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HomePhoneNumber"))
   {
     m_homePhoneNumber = jsonValue.GetObject("HomePhoneNumber");
-
     m_homePhoneNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MobilePhoneNumber"))
   {
     m_mobilePhoneNumber = jsonValue.GetObject("MobilePhoneNumber");
-
     m_mobilePhoneNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EmailAddress"))
   {
     m_emailAddress = jsonValue.GetObject("EmailAddress");
-
     m_emailAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PersonalEmailAddress"))
   {
     m_personalEmailAddress = jsonValue.GetObject("PersonalEmailAddress");
-
     m_personalEmailAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BusinessEmailAddress"))
   {
     m_businessEmailAddress = jsonValue.GetObject("BusinessEmailAddress");
-
     m_businessEmailAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Address"))
   {
     m_address = jsonValue.GetObject("Address");
-
     m_addressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ShippingAddress"))
   {
     m_shippingAddress = jsonValue.GetObject("ShippingAddress");
-
     m_shippingAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MailingAddress"))
   {
     m_mailingAddress = jsonValue.GetObject("MailingAddress");
-
     m_mailingAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BillingAddress"))
   {
     m_billingAddress = jsonValue.GetObject("BillingAddress");
-
     m_billingAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Attributes"))
   {
     Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();
@@ -200,7 +134,6 @@ ProfileAttributes& ProfileAttributes::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
-
   return *this;
 }
 

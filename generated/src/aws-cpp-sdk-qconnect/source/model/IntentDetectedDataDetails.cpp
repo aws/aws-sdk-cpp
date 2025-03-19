@@ -18,14 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-IntentDetectedDataDetails::IntentDetectedDataDetails() : 
-    m_intentHasBeenSet(false),
-    m_intentIdHasBeenSet(false)
-{
-}
-
 IntentDetectedDataDetails::IntentDetectedDataDetails(JsonView jsonValue)
-  : IntentDetectedDataDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ IntentDetectedDataDetails& IntentDetectedDataDetails::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("intent"))
   {
     m_intent = jsonValue.GetString("intent");
-
     m_intentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("intentId"))
   {
     m_intentId = jsonValue.GetString("intentId");
-
     m_intentIdHasBeenSet = true;
   }
-
   return *this;
 }
 

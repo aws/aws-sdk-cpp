@@ -27,7 +27,7 @@ namespace Model
   class PurchaseReservedInstancesOfferingRequest : public EC2Request
   {
   public:
-    AWS_EC2_API PurchaseReservedInstancesOfferingRequest();
+    AWS_EC2_API PurchaseReservedInstancesOfferingRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,7 +46,7 @@ namespace Model
     /**
      * <p>The number of Reserved Instances to purchase.</p>
      */
-    inline int GetInstanceCount() const{ return m_instanceCount; }
+    inline int GetInstanceCount() const { return m_instanceCount; }
     inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
     inline PurchaseReservedInstancesOfferingRequest& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
@@ -56,14 +56,12 @@ namespace Model
     /**
      * <p>The ID of the Reserved Instance offering to purchase.</p>
      */
-    inline const Aws::String& GetReservedInstancesOfferingId() const{ return m_reservedInstancesOfferingId; }
+    inline const Aws::String& GetReservedInstancesOfferingId() const { return m_reservedInstancesOfferingId; }
     inline bool ReservedInstancesOfferingIdHasBeenSet() const { return m_reservedInstancesOfferingIdHasBeenSet; }
-    inline void SetReservedInstancesOfferingId(const Aws::String& value) { m_reservedInstancesOfferingIdHasBeenSet = true; m_reservedInstancesOfferingId = value; }
-    inline void SetReservedInstancesOfferingId(Aws::String&& value) { m_reservedInstancesOfferingIdHasBeenSet = true; m_reservedInstancesOfferingId = std::move(value); }
-    inline void SetReservedInstancesOfferingId(const char* value) { m_reservedInstancesOfferingIdHasBeenSet = true; m_reservedInstancesOfferingId.assign(value); }
-    inline PurchaseReservedInstancesOfferingRequest& WithReservedInstancesOfferingId(const Aws::String& value) { SetReservedInstancesOfferingId(value); return *this;}
-    inline PurchaseReservedInstancesOfferingRequest& WithReservedInstancesOfferingId(Aws::String&& value) { SetReservedInstancesOfferingId(std::move(value)); return *this;}
-    inline PurchaseReservedInstancesOfferingRequest& WithReservedInstancesOfferingId(const char* value) { SetReservedInstancesOfferingId(value); return *this;}
+    template<typename ReservedInstancesOfferingIdT = Aws::String>
+    void SetReservedInstancesOfferingId(ReservedInstancesOfferingIdT&& value) { m_reservedInstancesOfferingIdHasBeenSet = true; m_reservedInstancesOfferingId = std::forward<ReservedInstancesOfferingIdT>(value); }
+    template<typename ReservedInstancesOfferingIdT = Aws::String>
+    PurchaseReservedInstancesOfferingRequest& WithReservedInstancesOfferingId(ReservedInstancesOfferingIdT&& value) { SetReservedInstancesOfferingId(std::forward<ReservedInstancesOfferingIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,12 +69,12 @@ namespace Model
      * <p>The time at which to purchase the Reserved Instance, in UTC format (for
      * example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
      */
-    inline const Aws::Utils::DateTime& GetPurchaseTime() const{ return m_purchaseTime; }
+    inline const Aws::Utils::DateTime& GetPurchaseTime() const { return m_purchaseTime; }
     inline bool PurchaseTimeHasBeenSet() const { return m_purchaseTimeHasBeenSet; }
-    inline void SetPurchaseTime(const Aws::Utils::DateTime& value) { m_purchaseTimeHasBeenSet = true; m_purchaseTime = value; }
-    inline void SetPurchaseTime(Aws::Utils::DateTime&& value) { m_purchaseTimeHasBeenSet = true; m_purchaseTime = std::move(value); }
-    inline PurchaseReservedInstancesOfferingRequest& WithPurchaseTime(const Aws::Utils::DateTime& value) { SetPurchaseTime(value); return *this;}
-    inline PurchaseReservedInstancesOfferingRequest& WithPurchaseTime(Aws::Utils::DateTime&& value) { SetPurchaseTime(std::move(value)); return *this;}
+    template<typename PurchaseTimeT = Aws::Utils::DateTime>
+    void SetPurchaseTime(PurchaseTimeT&& value) { m_purchaseTimeHasBeenSet = true; m_purchaseTime = std::forward<PurchaseTimeT>(value); }
+    template<typename PurchaseTimeT = Aws::Utils::DateTime>
+    PurchaseReservedInstancesOfferingRequest& WithPurchaseTime(PurchaseTimeT&& value) { SetPurchaseTime(std::forward<PurchaseTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,7 +84,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline PurchaseReservedInstancesOfferingRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -98,25 +96,25 @@ namespace Model
      * order and ensure that the Reserved Instances are not purchased at unexpected
      * prices.</p>
      */
-    inline const ReservedInstanceLimitPrice& GetLimitPrice() const{ return m_limitPrice; }
+    inline const ReservedInstanceLimitPrice& GetLimitPrice() const { return m_limitPrice; }
     inline bool LimitPriceHasBeenSet() const { return m_limitPriceHasBeenSet; }
-    inline void SetLimitPrice(const ReservedInstanceLimitPrice& value) { m_limitPriceHasBeenSet = true; m_limitPrice = value; }
-    inline void SetLimitPrice(ReservedInstanceLimitPrice&& value) { m_limitPriceHasBeenSet = true; m_limitPrice = std::move(value); }
-    inline PurchaseReservedInstancesOfferingRequest& WithLimitPrice(const ReservedInstanceLimitPrice& value) { SetLimitPrice(value); return *this;}
-    inline PurchaseReservedInstancesOfferingRequest& WithLimitPrice(ReservedInstanceLimitPrice&& value) { SetLimitPrice(std::move(value)); return *this;}
+    template<typename LimitPriceT = ReservedInstanceLimitPrice>
+    void SetLimitPrice(LimitPriceT&& value) { m_limitPriceHasBeenSet = true; m_limitPrice = std::forward<LimitPriceT>(value); }
+    template<typename LimitPriceT = ReservedInstanceLimitPrice>
+    PurchaseReservedInstancesOfferingRequest& WithLimitPrice(LimitPriceT&& value) { SetLimitPrice(std::forward<LimitPriceT>(value)); return *this;}
     ///@}
   private:
 
-    int m_instanceCount;
+    int m_instanceCount{0};
     bool m_instanceCountHasBeenSet = false;
 
     Aws::String m_reservedInstancesOfferingId;
     bool m_reservedInstancesOfferingIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_purchaseTime;
+    Aws::Utils::DateTime m_purchaseTime{};
     bool m_purchaseTimeHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     ReservedInstanceLimitPrice m_limitPrice;

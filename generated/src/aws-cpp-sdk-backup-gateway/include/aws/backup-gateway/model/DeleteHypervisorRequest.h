@@ -21,7 +21,7 @@ namespace Model
   class DeleteHypervisorRequest : public BackupGatewayRequest
   {
   public:
-    AWS_BACKUPGATEWAY_API DeleteHypervisorRequest();
+    AWS_BACKUPGATEWAY_API DeleteHypervisorRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the hypervisor to delete.</p>
      */
-    inline const Aws::String& GetHypervisorArn() const{ return m_hypervisorArn; }
+    inline const Aws::String& GetHypervisorArn() const { return m_hypervisorArn; }
     inline bool HypervisorArnHasBeenSet() const { return m_hypervisorArnHasBeenSet; }
-    inline void SetHypervisorArn(const Aws::String& value) { m_hypervisorArnHasBeenSet = true; m_hypervisorArn = value; }
-    inline void SetHypervisorArn(Aws::String&& value) { m_hypervisorArnHasBeenSet = true; m_hypervisorArn = std::move(value); }
-    inline void SetHypervisorArn(const char* value) { m_hypervisorArnHasBeenSet = true; m_hypervisorArn.assign(value); }
-    inline DeleteHypervisorRequest& WithHypervisorArn(const Aws::String& value) { SetHypervisorArn(value); return *this;}
-    inline DeleteHypervisorRequest& WithHypervisorArn(Aws::String&& value) { SetHypervisorArn(std::move(value)); return *this;}
-    inline DeleteHypervisorRequest& WithHypervisorArn(const char* value) { SetHypervisorArn(value); return *this;}
+    template<typename HypervisorArnT = Aws::String>
+    void SetHypervisorArn(HypervisorArnT&& value) { m_hypervisorArnHasBeenSet = true; m_hypervisorArn = std::forward<HypervisorArnT>(value); }
+    template<typename HypervisorArnT = Aws::String>
+    DeleteHypervisorRequest& WithHypervisorArn(HypervisorArnT&& value) { SetHypervisorArn(std::forward<HypervisorArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-RunInstancesMonitoringEnabled::RunInstancesMonitoringEnabled() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 RunInstancesMonitoringEnabled::RunInstancesMonitoringEnabled(const XmlNode& xmlNode)
-  : RunInstancesMonitoringEnabled()
 {
   *this = xmlNode;
 }

@@ -29,7 +29,7 @@ namespace Model
   class ListWirelessGatewayTaskDefinitionsResult
   {
   public:
-    AWS_IOTWIRELESS_API ListWirelessGatewayTaskDefinitionsResult();
+    AWS_IOTWIRELESS_API ListWirelessGatewayTaskDefinitionsResult() = default;
     AWS_IOTWIRELESS_API ListWirelessGatewayTaskDefinitionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTWIRELESS_API ListWirelessGatewayTaskDefinitionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,44 @@ namespace Model
      * <p>The token to use to get the next set of results, or <b>null</b> if there are
      * no additional results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListWirelessGatewayTaskDefinitionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListWirelessGatewayTaskDefinitionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListWirelessGatewayTaskDefinitionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListWirelessGatewayTaskDefinitionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of task definitions.</p>
      */
-    inline const Aws::Vector<UpdateWirelessGatewayTaskEntry>& GetTaskDefinitions() const{ return m_taskDefinitions; }
-    inline void SetTaskDefinitions(const Aws::Vector<UpdateWirelessGatewayTaskEntry>& value) { m_taskDefinitions = value; }
-    inline void SetTaskDefinitions(Aws::Vector<UpdateWirelessGatewayTaskEntry>&& value) { m_taskDefinitions = std::move(value); }
-    inline ListWirelessGatewayTaskDefinitionsResult& WithTaskDefinitions(const Aws::Vector<UpdateWirelessGatewayTaskEntry>& value) { SetTaskDefinitions(value); return *this;}
-    inline ListWirelessGatewayTaskDefinitionsResult& WithTaskDefinitions(Aws::Vector<UpdateWirelessGatewayTaskEntry>&& value) { SetTaskDefinitions(std::move(value)); return *this;}
-    inline ListWirelessGatewayTaskDefinitionsResult& AddTaskDefinitions(const UpdateWirelessGatewayTaskEntry& value) { m_taskDefinitions.push_back(value); return *this; }
-    inline ListWirelessGatewayTaskDefinitionsResult& AddTaskDefinitions(UpdateWirelessGatewayTaskEntry&& value) { m_taskDefinitions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<UpdateWirelessGatewayTaskEntry>& GetTaskDefinitions() const { return m_taskDefinitions; }
+    template<typename TaskDefinitionsT = Aws::Vector<UpdateWirelessGatewayTaskEntry>>
+    void SetTaskDefinitions(TaskDefinitionsT&& value) { m_taskDefinitionsHasBeenSet = true; m_taskDefinitions = std::forward<TaskDefinitionsT>(value); }
+    template<typename TaskDefinitionsT = Aws::Vector<UpdateWirelessGatewayTaskEntry>>
+    ListWirelessGatewayTaskDefinitionsResult& WithTaskDefinitions(TaskDefinitionsT&& value) { SetTaskDefinitions(std::forward<TaskDefinitionsT>(value)); return *this;}
+    template<typename TaskDefinitionsT = UpdateWirelessGatewayTaskEntry>
+    ListWirelessGatewayTaskDefinitionsResult& AddTaskDefinitions(TaskDefinitionsT&& value) { m_taskDefinitionsHasBeenSet = true; m_taskDefinitions.emplace_back(std::forward<TaskDefinitionsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListWirelessGatewayTaskDefinitionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListWirelessGatewayTaskDefinitionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListWirelessGatewayTaskDefinitionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListWirelessGatewayTaskDefinitionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<UpdateWirelessGatewayTaskEntry> m_taskDefinitions;
+    bool m_taskDefinitionsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

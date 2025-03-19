@@ -12,12 +12,6 @@ using namespace Aws::Omics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetReadSetImportJobRequest::GetReadSetImportJobRequest() : 
-    m_idHasBeenSet(false),
-    m_sequenceStoreIdHasBeenSet(false)
-{
-}
-
 Aws::String GetReadSetImportJobRequest::SerializePayload() const
 {
   return {};

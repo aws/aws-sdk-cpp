@@ -12,12 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteTopicRequest::DeleteTopicRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_topicIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTopicRequest::SerializePayload() const
 {
   return {};

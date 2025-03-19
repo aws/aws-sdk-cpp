@@ -18,13 +18,7 @@ namespace SMS
 namespace Model
 {
 
-UserData::UserData() : 
-    m_s3LocationHasBeenSet(false)
-{
-}
-
 UserData::UserData(JsonView jsonValue)
-  : UserData()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ UserData& UserData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3Location"))
   {
     m_s3Location = jsonValue.GetObject("s3Location");
-
     m_s3LocationHasBeenSet = true;
   }
-
   return *this;
 }
 

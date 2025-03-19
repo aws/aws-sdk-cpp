@@ -12,13 +12,6 @@ using namespace Aws::SFN::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateStateMachineAliasRequest::UpdateStateMachineAliasRequest() : 
-    m_stateMachineAliasArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_routingConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateStateMachineAliasRequest::SerializePayload() const
 {
   JsonValue payload;

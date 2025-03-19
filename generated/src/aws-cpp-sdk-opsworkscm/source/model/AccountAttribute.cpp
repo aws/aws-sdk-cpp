@@ -18,17 +18,7 @@ namespace OpsWorksCM
 namespace Model
 {
 
-AccountAttribute::AccountAttribute() : 
-    m_nameHasBeenSet(false),
-    m_maximum(0),
-    m_maximumHasBeenSet(false),
-    m_used(0),
-    m_usedHasBeenSet(false)
-{
-}
-
 AccountAttribute::AccountAttribute(JsonView jsonValue)
-  : AccountAttribute()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ AccountAttribute& AccountAttribute::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Maximum"))
   {
     m_maximum = jsonValue.GetInteger("Maximum");
-
     m_maximumHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Used"))
   {
     m_used = jsonValue.GetInteger("Used");
-
     m_usedHasBeenSet = true;
   }
-
   return *this;
 }
 

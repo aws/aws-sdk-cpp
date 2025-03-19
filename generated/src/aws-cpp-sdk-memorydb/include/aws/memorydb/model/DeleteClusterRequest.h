@@ -21,7 +21,7 @@ namespace Model
   class DeleteClusterRequest : public MemoryDBRequest
   {
   public:
-    AWS_MEMORYDB_API DeleteClusterRequest();
+    AWS_MEMORYDB_API DeleteClusterRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
     /**
      * <p>The name of the cluster to be deleted</p>
      */
-    inline const Aws::String& GetClusterName() const{ return m_clusterName; }
+    inline const Aws::String& GetClusterName() const { return m_clusterName; }
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
-    inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
-    inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
-    inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
-    inline DeleteClusterRequest& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
-    inline DeleteClusterRequest& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
-    inline DeleteClusterRequest& WithClusterName(const char* value) { SetClusterName(value); return *this;}
+    template<typename ClusterNameT = Aws::String>
+    void SetClusterName(ClusterNameT&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::forward<ClusterNameT>(value); }
+    template<typename ClusterNameT = Aws::String>
+    DeleteClusterRequest& WithClusterName(ClusterNameT&& value) { SetClusterName(std::forward<ClusterNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the multi-Region cluster to be deleted.</p>
      */
-    inline const Aws::String& GetMultiRegionClusterName() const{ return m_multiRegionClusterName; }
+    inline const Aws::String& GetMultiRegionClusterName() const { return m_multiRegionClusterName; }
     inline bool MultiRegionClusterNameHasBeenSet() const { return m_multiRegionClusterNameHasBeenSet; }
-    inline void SetMultiRegionClusterName(const Aws::String& value) { m_multiRegionClusterNameHasBeenSet = true; m_multiRegionClusterName = value; }
-    inline void SetMultiRegionClusterName(Aws::String&& value) { m_multiRegionClusterNameHasBeenSet = true; m_multiRegionClusterName = std::move(value); }
-    inline void SetMultiRegionClusterName(const char* value) { m_multiRegionClusterNameHasBeenSet = true; m_multiRegionClusterName.assign(value); }
-    inline DeleteClusterRequest& WithMultiRegionClusterName(const Aws::String& value) { SetMultiRegionClusterName(value); return *this;}
-    inline DeleteClusterRequest& WithMultiRegionClusterName(Aws::String&& value) { SetMultiRegionClusterName(std::move(value)); return *this;}
-    inline DeleteClusterRequest& WithMultiRegionClusterName(const char* value) { SetMultiRegionClusterName(value); return *this;}
+    template<typename MultiRegionClusterNameT = Aws::String>
+    void SetMultiRegionClusterName(MultiRegionClusterNameT&& value) { m_multiRegionClusterNameHasBeenSet = true; m_multiRegionClusterName = std::forward<MultiRegionClusterNameT>(value); }
+    template<typename MultiRegionClusterNameT = Aws::String>
+    DeleteClusterRequest& WithMultiRegionClusterName(MultiRegionClusterNameT&& value) { SetMultiRegionClusterName(std::forward<MultiRegionClusterNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +64,12 @@ namespace Model
      * that identifies the snapshot. MemoryDB creates the snapshot, and then deletes
      * the cluster immediately afterward.</p>
      */
-    inline const Aws::String& GetFinalSnapshotName() const{ return m_finalSnapshotName; }
+    inline const Aws::String& GetFinalSnapshotName() const { return m_finalSnapshotName; }
     inline bool FinalSnapshotNameHasBeenSet() const { return m_finalSnapshotNameHasBeenSet; }
-    inline void SetFinalSnapshotName(const Aws::String& value) { m_finalSnapshotNameHasBeenSet = true; m_finalSnapshotName = value; }
-    inline void SetFinalSnapshotName(Aws::String&& value) { m_finalSnapshotNameHasBeenSet = true; m_finalSnapshotName = std::move(value); }
-    inline void SetFinalSnapshotName(const char* value) { m_finalSnapshotNameHasBeenSet = true; m_finalSnapshotName.assign(value); }
-    inline DeleteClusterRequest& WithFinalSnapshotName(const Aws::String& value) { SetFinalSnapshotName(value); return *this;}
-    inline DeleteClusterRequest& WithFinalSnapshotName(Aws::String&& value) { SetFinalSnapshotName(std::move(value)); return *this;}
-    inline DeleteClusterRequest& WithFinalSnapshotName(const char* value) { SetFinalSnapshotName(value); return *this;}
+    template<typename FinalSnapshotNameT = Aws::String>
+    void SetFinalSnapshotName(FinalSnapshotNameT&& value) { m_finalSnapshotNameHasBeenSet = true; m_finalSnapshotName = std::forward<FinalSnapshotNameT>(value); }
+    template<typename FinalSnapshotNameT = Aws::String>
+    DeleteClusterRequest& WithFinalSnapshotName(FinalSnapshotNameT&& value) { SetFinalSnapshotName(std::forward<FinalSnapshotNameT>(value)); return *this;}
     ///@}
   private:
 

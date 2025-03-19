@@ -18,15 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-MultiplexVideoSettings::MultiplexVideoSettings() : 
-    m_constantBitrate(0),
-    m_constantBitrateHasBeenSet(false),
-    m_statmuxSettingsHasBeenSet(false)
-{
-}
-
 MultiplexVideoSettings::MultiplexVideoSettings(JsonView jsonValue)
-  : MultiplexVideoSettings()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ MultiplexVideoSettings& MultiplexVideoSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("constantBitrate"))
   {
     m_constantBitrate = jsonValue.GetInteger("constantBitrate");
-
     m_constantBitrateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statmuxSettings"))
   {
     m_statmuxSettings = jsonValue.GetObject("statmuxSettings");
-
     m_statmuxSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

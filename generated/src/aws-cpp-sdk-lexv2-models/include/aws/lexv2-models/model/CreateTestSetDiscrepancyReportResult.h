@@ -29,7 +29,7 @@ namespace Model
   class CreateTestSetDiscrepancyReportResult
   {
   public:
-    AWS_LEXMODELSV2_API CreateTestSetDiscrepancyReportResult();
+    AWS_LEXMODELSV2_API CreateTestSetDiscrepancyReportResult() = default;
     AWS_LEXMODELSV2_API CreateTestSetDiscrepancyReportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LEXMODELSV2_API CreateTestSetDiscrepancyReportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,71 +38,70 @@ namespace Model
     /**
      * <p>The unique identifier of the test set discrepancy report to describe.</p>
      */
-    inline const Aws::String& GetTestSetDiscrepancyReportId() const{ return m_testSetDiscrepancyReportId; }
-    inline void SetTestSetDiscrepancyReportId(const Aws::String& value) { m_testSetDiscrepancyReportId = value; }
-    inline void SetTestSetDiscrepancyReportId(Aws::String&& value) { m_testSetDiscrepancyReportId = std::move(value); }
-    inline void SetTestSetDiscrepancyReportId(const char* value) { m_testSetDiscrepancyReportId.assign(value); }
-    inline CreateTestSetDiscrepancyReportResult& WithTestSetDiscrepancyReportId(const Aws::String& value) { SetTestSetDiscrepancyReportId(value); return *this;}
-    inline CreateTestSetDiscrepancyReportResult& WithTestSetDiscrepancyReportId(Aws::String&& value) { SetTestSetDiscrepancyReportId(std::move(value)); return *this;}
-    inline CreateTestSetDiscrepancyReportResult& WithTestSetDiscrepancyReportId(const char* value) { SetTestSetDiscrepancyReportId(value); return *this;}
+    inline const Aws::String& GetTestSetDiscrepancyReportId() const { return m_testSetDiscrepancyReportId; }
+    template<typename TestSetDiscrepancyReportIdT = Aws::String>
+    void SetTestSetDiscrepancyReportId(TestSetDiscrepancyReportIdT&& value) { m_testSetDiscrepancyReportIdHasBeenSet = true; m_testSetDiscrepancyReportId = std::forward<TestSetDiscrepancyReportIdT>(value); }
+    template<typename TestSetDiscrepancyReportIdT = Aws::String>
+    CreateTestSetDiscrepancyReportResult& WithTestSetDiscrepancyReportId(TestSetDiscrepancyReportIdT&& value) { SetTestSetDiscrepancyReportId(std::forward<TestSetDiscrepancyReportIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The creation date and time for the test set discrepancy report.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDateTime() const{ return m_creationDateTime; }
-    inline void SetCreationDateTime(const Aws::Utils::DateTime& value) { m_creationDateTime = value; }
-    inline void SetCreationDateTime(Aws::Utils::DateTime&& value) { m_creationDateTime = std::move(value); }
-    inline CreateTestSetDiscrepancyReportResult& WithCreationDateTime(const Aws::Utils::DateTime& value) { SetCreationDateTime(value); return *this;}
-    inline CreateTestSetDiscrepancyReportResult& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationDateTime() const { return m_creationDateTime; }
+    template<typename CreationDateTimeT = Aws::Utils::DateTime>
+    void SetCreationDateTime(CreationDateTimeT&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::forward<CreationDateTimeT>(value); }
+    template<typename CreationDateTimeT = Aws::Utils::DateTime>
+    CreateTestSetDiscrepancyReportResult& WithCreationDateTime(CreationDateTimeT&& value) { SetCreationDateTime(std::forward<CreationDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The test set Id for the test set discrepancy report.</p>
      */
-    inline const Aws::String& GetTestSetId() const{ return m_testSetId; }
-    inline void SetTestSetId(const Aws::String& value) { m_testSetId = value; }
-    inline void SetTestSetId(Aws::String&& value) { m_testSetId = std::move(value); }
-    inline void SetTestSetId(const char* value) { m_testSetId.assign(value); }
-    inline CreateTestSetDiscrepancyReportResult& WithTestSetId(const Aws::String& value) { SetTestSetId(value); return *this;}
-    inline CreateTestSetDiscrepancyReportResult& WithTestSetId(Aws::String&& value) { SetTestSetId(std::move(value)); return *this;}
-    inline CreateTestSetDiscrepancyReportResult& WithTestSetId(const char* value) { SetTestSetId(value); return *this;}
+    inline const Aws::String& GetTestSetId() const { return m_testSetId; }
+    template<typename TestSetIdT = Aws::String>
+    void SetTestSetId(TestSetIdT&& value) { m_testSetIdHasBeenSet = true; m_testSetId = std::forward<TestSetIdT>(value); }
+    template<typename TestSetIdT = Aws::String>
+    CreateTestSetDiscrepancyReportResult& WithTestSetId(TestSetIdT&& value) { SetTestSetId(std::forward<TestSetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The target bot for the test set discrepancy report.</p>
      */
-    inline const TestSetDiscrepancyReportResourceTarget& GetTarget() const{ return m_target; }
-    inline void SetTarget(const TestSetDiscrepancyReportResourceTarget& value) { m_target = value; }
-    inline void SetTarget(TestSetDiscrepancyReportResourceTarget&& value) { m_target = std::move(value); }
-    inline CreateTestSetDiscrepancyReportResult& WithTarget(const TestSetDiscrepancyReportResourceTarget& value) { SetTarget(value); return *this;}
-    inline CreateTestSetDiscrepancyReportResult& WithTarget(TestSetDiscrepancyReportResourceTarget&& value) { SetTarget(std::move(value)); return *this;}
+    inline const TestSetDiscrepancyReportResourceTarget& GetTarget() const { return m_target; }
+    template<typename TargetT = TestSetDiscrepancyReportResourceTarget>
+    void SetTarget(TargetT&& value) { m_targetHasBeenSet = true; m_target = std::forward<TargetT>(value); }
+    template<typename TargetT = TestSetDiscrepancyReportResourceTarget>
+    CreateTestSetDiscrepancyReportResult& WithTarget(TargetT&& value) { SetTarget(std::forward<TargetT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateTestSetDiscrepancyReportResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateTestSetDiscrepancyReportResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateTestSetDiscrepancyReportResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateTestSetDiscrepancyReportResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_testSetDiscrepancyReportId;
+    bool m_testSetDiscrepancyReportIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDateTime;
+    Aws::Utils::DateTime m_creationDateTime{};
+    bool m_creationDateTimeHasBeenSet = false;
 
     Aws::String m_testSetId;
+    bool m_testSetIdHasBeenSet = false;
 
     TestSetDiscrepancyReportResourceTarget m_target;
+    bool m_targetHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

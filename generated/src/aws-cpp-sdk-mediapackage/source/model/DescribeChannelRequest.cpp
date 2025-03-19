@@ -12,11 +12,6 @@ using namespace Aws::MediaPackage::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeChannelRequest::DescribeChannelRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String DescribeChannelRequest::SerializePayload() const
 {
   return {};

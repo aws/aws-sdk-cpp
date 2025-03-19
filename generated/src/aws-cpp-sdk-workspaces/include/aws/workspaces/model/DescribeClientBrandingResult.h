@@ -29,7 +29,7 @@ namespace Model
   class DescribeClientBrandingResult
   {
   public:
-    AWS_WORKSPACES_API DescribeClientBrandingResult();
+    AWS_WORKSPACES_API DescribeClientBrandingResult() = default;
     AWS_WORKSPACES_API DescribeClientBrandingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WORKSPACES_API DescribeClientBrandingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,93 +38,98 @@ namespace Model
     /**
      * <p>The branding information for Windows devices.</p>
      */
-    inline const DefaultClientBrandingAttributes& GetDeviceTypeWindows() const{ return m_deviceTypeWindows; }
-    inline void SetDeviceTypeWindows(const DefaultClientBrandingAttributes& value) { m_deviceTypeWindows = value; }
-    inline void SetDeviceTypeWindows(DefaultClientBrandingAttributes&& value) { m_deviceTypeWindows = std::move(value); }
-    inline DescribeClientBrandingResult& WithDeviceTypeWindows(const DefaultClientBrandingAttributes& value) { SetDeviceTypeWindows(value); return *this;}
-    inline DescribeClientBrandingResult& WithDeviceTypeWindows(DefaultClientBrandingAttributes&& value) { SetDeviceTypeWindows(std::move(value)); return *this;}
+    inline const DefaultClientBrandingAttributes& GetDeviceTypeWindows() const { return m_deviceTypeWindows; }
+    template<typename DeviceTypeWindowsT = DefaultClientBrandingAttributes>
+    void SetDeviceTypeWindows(DeviceTypeWindowsT&& value) { m_deviceTypeWindowsHasBeenSet = true; m_deviceTypeWindows = std::forward<DeviceTypeWindowsT>(value); }
+    template<typename DeviceTypeWindowsT = DefaultClientBrandingAttributes>
+    DescribeClientBrandingResult& WithDeviceTypeWindows(DeviceTypeWindowsT&& value) { SetDeviceTypeWindows(std::forward<DeviceTypeWindowsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The branding information for macOS devices.</p>
      */
-    inline const DefaultClientBrandingAttributes& GetDeviceTypeOsx() const{ return m_deviceTypeOsx; }
-    inline void SetDeviceTypeOsx(const DefaultClientBrandingAttributes& value) { m_deviceTypeOsx = value; }
-    inline void SetDeviceTypeOsx(DefaultClientBrandingAttributes&& value) { m_deviceTypeOsx = std::move(value); }
-    inline DescribeClientBrandingResult& WithDeviceTypeOsx(const DefaultClientBrandingAttributes& value) { SetDeviceTypeOsx(value); return *this;}
-    inline DescribeClientBrandingResult& WithDeviceTypeOsx(DefaultClientBrandingAttributes&& value) { SetDeviceTypeOsx(std::move(value)); return *this;}
+    inline const DefaultClientBrandingAttributes& GetDeviceTypeOsx() const { return m_deviceTypeOsx; }
+    template<typename DeviceTypeOsxT = DefaultClientBrandingAttributes>
+    void SetDeviceTypeOsx(DeviceTypeOsxT&& value) { m_deviceTypeOsxHasBeenSet = true; m_deviceTypeOsx = std::forward<DeviceTypeOsxT>(value); }
+    template<typename DeviceTypeOsxT = DefaultClientBrandingAttributes>
+    DescribeClientBrandingResult& WithDeviceTypeOsx(DeviceTypeOsxT&& value) { SetDeviceTypeOsx(std::forward<DeviceTypeOsxT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The branding information for Android devices.</p>
      */
-    inline const DefaultClientBrandingAttributes& GetDeviceTypeAndroid() const{ return m_deviceTypeAndroid; }
-    inline void SetDeviceTypeAndroid(const DefaultClientBrandingAttributes& value) { m_deviceTypeAndroid = value; }
-    inline void SetDeviceTypeAndroid(DefaultClientBrandingAttributes&& value) { m_deviceTypeAndroid = std::move(value); }
-    inline DescribeClientBrandingResult& WithDeviceTypeAndroid(const DefaultClientBrandingAttributes& value) { SetDeviceTypeAndroid(value); return *this;}
-    inline DescribeClientBrandingResult& WithDeviceTypeAndroid(DefaultClientBrandingAttributes&& value) { SetDeviceTypeAndroid(std::move(value)); return *this;}
+    inline const DefaultClientBrandingAttributes& GetDeviceTypeAndroid() const { return m_deviceTypeAndroid; }
+    template<typename DeviceTypeAndroidT = DefaultClientBrandingAttributes>
+    void SetDeviceTypeAndroid(DeviceTypeAndroidT&& value) { m_deviceTypeAndroidHasBeenSet = true; m_deviceTypeAndroid = std::forward<DeviceTypeAndroidT>(value); }
+    template<typename DeviceTypeAndroidT = DefaultClientBrandingAttributes>
+    DescribeClientBrandingResult& WithDeviceTypeAndroid(DeviceTypeAndroidT&& value) { SetDeviceTypeAndroid(std::forward<DeviceTypeAndroidT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The branding information for iOS devices.</p>
      */
-    inline const IosClientBrandingAttributes& GetDeviceTypeIos() const{ return m_deviceTypeIos; }
-    inline void SetDeviceTypeIos(const IosClientBrandingAttributes& value) { m_deviceTypeIos = value; }
-    inline void SetDeviceTypeIos(IosClientBrandingAttributes&& value) { m_deviceTypeIos = std::move(value); }
-    inline DescribeClientBrandingResult& WithDeviceTypeIos(const IosClientBrandingAttributes& value) { SetDeviceTypeIos(value); return *this;}
-    inline DescribeClientBrandingResult& WithDeviceTypeIos(IosClientBrandingAttributes&& value) { SetDeviceTypeIos(std::move(value)); return *this;}
+    inline const IosClientBrandingAttributes& GetDeviceTypeIos() const { return m_deviceTypeIos; }
+    template<typename DeviceTypeIosT = IosClientBrandingAttributes>
+    void SetDeviceTypeIos(DeviceTypeIosT&& value) { m_deviceTypeIosHasBeenSet = true; m_deviceTypeIos = std::forward<DeviceTypeIosT>(value); }
+    template<typename DeviceTypeIosT = IosClientBrandingAttributes>
+    DescribeClientBrandingResult& WithDeviceTypeIos(DeviceTypeIosT&& value) { SetDeviceTypeIos(std::forward<DeviceTypeIosT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The branding information for Linux devices.</p>
      */
-    inline const DefaultClientBrandingAttributes& GetDeviceTypeLinux() const{ return m_deviceTypeLinux; }
-    inline void SetDeviceTypeLinux(const DefaultClientBrandingAttributes& value) { m_deviceTypeLinux = value; }
-    inline void SetDeviceTypeLinux(DefaultClientBrandingAttributes&& value) { m_deviceTypeLinux = std::move(value); }
-    inline DescribeClientBrandingResult& WithDeviceTypeLinux(const DefaultClientBrandingAttributes& value) { SetDeviceTypeLinux(value); return *this;}
-    inline DescribeClientBrandingResult& WithDeviceTypeLinux(DefaultClientBrandingAttributes&& value) { SetDeviceTypeLinux(std::move(value)); return *this;}
+    inline const DefaultClientBrandingAttributes& GetDeviceTypeLinux() const { return m_deviceTypeLinux; }
+    template<typename DeviceTypeLinuxT = DefaultClientBrandingAttributes>
+    void SetDeviceTypeLinux(DeviceTypeLinuxT&& value) { m_deviceTypeLinuxHasBeenSet = true; m_deviceTypeLinux = std::forward<DeviceTypeLinuxT>(value); }
+    template<typename DeviceTypeLinuxT = DefaultClientBrandingAttributes>
+    DescribeClientBrandingResult& WithDeviceTypeLinux(DeviceTypeLinuxT&& value) { SetDeviceTypeLinux(std::forward<DeviceTypeLinuxT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The branding information for Web access.</p>
      */
-    inline const DefaultClientBrandingAttributes& GetDeviceTypeWeb() const{ return m_deviceTypeWeb; }
-    inline void SetDeviceTypeWeb(const DefaultClientBrandingAttributes& value) { m_deviceTypeWeb = value; }
-    inline void SetDeviceTypeWeb(DefaultClientBrandingAttributes&& value) { m_deviceTypeWeb = std::move(value); }
-    inline DescribeClientBrandingResult& WithDeviceTypeWeb(const DefaultClientBrandingAttributes& value) { SetDeviceTypeWeb(value); return *this;}
-    inline DescribeClientBrandingResult& WithDeviceTypeWeb(DefaultClientBrandingAttributes&& value) { SetDeviceTypeWeb(std::move(value)); return *this;}
+    inline const DefaultClientBrandingAttributes& GetDeviceTypeWeb() const { return m_deviceTypeWeb; }
+    template<typename DeviceTypeWebT = DefaultClientBrandingAttributes>
+    void SetDeviceTypeWeb(DeviceTypeWebT&& value) { m_deviceTypeWebHasBeenSet = true; m_deviceTypeWeb = std::forward<DeviceTypeWebT>(value); }
+    template<typename DeviceTypeWebT = DefaultClientBrandingAttributes>
+    DescribeClientBrandingResult& WithDeviceTypeWeb(DeviceTypeWebT&& value) { SetDeviceTypeWeb(std::forward<DeviceTypeWebT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeClientBrandingResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeClientBrandingResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeClientBrandingResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeClientBrandingResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DefaultClientBrandingAttributes m_deviceTypeWindows;
+    bool m_deviceTypeWindowsHasBeenSet = false;
 
     DefaultClientBrandingAttributes m_deviceTypeOsx;
+    bool m_deviceTypeOsxHasBeenSet = false;
 
     DefaultClientBrandingAttributes m_deviceTypeAndroid;
+    bool m_deviceTypeAndroidHasBeenSet = false;
 
     IosClientBrandingAttributes m_deviceTypeIos;
+    bool m_deviceTypeIosHasBeenSet = false;
 
     DefaultClientBrandingAttributes m_deviceTypeLinux;
+    bool m_deviceTypeLinuxHasBeenSet = false;
 
     DefaultClientBrandingAttributes m_deviceTypeWeb;
+    bool m_deviceTypeWebHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

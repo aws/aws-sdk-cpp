@@ -28,35 +28,35 @@ namespace Model
   class RemoveAttributesResult
   {
   public:
-    AWS_PINPOINT_API RemoveAttributesResult();
+    AWS_PINPOINT_API RemoveAttributesResult() = default;
     AWS_PINPOINT_API RemoveAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINT_API RemoveAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const AttributesResource& GetAttributesResource() const{ return m_attributesResource; }
-    inline void SetAttributesResource(const AttributesResource& value) { m_attributesResource = value; }
-    inline void SetAttributesResource(AttributesResource&& value) { m_attributesResource = std::move(value); }
-    inline RemoveAttributesResult& WithAttributesResource(const AttributesResource& value) { SetAttributesResource(value); return *this;}
-    inline RemoveAttributesResult& WithAttributesResource(AttributesResource&& value) { SetAttributesResource(std::move(value)); return *this;}
+    inline const AttributesResource& GetAttributesResource() const { return m_attributesResource; }
+    template<typename AttributesResourceT = AttributesResource>
+    void SetAttributesResource(AttributesResourceT&& value) { m_attributesResourceHasBeenSet = true; m_attributesResource = std::forward<AttributesResourceT>(value); }
+    template<typename AttributesResourceT = AttributesResource>
+    RemoveAttributesResult& WithAttributesResource(AttributesResourceT&& value) { SetAttributesResource(std::forward<AttributesResourceT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline RemoveAttributesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline RemoveAttributesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline RemoveAttributesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    RemoveAttributesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AttributesResource m_attributesResource;
+    bool m_attributesResourceHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

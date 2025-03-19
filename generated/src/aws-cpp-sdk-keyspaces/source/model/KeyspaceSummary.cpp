@@ -18,17 +18,7 @@ namespace Keyspaces
 namespace Model
 {
 
-KeyspaceSummary::KeyspaceSummary() : 
-    m_keyspaceNameHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_replicationStrategy(Rs::NOT_SET),
-    m_replicationStrategyHasBeenSet(false),
-    m_replicationRegionsHasBeenSet(false)
-{
-}
-
 KeyspaceSummary::KeyspaceSummary(JsonView jsonValue)
-  : KeyspaceSummary()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ KeyspaceSummary& KeyspaceSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("keyspaceName"))
   {
     m_keyspaceName = jsonValue.GetString("keyspaceName");
-
     m_keyspaceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceArn"))
   {
     m_resourceArn = jsonValue.GetString("resourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("replicationStrategy"))
   {
     m_replicationStrategy = RsMapper::GetRsForName(jsonValue.GetString("replicationStrategy"));
-
     m_replicationStrategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("replicationRegions"))
   {
     Aws::Utils::Array<JsonView> replicationRegionsJsonList = jsonValue.GetArray("replicationRegions");
@@ -65,7 +49,6 @@ KeyspaceSummary& KeyspaceSummary::operator =(JsonView jsonValue)
     }
     m_replicationRegionsHasBeenSet = true;
   }
-
   return *this;
 }
 

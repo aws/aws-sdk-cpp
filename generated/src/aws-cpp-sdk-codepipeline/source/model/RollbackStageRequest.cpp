@@ -12,13 +12,6 @@ using namespace Aws::CodePipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RollbackStageRequest::RollbackStageRequest() : 
-    m_pipelineNameHasBeenSet(false),
-    m_stageNameHasBeenSet(false),
-    m_targetPipelineExecutionIdHasBeenSet(false)
-{
-}
-
 Aws::String RollbackStageRequest::SerializePayload() const
 {
   JsonValue payload;

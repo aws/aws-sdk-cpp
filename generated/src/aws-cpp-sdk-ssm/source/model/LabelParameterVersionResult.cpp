@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-LabelParameterVersionResult::LabelParameterVersionResult() : 
-    m_parameterVersion(0)
-{
-}
-
 LabelParameterVersionResult::LabelParameterVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : LabelParameterVersionResult()
 {
   *this = result;
 }
@@ -38,20 +32,20 @@ LabelParameterVersionResult& LabelParameterVersionResult::operator =(const Aws::
     {
       m_invalidLabels.push_back(invalidLabelsJsonList[invalidLabelsIndex].AsString());
     }
+    m_invalidLabelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParameterVersion"))
   {
     m_parameterVersion = jsonValue.GetInt64("ParameterVersion");
-
+    m_parameterVersionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

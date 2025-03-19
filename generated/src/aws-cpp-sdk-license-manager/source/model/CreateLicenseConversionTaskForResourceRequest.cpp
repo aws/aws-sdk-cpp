@@ -12,13 +12,6 @@ using namespace Aws::LicenseManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateLicenseConversionTaskForResourceRequest::CreateLicenseConversionTaskForResourceRequest() : 
-    m_resourceArnHasBeenSet(false),
-    m_sourceLicenseContextHasBeenSet(false),
-    m_destinationLicenseContextHasBeenSet(false)
-{
-}
-
 Aws::String CreateLicenseConversionTaskForResourceRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -10,13 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-RemoveRoleFromDBInstanceRequest::RemoveRoleFromDBInstanceRequest() : 
-    m_dBInstanceIdentifierHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_featureNameHasBeenSet(false)
-{
-}
-
 Aws::String RemoveRoleFromDBInstanceRequest::SerializePayload() const
 {
   Aws::StringStream ss;

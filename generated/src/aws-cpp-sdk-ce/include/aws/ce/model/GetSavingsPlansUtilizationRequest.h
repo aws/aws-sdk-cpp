@@ -24,7 +24,7 @@ namespace Model
   class GetSavingsPlansUtilizationRequest : public CostExplorerRequest
   {
   public:
-    AWS_COSTEXPLORER_API GetSavingsPlansUtilizationRequest();
+    AWS_COSTEXPLORER_API GetSavingsPlansUtilizationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,12 +44,12 @@ namespace Model
      * <code>Start</code> date, and before the current date. Future dates can't be used
      * as an <code>End</code> date.</p>
      */
-    inline const DateInterval& GetTimePeriod() const{ return m_timePeriod; }
+    inline const DateInterval& GetTimePeriod() const { return m_timePeriod; }
     inline bool TimePeriodHasBeenSet() const { return m_timePeriodHasBeenSet; }
-    inline void SetTimePeriod(const DateInterval& value) { m_timePeriodHasBeenSet = true; m_timePeriod = value; }
-    inline void SetTimePeriod(DateInterval&& value) { m_timePeriodHasBeenSet = true; m_timePeriod = std::move(value); }
-    inline GetSavingsPlansUtilizationRequest& WithTimePeriod(const DateInterval& value) { SetTimePeriod(value); return *this;}
-    inline GetSavingsPlansUtilizationRequest& WithTimePeriod(DateInterval&& value) { SetTimePeriod(std::move(value)); return *this;}
+    template<typename TimePeriodT = DateInterval>
+    void SetTimePeriod(TimePeriodT&& value) { m_timePeriodHasBeenSet = true; m_timePeriod = std::forward<TimePeriodT>(value); }
+    template<typename TimePeriodT = DateInterval>
+    GetSavingsPlansUtilizationRequest& WithTimePeriod(TimePeriodT&& value) { SetTimePeriod(std::forward<TimePeriodT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +58,10 @@ namespace Model
      * Plans.</p> <p>The <code>GetSavingsPlansUtilization</code> operation supports
      * only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
      */
-    inline const Granularity& GetGranularity() const{ return m_granularity; }
+    inline Granularity GetGranularity() const { return m_granularity; }
     inline bool GranularityHasBeenSet() const { return m_granularityHasBeenSet; }
-    inline void SetGranularity(const Granularity& value) { m_granularityHasBeenSet = true; m_granularity = value; }
-    inline void SetGranularity(Granularity&& value) { m_granularityHasBeenSet = true; m_granularity = std::move(value); }
-    inline GetSavingsPlansUtilizationRequest& WithGranularity(const Granularity& value) { SetGranularity(value); return *this;}
-    inline GetSavingsPlansUtilizationRequest& WithGranularity(Granularity&& value) { SetGranularity(std::move(value)); return *this;}
+    inline void SetGranularity(Granularity value) { m_granularityHasBeenSet = true; m_granularity = value; }
+    inline GetSavingsPlansUtilizationRequest& WithGranularity(Granularity value) { SetGranularity(value); return *this;}
     ///@}
 
     ///@{
@@ -79,12 +77,12 @@ namespace Model
      * object as the other operations, but only <code>AND</code> is supported among
      * each dimension.</p>
      */
-    inline const Expression& GetFilter() const{ return m_filter; }
+    inline const Expression& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const Expression& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(Expression&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline GetSavingsPlansUtilizationRequest& WithFilter(const Expression& value) { SetFilter(value); return *this;}
-    inline GetSavingsPlansUtilizationRequest& WithFilter(Expression&& value) { SetFilter(std::move(value)); return *this;}
+    template<typename FilterT = Expression>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = Expression>
+    GetSavingsPlansUtilizationRequest& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,19 +96,19 @@ namespace Model
      * <code>SortOrder</code> are <code>ASCENDING</code> and
      * <code>DESCENDING</code>.</p>
      */
-    inline const SortDefinition& GetSortBy() const{ return m_sortBy; }
+    inline const SortDefinition& GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const SortDefinition& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(SortDefinition&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline GetSavingsPlansUtilizationRequest& WithSortBy(const SortDefinition& value) { SetSortBy(value); return *this;}
-    inline GetSavingsPlansUtilizationRequest& WithSortBy(SortDefinition&& value) { SetSortBy(std::move(value)); return *this;}
+    template<typename SortByT = SortDefinition>
+    void SetSortBy(SortByT&& value) { m_sortByHasBeenSet = true; m_sortBy = std::forward<SortByT>(value); }
+    template<typename SortByT = SortDefinition>
+    GetSavingsPlansUtilizationRequest& WithSortBy(SortByT&& value) { SetSortBy(std::forward<SortByT>(value)); return *this;}
     ///@}
   private:
 
     DateInterval m_timePeriod;
     bool m_timePeriodHasBeenSet = false;
 
-    Granularity m_granularity;
+    Granularity m_granularity{Granularity::NOT_SET};
     bool m_granularityHasBeenSet = false;
 
     Expression m_filter;

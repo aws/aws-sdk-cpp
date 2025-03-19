@@ -32,7 +32,7 @@ namespace Model
   class ConfirmDeviceResult
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API ConfirmDeviceResult();
+    AWS_COGNITOIDENTITYPROVIDER_API ConfirmDeviceResult() = default;
     AWS_COGNITOIDENTITYPROVIDER_API ConfirmDeviceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COGNITOIDENTITYPROVIDER_API ConfirmDeviceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -47,26 +47,26 @@ namespace Model
      * opt in, in which case this response is <code>true</code>. Configure this option
      * under <i>Device tracking</i> in the <i>Sign-in</i> menu of your user pool.</p>
      */
-    inline bool GetUserConfirmationNecessary() const{ return m_userConfirmationNecessary; }
-    inline void SetUserConfirmationNecessary(bool value) { m_userConfirmationNecessary = value; }
+    inline bool GetUserConfirmationNecessary() const { return m_userConfirmationNecessary; }
+    inline void SetUserConfirmationNecessary(bool value) { m_userConfirmationNecessaryHasBeenSet = true; m_userConfirmationNecessary = value; }
     inline ConfirmDeviceResult& WithUserConfirmationNecessary(bool value) { SetUserConfirmationNecessary(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ConfirmDeviceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ConfirmDeviceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ConfirmDeviceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ConfirmDeviceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_userConfirmationNecessary;
+    bool m_userConfirmationNecessary{false};
+    bool m_userConfirmationNecessaryHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

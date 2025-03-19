@@ -12,12 +12,6 @@ using namespace Aws::GuardDuty::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSampleFindingsRequest::CreateSampleFindingsRequest() : 
-    m_detectorIdHasBeenSet(false),
-    m_findingTypesHasBeenSet(false)
-{
-}
-
 Aws::String CreateSampleFindingsRequest::SerializePayload() const
 {
   JsonValue payload;

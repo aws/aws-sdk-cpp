@@ -18,19 +18,7 @@ namespace DirectoryService
 namespace Model
 {
 
-OwnerDirectoryDescription::OwnerDirectoryDescription() : 
-    m_directoryIdHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_dnsIpAddrsHasBeenSet(false),
-    m_vpcSettingsHasBeenSet(false),
-    m_radiusSettingsHasBeenSet(false),
-    m_radiusStatus(RadiusStatus::NOT_SET),
-    m_radiusStatusHasBeenSet(false)
-{
-}
-
 OwnerDirectoryDescription::OwnerDirectoryDescription(JsonView jsonValue)
-  : OwnerDirectoryDescription()
 {
   *this = jsonValue;
 }
@@ -40,17 +28,13 @@ OwnerDirectoryDescription& OwnerDirectoryDescription::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("DirectoryId"))
   {
     m_directoryId = jsonValue.GetString("DirectoryId");
-
     m_directoryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DnsIpAddrs"))
   {
     Aws::Utils::Array<JsonView> dnsIpAddrsJsonList = jsonValue.GetArray("DnsIpAddrs");
@@ -60,28 +44,21 @@ OwnerDirectoryDescription& OwnerDirectoryDescription::operator =(JsonView jsonVa
     }
     m_dnsIpAddrsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcSettings"))
   {
     m_vpcSettings = jsonValue.GetObject("VpcSettings");
-
     m_vpcSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RadiusSettings"))
   {
     m_radiusSettings = jsonValue.GetObject("RadiusSettings");
-
     m_radiusSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RadiusStatus"))
   {
     m_radiusStatus = RadiusStatusMapper::GetRadiusStatusForName(jsonValue.GetString("RadiusStatus"));
-
     m_radiusStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

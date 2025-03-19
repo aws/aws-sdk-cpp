@@ -36,7 +36,7 @@ namespace Model
   class Environment
   {
   public:
-    AWS_CLOUD9_API Environment();
+    AWS_CLOUD9_API Environment() = default;
     AWS_CLOUD9_API Environment(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUD9_API Environment& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUD9_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,42 +46,36 @@ namespace Model
     /**
      * <p>The ID of the environment.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline Environment& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline Environment& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline Environment& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    Environment& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the environment.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Environment& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Environment& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Environment& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Environment& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description for the environment.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline Environment& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline Environment& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline Environment& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    Environment& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,12 +85,10 @@ namespace Model
      * connects to the environment.</p> </li> <li> <p> <code>ssh</code>: Your own
      * server connects to the environment.</p> </li> </ul>
      */
-    inline const EnvironmentType& GetType() const{ return m_type; }
+    inline EnvironmentType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const EnvironmentType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(EnvironmentType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline Environment& WithType(const EnvironmentType& value) { SetType(value); return *this;}
-    inline Environment& WithType(EnvironmentType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(EnvironmentType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline Environment& WithType(EnvironmentType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -104,52 +96,46 @@ namespace Model
      * <p>The connection type used for connecting to an Amazon EC2 environment.
      * <code>CONNECT_SSH</code> is selected by default.</p>
      */
-    inline const ConnectionType& GetConnectionType() const{ return m_connectionType; }
+    inline ConnectionType GetConnectionType() const { return m_connectionType; }
     inline bool ConnectionTypeHasBeenSet() const { return m_connectionTypeHasBeenSet; }
-    inline void SetConnectionType(const ConnectionType& value) { m_connectionTypeHasBeenSet = true; m_connectionType = value; }
-    inline void SetConnectionType(ConnectionType&& value) { m_connectionTypeHasBeenSet = true; m_connectionType = std::move(value); }
-    inline Environment& WithConnectionType(const ConnectionType& value) { SetConnectionType(value); return *this;}
-    inline Environment& WithConnectionType(ConnectionType&& value) { SetConnectionType(std::move(value)); return *this;}
+    inline void SetConnectionType(ConnectionType value) { m_connectionTypeHasBeenSet = true; m_connectionType = value; }
+    inline Environment& WithConnectionType(ConnectionType value) { SetConnectionType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the environment.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline Environment& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline Environment& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline Environment& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    Environment& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the environment owner.</p>
      */
-    inline const Aws::String& GetOwnerArn() const{ return m_ownerArn; }
+    inline const Aws::String& GetOwnerArn() const { return m_ownerArn; }
     inline bool OwnerArnHasBeenSet() const { return m_ownerArnHasBeenSet; }
-    inline void SetOwnerArn(const Aws::String& value) { m_ownerArnHasBeenSet = true; m_ownerArn = value; }
-    inline void SetOwnerArn(Aws::String&& value) { m_ownerArnHasBeenSet = true; m_ownerArn = std::move(value); }
-    inline void SetOwnerArn(const char* value) { m_ownerArnHasBeenSet = true; m_ownerArn.assign(value); }
-    inline Environment& WithOwnerArn(const Aws::String& value) { SetOwnerArn(value); return *this;}
-    inline Environment& WithOwnerArn(Aws::String&& value) { SetOwnerArn(std::move(value)); return *this;}
-    inline Environment& WithOwnerArn(const char* value) { SetOwnerArn(value); return *this;}
+    template<typename OwnerArnT = Aws::String>
+    void SetOwnerArn(OwnerArnT&& value) { m_ownerArnHasBeenSet = true; m_ownerArn = std::forward<OwnerArnT>(value); }
+    template<typename OwnerArnT = Aws::String>
+    Environment& WithOwnerArn(OwnerArnT&& value) { SetOwnerArn(std::forward<OwnerArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of the environment in its creation or deletion lifecycle.</p>
      */
-    inline const EnvironmentLifecycle& GetLifecycle() const{ return m_lifecycle; }
+    inline const EnvironmentLifecycle& GetLifecycle() const { return m_lifecycle; }
     inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }
-    inline void SetLifecycle(const EnvironmentLifecycle& value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
-    inline void SetLifecycle(EnvironmentLifecycle&& value) { m_lifecycleHasBeenSet = true; m_lifecycle = std::move(value); }
-    inline Environment& WithLifecycle(const EnvironmentLifecycle& value) { SetLifecycle(value); return *this;}
-    inline Environment& WithLifecycle(EnvironmentLifecycle&& value) { SetLifecycle(std::move(value)); return *this;}
+    template<typename LifecycleT = EnvironmentLifecycle>
+    void SetLifecycle(LifecycleT&& value) { m_lifecycleHasBeenSet = true; m_lifecycle = std::forward<LifecycleT>(value); }
+    template<typename LifecycleT = EnvironmentLifecycle>
+    Environment& WithLifecycle(LifecycleT&& value) { SetLifecycle(std::forward<LifecycleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -166,12 +152,10 @@ namespace Model
      * <code>ENABLED_BY_OWNER</code> </p> </li> <li> <p>
      * <code>DISABLED_BY_DEFAULT</code> </p> </li> </ul>
      */
-    inline const ManagedCredentialsStatus& GetManagedCredentialsStatus() const{ return m_managedCredentialsStatus; }
+    inline ManagedCredentialsStatus GetManagedCredentialsStatus() const { return m_managedCredentialsStatus; }
     inline bool ManagedCredentialsStatusHasBeenSet() const { return m_managedCredentialsStatusHasBeenSet; }
-    inline void SetManagedCredentialsStatus(const ManagedCredentialsStatus& value) { m_managedCredentialsStatusHasBeenSet = true; m_managedCredentialsStatus = value; }
-    inline void SetManagedCredentialsStatus(ManagedCredentialsStatus&& value) { m_managedCredentialsStatusHasBeenSet = true; m_managedCredentialsStatus = std::move(value); }
-    inline Environment& WithManagedCredentialsStatus(const ManagedCredentialsStatus& value) { SetManagedCredentialsStatus(value); return *this;}
-    inline Environment& WithManagedCredentialsStatus(ManagedCredentialsStatus&& value) { SetManagedCredentialsStatus(std::move(value)); return *this;}
+    inline void SetManagedCredentialsStatus(ManagedCredentialsStatus value) { m_managedCredentialsStatusHasBeenSet = true; m_managedCredentialsStatus = value; }
+    inline Environment& WithManagedCredentialsStatus(ManagedCredentialsStatus value) { SetManagedCredentialsStatus(value); return *this;}
     ///@}
   private:
 
@@ -184,10 +168,10 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    EnvironmentType m_type;
+    EnvironmentType m_type{EnvironmentType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    ConnectionType m_connectionType;
+    ConnectionType m_connectionType{ConnectionType::NOT_SET};
     bool m_connectionTypeHasBeenSet = false;
 
     Aws::String m_arn;
@@ -199,7 +183,7 @@ namespace Model
     EnvironmentLifecycle m_lifecycle;
     bool m_lifecycleHasBeenSet = false;
 
-    ManagedCredentialsStatus m_managedCredentialsStatus;
+    ManagedCredentialsStatus m_managedCredentialsStatus{ManagedCredentialsStatus::NOT_SET};
     bool m_managedCredentialsStatusHasBeenSet = false;
   };
 

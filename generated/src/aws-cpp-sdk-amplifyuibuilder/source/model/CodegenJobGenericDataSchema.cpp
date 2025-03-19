@@ -18,17 +18,7 @@ namespace AmplifyUIBuilder
 namespace Model
 {
 
-CodegenJobGenericDataSchema::CodegenJobGenericDataSchema() : 
-    m_dataSourceType(CodegenJobGenericDataSourceType::NOT_SET),
-    m_dataSourceTypeHasBeenSet(false),
-    m_modelsHasBeenSet(false),
-    m_enumsHasBeenSet(false),
-    m_nonModelsHasBeenSet(false)
-{
-}
-
 CodegenJobGenericDataSchema::CodegenJobGenericDataSchema(JsonView jsonValue)
-  : CodegenJobGenericDataSchema()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ CodegenJobGenericDataSchema& CodegenJobGenericDataSchema::operator =(JsonView js
   if(jsonValue.ValueExists("dataSourceType"))
   {
     m_dataSourceType = CodegenJobGenericDataSourceTypeMapper::GetCodegenJobGenericDataSourceTypeForName(jsonValue.GetString("dataSourceType"));
-
     m_dataSourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("models"))
   {
     Aws::Map<Aws::String, JsonView> modelsJsonMap = jsonValue.GetObject("models").GetAllObjects();
@@ -51,7 +39,6 @@ CodegenJobGenericDataSchema& CodegenJobGenericDataSchema::operator =(JsonView js
     }
     m_modelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enums"))
   {
     Aws::Map<Aws::String, JsonView> enumsJsonMap = jsonValue.GetObject("enums").GetAllObjects();
@@ -61,7 +48,6 @@ CodegenJobGenericDataSchema& CodegenJobGenericDataSchema::operator =(JsonView js
     }
     m_enumsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nonModels"))
   {
     Aws::Map<Aws::String, JsonView> nonModelsJsonMap = jsonValue.GetObject("nonModels").GetAllObjects();
@@ -71,7 +57,6 @@ CodegenJobGenericDataSchema& CodegenJobGenericDataSchema::operator =(JsonView js
     }
     m_nonModelsHasBeenSet = true;
   }
-
   return *this;
 }
 

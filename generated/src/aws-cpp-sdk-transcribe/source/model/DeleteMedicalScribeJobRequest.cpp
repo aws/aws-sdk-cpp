@@ -12,11 +12,6 @@ using namespace Aws::TranscribeService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteMedicalScribeJobRequest::DeleteMedicalScribeJobRequest() : 
-    m_medicalScribeJobNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteMedicalScribeJobRequest::SerializePayload() const
 {
   JsonValue payload;

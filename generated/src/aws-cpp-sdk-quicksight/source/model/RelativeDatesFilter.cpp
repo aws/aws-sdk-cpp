@@ -18,28 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-RelativeDatesFilter::RelativeDatesFilter() : 
-    m_filterIdHasBeenSet(false),
-    m_columnHasBeenSet(false),
-    m_anchorDateConfigurationHasBeenSet(false),
-    m_minimumGranularity(TimeGranularity::NOT_SET),
-    m_minimumGranularityHasBeenSet(false),
-    m_timeGranularity(TimeGranularity::NOT_SET),
-    m_timeGranularityHasBeenSet(false),
-    m_relativeDateType(RelativeDateType::NOT_SET),
-    m_relativeDateTypeHasBeenSet(false),
-    m_relativeDateValue(0),
-    m_relativeDateValueHasBeenSet(false),
-    m_parameterNameHasBeenSet(false),
-    m_nullOption(FilterNullOption::NOT_SET),
-    m_nullOptionHasBeenSet(false),
-    m_excludePeriodConfigurationHasBeenSet(false),
-    m_defaultFilterControlConfigurationHasBeenSet(false)
-{
-}
-
 RelativeDatesFilter::RelativeDatesFilter(JsonView jsonValue)
-  : RelativeDatesFilter()
 {
   *this = jsonValue;
 }
@@ -49,80 +28,58 @@ RelativeDatesFilter& RelativeDatesFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FilterId"))
   {
     m_filterId = jsonValue.GetString("FilterId");
-
     m_filterIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Column"))
   {
     m_column = jsonValue.GetObject("Column");
-
     m_columnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AnchorDateConfiguration"))
   {
     m_anchorDateConfiguration = jsonValue.GetObject("AnchorDateConfiguration");
-
     m_anchorDateConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinimumGranularity"))
   {
     m_minimumGranularity = TimeGranularityMapper::GetTimeGranularityForName(jsonValue.GetString("MinimumGranularity"));
-
     m_minimumGranularityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeGranularity"))
   {
     m_timeGranularity = TimeGranularityMapper::GetTimeGranularityForName(jsonValue.GetString("TimeGranularity"));
-
     m_timeGranularityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RelativeDateType"))
   {
     m_relativeDateType = RelativeDateTypeMapper::GetRelativeDateTypeForName(jsonValue.GetString("RelativeDateType"));
-
     m_relativeDateTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RelativeDateValue"))
   {
     m_relativeDateValue = jsonValue.GetInteger("RelativeDateValue");
-
     m_relativeDateValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParameterName"))
   {
     m_parameterName = jsonValue.GetString("ParameterName");
-
     m_parameterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NullOption"))
   {
     m_nullOption = FilterNullOptionMapper::GetFilterNullOptionForName(jsonValue.GetString("NullOption"));
-
     m_nullOptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExcludePeriodConfiguration"))
   {
     m_excludePeriodConfiguration = jsonValue.GetObject("ExcludePeriodConfiguration");
-
     m_excludePeriodConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultFilterControlConfiguration"))
   {
     m_defaultFilterControlConfiguration = jsonValue.GetObject("DefaultFilterControlConfiguration");
-
     m_defaultFilterControlConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

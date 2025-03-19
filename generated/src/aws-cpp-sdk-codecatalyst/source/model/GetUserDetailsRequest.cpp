@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetUserDetailsRequest::GetUserDetailsRequest() : 
-    m_idHasBeenSet(false),
-    m_userNameHasBeenSet(false)
-{
-}
-
 Aws::String GetUserDetailsRequest::SerializePayload() const
 {
   return {};

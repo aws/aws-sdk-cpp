@@ -10,17 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-RestoreSnapshotTierRequest::RestoreSnapshotTierRequest() : 
-    m_snapshotIdHasBeenSet(false),
-    m_temporaryRestoreDays(0),
-    m_temporaryRestoreDaysHasBeenSet(false),
-    m_permanentRestore(false),
-    m_permanentRestoreHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String RestoreSnapshotTierRequest::SerializePayload() const
 {
   Aws::StringStream ss;

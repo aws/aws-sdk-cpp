@@ -18,24 +18,7 @@ namespace Batch
 namespace Model
 {
 
-EcsTaskDetails::EcsTaskDetails() : 
-    m_containersHasBeenSet(false),
-    m_containerInstanceArnHasBeenSet(false),
-    m_taskArnHasBeenSet(false),
-    m_ephemeralStorageHasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false),
-    m_platformVersionHasBeenSet(false),
-    m_ipcModeHasBeenSet(false),
-    m_taskRoleArnHasBeenSet(false),
-    m_pidModeHasBeenSet(false),
-    m_networkConfigurationHasBeenSet(false),
-    m_runtimePlatformHasBeenSet(false),
-    m_volumesHasBeenSet(false)
-{
-}
-
 EcsTaskDetails::EcsTaskDetails(JsonView jsonValue)
-  : EcsTaskDetails()
 {
   *this = jsonValue;
 }
@@ -51,77 +34,56 @@ EcsTaskDetails& EcsTaskDetails::operator =(JsonView jsonValue)
     }
     m_containersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("containerInstanceArn"))
   {
     m_containerInstanceArn = jsonValue.GetString("containerInstanceArn");
-
     m_containerInstanceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskArn"))
   {
     m_taskArn = jsonValue.GetString("taskArn");
-
     m_taskArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ephemeralStorage"))
   {
     m_ephemeralStorage = jsonValue.GetObject("ephemeralStorage");
-
     m_ephemeralStorageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionRoleArn"))
   {
     m_executionRoleArn = jsonValue.GetString("executionRoleArn");
-
     m_executionRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("platformVersion"))
   {
     m_platformVersion = jsonValue.GetString("platformVersion");
-
     m_platformVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ipcMode"))
   {
     m_ipcMode = jsonValue.GetString("ipcMode");
-
     m_ipcModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskRoleArn"))
   {
     m_taskRoleArn = jsonValue.GetString("taskRoleArn");
-
     m_taskRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pidMode"))
   {
     m_pidMode = jsonValue.GetString("pidMode");
-
     m_pidModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkConfiguration"))
   {
     m_networkConfiguration = jsonValue.GetObject("networkConfiguration");
-
     m_networkConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runtimePlatform"))
   {
     m_runtimePlatform = jsonValue.GetObject("runtimePlatform");
-
     m_runtimePlatformHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("volumes"))
   {
     Aws::Utils::Array<JsonView> volumesJsonList = jsonValue.GetArray("volumes");
@@ -131,7 +93,6 @@ EcsTaskDetails& EcsTaskDetails::operator =(JsonView jsonValue)
     }
     m_volumesHasBeenSet = true;
   }
-
   return *this;
 }
 

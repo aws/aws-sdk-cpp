@@ -18,16 +18,7 @@ namespace TranscribeStreamingService
 namespace Model
 {
 
-TimestampRange::TimestampRange() : 
-    m_beginOffsetMillis(0),
-    m_beginOffsetMillisHasBeenSet(false),
-    m_endOffsetMillis(0),
-    m_endOffsetMillisHasBeenSet(false)
-{
-}
-
 TimestampRange::TimestampRange(JsonView jsonValue)
-  : TimestampRange()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ TimestampRange& TimestampRange::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BeginOffsetMillis"))
   {
     m_beginOffsetMillis = jsonValue.GetInt64("BeginOffsetMillis");
-
     m_beginOffsetMillisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndOffsetMillis"))
   {
     m_endOffsetMillis = jsonValue.GetInt64("EndOffsetMillis");
-
     m_endOffsetMillisHasBeenSet = true;
   }
-
   return *this;
 }
 

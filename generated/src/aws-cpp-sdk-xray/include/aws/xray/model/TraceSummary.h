@@ -45,7 +45,7 @@ namespace Model
   class TraceSummary
   {
   public:
-    AWS_XRAY_API TraceSummary();
+    AWS_XRAY_API TraceSummary() = default;
     AWS_XRAY_API TraceSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_XRAY_API TraceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,14 +56,12 @@ namespace Model
      * <p>The unique identifier for the request that generated the trace's segments and
      * subsegments.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline TraceSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline TraceSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline TraceSummary& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    TraceSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,12 +69,12 @@ namespace Model
      * <p>The start time of a trace, based on the earliest trace segment start
      * time.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline TraceSummary& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline TraceSummary& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    TraceSummary& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,7 +82,7 @@ namespace Model
      * <p>The length of time in seconds between the start time of the root segment and
      * the end time of the last segment that completed.</p>
      */
-    inline double GetDuration() const{ return m_duration; }
+    inline double GetDuration() const { return m_duration; }
     inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
     inline void SetDuration(double value) { m_durationHasBeenSet = true; m_duration = value; }
     inline TraceSummary& WithDuration(double value) { SetDuration(value); return *this;}
@@ -97,7 +95,7 @@ namespace Model
      * the time before the response is sent to the user, while the duration measures
      * the amount of time before the last traced activity completes.</p>
      */
-    inline double GetResponseTime() const{ return m_responseTime; }
+    inline double GetResponseTime() const { return m_responseTime; }
     inline bool ResponseTimeHasBeenSet() const { return m_responseTimeHasBeenSet; }
     inline void SetResponseTime(double value) { m_responseTimeHasBeenSet = true; m_responseTime = value; }
     inline TraceSummary& WithResponseTime(double value) { SetResponseTime(value); return *this;}
@@ -107,7 +105,7 @@ namespace Model
     /**
      * <p>The root segment document has a 500 series error.</p>
      */
-    inline bool GetHasFault() const{ return m_hasFault; }
+    inline bool GetHasFault() const { return m_hasFault; }
     inline bool HasFaultHasBeenSet() const { return m_hasFaultHasBeenSet; }
     inline void SetHasFault(bool value) { m_hasFaultHasBeenSet = true; m_hasFault = value; }
     inline TraceSummary& WithHasFault(bool value) { SetHasFault(value); return *this;}
@@ -117,7 +115,7 @@ namespace Model
     /**
      * <p>The root segment document has a 400 series error.</p>
      */
-    inline bool GetHasError() const{ return m_hasError; }
+    inline bool GetHasError() const { return m_hasError; }
     inline bool HasErrorHasBeenSet() const { return m_hasErrorHasBeenSet; }
     inline void SetHasError(bool value) { m_hasErrorHasBeenSet = true; m_hasError = value; }
     inline TraceSummary& WithHasError(bool value) { SetHasError(value); return *this;}
@@ -127,7 +125,7 @@ namespace Model
     /**
      * <p>One or more of the segment documents has a 429 throttling error.</p>
      */
-    inline bool GetHasThrottle() const{ return m_hasThrottle; }
+    inline bool GetHasThrottle() const { return m_hasThrottle; }
     inline bool HasThrottleHasBeenSet() const { return m_hasThrottleHasBeenSet; }
     inline void SetHasThrottle(bool value) { m_hasThrottleHasBeenSet = true; m_hasThrottle = value; }
     inline TraceSummary& WithHasThrottle(bool value) { SetHasThrottle(value); return *this;}
@@ -137,7 +135,7 @@ namespace Model
     /**
      * <p>One or more of the segment documents is in progress.</p>
      */
-    inline bool GetIsPartial() const{ return m_isPartial; }
+    inline bool GetIsPartial() const { return m_isPartial; }
     inline bool IsPartialHasBeenSet() const { return m_isPartialHasBeenSet; }
     inline void SetIsPartial(bool value) { m_isPartialHasBeenSet = true; m_isPartial = value; }
     inline TraceSummary& WithIsPartial(bool value) { SetIsPartial(value); return *this;}
@@ -147,58 +145,56 @@ namespace Model
     /**
      * <p>Information about the HTTP request served by the trace.</p>
      */
-    inline const Http& GetHttp() const{ return m_http; }
+    inline const Http& GetHttp() const { return m_http; }
     inline bool HttpHasBeenSet() const { return m_httpHasBeenSet; }
-    inline void SetHttp(const Http& value) { m_httpHasBeenSet = true; m_http = value; }
-    inline void SetHttp(Http&& value) { m_httpHasBeenSet = true; m_http = std::move(value); }
-    inline TraceSummary& WithHttp(const Http& value) { SetHttp(value); return *this;}
-    inline TraceSummary& WithHttp(Http&& value) { SetHttp(std::move(value)); return *this;}
+    template<typename HttpT = Http>
+    void SetHttp(HttpT&& value) { m_httpHasBeenSet = true; m_http = std::forward<HttpT>(value); }
+    template<typename HttpT = Http>
+    TraceSummary& WithHttp(HttpT&& value) { SetHttp(std::forward<HttpT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Annotations from the trace's segment documents.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::Vector<ValueWithServiceIds>>& GetAnnotations() const{ return m_annotations; }
+    inline const Aws::Map<Aws::String, Aws::Vector<ValueWithServiceIds>>& GetAnnotations() const { return m_annotations; }
     inline bool AnnotationsHasBeenSet() const { return m_annotationsHasBeenSet; }
-    inline void SetAnnotations(const Aws::Map<Aws::String, Aws::Vector<ValueWithServiceIds>>& value) { m_annotationsHasBeenSet = true; m_annotations = value; }
-    inline void SetAnnotations(Aws::Map<Aws::String, Aws::Vector<ValueWithServiceIds>>&& value) { m_annotationsHasBeenSet = true; m_annotations = std::move(value); }
-    inline TraceSummary& WithAnnotations(const Aws::Map<Aws::String, Aws::Vector<ValueWithServiceIds>>& value) { SetAnnotations(value); return *this;}
-    inline TraceSummary& WithAnnotations(Aws::Map<Aws::String, Aws::Vector<ValueWithServiceIds>>&& value) { SetAnnotations(std::move(value)); return *this;}
-    inline TraceSummary& AddAnnotations(const Aws::String& key, const Aws::Vector<ValueWithServiceIds>& value) { m_annotationsHasBeenSet = true; m_annotations.emplace(key, value); return *this; }
-    inline TraceSummary& AddAnnotations(Aws::String&& key, const Aws::Vector<ValueWithServiceIds>& value) { m_annotationsHasBeenSet = true; m_annotations.emplace(std::move(key), value); return *this; }
-    inline TraceSummary& AddAnnotations(const Aws::String& key, Aws::Vector<ValueWithServiceIds>&& value) { m_annotationsHasBeenSet = true; m_annotations.emplace(key, std::move(value)); return *this; }
-    inline TraceSummary& AddAnnotations(Aws::String&& key, Aws::Vector<ValueWithServiceIds>&& value) { m_annotationsHasBeenSet = true; m_annotations.emplace(std::move(key), std::move(value)); return *this; }
-    inline TraceSummary& AddAnnotations(const char* key, Aws::Vector<ValueWithServiceIds>&& value) { m_annotationsHasBeenSet = true; m_annotations.emplace(key, std::move(value)); return *this; }
-    inline TraceSummary& AddAnnotations(const char* key, const Aws::Vector<ValueWithServiceIds>& value) { m_annotationsHasBeenSet = true; m_annotations.emplace(key, value); return *this; }
+    template<typename AnnotationsT = Aws::Map<Aws::String, Aws::Vector<ValueWithServiceIds>>>
+    void SetAnnotations(AnnotationsT&& value) { m_annotationsHasBeenSet = true; m_annotations = std::forward<AnnotationsT>(value); }
+    template<typename AnnotationsT = Aws::Map<Aws::String, Aws::Vector<ValueWithServiceIds>>>
+    TraceSummary& WithAnnotations(AnnotationsT&& value) { SetAnnotations(std::forward<AnnotationsT>(value)); return *this;}
+    template<typename AnnotationsKeyT = Aws::String, typename AnnotationsValueT = Aws::Vector<ValueWithServiceIds>>
+    TraceSummary& AddAnnotations(AnnotationsKeyT&& key, AnnotationsValueT&& value) {
+      m_annotationsHasBeenSet = true; m_annotations.emplace(std::forward<AnnotationsKeyT>(key), std::forward<AnnotationsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>Users from the trace's segment documents.</p>
      */
-    inline const Aws::Vector<TraceUser>& GetUsers() const{ return m_users; }
+    inline const Aws::Vector<TraceUser>& GetUsers() const { return m_users; }
     inline bool UsersHasBeenSet() const { return m_usersHasBeenSet; }
-    inline void SetUsers(const Aws::Vector<TraceUser>& value) { m_usersHasBeenSet = true; m_users = value; }
-    inline void SetUsers(Aws::Vector<TraceUser>&& value) { m_usersHasBeenSet = true; m_users = std::move(value); }
-    inline TraceSummary& WithUsers(const Aws::Vector<TraceUser>& value) { SetUsers(value); return *this;}
-    inline TraceSummary& WithUsers(Aws::Vector<TraceUser>&& value) { SetUsers(std::move(value)); return *this;}
-    inline TraceSummary& AddUsers(const TraceUser& value) { m_usersHasBeenSet = true; m_users.push_back(value); return *this; }
-    inline TraceSummary& AddUsers(TraceUser&& value) { m_usersHasBeenSet = true; m_users.push_back(std::move(value)); return *this; }
+    template<typename UsersT = Aws::Vector<TraceUser>>
+    void SetUsers(UsersT&& value) { m_usersHasBeenSet = true; m_users = std::forward<UsersT>(value); }
+    template<typename UsersT = Aws::Vector<TraceUser>>
+    TraceSummary& WithUsers(UsersT&& value) { SetUsers(std::forward<UsersT>(value)); return *this;}
+    template<typename UsersT = TraceUser>
+    TraceSummary& AddUsers(UsersT&& value) { m_usersHasBeenSet = true; m_users.emplace_back(std::forward<UsersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Service IDs from the trace's segment documents.</p>
      */
-    inline const Aws::Vector<ServiceId>& GetServiceIds() const{ return m_serviceIds; }
+    inline const Aws::Vector<ServiceId>& GetServiceIds() const { return m_serviceIds; }
     inline bool ServiceIdsHasBeenSet() const { return m_serviceIdsHasBeenSet; }
-    inline void SetServiceIds(const Aws::Vector<ServiceId>& value) { m_serviceIdsHasBeenSet = true; m_serviceIds = value; }
-    inline void SetServiceIds(Aws::Vector<ServiceId>&& value) { m_serviceIdsHasBeenSet = true; m_serviceIds = std::move(value); }
-    inline TraceSummary& WithServiceIds(const Aws::Vector<ServiceId>& value) { SetServiceIds(value); return *this;}
-    inline TraceSummary& WithServiceIds(Aws::Vector<ServiceId>&& value) { SetServiceIds(std::move(value)); return *this;}
-    inline TraceSummary& AddServiceIds(const ServiceId& value) { m_serviceIdsHasBeenSet = true; m_serviceIds.push_back(value); return *this; }
-    inline TraceSummary& AddServiceIds(ServiceId&& value) { m_serviceIdsHasBeenSet = true; m_serviceIds.push_back(std::move(value)); return *this; }
+    template<typename ServiceIdsT = Aws::Vector<ServiceId>>
+    void SetServiceIds(ServiceIdsT&& value) { m_serviceIdsHasBeenSet = true; m_serviceIds = std::forward<ServiceIdsT>(value); }
+    template<typename ServiceIdsT = Aws::Vector<ServiceId>>
+    TraceSummary& WithServiceIds(ServiceIdsT&& value) { SetServiceIds(std::forward<ServiceIdsT>(value)); return *this;}
+    template<typename ServiceIdsT = ServiceId>
+    TraceSummary& AddServiceIds(ServiceIdsT&& value) { m_serviceIdsHasBeenSet = true; m_serviceIds.emplace_back(std::forward<ServiceIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -206,14 +202,14 @@ namespace Model
      * <p>A list of resource ARNs for any resource corresponding to the trace
      * segments.</p>
      */
-    inline const Aws::Vector<ResourceARNDetail>& GetResourceARNs() const{ return m_resourceARNs; }
+    inline const Aws::Vector<ResourceARNDetail>& GetResourceARNs() const { return m_resourceARNs; }
     inline bool ResourceARNsHasBeenSet() const { return m_resourceARNsHasBeenSet; }
-    inline void SetResourceARNs(const Aws::Vector<ResourceARNDetail>& value) { m_resourceARNsHasBeenSet = true; m_resourceARNs = value; }
-    inline void SetResourceARNs(Aws::Vector<ResourceARNDetail>&& value) { m_resourceARNsHasBeenSet = true; m_resourceARNs = std::move(value); }
-    inline TraceSummary& WithResourceARNs(const Aws::Vector<ResourceARNDetail>& value) { SetResourceARNs(value); return *this;}
-    inline TraceSummary& WithResourceARNs(Aws::Vector<ResourceARNDetail>&& value) { SetResourceARNs(std::move(value)); return *this;}
-    inline TraceSummary& AddResourceARNs(const ResourceARNDetail& value) { m_resourceARNsHasBeenSet = true; m_resourceARNs.push_back(value); return *this; }
-    inline TraceSummary& AddResourceARNs(ResourceARNDetail&& value) { m_resourceARNsHasBeenSet = true; m_resourceARNs.push_back(std::move(value)); return *this; }
+    template<typename ResourceARNsT = Aws::Vector<ResourceARNDetail>>
+    void SetResourceARNs(ResourceARNsT&& value) { m_resourceARNsHasBeenSet = true; m_resourceARNs = std::forward<ResourceARNsT>(value); }
+    template<typename ResourceARNsT = Aws::Vector<ResourceARNDetail>>
+    TraceSummary& WithResourceARNs(ResourceARNsT&& value) { SetResourceARNs(std::forward<ResourceARNsT>(value)); return *this;}
+    template<typename ResourceARNsT = ResourceARNDetail>
+    TraceSummary& AddResourceARNs(ResourceARNsT&& value) { m_resourceARNsHasBeenSet = true; m_resourceARNs.emplace_back(std::forward<ResourceARNsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -221,14 +217,14 @@ namespace Model
      * <p>A list of EC2 instance IDs for any instance corresponding to the trace
      * segments.</p>
      */
-    inline const Aws::Vector<InstanceIdDetail>& GetInstanceIds() const{ return m_instanceIds; }
+    inline const Aws::Vector<InstanceIdDetail>& GetInstanceIds() const { return m_instanceIds; }
     inline bool InstanceIdsHasBeenSet() const { return m_instanceIdsHasBeenSet; }
-    inline void SetInstanceIds(const Aws::Vector<InstanceIdDetail>& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
-    inline void SetInstanceIds(Aws::Vector<InstanceIdDetail>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = std::move(value); }
-    inline TraceSummary& WithInstanceIds(const Aws::Vector<InstanceIdDetail>& value) { SetInstanceIds(value); return *this;}
-    inline TraceSummary& WithInstanceIds(Aws::Vector<InstanceIdDetail>&& value) { SetInstanceIds(std::move(value)); return *this;}
-    inline TraceSummary& AddInstanceIds(const InstanceIdDetail& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
-    inline TraceSummary& AddInstanceIds(InstanceIdDetail&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(std::move(value)); return *this; }
+    template<typename InstanceIdsT = Aws::Vector<InstanceIdDetail>>
+    void SetInstanceIds(InstanceIdsT&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = std::forward<InstanceIdsT>(value); }
+    template<typename InstanceIdsT = Aws::Vector<InstanceIdDetail>>
+    TraceSummary& WithInstanceIds(InstanceIdsT&& value) { SetInstanceIds(std::forward<InstanceIdsT>(value)); return *this;}
+    template<typename InstanceIdsT = InstanceIdDetail>
+    TraceSummary& AddInstanceIds(InstanceIdsT&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.emplace_back(std::forward<InstanceIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -236,26 +232,26 @@ namespace Model
      * <p>A list of Availability Zones for any zone corresponding to the trace
      * segments.</p>
      */
-    inline const Aws::Vector<AvailabilityZoneDetail>& GetAvailabilityZones() const{ return m_availabilityZones; }
+    inline const Aws::Vector<AvailabilityZoneDetail>& GetAvailabilityZones() const { return m_availabilityZones; }
     inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
-    inline void SetAvailabilityZones(const Aws::Vector<AvailabilityZoneDetail>& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
-    inline void SetAvailabilityZones(Aws::Vector<AvailabilityZoneDetail>&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = std::move(value); }
-    inline TraceSummary& WithAvailabilityZones(const Aws::Vector<AvailabilityZoneDetail>& value) { SetAvailabilityZones(value); return *this;}
-    inline TraceSummary& WithAvailabilityZones(Aws::Vector<AvailabilityZoneDetail>&& value) { SetAvailabilityZones(std::move(value)); return *this;}
-    inline TraceSummary& AddAvailabilityZones(const AvailabilityZoneDetail& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
-    inline TraceSummary& AddAvailabilityZones(AvailabilityZoneDetail&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(std::move(value)); return *this; }
+    template<typename AvailabilityZonesT = Aws::Vector<AvailabilityZoneDetail>>
+    void SetAvailabilityZones(AvailabilityZonesT&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = std::forward<AvailabilityZonesT>(value); }
+    template<typename AvailabilityZonesT = Aws::Vector<AvailabilityZoneDetail>>
+    TraceSummary& WithAvailabilityZones(AvailabilityZonesT&& value) { SetAvailabilityZones(std::forward<AvailabilityZonesT>(value)); return *this;}
+    template<typename AvailabilityZonesT = AvailabilityZoneDetail>
+    TraceSummary& AddAvailabilityZones(AvailabilityZonesT&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.emplace_back(std::forward<AvailabilityZonesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The root of a trace.</p>
      */
-    inline const ServiceId& GetEntryPoint() const{ return m_entryPoint; }
+    inline const ServiceId& GetEntryPoint() const { return m_entryPoint; }
     inline bool EntryPointHasBeenSet() const { return m_entryPointHasBeenSet; }
-    inline void SetEntryPoint(const ServiceId& value) { m_entryPointHasBeenSet = true; m_entryPoint = value; }
-    inline void SetEntryPoint(ServiceId&& value) { m_entryPointHasBeenSet = true; m_entryPoint = std::move(value); }
-    inline TraceSummary& WithEntryPoint(const ServiceId& value) { SetEntryPoint(value); return *this;}
-    inline TraceSummary& WithEntryPoint(ServiceId&& value) { SetEntryPoint(std::move(value)); return *this;}
+    template<typename EntryPointT = ServiceId>
+    void SetEntryPoint(EntryPointT&& value) { m_entryPointHasBeenSet = true; m_entryPoint = std::forward<EntryPointT>(value); }
+    template<typename EntryPointT = ServiceId>
+    TraceSummary& WithEntryPoint(EntryPointT&& value) { SetEntryPoint(std::forward<EntryPointT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -263,14 +259,14 @@ namespace Model
      * <p>A collection of FaultRootCause structures corresponding to the trace
      * segments.</p>
      */
-    inline const Aws::Vector<FaultRootCause>& GetFaultRootCauses() const{ return m_faultRootCauses; }
+    inline const Aws::Vector<FaultRootCause>& GetFaultRootCauses() const { return m_faultRootCauses; }
     inline bool FaultRootCausesHasBeenSet() const { return m_faultRootCausesHasBeenSet; }
-    inline void SetFaultRootCauses(const Aws::Vector<FaultRootCause>& value) { m_faultRootCausesHasBeenSet = true; m_faultRootCauses = value; }
-    inline void SetFaultRootCauses(Aws::Vector<FaultRootCause>&& value) { m_faultRootCausesHasBeenSet = true; m_faultRootCauses = std::move(value); }
-    inline TraceSummary& WithFaultRootCauses(const Aws::Vector<FaultRootCause>& value) { SetFaultRootCauses(value); return *this;}
-    inline TraceSummary& WithFaultRootCauses(Aws::Vector<FaultRootCause>&& value) { SetFaultRootCauses(std::move(value)); return *this;}
-    inline TraceSummary& AddFaultRootCauses(const FaultRootCause& value) { m_faultRootCausesHasBeenSet = true; m_faultRootCauses.push_back(value); return *this; }
-    inline TraceSummary& AddFaultRootCauses(FaultRootCause&& value) { m_faultRootCausesHasBeenSet = true; m_faultRootCauses.push_back(std::move(value)); return *this; }
+    template<typename FaultRootCausesT = Aws::Vector<FaultRootCause>>
+    void SetFaultRootCauses(FaultRootCausesT&& value) { m_faultRootCausesHasBeenSet = true; m_faultRootCauses = std::forward<FaultRootCausesT>(value); }
+    template<typename FaultRootCausesT = Aws::Vector<FaultRootCause>>
+    TraceSummary& WithFaultRootCauses(FaultRootCausesT&& value) { SetFaultRootCauses(std::forward<FaultRootCausesT>(value)); return *this;}
+    template<typename FaultRootCausesT = FaultRootCause>
+    TraceSummary& AddFaultRootCauses(FaultRootCausesT&& value) { m_faultRootCausesHasBeenSet = true; m_faultRootCauses.emplace_back(std::forward<FaultRootCausesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -278,14 +274,14 @@ namespace Model
      * <p>A collection of ErrorRootCause structures corresponding to the trace
      * segments.</p>
      */
-    inline const Aws::Vector<ErrorRootCause>& GetErrorRootCauses() const{ return m_errorRootCauses; }
+    inline const Aws::Vector<ErrorRootCause>& GetErrorRootCauses() const { return m_errorRootCauses; }
     inline bool ErrorRootCausesHasBeenSet() const { return m_errorRootCausesHasBeenSet; }
-    inline void SetErrorRootCauses(const Aws::Vector<ErrorRootCause>& value) { m_errorRootCausesHasBeenSet = true; m_errorRootCauses = value; }
-    inline void SetErrorRootCauses(Aws::Vector<ErrorRootCause>&& value) { m_errorRootCausesHasBeenSet = true; m_errorRootCauses = std::move(value); }
-    inline TraceSummary& WithErrorRootCauses(const Aws::Vector<ErrorRootCause>& value) { SetErrorRootCauses(value); return *this;}
-    inline TraceSummary& WithErrorRootCauses(Aws::Vector<ErrorRootCause>&& value) { SetErrorRootCauses(std::move(value)); return *this;}
-    inline TraceSummary& AddErrorRootCauses(const ErrorRootCause& value) { m_errorRootCausesHasBeenSet = true; m_errorRootCauses.push_back(value); return *this; }
-    inline TraceSummary& AddErrorRootCauses(ErrorRootCause&& value) { m_errorRootCausesHasBeenSet = true; m_errorRootCauses.push_back(std::move(value)); return *this; }
+    template<typename ErrorRootCausesT = Aws::Vector<ErrorRootCause>>
+    void SetErrorRootCauses(ErrorRootCausesT&& value) { m_errorRootCausesHasBeenSet = true; m_errorRootCauses = std::forward<ErrorRootCausesT>(value); }
+    template<typename ErrorRootCausesT = Aws::Vector<ErrorRootCause>>
+    TraceSummary& WithErrorRootCauses(ErrorRootCausesT&& value) { SetErrorRootCauses(std::forward<ErrorRootCausesT>(value)); return *this;}
+    template<typename ErrorRootCausesT = ErrorRootCause>
+    TraceSummary& AddErrorRootCauses(ErrorRootCausesT&& value) { m_errorRootCausesHasBeenSet = true; m_errorRootCauses.emplace_back(std::forward<ErrorRootCausesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -293,21 +289,21 @@ namespace Model
      * <p>A collection of ResponseTimeRootCause structures corresponding to the trace
      * segments.</p>
      */
-    inline const Aws::Vector<ResponseTimeRootCause>& GetResponseTimeRootCauses() const{ return m_responseTimeRootCauses; }
+    inline const Aws::Vector<ResponseTimeRootCause>& GetResponseTimeRootCauses() const { return m_responseTimeRootCauses; }
     inline bool ResponseTimeRootCausesHasBeenSet() const { return m_responseTimeRootCausesHasBeenSet; }
-    inline void SetResponseTimeRootCauses(const Aws::Vector<ResponseTimeRootCause>& value) { m_responseTimeRootCausesHasBeenSet = true; m_responseTimeRootCauses = value; }
-    inline void SetResponseTimeRootCauses(Aws::Vector<ResponseTimeRootCause>&& value) { m_responseTimeRootCausesHasBeenSet = true; m_responseTimeRootCauses = std::move(value); }
-    inline TraceSummary& WithResponseTimeRootCauses(const Aws::Vector<ResponseTimeRootCause>& value) { SetResponseTimeRootCauses(value); return *this;}
-    inline TraceSummary& WithResponseTimeRootCauses(Aws::Vector<ResponseTimeRootCause>&& value) { SetResponseTimeRootCauses(std::move(value)); return *this;}
-    inline TraceSummary& AddResponseTimeRootCauses(const ResponseTimeRootCause& value) { m_responseTimeRootCausesHasBeenSet = true; m_responseTimeRootCauses.push_back(value); return *this; }
-    inline TraceSummary& AddResponseTimeRootCauses(ResponseTimeRootCause&& value) { m_responseTimeRootCausesHasBeenSet = true; m_responseTimeRootCauses.push_back(std::move(value)); return *this; }
+    template<typename ResponseTimeRootCausesT = Aws::Vector<ResponseTimeRootCause>>
+    void SetResponseTimeRootCauses(ResponseTimeRootCausesT&& value) { m_responseTimeRootCausesHasBeenSet = true; m_responseTimeRootCauses = std::forward<ResponseTimeRootCausesT>(value); }
+    template<typename ResponseTimeRootCausesT = Aws::Vector<ResponseTimeRootCause>>
+    TraceSummary& WithResponseTimeRootCauses(ResponseTimeRootCausesT&& value) { SetResponseTimeRootCauses(std::forward<ResponseTimeRootCausesT>(value)); return *this;}
+    template<typename ResponseTimeRootCausesT = ResponseTimeRootCause>
+    TraceSummary& AddResponseTimeRootCauses(ResponseTimeRootCausesT&& value) { m_responseTimeRootCausesHasBeenSet = true; m_responseTimeRootCauses.emplace_back(std::forward<ResponseTimeRootCausesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The revision number of a trace.</p>
      */
-    inline int GetRevision() const{ return m_revision; }
+    inline int GetRevision() const { return m_revision; }
     inline bool RevisionHasBeenSet() const { return m_revisionHasBeenSet; }
     inline void SetRevision(int value) { m_revisionHasBeenSet = true; m_revision = value; }
     inline TraceSummary& WithRevision(int value) { SetRevision(value); return *this;}
@@ -317,37 +313,37 @@ namespace Model
     /**
      * <p>The matched time stamp of a defined event.</p>
      */
-    inline const Aws::Utils::DateTime& GetMatchedEventTime() const{ return m_matchedEventTime; }
+    inline const Aws::Utils::DateTime& GetMatchedEventTime() const { return m_matchedEventTime; }
     inline bool MatchedEventTimeHasBeenSet() const { return m_matchedEventTimeHasBeenSet; }
-    inline void SetMatchedEventTime(const Aws::Utils::DateTime& value) { m_matchedEventTimeHasBeenSet = true; m_matchedEventTime = value; }
-    inline void SetMatchedEventTime(Aws::Utils::DateTime&& value) { m_matchedEventTimeHasBeenSet = true; m_matchedEventTime = std::move(value); }
-    inline TraceSummary& WithMatchedEventTime(const Aws::Utils::DateTime& value) { SetMatchedEventTime(value); return *this;}
-    inline TraceSummary& WithMatchedEventTime(Aws::Utils::DateTime&& value) { SetMatchedEventTime(std::move(value)); return *this;}
+    template<typename MatchedEventTimeT = Aws::Utils::DateTime>
+    void SetMatchedEventTime(MatchedEventTimeT&& value) { m_matchedEventTimeHasBeenSet = true; m_matchedEventTime = std::forward<MatchedEventTimeT>(value); }
+    template<typename MatchedEventTimeT = Aws::Utils::DateTime>
+    TraceSummary& WithMatchedEventTime(MatchedEventTimeT&& value) { SetMatchedEventTime(std::forward<MatchedEventTimeT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    double m_duration;
+    double m_duration{0.0};
     bool m_durationHasBeenSet = false;
 
-    double m_responseTime;
+    double m_responseTime{0.0};
     bool m_responseTimeHasBeenSet = false;
 
-    bool m_hasFault;
+    bool m_hasFault{false};
     bool m_hasFaultHasBeenSet = false;
 
-    bool m_hasError;
+    bool m_hasError{false};
     bool m_hasErrorHasBeenSet = false;
 
-    bool m_hasThrottle;
+    bool m_hasThrottle{false};
     bool m_hasThrottleHasBeenSet = false;
 
-    bool m_isPartial;
+    bool m_isPartial{false};
     bool m_isPartialHasBeenSet = false;
 
     Http m_http;
@@ -383,10 +379,10 @@ namespace Model
     Aws::Vector<ResponseTimeRootCause> m_responseTimeRootCauses;
     bool m_responseTimeRootCausesHasBeenSet = false;
 
-    int m_revision;
+    int m_revision{0};
     bool m_revisionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_matchedEventTime;
+    Aws::Utils::DateTime m_matchedEventTime{};
     bool m_matchedEventTimeHasBeenSet = false;
   };
 

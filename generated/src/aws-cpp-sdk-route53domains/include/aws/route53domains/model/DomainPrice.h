@@ -33,7 +33,7 @@ namespace Model
   class DomainPrice
   {
   public:
-    AWS_ROUTE53DOMAINS_API DomainPrice();
+    AWS_ROUTE53DOMAINS_API DomainPrice() = default;
     AWS_ROUTE53DOMAINS_API DomainPrice(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53DOMAINS_API DomainPrice& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53DOMAINS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,74 +43,72 @@ namespace Model
     /**
      * <p>The name of the TLD for which the prices apply.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline DomainPrice& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DomainPrice& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DomainPrice& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DomainPrice& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The price for domain registration with Route 53.</p>
      */
-    inline const PriceWithCurrency& GetRegistrationPrice() const{ return m_registrationPrice; }
+    inline const PriceWithCurrency& GetRegistrationPrice() const { return m_registrationPrice; }
     inline bool RegistrationPriceHasBeenSet() const { return m_registrationPriceHasBeenSet; }
-    inline void SetRegistrationPrice(const PriceWithCurrency& value) { m_registrationPriceHasBeenSet = true; m_registrationPrice = value; }
-    inline void SetRegistrationPrice(PriceWithCurrency&& value) { m_registrationPriceHasBeenSet = true; m_registrationPrice = std::move(value); }
-    inline DomainPrice& WithRegistrationPrice(const PriceWithCurrency& value) { SetRegistrationPrice(value); return *this;}
-    inline DomainPrice& WithRegistrationPrice(PriceWithCurrency&& value) { SetRegistrationPrice(std::move(value)); return *this;}
+    template<typename RegistrationPriceT = PriceWithCurrency>
+    void SetRegistrationPrice(RegistrationPriceT&& value) { m_registrationPriceHasBeenSet = true; m_registrationPrice = std::forward<RegistrationPriceT>(value); }
+    template<typename RegistrationPriceT = PriceWithCurrency>
+    DomainPrice& WithRegistrationPrice(RegistrationPriceT&& value) { SetRegistrationPrice(std::forward<RegistrationPriceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The price for transferring the domain registration to Route 53.</p>
      */
-    inline const PriceWithCurrency& GetTransferPrice() const{ return m_transferPrice; }
+    inline const PriceWithCurrency& GetTransferPrice() const { return m_transferPrice; }
     inline bool TransferPriceHasBeenSet() const { return m_transferPriceHasBeenSet; }
-    inline void SetTransferPrice(const PriceWithCurrency& value) { m_transferPriceHasBeenSet = true; m_transferPrice = value; }
-    inline void SetTransferPrice(PriceWithCurrency&& value) { m_transferPriceHasBeenSet = true; m_transferPrice = std::move(value); }
-    inline DomainPrice& WithTransferPrice(const PriceWithCurrency& value) { SetTransferPrice(value); return *this;}
-    inline DomainPrice& WithTransferPrice(PriceWithCurrency&& value) { SetTransferPrice(std::move(value)); return *this;}
+    template<typename TransferPriceT = PriceWithCurrency>
+    void SetTransferPrice(TransferPriceT&& value) { m_transferPriceHasBeenSet = true; m_transferPrice = std::forward<TransferPriceT>(value); }
+    template<typename TransferPriceT = PriceWithCurrency>
+    DomainPrice& WithTransferPrice(TransferPriceT&& value) { SetTransferPrice(std::forward<TransferPriceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The price for renewing domain registration with Route 53.</p>
      */
-    inline const PriceWithCurrency& GetRenewalPrice() const{ return m_renewalPrice; }
+    inline const PriceWithCurrency& GetRenewalPrice() const { return m_renewalPrice; }
     inline bool RenewalPriceHasBeenSet() const { return m_renewalPriceHasBeenSet; }
-    inline void SetRenewalPrice(const PriceWithCurrency& value) { m_renewalPriceHasBeenSet = true; m_renewalPrice = value; }
-    inline void SetRenewalPrice(PriceWithCurrency&& value) { m_renewalPriceHasBeenSet = true; m_renewalPrice = std::move(value); }
-    inline DomainPrice& WithRenewalPrice(const PriceWithCurrency& value) { SetRenewalPrice(value); return *this;}
-    inline DomainPrice& WithRenewalPrice(PriceWithCurrency&& value) { SetRenewalPrice(std::move(value)); return *this;}
+    template<typename RenewalPriceT = PriceWithCurrency>
+    void SetRenewalPrice(RenewalPriceT&& value) { m_renewalPriceHasBeenSet = true; m_renewalPrice = std::forward<RenewalPriceT>(value); }
+    template<typename RenewalPriceT = PriceWithCurrency>
+    DomainPrice& WithRenewalPrice(RenewalPriceT&& value) { SetRenewalPrice(std::forward<RenewalPriceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The price for changing domain ownership.</p>
      */
-    inline const PriceWithCurrency& GetChangeOwnershipPrice() const{ return m_changeOwnershipPrice; }
+    inline const PriceWithCurrency& GetChangeOwnershipPrice() const { return m_changeOwnershipPrice; }
     inline bool ChangeOwnershipPriceHasBeenSet() const { return m_changeOwnershipPriceHasBeenSet; }
-    inline void SetChangeOwnershipPrice(const PriceWithCurrency& value) { m_changeOwnershipPriceHasBeenSet = true; m_changeOwnershipPrice = value; }
-    inline void SetChangeOwnershipPrice(PriceWithCurrency&& value) { m_changeOwnershipPriceHasBeenSet = true; m_changeOwnershipPrice = std::move(value); }
-    inline DomainPrice& WithChangeOwnershipPrice(const PriceWithCurrency& value) { SetChangeOwnershipPrice(value); return *this;}
-    inline DomainPrice& WithChangeOwnershipPrice(PriceWithCurrency&& value) { SetChangeOwnershipPrice(std::move(value)); return *this;}
+    template<typename ChangeOwnershipPriceT = PriceWithCurrency>
+    void SetChangeOwnershipPrice(ChangeOwnershipPriceT&& value) { m_changeOwnershipPriceHasBeenSet = true; m_changeOwnershipPrice = std::forward<ChangeOwnershipPriceT>(value); }
+    template<typename ChangeOwnershipPriceT = PriceWithCurrency>
+    DomainPrice& WithChangeOwnershipPrice(ChangeOwnershipPriceT&& value) { SetChangeOwnershipPrice(std::forward<ChangeOwnershipPriceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The price for restoring the domain with Route 53.</p>
      */
-    inline const PriceWithCurrency& GetRestorationPrice() const{ return m_restorationPrice; }
+    inline const PriceWithCurrency& GetRestorationPrice() const { return m_restorationPrice; }
     inline bool RestorationPriceHasBeenSet() const { return m_restorationPriceHasBeenSet; }
-    inline void SetRestorationPrice(const PriceWithCurrency& value) { m_restorationPriceHasBeenSet = true; m_restorationPrice = value; }
-    inline void SetRestorationPrice(PriceWithCurrency&& value) { m_restorationPriceHasBeenSet = true; m_restorationPrice = std::move(value); }
-    inline DomainPrice& WithRestorationPrice(const PriceWithCurrency& value) { SetRestorationPrice(value); return *this;}
-    inline DomainPrice& WithRestorationPrice(PriceWithCurrency&& value) { SetRestorationPrice(std::move(value)); return *this;}
+    template<typename RestorationPriceT = PriceWithCurrency>
+    void SetRestorationPrice(RestorationPriceT&& value) { m_restorationPriceHasBeenSet = true; m_restorationPrice = std::forward<RestorationPriceT>(value); }
+    template<typename RestorationPriceT = PriceWithCurrency>
+    DomainPrice& WithRestorationPrice(RestorationPriceT&& value) { SetRestorationPrice(std::forward<RestorationPriceT>(value)); return *this;}
     ///@}
   private:
 

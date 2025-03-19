@@ -18,16 +18,7 @@ namespace FSx
 namespace Model
 {
 
-AutocommitPeriod::AutocommitPeriod() : 
-    m_type(AutocommitPeriodType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_value(0),
-    m_valueHasBeenSet(false)
-{
-}
-
 AutocommitPeriod::AutocommitPeriod(JsonView jsonValue)
-  : AutocommitPeriod()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ AutocommitPeriod& AutocommitPeriod::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = AutocommitPeriodTypeMapper::GetAutocommitPeriodTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetInteger("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

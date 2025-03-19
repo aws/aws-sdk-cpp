@@ -12,11 +12,6 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchDetectDominantLanguageRequest::BatchDetectDominantLanguageRequest() : 
-    m_textListHasBeenSet(false)
-{
-}
-
 Aws::String BatchDetectDominantLanguageRequest::SerializePayload() const
 {
   JsonValue payload;

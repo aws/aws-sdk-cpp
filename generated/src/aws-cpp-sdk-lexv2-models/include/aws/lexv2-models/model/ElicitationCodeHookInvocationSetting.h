@@ -32,7 +32,7 @@ namespace Model
   class ElicitationCodeHookInvocationSetting
   {
   public:
-    AWS_LEXMODELSV2_API ElicitationCodeHookInvocationSetting();
+    AWS_LEXMODELSV2_API ElicitationCodeHookInvocationSetting() = default;
     AWS_LEXMODELSV2_API ElicitationCodeHookInvocationSetting(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API ElicitationCodeHookInvocationSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>Indicates whether a Lambda function should be invoked for the dialog.</p>
      */
-    inline bool GetEnableCodeHookInvocation() const{ return m_enableCodeHookInvocation; }
+    inline bool GetEnableCodeHookInvocation() const { return m_enableCodeHookInvocation; }
     inline bool EnableCodeHookInvocationHasBeenSet() const { return m_enableCodeHookInvocationHasBeenSet; }
     inline void SetEnableCodeHookInvocation(bool value) { m_enableCodeHookInvocationHasBeenSet = true; m_enableCodeHookInvocation = value; }
     inline ElicitationCodeHookInvocationSetting& WithEnableCodeHookInvocation(bool value) { SetEnableCodeHookInvocation(value); return *this;}
@@ -53,18 +53,16 @@ namespace Model
      * <p>A label that indicates the dialog step from which the dialog code hook is
      * happening.</p>
      */
-    inline const Aws::String& GetInvocationLabel() const{ return m_invocationLabel; }
+    inline const Aws::String& GetInvocationLabel() const { return m_invocationLabel; }
     inline bool InvocationLabelHasBeenSet() const { return m_invocationLabelHasBeenSet; }
-    inline void SetInvocationLabel(const Aws::String& value) { m_invocationLabelHasBeenSet = true; m_invocationLabel = value; }
-    inline void SetInvocationLabel(Aws::String&& value) { m_invocationLabelHasBeenSet = true; m_invocationLabel = std::move(value); }
-    inline void SetInvocationLabel(const char* value) { m_invocationLabelHasBeenSet = true; m_invocationLabel.assign(value); }
-    inline ElicitationCodeHookInvocationSetting& WithInvocationLabel(const Aws::String& value) { SetInvocationLabel(value); return *this;}
-    inline ElicitationCodeHookInvocationSetting& WithInvocationLabel(Aws::String&& value) { SetInvocationLabel(std::move(value)); return *this;}
-    inline ElicitationCodeHookInvocationSetting& WithInvocationLabel(const char* value) { SetInvocationLabel(value); return *this;}
+    template<typename InvocationLabelT = Aws::String>
+    void SetInvocationLabel(InvocationLabelT&& value) { m_invocationLabelHasBeenSet = true; m_invocationLabel = std::forward<InvocationLabelT>(value); }
+    template<typename InvocationLabelT = Aws::String>
+    ElicitationCodeHookInvocationSetting& WithInvocationLabel(InvocationLabelT&& value) { SetInvocationLabel(std::forward<InvocationLabelT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_enableCodeHookInvocation;
+    bool m_enableCodeHookInvocation{false};
     bool m_enableCodeHookInvocationHasBeenSet = false;
 
     Aws::String m_invocationLabel;

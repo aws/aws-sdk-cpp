@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateDeliverabilityTestReportResult::CreateDeliverabilityTestReportResult() : 
-    m_deliverabilityTestStatus(DeliverabilityTestStatus::NOT_SET)
-{
-}
-
 CreateDeliverabilityTestReportResult::CreateDeliverabilityTestReportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateDeliverabilityTestReportResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ CreateDeliverabilityTestReportResult& CreateDeliverabilityTestReportResult::oper
   if(jsonValue.ValueExists("ReportId"))
   {
     m_reportId = jsonValue.GetString("ReportId");
-
+    m_reportIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeliverabilityTestStatus"))
   {
     m_deliverabilityTestStatus = DeliverabilityTestStatusMapper::GetDeliverabilityTestStatusForName(jsonValue.GetString("DeliverabilityTestStatus"));
-
+    m_deliverabilityTestStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

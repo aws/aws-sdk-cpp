@@ -18,22 +18,7 @@ namespace ResourceExplorer2
 namespace Model
 {
 
-ManagedView::ManagedView() : 
-    m_filtersHasBeenSet(false),
-    m_includedPropertiesHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_managedViewArnHasBeenSet(false),
-    m_managedViewNameHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_resourcePolicyHasBeenSet(false),
-    m_scopeHasBeenSet(false),
-    m_trustedServiceHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 ManagedView::ManagedView(JsonView jsonValue)
-  : ManagedView()
 {
   *this = jsonValue;
 }
@@ -43,10 +28,8 @@ ManagedView& ManagedView::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Filters"))
   {
     m_filters = jsonValue.GetObject("Filters");
-
     m_filtersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IncludedProperties"))
   {
     Aws::Utils::Array<JsonView> includedPropertiesJsonList = jsonValue.GetArray("IncludedProperties");
@@ -56,63 +39,46 @@ ManagedView& ManagedView::operator =(JsonView jsonValue)
     }
     m_includedPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetString("LastUpdatedAt");
-
     m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ManagedViewArn"))
   {
     m_managedViewArn = jsonValue.GetString("ManagedViewArn");
-
     m_managedViewArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ManagedViewName"))
   {
     m_managedViewName = jsonValue.GetString("ManagedViewName");
-
     m_managedViewNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Owner"))
   {
     m_owner = jsonValue.GetString("Owner");
-
     m_ownerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourcePolicy"))
   {
     m_resourcePolicy = jsonValue.GetString("ResourcePolicy");
-
     m_resourcePolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Scope"))
   {
     m_scope = jsonValue.GetString("Scope");
-
     m_scopeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrustedService"))
   {
     m_trustedService = jsonValue.GetString("TrustedService");
-
     m_trustedServiceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetString("Version");
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

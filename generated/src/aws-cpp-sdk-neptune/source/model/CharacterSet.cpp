@@ -20,14 +20,7 @@ namespace Neptune
 namespace Model
 {
 
-CharacterSet::CharacterSet() : 
-    m_characterSetNameHasBeenSet(false),
-    m_characterSetDescriptionHasBeenSet(false)
-{
-}
-
 CharacterSet::CharacterSet(const XmlNode& xmlNode)
-  : CharacterSet()
 {
   *this = xmlNode;
 }

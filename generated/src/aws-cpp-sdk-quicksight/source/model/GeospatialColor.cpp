@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-GeospatialColor::GeospatialColor() : 
-    m_solidHasBeenSet(false),
-    m_gradientHasBeenSet(false),
-    m_categoricalHasBeenSet(false)
-{
-}
-
 GeospatialColor::GeospatialColor(JsonView jsonValue)
-  : GeospatialColor()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ GeospatialColor& GeospatialColor::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Solid"))
   {
     m_solid = jsonValue.GetObject("Solid");
-
     m_solidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Gradient"))
   {
     m_gradient = jsonValue.GetObject("Gradient");
-
     m_gradientHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Categorical"))
   {
     m_categorical = jsonValue.GetObject("Categorical");
-
     m_categoricalHasBeenSet = true;
   }
-
   return *this;
 }
 

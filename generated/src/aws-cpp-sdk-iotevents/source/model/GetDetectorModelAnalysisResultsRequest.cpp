@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetDetectorModelAnalysisResultsRequest::GetDetectorModelAnalysisResultsRequest() : 
-    m_analysisIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String GetDetectorModelAnalysisResultsRequest::SerializePayload() const
 {
   return {};

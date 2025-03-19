@@ -35,7 +35,7 @@ namespace Model
   class Ulimit
   {
   public:
-    AWS_BATCH_API Ulimit();
+    AWS_BATCH_API Ulimit() = default;
     AWS_BATCH_API Ulimit(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Ulimit& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
     /**
      * <p>The hard limit for the <code>ulimit</code> type. </p>
      */
-    inline int GetHardLimit() const{ return m_hardLimit; }
+    inline int GetHardLimit() const { return m_hardLimit; }
     inline bool HardLimitHasBeenSet() const { return m_hardLimitHasBeenSet; }
     inline void SetHardLimit(int value) { m_hardLimitHasBeenSet = true; m_hardLimit = value; }
     inline Ulimit& WithHardLimit(int value) { SetHardLimit(value); return *this;}
@@ -60,34 +60,32 @@ namespace Model
      * | <code>rtprio</code> | <code>rttime</code> | <code>sigpending</code> |
      * <code>stack</code>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Ulimit& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Ulimit& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Ulimit& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Ulimit& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The soft limit for the <code>ulimit</code> type.</p>
      */
-    inline int GetSoftLimit() const{ return m_softLimit; }
+    inline int GetSoftLimit() const { return m_softLimit; }
     inline bool SoftLimitHasBeenSet() const { return m_softLimitHasBeenSet; }
     inline void SetSoftLimit(int value) { m_softLimitHasBeenSet = true; m_softLimit = value; }
     inline Ulimit& WithSoftLimit(int value) { SetSoftLimit(value); return *this;}
     ///@}
   private:
 
-    int m_hardLimit;
+    int m_hardLimit{0};
     bool m_hardLimitHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    int m_softLimit;
+    int m_softLimit{0};
     bool m_softLimitHasBeenSet = false;
   };
 

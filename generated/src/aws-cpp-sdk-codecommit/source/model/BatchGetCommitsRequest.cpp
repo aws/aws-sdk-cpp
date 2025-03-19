@@ -12,12 +12,6 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetCommitsRequest::BatchGetCommitsRequest() : 
-    m_commitIdsHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetCommitsRequest::SerializePayload() const
 {
   JsonValue payload;

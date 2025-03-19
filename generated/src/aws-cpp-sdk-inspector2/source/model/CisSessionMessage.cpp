@@ -19,16 +19,7 @@ namespace Inspector2
 namespace Model
 {
 
-CisSessionMessage::CisSessionMessage() : 
-    m_cisRuleDetailsHasBeenSet(false),
-    m_ruleIdHasBeenSet(false),
-    m_status(CisRuleStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 CisSessionMessage::CisSessionMessage(JsonView jsonValue)
-  : CisSessionMessage()
 {
   *this = jsonValue;
 }
@@ -40,21 +31,16 @@ CisSessionMessage& CisSessionMessage::operator =(JsonView jsonValue)
     m_cisRuleDetails = HashingUtils::Base64Decode(jsonValue.GetString("cisRuleDetails"));
     m_cisRuleDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ruleId"))
   {
     m_ruleId = jsonValue.GetString("ruleId");
-
     m_ruleIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = CisRuleStatusMapper::GetCisRuleStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

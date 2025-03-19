@@ -18,13 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-ContainerPortConfiguration::ContainerPortConfiguration() : 
-    m_containerPortRangesHasBeenSet(false)
-{
-}
-
 ContainerPortConfiguration::ContainerPortConfiguration(JsonView jsonValue)
-  : ContainerPortConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ContainerPortConfiguration& ContainerPortConfiguration::operator =(JsonView json
     }
     m_containerPortRangesHasBeenSet = true;
   }
-
   return *this;
 }
 

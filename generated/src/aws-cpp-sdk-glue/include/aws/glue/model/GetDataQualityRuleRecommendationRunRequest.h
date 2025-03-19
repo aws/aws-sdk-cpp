@@ -21,7 +21,7 @@ namespace Model
   class GetDataQualityRuleRecommendationRunRequest : public GlueRequest
   {
   public:
-    AWS_GLUE_API GetDataQualityRuleRecommendationRunRequest();
+    AWS_GLUE_API GetDataQualityRuleRecommendationRunRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The unique run identifier associated with this run.</p>
      */
-    inline const Aws::String& GetRunId() const{ return m_runId; }
+    inline const Aws::String& GetRunId() const { return m_runId; }
     inline bool RunIdHasBeenSet() const { return m_runIdHasBeenSet; }
-    inline void SetRunId(const Aws::String& value) { m_runIdHasBeenSet = true; m_runId = value; }
-    inline void SetRunId(Aws::String&& value) { m_runIdHasBeenSet = true; m_runId = std::move(value); }
-    inline void SetRunId(const char* value) { m_runIdHasBeenSet = true; m_runId.assign(value); }
-    inline GetDataQualityRuleRecommendationRunRequest& WithRunId(const Aws::String& value) { SetRunId(value); return *this;}
-    inline GetDataQualityRuleRecommendationRunRequest& WithRunId(Aws::String&& value) { SetRunId(std::move(value)); return *this;}
-    inline GetDataQualityRuleRecommendationRunRequest& WithRunId(const char* value) { SetRunId(value); return *this;}
+    template<typename RunIdT = Aws::String>
+    void SetRunId(RunIdT&& value) { m_runIdHasBeenSet = true; m_runId = std::forward<RunIdT>(value); }
+    template<typename RunIdT = Aws::String>
+    GetDataQualityRuleRecommendationRunRequest& WithRunId(RunIdT&& value) { SetRunId(std::forward<RunIdT>(value)); return *this;}
     ///@}
   private:
 

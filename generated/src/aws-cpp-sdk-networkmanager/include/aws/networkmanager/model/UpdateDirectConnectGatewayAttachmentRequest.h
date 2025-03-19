@@ -22,7 +22,7 @@ namespace Model
   class UpdateDirectConnectGatewayAttachmentRequest : public NetworkManagerRequest
   {
   public:
-    AWS_NETWORKMANAGER_API UpdateDirectConnectGatewayAttachmentRequest();
+    AWS_NETWORKMANAGER_API UpdateDirectConnectGatewayAttachmentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
      * <p>The ID of the Direct Connect gateway attachment for the updated edge
      * locations. </p>
      */
-    inline const Aws::String& GetAttachmentId() const{ return m_attachmentId; }
+    inline const Aws::String& GetAttachmentId() const { return m_attachmentId; }
     inline bool AttachmentIdHasBeenSet() const { return m_attachmentIdHasBeenSet; }
-    inline void SetAttachmentId(const Aws::String& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = value; }
-    inline void SetAttachmentId(Aws::String&& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = std::move(value); }
-    inline void SetAttachmentId(const char* value) { m_attachmentIdHasBeenSet = true; m_attachmentId.assign(value); }
-    inline UpdateDirectConnectGatewayAttachmentRequest& WithAttachmentId(const Aws::String& value) { SetAttachmentId(value); return *this;}
-    inline UpdateDirectConnectGatewayAttachmentRequest& WithAttachmentId(Aws::String&& value) { SetAttachmentId(std::move(value)); return *this;}
-    inline UpdateDirectConnectGatewayAttachmentRequest& WithAttachmentId(const char* value) { SetAttachmentId(value); return *this;}
+    template<typename AttachmentIdT = Aws::String>
+    void SetAttachmentId(AttachmentIdT&& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = std::forward<AttachmentIdT>(value); }
+    template<typename AttachmentIdT = Aws::String>
+    UpdateDirectConnectGatewayAttachmentRequest& WithAttachmentId(AttachmentIdT&& value) { SetAttachmentId(std::forward<AttachmentIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,15 +53,14 @@ namespace Model
      * locations. <code>EdgeLocations</code> is only used for Direct Connect gateway
      * attachments.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetEdgeLocations() const{ return m_edgeLocations; }
+    inline const Aws::Vector<Aws::String>& GetEdgeLocations() const { return m_edgeLocations; }
     inline bool EdgeLocationsHasBeenSet() const { return m_edgeLocationsHasBeenSet; }
-    inline void SetEdgeLocations(const Aws::Vector<Aws::String>& value) { m_edgeLocationsHasBeenSet = true; m_edgeLocations = value; }
-    inline void SetEdgeLocations(Aws::Vector<Aws::String>&& value) { m_edgeLocationsHasBeenSet = true; m_edgeLocations = std::move(value); }
-    inline UpdateDirectConnectGatewayAttachmentRequest& WithEdgeLocations(const Aws::Vector<Aws::String>& value) { SetEdgeLocations(value); return *this;}
-    inline UpdateDirectConnectGatewayAttachmentRequest& WithEdgeLocations(Aws::Vector<Aws::String>&& value) { SetEdgeLocations(std::move(value)); return *this;}
-    inline UpdateDirectConnectGatewayAttachmentRequest& AddEdgeLocations(const Aws::String& value) { m_edgeLocationsHasBeenSet = true; m_edgeLocations.push_back(value); return *this; }
-    inline UpdateDirectConnectGatewayAttachmentRequest& AddEdgeLocations(Aws::String&& value) { m_edgeLocationsHasBeenSet = true; m_edgeLocations.push_back(std::move(value)); return *this; }
-    inline UpdateDirectConnectGatewayAttachmentRequest& AddEdgeLocations(const char* value) { m_edgeLocationsHasBeenSet = true; m_edgeLocations.push_back(value); return *this; }
+    template<typename EdgeLocationsT = Aws::Vector<Aws::String>>
+    void SetEdgeLocations(EdgeLocationsT&& value) { m_edgeLocationsHasBeenSet = true; m_edgeLocations = std::forward<EdgeLocationsT>(value); }
+    template<typename EdgeLocationsT = Aws::Vector<Aws::String>>
+    UpdateDirectConnectGatewayAttachmentRequest& WithEdgeLocations(EdgeLocationsT&& value) { SetEdgeLocations(std::forward<EdgeLocationsT>(value)); return *this;}
+    template<typename EdgeLocationsT = Aws::String>
+    UpdateDirectConnectGatewayAttachmentRequest& AddEdgeLocations(EdgeLocationsT&& value) { m_edgeLocationsHasBeenSet = true; m_edgeLocations.emplace_back(std::forward<EdgeLocationsT>(value)); return *this; }
     ///@}
   private:
 

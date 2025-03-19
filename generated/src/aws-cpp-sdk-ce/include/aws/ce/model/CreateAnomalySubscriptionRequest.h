@@ -23,7 +23,7 @@ namespace Model
   class CreateAnomalySubscriptionRequest : public CostExplorerRequest
   {
   public:
-    AWS_COSTEXPLORER_API CreateAnomalySubscriptionRequest();
+    AWS_COSTEXPLORER_API CreateAnomalySubscriptionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,12 +40,12 @@ namespace Model
     /**
      * <p>The cost anomaly subscription object that you want to create. </p>
      */
-    inline const AnomalySubscription& GetAnomalySubscription() const{ return m_anomalySubscription; }
+    inline const AnomalySubscription& GetAnomalySubscription() const { return m_anomalySubscription; }
     inline bool AnomalySubscriptionHasBeenSet() const { return m_anomalySubscriptionHasBeenSet; }
-    inline void SetAnomalySubscription(const AnomalySubscription& value) { m_anomalySubscriptionHasBeenSet = true; m_anomalySubscription = value; }
-    inline void SetAnomalySubscription(AnomalySubscription&& value) { m_anomalySubscriptionHasBeenSet = true; m_anomalySubscription = std::move(value); }
-    inline CreateAnomalySubscriptionRequest& WithAnomalySubscription(const AnomalySubscription& value) { SetAnomalySubscription(value); return *this;}
-    inline CreateAnomalySubscriptionRequest& WithAnomalySubscription(AnomalySubscription&& value) { SetAnomalySubscription(std::move(value)); return *this;}
+    template<typename AnomalySubscriptionT = AnomalySubscription>
+    void SetAnomalySubscription(AnomalySubscriptionT&& value) { m_anomalySubscriptionHasBeenSet = true; m_anomalySubscription = std::forward<AnomalySubscriptionT>(value); }
+    template<typename AnomalySubscriptionT = AnomalySubscription>
+    CreateAnomalySubscriptionRequest& WithAnomalySubscription(AnomalySubscriptionT&& value) { SetAnomalySubscription(std::forward<AnomalySubscriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,14 +67,14 @@ namespace Model
      * for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
      * </ul>
      */
-    inline const Aws::Vector<ResourceTag>& GetResourceTags() const{ return m_resourceTags; }
+    inline const Aws::Vector<ResourceTag>& GetResourceTags() const { return m_resourceTags; }
     inline bool ResourceTagsHasBeenSet() const { return m_resourceTagsHasBeenSet; }
-    inline void SetResourceTags(const Aws::Vector<ResourceTag>& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = value; }
-    inline void SetResourceTags(Aws::Vector<ResourceTag>&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = std::move(value); }
-    inline CreateAnomalySubscriptionRequest& WithResourceTags(const Aws::Vector<ResourceTag>& value) { SetResourceTags(value); return *this;}
-    inline CreateAnomalySubscriptionRequest& WithResourceTags(Aws::Vector<ResourceTag>&& value) { SetResourceTags(std::move(value)); return *this;}
-    inline CreateAnomalySubscriptionRequest& AddResourceTags(const ResourceTag& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(value); return *this; }
-    inline CreateAnomalySubscriptionRequest& AddResourceTags(ResourceTag&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(std::move(value)); return *this; }
+    template<typename ResourceTagsT = Aws::Vector<ResourceTag>>
+    void SetResourceTags(ResourceTagsT&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = std::forward<ResourceTagsT>(value); }
+    template<typename ResourceTagsT = Aws::Vector<ResourceTag>>
+    CreateAnomalySubscriptionRequest& WithResourceTags(ResourceTagsT&& value) { SetResourceTags(std::forward<ResourceTagsT>(value)); return *this;}
+    template<typename ResourceTagsT = ResourceTag>
+    CreateAnomalySubscriptionRequest& AddResourceTags(ResourceTagsT&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.emplace_back(std::forward<ResourceTagsT>(value)); return *this; }
     ///@}
   private:
 

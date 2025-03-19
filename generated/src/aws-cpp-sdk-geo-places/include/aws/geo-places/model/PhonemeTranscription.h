@@ -32,7 +32,7 @@ namespace Model
   class PhonemeTranscription
   {
   public:
-    AWS_GEOPLACES_API PhonemeTranscription();
+    AWS_GEOPLACES_API PhonemeTranscription() = default;
     AWS_GEOPLACES_API PhonemeTranscription(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOPLACES_API PhonemeTranscription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOPLACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>Value which indicates how to pronounce the value.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline PhonemeTranscription& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline PhonemeTranscription& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline PhonemeTranscription& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    PhonemeTranscription& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,21 +57,19 @@ namespace Model
      * no data for the result in the requested language, data will be returned in the
      * default language for the entry.</p>
      */
-    inline const Aws::String& GetLanguage() const{ return m_language; }
+    inline const Aws::String& GetLanguage() const { return m_language; }
     inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
-    inline void SetLanguage(const Aws::String& value) { m_languageHasBeenSet = true; m_language = value; }
-    inline void SetLanguage(Aws::String&& value) { m_languageHasBeenSet = true; m_language = std::move(value); }
-    inline void SetLanguage(const char* value) { m_languageHasBeenSet = true; m_language.assign(value); }
-    inline PhonemeTranscription& WithLanguage(const Aws::String& value) { SetLanguage(value); return *this;}
-    inline PhonemeTranscription& WithLanguage(Aws::String&& value) { SetLanguage(std::move(value)); return *this;}
-    inline PhonemeTranscription& WithLanguage(const char* value) { SetLanguage(value); return *this;}
+    template<typename LanguageT = Aws::String>
+    void SetLanguage(LanguageT&& value) { m_languageHasBeenSet = true; m_language = std::forward<LanguageT>(value); }
+    template<typename LanguageT = Aws::String>
+    PhonemeTranscription& WithLanguage(LanguageT&& value) { SetLanguage(std::forward<LanguageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Boolean which indicates if it the preferred pronunciation.</p>
      */
-    inline bool GetPreferred() const{ return m_preferred; }
+    inline bool GetPreferred() const { return m_preferred; }
     inline bool PreferredHasBeenSet() const { return m_preferredHasBeenSet; }
     inline void SetPreferred(bool value) { m_preferredHasBeenSet = true; m_preferred = value; }
     inline PhonemeTranscription& WithPreferred(bool value) { SetPreferred(value); return *this;}
@@ -86,7 +82,7 @@ namespace Model
     Aws::String m_language;
     bool m_languageHasBeenSet = false;
 
-    bool m_preferred;
+    bool m_preferred{false};
     bool m_preferredHasBeenSet = false;
   };
 

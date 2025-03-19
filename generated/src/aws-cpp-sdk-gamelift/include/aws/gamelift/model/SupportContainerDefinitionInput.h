@@ -48,7 +48,7 @@ namespace Model
   class SupportContainerDefinitionInput
   {
   public:
-    AWS_GAMELIFT_API SupportContainerDefinitionInput();
+    AWS_GAMELIFT_API SupportContainerDefinitionInput() = default;
     AWS_GAMELIFT_API SupportContainerDefinitionInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API SupportContainerDefinitionInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -59,14 +59,12 @@ namespace Model
      * <p>A string that uniquely identifies the container definition within a container
      * group.</p>
      */
-    inline const Aws::String& GetContainerName() const{ return m_containerName; }
+    inline const Aws::String& GetContainerName() const { return m_containerName; }
     inline bool ContainerNameHasBeenSet() const { return m_containerNameHasBeenSet; }
-    inline void SetContainerName(const Aws::String& value) { m_containerNameHasBeenSet = true; m_containerName = value; }
-    inline void SetContainerName(Aws::String&& value) { m_containerNameHasBeenSet = true; m_containerName = std::move(value); }
-    inline void SetContainerName(const char* value) { m_containerNameHasBeenSet = true; m_containerName.assign(value); }
-    inline SupportContainerDefinitionInput& WithContainerName(const Aws::String& value) { SetContainerName(value); return *this;}
-    inline SupportContainerDefinitionInput& WithContainerName(Aws::String&& value) { SetContainerName(std::move(value)); return *this;}
-    inline SupportContainerDefinitionInput& WithContainerName(const char* value) { SetContainerName(value); return *this;}
+    template<typename ContainerNameT = Aws::String>
+    void SetContainerName(ContainerNameT&& value) { m_containerNameHasBeenSet = true; m_containerName = std::forward<ContainerNameT>(value); }
+    template<typename ContainerNameT = Aws::String>
+    SupportContainerDefinitionInput& WithContainerName(ContainerNameT&& value) { SetContainerName(std::forward<ContainerNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,14 +79,14 @@ namespace Model
      * shutdown, which means that <i>ContainerB</i> must shut down before
      * <i>ContainerA</i> can shut down. </p>
      */
-    inline const Aws::Vector<ContainerDependency>& GetDependsOn() const{ return m_dependsOn; }
+    inline const Aws::Vector<ContainerDependency>& GetDependsOn() const { return m_dependsOn; }
     inline bool DependsOnHasBeenSet() const { return m_dependsOnHasBeenSet; }
-    inline void SetDependsOn(const Aws::Vector<ContainerDependency>& value) { m_dependsOnHasBeenSet = true; m_dependsOn = value; }
-    inline void SetDependsOn(Aws::Vector<ContainerDependency>&& value) { m_dependsOnHasBeenSet = true; m_dependsOn = std::move(value); }
-    inline SupportContainerDefinitionInput& WithDependsOn(const Aws::Vector<ContainerDependency>& value) { SetDependsOn(value); return *this;}
-    inline SupportContainerDefinitionInput& WithDependsOn(Aws::Vector<ContainerDependency>&& value) { SetDependsOn(std::move(value)); return *this;}
-    inline SupportContainerDefinitionInput& AddDependsOn(const ContainerDependency& value) { m_dependsOnHasBeenSet = true; m_dependsOn.push_back(value); return *this; }
-    inline SupportContainerDefinitionInput& AddDependsOn(ContainerDependency&& value) { m_dependsOnHasBeenSet = true; m_dependsOn.push_back(std::move(value)); return *this; }
+    template<typename DependsOnT = Aws::Vector<ContainerDependency>>
+    void SetDependsOn(DependsOnT&& value) { m_dependsOnHasBeenSet = true; m_dependsOn = std::forward<DependsOnT>(value); }
+    template<typename DependsOnT = Aws::Vector<ContainerDependency>>
+    SupportContainerDefinitionInput& WithDependsOn(DependsOnT&& value) { SetDependsOn(std::forward<DependsOnT>(value)); return *this;}
+    template<typename DependsOnT = ContainerDependency>
+    SupportContainerDefinitionInput& AddDependsOn(DependsOnT&& value) { m_dependsOnHasBeenSet = true; m_dependsOn.emplace_back(std::forward<DependsOnT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -96,14 +94,14 @@ namespace Model
      * <p>A mount point that binds a path inside the container to a file or directory
      * on the host system and lets it access the file or directory.</p>
      */
-    inline const Aws::Vector<ContainerMountPoint>& GetMountPoints() const{ return m_mountPoints; }
+    inline const Aws::Vector<ContainerMountPoint>& GetMountPoints() const { return m_mountPoints; }
     inline bool MountPointsHasBeenSet() const { return m_mountPointsHasBeenSet; }
-    inline void SetMountPoints(const Aws::Vector<ContainerMountPoint>& value) { m_mountPointsHasBeenSet = true; m_mountPoints = value; }
-    inline void SetMountPoints(Aws::Vector<ContainerMountPoint>&& value) { m_mountPointsHasBeenSet = true; m_mountPoints = std::move(value); }
-    inline SupportContainerDefinitionInput& WithMountPoints(const Aws::Vector<ContainerMountPoint>& value) { SetMountPoints(value); return *this;}
-    inline SupportContainerDefinitionInput& WithMountPoints(Aws::Vector<ContainerMountPoint>&& value) { SetMountPoints(std::move(value)); return *this;}
-    inline SupportContainerDefinitionInput& AddMountPoints(const ContainerMountPoint& value) { m_mountPointsHasBeenSet = true; m_mountPoints.push_back(value); return *this; }
-    inline SupportContainerDefinitionInput& AddMountPoints(ContainerMountPoint&& value) { m_mountPointsHasBeenSet = true; m_mountPoints.push_back(std::move(value)); return *this; }
+    template<typename MountPointsT = Aws::Vector<ContainerMountPoint>>
+    void SetMountPoints(MountPointsT&& value) { m_mountPointsHasBeenSet = true; m_mountPoints = std::forward<MountPointsT>(value); }
+    template<typename MountPointsT = Aws::Vector<ContainerMountPoint>>
+    SupportContainerDefinitionInput& WithMountPoints(MountPointsT&& value) { SetMountPoints(std::forward<MountPointsT>(value)); return *this;}
+    template<typename MountPointsT = ContainerMountPoint>
+    SupportContainerDefinitionInput& AddMountPoints(MountPointsT&& value) { m_mountPointsHasBeenSet = true; m_mountPoints.emplace_back(std::forward<MountPointsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -113,14 +111,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html#ECS-Type-ContainerDefinition-environment">ContainerDefinition::environment</a>
      * parameter in the <i>Amazon Elastic Container Service API Reference</i>. </p>
      */
-    inline const Aws::Vector<ContainerEnvironment>& GetEnvironmentOverride() const{ return m_environmentOverride; }
+    inline const Aws::Vector<ContainerEnvironment>& GetEnvironmentOverride() const { return m_environmentOverride; }
     inline bool EnvironmentOverrideHasBeenSet() const { return m_environmentOverrideHasBeenSet; }
-    inline void SetEnvironmentOverride(const Aws::Vector<ContainerEnvironment>& value) { m_environmentOverrideHasBeenSet = true; m_environmentOverride = value; }
-    inline void SetEnvironmentOverride(Aws::Vector<ContainerEnvironment>&& value) { m_environmentOverrideHasBeenSet = true; m_environmentOverride = std::move(value); }
-    inline SupportContainerDefinitionInput& WithEnvironmentOverride(const Aws::Vector<ContainerEnvironment>& value) { SetEnvironmentOverride(value); return *this;}
-    inline SupportContainerDefinitionInput& WithEnvironmentOverride(Aws::Vector<ContainerEnvironment>&& value) { SetEnvironmentOverride(std::move(value)); return *this;}
-    inline SupportContainerDefinitionInput& AddEnvironmentOverride(const ContainerEnvironment& value) { m_environmentOverrideHasBeenSet = true; m_environmentOverride.push_back(value); return *this; }
-    inline SupportContainerDefinitionInput& AddEnvironmentOverride(ContainerEnvironment&& value) { m_environmentOverrideHasBeenSet = true; m_environmentOverride.push_back(std::move(value)); return *this; }
+    template<typename EnvironmentOverrideT = Aws::Vector<ContainerEnvironment>>
+    void SetEnvironmentOverride(EnvironmentOverrideT&& value) { m_environmentOverrideHasBeenSet = true; m_environmentOverride = std::forward<EnvironmentOverrideT>(value); }
+    template<typename EnvironmentOverrideT = Aws::Vector<ContainerEnvironment>>
+    SupportContainerDefinitionInput& WithEnvironmentOverride(EnvironmentOverrideT&& value) { SetEnvironmentOverride(std::forward<EnvironmentOverrideT>(value)); return *this;}
+    template<typename EnvironmentOverrideT = ContainerEnvironment>
+    SupportContainerDefinitionInput& AddEnvironmentOverride(EnvironmentOverrideT&& value) { m_environmentOverrideHasBeenSet = true; m_environmentOverride.emplace_back(std::forward<EnvironmentOverrideT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -131,7 +129,7 @@ namespace Model
      * flagging a container as essential, also configure a health check so that the
      * container can signal that it's healthy. </p>
      */
-    inline bool GetEssential() const{ return m_essential; }
+    inline bool GetEssential() const { return m_essential; }
     inline bool EssentialHasBeenSet() const { return m_essentialHasBeenSet; }
     inline void SetEssential(bool value) { m_essentialHasBeenSet = true; m_essential = value; }
     inline SupportContainerDefinitionInput& WithEssential(bool value) { SetEssential(value); return *this;}
@@ -144,12 +142,12 @@ namespace Model
      * reasons to flag a container as unhealthy and restart it. If an essential
      * container fails a health check, the entire container group restarts. </p>
      */
-    inline const ContainerHealthCheck& GetHealthCheck() const{ return m_healthCheck; }
+    inline const ContainerHealthCheck& GetHealthCheck() const { return m_healthCheck; }
     inline bool HealthCheckHasBeenSet() const { return m_healthCheckHasBeenSet; }
-    inline void SetHealthCheck(const ContainerHealthCheck& value) { m_healthCheckHasBeenSet = true; m_healthCheck = value; }
-    inline void SetHealthCheck(ContainerHealthCheck&& value) { m_healthCheckHasBeenSet = true; m_healthCheck = std::move(value); }
-    inline SupportContainerDefinitionInput& WithHealthCheck(const ContainerHealthCheck& value) { SetHealthCheck(value); return *this;}
-    inline SupportContainerDefinitionInput& WithHealthCheck(ContainerHealthCheck&& value) { SetHealthCheck(std::move(value)); return *this;}
+    template<typename HealthCheckT = ContainerHealthCheck>
+    void SetHealthCheck(HealthCheckT&& value) { m_healthCheckHasBeenSet = true; m_healthCheck = std::forward<HealthCheckT>(value); }
+    template<typename HealthCheckT = ContainerHealthCheck>
+    SupportContainerDefinitionInput& WithHealthCheck(HealthCheckT&& value) { SetHealthCheck(std::forward<HealthCheckT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -168,14 +166,12 @@ namespace Model
      * account].dkr.ecr.[AWS region].amazonaws.com/[repository ID]:[tag]</code> </p>
      * </li> </ul>
      */
-    inline const Aws::String& GetImageUri() const{ return m_imageUri; }
+    inline const Aws::String& GetImageUri() const { return m_imageUri; }
     inline bool ImageUriHasBeenSet() const { return m_imageUriHasBeenSet; }
-    inline void SetImageUri(const Aws::String& value) { m_imageUriHasBeenSet = true; m_imageUri = value; }
-    inline void SetImageUri(Aws::String&& value) { m_imageUriHasBeenSet = true; m_imageUri = std::move(value); }
-    inline void SetImageUri(const char* value) { m_imageUriHasBeenSet = true; m_imageUri.assign(value); }
-    inline SupportContainerDefinitionInput& WithImageUri(const Aws::String& value) { SetImageUri(value); return *this;}
-    inline SupportContainerDefinitionInput& WithImageUri(Aws::String&& value) { SetImageUri(std::move(value)); return *this;}
-    inline SupportContainerDefinitionInput& WithImageUri(const char* value) { SetImageUri(value); return *this;}
+    template<typename ImageUriT = Aws::String>
+    void SetImageUri(ImageUriT&& value) { m_imageUriHasBeenSet = true; m_imageUri = std::forward<ImageUriT>(value); }
+    template<typename ImageUriT = Aws::String>
+    SupportContainerDefinitionInput& WithImageUri(ImageUriT&& value) { SetImageUri(std::forward<ImageUriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -187,7 +183,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a>TotalMemoryLimitMebibytes<code/>
      * </p>
      */
-    inline int GetMemoryHardLimitMebibytes() const{ return m_memoryHardLimitMebibytes; }
+    inline int GetMemoryHardLimitMebibytes() const { return m_memoryHardLimitMebibytes; }
     inline bool MemoryHardLimitMebibytesHasBeenSet() const { return m_memoryHardLimitMebibytesHasBeenSet; }
     inline void SetMemoryHardLimitMebibytes(int value) { m_memoryHardLimitMebibytesHasBeenSet = true; m_memoryHardLimitMebibytes = value; }
     inline SupportContainerDefinitionInput& WithMemoryHardLimitMebibytes(int value) { SetMemoryHardLimitMebibytes(value); return *this;}
@@ -203,12 +199,12 @@ namespace Model
      * to externally accessible connection ports, which are assigned as needed from the
      * container fleet's <code>ConnectionPortRange</code>.</p>
      */
-    inline const ContainerPortConfiguration& GetPortConfiguration() const{ return m_portConfiguration; }
+    inline const ContainerPortConfiguration& GetPortConfiguration() const { return m_portConfiguration; }
     inline bool PortConfigurationHasBeenSet() const { return m_portConfigurationHasBeenSet; }
-    inline void SetPortConfiguration(const ContainerPortConfiguration& value) { m_portConfigurationHasBeenSet = true; m_portConfiguration = value; }
-    inline void SetPortConfiguration(ContainerPortConfiguration&& value) { m_portConfigurationHasBeenSet = true; m_portConfiguration = std::move(value); }
-    inline SupportContainerDefinitionInput& WithPortConfiguration(const ContainerPortConfiguration& value) { SetPortConfiguration(value); return *this;}
-    inline SupportContainerDefinitionInput& WithPortConfiguration(ContainerPortConfiguration&& value) { SetPortConfiguration(std::move(value)); return *this;}
+    template<typename PortConfigurationT = ContainerPortConfiguration>
+    void SetPortConfiguration(PortConfigurationT&& value) { m_portConfigurationHasBeenSet = true; m_portConfiguration = std::forward<PortConfigurationT>(value); }
+    template<typename PortConfigurationT = ContainerPortConfiguration>
+    SupportContainerDefinitionInput& WithPortConfiguration(PortConfigurationT&& value) { SetPortConfiguration(std::forward<PortConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -220,7 +216,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a>
      * TotalCpuLimit </p>
      */
-    inline double GetVcpu() const{ return m_vcpu; }
+    inline double GetVcpu() const { return m_vcpu; }
     inline bool VcpuHasBeenSet() const { return m_vcpuHasBeenSet; }
     inline void SetVcpu(double value) { m_vcpuHasBeenSet = true; m_vcpu = value; }
     inline SupportContainerDefinitionInput& WithVcpu(double value) { SetVcpu(value); return *this;}
@@ -239,7 +235,7 @@ namespace Model
     Aws::Vector<ContainerEnvironment> m_environmentOverride;
     bool m_environmentOverrideHasBeenSet = false;
 
-    bool m_essential;
+    bool m_essential{false};
     bool m_essentialHasBeenSet = false;
 
     ContainerHealthCheck m_healthCheck;
@@ -248,13 +244,13 @@ namespace Model
     Aws::String m_imageUri;
     bool m_imageUriHasBeenSet = false;
 
-    int m_memoryHardLimitMebibytes;
+    int m_memoryHardLimitMebibytes{0};
     bool m_memoryHardLimitMebibytesHasBeenSet = false;
 
     ContainerPortConfiguration m_portConfiguration;
     bool m_portConfigurationHasBeenSet = false;
 
-    double m_vcpu;
+    double m_vcpu{0.0};
     bool m_vcpuHasBeenSet = false;
   };
 

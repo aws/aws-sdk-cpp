@@ -18,20 +18,7 @@ namespace DirectoryService
 namespace Model
 {
 
-SchemaExtensionInfo::SchemaExtensionInfo() : 
-    m_directoryIdHasBeenSet(false),
-    m_schemaExtensionIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_schemaExtensionStatus(SchemaExtensionStatus::NOT_SET),
-    m_schemaExtensionStatusHasBeenSet(false),
-    m_schemaExtensionStatusReasonHasBeenSet(false),
-    m_startDateTimeHasBeenSet(false),
-    m_endDateTimeHasBeenSet(false)
-{
-}
-
 SchemaExtensionInfo::SchemaExtensionInfo(JsonView jsonValue)
-  : SchemaExtensionInfo()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ SchemaExtensionInfo& SchemaExtensionInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DirectoryId"))
   {
     m_directoryId = jsonValue.GetString("DirectoryId");
-
     m_directoryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SchemaExtensionId"))
   {
     m_schemaExtensionId = jsonValue.GetString("SchemaExtensionId");
-
     m_schemaExtensionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SchemaExtensionStatus"))
   {
     m_schemaExtensionStatus = SchemaExtensionStatusMapper::GetSchemaExtensionStatusForName(jsonValue.GetString("SchemaExtensionStatus"));
-
     m_schemaExtensionStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SchemaExtensionStatusReason"))
   {
     m_schemaExtensionStatusReason = jsonValue.GetString("SchemaExtensionStatusReason");
-
     m_schemaExtensionStatusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartDateTime"))
   {
     m_startDateTime = jsonValue.GetDouble("StartDateTime");
-
     m_startDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndDateTime"))
   {
     m_endDateTime = jsonValue.GetDouble("EndDateTime");
-
     m_endDateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

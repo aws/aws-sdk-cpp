@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GenerateCredentialReportResult::GenerateCredentialReportResult() : 
-    m_state(ReportStateType::NOT_SET)
-{
-}
-
 GenerateCredentialReportResult::GenerateCredentialReportResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : GenerateCredentialReportResult()
 {
   *this = result;
 }
@@ -43,18 +37,21 @@ GenerateCredentialReportResult& GenerateCredentialReportResult::operator =(const
     XmlNode stateNode = resultNode.FirstChild("State");
     if(!stateNode.IsNull())
     {
-      m_state = ReportStateTypeMapper::GetReportStateTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = ReportStateTypeMapper::GetReportStateTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
+      m_stateHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
+      m_descriptionHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::GenerateCredentialReportResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEfsAccessPointRootDirectoryDetails::AwsEfsAccessPointRootDirectoryDetails() : 
-    m_creationInfoHasBeenSet(false),
-    m_pathHasBeenSet(false)
-{
-}
-
 AwsEfsAccessPointRootDirectoryDetails::AwsEfsAccessPointRootDirectoryDetails(JsonView jsonValue)
-  : AwsEfsAccessPointRootDirectoryDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsEfsAccessPointRootDirectoryDetails& AwsEfsAccessPointRootDirectoryDetails::op
   if(jsonValue.ValueExists("CreationInfo"))
   {
     m_creationInfo = jsonValue.GetObject("CreationInfo");
-
     m_creationInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Path"))
   {
     m_path = jsonValue.GetString("Path");
-
     m_pathHasBeenSet = true;
   }
-
   return *this;
 }
 

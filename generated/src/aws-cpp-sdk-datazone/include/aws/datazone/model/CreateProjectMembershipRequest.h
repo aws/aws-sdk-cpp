@@ -23,7 +23,7 @@ namespace Model
   class CreateProjectMembershipRequest : public DataZoneRequest
   {
   public:
-    AWS_DATAZONE_API CreateProjectMembershipRequest();
+    AWS_DATAZONE_API CreateProjectMembershipRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,12 +38,10 @@ namespace Model
     /**
      * <p>The designation of the project membership.</p>
      */
-    inline const UserDesignation& GetDesignation() const{ return m_designation; }
+    inline UserDesignation GetDesignation() const { return m_designation; }
     inline bool DesignationHasBeenSet() const { return m_designationHasBeenSet; }
-    inline void SetDesignation(const UserDesignation& value) { m_designationHasBeenSet = true; m_designation = value; }
-    inline void SetDesignation(UserDesignation&& value) { m_designationHasBeenSet = true; m_designation = std::move(value); }
-    inline CreateProjectMembershipRequest& WithDesignation(const UserDesignation& value) { SetDesignation(value); return *this;}
-    inline CreateProjectMembershipRequest& WithDesignation(UserDesignation&& value) { SetDesignation(std::move(value)); return *this;}
+    inline void SetDesignation(UserDesignation value) { m_designationHasBeenSet = true; m_designation = value; }
+    inline CreateProjectMembershipRequest& WithDesignation(UserDesignation value) { SetDesignation(value); return *this;}
     ///@}
 
     ///@{
@@ -51,44 +49,40 @@ namespace Model
      * <p>The ID of the Amazon DataZone domain in which project membership is
      * created.</p>
      */
-    inline const Aws::String& GetDomainIdentifier() const{ return m_domainIdentifier; }
+    inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
     inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
-    inline void SetDomainIdentifier(const Aws::String& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = value; }
-    inline void SetDomainIdentifier(Aws::String&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::move(value); }
-    inline void SetDomainIdentifier(const char* value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier.assign(value); }
-    inline CreateProjectMembershipRequest& WithDomainIdentifier(const Aws::String& value) { SetDomainIdentifier(value); return *this;}
-    inline CreateProjectMembershipRequest& WithDomainIdentifier(Aws::String&& value) { SetDomainIdentifier(std::move(value)); return *this;}
-    inline CreateProjectMembershipRequest& WithDomainIdentifier(const char* value) { SetDomainIdentifier(value); return *this;}
+    template<typename DomainIdentifierT = Aws::String>
+    void SetDomainIdentifier(DomainIdentifierT&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::forward<DomainIdentifierT>(value); }
+    template<typename DomainIdentifierT = Aws::String>
+    CreateProjectMembershipRequest& WithDomainIdentifier(DomainIdentifierT&& value) { SetDomainIdentifier(std::forward<DomainIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The project member whose project membership was created.</p>
      */
-    inline const Member& GetMember() const{ return m_member; }
+    inline const Member& GetMember() const { return m_member; }
     inline bool MemberHasBeenSet() const { return m_memberHasBeenSet; }
-    inline void SetMember(const Member& value) { m_memberHasBeenSet = true; m_member = value; }
-    inline void SetMember(Member&& value) { m_memberHasBeenSet = true; m_member = std::move(value); }
-    inline CreateProjectMembershipRequest& WithMember(const Member& value) { SetMember(value); return *this;}
-    inline CreateProjectMembershipRequest& WithMember(Member&& value) { SetMember(std::move(value)); return *this;}
+    template<typename MemberT = Member>
+    void SetMember(MemberT&& value) { m_memberHasBeenSet = true; m_member = std::forward<MemberT>(value); }
+    template<typename MemberT = Member>
+    CreateProjectMembershipRequest& WithMember(MemberT&& value) { SetMember(std::forward<MemberT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the project for which this project membership was created.</p>
      */
-    inline const Aws::String& GetProjectIdentifier() const{ return m_projectIdentifier; }
+    inline const Aws::String& GetProjectIdentifier() const { return m_projectIdentifier; }
     inline bool ProjectIdentifierHasBeenSet() const { return m_projectIdentifierHasBeenSet; }
-    inline void SetProjectIdentifier(const Aws::String& value) { m_projectIdentifierHasBeenSet = true; m_projectIdentifier = value; }
-    inline void SetProjectIdentifier(Aws::String&& value) { m_projectIdentifierHasBeenSet = true; m_projectIdentifier = std::move(value); }
-    inline void SetProjectIdentifier(const char* value) { m_projectIdentifierHasBeenSet = true; m_projectIdentifier.assign(value); }
-    inline CreateProjectMembershipRequest& WithProjectIdentifier(const Aws::String& value) { SetProjectIdentifier(value); return *this;}
-    inline CreateProjectMembershipRequest& WithProjectIdentifier(Aws::String&& value) { SetProjectIdentifier(std::move(value)); return *this;}
-    inline CreateProjectMembershipRequest& WithProjectIdentifier(const char* value) { SetProjectIdentifier(value); return *this;}
+    template<typename ProjectIdentifierT = Aws::String>
+    void SetProjectIdentifier(ProjectIdentifierT&& value) { m_projectIdentifierHasBeenSet = true; m_projectIdentifier = std::forward<ProjectIdentifierT>(value); }
+    template<typename ProjectIdentifierT = Aws::String>
+    CreateProjectMembershipRequest& WithProjectIdentifier(ProjectIdentifierT&& value) { SetProjectIdentifier(std::forward<ProjectIdentifierT>(value)); return *this;}
     ///@}
   private:
 
-    UserDesignation m_designation;
+    UserDesignation m_designation{UserDesignation::NOT_SET};
     bool m_designationHasBeenSet = false;
 
     Aws::String m_domainIdentifier;

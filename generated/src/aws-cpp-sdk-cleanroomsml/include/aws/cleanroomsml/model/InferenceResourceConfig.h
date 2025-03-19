@@ -32,7 +32,7 @@ namespace Model
   class InferenceResourceConfig
   {
   public:
-    AWS_CLEANROOMSML_API InferenceResourceConfig();
+    AWS_CLEANROOMSML_API InferenceResourceConfig() = default;
     AWS_CLEANROOMSML_API InferenceResourceConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API InferenceResourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,29 +42,27 @@ namespace Model
     /**
      * <p>The type of instance that is used to perform model inference.</p>
      */
-    inline const InferenceInstanceType& GetInstanceType() const{ return m_instanceType; }
+    inline InferenceInstanceType GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const InferenceInstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(InferenceInstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline InferenceResourceConfig& WithInstanceType(const InferenceInstanceType& value) { SetInstanceType(value); return *this;}
-    inline InferenceResourceConfig& WithInstanceType(InferenceInstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
+    inline void SetInstanceType(InferenceInstanceType value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline InferenceResourceConfig& WithInstanceType(InferenceInstanceType value) { SetInstanceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of instances to use.</p>
      */
-    inline int GetInstanceCount() const{ return m_instanceCount; }
+    inline int GetInstanceCount() const { return m_instanceCount; }
     inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
     inline InferenceResourceConfig& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
     ///@}
   private:
 
-    InferenceInstanceType m_instanceType;
+    InferenceInstanceType m_instanceType{InferenceInstanceType::NOT_SET};
     bool m_instanceTypeHasBeenSet = false;
 
-    int m_instanceCount;
+    int m_instanceCount{0};
     bool m_instanceCountHasBeenSet = false;
   };
 

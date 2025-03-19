@@ -29,7 +29,7 @@ namespace Model
   class ListQueueLimitAssociationsResult
   {
   public:
-    AWS_DEADLINE_API ListQueueLimitAssociationsResult();
+    AWS_DEADLINE_API ListQueueLimitAssociationsResult() = default;
     AWS_DEADLINE_API ListQueueLimitAssociationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DEADLINE_API ListQueueLimitAssociationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>A list of associations between limits and queues in the farm specified in the
      * request.</p>
      */
-    inline const Aws::Vector<QueueLimitAssociationSummary>& GetQueueLimitAssociations() const{ return m_queueLimitAssociations; }
-    inline void SetQueueLimitAssociations(const Aws::Vector<QueueLimitAssociationSummary>& value) { m_queueLimitAssociations = value; }
-    inline void SetQueueLimitAssociations(Aws::Vector<QueueLimitAssociationSummary>&& value) { m_queueLimitAssociations = std::move(value); }
-    inline ListQueueLimitAssociationsResult& WithQueueLimitAssociations(const Aws::Vector<QueueLimitAssociationSummary>& value) { SetQueueLimitAssociations(value); return *this;}
-    inline ListQueueLimitAssociationsResult& WithQueueLimitAssociations(Aws::Vector<QueueLimitAssociationSummary>&& value) { SetQueueLimitAssociations(std::move(value)); return *this;}
-    inline ListQueueLimitAssociationsResult& AddQueueLimitAssociations(const QueueLimitAssociationSummary& value) { m_queueLimitAssociations.push_back(value); return *this; }
-    inline ListQueueLimitAssociationsResult& AddQueueLimitAssociations(QueueLimitAssociationSummary&& value) { m_queueLimitAssociations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<QueueLimitAssociationSummary>& GetQueueLimitAssociations() const { return m_queueLimitAssociations; }
+    template<typename QueueLimitAssociationsT = Aws::Vector<QueueLimitAssociationSummary>>
+    void SetQueueLimitAssociations(QueueLimitAssociationsT&& value) { m_queueLimitAssociationsHasBeenSet = true; m_queueLimitAssociations = std::forward<QueueLimitAssociationsT>(value); }
+    template<typename QueueLimitAssociationsT = Aws::Vector<QueueLimitAssociationSummary>>
+    ListQueueLimitAssociationsResult& WithQueueLimitAssociations(QueueLimitAssociationsT&& value) { SetQueueLimitAssociations(std::forward<QueueLimitAssociationsT>(value)); return *this;}
+    template<typename QueueLimitAssociationsT = QueueLimitAssociationSummary>
+    ListQueueLimitAssociationsResult& AddQueueLimitAssociations(QueueLimitAssociationsT&& value) { m_queueLimitAssociationsHasBeenSet = true; m_queueLimitAssociations.emplace_back(std::forward<QueueLimitAssociationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -58,32 +58,31 @@ namespace Model
      * expires after 24 hours. If you provide a token that isn't valid, then you
      * receive an HTTP 400 <code>ValidationException</code> error.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListQueueLimitAssociationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListQueueLimitAssociationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListQueueLimitAssociationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListQueueLimitAssociationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListQueueLimitAssociationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListQueueLimitAssociationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListQueueLimitAssociationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListQueueLimitAssociationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<QueueLimitAssociationSummary> m_queueLimitAssociations;
+    bool m_queueLimitAssociationsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -21,7 +21,7 @@ namespace Model
   class UpdateOrganizationConfigurationRequest : public DetectiveRequest
   {
   public:
-    AWS_DETECTIVE_API UpdateOrganizationConfigurationRequest();
+    AWS_DETECTIVE_API UpdateOrganizationConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The ARN of the organization behavior graph.</p>
      */
-    inline const Aws::String& GetGraphArn() const{ return m_graphArn; }
+    inline const Aws::String& GetGraphArn() const { return m_graphArn; }
     inline bool GraphArnHasBeenSet() const { return m_graphArnHasBeenSet; }
-    inline void SetGraphArn(const Aws::String& value) { m_graphArnHasBeenSet = true; m_graphArn = value; }
-    inline void SetGraphArn(Aws::String&& value) { m_graphArnHasBeenSet = true; m_graphArn = std::move(value); }
-    inline void SetGraphArn(const char* value) { m_graphArnHasBeenSet = true; m_graphArn.assign(value); }
-    inline UpdateOrganizationConfigurationRequest& WithGraphArn(const Aws::String& value) { SetGraphArn(value); return *this;}
-    inline UpdateOrganizationConfigurationRequest& WithGraphArn(Aws::String&& value) { SetGraphArn(std::move(value)); return *this;}
-    inline UpdateOrganizationConfigurationRequest& WithGraphArn(const char* value) { SetGraphArn(value); return *this;}
+    template<typename GraphArnT = Aws::String>
+    void SetGraphArn(GraphArnT&& value) { m_graphArnHasBeenSet = true; m_graphArn = std::forward<GraphArnT>(value); }
+    template<typename GraphArnT = Aws::String>
+    UpdateOrganizationConfigurationRequest& WithGraphArn(GraphArnT&& value) { SetGraphArn(std::forward<GraphArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,7 +49,7 @@ namespace Model
      * <p>Indicates whether to automatically enable new organization accounts as member
      * accounts in the organization behavior graph.</p>
      */
-    inline bool GetAutoEnable() const{ return m_autoEnable; }
+    inline bool GetAutoEnable() const { return m_autoEnable; }
     inline bool AutoEnableHasBeenSet() const { return m_autoEnableHasBeenSet; }
     inline void SetAutoEnable(bool value) { m_autoEnableHasBeenSet = true; m_autoEnable = value; }
     inline UpdateOrganizationConfigurationRequest& WithAutoEnable(bool value) { SetAutoEnable(value); return *this;}
@@ -61,7 +59,7 @@ namespace Model
     Aws::String m_graphArn;
     bool m_graphArnHasBeenSet = false;
 
-    bool m_autoEnable;
+    bool m_autoEnable{false};
     bool m_autoEnableHasBeenSet = false;
   };
 

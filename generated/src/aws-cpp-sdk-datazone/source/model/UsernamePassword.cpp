@@ -18,14 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-UsernamePassword::UsernamePassword() : 
-    m_passwordHasBeenSet(false),
-    m_usernameHasBeenSet(false)
-{
-}
-
 UsernamePassword::UsernamePassword(JsonView jsonValue)
-  : UsernamePassword()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ UsernamePassword& UsernamePassword::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("password"))
   {
     m_password = jsonValue.GetString("password");
-
     m_passwordHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("username"))
   {
     m_username = jsonValue.GetString("username");
-
     m_usernameHasBeenSet = true;
   }
-
   return *this;
 }
 

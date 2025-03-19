@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetCSVHeaderResult::GetCSVHeaderResult()
-{
-}
-
 GetCSVHeaderResult::GetCSVHeaderResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ GetCSVHeaderResult& GetCSVHeaderResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("UserPoolId"))
   {
     m_userPoolId = jsonValue.GetString("UserPoolId");
-
+    m_userPoolIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CSVHeader"))
   {
     Aws::Utils::Array<JsonView> cSVHeaderJsonList = jsonValue.GetArray("CSVHeader");
@@ -42,14 +37,15 @@ GetCSVHeaderResult& GetCSVHeaderResult::operator =(const Aws::AmazonWebServiceRe
     {
       m_cSVHeader.push_back(cSVHeaderJsonList[cSVHeaderIndex].AsString());
     }
+    m_cSVHeaderHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

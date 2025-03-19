@@ -12,11 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeDeliveryChannelsRequest::DescribeDeliveryChannelsRequest() : 
-    m_deliveryChannelNamesHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDeliveryChannelsRequest::SerializePayload() const
 {
   JsonValue payload;

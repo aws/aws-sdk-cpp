@@ -29,7 +29,7 @@ namespace Model
   class ListImageVersionsResult
   {
   public:
-    AWS_SAGEMAKER_API ListImageVersionsResult();
+    AWS_SAGEMAKER_API ListImageVersionsResult() = default;
     AWS_SAGEMAKER_API ListImageVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API ListImageVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>A list of versions and their properties.</p>
      */
-    inline const Aws::Vector<ImageVersion>& GetImageVersions() const{ return m_imageVersions; }
-    inline void SetImageVersions(const Aws::Vector<ImageVersion>& value) { m_imageVersions = value; }
-    inline void SetImageVersions(Aws::Vector<ImageVersion>&& value) { m_imageVersions = std::move(value); }
-    inline ListImageVersionsResult& WithImageVersions(const Aws::Vector<ImageVersion>& value) { SetImageVersions(value); return *this;}
-    inline ListImageVersionsResult& WithImageVersions(Aws::Vector<ImageVersion>&& value) { SetImageVersions(std::move(value)); return *this;}
-    inline ListImageVersionsResult& AddImageVersions(const ImageVersion& value) { m_imageVersions.push_back(value); return *this; }
-    inline ListImageVersionsResult& AddImageVersions(ImageVersion&& value) { m_imageVersions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ImageVersion>& GetImageVersions() const { return m_imageVersions; }
+    template<typename ImageVersionsT = Aws::Vector<ImageVersion>>
+    void SetImageVersions(ImageVersionsT&& value) { m_imageVersionsHasBeenSet = true; m_imageVersions = std::forward<ImageVersionsT>(value); }
+    template<typename ImageVersionsT = Aws::Vector<ImageVersion>>
+    ListImageVersionsResult& WithImageVersions(ImageVersionsT&& value) { SetImageVersions(std::forward<ImageVersionsT>(value)); return *this;}
+    template<typename ImageVersionsT = ImageVersion>
+    ListImageVersionsResult& AddImageVersions(ImageVersionsT&& value) { m_imageVersionsHasBeenSet = true; m_imageVersions.emplace_back(std::forward<ImageVersionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A token for getting the next set of versions, if there are any.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListImageVersionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListImageVersionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListImageVersionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListImageVersionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListImageVersionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListImageVersionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListImageVersionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListImageVersionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ImageVersion> m_imageVersions;
+    bool m_imageVersionsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

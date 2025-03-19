@@ -44,7 +44,7 @@ namespace Model
   class RouteVehicleLegDetails
   {
   public:
-    AWS_GEOROUTES_API RouteVehicleLegDetails();
+    AWS_GEOROUTES_API RouteVehicleLegDetails() = default;
     AWS_GEOROUTES_API RouteVehicleLegDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RouteVehicleLegDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,38 +54,38 @@ namespace Model
     /**
      * <p>Details corresponding to the arrival for the leg.</p>
      */
-    inline const RouteVehicleArrival& GetArrival() const{ return m_arrival; }
+    inline const RouteVehicleArrival& GetArrival() const { return m_arrival; }
     inline bool ArrivalHasBeenSet() const { return m_arrivalHasBeenSet; }
-    inline void SetArrival(const RouteVehicleArrival& value) { m_arrivalHasBeenSet = true; m_arrival = value; }
-    inline void SetArrival(RouteVehicleArrival&& value) { m_arrivalHasBeenSet = true; m_arrival = std::move(value); }
-    inline RouteVehicleLegDetails& WithArrival(const RouteVehicleArrival& value) { SetArrival(value); return *this;}
-    inline RouteVehicleLegDetails& WithArrival(RouteVehicleArrival&& value) { SetArrival(std::move(value)); return *this;}
+    template<typename ArrivalT = RouteVehicleArrival>
+    void SetArrival(ArrivalT&& value) { m_arrivalHasBeenSet = true; m_arrival = std::forward<ArrivalT>(value); }
+    template<typename ArrivalT = RouteVehicleArrival>
+    RouteVehicleLegDetails& WithArrival(ArrivalT&& value) { SetArrival(std::forward<ArrivalT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details corresponding to the departure for the leg.</p>
      */
-    inline const RouteVehicleDeparture& GetDeparture() const{ return m_departure; }
+    inline const RouteVehicleDeparture& GetDeparture() const { return m_departure; }
     inline bool DepartureHasBeenSet() const { return m_departureHasBeenSet; }
-    inline void SetDeparture(const RouteVehicleDeparture& value) { m_departureHasBeenSet = true; m_departure = value; }
-    inline void SetDeparture(RouteVehicleDeparture&& value) { m_departureHasBeenSet = true; m_departure = std::move(value); }
-    inline RouteVehicleLegDetails& WithDeparture(const RouteVehicleDeparture& value) { SetDeparture(value); return *this;}
-    inline RouteVehicleLegDetails& WithDeparture(RouteVehicleDeparture&& value) { SetDeparture(std::move(value)); return *this;}
+    template<typename DepartureT = RouteVehicleDeparture>
+    void SetDeparture(DepartureT&& value) { m_departureHasBeenSet = true; m_departure = std::forward<DepartureT>(value); }
+    template<typename DepartureT = RouteVehicleDeparture>
+    RouteVehicleLegDetails& WithDeparture(DepartureT&& value) { SetDeparture(std::forward<DepartureT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Incidents corresponding to this leg of the route.</p>
      */
-    inline const Aws::Vector<RouteVehicleIncident>& GetIncidents() const{ return m_incidents; }
+    inline const Aws::Vector<RouteVehicleIncident>& GetIncidents() const { return m_incidents; }
     inline bool IncidentsHasBeenSet() const { return m_incidentsHasBeenSet; }
-    inline void SetIncidents(const Aws::Vector<RouteVehicleIncident>& value) { m_incidentsHasBeenSet = true; m_incidents = value; }
-    inline void SetIncidents(Aws::Vector<RouteVehicleIncident>&& value) { m_incidentsHasBeenSet = true; m_incidents = std::move(value); }
-    inline RouteVehicleLegDetails& WithIncidents(const Aws::Vector<RouteVehicleIncident>& value) { SetIncidents(value); return *this;}
-    inline RouteVehicleLegDetails& WithIncidents(Aws::Vector<RouteVehicleIncident>&& value) { SetIncidents(std::move(value)); return *this;}
-    inline RouteVehicleLegDetails& AddIncidents(const RouteVehicleIncident& value) { m_incidentsHasBeenSet = true; m_incidents.push_back(value); return *this; }
-    inline RouteVehicleLegDetails& AddIncidents(RouteVehicleIncident&& value) { m_incidentsHasBeenSet = true; m_incidents.push_back(std::move(value)); return *this; }
+    template<typename IncidentsT = Aws::Vector<RouteVehicleIncident>>
+    void SetIncidents(IncidentsT&& value) { m_incidentsHasBeenSet = true; m_incidents = std::forward<IncidentsT>(value); }
+    template<typename IncidentsT = Aws::Vector<RouteVehicleIncident>>
+    RouteVehicleLegDetails& WithIncidents(IncidentsT&& value) { SetIncidents(std::forward<IncidentsT>(value)); return *this;}
+    template<typename IncidentsT = RouteVehicleIncident>
+    RouteVehicleLegDetails& AddIncidents(IncidentsT&& value) { m_incidentsHasBeenSet = true; m_incidents.emplace_back(std::forward<IncidentsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -93,14 +93,14 @@ namespace Model
      * <p>Notices are additional information returned that indicate issues that
      * occurred during route calculation.</p>
      */
-    inline const Aws::Vector<RouteVehicleNotice>& GetNotices() const{ return m_notices; }
+    inline const Aws::Vector<RouteVehicleNotice>& GetNotices() const { return m_notices; }
     inline bool NoticesHasBeenSet() const { return m_noticesHasBeenSet; }
-    inline void SetNotices(const Aws::Vector<RouteVehicleNotice>& value) { m_noticesHasBeenSet = true; m_notices = value; }
-    inline void SetNotices(Aws::Vector<RouteVehicleNotice>&& value) { m_noticesHasBeenSet = true; m_notices = std::move(value); }
-    inline RouteVehicleLegDetails& WithNotices(const Aws::Vector<RouteVehicleNotice>& value) { SetNotices(value); return *this;}
-    inline RouteVehicleLegDetails& WithNotices(Aws::Vector<RouteVehicleNotice>&& value) { SetNotices(std::move(value)); return *this;}
-    inline RouteVehicleLegDetails& AddNotices(const RouteVehicleNotice& value) { m_noticesHasBeenSet = true; m_notices.push_back(value); return *this; }
-    inline RouteVehicleLegDetails& AddNotices(RouteVehicleNotice&& value) { m_noticesHasBeenSet = true; m_notices.push_back(std::move(value)); return *this; }
+    template<typename NoticesT = Aws::Vector<RouteVehicleNotice>>
+    void SetNotices(NoticesT&& value) { m_noticesHasBeenSet = true; m_notices = std::forward<NoticesT>(value); }
+    template<typename NoticesT = Aws::Vector<RouteVehicleNotice>>
+    RouteVehicleLegDetails& WithNotices(NoticesT&& value) { SetNotices(std::forward<NoticesT>(value)); return *this;}
+    template<typename NoticesT = RouteVehicleNotice>
+    RouteVehicleLegDetails& AddNotices(NoticesT&& value) { m_noticesHasBeenSet = true; m_notices.emplace_back(std::forward<NoticesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -108,68 +108,68 @@ namespace Model
      * <p>Waypoints that were passed through during the leg. This includes the
      * waypoints that were configured with the PassThrough option.</p>
      */
-    inline const Aws::Vector<RoutePassThroughWaypoint>& GetPassThroughWaypoints() const{ return m_passThroughWaypoints; }
+    inline const Aws::Vector<RoutePassThroughWaypoint>& GetPassThroughWaypoints() const { return m_passThroughWaypoints; }
     inline bool PassThroughWaypointsHasBeenSet() const { return m_passThroughWaypointsHasBeenSet; }
-    inline void SetPassThroughWaypoints(const Aws::Vector<RoutePassThroughWaypoint>& value) { m_passThroughWaypointsHasBeenSet = true; m_passThroughWaypoints = value; }
-    inline void SetPassThroughWaypoints(Aws::Vector<RoutePassThroughWaypoint>&& value) { m_passThroughWaypointsHasBeenSet = true; m_passThroughWaypoints = std::move(value); }
-    inline RouteVehicleLegDetails& WithPassThroughWaypoints(const Aws::Vector<RoutePassThroughWaypoint>& value) { SetPassThroughWaypoints(value); return *this;}
-    inline RouteVehicleLegDetails& WithPassThroughWaypoints(Aws::Vector<RoutePassThroughWaypoint>&& value) { SetPassThroughWaypoints(std::move(value)); return *this;}
-    inline RouteVehicleLegDetails& AddPassThroughWaypoints(const RoutePassThroughWaypoint& value) { m_passThroughWaypointsHasBeenSet = true; m_passThroughWaypoints.push_back(value); return *this; }
-    inline RouteVehicleLegDetails& AddPassThroughWaypoints(RoutePassThroughWaypoint&& value) { m_passThroughWaypointsHasBeenSet = true; m_passThroughWaypoints.push_back(std::move(value)); return *this; }
+    template<typename PassThroughWaypointsT = Aws::Vector<RoutePassThroughWaypoint>>
+    void SetPassThroughWaypoints(PassThroughWaypointsT&& value) { m_passThroughWaypointsHasBeenSet = true; m_passThroughWaypoints = std::forward<PassThroughWaypointsT>(value); }
+    template<typename PassThroughWaypointsT = Aws::Vector<RoutePassThroughWaypoint>>
+    RouteVehicleLegDetails& WithPassThroughWaypoints(PassThroughWaypointsT&& value) { SetPassThroughWaypoints(std::forward<PassThroughWaypointsT>(value)); return *this;}
+    template<typename PassThroughWaypointsT = RoutePassThroughWaypoint>
+    RouteVehicleLegDetails& AddPassThroughWaypoints(PassThroughWaypointsT&& value) { m_passThroughWaypointsHasBeenSet = true; m_passThroughWaypoints.emplace_back(std::forward<PassThroughWaypointsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Spans that were computed for the requested SpanAdditionalFeatures.</p>
      */
-    inline const Aws::Vector<RouteVehicleSpan>& GetSpans() const{ return m_spans; }
+    inline const Aws::Vector<RouteVehicleSpan>& GetSpans() const { return m_spans; }
     inline bool SpansHasBeenSet() const { return m_spansHasBeenSet; }
-    inline void SetSpans(const Aws::Vector<RouteVehicleSpan>& value) { m_spansHasBeenSet = true; m_spans = value; }
-    inline void SetSpans(Aws::Vector<RouteVehicleSpan>&& value) { m_spansHasBeenSet = true; m_spans = std::move(value); }
-    inline RouteVehicleLegDetails& WithSpans(const Aws::Vector<RouteVehicleSpan>& value) { SetSpans(value); return *this;}
-    inline RouteVehicleLegDetails& WithSpans(Aws::Vector<RouteVehicleSpan>&& value) { SetSpans(std::move(value)); return *this;}
-    inline RouteVehicleLegDetails& AddSpans(const RouteVehicleSpan& value) { m_spansHasBeenSet = true; m_spans.push_back(value); return *this; }
-    inline RouteVehicleLegDetails& AddSpans(RouteVehicleSpan&& value) { m_spansHasBeenSet = true; m_spans.push_back(std::move(value)); return *this; }
+    template<typename SpansT = Aws::Vector<RouteVehicleSpan>>
+    void SetSpans(SpansT&& value) { m_spansHasBeenSet = true; m_spans = std::forward<SpansT>(value); }
+    template<typename SpansT = Aws::Vector<RouteVehicleSpan>>
+    RouteVehicleLegDetails& WithSpans(SpansT&& value) { SetSpans(std::forward<SpansT>(value)); return *this;}
+    template<typename SpansT = RouteVehicleSpan>
+    RouteVehicleLegDetails& AddSpans(SpansT&& value) { m_spansHasBeenSet = true; m_spans.emplace_back(std::forward<SpansT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Summarized details of the leg.</p>
      */
-    inline const RouteVehicleSummary& GetSummary() const{ return m_summary; }
+    inline const RouteVehicleSummary& GetSummary() const { return m_summary; }
     inline bool SummaryHasBeenSet() const { return m_summaryHasBeenSet; }
-    inline void SetSummary(const RouteVehicleSummary& value) { m_summaryHasBeenSet = true; m_summary = value; }
-    inline void SetSummary(RouteVehicleSummary&& value) { m_summaryHasBeenSet = true; m_summary = std::move(value); }
-    inline RouteVehicleLegDetails& WithSummary(const RouteVehicleSummary& value) { SetSummary(value); return *this;}
-    inline RouteVehicleLegDetails& WithSummary(RouteVehicleSummary&& value) { SetSummary(std::move(value)); return *this;}
+    template<typename SummaryT = RouteVehicleSummary>
+    void SetSummary(SummaryT&& value) { m_summaryHasBeenSet = true; m_summary = std::forward<SummaryT>(value); }
+    template<typename SummaryT = RouteVehicleSummary>
+    RouteVehicleLegDetails& WithSummary(SummaryT&& value) { SetSummary(std::forward<SummaryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Toll related options.</p>
      */
-    inline const Aws::Vector<RouteToll>& GetTolls() const{ return m_tolls; }
+    inline const Aws::Vector<RouteToll>& GetTolls() const { return m_tolls; }
     inline bool TollsHasBeenSet() const { return m_tollsHasBeenSet; }
-    inline void SetTolls(const Aws::Vector<RouteToll>& value) { m_tollsHasBeenSet = true; m_tolls = value; }
-    inline void SetTolls(Aws::Vector<RouteToll>&& value) { m_tollsHasBeenSet = true; m_tolls = std::move(value); }
-    inline RouteVehicleLegDetails& WithTolls(const Aws::Vector<RouteToll>& value) { SetTolls(value); return *this;}
-    inline RouteVehicleLegDetails& WithTolls(Aws::Vector<RouteToll>&& value) { SetTolls(std::move(value)); return *this;}
-    inline RouteVehicleLegDetails& AddTolls(const RouteToll& value) { m_tollsHasBeenSet = true; m_tolls.push_back(value); return *this; }
-    inline RouteVehicleLegDetails& AddTolls(RouteToll&& value) { m_tollsHasBeenSet = true; m_tolls.push_back(std::move(value)); return *this; }
+    template<typename TollsT = Aws::Vector<RouteToll>>
+    void SetTolls(TollsT&& value) { m_tollsHasBeenSet = true; m_tolls = std::forward<TollsT>(value); }
+    template<typename TollsT = Aws::Vector<RouteToll>>
+    RouteVehicleLegDetails& WithTolls(TollsT&& value) { SetTolls(std::forward<TollsT>(value)); return *this;}
+    template<typename TollsT = RouteToll>
+    RouteVehicleLegDetails& AddTolls(TollsT&& value) { m_tollsHasBeenSet = true; m_tolls.emplace_back(std::forward<TollsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Toll systems are authorities that collect payments for the toll.</p>
      */
-    inline const Aws::Vector<RouteTollSystem>& GetTollSystems() const{ return m_tollSystems; }
+    inline const Aws::Vector<RouteTollSystem>& GetTollSystems() const { return m_tollSystems; }
     inline bool TollSystemsHasBeenSet() const { return m_tollSystemsHasBeenSet; }
-    inline void SetTollSystems(const Aws::Vector<RouteTollSystem>& value) { m_tollSystemsHasBeenSet = true; m_tollSystems = value; }
-    inline void SetTollSystems(Aws::Vector<RouteTollSystem>&& value) { m_tollSystemsHasBeenSet = true; m_tollSystems = std::move(value); }
-    inline RouteVehicleLegDetails& WithTollSystems(const Aws::Vector<RouteTollSystem>& value) { SetTollSystems(value); return *this;}
-    inline RouteVehicleLegDetails& WithTollSystems(Aws::Vector<RouteTollSystem>&& value) { SetTollSystems(std::move(value)); return *this;}
-    inline RouteVehicleLegDetails& AddTollSystems(const RouteTollSystem& value) { m_tollSystemsHasBeenSet = true; m_tollSystems.push_back(value); return *this; }
-    inline RouteVehicleLegDetails& AddTollSystems(RouteTollSystem&& value) { m_tollSystemsHasBeenSet = true; m_tollSystems.push_back(std::move(value)); return *this; }
+    template<typename TollSystemsT = Aws::Vector<RouteTollSystem>>
+    void SetTollSystems(TollSystemsT&& value) { m_tollSystemsHasBeenSet = true; m_tollSystems = std::forward<TollSystemsT>(value); }
+    template<typename TollSystemsT = Aws::Vector<RouteTollSystem>>
+    RouteVehicleLegDetails& WithTollSystems(TollSystemsT&& value) { SetTollSystems(std::forward<TollSystemsT>(value)); return *this;}
+    template<typename TollSystemsT = RouteTollSystem>
+    RouteVehicleLegDetails& AddTollSystems(TollSystemsT&& value) { m_tollSystemsHasBeenSet = true; m_tollSystems.emplace_back(std::forward<TollSystemsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -177,14 +177,14 @@ namespace Model
      * <p>Steps of a leg that must be performed before the travel portion of the
      * leg.</p>
      */
-    inline const Aws::Vector<RouteVehicleTravelStep>& GetTravelSteps() const{ return m_travelSteps; }
+    inline const Aws::Vector<RouteVehicleTravelStep>& GetTravelSteps() const { return m_travelSteps; }
     inline bool TravelStepsHasBeenSet() const { return m_travelStepsHasBeenSet; }
-    inline void SetTravelSteps(const Aws::Vector<RouteVehicleTravelStep>& value) { m_travelStepsHasBeenSet = true; m_travelSteps = value; }
-    inline void SetTravelSteps(Aws::Vector<RouteVehicleTravelStep>&& value) { m_travelStepsHasBeenSet = true; m_travelSteps = std::move(value); }
-    inline RouteVehicleLegDetails& WithTravelSteps(const Aws::Vector<RouteVehicleTravelStep>& value) { SetTravelSteps(value); return *this;}
-    inline RouteVehicleLegDetails& WithTravelSteps(Aws::Vector<RouteVehicleTravelStep>&& value) { SetTravelSteps(std::move(value)); return *this;}
-    inline RouteVehicleLegDetails& AddTravelSteps(const RouteVehicleTravelStep& value) { m_travelStepsHasBeenSet = true; m_travelSteps.push_back(value); return *this; }
-    inline RouteVehicleLegDetails& AddTravelSteps(RouteVehicleTravelStep&& value) { m_travelStepsHasBeenSet = true; m_travelSteps.push_back(std::move(value)); return *this; }
+    template<typename TravelStepsT = Aws::Vector<RouteVehicleTravelStep>>
+    void SetTravelSteps(TravelStepsT&& value) { m_travelStepsHasBeenSet = true; m_travelSteps = std::forward<TravelStepsT>(value); }
+    template<typename TravelStepsT = Aws::Vector<RouteVehicleTravelStep>>
+    RouteVehicleLegDetails& WithTravelSteps(TravelStepsT&& value) { SetTravelSteps(std::forward<TravelStepsT>(value)); return *this;}
+    template<typename TravelStepsT = RouteVehicleTravelStep>
+    RouteVehicleLegDetails& AddTravelSteps(TravelStepsT&& value) { m_travelStepsHasBeenSet = true; m_travelSteps.emplace_back(std::forward<TravelStepsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -194,29 +194,28 @@ namespace Model
      *  <p>There are currently no other supported values as of 26th April
      * 2024.</p> 
      */
-    inline const Aws::Vector<Aws::String>& GetTruckRoadTypes() const{ return m_truckRoadTypes; }
+    inline const Aws::Vector<Aws::String>& GetTruckRoadTypes() const { return m_truckRoadTypes; }
     inline bool TruckRoadTypesHasBeenSet() const { return m_truckRoadTypesHasBeenSet; }
-    inline void SetTruckRoadTypes(const Aws::Vector<Aws::String>& value) { m_truckRoadTypesHasBeenSet = true; m_truckRoadTypes = value; }
-    inline void SetTruckRoadTypes(Aws::Vector<Aws::String>&& value) { m_truckRoadTypesHasBeenSet = true; m_truckRoadTypes = std::move(value); }
-    inline RouteVehicleLegDetails& WithTruckRoadTypes(const Aws::Vector<Aws::String>& value) { SetTruckRoadTypes(value); return *this;}
-    inline RouteVehicleLegDetails& WithTruckRoadTypes(Aws::Vector<Aws::String>&& value) { SetTruckRoadTypes(std::move(value)); return *this;}
-    inline RouteVehicleLegDetails& AddTruckRoadTypes(const Aws::String& value) { m_truckRoadTypesHasBeenSet = true; m_truckRoadTypes.push_back(value); return *this; }
-    inline RouteVehicleLegDetails& AddTruckRoadTypes(Aws::String&& value) { m_truckRoadTypesHasBeenSet = true; m_truckRoadTypes.push_back(std::move(value)); return *this; }
-    inline RouteVehicleLegDetails& AddTruckRoadTypes(const char* value) { m_truckRoadTypesHasBeenSet = true; m_truckRoadTypes.push_back(value); return *this; }
+    template<typename TruckRoadTypesT = Aws::Vector<Aws::String>>
+    void SetTruckRoadTypes(TruckRoadTypesT&& value) { m_truckRoadTypesHasBeenSet = true; m_truckRoadTypes = std::forward<TruckRoadTypesT>(value); }
+    template<typename TruckRoadTypesT = Aws::Vector<Aws::String>>
+    RouteVehicleLegDetails& WithTruckRoadTypes(TruckRoadTypesT&& value) { SetTruckRoadTypes(std::forward<TruckRoadTypesT>(value)); return *this;}
+    template<typename TruckRoadTypesT = Aws::String>
+    RouteVehicleLegDetails& AddTruckRoadTypes(TruckRoadTypesT&& value) { m_truckRoadTypesHasBeenSet = true; m_truckRoadTypes.emplace_back(std::forward<TruckRoadTypesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Zones corresponding to this leg of the route.</p>
      */
-    inline const Aws::Vector<RouteZone>& GetZones() const{ return m_zones; }
+    inline const Aws::Vector<RouteZone>& GetZones() const { return m_zones; }
     inline bool ZonesHasBeenSet() const { return m_zonesHasBeenSet; }
-    inline void SetZones(const Aws::Vector<RouteZone>& value) { m_zonesHasBeenSet = true; m_zones = value; }
-    inline void SetZones(Aws::Vector<RouteZone>&& value) { m_zonesHasBeenSet = true; m_zones = std::move(value); }
-    inline RouteVehicleLegDetails& WithZones(const Aws::Vector<RouteZone>& value) { SetZones(value); return *this;}
-    inline RouteVehicleLegDetails& WithZones(Aws::Vector<RouteZone>&& value) { SetZones(std::move(value)); return *this;}
-    inline RouteVehicleLegDetails& AddZones(const RouteZone& value) { m_zonesHasBeenSet = true; m_zones.push_back(value); return *this; }
-    inline RouteVehicleLegDetails& AddZones(RouteZone&& value) { m_zonesHasBeenSet = true; m_zones.push_back(std::move(value)); return *this; }
+    template<typename ZonesT = Aws::Vector<RouteZone>>
+    void SetZones(ZonesT&& value) { m_zonesHasBeenSet = true; m_zones = std::forward<ZonesT>(value); }
+    template<typename ZonesT = Aws::Vector<RouteZone>>
+    RouteVehicleLegDetails& WithZones(ZonesT&& value) { SetZones(std::forward<ZonesT>(value)); return *this;}
+    template<typename ZonesT = RouteZone>
+    RouteVehicleLegDetails& AddZones(ZonesT&& value) { m_zonesHasBeenSet = true; m_zones.emplace_back(std::forward<ZonesT>(value)); return *this; }
     ///@}
   private:
 

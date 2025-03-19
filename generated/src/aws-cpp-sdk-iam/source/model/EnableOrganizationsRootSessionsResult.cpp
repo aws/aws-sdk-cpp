@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-EnableOrganizationsRootSessionsResult::EnableOrganizationsRootSessionsResult()
-{
-}
-
 EnableOrganizationsRootSessionsResult::EnableOrganizationsRootSessionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ EnableOrganizationsRootSessionsResult& EnableOrganizationsRootSessionsResult::op
     if(!organizationIdNode.IsNull())
     {
       m_organizationId = Aws::Utils::Xml::DecodeEscapedXmlText(organizationIdNode.GetText());
+      m_organizationIdHasBeenSet = true;
     }
     XmlNode enabledFeaturesNode = resultNode.FirstChild("EnabledFeatures");
     if(!enabledFeaturesNode.IsNull())
     {
       XmlNode enabledFeaturesMember = enabledFeaturesNode.FirstChild("member");
+      m_enabledFeaturesHasBeenSet = !enabledFeaturesMember.IsNull();
       while(!enabledFeaturesMember.IsNull())
       {
         m_enabledFeatures.push_back(FeatureTypeMapper::GetFeatureTypeForName(StringUtils::Trim(enabledFeaturesMember.GetText().c_str())));
         enabledFeaturesMember = enabledFeaturesMember.NextNode("member");
       }
 
+      m_enabledFeaturesHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::EnableOrganizationsRootSessionsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

@@ -18,14 +18,7 @@ namespace SSM
 namespace Model
 {
 
-OpsItemAlreadyExistsException::OpsItemAlreadyExistsException() : 
-    m_messageHasBeenSet(false),
-    m_opsItemIdHasBeenSet(false)
-{
-}
-
 OpsItemAlreadyExistsException::OpsItemAlreadyExistsException(JsonView jsonValue)
-  : OpsItemAlreadyExistsException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ OpsItemAlreadyExistsException& OpsItemAlreadyExistsException::operator =(JsonVie
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OpsItemId"))
   {
     m_opsItemId = jsonValue.GetString("OpsItemId");
-
     m_opsItemIdHasBeenSet = true;
   }
-
   return *this;
 }
 

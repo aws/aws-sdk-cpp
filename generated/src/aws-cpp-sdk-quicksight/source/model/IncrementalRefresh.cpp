@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-IncrementalRefresh::IncrementalRefresh() : 
-    m_lookbackWindowHasBeenSet(false)
-{
-}
-
 IncrementalRefresh::IncrementalRefresh(JsonView jsonValue)
-  : IncrementalRefresh()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ IncrementalRefresh& IncrementalRefresh::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LookbackWindow"))
   {
     m_lookbackWindow = jsonValue.GetObject("LookbackWindow");
-
     m_lookbackWindowHasBeenSet = true;
   }
-
   return *this;
 }
 

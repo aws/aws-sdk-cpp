@@ -18,14 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-StandardHlsSettings::StandardHlsSettings() : 
-    m_audioRenditionSetsHasBeenSet(false),
-    m_m3u8SettingsHasBeenSet(false)
-{
-}
-
 StandardHlsSettings::StandardHlsSettings(JsonView jsonValue)
-  : StandardHlsSettings()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ StandardHlsSettings& StandardHlsSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("audioRenditionSets"))
   {
     m_audioRenditionSets = jsonValue.GetString("audioRenditionSets");
-
     m_audioRenditionSetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("m3u8Settings"))
   {
     m_m3u8Settings = jsonValue.GetObject("m3u8Settings");
-
     m_m3u8SettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

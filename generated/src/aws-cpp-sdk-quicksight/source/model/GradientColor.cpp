@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-GradientColor::GradientColor() : 
-    m_stopsHasBeenSet(false)
-{
-}
-
 GradientColor::GradientColor(JsonView jsonValue)
-  : GradientColor()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ GradientColor& GradientColor::operator =(JsonView jsonValue)
     }
     m_stopsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class ModifyVerifiedAccessTrustProviderDeviceOptions
   {
   public:
-    AWS_EC2_API ModifyVerifiedAccessTrustProviderDeviceOptions();
+    AWS_EC2_API ModifyVerifiedAccessTrustProviderDeviceOptions() = default;
     AWS_EC2_API ModifyVerifiedAccessTrustProviderDeviceOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API ModifyVerifiedAccessTrustProviderDeviceOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,14 +45,12 @@ namespace Model
      * <p> The URL Amazon Web Services Verified Access will use to verify the
      * authenticity of the device tokens.</p>
      */
-    inline const Aws::String& GetPublicSigningKeyUrl() const{ return m_publicSigningKeyUrl; }
+    inline const Aws::String& GetPublicSigningKeyUrl() const { return m_publicSigningKeyUrl; }
     inline bool PublicSigningKeyUrlHasBeenSet() const { return m_publicSigningKeyUrlHasBeenSet; }
-    inline void SetPublicSigningKeyUrl(const Aws::String& value) { m_publicSigningKeyUrlHasBeenSet = true; m_publicSigningKeyUrl = value; }
-    inline void SetPublicSigningKeyUrl(Aws::String&& value) { m_publicSigningKeyUrlHasBeenSet = true; m_publicSigningKeyUrl = std::move(value); }
-    inline void SetPublicSigningKeyUrl(const char* value) { m_publicSigningKeyUrlHasBeenSet = true; m_publicSigningKeyUrl.assign(value); }
-    inline ModifyVerifiedAccessTrustProviderDeviceOptions& WithPublicSigningKeyUrl(const Aws::String& value) { SetPublicSigningKeyUrl(value); return *this;}
-    inline ModifyVerifiedAccessTrustProviderDeviceOptions& WithPublicSigningKeyUrl(Aws::String&& value) { SetPublicSigningKeyUrl(std::move(value)); return *this;}
-    inline ModifyVerifiedAccessTrustProviderDeviceOptions& WithPublicSigningKeyUrl(const char* value) { SetPublicSigningKeyUrl(value); return *this;}
+    template<typename PublicSigningKeyUrlT = Aws::String>
+    void SetPublicSigningKeyUrl(PublicSigningKeyUrlT&& value) { m_publicSigningKeyUrlHasBeenSet = true; m_publicSigningKeyUrl = std::forward<PublicSigningKeyUrlT>(value); }
+    template<typename PublicSigningKeyUrlT = Aws::String>
+    ModifyVerifiedAccessTrustProviderDeviceOptions& WithPublicSigningKeyUrl(PublicSigningKeyUrlT&& value) { SetPublicSigningKeyUrl(std::forward<PublicSigningKeyUrlT>(value)); return *this;}
     ///@}
   private:
 

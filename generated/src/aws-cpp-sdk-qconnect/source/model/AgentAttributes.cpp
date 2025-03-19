@@ -18,14 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-AgentAttributes::AgentAttributes() : 
-    m_firstNameHasBeenSet(false),
-    m_lastNameHasBeenSet(false)
-{
-}
-
 AgentAttributes::AgentAttributes(JsonView jsonValue)
-  : AgentAttributes()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AgentAttributes& AgentAttributes::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("firstName"))
   {
     m_firstName = jsonValue.GetString("firstName");
-
     m_firstNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastName"))
   {
     m_lastName = jsonValue.GetString("lastName");
-
     m_lastNameHasBeenSet = true;
   }
-
   return *this;
 }
 

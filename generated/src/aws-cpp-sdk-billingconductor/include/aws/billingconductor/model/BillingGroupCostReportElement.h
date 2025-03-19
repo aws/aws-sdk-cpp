@@ -33,7 +33,7 @@ namespace Model
   class BillingGroupCostReportElement
   {
   public:
-    AWS_BILLINGCONDUCTOR_API BillingGroupCostReportElement();
+    AWS_BILLINGCONDUCTOR_API BillingGroupCostReportElement() = default;
     AWS_BILLINGCONDUCTOR_API BillingGroupCostReportElement(Aws::Utils::Json::JsonView jsonValue);
     AWS_BILLINGCONDUCTOR_API BillingGroupCostReportElement& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of a billing group.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline BillingGroupCostReportElement& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline BillingGroupCostReportElement& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline BillingGroupCostReportElement& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    BillingGroupCostReportElement& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The actual Amazon Web Services charges for the billing group.</p>
      */
-    inline const Aws::String& GetAWSCost() const{ return m_aWSCost; }
+    inline const Aws::String& GetAWSCost() const { return m_aWSCost; }
     inline bool AWSCostHasBeenSet() const { return m_aWSCostHasBeenSet; }
-    inline void SetAWSCost(const Aws::String& value) { m_aWSCostHasBeenSet = true; m_aWSCost = value; }
-    inline void SetAWSCost(Aws::String&& value) { m_aWSCostHasBeenSet = true; m_aWSCost = std::move(value); }
-    inline void SetAWSCost(const char* value) { m_aWSCostHasBeenSet = true; m_aWSCost.assign(value); }
-    inline BillingGroupCostReportElement& WithAWSCost(const Aws::String& value) { SetAWSCost(value); return *this;}
-    inline BillingGroupCostReportElement& WithAWSCost(Aws::String&& value) { SetAWSCost(std::move(value)); return *this;}
-    inline BillingGroupCostReportElement& WithAWSCost(const char* value) { SetAWSCost(value); return *this;}
+    template<typename AWSCostT = Aws::String>
+    void SetAWSCost(AWSCostT&& value) { m_aWSCostHasBeenSet = true; m_aWSCost = std::forward<AWSCostT>(value); }
+    template<typename AWSCostT = Aws::String>
+    BillingGroupCostReportElement& WithAWSCost(AWSCostT&& value) { SetAWSCost(std::forward<AWSCostT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,56 +68,48 @@ namespace Model
      * <p>The hypothetical Amazon Web Services charges based on the associated pricing
      * plan of a billing group.</p>
      */
-    inline const Aws::String& GetProformaCost() const{ return m_proformaCost; }
+    inline const Aws::String& GetProformaCost() const { return m_proformaCost; }
     inline bool ProformaCostHasBeenSet() const { return m_proformaCostHasBeenSet; }
-    inline void SetProformaCost(const Aws::String& value) { m_proformaCostHasBeenSet = true; m_proformaCost = value; }
-    inline void SetProformaCost(Aws::String&& value) { m_proformaCostHasBeenSet = true; m_proformaCost = std::move(value); }
-    inline void SetProformaCost(const char* value) { m_proformaCostHasBeenSet = true; m_proformaCost.assign(value); }
-    inline BillingGroupCostReportElement& WithProformaCost(const Aws::String& value) { SetProformaCost(value); return *this;}
-    inline BillingGroupCostReportElement& WithProformaCost(Aws::String&& value) { SetProformaCost(std::move(value)); return *this;}
-    inline BillingGroupCostReportElement& WithProformaCost(const char* value) { SetProformaCost(value); return *this;}
+    template<typename ProformaCostT = Aws::String>
+    void SetProformaCost(ProformaCostT&& value) { m_proformaCostHasBeenSet = true; m_proformaCost = std::forward<ProformaCostT>(value); }
+    template<typename ProformaCostT = Aws::String>
+    BillingGroupCostReportElement& WithProformaCost(ProformaCostT&& value) { SetProformaCost(std::forward<ProformaCostT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The billing group margin.</p>
      */
-    inline const Aws::String& GetMargin() const{ return m_margin; }
+    inline const Aws::String& GetMargin() const { return m_margin; }
     inline bool MarginHasBeenSet() const { return m_marginHasBeenSet; }
-    inline void SetMargin(const Aws::String& value) { m_marginHasBeenSet = true; m_margin = value; }
-    inline void SetMargin(Aws::String&& value) { m_marginHasBeenSet = true; m_margin = std::move(value); }
-    inline void SetMargin(const char* value) { m_marginHasBeenSet = true; m_margin.assign(value); }
-    inline BillingGroupCostReportElement& WithMargin(const Aws::String& value) { SetMargin(value); return *this;}
-    inline BillingGroupCostReportElement& WithMargin(Aws::String&& value) { SetMargin(std::move(value)); return *this;}
-    inline BillingGroupCostReportElement& WithMargin(const char* value) { SetMargin(value); return *this;}
+    template<typename MarginT = Aws::String>
+    void SetMargin(MarginT&& value) { m_marginHasBeenSet = true; m_margin = std::forward<MarginT>(value); }
+    template<typename MarginT = Aws::String>
+    BillingGroupCostReportElement& WithMargin(MarginT&& value) { SetMargin(std::forward<MarginT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The percentage of billing group margin.</p>
      */
-    inline const Aws::String& GetMarginPercentage() const{ return m_marginPercentage; }
+    inline const Aws::String& GetMarginPercentage() const { return m_marginPercentage; }
     inline bool MarginPercentageHasBeenSet() const { return m_marginPercentageHasBeenSet; }
-    inline void SetMarginPercentage(const Aws::String& value) { m_marginPercentageHasBeenSet = true; m_marginPercentage = value; }
-    inline void SetMarginPercentage(Aws::String&& value) { m_marginPercentageHasBeenSet = true; m_marginPercentage = std::move(value); }
-    inline void SetMarginPercentage(const char* value) { m_marginPercentageHasBeenSet = true; m_marginPercentage.assign(value); }
-    inline BillingGroupCostReportElement& WithMarginPercentage(const Aws::String& value) { SetMarginPercentage(value); return *this;}
-    inline BillingGroupCostReportElement& WithMarginPercentage(Aws::String&& value) { SetMarginPercentage(std::move(value)); return *this;}
-    inline BillingGroupCostReportElement& WithMarginPercentage(const char* value) { SetMarginPercentage(value); return *this;}
+    template<typename MarginPercentageT = Aws::String>
+    void SetMarginPercentage(MarginPercentageT&& value) { m_marginPercentageHasBeenSet = true; m_marginPercentage = std::forward<MarginPercentageT>(value); }
+    template<typename MarginPercentageT = Aws::String>
+    BillingGroupCostReportElement& WithMarginPercentage(MarginPercentageT&& value) { SetMarginPercentage(std::forward<MarginPercentageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The displayed currency.</p>
      */
-    inline const Aws::String& GetCurrency() const{ return m_currency; }
+    inline const Aws::String& GetCurrency() const { return m_currency; }
     inline bool CurrencyHasBeenSet() const { return m_currencyHasBeenSet; }
-    inline void SetCurrency(const Aws::String& value) { m_currencyHasBeenSet = true; m_currency = value; }
-    inline void SetCurrency(Aws::String&& value) { m_currencyHasBeenSet = true; m_currency = std::move(value); }
-    inline void SetCurrency(const char* value) { m_currencyHasBeenSet = true; m_currency.assign(value); }
-    inline BillingGroupCostReportElement& WithCurrency(const Aws::String& value) { SetCurrency(value); return *this;}
-    inline BillingGroupCostReportElement& WithCurrency(Aws::String&& value) { SetCurrency(std::move(value)); return *this;}
-    inline BillingGroupCostReportElement& WithCurrency(const char* value) { SetCurrency(value); return *this;}
+    template<typename CurrencyT = Aws::String>
+    void SetCurrency(CurrencyT&& value) { m_currencyHasBeenSet = true; m_currency = std::forward<CurrencyT>(value); }
+    template<typename CurrencyT = Aws::String>
+    BillingGroupCostReportElement& WithCurrency(CurrencyT&& value) { SetCurrency(std::forward<CurrencyT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,13 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-RuleExecutionOutput::RuleExecutionOutput() : 
-    m_executionResultHasBeenSet(false)
-{
-}
-
 RuleExecutionOutput::RuleExecutionOutput(JsonView jsonValue)
-  : RuleExecutionOutput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RuleExecutionOutput& RuleExecutionOutput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("executionResult"))
   {
     m_executionResult = jsonValue.GetObject("executionResult");
-
     m_executionResultHasBeenSet = true;
   }
-
   return *this;
 }
 

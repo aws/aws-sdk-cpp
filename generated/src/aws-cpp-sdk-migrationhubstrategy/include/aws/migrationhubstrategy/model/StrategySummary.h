@@ -32,7 +32,7 @@ namespace Model
   class StrategySummary
   {
   public:
-    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API StrategySummary();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API StrategySummary() = default;
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API StrategySummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API StrategySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p> The count of recommendations per strategy. </p>
      */
-    inline int GetCount() const{ return m_count; }
+    inline int GetCount() const { return m_count; }
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
     inline StrategySummary& WithCount(int value) { SetCount(value); return *this;}
@@ -52,19 +52,17 @@ namespace Model
     /**
      * <p> The name of recommended strategy. </p>
      */
-    inline const Strategy& GetStrategy() const{ return m_strategy; }
+    inline Strategy GetStrategy() const { return m_strategy; }
     inline bool StrategyHasBeenSet() const { return m_strategyHasBeenSet; }
-    inline void SetStrategy(const Strategy& value) { m_strategyHasBeenSet = true; m_strategy = value; }
-    inline void SetStrategy(Strategy&& value) { m_strategyHasBeenSet = true; m_strategy = std::move(value); }
-    inline StrategySummary& WithStrategy(const Strategy& value) { SetStrategy(value); return *this;}
-    inline StrategySummary& WithStrategy(Strategy&& value) { SetStrategy(std::move(value)); return *this;}
+    inline void SetStrategy(Strategy value) { m_strategyHasBeenSet = true; m_strategy = value; }
+    inline StrategySummary& WithStrategy(Strategy value) { SetStrategy(value); return *this;}
     ///@}
   private:
 
-    int m_count;
+    int m_count{0};
     bool m_countHasBeenSet = false;
 
-    Strategy m_strategy;
+    Strategy m_strategy{Strategy::NOT_SET};
     bool m_strategyHasBeenSet = false;
   };
 

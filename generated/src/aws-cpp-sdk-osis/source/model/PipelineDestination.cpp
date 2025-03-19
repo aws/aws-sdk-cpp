@@ -18,14 +18,7 @@ namespace OSIS
 namespace Model
 {
 
-PipelineDestination::PipelineDestination() : 
-    m_serviceNameHasBeenSet(false),
-    m_endpointHasBeenSet(false)
-{
-}
-
 PipelineDestination::PipelineDestination(JsonView jsonValue)
-  : PipelineDestination()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ PipelineDestination& PipelineDestination::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ServiceName"))
   {
     m_serviceName = jsonValue.GetString("ServiceName");
-
     m_serviceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Endpoint"))
   {
     m_endpoint = jsonValue.GetString("Endpoint");
-
     m_endpointHasBeenSet = true;
   }
-
   return *this;
 }
 

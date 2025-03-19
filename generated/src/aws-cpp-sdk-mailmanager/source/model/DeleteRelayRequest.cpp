@@ -12,11 +12,6 @@ using namespace Aws::MailManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteRelayRequest::DeleteRelayRequest() : 
-    m_relayIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRelayRequest::SerializePayload() const
 {
   JsonValue payload;

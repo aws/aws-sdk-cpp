@@ -33,7 +33,7 @@ namespace Model
   class InAppCampaignSchedule
   {
   public:
-    AWS_PINPOINT_API InAppCampaignSchedule();
+    AWS_PINPOINT_API InAppCampaignSchedule() = default;
     AWS_PINPOINT_API InAppCampaignSchedule(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API InAppCampaignSchedule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The scheduled time after which the in-app message should not be shown.
      * Timestamp is in ISO 8601 format.</p>
      */
-    inline const Aws::String& GetEndDate() const{ return m_endDate; }
+    inline const Aws::String& GetEndDate() const { return m_endDate; }
     inline bool EndDateHasBeenSet() const { return m_endDateHasBeenSet; }
-    inline void SetEndDate(const Aws::String& value) { m_endDateHasBeenSet = true; m_endDate = value; }
-    inline void SetEndDate(Aws::String&& value) { m_endDateHasBeenSet = true; m_endDate = std::move(value); }
-    inline void SetEndDate(const char* value) { m_endDateHasBeenSet = true; m_endDate.assign(value); }
-    inline InAppCampaignSchedule& WithEndDate(const Aws::String& value) { SetEndDate(value); return *this;}
-    inline InAppCampaignSchedule& WithEndDate(Aws::String&& value) { SetEndDate(std::move(value)); return *this;}
-    inline InAppCampaignSchedule& WithEndDate(const char* value) { SetEndDate(value); return *this;}
+    template<typename EndDateT = Aws::String>
+    void SetEndDate(EndDateT&& value) { m_endDateHasBeenSet = true; m_endDate = std::forward<EndDateT>(value); }
+    template<typename EndDateT = Aws::String>
+    InAppCampaignSchedule& WithEndDate(EndDateT&& value) { SetEndDate(std::forward<EndDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,24 +57,24 @@ namespace Model
      * <p>The event filter the SDK has to use to show the in-app message in the
      * application.</p>
      */
-    inline const CampaignEventFilter& GetEventFilter() const{ return m_eventFilter; }
+    inline const CampaignEventFilter& GetEventFilter() const { return m_eventFilter; }
     inline bool EventFilterHasBeenSet() const { return m_eventFilterHasBeenSet; }
-    inline void SetEventFilter(const CampaignEventFilter& value) { m_eventFilterHasBeenSet = true; m_eventFilter = value; }
-    inline void SetEventFilter(CampaignEventFilter&& value) { m_eventFilterHasBeenSet = true; m_eventFilter = std::move(value); }
-    inline InAppCampaignSchedule& WithEventFilter(const CampaignEventFilter& value) { SetEventFilter(value); return *this;}
-    inline InAppCampaignSchedule& WithEventFilter(CampaignEventFilter&& value) { SetEventFilter(std::move(value)); return *this;}
+    template<typename EventFilterT = CampaignEventFilter>
+    void SetEventFilter(EventFilterT&& value) { m_eventFilterHasBeenSet = true; m_eventFilter = std::forward<EventFilterT>(value); }
+    template<typename EventFilterT = CampaignEventFilter>
+    InAppCampaignSchedule& WithEventFilter(EventFilterT&& value) { SetEventFilter(std::forward<EventFilterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Time during which the in-app message should not be shown to the user.</p>
      */
-    inline const QuietTime& GetQuietTime() const{ return m_quietTime; }
+    inline const QuietTime& GetQuietTime() const { return m_quietTime; }
     inline bool QuietTimeHasBeenSet() const { return m_quietTimeHasBeenSet; }
-    inline void SetQuietTime(const QuietTime& value) { m_quietTimeHasBeenSet = true; m_quietTime = value; }
-    inline void SetQuietTime(QuietTime&& value) { m_quietTimeHasBeenSet = true; m_quietTime = std::move(value); }
-    inline InAppCampaignSchedule& WithQuietTime(const QuietTime& value) { SetQuietTime(value); return *this;}
-    inline InAppCampaignSchedule& WithQuietTime(QuietTime&& value) { SetQuietTime(std::move(value)); return *this;}
+    template<typename QuietTimeT = QuietTime>
+    void SetQuietTime(QuietTimeT&& value) { m_quietTimeHasBeenSet = true; m_quietTime = std::forward<QuietTimeT>(value); }
+    template<typename QuietTimeT = QuietTime>
+    InAppCampaignSchedule& WithQuietTime(QuietTimeT&& value) { SetQuietTime(std::forward<QuietTimeT>(value)); return *this;}
     ///@}
   private:
 

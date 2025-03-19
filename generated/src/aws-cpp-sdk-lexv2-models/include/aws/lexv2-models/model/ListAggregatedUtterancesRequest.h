@@ -25,7 +25,7 @@ namespace Model
   class ListAggregatedUtterancesRequest : public LexModelsV2Request
   {
   public:
-    AWS_LEXMODELSV2_API ListAggregatedUtterancesRequest();
+    AWS_LEXMODELSV2_API ListAggregatedUtterancesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The unique identifier of the bot associated with this request.</p>
      */
-    inline const Aws::String& GetBotId() const{ return m_botId; }
+    inline const Aws::String& GetBotId() const { return m_botId; }
     inline bool BotIdHasBeenSet() const { return m_botIdHasBeenSet; }
-    inline void SetBotId(const Aws::String& value) { m_botIdHasBeenSet = true; m_botId = value; }
-    inline void SetBotId(Aws::String&& value) { m_botIdHasBeenSet = true; m_botId = std::move(value); }
-    inline void SetBotId(const char* value) { m_botIdHasBeenSet = true; m_botId.assign(value); }
-    inline ListAggregatedUtterancesRequest& WithBotId(const Aws::String& value) { SetBotId(value); return *this;}
-    inline ListAggregatedUtterancesRequest& WithBotId(Aws::String&& value) { SetBotId(std::move(value)); return *this;}
-    inline ListAggregatedUtterancesRequest& WithBotId(const char* value) { SetBotId(value); return *this;}
+    template<typename BotIdT = Aws::String>
+    void SetBotId(BotIdT&& value) { m_botIdHasBeenSet = true; m_botId = std::forward<BotIdT>(value); }
+    template<typename BotIdT = Aws::String>
+    ListAggregatedUtterancesRequest& WithBotId(BotIdT&& value) { SetBotId(std::forward<BotIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +53,12 @@ namespace Model
      * <p>The identifier of the bot alias associated with this request. If you specify
      * the bot alias, you can't specify the bot version.</p>
      */
-    inline const Aws::String& GetBotAliasId() const{ return m_botAliasId; }
+    inline const Aws::String& GetBotAliasId() const { return m_botAliasId; }
     inline bool BotAliasIdHasBeenSet() const { return m_botAliasIdHasBeenSet; }
-    inline void SetBotAliasId(const Aws::String& value) { m_botAliasIdHasBeenSet = true; m_botAliasId = value; }
-    inline void SetBotAliasId(Aws::String&& value) { m_botAliasIdHasBeenSet = true; m_botAliasId = std::move(value); }
-    inline void SetBotAliasId(const char* value) { m_botAliasIdHasBeenSet = true; m_botAliasId.assign(value); }
-    inline ListAggregatedUtterancesRequest& WithBotAliasId(const Aws::String& value) { SetBotAliasId(value); return *this;}
-    inline ListAggregatedUtterancesRequest& WithBotAliasId(Aws::String&& value) { SetBotAliasId(std::move(value)); return *this;}
-    inline ListAggregatedUtterancesRequest& WithBotAliasId(const char* value) { SetBotAliasId(value); return *this;}
+    template<typename BotAliasIdT = Aws::String>
+    void SetBotAliasId(BotAliasIdT&& value) { m_botAliasIdHasBeenSet = true; m_botAliasId = std::forward<BotAliasIdT>(value); }
+    template<typename BotAliasIdT = Aws::String>
+    ListAggregatedUtterancesRequest& WithBotAliasId(BotAliasIdT&& value) { SetBotAliasId(std::forward<BotAliasIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +66,12 @@ namespace Model
      * <p>The identifier of the bot version associated with this request. If you
      * specify the bot version, you can't specify the bot alias.</p>
      */
-    inline const Aws::String& GetBotVersion() const{ return m_botVersion; }
+    inline const Aws::String& GetBotVersion() const { return m_botVersion; }
     inline bool BotVersionHasBeenSet() const { return m_botVersionHasBeenSet; }
-    inline void SetBotVersion(const Aws::String& value) { m_botVersionHasBeenSet = true; m_botVersion = value; }
-    inline void SetBotVersion(Aws::String&& value) { m_botVersionHasBeenSet = true; m_botVersion = std::move(value); }
-    inline void SetBotVersion(const char* value) { m_botVersionHasBeenSet = true; m_botVersion.assign(value); }
-    inline ListAggregatedUtterancesRequest& WithBotVersion(const Aws::String& value) { SetBotVersion(value); return *this;}
-    inline ListAggregatedUtterancesRequest& WithBotVersion(Aws::String&& value) { SetBotVersion(std::move(value)); return *this;}
-    inline ListAggregatedUtterancesRequest& WithBotVersion(const char* value) { SetBotVersion(value); return *this;}
+    template<typename BotVersionT = Aws::String>
+    void SetBotVersion(BotVersionT&& value) { m_botVersionHasBeenSet = true; m_botVersion = std::forward<BotVersionT>(value); }
+    template<typename BotVersionT = Aws::String>
+    ListAggregatedUtterancesRequest& WithBotVersion(BotVersionT&& value) { SetBotVersion(std::forward<BotVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,14 +81,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
      * languages</a>.</p>
      */
-    inline const Aws::String& GetLocaleId() const{ return m_localeId; }
+    inline const Aws::String& GetLocaleId() const { return m_localeId; }
     inline bool LocaleIdHasBeenSet() const { return m_localeIdHasBeenSet; }
-    inline void SetLocaleId(const Aws::String& value) { m_localeIdHasBeenSet = true; m_localeId = value; }
-    inline void SetLocaleId(Aws::String&& value) { m_localeIdHasBeenSet = true; m_localeId = std::move(value); }
-    inline void SetLocaleId(const char* value) { m_localeIdHasBeenSet = true; m_localeId.assign(value); }
-    inline ListAggregatedUtterancesRequest& WithLocaleId(const Aws::String& value) { SetLocaleId(value); return *this;}
-    inline ListAggregatedUtterancesRequest& WithLocaleId(Aws::String&& value) { SetLocaleId(std::move(value)); return *this;}
-    inline ListAggregatedUtterancesRequest& WithLocaleId(const char* value) { SetLocaleId(value); return *this;}
+    template<typename LocaleIdT = Aws::String>
+    void SetLocaleId(LocaleIdT&& value) { m_localeIdHasBeenSet = true; m_localeId = std::forward<LocaleIdT>(value); }
+    template<typename LocaleIdT = Aws::String>
+    ListAggregatedUtterancesRequest& WithLocaleId(LocaleIdT&& value) { SetLocaleId(std::forward<LocaleIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,12 +94,12 @@ namespace Model
      * <p>The time window for aggregating the utterance information. You can specify a
      * time between one hour and two weeks.</p>
      */
-    inline const UtteranceAggregationDuration& GetAggregationDuration() const{ return m_aggregationDuration; }
+    inline const UtteranceAggregationDuration& GetAggregationDuration() const { return m_aggregationDuration; }
     inline bool AggregationDurationHasBeenSet() const { return m_aggregationDurationHasBeenSet; }
-    inline void SetAggregationDuration(const UtteranceAggregationDuration& value) { m_aggregationDurationHasBeenSet = true; m_aggregationDuration = value; }
-    inline void SetAggregationDuration(UtteranceAggregationDuration&& value) { m_aggregationDurationHasBeenSet = true; m_aggregationDuration = std::move(value); }
-    inline ListAggregatedUtterancesRequest& WithAggregationDuration(const UtteranceAggregationDuration& value) { SetAggregationDuration(value); return *this;}
-    inline ListAggregatedUtterancesRequest& WithAggregationDuration(UtteranceAggregationDuration&& value) { SetAggregationDuration(std::move(value)); return *this;}
+    template<typename AggregationDurationT = UtteranceAggregationDuration>
+    void SetAggregationDuration(AggregationDurationT&& value) { m_aggregationDurationHasBeenSet = true; m_aggregationDuration = std::forward<AggregationDurationT>(value); }
+    template<typename AggregationDurationT = UtteranceAggregationDuration>
+    ListAggregatedUtterancesRequest& WithAggregationDuration(AggregationDurationT&& value) { SetAggregationDuration(std::forward<AggregationDurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,12 +108,12 @@ namespace Model
      * hit count, the missed count, or the number of distinct sessions the utterance
      * appeared in.</p>
      */
-    inline const AggregatedUtterancesSortBy& GetSortBy() const{ return m_sortBy; }
+    inline const AggregatedUtterancesSortBy& GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const AggregatedUtterancesSortBy& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(AggregatedUtterancesSortBy&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline ListAggregatedUtterancesRequest& WithSortBy(const AggregatedUtterancesSortBy& value) { SetSortBy(value); return *this;}
-    inline ListAggregatedUtterancesRequest& WithSortBy(AggregatedUtterancesSortBy&& value) { SetSortBy(std::move(value)); return *this;}
+    template<typename SortByT = AggregatedUtterancesSortBy>
+    void SetSortBy(SortByT&& value) { m_sortByHasBeenSet = true; m_sortBy = std::forward<SortByT>(value); }
+    template<typename SortByT = AggregatedUtterancesSortBy>
+    ListAggregatedUtterancesRequest& WithSortBy(SortByT&& value) { SetSortBy(std::forward<SortByT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -130,14 +122,14 @@ namespace Model
      * response to only those that match the filter specification. You can only specify
      * one filter and one string to filter on.</p>
      */
-    inline const Aws::Vector<AggregatedUtterancesFilter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<AggregatedUtterancesFilter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<AggregatedUtterancesFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<AggregatedUtterancesFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline ListAggregatedUtterancesRequest& WithFilters(const Aws::Vector<AggregatedUtterancesFilter>& value) { SetFilters(value); return *this;}
-    inline ListAggregatedUtterancesRequest& WithFilters(Aws::Vector<AggregatedUtterancesFilter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline ListAggregatedUtterancesRequest& AddFilters(const AggregatedUtterancesFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline ListAggregatedUtterancesRequest& AddFilters(AggregatedUtterancesFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<AggregatedUtterancesFilter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<AggregatedUtterancesFilter>>
+    ListAggregatedUtterancesRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = AggregatedUtterancesFilter>
+    ListAggregatedUtterancesRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -147,7 +139,7 @@ namespace Model
      * are returned. If you don't specify the <code>maxResults</code> parameter, 1,000
      * results are returned.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListAggregatedUtterancesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -160,14 +152,12 @@ namespace Model
      * token is returned in the response. Use that token in the <code>nextToken</code>
      * parameter to return the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListAggregatedUtterancesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAggregatedUtterancesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAggregatedUtterancesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAggregatedUtterancesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -192,7 +182,7 @@ namespace Model
     Aws::Vector<AggregatedUtterancesFilter> m_filters;
     bool m_filtersHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

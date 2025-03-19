@@ -18,19 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-TimestreamRegistrationResponse::TimestreamRegistrationResponse() : 
-    m_timestreamDatabaseNameHasBeenSet(false),
-    m_timestreamTableNameHasBeenSet(false),
-    m_timestreamDatabaseArnHasBeenSet(false),
-    m_timestreamTableArnHasBeenSet(false),
-    m_registrationStatus(RegistrationStatus::NOT_SET),
-    m_registrationStatusHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 TimestreamRegistrationResponse::TimestreamRegistrationResponse(JsonView jsonValue)
-  : TimestreamRegistrationResponse()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ TimestreamRegistrationResponse& TimestreamRegistrationResponse::operator =(JsonV
   if(jsonValue.ValueExists("timestreamDatabaseName"))
   {
     m_timestreamDatabaseName = jsonValue.GetString("timestreamDatabaseName");
-
     m_timestreamDatabaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timestreamTableName"))
   {
     m_timestreamTableName = jsonValue.GetString("timestreamTableName");
-
     m_timestreamTableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timestreamDatabaseArn"))
   {
     m_timestreamDatabaseArn = jsonValue.GetString("timestreamDatabaseArn");
-
     m_timestreamDatabaseArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timestreamTableArn"))
   {
     m_timestreamTableArn = jsonValue.GetString("timestreamTableArn");
-
     m_timestreamTableArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("registrationStatus"))
   {
     m_registrationStatus = RegistrationStatusMapper::GetRegistrationStatusForName(jsonValue.GetString("registrationStatus"));
-
     m_registrationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,12 +12,6 @@ using namespace Aws::NetworkManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterTransitGatewayRequest::RegisterTransitGatewayRequest() : 
-    m_globalNetworkIdHasBeenSet(false),
-    m_transitGatewayArnHasBeenSet(false)
-{
-}
-
 Aws::String RegisterTransitGatewayRequest::SerializePayload() const
 {
   JsonValue payload;

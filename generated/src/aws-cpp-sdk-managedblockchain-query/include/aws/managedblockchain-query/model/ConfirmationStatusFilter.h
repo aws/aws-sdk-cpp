@@ -35,7 +35,7 @@ namespace Model
   class ConfirmationStatusFilter
   {
   public:
-    AWS_MANAGEDBLOCKCHAINQUERY_API ConfirmationStatusFilter();
+    AWS_MANAGEDBLOCKCHAINQUERY_API ConfirmationStatusFilter() = default;
     AWS_MANAGEDBLOCKCHAINQUERY_API ConfirmationStatusFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAINQUERY_API ConfirmationStatusFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAINQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,13 @@ namespace Model
      * <i>finality</i> </a>. Transactions that have reached finality are always part of
      * the response.</p>
      */
-    inline const Aws::Vector<ConfirmationStatus>& GetInclude() const{ return m_include; }
+    inline const Aws::Vector<ConfirmationStatus>& GetInclude() const { return m_include; }
     inline bool IncludeHasBeenSet() const { return m_includeHasBeenSet; }
-    inline void SetInclude(const Aws::Vector<ConfirmationStatus>& value) { m_includeHasBeenSet = true; m_include = value; }
-    inline void SetInclude(Aws::Vector<ConfirmationStatus>&& value) { m_includeHasBeenSet = true; m_include = std::move(value); }
-    inline ConfirmationStatusFilter& WithInclude(const Aws::Vector<ConfirmationStatus>& value) { SetInclude(value); return *this;}
-    inline ConfirmationStatusFilter& WithInclude(Aws::Vector<ConfirmationStatus>&& value) { SetInclude(std::move(value)); return *this;}
-    inline ConfirmationStatusFilter& AddInclude(const ConfirmationStatus& value) { m_includeHasBeenSet = true; m_include.push_back(value); return *this; }
-    inline ConfirmationStatusFilter& AddInclude(ConfirmationStatus&& value) { m_includeHasBeenSet = true; m_include.push_back(std::move(value)); return *this; }
+    template<typename IncludeT = Aws::Vector<ConfirmationStatus>>
+    void SetInclude(IncludeT&& value) { m_includeHasBeenSet = true; m_include = std::forward<IncludeT>(value); }
+    template<typename IncludeT = Aws::Vector<ConfirmationStatus>>
+    ConfirmationStatusFilter& WithInclude(IncludeT&& value) { SetInclude(std::forward<IncludeT>(value)); return *this;}
+    inline ConfirmationStatusFilter& AddInclude(ConfirmationStatus value) { m_includeHasBeenSet = true; m_include.push_back(value); return *this; }
     ///@}
   private:
 

@@ -34,7 +34,7 @@ namespace Model
   class ConverseTrace
   {
   public:
-    AWS_BEDROCKRUNTIME_API ConverseTrace();
+    AWS_BEDROCKRUNTIME_API ConverseTrace() = default;
     AWS_BEDROCKRUNTIME_API ConverseTrace(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API ConverseTrace& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,24 +44,24 @@ namespace Model
     /**
      * <p>The guardrail trace object. </p>
      */
-    inline const GuardrailTraceAssessment& GetGuardrail() const{ return m_guardrail; }
+    inline const GuardrailTraceAssessment& GetGuardrail() const { return m_guardrail; }
     inline bool GuardrailHasBeenSet() const { return m_guardrailHasBeenSet; }
-    inline void SetGuardrail(const GuardrailTraceAssessment& value) { m_guardrailHasBeenSet = true; m_guardrail = value; }
-    inline void SetGuardrail(GuardrailTraceAssessment&& value) { m_guardrailHasBeenSet = true; m_guardrail = std::move(value); }
-    inline ConverseTrace& WithGuardrail(const GuardrailTraceAssessment& value) { SetGuardrail(value); return *this;}
-    inline ConverseTrace& WithGuardrail(GuardrailTraceAssessment&& value) { SetGuardrail(std::move(value)); return *this;}
+    template<typename GuardrailT = GuardrailTraceAssessment>
+    void SetGuardrail(GuardrailT&& value) { m_guardrailHasBeenSet = true; m_guardrail = std::forward<GuardrailT>(value); }
+    template<typename GuardrailT = GuardrailTraceAssessment>
+    ConverseTrace& WithGuardrail(GuardrailT&& value) { SetGuardrail(std::forward<GuardrailT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The request's prompt router.</p>
      */
-    inline const PromptRouterTrace& GetPromptRouter() const{ return m_promptRouter; }
+    inline const PromptRouterTrace& GetPromptRouter() const { return m_promptRouter; }
     inline bool PromptRouterHasBeenSet() const { return m_promptRouterHasBeenSet; }
-    inline void SetPromptRouter(const PromptRouterTrace& value) { m_promptRouterHasBeenSet = true; m_promptRouter = value; }
-    inline void SetPromptRouter(PromptRouterTrace&& value) { m_promptRouterHasBeenSet = true; m_promptRouter = std::move(value); }
-    inline ConverseTrace& WithPromptRouter(const PromptRouterTrace& value) { SetPromptRouter(value); return *this;}
-    inline ConverseTrace& WithPromptRouter(PromptRouterTrace&& value) { SetPromptRouter(std::move(value)); return *this;}
+    template<typename PromptRouterT = PromptRouterTrace>
+    void SetPromptRouter(PromptRouterT&& value) { m_promptRouterHasBeenSet = true; m_promptRouter = std::forward<PromptRouterT>(value); }
+    template<typename PromptRouterT = PromptRouterTrace>
+    ConverseTrace& WithPromptRouter(PromptRouterT&& value) { SetPromptRouter(std::forward<PromptRouterT>(value)); return *this;}
     ///@}
   private:
 

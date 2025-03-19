@@ -32,7 +32,7 @@ namespace Model
   class AwsLambdaFunctionCode
   {
   public:
-    AWS_SECURITYHUB_API AwsLambdaFunctionCode();
+    AWS_SECURITYHUB_API AwsLambdaFunctionCode() = default;
     AWS_SECURITYHUB_API AwsLambdaFunctionCode(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsLambdaFunctionCode& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
      * <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function.
      * The bucket can be in a different Amazon Web Services account.</p>
      */
-    inline const Aws::String& GetS3Bucket() const{ return m_s3Bucket; }
+    inline const Aws::String& GetS3Bucket() const { return m_s3Bucket; }
     inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
-    inline void SetS3Bucket(const Aws::String& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
-    inline void SetS3Bucket(Aws::String&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::move(value); }
-    inline void SetS3Bucket(const char* value) { m_s3BucketHasBeenSet = true; m_s3Bucket.assign(value); }
-    inline AwsLambdaFunctionCode& WithS3Bucket(const Aws::String& value) { SetS3Bucket(value); return *this;}
-    inline AwsLambdaFunctionCode& WithS3Bucket(Aws::String&& value) { SetS3Bucket(std::move(value)); return *this;}
-    inline AwsLambdaFunctionCode& WithS3Bucket(const char* value) { SetS3Bucket(value); return *this;}
+    template<typename S3BucketT = Aws::String>
+    void SetS3Bucket(S3BucketT&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::forward<S3BucketT>(value); }
+    template<typename S3BucketT = Aws::String>
+    AwsLambdaFunctionCode& WithS3Bucket(S3BucketT&& value) { SetS3Bucket(std::forward<S3BucketT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon S3 key of the deployment package.</p>
      */
-    inline const Aws::String& GetS3Key() const{ return m_s3Key; }
+    inline const Aws::String& GetS3Key() const { return m_s3Key; }
     inline bool S3KeyHasBeenSet() const { return m_s3KeyHasBeenSet; }
-    inline void SetS3Key(const Aws::String& value) { m_s3KeyHasBeenSet = true; m_s3Key = value; }
-    inline void SetS3Key(Aws::String&& value) { m_s3KeyHasBeenSet = true; m_s3Key = std::move(value); }
-    inline void SetS3Key(const char* value) { m_s3KeyHasBeenSet = true; m_s3Key.assign(value); }
-    inline AwsLambdaFunctionCode& WithS3Key(const Aws::String& value) { SetS3Key(value); return *this;}
-    inline AwsLambdaFunctionCode& WithS3Key(Aws::String&& value) { SetS3Key(std::move(value)); return *this;}
-    inline AwsLambdaFunctionCode& WithS3Key(const char* value) { SetS3Key(value); return *this;}
+    template<typename S3KeyT = Aws::String>
+    void SetS3Key(S3KeyT&& value) { m_s3KeyHasBeenSet = true; m_s3Key = std::forward<S3KeyT>(value); }
+    template<typename S3KeyT = Aws::String>
+    AwsLambdaFunctionCode& WithS3Key(S3KeyT&& value) { SetS3Key(std::forward<S3KeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +68,12 @@ namespace Model
      * <p>For versioned objects, the version of the deployment package object to
      * use.</p>
      */
-    inline const Aws::String& GetS3ObjectVersion() const{ return m_s3ObjectVersion; }
+    inline const Aws::String& GetS3ObjectVersion() const { return m_s3ObjectVersion; }
     inline bool S3ObjectVersionHasBeenSet() const { return m_s3ObjectVersionHasBeenSet; }
-    inline void SetS3ObjectVersion(const Aws::String& value) { m_s3ObjectVersionHasBeenSet = true; m_s3ObjectVersion = value; }
-    inline void SetS3ObjectVersion(Aws::String&& value) { m_s3ObjectVersionHasBeenSet = true; m_s3ObjectVersion = std::move(value); }
-    inline void SetS3ObjectVersion(const char* value) { m_s3ObjectVersionHasBeenSet = true; m_s3ObjectVersion.assign(value); }
-    inline AwsLambdaFunctionCode& WithS3ObjectVersion(const Aws::String& value) { SetS3ObjectVersion(value); return *this;}
-    inline AwsLambdaFunctionCode& WithS3ObjectVersion(Aws::String&& value) { SetS3ObjectVersion(std::move(value)); return *this;}
-    inline AwsLambdaFunctionCode& WithS3ObjectVersion(const char* value) { SetS3ObjectVersion(value); return *this;}
+    template<typename S3ObjectVersionT = Aws::String>
+    void SetS3ObjectVersion(S3ObjectVersionT&& value) { m_s3ObjectVersionHasBeenSet = true; m_s3ObjectVersion = std::forward<S3ObjectVersionT>(value); }
+    template<typename S3ObjectVersionT = Aws::String>
+    AwsLambdaFunctionCode& WithS3ObjectVersion(S3ObjectVersionT&& value) { SetS3ObjectVersion(std::forward<S3ObjectVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,14 +81,12 @@ namespace Model
      * <p>The base64-encoded contents of the deployment package. Amazon Web Services
      * SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
      */
-    inline const Aws::String& GetZipFile() const{ return m_zipFile; }
+    inline const Aws::String& GetZipFile() const { return m_zipFile; }
     inline bool ZipFileHasBeenSet() const { return m_zipFileHasBeenSet; }
-    inline void SetZipFile(const Aws::String& value) { m_zipFileHasBeenSet = true; m_zipFile = value; }
-    inline void SetZipFile(Aws::String&& value) { m_zipFileHasBeenSet = true; m_zipFile = std::move(value); }
-    inline void SetZipFile(const char* value) { m_zipFileHasBeenSet = true; m_zipFile.assign(value); }
-    inline AwsLambdaFunctionCode& WithZipFile(const Aws::String& value) { SetZipFile(value); return *this;}
-    inline AwsLambdaFunctionCode& WithZipFile(Aws::String&& value) { SetZipFile(std::move(value)); return *this;}
-    inline AwsLambdaFunctionCode& WithZipFile(const char* value) { SetZipFile(value); return *this;}
+    template<typename ZipFileT = Aws::String>
+    void SetZipFile(ZipFileT&& value) { m_zipFileHasBeenSet = true; m_zipFile = std::forward<ZipFileT>(value); }
+    template<typename ZipFileT = Aws::String>
+    AwsLambdaFunctionCode& WithZipFile(ZipFileT&& value) { SetZipFile(std::forward<ZipFileT>(value)); return *this;}
     ///@}
   private:
 

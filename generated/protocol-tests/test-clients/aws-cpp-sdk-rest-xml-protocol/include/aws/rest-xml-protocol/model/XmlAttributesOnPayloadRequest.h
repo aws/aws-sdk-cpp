@@ -21,7 +21,7 @@ namespace Model
   class XmlAttributesOnPayloadRequest : public RestXmlProtocolRequest
   {
   public:
-    AWS_RESTXMLPROTOCOL_API XmlAttributesOnPayloadRequest();
+    AWS_RESTXMLPROTOCOL_API XmlAttributesOnPayloadRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,12 +34,12 @@ namespace Model
 
     ///@{
     
-    inline const XmlAttributesPayloadRequest& GetPayload() const{ return m_payload; }
+    inline const XmlAttributesPayloadRequest& GetPayload() const { return m_payload; }
     inline bool PayloadHasBeenSet() const { return m_payloadHasBeenSet; }
-    inline void SetPayload(const XmlAttributesPayloadRequest& value) { m_payloadHasBeenSet = true; m_payload = value; }
-    inline void SetPayload(XmlAttributesPayloadRequest&& value) { m_payloadHasBeenSet = true; m_payload = std::move(value); }
-    inline XmlAttributesOnPayloadRequest& WithPayload(const XmlAttributesPayloadRequest& value) { SetPayload(value); return *this;}
-    inline XmlAttributesOnPayloadRequest& WithPayload(XmlAttributesPayloadRequest&& value) { SetPayload(std::move(value)); return *this;}
+    template<typename PayloadT = XmlAttributesPayloadRequest>
+    void SetPayload(PayloadT&& value) { m_payloadHasBeenSet = true; m_payload = std::forward<PayloadT>(value); }
+    template<typename PayloadT = XmlAttributesPayloadRequest>
+    XmlAttributesOnPayloadRequest& WithPayload(PayloadT&& value) { SetPayload(std::forward<PayloadT>(value)); return *this;}
     ///@}
   private:
 

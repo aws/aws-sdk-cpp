@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchGetTableOptimizerResult::BatchGetTableOptimizerResult()
-{
-}
-
 BatchGetTableOptimizerResult::BatchGetTableOptimizerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ BatchGetTableOptimizerResult& BatchGetTableOptimizerResult::operator =(const Aws
     {
       m_tableOptimizers.push_back(tableOptimizersJsonList[tableOptimizersIndex].AsObject());
     }
+    m_tableOptimizersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Failures"))
   {
     Aws::Utils::Array<JsonView> failuresJsonList = jsonValue.GetArray("Failures");
@@ -45,14 +41,15 @@ BatchGetTableOptimizerResult& BatchGetTableOptimizerResult::operator =(const Aws
     {
       m_failures.push_back(failuresJsonList[failuresIndex].AsObject());
     }
+    m_failuresHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

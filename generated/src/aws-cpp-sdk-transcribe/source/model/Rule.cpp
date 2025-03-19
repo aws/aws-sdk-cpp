@@ -18,16 +18,7 @@ namespace TranscribeService
 namespace Model
 {
 
-Rule::Rule() : 
-    m_nonTalkTimeFilterHasBeenSet(false),
-    m_interruptionFilterHasBeenSet(false),
-    m_transcriptFilterHasBeenSet(false),
-    m_sentimentFilterHasBeenSet(false)
-{
-}
-
 Rule::Rule(JsonView jsonValue)
-  : Rule()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ Rule& Rule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("NonTalkTimeFilter"))
   {
     m_nonTalkTimeFilter = jsonValue.GetObject("NonTalkTimeFilter");
-
     m_nonTalkTimeFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InterruptionFilter"))
   {
     m_interruptionFilter = jsonValue.GetObject("InterruptionFilter");
-
     m_interruptionFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TranscriptFilter"))
   {
     m_transcriptFilter = jsonValue.GetObject("TranscriptFilter");
-
     m_transcriptFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SentimentFilter"))
   {
     m_sentimentFilter = jsonValue.GetObject("SentimentFilter");
-
     m_sentimentFilterHasBeenSet = true;
   }
-
   return *this;
 }
 

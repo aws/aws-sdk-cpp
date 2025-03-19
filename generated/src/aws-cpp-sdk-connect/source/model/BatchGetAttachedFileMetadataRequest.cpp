@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-BatchGetAttachedFileMetadataRequest::BatchGetAttachedFileMetadataRequest() : 
-    m_fileIdsHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_associatedResourceArnHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetAttachedFileMetadataRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,20 +18,7 @@ namespace DirectConnect
 namespace Model
 {
 
-DirectConnectGateway::DirectConnectGateway() : 
-    m_directConnectGatewayIdHasBeenSet(false),
-    m_directConnectGatewayNameHasBeenSet(false),
-    m_amazonSideAsn(0),
-    m_amazonSideAsnHasBeenSet(false),
-    m_ownerAccountHasBeenSet(false),
-    m_directConnectGatewayState(DirectConnectGatewayState::NOT_SET),
-    m_directConnectGatewayStateHasBeenSet(false),
-    m_stateChangeErrorHasBeenSet(false)
-{
-}
-
 DirectConnectGateway::DirectConnectGateway(JsonView jsonValue)
-  : DirectConnectGateway()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ DirectConnectGateway& DirectConnectGateway::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("directConnectGatewayId"))
   {
     m_directConnectGatewayId = jsonValue.GetString("directConnectGatewayId");
-
     m_directConnectGatewayIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("directConnectGatewayName"))
   {
     m_directConnectGatewayName = jsonValue.GetString("directConnectGatewayName");
-
     m_directConnectGatewayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("amazonSideAsn"))
   {
     m_amazonSideAsn = jsonValue.GetInt64("amazonSideAsn");
-
     m_amazonSideAsnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ownerAccount"))
   {
     m_ownerAccount = jsonValue.GetString("ownerAccount");
-
     m_ownerAccountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("directConnectGatewayState"))
   {
     m_directConnectGatewayState = DirectConnectGatewayStateMapper::GetDirectConnectGatewayStateForName(jsonValue.GetString("directConnectGatewayState"));
-
     m_directConnectGatewayStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stateChangeError"))
   {
     m_stateChangeError = jsonValue.GetString("stateChangeError");
-
     m_stateChangeErrorHasBeenSet = true;
   }
-
   return *this;
 }
 

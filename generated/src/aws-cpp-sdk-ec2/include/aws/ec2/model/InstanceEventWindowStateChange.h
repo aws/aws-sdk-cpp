@@ -32,7 +32,7 @@ namespace Model
   class InstanceEventWindowStateChange
   {
   public:
-    AWS_EC2_API InstanceEventWindowStateChange();
+    AWS_EC2_API InstanceEventWindowStateChange() = default;
     AWS_EC2_API InstanceEventWindowStateChange(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API InstanceEventWindowStateChange& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,33 +44,29 @@ namespace Model
     /**
      * <p>The ID of the event window.</p>
      */
-    inline const Aws::String& GetInstanceEventWindowId() const{ return m_instanceEventWindowId; }
+    inline const Aws::String& GetInstanceEventWindowId() const { return m_instanceEventWindowId; }
     inline bool InstanceEventWindowIdHasBeenSet() const { return m_instanceEventWindowIdHasBeenSet; }
-    inline void SetInstanceEventWindowId(const Aws::String& value) { m_instanceEventWindowIdHasBeenSet = true; m_instanceEventWindowId = value; }
-    inline void SetInstanceEventWindowId(Aws::String&& value) { m_instanceEventWindowIdHasBeenSet = true; m_instanceEventWindowId = std::move(value); }
-    inline void SetInstanceEventWindowId(const char* value) { m_instanceEventWindowIdHasBeenSet = true; m_instanceEventWindowId.assign(value); }
-    inline InstanceEventWindowStateChange& WithInstanceEventWindowId(const Aws::String& value) { SetInstanceEventWindowId(value); return *this;}
-    inline InstanceEventWindowStateChange& WithInstanceEventWindowId(Aws::String&& value) { SetInstanceEventWindowId(std::move(value)); return *this;}
-    inline InstanceEventWindowStateChange& WithInstanceEventWindowId(const char* value) { SetInstanceEventWindowId(value); return *this;}
+    template<typename InstanceEventWindowIdT = Aws::String>
+    void SetInstanceEventWindowId(InstanceEventWindowIdT&& value) { m_instanceEventWindowIdHasBeenSet = true; m_instanceEventWindowId = std::forward<InstanceEventWindowIdT>(value); }
+    template<typename InstanceEventWindowIdT = Aws::String>
+    InstanceEventWindowStateChange& WithInstanceEventWindowId(InstanceEventWindowIdT&& value) { SetInstanceEventWindowId(std::forward<InstanceEventWindowIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current state of the event window.</p>
      */
-    inline const InstanceEventWindowState& GetState() const{ return m_state; }
+    inline InstanceEventWindowState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const InstanceEventWindowState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(InstanceEventWindowState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline InstanceEventWindowStateChange& WithState(const InstanceEventWindowState& value) { SetState(value); return *this;}
-    inline InstanceEventWindowStateChange& WithState(InstanceEventWindowState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(InstanceEventWindowState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline InstanceEventWindowStateChange& WithState(InstanceEventWindowState value) { SetState(value); return *this;}
     ///@}
   private:
 
     Aws::String m_instanceEventWindowId;
     bool m_instanceEventWindowIdHasBeenSet = false;
 
-    InstanceEventWindowState m_state;
+    InstanceEventWindowState m_state{InstanceEventWindowState::NOT_SET};
     bool m_stateHasBeenSet = false;
   };
 

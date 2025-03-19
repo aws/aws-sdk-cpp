@@ -47,7 +47,7 @@ namespace Model
   class TranscriptFilter
   {
   public:
-    AWS_TRANSCRIBESERVICE_API TranscriptFilter();
+    AWS_TRANSCRIBESERVICE_API TranscriptFilter() = default;
     AWS_TRANSCRIBESERVICE_API TranscriptFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API TranscriptFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -62,12 +62,10 @@ namespace Model
      * <i>the</i> manager", instead of "speak to <i>a</i> manager", your content is not
      * flagged.</p>
      */
-    inline const TranscriptFilterType& GetTranscriptFilterType() const{ return m_transcriptFilterType; }
+    inline TranscriptFilterType GetTranscriptFilterType() const { return m_transcriptFilterType; }
     inline bool TranscriptFilterTypeHasBeenSet() const { return m_transcriptFilterTypeHasBeenSet; }
-    inline void SetTranscriptFilterType(const TranscriptFilterType& value) { m_transcriptFilterTypeHasBeenSet = true; m_transcriptFilterType = value; }
-    inline void SetTranscriptFilterType(TranscriptFilterType&& value) { m_transcriptFilterTypeHasBeenSet = true; m_transcriptFilterType = std::move(value); }
-    inline TranscriptFilter& WithTranscriptFilterType(const TranscriptFilterType& value) { SetTranscriptFilterType(value); return *this;}
-    inline TranscriptFilter& WithTranscriptFilterType(TranscriptFilterType&& value) { SetTranscriptFilterType(std::move(value)); return *this;}
+    inline void SetTranscriptFilterType(TranscriptFilterType value) { m_transcriptFilterTypeHasBeenSet = true; m_transcriptFilterType = value; }
+    inline TranscriptFilter& WithTranscriptFilterType(TranscriptFilterType value) { SetTranscriptFilterType(value); return *this;}
     ///@}
 
     ///@{
@@ -76,12 +74,12 @@ namespace Model
      * during which you want to search for the specified key words or phrases. See for
      * more detail.</p>
      */
-    inline const AbsoluteTimeRange& GetAbsoluteTimeRange() const{ return m_absoluteTimeRange; }
+    inline const AbsoluteTimeRange& GetAbsoluteTimeRange() const { return m_absoluteTimeRange; }
     inline bool AbsoluteTimeRangeHasBeenSet() const { return m_absoluteTimeRangeHasBeenSet; }
-    inline void SetAbsoluteTimeRange(const AbsoluteTimeRange& value) { m_absoluteTimeRangeHasBeenSet = true; m_absoluteTimeRange = value; }
-    inline void SetAbsoluteTimeRange(AbsoluteTimeRange&& value) { m_absoluteTimeRangeHasBeenSet = true; m_absoluteTimeRange = std::move(value); }
-    inline TranscriptFilter& WithAbsoluteTimeRange(const AbsoluteTimeRange& value) { SetAbsoluteTimeRange(value); return *this;}
-    inline TranscriptFilter& WithAbsoluteTimeRange(AbsoluteTimeRange&& value) { SetAbsoluteTimeRange(std::move(value)); return *this;}
+    template<typename AbsoluteTimeRangeT = AbsoluteTimeRange>
+    void SetAbsoluteTimeRange(AbsoluteTimeRangeT&& value) { m_absoluteTimeRangeHasBeenSet = true; m_absoluteTimeRange = std::forward<AbsoluteTimeRangeT>(value); }
+    template<typename AbsoluteTimeRangeT = AbsoluteTimeRange>
+    TranscriptFilter& WithAbsoluteTimeRange(AbsoluteTimeRangeT&& value) { SetAbsoluteTimeRange(std::forward<AbsoluteTimeRangeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,12 +88,12 @@ namespace Model
      * during which you want to search for the specified key words or phrases. See for
      * more detail.</p>
      */
-    inline const RelativeTimeRange& GetRelativeTimeRange() const{ return m_relativeTimeRange; }
+    inline const RelativeTimeRange& GetRelativeTimeRange() const { return m_relativeTimeRange; }
     inline bool RelativeTimeRangeHasBeenSet() const { return m_relativeTimeRangeHasBeenSet; }
-    inline void SetRelativeTimeRange(const RelativeTimeRange& value) { m_relativeTimeRangeHasBeenSet = true; m_relativeTimeRange = value; }
-    inline void SetRelativeTimeRange(RelativeTimeRange&& value) { m_relativeTimeRangeHasBeenSet = true; m_relativeTimeRange = std::move(value); }
-    inline TranscriptFilter& WithRelativeTimeRange(const RelativeTimeRange& value) { SetRelativeTimeRange(value); return *this;}
-    inline TranscriptFilter& WithRelativeTimeRange(RelativeTimeRange&& value) { SetRelativeTimeRange(std::move(value)); return *this;}
+    template<typename RelativeTimeRangeT = RelativeTimeRange>
+    void SetRelativeTimeRange(RelativeTimeRangeT&& value) { m_relativeTimeRangeHasBeenSet = true; m_relativeTimeRange = std::forward<RelativeTimeRangeT>(value); }
+    template<typename RelativeTimeRangeT = RelativeTimeRange>
+    TranscriptFilter& WithRelativeTimeRange(RelativeTimeRangeT&& value) { SetRelativeTimeRange(std::forward<RelativeTimeRangeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,12 +101,10 @@ namespace Model
      * <p>Specify the participant that you want to flag. Omitting this parameter is
      * equivalent to specifying both participants.</p>
      */
-    inline const ParticipantRole& GetParticipantRole() const{ return m_participantRole; }
+    inline ParticipantRole GetParticipantRole() const { return m_participantRole; }
     inline bool ParticipantRoleHasBeenSet() const { return m_participantRoleHasBeenSet; }
-    inline void SetParticipantRole(const ParticipantRole& value) { m_participantRoleHasBeenSet = true; m_participantRole = value; }
-    inline void SetParticipantRole(ParticipantRole&& value) { m_participantRoleHasBeenSet = true; m_participantRole = std::move(value); }
-    inline TranscriptFilter& WithParticipantRole(const ParticipantRole& value) { SetParticipantRole(value); return *this;}
-    inline TranscriptFilter& WithParticipantRole(ParticipantRole&& value) { SetParticipantRole(std::move(value)); return *this;}
+    inline void SetParticipantRole(ParticipantRole value) { m_participantRoleHasBeenSet = true; m_participantRole = value; }
+    inline TranscriptFilter& WithParticipantRole(ParticipantRole value) { SetParticipantRole(value); return *this;}
     ///@}
 
     ///@{
@@ -117,7 +113,7 @@ namespace Model
      * in your request. Set to <code>FALSE</code> to flag the presence of the phrase
      * that you specified in your request.</p>
      */
-    inline bool GetNegate() const{ return m_negate; }
+    inline bool GetNegate() const { return m_negate; }
     inline bool NegateHasBeenSet() const { return m_negateHasBeenSet; }
     inline void SetNegate(bool value) { m_negateHasBeenSet = true; m_negate = value; }
     inline TranscriptFilter& WithNegate(bool value) { SetNegate(value); return *this;}
@@ -127,19 +123,18 @@ namespace Model
     /**
      * <p>Specify the phrases that you want to flag.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTargets() const{ return m_targets; }
+    inline const Aws::Vector<Aws::String>& GetTargets() const { return m_targets; }
     inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
-    inline void SetTargets(const Aws::Vector<Aws::String>& value) { m_targetsHasBeenSet = true; m_targets = value; }
-    inline void SetTargets(Aws::Vector<Aws::String>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
-    inline TranscriptFilter& WithTargets(const Aws::Vector<Aws::String>& value) { SetTargets(value); return *this;}
-    inline TranscriptFilter& WithTargets(Aws::Vector<Aws::String>&& value) { SetTargets(std::move(value)); return *this;}
-    inline TranscriptFilter& AddTargets(const Aws::String& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
-    inline TranscriptFilter& AddTargets(Aws::String&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
-    inline TranscriptFilter& AddTargets(const char* value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
+    template<typename TargetsT = Aws::Vector<Aws::String>>
+    void SetTargets(TargetsT&& value) { m_targetsHasBeenSet = true; m_targets = std::forward<TargetsT>(value); }
+    template<typename TargetsT = Aws::Vector<Aws::String>>
+    TranscriptFilter& WithTargets(TargetsT&& value) { SetTargets(std::forward<TargetsT>(value)); return *this;}
+    template<typename TargetsT = Aws::String>
+    TranscriptFilter& AddTargets(TargetsT&& value) { m_targetsHasBeenSet = true; m_targets.emplace_back(std::forward<TargetsT>(value)); return *this; }
     ///@}
   private:
 
-    TranscriptFilterType m_transcriptFilterType;
+    TranscriptFilterType m_transcriptFilterType{TranscriptFilterType::NOT_SET};
     bool m_transcriptFilterTypeHasBeenSet = false;
 
     AbsoluteTimeRange m_absoluteTimeRange;
@@ -148,10 +143,10 @@ namespace Model
     RelativeTimeRange m_relativeTimeRange;
     bool m_relativeTimeRangeHasBeenSet = false;
 
-    ParticipantRole m_participantRole;
+    ParticipantRole m_participantRole{ParticipantRole::NOT_SET};
     bool m_participantRoleHasBeenSet = false;
 
-    bool m_negate;
+    bool m_negate{false};
     bool m_negateHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_targets;

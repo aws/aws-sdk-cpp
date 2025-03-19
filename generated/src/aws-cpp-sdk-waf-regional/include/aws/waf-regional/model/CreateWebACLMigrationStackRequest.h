@@ -21,7 +21,7 @@ namespace Model
   class CreateWebACLMigrationStackRequest : public WAFRegionalRequest
   {
   public:
-    AWS_WAFREGIONAL_API CreateWebACLMigrationStackRequest();
+    AWS_WAFREGIONAL_API CreateWebACLMigrationStackRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The UUID of the WAF Classic web ACL that you want to migrate to WAF v2.</p>
      */
-    inline const Aws::String& GetWebACLId() const{ return m_webACLId; }
+    inline const Aws::String& GetWebACLId() const { return m_webACLId; }
     inline bool WebACLIdHasBeenSet() const { return m_webACLIdHasBeenSet; }
-    inline void SetWebACLId(const Aws::String& value) { m_webACLIdHasBeenSet = true; m_webACLId = value; }
-    inline void SetWebACLId(Aws::String&& value) { m_webACLIdHasBeenSet = true; m_webACLId = std::move(value); }
-    inline void SetWebACLId(const char* value) { m_webACLIdHasBeenSet = true; m_webACLId.assign(value); }
-    inline CreateWebACLMigrationStackRequest& WithWebACLId(const Aws::String& value) { SetWebACLId(value); return *this;}
-    inline CreateWebACLMigrationStackRequest& WithWebACLId(Aws::String&& value) { SetWebACLId(std::move(value)); return *this;}
-    inline CreateWebACLMigrationStackRequest& WithWebACLId(const char* value) { SetWebACLId(value); return *this;}
+    template<typename WebACLIdT = Aws::String>
+    void SetWebACLId(WebACLIdT&& value) { m_webACLIdHasBeenSet = true; m_webACLId = std::forward<WebACLIdT>(value); }
+    template<typename WebACLIdT = Aws::String>
+    CreateWebACLMigrationStackRequest& WithWebACLId(WebACLIdT&& value) { SetWebACLId(std::forward<WebACLIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * permit the migration process to write data. For listings of the bucket policies,
      * see the Examples section. </p> </li> </ul>
      */
-    inline const Aws::String& GetS3BucketName() const{ return m_s3BucketName; }
+    inline const Aws::String& GetS3BucketName() const { return m_s3BucketName; }
     inline bool S3BucketNameHasBeenSet() const { return m_s3BucketNameHasBeenSet; }
-    inline void SetS3BucketName(const Aws::String& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = value; }
-    inline void SetS3BucketName(Aws::String&& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = std::move(value); }
-    inline void SetS3BucketName(const char* value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName.assign(value); }
-    inline CreateWebACLMigrationStackRequest& WithS3BucketName(const Aws::String& value) { SetS3BucketName(value); return *this;}
-    inline CreateWebACLMigrationStackRequest& WithS3BucketName(Aws::String&& value) { SetS3BucketName(std::move(value)); return *this;}
-    inline CreateWebACLMigrationStackRequest& WithS3BucketName(const char* value) { SetS3BucketName(value); return *this;}
+    template<typename S3BucketNameT = Aws::String>
+    void SetS3BucketName(S3BucketNameT&& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = std::forward<S3BucketNameT>(value); }
+    template<typename S3BucketNameT = Aws::String>
+    CreateWebACLMigrationStackRequest& WithS3BucketName(S3BucketNameT&& value) { SetS3BucketName(std::forward<S3BucketNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,7 +73,7 @@ namespace Model
      * the migration. Otherwise, if AWS WAF encounters unsupported entities, it stops
      * the process and throws an exception. </p>
      */
-    inline bool GetIgnoreUnsupportedType() const{ return m_ignoreUnsupportedType; }
+    inline bool GetIgnoreUnsupportedType() const { return m_ignoreUnsupportedType; }
     inline bool IgnoreUnsupportedTypeHasBeenSet() const { return m_ignoreUnsupportedTypeHasBeenSet; }
     inline void SetIgnoreUnsupportedType(bool value) { m_ignoreUnsupportedTypeHasBeenSet = true; m_ignoreUnsupportedType = value; }
     inline CreateWebACLMigrationStackRequest& WithIgnoreUnsupportedType(bool value) { SetIgnoreUnsupportedType(value); return *this;}
@@ -90,7 +86,7 @@ namespace Model
     Aws::String m_s3BucketName;
     bool m_s3BucketNameHasBeenSet = false;
 
-    bool m_ignoreUnsupportedType;
+    bool m_ignoreUnsupportedType{false};
     bool m_ignoreUnsupportedTypeHasBeenSet = false;
   };
 

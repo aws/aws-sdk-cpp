@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetApproximateUsageRecordsResult::GetApproximateUsageRecordsResult() : 
-    m_totalRecords(0)
-{
-}
-
 GetApproximateUsageRecordsResult::GetApproximateUsageRecordsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetApproximateUsageRecordsResult()
 {
   *this = result;
 }
@@ -38,26 +32,25 @@ GetApproximateUsageRecordsResult& GetApproximateUsageRecordsResult::operator =(c
     {
       m_services[servicesItem.first] = servicesItem.second.AsInt64();
     }
+    m_servicesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalRecords"))
   {
     m_totalRecords = jsonValue.GetInt64("TotalRecords");
-
+    m_totalRecordsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LookbackPeriod"))
   {
     m_lookbackPeriod = jsonValue.GetObject("LookbackPeriod");
-
+    m_lookbackPeriodHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

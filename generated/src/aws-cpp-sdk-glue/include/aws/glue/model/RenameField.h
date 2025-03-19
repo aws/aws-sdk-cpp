@@ -33,7 +33,7 @@ namespace Model
   class RenameField
   {
   public:
-    AWS_GLUE_API RenameField();
+    AWS_GLUE_API RenameField() = default;
     AWS_GLUE_API RenameField(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API RenameField& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,59 +43,54 @@ namespace Model
     /**
      * <p>The name of the transform node.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline RenameField& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline RenameField& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline RenameField& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    RenameField& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The data inputs identified by their node names.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetInputs() const{ return m_inputs; }
+    inline const Aws::Vector<Aws::String>& GetInputs() const { return m_inputs; }
     inline bool InputsHasBeenSet() const { return m_inputsHasBeenSet; }
-    inline void SetInputs(const Aws::Vector<Aws::String>& value) { m_inputsHasBeenSet = true; m_inputs = value; }
-    inline void SetInputs(Aws::Vector<Aws::String>&& value) { m_inputsHasBeenSet = true; m_inputs = std::move(value); }
-    inline RenameField& WithInputs(const Aws::Vector<Aws::String>& value) { SetInputs(value); return *this;}
-    inline RenameField& WithInputs(Aws::Vector<Aws::String>&& value) { SetInputs(std::move(value)); return *this;}
-    inline RenameField& AddInputs(const Aws::String& value) { m_inputsHasBeenSet = true; m_inputs.push_back(value); return *this; }
-    inline RenameField& AddInputs(Aws::String&& value) { m_inputsHasBeenSet = true; m_inputs.push_back(std::move(value)); return *this; }
-    inline RenameField& AddInputs(const char* value) { m_inputsHasBeenSet = true; m_inputs.push_back(value); return *this; }
+    template<typename InputsT = Aws::Vector<Aws::String>>
+    void SetInputs(InputsT&& value) { m_inputsHasBeenSet = true; m_inputs = std::forward<InputsT>(value); }
+    template<typename InputsT = Aws::Vector<Aws::String>>
+    RenameField& WithInputs(InputsT&& value) { SetInputs(std::forward<InputsT>(value)); return *this;}
+    template<typename InputsT = Aws::String>
+    RenameField& AddInputs(InputsT&& value) { m_inputsHasBeenSet = true; m_inputs.emplace_back(std::forward<InputsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A JSON path to a variable in the data structure for the source data.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSourcePath() const{ return m_sourcePath; }
+    inline const Aws::Vector<Aws::String>& GetSourcePath() const { return m_sourcePath; }
     inline bool SourcePathHasBeenSet() const { return m_sourcePathHasBeenSet; }
-    inline void SetSourcePath(const Aws::Vector<Aws::String>& value) { m_sourcePathHasBeenSet = true; m_sourcePath = value; }
-    inline void SetSourcePath(Aws::Vector<Aws::String>&& value) { m_sourcePathHasBeenSet = true; m_sourcePath = std::move(value); }
-    inline RenameField& WithSourcePath(const Aws::Vector<Aws::String>& value) { SetSourcePath(value); return *this;}
-    inline RenameField& WithSourcePath(Aws::Vector<Aws::String>&& value) { SetSourcePath(std::move(value)); return *this;}
-    inline RenameField& AddSourcePath(const Aws::String& value) { m_sourcePathHasBeenSet = true; m_sourcePath.push_back(value); return *this; }
-    inline RenameField& AddSourcePath(Aws::String&& value) { m_sourcePathHasBeenSet = true; m_sourcePath.push_back(std::move(value)); return *this; }
-    inline RenameField& AddSourcePath(const char* value) { m_sourcePathHasBeenSet = true; m_sourcePath.push_back(value); return *this; }
+    template<typename SourcePathT = Aws::Vector<Aws::String>>
+    void SetSourcePath(SourcePathT&& value) { m_sourcePathHasBeenSet = true; m_sourcePath = std::forward<SourcePathT>(value); }
+    template<typename SourcePathT = Aws::Vector<Aws::String>>
+    RenameField& WithSourcePath(SourcePathT&& value) { SetSourcePath(std::forward<SourcePathT>(value)); return *this;}
+    template<typename SourcePathT = Aws::String>
+    RenameField& AddSourcePath(SourcePathT&& value) { m_sourcePathHasBeenSet = true; m_sourcePath.emplace_back(std::forward<SourcePathT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A JSON path to a variable in the data structure for the target data.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTargetPath() const{ return m_targetPath; }
+    inline const Aws::Vector<Aws::String>& GetTargetPath() const { return m_targetPath; }
     inline bool TargetPathHasBeenSet() const { return m_targetPathHasBeenSet; }
-    inline void SetTargetPath(const Aws::Vector<Aws::String>& value) { m_targetPathHasBeenSet = true; m_targetPath = value; }
-    inline void SetTargetPath(Aws::Vector<Aws::String>&& value) { m_targetPathHasBeenSet = true; m_targetPath = std::move(value); }
-    inline RenameField& WithTargetPath(const Aws::Vector<Aws::String>& value) { SetTargetPath(value); return *this;}
-    inline RenameField& WithTargetPath(Aws::Vector<Aws::String>&& value) { SetTargetPath(std::move(value)); return *this;}
-    inline RenameField& AddTargetPath(const Aws::String& value) { m_targetPathHasBeenSet = true; m_targetPath.push_back(value); return *this; }
-    inline RenameField& AddTargetPath(Aws::String&& value) { m_targetPathHasBeenSet = true; m_targetPath.push_back(std::move(value)); return *this; }
-    inline RenameField& AddTargetPath(const char* value) { m_targetPathHasBeenSet = true; m_targetPath.push_back(value); return *this; }
+    template<typename TargetPathT = Aws::Vector<Aws::String>>
+    void SetTargetPath(TargetPathT&& value) { m_targetPathHasBeenSet = true; m_targetPath = std::forward<TargetPathT>(value); }
+    template<typename TargetPathT = Aws::Vector<Aws::String>>
+    RenameField& WithTargetPath(TargetPathT&& value) { SetTargetPath(std::forward<TargetPathT>(value)); return *this;}
+    template<typename TargetPathT = Aws::String>
+    RenameField& AddTargetPath(TargetPathT&& value) { m_targetPathHasBeenSet = true; m_targetPath.emplace_back(std::forward<TargetPathT>(value)); return *this; }
     ///@}
   private:
 

@@ -32,7 +32,7 @@ namespace Model
   class CertificateAuthenticationRequest
   {
   public:
-    AWS_EC2_API CertificateAuthenticationRequest();
+    AWS_EC2_API CertificateAuthenticationRequest() = default;
     AWS_EC2_API CertificateAuthenticationRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API CertificateAuthenticationRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,14 +46,12 @@ namespace Model
      * certificate authority (CA) and it must be provisioned in Certificate Manager
      * (ACM).</p>
      */
-    inline const Aws::String& GetClientRootCertificateChainArn() const{ return m_clientRootCertificateChainArn; }
+    inline const Aws::String& GetClientRootCertificateChainArn() const { return m_clientRootCertificateChainArn; }
     inline bool ClientRootCertificateChainArnHasBeenSet() const { return m_clientRootCertificateChainArnHasBeenSet; }
-    inline void SetClientRootCertificateChainArn(const Aws::String& value) { m_clientRootCertificateChainArnHasBeenSet = true; m_clientRootCertificateChainArn = value; }
-    inline void SetClientRootCertificateChainArn(Aws::String&& value) { m_clientRootCertificateChainArnHasBeenSet = true; m_clientRootCertificateChainArn = std::move(value); }
-    inline void SetClientRootCertificateChainArn(const char* value) { m_clientRootCertificateChainArnHasBeenSet = true; m_clientRootCertificateChainArn.assign(value); }
-    inline CertificateAuthenticationRequest& WithClientRootCertificateChainArn(const Aws::String& value) { SetClientRootCertificateChainArn(value); return *this;}
-    inline CertificateAuthenticationRequest& WithClientRootCertificateChainArn(Aws::String&& value) { SetClientRootCertificateChainArn(std::move(value)); return *this;}
-    inline CertificateAuthenticationRequest& WithClientRootCertificateChainArn(const char* value) { SetClientRootCertificateChainArn(value); return *this;}
+    template<typename ClientRootCertificateChainArnT = Aws::String>
+    void SetClientRootCertificateChainArn(ClientRootCertificateChainArnT&& value) { m_clientRootCertificateChainArnHasBeenSet = true; m_clientRootCertificateChainArn = std::forward<ClientRootCertificateChainArnT>(value); }
+    template<typename ClientRootCertificateChainArnT = Aws::String>
+    CertificateAuthenticationRequest& WithClientRootCertificateChainArn(ClientRootCertificateChainArnT&& value) { SetClientRootCertificateChainArn(std::forward<ClientRootCertificateChainArnT>(value)); return *this;}
     ///@}
   private:
 

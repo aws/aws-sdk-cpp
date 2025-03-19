@@ -15,18 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListServiceLevelObjectivesRequest::ListServiceLevelObjectivesRequest() : 
-    m_keyAttributesHasBeenSet(false),
-    m_operationNameHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_includeLinkedAccounts(false),
-    m_includeLinkedAccountsHasBeenSet(false),
-    m_sloOwnerAwsAccountIdHasBeenSet(false)
-{
-}
-
 Aws::String ListServiceLevelObjectivesRequest::SerializePayload() const
 {
   JsonValue payload;

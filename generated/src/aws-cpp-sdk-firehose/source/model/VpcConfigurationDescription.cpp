@@ -18,16 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-VpcConfigurationDescription::VpcConfigurationDescription() : 
-    m_subnetIdsHasBeenSet(false),
-    m_roleARNHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
-{
-}
-
 VpcConfigurationDescription::VpcConfigurationDescription(JsonView jsonValue)
-  : VpcConfigurationDescription()
 {
   *this = jsonValue;
 }
@@ -43,14 +34,11 @@ VpcConfigurationDescription& VpcConfigurationDescription::operator =(JsonView js
     }
     m_subnetIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleARN"))
   {
     m_roleARN = jsonValue.GetString("RoleARN");
-
     m_roleARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityGroupIds"))
   {
     Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
@@ -60,14 +48,11 @@ VpcConfigurationDescription& VpcConfigurationDescription::operator =(JsonView js
     }
     m_securityGroupIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcId"))
   {
     m_vpcId = jsonValue.GetString("VpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ScheduleKeyDeletionResult::ScheduleKeyDeletionResult() : 
-    m_keyState(KeyState::NOT_SET),
-    m_pendingWindowInDays(0)
-{
-}
-
 ScheduleKeyDeletionResult::ScheduleKeyDeletionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ScheduleKeyDeletionResult()
 {
   *this = result;
 }
@@ -35,33 +28,30 @@ ScheduleKeyDeletionResult& ScheduleKeyDeletionResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("KeyId"))
   {
     m_keyId = jsonValue.GetString("KeyId");
-
+    m_keyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeletionDate"))
   {
     m_deletionDate = jsonValue.GetDouble("DeletionDate");
-
+    m_deletionDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyState"))
   {
     m_keyState = KeyStateMapper::GetKeyStateForName(jsonValue.GetString("KeyState"));
-
+    m_keyStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PendingWindowInDays"))
   {
     m_pendingWindowInDays = jsonValue.GetInteger("PendingWindowInDays");
-
+    m_pendingWindowInDaysHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateReplicatorResult::CreateReplicatorResult() : 
-    m_replicatorState(ReplicatorState::NOT_SET)
-{
-}
-
 CreateReplicatorResult::CreateReplicatorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateReplicatorResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ CreateReplicatorResult& CreateReplicatorResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("replicatorArn"))
   {
     m_replicatorArn = jsonValue.GetString("replicatorArn");
-
+    m_replicatorArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("replicatorName"))
   {
     m_replicatorName = jsonValue.GetString("replicatorName");
-
+    m_replicatorNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("replicatorState"))
   {
     m_replicatorState = ReplicatorStateMapper::GetReplicatorStateForName(jsonValue.GetString("replicatorState"));
-
+    m_replicatorStateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

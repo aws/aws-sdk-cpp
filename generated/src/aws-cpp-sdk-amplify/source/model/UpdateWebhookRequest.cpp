@@ -12,13 +12,6 @@ using namespace Aws::Amplify::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateWebhookRequest::UpdateWebhookRequest() : 
-    m_webhookIdHasBeenSet(false),
-    m_branchNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateWebhookRequest::SerializePayload() const
 {
   JsonValue payload;

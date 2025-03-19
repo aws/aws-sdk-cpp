@@ -32,7 +32,7 @@ namespace Model
   class ValidationException
   {
   public:
-    AWS_SSM_API ValidationException();
+    AWS_SSM_API ValidationException() = default;
     AWS_SSM_API ValidationException(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API ValidationException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,28 +40,24 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline ValidationException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline ValidationException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline ValidationException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    ValidationException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The reason code for the invalid request.</p>
      */
-    inline const Aws::String& GetReasonCode() const{ return m_reasonCode; }
+    inline const Aws::String& GetReasonCode() const { return m_reasonCode; }
     inline bool ReasonCodeHasBeenSet() const { return m_reasonCodeHasBeenSet; }
-    inline void SetReasonCode(const Aws::String& value) { m_reasonCodeHasBeenSet = true; m_reasonCode = value; }
-    inline void SetReasonCode(Aws::String&& value) { m_reasonCodeHasBeenSet = true; m_reasonCode = std::move(value); }
-    inline void SetReasonCode(const char* value) { m_reasonCodeHasBeenSet = true; m_reasonCode.assign(value); }
-    inline ValidationException& WithReasonCode(const Aws::String& value) { SetReasonCode(value); return *this;}
-    inline ValidationException& WithReasonCode(Aws::String&& value) { SetReasonCode(std::move(value)); return *this;}
-    inline ValidationException& WithReasonCode(const char* value) { SetReasonCode(value); return *this;}
+    template<typename ReasonCodeT = Aws::String>
+    void SetReasonCode(ReasonCodeT&& value) { m_reasonCodeHasBeenSet = true; m_reasonCode = std::forward<ReasonCodeT>(value); }
+    template<typename ReasonCodeT = Aws::String>
+    ValidationException& WithReasonCode(ReasonCodeT&& value) { SetReasonCode(std::forward<ReasonCodeT>(value)); return *this;}
     ///@}
   private:
 

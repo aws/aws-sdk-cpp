@@ -10,12 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-DeleteUserPolicyRequest::DeleteUserPolicyRequest() : 
-    m_userNameHasBeenSet(false),
-    m_policyNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteUserPolicyRequest::SerializePayload() const
 {
   Aws::StringStream ss;

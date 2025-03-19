@@ -32,7 +32,7 @@ namespace Model
   class RouteMatrixEntry
   {
   public:
-    AWS_LOCATIONSERVICE_API RouteMatrixEntry();
+    AWS_LOCATIONSERVICE_API RouteMatrixEntry() = default;
     AWS_LOCATIONSERVICE_API RouteMatrixEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API RouteMatrixEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>The total distance of travel for the route.</p>
      */
-    inline double GetDistance() const{ return m_distance; }
+    inline double GetDistance() const { return m_distance; }
     inline bool DistanceHasBeenSet() const { return m_distanceHasBeenSet; }
     inline void SetDistance(double value) { m_distanceHasBeenSet = true; m_distance = value; }
     inline RouteMatrixEntry& WithDistance(double value) { SetDistance(value); return *this;}
@@ -52,7 +52,7 @@ namespace Model
     /**
      * <p>The expected duration of travel for the route.</p>
      */
-    inline double GetDurationSeconds() const{ return m_durationSeconds; }
+    inline double GetDurationSeconds() const { return m_durationSeconds; }
     inline bool DurationSecondsHasBeenSet() const { return m_durationSecondsHasBeenSet; }
     inline void SetDurationSeconds(double value) { m_durationSecondsHasBeenSet = true; m_durationSeconds = value; }
     inline RouteMatrixEntry& WithDurationSeconds(double value) { SetDurationSeconds(value); return *this;}
@@ -63,19 +63,19 @@ namespace Model
      * <p>An error corresponding to the calculation of a route between the
      * <code>DeparturePosition</code> and <code>DestinationPosition</code>.</p>
      */
-    inline const RouteMatrixEntryError& GetError() const{ return m_error; }
+    inline const RouteMatrixEntryError& GetError() const { return m_error; }
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-    inline void SetError(const RouteMatrixEntryError& value) { m_errorHasBeenSet = true; m_error = value; }
-    inline void SetError(RouteMatrixEntryError&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-    inline RouteMatrixEntry& WithError(const RouteMatrixEntryError& value) { SetError(value); return *this;}
-    inline RouteMatrixEntry& WithError(RouteMatrixEntryError&& value) { SetError(std::move(value)); return *this;}
+    template<typename ErrorT = RouteMatrixEntryError>
+    void SetError(ErrorT&& value) { m_errorHasBeenSet = true; m_error = std::forward<ErrorT>(value); }
+    template<typename ErrorT = RouteMatrixEntryError>
+    RouteMatrixEntry& WithError(ErrorT&& value) { SetError(std::forward<ErrorT>(value)); return *this;}
     ///@}
   private:
 
-    double m_distance;
+    double m_distance{0.0};
     bool m_distanceHasBeenSet = false;
 
-    double m_durationSeconds;
+    double m_durationSeconds{0.0};
     bool m_durationSecondsHasBeenSet = false;
 
     RouteMatrixEntryError m_error;

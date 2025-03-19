@@ -18,14 +18,7 @@ namespace ApiGatewayManagementApi
 namespace Model
 {
 
-Identity::Identity() : 
-    m_sourceIpHasBeenSet(false),
-    m_userAgentHasBeenSet(false)
-{
-}
-
 Identity::Identity(JsonView jsonValue)
-  : Identity()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Identity& Identity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sourceIp"))
   {
     m_sourceIp = jsonValue.GetString("sourceIp");
-
     m_sourceIpHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userAgent"))
   {
     m_userAgent = jsonValue.GetString("userAgent");
-
     m_userAgentHasBeenSet = true;
   }
-
   return *this;
 }
 

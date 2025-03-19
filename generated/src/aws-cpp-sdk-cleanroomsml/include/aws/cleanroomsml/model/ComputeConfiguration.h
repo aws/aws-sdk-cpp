@@ -32,7 +32,7 @@ namespace Model
   class ComputeConfiguration
   {
   public:
-    AWS_CLEANROOMSML_API ComputeConfiguration();
+    AWS_CLEANROOMSML_API ComputeConfiguration() = default;
     AWS_CLEANROOMSML_API ComputeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API ComputeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The worker instances that will perform the compute work.</p>
      */
-    inline const WorkerComputeConfiguration& GetWorker() const{ return m_worker; }
+    inline const WorkerComputeConfiguration& GetWorker() const { return m_worker; }
     inline bool WorkerHasBeenSet() const { return m_workerHasBeenSet; }
-    inline void SetWorker(const WorkerComputeConfiguration& value) { m_workerHasBeenSet = true; m_worker = value; }
-    inline void SetWorker(WorkerComputeConfiguration&& value) { m_workerHasBeenSet = true; m_worker = std::move(value); }
-    inline ComputeConfiguration& WithWorker(const WorkerComputeConfiguration& value) { SetWorker(value); return *this;}
-    inline ComputeConfiguration& WithWorker(WorkerComputeConfiguration&& value) { SetWorker(std::move(value)); return *this;}
+    template<typename WorkerT = WorkerComputeConfiguration>
+    void SetWorker(WorkerT&& value) { m_workerHasBeenSet = true; m_worker = std::forward<WorkerT>(value); }
+    template<typename WorkerT = WorkerComputeConfiguration>
+    ComputeConfiguration& WithWorker(WorkerT&& value) { SetWorker(std::forward<WorkerT>(value)); return *this;}
     ///@}
   private:
 

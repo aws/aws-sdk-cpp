@@ -35,7 +35,7 @@ namespace Model
   class QAppSessionData
   {
   public:
-    AWS_QAPPS_API QAppSessionData();
+    AWS_QAPPS_API QAppSessionData() = default;
     AWS_QAPPS_API QAppSessionData(Aws::Utils::Json::JsonView jsonValue);
     AWS_QAPPS_API QAppSessionData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QAPPS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,64 +45,60 @@ namespace Model
     /**
      * <p>The card Id associated with the response submitted for a Q App session.</p>
      */
-    inline const Aws::String& GetCardId() const{ return m_cardId; }
+    inline const Aws::String& GetCardId() const { return m_cardId; }
     inline bool CardIdHasBeenSet() const { return m_cardIdHasBeenSet; }
-    inline void SetCardId(const Aws::String& value) { m_cardIdHasBeenSet = true; m_cardId = value; }
-    inline void SetCardId(Aws::String&& value) { m_cardIdHasBeenSet = true; m_cardId = std::move(value); }
-    inline void SetCardId(const char* value) { m_cardIdHasBeenSet = true; m_cardId.assign(value); }
-    inline QAppSessionData& WithCardId(const Aws::String& value) { SetCardId(value); return *this;}
-    inline QAppSessionData& WithCardId(Aws::String&& value) { SetCardId(std::move(value)); return *this;}
-    inline QAppSessionData& WithCardId(const char* value) { SetCardId(value); return *this;}
+    template<typename CardIdT = Aws::String>
+    void SetCardId(CardIdT&& value) { m_cardIdHasBeenSet = true; m_cardId = std::forward<CardIdT>(value); }
+    template<typename CardIdT = Aws::String>
+    QAppSessionData& WithCardId(CardIdT&& value) { SetCardId(std::forward<CardIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The response submitted for a Q App session.</p>
      */
-    inline Aws::Utils::DocumentView GetValue() const{ return m_value; }
+    inline Aws::Utils::DocumentView GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::Utils::Document& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::Utils::Document&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline QAppSessionData& WithValue(const Aws::Utils::Document& value) { SetValue(value); return *this;}
-    inline QAppSessionData& WithValue(Aws::Utils::Document&& value) { SetValue(std::move(value)); return *this;}
+    template<typename ValueT = Aws::Utils::Document>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::Utils::Document>
+    QAppSessionData& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The user who submitted the response for a Q App session.</p>
      */
-    inline const User& GetUser() const{ return m_user; }
+    inline const User& GetUser() const { return m_user; }
     inline bool UserHasBeenSet() const { return m_userHasBeenSet; }
-    inline void SetUser(const User& value) { m_userHasBeenSet = true; m_user = value; }
-    inline void SetUser(User&& value) { m_userHasBeenSet = true; m_user = std::move(value); }
-    inline QAppSessionData& WithUser(const User& value) { SetUser(value); return *this;}
-    inline QAppSessionData& WithUser(User&& value) { SetUser(std::move(value)); return *this;}
+    template<typename UserT = User>
+    void SetUser(UserT&& value) { m_userHasBeenSet = true; m_user = std::forward<UserT>(value); }
+    template<typename UserT = User>
+    QAppSessionData& WithUser(UserT&& value) { SetUser(std::forward<UserT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the submission.</p>
      */
-    inline const Aws::String& GetSubmissionId() const{ return m_submissionId; }
+    inline const Aws::String& GetSubmissionId() const { return m_submissionId; }
     inline bool SubmissionIdHasBeenSet() const { return m_submissionIdHasBeenSet; }
-    inline void SetSubmissionId(const Aws::String& value) { m_submissionIdHasBeenSet = true; m_submissionId = value; }
-    inline void SetSubmissionId(Aws::String&& value) { m_submissionIdHasBeenSet = true; m_submissionId = std::move(value); }
-    inline void SetSubmissionId(const char* value) { m_submissionIdHasBeenSet = true; m_submissionId.assign(value); }
-    inline QAppSessionData& WithSubmissionId(const Aws::String& value) { SetSubmissionId(value); return *this;}
-    inline QAppSessionData& WithSubmissionId(Aws::String&& value) { SetSubmissionId(std::move(value)); return *this;}
-    inline QAppSessionData& WithSubmissionId(const char* value) { SetSubmissionId(value); return *this;}
+    template<typename SubmissionIdT = Aws::String>
+    void SetSubmissionId(SubmissionIdT&& value) { m_submissionIdHasBeenSet = true; m_submissionId = std::forward<SubmissionIdT>(value); }
+    template<typename SubmissionIdT = Aws::String>
+    QAppSessionData& WithSubmissionId(SubmissionIdT&& value) { SetSubmissionId(std::forward<SubmissionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time when the session data is submitted.</p>
      */
-    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
+    inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
-    inline QAppSessionData& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-    inline QAppSessionData& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+    template<typename TimestampT = Aws::Utils::DateTime>
+    void SetTimestamp(TimestampT&& value) { m_timestampHasBeenSet = true; m_timestamp = std::forward<TimestampT>(value); }
+    template<typename TimestampT = Aws::Utils::DateTime>
+    QAppSessionData& WithTimestamp(TimestampT&& value) { SetTimestamp(std::forward<TimestampT>(value)); return *this;}
     ///@}
   private:
 
@@ -118,7 +114,7 @@ namespace Model
     Aws::String m_submissionId;
     bool m_submissionIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_timestamp;
+    Aws::Utils::DateTime m_timestamp{};
     bool m_timestampHasBeenSet = false;
   };
 

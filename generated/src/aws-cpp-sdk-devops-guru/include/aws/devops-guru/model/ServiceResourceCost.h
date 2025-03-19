@@ -37,7 +37,7 @@ namespace Model
   class ServiceResourceCost
   {
   public:
-    AWS_DEVOPSGURU_API ServiceResourceCost();
+    AWS_DEVOPSGURU_API ServiceResourceCost() = default;
     AWS_DEVOPSGURU_API ServiceResourceCost(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API ServiceResourceCost& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
     /**
      * <p>The type of the Amazon Web Services resource.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline ServiceResourceCost& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline ServiceResourceCost& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline ServiceResourceCost& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    ServiceResourceCost& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,12 +62,10 @@ namespace Model
      * You pay for the number of active Amazon Web Services resource hours analyzed for
      * each resource. Inactive resources are not charged. </p>
      */
-    inline const CostEstimationServiceResourceState& GetState() const{ return m_state; }
+    inline CostEstimationServiceResourceState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const CostEstimationServiceResourceState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(CostEstimationServiceResourceState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline ServiceResourceCost& WithState(const CostEstimationServiceResourceState& value) { SetState(value); return *this;}
-    inline ServiceResourceCost& WithState(CostEstimationServiceResourceState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(CostEstimationServiceResourceState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline ServiceResourceCost& WithState(CostEstimationServiceResourceState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
@@ -77,7 +73,7 @@ namespace Model
      * <p>The number of active resources analyzed for this service to create a monthly
      * cost estimate.</p>
      */
-    inline int GetCount() const{ return m_count; }
+    inline int GetCount() const { return m_count; }
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
     inline ServiceResourceCost& WithCount(int value) { SetCount(value); return *this;}
@@ -92,7 +88,7 @@ namespace Model
      * href="http://aws.amazon.com/devops-guru/pricing/">Amazon DevOps Guru
      * pricing</a>.</p>
      */
-    inline double GetUnitCost() const{ return m_unitCost; }
+    inline double GetUnitCost() const { return m_unitCost; }
     inline bool UnitCostHasBeenSet() const { return m_unitCostHasBeenSet; }
     inline void SetUnitCost(double value) { m_unitCostHasBeenSet = true; m_unitCost = value; }
     inline ServiceResourceCost& WithUnitCost(double value) { SetUnitCost(value); return *this;}
@@ -103,7 +99,7 @@ namespace Model
      * <p>The total estimated monthly cost to analyze the active resources for this
      * resource.</p>
      */
-    inline double GetCost() const{ return m_cost; }
+    inline double GetCost() const { return m_cost; }
     inline bool CostHasBeenSet() const { return m_costHasBeenSet; }
     inline void SetCost(double value) { m_costHasBeenSet = true; m_cost = value; }
     inline ServiceResourceCost& WithCost(double value) { SetCost(value); return *this;}
@@ -113,16 +109,16 @@ namespace Model
     Aws::String m_type;
     bool m_typeHasBeenSet = false;
 
-    CostEstimationServiceResourceState m_state;
+    CostEstimationServiceResourceState m_state{CostEstimationServiceResourceState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
-    int m_count;
+    int m_count{0};
     bool m_countHasBeenSet = false;
 
-    double m_unitCost;
+    double m_unitCost{0.0};
     bool m_unitCostHasBeenSet = false;
 
-    double m_cost;
+    double m_cost{0.0};
     bool m_costHasBeenSet = false;
   };
 

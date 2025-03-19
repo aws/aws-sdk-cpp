@@ -12,11 +12,6 @@ using namespace Aws::B2BI::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetPartnershipRequest::GetPartnershipRequest() : 
-    m_partnershipIdHasBeenSet(false)
-{
-}
-
 Aws::String GetPartnershipRequest::SerializePayload() const
 {
   JsonValue payload;

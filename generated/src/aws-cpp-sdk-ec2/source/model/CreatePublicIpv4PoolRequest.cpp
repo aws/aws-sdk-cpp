@@ -10,14 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreatePublicIpv4PoolRequest::CreatePublicIpv4PoolRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false),
-    m_networkBorderGroupHasBeenSet(false)
-{
-}
-
 Aws::String CreatePublicIpv4PoolRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -34,7 +34,7 @@ namespace Model
   class AssetPropertyValue
   {
   public:
-    AWS_IOT_API AssetPropertyValue();
+    AWS_IOT_API AssetPropertyValue() = default;
     AWS_IOT_API AssetPropertyValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API AssetPropertyValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,24 +44,24 @@ namespace Model
     /**
      * <p>The value of the asset property.</p>
      */
-    inline const AssetPropertyVariant& GetValue() const{ return m_value; }
+    inline const AssetPropertyVariant& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const AssetPropertyVariant& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(AssetPropertyVariant&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline AssetPropertyValue& WithValue(const AssetPropertyVariant& value) { SetValue(value); return *this;}
-    inline AssetPropertyValue& WithValue(AssetPropertyVariant&& value) { SetValue(std::move(value)); return *this;}
+    template<typename ValueT = AssetPropertyVariant>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = AssetPropertyVariant>
+    AssetPropertyValue& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The asset property value timestamp.</p>
      */
-    inline const AssetPropertyTimestamp& GetTimestamp() const{ return m_timestamp; }
+    inline const AssetPropertyTimestamp& GetTimestamp() const { return m_timestamp; }
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-    inline void SetTimestamp(const AssetPropertyTimestamp& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-    inline void SetTimestamp(AssetPropertyTimestamp&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
-    inline AssetPropertyValue& WithTimestamp(const AssetPropertyTimestamp& value) { SetTimestamp(value); return *this;}
-    inline AssetPropertyValue& WithTimestamp(AssetPropertyTimestamp&& value) { SetTimestamp(std::move(value)); return *this;}
+    template<typename TimestampT = AssetPropertyTimestamp>
+    void SetTimestamp(TimestampT&& value) { m_timestampHasBeenSet = true; m_timestamp = std::forward<TimestampT>(value); }
+    template<typename TimestampT = AssetPropertyTimestamp>
+    AssetPropertyValue& WithTimestamp(TimestampT&& value) { SetTimestamp(std::forward<TimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +70,12 @@ namespace Model
      * substitution templates. Must be <code>GOOD</code>, <code>BAD</code>, or
      * <code>UNCERTAIN</code>.</p>
      */
-    inline const Aws::String& GetQuality() const{ return m_quality; }
+    inline const Aws::String& GetQuality() const { return m_quality; }
     inline bool QualityHasBeenSet() const { return m_qualityHasBeenSet; }
-    inline void SetQuality(const Aws::String& value) { m_qualityHasBeenSet = true; m_quality = value; }
-    inline void SetQuality(Aws::String&& value) { m_qualityHasBeenSet = true; m_quality = std::move(value); }
-    inline void SetQuality(const char* value) { m_qualityHasBeenSet = true; m_quality.assign(value); }
-    inline AssetPropertyValue& WithQuality(const Aws::String& value) { SetQuality(value); return *this;}
-    inline AssetPropertyValue& WithQuality(Aws::String&& value) { SetQuality(std::move(value)); return *this;}
-    inline AssetPropertyValue& WithQuality(const char* value) { SetQuality(value); return *this;}
+    template<typename QualityT = Aws::String>
+    void SetQuality(QualityT&& value) { m_qualityHasBeenSet = true; m_quality = std::forward<QualityT>(value); }
+    template<typename QualityT = Aws::String>
+    AssetPropertyValue& WithQuality(QualityT&& value) { SetQuality(std::forward<QualityT>(value)); return *this;}
     ///@}
   private:
 

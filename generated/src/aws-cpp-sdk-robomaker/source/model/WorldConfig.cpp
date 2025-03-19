@@ -18,13 +18,7 @@ namespace RoboMaker
 namespace Model
 {
 
-WorldConfig::WorldConfig() : 
-    m_worldHasBeenSet(false)
-{
-}
-
 WorldConfig::WorldConfig(JsonView jsonValue)
-  : WorldConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ WorldConfig& WorldConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("world"))
   {
     m_world = jsonValue.GetString("world");
-
     m_worldHasBeenSet = true;
   }
-
   return *this;
 }
 

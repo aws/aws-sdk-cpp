@@ -12,13 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutUserStatusRequest::PutUserStatusRequest() : 
-    m_userIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_agentStatusIdHasBeenSet(false)
-{
-}
-
 Aws::String PutUserStatusRequest::SerializePayload() const
 {
   JsonValue payload;

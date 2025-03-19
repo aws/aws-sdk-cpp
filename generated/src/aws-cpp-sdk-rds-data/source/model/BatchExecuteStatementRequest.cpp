@@ -12,17 +12,6 @@ using namespace Aws::RDSDataService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchExecuteStatementRequest::BatchExecuteStatementRequest() : 
-    m_resourceArnHasBeenSet(false),
-    m_secretArnHasBeenSet(false),
-    m_sqlHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_schemaHasBeenSet(false),
-    m_parameterSetsHasBeenSet(false),
-    m_transactionIdHasBeenSet(false)
-{
-}
-
 Aws::String BatchExecuteStatementRequest::SerializePayload() const
 {
   JsonValue payload;

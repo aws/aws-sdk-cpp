@@ -36,7 +36,7 @@ namespace Model
   class BucketServerSideEncryption
   {
   public:
-    AWS_MACIE2_API BucketServerSideEncryption();
+    AWS_MACIE2_API BucketServerSideEncryption() = default;
     AWS_MACIE2_API BucketServerSideEncryption(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API BucketServerSideEncryption& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * value is null if the bucket is configured to use an Amazon S3 managed key to
      * encrypt new objects.</p>
      */
-    inline const Aws::String& GetKmsMasterKeyId() const{ return m_kmsMasterKeyId; }
+    inline const Aws::String& GetKmsMasterKeyId() const { return m_kmsMasterKeyId; }
     inline bool KmsMasterKeyIdHasBeenSet() const { return m_kmsMasterKeyIdHasBeenSet; }
-    inline void SetKmsMasterKeyId(const Aws::String& value) { m_kmsMasterKeyIdHasBeenSet = true; m_kmsMasterKeyId = value; }
-    inline void SetKmsMasterKeyId(Aws::String&& value) { m_kmsMasterKeyIdHasBeenSet = true; m_kmsMasterKeyId = std::move(value); }
-    inline void SetKmsMasterKeyId(const char* value) { m_kmsMasterKeyIdHasBeenSet = true; m_kmsMasterKeyId.assign(value); }
-    inline BucketServerSideEncryption& WithKmsMasterKeyId(const Aws::String& value) { SetKmsMasterKeyId(value); return *this;}
-    inline BucketServerSideEncryption& WithKmsMasterKeyId(Aws::String&& value) { SetKmsMasterKeyId(std::move(value)); return *this;}
-    inline BucketServerSideEncryption& WithKmsMasterKeyId(const char* value) { SetKmsMasterKeyId(value); return *this;}
+    template<typename KmsMasterKeyIdT = Aws::String>
+    void SetKmsMasterKeyId(KmsMasterKeyIdT&& value) { m_kmsMasterKeyIdHasBeenSet = true; m_kmsMasterKeyId = std::forward<KmsMasterKeyIdT>(value); }
+    template<typename KmsMasterKeyIdT = Aws::String>
+    BucketServerSideEncryption& WithKmsMasterKeyId(KmsMasterKeyIdT&& value) { SetKmsMasterKeyId(std::forward<KmsMasterKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,19 +70,17 @@ namespace Model
      * managed key.</p></li> <li><p>NONE - The bucket's default encryption settings
      * don't specify server-side encryption behavior for new objects.</p></li></ul>
      */
-    inline const Type& GetType() const{ return m_type; }
+    inline Type GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Type& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Type&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline BucketServerSideEncryption& WithType(const Type& value) { SetType(value); return *this;}
-    inline BucketServerSideEncryption& WithType(Type&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(Type value) { m_typeHasBeenSet = true; m_type = value; }
+    inline BucketServerSideEncryption& WithType(Type value) { SetType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_kmsMasterKeyId;
     bool m_kmsMasterKeyIdHasBeenSet = false;
 
-    Type m_type;
+    Type m_type{Type::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

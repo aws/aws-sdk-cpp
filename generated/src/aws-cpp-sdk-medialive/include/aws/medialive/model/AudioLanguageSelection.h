@@ -32,7 +32,7 @@ namespace Model
   class AudioLanguageSelection
   {
   public:
-    AWS_MEDIALIVE_API AudioLanguageSelection();
+    AWS_MEDIALIVE_API AudioLanguageSelection() = default;
     AWS_MEDIALIVE_API AudioLanguageSelection(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API AudioLanguageSelection& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * Selects a specific three-letter language code from within an audio source.
      */
-    inline const Aws::String& GetLanguageCode() const{ return m_languageCode; }
+    inline const Aws::String& GetLanguageCode() const { return m_languageCode; }
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
-    inline void SetLanguageCode(const Aws::String& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
-    inline void SetLanguageCode(Aws::String&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
-    inline void SetLanguageCode(const char* value) { m_languageCodeHasBeenSet = true; m_languageCode.assign(value); }
-    inline AudioLanguageSelection& WithLanguageCode(const Aws::String& value) { SetLanguageCode(value); return *this;}
-    inline AudioLanguageSelection& WithLanguageCode(Aws::String&& value) { SetLanguageCode(std::move(value)); return *this;}
-    inline AudioLanguageSelection& WithLanguageCode(const char* value) { SetLanguageCode(value); return *this;}
+    template<typename LanguageCodeT = Aws::String>
+    void SetLanguageCode(LanguageCodeT&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::forward<LanguageCodeT>(value); }
+    template<typename LanguageCodeT = Aws::String>
+    AudioLanguageSelection& WithLanguageCode(LanguageCodeT&& value) { SetLanguageCode(std::forward<LanguageCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,19 +59,17 @@ namespace Model
      * demux will choose another audio stream in the program with the same stream type
      * if it can't find one with the same language.
      */
-    inline const AudioLanguageSelectionPolicy& GetLanguageSelectionPolicy() const{ return m_languageSelectionPolicy; }
+    inline AudioLanguageSelectionPolicy GetLanguageSelectionPolicy() const { return m_languageSelectionPolicy; }
     inline bool LanguageSelectionPolicyHasBeenSet() const { return m_languageSelectionPolicyHasBeenSet; }
-    inline void SetLanguageSelectionPolicy(const AudioLanguageSelectionPolicy& value) { m_languageSelectionPolicyHasBeenSet = true; m_languageSelectionPolicy = value; }
-    inline void SetLanguageSelectionPolicy(AudioLanguageSelectionPolicy&& value) { m_languageSelectionPolicyHasBeenSet = true; m_languageSelectionPolicy = std::move(value); }
-    inline AudioLanguageSelection& WithLanguageSelectionPolicy(const AudioLanguageSelectionPolicy& value) { SetLanguageSelectionPolicy(value); return *this;}
-    inline AudioLanguageSelection& WithLanguageSelectionPolicy(AudioLanguageSelectionPolicy&& value) { SetLanguageSelectionPolicy(std::move(value)); return *this;}
+    inline void SetLanguageSelectionPolicy(AudioLanguageSelectionPolicy value) { m_languageSelectionPolicyHasBeenSet = true; m_languageSelectionPolicy = value; }
+    inline AudioLanguageSelection& WithLanguageSelectionPolicy(AudioLanguageSelectionPolicy value) { SetLanguageSelectionPolicy(value); return *this;}
     ///@}
   private:
 
     Aws::String m_languageCode;
     bool m_languageCodeHasBeenSet = false;
 
-    AudioLanguageSelectionPolicy m_languageSelectionPolicy;
+    AudioLanguageSelectionPolicy m_languageSelectionPolicy{AudioLanguageSelectionPolicy::NOT_SET};
     bool m_languageSelectionPolicyHasBeenSet = false;
   };
 

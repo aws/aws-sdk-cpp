@@ -18,13 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-Location::Location() : 
-    m_uriHasBeenSet(false)
-{
-}
-
 Location::Location(JsonView jsonValue)
-  : Location()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Location& Location::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("uri"))
   {
     m_uri = jsonValue.GetString("uri");
-
     m_uriHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-Transform::Transform() : 
-    m_expressionHasBeenSet(false),
-    m_variablesHasBeenSet(false),
-    m_processingConfigHasBeenSet(false)
-{
-}
-
 Transform::Transform(JsonView jsonValue)
-  : Transform()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ Transform& Transform::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("expression"))
   {
     m_expression = jsonValue.GetString("expression");
-
     m_expressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("variables"))
   {
     Aws::Utils::Array<JsonView> variablesJsonList = jsonValue.GetArray("variables");
@@ -49,14 +39,11 @@ Transform& Transform::operator =(JsonView jsonValue)
     }
     m_variablesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("processingConfig"))
   {
     m_processingConfig = jsonValue.GetObject("processingConfig");
-
     m_processingConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

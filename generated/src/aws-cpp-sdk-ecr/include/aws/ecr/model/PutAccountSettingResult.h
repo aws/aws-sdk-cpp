@@ -27,7 +27,7 @@ namespace Model
   class PutAccountSettingResult
   {
   public:
-    AWS_ECR_API PutAccountSettingResult();
+    AWS_ECR_API PutAccountSettingResult() = default;
     AWS_ECR_API PutAccountSettingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ECR_API PutAccountSettingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,45 +36,42 @@ namespace Model
     /**
      * <p>Retrieves the name of the account setting.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline PutAccountSettingResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline PutAccountSettingResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline PutAccountSettingResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    PutAccountSettingResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Retrieves the value of the specified account setting.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
-    inline void SetValue(const Aws::String& value) { m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_value.assign(value); }
-    inline PutAccountSettingResult& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline PutAccountSettingResult& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline PutAccountSettingResult& WithValue(const char* value) { SetValue(value); return *this;}
+    inline const Aws::String& GetValue() const { return m_value; }
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    PutAccountSettingResult& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutAccountSettingResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutAccountSettingResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutAccountSettingResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutAccountSettingResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_value;
+    bool m_valueHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

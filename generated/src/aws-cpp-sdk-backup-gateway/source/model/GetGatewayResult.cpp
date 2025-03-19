@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetGatewayResult::GetGatewayResult()
-{
-}
-
 GetGatewayResult::GetGatewayResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetGatewayResult& GetGatewayResult::operator =(const Aws::AmazonWebServiceResult
   if(jsonValue.ValueExists("Gateway"))
   {
     m_gateway = jsonValue.GetObject("Gateway");
-
+    m_gatewayHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

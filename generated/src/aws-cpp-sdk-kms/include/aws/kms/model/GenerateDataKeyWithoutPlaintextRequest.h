@@ -24,7 +24,7 @@ namespace Model
   class GenerateDataKeyWithoutPlaintextRequest : public KMSRequest
   {
   public:
-    AWS_KMS_API GenerateDataKeyWithoutPlaintextRequest();
+    AWS_KMS_API GenerateDataKeyWithoutPlaintextRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -54,14 +54,12 @@ namespace Model
      * <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use
      * <a>ListAliases</a>.</p>
      */
-    inline const Aws::String& GetKeyId() const{ return m_keyId; }
+    inline const Aws::String& GetKeyId() const { return m_keyId; }
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
-    inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
-    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
-    inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
-    inline GenerateDataKeyWithoutPlaintextRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
-    inline GenerateDataKeyWithoutPlaintextRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
-    inline GenerateDataKeyWithoutPlaintextRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
+    template<typename KeyIdT = Aws::String>
+    void SetKeyId(KeyIdT&& value) { m_keyIdHasBeenSet = true; m_keyId = std::forward<KeyIdT>(value); }
+    template<typename KeyIdT = Aws::String>
+    GenerateDataKeyWithoutPlaintextRequest& WithKeyId(KeyIdT&& value) { SetKeyId(std::forward<KeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,19 +77,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * context</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetEncryptionContext() const{ return m_encryptionContext; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetEncryptionContext() const { return m_encryptionContext; }
     inline bool EncryptionContextHasBeenSet() const { return m_encryptionContextHasBeenSet; }
-    inline void SetEncryptionContext(const Aws::Map<Aws::String, Aws::String>& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext = value; }
-    inline void SetEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext = std::move(value); }
-    inline GenerateDataKeyWithoutPlaintextRequest& WithEncryptionContext(const Aws::Map<Aws::String, Aws::String>& value) { SetEncryptionContext(value); return *this;}
-    inline GenerateDataKeyWithoutPlaintextRequest& WithEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { SetEncryptionContext(std::move(value)); return *this;}
-    inline GenerateDataKeyWithoutPlaintextRequest& AddEncryptionContext(const Aws::String& key, const Aws::String& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(key, value); return *this; }
-    inline GenerateDataKeyWithoutPlaintextRequest& AddEncryptionContext(Aws::String&& key, const Aws::String& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(std::move(key), value); return *this; }
-    inline GenerateDataKeyWithoutPlaintextRequest& AddEncryptionContext(const Aws::String& key, Aws::String&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(key, std::move(value)); return *this; }
-    inline GenerateDataKeyWithoutPlaintextRequest& AddEncryptionContext(Aws::String&& key, Aws::String&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(std::move(key), std::move(value)); return *this; }
-    inline GenerateDataKeyWithoutPlaintextRequest& AddEncryptionContext(const char* key, Aws::String&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(key, std::move(value)); return *this; }
-    inline GenerateDataKeyWithoutPlaintextRequest& AddEncryptionContext(Aws::String&& key, const char* value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(std::move(key), value); return *this; }
-    inline GenerateDataKeyWithoutPlaintextRequest& AddEncryptionContext(const char* key, const char* value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(key, value); return *this; }
+    template<typename EncryptionContextT = Aws::Map<Aws::String, Aws::String>>
+    void SetEncryptionContext(EncryptionContextT&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext = std::forward<EncryptionContextT>(value); }
+    template<typename EncryptionContextT = Aws::Map<Aws::String, Aws::String>>
+    GenerateDataKeyWithoutPlaintextRequest& WithEncryptionContext(EncryptionContextT&& value) { SetEncryptionContext(std::forward<EncryptionContextT>(value)); return *this;}
+    template<typename EncryptionContextKeyT = Aws::String, typename EncryptionContextValueT = Aws::String>
+    GenerateDataKeyWithoutPlaintextRequest& AddEncryptionContext(EncryptionContextKeyT&& key, EncryptionContextValueT&& value) {
+      m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(std::forward<EncryptionContextKeyT>(key), std::forward<EncryptionContextValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -99,12 +94,10 @@ namespace Model
      * <p>The length of the data key. Use <code>AES_128</code> to generate a 128-bit
      * symmetric key, or <code>AES_256</code> to generate a 256-bit symmetric key.</p>
      */
-    inline const DataKeySpec& GetKeySpec() const{ return m_keySpec; }
+    inline DataKeySpec GetKeySpec() const { return m_keySpec; }
     inline bool KeySpecHasBeenSet() const { return m_keySpecHasBeenSet; }
-    inline void SetKeySpec(const DataKeySpec& value) { m_keySpecHasBeenSet = true; m_keySpec = value; }
-    inline void SetKeySpec(DataKeySpec&& value) { m_keySpecHasBeenSet = true; m_keySpec = std::move(value); }
-    inline GenerateDataKeyWithoutPlaintextRequest& WithKeySpec(const DataKeySpec& value) { SetKeySpec(value); return *this;}
-    inline GenerateDataKeyWithoutPlaintextRequest& WithKeySpec(DataKeySpec&& value) { SetKeySpec(std::move(value)); return *this;}
+    inline void SetKeySpec(DataKeySpec value) { m_keySpecHasBeenSet = true; m_keySpec = value; }
+    inline GenerateDataKeyWithoutPlaintextRequest& WithKeySpec(DataKeySpec value) { SetKeySpec(value); return *this;}
     ///@}
 
     ///@{
@@ -114,7 +107,7 @@ namespace Model
      * (128-bit and 256-bit symmetric keys), we recommend that you use the
      * <code>KeySpec</code> field instead of this one.</p>
      */
-    inline int GetNumberOfBytes() const{ return m_numberOfBytes; }
+    inline int GetNumberOfBytes() const { return m_numberOfBytes; }
     inline bool NumberOfBytesHasBeenSet() const { return m_numberOfBytesHasBeenSet; }
     inline void SetNumberOfBytes(int value) { m_numberOfBytesHasBeenSet = true; m_numberOfBytes = value; }
     inline GenerateDataKeyWithoutPlaintextRequest& WithNumberOfBytes(int value) { SetNumberOfBytes(value); return *this;}
@@ -130,15 +123,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using
      * a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetGrantTokens() const{ return m_grantTokens; }
+    inline const Aws::Vector<Aws::String>& GetGrantTokens() const { return m_grantTokens; }
     inline bool GrantTokensHasBeenSet() const { return m_grantTokensHasBeenSet; }
-    inline void SetGrantTokens(const Aws::Vector<Aws::String>& value) { m_grantTokensHasBeenSet = true; m_grantTokens = value; }
-    inline void SetGrantTokens(Aws::Vector<Aws::String>&& value) { m_grantTokensHasBeenSet = true; m_grantTokens = std::move(value); }
-    inline GenerateDataKeyWithoutPlaintextRequest& WithGrantTokens(const Aws::Vector<Aws::String>& value) { SetGrantTokens(value); return *this;}
-    inline GenerateDataKeyWithoutPlaintextRequest& WithGrantTokens(Aws::Vector<Aws::String>&& value) { SetGrantTokens(std::move(value)); return *this;}
-    inline GenerateDataKeyWithoutPlaintextRequest& AddGrantTokens(const Aws::String& value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(value); return *this; }
-    inline GenerateDataKeyWithoutPlaintextRequest& AddGrantTokens(Aws::String&& value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(std::move(value)); return *this; }
-    inline GenerateDataKeyWithoutPlaintextRequest& AddGrantTokens(const char* value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(value); return *this; }
+    template<typename GrantTokensT = Aws::Vector<Aws::String>>
+    void SetGrantTokens(GrantTokensT&& value) { m_grantTokensHasBeenSet = true; m_grantTokens = std::forward<GrantTokensT>(value); }
+    template<typename GrantTokensT = Aws::Vector<Aws::String>>
+    GenerateDataKeyWithoutPlaintextRequest& WithGrantTokens(GrantTokensT&& value) { SetGrantTokens(std::forward<GrantTokensT>(value)); return *this;}
+    template<typename GrantTokensT = Aws::String>
+    GenerateDataKeyWithoutPlaintextRequest& AddGrantTokens(GrantTokensT&& value) { m_grantTokensHasBeenSet = true; m_grantTokens.emplace_back(std::forward<GrantTokensT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -148,7 +140,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing
      * your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline GenerateDataKeyWithoutPlaintextRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -161,16 +153,16 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_encryptionContext;
     bool m_encryptionContextHasBeenSet = false;
 
-    DataKeySpec m_keySpec;
+    DataKeySpec m_keySpec{DataKeySpec::NOT_SET};
     bool m_keySpecHasBeenSet = false;
 
-    int m_numberOfBytes;
+    int m_numberOfBytes{0};
     bool m_numberOfBytesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_grantTokens;
     bool m_grantTokensHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

@@ -15,17 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListReportJobsRequest::ListReportJobsRequest() : 
-    m_byReportPlanNameHasBeenSet(false),
-    m_byCreationBeforeHasBeenSet(false),
-    m_byCreationAfterHasBeenSet(false),
-    m_byStatusHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListReportJobsRequest::SerializePayload() const
 {
   return {};

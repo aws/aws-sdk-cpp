@@ -35,7 +35,7 @@ namespace Model
   class CreateOriginEndpointResult
   {
   public:
-    AWS_MEDIAPACKAGE_API CreateOriginEndpointResult();
+    AWS_MEDIAPACKAGE_API CreateOriginEndpointResult() = default;
     AWS_MEDIAPACKAGE_API CreateOriginEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIAPACKAGE_API CreateOriginEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,123 +44,111 @@ namespace Model
     /**
      * The Amazon Resource Name (ARN) assigned to the OriginEndpoint.
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline CreateOriginEndpointResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline CreateOriginEndpointResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline CreateOriginEndpointResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    CreateOriginEndpointResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Authorization& GetAuthorization() const{ return m_authorization; }
-    inline void SetAuthorization(const Authorization& value) { m_authorization = value; }
-    inline void SetAuthorization(Authorization&& value) { m_authorization = std::move(value); }
-    inline CreateOriginEndpointResult& WithAuthorization(const Authorization& value) { SetAuthorization(value); return *this;}
-    inline CreateOriginEndpointResult& WithAuthorization(Authorization&& value) { SetAuthorization(std::move(value)); return *this;}
+    inline const Authorization& GetAuthorization() const { return m_authorization; }
+    template<typename AuthorizationT = Authorization>
+    void SetAuthorization(AuthorizationT&& value) { m_authorizationHasBeenSet = true; m_authorization = std::forward<AuthorizationT>(value); }
+    template<typename AuthorizationT = Authorization>
+    CreateOriginEndpointResult& WithAuthorization(AuthorizationT&& value) { SetAuthorization(std::forward<AuthorizationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The ID of the Channel the OriginEndpoint is associated with.
      */
-    inline const Aws::String& GetChannelId() const{ return m_channelId; }
-    inline void SetChannelId(const Aws::String& value) { m_channelId = value; }
-    inline void SetChannelId(Aws::String&& value) { m_channelId = std::move(value); }
-    inline void SetChannelId(const char* value) { m_channelId.assign(value); }
-    inline CreateOriginEndpointResult& WithChannelId(const Aws::String& value) { SetChannelId(value); return *this;}
-    inline CreateOriginEndpointResult& WithChannelId(Aws::String&& value) { SetChannelId(std::move(value)); return *this;}
-    inline CreateOriginEndpointResult& WithChannelId(const char* value) { SetChannelId(value); return *this;}
+    inline const Aws::String& GetChannelId() const { return m_channelId; }
+    template<typename ChannelIdT = Aws::String>
+    void SetChannelId(ChannelIdT&& value) { m_channelIdHasBeenSet = true; m_channelId = std::forward<ChannelIdT>(value); }
+    template<typename ChannelIdT = Aws::String>
+    CreateOriginEndpointResult& WithChannelId(ChannelIdT&& value) { SetChannelId(std::forward<ChannelIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const CmafPackage& GetCmafPackage() const{ return m_cmafPackage; }
-    inline void SetCmafPackage(const CmafPackage& value) { m_cmafPackage = value; }
-    inline void SetCmafPackage(CmafPackage&& value) { m_cmafPackage = std::move(value); }
-    inline CreateOriginEndpointResult& WithCmafPackage(const CmafPackage& value) { SetCmafPackage(value); return *this;}
-    inline CreateOriginEndpointResult& WithCmafPackage(CmafPackage&& value) { SetCmafPackage(std::move(value)); return *this;}
+    inline const CmafPackage& GetCmafPackage() const { return m_cmafPackage; }
+    template<typename CmafPackageT = CmafPackage>
+    void SetCmafPackage(CmafPackageT&& value) { m_cmafPackageHasBeenSet = true; m_cmafPackage = std::forward<CmafPackageT>(value); }
+    template<typename CmafPackageT = CmafPackage>
+    CreateOriginEndpointResult& WithCmafPackage(CmafPackageT&& value) { SetCmafPackage(std::forward<CmafPackageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The date and time the OriginEndpoint was created.
      */
-    inline const Aws::String& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::String& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::String&& value) { m_createdAt = std::move(value); }
-    inline void SetCreatedAt(const char* value) { m_createdAt.assign(value); }
-    inline CreateOriginEndpointResult& WithCreatedAt(const Aws::String& value) { SetCreatedAt(value); return *this;}
-    inline CreateOriginEndpointResult& WithCreatedAt(Aws::String&& value) { SetCreatedAt(std::move(value)); return *this;}
-    inline CreateOriginEndpointResult& WithCreatedAt(const char* value) { SetCreatedAt(value); return *this;}
+    inline const Aws::String& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::String>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::String>
+    CreateOriginEndpointResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const DashPackage& GetDashPackage() const{ return m_dashPackage; }
-    inline void SetDashPackage(const DashPackage& value) { m_dashPackage = value; }
-    inline void SetDashPackage(DashPackage&& value) { m_dashPackage = std::move(value); }
-    inline CreateOriginEndpointResult& WithDashPackage(const DashPackage& value) { SetDashPackage(value); return *this;}
-    inline CreateOriginEndpointResult& WithDashPackage(DashPackage&& value) { SetDashPackage(std::move(value)); return *this;}
+    inline const DashPackage& GetDashPackage() const { return m_dashPackage; }
+    template<typename DashPackageT = DashPackage>
+    void SetDashPackage(DashPackageT&& value) { m_dashPackageHasBeenSet = true; m_dashPackage = std::forward<DashPackageT>(value); }
+    template<typename DashPackageT = DashPackage>
+    CreateOriginEndpointResult& WithDashPackage(DashPackageT&& value) { SetDashPackage(std::forward<DashPackageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * A short text description of the OriginEndpoint.
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline CreateOriginEndpointResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateOriginEndpointResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateOriginEndpointResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateOriginEndpointResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const HlsPackage& GetHlsPackage() const{ return m_hlsPackage; }
-    inline void SetHlsPackage(const HlsPackage& value) { m_hlsPackage = value; }
-    inline void SetHlsPackage(HlsPackage&& value) { m_hlsPackage = std::move(value); }
-    inline CreateOriginEndpointResult& WithHlsPackage(const HlsPackage& value) { SetHlsPackage(value); return *this;}
-    inline CreateOriginEndpointResult& WithHlsPackage(HlsPackage&& value) { SetHlsPackage(std::move(value)); return *this;}
+    inline const HlsPackage& GetHlsPackage() const { return m_hlsPackage; }
+    template<typename HlsPackageT = HlsPackage>
+    void SetHlsPackage(HlsPackageT&& value) { m_hlsPackageHasBeenSet = true; m_hlsPackage = std::forward<HlsPackageT>(value); }
+    template<typename HlsPackageT = HlsPackage>
+    CreateOriginEndpointResult& WithHlsPackage(HlsPackageT&& value) { SetHlsPackage(std::forward<HlsPackageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The ID of the OriginEndpoint.
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline CreateOriginEndpointResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline CreateOriginEndpointResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline CreateOriginEndpointResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    CreateOriginEndpointResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * A short string appended to the end of the OriginEndpoint URL.
      */
-    inline const Aws::String& GetManifestName() const{ return m_manifestName; }
-    inline void SetManifestName(const Aws::String& value) { m_manifestName = value; }
-    inline void SetManifestName(Aws::String&& value) { m_manifestName = std::move(value); }
-    inline void SetManifestName(const char* value) { m_manifestName.assign(value); }
-    inline CreateOriginEndpointResult& WithManifestName(const Aws::String& value) { SetManifestName(value); return *this;}
-    inline CreateOriginEndpointResult& WithManifestName(Aws::String&& value) { SetManifestName(std::move(value)); return *this;}
-    inline CreateOriginEndpointResult& WithManifestName(const char* value) { SetManifestName(value); return *this;}
+    inline const Aws::String& GetManifestName() const { return m_manifestName; }
+    template<typename ManifestNameT = Aws::String>
+    void SetManifestName(ManifestNameT&& value) { m_manifestNameHasBeenSet = true; m_manifestName = std::forward<ManifestNameT>(value); }
+    template<typename ManifestNameT = Aws::String>
+    CreateOriginEndpointResult& WithManifestName(ManifestNameT&& value) { SetManifestName(std::forward<ManifestNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const MssPackage& GetMssPackage() const{ return m_mssPackage; }
-    inline void SetMssPackage(const MssPackage& value) { m_mssPackage = value; }
-    inline void SetMssPackage(MssPackage&& value) { m_mssPackage = std::move(value); }
-    inline CreateOriginEndpointResult& WithMssPackage(const MssPackage& value) { SetMssPackage(value); return *this;}
-    inline CreateOriginEndpointResult& WithMssPackage(MssPackage&& value) { SetMssPackage(std::move(value)); return *this;}
+    inline const MssPackage& GetMssPackage() const { return m_mssPackage; }
+    template<typename MssPackageT = MssPackage>
+    void SetMssPackage(MssPackageT&& value) { m_mssPackageHasBeenSet = true; m_mssPackage = std::forward<MssPackageT>(value); }
+    template<typename MssPackageT = MssPackage>
+    CreateOriginEndpointResult& WithMssPackage(MssPackageT&& value) { SetMssPackage(std::forward<MssPackageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -174,11 +162,9 @@ requested. This
      * origination
 
      */
-    inline const Origination& GetOrigination() const{ return m_origination; }
-    inline void SetOrigination(const Origination& value) { m_origination = value; }
-    inline void SetOrigination(Origination&& value) { m_origination = std::move(value); }
-    inline CreateOriginEndpointResult& WithOrigination(const Origination& value) { SetOrigination(value); return *this;}
-    inline CreateOriginEndpointResult& WithOrigination(Origination&& value) { SetOrigination(std::move(value)); return *this;}
+    inline Origination GetOrigination() const { return m_origination; }
+    inline void SetOrigination(Origination value) { m_originationHasBeenSet = true; m_origination = value; }
+    inline CreateOriginEndpointResult& WithOrigination(Origination value) { SetOrigination(value); return *this;}
     ///@}
 
     ///@{
@@ -188,25 +174,22 @@ If not
      * specified, startover playback will be disabled for the OriginEndpoint.
 
      */
-    inline int GetStartoverWindowSeconds() const{ return m_startoverWindowSeconds; }
-    inline void SetStartoverWindowSeconds(int value) { m_startoverWindowSeconds = value; }
+    inline int GetStartoverWindowSeconds() const { return m_startoverWindowSeconds; }
+    inline void SetStartoverWindowSeconds(int value) { m_startoverWindowSecondsHasBeenSet = true; m_startoverWindowSeconds = value; }
     inline CreateOriginEndpointResult& WithStartoverWindowSeconds(int value) { SetStartoverWindowSeconds(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline CreateOriginEndpointResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateOriginEndpointResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateOriginEndpointResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline CreateOriginEndpointResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateOriginEndpointResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateOriginEndpointResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateOriginEndpointResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateOriginEndpointResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateOriginEndpointResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateOriginEndpointResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateOriginEndpointResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -216,8 +199,8 @@ If not
      * specified, there will be no time delay in effect for the OriginEndpoint.
 
      */
-    inline int GetTimeDelaySeconds() const{ return m_timeDelaySeconds; }
-    inline void SetTimeDelaySeconds(int value) { m_timeDelaySeconds = value; }
+    inline int GetTimeDelaySeconds() const { return m_timeDelaySeconds; }
+    inline void SetTimeDelaySeconds(int value) { m_timeDelaySecondsHasBeenSet = true; m_timeDelaySeconds = value; }
     inline CreateOriginEndpointResult& WithTimeDelaySeconds(int value) { SetTimeDelaySeconds(value); return *this;}
     ///@}
 
@@ -225,13 +208,11 @@ If not
     /**
      * The URL of the packaged OriginEndpoint for consumption.
      */
-    inline const Aws::String& GetUrl() const{ return m_url; }
-    inline void SetUrl(const Aws::String& value) { m_url = value; }
-    inline void SetUrl(Aws::String&& value) { m_url = std::move(value); }
-    inline void SetUrl(const char* value) { m_url.assign(value); }
-    inline CreateOriginEndpointResult& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
-    inline CreateOriginEndpointResult& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
-    inline CreateOriginEndpointResult& WithUrl(const char* value) { SetUrl(value); return *this;}
+    inline const Aws::String& GetUrl() const { return m_url; }
+    template<typename UrlT = Aws::String>
+    void SetUrl(UrlT&& value) { m_urlHasBeenSet = true; m_url = std::forward<UrlT>(value); }
+    template<typename UrlT = Aws::String>
+    CreateOriginEndpointResult& WithUrl(UrlT&& value) { SetUrl(std::forward<UrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -239,63 +220,78 @@ If not
      * A list of source IP CIDR blocks that will be allowed to access the
      * OriginEndpoint.
      */
-    inline const Aws::Vector<Aws::String>& GetWhitelist() const{ return m_whitelist; }
-    inline void SetWhitelist(const Aws::Vector<Aws::String>& value) { m_whitelist = value; }
-    inline void SetWhitelist(Aws::Vector<Aws::String>&& value) { m_whitelist = std::move(value); }
-    inline CreateOriginEndpointResult& WithWhitelist(const Aws::Vector<Aws::String>& value) { SetWhitelist(value); return *this;}
-    inline CreateOriginEndpointResult& WithWhitelist(Aws::Vector<Aws::String>&& value) { SetWhitelist(std::move(value)); return *this;}
-    inline CreateOriginEndpointResult& AddWhitelist(const Aws::String& value) { m_whitelist.push_back(value); return *this; }
-    inline CreateOriginEndpointResult& AddWhitelist(Aws::String&& value) { m_whitelist.push_back(std::move(value)); return *this; }
-    inline CreateOriginEndpointResult& AddWhitelist(const char* value) { m_whitelist.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetWhitelist() const { return m_whitelist; }
+    template<typename WhitelistT = Aws::Vector<Aws::String>>
+    void SetWhitelist(WhitelistT&& value) { m_whitelistHasBeenSet = true; m_whitelist = std::forward<WhitelistT>(value); }
+    template<typename WhitelistT = Aws::Vector<Aws::String>>
+    CreateOriginEndpointResult& WithWhitelist(WhitelistT&& value) { SetWhitelist(std::forward<WhitelistT>(value)); return *this;}
+    template<typename WhitelistT = Aws::String>
+    CreateOriginEndpointResult& AddWhitelist(WhitelistT&& value) { m_whitelistHasBeenSet = true; m_whitelist.emplace_back(std::forward<WhitelistT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateOriginEndpointResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateOriginEndpointResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateOriginEndpointResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateOriginEndpointResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Authorization m_authorization;
+    bool m_authorizationHasBeenSet = false;
 
     Aws::String m_channelId;
+    bool m_channelIdHasBeenSet = false;
 
     CmafPackage m_cmafPackage;
+    bool m_cmafPackageHasBeenSet = false;
 
     Aws::String m_createdAt;
+    bool m_createdAtHasBeenSet = false;
 
     DashPackage m_dashPackage;
+    bool m_dashPackageHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     HlsPackage m_hlsPackage;
+    bool m_hlsPackageHasBeenSet = false;
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_manifestName;
+    bool m_manifestNameHasBeenSet = false;
 
     MssPackage m_mssPackage;
+    bool m_mssPackageHasBeenSet = false;
 
-    Origination m_origination;
+    Origination m_origination{Origination::NOT_SET};
+    bool m_originationHasBeenSet = false;
 
-    int m_startoverWindowSeconds;
+    int m_startoverWindowSeconds{0};
+    bool m_startoverWindowSecondsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
-    int m_timeDelaySeconds;
+    int m_timeDelaySeconds{0};
+    bool m_timeDelaySecondsHasBeenSet = false;
 
     Aws::String m_url;
+    bool m_urlHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_whitelist;
+    bool m_whitelistHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

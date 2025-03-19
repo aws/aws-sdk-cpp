@@ -25,7 +25,7 @@ namespace Model
   class SendMessageRequest : public QConnectRequest
   {
   public:
-    AWS_QCONNECT_API SendMessageRequest();
+    AWS_QCONNECT_API SendMessageRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The identifier of the Amazon Q in Connect assistant.</p>
      */
-    inline const Aws::String& GetAssistantId() const{ return m_assistantId; }
+    inline const Aws::String& GetAssistantId() const { return m_assistantId; }
     inline bool AssistantIdHasBeenSet() const { return m_assistantIdHasBeenSet; }
-    inline void SetAssistantId(const Aws::String& value) { m_assistantIdHasBeenSet = true; m_assistantId = value; }
-    inline void SetAssistantId(Aws::String&& value) { m_assistantIdHasBeenSet = true; m_assistantId = std::move(value); }
-    inline void SetAssistantId(const char* value) { m_assistantIdHasBeenSet = true; m_assistantId.assign(value); }
-    inline SendMessageRequest& WithAssistantId(const Aws::String& value) { SetAssistantId(value); return *this;}
-    inline SendMessageRequest& WithAssistantId(Aws::String&& value) { SetAssistantId(std::move(value)); return *this;}
-    inline SendMessageRequest& WithAssistantId(const char* value) { SetAssistantId(value); return *this;}
+    template<typename AssistantIdT = Aws::String>
+    void SetAssistantId(AssistantIdT&& value) { m_assistantIdHasBeenSet = true; m_assistantId = std::forward<AssistantIdT>(value); }
+    template<typename AssistantIdT = Aws::String>
+    SendMessageRequest& WithAssistantId(AssistantIdT&& value) { SetAssistantId(std::forward<AssistantIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,64 +55,58 @@ namespace Model
      * field.For more information about idempotency, see Making retries safe with
      * idempotent APIs.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline SendMessageRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline SendMessageRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline SendMessageRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    SendMessageRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The conversation context before the Amazon Q in Connect session.</p>
      */
-    inline const ConversationContext& GetConversationContext() const{ return m_conversationContext; }
+    inline const ConversationContext& GetConversationContext() const { return m_conversationContext; }
     inline bool ConversationContextHasBeenSet() const { return m_conversationContextHasBeenSet; }
-    inline void SetConversationContext(const ConversationContext& value) { m_conversationContextHasBeenSet = true; m_conversationContext = value; }
-    inline void SetConversationContext(ConversationContext&& value) { m_conversationContextHasBeenSet = true; m_conversationContext = std::move(value); }
-    inline SendMessageRequest& WithConversationContext(const ConversationContext& value) { SetConversationContext(value); return *this;}
-    inline SendMessageRequest& WithConversationContext(ConversationContext&& value) { SetConversationContext(std::move(value)); return *this;}
+    template<typename ConversationContextT = ConversationContext>
+    void SetConversationContext(ConversationContextT&& value) { m_conversationContextHasBeenSet = true; m_conversationContext = std::forward<ConversationContextT>(value); }
+    template<typename ConversationContextT = ConversationContext>
+    SendMessageRequest& WithConversationContext(ConversationContextT&& value) { SetConversationContext(std::forward<ConversationContextT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The message data to submit to the Amazon Q in Connect session.</p>
      */
-    inline const MessageInput& GetMessage() const{ return m_message; }
+    inline const MessageInput& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const MessageInput& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(MessageInput&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline SendMessageRequest& WithMessage(const MessageInput& value) { SetMessage(value); return *this;}
-    inline SendMessageRequest& WithMessage(MessageInput&& value) { SetMessage(std::move(value)); return *this;}
+    template<typename MessageT = MessageInput>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = MessageInput>
+    SendMessageRequest& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the Amazon Q in Connect session.</p>
      */
-    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
     inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-    inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
-    inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
-    inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
-    inline SendMessageRequest& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-    inline SendMessageRequest& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-    inline SendMessageRequest& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    SendMessageRequest& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The message type.</p>
      */
-    inline const MessageType& GetType() const{ return m_type; }
+    inline MessageType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const MessageType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(MessageType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline SendMessageRequest& WithType(const MessageType& value) { SetType(value); return *this;}
-    inline SendMessageRequest& WithType(MessageType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(MessageType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline SendMessageRequest& WithType(MessageType value) { SetType(value); return *this;}
     ///@}
   private:
 
@@ -133,7 +125,7 @@ namespace Model
     Aws::String m_sessionId;
     bool m_sessionIdHasBeenSet = false;
 
-    MessageType m_type;
+    MessageType m_type{MessageType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

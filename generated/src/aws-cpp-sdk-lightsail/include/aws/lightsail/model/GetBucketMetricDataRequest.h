@@ -26,7 +26,7 @@ namespace Model
   class GetBucketMetricDataRequest : public LightsailRequest
   {
   public:
-    AWS_LIGHTSAIL_API GetBucketMetricDataRequest();
+    AWS_LIGHTSAIL_API GetBucketMetricDataRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The name of the bucket for which to get metric data.</p>
      */
-    inline const Aws::String& GetBucketName() const{ return m_bucketName; }
+    inline const Aws::String& GetBucketName() const { return m_bucketName; }
     inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
-    inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
-    inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::move(value); }
-    inline void SetBucketName(const char* value) { m_bucketNameHasBeenSet = true; m_bucketName.assign(value); }
-    inline GetBucketMetricDataRequest& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
-    inline GetBucketMetricDataRequest& WithBucketName(Aws::String&& value) { SetBucketName(std::move(value)); return *this;}
-    inline GetBucketMetricDataRequest& WithBucketName(const char* value) { SetBucketName(value); return *this;}
+    template<typename BucketNameT = Aws::String>
+    void SetBucketName(BucketNameT&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::forward<BucketNameT>(value); }
+    template<typename BucketNameT = Aws::String>
+    GetBucketMetricDataRequest& WithBucketName(BucketNameT&& value) { SetBucketName(std::forward<BucketNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,36 +69,34 @@ namespace Model
      * <p>Statistics: The most useful statistic is <code>Average</code>.</p> <p>Unit:
      * The published unit is <code>Count</code>.</p> </li> </ul>
      */
-    inline const BucketMetricName& GetMetricName() const{ return m_metricName; }
+    inline BucketMetricName GetMetricName() const { return m_metricName; }
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
-    inline void SetMetricName(const BucketMetricName& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
-    inline void SetMetricName(BucketMetricName&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
-    inline GetBucketMetricDataRequest& WithMetricName(const BucketMetricName& value) { SetMetricName(value); return *this;}
-    inline GetBucketMetricDataRequest& WithMetricName(BucketMetricName&& value) { SetMetricName(std::move(value)); return *this;}
+    inline void SetMetricName(BucketMetricName value) { m_metricNameHasBeenSet = true; m_metricName = value; }
+    inline GetBucketMetricDataRequest& WithMetricName(BucketMetricName value) { SetMetricName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp indicating the earliest data to be returned.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline GetBucketMetricDataRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline GetBucketMetricDataRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    GetBucketMetricDataRequest& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp indicating the latest data to be returned.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline GetBucketMetricDataRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline GetBucketMetricDataRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    GetBucketMetricDataRequest& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,7 +106,7 @@ namespace Model
      * specify a period of 86400 seconds, which is the number of seconds in a day.</p>
      * 
      */
-    inline int GetPeriod() const{ return m_period; }
+    inline int GetPeriod() const { return m_period; }
     inline bool PeriodHasBeenSet() const { return m_periodHasBeenSet; }
     inline void SetPeriod(int value) { m_periodHasBeenSet = true; m_period = value; }
     inline GetBucketMetricDataRequest& WithPeriod(int value) { SetPeriod(value); return *this;}
@@ -135,14 +131,13 @@ namespace Model
      * - The count, or number, of data points used for the statistical calculation.</p>
      * </li> </ul>
      */
-    inline const Aws::Vector<MetricStatistic>& GetStatistics() const{ return m_statistics; }
+    inline const Aws::Vector<MetricStatistic>& GetStatistics() const { return m_statistics; }
     inline bool StatisticsHasBeenSet() const { return m_statisticsHasBeenSet; }
-    inline void SetStatistics(const Aws::Vector<MetricStatistic>& value) { m_statisticsHasBeenSet = true; m_statistics = value; }
-    inline void SetStatistics(Aws::Vector<MetricStatistic>&& value) { m_statisticsHasBeenSet = true; m_statistics = std::move(value); }
-    inline GetBucketMetricDataRequest& WithStatistics(const Aws::Vector<MetricStatistic>& value) { SetStatistics(value); return *this;}
-    inline GetBucketMetricDataRequest& WithStatistics(Aws::Vector<MetricStatistic>&& value) { SetStatistics(std::move(value)); return *this;}
-    inline GetBucketMetricDataRequest& AddStatistics(const MetricStatistic& value) { m_statisticsHasBeenSet = true; m_statistics.push_back(value); return *this; }
-    inline GetBucketMetricDataRequest& AddStatistics(MetricStatistic&& value) { m_statisticsHasBeenSet = true; m_statistics.push_back(std::move(value)); return *this; }
+    template<typename StatisticsT = Aws::Vector<MetricStatistic>>
+    void SetStatistics(StatisticsT&& value) { m_statisticsHasBeenSet = true; m_statistics = std::forward<StatisticsT>(value); }
+    template<typename StatisticsT = Aws::Vector<MetricStatistic>>
+    GetBucketMetricDataRequest& WithStatistics(StatisticsT&& value) { SetStatistics(std::forward<StatisticsT>(value)); return *this;}
+    inline GetBucketMetricDataRequest& AddStatistics(MetricStatistic value) { m_statisticsHasBeenSet = true; m_statistics.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -151,34 +146,32 @@ namespace Model
      * data being requested. For the valid units with each available metric, see the
      * <code>metricName</code> parameter.</p>
      */
-    inline const MetricUnit& GetUnit() const{ return m_unit; }
+    inline MetricUnit GetUnit() const { return m_unit; }
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-    inline void SetUnit(const MetricUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
-    inline void SetUnit(MetricUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-    inline GetBucketMetricDataRequest& WithUnit(const MetricUnit& value) { SetUnit(value); return *this;}
-    inline GetBucketMetricDataRequest& WithUnit(MetricUnit&& value) { SetUnit(std::move(value)); return *this;}
+    inline void SetUnit(MetricUnit value) { m_unitHasBeenSet = true; m_unit = value; }
+    inline GetBucketMetricDataRequest& WithUnit(MetricUnit value) { SetUnit(value); return *this;}
     ///@}
   private:
 
     Aws::String m_bucketName;
     bool m_bucketNameHasBeenSet = false;
 
-    BucketMetricName m_metricName;
+    BucketMetricName m_metricName{BucketMetricName::NOT_SET};
     bool m_metricNameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
 
-    int m_period;
+    int m_period{0};
     bool m_periodHasBeenSet = false;
 
     Aws::Vector<MetricStatistic> m_statistics;
     bool m_statisticsHasBeenSet = false;
 
-    MetricUnit m_unit;
+    MetricUnit m_unit{MetricUnit::NOT_SET};
     bool m_unitHasBeenSet = false;
   };
 

@@ -18,22 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-CaptionDescription::CaptionDescription() : 
-    m_accessibility(AccessibilityType::NOT_SET),
-    m_accessibilityHasBeenSet(false),
-    m_captionSelectorNameHasBeenSet(false),
-    m_destinationSettingsHasBeenSet(false),
-    m_languageCodeHasBeenSet(false),
-    m_languageDescriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_captionDashRolesHasBeenSet(false),
-    m_dvbDashAccessibility(DvbDashAccessibility::NOT_SET),
-    m_dvbDashAccessibilityHasBeenSet(false)
-{
-}
-
 CaptionDescription::CaptionDescription(JsonView jsonValue)
-  : CaptionDescription()
 {
   *this = jsonValue;
 }
@@ -43,45 +28,33 @@ CaptionDescription& CaptionDescription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accessibility"))
   {
     m_accessibility = AccessibilityTypeMapper::GetAccessibilityTypeForName(jsonValue.GetString("accessibility"));
-
     m_accessibilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("captionSelectorName"))
   {
     m_captionSelectorName = jsonValue.GetString("captionSelectorName");
-
     m_captionSelectorNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destinationSettings"))
   {
     m_destinationSettings = jsonValue.GetObject("destinationSettings");
-
     m_destinationSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("languageCode"))
   {
     m_languageCode = jsonValue.GetString("languageCode");
-
     m_languageCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("languageDescription"))
   {
     m_languageDescription = jsonValue.GetString("languageDescription");
-
     m_languageDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("captionDashRoles"))
   {
     Aws::Utils::Array<JsonView> captionDashRolesJsonList = jsonValue.GetArray("captionDashRoles");
@@ -91,14 +64,11 @@ CaptionDescription& CaptionDescription::operator =(JsonView jsonValue)
     }
     m_captionDashRolesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dvbDashAccessibility"))
   {
     m_dvbDashAccessibility = DvbDashAccessibilityMapper::GetDvbDashAccessibilityForName(jsonValue.GetString("dvbDashAccessibility"));
-
     m_dvbDashAccessibilityHasBeenSet = true;
   }
-
   return *this;
 }
 

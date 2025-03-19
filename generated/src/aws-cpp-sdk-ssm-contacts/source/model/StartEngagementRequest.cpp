@@ -12,19 +12,6 @@ using namespace Aws::SSMContacts::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartEngagementRequest::StartEngagementRequest() : 
-    m_contactIdHasBeenSet(false),
-    m_senderHasBeenSet(false),
-    m_subjectHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_publicSubjectHasBeenSet(false),
-    m_publicContentHasBeenSet(false),
-    m_incidentIdHasBeenSet(false),
-    m_idempotencyToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_idempotencyTokenHasBeenSet(true)
-{
-}
-
 Aws::String StartEngagementRequest::SerializePayload() const
 {
   JsonValue payload;

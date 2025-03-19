@@ -33,7 +33,7 @@ namespace Model
   class CachePolicyHeadersConfig
   {
   public:
-    AWS_CLOUDFRONT_API CachePolicyHeadersConfig();
+    AWS_CLOUDFRONT_API CachePolicyHeadersConfig() = default;
     AWS_CLOUDFRONT_API CachePolicyHeadersConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API CachePolicyHeadersConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -52,26 +52,24 @@ namespace Model
      * the <code>Headers</code> type are included in the cache key and in requests that
      * CloudFront sends to the origin.</p> </li> </ul>
      */
-    inline const CachePolicyHeaderBehavior& GetHeaderBehavior() const{ return m_headerBehavior; }
+    inline CachePolicyHeaderBehavior GetHeaderBehavior() const { return m_headerBehavior; }
     inline bool HeaderBehaviorHasBeenSet() const { return m_headerBehaviorHasBeenSet; }
-    inline void SetHeaderBehavior(const CachePolicyHeaderBehavior& value) { m_headerBehaviorHasBeenSet = true; m_headerBehavior = value; }
-    inline void SetHeaderBehavior(CachePolicyHeaderBehavior&& value) { m_headerBehaviorHasBeenSet = true; m_headerBehavior = std::move(value); }
-    inline CachePolicyHeadersConfig& WithHeaderBehavior(const CachePolicyHeaderBehavior& value) { SetHeaderBehavior(value); return *this;}
-    inline CachePolicyHeadersConfig& WithHeaderBehavior(CachePolicyHeaderBehavior&& value) { SetHeaderBehavior(std::move(value)); return *this;}
+    inline void SetHeaderBehavior(CachePolicyHeaderBehavior value) { m_headerBehaviorHasBeenSet = true; m_headerBehavior = value; }
+    inline CachePolicyHeadersConfig& WithHeaderBehavior(CachePolicyHeaderBehavior value) { SetHeaderBehavior(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Headers& GetHeaders() const{ return m_headers; }
+    inline const Headers& GetHeaders() const { return m_headers; }
     inline bool HeadersHasBeenSet() const { return m_headersHasBeenSet; }
-    inline void SetHeaders(const Headers& value) { m_headersHasBeenSet = true; m_headers = value; }
-    inline void SetHeaders(Headers&& value) { m_headersHasBeenSet = true; m_headers = std::move(value); }
-    inline CachePolicyHeadersConfig& WithHeaders(const Headers& value) { SetHeaders(value); return *this;}
-    inline CachePolicyHeadersConfig& WithHeaders(Headers&& value) { SetHeaders(std::move(value)); return *this;}
+    template<typename HeadersT = Headers>
+    void SetHeaders(HeadersT&& value) { m_headersHasBeenSet = true; m_headers = std::forward<HeadersT>(value); }
+    template<typename HeadersT = Headers>
+    CachePolicyHeadersConfig& WithHeaders(HeadersT&& value) { SetHeaders(std::forward<HeadersT>(value)); return *this;}
     ///@}
   private:
 
-    CachePolicyHeaderBehavior m_headerBehavior;
+    CachePolicyHeaderBehavior m_headerBehavior{CachePolicyHeaderBehavior::NOT_SET};
     bool m_headerBehaviorHasBeenSet = false;
 
     Headers m_headers;

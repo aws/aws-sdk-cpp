@@ -18,14 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-ScoreAttributes::ScoreAttributes() : 
-    m_scoreConfidence(ScoreConfidence::NOT_SET),
-    m_scoreConfidenceHasBeenSet(false)
-{
-}
-
 ScoreAttributes::ScoreAttributes(JsonView jsonValue)
-  : ScoreAttributes()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ScoreAttributes& ScoreAttributes::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("scoreConfidence"))
   {
     m_scoreConfidence = ScoreConfidenceMapper::GetScoreConfidenceForName(jsonValue.GetString("scoreConfidence"));
-
     m_scoreConfidenceHasBeenSet = true;
   }
-
   return *this;
 }
 

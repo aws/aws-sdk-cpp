@@ -18,20 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-PublicAccessConfiguration::PublicAccessConfiguration() : 
-    m_publicAclAccess(PublicAccessStatus::NOT_SET),
-    m_publicAclAccessHasBeenSet(false),
-    m_publicPolicyAccess(PublicAccessStatus::NOT_SET),
-    m_publicPolicyAccessHasBeenSet(false),
-    m_publicAclIgnoreBehavior(PublicAclIgnoreBehavior::NOT_SET),
-    m_publicAclIgnoreBehaviorHasBeenSet(false),
-    m_publicBucketRestrictBehavior(PublicBucketRestrictBehavior::NOT_SET),
-    m_publicBucketRestrictBehaviorHasBeenSet(false)
-{
-}
-
 PublicAccessConfiguration::PublicAccessConfiguration(JsonView jsonValue)
-  : PublicAccessConfiguration()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ PublicAccessConfiguration& PublicAccessConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("publicAclAccess"))
   {
     m_publicAclAccess = PublicAccessStatusMapper::GetPublicAccessStatusForName(jsonValue.GetString("publicAclAccess"));
-
     m_publicAclAccessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("publicPolicyAccess"))
   {
     m_publicPolicyAccess = PublicAccessStatusMapper::GetPublicAccessStatusForName(jsonValue.GetString("publicPolicyAccess"));
-
     m_publicPolicyAccessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("publicAclIgnoreBehavior"))
   {
     m_publicAclIgnoreBehavior = PublicAclIgnoreBehaviorMapper::GetPublicAclIgnoreBehaviorForName(jsonValue.GetString("publicAclIgnoreBehavior"));
-
     m_publicAclIgnoreBehaviorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("publicBucketRestrictBehavior"))
   {
     m_publicBucketRestrictBehavior = PublicBucketRestrictBehaviorMapper::GetPublicBucketRestrictBehaviorForName(jsonValue.GetString("publicBucketRestrictBehavior"));
-
     m_publicBucketRestrictBehaviorHasBeenSet = true;
   }
-
   return *this;
 }
 

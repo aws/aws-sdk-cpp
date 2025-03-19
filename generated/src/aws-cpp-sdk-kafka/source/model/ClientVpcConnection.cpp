@@ -18,18 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-ClientVpcConnection::ClientVpcConnection() : 
-    m_authenticationHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_state(VpcConnectionState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_vpcConnectionArnHasBeenSet(false),
-    m_ownerHasBeenSet(false)
-{
-}
-
 ClientVpcConnection::ClientVpcConnection(JsonView jsonValue)
-  : ClientVpcConnection()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ ClientVpcConnection& ClientVpcConnection::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("authentication"))
   {
     m_authentication = jsonValue.GetString("authentication");
-
     m_authenticationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = VpcConnectionStateMapper::GetVpcConnectionStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcConnectionArn"))
   {
     m_vpcConnectionArn = jsonValue.GetString("vpcConnectionArn");
-
     m_vpcConnectionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("owner"))
   {
     m_owner = jsonValue.GetString("owner");
-
     m_ownerHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAppInstanceUserEndpointResult::DescribeAppInstanceUserEndpointResult()
-{
-}
-
 DescribeAppInstanceUserEndpointResult::DescribeAppInstanceUserEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeAppInstanceUserEndpointResult& DescribeAppInstanceUserEndpointResult::op
   if(jsonValue.ValueExists("AppInstanceUserEndpoint"))
   {
     m_appInstanceUserEndpoint = jsonValue.GetObject("AppInstanceUserEndpoint");
-
+    m_appInstanceUserEndpointHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

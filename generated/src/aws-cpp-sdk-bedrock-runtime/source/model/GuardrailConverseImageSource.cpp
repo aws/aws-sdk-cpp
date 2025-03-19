@@ -19,13 +19,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-GuardrailConverseImageSource::GuardrailConverseImageSource() : 
-    m_bytesHasBeenSet(false)
-{
-}
-
 GuardrailConverseImageSource::GuardrailConverseImageSource(JsonView jsonValue)
-  : GuardrailConverseImageSource()
 {
   *this = jsonValue;
 }
@@ -37,7 +31,6 @@ GuardrailConverseImageSource& GuardrailConverseImageSource::operator =(JsonView 
     m_bytes = HashingUtils::Base64Decode(jsonValue.GetString("bytes"));
     m_bytesHasBeenSet = true;
   }
-
   return *this;
 }
 

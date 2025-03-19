@@ -18,14 +18,7 @@ namespace DAX
 namespace Model
 {
 
-SSEDescription::SSEDescription() : 
-    m_status(SSEStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 SSEDescription::SSEDescription(JsonView jsonValue)
-  : SSEDescription()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SSEDescription& SSEDescription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Status"))
   {
     m_status = SSEStatusMapper::GetSSEStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

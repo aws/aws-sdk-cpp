@@ -18,18 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-LoginAttribute::LoginAttribute() : 
-    m_userHasBeenSet(false),
-    m_applicationHasBeenSet(false),
-    m_failedLoginAttempts(0),
-    m_failedLoginAttemptsHasBeenSet(false),
-    m_successfulLoginAttempts(0),
-    m_successfulLoginAttemptsHasBeenSet(false)
-{
-}
-
 LoginAttribute::LoginAttribute(JsonView jsonValue)
-  : LoginAttribute()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ LoginAttribute& LoginAttribute::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("user"))
   {
     m_user = jsonValue.GetString("user");
-
     m_userHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("application"))
   {
     m_application = jsonValue.GetString("application");
-
     m_applicationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failedLoginAttempts"))
   {
     m_failedLoginAttempts = jsonValue.GetInteger("failedLoginAttempts");
-
     m_failedLoginAttemptsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("successfulLoginAttempts"))
   {
     m_successfulLoginAttempts = jsonValue.GetInteger("successfulLoginAttempts");
-
     m_successfulLoginAttemptsHasBeenSet = true;
   }
-
   return *this;
 }
 

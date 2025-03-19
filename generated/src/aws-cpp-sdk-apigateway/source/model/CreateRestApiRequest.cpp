@@ -12,24 +12,6 @@ using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateRestApiRequest::CreateRestApiRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_cloneFromHasBeenSet(false),
-    m_binaryMediaTypesHasBeenSet(false),
-    m_minimumCompressionSize(0),
-    m_minimumCompressionSizeHasBeenSet(false),
-    m_apiKeySource(ApiKeySourceType::NOT_SET),
-    m_apiKeySourceHasBeenSet(false),
-    m_endpointConfigurationHasBeenSet(false),
-    m_policyHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_disableExecuteApiEndpoint(false),
-    m_disableExecuteApiEndpointHasBeenSet(false)
-{
-}
-
 Aws::String CreateRestApiRequest::SerializePayload() const
 {
   JsonValue payload;

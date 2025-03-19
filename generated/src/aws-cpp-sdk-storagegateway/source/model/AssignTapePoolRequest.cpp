@@ -12,14 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssignTapePoolRequest::AssignTapePoolRequest() : 
-    m_tapeARNHasBeenSet(false),
-    m_poolIdHasBeenSet(false),
-    m_bypassGovernanceRetention(false),
-    m_bypassGovernanceRetentionHasBeenSet(false)
-{
-}
-
 Aws::String AssignTapePoolRequest::SerializePayload() const
 {
   JsonValue payload;

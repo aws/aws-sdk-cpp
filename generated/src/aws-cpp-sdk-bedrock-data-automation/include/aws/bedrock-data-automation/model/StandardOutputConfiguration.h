@@ -34,7 +34,7 @@ namespace Model
   class StandardOutputConfiguration
   {
   public:
-    AWS_BEDROCKDATAAUTOMATION_API StandardOutputConfiguration();
+    AWS_BEDROCKDATAAUTOMATION_API StandardOutputConfiguration() = default;
     AWS_BEDROCKDATAAUTOMATION_API StandardOutputConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKDATAAUTOMATION_API StandardOutputConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKDATAAUTOMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,42 +42,42 @@ namespace Model
 
     ///@{
     
-    inline const DocumentStandardOutputConfiguration& GetDocument() const{ return m_document; }
+    inline const DocumentStandardOutputConfiguration& GetDocument() const { return m_document; }
     inline bool DocumentHasBeenSet() const { return m_documentHasBeenSet; }
-    inline void SetDocument(const DocumentStandardOutputConfiguration& value) { m_documentHasBeenSet = true; m_document = value; }
-    inline void SetDocument(DocumentStandardOutputConfiguration&& value) { m_documentHasBeenSet = true; m_document = std::move(value); }
-    inline StandardOutputConfiguration& WithDocument(const DocumentStandardOutputConfiguration& value) { SetDocument(value); return *this;}
-    inline StandardOutputConfiguration& WithDocument(DocumentStandardOutputConfiguration&& value) { SetDocument(std::move(value)); return *this;}
+    template<typename DocumentT = DocumentStandardOutputConfiguration>
+    void SetDocument(DocumentT&& value) { m_documentHasBeenSet = true; m_document = std::forward<DocumentT>(value); }
+    template<typename DocumentT = DocumentStandardOutputConfiguration>
+    StandardOutputConfiguration& WithDocument(DocumentT&& value) { SetDocument(std::forward<DocumentT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ImageStandardOutputConfiguration& GetImage() const{ return m_image; }
+    inline const ImageStandardOutputConfiguration& GetImage() const { return m_image; }
     inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
-    inline void SetImage(const ImageStandardOutputConfiguration& value) { m_imageHasBeenSet = true; m_image = value; }
-    inline void SetImage(ImageStandardOutputConfiguration&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
-    inline StandardOutputConfiguration& WithImage(const ImageStandardOutputConfiguration& value) { SetImage(value); return *this;}
-    inline StandardOutputConfiguration& WithImage(ImageStandardOutputConfiguration&& value) { SetImage(std::move(value)); return *this;}
+    template<typename ImageT = ImageStandardOutputConfiguration>
+    void SetImage(ImageT&& value) { m_imageHasBeenSet = true; m_image = std::forward<ImageT>(value); }
+    template<typename ImageT = ImageStandardOutputConfiguration>
+    StandardOutputConfiguration& WithImage(ImageT&& value) { SetImage(std::forward<ImageT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const VideoStandardOutputConfiguration& GetVideo() const{ return m_video; }
+    inline const VideoStandardOutputConfiguration& GetVideo() const { return m_video; }
     inline bool VideoHasBeenSet() const { return m_videoHasBeenSet; }
-    inline void SetVideo(const VideoStandardOutputConfiguration& value) { m_videoHasBeenSet = true; m_video = value; }
-    inline void SetVideo(VideoStandardOutputConfiguration&& value) { m_videoHasBeenSet = true; m_video = std::move(value); }
-    inline StandardOutputConfiguration& WithVideo(const VideoStandardOutputConfiguration& value) { SetVideo(value); return *this;}
-    inline StandardOutputConfiguration& WithVideo(VideoStandardOutputConfiguration&& value) { SetVideo(std::move(value)); return *this;}
+    template<typename VideoT = VideoStandardOutputConfiguration>
+    void SetVideo(VideoT&& value) { m_videoHasBeenSet = true; m_video = std::forward<VideoT>(value); }
+    template<typename VideoT = VideoStandardOutputConfiguration>
+    StandardOutputConfiguration& WithVideo(VideoT&& value) { SetVideo(std::forward<VideoT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const AudioStandardOutputConfiguration& GetAudio() const{ return m_audio; }
+    inline const AudioStandardOutputConfiguration& GetAudio() const { return m_audio; }
     inline bool AudioHasBeenSet() const { return m_audioHasBeenSet; }
-    inline void SetAudio(const AudioStandardOutputConfiguration& value) { m_audioHasBeenSet = true; m_audio = value; }
-    inline void SetAudio(AudioStandardOutputConfiguration&& value) { m_audioHasBeenSet = true; m_audio = std::move(value); }
-    inline StandardOutputConfiguration& WithAudio(const AudioStandardOutputConfiguration& value) { SetAudio(value); return *this;}
-    inline StandardOutputConfiguration& WithAudio(AudioStandardOutputConfiguration&& value) { SetAudio(std::move(value)); return *this;}
+    template<typename AudioT = AudioStandardOutputConfiguration>
+    void SetAudio(AudioT&& value) { m_audioHasBeenSet = true; m_audio = std::forward<AudioT>(value); }
+    template<typename AudioT = AudioStandardOutputConfiguration>
+    StandardOutputConfiguration& WithAudio(AudioT&& value) { SetAudio(std::forward<AudioT>(value)); return *this;}
     ///@}
   private:
 

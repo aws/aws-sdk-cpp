@@ -19,14 +19,7 @@ namespace QuickSight
 namespace Model
 {
 
-AssetBundleImportSource::AssetBundleImportSource() : 
-    m_bodyHasBeenSet(false),
-    m_s3UriHasBeenSet(false)
-{
-}
-
 AssetBundleImportSource::AssetBundleImportSource(JsonView jsonValue)
-  : AssetBundleImportSource()
 {
   *this = jsonValue;
 }
@@ -38,14 +31,11 @@ AssetBundleImportSource& AssetBundleImportSource::operator =(JsonView jsonValue)
     m_body = HashingUtils::Base64Decode(jsonValue.GetString("Body"));
     m_bodyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Uri"))
   {
     m_s3Uri = jsonValue.GetString("S3Uri");
-
     m_s3UriHasBeenSet = true;
   }
-
   return *this;
 }
 

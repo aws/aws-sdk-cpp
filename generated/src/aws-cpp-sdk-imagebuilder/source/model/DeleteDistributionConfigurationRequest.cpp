@@ -15,11 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteDistributionConfigurationRequest::DeleteDistributionConfigurationRequest() : 
-    m_distributionConfigurationArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDistributionConfigurationRequest::SerializePayload() const
 {
   return {};

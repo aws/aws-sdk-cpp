@@ -18,16 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-VoiceAnalyticsProcessorConfiguration::VoiceAnalyticsProcessorConfiguration() : 
-    m_speakerSearchStatus(VoiceAnalyticsConfigurationStatus::NOT_SET),
-    m_speakerSearchStatusHasBeenSet(false),
-    m_voiceToneAnalysisStatus(VoiceAnalyticsConfigurationStatus::NOT_SET),
-    m_voiceToneAnalysisStatusHasBeenSet(false)
-{
-}
-
 VoiceAnalyticsProcessorConfiguration::VoiceAnalyticsProcessorConfiguration(JsonView jsonValue)
-  : VoiceAnalyticsProcessorConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ VoiceAnalyticsProcessorConfiguration& VoiceAnalyticsProcessorConfiguration::oper
   if(jsonValue.ValueExists("SpeakerSearchStatus"))
   {
     m_speakerSearchStatus = VoiceAnalyticsConfigurationStatusMapper::GetVoiceAnalyticsConfigurationStatusForName(jsonValue.GetString("SpeakerSearchStatus"));
-
     m_speakerSearchStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VoiceToneAnalysisStatus"))
   {
     m_voiceToneAnalysisStatus = VoiceAnalyticsConfigurationStatusMapper::GetVoiceAnalyticsConfigurationStatusForName(jsonValue.GetString("VoiceToneAnalysisStatus"));
-
     m_voiceToneAnalysisStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteMLTransformRequest::DeleteMLTransformRequest() : 
-    m_transformIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteMLTransformRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,17 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-DataProductItem::DataProductItem() : 
-    m_glossaryTermsHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_itemType(DataProductItemType::NOT_SET),
-    m_itemTypeHasBeenSet(false),
-    m_revisionHasBeenSet(false)
-{
-}
-
 DataProductItem::DataProductItem(JsonView jsonValue)
-  : DataProductItem()
 {
   *this = jsonValue;
 }
@@ -44,28 +34,21 @@ DataProductItem& DataProductItem::operator =(JsonView jsonValue)
     }
     m_glossaryTermsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("identifier"))
   {
     m_identifier = jsonValue.GetString("identifier");
-
     m_identifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("itemType"))
   {
     m_itemType = DataProductItemTypeMapper::GetDataProductItemTypeForName(jsonValue.GetString("itemType"));
-
     m_itemTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("revision"))
   {
     m_revision = jsonValue.GetString("revision");
-
     m_revisionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,23 +18,7 @@ namespace InternetMonitor
 namespace Model
 {
 
-ClientLocation::ClientLocation() : 
-    m_aSNameHasBeenSet(false),
-    m_aSNumber(0),
-    m_aSNumberHasBeenSet(false),
-    m_countryHasBeenSet(false),
-    m_subdivisionHasBeenSet(false),
-    m_metroHasBeenSet(false),
-    m_cityHasBeenSet(false),
-    m_latitude(0.0),
-    m_latitudeHasBeenSet(false),
-    m_longitude(0.0),
-    m_longitudeHasBeenSet(false)
-{
-}
-
 ClientLocation::ClientLocation(JsonView jsonValue)
-  : ClientLocation()
 {
   *this = jsonValue;
 }
@@ -44,59 +28,43 @@ ClientLocation& ClientLocation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ASName"))
   {
     m_aSName = jsonValue.GetString("ASName");
-
     m_aSNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ASNumber"))
   {
     m_aSNumber = jsonValue.GetInt64("ASNumber");
-
     m_aSNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Country"))
   {
     m_country = jsonValue.GetString("Country");
-
     m_countryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Subdivision"))
   {
     m_subdivision = jsonValue.GetString("Subdivision");
-
     m_subdivisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Metro"))
   {
     m_metro = jsonValue.GetString("Metro");
-
     m_metroHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("City"))
   {
     m_city = jsonValue.GetString("City");
-
     m_cityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Latitude"))
   {
     m_latitude = jsonValue.GetDouble("Latitude");
-
     m_latitudeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Longitude"))
   {
     m_longitude = jsonValue.GetDouble("Longitude");
-
     m_longitudeHasBeenSet = true;
   }
-
   return *this;
 }
 

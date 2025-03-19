@@ -12,21 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateLoadBalancerRequest::CreateLoadBalancerRequest() : 
-    m_loadBalancerNameHasBeenSet(false),
-    m_instancePort(0),
-    m_instancePortHasBeenSet(false),
-    m_healthCheckPathHasBeenSet(false),
-    m_certificateNameHasBeenSet(false),
-    m_certificateDomainNameHasBeenSet(false),
-    m_certificateAlternativeNamesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_ipAddressType(IpAddressType::NOT_SET),
-    m_ipAddressTypeHasBeenSet(false),
-    m_tlsPolicyNameHasBeenSet(false)
-{
-}
-
 Aws::String CreateLoadBalancerRequest::SerializePayload() const
 {
   JsonValue payload;

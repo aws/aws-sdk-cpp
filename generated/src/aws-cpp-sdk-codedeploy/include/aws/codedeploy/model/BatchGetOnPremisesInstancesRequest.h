@@ -26,7 +26,7 @@ namespace Model
   class BatchGetOnPremisesInstancesRequest : public CodeDeployRequest
   {
   public:
-    AWS_CODEDEPLOY_API BatchGetOnPremisesInstancesRequest();
+    AWS_CODEDEPLOY_API BatchGetOnPremisesInstancesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,15 +44,14 @@ namespace Model
      * <p>The names of the on-premises instances about which to get information. The
      * maximum number of instance names you can specify is 25.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetInstanceNames() const{ return m_instanceNames; }
+    inline const Aws::Vector<Aws::String>& GetInstanceNames() const { return m_instanceNames; }
     inline bool InstanceNamesHasBeenSet() const { return m_instanceNamesHasBeenSet; }
-    inline void SetInstanceNames(const Aws::Vector<Aws::String>& value) { m_instanceNamesHasBeenSet = true; m_instanceNames = value; }
-    inline void SetInstanceNames(Aws::Vector<Aws::String>&& value) { m_instanceNamesHasBeenSet = true; m_instanceNames = std::move(value); }
-    inline BatchGetOnPremisesInstancesRequest& WithInstanceNames(const Aws::Vector<Aws::String>& value) { SetInstanceNames(value); return *this;}
-    inline BatchGetOnPremisesInstancesRequest& WithInstanceNames(Aws::Vector<Aws::String>&& value) { SetInstanceNames(std::move(value)); return *this;}
-    inline BatchGetOnPremisesInstancesRequest& AddInstanceNames(const Aws::String& value) { m_instanceNamesHasBeenSet = true; m_instanceNames.push_back(value); return *this; }
-    inline BatchGetOnPremisesInstancesRequest& AddInstanceNames(Aws::String&& value) { m_instanceNamesHasBeenSet = true; m_instanceNames.push_back(std::move(value)); return *this; }
-    inline BatchGetOnPremisesInstancesRequest& AddInstanceNames(const char* value) { m_instanceNamesHasBeenSet = true; m_instanceNames.push_back(value); return *this; }
+    template<typename InstanceNamesT = Aws::Vector<Aws::String>>
+    void SetInstanceNames(InstanceNamesT&& value) { m_instanceNamesHasBeenSet = true; m_instanceNames = std::forward<InstanceNamesT>(value); }
+    template<typename InstanceNamesT = Aws::Vector<Aws::String>>
+    BatchGetOnPremisesInstancesRequest& WithInstanceNames(InstanceNamesT&& value) { SetInstanceNames(std::forward<InstanceNamesT>(value)); return *this;}
+    template<typename InstanceNamesT = Aws::String>
+    BatchGetOnPremisesInstancesRequest& AddInstanceNames(InstanceNamesT&& value) { m_instanceNamesHasBeenSet = true; m_instanceNames.emplace_back(std::forward<InstanceNamesT>(value)); return *this; }
     ///@}
   private:
 

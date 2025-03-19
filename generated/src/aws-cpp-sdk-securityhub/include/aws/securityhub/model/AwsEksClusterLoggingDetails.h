@@ -33,7 +33,7 @@ namespace Model
   class AwsEksClusterLoggingDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsEksClusterLoggingDetails();
+    AWS_SECURITYHUB_API AwsEksClusterLoggingDetails() = default;
     AWS_SECURITYHUB_API AwsEksClusterLoggingDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEksClusterLoggingDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>Cluster logging configurations.</p>
      */
-    inline const Aws::Vector<AwsEksClusterLoggingClusterLoggingDetails>& GetClusterLogging() const{ return m_clusterLogging; }
+    inline const Aws::Vector<AwsEksClusterLoggingClusterLoggingDetails>& GetClusterLogging() const { return m_clusterLogging; }
     inline bool ClusterLoggingHasBeenSet() const { return m_clusterLoggingHasBeenSet; }
-    inline void SetClusterLogging(const Aws::Vector<AwsEksClusterLoggingClusterLoggingDetails>& value) { m_clusterLoggingHasBeenSet = true; m_clusterLogging = value; }
-    inline void SetClusterLogging(Aws::Vector<AwsEksClusterLoggingClusterLoggingDetails>&& value) { m_clusterLoggingHasBeenSet = true; m_clusterLogging = std::move(value); }
-    inline AwsEksClusterLoggingDetails& WithClusterLogging(const Aws::Vector<AwsEksClusterLoggingClusterLoggingDetails>& value) { SetClusterLogging(value); return *this;}
-    inline AwsEksClusterLoggingDetails& WithClusterLogging(Aws::Vector<AwsEksClusterLoggingClusterLoggingDetails>&& value) { SetClusterLogging(std::move(value)); return *this;}
-    inline AwsEksClusterLoggingDetails& AddClusterLogging(const AwsEksClusterLoggingClusterLoggingDetails& value) { m_clusterLoggingHasBeenSet = true; m_clusterLogging.push_back(value); return *this; }
-    inline AwsEksClusterLoggingDetails& AddClusterLogging(AwsEksClusterLoggingClusterLoggingDetails&& value) { m_clusterLoggingHasBeenSet = true; m_clusterLogging.push_back(std::move(value)); return *this; }
+    template<typename ClusterLoggingT = Aws::Vector<AwsEksClusterLoggingClusterLoggingDetails>>
+    void SetClusterLogging(ClusterLoggingT&& value) { m_clusterLoggingHasBeenSet = true; m_clusterLogging = std::forward<ClusterLoggingT>(value); }
+    template<typename ClusterLoggingT = Aws::Vector<AwsEksClusterLoggingClusterLoggingDetails>>
+    AwsEksClusterLoggingDetails& WithClusterLogging(ClusterLoggingT&& value) { SetClusterLogging(std::forward<ClusterLoggingT>(value)); return *this;}
+    template<typename ClusterLoggingT = AwsEksClusterLoggingClusterLoggingDetails>
+    AwsEksClusterLoggingDetails& AddClusterLogging(ClusterLoggingT&& value) { m_clusterLoggingHasBeenSet = true; m_clusterLogging.emplace_back(std::forward<ClusterLoggingT>(value)); return *this; }
     ///@}
   private:
 

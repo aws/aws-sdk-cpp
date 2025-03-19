@@ -12,12 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchStopJobRunRequest::BatchStopJobRunRequest() : 
-    m_jobNameHasBeenSet(false),
-    m_jobRunIdsHasBeenSet(false)
-{
-}
-
 Aws::String BatchStopJobRunRequest::SerializePayload() const
 {
   JsonValue payload;

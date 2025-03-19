@@ -18,18 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-ObjectLevelStatistics::ObjectLevelStatistics() : 
-    m_fileType(0),
-    m_fileTypeHasBeenSet(false),
-    m_storageClass(0),
-    m_storageClassHasBeenSet(false),
-    m_total(0),
-    m_totalHasBeenSet(false)
-{
-}
-
 ObjectLevelStatistics::ObjectLevelStatistics(JsonView jsonValue)
-  : ObjectLevelStatistics()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ ObjectLevelStatistics& ObjectLevelStatistics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fileType"))
   {
     m_fileType = jsonValue.GetInt64("fileType");
-
     m_fileTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storageClass"))
   {
     m_storageClass = jsonValue.GetInt64("storageClass");
-
     m_storageClassHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("total"))
   {
     m_total = jsonValue.GetInt64("total");
-
     m_totalHasBeenSet = true;
   }
-
   return *this;
 }
 

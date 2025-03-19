@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeInboundDmarcSettingsResult::DescribeInboundDmarcSettingsResult() : 
-    m_enforced(false)
-{
-}
-
 DescribeInboundDmarcSettingsResult::DescribeInboundDmarcSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeInboundDmarcSettingsResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ DescribeInboundDmarcSettingsResult& DescribeInboundDmarcSettingsResult::operator
   if(jsonValue.ValueExists("Enforced"))
   {
     m_enforced = jsonValue.GetBool("Enforced");
-
+    m_enforcedHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

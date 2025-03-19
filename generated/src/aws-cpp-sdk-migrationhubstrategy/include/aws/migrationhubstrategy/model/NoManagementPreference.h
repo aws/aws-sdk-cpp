@@ -33,7 +33,7 @@ namespace Model
   class NoManagementPreference
   {
   public:
-    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API NoManagementPreference();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API NoManagementPreference() = default;
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API NoManagementPreference(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API NoManagementPreference& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,13 @@ namespace Model
     /**
      * <p> The choice of application destination that you specify. </p>
      */
-    inline const Aws::Vector<NoPreferenceTargetDestination>& GetTargetDestination() const{ return m_targetDestination; }
+    inline const Aws::Vector<NoPreferenceTargetDestination>& GetTargetDestination() const { return m_targetDestination; }
     inline bool TargetDestinationHasBeenSet() const { return m_targetDestinationHasBeenSet; }
-    inline void SetTargetDestination(const Aws::Vector<NoPreferenceTargetDestination>& value) { m_targetDestinationHasBeenSet = true; m_targetDestination = value; }
-    inline void SetTargetDestination(Aws::Vector<NoPreferenceTargetDestination>&& value) { m_targetDestinationHasBeenSet = true; m_targetDestination = std::move(value); }
-    inline NoManagementPreference& WithTargetDestination(const Aws::Vector<NoPreferenceTargetDestination>& value) { SetTargetDestination(value); return *this;}
-    inline NoManagementPreference& WithTargetDestination(Aws::Vector<NoPreferenceTargetDestination>&& value) { SetTargetDestination(std::move(value)); return *this;}
-    inline NoManagementPreference& AddTargetDestination(const NoPreferenceTargetDestination& value) { m_targetDestinationHasBeenSet = true; m_targetDestination.push_back(value); return *this; }
-    inline NoManagementPreference& AddTargetDestination(NoPreferenceTargetDestination&& value) { m_targetDestinationHasBeenSet = true; m_targetDestination.push_back(std::move(value)); return *this; }
+    template<typename TargetDestinationT = Aws::Vector<NoPreferenceTargetDestination>>
+    void SetTargetDestination(TargetDestinationT&& value) { m_targetDestinationHasBeenSet = true; m_targetDestination = std::forward<TargetDestinationT>(value); }
+    template<typename TargetDestinationT = Aws::Vector<NoPreferenceTargetDestination>>
+    NoManagementPreference& WithTargetDestination(TargetDestinationT&& value) { SetTargetDestination(std::forward<TargetDestinationT>(value)); return *this;}
+    inline NoManagementPreference& AddTargetDestination(NoPreferenceTargetDestination value) { m_targetDestinationHasBeenSet = true; m_targetDestination.push_back(value); return *this; }
     ///@}
   private:
 

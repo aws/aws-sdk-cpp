@@ -15,15 +15,6 @@ using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UploadMultipartPartRequest::UploadMultipartPartRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_vaultNameHasBeenSet(false),
-    m_uploadIdHasBeenSet(false),
-    m_checksumHasBeenSet(false),
-    m_rangeHasBeenSet(false)
-{
-}
-
 
 
 Aws::Http::HeaderValueCollection UploadMultipartPartRequest::GetRequestSpecificHeaders() const

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListIndicatorsResult::ListIndicatorsResult()
-{
-}
-
 ListIndicatorsResult::ListIndicatorsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,18 @@ ListIndicatorsResult& ListIndicatorsResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("GraphArn"))
   {
     m_graphArn = jsonValue.GetString("GraphArn");
-
+    m_graphArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InvestigationId"))
   {
     m_investigationId = jsonValue.GetString("InvestigationId");
-
+    m_investigationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Indicators"))
   {
     Aws::Utils::Array<JsonView> indicatorsJsonList = jsonValue.GetArray("Indicators");
@@ -54,14 +47,15 @@ ListIndicatorsResult& ListIndicatorsResult::operator =(const Aws::AmazonWebServi
     {
       m_indicators.push_back(indicatorsJsonList[indicatorsIndex].AsObject());
     }
+    m_indicatorsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

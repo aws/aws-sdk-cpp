@@ -12,15 +12,6 @@ using namespace Aws::CodeGuruProfiler::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SubmitFeedbackRequest::SubmitFeedbackRequest() : 
-    m_anomalyInstanceIdHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_profilingGroupNameHasBeenSet(false),
-    m_type(FeedbackType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 Aws::String SubmitFeedbackRequest::SerializePayload() const
 {
   JsonValue payload;

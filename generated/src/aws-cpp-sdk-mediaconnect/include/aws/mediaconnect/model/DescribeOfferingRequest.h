@@ -21,7 +21,7 @@ namespace Model
   class DescribeOfferingRequest : public MediaConnectRequest
   {
   public:
-    AWS_MEDIACONNECT_API DescribeOfferingRequest();
+    AWS_MEDIACONNECT_API DescribeOfferingRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * The Amazon Resource Name (ARN) of the offering.
      */
-    inline const Aws::String& GetOfferingArn() const{ return m_offeringArn; }
+    inline const Aws::String& GetOfferingArn() const { return m_offeringArn; }
     inline bool OfferingArnHasBeenSet() const { return m_offeringArnHasBeenSet; }
-    inline void SetOfferingArn(const Aws::String& value) { m_offeringArnHasBeenSet = true; m_offeringArn = value; }
-    inline void SetOfferingArn(Aws::String&& value) { m_offeringArnHasBeenSet = true; m_offeringArn = std::move(value); }
-    inline void SetOfferingArn(const char* value) { m_offeringArnHasBeenSet = true; m_offeringArn.assign(value); }
-    inline DescribeOfferingRequest& WithOfferingArn(const Aws::String& value) { SetOfferingArn(value); return *this;}
-    inline DescribeOfferingRequest& WithOfferingArn(Aws::String&& value) { SetOfferingArn(std::move(value)); return *this;}
-    inline DescribeOfferingRequest& WithOfferingArn(const char* value) { SetOfferingArn(value); return *this;}
+    template<typename OfferingArnT = Aws::String>
+    void SetOfferingArn(OfferingArnT&& value) { m_offeringArnHasBeenSet = true; m_offeringArn = std::forward<OfferingArnT>(value); }
+    template<typename OfferingArnT = Aws::String>
+    DescribeOfferingRequest& WithOfferingArn(OfferingArnT&& value) { SetOfferingArn(std::forward<OfferingArnT>(value)); return *this;}
     ///@}
   private:
 

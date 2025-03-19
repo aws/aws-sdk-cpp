@@ -18,19 +18,7 @@ namespace WorkMail
 namespace Model
 {
 
-ImpersonationRule::ImpersonationRule() : 
-    m_impersonationRuleIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_effect(AccessEffect::NOT_SET),
-    m_effectHasBeenSet(false),
-    m_targetUsersHasBeenSet(false),
-    m_notTargetUsersHasBeenSet(false)
-{
-}
-
 ImpersonationRule::ImpersonationRule(JsonView jsonValue)
-  : ImpersonationRule()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ ImpersonationRule& ImpersonationRule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ImpersonationRuleId"))
   {
     m_impersonationRuleId = jsonValue.GetString("ImpersonationRuleId");
-
     m_impersonationRuleIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Effect"))
   {
     m_effect = AccessEffectMapper::GetAccessEffectForName(jsonValue.GetString("Effect"));
-
     m_effectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetUsers"))
   {
     Aws::Utils::Array<JsonView> targetUsersJsonList = jsonValue.GetArray("TargetUsers");
@@ -74,7 +54,6 @@ ImpersonationRule& ImpersonationRule::operator =(JsonView jsonValue)
     }
     m_targetUsersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotTargetUsers"))
   {
     Aws::Utils::Array<JsonView> notTargetUsersJsonList = jsonValue.GetArray("NotTargetUsers");
@@ -84,7 +63,6 @@ ImpersonationRule& ImpersonationRule::operator =(JsonView jsonValue)
     }
     m_notTargetUsersHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,16 +12,6 @@ using namespace Aws::ApplicationInsights::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateLogPatternRequest::UpdateLogPatternRequest() : 
-    m_resourceGroupNameHasBeenSet(false),
-    m_patternSetNameHasBeenSet(false),
-    m_patternNameHasBeenSet(false),
-    m_patternHasBeenSet(false),
-    m_rank(0),
-    m_rankHasBeenSet(false)
-{
-}
-
 Aws::String UpdateLogPatternRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,26 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsIamPolicyDetails::AwsIamPolicyDetails() : 
-    m_attachmentCount(0),
-    m_attachmentCountHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_defaultVersionIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_isAttachable(false),
-    m_isAttachableHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_permissionsBoundaryUsageCount(0),
-    m_permissionsBoundaryUsageCountHasBeenSet(false),
-    m_policyIdHasBeenSet(false),
-    m_policyNameHasBeenSet(false),
-    m_policyVersionListHasBeenSet(false),
-    m_updateDateHasBeenSet(false)
-{
-}
-
 AwsIamPolicyDetails::AwsIamPolicyDetails(JsonView jsonValue)
-  : AwsIamPolicyDetails()
 {
   *this = jsonValue;
 }
@@ -47,66 +28,48 @@ AwsIamPolicyDetails& AwsIamPolicyDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AttachmentCount"))
   {
     m_attachmentCount = jsonValue.GetInteger("AttachmentCount");
-
     m_attachmentCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateDate"))
   {
     m_createDate = jsonValue.GetString("CreateDate");
-
     m_createDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultVersionId"))
   {
     m_defaultVersionId = jsonValue.GetString("DefaultVersionId");
-
     m_defaultVersionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsAttachable"))
   {
     m_isAttachable = jsonValue.GetBool("IsAttachable");
-
     m_isAttachableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Path"))
   {
     m_path = jsonValue.GetString("Path");
-
     m_pathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PermissionsBoundaryUsageCount"))
   {
     m_permissionsBoundaryUsageCount = jsonValue.GetInteger("PermissionsBoundaryUsageCount");
-
     m_permissionsBoundaryUsageCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolicyId"))
   {
     m_policyId = jsonValue.GetString("PolicyId");
-
     m_policyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolicyName"))
   {
     m_policyName = jsonValue.GetString("PolicyName");
-
     m_policyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolicyVersionList"))
   {
     Aws::Utils::Array<JsonView> policyVersionListJsonList = jsonValue.GetArray("PolicyVersionList");
@@ -116,14 +79,11 @@ AwsIamPolicyDetails& AwsIamPolicyDetails::operator =(JsonView jsonValue)
     }
     m_policyVersionListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdateDate"))
   {
     m_updateDate = jsonValue.GetString("UpdateDate");
-
     m_updateDateHasBeenSet = true;
   }
-
   return *this;
 }
 

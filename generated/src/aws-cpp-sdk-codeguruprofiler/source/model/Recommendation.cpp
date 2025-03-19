@@ -18,20 +18,7 @@ namespace CodeGuruProfiler
 namespace Model
 {
 
-Recommendation::Recommendation() : 
-    m_allMatchesCount(0),
-    m_allMatchesCountHasBeenSet(false),
-    m_allMatchesSum(0.0),
-    m_allMatchesSumHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_patternHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_topMatchesHasBeenSet(false)
-{
-}
-
 Recommendation::Recommendation(JsonView jsonValue)
-  : Recommendation()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ Recommendation& Recommendation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("allMatchesCount"))
   {
     m_allMatchesCount = jsonValue.GetInteger("allMatchesCount");
-
     m_allMatchesCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allMatchesSum"))
   {
     m_allMatchesSum = jsonValue.GetDouble("allMatchesSum");
-
     m_allMatchesSumHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetString("endTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pattern"))
   {
     m_pattern = jsonValue.GetObject("pattern");
-
     m_patternHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetString("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("topMatches"))
   {
     Aws::Utils::Array<JsonView> topMatchesJsonList = jsonValue.GetArray("topMatches");
@@ -82,7 +59,6 @@ Recommendation& Recommendation::operator =(JsonView jsonValue)
     }
     m_topMatchesHasBeenSet = true;
   }
-
   return *this;
 }
 

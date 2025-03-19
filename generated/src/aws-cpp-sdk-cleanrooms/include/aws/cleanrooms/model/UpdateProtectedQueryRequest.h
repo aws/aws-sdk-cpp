@@ -22,7 +22,7 @@ namespace Model
   class UpdateProtectedQueryRequest : public CleanRoomsRequest
   {
   public:
-    AWS_CLEANROOMS_API UpdateProtectedQueryRequest();
+    AWS_CLEANROOMS_API UpdateProtectedQueryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,28 +37,24 @@ namespace Model
     /**
      * <p>The identifier for a member of a protected query instance.</p>
      */
-    inline const Aws::String& GetMembershipIdentifier() const{ return m_membershipIdentifier; }
+    inline const Aws::String& GetMembershipIdentifier() const { return m_membershipIdentifier; }
     inline bool MembershipIdentifierHasBeenSet() const { return m_membershipIdentifierHasBeenSet; }
-    inline void SetMembershipIdentifier(const Aws::String& value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier = value; }
-    inline void SetMembershipIdentifier(Aws::String&& value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier = std::move(value); }
-    inline void SetMembershipIdentifier(const char* value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier.assign(value); }
-    inline UpdateProtectedQueryRequest& WithMembershipIdentifier(const Aws::String& value) { SetMembershipIdentifier(value); return *this;}
-    inline UpdateProtectedQueryRequest& WithMembershipIdentifier(Aws::String&& value) { SetMembershipIdentifier(std::move(value)); return *this;}
-    inline UpdateProtectedQueryRequest& WithMembershipIdentifier(const char* value) { SetMembershipIdentifier(value); return *this;}
+    template<typename MembershipIdentifierT = Aws::String>
+    void SetMembershipIdentifier(MembershipIdentifierT&& value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier = std::forward<MembershipIdentifierT>(value); }
+    template<typename MembershipIdentifierT = Aws::String>
+    UpdateProtectedQueryRequest& WithMembershipIdentifier(MembershipIdentifierT&& value) { SetMembershipIdentifier(std::forward<MembershipIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier for a protected query instance.</p>
      */
-    inline const Aws::String& GetProtectedQueryIdentifier() const{ return m_protectedQueryIdentifier; }
+    inline const Aws::String& GetProtectedQueryIdentifier() const { return m_protectedQueryIdentifier; }
     inline bool ProtectedQueryIdentifierHasBeenSet() const { return m_protectedQueryIdentifierHasBeenSet; }
-    inline void SetProtectedQueryIdentifier(const Aws::String& value) { m_protectedQueryIdentifierHasBeenSet = true; m_protectedQueryIdentifier = value; }
-    inline void SetProtectedQueryIdentifier(Aws::String&& value) { m_protectedQueryIdentifierHasBeenSet = true; m_protectedQueryIdentifier = std::move(value); }
-    inline void SetProtectedQueryIdentifier(const char* value) { m_protectedQueryIdentifierHasBeenSet = true; m_protectedQueryIdentifier.assign(value); }
-    inline UpdateProtectedQueryRequest& WithProtectedQueryIdentifier(const Aws::String& value) { SetProtectedQueryIdentifier(value); return *this;}
-    inline UpdateProtectedQueryRequest& WithProtectedQueryIdentifier(Aws::String&& value) { SetProtectedQueryIdentifier(std::move(value)); return *this;}
-    inline UpdateProtectedQueryRequest& WithProtectedQueryIdentifier(const char* value) { SetProtectedQueryIdentifier(value); return *this;}
+    template<typename ProtectedQueryIdentifierT = Aws::String>
+    void SetProtectedQueryIdentifier(ProtectedQueryIdentifierT&& value) { m_protectedQueryIdentifierHasBeenSet = true; m_protectedQueryIdentifier = std::forward<ProtectedQueryIdentifierT>(value); }
+    template<typename ProtectedQueryIdentifierT = Aws::String>
+    UpdateProtectedQueryRequest& WithProtectedQueryIdentifier(ProtectedQueryIdentifierT&& value) { SetProtectedQueryIdentifier(std::forward<ProtectedQueryIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,12 +62,10 @@ namespace Model
      * <p>The target status of a query. Used to update the execution status of a
      * currently running query.</p>
      */
-    inline const TargetProtectedQueryStatus& GetTargetStatus() const{ return m_targetStatus; }
+    inline TargetProtectedQueryStatus GetTargetStatus() const { return m_targetStatus; }
     inline bool TargetStatusHasBeenSet() const { return m_targetStatusHasBeenSet; }
-    inline void SetTargetStatus(const TargetProtectedQueryStatus& value) { m_targetStatusHasBeenSet = true; m_targetStatus = value; }
-    inline void SetTargetStatus(TargetProtectedQueryStatus&& value) { m_targetStatusHasBeenSet = true; m_targetStatus = std::move(value); }
-    inline UpdateProtectedQueryRequest& WithTargetStatus(const TargetProtectedQueryStatus& value) { SetTargetStatus(value); return *this;}
-    inline UpdateProtectedQueryRequest& WithTargetStatus(TargetProtectedQueryStatus&& value) { SetTargetStatus(std::move(value)); return *this;}
+    inline void SetTargetStatus(TargetProtectedQueryStatus value) { m_targetStatusHasBeenSet = true; m_targetStatus = value; }
+    inline UpdateProtectedQueryRequest& WithTargetStatus(TargetProtectedQueryStatus value) { SetTargetStatus(value); return *this;}
     ///@}
   private:
 
@@ -81,7 +75,7 @@ namespace Model
     Aws::String m_protectedQueryIdentifier;
     bool m_protectedQueryIdentifierHasBeenSet = false;
 
-    TargetProtectedQueryStatus m_targetStatus;
+    TargetProtectedQueryStatus m_targetStatus{TargetProtectedQueryStatus::NOT_SET};
     bool m_targetStatusHasBeenSet = false;
   };
 

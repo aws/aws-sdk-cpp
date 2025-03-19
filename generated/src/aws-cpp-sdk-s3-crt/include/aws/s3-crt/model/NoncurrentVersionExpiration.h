@@ -34,7 +34,7 @@ namespace Model
   class NoncurrentVersionExpiration
   {
   public:
-    AWS_S3CRT_API NoncurrentVersionExpiration();
+    AWS_S3CRT_API NoncurrentVersionExpiration() = default;
     AWS_S3CRT_API NoncurrentVersionExpiration(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CRT_API NoncurrentVersionExpiration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -52,7 +52,7 @@ namespace Model
      * only. It is not supported for directory bucket lifecycle configurations.</p>
      * 
      */
-    inline int GetNoncurrentDays() const{ return m_noncurrentDays; }
+    inline int GetNoncurrentDays() const { return m_noncurrentDays; }
     inline bool NoncurrentDaysHasBeenSet() const { return m_noncurrentDaysHasBeenSet; }
     inline void SetNoncurrentDays(int value) { m_noncurrentDaysHasBeenSet = true; m_noncurrentDays = value; }
     inline NoncurrentVersionExpiration& WithNoncurrentDays(int value) { SetNoncurrentDays(value); return *this;}
@@ -69,17 +69,17 @@ namespace Model
      * <p>This parameter applies to general purpose buckets only. It is not supported
      * for directory bucket lifecycle configurations.</p> 
      */
-    inline int GetNewerNoncurrentVersions() const{ return m_newerNoncurrentVersions; }
+    inline int GetNewerNoncurrentVersions() const { return m_newerNoncurrentVersions; }
     inline bool NewerNoncurrentVersionsHasBeenSet() const { return m_newerNoncurrentVersionsHasBeenSet; }
     inline void SetNewerNoncurrentVersions(int value) { m_newerNoncurrentVersionsHasBeenSet = true; m_newerNoncurrentVersions = value; }
     inline NoncurrentVersionExpiration& WithNewerNoncurrentVersions(int value) { SetNewerNoncurrentVersions(value); return *this;}
     ///@}
   private:
 
-    int m_noncurrentDays;
+    int m_noncurrentDays{0};
     bool m_noncurrentDaysHasBeenSet = false;
 
-    int m_newerNoncurrentVersions;
+    int m_newerNoncurrentVersions{0};
     bool m_newerNoncurrentVersionsHasBeenSet = false;
   };
 

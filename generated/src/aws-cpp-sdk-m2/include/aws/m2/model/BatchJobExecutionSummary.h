@@ -36,7 +36,7 @@ namespace Model
   class BatchJobExecutionSummary
   {
   public:
-    AWS_MAINFRAMEMODERNIZATION_API BatchJobExecutionSummary();
+    AWS_MAINFRAMEMODERNIZATION_API BatchJobExecutionSummary() = default;
     AWS_MAINFRAMEMODERNIZATION_API BatchJobExecutionSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAINFRAMEMODERNIZATION_API BatchJobExecutionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,92 +46,82 @@ namespace Model
     /**
      * <p>The unique identifier of the application that hosts this batch job.</p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-    inline BatchJobExecutionSummary& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline BatchJobExecutionSummary& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline BatchJobExecutionSummary& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    BatchJobExecutionSummary& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of this batch job.</p>
      */
-    inline const BatchJobIdentifier& GetBatchJobIdentifier() const{ return m_batchJobIdentifier; }
+    inline const BatchJobIdentifier& GetBatchJobIdentifier() const { return m_batchJobIdentifier; }
     inline bool BatchJobIdentifierHasBeenSet() const { return m_batchJobIdentifierHasBeenSet; }
-    inline void SetBatchJobIdentifier(const BatchJobIdentifier& value) { m_batchJobIdentifierHasBeenSet = true; m_batchJobIdentifier = value; }
-    inline void SetBatchJobIdentifier(BatchJobIdentifier&& value) { m_batchJobIdentifierHasBeenSet = true; m_batchJobIdentifier = std::move(value); }
-    inline BatchJobExecutionSummary& WithBatchJobIdentifier(const BatchJobIdentifier& value) { SetBatchJobIdentifier(value); return *this;}
-    inline BatchJobExecutionSummary& WithBatchJobIdentifier(BatchJobIdentifier&& value) { SetBatchJobIdentifier(std::move(value)); return *this;}
+    template<typename BatchJobIdentifierT = BatchJobIdentifier>
+    void SetBatchJobIdentifier(BatchJobIdentifierT&& value) { m_batchJobIdentifierHasBeenSet = true; m_batchJobIdentifier = std::forward<BatchJobIdentifierT>(value); }
+    template<typename BatchJobIdentifierT = BatchJobIdentifier>
+    BatchJobExecutionSummary& WithBatchJobIdentifier(BatchJobIdentifierT&& value) { SetBatchJobIdentifier(std::forward<BatchJobIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp when this batch job execution ended.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline BatchJobExecutionSummary& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline BatchJobExecutionSummary& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    BatchJobExecutionSummary& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of this execution of the batch job.</p>
      */
-    inline const Aws::String& GetExecutionId() const{ return m_executionId; }
+    inline const Aws::String& GetExecutionId() const { return m_executionId; }
     inline bool ExecutionIdHasBeenSet() const { return m_executionIdHasBeenSet; }
-    inline void SetExecutionId(const Aws::String& value) { m_executionIdHasBeenSet = true; m_executionId = value; }
-    inline void SetExecutionId(Aws::String&& value) { m_executionIdHasBeenSet = true; m_executionId = std::move(value); }
-    inline void SetExecutionId(const char* value) { m_executionIdHasBeenSet = true; m_executionId.assign(value); }
-    inline BatchJobExecutionSummary& WithExecutionId(const Aws::String& value) { SetExecutionId(value); return *this;}
-    inline BatchJobExecutionSummary& WithExecutionId(Aws::String&& value) { SetExecutionId(std::move(value)); return *this;}
-    inline BatchJobExecutionSummary& WithExecutionId(const char* value) { SetExecutionId(value); return *this;}
+    template<typename ExecutionIdT = Aws::String>
+    void SetExecutionId(ExecutionIdT&& value) { m_executionIdHasBeenSet = true; m_executionId = std::forward<ExecutionIdT>(value); }
+    template<typename ExecutionIdT = Aws::String>
+    BatchJobExecutionSummary& WithExecutionId(ExecutionIdT&& value) { SetExecutionId(std::forward<ExecutionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of a particular batch job.</p>
      */
-    inline const Aws::String& GetJobId() const{ return m_jobId; }
+    inline const Aws::String& GetJobId() const { return m_jobId; }
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-    inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-    inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-    inline BatchJobExecutionSummary& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-    inline BatchJobExecutionSummary& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-    inline BatchJobExecutionSummary& WithJobId(const char* value) { SetJobId(value); return *this;}
+    template<typename JobIdT = Aws::String>
+    void SetJobId(JobIdT&& value) { m_jobIdHasBeenSet = true; m_jobId = std::forward<JobIdT>(value); }
+    template<typename JobIdT = Aws::String>
+    BatchJobExecutionSummary& WithJobId(JobIdT&& value) { SetJobId(std::forward<JobIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of a particular batch job.</p>
      */
-    inline const Aws::String& GetJobName() const{ return m_jobName; }
+    inline const Aws::String& GetJobName() const { return m_jobName; }
     inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
-    inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
-    inline void SetJobName(Aws::String&& value) { m_jobNameHasBeenSet = true; m_jobName = std::move(value); }
-    inline void SetJobName(const char* value) { m_jobNameHasBeenSet = true; m_jobName.assign(value); }
-    inline BatchJobExecutionSummary& WithJobName(const Aws::String& value) { SetJobName(value); return *this;}
-    inline BatchJobExecutionSummary& WithJobName(Aws::String&& value) { SetJobName(std::move(value)); return *this;}
-    inline BatchJobExecutionSummary& WithJobName(const char* value) { SetJobName(value); return *this;}
+    template<typename JobNameT = Aws::String>
+    void SetJobName(JobNameT&& value) { m_jobNameHasBeenSet = true; m_jobName = std::forward<JobNameT>(value); }
+    template<typename JobNameT = Aws::String>
+    BatchJobExecutionSummary& WithJobName(JobNameT&& value) { SetJobName(std::forward<JobNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of a particular batch job execution.</p>
      */
-    inline const BatchJobType& GetJobType() const{ return m_jobType; }
+    inline BatchJobType GetJobType() const { return m_jobType; }
     inline bool JobTypeHasBeenSet() const { return m_jobTypeHasBeenSet; }
-    inline void SetJobType(const BatchJobType& value) { m_jobTypeHasBeenSet = true; m_jobType = value; }
-    inline void SetJobType(BatchJobType&& value) { m_jobTypeHasBeenSet = true; m_jobType = std::move(value); }
-    inline BatchJobExecutionSummary& WithJobType(const BatchJobType& value) { SetJobType(value); return *this;}
-    inline BatchJobExecutionSummary& WithJobType(BatchJobType&& value) { SetJobType(std::move(value)); return *this;}
+    inline void SetJobType(BatchJobType value) { m_jobTypeHasBeenSet = true; m_jobType = value; }
+    inline BatchJobExecutionSummary& WithJobType(BatchJobType value) { SetJobType(value); return *this;}
     ///@}
 
     ///@{
@@ -142,38 +132,34 @@ namespace Model
      * return codes</a> in the <i>IBM WebSphere Application Server</i>
      * documentation.</p>
      */
-    inline const Aws::String& GetReturnCode() const{ return m_returnCode; }
+    inline const Aws::String& GetReturnCode() const { return m_returnCode; }
     inline bool ReturnCodeHasBeenSet() const { return m_returnCodeHasBeenSet; }
-    inline void SetReturnCode(const Aws::String& value) { m_returnCodeHasBeenSet = true; m_returnCode = value; }
-    inline void SetReturnCode(Aws::String&& value) { m_returnCodeHasBeenSet = true; m_returnCode = std::move(value); }
-    inline void SetReturnCode(const char* value) { m_returnCodeHasBeenSet = true; m_returnCode.assign(value); }
-    inline BatchJobExecutionSummary& WithReturnCode(const Aws::String& value) { SetReturnCode(value); return *this;}
-    inline BatchJobExecutionSummary& WithReturnCode(Aws::String&& value) { SetReturnCode(std::move(value)); return *this;}
-    inline BatchJobExecutionSummary& WithReturnCode(const char* value) { SetReturnCode(value); return *this;}
+    template<typename ReturnCodeT = Aws::String>
+    void SetReturnCode(ReturnCodeT&& value) { m_returnCodeHasBeenSet = true; m_returnCode = std::forward<ReturnCodeT>(value); }
+    template<typename ReturnCodeT = Aws::String>
+    BatchJobExecutionSummary& WithReturnCode(ReturnCodeT&& value) { SetReturnCode(std::forward<ReturnCodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp when a particular batch job execution started.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline BatchJobExecutionSummary& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline BatchJobExecutionSummary& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    BatchJobExecutionSummary& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of a particular batch job execution.</p>
      */
-    inline const BatchJobExecutionStatus& GetStatus() const{ return m_status; }
+    inline BatchJobExecutionStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const BatchJobExecutionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(BatchJobExecutionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline BatchJobExecutionSummary& WithStatus(const BatchJobExecutionStatus& value) { SetStatus(value); return *this;}
-    inline BatchJobExecutionSummary& WithStatus(BatchJobExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(BatchJobExecutionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline BatchJobExecutionSummary& WithStatus(BatchJobExecutionStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
@@ -183,7 +169,7 @@ namespace Model
     BatchJobIdentifier m_batchJobIdentifier;
     bool m_batchJobIdentifierHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
 
     Aws::String m_executionId;
@@ -195,16 +181,16 @@ namespace Model
     Aws::String m_jobName;
     bool m_jobNameHasBeenSet = false;
 
-    BatchJobType m_jobType;
+    BatchJobType m_jobType{BatchJobType::NOT_SET};
     bool m_jobTypeHasBeenSet = false;
 
     Aws::String m_returnCode;
     bool m_returnCodeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    BatchJobExecutionStatus m_status;
+    BatchJobExecutionStatus m_status{BatchJobExecutionStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

@@ -18,18 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ExperimentSummary::ExperimentSummary() : 
-    m_experimentArnHasBeenSet(false),
-    m_experimentNameHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_experimentSourceHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
-{
-}
-
 ExperimentSummary::ExperimentSummary(JsonView jsonValue)
-  : ExperimentSummary()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ ExperimentSummary& ExperimentSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ExperimentArn"))
   {
     m_experimentArn = jsonValue.GetString("ExperimentArn");
-
     m_experimentArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExperimentName"))
   {
     m_experimentName = jsonValue.GetString("ExperimentName");
-
     m_experimentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayName"))
   {
     m_displayName = jsonValue.GetString("DisplayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExperimentSource"))
   {
     m_experimentSource = jsonValue.GetObject("ExperimentSource");
-
     m_experimentSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

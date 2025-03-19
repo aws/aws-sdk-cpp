@@ -27,7 +27,7 @@ namespace Model
   class CreateQueueEnvironmentResult
   {
   public:
-    AWS_DEADLINE_API CreateQueueEnvironmentResult();
+    AWS_DEADLINE_API CreateQueueEnvironmentResult() = default;
     AWS_DEADLINE_API CreateQueueEnvironmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DEADLINE_API CreateQueueEnvironmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The queue environment ID.</p>
      */
-    inline const Aws::String& GetQueueEnvironmentId() const{ return m_queueEnvironmentId; }
-    inline void SetQueueEnvironmentId(const Aws::String& value) { m_queueEnvironmentId = value; }
-    inline void SetQueueEnvironmentId(Aws::String&& value) { m_queueEnvironmentId = std::move(value); }
-    inline void SetQueueEnvironmentId(const char* value) { m_queueEnvironmentId.assign(value); }
-    inline CreateQueueEnvironmentResult& WithQueueEnvironmentId(const Aws::String& value) { SetQueueEnvironmentId(value); return *this;}
-    inline CreateQueueEnvironmentResult& WithQueueEnvironmentId(Aws::String&& value) { SetQueueEnvironmentId(std::move(value)); return *this;}
-    inline CreateQueueEnvironmentResult& WithQueueEnvironmentId(const char* value) { SetQueueEnvironmentId(value); return *this;}
+    inline const Aws::String& GetQueueEnvironmentId() const { return m_queueEnvironmentId; }
+    template<typename QueueEnvironmentIdT = Aws::String>
+    void SetQueueEnvironmentId(QueueEnvironmentIdT&& value) { m_queueEnvironmentIdHasBeenSet = true; m_queueEnvironmentId = std::forward<QueueEnvironmentIdT>(value); }
+    template<typename QueueEnvironmentIdT = Aws::String>
+    CreateQueueEnvironmentResult& WithQueueEnvironmentId(QueueEnvironmentIdT&& value) { SetQueueEnvironmentId(std::forward<QueueEnvironmentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateQueueEnvironmentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateQueueEnvironmentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateQueueEnvironmentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateQueueEnvironmentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_queueEnvironmentId;
+    bool m_queueEnvironmentIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

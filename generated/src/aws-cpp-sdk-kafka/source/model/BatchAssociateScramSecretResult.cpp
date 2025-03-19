@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchAssociateScramSecretResult::BatchAssociateScramSecretResult()
-{
-}
-
 BatchAssociateScramSecretResult::BatchAssociateScramSecretResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ BatchAssociateScramSecretResult& BatchAssociateScramSecretResult::operator =(con
   if(jsonValue.ValueExists("clusterArn"))
   {
     m_clusterArn = jsonValue.GetString("clusterArn");
-
+    m_clusterArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unprocessedScramSecrets"))
   {
     Aws::Utils::Array<JsonView> unprocessedScramSecretsJsonList = jsonValue.GetArray("unprocessedScramSecrets");
@@ -42,14 +37,15 @@ BatchAssociateScramSecretResult& BatchAssociateScramSecretResult::operator =(con
     {
       m_unprocessedScramSecrets.push_back(unprocessedScramSecretsJsonList[unprocessedScramSecretsIndex].AsObject());
     }
+    m_unprocessedScramSecretsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -38,7 +38,7 @@ namespace Model
   class BudgetPerformanceHistory
   {
   public:
-    AWS_BUDGETS_API BudgetPerformanceHistory();
+    AWS_BUDGETS_API BudgetPerformanceHistory() = default;
     AWS_BUDGETS_API BudgetPerformanceHistory(Aws::Utils::Json::JsonView jsonValue);
     AWS_BUDGETS_API BudgetPerformanceHistory& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BUDGETS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,24 +46,20 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetBudgetName() const{ return m_budgetName; }
+    inline const Aws::String& GetBudgetName() const { return m_budgetName; }
     inline bool BudgetNameHasBeenSet() const { return m_budgetNameHasBeenSet; }
-    inline void SetBudgetName(const Aws::String& value) { m_budgetNameHasBeenSet = true; m_budgetName = value; }
-    inline void SetBudgetName(Aws::String&& value) { m_budgetNameHasBeenSet = true; m_budgetName = std::move(value); }
-    inline void SetBudgetName(const char* value) { m_budgetNameHasBeenSet = true; m_budgetName.assign(value); }
-    inline BudgetPerformanceHistory& WithBudgetName(const Aws::String& value) { SetBudgetName(value); return *this;}
-    inline BudgetPerformanceHistory& WithBudgetName(Aws::String&& value) { SetBudgetName(std::move(value)); return *this;}
-    inline BudgetPerformanceHistory& WithBudgetName(const char* value) { SetBudgetName(value); return *this;}
+    template<typename BudgetNameT = Aws::String>
+    void SetBudgetName(BudgetNameT&& value) { m_budgetNameHasBeenSet = true; m_budgetName = std::forward<BudgetNameT>(value); }
+    template<typename BudgetNameT = Aws::String>
+    BudgetPerformanceHistory& WithBudgetName(BudgetNameT&& value) { SetBudgetName(std::forward<BudgetNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const BudgetType& GetBudgetType() const{ return m_budgetType; }
+    inline BudgetType GetBudgetType() const { return m_budgetType; }
     inline bool BudgetTypeHasBeenSet() const { return m_budgetTypeHasBeenSet; }
-    inline void SetBudgetType(const BudgetType& value) { m_budgetTypeHasBeenSet = true; m_budgetType = value; }
-    inline void SetBudgetType(BudgetType&& value) { m_budgetTypeHasBeenSet = true; m_budgetType = std::move(value); }
-    inline BudgetPerformanceHistory& WithBudgetType(const BudgetType& value) { SetBudgetType(value); return *this;}
-    inline BudgetPerformanceHistory& WithBudgetType(BudgetType&& value) { SetBudgetType(std::move(value)); return *this;}
+    inline void SetBudgetType(BudgetType value) { m_budgetTypeHasBeenSet = true; m_budgetType = value; }
+    inline BudgetPerformanceHistory& WithBudgetType(BudgetType value) { SetBudgetType(value); return *this;}
     ///@}
 
     ///@{
@@ -71,18 +67,16 @@ namespace Model
      * <p>The history of the cost filters for a budget during the specified time
      * period.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetCostFilters() const{ return m_costFilters; }
+    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetCostFilters() const { return m_costFilters; }
     inline bool CostFiltersHasBeenSet() const { return m_costFiltersHasBeenSet; }
-    inline void SetCostFilters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_costFiltersHasBeenSet = true; m_costFilters = value; }
-    inline void SetCostFilters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_costFiltersHasBeenSet = true; m_costFilters = std::move(value); }
-    inline BudgetPerformanceHistory& WithCostFilters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetCostFilters(value); return *this;}
-    inline BudgetPerformanceHistory& WithCostFilters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetCostFilters(std::move(value)); return *this;}
-    inline BudgetPerformanceHistory& AddCostFilters(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_costFiltersHasBeenSet = true; m_costFilters.emplace(key, value); return *this; }
-    inline BudgetPerformanceHistory& AddCostFilters(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_costFiltersHasBeenSet = true; m_costFilters.emplace(std::move(key), value); return *this; }
-    inline BudgetPerformanceHistory& AddCostFilters(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_costFiltersHasBeenSet = true; m_costFilters.emplace(key, std::move(value)); return *this; }
-    inline BudgetPerformanceHistory& AddCostFilters(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_costFiltersHasBeenSet = true; m_costFilters.emplace(std::move(key), std::move(value)); return *this; }
-    inline BudgetPerformanceHistory& AddCostFilters(const char* key, Aws::Vector<Aws::String>&& value) { m_costFiltersHasBeenSet = true; m_costFilters.emplace(key, std::move(value)); return *this; }
-    inline BudgetPerformanceHistory& AddCostFilters(const char* key, const Aws::Vector<Aws::String>& value) { m_costFiltersHasBeenSet = true; m_costFilters.emplace(key, value); return *this; }
+    template<typename CostFiltersT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    void SetCostFilters(CostFiltersT&& value) { m_costFiltersHasBeenSet = true; m_costFilters = std::forward<CostFiltersT>(value); }
+    template<typename CostFiltersT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    BudgetPerformanceHistory& WithCostFilters(CostFiltersT&& value) { SetCostFilters(std::forward<CostFiltersT>(value)); return *this;}
+    template<typename CostFiltersKeyT = Aws::String, typename CostFiltersValueT = Aws::Vector<Aws::String>>
+    BudgetPerformanceHistory& AddCostFilters(CostFiltersKeyT&& key, CostFiltersValueT&& value) {
+      m_costFiltersHasBeenSet = true; m_costFilters.emplace(std::forward<CostFiltersKeyT>(key), std::forward<CostFiltersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -90,22 +84,20 @@ namespace Model
      * <p>The history of the cost types for a budget during the specified time
      * period.</p>
      */
-    inline const CostTypes& GetCostTypes() const{ return m_costTypes; }
+    inline const CostTypes& GetCostTypes() const { return m_costTypes; }
     inline bool CostTypesHasBeenSet() const { return m_costTypesHasBeenSet; }
-    inline void SetCostTypes(const CostTypes& value) { m_costTypesHasBeenSet = true; m_costTypes = value; }
-    inline void SetCostTypes(CostTypes&& value) { m_costTypesHasBeenSet = true; m_costTypes = std::move(value); }
-    inline BudgetPerformanceHistory& WithCostTypes(const CostTypes& value) { SetCostTypes(value); return *this;}
-    inline BudgetPerformanceHistory& WithCostTypes(CostTypes&& value) { SetCostTypes(std::move(value)); return *this;}
+    template<typename CostTypesT = CostTypes>
+    void SetCostTypes(CostTypesT&& value) { m_costTypesHasBeenSet = true; m_costTypes = std::forward<CostTypesT>(value); }
+    template<typename CostTypesT = CostTypes>
+    BudgetPerformanceHistory& WithCostTypes(CostTypesT&& value) { SetCostTypes(std::forward<CostTypesT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const TimeUnit& GetTimeUnit() const{ return m_timeUnit; }
+    inline TimeUnit GetTimeUnit() const { return m_timeUnit; }
     inline bool TimeUnitHasBeenSet() const { return m_timeUnitHasBeenSet; }
-    inline void SetTimeUnit(const TimeUnit& value) { m_timeUnitHasBeenSet = true; m_timeUnit = value; }
-    inline void SetTimeUnit(TimeUnit&& value) { m_timeUnitHasBeenSet = true; m_timeUnit = std::move(value); }
-    inline BudgetPerformanceHistory& WithTimeUnit(const TimeUnit& value) { SetTimeUnit(value); return *this;}
-    inline BudgetPerformanceHistory& WithTimeUnit(TimeUnit&& value) { SetTimeUnit(std::move(value)); return *this;}
+    inline void SetTimeUnit(TimeUnit value) { m_timeUnitHasBeenSet = true; m_timeUnit = value; }
+    inline BudgetPerformanceHistory& WithTimeUnit(TimeUnit value) { SetTimeUnit(value); return *this;}
     ///@}
 
     ///@{
@@ -113,21 +105,21 @@ namespace Model
      * <p>A list of amounts of cost or usage that you created budgets for, which are
      * compared to your actual costs or usage.</p>
      */
-    inline const Aws::Vector<BudgetedAndActualAmounts>& GetBudgetedAndActualAmountsList() const{ return m_budgetedAndActualAmountsList; }
+    inline const Aws::Vector<BudgetedAndActualAmounts>& GetBudgetedAndActualAmountsList() const { return m_budgetedAndActualAmountsList; }
     inline bool BudgetedAndActualAmountsListHasBeenSet() const { return m_budgetedAndActualAmountsListHasBeenSet; }
-    inline void SetBudgetedAndActualAmountsList(const Aws::Vector<BudgetedAndActualAmounts>& value) { m_budgetedAndActualAmountsListHasBeenSet = true; m_budgetedAndActualAmountsList = value; }
-    inline void SetBudgetedAndActualAmountsList(Aws::Vector<BudgetedAndActualAmounts>&& value) { m_budgetedAndActualAmountsListHasBeenSet = true; m_budgetedAndActualAmountsList = std::move(value); }
-    inline BudgetPerformanceHistory& WithBudgetedAndActualAmountsList(const Aws::Vector<BudgetedAndActualAmounts>& value) { SetBudgetedAndActualAmountsList(value); return *this;}
-    inline BudgetPerformanceHistory& WithBudgetedAndActualAmountsList(Aws::Vector<BudgetedAndActualAmounts>&& value) { SetBudgetedAndActualAmountsList(std::move(value)); return *this;}
-    inline BudgetPerformanceHistory& AddBudgetedAndActualAmountsList(const BudgetedAndActualAmounts& value) { m_budgetedAndActualAmountsListHasBeenSet = true; m_budgetedAndActualAmountsList.push_back(value); return *this; }
-    inline BudgetPerformanceHistory& AddBudgetedAndActualAmountsList(BudgetedAndActualAmounts&& value) { m_budgetedAndActualAmountsListHasBeenSet = true; m_budgetedAndActualAmountsList.push_back(std::move(value)); return *this; }
+    template<typename BudgetedAndActualAmountsListT = Aws::Vector<BudgetedAndActualAmounts>>
+    void SetBudgetedAndActualAmountsList(BudgetedAndActualAmountsListT&& value) { m_budgetedAndActualAmountsListHasBeenSet = true; m_budgetedAndActualAmountsList = std::forward<BudgetedAndActualAmountsListT>(value); }
+    template<typename BudgetedAndActualAmountsListT = Aws::Vector<BudgetedAndActualAmounts>>
+    BudgetPerformanceHistory& WithBudgetedAndActualAmountsList(BudgetedAndActualAmountsListT&& value) { SetBudgetedAndActualAmountsList(std::forward<BudgetedAndActualAmountsListT>(value)); return *this;}
+    template<typename BudgetedAndActualAmountsListT = BudgetedAndActualAmounts>
+    BudgetPerformanceHistory& AddBudgetedAndActualAmountsList(BudgetedAndActualAmountsListT&& value) { m_budgetedAndActualAmountsListHasBeenSet = true; m_budgetedAndActualAmountsList.emplace_back(std::forward<BudgetedAndActualAmountsListT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_budgetName;
     bool m_budgetNameHasBeenSet = false;
 
-    BudgetType m_budgetType;
+    BudgetType m_budgetType{BudgetType::NOT_SET};
     bool m_budgetTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_costFilters;
@@ -136,7 +128,7 @@ namespace Model
     CostTypes m_costTypes;
     bool m_costTypesHasBeenSet = false;
 
-    TimeUnit m_timeUnit;
+    TimeUnit m_timeUnit{TimeUnit::NOT_SET};
     bool m_timeUnitHasBeenSet = false;
 
     Aws::Vector<BudgetedAndActualAmounts> m_budgetedAndActualAmountsList;

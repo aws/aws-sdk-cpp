@@ -12,17 +12,6 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListExportJobsRequest::ListExportJobsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_pageSize(0),
-    m_pageSizeHasBeenSet(false),
-    m_exportSourceType(ExportSourceType::NOT_SET),
-    m_exportSourceTypeHasBeenSet(false),
-    m_jobStatus(JobStatus::NOT_SET),
-    m_jobStatusHasBeenSet(false)
-{
-}
-
 Aws::String ListExportJobsRequest::SerializePayload() const
 {
   JsonValue payload;

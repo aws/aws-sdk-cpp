@@ -35,7 +35,7 @@ namespace Model
   class DeploymentTarget
   {
   public:
-    AWS_CODEDEPLOY_API DeploymentTarget();
+    AWS_CODEDEPLOY_API DeploymentTarget() = default;
     AWS_CODEDEPLOY_API DeploymentTarget(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API DeploymentTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,10 @@ namespace Model
      * <p>The deployment type that is specific to the deployment's compute platform or
      * deployments initiated by a CloudFormation stack update.</p>
      */
-    inline const DeploymentTargetType& GetDeploymentTargetType() const{ return m_deploymentTargetType; }
+    inline DeploymentTargetType GetDeploymentTargetType() const { return m_deploymentTargetType; }
     inline bool DeploymentTargetTypeHasBeenSet() const { return m_deploymentTargetTypeHasBeenSet; }
-    inline void SetDeploymentTargetType(const DeploymentTargetType& value) { m_deploymentTargetTypeHasBeenSet = true; m_deploymentTargetType = value; }
-    inline void SetDeploymentTargetType(DeploymentTargetType&& value) { m_deploymentTargetTypeHasBeenSet = true; m_deploymentTargetType = std::move(value); }
-    inline DeploymentTarget& WithDeploymentTargetType(const DeploymentTargetType& value) { SetDeploymentTargetType(value); return *this;}
-    inline DeploymentTarget& WithDeploymentTargetType(DeploymentTargetType&& value) { SetDeploymentTargetType(std::move(value)); return *this;}
+    inline void SetDeploymentTargetType(DeploymentTargetType value) { m_deploymentTargetTypeHasBeenSet = true; m_deploymentTargetType = value; }
+    inline DeploymentTarget& WithDeploymentTargetType(DeploymentTargetType value) { SetDeploymentTargetType(value); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +57,12 @@ namespace Model
      * <p> Information about the target for a deployment that uses the EC2/On-premises
      * compute platform. </p>
      */
-    inline const InstanceTarget& GetInstanceTarget() const{ return m_instanceTarget; }
+    inline const InstanceTarget& GetInstanceTarget() const { return m_instanceTarget; }
     inline bool InstanceTargetHasBeenSet() const { return m_instanceTargetHasBeenSet; }
-    inline void SetInstanceTarget(const InstanceTarget& value) { m_instanceTargetHasBeenSet = true; m_instanceTarget = value; }
-    inline void SetInstanceTarget(InstanceTarget&& value) { m_instanceTargetHasBeenSet = true; m_instanceTarget = std::move(value); }
-    inline DeploymentTarget& WithInstanceTarget(const InstanceTarget& value) { SetInstanceTarget(value); return *this;}
-    inline DeploymentTarget& WithInstanceTarget(InstanceTarget&& value) { SetInstanceTarget(std::move(value)); return *this;}
+    template<typename InstanceTargetT = InstanceTarget>
+    void SetInstanceTarget(InstanceTargetT&& value) { m_instanceTargetHasBeenSet = true; m_instanceTarget = std::forward<InstanceTargetT>(value); }
+    template<typename InstanceTargetT = InstanceTarget>
+    DeploymentTarget& WithInstanceTarget(InstanceTargetT&& value) { SetInstanceTarget(std::forward<InstanceTargetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +70,12 @@ namespace Model
      * <p> Information about the target for a deployment that uses the Lambda compute
      * platform. </p>
      */
-    inline const LambdaTarget& GetLambdaTarget() const{ return m_lambdaTarget; }
+    inline const LambdaTarget& GetLambdaTarget() const { return m_lambdaTarget; }
     inline bool LambdaTargetHasBeenSet() const { return m_lambdaTargetHasBeenSet; }
-    inline void SetLambdaTarget(const LambdaTarget& value) { m_lambdaTargetHasBeenSet = true; m_lambdaTarget = value; }
-    inline void SetLambdaTarget(LambdaTarget&& value) { m_lambdaTargetHasBeenSet = true; m_lambdaTarget = std::move(value); }
-    inline DeploymentTarget& WithLambdaTarget(const LambdaTarget& value) { SetLambdaTarget(value); return *this;}
-    inline DeploymentTarget& WithLambdaTarget(LambdaTarget&& value) { SetLambdaTarget(std::move(value)); return *this;}
+    template<typename LambdaTargetT = LambdaTarget>
+    void SetLambdaTarget(LambdaTargetT&& value) { m_lambdaTargetHasBeenSet = true; m_lambdaTarget = std::forward<LambdaTargetT>(value); }
+    template<typename LambdaTargetT = LambdaTarget>
+    DeploymentTarget& WithLambdaTarget(LambdaTargetT&& value) { SetLambdaTarget(std::forward<LambdaTargetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,26 +83,26 @@ namespace Model
      * <p> Information about the target for a deployment that uses the Amazon ECS
      * compute platform. </p>
      */
-    inline const ECSTarget& GetEcsTarget() const{ return m_ecsTarget; }
+    inline const ECSTarget& GetEcsTarget() const { return m_ecsTarget; }
     inline bool EcsTargetHasBeenSet() const { return m_ecsTargetHasBeenSet; }
-    inline void SetEcsTarget(const ECSTarget& value) { m_ecsTargetHasBeenSet = true; m_ecsTarget = value; }
-    inline void SetEcsTarget(ECSTarget&& value) { m_ecsTargetHasBeenSet = true; m_ecsTarget = std::move(value); }
-    inline DeploymentTarget& WithEcsTarget(const ECSTarget& value) { SetEcsTarget(value); return *this;}
-    inline DeploymentTarget& WithEcsTarget(ECSTarget&& value) { SetEcsTarget(std::move(value)); return *this;}
+    template<typename EcsTargetT = ECSTarget>
+    void SetEcsTarget(EcsTargetT&& value) { m_ecsTargetHasBeenSet = true; m_ecsTarget = std::forward<EcsTargetT>(value); }
+    template<typename EcsTargetT = ECSTarget>
+    DeploymentTarget& WithEcsTarget(EcsTargetT&& value) { SetEcsTarget(std::forward<EcsTargetT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const CloudFormationTarget& GetCloudFormationTarget() const{ return m_cloudFormationTarget; }
+    inline const CloudFormationTarget& GetCloudFormationTarget() const { return m_cloudFormationTarget; }
     inline bool CloudFormationTargetHasBeenSet() const { return m_cloudFormationTargetHasBeenSet; }
-    inline void SetCloudFormationTarget(const CloudFormationTarget& value) { m_cloudFormationTargetHasBeenSet = true; m_cloudFormationTarget = value; }
-    inline void SetCloudFormationTarget(CloudFormationTarget&& value) { m_cloudFormationTargetHasBeenSet = true; m_cloudFormationTarget = std::move(value); }
-    inline DeploymentTarget& WithCloudFormationTarget(const CloudFormationTarget& value) { SetCloudFormationTarget(value); return *this;}
-    inline DeploymentTarget& WithCloudFormationTarget(CloudFormationTarget&& value) { SetCloudFormationTarget(std::move(value)); return *this;}
+    template<typename CloudFormationTargetT = CloudFormationTarget>
+    void SetCloudFormationTarget(CloudFormationTargetT&& value) { m_cloudFormationTargetHasBeenSet = true; m_cloudFormationTarget = std::forward<CloudFormationTargetT>(value); }
+    template<typename CloudFormationTargetT = CloudFormationTarget>
+    DeploymentTarget& WithCloudFormationTarget(CloudFormationTargetT&& value) { SetCloudFormationTarget(std::forward<CloudFormationTargetT>(value)); return *this;}
     ///@}
   private:
 
-    DeploymentTargetType m_deploymentTargetType;
+    DeploymentTargetType m_deploymentTargetType{DeploymentTargetType::NOT_SET};
     bool m_deploymentTargetTypeHasBeenSet = false;
 
     InstanceTarget m_instanceTarget;

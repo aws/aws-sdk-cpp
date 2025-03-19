@@ -12,18 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateScheduledAuditRequest::CreateScheduledAuditRequest() : 
-    m_frequency(AuditFrequency::NOT_SET),
-    m_frequencyHasBeenSet(false),
-    m_dayOfMonthHasBeenSet(false),
-    m_dayOfWeek(DayOfWeek::NOT_SET),
-    m_dayOfWeekHasBeenSet(false),
-    m_targetCheckNamesHasBeenSet(false),
-    m_scheduledAuditNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateScheduledAuditRequest::SerializePayload() const
 {
   JsonValue payload;

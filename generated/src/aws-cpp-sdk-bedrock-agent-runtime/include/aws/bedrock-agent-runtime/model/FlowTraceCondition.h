@@ -35,7 +35,7 @@ namespace Model
   class FlowTraceCondition
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API FlowTraceCondition();
+    AWS_BEDROCKAGENTRUNTIME_API FlowTraceCondition() = default;
     AWS_BEDROCKAGENTRUNTIME_API FlowTraceCondition(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API FlowTraceCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The name of the condition.</p>
      */
-    inline const Aws::String& GetConditionName() const{ return m_conditionName; }
+    inline const Aws::String& GetConditionName() const { return m_conditionName; }
     inline bool ConditionNameHasBeenSet() const { return m_conditionNameHasBeenSet; }
-    inline void SetConditionName(const Aws::String& value) { m_conditionNameHasBeenSet = true; m_conditionName = value; }
-    inline void SetConditionName(Aws::String&& value) { m_conditionNameHasBeenSet = true; m_conditionName = std::move(value); }
-    inline void SetConditionName(const char* value) { m_conditionNameHasBeenSet = true; m_conditionName.assign(value); }
-    inline FlowTraceCondition& WithConditionName(const Aws::String& value) { SetConditionName(value); return *this;}
-    inline FlowTraceCondition& WithConditionName(Aws::String&& value) { SetConditionName(std::move(value)); return *this;}
-    inline FlowTraceCondition& WithConditionName(const char* value) { SetConditionName(value); return *this;}
+    template<typename ConditionNameT = Aws::String>
+    void SetConditionName(ConditionNameT&& value) { m_conditionNameHasBeenSet = true; m_conditionName = std::forward<ConditionNameT>(value); }
+    template<typename ConditionNameT = Aws::String>
+    FlowTraceCondition& WithConditionName(ConditionNameT&& value) { SetConditionName(std::forward<ConditionNameT>(value)); return *this;}
     ///@}
   private:
 

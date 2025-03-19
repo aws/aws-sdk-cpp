@@ -34,7 +34,7 @@ namespace Model
   class Stage
   {
   public:
-    AWS_IVSREALTIME_API Stage();
+    AWS_IVSREALTIME_API Stage() = default;
     AWS_IVSREALTIME_API Stage(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVSREALTIME_API Stage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVSREALTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,42 +44,36 @@ namespace Model
     /**
      * <p>Stage ARN.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline Stage& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline Stage& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline Stage& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    Stage& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Stage name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Stage& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Stage& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Stage& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Stage& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>ID of the active session within the stage.</p>
      */
-    inline const Aws::String& GetActiveSessionId() const{ return m_activeSessionId; }
+    inline const Aws::String& GetActiveSessionId() const { return m_activeSessionId; }
     inline bool ActiveSessionIdHasBeenSet() const { return m_activeSessionIdHasBeenSet; }
-    inline void SetActiveSessionId(const Aws::String& value) { m_activeSessionIdHasBeenSet = true; m_activeSessionId = value; }
-    inline void SetActiveSessionId(Aws::String&& value) { m_activeSessionIdHasBeenSet = true; m_activeSessionId = std::move(value); }
-    inline void SetActiveSessionId(const char* value) { m_activeSessionIdHasBeenSet = true; m_activeSessionId.assign(value); }
-    inline Stage& WithActiveSessionId(const Aws::String& value) { SetActiveSessionId(value); return *this;}
-    inline Stage& WithActiveSessionId(Aws::String&& value) { SetActiveSessionId(std::move(value)); return *this;}
-    inline Stage& WithActiveSessionId(const char* value) { SetActiveSessionId(value); return *this;}
+    template<typename ActiveSessionIdT = Aws::String>
+    void SetActiveSessionId(ActiveSessionIdT&& value) { m_activeSessionIdHasBeenSet = true; m_activeSessionId = std::forward<ActiveSessionIdT>(value); }
+    template<typename ActiveSessionIdT = Aws::String>
+    Stage& WithActiveSessionId(ActiveSessionIdT&& value) { SetActiveSessionId(std::forward<ActiveSessionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,19 +86,16 @@ namespace Model
      * requirements"; Amazon IVS has no constraints on tags beyond what is documented
      * there.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline Stage& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline Stage& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline Stage& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline Stage& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline Stage& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline Stage& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline Stage& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline Stage& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline Stage& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    Stage& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    Stage& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -112,24 +103,24 @@ namespace Model
      * <p>Configuration object for individual participant recording, attached to the
      * stage.</p>
      */
-    inline const AutoParticipantRecordingConfiguration& GetAutoParticipantRecordingConfiguration() const{ return m_autoParticipantRecordingConfiguration; }
+    inline const AutoParticipantRecordingConfiguration& GetAutoParticipantRecordingConfiguration() const { return m_autoParticipantRecordingConfiguration; }
     inline bool AutoParticipantRecordingConfigurationHasBeenSet() const { return m_autoParticipantRecordingConfigurationHasBeenSet; }
-    inline void SetAutoParticipantRecordingConfiguration(const AutoParticipantRecordingConfiguration& value) { m_autoParticipantRecordingConfigurationHasBeenSet = true; m_autoParticipantRecordingConfiguration = value; }
-    inline void SetAutoParticipantRecordingConfiguration(AutoParticipantRecordingConfiguration&& value) { m_autoParticipantRecordingConfigurationHasBeenSet = true; m_autoParticipantRecordingConfiguration = std::move(value); }
-    inline Stage& WithAutoParticipantRecordingConfiguration(const AutoParticipantRecordingConfiguration& value) { SetAutoParticipantRecordingConfiguration(value); return *this;}
-    inline Stage& WithAutoParticipantRecordingConfiguration(AutoParticipantRecordingConfiguration&& value) { SetAutoParticipantRecordingConfiguration(std::move(value)); return *this;}
+    template<typename AutoParticipantRecordingConfigurationT = AutoParticipantRecordingConfiguration>
+    void SetAutoParticipantRecordingConfiguration(AutoParticipantRecordingConfigurationT&& value) { m_autoParticipantRecordingConfigurationHasBeenSet = true; m_autoParticipantRecordingConfiguration = std::forward<AutoParticipantRecordingConfigurationT>(value); }
+    template<typename AutoParticipantRecordingConfigurationT = AutoParticipantRecordingConfiguration>
+    Stage& WithAutoParticipantRecordingConfiguration(AutoParticipantRecordingConfigurationT&& value) { SetAutoParticipantRecordingConfiguration(std::forward<AutoParticipantRecordingConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Summary information about various endpoints for a stage.</p>
      */
-    inline const StageEndpoints& GetEndpoints() const{ return m_endpoints; }
+    inline const StageEndpoints& GetEndpoints() const { return m_endpoints; }
     inline bool EndpointsHasBeenSet() const { return m_endpointsHasBeenSet; }
-    inline void SetEndpoints(const StageEndpoints& value) { m_endpointsHasBeenSet = true; m_endpoints = value; }
-    inline void SetEndpoints(StageEndpoints&& value) { m_endpointsHasBeenSet = true; m_endpoints = std::move(value); }
-    inline Stage& WithEndpoints(const StageEndpoints& value) { SetEndpoints(value); return *this;}
-    inline Stage& WithEndpoints(StageEndpoints&& value) { SetEndpoints(std::move(value)); return *this;}
+    template<typename EndpointsT = StageEndpoints>
+    void SetEndpoints(EndpointsT&& value) { m_endpointsHasBeenSet = true; m_endpoints = std::forward<EndpointsT>(value); }
+    template<typename EndpointsT = StageEndpoints>
+    Stage& WithEndpoints(EndpointsT&& value) { SetEndpoints(std::forward<EndpointsT>(value)); return *this;}
     ///@}
   private:
 

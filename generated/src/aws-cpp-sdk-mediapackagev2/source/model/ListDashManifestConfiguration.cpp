@@ -18,14 +18,7 @@ namespace mediapackagev2
 namespace Model
 {
 
-ListDashManifestConfiguration::ListDashManifestConfiguration() : 
-    m_manifestNameHasBeenSet(false),
-    m_urlHasBeenSet(false)
-{
-}
-
 ListDashManifestConfiguration::ListDashManifestConfiguration(JsonView jsonValue)
-  : ListDashManifestConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ListDashManifestConfiguration& ListDashManifestConfiguration::operator =(JsonVie
   if(jsonValue.ValueExists("ManifestName"))
   {
     m_manifestName = jsonValue.GetString("ManifestName");
-
     m_manifestNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Url"))
   {
     m_url = jsonValue.GetString("Url");
-
     m_urlHasBeenSet = true;
   }
-
   return *this;
 }
 

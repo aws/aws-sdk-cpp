@@ -18,13 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-AgentDescriptor::AgentDescriptor() : 
-    m_aliasArnHasBeenSet(false)
-{
-}
-
 AgentDescriptor::AgentDescriptor(JsonView jsonValue)
-  : AgentDescriptor()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AgentDescriptor& AgentDescriptor::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("aliasArn"))
   {
     m_aliasArn = jsonValue.GetString("aliasArn");
-
     m_aliasArnHasBeenSet = true;
   }
-
   return *this;
 }
 

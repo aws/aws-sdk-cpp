@@ -32,7 +32,7 @@ namespace Model
   class SystemEndpointAttributes
   {
   public:
-    AWS_QCONNECT_API SystemEndpointAttributes();
+    AWS_QCONNECT_API SystemEndpointAttributes() = default;
     AWS_QCONNECT_API SystemEndpointAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API SystemEndpointAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * the number the customer dialed to call your contact center if used with
      * <code>systemEndpoint</code>.</p>
      */
-    inline const Aws::String& GetAddress() const{ return m_address; }
+    inline const Aws::String& GetAddress() const { return m_address; }
     inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
-    inline void SetAddress(const Aws::String& value) { m_addressHasBeenSet = true; m_address = value; }
-    inline void SetAddress(Aws::String&& value) { m_addressHasBeenSet = true; m_address = std::move(value); }
-    inline void SetAddress(const char* value) { m_addressHasBeenSet = true; m_address.assign(value); }
-    inline SystemEndpointAttributes& WithAddress(const Aws::String& value) { SetAddress(value); return *this;}
-    inline SystemEndpointAttributes& WithAddress(Aws::String&& value) { SetAddress(std::move(value)); return *this;}
-    inline SystemEndpointAttributes& WithAddress(const char* value) { SetAddress(value); return *this;}
+    template<typename AddressT = Aws::String>
+    void SetAddress(AddressT&& value) { m_addressHasBeenSet = true; m_address = std::forward<AddressT>(value); }
+    template<typename AddressT = Aws::String>
+    SystemEndpointAttributes& WithAddress(AddressT&& value) { SetAddress(std::forward<AddressT>(value)); return *this;}
     ///@}
   private:
 

@@ -21,7 +21,7 @@ namespace Model
   class GetTestExecutionArtifactsUrlRequest : public LexModelsV2Request
   {
   public:
-    AWS_LEXMODELSV2_API GetTestExecutionArtifactsUrlRequest();
+    AWS_LEXMODELSV2_API GetTestExecutionArtifactsUrlRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The unique identifier of the completed test execution.</p>
      */
-    inline const Aws::String& GetTestExecutionId() const{ return m_testExecutionId; }
+    inline const Aws::String& GetTestExecutionId() const { return m_testExecutionId; }
     inline bool TestExecutionIdHasBeenSet() const { return m_testExecutionIdHasBeenSet; }
-    inline void SetTestExecutionId(const Aws::String& value) { m_testExecutionIdHasBeenSet = true; m_testExecutionId = value; }
-    inline void SetTestExecutionId(Aws::String&& value) { m_testExecutionIdHasBeenSet = true; m_testExecutionId = std::move(value); }
-    inline void SetTestExecutionId(const char* value) { m_testExecutionIdHasBeenSet = true; m_testExecutionId.assign(value); }
-    inline GetTestExecutionArtifactsUrlRequest& WithTestExecutionId(const Aws::String& value) { SetTestExecutionId(value); return *this;}
-    inline GetTestExecutionArtifactsUrlRequest& WithTestExecutionId(Aws::String&& value) { SetTestExecutionId(std::move(value)); return *this;}
-    inline GetTestExecutionArtifactsUrlRequest& WithTestExecutionId(const char* value) { SetTestExecutionId(value); return *this;}
+    template<typename TestExecutionIdT = Aws::String>
+    void SetTestExecutionId(TestExecutionIdT&& value) { m_testExecutionIdHasBeenSet = true; m_testExecutionId = std::forward<TestExecutionIdT>(value); }
+    template<typename TestExecutionIdT = Aws::String>
+    GetTestExecutionArtifactsUrlRequest& WithTestExecutionId(TestExecutionIdT&& value) { SetTestExecutionId(std::forward<TestExecutionIdT>(value)); return *this;}
     ///@}
   private:
 

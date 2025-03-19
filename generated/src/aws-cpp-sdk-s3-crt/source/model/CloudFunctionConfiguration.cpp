@@ -20,16 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-CloudFunctionConfiguration::CloudFunctionConfiguration() : 
-    m_idHasBeenSet(false),
-    m_eventsHasBeenSet(false),
-    m_cloudFunctionHasBeenSet(false),
-    m_invocationRoleHasBeenSet(false)
-{
-}
-
 CloudFunctionConfiguration::CloudFunctionConfiguration(const XmlNode& xmlNode)
-  : CloudFunctionConfiguration()
 {
   *this = xmlNode;
 }
@@ -50,6 +41,7 @@ CloudFunctionConfiguration& CloudFunctionConfiguration::operator =(const XmlNode
     if(!eventsNode.IsNull())
     {
       XmlNode eventMember = eventsNode;
+      m_eventsHasBeenSet = !eventMember.IsNull();
       while(!eventMember.IsNull())
       {
         m_events.push_back(EventMapper::GetEventForName(StringUtils::Trim(eventMember.GetText().c_str())));

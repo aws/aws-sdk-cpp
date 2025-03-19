@@ -18,14 +18,7 @@ namespace SSMIncidents
 namespace Model
 {
 
-RelatedItemsUpdate::RelatedItemsUpdate() : 
-    m_itemToAddHasBeenSet(false),
-    m_itemToRemoveHasBeenSet(false)
-{
-}
-
 RelatedItemsUpdate::RelatedItemsUpdate(JsonView jsonValue)
-  : RelatedItemsUpdate()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RelatedItemsUpdate& RelatedItemsUpdate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("itemToAdd"))
   {
     m_itemToAdd = jsonValue.GetObject("itemToAdd");
-
     m_itemToAddHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("itemToRemove"))
   {
     m_itemToRemove = jsonValue.GetObject("itemToRemove");
-
     m_itemToRemoveHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,17 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-TargetTrackingMetricStat::TargetTrackingMetricStat() : 
-    m_metricHasBeenSet(false),
-    m_statHasBeenSet(false),
-    m_unitHasBeenSet(false),
-    m_period(0),
-    m_periodHasBeenSet(false)
-{
-}
-
 TargetTrackingMetricStat::TargetTrackingMetricStat(const XmlNode& xmlNode)
-  : TargetTrackingMetricStat()
 {
   *this = xmlNode;
 }

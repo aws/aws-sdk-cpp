@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DataBarsOptions::DataBarsOptions() : 
-    m_fieldIdHasBeenSet(false),
-    m_positiveColorHasBeenSet(false),
-    m_negativeColorHasBeenSet(false)
-{
-}
-
 DataBarsOptions::DataBarsOptions(JsonView jsonValue)
-  : DataBarsOptions()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DataBarsOptions& DataBarsOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FieldId"))
   {
     m_fieldId = jsonValue.GetString("FieldId");
-
     m_fieldIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PositiveColor"))
   {
     m_positiveColor = jsonValue.GetString("PositiveColor");
-
     m_positiveColorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NegativeColor"))
   {
     m_negativeColor = jsonValue.GetString("NegativeColor");
-
     m_negativeColorHasBeenSet = true;
   }
-
   return *this;
 }
 

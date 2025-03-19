@@ -18,22 +18,7 @@ namespace IVS
 namespace Model
 {
 
-RecordingConfiguration::RecordingConfiguration() : 
-    m_arnHasBeenSet(false),
-    m_destinationConfigurationHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_recordingReconnectWindowSeconds(0),
-    m_recordingReconnectWindowSecondsHasBeenSet(false),
-    m_renditionConfigurationHasBeenSet(false),
-    m_state(RecordingConfigurationState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_thumbnailConfigurationHasBeenSet(false)
-{
-}
-
 RecordingConfiguration::RecordingConfiguration(JsonView jsonValue)
-  : RecordingConfiguration()
 {
   *this = jsonValue;
 }
@@ -43,45 +28,33 @@ RecordingConfiguration& RecordingConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destinationConfiguration"))
   {
     m_destinationConfiguration = jsonValue.GetObject("destinationConfiguration");
-
     m_destinationConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recordingReconnectWindowSeconds"))
   {
     m_recordingReconnectWindowSeconds = jsonValue.GetInteger("recordingReconnectWindowSeconds");
-
     m_recordingReconnectWindowSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("renditionConfiguration"))
   {
     m_renditionConfiguration = jsonValue.GetObject("renditionConfiguration");
-
     m_renditionConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = RecordingConfigurationStateMapper::GetRecordingConfigurationStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -91,14 +64,11 @@ RecordingConfiguration& RecordingConfiguration::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("thumbnailConfiguration"))
   {
     m_thumbnailConfiguration = jsonValue.GetObject("thumbnailConfiguration");
-
     m_thumbnailConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

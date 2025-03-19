@@ -20,15 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-ResponseHeadersPolicyRemoveHeadersConfig::ResponseHeadersPolicyRemoveHeadersConfig() : 
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_itemsHasBeenSet(false)
-{
-}
-
 ResponseHeadersPolicyRemoveHeadersConfig::ResponseHeadersPolicyRemoveHeadersConfig(const XmlNode& xmlNode)
-  : ResponseHeadersPolicyRemoveHeadersConfig()
 {
   *this = xmlNode;
 }
@@ -49,6 +41,7 @@ ResponseHeadersPolicyRemoveHeadersConfig& ResponseHeadersPolicyRemoveHeadersConf
     if(!itemsNode.IsNull())
     {
       XmlNode itemsMember = itemsNode.FirstChild("ResponseHeadersPolicyRemoveHeader");
+      m_itemsHasBeenSet = !itemsMember.IsNull();
       while(!itemsMember.IsNull())
       {
         m_items.push_back(itemsMember);

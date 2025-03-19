@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListWirelessGatewayTaskDefinitionsRequest::ListWirelessGatewayTaskDefinitionsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_taskDefinitionType(WirelessGatewayTaskDefinitionType::NOT_SET),
-    m_taskDefinitionTypeHasBeenSet(false)
-{
-}
-
 Aws::String ListWirelessGatewayTaskDefinitionsRequest::SerializePayload() const
 {
   return {};

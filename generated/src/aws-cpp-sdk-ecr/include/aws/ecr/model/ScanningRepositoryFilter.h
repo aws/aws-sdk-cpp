@@ -36,7 +36,7 @@ namespace Model
   class ScanningRepositoryFilter
   {
   public:
-    AWS_ECR_API ScanningRepositoryFilter();
+    AWS_ECR_API ScanningRepositoryFilter() = default;
     AWS_ECR_API ScanningRepositoryFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECR_API ScanningRepositoryFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,33 +46,29 @@ namespace Model
     /**
      * <p>The filter to use when scanning.</p>
      */
-    inline const Aws::String& GetFilter() const{ return m_filter; }
+    inline const Aws::String& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const Aws::String& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(Aws::String&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline void SetFilter(const char* value) { m_filterHasBeenSet = true; m_filter.assign(value); }
-    inline ScanningRepositoryFilter& WithFilter(const Aws::String& value) { SetFilter(value); return *this;}
-    inline ScanningRepositoryFilter& WithFilter(Aws::String&& value) { SetFilter(std::move(value)); return *this;}
-    inline ScanningRepositoryFilter& WithFilter(const char* value) { SetFilter(value); return *this;}
+    template<typename FilterT = Aws::String>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = Aws::String>
+    ScanningRepositoryFilter& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type associated with the filter.</p>
      */
-    inline const ScanningRepositoryFilterType& GetFilterType() const{ return m_filterType; }
+    inline ScanningRepositoryFilterType GetFilterType() const { return m_filterType; }
     inline bool FilterTypeHasBeenSet() const { return m_filterTypeHasBeenSet; }
-    inline void SetFilterType(const ScanningRepositoryFilterType& value) { m_filterTypeHasBeenSet = true; m_filterType = value; }
-    inline void SetFilterType(ScanningRepositoryFilterType&& value) { m_filterTypeHasBeenSet = true; m_filterType = std::move(value); }
-    inline ScanningRepositoryFilter& WithFilterType(const ScanningRepositoryFilterType& value) { SetFilterType(value); return *this;}
-    inline ScanningRepositoryFilter& WithFilterType(ScanningRepositoryFilterType&& value) { SetFilterType(std::move(value)); return *this;}
+    inline void SetFilterType(ScanningRepositoryFilterType value) { m_filterTypeHasBeenSet = true; m_filterType = value; }
+    inline ScanningRepositoryFilter& WithFilterType(ScanningRepositoryFilterType value) { SetFilterType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_filter;
     bool m_filterHasBeenSet = false;
 
-    ScanningRepositoryFilterType m_filterType;
+    ScanningRepositoryFilterType m_filterType{ScanningRepositoryFilterType::NOT_SET};
     bool m_filterTypeHasBeenSet = false;
   };
 

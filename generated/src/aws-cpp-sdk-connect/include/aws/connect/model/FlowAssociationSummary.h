@@ -32,7 +32,7 @@ namespace Model
   class FlowAssociationSummary
   {
   public:
-    AWS_CONNECT_API FlowAssociationSummary();
+    AWS_CONNECT_API FlowAssociationSummary() = default;
     AWS_CONNECT_API FlowAssociationSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API FlowAssociationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,40 +42,34 @@ namespace Model
     /**
      * <p>The identifier of the resource.</p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline FlowAssociationSummary& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline FlowAssociationSummary& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline FlowAssociationSummary& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    FlowAssociationSummary& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the flow.</p>
      */
-    inline const Aws::String& GetFlowId() const{ return m_flowId; }
+    inline const Aws::String& GetFlowId() const { return m_flowId; }
     inline bool FlowIdHasBeenSet() const { return m_flowIdHasBeenSet; }
-    inline void SetFlowId(const Aws::String& value) { m_flowIdHasBeenSet = true; m_flowId = value; }
-    inline void SetFlowId(Aws::String&& value) { m_flowIdHasBeenSet = true; m_flowId = std::move(value); }
-    inline void SetFlowId(const char* value) { m_flowIdHasBeenSet = true; m_flowId.assign(value); }
-    inline FlowAssociationSummary& WithFlowId(const Aws::String& value) { SetFlowId(value); return *this;}
-    inline FlowAssociationSummary& WithFlowId(Aws::String&& value) { SetFlowId(std::move(value)); return *this;}
-    inline FlowAssociationSummary& WithFlowId(const char* value) { SetFlowId(value); return *this;}
+    template<typename FlowIdT = Aws::String>
+    void SetFlowId(FlowIdT&& value) { m_flowIdHasBeenSet = true; m_flowId = std::forward<FlowIdT>(value); }
+    template<typename FlowIdT = Aws::String>
+    FlowAssociationSummary& WithFlowId(FlowIdT&& value) { SetFlowId(std::forward<FlowIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of resource association.</p>
      */
-    inline const ListFlowAssociationResourceType& GetResourceType() const{ return m_resourceType; }
+    inline ListFlowAssociationResourceType GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const ListFlowAssociationResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(ListFlowAssociationResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline FlowAssociationSummary& WithResourceType(const ListFlowAssociationResourceType& value) { SetResourceType(value); return *this;}
-    inline FlowAssociationSummary& WithResourceType(ListFlowAssociationResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    inline void SetResourceType(ListFlowAssociationResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline FlowAssociationSummary& WithResourceType(ListFlowAssociationResourceType value) { SetResourceType(value); return *this;}
     ///@}
   private:
 
@@ -85,7 +79,7 @@ namespace Model
     Aws::String m_flowId;
     bool m_flowIdHasBeenSet = false;
 
-    ListFlowAssociationResourceType m_resourceType;
+    ListFlowAssociationResourceType m_resourceType{ListFlowAssociationResourceType::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
   };
 

@@ -48,7 +48,7 @@ namespace Model
   class AccountLevelBpaSync
   {
   public:
-    AWS_LIGHTSAIL_API AccountLevelBpaSync();
+    AWS_LIGHTSAIL_API AccountLevelBpaSync() = default;
     AWS_LIGHTSAIL_API AccountLevelBpaSync(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API AccountLevelBpaSync& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -70,12 +70,10 @@ namespace Model
      * The <code>message</code> parameter provides more information for those
      * statuses.</p> 
      */
-    inline const AccountLevelBpaSyncStatus& GetStatus() const{ return m_status; }
+    inline AccountLevelBpaSyncStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const AccountLevelBpaSyncStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(AccountLevelBpaSyncStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline AccountLevelBpaSync& WithStatus(const AccountLevelBpaSyncStatus& value) { SetStatus(value); return *this;}
-    inline AccountLevelBpaSync& WithStatus(AccountLevelBpaSyncStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(AccountLevelBpaSyncStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline AccountLevelBpaSync& WithStatus(AccountLevelBpaSyncStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -84,12 +82,12 @@ namespace Model
      * synchronized. This value is null when the account-level BPA configuration has
      * not been synchronized.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastSyncedAt() const{ return m_lastSyncedAt; }
+    inline const Aws::Utils::DateTime& GetLastSyncedAt() const { return m_lastSyncedAt; }
     inline bool LastSyncedAtHasBeenSet() const { return m_lastSyncedAtHasBeenSet; }
-    inline void SetLastSyncedAt(const Aws::Utils::DateTime& value) { m_lastSyncedAtHasBeenSet = true; m_lastSyncedAt = value; }
-    inline void SetLastSyncedAt(Aws::Utils::DateTime&& value) { m_lastSyncedAtHasBeenSet = true; m_lastSyncedAt = std::move(value); }
-    inline AccountLevelBpaSync& WithLastSyncedAt(const Aws::Utils::DateTime& value) { SetLastSyncedAt(value); return *this;}
-    inline AccountLevelBpaSync& WithLastSyncedAt(Aws::Utils::DateTime&& value) { SetLastSyncedAt(std::move(value)); return *this;}
+    template<typename LastSyncedAtT = Aws::Utils::DateTime>
+    void SetLastSyncedAt(LastSyncedAtT&& value) { m_lastSyncedAtHasBeenSet = true; m_lastSyncedAt = std::forward<LastSyncedAtT>(value); }
+    template<typename LastSyncedAtT = Aws::Utils::DateTime>
+    AccountLevelBpaSync& WithLastSyncedAt(LastSyncedAtT&& value) { SetLastSyncedAt(std::forward<LastSyncedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -122,12 +120,10 @@ namespace Model
      * synchronization failed is unknown. Contact Amazon Web ServicesSupport for more
      * information.</p> </li> </ul>
      */
-    inline const BPAStatusMessage& GetMessage() const{ return m_message; }
+    inline BPAStatusMessage GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const BPAStatusMessage& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(BPAStatusMessage&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline AccountLevelBpaSync& WithMessage(const BPAStatusMessage& value) { SetMessage(value); return *this;}
-    inline AccountLevelBpaSync& WithMessage(BPAStatusMessage&& value) { SetMessage(std::move(value)); return *this;}
+    inline void SetMessage(BPAStatusMessage value) { m_messageHasBeenSet = true; m_message = value; }
+    inline AccountLevelBpaSync& WithMessage(BPAStatusMessage value) { SetMessage(value); return *this;}
     ///@}
 
     ///@{
@@ -135,23 +131,23 @@ namespace Model
      * <p>A Boolean value that indicates whether account-level block public access is
      * affecting your Lightsail buckets.</p>
      */
-    inline bool GetBpaImpactsLightsail() const{ return m_bpaImpactsLightsail; }
+    inline bool GetBpaImpactsLightsail() const { return m_bpaImpactsLightsail; }
     inline bool BpaImpactsLightsailHasBeenSet() const { return m_bpaImpactsLightsailHasBeenSet; }
     inline void SetBpaImpactsLightsail(bool value) { m_bpaImpactsLightsailHasBeenSet = true; m_bpaImpactsLightsail = value; }
     inline AccountLevelBpaSync& WithBpaImpactsLightsail(bool value) { SetBpaImpactsLightsail(value); return *this;}
     ///@}
   private:
 
-    AccountLevelBpaSyncStatus m_status;
+    AccountLevelBpaSyncStatus m_status{AccountLevelBpaSyncStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastSyncedAt;
+    Aws::Utils::DateTime m_lastSyncedAt{};
     bool m_lastSyncedAtHasBeenSet = false;
 
-    BPAStatusMessage m_message;
+    BPAStatusMessage m_message{BPAStatusMessage::NOT_SET};
     bool m_messageHasBeenSet = false;
 
-    bool m_bpaImpactsLightsail;
+    bool m_bpaImpactsLightsail{false};
     bool m_bpaImpactsLightsailHasBeenSet = false;
   };
 

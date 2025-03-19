@@ -15,21 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListVirtualClustersRequest::ListVirtualClustersRequest() : 
-    m_containerProviderIdHasBeenSet(false),
-    m_containerProviderType(ContainerProviderType::NOT_SET),
-    m_containerProviderTypeHasBeenSet(false),
-    m_createdAfterHasBeenSet(false),
-    m_createdBeforeHasBeenSet(false),
-    m_statesHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_eksAccessEntryIntegrated(false),
-    m_eksAccessEntryIntegratedHasBeenSet(false)
-{
-}
-
 Aws::String ListVirtualClustersRequest::SerializePayload() const
 {
   return {};

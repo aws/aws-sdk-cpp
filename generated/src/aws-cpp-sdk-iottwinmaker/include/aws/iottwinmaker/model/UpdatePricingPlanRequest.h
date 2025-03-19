@@ -23,7 +23,7 @@ namespace Model
   class UpdatePricingPlanRequest : public IoTTwinMakerRequest
   {
   public:
-    AWS_IOTTWINMAKER_API UpdatePricingPlanRequest();
+    AWS_IOTTWINMAKER_API UpdatePricingPlanRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,31 +38,28 @@ namespace Model
     /**
      * <p>The pricing mode.</p>
      */
-    inline const PricingMode& GetPricingMode() const{ return m_pricingMode; }
+    inline PricingMode GetPricingMode() const { return m_pricingMode; }
     inline bool PricingModeHasBeenSet() const { return m_pricingModeHasBeenSet; }
-    inline void SetPricingMode(const PricingMode& value) { m_pricingModeHasBeenSet = true; m_pricingMode = value; }
-    inline void SetPricingMode(PricingMode&& value) { m_pricingModeHasBeenSet = true; m_pricingMode = std::move(value); }
-    inline UpdatePricingPlanRequest& WithPricingMode(const PricingMode& value) { SetPricingMode(value); return *this;}
-    inline UpdatePricingPlanRequest& WithPricingMode(PricingMode&& value) { SetPricingMode(std::move(value)); return *this;}
+    inline void SetPricingMode(PricingMode value) { m_pricingModeHasBeenSet = true; m_pricingMode = value; }
+    inline UpdatePricingPlanRequest& WithPricingMode(PricingMode value) { SetPricingMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The bundle names.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetBundleNames() const{ return m_bundleNames; }
+    inline const Aws::Vector<Aws::String>& GetBundleNames() const { return m_bundleNames; }
     inline bool BundleNamesHasBeenSet() const { return m_bundleNamesHasBeenSet; }
-    inline void SetBundleNames(const Aws::Vector<Aws::String>& value) { m_bundleNamesHasBeenSet = true; m_bundleNames = value; }
-    inline void SetBundleNames(Aws::Vector<Aws::String>&& value) { m_bundleNamesHasBeenSet = true; m_bundleNames = std::move(value); }
-    inline UpdatePricingPlanRequest& WithBundleNames(const Aws::Vector<Aws::String>& value) { SetBundleNames(value); return *this;}
-    inline UpdatePricingPlanRequest& WithBundleNames(Aws::Vector<Aws::String>&& value) { SetBundleNames(std::move(value)); return *this;}
-    inline UpdatePricingPlanRequest& AddBundleNames(const Aws::String& value) { m_bundleNamesHasBeenSet = true; m_bundleNames.push_back(value); return *this; }
-    inline UpdatePricingPlanRequest& AddBundleNames(Aws::String&& value) { m_bundleNamesHasBeenSet = true; m_bundleNames.push_back(std::move(value)); return *this; }
-    inline UpdatePricingPlanRequest& AddBundleNames(const char* value) { m_bundleNamesHasBeenSet = true; m_bundleNames.push_back(value); return *this; }
+    template<typename BundleNamesT = Aws::Vector<Aws::String>>
+    void SetBundleNames(BundleNamesT&& value) { m_bundleNamesHasBeenSet = true; m_bundleNames = std::forward<BundleNamesT>(value); }
+    template<typename BundleNamesT = Aws::Vector<Aws::String>>
+    UpdatePricingPlanRequest& WithBundleNames(BundleNamesT&& value) { SetBundleNames(std::forward<BundleNamesT>(value)); return *this;}
+    template<typename BundleNamesT = Aws::String>
+    UpdatePricingPlanRequest& AddBundleNames(BundleNamesT&& value) { m_bundleNamesHasBeenSet = true; m_bundleNames.emplace_back(std::forward<BundleNamesT>(value)); return *this; }
     ///@}
   private:
 
-    PricingMode m_pricingMode;
+    PricingMode m_pricingMode{PricingMode::NOT_SET};
     bool m_pricingModeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_bundleNames;

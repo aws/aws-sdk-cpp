@@ -33,7 +33,7 @@ namespace Model
   class TruckWeight
   {
   public:
-    AWS_LOCATIONSERVICE_API TruckWeight();
+    AWS_LOCATIONSERVICE_API TruckWeight() = default;
     AWS_LOCATIONSERVICE_API TruckWeight(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API TruckWeight& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * <p>The total weight of the truck. </p> <ul> <li> <p>For example,
      * <code>3500</code>.</p> </li> </ul>
      */
-    inline double GetTotal() const{ return m_total; }
+    inline double GetTotal() const { return m_total; }
     inline bool TotalHasBeenSet() const { return m_totalHasBeenSet; }
     inline void SetTotal(double value) { m_totalHasBeenSet = true; m_total = value; }
     inline TruckWeight& WithTotal(double value) { SetTotal(value); return *this;}
@@ -55,19 +55,17 @@ namespace Model
      * <p>The unit of measurement to use for the truck weight.</p> <p>Default Value:
      * <code>Kilograms</code> </p>
      */
-    inline const VehicleWeightUnit& GetUnit() const{ return m_unit; }
+    inline VehicleWeightUnit GetUnit() const { return m_unit; }
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-    inline void SetUnit(const VehicleWeightUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
-    inline void SetUnit(VehicleWeightUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-    inline TruckWeight& WithUnit(const VehicleWeightUnit& value) { SetUnit(value); return *this;}
-    inline TruckWeight& WithUnit(VehicleWeightUnit&& value) { SetUnit(std::move(value)); return *this;}
+    inline void SetUnit(VehicleWeightUnit value) { m_unitHasBeenSet = true; m_unit = value; }
+    inline TruckWeight& WithUnit(VehicleWeightUnit value) { SetUnit(value); return *this;}
     ///@}
   private:
 
-    double m_total;
+    double m_total{0.0};
     bool m_totalHasBeenSet = false;
 
-    VehicleWeightUnit m_unit;
+    VehicleWeightUnit m_unit{VehicleWeightUnit::NOT_SET};
     bool m_unitHasBeenSet = false;
   };
 

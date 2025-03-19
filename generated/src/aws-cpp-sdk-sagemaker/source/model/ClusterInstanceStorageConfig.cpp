@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ClusterInstanceStorageConfig::ClusterInstanceStorageConfig() : 
-    m_ebsVolumeConfigHasBeenSet(false)
-{
-}
-
 ClusterInstanceStorageConfig::ClusterInstanceStorageConfig(JsonView jsonValue)
-  : ClusterInstanceStorageConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ClusterInstanceStorageConfig& ClusterInstanceStorageConfig::operator =(JsonView 
   if(jsonValue.ValueExists("EbsVolumeConfig"))
   {
     m_ebsVolumeConfig = jsonValue.GetObject("EbsVolumeConfig");
-
     m_ebsVolumeConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

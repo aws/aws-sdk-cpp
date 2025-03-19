@@ -18,26 +18,7 @@ namespace Athena
 namespace Model
 {
 
-QueryExecution::QueryExecution() : 
-    m_queryExecutionIdHasBeenSet(false),
-    m_queryHasBeenSet(false),
-    m_statementType(StatementType::NOT_SET),
-    m_statementTypeHasBeenSet(false),
-    m_resultConfigurationHasBeenSet(false),
-    m_resultReuseConfigurationHasBeenSet(false),
-    m_queryExecutionContextHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_statisticsHasBeenSet(false),
-    m_workGroupHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_executionParametersHasBeenSet(false),
-    m_substatementTypeHasBeenSet(false),
-    m_queryResultsS3AccessGrantsConfigurationHasBeenSet(false)
-{
-}
-
 QueryExecution::QueryExecution(JsonView jsonValue)
-  : QueryExecution()
 {
   *this = jsonValue;
 }
@@ -47,73 +28,53 @@ QueryExecution& QueryExecution::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("QueryExecutionId"))
   {
     m_queryExecutionId = jsonValue.GetString("QueryExecutionId");
-
     m_queryExecutionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Query"))
   {
     m_query = jsonValue.GetString("Query");
-
     m_queryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatementType"))
   {
     m_statementType = StatementTypeMapper::GetStatementTypeForName(jsonValue.GetString("StatementType"));
-
     m_statementTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResultConfiguration"))
   {
     m_resultConfiguration = jsonValue.GetObject("ResultConfiguration");
-
     m_resultConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResultReuseConfiguration"))
   {
     m_resultReuseConfiguration = jsonValue.GetObject("ResultReuseConfiguration");
-
     m_resultReuseConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueryExecutionContext"))
   {
     m_queryExecutionContext = jsonValue.GetObject("QueryExecutionContext");
-
     m_queryExecutionContextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetObject("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Statistics"))
   {
     m_statistics = jsonValue.GetObject("Statistics");
-
     m_statisticsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkGroup"))
   {
     m_workGroup = jsonValue.GetString("WorkGroup");
-
     m_workGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EngineVersion"))
   {
     m_engineVersion = jsonValue.GetObject("EngineVersion");
-
     m_engineVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutionParameters"))
   {
     Aws::Utils::Array<JsonView> executionParametersJsonList = jsonValue.GetArray("ExecutionParameters");
@@ -123,21 +84,16 @@ QueryExecution& QueryExecution::operator =(JsonView jsonValue)
     }
     m_executionParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubstatementType"))
   {
     m_substatementType = jsonValue.GetString("SubstatementType");
-
     m_substatementTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueryResultsS3AccessGrantsConfiguration"))
   {
     m_queryResultsS3AccessGrantsConfiguration = jsonValue.GetObject("QueryResultsS3AccessGrantsConfiguration");
-
     m_queryResultsS3AccessGrantsConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

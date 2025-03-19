@@ -25,7 +25,7 @@ namespace Model
   class GetImageRecipePolicyRequest : public ImagebuilderRequest
   {
   public:
-    AWS_IMAGEBUILDER_API GetImageRecipePolicyRequest();
+    AWS_IMAGEBUILDER_API GetImageRecipePolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the image recipe whose policy you want to
      * retrieve.</p>
      */
-    inline const Aws::String& GetImageRecipeArn() const{ return m_imageRecipeArn; }
+    inline const Aws::String& GetImageRecipeArn() const { return m_imageRecipeArn; }
     inline bool ImageRecipeArnHasBeenSet() const { return m_imageRecipeArnHasBeenSet; }
-    inline void SetImageRecipeArn(const Aws::String& value) { m_imageRecipeArnHasBeenSet = true; m_imageRecipeArn = value; }
-    inline void SetImageRecipeArn(Aws::String&& value) { m_imageRecipeArnHasBeenSet = true; m_imageRecipeArn = std::move(value); }
-    inline void SetImageRecipeArn(const char* value) { m_imageRecipeArnHasBeenSet = true; m_imageRecipeArn.assign(value); }
-    inline GetImageRecipePolicyRequest& WithImageRecipeArn(const Aws::String& value) { SetImageRecipeArn(value); return *this;}
-    inline GetImageRecipePolicyRequest& WithImageRecipeArn(Aws::String&& value) { SetImageRecipeArn(std::move(value)); return *this;}
-    inline GetImageRecipePolicyRequest& WithImageRecipeArn(const char* value) { SetImageRecipeArn(value); return *this;}
+    template<typename ImageRecipeArnT = Aws::String>
+    void SetImageRecipeArn(ImageRecipeArnT&& value) { m_imageRecipeArnHasBeenSet = true; m_imageRecipeArn = std::forward<ImageRecipeArnT>(value); }
+    template<typename ImageRecipeArnT = Aws::String>
+    GetImageRecipePolicyRequest& WithImageRecipeArn(ImageRecipeArnT&& value) { SetImageRecipeArn(std::forward<ImageRecipeArnT>(value)); return *this;}
     ///@}
   private:
 

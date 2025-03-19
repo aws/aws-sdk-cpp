@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListAssetBundleExportJobsRequest::ListAssetBundleExportJobsRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListAssetBundleExportJobsRequest::SerializePayload() const
 {
   return {};

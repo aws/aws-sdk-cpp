@@ -28,7 +28,7 @@ namespace Model
   class StartDocumentAnalysisRequest : public TextractRequest
   {
   public:
-    AWS_TEXTRACT_API StartDocumentAnalysisRequest();
+    AWS_TEXTRACT_API StartDocumentAnalysisRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,12 +45,12 @@ namespace Model
     /**
      * <p>The location of the document to be processed.</p>
      */
-    inline const DocumentLocation& GetDocumentLocation() const{ return m_documentLocation; }
+    inline const DocumentLocation& GetDocumentLocation() const { return m_documentLocation; }
     inline bool DocumentLocationHasBeenSet() const { return m_documentLocationHasBeenSet; }
-    inline void SetDocumentLocation(const DocumentLocation& value) { m_documentLocationHasBeenSet = true; m_documentLocation = value; }
-    inline void SetDocumentLocation(DocumentLocation&& value) { m_documentLocationHasBeenSet = true; m_documentLocation = std::move(value); }
-    inline StartDocumentAnalysisRequest& WithDocumentLocation(const DocumentLocation& value) { SetDocumentLocation(value); return *this;}
-    inline StartDocumentAnalysisRequest& WithDocumentLocation(DocumentLocation&& value) { SetDocumentLocation(std::move(value)); return *this;}
+    template<typename DocumentLocationT = DocumentLocation>
+    void SetDocumentLocation(DocumentLocationT&& value) { m_documentLocationHasBeenSet = true; m_documentLocation = std::forward<DocumentLocationT>(value); }
+    template<typename DocumentLocationT = DocumentLocation>
+    StartDocumentAnalysisRequest& WithDocumentLocation(DocumentLocationT&& value) { SetDocumentLocation(std::forward<DocumentLocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +62,13 @@ namespace Model
      * are included in the response (including text that isn't related to the value of
      * <code>FeatureTypes</code>). </p>
      */
-    inline const Aws::Vector<FeatureType>& GetFeatureTypes() const{ return m_featureTypes; }
+    inline const Aws::Vector<FeatureType>& GetFeatureTypes() const { return m_featureTypes; }
     inline bool FeatureTypesHasBeenSet() const { return m_featureTypesHasBeenSet; }
-    inline void SetFeatureTypes(const Aws::Vector<FeatureType>& value) { m_featureTypesHasBeenSet = true; m_featureTypes = value; }
-    inline void SetFeatureTypes(Aws::Vector<FeatureType>&& value) { m_featureTypesHasBeenSet = true; m_featureTypes = std::move(value); }
-    inline StartDocumentAnalysisRequest& WithFeatureTypes(const Aws::Vector<FeatureType>& value) { SetFeatureTypes(value); return *this;}
-    inline StartDocumentAnalysisRequest& WithFeatureTypes(Aws::Vector<FeatureType>&& value) { SetFeatureTypes(std::move(value)); return *this;}
-    inline StartDocumentAnalysisRequest& AddFeatureTypes(const FeatureType& value) { m_featureTypesHasBeenSet = true; m_featureTypes.push_back(value); return *this; }
-    inline StartDocumentAnalysisRequest& AddFeatureTypes(FeatureType&& value) { m_featureTypesHasBeenSet = true; m_featureTypes.push_back(std::move(value)); return *this; }
+    template<typename FeatureTypesT = Aws::Vector<FeatureType>>
+    void SetFeatureTypes(FeatureTypesT&& value) { m_featureTypesHasBeenSet = true; m_featureTypes = std::forward<FeatureTypesT>(value); }
+    template<typename FeatureTypesT = Aws::Vector<FeatureType>>
+    StartDocumentAnalysisRequest& WithFeatureTypes(FeatureTypesT&& value) { SetFeatureTypes(std::forward<FeatureTypesT>(value)); return *this;}
+    inline StartDocumentAnalysisRequest& AddFeatureTypes(FeatureType value) { m_featureTypesHasBeenSet = true; m_featureTypes.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -82,14 +81,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling
      * Amazon Textract Asynchronous Operations</a>.</p>
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline StartDocumentAnalysisRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline StartDocumentAnalysisRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline StartDocumentAnalysisRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    StartDocumentAnalysisRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,14 +96,12 @@ namespace Model
      * to identify the type of document that the completion notification corresponds to
      * (such as a tax form or a receipt).</p>
      */
-    inline const Aws::String& GetJobTag() const{ return m_jobTag; }
+    inline const Aws::String& GetJobTag() const { return m_jobTag; }
     inline bool JobTagHasBeenSet() const { return m_jobTagHasBeenSet; }
-    inline void SetJobTag(const Aws::String& value) { m_jobTagHasBeenSet = true; m_jobTag = value; }
-    inline void SetJobTag(Aws::String&& value) { m_jobTagHasBeenSet = true; m_jobTag = std::move(value); }
-    inline void SetJobTag(const char* value) { m_jobTagHasBeenSet = true; m_jobTag.assign(value); }
-    inline StartDocumentAnalysisRequest& WithJobTag(const Aws::String& value) { SetJobTag(value); return *this;}
-    inline StartDocumentAnalysisRequest& WithJobTag(Aws::String&& value) { SetJobTag(std::move(value)); return *this;}
-    inline StartDocumentAnalysisRequest& WithJobTag(const char* value) { SetJobTag(value); return *this;}
+    template<typename JobTagT = Aws::String>
+    void SetJobTag(JobTagT&& value) { m_jobTagHasBeenSet = true; m_jobTag = std::forward<JobTagT>(value); }
+    template<typename JobTagT = Aws::String>
+    StartDocumentAnalysisRequest& WithJobTag(JobTagT&& value) { SetJobTag(std::forward<JobTagT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,12 +109,12 @@ namespace Model
      * <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the
      * completion status of the operation to. </p>
      */
-    inline const NotificationChannel& GetNotificationChannel() const{ return m_notificationChannel; }
+    inline const NotificationChannel& GetNotificationChannel() const { return m_notificationChannel; }
     inline bool NotificationChannelHasBeenSet() const { return m_notificationChannelHasBeenSet; }
-    inline void SetNotificationChannel(const NotificationChannel& value) { m_notificationChannelHasBeenSet = true; m_notificationChannel = value; }
-    inline void SetNotificationChannel(NotificationChannel&& value) { m_notificationChannelHasBeenSet = true; m_notificationChannel = std::move(value); }
-    inline StartDocumentAnalysisRequest& WithNotificationChannel(const NotificationChannel& value) { SetNotificationChannel(value); return *this;}
-    inline StartDocumentAnalysisRequest& WithNotificationChannel(NotificationChannel&& value) { SetNotificationChannel(std::move(value)); return *this;}
+    template<typename NotificationChannelT = NotificationChannel>
+    void SetNotificationChannel(NotificationChannelT&& value) { m_notificationChannelHasBeenSet = true; m_notificationChannel = std::forward<NotificationChannelT>(value); }
+    template<typename NotificationChannelT = NotificationChannel>
+    StartDocumentAnalysisRequest& WithNotificationChannel(NotificationChannelT&& value) { SetNotificationChannel(std::forward<NotificationChannelT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,12 +123,12 @@ namespace Model
      * Textract will save the results internally to be accessed by the
      * GetDocumentAnalysis operation.</p>
      */
-    inline const OutputConfig& GetOutputConfig() const{ return m_outputConfig; }
+    inline const OutputConfig& GetOutputConfig() const { return m_outputConfig; }
     inline bool OutputConfigHasBeenSet() const { return m_outputConfigHasBeenSet; }
-    inline void SetOutputConfig(const OutputConfig& value) { m_outputConfigHasBeenSet = true; m_outputConfig = value; }
-    inline void SetOutputConfig(OutputConfig&& value) { m_outputConfigHasBeenSet = true; m_outputConfig = std::move(value); }
-    inline StartDocumentAnalysisRequest& WithOutputConfig(const OutputConfig& value) { SetOutputConfig(value); return *this;}
-    inline StartDocumentAnalysisRequest& WithOutputConfig(OutputConfig&& value) { SetOutputConfig(std::move(value)); return *this;}
+    template<typename OutputConfigT = OutputConfig>
+    void SetOutputConfig(OutputConfigT&& value) { m_outputConfigHasBeenSet = true; m_outputConfig = std::forward<OutputConfigT>(value); }
+    template<typename OutputConfigT = OutputConfig>
+    StartDocumentAnalysisRequest& WithOutputConfig(OutputConfigT&& value) { SetOutputConfig(std::forward<OutputConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -144,36 +139,34 @@ namespace Model
      * parameter is not enabled, the result will be encrypted server side,using
      * SSE-S3.</p>
      */
-    inline const Aws::String& GetKMSKeyId() const{ return m_kMSKeyId; }
+    inline const Aws::String& GetKMSKeyId() const { return m_kMSKeyId; }
     inline bool KMSKeyIdHasBeenSet() const { return m_kMSKeyIdHasBeenSet; }
-    inline void SetKMSKeyId(const Aws::String& value) { m_kMSKeyIdHasBeenSet = true; m_kMSKeyId = value; }
-    inline void SetKMSKeyId(Aws::String&& value) { m_kMSKeyIdHasBeenSet = true; m_kMSKeyId = std::move(value); }
-    inline void SetKMSKeyId(const char* value) { m_kMSKeyIdHasBeenSet = true; m_kMSKeyId.assign(value); }
-    inline StartDocumentAnalysisRequest& WithKMSKeyId(const Aws::String& value) { SetKMSKeyId(value); return *this;}
-    inline StartDocumentAnalysisRequest& WithKMSKeyId(Aws::String&& value) { SetKMSKeyId(std::move(value)); return *this;}
-    inline StartDocumentAnalysisRequest& WithKMSKeyId(const char* value) { SetKMSKeyId(value); return *this;}
+    template<typename KMSKeyIdT = Aws::String>
+    void SetKMSKeyId(KMSKeyIdT&& value) { m_kMSKeyIdHasBeenSet = true; m_kMSKeyId = std::forward<KMSKeyIdT>(value); }
+    template<typename KMSKeyIdT = Aws::String>
+    StartDocumentAnalysisRequest& WithKMSKeyId(KMSKeyIdT&& value) { SetKMSKeyId(std::forward<KMSKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const QueriesConfig& GetQueriesConfig() const{ return m_queriesConfig; }
+    inline const QueriesConfig& GetQueriesConfig() const { return m_queriesConfig; }
     inline bool QueriesConfigHasBeenSet() const { return m_queriesConfigHasBeenSet; }
-    inline void SetQueriesConfig(const QueriesConfig& value) { m_queriesConfigHasBeenSet = true; m_queriesConfig = value; }
-    inline void SetQueriesConfig(QueriesConfig&& value) { m_queriesConfigHasBeenSet = true; m_queriesConfig = std::move(value); }
-    inline StartDocumentAnalysisRequest& WithQueriesConfig(const QueriesConfig& value) { SetQueriesConfig(value); return *this;}
-    inline StartDocumentAnalysisRequest& WithQueriesConfig(QueriesConfig&& value) { SetQueriesConfig(std::move(value)); return *this;}
+    template<typename QueriesConfigT = QueriesConfig>
+    void SetQueriesConfig(QueriesConfigT&& value) { m_queriesConfigHasBeenSet = true; m_queriesConfig = std::forward<QueriesConfigT>(value); }
+    template<typename QueriesConfigT = QueriesConfig>
+    StartDocumentAnalysisRequest& WithQueriesConfig(QueriesConfigT&& value) { SetQueriesConfig(std::forward<QueriesConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the adapter to be used when analyzing a document.</p>
      */
-    inline const AdaptersConfig& GetAdaptersConfig() const{ return m_adaptersConfig; }
+    inline const AdaptersConfig& GetAdaptersConfig() const { return m_adaptersConfig; }
     inline bool AdaptersConfigHasBeenSet() const { return m_adaptersConfigHasBeenSet; }
-    inline void SetAdaptersConfig(const AdaptersConfig& value) { m_adaptersConfigHasBeenSet = true; m_adaptersConfig = value; }
-    inline void SetAdaptersConfig(AdaptersConfig&& value) { m_adaptersConfigHasBeenSet = true; m_adaptersConfig = std::move(value); }
-    inline StartDocumentAnalysisRequest& WithAdaptersConfig(const AdaptersConfig& value) { SetAdaptersConfig(value); return *this;}
-    inline StartDocumentAnalysisRequest& WithAdaptersConfig(AdaptersConfig&& value) { SetAdaptersConfig(std::move(value)); return *this;}
+    template<typename AdaptersConfigT = AdaptersConfig>
+    void SetAdaptersConfig(AdaptersConfigT&& value) { m_adaptersConfigHasBeenSet = true; m_adaptersConfig = std::forward<AdaptersConfigT>(value); }
+    template<typename AdaptersConfigT = AdaptersConfig>
+    StartDocumentAnalysisRequest& WithAdaptersConfig(AdaptersConfigT&& value) { SetAdaptersConfig(std::forward<AdaptersConfigT>(value)); return *this;}
     ///@}
   private:
 

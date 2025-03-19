@@ -31,7 +31,7 @@ namespace Model
   class UnknownNodeOutputFlowValidationDetails
   {
   public:
-    AWS_BEDROCKAGENT_API UnknownNodeOutputFlowValidationDetails();
+    AWS_BEDROCKAGENT_API UnknownNodeOutputFlowValidationDetails() = default;
     AWS_BEDROCKAGENT_API UnknownNodeOutputFlowValidationDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API UnknownNodeOutputFlowValidationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The name of the node with the unknown output.</p>
      */
-    inline const Aws::String& GetNode() const{ return m_node; }
+    inline const Aws::String& GetNode() const { return m_node; }
     inline bool NodeHasBeenSet() const { return m_nodeHasBeenSet; }
-    inline void SetNode(const Aws::String& value) { m_nodeHasBeenSet = true; m_node = value; }
-    inline void SetNode(Aws::String&& value) { m_nodeHasBeenSet = true; m_node = std::move(value); }
-    inline void SetNode(const char* value) { m_nodeHasBeenSet = true; m_node.assign(value); }
-    inline UnknownNodeOutputFlowValidationDetails& WithNode(const Aws::String& value) { SetNode(value); return *this;}
-    inline UnknownNodeOutputFlowValidationDetails& WithNode(Aws::String&& value) { SetNode(std::move(value)); return *this;}
-    inline UnknownNodeOutputFlowValidationDetails& WithNode(const char* value) { SetNode(value); return *this;}
+    template<typename NodeT = Aws::String>
+    void SetNode(NodeT&& value) { m_nodeHasBeenSet = true; m_node = std::forward<NodeT>(value); }
+    template<typename NodeT = Aws::String>
+    UnknownNodeOutputFlowValidationDetails& WithNode(NodeT&& value) { SetNode(std::forward<NodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the unknown output.</p>
      */
-    inline const Aws::String& GetOutput() const{ return m_output; }
+    inline const Aws::String& GetOutput() const { return m_output; }
     inline bool OutputHasBeenSet() const { return m_outputHasBeenSet; }
-    inline void SetOutput(const Aws::String& value) { m_outputHasBeenSet = true; m_output = value; }
-    inline void SetOutput(Aws::String&& value) { m_outputHasBeenSet = true; m_output = std::move(value); }
-    inline void SetOutput(const char* value) { m_outputHasBeenSet = true; m_output.assign(value); }
-    inline UnknownNodeOutputFlowValidationDetails& WithOutput(const Aws::String& value) { SetOutput(value); return *this;}
-    inline UnknownNodeOutputFlowValidationDetails& WithOutput(Aws::String&& value) { SetOutput(std::move(value)); return *this;}
-    inline UnknownNodeOutputFlowValidationDetails& WithOutput(const char* value) { SetOutput(value); return *this;}
+    template<typename OutputT = Aws::String>
+    void SetOutput(OutputT&& value) { m_outputHasBeenSet = true; m_output = std::forward<OutputT>(value); }
+    template<typename OutputT = Aws::String>
+    UnknownNodeOutputFlowValidationDetails& WithOutput(OutputT&& value) { SetOutput(std::forward<OutputT>(value)); return *this;}
     ///@}
   private:
 

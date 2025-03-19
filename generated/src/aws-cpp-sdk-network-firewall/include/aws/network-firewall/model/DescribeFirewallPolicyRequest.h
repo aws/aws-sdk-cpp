@@ -21,7 +21,7 @@ namespace Model
   class DescribeFirewallPolicyRequest : public NetworkFirewallRequest
   {
   public:
-    AWS_NETWORKFIREWALL_API DescribeFirewallPolicyRequest();
+    AWS_NETWORKFIREWALL_API DescribeFirewallPolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * firewall policy after you create it.</p> <p>You must specify the ARN or the
      * name, and you can specify both. </p>
      */
-    inline const Aws::String& GetFirewallPolicyName() const{ return m_firewallPolicyName; }
+    inline const Aws::String& GetFirewallPolicyName() const { return m_firewallPolicyName; }
     inline bool FirewallPolicyNameHasBeenSet() const { return m_firewallPolicyNameHasBeenSet; }
-    inline void SetFirewallPolicyName(const Aws::String& value) { m_firewallPolicyNameHasBeenSet = true; m_firewallPolicyName = value; }
-    inline void SetFirewallPolicyName(Aws::String&& value) { m_firewallPolicyNameHasBeenSet = true; m_firewallPolicyName = std::move(value); }
-    inline void SetFirewallPolicyName(const char* value) { m_firewallPolicyNameHasBeenSet = true; m_firewallPolicyName.assign(value); }
-    inline DescribeFirewallPolicyRequest& WithFirewallPolicyName(const Aws::String& value) { SetFirewallPolicyName(value); return *this;}
-    inline DescribeFirewallPolicyRequest& WithFirewallPolicyName(Aws::String&& value) { SetFirewallPolicyName(std::move(value)); return *this;}
-    inline DescribeFirewallPolicyRequest& WithFirewallPolicyName(const char* value) { SetFirewallPolicyName(value); return *this;}
+    template<typename FirewallPolicyNameT = Aws::String>
+    void SetFirewallPolicyName(FirewallPolicyNameT&& value) { m_firewallPolicyNameHasBeenSet = true; m_firewallPolicyName = std::forward<FirewallPolicyNameT>(value); }
+    template<typename FirewallPolicyNameT = Aws::String>
+    DescribeFirewallPolicyRequest& WithFirewallPolicyName(FirewallPolicyNameT&& value) { SetFirewallPolicyName(std::forward<FirewallPolicyNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +53,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the firewall policy.</p> <p>You must
      * specify the ARN or the name, and you can specify both. </p>
      */
-    inline const Aws::String& GetFirewallPolicyArn() const{ return m_firewallPolicyArn; }
+    inline const Aws::String& GetFirewallPolicyArn() const { return m_firewallPolicyArn; }
     inline bool FirewallPolicyArnHasBeenSet() const { return m_firewallPolicyArnHasBeenSet; }
-    inline void SetFirewallPolicyArn(const Aws::String& value) { m_firewallPolicyArnHasBeenSet = true; m_firewallPolicyArn = value; }
-    inline void SetFirewallPolicyArn(Aws::String&& value) { m_firewallPolicyArnHasBeenSet = true; m_firewallPolicyArn = std::move(value); }
-    inline void SetFirewallPolicyArn(const char* value) { m_firewallPolicyArnHasBeenSet = true; m_firewallPolicyArn.assign(value); }
-    inline DescribeFirewallPolicyRequest& WithFirewallPolicyArn(const Aws::String& value) { SetFirewallPolicyArn(value); return *this;}
-    inline DescribeFirewallPolicyRequest& WithFirewallPolicyArn(Aws::String&& value) { SetFirewallPolicyArn(std::move(value)); return *this;}
-    inline DescribeFirewallPolicyRequest& WithFirewallPolicyArn(const char* value) { SetFirewallPolicyArn(value); return *this;}
+    template<typename FirewallPolicyArnT = Aws::String>
+    void SetFirewallPolicyArn(FirewallPolicyArnT&& value) { m_firewallPolicyArnHasBeenSet = true; m_firewallPolicyArn = std::forward<FirewallPolicyArnT>(value); }
+    template<typename FirewallPolicyArnT = Aws::String>
+    DescribeFirewallPolicyRequest& WithFirewallPolicyArn(FirewallPolicyArnT&& value) { SetFirewallPolicyArn(std::forward<FirewallPolicyArnT>(value)); return *this;}
     ///@}
   private:
 

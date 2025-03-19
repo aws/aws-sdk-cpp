@@ -37,7 +37,7 @@ namespace Model
   class NodeOverrides
   {
   public:
-    AWS_BATCH_API NodeOverrides();
+    AWS_BATCH_API NodeOverrides() = default;
     AWS_BATCH_API NodeOverrides(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API NodeOverrides& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,7 +55,7 @@ namespace Model
      * node index that's specified in the job definition must be fewer than the number
      * of nodes specified in the override.</p> </li> </ul>
      */
-    inline int GetNumNodes() const{ return m_numNodes; }
+    inline int GetNumNodes() const { return m_numNodes; }
     inline bool NumNodesHasBeenSet() const { return m_numNodesHasBeenSet; }
     inline void SetNumNodes(int value) { m_numNodesHasBeenSet = true; m_numNodes = value; }
     inline NodeOverrides& WithNumNodes(int value) { SetNumNodes(value); return *this;}
@@ -65,18 +65,18 @@ namespace Model
     /**
      * <p>The node property overrides for the job.</p>
      */
-    inline const Aws::Vector<NodePropertyOverride>& GetNodePropertyOverrides() const{ return m_nodePropertyOverrides; }
+    inline const Aws::Vector<NodePropertyOverride>& GetNodePropertyOverrides() const { return m_nodePropertyOverrides; }
     inline bool NodePropertyOverridesHasBeenSet() const { return m_nodePropertyOverridesHasBeenSet; }
-    inline void SetNodePropertyOverrides(const Aws::Vector<NodePropertyOverride>& value) { m_nodePropertyOverridesHasBeenSet = true; m_nodePropertyOverrides = value; }
-    inline void SetNodePropertyOverrides(Aws::Vector<NodePropertyOverride>&& value) { m_nodePropertyOverridesHasBeenSet = true; m_nodePropertyOverrides = std::move(value); }
-    inline NodeOverrides& WithNodePropertyOverrides(const Aws::Vector<NodePropertyOverride>& value) { SetNodePropertyOverrides(value); return *this;}
-    inline NodeOverrides& WithNodePropertyOverrides(Aws::Vector<NodePropertyOverride>&& value) { SetNodePropertyOverrides(std::move(value)); return *this;}
-    inline NodeOverrides& AddNodePropertyOverrides(const NodePropertyOverride& value) { m_nodePropertyOverridesHasBeenSet = true; m_nodePropertyOverrides.push_back(value); return *this; }
-    inline NodeOverrides& AddNodePropertyOverrides(NodePropertyOverride&& value) { m_nodePropertyOverridesHasBeenSet = true; m_nodePropertyOverrides.push_back(std::move(value)); return *this; }
+    template<typename NodePropertyOverridesT = Aws::Vector<NodePropertyOverride>>
+    void SetNodePropertyOverrides(NodePropertyOverridesT&& value) { m_nodePropertyOverridesHasBeenSet = true; m_nodePropertyOverrides = std::forward<NodePropertyOverridesT>(value); }
+    template<typename NodePropertyOverridesT = Aws::Vector<NodePropertyOverride>>
+    NodeOverrides& WithNodePropertyOverrides(NodePropertyOverridesT&& value) { SetNodePropertyOverrides(std::forward<NodePropertyOverridesT>(value)); return *this;}
+    template<typename NodePropertyOverridesT = NodePropertyOverride>
+    NodeOverrides& AddNodePropertyOverrides(NodePropertyOverridesT&& value) { m_nodePropertyOverridesHasBeenSet = true; m_nodePropertyOverrides.emplace_back(std::forward<NodePropertyOverridesT>(value)); return *this; }
     ///@}
   private:
 
-    int m_numNodes;
+    int m_numNodes{0};
     bool m_numNodesHasBeenSet = false;
 
     Aws::Vector<NodePropertyOverride> m_nodePropertyOverrides;

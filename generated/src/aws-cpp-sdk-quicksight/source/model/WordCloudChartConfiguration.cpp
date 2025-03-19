@@ -18,17 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-WordCloudChartConfiguration::WordCloudChartConfiguration() : 
-    m_fieldWellsHasBeenSet(false),
-    m_sortConfigurationHasBeenSet(false),
-    m_categoryLabelOptionsHasBeenSet(false),
-    m_wordCloudOptionsHasBeenSet(false),
-    m_interactionsHasBeenSet(false)
-{
-}
-
 WordCloudChartConfiguration::WordCloudChartConfiguration(JsonView jsonValue)
-  : WordCloudChartConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ WordCloudChartConfiguration& WordCloudChartConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("FieldWells"))
   {
     m_fieldWells = jsonValue.GetObject("FieldWells");
-
     m_fieldWellsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SortConfiguration"))
   {
     m_sortConfiguration = jsonValue.GetObject("SortConfiguration");
-
     m_sortConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CategoryLabelOptions"))
   {
     m_categoryLabelOptions = jsonValue.GetObject("CategoryLabelOptions");
-
     m_categoryLabelOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WordCloudOptions"))
   {
     m_wordCloudOptions = jsonValue.GetObject("WordCloudOptions");
-
     m_wordCloudOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Interactions"))
   {
     m_interactions = jsonValue.GetObject("Interactions");
-
     m_interactionsHasBeenSet = true;
   }
-
   return *this;
 }
 

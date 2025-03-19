@@ -18,13 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-AthenaPropertiesOutput::AthenaPropertiesOutput() : 
-    m_workgroupNameHasBeenSet(false)
-{
-}
-
 AthenaPropertiesOutput::AthenaPropertiesOutput(JsonView jsonValue)
-  : AthenaPropertiesOutput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AthenaPropertiesOutput& AthenaPropertiesOutput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("workgroupName"))
   {
     m_workgroupName = jsonValue.GetString("workgroupName");
-
     m_workgroupNameHasBeenSet = true;
   }
-
   return *this;
 }
 

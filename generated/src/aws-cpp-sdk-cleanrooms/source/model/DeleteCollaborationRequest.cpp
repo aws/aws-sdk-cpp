@@ -12,11 +12,6 @@ using namespace Aws::CleanRooms::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteCollaborationRequest::DeleteCollaborationRequest() : 
-    m_collaborationIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCollaborationRequest::SerializePayload() const
 {
   return {};

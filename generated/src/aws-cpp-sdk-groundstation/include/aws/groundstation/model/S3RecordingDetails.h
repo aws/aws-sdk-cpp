@@ -32,7 +32,7 @@ namespace Model
   class S3RecordingDetails
   {
   public:
-    AWS_GROUNDSTATION_API S3RecordingDetails();
+    AWS_GROUNDSTATION_API S3RecordingDetails() = default;
     AWS_GROUNDSTATION_API S3RecordingDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_GROUNDSTATION_API S3RecordingDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>ARN of the bucket used.</p>
      */
-    inline const Aws::String& GetBucketArn() const{ return m_bucketArn; }
+    inline const Aws::String& GetBucketArn() const { return m_bucketArn; }
     inline bool BucketArnHasBeenSet() const { return m_bucketArnHasBeenSet; }
-    inline void SetBucketArn(const Aws::String& value) { m_bucketArnHasBeenSet = true; m_bucketArn = value; }
-    inline void SetBucketArn(Aws::String&& value) { m_bucketArnHasBeenSet = true; m_bucketArn = std::move(value); }
-    inline void SetBucketArn(const char* value) { m_bucketArnHasBeenSet = true; m_bucketArn.assign(value); }
-    inline S3RecordingDetails& WithBucketArn(const Aws::String& value) { SetBucketArn(value); return *this;}
-    inline S3RecordingDetails& WithBucketArn(Aws::String&& value) { SetBucketArn(std::move(value)); return *this;}
-    inline S3RecordingDetails& WithBucketArn(const char* value) { SetBucketArn(value); return *this;}
+    template<typename BucketArnT = Aws::String>
+    void SetBucketArn(BucketArnT&& value) { m_bucketArnHasBeenSet = true; m_bucketArn = std::forward<BucketArnT>(value); }
+    template<typename BucketArnT = Aws::String>
+    S3RecordingDetails& WithBucketArn(BucketArnT&& value) { SetBucketArn(std::forward<BucketArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Key template used for the S3 Recording Configuration</p>
      */
-    inline const Aws::String& GetKeyTemplate() const{ return m_keyTemplate; }
+    inline const Aws::String& GetKeyTemplate() const { return m_keyTemplate; }
     inline bool KeyTemplateHasBeenSet() const { return m_keyTemplateHasBeenSet; }
-    inline void SetKeyTemplate(const Aws::String& value) { m_keyTemplateHasBeenSet = true; m_keyTemplate = value; }
-    inline void SetKeyTemplate(Aws::String&& value) { m_keyTemplateHasBeenSet = true; m_keyTemplate = std::move(value); }
-    inline void SetKeyTemplate(const char* value) { m_keyTemplateHasBeenSet = true; m_keyTemplate.assign(value); }
-    inline S3RecordingDetails& WithKeyTemplate(const Aws::String& value) { SetKeyTemplate(value); return *this;}
-    inline S3RecordingDetails& WithKeyTemplate(Aws::String&& value) { SetKeyTemplate(std::move(value)); return *this;}
-    inline S3RecordingDetails& WithKeyTemplate(const char* value) { SetKeyTemplate(value); return *this;}
+    template<typename KeyTemplateT = Aws::String>
+    void SetKeyTemplate(KeyTemplateT&& value) { m_keyTemplateHasBeenSet = true; m_keyTemplate = std::forward<KeyTemplateT>(value); }
+    template<typename KeyTemplateT = Aws::String>
+    S3RecordingDetails& WithKeyTemplate(KeyTemplateT&& value) { SetKeyTemplate(std::forward<KeyTemplateT>(value)); return *this;}
     ///@}
   private:
 

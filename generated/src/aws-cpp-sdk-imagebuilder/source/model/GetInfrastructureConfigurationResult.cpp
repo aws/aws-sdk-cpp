@@ -16,10 +16,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetInfrastructureConfigurationResult::GetInfrastructureConfigurationResult()
-{
-}
-
 GetInfrastructureConfigurationResult::GetInfrastructureConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -31,15 +27,13 @@ GetInfrastructureConfigurationResult& GetInfrastructureConfigurationResult::oper
   if(jsonValue.ValueExists("requestId"))
   {
     m_requestId = jsonValue.GetString("requestId");
-
+    m_requestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("infrastructureConfiguration"))
   {
     m_infrastructureConfiguration = jsonValue.GetObject("infrastructureConfiguration");
-
+    m_infrastructureConfigurationHasBeenSet = true;
   }
-
 
 
   return *this;

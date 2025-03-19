@@ -18,15 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-LoggingFilter::LoggingFilter() : 
-    m_filtersHasBeenSet(false),
-    m_defaultBehavior(FilterBehavior::NOT_SET),
-    m_defaultBehaviorHasBeenSet(false)
-{
-}
-
 LoggingFilter::LoggingFilter(JsonView jsonValue)
-  : LoggingFilter()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ LoggingFilter& LoggingFilter::operator =(JsonView jsonValue)
     }
     m_filtersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultBehavior"))
   {
     m_defaultBehavior = FilterBehaviorMapper::GetFilterBehaviorForName(jsonValue.GetString("DefaultBehavior"));
-
     m_defaultBehaviorHasBeenSet = true;
   }
-
   return *this;
 }
 

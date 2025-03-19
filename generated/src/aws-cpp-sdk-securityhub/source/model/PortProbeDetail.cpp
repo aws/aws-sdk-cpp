@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-PortProbeDetail::PortProbeDetail() : 
-    m_localPortDetailsHasBeenSet(false),
-    m_localIpDetailsHasBeenSet(false),
-    m_remoteIpDetailsHasBeenSet(false)
-{
-}
-
 PortProbeDetail::PortProbeDetail(JsonView jsonValue)
-  : PortProbeDetail()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ PortProbeDetail& PortProbeDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LocalPortDetails"))
   {
     m_localPortDetails = jsonValue.GetObject("LocalPortDetails");
-
     m_localPortDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LocalIpDetails"))
   {
     m_localIpDetails = jsonValue.GetObject("LocalIpDetails");
-
     m_localIpDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RemoteIpDetails"))
   {
     m_remoteIpDetails = jsonValue.GetObject("RemoteIpDetails");
-
     m_remoteIpDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,47 +20,7 @@ namespace EC2
 namespace Model
 {
 
-IpamPool::IpamPool() : 
-    m_ownerIdHasBeenSet(false),
-    m_ipamPoolIdHasBeenSet(false),
-    m_sourceIpamPoolIdHasBeenSet(false),
-    m_ipamPoolArnHasBeenSet(false),
-    m_ipamScopeArnHasBeenSet(false),
-    m_ipamScopeType(IpamScopeType::NOT_SET),
-    m_ipamScopeTypeHasBeenSet(false),
-    m_ipamArnHasBeenSet(false),
-    m_ipamRegionHasBeenSet(false),
-    m_localeHasBeenSet(false),
-    m_poolDepth(0),
-    m_poolDepthHasBeenSet(false),
-    m_state(IpamPoolState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateMessageHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_autoImport(false),
-    m_autoImportHasBeenSet(false),
-    m_publiclyAdvertisable(false),
-    m_publiclyAdvertisableHasBeenSet(false),
-    m_addressFamily(AddressFamily::NOT_SET),
-    m_addressFamilyHasBeenSet(false),
-    m_allocationMinNetmaskLength(0),
-    m_allocationMinNetmaskLengthHasBeenSet(false),
-    m_allocationMaxNetmaskLength(0),
-    m_allocationMaxNetmaskLengthHasBeenSet(false),
-    m_allocationDefaultNetmaskLength(0),
-    m_allocationDefaultNetmaskLengthHasBeenSet(false),
-    m_allocationResourceTagsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_awsService(IpamPoolAwsService::NOT_SET),
-    m_awsServiceHasBeenSet(false),
-    m_publicIpSource(IpamPoolPublicIpSource::NOT_SET),
-    m_publicIpSourceHasBeenSet(false),
-    m_sourceResourceHasBeenSet(false)
-{
-}
-
 IpamPool::IpamPool(const XmlNode& xmlNode)
-  : IpamPool()
 {
   *this = xmlNode;
 }
@@ -104,7 +64,7 @@ IpamPool& IpamPool::operator =(const XmlNode& xmlNode)
     XmlNode ipamScopeTypeNode = resultNode.FirstChild("ipamScopeType");
     if(!ipamScopeTypeNode.IsNull())
     {
-      m_ipamScopeType = IpamScopeTypeMapper::GetIpamScopeTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipamScopeTypeNode.GetText()).c_str()).c_str());
+      m_ipamScopeType = IpamScopeTypeMapper::GetIpamScopeTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipamScopeTypeNode.GetText()).c_str()));
       m_ipamScopeTypeHasBeenSet = true;
     }
     XmlNode ipamArnNode = resultNode.FirstChild("ipamArn");
@@ -134,7 +94,7 @@ IpamPool& IpamPool::operator =(const XmlNode& xmlNode)
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = IpamPoolStateMapper::GetIpamPoolStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = IpamPoolStateMapper::GetIpamPoolStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode stateMessageNode = resultNode.FirstChild("stateMessage");
@@ -164,7 +124,7 @@ IpamPool& IpamPool::operator =(const XmlNode& xmlNode)
     XmlNode addressFamilyNode = resultNode.FirstChild("addressFamily");
     if(!addressFamilyNode.IsNull())
     {
-      m_addressFamily = AddressFamilyMapper::GetAddressFamilyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(addressFamilyNode.GetText()).c_str()).c_str());
+      m_addressFamily = AddressFamilyMapper::GetAddressFamilyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(addressFamilyNode.GetText()).c_str()));
       m_addressFamilyHasBeenSet = true;
     }
     XmlNode allocationMinNetmaskLengthNode = resultNode.FirstChild("allocationMinNetmaskLength");
@@ -189,6 +149,7 @@ IpamPool& IpamPool::operator =(const XmlNode& xmlNode)
     if(!allocationResourceTagsNode.IsNull())
     {
       XmlNode allocationResourceTagsMember = allocationResourceTagsNode.FirstChild("item");
+      m_allocationResourceTagsHasBeenSet = !allocationResourceTagsMember.IsNull();
       while(!allocationResourceTagsMember.IsNull())
       {
         m_allocationResourceTags.push_back(allocationResourceTagsMember);
@@ -201,6 +162,7 @@ IpamPool& IpamPool::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
@@ -212,13 +174,13 @@ IpamPool& IpamPool::operator =(const XmlNode& xmlNode)
     XmlNode awsServiceNode = resultNode.FirstChild("awsService");
     if(!awsServiceNode.IsNull())
     {
-      m_awsService = IpamPoolAwsServiceMapper::GetIpamPoolAwsServiceForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(awsServiceNode.GetText()).c_str()).c_str());
+      m_awsService = IpamPoolAwsServiceMapper::GetIpamPoolAwsServiceForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(awsServiceNode.GetText()).c_str()));
       m_awsServiceHasBeenSet = true;
     }
     XmlNode publicIpSourceNode = resultNode.FirstChild("publicIpSource");
     if(!publicIpSourceNode.IsNull())
     {
-      m_publicIpSource = IpamPoolPublicIpSourceMapper::GetIpamPoolPublicIpSourceForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(publicIpSourceNode.GetText()).c_str()).c_str());
+      m_publicIpSource = IpamPoolPublicIpSourceMapper::GetIpamPoolPublicIpSourceForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(publicIpSourceNode.GetText()).c_str()));
       m_publicIpSourceHasBeenSet = true;
     }
     XmlNode sourceResourceNode = resultNode.FirstChild("sourceResource");

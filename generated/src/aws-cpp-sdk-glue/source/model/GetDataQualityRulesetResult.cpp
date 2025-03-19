@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDataQualityRulesetResult::GetDataQualityRulesetResult()
-{
-}
-
 GetDataQualityRulesetResult::GetDataQualityRulesetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,57 +28,50 @@ GetDataQualityRulesetResult& GetDataQualityRulesetResult::operator =(const Aws::
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ruleset"))
   {
     m_ruleset = jsonValue.GetString("Ruleset");
-
+    m_rulesetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetTable"))
   {
     m_targetTable = jsonValue.GetObject("TargetTable");
-
+    m_targetTableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedOn"))
   {
     m_createdOn = jsonValue.GetDouble("CreatedOn");
-
+    m_createdOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedOn"))
   {
     m_lastModifiedOn = jsonValue.GetDouble("LastModifiedOn");
-
+    m_lastModifiedOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecommendationRunId"))
   {
     m_recommendationRunId = jsonValue.GetString("RecommendationRunId");
-
+    m_recommendationRunIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataQualitySecurityConfiguration"))
   {
     m_dataQualitySecurityConfiguration = jsonValue.GetString("DataQualitySecurityConfiguration");
-
+    m_dataQualitySecurityConfigurationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

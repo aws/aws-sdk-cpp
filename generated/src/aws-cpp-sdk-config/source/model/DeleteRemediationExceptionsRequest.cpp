@@ -12,12 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteRemediationExceptionsRequest::DeleteRemediationExceptionsRequest() : 
-    m_configRuleNameHasBeenSet(false),
-    m_resourceKeysHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRemediationExceptionsRequest::SerializePayload() const
 {
   JsonValue payload;

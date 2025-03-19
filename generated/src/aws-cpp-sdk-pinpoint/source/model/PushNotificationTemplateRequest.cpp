@@ -18,21 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-PushNotificationTemplateRequest::PushNotificationTemplateRequest() : 
-    m_aDMHasBeenSet(false),
-    m_aPNSHasBeenSet(false),
-    m_baiduHasBeenSet(false),
-    m_defaultHasBeenSet(false),
-    m_defaultSubstitutionsHasBeenSet(false),
-    m_gCMHasBeenSet(false),
-    m_recommenderIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_templateDescriptionHasBeenSet(false)
-{
-}
-
 PushNotificationTemplateRequest::PushNotificationTemplateRequest(JsonView jsonValue)
-  : PushNotificationTemplateRequest()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ PushNotificationTemplateRequest& PushNotificationTemplateRequest::operator =(Jso
   if(jsonValue.ValueExists("ADM"))
   {
     m_aDM = jsonValue.GetObject("ADM");
-
     m_aDMHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("APNS"))
   {
     m_aPNS = jsonValue.GetObject("APNS");
-
     m_aPNSHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Baidu"))
   {
     m_baidu = jsonValue.GetObject("Baidu");
-
     m_baiduHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Default"))
   {
     m_default = jsonValue.GetObject("Default");
-
     m_defaultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultSubstitutions"))
   {
     m_defaultSubstitutions = jsonValue.GetString("DefaultSubstitutions");
-
     m_defaultSubstitutionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GCM"))
   {
     m_gCM = jsonValue.GetObject("GCM");
-
     m_gCMHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecommenderId"))
   {
     m_recommenderId = jsonValue.GetString("RecommenderId");
-
     m_recommenderIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -97,14 +69,11 @@ PushNotificationTemplateRequest& PushNotificationTemplateRequest::operator =(Jso
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TemplateDescription"))
   {
     m_templateDescription = jsonValue.GetString("TemplateDescription");
-
     m_templateDescriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

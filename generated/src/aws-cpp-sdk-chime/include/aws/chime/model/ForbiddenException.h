@@ -33,7 +33,7 @@ namespace Model
   class ForbiddenException
   {
   public:
-    AWS_CHIME_API ForbiddenException();
+    AWS_CHIME_API ForbiddenException() = default;
     AWS_CHIME_API ForbiddenException(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIME_API ForbiddenException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
 
     ///@{
     
-    inline const ErrorCode& GetCode() const{ return m_code; }
+    inline ErrorCode GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const ErrorCode& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(ErrorCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline ForbiddenException& WithCode(const ErrorCode& value) { SetCode(value); return *this;}
-    inline ForbiddenException& WithCode(ErrorCode&& value) { SetCode(std::move(value)); return *this;}
+    inline void SetCode(ErrorCode value) { m_codeHasBeenSet = true; m_code = value; }
+    inline ForbiddenException& WithCode(ErrorCode value) { SetCode(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline ForbiddenException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline ForbiddenException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline ForbiddenException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    ForbiddenException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 
-    ErrorCode m_code;
+    ErrorCode m_code{ErrorCode::NOT_SET};
     bool m_codeHasBeenSet = false;
 
     Aws::String m_message;

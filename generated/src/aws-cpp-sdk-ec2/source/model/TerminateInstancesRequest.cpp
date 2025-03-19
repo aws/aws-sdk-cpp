@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-TerminateInstancesRequest::TerminateInstancesRequest() : 
-    m_instanceIdsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String TerminateInstancesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -18,17 +18,7 @@ namespace Connect
 namespace Model
 {
 
-ContactFlowModuleSummary::ContactFlowModuleSummary() : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_state(ContactFlowModuleState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 ContactFlowModuleSummary::ContactFlowModuleSummary(JsonView jsonValue)
-  : ContactFlowModuleSummary()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ContactFlowModuleSummary& ContactFlowModuleSummary::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = ContactFlowModuleStateMapper::GetContactFlowModuleStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -31,7 +31,7 @@ namespace Model
   class Output
   {
   public:
-    AWS_CLOUDFORMATION_API Output();
+    AWS_CLOUDFORMATION_API Output() = default;
     AWS_CLOUDFORMATION_API Output(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFORMATION_API Output& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,56 +43,48 @@ namespace Model
     /**
      * <p>The key associated with the output.</p>
      */
-    inline const Aws::String& GetOutputKey() const{ return m_outputKey; }
+    inline const Aws::String& GetOutputKey() const { return m_outputKey; }
     inline bool OutputKeyHasBeenSet() const { return m_outputKeyHasBeenSet; }
-    inline void SetOutputKey(const Aws::String& value) { m_outputKeyHasBeenSet = true; m_outputKey = value; }
-    inline void SetOutputKey(Aws::String&& value) { m_outputKeyHasBeenSet = true; m_outputKey = std::move(value); }
-    inline void SetOutputKey(const char* value) { m_outputKeyHasBeenSet = true; m_outputKey.assign(value); }
-    inline Output& WithOutputKey(const Aws::String& value) { SetOutputKey(value); return *this;}
-    inline Output& WithOutputKey(Aws::String&& value) { SetOutputKey(std::move(value)); return *this;}
-    inline Output& WithOutputKey(const char* value) { SetOutputKey(value); return *this;}
+    template<typename OutputKeyT = Aws::String>
+    void SetOutputKey(OutputKeyT&& value) { m_outputKeyHasBeenSet = true; m_outputKey = std::forward<OutputKeyT>(value); }
+    template<typename OutputKeyT = Aws::String>
+    Output& WithOutputKey(OutputKeyT&& value) { SetOutputKey(std::forward<OutputKeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value associated with the output.</p>
      */
-    inline const Aws::String& GetOutputValue() const{ return m_outputValue; }
+    inline const Aws::String& GetOutputValue() const { return m_outputValue; }
     inline bool OutputValueHasBeenSet() const { return m_outputValueHasBeenSet; }
-    inline void SetOutputValue(const Aws::String& value) { m_outputValueHasBeenSet = true; m_outputValue = value; }
-    inline void SetOutputValue(Aws::String&& value) { m_outputValueHasBeenSet = true; m_outputValue = std::move(value); }
-    inline void SetOutputValue(const char* value) { m_outputValueHasBeenSet = true; m_outputValue.assign(value); }
-    inline Output& WithOutputValue(const Aws::String& value) { SetOutputValue(value); return *this;}
-    inline Output& WithOutputValue(Aws::String&& value) { SetOutputValue(std::move(value)); return *this;}
-    inline Output& WithOutputValue(const char* value) { SetOutputValue(value); return *this;}
+    template<typename OutputValueT = Aws::String>
+    void SetOutputValue(OutputValueT&& value) { m_outputValueHasBeenSet = true; m_outputValue = std::forward<OutputValueT>(value); }
+    template<typename OutputValueT = Aws::String>
+    Output& WithOutputValue(OutputValueT&& value) { SetOutputValue(std::forward<OutputValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>User defined description associated with the output.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline Output& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline Output& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline Output& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    Output& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the export associated with the output.</p>
      */
-    inline const Aws::String& GetExportName() const{ return m_exportName; }
+    inline const Aws::String& GetExportName() const { return m_exportName; }
     inline bool ExportNameHasBeenSet() const { return m_exportNameHasBeenSet; }
-    inline void SetExportName(const Aws::String& value) { m_exportNameHasBeenSet = true; m_exportName = value; }
-    inline void SetExportName(Aws::String&& value) { m_exportNameHasBeenSet = true; m_exportName = std::move(value); }
-    inline void SetExportName(const char* value) { m_exportNameHasBeenSet = true; m_exportName.assign(value); }
-    inline Output& WithExportName(const Aws::String& value) { SetExportName(value); return *this;}
-    inline Output& WithExportName(Aws::String&& value) { SetExportName(std::move(value)); return *this;}
-    inline Output& WithExportName(const char* value) { SetExportName(value); return *this;}
+    template<typename ExportNameT = Aws::String>
+    void SetExportName(ExportNameT&& value) { m_exportNameHasBeenSet = true; m_exportName = std::forward<ExportNameT>(value); }
+    template<typename ExportNameT = Aws::String>
+    Output& WithExportName(ExportNameT&& value) { SetExportName(std::forward<ExportNameT>(value)); return *this;}
     ///@}
   private:
 

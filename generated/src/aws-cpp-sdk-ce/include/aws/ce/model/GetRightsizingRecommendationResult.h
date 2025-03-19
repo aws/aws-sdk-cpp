@@ -32,7 +32,7 @@ namespace Model
   class GetRightsizingRecommendationResult
   {
   public:
-    AWS_COSTEXPLORER_API GetRightsizingRecommendationResult();
+    AWS_COSTEXPLORER_API GetRightsizingRecommendationResult() = default;
     AWS_COSTEXPLORER_API GetRightsizingRecommendationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COSTEXPLORER_API GetRightsizingRecommendationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,48 +41,46 @@ namespace Model
     /**
      * <p>Information regarding this specific recommendation set.</p>
      */
-    inline const RightsizingRecommendationMetadata& GetMetadata() const{ return m_metadata; }
-    inline void SetMetadata(const RightsizingRecommendationMetadata& value) { m_metadata = value; }
-    inline void SetMetadata(RightsizingRecommendationMetadata&& value) { m_metadata = std::move(value); }
-    inline GetRightsizingRecommendationResult& WithMetadata(const RightsizingRecommendationMetadata& value) { SetMetadata(value); return *this;}
-    inline GetRightsizingRecommendationResult& WithMetadata(RightsizingRecommendationMetadata&& value) { SetMetadata(std::move(value)); return *this;}
+    inline const RightsizingRecommendationMetadata& GetMetadata() const { return m_metadata; }
+    template<typename MetadataT = RightsizingRecommendationMetadata>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = RightsizingRecommendationMetadata>
+    GetRightsizingRecommendationResult& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Summary of this recommendation set.</p>
      */
-    inline const RightsizingRecommendationSummary& GetSummary() const{ return m_summary; }
-    inline void SetSummary(const RightsizingRecommendationSummary& value) { m_summary = value; }
-    inline void SetSummary(RightsizingRecommendationSummary&& value) { m_summary = std::move(value); }
-    inline GetRightsizingRecommendationResult& WithSummary(const RightsizingRecommendationSummary& value) { SetSummary(value); return *this;}
-    inline GetRightsizingRecommendationResult& WithSummary(RightsizingRecommendationSummary&& value) { SetSummary(std::move(value)); return *this;}
+    inline const RightsizingRecommendationSummary& GetSummary() const { return m_summary; }
+    template<typename SummaryT = RightsizingRecommendationSummary>
+    void SetSummary(SummaryT&& value) { m_summaryHasBeenSet = true; m_summary = std::forward<SummaryT>(value); }
+    template<typename SummaryT = RightsizingRecommendationSummary>
+    GetRightsizingRecommendationResult& WithSummary(SummaryT&& value) { SetSummary(std::forward<SummaryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Recommendations to rightsize resources.</p>
      */
-    inline const Aws::Vector<RightsizingRecommendation>& GetRightsizingRecommendations() const{ return m_rightsizingRecommendations; }
-    inline void SetRightsizingRecommendations(const Aws::Vector<RightsizingRecommendation>& value) { m_rightsizingRecommendations = value; }
-    inline void SetRightsizingRecommendations(Aws::Vector<RightsizingRecommendation>&& value) { m_rightsizingRecommendations = std::move(value); }
-    inline GetRightsizingRecommendationResult& WithRightsizingRecommendations(const Aws::Vector<RightsizingRecommendation>& value) { SetRightsizingRecommendations(value); return *this;}
-    inline GetRightsizingRecommendationResult& WithRightsizingRecommendations(Aws::Vector<RightsizingRecommendation>&& value) { SetRightsizingRecommendations(std::move(value)); return *this;}
-    inline GetRightsizingRecommendationResult& AddRightsizingRecommendations(const RightsizingRecommendation& value) { m_rightsizingRecommendations.push_back(value); return *this; }
-    inline GetRightsizingRecommendationResult& AddRightsizingRecommendations(RightsizingRecommendation&& value) { m_rightsizingRecommendations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RightsizingRecommendation>& GetRightsizingRecommendations() const { return m_rightsizingRecommendations; }
+    template<typename RightsizingRecommendationsT = Aws::Vector<RightsizingRecommendation>>
+    void SetRightsizingRecommendations(RightsizingRecommendationsT&& value) { m_rightsizingRecommendationsHasBeenSet = true; m_rightsizingRecommendations = std::forward<RightsizingRecommendationsT>(value); }
+    template<typename RightsizingRecommendationsT = Aws::Vector<RightsizingRecommendation>>
+    GetRightsizingRecommendationResult& WithRightsizingRecommendations(RightsizingRecommendationsT&& value) { SetRightsizingRecommendations(std::forward<RightsizingRecommendationsT>(value)); return *this;}
+    template<typename RightsizingRecommendationsT = RightsizingRecommendation>
+    GetRightsizingRecommendationResult& AddRightsizingRecommendations(RightsizingRecommendationsT&& value) { m_rightsizingRecommendationsHasBeenSet = true; m_rightsizingRecommendations.emplace_back(std::forward<RightsizingRecommendationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The token to retrieve the next set of results.</p>
      */
-    inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
-    inline void SetNextPageToken(const Aws::String& value) { m_nextPageToken = value; }
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
-    inline void SetNextPageToken(const char* value) { m_nextPageToken.assign(value); }
-    inline GetRightsizingRecommendationResult& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
-    inline GetRightsizingRecommendationResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
-    inline GetRightsizingRecommendationResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
+    inline const Aws::String& GetNextPageToken() const { return m_nextPageToken; }
+    template<typename NextPageTokenT = Aws::String>
+    void SetNextPageToken(NextPageTokenT&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::forward<NextPageTokenT>(value); }
+    template<typename NextPageTokenT = Aws::String>
+    GetRightsizingRecommendationResult& WithNextPageToken(NextPageTokenT&& value) { SetNextPageToken(std::forward<NextPageTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,36 +91,40 @@ namespace Model
      * estimated savings that are associated with recommendations with consideration of
      * existing Savings Plans or RI benefits, or neither. </p>
      */
-    inline const RightsizingRecommendationConfiguration& GetConfiguration() const{ return m_configuration; }
-    inline void SetConfiguration(const RightsizingRecommendationConfiguration& value) { m_configuration = value; }
-    inline void SetConfiguration(RightsizingRecommendationConfiguration&& value) { m_configuration = std::move(value); }
-    inline GetRightsizingRecommendationResult& WithConfiguration(const RightsizingRecommendationConfiguration& value) { SetConfiguration(value); return *this;}
-    inline GetRightsizingRecommendationResult& WithConfiguration(RightsizingRecommendationConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    inline const RightsizingRecommendationConfiguration& GetConfiguration() const { return m_configuration; }
+    template<typename ConfigurationT = RightsizingRecommendationConfiguration>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = RightsizingRecommendationConfiguration>
+    GetRightsizingRecommendationResult& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetRightsizingRecommendationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetRightsizingRecommendationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetRightsizingRecommendationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetRightsizingRecommendationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     RightsizingRecommendationMetadata m_metadata;
+    bool m_metadataHasBeenSet = false;
 
     RightsizingRecommendationSummary m_summary;
+    bool m_summaryHasBeenSet = false;
 
     Aws::Vector<RightsizingRecommendation> m_rightsizingRecommendations;
+    bool m_rightsizingRecommendationsHasBeenSet = false;
 
     Aws::String m_nextPageToken;
+    bool m_nextPageTokenHasBeenSet = false;
 
     RightsizingRecommendationConfiguration m_configuration;
+    bool m_configurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

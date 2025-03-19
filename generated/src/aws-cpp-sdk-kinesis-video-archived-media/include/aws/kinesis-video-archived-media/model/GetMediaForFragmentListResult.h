@@ -22,10 +22,9 @@ namespace Model
   class GetMediaForFragmentListResult
   {
   public:
-    AWS_KINESISVIDEOARCHIVEDMEDIA_API GetMediaForFragmentListResult();
-    //We have to define these because Microsoft doesn't auto generate them
-    AWS_KINESISVIDEOARCHIVEDMEDIA_API GetMediaForFragmentListResult(GetMediaForFragmentListResult&&);
-    AWS_KINESISVIDEOARCHIVEDMEDIA_API GetMediaForFragmentListResult& operator=(GetMediaForFragmentListResult&&);
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API GetMediaForFragmentListResult() = default;
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API GetMediaForFragmentListResult(GetMediaForFragmentListResult&&) = default;
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API GetMediaForFragmentListResult& operator=(GetMediaForFragmentListResult&&) = default;
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     GetMediaForFragmentListResult(const GetMediaForFragmentListResult&) = delete;
@@ -41,13 +40,11 @@ namespace Model
     /**
      * <p>The content type of the requested media.</p>
      */
-    inline const Aws::String& GetContentType() const{ return m_contentType; }
-    inline void SetContentType(const Aws::String& value) { m_contentType = value; }
-    inline void SetContentType(Aws::String&& value) { m_contentType = std::move(value); }
-    inline void SetContentType(const char* value) { m_contentType.assign(value); }
-    inline GetMediaForFragmentListResult& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
-    inline GetMediaForFragmentListResult& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
-    inline GetMediaForFragmentListResult& WithContentType(const char* value) { SetContentType(value); return *this;}
+    inline const Aws::String& GetContentType() const { return m_contentType; }
+    template<typename ContentTypeT = Aws::String>
+    void SetContentType(ContentTypeT&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::forward<ContentTypeT>(value); }
+    template<typename ContentTypeT = Aws::String>
+    GetMediaForFragmentListResult& WithContentType(ContentTypeT&& value) { SetContentType(std::forward<ContentTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,21 +72,22 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetMediaForFragmentListResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetMediaForFragmentListResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetMediaForFragmentListResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetMediaForFragmentListResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_contentType;
+    bool m_contentTypeHasBeenSet = false;
 
-    Aws::Utils::Stream::ResponseStream m_payload;
+    Aws::Utils::Stream::ResponseStream m_payload{};
+    bool m_payloadHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

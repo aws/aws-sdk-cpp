@@ -18,15 +18,7 @@ namespace IoT
 namespace Model
 {
 
-DetectMitigationActionsTaskTarget::DetectMitigationActionsTaskTarget() : 
-    m_violationIdsHasBeenSet(false),
-    m_securityProfileNameHasBeenSet(false),
-    m_behaviorNameHasBeenSet(false)
-{
-}
-
 DetectMitigationActionsTaskTarget::DetectMitigationActionsTaskTarget(JsonView jsonValue)
-  : DetectMitigationActionsTaskTarget()
 {
   *this = jsonValue;
 }
@@ -42,21 +34,16 @@ DetectMitigationActionsTaskTarget& DetectMitigationActionsTaskTarget::operator =
     }
     m_violationIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("securityProfileName"))
   {
     m_securityProfileName = jsonValue.GetString("securityProfileName");
-
     m_securityProfileNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("behaviorName"))
   {
     m_behaviorName = jsonValue.GetString("behaviorName");
-
     m_behaviorNameHasBeenSet = true;
   }
-
   return *this;
 }
 

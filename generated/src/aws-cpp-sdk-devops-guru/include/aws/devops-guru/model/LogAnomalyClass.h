@@ -34,7 +34,7 @@ namespace Model
   class LogAnomalyClass
   {
   public:
-    AWS_DEVOPSGURU_API LogAnomalyClass();
+    AWS_DEVOPSGURU_API LogAnomalyClass() = default;
     AWS_DEVOPSGURU_API LogAnomalyClass(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API LogAnomalyClass& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,26 +46,22 @@ namespace Model
      * belongs to. A log stream is a sequence of log events that share the same source.
      * </p>
      */
-    inline const Aws::String& GetLogStreamName() const{ return m_logStreamName; }
+    inline const Aws::String& GetLogStreamName() const { return m_logStreamName; }
     inline bool LogStreamNameHasBeenSet() const { return m_logStreamNameHasBeenSet; }
-    inline void SetLogStreamName(const Aws::String& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = value; }
-    inline void SetLogStreamName(Aws::String&& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = std::move(value); }
-    inline void SetLogStreamName(const char* value) { m_logStreamNameHasBeenSet = true; m_logStreamName.assign(value); }
-    inline LogAnomalyClass& WithLogStreamName(const Aws::String& value) { SetLogStreamName(value); return *this;}
-    inline LogAnomalyClass& WithLogStreamName(Aws::String&& value) { SetLogStreamName(std::move(value)); return *this;}
-    inline LogAnomalyClass& WithLogStreamName(const char* value) { SetLogStreamName(value); return *this;}
+    template<typename LogStreamNameT = Aws::String>
+    void SetLogStreamName(LogStreamNameT&& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = std::forward<LogStreamNameT>(value); }
+    template<typename LogStreamNameT = Aws::String>
+    LogAnomalyClass& WithLogStreamName(LogStreamNameT&& value) { SetLogStreamName(std::forward<LogStreamNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The type of log anomaly that has been detected. </p>
      */
-    inline const LogAnomalyType& GetLogAnomalyType() const{ return m_logAnomalyType; }
+    inline LogAnomalyType GetLogAnomalyType() const { return m_logAnomalyType; }
     inline bool LogAnomalyTypeHasBeenSet() const { return m_logAnomalyTypeHasBeenSet; }
-    inline void SetLogAnomalyType(const LogAnomalyType& value) { m_logAnomalyTypeHasBeenSet = true; m_logAnomalyType = value; }
-    inline void SetLogAnomalyType(LogAnomalyType&& value) { m_logAnomalyTypeHasBeenSet = true; m_logAnomalyType = std::move(value); }
-    inline LogAnomalyClass& WithLogAnomalyType(const LogAnomalyType& value) { SetLogAnomalyType(value); return *this;}
-    inline LogAnomalyClass& WithLogAnomalyType(LogAnomalyType&& value) { SetLogAnomalyType(std::move(value)); return *this;}
+    inline void SetLogAnomalyType(LogAnomalyType value) { m_logAnomalyTypeHasBeenSet = true; m_logAnomalyType = value; }
+    inline LogAnomalyClass& WithLogAnomalyType(LogAnomalyType value) { SetLogAnomalyType(value); return *this;}
     ///@}
 
     ///@{
@@ -74,49 +70,43 @@ namespace Model
      * another location, or it may be blank for log anomalies such as format anomalies.
      * </p>
      */
-    inline const Aws::String& GetLogAnomalyToken() const{ return m_logAnomalyToken; }
+    inline const Aws::String& GetLogAnomalyToken() const { return m_logAnomalyToken; }
     inline bool LogAnomalyTokenHasBeenSet() const { return m_logAnomalyTokenHasBeenSet; }
-    inline void SetLogAnomalyToken(const Aws::String& value) { m_logAnomalyTokenHasBeenSet = true; m_logAnomalyToken = value; }
-    inline void SetLogAnomalyToken(Aws::String&& value) { m_logAnomalyTokenHasBeenSet = true; m_logAnomalyToken = std::move(value); }
-    inline void SetLogAnomalyToken(const char* value) { m_logAnomalyTokenHasBeenSet = true; m_logAnomalyToken.assign(value); }
-    inline LogAnomalyClass& WithLogAnomalyToken(const Aws::String& value) { SetLogAnomalyToken(value); return *this;}
-    inline LogAnomalyClass& WithLogAnomalyToken(Aws::String&& value) { SetLogAnomalyToken(std::move(value)); return *this;}
-    inline LogAnomalyClass& WithLogAnomalyToken(const char* value) { SetLogAnomalyToken(value); return *this;}
+    template<typename LogAnomalyTokenT = Aws::String>
+    void SetLogAnomalyToken(LogAnomalyTokenT&& value) { m_logAnomalyTokenHasBeenSet = true; m_logAnomalyToken = std::forward<LogAnomalyTokenT>(value); }
+    template<typename LogAnomalyTokenT = Aws::String>
+    LogAnomalyClass& WithLogAnomalyToken(LogAnomalyTokenT&& value) { SetLogAnomalyToken(std::forward<LogAnomalyTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The ID of the log event. </p>
      */
-    inline const Aws::String& GetLogEventId() const{ return m_logEventId; }
+    inline const Aws::String& GetLogEventId() const { return m_logEventId; }
     inline bool LogEventIdHasBeenSet() const { return m_logEventIdHasBeenSet; }
-    inline void SetLogEventId(const Aws::String& value) { m_logEventIdHasBeenSet = true; m_logEventId = value; }
-    inline void SetLogEventId(Aws::String&& value) { m_logEventIdHasBeenSet = true; m_logEventId = std::move(value); }
-    inline void SetLogEventId(const char* value) { m_logEventIdHasBeenSet = true; m_logEventId.assign(value); }
-    inline LogAnomalyClass& WithLogEventId(const Aws::String& value) { SetLogEventId(value); return *this;}
-    inline LogAnomalyClass& WithLogEventId(Aws::String&& value) { SetLogEventId(std::move(value)); return *this;}
-    inline LogAnomalyClass& WithLogEventId(const char* value) { SetLogEventId(value); return *this;}
+    template<typename LogEventIdT = Aws::String>
+    void SetLogEventId(LogEventIdT&& value) { m_logEventIdHasBeenSet = true; m_logEventId = std::forward<LogEventIdT>(value); }
+    template<typename LogEventIdT = Aws::String>
+    LogAnomalyClass& WithLogEventId(LogEventIdT&& value) { SetLogEventId(std::forward<LogEventIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The explanation for why the log event is considered an anomaly. </p>
      */
-    inline const Aws::String& GetExplanation() const{ return m_explanation; }
+    inline const Aws::String& GetExplanation() const { return m_explanation; }
     inline bool ExplanationHasBeenSet() const { return m_explanationHasBeenSet; }
-    inline void SetExplanation(const Aws::String& value) { m_explanationHasBeenSet = true; m_explanation = value; }
-    inline void SetExplanation(Aws::String&& value) { m_explanationHasBeenSet = true; m_explanation = std::move(value); }
-    inline void SetExplanation(const char* value) { m_explanationHasBeenSet = true; m_explanation.assign(value); }
-    inline LogAnomalyClass& WithExplanation(const Aws::String& value) { SetExplanation(value); return *this;}
-    inline LogAnomalyClass& WithExplanation(Aws::String&& value) { SetExplanation(std::move(value)); return *this;}
-    inline LogAnomalyClass& WithExplanation(const char* value) { SetExplanation(value); return *this;}
+    template<typename ExplanationT = Aws::String>
+    void SetExplanation(ExplanationT&& value) { m_explanationHasBeenSet = true; m_explanation = std::forward<ExplanationT>(value); }
+    template<typename ExplanationT = Aws::String>
+    LogAnomalyClass& WithExplanation(ExplanationT&& value) { SetExplanation(std::forward<ExplanationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The number of log lines where this anomalous log event occurs. </p>
      */
-    inline int GetNumberOfLogLinesOccurrences() const{ return m_numberOfLogLinesOccurrences; }
+    inline int GetNumberOfLogLinesOccurrences() const { return m_numberOfLogLinesOccurrences; }
     inline bool NumberOfLogLinesOccurrencesHasBeenSet() const { return m_numberOfLogLinesOccurrencesHasBeenSet; }
     inline void SetNumberOfLogLinesOccurrences(int value) { m_numberOfLogLinesOccurrencesHasBeenSet = true; m_numberOfLogLinesOccurrences = value; }
     inline LogAnomalyClass& WithNumberOfLogLinesOccurrences(int value) { SetNumberOfLogLinesOccurrences(value); return *this;}
@@ -126,19 +116,19 @@ namespace Model
     /**
      * <p> The time of the first occurrence of the anomalous log event. </p>
      */
-    inline const Aws::Utils::DateTime& GetLogEventTimestamp() const{ return m_logEventTimestamp; }
+    inline const Aws::Utils::DateTime& GetLogEventTimestamp() const { return m_logEventTimestamp; }
     inline bool LogEventTimestampHasBeenSet() const { return m_logEventTimestampHasBeenSet; }
-    inline void SetLogEventTimestamp(const Aws::Utils::DateTime& value) { m_logEventTimestampHasBeenSet = true; m_logEventTimestamp = value; }
-    inline void SetLogEventTimestamp(Aws::Utils::DateTime&& value) { m_logEventTimestampHasBeenSet = true; m_logEventTimestamp = std::move(value); }
-    inline LogAnomalyClass& WithLogEventTimestamp(const Aws::Utils::DateTime& value) { SetLogEventTimestamp(value); return *this;}
-    inline LogAnomalyClass& WithLogEventTimestamp(Aws::Utils::DateTime&& value) { SetLogEventTimestamp(std::move(value)); return *this;}
+    template<typename LogEventTimestampT = Aws::Utils::DateTime>
+    void SetLogEventTimestamp(LogEventTimestampT&& value) { m_logEventTimestampHasBeenSet = true; m_logEventTimestamp = std::forward<LogEventTimestampT>(value); }
+    template<typename LogEventTimestampT = Aws::Utils::DateTime>
+    LogAnomalyClass& WithLogEventTimestamp(LogEventTimestampT&& value) { SetLogEventTimestamp(std::forward<LogEventTimestampT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_logStreamName;
     bool m_logStreamNameHasBeenSet = false;
 
-    LogAnomalyType m_logAnomalyType;
+    LogAnomalyType m_logAnomalyType{LogAnomalyType::NOT_SET};
     bool m_logAnomalyTypeHasBeenSet = false;
 
     Aws::String m_logAnomalyToken;
@@ -150,10 +140,10 @@ namespace Model
     Aws::String m_explanation;
     bool m_explanationHasBeenSet = false;
 
-    int m_numberOfLogLinesOccurrences;
+    int m_numberOfLogLinesOccurrences{0};
     bool m_numberOfLogLinesOccurrencesHasBeenSet = false;
 
-    Aws::Utils::DateTime m_logEventTimestamp;
+    Aws::Utils::DateTime m_logEventTimestamp{};
     bool m_logEventTimestampHasBeenSet = false;
   };
 

@@ -21,7 +21,7 @@ namespace Model
   class DeleteCertificateAuthorityRequest : public ACMPCARequest
   {
   public:
-    AWS_ACMPCA_API DeleteCertificateAuthorityRequest();
+    AWS_ACMPCA_API DeleteCertificateAuthorityRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code>. </p>
      */
-    inline const Aws::String& GetCertificateAuthorityArn() const{ return m_certificateAuthorityArn; }
+    inline const Aws::String& GetCertificateAuthorityArn() const { return m_certificateAuthorityArn; }
     inline bool CertificateAuthorityArnHasBeenSet() const { return m_certificateAuthorityArnHasBeenSet; }
-    inline void SetCertificateAuthorityArn(const Aws::String& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = value; }
-    inline void SetCertificateAuthorityArn(Aws::String&& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = std::move(value); }
-    inline void SetCertificateAuthorityArn(const char* value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn.assign(value); }
-    inline DeleteCertificateAuthorityRequest& WithCertificateAuthorityArn(const Aws::String& value) { SetCertificateAuthorityArn(value); return *this;}
-    inline DeleteCertificateAuthorityRequest& WithCertificateAuthorityArn(Aws::String&& value) { SetCertificateAuthorityArn(std::move(value)); return *this;}
-    inline DeleteCertificateAuthorityRequest& WithCertificateAuthorityArn(const char* value) { SetCertificateAuthorityArn(value); return *this;}
+    template<typename CertificateAuthorityArnT = Aws::String>
+    void SetCertificateAuthorityArn(CertificateAuthorityArnT&& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = std::forward<CertificateAuthorityArnT>(value); }
+    template<typename CertificateAuthorityArnT = Aws::String>
+    DeleteCertificateAuthorityRequest& WithCertificateAuthorityArn(CertificateAuthorityArnT&& value) { SetCertificateAuthorityArn(std::forward<CertificateAuthorityArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,7 +55,7 @@ namespace Model
      * <p>The number of days to make a CA restorable after it has been deleted. This
      * can be anywhere from 7 to 30 days, with 30 being the default.</p>
      */
-    inline int GetPermanentDeletionTimeInDays() const{ return m_permanentDeletionTimeInDays; }
+    inline int GetPermanentDeletionTimeInDays() const { return m_permanentDeletionTimeInDays; }
     inline bool PermanentDeletionTimeInDaysHasBeenSet() const { return m_permanentDeletionTimeInDaysHasBeenSet; }
     inline void SetPermanentDeletionTimeInDays(int value) { m_permanentDeletionTimeInDaysHasBeenSet = true; m_permanentDeletionTimeInDays = value; }
     inline DeleteCertificateAuthorityRequest& WithPermanentDeletionTimeInDays(int value) { SetPermanentDeletionTimeInDays(value); return *this;}
@@ -67,7 +65,7 @@ namespace Model
     Aws::String m_certificateAuthorityArn;
     bool m_certificateAuthorityArnHasBeenSet = false;
 
-    int m_permanentDeletionTimeInDays;
+    int m_permanentDeletionTimeInDays{0};
     bool m_permanentDeletionTimeInDaysHasBeenSet = false;
   };
 

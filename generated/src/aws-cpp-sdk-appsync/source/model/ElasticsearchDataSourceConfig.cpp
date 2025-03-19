@@ -18,14 +18,7 @@ namespace AppSync
 namespace Model
 {
 
-ElasticsearchDataSourceConfig::ElasticsearchDataSourceConfig() : 
-    m_endpointHasBeenSet(false),
-    m_awsRegionHasBeenSet(false)
-{
-}
-
 ElasticsearchDataSourceConfig::ElasticsearchDataSourceConfig(JsonView jsonValue)
-  : ElasticsearchDataSourceConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ElasticsearchDataSourceConfig& ElasticsearchDataSourceConfig::operator =(JsonVie
   if(jsonValue.ValueExists("endpoint"))
   {
     m_endpoint = jsonValue.GetString("endpoint");
-
     m_endpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsRegion"))
   {
     m_awsRegion = jsonValue.GetString("awsRegion");
-
     m_awsRegionHasBeenSet = true;
   }
-
   return *this;
 }
 

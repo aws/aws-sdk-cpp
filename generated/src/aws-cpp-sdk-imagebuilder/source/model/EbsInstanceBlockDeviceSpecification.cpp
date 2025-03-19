@@ -18,26 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-EbsInstanceBlockDeviceSpecification::EbsInstanceBlockDeviceSpecification() : 
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false),
-    m_volumeSize(0),
-    m_volumeSizeHasBeenSet(false),
-    m_volumeType(EbsVolumeType::NOT_SET),
-    m_volumeTypeHasBeenSet(false),
-    m_throughput(0),
-    m_throughputHasBeenSet(false)
-{
-}
-
 EbsInstanceBlockDeviceSpecification::EbsInstanceBlockDeviceSpecification(JsonView jsonValue)
-  : EbsInstanceBlockDeviceSpecification()
 {
   *this = jsonValue;
 }
@@ -47,59 +28,43 @@ EbsInstanceBlockDeviceSpecification& EbsInstanceBlockDeviceSpecification::operat
   if(jsonValue.ValueExists("encrypted"))
   {
     m_encrypted = jsonValue.GetBool("encrypted");
-
     m_encryptedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deleteOnTermination"))
   {
     m_deleteOnTermination = jsonValue.GetBool("deleteOnTermination");
-
     m_deleteOnTerminationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("iops"))
   {
     m_iops = jsonValue.GetInteger("iops");
-
     m_iopsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("snapshotId"))
   {
     m_snapshotId = jsonValue.GetString("snapshotId");
-
     m_snapshotIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("volumeSize"))
   {
     m_volumeSize = jsonValue.GetInteger("volumeSize");
-
     m_volumeSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("volumeType"))
   {
     m_volumeType = EbsVolumeTypeMapper::GetEbsVolumeTypeForName(jsonValue.GetString("volumeType"));
-
     m_volumeTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("throughput"))
   {
     m_throughput = jsonValue.GetInteger("throughput");
-
     m_throughputHasBeenSet = true;
   }
-
   return *this;
 }
 

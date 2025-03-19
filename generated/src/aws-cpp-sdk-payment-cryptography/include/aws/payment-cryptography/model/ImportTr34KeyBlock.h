@@ -33,7 +33,7 @@ namespace Model
   class ImportTr34KeyBlock
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHY_API ImportTr34KeyBlock();
+    AWS_PAYMENTCRYPTOGRAPHY_API ImportTr34KeyBlock() = default;
     AWS_PAYMENTCRYPTOGRAPHY_API ImportTr34KeyBlock(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHY_API ImportTr34KeyBlock& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The <code>KeyARN</code> of the certificate chain that signs the signing key
      * certificate during TR-34 key import.</p>
      */
-    inline const Aws::String& GetCertificateAuthorityPublicKeyIdentifier() const{ return m_certificateAuthorityPublicKeyIdentifier; }
+    inline const Aws::String& GetCertificateAuthorityPublicKeyIdentifier() const { return m_certificateAuthorityPublicKeyIdentifier; }
     inline bool CertificateAuthorityPublicKeyIdentifierHasBeenSet() const { return m_certificateAuthorityPublicKeyIdentifierHasBeenSet; }
-    inline void SetCertificateAuthorityPublicKeyIdentifier(const Aws::String& value) { m_certificateAuthorityPublicKeyIdentifierHasBeenSet = true; m_certificateAuthorityPublicKeyIdentifier = value; }
-    inline void SetCertificateAuthorityPublicKeyIdentifier(Aws::String&& value) { m_certificateAuthorityPublicKeyIdentifierHasBeenSet = true; m_certificateAuthorityPublicKeyIdentifier = std::move(value); }
-    inline void SetCertificateAuthorityPublicKeyIdentifier(const char* value) { m_certificateAuthorityPublicKeyIdentifierHasBeenSet = true; m_certificateAuthorityPublicKeyIdentifier.assign(value); }
-    inline ImportTr34KeyBlock& WithCertificateAuthorityPublicKeyIdentifier(const Aws::String& value) { SetCertificateAuthorityPublicKeyIdentifier(value); return *this;}
-    inline ImportTr34KeyBlock& WithCertificateAuthorityPublicKeyIdentifier(Aws::String&& value) { SetCertificateAuthorityPublicKeyIdentifier(std::move(value)); return *this;}
-    inline ImportTr34KeyBlock& WithCertificateAuthorityPublicKeyIdentifier(const char* value) { SetCertificateAuthorityPublicKeyIdentifier(value); return *this;}
+    template<typename CertificateAuthorityPublicKeyIdentifierT = Aws::String>
+    void SetCertificateAuthorityPublicKeyIdentifier(CertificateAuthorityPublicKeyIdentifierT&& value) { m_certificateAuthorityPublicKeyIdentifierHasBeenSet = true; m_certificateAuthorityPublicKeyIdentifier = std::forward<CertificateAuthorityPublicKeyIdentifierT>(value); }
+    template<typename CertificateAuthorityPublicKeyIdentifierT = Aws::String>
+    ImportTr34KeyBlock& WithCertificateAuthorityPublicKeyIdentifier(CertificateAuthorityPublicKeyIdentifierT&& value) { SetCertificateAuthorityPublicKeyIdentifier(std::forward<CertificateAuthorityPublicKeyIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>The public key component in PEM certificate format of the private key that
      * signs the KDH TR-34 WrappedKeyBlock.</p>
      */
-    inline const Aws::String& GetSigningKeyCertificate() const{ return m_signingKeyCertificate; }
+    inline const Aws::String& GetSigningKeyCertificate() const { return m_signingKeyCertificate; }
     inline bool SigningKeyCertificateHasBeenSet() const { return m_signingKeyCertificateHasBeenSet; }
-    inline void SetSigningKeyCertificate(const Aws::String& value) { m_signingKeyCertificateHasBeenSet = true; m_signingKeyCertificate = value; }
-    inline void SetSigningKeyCertificate(Aws::String&& value) { m_signingKeyCertificateHasBeenSet = true; m_signingKeyCertificate = std::move(value); }
-    inline void SetSigningKeyCertificate(const char* value) { m_signingKeyCertificateHasBeenSet = true; m_signingKeyCertificate.assign(value); }
-    inline ImportTr34KeyBlock& WithSigningKeyCertificate(const Aws::String& value) { SetSigningKeyCertificate(value); return *this;}
-    inline ImportTr34KeyBlock& WithSigningKeyCertificate(Aws::String&& value) { SetSigningKeyCertificate(std::move(value)); return *this;}
-    inline ImportTr34KeyBlock& WithSigningKeyCertificate(const char* value) { SetSigningKeyCertificate(value); return *this;}
+    template<typename SigningKeyCertificateT = Aws::String>
+    void SetSigningKeyCertificate(SigningKeyCertificateT&& value) { m_signingKeyCertificateHasBeenSet = true; m_signingKeyCertificate = std::forward<SigningKeyCertificateT>(value); }
+    template<typename SigningKeyCertificateT = Aws::String>
+    ImportTr34KeyBlock& WithSigningKeyCertificate(SigningKeyCertificateT&& value) { SetSigningKeyCertificate(std::forward<SigningKeyCertificateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,28 +72,24 @@ namespace Model
      * 7 days. You can use the same import token to import multiple keys to the same
      * service account.</p>
      */
-    inline const Aws::String& GetImportToken() const{ return m_importToken; }
+    inline const Aws::String& GetImportToken() const { return m_importToken; }
     inline bool ImportTokenHasBeenSet() const { return m_importTokenHasBeenSet; }
-    inline void SetImportToken(const Aws::String& value) { m_importTokenHasBeenSet = true; m_importToken = value; }
-    inline void SetImportToken(Aws::String&& value) { m_importTokenHasBeenSet = true; m_importToken = std::move(value); }
-    inline void SetImportToken(const char* value) { m_importTokenHasBeenSet = true; m_importToken.assign(value); }
-    inline ImportTr34KeyBlock& WithImportToken(const Aws::String& value) { SetImportToken(value); return *this;}
-    inline ImportTr34KeyBlock& WithImportToken(Aws::String&& value) { SetImportToken(std::move(value)); return *this;}
-    inline ImportTr34KeyBlock& WithImportToken(const char* value) { SetImportToken(value); return *this;}
+    template<typename ImportTokenT = Aws::String>
+    void SetImportToken(ImportTokenT&& value) { m_importTokenHasBeenSet = true; m_importToken = std::forward<ImportTokenT>(value); }
+    template<typename ImportTokenT = Aws::String>
+    ImportTr34KeyBlock& WithImportToken(ImportTokenT&& value) { SetImportToken(std::forward<ImportTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The TR-34 wrapped key block to import.</p>
      */
-    inline const Aws::String& GetWrappedKeyBlock() const{ return m_wrappedKeyBlock; }
+    inline const Aws::String& GetWrappedKeyBlock() const { return m_wrappedKeyBlock; }
     inline bool WrappedKeyBlockHasBeenSet() const { return m_wrappedKeyBlockHasBeenSet; }
-    inline void SetWrappedKeyBlock(const Aws::String& value) { m_wrappedKeyBlockHasBeenSet = true; m_wrappedKeyBlock = value; }
-    inline void SetWrappedKeyBlock(Aws::String&& value) { m_wrappedKeyBlockHasBeenSet = true; m_wrappedKeyBlock = std::move(value); }
-    inline void SetWrappedKeyBlock(const char* value) { m_wrappedKeyBlockHasBeenSet = true; m_wrappedKeyBlock.assign(value); }
-    inline ImportTr34KeyBlock& WithWrappedKeyBlock(const Aws::String& value) { SetWrappedKeyBlock(value); return *this;}
-    inline ImportTr34KeyBlock& WithWrappedKeyBlock(Aws::String&& value) { SetWrappedKeyBlock(std::move(value)); return *this;}
-    inline ImportTr34KeyBlock& WithWrappedKeyBlock(const char* value) { SetWrappedKeyBlock(value); return *this;}
+    template<typename WrappedKeyBlockT = Aws::String>
+    void SetWrappedKeyBlock(WrappedKeyBlockT&& value) { m_wrappedKeyBlockHasBeenSet = true; m_wrappedKeyBlock = std::forward<WrappedKeyBlockT>(value); }
+    template<typename WrappedKeyBlockT = Aws::String>
+    ImportTr34KeyBlock& WithWrappedKeyBlock(WrappedKeyBlockT&& value) { SetWrappedKeyBlock(std::forward<WrappedKeyBlockT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,12 +97,10 @@ namespace Model
      * <p>The key block format to use during key import. The only value allowed is
      * <code>X9_TR34_2012</code>.</p>
      */
-    inline const Tr34KeyBlockFormat& GetKeyBlockFormat() const{ return m_keyBlockFormat; }
+    inline Tr34KeyBlockFormat GetKeyBlockFormat() const { return m_keyBlockFormat; }
     inline bool KeyBlockFormatHasBeenSet() const { return m_keyBlockFormatHasBeenSet; }
-    inline void SetKeyBlockFormat(const Tr34KeyBlockFormat& value) { m_keyBlockFormatHasBeenSet = true; m_keyBlockFormat = value; }
-    inline void SetKeyBlockFormat(Tr34KeyBlockFormat&& value) { m_keyBlockFormatHasBeenSet = true; m_keyBlockFormat = std::move(value); }
-    inline ImportTr34KeyBlock& WithKeyBlockFormat(const Tr34KeyBlockFormat& value) { SetKeyBlockFormat(value); return *this;}
-    inline ImportTr34KeyBlock& WithKeyBlockFormat(Tr34KeyBlockFormat&& value) { SetKeyBlockFormat(std::move(value)); return *this;}
+    inline void SetKeyBlockFormat(Tr34KeyBlockFormat value) { m_keyBlockFormatHasBeenSet = true; m_keyBlockFormat = value; }
+    inline ImportTr34KeyBlock& WithKeyBlockFormat(Tr34KeyBlockFormat value) { SetKeyBlockFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -119,14 +109,12 @@ namespace Model
      * pass. The operation will fail, if a random nonce value is not provided for a
      * TR-34 key block generated using 2 pass.</p>
      */
-    inline const Aws::String& GetRandomNonce() const{ return m_randomNonce; }
+    inline const Aws::String& GetRandomNonce() const { return m_randomNonce; }
     inline bool RandomNonceHasBeenSet() const { return m_randomNonceHasBeenSet; }
-    inline void SetRandomNonce(const Aws::String& value) { m_randomNonceHasBeenSet = true; m_randomNonce = value; }
-    inline void SetRandomNonce(Aws::String&& value) { m_randomNonceHasBeenSet = true; m_randomNonce = std::move(value); }
-    inline void SetRandomNonce(const char* value) { m_randomNonceHasBeenSet = true; m_randomNonce.assign(value); }
-    inline ImportTr34KeyBlock& WithRandomNonce(const Aws::String& value) { SetRandomNonce(value); return *this;}
-    inline ImportTr34KeyBlock& WithRandomNonce(Aws::String&& value) { SetRandomNonce(std::move(value)); return *this;}
-    inline ImportTr34KeyBlock& WithRandomNonce(const char* value) { SetRandomNonce(value); return *this;}
+    template<typename RandomNonceT = Aws::String>
+    void SetRandomNonce(RandomNonceT&& value) { m_randomNonceHasBeenSet = true; m_randomNonce = std::forward<RandomNonceT>(value); }
+    template<typename RandomNonceT = Aws::String>
+    ImportTr34KeyBlock& WithRandomNonce(RandomNonceT&& value) { SetRandomNonce(std::forward<RandomNonceT>(value)); return *this;}
     ///@}
   private:
 
@@ -142,7 +130,7 @@ namespace Model
     Aws::String m_wrappedKeyBlock;
     bool m_wrappedKeyBlockHasBeenSet = false;
 
-    Tr34KeyBlockFormat m_keyBlockFormat;
+    Tr34KeyBlockFormat m_keyBlockFormat{Tr34KeyBlockFormat::NOT_SET};
     bool m_keyBlockFormatHasBeenSet = false;
 
     Aws::String m_randomNonce;

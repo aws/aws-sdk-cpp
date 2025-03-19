@@ -15,8 +15,22 @@
 #elseif($isEventStreamInput)
     std::shared_ptr<$member.value.shape.name> $memberVariableName;
 #else
-    $cppType $memberVariableName;
+#set($initializer = "{}")
+#if($member.value.shape.primitive)
+#set($initializer = "{${CppViewHelper.computeDefaultValue($member.value.shape)}}")
+#elseif($member.value.shape.string || $member.value.shape.structure || $member.value.shape.timestamp || $member.value.shape.list || $member.value.shape.map)
+#set($initializer = "")
+#elseif($member.value.shape.enum)
+#set($initializer = "{${member.value.shape.name}::NOT_SET}")
 #end
-#if(!$member.value.required && $useRequiredField && !$isEventStreamInput)
+#if($entry.value.idempotencyToken)
+#set($initializer = "{Aws::Utils::UUID::PseudoRandomUUID()}")
+#end
+    $cppType $memberVariableName$initializer;
+#end
+#set($isStreamingMember = ($shape.payload && ($shape.payload == $entry.key && !$entry.value.shape.structure)))
+#if($useRequiredField && $member.value.required && !$isStreamingMember && !$member.value.shape.isEventStream())
+    bool ${CppViewHelper.computeVariableHasBeenSetName($member.key)} = true;
+#else
     bool ${CppViewHelper.computeVariableHasBeenSetName($member.key)} = false;
 #end

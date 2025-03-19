@@ -12,15 +12,6 @@ using namespace Aws::SecretsManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetSecretValueRequest::BatchGetSecretValueRequest() : 
-    m_secretIdListHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetSecretValueRequest::SerializePayload() const
 {
   JsonValue payload;

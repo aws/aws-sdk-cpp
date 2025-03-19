@@ -21,7 +21,7 @@ namespace Model
   class DisassociateFromConfigurationRequest : public ChatbotRequest
   {
   public:
-    AWS_CHATBOT_API DisassociateFromConfigurationRequest();
+    AWS_CHATBOT_API DisassociateFromConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,28 +37,24 @@ namespace Model
      * <p>The resource (for example, a custom action) Amazon Resource Name (ARN) to
      * unlink.</p>
      */
-    inline const Aws::String& GetResource() const{ return m_resource; }
+    inline const Aws::String& GetResource() const { return m_resource; }
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
-    inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
-    inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
-    inline void SetResource(const char* value) { m_resourceHasBeenSet = true; m_resource.assign(value); }
-    inline DisassociateFromConfigurationRequest& WithResource(const Aws::String& value) { SetResource(value); return *this;}
-    inline DisassociateFromConfigurationRequest& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
-    inline DisassociateFromConfigurationRequest& WithResource(const char* value) { SetResource(value); return *this;}
+    template<typename ResourceT = Aws::String>
+    void SetResource(ResourceT&& value) { m_resourceHasBeenSet = true; m_resource = std::forward<ResourceT>(value); }
+    template<typename ResourceT = Aws::String>
+    DisassociateFromConfigurationRequest& WithResource(ResourceT&& value) { SetResource(std::forward<ResourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The channel configuration the resource is being disassociated from.</p>
      */
-    inline const Aws::String& GetChatConfiguration() const{ return m_chatConfiguration; }
+    inline const Aws::String& GetChatConfiguration() const { return m_chatConfiguration; }
     inline bool ChatConfigurationHasBeenSet() const { return m_chatConfigurationHasBeenSet; }
-    inline void SetChatConfiguration(const Aws::String& value) { m_chatConfigurationHasBeenSet = true; m_chatConfiguration = value; }
-    inline void SetChatConfiguration(Aws::String&& value) { m_chatConfigurationHasBeenSet = true; m_chatConfiguration = std::move(value); }
-    inline void SetChatConfiguration(const char* value) { m_chatConfigurationHasBeenSet = true; m_chatConfiguration.assign(value); }
-    inline DisassociateFromConfigurationRequest& WithChatConfiguration(const Aws::String& value) { SetChatConfiguration(value); return *this;}
-    inline DisassociateFromConfigurationRequest& WithChatConfiguration(Aws::String&& value) { SetChatConfiguration(std::move(value)); return *this;}
-    inline DisassociateFromConfigurationRequest& WithChatConfiguration(const char* value) { SetChatConfiguration(value); return *this;}
+    template<typename ChatConfigurationT = Aws::String>
+    void SetChatConfiguration(ChatConfigurationT&& value) { m_chatConfigurationHasBeenSet = true; m_chatConfiguration = std::forward<ChatConfigurationT>(value); }
+    template<typename ChatConfigurationT = Aws::String>
+    DisassociateFromConfigurationRequest& WithChatConfiguration(ChatConfigurationT&& value) { SetChatConfiguration(std::forward<ChatConfigurationT>(value)); return *this;}
     ///@}
   private:
 

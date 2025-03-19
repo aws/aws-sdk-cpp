@@ -32,7 +32,7 @@ namespace Model
   class VirtualServiceSpec
   {
   public:
-    AWS_APPMESH_API VirtualServiceSpec();
+    AWS_APPMESH_API VirtualServiceSpec() = default;
     AWS_APPMESH_API VirtualServiceSpec(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API VirtualServiceSpec& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>The App Mesh object that is acting as the provider for a virtual service. You
      * can specify a single virtual node or virtual router.</p>
      */
-    inline const VirtualServiceProvider& GetProvider() const{ return m_provider; }
+    inline const VirtualServiceProvider& GetProvider() const { return m_provider; }
     inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }
-    inline void SetProvider(const VirtualServiceProvider& value) { m_providerHasBeenSet = true; m_provider = value; }
-    inline void SetProvider(VirtualServiceProvider&& value) { m_providerHasBeenSet = true; m_provider = std::move(value); }
-    inline VirtualServiceSpec& WithProvider(const VirtualServiceProvider& value) { SetProvider(value); return *this;}
-    inline VirtualServiceSpec& WithProvider(VirtualServiceProvider&& value) { SetProvider(std::move(value)); return *this;}
+    template<typename ProviderT = VirtualServiceProvider>
+    void SetProvider(ProviderT&& value) { m_providerHasBeenSet = true; m_provider = std::forward<ProviderT>(value); }
+    template<typename ProviderT = VirtualServiceProvider>
+    VirtualServiceSpec& WithProvider(ProviderT&& value) { SetProvider(std::forward<ProviderT>(value)); return *this;}
     ///@}
   private:
 

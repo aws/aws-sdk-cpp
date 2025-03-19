@@ -18,18 +18,7 @@ namespace IoTAnalytics
 namespace Model
 {
 
-Variable::Variable() : 
-    m_nameHasBeenSet(false),
-    m_stringValueHasBeenSet(false),
-    m_doubleValue(0.0),
-    m_doubleValueHasBeenSet(false),
-    m_datasetContentVersionValueHasBeenSet(false),
-    m_outputFileUriValueHasBeenSet(false)
-{
-}
-
 Variable::Variable(JsonView jsonValue)
-  : Variable()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ Variable& Variable::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stringValue"))
   {
     m_stringValue = jsonValue.GetString("stringValue");
-
     m_stringValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("doubleValue"))
   {
     m_doubleValue = jsonValue.GetDouble("doubleValue");
-
     m_doubleValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("datasetContentVersionValue"))
   {
     m_datasetContentVersionValue = jsonValue.GetObject("datasetContentVersionValue");
-
     m_datasetContentVersionValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputFileUriValue"))
   {
     m_outputFileUriValue = jsonValue.GetObject("outputFileUriValue");
-
     m_outputFileUriValueHasBeenSet = true;
   }
-
   return *this;
 }
 

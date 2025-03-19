@@ -18,17 +18,7 @@ namespace CodeCommit
 namespace Model
 {
 
-MergeHunk::MergeHunk() : 
-    m_isConflict(false),
-    m_isConflictHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_baseHasBeenSet(false)
-{
-}
-
 MergeHunk::MergeHunk(JsonView jsonValue)
-  : MergeHunk()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ MergeHunk& MergeHunk::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("isConflict"))
   {
     m_isConflict = jsonValue.GetBool("isConflict");
-
     m_isConflictHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("source"))
   {
     m_source = jsonValue.GetObject("source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destination"))
   {
     m_destination = jsonValue.GetObject("destination");
-
     m_destinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("base"))
   {
     m_base = jsonValue.GetObject("base");
-
     m_baseHasBeenSet = true;
   }
-
   return *this;
 }
 

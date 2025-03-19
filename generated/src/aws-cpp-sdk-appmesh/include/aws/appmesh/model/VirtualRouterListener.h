@@ -32,7 +32,7 @@ namespace Model
   class VirtualRouterListener
   {
   public:
-    AWS_APPMESH_API VirtualRouterListener();
+    AWS_APPMESH_API VirtualRouterListener() = default;
     AWS_APPMESH_API VirtualRouterListener(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API VirtualRouterListener& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,12 +40,12 @@ namespace Model
 
     ///@{
     
-    inline const PortMapping& GetPortMapping() const{ return m_portMapping; }
+    inline const PortMapping& GetPortMapping() const { return m_portMapping; }
     inline bool PortMappingHasBeenSet() const { return m_portMappingHasBeenSet; }
-    inline void SetPortMapping(const PortMapping& value) { m_portMappingHasBeenSet = true; m_portMapping = value; }
-    inline void SetPortMapping(PortMapping&& value) { m_portMappingHasBeenSet = true; m_portMapping = std::move(value); }
-    inline VirtualRouterListener& WithPortMapping(const PortMapping& value) { SetPortMapping(value); return *this;}
-    inline VirtualRouterListener& WithPortMapping(PortMapping&& value) { SetPortMapping(std::move(value)); return *this;}
+    template<typename PortMappingT = PortMapping>
+    void SetPortMapping(PortMappingT&& value) { m_portMappingHasBeenSet = true; m_portMapping = std::forward<PortMappingT>(value); }
+    template<typename PortMappingT = PortMapping>
+    VirtualRouterListener& WithPortMapping(PortMappingT&& value) { SetPortMapping(std::forward<PortMappingT>(value)); return *this;}
     ///@}
   private:
 

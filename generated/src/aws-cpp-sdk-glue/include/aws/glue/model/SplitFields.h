@@ -35,7 +35,7 @@ namespace Model
   class SplitFields
   {
   public:
-    AWS_GLUE_API SplitFields();
+    AWS_GLUE_API SplitFields() = default;
     AWS_GLUE_API SplitFields(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API SplitFields& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,43 +45,40 @@ namespace Model
     /**
      * <p>The name of the transform node.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline SplitFields& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline SplitFields& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline SplitFields& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    SplitFields& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The data inputs identified by their node names.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetInputs() const{ return m_inputs; }
+    inline const Aws::Vector<Aws::String>& GetInputs() const { return m_inputs; }
     inline bool InputsHasBeenSet() const { return m_inputsHasBeenSet; }
-    inline void SetInputs(const Aws::Vector<Aws::String>& value) { m_inputsHasBeenSet = true; m_inputs = value; }
-    inline void SetInputs(Aws::Vector<Aws::String>&& value) { m_inputsHasBeenSet = true; m_inputs = std::move(value); }
-    inline SplitFields& WithInputs(const Aws::Vector<Aws::String>& value) { SetInputs(value); return *this;}
-    inline SplitFields& WithInputs(Aws::Vector<Aws::String>&& value) { SetInputs(std::move(value)); return *this;}
-    inline SplitFields& AddInputs(const Aws::String& value) { m_inputsHasBeenSet = true; m_inputs.push_back(value); return *this; }
-    inline SplitFields& AddInputs(Aws::String&& value) { m_inputsHasBeenSet = true; m_inputs.push_back(std::move(value)); return *this; }
-    inline SplitFields& AddInputs(const char* value) { m_inputsHasBeenSet = true; m_inputs.push_back(value); return *this; }
+    template<typename InputsT = Aws::Vector<Aws::String>>
+    void SetInputs(InputsT&& value) { m_inputsHasBeenSet = true; m_inputs = std::forward<InputsT>(value); }
+    template<typename InputsT = Aws::Vector<Aws::String>>
+    SplitFields& WithInputs(InputsT&& value) { SetInputs(std::forward<InputsT>(value)); return *this;}
+    template<typename InputsT = Aws::String>
+    SplitFields& AddInputs(InputsT&& value) { m_inputsHasBeenSet = true; m_inputs.emplace_back(std::forward<InputsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A JSON path to a variable in the data structure.</p>
      */
-    inline const Aws::Vector<Aws::Vector<Aws::String>>& GetPaths() const{ return m_paths; }
+    inline const Aws::Vector<Aws::Vector<Aws::String>>& GetPaths() const { return m_paths; }
     inline bool PathsHasBeenSet() const { return m_pathsHasBeenSet; }
-    inline void SetPaths(const Aws::Vector<Aws::Vector<Aws::String>>& value) { m_pathsHasBeenSet = true; m_paths = value; }
-    inline void SetPaths(Aws::Vector<Aws::Vector<Aws::String>>&& value) { m_pathsHasBeenSet = true; m_paths = std::move(value); }
-    inline SplitFields& WithPaths(const Aws::Vector<Aws::Vector<Aws::String>>& value) { SetPaths(value); return *this;}
-    inline SplitFields& WithPaths(Aws::Vector<Aws::Vector<Aws::String>>&& value) { SetPaths(std::move(value)); return *this;}
-    inline SplitFields& AddPaths(const Aws::Vector<Aws::String>& value) { m_pathsHasBeenSet = true; m_paths.push_back(value); return *this; }
-    inline SplitFields& AddPaths(Aws::Vector<Aws::String>&& value) { m_pathsHasBeenSet = true; m_paths.push_back(std::move(value)); return *this; }
+    template<typename PathsT = Aws::Vector<Aws::Vector<Aws::String>>>
+    void SetPaths(PathsT&& value) { m_pathsHasBeenSet = true; m_paths = std::forward<PathsT>(value); }
+    template<typename PathsT = Aws::Vector<Aws::Vector<Aws::String>>>
+    SplitFields& WithPaths(PathsT&& value) { SetPaths(std::forward<PathsT>(value)); return *this;}
+    template<typename PathsT = Aws::Vector<Aws::String>>
+    SplitFields& AddPaths(PathsT&& value) { m_pathsHasBeenSet = true; m_paths.emplace_back(std::forward<PathsT>(value)); return *this; }
     ///@}
   private:
 

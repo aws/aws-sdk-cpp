@@ -32,7 +32,7 @@ namespace Model
   class MeshStatus
   {
   public:
-    AWS_APPMESH_API MeshStatus();
+    AWS_APPMESH_API MeshStatus() = default;
     AWS_APPMESH_API MeshStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API MeshStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>The current mesh status.</p>
      */
-    inline const MeshStatusCode& GetStatus() const{ return m_status; }
+    inline MeshStatusCode GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const MeshStatusCode& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(MeshStatusCode&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline MeshStatus& WithStatus(const MeshStatusCode& value) { SetStatus(value); return *this;}
-    inline MeshStatus& WithStatus(MeshStatusCode&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(MeshStatusCode value) { m_statusHasBeenSet = true; m_status = value; }
+    inline MeshStatus& WithStatus(MeshStatusCode value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    MeshStatusCode m_status;
+    MeshStatusCode m_status{MeshStatusCode::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

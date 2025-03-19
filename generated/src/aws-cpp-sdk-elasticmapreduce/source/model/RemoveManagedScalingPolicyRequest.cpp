@@ -12,11 +12,6 @@ using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RemoveManagedScalingPolicyRequest::RemoveManagedScalingPolicyRequest() : 
-    m_clusterIdHasBeenSet(false)
-{
-}
-
 Aws::String RemoveManagedScalingPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

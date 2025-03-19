@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SendSerialConsoleSSHPublicKeyResult::SendSerialConsoleSSHPublicKeyResult() : 
-    m_success(false)
-{
-}
-
 SendSerialConsoleSSHPublicKeyResult::SendSerialConsoleSSHPublicKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : SendSerialConsoleSSHPublicKeyResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ SendSerialConsoleSSHPublicKeyResult& SendSerialConsoleSSHPublicKeyResult::operat
   if(jsonValue.ValueExists("Success"))
   {
     m_success = jsonValue.GetBool("Success");
-
+    m_successHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

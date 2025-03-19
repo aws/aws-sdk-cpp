@@ -18,16 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-RightsizingRecommendationConfiguration::RightsizingRecommendationConfiguration() : 
-    m_recommendationTarget(RecommendationTarget::NOT_SET),
-    m_recommendationTargetHasBeenSet(false),
-    m_benefitsConsidered(false),
-    m_benefitsConsideredHasBeenSet(false)
-{
-}
-
 RightsizingRecommendationConfiguration::RightsizingRecommendationConfiguration(JsonView jsonValue)
-  : RightsizingRecommendationConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ RightsizingRecommendationConfiguration& RightsizingRecommendationConfiguration::
   if(jsonValue.ValueExists("RecommendationTarget"))
   {
     m_recommendationTarget = RecommendationTargetMapper::GetRecommendationTargetForName(jsonValue.GetString("RecommendationTarget"));
-
     m_recommendationTargetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BenefitsConsidered"))
   {
     m_benefitsConsidered = jsonValue.GetBool("BenefitsConsidered");
-
     m_benefitsConsideredHasBeenSet = true;
   }
-
   return *this;
 }
 

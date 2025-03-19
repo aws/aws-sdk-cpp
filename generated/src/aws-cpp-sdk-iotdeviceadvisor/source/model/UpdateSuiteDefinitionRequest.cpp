@@ -12,12 +12,6 @@ using namespace Aws::IoTDeviceAdvisor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSuiteDefinitionRequest::UpdateSuiteDefinitionRequest() : 
-    m_suiteDefinitionIdHasBeenSet(false),
-    m_suiteDefinitionConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSuiteDefinitionRequest::SerializePayload() const
 {
   JsonValue payload;

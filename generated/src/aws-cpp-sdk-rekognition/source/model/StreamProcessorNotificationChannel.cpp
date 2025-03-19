@@ -18,13 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-StreamProcessorNotificationChannel::StreamProcessorNotificationChannel() : 
-    m_sNSTopicArnHasBeenSet(false)
-{
-}
-
 StreamProcessorNotificationChannel::StreamProcessorNotificationChannel(JsonView jsonValue)
-  : StreamProcessorNotificationChannel()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ StreamProcessorNotificationChannel& StreamProcessorNotificationChannel::operator
   if(jsonValue.ValueExists("SNSTopicArn"))
   {
     m_sNSTopicArn = jsonValue.GetString("SNSTopicArn");
-
     m_sNSTopicArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsAmazonMqBrokerMaintenanceWindowStartTimeDetails::AwsAmazonMqBrokerMaintenanceWindowStartTimeDetails() : 
-    m_dayOfWeekHasBeenSet(false),
-    m_timeOfDayHasBeenSet(false),
-    m_timeZoneHasBeenSet(false)
-{
-}
-
 AwsAmazonMqBrokerMaintenanceWindowStartTimeDetails::AwsAmazonMqBrokerMaintenanceWindowStartTimeDetails(JsonView jsonValue)
-  : AwsAmazonMqBrokerMaintenanceWindowStartTimeDetails()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AwsAmazonMqBrokerMaintenanceWindowStartTimeDetails& AwsAmazonMqBrokerMaintenance
   if(jsonValue.ValueExists("DayOfWeek"))
   {
     m_dayOfWeek = jsonValue.GetString("DayOfWeek");
-
     m_dayOfWeekHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeOfDay"))
   {
     m_timeOfDay = jsonValue.GetString("TimeOfDay");
-
     m_timeOfDayHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeZone"))
   {
     m_timeZone = jsonValue.GetString("TimeZone");
-
     m_timeZoneHasBeenSet = true;
   }
-
   return *this;
 }
 

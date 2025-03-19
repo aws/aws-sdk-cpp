@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DataSetRefreshProperties::DataSetRefreshProperties() : 
-    m_refreshConfigurationHasBeenSet(false)
-{
-}
-
 DataSetRefreshProperties::DataSetRefreshProperties(JsonView jsonValue)
-  : DataSetRefreshProperties()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DataSetRefreshProperties& DataSetRefreshProperties::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("RefreshConfiguration"))
   {
     m_refreshConfiguration = jsonValue.GetObject("RefreshConfiguration");
-
     m_refreshConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

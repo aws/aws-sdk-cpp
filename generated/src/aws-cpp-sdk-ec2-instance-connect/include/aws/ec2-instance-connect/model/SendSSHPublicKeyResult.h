@@ -27,35 +27,35 @@ namespace Model
   class SendSSHPublicKeyResult
   {
   public:
-    AWS_EC2INSTANCECONNECT_API SendSSHPublicKeyResult();
+    AWS_EC2INSTANCECONNECT_API SendSSHPublicKeyResult() = default;
     AWS_EC2INSTANCECONNECT_API SendSSHPublicKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_EC2INSTANCECONNECT_API SendSSHPublicKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline SendSSHPublicKeyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline SendSSHPublicKeyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline SendSSHPublicKeyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    SendSSHPublicKeyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Is true if the request succeeds and an error otherwise.</p>
      */
-    inline bool GetSuccess() const{ return m_success; }
-    inline void SetSuccess(bool value) { m_success = value; }
+    inline bool GetSuccess() const { return m_success; }
+    inline void SetSuccess(bool value) { m_successHasBeenSet = true; m_success = value; }
     inline SendSSHPublicKeyResult& WithSuccess(bool value) { SetSuccess(value); return *this;}
     ///@}
   private:
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
 
-    bool m_success;
+    bool m_success{false};
+    bool m_successHasBeenSet = false;
   };
 
 } // namespace Model

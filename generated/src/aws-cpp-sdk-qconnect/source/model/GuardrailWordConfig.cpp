@@ -18,13 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-GuardrailWordConfig::GuardrailWordConfig() : 
-    m_textHasBeenSet(false)
-{
-}
-
 GuardrailWordConfig::GuardrailWordConfig(JsonView jsonValue)
-  : GuardrailWordConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ GuardrailWordConfig& GuardrailWordConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetString("text");
-
     m_textHasBeenSet = true;
   }
-
   return *this;
 }
 

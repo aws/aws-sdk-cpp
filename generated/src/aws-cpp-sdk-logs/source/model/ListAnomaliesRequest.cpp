@@ -12,16 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListAnomaliesRequest::ListAnomaliesRequest() : 
-    m_anomalyDetectorArnHasBeenSet(false),
-    m_suppressionState(SuppressionState::NOT_SET),
-    m_suppressionStateHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListAnomaliesRequest::SerializePayload() const
 {
   JsonValue payload;

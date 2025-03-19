@@ -18,15 +18,7 @@ namespace Omics
 namespace Model
 {
 
-WorkflowParameter::WorkflowParameter() : 
-    m_descriptionHasBeenSet(false),
-    m_optional(false),
-    m_optionalHasBeenSet(false)
-{
-}
-
 WorkflowParameter::WorkflowParameter(JsonView jsonValue)
-  : WorkflowParameter()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ WorkflowParameter& WorkflowParameter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("optional"))
   {
     m_optional = jsonValue.GetBool("optional");
-
     m_optionalHasBeenSet = true;
   }
-
   return *this;
 }
 

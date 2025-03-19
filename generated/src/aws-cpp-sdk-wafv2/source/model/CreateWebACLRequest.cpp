@@ -12,24 +12,6 @@ using namespace Aws::WAFV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateWebACLRequest::CreateWebACLRequest() : 
-    m_nameHasBeenSet(false),
-    m_scope(Scope::NOT_SET),
-    m_scopeHasBeenSet(false),
-    m_defaultActionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_rulesHasBeenSet(false),
-    m_visibilityConfigHasBeenSet(false),
-    m_dataProtectionConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_customResponseBodiesHasBeenSet(false),
-    m_captchaConfigHasBeenSet(false),
-    m_challengeConfigHasBeenSet(false),
-    m_tokenDomainsHasBeenSet(false),
-    m_associationConfigHasBeenSet(false)
-{
-}
-
 Aws::String CreateWebACLRequest::SerializePayload() const
 {
   JsonValue payload;

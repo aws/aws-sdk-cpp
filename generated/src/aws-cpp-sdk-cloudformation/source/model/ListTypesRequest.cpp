@@ -10,22 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-ListTypesRequest::ListTypesRequest() : 
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false),
-    m_provisioningType(ProvisioningType::NOT_SET),
-    m_provisioningTypeHasBeenSet(false),
-    m_deprecatedStatus(DeprecatedStatus::NOT_SET),
-    m_deprecatedStatusHasBeenSet(false),
-    m_type(RegistryType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListTypesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

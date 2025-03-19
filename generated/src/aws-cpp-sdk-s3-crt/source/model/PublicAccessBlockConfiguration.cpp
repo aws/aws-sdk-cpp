@@ -20,20 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-PublicAccessBlockConfiguration::PublicAccessBlockConfiguration() : 
-    m_blockPublicAcls(false),
-    m_blockPublicAclsHasBeenSet(false),
-    m_ignorePublicAcls(false),
-    m_ignorePublicAclsHasBeenSet(false),
-    m_blockPublicPolicy(false),
-    m_blockPublicPolicyHasBeenSet(false),
-    m_restrictPublicBuckets(false),
-    m_restrictPublicBucketsHasBeenSet(false)
-{
-}
-
 PublicAccessBlockConfiguration::PublicAccessBlockConfiguration(const XmlNode& xmlNode)
-  : PublicAccessBlockConfiguration()
 {
   *this = xmlNode;
 }

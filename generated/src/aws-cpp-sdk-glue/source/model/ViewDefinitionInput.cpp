@@ -18,17 +18,7 @@ namespace Glue
 namespace Model
 {
 
-ViewDefinitionInput::ViewDefinitionInput() : 
-    m_isProtected(false),
-    m_isProtectedHasBeenSet(false),
-    m_definerHasBeenSet(false),
-    m_representationsHasBeenSet(false),
-    m_subObjectsHasBeenSet(false)
-{
-}
-
 ViewDefinitionInput::ViewDefinitionInput(JsonView jsonValue)
-  : ViewDefinitionInput()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ ViewDefinitionInput& ViewDefinitionInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IsProtected"))
   {
     m_isProtected = jsonValue.GetBool("IsProtected");
-
     m_isProtectedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Definer"))
   {
     m_definer = jsonValue.GetString("Definer");
-
     m_definerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Representations"))
   {
     Aws::Utils::Array<JsonView> representationsJsonList = jsonValue.GetArray("Representations");
@@ -58,7 +44,6 @@ ViewDefinitionInput& ViewDefinitionInput::operator =(JsonView jsonValue)
     }
     m_representationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubObjects"))
   {
     Aws::Utils::Array<JsonView> subObjectsJsonList = jsonValue.GetArray("SubObjects");
@@ -68,7 +53,6 @@ ViewDefinitionInput& ViewDefinitionInput::operator =(JsonView jsonValue)
     }
     m_subObjectsHasBeenSet = true;
   }
-
   return *this;
 }
 

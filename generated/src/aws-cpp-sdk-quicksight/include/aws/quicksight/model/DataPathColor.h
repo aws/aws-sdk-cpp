@@ -34,7 +34,7 @@ namespace Model
   class DataPathColor
   {
   public:
-    AWS_QUICKSIGHT_API DataPathColor();
+    AWS_QUICKSIGHT_API DataPathColor() = default;
     AWS_QUICKSIGHT_API DataPathColor(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API DataPathColor& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,38 +44,34 @@ namespace Model
     /**
      * <p>The element that the color needs to be applied to.</p>
      */
-    inline const DataPathValue& GetElement() const{ return m_element; }
+    inline const DataPathValue& GetElement() const { return m_element; }
     inline bool ElementHasBeenSet() const { return m_elementHasBeenSet; }
-    inline void SetElement(const DataPathValue& value) { m_elementHasBeenSet = true; m_element = value; }
-    inline void SetElement(DataPathValue&& value) { m_elementHasBeenSet = true; m_element = std::move(value); }
-    inline DataPathColor& WithElement(const DataPathValue& value) { SetElement(value); return *this;}
-    inline DataPathColor& WithElement(DataPathValue&& value) { SetElement(std::move(value)); return *this;}
+    template<typename ElementT = DataPathValue>
+    void SetElement(ElementT&& value) { m_elementHasBeenSet = true; m_element = std::forward<ElementT>(value); }
+    template<typename ElementT = DataPathValue>
+    DataPathColor& WithElement(ElementT&& value) { SetElement(std::forward<ElementT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The color that needs to be applied to the element.</p>
      */
-    inline const Aws::String& GetColor() const{ return m_color; }
+    inline const Aws::String& GetColor() const { return m_color; }
     inline bool ColorHasBeenSet() const { return m_colorHasBeenSet; }
-    inline void SetColor(const Aws::String& value) { m_colorHasBeenSet = true; m_color = value; }
-    inline void SetColor(Aws::String&& value) { m_colorHasBeenSet = true; m_color = std::move(value); }
-    inline void SetColor(const char* value) { m_colorHasBeenSet = true; m_color.assign(value); }
-    inline DataPathColor& WithColor(const Aws::String& value) { SetColor(value); return *this;}
-    inline DataPathColor& WithColor(Aws::String&& value) { SetColor(std::move(value)); return *this;}
-    inline DataPathColor& WithColor(const char* value) { SetColor(value); return *this;}
+    template<typename ColorT = Aws::String>
+    void SetColor(ColorT&& value) { m_colorHasBeenSet = true; m_color = std::forward<ColorT>(value); }
+    template<typename ColorT = Aws::String>
+    DataPathColor& WithColor(ColorT&& value) { SetColor(std::forward<ColorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time granularity of the field that the color needs to be applied to.</p>
      */
-    inline const TimeGranularity& GetTimeGranularity() const{ return m_timeGranularity; }
+    inline TimeGranularity GetTimeGranularity() const { return m_timeGranularity; }
     inline bool TimeGranularityHasBeenSet() const { return m_timeGranularityHasBeenSet; }
-    inline void SetTimeGranularity(const TimeGranularity& value) { m_timeGranularityHasBeenSet = true; m_timeGranularity = value; }
-    inline void SetTimeGranularity(TimeGranularity&& value) { m_timeGranularityHasBeenSet = true; m_timeGranularity = std::move(value); }
-    inline DataPathColor& WithTimeGranularity(const TimeGranularity& value) { SetTimeGranularity(value); return *this;}
-    inline DataPathColor& WithTimeGranularity(TimeGranularity&& value) { SetTimeGranularity(std::move(value)); return *this;}
+    inline void SetTimeGranularity(TimeGranularity value) { m_timeGranularityHasBeenSet = true; m_timeGranularity = value; }
+    inline DataPathColor& WithTimeGranularity(TimeGranularity value) { SetTimeGranularity(value); return *this;}
     ///@}
   private:
 
@@ -85,7 +81,7 @@ namespace Model
     Aws::String m_color;
     bool m_colorHasBeenSet = false;
 
-    TimeGranularity m_timeGranularity;
+    TimeGranularity m_timeGranularity{TimeGranularity::NOT_SET};
     bool m_timeGranularityHasBeenSet = false;
   };
 

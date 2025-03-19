@@ -33,7 +33,7 @@ namespace Model
   class MigrationTaskUpdate
   {
   public:
-    AWS_MIGRATIONHUB_API MigrationTaskUpdate();
+    AWS_MIGRATIONHUB_API MigrationTaskUpdate() = default;
     AWS_MIGRATIONHUB_API MigrationTaskUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUB_API MigrationTaskUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,41 +43,39 @@ namespace Model
     /**
      * <p>The timestamp for the update.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdateDateTime() const{ return m_updateDateTime; }
+    inline const Aws::Utils::DateTime& GetUpdateDateTime() const { return m_updateDateTime; }
     inline bool UpdateDateTimeHasBeenSet() const { return m_updateDateTimeHasBeenSet; }
-    inline void SetUpdateDateTime(const Aws::Utils::DateTime& value) { m_updateDateTimeHasBeenSet = true; m_updateDateTime = value; }
-    inline void SetUpdateDateTime(Aws::Utils::DateTime&& value) { m_updateDateTimeHasBeenSet = true; m_updateDateTime = std::move(value); }
-    inline MigrationTaskUpdate& WithUpdateDateTime(const Aws::Utils::DateTime& value) { SetUpdateDateTime(value); return *this;}
-    inline MigrationTaskUpdate& WithUpdateDateTime(Aws::Utils::DateTime&& value) { SetUpdateDateTime(std::move(value)); return *this;}
+    template<typename UpdateDateTimeT = Aws::Utils::DateTime>
+    void SetUpdateDateTime(UpdateDateTimeT&& value) { m_updateDateTimeHasBeenSet = true; m_updateDateTime = std::forward<UpdateDateTimeT>(value); }
+    template<typename UpdateDateTimeT = Aws::Utils::DateTime>
+    MigrationTaskUpdate& WithUpdateDateTime(UpdateDateTimeT&& value) { SetUpdateDateTime(std::forward<UpdateDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the update.</p>
      */
-    inline const UpdateType& GetUpdateType() const{ return m_updateType; }
+    inline UpdateType GetUpdateType() const { return m_updateType; }
     inline bool UpdateTypeHasBeenSet() const { return m_updateTypeHasBeenSet; }
-    inline void SetUpdateType(const UpdateType& value) { m_updateTypeHasBeenSet = true; m_updateType = value; }
-    inline void SetUpdateType(UpdateType&& value) { m_updateTypeHasBeenSet = true; m_updateType = std::move(value); }
-    inline MigrationTaskUpdate& WithUpdateType(const UpdateType& value) { SetUpdateType(value); return *this;}
-    inline MigrationTaskUpdate& WithUpdateType(UpdateType&& value) { SetUpdateType(std::move(value)); return *this;}
+    inline void SetUpdateType(UpdateType value) { m_updateTypeHasBeenSet = true; m_updateType = value; }
+    inline MigrationTaskUpdate& WithUpdateType(UpdateType value) { SetUpdateType(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Task& GetMigrationTaskState() const{ return m_migrationTaskState; }
+    inline const Task& GetMigrationTaskState() const { return m_migrationTaskState; }
     inline bool MigrationTaskStateHasBeenSet() const { return m_migrationTaskStateHasBeenSet; }
-    inline void SetMigrationTaskState(const Task& value) { m_migrationTaskStateHasBeenSet = true; m_migrationTaskState = value; }
-    inline void SetMigrationTaskState(Task&& value) { m_migrationTaskStateHasBeenSet = true; m_migrationTaskState = std::move(value); }
-    inline MigrationTaskUpdate& WithMigrationTaskState(const Task& value) { SetMigrationTaskState(value); return *this;}
-    inline MigrationTaskUpdate& WithMigrationTaskState(Task&& value) { SetMigrationTaskState(std::move(value)); return *this;}
+    template<typename MigrationTaskStateT = Task>
+    void SetMigrationTaskState(MigrationTaskStateT&& value) { m_migrationTaskStateHasBeenSet = true; m_migrationTaskState = std::forward<MigrationTaskStateT>(value); }
+    template<typename MigrationTaskStateT = Task>
+    MigrationTaskUpdate& WithMigrationTaskState(MigrationTaskStateT&& value) { SetMigrationTaskState(std::forward<MigrationTaskStateT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_updateDateTime;
+    Aws::Utils::DateTime m_updateDateTime{};
     bool m_updateDateTimeHasBeenSet = false;
 
-    UpdateType m_updateType;
+    UpdateType m_updateType{UpdateType::NOT_SET};
     bool m_updateTypeHasBeenSet = false;
 
     Task m_migrationTaskState;

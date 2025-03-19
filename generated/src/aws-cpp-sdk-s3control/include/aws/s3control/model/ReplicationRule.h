@@ -37,7 +37,7 @@ namespace Model
   class ReplicationRule
   {
   public:
-    AWS_S3CONTROL_API ReplicationRule();
+    AWS_S3CONTROL_API ReplicationRule() = default;
     AWS_S3CONTROL_API ReplicationRule(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API ReplicationRule& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,14 +48,12 @@ namespace Model
     /**
      * <p>A unique identifier for the rule. The maximum value is 255 characters.</p>
      */
-    inline const Aws::String& GetID() const{ return m_iD; }
+    inline const Aws::String& GetID() const { return m_iD; }
     inline bool IDHasBeenSet() const { return m_iDHasBeenSet; }
-    inline void SetID(const Aws::String& value) { m_iDHasBeenSet = true; m_iD = value; }
-    inline void SetID(Aws::String&& value) { m_iDHasBeenSet = true; m_iD = std::move(value); }
-    inline void SetID(const char* value) { m_iDHasBeenSet = true; m_iD.assign(value); }
-    inline ReplicationRule& WithID(const Aws::String& value) { SetID(value); return *this;}
-    inline ReplicationRule& WithID(Aws::String&& value) { SetID(std::move(value)); return *this;}
-    inline ReplicationRule& WithID(const char* value) { SetID(value); return *this;}
+    template<typename IDT = Aws::String>
+    void SetID(IDT&& value) { m_iDHasBeenSet = true; m_iD = std::forward<IDT>(value); }
+    template<typename IDT = Aws::String>
+    ReplicationRule& WithID(IDT&& value) { SetID(std::forward<IDT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,7 +67,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication-between-outposts.html">Creating
      * replication rules on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
-    inline int GetPriority() const{ return m_priority; }
+    inline int GetPriority() const { return m_priority; }
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
     inline ReplicationRule& WithPriority(int value) { SetPriority(value); return *this;}
@@ -81,24 +79,22 @@ namespace Model
      * applies. A <code>Filter</code> element must specify exactly one
      * <code>Prefix</code>, <code>Tag</code>, or <code>And</code> child element.</p>
      */
-    inline const ReplicationRuleFilter& GetFilter() const{ return m_filter; }
+    inline const ReplicationRuleFilter& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const ReplicationRuleFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(ReplicationRuleFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline ReplicationRule& WithFilter(const ReplicationRuleFilter& value) { SetFilter(value); return *this;}
-    inline ReplicationRule& WithFilter(ReplicationRuleFilter&& value) { SetFilter(std::move(value)); return *this;}
+    template<typename FilterT = ReplicationRuleFilter>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = ReplicationRuleFilter>
+    ReplicationRule& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies whether the rule is enabled.</p>
      */
-    inline const ReplicationRuleStatus& GetStatus() const{ return m_status; }
+    inline ReplicationRuleStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ReplicationRuleStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ReplicationRuleStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ReplicationRule& WithStatus(const ReplicationRuleStatus& value) { SetStatus(value); return *this;}
-    inline ReplicationRule& WithStatus(ReplicationRuleStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ReplicationRuleStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ReplicationRule& WithStatus(ReplicationRuleStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -107,12 +103,12 @@ namespace Model
      * Outposts objects that you want to replicate. You can choose to enable or disable
      * the replication of these objects.</p>
      */
-    inline const SourceSelectionCriteria& GetSourceSelectionCriteria() const{ return m_sourceSelectionCriteria; }
+    inline const SourceSelectionCriteria& GetSourceSelectionCriteria() const { return m_sourceSelectionCriteria; }
     inline bool SourceSelectionCriteriaHasBeenSet() const { return m_sourceSelectionCriteriaHasBeenSet; }
-    inline void SetSourceSelectionCriteria(const SourceSelectionCriteria& value) { m_sourceSelectionCriteriaHasBeenSet = true; m_sourceSelectionCriteria = value; }
-    inline void SetSourceSelectionCriteria(SourceSelectionCriteria&& value) { m_sourceSelectionCriteriaHasBeenSet = true; m_sourceSelectionCriteria = std::move(value); }
-    inline ReplicationRule& WithSourceSelectionCriteria(const SourceSelectionCriteria& value) { SetSourceSelectionCriteria(value); return *this;}
-    inline ReplicationRule& WithSourceSelectionCriteria(SourceSelectionCriteria&& value) { SetSourceSelectionCriteria(std::move(value)); return *this;}
+    template<typename SourceSelectionCriteriaT = SourceSelectionCriteria>
+    void SetSourceSelectionCriteria(SourceSelectionCriteriaT&& value) { m_sourceSelectionCriteriaHasBeenSet = true; m_sourceSelectionCriteria = std::forward<SourceSelectionCriteriaT>(value); }
+    template<typename SourceSelectionCriteriaT = SourceSelectionCriteria>
+    ReplicationRule& WithSourceSelectionCriteria(SourceSelectionCriteriaT&& value) { SetSourceSelectionCriteria(std::forward<SourceSelectionCriteriaT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,12 +116,12 @@ namespace Model
      * <p>An optional configuration to replicate existing source bucket objects. </p>
      *  <p>This is not supported by Amazon S3 on Outposts buckets.</p> 
      */
-    inline const ExistingObjectReplication& GetExistingObjectReplication() const{ return m_existingObjectReplication; }
+    inline const ExistingObjectReplication& GetExistingObjectReplication() const { return m_existingObjectReplication; }
     inline bool ExistingObjectReplicationHasBeenSet() const { return m_existingObjectReplicationHasBeenSet; }
-    inline void SetExistingObjectReplication(const ExistingObjectReplication& value) { m_existingObjectReplicationHasBeenSet = true; m_existingObjectReplication = value; }
-    inline void SetExistingObjectReplication(ExistingObjectReplication&& value) { m_existingObjectReplicationHasBeenSet = true; m_existingObjectReplication = std::move(value); }
-    inline ReplicationRule& WithExistingObjectReplication(const ExistingObjectReplication& value) { SetExistingObjectReplication(value); return *this;}
-    inline ReplicationRule& WithExistingObjectReplication(ExistingObjectReplication&& value) { SetExistingObjectReplication(std::move(value)); return *this;}
+    template<typename ExistingObjectReplicationT = ExistingObjectReplication>
+    void SetExistingObjectReplication(ExistingObjectReplicationT&& value) { m_existingObjectReplicationHasBeenSet = true; m_existingObjectReplication = std::forward<ExistingObjectReplicationT>(value); }
+    template<typename ExistingObjectReplicationT = ExistingObjectReplication>
+    ReplicationRule& WithExistingObjectReplication(ExistingObjectReplicationT&& value) { SetExistingObjectReplication(std::forward<ExistingObjectReplicationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -133,12 +129,12 @@ namespace Model
      * <p>A container for information about the replication destination and its
      * configurations.</p>
      */
-    inline const Destination& GetDestination() const{ return m_destination; }
+    inline const Destination& GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const Destination& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(Destination&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline ReplicationRule& WithDestination(const Destination& value) { SetDestination(value); return *this;}
-    inline ReplicationRule& WithDestination(Destination&& value) { SetDestination(std::move(value)); return *this;}
+    template<typename DestinationT = Destination>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = Destination>
+    ReplicationRule& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -155,12 +151,12 @@ namespace Model
      * delete operations affect replication</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      */
-    inline const DeleteMarkerReplication& GetDeleteMarkerReplication() const{ return m_deleteMarkerReplication; }
+    inline const DeleteMarkerReplication& GetDeleteMarkerReplication() const { return m_deleteMarkerReplication; }
     inline bool DeleteMarkerReplicationHasBeenSet() const { return m_deleteMarkerReplicationHasBeenSet; }
-    inline void SetDeleteMarkerReplication(const DeleteMarkerReplication& value) { m_deleteMarkerReplicationHasBeenSet = true; m_deleteMarkerReplication = value; }
-    inline void SetDeleteMarkerReplication(DeleteMarkerReplication&& value) { m_deleteMarkerReplicationHasBeenSet = true; m_deleteMarkerReplication = std::move(value); }
-    inline ReplicationRule& WithDeleteMarkerReplication(const DeleteMarkerReplication& value) { SetDeleteMarkerReplication(value); return *this;}
-    inline ReplicationRule& WithDeleteMarkerReplication(DeleteMarkerReplication&& value) { SetDeleteMarkerReplication(std::move(value)); return *this;}
+    template<typename DeleteMarkerReplicationT = DeleteMarkerReplication>
+    void SetDeleteMarkerReplication(DeleteMarkerReplicationT&& value) { m_deleteMarkerReplicationHasBeenSet = true; m_deleteMarkerReplication = std::forward<DeleteMarkerReplicationT>(value); }
+    template<typename DeleteMarkerReplicationT = DeleteMarkerReplication>
+    ReplicationRule& WithDeleteMarkerReplication(DeleteMarkerReplicationT&& value) { SetDeleteMarkerReplication(std::forward<DeleteMarkerReplicationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -168,27 +164,25 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the access point for the source Outposts
      * bucket that you want S3 on Outposts to replicate the objects from.</p>
      */
-    inline const Aws::String& GetBucket() const{ return m_bucket; }
+    inline const Aws::String& GetBucket() const { return m_bucket; }
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
-    inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
-    inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
-    inline ReplicationRule& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
-    inline ReplicationRule& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
-    inline ReplicationRule& WithBucket(const char* value) { SetBucket(value); return *this;}
+    template<typename BucketT = Aws::String>
+    void SetBucket(BucketT&& value) { m_bucketHasBeenSet = true; m_bucket = std::forward<BucketT>(value); }
+    template<typename BucketT = Aws::String>
+    ReplicationRule& WithBucket(BucketT&& value) { SetBucket(std::forward<BucketT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_iD;
     bool m_iDHasBeenSet = false;
 
-    int m_priority;
+    int m_priority{0};
     bool m_priorityHasBeenSet = false;
 
     ReplicationRuleFilter m_filter;
     bool m_filterHasBeenSet = false;
 
-    ReplicationRuleStatus m_status;
+    ReplicationRuleStatus m_status{ReplicationRuleStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     SourceSelectionCriteria m_sourceSelectionCriteria;

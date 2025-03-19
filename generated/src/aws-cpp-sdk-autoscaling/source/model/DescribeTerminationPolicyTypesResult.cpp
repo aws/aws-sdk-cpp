@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeTerminationPolicyTypesResult::DescribeTerminationPolicyTypesResult()
-{
-}
-
 DescribeTerminationPolicyTypesResult::DescribeTerminationPolicyTypesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,18 +38,21 @@ DescribeTerminationPolicyTypesResult& DescribeTerminationPolicyTypesResult::oper
     if(!terminationPolicyTypesNode.IsNull())
     {
       XmlNode terminationPolicyTypesMember = terminationPolicyTypesNode.FirstChild("member");
+      m_terminationPolicyTypesHasBeenSet = !terminationPolicyTypesMember.IsNull();
       while(!terminationPolicyTypesMember.IsNull())
       {
         m_terminationPolicyTypes.push_back(terminationPolicyTypesMember.GetText());
         terminationPolicyTypesMember = terminationPolicyTypesMember.NextNode("member");
       }
 
+      m_terminationPolicyTypesHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::AutoScaling::Model::DescribeTerminationPolicyTypesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

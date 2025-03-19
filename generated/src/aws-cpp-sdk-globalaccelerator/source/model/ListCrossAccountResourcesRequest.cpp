@@ -12,15 +12,6 @@ using namespace Aws::GlobalAccelerator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListCrossAccountResourcesRequest::ListCrossAccountResourcesRequest() : 
-    m_acceleratorArnHasBeenSet(false),
-    m_resourceOwnerAwsAccountIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListCrossAccountResourcesRequest::SerializePayload() const
 {
   JsonValue payload;

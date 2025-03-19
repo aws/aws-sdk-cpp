@@ -18,16 +18,7 @@ namespace IVS
 namespace Model
 {
 
-StreamEvent::StreamEvent() : 
-    m_codeHasBeenSet(false),
-    m_eventTimeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 StreamEvent::StreamEvent(JsonView jsonValue)
-  : StreamEvent()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ StreamEvent& StreamEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("code"))
   {
     m_code = jsonValue.GetString("code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventTime"))
   {
     m_eventTime = jsonValue.GetString("eventTime");
-
     m_eventTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -38,7 +38,7 @@ namespace Model
   class Component
   {
   public:
-    AWS_SSMSAP_API Component();
+    AWS_SSMSAP_API Component() = default;
     AWS_SSMSAP_API Component(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMSAP_API Component& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMSAP_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,42 +48,36 @@ namespace Model
     /**
      * <p>The ID of the component.</p>
      */
-    inline const Aws::String& GetComponentId() const{ return m_componentId; }
+    inline const Aws::String& GetComponentId() const { return m_componentId; }
     inline bool ComponentIdHasBeenSet() const { return m_componentIdHasBeenSet; }
-    inline void SetComponentId(const Aws::String& value) { m_componentIdHasBeenSet = true; m_componentId = value; }
-    inline void SetComponentId(Aws::String&& value) { m_componentIdHasBeenSet = true; m_componentId = std::move(value); }
-    inline void SetComponentId(const char* value) { m_componentIdHasBeenSet = true; m_componentId.assign(value); }
-    inline Component& WithComponentId(const Aws::String& value) { SetComponentId(value); return *this;}
-    inline Component& WithComponentId(Aws::String&& value) { SetComponentId(std::move(value)); return *this;}
-    inline Component& WithComponentId(const char* value) { SetComponentId(value); return *this;}
+    template<typename ComponentIdT = Aws::String>
+    void SetComponentId(ComponentIdT&& value) { m_componentIdHasBeenSet = true; m_componentId = std::forward<ComponentIdT>(value); }
+    template<typename ComponentIdT = Aws::String>
+    Component& WithComponentId(ComponentIdT&& value) { SetComponentId(std::forward<ComponentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The SAP System Identifier of the application component.</p>
      */
-    inline const Aws::String& GetSid() const{ return m_sid; }
+    inline const Aws::String& GetSid() const { return m_sid; }
     inline bool SidHasBeenSet() const { return m_sidHasBeenSet; }
-    inline void SetSid(const Aws::String& value) { m_sidHasBeenSet = true; m_sid = value; }
-    inline void SetSid(Aws::String&& value) { m_sidHasBeenSet = true; m_sid = std::move(value); }
-    inline void SetSid(const char* value) { m_sidHasBeenSet = true; m_sid.assign(value); }
-    inline Component& WithSid(const Aws::String& value) { SetSid(value); return *this;}
-    inline Component& WithSid(Aws::String&& value) { SetSid(std::move(value)); return *this;}
-    inline Component& WithSid(const char* value) { SetSid(value); return *this;}
+    template<typename SidT = Aws::String>
+    void SetSid(SidT&& value) { m_sidHasBeenSet = true; m_sid = std::forward<SidT>(value); }
+    template<typename SidT = Aws::String>
+    Component& WithSid(SidT&& value) { SetSid(std::forward<SidT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The SAP system number of the application component.</p>
      */
-    inline const Aws::String& GetSystemNumber() const{ return m_systemNumber; }
+    inline const Aws::String& GetSystemNumber() const { return m_systemNumber; }
     inline bool SystemNumberHasBeenSet() const { return m_systemNumberHasBeenSet; }
-    inline void SetSystemNumber(const Aws::String& value) { m_systemNumberHasBeenSet = true; m_systemNumber = value; }
-    inline void SetSystemNumber(Aws::String&& value) { m_systemNumberHasBeenSet = true; m_systemNumber = std::move(value); }
-    inline void SetSystemNumber(const char* value) { m_systemNumberHasBeenSet = true; m_systemNumber.assign(value); }
-    inline Component& WithSystemNumber(const Aws::String& value) { SetSystemNumber(value); return *this;}
-    inline Component& WithSystemNumber(Aws::String&& value) { SetSystemNumber(std::move(value)); return *this;}
-    inline Component& WithSystemNumber(const char* value) { SetSystemNumber(value); return *this;}
+    template<typename SystemNumberT = Aws::String>
+    void SetSystemNumber(SystemNumberT&& value) { m_systemNumberHasBeenSet = true; m_systemNumber = std::forward<SystemNumberT>(value); }
+    template<typename SystemNumberT = Aws::String>
+    Component& WithSystemNumber(SystemNumberT&& value) { SetSystemNumber(std::forward<SystemNumberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,14 +86,12 @@ namespace Model
      * highly available SAP on AWS workload, the parent component consists of the
      * entire setup, including the child components.</p>
      */
-    inline const Aws::String& GetParentComponent() const{ return m_parentComponent; }
+    inline const Aws::String& GetParentComponent() const { return m_parentComponent; }
     inline bool ParentComponentHasBeenSet() const { return m_parentComponentHasBeenSet; }
-    inline void SetParentComponent(const Aws::String& value) { m_parentComponentHasBeenSet = true; m_parentComponent = value; }
-    inline void SetParentComponent(Aws::String&& value) { m_parentComponentHasBeenSet = true; m_parentComponent = std::move(value); }
-    inline void SetParentComponent(const char* value) { m_parentComponentHasBeenSet = true; m_parentComponent.assign(value); }
-    inline Component& WithParentComponent(const Aws::String& value) { SetParentComponent(value); return *this;}
-    inline Component& WithParentComponent(Aws::String&& value) { SetParentComponent(std::move(value)); return *this;}
-    inline Component& WithParentComponent(const char* value) { SetParentComponent(value); return *this;}
+    template<typename ParentComponentT = Aws::String>
+    void SetParentComponent(ParentComponentT&& value) { m_parentComponentHasBeenSet = true; m_parentComponent = std::forward<ParentComponentT>(value); }
+    template<typename ParentComponentT = Aws::String>
+    Component& WithParentComponent(ParentComponentT&& value) { SetParentComponent(std::forward<ParentComponentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,41 +100,36 @@ namespace Model
      * highly available SAP on AWS workload, the child component consists of the
      * primary and secondar instances.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetChildComponents() const{ return m_childComponents; }
+    inline const Aws::Vector<Aws::String>& GetChildComponents() const { return m_childComponents; }
     inline bool ChildComponentsHasBeenSet() const { return m_childComponentsHasBeenSet; }
-    inline void SetChildComponents(const Aws::Vector<Aws::String>& value) { m_childComponentsHasBeenSet = true; m_childComponents = value; }
-    inline void SetChildComponents(Aws::Vector<Aws::String>&& value) { m_childComponentsHasBeenSet = true; m_childComponents = std::move(value); }
-    inline Component& WithChildComponents(const Aws::Vector<Aws::String>& value) { SetChildComponents(value); return *this;}
-    inline Component& WithChildComponents(Aws::Vector<Aws::String>&& value) { SetChildComponents(std::move(value)); return *this;}
-    inline Component& AddChildComponents(const Aws::String& value) { m_childComponentsHasBeenSet = true; m_childComponents.push_back(value); return *this; }
-    inline Component& AddChildComponents(Aws::String&& value) { m_childComponentsHasBeenSet = true; m_childComponents.push_back(std::move(value)); return *this; }
-    inline Component& AddChildComponents(const char* value) { m_childComponentsHasBeenSet = true; m_childComponents.push_back(value); return *this; }
+    template<typename ChildComponentsT = Aws::Vector<Aws::String>>
+    void SetChildComponents(ChildComponentsT&& value) { m_childComponentsHasBeenSet = true; m_childComponents = std::forward<ChildComponentsT>(value); }
+    template<typename ChildComponentsT = Aws::Vector<Aws::String>>
+    Component& WithChildComponents(ChildComponentsT&& value) { SetChildComponents(std::forward<ChildComponentsT>(value)); return *this;}
+    template<typename ChildComponentsT = Aws::String>
+    Component& AddChildComponents(ChildComponentsT&& value) { m_childComponentsHasBeenSet = true; m_childComponents.emplace_back(std::forward<ChildComponentsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The ID of the application.</p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-    inline Component& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline Component& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline Component& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    Component& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the component.</p>
      */
-    inline const ComponentType& GetComponentType() const{ return m_componentType; }
+    inline ComponentType GetComponentType() const { return m_componentType; }
     inline bool ComponentTypeHasBeenSet() const { return m_componentTypeHasBeenSet; }
-    inline void SetComponentType(const ComponentType& value) { m_componentTypeHasBeenSet = true; m_componentType = value; }
-    inline void SetComponentType(ComponentType&& value) { m_componentTypeHasBeenSet = true; m_componentType = std::move(value); }
-    inline Component& WithComponentType(const ComponentType& value) { SetComponentType(value); return *this;}
-    inline Component& WithComponentType(ComponentType&& value) { SetComponentType(std::move(value)); return *this;}
+    inline void SetComponentType(ComponentType value) { m_componentTypeHasBeenSet = true; m_componentType = value; }
+    inline Component& WithComponentType(ComponentType value) { SetComponentType(value); return *this;}
     ///@}
 
     ///@{
@@ -160,145 +147,132 @@ namespace Model
      * component status based on the discovered information. Verify your SAP
      * application.</p> </li> </ul>
      */
-    inline const ComponentStatus& GetStatus() const{ return m_status; }
+    inline ComponentStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ComponentStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ComponentStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline Component& WithStatus(const ComponentStatus& value) { SetStatus(value); return *this;}
-    inline Component& WithStatus(ComponentStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ComponentStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline Component& WithStatus(ComponentStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The hostname of the component.</p>
      */
-    inline const Aws::String& GetSapHostname() const{ return m_sapHostname; }
+    inline const Aws::String& GetSapHostname() const { return m_sapHostname; }
     inline bool SapHostnameHasBeenSet() const { return m_sapHostnameHasBeenSet; }
-    inline void SetSapHostname(const Aws::String& value) { m_sapHostnameHasBeenSet = true; m_sapHostname = value; }
-    inline void SetSapHostname(Aws::String&& value) { m_sapHostnameHasBeenSet = true; m_sapHostname = std::move(value); }
-    inline void SetSapHostname(const char* value) { m_sapHostnameHasBeenSet = true; m_sapHostname.assign(value); }
-    inline Component& WithSapHostname(const Aws::String& value) { SetSapHostname(value); return *this;}
-    inline Component& WithSapHostname(Aws::String&& value) { SetSapHostname(std::move(value)); return *this;}
-    inline Component& WithSapHostname(const char* value) { SetSapHostname(value); return *this;}
+    template<typename SapHostnameT = Aws::String>
+    void SetSapHostname(SapHostnameT&& value) { m_sapHostnameHasBeenSet = true; m_sapHostname = std::forward<SapHostnameT>(value); }
+    template<typename SapHostnameT = Aws::String>
+    Component& WithSapHostname(SapHostnameT&& value) { SetSapHostname(std::forward<SapHostnameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The SAP feature of the component.</p>
      */
-    inline const Aws::String& GetSapFeature() const{ return m_sapFeature; }
+    inline const Aws::String& GetSapFeature() const { return m_sapFeature; }
     inline bool SapFeatureHasBeenSet() const { return m_sapFeatureHasBeenSet; }
-    inline void SetSapFeature(const Aws::String& value) { m_sapFeatureHasBeenSet = true; m_sapFeature = value; }
-    inline void SetSapFeature(Aws::String&& value) { m_sapFeatureHasBeenSet = true; m_sapFeature = std::move(value); }
-    inline void SetSapFeature(const char* value) { m_sapFeatureHasBeenSet = true; m_sapFeature.assign(value); }
-    inline Component& WithSapFeature(const Aws::String& value) { SetSapFeature(value); return *this;}
-    inline Component& WithSapFeature(Aws::String&& value) { SetSapFeature(std::move(value)); return *this;}
-    inline Component& WithSapFeature(const char* value) { SetSapFeature(value); return *this;}
+    template<typename SapFeatureT = Aws::String>
+    void SetSapFeature(SapFeatureT&& value) { m_sapFeatureHasBeenSet = true; m_sapFeature = std::forward<SapFeatureT>(value); }
+    template<typename SapFeatureT = Aws::String>
+    Component& WithSapFeature(SapFeatureT&& value) { SetSapFeature(std::forward<SapFeatureT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The kernel version of the component.</p>
      */
-    inline const Aws::String& GetSapKernelVersion() const{ return m_sapKernelVersion; }
+    inline const Aws::String& GetSapKernelVersion() const { return m_sapKernelVersion; }
     inline bool SapKernelVersionHasBeenSet() const { return m_sapKernelVersionHasBeenSet; }
-    inline void SetSapKernelVersion(const Aws::String& value) { m_sapKernelVersionHasBeenSet = true; m_sapKernelVersion = value; }
-    inline void SetSapKernelVersion(Aws::String&& value) { m_sapKernelVersionHasBeenSet = true; m_sapKernelVersion = std::move(value); }
-    inline void SetSapKernelVersion(const char* value) { m_sapKernelVersionHasBeenSet = true; m_sapKernelVersion.assign(value); }
-    inline Component& WithSapKernelVersion(const Aws::String& value) { SetSapKernelVersion(value); return *this;}
-    inline Component& WithSapKernelVersion(Aws::String&& value) { SetSapKernelVersion(std::move(value)); return *this;}
-    inline Component& WithSapKernelVersion(const char* value) { SetSapKernelVersion(value); return *this;}
+    template<typename SapKernelVersionT = Aws::String>
+    void SetSapKernelVersion(SapKernelVersionT&& value) { m_sapKernelVersionHasBeenSet = true; m_sapKernelVersion = std::forward<SapKernelVersionT>(value); }
+    template<typename SapKernelVersionT = Aws::String>
+    Component& WithSapKernelVersion(SapKernelVersionT&& value) { SetSapKernelVersion(std::forward<SapKernelVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The SAP HANA version of the component.</p>
      */
-    inline const Aws::String& GetHdbVersion() const{ return m_hdbVersion; }
+    inline const Aws::String& GetHdbVersion() const { return m_hdbVersion; }
     inline bool HdbVersionHasBeenSet() const { return m_hdbVersionHasBeenSet; }
-    inline void SetHdbVersion(const Aws::String& value) { m_hdbVersionHasBeenSet = true; m_hdbVersion = value; }
-    inline void SetHdbVersion(Aws::String&& value) { m_hdbVersionHasBeenSet = true; m_hdbVersion = std::move(value); }
-    inline void SetHdbVersion(const char* value) { m_hdbVersionHasBeenSet = true; m_hdbVersion.assign(value); }
-    inline Component& WithHdbVersion(const Aws::String& value) { SetHdbVersion(value); return *this;}
-    inline Component& WithHdbVersion(Aws::String&& value) { SetHdbVersion(std::move(value)); return *this;}
-    inline Component& WithHdbVersion(const char* value) { SetHdbVersion(value); return *this;}
+    template<typename HdbVersionT = Aws::String>
+    void SetHdbVersion(HdbVersionT&& value) { m_hdbVersionHasBeenSet = true; m_hdbVersion = std::forward<HdbVersionT>(value); }
+    template<typename HdbVersionT = Aws::String>
+    Component& WithHdbVersion(HdbVersionT&& value) { SetHdbVersion(std::forward<HdbVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details of the SAP HANA system replication for the component.</p>
      */
-    inline const Resilience& GetResilience() const{ return m_resilience; }
+    inline const Resilience& GetResilience() const { return m_resilience; }
     inline bool ResilienceHasBeenSet() const { return m_resilienceHasBeenSet; }
-    inline void SetResilience(const Resilience& value) { m_resilienceHasBeenSet = true; m_resilience = value; }
-    inline void SetResilience(Resilience&& value) { m_resilienceHasBeenSet = true; m_resilience = std::move(value); }
-    inline Component& WithResilience(const Resilience& value) { SetResilience(value); return *this;}
-    inline Component& WithResilience(Resilience&& value) { SetResilience(std::move(value)); return *this;}
+    template<typename ResilienceT = Resilience>
+    void SetResilience(ResilienceT&& value) { m_resilienceHasBeenSet = true; m_resilience = std::forward<ResilienceT>(value); }
+    template<typename ResilienceT = Resilience>
+    Component& WithResilience(ResilienceT&& value) { SetResilience(std::forward<ResilienceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The associated host of the component.</p>
      */
-    inline const AssociatedHost& GetAssociatedHost() const{ return m_associatedHost; }
+    inline const AssociatedHost& GetAssociatedHost() const { return m_associatedHost; }
     inline bool AssociatedHostHasBeenSet() const { return m_associatedHostHasBeenSet; }
-    inline void SetAssociatedHost(const AssociatedHost& value) { m_associatedHostHasBeenSet = true; m_associatedHost = value; }
-    inline void SetAssociatedHost(AssociatedHost&& value) { m_associatedHostHasBeenSet = true; m_associatedHost = std::move(value); }
-    inline Component& WithAssociatedHost(const AssociatedHost& value) { SetAssociatedHost(value); return *this;}
-    inline Component& WithAssociatedHost(AssociatedHost&& value) { SetAssociatedHost(std::move(value)); return *this;}
+    template<typename AssociatedHostT = AssociatedHost>
+    void SetAssociatedHost(AssociatedHostT&& value) { m_associatedHostHasBeenSet = true; m_associatedHost = std::forward<AssociatedHostT>(value); }
+    template<typename AssociatedHostT = AssociatedHost>
+    Component& WithAssociatedHost(AssociatedHostT&& value) { SetAssociatedHost(std::forward<AssociatedHostT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The SAP HANA databases of the component.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDatabases() const{ return m_databases; }
+    inline const Aws::Vector<Aws::String>& GetDatabases() const { return m_databases; }
     inline bool DatabasesHasBeenSet() const { return m_databasesHasBeenSet; }
-    inline void SetDatabases(const Aws::Vector<Aws::String>& value) { m_databasesHasBeenSet = true; m_databases = value; }
-    inline void SetDatabases(Aws::Vector<Aws::String>&& value) { m_databasesHasBeenSet = true; m_databases = std::move(value); }
-    inline Component& WithDatabases(const Aws::Vector<Aws::String>& value) { SetDatabases(value); return *this;}
-    inline Component& WithDatabases(Aws::Vector<Aws::String>&& value) { SetDatabases(std::move(value)); return *this;}
-    inline Component& AddDatabases(const Aws::String& value) { m_databasesHasBeenSet = true; m_databases.push_back(value); return *this; }
-    inline Component& AddDatabases(Aws::String&& value) { m_databasesHasBeenSet = true; m_databases.push_back(std::move(value)); return *this; }
-    inline Component& AddDatabases(const char* value) { m_databasesHasBeenSet = true; m_databases.push_back(value); return *this; }
+    template<typename DatabasesT = Aws::Vector<Aws::String>>
+    void SetDatabases(DatabasesT&& value) { m_databasesHasBeenSet = true; m_databases = std::forward<DatabasesT>(value); }
+    template<typename DatabasesT = Aws::Vector<Aws::String>>
+    Component& WithDatabases(DatabasesT&& value) { SetDatabases(std::forward<DatabasesT>(value)); return *this;}
+    template<typename DatabasesT = Aws::String>
+    Component& AddDatabases(DatabasesT&& value) { m_databasesHasBeenSet = true; m_databases.emplace_back(std::forward<DatabasesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The connection specifications for the database of the component.</p>
      */
-    inline const DatabaseConnection& GetDatabaseConnection() const{ return m_databaseConnection; }
+    inline const DatabaseConnection& GetDatabaseConnection() const { return m_databaseConnection; }
     inline bool DatabaseConnectionHasBeenSet() const { return m_databaseConnectionHasBeenSet; }
-    inline void SetDatabaseConnection(const DatabaseConnection& value) { m_databaseConnectionHasBeenSet = true; m_databaseConnection = value; }
-    inline void SetDatabaseConnection(DatabaseConnection&& value) { m_databaseConnectionHasBeenSet = true; m_databaseConnection = std::move(value); }
-    inline Component& WithDatabaseConnection(const DatabaseConnection& value) { SetDatabaseConnection(value); return *this;}
-    inline Component& WithDatabaseConnection(DatabaseConnection&& value) { SetDatabaseConnection(std::move(value)); return *this;}
+    template<typename DatabaseConnectionT = DatabaseConnection>
+    void SetDatabaseConnection(DatabaseConnectionT&& value) { m_databaseConnectionHasBeenSet = true; m_databaseConnection = std::forward<DatabaseConnectionT>(value); }
+    template<typename DatabaseConnectionT = DatabaseConnection>
+    Component& WithDatabaseConnection(DatabaseConnectionT&& value) { SetDatabaseConnection(std::forward<DatabaseConnectionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time at which the component was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdated() const{ return m_lastUpdated; }
+    inline const Aws::Utils::DateTime& GetLastUpdated() const { return m_lastUpdated; }
     inline bool LastUpdatedHasBeenSet() const { return m_lastUpdatedHasBeenSet; }
-    inline void SetLastUpdated(const Aws::Utils::DateTime& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = value; }
-    inline void SetLastUpdated(Aws::Utils::DateTime&& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = std::move(value); }
-    inline Component& WithLastUpdated(const Aws::Utils::DateTime& value) { SetLastUpdated(value); return *this;}
-    inline Component& WithLastUpdated(Aws::Utils::DateTime&& value) { SetLastUpdated(std::move(value)); return *this;}
+    template<typename LastUpdatedT = Aws::Utils::DateTime>
+    void SetLastUpdated(LastUpdatedT&& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = std::forward<LastUpdatedT>(value); }
+    template<typename LastUpdatedT = Aws::Utils::DateTime>
+    Component& WithLastUpdated(LastUpdatedT&& value) { SetLastUpdated(std::forward<LastUpdatedT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the component.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline Component& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline Component& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline Component& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    Component& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
   private:
 
@@ -320,10 +294,10 @@ namespace Model
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet = false;
 
-    ComponentType m_componentType;
+    ComponentType m_componentType{ComponentType::NOT_SET};
     bool m_componentTypeHasBeenSet = false;
 
-    ComponentStatus m_status;
+    ComponentStatus m_status{ComponentStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_sapHostname;
@@ -350,7 +324,7 @@ namespace Model
     DatabaseConnection m_databaseConnection;
     bool m_databaseConnectionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdated;
+    Aws::Utils::DateTime m_lastUpdated{};
     bool m_lastUpdatedHasBeenSet = false;
 
     Aws::String m_arn;

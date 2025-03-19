@@ -29,7 +29,7 @@ namespace Model
   class ListV2LoggingLevelsResult
   {
   public:
-    AWS_IOT_API ListV2LoggingLevelsResult();
+    AWS_IOT_API ListV2LoggingLevelsResult() = default;
     AWS_IOT_API ListV2LoggingLevelsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API ListV2LoggingLevelsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The logging configuration for a target.</p>
      */
-    inline const Aws::Vector<LogTargetConfiguration>& GetLogTargetConfigurations() const{ return m_logTargetConfigurations; }
-    inline void SetLogTargetConfigurations(const Aws::Vector<LogTargetConfiguration>& value) { m_logTargetConfigurations = value; }
-    inline void SetLogTargetConfigurations(Aws::Vector<LogTargetConfiguration>&& value) { m_logTargetConfigurations = std::move(value); }
-    inline ListV2LoggingLevelsResult& WithLogTargetConfigurations(const Aws::Vector<LogTargetConfiguration>& value) { SetLogTargetConfigurations(value); return *this;}
-    inline ListV2LoggingLevelsResult& WithLogTargetConfigurations(Aws::Vector<LogTargetConfiguration>&& value) { SetLogTargetConfigurations(std::move(value)); return *this;}
-    inline ListV2LoggingLevelsResult& AddLogTargetConfigurations(const LogTargetConfiguration& value) { m_logTargetConfigurations.push_back(value); return *this; }
-    inline ListV2LoggingLevelsResult& AddLogTargetConfigurations(LogTargetConfiguration&& value) { m_logTargetConfigurations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<LogTargetConfiguration>& GetLogTargetConfigurations() const { return m_logTargetConfigurations; }
+    template<typename LogTargetConfigurationsT = Aws::Vector<LogTargetConfiguration>>
+    void SetLogTargetConfigurations(LogTargetConfigurationsT&& value) { m_logTargetConfigurationsHasBeenSet = true; m_logTargetConfigurations = std::forward<LogTargetConfigurationsT>(value); }
+    template<typename LogTargetConfigurationsT = Aws::Vector<LogTargetConfiguration>>
+    ListV2LoggingLevelsResult& WithLogTargetConfigurations(LogTargetConfigurationsT&& value) { SetLogTargetConfigurations(std::forward<LogTargetConfigurationsT>(value)); return *this;}
+    template<typename LogTargetConfigurationsT = LogTargetConfiguration>
+    ListV2LoggingLevelsResult& AddLogTargetConfigurations(LogTargetConfigurationsT&& value) { m_logTargetConfigurationsHasBeenSet = true; m_logTargetConfigurations.emplace_back(std::forward<LogTargetConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The token to use to get the next set of results, or <b>null</b> if there are
      * no additional results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListV2LoggingLevelsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListV2LoggingLevelsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListV2LoggingLevelsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListV2LoggingLevelsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListV2LoggingLevelsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListV2LoggingLevelsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListV2LoggingLevelsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListV2LoggingLevelsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<LogTargetConfiguration> m_logTargetConfigurations;
+    bool m_logTargetConfigurationsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

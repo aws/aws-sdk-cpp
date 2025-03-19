@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateIndexingRuleResult::UpdateIndexingRuleResult()
-{
-}
-
 UpdateIndexingRuleResult::UpdateIndexingRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ UpdateIndexingRuleResult& UpdateIndexingRuleResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("IndexingRule"))
   {
     m_indexingRule = jsonValue.GetObject("IndexingRule");
-
+    m_indexingRuleHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -30,7 +30,7 @@ namespace Model
   class ListDashboardsResult
   {
   public:
-    AWS_CLOUDWATCH_API ListDashboardsResult();
+    AWS_CLOUDWATCH_API ListDashboardsResult() = default;
     AWS_CLOUDWATCH_API ListDashboardsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDWATCH_API ListDashboardsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,43 +39,44 @@ namespace Model
     /**
      * <p>The list of matching dashboards.</p>
      */
-    inline const Aws::Vector<DashboardEntry>& GetDashboardEntries() const{ return m_dashboardEntries; }
-    inline void SetDashboardEntries(const Aws::Vector<DashboardEntry>& value) { m_dashboardEntries = value; }
-    inline void SetDashboardEntries(Aws::Vector<DashboardEntry>&& value) { m_dashboardEntries = std::move(value); }
-    inline ListDashboardsResult& WithDashboardEntries(const Aws::Vector<DashboardEntry>& value) { SetDashboardEntries(value); return *this;}
-    inline ListDashboardsResult& WithDashboardEntries(Aws::Vector<DashboardEntry>&& value) { SetDashboardEntries(std::move(value)); return *this;}
-    inline ListDashboardsResult& AddDashboardEntries(const DashboardEntry& value) { m_dashboardEntries.push_back(value); return *this; }
-    inline ListDashboardsResult& AddDashboardEntries(DashboardEntry&& value) { m_dashboardEntries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DashboardEntry>& GetDashboardEntries() const { return m_dashboardEntries; }
+    template<typename DashboardEntriesT = Aws::Vector<DashboardEntry>>
+    void SetDashboardEntries(DashboardEntriesT&& value) { m_dashboardEntriesHasBeenSet = true; m_dashboardEntries = std::forward<DashboardEntriesT>(value); }
+    template<typename DashboardEntriesT = Aws::Vector<DashboardEntry>>
+    ListDashboardsResult& WithDashboardEntries(DashboardEntriesT&& value) { SetDashboardEntries(std::forward<DashboardEntriesT>(value)); return *this;}
+    template<typename DashboardEntriesT = DashboardEntry>
+    ListDashboardsResult& AddDashboardEntries(DashboardEntriesT&& value) { m_dashboardEntriesHasBeenSet = true; m_dashboardEntries.emplace_back(std::forward<DashboardEntriesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The token that marks the start of the next batch of returned results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListDashboardsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListDashboardsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListDashboardsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListDashboardsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ListDashboardsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ListDashboardsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ListDashboardsResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DashboardEntry> m_dashboardEntries;
+    bool m_dashboardEntriesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

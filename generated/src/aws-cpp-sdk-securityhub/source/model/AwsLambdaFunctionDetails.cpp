@@ -18,34 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsLambdaFunctionDetails::AwsLambdaFunctionDetails() : 
-    m_codeHasBeenSet(false),
-    m_codeSha256HasBeenSet(false),
-    m_deadLetterConfigHasBeenSet(false),
-    m_environmentHasBeenSet(false),
-    m_functionNameHasBeenSet(false),
-    m_handlerHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false),
-    m_layersHasBeenSet(false),
-    m_masterArnHasBeenSet(false),
-    m_memorySize(0),
-    m_memorySizeHasBeenSet(false),
-    m_revisionIdHasBeenSet(false),
-    m_roleHasBeenSet(false),
-    m_runtimeHasBeenSet(false),
-    m_timeout(0),
-    m_timeoutHasBeenSet(false),
-    m_tracingConfigHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_architecturesHasBeenSet(false),
-    m_packageTypeHasBeenSet(false)
-{
-}
-
 AwsLambdaFunctionDetails::AwsLambdaFunctionDetails(JsonView jsonValue)
-  : AwsLambdaFunctionDetails()
 {
   *this = jsonValue;
 }
@@ -55,59 +28,43 @@ AwsLambdaFunctionDetails& AwsLambdaFunctionDetails::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Code"))
   {
     m_code = jsonValue.GetObject("Code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CodeSha256"))
   {
     m_codeSha256 = jsonValue.GetString("CodeSha256");
-
     m_codeSha256HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeadLetterConfig"))
   {
     m_deadLetterConfig = jsonValue.GetObject("DeadLetterConfig");
-
     m_deadLetterConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Environment"))
   {
     m_environment = jsonValue.GetObject("Environment");
-
     m_environmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FunctionName"))
   {
     m_functionName = jsonValue.GetString("FunctionName");
-
     m_functionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Handler"))
   {
     m_handler = jsonValue.GetString("Handler");
-
     m_handlerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyArn"))
   {
     m_kmsKeyArn = jsonValue.GetString("KmsKeyArn");
-
     m_kmsKeyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModified"))
   {
     m_lastModified = jsonValue.GetString("LastModified");
-
     m_lastModifiedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Layers"))
   {
     Aws::Utils::Array<JsonView> layersJsonList = jsonValue.GetArray("Layers");
@@ -117,70 +74,51 @@ AwsLambdaFunctionDetails& AwsLambdaFunctionDetails::operator =(JsonView jsonValu
     }
     m_layersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MasterArn"))
   {
     m_masterArn = jsonValue.GetString("MasterArn");
-
     m_masterArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MemorySize"))
   {
     m_memorySize = jsonValue.GetInteger("MemorySize");
-
     m_memorySizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RevisionId"))
   {
     m_revisionId = jsonValue.GetString("RevisionId");
-
     m_revisionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Role"))
   {
     m_role = jsonValue.GetString("Role");
-
     m_roleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Runtime"))
   {
     m_runtime = jsonValue.GetString("Runtime");
-
     m_runtimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Timeout"))
   {
     m_timeout = jsonValue.GetInteger("Timeout");
-
     m_timeoutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TracingConfig"))
   {
     m_tracingConfig = jsonValue.GetObject("TracingConfig");
-
     m_tracingConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcConfig"))
   {
     m_vpcConfig = jsonValue.GetObject("VpcConfig");
-
     m_vpcConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetString("Version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Architectures"))
   {
     Aws::Utils::Array<JsonView> architecturesJsonList = jsonValue.GetArray("Architectures");
@@ -190,14 +128,11 @@ AwsLambdaFunctionDetails& AwsLambdaFunctionDetails::operator =(JsonView jsonValu
     }
     m_architecturesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PackageType"))
   {
     m_packageType = jsonValue.GetString("PackageType");
-
     m_packageTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

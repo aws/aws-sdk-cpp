@@ -27,7 +27,7 @@ namespace Model
   class AddJobFlowStepsRequest : public EMRRequest
   {
   public:
-    AWS_EMR_API AddJobFlowStepsRequest();
+    AWS_EMR_API AddJobFlowStepsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,28 +45,26 @@ namespace Model
      * <p>A string that uniquely identifies the job flow. This identifier is returned
      * by <a>RunJobFlow</a> and can also be obtained from <a>ListClusters</a>. </p>
      */
-    inline const Aws::String& GetJobFlowId() const{ return m_jobFlowId; }
+    inline const Aws::String& GetJobFlowId() const { return m_jobFlowId; }
     inline bool JobFlowIdHasBeenSet() const { return m_jobFlowIdHasBeenSet; }
-    inline void SetJobFlowId(const Aws::String& value) { m_jobFlowIdHasBeenSet = true; m_jobFlowId = value; }
-    inline void SetJobFlowId(Aws::String&& value) { m_jobFlowIdHasBeenSet = true; m_jobFlowId = std::move(value); }
-    inline void SetJobFlowId(const char* value) { m_jobFlowIdHasBeenSet = true; m_jobFlowId.assign(value); }
-    inline AddJobFlowStepsRequest& WithJobFlowId(const Aws::String& value) { SetJobFlowId(value); return *this;}
-    inline AddJobFlowStepsRequest& WithJobFlowId(Aws::String&& value) { SetJobFlowId(std::move(value)); return *this;}
-    inline AddJobFlowStepsRequest& WithJobFlowId(const char* value) { SetJobFlowId(value); return *this;}
+    template<typename JobFlowIdT = Aws::String>
+    void SetJobFlowId(JobFlowIdT&& value) { m_jobFlowIdHasBeenSet = true; m_jobFlowId = std::forward<JobFlowIdT>(value); }
+    template<typename JobFlowIdT = Aws::String>
+    AddJobFlowStepsRequest& WithJobFlowId(JobFlowIdT&& value) { SetJobFlowId(std::forward<JobFlowIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> A list of <a>StepConfig</a> to be executed by the job flow. </p>
      */
-    inline const Aws::Vector<StepConfig>& GetSteps() const{ return m_steps; }
+    inline const Aws::Vector<StepConfig>& GetSteps() const { return m_steps; }
     inline bool StepsHasBeenSet() const { return m_stepsHasBeenSet; }
-    inline void SetSteps(const Aws::Vector<StepConfig>& value) { m_stepsHasBeenSet = true; m_steps = value; }
-    inline void SetSteps(Aws::Vector<StepConfig>&& value) { m_stepsHasBeenSet = true; m_steps = std::move(value); }
-    inline AddJobFlowStepsRequest& WithSteps(const Aws::Vector<StepConfig>& value) { SetSteps(value); return *this;}
-    inline AddJobFlowStepsRequest& WithSteps(Aws::Vector<StepConfig>&& value) { SetSteps(std::move(value)); return *this;}
-    inline AddJobFlowStepsRequest& AddSteps(const StepConfig& value) { m_stepsHasBeenSet = true; m_steps.push_back(value); return *this; }
-    inline AddJobFlowStepsRequest& AddSteps(StepConfig&& value) { m_stepsHasBeenSet = true; m_steps.push_back(std::move(value)); return *this; }
+    template<typename StepsT = Aws::Vector<StepConfig>>
+    void SetSteps(StepsT&& value) { m_stepsHasBeenSet = true; m_steps = std::forward<StepsT>(value); }
+    template<typename StepsT = Aws::Vector<StepConfig>>
+    AddJobFlowStepsRequest& WithSteps(StepsT&& value) { SetSteps(std::forward<StepsT>(value)); return *this;}
+    template<typename StepsT = StepConfig>
+    AddJobFlowStepsRequest& AddSteps(StepsT&& value) { m_stepsHasBeenSet = true; m_steps.emplace_back(std::forward<StepsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -78,14 +76,12 @@ namespace Model
      * <code>arn:aws:IAM::1234567890:role/ReadOnly</code> is a correctly formatted
      * runtime role ARN.</p>
      */
-    inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
+    inline const Aws::String& GetExecutionRoleArn() const { return m_executionRoleArn; }
     inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
-    inline void SetExecutionRoleArn(const Aws::String& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = value; }
-    inline void SetExecutionRoleArn(Aws::String&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::move(value); }
-    inline void SetExecutionRoleArn(const char* value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn.assign(value); }
-    inline AddJobFlowStepsRequest& WithExecutionRoleArn(const Aws::String& value) { SetExecutionRoleArn(value); return *this;}
-    inline AddJobFlowStepsRequest& WithExecutionRoleArn(Aws::String&& value) { SetExecutionRoleArn(std::move(value)); return *this;}
-    inline AddJobFlowStepsRequest& WithExecutionRoleArn(const char* value) { SetExecutionRoleArn(value); return *this;}
+    template<typename ExecutionRoleArnT = Aws::String>
+    void SetExecutionRoleArn(ExecutionRoleArnT&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::forward<ExecutionRoleArnT>(value); }
+    template<typename ExecutionRoleArnT = Aws::String>
+    AddJobFlowStepsRequest& WithExecutionRoleArn(ExecutionRoleArnT&& value) { SetExecutionRoleArn(std::forward<ExecutionRoleArnT>(value)); return *this;}
     ///@}
   private:
 

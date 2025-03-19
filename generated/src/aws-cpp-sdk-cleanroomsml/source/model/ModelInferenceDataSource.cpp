@@ -18,13 +18,7 @@ namespace CleanRoomsML
 namespace Model
 {
 
-ModelInferenceDataSource::ModelInferenceDataSource() : 
-    m_mlInputChannelArnHasBeenSet(false)
-{
-}
-
 ModelInferenceDataSource::ModelInferenceDataSource(JsonView jsonValue)
-  : ModelInferenceDataSource()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ModelInferenceDataSource& ModelInferenceDataSource::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("mlInputChannelArn"))
   {
     m_mlInputChannelArn = jsonValue.GetString("mlInputChannelArn");
-
     m_mlInputChannelArnHasBeenSet = true;
   }
-
   return *this;
 }
 

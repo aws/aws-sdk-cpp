@@ -18,18 +18,7 @@ namespace Support
 namespace Model
 {
 
-TrustedAdvisorResourceDetail::TrustedAdvisorResourceDetail() : 
-    m_statusHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_isSuppressed(false),
-    m_isSuppressedHasBeenSet(false),
-    m_metadataHasBeenSet(false)
-{
-}
-
 TrustedAdvisorResourceDetail::TrustedAdvisorResourceDetail(JsonView jsonValue)
-  : TrustedAdvisorResourceDetail()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ TrustedAdvisorResourceDetail& TrustedAdvisorResourceDetail::operator =(JsonView 
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("region"))
   {
     m_region = jsonValue.GetString("region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceId"))
   {
     m_resourceId = jsonValue.GetString("resourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isSuppressed"))
   {
     m_isSuppressed = jsonValue.GetBool("isSuppressed");
-
     m_isSuppressedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metadata"))
   {
     Aws::Utils::Array<JsonView> metadataJsonList = jsonValue.GetArray("metadata");
@@ -73,7 +54,6 @@ TrustedAdvisorResourceDetail& TrustedAdvisorResourceDetail::operator =(JsonView 
     }
     m_metadataHasBeenSet = true;
   }
-
   return *this;
 }
 

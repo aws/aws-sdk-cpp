@@ -18,44 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-Alarm::Alarm() : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_supportCodeHasBeenSet(false),
-    m_monitoredResourceInfoHasBeenSet(false),
-    m_comparisonOperator(ComparisonOperator::NOT_SET),
-    m_comparisonOperatorHasBeenSet(false),
-    m_evaluationPeriods(0),
-    m_evaluationPeriodsHasBeenSet(false),
-    m_period(0),
-    m_periodHasBeenSet(false),
-    m_threshold(0.0),
-    m_thresholdHasBeenSet(false),
-    m_datapointsToAlarm(0),
-    m_datapointsToAlarmHasBeenSet(false),
-    m_treatMissingData(TreatMissingData::NOT_SET),
-    m_treatMissingDataHasBeenSet(false),
-    m_statistic(MetricStatistic::NOT_SET),
-    m_statisticHasBeenSet(false),
-    m_metricName(MetricName::NOT_SET),
-    m_metricNameHasBeenSet(false),
-    m_state(AlarmState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_unit(MetricUnit::NOT_SET),
-    m_unitHasBeenSet(false),
-    m_contactProtocolsHasBeenSet(false),
-    m_notificationTriggersHasBeenSet(false),
-    m_notificationEnabled(false),
-    m_notificationEnabledHasBeenSet(false)
-{
-}
-
 Alarm::Alarm(JsonView jsonValue)
-  : Alarm()
 {
   *this = jsonValue;
 }
@@ -65,122 +28,88 @@ Alarm& Alarm::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("location"))
   {
     m_location = jsonValue.GetObject("location");
-
     m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("resourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("supportCode"))
   {
     m_supportCode = jsonValue.GetString("supportCode");
-
     m_supportCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("monitoredResourceInfo"))
   {
     m_monitoredResourceInfo = jsonValue.GetObject("monitoredResourceInfo");
-
     m_monitoredResourceInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("comparisonOperator"))
   {
     m_comparisonOperator = ComparisonOperatorMapper::GetComparisonOperatorForName(jsonValue.GetString("comparisonOperator"));
-
     m_comparisonOperatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("evaluationPeriods"))
   {
     m_evaluationPeriods = jsonValue.GetInteger("evaluationPeriods");
-
     m_evaluationPeriodsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("period"))
   {
     m_period = jsonValue.GetInteger("period");
-
     m_periodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("threshold"))
   {
     m_threshold = jsonValue.GetDouble("threshold");
-
     m_thresholdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("datapointsToAlarm"))
   {
     m_datapointsToAlarm = jsonValue.GetInteger("datapointsToAlarm");
-
     m_datapointsToAlarmHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("treatMissingData"))
   {
     m_treatMissingData = TreatMissingDataMapper::GetTreatMissingDataForName(jsonValue.GetString("treatMissingData"));
-
     m_treatMissingDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statistic"))
   {
     m_statistic = MetricStatisticMapper::GetMetricStatisticForName(jsonValue.GetString("statistic"));
-
     m_statisticHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metricName"))
   {
     m_metricName = MetricNameMapper::GetMetricNameForName(jsonValue.GetString("metricName"));
-
     m_metricNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = AlarmStateMapper::GetAlarmStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unit"))
   {
     m_unit = MetricUnitMapper::GetMetricUnitForName(jsonValue.GetString("unit"));
-
     m_unitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("contactProtocols"))
   {
     Aws::Utils::Array<JsonView> contactProtocolsJsonList = jsonValue.GetArray("contactProtocols");
@@ -190,7 +119,6 @@ Alarm& Alarm::operator =(JsonView jsonValue)
     }
     m_contactProtocolsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("notificationTriggers"))
   {
     Aws::Utils::Array<JsonView> notificationTriggersJsonList = jsonValue.GetArray("notificationTriggers");
@@ -200,14 +128,11 @@ Alarm& Alarm::operator =(JsonView jsonValue)
     }
     m_notificationTriggersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("notificationEnabled"))
   {
     m_notificationEnabled = jsonValue.GetBool("notificationEnabled");
-
     m_notificationEnabledHasBeenSet = true;
   }
-
   return *this;
 }
 

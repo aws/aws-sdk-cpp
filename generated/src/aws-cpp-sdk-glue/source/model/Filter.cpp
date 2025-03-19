@@ -18,17 +18,7 @@ namespace Glue
 namespace Model
 {
 
-Filter::Filter() : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_logicalOperator(FilterLogicalOperator::NOT_SET),
-    m_logicalOperatorHasBeenSet(false),
-    m_filtersHasBeenSet(false)
-{
-}
-
 Filter::Filter(JsonView jsonValue)
-  : Filter()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ Filter& Filter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Inputs"))
   {
     Aws::Utils::Array<JsonView> inputsJsonList = jsonValue.GetArray("Inputs");
@@ -51,14 +39,11 @@ Filter& Filter::operator =(JsonView jsonValue)
     }
     m_inputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogicalOperator"))
   {
     m_logicalOperator = FilterLogicalOperatorMapper::GetFilterLogicalOperatorForName(jsonValue.GetString("LogicalOperator"));
-
     m_logicalOperatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Filters"))
   {
     Aws::Utils::Array<JsonView> filtersJsonList = jsonValue.GetArray("Filters");
@@ -68,7 +53,6 @@ Filter& Filter::operator =(JsonView jsonValue)
     }
     m_filtersHasBeenSet = true;
   }
-
   return *this;
 }
 

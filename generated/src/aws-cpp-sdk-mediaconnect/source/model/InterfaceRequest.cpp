@@ -18,13 +18,7 @@ namespace MediaConnect
 namespace Model
 {
 
-InterfaceRequest::InterfaceRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 InterfaceRequest::InterfaceRequest(JsonView jsonValue)
-  : InterfaceRequest()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ InterfaceRequest& InterfaceRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

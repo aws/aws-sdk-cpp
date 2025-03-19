@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetServiceRequest::GetServiceRequest() : 
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_keyAttributesHasBeenSet(false)
-{
-}
-
 Aws::String GetServiceRequest::SerializePayload() const
 {
   JsonValue payload;

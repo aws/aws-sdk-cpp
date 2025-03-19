@@ -34,7 +34,7 @@ namespace Model
   class TagHealth
   {
   public:
-    AWS_DEVOPSGURU_API TagHealth();
+    AWS_DEVOPSGURU_API TagHealth() = default;
     AWS_DEVOPSGURU_API TagHealth(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API TagHealth& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -58,14 +58,12 @@ namespace Model
      * <code>Devops-Guru-production-application/RDS</code> or
      * <code>Devops-Guru-production-application/containers</code>.</p> 
      */
-    inline const Aws::String& GetAppBoundaryKey() const{ return m_appBoundaryKey; }
+    inline const Aws::String& GetAppBoundaryKey() const { return m_appBoundaryKey; }
     inline bool AppBoundaryKeyHasBeenSet() const { return m_appBoundaryKeyHasBeenSet; }
-    inline void SetAppBoundaryKey(const Aws::String& value) { m_appBoundaryKeyHasBeenSet = true; m_appBoundaryKey = value; }
-    inline void SetAppBoundaryKey(Aws::String&& value) { m_appBoundaryKeyHasBeenSet = true; m_appBoundaryKey = std::move(value); }
-    inline void SetAppBoundaryKey(const char* value) { m_appBoundaryKeyHasBeenSet = true; m_appBoundaryKey.assign(value); }
-    inline TagHealth& WithAppBoundaryKey(const Aws::String& value) { SetAppBoundaryKey(value); return *this;}
-    inline TagHealth& WithAppBoundaryKey(Aws::String&& value) { SetAppBoundaryKey(std::move(value)); return *this;}
-    inline TagHealth& WithAppBoundaryKey(const char* value) { SetAppBoundaryKey(value); return *this;}
+    template<typename AppBoundaryKeyT = Aws::String>
+    void SetAppBoundaryKey(AppBoundaryKeyT&& value) { m_appBoundaryKeyHasBeenSet = true; m_appBoundaryKey = std::forward<AppBoundaryKeyT>(value); }
+    template<typename AppBoundaryKeyT = Aws::String>
+    TagHealth& WithAppBoundaryKey(AppBoundaryKeyT&& value) { SetAppBoundaryKey(std::forward<AppBoundaryKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,14 +76,12 @@ namespace Model
      * <i>values</i> are case-sensitive. You can specify a maximum of 256 characters
      * for a tag value.</p>
      */
-    inline const Aws::String& GetTagValue() const{ return m_tagValue; }
+    inline const Aws::String& GetTagValue() const { return m_tagValue; }
     inline bool TagValueHasBeenSet() const { return m_tagValueHasBeenSet; }
-    inline void SetTagValue(const Aws::String& value) { m_tagValueHasBeenSet = true; m_tagValue = value; }
-    inline void SetTagValue(Aws::String&& value) { m_tagValueHasBeenSet = true; m_tagValue = std::move(value); }
-    inline void SetTagValue(const char* value) { m_tagValueHasBeenSet = true; m_tagValue.assign(value); }
-    inline TagHealth& WithTagValue(const Aws::String& value) { SetTagValue(value); return *this;}
-    inline TagHealth& WithTagValue(Aws::String&& value) { SetTagValue(std::move(value)); return *this;}
-    inline TagHealth& WithTagValue(const char* value) { SetTagValue(value); return *this;}
+    template<typename TagValueT = Aws::String>
+    void SetTagValue(TagValueT&& value) { m_tagValueHasBeenSet = true; m_tagValue = std::forward<TagValueT>(value); }
+    template<typename TagValueT = Aws::String>
+    TagHealth& WithTagValue(TagValueT&& value) { SetTagValue(std::forward<TagValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,12 +91,12 @@ namespace Model
      * of open proactive, open reactive insights, and the Mean Time to Recover (MTTR)
      * of closed insights. </p>
      */
-    inline const InsightHealth& GetInsight() const{ return m_insight; }
+    inline const InsightHealth& GetInsight() const { return m_insight; }
     inline bool InsightHasBeenSet() const { return m_insightHasBeenSet; }
-    inline void SetInsight(const InsightHealth& value) { m_insightHasBeenSet = true; m_insight = value; }
-    inline void SetInsight(InsightHealth&& value) { m_insightHasBeenSet = true; m_insight = std::move(value); }
-    inline TagHealth& WithInsight(const InsightHealth& value) { SetInsight(value); return *this;}
-    inline TagHealth& WithInsight(InsightHealth&& value) { SetInsight(std::move(value)); return *this;}
+    template<typename InsightT = InsightHealth>
+    void SetInsight(InsightT&& value) { m_insightHasBeenSet = true; m_insight = std::forward<InsightT>(value); }
+    template<typename InsightT = InsightHealth>
+    TagHealth& WithInsight(InsightT&& value) { SetInsight(std::forward<InsightT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,7 +104,7 @@ namespace Model
      * <p> Number of resources that DevOps Guru is monitoring in your account that are
      * specified by an Amazon Web Services tag. </p>
      */
-    inline long long GetAnalyzedResourceCount() const{ return m_analyzedResourceCount; }
+    inline long long GetAnalyzedResourceCount() const { return m_analyzedResourceCount; }
     inline bool AnalyzedResourceCountHasBeenSet() const { return m_analyzedResourceCountHasBeenSet; }
     inline void SetAnalyzedResourceCount(long long value) { m_analyzedResourceCountHasBeenSet = true; m_analyzedResourceCount = value; }
     inline TagHealth& WithAnalyzedResourceCount(long long value) { SetAnalyzedResourceCount(value); return *this;}
@@ -124,7 +120,7 @@ namespace Model
     InsightHealth m_insight;
     bool m_insightHasBeenSet = false;
 
-    long long m_analyzedResourceCount;
+    long long m_analyzedResourceCount{0};
     bool m_analyzedResourceCountHasBeenSet = false;
   };
 

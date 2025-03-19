@@ -18,14 +18,7 @@ namespace ServiceDiscovery
 namespace Model
 {
 
-DnsProperties::DnsProperties() : 
-    m_hostedZoneIdHasBeenSet(false),
-    m_sOAHasBeenSet(false)
-{
-}
-
 DnsProperties::DnsProperties(JsonView jsonValue)
-  : DnsProperties()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DnsProperties& DnsProperties::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("HostedZoneId"))
   {
     m_hostedZoneId = jsonValue.GetString("HostedZoneId");
-
     m_hostedZoneIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SOA"))
   {
     m_sOA = jsonValue.GetObject("SOA");
-
     m_sOAHasBeenSet = true;
   }
-
   return *this;
 }
 

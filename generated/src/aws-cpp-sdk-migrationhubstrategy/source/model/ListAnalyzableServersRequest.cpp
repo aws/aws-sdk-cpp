@@ -12,15 +12,6 @@ using namespace Aws::MigrationHubStrategyRecommendations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListAnalyzableServersRequest::ListAnalyzableServersRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_sort(SortOrder::NOT_SET),
-    m_sortHasBeenSet(false)
-{
-}
-
 Aws::String ListAnalyzableServersRequest::SerializePayload() const
 {
   JsonValue payload;

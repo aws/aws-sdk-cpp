@@ -28,7 +28,7 @@ namespace Model
   class UpdateAssetResult
   {
   public:
-    AWS_IOTSITEWISE_API UpdateAssetResult();
+    AWS_IOTSITEWISE_API UpdateAssetResult() = default;
     AWS_IOTSITEWISE_API UpdateAssetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTSITEWISE_API UpdateAssetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>The status of the asset, which contains a state (<code>UPDATING</code> after
      * successfully calling this operation) and any error message.</p>
      */
-    inline const AssetStatus& GetAssetStatus() const{ return m_assetStatus; }
-    inline void SetAssetStatus(const AssetStatus& value) { m_assetStatus = value; }
-    inline void SetAssetStatus(AssetStatus&& value) { m_assetStatus = std::move(value); }
-    inline UpdateAssetResult& WithAssetStatus(const AssetStatus& value) { SetAssetStatus(value); return *this;}
-    inline UpdateAssetResult& WithAssetStatus(AssetStatus&& value) { SetAssetStatus(std::move(value)); return *this;}
+    inline const AssetStatus& GetAssetStatus() const { return m_assetStatus; }
+    template<typename AssetStatusT = AssetStatus>
+    void SetAssetStatus(AssetStatusT&& value) { m_assetStatusHasBeenSet = true; m_assetStatus = std::forward<AssetStatusT>(value); }
+    template<typename AssetStatusT = AssetStatus>
+    UpdateAssetResult& WithAssetStatus(AssetStatusT&& value) { SetAssetStatus(std::forward<AssetStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateAssetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateAssetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateAssetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateAssetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AssetStatus m_assetStatus;
+    bool m_assetStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

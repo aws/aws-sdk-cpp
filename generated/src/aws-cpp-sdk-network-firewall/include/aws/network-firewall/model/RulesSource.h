@@ -38,7 +38,7 @@ namespace Model
   class RulesSource
   {
   public:
-    AWS_NETWORKFIREWALL_API RulesSource();
+    AWS_NETWORKFIREWALL_API RulesSource() = default;
     AWS_NETWORKFIREWALL_API RulesSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API RulesSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,26 +55,24 @@ namespace Model
      * <code>RuleOrder</code> option in <a>StatefulRuleOptions</a> is set to
      * <code>STRICT_ORDER</code>.</p> 
      */
-    inline const Aws::String& GetRulesString() const{ return m_rulesString; }
+    inline const Aws::String& GetRulesString() const { return m_rulesString; }
     inline bool RulesStringHasBeenSet() const { return m_rulesStringHasBeenSet; }
-    inline void SetRulesString(const Aws::String& value) { m_rulesStringHasBeenSet = true; m_rulesString = value; }
-    inline void SetRulesString(Aws::String&& value) { m_rulesStringHasBeenSet = true; m_rulesString = std::move(value); }
-    inline void SetRulesString(const char* value) { m_rulesStringHasBeenSet = true; m_rulesString.assign(value); }
-    inline RulesSource& WithRulesString(const Aws::String& value) { SetRulesString(value); return *this;}
-    inline RulesSource& WithRulesString(Aws::String&& value) { SetRulesString(std::move(value)); return *this;}
-    inline RulesSource& WithRulesString(const char* value) { SetRulesString(value); return *this;}
+    template<typename RulesStringT = Aws::String>
+    void SetRulesString(RulesStringT&& value) { m_rulesStringHasBeenSet = true; m_rulesString = std::forward<RulesStringT>(value); }
+    template<typename RulesStringT = Aws::String>
+    RulesSource& WithRulesString(RulesStringT&& value) { SetRulesString(std::forward<RulesStringT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Stateful inspection criteria for a domain list rule group. </p>
      */
-    inline const RulesSourceList& GetRulesSourceList() const{ return m_rulesSourceList; }
+    inline const RulesSourceList& GetRulesSourceList() const { return m_rulesSourceList; }
     inline bool RulesSourceListHasBeenSet() const { return m_rulesSourceListHasBeenSet; }
-    inline void SetRulesSourceList(const RulesSourceList& value) { m_rulesSourceListHasBeenSet = true; m_rulesSourceList = value; }
-    inline void SetRulesSourceList(RulesSourceList&& value) { m_rulesSourceListHasBeenSet = true; m_rulesSourceList = std::move(value); }
-    inline RulesSource& WithRulesSourceList(const RulesSourceList& value) { SetRulesSourceList(value); return *this;}
-    inline RulesSource& WithRulesSourceList(RulesSourceList&& value) { SetRulesSourceList(std::move(value)); return *this;}
+    template<typename RulesSourceListT = RulesSourceList>
+    void SetRulesSourceList(RulesSourceListT&& value) { m_rulesSourceListHasBeenSet = true; m_rulesSourceList = std::forward<RulesSourceListT>(value); }
+    template<typename RulesSourceListT = RulesSourceList>
+    RulesSource& WithRulesSourceList(RulesSourceListT&& value) { SetRulesSourceList(std::forward<RulesSourceListT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,26 +84,26 @@ namespace Model
      * href="https://suricata.readthedocs.io/en/suricata-7.0.3/rules/intro.html">Rules
      * Format</a>. </p>
      */
-    inline const Aws::Vector<StatefulRule>& GetStatefulRules() const{ return m_statefulRules; }
+    inline const Aws::Vector<StatefulRule>& GetStatefulRules() const { return m_statefulRules; }
     inline bool StatefulRulesHasBeenSet() const { return m_statefulRulesHasBeenSet; }
-    inline void SetStatefulRules(const Aws::Vector<StatefulRule>& value) { m_statefulRulesHasBeenSet = true; m_statefulRules = value; }
-    inline void SetStatefulRules(Aws::Vector<StatefulRule>&& value) { m_statefulRulesHasBeenSet = true; m_statefulRules = std::move(value); }
-    inline RulesSource& WithStatefulRules(const Aws::Vector<StatefulRule>& value) { SetStatefulRules(value); return *this;}
-    inline RulesSource& WithStatefulRules(Aws::Vector<StatefulRule>&& value) { SetStatefulRules(std::move(value)); return *this;}
-    inline RulesSource& AddStatefulRules(const StatefulRule& value) { m_statefulRulesHasBeenSet = true; m_statefulRules.push_back(value); return *this; }
-    inline RulesSource& AddStatefulRules(StatefulRule&& value) { m_statefulRulesHasBeenSet = true; m_statefulRules.push_back(std::move(value)); return *this; }
+    template<typename StatefulRulesT = Aws::Vector<StatefulRule>>
+    void SetStatefulRules(StatefulRulesT&& value) { m_statefulRulesHasBeenSet = true; m_statefulRules = std::forward<StatefulRulesT>(value); }
+    template<typename StatefulRulesT = Aws::Vector<StatefulRule>>
+    RulesSource& WithStatefulRules(StatefulRulesT&& value) { SetStatefulRules(std::forward<StatefulRulesT>(value)); return *this;}
+    template<typename StatefulRulesT = StatefulRule>
+    RulesSource& AddStatefulRules(StatefulRulesT&& value) { m_statefulRulesHasBeenSet = true; m_statefulRules.emplace_back(std::forward<StatefulRulesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Stateless inspection criteria to be used in a stateless rule group. </p>
      */
-    inline const StatelessRulesAndCustomActions& GetStatelessRulesAndCustomActions() const{ return m_statelessRulesAndCustomActions; }
+    inline const StatelessRulesAndCustomActions& GetStatelessRulesAndCustomActions() const { return m_statelessRulesAndCustomActions; }
     inline bool StatelessRulesAndCustomActionsHasBeenSet() const { return m_statelessRulesAndCustomActionsHasBeenSet; }
-    inline void SetStatelessRulesAndCustomActions(const StatelessRulesAndCustomActions& value) { m_statelessRulesAndCustomActionsHasBeenSet = true; m_statelessRulesAndCustomActions = value; }
-    inline void SetStatelessRulesAndCustomActions(StatelessRulesAndCustomActions&& value) { m_statelessRulesAndCustomActionsHasBeenSet = true; m_statelessRulesAndCustomActions = std::move(value); }
-    inline RulesSource& WithStatelessRulesAndCustomActions(const StatelessRulesAndCustomActions& value) { SetStatelessRulesAndCustomActions(value); return *this;}
-    inline RulesSource& WithStatelessRulesAndCustomActions(StatelessRulesAndCustomActions&& value) { SetStatelessRulesAndCustomActions(std::move(value)); return *this;}
+    template<typename StatelessRulesAndCustomActionsT = StatelessRulesAndCustomActions>
+    void SetStatelessRulesAndCustomActions(StatelessRulesAndCustomActionsT&& value) { m_statelessRulesAndCustomActionsHasBeenSet = true; m_statelessRulesAndCustomActions = std::forward<StatelessRulesAndCustomActionsT>(value); }
+    template<typename StatelessRulesAndCustomActionsT = StatelessRulesAndCustomActions>
+    RulesSource& WithStatelessRulesAndCustomActions(StatelessRulesAndCustomActionsT&& value) { SetStatelessRulesAndCustomActions(std::forward<StatelessRulesAndCustomActionsT>(value)); return *this;}
     ///@}
   private:
 

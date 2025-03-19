@@ -12,11 +12,6 @@ using namespace Aws::LicenseManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetLicenseConversionTaskRequest::GetLicenseConversionTaskRequest() : 
-    m_licenseConversionTaskIdHasBeenSet(false)
-{
-}
-
 Aws::String GetLicenseConversionTaskRequest::SerializePayload() const
 {
   JsonValue payload;

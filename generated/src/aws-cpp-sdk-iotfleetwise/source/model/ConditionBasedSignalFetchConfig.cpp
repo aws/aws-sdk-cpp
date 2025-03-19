@@ -18,15 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-ConditionBasedSignalFetchConfig::ConditionBasedSignalFetchConfig() : 
-    m_conditionExpressionHasBeenSet(false),
-    m_triggerMode(TriggerMode::NOT_SET),
-    m_triggerModeHasBeenSet(false)
-{
-}
-
 ConditionBasedSignalFetchConfig::ConditionBasedSignalFetchConfig(JsonView jsonValue)
-  : ConditionBasedSignalFetchConfig()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ConditionBasedSignalFetchConfig& ConditionBasedSignalFetchConfig::operator =(Jso
   if(jsonValue.ValueExists("conditionExpression"))
   {
     m_conditionExpression = jsonValue.GetString("conditionExpression");
-
     m_conditionExpressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("triggerMode"))
   {
     m_triggerMode = TriggerModeMapper::GetTriggerModeForName(jsonValue.GetString("triggerMode"));
-
     m_triggerModeHasBeenSet = true;
   }
-
   return *this;
 }
 

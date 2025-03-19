@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-SnapshotDestinationConfiguration::SnapshotDestinationConfiguration() : 
-    m_s3DestinationsHasBeenSet(false)
-{
-}
-
 SnapshotDestinationConfiguration::SnapshotDestinationConfiguration(JsonView jsonValue)
-  : SnapshotDestinationConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ SnapshotDestinationConfiguration& SnapshotDestinationConfiguration::operator =(J
     }
     m_s3DestinationsHasBeenSet = true;
   }
-
   return *this;
 }
 

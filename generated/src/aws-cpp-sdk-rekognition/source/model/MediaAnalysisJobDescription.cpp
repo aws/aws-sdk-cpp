@@ -18,25 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-MediaAnalysisJobDescription::MediaAnalysisJobDescription() : 
-    m_jobIdHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_operationsConfigHasBeenSet(false),
-    m_status(MediaAnalysisJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_failureDetailsHasBeenSet(false),
-    m_creationTimestampHasBeenSet(false),
-    m_completionTimestampHasBeenSet(false),
-    m_inputHasBeenSet(false),
-    m_outputConfigHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_resultsHasBeenSet(false),
-    m_manifestSummaryHasBeenSet(false)
-{
-}
-
 MediaAnalysisJobDescription::MediaAnalysisJobDescription(JsonView jsonValue)
-  : MediaAnalysisJobDescription()
 {
   *this = jsonValue;
 }
@@ -46,87 +28,63 @@ MediaAnalysisJobDescription& MediaAnalysisJobDescription::operator =(JsonView js
   if(jsonValue.ValueExists("JobId"))
   {
     m_jobId = jsonValue.GetString("JobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobName"))
   {
     m_jobName = jsonValue.GetString("JobName");
-
     m_jobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OperationsConfig"))
   {
     m_operationsConfig = jsonValue.GetObject("OperationsConfig");
-
     m_operationsConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = MediaAnalysisJobStatusMapper::GetMediaAnalysisJobStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureDetails"))
   {
     m_failureDetails = jsonValue.GetObject("FailureDetails");
-
     m_failureDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTimestamp"))
   {
     m_creationTimestamp = jsonValue.GetDouble("CreationTimestamp");
-
     m_creationTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompletionTimestamp"))
   {
     m_completionTimestamp = jsonValue.GetDouble("CompletionTimestamp");
-
     m_completionTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Input"))
   {
     m_input = jsonValue.GetObject("Input");
-
     m_inputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputConfig"))
   {
     m_outputConfig = jsonValue.GetObject("OutputConfig");
-
     m_outputConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Results"))
   {
     m_results = jsonValue.GetObject("Results");
-
     m_resultsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ManifestSummary"))
   {
     m_manifestSummary = jsonValue.GetObject("ManifestSummary");
-
     m_manifestSummaryHasBeenSet = true;
   }
-
   return *this;
 }
 

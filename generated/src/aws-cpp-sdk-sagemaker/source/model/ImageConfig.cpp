@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ImageConfig::ImageConfig() : 
-    m_repositoryAccessMode(RepositoryAccessMode::NOT_SET),
-    m_repositoryAccessModeHasBeenSet(false),
-    m_repositoryAuthConfigHasBeenSet(false)
-{
-}
-
 ImageConfig::ImageConfig(JsonView jsonValue)
-  : ImageConfig()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ImageConfig& ImageConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RepositoryAccessMode"))
   {
     m_repositoryAccessMode = RepositoryAccessModeMapper::GetRepositoryAccessModeForName(jsonValue.GetString("RepositoryAccessMode"));
-
     m_repositoryAccessModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RepositoryAuthConfig"))
   {
     m_repositoryAuthConfig = jsonValue.GetObject("RepositoryAuthConfig");
-
     m_repositoryAuthConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

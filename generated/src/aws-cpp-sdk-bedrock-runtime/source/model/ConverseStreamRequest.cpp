@@ -12,22 +12,6 @@ using namespace Aws::BedrockRuntime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ConverseStreamRequest::ConverseStreamRequest() : 
-    m_modelIdHasBeenSet(false),
-    m_messagesHasBeenSet(false),
-    m_systemHasBeenSet(false),
-    m_inferenceConfigHasBeenSet(false),
-    m_toolConfigHasBeenSet(false),
-    m_guardrailConfigHasBeenSet(false),
-    m_additionalModelRequestFieldsHasBeenSet(false),
-    m_promptVariablesHasBeenSet(false),
-    m_additionalModelResponseFieldPathsHasBeenSet(false),
-    m_requestMetadataHasBeenSet(false),
-    m_performanceConfigHasBeenSet(false),
-    m_handler(), m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
-{
-}
-
 Aws::String ConverseStreamRequest::SerializePayload() const
 {
   JsonValue payload;

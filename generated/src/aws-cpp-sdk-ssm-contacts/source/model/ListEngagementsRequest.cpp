@@ -12,15 +12,6 @@ using namespace Aws::SSMContacts::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListEngagementsRequest::ListEngagementsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_incidentIdHasBeenSet(false),
-    m_timeRangeValueHasBeenSet(false)
-{
-}
-
 Aws::String ListEngagementsRequest::SerializePayload() const
 {
   JsonValue payload;

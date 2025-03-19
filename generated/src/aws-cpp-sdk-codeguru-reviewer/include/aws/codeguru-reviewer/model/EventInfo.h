@@ -32,7 +32,7 @@ namespace Model
   class EventInfo
   {
   public:
-    AWS_CODEGURUREVIEWER_API EventInfo();
+    AWS_CODEGURUREVIEWER_API EventInfo() = default;
     AWS_CODEGURUREVIEWER_API EventInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUREVIEWER_API EventInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUREVIEWER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
      * <code>workflow_dispatch</code>, <code>schedule</code>, and <code>push</code>
      * </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline EventInfo& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline EventInfo& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline EventInfo& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    EventInfo& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of an event. The state might be open, closed, or another state.</p>
      */
-    inline const Aws::String& GetState() const{ return m_state; }
+    inline const Aws::String& GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const Aws::String& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline void SetState(const char* value) { m_stateHasBeenSet = true; m_state.assign(value); }
-    inline EventInfo& WithState(const Aws::String& value) { SetState(value); return *this;}
-    inline EventInfo& WithState(Aws::String&& value) { SetState(std::move(value)); return *this;}
-    inline EventInfo& WithState(const char* value) { SetState(value); return *this;}
+    template<typename StateT = Aws::String>
+    void SetState(StateT&& value) { m_stateHasBeenSet = true; m_state = std::forward<StateT>(value); }
+    template<typename StateT = Aws::String>
+    EventInfo& WithState(StateT&& value) { SetState(std::forward<StateT>(value)); return *this;}
     ///@}
   private:
 

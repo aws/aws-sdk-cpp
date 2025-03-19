@@ -21,7 +21,7 @@ namespace Model
   class GetSearchResultExportJobRequest : public BackupSearchRequest
   {
   public:
-    AWS_BACKUPSEARCH_API GetSearchResultExportJobRequest();
+    AWS_BACKUPSEARCH_API GetSearchResultExportJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p>This is the unique string that identifies a specific export job.</p>
      * <p>Required for this operation.</p>
      */
-    inline const Aws::String& GetExportJobIdentifier() const{ return m_exportJobIdentifier; }
+    inline const Aws::String& GetExportJobIdentifier() const { return m_exportJobIdentifier; }
     inline bool ExportJobIdentifierHasBeenSet() const { return m_exportJobIdentifierHasBeenSet; }
-    inline void SetExportJobIdentifier(const Aws::String& value) { m_exportJobIdentifierHasBeenSet = true; m_exportJobIdentifier = value; }
-    inline void SetExportJobIdentifier(Aws::String&& value) { m_exportJobIdentifierHasBeenSet = true; m_exportJobIdentifier = std::move(value); }
-    inline void SetExportJobIdentifier(const char* value) { m_exportJobIdentifierHasBeenSet = true; m_exportJobIdentifier.assign(value); }
-    inline GetSearchResultExportJobRequest& WithExportJobIdentifier(const Aws::String& value) { SetExportJobIdentifier(value); return *this;}
-    inline GetSearchResultExportJobRequest& WithExportJobIdentifier(Aws::String&& value) { SetExportJobIdentifier(std::move(value)); return *this;}
-    inline GetSearchResultExportJobRequest& WithExportJobIdentifier(const char* value) { SetExportJobIdentifier(value); return *this;}
+    template<typename ExportJobIdentifierT = Aws::String>
+    void SetExportJobIdentifier(ExportJobIdentifierT&& value) { m_exportJobIdentifierHasBeenSet = true; m_exportJobIdentifier = std::forward<ExportJobIdentifierT>(value); }
+    template<typename ExportJobIdentifierT = Aws::String>
+    GetSearchResultExportJobRequest& WithExportJobIdentifier(ExportJobIdentifierT&& value) { SetExportJobIdentifier(std::forward<ExportJobIdentifierT>(value)); return *this;}
     ///@}
   private:
 

@@ -31,7 +31,7 @@ namespace Model
   class ResourceTagsSearchCriteria
   {
   public:
-    AWS_CONNECT_API ResourceTagsSearchCriteria();
+    AWS_CONNECT_API ResourceTagsSearchCriteria() = default;
     AWS_CONNECT_API ResourceTagsSearchCriteria(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API ResourceTagsSearchCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The search criteria to be used to return tags.</p>
      */
-    inline const TagSearchCondition& GetTagSearchCondition() const{ return m_tagSearchCondition; }
+    inline const TagSearchCondition& GetTagSearchCondition() const { return m_tagSearchCondition; }
     inline bool TagSearchConditionHasBeenSet() const { return m_tagSearchConditionHasBeenSet; }
-    inline void SetTagSearchCondition(const TagSearchCondition& value) { m_tagSearchConditionHasBeenSet = true; m_tagSearchCondition = value; }
-    inline void SetTagSearchCondition(TagSearchCondition&& value) { m_tagSearchConditionHasBeenSet = true; m_tagSearchCondition = std::move(value); }
-    inline ResourceTagsSearchCriteria& WithTagSearchCondition(const TagSearchCondition& value) { SetTagSearchCondition(value); return *this;}
-    inline ResourceTagsSearchCriteria& WithTagSearchCondition(TagSearchCondition&& value) { SetTagSearchCondition(std::move(value)); return *this;}
+    template<typename TagSearchConditionT = TagSearchCondition>
+    void SetTagSearchCondition(TagSearchConditionT&& value) { m_tagSearchConditionHasBeenSet = true; m_tagSearchCondition = std::forward<TagSearchConditionT>(value); }
+    template<typename TagSearchConditionT = TagSearchCondition>
+    ResourceTagsSearchCriteria& WithTagSearchCondition(TagSearchConditionT&& value) { SetTagSearchCondition(std::forward<TagSearchConditionT>(value)); return *this;}
     ///@}
   private:
 

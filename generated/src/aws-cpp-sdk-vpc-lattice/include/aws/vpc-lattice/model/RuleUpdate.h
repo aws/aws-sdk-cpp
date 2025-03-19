@@ -33,7 +33,7 @@ namespace Model
   class RuleUpdate
   {
   public:
-    AWS_VPCLATTICE_API RuleUpdate();
+    AWS_VPCLATTICE_API RuleUpdate() = default;
     AWS_VPCLATTICE_API RuleUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_VPCLATTICE_API RuleUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VPCLATTICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>The rule action.</p>
      */
-    inline const RuleAction& GetAction() const{ return m_action; }
+    inline const RuleAction& GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const RuleAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(RuleAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline RuleUpdate& WithAction(const RuleAction& value) { SetAction(value); return *this;}
-    inline RuleUpdate& WithAction(RuleAction&& value) { SetAction(std::move(value)); return *this;}
+    template<typename ActionT = RuleAction>
+    void SetAction(ActionT&& value) { m_actionHasBeenSet = true; m_action = std::forward<ActionT>(value); }
+    template<typename ActionT = RuleAction>
+    RuleUpdate& WithAction(ActionT&& value) { SetAction(std::forward<ActionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The rule match.</p>
      */
-    inline const RuleMatch& GetMatch() const{ return m_match; }
+    inline const RuleMatch& GetMatch() const { return m_match; }
     inline bool MatchHasBeenSet() const { return m_matchHasBeenSet; }
-    inline void SetMatch(const RuleMatch& value) { m_matchHasBeenSet = true; m_match = value; }
-    inline void SetMatch(RuleMatch&& value) { m_matchHasBeenSet = true; m_match = std::move(value); }
-    inline RuleUpdate& WithMatch(const RuleMatch& value) { SetMatch(value); return *this;}
-    inline RuleUpdate& WithMatch(RuleMatch&& value) { SetMatch(std::move(value)); return *this;}
+    template<typename MatchT = RuleMatch>
+    void SetMatch(MatchT&& value) { m_matchHasBeenSet = true; m_match = std::forward<MatchT>(value); }
+    template<typename MatchT = RuleMatch>
+    RuleUpdate& WithMatch(MatchT&& value) { SetMatch(std::forward<MatchT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,7 +68,7 @@ namespace Model
      * <p>The rule priority. A listener can't have multiple rules with the same
      * priority.</p>
      */
-    inline int GetPriority() const{ return m_priority; }
+    inline int GetPriority() const { return m_priority; }
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
     inline RuleUpdate& WithPriority(int value) { SetPriority(value); return *this;}
@@ -78,14 +78,12 @@ namespace Model
     /**
      * <p>The ID or ARN of the rule.</p>
      */
-    inline const Aws::String& GetRuleIdentifier() const{ return m_ruleIdentifier; }
+    inline const Aws::String& GetRuleIdentifier() const { return m_ruleIdentifier; }
     inline bool RuleIdentifierHasBeenSet() const { return m_ruleIdentifierHasBeenSet; }
-    inline void SetRuleIdentifier(const Aws::String& value) { m_ruleIdentifierHasBeenSet = true; m_ruleIdentifier = value; }
-    inline void SetRuleIdentifier(Aws::String&& value) { m_ruleIdentifierHasBeenSet = true; m_ruleIdentifier = std::move(value); }
-    inline void SetRuleIdentifier(const char* value) { m_ruleIdentifierHasBeenSet = true; m_ruleIdentifier.assign(value); }
-    inline RuleUpdate& WithRuleIdentifier(const Aws::String& value) { SetRuleIdentifier(value); return *this;}
-    inline RuleUpdate& WithRuleIdentifier(Aws::String&& value) { SetRuleIdentifier(std::move(value)); return *this;}
-    inline RuleUpdate& WithRuleIdentifier(const char* value) { SetRuleIdentifier(value); return *this;}
+    template<typename RuleIdentifierT = Aws::String>
+    void SetRuleIdentifier(RuleIdentifierT&& value) { m_ruleIdentifierHasBeenSet = true; m_ruleIdentifier = std::forward<RuleIdentifierT>(value); }
+    template<typename RuleIdentifierT = Aws::String>
+    RuleUpdate& WithRuleIdentifier(RuleIdentifierT&& value) { SetRuleIdentifier(std::forward<RuleIdentifierT>(value)); return *this;}
     ///@}
   private:
 
@@ -95,7 +93,7 @@ namespace Model
     RuleMatch m_match;
     bool m_matchHasBeenSet = false;
 
-    int m_priority;
+    int m_priority{0};
     bool m_priorityHasBeenSet = false;
 
     Aws::String m_ruleIdentifier;

@@ -18,14 +18,7 @@ namespace PinpointSMSVoice
 namespace Model
 {
 
-KinesisFirehoseDestination::KinesisFirehoseDestination() : 
-    m_deliveryStreamArnHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false)
-{
-}
-
 KinesisFirehoseDestination::KinesisFirehoseDestination(JsonView jsonValue)
-  : KinesisFirehoseDestination()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ KinesisFirehoseDestination& KinesisFirehoseDestination::operator =(JsonView json
   if(jsonValue.ValueExists("DeliveryStreamArn"))
   {
     m_deliveryStreamArn = jsonValue.GetString("DeliveryStreamArn");
-
     m_deliveryStreamArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IamRoleArn"))
   {
     m_iamRoleArn = jsonValue.GetString("IamRoleArn");
-
     m_iamRoleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

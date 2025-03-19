@@ -12,17 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AddEntityOwnerRequest::AddEntityOwnerRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_domainIdentifierHasBeenSet(false),
-    m_entityIdentifierHasBeenSet(false),
-    m_entityType(DataZoneEntityType::NOT_SET),
-    m_entityTypeHasBeenSet(false),
-    m_ownerHasBeenSet(false)
-{
-}
-
 Aws::String AddEntityOwnerRequest::SerializePayload() const
 {
   JsonValue payload;

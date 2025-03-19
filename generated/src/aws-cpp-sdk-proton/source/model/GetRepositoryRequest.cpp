@@ -12,13 +12,6 @@ using namespace Aws::Proton::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRepositoryRequest::GetRepositoryRequest() : 
-    m_nameHasBeenSet(false),
-    m_provider(RepositoryProvider::NOT_SET),
-    m_providerHasBeenSet(false)
-{
-}
-
 Aws::String GetRepositoryRequest::SerializePayload() const
 {
   JsonValue payload;

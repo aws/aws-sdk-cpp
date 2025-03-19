@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListSearchResultExportJobsRequest::ListSearchResultExportJobsRequest() : 
-    m_status(ExportJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_searchJobIdentifierHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListSearchResultExportJobsRequest::SerializePayload() const
 {
   return {};

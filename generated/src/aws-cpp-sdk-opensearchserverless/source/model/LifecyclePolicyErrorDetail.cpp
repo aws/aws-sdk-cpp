@@ -18,17 +18,7 @@ namespace OpenSearchServerless
 namespace Model
 {
 
-LifecyclePolicyErrorDetail::LifecyclePolicyErrorDetail() : 
-    m_type(LifecyclePolicyType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_errorCodeHasBeenSet(false)
-{
-}
-
 LifecyclePolicyErrorDetail::LifecyclePolicyErrorDetail(JsonView jsonValue)
-  : LifecyclePolicyErrorDetail()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ LifecyclePolicyErrorDetail& LifecyclePolicyErrorDetail::operator =(JsonView json
   if(jsonValue.ValueExists("type"))
   {
     m_type = LifecyclePolicyTypeMapper::GetLifecyclePolicyTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorCode"))
   {
     m_errorCode = jsonValue.GetString("errorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

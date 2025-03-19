@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeInstancesResponse::DescribeInstancesResponse()
-{
-}
-
 DescribeInstancesResponse::DescribeInstancesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ DescribeInstancesResponse& DescribeInstancesResponse::operator =(const Aws::Amaz
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
     XmlNode reservationsNode = resultNode.FirstChild("reservationSet");
     if(!reservationsNode.IsNull())
     {
       XmlNode reservationsMember = reservationsNode.FirstChild("item");
+      m_reservationsHasBeenSet = !reservationsMember.IsNull();
       while(!reservationsMember.IsNull())
       {
         m_reservations.push_back(reservationsMember);
         reservationsMember = reservationsMember.NextNode("item");
       }
 
+      m_reservationsHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ DescribeInstancesResponse& DescribeInstancesResponse::operator =(const Aws::Amaz
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeInstancesResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

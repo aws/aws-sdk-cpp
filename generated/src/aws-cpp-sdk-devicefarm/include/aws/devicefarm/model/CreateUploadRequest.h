@@ -26,7 +26,7 @@ namespace Model
   class CreateUploadRequest : public DeviceFarmRequest
   {
   public:
-    AWS_DEVICEFARM_API CreateUploadRequest();
+    AWS_DEVICEFARM_API CreateUploadRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The ARN of the project for the upload.</p>
      */
-    inline const Aws::String& GetProjectArn() const{ return m_projectArn; }
+    inline const Aws::String& GetProjectArn() const { return m_projectArn; }
     inline bool ProjectArnHasBeenSet() const { return m_projectArnHasBeenSet; }
-    inline void SetProjectArn(const Aws::String& value) { m_projectArnHasBeenSet = true; m_projectArn = value; }
-    inline void SetProjectArn(Aws::String&& value) { m_projectArnHasBeenSet = true; m_projectArn = std::move(value); }
-    inline void SetProjectArn(const char* value) { m_projectArnHasBeenSet = true; m_projectArn.assign(value); }
-    inline CreateUploadRequest& WithProjectArn(const Aws::String& value) { SetProjectArn(value); return *this;}
-    inline CreateUploadRequest& WithProjectArn(Aws::String&& value) { SetProjectArn(std::move(value)); return *this;}
-    inline CreateUploadRequest& WithProjectArn(const char* value) { SetProjectArn(value); return *this;}
+    template<typename ProjectArnT = Aws::String>
+    void SetProjectArn(ProjectArnT&& value) { m_projectArnHasBeenSet = true; m_projectArn = std::forward<ProjectArnT>(value); }
+    template<typename ProjectArnT = Aws::String>
+    CreateUploadRequest& WithProjectArn(ProjectArnT&& value) { SetProjectArn(std::forward<ProjectArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * name must end with the <code>.apk</code> extension. For all others, the file
      * name must end with the <code>.zip</code> file extension.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateUploadRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateUploadRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateUploadRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateUploadRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,12 +93,10 @@ namespace Model
      * </ul> <p> If you call <code>CreateUpload</code> with <code>WEB_APP</code>
      * specified, AWS Device Farm throws an <code>ArgumentException</code> error.</p>
      */
-    inline const UploadType& GetType() const{ return m_type; }
+    inline UploadType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const UploadType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(UploadType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline CreateUploadRequest& WithType(const UploadType& value) { SetType(value); return *this;}
-    inline CreateUploadRequest& WithType(UploadType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(UploadType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline CreateUploadRequest& WithType(UploadType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -110,14 +104,12 @@ namespace Model
      * <p>The upload's content type (for example,
      * <code>application/octet-stream</code>).</p>
      */
-    inline const Aws::String& GetContentType() const{ return m_contentType; }
+    inline const Aws::String& GetContentType() const { return m_contentType; }
     inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
-    inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
-    inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
-    inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
-    inline CreateUploadRequest& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
-    inline CreateUploadRequest& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
-    inline CreateUploadRequest& WithContentType(const char* value) { SetContentType(value); return *this;}
+    template<typename ContentTypeT = Aws::String>
+    void SetContentType(ContentTypeT&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::forward<ContentTypeT>(value); }
+    template<typename ContentTypeT = Aws::String>
+    CreateUploadRequest& WithContentType(ContentTypeT&& value) { SetContentType(std::forward<ContentTypeT>(value)); return *this;}
     ///@}
   private:
 
@@ -127,7 +119,7 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    UploadType m_type;
+    UploadType m_type{UploadType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_contentType;

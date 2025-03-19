@@ -12,15 +12,6 @@ using namespace Aws::AppSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateTypeRequest::UpdateTypeRequest() : 
-    m_apiIdHasBeenSet(false),
-    m_typeNameHasBeenSet(false),
-    m_definitionHasBeenSet(false),
-    m_format(TypeDefinitionFormat::NOT_SET),
-    m_formatHasBeenSet(false)
-{
-}
-
 Aws::String UpdateTypeRequest::SerializePayload() const
 {
   JsonValue payload;

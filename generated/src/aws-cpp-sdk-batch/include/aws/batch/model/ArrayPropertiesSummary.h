@@ -30,7 +30,7 @@ namespace Model
   class ArrayPropertiesSummary
   {
   public:
-    AWS_BATCH_API ArrayPropertiesSummary();
+    AWS_BATCH_API ArrayPropertiesSummary() = default;
     AWS_BATCH_API ArrayPropertiesSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API ArrayPropertiesSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
      * <p>The size of the array job. This parameter is returned for parent array
      * jobs.</p>
      */
-    inline int GetSize() const{ return m_size; }
+    inline int GetSize() const { return m_size; }
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
     inline void SetSize(int value) { m_sizeHasBeenSet = true; m_size = value; }
     inline ArrayPropertiesSummary& WithSize(int value) { SetSize(value); return *this;}
@@ -52,17 +52,17 @@ namespace Model
      * <p>The job index within the array that's associated with this job. This
      * parameter is returned for children of array jobs.</p>
      */
-    inline int GetIndex() const{ return m_index; }
+    inline int GetIndex() const { return m_index; }
     inline bool IndexHasBeenSet() const { return m_indexHasBeenSet; }
     inline void SetIndex(int value) { m_indexHasBeenSet = true; m_index = value; }
     inline ArrayPropertiesSummary& WithIndex(int value) { SetIndex(value); return *this;}
     ///@}
   private:
 
-    int m_size;
+    int m_size{0};
     bool m_sizeHasBeenSet = false;
 
-    int m_index;
+    int m_index{0};
     bool m_indexHasBeenSet = false;
   };
 

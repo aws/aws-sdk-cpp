@@ -18,18 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-FlowValidation::FlowValidation() : 
-    m_detailsHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_severity(FlowValidationSeverity::NOT_SET),
-    m_severityHasBeenSet(false),
-    m_type(FlowValidationType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 FlowValidation::FlowValidation(JsonView jsonValue)
-  : FlowValidation()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ FlowValidation& FlowValidation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("details"))
   {
     m_details = jsonValue.GetObject("details");
-
     m_detailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("severity"))
   {
     m_severity = FlowValidationSeverityMapper::GetFlowValidationSeverityForName(jsonValue.GetString("severity"));
-
     m_severityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = FlowValidationTypeMapper::GetFlowValidationTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

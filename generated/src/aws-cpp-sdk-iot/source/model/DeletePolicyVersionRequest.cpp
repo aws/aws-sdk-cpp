@@ -12,12 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeletePolicyVersionRequest::DeletePolicyVersionRequest() : 
-    m_policyNameHasBeenSet(false),
-    m_policyVersionIdHasBeenSet(false)
-{
-}
-
 Aws::String DeletePolicyVersionRequest::SerializePayload() const
 {
   return {};

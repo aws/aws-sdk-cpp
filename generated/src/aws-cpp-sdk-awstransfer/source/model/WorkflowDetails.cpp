@@ -18,14 +18,7 @@ namespace Transfer
 namespace Model
 {
 
-WorkflowDetails::WorkflowDetails() : 
-    m_onUploadHasBeenSet(false),
-    m_onPartialUploadHasBeenSet(false)
-{
-}
-
 WorkflowDetails::WorkflowDetails(JsonView jsonValue)
-  : WorkflowDetails()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ WorkflowDetails& WorkflowDetails::operator =(JsonView jsonValue)
     }
     m_onUploadHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OnPartialUpload"))
   {
     Aws::Utils::Array<JsonView> onPartialUploadJsonList = jsonValue.GetArray("OnPartialUpload");
@@ -51,7 +43,6 @@ WorkflowDetails& WorkflowDetails::operator =(JsonView jsonValue)
     }
     m_onPartialUploadHasBeenSet = true;
   }
-
   return *this;
 }
 

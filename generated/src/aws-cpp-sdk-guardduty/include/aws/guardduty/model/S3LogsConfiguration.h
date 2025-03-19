@@ -30,7 +30,7 @@ namespace Model
   class S3LogsConfiguration
   {
   public:
-    AWS_GUARDDUTY_API S3LogsConfiguration();
+    AWS_GUARDDUTY_API S3LogsConfiguration() = default;
     AWS_GUARDDUTY_API S3LogsConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API S3LogsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
     /**
      * <p> The status of S3 data event logs as a data source.</p>
      */
-    inline bool GetEnable() const{ return m_enable; }
+    inline bool GetEnable() const { return m_enable; }
     inline bool EnableHasBeenSet() const { return m_enableHasBeenSet; }
     inline void SetEnable(bool value) { m_enableHasBeenSet = true; m_enable = value; }
     inline S3LogsConfiguration& WithEnable(bool value) { SetEnable(value); return *this;}
     ///@}
   private:
 
-    bool m_enable;
+    bool m_enable{false};
     bool m_enableHasBeenSet = false;
   };
 

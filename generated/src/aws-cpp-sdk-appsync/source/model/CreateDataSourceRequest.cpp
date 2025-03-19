@@ -12,25 +12,6 @@ using namespace Aws::AppSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDataSourceRequest::CreateDataSourceRequest() : 
-    m_apiIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_type(DataSourceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_serviceRoleArnHasBeenSet(false),
-    m_dynamodbConfigHasBeenSet(false),
-    m_lambdaConfigHasBeenSet(false),
-    m_elasticsearchConfigHasBeenSet(false),
-    m_openSearchServiceConfigHasBeenSet(false),
-    m_httpConfigHasBeenSet(false),
-    m_relationalDatabaseConfigHasBeenSet(false),
-    m_eventBridgeConfigHasBeenSet(false),
-    m_metricsConfig(DataSourceLevelMetricsConfig::NOT_SET),
-    m_metricsConfigHasBeenSet(false)
-{
-}
-
 Aws::String CreateDataSourceRequest::SerializePayload() const
 {
   JsonValue payload;

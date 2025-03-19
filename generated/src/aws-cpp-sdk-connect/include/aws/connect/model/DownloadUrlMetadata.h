@@ -31,7 +31,7 @@ namespace Model
   class DownloadUrlMetadata
   {
   public:
-    AWS_CONNECT_API DownloadUrlMetadata();
+    AWS_CONNECT_API DownloadUrlMetadata() = default;
     AWS_CONNECT_API DownloadUrlMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API DownloadUrlMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>A pre-signed URL that should be used to download the attached file. </p>
      */
-    inline const Aws::String& GetUrl() const{ return m_url; }
+    inline const Aws::String& GetUrl() const { return m_url; }
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
-    inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
-    inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
-    inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
-    inline DownloadUrlMetadata& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
-    inline DownloadUrlMetadata& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
-    inline DownloadUrlMetadata& WithUrl(const char* value) { SetUrl(value); return *this;}
+    template<typename UrlT = Aws::String>
+    void SetUrl(UrlT&& value) { m_urlHasBeenSet = true; m_url = std::forward<UrlT>(value); }
+    template<typename UrlT = Aws::String>
+    DownloadUrlMetadata& WithUrl(UrlT&& value) { SetUrl(std::forward<UrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * <p>The expiration time of the URL in ISO timestamp. It's specified in ISO 8601
      * format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
      */
-    inline const Aws::String& GetUrlExpiry() const{ return m_urlExpiry; }
+    inline const Aws::String& GetUrlExpiry() const { return m_urlExpiry; }
     inline bool UrlExpiryHasBeenSet() const { return m_urlExpiryHasBeenSet; }
-    inline void SetUrlExpiry(const Aws::String& value) { m_urlExpiryHasBeenSet = true; m_urlExpiry = value; }
-    inline void SetUrlExpiry(Aws::String&& value) { m_urlExpiryHasBeenSet = true; m_urlExpiry = std::move(value); }
-    inline void SetUrlExpiry(const char* value) { m_urlExpiryHasBeenSet = true; m_urlExpiry.assign(value); }
-    inline DownloadUrlMetadata& WithUrlExpiry(const Aws::String& value) { SetUrlExpiry(value); return *this;}
-    inline DownloadUrlMetadata& WithUrlExpiry(Aws::String&& value) { SetUrlExpiry(std::move(value)); return *this;}
-    inline DownloadUrlMetadata& WithUrlExpiry(const char* value) { SetUrlExpiry(value); return *this;}
+    template<typename UrlExpiryT = Aws::String>
+    void SetUrlExpiry(UrlExpiryT&& value) { m_urlExpiryHasBeenSet = true; m_urlExpiry = std::forward<UrlExpiryT>(value); }
+    template<typename UrlExpiryT = Aws::String>
+    DownloadUrlMetadata& WithUrlExpiry(UrlExpiryT&& value) { SetUrlExpiry(std::forward<UrlExpiryT>(value)); return *this;}
     ///@}
   private:
 

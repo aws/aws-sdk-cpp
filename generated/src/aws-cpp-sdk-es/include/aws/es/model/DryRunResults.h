@@ -26,7 +26,7 @@ namespace Model
   class DryRunResults
   {
   public:
-    AWS_ELASTICSEARCHSERVICE_API DryRunResults();
+    AWS_ELASTICSEARCHSERVICE_API DryRunResults() = default;
     AWS_ELASTICSEARCHSERVICE_API DryRunResults(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICSEARCHSERVICE_API DryRunResults& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
      * configuration change matches the current configuration and will not result in
      * any update.) </p>
      */
-    inline const Aws::String& GetDeploymentType() const{ return m_deploymentType; }
+    inline const Aws::String& GetDeploymentType() const { return m_deploymentType; }
     inline bool DeploymentTypeHasBeenSet() const { return m_deploymentTypeHasBeenSet; }
-    inline void SetDeploymentType(const Aws::String& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = value; }
-    inline void SetDeploymentType(Aws::String&& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = std::move(value); }
-    inline void SetDeploymentType(const char* value) { m_deploymentTypeHasBeenSet = true; m_deploymentType.assign(value); }
-    inline DryRunResults& WithDeploymentType(const Aws::String& value) { SetDeploymentType(value); return *this;}
-    inline DryRunResults& WithDeploymentType(Aws::String&& value) { SetDeploymentType(std::move(value)); return *this;}
-    inline DryRunResults& WithDeploymentType(const char* value) { SetDeploymentType(value); return *this;}
+    template<typename DeploymentTypeT = Aws::String>
+    void SetDeploymentType(DeploymentTypeT&& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = std::forward<DeploymentTypeT>(value); }
+    template<typename DeploymentTypeT = Aws::String>
+    DryRunResults& WithDeploymentType(DeploymentTypeT&& value) { SetDeploymentType(std::forward<DeploymentTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains an optional message associated with the DryRunResults.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline DryRunResults& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline DryRunResults& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline DryRunResults& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    DryRunResults& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 

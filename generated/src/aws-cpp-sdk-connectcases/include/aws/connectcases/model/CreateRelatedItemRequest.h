@@ -24,7 +24,7 @@ namespace Model
   class CreateRelatedItemRequest : public ConnectCasesRequest
   {
   public:
-    AWS_CONNECTCASES_API CreateRelatedItemRequest();
+    AWS_CONNECTCASES_API CreateRelatedItemRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,64 +39,58 @@ namespace Model
     /**
      * <p>A unique identifier of the case.</p>
      */
-    inline const Aws::String& GetCaseId() const{ return m_caseId; }
+    inline const Aws::String& GetCaseId() const { return m_caseId; }
     inline bool CaseIdHasBeenSet() const { return m_caseIdHasBeenSet; }
-    inline void SetCaseId(const Aws::String& value) { m_caseIdHasBeenSet = true; m_caseId = value; }
-    inline void SetCaseId(Aws::String&& value) { m_caseIdHasBeenSet = true; m_caseId = std::move(value); }
-    inline void SetCaseId(const char* value) { m_caseIdHasBeenSet = true; m_caseId.assign(value); }
-    inline CreateRelatedItemRequest& WithCaseId(const Aws::String& value) { SetCaseId(value); return *this;}
-    inline CreateRelatedItemRequest& WithCaseId(Aws::String&& value) { SetCaseId(std::move(value)); return *this;}
-    inline CreateRelatedItemRequest& WithCaseId(const char* value) { SetCaseId(value); return *this;}
+    template<typename CaseIdT = Aws::String>
+    void SetCaseId(CaseIdT&& value) { m_caseIdHasBeenSet = true; m_caseId = std::forward<CaseIdT>(value); }
+    template<typename CaseIdT = Aws::String>
+    CreateRelatedItemRequest& WithCaseId(CaseIdT&& value) { SetCaseId(std::forward<CaseIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The content of a related item to be created.</p>
      */
-    inline const RelatedItemInputContent& GetContent() const{ return m_content; }
+    inline const RelatedItemInputContent& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const RelatedItemInputContent& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(RelatedItemInputContent&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline CreateRelatedItemRequest& WithContent(const RelatedItemInputContent& value) { SetContent(value); return *this;}
-    inline CreateRelatedItemRequest& WithContent(RelatedItemInputContent&& value) { SetContent(std::move(value)); return *this;}
+    template<typename ContentT = RelatedItemInputContent>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = RelatedItemInputContent>
+    CreateRelatedItemRequest& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the Cases domain. </p>
      */
-    inline const Aws::String& GetDomainId() const{ return m_domainId; }
+    inline const Aws::String& GetDomainId() const { return m_domainId; }
     inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
-    inline void SetDomainId(const Aws::String& value) { m_domainIdHasBeenSet = true; m_domainId = value; }
-    inline void SetDomainId(Aws::String&& value) { m_domainIdHasBeenSet = true; m_domainId = std::move(value); }
-    inline void SetDomainId(const char* value) { m_domainIdHasBeenSet = true; m_domainId.assign(value); }
-    inline CreateRelatedItemRequest& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
-    inline CreateRelatedItemRequest& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
-    inline CreateRelatedItemRequest& WithDomainId(const char* value) { SetDomainId(value); return *this;}
+    template<typename DomainIdT = Aws::String>
+    void SetDomainId(DomainIdT&& value) { m_domainIdHasBeenSet = true; m_domainId = std::forward<DomainIdT>(value); }
+    template<typename DomainIdT = Aws::String>
+    CreateRelatedItemRequest& WithDomainId(DomainIdT&& value) { SetDomainId(std::forward<DomainIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Represents the creator of the related item.</p>
      */
-    inline const UserUnion& GetPerformedBy() const{ return m_performedBy; }
+    inline const UserUnion& GetPerformedBy() const { return m_performedBy; }
     inline bool PerformedByHasBeenSet() const { return m_performedByHasBeenSet; }
-    inline void SetPerformedBy(const UserUnion& value) { m_performedByHasBeenSet = true; m_performedBy = value; }
-    inline void SetPerformedBy(UserUnion&& value) { m_performedByHasBeenSet = true; m_performedBy = std::move(value); }
-    inline CreateRelatedItemRequest& WithPerformedBy(const UserUnion& value) { SetPerformedBy(value); return *this;}
-    inline CreateRelatedItemRequest& WithPerformedBy(UserUnion&& value) { SetPerformedBy(std::move(value)); return *this;}
+    template<typename PerformedByT = UserUnion>
+    void SetPerformedBy(PerformedByT&& value) { m_performedByHasBeenSet = true; m_performedBy = std::forward<PerformedByT>(value); }
+    template<typename PerformedByT = UserUnion>
+    CreateRelatedItemRequest& WithPerformedBy(PerformedByT&& value) { SetPerformedBy(std::forward<PerformedByT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of a related item.</p>
      */
-    inline const RelatedItemType& GetType() const{ return m_type; }
+    inline RelatedItemType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const RelatedItemType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(RelatedItemType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline CreateRelatedItemRequest& WithType(const RelatedItemType& value) { SetType(value); return *this;}
-    inline CreateRelatedItemRequest& WithType(RelatedItemType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(RelatedItemType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline CreateRelatedItemRequest& WithType(RelatedItemType value) { SetType(value); return *this;}
     ///@}
   private:
 
@@ -112,7 +106,7 @@ namespace Model
     UserUnion m_performedBy;
     bool m_performedByHasBeenSet = false;
 
-    RelatedItemType m_type;
+    RelatedItemType m_type{RelatedItemType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

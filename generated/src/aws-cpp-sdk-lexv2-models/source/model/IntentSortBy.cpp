@@ -18,16 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-IntentSortBy::IntentSortBy() : 
-    m_attribute(IntentSortAttribute::NOT_SET),
-    m_attributeHasBeenSet(false),
-    m_order(SortOrder::NOT_SET),
-    m_orderHasBeenSet(false)
-{
-}
-
 IntentSortBy::IntentSortBy(JsonView jsonValue)
-  : IntentSortBy()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ IntentSortBy& IntentSortBy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("attribute"))
   {
     m_attribute = IntentSortAttributeMapper::GetIntentSortAttributeForName(jsonValue.GetString("attribute"));
-
     m_attributeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("order"))
   {
     m_order = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("order"));
-
     m_orderHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSMSSandboxAccountStatusResult::GetSMSSandboxAccountStatusResult() : 
-    m_isInSandbox(false)
-{
-}
-
 GetSMSSandboxAccountStatusResult::GetSMSSandboxAccountStatusResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : GetSMSSandboxAccountStatusResult()
 {
   *this = result;
 }
@@ -44,12 +38,14 @@ GetSMSSandboxAccountStatusResult& GetSMSSandboxAccountStatusResult::operator =(c
     if(!isInSandboxNode.IsNull())
     {
       m_isInSandbox = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isInSandboxNode.GetText()).c_str()).c_str());
+      m_isInSandboxHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::SNS::Model::GetSMSSandboxAccountStatusResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

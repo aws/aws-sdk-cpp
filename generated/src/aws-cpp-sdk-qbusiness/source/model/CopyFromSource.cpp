@@ -18,13 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-CopyFromSource::CopyFromSource() : 
-    m_conversationHasBeenSet(false)
-{
-}
-
 CopyFromSource::CopyFromSource(JsonView jsonValue)
-  : CopyFromSource()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CopyFromSource& CopyFromSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("conversation"))
   {
     m_conversation = jsonValue.GetObject("conversation");
-
     m_conversationHasBeenSet = true;
   }
-
   return *this;
 }
 

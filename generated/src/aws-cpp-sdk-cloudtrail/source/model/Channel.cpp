@@ -18,14 +18,7 @@ namespace CloudTrail
 namespace Model
 {
 
-Channel::Channel() : 
-    m_channelArnHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Channel::Channel(JsonView jsonValue)
-  : Channel()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Channel& Channel::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ChannelArn"))
   {
     m_channelArn = jsonValue.GetString("ChannelArn");
-
     m_channelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

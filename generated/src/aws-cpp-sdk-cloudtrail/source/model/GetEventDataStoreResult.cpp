@@ -17,19 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetEventDataStoreResult::GetEventDataStoreResult() : 
-    m_status(EventDataStoreStatus::NOT_SET),
-    m_multiRegionEnabled(false),
-    m_organizationEnabled(false),
-    m_retentionPeriod(0),
-    m_terminationProtectionEnabled(false),
-    m_billingMode(BillingMode::NOT_SET),
-    m_federationStatus(FederationStatus::NOT_SET)
-{
-}
-
 GetEventDataStoreResult::GetEventDataStoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetEventDataStoreResult()
 {
   *this = result;
 }
@@ -40,21 +28,18 @@ GetEventDataStoreResult& GetEventDataStoreResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("EventDataStoreArn"))
   {
     m_eventDataStoreArn = jsonValue.GetString("EventDataStoreArn");
-
+    m_eventDataStoreArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = EventDataStoreStatusMapper::GetEventDataStoreStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdvancedEventSelectors"))
   {
     Aws::Utils::Array<JsonView> advancedEventSelectorsJsonList = jsonValue.GetArray("AdvancedEventSelectors");
@@ -62,68 +47,58 @@ GetEventDataStoreResult& GetEventDataStoreResult::operator =(const Aws::AmazonWe
     {
       m_advancedEventSelectors.push_back(advancedEventSelectorsJsonList[advancedEventSelectorsIndex].AsObject());
     }
+    m_advancedEventSelectorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MultiRegionEnabled"))
   {
     m_multiRegionEnabled = jsonValue.GetBool("MultiRegionEnabled");
-
+    m_multiRegionEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrganizationEnabled"))
   {
     m_organizationEnabled = jsonValue.GetBool("OrganizationEnabled");
-
+    m_organizationEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RetentionPeriod"))
   {
     m_retentionPeriod = jsonValue.GetInteger("RetentionPeriod");
-
+    m_retentionPeriodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TerminationProtectionEnabled"))
   {
     m_terminationProtectionEnabled = jsonValue.GetBool("TerminationProtectionEnabled");
-
+    m_terminationProtectionEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
-
+    m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedTimestamp"))
   {
     m_updatedTimestamp = jsonValue.GetDouble("UpdatedTimestamp");
-
+    m_updatedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
+    m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BillingMode"))
   {
     m_billingMode = BillingModeMapper::GetBillingModeForName(jsonValue.GetString("BillingMode"));
-
+    m_billingModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FederationStatus"))
   {
     m_federationStatus = FederationStatusMapper::GetFederationStatusForName(jsonValue.GetString("FederationStatus"));
-
+    m_federationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FederationRoleArn"))
   {
     m_federationRoleArn = jsonValue.GetString("FederationRoleArn");
-
+    m_federationRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PartitionKeys"))
   {
     Aws::Utils::Array<JsonView> partitionKeysJsonList = jsonValue.GetArray("PartitionKeys");
@@ -131,14 +106,15 @@ GetEventDataStoreResult& GetEventDataStoreResult::operator =(const Aws::AmazonWe
     {
       m_partitionKeys.push_back(partitionKeysJsonList[partitionKeysIndex].AsObject());
     }
+    m_partitionKeysHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

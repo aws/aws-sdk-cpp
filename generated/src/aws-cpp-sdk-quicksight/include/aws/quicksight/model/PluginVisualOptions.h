@@ -33,7 +33,7 @@ namespace Model
   class PluginVisualOptions
   {
   public:
-    AWS_QUICKSIGHT_API PluginVisualOptions();
+    AWS_QUICKSIGHT_API PluginVisualOptions() = default;
     AWS_QUICKSIGHT_API PluginVisualOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API PluginVisualOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>The persisted properties and their values.</p>
      */
-    inline const Aws::Vector<PluginVisualProperty>& GetVisualProperties() const{ return m_visualProperties; }
+    inline const Aws::Vector<PluginVisualProperty>& GetVisualProperties() const { return m_visualProperties; }
     inline bool VisualPropertiesHasBeenSet() const { return m_visualPropertiesHasBeenSet; }
-    inline void SetVisualProperties(const Aws::Vector<PluginVisualProperty>& value) { m_visualPropertiesHasBeenSet = true; m_visualProperties = value; }
-    inline void SetVisualProperties(Aws::Vector<PluginVisualProperty>&& value) { m_visualPropertiesHasBeenSet = true; m_visualProperties = std::move(value); }
-    inline PluginVisualOptions& WithVisualProperties(const Aws::Vector<PluginVisualProperty>& value) { SetVisualProperties(value); return *this;}
-    inline PluginVisualOptions& WithVisualProperties(Aws::Vector<PluginVisualProperty>&& value) { SetVisualProperties(std::move(value)); return *this;}
-    inline PluginVisualOptions& AddVisualProperties(const PluginVisualProperty& value) { m_visualPropertiesHasBeenSet = true; m_visualProperties.push_back(value); return *this; }
-    inline PluginVisualOptions& AddVisualProperties(PluginVisualProperty&& value) { m_visualPropertiesHasBeenSet = true; m_visualProperties.push_back(std::move(value)); return *this; }
+    template<typename VisualPropertiesT = Aws::Vector<PluginVisualProperty>>
+    void SetVisualProperties(VisualPropertiesT&& value) { m_visualPropertiesHasBeenSet = true; m_visualProperties = std::forward<VisualPropertiesT>(value); }
+    template<typename VisualPropertiesT = Aws::Vector<PluginVisualProperty>>
+    PluginVisualOptions& WithVisualProperties(VisualPropertiesT&& value) { SetVisualProperties(std::forward<VisualPropertiesT>(value)); return *this;}
+    template<typename VisualPropertiesT = PluginVisualProperty>
+    PluginVisualOptions& AddVisualProperties(VisualPropertiesT&& value) { m_visualPropertiesHasBeenSet = true; m_visualProperties.emplace_back(std::forward<VisualPropertiesT>(value)); return *this; }
     ///@}
   private:
 

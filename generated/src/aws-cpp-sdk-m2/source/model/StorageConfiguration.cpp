@@ -18,14 +18,7 @@ namespace MainframeModernization
 namespace Model
 {
 
-StorageConfiguration::StorageConfiguration() : 
-    m_efsHasBeenSet(false),
-    m_fsxHasBeenSet(false)
-{
-}
-
 StorageConfiguration::StorageConfiguration(JsonView jsonValue)
-  : StorageConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ StorageConfiguration& StorageConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("efs"))
   {
     m_efs = jsonValue.GetObject("efs");
-
     m_efsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fsx"))
   {
     m_fsx = jsonValue.GetObject("fsx");
-
     m_fsxHasBeenSet = true;
   }
-
   return *this;
 }
 

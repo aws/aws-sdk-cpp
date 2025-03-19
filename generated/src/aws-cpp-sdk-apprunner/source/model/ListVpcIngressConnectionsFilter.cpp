@@ -18,14 +18,7 @@ namespace AppRunner
 namespace Model
 {
 
-ListVpcIngressConnectionsFilter::ListVpcIngressConnectionsFilter() : 
-    m_serviceArnHasBeenSet(false),
-    m_vpcEndpointIdHasBeenSet(false)
-{
-}
-
 ListVpcIngressConnectionsFilter::ListVpcIngressConnectionsFilter(JsonView jsonValue)
-  : ListVpcIngressConnectionsFilter()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ListVpcIngressConnectionsFilter& ListVpcIngressConnectionsFilter::operator =(Jso
   if(jsonValue.ValueExists("ServiceArn"))
   {
     m_serviceArn = jsonValue.GetString("ServiceArn");
-
     m_serviceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcEndpointId"))
   {
     m_vpcEndpointId = jsonValue.GetString("VpcEndpointId");
-
     m_vpcEndpointIdHasBeenSet = true;
   }
-
   return *this;
 }
 

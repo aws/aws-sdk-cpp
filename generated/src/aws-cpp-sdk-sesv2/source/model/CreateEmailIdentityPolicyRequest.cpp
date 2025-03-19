@@ -12,13 +12,6 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateEmailIdentityPolicyRequest::CreateEmailIdentityPolicyRequest() : 
-    m_emailIdentityHasBeenSet(false),
-    m_policyNameHasBeenSet(false),
-    m_policyHasBeenSet(false)
-{
-}
-
 Aws::String CreateEmailIdentityPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

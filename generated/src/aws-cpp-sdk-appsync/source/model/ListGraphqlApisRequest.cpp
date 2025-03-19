@@ -15,17 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListGraphqlApisRequest::ListGraphqlApisRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_apiType(GraphQLApiType::NOT_SET),
-    m_apiTypeHasBeenSet(false),
-    m_owner(Ownership::NOT_SET),
-    m_ownerHasBeenSet(false)
-{
-}
-
 Aws::String ListGraphqlApisRequest::SerializePayload() const
 {
   return {};

@@ -22,7 +22,7 @@ namespace Model
   class ListSessionsRequest : public AthenaRequest
   {
   public:
-    AWS_ATHENA_API ListSessionsRequest();
+    AWS_ATHENA_API ListSessionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The workgroup to which the session belongs.</p>
      */
-    inline const Aws::String& GetWorkGroup() const{ return m_workGroup; }
+    inline const Aws::String& GetWorkGroup() const { return m_workGroup; }
     inline bool WorkGroupHasBeenSet() const { return m_workGroupHasBeenSet; }
-    inline void SetWorkGroup(const Aws::String& value) { m_workGroupHasBeenSet = true; m_workGroup = value; }
-    inline void SetWorkGroup(Aws::String&& value) { m_workGroupHasBeenSet = true; m_workGroup = std::move(value); }
-    inline void SetWorkGroup(const char* value) { m_workGroupHasBeenSet = true; m_workGroup.assign(value); }
-    inline ListSessionsRequest& WithWorkGroup(const Aws::String& value) { SetWorkGroup(value); return *this;}
-    inline ListSessionsRequest& WithWorkGroup(Aws::String&& value) { SetWorkGroup(std::move(value)); return *this;}
-    inline ListSessionsRequest& WithWorkGroup(const char* value) { SetWorkGroup(value); return *this;}
+    template<typename WorkGroupT = Aws::String>
+    void SetWorkGroup(WorkGroupT&& value) { m_workGroupHasBeenSet = true; m_workGroup = std::forward<WorkGroupT>(value); }
+    template<typename WorkGroupT = Aws::String>
+    ListSessionsRequest& WithWorkGroup(WorkGroupT&& value) { SetWorkGroup(std::forward<WorkGroupT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,19 +61,17 @@ namespace Model
      * <code>FAILED</code> - Due to a failure, the session and its resources are no
      * longer running.</p>
      */
-    inline const SessionState& GetStateFilter() const{ return m_stateFilter; }
+    inline SessionState GetStateFilter() const { return m_stateFilter; }
     inline bool StateFilterHasBeenSet() const { return m_stateFilterHasBeenSet; }
-    inline void SetStateFilter(const SessionState& value) { m_stateFilterHasBeenSet = true; m_stateFilter = value; }
-    inline void SetStateFilter(SessionState&& value) { m_stateFilterHasBeenSet = true; m_stateFilter = std::move(value); }
-    inline ListSessionsRequest& WithStateFilter(const SessionState& value) { SetStateFilter(value); return *this;}
-    inline ListSessionsRequest& WithStateFilter(SessionState&& value) { SetStateFilter(std::move(value)); return *this;}
+    inline void SetStateFilter(SessionState value) { m_stateFilterHasBeenSet = true; m_stateFilter = value; }
+    inline ListSessionsRequest& WithStateFilter(SessionState value) { SetStateFilter(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of sessions to return.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListSessionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -88,24 +84,22 @@ namespace Model
      * pass in the <code>NextToken</code> from the response object of the previous page
      * call.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListSessionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListSessionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListSessionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListSessionsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_workGroup;
     bool m_workGroupHasBeenSet = false;
 
-    SessionState m_stateFilter;
+    SessionState m_stateFilter{SessionState::NOT_SET};
     bool m_stateFilterHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

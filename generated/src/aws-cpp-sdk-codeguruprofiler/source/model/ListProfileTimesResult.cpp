@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListProfileTimesResult::ListProfileTimesResult()
-{
-}
-
 ListProfileTimesResult::ListProfileTimesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListProfileTimesResult& ListProfileTimesResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("profileTimes"))
   {
     Aws::Utils::Array<JsonView> profileTimesJsonList = jsonValue.GetArray("profileTimes");
@@ -42,14 +37,15 @@ ListProfileTimesResult& ListProfileTimesResult::operator =(const Aws::AmazonWebS
     {
       m_profileTimes.push_back(profileTimesJsonList[profileTimesIndex].AsObject());
     }
+    m_profileTimesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

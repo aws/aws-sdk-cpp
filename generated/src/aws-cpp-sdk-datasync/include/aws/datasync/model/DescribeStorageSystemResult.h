@@ -32,7 +32,7 @@ namespace Model
   class DescribeStorageSystemResult
   {
   public:
-    AWS_DATASYNC_API DescribeStorageSystemResult();
+    AWS_DATASYNC_API DescribeStorageSystemResult() = default;
     AWS_DATASYNC_API DescribeStorageSystemResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATASYNC_API DescribeStorageSystemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,13 +42,11 @@ namespace Model
      * <p>The ARN of the on-premises storage system that the discovery job looked
      * at.</p>
      */
-    inline const Aws::String& GetStorageSystemArn() const{ return m_storageSystemArn; }
-    inline void SetStorageSystemArn(const Aws::String& value) { m_storageSystemArn = value; }
-    inline void SetStorageSystemArn(Aws::String&& value) { m_storageSystemArn = std::move(value); }
-    inline void SetStorageSystemArn(const char* value) { m_storageSystemArn.assign(value); }
-    inline DescribeStorageSystemResult& WithStorageSystemArn(const Aws::String& value) { SetStorageSystemArn(value); return *this;}
-    inline DescribeStorageSystemResult& WithStorageSystemArn(Aws::String&& value) { SetStorageSystemArn(std::move(value)); return *this;}
-    inline DescribeStorageSystemResult& WithStorageSystemArn(const char* value) { SetStorageSystemArn(value); return *this;}
+    inline const Aws::String& GetStorageSystemArn() const { return m_storageSystemArn; }
+    template<typename StorageSystemArnT = Aws::String>
+    void SetStorageSystemArn(StorageSystemArnT&& value) { m_storageSystemArnHasBeenSet = true; m_storageSystemArn = std::forward<StorageSystemArnT>(value); }
+    template<typename StorageSystemArnT = Aws::String>
+    DescribeStorageSystemResult& WithStorageSystemArn(StorageSystemArnT&& value) { SetStorageSystemArn(std::forward<StorageSystemArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,11 +54,11 @@ namespace Model
      * <p>The server name and network port required to connect with your on-premises
      * storage system's management interface.</p>
      */
-    inline const DiscoveryServerConfiguration& GetServerConfiguration() const{ return m_serverConfiguration; }
-    inline void SetServerConfiguration(const DiscoveryServerConfiguration& value) { m_serverConfiguration = value; }
-    inline void SetServerConfiguration(DiscoveryServerConfiguration&& value) { m_serverConfiguration = std::move(value); }
-    inline DescribeStorageSystemResult& WithServerConfiguration(const DiscoveryServerConfiguration& value) { SetServerConfiguration(value); return *this;}
-    inline DescribeStorageSystemResult& WithServerConfiguration(DiscoveryServerConfiguration&& value) { SetServerConfiguration(std::move(value)); return *this;}
+    inline const DiscoveryServerConfiguration& GetServerConfiguration() const { return m_serverConfiguration; }
+    template<typename ServerConfigurationT = DiscoveryServerConfiguration>
+    void SetServerConfiguration(ServerConfigurationT&& value) { m_serverConfigurationHasBeenSet = true; m_serverConfiguration = std::forward<ServerConfigurationT>(value); }
+    template<typename ServerConfigurationT = DiscoveryServerConfiguration>
+    DescribeStorageSystemResult& WithServerConfiguration(ServerConfigurationT&& value) { SetServerConfiguration(std::forward<ServerConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,11 +67,9 @@ namespace Model
      * currently only supports NetApp Fabric-Attached Storage (FAS) and All Flash FAS
      * (AFF) systems running ONTAP 9.7 or later. </p> 
      */
-    inline const DiscoverySystemType& GetSystemType() const{ return m_systemType; }
-    inline void SetSystemType(const DiscoverySystemType& value) { m_systemType = value; }
-    inline void SetSystemType(DiscoverySystemType&& value) { m_systemType = std::move(value); }
-    inline DescribeStorageSystemResult& WithSystemType(const DiscoverySystemType& value) { SetSystemType(value); return *this;}
-    inline DescribeStorageSystemResult& WithSystemType(DiscoverySystemType&& value) { SetSystemType(std::move(value)); return *this;}
+    inline DiscoverySystemType GetSystemType() const { return m_systemType; }
+    inline void SetSystemType(DiscoverySystemType value) { m_systemTypeHasBeenSet = true; m_systemType = value; }
+    inline DescribeStorageSystemResult& WithSystemType(DiscoverySystemType value) { SetSystemType(value); return *this;}
     ///@}
 
     ///@{
@@ -81,14 +77,13 @@ namespace Model
      * <p>The ARN of the DataSync agent that connects to and reads from your
      * on-premises storage system.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAgentArns() const{ return m_agentArns; }
-    inline void SetAgentArns(const Aws::Vector<Aws::String>& value) { m_agentArns = value; }
-    inline void SetAgentArns(Aws::Vector<Aws::String>&& value) { m_agentArns = std::move(value); }
-    inline DescribeStorageSystemResult& WithAgentArns(const Aws::Vector<Aws::String>& value) { SetAgentArns(value); return *this;}
-    inline DescribeStorageSystemResult& WithAgentArns(Aws::Vector<Aws::String>&& value) { SetAgentArns(std::move(value)); return *this;}
-    inline DescribeStorageSystemResult& AddAgentArns(const Aws::String& value) { m_agentArns.push_back(value); return *this; }
-    inline DescribeStorageSystemResult& AddAgentArns(Aws::String&& value) { m_agentArns.push_back(std::move(value)); return *this; }
-    inline DescribeStorageSystemResult& AddAgentArns(const char* value) { m_agentArns.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetAgentArns() const { return m_agentArns; }
+    template<typename AgentArnsT = Aws::Vector<Aws::String>>
+    void SetAgentArns(AgentArnsT&& value) { m_agentArnsHasBeenSet = true; m_agentArns = std::forward<AgentArnsT>(value); }
+    template<typename AgentArnsT = Aws::Vector<Aws::String>>
+    DescribeStorageSystemResult& WithAgentArns(AgentArnsT&& value) { SetAgentArns(std::forward<AgentArnsT>(value)); return *this;}
+    template<typename AgentArnsT = Aws::String>
+    DescribeStorageSystemResult& AddAgentArns(AgentArnsT&& value) { m_agentArnsHasBeenSet = true; m_agentArns.emplace_back(std::forward<AgentArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -96,13 +91,11 @@ namespace Model
      * <p>The name that you gave your on-premises storage system when adding it to
      * DataSync Discovery.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline DescribeStorageSystemResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DescribeStorageSystemResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DescribeStorageSystemResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DescribeStorageSystemResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,13 +103,11 @@ namespace Model
      * <p>Describes the connectivity error that the DataSync agent is encountering with
      * your on-premises storage system.</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessage.assign(value); }
-    inline DescribeStorageSystemResult& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline DescribeStorageSystemResult& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline DescribeStorageSystemResult& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    DescribeStorageSystemResult& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -124,11 +115,9 @@ namespace Model
      * <p>Indicates whether your DataSync agent can connect to your on-premises storage
      * system.</p>
      */
-    inline const StorageSystemConnectivityStatus& GetConnectivityStatus() const{ return m_connectivityStatus; }
-    inline void SetConnectivityStatus(const StorageSystemConnectivityStatus& value) { m_connectivityStatus = value; }
-    inline void SetConnectivityStatus(StorageSystemConnectivityStatus&& value) { m_connectivityStatus = std::move(value); }
-    inline DescribeStorageSystemResult& WithConnectivityStatus(const StorageSystemConnectivityStatus& value) { SetConnectivityStatus(value); return *this;}
-    inline DescribeStorageSystemResult& WithConnectivityStatus(StorageSystemConnectivityStatus&& value) { SetConnectivityStatus(std::move(value)); return *this;}
+    inline StorageSystemConnectivityStatus GetConnectivityStatus() const { return m_connectivityStatus; }
+    inline void SetConnectivityStatus(StorageSystemConnectivityStatus value) { m_connectivityStatusHasBeenSet = true; m_connectivityStatus = value; }
+    inline DescribeStorageSystemResult& WithConnectivityStatus(StorageSystemConnectivityStatus value) { SetConnectivityStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -136,13 +125,11 @@ namespace Model
      * <p>The ARN of the Amazon CloudWatch log group that's used to monitor and log
      * discovery job events.</p>
      */
-    inline const Aws::String& GetCloudWatchLogGroupArn() const{ return m_cloudWatchLogGroupArn; }
-    inline void SetCloudWatchLogGroupArn(const Aws::String& value) { m_cloudWatchLogGroupArn = value; }
-    inline void SetCloudWatchLogGroupArn(Aws::String&& value) { m_cloudWatchLogGroupArn = std::move(value); }
-    inline void SetCloudWatchLogGroupArn(const char* value) { m_cloudWatchLogGroupArn.assign(value); }
-    inline DescribeStorageSystemResult& WithCloudWatchLogGroupArn(const Aws::String& value) { SetCloudWatchLogGroupArn(value); return *this;}
-    inline DescribeStorageSystemResult& WithCloudWatchLogGroupArn(Aws::String&& value) { SetCloudWatchLogGroupArn(std::move(value)); return *this;}
-    inline DescribeStorageSystemResult& WithCloudWatchLogGroupArn(const char* value) { SetCloudWatchLogGroupArn(value); return *this;}
+    inline const Aws::String& GetCloudWatchLogGroupArn() const { return m_cloudWatchLogGroupArn; }
+    template<typename CloudWatchLogGroupArnT = Aws::String>
+    void SetCloudWatchLogGroupArn(CloudWatchLogGroupArnT&& value) { m_cloudWatchLogGroupArnHasBeenSet = true; m_cloudWatchLogGroupArn = std::forward<CloudWatchLogGroupArnT>(value); }
+    template<typename CloudWatchLogGroupArnT = Aws::String>
+    DescribeStorageSystemResult& WithCloudWatchLogGroupArn(CloudWatchLogGroupArnT&& value) { SetCloudWatchLogGroupArn(std::forward<CloudWatchLogGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -150,11 +137,11 @@ namespace Model
      * <p>The time when you added the on-premises storage system to DataSync
      * Discovery.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline DescribeStorageSystemResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline DescribeStorageSystemResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    DescribeStorageSystemResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -164,48 +151,55 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-configure-storage.html#discovery-add-storage">Secrets
      * Manager</a>.</p>
      */
-    inline const Aws::String& GetSecretsManagerArn() const{ return m_secretsManagerArn; }
-    inline void SetSecretsManagerArn(const Aws::String& value) { m_secretsManagerArn = value; }
-    inline void SetSecretsManagerArn(Aws::String&& value) { m_secretsManagerArn = std::move(value); }
-    inline void SetSecretsManagerArn(const char* value) { m_secretsManagerArn.assign(value); }
-    inline DescribeStorageSystemResult& WithSecretsManagerArn(const Aws::String& value) { SetSecretsManagerArn(value); return *this;}
-    inline DescribeStorageSystemResult& WithSecretsManagerArn(Aws::String&& value) { SetSecretsManagerArn(std::move(value)); return *this;}
-    inline DescribeStorageSystemResult& WithSecretsManagerArn(const char* value) { SetSecretsManagerArn(value); return *this;}
+    inline const Aws::String& GetSecretsManagerArn() const { return m_secretsManagerArn; }
+    template<typename SecretsManagerArnT = Aws::String>
+    void SetSecretsManagerArn(SecretsManagerArnT&& value) { m_secretsManagerArnHasBeenSet = true; m_secretsManagerArn = std::forward<SecretsManagerArnT>(value); }
+    template<typename SecretsManagerArnT = Aws::String>
+    DescribeStorageSystemResult& WithSecretsManagerArn(SecretsManagerArnT&& value) { SetSecretsManagerArn(std::forward<SecretsManagerArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeStorageSystemResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeStorageSystemResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeStorageSystemResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeStorageSystemResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_storageSystemArn;
+    bool m_storageSystemArnHasBeenSet = false;
 
     DiscoveryServerConfiguration m_serverConfiguration;
+    bool m_serverConfigurationHasBeenSet = false;
 
-    DiscoverySystemType m_systemType;
+    DiscoverySystemType m_systemType{DiscoverySystemType::NOT_SET};
+    bool m_systemTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_agentArns;
+    bool m_agentArnsHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_errorMessage;
+    bool m_errorMessageHasBeenSet = false;
 
-    StorageSystemConnectivityStatus m_connectivityStatus;
+    StorageSystemConnectivityStatus m_connectivityStatus{StorageSystemConnectivityStatus::NOT_SET};
+    bool m_connectivityStatusHasBeenSet = false;
 
     Aws::String m_cloudWatchLogGroupArn;
+    bool m_cloudWatchLogGroupArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_secretsManagerArn;
+    bool m_secretsManagerArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

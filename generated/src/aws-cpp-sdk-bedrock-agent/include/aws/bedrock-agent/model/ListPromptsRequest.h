@@ -25,7 +25,7 @@ namespace Model
   class ListPromptsRequest : public BedrockAgentRequest
   {
   public:
-    AWS_BEDROCKAGENT_API ListPromptsRequest();
+    AWS_BEDROCKAGENT_API ListPromptsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,7 +45,7 @@ namespace Model
      * the <code>nextToken</code> field when making another request to return the next
      * batch of results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListPromptsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -58,14 +58,12 @@ namespace Model
      * <code>nextToken</code> field in the response in this field to return the next
      * batch of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListPromptsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListPromptsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListPromptsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListPromptsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,18 +72,16 @@ namespace Model
      * information. Omit this field to list information about all prompts in an
      * account.</p>
      */
-    inline const Aws::String& GetPromptIdentifier() const{ return m_promptIdentifier; }
+    inline const Aws::String& GetPromptIdentifier() const { return m_promptIdentifier; }
     inline bool PromptIdentifierHasBeenSet() const { return m_promptIdentifierHasBeenSet; }
-    inline void SetPromptIdentifier(const Aws::String& value) { m_promptIdentifierHasBeenSet = true; m_promptIdentifier = value; }
-    inline void SetPromptIdentifier(Aws::String&& value) { m_promptIdentifierHasBeenSet = true; m_promptIdentifier = std::move(value); }
-    inline void SetPromptIdentifier(const char* value) { m_promptIdentifierHasBeenSet = true; m_promptIdentifier.assign(value); }
-    inline ListPromptsRequest& WithPromptIdentifier(const Aws::String& value) { SetPromptIdentifier(value); return *this;}
-    inline ListPromptsRequest& WithPromptIdentifier(Aws::String&& value) { SetPromptIdentifier(std::move(value)); return *this;}
-    inline ListPromptsRequest& WithPromptIdentifier(const char* value) { SetPromptIdentifier(value); return *this;}
+    template<typename PromptIdentifierT = Aws::String>
+    void SetPromptIdentifier(PromptIdentifierT&& value) { m_promptIdentifierHasBeenSet = true; m_promptIdentifier = std::forward<PromptIdentifierT>(value); }
+    template<typename PromptIdentifierT = Aws::String>
+    ListPromptsRequest& WithPromptIdentifier(PromptIdentifierT&& value) { SetPromptIdentifier(std::forward<PromptIdentifierT>(value)); return *this;}
     ///@}
   private:
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

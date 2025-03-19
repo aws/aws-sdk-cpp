@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListAccountsResult::ListAccountsResult()
-{
-}
-
 ListAccountsResult::ListAccountsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListAccountsResult& ListAccountsResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accountList"))
   {
     Aws::Utils::Array<JsonView> accountListJsonList = jsonValue.GetArray("accountList");
@@ -42,14 +37,15 @@ ListAccountsResult& ListAccountsResult::operator =(const Aws::AmazonWebServiceRe
     {
       m_accountList.push_back(accountListJsonList[accountListIndex].AsObject());
     }
+    m_accountListHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

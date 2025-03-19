@@ -18,14 +18,7 @@ namespace Glue
 namespace Model
 {
 
-RecrawlPolicy::RecrawlPolicy() : 
-    m_recrawlBehavior(RecrawlBehavior::NOT_SET),
-    m_recrawlBehaviorHasBeenSet(false)
-{
-}
-
 RecrawlPolicy::RecrawlPolicy(JsonView jsonValue)
-  : RecrawlPolicy()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ RecrawlPolicy& RecrawlPolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RecrawlBehavior"))
   {
     m_recrawlBehavior = RecrawlBehaviorMapper::GetRecrawlBehaviorForName(jsonValue.GetString("RecrawlBehavior"));
-
     m_recrawlBehaviorHasBeenSet = true;
   }
-
   return *this;
 }
 

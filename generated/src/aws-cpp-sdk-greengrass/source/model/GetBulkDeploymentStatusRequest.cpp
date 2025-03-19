@@ -12,11 +12,6 @@ using namespace Aws::Greengrass::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetBulkDeploymentStatusRequest::GetBulkDeploymentStatusRequest() : 
-    m_bulkDeploymentIdHasBeenSet(false)
-{
-}
-
 Aws::String GetBulkDeploymentStatusRequest::SerializePayload() const
 {
   return {};

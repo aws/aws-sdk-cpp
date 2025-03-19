@@ -30,7 +30,7 @@ namespace Model
   class GetSessionsStatisticsAggregationResult
   {
   public:
-    AWS_DEADLINE_API GetSessionsStatisticsAggregationResult();
+    AWS_DEADLINE_API GetSessionsStatisticsAggregationResult() = default;
     AWS_DEADLINE_API GetSessionsStatisticsAggregationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DEADLINE_API GetSessionsStatisticsAggregationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
     /**
      * <p>The statistics for the specified fleets or queues.</p>
      */
-    inline const Aws::Vector<Statistics>& GetStatistics() const{ return m_statistics; }
-    inline void SetStatistics(const Aws::Vector<Statistics>& value) { m_statistics = value; }
-    inline void SetStatistics(Aws::Vector<Statistics>&& value) { m_statistics = std::move(value); }
-    inline GetSessionsStatisticsAggregationResult& WithStatistics(const Aws::Vector<Statistics>& value) { SetStatistics(value); return *this;}
-    inline GetSessionsStatisticsAggregationResult& WithStatistics(Aws::Vector<Statistics>&& value) { SetStatistics(std::move(value)); return *this;}
-    inline GetSessionsStatisticsAggregationResult& AddStatistics(const Statistics& value) { m_statistics.push_back(value); return *this; }
-    inline GetSessionsStatisticsAggregationResult& AddStatistics(Statistics&& value) { m_statistics.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Statistics>& GetStatistics() const { return m_statistics; }
+    template<typename StatisticsT = Aws::Vector<Statistics>>
+    void SetStatistics(StatisticsT&& value) { m_statisticsHasBeenSet = true; m_statistics = std::forward<StatisticsT>(value); }
+    template<typename StatisticsT = Aws::Vector<Statistics>>
+    GetSessionsStatisticsAggregationResult& WithStatistics(StatisticsT&& value) { SetStatistics(std::forward<StatisticsT>(value)); return *this;}
+    template<typename StatisticsT = Statistics>
+    GetSessionsStatisticsAggregationResult& AddStatistics(StatisticsT&& value) { m_statisticsHasBeenSet = true; m_statistics.emplace_back(std::forward<StatisticsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -58,13 +58,11 @@ namespace Model
      * expires after 24 hours. If you provide a token that isn't valid, then you
      * receive an HTTP 400 <code>ValidationException</code> error.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetSessionsStatisticsAggregationResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetSessionsStatisticsAggregationResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetSessionsStatisticsAggregationResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetSessionsStatisticsAggregationResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,47 +76,46 @@ namespace Model
      * <code>IN_PROGRESS</code>, you will receive a
      * <code>ThrottlingException</code>.</p>
      */
-    inline const SessionsStatisticsAggregationStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const SessionsStatisticsAggregationStatus& value) { m_status = value; }
-    inline void SetStatus(SessionsStatisticsAggregationStatus&& value) { m_status = std::move(value); }
-    inline GetSessionsStatisticsAggregationResult& WithStatus(const SessionsStatisticsAggregationStatus& value) { SetStatus(value); return *this;}
-    inline GetSessionsStatisticsAggregationResult& WithStatus(SessionsStatisticsAggregationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline SessionsStatisticsAggregationStatus GetStatus() const { return m_status; }
+    inline void SetStatus(SessionsStatisticsAggregationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetSessionsStatisticsAggregationResult& WithStatus(SessionsStatisticsAggregationStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A message that describes the status.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessage.assign(value); }
-    inline GetSessionsStatisticsAggregationResult& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline GetSessionsStatisticsAggregationResult& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline GetSessionsStatisticsAggregationResult& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    GetSessionsStatisticsAggregationResult& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetSessionsStatisticsAggregationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetSessionsStatisticsAggregationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetSessionsStatisticsAggregationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetSessionsStatisticsAggregationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Statistics> m_statistics;
+    bool m_statisticsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
-    SessionsStatisticsAggregationStatus m_status;
+    SessionsStatisticsAggregationStatus m_status{SessionsStatisticsAggregationStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

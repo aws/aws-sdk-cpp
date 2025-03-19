@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetStackPolicyResult::GetStackPolicyResult()
-{
-}
-
 GetStackPolicyResult::GetStackPolicyResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ GetStackPolicyResult& GetStackPolicyResult::operator =(const Aws::AmazonWebServi
     if(!stackPolicyBodyNode.IsNull())
     {
       m_stackPolicyBody = Aws::Utils::Xml::DecodeEscapedXmlText(stackPolicyBodyNode.GetText());
+      m_stackPolicyBodyHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::CloudFormation::Model::GetStackPolicyResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

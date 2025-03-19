@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-QueryLineageResult::QueryLineageResult()
-{
-}
-
 QueryLineageResult::QueryLineageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ QueryLineageResult& QueryLineageResult::operator =(const Aws::AmazonWebServiceRe
     {
       m_vertices.push_back(verticesJsonList[verticesIndex].AsObject());
     }
+    m_verticesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Edges"))
   {
     Aws::Utils::Array<JsonView> edgesJsonList = jsonValue.GetArray("Edges");
@@ -45,20 +41,20 @@ QueryLineageResult& QueryLineageResult::operator =(const Aws::AmazonWebServiceRe
     {
       m_edges.push_back(edgesJsonList[edgesIndex].AsObject());
     }
+    m_edgesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

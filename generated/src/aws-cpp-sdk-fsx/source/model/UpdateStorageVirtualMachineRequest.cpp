@@ -12,15 +12,6 @@ using namespace Aws::FSx::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateStorageVirtualMachineRequest::UpdateStorageVirtualMachineRequest() : 
-    m_activeDirectoryConfigurationHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_storageVirtualMachineIdHasBeenSet(false),
-    m_svmAdminPasswordHasBeenSet(false)
-{
-}
-
 Aws::String UpdateStorageVirtualMachineRequest::SerializePayload() const
 {
   JsonValue payload;

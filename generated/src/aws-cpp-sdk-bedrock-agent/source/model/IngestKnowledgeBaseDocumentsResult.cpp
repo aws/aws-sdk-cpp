@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-IngestKnowledgeBaseDocumentsResult::IngestKnowledgeBaseDocumentsResult()
-{
-}
-
 IngestKnowledgeBaseDocumentsResult::IngestKnowledgeBaseDocumentsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ IngestKnowledgeBaseDocumentsResult& IngestKnowledgeBaseDocumentsResult::operator
     {
       m_documentDetails.push_back(documentDetailsJsonList[documentDetailsIndex].AsObject());
     }
+    m_documentDetailsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

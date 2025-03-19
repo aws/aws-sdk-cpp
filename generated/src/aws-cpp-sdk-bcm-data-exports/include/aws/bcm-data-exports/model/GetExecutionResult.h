@@ -29,7 +29,7 @@ namespace Model
   class GetExecutionResult
   {
   public:
-    AWS_BCMDATAEXPORTS_API GetExecutionResult();
+    AWS_BCMDATAEXPORTS_API GetExecutionResult() = default;
     AWS_BCMDATAEXPORTS_API GetExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BCMDATAEXPORTS_API GetExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,24 +38,22 @@ namespace Model
     /**
      * <p>The ID for this specific execution.</p>
      */
-    inline const Aws::String& GetExecutionId() const{ return m_executionId; }
-    inline void SetExecutionId(const Aws::String& value) { m_executionId = value; }
-    inline void SetExecutionId(Aws::String&& value) { m_executionId = std::move(value); }
-    inline void SetExecutionId(const char* value) { m_executionId.assign(value); }
-    inline GetExecutionResult& WithExecutionId(const Aws::String& value) { SetExecutionId(value); return *this;}
-    inline GetExecutionResult& WithExecutionId(Aws::String&& value) { SetExecutionId(std::move(value)); return *this;}
-    inline GetExecutionResult& WithExecutionId(const char* value) { SetExecutionId(value); return *this;}
+    inline const Aws::String& GetExecutionId() const { return m_executionId; }
+    template<typename ExecutionIdT = Aws::String>
+    void SetExecutionId(ExecutionIdT&& value) { m_executionIdHasBeenSet = true; m_executionId = std::forward<ExecutionIdT>(value); }
+    template<typename ExecutionIdT = Aws::String>
+    GetExecutionResult& WithExecutionId(ExecutionIdT&& value) { SetExecutionId(std::forward<ExecutionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of this specific execution.</p>
      */
-    inline const ExecutionStatus& GetExecutionStatus() const{ return m_executionStatus; }
-    inline void SetExecutionStatus(const ExecutionStatus& value) { m_executionStatus = value; }
-    inline void SetExecutionStatus(ExecutionStatus&& value) { m_executionStatus = std::move(value); }
-    inline GetExecutionResult& WithExecutionStatus(const ExecutionStatus& value) { SetExecutionStatus(value); return *this;}
-    inline GetExecutionResult& WithExecutionStatus(ExecutionStatus&& value) { SetExecutionStatus(std::move(value)); return *this;}
+    inline const ExecutionStatus& GetExecutionStatus() const { return m_executionStatus; }
+    template<typename ExecutionStatusT = ExecutionStatus>
+    void SetExecutionStatus(ExecutionStatusT&& value) { m_executionStatusHasBeenSet = true; m_executionStatus = std::forward<ExecutionStatusT>(value); }
+    template<typename ExecutionStatusT = ExecutionStatus>
+    GetExecutionResult& WithExecutionStatus(ExecutionStatusT&& value) { SetExecutionStatus(std::forward<ExecutionStatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,32 +63,34 @@ namespace Model
      * current export data if the export was updated since the execution was
      * generated.</p>
      */
-    inline const Export& GetExport() const{ return m_export; }
-    inline void SetExport(const Export& value) { m_export = value; }
-    inline void SetExport(Export&& value) { m_export = std::move(value); }
-    inline GetExecutionResult& WithExport(const Export& value) { SetExport(value); return *this;}
-    inline GetExecutionResult& WithExport(Export&& value) { SetExport(std::move(value)); return *this;}
+    inline const Export& GetExport() const { return m_export; }
+    template<typename ExportT = Export>
+    void SetExport(ExportT&& value) { m_exportHasBeenSet = true; m_export = std::forward<ExportT>(value); }
+    template<typename ExportT = Export>
+    GetExecutionResult& WithExport(ExportT&& value) { SetExport(std::forward<ExportT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetExecutionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetExecutionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetExecutionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetExecutionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_executionId;
+    bool m_executionIdHasBeenSet = false;
 
     ExecutionStatus m_executionStatus;
+    bool m_executionStatusHasBeenSet = false;
 
     Export m_export;
+    bool m_exportHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

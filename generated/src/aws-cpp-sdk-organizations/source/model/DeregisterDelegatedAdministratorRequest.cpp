@@ -12,12 +12,6 @@ using namespace Aws::Organizations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeregisterDelegatedAdministratorRequest::DeregisterDelegatedAdministratorRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_servicePrincipalHasBeenSet(false)
-{
-}
-
 Aws::String DeregisterDelegatedAdministratorRequest::SerializePayload() const
 {
   JsonValue payload;

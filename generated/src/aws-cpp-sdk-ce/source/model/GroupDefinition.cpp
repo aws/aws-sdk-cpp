@@ -18,15 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-GroupDefinition::GroupDefinition() : 
-    m_type(GroupDefinitionType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_keyHasBeenSet(false)
-{
-}
-
 GroupDefinition::GroupDefinition(JsonView jsonValue)
-  : GroupDefinition()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ GroupDefinition& GroupDefinition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = GroupDefinitionTypeMapper::GetGroupDefinitionTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   return *this;
 }
 

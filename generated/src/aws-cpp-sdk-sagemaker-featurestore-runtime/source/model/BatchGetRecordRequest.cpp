@@ -12,13 +12,6 @@ using namespace Aws::SageMakerFeatureStoreRuntime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetRecordRequest::BatchGetRecordRequest() : 
-    m_identifiersHasBeenSet(false),
-    m_expirationTimeResponse(ExpirationTimeResponse::NOT_SET),
-    m_expirationTimeResponseHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetRecordRequest::SerializePayload() const
 {
   JsonValue payload;

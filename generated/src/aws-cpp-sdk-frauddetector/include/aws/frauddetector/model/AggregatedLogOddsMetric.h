@@ -38,7 +38,7 @@ namespace Model
   class AggregatedLogOddsMetric
   {
   public:
-    AWS_FRAUDDETECTOR_API AggregatedLogOddsMetric();
+    AWS_FRAUDDETECTOR_API AggregatedLogOddsMetric() = default;
     AWS_FRAUDDETECTOR_API AggregatedLogOddsMetric(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API AggregatedLogOddsMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,15 +48,14 @@ namespace Model
     /**
      * <p> The names of all the variables. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetVariableNames() const{ return m_variableNames; }
+    inline const Aws::Vector<Aws::String>& GetVariableNames() const { return m_variableNames; }
     inline bool VariableNamesHasBeenSet() const { return m_variableNamesHasBeenSet; }
-    inline void SetVariableNames(const Aws::Vector<Aws::String>& value) { m_variableNamesHasBeenSet = true; m_variableNames = value; }
-    inline void SetVariableNames(Aws::Vector<Aws::String>&& value) { m_variableNamesHasBeenSet = true; m_variableNames = std::move(value); }
-    inline AggregatedLogOddsMetric& WithVariableNames(const Aws::Vector<Aws::String>& value) { SetVariableNames(value); return *this;}
-    inline AggregatedLogOddsMetric& WithVariableNames(Aws::Vector<Aws::String>&& value) { SetVariableNames(std::move(value)); return *this;}
-    inline AggregatedLogOddsMetric& AddVariableNames(const Aws::String& value) { m_variableNamesHasBeenSet = true; m_variableNames.push_back(value); return *this; }
-    inline AggregatedLogOddsMetric& AddVariableNames(Aws::String&& value) { m_variableNamesHasBeenSet = true; m_variableNames.push_back(std::move(value)); return *this; }
-    inline AggregatedLogOddsMetric& AddVariableNames(const char* value) { m_variableNamesHasBeenSet = true; m_variableNames.push_back(value); return *this; }
+    template<typename VariableNamesT = Aws::Vector<Aws::String>>
+    void SetVariableNames(VariableNamesT&& value) { m_variableNamesHasBeenSet = true; m_variableNames = std::forward<VariableNamesT>(value); }
+    template<typename VariableNamesT = Aws::Vector<Aws::String>>
+    AggregatedLogOddsMetric& WithVariableNames(VariableNamesT&& value) { SetVariableNames(std::forward<VariableNamesT>(value)); return *this;}
+    template<typename VariableNamesT = Aws::String>
+    AggregatedLogOddsMetric& AddVariableNames(VariableNamesT&& value) { m_variableNamesHasBeenSet = true; m_variableNames.emplace_back(std::forward<VariableNamesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -64,7 +63,7 @@ namespace Model
      * <p> The relative importance of the variables in the list to the other event
      * variable. </p>
      */
-    inline double GetAggregatedVariablesImportance() const{ return m_aggregatedVariablesImportance; }
+    inline double GetAggregatedVariablesImportance() const { return m_aggregatedVariablesImportance; }
     inline bool AggregatedVariablesImportanceHasBeenSet() const { return m_aggregatedVariablesImportanceHasBeenSet; }
     inline void SetAggregatedVariablesImportance(double value) { m_aggregatedVariablesImportanceHasBeenSet = true; m_aggregatedVariablesImportance = value; }
     inline AggregatedLogOddsMetric& WithAggregatedVariablesImportance(double value) { SetAggregatedVariablesImportance(value); return *this;}
@@ -74,7 +73,7 @@ namespace Model
     Aws::Vector<Aws::String> m_variableNames;
     bool m_variableNamesHasBeenSet = false;
 
-    double m_aggregatedVariablesImportance;
+    double m_aggregatedVariablesImportance{0.0};
     bool m_aggregatedVariablesImportanceHasBeenSet = false;
   };
 

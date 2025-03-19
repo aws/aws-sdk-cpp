@@ -12,18 +12,6 @@ using namespace Aws::MTurk::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListQualificationTypesRequest::ListQualificationTypesRequest() : 
-    m_queryHasBeenSet(false),
-    m_mustBeRequestable(false),
-    m_mustBeRequestableHasBeenSet(false),
-    m_mustBeOwnedByCaller(false),
-    m_mustBeOwnedByCallerHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListQualificationTypesRequest::SerializePayload() const
 {
   JsonValue payload;

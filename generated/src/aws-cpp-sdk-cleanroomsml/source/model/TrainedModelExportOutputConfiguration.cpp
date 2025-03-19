@@ -18,13 +18,7 @@ namespace CleanRoomsML
 namespace Model
 {
 
-TrainedModelExportOutputConfiguration::TrainedModelExportOutputConfiguration() : 
-    m_membersHasBeenSet(false)
-{
-}
-
 TrainedModelExportOutputConfiguration::TrainedModelExportOutputConfiguration(JsonView jsonValue)
-  : TrainedModelExportOutputConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ TrainedModelExportOutputConfiguration& TrainedModelExportOutputConfiguration::op
     }
     m_membersHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsElbLoadBalancerPolicies::AwsElbLoadBalancerPolicies() : 
-    m_appCookieStickinessPoliciesHasBeenSet(false),
-    m_lbCookieStickinessPoliciesHasBeenSet(false),
-    m_otherPoliciesHasBeenSet(false)
-{
-}
-
 AwsElbLoadBalancerPolicies::AwsElbLoadBalancerPolicies(JsonView jsonValue)
-  : AwsElbLoadBalancerPolicies()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ AwsElbLoadBalancerPolicies& AwsElbLoadBalancerPolicies::operator =(JsonView json
     }
     m_appCookieStickinessPoliciesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LbCookieStickinessPolicies"))
   {
     Aws::Utils::Array<JsonView> lbCookieStickinessPoliciesJsonList = jsonValue.GetArray("LbCookieStickinessPolicies");
@@ -52,7 +43,6 @@ AwsElbLoadBalancerPolicies& AwsElbLoadBalancerPolicies::operator =(JsonView json
     }
     m_lbCookieStickinessPoliciesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OtherPolicies"))
   {
     Aws::Utils::Array<JsonView> otherPoliciesJsonList = jsonValue.GetArray("OtherPolicies");
@@ -62,7 +52,6 @@ AwsElbLoadBalancerPolicies& AwsElbLoadBalancerPolicies::operator =(JsonView json
     }
     m_otherPoliciesHasBeenSet = true;
   }
-
   return *this;
 }
 

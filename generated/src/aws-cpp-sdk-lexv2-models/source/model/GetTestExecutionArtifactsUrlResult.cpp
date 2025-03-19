@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetTestExecutionArtifactsUrlResult::GetTestExecutionArtifactsUrlResult()
-{
-}
-
 GetTestExecutionArtifactsUrlResult::GetTestExecutionArtifactsUrlResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ GetTestExecutionArtifactsUrlResult& GetTestExecutionArtifactsUrlResult::operator
   if(jsonValue.ValueExists("testExecutionId"))
   {
     m_testExecutionId = jsonValue.GetString("testExecutionId");
-
+    m_testExecutionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("downloadArtifactsUrl"))
   {
     m_downloadArtifactsUrl = jsonValue.GetString("downloadArtifactsUrl");
-
+    m_downloadArtifactsUrlHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

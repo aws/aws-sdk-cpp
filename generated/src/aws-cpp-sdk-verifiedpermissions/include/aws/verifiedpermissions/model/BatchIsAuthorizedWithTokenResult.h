@@ -30,7 +30,7 @@ namespace Model
   class BatchIsAuthorizedWithTokenResult
   {
   public:
-    AWS_VERIFIEDPERMISSIONS_API BatchIsAuthorizedWithTokenResult();
+    AWS_VERIFIEDPERMISSIONS_API BatchIsAuthorizedWithTokenResult() = default;
     AWS_VERIFIEDPERMISSIONS_API BatchIsAuthorizedWithTokenResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_VERIFIEDPERMISSIONS_API BatchIsAuthorizedWithTokenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,11 +39,11 @@ namespace Model
     /**
      * <p>The identifier of the principal in the ID or access token.</p>
      */
-    inline const EntityIdentifier& GetPrincipal() const{ return m_principal; }
-    inline void SetPrincipal(const EntityIdentifier& value) { m_principal = value; }
-    inline void SetPrincipal(EntityIdentifier&& value) { m_principal = std::move(value); }
-    inline BatchIsAuthorizedWithTokenResult& WithPrincipal(const EntityIdentifier& value) { SetPrincipal(value); return *this;}
-    inline BatchIsAuthorizedWithTokenResult& WithPrincipal(EntityIdentifier&& value) { SetPrincipal(std::move(value)); return *this;}
+    inline const EntityIdentifier& GetPrincipal() const { return m_principal; }
+    template<typename PrincipalT = EntityIdentifier>
+    void SetPrincipal(PrincipalT&& value) { m_principalHasBeenSet = true; m_principal = std::forward<PrincipalT>(value); }
+    template<typename PrincipalT = EntityIdentifier>
+    BatchIsAuthorizedWithTokenResult& WithPrincipal(PrincipalT&& value) { SetPrincipal(std::forward<PrincipalT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,32 +52,33 @@ namespace Model
      * request, and the policies that produced them. These results are returned in the
      * order they were requested.</p>
      */
-    inline const Aws::Vector<BatchIsAuthorizedWithTokenOutputItem>& GetResults() const{ return m_results; }
-    inline void SetResults(const Aws::Vector<BatchIsAuthorizedWithTokenOutputItem>& value) { m_results = value; }
-    inline void SetResults(Aws::Vector<BatchIsAuthorizedWithTokenOutputItem>&& value) { m_results = std::move(value); }
-    inline BatchIsAuthorizedWithTokenResult& WithResults(const Aws::Vector<BatchIsAuthorizedWithTokenOutputItem>& value) { SetResults(value); return *this;}
-    inline BatchIsAuthorizedWithTokenResult& WithResults(Aws::Vector<BatchIsAuthorizedWithTokenOutputItem>&& value) { SetResults(std::move(value)); return *this;}
-    inline BatchIsAuthorizedWithTokenResult& AddResults(const BatchIsAuthorizedWithTokenOutputItem& value) { m_results.push_back(value); return *this; }
-    inline BatchIsAuthorizedWithTokenResult& AddResults(BatchIsAuthorizedWithTokenOutputItem&& value) { m_results.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchIsAuthorizedWithTokenOutputItem>& GetResults() const { return m_results; }
+    template<typename ResultsT = Aws::Vector<BatchIsAuthorizedWithTokenOutputItem>>
+    void SetResults(ResultsT&& value) { m_resultsHasBeenSet = true; m_results = std::forward<ResultsT>(value); }
+    template<typename ResultsT = Aws::Vector<BatchIsAuthorizedWithTokenOutputItem>>
+    BatchIsAuthorizedWithTokenResult& WithResults(ResultsT&& value) { SetResults(std::forward<ResultsT>(value)); return *this;}
+    template<typename ResultsT = BatchIsAuthorizedWithTokenOutputItem>
+    BatchIsAuthorizedWithTokenResult& AddResults(ResultsT&& value) { m_resultsHasBeenSet = true; m_results.emplace_back(std::forward<ResultsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchIsAuthorizedWithTokenResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchIsAuthorizedWithTokenResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchIsAuthorizedWithTokenResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchIsAuthorizedWithTokenResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     EntityIdentifier m_principal;
+    bool m_principalHasBeenSet = false;
 
     Aws::Vector<BatchIsAuthorizedWithTokenOutputItem> m_results;
+    bool m_resultsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

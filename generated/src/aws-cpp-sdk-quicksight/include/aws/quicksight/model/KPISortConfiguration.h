@@ -32,7 +32,7 @@ namespace Model
   class KPISortConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API KPISortConfiguration();
+    AWS_QUICKSIGHT_API KPISortConfiguration() = default;
     AWS_QUICKSIGHT_API KPISortConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API KPISortConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
     /**
      * <p>The sort configuration of the trend group fields.</p>
      */
-    inline const Aws::Vector<FieldSortOptions>& GetTrendGroupSort() const{ return m_trendGroupSort; }
+    inline const Aws::Vector<FieldSortOptions>& GetTrendGroupSort() const { return m_trendGroupSort; }
     inline bool TrendGroupSortHasBeenSet() const { return m_trendGroupSortHasBeenSet; }
-    inline void SetTrendGroupSort(const Aws::Vector<FieldSortOptions>& value) { m_trendGroupSortHasBeenSet = true; m_trendGroupSort = value; }
-    inline void SetTrendGroupSort(Aws::Vector<FieldSortOptions>&& value) { m_trendGroupSortHasBeenSet = true; m_trendGroupSort = std::move(value); }
-    inline KPISortConfiguration& WithTrendGroupSort(const Aws::Vector<FieldSortOptions>& value) { SetTrendGroupSort(value); return *this;}
-    inline KPISortConfiguration& WithTrendGroupSort(Aws::Vector<FieldSortOptions>&& value) { SetTrendGroupSort(std::move(value)); return *this;}
-    inline KPISortConfiguration& AddTrendGroupSort(const FieldSortOptions& value) { m_trendGroupSortHasBeenSet = true; m_trendGroupSort.push_back(value); return *this; }
-    inline KPISortConfiguration& AddTrendGroupSort(FieldSortOptions&& value) { m_trendGroupSortHasBeenSet = true; m_trendGroupSort.push_back(std::move(value)); return *this; }
+    template<typename TrendGroupSortT = Aws::Vector<FieldSortOptions>>
+    void SetTrendGroupSort(TrendGroupSortT&& value) { m_trendGroupSortHasBeenSet = true; m_trendGroupSort = std::forward<TrendGroupSortT>(value); }
+    template<typename TrendGroupSortT = Aws::Vector<FieldSortOptions>>
+    KPISortConfiguration& WithTrendGroupSort(TrendGroupSortT&& value) { SetTrendGroupSort(std::forward<TrendGroupSortT>(value)); return *this;}
+    template<typename TrendGroupSortT = FieldSortOptions>
+    KPISortConfiguration& AddTrendGroupSort(TrendGroupSortT&& value) { m_trendGroupSortHasBeenSet = true; m_trendGroupSort.emplace_back(std::forward<TrendGroupSortT>(value)); return *this; }
     ///@}
   private:
 

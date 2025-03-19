@@ -18,14 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-VirtualNodeGrpcConnectionPool::VirtualNodeGrpcConnectionPool() : 
-    m_maxRequests(0),
-    m_maxRequestsHasBeenSet(false)
-{
-}
-
 VirtualNodeGrpcConnectionPool::VirtualNodeGrpcConnectionPool(JsonView jsonValue)
-  : VirtualNodeGrpcConnectionPool()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ VirtualNodeGrpcConnectionPool& VirtualNodeGrpcConnectionPool::operator =(JsonVie
   if(jsonValue.ValueExists("maxRequests"))
   {
     m_maxRequests = jsonValue.GetInteger("maxRequests");
-
     m_maxRequestsHasBeenSet = true;
   }
-
   return *this;
 }
 

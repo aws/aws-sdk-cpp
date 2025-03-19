@@ -18,16 +18,7 @@ namespace IoT
 namespace Model
 {
 
-PackageSummary::PackageSummary() : 
-    m_packageNameHasBeenSet(false),
-    m_defaultVersionNameHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false)
-{
-}
-
 PackageSummary::PackageSummary(JsonView jsonValue)
-  : PackageSummary()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ PackageSummary& PackageSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("packageName"))
   {
     m_packageName = jsonValue.GetString("packageName");
-
     m_packageNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultVersionName"))
   {
     m_defaultVersionName = jsonValue.GetString("defaultVersionName");
-
     m_defaultVersionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDate"))
   {
     m_creationDate = jsonValue.GetDouble("creationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetDouble("lastModifiedDate");
-
     m_lastModifiedDateHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,20 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-MetadataAttributeValue::MetadataAttributeValue() : 
-    m_booleanValue(false),
-    m_booleanValueHasBeenSet(false),
-    m_numberValue(0.0),
-    m_numberValueHasBeenSet(false),
-    m_stringListValueHasBeenSet(false),
-    m_stringValueHasBeenSet(false),
-    m_type(MetadataValueType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 MetadataAttributeValue::MetadataAttributeValue(JsonView jsonValue)
-  : MetadataAttributeValue()
 {
   *this = jsonValue;
 }
@@ -41,17 +28,13 @@ MetadataAttributeValue& MetadataAttributeValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("booleanValue"))
   {
     m_booleanValue = jsonValue.GetBool("booleanValue");
-
     m_booleanValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numberValue"))
   {
     m_numberValue = jsonValue.GetDouble("numberValue");
-
     m_numberValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stringListValue"))
   {
     Aws::Utils::Array<JsonView> stringListValueJsonList = jsonValue.GetArray("stringListValue");
@@ -61,21 +44,16 @@ MetadataAttributeValue& MetadataAttributeValue::operator =(JsonView jsonValue)
     }
     m_stringListValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stringValue"))
   {
     m_stringValue = jsonValue.GetString("stringValue");
-
     m_stringValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = MetadataValueTypeMapper::GetMetadataValueTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -25,7 +25,7 @@ namespace Model
   class GetWorkflowStepExecutionRequest : public ImagebuilderRequest
   {
   public:
-    AWS_IMAGEBUILDER_API GetWorkflowStepExecutionRequest();
+    AWS_IMAGEBUILDER_API GetWorkflowStepExecutionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p>Use the unique identifier for a specific runtime instance of the workflow
      * step to get runtime details for that step.</p>
      */
-    inline const Aws::String& GetStepExecutionId() const{ return m_stepExecutionId; }
+    inline const Aws::String& GetStepExecutionId() const { return m_stepExecutionId; }
     inline bool StepExecutionIdHasBeenSet() const { return m_stepExecutionIdHasBeenSet; }
-    inline void SetStepExecutionId(const Aws::String& value) { m_stepExecutionIdHasBeenSet = true; m_stepExecutionId = value; }
-    inline void SetStepExecutionId(Aws::String&& value) { m_stepExecutionIdHasBeenSet = true; m_stepExecutionId = std::move(value); }
-    inline void SetStepExecutionId(const char* value) { m_stepExecutionIdHasBeenSet = true; m_stepExecutionId.assign(value); }
-    inline GetWorkflowStepExecutionRequest& WithStepExecutionId(const Aws::String& value) { SetStepExecutionId(value); return *this;}
-    inline GetWorkflowStepExecutionRequest& WithStepExecutionId(Aws::String&& value) { SetStepExecutionId(std::move(value)); return *this;}
-    inline GetWorkflowStepExecutionRequest& WithStepExecutionId(const char* value) { SetStepExecutionId(value); return *this;}
+    template<typename StepExecutionIdT = Aws::String>
+    void SetStepExecutionId(StepExecutionIdT&& value) { m_stepExecutionIdHasBeenSet = true; m_stepExecutionId = std::forward<StepExecutionIdT>(value); }
+    template<typename StepExecutionIdT = Aws::String>
+    GetWorkflowStepExecutionRequest& WithStepExecutionId(StepExecutionIdT&& value) { SetStepExecutionId(std::forward<StepExecutionIdT>(value)); return *this;}
     ///@}
   private:
 

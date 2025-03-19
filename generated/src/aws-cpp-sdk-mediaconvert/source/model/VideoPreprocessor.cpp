@@ -18,20 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-VideoPreprocessor::VideoPreprocessor() : 
-    m_colorCorrectorHasBeenSet(false),
-    m_deinterlacerHasBeenSet(false),
-    m_dolbyVisionHasBeenSet(false),
-    m_hdr10PlusHasBeenSet(false),
-    m_imageInserterHasBeenSet(false),
-    m_noiseReducerHasBeenSet(false),
-    m_partnerWatermarkingHasBeenSet(false),
-    m_timecodeBurninHasBeenSet(false)
-{
-}
-
 VideoPreprocessor::VideoPreprocessor(JsonView jsonValue)
-  : VideoPreprocessor()
 {
   *this = jsonValue;
 }
@@ -41,59 +28,43 @@ VideoPreprocessor& VideoPreprocessor::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("colorCorrector"))
   {
     m_colorCorrector = jsonValue.GetObject("colorCorrector");
-
     m_colorCorrectorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deinterlacer"))
   {
     m_deinterlacer = jsonValue.GetObject("deinterlacer");
-
     m_deinterlacerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dolbyVision"))
   {
     m_dolbyVision = jsonValue.GetObject("dolbyVision");
-
     m_dolbyVisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hdr10Plus"))
   {
     m_hdr10Plus = jsonValue.GetObject("hdr10Plus");
-
     m_hdr10PlusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageInserter"))
   {
     m_imageInserter = jsonValue.GetObject("imageInserter");
-
     m_imageInserterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("noiseReducer"))
   {
     m_noiseReducer = jsonValue.GetObject("noiseReducer");
-
     m_noiseReducerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("partnerWatermarking"))
   {
     m_partnerWatermarking = jsonValue.GetObject("partnerWatermarking");
-
     m_partnerWatermarkingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timecodeBurnin"))
   {
     m_timecodeBurnin = jsonValue.GetObject("timecodeBurnin");
-
     m_timecodeBurninHasBeenSet = true;
   }
-
   return *this;
 }
 

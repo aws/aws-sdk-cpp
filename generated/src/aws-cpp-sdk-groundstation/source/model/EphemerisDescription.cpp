@@ -18,14 +18,7 @@ namespace GroundStation
 namespace Model
 {
 
-EphemerisDescription::EphemerisDescription() : 
-    m_ephemerisDataHasBeenSet(false),
-    m_sourceS3ObjectHasBeenSet(false)
-{
-}
-
 EphemerisDescription::EphemerisDescription(JsonView jsonValue)
-  : EphemerisDescription()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EphemerisDescription& EphemerisDescription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ephemerisData"))
   {
     m_ephemerisData = jsonValue.GetString("ephemerisData");
-
     m_ephemerisDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceS3Object"))
   {
     m_sourceS3Object = jsonValue.GetObject("sourceS3Object");
-
     m_sourceS3ObjectHasBeenSet = true;
   }
-
   return *this;
 }
 

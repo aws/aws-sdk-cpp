@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ProductCode::ProductCode() : 
-    m_productCodeIdHasBeenSet(false),
-    m_productCodeType(ProductCodeValues::NOT_SET),
-    m_productCodeTypeHasBeenSet(false)
-{
-}
-
 ProductCode::ProductCode(const XmlNode& xmlNode)
-  : ProductCode()
 {
   *this = xmlNode;
 }
@@ -48,7 +40,7 @@ ProductCode& ProductCode::operator =(const XmlNode& xmlNode)
     XmlNode productCodeTypeNode = resultNode.FirstChild("type");
     if(!productCodeTypeNode.IsNull())
     {
-      m_productCodeType = ProductCodeValuesMapper::GetProductCodeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(productCodeTypeNode.GetText()).c_str()).c_str());
+      m_productCodeType = ProductCodeValuesMapper::GetProductCodeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(productCodeTypeNode.GetText()).c_str()));
       m_productCodeTypeHasBeenSet = true;
     }
   }

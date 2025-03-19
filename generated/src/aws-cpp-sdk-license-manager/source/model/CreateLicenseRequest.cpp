@@ -12,21 +12,6 @@ using namespace Aws::LicenseManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateLicenseRequest::CreateLicenseRequest() : 
-    m_licenseNameHasBeenSet(false),
-    m_productNameHasBeenSet(false),
-    m_productSKUHasBeenSet(false),
-    m_issuerHasBeenSet(false),
-    m_homeRegionHasBeenSet(false),
-    m_validityHasBeenSet(false),
-    m_entitlementsHasBeenSet(false),
-    m_beneficiaryHasBeenSet(false),
-    m_consumptionConfigurationHasBeenSet(false),
-    m_licenseMetadataHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
-{
-}
-
 Aws::String CreateLicenseRequest::SerializePayload() const
 {
   JsonValue payload;

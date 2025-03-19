@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SendContactMethodVerificationResult::SendContactMethodVerificationResult()
-{
-}
-
 SendContactMethodVerificationResult::SendContactMethodVerificationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ SendContactMethodVerificationResult& SendContactMethodVerificationResult::operat
     {
       m_operations.push_back(operationsJsonList[operationsIndex].AsObject());
     }
+    m_operationsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

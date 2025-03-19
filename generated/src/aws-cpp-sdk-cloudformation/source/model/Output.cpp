@@ -20,16 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-Output::Output() : 
-    m_outputKeyHasBeenSet(false),
-    m_outputValueHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_exportNameHasBeenSet(false)
-{
-}
-
 Output::Output(const XmlNode& xmlNode)
-  : Output()
 {
   *this = xmlNode;
 }

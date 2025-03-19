@@ -29,7 +29,7 @@ namespace Model
   class IcmpTypeCode
   {
   public:
-    AWS_EC2_API IcmpTypeCode();
+    AWS_EC2_API IcmpTypeCode() = default;
     AWS_EC2_API IcmpTypeCode(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API IcmpTypeCode& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>The ICMP code. A value of -1 means all codes for the specified ICMP type.</p>
      */
-    inline int GetCode() const{ return m_code; }
+    inline int GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
     inline void SetCode(int value) { m_codeHasBeenSet = true; m_code = value; }
     inline IcmpTypeCode& WithCode(int value) { SetCode(value); return *this;}
@@ -51,17 +51,17 @@ namespace Model
     /**
      * <p>The ICMP type. A value of -1 means all types.</p>
      */
-    inline int GetType() const{ return m_type; }
+    inline int GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
     inline void SetType(int value) { m_typeHasBeenSet = true; m_type = value; }
     inline IcmpTypeCode& WithType(int value) { SetType(value); return *this;}
     ///@}
   private:
 
-    int m_code;
+    int m_code{0};
     bool m_codeHasBeenSet = false;
 
-    int m_type;
+    int m_type{0};
     bool m_typeHasBeenSet = false;
   };
 

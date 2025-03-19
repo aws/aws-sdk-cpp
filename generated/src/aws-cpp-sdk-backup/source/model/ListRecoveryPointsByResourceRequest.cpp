@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListRecoveryPointsByResourceRequest::ListRecoveryPointsByResourceRequest() : 
-    m_resourceArnHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_managedByAWSBackupOnly(false),
-    m_managedByAWSBackupOnlyHasBeenSet(false)
-{
-}
-
 Aws::String ListRecoveryPointsByResourceRequest::SerializePayload() const
 {
   return {};

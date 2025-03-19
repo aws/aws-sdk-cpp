@@ -28,7 +28,7 @@ namespace Model
   class GetUserDetailsResult
   {
   public:
-    AWS_CODECATALYST_API GetUserDetailsResult();
+    AWS_CODECATALYST_API GetUserDetailsResult() = default;
     AWS_CODECATALYST_API GetUserDetailsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODECATALYST_API GetUserDetailsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,88 +37,84 @@ namespace Model
     /**
      * <p>The system-generated unique ID of the user.</p>
      */
-    inline const Aws::String& GetUserId() const{ return m_userId; }
-    inline void SetUserId(const Aws::String& value) { m_userId = value; }
-    inline void SetUserId(Aws::String&& value) { m_userId = std::move(value); }
-    inline void SetUserId(const char* value) { m_userId.assign(value); }
-    inline GetUserDetailsResult& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
-    inline GetUserDetailsResult& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
-    inline GetUserDetailsResult& WithUserId(const char* value) { SetUserId(value); return *this;}
+    inline const Aws::String& GetUserId() const { return m_userId; }
+    template<typename UserIdT = Aws::String>
+    void SetUserId(UserIdT&& value) { m_userIdHasBeenSet = true; m_userId = std::forward<UserIdT>(value); }
+    template<typename UserIdT = Aws::String>
+    GetUserDetailsResult& WithUserId(UserIdT&& value) { SetUserId(std::forward<UserIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the user as displayed in Amazon CodeCatalyst.</p>
      */
-    inline const Aws::String& GetUserName() const{ return m_userName; }
-    inline void SetUserName(const Aws::String& value) { m_userName = value; }
-    inline void SetUserName(Aws::String&& value) { m_userName = std::move(value); }
-    inline void SetUserName(const char* value) { m_userName.assign(value); }
-    inline GetUserDetailsResult& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
-    inline GetUserDetailsResult& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
-    inline GetUserDetailsResult& WithUserName(const char* value) { SetUserName(value); return *this;}
+    inline const Aws::String& GetUserName() const { return m_userName; }
+    template<typename UserNameT = Aws::String>
+    void SetUserName(UserNameT&& value) { m_userNameHasBeenSet = true; m_userName = std::forward<UserNameT>(value); }
+    template<typename UserNameT = Aws::String>
+    GetUserDetailsResult& WithUserName(UserNameT&& value) { SetUserName(std::forward<UserNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The friendly name displayed for the user in Amazon CodeCatalyst.</p>
      */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayName.assign(value); }
-    inline GetUserDetailsResult& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline GetUserDetailsResult& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline GetUserDetailsResult& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    inline const Aws::String& GetDisplayName() const { return m_displayName; }
+    template<typename DisplayNameT = Aws::String>
+    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
+    template<typename DisplayNameT = Aws::String>
+    GetUserDetailsResult& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The email address provided by the user when they signed up.</p>
      */
-    inline const EmailAddress& GetPrimaryEmail() const{ return m_primaryEmail; }
-    inline void SetPrimaryEmail(const EmailAddress& value) { m_primaryEmail = value; }
-    inline void SetPrimaryEmail(EmailAddress&& value) { m_primaryEmail = std::move(value); }
-    inline GetUserDetailsResult& WithPrimaryEmail(const EmailAddress& value) { SetPrimaryEmail(value); return *this;}
-    inline GetUserDetailsResult& WithPrimaryEmail(EmailAddress&& value) { SetPrimaryEmail(std::move(value)); return *this;}
+    inline const EmailAddress& GetPrimaryEmail() const { return m_primaryEmail; }
+    template<typename PrimaryEmailT = EmailAddress>
+    void SetPrimaryEmail(PrimaryEmailT&& value) { m_primaryEmailHasBeenSet = true; m_primaryEmail = std::forward<PrimaryEmailT>(value); }
+    template<typename PrimaryEmailT = EmailAddress>
+    GetUserDetailsResult& WithPrimaryEmail(PrimaryEmailT&& value) { SetPrimaryEmail(std::forward<PrimaryEmailT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
-    inline void SetVersion(const Aws::String& value) { m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_version.assign(value); }
-    inline GetUserDetailsResult& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline GetUserDetailsResult& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline GetUserDetailsResult& WithVersion(const char* value) { SetVersion(value); return *this;}
+    inline const Aws::String& GetVersion() const { return m_version; }
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    GetUserDetailsResult& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetUserDetailsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetUserDetailsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetUserDetailsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetUserDetailsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_userId;
+    bool m_userIdHasBeenSet = false;
 
     Aws::String m_userName;
+    bool m_userNameHasBeenSet = false;
 
     Aws::String m_displayName;
+    bool m_displayNameHasBeenSet = false;
 
     EmailAddress m_primaryEmail;
+    bool m_primaryEmailHasBeenSet = false;
 
     Aws::String m_version;
+    bool m_versionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

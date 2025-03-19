@@ -18,14 +18,7 @@ namespace deadline
 namespace Model
 {
 
-ServiceManagedEc2FleetConfiguration::ServiceManagedEc2FleetConfiguration() : 
-    m_instanceCapabilitiesHasBeenSet(false),
-    m_instanceMarketOptionsHasBeenSet(false)
-{
-}
-
 ServiceManagedEc2FleetConfiguration::ServiceManagedEc2FleetConfiguration(JsonView jsonValue)
-  : ServiceManagedEc2FleetConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ServiceManagedEc2FleetConfiguration& ServiceManagedEc2FleetConfiguration::operat
   if(jsonValue.ValueExists("instanceCapabilities"))
   {
     m_instanceCapabilities = jsonValue.GetObject("instanceCapabilities");
-
     m_instanceCapabilitiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceMarketOptions"))
   {
     m_instanceMarketOptions = jsonValue.GetObject("instanceMarketOptions");
-
     m_instanceMarketOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

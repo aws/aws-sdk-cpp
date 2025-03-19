@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListAnomalousLogGroupsResult::ListAnomalousLogGroupsResult()
-{
-}
-
 ListAnomalousLogGroupsResult::ListAnomalousLogGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListAnomalousLogGroupsResult& ListAnomalousLogGroupsResult::operator =(const Aws
   if(jsonValue.ValueExists("InsightId"))
   {
     m_insightId = jsonValue.GetString("InsightId");
-
+    m_insightIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AnomalousLogGroups"))
   {
     Aws::Utils::Array<JsonView> anomalousLogGroupsJsonList = jsonValue.GetArray("AnomalousLogGroups");
@@ -42,20 +37,20 @@ ListAnomalousLogGroupsResult& ListAnomalousLogGroupsResult::operator =(const Aws
     {
       m_anomalousLogGroups.push_back(anomalousLogGroupsJsonList[anomalousLogGroupsIndex].AsObject());
     }
+    m_anomalousLogGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

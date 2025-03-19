@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetReplicationRunsResult::GetReplicationRunsResult()
-{
-}
-
 GetReplicationRunsResult::GetReplicationRunsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ GetReplicationRunsResult& GetReplicationRunsResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("replicationJob"))
   {
     m_replicationJob = jsonValue.GetObject("replicationJob");
-
+    m_replicationJobHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("replicationRunList"))
   {
     Aws::Utils::Array<JsonView> replicationRunListJsonList = jsonValue.GetArray("replicationRunList");
@@ -42,20 +37,20 @@ GetReplicationRunsResult& GetReplicationRunsResult::operator =(const Aws::Amazon
     {
       m_replicationRunList.push_back(replicationRunListJsonList[replicationRunListIndex].AsObject());
     }
+    m_replicationRunListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

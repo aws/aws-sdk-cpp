@@ -15,11 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetInfrastructureConfigurationRequest::GetInfrastructureConfigurationRequest() : 
-    m_infrastructureConfigurationArnHasBeenSet(false)
-{
-}
-
 Aws::String GetInfrastructureConfigurationRequest::SerializePayload() const
 {
   return {};

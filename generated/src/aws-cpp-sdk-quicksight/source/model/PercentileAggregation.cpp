@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-PercentileAggregation::PercentileAggregation() : 
-    m_percentileValue(0.0),
-    m_percentileValueHasBeenSet(false)
-{
-}
-
 PercentileAggregation::PercentileAggregation(JsonView jsonValue)
-  : PercentileAggregation()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ PercentileAggregation& PercentileAggregation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PercentileValue"))
   {
     m_percentileValue = jsonValue.GetDouble("PercentileValue");
-
     m_percentileValueHasBeenSet = true;
   }
-
   return *this;
 }
 

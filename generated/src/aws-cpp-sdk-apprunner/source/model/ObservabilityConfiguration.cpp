@@ -18,23 +18,7 @@ namespace AppRunner
 namespace Model
 {
 
-ObservabilityConfiguration::ObservabilityConfiguration() : 
-    m_observabilityConfigurationArnHasBeenSet(false),
-    m_observabilityConfigurationNameHasBeenSet(false),
-    m_traceConfigurationHasBeenSet(false),
-    m_observabilityConfigurationRevision(0),
-    m_observabilityConfigurationRevisionHasBeenSet(false),
-    m_latest(false),
-    m_latestHasBeenSet(false),
-    m_status(ObservabilityConfigurationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_deletedAtHasBeenSet(false)
-{
-}
-
 ObservabilityConfiguration::ObservabilityConfiguration(JsonView jsonValue)
-  : ObservabilityConfiguration()
 {
   *this = jsonValue;
 }
@@ -44,59 +28,43 @@ ObservabilityConfiguration& ObservabilityConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("ObservabilityConfigurationArn"))
   {
     m_observabilityConfigurationArn = jsonValue.GetString("ObservabilityConfigurationArn");
-
     m_observabilityConfigurationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ObservabilityConfigurationName"))
   {
     m_observabilityConfigurationName = jsonValue.GetString("ObservabilityConfigurationName");
-
     m_observabilityConfigurationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TraceConfiguration"))
   {
     m_traceConfiguration = jsonValue.GetObject("TraceConfiguration");
-
     m_traceConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ObservabilityConfigurationRevision"))
   {
     m_observabilityConfigurationRevision = jsonValue.GetInteger("ObservabilityConfigurationRevision");
-
     m_observabilityConfigurationRevisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Latest"))
   {
     m_latest = jsonValue.GetBool("Latest");
-
     m_latestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ObservabilityConfigurationStatusMapper::GetObservabilityConfigurationStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeletedAt"))
   {
     m_deletedAt = jsonValue.GetDouble("DeletedAt");
-
     m_deletedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

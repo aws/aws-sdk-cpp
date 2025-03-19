@@ -15,11 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetUsageTotalsRequest::GetUsageTotalsRequest() : 
-    m_timeRangeHasBeenSet(false)
-{
-}
-
 Aws::String GetUsageTotalsRequest::SerializePayload() const
 {
   return {};

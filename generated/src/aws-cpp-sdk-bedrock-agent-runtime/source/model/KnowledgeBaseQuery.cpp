@@ -18,13 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-KnowledgeBaseQuery::KnowledgeBaseQuery() : 
-    m_textHasBeenSet(false)
-{
-}
-
 KnowledgeBaseQuery::KnowledgeBaseQuery(JsonView jsonValue)
-  : KnowledgeBaseQuery()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ KnowledgeBaseQuery& KnowledgeBaseQuery::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetString("text");
-
     m_textHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -10,16 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ReplaceVpnTunnelRequest::ReplaceVpnTunnelRequest() : 
-    m_vpnConnectionIdHasBeenSet(false),
-    m_vpnTunnelOutsideIpAddressHasBeenSet(false),
-    m_applyPendingMaintenance(false),
-    m_applyPendingMaintenanceHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String ReplaceVpnTunnelRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -12,21 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDomainRequest::UpdateDomainRequest() : 
-    m_domainIdHasBeenSet(false),
-    m_defaultUserSettingsHasBeenSet(false),
-    m_domainSettingsForUpdateHasBeenSet(false),
-    m_appSecurityGroupManagement(AppSecurityGroupManagement::NOT_SET),
-    m_appSecurityGroupManagementHasBeenSet(false),
-    m_defaultSpaceSettingsHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_appNetworkAccessType(AppNetworkAccessType::NOT_SET),
-    m_appNetworkAccessTypeHasBeenSet(false),
-    m_tagPropagation(TagPropagation::NOT_SET),
-    m_tagPropagationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDomainRequest::SerializePayload() const
 {
   JsonValue payload;

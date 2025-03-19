@@ -12,11 +12,6 @@ using namespace Aws::Appflow::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeFlowRequest::DescribeFlowRequest() : 
-    m_flowNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeFlowRequest::SerializePayload() const
 {
   JsonValue payload;

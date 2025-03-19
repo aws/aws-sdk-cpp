@@ -32,7 +32,7 @@ namespace Model
   class GlobalAcceleratorForDirectory
   {
   public:
-    AWS_WORKSPACES_API GlobalAcceleratorForDirectory();
+    AWS_WORKSPACES_API GlobalAcceleratorForDirectory() = default;
     AWS_WORKSPACES_API GlobalAcceleratorForDirectory(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API GlobalAcceleratorForDirectory& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,31 +42,27 @@ namespace Model
     /**
      * <p>Indicates if Global Accelerator for directory is enabled or disabled.</p>
      */
-    inline const AGAModeForDirectoryEnum& GetMode() const{ return m_mode; }
+    inline AGAModeForDirectoryEnum GetMode() const { return m_mode; }
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-    inline void SetMode(const AGAModeForDirectoryEnum& value) { m_modeHasBeenSet = true; m_mode = value; }
-    inline void SetMode(AGAModeForDirectoryEnum&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
-    inline GlobalAcceleratorForDirectory& WithMode(const AGAModeForDirectoryEnum& value) { SetMode(value); return *this;}
-    inline GlobalAcceleratorForDirectory& WithMode(AGAModeForDirectoryEnum&& value) { SetMode(std::move(value)); return *this;}
+    inline void SetMode(AGAModeForDirectoryEnum value) { m_modeHasBeenSet = true; m_mode = value; }
+    inline GlobalAcceleratorForDirectory& WithMode(AGAModeForDirectoryEnum value) { SetMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates the preferred protocol for Global Accelerator.</p>
      */
-    inline const AGAPreferredProtocolForDirectory& GetPreferredProtocol() const{ return m_preferredProtocol; }
+    inline AGAPreferredProtocolForDirectory GetPreferredProtocol() const { return m_preferredProtocol; }
     inline bool PreferredProtocolHasBeenSet() const { return m_preferredProtocolHasBeenSet; }
-    inline void SetPreferredProtocol(const AGAPreferredProtocolForDirectory& value) { m_preferredProtocolHasBeenSet = true; m_preferredProtocol = value; }
-    inline void SetPreferredProtocol(AGAPreferredProtocolForDirectory&& value) { m_preferredProtocolHasBeenSet = true; m_preferredProtocol = std::move(value); }
-    inline GlobalAcceleratorForDirectory& WithPreferredProtocol(const AGAPreferredProtocolForDirectory& value) { SetPreferredProtocol(value); return *this;}
-    inline GlobalAcceleratorForDirectory& WithPreferredProtocol(AGAPreferredProtocolForDirectory&& value) { SetPreferredProtocol(std::move(value)); return *this;}
+    inline void SetPreferredProtocol(AGAPreferredProtocolForDirectory value) { m_preferredProtocolHasBeenSet = true; m_preferredProtocol = value; }
+    inline GlobalAcceleratorForDirectory& WithPreferredProtocol(AGAPreferredProtocolForDirectory value) { SetPreferredProtocol(value); return *this;}
     ///@}
   private:
 
-    AGAModeForDirectoryEnum m_mode;
+    AGAModeForDirectoryEnum m_mode{AGAModeForDirectoryEnum::NOT_SET};
     bool m_modeHasBeenSet = false;
 
-    AGAPreferredProtocolForDirectory m_preferredProtocol;
+    AGAPreferredProtocolForDirectory m_preferredProtocol{AGAPreferredProtocolForDirectory::NOT_SET};
     bool m_preferredProtocolHasBeenSet = false;
   };
 

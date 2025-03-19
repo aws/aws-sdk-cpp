@@ -35,7 +35,7 @@ namespace Model
   class DatasetEntityRecognizerInputDataConfig
   {
   public:
-    AWS_COMPREHEND_API DatasetEntityRecognizerInputDataConfig();
+    AWS_COMPREHEND_API DatasetEntityRecognizerInputDataConfig() = default;
     AWS_COMPREHEND_API DatasetEntityRecognizerInputDataConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API DatasetEntityRecognizerInputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
      * <p>The S3 location of the annotation documents for your custom entity
      * recognizer.</p>
      */
-    inline const DatasetEntityRecognizerAnnotations& GetAnnotations() const{ return m_annotations; }
+    inline const DatasetEntityRecognizerAnnotations& GetAnnotations() const { return m_annotations; }
     inline bool AnnotationsHasBeenSet() const { return m_annotationsHasBeenSet; }
-    inline void SetAnnotations(const DatasetEntityRecognizerAnnotations& value) { m_annotationsHasBeenSet = true; m_annotations = value; }
-    inline void SetAnnotations(DatasetEntityRecognizerAnnotations&& value) { m_annotationsHasBeenSet = true; m_annotations = std::move(value); }
-    inline DatasetEntityRecognizerInputDataConfig& WithAnnotations(const DatasetEntityRecognizerAnnotations& value) { SetAnnotations(value); return *this;}
-    inline DatasetEntityRecognizerInputDataConfig& WithAnnotations(DatasetEntityRecognizerAnnotations&& value) { SetAnnotations(std::move(value)); return *this;}
+    template<typename AnnotationsT = DatasetEntityRecognizerAnnotations>
+    void SetAnnotations(AnnotationsT&& value) { m_annotationsHasBeenSet = true; m_annotations = std::forward<AnnotationsT>(value); }
+    template<typename AnnotationsT = DatasetEntityRecognizerAnnotations>
+    DatasetEntityRecognizerInputDataConfig& WithAnnotations(AnnotationsT&& value) { SetAnnotations(std::forward<AnnotationsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,24 +59,24 @@ namespace Model
      * <p>The format and location of the training documents for your custom entity
      * recognizer.</p>
      */
-    inline const DatasetEntityRecognizerDocuments& GetDocuments() const{ return m_documents; }
+    inline const DatasetEntityRecognizerDocuments& GetDocuments() const { return m_documents; }
     inline bool DocumentsHasBeenSet() const { return m_documentsHasBeenSet; }
-    inline void SetDocuments(const DatasetEntityRecognizerDocuments& value) { m_documentsHasBeenSet = true; m_documents = value; }
-    inline void SetDocuments(DatasetEntityRecognizerDocuments&& value) { m_documentsHasBeenSet = true; m_documents = std::move(value); }
-    inline DatasetEntityRecognizerInputDataConfig& WithDocuments(const DatasetEntityRecognizerDocuments& value) { SetDocuments(value); return *this;}
-    inline DatasetEntityRecognizerInputDataConfig& WithDocuments(DatasetEntityRecognizerDocuments&& value) { SetDocuments(std::move(value)); return *this;}
+    template<typename DocumentsT = DatasetEntityRecognizerDocuments>
+    void SetDocuments(DocumentsT&& value) { m_documentsHasBeenSet = true; m_documents = std::forward<DocumentsT>(value); }
+    template<typename DocumentsT = DatasetEntityRecognizerDocuments>
+    DatasetEntityRecognizerInputDataConfig& WithDocuments(DocumentsT&& value) { SetDocuments(std::forward<DocumentsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The S3 location of the entity list for your custom entity recognizer.</p>
      */
-    inline const DatasetEntityRecognizerEntityList& GetEntityList() const{ return m_entityList; }
+    inline const DatasetEntityRecognizerEntityList& GetEntityList() const { return m_entityList; }
     inline bool EntityListHasBeenSet() const { return m_entityListHasBeenSet; }
-    inline void SetEntityList(const DatasetEntityRecognizerEntityList& value) { m_entityListHasBeenSet = true; m_entityList = value; }
-    inline void SetEntityList(DatasetEntityRecognizerEntityList&& value) { m_entityListHasBeenSet = true; m_entityList = std::move(value); }
-    inline DatasetEntityRecognizerInputDataConfig& WithEntityList(const DatasetEntityRecognizerEntityList& value) { SetEntityList(value); return *this;}
-    inline DatasetEntityRecognizerInputDataConfig& WithEntityList(DatasetEntityRecognizerEntityList&& value) { SetEntityList(std::move(value)); return *this;}
+    template<typename EntityListT = DatasetEntityRecognizerEntityList>
+    void SetEntityList(EntityListT&& value) { m_entityListHasBeenSet = true; m_entityList = std::forward<EntityListT>(value); }
+    template<typename EntityListT = DatasetEntityRecognizerEntityList>
+    DatasetEntityRecognizerInputDataConfig& WithEntityList(EntityListT&& value) { SetEntityList(std::forward<EntityListT>(value)); return *this;}
     ///@}
   private:
 

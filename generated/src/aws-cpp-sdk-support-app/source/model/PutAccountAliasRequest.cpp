@@ -12,11 +12,6 @@ using namespace Aws::SupportApp::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutAccountAliasRequest::PutAccountAliasRequest() : 
-    m_accountAliasHasBeenSet(false)
-{
-}
-
 Aws::String PutAccountAliasRequest::SerializePayload() const
 {
   JsonValue payload;

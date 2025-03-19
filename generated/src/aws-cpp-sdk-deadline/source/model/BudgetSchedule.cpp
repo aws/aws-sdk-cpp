@@ -18,13 +18,7 @@ namespace deadline
 namespace Model
 {
 
-BudgetSchedule::BudgetSchedule() : 
-    m_fixedHasBeenSet(false)
-{
-}
-
 BudgetSchedule::BudgetSchedule(JsonView jsonValue)
-  : BudgetSchedule()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ BudgetSchedule& BudgetSchedule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fixed"))
   {
     m_fixed = jsonValue.GetObject("fixed");
-
     m_fixedHasBeenSet = true;
   }
-
   return *this;
 }
 

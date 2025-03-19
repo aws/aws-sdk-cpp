@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetStreamKeyResult::GetStreamKeyResult()
-{
-}
-
 GetStreamKeyResult::GetStreamKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetStreamKeyResult& GetStreamKeyResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("streamKey"))
   {
     m_streamKey = jsonValue.GetObject("streamKey");
-
+    m_streamKeyHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

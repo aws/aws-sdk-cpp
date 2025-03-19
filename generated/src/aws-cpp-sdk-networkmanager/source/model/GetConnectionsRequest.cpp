@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetConnectionsRequest::GetConnectionsRequest() : 
-    m_globalNetworkIdHasBeenSet(false),
-    m_connectionIdsHasBeenSet(false),
-    m_deviceIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetConnectionsRequest::SerializePayload() const
 {
   return {};

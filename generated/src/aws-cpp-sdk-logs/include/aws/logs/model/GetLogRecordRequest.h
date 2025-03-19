@@ -21,7 +21,7 @@ namespace Model
   class GetLogRecordRequest : public CloudWatchLogsRequest
   {
   public:
-    AWS_CLOUDWATCHLOGS_API GetLogRecordRequest();
+    AWS_CLOUDWATCHLOGS_API GetLogRecordRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * to use as <code>logRecordPointer</code> to retrieve that complete log event
      * record.</p>
      */
-    inline const Aws::String& GetLogRecordPointer() const{ return m_logRecordPointer; }
+    inline const Aws::String& GetLogRecordPointer() const { return m_logRecordPointer; }
     inline bool LogRecordPointerHasBeenSet() const { return m_logRecordPointerHasBeenSet; }
-    inline void SetLogRecordPointer(const Aws::String& value) { m_logRecordPointerHasBeenSet = true; m_logRecordPointer = value; }
-    inline void SetLogRecordPointer(Aws::String&& value) { m_logRecordPointerHasBeenSet = true; m_logRecordPointer = std::move(value); }
-    inline void SetLogRecordPointer(const char* value) { m_logRecordPointerHasBeenSet = true; m_logRecordPointer.assign(value); }
-    inline GetLogRecordRequest& WithLogRecordPointer(const Aws::String& value) { SetLogRecordPointer(value); return *this;}
-    inline GetLogRecordRequest& WithLogRecordPointer(Aws::String&& value) { SetLogRecordPointer(std::move(value)); return *this;}
-    inline GetLogRecordRequest& WithLogRecordPointer(const char* value) { SetLogRecordPointer(value); return *this;}
+    template<typename LogRecordPointerT = Aws::String>
+    void SetLogRecordPointer(LogRecordPointerT&& value) { m_logRecordPointerHasBeenSet = true; m_logRecordPointer = std::forward<LogRecordPointerT>(value); }
+    template<typename LogRecordPointerT = Aws::String>
+    GetLogRecordRequest& WithLogRecordPointer(LogRecordPointerT&& value) { SetLogRecordPointer(std::forward<LogRecordPointerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,7 +57,7 @@ namespace Model
      * operation with this parameter, you must be signed into an account with the
      * <code>logs:Unmask</code> permission.</p>
      */
-    inline bool GetUnmask() const{ return m_unmask; }
+    inline bool GetUnmask() const { return m_unmask; }
     inline bool UnmaskHasBeenSet() const { return m_unmaskHasBeenSet; }
     inline void SetUnmask(bool value) { m_unmaskHasBeenSet = true; m_unmask = value; }
     inline GetLogRecordRequest& WithUnmask(bool value) { SetUnmask(value); return *this;}
@@ -69,7 +67,7 @@ namespace Model
     Aws::String m_logRecordPointer;
     bool m_logRecordPointerHasBeenSet = false;
 
-    bool m_unmask;
+    bool m_unmask{false};
     bool m_unmaskHasBeenSet = false;
   };
 

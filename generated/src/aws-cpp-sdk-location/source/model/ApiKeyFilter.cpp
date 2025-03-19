@@ -18,14 +18,7 @@ namespace LocationService
 namespace Model
 {
 
-ApiKeyFilter::ApiKeyFilter() : 
-    m_keyStatus(Status::NOT_SET),
-    m_keyStatusHasBeenSet(false)
-{
-}
-
 ApiKeyFilter::ApiKeyFilter(JsonView jsonValue)
-  : ApiKeyFilter()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ApiKeyFilter& ApiKeyFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("KeyStatus"))
   {
     m_keyStatus = StatusMapper::GetStatusForName(jsonValue.GetString("KeyStatus"));
-
     m_keyStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

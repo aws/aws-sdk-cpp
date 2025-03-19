@@ -18,14 +18,7 @@ namespace KinesisAnalytics
 namespace Model
 {
 
-KinesisFirehoseInputUpdate::KinesisFirehoseInputUpdate() : 
-    m_resourceARNUpdateHasBeenSet(false),
-    m_roleARNUpdateHasBeenSet(false)
-{
-}
-
 KinesisFirehoseInputUpdate::KinesisFirehoseInputUpdate(JsonView jsonValue)
-  : KinesisFirehoseInputUpdate()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ KinesisFirehoseInputUpdate& KinesisFirehoseInputUpdate::operator =(JsonView json
   if(jsonValue.ValueExists("ResourceARNUpdate"))
   {
     m_resourceARNUpdate = jsonValue.GetString("ResourceARNUpdate");
-
     m_resourceARNUpdateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleARNUpdate"))
   {
     m_roleARNUpdate = jsonValue.GetString("RoleARNUpdate");
-
     m_roleARNUpdateHasBeenSet = true;
   }
-
   return *this;
 }
 

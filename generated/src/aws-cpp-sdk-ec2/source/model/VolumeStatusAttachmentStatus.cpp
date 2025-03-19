@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VolumeStatusAttachmentStatus::VolumeStatusAttachmentStatus() : 
-    m_ioPerformanceHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
-{
-}
-
 VolumeStatusAttachmentStatus::VolumeStatusAttachmentStatus(const XmlNode& xmlNode)
-  : VolumeStatusAttachmentStatus()
 {
   *this = xmlNode;
 }

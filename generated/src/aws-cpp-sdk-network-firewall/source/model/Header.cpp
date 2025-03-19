@@ -18,20 +18,7 @@ namespace NetworkFirewall
 namespace Model
 {
 
-Header::Header() : 
-    m_protocol(StatefulRuleProtocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_sourcePortHasBeenSet(false),
-    m_direction(StatefulRuleDirection::NOT_SET),
-    m_directionHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_destinationPortHasBeenSet(false)
-{
-}
-
 Header::Header(JsonView jsonValue)
-  : Header()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ Header& Header::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Protocol"))
   {
     m_protocol = StatefulRuleProtocolMapper::GetStatefulRuleProtocolForName(jsonValue.GetString("Protocol"));
-
     m_protocolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Source"))
   {
     m_source = jsonValue.GetString("Source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourcePort"))
   {
     m_sourcePort = jsonValue.GetString("SourcePort");
-
     m_sourcePortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Direction"))
   {
     m_direction = StatefulRuleDirectionMapper::GetStatefulRuleDirectionForName(jsonValue.GetString("Direction"));
-
     m_directionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Destination"))
   {
     m_destination = jsonValue.GetString("Destination");
-
     m_destinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationPort"))
   {
     m_destinationPort = jsonValue.GetString("DestinationPort");
-
     m_destinationPortHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -24,7 +24,7 @@ namespace Model
   class CreateAppBundleRequest : public AppFabricRequest
   {
   public:
-    AWS_APPFABRIC_API CreateAppBundleRequest();
+    AWS_APPFABRIC_API CreateAppBundleRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,14 +48,12 @@ namespace Model
      * <code>ClientToken</code>, but with different parameters, the retry fails with an
      * <code>IdempotentParameterMismatch</code> error.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateAppBundleRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateAppBundleRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateAppBundleRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateAppBundleRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * to encrypt the application data. If this is not specified, an Amazon Web
      * Services owned key is used for encryption.</p>
      */
-    inline const Aws::String& GetCustomerManagedKeyIdentifier() const{ return m_customerManagedKeyIdentifier; }
+    inline const Aws::String& GetCustomerManagedKeyIdentifier() const { return m_customerManagedKeyIdentifier; }
     inline bool CustomerManagedKeyIdentifierHasBeenSet() const { return m_customerManagedKeyIdentifierHasBeenSet; }
-    inline void SetCustomerManagedKeyIdentifier(const Aws::String& value) { m_customerManagedKeyIdentifierHasBeenSet = true; m_customerManagedKeyIdentifier = value; }
-    inline void SetCustomerManagedKeyIdentifier(Aws::String&& value) { m_customerManagedKeyIdentifierHasBeenSet = true; m_customerManagedKeyIdentifier = std::move(value); }
-    inline void SetCustomerManagedKeyIdentifier(const char* value) { m_customerManagedKeyIdentifierHasBeenSet = true; m_customerManagedKeyIdentifier.assign(value); }
-    inline CreateAppBundleRequest& WithCustomerManagedKeyIdentifier(const Aws::String& value) { SetCustomerManagedKeyIdentifier(value); return *this;}
-    inline CreateAppBundleRequest& WithCustomerManagedKeyIdentifier(Aws::String&& value) { SetCustomerManagedKeyIdentifier(std::move(value)); return *this;}
-    inline CreateAppBundleRequest& WithCustomerManagedKeyIdentifier(const char* value) { SetCustomerManagedKeyIdentifier(value); return *this;}
+    template<typename CustomerManagedKeyIdentifierT = Aws::String>
+    void SetCustomerManagedKeyIdentifier(CustomerManagedKeyIdentifierT&& value) { m_customerManagedKeyIdentifierHasBeenSet = true; m_customerManagedKeyIdentifier = std::forward<CustomerManagedKeyIdentifierT>(value); }
+    template<typename CustomerManagedKeyIdentifierT = Aws::String>
+    CreateAppBundleRequest& WithCustomerManagedKeyIdentifier(CustomerManagedKeyIdentifierT&& value) { SetCustomerManagedKeyIdentifier(std::forward<CustomerManagedKeyIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,14 +75,14 @@ namespace Model
      * <p>A map of the key-value pairs of the tag or tags to assign to the
      * resource.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateAppBundleRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateAppBundleRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateAppBundleRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateAppBundleRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateAppBundleRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateAppBundleRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

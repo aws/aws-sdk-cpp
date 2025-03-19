@@ -37,7 +37,7 @@ namespace Model
   class CustomErrorResponse
   {
   public:
-    AWS_CLOUDFRONT_API CustomErrorResponse();
+    AWS_CLOUDFRONT_API CustomErrorResponse() = default;
     AWS_CLOUDFRONT_API CustomErrorResponse(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API CustomErrorResponse& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -49,7 +49,7 @@ namespace Model
      * <p>The HTTP status code for which you want to specify a custom error page and/or
      * a caching duration.</p>
      */
-    inline int GetErrorCode() const{ return m_errorCode; }
+    inline int GetErrorCode() const { return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
     inline void SetErrorCode(int value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
     inline CustomErrorResponse& WithErrorCode(int value) { SetErrorCode(value); return *this;}
@@ -77,14 +77,12 @@ namespace Model
      * and the server starts to return 5xx errors, CloudFront can't get the files that
      * you want to return to viewers because the origin server is unavailable.</p>
      */
-    inline const Aws::String& GetResponsePagePath() const{ return m_responsePagePath; }
+    inline const Aws::String& GetResponsePagePath() const { return m_responsePagePath; }
     inline bool ResponsePagePathHasBeenSet() const { return m_responsePagePathHasBeenSet; }
-    inline void SetResponsePagePath(const Aws::String& value) { m_responsePagePathHasBeenSet = true; m_responsePagePath = value; }
-    inline void SetResponsePagePath(Aws::String&& value) { m_responsePagePathHasBeenSet = true; m_responsePagePath = std::move(value); }
-    inline void SetResponsePagePath(const char* value) { m_responsePagePathHasBeenSet = true; m_responsePagePath.assign(value); }
-    inline CustomErrorResponse& WithResponsePagePath(const Aws::String& value) { SetResponsePagePath(value); return *this;}
-    inline CustomErrorResponse& WithResponsePagePath(Aws::String&& value) { SetResponsePagePath(std::move(value)); return *this;}
-    inline CustomErrorResponse& WithResponsePagePath(const char* value) { SetResponsePagePath(value); return *this;}
+    template<typename ResponsePagePathT = Aws::String>
+    void SetResponsePagePath(ResponsePagePathT&& value) { m_responsePagePathHasBeenSet = true; m_responsePagePath = std::forward<ResponsePagePathT>(value); }
+    template<typename ResponsePagePathT = Aws::String>
+    CustomErrorResponse& WithResponsePagePath(ResponsePagePathT&& value) { SetResponsePagePath(std::forward<ResponsePagePathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,14 +102,12 @@ namespace Model
      * specify a value for <code>ResponseCode</code>, you must also specify a value for
      * <code>ResponsePagePath</code>.</p>
      */
-    inline const Aws::String& GetResponseCode() const{ return m_responseCode; }
+    inline const Aws::String& GetResponseCode() const { return m_responseCode; }
     inline bool ResponseCodeHasBeenSet() const { return m_responseCodeHasBeenSet; }
-    inline void SetResponseCode(const Aws::String& value) { m_responseCodeHasBeenSet = true; m_responseCode = value; }
-    inline void SetResponseCode(Aws::String&& value) { m_responseCodeHasBeenSet = true; m_responseCode = std::move(value); }
-    inline void SetResponseCode(const char* value) { m_responseCodeHasBeenSet = true; m_responseCode.assign(value); }
-    inline CustomErrorResponse& WithResponseCode(const Aws::String& value) { SetResponseCode(value); return *this;}
-    inline CustomErrorResponse& WithResponseCode(Aws::String&& value) { SetResponseCode(std::move(value)); return *this;}
-    inline CustomErrorResponse& WithResponseCode(const char* value) { SetResponseCode(value); return *this;}
+    template<typename ResponseCodeT = Aws::String>
+    void SetResponseCode(ResponseCodeT&& value) { m_responseCodeHasBeenSet = true; m_responseCode = std::forward<ResponseCodeT>(value); }
+    template<typename ResponseCodeT = Aws::String>
+    CustomErrorResponse& WithResponseCode(ResponseCodeT&& value) { SetResponseCode(std::forward<ResponseCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -124,14 +120,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
      * Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
-    inline long long GetErrorCachingMinTTL() const{ return m_errorCachingMinTTL; }
+    inline long long GetErrorCachingMinTTL() const { return m_errorCachingMinTTL; }
     inline bool ErrorCachingMinTTLHasBeenSet() const { return m_errorCachingMinTTLHasBeenSet; }
     inline void SetErrorCachingMinTTL(long long value) { m_errorCachingMinTTLHasBeenSet = true; m_errorCachingMinTTL = value; }
     inline CustomErrorResponse& WithErrorCachingMinTTL(long long value) { SetErrorCachingMinTTL(value); return *this;}
     ///@}
   private:
 
-    int m_errorCode;
+    int m_errorCode{0};
     bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_responsePagePath;
@@ -140,7 +136,7 @@ namespace Model
     Aws::String m_responseCode;
     bool m_responseCodeHasBeenSet = false;
 
-    long long m_errorCachingMinTTL;
+    long long m_errorCachingMinTTL{0};
     bool m_errorCachingMinTTLHasBeenSet = false;
   };
 

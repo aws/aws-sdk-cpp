@@ -18,18 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ProductionVariantManagedInstanceScaling::ProductionVariantManagedInstanceScaling() : 
-    m_status(ManagedInstanceScalingStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_minInstanceCount(0),
-    m_minInstanceCountHasBeenSet(false),
-    m_maxInstanceCount(0),
-    m_maxInstanceCountHasBeenSet(false)
-{
-}
-
 ProductionVariantManagedInstanceScaling::ProductionVariantManagedInstanceScaling(JsonView jsonValue)
-  : ProductionVariantManagedInstanceScaling()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ ProductionVariantManagedInstanceScaling& ProductionVariantManagedInstanceScaling
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ManagedInstanceScalingStatusMapper::GetManagedInstanceScalingStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinInstanceCount"))
   {
     m_minInstanceCount = jsonValue.GetInteger("MinInstanceCount");
-
     m_minInstanceCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxInstanceCount"))
   {
     m_maxInstanceCount = jsonValue.GetInteger("MaxInstanceCount");
-
     m_maxInstanceCountHasBeenSet = true;
   }
-
   return *this;
 }
 

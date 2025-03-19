@@ -12,24 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateChannelRequest::UpdateChannelRequest() : 
-    m_cdiInputSpecificationHasBeenSet(false),
-    m_channelIdHasBeenSet(false),
-    m_destinationsHasBeenSet(false),
-    m_encoderSettingsHasBeenSet(false),
-    m_inputAttachmentsHasBeenSet(false),
-    m_inputSpecificationHasBeenSet(false),
-    m_logLevel(LogLevel::NOT_SET),
-    m_logLevelHasBeenSet(false),
-    m_maintenanceHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_channelEngineVersionHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String UpdateChannelRequest::SerializePayload() const
 {
   JsonValue payload;

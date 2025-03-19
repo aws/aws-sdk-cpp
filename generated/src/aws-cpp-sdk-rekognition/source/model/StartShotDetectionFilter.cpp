@@ -18,14 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-StartShotDetectionFilter::StartShotDetectionFilter() : 
-    m_minSegmentConfidence(0.0),
-    m_minSegmentConfidenceHasBeenSet(false)
-{
-}
-
 StartShotDetectionFilter::StartShotDetectionFilter(JsonView jsonValue)
-  : StartShotDetectionFilter()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ StartShotDetectionFilter& StartShotDetectionFilter::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("MinSegmentConfidence"))
   {
     m_minSegmentConfidence = jsonValue.GetDouble("MinSegmentConfidence");
-
     m_minSegmentConfidenceHasBeenSet = true;
   }
-
   return *this;
 }
 

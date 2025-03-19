@@ -33,7 +33,7 @@ namespace Model
   class EcsProperties
   {
   public:
-    AWS_BATCH_API EcsProperties();
+    AWS_BATCH_API EcsProperties() = default;
     AWS_BATCH_API EcsProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API EcsProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,14 @@ namespace Model
      * a job.</p>  <p>This object is currently limited to one task element.
      * However, the task element can run up to 10 containers.</p> 
      */
-    inline const Aws::Vector<EcsTaskProperties>& GetTaskProperties() const{ return m_taskProperties; }
+    inline const Aws::Vector<EcsTaskProperties>& GetTaskProperties() const { return m_taskProperties; }
     inline bool TaskPropertiesHasBeenSet() const { return m_taskPropertiesHasBeenSet; }
-    inline void SetTaskProperties(const Aws::Vector<EcsTaskProperties>& value) { m_taskPropertiesHasBeenSet = true; m_taskProperties = value; }
-    inline void SetTaskProperties(Aws::Vector<EcsTaskProperties>&& value) { m_taskPropertiesHasBeenSet = true; m_taskProperties = std::move(value); }
-    inline EcsProperties& WithTaskProperties(const Aws::Vector<EcsTaskProperties>& value) { SetTaskProperties(value); return *this;}
-    inline EcsProperties& WithTaskProperties(Aws::Vector<EcsTaskProperties>&& value) { SetTaskProperties(std::move(value)); return *this;}
-    inline EcsProperties& AddTaskProperties(const EcsTaskProperties& value) { m_taskPropertiesHasBeenSet = true; m_taskProperties.push_back(value); return *this; }
-    inline EcsProperties& AddTaskProperties(EcsTaskProperties&& value) { m_taskPropertiesHasBeenSet = true; m_taskProperties.push_back(std::move(value)); return *this; }
+    template<typename TaskPropertiesT = Aws::Vector<EcsTaskProperties>>
+    void SetTaskProperties(TaskPropertiesT&& value) { m_taskPropertiesHasBeenSet = true; m_taskProperties = std::forward<TaskPropertiesT>(value); }
+    template<typename TaskPropertiesT = Aws::Vector<EcsTaskProperties>>
+    EcsProperties& WithTaskProperties(TaskPropertiesT&& value) { SetTaskProperties(std::forward<TaskPropertiesT>(value)); return *this;}
+    template<typename TaskPropertiesT = EcsTaskProperties>
+    EcsProperties& AddTaskProperties(TaskPropertiesT&& value) { m_taskPropertiesHasBeenSet = true; m_taskProperties.emplace_back(std::forward<TaskPropertiesT>(value)); return *this; }
     ///@}
   private:
 

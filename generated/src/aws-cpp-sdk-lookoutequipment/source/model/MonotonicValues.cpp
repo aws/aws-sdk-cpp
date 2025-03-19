@@ -18,16 +18,7 @@ namespace LookoutEquipment
 namespace Model
 {
 
-MonotonicValues::MonotonicValues() : 
-    m_status(StatisticalIssueStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_monotonicity(Monotonicity::NOT_SET),
-    m_monotonicityHasBeenSet(false)
-{
-}
-
 MonotonicValues::MonotonicValues(JsonView jsonValue)
-  : MonotonicValues()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ MonotonicValues& MonotonicValues::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Status"))
   {
     m_status = StatisticalIssueStatusMapper::GetStatisticalIssueStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Monotonicity"))
   {
     m_monotonicity = MonotonicityMapper::GetMonotonicityForName(jsonValue.GetString("Monotonicity"));
-
     m_monotonicityHasBeenSet = true;
   }
-
   return *this;
 }
 

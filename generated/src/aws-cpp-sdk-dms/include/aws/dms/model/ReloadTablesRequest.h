@@ -24,7 +24,7 @@ namespace Model
   class ReloadTablesRequest : public DatabaseMigrationServiceRequest
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API ReloadTablesRequest();
+    AWS_DATABASEMIGRATIONSERVICE_API ReloadTablesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,28 +41,26 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the replication task. </p>
      */
-    inline const Aws::String& GetReplicationTaskArn() const{ return m_replicationTaskArn; }
+    inline const Aws::String& GetReplicationTaskArn() const { return m_replicationTaskArn; }
     inline bool ReplicationTaskArnHasBeenSet() const { return m_replicationTaskArnHasBeenSet; }
-    inline void SetReplicationTaskArn(const Aws::String& value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn = value; }
-    inline void SetReplicationTaskArn(Aws::String&& value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn = std::move(value); }
-    inline void SetReplicationTaskArn(const char* value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn.assign(value); }
-    inline ReloadTablesRequest& WithReplicationTaskArn(const Aws::String& value) { SetReplicationTaskArn(value); return *this;}
-    inline ReloadTablesRequest& WithReplicationTaskArn(Aws::String&& value) { SetReplicationTaskArn(std::move(value)); return *this;}
-    inline ReloadTablesRequest& WithReplicationTaskArn(const char* value) { SetReplicationTaskArn(value); return *this;}
+    template<typename ReplicationTaskArnT = Aws::String>
+    void SetReplicationTaskArn(ReplicationTaskArnT&& value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn = std::forward<ReplicationTaskArnT>(value); }
+    template<typename ReplicationTaskArnT = Aws::String>
+    ReloadTablesRequest& WithReplicationTaskArn(ReplicationTaskArnT&& value) { SetReplicationTaskArn(std::forward<ReplicationTaskArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name and schema of the table to be reloaded. </p>
      */
-    inline const Aws::Vector<TableToReload>& GetTablesToReload() const{ return m_tablesToReload; }
+    inline const Aws::Vector<TableToReload>& GetTablesToReload() const { return m_tablesToReload; }
     inline bool TablesToReloadHasBeenSet() const { return m_tablesToReloadHasBeenSet; }
-    inline void SetTablesToReload(const Aws::Vector<TableToReload>& value) { m_tablesToReloadHasBeenSet = true; m_tablesToReload = value; }
-    inline void SetTablesToReload(Aws::Vector<TableToReload>&& value) { m_tablesToReloadHasBeenSet = true; m_tablesToReload = std::move(value); }
-    inline ReloadTablesRequest& WithTablesToReload(const Aws::Vector<TableToReload>& value) { SetTablesToReload(value); return *this;}
-    inline ReloadTablesRequest& WithTablesToReload(Aws::Vector<TableToReload>&& value) { SetTablesToReload(std::move(value)); return *this;}
-    inline ReloadTablesRequest& AddTablesToReload(const TableToReload& value) { m_tablesToReloadHasBeenSet = true; m_tablesToReload.push_back(value); return *this; }
-    inline ReloadTablesRequest& AddTablesToReload(TableToReload&& value) { m_tablesToReloadHasBeenSet = true; m_tablesToReload.push_back(std::move(value)); return *this; }
+    template<typename TablesToReloadT = Aws::Vector<TableToReload>>
+    void SetTablesToReload(TablesToReloadT&& value) { m_tablesToReloadHasBeenSet = true; m_tablesToReload = std::forward<TablesToReloadT>(value); }
+    template<typename TablesToReloadT = Aws::Vector<TableToReload>>
+    ReloadTablesRequest& WithTablesToReload(TablesToReloadT&& value) { SetTablesToReload(std::forward<TablesToReloadT>(value)); return *this;}
+    template<typename TablesToReloadT = TableToReload>
+    ReloadTablesRequest& AddTablesToReload(TablesToReloadT&& value) { m_tablesToReloadHasBeenSet = true; m_tablesToReload.emplace_back(std::forward<TablesToReloadT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -73,12 +71,10 @@ namespace Model
      * the task. </p> <p>Valid values: data-reload, validate-only</p> <p>Default value
      * is data-reload.</p>
      */
-    inline const ReloadOptionValue& GetReloadOption() const{ return m_reloadOption; }
+    inline ReloadOptionValue GetReloadOption() const { return m_reloadOption; }
     inline bool ReloadOptionHasBeenSet() const { return m_reloadOptionHasBeenSet; }
-    inline void SetReloadOption(const ReloadOptionValue& value) { m_reloadOptionHasBeenSet = true; m_reloadOption = value; }
-    inline void SetReloadOption(ReloadOptionValue&& value) { m_reloadOptionHasBeenSet = true; m_reloadOption = std::move(value); }
-    inline ReloadTablesRequest& WithReloadOption(const ReloadOptionValue& value) { SetReloadOption(value); return *this;}
-    inline ReloadTablesRequest& WithReloadOption(ReloadOptionValue&& value) { SetReloadOption(std::move(value)); return *this;}
+    inline void SetReloadOption(ReloadOptionValue value) { m_reloadOptionHasBeenSet = true; m_reloadOption = value; }
+    inline ReloadTablesRequest& WithReloadOption(ReloadOptionValue value) { SetReloadOption(value); return *this;}
     ///@}
   private:
 
@@ -88,7 +84,7 @@ namespace Model
     Aws::Vector<TableToReload> m_tablesToReload;
     bool m_tablesToReloadHasBeenSet = false;
 
-    ReloadOptionValue m_reloadOption;
+    ReloadOptionValue m_reloadOption{ReloadOptionValue::NOT_SET};
     bool m_reloadOptionHasBeenSet = false;
   };
 

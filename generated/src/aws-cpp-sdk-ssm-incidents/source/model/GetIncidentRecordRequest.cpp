@@ -15,11 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetIncidentRecordRequest::GetIncidentRecordRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String GetIncidentRecordRequest::SerializePayload() const
 {
   return {};

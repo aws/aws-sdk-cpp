@@ -30,7 +30,7 @@ namespace Model
   class AwsJobPresignedUrlConfig
   {
   public:
-    AWS_IOT_API AwsJobPresignedUrlConfig();
+    AWS_IOT_API AwsJobPresignedUrlConfig() = default;
     AWS_IOT_API AwsJobPresignedUrlConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API AwsJobPresignedUrlConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
      * the default value is 1800 seconds. Pre-signed URLs are generated when a request
      * for the job document is received.</p>
      */
-    inline long long GetExpiresInSec() const{ return m_expiresInSec; }
+    inline long long GetExpiresInSec() const { return m_expiresInSec; }
     inline bool ExpiresInSecHasBeenSet() const { return m_expiresInSecHasBeenSet; }
     inline void SetExpiresInSec(long long value) { m_expiresInSecHasBeenSet = true; m_expiresInSec = value; }
     inline AwsJobPresignedUrlConfig& WithExpiresInSec(long long value) { SetExpiresInSec(value); return *this;}
     ///@}
   private:
 
-    long long m_expiresInSec;
+    long long m_expiresInSec{0};
     bool m_expiresInSecHasBeenSet = false;
   };
 

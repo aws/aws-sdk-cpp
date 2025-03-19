@@ -12,20 +12,6 @@ using namespace Aws::Route53Domains::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListOperationsRequest::ListOperationsRequest() : 
-    m_submittedSinceHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_sortBy(ListOperationsSortAttributeName::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
-{
-}
-
 Aws::String ListOperationsRequest::SerializePayload() const
 {
   JsonValue payload;

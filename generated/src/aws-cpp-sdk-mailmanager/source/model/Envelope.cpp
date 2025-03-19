@@ -18,15 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-Envelope::Envelope() : 
-    m_fromHasBeenSet(false),
-    m_heloHasBeenSet(false),
-    m_toHasBeenSet(false)
-{
-}
-
 Envelope::Envelope(JsonView jsonValue)
-  : Envelope()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Envelope& Envelope::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("From"))
   {
     m_from = jsonValue.GetString("From");
-
     m_fromHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Helo"))
   {
     m_helo = jsonValue.GetString("Helo");
-
     m_heloHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("To"))
   {
     Aws::Utils::Array<JsonView> toJsonList = jsonValue.GetArray("To");
@@ -56,7 +44,6 @@ Envelope& Envelope::operator =(JsonView jsonValue)
     }
     m_toHasBeenSet = true;
   }
-
   return *this;
 }
 

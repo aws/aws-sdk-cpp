@@ -18,14 +18,7 @@ namespace LexRuntimeV2
 namespace Model
 {
 
-RecognizedBotMember::RecognizedBotMember() : 
-    m_botIdHasBeenSet(false),
-    m_botNameHasBeenSet(false)
-{
-}
-
 RecognizedBotMember::RecognizedBotMember(JsonView jsonValue)
-  : RecognizedBotMember()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RecognizedBotMember& RecognizedBotMember::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("botId"))
   {
     m_botId = jsonValue.GetString("botId");
-
     m_botIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("botName"))
   {
     m_botName = jsonValue.GetString("botName");
-
     m_botNameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,12 +12,6 @@ using namespace Aws::XRay::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateTraceSegmentDestinationRequest::UpdateTraceSegmentDestinationRequest() : 
-    m_destination(TraceSegmentDestination::NOT_SET),
-    m_destinationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateTraceSegmentDestinationRequest::SerializePayload() const
 {
   JsonValue payload;

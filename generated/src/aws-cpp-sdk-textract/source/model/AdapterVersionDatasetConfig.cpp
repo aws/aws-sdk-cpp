@@ -18,13 +18,7 @@ namespace Textract
 namespace Model
 {
 
-AdapterVersionDatasetConfig::AdapterVersionDatasetConfig() : 
-    m_manifestS3ObjectHasBeenSet(false)
-{
-}
-
 AdapterVersionDatasetConfig::AdapterVersionDatasetConfig(JsonView jsonValue)
-  : AdapterVersionDatasetConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AdapterVersionDatasetConfig& AdapterVersionDatasetConfig::operator =(JsonView js
   if(jsonValue.ValueExists("ManifestS3Object"))
   {
     m_manifestS3Object = jsonValue.GetObject("ManifestS3Object");
-
     m_manifestS3ObjectHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class AuthorizationCodeGrant
   {
   public:
-    AWS_SSOADMIN_API AuthorizationCodeGrant();
+    AWS_SSOADMIN_API AuthorizationCodeGrant() = default;
     AWS_SSOADMIN_API AuthorizationCodeGrant(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOADMIN_API AuthorizationCodeGrant& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOADMIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,15 +44,14 @@ namespace Model
      * <p>A list of URIs that are valid locations to redirect a user's browser after
      * the user is authorized.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRedirectUris() const{ return m_redirectUris; }
+    inline const Aws::Vector<Aws::String>& GetRedirectUris() const { return m_redirectUris; }
     inline bool RedirectUrisHasBeenSet() const { return m_redirectUrisHasBeenSet; }
-    inline void SetRedirectUris(const Aws::Vector<Aws::String>& value) { m_redirectUrisHasBeenSet = true; m_redirectUris = value; }
-    inline void SetRedirectUris(Aws::Vector<Aws::String>&& value) { m_redirectUrisHasBeenSet = true; m_redirectUris = std::move(value); }
-    inline AuthorizationCodeGrant& WithRedirectUris(const Aws::Vector<Aws::String>& value) { SetRedirectUris(value); return *this;}
-    inline AuthorizationCodeGrant& WithRedirectUris(Aws::Vector<Aws::String>&& value) { SetRedirectUris(std::move(value)); return *this;}
-    inline AuthorizationCodeGrant& AddRedirectUris(const Aws::String& value) { m_redirectUrisHasBeenSet = true; m_redirectUris.push_back(value); return *this; }
-    inline AuthorizationCodeGrant& AddRedirectUris(Aws::String&& value) { m_redirectUrisHasBeenSet = true; m_redirectUris.push_back(std::move(value)); return *this; }
-    inline AuthorizationCodeGrant& AddRedirectUris(const char* value) { m_redirectUrisHasBeenSet = true; m_redirectUris.push_back(value); return *this; }
+    template<typename RedirectUrisT = Aws::Vector<Aws::String>>
+    void SetRedirectUris(RedirectUrisT&& value) { m_redirectUrisHasBeenSet = true; m_redirectUris = std::forward<RedirectUrisT>(value); }
+    template<typename RedirectUrisT = Aws::Vector<Aws::String>>
+    AuthorizationCodeGrant& WithRedirectUris(RedirectUrisT&& value) { SetRedirectUris(std::forward<RedirectUrisT>(value)); return *this;}
+    template<typename RedirectUrisT = Aws::String>
+    AuthorizationCodeGrant& AddRedirectUris(RedirectUrisT&& value) { m_redirectUrisHasBeenSet = true; m_redirectUris.emplace_back(std::forward<RedirectUrisT>(value)); return *this; }
     ///@}
   private:
 

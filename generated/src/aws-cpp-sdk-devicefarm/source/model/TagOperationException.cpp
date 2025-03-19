@@ -18,14 +18,7 @@ namespace DeviceFarm
 namespace Model
 {
 
-TagOperationException::TagOperationException() : 
-    m_messageHasBeenSet(false),
-    m_resourceNameHasBeenSet(false)
-{
-}
-
 TagOperationException::TagOperationException(JsonView jsonValue)
-  : TagOperationException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TagOperationException& TagOperationException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceName"))
   {
     m_resourceName = jsonValue.GetString("resourceName");
-
     m_resourceNameHasBeenSet = true;
   }
-
   return *this;
 }
 

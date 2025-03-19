@@ -39,7 +39,7 @@ namespace Model
   class CreateDeploymentGroupRequest : public CodeDeployRequest
   {
   public:
-    AWS_CODEDEPLOY_API CreateDeploymentGroupRequest();
+    AWS_CODEDEPLOY_API CreateDeploymentGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -57,28 +57,24 @@ namespace Model
      * <p>The name of an CodeDeploy application associated with the user or Amazon Web
      * Services account.</p>
      */
-    inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
+    inline const Aws::String& GetApplicationName() const { return m_applicationName; }
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
-    inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
-    inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
-    inline CreateDeploymentGroupRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
-    inline CreateDeploymentGroupRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
-    inline CreateDeploymentGroupRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+    template<typename ApplicationNameT = Aws::String>
+    void SetApplicationName(ApplicationNameT&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::forward<ApplicationNameT>(value); }
+    template<typename ApplicationNameT = Aws::String>
+    CreateDeploymentGroupRequest& WithApplicationName(ApplicationNameT&& value) { SetApplicationName(std::forward<ApplicationNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of a new deployment group for the specified application.</p>
      */
-    inline const Aws::String& GetDeploymentGroupName() const{ return m_deploymentGroupName; }
+    inline const Aws::String& GetDeploymentGroupName() const { return m_deploymentGroupName; }
     inline bool DeploymentGroupNameHasBeenSet() const { return m_deploymentGroupNameHasBeenSet; }
-    inline void SetDeploymentGroupName(const Aws::String& value) { m_deploymentGroupNameHasBeenSet = true; m_deploymentGroupName = value; }
-    inline void SetDeploymentGroupName(Aws::String&& value) { m_deploymentGroupNameHasBeenSet = true; m_deploymentGroupName = std::move(value); }
-    inline void SetDeploymentGroupName(const char* value) { m_deploymentGroupNameHasBeenSet = true; m_deploymentGroupName.assign(value); }
-    inline CreateDeploymentGroupRequest& WithDeploymentGroupName(const Aws::String& value) { SetDeploymentGroupName(value); return *this;}
-    inline CreateDeploymentGroupRequest& WithDeploymentGroupName(Aws::String&& value) { SetDeploymentGroupName(std::move(value)); return *this;}
-    inline CreateDeploymentGroupRequest& WithDeploymentGroupName(const char* value) { SetDeploymentGroupName(value); return *this;}
+    template<typename DeploymentGroupNameT = Aws::String>
+    void SetDeploymentGroupName(DeploymentGroupNameT&& value) { m_deploymentGroupNameHasBeenSet = true; m_deploymentGroupName = std::forward<DeploymentGroupNameT>(value); }
+    template<typename DeploymentGroupNameT = Aws::String>
+    CreateDeploymentGroupRequest& WithDeploymentGroupName(DeploymentGroupNameT&& value) { SetDeploymentGroupName(std::forward<DeploymentGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,14 +90,12 @@ namespace Model
      * with Deployment Configurations in CodeDeploy</a> in the <i>CodeDeploy User
      * Guide</i>.</p>
      */
-    inline const Aws::String& GetDeploymentConfigName() const{ return m_deploymentConfigName; }
+    inline const Aws::String& GetDeploymentConfigName() const { return m_deploymentConfigName; }
     inline bool DeploymentConfigNameHasBeenSet() const { return m_deploymentConfigNameHasBeenSet; }
-    inline void SetDeploymentConfigName(const Aws::String& value) { m_deploymentConfigNameHasBeenSet = true; m_deploymentConfigName = value; }
-    inline void SetDeploymentConfigName(Aws::String&& value) { m_deploymentConfigNameHasBeenSet = true; m_deploymentConfigName = std::move(value); }
-    inline void SetDeploymentConfigName(const char* value) { m_deploymentConfigNameHasBeenSet = true; m_deploymentConfigName.assign(value); }
-    inline CreateDeploymentGroupRequest& WithDeploymentConfigName(const Aws::String& value) { SetDeploymentConfigName(value); return *this;}
-    inline CreateDeploymentGroupRequest& WithDeploymentConfigName(Aws::String&& value) { SetDeploymentConfigName(std::move(value)); return *this;}
-    inline CreateDeploymentGroupRequest& WithDeploymentConfigName(const char* value) { SetDeploymentConfigName(value); return *this;}
+    template<typename DeploymentConfigNameT = Aws::String>
+    void SetDeploymentConfigName(DeploymentConfigNameT&& value) { m_deploymentConfigNameHasBeenSet = true; m_deploymentConfigName = std::forward<DeploymentConfigNameT>(value); }
+    template<typename DeploymentConfigNameT = Aws::String>
+    CreateDeploymentGroupRequest& WithDeploymentConfigName(DeploymentConfigNameT&& value) { SetDeploymentConfigName(std::forward<DeploymentConfigNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,14 +104,14 @@ namespace Model
      * EC2 instances with any of the specified tags. Cannot be used in the same call as
      * ec2TagSet.</p>
      */
-    inline const Aws::Vector<EC2TagFilter>& GetEc2TagFilters() const{ return m_ec2TagFilters; }
+    inline const Aws::Vector<EC2TagFilter>& GetEc2TagFilters() const { return m_ec2TagFilters; }
     inline bool Ec2TagFiltersHasBeenSet() const { return m_ec2TagFiltersHasBeenSet; }
-    inline void SetEc2TagFilters(const Aws::Vector<EC2TagFilter>& value) { m_ec2TagFiltersHasBeenSet = true; m_ec2TagFilters = value; }
-    inline void SetEc2TagFilters(Aws::Vector<EC2TagFilter>&& value) { m_ec2TagFiltersHasBeenSet = true; m_ec2TagFilters = std::move(value); }
-    inline CreateDeploymentGroupRequest& WithEc2TagFilters(const Aws::Vector<EC2TagFilter>& value) { SetEc2TagFilters(value); return *this;}
-    inline CreateDeploymentGroupRequest& WithEc2TagFilters(Aws::Vector<EC2TagFilter>&& value) { SetEc2TagFilters(std::move(value)); return *this;}
-    inline CreateDeploymentGroupRequest& AddEc2TagFilters(const EC2TagFilter& value) { m_ec2TagFiltersHasBeenSet = true; m_ec2TagFilters.push_back(value); return *this; }
-    inline CreateDeploymentGroupRequest& AddEc2TagFilters(EC2TagFilter&& value) { m_ec2TagFiltersHasBeenSet = true; m_ec2TagFilters.push_back(std::move(value)); return *this; }
+    template<typename Ec2TagFiltersT = Aws::Vector<EC2TagFilter>>
+    void SetEc2TagFilters(Ec2TagFiltersT&& value) { m_ec2TagFiltersHasBeenSet = true; m_ec2TagFilters = std::forward<Ec2TagFiltersT>(value); }
+    template<typename Ec2TagFiltersT = Aws::Vector<EC2TagFilter>>
+    CreateDeploymentGroupRequest& WithEc2TagFilters(Ec2TagFiltersT&& value) { SetEc2TagFilters(std::forward<Ec2TagFiltersT>(value)); return *this;}
+    template<typename Ec2TagFiltersT = EC2TagFilter>
+    CreateDeploymentGroupRequest& AddEc2TagFilters(Ec2TagFiltersT&& value) { m_ec2TagFiltersHasBeenSet = true; m_ec2TagFilters.emplace_back(std::forward<Ec2TagFiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -126,29 +120,28 @@ namespace Model
      * includes on-premises instances with any of the specified tags. Cannot be used in
      * the same call as <code>OnPremisesTagSet</code>.</p>
      */
-    inline const Aws::Vector<TagFilter>& GetOnPremisesInstanceTagFilters() const{ return m_onPremisesInstanceTagFilters; }
+    inline const Aws::Vector<TagFilter>& GetOnPremisesInstanceTagFilters() const { return m_onPremisesInstanceTagFilters; }
     inline bool OnPremisesInstanceTagFiltersHasBeenSet() const { return m_onPremisesInstanceTagFiltersHasBeenSet; }
-    inline void SetOnPremisesInstanceTagFilters(const Aws::Vector<TagFilter>& value) { m_onPremisesInstanceTagFiltersHasBeenSet = true; m_onPremisesInstanceTagFilters = value; }
-    inline void SetOnPremisesInstanceTagFilters(Aws::Vector<TagFilter>&& value) { m_onPremisesInstanceTagFiltersHasBeenSet = true; m_onPremisesInstanceTagFilters = std::move(value); }
-    inline CreateDeploymentGroupRequest& WithOnPremisesInstanceTagFilters(const Aws::Vector<TagFilter>& value) { SetOnPremisesInstanceTagFilters(value); return *this;}
-    inline CreateDeploymentGroupRequest& WithOnPremisesInstanceTagFilters(Aws::Vector<TagFilter>&& value) { SetOnPremisesInstanceTagFilters(std::move(value)); return *this;}
-    inline CreateDeploymentGroupRequest& AddOnPremisesInstanceTagFilters(const TagFilter& value) { m_onPremisesInstanceTagFiltersHasBeenSet = true; m_onPremisesInstanceTagFilters.push_back(value); return *this; }
-    inline CreateDeploymentGroupRequest& AddOnPremisesInstanceTagFilters(TagFilter&& value) { m_onPremisesInstanceTagFiltersHasBeenSet = true; m_onPremisesInstanceTagFilters.push_back(std::move(value)); return *this; }
+    template<typename OnPremisesInstanceTagFiltersT = Aws::Vector<TagFilter>>
+    void SetOnPremisesInstanceTagFilters(OnPremisesInstanceTagFiltersT&& value) { m_onPremisesInstanceTagFiltersHasBeenSet = true; m_onPremisesInstanceTagFilters = std::forward<OnPremisesInstanceTagFiltersT>(value); }
+    template<typename OnPremisesInstanceTagFiltersT = Aws::Vector<TagFilter>>
+    CreateDeploymentGroupRequest& WithOnPremisesInstanceTagFilters(OnPremisesInstanceTagFiltersT&& value) { SetOnPremisesInstanceTagFilters(std::forward<OnPremisesInstanceTagFiltersT>(value)); return *this;}
+    template<typename OnPremisesInstanceTagFiltersT = TagFilter>
+    CreateDeploymentGroupRequest& AddOnPremisesInstanceTagFilters(OnPremisesInstanceTagFiltersT&& value) { m_onPremisesInstanceTagFiltersHasBeenSet = true; m_onPremisesInstanceTagFilters.emplace_back(std::forward<OnPremisesInstanceTagFiltersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of associated Amazon EC2 Auto Scaling groups.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAutoScalingGroups() const{ return m_autoScalingGroups; }
+    inline const Aws::Vector<Aws::String>& GetAutoScalingGroups() const { return m_autoScalingGroups; }
     inline bool AutoScalingGroupsHasBeenSet() const { return m_autoScalingGroupsHasBeenSet; }
-    inline void SetAutoScalingGroups(const Aws::Vector<Aws::String>& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups = value; }
-    inline void SetAutoScalingGroups(Aws::Vector<Aws::String>&& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups = std::move(value); }
-    inline CreateDeploymentGroupRequest& WithAutoScalingGroups(const Aws::Vector<Aws::String>& value) { SetAutoScalingGroups(value); return *this;}
-    inline CreateDeploymentGroupRequest& WithAutoScalingGroups(Aws::Vector<Aws::String>&& value) { SetAutoScalingGroups(std::move(value)); return *this;}
-    inline CreateDeploymentGroupRequest& AddAutoScalingGroups(const Aws::String& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups.push_back(value); return *this; }
-    inline CreateDeploymentGroupRequest& AddAutoScalingGroups(Aws::String&& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups.push_back(std::move(value)); return *this; }
-    inline CreateDeploymentGroupRequest& AddAutoScalingGroups(const char* value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups.push_back(value); return *this; }
+    template<typename AutoScalingGroupsT = Aws::Vector<Aws::String>>
+    void SetAutoScalingGroups(AutoScalingGroupsT&& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups = std::forward<AutoScalingGroupsT>(value); }
+    template<typename AutoScalingGroupsT = Aws::Vector<Aws::String>>
+    CreateDeploymentGroupRequest& WithAutoScalingGroups(AutoScalingGroupsT&& value) { SetAutoScalingGroups(std::forward<AutoScalingGroupsT>(value)); return *this;}
+    template<typename AutoScalingGroupsT = Aws::String>
+    CreateDeploymentGroupRequest& AddAutoScalingGroups(AutoScalingGroupsT&& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups.emplace_back(std::forward<AutoScalingGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -156,14 +149,12 @@ namespace Model
      * <p>A service role Amazon Resource Name (ARN) that allows CodeDeploy to act on
      * the user's behalf when interacting with Amazon Web Services services.</p>
      */
-    inline const Aws::String& GetServiceRoleArn() const{ return m_serviceRoleArn; }
+    inline const Aws::String& GetServiceRoleArn() const { return m_serviceRoleArn; }
     inline bool ServiceRoleArnHasBeenSet() const { return m_serviceRoleArnHasBeenSet; }
-    inline void SetServiceRoleArn(const Aws::String& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
-    inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = std::move(value); }
-    inline void SetServiceRoleArn(const char* value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn.assign(value); }
-    inline CreateDeploymentGroupRequest& WithServiceRoleArn(const Aws::String& value) { SetServiceRoleArn(value); return *this;}
-    inline CreateDeploymentGroupRequest& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(std::move(value)); return *this;}
-    inline CreateDeploymentGroupRequest& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
+    template<typename ServiceRoleArnT = Aws::String>
+    void SetServiceRoleArn(ServiceRoleArnT&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = std::forward<ServiceRoleArnT>(value); }
+    template<typename ServiceRoleArnT = Aws::String>
+    CreateDeploymentGroupRequest& WithServiceRoleArn(ServiceRoleArnT&& value) { SetServiceRoleArn(std::forward<ServiceRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -173,14 +164,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create
      * a Trigger for an CodeDeploy Event</a> in the <i>CodeDeploy User Guide</i>.</p>
      */
-    inline const Aws::Vector<TriggerConfig>& GetTriggerConfigurations() const{ return m_triggerConfigurations; }
+    inline const Aws::Vector<TriggerConfig>& GetTriggerConfigurations() const { return m_triggerConfigurations; }
     inline bool TriggerConfigurationsHasBeenSet() const { return m_triggerConfigurationsHasBeenSet; }
-    inline void SetTriggerConfigurations(const Aws::Vector<TriggerConfig>& value) { m_triggerConfigurationsHasBeenSet = true; m_triggerConfigurations = value; }
-    inline void SetTriggerConfigurations(Aws::Vector<TriggerConfig>&& value) { m_triggerConfigurationsHasBeenSet = true; m_triggerConfigurations = std::move(value); }
-    inline CreateDeploymentGroupRequest& WithTriggerConfigurations(const Aws::Vector<TriggerConfig>& value) { SetTriggerConfigurations(value); return *this;}
-    inline CreateDeploymentGroupRequest& WithTriggerConfigurations(Aws::Vector<TriggerConfig>&& value) { SetTriggerConfigurations(std::move(value)); return *this;}
-    inline CreateDeploymentGroupRequest& AddTriggerConfigurations(const TriggerConfig& value) { m_triggerConfigurationsHasBeenSet = true; m_triggerConfigurations.push_back(value); return *this; }
-    inline CreateDeploymentGroupRequest& AddTriggerConfigurations(TriggerConfig&& value) { m_triggerConfigurationsHasBeenSet = true; m_triggerConfigurations.push_back(std::move(value)); return *this; }
+    template<typename TriggerConfigurationsT = Aws::Vector<TriggerConfig>>
+    void SetTriggerConfigurations(TriggerConfigurationsT&& value) { m_triggerConfigurationsHasBeenSet = true; m_triggerConfigurations = std::forward<TriggerConfigurationsT>(value); }
+    template<typename TriggerConfigurationsT = Aws::Vector<TriggerConfig>>
+    CreateDeploymentGroupRequest& WithTriggerConfigurations(TriggerConfigurationsT&& value) { SetTriggerConfigurations(std::forward<TriggerConfigurationsT>(value)); return *this;}
+    template<typename TriggerConfigurationsT = TriggerConfig>
+    CreateDeploymentGroupRequest& AddTriggerConfigurations(TriggerConfigurationsT&& value) { m_triggerConfigurationsHasBeenSet = true; m_triggerConfigurations.emplace_back(std::forward<TriggerConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -188,12 +179,12 @@ namespace Model
      * <p>Information to add about Amazon CloudWatch alarms when the deployment group
      * is created.</p>
      */
-    inline const AlarmConfiguration& GetAlarmConfiguration() const{ return m_alarmConfiguration; }
+    inline const AlarmConfiguration& GetAlarmConfiguration() const { return m_alarmConfiguration; }
     inline bool AlarmConfigurationHasBeenSet() const { return m_alarmConfigurationHasBeenSet; }
-    inline void SetAlarmConfiguration(const AlarmConfiguration& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = value; }
-    inline void SetAlarmConfiguration(AlarmConfiguration&& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = std::move(value); }
-    inline CreateDeploymentGroupRequest& WithAlarmConfiguration(const AlarmConfiguration& value) { SetAlarmConfiguration(value); return *this;}
-    inline CreateDeploymentGroupRequest& WithAlarmConfiguration(AlarmConfiguration&& value) { SetAlarmConfiguration(std::move(value)); return *this;}
+    template<typename AlarmConfigurationT = AlarmConfiguration>
+    void SetAlarmConfiguration(AlarmConfigurationT&& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = std::forward<AlarmConfigurationT>(value); }
+    template<typename AlarmConfigurationT = AlarmConfiguration>
+    CreateDeploymentGroupRequest& WithAlarmConfiguration(AlarmConfigurationT&& value) { SetAlarmConfiguration(std::forward<AlarmConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -201,12 +192,12 @@ namespace Model
      * <p>Configuration information for an automatic rollback that is added when a
      * deployment group is created.</p>
      */
-    inline const AutoRollbackConfiguration& GetAutoRollbackConfiguration() const{ return m_autoRollbackConfiguration; }
+    inline const AutoRollbackConfiguration& GetAutoRollbackConfiguration() const { return m_autoRollbackConfiguration; }
     inline bool AutoRollbackConfigurationHasBeenSet() const { return m_autoRollbackConfigurationHasBeenSet; }
-    inline void SetAutoRollbackConfiguration(const AutoRollbackConfiguration& value) { m_autoRollbackConfigurationHasBeenSet = true; m_autoRollbackConfiguration = value; }
-    inline void SetAutoRollbackConfiguration(AutoRollbackConfiguration&& value) { m_autoRollbackConfigurationHasBeenSet = true; m_autoRollbackConfiguration = std::move(value); }
-    inline CreateDeploymentGroupRequest& WithAutoRollbackConfiguration(const AutoRollbackConfiguration& value) { SetAutoRollbackConfiguration(value); return *this;}
-    inline CreateDeploymentGroupRequest& WithAutoRollbackConfiguration(AutoRollbackConfiguration&& value) { SetAutoRollbackConfiguration(std::move(value)); return *this;}
+    template<typename AutoRollbackConfigurationT = AutoRollbackConfiguration>
+    void SetAutoRollbackConfiguration(AutoRollbackConfigurationT&& value) { m_autoRollbackConfigurationHasBeenSet = true; m_autoRollbackConfiguration = std::forward<AutoRollbackConfigurationT>(value); }
+    template<typename AutoRollbackConfigurationT = AutoRollbackConfiguration>
+    CreateDeploymentGroupRequest& WithAutoRollbackConfiguration(AutoRollbackConfigurationT&& value) { SetAutoRollbackConfiguration(std::forward<AutoRollbackConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -220,12 +211,10 @@ namespace Model
      * to update the new Amazon EC2 instances. This may result in instances having
      * different revisions.</p>
      */
-    inline const OutdatedInstancesStrategy& GetOutdatedInstancesStrategy() const{ return m_outdatedInstancesStrategy; }
+    inline OutdatedInstancesStrategy GetOutdatedInstancesStrategy() const { return m_outdatedInstancesStrategy; }
     inline bool OutdatedInstancesStrategyHasBeenSet() const { return m_outdatedInstancesStrategyHasBeenSet; }
-    inline void SetOutdatedInstancesStrategy(const OutdatedInstancesStrategy& value) { m_outdatedInstancesStrategyHasBeenSet = true; m_outdatedInstancesStrategy = value; }
-    inline void SetOutdatedInstancesStrategy(OutdatedInstancesStrategy&& value) { m_outdatedInstancesStrategyHasBeenSet = true; m_outdatedInstancesStrategy = std::move(value); }
-    inline CreateDeploymentGroupRequest& WithOutdatedInstancesStrategy(const OutdatedInstancesStrategy& value) { SetOutdatedInstancesStrategy(value); return *this;}
-    inline CreateDeploymentGroupRequest& WithOutdatedInstancesStrategy(OutdatedInstancesStrategy&& value) { SetOutdatedInstancesStrategy(std::move(value)); return *this;}
+    inline void SetOutdatedInstancesStrategy(OutdatedInstancesStrategy value) { m_outdatedInstancesStrategyHasBeenSet = true; m_outdatedInstancesStrategy = value; }
+    inline CreateDeploymentGroupRequest& WithOutdatedInstancesStrategy(OutdatedInstancesStrategy value) { SetOutdatedInstancesStrategy(value); return *this;}
     ///@}
 
     ///@{
@@ -233,36 +222,36 @@ namespace Model
      * <p>Information about the type of deployment, in-place or blue/green, that you
      * want to run and whether to route deployment traffic behind a load balancer.</p>
      */
-    inline const DeploymentStyle& GetDeploymentStyle() const{ return m_deploymentStyle; }
+    inline const DeploymentStyle& GetDeploymentStyle() const { return m_deploymentStyle; }
     inline bool DeploymentStyleHasBeenSet() const { return m_deploymentStyleHasBeenSet; }
-    inline void SetDeploymentStyle(const DeploymentStyle& value) { m_deploymentStyleHasBeenSet = true; m_deploymentStyle = value; }
-    inline void SetDeploymentStyle(DeploymentStyle&& value) { m_deploymentStyleHasBeenSet = true; m_deploymentStyle = std::move(value); }
-    inline CreateDeploymentGroupRequest& WithDeploymentStyle(const DeploymentStyle& value) { SetDeploymentStyle(value); return *this;}
-    inline CreateDeploymentGroupRequest& WithDeploymentStyle(DeploymentStyle&& value) { SetDeploymentStyle(std::move(value)); return *this;}
+    template<typename DeploymentStyleT = DeploymentStyle>
+    void SetDeploymentStyle(DeploymentStyleT&& value) { m_deploymentStyleHasBeenSet = true; m_deploymentStyle = std::forward<DeploymentStyleT>(value); }
+    template<typename DeploymentStyleT = DeploymentStyle>
+    CreateDeploymentGroupRequest& WithDeploymentStyle(DeploymentStyleT&& value) { SetDeploymentStyle(std::forward<DeploymentStyleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about blue/green deployment options for a deployment group.</p>
      */
-    inline const BlueGreenDeploymentConfiguration& GetBlueGreenDeploymentConfiguration() const{ return m_blueGreenDeploymentConfiguration; }
+    inline const BlueGreenDeploymentConfiguration& GetBlueGreenDeploymentConfiguration() const { return m_blueGreenDeploymentConfiguration; }
     inline bool BlueGreenDeploymentConfigurationHasBeenSet() const { return m_blueGreenDeploymentConfigurationHasBeenSet; }
-    inline void SetBlueGreenDeploymentConfiguration(const BlueGreenDeploymentConfiguration& value) { m_blueGreenDeploymentConfigurationHasBeenSet = true; m_blueGreenDeploymentConfiguration = value; }
-    inline void SetBlueGreenDeploymentConfiguration(BlueGreenDeploymentConfiguration&& value) { m_blueGreenDeploymentConfigurationHasBeenSet = true; m_blueGreenDeploymentConfiguration = std::move(value); }
-    inline CreateDeploymentGroupRequest& WithBlueGreenDeploymentConfiguration(const BlueGreenDeploymentConfiguration& value) { SetBlueGreenDeploymentConfiguration(value); return *this;}
-    inline CreateDeploymentGroupRequest& WithBlueGreenDeploymentConfiguration(BlueGreenDeploymentConfiguration&& value) { SetBlueGreenDeploymentConfiguration(std::move(value)); return *this;}
+    template<typename BlueGreenDeploymentConfigurationT = BlueGreenDeploymentConfiguration>
+    void SetBlueGreenDeploymentConfiguration(BlueGreenDeploymentConfigurationT&& value) { m_blueGreenDeploymentConfigurationHasBeenSet = true; m_blueGreenDeploymentConfiguration = std::forward<BlueGreenDeploymentConfigurationT>(value); }
+    template<typename BlueGreenDeploymentConfigurationT = BlueGreenDeploymentConfiguration>
+    CreateDeploymentGroupRequest& WithBlueGreenDeploymentConfiguration(BlueGreenDeploymentConfigurationT&& value) { SetBlueGreenDeploymentConfiguration(std::forward<BlueGreenDeploymentConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the load balancer used in a deployment.</p>
      */
-    inline const LoadBalancerInfo& GetLoadBalancerInfo() const{ return m_loadBalancerInfo; }
+    inline const LoadBalancerInfo& GetLoadBalancerInfo() const { return m_loadBalancerInfo; }
     inline bool LoadBalancerInfoHasBeenSet() const { return m_loadBalancerInfoHasBeenSet; }
-    inline void SetLoadBalancerInfo(const LoadBalancerInfo& value) { m_loadBalancerInfoHasBeenSet = true; m_loadBalancerInfo = value; }
-    inline void SetLoadBalancerInfo(LoadBalancerInfo&& value) { m_loadBalancerInfoHasBeenSet = true; m_loadBalancerInfo = std::move(value); }
-    inline CreateDeploymentGroupRequest& WithLoadBalancerInfo(const LoadBalancerInfo& value) { SetLoadBalancerInfo(value); return *this;}
-    inline CreateDeploymentGroupRequest& WithLoadBalancerInfo(LoadBalancerInfo&& value) { SetLoadBalancerInfo(std::move(value)); return *this;}
+    template<typename LoadBalancerInfoT = LoadBalancerInfo>
+    void SetLoadBalancerInfo(LoadBalancerInfoT&& value) { m_loadBalancerInfoHasBeenSet = true; m_loadBalancerInfo = std::forward<LoadBalancerInfoT>(value); }
+    template<typename LoadBalancerInfoT = LoadBalancerInfo>
+    CreateDeploymentGroupRequest& WithLoadBalancerInfo(LoadBalancerInfoT&& value) { SetLoadBalancerInfo(std::forward<LoadBalancerInfoT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -271,12 +260,12 @@ namespace Model
      * deployment group includes only Amazon EC2 instances identified by all the tag
      * groups. Cannot be used in the same call as <code>ec2TagFilters</code>.</p>
      */
-    inline const EC2TagSet& GetEc2TagSet() const{ return m_ec2TagSet; }
+    inline const EC2TagSet& GetEc2TagSet() const { return m_ec2TagSet; }
     inline bool Ec2TagSetHasBeenSet() const { return m_ec2TagSetHasBeenSet; }
-    inline void SetEc2TagSet(const EC2TagSet& value) { m_ec2TagSetHasBeenSet = true; m_ec2TagSet = value; }
-    inline void SetEc2TagSet(EC2TagSet&& value) { m_ec2TagSetHasBeenSet = true; m_ec2TagSet = std::move(value); }
-    inline CreateDeploymentGroupRequest& WithEc2TagSet(const EC2TagSet& value) { SetEc2TagSet(value); return *this;}
-    inline CreateDeploymentGroupRequest& WithEc2TagSet(EC2TagSet&& value) { SetEc2TagSet(std::move(value)); return *this;}
+    template<typename Ec2TagSetT = EC2TagSet>
+    void SetEc2TagSet(Ec2TagSetT&& value) { m_ec2TagSetHasBeenSet = true; m_ec2TagSet = std::forward<Ec2TagSetT>(value); }
+    template<typename Ec2TagSetT = EC2TagSet>
+    CreateDeploymentGroupRequest& WithEc2TagSet(Ec2TagSetT&& value) { SetEc2TagSet(std::forward<Ec2TagSetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -286,14 +275,14 @@ namespace Model
      * service is specified as an Amazon ECS cluster and service name pair using the
      * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
      */
-    inline const Aws::Vector<ECSService>& GetEcsServices() const{ return m_ecsServices; }
+    inline const Aws::Vector<ECSService>& GetEcsServices() const { return m_ecsServices; }
     inline bool EcsServicesHasBeenSet() const { return m_ecsServicesHasBeenSet; }
-    inline void SetEcsServices(const Aws::Vector<ECSService>& value) { m_ecsServicesHasBeenSet = true; m_ecsServices = value; }
-    inline void SetEcsServices(Aws::Vector<ECSService>&& value) { m_ecsServicesHasBeenSet = true; m_ecsServices = std::move(value); }
-    inline CreateDeploymentGroupRequest& WithEcsServices(const Aws::Vector<ECSService>& value) { SetEcsServices(value); return *this;}
-    inline CreateDeploymentGroupRequest& WithEcsServices(Aws::Vector<ECSService>&& value) { SetEcsServices(std::move(value)); return *this;}
-    inline CreateDeploymentGroupRequest& AddEcsServices(const ECSService& value) { m_ecsServicesHasBeenSet = true; m_ecsServices.push_back(value); return *this; }
-    inline CreateDeploymentGroupRequest& AddEcsServices(ECSService&& value) { m_ecsServicesHasBeenSet = true; m_ecsServices.push_back(std::move(value)); return *this; }
+    template<typename EcsServicesT = Aws::Vector<ECSService>>
+    void SetEcsServices(EcsServicesT&& value) { m_ecsServicesHasBeenSet = true; m_ecsServices = std::forward<EcsServicesT>(value); }
+    template<typename EcsServicesT = Aws::Vector<ECSService>>
+    CreateDeploymentGroupRequest& WithEcsServices(EcsServicesT&& value) { SetEcsServices(std::forward<EcsServicesT>(value)); return *this;}
+    template<typename EcsServicesT = ECSService>
+    CreateDeploymentGroupRequest& AddEcsServices(EcsServicesT&& value) { m_ecsServicesHasBeenSet = true; m_ecsServices.emplace_back(std::forward<EcsServicesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -303,12 +292,12 @@ namespace Model
      * tag groups. Cannot be used in the same call as
      * <code>onPremisesInstanceTagFilters</code>.</p>
      */
-    inline const OnPremisesTagSet& GetOnPremisesTagSet() const{ return m_onPremisesTagSet; }
+    inline const OnPremisesTagSet& GetOnPremisesTagSet() const { return m_onPremisesTagSet; }
     inline bool OnPremisesTagSetHasBeenSet() const { return m_onPremisesTagSetHasBeenSet; }
-    inline void SetOnPremisesTagSet(const OnPremisesTagSet& value) { m_onPremisesTagSetHasBeenSet = true; m_onPremisesTagSet = value; }
-    inline void SetOnPremisesTagSet(OnPremisesTagSet&& value) { m_onPremisesTagSetHasBeenSet = true; m_onPremisesTagSet = std::move(value); }
-    inline CreateDeploymentGroupRequest& WithOnPremisesTagSet(const OnPremisesTagSet& value) { SetOnPremisesTagSet(value); return *this;}
-    inline CreateDeploymentGroupRequest& WithOnPremisesTagSet(OnPremisesTagSet&& value) { SetOnPremisesTagSet(std::move(value)); return *this;}
+    template<typename OnPremisesTagSetT = OnPremisesTagSet>
+    void SetOnPremisesTagSet(OnPremisesTagSetT&& value) { m_onPremisesTagSetHasBeenSet = true; m_onPremisesTagSet = std::forward<OnPremisesTagSetT>(value); }
+    template<typename OnPremisesTagSetT = OnPremisesTagSet>
+    CreateDeploymentGroupRequest& WithOnPremisesTagSet(OnPremisesTagSetT&& value) { SetOnPremisesTagSet(std::forward<OnPremisesTagSetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -317,14 +306,14 @@ namespace Model
      * organize and categorize them. Each tag consists of a key and an optional value,
      * both of which you define. </p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateDeploymentGroupRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateDeploymentGroupRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateDeploymentGroupRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateDeploymentGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateDeploymentGroupRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateDeploymentGroupRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -345,7 +334,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-lifecycle.html#as-lifecycle-scale-in">Scale
      * in</a> topic in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
-    inline bool GetTerminationHookEnabled() const{ return m_terminationHookEnabled; }
+    inline bool GetTerminationHookEnabled() const { return m_terminationHookEnabled; }
     inline bool TerminationHookEnabledHasBeenSet() const { return m_terminationHookEnabledHasBeenSet; }
     inline void SetTerminationHookEnabled(bool value) { m_terminationHookEnabledHasBeenSet = true; m_terminationHookEnabled = value; }
     inline CreateDeploymentGroupRequest& WithTerminationHookEnabled(bool value) { SetTerminationHookEnabled(value); return *this;}
@@ -382,7 +371,7 @@ namespace Model
     AutoRollbackConfiguration m_autoRollbackConfiguration;
     bool m_autoRollbackConfigurationHasBeenSet = false;
 
-    OutdatedInstancesStrategy m_outdatedInstancesStrategy;
+    OutdatedInstancesStrategy m_outdatedInstancesStrategy{OutdatedInstancesStrategy::NOT_SET};
     bool m_outdatedInstancesStrategyHasBeenSet = false;
 
     DeploymentStyle m_deploymentStyle;
@@ -406,7 +395,7 @@ namespace Model
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    bool m_terminationHookEnabled;
+    bool m_terminationHookEnabled{false};
     bool m_terminationHookEnabledHasBeenSet = false;
   };
 

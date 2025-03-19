@@ -18,14 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-StorageTypeLimit::StorageTypeLimit() : 
-    m_limitNameHasBeenSet(false),
-    m_limitValuesHasBeenSet(false)
-{
-}
-
 StorageTypeLimit::StorageTypeLimit(JsonView jsonValue)
-  : StorageTypeLimit()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ StorageTypeLimit& StorageTypeLimit::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LimitName"))
   {
     m_limitName = jsonValue.GetString("LimitName");
-
     m_limitNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LimitValues"))
   {
     Aws::Utils::Array<JsonView> limitValuesJsonList = jsonValue.GetArray("LimitValues");
@@ -48,7 +39,6 @@ StorageTypeLimit& StorageTypeLimit::operator =(JsonView jsonValue)
     }
     m_limitValuesHasBeenSet = true;
   }
-
   return *this;
 }
 

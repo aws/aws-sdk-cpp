@@ -30,7 +30,7 @@ namespace Model
   class DescribeManagedRuleGroupResult
   {
   public:
-    AWS_WAFV2_API DescribeManagedRuleGroupResult();
+    AWS_WAFV2_API DescribeManagedRuleGroupResult() = default;
     AWS_WAFV2_API DescribeManagedRuleGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WAFV2_API DescribeManagedRuleGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,11 @@ namespace Model
     /**
      * <p>The managed rule group's version. </p>
      */
-    inline const Aws::String& GetVersionName() const{ return m_versionName; }
-    inline void SetVersionName(const Aws::String& value) { m_versionName = value; }
-    inline void SetVersionName(Aws::String&& value) { m_versionName = std::move(value); }
-    inline void SetVersionName(const char* value) { m_versionName.assign(value); }
-    inline DescribeManagedRuleGroupResult& WithVersionName(const Aws::String& value) { SetVersionName(value); return *this;}
-    inline DescribeManagedRuleGroupResult& WithVersionName(Aws::String&& value) { SetVersionName(std::move(value)); return *this;}
-    inline DescribeManagedRuleGroupResult& WithVersionName(const char* value) { SetVersionName(value); return *this;}
+    inline const Aws::String& GetVersionName() const { return m_versionName; }
+    template<typename VersionNameT = Aws::String>
+    void SetVersionName(VersionNameT&& value) { m_versionNameHasBeenSet = true; m_versionName = std::forward<VersionNameT>(value); }
+    template<typename VersionNameT = Aws::String>
+    DescribeManagedRuleGroupResult& WithVersionName(VersionNameT&& value) { SetVersionName(std::forward<VersionNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,13 +56,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple
      * Notification Service Developer Guide</a>.</p>
      */
-    inline const Aws::String& GetSnsTopicArn() const{ return m_snsTopicArn; }
-    inline void SetSnsTopicArn(const Aws::String& value) { m_snsTopicArn = value; }
-    inline void SetSnsTopicArn(Aws::String&& value) { m_snsTopicArn = std::move(value); }
-    inline void SetSnsTopicArn(const char* value) { m_snsTopicArn.assign(value); }
-    inline DescribeManagedRuleGroupResult& WithSnsTopicArn(const Aws::String& value) { SetSnsTopicArn(value); return *this;}
-    inline DescribeManagedRuleGroupResult& WithSnsTopicArn(Aws::String&& value) { SetSnsTopicArn(std::move(value)); return *this;}
-    inline DescribeManagedRuleGroupResult& WithSnsTopicArn(const char* value) { SetSnsTopicArn(value); return *this;}
+    inline const Aws::String& GetSnsTopicArn() const { return m_snsTopicArn; }
+    template<typename SnsTopicArnT = Aws::String>
+    void SetSnsTopicArn(SnsTopicArnT&& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = std::forward<SnsTopicArnT>(value); }
+    template<typename SnsTopicArnT = Aws::String>
+    DescribeManagedRuleGroupResult& WithSnsTopicArn(SnsTopicArnT&& value) { SetSnsTopicArn(std::forward<SnsTopicArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,8 +76,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-waf-capacity-units.html">WAF
      * web ACL capacity units (WCU)</a> in the <i>WAF Developer Guide</i>. </p>
      */
-    inline long long GetCapacity() const{ return m_capacity; }
-    inline void SetCapacity(long long value) { m_capacity = value; }
+    inline long long GetCapacity() const { return m_capacity; }
+    inline void SetCapacity(long long value) { m_capacityHasBeenSet = true; m_capacity = value; }
     inline DescribeManagedRuleGroupResult& WithCapacity(long long value) { SetCapacity(value); return *this;}
     ///@}
 
@@ -89,13 +85,13 @@ namespace Model
     /**
      * <p/>
      */
-    inline const Aws::Vector<RuleSummary>& GetRules() const{ return m_rules; }
-    inline void SetRules(const Aws::Vector<RuleSummary>& value) { m_rules = value; }
-    inline void SetRules(Aws::Vector<RuleSummary>&& value) { m_rules = std::move(value); }
-    inline DescribeManagedRuleGroupResult& WithRules(const Aws::Vector<RuleSummary>& value) { SetRules(value); return *this;}
-    inline DescribeManagedRuleGroupResult& WithRules(Aws::Vector<RuleSummary>&& value) { SetRules(std::move(value)); return *this;}
-    inline DescribeManagedRuleGroupResult& AddRules(const RuleSummary& value) { m_rules.push_back(value); return *this; }
-    inline DescribeManagedRuleGroupResult& AddRules(RuleSummary&& value) { m_rules.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RuleSummary>& GetRules() const { return m_rules; }
+    template<typename RulesT = Aws::Vector<RuleSummary>>
+    void SetRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules = std::forward<RulesT>(value); }
+    template<typename RulesT = Aws::Vector<RuleSummary>>
+    DescribeManagedRuleGroupResult& WithRules(RulesT&& value) { SetRules(std::forward<RulesT>(value)); return *this;}
+    template<typename RulesT = RuleSummary>
+    DescribeManagedRuleGroupResult& AddRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules.emplace_back(std::forward<RulesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -110,13 +106,11 @@ namespace Model
      * from the rule, separated by a colon: </p> <p> <code>&lt;label
      * namespace&gt;:&lt;label from rule&gt;</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetLabelNamespace() const{ return m_labelNamespace; }
-    inline void SetLabelNamespace(const Aws::String& value) { m_labelNamespace = value; }
-    inline void SetLabelNamespace(Aws::String&& value) { m_labelNamespace = std::move(value); }
-    inline void SetLabelNamespace(const char* value) { m_labelNamespace.assign(value); }
-    inline DescribeManagedRuleGroupResult& WithLabelNamespace(const Aws::String& value) { SetLabelNamespace(value); return *this;}
-    inline DescribeManagedRuleGroupResult& WithLabelNamespace(Aws::String&& value) { SetLabelNamespace(std::move(value)); return *this;}
-    inline DescribeManagedRuleGroupResult& WithLabelNamespace(const char* value) { SetLabelNamespace(value); return *this;}
+    inline const Aws::String& GetLabelNamespace() const { return m_labelNamespace; }
+    template<typename LabelNamespaceT = Aws::String>
+    void SetLabelNamespace(LabelNamespaceT&& value) { m_labelNamespaceHasBeenSet = true; m_labelNamespace = std::forward<LabelNamespaceT>(value); }
+    template<typename LabelNamespaceT = Aws::String>
+    DescribeManagedRuleGroupResult& WithLabelNamespace(LabelNamespaceT&& value) { SetLabelNamespace(std::forward<LabelNamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -125,13 +119,13 @@ namespace Model
      * requests. These labels are defined in the <code>RuleLabels</code> for a
      * <a>Rule</a>.</p>
      */
-    inline const Aws::Vector<LabelSummary>& GetAvailableLabels() const{ return m_availableLabels; }
-    inline void SetAvailableLabels(const Aws::Vector<LabelSummary>& value) { m_availableLabels = value; }
-    inline void SetAvailableLabels(Aws::Vector<LabelSummary>&& value) { m_availableLabels = std::move(value); }
-    inline DescribeManagedRuleGroupResult& WithAvailableLabels(const Aws::Vector<LabelSummary>& value) { SetAvailableLabels(value); return *this;}
-    inline DescribeManagedRuleGroupResult& WithAvailableLabels(Aws::Vector<LabelSummary>&& value) { SetAvailableLabels(std::move(value)); return *this;}
-    inline DescribeManagedRuleGroupResult& AddAvailableLabels(const LabelSummary& value) { m_availableLabels.push_back(value); return *this; }
-    inline DescribeManagedRuleGroupResult& AddAvailableLabels(LabelSummary&& value) { m_availableLabels.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<LabelSummary>& GetAvailableLabels() const { return m_availableLabels; }
+    template<typename AvailableLabelsT = Aws::Vector<LabelSummary>>
+    void SetAvailableLabels(AvailableLabelsT&& value) { m_availableLabelsHasBeenSet = true; m_availableLabels = std::forward<AvailableLabelsT>(value); }
+    template<typename AvailableLabelsT = Aws::Vector<LabelSummary>>
+    DescribeManagedRuleGroupResult& WithAvailableLabels(AvailableLabelsT&& value) { SetAvailableLabels(std::forward<AvailableLabelsT>(value)); return *this;}
+    template<typename AvailableLabelsT = LabelSummary>
+    DescribeManagedRuleGroupResult& AddAvailableLabels(AvailableLabelsT&& value) { m_availableLabelsHasBeenSet = true; m_availableLabels.emplace_back(std::forward<AvailableLabelsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -140,42 +134,48 @@ namespace Model
      * match statements. These labels are defined in a <code>LabelMatchStatement</code>
      * specification, in the <a>Statement</a> definition of a rule. </p>
      */
-    inline const Aws::Vector<LabelSummary>& GetConsumedLabels() const{ return m_consumedLabels; }
-    inline void SetConsumedLabels(const Aws::Vector<LabelSummary>& value) { m_consumedLabels = value; }
-    inline void SetConsumedLabels(Aws::Vector<LabelSummary>&& value) { m_consumedLabels = std::move(value); }
-    inline DescribeManagedRuleGroupResult& WithConsumedLabels(const Aws::Vector<LabelSummary>& value) { SetConsumedLabels(value); return *this;}
-    inline DescribeManagedRuleGroupResult& WithConsumedLabels(Aws::Vector<LabelSummary>&& value) { SetConsumedLabels(std::move(value)); return *this;}
-    inline DescribeManagedRuleGroupResult& AddConsumedLabels(const LabelSummary& value) { m_consumedLabels.push_back(value); return *this; }
-    inline DescribeManagedRuleGroupResult& AddConsumedLabels(LabelSummary&& value) { m_consumedLabels.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<LabelSummary>& GetConsumedLabels() const { return m_consumedLabels; }
+    template<typename ConsumedLabelsT = Aws::Vector<LabelSummary>>
+    void SetConsumedLabels(ConsumedLabelsT&& value) { m_consumedLabelsHasBeenSet = true; m_consumedLabels = std::forward<ConsumedLabelsT>(value); }
+    template<typename ConsumedLabelsT = Aws::Vector<LabelSummary>>
+    DescribeManagedRuleGroupResult& WithConsumedLabels(ConsumedLabelsT&& value) { SetConsumedLabels(std::forward<ConsumedLabelsT>(value)); return *this;}
+    template<typename ConsumedLabelsT = LabelSummary>
+    DescribeManagedRuleGroupResult& AddConsumedLabels(ConsumedLabelsT&& value) { m_consumedLabelsHasBeenSet = true; m_consumedLabels.emplace_back(std::forward<ConsumedLabelsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeManagedRuleGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeManagedRuleGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeManagedRuleGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeManagedRuleGroupResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_versionName;
+    bool m_versionNameHasBeenSet = false;
 
     Aws::String m_snsTopicArn;
+    bool m_snsTopicArnHasBeenSet = false;
 
-    long long m_capacity;
+    long long m_capacity{0};
+    bool m_capacityHasBeenSet = false;
 
     Aws::Vector<RuleSummary> m_rules;
+    bool m_rulesHasBeenSet = false;
 
     Aws::String m_labelNamespace;
+    bool m_labelNamespaceHasBeenSet = false;
 
     Aws::Vector<LabelSummary> m_availableLabels;
+    bool m_availableLabelsHasBeenSet = false;
 
     Aws::Vector<LabelSummary> m_consumedLabels;
+    bool m_consumedLabelsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

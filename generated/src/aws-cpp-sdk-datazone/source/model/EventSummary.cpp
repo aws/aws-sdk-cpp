@@ -18,13 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-EventSummary::EventSummary() : 
-    m_openLineageRunEventSummaryHasBeenSet(false)
-{
-}
-
 EventSummary::EventSummary(JsonView jsonValue)
-  : EventSummary()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EventSummary& EventSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("openLineageRunEventSummary"))
   {
     m_openLineageRunEventSummary = jsonValue.GetObject("openLineageRunEventSummary");
-
     m_openLineageRunEventSummaryHasBeenSet = true;
   }
-
   return *this;
 }
 

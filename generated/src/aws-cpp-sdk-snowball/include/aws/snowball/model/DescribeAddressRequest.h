@@ -21,7 +21,7 @@ namespace Model
   class DescribeAddressRequest : public SnowballRequest
   {
   public:
-    AWS_SNOWBALL_API DescribeAddressRequest();
+    AWS_SNOWBALL_API DescribeAddressRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The automatically generated ID for a specific address.</p>
      */
-    inline const Aws::String& GetAddressId() const{ return m_addressId; }
+    inline const Aws::String& GetAddressId() const { return m_addressId; }
     inline bool AddressIdHasBeenSet() const { return m_addressIdHasBeenSet; }
-    inline void SetAddressId(const Aws::String& value) { m_addressIdHasBeenSet = true; m_addressId = value; }
-    inline void SetAddressId(Aws::String&& value) { m_addressIdHasBeenSet = true; m_addressId = std::move(value); }
-    inline void SetAddressId(const char* value) { m_addressIdHasBeenSet = true; m_addressId.assign(value); }
-    inline DescribeAddressRequest& WithAddressId(const Aws::String& value) { SetAddressId(value); return *this;}
-    inline DescribeAddressRequest& WithAddressId(Aws::String&& value) { SetAddressId(std::move(value)); return *this;}
-    inline DescribeAddressRequest& WithAddressId(const char* value) { SetAddressId(value); return *this;}
+    template<typename AddressIdT = Aws::String>
+    void SetAddressId(AddressIdT&& value) { m_addressIdHasBeenSet = true; m_addressId = std::forward<AddressIdT>(value); }
+    template<typename AddressIdT = Aws::String>
+    DescribeAddressRequest& WithAddressId(AddressIdT&& value) { SetAddressId(std::forward<AddressIdT>(value)); return *this;}
     ///@}
   private:
 

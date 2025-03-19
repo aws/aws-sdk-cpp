@@ -24,7 +24,7 @@ namespace Model
   class ListRuleGroupsRequest : public NetworkFirewallRequest
   {
   public:
-    AWS_NETWORKFIREWALL_API ListRuleGroupsRequest();
+    AWS_NETWORKFIREWALL_API ListRuleGroupsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * response. To retrieve the next batch of objects, use the token returned from the
      * prior request in your next request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListRuleGroupsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListRuleGroupsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListRuleGroupsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListRuleGroupsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,7 +60,7 @@ namespace Model
      * provides a <code>NextToken</code> value that you can use in a subsequent call to
      * get the next batch of objects.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListRuleGroupsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -74,12 +72,10 @@ namespace Model
      * setting of <code>NULL</code> returns all of the rule groups in your account. A
      * setting of <code>MANAGED</code> returns all available managed rule groups.</p>
      */
-    inline const ResourceManagedStatus& GetScope() const{ return m_scope; }
+    inline ResourceManagedStatus GetScope() const { return m_scope; }
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
-    inline void SetScope(const ResourceManagedStatus& value) { m_scopeHasBeenSet = true; m_scope = value; }
-    inline void SetScope(ResourceManagedStatus&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
-    inline ListRuleGroupsRequest& WithScope(const ResourceManagedStatus& value) { SetScope(value); return *this;}
-    inline ListRuleGroupsRequest& WithScope(ResourceManagedStatus&& value) { SetScope(std::move(value)); return *this;}
+    inline void SetScope(ResourceManagedStatus value) { m_scopeHasBeenSet = true; m_scope = value; }
+    inline ListRuleGroupsRequest& WithScope(ResourceManagedStatus value) { SetScope(value); return *this;}
     ///@}
 
     ///@{
@@ -87,12 +83,10 @@ namespace Model
      * <p>Indicates the general category of the Amazon Web Services managed rule
      * group.</p>
      */
-    inline const ResourceManagedType& GetManagedType() const{ return m_managedType; }
+    inline ResourceManagedType GetManagedType() const { return m_managedType; }
     inline bool ManagedTypeHasBeenSet() const { return m_managedTypeHasBeenSet; }
-    inline void SetManagedType(const ResourceManagedType& value) { m_managedTypeHasBeenSet = true; m_managedType = value; }
-    inline void SetManagedType(ResourceManagedType&& value) { m_managedTypeHasBeenSet = true; m_managedType = std::move(value); }
-    inline ListRuleGroupsRequest& WithManagedType(const ResourceManagedType& value) { SetManagedType(value); return *this;}
-    inline ListRuleGroupsRequest& WithManagedType(ResourceManagedType&& value) { SetManagedType(std::move(value)); return *this;}
+    inline void SetManagedType(ResourceManagedType value) { m_managedTypeHasBeenSet = true; m_managedType = value; }
+    inline ListRuleGroupsRequest& WithManagedType(ResourceManagedType value) { SetManagedType(value); return *this;}
     ///@}
 
     ///@{
@@ -101,28 +95,26 @@ namespace Model
      * is stateless, it contains stateless rules. If it is stateful, it contains
      * stateful rules.</p>
      */
-    inline const RuleGroupType& GetType() const{ return m_type; }
+    inline RuleGroupType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const RuleGroupType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(RuleGroupType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ListRuleGroupsRequest& WithType(const RuleGroupType& value) { SetType(value); return *this;}
-    inline ListRuleGroupsRequest& WithType(RuleGroupType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(RuleGroupType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ListRuleGroupsRequest& WithType(RuleGroupType value) { SetType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
-    ResourceManagedStatus m_scope;
+    ResourceManagedStatus m_scope{ResourceManagedStatus::NOT_SET};
     bool m_scopeHasBeenSet = false;
 
-    ResourceManagedType m_managedType;
+    ResourceManagedType m_managedType{ResourceManagedType::NOT_SET};
     bool m_managedTypeHasBeenSet = false;
 
-    RuleGroupType m_type;
+    RuleGroupType m_type{RuleGroupType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

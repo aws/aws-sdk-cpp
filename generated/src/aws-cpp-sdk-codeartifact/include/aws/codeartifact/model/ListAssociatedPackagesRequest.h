@@ -25,7 +25,7 @@ namespace Model
   class ListAssociatedPackagesRequest : public CodeArtifactRequest
   {
   public:
-    AWS_CODEARTIFACT_API ListAssociatedPackagesRequest();
+    AWS_CODEARTIFACT_API ListAssociatedPackagesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p> The name of the domain that contains the package group from which to list
      * associated packages. </p>
      */
-    inline const Aws::String& GetDomain() const{ return m_domain; }
+    inline const Aws::String& GetDomain() const { return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
-    inline ListAssociatedPackagesRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
-    inline ListAssociatedPackagesRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
-    inline ListAssociatedPackagesRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+    template<typename DomainT = Aws::String>
+    void SetDomain(DomainT&& value) { m_domainHasBeenSet = true; m_domain = std::forward<DomainT>(value); }
+    template<typename DomainT = Aws::String>
+    ListAssociatedPackagesRequest& WithDomain(DomainT&& value) { SetDomain(std::forward<DomainT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p> The 12-digit account number of the Amazon Web Services account that owns the
      * domain. It does not include dashes or spaces. </p>
      */
-    inline const Aws::String& GetDomainOwner() const{ return m_domainOwner; }
+    inline const Aws::String& GetDomainOwner() const { return m_domainOwner; }
     inline bool DomainOwnerHasBeenSet() const { return m_domainOwnerHasBeenSet; }
-    inline void SetDomainOwner(const Aws::String& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = value; }
-    inline void SetDomainOwner(Aws::String&& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = std::move(value); }
-    inline void SetDomainOwner(const char* value) { m_domainOwnerHasBeenSet = true; m_domainOwner.assign(value); }
-    inline ListAssociatedPackagesRequest& WithDomainOwner(const Aws::String& value) { SetDomainOwner(value); return *this;}
-    inline ListAssociatedPackagesRequest& WithDomainOwner(Aws::String&& value) { SetDomainOwner(std::move(value)); return *this;}
-    inline ListAssociatedPackagesRequest& WithDomainOwner(const char* value) { SetDomainOwner(value); return *this;}
+    template<typename DomainOwnerT = Aws::String>
+    void SetDomainOwner(DomainOwnerT&& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = std::forward<DomainOwnerT>(value); }
+    template<typename DomainOwnerT = Aws::String>
+    ListAssociatedPackagesRequest& WithDomainOwner(DomainOwnerT&& value) { SetDomainOwner(std::forward<DomainOwnerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,21 +69,19 @@ namespace Model
      * <p> The pattern of the package group from which to list associated packages.
      * </p>
      */
-    inline const Aws::String& GetPackageGroup() const{ return m_packageGroup; }
+    inline const Aws::String& GetPackageGroup() const { return m_packageGroup; }
     inline bool PackageGroupHasBeenSet() const { return m_packageGroupHasBeenSet; }
-    inline void SetPackageGroup(const Aws::String& value) { m_packageGroupHasBeenSet = true; m_packageGroup = value; }
-    inline void SetPackageGroup(Aws::String&& value) { m_packageGroupHasBeenSet = true; m_packageGroup = std::move(value); }
-    inline void SetPackageGroup(const char* value) { m_packageGroupHasBeenSet = true; m_packageGroup.assign(value); }
-    inline ListAssociatedPackagesRequest& WithPackageGroup(const Aws::String& value) { SetPackageGroup(value); return *this;}
-    inline ListAssociatedPackagesRequest& WithPackageGroup(Aws::String&& value) { SetPackageGroup(std::move(value)); return *this;}
-    inline ListAssociatedPackagesRequest& WithPackageGroup(const char* value) { SetPackageGroup(value); return *this;}
+    template<typename PackageGroupT = Aws::String>
+    void SetPackageGroup(PackageGroupT&& value) { m_packageGroupHasBeenSet = true; m_packageGroup = std::forward<PackageGroupT>(value); }
+    template<typename PackageGroupT = Aws::String>
+    ListAssociatedPackagesRequest& WithPackageGroup(PackageGroupT&& value) { SetPackageGroup(std::forward<PackageGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The maximum number of results to return per page. </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListAssociatedPackagesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -98,14 +92,12 @@ namespace Model
      * <p> The token for the next set of results. Use the value returned in the
      * previous response in the next request to retrieve the next set of results. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListAssociatedPackagesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAssociatedPackagesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAssociatedPackagesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAssociatedPackagesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,7 +106,7 @@ namespace Model
      * a list of packages that would be associated with a package group, even if it
      * does not exist. </p>
      */
-    inline bool GetPreview() const{ return m_preview; }
+    inline bool GetPreview() const { return m_preview; }
     inline bool PreviewHasBeenSet() const { return m_previewHasBeenSet; }
     inline void SetPreview(bool value) { m_previewHasBeenSet = true; m_preview = value; }
     inline ListAssociatedPackagesRequest& WithPreview(bool value) { SetPreview(value); return *this;}
@@ -130,13 +122,13 @@ namespace Model
     Aws::String m_packageGroup;
     bool m_packageGroupHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    bool m_preview;
+    bool m_preview{false};
     bool m_previewHasBeenSet = false;
   };
 

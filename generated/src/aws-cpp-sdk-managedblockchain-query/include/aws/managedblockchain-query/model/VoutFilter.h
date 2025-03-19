@@ -30,7 +30,7 @@ namespace Model
   class VoutFilter
   {
   public:
-    AWS_MANAGEDBLOCKCHAINQUERY_API VoutFilter();
+    AWS_MANAGEDBLOCKCHAINQUERY_API VoutFilter() = default;
     AWS_MANAGEDBLOCKCHAINQUERY_API VoutFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAINQUERY_API VoutFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAINQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
     /**
      * <p>Specifies if the transaction output is spent or unspent.</p>
      */
-    inline bool GetVoutSpent() const{ return m_voutSpent; }
+    inline bool GetVoutSpent() const { return m_voutSpent; }
     inline bool VoutSpentHasBeenSet() const { return m_voutSpentHasBeenSet; }
     inline void SetVoutSpent(bool value) { m_voutSpentHasBeenSet = true; m_voutSpent = value; }
     inline VoutFilter& WithVoutSpent(bool value) { SetVoutSpent(value); return *this;}
     ///@}
   private:
 
-    bool m_voutSpent;
+    bool m_voutSpent{false};
     bool m_voutSpentHasBeenSet = false;
   };
 

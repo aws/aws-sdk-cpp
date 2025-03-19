@@ -34,7 +34,7 @@ namespace Model
   class QuantumTaskQueueInfo
   {
   public:
-    AWS_BRAKET_API QuantumTaskQueueInfo();
+    AWS_BRAKET_API QuantumTaskQueueInfo() = default;
     AWS_BRAKET_API QuantumTaskQueueInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_BRAKET_API QuantumTaskQueueInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BRAKET_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,40 +46,34 @@ namespace Model
      * the task is complete and no longer in the queue, the message field contains that
      * information.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline QuantumTaskQueueInfo& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline QuantumTaskQueueInfo& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline QuantumTaskQueueInfo& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    QuantumTaskQueueInfo& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Current position of the task in the quantum tasks queue.</p>
      */
-    inline const Aws::String& GetPosition() const{ return m_position; }
+    inline const Aws::String& GetPosition() const { return m_position; }
     inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
-    inline void SetPosition(const Aws::String& value) { m_positionHasBeenSet = true; m_position = value; }
-    inline void SetPosition(Aws::String&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
-    inline void SetPosition(const char* value) { m_positionHasBeenSet = true; m_position.assign(value); }
-    inline QuantumTaskQueueInfo& WithPosition(const Aws::String& value) { SetPosition(value); return *this;}
-    inline QuantumTaskQueueInfo& WithPosition(Aws::String&& value) { SetPosition(std::move(value)); return *this;}
-    inline QuantumTaskQueueInfo& WithPosition(const char* value) { SetPosition(value); return *this;}
+    template<typename PositionT = Aws::String>
+    void SetPosition(PositionT&& value) { m_positionHasBeenSet = true; m_position = std::forward<PositionT>(value); }
+    template<typename PositionT = Aws::String>
+    QuantumTaskQueueInfo& WithPosition(PositionT&& value) { SetPosition(std::forward<PositionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the queue. </p>
      */
-    inline const QueueName& GetQueue() const{ return m_queue; }
+    inline QueueName GetQueue() const { return m_queue; }
     inline bool QueueHasBeenSet() const { return m_queueHasBeenSet; }
-    inline void SetQueue(const QueueName& value) { m_queueHasBeenSet = true; m_queue = value; }
-    inline void SetQueue(QueueName&& value) { m_queueHasBeenSet = true; m_queue = std::move(value); }
-    inline QuantumTaskQueueInfo& WithQueue(const QueueName& value) { SetQueue(value); return *this;}
-    inline QuantumTaskQueueInfo& WithQueue(QueueName&& value) { SetQueue(std::move(value)); return *this;}
+    inline void SetQueue(QueueName value) { m_queueHasBeenSet = true; m_queue = value; }
+    inline QuantumTaskQueueInfo& WithQueue(QueueName value) { SetQueue(value); return *this;}
     ///@}
 
     ///@{
@@ -87,12 +81,10 @@ namespace Model
      * <p>Optional. Specifies the priority of the queue. Quantum tasks in a priority
      * queue are processed before the tasks in a normal queue.</p>
      */
-    inline const QueuePriority& GetQueuePriority() const{ return m_queuePriority; }
+    inline QueuePriority GetQueuePriority() const { return m_queuePriority; }
     inline bool QueuePriorityHasBeenSet() const { return m_queuePriorityHasBeenSet; }
-    inline void SetQueuePriority(const QueuePriority& value) { m_queuePriorityHasBeenSet = true; m_queuePriority = value; }
-    inline void SetQueuePriority(QueuePriority&& value) { m_queuePriorityHasBeenSet = true; m_queuePriority = std::move(value); }
-    inline QuantumTaskQueueInfo& WithQueuePriority(const QueuePriority& value) { SetQueuePriority(value); return *this;}
-    inline QuantumTaskQueueInfo& WithQueuePriority(QueuePriority&& value) { SetQueuePriority(std::move(value)); return *this;}
+    inline void SetQueuePriority(QueuePriority value) { m_queuePriorityHasBeenSet = true; m_queuePriority = value; }
+    inline QuantumTaskQueueInfo& WithQueuePriority(QueuePriority value) { SetQueuePriority(value); return *this;}
     ///@}
   private:
 
@@ -102,10 +94,10 @@ namespace Model
     Aws::String m_position;
     bool m_positionHasBeenSet = false;
 
-    QueueName m_queue;
+    QueueName m_queue{QueueName::NOT_SET};
     bool m_queueHasBeenSet = false;
 
-    QueuePriority m_queuePriority;
+    QueuePriority m_queuePriority{QueuePriority::NOT_SET};
     bool m_queuePriorityHasBeenSet = false;
   };
 

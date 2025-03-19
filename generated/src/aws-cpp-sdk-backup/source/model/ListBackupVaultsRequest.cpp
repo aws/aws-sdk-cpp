@@ -15,17 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListBackupVaultsRequest::ListBackupVaultsRequest() : 
-    m_byVaultType(VaultType::NOT_SET),
-    m_byVaultTypeHasBeenSet(false),
-    m_byShared(false),
-    m_bySharedHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListBackupVaultsRequest::SerializePayload() const
 {
   return {};

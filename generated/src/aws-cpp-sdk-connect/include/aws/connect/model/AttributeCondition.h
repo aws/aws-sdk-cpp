@@ -34,7 +34,7 @@ namespace Model
   class AttributeCondition
   {
   public:
-    AWS_CONNECT_API AttributeCondition();
+    AWS_CONNECT_API AttributeCondition() = default;
     AWS_CONNECT_API AttributeCondition(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API AttributeCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,35 +44,31 @@ namespace Model
     /**
      * <p>The name of predefined attribute.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AttributeCondition& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AttributeCondition& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AttributeCondition& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    AttributeCondition& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of predefined attribute.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline AttributeCondition& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline AttributeCondition& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline AttributeCondition& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    AttributeCondition& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The proficiency level of the condition.</p>
      */
-    inline double GetProficiencyLevel() const{ return m_proficiencyLevel; }
+    inline double GetProficiencyLevel() const { return m_proficiencyLevel; }
     inline bool ProficiencyLevelHasBeenSet() const { return m_proficiencyLevelHasBeenSet; }
     inline void SetProficiencyLevel(double value) { m_proficiencyLevelHasBeenSet = true; m_proficiencyLevel = value; }
     inline AttributeCondition& WithProficiencyLevel(double value) { SetProficiencyLevel(value); return *this;}
@@ -82,38 +78,36 @@ namespace Model
     /**
      * <p>An Object to define the minimum and maximum proficiency levels.</p>
      */
-    inline const Range& GetRange() const{ return m_range; }
+    inline const Range& GetRange() const { return m_range; }
     inline bool RangeHasBeenSet() const { return m_rangeHasBeenSet; }
-    inline void SetRange(const Range& value) { m_rangeHasBeenSet = true; m_range = value; }
-    inline void SetRange(Range&& value) { m_rangeHasBeenSet = true; m_range = std::move(value); }
-    inline AttributeCondition& WithRange(const Range& value) { SetRange(value); return *this;}
-    inline AttributeCondition& WithRange(Range&& value) { SetRange(std::move(value)); return *this;}
+    template<typename RangeT = Range>
+    void SetRange(RangeT&& value) { m_rangeHasBeenSet = true; m_range = std::forward<RangeT>(value); }
+    template<typename RangeT = Range>
+    AttributeCondition& WithRange(RangeT&& value) { SetRange(std::forward<RangeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An object to define <code>AgentsCriteria</code>.</p>
      */
-    inline const MatchCriteria& GetMatchCriteria() const{ return m_matchCriteria; }
+    inline const MatchCriteria& GetMatchCriteria() const { return m_matchCriteria; }
     inline bool MatchCriteriaHasBeenSet() const { return m_matchCriteriaHasBeenSet; }
-    inline void SetMatchCriteria(const MatchCriteria& value) { m_matchCriteriaHasBeenSet = true; m_matchCriteria = value; }
-    inline void SetMatchCriteria(MatchCriteria&& value) { m_matchCriteriaHasBeenSet = true; m_matchCriteria = std::move(value); }
-    inline AttributeCondition& WithMatchCriteria(const MatchCriteria& value) { SetMatchCriteria(value); return *this;}
-    inline AttributeCondition& WithMatchCriteria(MatchCriteria&& value) { SetMatchCriteria(std::move(value)); return *this;}
+    template<typename MatchCriteriaT = MatchCriteria>
+    void SetMatchCriteria(MatchCriteriaT&& value) { m_matchCriteriaHasBeenSet = true; m_matchCriteria = std::forward<MatchCriteriaT>(value); }
+    template<typename MatchCriteriaT = MatchCriteria>
+    AttributeCondition& WithMatchCriteria(MatchCriteriaT&& value) { SetMatchCriteria(std::forward<MatchCriteriaT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The operator of the condition.</p>
      */
-    inline const Aws::String& GetComparisonOperator() const{ return m_comparisonOperator; }
+    inline const Aws::String& GetComparisonOperator() const { return m_comparisonOperator; }
     inline bool ComparisonOperatorHasBeenSet() const { return m_comparisonOperatorHasBeenSet; }
-    inline void SetComparisonOperator(const Aws::String& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
-    inline void SetComparisonOperator(Aws::String&& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = std::move(value); }
-    inline void SetComparisonOperator(const char* value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator.assign(value); }
-    inline AttributeCondition& WithComparisonOperator(const Aws::String& value) { SetComparisonOperator(value); return *this;}
-    inline AttributeCondition& WithComparisonOperator(Aws::String&& value) { SetComparisonOperator(std::move(value)); return *this;}
-    inline AttributeCondition& WithComparisonOperator(const char* value) { SetComparisonOperator(value); return *this;}
+    template<typename ComparisonOperatorT = Aws::String>
+    void SetComparisonOperator(ComparisonOperatorT&& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = std::forward<ComparisonOperatorT>(value); }
+    template<typename ComparisonOperatorT = Aws::String>
+    AttributeCondition& WithComparisonOperator(ComparisonOperatorT&& value) { SetComparisonOperator(std::forward<ComparisonOperatorT>(value)); return *this;}
     ///@}
   private:
 
@@ -123,7 +117,7 @@ namespace Model
     Aws::String m_value;
     bool m_valueHasBeenSet = false;
 
-    double m_proficiencyLevel;
+    double m_proficiencyLevel{0.0};
     bool m_proficiencyLevelHasBeenSet = false;
 
     Range m_range;

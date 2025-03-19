@@ -22,7 +22,7 @@ namespace Model
   class PutBackupPolicyRequest : public EFSRequest
   {
   public:
-    AWS_EFS_API PutBackupPolicyRequest();
+    AWS_EFS_API PutBackupPolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,26 +37,24 @@ namespace Model
     /**
      * <p>Specifies which EFS file system to update the backup policy for.</p>
      */
-    inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
+    inline const Aws::String& GetFileSystemId() const { return m_fileSystemId; }
     inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
-    inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
-    inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::move(value); }
-    inline void SetFileSystemId(const char* value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId.assign(value); }
-    inline PutBackupPolicyRequest& WithFileSystemId(const Aws::String& value) { SetFileSystemId(value); return *this;}
-    inline PutBackupPolicyRequest& WithFileSystemId(Aws::String&& value) { SetFileSystemId(std::move(value)); return *this;}
-    inline PutBackupPolicyRequest& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
+    template<typename FileSystemIdT = Aws::String>
+    void SetFileSystemId(FileSystemIdT&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::forward<FileSystemIdT>(value); }
+    template<typename FileSystemIdT = Aws::String>
+    PutBackupPolicyRequest& WithFileSystemId(FileSystemIdT&& value) { SetFileSystemId(std::forward<FileSystemIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The backup policy included in the <code>PutBackupPolicy</code> request.</p>
      */
-    inline const BackupPolicy& GetBackupPolicy() const{ return m_backupPolicy; }
+    inline const BackupPolicy& GetBackupPolicy() const { return m_backupPolicy; }
     inline bool BackupPolicyHasBeenSet() const { return m_backupPolicyHasBeenSet; }
-    inline void SetBackupPolicy(const BackupPolicy& value) { m_backupPolicyHasBeenSet = true; m_backupPolicy = value; }
-    inline void SetBackupPolicy(BackupPolicy&& value) { m_backupPolicyHasBeenSet = true; m_backupPolicy = std::move(value); }
-    inline PutBackupPolicyRequest& WithBackupPolicy(const BackupPolicy& value) { SetBackupPolicy(value); return *this;}
-    inline PutBackupPolicyRequest& WithBackupPolicy(BackupPolicy&& value) { SetBackupPolicy(std::move(value)); return *this;}
+    template<typename BackupPolicyT = BackupPolicy>
+    void SetBackupPolicy(BackupPolicyT&& value) { m_backupPolicyHasBeenSet = true; m_backupPolicy = std::forward<BackupPolicyT>(value); }
+    template<typename BackupPolicyT = BackupPolicy>
+    PutBackupPolicyRequest& WithBackupPolicy(BackupPolicyT&& value) { SetBackupPolicy(std::forward<BackupPolicyT>(value)); return *this;}
     ///@}
   private:
 

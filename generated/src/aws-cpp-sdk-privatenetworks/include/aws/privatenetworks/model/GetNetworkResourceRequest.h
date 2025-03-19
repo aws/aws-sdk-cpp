@@ -21,7 +21,7 @@ namespace Model
   class GetNetworkResourceRequest : public PrivateNetworksRequest
   {
   public:
-    AWS_PRIVATENETWORKS_API GetNetworkResourceRequest();
+    AWS_PRIVATENETWORKS_API GetNetworkResourceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the network resource.</p>
      */
-    inline const Aws::String& GetNetworkResourceArn() const{ return m_networkResourceArn; }
+    inline const Aws::String& GetNetworkResourceArn() const { return m_networkResourceArn; }
     inline bool NetworkResourceArnHasBeenSet() const { return m_networkResourceArnHasBeenSet; }
-    inline void SetNetworkResourceArn(const Aws::String& value) { m_networkResourceArnHasBeenSet = true; m_networkResourceArn = value; }
-    inline void SetNetworkResourceArn(Aws::String&& value) { m_networkResourceArnHasBeenSet = true; m_networkResourceArn = std::move(value); }
-    inline void SetNetworkResourceArn(const char* value) { m_networkResourceArnHasBeenSet = true; m_networkResourceArn.assign(value); }
-    inline GetNetworkResourceRequest& WithNetworkResourceArn(const Aws::String& value) { SetNetworkResourceArn(value); return *this;}
-    inline GetNetworkResourceRequest& WithNetworkResourceArn(Aws::String&& value) { SetNetworkResourceArn(std::move(value)); return *this;}
-    inline GetNetworkResourceRequest& WithNetworkResourceArn(const char* value) { SetNetworkResourceArn(value); return *this;}
+    template<typename NetworkResourceArnT = Aws::String>
+    void SetNetworkResourceArn(NetworkResourceArnT&& value) { m_networkResourceArnHasBeenSet = true; m_networkResourceArn = std::forward<NetworkResourceArnT>(value); }
+    template<typename NetworkResourceArnT = Aws::String>
+    GetNetworkResourceRequest& WithNetworkResourceArn(NetworkResourceArnT&& value) { SetNetworkResourceArn(std::forward<NetworkResourceArnT>(value)); return *this;}
     ///@}
   private:
 

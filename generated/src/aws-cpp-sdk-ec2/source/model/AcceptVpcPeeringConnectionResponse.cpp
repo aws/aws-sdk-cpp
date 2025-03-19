@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AcceptVpcPeeringConnectionResponse::AcceptVpcPeeringConnectionResponse()
-{
-}
-
 AcceptVpcPeeringConnectionResponse::AcceptVpcPeeringConnectionResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ AcceptVpcPeeringConnectionResponse& AcceptVpcPeeringConnectionResponse::operator
     if(!vpcPeeringConnectionNode.IsNull())
     {
       m_vpcPeeringConnection = vpcPeeringConnectionNode;
+      m_vpcPeeringConnectionHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ AcceptVpcPeeringConnectionResponse& AcceptVpcPeeringConnectionResponse::operator
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::AcceptVpcPeeringConnectionResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

@@ -18,15 +18,7 @@ namespace VoiceID
 namespace Model
 {
 
-EnrollmentConfig::EnrollmentConfig() : 
-    m_existingEnrollmentAction(ExistingEnrollmentAction::NOT_SET),
-    m_existingEnrollmentActionHasBeenSet(false),
-    m_fraudDetectionConfigHasBeenSet(false)
-{
-}
-
 EnrollmentConfig::EnrollmentConfig(JsonView jsonValue)
-  : EnrollmentConfig()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ EnrollmentConfig& EnrollmentConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ExistingEnrollmentAction"))
   {
     m_existingEnrollmentAction = ExistingEnrollmentActionMapper::GetExistingEnrollmentActionForName(jsonValue.GetString("ExistingEnrollmentAction"));
-
     m_existingEnrollmentActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FraudDetectionConfig"))
   {
     m_fraudDetectionConfig = jsonValue.GetObject("FraudDetectionConfig");
-
     m_fraudDetectionConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

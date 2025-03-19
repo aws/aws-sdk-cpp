@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetQAppSessionMetadataRequest::GetQAppSessionMetadataRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_sessionIdHasBeenSet(false)
-{
-}
-
 Aws::String GetQAppSessionMetadataRequest::SerializePayload() const
 {
   return {};

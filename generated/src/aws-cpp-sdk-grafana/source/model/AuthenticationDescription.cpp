@@ -18,15 +18,7 @@ namespace ManagedGrafana
 namespace Model
 {
 
-AuthenticationDescription::AuthenticationDescription() : 
-    m_awsSsoHasBeenSet(false),
-    m_providersHasBeenSet(false),
-    m_samlHasBeenSet(false)
-{
-}
-
 AuthenticationDescription::AuthenticationDescription(JsonView jsonValue)
-  : AuthenticationDescription()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ AuthenticationDescription& AuthenticationDescription::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("awsSso"))
   {
     m_awsSso = jsonValue.GetObject("awsSso");
-
     m_awsSsoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("providers"))
   {
     Aws::Utils::Array<JsonView> providersJsonList = jsonValue.GetArray("providers");
@@ -49,14 +39,11 @@ AuthenticationDescription& AuthenticationDescription::operator =(JsonView jsonVa
     }
     m_providersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("saml"))
   {
     m_saml = jsonValue.GetObject("saml");
-
     m_samlHasBeenSet = true;
   }
-
   return *this;
 }
 

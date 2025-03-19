@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAppMonitorResult::GetAppMonitorResult()
-{
-}
-
 GetAppMonitorResult::GetAppMonitorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetAppMonitorResult& GetAppMonitorResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("AppMonitor"))
   {
     m_appMonitor = jsonValue.GetObject("AppMonitor");
-
+    m_appMonitorHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

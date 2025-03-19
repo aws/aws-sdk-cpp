@@ -29,7 +29,7 @@ namespace Model
   class ListImportsResult
   {
   public:
-    AWS_CLOUDFORMATION_API ListImportsResult();
+    AWS_CLOUDFORMATION_API ListImportsResult() = default;
     AWS_CLOUDFORMATION_API ListImportsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDFORMATION_API ListImportsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,14 +39,13 @@ namespace Model
      * <p>A list of stack names that are importing the specified exported output
      * value.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetImports() const{ return m_imports; }
-    inline void SetImports(const Aws::Vector<Aws::String>& value) { m_imports = value; }
-    inline void SetImports(Aws::Vector<Aws::String>&& value) { m_imports = std::move(value); }
-    inline ListImportsResult& WithImports(const Aws::Vector<Aws::String>& value) { SetImports(value); return *this;}
-    inline ListImportsResult& WithImports(Aws::Vector<Aws::String>&& value) { SetImports(std::move(value)); return *this;}
-    inline ListImportsResult& AddImports(const Aws::String& value) { m_imports.push_back(value); return *this; }
-    inline ListImportsResult& AddImports(Aws::String&& value) { m_imports.push_back(std::move(value)); return *this; }
-    inline ListImportsResult& AddImports(const char* value) { m_imports.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetImports() const { return m_imports; }
+    template<typename ImportsT = Aws::Vector<Aws::String>>
+    void SetImports(ImportsT&& value) { m_importsHasBeenSet = true; m_imports = std::forward<ImportsT>(value); }
+    template<typename ImportsT = Aws::Vector<Aws::String>>
+    ListImportsResult& WithImports(ImportsT&& value) { SetImports(std::forward<ImportsT>(value)); return *this;}
+    template<typename ImportsT = Aws::String>
+    ListImportsResult& AddImports(ImportsT&& value) { m_importsHasBeenSet = true; m_imports.emplace_back(std::forward<ImportsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,30 +53,31 @@ namespace Model
      * <p>A string that identifies the next page of exports. If there is no additional
      * page, this value is null.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListImportsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListImportsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListImportsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListImportsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ListImportsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ListImportsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ListImportsResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_imports;
+    bool m_importsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

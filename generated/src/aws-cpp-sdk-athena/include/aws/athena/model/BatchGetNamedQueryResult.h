@@ -30,7 +30,7 @@ namespace Model
   class BatchGetNamedQueryResult
   {
   public:
-    AWS_ATHENA_API BatchGetNamedQueryResult();
+    AWS_ATHENA_API BatchGetNamedQueryResult() = default;
     AWS_ATHENA_API BatchGetNamedQueryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ATHENA_API BatchGetNamedQueryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,46 @@ namespace Model
     /**
      * <p>Information about the named query IDs submitted.</p>
      */
-    inline const Aws::Vector<NamedQuery>& GetNamedQueries() const{ return m_namedQueries; }
-    inline void SetNamedQueries(const Aws::Vector<NamedQuery>& value) { m_namedQueries = value; }
-    inline void SetNamedQueries(Aws::Vector<NamedQuery>&& value) { m_namedQueries = std::move(value); }
-    inline BatchGetNamedQueryResult& WithNamedQueries(const Aws::Vector<NamedQuery>& value) { SetNamedQueries(value); return *this;}
-    inline BatchGetNamedQueryResult& WithNamedQueries(Aws::Vector<NamedQuery>&& value) { SetNamedQueries(std::move(value)); return *this;}
-    inline BatchGetNamedQueryResult& AddNamedQueries(const NamedQuery& value) { m_namedQueries.push_back(value); return *this; }
-    inline BatchGetNamedQueryResult& AddNamedQueries(NamedQuery&& value) { m_namedQueries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<NamedQuery>& GetNamedQueries() const { return m_namedQueries; }
+    template<typename NamedQueriesT = Aws::Vector<NamedQuery>>
+    void SetNamedQueries(NamedQueriesT&& value) { m_namedQueriesHasBeenSet = true; m_namedQueries = std::forward<NamedQueriesT>(value); }
+    template<typename NamedQueriesT = Aws::Vector<NamedQuery>>
+    BatchGetNamedQueryResult& WithNamedQueries(NamedQueriesT&& value) { SetNamedQueries(std::forward<NamedQueriesT>(value)); return *this;}
+    template<typename NamedQueriesT = NamedQuery>
+    BatchGetNamedQueryResult& AddNamedQueries(NamedQueriesT&& value) { m_namedQueriesHasBeenSet = true; m_namedQueries.emplace_back(std::forward<NamedQueriesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Information about provided query IDs.</p>
      */
-    inline const Aws::Vector<UnprocessedNamedQueryId>& GetUnprocessedNamedQueryIds() const{ return m_unprocessedNamedQueryIds; }
-    inline void SetUnprocessedNamedQueryIds(const Aws::Vector<UnprocessedNamedQueryId>& value) { m_unprocessedNamedQueryIds = value; }
-    inline void SetUnprocessedNamedQueryIds(Aws::Vector<UnprocessedNamedQueryId>&& value) { m_unprocessedNamedQueryIds = std::move(value); }
-    inline BatchGetNamedQueryResult& WithUnprocessedNamedQueryIds(const Aws::Vector<UnprocessedNamedQueryId>& value) { SetUnprocessedNamedQueryIds(value); return *this;}
-    inline BatchGetNamedQueryResult& WithUnprocessedNamedQueryIds(Aws::Vector<UnprocessedNamedQueryId>&& value) { SetUnprocessedNamedQueryIds(std::move(value)); return *this;}
-    inline BatchGetNamedQueryResult& AddUnprocessedNamedQueryIds(const UnprocessedNamedQueryId& value) { m_unprocessedNamedQueryIds.push_back(value); return *this; }
-    inline BatchGetNamedQueryResult& AddUnprocessedNamedQueryIds(UnprocessedNamedQueryId&& value) { m_unprocessedNamedQueryIds.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<UnprocessedNamedQueryId>& GetUnprocessedNamedQueryIds() const { return m_unprocessedNamedQueryIds; }
+    template<typename UnprocessedNamedQueryIdsT = Aws::Vector<UnprocessedNamedQueryId>>
+    void SetUnprocessedNamedQueryIds(UnprocessedNamedQueryIdsT&& value) { m_unprocessedNamedQueryIdsHasBeenSet = true; m_unprocessedNamedQueryIds = std::forward<UnprocessedNamedQueryIdsT>(value); }
+    template<typename UnprocessedNamedQueryIdsT = Aws::Vector<UnprocessedNamedQueryId>>
+    BatchGetNamedQueryResult& WithUnprocessedNamedQueryIds(UnprocessedNamedQueryIdsT&& value) { SetUnprocessedNamedQueryIds(std::forward<UnprocessedNamedQueryIdsT>(value)); return *this;}
+    template<typename UnprocessedNamedQueryIdsT = UnprocessedNamedQueryId>
+    BatchGetNamedQueryResult& AddUnprocessedNamedQueryIds(UnprocessedNamedQueryIdsT&& value) { m_unprocessedNamedQueryIdsHasBeenSet = true; m_unprocessedNamedQueryIds.emplace_back(std::forward<UnprocessedNamedQueryIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchGetNamedQueryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchGetNamedQueryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchGetNamedQueryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchGetNamedQueryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<NamedQuery> m_namedQueries;
+    bool m_namedQueriesHasBeenSet = false;
 
     Aws::Vector<UnprocessedNamedQueryId> m_unprocessedNamedQueryIds;
+    bool m_unprocessedNamedQueryIdsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

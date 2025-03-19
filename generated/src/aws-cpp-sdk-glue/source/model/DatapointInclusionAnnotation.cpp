@@ -18,16 +18,7 @@ namespace Glue
 namespace Model
 {
 
-DatapointInclusionAnnotation::DatapointInclusionAnnotation() : 
-    m_profileIdHasBeenSet(false),
-    m_statisticIdHasBeenSet(false),
-    m_inclusionAnnotation(InclusionAnnotationValue::NOT_SET),
-    m_inclusionAnnotationHasBeenSet(false)
-{
-}
-
 DatapointInclusionAnnotation::DatapointInclusionAnnotation(JsonView jsonValue)
-  : DatapointInclusionAnnotation()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ DatapointInclusionAnnotation& DatapointInclusionAnnotation::operator =(JsonView 
   if(jsonValue.ValueExists("ProfileId"))
   {
     m_profileId = jsonValue.GetString("ProfileId");
-
     m_profileIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatisticId"))
   {
     m_statisticId = jsonValue.GetString("StatisticId");
-
     m_statisticIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InclusionAnnotation"))
   {
     m_inclusionAnnotation = InclusionAnnotationValueMapper::GetInclusionAnnotationValueForName(jsonValue.GetString("InclusionAnnotation"));
-
     m_inclusionAnnotationHasBeenSet = true;
   }
-
   return *this;
 }
 

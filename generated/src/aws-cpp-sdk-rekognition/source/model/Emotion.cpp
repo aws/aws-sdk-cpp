@@ -18,16 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-Emotion::Emotion() : 
-    m_type(EmotionName::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false)
-{
-}
-
 Emotion::Emotion(JsonView jsonValue)
-  : Emotion()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ Emotion& Emotion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = EmotionNameMapper::GetEmotionNameForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Confidence"))
   {
     m_confidence = jsonValue.GetDouble("Confidence");
-
     m_confidenceHasBeenSet = true;
   }
-
   return *this;
 }
 

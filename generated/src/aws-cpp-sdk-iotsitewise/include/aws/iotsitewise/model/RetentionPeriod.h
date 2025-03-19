@@ -30,7 +30,7 @@ namespace Model
   class RetentionPeriod
   {
   public:
-    AWS_IOTSITEWISE_API RetentionPeriod();
+    AWS_IOTSITEWISE_API RetentionPeriod() = default;
     AWS_IOTSITEWISE_API RetentionPeriod(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API RetentionPeriod& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
      * value for this parameter, the <code>unlimited</code> parameter must be
      * <code>false</code>.</p> 
      */
-    inline int GetNumberOfDays() const{ return m_numberOfDays; }
+    inline int GetNumberOfDays() const { return m_numberOfDays; }
     inline bool NumberOfDaysHasBeenSet() const { return m_numberOfDaysHasBeenSet; }
     inline void SetNumberOfDays(int value) { m_numberOfDaysHasBeenSet = true; m_numberOfDays = value; }
     inline RetentionPeriod& WithNumberOfDays(int value) { SetNumberOfDays(value); return *this;}
@@ -54,17 +54,17 @@ namespace Model
      * <code>true</code>, you must not specify a value for the
      * <code>numberOfDays</code> parameter.</p> 
      */
-    inline bool GetUnlimited() const{ return m_unlimited; }
+    inline bool GetUnlimited() const { return m_unlimited; }
     inline bool UnlimitedHasBeenSet() const { return m_unlimitedHasBeenSet; }
     inline void SetUnlimited(bool value) { m_unlimitedHasBeenSet = true; m_unlimited = value; }
     inline RetentionPeriod& WithUnlimited(bool value) { SetUnlimited(value); return *this;}
     ///@}
   private:
 
-    int m_numberOfDays;
+    int m_numberOfDays{0};
     bool m_numberOfDaysHasBeenSet = false;
 
-    bool m_unlimited;
+    bool m_unlimited{false};
     bool m_unlimitedHasBeenSet = false;
   };
 

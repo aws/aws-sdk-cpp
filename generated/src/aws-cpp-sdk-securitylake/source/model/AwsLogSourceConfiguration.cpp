@@ -18,17 +18,7 @@ namespace SecurityLake
 namespace Model
 {
 
-AwsLogSourceConfiguration::AwsLogSourceConfiguration() : 
-    m_accountsHasBeenSet(false),
-    m_regionsHasBeenSet(false),
-    m_sourceName(AwsLogSourceName::NOT_SET),
-    m_sourceNameHasBeenSet(false),
-    m_sourceVersionHasBeenSet(false)
-{
-}
-
 AwsLogSourceConfiguration::AwsLogSourceConfiguration(JsonView jsonValue)
-  : AwsLogSourceConfiguration()
 {
   *this = jsonValue;
 }
@@ -44,7 +34,6 @@ AwsLogSourceConfiguration& AwsLogSourceConfiguration::operator =(JsonView jsonVa
     }
     m_accountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("regions"))
   {
     Aws::Utils::Array<JsonView> regionsJsonList = jsonValue.GetArray("regions");
@@ -54,21 +43,16 @@ AwsLogSourceConfiguration& AwsLogSourceConfiguration::operator =(JsonView jsonVa
     }
     m_regionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceName"))
   {
     m_sourceName = AwsLogSourceNameMapper::GetAwsLogSourceNameForName(jsonValue.GetString("sourceName"));
-
     m_sourceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceVersion"))
   {
     m_sourceVersion = jsonValue.GetString("sourceVersion");
-
     m_sourceVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

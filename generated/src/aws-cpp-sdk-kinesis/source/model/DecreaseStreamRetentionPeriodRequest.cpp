@@ -12,14 +12,6 @@ using namespace Aws::Kinesis::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DecreaseStreamRetentionPeriodRequest::DecreaseStreamRetentionPeriodRequest() : 
-    m_streamNameHasBeenSet(false),
-    m_retentionPeriodHours(0),
-    m_retentionPeriodHoursHasBeenSet(false),
-    m_streamARNHasBeenSet(false)
-{
-}
-
 Aws::String DecreaseStreamRetentionPeriodRequest::SerializePayload() const
 {
   JsonValue payload;

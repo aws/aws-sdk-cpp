@@ -18,14 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-ConnectionProperties::ConnectionProperties() : 
-    m_endpointHasBeenSet(false),
-    m_crossClusterSearchHasBeenSet(false)
-{
-}
-
 ConnectionProperties::ConnectionProperties(JsonView jsonValue)
-  : ConnectionProperties()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ConnectionProperties& ConnectionProperties::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Endpoint"))
   {
     m_endpoint = jsonValue.GetString("Endpoint");
-
     m_endpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CrossClusterSearch"))
   {
     m_crossClusterSearch = jsonValue.GetObject("CrossClusterSearch");
-
     m_crossClusterSearchHasBeenSet = true;
   }
-
   return *this;
 }
 

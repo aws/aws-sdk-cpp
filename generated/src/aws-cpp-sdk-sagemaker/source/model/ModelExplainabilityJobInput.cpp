@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ModelExplainabilityJobInput::ModelExplainabilityJobInput() : 
-    m_endpointInputHasBeenSet(false),
-    m_batchTransformInputHasBeenSet(false)
-{
-}
-
 ModelExplainabilityJobInput::ModelExplainabilityJobInput(JsonView jsonValue)
-  : ModelExplainabilityJobInput()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ModelExplainabilityJobInput& ModelExplainabilityJobInput::operator =(JsonView js
   if(jsonValue.ValueExists("EndpointInput"))
   {
     m_endpointInput = jsonValue.GetObject("EndpointInput");
-
     m_endpointInputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BatchTransformInput"))
   {
     m_batchTransformInput = jsonValue.GetObject("BatchTransformInput");
-
     m_batchTransformInputHasBeenSet = true;
   }
-
   return *this;
 }
 

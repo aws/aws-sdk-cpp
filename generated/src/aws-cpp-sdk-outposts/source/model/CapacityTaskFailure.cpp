@@ -18,15 +18,7 @@ namespace Outposts
 namespace Model
 {
 
-CapacityTaskFailure::CapacityTaskFailure() : 
-    m_reasonHasBeenSet(false),
-    m_type(CapacityTaskFailureType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 CapacityTaskFailure::CapacityTaskFailure(JsonView jsonValue)
-  : CapacityTaskFailure()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ CapacityTaskFailure& CapacityTaskFailure::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Reason"))
   {
     m_reason = jsonValue.GetString("Reason");
-
     m_reasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = CapacityTaskFailureTypeMapper::GetCapacityTaskFailureTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace EMRServerless
 namespace Model
 {
 
-RetryPolicy::RetryPolicy() : 
-    m_maxAttempts(0),
-    m_maxAttemptsHasBeenSet(false),
-    m_maxFailedAttemptsPerHour(0),
-    m_maxFailedAttemptsPerHourHasBeenSet(false)
-{
-}
-
 RetryPolicy::RetryPolicy(JsonView jsonValue)
-  : RetryPolicy()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ RetryPolicy& RetryPolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("maxAttempts"))
   {
     m_maxAttempts = jsonValue.GetInteger("maxAttempts");
-
     m_maxAttemptsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxFailedAttemptsPerHour"))
   {
     m_maxFailedAttemptsPerHour = jsonValue.GetInteger("maxFailedAttemptsPerHour");
-
     m_maxFailedAttemptsPerHourHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,20 +18,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-GuardrailContextualGroundingFilter::GuardrailContextualGroundingFilter() : 
-    m_type(GuardrailContextualGroundingFilterType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_threshold(0.0),
-    m_thresholdHasBeenSet(false),
-    m_score(0.0),
-    m_scoreHasBeenSet(false),
-    m_action(GuardrailContextualGroundingPolicyAction::NOT_SET),
-    m_actionHasBeenSet(false)
-{
-}
-
 GuardrailContextualGroundingFilter::GuardrailContextualGroundingFilter(JsonView jsonValue)
-  : GuardrailContextualGroundingFilter()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ GuardrailContextualGroundingFilter& GuardrailContextualGroundingFilter::operator
   if(jsonValue.ValueExists("type"))
   {
     m_type = GuardrailContextualGroundingFilterTypeMapper::GetGuardrailContextualGroundingFilterTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("threshold"))
   {
     m_threshold = jsonValue.GetDouble("threshold");
-
     m_thresholdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("score"))
   {
     m_score = jsonValue.GetDouble("score");
-
     m_scoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("action"))
   {
     m_action = GuardrailContextualGroundingPolicyActionMapper::GetGuardrailContextualGroundingPolicyActionForName(jsonValue.GetString("action"));
-
     m_actionHasBeenSet = true;
   }
-
   return *this;
 }
 

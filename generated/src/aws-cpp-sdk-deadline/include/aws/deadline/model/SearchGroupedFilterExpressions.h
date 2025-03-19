@@ -37,7 +37,7 @@ namespace Model
   class SearchGroupedFilterExpressions
   {
   public:
-    AWS_DEADLINE_API SearchGroupedFilterExpressions();
+    AWS_DEADLINE_API SearchGroupedFilterExpressions() = default;
     AWS_DEADLINE_API SearchGroupedFilterExpressions(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API SearchGroupedFilterExpressions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,33 +47,31 @@ namespace Model
     /**
      * <p>The filters to use for the search.</p>
      */
-    inline const Aws::Vector<SearchFilterExpression>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<SearchFilterExpression>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<SearchFilterExpression>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<SearchFilterExpression>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline SearchGroupedFilterExpressions& WithFilters(const Aws::Vector<SearchFilterExpression>& value) { SetFilters(value); return *this;}
-    inline SearchGroupedFilterExpressions& WithFilters(Aws::Vector<SearchFilterExpression>&& value) { SetFilters(std::move(value)); return *this;}
-    inline SearchGroupedFilterExpressions& AddFilters(const SearchFilterExpression& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline SearchGroupedFilterExpressions& AddFilters(SearchFilterExpression&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<SearchFilterExpression>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<SearchFilterExpression>>
+    SearchGroupedFilterExpressions& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = SearchFilterExpression>
+    SearchGroupedFilterExpressions& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The operators to include in the search.</p>
      */
-    inline const LogicalOperator& GetOperator() const{ return m_operator; }
+    inline LogicalOperator GetOperator() const { return m_operator; }
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-    inline void SetOperator(const LogicalOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-    inline void SetOperator(LogicalOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-    inline SearchGroupedFilterExpressions& WithOperator(const LogicalOperator& value) { SetOperator(value); return *this;}
-    inline SearchGroupedFilterExpressions& WithOperator(LogicalOperator&& value) { SetOperator(std::move(value)); return *this;}
+    inline void SetOperator(LogicalOperator value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline SearchGroupedFilterExpressions& WithOperator(LogicalOperator value) { SetOperator(value); return *this;}
     ///@}
   private:
 
     Aws::Vector<SearchFilterExpression> m_filters;
     bool m_filtersHasBeenSet = false;
 
-    LogicalOperator m_operator;
+    LogicalOperator m_operator{LogicalOperator::NOT_SET};
     bool m_operatorHasBeenSet = false;
   };
 

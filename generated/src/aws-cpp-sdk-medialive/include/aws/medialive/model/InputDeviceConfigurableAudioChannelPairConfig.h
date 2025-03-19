@@ -32,7 +32,7 @@ namespace Model
   class InputDeviceConfigurableAudioChannelPairConfig
   {
   public:
-    AWS_MEDIALIVE_API InputDeviceConfigurableAudioChannelPairConfig();
+    AWS_MEDIALIVE_API InputDeviceConfigurableAudioChannelPairConfig() = default;
     AWS_MEDIALIVE_API InputDeviceConfigurableAudioChannelPairConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API InputDeviceConfigurableAudioChannelPairConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * The ID for one audio pair configuration, a value from 1 to 8.
      */
-    inline int GetId() const{ return m_id; }
+    inline int GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
     inline void SetId(int value) { m_idHasBeenSet = true; m_id = value; }
     inline InputDeviceConfigurableAudioChannelPairConfig& WithId(int value) { SetId(value); return *this;}
@@ -56,19 +56,17 @@ namespace Model
      * CBR-AAC_HQ-192000. Or choose DISABLED, in which case the device won't produce
      * audio for this pair.
      */
-    inline const InputDeviceConfigurableAudioChannelPairProfile& GetProfile() const{ return m_profile; }
+    inline InputDeviceConfigurableAudioChannelPairProfile GetProfile() const { return m_profile; }
     inline bool ProfileHasBeenSet() const { return m_profileHasBeenSet; }
-    inline void SetProfile(const InputDeviceConfigurableAudioChannelPairProfile& value) { m_profileHasBeenSet = true; m_profile = value; }
-    inline void SetProfile(InputDeviceConfigurableAudioChannelPairProfile&& value) { m_profileHasBeenSet = true; m_profile = std::move(value); }
-    inline InputDeviceConfigurableAudioChannelPairConfig& WithProfile(const InputDeviceConfigurableAudioChannelPairProfile& value) { SetProfile(value); return *this;}
-    inline InputDeviceConfigurableAudioChannelPairConfig& WithProfile(InputDeviceConfigurableAudioChannelPairProfile&& value) { SetProfile(std::move(value)); return *this;}
+    inline void SetProfile(InputDeviceConfigurableAudioChannelPairProfile value) { m_profileHasBeenSet = true; m_profile = value; }
+    inline InputDeviceConfigurableAudioChannelPairConfig& WithProfile(InputDeviceConfigurableAudioChannelPairProfile value) { SetProfile(value); return *this;}
     ///@}
   private:
 
-    int m_id;
+    int m_id{0};
     bool m_idHasBeenSet = false;
 
-    InputDeviceConfigurableAudioChannelPairProfile m_profile;
+    InputDeviceConfigurableAudioChannelPairProfile m_profile{InputDeviceConfigurableAudioChannelPairProfile::NOT_SET};
     bool m_profileHasBeenSet = false;
   };
 

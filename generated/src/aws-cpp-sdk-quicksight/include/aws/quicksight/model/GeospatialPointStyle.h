@@ -31,7 +31,7 @@ namespace Model
   class GeospatialPointStyle
   {
   public:
-    AWS_QUICKSIGHT_API GeospatialPointStyle();
+    AWS_QUICKSIGHT_API GeospatialPointStyle() = default;
     AWS_QUICKSIGHT_API GeospatialPointStyle(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API GeospatialPointStyle& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The circle symbol style for a point layer.</p>
      */
-    inline const GeospatialCircleSymbolStyle& GetCircleSymbolStyle() const{ return m_circleSymbolStyle; }
+    inline const GeospatialCircleSymbolStyle& GetCircleSymbolStyle() const { return m_circleSymbolStyle; }
     inline bool CircleSymbolStyleHasBeenSet() const { return m_circleSymbolStyleHasBeenSet; }
-    inline void SetCircleSymbolStyle(const GeospatialCircleSymbolStyle& value) { m_circleSymbolStyleHasBeenSet = true; m_circleSymbolStyle = value; }
-    inline void SetCircleSymbolStyle(GeospatialCircleSymbolStyle&& value) { m_circleSymbolStyleHasBeenSet = true; m_circleSymbolStyle = std::move(value); }
-    inline GeospatialPointStyle& WithCircleSymbolStyle(const GeospatialCircleSymbolStyle& value) { SetCircleSymbolStyle(value); return *this;}
-    inline GeospatialPointStyle& WithCircleSymbolStyle(GeospatialCircleSymbolStyle&& value) { SetCircleSymbolStyle(std::move(value)); return *this;}
+    template<typename CircleSymbolStyleT = GeospatialCircleSymbolStyle>
+    void SetCircleSymbolStyle(CircleSymbolStyleT&& value) { m_circleSymbolStyleHasBeenSet = true; m_circleSymbolStyle = std::forward<CircleSymbolStyleT>(value); }
+    template<typename CircleSymbolStyleT = GeospatialCircleSymbolStyle>
+    GeospatialPointStyle& WithCircleSymbolStyle(CircleSymbolStyleT&& value) { SetCircleSymbolStyle(std::forward<CircleSymbolStyleT>(value)); return *this;}
     ///@}
   private:
 

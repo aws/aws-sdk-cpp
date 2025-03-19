@@ -17,14 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListJobsRequest::ListJobsRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_jobStatusesHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
 
 Aws::String ListJobsRequest::SerializePayload() const
 {

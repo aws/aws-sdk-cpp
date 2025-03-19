@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteMlflowTrackingServerRequest::DeleteMlflowTrackingServerRequest() : 
-    m_trackingServerNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteMlflowTrackingServerRequest::SerializePayload() const
 {
   JsonValue payload;

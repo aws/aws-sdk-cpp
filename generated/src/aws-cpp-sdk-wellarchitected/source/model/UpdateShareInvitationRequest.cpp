@@ -12,13 +12,6 @@ using namespace Aws::WellArchitected::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateShareInvitationRequest::UpdateShareInvitationRequest() : 
-    m_shareInvitationIdHasBeenSet(false),
-    m_shareInvitationAction(ShareInvitationAction::NOT_SET),
-    m_shareInvitationActionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateShareInvitationRequest::SerializePayload() const
 {
   JsonValue payload;

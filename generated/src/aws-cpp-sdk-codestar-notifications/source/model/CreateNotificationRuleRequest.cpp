@@ -12,21 +12,6 @@ using namespace Aws::CodeStarNotifications::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateNotificationRuleRequest::CreateNotificationRuleRequest() : 
-    m_nameHasBeenSet(false),
-    m_eventTypeIdsHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_targetsHasBeenSet(false),
-    m_detailType(DetailType::NOT_SET),
-    m_detailTypeHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false),
-    m_status(NotificationRuleStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 Aws::String CreateNotificationRuleRequest::SerializePayload() const
 {
   JsonValue payload;

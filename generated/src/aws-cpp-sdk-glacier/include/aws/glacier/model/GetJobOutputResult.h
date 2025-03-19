@@ -28,10 +28,9 @@ namespace Model
   class GetJobOutputResult
   {
   public:
-    AWS_GLACIER_API GetJobOutputResult();
-    //We have to define these because Microsoft doesn't auto generate them
-    AWS_GLACIER_API GetJobOutputResult(GetJobOutputResult&&);
-    AWS_GLACIER_API GetJobOutputResult& operator=(GetJobOutputResult&&);
+    AWS_GLACIER_API GetJobOutputResult() = default;
+    AWS_GLACIER_API GetJobOutputResult(GetJobOutputResult&&) = default;
+    AWS_GLACIER_API GetJobOutputResult& operator=(GetJobOutputResult&&) = default;
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     GetJobOutputResult(const GetJobOutputResult&) = delete;
@@ -67,13 +66,11 @@ namespace Model
      * (the end of the archive), then the x-amz-sha256-tree-hash is returned as a
      * response header.</p> </li> </ul>
      */
-    inline const Aws::String& GetChecksum() const{ return m_checksum; }
-    inline void SetChecksum(const Aws::String& value) { m_checksum = value; }
-    inline void SetChecksum(Aws::String&& value) { m_checksum = std::move(value); }
-    inline void SetChecksum(const char* value) { m_checksum.assign(value); }
-    inline GetJobOutputResult& WithChecksum(const Aws::String& value) { SetChecksum(value); return *this;}
-    inline GetJobOutputResult& WithChecksum(Aws::String&& value) { SetChecksum(std::move(value)); return *this;}
-    inline GetJobOutputResult& WithChecksum(const char* value) { SetChecksum(value); return *this;}
+    inline const Aws::String& GetChecksum() const { return m_checksum; }
+    template<typename ChecksumT = Aws::String>
+    void SetChecksum(ChecksumT&& value) { m_checksumHasBeenSet = true; m_checksum = std::forward<ChecksumT>(value); }
+    template<typename ChecksumT = Aws::String>
+    GetJobOutputResult& WithChecksum(ChecksumT&& value) { SetChecksum(std::forward<ChecksumT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,8 +78,8 @@ namespace Model
      * <p>The HTTP response code for a job output request. The value depends on whether
      * a range was specified in the request.</p>
      */
-    inline int GetStatus() const{ return m_status; }
-    inline void SetStatus(int value) { m_status = value; }
+    inline int GetStatus() const { return m_status; }
+    inline void SetStatus(int value) { m_statusHasBeenSet = true; m_status = value; }
     inline GetJobOutputResult& WithStatus(int value) { SetStatus(value); return *this;}
     ///@}
 
@@ -92,13 +89,11 @@ namespace Model
      * downloaded, the response provides the range of bytes Amazon S3 Glacier returned.
      * For example, bytes 0-1048575/8388608 returns the first 1 MB from 8 MB.</p>
      */
-    inline const Aws::String& GetContentRange() const{ return m_contentRange; }
-    inline void SetContentRange(const Aws::String& value) { m_contentRange = value; }
-    inline void SetContentRange(Aws::String&& value) { m_contentRange = std::move(value); }
-    inline void SetContentRange(const char* value) { m_contentRange.assign(value); }
-    inline GetJobOutputResult& WithContentRange(const Aws::String& value) { SetContentRange(value); return *this;}
-    inline GetJobOutputResult& WithContentRange(Aws::String&& value) { SetContentRange(std::move(value)); return *this;}
-    inline GetJobOutputResult& WithContentRange(const char* value) { SetContentRange(value); return *this;}
+    inline const Aws::String& GetContentRange() const { return m_contentRange; }
+    template<typename ContentRangeT = Aws::String>
+    void SetContentRange(ContentRangeT&& value) { m_contentRangeHasBeenSet = true; m_contentRange = std::forward<ContentRangeT>(value); }
+    template<typename ContentRangeT = Aws::String>
+    GetJobOutputResult& WithContentRange(ContentRangeT&& value) { SetContentRange(std::forward<ContentRangeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,13 +101,11 @@ namespace Model
      * <p>Indicates the range units accepted. For more information, see <a
      * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>. </p>
      */
-    inline const Aws::String& GetAcceptRanges() const{ return m_acceptRanges; }
-    inline void SetAcceptRanges(const Aws::String& value) { m_acceptRanges = value; }
-    inline void SetAcceptRanges(Aws::String&& value) { m_acceptRanges = std::move(value); }
-    inline void SetAcceptRanges(const char* value) { m_acceptRanges.assign(value); }
-    inline GetJobOutputResult& WithAcceptRanges(const Aws::String& value) { SetAcceptRanges(value); return *this;}
-    inline GetJobOutputResult& WithAcceptRanges(Aws::String&& value) { SetAcceptRanges(std::move(value)); return *this;}
-    inline GetJobOutputResult& WithAcceptRanges(const char* value) { SetAcceptRanges(value); return *this;}
+    inline const Aws::String& GetAcceptRanges() const { return m_acceptRanges; }
+    template<typename AcceptRangesT = Aws::String>
+    void SetAcceptRanges(AcceptRangesT&& value) { m_acceptRangesHasBeenSet = true; m_acceptRanges = std::forward<AcceptRangesT>(value); }
+    template<typename AcceptRangesT = Aws::String>
+    GetJobOutputResult& WithAcceptRanges(AcceptRangesT&& value) { SetAcceptRanges(std::forward<AcceptRangesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -123,55 +116,57 @@ namespace Model
      * Content-Type is text/csv. Otherwise, by default, vault inventory is returned as
      * JSON, and the Content-Type is application/json.</p>
      */
-    inline const Aws::String& GetContentType() const{ return m_contentType; }
-    inline void SetContentType(const Aws::String& value) { m_contentType = value; }
-    inline void SetContentType(Aws::String&& value) { m_contentType = std::move(value); }
-    inline void SetContentType(const char* value) { m_contentType.assign(value); }
-    inline GetJobOutputResult& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
-    inline GetJobOutputResult& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
-    inline GetJobOutputResult& WithContentType(const char* value) { SetContentType(value); return *this;}
+    inline const Aws::String& GetContentType() const { return m_contentType; }
+    template<typename ContentTypeT = Aws::String>
+    void SetContentType(ContentTypeT&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::forward<ContentTypeT>(value); }
+    template<typename ContentTypeT = Aws::String>
+    GetJobOutputResult& WithContentType(ContentTypeT&& value) { SetContentType(std::forward<ContentTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of an archive.</p>
      */
-    inline const Aws::String& GetArchiveDescription() const{ return m_archiveDescription; }
-    inline void SetArchiveDescription(const Aws::String& value) { m_archiveDescription = value; }
-    inline void SetArchiveDescription(Aws::String&& value) { m_archiveDescription = std::move(value); }
-    inline void SetArchiveDescription(const char* value) { m_archiveDescription.assign(value); }
-    inline GetJobOutputResult& WithArchiveDescription(const Aws::String& value) { SetArchiveDescription(value); return *this;}
-    inline GetJobOutputResult& WithArchiveDescription(Aws::String&& value) { SetArchiveDescription(std::move(value)); return *this;}
-    inline GetJobOutputResult& WithArchiveDescription(const char* value) { SetArchiveDescription(value); return *this;}
+    inline const Aws::String& GetArchiveDescription() const { return m_archiveDescription; }
+    template<typename ArchiveDescriptionT = Aws::String>
+    void SetArchiveDescription(ArchiveDescriptionT&& value) { m_archiveDescriptionHasBeenSet = true; m_archiveDescription = std::forward<ArchiveDescriptionT>(value); }
+    template<typename ArchiveDescriptionT = Aws::String>
+    GetJobOutputResult& WithArchiveDescription(ArchiveDescriptionT&& value) { SetArchiveDescription(std::forward<ArchiveDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetJobOutputResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetJobOutputResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetJobOutputResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetJobOutputResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::Stream::ResponseStream m_body;
+    Aws::Utils::Stream::ResponseStream m_body{};
+    bool m_bodyHasBeenSet = false;
 
     Aws::String m_checksum;
+    bool m_checksumHasBeenSet = false;
 
-    int m_status;
+    int m_status{0};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_contentRange;
+    bool m_contentRangeHasBeenSet = false;
 
     Aws::String m_acceptRanges;
+    bool m_acceptRangesHasBeenSet = false;
 
     Aws::String m_contentType;
+    bool m_contentTypeHasBeenSet = false;
 
     Aws::String m_archiveDescription;
+    bool m_archiveDescriptionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

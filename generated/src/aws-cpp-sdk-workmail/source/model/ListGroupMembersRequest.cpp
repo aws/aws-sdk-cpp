@@ -12,15 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListGroupMembersRequest::ListGroupMembersRequest() : 
-    m_organizationIdHasBeenSet(false),
-    m_groupIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListGroupMembersRequest::SerializePayload() const
 {
   JsonValue payload;

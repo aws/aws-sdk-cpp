@@ -12,13 +12,6 @@ using namespace Aws::finspace::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetKxChangesetRequest::GetKxChangesetRequest() : 
-    m_environmentIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_changesetIdHasBeenSet(false)
-{
-}
-
 Aws::String GetKxChangesetRequest::SerializePayload() const
 {
   return {};

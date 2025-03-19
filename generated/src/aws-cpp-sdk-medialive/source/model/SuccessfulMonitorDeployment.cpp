@@ -18,15 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-SuccessfulMonitorDeployment::SuccessfulMonitorDeployment() : 
-    m_detailsUriHasBeenSet(false),
-    m_status(SignalMapMonitorDeploymentStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 SuccessfulMonitorDeployment::SuccessfulMonitorDeployment(JsonView jsonValue)
-  : SuccessfulMonitorDeployment()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SuccessfulMonitorDeployment& SuccessfulMonitorDeployment::operator =(JsonView js
   if(jsonValue.ValueExists("detailsUri"))
   {
     m_detailsUri = jsonValue.GetString("detailsUri");
-
     m_detailsUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = SignalMapMonitorDeploymentStatusMapper::GetSignalMapMonitorDeploymentStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

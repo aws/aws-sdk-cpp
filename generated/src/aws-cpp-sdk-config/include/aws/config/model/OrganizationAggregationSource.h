@@ -33,7 +33,7 @@ namespace Model
   class OrganizationAggregationSource
   {
   public:
-    AWS_CONFIGSERVICE_API OrganizationAggregationSource();
+    AWS_CONFIGSERVICE_API OrganizationAggregationSource() = default;
     AWS_CONFIGSERVICE_API OrganizationAggregationSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API OrganizationAggregationSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,36 +44,33 @@ namespace Model
      * <p>ARN of the IAM role used to retrieve Amazon Web Services Organization details
      * associated with the aggregator account.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline OrganizationAggregationSource& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline OrganizationAggregationSource& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline OrganizationAggregationSource& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    OrganizationAggregationSource& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source regions being aggregated.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAwsRegions() const{ return m_awsRegions; }
+    inline const Aws::Vector<Aws::String>& GetAwsRegions() const { return m_awsRegions; }
     inline bool AwsRegionsHasBeenSet() const { return m_awsRegionsHasBeenSet; }
-    inline void SetAwsRegions(const Aws::Vector<Aws::String>& value) { m_awsRegionsHasBeenSet = true; m_awsRegions = value; }
-    inline void SetAwsRegions(Aws::Vector<Aws::String>&& value) { m_awsRegionsHasBeenSet = true; m_awsRegions = std::move(value); }
-    inline OrganizationAggregationSource& WithAwsRegions(const Aws::Vector<Aws::String>& value) { SetAwsRegions(value); return *this;}
-    inline OrganizationAggregationSource& WithAwsRegions(Aws::Vector<Aws::String>&& value) { SetAwsRegions(std::move(value)); return *this;}
-    inline OrganizationAggregationSource& AddAwsRegions(const Aws::String& value) { m_awsRegionsHasBeenSet = true; m_awsRegions.push_back(value); return *this; }
-    inline OrganizationAggregationSource& AddAwsRegions(Aws::String&& value) { m_awsRegionsHasBeenSet = true; m_awsRegions.push_back(std::move(value)); return *this; }
-    inline OrganizationAggregationSource& AddAwsRegions(const char* value) { m_awsRegionsHasBeenSet = true; m_awsRegions.push_back(value); return *this; }
+    template<typename AwsRegionsT = Aws::Vector<Aws::String>>
+    void SetAwsRegions(AwsRegionsT&& value) { m_awsRegionsHasBeenSet = true; m_awsRegions = std::forward<AwsRegionsT>(value); }
+    template<typename AwsRegionsT = Aws::Vector<Aws::String>>
+    OrganizationAggregationSource& WithAwsRegions(AwsRegionsT&& value) { SetAwsRegions(std::forward<AwsRegionsT>(value)); return *this;}
+    template<typename AwsRegionsT = Aws::String>
+    OrganizationAggregationSource& AddAwsRegions(AwsRegionsT&& value) { m_awsRegionsHasBeenSet = true; m_awsRegions.emplace_back(std::forward<AwsRegionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>If true, aggregate existing Config regions and future regions.</p>
      */
-    inline bool GetAllAwsRegions() const{ return m_allAwsRegions; }
+    inline bool GetAllAwsRegions() const { return m_allAwsRegions; }
     inline bool AllAwsRegionsHasBeenSet() const { return m_allAwsRegionsHasBeenSet; }
     inline void SetAllAwsRegions(bool value) { m_allAwsRegionsHasBeenSet = true; m_allAwsRegions = value; }
     inline OrganizationAggregationSource& WithAllAwsRegions(bool value) { SetAllAwsRegions(value); return *this;}
@@ -86,7 +83,7 @@ namespace Model
     Aws::Vector<Aws::String> m_awsRegions;
     bool m_awsRegionsHasBeenSet = false;
 
-    bool m_allAwsRegions;
+    bool m_allAwsRegions{false};
     bool m_allAwsRegionsHasBeenSet = false;
   };
 

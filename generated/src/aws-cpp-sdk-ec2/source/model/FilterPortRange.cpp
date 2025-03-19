@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-FilterPortRange::FilterPortRange() : 
-    m_fromPort(0),
-    m_fromPortHasBeenSet(false),
-    m_toPort(0),
-    m_toPortHasBeenSet(false)
-{
-}
-
 FilterPortRange::FilterPortRange(const XmlNode& xmlNode)
-  : FilterPortRange()
 {
   *this = xmlNode;
 }

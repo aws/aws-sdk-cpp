@@ -31,7 +31,7 @@ namespace Model
   class UserHierarchyGroupSearchFilter
   {
   public:
-    AWS_CONNECT_API UserHierarchyGroupSearchFilter();
+    AWS_CONNECT_API UserHierarchyGroupSearchFilter() = default;
     AWS_CONNECT_API UserHierarchyGroupSearchFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API UserHierarchyGroupSearchFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * operator.</p> </li> <li> <p>The inner list specifies conditions that need to be
      * applied with <code>AND</code> operator.</p> </li> </ul>
      */
-    inline const ControlPlaneAttributeFilter& GetAttributeFilter() const{ return m_attributeFilter; }
+    inline const ControlPlaneAttributeFilter& GetAttributeFilter() const { return m_attributeFilter; }
     inline bool AttributeFilterHasBeenSet() const { return m_attributeFilterHasBeenSet; }
-    inline void SetAttributeFilter(const ControlPlaneAttributeFilter& value) { m_attributeFilterHasBeenSet = true; m_attributeFilter = value; }
-    inline void SetAttributeFilter(ControlPlaneAttributeFilter&& value) { m_attributeFilterHasBeenSet = true; m_attributeFilter = std::move(value); }
-    inline UserHierarchyGroupSearchFilter& WithAttributeFilter(const ControlPlaneAttributeFilter& value) { SetAttributeFilter(value); return *this;}
-    inline UserHierarchyGroupSearchFilter& WithAttributeFilter(ControlPlaneAttributeFilter&& value) { SetAttributeFilter(std::move(value)); return *this;}
+    template<typename AttributeFilterT = ControlPlaneAttributeFilter>
+    void SetAttributeFilter(AttributeFilterT&& value) { m_attributeFilterHasBeenSet = true; m_attributeFilter = std::forward<AttributeFilterT>(value); }
+    template<typename AttributeFilterT = ControlPlaneAttributeFilter>
+    UserHierarchyGroupSearchFilter& WithAttributeFilter(AttributeFilterT&& value) { SetAttributeFilter(std::forward<AttributeFilterT>(value)); return *this;}
     ///@}
   private:
 

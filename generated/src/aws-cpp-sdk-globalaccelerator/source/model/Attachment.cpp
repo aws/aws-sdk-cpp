@@ -18,18 +18,7 @@ namespace GlobalAccelerator
 namespace Model
 {
 
-Attachment::Attachment() : 
-    m_attachmentArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_principalsHasBeenSet(false),
-    m_resourcesHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
-{
-}
-
 Attachment::Attachment(JsonView jsonValue)
-  : Attachment()
 {
   *this = jsonValue;
 }
@@ -39,17 +28,13 @@ Attachment& Attachment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AttachmentArn"))
   {
     m_attachmentArn = jsonValue.GetString("AttachmentArn");
-
     m_attachmentArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Principals"))
   {
     Aws::Utils::Array<JsonView> principalsJsonList = jsonValue.GetArray("Principals");
@@ -59,7 +44,6 @@ Attachment& Attachment::operator =(JsonView jsonValue)
     }
     m_principalsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Resources"))
   {
     Aws::Utils::Array<JsonView> resourcesJsonList = jsonValue.GetArray("Resources");
@@ -69,21 +53,16 @@ Attachment& Attachment::operator =(JsonView jsonValue)
     }
     m_resourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

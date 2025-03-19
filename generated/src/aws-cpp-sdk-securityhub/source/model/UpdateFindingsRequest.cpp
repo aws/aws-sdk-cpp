@@ -12,14 +12,6 @@ using namespace Aws::SecurityHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateFindingsRequest::UpdateFindingsRequest() : 
-    m_filtersHasBeenSet(false),
-    m_noteHasBeenSet(false),
-    m_recordState(RecordState::NOT_SET),
-    m_recordStateHasBeenSet(false)
-{
-}
-
 Aws::String UpdateFindingsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -31,7 +31,7 @@ namespace Model
   class UpdateXMLClassifierRequest
   {
   public:
-    AWS_GLUE_API UpdateXMLClassifierRequest();
+    AWS_GLUE_API UpdateXMLClassifierRequest() = default;
     AWS_GLUE_API UpdateXMLClassifierRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API UpdateXMLClassifierRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The name of the classifier.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateXMLClassifierRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateXMLClassifierRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateXMLClassifierRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateXMLClassifierRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An identifier of the data format that the classifier matches.</p>
      */
-    inline const Aws::String& GetClassification() const{ return m_classification; }
+    inline const Aws::String& GetClassification() const { return m_classification; }
     inline bool ClassificationHasBeenSet() const { return m_classificationHasBeenSet; }
-    inline void SetClassification(const Aws::String& value) { m_classificationHasBeenSet = true; m_classification = value; }
-    inline void SetClassification(Aws::String&& value) { m_classificationHasBeenSet = true; m_classification = std::move(value); }
-    inline void SetClassification(const char* value) { m_classificationHasBeenSet = true; m_classification.assign(value); }
-    inline UpdateXMLClassifierRequest& WithClassification(const Aws::String& value) { SetClassification(value); return *this;}
-    inline UpdateXMLClassifierRequest& WithClassification(Aws::String&& value) { SetClassification(std::move(value)); return *this;}
-    inline UpdateXMLClassifierRequest& WithClassification(const char* value) { SetClassification(value); return *this;}
+    template<typename ClassificationT = Aws::String>
+    void SetClassification(ClassificationT&& value) { m_classificationHasBeenSet = true; m_classification = std::forward<ClassificationT>(value); }
+    template<typename ClassificationT = Aws::String>
+    UpdateXMLClassifierRequest& WithClassification(ClassificationT&& value) { SetClassification(std::forward<ClassificationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +70,12 @@ namespace Model
      * item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but <code>&lt;row
      * item_a="A" item_b="B" /&gt;</code> is not).</p>
      */
-    inline const Aws::String& GetRowTag() const{ return m_rowTag; }
+    inline const Aws::String& GetRowTag() const { return m_rowTag; }
     inline bool RowTagHasBeenSet() const { return m_rowTagHasBeenSet; }
-    inline void SetRowTag(const Aws::String& value) { m_rowTagHasBeenSet = true; m_rowTag = value; }
-    inline void SetRowTag(Aws::String&& value) { m_rowTagHasBeenSet = true; m_rowTag = std::move(value); }
-    inline void SetRowTag(const char* value) { m_rowTagHasBeenSet = true; m_rowTag.assign(value); }
-    inline UpdateXMLClassifierRequest& WithRowTag(const Aws::String& value) { SetRowTag(value); return *this;}
-    inline UpdateXMLClassifierRequest& WithRowTag(Aws::String&& value) { SetRowTag(std::move(value)); return *this;}
-    inline UpdateXMLClassifierRequest& WithRowTag(const char* value) { SetRowTag(value); return *this;}
+    template<typename RowTagT = Aws::String>
+    void SetRowTag(RowTagT&& value) { m_rowTagHasBeenSet = true; m_rowTag = std::forward<RowTagT>(value); }
+    template<typename RowTagT = Aws::String>
+    UpdateXMLClassifierRequest& WithRowTag(RowTagT&& value) { SetRowTag(std::forward<RowTagT>(value)); return *this;}
     ///@}
   private:
 

@@ -21,7 +21,7 @@ namespace Model
   class DeleteEventTrackerRequest : public PersonalizeRequest
   {
   public:
-    AWS_PERSONALIZE_API DeleteEventTrackerRequest();
+    AWS_PERSONALIZE_API DeleteEventTrackerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the event tracker to delete.</p>
      */
-    inline const Aws::String& GetEventTrackerArn() const{ return m_eventTrackerArn; }
+    inline const Aws::String& GetEventTrackerArn() const { return m_eventTrackerArn; }
     inline bool EventTrackerArnHasBeenSet() const { return m_eventTrackerArnHasBeenSet; }
-    inline void SetEventTrackerArn(const Aws::String& value) { m_eventTrackerArnHasBeenSet = true; m_eventTrackerArn = value; }
-    inline void SetEventTrackerArn(Aws::String&& value) { m_eventTrackerArnHasBeenSet = true; m_eventTrackerArn = std::move(value); }
-    inline void SetEventTrackerArn(const char* value) { m_eventTrackerArnHasBeenSet = true; m_eventTrackerArn.assign(value); }
-    inline DeleteEventTrackerRequest& WithEventTrackerArn(const Aws::String& value) { SetEventTrackerArn(value); return *this;}
-    inline DeleteEventTrackerRequest& WithEventTrackerArn(Aws::String&& value) { SetEventTrackerArn(std::move(value)); return *this;}
-    inline DeleteEventTrackerRequest& WithEventTrackerArn(const char* value) { SetEventTrackerArn(value); return *this;}
+    template<typename EventTrackerArnT = Aws::String>
+    void SetEventTrackerArn(EventTrackerArnT&& value) { m_eventTrackerArnHasBeenSet = true; m_eventTrackerArn = std::forward<EventTrackerArnT>(value); }
+    template<typename EventTrackerArnT = Aws::String>
+    DeleteEventTrackerRequest& WithEventTrackerArn(EventTrackerArnT&& value) { SetEventTrackerArn(std::forward<EventTrackerArnT>(value)); return *this;}
     ///@}
   private:
 

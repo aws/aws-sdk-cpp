@@ -18,14 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-GlobalSecondaryIndexAutoScalingUpdate::GlobalSecondaryIndexAutoScalingUpdate() : 
-    m_indexNameHasBeenSet(false),
-    m_provisionedWriteCapacityAutoScalingUpdateHasBeenSet(false)
-{
-}
-
 GlobalSecondaryIndexAutoScalingUpdate::GlobalSecondaryIndexAutoScalingUpdate(JsonView jsonValue)
-  : GlobalSecondaryIndexAutoScalingUpdate()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ GlobalSecondaryIndexAutoScalingUpdate& GlobalSecondaryIndexAutoScalingUpdate::op
   if(jsonValue.ValueExists("IndexName"))
   {
     m_indexName = jsonValue.GetString("IndexName");
-
     m_indexNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisionedWriteCapacityAutoScalingUpdate"))
   {
     m_provisionedWriteCapacityAutoScalingUpdate = jsonValue.GetObject("ProvisionedWriteCapacityAutoScalingUpdate");
-
     m_provisionedWriteCapacityAutoScalingUpdateHasBeenSet = true;
   }
-
   return *this;
 }
 

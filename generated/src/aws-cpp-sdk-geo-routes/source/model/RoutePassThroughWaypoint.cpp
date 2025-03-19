@@ -18,15 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RoutePassThroughWaypoint::RoutePassThroughWaypoint() : 
-    m_geometryOffset(0),
-    m_geometryOffsetHasBeenSet(false),
-    m_placeHasBeenSet(false)
-{
-}
-
 RoutePassThroughWaypoint::RoutePassThroughWaypoint(JsonView jsonValue)
-  : RoutePassThroughWaypoint()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ RoutePassThroughWaypoint& RoutePassThroughWaypoint::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("GeometryOffset"))
   {
     m_geometryOffset = jsonValue.GetInteger("GeometryOffset");
-
     m_geometryOffsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Place"))
   {
     m_place = jsonValue.GetObject("Place");
-
     m_placeHasBeenSet = true;
   }
-
   return *this;
 }
 

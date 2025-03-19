@@ -18,14 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-ListingRevision::ListingRevision() : 
-    m_idHasBeenSet(false),
-    m_revisionHasBeenSet(false)
-{
-}
-
 ListingRevision::ListingRevision(JsonView jsonValue)
-  : ListingRevision()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ListingRevision& ListingRevision::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("revision"))
   {
     m_revision = jsonValue.GetString("revision");
-
     m_revisionHasBeenSet = true;
   }
-
   return *this;
 }
 

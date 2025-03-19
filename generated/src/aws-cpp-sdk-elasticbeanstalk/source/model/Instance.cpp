@@ -20,13 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-Instance::Instance() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Instance::Instance(const XmlNode& xmlNode)
-  : Instance()
 {
   *this = xmlNode;
 }

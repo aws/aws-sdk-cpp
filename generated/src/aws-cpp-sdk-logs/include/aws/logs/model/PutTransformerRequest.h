@@ -23,7 +23,7 @@ namespace Model
   class PutTransformerRequest : public CloudWatchLogsRequest
   {
   public:
-    AWS_CLOUDWATCHLOGS_API PutTransformerRequest();
+    AWS_CLOUDWATCHLOGS_API PutTransformerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <p>Specify either the name or ARN of the log group to create the transformer
      * for. </p>
      */
-    inline const Aws::String& GetLogGroupIdentifier() const{ return m_logGroupIdentifier; }
+    inline const Aws::String& GetLogGroupIdentifier() const { return m_logGroupIdentifier; }
     inline bool LogGroupIdentifierHasBeenSet() const { return m_logGroupIdentifierHasBeenSet; }
-    inline void SetLogGroupIdentifier(const Aws::String& value) { m_logGroupIdentifierHasBeenSet = true; m_logGroupIdentifier = value; }
-    inline void SetLogGroupIdentifier(Aws::String&& value) { m_logGroupIdentifierHasBeenSet = true; m_logGroupIdentifier = std::move(value); }
-    inline void SetLogGroupIdentifier(const char* value) { m_logGroupIdentifierHasBeenSet = true; m_logGroupIdentifier.assign(value); }
-    inline PutTransformerRequest& WithLogGroupIdentifier(const Aws::String& value) { SetLogGroupIdentifier(value); return *this;}
-    inline PutTransformerRequest& WithLogGroupIdentifier(Aws::String&& value) { SetLogGroupIdentifier(std::move(value)); return *this;}
-    inline PutTransformerRequest& WithLogGroupIdentifier(const char* value) { SetLogGroupIdentifier(value); return *this;}
+    template<typename LogGroupIdentifierT = Aws::String>
+    void SetLogGroupIdentifier(LogGroupIdentifierT&& value) { m_logGroupIdentifierHasBeenSet = true; m_logGroupIdentifier = std::forward<LogGroupIdentifierT>(value); }
+    template<typename LogGroupIdentifierT = Aws::String>
+    PutTransformerRequest& WithLogGroupIdentifier(LogGroupIdentifierT&& value) { SetLogGroupIdentifier(std::forward<LogGroupIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,14 @@ namespace Model
      * transformer is an array of processors, where each processor applies one type of
      * transformation to the log events that are ingested.</p>
      */
-    inline const Aws::Vector<Processor>& GetTransformerConfig() const{ return m_transformerConfig; }
+    inline const Aws::Vector<Processor>& GetTransformerConfig() const { return m_transformerConfig; }
     inline bool TransformerConfigHasBeenSet() const { return m_transformerConfigHasBeenSet; }
-    inline void SetTransformerConfig(const Aws::Vector<Processor>& value) { m_transformerConfigHasBeenSet = true; m_transformerConfig = value; }
-    inline void SetTransformerConfig(Aws::Vector<Processor>&& value) { m_transformerConfigHasBeenSet = true; m_transformerConfig = std::move(value); }
-    inline PutTransformerRequest& WithTransformerConfig(const Aws::Vector<Processor>& value) { SetTransformerConfig(value); return *this;}
-    inline PutTransformerRequest& WithTransformerConfig(Aws::Vector<Processor>&& value) { SetTransformerConfig(std::move(value)); return *this;}
-    inline PutTransformerRequest& AddTransformerConfig(const Processor& value) { m_transformerConfigHasBeenSet = true; m_transformerConfig.push_back(value); return *this; }
-    inline PutTransformerRequest& AddTransformerConfig(Processor&& value) { m_transformerConfigHasBeenSet = true; m_transformerConfig.push_back(std::move(value)); return *this; }
+    template<typename TransformerConfigT = Aws::Vector<Processor>>
+    void SetTransformerConfig(TransformerConfigT&& value) { m_transformerConfigHasBeenSet = true; m_transformerConfig = std::forward<TransformerConfigT>(value); }
+    template<typename TransformerConfigT = Aws::Vector<Processor>>
+    PutTransformerRequest& WithTransformerConfig(TransformerConfigT&& value) { SetTransformerConfig(std::forward<TransformerConfigT>(value)); return *this;}
+    template<typename TransformerConfigT = Processor>
+    PutTransformerRequest& AddTransformerConfig(TransformerConfigT&& value) { m_transformerConfigHasBeenSet = true; m_transformerConfig.emplace_back(std::forward<TransformerConfigT>(value)); return *this; }
     ///@}
   private:
 

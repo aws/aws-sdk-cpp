@@ -32,7 +32,7 @@ namespace Model
   class CustomLineItemBillingPeriodRange
   {
   public:
-    AWS_BILLINGCONDUCTOR_API CustomLineItemBillingPeriodRange();
+    AWS_BILLINGCONDUCTOR_API CustomLineItemBillingPeriodRange() = default;
     AWS_BILLINGCONDUCTOR_API CustomLineItemBillingPeriodRange(Aws::Utils::Json::JsonView jsonValue);
     AWS_BILLINGCONDUCTOR_API CustomLineItemBillingPeriodRange& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The inclusive start billing period that defines a billing period range where
      * a custom line is applied.</p>
      */
-    inline const Aws::String& GetInclusiveStartBillingPeriod() const{ return m_inclusiveStartBillingPeriod; }
+    inline const Aws::String& GetInclusiveStartBillingPeriod() const { return m_inclusiveStartBillingPeriod; }
     inline bool InclusiveStartBillingPeriodHasBeenSet() const { return m_inclusiveStartBillingPeriodHasBeenSet; }
-    inline void SetInclusiveStartBillingPeriod(const Aws::String& value) { m_inclusiveStartBillingPeriodHasBeenSet = true; m_inclusiveStartBillingPeriod = value; }
-    inline void SetInclusiveStartBillingPeriod(Aws::String&& value) { m_inclusiveStartBillingPeriodHasBeenSet = true; m_inclusiveStartBillingPeriod = std::move(value); }
-    inline void SetInclusiveStartBillingPeriod(const char* value) { m_inclusiveStartBillingPeriodHasBeenSet = true; m_inclusiveStartBillingPeriod.assign(value); }
-    inline CustomLineItemBillingPeriodRange& WithInclusiveStartBillingPeriod(const Aws::String& value) { SetInclusiveStartBillingPeriod(value); return *this;}
-    inline CustomLineItemBillingPeriodRange& WithInclusiveStartBillingPeriod(Aws::String&& value) { SetInclusiveStartBillingPeriod(std::move(value)); return *this;}
-    inline CustomLineItemBillingPeriodRange& WithInclusiveStartBillingPeriod(const char* value) { SetInclusiveStartBillingPeriod(value); return *this;}
+    template<typename InclusiveStartBillingPeriodT = Aws::String>
+    void SetInclusiveStartBillingPeriod(InclusiveStartBillingPeriodT&& value) { m_inclusiveStartBillingPeriodHasBeenSet = true; m_inclusiveStartBillingPeriod = std::forward<InclusiveStartBillingPeriodT>(value); }
+    template<typename InclusiveStartBillingPeriodT = Aws::String>
+    CustomLineItemBillingPeriodRange& WithInclusiveStartBillingPeriod(InclusiveStartBillingPeriodT&& value) { SetInclusiveStartBillingPeriod(std::forward<InclusiveStartBillingPeriodT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The inclusive end billing period that defines a billing period range where a
      * custom line is applied.</p>
      */
-    inline const Aws::String& GetExclusiveEndBillingPeriod() const{ return m_exclusiveEndBillingPeriod; }
+    inline const Aws::String& GetExclusiveEndBillingPeriod() const { return m_exclusiveEndBillingPeriod; }
     inline bool ExclusiveEndBillingPeriodHasBeenSet() const { return m_exclusiveEndBillingPeriodHasBeenSet; }
-    inline void SetExclusiveEndBillingPeriod(const Aws::String& value) { m_exclusiveEndBillingPeriodHasBeenSet = true; m_exclusiveEndBillingPeriod = value; }
-    inline void SetExclusiveEndBillingPeriod(Aws::String&& value) { m_exclusiveEndBillingPeriodHasBeenSet = true; m_exclusiveEndBillingPeriod = std::move(value); }
-    inline void SetExclusiveEndBillingPeriod(const char* value) { m_exclusiveEndBillingPeriodHasBeenSet = true; m_exclusiveEndBillingPeriod.assign(value); }
-    inline CustomLineItemBillingPeriodRange& WithExclusiveEndBillingPeriod(const Aws::String& value) { SetExclusiveEndBillingPeriod(value); return *this;}
-    inline CustomLineItemBillingPeriodRange& WithExclusiveEndBillingPeriod(Aws::String&& value) { SetExclusiveEndBillingPeriod(std::move(value)); return *this;}
-    inline CustomLineItemBillingPeriodRange& WithExclusiveEndBillingPeriod(const char* value) { SetExclusiveEndBillingPeriod(value); return *this;}
+    template<typename ExclusiveEndBillingPeriodT = Aws::String>
+    void SetExclusiveEndBillingPeriod(ExclusiveEndBillingPeriodT&& value) { m_exclusiveEndBillingPeriodHasBeenSet = true; m_exclusiveEndBillingPeriod = std::forward<ExclusiveEndBillingPeriodT>(value); }
+    template<typename ExclusiveEndBillingPeriodT = Aws::String>
+    CustomLineItemBillingPeriodRange& WithExclusiveEndBillingPeriod(ExclusiveEndBillingPeriodT&& value) { SetExclusiveEndBillingPeriod(std::forward<ExclusiveEndBillingPeriodT>(value)); return *this;}
     ///@}
   private:
 

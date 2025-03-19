@@ -48,7 +48,7 @@ namespace Model
   class StartChannelResult
   {
   public:
-    AWS_MEDIALIVE_API StartChannelResult();
+    AWS_MEDIALIVE_API StartChannelResult() = default;
     AWS_MEDIALIVE_API StartChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIALIVE_API StartChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -57,24 +57,22 @@ namespace Model
     /**
      * The unique arn of the channel.
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline StartChannelResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline StartChannelResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline StartChannelResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    StartChannelResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Specification of CDI inputs for this channel
      */
-    inline const CdiInputSpecification& GetCdiInputSpecification() const{ return m_cdiInputSpecification; }
-    inline void SetCdiInputSpecification(const CdiInputSpecification& value) { m_cdiInputSpecification = value; }
-    inline void SetCdiInputSpecification(CdiInputSpecification&& value) { m_cdiInputSpecification = std::move(value); }
-    inline StartChannelResult& WithCdiInputSpecification(const CdiInputSpecification& value) { SetCdiInputSpecification(value); return *this;}
-    inline StartChannelResult& WithCdiInputSpecification(CdiInputSpecification&& value) { SetCdiInputSpecification(std::move(value)); return *this;}
+    inline const CdiInputSpecification& GetCdiInputSpecification() const { return m_cdiInputSpecification; }
+    template<typename CdiInputSpecificationT = CdiInputSpecification>
+    void SetCdiInputSpecification(CdiInputSpecificationT&& value) { m_cdiInputSpecificationHasBeenSet = true; m_cdiInputSpecification = std::forward<CdiInputSpecificationT>(value); }
+    template<typename CdiInputSpecificationT = CdiInputSpecification>
+    StartChannelResult& WithCdiInputSpecification(CdiInputSpecificationT&& value) { SetCdiInputSpecification(std::forward<CdiInputSpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,11 +80,9 @@ namespace Model
      * The class for this channel. STANDARD for a channel with two pipelines or
      * SINGLE_PIPELINE for a channel with one pipeline.
      */
-    inline const ChannelClass& GetChannelClass() const{ return m_channelClass; }
-    inline void SetChannelClass(const ChannelClass& value) { m_channelClass = value; }
-    inline void SetChannelClass(ChannelClass&& value) { m_channelClass = std::move(value); }
-    inline StartChannelResult& WithChannelClass(const ChannelClass& value) { SetChannelClass(value); return *this;}
-    inline StartChannelResult& WithChannelClass(ChannelClass&& value) { SetChannelClass(std::move(value)); return *this;}
+    inline ChannelClass GetChannelClass() const { return m_channelClass; }
+    inline void SetChannelClass(ChannelClass value) { m_channelClassHasBeenSet = true; m_channelClass = value; }
+    inline StartChannelResult& WithChannelClass(ChannelClass value) { SetChannelClass(value); return *this;}
     ///@}
 
     ///@{
@@ -97,128 +93,122 @@ destination
 one destination per
      * packager.
      */
-    inline const Aws::Vector<OutputDestination>& GetDestinations() const{ return m_destinations; }
-    inline void SetDestinations(const Aws::Vector<OutputDestination>& value) { m_destinations = value; }
-    inline void SetDestinations(Aws::Vector<OutputDestination>&& value) { m_destinations = std::move(value); }
-    inline StartChannelResult& WithDestinations(const Aws::Vector<OutputDestination>& value) { SetDestinations(value); return *this;}
-    inline StartChannelResult& WithDestinations(Aws::Vector<OutputDestination>&& value) { SetDestinations(std::move(value)); return *this;}
-    inline StartChannelResult& AddDestinations(const OutputDestination& value) { m_destinations.push_back(value); return *this; }
-    inline StartChannelResult& AddDestinations(OutputDestination&& value) { m_destinations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<OutputDestination>& GetDestinations() const { return m_destinations; }
+    template<typename DestinationsT = Aws::Vector<OutputDestination>>
+    void SetDestinations(DestinationsT&& value) { m_destinationsHasBeenSet = true; m_destinations = std::forward<DestinationsT>(value); }
+    template<typename DestinationsT = Aws::Vector<OutputDestination>>
+    StartChannelResult& WithDestinations(DestinationsT&& value) { SetDestinations(std::forward<DestinationsT>(value)); return *this;}
+    template<typename DestinationsT = OutputDestination>
+    StartChannelResult& AddDestinations(DestinationsT&& value) { m_destinationsHasBeenSet = true; m_destinations.emplace_back(std::forward<DestinationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * The endpoints where outgoing connections initiate from
      */
-    inline const Aws::Vector<ChannelEgressEndpoint>& GetEgressEndpoints() const{ return m_egressEndpoints; }
-    inline void SetEgressEndpoints(const Aws::Vector<ChannelEgressEndpoint>& value) { m_egressEndpoints = value; }
-    inline void SetEgressEndpoints(Aws::Vector<ChannelEgressEndpoint>&& value) { m_egressEndpoints = std::move(value); }
-    inline StartChannelResult& WithEgressEndpoints(const Aws::Vector<ChannelEgressEndpoint>& value) { SetEgressEndpoints(value); return *this;}
-    inline StartChannelResult& WithEgressEndpoints(Aws::Vector<ChannelEgressEndpoint>&& value) { SetEgressEndpoints(std::move(value)); return *this;}
-    inline StartChannelResult& AddEgressEndpoints(const ChannelEgressEndpoint& value) { m_egressEndpoints.push_back(value); return *this; }
-    inline StartChannelResult& AddEgressEndpoints(ChannelEgressEndpoint&& value) { m_egressEndpoints.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ChannelEgressEndpoint>& GetEgressEndpoints() const { return m_egressEndpoints; }
+    template<typename EgressEndpointsT = Aws::Vector<ChannelEgressEndpoint>>
+    void SetEgressEndpoints(EgressEndpointsT&& value) { m_egressEndpointsHasBeenSet = true; m_egressEndpoints = std::forward<EgressEndpointsT>(value); }
+    template<typename EgressEndpointsT = Aws::Vector<ChannelEgressEndpoint>>
+    StartChannelResult& WithEgressEndpoints(EgressEndpointsT&& value) { SetEgressEndpoints(std::forward<EgressEndpointsT>(value)); return *this;}
+    template<typename EgressEndpointsT = ChannelEgressEndpoint>
+    StartChannelResult& AddEgressEndpoints(EgressEndpointsT&& value) { m_egressEndpointsHasBeenSet = true; m_egressEndpoints.emplace_back(std::forward<EgressEndpointsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const EncoderSettings& GetEncoderSettings() const{ return m_encoderSettings; }
-    inline void SetEncoderSettings(const EncoderSettings& value) { m_encoderSettings = value; }
-    inline void SetEncoderSettings(EncoderSettings&& value) { m_encoderSettings = std::move(value); }
-    inline StartChannelResult& WithEncoderSettings(const EncoderSettings& value) { SetEncoderSettings(value); return *this;}
-    inline StartChannelResult& WithEncoderSettings(EncoderSettings&& value) { SetEncoderSettings(std::move(value)); return *this;}
+    inline const EncoderSettings& GetEncoderSettings() const { return m_encoderSettings; }
+    template<typename EncoderSettingsT = EncoderSettings>
+    void SetEncoderSettings(EncoderSettingsT&& value) { m_encoderSettingsHasBeenSet = true; m_encoderSettings = std::forward<EncoderSettingsT>(value); }
+    template<typename EncoderSettingsT = EncoderSettings>
+    StartChannelResult& WithEncoderSettings(EncoderSettingsT&& value) { SetEncoderSettings(std::forward<EncoderSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The unique id of the channel.
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline StartChannelResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline StartChannelResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline StartChannelResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    StartChannelResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * List of input attachments for channel.
      */
-    inline const Aws::Vector<InputAttachment>& GetInputAttachments() const{ return m_inputAttachments; }
-    inline void SetInputAttachments(const Aws::Vector<InputAttachment>& value) { m_inputAttachments = value; }
-    inline void SetInputAttachments(Aws::Vector<InputAttachment>&& value) { m_inputAttachments = std::move(value); }
-    inline StartChannelResult& WithInputAttachments(const Aws::Vector<InputAttachment>& value) { SetInputAttachments(value); return *this;}
-    inline StartChannelResult& WithInputAttachments(Aws::Vector<InputAttachment>&& value) { SetInputAttachments(std::move(value)); return *this;}
-    inline StartChannelResult& AddInputAttachments(const InputAttachment& value) { m_inputAttachments.push_back(value); return *this; }
-    inline StartChannelResult& AddInputAttachments(InputAttachment&& value) { m_inputAttachments.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<InputAttachment>& GetInputAttachments() const { return m_inputAttachments; }
+    template<typename InputAttachmentsT = Aws::Vector<InputAttachment>>
+    void SetInputAttachments(InputAttachmentsT&& value) { m_inputAttachmentsHasBeenSet = true; m_inputAttachments = std::forward<InputAttachmentsT>(value); }
+    template<typename InputAttachmentsT = Aws::Vector<InputAttachment>>
+    StartChannelResult& WithInputAttachments(InputAttachmentsT&& value) { SetInputAttachments(std::forward<InputAttachmentsT>(value)); return *this;}
+    template<typename InputAttachmentsT = InputAttachment>
+    StartChannelResult& AddInputAttachments(InputAttachmentsT&& value) { m_inputAttachmentsHasBeenSet = true; m_inputAttachments.emplace_back(std::forward<InputAttachmentsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * Specification of network and file inputs for this channel
      */
-    inline const InputSpecification& GetInputSpecification() const{ return m_inputSpecification; }
-    inline void SetInputSpecification(const InputSpecification& value) { m_inputSpecification = value; }
-    inline void SetInputSpecification(InputSpecification&& value) { m_inputSpecification = std::move(value); }
-    inline StartChannelResult& WithInputSpecification(const InputSpecification& value) { SetInputSpecification(value); return *this;}
-    inline StartChannelResult& WithInputSpecification(InputSpecification&& value) { SetInputSpecification(std::move(value)); return *this;}
+    inline const InputSpecification& GetInputSpecification() const { return m_inputSpecification; }
+    template<typename InputSpecificationT = InputSpecification>
+    void SetInputSpecification(InputSpecificationT&& value) { m_inputSpecificationHasBeenSet = true; m_inputSpecification = std::forward<InputSpecificationT>(value); }
+    template<typename InputSpecificationT = InputSpecification>
+    StartChannelResult& WithInputSpecification(InputSpecificationT&& value) { SetInputSpecification(std::forward<InputSpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The log level being written to CloudWatch Logs.
      */
-    inline const LogLevel& GetLogLevel() const{ return m_logLevel; }
-    inline void SetLogLevel(const LogLevel& value) { m_logLevel = value; }
-    inline void SetLogLevel(LogLevel&& value) { m_logLevel = std::move(value); }
-    inline StartChannelResult& WithLogLevel(const LogLevel& value) { SetLogLevel(value); return *this;}
-    inline StartChannelResult& WithLogLevel(LogLevel&& value) { SetLogLevel(std::move(value)); return *this;}
+    inline LogLevel GetLogLevel() const { return m_logLevel; }
+    inline void SetLogLevel(LogLevel value) { m_logLevelHasBeenSet = true; m_logLevel = value; }
+    inline StartChannelResult& WithLogLevel(LogLevel value) { SetLogLevel(value); return *this;}
     ///@}
 
     ///@{
     /**
      * Maintenance settings for this channel.
      */
-    inline const MaintenanceStatus& GetMaintenance() const{ return m_maintenance; }
-    inline void SetMaintenance(const MaintenanceStatus& value) { m_maintenance = value; }
-    inline void SetMaintenance(MaintenanceStatus&& value) { m_maintenance = std::move(value); }
-    inline StartChannelResult& WithMaintenance(const MaintenanceStatus& value) { SetMaintenance(value); return *this;}
-    inline StartChannelResult& WithMaintenance(MaintenanceStatus&& value) { SetMaintenance(std::move(value)); return *this;}
+    inline const MaintenanceStatus& GetMaintenance() const { return m_maintenance; }
+    template<typename MaintenanceT = MaintenanceStatus>
+    void SetMaintenance(MaintenanceT&& value) { m_maintenanceHasBeenSet = true; m_maintenance = std::forward<MaintenanceT>(value); }
+    template<typename MaintenanceT = MaintenanceStatus>
+    StartChannelResult& WithMaintenance(MaintenanceT&& value) { SetMaintenance(std::forward<MaintenanceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The name of the channel. (user-mutable)
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline StartChannelResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline StartChannelResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline StartChannelResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    StartChannelResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Runtime details for the pipelines of a running channel.
      */
-    inline const Aws::Vector<PipelineDetail>& GetPipelineDetails() const{ return m_pipelineDetails; }
-    inline void SetPipelineDetails(const Aws::Vector<PipelineDetail>& value) { m_pipelineDetails = value; }
-    inline void SetPipelineDetails(Aws::Vector<PipelineDetail>&& value) { m_pipelineDetails = std::move(value); }
-    inline StartChannelResult& WithPipelineDetails(const Aws::Vector<PipelineDetail>& value) { SetPipelineDetails(value); return *this;}
-    inline StartChannelResult& WithPipelineDetails(Aws::Vector<PipelineDetail>&& value) { SetPipelineDetails(std::move(value)); return *this;}
-    inline StartChannelResult& AddPipelineDetails(const PipelineDetail& value) { m_pipelineDetails.push_back(value); return *this; }
-    inline StartChannelResult& AddPipelineDetails(PipelineDetail&& value) { m_pipelineDetails.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<PipelineDetail>& GetPipelineDetails() const { return m_pipelineDetails; }
+    template<typename PipelineDetailsT = Aws::Vector<PipelineDetail>>
+    void SetPipelineDetails(PipelineDetailsT&& value) { m_pipelineDetailsHasBeenSet = true; m_pipelineDetails = std::forward<PipelineDetailsT>(value); }
+    template<typename PipelineDetailsT = Aws::Vector<PipelineDetail>>
+    StartChannelResult& WithPipelineDetails(PipelineDetailsT&& value) { SetPipelineDetails(std::forward<PipelineDetailsT>(value)); return *this;}
+    template<typename PipelineDetailsT = PipelineDetail>
+    StartChannelResult& AddPipelineDetails(PipelineDetailsT&& value) { m_pipelineDetailsHasBeenSet = true; m_pipelineDetails.emplace_back(std::forward<PipelineDetailsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * The number of currently healthy pipelines.
      */
-    inline int GetPipelinesRunningCount() const{ return m_pipelinesRunningCount; }
-    inline void SetPipelinesRunningCount(int value) { m_pipelinesRunningCount = value; }
+    inline int GetPipelinesRunningCount() const { return m_pipelinesRunningCount; }
+    inline void SetPipelinesRunningCount(int value) { m_pipelinesRunningCountHasBeenSet = true; m_pipelinesRunningCount = value; }
     inline StartChannelResult& WithPipelinesRunningCount(int value) { SetPipelinesRunningCount(value); return *this;}
     ///@}
 
@@ -226,128 +216,140 @@ one destination per
     /**
      * The Amazon Resource Name (ARN) of the role assumed when running the Channel.
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
-    inline StartChannelResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline StartChannelResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline StartChannelResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    StartChannelResult& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ChannelState& GetState() const{ return m_state; }
-    inline void SetState(const ChannelState& value) { m_state = value; }
-    inline void SetState(ChannelState&& value) { m_state = std::move(value); }
-    inline StartChannelResult& WithState(const ChannelState& value) { SetState(value); return *this;}
-    inline StartChannelResult& WithState(ChannelState&& value) { SetState(std::move(value)); return *this;}
+    inline ChannelState GetState() const { return m_state; }
+    inline void SetState(ChannelState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline StartChannelResult& WithState(ChannelState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * A collection of key-value pairs.
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline StartChannelResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline StartChannelResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline StartChannelResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline StartChannelResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline StartChannelResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline StartChannelResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline StartChannelResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline StartChannelResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline StartChannelResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    StartChannelResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    StartChannelResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * Settings for VPC output
      */
-    inline const VpcOutputSettingsDescription& GetVpc() const{ return m_vpc; }
-    inline void SetVpc(const VpcOutputSettingsDescription& value) { m_vpc = value; }
-    inline void SetVpc(VpcOutputSettingsDescription&& value) { m_vpc = std::move(value); }
-    inline StartChannelResult& WithVpc(const VpcOutputSettingsDescription& value) { SetVpc(value); return *this;}
-    inline StartChannelResult& WithVpc(VpcOutputSettingsDescription&& value) { SetVpc(std::move(value)); return *this;}
+    inline const VpcOutputSettingsDescription& GetVpc() const { return m_vpc; }
+    template<typename VpcT = VpcOutputSettingsDescription>
+    void SetVpc(VpcT&& value) { m_vpcHasBeenSet = true; m_vpc = std::forward<VpcT>(value); }
+    template<typename VpcT = VpcOutputSettingsDescription>
+    StartChannelResult& WithVpc(VpcT&& value) { SetVpc(std::forward<VpcT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Anywhere settings for this channel.
      */
-    inline const DescribeAnywhereSettings& GetAnywhereSettings() const{ return m_anywhereSettings; }
-    inline void SetAnywhereSettings(const DescribeAnywhereSettings& value) { m_anywhereSettings = value; }
-    inline void SetAnywhereSettings(DescribeAnywhereSettings&& value) { m_anywhereSettings = std::move(value); }
-    inline StartChannelResult& WithAnywhereSettings(const DescribeAnywhereSettings& value) { SetAnywhereSettings(value); return *this;}
-    inline StartChannelResult& WithAnywhereSettings(DescribeAnywhereSettings&& value) { SetAnywhereSettings(std::move(value)); return *this;}
+    inline const DescribeAnywhereSettings& GetAnywhereSettings() const { return m_anywhereSettings; }
+    template<typename AnywhereSettingsT = DescribeAnywhereSettings>
+    void SetAnywhereSettings(AnywhereSettingsT&& value) { m_anywhereSettingsHasBeenSet = true; m_anywhereSettings = std::forward<AnywhereSettingsT>(value); }
+    template<typename AnywhereSettingsT = DescribeAnywhereSettings>
+    StartChannelResult& WithAnywhereSettings(AnywhereSettingsT&& value) { SetAnywhereSettings(std::forward<AnywhereSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Requested engine version for this channel.
      */
-    inline const ChannelEngineVersionResponse& GetChannelEngineVersion() const{ return m_channelEngineVersion; }
-    inline void SetChannelEngineVersion(const ChannelEngineVersionResponse& value) { m_channelEngineVersion = value; }
-    inline void SetChannelEngineVersion(ChannelEngineVersionResponse&& value) { m_channelEngineVersion = std::move(value); }
-    inline StartChannelResult& WithChannelEngineVersion(const ChannelEngineVersionResponse& value) { SetChannelEngineVersion(value); return *this;}
-    inline StartChannelResult& WithChannelEngineVersion(ChannelEngineVersionResponse&& value) { SetChannelEngineVersion(std::move(value)); return *this;}
+    inline const ChannelEngineVersionResponse& GetChannelEngineVersion() const { return m_channelEngineVersion; }
+    template<typename ChannelEngineVersionT = ChannelEngineVersionResponse>
+    void SetChannelEngineVersion(ChannelEngineVersionT&& value) { m_channelEngineVersionHasBeenSet = true; m_channelEngineVersion = std::forward<ChannelEngineVersionT>(value); }
+    template<typename ChannelEngineVersionT = ChannelEngineVersionResponse>
+    StartChannelResult& WithChannelEngineVersion(ChannelEngineVersionT&& value) { SetChannelEngineVersion(std::forward<ChannelEngineVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartChannelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartChannelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartChannelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartChannelResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     CdiInputSpecification m_cdiInputSpecification;
+    bool m_cdiInputSpecificationHasBeenSet = false;
 
-    ChannelClass m_channelClass;
+    ChannelClass m_channelClass{ChannelClass::NOT_SET};
+    bool m_channelClassHasBeenSet = false;
 
     Aws::Vector<OutputDestination> m_destinations;
+    bool m_destinationsHasBeenSet = false;
 
     Aws::Vector<ChannelEgressEndpoint> m_egressEndpoints;
+    bool m_egressEndpointsHasBeenSet = false;
 
     EncoderSettings m_encoderSettings;
+    bool m_encoderSettingsHasBeenSet = false;
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::Vector<InputAttachment> m_inputAttachments;
+    bool m_inputAttachmentsHasBeenSet = false;
 
     InputSpecification m_inputSpecification;
+    bool m_inputSpecificationHasBeenSet = false;
 
-    LogLevel m_logLevel;
+    LogLevel m_logLevel{LogLevel::NOT_SET};
+    bool m_logLevelHasBeenSet = false;
 
     MaintenanceStatus m_maintenance;
+    bool m_maintenanceHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<PipelineDetail> m_pipelineDetails;
+    bool m_pipelineDetailsHasBeenSet = false;
 
-    int m_pipelinesRunningCount;
+    int m_pipelinesRunningCount{0};
+    bool m_pipelinesRunningCountHasBeenSet = false;
 
     Aws::String m_roleArn;
+    bool m_roleArnHasBeenSet = false;
 
-    ChannelState m_state;
+    ChannelState m_state{ChannelState::NOT_SET};
+    bool m_stateHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     VpcOutputSettingsDescription m_vpc;
+    bool m_vpcHasBeenSet = false;
 
     DescribeAnywhereSettings m_anywhereSettings;
+    bool m_anywhereSettingsHasBeenSet = false;
 
     ChannelEngineVersionResponse m_channelEngineVersion;
+    bool m_channelEngineVersionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

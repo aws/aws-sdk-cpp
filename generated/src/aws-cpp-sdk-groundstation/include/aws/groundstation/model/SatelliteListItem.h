@@ -33,7 +33,7 @@ namespace Model
   class SatelliteListItem
   {
   public:
-    AWS_GROUNDSTATION_API SatelliteListItem();
+    AWS_GROUNDSTATION_API SatelliteListItem() = default;
     AWS_GROUNDSTATION_API SatelliteListItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_GROUNDSTATION_API SatelliteListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,34 +44,33 @@ namespace Model
      * <p>The current ephemeris being used to compute the trajectory of the
      * satellite.</p>
      */
-    inline const EphemerisMetaData& GetCurrentEphemeris() const{ return m_currentEphemeris; }
+    inline const EphemerisMetaData& GetCurrentEphemeris() const { return m_currentEphemeris; }
     inline bool CurrentEphemerisHasBeenSet() const { return m_currentEphemerisHasBeenSet; }
-    inline void SetCurrentEphemeris(const EphemerisMetaData& value) { m_currentEphemerisHasBeenSet = true; m_currentEphemeris = value; }
-    inline void SetCurrentEphemeris(EphemerisMetaData&& value) { m_currentEphemerisHasBeenSet = true; m_currentEphemeris = std::move(value); }
-    inline SatelliteListItem& WithCurrentEphemeris(const EphemerisMetaData& value) { SetCurrentEphemeris(value); return *this;}
-    inline SatelliteListItem& WithCurrentEphemeris(EphemerisMetaData&& value) { SetCurrentEphemeris(std::move(value)); return *this;}
+    template<typename CurrentEphemerisT = EphemerisMetaData>
+    void SetCurrentEphemeris(CurrentEphemerisT&& value) { m_currentEphemerisHasBeenSet = true; m_currentEphemeris = std::forward<CurrentEphemerisT>(value); }
+    template<typename CurrentEphemerisT = EphemerisMetaData>
+    SatelliteListItem& WithCurrentEphemeris(CurrentEphemerisT&& value) { SetCurrentEphemeris(std::forward<CurrentEphemerisT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of ground stations to which the satellite is on-boarded.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetGroundStations() const{ return m_groundStations; }
+    inline const Aws::Vector<Aws::String>& GetGroundStations() const { return m_groundStations; }
     inline bool GroundStationsHasBeenSet() const { return m_groundStationsHasBeenSet; }
-    inline void SetGroundStations(const Aws::Vector<Aws::String>& value) { m_groundStationsHasBeenSet = true; m_groundStations = value; }
-    inline void SetGroundStations(Aws::Vector<Aws::String>&& value) { m_groundStationsHasBeenSet = true; m_groundStations = std::move(value); }
-    inline SatelliteListItem& WithGroundStations(const Aws::Vector<Aws::String>& value) { SetGroundStations(value); return *this;}
-    inline SatelliteListItem& WithGroundStations(Aws::Vector<Aws::String>&& value) { SetGroundStations(std::move(value)); return *this;}
-    inline SatelliteListItem& AddGroundStations(const Aws::String& value) { m_groundStationsHasBeenSet = true; m_groundStations.push_back(value); return *this; }
-    inline SatelliteListItem& AddGroundStations(Aws::String&& value) { m_groundStationsHasBeenSet = true; m_groundStations.push_back(std::move(value)); return *this; }
-    inline SatelliteListItem& AddGroundStations(const char* value) { m_groundStationsHasBeenSet = true; m_groundStations.push_back(value); return *this; }
+    template<typename GroundStationsT = Aws::Vector<Aws::String>>
+    void SetGroundStations(GroundStationsT&& value) { m_groundStationsHasBeenSet = true; m_groundStations = std::forward<GroundStationsT>(value); }
+    template<typename GroundStationsT = Aws::Vector<Aws::String>>
+    SatelliteListItem& WithGroundStations(GroundStationsT&& value) { SetGroundStations(std::forward<GroundStationsT>(value)); return *this;}
+    template<typename GroundStationsT = Aws::String>
+    SatelliteListItem& AddGroundStations(GroundStationsT&& value) { m_groundStationsHasBeenSet = true; m_groundStations.emplace_back(std::forward<GroundStationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>NORAD satellite ID number.</p>
      */
-    inline int GetNoradSatelliteID() const{ return m_noradSatelliteID; }
+    inline int GetNoradSatelliteID() const { return m_noradSatelliteID; }
     inline bool NoradSatelliteIDHasBeenSet() const { return m_noradSatelliteIDHasBeenSet; }
     inline void SetNoradSatelliteID(int value) { m_noradSatelliteIDHasBeenSet = true; m_noradSatelliteID = value; }
     inline SatelliteListItem& WithNoradSatelliteID(int value) { SetNoradSatelliteID(value); return *this;}
@@ -81,28 +80,24 @@ namespace Model
     /**
      * <p>ARN of a satellite.</p>
      */
-    inline const Aws::String& GetSatelliteArn() const{ return m_satelliteArn; }
+    inline const Aws::String& GetSatelliteArn() const { return m_satelliteArn; }
     inline bool SatelliteArnHasBeenSet() const { return m_satelliteArnHasBeenSet; }
-    inline void SetSatelliteArn(const Aws::String& value) { m_satelliteArnHasBeenSet = true; m_satelliteArn = value; }
-    inline void SetSatelliteArn(Aws::String&& value) { m_satelliteArnHasBeenSet = true; m_satelliteArn = std::move(value); }
-    inline void SetSatelliteArn(const char* value) { m_satelliteArnHasBeenSet = true; m_satelliteArn.assign(value); }
-    inline SatelliteListItem& WithSatelliteArn(const Aws::String& value) { SetSatelliteArn(value); return *this;}
-    inline SatelliteListItem& WithSatelliteArn(Aws::String&& value) { SetSatelliteArn(std::move(value)); return *this;}
-    inline SatelliteListItem& WithSatelliteArn(const char* value) { SetSatelliteArn(value); return *this;}
+    template<typename SatelliteArnT = Aws::String>
+    void SetSatelliteArn(SatelliteArnT&& value) { m_satelliteArnHasBeenSet = true; m_satelliteArn = std::forward<SatelliteArnT>(value); }
+    template<typename SatelliteArnT = Aws::String>
+    SatelliteListItem& WithSatelliteArn(SatelliteArnT&& value) { SetSatelliteArn(std::forward<SatelliteArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>UUID of a satellite.</p>
      */
-    inline const Aws::String& GetSatelliteId() const{ return m_satelliteId; }
+    inline const Aws::String& GetSatelliteId() const { return m_satelliteId; }
     inline bool SatelliteIdHasBeenSet() const { return m_satelliteIdHasBeenSet; }
-    inline void SetSatelliteId(const Aws::String& value) { m_satelliteIdHasBeenSet = true; m_satelliteId = value; }
-    inline void SetSatelliteId(Aws::String&& value) { m_satelliteIdHasBeenSet = true; m_satelliteId = std::move(value); }
-    inline void SetSatelliteId(const char* value) { m_satelliteIdHasBeenSet = true; m_satelliteId.assign(value); }
-    inline SatelliteListItem& WithSatelliteId(const Aws::String& value) { SetSatelliteId(value); return *this;}
-    inline SatelliteListItem& WithSatelliteId(Aws::String&& value) { SetSatelliteId(std::move(value)); return *this;}
-    inline SatelliteListItem& WithSatelliteId(const char* value) { SetSatelliteId(value); return *this;}
+    template<typename SatelliteIdT = Aws::String>
+    void SetSatelliteId(SatelliteIdT&& value) { m_satelliteIdHasBeenSet = true; m_satelliteId = std::forward<SatelliteIdT>(value); }
+    template<typename SatelliteIdT = Aws::String>
+    SatelliteListItem& WithSatelliteId(SatelliteIdT&& value) { SetSatelliteId(std::forward<SatelliteIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -112,7 +107,7 @@ namespace Model
     Aws::Vector<Aws::String> m_groundStations;
     bool m_groundStationsHasBeenSet = false;
 
-    int m_noradSatelliteID;
+    int m_noradSatelliteID{0};
     bool m_noradSatelliteIDHasBeenSet = false;
 
     Aws::String m_satelliteArn;

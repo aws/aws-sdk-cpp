@@ -35,7 +35,7 @@ namespace Model
   class X12InterchangeControlHeaders
   {
   public:
-    AWS_B2BI_API X12InterchangeControlHeaders();
+    AWS_B2BI_API X12InterchangeControlHeaders() = default;
     AWS_B2BI_API X12InterchangeControlHeaders(Aws::Utils::Json::JsonView jsonValue);
     AWS_B2BI_API X12InterchangeControlHeaders& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_B2BI_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * Together, the ID and qualifier uniquely identify the sending trading
      * partner.</p>
      */
-    inline const Aws::String& GetSenderIdQualifier() const{ return m_senderIdQualifier; }
+    inline const Aws::String& GetSenderIdQualifier() const { return m_senderIdQualifier; }
     inline bool SenderIdQualifierHasBeenSet() const { return m_senderIdQualifierHasBeenSet; }
-    inline void SetSenderIdQualifier(const Aws::String& value) { m_senderIdQualifierHasBeenSet = true; m_senderIdQualifier = value; }
-    inline void SetSenderIdQualifier(Aws::String&& value) { m_senderIdQualifierHasBeenSet = true; m_senderIdQualifier = std::move(value); }
-    inline void SetSenderIdQualifier(const char* value) { m_senderIdQualifierHasBeenSet = true; m_senderIdQualifier.assign(value); }
-    inline X12InterchangeControlHeaders& WithSenderIdQualifier(const Aws::String& value) { SetSenderIdQualifier(value); return *this;}
-    inline X12InterchangeControlHeaders& WithSenderIdQualifier(Aws::String&& value) { SetSenderIdQualifier(std::move(value)); return *this;}
-    inline X12InterchangeControlHeaders& WithSenderIdQualifier(const char* value) { SetSenderIdQualifier(value); return *this;}
+    template<typename SenderIdQualifierT = Aws::String>
+    void SetSenderIdQualifier(SenderIdQualifierT&& value) { m_senderIdQualifierHasBeenSet = true; m_senderIdQualifier = std::forward<SenderIdQualifierT>(value); }
+    template<typename SenderIdQualifierT = Aws::String>
+    X12InterchangeControlHeaders& WithSenderIdQualifier(SenderIdQualifierT&& value) { SetSenderIdQualifier(std::forward<SenderIdQualifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
      * <p>Located at position ISA-06 in the header. This value (along with the
      * <code>senderIdQualifier</code>) identifies the sender of the interchange. </p>
      */
-    inline const Aws::String& GetSenderId() const{ return m_senderId; }
+    inline const Aws::String& GetSenderId() const { return m_senderId; }
     inline bool SenderIdHasBeenSet() const { return m_senderIdHasBeenSet; }
-    inline void SetSenderId(const Aws::String& value) { m_senderIdHasBeenSet = true; m_senderId = value; }
-    inline void SetSenderId(Aws::String&& value) { m_senderIdHasBeenSet = true; m_senderId = std::move(value); }
-    inline void SetSenderId(const char* value) { m_senderIdHasBeenSet = true; m_senderId.assign(value); }
-    inline X12InterchangeControlHeaders& WithSenderId(const Aws::String& value) { SetSenderId(value); return *this;}
-    inline X12InterchangeControlHeaders& WithSenderId(Aws::String&& value) { SetSenderId(std::move(value)); return *this;}
-    inline X12InterchangeControlHeaders& WithSenderId(const char* value) { SetSenderId(value); return *this;}
+    template<typename SenderIdT = Aws::String>
+    void SetSenderId(SenderIdT&& value) { m_senderIdHasBeenSet = true; m_senderId = std::forward<SenderIdT>(value); }
+    template<typename SenderIdT = Aws::String>
+    X12InterchangeControlHeaders& WithSenderId(SenderIdT&& value) { SetSenderId(std::forward<SenderIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,14 +74,12 @@ namespace Model
      * Together, the ID and qualifier uniquely identify the receiving trading
      * partner.</p>
      */
-    inline const Aws::String& GetReceiverIdQualifier() const{ return m_receiverIdQualifier; }
+    inline const Aws::String& GetReceiverIdQualifier() const { return m_receiverIdQualifier; }
     inline bool ReceiverIdQualifierHasBeenSet() const { return m_receiverIdQualifierHasBeenSet; }
-    inline void SetReceiverIdQualifier(const Aws::String& value) { m_receiverIdQualifierHasBeenSet = true; m_receiverIdQualifier = value; }
-    inline void SetReceiverIdQualifier(Aws::String&& value) { m_receiverIdQualifierHasBeenSet = true; m_receiverIdQualifier = std::move(value); }
-    inline void SetReceiverIdQualifier(const char* value) { m_receiverIdQualifierHasBeenSet = true; m_receiverIdQualifier.assign(value); }
-    inline X12InterchangeControlHeaders& WithReceiverIdQualifier(const Aws::String& value) { SetReceiverIdQualifier(value); return *this;}
-    inline X12InterchangeControlHeaders& WithReceiverIdQualifier(Aws::String&& value) { SetReceiverIdQualifier(std::move(value)); return *this;}
-    inline X12InterchangeControlHeaders& WithReceiverIdQualifier(const char* value) { SetReceiverIdQualifier(value); return *this;}
+    template<typename ReceiverIdQualifierT = Aws::String>
+    void SetReceiverIdQualifier(ReceiverIdQualifierT&& value) { m_receiverIdQualifierHasBeenSet = true; m_receiverIdQualifier = std::forward<ReceiverIdQualifierT>(value); }
+    template<typename ReceiverIdQualifierT = Aws::String>
+    X12InterchangeControlHeaders& WithReceiverIdQualifier(ReceiverIdQualifierT&& value) { SetReceiverIdQualifier(std::forward<ReceiverIdQualifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,14 +88,12 @@ namespace Model
      * <code>receiverIdQualifier</code>) identifies the intended recipient of the
      * interchange. </p>
      */
-    inline const Aws::String& GetReceiverId() const{ return m_receiverId; }
+    inline const Aws::String& GetReceiverId() const { return m_receiverId; }
     inline bool ReceiverIdHasBeenSet() const { return m_receiverIdHasBeenSet; }
-    inline void SetReceiverId(const Aws::String& value) { m_receiverIdHasBeenSet = true; m_receiverId = value; }
-    inline void SetReceiverId(Aws::String&& value) { m_receiverIdHasBeenSet = true; m_receiverId = std::move(value); }
-    inline void SetReceiverId(const char* value) { m_receiverIdHasBeenSet = true; m_receiverId.assign(value); }
-    inline X12InterchangeControlHeaders& WithReceiverId(const Aws::String& value) { SetReceiverId(value); return *this;}
-    inline X12InterchangeControlHeaders& WithReceiverId(Aws::String&& value) { SetReceiverId(std::move(value)); return *this;}
-    inline X12InterchangeControlHeaders& WithReceiverId(const char* value) { SetReceiverId(value); return *this;}
+    template<typename ReceiverIdT = Aws::String>
+    void SetReceiverId(ReceiverIdT&& value) { m_receiverIdHasBeenSet = true; m_receiverId = std::forward<ReceiverIdT>(value); }
+    template<typename ReceiverIdT = Aws::String>
+    X12InterchangeControlHeaders& WithReceiverId(ReceiverIdT&& value) { SetReceiverId(std::forward<ReceiverIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,14 +106,12 @@ namespace Model
      * href="https://www.stedi.com/edi/x12-004010/segment/ISA#ISA-11">StandardsId</a>,
      * in which case our service sets the value to <code>U</code>.</p> 
      */
-    inline const Aws::String& GetRepetitionSeparator() const{ return m_repetitionSeparator; }
+    inline const Aws::String& GetRepetitionSeparator() const { return m_repetitionSeparator; }
     inline bool RepetitionSeparatorHasBeenSet() const { return m_repetitionSeparatorHasBeenSet; }
-    inline void SetRepetitionSeparator(const Aws::String& value) { m_repetitionSeparatorHasBeenSet = true; m_repetitionSeparator = value; }
-    inline void SetRepetitionSeparator(Aws::String&& value) { m_repetitionSeparatorHasBeenSet = true; m_repetitionSeparator = std::move(value); }
-    inline void SetRepetitionSeparator(const char* value) { m_repetitionSeparatorHasBeenSet = true; m_repetitionSeparator.assign(value); }
-    inline X12InterchangeControlHeaders& WithRepetitionSeparator(const Aws::String& value) { SetRepetitionSeparator(value); return *this;}
-    inline X12InterchangeControlHeaders& WithRepetitionSeparator(Aws::String&& value) { SetRepetitionSeparator(std::move(value)); return *this;}
-    inline X12InterchangeControlHeaders& WithRepetitionSeparator(const char* value) { SetRepetitionSeparator(value); return *this;}
+    template<typename RepetitionSeparatorT = Aws::String>
+    void SetRepetitionSeparator(RepetitionSeparatorT&& value) { m_repetitionSeparatorHasBeenSet = true; m_repetitionSeparator = std::forward<RepetitionSeparatorT>(value); }
+    template<typename RepetitionSeparatorT = Aws::String>
+    X12InterchangeControlHeaders& WithRepetitionSeparator(RepetitionSeparatorT&& value) { SetRepetitionSeparator(std::forward<RepetitionSeparatorT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -130,14 +120,12 @@ namespace Model
      * sender is requesting an interchange acknowledgment at receipt of the
      * interchange. The value "0" is used otherwise.</p>
      */
-    inline const Aws::String& GetAcknowledgmentRequestedCode() const{ return m_acknowledgmentRequestedCode; }
+    inline const Aws::String& GetAcknowledgmentRequestedCode() const { return m_acknowledgmentRequestedCode; }
     inline bool AcknowledgmentRequestedCodeHasBeenSet() const { return m_acknowledgmentRequestedCodeHasBeenSet; }
-    inline void SetAcknowledgmentRequestedCode(const Aws::String& value) { m_acknowledgmentRequestedCodeHasBeenSet = true; m_acknowledgmentRequestedCode = value; }
-    inline void SetAcknowledgmentRequestedCode(Aws::String&& value) { m_acknowledgmentRequestedCodeHasBeenSet = true; m_acknowledgmentRequestedCode = std::move(value); }
-    inline void SetAcknowledgmentRequestedCode(const char* value) { m_acknowledgmentRequestedCodeHasBeenSet = true; m_acknowledgmentRequestedCode.assign(value); }
-    inline X12InterchangeControlHeaders& WithAcknowledgmentRequestedCode(const Aws::String& value) { SetAcknowledgmentRequestedCode(value); return *this;}
-    inline X12InterchangeControlHeaders& WithAcknowledgmentRequestedCode(Aws::String&& value) { SetAcknowledgmentRequestedCode(std::move(value)); return *this;}
-    inline X12InterchangeControlHeaders& WithAcknowledgmentRequestedCode(const char* value) { SetAcknowledgmentRequestedCode(value); return *this;}
+    template<typename AcknowledgmentRequestedCodeT = Aws::String>
+    void SetAcknowledgmentRequestedCode(AcknowledgmentRequestedCodeT&& value) { m_acknowledgmentRequestedCodeHasBeenSet = true; m_acknowledgmentRequestedCode = std::forward<AcknowledgmentRequestedCodeT>(value); }
+    template<typename AcknowledgmentRequestedCodeT = Aws::String>
+    X12InterchangeControlHeaders& WithAcknowledgmentRequestedCode(AcknowledgmentRequestedCodeT&& value) { SetAcknowledgmentRequestedCode(std::forward<AcknowledgmentRequestedCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -148,14 +136,12 @@ namespace Model
      * production.</p> </li> <li> <p> <code>I</code> indicates this interchange is
      * informational.</p> </li> </ul>
      */
-    inline const Aws::String& GetUsageIndicatorCode() const{ return m_usageIndicatorCode; }
+    inline const Aws::String& GetUsageIndicatorCode() const { return m_usageIndicatorCode; }
     inline bool UsageIndicatorCodeHasBeenSet() const { return m_usageIndicatorCodeHasBeenSet; }
-    inline void SetUsageIndicatorCode(const Aws::String& value) { m_usageIndicatorCodeHasBeenSet = true; m_usageIndicatorCode = value; }
-    inline void SetUsageIndicatorCode(Aws::String&& value) { m_usageIndicatorCodeHasBeenSet = true; m_usageIndicatorCode = std::move(value); }
-    inline void SetUsageIndicatorCode(const char* value) { m_usageIndicatorCodeHasBeenSet = true; m_usageIndicatorCode.assign(value); }
-    inline X12InterchangeControlHeaders& WithUsageIndicatorCode(const Aws::String& value) { SetUsageIndicatorCode(value); return *this;}
-    inline X12InterchangeControlHeaders& WithUsageIndicatorCode(Aws::String&& value) { SetUsageIndicatorCode(std::move(value)); return *this;}
-    inline X12InterchangeControlHeaders& WithUsageIndicatorCode(const char* value) { SetUsageIndicatorCode(value); return *this;}
+    template<typename UsageIndicatorCodeT = Aws::String>
+    void SetUsageIndicatorCode(UsageIndicatorCodeT&& value) { m_usageIndicatorCodeHasBeenSet = true; m_usageIndicatorCode = std::forward<UsageIndicatorCodeT>(value); }
+    template<typename UsageIndicatorCodeT = Aws::String>
+    X12InterchangeControlHeaders& WithUsageIndicatorCode(UsageIndicatorCodeT&& value) { SetUsageIndicatorCode(std::forward<UsageIndicatorCodeT>(value)); return *this;}
     ///@}
   private:
 

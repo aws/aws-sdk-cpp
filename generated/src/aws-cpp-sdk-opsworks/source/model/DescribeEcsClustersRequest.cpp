@@ -12,15 +12,6 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeEcsClustersRequest::DescribeEcsClustersRequest() : 
-    m_ecsClusterArnsHasBeenSet(false),
-    m_stackIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeEcsClustersRequest::SerializePayload() const
 {
   JsonValue payload;

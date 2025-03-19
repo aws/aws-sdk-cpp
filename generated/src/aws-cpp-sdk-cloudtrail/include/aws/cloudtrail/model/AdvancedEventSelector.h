@@ -46,7 +46,7 @@ namespace Model
   class AdvancedEventSelector
   {
   public:
-    AWS_CLOUDTRAIL_API AdvancedEventSelector();
+    AWS_CLOUDTRAIL_API AdvancedEventSelector() = default;
     AWS_CLOUDTRAIL_API AdvancedEventSelector(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDTRAIL_API AdvancedEventSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDTRAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -57,28 +57,26 @@ namespace Model
      * <p>An optional, descriptive name for an advanced event selector, such as "Log
      * data events for only two S3 buckets".</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AdvancedEventSelector& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AdvancedEventSelector& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AdvancedEventSelector& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    AdvancedEventSelector& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains all selector statements in an advanced event selector.</p>
      */
-    inline const Aws::Vector<AdvancedFieldSelector>& GetFieldSelectors() const{ return m_fieldSelectors; }
+    inline const Aws::Vector<AdvancedFieldSelector>& GetFieldSelectors() const { return m_fieldSelectors; }
     inline bool FieldSelectorsHasBeenSet() const { return m_fieldSelectorsHasBeenSet; }
-    inline void SetFieldSelectors(const Aws::Vector<AdvancedFieldSelector>& value) { m_fieldSelectorsHasBeenSet = true; m_fieldSelectors = value; }
-    inline void SetFieldSelectors(Aws::Vector<AdvancedFieldSelector>&& value) { m_fieldSelectorsHasBeenSet = true; m_fieldSelectors = std::move(value); }
-    inline AdvancedEventSelector& WithFieldSelectors(const Aws::Vector<AdvancedFieldSelector>& value) { SetFieldSelectors(value); return *this;}
-    inline AdvancedEventSelector& WithFieldSelectors(Aws::Vector<AdvancedFieldSelector>&& value) { SetFieldSelectors(std::move(value)); return *this;}
-    inline AdvancedEventSelector& AddFieldSelectors(const AdvancedFieldSelector& value) { m_fieldSelectorsHasBeenSet = true; m_fieldSelectors.push_back(value); return *this; }
-    inline AdvancedEventSelector& AddFieldSelectors(AdvancedFieldSelector&& value) { m_fieldSelectorsHasBeenSet = true; m_fieldSelectors.push_back(std::move(value)); return *this; }
+    template<typename FieldSelectorsT = Aws::Vector<AdvancedFieldSelector>>
+    void SetFieldSelectors(FieldSelectorsT&& value) { m_fieldSelectorsHasBeenSet = true; m_fieldSelectors = std::forward<FieldSelectorsT>(value); }
+    template<typename FieldSelectorsT = Aws::Vector<AdvancedFieldSelector>>
+    AdvancedEventSelector& WithFieldSelectors(FieldSelectorsT&& value) { SetFieldSelectors(std::forward<FieldSelectorsT>(value)); return *this;}
+    template<typename FieldSelectorsT = AdvancedFieldSelector>
+    AdvancedEventSelector& AddFieldSelectors(FieldSelectorsT&& value) { m_fieldSelectorsHasBeenSet = true; m_fieldSelectors.emplace_back(std::forward<FieldSelectorsT>(value)); return *this; }
     ///@}
   private:
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ExportLensResult::ExportLensResult()
-{
-}
-
 ExportLensResult::ExportLensResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ ExportLensResult& ExportLensResult::operator =(const Aws::AmazonWebServiceResult
   if(jsonValue.ValueExists("LensJSON"))
   {
     m_lensJSON = jsonValue.GetString("LensJSON");
-
+    m_lensJSONHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

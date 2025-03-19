@@ -10,11 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-BatchDeleteClusterSnapshotsRequest::BatchDeleteClusterSnapshotsRequest() : 
-    m_identifiersHasBeenSet(false)
-{
-}
-
 Aws::String BatchDeleteClusterSnapshotsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

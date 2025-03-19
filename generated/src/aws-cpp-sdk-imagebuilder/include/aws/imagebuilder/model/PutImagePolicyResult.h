@@ -27,7 +27,7 @@ namespace Model
   class PutImagePolicyResult
   {
   public:
-    AWS_IMAGEBUILDER_API PutImagePolicyResult();
+    AWS_IMAGEBUILDER_API PutImagePolicyResult() = default;
     AWS_IMAGEBUILDER_API PutImagePolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IMAGEBUILDER_API PutImagePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,13 +36,11 @@ namespace Model
     /**
      * <p>The request ID that uniquely identifies this request.</p>
      */
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutImagePolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutImagePolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutImagePolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutImagePolicyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -50,19 +48,19 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the image that this policy was applied
      * to.</p>
      */
-    inline const Aws::String& GetImageArn() const{ return m_imageArn; }
-    inline void SetImageArn(const Aws::String& value) { m_imageArn = value; }
-    inline void SetImageArn(Aws::String&& value) { m_imageArn = std::move(value); }
-    inline void SetImageArn(const char* value) { m_imageArn.assign(value); }
-    inline PutImagePolicyResult& WithImageArn(const Aws::String& value) { SetImageArn(value); return *this;}
-    inline PutImagePolicyResult& WithImageArn(Aws::String&& value) { SetImageArn(std::move(value)); return *this;}
-    inline PutImagePolicyResult& WithImageArn(const char* value) { SetImageArn(value); return *this;}
+    inline const Aws::String& GetImageArn() const { return m_imageArn; }
+    template<typename ImageArnT = Aws::String>
+    void SetImageArn(ImageArnT&& value) { m_imageArnHasBeenSet = true; m_imageArn = std::forward<ImageArnT>(value); }
+    template<typename ImageArnT = Aws::String>
+    PutImagePolicyResult& WithImageArn(ImageArnT&& value) { SetImageArn(std::forward<ImageArnT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
 
     Aws::String m_imageArn;
+    bool m_imageArnHasBeenSet = false;
   };
 
 } // namespace Model

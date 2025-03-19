@@ -18,17 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-PluginVisualFieldWell::PluginVisualFieldWell() : 
-    m_axisName(PluginVisualAxisName::NOT_SET),
-    m_axisNameHasBeenSet(false),
-    m_dimensionsHasBeenSet(false),
-    m_measuresHasBeenSet(false),
-    m_unaggregatedHasBeenSet(false)
-{
-}
-
 PluginVisualFieldWell::PluginVisualFieldWell(JsonView jsonValue)
-  : PluginVisualFieldWell()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ PluginVisualFieldWell& PluginVisualFieldWell::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AxisName"))
   {
     m_axisName = PluginVisualAxisNameMapper::GetPluginVisualAxisNameForName(jsonValue.GetString("AxisName"));
-
     m_axisNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Dimensions"))
   {
     Aws::Utils::Array<JsonView> dimensionsJsonList = jsonValue.GetArray("Dimensions");
@@ -51,7 +39,6 @@ PluginVisualFieldWell& PluginVisualFieldWell::operator =(JsonView jsonValue)
     }
     m_dimensionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Measures"))
   {
     Aws::Utils::Array<JsonView> measuresJsonList = jsonValue.GetArray("Measures");
@@ -61,7 +48,6 @@ PluginVisualFieldWell& PluginVisualFieldWell::operator =(JsonView jsonValue)
     }
     m_measuresHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Unaggregated"))
   {
     Aws::Utils::Array<JsonView> unaggregatedJsonList = jsonValue.GetArray("Unaggregated");
@@ -71,7 +57,6 @@ PluginVisualFieldWell& PluginVisualFieldWell::operator =(JsonView jsonValue)
     }
     m_unaggregatedHasBeenSet = true;
   }
-
   return *this;
 }
 

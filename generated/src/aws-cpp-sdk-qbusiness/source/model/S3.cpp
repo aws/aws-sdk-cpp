@@ -18,14 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-S3::S3() : 
-    m_bucketHasBeenSet(false),
-    m_keyHasBeenSet(false)
-{
-}
-
 S3::S3(JsonView jsonValue)
-  : S3()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ S3& S3::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bucket"))
   {
     m_bucket = jsonValue.GetString("bucket");
-
     m_bucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   return *this;
 }
 

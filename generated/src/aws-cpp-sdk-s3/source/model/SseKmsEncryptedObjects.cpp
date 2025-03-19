@@ -20,14 +20,7 @@ namespace S3
 namespace Model
 {
 
-SseKmsEncryptedObjects::SseKmsEncryptedObjects() : 
-    m_status(SseKmsEncryptedObjectsStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 SseKmsEncryptedObjects::SseKmsEncryptedObjects(const XmlNode& xmlNode)
-  : SseKmsEncryptedObjects()
 {
   *this = xmlNode;
 }
@@ -41,7 +34,7 @@ SseKmsEncryptedObjects& SseKmsEncryptedObjects::operator =(const XmlNode& xmlNod
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = SseKmsEncryptedObjectsStatusMapper::GetSseKmsEncryptedObjectsStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = SseKmsEncryptedObjectsStatusMapper::GetSseKmsEncryptedObjectsStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
   }

@@ -18,10 +18,6 @@ namespace MediaLive
 namespace Model
 {
 
-AribDestinationSettings::AribDestinationSettings()
-{
-}
-
 AribDestinationSettings::AribDestinationSettings(JsonView jsonValue)
 {
   *this = jsonValue;

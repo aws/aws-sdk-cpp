@@ -12,11 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteOpsMetadataRequest::DeleteOpsMetadataRequest() : 
-    m_opsMetadataArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteOpsMetadataRequest::SerializePayload() const
 {
   JsonValue payload;

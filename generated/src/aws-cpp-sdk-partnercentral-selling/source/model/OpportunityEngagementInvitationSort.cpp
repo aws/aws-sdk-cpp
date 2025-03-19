@@ -18,16 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-OpportunityEngagementInvitationSort::OpportunityEngagementInvitationSort() : 
-    m_sortBy(OpportunityEngagementInvitationSortName::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
-{
-}
-
 OpportunityEngagementInvitationSort::OpportunityEngagementInvitationSort(JsonView jsonValue)
-  : OpportunityEngagementInvitationSort()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ OpportunityEngagementInvitationSort& OpportunityEngagementInvitationSort::operat
   if(jsonValue.ValueExists("SortBy"))
   {
     m_sortBy = OpportunityEngagementInvitationSortNameMapper::GetOpportunityEngagementInvitationSortNameForName(jsonValue.GetString("SortBy"));
-
     m_sortByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SortOrder"))
   {
     m_sortOrder = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("SortOrder"));
-
     m_sortOrderHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -28,7 +28,7 @@ namespace Model
   class PredictQAppResult
   {
   public:
-    AWS_QAPPS_API PredictQAppResult();
+    AWS_QAPPS_API PredictQAppResult() = default;
     AWS_QAPPS_API PredictQAppResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QAPPS_API PredictQAppResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,43 +37,42 @@ namespace Model
     /**
      * <p>The generated Q App definition.</p>
      */
-    inline const PredictAppDefinition& GetApp() const{ return m_app; }
-    inline void SetApp(const PredictAppDefinition& value) { m_app = value; }
-    inline void SetApp(PredictAppDefinition&& value) { m_app = std::move(value); }
-    inline PredictQAppResult& WithApp(const PredictAppDefinition& value) { SetApp(value); return *this;}
-    inline PredictQAppResult& WithApp(PredictAppDefinition&& value) { SetApp(std::move(value)); return *this;}
+    inline const PredictAppDefinition& GetApp() const { return m_app; }
+    template<typename AppT = PredictAppDefinition>
+    void SetApp(AppT&& value) { m_appHasBeenSet = true; m_app = std::forward<AppT>(value); }
+    template<typename AppT = PredictAppDefinition>
+    PredictQAppResult& WithApp(AppT&& value) { SetApp(std::forward<AppT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The problem statement extracted from the input conversation, if provided.</p>
      */
-    inline const Aws::String& GetProblemStatement() const{ return m_problemStatement; }
-    inline void SetProblemStatement(const Aws::String& value) { m_problemStatement = value; }
-    inline void SetProblemStatement(Aws::String&& value) { m_problemStatement = std::move(value); }
-    inline void SetProblemStatement(const char* value) { m_problemStatement.assign(value); }
-    inline PredictQAppResult& WithProblemStatement(const Aws::String& value) { SetProblemStatement(value); return *this;}
-    inline PredictQAppResult& WithProblemStatement(Aws::String&& value) { SetProblemStatement(std::move(value)); return *this;}
-    inline PredictQAppResult& WithProblemStatement(const char* value) { SetProblemStatement(value); return *this;}
+    inline const Aws::String& GetProblemStatement() const { return m_problemStatement; }
+    template<typename ProblemStatementT = Aws::String>
+    void SetProblemStatement(ProblemStatementT&& value) { m_problemStatementHasBeenSet = true; m_problemStatement = std::forward<ProblemStatementT>(value); }
+    template<typename ProblemStatementT = Aws::String>
+    PredictQAppResult& WithProblemStatement(ProblemStatementT&& value) { SetProblemStatement(std::forward<ProblemStatementT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PredictQAppResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PredictQAppResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PredictQAppResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PredictQAppResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     PredictAppDefinition m_app;
+    bool m_appHasBeenSet = false;
 
     Aws::String m_problemStatement;
+    bool m_problemStatementHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,13 +18,7 @@ namespace SFN
 namespace Model
 {
 
-MapRunStartedEventDetails::MapRunStartedEventDetails() : 
-    m_mapRunArnHasBeenSet(false)
-{
-}
-
 MapRunStartedEventDetails::MapRunStartedEventDetails(JsonView jsonValue)
-  : MapRunStartedEventDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MapRunStartedEventDetails& MapRunStartedEventDetails::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("mapRunArn"))
   {
     m_mapRunArn = jsonValue.GetString("mapRunArn");
-
     m_mapRunArnHasBeenSet = true;
   }
-
   return *this;
 }
 

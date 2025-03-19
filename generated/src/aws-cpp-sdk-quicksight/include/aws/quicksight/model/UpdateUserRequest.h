@@ -22,7 +22,7 @@ namespace Model
   class UpdateUserRequest : public QuickSightRequest
   {
   public:
-    AWS_QUICKSIGHT_API UpdateUserRequest();
+    AWS_QUICKSIGHT_API UpdateUserRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
     /**
      * <p>The Amazon QuickSight user name that you want to update.</p>
      */
-    inline const Aws::String& GetUserName() const{ return m_userName; }
+    inline const Aws::String& GetUserName() const { return m_userName; }
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
-    inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
-    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
-    inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
-    inline UpdateUserRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
-    inline UpdateUserRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
-    inline UpdateUserRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
+    template<typename UserNameT = Aws::String>
+    void SetUserName(UserNameT&& value) { m_userNameHasBeenSet = true; m_userName = std::forward<UserNameT>(value); }
+    template<typename UserNameT = Aws::String>
+    UpdateUserRequest& WithUserName(UserNameT&& value) { SetUserName(std::forward<UserNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,42 +51,36 @@ namespace Model
      * you use the ID for the Amazon Web Services account that contains your Amazon
      * QuickSight account.</p>
      */
-    inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
+    inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-    inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
-    inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
-    inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
-    inline UpdateUserRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
-    inline UpdateUserRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
-    inline UpdateUserRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+    template<typename AwsAccountIdT = Aws::String>
+    void SetAwsAccountId(AwsAccountIdT&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::forward<AwsAccountIdT>(value); }
+    template<typename AwsAccountIdT = Aws::String>
+    UpdateUserRequest& WithAwsAccountId(AwsAccountIdT&& value) { SetAwsAccountId(std::forward<AwsAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The namespace. Currently, you should set this to <code>default</code>.</p>
      */
-    inline const Aws::String& GetNamespace() const{ return m_namespace; }
+    inline const Aws::String& GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
-    inline UpdateUserRequest& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-    inline UpdateUserRequest& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-    inline UpdateUserRequest& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+    template<typename NamespaceT = Aws::String>
+    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
+    template<typename NamespaceT = Aws::String>
+    UpdateUserRequest& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The email address of the user that you want to update.</p>
      */
-    inline const Aws::String& GetEmail() const{ return m_email; }
+    inline const Aws::String& GetEmail() const { return m_email; }
     inline bool EmailHasBeenSet() const { return m_emailHasBeenSet; }
-    inline void SetEmail(const Aws::String& value) { m_emailHasBeenSet = true; m_email = value; }
-    inline void SetEmail(Aws::String&& value) { m_emailHasBeenSet = true; m_email = std::move(value); }
-    inline void SetEmail(const char* value) { m_emailHasBeenSet = true; m_email.assign(value); }
-    inline UpdateUserRequest& WithEmail(const Aws::String& value) { SetEmail(value); return *this;}
-    inline UpdateUserRequest& WithEmail(Aws::String&& value) { SetEmail(std::move(value)); return *this;}
-    inline UpdateUserRequest& WithEmail(const char* value) { SetEmail(value); return *this;}
+    template<typename EmailT = Aws::String>
+    void SetEmail(EmailT&& value) { m_emailHasBeenSet = true; m_email = std::forward<EmailT>(value); }
+    template<typename EmailT = Aws::String>
+    UpdateUserRequest& WithEmail(EmailT&& value) { SetEmail(std::forward<EmailT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,12 +103,10 @@ namespace Model
      * Amazon QuickSight role is invisible to the user except for the console screens
      * dealing with permissions.</p>
      */
-    inline const UserRole& GetRole() const{ return m_role; }
+    inline UserRole GetRole() const { return m_role; }
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
-    inline void SetRole(const UserRole& value) { m_roleHasBeenSet = true; m_role = value; }
-    inline void SetRole(UserRole&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
-    inline UpdateUserRequest& WithRole(const UserRole& value) { SetRole(value); return *this;}
-    inline UpdateUserRequest& WithRole(UserRole&& value) { SetRole(std::move(value)); return *this;}
+    inline void SetRole(UserRole value) { m_roleHasBeenSet = true; m_role = value; }
+    inline UpdateUserRequest& WithRole(UserRole value) { SetRole(value); return *this;}
     ///@}
 
     ///@{
@@ -137,14 +127,12 @@ namespace Model
      * <p>This feature is available only to Amazon QuickSight Enterprise edition
      * subscriptions.</p>
      */
-    inline const Aws::String& GetCustomPermissionsName() const{ return m_customPermissionsName; }
+    inline const Aws::String& GetCustomPermissionsName() const { return m_customPermissionsName; }
     inline bool CustomPermissionsNameHasBeenSet() const { return m_customPermissionsNameHasBeenSet; }
-    inline void SetCustomPermissionsName(const Aws::String& value) { m_customPermissionsNameHasBeenSet = true; m_customPermissionsName = value; }
-    inline void SetCustomPermissionsName(Aws::String&& value) { m_customPermissionsNameHasBeenSet = true; m_customPermissionsName = std::move(value); }
-    inline void SetCustomPermissionsName(const char* value) { m_customPermissionsNameHasBeenSet = true; m_customPermissionsName.assign(value); }
-    inline UpdateUserRequest& WithCustomPermissionsName(const Aws::String& value) { SetCustomPermissionsName(value); return *this;}
-    inline UpdateUserRequest& WithCustomPermissionsName(Aws::String&& value) { SetCustomPermissionsName(std::move(value)); return *this;}
-    inline UpdateUserRequest& WithCustomPermissionsName(const char* value) { SetCustomPermissionsName(value); return *this;}
+    template<typename CustomPermissionsNameT = Aws::String>
+    void SetCustomPermissionsName(CustomPermissionsNameT&& value) { m_customPermissionsNameHasBeenSet = true; m_customPermissionsName = std::forward<CustomPermissionsNameT>(value); }
+    template<typename CustomPermissionsNameT = Aws::String>
+    UpdateUserRequest& WithCustomPermissionsName(CustomPermissionsNameT&& value) { SetCustomPermissionsName(std::forward<CustomPermissionsNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -154,7 +142,7 @@ namespace Model
      * was in before a custom permissions profile was applied. This parameter defaults
      * to NULL and it doesn't accept any other value.</p>
      */
-    inline bool GetUnapplyCustomPermissions() const{ return m_unapplyCustomPermissions; }
+    inline bool GetUnapplyCustomPermissions() const { return m_unapplyCustomPermissions; }
     inline bool UnapplyCustomPermissionsHasBeenSet() const { return m_unapplyCustomPermissionsHasBeenSet; }
     inline void SetUnapplyCustomPermissions(bool value) { m_unapplyCustomPermissionsHasBeenSet = true; m_unapplyCustomPermissions = value; }
     inline UpdateUserRequest& WithUnapplyCustomPermissions(bool value) { SetUnapplyCustomPermissions(value); return *this;}
@@ -177,14 +165,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
      * </code> API operation to check the external login information.</p> </li> </ul>
      */
-    inline const Aws::String& GetExternalLoginFederationProviderType() const{ return m_externalLoginFederationProviderType; }
+    inline const Aws::String& GetExternalLoginFederationProviderType() const { return m_externalLoginFederationProviderType; }
     inline bool ExternalLoginFederationProviderTypeHasBeenSet() const { return m_externalLoginFederationProviderTypeHasBeenSet; }
-    inline void SetExternalLoginFederationProviderType(const Aws::String& value) { m_externalLoginFederationProviderTypeHasBeenSet = true; m_externalLoginFederationProviderType = value; }
-    inline void SetExternalLoginFederationProviderType(Aws::String&& value) { m_externalLoginFederationProviderTypeHasBeenSet = true; m_externalLoginFederationProviderType = std::move(value); }
-    inline void SetExternalLoginFederationProviderType(const char* value) { m_externalLoginFederationProviderTypeHasBeenSet = true; m_externalLoginFederationProviderType.assign(value); }
-    inline UpdateUserRequest& WithExternalLoginFederationProviderType(const Aws::String& value) { SetExternalLoginFederationProviderType(value); return *this;}
-    inline UpdateUserRequest& WithExternalLoginFederationProviderType(Aws::String&& value) { SetExternalLoginFederationProviderType(std::move(value)); return *this;}
-    inline UpdateUserRequest& WithExternalLoginFederationProviderType(const char* value) { SetExternalLoginFederationProviderType(value); return *this;}
+    template<typename ExternalLoginFederationProviderTypeT = Aws::String>
+    void SetExternalLoginFederationProviderType(ExternalLoginFederationProviderTypeT&& value) { m_externalLoginFederationProviderTypeHasBeenSet = true; m_externalLoginFederationProviderType = std::forward<ExternalLoginFederationProviderTypeT>(value); }
+    template<typename ExternalLoginFederationProviderTypeT = Aws::String>
+    UpdateUserRequest& WithExternalLoginFederationProviderType(ExternalLoginFederationProviderTypeT&& value) { SetExternalLoginFederationProviderType(std::forward<ExternalLoginFederationProviderTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -195,28 +181,24 @@ namespace Model
      * <code>ExternalLoginFederationProviderType</code> parameter is set to
      * <code>CUSTOM_OIDC</code>.</p>
      */
-    inline const Aws::String& GetCustomFederationProviderUrl() const{ return m_customFederationProviderUrl; }
+    inline const Aws::String& GetCustomFederationProviderUrl() const { return m_customFederationProviderUrl; }
     inline bool CustomFederationProviderUrlHasBeenSet() const { return m_customFederationProviderUrlHasBeenSet; }
-    inline void SetCustomFederationProviderUrl(const Aws::String& value) { m_customFederationProviderUrlHasBeenSet = true; m_customFederationProviderUrl = value; }
-    inline void SetCustomFederationProviderUrl(Aws::String&& value) { m_customFederationProviderUrlHasBeenSet = true; m_customFederationProviderUrl = std::move(value); }
-    inline void SetCustomFederationProviderUrl(const char* value) { m_customFederationProviderUrlHasBeenSet = true; m_customFederationProviderUrl.assign(value); }
-    inline UpdateUserRequest& WithCustomFederationProviderUrl(const Aws::String& value) { SetCustomFederationProviderUrl(value); return *this;}
-    inline UpdateUserRequest& WithCustomFederationProviderUrl(Aws::String&& value) { SetCustomFederationProviderUrl(std::move(value)); return *this;}
-    inline UpdateUserRequest& WithCustomFederationProviderUrl(const char* value) { SetCustomFederationProviderUrl(value); return *this;}
+    template<typename CustomFederationProviderUrlT = Aws::String>
+    void SetCustomFederationProviderUrl(CustomFederationProviderUrlT&& value) { m_customFederationProviderUrlHasBeenSet = true; m_customFederationProviderUrl = std::forward<CustomFederationProviderUrlT>(value); }
+    template<typename CustomFederationProviderUrlT = Aws::String>
+    UpdateUserRequest& WithCustomFederationProviderUrl(CustomFederationProviderUrlT&& value) { SetCustomFederationProviderUrl(std::forward<CustomFederationProviderUrlT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identity ID for a user in the external login provider.</p>
      */
-    inline const Aws::String& GetExternalLoginId() const{ return m_externalLoginId; }
+    inline const Aws::String& GetExternalLoginId() const { return m_externalLoginId; }
     inline bool ExternalLoginIdHasBeenSet() const { return m_externalLoginIdHasBeenSet; }
-    inline void SetExternalLoginId(const Aws::String& value) { m_externalLoginIdHasBeenSet = true; m_externalLoginId = value; }
-    inline void SetExternalLoginId(Aws::String&& value) { m_externalLoginIdHasBeenSet = true; m_externalLoginId = std::move(value); }
-    inline void SetExternalLoginId(const char* value) { m_externalLoginIdHasBeenSet = true; m_externalLoginId.assign(value); }
-    inline UpdateUserRequest& WithExternalLoginId(const Aws::String& value) { SetExternalLoginId(value); return *this;}
-    inline UpdateUserRequest& WithExternalLoginId(Aws::String&& value) { SetExternalLoginId(std::move(value)); return *this;}
-    inline UpdateUserRequest& WithExternalLoginId(const char* value) { SetExternalLoginId(value); return *this;}
+    template<typename ExternalLoginIdT = Aws::String>
+    void SetExternalLoginId(ExternalLoginIdT&& value) { m_externalLoginIdHasBeenSet = true; m_externalLoginId = std::forward<ExternalLoginIdT>(value); }
+    template<typename ExternalLoginIdT = Aws::String>
+    UpdateUserRequest& WithExternalLoginId(ExternalLoginIdT&& value) { SetExternalLoginId(std::forward<ExternalLoginIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -232,13 +214,13 @@ namespace Model
     Aws::String m_email;
     bool m_emailHasBeenSet = false;
 
-    UserRole m_role;
+    UserRole m_role{UserRole::NOT_SET};
     bool m_roleHasBeenSet = false;
 
     Aws::String m_customPermissionsName;
     bool m_customPermissionsNameHasBeenSet = false;
 
-    bool m_unapplyCustomPermissions;
+    bool m_unapplyCustomPermissions{false};
     bool m_unapplyCustomPermissionsHasBeenSet = false;
 
     Aws::String m_externalLoginFederationProviderType;

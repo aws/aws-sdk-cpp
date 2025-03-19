@@ -18,15 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-CreateVehicleResponseItem::CreateVehicleResponseItem() : 
-    m_vehicleNameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_thingArnHasBeenSet(false)
-{
-}
-
 CreateVehicleResponseItem::CreateVehicleResponseItem(JsonView jsonValue)
-  : CreateVehicleResponseItem()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ CreateVehicleResponseItem& CreateVehicleResponseItem::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("vehicleName"))
   {
     m_vehicleName = jsonValue.GetString("vehicleName");
-
     m_vehicleNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("thingArn"))
   {
     m_thingArn = jsonValue.GetString("thingArn");
-
     m_thingArnHasBeenSet = true;
   }
-
   return *this;
 }
 

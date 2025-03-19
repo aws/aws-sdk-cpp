@@ -31,7 +31,7 @@ namespace Model
   class DeletedUniqueId
   {
   public:
-    AWS_ENTITYRESOLUTION_API DeletedUniqueId();
+    AWS_ENTITYRESOLUTION_API DeletedUniqueId() = default;
     AWS_ENTITYRESOLUTION_API DeletedUniqueId(Aws::Utils::Json::JsonView jsonValue);
     AWS_ENTITYRESOLUTION_API DeletedUniqueId& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ENTITYRESOLUTION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p> The unique ID of the deleted item.</p>
      */
-    inline const Aws::String& GetUniqueId() const{ return m_uniqueId; }
+    inline const Aws::String& GetUniqueId() const { return m_uniqueId; }
     inline bool UniqueIdHasBeenSet() const { return m_uniqueIdHasBeenSet; }
-    inline void SetUniqueId(const Aws::String& value) { m_uniqueIdHasBeenSet = true; m_uniqueId = value; }
-    inline void SetUniqueId(Aws::String&& value) { m_uniqueIdHasBeenSet = true; m_uniqueId = std::move(value); }
-    inline void SetUniqueId(const char* value) { m_uniqueIdHasBeenSet = true; m_uniqueId.assign(value); }
-    inline DeletedUniqueId& WithUniqueId(const Aws::String& value) { SetUniqueId(value); return *this;}
-    inline DeletedUniqueId& WithUniqueId(Aws::String&& value) { SetUniqueId(std::move(value)); return *this;}
-    inline DeletedUniqueId& WithUniqueId(const char* value) { SetUniqueId(value); return *this;}
+    template<typename UniqueIdT = Aws::String>
+    void SetUniqueId(UniqueIdT&& value) { m_uniqueIdHasBeenSet = true; m_uniqueId = std::forward<UniqueIdT>(value); }
+    template<typename UniqueIdT = Aws::String>
+    DeletedUniqueId& WithUniqueId(UniqueIdT&& value) { SetUniqueId(std::forward<UniqueIdT>(value)); return *this;}
     ///@}
   private:
 

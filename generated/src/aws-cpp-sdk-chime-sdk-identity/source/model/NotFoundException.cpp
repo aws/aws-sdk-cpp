@@ -18,15 +18,7 @@ namespace ChimeSDKIdentity
 namespace Model
 {
 
-NotFoundException::NotFoundException() : 
-    m_code(ErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 NotFoundException::NotFoundException(JsonView jsonValue)
-  : NotFoundException()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ NotFoundException& NotFoundException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Code"))
   {
     m_code = ErrorCodeMapper::GetErrorCodeForName(jsonValue.GetString("Code"));
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

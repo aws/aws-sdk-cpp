@@ -18,14 +18,7 @@ namespace DevOpsGuru
 namespace Model
 {
 
-AnomalyReportedTimeRange::AnomalyReportedTimeRange() : 
-    m_openTimeHasBeenSet(false),
-    m_closeTimeHasBeenSet(false)
-{
-}
-
 AnomalyReportedTimeRange::AnomalyReportedTimeRange(JsonView jsonValue)
-  : AnomalyReportedTimeRange()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AnomalyReportedTimeRange& AnomalyReportedTimeRange::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("OpenTime"))
   {
     m_openTime = jsonValue.GetDouble("OpenTime");
-
     m_openTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CloseTime"))
   {
     m_closeTime = jsonValue.GetDouble("CloseTime");
-
     m_closeTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

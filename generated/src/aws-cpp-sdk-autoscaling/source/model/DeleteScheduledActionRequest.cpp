@@ -10,12 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-DeleteScheduledActionRequest::DeleteScheduledActionRequest() : 
-    m_autoScalingGroupNameHasBeenSet(false),
-    m_scheduledActionNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteScheduledActionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

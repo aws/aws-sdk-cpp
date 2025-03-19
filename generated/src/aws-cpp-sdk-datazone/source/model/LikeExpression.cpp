@@ -18,14 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-LikeExpression::LikeExpression() : 
-    m_columnNameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 LikeExpression::LikeExpression(JsonView jsonValue)
-  : LikeExpression()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ LikeExpression& LikeExpression::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("columnName"))
   {
     m_columnName = jsonValue.GetString("columnName");
-
     m_columnNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

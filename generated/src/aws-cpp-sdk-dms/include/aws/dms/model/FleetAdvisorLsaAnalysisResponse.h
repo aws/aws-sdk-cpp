@@ -32,7 +32,7 @@ namespace Model
   class FleetAdvisorLsaAnalysisResponse
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API FleetAdvisorLsaAnalysisResponse();
+    AWS_DATABASEMIGRATIONSERVICE_API FleetAdvisorLsaAnalysisResponse() = default;
     AWS_DATABASEMIGRATIONSERVICE_API FleetAdvisorLsaAnalysisResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API FleetAdvisorLsaAnalysisResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The ID of an LSA analysis run by a Fleet Advisor collector.</p>
      */
-    inline const Aws::String& GetLsaAnalysisId() const{ return m_lsaAnalysisId; }
+    inline const Aws::String& GetLsaAnalysisId() const { return m_lsaAnalysisId; }
     inline bool LsaAnalysisIdHasBeenSet() const { return m_lsaAnalysisIdHasBeenSet; }
-    inline void SetLsaAnalysisId(const Aws::String& value) { m_lsaAnalysisIdHasBeenSet = true; m_lsaAnalysisId = value; }
-    inline void SetLsaAnalysisId(Aws::String&& value) { m_lsaAnalysisIdHasBeenSet = true; m_lsaAnalysisId = std::move(value); }
-    inline void SetLsaAnalysisId(const char* value) { m_lsaAnalysisIdHasBeenSet = true; m_lsaAnalysisId.assign(value); }
-    inline FleetAdvisorLsaAnalysisResponse& WithLsaAnalysisId(const Aws::String& value) { SetLsaAnalysisId(value); return *this;}
-    inline FleetAdvisorLsaAnalysisResponse& WithLsaAnalysisId(Aws::String&& value) { SetLsaAnalysisId(std::move(value)); return *this;}
-    inline FleetAdvisorLsaAnalysisResponse& WithLsaAnalysisId(const char* value) { SetLsaAnalysisId(value); return *this;}
+    template<typename LsaAnalysisIdT = Aws::String>
+    void SetLsaAnalysisId(LsaAnalysisIdT&& value) { m_lsaAnalysisIdHasBeenSet = true; m_lsaAnalysisId = std::forward<LsaAnalysisIdT>(value); }
+    template<typename LsaAnalysisIdT = Aws::String>
+    FleetAdvisorLsaAnalysisResponse& WithLsaAnalysisId(LsaAnalysisIdT&& value) { SetLsaAnalysisId(std::forward<LsaAnalysisIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of an LSA analysis run by a Fleet Advisor collector.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline FleetAdvisorLsaAnalysisResponse& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline FleetAdvisorLsaAnalysisResponse& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline FleetAdvisorLsaAnalysisResponse& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    FleetAdvisorLsaAnalysisResponse& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
   private:
 

@@ -27,7 +27,7 @@ namespace Model
   class PurchaseProvisionedCapacityResult
   {
   public:
-    AWS_GLACIER_API PurchaseProvisionedCapacityResult();
+    AWS_GLACIER_API PurchaseProvisionedCapacityResult() = default;
     AWS_GLACIER_API PurchaseProvisionedCapacityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLACIER_API PurchaseProvisionedCapacityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The ID that identifies the provisioned capacity unit.</p>
      */
-    inline const Aws::String& GetCapacityId() const{ return m_capacityId; }
-    inline void SetCapacityId(const Aws::String& value) { m_capacityId = value; }
-    inline void SetCapacityId(Aws::String&& value) { m_capacityId = std::move(value); }
-    inline void SetCapacityId(const char* value) { m_capacityId.assign(value); }
-    inline PurchaseProvisionedCapacityResult& WithCapacityId(const Aws::String& value) { SetCapacityId(value); return *this;}
-    inline PurchaseProvisionedCapacityResult& WithCapacityId(Aws::String&& value) { SetCapacityId(std::move(value)); return *this;}
-    inline PurchaseProvisionedCapacityResult& WithCapacityId(const char* value) { SetCapacityId(value); return *this;}
+    inline const Aws::String& GetCapacityId() const { return m_capacityId; }
+    template<typename CapacityIdT = Aws::String>
+    void SetCapacityId(CapacityIdT&& value) { m_capacityIdHasBeenSet = true; m_capacityId = std::forward<CapacityIdT>(value); }
+    template<typename CapacityIdT = Aws::String>
+    PurchaseProvisionedCapacityResult& WithCapacityId(CapacityIdT&& value) { SetCapacityId(std::forward<CapacityIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PurchaseProvisionedCapacityResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PurchaseProvisionedCapacityResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PurchaseProvisionedCapacityResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PurchaseProvisionedCapacityResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_capacityId;
+    bool m_capacityIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

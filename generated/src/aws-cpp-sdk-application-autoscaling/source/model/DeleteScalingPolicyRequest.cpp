@@ -12,16 +12,6 @@ using namespace Aws::ApplicationAutoScaling::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteScalingPolicyRequest::DeleteScalingPolicyRequest() : 
-    m_policyNameHasBeenSet(false),
-    m_serviceNamespace(ServiceNamespace::NOT_SET),
-    m_serviceNamespaceHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_scalableDimension(ScalableDimension::NOT_SET),
-    m_scalableDimensionHasBeenSet(false)
-{
-}
-
 Aws::String DeleteScalingPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

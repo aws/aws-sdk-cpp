@@ -12,14 +12,6 @@ using namespace Aws::Inspector2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListCoverageStatisticsRequest::ListCoverageStatisticsRequest() : 
-    m_filterCriteriaHasBeenSet(false),
-    m_groupBy(GroupKey::NOT_SET),
-    m_groupByHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListCoverageStatisticsRequest::SerializePayload() const
 {
   JsonValue payload;

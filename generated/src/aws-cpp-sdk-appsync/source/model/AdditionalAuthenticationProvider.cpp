@@ -18,17 +18,7 @@ namespace AppSync
 namespace Model
 {
 
-AdditionalAuthenticationProvider::AdditionalAuthenticationProvider() : 
-    m_authenticationType(AuthenticationType::NOT_SET),
-    m_authenticationTypeHasBeenSet(false),
-    m_openIDConnectConfigHasBeenSet(false),
-    m_userPoolConfigHasBeenSet(false),
-    m_lambdaAuthorizerConfigHasBeenSet(false)
-{
-}
-
 AdditionalAuthenticationProvider::AdditionalAuthenticationProvider(JsonView jsonValue)
-  : AdditionalAuthenticationProvider()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ AdditionalAuthenticationProvider& AdditionalAuthenticationProvider::operator =(J
   if(jsonValue.ValueExists("authenticationType"))
   {
     m_authenticationType = AuthenticationTypeMapper::GetAuthenticationTypeForName(jsonValue.GetString("authenticationType"));
-
     m_authenticationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("openIDConnectConfig"))
   {
     m_openIDConnectConfig = jsonValue.GetObject("openIDConnectConfig");
-
     m_openIDConnectConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userPoolConfig"))
   {
     m_userPoolConfig = jsonValue.GetObject("userPoolConfig");
-
     m_userPoolConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lambdaAuthorizerConfig"))
   {
     m_lambdaAuthorizerConfig = jsonValue.GetObject("lambdaAuthorizerConfig");
-
     m_lambdaAuthorizerConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

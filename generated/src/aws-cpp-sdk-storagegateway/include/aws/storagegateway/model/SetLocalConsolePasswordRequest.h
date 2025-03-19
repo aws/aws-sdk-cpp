@@ -24,7 +24,7 @@ namespace Model
   class SetLocalConsolePasswordRequest : public StorageGatewayRequest
   {
   public:
-    AWS_STORAGEGATEWAY_API SetLocalConsolePasswordRequest();
+    AWS_STORAGEGATEWAY_API SetLocalConsolePasswordRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,24 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
+    inline const Aws::String& GetGatewayARN() const { return m_gatewayARN; }
     inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
-    inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
-    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::move(value); }
-    inline void SetGatewayARN(const char* value) { m_gatewayARNHasBeenSet = true; m_gatewayARN.assign(value); }
-    inline SetLocalConsolePasswordRequest& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
-    inline SetLocalConsolePasswordRequest& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
-    inline SetLocalConsolePasswordRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+    template<typename GatewayARNT = Aws::String>
+    void SetGatewayARN(GatewayARNT&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::forward<GatewayARNT>(value); }
+    template<typename GatewayARNT = Aws::String>
+    SetLocalConsolePasswordRequest& WithGatewayARN(GatewayARNT&& value) { SetGatewayARN(std::forward<GatewayARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The password you want to set for your VM local console.</p>
      */
-    inline const Aws::String& GetLocalConsolePassword() const{ return m_localConsolePassword; }
+    inline const Aws::String& GetLocalConsolePassword() const { return m_localConsolePassword; }
     inline bool LocalConsolePasswordHasBeenSet() const { return m_localConsolePasswordHasBeenSet; }
-    inline void SetLocalConsolePassword(const Aws::String& value) { m_localConsolePasswordHasBeenSet = true; m_localConsolePassword = value; }
-    inline void SetLocalConsolePassword(Aws::String&& value) { m_localConsolePasswordHasBeenSet = true; m_localConsolePassword = std::move(value); }
-    inline void SetLocalConsolePassword(const char* value) { m_localConsolePasswordHasBeenSet = true; m_localConsolePassword.assign(value); }
-    inline SetLocalConsolePasswordRequest& WithLocalConsolePassword(const Aws::String& value) { SetLocalConsolePassword(value); return *this;}
-    inline SetLocalConsolePasswordRequest& WithLocalConsolePassword(Aws::String&& value) { SetLocalConsolePassword(std::move(value)); return *this;}
-    inline SetLocalConsolePasswordRequest& WithLocalConsolePassword(const char* value) { SetLocalConsolePassword(value); return *this;}
+    template<typename LocalConsolePasswordT = Aws::String>
+    void SetLocalConsolePassword(LocalConsolePasswordT&& value) { m_localConsolePasswordHasBeenSet = true; m_localConsolePassword = std::forward<LocalConsolePasswordT>(value); }
+    template<typename LocalConsolePasswordT = Aws::String>
+    SetLocalConsolePasswordRequest& WithLocalConsolePassword(LocalConsolePasswordT&& value) { SetLocalConsolePassword(std::forward<LocalConsolePasswordT>(value)); return *this;}
     ///@}
   private:
 

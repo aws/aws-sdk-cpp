@@ -16,10 +16,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListImagePipelineImagesResult::ListImagePipelineImagesResult()
-{
-}
-
 ListImagePipelineImagesResult::ListImagePipelineImagesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -31,9 +27,8 @@ ListImagePipelineImagesResult& ListImagePipelineImagesResult::operator =(const A
   if(jsonValue.ValueExists("requestId"))
   {
     m_requestId = jsonValue.GetString("requestId");
-
+    m_requestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageSummaryList"))
   {
     Aws::Utils::Array<JsonView> imageSummaryListJsonList = jsonValue.GetArray("imageSummaryList");
@@ -41,14 +36,13 @@ ListImagePipelineImagesResult& ListImagePipelineImagesResult::operator =(const A
     {
       m_imageSummaryList.push_back(imageSummaryListJsonList[imageSummaryListIndex].AsObject());
     }
+    m_imageSummaryListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
 
   return *this;

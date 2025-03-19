@@ -28,7 +28,7 @@ namespace Model
   class UpdateClusterVersionResult
   {
   public:
-    AWS_EKS_API UpdateClusterVersionResult();
+    AWS_EKS_API UpdateClusterVersionResult() = default;
     AWS_EKS_API UpdateClusterVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_EKS_API UpdateClusterVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The full description of the specified update</p>
      */
-    inline const Update& GetUpdate() const{ return m_update; }
-    inline void SetUpdate(const Update& value) { m_update = value; }
-    inline void SetUpdate(Update&& value) { m_update = std::move(value); }
-    inline UpdateClusterVersionResult& WithUpdate(const Update& value) { SetUpdate(value); return *this;}
-    inline UpdateClusterVersionResult& WithUpdate(Update&& value) { SetUpdate(std::move(value)); return *this;}
+    inline const Update& GetUpdate() const { return m_update; }
+    template<typename UpdateT = Update>
+    void SetUpdate(UpdateT&& value) { m_updateHasBeenSet = true; m_update = std::forward<UpdateT>(value); }
+    template<typename UpdateT = Update>
+    UpdateClusterVersionResult& WithUpdate(UpdateT&& value) { SetUpdate(std::forward<UpdateT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateClusterVersionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateClusterVersionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateClusterVersionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateClusterVersionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Update m_update;
+    bool m_updateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

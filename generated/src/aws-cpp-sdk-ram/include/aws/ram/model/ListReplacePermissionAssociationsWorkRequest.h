@@ -23,7 +23,7 @@ namespace Model
   class ListReplacePermissionAssociationsWorkRequest : public RAMRequest
   {
   public:
-    AWS_RAM_API ListReplacePermissionAssociationsWorkRequest();
+    AWS_RAM_API ListReplacePermissionAssociationsWorkRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,15 +40,14 @@ namespace Model
      * <code>replacePermissionAssociationsWork</code>structure returned by the
      * <a>ReplacePermissionAssociations</a> operation. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetWorkIds() const{ return m_workIds; }
+    inline const Aws::Vector<Aws::String>& GetWorkIds() const { return m_workIds; }
     inline bool WorkIdsHasBeenSet() const { return m_workIdsHasBeenSet; }
-    inline void SetWorkIds(const Aws::Vector<Aws::String>& value) { m_workIdsHasBeenSet = true; m_workIds = value; }
-    inline void SetWorkIds(Aws::Vector<Aws::String>&& value) { m_workIdsHasBeenSet = true; m_workIds = std::move(value); }
-    inline ListReplacePermissionAssociationsWorkRequest& WithWorkIds(const Aws::Vector<Aws::String>& value) { SetWorkIds(value); return *this;}
-    inline ListReplacePermissionAssociationsWorkRequest& WithWorkIds(Aws::Vector<Aws::String>&& value) { SetWorkIds(std::move(value)); return *this;}
-    inline ListReplacePermissionAssociationsWorkRequest& AddWorkIds(const Aws::String& value) { m_workIdsHasBeenSet = true; m_workIds.push_back(value); return *this; }
-    inline ListReplacePermissionAssociationsWorkRequest& AddWorkIds(Aws::String&& value) { m_workIdsHasBeenSet = true; m_workIds.push_back(std::move(value)); return *this; }
-    inline ListReplacePermissionAssociationsWorkRequest& AddWorkIds(const char* value) { m_workIdsHasBeenSet = true; m_workIds.push_back(value); return *this; }
+    template<typename WorkIdsT = Aws::Vector<Aws::String>>
+    void SetWorkIds(WorkIdsT&& value) { m_workIdsHasBeenSet = true; m_workIds = std::forward<WorkIdsT>(value); }
+    template<typename WorkIdsT = Aws::Vector<Aws::String>>
+    ListReplacePermissionAssociationsWorkRequest& WithWorkIds(WorkIdsT&& value) { SetWorkIds(std::forward<WorkIdsT>(value)); return *this;}
+    template<typename WorkIdsT = Aws::String>
+    ListReplacePermissionAssociationsWorkRequest& AddWorkIds(WorkIdsT&& value) { m_workIdsHasBeenSet = true; m_workIds.emplace_back(std::forward<WorkIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -56,12 +55,10 @@ namespace Model
      * <p>Specifies that you want to see only the details about requests with a status
      * that matches this value.</p>
      */
-    inline const ReplacePermissionAssociationsWorkStatus& GetStatus() const{ return m_status; }
+    inline ReplacePermissionAssociationsWorkStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ReplacePermissionAssociationsWorkStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ReplacePermissionAssociationsWorkStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ListReplacePermissionAssociationsWorkRequest& WithStatus(const ReplacePermissionAssociationsWorkStatus& value) { SetStatus(value); return *this;}
-    inline ListReplacePermissionAssociationsWorkRequest& WithStatus(ReplacePermissionAssociationsWorkStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ReplacePermissionAssociationsWorkStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ListReplacePermissionAssociationsWorkRequest& WithStatus(ReplacePermissionAssociationsWorkStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +69,12 @@ namespace Model
      * provided by the previous call's <code>NextToken</code> response to request the
      * next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListReplacePermissionAssociationsWorkRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListReplacePermissionAssociationsWorkRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListReplacePermissionAssociationsWorkRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListReplacePermissionAssociationsWorkRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,7 +89,7 @@ namespace Model
      * there are more results available. You should check <code>NextToken</code> after
      * every operation to ensure that you receive all of the results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListReplacePermissionAssociationsWorkRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -104,13 +99,13 @@ namespace Model
     Aws::Vector<Aws::String> m_workIds;
     bool m_workIdsHasBeenSet = false;
 
-    ReplacePermissionAssociationsWorkStatus m_status;
+    ReplacePermissionAssociationsWorkStatus m_status{ReplacePermissionAssociationsWorkStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

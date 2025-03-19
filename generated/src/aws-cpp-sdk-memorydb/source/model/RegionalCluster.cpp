@@ -18,16 +18,7 @@ namespace MemoryDB
 namespace Model
 {
 
-RegionalCluster::RegionalCluster() : 
-    m_clusterNameHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_aRNHasBeenSet(false)
-{
-}
-
 RegionalCluster::RegionalCluster(JsonView jsonValue)
-  : RegionalCluster()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ RegionalCluster& RegionalCluster::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ClusterName"))
   {
     m_clusterName = jsonValue.GetString("ClusterName");
-
     m_clusterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetString("Region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ARN"))
   {
     m_aRN = jsonValue.GetString("ARN");
-
     m_aRNHasBeenSet = true;
   }
-
   return *this;
 }
 

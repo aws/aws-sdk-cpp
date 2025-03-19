@@ -20,16 +20,7 @@ namespace SimpleDB
 namespace Model
 {
 
-Attribute::Attribute() : 
-    m_nameHasBeenSet(false),
-    m_alternateNameEncodingHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_alternateValueEncodingHasBeenSet(false)
-{
-}
-
 Attribute::Attribute(const XmlNode& xmlNode)
-  : Attribute()
 {
   *this = xmlNode;
 }

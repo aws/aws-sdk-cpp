@@ -49,7 +49,7 @@ namespace Model
   class ContainerHealthCheck
   {
   public:
-    AWS_GAMELIFT_API ContainerHealthCheck();
+    AWS_GAMELIFT_API ContainerHealthCheck() = default;
     AWS_GAMELIFT_API ContainerHealthCheck(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API ContainerHealthCheck& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -60,22 +60,21 @@ namespace Model
      * <p>A string array that specifies the command that the container runs to
      * determine if it's healthy.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCommand() const{ return m_command; }
+    inline const Aws::Vector<Aws::String>& GetCommand() const { return m_command; }
     inline bool CommandHasBeenSet() const { return m_commandHasBeenSet; }
-    inline void SetCommand(const Aws::Vector<Aws::String>& value) { m_commandHasBeenSet = true; m_command = value; }
-    inline void SetCommand(Aws::Vector<Aws::String>&& value) { m_commandHasBeenSet = true; m_command = std::move(value); }
-    inline ContainerHealthCheck& WithCommand(const Aws::Vector<Aws::String>& value) { SetCommand(value); return *this;}
-    inline ContainerHealthCheck& WithCommand(Aws::Vector<Aws::String>&& value) { SetCommand(std::move(value)); return *this;}
-    inline ContainerHealthCheck& AddCommand(const Aws::String& value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }
-    inline ContainerHealthCheck& AddCommand(Aws::String&& value) { m_commandHasBeenSet = true; m_command.push_back(std::move(value)); return *this; }
-    inline ContainerHealthCheck& AddCommand(const char* value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }
+    template<typename CommandT = Aws::Vector<Aws::String>>
+    void SetCommand(CommandT&& value) { m_commandHasBeenSet = true; m_command = std::forward<CommandT>(value); }
+    template<typename CommandT = Aws::Vector<Aws::String>>
+    ContainerHealthCheck& WithCommand(CommandT&& value) { SetCommand(std::forward<CommandT>(value)); return *this;}
+    template<typename CommandT = Aws::String>
+    ContainerHealthCheck& AddCommand(CommandT&& value) { m_commandHasBeenSet = true; m_command.emplace_back(std::forward<CommandT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The time period (in seconds) between each health check.</p>
      */
-    inline int GetInterval() const{ return m_interval; }
+    inline int GetInterval() const { return m_interval; }
     inline bool IntervalHasBeenSet() const { return m_intervalHasBeenSet; }
     inline void SetInterval(int value) { m_intervalHasBeenSet = true; m_interval = value; }
     inline ContainerHealthCheck& WithInterval(int value) { SetInterval(value); return *this;}
@@ -86,7 +85,7 @@ namespace Model
      * <p>The number of times to retry a failed health check before flagging the
      * container unhealthy. The first run of the command does not count as a retry.</p>
      */
-    inline int GetRetries() const{ return m_retries; }
+    inline int GetRetries() const { return m_retries; }
     inline bool RetriesHasBeenSet() const { return m_retriesHasBeenSet; }
     inline void SetRetries(int value) { m_retriesHasBeenSet = true; m_retries = value; }
     inline ContainerHealthCheck& WithRetries(int value) { SetRetries(value); return *this;}
@@ -97,7 +96,7 @@ namespace Model
      * <p>The optional grace period (in seconds) to give a container time to bootstrap
      * before the first failed health check counts toward the number of retries.</p>
      */
-    inline int GetStartPeriod() const{ return m_startPeriod; }
+    inline int GetStartPeriod() const { return m_startPeriod; }
     inline bool StartPeriodHasBeenSet() const { return m_startPeriodHasBeenSet; }
     inline void SetStartPeriod(int value) { m_startPeriodHasBeenSet = true; m_startPeriod = value; }
     inline ContainerHealthCheck& WithStartPeriod(int value) { SetStartPeriod(value); return *this;}
@@ -108,7 +107,7 @@ namespace Model
      * <p>The time period (in seconds) to wait for a health check to succeed before
      * counting a failed health check. </p>
      */
-    inline int GetTimeout() const{ return m_timeout; }
+    inline int GetTimeout() const { return m_timeout; }
     inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
     inline void SetTimeout(int value) { m_timeoutHasBeenSet = true; m_timeout = value; }
     inline ContainerHealthCheck& WithTimeout(int value) { SetTimeout(value); return *this;}
@@ -118,16 +117,16 @@ namespace Model
     Aws::Vector<Aws::String> m_command;
     bool m_commandHasBeenSet = false;
 
-    int m_interval;
+    int m_interval{0};
     bool m_intervalHasBeenSet = false;
 
-    int m_retries;
+    int m_retries{0};
     bool m_retriesHasBeenSet = false;
 
-    int m_startPeriod;
+    int m_startPeriod{0};
     bool m_startPeriodHasBeenSet = false;
 
-    int m_timeout;
+    int m_timeout{0};
     bool m_timeoutHasBeenSet = false;
   };
 

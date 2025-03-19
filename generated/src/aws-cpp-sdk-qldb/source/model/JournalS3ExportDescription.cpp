@@ -18,23 +18,7 @@ namespace QLDB
 namespace Model
 {
 
-JournalS3ExportDescription::JournalS3ExportDescription() : 
-    m_ledgerNameHasBeenSet(false),
-    m_exportIdHasBeenSet(false),
-    m_exportCreationTimeHasBeenSet(false),
-    m_status(ExportStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_inclusiveStartTimeHasBeenSet(false),
-    m_exclusiveEndTimeHasBeenSet(false),
-    m_s3ExportConfigurationHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_outputFormat(OutputFormat::NOT_SET),
-    m_outputFormatHasBeenSet(false)
-{
-}
-
 JournalS3ExportDescription::JournalS3ExportDescription(JsonView jsonValue)
-  : JournalS3ExportDescription()
 {
   *this = jsonValue;
 }
@@ -44,66 +28,48 @@ JournalS3ExportDescription& JournalS3ExportDescription::operator =(JsonView json
   if(jsonValue.ValueExists("LedgerName"))
   {
     m_ledgerName = jsonValue.GetString("LedgerName");
-
     m_ledgerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExportId"))
   {
     m_exportId = jsonValue.GetString("ExportId");
-
     m_exportIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExportCreationTime"))
   {
     m_exportCreationTime = jsonValue.GetDouble("ExportCreationTime");
-
     m_exportCreationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ExportStatusMapper::GetExportStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InclusiveStartTime"))
   {
     m_inclusiveStartTime = jsonValue.GetDouble("InclusiveStartTime");
-
     m_inclusiveStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExclusiveEndTime"))
   {
     m_exclusiveEndTime = jsonValue.GetDouble("ExclusiveEndTime");
-
     m_exclusiveEndTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3ExportConfiguration"))
   {
     m_s3ExportConfiguration = jsonValue.GetObject("S3ExportConfiguration");
-
     m_s3ExportConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputFormat"))
   {
     m_outputFormat = OutputFormatMapper::GetOutputFormatForName(jsonValue.GetString("OutputFormat"));
-
     m_outputFormatHasBeenSet = true;
   }
-
   return *this;
 }
 

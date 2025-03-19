@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ModelPackageSecurityConfig::ModelPackageSecurityConfig() : 
-    m_kmsKeyIdHasBeenSet(false)
-{
-}
-
 ModelPackageSecurityConfig::ModelPackageSecurityConfig(JsonView jsonValue)
-  : ModelPackageSecurityConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ModelPackageSecurityConfig& ModelPackageSecurityConfig::operator =(JsonView json
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   return *this;
 }
 

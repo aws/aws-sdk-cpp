@@ -18,21 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-EdgePackagingJobSummary::EdgePackagingJobSummary() : 
-    m_edgePackagingJobArnHasBeenSet(false),
-    m_edgePackagingJobNameHasBeenSet(false),
-    m_edgePackagingJobStatus(EdgePackagingJobStatus::NOT_SET),
-    m_edgePackagingJobStatusHasBeenSet(false),
-    m_compilationJobNameHasBeenSet(false),
-    m_modelNameHasBeenSet(false),
-    m_modelVersionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
-{
-}
-
 EdgePackagingJobSummary::EdgePackagingJobSummary(JsonView jsonValue)
-  : EdgePackagingJobSummary()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ EdgePackagingJobSummary& EdgePackagingJobSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EdgePackagingJobArn"))
   {
     m_edgePackagingJobArn = jsonValue.GetString("EdgePackagingJobArn");
-
     m_edgePackagingJobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EdgePackagingJobName"))
   {
     m_edgePackagingJobName = jsonValue.GetString("EdgePackagingJobName");
-
     m_edgePackagingJobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EdgePackagingJobStatus"))
   {
     m_edgePackagingJobStatus = EdgePackagingJobStatusMapper::GetEdgePackagingJobStatusForName(jsonValue.GetString("EdgePackagingJobStatus"));
-
     m_edgePackagingJobStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompilationJobName"))
   {
     m_compilationJobName = jsonValue.GetString("CompilationJobName");
-
     m_compilationJobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelName"))
   {
     m_modelName = jsonValue.GetString("ModelName");
-
     m_modelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelVersion"))
   {
     m_modelVersion = jsonValue.GetString("ModelVersion");
-
     m_modelVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

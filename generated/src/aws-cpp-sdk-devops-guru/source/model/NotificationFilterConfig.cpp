@@ -18,14 +18,7 @@ namespace DevOpsGuru
 namespace Model
 {
 
-NotificationFilterConfig::NotificationFilterConfig() : 
-    m_severitiesHasBeenSet(false),
-    m_messageTypesHasBeenSet(false)
-{
-}
-
 NotificationFilterConfig::NotificationFilterConfig(JsonView jsonValue)
-  : NotificationFilterConfig()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ NotificationFilterConfig& NotificationFilterConfig::operator =(JsonView jsonValu
     }
     m_severitiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MessageTypes"))
   {
     Aws::Utils::Array<JsonView> messageTypesJsonList = jsonValue.GetArray("MessageTypes");
@@ -51,7 +43,6 @@ NotificationFilterConfig& NotificationFilterConfig::operator =(JsonView jsonValu
     }
     m_messageTypesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,15 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListEntitiesRequest::ListEntitiesRequest() : 
-    m_connectionNameHasBeenSet(false),
-    m_catalogIdHasBeenSet(false),
-    m_parentEntityNameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_dataStoreApiVersionHasBeenSet(false)
-{
-}
-
 Aws::String ListEntitiesRequest::SerializePayload() const
 {
   JsonValue payload;

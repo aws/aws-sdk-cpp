@@ -32,7 +32,7 @@ namespace Model
   class AssetBundleImportJobResourceIdOverrideConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API AssetBundleImportJobResourceIdOverrideConfiguration();
+    AWS_QUICKSIGHT_API AssetBundleImportJobResourceIdOverrideConfiguration() = default;
     AWS_QUICKSIGHT_API AssetBundleImportJobResourceIdOverrideConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API AssetBundleImportJobResourceIdOverrideConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * to each resource's ID before import. The prefix is only added to the asset IDs
      * and does not change the name of the asset.</p>
      */
-    inline const Aws::String& GetPrefixForAllResources() const{ return m_prefixForAllResources; }
+    inline const Aws::String& GetPrefixForAllResources() const { return m_prefixForAllResources; }
     inline bool PrefixForAllResourcesHasBeenSet() const { return m_prefixForAllResourcesHasBeenSet; }
-    inline void SetPrefixForAllResources(const Aws::String& value) { m_prefixForAllResourcesHasBeenSet = true; m_prefixForAllResources = value; }
-    inline void SetPrefixForAllResources(Aws::String&& value) { m_prefixForAllResourcesHasBeenSet = true; m_prefixForAllResources = std::move(value); }
-    inline void SetPrefixForAllResources(const char* value) { m_prefixForAllResourcesHasBeenSet = true; m_prefixForAllResources.assign(value); }
-    inline AssetBundleImportJobResourceIdOverrideConfiguration& WithPrefixForAllResources(const Aws::String& value) { SetPrefixForAllResources(value); return *this;}
-    inline AssetBundleImportJobResourceIdOverrideConfiguration& WithPrefixForAllResources(Aws::String&& value) { SetPrefixForAllResources(std::move(value)); return *this;}
-    inline AssetBundleImportJobResourceIdOverrideConfiguration& WithPrefixForAllResources(const char* value) { SetPrefixForAllResources(value); return *this;}
+    template<typename PrefixForAllResourcesT = Aws::String>
+    void SetPrefixForAllResources(PrefixForAllResourcesT&& value) { m_prefixForAllResourcesHasBeenSet = true; m_prefixForAllResources = std::forward<PrefixForAllResourcesT>(value); }
+    template<typename PrefixForAllResourcesT = Aws::String>
+    AssetBundleImportJobResourceIdOverrideConfiguration& WithPrefixForAllResources(PrefixForAllResourcesT&& value) { SetPrefixForAllResources(std::forward<PrefixForAllResourcesT>(value)); return *this;}
     ///@}
   private:
 

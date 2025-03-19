@@ -21,7 +21,7 @@ namespace Model
   class UpdateFirewallPolicyChangeProtectionRequest : public NetworkFirewallRequest
   {
   public:
-    AWS_NETWORKFIREWALL_API UpdateFirewallPolicyChangeProtectionRequest();
+    AWS_NETWORKFIREWALL_API UpdateFirewallPolicyChangeProtectionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -49,14 +49,12 @@ namespace Model
      * to get a current copy of it with a new token. Reapply your changes as needed,
      * then try the operation again using the new token. </p>
      */
-    inline const Aws::String& GetUpdateToken() const{ return m_updateToken; }
+    inline const Aws::String& GetUpdateToken() const { return m_updateToken; }
     inline bool UpdateTokenHasBeenSet() const { return m_updateTokenHasBeenSet; }
-    inline void SetUpdateToken(const Aws::String& value) { m_updateTokenHasBeenSet = true; m_updateToken = value; }
-    inline void SetUpdateToken(Aws::String&& value) { m_updateTokenHasBeenSet = true; m_updateToken = std::move(value); }
-    inline void SetUpdateToken(const char* value) { m_updateTokenHasBeenSet = true; m_updateToken.assign(value); }
-    inline UpdateFirewallPolicyChangeProtectionRequest& WithUpdateToken(const Aws::String& value) { SetUpdateToken(value); return *this;}
-    inline UpdateFirewallPolicyChangeProtectionRequest& WithUpdateToken(Aws::String&& value) { SetUpdateToken(std::move(value)); return *this;}
-    inline UpdateFirewallPolicyChangeProtectionRequest& WithUpdateToken(const char* value) { SetUpdateToken(value); return *this;}
+    template<typename UpdateTokenT = Aws::String>
+    void SetUpdateToken(UpdateTokenT&& value) { m_updateTokenHasBeenSet = true; m_updateToken = std::forward<UpdateTokenT>(value); }
+    template<typename UpdateTokenT = Aws::String>
+    UpdateFirewallPolicyChangeProtectionRequest& WithUpdateToken(UpdateTokenT&& value) { SetUpdateToken(std::forward<UpdateTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the firewall.</p> <p>You must specify the
      * ARN or the name, and you can specify both. </p>
      */
-    inline const Aws::String& GetFirewallArn() const{ return m_firewallArn; }
+    inline const Aws::String& GetFirewallArn() const { return m_firewallArn; }
     inline bool FirewallArnHasBeenSet() const { return m_firewallArnHasBeenSet; }
-    inline void SetFirewallArn(const Aws::String& value) { m_firewallArnHasBeenSet = true; m_firewallArn = value; }
-    inline void SetFirewallArn(Aws::String&& value) { m_firewallArnHasBeenSet = true; m_firewallArn = std::move(value); }
-    inline void SetFirewallArn(const char* value) { m_firewallArnHasBeenSet = true; m_firewallArn.assign(value); }
-    inline UpdateFirewallPolicyChangeProtectionRequest& WithFirewallArn(const Aws::String& value) { SetFirewallArn(value); return *this;}
-    inline UpdateFirewallPolicyChangeProtectionRequest& WithFirewallArn(Aws::String&& value) { SetFirewallArn(std::move(value)); return *this;}
-    inline UpdateFirewallPolicyChangeProtectionRequest& WithFirewallArn(const char* value) { SetFirewallArn(value); return *this;}
+    template<typename FirewallArnT = Aws::String>
+    void SetFirewallArn(FirewallArnT&& value) { m_firewallArnHasBeenSet = true; m_firewallArn = std::forward<FirewallArnT>(value); }
+    template<typename FirewallArnT = Aws::String>
+    UpdateFirewallPolicyChangeProtectionRequest& WithFirewallArn(FirewallArnT&& value) { SetFirewallArn(std::forward<FirewallArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,14 +76,12 @@ namespace Model
      * after you create it.</p> <p>You must specify the ARN or the name, and you can
      * specify both. </p>
      */
-    inline const Aws::String& GetFirewallName() const{ return m_firewallName; }
+    inline const Aws::String& GetFirewallName() const { return m_firewallName; }
     inline bool FirewallNameHasBeenSet() const { return m_firewallNameHasBeenSet; }
-    inline void SetFirewallName(const Aws::String& value) { m_firewallNameHasBeenSet = true; m_firewallName = value; }
-    inline void SetFirewallName(Aws::String&& value) { m_firewallNameHasBeenSet = true; m_firewallName = std::move(value); }
-    inline void SetFirewallName(const char* value) { m_firewallNameHasBeenSet = true; m_firewallName.assign(value); }
-    inline UpdateFirewallPolicyChangeProtectionRequest& WithFirewallName(const Aws::String& value) { SetFirewallName(value); return *this;}
-    inline UpdateFirewallPolicyChangeProtectionRequest& WithFirewallName(Aws::String&& value) { SetFirewallName(std::move(value)); return *this;}
-    inline UpdateFirewallPolicyChangeProtectionRequest& WithFirewallName(const char* value) { SetFirewallName(value); return *this;}
+    template<typename FirewallNameT = Aws::String>
+    void SetFirewallName(FirewallNameT&& value) { m_firewallNameHasBeenSet = true; m_firewallName = std::forward<FirewallNameT>(value); }
+    template<typename FirewallNameT = Aws::String>
+    UpdateFirewallPolicyChangeProtectionRequest& WithFirewallName(FirewallNameT&& value) { SetFirewallName(std::forward<FirewallNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,7 +92,7 @@ namespace Model
      * you create a firewall, the operation initializes this setting to
      * <code>TRUE</code>.</p>
      */
-    inline bool GetFirewallPolicyChangeProtection() const{ return m_firewallPolicyChangeProtection; }
+    inline bool GetFirewallPolicyChangeProtection() const { return m_firewallPolicyChangeProtection; }
     inline bool FirewallPolicyChangeProtectionHasBeenSet() const { return m_firewallPolicyChangeProtectionHasBeenSet; }
     inline void SetFirewallPolicyChangeProtection(bool value) { m_firewallPolicyChangeProtectionHasBeenSet = true; m_firewallPolicyChangeProtection = value; }
     inline UpdateFirewallPolicyChangeProtectionRequest& WithFirewallPolicyChangeProtection(bool value) { SetFirewallPolicyChangeProtection(value); return *this;}
@@ -114,7 +108,7 @@ namespace Model
     Aws::String m_firewallName;
     bool m_firewallNameHasBeenSet = false;
 
-    bool m_firewallPolicyChangeProtection;
+    bool m_firewallPolicyChangeProtection{false};
     bool m_firewallPolicyChangeProtectionHasBeenSet = false;
   };
 

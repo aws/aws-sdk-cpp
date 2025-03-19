@@ -20,23 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-Parameter::Parameter() : 
-    m_parameterNameHasBeenSet(false),
-    m_parameterValueHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_dataTypeHasBeenSet(false),
-    m_allowedValuesHasBeenSet(false),
-    m_isModifiable(false),
-    m_isModifiableHasBeenSet(false),
-    m_minimumEngineVersionHasBeenSet(false),
-    m_changeType(ChangeType::NOT_SET),
-    m_changeTypeHasBeenSet(false)
-{
-}
-
 Parameter::Parameter(const XmlNode& xmlNode)
-  : Parameter()
 {
   *this = xmlNode;
 }
@@ -98,7 +82,7 @@ Parameter& Parameter::operator =(const XmlNode& xmlNode)
     XmlNode changeTypeNode = resultNode.FirstChild("ChangeType");
     if(!changeTypeNode.IsNull())
     {
-      m_changeType = ChangeTypeMapper::GetChangeTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(changeTypeNode.GetText()).c_str()).c_str());
+      m_changeType = ChangeTypeMapper::GetChangeTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(changeTypeNode.GetText()).c_str()));
       m_changeTypeHasBeenSet = true;
     }
   }

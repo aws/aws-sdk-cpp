@@ -10,14 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ModifyInstanceCapacityReservationAttributesRequest::ModifyInstanceCapacityReservationAttributesRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_capacityReservationSpecificationHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String ModifyInstanceCapacityReservationAttributesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

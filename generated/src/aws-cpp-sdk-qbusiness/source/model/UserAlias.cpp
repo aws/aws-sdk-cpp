@@ -18,15 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-UserAlias::UserAlias() : 
-    m_indexIdHasBeenSet(false),
-    m_dataSourceIdHasBeenSet(false),
-    m_userIdHasBeenSet(false)
-{
-}
-
 UserAlias::UserAlias(JsonView jsonValue)
-  : UserAlias()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ UserAlias& UserAlias::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("indexId"))
   {
     m_indexId = jsonValue.GetString("indexId");
-
     m_indexIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataSourceId"))
   {
     m_dataSourceId = jsonValue.GetString("dataSourceId");
-
     m_dataSourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userId"))
   {
     m_userId = jsonValue.GetString("userId");
-
     m_userIdHasBeenSet = true;
   }
-
   return *this;
 }
 

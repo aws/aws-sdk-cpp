@@ -18,15 +18,7 @@ namespace IoT
 namespace Model
 {
 
-MitigationActionIdentifier::MitigationActionIdentifier() : 
-    m_actionNameHasBeenSet(false),
-    m_actionArnHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
-{
-}
-
 MitigationActionIdentifier::MitigationActionIdentifier(JsonView jsonValue)
-  : MitigationActionIdentifier()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ MitigationActionIdentifier& MitigationActionIdentifier::operator =(JsonView json
   if(jsonValue.ValueExists("actionName"))
   {
     m_actionName = jsonValue.GetString("actionName");
-
     m_actionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actionArn"))
   {
     m_actionArn = jsonValue.GetString("actionArn");
-
     m_actionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDate"))
   {
     m_creationDate = jsonValue.GetDouble("creationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   return *this;
 }
 

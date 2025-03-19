@@ -32,7 +32,7 @@ namespace Model
   class IoTJobExponentialRolloutRate
   {
   public:
-    AWS_GREENGRASSV2_API IoTJobExponentialRolloutRate();
+    AWS_GREENGRASSV2_API IoTJobExponentialRolloutRate() = default;
     AWS_GREENGRASSV2_API IoTJobExponentialRolloutRate(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASSV2_API IoTJobExponentialRolloutRate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * minute, when the job starts. This parameter defines the initial rollout rate of
      * the job.</p>
      */
-    inline int GetBaseRatePerMinute() const{ return m_baseRatePerMinute; }
+    inline int GetBaseRatePerMinute() const { return m_baseRatePerMinute; }
     inline bool BaseRatePerMinuteHasBeenSet() const { return m_baseRatePerMinuteHasBeenSet; }
     inline void SetBaseRatePerMinute(int value) { m_baseRatePerMinuteHasBeenSet = true; m_baseRatePerMinute = value; }
     inline IoTJobExponentialRolloutRate& WithBaseRatePerMinute(int value) { SetBaseRatePerMinute(value); return *this;}
@@ -56,7 +56,7 @@ namespace Model
      * parameter supports up to one digit after the decimal (for example, you can
      * specify <code>1.5</code>, but not <code>1.55</code>).</p>
      */
-    inline double GetIncrementFactor() const{ return m_incrementFactor; }
+    inline double GetIncrementFactor() const { return m_incrementFactor; }
     inline bool IncrementFactorHasBeenSet() const { return m_incrementFactorHasBeenSet; }
     inline void SetIncrementFactor(double value) { m_incrementFactorHasBeenSet = true; m_incrementFactor = value; }
     inline IoTJobExponentialRolloutRate& WithIncrementFactor(double value) { SetIncrementFactor(value); return *this;}
@@ -66,19 +66,19 @@ namespace Model
     /**
      * <p>The criteria to increase the rollout rate for the job.</p>
      */
-    inline const IoTJobRateIncreaseCriteria& GetRateIncreaseCriteria() const{ return m_rateIncreaseCriteria; }
+    inline const IoTJobRateIncreaseCriteria& GetRateIncreaseCriteria() const { return m_rateIncreaseCriteria; }
     inline bool RateIncreaseCriteriaHasBeenSet() const { return m_rateIncreaseCriteriaHasBeenSet; }
-    inline void SetRateIncreaseCriteria(const IoTJobRateIncreaseCriteria& value) { m_rateIncreaseCriteriaHasBeenSet = true; m_rateIncreaseCriteria = value; }
-    inline void SetRateIncreaseCriteria(IoTJobRateIncreaseCriteria&& value) { m_rateIncreaseCriteriaHasBeenSet = true; m_rateIncreaseCriteria = std::move(value); }
-    inline IoTJobExponentialRolloutRate& WithRateIncreaseCriteria(const IoTJobRateIncreaseCriteria& value) { SetRateIncreaseCriteria(value); return *this;}
-    inline IoTJobExponentialRolloutRate& WithRateIncreaseCriteria(IoTJobRateIncreaseCriteria&& value) { SetRateIncreaseCriteria(std::move(value)); return *this;}
+    template<typename RateIncreaseCriteriaT = IoTJobRateIncreaseCriteria>
+    void SetRateIncreaseCriteria(RateIncreaseCriteriaT&& value) { m_rateIncreaseCriteriaHasBeenSet = true; m_rateIncreaseCriteria = std::forward<RateIncreaseCriteriaT>(value); }
+    template<typename RateIncreaseCriteriaT = IoTJobRateIncreaseCriteria>
+    IoTJobExponentialRolloutRate& WithRateIncreaseCriteria(RateIncreaseCriteriaT&& value) { SetRateIncreaseCriteria(std::forward<RateIncreaseCriteriaT>(value)); return *this;}
     ///@}
   private:
 
-    int m_baseRatePerMinute;
+    int m_baseRatePerMinute{0};
     bool m_baseRatePerMinuteHasBeenSet = false;
 
-    double m_incrementFactor;
+    double m_incrementFactor{0.0};
     bool m_incrementFactorHasBeenSet = false;
 
     IoTJobRateIncreaseCriteria m_rateIncreaseCriteria;

@@ -21,7 +21,7 @@ namespace Model
   class TestHypervisorConfigurationRequest : public BackupGatewayRequest
   {
   public:
-    AWS_BACKUPGATEWAY_API TestHypervisorConfigurationRequest();
+    AWS_BACKUPGATEWAY_API TestHypervisorConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the gateway to the hypervisor to test.</p>
      */
-    inline const Aws::String& GetGatewayArn() const{ return m_gatewayArn; }
+    inline const Aws::String& GetGatewayArn() const { return m_gatewayArn; }
     inline bool GatewayArnHasBeenSet() const { return m_gatewayArnHasBeenSet; }
-    inline void SetGatewayArn(const Aws::String& value) { m_gatewayArnHasBeenSet = true; m_gatewayArn = value; }
-    inline void SetGatewayArn(Aws::String&& value) { m_gatewayArnHasBeenSet = true; m_gatewayArn = std::move(value); }
-    inline void SetGatewayArn(const char* value) { m_gatewayArnHasBeenSet = true; m_gatewayArn.assign(value); }
-    inline TestHypervisorConfigurationRequest& WithGatewayArn(const Aws::String& value) { SetGatewayArn(value); return *this;}
-    inline TestHypervisorConfigurationRequest& WithGatewayArn(Aws::String&& value) { SetGatewayArn(std::move(value)); return *this;}
-    inline TestHypervisorConfigurationRequest& WithGatewayArn(const char* value) { SetGatewayArn(value); return *this;}
+    template<typename GatewayArnT = Aws::String>
+    void SetGatewayArn(GatewayArnT&& value) { m_gatewayArnHasBeenSet = true; m_gatewayArn = std::forward<GatewayArnT>(value); }
+    template<typename GatewayArnT = Aws::String>
+    TestHypervisorConfigurationRequest& WithGatewayArn(GatewayArnT&& value) { SetGatewayArn(std::forward<GatewayArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,42 +51,36 @@ namespace Model
      * <p>The server host of the hypervisor. This can be either an IP address or a
      * fully-qualified domain name (FQDN).</p>
      */
-    inline const Aws::String& GetHost() const{ return m_host; }
+    inline const Aws::String& GetHost() const { return m_host; }
     inline bool HostHasBeenSet() const { return m_hostHasBeenSet; }
-    inline void SetHost(const Aws::String& value) { m_hostHasBeenSet = true; m_host = value; }
-    inline void SetHost(Aws::String&& value) { m_hostHasBeenSet = true; m_host = std::move(value); }
-    inline void SetHost(const char* value) { m_hostHasBeenSet = true; m_host.assign(value); }
-    inline TestHypervisorConfigurationRequest& WithHost(const Aws::String& value) { SetHost(value); return *this;}
-    inline TestHypervisorConfigurationRequest& WithHost(Aws::String&& value) { SetHost(std::move(value)); return *this;}
-    inline TestHypervisorConfigurationRequest& WithHost(const char* value) { SetHost(value); return *this;}
+    template<typename HostT = Aws::String>
+    void SetHost(HostT&& value) { m_hostHasBeenSet = true; m_host = std::forward<HostT>(value); }
+    template<typename HostT = Aws::String>
+    TestHypervisorConfigurationRequest& WithHost(HostT&& value) { SetHost(std::forward<HostT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The password for the hypervisor.</p>
      */
-    inline const Aws::String& GetPassword() const{ return m_password; }
+    inline const Aws::String& GetPassword() const { return m_password; }
     inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
-    inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
-    inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = std::move(value); }
-    inline void SetPassword(const char* value) { m_passwordHasBeenSet = true; m_password.assign(value); }
-    inline TestHypervisorConfigurationRequest& WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
-    inline TestHypervisorConfigurationRequest& WithPassword(Aws::String&& value) { SetPassword(std::move(value)); return *this;}
-    inline TestHypervisorConfigurationRequest& WithPassword(const char* value) { SetPassword(value); return *this;}
+    template<typename PasswordT = Aws::String>
+    void SetPassword(PasswordT&& value) { m_passwordHasBeenSet = true; m_password = std::forward<PasswordT>(value); }
+    template<typename PasswordT = Aws::String>
+    TestHypervisorConfigurationRequest& WithPassword(PasswordT&& value) { SetPassword(std::forward<PasswordT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The username for the hypervisor.</p>
      */
-    inline const Aws::String& GetUsername() const{ return m_username; }
+    inline const Aws::String& GetUsername() const { return m_username; }
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
-    inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
-    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
-    inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
-    inline TestHypervisorConfigurationRequest& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
-    inline TestHypervisorConfigurationRequest& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
-    inline TestHypervisorConfigurationRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
+    template<typename UsernameT = Aws::String>
+    void SetUsername(UsernameT&& value) { m_usernameHasBeenSet = true; m_username = std::forward<UsernameT>(value); }
+    template<typename UsernameT = Aws::String>
+    TestHypervisorConfigurationRequest& WithUsername(UsernameT&& value) { SetUsername(std::forward<UsernameT>(value)); return *this;}
     ///@}
   private:
 

@@ -51,7 +51,7 @@ namespace Model
   class Autotune
   {
   public:
-    AWS_SAGEMAKER_API Autotune();
+    AWS_SAGEMAKER_API Autotune() = default;
     AWS_SAGEMAKER_API Autotune(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Autotune& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -62,16 +62,14 @@ namespace Model
      * <p>Set <code>Mode</code> to <code>Enabled</code> if you want to use
      * Autotune.</p>
      */
-    inline const AutotuneMode& GetMode() const{ return m_mode; }
+    inline AutotuneMode GetMode() const { return m_mode; }
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-    inline void SetMode(const AutotuneMode& value) { m_modeHasBeenSet = true; m_mode = value; }
-    inline void SetMode(AutotuneMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
-    inline Autotune& WithMode(const AutotuneMode& value) { SetMode(value); return *this;}
-    inline Autotune& WithMode(AutotuneMode&& value) { SetMode(std::move(value)); return *this;}
+    inline void SetMode(AutotuneMode value) { m_modeHasBeenSet = true; m_mode = value; }
+    inline Autotune& WithMode(AutotuneMode value) { SetMode(value); return *this;}
     ///@}
   private:
 
-    AutotuneMode m_mode;
+    AutotuneMode m_mode{AutotuneMode::NOT_SET};
     bool m_modeHasBeenSet = false;
   };
 

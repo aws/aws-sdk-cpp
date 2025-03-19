@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetPromptRequest::GetPromptRequest() : 
-    m_promptIdentifierHasBeenSet(false),
-    m_promptVersionHasBeenSet(false)
-{
-}
-
 Aws::String GetPromptRequest::SerializePayload() const
 {
   return {};

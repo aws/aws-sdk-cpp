@@ -27,7 +27,7 @@ namespace Model
   class CreateCaseRuleResult
   {
   public:
-    AWS_CONNECTCASES_API CreateCaseRuleResult();
+    AWS_CONNECTCASES_API CreateCaseRuleResult() = default;
     AWS_CONNECTCASES_API CreateCaseRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECTCASES_API CreateCaseRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,45 +36,42 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of a case rule.</p>
      */
-    inline const Aws::String& GetCaseRuleArn() const{ return m_caseRuleArn; }
-    inline void SetCaseRuleArn(const Aws::String& value) { m_caseRuleArn = value; }
-    inline void SetCaseRuleArn(Aws::String&& value) { m_caseRuleArn = std::move(value); }
-    inline void SetCaseRuleArn(const char* value) { m_caseRuleArn.assign(value); }
-    inline CreateCaseRuleResult& WithCaseRuleArn(const Aws::String& value) { SetCaseRuleArn(value); return *this;}
-    inline CreateCaseRuleResult& WithCaseRuleArn(Aws::String&& value) { SetCaseRuleArn(std::move(value)); return *this;}
-    inline CreateCaseRuleResult& WithCaseRuleArn(const char* value) { SetCaseRuleArn(value); return *this;}
+    inline const Aws::String& GetCaseRuleArn() const { return m_caseRuleArn; }
+    template<typename CaseRuleArnT = Aws::String>
+    void SetCaseRuleArn(CaseRuleArnT&& value) { m_caseRuleArnHasBeenSet = true; m_caseRuleArn = std::forward<CaseRuleArnT>(value); }
+    template<typename CaseRuleArnT = Aws::String>
+    CreateCaseRuleResult& WithCaseRuleArn(CaseRuleArnT&& value) { SetCaseRuleArn(std::forward<CaseRuleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Unique identifier of a case rule.</p>
      */
-    inline const Aws::String& GetCaseRuleId() const{ return m_caseRuleId; }
-    inline void SetCaseRuleId(const Aws::String& value) { m_caseRuleId = value; }
-    inline void SetCaseRuleId(Aws::String&& value) { m_caseRuleId = std::move(value); }
-    inline void SetCaseRuleId(const char* value) { m_caseRuleId.assign(value); }
-    inline CreateCaseRuleResult& WithCaseRuleId(const Aws::String& value) { SetCaseRuleId(value); return *this;}
-    inline CreateCaseRuleResult& WithCaseRuleId(Aws::String&& value) { SetCaseRuleId(std::move(value)); return *this;}
-    inline CreateCaseRuleResult& WithCaseRuleId(const char* value) { SetCaseRuleId(value); return *this;}
+    inline const Aws::String& GetCaseRuleId() const { return m_caseRuleId; }
+    template<typename CaseRuleIdT = Aws::String>
+    void SetCaseRuleId(CaseRuleIdT&& value) { m_caseRuleIdHasBeenSet = true; m_caseRuleId = std::forward<CaseRuleIdT>(value); }
+    template<typename CaseRuleIdT = Aws::String>
+    CreateCaseRuleResult& WithCaseRuleId(CaseRuleIdT&& value) { SetCaseRuleId(std::forward<CaseRuleIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateCaseRuleResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateCaseRuleResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateCaseRuleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateCaseRuleResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_caseRuleArn;
+    bool m_caseRuleArnHasBeenSet = false;
 
     Aws::String m_caseRuleId;
+    bool m_caseRuleIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,7 +32,7 @@ namespace Model
   class Subscription
   {
   public:
-    AWS_APPINTEGRATIONSSERVICE_API Subscription();
+    AWS_APPINTEGRATIONSSERVICE_API Subscription() = default;
     AWS_APPINTEGRATIONSSERVICE_API Subscription(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPINTEGRATIONSSERVICE_API Subscription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPINTEGRATIONSSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The name of the subscription.</p>
      */
-    inline const Aws::String& GetEvent() const{ return m_event; }
+    inline const Aws::String& GetEvent() const { return m_event; }
     inline bool EventHasBeenSet() const { return m_eventHasBeenSet; }
-    inline void SetEvent(const Aws::String& value) { m_eventHasBeenSet = true; m_event = value; }
-    inline void SetEvent(Aws::String&& value) { m_eventHasBeenSet = true; m_event = std::move(value); }
-    inline void SetEvent(const char* value) { m_eventHasBeenSet = true; m_event.assign(value); }
-    inline Subscription& WithEvent(const Aws::String& value) { SetEvent(value); return *this;}
-    inline Subscription& WithEvent(Aws::String&& value) { SetEvent(std::move(value)); return *this;}
-    inline Subscription& WithEvent(const char* value) { SetEvent(value); return *this;}
+    template<typename EventT = Aws::String>
+    void SetEvent(EventT&& value) { m_eventHasBeenSet = true; m_event = std::forward<EventT>(value); }
+    template<typename EventT = Aws::String>
+    Subscription& WithEvent(EventT&& value) { SetEvent(std::forward<EventT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the subscription.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline Subscription& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline Subscription& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline Subscription& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    Subscription& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
   private:
 

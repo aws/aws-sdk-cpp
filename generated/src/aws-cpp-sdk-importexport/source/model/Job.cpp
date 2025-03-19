@@ -20,18 +20,7 @@ namespace ImportExport
 namespace Model
 {
 
-Job::Job() : 
-    m_jobIdHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_isCanceled(false),
-    m_isCanceledHasBeenSet(false),
-    m_jobType(JobType::NOT_SET),
-    m_jobTypeHasBeenSet(false)
-{
-}
-
 Job::Job(const XmlNode& xmlNode)
-  : Job()
 {
   *this = xmlNode;
 }
@@ -63,7 +52,7 @@ Job& Job::operator =(const XmlNode& xmlNode)
     XmlNode jobTypeNode = resultNode.FirstChild("JobType");
     if(!jobTypeNode.IsNull())
     {
-      m_jobType = JobTypeMapper::GetJobTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(jobTypeNode.GetText()).c_str()).c_str());
+      m_jobType = JobTypeMapper::GetJobTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(jobTypeNode.GetText()).c_str()));
       m_jobTypeHasBeenSet = true;
     }
   }

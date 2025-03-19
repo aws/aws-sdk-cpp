@@ -34,7 +34,7 @@ namespace Model
   class PipelineSummary
   {
   public:
-    AWS_CODEPIPELINE_API PipelineSummary();
+    AWS_CODEPIPELINE_API PipelineSummary() = default;
     AWS_CODEPIPELINE_API PipelineSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API PipelineSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,21 +44,19 @@ namespace Model
     /**
      * <p>The name of the pipeline.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline PipelineSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline PipelineSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline PipelineSummary& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    PipelineSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version number of the pipeline.</p>
      */
-    inline int GetVersion() const{ return m_version; }
+    inline int GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
     inline void SetVersion(int value) { m_versionHasBeenSet = true; m_version = value; }
     inline PipelineSummary& WithVersion(int value) { SetVersion(value); return *this;}
@@ -81,12 +79,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What
      * type of pipeline is right for me?</a>.</p>
      */
-    inline const PipelineType& GetPipelineType() const{ return m_pipelineType; }
+    inline PipelineType GetPipelineType() const { return m_pipelineType; }
     inline bool PipelineTypeHasBeenSet() const { return m_pipelineTypeHasBeenSet; }
-    inline void SetPipelineType(const PipelineType& value) { m_pipelineTypeHasBeenSet = true; m_pipelineType = value; }
-    inline void SetPipelineType(PipelineType&& value) { m_pipelineTypeHasBeenSet = true; m_pipelineType = std::move(value); }
-    inline PipelineSummary& WithPipelineType(const PipelineType& value) { SetPipelineType(value); return *this;}
-    inline PipelineSummary& WithPipelineType(PipelineType&& value) { SetPipelineType(std::move(value)); return *this;}
+    inline void SetPipelineType(PipelineType value) { m_pipelineTypeHasBeenSet = true; m_pipelineType = value; }
+    inline PipelineSummary& WithPipelineType(PipelineType value) { SetPipelineType(value); return *this;}
     ///@}
 
     ///@{
@@ -94,24 +90,22 @@ namespace Model
      * <p>The method that the pipeline will use to handle multiple executions. The
      * default mode is SUPERSEDED.</p>
      */
-    inline const ExecutionMode& GetExecutionMode() const{ return m_executionMode; }
+    inline ExecutionMode GetExecutionMode() const { return m_executionMode; }
     inline bool ExecutionModeHasBeenSet() const { return m_executionModeHasBeenSet; }
-    inline void SetExecutionMode(const ExecutionMode& value) { m_executionModeHasBeenSet = true; m_executionMode = value; }
-    inline void SetExecutionMode(ExecutionMode&& value) { m_executionModeHasBeenSet = true; m_executionMode = std::move(value); }
-    inline PipelineSummary& WithExecutionMode(const ExecutionMode& value) { SetExecutionMode(value); return *this;}
-    inline PipelineSummary& WithExecutionMode(ExecutionMode&& value) { SetExecutionMode(std::move(value)); return *this;}
+    inline void SetExecutionMode(ExecutionMode value) { m_executionModeHasBeenSet = true; m_executionMode = value; }
+    inline PipelineSummary& WithExecutionMode(ExecutionMode value) { SetExecutionMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time the pipeline was created, in timestamp format.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreated() const{ return m_created; }
+    inline const Aws::Utils::DateTime& GetCreated() const { return m_created; }
     inline bool CreatedHasBeenSet() const { return m_createdHasBeenSet; }
-    inline void SetCreated(const Aws::Utils::DateTime& value) { m_createdHasBeenSet = true; m_created = value; }
-    inline void SetCreated(Aws::Utils::DateTime&& value) { m_createdHasBeenSet = true; m_created = std::move(value); }
-    inline PipelineSummary& WithCreated(const Aws::Utils::DateTime& value) { SetCreated(value); return *this;}
-    inline PipelineSummary& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(std::move(value)); return *this;}
+    template<typename CreatedT = Aws::Utils::DateTime>
+    void SetCreated(CreatedT&& value) { m_createdHasBeenSet = true; m_created = std::forward<CreatedT>(value); }
+    template<typename CreatedT = Aws::Utils::DateTime>
+    PipelineSummary& WithCreated(CreatedT&& value) { SetCreated(std::forward<CreatedT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -119,31 +113,31 @@ namespace Model
      * <p>The date and time of the last update to the pipeline, in timestamp
      * format.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdated() const{ return m_updated; }
+    inline const Aws::Utils::DateTime& GetUpdated() const { return m_updated; }
     inline bool UpdatedHasBeenSet() const { return m_updatedHasBeenSet; }
-    inline void SetUpdated(const Aws::Utils::DateTime& value) { m_updatedHasBeenSet = true; m_updated = value; }
-    inline void SetUpdated(Aws::Utils::DateTime&& value) { m_updatedHasBeenSet = true; m_updated = std::move(value); }
-    inline PipelineSummary& WithUpdated(const Aws::Utils::DateTime& value) { SetUpdated(value); return *this;}
-    inline PipelineSummary& WithUpdated(Aws::Utils::DateTime&& value) { SetUpdated(std::move(value)); return *this;}
+    template<typename UpdatedT = Aws::Utils::DateTime>
+    void SetUpdated(UpdatedT&& value) { m_updatedHasBeenSet = true; m_updated = std::forward<UpdatedT>(value); }
+    template<typename UpdatedT = Aws::Utils::DateTime>
+    PipelineSummary& WithUpdated(UpdatedT&& value) { SetUpdated(std::forward<UpdatedT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    int m_version;
+    int m_version{0};
     bool m_versionHasBeenSet = false;
 
-    PipelineType m_pipelineType;
+    PipelineType m_pipelineType{PipelineType::NOT_SET};
     bool m_pipelineTypeHasBeenSet = false;
 
-    ExecutionMode m_executionMode;
+    ExecutionMode m_executionMode{ExecutionMode::NOT_SET};
     bool m_executionModeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_created;
+    Aws::Utils::DateTime m_created{};
     bool m_createdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updated;
+    Aws::Utils::DateTime m_updated{};
     bool m_updatedHasBeenSet = false;
   };
 

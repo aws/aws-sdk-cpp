@@ -12,11 +12,6 @@ using namespace Aws::ElasticsearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteElasticsearchDomainRequest::DeleteElasticsearchDomainRequest() : 
-    m_domainNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteElasticsearchDomainRequest::SerializePayload() const
 {
   return {};

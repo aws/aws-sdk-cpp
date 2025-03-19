@@ -34,7 +34,7 @@ namespace Model
   class Dimension
   {
   public:
-    AWS_TIMESTREAMWRITE_API Dimension();
+    AWS_TIMESTREAMWRITE_API Dimension() = default;
     AWS_TIMESTREAMWRITE_API Dimension(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMWRITE_API Dimension& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMWRITE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,40 +49,34 @@ namespace Model
      * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming">Naming
      * Constraints</a>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Dimension& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Dimension& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Dimension& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Dimension& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of the dimension.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline Dimension& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline Dimension& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline Dimension& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    Dimension& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The data type of the dimension for the time-series data point.</p>
      */
-    inline const DimensionValueType& GetDimensionValueType() const{ return m_dimensionValueType; }
+    inline DimensionValueType GetDimensionValueType() const { return m_dimensionValueType; }
     inline bool DimensionValueTypeHasBeenSet() const { return m_dimensionValueTypeHasBeenSet; }
-    inline void SetDimensionValueType(const DimensionValueType& value) { m_dimensionValueTypeHasBeenSet = true; m_dimensionValueType = value; }
-    inline void SetDimensionValueType(DimensionValueType&& value) { m_dimensionValueTypeHasBeenSet = true; m_dimensionValueType = std::move(value); }
-    inline Dimension& WithDimensionValueType(const DimensionValueType& value) { SetDimensionValueType(value); return *this;}
-    inline Dimension& WithDimensionValueType(DimensionValueType&& value) { SetDimensionValueType(std::move(value)); return *this;}
+    inline void SetDimensionValueType(DimensionValueType value) { m_dimensionValueTypeHasBeenSet = true; m_dimensionValueType = value; }
+    inline Dimension& WithDimensionValueType(DimensionValueType value) { SetDimensionValueType(value); return *this;}
     ///@}
   private:
 
@@ -92,7 +86,7 @@ namespace Model
     Aws::String m_value;
     bool m_valueHasBeenSet = false;
 
-    DimensionValueType m_dimensionValueType;
+    DimensionValueType m_dimensionValueType{DimensionValueType::NOT_SET};
     bool m_dimensionValueTypeHasBeenSet = false;
   };
 

@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-Edge::Edge() : 
-    m_sourceArnHasBeenSet(false),
-    m_destinationArnHasBeenSet(false),
-    m_associationType(AssociationEdgeType::NOT_SET),
-    m_associationTypeHasBeenSet(false)
-{
-}
-
 Edge::Edge(JsonView jsonValue)
-  : Edge()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ Edge& Edge::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SourceArn"))
   {
     m_sourceArn = jsonValue.GetString("SourceArn");
-
     m_sourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationArn"))
   {
     m_destinationArn = jsonValue.GetString("DestinationArn");
-
     m_destinationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssociationType"))
   {
     m_associationType = AssociationEdgeTypeMapper::GetAssociationEdgeTypeForName(jsonValue.GetString("AssociationType"));
-
     m_associationTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

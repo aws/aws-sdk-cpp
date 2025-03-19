@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSdkTypeResult::GetSdkTypeResult()
-{
-}
-
 GetSdkTypeResult::GetSdkTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,18 @@ GetSdkTypeResult& GetSdkTypeResult::operator =(const Aws::AmazonWebServiceResult
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("friendlyName"))
   {
     m_friendlyName = jsonValue.GetString("friendlyName");
-
+    m_friendlyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configurationProperties"))
   {
     Aws::Utils::Array<JsonView> configurationPropertiesJsonList = jsonValue.GetArray("configurationProperties");
@@ -54,14 +47,15 @@ GetSdkTypeResult& GetSdkTypeResult::operator =(const Aws::AmazonWebServiceResult
     {
       m_configurationProperties.push_back(configurationPropertiesJsonList[configurationPropertiesIndex].AsObject());
     }
+    m_configurationPropertiesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

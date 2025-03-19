@@ -18,15 +18,7 @@ namespace OpenSearchServerless
 namespace Model
 {
 
-LifecyclePolicyResourceIdentifier::LifecyclePolicyResourceIdentifier() : 
-    m_type(LifecyclePolicyType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_resourceHasBeenSet(false)
-{
-}
-
 LifecyclePolicyResourceIdentifier::LifecyclePolicyResourceIdentifier(JsonView jsonValue)
-  : LifecyclePolicyResourceIdentifier()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ LifecyclePolicyResourceIdentifier& LifecyclePolicyResourceIdentifier::operator =
   if(jsonValue.ValueExists("type"))
   {
     m_type = LifecyclePolicyTypeMapper::GetLifecyclePolicyTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resource"))
   {
     m_resource = jsonValue.GetString("resource");
-
     m_resourceHasBeenSet = true;
   }
-
   return *this;
 }
 

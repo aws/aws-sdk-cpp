@@ -10,13 +10,6 @@
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-ComposeEnvironmentsRequest::ComposeEnvironmentsRequest() : 
-    m_applicationNameHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_versionLabelsHasBeenSet(false)
-{
-}
-
 Aws::String ComposeEnvironmentsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

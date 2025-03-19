@@ -29,7 +29,7 @@ namespace Model
   class ListInternetEventsResult
   {
   public:
-    AWS_INTERNETMONITOR_API ListInternetEventsResult();
+    AWS_INTERNETMONITOR_API ListInternetEventsResult() = default;
     AWS_INTERNETMONITOR_API ListInternetEventsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_INTERNETMONITOR_API ListInternetEventsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A set of internet events returned for the list operation.</p>
      */
-    inline const Aws::Vector<InternetEventSummary>& GetInternetEvents() const{ return m_internetEvents; }
-    inline void SetInternetEvents(const Aws::Vector<InternetEventSummary>& value) { m_internetEvents = value; }
-    inline void SetInternetEvents(Aws::Vector<InternetEventSummary>&& value) { m_internetEvents = std::move(value); }
-    inline ListInternetEventsResult& WithInternetEvents(const Aws::Vector<InternetEventSummary>& value) { SetInternetEvents(value); return *this;}
-    inline ListInternetEventsResult& WithInternetEvents(Aws::Vector<InternetEventSummary>&& value) { SetInternetEvents(std::move(value)); return *this;}
-    inline ListInternetEventsResult& AddInternetEvents(const InternetEventSummary& value) { m_internetEvents.push_back(value); return *this; }
-    inline ListInternetEventsResult& AddInternetEvents(InternetEventSummary&& value) { m_internetEvents.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<InternetEventSummary>& GetInternetEvents() const { return m_internetEvents; }
+    template<typename InternetEventsT = Aws::Vector<InternetEventSummary>>
+    void SetInternetEvents(InternetEventsT&& value) { m_internetEventsHasBeenSet = true; m_internetEvents = std::forward<InternetEventsT>(value); }
+    template<typename InternetEventsT = Aws::Vector<InternetEventSummary>>
+    ListInternetEventsResult& WithInternetEvents(InternetEventsT&& value) { SetInternetEvents(std::forward<InternetEventsT>(value)); return *this;}
+    template<typename InternetEventsT = InternetEventSummary>
+    ListInternetEventsResult& AddInternetEvents(InternetEventsT&& value) { m_internetEventsHasBeenSet = true; m_internetEvents.emplace_back(std::forward<InternetEventsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The token for the next set of results. You receive this token from a previous
      * call.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListInternetEventsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListInternetEventsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListInternetEventsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListInternetEventsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListInternetEventsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListInternetEventsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListInternetEventsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListInternetEventsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<InternetEventSummary> m_internetEvents;
+    bool m_internetEventsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

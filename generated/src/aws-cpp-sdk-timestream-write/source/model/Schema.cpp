@@ -18,13 +18,7 @@ namespace TimestreamWrite
 namespace Model
 {
 
-Schema::Schema() : 
-    m_compositePartitionKeyHasBeenSet(false)
-{
-}
-
 Schema::Schema(JsonView jsonValue)
-  : Schema()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ Schema& Schema::operator =(JsonView jsonValue)
     }
     m_compositePartitionKeyHasBeenSet = true;
   }
-
   return *this;
 }
 

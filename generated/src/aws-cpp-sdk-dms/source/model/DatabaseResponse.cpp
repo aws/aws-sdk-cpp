@@ -18,20 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-DatabaseResponse::DatabaseResponse() : 
-    m_databaseIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_numberOfSchemas(0),
-    m_numberOfSchemasHasBeenSet(false),
-    m_serverHasBeenSet(false),
-    m_softwareDetailsHasBeenSet(false),
-    m_collectorsHasBeenSet(false)
-{
-}
-
 DatabaseResponse::DatabaseResponse(JsonView jsonValue)
-  : DatabaseResponse()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ DatabaseResponse& DatabaseResponse::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DatabaseId"))
   {
     m_databaseId = jsonValue.GetString("DatabaseId");
-
     m_databaseIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseName"))
   {
     m_databaseName = jsonValue.GetString("DatabaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IpAddress"))
   {
     m_ipAddress = jsonValue.GetString("IpAddress");
-
     m_ipAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfSchemas"))
   {
     m_numberOfSchemas = jsonValue.GetInt64("NumberOfSchemas");
-
     m_numberOfSchemasHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Server"))
   {
     m_server = jsonValue.GetObject("Server");
-
     m_serverHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SoftwareDetails"))
   {
     m_softwareDetails = jsonValue.GetObject("SoftwareDetails");
-
     m_softwareDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Collectors"))
   {
     Aws::Utils::Array<JsonView> collectorsJsonList = jsonValue.GetArray("Collectors");
@@ -89,7 +64,6 @@ DatabaseResponse& DatabaseResponse::operator =(JsonView jsonValue)
     }
     m_collectorsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateSessionResult::CreateSessionResult()
-{
-}
-
 CreateSessionResult::CreateSessionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateSessionResult& CreateSessionResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("Session"))
   {
     m_session = jsonValue.GetObject("Session");
-
+    m_sessionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

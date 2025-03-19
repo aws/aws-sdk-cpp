@@ -10,13 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-SetIdentityFeedbackForwardingEnabledRequest::SetIdentityFeedbackForwardingEnabledRequest() : 
-    m_identityHasBeenSet(false),
-    m_forwardingEnabled(false),
-    m_forwardingEnabledHasBeenSet(false)
-{
-}
-
 Aws::String SetIdentityFeedbackForwardingEnabledRequest::SerializePayload() const
 {
   Aws::StringStream ss;

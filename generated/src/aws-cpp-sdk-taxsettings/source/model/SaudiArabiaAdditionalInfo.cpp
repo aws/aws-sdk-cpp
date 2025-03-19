@@ -18,14 +18,7 @@ namespace TaxSettings
 namespace Model
 {
 
-SaudiArabiaAdditionalInfo::SaudiArabiaAdditionalInfo() : 
-    m_taxRegistrationNumberType(SaudiArabiaTaxRegistrationNumberType::NOT_SET),
-    m_taxRegistrationNumberTypeHasBeenSet(false)
-{
-}
-
 SaudiArabiaAdditionalInfo::SaudiArabiaAdditionalInfo(JsonView jsonValue)
-  : SaudiArabiaAdditionalInfo()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SaudiArabiaAdditionalInfo& SaudiArabiaAdditionalInfo::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("taxRegistrationNumberType"))
   {
     m_taxRegistrationNumberType = SaudiArabiaTaxRegistrationNumberTypeMapper::GetSaudiArabiaTaxRegistrationNumberTypeForName(jsonValue.GetString("taxRegistrationNumberType"));
-
     m_taxRegistrationNumberTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

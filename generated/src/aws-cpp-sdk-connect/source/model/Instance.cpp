@@ -18,28 +18,7 @@ namespace Connect
 namespace Model
 {
 
-Instance::Instance() : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_identityManagementType(DirectoryType::NOT_SET),
-    m_identityManagementTypeHasBeenSet(false),
-    m_instanceAliasHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_serviceRoleHasBeenSet(false),
-    m_instanceStatus(InstanceStatus::NOT_SET),
-    m_instanceStatusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_inboundCallsEnabled(false),
-    m_inboundCallsEnabledHasBeenSet(false),
-    m_outboundCallsEnabled(false),
-    m_outboundCallsEnabledHasBeenSet(false),
-    m_instanceAccessUrlHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Instance::Instance(JsonView jsonValue)
-  : Instance()
 {
   *this = jsonValue;
 }
@@ -49,80 +28,58 @@ Instance& Instance::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdentityManagementType"))
   {
     m_identityManagementType = DirectoryTypeMapper::GetDirectoryTypeForName(jsonValue.GetString("IdentityManagementType"));
-
     m_identityManagementTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceAlias"))
   {
     m_instanceAlias = jsonValue.GetString("InstanceAlias");
-
     m_instanceAliasHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceRole"))
   {
     m_serviceRole = jsonValue.GetString("ServiceRole");
-
     m_serviceRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceStatus"))
   {
     m_instanceStatus = InstanceStatusMapper::GetInstanceStatusForName(jsonValue.GetString("InstanceStatus"));
-
     m_instanceStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusReason"))
   {
     m_statusReason = jsonValue.GetObject("StatusReason");
-
     m_statusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InboundCallsEnabled"))
   {
     m_inboundCallsEnabled = jsonValue.GetBool("InboundCallsEnabled");
-
     m_inboundCallsEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutboundCallsEnabled"))
   {
     m_outboundCallsEnabled = jsonValue.GetBool("OutboundCallsEnabled");
-
     m_outboundCallsEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceAccessUrl"))
   {
     m_instanceAccessUrl = jsonValue.GetString("InstanceAccessUrl");
-
     m_instanceAccessUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -132,7 +89,6 @@ Instance& Instance::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

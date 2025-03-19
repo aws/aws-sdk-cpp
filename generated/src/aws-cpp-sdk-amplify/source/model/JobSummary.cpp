@@ -18,26 +18,7 @@ namespace Amplify
 namespace Model
 {
 
-JobSummary::JobSummary() : 
-    m_jobArnHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_commitIdHasBeenSet(false),
-    m_commitMessageHasBeenSet(false),
-    m_commitTimeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_status(JobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_jobType(JobType::NOT_SET),
-    m_jobTypeHasBeenSet(false),
-    m_sourceUrlHasBeenSet(false),
-    m_sourceUrlType(SourceUrlType::NOT_SET),
-    m_sourceUrlTypeHasBeenSet(false)
-{
-}
-
 JobSummary::JobSummary(JsonView jsonValue)
-  : JobSummary()
 {
   *this = jsonValue;
 }
@@ -47,80 +28,58 @@ JobSummary& JobSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("jobArn"))
   {
     m_jobArn = jsonValue.GetString("jobArn");
-
     m_jobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobId"))
   {
     m_jobId = jsonValue.GetString("jobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("commitId"))
   {
     m_commitId = jsonValue.GetString("commitId");
-
     m_commitIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("commitMessage"))
   {
     m_commitMessage = jsonValue.GetString("commitMessage");
-
     m_commitMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("commitTime"))
   {
     m_commitTime = jsonValue.GetDouble("commitTime");
-
     m_commitTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetDouble("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetDouble("endTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobType"))
   {
     m_jobType = JobTypeMapper::GetJobTypeForName(jsonValue.GetString("jobType"));
-
     m_jobTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceUrl"))
   {
     m_sourceUrl = jsonValue.GetString("sourceUrl");
-
     m_sourceUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceUrlType"))
   {
     m_sourceUrlType = SourceUrlTypeMapper::GetSourceUrlTypeForName(jsonValue.GetString("sourceUrlType"));
-
     m_sourceUrlTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

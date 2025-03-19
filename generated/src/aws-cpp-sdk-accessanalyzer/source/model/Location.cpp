@@ -18,14 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-Location::Location() : 
-    m_pathHasBeenSet(false),
-    m_spanHasBeenSet(false)
-{
-}
-
 Location::Location(JsonView jsonValue)
-  : Location()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ Location& Location::operator =(JsonView jsonValue)
     }
     m_pathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("span"))
   {
     m_span = jsonValue.GetObject("span");
-
     m_spanHasBeenSet = true;
   }
-
   return *this;
 }
 

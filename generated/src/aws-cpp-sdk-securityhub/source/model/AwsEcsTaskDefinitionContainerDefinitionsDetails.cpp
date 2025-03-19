@@ -18,62 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEcsTaskDefinitionContainerDefinitionsDetails::AwsEcsTaskDefinitionContainerDefinitionsDetails() : 
-    m_commandHasBeenSet(false),
-    m_cpu(0),
-    m_cpuHasBeenSet(false),
-    m_dependsOnHasBeenSet(false),
-    m_disableNetworking(false),
-    m_disableNetworkingHasBeenSet(false),
-    m_dnsSearchDomainsHasBeenSet(false),
-    m_dnsServersHasBeenSet(false),
-    m_dockerLabelsHasBeenSet(false),
-    m_dockerSecurityOptionsHasBeenSet(false),
-    m_entryPointHasBeenSet(false),
-    m_environmentHasBeenSet(false),
-    m_environmentFilesHasBeenSet(false),
-    m_essential(false),
-    m_essentialHasBeenSet(false),
-    m_extraHostsHasBeenSet(false),
-    m_firelensConfigurationHasBeenSet(false),
-    m_healthCheckHasBeenSet(false),
-    m_hostnameHasBeenSet(false),
-    m_imageHasBeenSet(false),
-    m_interactive(false),
-    m_interactiveHasBeenSet(false),
-    m_linksHasBeenSet(false),
-    m_linuxParametersHasBeenSet(false),
-    m_logConfigurationHasBeenSet(false),
-    m_memory(0),
-    m_memoryHasBeenSet(false),
-    m_memoryReservation(0),
-    m_memoryReservationHasBeenSet(false),
-    m_mountPointsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_portMappingsHasBeenSet(false),
-    m_privileged(false),
-    m_privilegedHasBeenSet(false),
-    m_pseudoTerminal(false),
-    m_pseudoTerminalHasBeenSet(false),
-    m_readonlyRootFilesystem(false),
-    m_readonlyRootFilesystemHasBeenSet(false),
-    m_repositoryCredentialsHasBeenSet(false),
-    m_resourceRequirementsHasBeenSet(false),
-    m_secretsHasBeenSet(false),
-    m_startTimeout(0),
-    m_startTimeoutHasBeenSet(false),
-    m_stopTimeout(0),
-    m_stopTimeoutHasBeenSet(false),
-    m_systemControlsHasBeenSet(false),
-    m_ulimitsHasBeenSet(false),
-    m_userHasBeenSet(false),
-    m_volumesFromHasBeenSet(false),
-    m_workingDirectoryHasBeenSet(false)
-{
-}
-
 AwsEcsTaskDefinitionContainerDefinitionsDetails::AwsEcsTaskDefinitionContainerDefinitionsDetails(JsonView jsonValue)
-  : AwsEcsTaskDefinitionContainerDefinitionsDetails()
 {
   *this = jsonValue;
 }
@@ -89,14 +34,11 @@ AwsEcsTaskDefinitionContainerDefinitionsDetails& AwsEcsTaskDefinitionContainerDe
     }
     m_commandHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Cpu"))
   {
     m_cpu = jsonValue.GetInteger("Cpu");
-
     m_cpuHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DependsOn"))
   {
     Aws::Utils::Array<JsonView> dependsOnJsonList = jsonValue.GetArray("DependsOn");
@@ -106,14 +48,11 @@ AwsEcsTaskDefinitionContainerDefinitionsDetails& AwsEcsTaskDefinitionContainerDe
     }
     m_dependsOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisableNetworking"))
   {
     m_disableNetworking = jsonValue.GetBool("DisableNetworking");
-
     m_disableNetworkingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DnsSearchDomains"))
   {
     Aws::Utils::Array<JsonView> dnsSearchDomainsJsonList = jsonValue.GetArray("DnsSearchDomains");
@@ -123,7 +62,6 @@ AwsEcsTaskDefinitionContainerDefinitionsDetails& AwsEcsTaskDefinitionContainerDe
     }
     m_dnsSearchDomainsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DnsServers"))
   {
     Aws::Utils::Array<JsonView> dnsServersJsonList = jsonValue.GetArray("DnsServers");
@@ -133,7 +71,6 @@ AwsEcsTaskDefinitionContainerDefinitionsDetails& AwsEcsTaskDefinitionContainerDe
     }
     m_dnsServersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DockerLabels"))
   {
     Aws::Map<Aws::String, JsonView> dockerLabelsJsonMap = jsonValue.GetObject("DockerLabels").GetAllObjects();
@@ -143,7 +80,6 @@ AwsEcsTaskDefinitionContainerDefinitionsDetails& AwsEcsTaskDefinitionContainerDe
     }
     m_dockerLabelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DockerSecurityOptions"))
   {
     Aws::Utils::Array<JsonView> dockerSecurityOptionsJsonList = jsonValue.GetArray("DockerSecurityOptions");
@@ -153,7 +89,6 @@ AwsEcsTaskDefinitionContainerDefinitionsDetails& AwsEcsTaskDefinitionContainerDe
     }
     m_dockerSecurityOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EntryPoint"))
   {
     Aws::Utils::Array<JsonView> entryPointJsonList = jsonValue.GetArray("EntryPoint");
@@ -163,7 +98,6 @@ AwsEcsTaskDefinitionContainerDefinitionsDetails& AwsEcsTaskDefinitionContainerDe
     }
     m_entryPointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Environment"))
   {
     Aws::Utils::Array<JsonView> environmentJsonList = jsonValue.GetArray("Environment");
@@ -173,7 +107,6 @@ AwsEcsTaskDefinitionContainerDefinitionsDetails& AwsEcsTaskDefinitionContainerDe
     }
     m_environmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnvironmentFiles"))
   {
     Aws::Utils::Array<JsonView> environmentFilesJsonList = jsonValue.GetArray("EnvironmentFiles");
@@ -183,14 +116,11 @@ AwsEcsTaskDefinitionContainerDefinitionsDetails& AwsEcsTaskDefinitionContainerDe
     }
     m_environmentFilesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Essential"))
   {
     m_essential = jsonValue.GetBool("Essential");
-
     m_essentialHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExtraHosts"))
   {
     Aws::Utils::Array<JsonView> extraHostsJsonList = jsonValue.GetArray("ExtraHosts");
@@ -200,42 +130,31 @@ AwsEcsTaskDefinitionContainerDefinitionsDetails& AwsEcsTaskDefinitionContainerDe
     }
     m_extraHostsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FirelensConfiguration"))
   {
     m_firelensConfiguration = jsonValue.GetObject("FirelensConfiguration");
-
     m_firelensConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HealthCheck"))
   {
     m_healthCheck = jsonValue.GetObject("HealthCheck");
-
     m_healthCheckHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Hostname"))
   {
     m_hostname = jsonValue.GetString("Hostname");
-
     m_hostnameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Image"))
   {
     m_image = jsonValue.GetString("Image");
-
     m_imageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Interactive"))
   {
     m_interactive = jsonValue.GetBool("Interactive");
-
     m_interactiveHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Links"))
   {
     Aws::Utils::Array<JsonView> linksJsonList = jsonValue.GetArray("Links");
@@ -245,35 +164,26 @@ AwsEcsTaskDefinitionContainerDefinitionsDetails& AwsEcsTaskDefinitionContainerDe
     }
     m_linksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LinuxParameters"))
   {
     m_linuxParameters = jsonValue.GetObject("LinuxParameters");
-
     m_linuxParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogConfiguration"))
   {
     m_logConfiguration = jsonValue.GetObject("LogConfiguration");
-
     m_logConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Memory"))
   {
     m_memory = jsonValue.GetInteger("Memory");
-
     m_memoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MemoryReservation"))
   {
     m_memoryReservation = jsonValue.GetInteger("MemoryReservation");
-
     m_memoryReservationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MountPoints"))
   {
     Aws::Utils::Array<JsonView> mountPointsJsonList = jsonValue.GetArray("MountPoints");
@@ -283,14 +193,11 @@ AwsEcsTaskDefinitionContainerDefinitionsDetails& AwsEcsTaskDefinitionContainerDe
     }
     m_mountPointsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PortMappings"))
   {
     Aws::Utils::Array<JsonView> portMappingsJsonList = jsonValue.GetArray("PortMappings");
@@ -300,35 +207,26 @@ AwsEcsTaskDefinitionContainerDefinitionsDetails& AwsEcsTaskDefinitionContainerDe
     }
     m_portMappingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Privileged"))
   {
     m_privileged = jsonValue.GetBool("Privileged");
-
     m_privilegedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PseudoTerminal"))
   {
     m_pseudoTerminal = jsonValue.GetBool("PseudoTerminal");
-
     m_pseudoTerminalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReadonlyRootFilesystem"))
   {
     m_readonlyRootFilesystem = jsonValue.GetBool("ReadonlyRootFilesystem");
-
     m_readonlyRootFilesystemHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RepositoryCredentials"))
   {
     m_repositoryCredentials = jsonValue.GetObject("RepositoryCredentials");
-
     m_repositoryCredentialsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceRequirements"))
   {
     Aws::Utils::Array<JsonView> resourceRequirementsJsonList = jsonValue.GetArray("ResourceRequirements");
@@ -338,7 +236,6 @@ AwsEcsTaskDefinitionContainerDefinitionsDetails& AwsEcsTaskDefinitionContainerDe
     }
     m_resourceRequirementsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Secrets"))
   {
     Aws::Utils::Array<JsonView> secretsJsonList = jsonValue.GetArray("Secrets");
@@ -348,21 +245,16 @@ AwsEcsTaskDefinitionContainerDefinitionsDetails& AwsEcsTaskDefinitionContainerDe
     }
     m_secretsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTimeout"))
   {
     m_startTimeout = jsonValue.GetInteger("StartTimeout");
-
     m_startTimeoutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StopTimeout"))
   {
     m_stopTimeout = jsonValue.GetInteger("StopTimeout");
-
     m_stopTimeoutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SystemControls"))
   {
     Aws::Utils::Array<JsonView> systemControlsJsonList = jsonValue.GetArray("SystemControls");
@@ -372,7 +264,6 @@ AwsEcsTaskDefinitionContainerDefinitionsDetails& AwsEcsTaskDefinitionContainerDe
     }
     m_systemControlsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ulimits"))
   {
     Aws::Utils::Array<JsonView> ulimitsJsonList = jsonValue.GetArray("Ulimits");
@@ -382,14 +273,11 @@ AwsEcsTaskDefinitionContainerDefinitionsDetails& AwsEcsTaskDefinitionContainerDe
     }
     m_ulimitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("User"))
   {
     m_user = jsonValue.GetString("User");
-
     m_userHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumesFrom"))
   {
     Aws::Utils::Array<JsonView> volumesFromJsonList = jsonValue.GetArray("VolumesFrom");
@@ -399,14 +287,11 @@ AwsEcsTaskDefinitionContainerDefinitionsDetails& AwsEcsTaskDefinitionContainerDe
     }
     m_volumesFromHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkingDirectory"))
   {
     m_workingDirectory = jsonValue.GetString("WorkingDirectory");
-
     m_workingDirectoryHasBeenSet = true;
   }
-
   return *this;
 }
 

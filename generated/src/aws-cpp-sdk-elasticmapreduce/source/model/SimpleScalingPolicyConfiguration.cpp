@@ -18,18 +18,7 @@ namespace EMR
 namespace Model
 {
 
-SimpleScalingPolicyConfiguration::SimpleScalingPolicyConfiguration() : 
-    m_adjustmentType(AdjustmentType::NOT_SET),
-    m_adjustmentTypeHasBeenSet(false),
-    m_scalingAdjustment(0),
-    m_scalingAdjustmentHasBeenSet(false),
-    m_coolDown(0),
-    m_coolDownHasBeenSet(false)
-{
-}
-
 SimpleScalingPolicyConfiguration::SimpleScalingPolicyConfiguration(JsonView jsonValue)
-  : SimpleScalingPolicyConfiguration()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ SimpleScalingPolicyConfiguration& SimpleScalingPolicyConfiguration::operator =(J
   if(jsonValue.ValueExists("AdjustmentType"))
   {
     m_adjustmentType = AdjustmentTypeMapper::GetAdjustmentTypeForName(jsonValue.GetString("AdjustmentType"));
-
     m_adjustmentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScalingAdjustment"))
   {
     m_scalingAdjustment = jsonValue.GetInteger("ScalingAdjustment");
-
     m_scalingAdjustmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CoolDown"))
   {
     m_coolDown = jsonValue.GetInteger("CoolDown");
-
     m_coolDownHasBeenSet = true;
   }
-
   return *this;
 }
 

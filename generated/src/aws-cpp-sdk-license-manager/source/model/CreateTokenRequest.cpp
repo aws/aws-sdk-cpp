@@ -12,16 +12,6 @@ using namespace Aws::LicenseManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateTokenRequest::CreateTokenRequest() : 
-    m_licenseArnHasBeenSet(false),
-    m_roleArnsHasBeenSet(false),
-    m_expirationInDays(0),
-    m_expirationInDaysHasBeenSet(false),
-    m_tokenPropertiesHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
-{
-}
-
 Aws::String CreateTokenRequest::SerializePayload() const
 {
   JsonValue payload;

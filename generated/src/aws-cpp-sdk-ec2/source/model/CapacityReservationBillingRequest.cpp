@@ -20,20 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CapacityReservationBillingRequest::CapacityReservationBillingRequest() : 
-    m_capacityReservationIdHasBeenSet(false),
-    m_requestedByHasBeenSet(false),
-    m_unusedReservationBillingOwnerIdHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false),
-    m_status(CapacityReservationBillingRequestStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_capacityReservationInfoHasBeenSet(false)
-{
-}
-
 CapacityReservationBillingRequest::CapacityReservationBillingRequest(const XmlNode& xmlNode)
-  : CapacityReservationBillingRequest()
 {
   *this = xmlNode;
 }
@@ -71,7 +58,7 @@ CapacityReservationBillingRequest& CapacityReservationBillingRequest::operator =
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
-      m_status = CapacityReservationBillingRequestStatusMapper::GetCapacityReservationBillingRequestStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = CapacityReservationBillingRequestStatusMapper::GetCapacityReservationBillingRequestStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
     XmlNode statusMessageNode = resultNode.FirstChild("statusMessage");

@@ -18,22 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-DocumentClassifierInputDataConfig::DocumentClassifierInputDataConfig() : 
-    m_dataFormat(DocumentClassifierDataFormat::NOT_SET),
-    m_dataFormatHasBeenSet(false),
-    m_s3UriHasBeenSet(false),
-    m_testS3UriHasBeenSet(false),
-    m_labelDelimiterHasBeenSet(false),
-    m_augmentedManifestsHasBeenSet(false),
-    m_documentType(DocumentClassifierDocumentTypeFormat::NOT_SET),
-    m_documentTypeHasBeenSet(false),
-    m_documentsHasBeenSet(false),
-    m_documentReaderConfigHasBeenSet(false)
-{
-}
-
 DocumentClassifierInputDataConfig::DocumentClassifierInputDataConfig(JsonView jsonValue)
-  : DocumentClassifierInputDataConfig()
 {
   *this = jsonValue;
 }
@@ -43,31 +28,23 @@ DocumentClassifierInputDataConfig& DocumentClassifierInputDataConfig::operator =
   if(jsonValue.ValueExists("DataFormat"))
   {
     m_dataFormat = DocumentClassifierDataFormatMapper::GetDocumentClassifierDataFormatForName(jsonValue.GetString("DataFormat"));
-
     m_dataFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Uri"))
   {
     m_s3Uri = jsonValue.GetString("S3Uri");
-
     m_s3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TestS3Uri"))
   {
     m_testS3Uri = jsonValue.GetString("TestS3Uri");
-
     m_testS3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LabelDelimiter"))
   {
     m_labelDelimiter = jsonValue.GetString("LabelDelimiter");
-
     m_labelDelimiterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AugmentedManifests"))
   {
     Aws::Utils::Array<JsonView> augmentedManifestsJsonList = jsonValue.GetArray("AugmentedManifests");
@@ -77,28 +54,21 @@ DocumentClassifierInputDataConfig& DocumentClassifierInputDataConfig::operator =
     }
     m_augmentedManifestsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentType"))
   {
     m_documentType = DocumentClassifierDocumentTypeFormatMapper::GetDocumentClassifierDocumentTypeFormatForName(jsonValue.GetString("DocumentType"));
-
     m_documentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Documents"))
   {
     m_documents = jsonValue.GetObject("Documents");
-
     m_documentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentReaderConfig"))
   {
     m_documentReaderConfig = jsonValue.GetObject("DocumentReaderConfig");
-
     m_documentReaderConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

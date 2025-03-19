@@ -34,7 +34,7 @@ namespace Model
   class AssetBundleImportSource
   {
   public:
-    AWS_QUICKSIGHT_API AssetBundleImportSource();
+    AWS_QUICKSIGHT_API AssetBundleImportSource() = default;
     AWS_QUICKSIGHT_API AssetBundleImportSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API AssetBundleImportSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,12 +51,12 @@ namespace Model
      * using an SDK for a different language or receiving related errors, try to base64
      * encode your data.</p>
      */
-    inline const Aws::Utils::CryptoBuffer& GetBody() const{ return m_body; }
+    inline const Aws::Utils::CryptoBuffer& GetBody() const { return m_body; }
     inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
-    inline void SetBody(const Aws::Utils::CryptoBuffer& value) { m_bodyHasBeenSet = true; m_body = value; }
-    inline void SetBody(Aws::Utils::CryptoBuffer&& value) { m_bodyHasBeenSet = true; m_body = std::move(value); }
-    inline AssetBundleImportSource& WithBody(const Aws::Utils::CryptoBuffer& value) { SetBody(value); return *this;}
-    inline AssetBundleImportSource& WithBody(Aws::Utils::CryptoBuffer&& value) { SetBody(std::move(value)); return *this;}
+    template<typename BodyT = Aws::Utils::CryptoBuffer>
+    void SetBody(BodyT&& value) { m_bodyHasBeenSet = true; m_body = std::forward<BodyT>(value); }
+    template<typename BodyT = Aws::Utils::CryptoBuffer>
+    AssetBundleImportSource& WithBody(BodyT&& value) { SetBody(std::forward<BodyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,18 +65,16 @@ namespace Model
      * bucket that the caller has read access to. The file must be a zip format file
      * and can't exceed 1 GB.</p>
      */
-    inline const Aws::String& GetS3Uri() const{ return m_s3Uri; }
+    inline const Aws::String& GetS3Uri() const { return m_s3Uri; }
     inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }
-    inline void SetS3Uri(const Aws::String& value) { m_s3UriHasBeenSet = true; m_s3Uri = value; }
-    inline void SetS3Uri(Aws::String&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::move(value); }
-    inline void SetS3Uri(const char* value) { m_s3UriHasBeenSet = true; m_s3Uri.assign(value); }
-    inline AssetBundleImportSource& WithS3Uri(const Aws::String& value) { SetS3Uri(value); return *this;}
-    inline AssetBundleImportSource& WithS3Uri(Aws::String&& value) { SetS3Uri(std::move(value)); return *this;}
-    inline AssetBundleImportSource& WithS3Uri(const char* value) { SetS3Uri(value); return *this;}
+    template<typename S3UriT = Aws::String>
+    void SetS3Uri(S3UriT&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::forward<S3UriT>(value); }
+    template<typename S3UriT = Aws::String>
+    AssetBundleImportSource& WithS3Uri(S3UriT&& value) { SetS3Uri(std::forward<S3UriT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::CryptoBuffer m_body;
+    Aws::Utils::CryptoBuffer m_body{};
     bool m_bodyHasBeenSet = false;
 
     Aws::String m_s3Uri;

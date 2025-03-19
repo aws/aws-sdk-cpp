@@ -18,13 +18,7 @@ namespace CostOptimizationHub
 namespace Model
 {
 
-InstanceConfiguration::InstanceConfiguration() : 
-    m_typeHasBeenSet(false)
-{
-}
-
 InstanceConfiguration::InstanceConfiguration(JsonView jsonValue)
-  : InstanceConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ InstanceConfiguration& InstanceConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

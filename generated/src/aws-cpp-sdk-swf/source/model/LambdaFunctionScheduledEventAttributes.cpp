@@ -18,19 +18,7 @@ namespace SWF
 namespace Model
 {
 
-LambdaFunctionScheduledEventAttributes::LambdaFunctionScheduledEventAttributes() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_controlHasBeenSet(false),
-    m_inputHasBeenSet(false),
-    m_startToCloseTimeoutHasBeenSet(false),
-    m_decisionTaskCompletedEventId(0),
-    m_decisionTaskCompletedEventIdHasBeenSet(false)
-{
-}
-
 LambdaFunctionScheduledEventAttributes::LambdaFunctionScheduledEventAttributes(JsonView jsonValue)
-  : LambdaFunctionScheduledEventAttributes()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ LambdaFunctionScheduledEventAttributes& LambdaFunctionScheduledEventAttributes::
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("control"))
   {
     m_control = jsonValue.GetString("control");
-
     m_controlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("input"))
   {
     m_input = jsonValue.GetString("input");
-
     m_inputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startToCloseTimeout"))
   {
     m_startToCloseTimeout = jsonValue.GetString("startToCloseTimeout");
-
     m_startToCloseTimeoutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("decisionTaskCompletedEventId"))
   {
     m_decisionTaskCompletedEventId = jsonValue.GetInt64("decisionTaskCompletedEventId");
-
     m_decisionTaskCompletedEventIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-IdleRecommendationFilter::IdleRecommendationFilter() : 
-    m_name(IdleRecommendationFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 IdleRecommendationFilter::IdleRecommendationFilter(JsonView jsonValue)
-  : IdleRecommendationFilter()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ IdleRecommendationFilter& IdleRecommendationFilter::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("name"))
   {
     m_name = IdleRecommendationFilterNameMapper::GetIdleRecommendationFilterNameForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
@@ -49,7 +39,6 @@ IdleRecommendationFilter& IdleRecommendationFilter::operator =(JsonView jsonValu
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

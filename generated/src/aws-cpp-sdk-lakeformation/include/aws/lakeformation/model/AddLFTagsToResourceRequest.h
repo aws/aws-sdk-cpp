@@ -24,7 +24,7 @@ namespace Model
   class AddLFTagsToResourceRequest : public LakeFormationRequest
   {
   public:
-    AWS_LAKEFORMATION_API AddLFTagsToResourceRequest();
+    AWS_LAKEFORMATION_API AddLFTagsToResourceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,40 +42,38 @@ namespace Model
      * table definitions, and other control information to manage your Lake Formation
      * environment. </p>
      */
-    inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
+    inline const Aws::String& GetCatalogId() const { return m_catalogId; }
     inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
-    inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
-    inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
-    inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
-    inline AddLFTagsToResourceRequest& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
-    inline AddLFTagsToResourceRequest& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
-    inline AddLFTagsToResourceRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
+    template<typename CatalogIdT = Aws::String>
+    void SetCatalogId(CatalogIdT&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::forward<CatalogIdT>(value); }
+    template<typename CatalogIdT = Aws::String>
+    AddLFTagsToResourceRequest& WithCatalogId(CatalogIdT&& value) { SetCatalogId(std::forward<CatalogIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The database, table, or column resource to which to attach an LF-tag.</p>
      */
-    inline const Resource& GetResource() const{ return m_resource; }
+    inline const Resource& GetResource() const { return m_resource; }
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
-    inline void SetResource(const Resource& value) { m_resourceHasBeenSet = true; m_resource = value; }
-    inline void SetResource(Resource&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
-    inline AddLFTagsToResourceRequest& WithResource(const Resource& value) { SetResource(value); return *this;}
-    inline AddLFTagsToResourceRequest& WithResource(Resource&& value) { SetResource(std::move(value)); return *this;}
+    template<typename ResourceT = Resource>
+    void SetResource(ResourceT&& value) { m_resourceHasBeenSet = true; m_resource = std::forward<ResourceT>(value); }
+    template<typename ResourceT = Resource>
+    AddLFTagsToResourceRequest& WithResource(ResourceT&& value) { SetResource(std::forward<ResourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The LF-tags to attach to the resource.</p>
      */
-    inline const Aws::Vector<LFTagPair>& GetLFTags() const{ return m_lFTags; }
+    inline const Aws::Vector<LFTagPair>& GetLFTags() const { return m_lFTags; }
     inline bool LFTagsHasBeenSet() const { return m_lFTagsHasBeenSet; }
-    inline void SetLFTags(const Aws::Vector<LFTagPair>& value) { m_lFTagsHasBeenSet = true; m_lFTags = value; }
-    inline void SetLFTags(Aws::Vector<LFTagPair>&& value) { m_lFTagsHasBeenSet = true; m_lFTags = std::move(value); }
-    inline AddLFTagsToResourceRequest& WithLFTags(const Aws::Vector<LFTagPair>& value) { SetLFTags(value); return *this;}
-    inline AddLFTagsToResourceRequest& WithLFTags(Aws::Vector<LFTagPair>&& value) { SetLFTags(std::move(value)); return *this;}
-    inline AddLFTagsToResourceRequest& AddLFTags(const LFTagPair& value) { m_lFTagsHasBeenSet = true; m_lFTags.push_back(value); return *this; }
-    inline AddLFTagsToResourceRequest& AddLFTags(LFTagPair&& value) { m_lFTagsHasBeenSet = true; m_lFTags.push_back(std::move(value)); return *this; }
+    template<typename LFTagsT = Aws::Vector<LFTagPair>>
+    void SetLFTags(LFTagsT&& value) { m_lFTagsHasBeenSet = true; m_lFTags = std::forward<LFTagsT>(value); }
+    template<typename LFTagsT = Aws::Vector<LFTagPair>>
+    AddLFTagsToResourceRequest& WithLFTags(LFTagsT&& value) { SetLFTags(std::forward<LFTagsT>(value)); return *this;}
+    template<typename LFTagsT = LFTagPair>
+    AddLFTagsToResourceRequest& AddLFTags(LFTagsT&& value) { m_lFTagsHasBeenSet = true; m_lFTags.emplace_back(std::forward<LFTagsT>(value)); return *this; }
     ///@}
   private:
 

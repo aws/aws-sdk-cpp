@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-IamPolicyConstraints::IamPolicyConstraints() : 
-    m_sourceIp(EnabledOrDisabled::NOT_SET),
-    m_sourceIpHasBeenSet(false),
-    m_vpcSourceIp(EnabledOrDisabled::NOT_SET),
-    m_vpcSourceIpHasBeenSet(false)
-{
-}
-
 IamPolicyConstraints::IamPolicyConstraints(JsonView jsonValue)
-  : IamPolicyConstraints()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ IamPolicyConstraints& IamPolicyConstraints::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SourceIp"))
   {
     m_sourceIp = EnabledOrDisabledMapper::GetEnabledOrDisabledForName(jsonValue.GetString("SourceIp"));
-
     m_sourceIpHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcSourceIp"))
   {
     m_vpcSourceIp = EnabledOrDisabledMapper::GetEnabledOrDisabledForName(jsonValue.GetString("VpcSourceIp"));
-
     m_vpcSourceIpHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace TranscribeService
 namespace Model
 {
 
-LanguageIdSettings::LanguageIdSettings() : 
-    m_vocabularyNameHasBeenSet(false),
-    m_vocabularyFilterNameHasBeenSet(false),
-    m_languageModelNameHasBeenSet(false)
-{
-}
-
 LanguageIdSettings::LanguageIdSettings(JsonView jsonValue)
-  : LanguageIdSettings()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ LanguageIdSettings& LanguageIdSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VocabularyName"))
   {
     m_vocabularyName = jsonValue.GetString("VocabularyName");
-
     m_vocabularyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VocabularyFilterName"))
   {
     m_vocabularyFilterName = jsonValue.GetString("VocabularyFilterName");
-
     m_vocabularyFilterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LanguageModelName"))
   {
     m_languageModelName = jsonValue.GetString("LanguageModelName");
-
     m_languageModelNameHasBeenSet = true;
   }
-
   return *this;
 }
 

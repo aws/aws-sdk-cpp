@@ -12,12 +12,6 @@ using namespace Aws::QBusiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDataAccessorRequest::GetDataAccessorRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_dataAccessorIdHasBeenSet(false)
-{
-}
-
 Aws::String GetDataAccessorRequest::SerializePayload() const
 {
   return {};

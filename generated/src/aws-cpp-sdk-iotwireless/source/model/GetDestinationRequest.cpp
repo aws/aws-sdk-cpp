@@ -12,11 +12,6 @@ using namespace Aws::IoTWireless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDestinationRequest::GetDestinationRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String GetDestinationRequest::SerializePayload() const
 {
   return {};

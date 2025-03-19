@@ -12,18 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCurrentMetricDataRequest::GetCurrentMetricDataRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_groupingsHasBeenSet(false),
-    m_currentMetricsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_sortCriteriaHasBeenSet(false)
-{
-}
-
 Aws::String GetCurrentMetricDataRequest::SerializePayload() const
 {
   JsonValue payload;

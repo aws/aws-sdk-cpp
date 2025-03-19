@@ -18,13 +18,7 @@ namespace TranscribeService
 namespace Model
 {
 
-ModelSettings::ModelSettings() : 
-    m_languageModelNameHasBeenSet(false)
-{
-}
-
 ModelSettings::ModelSettings(JsonView jsonValue)
-  : ModelSettings()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ModelSettings& ModelSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LanguageModelName"))
   {
     m_languageModelName = jsonValue.GetString("LanguageModelName");
-
     m_languageModelNameHasBeenSet = true;
   }
-
   return *this;
 }
 

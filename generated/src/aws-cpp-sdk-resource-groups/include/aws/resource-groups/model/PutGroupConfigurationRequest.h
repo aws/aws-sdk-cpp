@@ -23,7 +23,7 @@ namespace Model
   class PutGroupConfigurationRequest : public ResourceGroupsRequest
   {
   public:
-    AWS_RESOURCEGROUPS_API PutGroupConfigurationRequest();
+    AWS_RESOURCEGROUPS_API PutGroupConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The name or Amazon resource name (ARN) of the resource group with the
      * configuration that you want to update.</p>
      */
-    inline const Aws::String& GetGroup() const{ return m_group; }
+    inline const Aws::String& GetGroup() const { return m_group; }
     inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
-    inline void SetGroup(const Aws::String& value) { m_groupHasBeenSet = true; m_group = value; }
-    inline void SetGroup(Aws::String&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
-    inline void SetGroup(const char* value) { m_groupHasBeenSet = true; m_group.assign(value); }
-    inline PutGroupConfigurationRequest& WithGroup(const Aws::String& value) { SetGroup(value); return *this;}
-    inline PutGroupConfigurationRequest& WithGroup(Aws::String&& value) { SetGroup(std::move(value)); return *this;}
-    inline PutGroupConfigurationRequest& WithGroup(const char* value) { SetGroup(value); return *this;}
+    template<typename GroupT = Aws::String>
+    void SetGroup(GroupT&& value) { m_groupHasBeenSet = true; m_group = std::forward<GroupT>(value); }
+    template<typename GroupT = Aws::String>
+    PutGroupConfigurationRequest& WithGroup(GroupT&& value) { SetGroup(std::forward<GroupT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,14 @@ namespace Model
      * contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but
      * not both.</p> 
      */
-    inline const Aws::Vector<GroupConfigurationItem>& GetConfiguration() const{ return m_configuration; }
+    inline const Aws::Vector<GroupConfigurationItem>& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const Aws::Vector<GroupConfigurationItem>& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(Aws::Vector<GroupConfigurationItem>&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline PutGroupConfigurationRequest& WithConfiguration(const Aws::Vector<GroupConfigurationItem>& value) { SetConfiguration(value); return *this;}
-    inline PutGroupConfigurationRequest& WithConfiguration(Aws::Vector<GroupConfigurationItem>&& value) { SetConfiguration(std::move(value)); return *this;}
-    inline PutGroupConfigurationRequest& AddConfiguration(const GroupConfigurationItem& value) { m_configurationHasBeenSet = true; m_configuration.push_back(value); return *this; }
-    inline PutGroupConfigurationRequest& AddConfiguration(GroupConfigurationItem&& value) { m_configurationHasBeenSet = true; m_configuration.push_back(std::move(value)); return *this; }
+    template<typename ConfigurationT = Aws::Vector<GroupConfigurationItem>>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = Aws::Vector<GroupConfigurationItem>>
+    PutGroupConfigurationRequest& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
+    template<typename ConfigurationT = GroupConfigurationItem>
+    PutGroupConfigurationRequest& AddConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration.emplace_back(std::forward<ConfigurationT>(value)); return *this; }
     ///@}
   private:
 

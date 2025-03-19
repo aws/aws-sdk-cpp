@@ -34,7 +34,7 @@ namespace Model
   class VisaAttributes
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHYDATA_API VisaAttributes();
+    AWS_PAYMENTCRYPTOGRAPHYDATA_API VisaAttributes() = default;
     AWS_PAYMENTCRYPTOGRAPHYDATA_API VisaAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API VisaAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,26 +44,22 @@ namespace Model
     /**
      * <p>The method to use when deriving the master key for the payment card.</p>
      */
-    inline const MajorKeyDerivationMode& GetMajorKeyDerivationMode() const{ return m_majorKeyDerivationMode; }
+    inline MajorKeyDerivationMode GetMajorKeyDerivationMode() const { return m_majorKeyDerivationMode; }
     inline bool MajorKeyDerivationModeHasBeenSet() const { return m_majorKeyDerivationModeHasBeenSet; }
-    inline void SetMajorKeyDerivationMode(const MajorKeyDerivationMode& value) { m_majorKeyDerivationModeHasBeenSet = true; m_majorKeyDerivationMode = value; }
-    inline void SetMajorKeyDerivationMode(MajorKeyDerivationMode&& value) { m_majorKeyDerivationModeHasBeenSet = true; m_majorKeyDerivationMode = std::move(value); }
-    inline VisaAttributes& WithMajorKeyDerivationMode(const MajorKeyDerivationMode& value) { SetMajorKeyDerivationMode(value); return *this;}
-    inline VisaAttributes& WithMajorKeyDerivationMode(MajorKeyDerivationMode&& value) { SetMajorKeyDerivationMode(std::move(value)); return *this;}
+    inline void SetMajorKeyDerivationMode(MajorKeyDerivationMode value) { m_majorKeyDerivationModeHasBeenSet = true; m_majorKeyDerivationMode = value; }
+    inline VisaAttributes& WithMajorKeyDerivationMode(MajorKeyDerivationMode value) { SetMajorKeyDerivationMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Primary Account Number (PAN) of the cardholder.</p>
      */
-    inline const Aws::String& GetPrimaryAccountNumber() const{ return m_primaryAccountNumber; }
+    inline const Aws::String& GetPrimaryAccountNumber() const { return m_primaryAccountNumber; }
     inline bool PrimaryAccountNumberHasBeenSet() const { return m_primaryAccountNumberHasBeenSet; }
-    inline void SetPrimaryAccountNumber(const Aws::String& value) { m_primaryAccountNumberHasBeenSet = true; m_primaryAccountNumber = value; }
-    inline void SetPrimaryAccountNumber(Aws::String&& value) { m_primaryAccountNumberHasBeenSet = true; m_primaryAccountNumber = std::move(value); }
-    inline void SetPrimaryAccountNumber(const char* value) { m_primaryAccountNumberHasBeenSet = true; m_primaryAccountNumber.assign(value); }
-    inline VisaAttributes& WithPrimaryAccountNumber(const Aws::String& value) { SetPrimaryAccountNumber(value); return *this;}
-    inline VisaAttributes& WithPrimaryAccountNumber(Aws::String&& value) { SetPrimaryAccountNumber(std::move(value)); return *this;}
-    inline VisaAttributes& WithPrimaryAccountNumber(const char* value) { SetPrimaryAccountNumber(value); return *this;}
+    template<typename PrimaryAccountNumberT = Aws::String>
+    void SetPrimaryAccountNumber(PrimaryAccountNumberT&& value) { m_primaryAccountNumberHasBeenSet = true; m_primaryAccountNumber = std::forward<PrimaryAccountNumberT>(value); }
+    template<typename PrimaryAccountNumberT = Aws::String>
+    VisaAttributes& WithPrimaryAccountNumber(PrimaryAccountNumberT&& value) { SetPrimaryAccountNumber(std::forward<PrimaryAccountNumberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +68,12 @@ namespace Model
      * Primary Account Number (PAN). Typically 00 is used, if no value is provided by
      * the terminal.</p>
      */
-    inline const Aws::String& GetPanSequenceNumber() const{ return m_panSequenceNumber; }
+    inline const Aws::String& GetPanSequenceNumber() const { return m_panSequenceNumber; }
     inline bool PanSequenceNumberHasBeenSet() const { return m_panSequenceNumberHasBeenSet; }
-    inline void SetPanSequenceNumber(const Aws::String& value) { m_panSequenceNumberHasBeenSet = true; m_panSequenceNumber = value; }
-    inline void SetPanSequenceNumber(Aws::String&& value) { m_panSequenceNumberHasBeenSet = true; m_panSequenceNumber = std::move(value); }
-    inline void SetPanSequenceNumber(const char* value) { m_panSequenceNumberHasBeenSet = true; m_panSequenceNumber.assign(value); }
-    inline VisaAttributes& WithPanSequenceNumber(const Aws::String& value) { SetPanSequenceNumber(value); return *this;}
-    inline VisaAttributes& WithPanSequenceNumber(Aws::String&& value) { SetPanSequenceNumber(std::move(value)); return *this;}
-    inline VisaAttributes& WithPanSequenceNumber(const char* value) { SetPanSequenceNumber(value); return *this;}
+    template<typename PanSequenceNumberT = Aws::String>
+    void SetPanSequenceNumber(PanSequenceNumberT&& value) { m_panSequenceNumberHasBeenSet = true; m_panSequenceNumber = std::forward<PanSequenceNumberT>(value); }
+    template<typename PanSequenceNumberT = Aws::String>
+    VisaAttributes& WithPanSequenceNumber(PanSequenceNumberT&& value) { SetPanSequenceNumber(std::forward<PanSequenceNumberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,14 +81,12 @@ namespace Model
      * <p>The transaction counter of the current transaction that is provided by the
      * terminal during transaction processing.</p>
      */
-    inline const Aws::String& GetApplicationTransactionCounter() const{ return m_applicationTransactionCounter; }
+    inline const Aws::String& GetApplicationTransactionCounter() const { return m_applicationTransactionCounter; }
     inline bool ApplicationTransactionCounterHasBeenSet() const { return m_applicationTransactionCounterHasBeenSet; }
-    inline void SetApplicationTransactionCounter(const Aws::String& value) { m_applicationTransactionCounterHasBeenSet = true; m_applicationTransactionCounter = value; }
-    inline void SetApplicationTransactionCounter(Aws::String&& value) { m_applicationTransactionCounterHasBeenSet = true; m_applicationTransactionCounter = std::move(value); }
-    inline void SetApplicationTransactionCounter(const char* value) { m_applicationTransactionCounterHasBeenSet = true; m_applicationTransactionCounter.assign(value); }
-    inline VisaAttributes& WithApplicationTransactionCounter(const Aws::String& value) { SetApplicationTransactionCounter(value); return *this;}
-    inline VisaAttributes& WithApplicationTransactionCounter(Aws::String&& value) { SetApplicationTransactionCounter(std::move(value)); return *this;}
-    inline VisaAttributes& WithApplicationTransactionCounter(const char* value) { SetApplicationTransactionCounter(value); return *this;}
+    template<typename ApplicationTransactionCounterT = Aws::String>
+    void SetApplicationTransactionCounter(ApplicationTransactionCounterT&& value) { m_applicationTransactionCounterHasBeenSet = true; m_applicationTransactionCounter = std::forward<ApplicationTransactionCounterT>(value); }
+    template<typename ApplicationTransactionCounterT = Aws::String>
+    VisaAttributes& WithApplicationTransactionCounter(ApplicationTransactionCounterT&& value) { SetApplicationTransactionCounter(std::forward<ApplicationTransactionCounterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,30 +94,28 @@ namespace Model
      * <p>The <code>keyArn</code> of the issuer master key for cryptogram (IMK-AC) for
      * the payment card.</p>
      */
-    inline const Aws::String& GetAuthorizationRequestKeyIdentifier() const{ return m_authorizationRequestKeyIdentifier; }
+    inline const Aws::String& GetAuthorizationRequestKeyIdentifier() const { return m_authorizationRequestKeyIdentifier; }
     inline bool AuthorizationRequestKeyIdentifierHasBeenSet() const { return m_authorizationRequestKeyIdentifierHasBeenSet; }
-    inline void SetAuthorizationRequestKeyIdentifier(const Aws::String& value) { m_authorizationRequestKeyIdentifierHasBeenSet = true; m_authorizationRequestKeyIdentifier = value; }
-    inline void SetAuthorizationRequestKeyIdentifier(Aws::String&& value) { m_authorizationRequestKeyIdentifierHasBeenSet = true; m_authorizationRequestKeyIdentifier = std::move(value); }
-    inline void SetAuthorizationRequestKeyIdentifier(const char* value) { m_authorizationRequestKeyIdentifierHasBeenSet = true; m_authorizationRequestKeyIdentifier.assign(value); }
-    inline VisaAttributes& WithAuthorizationRequestKeyIdentifier(const Aws::String& value) { SetAuthorizationRequestKeyIdentifier(value); return *this;}
-    inline VisaAttributes& WithAuthorizationRequestKeyIdentifier(Aws::String&& value) { SetAuthorizationRequestKeyIdentifier(std::move(value)); return *this;}
-    inline VisaAttributes& WithAuthorizationRequestKeyIdentifier(const char* value) { SetAuthorizationRequestKeyIdentifier(value); return *this;}
+    template<typename AuthorizationRequestKeyIdentifierT = Aws::String>
+    void SetAuthorizationRequestKeyIdentifier(AuthorizationRequestKeyIdentifierT&& value) { m_authorizationRequestKeyIdentifierHasBeenSet = true; m_authorizationRequestKeyIdentifier = std::forward<AuthorizationRequestKeyIdentifierT>(value); }
+    template<typename AuthorizationRequestKeyIdentifierT = Aws::String>
+    VisaAttributes& WithAuthorizationRequestKeyIdentifier(AuthorizationRequestKeyIdentifierT&& value) { SetAuthorizationRequestKeyIdentifier(std::forward<AuthorizationRequestKeyIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The encrypted pinblock of the old pin stored on the chip card.</p>
      */
-    inline const CurrentPinAttributes& GetCurrentPinAttributes() const{ return m_currentPinAttributes; }
+    inline const CurrentPinAttributes& GetCurrentPinAttributes() const { return m_currentPinAttributes; }
     inline bool CurrentPinAttributesHasBeenSet() const { return m_currentPinAttributesHasBeenSet; }
-    inline void SetCurrentPinAttributes(const CurrentPinAttributes& value) { m_currentPinAttributesHasBeenSet = true; m_currentPinAttributes = value; }
-    inline void SetCurrentPinAttributes(CurrentPinAttributes&& value) { m_currentPinAttributesHasBeenSet = true; m_currentPinAttributes = std::move(value); }
-    inline VisaAttributes& WithCurrentPinAttributes(const CurrentPinAttributes& value) { SetCurrentPinAttributes(value); return *this;}
-    inline VisaAttributes& WithCurrentPinAttributes(CurrentPinAttributes&& value) { SetCurrentPinAttributes(std::move(value)); return *this;}
+    template<typename CurrentPinAttributesT = CurrentPinAttributes>
+    void SetCurrentPinAttributes(CurrentPinAttributesT&& value) { m_currentPinAttributesHasBeenSet = true; m_currentPinAttributes = std::forward<CurrentPinAttributesT>(value); }
+    template<typename CurrentPinAttributesT = CurrentPinAttributes>
+    VisaAttributes& WithCurrentPinAttributes(CurrentPinAttributesT&& value) { SetCurrentPinAttributes(std::forward<CurrentPinAttributesT>(value)); return *this;}
     ///@}
   private:
 
-    MajorKeyDerivationMode m_majorKeyDerivationMode;
+    MajorKeyDerivationMode m_majorKeyDerivationMode{MajorKeyDerivationMode::NOT_SET};
     bool m_majorKeyDerivationModeHasBeenSet = false;
 
     Aws::String m_primaryAccountNumber;

@@ -22,7 +22,7 @@ namespace Model
   class SendDataToWirelessDeviceRequest : public IoTWirelessRequest
   {
   public:
-    AWS_IOTWIRELESS_API SendDataToWirelessDeviceRequest();
+    AWS_IOTWIRELESS_API SendDataToWirelessDeviceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
     /**
      * <p>The ID of the wireless device to receive the data.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline SendDataToWirelessDeviceRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline SendDataToWirelessDeviceRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline SendDataToWirelessDeviceRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    SendDataToWirelessDeviceRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,7 +51,7 @@ namespace Model
      * <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge
      * mode).</p>
      */
-    inline int GetTransmitMode() const{ return m_transmitMode; }
+    inline int GetTransmitMode() const { return m_transmitMode; }
     inline bool TransmitModeHasBeenSet() const { return m_transmitModeHasBeenSet; }
     inline void SetTransmitMode(int value) { m_transmitModeHasBeenSet = true; m_transmitMode = value; }
     inline SendDataToWirelessDeviceRequest& WithTransmitMode(int value) { SetTransmitMode(value); return *this;}
@@ -61,33 +59,31 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetPayloadData() const{ return m_payloadData; }
+    inline const Aws::String& GetPayloadData() const { return m_payloadData; }
     inline bool PayloadDataHasBeenSet() const { return m_payloadDataHasBeenSet; }
-    inline void SetPayloadData(const Aws::String& value) { m_payloadDataHasBeenSet = true; m_payloadData = value; }
-    inline void SetPayloadData(Aws::String&& value) { m_payloadDataHasBeenSet = true; m_payloadData = std::move(value); }
-    inline void SetPayloadData(const char* value) { m_payloadDataHasBeenSet = true; m_payloadData.assign(value); }
-    inline SendDataToWirelessDeviceRequest& WithPayloadData(const Aws::String& value) { SetPayloadData(value); return *this;}
-    inline SendDataToWirelessDeviceRequest& WithPayloadData(Aws::String&& value) { SetPayloadData(std::move(value)); return *this;}
-    inline SendDataToWirelessDeviceRequest& WithPayloadData(const char* value) { SetPayloadData(value); return *this;}
+    template<typename PayloadDataT = Aws::String>
+    void SetPayloadData(PayloadDataT&& value) { m_payloadDataHasBeenSet = true; m_payloadData = std::forward<PayloadDataT>(value); }
+    template<typename PayloadDataT = Aws::String>
+    SendDataToWirelessDeviceRequest& WithPayloadData(PayloadDataT&& value) { SetPayloadData(std::forward<PayloadDataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Metadata about the message request.</p>
      */
-    inline const WirelessMetadata& GetWirelessMetadata() const{ return m_wirelessMetadata; }
+    inline const WirelessMetadata& GetWirelessMetadata() const { return m_wirelessMetadata; }
     inline bool WirelessMetadataHasBeenSet() const { return m_wirelessMetadataHasBeenSet; }
-    inline void SetWirelessMetadata(const WirelessMetadata& value) { m_wirelessMetadataHasBeenSet = true; m_wirelessMetadata = value; }
-    inline void SetWirelessMetadata(WirelessMetadata&& value) { m_wirelessMetadataHasBeenSet = true; m_wirelessMetadata = std::move(value); }
-    inline SendDataToWirelessDeviceRequest& WithWirelessMetadata(const WirelessMetadata& value) { SetWirelessMetadata(value); return *this;}
-    inline SendDataToWirelessDeviceRequest& WithWirelessMetadata(WirelessMetadata&& value) { SetWirelessMetadata(std::move(value)); return *this;}
+    template<typename WirelessMetadataT = WirelessMetadata>
+    void SetWirelessMetadata(WirelessMetadataT&& value) { m_wirelessMetadataHasBeenSet = true; m_wirelessMetadata = std::forward<WirelessMetadataT>(value); }
+    template<typename WirelessMetadataT = WirelessMetadata>
+    SendDataToWirelessDeviceRequest& WithWirelessMetadata(WirelessMetadataT&& value) { SetWirelessMetadata(std::forward<WirelessMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    int m_transmitMode;
+    int m_transmitMode{0};
     bool m_transmitModeHasBeenSet = false;
 
     Aws::String m_payloadData;

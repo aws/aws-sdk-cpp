@@ -18,22 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-Computation::Computation() : 
-    m_topBottomRankedHasBeenSet(false),
-    m_topBottomMoversHasBeenSet(false),
-    m_totalAggregationHasBeenSet(false),
-    m_maximumMinimumHasBeenSet(false),
-    m_metricComparisonHasBeenSet(false),
-    m_periodOverPeriodHasBeenSet(false),
-    m_periodToDateHasBeenSet(false),
-    m_growthRateHasBeenSet(false),
-    m_uniqueValuesHasBeenSet(false),
-    m_forecastHasBeenSet(false)
-{
-}
-
 Computation::Computation(JsonView jsonValue)
-  : Computation()
 {
   *this = jsonValue;
 }
@@ -43,73 +28,53 @@ Computation& Computation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TopBottomRanked"))
   {
     m_topBottomRanked = jsonValue.GetObject("TopBottomRanked");
-
     m_topBottomRankedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TopBottomMovers"))
   {
     m_topBottomMovers = jsonValue.GetObject("TopBottomMovers");
-
     m_topBottomMoversHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalAggregation"))
   {
     m_totalAggregation = jsonValue.GetObject("TotalAggregation");
-
     m_totalAggregationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaximumMinimum"))
   {
     m_maximumMinimum = jsonValue.GetObject("MaximumMinimum");
-
     m_maximumMinimumHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricComparison"))
   {
     m_metricComparison = jsonValue.GetObject("MetricComparison");
-
     m_metricComparisonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PeriodOverPeriod"))
   {
     m_periodOverPeriod = jsonValue.GetObject("PeriodOverPeriod");
-
     m_periodOverPeriodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PeriodToDate"))
   {
     m_periodToDate = jsonValue.GetObject("PeriodToDate");
-
     m_periodToDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GrowthRate"))
   {
     m_growthRate = jsonValue.GetObject("GrowthRate");
-
     m_growthRateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UniqueValues"))
   {
     m_uniqueValues = jsonValue.GetObject("UniqueValues");
-
     m_uniqueValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Forecast"))
   {
     m_forecast = jsonValue.GetObject("Forecast");
-
     m_forecastHasBeenSet = true;
   }
-
   return *this;
 }
 

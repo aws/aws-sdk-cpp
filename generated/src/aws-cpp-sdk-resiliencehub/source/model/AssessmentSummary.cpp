@@ -18,14 +18,7 @@ namespace ResilienceHub
 namespace Model
 {
 
-AssessmentSummary::AssessmentSummary() : 
-    m_riskRecommendationsHasBeenSet(false),
-    m_summaryHasBeenSet(false)
-{
-}
-
 AssessmentSummary::AssessmentSummary(JsonView jsonValue)
-  : AssessmentSummary()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ AssessmentSummary& AssessmentSummary::operator =(JsonView jsonValue)
     }
     m_riskRecommendationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("summary"))
   {
     m_summary = jsonValue.GetString("summary");
-
     m_summaryHasBeenSet = true;
   }
-
   return *this;
 }
 

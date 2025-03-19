@@ -12,11 +12,6 @@ using namespace Aws::ElasticTranscoder::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ReadJobRequest::ReadJobRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String ReadJobRequest::SerializePayload() const
 {
   return {};

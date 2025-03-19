@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetGeneratedPolicyRequest::GetGeneratedPolicyRequest() : 
-    m_jobIdHasBeenSet(false),
-    m_includeResourcePlaceholders(false),
-    m_includeResourcePlaceholdersHasBeenSet(false),
-    m_includeServiceLevelTemplate(false),
-    m_includeServiceLevelTemplateHasBeenSet(false)
-{
-}
-
 Aws::String GetGeneratedPolicyRequest::SerializePayload() const
 {
   return {};

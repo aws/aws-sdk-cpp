@@ -22,7 +22,7 @@ namespace Model
   class DocumentTypeRequest : public RestJsonProtocolRequest
   {
   public:
-    AWS_RESTJSONPROTOCOL_API DocumentTypeRequest();
+    AWS_RESTJSONPROTOCOL_API DocumentTypeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,36 +37,32 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetStringValue() const{ return m_stringValue; }
+    inline const Aws::String& GetStringValue() const { return m_stringValue; }
     inline bool StringValueHasBeenSet() const { return m_stringValueHasBeenSet; }
-    inline void SetStringValue(const Aws::String& value) { m_stringValueHasBeenSet = true; m_stringValue = value; }
-    inline void SetStringValue(Aws::String&& value) { m_stringValueHasBeenSet = true; m_stringValue = std::move(value); }
-    inline void SetStringValue(const char* value) { m_stringValueHasBeenSet = true; m_stringValue.assign(value); }
-    inline DocumentTypeRequest& WithStringValue(const Aws::String& value) { SetStringValue(value); return *this;}
-    inline DocumentTypeRequest& WithStringValue(Aws::String&& value) { SetStringValue(std::move(value)); return *this;}
-    inline DocumentTypeRequest& WithStringValue(const char* value) { SetStringValue(value); return *this;}
+    template<typename StringValueT = Aws::String>
+    void SetStringValue(StringValueT&& value) { m_stringValueHasBeenSet = true; m_stringValue = std::forward<StringValueT>(value); }
+    template<typename StringValueT = Aws::String>
+    DocumentTypeRequest& WithStringValue(StringValueT&& value) { SetStringValue(std::forward<StringValueT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline Aws::Utils::DocumentView GetDocumentValue() const{ return m_documentValue; }
+    inline Aws::Utils::DocumentView GetDocumentValue() const { return m_documentValue; }
     inline bool DocumentValueHasBeenSet() const { return m_documentValueHasBeenSet; }
-    inline void SetDocumentValue(const Aws::Utils::Document& value) { m_documentValueHasBeenSet = true; m_documentValue = value; }
-    inline void SetDocumentValue(Aws::Utils::Document&& value) { m_documentValueHasBeenSet = true; m_documentValue = std::move(value); }
-    inline DocumentTypeRequest& WithDocumentValue(const Aws::Utils::Document& value) { SetDocumentValue(value); return *this;}
-    inline DocumentTypeRequest& WithDocumentValue(Aws::Utils::Document&& value) { SetDocumentValue(std::move(value)); return *this;}
+    template<typename DocumentValueT = Aws::Utils::Document>
+    void SetDocumentValue(DocumentValueT&& value) { m_documentValueHasBeenSet = true; m_documentValue = std::forward<DocumentValueT>(value); }
+    template<typename DocumentValueT = Aws::Utils::Document>
+    DocumentTypeRequest& WithDocumentValue(DocumentValueT&& value) { SetDocumentValue(std::forward<DocumentValueT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
-    inline DocumentTypeRequest& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DocumentTypeRequest& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DocumentTypeRequest& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DocumentTypeRequest& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 

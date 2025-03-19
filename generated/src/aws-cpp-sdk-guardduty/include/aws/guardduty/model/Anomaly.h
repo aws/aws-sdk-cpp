@@ -35,7 +35,7 @@ namespace Model
   class Anomaly
   {
   public:
-    AWS_GUARDDUTY_API Anomaly();
+    AWS_GUARDDUTY_API Anomaly() = default;
     AWS_GUARDDUTY_API Anomaly(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Anomaly& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,30 +45,28 @@ namespace Model
     /**
      * <p>Information about the types of profiles.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<AnomalyObject>>>& GetProfiles() const{ return m_profiles; }
+    inline const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<AnomalyObject>>>& GetProfiles() const { return m_profiles; }
     inline bool ProfilesHasBeenSet() const { return m_profilesHasBeenSet; }
-    inline void SetProfiles(const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<AnomalyObject>>>& value) { m_profilesHasBeenSet = true; m_profiles = value; }
-    inline void SetProfiles(Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<AnomalyObject>>>&& value) { m_profilesHasBeenSet = true; m_profiles = std::move(value); }
-    inline Anomaly& WithProfiles(const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<AnomalyObject>>>& value) { SetProfiles(value); return *this;}
-    inline Anomaly& WithProfiles(Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<AnomalyObject>>>&& value) { SetProfiles(std::move(value)); return *this;}
-    inline Anomaly& AddProfiles(const Aws::String& key, const Aws::Map<Aws::String, Aws::Vector<AnomalyObject>>& value) { m_profilesHasBeenSet = true; m_profiles.emplace(key, value); return *this; }
-    inline Anomaly& AddProfiles(Aws::String&& key, const Aws::Map<Aws::String, Aws::Vector<AnomalyObject>>& value) { m_profilesHasBeenSet = true; m_profiles.emplace(std::move(key), value); return *this; }
-    inline Anomaly& AddProfiles(const Aws::String& key, Aws::Map<Aws::String, Aws::Vector<AnomalyObject>>&& value) { m_profilesHasBeenSet = true; m_profiles.emplace(key, std::move(value)); return *this; }
-    inline Anomaly& AddProfiles(Aws::String&& key, Aws::Map<Aws::String, Aws::Vector<AnomalyObject>>&& value) { m_profilesHasBeenSet = true; m_profiles.emplace(std::move(key), std::move(value)); return *this; }
-    inline Anomaly& AddProfiles(const char* key, Aws::Map<Aws::String, Aws::Vector<AnomalyObject>>&& value) { m_profilesHasBeenSet = true; m_profiles.emplace(key, std::move(value)); return *this; }
-    inline Anomaly& AddProfiles(const char* key, const Aws::Map<Aws::String, Aws::Vector<AnomalyObject>>& value) { m_profilesHasBeenSet = true; m_profiles.emplace(key, value); return *this; }
+    template<typename ProfilesT = Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<AnomalyObject>>>>
+    void SetProfiles(ProfilesT&& value) { m_profilesHasBeenSet = true; m_profiles = std::forward<ProfilesT>(value); }
+    template<typename ProfilesT = Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<AnomalyObject>>>>
+    Anomaly& WithProfiles(ProfilesT&& value) { SetProfiles(std::forward<ProfilesT>(value)); return *this;}
+    template<typename ProfilesKeyT = Aws::String, typename ProfilesValueT = Aws::Map<Aws::String, Aws::Vector<AnomalyObject>>>
+    Anomaly& AddProfiles(ProfilesKeyT&& key, ProfilesValueT&& value) {
+      m_profilesHasBeenSet = true; m_profiles.emplace(std::forward<ProfilesKeyT>(key), std::forward<ProfilesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>Information about the behavior of the anomalies.</p>
      */
-    inline const AnomalyUnusual& GetUnusual() const{ return m_unusual; }
+    inline const AnomalyUnusual& GetUnusual() const { return m_unusual; }
     inline bool UnusualHasBeenSet() const { return m_unusualHasBeenSet; }
-    inline void SetUnusual(const AnomalyUnusual& value) { m_unusualHasBeenSet = true; m_unusual = value; }
-    inline void SetUnusual(AnomalyUnusual&& value) { m_unusualHasBeenSet = true; m_unusual = std::move(value); }
-    inline Anomaly& WithUnusual(const AnomalyUnusual& value) { SetUnusual(value); return *this;}
-    inline Anomaly& WithUnusual(AnomalyUnusual&& value) { SetUnusual(std::move(value)); return *this;}
+    template<typename UnusualT = AnomalyUnusual>
+    void SetUnusual(UnusualT&& value) { m_unusualHasBeenSet = true; m_unusual = std::forward<UnusualT>(value); }
+    template<typename UnusualT = AnomalyUnusual>
+    Anomaly& WithUnusual(UnusualT&& value) { SetUnusual(std::forward<UnusualT>(value)); return *this;}
     ///@}
   private:
 

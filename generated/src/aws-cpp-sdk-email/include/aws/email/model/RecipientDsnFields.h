@@ -39,7 +39,7 @@ namespace Model
   class RecipientDsnFields
   {
   public:
-    AWS_SES_API RecipientDsnFields();
+    AWS_SES_API RecipientDsnFields() = default;
     AWS_SES_API RecipientDsnFields(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_SES_API RecipientDsnFields& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -59,14 +59,12 @@ namespace Model
      * address with <code>rfc 822;</code>, as described in <a
      * href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.</p> 
      */
-    inline const Aws::String& GetFinalRecipient() const{ return m_finalRecipient; }
+    inline const Aws::String& GetFinalRecipient() const { return m_finalRecipient; }
     inline bool FinalRecipientHasBeenSet() const { return m_finalRecipientHasBeenSet; }
-    inline void SetFinalRecipient(const Aws::String& value) { m_finalRecipientHasBeenSet = true; m_finalRecipient = value; }
-    inline void SetFinalRecipient(Aws::String&& value) { m_finalRecipientHasBeenSet = true; m_finalRecipient = std::move(value); }
-    inline void SetFinalRecipient(const char* value) { m_finalRecipientHasBeenSet = true; m_finalRecipient.assign(value); }
-    inline RecipientDsnFields& WithFinalRecipient(const Aws::String& value) { SetFinalRecipient(value); return *this;}
-    inline RecipientDsnFields& WithFinalRecipient(Aws::String&& value) { SetFinalRecipient(std::move(value)); return *this;}
-    inline RecipientDsnFields& WithFinalRecipient(const char* value) { SetFinalRecipient(value); return *this;}
+    template<typename FinalRecipientT = Aws::String>
+    void SetFinalRecipient(FinalRecipientT&& value) { m_finalRecipientHasBeenSet = true; m_finalRecipient = std::forward<FinalRecipientT>(value); }
+    template<typename FinalRecipientT = Aws::String>
+    RecipientDsnFields& WithFinalRecipient(FinalRecipientT&& value) { SetFinalRecipient(std::forward<FinalRecipientT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,12 +73,10 @@ namespace Model
      * of its attempt to deliver the message to the recipient address. This is required
      * by <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>.</p>
      */
-    inline const DsnAction& GetAction() const{ return m_action; }
+    inline DsnAction GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const DsnAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(DsnAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline RecipientDsnFields& WithAction(const DsnAction& value) { SetAction(value); return *this;}
-    inline RecipientDsnFields& WithAction(DsnAction&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(DsnAction value) { m_actionHasBeenSet = true; m_action = value; }
+    inline RecipientDsnFields& WithAction(DsnAction value) { SetAction(value); return *this;}
     ///@}
 
     ///@{
@@ -90,14 +86,12 @@ namespace Model
      * (<code>mta-name-type; mta-name</code>). This parameter typically applies only to
      * propagating synchronous bounces.</p>
      */
-    inline const Aws::String& GetRemoteMta() const{ return m_remoteMta; }
+    inline const Aws::String& GetRemoteMta() const { return m_remoteMta; }
     inline bool RemoteMtaHasBeenSet() const { return m_remoteMtaHasBeenSet; }
-    inline void SetRemoteMta(const Aws::String& value) { m_remoteMtaHasBeenSet = true; m_remoteMta = value; }
-    inline void SetRemoteMta(Aws::String&& value) { m_remoteMtaHasBeenSet = true; m_remoteMta = std::move(value); }
-    inline void SetRemoteMta(const char* value) { m_remoteMtaHasBeenSet = true; m_remoteMta.assign(value); }
-    inline RecipientDsnFields& WithRemoteMta(const Aws::String& value) { SetRemoteMta(value); return *this;}
-    inline RecipientDsnFields& WithRemoteMta(Aws::String&& value) { SetRemoteMta(std::move(value)); return *this;}
-    inline RecipientDsnFields& WithRemoteMta(const char* value) { SetRemoteMta(value); return *this;}
+    template<typename RemoteMtaT = Aws::String>
+    void SetRemoteMta(RemoteMtaT&& value) { m_remoteMtaHasBeenSet = true; m_remoteMta = std::forward<RemoteMtaT>(value); }
+    template<typename RemoteMtaT = Aws::String>
+    RecipientDsnFields& WithRemoteMta(RemoteMtaT&& value) { SetRemoteMta(std::forward<RemoteMtaT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,14 +99,12 @@ namespace Model
      * <p>The status code that indicates what went wrong. This is required by <a
      * href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline RecipientDsnFields& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline RecipientDsnFields& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline RecipientDsnFields& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    RecipientDsnFields& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -121,14 +113,12 @@ namespace Model
      * See <a href="https://tools.ietf.org/html/rfc3463">RFC 3463</a> for the correct
      * formatting of this parameter.</p>
      */
-    inline const Aws::String& GetDiagnosticCode() const{ return m_diagnosticCode; }
+    inline const Aws::String& GetDiagnosticCode() const { return m_diagnosticCode; }
     inline bool DiagnosticCodeHasBeenSet() const { return m_diagnosticCodeHasBeenSet; }
-    inline void SetDiagnosticCode(const Aws::String& value) { m_diagnosticCodeHasBeenSet = true; m_diagnosticCode = value; }
-    inline void SetDiagnosticCode(Aws::String&& value) { m_diagnosticCodeHasBeenSet = true; m_diagnosticCode = std::move(value); }
-    inline void SetDiagnosticCode(const char* value) { m_diagnosticCodeHasBeenSet = true; m_diagnosticCode.assign(value); }
-    inline RecipientDsnFields& WithDiagnosticCode(const Aws::String& value) { SetDiagnosticCode(value); return *this;}
-    inline RecipientDsnFields& WithDiagnosticCode(Aws::String&& value) { SetDiagnosticCode(std::move(value)); return *this;}
-    inline RecipientDsnFields& WithDiagnosticCode(const char* value) { SetDiagnosticCode(value); return *this;}
+    template<typename DiagnosticCodeT = Aws::String>
+    void SetDiagnosticCode(DiagnosticCodeT&& value) { m_diagnosticCodeHasBeenSet = true; m_diagnosticCode = std::forward<DiagnosticCodeT>(value); }
+    template<typename DiagnosticCodeT = Aws::String>
+    RecipientDsnFields& WithDiagnosticCode(DiagnosticCodeT&& value) { SetDiagnosticCode(std::forward<DiagnosticCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -136,33 +126,33 @@ namespace Model
      * <p>The time the final delivery attempt was made, in <a
      * href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastAttemptDate() const{ return m_lastAttemptDate; }
+    inline const Aws::Utils::DateTime& GetLastAttemptDate() const { return m_lastAttemptDate; }
     inline bool LastAttemptDateHasBeenSet() const { return m_lastAttemptDateHasBeenSet; }
-    inline void SetLastAttemptDate(const Aws::Utils::DateTime& value) { m_lastAttemptDateHasBeenSet = true; m_lastAttemptDate = value; }
-    inline void SetLastAttemptDate(Aws::Utils::DateTime&& value) { m_lastAttemptDateHasBeenSet = true; m_lastAttemptDate = std::move(value); }
-    inline RecipientDsnFields& WithLastAttemptDate(const Aws::Utils::DateTime& value) { SetLastAttemptDate(value); return *this;}
-    inline RecipientDsnFields& WithLastAttemptDate(Aws::Utils::DateTime&& value) { SetLastAttemptDate(std::move(value)); return *this;}
+    template<typename LastAttemptDateT = Aws::Utils::DateTime>
+    void SetLastAttemptDate(LastAttemptDateT&& value) { m_lastAttemptDateHasBeenSet = true; m_lastAttemptDate = std::forward<LastAttemptDateT>(value); }
+    template<typename LastAttemptDateT = Aws::Utils::DateTime>
+    RecipientDsnFields& WithLastAttemptDate(LastAttemptDateT&& value) { SetLastAttemptDate(std::forward<LastAttemptDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Additional X-headers to include in the DSN.</p>
      */
-    inline const Aws::Vector<ExtensionField>& GetExtensionFields() const{ return m_extensionFields; }
+    inline const Aws::Vector<ExtensionField>& GetExtensionFields() const { return m_extensionFields; }
     inline bool ExtensionFieldsHasBeenSet() const { return m_extensionFieldsHasBeenSet; }
-    inline void SetExtensionFields(const Aws::Vector<ExtensionField>& value) { m_extensionFieldsHasBeenSet = true; m_extensionFields = value; }
-    inline void SetExtensionFields(Aws::Vector<ExtensionField>&& value) { m_extensionFieldsHasBeenSet = true; m_extensionFields = std::move(value); }
-    inline RecipientDsnFields& WithExtensionFields(const Aws::Vector<ExtensionField>& value) { SetExtensionFields(value); return *this;}
-    inline RecipientDsnFields& WithExtensionFields(Aws::Vector<ExtensionField>&& value) { SetExtensionFields(std::move(value)); return *this;}
-    inline RecipientDsnFields& AddExtensionFields(const ExtensionField& value) { m_extensionFieldsHasBeenSet = true; m_extensionFields.push_back(value); return *this; }
-    inline RecipientDsnFields& AddExtensionFields(ExtensionField&& value) { m_extensionFieldsHasBeenSet = true; m_extensionFields.push_back(std::move(value)); return *this; }
+    template<typename ExtensionFieldsT = Aws::Vector<ExtensionField>>
+    void SetExtensionFields(ExtensionFieldsT&& value) { m_extensionFieldsHasBeenSet = true; m_extensionFields = std::forward<ExtensionFieldsT>(value); }
+    template<typename ExtensionFieldsT = Aws::Vector<ExtensionField>>
+    RecipientDsnFields& WithExtensionFields(ExtensionFieldsT&& value) { SetExtensionFields(std::forward<ExtensionFieldsT>(value)); return *this;}
+    template<typename ExtensionFieldsT = ExtensionField>
+    RecipientDsnFields& AddExtensionFields(ExtensionFieldsT&& value) { m_extensionFieldsHasBeenSet = true; m_extensionFields.emplace_back(std::forward<ExtensionFieldsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_finalRecipient;
     bool m_finalRecipientHasBeenSet = false;
 
-    DsnAction m_action;
+    DsnAction m_action{DsnAction::NOT_SET};
     bool m_actionHasBeenSet = false;
 
     Aws::String m_remoteMta;
@@ -174,7 +164,7 @@ namespace Model
     Aws::String m_diagnosticCode;
     bool m_diagnosticCodeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastAttemptDate;
+    Aws::Utils::DateTime m_lastAttemptDate{};
     bool m_lastAttemptDateHasBeenSet = false;
 
     Aws::Vector<ExtensionField> m_extensionFields;

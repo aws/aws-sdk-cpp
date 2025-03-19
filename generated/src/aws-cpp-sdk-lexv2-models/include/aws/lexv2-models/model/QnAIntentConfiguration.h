@@ -33,7 +33,7 @@ namespace Model
   class QnAIntentConfiguration
   {
   public:
-    AWS_LEXMODELSV2_API QnAIntentConfiguration();
+    AWS_LEXMODELSV2_API QnAIntentConfiguration() = default;
     AWS_LEXMODELSV2_API QnAIntentConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API QnAIntentConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,22 +44,22 @@ namespace Model
      * <p>Contains details about the configuration of the data source used for the
      * <code>AMAZON.QnAIntent</code>.</p>
      */
-    inline const DataSourceConfiguration& GetDataSourceConfiguration() const{ return m_dataSourceConfiguration; }
+    inline const DataSourceConfiguration& GetDataSourceConfiguration() const { return m_dataSourceConfiguration; }
     inline bool DataSourceConfigurationHasBeenSet() const { return m_dataSourceConfigurationHasBeenSet; }
-    inline void SetDataSourceConfiguration(const DataSourceConfiguration& value) { m_dataSourceConfigurationHasBeenSet = true; m_dataSourceConfiguration = value; }
-    inline void SetDataSourceConfiguration(DataSourceConfiguration&& value) { m_dataSourceConfigurationHasBeenSet = true; m_dataSourceConfiguration = std::move(value); }
-    inline QnAIntentConfiguration& WithDataSourceConfiguration(const DataSourceConfiguration& value) { SetDataSourceConfiguration(value); return *this;}
-    inline QnAIntentConfiguration& WithDataSourceConfiguration(DataSourceConfiguration&& value) { SetDataSourceConfiguration(std::move(value)); return *this;}
+    template<typename DataSourceConfigurationT = DataSourceConfiguration>
+    void SetDataSourceConfiguration(DataSourceConfigurationT&& value) { m_dataSourceConfigurationHasBeenSet = true; m_dataSourceConfiguration = std::forward<DataSourceConfigurationT>(value); }
+    template<typename DataSourceConfigurationT = DataSourceConfiguration>
+    QnAIntentConfiguration& WithDataSourceConfiguration(DataSourceConfigurationT&& value) { SetDataSourceConfiguration(std::forward<DataSourceConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const BedrockModelSpecification& GetBedrockModelConfiguration() const{ return m_bedrockModelConfiguration; }
+    inline const BedrockModelSpecification& GetBedrockModelConfiguration() const { return m_bedrockModelConfiguration; }
     inline bool BedrockModelConfigurationHasBeenSet() const { return m_bedrockModelConfigurationHasBeenSet; }
-    inline void SetBedrockModelConfiguration(const BedrockModelSpecification& value) { m_bedrockModelConfigurationHasBeenSet = true; m_bedrockModelConfiguration = value; }
-    inline void SetBedrockModelConfiguration(BedrockModelSpecification&& value) { m_bedrockModelConfigurationHasBeenSet = true; m_bedrockModelConfiguration = std::move(value); }
-    inline QnAIntentConfiguration& WithBedrockModelConfiguration(const BedrockModelSpecification& value) { SetBedrockModelConfiguration(value); return *this;}
-    inline QnAIntentConfiguration& WithBedrockModelConfiguration(BedrockModelSpecification&& value) { SetBedrockModelConfiguration(std::move(value)); return *this;}
+    template<typename BedrockModelConfigurationT = BedrockModelSpecification>
+    void SetBedrockModelConfiguration(BedrockModelConfigurationT&& value) { m_bedrockModelConfigurationHasBeenSet = true; m_bedrockModelConfiguration = std::forward<BedrockModelConfigurationT>(value); }
+    template<typename BedrockModelConfigurationT = BedrockModelSpecification>
+    QnAIntentConfiguration& WithBedrockModelConfiguration(BedrockModelConfigurationT&& value) { SetBedrockModelConfiguration(std::forward<BedrockModelConfigurationT>(value)); return *this;}
     ///@}
   private:
 

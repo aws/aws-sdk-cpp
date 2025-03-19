@@ -18,13 +18,7 @@ namespace Braket
 namespace Model
 {
 
-ContainerImage::ContainerImage() : 
-    m_uriHasBeenSet(false)
-{
-}
-
 ContainerImage::ContainerImage(JsonView jsonValue)
-  : ContainerImage()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ContainerImage& ContainerImage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("uri"))
   {
     m_uri = jsonValue.GetString("uri");
-
     m_uriHasBeenSet = true;
   }
-
   return *this;
 }
 

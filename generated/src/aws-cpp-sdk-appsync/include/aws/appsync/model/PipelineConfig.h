@@ -33,7 +33,7 @@ namespace Model
   class PipelineConfig
   {
   public:
-    AWS_APPSYNC_API PipelineConfig();
+    AWS_APPSYNC_API PipelineConfig() = default;
     AWS_APPSYNC_API PipelineConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSYNC_API PipelineConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,15 +43,14 @@ namespace Model
     /**
      * <p>A list of <code>Function</code> objects.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetFunctions() const{ return m_functions; }
+    inline const Aws::Vector<Aws::String>& GetFunctions() const { return m_functions; }
     inline bool FunctionsHasBeenSet() const { return m_functionsHasBeenSet; }
-    inline void SetFunctions(const Aws::Vector<Aws::String>& value) { m_functionsHasBeenSet = true; m_functions = value; }
-    inline void SetFunctions(Aws::Vector<Aws::String>&& value) { m_functionsHasBeenSet = true; m_functions = std::move(value); }
-    inline PipelineConfig& WithFunctions(const Aws::Vector<Aws::String>& value) { SetFunctions(value); return *this;}
-    inline PipelineConfig& WithFunctions(Aws::Vector<Aws::String>&& value) { SetFunctions(std::move(value)); return *this;}
-    inline PipelineConfig& AddFunctions(const Aws::String& value) { m_functionsHasBeenSet = true; m_functions.push_back(value); return *this; }
-    inline PipelineConfig& AddFunctions(Aws::String&& value) { m_functionsHasBeenSet = true; m_functions.push_back(std::move(value)); return *this; }
-    inline PipelineConfig& AddFunctions(const char* value) { m_functionsHasBeenSet = true; m_functions.push_back(value); return *this; }
+    template<typename FunctionsT = Aws::Vector<Aws::String>>
+    void SetFunctions(FunctionsT&& value) { m_functionsHasBeenSet = true; m_functions = std::forward<FunctionsT>(value); }
+    template<typename FunctionsT = Aws::Vector<Aws::String>>
+    PipelineConfig& WithFunctions(FunctionsT&& value) { SetFunctions(std::forward<FunctionsT>(value)); return *this;}
+    template<typename FunctionsT = Aws::String>
+    PipelineConfig& AddFunctions(FunctionsT&& value) { m_functionsHasBeenSet = true; m_functions.emplace_back(std::forward<FunctionsT>(value)); return *this; }
     ///@}
   private:
 

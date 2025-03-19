@@ -33,7 +33,7 @@ namespace Model
   class VideoSourceDetails
   {
   public:
-    AWS_QBUSINESS_API VideoSourceDetails();
+    AWS_QBUSINESS_API VideoSourceDetails() = default;
     AWS_QBUSINESS_API VideoSourceDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API VideoSourceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,35 +43,31 @@ namespace Model
     /**
      * <p>Unique identifier for the video media file.</p>
      */
-    inline const Aws::String& GetMediaId() const{ return m_mediaId; }
+    inline const Aws::String& GetMediaId() const { return m_mediaId; }
     inline bool MediaIdHasBeenSet() const { return m_mediaIdHasBeenSet; }
-    inline void SetMediaId(const Aws::String& value) { m_mediaIdHasBeenSet = true; m_mediaId = value; }
-    inline void SetMediaId(Aws::String&& value) { m_mediaIdHasBeenSet = true; m_mediaId = std::move(value); }
-    inline void SetMediaId(const char* value) { m_mediaIdHasBeenSet = true; m_mediaId.assign(value); }
-    inline VideoSourceDetails& WithMediaId(const Aws::String& value) { SetMediaId(value); return *this;}
-    inline VideoSourceDetails& WithMediaId(Aws::String&& value) { SetMediaId(std::move(value)); return *this;}
-    inline VideoSourceDetails& WithMediaId(const char* value) { SetMediaId(value); return *this;}
+    template<typename MediaIdT = Aws::String>
+    void SetMediaId(MediaIdT&& value) { m_mediaIdHasBeenSet = true; m_mediaId = std::forward<MediaIdT>(value); }
+    template<typename MediaIdT = Aws::String>
+    VideoSourceDetails& WithMediaId(MediaIdT&& value) { SetMediaId(std::forward<MediaIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The MIME type of the video file (e.g., video/mp4, video/avi).</p>
      */
-    inline const Aws::String& GetMediaMimeType() const{ return m_mediaMimeType; }
+    inline const Aws::String& GetMediaMimeType() const { return m_mediaMimeType; }
     inline bool MediaMimeTypeHasBeenSet() const { return m_mediaMimeTypeHasBeenSet; }
-    inline void SetMediaMimeType(const Aws::String& value) { m_mediaMimeTypeHasBeenSet = true; m_mediaMimeType = value; }
-    inline void SetMediaMimeType(Aws::String&& value) { m_mediaMimeTypeHasBeenSet = true; m_mediaMimeType = std::move(value); }
-    inline void SetMediaMimeType(const char* value) { m_mediaMimeTypeHasBeenSet = true; m_mediaMimeType.assign(value); }
-    inline VideoSourceDetails& WithMediaMimeType(const Aws::String& value) { SetMediaMimeType(value); return *this;}
-    inline VideoSourceDetails& WithMediaMimeType(Aws::String&& value) { SetMediaMimeType(std::move(value)); return *this;}
-    inline VideoSourceDetails& WithMediaMimeType(const char* value) { SetMediaMimeType(value); return *this;}
+    template<typename MediaMimeTypeT = Aws::String>
+    void SetMediaMimeType(MediaMimeTypeT&& value) { m_mediaMimeTypeHasBeenSet = true; m_mediaMimeType = std::forward<MediaMimeTypeT>(value); }
+    template<typename MediaMimeTypeT = Aws::String>
+    VideoSourceDetails& WithMediaMimeType(MediaMimeTypeT&& value) { SetMediaMimeType(std::forward<MediaMimeTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The starting timestamp in milliseconds for the relevant video segment.</p>
      */
-    inline long long GetStartTimeMilliseconds() const{ return m_startTimeMilliseconds; }
+    inline long long GetStartTimeMilliseconds() const { return m_startTimeMilliseconds; }
     inline bool StartTimeMillisecondsHasBeenSet() const { return m_startTimeMillisecondsHasBeenSet; }
     inline void SetStartTimeMilliseconds(long long value) { m_startTimeMillisecondsHasBeenSet = true; m_startTimeMilliseconds = value; }
     inline VideoSourceDetails& WithStartTimeMilliseconds(long long value) { SetStartTimeMilliseconds(value); return *this;}
@@ -81,7 +77,7 @@ namespace Model
     /**
      * <p>The ending timestamp in milliseconds for the relevant video segment.</p>
      */
-    inline long long GetEndTimeMilliseconds() const{ return m_endTimeMilliseconds; }
+    inline long long GetEndTimeMilliseconds() const { return m_endTimeMilliseconds; }
     inline bool EndTimeMillisecondsHasBeenSet() const { return m_endTimeMillisecondsHasBeenSet; }
     inline void SetEndTimeMilliseconds(long long value) { m_endTimeMillisecondsHasBeenSet = true; m_endTimeMilliseconds = value; }
     inline VideoSourceDetails& WithEndTimeMilliseconds(long long value) { SetEndTimeMilliseconds(value); return *this;}
@@ -91,12 +87,10 @@ namespace Model
     /**
      * <p>The type of video extraction performed on the content.</p>
      */
-    inline const VideoExtractionType& GetVideoExtractionType() const{ return m_videoExtractionType; }
+    inline VideoExtractionType GetVideoExtractionType() const { return m_videoExtractionType; }
     inline bool VideoExtractionTypeHasBeenSet() const { return m_videoExtractionTypeHasBeenSet; }
-    inline void SetVideoExtractionType(const VideoExtractionType& value) { m_videoExtractionTypeHasBeenSet = true; m_videoExtractionType = value; }
-    inline void SetVideoExtractionType(VideoExtractionType&& value) { m_videoExtractionTypeHasBeenSet = true; m_videoExtractionType = std::move(value); }
-    inline VideoSourceDetails& WithVideoExtractionType(const VideoExtractionType& value) { SetVideoExtractionType(value); return *this;}
-    inline VideoSourceDetails& WithVideoExtractionType(VideoExtractionType&& value) { SetVideoExtractionType(std::move(value)); return *this;}
+    inline void SetVideoExtractionType(VideoExtractionType value) { m_videoExtractionTypeHasBeenSet = true; m_videoExtractionType = value; }
+    inline VideoSourceDetails& WithVideoExtractionType(VideoExtractionType value) { SetVideoExtractionType(value); return *this;}
     ///@}
   private:
 
@@ -106,13 +100,13 @@ namespace Model
     Aws::String m_mediaMimeType;
     bool m_mediaMimeTypeHasBeenSet = false;
 
-    long long m_startTimeMilliseconds;
+    long long m_startTimeMilliseconds{0};
     bool m_startTimeMillisecondsHasBeenSet = false;
 
-    long long m_endTimeMilliseconds;
+    long long m_endTimeMilliseconds{0};
     bool m_endTimeMillisecondsHasBeenSet = false;
 
-    VideoExtractionType m_videoExtractionType;
+    VideoExtractionType m_videoExtractionType{VideoExtractionType::NOT_SET};
     bool m_videoExtractionTypeHasBeenSet = false;
   };
 

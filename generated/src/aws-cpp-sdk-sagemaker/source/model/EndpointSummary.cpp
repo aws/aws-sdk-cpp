@@ -18,18 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-EndpointSummary::EndpointSummary() : 
-    m_endpointNameHasBeenSet(false),
-    m_endpointArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_endpointStatus(EndpointStatus::NOT_SET),
-    m_endpointStatusHasBeenSet(false)
-{
-}
-
 EndpointSummary::EndpointSummary(JsonView jsonValue)
-  : EndpointSummary()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ EndpointSummary& EndpointSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EndpointName"))
   {
     m_endpointName = jsonValue.GetString("EndpointName");
-
     m_endpointNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointArn"))
   {
     m_endpointArn = jsonValue.GetString("EndpointArn");
-
     m_endpointArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointStatus"))
   {
     m_endpointStatus = EndpointStatusMapper::GetEndpointStatusForName(jsonValue.GetString("EndpointStatus"));
-
     m_endpointStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

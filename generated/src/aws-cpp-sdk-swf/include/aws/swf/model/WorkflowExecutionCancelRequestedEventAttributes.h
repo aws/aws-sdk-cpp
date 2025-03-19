@@ -33,7 +33,7 @@ namespace Model
   class WorkflowExecutionCancelRequestedEventAttributes
   {
   public:
-    AWS_SWF_API WorkflowExecutionCancelRequestedEventAttributes();
+    AWS_SWF_API WorkflowExecutionCancelRequestedEventAttributes() = default;
     AWS_SWF_API WorkflowExecutionCancelRequestedEventAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API WorkflowExecutionCancelRequestedEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>The external workflow execution for which the cancellation was requested.</p>
      */
-    inline const WorkflowExecution& GetExternalWorkflowExecution() const{ return m_externalWorkflowExecution; }
+    inline const WorkflowExecution& GetExternalWorkflowExecution() const { return m_externalWorkflowExecution; }
     inline bool ExternalWorkflowExecutionHasBeenSet() const { return m_externalWorkflowExecutionHasBeenSet; }
-    inline void SetExternalWorkflowExecution(const WorkflowExecution& value) { m_externalWorkflowExecutionHasBeenSet = true; m_externalWorkflowExecution = value; }
-    inline void SetExternalWorkflowExecution(WorkflowExecution&& value) { m_externalWorkflowExecutionHasBeenSet = true; m_externalWorkflowExecution = std::move(value); }
-    inline WorkflowExecutionCancelRequestedEventAttributes& WithExternalWorkflowExecution(const WorkflowExecution& value) { SetExternalWorkflowExecution(value); return *this;}
-    inline WorkflowExecutionCancelRequestedEventAttributes& WithExternalWorkflowExecution(WorkflowExecution&& value) { SetExternalWorkflowExecution(std::move(value)); return *this;}
+    template<typename ExternalWorkflowExecutionT = WorkflowExecution>
+    void SetExternalWorkflowExecution(ExternalWorkflowExecutionT&& value) { m_externalWorkflowExecutionHasBeenSet = true; m_externalWorkflowExecution = std::forward<ExternalWorkflowExecutionT>(value); }
+    template<typename ExternalWorkflowExecutionT = WorkflowExecution>
+    WorkflowExecutionCancelRequestedEventAttributes& WithExternalWorkflowExecution(ExternalWorkflowExecutionT&& value) { SetExternalWorkflowExecution(std::forward<ExternalWorkflowExecutionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,7 +60,7 @@ namespace Model
      * useful for diagnosing problems by tracing back the chain of events leading up to
      * this event.</p>
      */
-    inline long long GetExternalInitiatedEventId() const{ return m_externalInitiatedEventId; }
+    inline long long GetExternalInitiatedEventId() const { return m_externalInitiatedEventId; }
     inline bool ExternalInitiatedEventIdHasBeenSet() const { return m_externalInitiatedEventIdHasBeenSet; }
     inline void SetExternalInitiatedEventId(long long value) { m_externalInitiatedEventIdHasBeenSet = true; m_externalInitiatedEventId = value; }
     inline WorkflowExecutionCancelRequestedEventAttributes& WithExternalInitiatedEventId(long long value) { SetExternalInitiatedEventId(value); return *this;}
@@ -73,22 +73,20 @@ namespace Model
      * workflow execution times out or is terminated, and the child policy is set to
      * cancel child executions.</p>
      */
-    inline const WorkflowExecutionCancelRequestedCause& GetCause() const{ return m_cause; }
+    inline WorkflowExecutionCancelRequestedCause GetCause() const { return m_cause; }
     inline bool CauseHasBeenSet() const { return m_causeHasBeenSet; }
-    inline void SetCause(const WorkflowExecutionCancelRequestedCause& value) { m_causeHasBeenSet = true; m_cause = value; }
-    inline void SetCause(WorkflowExecutionCancelRequestedCause&& value) { m_causeHasBeenSet = true; m_cause = std::move(value); }
-    inline WorkflowExecutionCancelRequestedEventAttributes& WithCause(const WorkflowExecutionCancelRequestedCause& value) { SetCause(value); return *this;}
-    inline WorkflowExecutionCancelRequestedEventAttributes& WithCause(WorkflowExecutionCancelRequestedCause&& value) { SetCause(std::move(value)); return *this;}
+    inline void SetCause(WorkflowExecutionCancelRequestedCause value) { m_causeHasBeenSet = true; m_cause = value; }
+    inline WorkflowExecutionCancelRequestedEventAttributes& WithCause(WorkflowExecutionCancelRequestedCause value) { SetCause(value); return *this;}
     ///@}
   private:
 
     WorkflowExecution m_externalWorkflowExecution;
     bool m_externalWorkflowExecutionHasBeenSet = false;
 
-    long long m_externalInitiatedEventId;
+    long long m_externalInitiatedEventId{0};
     bool m_externalInitiatedEventIdHasBeenSet = false;
 
-    WorkflowExecutionCancelRequestedCause m_cause;
+    WorkflowExecutionCancelRequestedCause m_cause{WorkflowExecutionCancelRequestedCause::NOT_SET};
     bool m_causeHasBeenSet = false;
   };
 

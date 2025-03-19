@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreatePublicIpv4PoolResponse::CreatePublicIpv4PoolResponse()
-{
-}
-
 CreatePublicIpv4PoolResponse::CreatePublicIpv4PoolResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ CreatePublicIpv4PoolResponse& CreatePublicIpv4PoolResponse::operator =(const Aws
     if(!poolIdNode.IsNull())
     {
       m_poolId = Aws::Utils::Xml::DecodeEscapedXmlText(poolIdNode.GetText());
+      m_poolIdHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ CreatePublicIpv4PoolResponse& CreatePublicIpv4PoolResponse::operator =(const Aws
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::CreatePublicIpv4PoolResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

@@ -29,7 +29,7 @@ namespace Model
   class GetAppValidationOutputResult
   {
   public:
-    AWS_SMS_API GetAppValidationOutputResult();
+    AWS_SMS_API GetAppValidationOutputResult() = default;
     AWS_SMS_API GetAppValidationOutputResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SMS_API GetAppValidationOutputResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>The validation output.</p>
      */
-    inline const Aws::Vector<ValidationOutput>& GetValidationOutputList() const{ return m_validationOutputList; }
-    inline void SetValidationOutputList(const Aws::Vector<ValidationOutput>& value) { m_validationOutputList = value; }
-    inline void SetValidationOutputList(Aws::Vector<ValidationOutput>&& value) { m_validationOutputList = std::move(value); }
-    inline GetAppValidationOutputResult& WithValidationOutputList(const Aws::Vector<ValidationOutput>& value) { SetValidationOutputList(value); return *this;}
-    inline GetAppValidationOutputResult& WithValidationOutputList(Aws::Vector<ValidationOutput>&& value) { SetValidationOutputList(std::move(value)); return *this;}
-    inline GetAppValidationOutputResult& AddValidationOutputList(const ValidationOutput& value) { m_validationOutputList.push_back(value); return *this; }
-    inline GetAppValidationOutputResult& AddValidationOutputList(ValidationOutput&& value) { m_validationOutputList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ValidationOutput>& GetValidationOutputList() const { return m_validationOutputList; }
+    template<typename ValidationOutputListT = Aws::Vector<ValidationOutput>>
+    void SetValidationOutputList(ValidationOutputListT&& value) { m_validationOutputListHasBeenSet = true; m_validationOutputList = std::forward<ValidationOutputListT>(value); }
+    template<typename ValidationOutputListT = Aws::Vector<ValidationOutput>>
+    GetAppValidationOutputResult& WithValidationOutputList(ValidationOutputListT&& value) { SetValidationOutputList(std::forward<ValidationOutputListT>(value)); return *this;}
+    template<typename ValidationOutputListT = ValidationOutput>
+    GetAppValidationOutputResult& AddValidationOutputList(ValidationOutputListT&& value) { m_validationOutputListHasBeenSet = true; m_validationOutputList.emplace_back(std::forward<ValidationOutputListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetAppValidationOutputResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetAppValidationOutputResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetAppValidationOutputResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetAppValidationOutputResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ValidationOutput> m_validationOutputList;
+    bool m_validationOutputListHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

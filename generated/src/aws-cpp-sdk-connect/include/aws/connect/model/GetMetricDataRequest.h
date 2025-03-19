@@ -26,7 +26,7 @@ namespace Model
   class GetMetricDataRequest : public ConnectRequest
   {
   public:
-    AWS_CONNECT_API GetMetricDataRequest();
+    AWS_CONNECT_API GetMetricDataRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline GetMetricDataRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline GetMetricDataRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline GetMetricDataRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    GetMetricDataRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +59,12 @@ namespace Model
      * start time cannot be earlier than 24 hours before the time of the request.
      * Historical metrics are available only for 24 hours.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline GetMetricDataRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline GetMetricDataRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    GetMetricDataRequest& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,12 +75,12 @@ namespace Model
      * be later than the start time timestamp.</p> <p>The time range between the start
      * and end time must be less than 24 hours.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline GetMetricDataRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline GetMetricDataRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    GetMetricDataRequest& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,12 +94,12 @@ namespace Model
      * <p>To filter by <code>Queues</code>, enter the queue ID/ARN, not the name of the
      * queue.</p> 
      */
-    inline const Filters& GetFilters() const{ return m_filters; }
+    inline const Filters& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Filters& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Filters&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline GetMetricDataRequest& WithFilters(const Filters& value) { SetFilters(value); return *this;}
-    inline GetMetricDataRequest& WithFilters(Filters&& value) { SetFilters(std::move(value)); return *this;}
+    template<typename FiltersT = Filters>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Filters>
+    GetMetricDataRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,14 +111,13 @@ namespace Model
      * returned.</p> <p>RoutingStepExpression is not a valid filter for GetMetricData
      * and we recommend switching to GetMetricDataV2 for more up-to-date features.</p>
      */
-    inline const Aws::Vector<Grouping>& GetGroupings() const{ return m_groupings; }
+    inline const Aws::Vector<Grouping>& GetGroupings() const { return m_groupings; }
     inline bool GroupingsHasBeenSet() const { return m_groupingsHasBeenSet; }
-    inline void SetGroupings(const Aws::Vector<Grouping>& value) { m_groupingsHasBeenSet = true; m_groupings = value; }
-    inline void SetGroupings(Aws::Vector<Grouping>&& value) { m_groupingsHasBeenSet = true; m_groupings = std::move(value); }
-    inline GetMetricDataRequest& WithGroupings(const Aws::Vector<Grouping>& value) { SetGroupings(value); return *this;}
-    inline GetMetricDataRequest& WithGroupings(Aws::Vector<Grouping>&& value) { SetGroupings(std::move(value)); return *this;}
-    inline GetMetricDataRequest& AddGroupings(const Grouping& value) { m_groupingsHasBeenSet = true; m_groupings.push_back(value); return *this; }
-    inline GetMetricDataRequest& AddGroupings(Grouping&& value) { m_groupingsHasBeenSet = true; m_groupings.push_back(std::move(value)); return *this; }
+    template<typename GroupingsT = Aws::Vector<Grouping>>
+    void SetGroupings(GroupingsT&& value) { m_groupingsHasBeenSet = true; m_groupings = std::forward<GroupingsT>(value); }
+    template<typename GroupingsT = Aws::Vector<Grouping>>
+    GetMetricDataRequest& WithGroupings(GroupingsT&& value) { SetGroupings(std::forward<GroupingsT>(value)); return *this;}
+    inline GetMetricDataRequest& AddGroupings(Grouping value) { m_groupingsHasBeenSet = true; m_groupings.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -165,14 +162,14 @@ namespace Model
      * <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
      * </dd> </dl>
      */
-    inline const Aws::Vector<HistoricalMetric>& GetHistoricalMetrics() const{ return m_historicalMetrics; }
+    inline const Aws::Vector<HistoricalMetric>& GetHistoricalMetrics() const { return m_historicalMetrics; }
     inline bool HistoricalMetricsHasBeenSet() const { return m_historicalMetricsHasBeenSet; }
-    inline void SetHistoricalMetrics(const Aws::Vector<HistoricalMetric>& value) { m_historicalMetricsHasBeenSet = true; m_historicalMetrics = value; }
-    inline void SetHistoricalMetrics(Aws::Vector<HistoricalMetric>&& value) { m_historicalMetricsHasBeenSet = true; m_historicalMetrics = std::move(value); }
-    inline GetMetricDataRequest& WithHistoricalMetrics(const Aws::Vector<HistoricalMetric>& value) { SetHistoricalMetrics(value); return *this;}
-    inline GetMetricDataRequest& WithHistoricalMetrics(Aws::Vector<HistoricalMetric>&& value) { SetHistoricalMetrics(std::move(value)); return *this;}
-    inline GetMetricDataRequest& AddHistoricalMetrics(const HistoricalMetric& value) { m_historicalMetricsHasBeenSet = true; m_historicalMetrics.push_back(value); return *this; }
-    inline GetMetricDataRequest& AddHistoricalMetrics(HistoricalMetric&& value) { m_historicalMetricsHasBeenSet = true; m_historicalMetrics.push_back(std::move(value)); return *this; }
+    template<typename HistoricalMetricsT = Aws::Vector<HistoricalMetric>>
+    void SetHistoricalMetrics(HistoricalMetricsT&& value) { m_historicalMetricsHasBeenSet = true; m_historicalMetrics = std::forward<HistoricalMetricsT>(value); }
+    template<typename HistoricalMetricsT = Aws::Vector<HistoricalMetric>>
+    GetMetricDataRequest& WithHistoricalMetrics(HistoricalMetricsT&& value) { SetHistoricalMetrics(std::forward<HistoricalMetricsT>(value)); return *this;}
+    template<typename HistoricalMetricsT = HistoricalMetric>
+    GetMetricDataRequest& AddHistoricalMetrics(HistoricalMetricsT&& value) { m_historicalMetricsHasBeenSet = true; m_historicalMetrics.emplace_back(std::forward<HistoricalMetricsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -180,21 +177,19 @@ namespace Model
      * <p>The token for the next set of results. Use the value returned in the previous
      * response in the next request to retrieve the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetMetricDataRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetMetricDataRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetMetricDataRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetMetricDataRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return per page.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetMetricDataRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -204,10 +199,10 @@ namespace Model
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
 
     Filters m_filters;
@@ -222,7 +217,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

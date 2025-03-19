@@ -18,13 +18,7 @@ namespace PCS
 namespace Model
 {
 
-InstanceConfig::InstanceConfig() : 
-    m_instanceTypeHasBeenSet(false)
-{
-}
-
 InstanceConfig::InstanceConfig(JsonView jsonValue)
-  : InstanceConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ InstanceConfig& InstanceConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("instanceType"))
   {
     m_instanceType = jsonValue.GetString("instanceType");
-
     m_instanceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

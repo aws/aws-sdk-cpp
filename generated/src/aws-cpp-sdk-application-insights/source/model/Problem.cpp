@@ -18,33 +18,7 @@ namespace ApplicationInsights
 namespace Model
 {
 
-Problem::Problem() : 
-    m_idHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_shortNameHasBeenSet(false),
-    m_insightsHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_affectedResourceHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_severityLevel(SeverityLevel::NOT_SET),
-    m_severityLevelHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_resourceGroupNameHasBeenSet(false),
-    m_feedbackHasBeenSet(false),
-    m_recurringCount(0),
-    m_recurringCountHasBeenSet(false),
-    m_lastRecurrenceTimeHasBeenSet(false),
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false),
-    m_resolutionMethod(ResolutionMethod::NOT_SET),
-    m_resolutionMethodHasBeenSet(false)
-{
-}
-
 Problem::Problem(JsonView jsonValue)
-  : Problem()
 {
   *this = jsonValue;
 }
@@ -54,80 +28,58 @@ Problem& Problem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Title"))
   {
     m_title = jsonValue.GetString("Title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ShortName"))
   {
     m_shortName = jsonValue.GetString("ShortName");
-
     m_shortNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Insights"))
   {
     m_insights = jsonValue.GetString("Insights");
-
     m_insightsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AffectedResource"))
   {
     m_affectedResource = jsonValue.GetString("AffectedResource");
-
     m_affectedResourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SeverityLevel"))
   {
     m_severityLevel = SeverityLevelMapper::GetSeverityLevelForName(jsonValue.GetString("SeverityLevel"));
-
     m_severityLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceGroupName"))
   {
     m_resourceGroupName = jsonValue.GetString("ResourceGroupName");
-
     m_resourceGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Feedback"))
   {
     Aws::Map<Aws::String, JsonView> feedbackJsonMap = jsonValue.GetObject("Feedback").GetAllObjects();
@@ -137,35 +89,26 @@ Problem& Problem::operator =(JsonView jsonValue)
     }
     m_feedbackHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecurringCount"))
   {
     m_recurringCount = jsonValue.GetInt64("RecurringCount");
-
     m_recurringCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastRecurrenceTime"))
   {
     m_lastRecurrenceTime = jsonValue.GetDouble("LastRecurrenceTime");
-
     m_lastRecurrenceTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Visibility"))
   {
     m_visibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("Visibility"));
-
     m_visibilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResolutionMethod"))
   {
     m_resolutionMethod = ResolutionMethodMapper::GetResolutionMethodForName(jsonValue.GetString("ResolutionMethod"));
-
     m_resolutionMethodHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-RDSDBRecommendationFilter::RDSDBRecommendationFilter() : 
-    m_name(RDSDBRecommendationFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 RDSDBRecommendationFilter::RDSDBRecommendationFilter(JsonView jsonValue)
-  : RDSDBRecommendationFilter()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ RDSDBRecommendationFilter& RDSDBRecommendationFilter::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("name"))
   {
     m_name = RDSDBRecommendationFilterNameMapper::GetRDSDBRecommendationFilterNameForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
@@ -49,7 +39,6 @@ RDSDBRecommendationFilter& RDSDBRecommendationFilter::operator =(JsonView jsonVa
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

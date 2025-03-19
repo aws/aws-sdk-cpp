@@ -18,28 +18,7 @@ namespace ResilienceHub
 namespace Model
 {
 
-TestRecommendation::TestRecommendation() : 
-    m_appComponentIdHasBeenSet(false),
-    m_appComponentNameHasBeenSet(false),
-    m_dependsOnAlarmsHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_intentHasBeenSet(false),
-    m_itemsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_prerequisiteHasBeenSet(false),
-    m_recommendationIdHasBeenSet(false),
-    m_recommendationStatus(RecommendationStatus::NOT_SET),
-    m_recommendationStatusHasBeenSet(false),
-    m_referenceIdHasBeenSet(false),
-    m_risk(TestRisk::NOT_SET),
-    m_riskHasBeenSet(false),
-    m_type(TestType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 TestRecommendation::TestRecommendation(JsonView jsonValue)
-  : TestRecommendation()
 {
   *this = jsonValue;
 }
@@ -49,17 +28,13 @@ TestRecommendation& TestRecommendation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("appComponentId"))
   {
     m_appComponentId = jsonValue.GetString("appComponentId");
-
     m_appComponentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("appComponentName"))
   {
     m_appComponentName = jsonValue.GetString("appComponentName");
-
     m_appComponentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dependsOnAlarms"))
   {
     Aws::Utils::Array<JsonView> dependsOnAlarmsJsonList = jsonValue.GetArray("dependsOnAlarms");
@@ -69,21 +44,16 @@ TestRecommendation& TestRecommendation::operator =(JsonView jsonValue)
     }
     m_dependsOnAlarmsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("intent"))
   {
     m_intent = jsonValue.GetString("intent");
-
     m_intentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("items"))
   {
     Aws::Utils::Array<JsonView> itemsJsonList = jsonValue.GetArray("items");
@@ -93,56 +63,41 @@ TestRecommendation& TestRecommendation::operator =(JsonView jsonValue)
     }
     m_itemsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("prerequisite"))
   {
     m_prerequisite = jsonValue.GetString("prerequisite");
-
     m_prerequisiteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recommendationId"))
   {
     m_recommendationId = jsonValue.GetString("recommendationId");
-
     m_recommendationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recommendationStatus"))
   {
     m_recommendationStatus = RecommendationStatusMapper::GetRecommendationStatusForName(jsonValue.GetString("recommendationStatus"));
-
     m_recommendationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("referenceId"))
   {
     m_referenceId = jsonValue.GetString("referenceId");
-
     m_referenceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("risk"))
   {
     m_risk = TestRiskMapper::GetTestRiskForName(jsonValue.GetString("risk"));
-
     m_riskHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = TestTypeMapper::GetTestTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

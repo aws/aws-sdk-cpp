@@ -35,7 +35,7 @@ namespace Model
   class InsightCategorySpecificSummary
   {
   public:
-    AWS_EKS_API InsightCategorySpecificSummary();
+    AWS_EKS_API InsightCategorySpecificSummary() = default;
     AWS_EKS_API InsightCategorySpecificSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API InsightCategorySpecificSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,14 @@ namespace Model
      * <p>The summary information about deprecated resource usage for an insight check
      * in the <code>UPGRADE_READINESS</code> category.</p>
      */
-    inline const Aws::Vector<DeprecationDetail>& GetDeprecationDetails() const{ return m_deprecationDetails; }
+    inline const Aws::Vector<DeprecationDetail>& GetDeprecationDetails() const { return m_deprecationDetails; }
     inline bool DeprecationDetailsHasBeenSet() const { return m_deprecationDetailsHasBeenSet; }
-    inline void SetDeprecationDetails(const Aws::Vector<DeprecationDetail>& value) { m_deprecationDetailsHasBeenSet = true; m_deprecationDetails = value; }
-    inline void SetDeprecationDetails(Aws::Vector<DeprecationDetail>&& value) { m_deprecationDetailsHasBeenSet = true; m_deprecationDetails = std::move(value); }
-    inline InsightCategorySpecificSummary& WithDeprecationDetails(const Aws::Vector<DeprecationDetail>& value) { SetDeprecationDetails(value); return *this;}
-    inline InsightCategorySpecificSummary& WithDeprecationDetails(Aws::Vector<DeprecationDetail>&& value) { SetDeprecationDetails(std::move(value)); return *this;}
-    inline InsightCategorySpecificSummary& AddDeprecationDetails(const DeprecationDetail& value) { m_deprecationDetailsHasBeenSet = true; m_deprecationDetails.push_back(value); return *this; }
-    inline InsightCategorySpecificSummary& AddDeprecationDetails(DeprecationDetail&& value) { m_deprecationDetailsHasBeenSet = true; m_deprecationDetails.push_back(std::move(value)); return *this; }
+    template<typename DeprecationDetailsT = Aws::Vector<DeprecationDetail>>
+    void SetDeprecationDetails(DeprecationDetailsT&& value) { m_deprecationDetailsHasBeenSet = true; m_deprecationDetails = std::forward<DeprecationDetailsT>(value); }
+    template<typename DeprecationDetailsT = Aws::Vector<DeprecationDetail>>
+    InsightCategorySpecificSummary& WithDeprecationDetails(DeprecationDetailsT&& value) { SetDeprecationDetails(std::forward<DeprecationDetailsT>(value)); return *this;}
+    template<typename DeprecationDetailsT = DeprecationDetail>
+    InsightCategorySpecificSummary& AddDeprecationDetails(DeprecationDetailsT&& value) { m_deprecationDetailsHasBeenSet = true; m_deprecationDetails.emplace_back(std::forward<DeprecationDetailsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -61,14 +61,14 @@ namespace Model
      * <p>A list of <code>AddonCompatibilityDetail</code> objects for Amazon EKS
      * add-ons.</p>
      */
-    inline const Aws::Vector<AddonCompatibilityDetail>& GetAddonCompatibilityDetails() const{ return m_addonCompatibilityDetails; }
+    inline const Aws::Vector<AddonCompatibilityDetail>& GetAddonCompatibilityDetails() const { return m_addonCompatibilityDetails; }
     inline bool AddonCompatibilityDetailsHasBeenSet() const { return m_addonCompatibilityDetailsHasBeenSet; }
-    inline void SetAddonCompatibilityDetails(const Aws::Vector<AddonCompatibilityDetail>& value) { m_addonCompatibilityDetailsHasBeenSet = true; m_addonCompatibilityDetails = value; }
-    inline void SetAddonCompatibilityDetails(Aws::Vector<AddonCompatibilityDetail>&& value) { m_addonCompatibilityDetailsHasBeenSet = true; m_addonCompatibilityDetails = std::move(value); }
-    inline InsightCategorySpecificSummary& WithAddonCompatibilityDetails(const Aws::Vector<AddonCompatibilityDetail>& value) { SetAddonCompatibilityDetails(value); return *this;}
-    inline InsightCategorySpecificSummary& WithAddonCompatibilityDetails(Aws::Vector<AddonCompatibilityDetail>&& value) { SetAddonCompatibilityDetails(std::move(value)); return *this;}
-    inline InsightCategorySpecificSummary& AddAddonCompatibilityDetails(const AddonCompatibilityDetail& value) { m_addonCompatibilityDetailsHasBeenSet = true; m_addonCompatibilityDetails.push_back(value); return *this; }
-    inline InsightCategorySpecificSummary& AddAddonCompatibilityDetails(AddonCompatibilityDetail&& value) { m_addonCompatibilityDetailsHasBeenSet = true; m_addonCompatibilityDetails.push_back(std::move(value)); return *this; }
+    template<typename AddonCompatibilityDetailsT = Aws::Vector<AddonCompatibilityDetail>>
+    void SetAddonCompatibilityDetails(AddonCompatibilityDetailsT&& value) { m_addonCompatibilityDetailsHasBeenSet = true; m_addonCompatibilityDetails = std::forward<AddonCompatibilityDetailsT>(value); }
+    template<typename AddonCompatibilityDetailsT = Aws::Vector<AddonCompatibilityDetail>>
+    InsightCategorySpecificSummary& WithAddonCompatibilityDetails(AddonCompatibilityDetailsT&& value) { SetAddonCompatibilityDetails(std::forward<AddonCompatibilityDetailsT>(value)); return *this;}
+    template<typename AddonCompatibilityDetailsT = AddonCompatibilityDetail>
+    InsightCategorySpecificSummary& AddAddonCompatibilityDetails(AddonCompatibilityDetailsT&& value) { m_addonCompatibilityDetailsHasBeenSet = true; m_addonCompatibilityDetails.emplace_back(std::forward<AddonCompatibilityDetailsT>(value)); return *this; }
     ///@}
   private:
 

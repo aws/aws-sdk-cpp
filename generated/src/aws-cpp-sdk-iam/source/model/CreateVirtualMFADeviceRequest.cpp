@@ -10,13 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-CreateVirtualMFADeviceRequest::CreateVirtualMFADeviceRequest() : 
-    m_pathHasBeenSet(false),
-    m_virtualMFADeviceNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateVirtualMFADeviceRequest::SerializePayload() const
 {
   Aws::StringStream ss;

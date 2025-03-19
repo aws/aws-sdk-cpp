@@ -21,7 +21,7 @@ namespace Model
   class DeleteJobTemplateRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API DeleteJobTemplateRequest();
+    AWS_IOT_API DeleteJobTemplateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The unique identifier of the job template to delete.</p>
      */
-    inline const Aws::String& GetJobTemplateId() const{ return m_jobTemplateId; }
+    inline const Aws::String& GetJobTemplateId() const { return m_jobTemplateId; }
     inline bool JobTemplateIdHasBeenSet() const { return m_jobTemplateIdHasBeenSet; }
-    inline void SetJobTemplateId(const Aws::String& value) { m_jobTemplateIdHasBeenSet = true; m_jobTemplateId = value; }
-    inline void SetJobTemplateId(Aws::String&& value) { m_jobTemplateIdHasBeenSet = true; m_jobTemplateId = std::move(value); }
-    inline void SetJobTemplateId(const char* value) { m_jobTemplateIdHasBeenSet = true; m_jobTemplateId.assign(value); }
-    inline DeleteJobTemplateRequest& WithJobTemplateId(const Aws::String& value) { SetJobTemplateId(value); return *this;}
-    inline DeleteJobTemplateRequest& WithJobTemplateId(Aws::String&& value) { SetJobTemplateId(std::move(value)); return *this;}
-    inline DeleteJobTemplateRequest& WithJobTemplateId(const char* value) { SetJobTemplateId(value); return *this;}
+    template<typename JobTemplateIdT = Aws::String>
+    void SetJobTemplateId(JobTemplateIdT&& value) { m_jobTemplateIdHasBeenSet = true; m_jobTemplateId = std::forward<JobTemplateIdT>(value); }
+    template<typename JobTemplateIdT = Aws::String>
+    DeleteJobTemplateRequest& WithJobTemplateId(JobTemplateIdT&& value) { SetJobTemplateId(std::forward<JobTemplateIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -35,7 +35,7 @@ namespace Model
   class ChangeSetSummary
   {
   public:
-    AWS_CLOUDFORMATION_API ChangeSetSummary();
+    AWS_CLOUDFORMATION_API ChangeSetSummary() = default;
     AWS_CLOUDFORMATION_API ChangeSetSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFORMATION_API ChangeSetSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,56 +47,48 @@ namespace Model
     /**
      * <p>The ID of the stack with which the change set is associated.</p>
      */
-    inline const Aws::String& GetStackId() const{ return m_stackId; }
+    inline const Aws::String& GetStackId() const { return m_stackId; }
     inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
-    inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
-    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = std::move(value); }
-    inline void SetStackId(const char* value) { m_stackIdHasBeenSet = true; m_stackId.assign(value); }
-    inline ChangeSetSummary& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
-    inline ChangeSetSummary& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
-    inline ChangeSetSummary& WithStackId(const char* value) { SetStackId(value); return *this;}
+    template<typename StackIdT = Aws::String>
+    void SetStackId(StackIdT&& value) { m_stackIdHasBeenSet = true; m_stackId = std::forward<StackIdT>(value); }
+    template<typename StackIdT = Aws::String>
+    ChangeSetSummary& WithStackId(StackIdT&& value) { SetStackId(std::forward<StackIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the stack with which the change set is associated.</p>
      */
-    inline const Aws::String& GetStackName() const{ return m_stackName; }
+    inline const Aws::String& GetStackName() const { return m_stackName; }
     inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
-    inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
-    inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
-    inline void SetStackName(const char* value) { m_stackNameHasBeenSet = true; m_stackName.assign(value); }
-    inline ChangeSetSummary& WithStackName(const Aws::String& value) { SetStackName(value); return *this;}
-    inline ChangeSetSummary& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
-    inline ChangeSetSummary& WithStackName(const char* value) { SetStackName(value); return *this;}
+    template<typename StackNameT = Aws::String>
+    void SetStackName(StackNameT&& value) { m_stackNameHasBeenSet = true; m_stackName = std::forward<StackNameT>(value); }
+    template<typename StackNameT = Aws::String>
+    ChangeSetSummary& WithStackName(StackNameT&& value) { SetStackName(std::forward<StackNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the change set.</p>
      */
-    inline const Aws::String& GetChangeSetId() const{ return m_changeSetId; }
+    inline const Aws::String& GetChangeSetId() const { return m_changeSetId; }
     inline bool ChangeSetIdHasBeenSet() const { return m_changeSetIdHasBeenSet; }
-    inline void SetChangeSetId(const Aws::String& value) { m_changeSetIdHasBeenSet = true; m_changeSetId = value; }
-    inline void SetChangeSetId(Aws::String&& value) { m_changeSetIdHasBeenSet = true; m_changeSetId = std::move(value); }
-    inline void SetChangeSetId(const char* value) { m_changeSetIdHasBeenSet = true; m_changeSetId.assign(value); }
-    inline ChangeSetSummary& WithChangeSetId(const Aws::String& value) { SetChangeSetId(value); return *this;}
-    inline ChangeSetSummary& WithChangeSetId(Aws::String&& value) { SetChangeSetId(std::move(value)); return *this;}
-    inline ChangeSetSummary& WithChangeSetId(const char* value) { SetChangeSetId(value); return *this;}
+    template<typename ChangeSetIdT = Aws::String>
+    void SetChangeSetId(ChangeSetIdT&& value) { m_changeSetIdHasBeenSet = true; m_changeSetId = std::forward<ChangeSetIdT>(value); }
+    template<typename ChangeSetIdT = Aws::String>
+    ChangeSetSummary& WithChangeSetId(ChangeSetIdT&& value) { SetChangeSetId(std::forward<ChangeSetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the change set.</p>
      */
-    inline const Aws::String& GetChangeSetName() const{ return m_changeSetName; }
+    inline const Aws::String& GetChangeSetName() const { return m_changeSetName; }
     inline bool ChangeSetNameHasBeenSet() const { return m_changeSetNameHasBeenSet; }
-    inline void SetChangeSetName(const Aws::String& value) { m_changeSetNameHasBeenSet = true; m_changeSetName = value; }
-    inline void SetChangeSetName(Aws::String&& value) { m_changeSetNameHasBeenSet = true; m_changeSetName = std::move(value); }
-    inline void SetChangeSetName(const char* value) { m_changeSetNameHasBeenSet = true; m_changeSetName.assign(value); }
-    inline ChangeSetSummary& WithChangeSetName(const Aws::String& value) { SetChangeSetName(value); return *this;}
-    inline ChangeSetSummary& WithChangeSetName(Aws::String&& value) { SetChangeSetName(std::move(value)); return *this;}
-    inline ChangeSetSummary& WithChangeSetName(const char* value) { SetChangeSetName(value); return *this;}
+    template<typename ChangeSetNameT = Aws::String>
+    void SetChangeSetName(ChangeSetNameT&& value) { m_changeSetNameHasBeenSet = true; m_changeSetName = std::forward<ChangeSetNameT>(value); }
+    template<typename ChangeSetNameT = Aws::String>
+    ChangeSetSummary& WithChangeSetName(ChangeSetNameT&& value) { SetChangeSetName(std::forward<ChangeSetNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,12 +99,10 @@ namespace Model
      * CloudFormation is still creating it or in an <code>OBSOLETE</code> state because
      * the stack was already updated.</p>
      */
-    inline const ExecutionStatus& GetExecutionStatus() const{ return m_executionStatus; }
+    inline ExecutionStatus GetExecutionStatus() const { return m_executionStatus; }
     inline bool ExecutionStatusHasBeenSet() const { return m_executionStatusHasBeenSet; }
-    inline void SetExecutionStatus(const ExecutionStatus& value) { m_executionStatusHasBeenSet = true; m_executionStatus = value; }
-    inline void SetExecutionStatus(ExecutionStatus&& value) { m_executionStatusHasBeenSet = true; m_executionStatus = std::move(value); }
-    inline ChangeSetSummary& WithExecutionStatus(const ExecutionStatus& value) { SetExecutionStatus(value); return *this;}
-    inline ChangeSetSummary& WithExecutionStatus(ExecutionStatus&& value) { SetExecutionStatus(std::move(value)); return *this;}
+    inline void SetExecutionStatus(ExecutionStatus value) { m_executionStatusHasBeenSet = true; m_executionStatus = value; }
+    inline ChangeSetSummary& WithExecutionStatus(ExecutionStatus value) { SetExecutionStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -120,12 +110,10 @@ namespace Model
      * <p>The state of the change set, such as <code>CREATE_PENDING</code>,
      * <code>CREATE_COMPLETE</code>, or <code>FAILED</code>.</p>
      */
-    inline const ChangeSetStatus& GetStatus() const{ return m_status; }
+    inline ChangeSetStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ChangeSetStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ChangeSetStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ChangeSetSummary& WithStatus(const ChangeSetStatus& value) { SetStatus(value); return *this;}
-    inline ChangeSetSummary& WithStatus(ChangeSetStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ChangeSetStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ChangeSetSummary& WithStatus(ChangeSetStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -133,40 +121,36 @@ namespace Model
      * <p>A description of the change set's status. For example, if your change set is
      * in the <code>FAILED</code> state, CloudFormation shows the error message.</p>
      */
-    inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
+    inline const Aws::String& GetStatusReason() const { return m_statusReason; }
     inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
-    inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
-    inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
-    inline void SetStatusReason(const char* value) { m_statusReasonHasBeenSet = true; m_statusReason.assign(value); }
-    inline ChangeSetSummary& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
-    inline ChangeSetSummary& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
-    inline ChangeSetSummary& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
+    template<typename StatusReasonT = Aws::String>
+    void SetStatusReason(StatusReasonT&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::forward<StatusReasonT>(value); }
+    template<typename StatusReasonT = Aws::String>
+    ChangeSetSummary& WithStatusReason(StatusReasonT&& value) { SetStatusReason(std::forward<StatusReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The start time when the change set was created, in UTC.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline ChangeSetSummary& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline ChangeSetSummary& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    ChangeSetSummary& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Descriptive information about the change set.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline ChangeSetSummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ChangeSetSummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ChangeSetSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ChangeSetSummary& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -174,7 +158,7 @@ namespace Model
      * <p>Specifies the current setting of <code>IncludeNestedStacks</code> for the
      * change set.</p>
      */
-    inline bool GetIncludeNestedStacks() const{ return m_includeNestedStacks; }
+    inline bool GetIncludeNestedStacks() const { return m_includeNestedStacks; }
     inline bool IncludeNestedStacksHasBeenSet() const { return m_includeNestedStacksHasBeenSet; }
     inline void SetIncludeNestedStacks(bool value) { m_includeNestedStacksHasBeenSet = true; m_includeNestedStacks = value; }
     inline ChangeSetSummary& WithIncludeNestedStacks(bool value) { SetIncludeNestedStacks(value); return *this;}
@@ -184,35 +168,31 @@ namespace Model
     /**
      * <p>The parent change set ID.</p>
      */
-    inline const Aws::String& GetParentChangeSetId() const{ return m_parentChangeSetId; }
+    inline const Aws::String& GetParentChangeSetId() const { return m_parentChangeSetId; }
     inline bool ParentChangeSetIdHasBeenSet() const { return m_parentChangeSetIdHasBeenSet; }
-    inline void SetParentChangeSetId(const Aws::String& value) { m_parentChangeSetIdHasBeenSet = true; m_parentChangeSetId = value; }
-    inline void SetParentChangeSetId(Aws::String&& value) { m_parentChangeSetIdHasBeenSet = true; m_parentChangeSetId = std::move(value); }
-    inline void SetParentChangeSetId(const char* value) { m_parentChangeSetIdHasBeenSet = true; m_parentChangeSetId.assign(value); }
-    inline ChangeSetSummary& WithParentChangeSetId(const Aws::String& value) { SetParentChangeSetId(value); return *this;}
-    inline ChangeSetSummary& WithParentChangeSetId(Aws::String&& value) { SetParentChangeSetId(std::move(value)); return *this;}
-    inline ChangeSetSummary& WithParentChangeSetId(const char* value) { SetParentChangeSetId(value); return *this;}
+    template<typename ParentChangeSetIdT = Aws::String>
+    void SetParentChangeSetId(ParentChangeSetIdT&& value) { m_parentChangeSetIdHasBeenSet = true; m_parentChangeSetId = std::forward<ParentChangeSetIdT>(value); }
+    template<typename ParentChangeSetIdT = Aws::String>
+    ChangeSetSummary& WithParentChangeSetId(ParentChangeSetIdT&& value) { SetParentChangeSetId(std::forward<ParentChangeSetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The root change set ID.</p>
      */
-    inline const Aws::String& GetRootChangeSetId() const{ return m_rootChangeSetId; }
+    inline const Aws::String& GetRootChangeSetId() const { return m_rootChangeSetId; }
     inline bool RootChangeSetIdHasBeenSet() const { return m_rootChangeSetIdHasBeenSet; }
-    inline void SetRootChangeSetId(const Aws::String& value) { m_rootChangeSetIdHasBeenSet = true; m_rootChangeSetId = value; }
-    inline void SetRootChangeSetId(Aws::String&& value) { m_rootChangeSetIdHasBeenSet = true; m_rootChangeSetId = std::move(value); }
-    inline void SetRootChangeSetId(const char* value) { m_rootChangeSetIdHasBeenSet = true; m_rootChangeSetId.assign(value); }
-    inline ChangeSetSummary& WithRootChangeSetId(const Aws::String& value) { SetRootChangeSetId(value); return *this;}
-    inline ChangeSetSummary& WithRootChangeSetId(Aws::String&& value) { SetRootChangeSetId(std::move(value)); return *this;}
-    inline ChangeSetSummary& WithRootChangeSetId(const char* value) { SetRootChangeSetId(value); return *this;}
+    template<typename RootChangeSetIdT = Aws::String>
+    void SetRootChangeSetId(RootChangeSetIdT&& value) { m_rootChangeSetIdHasBeenSet = true; m_rootChangeSetId = std::forward<RootChangeSetIdT>(value); }
+    template<typename RootChangeSetIdT = Aws::String>
+    ChangeSetSummary& WithRootChangeSetId(RootChangeSetIdT&& value) { SetRootChangeSetId(std::forward<RootChangeSetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates if the change set imports resources that already exist.</p>
      */
-    inline bool GetImportExistingResources() const{ return m_importExistingResources; }
+    inline bool GetImportExistingResources() const { return m_importExistingResources; }
     inline bool ImportExistingResourcesHasBeenSet() const { return m_importExistingResourcesHasBeenSet; }
     inline void SetImportExistingResources(bool value) { m_importExistingResourcesHasBeenSet = true; m_importExistingResources = value; }
     inline ChangeSetSummary& WithImportExistingResources(bool value) { SetImportExistingResources(value); return *this;}
@@ -231,22 +211,22 @@ namespace Model
     Aws::String m_changeSetName;
     bool m_changeSetNameHasBeenSet = false;
 
-    ExecutionStatus m_executionStatus;
+    ExecutionStatus m_executionStatus{ExecutionStatus::NOT_SET};
     bool m_executionStatusHasBeenSet = false;
 
-    ChangeSetStatus m_status;
+    ChangeSetStatus m_status{ChangeSetStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;
     bool m_statusReasonHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    bool m_includeNestedStacks;
+    bool m_includeNestedStacks{false};
     bool m_includeNestedStacksHasBeenSet = false;
 
     Aws::String m_parentChangeSetId;
@@ -255,7 +235,7 @@ namespace Model
     Aws::String m_rootChangeSetId;
     bool m_rootChangeSetIdHasBeenSet = false;
 
-    bool m_importExistingResources;
+    bool m_importExistingResources{false};
     bool m_importExistingResourcesHasBeenSet = false;
   };
 

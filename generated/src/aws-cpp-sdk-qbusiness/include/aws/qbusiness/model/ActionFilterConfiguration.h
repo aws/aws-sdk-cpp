@@ -32,7 +32,7 @@ namespace Model
   class ActionFilterConfiguration
   {
   public:
-    AWS_QBUSINESS_API ActionFilterConfiguration();
+    AWS_QBUSINESS_API ActionFilterConfiguration() = default;
     AWS_QBUSINESS_API ActionFilterConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API ActionFilterConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,12 +40,12 @@ namespace Model
 
     ///@{
     
-    inline const AttributeFilter& GetDocumentAttributeFilter() const{ return m_documentAttributeFilter; }
+    inline const AttributeFilter& GetDocumentAttributeFilter() const { return m_documentAttributeFilter; }
     inline bool DocumentAttributeFilterHasBeenSet() const { return m_documentAttributeFilterHasBeenSet; }
-    inline void SetDocumentAttributeFilter(const AttributeFilter& value) { m_documentAttributeFilterHasBeenSet = true; m_documentAttributeFilter = value; }
-    inline void SetDocumentAttributeFilter(AttributeFilter&& value) { m_documentAttributeFilterHasBeenSet = true; m_documentAttributeFilter = std::move(value); }
-    inline ActionFilterConfiguration& WithDocumentAttributeFilter(const AttributeFilter& value) { SetDocumentAttributeFilter(value); return *this;}
-    inline ActionFilterConfiguration& WithDocumentAttributeFilter(AttributeFilter&& value) { SetDocumentAttributeFilter(std::move(value)); return *this;}
+    template<typename DocumentAttributeFilterT = AttributeFilter>
+    void SetDocumentAttributeFilter(DocumentAttributeFilterT&& value) { m_documentAttributeFilterHasBeenSet = true; m_documentAttributeFilter = std::forward<DocumentAttributeFilterT>(value); }
+    template<typename DocumentAttributeFilterT = AttributeFilter>
+    ActionFilterConfiguration& WithDocumentAttributeFilter(DocumentAttributeFilterT&& value) { SetDocumentAttributeFilter(std::forward<DocumentAttributeFilterT>(value)); return *this;}
     ///@}
   private:
 

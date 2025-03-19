@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListBackupsResult::ListBackupsResult()
-{
-}
-
 ListBackupsResult::ListBackupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ ListBackupsResult& ListBackupsResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_backupSummaries.push_back(backupSummariesJsonList[backupSummariesIndex].AsObject());
     }
+    m_backupSummariesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastEvaluatedBackupArn"))
   {
     m_lastEvaluatedBackupArn = jsonValue.GetString("LastEvaluatedBackupArn");
-
+    m_lastEvaluatedBackupArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

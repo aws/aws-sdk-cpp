@@ -10,14 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-DescribeCacheSecurityGroupsRequest::DescribeCacheSecurityGroupsRequest() : 
-    m_cacheSecurityGroupNameHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String DescribeCacheSecurityGroupsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -27,7 +27,7 @@ namespace Model
   class CreateNetworkRequest : public ManagedBlockchainRequest
   {
   public:
-    AWS_MANAGEDBLOCKCHAIN_API CreateNetworkRequest();
+    AWS_MANAGEDBLOCKCHAIN_API CreateNetworkRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,68 +46,58 @@ namespace Model
      * using an HTTP client. It is generated automatically if you use an Amazon Web
      * Services SDK or the Amazon Web Services CLI. </p>
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline CreateNetworkRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline CreateNetworkRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline CreateNetworkRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    CreateNetworkRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the network.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateNetworkRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateNetworkRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateNetworkRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateNetworkRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An optional description for the network.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateNetworkRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateNetworkRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateNetworkRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateNetworkRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The blockchain framework that the network uses.</p>
      */
-    inline const Framework& GetFramework() const{ return m_framework; }
+    inline Framework GetFramework() const { return m_framework; }
     inline bool FrameworkHasBeenSet() const { return m_frameworkHasBeenSet; }
-    inline void SetFramework(const Framework& value) { m_frameworkHasBeenSet = true; m_framework = value; }
-    inline void SetFramework(Framework&& value) { m_frameworkHasBeenSet = true; m_framework = std::move(value); }
-    inline CreateNetworkRequest& WithFramework(const Framework& value) { SetFramework(value); return *this;}
-    inline CreateNetworkRequest& WithFramework(Framework&& value) { SetFramework(std::move(value)); return *this;}
+    inline void SetFramework(Framework value) { m_frameworkHasBeenSet = true; m_framework = value; }
+    inline CreateNetworkRequest& WithFramework(Framework value) { SetFramework(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the blockchain framework that the network uses.</p>
      */
-    inline const Aws::String& GetFrameworkVersion() const{ return m_frameworkVersion; }
+    inline const Aws::String& GetFrameworkVersion() const { return m_frameworkVersion; }
     inline bool FrameworkVersionHasBeenSet() const { return m_frameworkVersionHasBeenSet; }
-    inline void SetFrameworkVersion(const Aws::String& value) { m_frameworkVersionHasBeenSet = true; m_frameworkVersion = value; }
-    inline void SetFrameworkVersion(Aws::String&& value) { m_frameworkVersionHasBeenSet = true; m_frameworkVersion = std::move(value); }
-    inline void SetFrameworkVersion(const char* value) { m_frameworkVersionHasBeenSet = true; m_frameworkVersion.assign(value); }
-    inline CreateNetworkRequest& WithFrameworkVersion(const Aws::String& value) { SetFrameworkVersion(value); return *this;}
-    inline CreateNetworkRequest& WithFrameworkVersion(Aws::String&& value) { SetFrameworkVersion(std::move(value)); return *this;}
-    inline CreateNetworkRequest& WithFrameworkVersion(const char* value) { SetFrameworkVersion(value); return *this;}
+    template<typename FrameworkVersionT = Aws::String>
+    void SetFrameworkVersion(FrameworkVersionT&& value) { m_frameworkVersionHasBeenSet = true; m_frameworkVersion = std::forward<FrameworkVersionT>(value); }
+    template<typename FrameworkVersionT = Aws::String>
+    CreateNetworkRequest& WithFrameworkVersion(FrameworkVersionT&& value) { SetFrameworkVersion(std::forward<FrameworkVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,12 +105,12 @@ namespace Model
      * <p> Configuration properties of the blockchain framework relevant to the network
      * configuration. </p>
      */
-    inline const NetworkFrameworkConfiguration& GetFrameworkConfiguration() const{ return m_frameworkConfiguration; }
+    inline const NetworkFrameworkConfiguration& GetFrameworkConfiguration() const { return m_frameworkConfiguration; }
     inline bool FrameworkConfigurationHasBeenSet() const { return m_frameworkConfigurationHasBeenSet; }
-    inline void SetFrameworkConfiguration(const NetworkFrameworkConfiguration& value) { m_frameworkConfigurationHasBeenSet = true; m_frameworkConfiguration = value; }
-    inline void SetFrameworkConfiguration(NetworkFrameworkConfiguration&& value) { m_frameworkConfigurationHasBeenSet = true; m_frameworkConfiguration = std::move(value); }
-    inline CreateNetworkRequest& WithFrameworkConfiguration(const NetworkFrameworkConfiguration& value) { SetFrameworkConfiguration(value); return *this;}
-    inline CreateNetworkRequest& WithFrameworkConfiguration(NetworkFrameworkConfiguration&& value) { SetFrameworkConfiguration(std::move(value)); return *this;}
+    template<typename FrameworkConfigurationT = NetworkFrameworkConfiguration>
+    void SetFrameworkConfiguration(FrameworkConfigurationT&& value) { m_frameworkConfigurationHasBeenSet = true; m_frameworkConfiguration = std::forward<FrameworkConfigurationT>(value); }
+    template<typename FrameworkConfigurationT = NetworkFrameworkConfiguration>
+    CreateNetworkRequest& WithFrameworkConfiguration(FrameworkConfigurationT&& value) { SetFrameworkConfiguration(std::forward<FrameworkConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,24 +118,24 @@ namespace Model
      * <p> The voting rules used by the network to determine if a proposal is approved.
      * </p>
      */
-    inline const VotingPolicy& GetVotingPolicy() const{ return m_votingPolicy; }
+    inline const VotingPolicy& GetVotingPolicy() const { return m_votingPolicy; }
     inline bool VotingPolicyHasBeenSet() const { return m_votingPolicyHasBeenSet; }
-    inline void SetVotingPolicy(const VotingPolicy& value) { m_votingPolicyHasBeenSet = true; m_votingPolicy = value; }
-    inline void SetVotingPolicy(VotingPolicy&& value) { m_votingPolicyHasBeenSet = true; m_votingPolicy = std::move(value); }
-    inline CreateNetworkRequest& WithVotingPolicy(const VotingPolicy& value) { SetVotingPolicy(value); return *this;}
-    inline CreateNetworkRequest& WithVotingPolicy(VotingPolicy&& value) { SetVotingPolicy(std::move(value)); return *this;}
+    template<typename VotingPolicyT = VotingPolicy>
+    void SetVotingPolicy(VotingPolicyT&& value) { m_votingPolicyHasBeenSet = true; m_votingPolicy = std::forward<VotingPolicyT>(value); }
+    template<typename VotingPolicyT = VotingPolicy>
+    CreateNetworkRequest& WithVotingPolicy(VotingPolicyT&& value) { SetVotingPolicy(std::forward<VotingPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Configuration properties for the first member within the network.</p>
      */
-    inline const MemberConfiguration& GetMemberConfiguration() const{ return m_memberConfiguration; }
+    inline const MemberConfiguration& GetMemberConfiguration() const { return m_memberConfiguration; }
     inline bool MemberConfigurationHasBeenSet() const { return m_memberConfigurationHasBeenSet; }
-    inline void SetMemberConfiguration(const MemberConfiguration& value) { m_memberConfigurationHasBeenSet = true; m_memberConfiguration = value; }
-    inline void SetMemberConfiguration(MemberConfiguration&& value) { m_memberConfigurationHasBeenSet = true; m_memberConfiguration = std::move(value); }
-    inline CreateNetworkRequest& WithMemberConfiguration(const MemberConfiguration& value) { SetMemberConfiguration(value); return *this;}
-    inline CreateNetworkRequest& WithMemberConfiguration(MemberConfiguration&& value) { SetMemberConfiguration(std::move(value)); return *this;}
+    template<typename MemberConfigurationT = MemberConfiguration>
+    void SetMemberConfiguration(MemberConfigurationT&& value) { m_memberConfigurationHasBeenSet = true; m_memberConfiguration = std::forward<MemberConfigurationT>(value); }
+    template<typename MemberConfigurationT = MemberConfiguration>
+    CreateNetworkRequest& WithMemberConfiguration(MemberConfigurationT&& value) { SetMemberConfiguration(std::forward<MemberConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -161,19 +151,16 @@ namespace Model
      * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
      * Guide</i>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateNetworkRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateNetworkRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateNetworkRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateNetworkRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateNetworkRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateNetworkRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateNetworkRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateNetworkRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateNetworkRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateNetworkRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateNetworkRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 
@@ -186,7 +173,7 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    Framework m_framework;
+    Framework m_framework{Framework::NOT_SET};
     bool m_frameworkHasBeenSet = false;
 
     Aws::String m_frameworkVersion;

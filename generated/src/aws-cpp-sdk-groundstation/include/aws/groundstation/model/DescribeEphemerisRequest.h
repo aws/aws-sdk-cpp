@@ -21,7 +21,7 @@ namespace Model
   class DescribeEphemerisRequest : public GroundStationRequest
   {
   public:
-    AWS_GROUNDSTATION_API DescribeEphemerisRequest();
+    AWS_GROUNDSTATION_API DescribeEphemerisRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The AWS Ground Station ephemeris ID.</p>
      */
-    inline const Aws::String& GetEphemerisId() const{ return m_ephemerisId; }
+    inline const Aws::String& GetEphemerisId() const { return m_ephemerisId; }
     inline bool EphemerisIdHasBeenSet() const { return m_ephemerisIdHasBeenSet; }
-    inline void SetEphemerisId(const Aws::String& value) { m_ephemerisIdHasBeenSet = true; m_ephemerisId = value; }
-    inline void SetEphemerisId(Aws::String&& value) { m_ephemerisIdHasBeenSet = true; m_ephemerisId = std::move(value); }
-    inline void SetEphemerisId(const char* value) { m_ephemerisIdHasBeenSet = true; m_ephemerisId.assign(value); }
-    inline DescribeEphemerisRequest& WithEphemerisId(const Aws::String& value) { SetEphemerisId(value); return *this;}
-    inline DescribeEphemerisRequest& WithEphemerisId(Aws::String&& value) { SetEphemerisId(std::move(value)); return *this;}
-    inline DescribeEphemerisRequest& WithEphemerisId(const char* value) { SetEphemerisId(value); return *this;}
+    template<typename EphemerisIdT = Aws::String>
+    void SetEphemerisId(EphemerisIdT&& value) { m_ephemerisIdHasBeenSet = true; m_ephemerisId = std::forward<EphemerisIdT>(value); }
+    template<typename EphemerisIdT = Aws::String>
+    DescribeEphemerisRequest& WithEphemerisId(EphemerisIdT&& value) { SetEphemerisId(std::forward<EphemerisIdT>(value)); return *this;}
     ///@}
   private:
 

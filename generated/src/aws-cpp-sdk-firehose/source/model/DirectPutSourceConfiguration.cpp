@@ -18,14 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-DirectPutSourceConfiguration::DirectPutSourceConfiguration() : 
-    m_throughputHintInMBs(0),
-    m_throughputHintInMBsHasBeenSet(false)
-{
-}
-
 DirectPutSourceConfiguration::DirectPutSourceConfiguration(JsonView jsonValue)
-  : DirectPutSourceConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ DirectPutSourceConfiguration& DirectPutSourceConfiguration::operator =(JsonView 
   if(jsonValue.ValueExists("ThroughputHintInMBs"))
   {
     m_throughputHintInMBs = jsonValue.GetInteger("ThroughputHintInMBs");
-
     m_throughputHintInMBsHasBeenSet = true;
   }
-
   return *this;
 }
 

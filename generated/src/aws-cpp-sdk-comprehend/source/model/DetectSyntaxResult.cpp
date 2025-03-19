@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DetectSyntaxResult::DetectSyntaxResult()
-{
-}
-
 DetectSyntaxResult::DetectSyntaxResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ DetectSyntaxResult& DetectSyntaxResult::operator =(const Aws::AmazonWebServiceRe
     {
       m_syntaxTokens.push_back(syntaxTokensJsonList[syntaxTokensIndex].AsObject());
     }
+    m_syntaxTokensHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

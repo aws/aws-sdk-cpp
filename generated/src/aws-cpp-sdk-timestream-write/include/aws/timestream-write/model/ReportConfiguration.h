@@ -32,7 +32,7 @@ namespace Model
   class ReportConfiguration
   {
   public:
-    AWS_TIMESTREAMWRITE_API ReportConfiguration();
+    AWS_TIMESTREAMWRITE_API ReportConfiguration() = default;
     AWS_TIMESTREAMWRITE_API ReportConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMWRITE_API ReportConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMWRITE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>Configuration of an S3 location to write error reports and events for a batch
      * load.</p>
      */
-    inline const ReportS3Configuration& GetReportS3Configuration() const{ return m_reportS3Configuration; }
+    inline const ReportS3Configuration& GetReportS3Configuration() const { return m_reportS3Configuration; }
     inline bool ReportS3ConfigurationHasBeenSet() const { return m_reportS3ConfigurationHasBeenSet; }
-    inline void SetReportS3Configuration(const ReportS3Configuration& value) { m_reportS3ConfigurationHasBeenSet = true; m_reportS3Configuration = value; }
-    inline void SetReportS3Configuration(ReportS3Configuration&& value) { m_reportS3ConfigurationHasBeenSet = true; m_reportS3Configuration = std::move(value); }
-    inline ReportConfiguration& WithReportS3Configuration(const ReportS3Configuration& value) { SetReportS3Configuration(value); return *this;}
-    inline ReportConfiguration& WithReportS3Configuration(ReportS3Configuration&& value) { SetReportS3Configuration(std::move(value)); return *this;}
+    template<typename ReportS3ConfigurationT = ReportS3Configuration>
+    void SetReportS3Configuration(ReportS3ConfigurationT&& value) { m_reportS3ConfigurationHasBeenSet = true; m_reportS3Configuration = std::forward<ReportS3ConfigurationT>(value); }
+    template<typename ReportS3ConfigurationT = ReportS3Configuration>
+    ReportConfiguration& WithReportS3Configuration(ReportS3ConfigurationT&& value) { SetReportS3Configuration(std::forward<ReportS3ConfigurationT>(value)); return *this;}
     ///@}
   private:
 

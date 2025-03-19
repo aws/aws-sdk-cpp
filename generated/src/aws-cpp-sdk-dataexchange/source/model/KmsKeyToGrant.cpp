@@ -18,13 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-KmsKeyToGrant::KmsKeyToGrant() : 
-    m_kmsKeyArnHasBeenSet(false)
-{
-}
-
 KmsKeyToGrant::KmsKeyToGrant(JsonView jsonValue)
-  : KmsKeyToGrant()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ KmsKeyToGrant& KmsKeyToGrant::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("KmsKeyArn"))
   {
     m_kmsKeyArn = jsonValue.GetString("KmsKeyArn");
-
     m_kmsKeyArnHasBeenSet = true;
   }
-
   return *this;
 }
 

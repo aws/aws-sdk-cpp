@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SearchTransitGatewayRoutesResponse::SearchTransitGatewayRoutesResponse() : 
-    m_additionalRoutesAvailable(false)
-{
-}
-
 SearchTransitGatewayRoutesResponse::SearchTransitGatewayRoutesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : SearchTransitGatewayRoutesResponse()
 {
   *this = result;
 }
@@ -44,17 +38,20 @@ SearchTransitGatewayRoutesResponse& SearchTransitGatewayRoutesResponse::operator
     if(!routesNode.IsNull())
     {
       XmlNode routesMember = routesNode.FirstChild("item");
+      m_routesHasBeenSet = !routesMember.IsNull();
       while(!routesMember.IsNull())
       {
         m_routes.push_back(routesMember);
         routesMember = routesMember.NextNode("item");
       }
 
+      m_routesHasBeenSet = true;
     }
     XmlNode additionalRoutesAvailableNode = resultNode.FirstChild("additionalRoutesAvailable");
     if(!additionalRoutesAvailableNode.IsNull())
     {
       m_additionalRoutesAvailable = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(additionalRoutesAvailableNode.GetText()).c_str()).c_str());
+      m_additionalRoutesAvailableHasBeenSet = true;
     }
   }
 
@@ -63,6 +60,7 @@ SearchTransitGatewayRoutesResponse& SearchTransitGatewayRoutesResponse::operator
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::SearchTransitGatewayRoutesResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

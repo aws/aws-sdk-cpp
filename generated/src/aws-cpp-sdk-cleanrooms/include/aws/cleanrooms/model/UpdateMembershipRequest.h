@@ -25,7 +25,7 @@ namespace Model
   class UpdateMembershipRequest : public CleanRoomsRequest
   {
   public:
-    AWS_CLEANROOMS_API UpdateMembershipRequest();
+    AWS_CLEANROOMS_API UpdateMembershipRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The unique identifier of the membership.</p>
      */
-    inline const Aws::String& GetMembershipIdentifier() const{ return m_membershipIdentifier; }
+    inline const Aws::String& GetMembershipIdentifier() const { return m_membershipIdentifier; }
     inline bool MembershipIdentifierHasBeenSet() const { return m_membershipIdentifierHasBeenSet; }
-    inline void SetMembershipIdentifier(const Aws::String& value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier = value; }
-    inline void SetMembershipIdentifier(Aws::String&& value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier = std::move(value); }
-    inline void SetMembershipIdentifier(const char* value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier.assign(value); }
-    inline UpdateMembershipRequest& WithMembershipIdentifier(const Aws::String& value) { SetMembershipIdentifier(value); return *this;}
-    inline UpdateMembershipRequest& WithMembershipIdentifier(Aws::String&& value) { SetMembershipIdentifier(std::move(value)); return *this;}
-    inline UpdateMembershipRequest& WithMembershipIdentifier(const char* value) { SetMembershipIdentifier(value); return *this;}
+    template<typename MembershipIdentifierT = Aws::String>
+    void SetMembershipIdentifier(MembershipIdentifierT&& value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier = std::forward<MembershipIdentifierT>(value); }
+    template<typename MembershipIdentifierT = Aws::String>
+    UpdateMembershipRequest& WithMembershipIdentifier(MembershipIdentifierT&& value) { SetMembershipIdentifier(std::forward<MembershipIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +55,10 @@ namespace Model
      * queries run within this collaboration and those logs can be viewed in Amazon
      * CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
      */
-    inline const MembershipQueryLogStatus& GetQueryLogStatus() const{ return m_queryLogStatus; }
+    inline MembershipQueryLogStatus GetQueryLogStatus() const { return m_queryLogStatus; }
     inline bool QueryLogStatusHasBeenSet() const { return m_queryLogStatusHasBeenSet; }
-    inline void SetQueryLogStatus(const MembershipQueryLogStatus& value) { m_queryLogStatusHasBeenSet = true; m_queryLogStatus = value; }
-    inline void SetQueryLogStatus(MembershipQueryLogStatus&& value) { m_queryLogStatusHasBeenSet = true; m_queryLogStatus = std::move(value); }
-    inline UpdateMembershipRequest& WithQueryLogStatus(const MembershipQueryLogStatus& value) { SetQueryLogStatus(value); return *this;}
-    inline UpdateMembershipRequest& WithQueryLogStatus(MembershipQueryLogStatus&& value) { SetQueryLogStatus(std::move(value)); return *this;}
+    inline void SetQueryLogStatus(MembershipQueryLogStatus value) { m_queryLogStatusHasBeenSet = true; m_queryLogStatus = value; }
+    inline UpdateMembershipRequest& WithQueryLogStatus(MembershipQueryLogStatus value) { SetQueryLogStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +68,10 @@ namespace Model
      * jobs run within this collaboration and those logs can be viewed in Amazon
      * CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
      */
-    inline const MembershipJobLogStatus& GetJobLogStatus() const{ return m_jobLogStatus; }
+    inline MembershipJobLogStatus GetJobLogStatus() const { return m_jobLogStatus; }
     inline bool JobLogStatusHasBeenSet() const { return m_jobLogStatusHasBeenSet; }
-    inline void SetJobLogStatus(const MembershipJobLogStatus& value) { m_jobLogStatusHasBeenSet = true; m_jobLogStatus = value; }
-    inline void SetJobLogStatus(MembershipJobLogStatus&& value) { m_jobLogStatusHasBeenSet = true; m_jobLogStatus = std::move(value); }
-    inline UpdateMembershipRequest& WithJobLogStatus(const MembershipJobLogStatus& value) { SetJobLogStatus(value); return *this;}
-    inline UpdateMembershipRequest& WithJobLogStatus(MembershipJobLogStatus&& value) { SetJobLogStatus(std::move(value)); return *this;}
+    inline void SetJobLogStatus(MembershipJobLogStatus value) { m_jobLogStatusHasBeenSet = true; m_jobLogStatus = value; }
+    inline UpdateMembershipRequest& WithJobLogStatus(MembershipJobLogStatus value) { SetJobLogStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -85,34 +79,34 @@ namespace Model
      * <p>The default protected query result configuration as specified by the member
      * who can receive results.</p>
      */
-    inline const MembershipProtectedQueryResultConfiguration& GetDefaultResultConfiguration() const{ return m_defaultResultConfiguration; }
+    inline const MembershipProtectedQueryResultConfiguration& GetDefaultResultConfiguration() const { return m_defaultResultConfiguration; }
     inline bool DefaultResultConfigurationHasBeenSet() const { return m_defaultResultConfigurationHasBeenSet; }
-    inline void SetDefaultResultConfiguration(const MembershipProtectedQueryResultConfiguration& value) { m_defaultResultConfigurationHasBeenSet = true; m_defaultResultConfiguration = value; }
-    inline void SetDefaultResultConfiguration(MembershipProtectedQueryResultConfiguration&& value) { m_defaultResultConfigurationHasBeenSet = true; m_defaultResultConfiguration = std::move(value); }
-    inline UpdateMembershipRequest& WithDefaultResultConfiguration(const MembershipProtectedQueryResultConfiguration& value) { SetDefaultResultConfiguration(value); return *this;}
-    inline UpdateMembershipRequest& WithDefaultResultConfiguration(MembershipProtectedQueryResultConfiguration&& value) { SetDefaultResultConfiguration(std::move(value)); return *this;}
+    template<typename DefaultResultConfigurationT = MembershipProtectedQueryResultConfiguration>
+    void SetDefaultResultConfiguration(DefaultResultConfigurationT&& value) { m_defaultResultConfigurationHasBeenSet = true; m_defaultResultConfiguration = std::forward<DefaultResultConfigurationT>(value); }
+    template<typename DefaultResultConfigurationT = MembershipProtectedQueryResultConfiguration>
+    UpdateMembershipRequest& WithDefaultResultConfiguration(DefaultResultConfigurationT&& value) { SetDefaultResultConfiguration(std::forward<DefaultResultConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The default job result configuration.</p>
      */
-    inline const MembershipProtectedJobResultConfiguration& GetDefaultJobResultConfiguration() const{ return m_defaultJobResultConfiguration; }
+    inline const MembershipProtectedJobResultConfiguration& GetDefaultJobResultConfiguration() const { return m_defaultJobResultConfiguration; }
     inline bool DefaultJobResultConfigurationHasBeenSet() const { return m_defaultJobResultConfigurationHasBeenSet; }
-    inline void SetDefaultJobResultConfiguration(const MembershipProtectedJobResultConfiguration& value) { m_defaultJobResultConfigurationHasBeenSet = true; m_defaultJobResultConfiguration = value; }
-    inline void SetDefaultJobResultConfiguration(MembershipProtectedJobResultConfiguration&& value) { m_defaultJobResultConfigurationHasBeenSet = true; m_defaultJobResultConfiguration = std::move(value); }
-    inline UpdateMembershipRequest& WithDefaultJobResultConfiguration(const MembershipProtectedJobResultConfiguration& value) { SetDefaultJobResultConfiguration(value); return *this;}
-    inline UpdateMembershipRequest& WithDefaultJobResultConfiguration(MembershipProtectedJobResultConfiguration&& value) { SetDefaultJobResultConfiguration(std::move(value)); return *this;}
+    template<typename DefaultJobResultConfigurationT = MembershipProtectedJobResultConfiguration>
+    void SetDefaultJobResultConfiguration(DefaultJobResultConfigurationT&& value) { m_defaultJobResultConfigurationHasBeenSet = true; m_defaultJobResultConfiguration = std::forward<DefaultJobResultConfigurationT>(value); }
+    template<typename DefaultJobResultConfigurationT = MembershipProtectedJobResultConfiguration>
+    UpdateMembershipRequest& WithDefaultJobResultConfiguration(DefaultJobResultConfigurationT&& value) { SetDefaultJobResultConfiguration(std::forward<DefaultJobResultConfigurationT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_membershipIdentifier;
     bool m_membershipIdentifierHasBeenSet = false;
 
-    MembershipQueryLogStatus m_queryLogStatus;
+    MembershipQueryLogStatus m_queryLogStatus{MembershipQueryLogStatus::NOT_SET};
     bool m_queryLogStatusHasBeenSet = false;
 
-    MembershipJobLogStatus m_jobLogStatus;
+    MembershipJobLogStatus m_jobLogStatus{MembershipJobLogStatus::NOT_SET};
     bool m_jobLogStatusHasBeenSet = false;
 
     MembershipProtectedQueryResultConfiguration m_defaultResultConfiguration;

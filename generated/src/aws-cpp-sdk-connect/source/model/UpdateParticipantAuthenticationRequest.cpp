@@ -12,15 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateParticipantAuthenticationRequest::UpdateParticipantAuthenticationRequest() : 
-    m_stateHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_errorDescriptionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateParticipantAuthenticationRequest::SerializePayload() const
 {
   JsonValue payload;

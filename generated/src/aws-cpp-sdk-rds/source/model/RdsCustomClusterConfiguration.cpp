@@ -20,16 +20,7 @@ namespace RDS
 namespace Model
 {
 
-RdsCustomClusterConfiguration::RdsCustomClusterConfiguration() : 
-    m_interconnectSubnetIdHasBeenSet(false),
-    m_transitGatewayMulticastDomainIdHasBeenSet(false),
-    m_replicaMode(ReplicaMode::NOT_SET),
-    m_replicaModeHasBeenSet(false)
-{
-}
-
 RdsCustomClusterConfiguration::RdsCustomClusterConfiguration(const XmlNode& xmlNode)
-  : RdsCustomClusterConfiguration()
 {
   *this = xmlNode;
 }
@@ -55,7 +46,7 @@ RdsCustomClusterConfiguration& RdsCustomClusterConfiguration::operator =(const X
     XmlNode replicaModeNode = resultNode.FirstChild("ReplicaMode");
     if(!replicaModeNode.IsNull())
     {
-      m_replicaMode = ReplicaModeMapper::GetReplicaModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(replicaModeNode.GetText()).c_str()).c_str());
+      m_replicaMode = ReplicaModeMapper::GetReplicaModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(replicaModeNode.GetText()).c_str()));
       m_replicaModeHasBeenSet = true;
     }
   }

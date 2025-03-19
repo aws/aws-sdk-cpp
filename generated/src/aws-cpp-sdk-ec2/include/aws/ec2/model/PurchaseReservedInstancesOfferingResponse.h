@@ -34,7 +34,7 @@ namespace Model
   class PurchaseReservedInstancesOfferingResponse
   {
   public:
-    AWS_EC2_API PurchaseReservedInstancesOfferingResponse();
+    AWS_EC2_API PurchaseReservedInstancesOfferingResponse() = default;
     AWS_EC2_API PurchaseReservedInstancesOfferingResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API PurchaseReservedInstancesOfferingResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -47,28 +47,28 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-reserved-instances-application.html#crossing-pricing-tiers">Crossing
      * pricing tiers</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
-    inline const Aws::String& GetReservedInstancesId() const{ return m_reservedInstancesId; }
-    inline void SetReservedInstancesId(const Aws::String& value) { m_reservedInstancesId = value; }
-    inline void SetReservedInstancesId(Aws::String&& value) { m_reservedInstancesId = std::move(value); }
-    inline void SetReservedInstancesId(const char* value) { m_reservedInstancesId.assign(value); }
-    inline PurchaseReservedInstancesOfferingResponse& WithReservedInstancesId(const Aws::String& value) { SetReservedInstancesId(value); return *this;}
-    inline PurchaseReservedInstancesOfferingResponse& WithReservedInstancesId(Aws::String&& value) { SetReservedInstancesId(std::move(value)); return *this;}
-    inline PurchaseReservedInstancesOfferingResponse& WithReservedInstancesId(const char* value) { SetReservedInstancesId(value); return *this;}
+    inline const Aws::String& GetReservedInstancesId() const { return m_reservedInstancesId; }
+    template<typename ReservedInstancesIdT = Aws::String>
+    void SetReservedInstancesId(ReservedInstancesIdT&& value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId = std::forward<ReservedInstancesIdT>(value); }
+    template<typename ReservedInstancesIdT = Aws::String>
+    PurchaseReservedInstancesOfferingResponse& WithReservedInstancesId(ReservedInstancesIdT&& value) { SetReservedInstancesId(std::forward<ReservedInstancesIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline PurchaseReservedInstancesOfferingResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline PurchaseReservedInstancesOfferingResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    PurchaseReservedInstancesOfferingResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_reservedInstancesId;
+    bool m_reservedInstancesIdHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

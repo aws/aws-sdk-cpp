@@ -35,7 +35,7 @@ namespace Model
   class InitialResponseSetting
   {
   public:
-    AWS_LEXMODELSV2_API InitialResponseSetting();
+    AWS_LEXMODELSV2_API InitialResponseSetting() = default;
     AWS_LEXMODELSV2_API InitialResponseSetting(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API InitialResponseSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,44 +43,44 @@ namespace Model
 
     ///@{
     
-    inline const ResponseSpecification& GetInitialResponse() const{ return m_initialResponse; }
+    inline const ResponseSpecification& GetInitialResponse() const { return m_initialResponse; }
     inline bool InitialResponseHasBeenSet() const { return m_initialResponseHasBeenSet; }
-    inline void SetInitialResponse(const ResponseSpecification& value) { m_initialResponseHasBeenSet = true; m_initialResponse = value; }
-    inline void SetInitialResponse(ResponseSpecification&& value) { m_initialResponseHasBeenSet = true; m_initialResponse = std::move(value); }
-    inline InitialResponseSetting& WithInitialResponse(const ResponseSpecification& value) { SetInitialResponse(value); return *this;}
-    inline InitialResponseSetting& WithInitialResponse(ResponseSpecification&& value) { SetInitialResponse(std::move(value)); return *this;}
+    template<typename InitialResponseT = ResponseSpecification>
+    void SetInitialResponse(InitialResponseT&& value) { m_initialResponseHasBeenSet = true; m_initialResponse = std::forward<InitialResponseT>(value); }
+    template<typename InitialResponseT = ResponseSpecification>
+    InitialResponseSetting& WithInitialResponse(InitialResponseT&& value) { SetInitialResponse(std::forward<InitialResponseT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The next step in the conversation.</p>
      */
-    inline const DialogState& GetNextStep() const{ return m_nextStep; }
+    inline const DialogState& GetNextStep() const { return m_nextStep; }
     inline bool NextStepHasBeenSet() const { return m_nextStepHasBeenSet; }
-    inline void SetNextStep(const DialogState& value) { m_nextStepHasBeenSet = true; m_nextStep = value; }
-    inline void SetNextStep(DialogState&& value) { m_nextStepHasBeenSet = true; m_nextStep = std::move(value); }
-    inline InitialResponseSetting& WithNextStep(const DialogState& value) { SetNextStep(value); return *this;}
-    inline InitialResponseSetting& WithNextStep(DialogState&& value) { SetNextStep(std::move(value)); return *this;}
+    template<typename NextStepT = DialogState>
+    void SetNextStep(NextStepT&& value) { m_nextStepHasBeenSet = true; m_nextStep = std::forward<NextStepT>(value); }
+    template<typename NextStepT = DialogState>
+    InitialResponseSetting& WithNextStep(NextStepT&& value) { SetNextStep(std::forward<NextStepT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ConditionalSpecification& GetConditional() const{ return m_conditional; }
+    inline const ConditionalSpecification& GetConditional() const { return m_conditional; }
     inline bool ConditionalHasBeenSet() const { return m_conditionalHasBeenSet; }
-    inline void SetConditional(const ConditionalSpecification& value) { m_conditionalHasBeenSet = true; m_conditional = value; }
-    inline void SetConditional(ConditionalSpecification&& value) { m_conditionalHasBeenSet = true; m_conditional = std::move(value); }
-    inline InitialResponseSetting& WithConditional(const ConditionalSpecification& value) { SetConditional(value); return *this;}
-    inline InitialResponseSetting& WithConditional(ConditionalSpecification&& value) { SetConditional(std::move(value)); return *this;}
+    template<typename ConditionalT = ConditionalSpecification>
+    void SetConditional(ConditionalT&& value) { m_conditionalHasBeenSet = true; m_conditional = std::forward<ConditionalT>(value); }
+    template<typename ConditionalT = ConditionalSpecification>
+    InitialResponseSetting& WithConditional(ConditionalT&& value) { SetConditional(std::forward<ConditionalT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const DialogCodeHookInvocationSetting& GetCodeHook() const{ return m_codeHook; }
+    inline const DialogCodeHookInvocationSetting& GetCodeHook() const { return m_codeHook; }
     inline bool CodeHookHasBeenSet() const { return m_codeHookHasBeenSet; }
-    inline void SetCodeHook(const DialogCodeHookInvocationSetting& value) { m_codeHookHasBeenSet = true; m_codeHook = value; }
-    inline void SetCodeHook(DialogCodeHookInvocationSetting&& value) { m_codeHookHasBeenSet = true; m_codeHook = std::move(value); }
-    inline InitialResponseSetting& WithCodeHook(const DialogCodeHookInvocationSetting& value) { SetCodeHook(value); return *this;}
-    inline InitialResponseSetting& WithCodeHook(DialogCodeHookInvocationSetting&& value) { SetCodeHook(std::move(value)); return *this;}
+    template<typename CodeHookT = DialogCodeHookInvocationSetting>
+    void SetCodeHook(CodeHookT&& value) { m_codeHookHasBeenSet = true; m_codeHook = std::forward<CodeHookT>(value); }
+    template<typename CodeHookT = DialogCodeHookInvocationSetting>
+    InitialResponseSetting& WithCodeHook(CodeHookT&& value) { SetCodeHook(std::forward<CodeHookT>(value)); return *this;}
     ///@}
   private:
 

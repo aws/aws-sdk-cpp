@@ -25,7 +25,7 @@ namespace Model
   class UpdateReviewTemplateAnswerRequest : public WellArchitectedRequest
   {
   public:
-    AWS_WELLARCHITECTED_API UpdateReviewTemplateAnswerRequest();
+    AWS_WELLARCHITECTED_API UpdateReviewTemplateAnswerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,86 +40,75 @@ namespace Model
     /**
      * <p>The review template ARN.</p>
      */
-    inline const Aws::String& GetTemplateArn() const{ return m_templateArn; }
+    inline const Aws::String& GetTemplateArn() const { return m_templateArn; }
     inline bool TemplateArnHasBeenSet() const { return m_templateArnHasBeenSet; }
-    inline void SetTemplateArn(const Aws::String& value) { m_templateArnHasBeenSet = true; m_templateArn = value; }
-    inline void SetTemplateArn(Aws::String&& value) { m_templateArnHasBeenSet = true; m_templateArn = std::move(value); }
-    inline void SetTemplateArn(const char* value) { m_templateArnHasBeenSet = true; m_templateArn.assign(value); }
-    inline UpdateReviewTemplateAnswerRequest& WithTemplateArn(const Aws::String& value) { SetTemplateArn(value); return *this;}
-    inline UpdateReviewTemplateAnswerRequest& WithTemplateArn(Aws::String&& value) { SetTemplateArn(std::move(value)); return *this;}
-    inline UpdateReviewTemplateAnswerRequest& WithTemplateArn(const char* value) { SetTemplateArn(value); return *this;}
+    template<typename TemplateArnT = Aws::String>
+    void SetTemplateArn(TemplateArnT&& value) { m_templateArnHasBeenSet = true; m_templateArn = std::forward<TemplateArnT>(value); }
+    template<typename TemplateArnT = Aws::String>
+    UpdateReviewTemplateAnswerRequest& WithTemplateArn(TemplateArnT&& value) { SetTemplateArn(std::forward<TemplateArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetLensAlias() const{ return m_lensAlias; }
+    inline const Aws::String& GetLensAlias() const { return m_lensAlias; }
     inline bool LensAliasHasBeenSet() const { return m_lensAliasHasBeenSet; }
-    inline void SetLensAlias(const Aws::String& value) { m_lensAliasHasBeenSet = true; m_lensAlias = value; }
-    inline void SetLensAlias(Aws::String&& value) { m_lensAliasHasBeenSet = true; m_lensAlias = std::move(value); }
-    inline void SetLensAlias(const char* value) { m_lensAliasHasBeenSet = true; m_lensAlias.assign(value); }
-    inline UpdateReviewTemplateAnswerRequest& WithLensAlias(const Aws::String& value) { SetLensAlias(value); return *this;}
-    inline UpdateReviewTemplateAnswerRequest& WithLensAlias(Aws::String&& value) { SetLensAlias(std::move(value)); return *this;}
-    inline UpdateReviewTemplateAnswerRequest& WithLensAlias(const char* value) { SetLensAlias(value); return *this;}
+    template<typename LensAliasT = Aws::String>
+    void SetLensAlias(LensAliasT&& value) { m_lensAliasHasBeenSet = true; m_lensAlias = std::forward<LensAliasT>(value); }
+    template<typename LensAliasT = Aws::String>
+    UpdateReviewTemplateAnswerRequest& WithLensAlias(LensAliasT&& value) { SetLensAlias(std::forward<LensAliasT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetQuestionId() const{ return m_questionId; }
+    inline const Aws::String& GetQuestionId() const { return m_questionId; }
     inline bool QuestionIdHasBeenSet() const { return m_questionIdHasBeenSet; }
-    inline void SetQuestionId(const Aws::String& value) { m_questionIdHasBeenSet = true; m_questionId = value; }
-    inline void SetQuestionId(Aws::String&& value) { m_questionIdHasBeenSet = true; m_questionId = std::move(value); }
-    inline void SetQuestionId(const char* value) { m_questionIdHasBeenSet = true; m_questionId.assign(value); }
-    inline UpdateReviewTemplateAnswerRequest& WithQuestionId(const Aws::String& value) { SetQuestionId(value); return *this;}
-    inline UpdateReviewTemplateAnswerRequest& WithQuestionId(Aws::String&& value) { SetQuestionId(std::move(value)); return *this;}
-    inline UpdateReviewTemplateAnswerRequest& WithQuestionId(const char* value) { SetQuestionId(value); return *this;}
+    template<typename QuestionIdT = Aws::String>
+    void SetQuestionId(QuestionIdT&& value) { m_questionIdHasBeenSet = true; m_questionId = std::forward<QuestionIdT>(value); }
+    template<typename QuestionIdT = Aws::String>
+    UpdateReviewTemplateAnswerRequest& WithQuestionId(QuestionIdT&& value) { SetQuestionId(std::forward<QuestionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<Aws::String>& GetSelectedChoices() const{ return m_selectedChoices; }
+    inline const Aws::Vector<Aws::String>& GetSelectedChoices() const { return m_selectedChoices; }
     inline bool SelectedChoicesHasBeenSet() const { return m_selectedChoicesHasBeenSet; }
-    inline void SetSelectedChoices(const Aws::Vector<Aws::String>& value) { m_selectedChoicesHasBeenSet = true; m_selectedChoices = value; }
-    inline void SetSelectedChoices(Aws::Vector<Aws::String>&& value) { m_selectedChoicesHasBeenSet = true; m_selectedChoices = std::move(value); }
-    inline UpdateReviewTemplateAnswerRequest& WithSelectedChoices(const Aws::Vector<Aws::String>& value) { SetSelectedChoices(value); return *this;}
-    inline UpdateReviewTemplateAnswerRequest& WithSelectedChoices(Aws::Vector<Aws::String>&& value) { SetSelectedChoices(std::move(value)); return *this;}
-    inline UpdateReviewTemplateAnswerRequest& AddSelectedChoices(const Aws::String& value) { m_selectedChoicesHasBeenSet = true; m_selectedChoices.push_back(value); return *this; }
-    inline UpdateReviewTemplateAnswerRequest& AddSelectedChoices(Aws::String&& value) { m_selectedChoicesHasBeenSet = true; m_selectedChoices.push_back(std::move(value)); return *this; }
-    inline UpdateReviewTemplateAnswerRequest& AddSelectedChoices(const char* value) { m_selectedChoicesHasBeenSet = true; m_selectedChoices.push_back(value); return *this; }
+    template<typename SelectedChoicesT = Aws::Vector<Aws::String>>
+    void SetSelectedChoices(SelectedChoicesT&& value) { m_selectedChoicesHasBeenSet = true; m_selectedChoices = std::forward<SelectedChoicesT>(value); }
+    template<typename SelectedChoicesT = Aws::Vector<Aws::String>>
+    UpdateReviewTemplateAnswerRequest& WithSelectedChoices(SelectedChoicesT&& value) { SetSelectedChoices(std::forward<SelectedChoicesT>(value)); return *this;}
+    template<typename SelectedChoicesT = Aws::String>
+    UpdateReviewTemplateAnswerRequest& AddSelectedChoices(SelectedChoicesT&& value) { m_selectedChoicesHasBeenSet = true; m_selectedChoices.emplace_back(std::forward<SelectedChoicesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of choices to be updated.</p>
      */
-    inline const Aws::Map<Aws::String, ChoiceUpdate>& GetChoiceUpdates() const{ return m_choiceUpdates; }
+    inline const Aws::Map<Aws::String, ChoiceUpdate>& GetChoiceUpdates() const { return m_choiceUpdates; }
     inline bool ChoiceUpdatesHasBeenSet() const { return m_choiceUpdatesHasBeenSet; }
-    inline void SetChoiceUpdates(const Aws::Map<Aws::String, ChoiceUpdate>& value) { m_choiceUpdatesHasBeenSet = true; m_choiceUpdates = value; }
-    inline void SetChoiceUpdates(Aws::Map<Aws::String, ChoiceUpdate>&& value) { m_choiceUpdatesHasBeenSet = true; m_choiceUpdates = std::move(value); }
-    inline UpdateReviewTemplateAnswerRequest& WithChoiceUpdates(const Aws::Map<Aws::String, ChoiceUpdate>& value) { SetChoiceUpdates(value); return *this;}
-    inline UpdateReviewTemplateAnswerRequest& WithChoiceUpdates(Aws::Map<Aws::String, ChoiceUpdate>&& value) { SetChoiceUpdates(std::move(value)); return *this;}
-    inline UpdateReviewTemplateAnswerRequest& AddChoiceUpdates(const Aws::String& key, const ChoiceUpdate& value) { m_choiceUpdatesHasBeenSet = true; m_choiceUpdates.emplace(key, value); return *this; }
-    inline UpdateReviewTemplateAnswerRequest& AddChoiceUpdates(Aws::String&& key, const ChoiceUpdate& value) { m_choiceUpdatesHasBeenSet = true; m_choiceUpdates.emplace(std::move(key), value); return *this; }
-    inline UpdateReviewTemplateAnswerRequest& AddChoiceUpdates(const Aws::String& key, ChoiceUpdate&& value) { m_choiceUpdatesHasBeenSet = true; m_choiceUpdates.emplace(key, std::move(value)); return *this; }
-    inline UpdateReviewTemplateAnswerRequest& AddChoiceUpdates(Aws::String&& key, ChoiceUpdate&& value) { m_choiceUpdatesHasBeenSet = true; m_choiceUpdates.emplace(std::move(key), std::move(value)); return *this; }
-    inline UpdateReviewTemplateAnswerRequest& AddChoiceUpdates(const char* key, ChoiceUpdate&& value) { m_choiceUpdatesHasBeenSet = true; m_choiceUpdates.emplace(key, std::move(value)); return *this; }
-    inline UpdateReviewTemplateAnswerRequest& AddChoiceUpdates(const char* key, const ChoiceUpdate& value) { m_choiceUpdatesHasBeenSet = true; m_choiceUpdates.emplace(key, value); return *this; }
+    template<typename ChoiceUpdatesT = Aws::Map<Aws::String, ChoiceUpdate>>
+    void SetChoiceUpdates(ChoiceUpdatesT&& value) { m_choiceUpdatesHasBeenSet = true; m_choiceUpdates = std::forward<ChoiceUpdatesT>(value); }
+    template<typename ChoiceUpdatesT = Aws::Map<Aws::String, ChoiceUpdate>>
+    UpdateReviewTemplateAnswerRequest& WithChoiceUpdates(ChoiceUpdatesT&& value) { SetChoiceUpdates(std::forward<ChoiceUpdatesT>(value)); return *this;}
+    template<typename ChoiceUpdatesKeyT = Aws::String, typename ChoiceUpdatesValueT = ChoiceUpdate>
+    UpdateReviewTemplateAnswerRequest& AddChoiceUpdates(ChoiceUpdatesKeyT&& key, ChoiceUpdatesValueT&& value) {
+      m_choiceUpdatesHasBeenSet = true; m_choiceUpdates.emplace(std::forward<ChoiceUpdatesKeyT>(key), std::forward<ChoiceUpdatesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetNotes() const{ return m_notes; }
+    inline const Aws::String& GetNotes() const { return m_notes; }
     inline bool NotesHasBeenSet() const { return m_notesHasBeenSet; }
-    inline void SetNotes(const Aws::String& value) { m_notesHasBeenSet = true; m_notes = value; }
-    inline void SetNotes(Aws::String&& value) { m_notesHasBeenSet = true; m_notes = std::move(value); }
-    inline void SetNotes(const char* value) { m_notesHasBeenSet = true; m_notes.assign(value); }
-    inline UpdateReviewTemplateAnswerRequest& WithNotes(const Aws::String& value) { SetNotes(value); return *this;}
-    inline UpdateReviewTemplateAnswerRequest& WithNotes(Aws::String&& value) { SetNotes(std::move(value)); return *this;}
-    inline UpdateReviewTemplateAnswerRequest& WithNotes(const char* value) { SetNotes(value); return *this;}
+    template<typename NotesT = Aws::String>
+    void SetNotes(NotesT&& value) { m_notesHasBeenSet = true; m_notes = std::forward<NotesT>(value); }
+    template<typename NotesT = Aws::String>
+    UpdateReviewTemplateAnswerRequest& WithNotes(NotesT&& value) { SetNotes(std::forward<NotesT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline bool GetIsApplicable() const{ return m_isApplicable; }
+    inline bool GetIsApplicable() const { return m_isApplicable; }
     inline bool IsApplicableHasBeenSet() const { return m_isApplicableHasBeenSet; }
     inline void SetIsApplicable(bool value) { m_isApplicableHasBeenSet = true; m_isApplicable = value; }
     inline UpdateReviewTemplateAnswerRequest& WithIsApplicable(bool value) { SetIsApplicable(value); return *this;}
@@ -129,12 +118,10 @@ namespace Model
     /**
      * <p>The update reason.</p>
      */
-    inline const AnswerReason& GetReason() const{ return m_reason; }
+    inline AnswerReason GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const AnswerReason& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(AnswerReason&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline UpdateReviewTemplateAnswerRequest& WithReason(const AnswerReason& value) { SetReason(value); return *this;}
-    inline UpdateReviewTemplateAnswerRequest& WithReason(AnswerReason&& value) { SetReason(std::move(value)); return *this;}
+    inline void SetReason(AnswerReason value) { m_reasonHasBeenSet = true; m_reason = value; }
+    inline UpdateReviewTemplateAnswerRequest& WithReason(AnswerReason value) { SetReason(value); return *this;}
     ///@}
   private:
 
@@ -156,10 +143,10 @@ namespace Model
     Aws::String m_notes;
     bool m_notesHasBeenSet = false;
 
-    bool m_isApplicable;
+    bool m_isApplicable{false};
     bool m_isApplicableHasBeenSet = false;
 
-    AnswerReason m_reason;
+    AnswerReason m_reason{AnswerReason::NOT_SET};
     bool m_reasonHasBeenSet = false;
   };
 

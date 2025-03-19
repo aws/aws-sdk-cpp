@@ -18,15 +18,7 @@ namespace Organizations
 namespace Model
 {
 
-Child::Child() : 
-    m_idHasBeenSet(false),
-    m_type(ChildType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 Child::Child(JsonView jsonValue)
-  : Child()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Child& Child::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ChildTypeMapper::GetChildTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace Transfer
 namespace Model
 {
 
-UpdateWebAppIdentityCenterConfig::UpdateWebAppIdentityCenterConfig() : 
-    m_roleHasBeenSet(false)
-{
-}
-
 UpdateWebAppIdentityCenterConfig::UpdateWebAppIdentityCenterConfig(JsonView jsonValue)
-  : UpdateWebAppIdentityCenterConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ UpdateWebAppIdentityCenterConfig& UpdateWebAppIdentityCenterConfig::operator =(J
   if(jsonValue.ValueExists("Role"))
   {
     m_role = jsonValue.GetString("Role");
-
     m_roleHasBeenSet = true;
   }
-
   return *this;
 }
 

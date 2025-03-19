@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PurchaseReservedCacheNodesOfferingResult::PurchaseReservedCacheNodesOfferingResult()
-{
-}
-
 PurchaseReservedCacheNodesOfferingResult::PurchaseReservedCacheNodesOfferingResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ PurchaseReservedCacheNodesOfferingResult& PurchaseReservedCacheNodesOfferingResu
     if(!reservedCacheNodeNode.IsNull())
     {
       m_reservedCacheNode = reservedCacheNodeNode;
+      m_reservedCacheNodeHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElastiCache::Model::PurchaseReservedCacheNodesOfferingResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

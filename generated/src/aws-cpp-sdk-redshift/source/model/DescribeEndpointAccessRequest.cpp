@@ -10,17 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DescribeEndpointAccessRequest::DescribeEndpointAccessRequest() : 
-    m_clusterIdentifierHasBeenSet(false),
-    m_resourceOwnerHasBeenSet(false),
-    m_endpointNameHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String DescribeEndpointAccessRequest::SerializePayload() const
 {
   Aws::StringStream ss;

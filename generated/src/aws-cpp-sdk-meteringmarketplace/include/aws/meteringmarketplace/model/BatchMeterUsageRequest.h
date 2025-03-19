@@ -28,7 +28,7 @@ namespace Model
   class BatchMeterUsageRequest : public MarketplaceMeteringRequest
   {
   public:
-    AWS_MARKETPLACEMETERING_API BatchMeterUsageRequest();
+    AWS_MARKETPLACEMETERING_API BatchMeterUsageRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,14 @@ namespace Model
      * <p>The set of <code>UsageRecords</code> to submit. <code>BatchMeterUsage</code>
      * accepts up to 25 <code>UsageRecords</code> at a time.</p>
      */
-    inline const Aws::Vector<UsageRecord>& GetUsageRecords() const{ return m_usageRecords; }
+    inline const Aws::Vector<UsageRecord>& GetUsageRecords() const { return m_usageRecords; }
     inline bool UsageRecordsHasBeenSet() const { return m_usageRecordsHasBeenSet; }
-    inline void SetUsageRecords(const Aws::Vector<UsageRecord>& value) { m_usageRecordsHasBeenSet = true; m_usageRecords = value; }
-    inline void SetUsageRecords(Aws::Vector<UsageRecord>&& value) { m_usageRecordsHasBeenSet = true; m_usageRecords = std::move(value); }
-    inline BatchMeterUsageRequest& WithUsageRecords(const Aws::Vector<UsageRecord>& value) { SetUsageRecords(value); return *this;}
-    inline BatchMeterUsageRequest& WithUsageRecords(Aws::Vector<UsageRecord>&& value) { SetUsageRecords(std::move(value)); return *this;}
-    inline BatchMeterUsageRequest& AddUsageRecords(const UsageRecord& value) { m_usageRecordsHasBeenSet = true; m_usageRecords.push_back(value); return *this; }
-    inline BatchMeterUsageRequest& AddUsageRecords(UsageRecord&& value) { m_usageRecordsHasBeenSet = true; m_usageRecords.push_back(std::move(value)); return *this; }
+    template<typename UsageRecordsT = Aws::Vector<UsageRecord>>
+    void SetUsageRecords(UsageRecordsT&& value) { m_usageRecordsHasBeenSet = true; m_usageRecords = std::forward<UsageRecordsT>(value); }
+    template<typename UsageRecordsT = Aws::Vector<UsageRecord>>
+    BatchMeterUsageRequest& WithUsageRecords(UsageRecordsT&& value) { SetUsageRecords(std::forward<UsageRecordsT>(value)); return *this;}
+    template<typename UsageRecordsT = UsageRecord>
+    BatchMeterUsageRequest& AddUsageRecords(UsageRecordsT&& value) { m_usageRecordsHasBeenSet = true; m_usageRecords.emplace_back(std::forward<UsageRecordsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -62,14 +62,12 @@ namespace Model
      * product code should be the same as the one used during the publishing of a new
      * product.</p>
      */
-    inline const Aws::String& GetProductCode() const{ return m_productCode; }
+    inline const Aws::String& GetProductCode() const { return m_productCode; }
     inline bool ProductCodeHasBeenSet() const { return m_productCodeHasBeenSet; }
-    inline void SetProductCode(const Aws::String& value) { m_productCodeHasBeenSet = true; m_productCode = value; }
-    inline void SetProductCode(Aws::String&& value) { m_productCodeHasBeenSet = true; m_productCode = std::move(value); }
-    inline void SetProductCode(const char* value) { m_productCodeHasBeenSet = true; m_productCode.assign(value); }
-    inline BatchMeterUsageRequest& WithProductCode(const Aws::String& value) { SetProductCode(value); return *this;}
-    inline BatchMeterUsageRequest& WithProductCode(Aws::String&& value) { SetProductCode(std::move(value)); return *this;}
-    inline BatchMeterUsageRequest& WithProductCode(const char* value) { SetProductCode(value); return *this;}
+    template<typename ProductCodeT = Aws::String>
+    void SetProductCode(ProductCodeT&& value) { m_productCodeHasBeenSet = true; m_productCode = std::forward<ProductCodeT>(value); }
+    template<typename ProductCodeT = Aws::String>
+    BatchMeterUsageRequest& WithProductCode(ProductCodeT&& value) { SetProductCode(std::forward<ProductCodeT>(value)); return *this;}
     ///@}
   private:
 

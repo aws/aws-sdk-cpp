@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateVirtualRouterResult::CreateVirtualRouterResult()
-{
-}
-
 CreateVirtualRouterResult::CreateVirtualRouterResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -30,12 +26,14 @@ CreateVirtualRouterResult& CreateVirtualRouterResult::operator =(const Aws::Amaz
 {
   JsonView jsonValue = result.GetPayload().View();
   m_virtualRouter = jsonValue;
+  m_virtualRouterHasBeenSet = true;
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

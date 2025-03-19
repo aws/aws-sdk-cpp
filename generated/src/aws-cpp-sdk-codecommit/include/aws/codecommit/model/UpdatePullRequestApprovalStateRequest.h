@@ -22,7 +22,7 @@ namespace Model
   class UpdatePullRequestApprovalStateRequest : public CodeCommitRequest
   {
   public:
-    AWS_CODECOMMIT_API UpdatePullRequestApprovalStateRequest();
+    AWS_CODECOMMIT_API UpdatePullRequestApprovalStateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,40 +39,34 @@ namespace Model
     /**
      * <p>The system-generated ID of the pull request.</p>
      */
-    inline const Aws::String& GetPullRequestId() const{ return m_pullRequestId; }
+    inline const Aws::String& GetPullRequestId() const { return m_pullRequestId; }
     inline bool PullRequestIdHasBeenSet() const { return m_pullRequestIdHasBeenSet; }
-    inline void SetPullRequestId(const Aws::String& value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId = value; }
-    inline void SetPullRequestId(Aws::String&& value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId = std::move(value); }
-    inline void SetPullRequestId(const char* value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId.assign(value); }
-    inline UpdatePullRequestApprovalStateRequest& WithPullRequestId(const Aws::String& value) { SetPullRequestId(value); return *this;}
-    inline UpdatePullRequestApprovalStateRequest& WithPullRequestId(Aws::String&& value) { SetPullRequestId(std::move(value)); return *this;}
-    inline UpdatePullRequestApprovalStateRequest& WithPullRequestId(const char* value) { SetPullRequestId(value); return *this;}
+    template<typename PullRequestIdT = Aws::String>
+    void SetPullRequestId(PullRequestIdT&& value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId = std::forward<PullRequestIdT>(value); }
+    template<typename PullRequestIdT = Aws::String>
+    UpdatePullRequestApprovalStateRequest& WithPullRequestId(PullRequestIdT&& value) { SetPullRequestId(std::forward<PullRequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The system-generated ID of the revision.</p>
      */
-    inline const Aws::String& GetRevisionId() const{ return m_revisionId; }
+    inline const Aws::String& GetRevisionId() const { return m_revisionId; }
     inline bool RevisionIdHasBeenSet() const { return m_revisionIdHasBeenSet; }
-    inline void SetRevisionId(const Aws::String& value) { m_revisionIdHasBeenSet = true; m_revisionId = value; }
-    inline void SetRevisionId(Aws::String&& value) { m_revisionIdHasBeenSet = true; m_revisionId = std::move(value); }
-    inline void SetRevisionId(const char* value) { m_revisionIdHasBeenSet = true; m_revisionId.assign(value); }
-    inline UpdatePullRequestApprovalStateRequest& WithRevisionId(const Aws::String& value) { SetRevisionId(value); return *this;}
-    inline UpdatePullRequestApprovalStateRequest& WithRevisionId(Aws::String&& value) { SetRevisionId(std::move(value)); return *this;}
-    inline UpdatePullRequestApprovalStateRequest& WithRevisionId(const char* value) { SetRevisionId(value); return *this;}
+    template<typename RevisionIdT = Aws::String>
+    void SetRevisionId(RevisionIdT&& value) { m_revisionIdHasBeenSet = true; m_revisionId = std::forward<RevisionIdT>(value); }
+    template<typename RevisionIdT = Aws::String>
+    UpdatePullRequestApprovalStateRequest& WithRevisionId(RevisionIdT&& value) { SetRevisionId(std::forward<RevisionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The approval state to associate with the user on the pull request.</p>
      */
-    inline const ApprovalState& GetApprovalState() const{ return m_approvalState; }
+    inline ApprovalState GetApprovalState() const { return m_approvalState; }
     inline bool ApprovalStateHasBeenSet() const { return m_approvalStateHasBeenSet; }
-    inline void SetApprovalState(const ApprovalState& value) { m_approvalStateHasBeenSet = true; m_approvalState = value; }
-    inline void SetApprovalState(ApprovalState&& value) { m_approvalStateHasBeenSet = true; m_approvalState = std::move(value); }
-    inline UpdatePullRequestApprovalStateRequest& WithApprovalState(const ApprovalState& value) { SetApprovalState(value); return *this;}
-    inline UpdatePullRequestApprovalStateRequest& WithApprovalState(ApprovalState&& value) { SetApprovalState(std::move(value)); return *this;}
+    inline void SetApprovalState(ApprovalState value) { m_approvalStateHasBeenSet = true; m_approvalState = value; }
+    inline UpdatePullRequestApprovalStateRequest& WithApprovalState(ApprovalState value) { SetApprovalState(value); return *this;}
     ///@}
   private:
 
@@ -82,7 +76,7 @@ namespace Model
     Aws::String m_revisionId;
     bool m_revisionIdHasBeenSet = false;
 
-    ApprovalState m_approvalState;
+    ApprovalState m_approvalState{ApprovalState::NOT_SET};
     bool m_approvalStateHasBeenSet = false;
   };
 

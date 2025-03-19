@@ -18,30 +18,7 @@ namespace GeoPlaces
 namespace Model
 {
 
-GeocodeResultItem::GeocodeResultItem() : 
-    m_placeIdHasBeenSet(false),
-    m_placeType(PlaceType::NOT_SET),
-    m_placeTypeHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_addressHasBeenSet(false),
-    m_addressNumberCorrected(false),
-    m_addressNumberCorrectedHasBeenSet(false),
-    m_postalCodeDetailsHasBeenSet(false),
-    m_positionHasBeenSet(false),
-    m_distance(0),
-    m_distanceHasBeenSet(false),
-    m_mapViewHasBeenSet(false),
-    m_categoriesHasBeenSet(false),
-    m_foodTypesHasBeenSet(false),
-    m_accessPointsHasBeenSet(false),
-    m_timeZoneHasBeenSet(false),
-    m_politicalViewHasBeenSet(false),
-    m_matchScoresHasBeenSet(false)
-{
-}
-
 GeocodeResultItem::GeocodeResultItem(JsonView jsonValue)
-  : GeocodeResultItem()
 {
   *this = jsonValue;
 }
@@ -51,38 +28,28 @@ GeocodeResultItem& GeocodeResultItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PlaceId"))
   {
     m_placeId = jsonValue.GetString("PlaceId");
-
     m_placeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PlaceType"))
   {
     m_placeType = PlaceTypeMapper::GetPlaceTypeForName(jsonValue.GetString("PlaceType"));
-
     m_placeTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Title"))
   {
     m_title = jsonValue.GetString("Title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Address"))
   {
     m_address = jsonValue.GetObject("Address");
-
     m_addressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AddressNumberCorrected"))
   {
     m_addressNumberCorrected = jsonValue.GetBool("AddressNumberCorrected");
-
     m_addressNumberCorrectedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PostalCodeDetails"))
   {
     Aws::Utils::Array<JsonView> postalCodeDetailsJsonList = jsonValue.GetArray("PostalCodeDetails");
@@ -92,7 +59,6 @@ GeocodeResultItem& GeocodeResultItem::operator =(JsonView jsonValue)
     }
     m_postalCodeDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Position"))
   {
     Aws::Utils::Array<JsonView> positionJsonList = jsonValue.GetArray("Position");
@@ -102,14 +68,11 @@ GeocodeResultItem& GeocodeResultItem::operator =(JsonView jsonValue)
     }
     m_positionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Distance"))
   {
     m_distance = jsonValue.GetInt64("Distance");
-
     m_distanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MapView"))
   {
     Aws::Utils::Array<JsonView> mapViewJsonList = jsonValue.GetArray("MapView");
@@ -119,7 +82,6 @@ GeocodeResultItem& GeocodeResultItem::operator =(JsonView jsonValue)
     }
     m_mapViewHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Categories"))
   {
     Aws::Utils::Array<JsonView> categoriesJsonList = jsonValue.GetArray("Categories");
@@ -129,7 +91,6 @@ GeocodeResultItem& GeocodeResultItem::operator =(JsonView jsonValue)
     }
     m_categoriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FoodTypes"))
   {
     Aws::Utils::Array<JsonView> foodTypesJsonList = jsonValue.GetArray("FoodTypes");
@@ -139,7 +100,6 @@ GeocodeResultItem& GeocodeResultItem::operator =(JsonView jsonValue)
     }
     m_foodTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccessPoints"))
   {
     Aws::Utils::Array<JsonView> accessPointsJsonList = jsonValue.GetArray("AccessPoints");
@@ -149,28 +109,21 @@ GeocodeResultItem& GeocodeResultItem::operator =(JsonView jsonValue)
     }
     m_accessPointsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeZone"))
   {
     m_timeZone = jsonValue.GetObject("TimeZone");
-
     m_timeZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PoliticalView"))
   {
     m_politicalView = jsonValue.GetString("PoliticalView");
-
     m_politicalViewHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MatchScores"))
   {
     m_matchScores = jsonValue.GetObject("MatchScores");
-
     m_matchScoresHasBeenSet = true;
   }
-
   return *this;
 }
 

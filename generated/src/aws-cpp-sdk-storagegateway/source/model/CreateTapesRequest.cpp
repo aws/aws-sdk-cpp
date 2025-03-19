@@ -12,24 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateTapesRequest::CreateTapesRequest() : 
-    m_gatewayARNHasBeenSet(false),
-    m_tapeSizeInBytes(0),
-    m_tapeSizeInBytesHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_numTapesToCreate(0),
-    m_numTapesToCreateHasBeenSet(false),
-    m_tapeBarcodePrefixHasBeenSet(false),
-    m_kMSEncrypted(false),
-    m_kMSEncryptedHasBeenSet(false),
-    m_kMSKeyHasBeenSet(false),
-    m_poolIdHasBeenSet(false),
-    m_worm(false),
-    m_wormHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateTapesRequest::SerializePayload() const
 {
   JsonValue payload;

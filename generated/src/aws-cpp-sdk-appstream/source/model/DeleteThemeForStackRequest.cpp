@@ -12,11 +12,6 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteThemeForStackRequest::DeleteThemeForStackRequest() : 
-    m_stackNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteThemeForStackRequest::SerializePayload() const
 {
   JsonValue payload;

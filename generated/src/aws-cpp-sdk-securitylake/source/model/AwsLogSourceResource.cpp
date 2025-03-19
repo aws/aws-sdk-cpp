@@ -18,15 +18,7 @@ namespace SecurityLake
 namespace Model
 {
 
-AwsLogSourceResource::AwsLogSourceResource() : 
-    m_sourceName(AwsLogSourceName::NOT_SET),
-    m_sourceNameHasBeenSet(false),
-    m_sourceVersionHasBeenSet(false)
-{
-}
-
 AwsLogSourceResource::AwsLogSourceResource(JsonView jsonValue)
-  : AwsLogSourceResource()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AwsLogSourceResource& AwsLogSourceResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sourceName"))
   {
     m_sourceName = AwsLogSourceNameMapper::GetAwsLogSourceNameForName(jsonValue.GetString("sourceName"));
-
     m_sourceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceVersion"))
   {
     m_sourceVersion = jsonValue.GetString("sourceVersion");
-
     m_sourceVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

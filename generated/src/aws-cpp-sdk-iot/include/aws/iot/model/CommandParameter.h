@@ -33,7 +33,7 @@ namespace Model
   class CommandParameter
   {
   public:
-    AWS_IOT_API CommandParameter();
+    AWS_IOT_API CommandParameter() = default;
     AWS_IOT_API CommandParameter(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API CommandParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The name of a specific parameter used in a command and command execution.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CommandParameter& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CommandParameter& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CommandParameter& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CommandParameter& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +57,12 @@ namespace Model
      * parameter, it will override any default value that you had already
      * specified.</p>
      */
-    inline const CommandParameterValue& GetValue() const{ return m_value; }
+    inline const CommandParameterValue& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const CommandParameterValue& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(CommandParameterValue&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline CommandParameter& WithValue(const CommandParameterValue& value) { SetValue(value); return *this;}
-    inline CommandParameter& WithValue(CommandParameterValue&& value) { SetValue(std::move(value)); return *this;}
+    template<typename ValueT = CommandParameterValue>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = CommandParameterValue>
+    CommandParameter& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,26 +70,24 @@ namespace Model
      * <p>The default value used to describe the command. This is the value assumed by
      * the parameter if no other value is assigned to it.</p>
      */
-    inline const CommandParameterValue& GetDefaultValue() const{ return m_defaultValue; }
+    inline const CommandParameterValue& GetDefaultValue() const { return m_defaultValue; }
     inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
-    inline void SetDefaultValue(const CommandParameterValue& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
-    inline void SetDefaultValue(CommandParameterValue&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::move(value); }
-    inline CommandParameter& WithDefaultValue(const CommandParameterValue& value) { SetDefaultValue(value); return *this;}
-    inline CommandParameter& WithDefaultValue(CommandParameterValue&& value) { SetDefaultValue(std::move(value)); return *this;}
+    template<typename DefaultValueT = CommandParameterValue>
+    void SetDefaultValue(DefaultValueT&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::forward<DefaultValueT>(value); }
+    template<typename DefaultValueT = CommandParameterValue>
+    CommandParameter& WithDefaultValue(DefaultValueT&& value) { SetDefaultValue(std::forward<DefaultValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the command parameter.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CommandParameter& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CommandParameter& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CommandParameter& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CommandParameter& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
   private:
 

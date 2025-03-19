@@ -21,7 +21,7 @@ namespace Model
   class DeleteSubscriberNotificationRequest : public SecurityLakeRequest
   {
   public:
-    AWS_SECURITYLAKE_API DeleteSubscriberNotificationRequest();
+    AWS_SECURITYLAKE_API DeleteSubscriberNotificationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The ID of the Security Lake subscriber account.</p>
      */
-    inline const Aws::String& GetSubscriberId() const{ return m_subscriberId; }
+    inline const Aws::String& GetSubscriberId() const { return m_subscriberId; }
     inline bool SubscriberIdHasBeenSet() const { return m_subscriberIdHasBeenSet; }
-    inline void SetSubscriberId(const Aws::String& value) { m_subscriberIdHasBeenSet = true; m_subscriberId = value; }
-    inline void SetSubscriberId(Aws::String&& value) { m_subscriberIdHasBeenSet = true; m_subscriberId = std::move(value); }
-    inline void SetSubscriberId(const char* value) { m_subscriberIdHasBeenSet = true; m_subscriberId.assign(value); }
-    inline DeleteSubscriberNotificationRequest& WithSubscriberId(const Aws::String& value) { SetSubscriberId(value); return *this;}
-    inline DeleteSubscriberNotificationRequest& WithSubscriberId(Aws::String&& value) { SetSubscriberId(std::move(value)); return *this;}
-    inline DeleteSubscriberNotificationRequest& WithSubscriberId(const char* value) { SetSubscriberId(value); return *this;}
+    template<typename SubscriberIdT = Aws::String>
+    void SetSubscriberId(SubscriberIdT&& value) { m_subscriberIdHasBeenSet = true; m_subscriberId = std::forward<SubscriberIdT>(value); }
+    template<typename SubscriberIdT = Aws::String>
+    DeleteSubscriberNotificationRequest& WithSubscriberId(SubscriberIdT&& value) { SetSubscriberId(std::forward<SubscriberIdT>(value)); return *this;}
     ///@}
   private:
 

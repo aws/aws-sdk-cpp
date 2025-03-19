@@ -18,13 +18,7 @@ namespace kendra
 namespace Model
 {
 
-UserIdentityConfiguration::UserIdentityConfiguration() : 
-    m_identityAttributeNameHasBeenSet(false)
-{
-}
-
 UserIdentityConfiguration::UserIdentityConfiguration(JsonView jsonValue)
-  : UserIdentityConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ UserIdentityConfiguration& UserIdentityConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("IdentityAttributeName"))
   {
     m_identityAttributeName = jsonValue.GetString("IdentityAttributeName");
-
     m_identityAttributeNameHasBeenSet = true;
   }
-
   return *this;
 }
 

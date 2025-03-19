@@ -35,7 +35,7 @@ namespace Model
   class Record
   {
   public:
-    AWS_KINESIS_API Record();
+    AWS_KINESIS_API Record() = default;
     AWS_KINESIS_API Record(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESIS_API Record& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESIS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,26 +45,24 @@ namespace Model
     /**
      * <p>The unique identifier of the record within its shard.</p>
      */
-    inline const Aws::String& GetSequenceNumber() const{ return m_sequenceNumber; }
+    inline const Aws::String& GetSequenceNumber() const { return m_sequenceNumber; }
     inline bool SequenceNumberHasBeenSet() const { return m_sequenceNumberHasBeenSet; }
-    inline void SetSequenceNumber(const Aws::String& value) { m_sequenceNumberHasBeenSet = true; m_sequenceNumber = value; }
-    inline void SetSequenceNumber(Aws::String&& value) { m_sequenceNumberHasBeenSet = true; m_sequenceNumber = std::move(value); }
-    inline void SetSequenceNumber(const char* value) { m_sequenceNumberHasBeenSet = true; m_sequenceNumber.assign(value); }
-    inline Record& WithSequenceNumber(const Aws::String& value) { SetSequenceNumber(value); return *this;}
-    inline Record& WithSequenceNumber(Aws::String&& value) { SetSequenceNumber(std::move(value)); return *this;}
-    inline Record& WithSequenceNumber(const char* value) { SetSequenceNumber(value); return *this;}
+    template<typename SequenceNumberT = Aws::String>
+    void SetSequenceNumber(SequenceNumberT&& value) { m_sequenceNumberHasBeenSet = true; m_sequenceNumber = std::forward<SequenceNumberT>(value); }
+    template<typename SequenceNumberT = Aws::String>
+    Record& WithSequenceNumber(SequenceNumberT&& value) { SetSequenceNumber(std::forward<SequenceNumberT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The approximate time that the record was inserted into the stream.</p>
      */
-    inline const Aws::Utils::DateTime& GetApproximateArrivalTimestamp() const{ return m_approximateArrivalTimestamp; }
+    inline const Aws::Utils::DateTime& GetApproximateArrivalTimestamp() const { return m_approximateArrivalTimestamp; }
     inline bool ApproximateArrivalTimestampHasBeenSet() const { return m_approximateArrivalTimestampHasBeenSet; }
-    inline void SetApproximateArrivalTimestamp(const Aws::Utils::DateTime& value) { m_approximateArrivalTimestampHasBeenSet = true; m_approximateArrivalTimestamp = value; }
-    inline void SetApproximateArrivalTimestamp(Aws::Utils::DateTime&& value) { m_approximateArrivalTimestampHasBeenSet = true; m_approximateArrivalTimestamp = std::move(value); }
-    inline Record& WithApproximateArrivalTimestamp(const Aws::Utils::DateTime& value) { SetApproximateArrivalTimestamp(value); return *this;}
-    inline Record& WithApproximateArrivalTimestamp(Aws::Utils::DateTime&& value) { SetApproximateArrivalTimestamp(std::move(value)); return *this;}
+    template<typename ApproximateArrivalTimestampT = Aws::Utils::DateTime>
+    void SetApproximateArrivalTimestamp(ApproximateArrivalTimestampT&& value) { m_approximateArrivalTimestampHasBeenSet = true; m_approximateArrivalTimestamp = std::forward<ApproximateArrivalTimestampT>(value); }
+    template<typename ApproximateArrivalTimestampT = Aws::Utils::DateTime>
+    Record& WithApproximateArrivalTimestamp(ApproximateArrivalTimestampT&& value) { SetApproximateArrivalTimestamp(std::forward<ApproximateArrivalTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,26 +73,24 @@ namespace Model
      * the partition key size, the total size must not exceed the maximum record size
      * (1 MiB).</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetData() const{ return m_data; }
+    inline const Aws::Utils::ByteBuffer& GetData() const { return m_data; }
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
-    inline void SetData(const Aws::Utils::ByteBuffer& value) { m_dataHasBeenSet = true; m_data = value; }
-    inline void SetData(Aws::Utils::ByteBuffer&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
-    inline Record& WithData(const Aws::Utils::ByteBuffer& value) { SetData(value); return *this;}
-    inline Record& WithData(Aws::Utils::ByteBuffer&& value) { SetData(std::move(value)); return *this;}
+    template<typename DataT = Aws::Utils::ByteBuffer>
+    void SetData(DataT&& value) { m_dataHasBeenSet = true; m_data = std::forward<DataT>(value); }
+    template<typename DataT = Aws::Utils::ByteBuffer>
+    Record& WithData(DataT&& value) { SetData(std::forward<DataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Identifies which shard in the stream the data record is assigned to.</p>
      */
-    inline const Aws::String& GetPartitionKey() const{ return m_partitionKey; }
+    inline const Aws::String& GetPartitionKey() const { return m_partitionKey; }
     inline bool PartitionKeyHasBeenSet() const { return m_partitionKeyHasBeenSet; }
-    inline void SetPartitionKey(const Aws::String& value) { m_partitionKeyHasBeenSet = true; m_partitionKey = value; }
-    inline void SetPartitionKey(Aws::String&& value) { m_partitionKeyHasBeenSet = true; m_partitionKey = std::move(value); }
-    inline void SetPartitionKey(const char* value) { m_partitionKeyHasBeenSet = true; m_partitionKey.assign(value); }
-    inline Record& WithPartitionKey(const Aws::String& value) { SetPartitionKey(value); return *this;}
-    inline Record& WithPartitionKey(Aws::String&& value) { SetPartitionKey(std::move(value)); return *this;}
-    inline Record& WithPartitionKey(const char* value) { SetPartitionKey(value); return *this;}
+    template<typename PartitionKeyT = Aws::String>
+    void SetPartitionKey(PartitionKeyT&& value) { m_partitionKeyHasBeenSet = true; m_partitionKey = std::forward<PartitionKeyT>(value); }
+    template<typename PartitionKeyT = Aws::String>
+    Record& WithPartitionKey(PartitionKeyT&& value) { SetPartitionKey(std::forward<PartitionKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,28 +101,26 @@ namespace Model
      * encryption on the records in the stream using a customer-managed Amazon Web
      * Services KMS key.</p> </li> </ul>
      */
-    inline const EncryptionType& GetEncryptionType() const{ return m_encryptionType; }
+    inline EncryptionType GetEncryptionType() const { return m_encryptionType; }
     inline bool EncryptionTypeHasBeenSet() const { return m_encryptionTypeHasBeenSet; }
-    inline void SetEncryptionType(const EncryptionType& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = value; }
-    inline void SetEncryptionType(EncryptionType&& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = std::move(value); }
-    inline Record& WithEncryptionType(const EncryptionType& value) { SetEncryptionType(value); return *this;}
-    inline Record& WithEncryptionType(EncryptionType&& value) { SetEncryptionType(std::move(value)); return *this;}
+    inline void SetEncryptionType(EncryptionType value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = value; }
+    inline Record& WithEncryptionType(EncryptionType value) { SetEncryptionType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_sequenceNumber;
     bool m_sequenceNumberHasBeenSet = false;
 
-    Aws::Utils::DateTime m_approximateArrivalTimestamp;
+    Aws::Utils::DateTime m_approximateArrivalTimestamp{};
     bool m_approximateArrivalTimestampHasBeenSet = false;
 
-    Aws::Utils::ByteBuffer m_data;
+    Aws::Utils::ByteBuffer m_data{};
     bool m_dataHasBeenSet = false;
 
     Aws::String m_partitionKey;
     bool m_partitionKeyHasBeenSet = false;
 
-    EncryptionType m_encryptionType;
+    EncryptionType m_encryptionType{EncryptionType::NOT_SET};
     bool m_encryptionTypeHasBeenSet = false;
   };
 

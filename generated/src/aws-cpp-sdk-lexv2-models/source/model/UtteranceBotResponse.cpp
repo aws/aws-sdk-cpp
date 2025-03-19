@@ -18,16 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-UtteranceBotResponse::UtteranceBotResponse() : 
-    m_contentHasBeenSet(false),
-    m_contentType(UtteranceContentType::NOT_SET),
-    m_contentTypeHasBeenSet(false),
-    m_imageResponseCardHasBeenSet(false)
-{
-}
-
 UtteranceBotResponse::UtteranceBotResponse(JsonView jsonValue)
-  : UtteranceBotResponse()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ UtteranceBotResponse& UtteranceBotResponse::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("content"))
   {
     m_content = jsonValue.GetString("content");
-
     m_contentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("contentType"))
   {
     m_contentType = UtteranceContentTypeMapper::GetUtteranceContentTypeForName(jsonValue.GetString("contentType"));
-
     m_contentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageResponseCard"))
   {
     m_imageResponseCard = jsonValue.GetObject("imageResponseCard");
-
     m_imageResponseCardHasBeenSet = true;
   }
-
   return *this;
 }
 

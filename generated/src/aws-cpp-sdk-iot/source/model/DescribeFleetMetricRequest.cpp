@@ -12,11 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeFleetMetricRequest::DescribeFleetMetricRequest() : 
-    m_metricNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeFleetMetricRequest::SerializePayload() const
 {
   return {};

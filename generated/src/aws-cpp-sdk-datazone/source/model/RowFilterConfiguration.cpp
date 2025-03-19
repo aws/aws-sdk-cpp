@@ -18,15 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-RowFilterConfiguration::RowFilterConfiguration() : 
-    m_rowFilterHasBeenSet(false),
-    m_sensitive(false),
-    m_sensitiveHasBeenSet(false)
-{
-}
-
 RowFilterConfiguration::RowFilterConfiguration(JsonView jsonValue)
-  : RowFilterConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ RowFilterConfiguration& RowFilterConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("rowFilter"))
   {
     m_rowFilter = jsonValue.GetObject("rowFilter");
-
     m_rowFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sensitive"))
   {
     m_sensitive = jsonValue.GetBool("sensitive");
-
     m_sensitiveHasBeenSet = true;
   }
-
   return *this;
 }
 

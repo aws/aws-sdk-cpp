@@ -20,20 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TransitGatewayRoute::TransitGatewayRoute() : 
-    m_destinationCidrBlockHasBeenSet(false),
-    m_prefixListIdHasBeenSet(false),
-    m_transitGatewayRouteTableAnnouncementIdHasBeenSet(false),
-    m_transitGatewayAttachmentsHasBeenSet(false),
-    m_type(TransitGatewayRouteType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_state(TransitGatewayRouteState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 TransitGatewayRoute::TransitGatewayRoute(const XmlNode& xmlNode)
-  : TransitGatewayRoute()
 {
   *this = xmlNode;
 }
@@ -66,6 +53,7 @@ TransitGatewayRoute& TransitGatewayRoute::operator =(const XmlNode& xmlNode)
     if(!transitGatewayAttachmentsNode.IsNull())
     {
       XmlNode transitGatewayAttachmentsMember = transitGatewayAttachmentsNode.FirstChild("item");
+      m_transitGatewayAttachmentsHasBeenSet = !transitGatewayAttachmentsMember.IsNull();
       while(!transitGatewayAttachmentsMember.IsNull())
       {
         m_transitGatewayAttachments.push_back(transitGatewayAttachmentsMember);
@@ -77,13 +65,13 @@ TransitGatewayRoute& TransitGatewayRoute::operator =(const XmlNode& xmlNode)
     XmlNode typeNode = resultNode.FirstChild("type");
     if(!typeNode.IsNull())
     {
-      m_type = TransitGatewayRouteTypeMapper::GetTransitGatewayRouteTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = TransitGatewayRouteTypeMapper::GetTransitGatewayRouteTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = TransitGatewayRouteStateMapper::GetTransitGatewayRouteStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = TransitGatewayRouteStateMapper::GetTransitGatewayRouteStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
   }

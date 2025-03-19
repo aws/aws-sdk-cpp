@@ -40,7 +40,7 @@ namespace Model
   class Output
   {
   public:
-    AWS_MEDIACONVERT_API Output();
+    AWS_MEDIACONVERT_API Output() = default;
     AWS_MEDIACONVERT_API Output(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Output& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,14 @@ namespace Model
      * Contains groups of audio encoding settings organized by audio codec. Include one
      * instance of per output. Can contain multiple groups of encoding settings.
      */
-    inline const Aws::Vector<AudioDescription>& GetAudioDescriptions() const{ return m_audioDescriptions; }
+    inline const Aws::Vector<AudioDescription>& GetAudioDescriptions() const { return m_audioDescriptions; }
     inline bool AudioDescriptionsHasBeenSet() const { return m_audioDescriptionsHasBeenSet; }
-    inline void SetAudioDescriptions(const Aws::Vector<AudioDescription>& value) { m_audioDescriptionsHasBeenSet = true; m_audioDescriptions = value; }
-    inline void SetAudioDescriptions(Aws::Vector<AudioDescription>&& value) { m_audioDescriptionsHasBeenSet = true; m_audioDescriptions = std::move(value); }
-    inline Output& WithAudioDescriptions(const Aws::Vector<AudioDescription>& value) { SetAudioDescriptions(value); return *this;}
-    inline Output& WithAudioDescriptions(Aws::Vector<AudioDescription>&& value) { SetAudioDescriptions(std::move(value)); return *this;}
-    inline Output& AddAudioDescriptions(const AudioDescription& value) { m_audioDescriptionsHasBeenSet = true; m_audioDescriptions.push_back(value); return *this; }
-    inline Output& AddAudioDescriptions(AudioDescription&& value) { m_audioDescriptionsHasBeenSet = true; m_audioDescriptions.push_back(std::move(value)); return *this; }
+    template<typename AudioDescriptionsT = Aws::Vector<AudioDescription>>
+    void SetAudioDescriptions(AudioDescriptionsT&& value) { m_audioDescriptionsHasBeenSet = true; m_audioDescriptions = std::forward<AudioDescriptionsT>(value); }
+    template<typename AudioDescriptionsT = Aws::Vector<AudioDescription>>
+    Output& WithAudioDescriptions(AudioDescriptionsT&& value) { SetAudioDescriptions(std::forward<AudioDescriptionsT>(value)); return *this;}
+    template<typename AudioDescriptionsT = AudioDescription>
+    Output& AddAudioDescriptions(AudioDescriptionsT&& value) { m_audioDescriptionsHasBeenSet = true; m_audioDescriptions.emplace_back(std::forward<AudioDescriptionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -67,26 +67,26 @@ namespace Model
      * one instance of CaptionDescriptions. Can contain multiple groups of captions
      * settings.
      */
-    inline const Aws::Vector<CaptionDescription>& GetCaptionDescriptions() const{ return m_captionDescriptions; }
+    inline const Aws::Vector<CaptionDescription>& GetCaptionDescriptions() const { return m_captionDescriptions; }
     inline bool CaptionDescriptionsHasBeenSet() const { return m_captionDescriptionsHasBeenSet; }
-    inline void SetCaptionDescriptions(const Aws::Vector<CaptionDescription>& value) { m_captionDescriptionsHasBeenSet = true; m_captionDescriptions = value; }
-    inline void SetCaptionDescriptions(Aws::Vector<CaptionDescription>&& value) { m_captionDescriptionsHasBeenSet = true; m_captionDescriptions = std::move(value); }
-    inline Output& WithCaptionDescriptions(const Aws::Vector<CaptionDescription>& value) { SetCaptionDescriptions(value); return *this;}
-    inline Output& WithCaptionDescriptions(Aws::Vector<CaptionDescription>&& value) { SetCaptionDescriptions(std::move(value)); return *this;}
-    inline Output& AddCaptionDescriptions(const CaptionDescription& value) { m_captionDescriptionsHasBeenSet = true; m_captionDescriptions.push_back(value); return *this; }
-    inline Output& AddCaptionDescriptions(CaptionDescription&& value) { m_captionDescriptionsHasBeenSet = true; m_captionDescriptions.push_back(std::move(value)); return *this; }
+    template<typename CaptionDescriptionsT = Aws::Vector<CaptionDescription>>
+    void SetCaptionDescriptions(CaptionDescriptionsT&& value) { m_captionDescriptionsHasBeenSet = true; m_captionDescriptions = std::forward<CaptionDescriptionsT>(value); }
+    template<typename CaptionDescriptionsT = Aws::Vector<CaptionDescription>>
+    Output& WithCaptionDescriptions(CaptionDescriptionsT&& value) { SetCaptionDescriptions(std::forward<CaptionDescriptionsT>(value)); return *this;}
+    template<typename CaptionDescriptionsT = CaptionDescription>
+    Output& AddCaptionDescriptions(CaptionDescriptionsT&& value) { m_captionDescriptionsHasBeenSet = true; m_captionDescriptions.emplace_back(std::forward<CaptionDescriptionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * Container specific settings.
      */
-    inline const ContainerSettings& GetContainerSettings() const{ return m_containerSettings; }
+    inline const ContainerSettings& GetContainerSettings() const { return m_containerSettings; }
     inline bool ContainerSettingsHasBeenSet() const { return m_containerSettingsHasBeenSet; }
-    inline void SetContainerSettings(const ContainerSettings& value) { m_containerSettingsHasBeenSet = true; m_containerSettings = value; }
-    inline void SetContainerSettings(ContainerSettings&& value) { m_containerSettingsHasBeenSet = true; m_containerSettings = std::move(value); }
-    inline Output& WithContainerSettings(const ContainerSettings& value) { SetContainerSettings(value); return *this;}
-    inline Output& WithContainerSettings(ContainerSettings&& value) { SetContainerSettings(std::move(value)); return *this;}
+    template<typename ContainerSettingsT = ContainerSettings>
+    void SetContainerSettings(ContainerSettingsT&& value) { m_containerSettingsHasBeenSet = true; m_containerSettings = std::forward<ContainerSettingsT>(value); }
+    template<typename ContainerSettingsT = ContainerSettings>
+    Output& WithContainerSettings(ContainerSettingsT&& value) { SetContainerSettings(std::forward<ContainerSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,14 +98,12 @@ namespace Model
      * container, gif * No Container, the service will use codec extensions (e.g. AAC,
      * H265, H265, AC3)
      */
-    inline const Aws::String& GetExtension() const{ return m_extension; }
+    inline const Aws::String& GetExtension() const { return m_extension; }
     inline bool ExtensionHasBeenSet() const { return m_extensionHasBeenSet; }
-    inline void SetExtension(const Aws::String& value) { m_extensionHasBeenSet = true; m_extension = value; }
-    inline void SetExtension(Aws::String&& value) { m_extensionHasBeenSet = true; m_extension = std::move(value); }
-    inline void SetExtension(const char* value) { m_extensionHasBeenSet = true; m_extension.assign(value); }
-    inline Output& WithExtension(const Aws::String& value) { SetExtension(value); return *this;}
-    inline Output& WithExtension(Aws::String&& value) { SetExtension(std::move(value)); return *this;}
-    inline Output& WithExtension(const char* value) { SetExtension(value); return *this;}
+    template<typename ExtensionT = Aws::String>
+    void SetExtension(ExtensionT&& value) { m_extensionHasBeenSet = true; m_extension = std::forward<ExtensionT>(value); }
+    template<typename ExtensionT = Aws::String>
+    Output& WithExtension(ExtensionT&& value) { SetExtension(std::forward<ExtensionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -117,26 +115,24 @@ namespace Model
      * the format identifiers $Number$ or $Time$ in one output, you must use them in
      * the same way in all outputs of the output group.
      */
-    inline const Aws::String& GetNameModifier() const{ return m_nameModifier; }
+    inline const Aws::String& GetNameModifier() const { return m_nameModifier; }
     inline bool NameModifierHasBeenSet() const { return m_nameModifierHasBeenSet; }
-    inline void SetNameModifier(const Aws::String& value) { m_nameModifierHasBeenSet = true; m_nameModifier = value; }
-    inline void SetNameModifier(Aws::String&& value) { m_nameModifierHasBeenSet = true; m_nameModifier = std::move(value); }
-    inline void SetNameModifier(const char* value) { m_nameModifierHasBeenSet = true; m_nameModifier.assign(value); }
-    inline Output& WithNameModifier(const Aws::String& value) { SetNameModifier(value); return *this;}
-    inline Output& WithNameModifier(Aws::String&& value) { SetNameModifier(std::move(value)); return *this;}
-    inline Output& WithNameModifier(const char* value) { SetNameModifier(value); return *this;}
+    template<typename NameModifierT = Aws::String>
+    void SetNameModifier(NameModifierT&& value) { m_nameModifierHasBeenSet = true; m_nameModifier = std::forward<NameModifierT>(value); }
+    template<typename NameModifierT = Aws::String>
+    Output& WithNameModifier(NameModifierT&& value) { SetNameModifier(std::forward<NameModifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Specific settings for this type of output.
      */
-    inline const OutputSettings& GetOutputSettings() const{ return m_outputSettings; }
+    inline const OutputSettings& GetOutputSettings() const { return m_outputSettings; }
     inline bool OutputSettingsHasBeenSet() const { return m_outputSettingsHasBeenSet; }
-    inline void SetOutputSettings(const OutputSettings& value) { m_outputSettingsHasBeenSet = true; m_outputSettings = value; }
-    inline void SetOutputSettings(OutputSettings&& value) { m_outputSettingsHasBeenSet = true; m_outputSettings = std::move(value); }
-    inline Output& WithOutputSettings(const OutputSettings& value) { SetOutputSettings(value); return *this;}
-    inline Output& WithOutputSettings(OutputSettings&& value) { SetOutputSettings(std::move(value)); return *this;}
+    template<typename OutputSettingsT = OutputSettings>
+    void SetOutputSettings(OutputSettingsT&& value) { m_outputSettingsHasBeenSet = true; m_outputSettings = std::forward<OutputSettingsT>(value); }
+    template<typename OutputSettingsT = OutputSettings>
+    Output& WithOutputSettings(OutputSettingsT&& value) { SetOutputSettings(std::forward<OutputSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -145,14 +141,12 @@ namespace Model
      * or custom preset name. You can specify either Preset or Container settings, but
      * not both.
      */
-    inline const Aws::String& GetPreset() const{ return m_preset; }
+    inline const Aws::String& GetPreset() const { return m_preset; }
     inline bool PresetHasBeenSet() const { return m_presetHasBeenSet; }
-    inline void SetPreset(const Aws::String& value) { m_presetHasBeenSet = true; m_preset = value; }
-    inline void SetPreset(Aws::String&& value) { m_presetHasBeenSet = true; m_preset = std::move(value); }
-    inline void SetPreset(const char* value) { m_presetHasBeenSet = true; m_preset.assign(value); }
-    inline Output& WithPreset(const Aws::String& value) { SetPreset(value); return *this;}
-    inline Output& WithPreset(Aws::String&& value) { SetPreset(std::move(value)); return *this;}
-    inline Output& WithPreset(const char* value) { SetPreset(value); return *this;}
+    template<typename PresetT = Aws::String>
+    void SetPreset(PresetT&& value) { m_presetHasBeenSet = true; m_preset = std::forward<PresetT>(value); }
+    template<typename PresetT = Aws::String>
+    Output& WithPreset(PresetT&& value) { SetPreset(std::forward<PresetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -161,12 +155,12 @@ namespace Model
      * settings depend on the video codec that you choose for the property codec.
      * Include one instance of VideoDescription per output.
      */
-    inline const VideoDescription& GetVideoDescription() const{ return m_videoDescription; }
+    inline const VideoDescription& GetVideoDescription() const { return m_videoDescription; }
     inline bool VideoDescriptionHasBeenSet() const { return m_videoDescriptionHasBeenSet; }
-    inline void SetVideoDescription(const VideoDescription& value) { m_videoDescriptionHasBeenSet = true; m_videoDescription = value; }
-    inline void SetVideoDescription(VideoDescription&& value) { m_videoDescriptionHasBeenSet = true; m_videoDescription = std::move(value); }
-    inline Output& WithVideoDescription(const VideoDescription& value) { SetVideoDescription(value); return *this;}
-    inline Output& WithVideoDescription(VideoDescription&& value) { SetVideoDescription(std::move(value)); return *this;}
+    template<typename VideoDescriptionT = VideoDescription>
+    void SetVideoDescription(VideoDescriptionT&& value) { m_videoDescriptionHasBeenSet = true; m_videoDescription = std::forward<VideoDescriptionT>(value); }
+    template<typename VideoDescriptionT = VideoDescription>
+    Output& WithVideoDescription(VideoDescriptionT&& value) { SetVideoDescription(std::forward<VideoDescriptionT>(value)); return *this;}
     ///@}
   private:
 

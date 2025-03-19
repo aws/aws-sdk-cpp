@@ -18,14 +18,7 @@ namespace IoT
 namespace Model
 {
 
-TimestreamTimestamp::TimestreamTimestamp() : 
-    m_valueHasBeenSet(false),
-    m_unitHasBeenSet(false)
-{
-}
-
 TimestreamTimestamp::TimestreamTimestamp(JsonView jsonValue)
-  : TimestreamTimestamp()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TimestreamTimestamp& TimestreamTimestamp::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unit"))
   {
     m_unit = jsonValue.GetString("unit");
-
     m_unitHasBeenSet = true;
   }
-
   return *this;
 }
 

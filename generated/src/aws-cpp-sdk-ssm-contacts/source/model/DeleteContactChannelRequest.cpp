@@ -12,11 +12,6 @@ using namespace Aws::SSMContacts::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteContactChannelRequest::DeleteContactChannelRequest() : 
-    m_contactChannelIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteContactChannelRequest::SerializePayload() const
 {
   JsonValue payload;

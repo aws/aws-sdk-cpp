@@ -49,7 +49,7 @@ namespace Model
   class AnalyticsSessionFilter
   {
   public:
-    AWS_LEXMODELSV2_API AnalyticsSessionFilter();
+    AWS_LEXMODELSV2_API AnalyticsSessionFilter() = default;
     AWS_LEXMODELSV2_API AnalyticsSessionFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API AnalyticsSessionFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -71,12 +71,10 @@ namespace Model
      * session.</p> </li> <li> <p> <code>IntentPath</code> – The order of intents taken
      * in a session.</p> </li> </ul>
      */
-    inline const AnalyticsSessionFilterName& GetName() const{ return m_name; }
+    inline AnalyticsSessionFilterName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const AnalyticsSessionFilterName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(AnalyticsSessionFilterName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline AnalyticsSessionFilter& WithName(const AnalyticsSessionFilterName& value) { SetName(value); return *this;}
-    inline AnalyticsSessionFilter& WithName(AnalyticsSessionFilterName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(AnalyticsSessionFilterName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline AnalyticsSessionFilter& WithName(AnalyticsSessionFilterName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -96,12 +94,10 @@ namespace Model
      * <code>OriginatingRequestId</code> – <code>EQ</code>.</p> </li> <li> <p>
      * <code>IntentPath</code> – <code>EQ</code>.</p> </li> </ul>
      */
-    inline const AnalyticsFilterOperator& GetOperator() const{ return m_operator; }
+    inline AnalyticsFilterOperator GetOperator() const { return m_operator; }
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-    inline void SetOperator(const AnalyticsFilterOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-    inline void SetOperator(AnalyticsFilterOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-    inline AnalyticsSessionFilter& WithOperator(const AnalyticsFilterOperator& value) { SetOperator(value); return *this;}
-    inline AnalyticsSessionFilter& WithOperator(AnalyticsFilterOperator&& value) { SetOperator(std::move(value)); return *this;}
+    inline void SetOperator(AnalyticsFilterOperator value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline AnalyticsSessionFilter& WithOperator(AnalyticsFilterOperator value) { SetOperator(value); return *this;}
     ///@}
 
     ///@{
@@ -115,22 +111,21 @@ namespace Model
      * operation filters for results where the modality was either <code>Speech</code>
      * or <code>Text</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline AnalyticsSessionFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline AnalyticsSessionFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline AnalyticsSessionFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline AnalyticsSessionFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline AnalyticsSessionFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    AnalyticsSessionFilter& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    AnalyticsSessionFilter& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
   private:
 
-    AnalyticsSessionFilterName m_name;
+    AnalyticsSessionFilterName m_name{AnalyticsSessionFilterName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
-    AnalyticsFilterOperator m_operator;
+    AnalyticsFilterOperator m_operator{AnalyticsFilterOperator::NOT_SET};
     bool m_operatorHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;

@@ -39,7 +39,7 @@ namespace Model
   class GetCloudWatchAlarmTemplateResult
   {
   public:
-    AWS_MEDIALIVE_API GetCloudWatchAlarmTemplateResult();
+    AWS_MEDIALIVE_API GetCloudWatchAlarmTemplateResult() = default;
     AWS_MEDIALIVE_API GetCloudWatchAlarmTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIALIVE_API GetCloudWatchAlarmTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -48,31 +48,27 @@ namespace Model
     /**
      * A cloudwatch alarm template's ARN (Amazon Resource Name)
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline GetCloudWatchAlarmTemplateResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline GetCloudWatchAlarmTemplateResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline GetCloudWatchAlarmTemplateResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    GetCloudWatchAlarmTemplateResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const CloudWatchAlarmTemplateComparisonOperator& GetComparisonOperator() const{ return m_comparisonOperator; }
-    inline void SetComparisonOperator(const CloudWatchAlarmTemplateComparisonOperator& value) { m_comparisonOperator = value; }
-    inline void SetComparisonOperator(CloudWatchAlarmTemplateComparisonOperator&& value) { m_comparisonOperator = std::move(value); }
-    inline GetCloudWatchAlarmTemplateResult& WithComparisonOperator(const CloudWatchAlarmTemplateComparisonOperator& value) { SetComparisonOperator(value); return *this;}
-    inline GetCloudWatchAlarmTemplateResult& WithComparisonOperator(CloudWatchAlarmTemplateComparisonOperator&& value) { SetComparisonOperator(std::move(value)); return *this;}
+    inline CloudWatchAlarmTemplateComparisonOperator GetComparisonOperator() const { return m_comparisonOperator; }
+    inline void SetComparisonOperator(CloudWatchAlarmTemplateComparisonOperator value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
+    inline GetCloudWatchAlarmTemplateResult& WithComparisonOperator(CloudWatchAlarmTemplateComparisonOperator value) { SetComparisonOperator(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline GetCloudWatchAlarmTemplateResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline GetCloudWatchAlarmTemplateResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    GetCloudWatchAlarmTemplateResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,8 +76,8 @@ namespace Model
      * The number of datapoints within the evaluation period that must be breaching to
      * trigger the alarm.
      */
-    inline int GetDatapointsToAlarm() const{ return m_datapointsToAlarm; }
-    inline void SetDatapointsToAlarm(int value) { m_datapointsToAlarm = value; }
+    inline int GetDatapointsToAlarm() const { return m_datapointsToAlarm; }
+    inline void SetDatapointsToAlarm(int value) { m_datapointsToAlarmHasBeenSet = true; m_datapointsToAlarm = value; }
     inline GetCloudWatchAlarmTemplateResult& WithDatapointsToAlarm(int value) { SetDatapointsToAlarm(value); return *this;}
     ///@}
 
@@ -89,21 +85,19 @@ namespace Model
     /**
      * A resource's optional description.
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline GetCloudWatchAlarmTemplateResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline GetCloudWatchAlarmTemplateResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline GetCloudWatchAlarmTemplateResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    GetCloudWatchAlarmTemplateResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The number of periods over which data is compared to the specified threshold.
      */
-    inline int GetEvaluationPeriods() const{ return m_evaluationPeriods; }
-    inline void SetEvaluationPeriods(int value) { m_evaluationPeriods = value; }
+    inline int GetEvaluationPeriods() const { return m_evaluationPeriods; }
+    inline void SetEvaluationPeriods(int value) { m_evaluationPeriodsHasBeenSet = true; m_evaluationPeriods = value; }
     inline GetCloudWatchAlarmTemplateResult& WithEvaluationPeriods(int value) { SetEvaluationPeriods(value); return *this;}
     ///@}
 
@@ -112,13 +106,11 @@ namespace Model
      * A cloudwatch alarm template group's id. AWS provided template groups have ids
      * that start with `aws-`
      */
-    inline const Aws::String& GetGroupId() const{ return m_groupId; }
-    inline void SetGroupId(const Aws::String& value) { m_groupId = value; }
-    inline void SetGroupId(Aws::String&& value) { m_groupId = std::move(value); }
-    inline void SetGroupId(const char* value) { m_groupId.assign(value); }
-    inline GetCloudWatchAlarmTemplateResult& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
-    inline GetCloudWatchAlarmTemplateResult& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
-    inline GetCloudWatchAlarmTemplateResult& WithGroupId(const char* value) { SetGroupId(value); return *this;}
+    inline const Aws::String& GetGroupId() const { return m_groupId; }
+    template<typename GroupIdT = Aws::String>
+    void SetGroupId(GroupIdT&& value) { m_groupIdHasBeenSet = true; m_groupId = std::forward<GroupIdT>(value); }
+    template<typename GroupIdT = Aws::String>
+    GetCloudWatchAlarmTemplateResult& WithGroupId(GroupIdT&& value) { SetGroupId(std::forward<GroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -126,13 +118,11 @@ namespace Model
      * A cloudwatch alarm template's id. AWS provided templates have ids that start
      * with `aws-`
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline GetCloudWatchAlarmTemplateResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline GetCloudWatchAlarmTemplateResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline GetCloudWatchAlarmTemplateResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    GetCloudWatchAlarmTemplateResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -140,22 +130,20 @@ namespace Model
      * The name of the metric associated with the alarm. Must be compatible with
      * targetResourceType.
      */
-    inline const Aws::String& GetMetricName() const{ return m_metricName; }
-    inline void SetMetricName(const Aws::String& value) { m_metricName = value; }
-    inline void SetMetricName(Aws::String&& value) { m_metricName = std::move(value); }
-    inline void SetMetricName(const char* value) { m_metricName.assign(value); }
-    inline GetCloudWatchAlarmTemplateResult& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
-    inline GetCloudWatchAlarmTemplateResult& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
-    inline GetCloudWatchAlarmTemplateResult& WithMetricName(const char* value) { SetMetricName(value); return *this;}
+    inline const Aws::String& GetMetricName() const { return m_metricName; }
+    template<typename MetricNameT = Aws::String>
+    void SetMetricName(MetricNameT&& value) { m_metricNameHasBeenSet = true; m_metricName = std::forward<MetricNameT>(value); }
+    template<typename MetricNameT = Aws::String>
+    GetCloudWatchAlarmTemplateResult& WithMetricName(MetricNameT&& value) { SetMetricName(std::forward<MetricNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Utils::DateTime& GetModifiedAt() const{ return m_modifiedAt; }
-    inline void SetModifiedAt(const Aws::Utils::DateTime& value) { m_modifiedAt = value; }
-    inline void SetModifiedAt(Aws::Utils::DateTime&& value) { m_modifiedAt = std::move(value); }
-    inline GetCloudWatchAlarmTemplateResult& WithModifiedAt(const Aws::Utils::DateTime& value) { SetModifiedAt(value); return *this;}
-    inline GetCloudWatchAlarmTemplateResult& WithModifiedAt(Aws::Utils::DateTime&& value) { SetModifiedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetModifiedAt() const { return m_modifiedAt; }
+    template<typename ModifiedAtT = Aws::Utils::DateTime>
+    void SetModifiedAt(ModifiedAtT&& value) { m_modifiedAtHasBeenSet = true; m_modifiedAt = std::forward<ModifiedAtT>(value); }
+    template<typename ModifiedAtT = Aws::Utils::DateTime>
+    GetCloudWatchAlarmTemplateResult& WithModifiedAt(ModifiedAtT&& value) { SetModifiedAt(std::forward<ModifiedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -163,123 +151,128 @@ namespace Model
      * A resource's name. Names must be unique within the scope of a resource type in a
      * specific region.
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline GetCloudWatchAlarmTemplateResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetCloudWatchAlarmTemplateResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetCloudWatchAlarmTemplateResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetCloudWatchAlarmTemplateResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The period, in seconds, over which the specified statistic is applied.
      */
-    inline int GetPeriod() const{ return m_period; }
-    inline void SetPeriod(int value) { m_period = value; }
+    inline int GetPeriod() const { return m_period; }
+    inline void SetPeriod(int value) { m_periodHasBeenSet = true; m_period = value; }
     inline GetCloudWatchAlarmTemplateResult& WithPeriod(int value) { SetPeriod(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const CloudWatchAlarmTemplateStatistic& GetStatistic() const{ return m_statistic; }
-    inline void SetStatistic(const CloudWatchAlarmTemplateStatistic& value) { m_statistic = value; }
-    inline void SetStatistic(CloudWatchAlarmTemplateStatistic&& value) { m_statistic = std::move(value); }
-    inline GetCloudWatchAlarmTemplateResult& WithStatistic(const CloudWatchAlarmTemplateStatistic& value) { SetStatistic(value); return *this;}
-    inline GetCloudWatchAlarmTemplateResult& WithStatistic(CloudWatchAlarmTemplateStatistic&& value) { SetStatistic(std::move(value)); return *this;}
+    inline CloudWatchAlarmTemplateStatistic GetStatistic() const { return m_statistic; }
+    inline void SetStatistic(CloudWatchAlarmTemplateStatistic value) { m_statisticHasBeenSet = true; m_statistic = value; }
+    inline GetCloudWatchAlarmTemplateResult& WithStatistic(CloudWatchAlarmTemplateStatistic value) { SetStatistic(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline GetCloudWatchAlarmTemplateResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline GetCloudWatchAlarmTemplateResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline GetCloudWatchAlarmTemplateResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline GetCloudWatchAlarmTemplateResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetCloudWatchAlarmTemplateResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetCloudWatchAlarmTemplateResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetCloudWatchAlarmTemplateResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetCloudWatchAlarmTemplateResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetCloudWatchAlarmTemplateResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    GetCloudWatchAlarmTemplateResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    GetCloudWatchAlarmTemplateResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const CloudWatchAlarmTemplateTargetResourceType& GetTargetResourceType() const{ return m_targetResourceType; }
-    inline void SetTargetResourceType(const CloudWatchAlarmTemplateTargetResourceType& value) { m_targetResourceType = value; }
-    inline void SetTargetResourceType(CloudWatchAlarmTemplateTargetResourceType&& value) { m_targetResourceType = std::move(value); }
-    inline GetCloudWatchAlarmTemplateResult& WithTargetResourceType(const CloudWatchAlarmTemplateTargetResourceType& value) { SetTargetResourceType(value); return *this;}
-    inline GetCloudWatchAlarmTemplateResult& WithTargetResourceType(CloudWatchAlarmTemplateTargetResourceType&& value) { SetTargetResourceType(std::move(value)); return *this;}
+    inline CloudWatchAlarmTemplateTargetResourceType GetTargetResourceType() const { return m_targetResourceType; }
+    inline void SetTargetResourceType(CloudWatchAlarmTemplateTargetResourceType value) { m_targetResourceTypeHasBeenSet = true; m_targetResourceType = value; }
+    inline GetCloudWatchAlarmTemplateResult& WithTargetResourceType(CloudWatchAlarmTemplateTargetResourceType value) { SetTargetResourceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * The threshold value to compare with the specified statistic.
      */
-    inline double GetThreshold() const{ return m_threshold; }
-    inline void SetThreshold(double value) { m_threshold = value; }
+    inline double GetThreshold() const { return m_threshold; }
+    inline void SetThreshold(double value) { m_thresholdHasBeenSet = true; m_threshold = value; }
     inline GetCloudWatchAlarmTemplateResult& WithThreshold(double value) { SetThreshold(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const CloudWatchAlarmTemplateTreatMissingData& GetTreatMissingData() const{ return m_treatMissingData; }
-    inline void SetTreatMissingData(const CloudWatchAlarmTemplateTreatMissingData& value) { m_treatMissingData = value; }
-    inline void SetTreatMissingData(CloudWatchAlarmTemplateTreatMissingData&& value) { m_treatMissingData = std::move(value); }
-    inline GetCloudWatchAlarmTemplateResult& WithTreatMissingData(const CloudWatchAlarmTemplateTreatMissingData& value) { SetTreatMissingData(value); return *this;}
-    inline GetCloudWatchAlarmTemplateResult& WithTreatMissingData(CloudWatchAlarmTemplateTreatMissingData&& value) { SetTreatMissingData(std::move(value)); return *this;}
+    inline CloudWatchAlarmTemplateTreatMissingData GetTreatMissingData() const { return m_treatMissingData; }
+    inline void SetTreatMissingData(CloudWatchAlarmTemplateTreatMissingData value) { m_treatMissingDataHasBeenSet = true; m_treatMissingData = value; }
+    inline GetCloudWatchAlarmTemplateResult& WithTreatMissingData(CloudWatchAlarmTemplateTreatMissingData value) { SetTreatMissingData(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetCloudWatchAlarmTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetCloudWatchAlarmTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetCloudWatchAlarmTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetCloudWatchAlarmTemplateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
-    CloudWatchAlarmTemplateComparisonOperator m_comparisonOperator;
+    CloudWatchAlarmTemplateComparisonOperator m_comparisonOperator{CloudWatchAlarmTemplateComparisonOperator::NOT_SET};
+    bool m_comparisonOperatorHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
-    int m_datapointsToAlarm;
+    int m_datapointsToAlarm{0};
+    bool m_datapointsToAlarmHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
-    int m_evaluationPeriods;
+    int m_evaluationPeriods{0};
+    bool m_evaluationPeriodsHasBeenSet = false;
 
     Aws::String m_groupId;
+    bool m_groupIdHasBeenSet = false;
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_metricName;
+    bool m_metricNameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_modifiedAt;
+    Aws::Utils::DateTime m_modifiedAt{};
+    bool m_modifiedAtHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
-    int m_period;
+    int m_period{0};
+    bool m_periodHasBeenSet = false;
 
-    CloudWatchAlarmTemplateStatistic m_statistic;
+    CloudWatchAlarmTemplateStatistic m_statistic{CloudWatchAlarmTemplateStatistic::NOT_SET};
+    bool m_statisticHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
-    CloudWatchAlarmTemplateTargetResourceType m_targetResourceType;
+    CloudWatchAlarmTemplateTargetResourceType m_targetResourceType{CloudWatchAlarmTemplateTargetResourceType::NOT_SET};
+    bool m_targetResourceTypeHasBeenSet = false;
 
-    double m_threshold;
+    double m_threshold{0.0};
+    bool m_thresholdHasBeenSet = false;
 
-    CloudWatchAlarmTemplateTreatMissingData m_treatMissingData;
+    CloudWatchAlarmTemplateTreatMissingData m_treatMissingData{CloudWatchAlarmTemplateTreatMissingData::NOT_SET};
+    bool m_treatMissingDataHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

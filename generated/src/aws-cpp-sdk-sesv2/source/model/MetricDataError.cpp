@@ -18,16 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-MetricDataError::MetricDataError() : 
-    m_idHasBeenSet(false),
-    m_code(QueryErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 MetricDataError::MetricDataError(JsonView jsonValue)
-  : MetricDataError()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ MetricDataError& MetricDataError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Code"))
   {
     m_code = QueryErrorCodeMapper::GetQueryErrorCodeForName(jsonValue.GetString("Code"));
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

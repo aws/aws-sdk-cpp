@@ -29,7 +29,7 @@ namespace Model
   class SearchTasksResult
   {
   public:
-    AWS_DEADLINE_API SearchTasksResult();
+    AWS_DEADLINE_API SearchTasksResult() = default;
     AWS_DEADLINE_API SearchTasksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DEADLINE_API SearchTasksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Tasks in the search.</p>
      */
-    inline const Aws::Vector<TaskSearchSummary>& GetTasks() const{ return m_tasks; }
-    inline void SetTasks(const Aws::Vector<TaskSearchSummary>& value) { m_tasks = value; }
-    inline void SetTasks(Aws::Vector<TaskSearchSummary>&& value) { m_tasks = std::move(value); }
-    inline SearchTasksResult& WithTasks(const Aws::Vector<TaskSearchSummary>& value) { SetTasks(value); return *this;}
-    inline SearchTasksResult& WithTasks(Aws::Vector<TaskSearchSummary>&& value) { SetTasks(std::move(value)); return *this;}
-    inline SearchTasksResult& AddTasks(const TaskSearchSummary& value) { m_tasks.push_back(value); return *this; }
-    inline SearchTasksResult& AddTasks(TaskSearchSummary&& value) { m_tasks.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TaskSearchSummary>& GetTasks() const { return m_tasks; }
+    template<typename TasksT = Aws::Vector<TaskSearchSummary>>
+    void SetTasks(TasksT&& value) { m_tasksHasBeenSet = true; m_tasks = std::forward<TasksT>(value); }
+    template<typename TasksT = Aws::Vector<TaskSearchSummary>>
+    SearchTasksResult& WithTasks(TasksT&& value) { SetTasks(std::forward<TasksT>(value)); return *this;}
+    template<typename TasksT = TaskSearchSummary>
+    SearchTasksResult& AddTasks(TasksT&& value) { m_tasksHasBeenSet = true; m_tasks.emplace_back(std::forward<TasksT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,8 +52,8 @@ namespace Model
      * <p>The next incremental starting point after the defined
      * <code>itemOffset</code>.</p>
      */
-    inline int GetNextItemOffset() const{ return m_nextItemOffset; }
-    inline void SetNextItemOffset(int value) { m_nextItemOffset = value; }
+    inline int GetNextItemOffset() const { return m_nextItemOffset; }
+    inline void SetNextItemOffset(int value) { m_nextItemOffsetHasBeenSet = true; m_nextItemOffset = value; }
     inline SearchTasksResult& WithNextItemOffset(int value) { SetNextItemOffset(value); return *this;}
     ///@}
 
@@ -61,30 +61,32 @@ namespace Model
     /**
      * <p>The total number of results in the search.</p>
      */
-    inline int GetTotalResults() const{ return m_totalResults; }
-    inline void SetTotalResults(int value) { m_totalResults = value; }
+    inline int GetTotalResults() const { return m_totalResults; }
+    inline void SetTotalResults(int value) { m_totalResultsHasBeenSet = true; m_totalResults = value; }
     inline SearchTasksResult& WithTotalResults(int value) { SetTotalResults(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline SearchTasksResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline SearchTasksResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline SearchTasksResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    SearchTasksResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<TaskSearchSummary> m_tasks;
+    bool m_tasksHasBeenSet = false;
 
-    int m_nextItemOffset;
+    int m_nextItemOffset{0};
+    bool m_nextItemOffsetHasBeenSet = false;
 
-    int m_totalResults;
+    int m_totalResults{0};
+    bool m_totalResultsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

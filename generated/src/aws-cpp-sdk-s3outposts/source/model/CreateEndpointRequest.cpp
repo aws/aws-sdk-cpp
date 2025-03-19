@@ -12,16 +12,6 @@ using namespace Aws::S3Outposts::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateEndpointRequest::CreateEndpointRequest() : 
-    m_outpostIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_securityGroupIdHasBeenSet(false),
-    m_accessType(EndpointAccessType::NOT_SET),
-    m_accessTypeHasBeenSet(false),
-    m_customerOwnedIpv4PoolHasBeenSet(false)
-{
-}
-
 Aws::String CreateEndpointRequest::SerializePayload() const
 {
   JsonValue payload;

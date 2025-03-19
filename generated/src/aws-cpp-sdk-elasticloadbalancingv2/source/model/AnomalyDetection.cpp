@@ -20,16 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-AnomalyDetection::AnomalyDetection() : 
-    m_result(AnomalyResultEnum::NOT_SET),
-    m_resultHasBeenSet(false),
-    m_mitigationInEffect(MitigationInEffectEnum::NOT_SET),
-    m_mitigationInEffectHasBeenSet(false)
-{
-}
-
 AnomalyDetection::AnomalyDetection(const XmlNode& xmlNode)
-  : AnomalyDetection()
 {
   *this = xmlNode;
 }
@@ -43,13 +34,13 @@ AnomalyDetection& AnomalyDetection::operator =(const XmlNode& xmlNode)
     XmlNode anomalyDetectionResultNode = resultNode.FirstChild("Result");
     if(!anomalyDetectionResultNode.IsNull())
     {
-      m_result = AnomalyResultEnumMapper::GetAnomalyResultEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(anomalyDetectionResultNode.GetText()).c_str()).c_str());
+      m_result = AnomalyResultEnumMapper::GetAnomalyResultEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(anomalyDetectionResultNode.GetText()).c_str()));
       m_resultHasBeenSet = true;
     }
     XmlNode mitigationInEffectNode = resultNode.FirstChild("MitigationInEffect");
     if(!mitigationInEffectNode.IsNull())
     {
-      m_mitigationInEffect = MitigationInEffectEnumMapper::GetMitigationInEffectEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(mitigationInEffectNode.GetText()).c_str()).c_str());
+      m_mitigationInEffect = MitigationInEffectEnumMapper::GetMitigationInEffectEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(mitigationInEffectNode.GetText()).c_str()));
       m_mitigationInEffectHasBeenSet = true;
     }
   }

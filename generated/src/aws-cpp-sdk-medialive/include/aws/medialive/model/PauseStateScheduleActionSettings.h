@@ -33,7 +33,7 @@ namespace Model
   class PauseStateScheduleActionSettings
   {
   public:
-    AWS_MEDIALIVE_API PauseStateScheduleActionSettings();
+    AWS_MEDIALIVE_API PauseStateScheduleActionSettings() = default;
     AWS_MEDIALIVE_API PauseStateScheduleActionSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API PauseStateScheduleActionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,14 @@ namespace Model
 
     ///@{
     
-    inline const Aws::Vector<PipelinePauseStateSettings>& GetPipelines() const{ return m_pipelines; }
+    inline const Aws::Vector<PipelinePauseStateSettings>& GetPipelines() const { return m_pipelines; }
     inline bool PipelinesHasBeenSet() const { return m_pipelinesHasBeenSet; }
-    inline void SetPipelines(const Aws::Vector<PipelinePauseStateSettings>& value) { m_pipelinesHasBeenSet = true; m_pipelines = value; }
-    inline void SetPipelines(Aws::Vector<PipelinePauseStateSettings>&& value) { m_pipelinesHasBeenSet = true; m_pipelines = std::move(value); }
-    inline PauseStateScheduleActionSettings& WithPipelines(const Aws::Vector<PipelinePauseStateSettings>& value) { SetPipelines(value); return *this;}
-    inline PauseStateScheduleActionSettings& WithPipelines(Aws::Vector<PipelinePauseStateSettings>&& value) { SetPipelines(std::move(value)); return *this;}
-    inline PauseStateScheduleActionSettings& AddPipelines(const PipelinePauseStateSettings& value) { m_pipelinesHasBeenSet = true; m_pipelines.push_back(value); return *this; }
-    inline PauseStateScheduleActionSettings& AddPipelines(PipelinePauseStateSettings&& value) { m_pipelinesHasBeenSet = true; m_pipelines.push_back(std::move(value)); return *this; }
+    template<typename PipelinesT = Aws::Vector<PipelinePauseStateSettings>>
+    void SetPipelines(PipelinesT&& value) { m_pipelinesHasBeenSet = true; m_pipelines = std::forward<PipelinesT>(value); }
+    template<typename PipelinesT = Aws::Vector<PipelinePauseStateSettings>>
+    PauseStateScheduleActionSettings& WithPipelines(PipelinesT&& value) { SetPipelines(std::forward<PipelinesT>(value)); return *this;}
+    template<typename PipelinesT = PipelinePauseStateSettings>
+    PauseStateScheduleActionSettings& AddPipelines(PipelinesT&& value) { m_pipelinesHasBeenSet = true; m_pipelines.emplace_back(std::forward<PipelinesT>(value)); return *this; }
     ///@}
   private:
 

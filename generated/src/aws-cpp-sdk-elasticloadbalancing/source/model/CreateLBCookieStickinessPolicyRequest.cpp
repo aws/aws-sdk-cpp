@@ -10,14 +10,6 @@
 using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils;
 
-CreateLBCookieStickinessPolicyRequest::CreateLBCookieStickinessPolicyRequest() : 
-    m_loadBalancerNameHasBeenSet(false),
-    m_policyNameHasBeenSet(false),
-    m_cookieExpirationPeriod(0),
-    m_cookieExpirationPeriodHasBeenSet(false)
-{
-}
-
 Aws::String CreateLBCookieStickinessPolicyRequest::SerializePayload() const
 {
   Aws::StringStream ss;

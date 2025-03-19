@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UnlockSnapshotResponse::UnlockSnapshotResponse()
-{
-}
-
 UnlockSnapshotResponse::UnlockSnapshotResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ UnlockSnapshotResponse& UnlockSnapshotResponse::operator =(const Aws::AmazonWebS
     if(!snapshotIdNode.IsNull())
     {
       m_snapshotId = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotIdNode.GetText());
+      m_snapshotIdHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ UnlockSnapshotResponse& UnlockSnapshotResponse::operator =(const Aws::AmazonWebS
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::UnlockSnapshotResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeSnapshotAttributeResponse::DescribeSnapshotAttributeResponse()
-{
-}
-
 DescribeSnapshotAttributeResponse::DescribeSnapshotAttributeResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,28 +38,33 @@ DescribeSnapshotAttributeResponse& DescribeSnapshotAttributeResponse::operator =
     if(!productCodesNode.IsNull())
     {
       XmlNode productCodesMember = productCodesNode.FirstChild("item");
+      m_productCodesHasBeenSet = !productCodesMember.IsNull();
       while(!productCodesMember.IsNull())
       {
         m_productCodes.push_back(productCodesMember);
         productCodesMember = productCodesMember.NextNode("item");
       }
 
+      m_productCodesHasBeenSet = true;
     }
     XmlNode snapshotIdNode = resultNode.FirstChild("snapshotId");
     if(!snapshotIdNode.IsNull())
     {
       m_snapshotId = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotIdNode.GetText());
+      m_snapshotIdHasBeenSet = true;
     }
     XmlNode createVolumePermissionsNode = resultNode.FirstChild("createVolumePermission");
     if(!createVolumePermissionsNode.IsNull())
     {
       XmlNode createVolumePermissionsMember = createVolumePermissionsNode.FirstChild("item");
+      m_createVolumePermissionsHasBeenSet = !createVolumePermissionsMember.IsNull();
       while(!createVolumePermissionsMember.IsNull())
       {
         m_createVolumePermissions.push_back(createVolumePermissionsMember);
         createVolumePermissionsMember = createVolumePermissionsMember.NextNode("item");
       }
 
+      m_createVolumePermissionsHasBeenSet = true;
     }
   }
 
@@ -72,6 +73,7 @@ DescribeSnapshotAttributeResponse& DescribeSnapshotAttributeResponse::operator =
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeSnapshotAttributeResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

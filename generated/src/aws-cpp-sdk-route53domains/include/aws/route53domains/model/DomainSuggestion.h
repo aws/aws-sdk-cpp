@@ -31,7 +31,7 @@ namespace Model
   class DomainSuggestion
   {
   public:
-    AWS_ROUTE53DOMAINS_API DomainSuggestion();
+    AWS_ROUTE53DOMAINS_API DomainSuggestion() = default;
     AWS_ROUTE53DOMAINS_API DomainSuggestion(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53DOMAINS_API DomainSuggestion& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53DOMAINS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>A suggested domain name.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline DomainSuggestion& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline DomainSuggestion& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline DomainSuggestion& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    DomainSuggestion& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +70,12 @@ namespace Model
      * <dt>UNAVAILABLE_RESTRICTED</dt> <dd> <p>The domain name is forbidden.</p> </dd>
      * </dl>
      */
-    inline const Aws::String& GetAvailability() const{ return m_availability; }
+    inline const Aws::String& GetAvailability() const { return m_availability; }
     inline bool AvailabilityHasBeenSet() const { return m_availabilityHasBeenSet; }
-    inline void SetAvailability(const Aws::String& value) { m_availabilityHasBeenSet = true; m_availability = value; }
-    inline void SetAvailability(Aws::String&& value) { m_availabilityHasBeenSet = true; m_availability = std::move(value); }
-    inline void SetAvailability(const char* value) { m_availabilityHasBeenSet = true; m_availability.assign(value); }
-    inline DomainSuggestion& WithAvailability(const Aws::String& value) { SetAvailability(value); return *this;}
-    inline DomainSuggestion& WithAvailability(Aws::String&& value) { SetAvailability(std::move(value)); return *this;}
-    inline DomainSuggestion& WithAvailability(const char* value) { SetAvailability(value); return *this;}
+    template<typename AvailabilityT = Aws::String>
+    void SetAvailability(AvailabilityT&& value) { m_availabilityHasBeenSet = true; m_availability = std::forward<AvailabilityT>(value); }
+    template<typename AvailabilityT = Aws::String>
+    DomainSuggestion& WithAvailability(AvailabilityT&& value) { SetAvailability(std::forward<AvailabilityT>(value)); return *this;}
     ///@}
   private:
 

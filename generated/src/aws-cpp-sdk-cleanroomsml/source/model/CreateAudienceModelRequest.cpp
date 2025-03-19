@@ -12,17 +12,6 @@ using namespace Aws::CleanRoomsML::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAudienceModelRequest::CreateAudienceModelRequest() : 
-    m_trainingDataStartTimeHasBeenSet(false),
-    m_trainingDataEndTimeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_trainingDatasetArnHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 Aws::String CreateAudienceModelRequest::SerializePayload() const
 {
   JsonValue payload;

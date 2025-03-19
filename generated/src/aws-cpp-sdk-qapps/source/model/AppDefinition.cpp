@@ -18,16 +18,7 @@ namespace QApps
 namespace Model
 {
 
-AppDefinition::AppDefinition() : 
-    m_appDefinitionVersionHasBeenSet(false),
-    m_cardsHasBeenSet(false),
-    m_canEdit(false),
-    m_canEditHasBeenSet(false)
-{
-}
-
 AppDefinition::AppDefinition(JsonView jsonValue)
-  : AppDefinition()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ AppDefinition& AppDefinition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("appDefinitionVersion"))
   {
     m_appDefinitionVersion = jsonValue.GetString("appDefinitionVersion");
-
     m_appDefinitionVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cards"))
   {
     Aws::Utils::Array<JsonView> cardsJsonList = jsonValue.GetArray("cards");
@@ -50,14 +39,11 @@ AppDefinition& AppDefinition::operator =(JsonView jsonValue)
     }
     m_cardsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("canEdit"))
   {
     m_canEdit = jsonValue.GetBool("canEdit");
-
     m_canEditHasBeenSet = true;
   }
-
   return *this;
 }
 

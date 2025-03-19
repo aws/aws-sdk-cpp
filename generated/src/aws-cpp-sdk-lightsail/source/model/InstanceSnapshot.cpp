@@ -18,32 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-InstanceSnapshot::InstanceSnapshot() : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_supportCodeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_state(InstanceSnapshotState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_progressHasBeenSet(false),
-    m_fromAttachedDisksHasBeenSet(false),
-    m_fromInstanceNameHasBeenSet(false),
-    m_fromInstanceArnHasBeenSet(false),
-    m_fromBlueprintIdHasBeenSet(false),
-    m_fromBundleIdHasBeenSet(false),
-    m_isFromAutoSnapshot(false),
-    m_isFromAutoSnapshotHasBeenSet(false),
-    m_sizeInGb(0),
-    m_sizeInGbHasBeenSet(false)
-{
-}
-
 InstanceSnapshot::InstanceSnapshot(JsonView jsonValue)
-  : InstanceSnapshot()
 {
   *this = jsonValue;
 }
@@ -53,45 +28,33 @@ InstanceSnapshot& InstanceSnapshot::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("supportCode"))
   {
     m_supportCode = jsonValue.GetString("supportCode");
-
     m_supportCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("location"))
   {
     m_location = jsonValue.GetObject("location");
-
     m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("resourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -101,21 +64,16 @@ InstanceSnapshot& InstanceSnapshot::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = InstanceSnapshotStateMapper::GetInstanceSnapshotStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("progress"))
   {
     m_progress = jsonValue.GetString("progress");
-
     m_progressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fromAttachedDisks"))
   {
     Aws::Utils::Array<JsonView> fromAttachedDisksJsonList = jsonValue.GetArray("fromAttachedDisks");
@@ -125,49 +83,36 @@ InstanceSnapshot& InstanceSnapshot::operator =(JsonView jsonValue)
     }
     m_fromAttachedDisksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fromInstanceName"))
   {
     m_fromInstanceName = jsonValue.GetString("fromInstanceName");
-
     m_fromInstanceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fromInstanceArn"))
   {
     m_fromInstanceArn = jsonValue.GetString("fromInstanceArn");
-
     m_fromInstanceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fromBlueprintId"))
   {
     m_fromBlueprintId = jsonValue.GetString("fromBlueprintId");
-
     m_fromBlueprintIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fromBundleId"))
   {
     m_fromBundleId = jsonValue.GetString("fromBundleId");
-
     m_fromBundleIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isFromAutoSnapshot"))
   {
     m_isFromAutoSnapshot = jsonValue.GetBool("isFromAutoSnapshot");
-
     m_isFromAutoSnapshotHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sizeInGb"))
   {
     m_sizeInGb = jsonValue.GetInteger("sizeInGb");
-
     m_sizeInGbHasBeenSet = true;
   }
-
   return *this;
 }
 

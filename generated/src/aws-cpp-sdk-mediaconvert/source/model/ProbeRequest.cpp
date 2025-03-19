@@ -12,11 +12,6 @@ using namespace Aws::MediaConvert::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ProbeRequest::ProbeRequest() : 
-    m_inputFilesHasBeenSet(false)
-{
-}
-
 Aws::String ProbeRequest::SerializePayload() const
 {
   JsonValue payload;

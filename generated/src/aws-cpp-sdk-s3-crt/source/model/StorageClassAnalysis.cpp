@@ -20,13 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-StorageClassAnalysis::StorageClassAnalysis() : 
-    m_dataExportHasBeenSet(false)
-{
-}
-
 StorageClassAnalysis::StorageClassAnalysis(const XmlNode& xmlNode)
-  : StorageClassAnalysis()
 {
   *this = xmlNode;
 }

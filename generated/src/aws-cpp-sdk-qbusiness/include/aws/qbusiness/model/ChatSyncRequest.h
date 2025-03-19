@@ -33,7 +33,7 @@ namespace Model
   class ChatSyncRequest : public QBusinessRequest
   {
   public:
-    AWS_QBUSINESS_API ChatSyncRequest();
+    AWS_QBUSINESS_API ChatSyncRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -51,57 +51,50 @@ namespace Model
      * <p>The identifier of the Amazon Q Business application linked to the Amazon Q
      * Business conversation.</p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-    inline ChatSyncRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline ChatSyncRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline ChatSyncRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    ChatSyncRequest& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the user attached to the chat input.</p>
      */
-    inline const Aws::String& GetUserId() const{ return m_userId; }
+    inline const Aws::String& GetUserId() const { return m_userId; }
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
-    inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
-    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
-    inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
-    inline ChatSyncRequest& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
-    inline ChatSyncRequest& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
-    inline ChatSyncRequest& WithUserId(const char* value) { SetUserId(value); return *this;}
+    template<typename UserIdT = Aws::String>
+    void SetUserId(UserIdT&& value) { m_userIdHasBeenSet = true; m_userId = std::forward<UserIdT>(value); }
+    template<typename UserIdT = Aws::String>
+    ChatSyncRequest& WithUserId(UserIdT&& value) { SetUserId(std::forward<UserIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The group names that a user associated with the chat input belongs to.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetUserGroups() const{ return m_userGroups; }
+    inline const Aws::Vector<Aws::String>& GetUserGroups() const { return m_userGroups; }
     inline bool UserGroupsHasBeenSet() const { return m_userGroupsHasBeenSet; }
-    inline void SetUserGroups(const Aws::Vector<Aws::String>& value) { m_userGroupsHasBeenSet = true; m_userGroups = value; }
-    inline void SetUserGroups(Aws::Vector<Aws::String>&& value) { m_userGroupsHasBeenSet = true; m_userGroups = std::move(value); }
-    inline ChatSyncRequest& WithUserGroups(const Aws::Vector<Aws::String>& value) { SetUserGroups(value); return *this;}
-    inline ChatSyncRequest& WithUserGroups(Aws::Vector<Aws::String>&& value) { SetUserGroups(std::move(value)); return *this;}
-    inline ChatSyncRequest& AddUserGroups(const Aws::String& value) { m_userGroupsHasBeenSet = true; m_userGroups.push_back(value); return *this; }
-    inline ChatSyncRequest& AddUserGroups(Aws::String&& value) { m_userGroupsHasBeenSet = true; m_userGroups.push_back(std::move(value)); return *this; }
-    inline ChatSyncRequest& AddUserGroups(const char* value) { m_userGroupsHasBeenSet = true; m_userGroups.push_back(value); return *this; }
+    template<typename UserGroupsT = Aws::Vector<Aws::String>>
+    void SetUserGroups(UserGroupsT&& value) { m_userGroupsHasBeenSet = true; m_userGroups = std::forward<UserGroupsT>(value); }
+    template<typename UserGroupsT = Aws::Vector<Aws::String>>
+    ChatSyncRequest& WithUserGroups(UserGroupsT&& value) { SetUserGroups(std::forward<UserGroupsT>(value)); return *this;}
+    template<typename UserGroupsT = Aws::String>
+    ChatSyncRequest& AddUserGroups(UserGroupsT&& value) { m_userGroupsHasBeenSet = true; m_userGroups.emplace_back(std::forward<UserGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A end user message in a conversation.</p>
      */
-    inline const Aws::String& GetUserMessage() const{ return m_userMessage; }
+    inline const Aws::String& GetUserMessage() const { return m_userMessage; }
     inline bool UserMessageHasBeenSet() const { return m_userMessageHasBeenSet; }
-    inline void SetUserMessage(const Aws::String& value) { m_userMessageHasBeenSet = true; m_userMessage = value; }
-    inline void SetUserMessage(Aws::String&& value) { m_userMessageHasBeenSet = true; m_userMessage = std::move(value); }
-    inline void SetUserMessage(const char* value) { m_userMessageHasBeenSet = true; m_userMessage.assign(value); }
-    inline ChatSyncRequest& WithUserMessage(const Aws::String& value) { SetUserMessage(value); return *this;}
-    inline ChatSyncRequest& WithUserMessage(Aws::String&& value) { SetUserMessage(std::move(value)); return *this;}
-    inline ChatSyncRequest& WithUserMessage(const char* value) { SetUserMessage(value); return *this;}
+    template<typename UserMessageT = Aws::String>
+    void SetUserMessage(UserMessageT&& value) { m_userMessageHasBeenSet = true; m_userMessage = std::forward<UserMessageT>(value); }
+    template<typename UserMessageT = Aws::String>
+    ChatSyncRequest& WithUserMessage(UserMessageT&& value) { SetUserMessage(std::forward<UserMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,26 +102,26 @@ namespace Model
      * <p>A list of files uploaded directly during chat. You can upload a maximum of 5
      * files of upto 10 MB each.</p>
      */
-    inline const Aws::Vector<AttachmentInput>& GetAttachments() const{ return m_attachments; }
+    inline const Aws::Vector<AttachmentInput>& GetAttachments() const { return m_attachments; }
     inline bool AttachmentsHasBeenSet() const { return m_attachmentsHasBeenSet; }
-    inline void SetAttachments(const Aws::Vector<AttachmentInput>& value) { m_attachmentsHasBeenSet = true; m_attachments = value; }
-    inline void SetAttachments(Aws::Vector<AttachmentInput>&& value) { m_attachmentsHasBeenSet = true; m_attachments = std::move(value); }
-    inline ChatSyncRequest& WithAttachments(const Aws::Vector<AttachmentInput>& value) { SetAttachments(value); return *this;}
-    inline ChatSyncRequest& WithAttachments(Aws::Vector<AttachmentInput>&& value) { SetAttachments(std::move(value)); return *this;}
-    inline ChatSyncRequest& AddAttachments(const AttachmentInput& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(value); return *this; }
-    inline ChatSyncRequest& AddAttachments(AttachmentInput&& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(std::move(value)); return *this; }
+    template<typename AttachmentsT = Aws::Vector<AttachmentInput>>
+    void SetAttachments(AttachmentsT&& value) { m_attachmentsHasBeenSet = true; m_attachments = std::forward<AttachmentsT>(value); }
+    template<typename AttachmentsT = Aws::Vector<AttachmentInput>>
+    ChatSyncRequest& WithAttachments(AttachmentsT&& value) { SetAttachments(std::forward<AttachmentsT>(value)); return *this;}
+    template<typename AttachmentsT = AttachmentInput>
+    ChatSyncRequest& AddAttachments(AttachmentsT&& value) { m_attachmentsHasBeenSet = true; m_attachments.emplace_back(std::forward<AttachmentsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A request from an end user to perform an Amazon Q Business plugin action.</p>
      */
-    inline const ActionExecution& GetActionExecution() const{ return m_actionExecution; }
+    inline const ActionExecution& GetActionExecution() const { return m_actionExecution; }
     inline bool ActionExecutionHasBeenSet() const { return m_actionExecutionHasBeenSet; }
-    inline void SetActionExecution(const ActionExecution& value) { m_actionExecutionHasBeenSet = true; m_actionExecution = value; }
-    inline void SetActionExecution(ActionExecution&& value) { m_actionExecutionHasBeenSet = true; m_actionExecution = std::move(value); }
-    inline ChatSyncRequest& WithActionExecution(const ActionExecution& value) { SetActionExecution(value); return *this;}
-    inline ChatSyncRequest& WithActionExecution(ActionExecution&& value) { SetActionExecution(std::move(value)); return *this;}
+    template<typename ActionExecutionT = ActionExecution>
+    void SetActionExecution(ActionExecutionT&& value) { m_actionExecutionHasBeenSet = true; m_actionExecution = std::forward<ActionExecutionT>(value); }
+    template<typename ActionExecutionT = ActionExecution>
+    ChatSyncRequest& WithActionExecution(ActionExecutionT&& value) { SetActionExecution(std::forward<ActionExecutionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -136,40 +129,36 @@ namespace Model
      * <p>An authentication verification event response by a third party authentication
      * server to Amazon Q Business.</p>
      */
-    inline const AuthChallengeResponse& GetAuthChallengeResponse() const{ return m_authChallengeResponse; }
+    inline const AuthChallengeResponse& GetAuthChallengeResponse() const { return m_authChallengeResponse; }
     inline bool AuthChallengeResponseHasBeenSet() const { return m_authChallengeResponseHasBeenSet; }
-    inline void SetAuthChallengeResponse(const AuthChallengeResponse& value) { m_authChallengeResponseHasBeenSet = true; m_authChallengeResponse = value; }
-    inline void SetAuthChallengeResponse(AuthChallengeResponse&& value) { m_authChallengeResponseHasBeenSet = true; m_authChallengeResponse = std::move(value); }
-    inline ChatSyncRequest& WithAuthChallengeResponse(const AuthChallengeResponse& value) { SetAuthChallengeResponse(value); return *this;}
-    inline ChatSyncRequest& WithAuthChallengeResponse(AuthChallengeResponse&& value) { SetAuthChallengeResponse(std::move(value)); return *this;}
+    template<typename AuthChallengeResponseT = AuthChallengeResponse>
+    void SetAuthChallengeResponse(AuthChallengeResponseT&& value) { m_authChallengeResponseHasBeenSet = true; m_authChallengeResponse = std::forward<AuthChallengeResponseT>(value); }
+    template<typename AuthChallengeResponseT = AuthChallengeResponse>
+    ChatSyncRequest& WithAuthChallengeResponse(AuthChallengeResponseT&& value) { SetAuthChallengeResponse(std::forward<AuthChallengeResponseT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the Amazon Q Business conversation.</p>
      */
-    inline const Aws::String& GetConversationId() const{ return m_conversationId; }
+    inline const Aws::String& GetConversationId() const { return m_conversationId; }
     inline bool ConversationIdHasBeenSet() const { return m_conversationIdHasBeenSet; }
-    inline void SetConversationId(const Aws::String& value) { m_conversationIdHasBeenSet = true; m_conversationId = value; }
-    inline void SetConversationId(Aws::String&& value) { m_conversationIdHasBeenSet = true; m_conversationId = std::move(value); }
-    inline void SetConversationId(const char* value) { m_conversationIdHasBeenSet = true; m_conversationId.assign(value); }
-    inline ChatSyncRequest& WithConversationId(const Aws::String& value) { SetConversationId(value); return *this;}
-    inline ChatSyncRequest& WithConversationId(Aws::String&& value) { SetConversationId(std::move(value)); return *this;}
-    inline ChatSyncRequest& WithConversationId(const char* value) { SetConversationId(value); return *this;}
+    template<typename ConversationIdT = Aws::String>
+    void SetConversationId(ConversationIdT&& value) { m_conversationIdHasBeenSet = true; m_conversationId = std::forward<ConversationIdT>(value); }
+    template<typename ConversationIdT = Aws::String>
+    ChatSyncRequest& WithConversationId(ConversationIdT&& value) { SetConversationId(std::forward<ConversationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the previous system message in a conversation.</p>
      */
-    inline const Aws::String& GetParentMessageId() const{ return m_parentMessageId; }
+    inline const Aws::String& GetParentMessageId() const { return m_parentMessageId; }
     inline bool ParentMessageIdHasBeenSet() const { return m_parentMessageIdHasBeenSet; }
-    inline void SetParentMessageId(const Aws::String& value) { m_parentMessageIdHasBeenSet = true; m_parentMessageId = value; }
-    inline void SetParentMessageId(Aws::String&& value) { m_parentMessageIdHasBeenSet = true; m_parentMessageId = std::move(value); }
-    inline void SetParentMessageId(const char* value) { m_parentMessageIdHasBeenSet = true; m_parentMessageId.assign(value); }
-    inline ChatSyncRequest& WithParentMessageId(const Aws::String& value) { SetParentMessageId(value); return *this;}
-    inline ChatSyncRequest& WithParentMessageId(Aws::String&& value) { SetParentMessageId(std::move(value)); return *this;}
-    inline ChatSyncRequest& WithParentMessageId(const char* value) { SetParentMessageId(value); return *this;}
+    template<typename ParentMessageIdT = Aws::String>
+    void SetParentMessageId(ParentMessageIdT&& value) { m_parentMessageIdHasBeenSet = true; m_parentMessageId = std::forward<ParentMessageIdT>(value); }
+    template<typename ParentMessageIdT = Aws::String>
+    ChatSyncRequest& WithParentMessageId(ParentMessageIdT&& value) { SetParentMessageId(std::forward<ParentMessageIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -177,12 +166,12 @@ namespace Model
      * <p>Enables filtering of Amazon Q Business web experience responses based on
      * document attributes or metadata fields.</p>
      */
-    inline const AttributeFilter& GetAttributeFilter() const{ return m_attributeFilter; }
+    inline const AttributeFilter& GetAttributeFilter() const { return m_attributeFilter; }
     inline bool AttributeFilterHasBeenSet() const { return m_attributeFilterHasBeenSet; }
-    inline void SetAttributeFilter(const AttributeFilter& value) { m_attributeFilterHasBeenSet = true; m_attributeFilter = value; }
-    inline void SetAttributeFilter(AttributeFilter&& value) { m_attributeFilterHasBeenSet = true; m_attributeFilter = std::move(value); }
-    inline ChatSyncRequest& WithAttributeFilter(const AttributeFilter& value) { SetAttributeFilter(value); return *this;}
-    inline ChatSyncRequest& WithAttributeFilter(AttributeFilter&& value) { SetAttributeFilter(std::move(value)); return *this;}
+    template<typename AttributeFilterT = AttributeFilter>
+    void SetAttributeFilter(AttributeFilterT&& value) { m_attributeFilterHasBeenSet = true; m_attributeFilter = std::forward<AttributeFilterT>(value); }
+    template<typename AttributeFilterT = AttributeFilter>
+    ChatSyncRequest& WithAttributeFilter(AttributeFilterT&& value) { SetAttributeFilter(std::forward<AttributeFilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -210,38 +199,34 @@ namespace Model
      * href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/using-web-experience.html#chat-source-scope">Response
      * sources</a>.</p>
      */
-    inline const ChatMode& GetChatMode() const{ return m_chatMode; }
+    inline ChatMode GetChatMode() const { return m_chatMode; }
     inline bool ChatModeHasBeenSet() const { return m_chatModeHasBeenSet; }
-    inline void SetChatMode(const ChatMode& value) { m_chatModeHasBeenSet = true; m_chatMode = value; }
-    inline void SetChatMode(ChatMode&& value) { m_chatModeHasBeenSet = true; m_chatMode = std::move(value); }
-    inline ChatSyncRequest& WithChatMode(const ChatMode& value) { SetChatMode(value); return *this;}
-    inline ChatSyncRequest& WithChatMode(ChatMode&& value) { SetChatMode(std::move(value)); return *this;}
+    inline void SetChatMode(ChatMode value) { m_chatModeHasBeenSet = true; m_chatMode = value; }
+    inline ChatSyncRequest& WithChatMode(ChatMode value) { SetChatMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The chat mode configuration for an Amazon Q Business application.</p>
      */
-    inline const ChatModeConfiguration& GetChatModeConfiguration() const{ return m_chatModeConfiguration; }
+    inline const ChatModeConfiguration& GetChatModeConfiguration() const { return m_chatModeConfiguration; }
     inline bool ChatModeConfigurationHasBeenSet() const { return m_chatModeConfigurationHasBeenSet; }
-    inline void SetChatModeConfiguration(const ChatModeConfiguration& value) { m_chatModeConfigurationHasBeenSet = true; m_chatModeConfiguration = value; }
-    inline void SetChatModeConfiguration(ChatModeConfiguration&& value) { m_chatModeConfigurationHasBeenSet = true; m_chatModeConfiguration = std::move(value); }
-    inline ChatSyncRequest& WithChatModeConfiguration(const ChatModeConfiguration& value) { SetChatModeConfiguration(value); return *this;}
-    inline ChatSyncRequest& WithChatModeConfiguration(ChatModeConfiguration&& value) { SetChatModeConfiguration(std::move(value)); return *this;}
+    template<typename ChatModeConfigurationT = ChatModeConfiguration>
+    void SetChatModeConfiguration(ChatModeConfigurationT&& value) { m_chatModeConfigurationHasBeenSet = true; m_chatModeConfiguration = std::forward<ChatModeConfigurationT>(value); }
+    template<typename ChatModeConfigurationT = ChatModeConfiguration>
+    ChatSyncRequest& WithChatModeConfiguration(ChatModeConfigurationT&& value) { SetChatModeConfiguration(std::forward<ChatModeConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A token that you provide to identify a chat request.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline ChatSyncRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline ChatSyncRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline ChatSyncRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    ChatSyncRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -275,7 +260,7 @@ namespace Model
     AttributeFilter m_attributeFilter;
     bool m_attributeFilterHasBeenSet = false;
 
-    ChatMode m_chatMode;
+    ChatMode m_chatMode{ChatMode::NOT_SET};
     bool m_chatModeHasBeenSet = false;
 
     ChatModeConfiguration m_chatModeConfiguration;

@@ -18,18 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-MetricsDataSource::MetricsDataSource() : 
-    m_dimensionsHasBeenSet(false),
-    m_namespace(MetricNamespace::NOT_SET),
-    m_namespaceHasBeenSet(false),
-    m_metricsHasBeenSet(false),
-    m_startDateHasBeenSet(false),
-    m_endDateHasBeenSet(false)
-{
-}
-
 MetricsDataSource::MetricsDataSource(JsonView jsonValue)
-  : MetricsDataSource()
 {
   *this = jsonValue;
 }
@@ -52,14 +41,11 @@ MetricsDataSource& MetricsDataSource::operator =(JsonView jsonValue)
     }
     m_dimensionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Namespace"))
   {
     m_namespace = MetricNamespaceMapper::GetMetricNamespaceForName(jsonValue.GetString("Namespace"));
-
     m_namespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Metrics"))
   {
     Aws::Utils::Array<JsonView> metricsJsonList = jsonValue.GetArray("Metrics");
@@ -69,21 +55,16 @@ MetricsDataSource& MetricsDataSource::operator =(JsonView jsonValue)
     }
     m_metricsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartDate"))
   {
     m_startDate = jsonValue.GetDouble("StartDate");
-
     m_startDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndDate"))
   {
     m_endDate = jsonValue.GetDouble("EndDate");
-
     m_endDateHasBeenSet = true;
   }
-
   return *this;
 }
 

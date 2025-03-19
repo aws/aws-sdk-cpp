@@ -18,13 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-GeneratedPolicy::GeneratedPolicy() : 
-    m_policyHasBeenSet(false)
-{
-}
-
 GeneratedPolicy::GeneratedPolicy(JsonView jsonValue)
-  : GeneratedPolicy()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ GeneratedPolicy& GeneratedPolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("policy"))
   {
     m_policy = jsonValue.GetString("policy");
-
     m_policyHasBeenSet = true;
   }
-
   return *this;
 }
 

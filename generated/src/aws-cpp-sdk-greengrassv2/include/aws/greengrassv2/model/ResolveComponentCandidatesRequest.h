@@ -23,7 +23,7 @@ namespace Model
   class ResolveComponentCandidatesRequest : public GreengrassV2Request
   {
   public:
-    AWS_GREENGRASSV2_API ResolveComponentCandidatesRequest();
+    AWS_GREENGRASSV2_API ResolveComponentCandidatesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,26 +38,26 @@ namespace Model
     /**
      * <p>The platform to use to resolve compatible components.</p>
      */
-    inline const ComponentPlatform& GetPlatform() const{ return m_platform; }
+    inline const ComponentPlatform& GetPlatform() const { return m_platform; }
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
-    inline void SetPlatform(const ComponentPlatform& value) { m_platformHasBeenSet = true; m_platform = value; }
-    inline void SetPlatform(ComponentPlatform&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
-    inline ResolveComponentCandidatesRequest& WithPlatform(const ComponentPlatform& value) { SetPlatform(value); return *this;}
-    inline ResolveComponentCandidatesRequest& WithPlatform(ComponentPlatform&& value) { SetPlatform(std::move(value)); return *this;}
+    template<typename PlatformT = ComponentPlatform>
+    void SetPlatform(PlatformT&& value) { m_platformHasBeenSet = true; m_platform = std::forward<PlatformT>(value); }
+    template<typename PlatformT = ComponentPlatform>
+    ResolveComponentCandidatesRequest& WithPlatform(PlatformT&& value) { SetPlatform(std::forward<PlatformT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of components to resolve.</p>
      */
-    inline const Aws::Vector<ComponentCandidate>& GetComponentCandidates() const{ return m_componentCandidates; }
+    inline const Aws::Vector<ComponentCandidate>& GetComponentCandidates() const { return m_componentCandidates; }
     inline bool ComponentCandidatesHasBeenSet() const { return m_componentCandidatesHasBeenSet; }
-    inline void SetComponentCandidates(const Aws::Vector<ComponentCandidate>& value) { m_componentCandidatesHasBeenSet = true; m_componentCandidates = value; }
-    inline void SetComponentCandidates(Aws::Vector<ComponentCandidate>&& value) { m_componentCandidatesHasBeenSet = true; m_componentCandidates = std::move(value); }
-    inline ResolveComponentCandidatesRequest& WithComponentCandidates(const Aws::Vector<ComponentCandidate>& value) { SetComponentCandidates(value); return *this;}
-    inline ResolveComponentCandidatesRequest& WithComponentCandidates(Aws::Vector<ComponentCandidate>&& value) { SetComponentCandidates(std::move(value)); return *this;}
-    inline ResolveComponentCandidatesRequest& AddComponentCandidates(const ComponentCandidate& value) { m_componentCandidatesHasBeenSet = true; m_componentCandidates.push_back(value); return *this; }
-    inline ResolveComponentCandidatesRequest& AddComponentCandidates(ComponentCandidate&& value) { m_componentCandidatesHasBeenSet = true; m_componentCandidates.push_back(std::move(value)); return *this; }
+    template<typename ComponentCandidatesT = Aws::Vector<ComponentCandidate>>
+    void SetComponentCandidates(ComponentCandidatesT&& value) { m_componentCandidatesHasBeenSet = true; m_componentCandidates = std::forward<ComponentCandidatesT>(value); }
+    template<typename ComponentCandidatesT = Aws::Vector<ComponentCandidate>>
+    ResolveComponentCandidatesRequest& WithComponentCandidates(ComponentCandidatesT&& value) { SetComponentCandidates(std::forward<ComponentCandidatesT>(value)); return *this;}
+    template<typename ComponentCandidatesT = ComponentCandidate>
+    ResolveComponentCandidatesRequest& AddComponentCandidates(ComponentCandidatesT&& value) { m_componentCandidatesHasBeenSet = true; m_componentCandidates.emplace_back(std::forward<ComponentCandidatesT>(value)); return *this; }
     ///@}
   private:
 

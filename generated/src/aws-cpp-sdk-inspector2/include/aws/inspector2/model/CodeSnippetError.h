@@ -33,7 +33,7 @@ namespace Model
   class CodeSnippetError
   {
   public:
-    AWS_INSPECTOR2_API CodeSnippetError();
+    AWS_INSPECTOR2_API CodeSnippetError() = default;
     AWS_INSPECTOR2_API CodeSnippetError(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API CodeSnippetError& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
      * <p>The error code for the error that prevented a code snippet from being
      * retrieved.</p>
      */
-    inline const CodeSnippetErrorCode& GetErrorCode() const{ return m_errorCode; }
+    inline CodeSnippetErrorCode GetErrorCode() const { return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    inline void SetErrorCode(const CodeSnippetErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-    inline void SetErrorCode(CodeSnippetErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-    inline CodeSnippetError& WithErrorCode(const CodeSnippetErrorCode& value) { SetErrorCode(value); return *this;}
-    inline CodeSnippetError& WithErrorCode(CodeSnippetErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
+    inline void SetErrorCode(CodeSnippetErrorCode value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
+    inline CodeSnippetError& WithErrorCode(CodeSnippetErrorCode value) { SetErrorCode(value); return *this;}
     ///@}
 
     ///@{
@@ -57,32 +55,28 @@ namespace Model
      * <p>The error message received when Amazon Inspector failed to retrieve a code
      * snippet.</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline CodeSnippetError& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline CodeSnippetError& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline CodeSnippetError& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    CodeSnippetError& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the finding that a code snippet couldn't be retrieved for.</p>
      */
-    inline const Aws::String& GetFindingArn() const{ return m_findingArn; }
+    inline const Aws::String& GetFindingArn() const { return m_findingArn; }
     inline bool FindingArnHasBeenSet() const { return m_findingArnHasBeenSet; }
-    inline void SetFindingArn(const Aws::String& value) { m_findingArnHasBeenSet = true; m_findingArn = value; }
-    inline void SetFindingArn(Aws::String&& value) { m_findingArnHasBeenSet = true; m_findingArn = std::move(value); }
-    inline void SetFindingArn(const char* value) { m_findingArnHasBeenSet = true; m_findingArn.assign(value); }
-    inline CodeSnippetError& WithFindingArn(const Aws::String& value) { SetFindingArn(value); return *this;}
-    inline CodeSnippetError& WithFindingArn(Aws::String&& value) { SetFindingArn(std::move(value)); return *this;}
-    inline CodeSnippetError& WithFindingArn(const char* value) { SetFindingArn(value); return *this;}
+    template<typename FindingArnT = Aws::String>
+    void SetFindingArn(FindingArnT&& value) { m_findingArnHasBeenSet = true; m_findingArn = std::forward<FindingArnT>(value); }
+    template<typename FindingArnT = Aws::String>
+    CodeSnippetError& WithFindingArn(FindingArnT&& value) { SetFindingArn(std::forward<FindingArnT>(value)); return *this;}
     ///@}
   private:
 
-    CodeSnippetErrorCode m_errorCode;
+    CodeSnippetErrorCode m_errorCode{CodeSnippetErrorCode::NOT_SET};
     bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;

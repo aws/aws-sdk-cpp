@@ -18,14 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-CatalogConfiguration::CatalogConfiguration() : 
-    m_catalogARNHasBeenSet(false),
-    m_warehouseLocationHasBeenSet(false)
-{
-}
-
 CatalogConfiguration::CatalogConfiguration(JsonView jsonValue)
-  : CatalogConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CatalogConfiguration& CatalogConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CatalogARN"))
   {
     m_catalogARN = jsonValue.GetString("CatalogARN");
-
     m_catalogARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WarehouseLocation"))
   {
     m_warehouseLocation = jsonValue.GetString("WarehouseLocation");
-
     m_warehouseLocationHasBeenSet = true;
   }
-
   return *this;
 }
 

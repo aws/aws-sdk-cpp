@@ -12,12 +12,6 @@ using namespace Aws::AppSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSourceApiAssociationRequest::GetSourceApiAssociationRequest() : 
-    m_mergedApiIdentifierHasBeenSet(false),
-    m_associationIdHasBeenSet(false)
-{
-}
-
 Aws::String GetSourceApiAssociationRequest::SerializePayload() const
 {
   return {};

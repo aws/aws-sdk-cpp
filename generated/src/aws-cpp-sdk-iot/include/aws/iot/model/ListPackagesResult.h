@@ -29,7 +29,7 @@ namespace Model
   class ListPackagesResult
   {
   public:
-    AWS_IOT_API ListPackagesResult();
+    AWS_IOT_API ListPackagesResult() = default;
     AWS_IOT_API ListPackagesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API ListPackagesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>The software package summary.</p>
      */
-    inline const Aws::Vector<PackageSummary>& GetPackageSummaries() const{ return m_packageSummaries; }
-    inline void SetPackageSummaries(const Aws::Vector<PackageSummary>& value) { m_packageSummaries = value; }
-    inline void SetPackageSummaries(Aws::Vector<PackageSummary>&& value) { m_packageSummaries = std::move(value); }
-    inline ListPackagesResult& WithPackageSummaries(const Aws::Vector<PackageSummary>& value) { SetPackageSummaries(value); return *this;}
-    inline ListPackagesResult& WithPackageSummaries(Aws::Vector<PackageSummary>&& value) { SetPackageSummaries(std::move(value)); return *this;}
-    inline ListPackagesResult& AddPackageSummaries(const PackageSummary& value) { m_packageSummaries.push_back(value); return *this; }
-    inline ListPackagesResult& AddPackageSummaries(PackageSummary&& value) { m_packageSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<PackageSummary>& GetPackageSummaries() const { return m_packageSummaries; }
+    template<typename PackageSummariesT = Aws::Vector<PackageSummary>>
+    void SetPackageSummaries(PackageSummariesT&& value) { m_packageSummariesHasBeenSet = true; m_packageSummaries = std::forward<PackageSummariesT>(value); }
+    template<typename PackageSummariesT = Aws::Vector<PackageSummary>>
+    ListPackagesResult& WithPackageSummaries(PackageSummariesT&& value) { SetPackageSummaries(std::forward<PackageSummariesT>(value)); return *this;}
+    template<typename PackageSummariesT = PackageSummary>
+    ListPackagesResult& AddPackageSummaries(PackageSummariesT&& value) { m_packageSummariesHasBeenSet = true; m_packageSummaries.emplace_back(std::forward<PackageSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The token for the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListPackagesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListPackagesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListPackagesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListPackagesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListPackagesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListPackagesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListPackagesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListPackagesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<PackageSummary> m_packageSummaries;
+    bool m_packageSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

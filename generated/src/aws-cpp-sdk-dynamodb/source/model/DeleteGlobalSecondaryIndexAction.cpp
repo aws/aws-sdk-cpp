@@ -18,13 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-DeleteGlobalSecondaryIndexAction::DeleteGlobalSecondaryIndexAction() : 
-    m_indexNameHasBeenSet(false)
-{
-}
-
 DeleteGlobalSecondaryIndexAction::DeleteGlobalSecondaryIndexAction(JsonView jsonValue)
-  : DeleteGlobalSecondaryIndexAction()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DeleteGlobalSecondaryIndexAction& DeleteGlobalSecondaryIndexAction::operator =(J
   if(jsonValue.ValueExists("IndexName"))
   {
     m_indexName = jsonValue.GetString("IndexName");
-
     m_indexNameHasBeenSet = true;
   }
-
   return *this;
 }
 

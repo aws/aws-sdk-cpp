@@ -10,33 +10,6 @@
 using namespace Aws::Neptune::Model;
 using namespace Aws::Utils;
 
-RestoreDBClusterFromSnapshotRequest::RestoreDBClusterFromSnapshotRequest() : 
-    m_availabilityZonesHasBeenSet(false),
-    m_dBClusterIdentifierHasBeenSet(false),
-    m_snapshotIdentifierHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_dBSubnetGroupNameHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_optionGroupNameHasBeenSet(false),
-    m_vpcSecurityGroupIdsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_enableIAMDatabaseAuthentication(false),
-    m_enableIAMDatabaseAuthenticationHasBeenSet(false),
-    m_enableCloudwatchLogsExportsHasBeenSet(false),
-    m_dBClusterParameterGroupNameHasBeenSet(false),
-    m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false),
-    m_copyTagsToSnapshot(false),
-    m_copyTagsToSnapshotHasBeenSet(false),
-    m_serverlessV2ScalingConfigurationHasBeenSet(false),
-    m_storageTypeHasBeenSet(false)
-{
-}
-
 Aws::String RestoreDBClusterFromSnapshotRequest::SerializePayload() const
 {
   Aws::StringStream ss;

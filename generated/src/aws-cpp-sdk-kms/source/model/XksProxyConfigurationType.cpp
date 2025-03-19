@@ -18,18 +18,7 @@ namespace KMS
 namespace Model
 {
 
-XksProxyConfigurationType::XksProxyConfigurationType() : 
-    m_connectivity(XksProxyConnectivityType::NOT_SET),
-    m_connectivityHasBeenSet(false),
-    m_accessKeyIdHasBeenSet(false),
-    m_uriEndpointHasBeenSet(false),
-    m_uriPathHasBeenSet(false),
-    m_vpcEndpointServiceNameHasBeenSet(false)
-{
-}
-
 XksProxyConfigurationType::XksProxyConfigurationType(JsonView jsonValue)
-  : XksProxyConfigurationType()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ XksProxyConfigurationType& XksProxyConfigurationType::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Connectivity"))
   {
     m_connectivity = XksProxyConnectivityTypeMapper::GetXksProxyConnectivityTypeForName(jsonValue.GetString("Connectivity"));
-
     m_connectivityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccessKeyId"))
   {
     m_accessKeyId = jsonValue.GetString("AccessKeyId");
-
     m_accessKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UriEndpoint"))
   {
     m_uriEndpoint = jsonValue.GetString("UriEndpoint");
-
     m_uriEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UriPath"))
   {
     m_uriPath = jsonValue.GetString("UriPath");
-
     m_uriPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcEndpointServiceName"))
   {
     m_vpcEndpointServiceName = jsonValue.GetString("VpcEndpointServiceName");
-
     m_vpcEndpointServiceNameHasBeenSet = true;
   }
-
   return *this;
 }
 

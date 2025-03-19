@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ManifestFileLocation::ManifestFileLocation() : 
-    m_bucketHasBeenSet(false),
-    m_keyHasBeenSet(false)
-{
-}
-
 ManifestFileLocation::ManifestFileLocation(JsonView jsonValue)
-  : ManifestFileLocation()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ManifestFileLocation& ManifestFileLocation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Bucket"))
   {
     m_bucket = jsonValue.GetString("Bucket");
-
     m_bucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   return *this;
 }
 

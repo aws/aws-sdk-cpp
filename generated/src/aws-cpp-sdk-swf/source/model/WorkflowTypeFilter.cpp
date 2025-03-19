@@ -18,14 +18,7 @@ namespace SWF
 namespace Model
 {
 
-WorkflowTypeFilter::WorkflowTypeFilter() : 
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 WorkflowTypeFilter::WorkflowTypeFilter(JsonView jsonValue)
-  : WorkflowTypeFilter()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ WorkflowTypeFilter& WorkflowTypeFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

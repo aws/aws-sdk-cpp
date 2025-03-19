@@ -29,7 +29,7 @@ namespace Model
   class NumberItemAttributesExceeded
   {
   public:
-    AWS_SIMPLEDB_API NumberItemAttributesExceeded();
+    AWS_SIMPLEDB_API NumberItemAttributesExceeded() = default;
     AWS_SIMPLEDB_API NumberItemAttributesExceeded(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_SIMPLEDB_API NumberItemAttributesExceeded& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -39,14 +39,14 @@ namespace Model
 
     ///@{
     
-    inline double GetBoxUsage() const{ return m_boxUsage; }
+    inline double GetBoxUsage() const { return m_boxUsage; }
     inline bool BoxUsageHasBeenSet() const { return m_boxUsageHasBeenSet; }
     inline void SetBoxUsage(double value) { m_boxUsageHasBeenSet = true; m_boxUsage = value; }
     inline NumberItemAttributesExceeded& WithBoxUsage(double value) { SetBoxUsage(value); return *this;}
     ///@}
   private:
 
-    double m_boxUsage;
+    double m_boxUsage{0.0};
     bool m_boxUsageHasBeenSet = false;
   };
 

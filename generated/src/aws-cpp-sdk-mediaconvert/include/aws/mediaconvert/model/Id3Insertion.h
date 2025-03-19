@@ -34,7 +34,7 @@ namespace Model
   class Id3Insertion
   {
   public:
-    AWS_MEDIACONVERT_API Id3Insertion();
+    AWS_MEDIACONVERT_API Id3Insertion() = default;
     AWS_MEDIACONVERT_API Id3Insertion(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Id3Insertion& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
     /**
      * Use ID3 tag to provide a fully formed ID3 tag in base64-encode format.
      */
-    inline const Aws::String& GetId3() const{ return m_id3; }
+    inline const Aws::String& GetId3() const { return m_id3; }
     inline bool Id3HasBeenSet() const { return m_id3HasBeenSet; }
-    inline void SetId3(const Aws::String& value) { m_id3HasBeenSet = true; m_id3 = value; }
-    inline void SetId3(Aws::String&& value) { m_id3HasBeenSet = true; m_id3 = std::move(value); }
-    inline void SetId3(const char* value) { m_id3HasBeenSet = true; m_id3.assign(value); }
-    inline Id3Insertion& WithId3(const Aws::String& value) { SetId3(value); return *this;}
-    inline Id3Insertion& WithId3(Aws::String&& value) { SetId3(std::move(value)); return *this;}
-    inline Id3Insertion& WithId3(const char* value) { SetId3(value); return *this;}
+    template<typename Id3T = Aws::String>
+    void SetId3(Id3T&& value) { m_id3HasBeenSet = true; m_id3 = std::forward<Id3T>(value); }
+    template<typename Id3T = Aws::String>
+    Id3Insertion& WithId3(Id3T&& value) { SetId3(std::forward<Id3T>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Provide a Timecode in HH:MM:SS:FF or HH:MM:SS;FF format.
      */
-    inline const Aws::String& GetTimecode() const{ return m_timecode; }
+    inline const Aws::String& GetTimecode() const { return m_timecode; }
     inline bool TimecodeHasBeenSet() const { return m_timecodeHasBeenSet; }
-    inline void SetTimecode(const Aws::String& value) { m_timecodeHasBeenSet = true; m_timecode = value; }
-    inline void SetTimecode(Aws::String&& value) { m_timecodeHasBeenSet = true; m_timecode = std::move(value); }
-    inline void SetTimecode(const char* value) { m_timecodeHasBeenSet = true; m_timecode.assign(value); }
-    inline Id3Insertion& WithTimecode(const Aws::String& value) { SetTimecode(value); return *this;}
-    inline Id3Insertion& WithTimecode(Aws::String&& value) { SetTimecode(std::move(value)); return *this;}
-    inline Id3Insertion& WithTimecode(const char* value) { SetTimecode(value); return *this;}
+    template<typename TimecodeT = Aws::String>
+    void SetTimecode(TimecodeT&& value) { m_timecodeHasBeenSet = true; m_timecode = std::forward<TimecodeT>(value); }
+    template<typename TimecodeT = Aws::String>
+    Id3Insertion& WithTimecode(TimecodeT&& value) { SetTimecode(std::forward<TimecodeT>(value)); return *this;}
     ///@}
   private:
 

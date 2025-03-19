@@ -33,7 +33,7 @@ namespace Model
   class PositionConfigurationItem
   {
   public:
-    AWS_IOTWIRELESS_API PositionConfigurationItem();
+    AWS_IOTWIRELESS_API PositionConfigurationItem() = default;
     AWS_IOTWIRELESS_API PositionConfigurationItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API PositionConfigurationItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,22 @@ namespace Model
     /**
      * <p>Resource identifier for the position configuration.</p>
      */
-    inline const Aws::String& GetResourceIdentifier() const{ return m_resourceIdentifier; }
+    inline const Aws::String& GetResourceIdentifier() const { return m_resourceIdentifier; }
     inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }
-    inline void SetResourceIdentifier(const Aws::String& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = value; }
-    inline void SetResourceIdentifier(Aws::String&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::move(value); }
-    inline void SetResourceIdentifier(const char* value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier.assign(value); }
-    inline PositionConfigurationItem& WithResourceIdentifier(const Aws::String& value) { SetResourceIdentifier(value); return *this;}
-    inline PositionConfigurationItem& WithResourceIdentifier(Aws::String&& value) { SetResourceIdentifier(std::move(value)); return *this;}
-    inline PositionConfigurationItem& WithResourceIdentifier(const char* value) { SetResourceIdentifier(value); return *this;}
+    template<typename ResourceIdentifierT = Aws::String>
+    void SetResourceIdentifier(ResourceIdentifierT&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::forward<ResourceIdentifierT>(value); }
+    template<typename ResourceIdentifierT = Aws::String>
+    PositionConfigurationItem& WithResourceIdentifier(ResourceIdentifierT&& value) { SetResourceIdentifier(std::forward<ResourceIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Resource type of the resource for the position configuration.</p>
      */
-    inline const PositionResourceType& GetResourceType() const{ return m_resourceType; }
+    inline PositionResourceType GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const PositionResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(PositionResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline PositionConfigurationItem& WithResourceType(const PositionResourceType& value) { SetResourceType(value); return *this;}
-    inline PositionConfigurationItem& WithResourceType(PositionResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    inline void SetResourceType(PositionResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline PositionConfigurationItem& WithResourceType(PositionResourceType value) { SetResourceType(value); return *this;}
     ///@}
 
     ///@{
@@ -70,12 +66,12 @@ namespace Model
      * <p>The details of the positioning solver object used to compute the
      * location.</p>
      */
-    inline const PositionSolverDetails& GetSolvers() const{ return m_solvers; }
+    inline const PositionSolverDetails& GetSolvers() const { return m_solvers; }
     inline bool SolversHasBeenSet() const { return m_solversHasBeenSet; }
-    inline void SetSolvers(const PositionSolverDetails& value) { m_solversHasBeenSet = true; m_solvers = value; }
-    inline void SetSolvers(PositionSolverDetails&& value) { m_solversHasBeenSet = true; m_solvers = std::move(value); }
-    inline PositionConfigurationItem& WithSolvers(const PositionSolverDetails& value) { SetSolvers(value); return *this;}
-    inline PositionConfigurationItem& WithSolvers(PositionSolverDetails&& value) { SetSolvers(std::move(value)); return *this;}
+    template<typename SolversT = PositionSolverDetails>
+    void SetSolvers(SolversT&& value) { m_solversHasBeenSet = true; m_solvers = std::forward<SolversT>(value); }
+    template<typename SolversT = PositionSolverDetails>
+    PositionConfigurationItem& WithSolvers(SolversT&& value) { SetSolvers(std::forward<SolversT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,21 +79,19 @@ namespace Model
      * <p>The position data destination that describes the AWS IoT rule that processes
      * the device's position data for use by AWS IoT Core for LoRaWAN.</p>
      */
-    inline const Aws::String& GetDestination() const{ return m_destination; }
+    inline const Aws::String& GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const Aws::String& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline void SetDestination(const char* value) { m_destinationHasBeenSet = true; m_destination.assign(value); }
-    inline PositionConfigurationItem& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
-    inline PositionConfigurationItem& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
-    inline PositionConfigurationItem& WithDestination(const char* value) { SetDestination(value); return *this;}
+    template<typename DestinationT = Aws::String>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = Aws::String>
+    PositionConfigurationItem& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_resourceIdentifier;
     bool m_resourceIdentifierHasBeenSet = false;
 
-    PositionResourceType m_resourceType;
+    PositionResourceType m_resourceType{PositionResourceType::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
 
     PositionSolverDetails m_solvers;

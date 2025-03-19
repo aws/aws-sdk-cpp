@@ -34,7 +34,7 @@ namespace Model
   class EnvironmentConfigurationParametersDetails
   {
   public:
-    AWS_DATAZONE_API EnvironmentConfigurationParametersDetails();
+    AWS_DATAZONE_API EnvironmentConfigurationParametersDetails() = default;
     AWS_DATAZONE_API EnvironmentConfigurationParametersDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API EnvironmentConfigurationParametersDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,42 +44,40 @@ namespace Model
     /**
      * <p>The parameter overrides.</p>
      */
-    inline const Aws::Vector<EnvironmentConfigurationParameter>& GetParameterOverrides() const{ return m_parameterOverrides; }
+    inline const Aws::Vector<EnvironmentConfigurationParameter>& GetParameterOverrides() const { return m_parameterOverrides; }
     inline bool ParameterOverridesHasBeenSet() const { return m_parameterOverridesHasBeenSet; }
-    inline void SetParameterOverrides(const Aws::Vector<EnvironmentConfigurationParameter>& value) { m_parameterOverridesHasBeenSet = true; m_parameterOverrides = value; }
-    inline void SetParameterOverrides(Aws::Vector<EnvironmentConfigurationParameter>&& value) { m_parameterOverridesHasBeenSet = true; m_parameterOverrides = std::move(value); }
-    inline EnvironmentConfigurationParametersDetails& WithParameterOverrides(const Aws::Vector<EnvironmentConfigurationParameter>& value) { SetParameterOverrides(value); return *this;}
-    inline EnvironmentConfigurationParametersDetails& WithParameterOverrides(Aws::Vector<EnvironmentConfigurationParameter>&& value) { SetParameterOverrides(std::move(value)); return *this;}
-    inline EnvironmentConfigurationParametersDetails& AddParameterOverrides(const EnvironmentConfigurationParameter& value) { m_parameterOverridesHasBeenSet = true; m_parameterOverrides.push_back(value); return *this; }
-    inline EnvironmentConfigurationParametersDetails& AddParameterOverrides(EnvironmentConfigurationParameter&& value) { m_parameterOverridesHasBeenSet = true; m_parameterOverrides.push_back(std::move(value)); return *this; }
+    template<typename ParameterOverridesT = Aws::Vector<EnvironmentConfigurationParameter>>
+    void SetParameterOverrides(ParameterOverridesT&& value) { m_parameterOverridesHasBeenSet = true; m_parameterOverrides = std::forward<ParameterOverridesT>(value); }
+    template<typename ParameterOverridesT = Aws::Vector<EnvironmentConfigurationParameter>>
+    EnvironmentConfigurationParametersDetails& WithParameterOverrides(ParameterOverridesT&& value) { SetParameterOverrides(std::forward<ParameterOverridesT>(value)); return *this;}
+    template<typename ParameterOverridesT = EnvironmentConfigurationParameter>
+    EnvironmentConfigurationParametersDetails& AddParameterOverrides(ParameterOverridesT&& value) { m_parameterOverridesHasBeenSet = true; m_parameterOverrides.emplace_back(std::forward<ParameterOverridesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The resolved environment configuration parameters.</p>
      */
-    inline const Aws::Vector<EnvironmentConfigurationParameter>& GetResolvedParameters() const{ return m_resolvedParameters; }
+    inline const Aws::Vector<EnvironmentConfigurationParameter>& GetResolvedParameters() const { return m_resolvedParameters; }
     inline bool ResolvedParametersHasBeenSet() const { return m_resolvedParametersHasBeenSet; }
-    inline void SetResolvedParameters(const Aws::Vector<EnvironmentConfigurationParameter>& value) { m_resolvedParametersHasBeenSet = true; m_resolvedParameters = value; }
-    inline void SetResolvedParameters(Aws::Vector<EnvironmentConfigurationParameter>&& value) { m_resolvedParametersHasBeenSet = true; m_resolvedParameters = std::move(value); }
-    inline EnvironmentConfigurationParametersDetails& WithResolvedParameters(const Aws::Vector<EnvironmentConfigurationParameter>& value) { SetResolvedParameters(value); return *this;}
-    inline EnvironmentConfigurationParametersDetails& WithResolvedParameters(Aws::Vector<EnvironmentConfigurationParameter>&& value) { SetResolvedParameters(std::move(value)); return *this;}
-    inline EnvironmentConfigurationParametersDetails& AddResolvedParameters(const EnvironmentConfigurationParameter& value) { m_resolvedParametersHasBeenSet = true; m_resolvedParameters.push_back(value); return *this; }
-    inline EnvironmentConfigurationParametersDetails& AddResolvedParameters(EnvironmentConfigurationParameter&& value) { m_resolvedParametersHasBeenSet = true; m_resolvedParameters.push_back(std::move(value)); return *this; }
+    template<typename ResolvedParametersT = Aws::Vector<EnvironmentConfigurationParameter>>
+    void SetResolvedParameters(ResolvedParametersT&& value) { m_resolvedParametersHasBeenSet = true; m_resolvedParameters = std::forward<ResolvedParametersT>(value); }
+    template<typename ResolvedParametersT = Aws::Vector<EnvironmentConfigurationParameter>>
+    EnvironmentConfigurationParametersDetails& WithResolvedParameters(ResolvedParametersT&& value) { SetResolvedParameters(std::forward<ResolvedParametersT>(value)); return *this;}
+    template<typename ResolvedParametersT = EnvironmentConfigurationParameter>
+    EnvironmentConfigurationParametersDetails& AddResolvedParameters(ResolvedParametersT&& value) { m_resolvedParametersHasBeenSet = true; m_resolvedParameters.emplace_back(std::forward<ResolvedParametersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Ssm path environment configuration parameters.</p>
      */
-    inline const Aws::String& GetSsmPath() const{ return m_ssmPath; }
+    inline const Aws::String& GetSsmPath() const { return m_ssmPath; }
     inline bool SsmPathHasBeenSet() const { return m_ssmPathHasBeenSet; }
-    inline void SetSsmPath(const Aws::String& value) { m_ssmPathHasBeenSet = true; m_ssmPath = value; }
-    inline void SetSsmPath(Aws::String&& value) { m_ssmPathHasBeenSet = true; m_ssmPath = std::move(value); }
-    inline void SetSsmPath(const char* value) { m_ssmPathHasBeenSet = true; m_ssmPath.assign(value); }
-    inline EnvironmentConfigurationParametersDetails& WithSsmPath(const Aws::String& value) { SetSsmPath(value); return *this;}
-    inline EnvironmentConfigurationParametersDetails& WithSsmPath(Aws::String&& value) { SetSsmPath(std::move(value)); return *this;}
-    inline EnvironmentConfigurationParametersDetails& WithSsmPath(const char* value) { SetSsmPath(value); return *this;}
+    template<typename SsmPathT = Aws::String>
+    void SetSsmPath(SsmPathT&& value) { m_ssmPathHasBeenSet = true; m_ssmPath = std::forward<SsmPathT>(value); }
+    template<typename SsmPathT = Aws::String>
+    EnvironmentConfigurationParametersDetails& WithSsmPath(SsmPathT&& value) { SetSsmPath(std::forward<SsmPathT>(value)); return *this;}
     ///@}
   private:
 

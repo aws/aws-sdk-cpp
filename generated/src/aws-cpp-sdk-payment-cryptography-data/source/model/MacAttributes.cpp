@@ -18,18 +18,7 @@ namespace PaymentCryptographyData
 namespace Model
 {
 
-MacAttributes::MacAttributes() : 
-    m_algorithm(MacAlgorithm::NOT_SET),
-    m_algorithmHasBeenSet(false),
-    m_emvMacHasBeenSet(false),
-    m_dukptIso9797Algorithm1HasBeenSet(false),
-    m_dukptIso9797Algorithm3HasBeenSet(false),
-    m_dukptCmacHasBeenSet(false)
-{
-}
-
 MacAttributes::MacAttributes(JsonView jsonValue)
-  : MacAttributes()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ MacAttributes& MacAttributes::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Algorithm"))
   {
     m_algorithm = MacAlgorithmMapper::GetMacAlgorithmForName(jsonValue.GetString("Algorithm"));
-
     m_algorithmHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EmvMac"))
   {
     m_emvMac = jsonValue.GetObject("EmvMac");
-
     m_emvMacHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DukptIso9797Algorithm1"))
   {
     m_dukptIso9797Algorithm1 = jsonValue.GetObject("DukptIso9797Algorithm1");
-
     m_dukptIso9797Algorithm1HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DukptIso9797Algorithm3"))
   {
     m_dukptIso9797Algorithm3 = jsonValue.GetObject("DukptIso9797Algorithm3");
-
     m_dukptIso9797Algorithm3HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DukptCmac"))
   {
     m_dukptCmac = jsonValue.GetObject("DukptCmac");
-
     m_dukptCmacHasBeenSet = true;
   }
-
   return *this;
 }
 

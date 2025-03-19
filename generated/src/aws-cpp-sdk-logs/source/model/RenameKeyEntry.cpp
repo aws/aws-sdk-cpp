@@ -18,16 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-RenameKeyEntry::RenameKeyEntry() : 
-    m_keyHasBeenSet(false),
-    m_renameToHasBeenSet(false),
-    m_overwriteIfExists(false),
-    m_overwriteIfExistsHasBeenSet(false)
-{
-}
-
 RenameKeyEntry::RenameKeyEntry(JsonView jsonValue)
-  : RenameKeyEntry()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ RenameKeyEntry& RenameKeyEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("renameTo"))
   {
     m_renameTo = jsonValue.GetString("renameTo");
-
     m_renameToHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("overwriteIfExists"))
   {
     m_overwriteIfExists = jsonValue.GetBool("overwriteIfExists");
-
     m_overwriteIfExistsHasBeenSet = true;
   }
-
   return *this;
 }
 

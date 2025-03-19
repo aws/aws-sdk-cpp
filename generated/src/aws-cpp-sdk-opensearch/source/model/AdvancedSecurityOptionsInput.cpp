@@ -18,21 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-AdvancedSecurityOptionsInput::AdvancedSecurityOptionsInput() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_internalUserDatabaseEnabled(false),
-    m_internalUserDatabaseEnabledHasBeenSet(false),
-    m_masterUserOptionsHasBeenSet(false),
-    m_sAMLOptionsHasBeenSet(false),
-    m_jWTOptionsHasBeenSet(false),
-    m_anonymousAuthEnabled(false),
-    m_anonymousAuthEnabledHasBeenSet(false)
-{
-}
-
 AdvancedSecurityOptionsInput::AdvancedSecurityOptionsInput(JsonView jsonValue)
-  : AdvancedSecurityOptionsInput()
 {
   *this = jsonValue;
 }
@@ -42,45 +28,33 @@ AdvancedSecurityOptionsInput& AdvancedSecurityOptionsInput::operator =(JsonView 
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InternalUserDatabaseEnabled"))
   {
     m_internalUserDatabaseEnabled = jsonValue.GetBool("InternalUserDatabaseEnabled");
-
     m_internalUserDatabaseEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MasterUserOptions"))
   {
     m_masterUserOptions = jsonValue.GetObject("MasterUserOptions");
-
     m_masterUserOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SAMLOptions"))
   {
     m_sAMLOptions = jsonValue.GetObject("SAMLOptions");
-
     m_sAMLOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JWTOptions"))
   {
     m_jWTOptions = jsonValue.GetObject("JWTOptions");
-
     m_jWTOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AnonymousAuthEnabled"))
   {
     m_anonymousAuthEnabled = jsonValue.GetBool("AnonymousAuthEnabled");
-
     m_anonymousAuthEnabledHasBeenSet = true;
   }
-
   return *this;
 }
 

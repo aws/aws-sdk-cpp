@@ -32,7 +32,7 @@ namespace Model
   class MacSecKey
   {
   public:
-    AWS_DIRECTCONNECT_API MacSecKey();
+    AWS_DIRECTCONNECT_API MacSecKey() = default;
     AWS_DIRECTCONNECT_API MacSecKey(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTCONNECT_API MacSecKey& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key.</p>
      */
-    inline const Aws::String& GetSecretARN() const{ return m_secretARN; }
+    inline const Aws::String& GetSecretARN() const { return m_secretARN; }
     inline bool SecretARNHasBeenSet() const { return m_secretARNHasBeenSet; }
-    inline void SetSecretARN(const Aws::String& value) { m_secretARNHasBeenSet = true; m_secretARN = value; }
-    inline void SetSecretARN(Aws::String&& value) { m_secretARNHasBeenSet = true; m_secretARN = std::move(value); }
-    inline void SetSecretARN(const char* value) { m_secretARNHasBeenSet = true; m_secretARN.assign(value); }
-    inline MacSecKey& WithSecretARN(const Aws::String& value) { SetSecretARN(value); return *this;}
-    inline MacSecKey& WithSecretARN(Aws::String&& value) { SetSecretARN(std::move(value)); return *this;}
-    inline MacSecKey& WithSecretARN(const char* value) { SetSecretARN(value); return *this;}
+    template<typename SecretARNT = Aws::String>
+    void SetSecretARN(SecretARNT&& value) { m_secretARNHasBeenSet = true; m_secretARN = std::forward<SecretARNT>(value); }
+    template<typename SecretARNT = Aws::String>
+    MacSecKey& WithSecretARN(SecretARNT&& value) { SetSecretARN(std::forward<SecretARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Connection Key Name (CKN) for the MAC Security secret key.</p>
      */
-    inline const Aws::String& GetCkn() const{ return m_ckn; }
+    inline const Aws::String& GetCkn() const { return m_ckn; }
     inline bool CknHasBeenSet() const { return m_cknHasBeenSet; }
-    inline void SetCkn(const Aws::String& value) { m_cknHasBeenSet = true; m_ckn = value; }
-    inline void SetCkn(Aws::String&& value) { m_cknHasBeenSet = true; m_ckn = std::move(value); }
-    inline void SetCkn(const char* value) { m_cknHasBeenSet = true; m_ckn.assign(value); }
-    inline MacSecKey& WithCkn(const Aws::String& value) { SetCkn(value); return *this;}
-    inline MacSecKey& WithCkn(Aws::String&& value) { SetCkn(std::move(value)); return *this;}
-    inline MacSecKey& WithCkn(const char* value) { SetCkn(value); return *this;}
+    template<typename CknT = Aws::String>
+    void SetCkn(CknT&& value) { m_cknHasBeenSet = true; m_ckn = std::forward<CknT>(value); }
+    template<typename CknT = Aws::String>
+    MacSecKey& WithCkn(CknT&& value) { SetCkn(std::forward<CknT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,14 +74,12 @@ namespace Model
      * <code>disassociated</code>: The MAC Security (MACsec) secret key is no longer
      * associated with the connection or LAG.</p> </li> </ul>
      */
-    inline const Aws::String& GetState() const{ return m_state; }
+    inline const Aws::String& GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const Aws::String& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline void SetState(const char* value) { m_stateHasBeenSet = true; m_state.assign(value); }
-    inline MacSecKey& WithState(const Aws::String& value) { SetState(value); return *this;}
-    inline MacSecKey& WithState(Aws::String&& value) { SetState(std::move(value)); return *this;}
-    inline MacSecKey& WithState(const char* value) { SetState(value); return *this;}
+    template<typename StateT = Aws::String>
+    void SetState(StateT&& value) { m_stateHasBeenSet = true; m_state = std::forward<StateT>(value); }
+    template<typename StateT = Aws::String>
+    MacSecKey& WithState(StateT&& value) { SetState(std::forward<StateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,14 +87,12 @@ namespace Model
      * <p>The date that the MAC Security (MACsec) secret key takes effect. The value is
      * displayed in UTC format.</p>
      */
-    inline const Aws::String& GetStartOn() const{ return m_startOn; }
+    inline const Aws::String& GetStartOn() const { return m_startOn; }
     inline bool StartOnHasBeenSet() const { return m_startOnHasBeenSet; }
-    inline void SetStartOn(const Aws::String& value) { m_startOnHasBeenSet = true; m_startOn = value; }
-    inline void SetStartOn(Aws::String&& value) { m_startOnHasBeenSet = true; m_startOn = std::move(value); }
-    inline void SetStartOn(const char* value) { m_startOnHasBeenSet = true; m_startOn.assign(value); }
-    inline MacSecKey& WithStartOn(const Aws::String& value) { SetStartOn(value); return *this;}
-    inline MacSecKey& WithStartOn(Aws::String&& value) { SetStartOn(std::move(value)); return *this;}
-    inline MacSecKey& WithStartOn(const char* value) { SetStartOn(value); return *this;}
+    template<typename StartOnT = Aws::String>
+    void SetStartOn(StartOnT&& value) { m_startOnHasBeenSet = true; m_startOn = std::forward<StartOnT>(value); }
+    template<typename StartOnT = Aws::String>
+    MacSecKey& WithStartOn(StartOnT&& value) { SetStartOn(std::forward<StartOnT>(value)); return *this;}
     ///@}
   private:
 

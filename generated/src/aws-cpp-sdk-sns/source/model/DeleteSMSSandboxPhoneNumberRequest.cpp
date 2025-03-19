@@ -10,11 +10,6 @@
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-DeleteSMSSandboxPhoneNumberRequest::DeleteSMSSandboxPhoneNumberRequest() : 
-    m_phoneNumberHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSMSSandboxPhoneNumberRequest::SerializePayload() const
 {
   Aws::StringStream ss;

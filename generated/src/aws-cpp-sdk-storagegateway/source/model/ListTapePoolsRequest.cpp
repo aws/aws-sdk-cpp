@@ -12,14 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListTapePoolsRequest::ListTapePoolsRequest() : 
-    m_poolARNsHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String ListTapePoolsRequest::SerializePayload() const
 {
   JsonValue payload;

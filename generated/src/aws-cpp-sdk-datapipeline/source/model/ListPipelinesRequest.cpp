@@ -12,11 +12,6 @@ using namespace Aws::DataPipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListPipelinesRequest::ListPipelinesRequest() : 
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String ListPipelinesRequest::SerializePayload() const
 {
   JsonValue payload;

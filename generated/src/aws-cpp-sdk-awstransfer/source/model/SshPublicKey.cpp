@@ -18,15 +18,7 @@ namespace Transfer
 namespace Model
 {
 
-SshPublicKey::SshPublicKey() : 
-    m_dateImportedHasBeenSet(false),
-    m_sshPublicKeyBodyHasBeenSet(false),
-    m_sshPublicKeyIdHasBeenSet(false)
-{
-}
-
 SshPublicKey::SshPublicKey(JsonView jsonValue)
-  : SshPublicKey()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ SshPublicKey& SshPublicKey::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DateImported"))
   {
     m_dateImported = jsonValue.GetDouble("DateImported");
-
     m_dateImportedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SshPublicKeyBody"))
   {
     m_sshPublicKeyBody = jsonValue.GetString("SshPublicKeyBody");
-
     m_sshPublicKeyBodyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SshPublicKeyId"))
   {
     m_sshPublicKeyId = jsonValue.GetString("SshPublicKeyId");
-
     m_sshPublicKeyIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -31,7 +31,7 @@ namespace Model
   class MedicalScribePostStreamAnalyticsSettings
   {
   public:
-    AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalScribePostStreamAnalyticsSettings();
+    AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalScribePostStreamAnalyticsSettings() = default;
     AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalScribePostStreamAnalyticsSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalScribePostStreamAnalyticsSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>Specify settings for the post-stream clinical note generation.</p>
      */
-    inline const ClinicalNoteGenerationSettings& GetClinicalNoteGenerationSettings() const{ return m_clinicalNoteGenerationSettings; }
+    inline const ClinicalNoteGenerationSettings& GetClinicalNoteGenerationSettings() const { return m_clinicalNoteGenerationSettings; }
     inline bool ClinicalNoteGenerationSettingsHasBeenSet() const { return m_clinicalNoteGenerationSettingsHasBeenSet; }
-    inline void SetClinicalNoteGenerationSettings(const ClinicalNoteGenerationSettings& value) { m_clinicalNoteGenerationSettingsHasBeenSet = true; m_clinicalNoteGenerationSettings = value; }
-    inline void SetClinicalNoteGenerationSettings(ClinicalNoteGenerationSettings&& value) { m_clinicalNoteGenerationSettingsHasBeenSet = true; m_clinicalNoteGenerationSettings = std::move(value); }
-    inline MedicalScribePostStreamAnalyticsSettings& WithClinicalNoteGenerationSettings(const ClinicalNoteGenerationSettings& value) { SetClinicalNoteGenerationSettings(value); return *this;}
-    inline MedicalScribePostStreamAnalyticsSettings& WithClinicalNoteGenerationSettings(ClinicalNoteGenerationSettings&& value) { SetClinicalNoteGenerationSettings(std::move(value)); return *this;}
+    template<typename ClinicalNoteGenerationSettingsT = ClinicalNoteGenerationSettings>
+    void SetClinicalNoteGenerationSettings(ClinicalNoteGenerationSettingsT&& value) { m_clinicalNoteGenerationSettingsHasBeenSet = true; m_clinicalNoteGenerationSettings = std::forward<ClinicalNoteGenerationSettingsT>(value); }
+    template<typename ClinicalNoteGenerationSettingsT = ClinicalNoteGenerationSettings>
+    MedicalScribePostStreamAnalyticsSettings& WithClinicalNoteGenerationSettings(ClinicalNoteGenerationSettingsT&& value) { SetClinicalNoteGenerationSettings(std::forward<ClinicalNoteGenerationSettingsT>(value)); return *this;}
     ///@}
   private:
 

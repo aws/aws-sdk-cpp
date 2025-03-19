@@ -18,16 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-ReasonSummary::ReasonSummary() : 
-    m_descriptionHasBeenSet(false),
-    m_statementIndex(0),
-    m_statementIndexHasBeenSet(false),
-    m_statementIdHasBeenSet(false)
-{
-}
-
 ReasonSummary::ReasonSummary(JsonView jsonValue)
-  : ReasonSummary()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ReasonSummary& ReasonSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statementIndex"))
   {
     m_statementIndex = jsonValue.GetInteger("statementIndex");
-
     m_statementIndexHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statementId"))
   {
     m_statementId = jsonValue.GetString("statementId");
-
     m_statementIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -31,7 +31,7 @@ namespace Model
   class InternetConfiguration
   {
   public:
-    AWS_ACCESSANALYZER_API InternetConfiguration();
+    AWS_ACCESSANALYZER_API InternetConfiguration() = default;
     AWS_ACCESSANALYZER_API InternetConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API InternetConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;

@@ -18,15 +18,7 @@ namespace SSM
 namespace Model
 {
 
-GetResourcePoliciesResponseEntry::GetResourcePoliciesResponseEntry() : 
-    m_policyIdHasBeenSet(false),
-    m_policyHashHasBeenSet(false),
-    m_policyHasBeenSet(false)
-{
-}
-
 GetResourcePoliciesResponseEntry::GetResourcePoliciesResponseEntry(JsonView jsonValue)
-  : GetResourcePoliciesResponseEntry()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ GetResourcePoliciesResponseEntry& GetResourcePoliciesResponseEntry::operator =(J
   if(jsonValue.ValueExists("PolicyId"))
   {
     m_policyId = jsonValue.GetString("PolicyId");
-
     m_policyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolicyHash"))
   {
     m_policyHash = jsonValue.GetString("PolicyHash");
-
     m_policyHashHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Policy"))
   {
     m_policy = jsonValue.GetString("Policy");
-
     m_policyHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace SageMakerGeospatial
 namespace Model
 {
 
-MapMatchingConfig::MapMatchingConfig() : 
-    m_idAttributeNameHasBeenSet(false),
-    m_timestampAttributeNameHasBeenSet(false),
-    m_xAttributeNameHasBeenSet(false),
-    m_yAttributeNameHasBeenSet(false)
-{
-}
-
 MapMatchingConfig::MapMatchingConfig(JsonView jsonValue)
-  : MapMatchingConfig()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ MapMatchingConfig& MapMatchingConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IdAttributeName"))
   {
     m_idAttributeName = jsonValue.GetString("IdAttributeName");
-
     m_idAttributeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimestampAttributeName"))
   {
     m_timestampAttributeName = jsonValue.GetString("TimestampAttributeName");
-
     m_timestampAttributeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("XAttributeName"))
   {
     m_xAttributeName = jsonValue.GetString("XAttributeName");
-
     m_xAttributeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("YAttributeName"))
   {
     m_yAttributeName = jsonValue.GetString("YAttributeName");
-
     m_yAttributeNameHasBeenSet = true;
   }
-
   return *this;
 }
 

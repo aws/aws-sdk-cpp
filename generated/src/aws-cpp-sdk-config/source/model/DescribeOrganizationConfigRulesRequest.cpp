@@ -12,14 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeOrganizationConfigRulesRequest::DescribeOrganizationConfigRulesRequest() : 
-    m_organizationConfigRuleNamesHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeOrganizationConfigRulesRequest::SerializePayload() const
 {
   JsonValue payload;

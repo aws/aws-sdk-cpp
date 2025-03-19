@@ -18,16 +18,7 @@ namespace Health
 namespace Model
 {
 
-AccountEntityAggregate::AccountEntityAggregate() : 
-    m_accountIdHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_statusesHasBeenSet(false)
-{
-}
-
 AccountEntityAggregate::AccountEntityAggregate(JsonView jsonValue)
-  : AccountEntityAggregate()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ AccountEntityAggregate& AccountEntityAggregate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("count"))
   {
     m_count = jsonValue.GetInteger("count");
-
     m_countHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statuses"))
   {
     Aws::Map<Aws::String, JsonView> statusesJsonMap = jsonValue.GetObject("statuses").GetAllObjects();
@@ -57,7 +44,6 @@ AccountEntityAggregate& AccountEntityAggregate::operator =(JsonView jsonValue)
     }
     m_statusesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,21 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-ApplicationResourceAssociation::ApplicationResourceAssociation() : 
-    m_applicationIdHasBeenSet(false),
-    m_associatedResourceIdHasBeenSet(false),
-    m_associatedResourceType(ApplicationAssociatedResourceType::NOT_SET),
-    m_associatedResourceTypeHasBeenSet(false),
-    m_createdHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_state(AssociationState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateReasonHasBeenSet(false)
-{
-}
-
 ApplicationResourceAssociation::ApplicationResourceAssociation(JsonView jsonValue)
-  : ApplicationResourceAssociation()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ ApplicationResourceAssociation& ApplicationResourceAssociation::operator =(JsonV
   if(jsonValue.ValueExists("ApplicationId"))
   {
     m_applicationId = jsonValue.GetString("ApplicationId");
-
     m_applicationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssociatedResourceId"))
   {
     m_associatedResourceId = jsonValue.GetString("AssociatedResourceId");
-
     m_associatedResourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssociatedResourceType"))
   {
     m_associatedResourceType = ApplicationAssociatedResourceTypeMapper::GetApplicationAssociatedResourceTypeForName(jsonValue.GetString("AssociatedResourceType"));
-
     m_associatedResourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Created"))
   {
     m_created = jsonValue.GetDouble("Created");
-
     m_createdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = AssociationStateMapper::GetAssociationStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StateReason"))
   {
     m_stateReason = jsonValue.GetObject("StateReason");
-
     m_stateReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetQueryRuntimeStatisticsRequest::GetQueryRuntimeStatisticsRequest() : 
-    m_queryExecutionIdHasBeenSet(false)
-{
-}
-
 Aws::String GetQueryRuntimeStatisticsRequest::SerializePayload() const
 {
   JsonValue payload;

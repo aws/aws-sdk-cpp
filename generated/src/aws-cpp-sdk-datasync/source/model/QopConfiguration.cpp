@@ -18,16 +18,7 @@ namespace DataSync
 namespace Model
 {
 
-QopConfiguration::QopConfiguration() : 
-    m_rpcProtection(HdfsRpcProtection::NOT_SET),
-    m_rpcProtectionHasBeenSet(false),
-    m_dataTransferProtection(HdfsDataTransferProtection::NOT_SET),
-    m_dataTransferProtectionHasBeenSet(false)
-{
-}
-
 QopConfiguration::QopConfiguration(JsonView jsonValue)
-  : QopConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ QopConfiguration& QopConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RpcProtection"))
   {
     m_rpcProtection = HdfsRpcProtectionMapper::GetHdfsRpcProtectionForName(jsonValue.GetString("RpcProtection"));
-
     m_rpcProtectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataTransferProtection"))
   {
     m_dataTransferProtection = HdfsDataTransferProtectionMapper::GetHdfsDataTransferProtectionForName(jsonValue.GetString("DataTransferProtection"));
-
     m_dataTransferProtectionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class NfsMountOptions
   {
   public:
-    AWS_DATASYNC_API NfsMountOptions();
+    AWS_DATASYNC_API NfsMountOptions() = default;
     AWS_DATASYNC_API NfsMountOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API NfsMountOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,16 +53,14 @@ namespace Model
      * 4.0.</p> </li> </ul>  <p>DataSync currently only supports NFS version 3
      * with Amazon FSx for NetApp ONTAP locations.</p> 
      */
-    inline const NfsVersion& GetVersion() const{ return m_version; }
+    inline NfsVersion GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const NfsVersion& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(NfsVersion&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline NfsMountOptions& WithVersion(const NfsVersion& value) { SetVersion(value); return *this;}
-    inline NfsMountOptions& WithVersion(NfsVersion&& value) { SetVersion(std::move(value)); return *this;}
+    inline void SetVersion(NfsVersion value) { m_versionHasBeenSet = true; m_version = value; }
+    inline NfsMountOptions& WithVersion(NfsVersion value) { SetVersion(value); return *this;}
     ///@}
   private:
 
-    NfsVersion m_version;
+    NfsVersion m_version{NfsVersion::NOT_SET};
     bool m_versionHasBeenSet = false;
   };
 

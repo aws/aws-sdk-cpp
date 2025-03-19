@@ -18,15 +18,7 @@ namespace PaymentCryptographyData
 namespace Model
 {
 
-VerificationFailedException::VerificationFailedException() : 
-    m_reason(VerificationFailedReason::NOT_SET),
-    m_reasonHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 VerificationFailedException::VerificationFailedException(JsonView jsonValue)
-  : VerificationFailedException()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ VerificationFailedException& VerificationFailedException::operator =(JsonView js
   if(jsonValue.ValueExists("Reason"))
   {
     m_reason = VerificationFailedReasonMapper::GetVerificationFailedReasonForName(jsonValue.GetString("Reason"));
-
     m_reasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

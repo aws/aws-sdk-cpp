@@ -12,17 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDeviceFleetRequest::CreateDeviceFleetRequest() : 
-    m_deviceFleetNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_outputConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_enableIotRoleAlias(false),
-    m_enableIotRoleAliasHasBeenSet(false)
-{
-}
-
 Aws::String CreateDeviceFleetRequest::SerializePayload() const
 {
   JsonValue payload;

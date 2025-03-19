@@ -12,12 +12,6 @@ using namespace Aws::ElasticTranscoder::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdatePipelineStatusRequest::UpdatePipelineStatusRequest() : 
-    m_idHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 Aws::String UpdatePipelineStatusRequest::SerializePayload() const
 {
   JsonValue payload;

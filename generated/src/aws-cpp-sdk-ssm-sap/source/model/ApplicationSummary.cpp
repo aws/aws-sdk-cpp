@@ -18,19 +18,7 @@ namespace SsmSap
 namespace Model
 {
 
-ApplicationSummary::ApplicationSummary() : 
-    m_idHasBeenSet(false),
-    m_discoveryStatus(ApplicationDiscoveryStatus::NOT_SET),
-    m_discoveryStatusHasBeenSet(false),
-    m_type(ApplicationType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 ApplicationSummary::ApplicationSummary(JsonView jsonValue)
-  : ApplicationSummary()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ ApplicationSummary& ApplicationSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DiscoveryStatus"))
   {
     m_discoveryStatus = ApplicationDiscoveryStatusMapper::GetApplicationDiscoveryStatusForName(jsonValue.GetString("DiscoveryStatus"));
-
     m_discoveryStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ApplicationTypeMapper::GetApplicationTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -74,7 +54,6 @@ ApplicationSummary& ApplicationSummary::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

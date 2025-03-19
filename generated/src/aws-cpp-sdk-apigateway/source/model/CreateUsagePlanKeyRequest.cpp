@@ -12,13 +12,6 @@ using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateUsagePlanKeyRequest::CreateUsagePlanKeyRequest() : 
-    m_usagePlanIdHasBeenSet(false),
-    m_keyIdHasBeenSet(false),
-    m_keyTypeHasBeenSet(false)
-{
-}
-
 Aws::String CreateUsagePlanKeyRequest::SerializePayload() const
 {
   JsonValue payload;

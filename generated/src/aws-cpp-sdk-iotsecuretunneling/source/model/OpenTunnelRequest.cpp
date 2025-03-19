@@ -12,14 +12,6 @@ using namespace Aws::IoTSecureTunneling::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-OpenTunnelRequest::OpenTunnelRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_destinationConfigHasBeenSet(false),
-    m_timeoutConfigHasBeenSet(false)
-{
-}
-
 Aws::String OpenTunnelRequest::SerializePayload() const
 {
   JsonValue payload;

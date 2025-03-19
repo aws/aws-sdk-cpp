@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartMLModelTrainingJobResult::StartMLModelTrainingJobResult() : 
-    m_creationTimeInMillis(0)
-{
-}
-
 StartMLModelTrainingJobResult::StartMLModelTrainingJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : StartMLModelTrainingJobResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ StartMLModelTrainingJobResult& StartMLModelTrainingJobResult::operator =(const A
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTimeInMillis"))
   {
     m_creationTimeInMillis = jsonValue.GetInt64("creationTimeInMillis");
-
+    m_creationTimeInMillisHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

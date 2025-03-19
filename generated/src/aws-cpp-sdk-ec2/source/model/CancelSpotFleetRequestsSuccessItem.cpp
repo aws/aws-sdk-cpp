@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CancelSpotFleetRequestsSuccessItem::CancelSpotFleetRequestsSuccessItem() : 
-    m_currentSpotFleetRequestState(BatchState::NOT_SET),
-    m_currentSpotFleetRequestStateHasBeenSet(false),
-    m_previousSpotFleetRequestState(BatchState::NOT_SET),
-    m_previousSpotFleetRequestStateHasBeenSet(false),
-    m_spotFleetRequestIdHasBeenSet(false)
-{
-}
-
 CancelSpotFleetRequestsSuccessItem::CancelSpotFleetRequestsSuccessItem(const XmlNode& xmlNode)
-  : CancelSpotFleetRequestsSuccessItem()
 {
   *this = xmlNode;
 }
@@ -44,13 +34,13 @@ CancelSpotFleetRequestsSuccessItem& CancelSpotFleetRequestsSuccessItem::operator
     XmlNode currentSpotFleetRequestStateNode = resultNode.FirstChild("currentSpotFleetRequestState");
     if(!currentSpotFleetRequestStateNode.IsNull())
     {
-      m_currentSpotFleetRequestState = BatchStateMapper::GetBatchStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(currentSpotFleetRequestStateNode.GetText()).c_str()).c_str());
+      m_currentSpotFleetRequestState = BatchStateMapper::GetBatchStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(currentSpotFleetRequestStateNode.GetText()).c_str()));
       m_currentSpotFleetRequestStateHasBeenSet = true;
     }
     XmlNode previousSpotFleetRequestStateNode = resultNode.FirstChild("previousSpotFleetRequestState");
     if(!previousSpotFleetRequestStateNode.IsNull())
     {
-      m_previousSpotFleetRequestState = BatchStateMapper::GetBatchStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(previousSpotFleetRequestStateNode.GetText()).c_str()).c_str());
+      m_previousSpotFleetRequestState = BatchStateMapper::GetBatchStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(previousSpotFleetRequestStateNode.GetText()).c_str()));
       m_previousSpotFleetRequestStateHasBeenSet = true;
     }
     XmlNode spotFleetRequestIdNode = resultNode.FirstChild("spotFleetRequestId");

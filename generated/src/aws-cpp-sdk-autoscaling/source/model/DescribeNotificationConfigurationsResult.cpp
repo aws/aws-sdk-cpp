@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeNotificationConfigurationsResult::DescribeNotificationConfigurationsResult()
-{
-}
-
 DescribeNotificationConfigurationsResult::DescribeNotificationConfigurationsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ DescribeNotificationConfigurationsResult& DescribeNotificationConfigurationsResu
     if(!notificationConfigurationsNode.IsNull())
     {
       XmlNode notificationConfigurationsMember = notificationConfigurationsNode.FirstChild("member");
+      m_notificationConfigurationsHasBeenSet = !notificationConfigurationsMember.IsNull();
       while(!notificationConfigurationsMember.IsNull())
       {
         m_notificationConfigurations.push_back(notificationConfigurationsMember);
         notificationConfigurationsMember = notificationConfigurationsMember.NextNode("member");
       }
 
+      m_notificationConfigurationsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::AutoScaling::Model::DescribeNotificationConfigurationsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

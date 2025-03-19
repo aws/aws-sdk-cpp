@@ -12,14 +12,6 @@ using namespace Aws::IoTTwinMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSyncJobRequest::CreateSyncJobRequest() : 
-    m_workspaceIdHasBeenSet(false),
-    m_syncSourceHasBeenSet(false),
-    m_syncRoleHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateSyncJobRequest::SerializePayload() const
 {
   JsonValue payload;

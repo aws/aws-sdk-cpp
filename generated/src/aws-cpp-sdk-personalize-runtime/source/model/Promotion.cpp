@@ -18,17 +18,7 @@ namespace PersonalizeRuntime
 namespace Model
 {
 
-Promotion::Promotion() : 
-    m_nameHasBeenSet(false),
-    m_percentPromotedItems(0),
-    m_percentPromotedItemsHasBeenSet(false),
-    m_filterArnHasBeenSet(false),
-    m_filterValuesHasBeenSet(false)
-{
-}
-
 Promotion::Promotion(JsonView jsonValue)
-  : Promotion()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ Promotion& Promotion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("percentPromotedItems"))
   {
     m_percentPromotedItems = jsonValue.GetInteger("percentPromotedItems");
-
     m_percentPromotedItemsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("filterArn"))
   {
     m_filterArn = jsonValue.GetString("filterArn");
-
     m_filterArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("filterValues"))
   {
     Aws::Map<Aws::String, JsonView> filterValuesJsonMap = jsonValue.GetObject("filterValues").GetAllObjects();
@@ -65,7 +49,6 @@ Promotion& Promotion::operator =(JsonView jsonValue)
     }
     m_filterValuesHasBeenSet = true;
   }
-
   return *this;
 }
 

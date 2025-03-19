@@ -21,7 +21,7 @@ namespace Model
   class DeleteAdapterVersionRequest : public TextractRequest
   {
   public:
-    AWS_TEXTRACT_API DeleteAdapterVersionRequest();
+    AWS_TEXTRACT_API DeleteAdapterVersionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,24 @@ namespace Model
      * <p>A string containing a unique ID for the adapter version that will be
      * deleted.</p>
      */
-    inline const Aws::String& GetAdapterId() const{ return m_adapterId; }
+    inline const Aws::String& GetAdapterId() const { return m_adapterId; }
     inline bool AdapterIdHasBeenSet() const { return m_adapterIdHasBeenSet; }
-    inline void SetAdapterId(const Aws::String& value) { m_adapterIdHasBeenSet = true; m_adapterId = value; }
-    inline void SetAdapterId(Aws::String&& value) { m_adapterIdHasBeenSet = true; m_adapterId = std::move(value); }
-    inline void SetAdapterId(const char* value) { m_adapterIdHasBeenSet = true; m_adapterId.assign(value); }
-    inline DeleteAdapterVersionRequest& WithAdapterId(const Aws::String& value) { SetAdapterId(value); return *this;}
-    inline DeleteAdapterVersionRequest& WithAdapterId(Aws::String&& value) { SetAdapterId(std::move(value)); return *this;}
-    inline DeleteAdapterVersionRequest& WithAdapterId(const char* value) { SetAdapterId(value); return *this;}
+    template<typename AdapterIdT = Aws::String>
+    void SetAdapterId(AdapterIdT&& value) { m_adapterIdHasBeenSet = true; m_adapterId = std::forward<AdapterIdT>(value); }
+    template<typename AdapterIdT = Aws::String>
+    DeleteAdapterVersionRequest& WithAdapterId(AdapterIdT&& value) { SetAdapterId(std::forward<AdapterIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the adapter version to be deleted.</p>
      */
-    inline const Aws::String& GetAdapterVersion() const{ return m_adapterVersion; }
+    inline const Aws::String& GetAdapterVersion() const { return m_adapterVersion; }
     inline bool AdapterVersionHasBeenSet() const { return m_adapterVersionHasBeenSet; }
-    inline void SetAdapterVersion(const Aws::String& value) { m_adapterVersionHasBeenSet = true; m_adapterVersion = value; }
-    inline void SetAdapterVersion(Aws::String&& value) { m_adapterVersionHasBeenSet = true; m_adapterVersion = std::move(value); }
-    inline void SetAdapterVersion(const char* value) { m_adapterVersionHasBeenSet = true; m_adapterVersion.assign(value); }
-    inline DeleteAdapterVersionRequest& WithAdapterVersion(const Aws::String& value) { SetAdapterVersion(value); return *this;}
-    inline DeleteAdapterVersionRequest& WithAdapterVersion(Aws::String&& value) { SetAdapterVersion(std::move(value)); return *this;}
-    inline DeleteAdapterVersionRequest& WithAdapterVersion(const char* value) { SetAdapterVersion(value); return *this;}
+    template<typename AdapterVersionT = Aws::String>
+    void SetAdapterVersion(AdapterVersionT&& value) { m_adapterVersionHasBeenSet = true; m_adapterVersion = std::forward<AdapterVersionT>(value); }
+    template<typename AdapterVersionT = Aws::String>
+    DeleteAdapterVersionRequest& WithAdapterVersion(AdapterVersionT&& value) { SetAdapterVersion(std::forward<AdapterVersionT>(value)); return *this;}
     ///@}
   private:
 

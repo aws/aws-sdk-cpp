@@ -30,7 +30,7 @@ namespace Model
   class SessionSummaryConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API SessionSummaryConfiguration();
+    AWS_BEDROCKAGENT_API SessionSummaryConfiguration() = default;
     AWS_BEDROCKAGENT_API SessionSummaryConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API SessionSummaryConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,14 @@ namespace Model
      * <p>Maximum number of recent session summaries to include in the agent's prompt
      * context.</p>
      */
-    inline int GetMaxRecentSessions() const{ return m_maxRecentSessions; }
+    inline int GetMaxRecentSessions() const { return m_maxRecentSessions; }
     inline bool MaxRecentSessionsHasBeenSet() const { return m_maxRecentSessionsHasBeenSet; }
     inline void SetMaxRecentSessions(int value) { m_maxRecentSessionsHasBeenSet = true; m_maxRecentSessions = value; }
     inline SessionSummaryConfiguration& WithMaxRecentSessions(int value) { SetMaxRecentSessions(value); return *this;}
     ///@}
   private:
 
-    int m_maxRecentSessions;
+    int m_maxRecentSessions{0};
     bool m_maxRecentSessionsHasBeenSet = false;
   };
 

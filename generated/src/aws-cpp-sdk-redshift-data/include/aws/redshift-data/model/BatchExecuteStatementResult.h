@@ -29,7 +29,7 @@ namespace Model
   class BatchExecuteStatementResult
   {
   public:
-    AWS_REDSHIFTDATAAPISERVICE_API BatchExecuteStatementResult();
+    AWS_REDSHIFTDATAAPISERVICE_API BatchExecuteStatementResult() = default;
     AWS_REDSHIFTDATAAPISERVICE_API BatchExecuteStatementResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_REDSHIFTDATAAPISERVICE_API BatchExecuteStatementResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,64 +39,57 @@ namespace Model
      * <p>The cluster identifier. This element is not returned when connecting to a
      * serverless workgroup. </p>
      */
-    inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
-    inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifier = value; }
-    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifier = std::move(value); }
-    inline void SetClusterIdentifier(const char* value) { m_clusterIdentifier.assign(value); }
-    inline BatchExecuteStatementResult& WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
-    inline BatchExecuteStatementResult& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
-    inline BatchExecuteStatementResult& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
+    inline const Aws::String& GetClusterIdentifier() const { return m_clusterIdentifier; }
+    template<typename ClusterIdentifierT = Aws::String>
+    void SetClusterIdentifier(ClusterIdentifierT&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::forward<ClusterIdentifierT>(value); }
+    template<typename ClusterIdentifierT = Aws::String>
+    BatchExecuteStatementResult& WithClusterIdentifier(ClusterIdentifierT&& value) { SetClusterIdentifier(std::forward<ClusterIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time (UTC) the statement was created. </p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline BatchExecuteStatementResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline BatchExecuteStatementResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    BatchExecuteStatementResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the database.</p>
      */
-    inline const Aws::String& GetDatabase() const{ return m_database; }
-    inline void SetDatabase(const Aws::String& value) { m_database = value; }
-    inline void SetDatabase(Aws::String&& value) { m_database = std::move(value); }
-    inline void SetDatabase(const char* value) { m_database.assign(value); }
-    inline BatchExecuteStatementResult& WithDatabase(const Aws::String& value) { SetDatabase(value); return *this;}
-    inline BatchExecuteStatementResult& WithDatabase(Aws::String&& value) { SetDatabase(std::move(value)); return *this;}
-    inline BatchExecuteStatementResult& WithDatabase(const char* value) { SetDatabase(value); return *this;}
+    inline const Aws::String& GetDatabase() const { return m_database; }
+    template<typename DatabaseT = Aws::String>
+    void SetDatabase(DatabaseT&& value) { m_databaseHasBeenSet = true; m_database = std::forward<DatabaseT>(value); }
+    template<typename DatabaseT = Aws::String>
+    BatchExecuteStatementResult& WithDatabase(DatabaseT&& value) { SetDatabase(std::forward<DatabaseT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of colon (:) separated names of database groups.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDbGroups() const{ return m_dbGroups; }
-    inline void SetDbGroups(const Aws::Vector<Aws::String>& value) { m_dbGroups = value; }
-    inline void SetDbGroups(Aws::Vector<Aws::String>&& value) { m_dbGroups = std::move(value); }
-    inline BatchExecuteStatementResult& WithDbGroups(const Aws::Vector<Aws::String>& value) { SetDbGroups(value); return *this;}
-    inline BatchExecuteStatementResult& WithDbGroups(Aws::Vector<Aws::String>&& value) { SetDbGroups(std::move(value)); return *this;}
-    inline BatchExecuteStatementResult& AddDbGroups(const Aws::String& value) { m_dbGroups.push_back(value); return *this; }
-    inline BatchExecuteStatementResult& AddDbGroups(Aws::String&& value) { m_dbGroups.push_back(std::move(value)); return *this; }
-    inline BatchExecuteStatementResult& AddDbGroups(const char* value) { m_dbGroups.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetDbGroups() const { return m_dbGroups; }
+    template<typename DbGroupsT = Aws::Vector<Aws::String>>
+    void SetDbGroups(DbGroupsT&& value) { m_dbGroupsHasBeenSet = true; m_dbGroups = std::forward<DbGroupsT>(value); }
+    template<typename DbGroupsT = Aws::Vector<Aws::String>>
+    BatchExecuteStatementResult& WithDbGroups(DbGroupsT&& value) { SetDbGroups(std::forward<DbGroupsT>(value)); return *this;}
+    template<typename DbGroupsT = Aws::String>
+    BatchExecuteStatementResult& AddDbGroups(DbGroupsT&& value) { m_dbGroupsHasBeenSet = true; m_dbGroups.emplace_back(std::forward<DbGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The database user name.</p>
      */
-    inline const Aws::String& GetDbUser() const{ return m_dbUser; }
-    inline void SetDbUser(const Aws::String& value) { m_dbUser = value; }
-    inline void SetDbUser(Aws::String&& value) { m_dbUser = std::move(value); }
-    inline void SetDbUser(const char* value) { m_dbUser.assign(value); }
-    inline BatchExecuteStatementResult& WithDbUser(const Aws::String& value) { SetDbUser(value); return *this;}
-    inline BatchExecuteStatementResult& WithDbUser(Aws::String&& value) { SetDbUser(std::move(value)); return *this;}
-    inline BatchExecuteStatementResult& WithDbUser(const char* value) { SetDbUser(value); return *this;}
+    inline const Aws::String& GetDbUser() const { return m_dbUser; }
+    template<typename DbUserT = Aws::String>
+    void SetDbUser(DbUserT&& value) { m_dbUserHasBeenSet = true; m_dbUser = std::forward<DbUserT>(value); }
+    template<typename DbUserT = Aws::String>
+    BatchExecuteStatementResult& WithDbUser(DbUserT&& value) { SetDbUser(std::forward<DbUserT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,39 +98,33 @@ namespace Model
      * value is a universally unique identifier (UUID) generated by Amazon Redshift
      * Data API. This identifier is returned by <code>BatchExecuteStatment</code>. </p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline BatchExecuteStatementResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline BatchExecuteStatementResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline BatchExecuteStatementResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    BatchExecuteStatementResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name or ARN of the secret that enables access to the database. </p>
      */
-    inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
-    inline void SetSecretArn(const Aws::String& value) { m_secretArn = value; }
-    inline void SetSecretArn(Aws::String&& value) { m_secretArn = std::move(value); }
-    inline void SetSecretArn(const char* value) { m_secretArn.assign(value); }
-    inline BatchExecuteStatementResult& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
-    inline BatchExecuteStatementResult& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
-    inline BatchExecuteStatementResult& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
+    inline const Aws::String& GetSecretArn() const { return m_secretArn; }
+    template<typename SecretArnT = Aws::String>
+    void SetSecretArn(SecretArnT&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::forward<SecretArnT>(value); }
+    template<typename SecretArnT = Aws::String>
+    BatchExecuteStatementResult& WithSecretArn(SecretArnT&& value) { SetSecretArn(std::forward<SecretArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The session identifier of the query.</p>
      */
-    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
-    inline void SetSessionId(const Aws::String& value) { m_sessionId = value; }
-    inline void SetSessionId(Aws::String&& value) { m_sessionId = std::move(value); }
-    inline void SetSessionId(const char* value) { m_sessionId.assign(value); }
-    inline BatchExecuteStatementResult& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-    inline BatchExecuteStatementResult& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-    inline BatchExecuteStatementResult& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    BatchExecuteStatementResult& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -145,46 +132,52 @@ namespace Model
      * <p>The serverless workgroup name or Amazon Resource Name (ARN). This element is
      * not returned when connecting to a provisioned cluster.</p>
      */
-    inline const Aws::String& GetWorkgroupName() const{ return m_workgroupName; }
-    inline void SetWorkgroupName(const Aws::String& value) { m_workgroupName = value; }
-    inline void SetWorkgroupName(Aws::String&& value) { m_workgroupName = std::move(value); }
-    inline void SetWorkgroupName(const char* value) { m_workgroupName.assign(value); }
-    inline BatchExecuteStatementResult& WithWorkgroupName(const Aws::String& value) { SetWorkgroupName(value); return *this;}
-    inline BatchExecuteStatementResult& WithWorkgroupName(Aws::String&& value) { SetWorkgroupName(std::move(value)); return *this;}
-    inline BatchExecuteStatementResult& WithWorkgroupName(const char* value) { SetWorkgroupName(value); return *this;}
+    inline const Aws::String& GetWorkgroupName() const { return m_workgroupName; }
+    template<typename WorkgroupNameT = Aws::String>
+    void SetWorkgroupName(WorkgroupNameT&& value) { m_workgroupNameHasBeenSet = true; m_workgroupName = std::forward<WorkgroupNameT>(value); }
+    template<typename WorkgroupNameT = Aws::String>
+    BatchExecuteStatementResult& WithWorkgroupName(WorkgroupNameT&& value) { SetWorkgroupName(std::forward<WorkgroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchExecuteStatementResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchExecuteStatementResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchExecuteStatementResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchExecuteStatementResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_clusterIdentifier;
+    bool m_clusterIdentifierHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_database;
+    bool m_databaseHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dbGroups;
+    bool m_dbGroupsHasBeenSet = false;
 
     Aws::String m_dbUser;
+    bool m_dbUserHasBeenSet = false;
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_secretArn;
+    bool m_secretArnHasBeenSet = false;
 
     Aws::String m_sessionId;
+    bool m_sessionIdHasBeenSet = false;
 
     Aws::String m_workgroupName;
+    bool m_workgroupNameHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

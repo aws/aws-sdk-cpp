@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeRuleGroupsNamespaceResult::DescribeRuleGroupsNamespaceResult()
-{
-}
-
 DescribeRuleGroupsNamespaceResult::DescribeRuleGroupsNamespaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeRuleGroupsNamespaceResult& DescribeRuleGroupsNamespaceResult::operator =
   if(jsonValue.ValueExists("ruleGroupsNamespace"))
   {
     m_ruleGroupsNamespace = jsonValue.GetObject("ruleGroupsNamespace");
-
+    m_ruleGroupsNamespaceHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -12,11 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDeliveryRequest::DeleteDeliveryRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDeliveryRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSegmentEstimateResult::GetSegmentEstimateResult() : 
-    m_status(EstimateStatus::NOT_SET),
-    m_statusCode(0)
-{
-}
-
 GetSegmentEstimateResult::GetSegmentEstimateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetSegmentEstimateResult()
 {
   *this = result;
 }
@@ -35,43 +28,39 @@ GetSegmentEstimateResult& GetSegmentEstimateResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("DomainName"))
   {
     m_domainName = jsonValue.GetString("DomainName");
-
+    m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EstimateId"))
   {
     m_estimateId = jsonValue.GetString("EstimateId");
-
+    m_estimateIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = EstimateStatusMapper::GetEstimateStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Estimate"))
   {
     m_estimate = jsonValue.GetString("Estimate");
-
+    m_estimateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
+    m_messageHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_statusCode = static_cast<int>(result.GetResponseCode());
-
+  m_statusCodeHasBeenSet = true;
   return *this;
 }

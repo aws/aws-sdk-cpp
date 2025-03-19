@@ -32,7 +32,7 @@ namespace Model
   class StorageConfigResponse
   {
   public:
-    AWS_EKS_API StorageConfigResponse();
+    AWS_EKS_API StorageConfigResponse() = default;
     AWS_EKS_API StorageConfigResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API StorageConfigResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * EKS Auto Mode cluster. For example, if the capability is enabled or
      * disabled.</p>
      */
-    inline const BlockStorage& GetBlockStorage() const{ return m_blockStorage; }
+    inline const BlockStorage& GetBlockStorage() const { return m_blockStorage; }
     inline bool BlockStorageHasBeenSet() const { return m_blockStorageHasBeenSet; }
-    inline void SetBlockStorage(const BlockStorage& value) { m_blockStorageHasBeenSet = true; m_blockStorage = value; }
-    inline void SetBlockStorage(BlockStorage&& value) { m_blockStorageHasBeenSet = true; m_blockStorage = std::move(value); }
-    inline StorageConfigResponse& WithBlockStorage(const BlockStorage& value) { SetBlockStorage(value); return *this;}
-    inline StorageConfigResponse& WithBlockStorage(BlockStorage&& value) { SetBlockStorage(std::move(value)); return *this;}
+    template<typename BlockStorageT = BlockStorage>
+    void SetBlockStorage(BlockStorageT&& value) { m_blockStorageHasBeenSet = true; m_blockStorage = std::forward<BlockStorageT>(value); }
+    template<typename BlockStorageT = BlockStorage>
+    StorageConfigResponse& WithBlockStorage(BlockStorageT&& value) { SetBlockStorage(std::forward<BlockStorageT>(value)); return *this;}
     ///@}
   private:
 

@@ -10,12 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribeAggregateIdFormatRequest::DescribeAggregateIdFormatRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAggregateIdFormatRequest::SerializePayload() const
 {
   Aws::StringStream ss;

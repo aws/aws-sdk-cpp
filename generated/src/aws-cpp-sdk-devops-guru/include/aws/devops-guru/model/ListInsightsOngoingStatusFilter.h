@@ -32,7 +32,7 @@ namespace Model
   class ListInsightsOngoingStatusFilter
   {
   public:
-    AWS_DEVOPSGURU_API ListInsightsOngoingStatusFilter();
+    AWS_DEVOPSGURU_API ListInsightsOngoingStatusFilter() = default;
     AWS_DEVOPSGURU_API ListInsightsOngoingStatusFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API ListInsightsOngoingStatusFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,16 +43,14 @@ namespace Model
      * <p> Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code>
      * insights. </p>
      */
-    inline const InsightType& GetType() const{ return m_type; }
+    inline InsightType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const InsightType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(InsightType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ListInsightsOngoingStatusFilter& WithType(const InsightType& value) { SetType(value); return *this;}
-    inline ListInsightsOngoingStatusFilter& WithType(InsightType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(InsightType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ListInsightsOngoingStatusFilter& WithType(InsightType value) { SetType(value); return *this;}
     ///@}
   private:
 
-    InsightType m_type;
+    InsightType m_type{InsightType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

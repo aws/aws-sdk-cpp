@@ -32,7 +32,7 @@ namespace Model
   class PlatformScriptKey
   {
   public:
-    AWS_MIGRATIONHUBORCHESTRATOR_API PlatformScriptKey();
+    AWS_MIGRATIONHUBORCHESTRATOR_API PlatformScriptKey() = default;
     AWS_MIGRATIONHUBORCHESTRATOR_API PlatformScriptKey(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBORCHESTRATOR_API PlatformScriptKey& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBORCHESTRATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The script location for Linux.</p>
      */
-    inline const Aws::String& GetLinux() const{ return m_linux; }
+    inline const Aws::String& GetLinux() const { return m_linux; }
     inline bool LinuxHasBeenSet() const { return m_linuxHasBeenSet; }
-    inline void SetLinux(const Aws::String& value) { m_linuxHasBeenSet = true; m_linux = value; }
-    inline void SetLinux(Aws::String&& value) { m_linuxHasBeenSet = true; m_linux = std::move(value); }
-    inline void SetLinux(const char* value) { m_linuxHasBeenSet = true; m_linux.assign(value); }
-    inline PlatformScriptKey& WithLinux(const Aws::String& value) { SetLinux(value); return *this;}
-    inline PlatformScriptKey& WithLinux(Aws::String&& value) { SetLinux(std::move(value)); return *this;}
-    inline PlatformScriptKey& WithLinux(const char* value) { SetLinux(value); return *this;}
+    template<typename LinuxT = Aws::String>
+    void SetLinux(LinuxT&& value) { m_linuxHasBeenSet = true; m_linux = std::forward<LinuxT>(value); }
+    template<typename LinuxT = Aws::String>
+    PlatformScriptKey& WithLinux(LinuxT&& value) { SetLinux(std::forward<LinuxT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The script location for Windows.</p>
      */
-    inline const Aws::String& GetWindows() const{ return m_windows; }
+    inline const Aws::String& GetWindows() const { return m_windows; }
     inline bool WindowsHasBeenSet() const { return m_windowsHasBeenSet; }
-    inline void SetWindows(const Aws::String& value) { m_windowsHasBeenSet = true; m_windows = value; }
-    inline void SetWindows(Aws::String&& value) { m_windowsHasBeenSet = true; m_windows = std::move(value); }
-    inline void SetWindows(const char* value) { m_windowsHasBeenSet = true; m_windows.assign(value); }
-    inline PlatformScriptKey& WithWindows(const Aws::String& value) { SetWindows(value); return *this;}
-    inline PlatformScriptKey& WithWindows(Aws::String&& value) { SetWindows(std::move(value)); return *this;}
-    inline PlatformScriptKey& WithWindows(const char* value) { SetWindows(value); return *this;}
+    template<typename WindowsT = Aws::String>
+    void SetWindows(WindowsT&& value) { m_windowsHasBeenSet = true; m_windows = std::forward<WindowsT>(value); }
+    template<typename WindowsT = Aws::String>
+    PlatformScriptKey& WithWindows(WindowsT&& value) { SetWindows(std::forward<WindowsT>(value)); return *this;}
     ///@}
   private:
 

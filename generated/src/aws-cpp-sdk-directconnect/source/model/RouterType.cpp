@@ -18,18 +18,7 @@ namespace DirectConnect
 namespace Model
 {
 
-RouterType::RouterType() : 
-    m_vendorHasBeenSet(false),
-    m_platformHasBeenSet(false),
-    m_softwareHasBeenSet(false),
-    m_xsltTemplateNameHasBeenSet(false),
-    m_xsltTemplateNameForMacSecHasBeenSet(false),
-    m_routerTypeIdentifierHasBeenSet(false)
-{
-}
-
 RouterType::RouterType(JsonView jsonValue)
-  : RouterType()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ RouterType& RouterType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("vendor"))
   {
     m_vendor = jsonValue.GetString("vendor");
-
     m_vendorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("platform"))
   {
     m_platform = jsonValue.GetString("platform");
-
     m_platformHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("software"))
   {
     m_software = jsonValue.GetString("software");
-
     m_softwareHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("xsltTemplateName"))
   {
     m_xsltTemplateName = jsonValue.GetString("xsltTemplateName");
-
     m_xsltTemplateNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("xsltTemplateNameForMacSec"))
   {
     m_xsltTemplateNameForMacSec = jsonValue.GetString("xsltTemplateNameForMacSec");
-
     m_xsltTemplateNameForMacSecHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("routerTypeIdentifier"))
   {
     m_routerTypeIdentifier = jsonValue.GetString("routerTypeIdentifier");
-
     m_routerTypeIdentifierHasBeenSet = true;
   }
-
   return *this;
 }
 

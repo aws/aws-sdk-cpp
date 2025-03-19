@@ -17,14 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetInstanceTpmEkPubResponse::GetInstanceTpmEkPubResponse() : 
-    m_keyType(EkPubKeyType::NOT_SET),
-    m_keyFormat(EkPubKeyFormat::NOT_SET)
-{
-}
-
 GetInstanceTpmEkPubResponse::GetInstanceTpmEkPubResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : GetInstanceTpmEkPubResponse()
 {
   *this = result;
 }
@@ -45,21 +38,25 @@ GetInstanceTpmEkPubResponse& GetInstanceTpmEkPubResponse::operator =(const Aws::
     if(!instanceIdNode.IsNull())
     {
       m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
+      m_instanceIdHasBeenSet = true;
     }
     XmlNode keyTypeNode = resultNode.FirstChild("keyType");
     if(!keyTypeNode.IsNull())
     {
-      m_keyType = EkPubKeyTypeMapper::GetEkPubKeyTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(keyTypeNode.GetText()).c_str()).c_str());
+      m_keyType = EkPubKeyTypeMapper::GetEkPubKeyTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(keyTypeNode.GetText()).c_str()));
+      m_keyTypeHasBeenSet = true;
     }
     XmlNode keyFormatNode = resultNode.FirstChild("keyFormat");
     if(!keyFormatNode.IsNull())
     {
-      m_keyFormat = EkPubKeyFormatMapper::GetEkPubKeyFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(keyFormatNode.GetText()).c_str()).c_str());
+      m_keyFormat = EkPubKeyFormatMapper::GetEkPubKeyFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(keyFormatNode.GetText()).c_str()));
+      m_keyFormatHasBeenSet = true;
     }
     XmlNode keyValueNode = resultNode.FirstChild("keyValue");
     if(!keyValueNode.IsNull())
     {
       m_keyValue = Aws::Utils::Xml::DecodeEscapedXmlText(keyValueNode.GetText());
+      m_keyValueHasBeenSet = true;
     }
   }
 
@@ -68,6 +65,7 @@ GetInstanceTpmEkPubResponse& GetInstanceTpmEkPubResponse::operator =(const Aws::
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::GetInstanceTpmEkPubResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

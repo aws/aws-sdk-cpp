@@ -12,11 +12,6 @@ using namespace Aws::VPCLattice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetResourceConfigurationRequest::GetResourceConfigurationRequest() : 
-    m_resourceConfigurationIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String GetResourceConfigurationRequest::SerializePayload() const
 {
   return {};

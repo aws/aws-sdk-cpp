@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeProtectionGroupResult::DescribeProtectionGroupResult()
-{
-}
-
 DescribeProtectionGroupResult::DescribeProtectionGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeProtectionGroupResult& DescribeProtectionGroupResult::operator =(const A
   if(jsonValue.ValueExists("ProtectionGroup"))
   {
     m_protectionGroup = jsonValue.GetObject("ProtectionGroup");
-
+    m_protectionGroupHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

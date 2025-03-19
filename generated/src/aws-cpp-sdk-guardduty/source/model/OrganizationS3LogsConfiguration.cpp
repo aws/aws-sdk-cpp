@@ -18,14 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-OrganizationS3LogsConfiguration::OrganizationS3LogsConfiguration() : 
-    m_autoEnable(false),
-    m_autoEnableHasBeenSet(false)
-{
-}
-
 OrganizationS3LogsConfiguration::OrganizationS3LogsConfiguration(JsonView jsonValue)
-  : OrganizationS3LogsConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ OrganizationS3LogsConfiguration& OrganizationS3LogsConfiguration::operator =(Jso
   if(jsonValue.ValueExists("autoEnable"))
   {
     m_autoEnable = jsonValue.GetBool("autoEnable");
-
     m_autoEnableHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -10,11 +10,6 @@
 using namespace Aws::ElasticLoadBalancingv2::Model;
 using namespace Aws::Utils;
 
-GetTrustStoreCaCertificatesBundleRequest::GetTrustStoreCaCertificatesBundleRequest() : 
-    m_trustStoreArnHasBeenSet(false)
-{
-}
-
 Aws::String GetTrustStoreCaCertificatesBundleRequest::SerializePayload() const
 {
   Aws::StringStream ss;

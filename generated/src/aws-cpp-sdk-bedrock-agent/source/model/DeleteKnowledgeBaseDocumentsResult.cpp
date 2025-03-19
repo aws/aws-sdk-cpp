@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteKnowledgeBaseDocumentsResult::DeleteKnowledgeBaseDocumentsResult()
-{
-}
-
 DeleteKnowledgeBaseDocumentsResult::DeleteKnowledgeBaseDocumentsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ DeleteKnowledgeBaseDocumentsResult& DeleteKnowledgeBaseDocumentsResult::operator
     {
       m_documentDetails.push_back(documentDetailsJsonList[documentDetailsIndex].AsObject());
     }
+    m_documentDetailsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

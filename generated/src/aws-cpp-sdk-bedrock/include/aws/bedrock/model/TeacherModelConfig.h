@@ -32,7 +32,7 @@ namespace Model
   class TeacherModelConfig
   {
   public:
-    AWS_BEDROCK_API TeacherModelConfig();
+    AWS_BEDROCK_API TeacherModelConfig() = default;
     AWS_BEDROCK_API TeacherModelConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API TeacherModelConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The identifier of the teacher model.</p>
      */
-    inline const Aws::String& GetTeacherModelIdentifier() const{ return m_teacherModelIdentifier; }
+    inline const Aws::String& GetTeacherModelIdentifier() const { return m_teacherModelIdentifier; }
     inline bool TeacherModelIdentifierHasBeenSet() const { return m_teacherModelIdentifierHasBeenSet; }
-    inline void SetTeacherModelIdentifier(const Aws::String& value) { m_teacherModelIdentifierHasBeenSet = true; m_teacherModelIdentifier = value; }
-    inline void SetTeacherModelIdentifier(Aws::String&& value) { m_teacherModelIdentifierHasBeenSet = true; m_teacherModelIdentifier = std::move(value); }
-    inline void SetTeacherModelIdentifier(const char* value) { m_teacherModelIdentifierHasBeenSet = true; m_teacherModelIdentifier.assign(value); }
-    inline TeacherModelConfig& WithTeacherModelIdentifier(const Aws::String& value) { SetTeacherModelIdentifier(value); return *this;}
-    inline TeacherModelConfig& WithTeacherModelIdentifier(Aws::String&& value) { SetTeacherModelIdentifier(std::move(value)); return *this;}
-    inline TeacherModelConfig& WithTeacherModelIdentifier(const char* value) { SetTeacherModelIdentifier(value); return *this;}
+    template<typename TeacherModelIdentifierT = Aws::String>
+    void SetTeacherModelIdentifier(TeacherModelIdentifierT&& value) { m_teacherModelIdentifierHasBeenSet = true; m_teacherModelIdentifier = std::forward<TeacherModelIdentifierT>(value); }
+    template<typename TeacherModelIdentifierT = Aws::String>
+    TeacherModelConfig& WithTeacherModelIdentifier(TeacherModelIdentifierT&& value) { SetTeacherModelIdentifier(std::forward<TeacherModelIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,7 +55,7 @@ namespace Model
      * <p>The maximum number of tokens requested when the customization job invokes the
      * teacher model.</p>
      */
-    inline int GetMaxResponseLengthForInference() const{ return m_maxResponseLengthForInference; }
+    inline int GetMaxResponseLengthForInference() const { return m_maxResponseLengthForInference; }
     inline bool MaxResponseLengthForInferenceHasBeenSet() const { return m_maxResponseLengthForInferenceHasBeenSet; }
     inline void SetMaxResponseLengthForInference(int value) { m_maxResponseLengthForInferenceHasBeenSet = true; m_maxResponseLengthForInference = value; }
     inline TeacherModelConfig& WithMaxResponseLengthForInference(int value) { SetMaxResponseLengthForInference(value); return *this;}
@@ -67,7 +65,7 @@ namespace Model
     Aws::String m_teacherModelIdentifier;
     bool m_teacherModelIdentifierHasBeenSet = false;
 
-    int m_maxResponseLengthForInference;
+    int m_maxResponseLengthForInference{0};
     bool m_maxResponseLengthForInferenceHasBeenSet = false;
   };
 

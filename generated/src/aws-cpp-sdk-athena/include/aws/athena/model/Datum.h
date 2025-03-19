@@ -31,7 +31,7 @@ namespace Model
   class Datum
   {
   public:
-    AWS_ATHENA_API Datum();
+    AWS_ATHENA_API Datum() = default;
     AWS_ATHENA_API Datum(Aws::Utils::Json::JsonView jsonValue);
     AWS_ATHENA_API Datum& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The value of the datum.</p>
      */
-    inline const Aws::String& GetVarCharValue() const{ return m_varCharValue; }
+    inline const Aws::String& GetVarCharValue() const { return m_varCharValue; }
     inline bool VarCharValueHasBeenSet() const { return m_varCharValueHasBeenSet; }
-    inline void SetVarCharValue(const Aws::String& value) { m_varCharValueHasBeenSet = true; m_varCharValue = value; }
-    inline void SetVarCharValue(Aws::String&& value) { m_varCharValueHasBeenSet = true; m_varCharValue = std::move(value); }
-    inline void SetVarCharValue(const char* value) { m_varCharValueHasBeenSet = true; m_varCharValue.assign(value); }
-    inline Datum& WithVarCharValue(const Aws::String& value) { SetVarCharValue(value); return *this;}
-    inline Datum& WithVarCharValue(Aws::String&& value) { SetVarCharValue(std::move(value)); return *this;}
-    inline Datum& WithVarCharValue(const char* value) { SetVarCharValue(value); return *this;}
+    template<typename VarCharValueT = Aws::String>
+    void SetVarCharValue(VarCharValueT&& value) { m_varCharValueHasBeenSet = true; m_varCharValue = std::forward<VarCharValueT>(value); }
+    template<typename VarCharValueT = Aws::String>
+    Datum& WithVarCharValue(VarCharValueT&& value) { SetVarCharValue(std::forward<VarCharValueT>(value)); return *this;}
     ///@}
   private:
 

@@ -32,7 +32,7 @@ namespace Model
   class RedirectAllRequestsTo
   {
   public:
-    AWS_S3CRT_API RedirectAllRequestsTo();
+    AWS_S3CRT_API RedirectAllRequestsTo() = default;
     AWS_S3CRT_API RedirectAllRequestsTo(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CRT_API RedirectAllRequestsTo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>Name of the host where requests are redirected.</p>
      */
-    inline const Aws::String& GetHostName() const{ return m_hostName; }
+    inline const Aws::String& GetHostName() const { return m_hostName; }
     inline bool HostNameHasBeenSet() const { return m_hostNameHasBeenSet; }
-    inline void SetHostName(const Aws::String& value) { m_hostNameHasBeenSet = true; m_hostName = value; }
-    inline void SetHostName(Aws::String&& value) { m_hostNameHasBeenSet = true; m_hostName = std::move(value); }
-    inline void SetHostName(const char* value) { m_hostNameHasBeenSet = true; m_hostName.assign(value); }
-    inline RedirectAllRequestsTo& WithHostName(const Aws::String& value) { SetHostName(value); return *this;}
-    inline RedirectAllRequestsTo& WithHostName(Aws::String&& value) { SetHostName(std::move(value)); return *this;}
-    inline RedirectAllRequestsTo& WithHostName(const char* value) { SetHostName(value); return *this;}
+    template<typename HostNameT = Aws::String>
+    void SetHostName(HostNameT&& value) { m_hostNameHasBeenSet = true; m_hostName = std::forward<HostNameT>(value); }
+    template<typename HostNameT = Aws::String>
+    RedirectAllRequestsTo& WithHostName(HostNameT&& value) { SetHostName(std::forward<HostNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,19 +56,17 @@ namespace Model
      * <p>Protocol to use when redirecting requests. The default is the protocol that
      * is used in the original request.</p>
      */
-    inline const Protocol& GetProtocol() const{ return m_protocol; }
+    inline Protocol GetProtocol() const { return m_protocol; }
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-    inline void SetProtocol(const Protocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
-    inline void SetProtocol(Protocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
-    inline RedirectAllRequestsTo& WithProtocol(const Protocol& value) { SetProtocol(value); return *this;}
-    inline RedirectAllRequestsTo& WithProtocol(Protocol&& value) { SetProtocol(std::move(value)); return *this;}
+    inline void SetProtocol(Protocol value) { m_protocolHasBeenSet = true; m_protocol = value; }
+    inline RedirectAllRequestsTo& WithProtocol(Protocol value) { SetProtocol(value); return *this;}
     ///@}
   private:
 
     Aws::String m_hostName;
     bool m_hostNameHasBeenSet = false;
 
-    Protocol m_protocol;
+    Protocol m_protocol{Protocol::NOT_SET};
     bool m_protocolHasBeenSet = false;
   };
 

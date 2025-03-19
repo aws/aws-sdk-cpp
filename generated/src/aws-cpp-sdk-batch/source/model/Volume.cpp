@@ -18,15 +18,7 @@ namespace Batch
 namespace Model
 {
 
-Volume::Volume() : 
-    m_hostHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_efsVolumeConfigurationHasBeenSet(false)
-{
-}
-
 Volume::Volume(JsonView jsonValue)
-  : Volume()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ Volume& Volume::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("host"))
   {
     m_host = jsonValue.GetObject("host");
-
     m_hostHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("efsVolumeConfiguration"))
   {
     m_efsVolumeConfiguration = jsonValue.GetObject("efsVolumeConfiguration");
-
     m_efsVolumeConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

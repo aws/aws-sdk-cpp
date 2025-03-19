@@ -30,7 +30,7 @@ namespace Model
   class ReplicaConfigurationRequest
   {
   public:
-    AWS_MEMORYDB_API ReplicaConfigurationRequest();
+    AWS_MEMORYDB_API ReplicaConfigurationRequest() = default;
     AWS_MEMORYDB_API ReplicaConfigurationRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEMORYDB_API ReplicaConfigurationRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
     /**
      * <p>The number of replicas to scale up or down to</p>
      */
-    inline int GetReplicaCount() const{ return m_replicaCount; }
+    inline int GetReplicaCount() const { return m_replicaCount; }
     inline bool ReplicaCountHasBeenSet() const { return m_replicaCountHasBeenSet; }
     inline void SetReplicaCount(int value) { m_replicaCountHasBeenSet = true; m_replicaCount = value; }
     inline ReplicaConfigurationRequest& WithReplicaCount(int value) { SetReplicaCount(value); return *this;}
     ///@}
   private:
 
-    int m_replicaCount;
+    int m_replicaCount{0};
     bool m_replicaCountHasBeenSet = false;
   };
 

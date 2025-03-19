@@ -18,16 +18,7 @@ namespace BCMPricingCalculator
 namespace Model
 {
 
-BatchUpdateWorkloadEstimateUsageEntry::BatchUpdateWorkloadEstimateUsageEntry() : 
-    m_idHasBeenSet(false),
-    m_groupHasBeenSet(false),
-    m_amount(0.0),
-    m_amountHasBeenSet(false)
-{
-}
-
 BatchUpdateWorkloadEstimateUsageEntry::BatchUpdateWorkloadEstimateUsageEntry(JsonView jsonValue)
-  : BatchUpdateWorkloadEstimateUsageEntry()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ BatchUpdateWorkloadEstimateUsageEntry& BatchUpdateWorkloadEstimateUsageEntry::op
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("group"))
   {
     m_group = jsonValue.GetString("group");
-
     m_groupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("amount"))
   {
     m_amount = jsonValue.GetDouble("amount");
-
     m_amountHasBeenSet = true;
   }
-
   return *this;
 }
 

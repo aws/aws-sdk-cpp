@@ -18,17 +18,7 @@ namespace SSMContacts
 namespace Model
 {
 
-ResolutionContact::ResolutionContact() : 
-    m_contactArnHasBeenSet(false),
-    m_type(ContactType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_stageIndex(0),
-    m_stageIndexHasBeenSet(false)
-{
-}
-
 ResolutionContact::ResolutionContact(JsonView jsonValue)
-  : ResolutionContact()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ ResolutionContact& ResolutionContact::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ContactArn"))
   {
     m_contactArn = jsonValue.GetString("ContactArn");
-
     m_contactArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ContactTypeMapper::GetContactTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StageIndex"))
   {
     m_stageIndex = jsonValue.GetInteger("StageIndex");
-
     m_stageIndexHasBeenSet = true;
   }
-
   return *this;
 }
 

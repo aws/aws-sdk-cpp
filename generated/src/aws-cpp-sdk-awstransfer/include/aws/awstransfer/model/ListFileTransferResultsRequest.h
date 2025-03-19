@@ -21,7 +21,7 @@ namespace Model
   class ListFileTransferResultsRequest : public TransferRequest
   {
   public:
-    AWS_TRANSFER_API ListFileTransferResultsRequest();
+    AWS_TRANSFER_API ListFileTransferResultsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>A unique identifier for a connector. This value should match the value
      * supplied to the corresponding <code>StartFileTransfer</code> call.</p>
      */
-    inline const Aws::String& GetConnectorId() const{ return m_connectorId; }
+    inline const Aws::String& GetConnectorId() const { return m_connectorId; }
     inline bool ConnectorIdHasBeenSet() const { return m_connectorIdHasBeenSet; }
-    inline void SetConnectorId(const Aws::String& value) { m_connectorIdHasBeenSet = true; m_connectorId = value; }
-    inline void SetConnectorId(Aws::String&& value) { m_connectorIdHasBeenSet = true; m_connectorId = std::move(value); }
-    inline void SetConnectorId(const char* value) { m_connectorIdHasBeenSet = true; m_connectorId.assign(value); }
-    inline ListFileTransferResultsRequest& WithConnectorId(const Aws::String& value) { SetConnectorId(value); return *this;}
-    inline ListFileTransferResultsRequest& WithConnectorId(Aws::String&& value) { SetConnectorId(std::move(value)); return *this;}
-    inline ListFileTransferResultsRequest& WithConnectorId(const char* value) { SetConnectorId(value); return *this;}
+    template<typename ConnectorIdT = Aws::String>
+    void SetConnectorId(ConnectorIdT&& value) { m_connectorIdHasBeenSet = true; m_connectorId = std::forward<ConnectorIdT>(value); }
+    template<typename ConnectorIdT = Aws::String>
+    ListFileTransferResultsRequest& WithConnectorId(ConnectorIdT&& value) { SetConnectorId(std::forward<ConnectorIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,14 +52,12 @@ namespace Model
      * <p>A unique identifier for a file transfer. This value should match the value
      * supplied to the corresponding <code>StartFileTransfer</code> call.</p>
      */
-    inline const Aws::String& GetTransferId() const{ return m_transferId; }
+    inline const Aws::String& GetTransferId() const { return m_transferId; }
     inline bool TransferIdHasBeenSet() const { return m_transferIdHasBeenSet; }
-    inline void SetTransferId(const Aws::String& value) { m_transferIdHasBeenSet = true; m_transferId = value; }
-    inline void SetTransferId(Aws::String&& value) { m_transferIdHasBeenSet = true; m_transferId = std::move(value); }
-    inline void SetTransferId(const char* value) { m_transferIdHasBeenSet = true; m_transferId.assign(value); }
-    inline ListFileTransferResultsRequest& WithTransferId(const Aws::String& value) { SetTransferId(value); return *this;}
-    inline ListFileTransferResultsRequest& WithTransferId(Aws::String&& value) { SetTransferId(std::move(value)); return *this;}
-    inline ListFileTransferResultsRequest& WithTransferId(const char* value) { SetTransferId(value); return *this;}
+    template<typename TransferIdT = Aws::String>
+    void SetTransferId(TransferIdT&& value) { m_transferIdHasBeenSet = true; m_transferId = std::forward<TransferIdT>(value); }
+    template<typename TransferIdT = Aws::String>
+    ListFileTransferResultsRequest& WithTransferId(TransferIdT&& value) { SetTransferId(std::forward<TransferIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +65,12 @@ namespace Model
      * <p>If there are more file details than returned in this call, use this value for
      * a subsequent call to <code>ListFileTransferResults</code> to retrieve them.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListFileTransferResultsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListFileTransferResultsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListFileTransferResultsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListFileTransferResultsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,7 +81,7 @@ namespace Model
      * operation. Thus, the maximum number of file transfer results that can be
      * returned in a single page is 10. </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListFileTransferResultsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -103,7 +97,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

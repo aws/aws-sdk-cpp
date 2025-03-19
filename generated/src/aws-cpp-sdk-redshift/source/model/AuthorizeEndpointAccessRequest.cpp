@@ -10,13 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-AuthorizeEndpointAccessRequest::AuthorizeEndpointAccessRequest() : 
-    m_clusterIdentifierHasBeenSet(false),
-    m_accountHasBeenSet(false),
-    m_vpcIdsHasBeenSet(false)
-{
-}
-
 Aws::String AuthorizeEndpointAccessRequest::SerializePayload() const
 {
   Aws::StringStream ss;

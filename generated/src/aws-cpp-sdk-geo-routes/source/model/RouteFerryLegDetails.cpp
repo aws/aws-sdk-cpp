@@ -18,22 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteFerryLegDetails::RouteFerryLegDetails() : 
-    m_afterTravelStepsHasBeenSet(false),
-    m_arrivalHasBeenSet(false),
-    m_beforeTravelStepsHasBeenSet(false),
-    m_departureHasBeenSet(false),
-    m_noticesHasBeenSet(false),
-    m_passThroughWaypointsHasBeenSet(false),
-    m_routeNameHasBeenSet(false),
-    m_spansHasBeenSet(false),
-    m_summaryHasBeenSet(false),
-    m_travelStepsHasBeenSet(false)
-{
-}
-
 RouteFerryLegDetails::RouteFerryLegDetails(JsonView jsonValue)
-  : RouteFerryLegDetails()
 {
   *this = jsonValue;
 }
@@ -49,14 +34,11 @@ RouteFerryLegDetails& RouteFerryLegDetails::operator =(JsonView jsonValue)
     }
     m_afterTravelStepsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arrival"))
   {
     m_arrival = jsonValue.GetObject("Arrival");
-
     m_arrivalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BeforeTravelSteps"))
   {
     Aws::Utils::Array<JsonView> beforeTravelStepsJsonList = jsonValue.GetArray("BeforeTravelSteps");
@@ -66,14 +48,11 @@ RouteFerryLegDetails& RouteFerryLegDetails::operator =(JsonView jsonValue)
     }
     m_beforeTravelStepsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Departure"))
   {
     m_departure = jsonValue.GetObject("Departure");
-
     m_departureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Notices"))
   {
     Aws::Utils::Array<JsonView> noticesJsonList = jsonValue.GetArray("Notices");
@@ -83,7 +62,6 @@ RouteFerryLegDetails& RouteFerryLegDetails::operator =(JsonView jsonValue)
     }
     m_noticesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PassThroughWaypoints"))
   {
     Aws::Utils::Array<JsonView> passThroughWaypointsJsonList = jsonValue.GetArray("PassThroughWaypoints");
@@ -93,14 +71,11 @@ RouteFerryLegDetails& RouteFerryLegDetails::operator =(JsonView jsonValue)
     }
     m_passThroughWaypointsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RouteName"))
   {
     m_routeName = jsonValue.GetString("RouteName");
-
     m_routeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Spans"))
   {
     Aws::Utils::Array<JsonView> spansJsonList = jsonValue.GetArray("Spans");
@@ -110,14 +85,11 @@ RouteFerryLegDetails& RouteFerryLegDetails::operator =(JsonView jsonValue)
     }
     m_spansHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Summary"))
   {
     m_summary = jsonValue.GetObject("Summary");
-
     m_summaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TravelSteps"))
   {
     Aws::Utils::Array<JsonView> travelStepsJsonList = jsonValue.GetArray("TravelSteps");
@@ -127,7 +99,6 @@ RouteFerryLegDetails& RouteFerryLegDetails::operator =(JsonView jsonValue)
     }
     m_travelStepsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -29,7 +29,7 @@ namespace Model
   class GetResourceProfileResult
   {
   public:
-    AWS_MACIE2_API GetResourceProfileResult();
+    AWS_MACIE2_API GetResourceProfileResult() = default;
     AWS_MACIE2_API GetResourceProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MACIE2_API GetResourceProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,11 +41,11 @@ namespace Model
      * the bucket. If the bucket's sensitivity score is calculated automatically, this
      * includes the score.</p>
      */
-    inline const Aws::Utils::DateTime& GetProfileUpdatedAt() const{ return m_profileUpdatedAt; }
-    inline void SetProfileUpdatedAt(const Aws::Utils::DateTime& value) { m_profileUpdatedAt = value; }
-    inline void SetProfileUpdatedAt(Aws::Utils::DateTime&& value) { m_profileUpdatedAt = std::move(value); }
-    inline GetResourceProfileResult& WithProfileUpdatedAt(const Aws::Utils::DateTime& value) { SetProfileUpdatedAt(value); return *this;}
-    inline GetResourceProfileResult& WithProfileUpdatedAt(Aws::Utils::DateTime&& value) { SetProfileUpdatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetProfileUpdatedAt() const { return m_profileUpdatedAt; }
+    template<typename ProfileUpdatedAtT = Aws::Utils::DateTime>
+    void SetProfileUpdatedAt(ProfileUpdatedAtT&& value) { m_profileUpdatedAtHasBeenSet = true; m_profileUpdatedAt = std::forward<ProfileUpdatedAtT>(value); }
+    template<typename ProfileUpdatedAtT = Aws::Utils::DateTime>
+    GetResourceProfileResult& WithProfileUpdatedAt(ProfileUpdatedAtT&& value) { SetProfileUpdatedAt(std::forward<ProfileUpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,8 +55,8 @@ namespace Model
      * based on the amount of data that Amazon Macie has analyzed in the bucket and the
      * amount of sensitive data that Macie has found in the bucket.</p>
      */
-    inline int GetSensitivityScore() const{ return m_sensitivityScore; }
-    inline void SetSensitivityScore(int value) { m_sensitivityScore = value; }
+    inline int GetSensitivityScore() const { return m_sensitivityScore; }
+    inline void SetSensitivityScore(int value) { m_sensitivityScoreHasBeenSet = true; m_sensitivityScore = value; }
     inline GetResourceProfileResult& WithSensitivityScore(int value) { SetSensitivityScore(value); return *this;}
     ///@}
 
@@ -66,8 +66,8 @@ namespace Model
      * this value is true, the score was manually changed to 100. If this value is
      * false, the score was calculated automatically by Amazon Macie.</p>
      */
-    inline bool GetSensitivityScoreOverridden() const{ return m_sensitivityScoreOverridden; }
-    inline void SetSensitivityScoreOverridden(bool value) { m_sensitivityScoreOverridden = value; }
+    inline bool GetSensitivityScoreOverridden() const { return m_sensitivityScoreOverridden; }
+    inline void SetSensitivityScoreOverridden(bool value) { m_sensitivityScoreOverriddenHasBeenSet = true; m_sensitivityScoreOverridden = value; }
     inline GetResourceProfileResult& WithSensitivityScoreOverridden(bool value) { SetSensitivityScoreOverridden(value); return *this;}
     ///@}
 
@@ -77,34 +77,37 @@ namespace Model
      * capture the results of automated sensitive data discovery activities that Amazon
      * Macie has performed for the bucket.</p>
      */
-    inline const ResourceStatistics& GetStatistics() const{ return m_statistics; }
-    inline void SetStatistics(const ResourceStatistics& value) { m_statistics = value; }
-    inline void SetStatistics(ResourceStatistics&& value) { m_statistics = std::move(value); }
-    inline GetResourceProfileResult& WithStatistics(const ResourceStatistics& value) { SetStatistics(value); return *this;}
-    inline GetResourceProfileResult& WithStatistics(ResourceStatistics&& value) { SetStatistics(std::move(value)); return *this;}
+    inline const ResourceStatistics& GetStatistics() const { return m_statistics; }
+    template<typename StatisticsT = ResourceStatistics>
+    void SetStatistics(StatisticsT&& value) { m_statisticsHasBeenSet = true; m_statistics = std::forward<StatisticsT>(value); }
+    template<typename StatisticsT = ResourceStatistics>
+    GetResourceProfileResult& WithStatistics(StatisticsT&& value) { SetStatistics(std::forward<StatisticsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetResourceProfileResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetResourceProfileResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetResourceProfileResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetResourceProfileResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_profileUpdatedAt;
+    Aws::Utils::DateTime m_profileUpdatedAt{};
+    bool m_profileUpdatedAtHasBeenSet = false;
 
-    int m_sensitivityScore;
+    int m_sensitivityScore{0};
+    bool m_sensitivityScoreHasBeenSet = false;
 
-    bool m_sensitivityScoreOverridden;
+    bool m_sensitivityScoreOverridden{false};
+    bool m_sensitivityScoreOverriddenHasBeenSet = false;
 
     ResourceStatistics m_statistics;
+    bool m_statisticsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -35,7 +35,7 @@ namespace Model
   class WebCrawlerConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API WebCrawlerConfiguration();
+    AWS_BEDROCKAGENT_API WebCrawlerConfiguration() = default;
     AWS_BEDROCKAGENT_API WebCrawlerConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API WebCrawlerConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
     /**
      * <p>The configuration of crawl limits for the web URLs.</p>
      */
-    inline const WebCrawlerLimits& GetCrawlerLimits() const{ return m_crawlerLimits; }
+    inline const WebCrawlerLimits& GetCrawlerLimits() const { return m_crawlerLimits; }
     inline bool CrawlerLimitsHasBeenSet() const { return m_crawlerLimitsHasBeenSet; }
-    inline void SetCrawlerLimits(const WebCrawlerLimits& value) { m_crawlerLimitsHasBeenSet = true; m_crawlerLimits = value; }
-    inline void SetCrawlerLimits(WebCrawlerLimits&& value) { m_crawlerLimitsHasBeenSet = true; m_crawlerLimits = std::move(value); }
-    inline WebCrawlerConfiguration& WithCrawlerLimits(const WebCrawlerLimits& value) { SetCrawlerLimits(value); return *this;}
-    inline WebCrawlerConfiguration& WithCrawlerLimits(WebCrawlerLimits&& value) { SetCrawlerLimits(std::move(value)); return *this;}
+    template<typename CrawlerLimitsT = WebCrawlerLimits>
+    void SetCrawlerLimits(CrawlerLimitsT&& value) { m_crawlerLimitsHasBeenSet = true; m_crawlerLimits = std::forward<CrawlerLimitsT>(value); }
+    template<typename CrawlerLimitsT = WebCrawlerLimits>
+    WebCrawlerConfiguration& WithCrawlerLimits(CrawlerLimitsT&& value) { SetCrawlerLimits(std::forward<CrawlerLimitsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,15 +60,14 @@ namespace Model
      * match a URL, the exclusion filter takes precedence and the web content of the
      * URL isn’t crawled.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExclusionFilters() const{ return m_exclusionFilters; }
+    inline const Aws::Vector<Aws::String>& GetExclusionFilters() const { return m_exclusionFilters; }
     inline bool ExclusionFiltersHasBeenSet() const { return m_exclusionFiltersHasBeenSet; }
-    inline void SetExclusionFilters(const Aws::Vector<Aws::String>& value) { m_exclusionFiltersHasBeenSet = true; m_exclusionFilters = value; }
-    inline void SetExclusionFilters(Aws::Vector<Aws::String>&& value) { m_exclusionFiltersHasBeenSet = true; m_exclusionFilters = std::move(value); }
-    inline WebCrawlerConfiguration& WithExclusionFilters(const Aws::Vector<Aws::String>& value) { SetExclusionFilters(value); return *this;}
-    inline WebCrawlerConfiguration& WithExclusionFilters(Aws::Vector<Aws::String>&& value) { SetExclusionFilters(std::move(value)); return *this;}
-    inline WebCrawlerConfiguration& AddExclusionFilters(const Aws::String& value) { m_exclusionFiltersHasBeenSet = true; m_exclusionFilters.push_back(value); return *this; }
-    inline WebCrawlerConfiguration& AddExclusionFilters(Aws::String&& value) { m_exclusionFiltersHasBeenSet = true; m_exclusionFilters.push_back(std::move(value)); return *this; }
-    inline WebCrawlerConfiguration& AddExclusionFilters(const char* value) { m_exclusionFiltersHasBeenSet = true; m_exclusionFilters.push_back(value); return *this; }
+    template<typename ExclusionFiltersT = Aws::Vector<Aws::String>>
+    void SetExclusionFilters(ExclusionFiltersT&& value) { m_exclusionFiltersHasBeenSet = true; m_exclusionFilters = std::forward<ExclusionFiltersT>(value); }
+    template<typename ExclusionFiltersT = Aws::Vector<Aws::String>>
+    WebCrawlerConfiguration& WithExclusionFilters(ExclusionFiltersT&& value) { SetExclusionFilters(std::forward<ExclusionFiltersT>(value)); return *this;}
+    template<typename ExclusionFiltersT = Aws::String>
+    WebCrawlerConfiguration& AddExclusionFilters(ExclusionFiltersT&& value) { m_exclusionFiltersHasBeenSet = true; m_exclusionFilters.emplace_back(std::forward<ExclusionFiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -78,15 +77,14 @@ namespace Model
      * match a URL, the exclusion filter takes precedence and the web content of the
      * URL isn’t crawled.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetInclusionFilters() const{ return m_inclusionFilters; }
+    inline const Aws::Vector<Aws::String>& GetInclusionFilters() const { return m_inclusionFilters; }
     inline bool InclusionFiltersHasBeenSet() const { return m_inclusionFiltersHasBeenSet; }
-    inline void SetInclusionFilters(const Aws::Vector<Aws::String>& value) { m_inclusionFiltersHasBeenSet = true; m_inclusionFilters = value; }
-    inline void SetInclusionFilters(Aws::Vector<Aws::String>&& value) { m_inclusionFiltersHasBeenSet = true; m_inclusionFilters = std::move(value); }
-    inline WebCrawlerConfiguration& WithInclusionFilters(const Aws::Vector<Aws::String>& value) { SetInclusionFilters(value); return *this;}
-    inline WebCrawlerConfiguration& WithInclusionFilters(Aws::Vector<Aws::String>&& value) { SetInclusionFilters(std::move(value)); return *this;}
-    inline WebCrawlerConfiguration& AddInclusionFilters(const Aws::String& value) { m_inclusionFiltersHasBeenSet = true; m_inclusionFilters.push_back(value); return *this; }
-    inline WebCrawlerConfiguration& AddInclusionFilters(Aws::String&& value) { m_inclusionFiltersHasBeenSet = true; m_inclusionFilters.push_back(std::move(value)); return *this; }
-    inline WebCrawlerConfiguration& AddInclusionFilters(const char* value) { m_inclusionFiltersHasBeenSet = true; m_inclusionFilters.push_back(value); return *this; }
+    template<typename InclusionFiltersT = Aws::Vector<Aws::String>>
+    void SetInclusionFilters(InclusionFiltersT&& value) { m_inclusionFiltersHasBeenSet = true; m_inclusionFilters = std::forward<InclusionFiltersT>(value); }
+    template<typename InclusionFiltersT = Aws::Vector<Aws::String>>
+    WebCrawlerConfiguration& WithInclusionFilters(InclusionFiltersT&& value) { SetInclusionFilters(std::forward<InclusionFiltersT>(value)); return *this;}
+    template<typename InclusionFiltersT = Aws::String>
+    WebCrawlerConfiguration& AddInclusionFilters(InclusionFiltersT&& value) { m_inclusionFiltersHasBeenSet = true; m_inclusionFilters.emplace_back(std::forward<InclusionFiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -99,26 +97,22 @@ namespace Model
      * For example, web pages that contain "aws.amazon.com" can also include sub domain
      * "docs.aws.amazon.com".</p>
      */
-    inline const WebScopeType& GetScope() const{ return m_scope; }
+    inline WebScopeType GetScope() const { return m_scope; }
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
-    inline void SetScope(const WebScopeType& value) { m_scopeHasBeenSet = true; m_scope = value; }
-    inline void SetScope(WebScopeType&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
-    inline WebCrawlerConfiguration& WithScope(const WebScopeType& value) { SetScope(value); return *this;}
-    inline WebCrawlerConfiguration& WithScope(WebScopeType&& value) { SetScope(std::move(value)); return *this;}
+    inline void SetScope(WebScopeType value) { m_scopeHasBeenSet = true; m_scope = value; }
+    inline WebCrawlerConfiguration& WithScope(WebScopeType value) { SetScope(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Returns the user agent suffix for your web crawler.</p>
      */
-    inline const Aws::String& GetUserAgent() const{ return m_userAgent; }
+    inline const Aws::String& GetUserAgent() const { return m_userAgent; }
     inline bool UserAgentHasBeenSet() const { return m_userAgentHasBeenSet; }
-    inline void SetUserAgent(const Aws::String& value) { m_userAgentHasBeenSet = true; m_userAgent = value; }
-    inline void SetUserAgent(Aws::String&& value) { m_userAgentHasBeenSet = true; m_userAgent = std::move(value); }
-    inline void SetUserAgent(const char* value) { m_userAgentHasBeenSet = true; m_userAgent.assign(value); }
-    inline WebCrawlerConfiguration& WithUserAgent(const Aws::String& value) { SetUserAgent(value); return *this;}
-    inline WebCrawlerConfiguration& WithUserAgent(Aws::String&& value) { SetUserAgent(std::move(value)); return *this;}
-    inline WebCrawlerConfiguration& WithUserAgent(const char* value) { SetUserAgent(value); return *this;}
+    template<typename UserAgentT = Aws::String>
+    void SetUserAgent(UserAgentT&& value) { m_userAgentHasBeenSet = true; m_userAgent = std::forward<UserAgentT>(value); }
+    template<typename UserAgentT = Aws::String>
+    WebCrawlerConfiguration& WithUserAgent(UserAgentT&& value) { SetUserAgent(std::forward<UserAgentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -130,14 +124,12 @@ namespace Model
      * suffix to <code>bedrockbot_UUID</code> to allowlist a specific user agent
      * permitted to access your source URLs. </p>
      */
-    inline const Aws::String& GetUserAgentHeader() const{ return m_userAgentHeader; }
+    inline const Aws::String& GetUserAgentHeader() const { return m_userAgentHeader; }
     inline bool UserAgentHeaderHasBeenSet() const { return m_userAgentHeaderHasBeenSet; }
-    inline void SetUserAgentHeader(const Aws::String& value) { m_userAgentHeaderHasBeenSet = true; m_userAgentHeader = value; }
-    inline void SetUserAgentHeader(Aws::String&& value) { m_userAgentHeaderHasBeenSet = true; m_userAgentHeader = std::move(value); }
-    inline void SetUserAgentHeader(const char* value) { m_userAgentHeaderHasBeenSet = true; m_userAgentHeader.assign(value); }
-    inline WebCrawlerConfiguration& WithUserAgentHeader(const Aws::String& value) { SetUserAgentHeader(value); return *this;}
-    inline WebCrawlerConfiguration& WithUserAgentHeader(Aws::String&& value) { SetUserAgentHeader(std::move(value)); return *this;}
-    inline WebCrawlerConfiguration& WithUserAgentHeader(const char* value) { SetUserAgentHeader(value); return *this;}
+    template<typename UserAgentHeaderT = Aws::String>
+    void SetUserAgentHeader(UserAgentHeaderT&& value) { m_userAgentHeaderHasBeenSet = true; m_userAgentHeader = std::forward<UserAgentHeaderT>(value); }
+    template<typename UserAgentHeaderT = Aws::String>
+    WebCrawlerConfiguration& WithUserAgentHeader(UserAgentHeaderT&& value) { SetUserAgentHeader(std::forward<UserAgentHeaderT>(value)); return *this;}
     ///@}
   private:
 
@@ -150,7 +142,7 @@ namespace Model
     Aws::Vector<Aws::String> m_inclusionFilters;
     bool m_inclusionFiltersHasBeenSet = false;
 
-    WebScopeType m_scope;
+    WebScopeType m_scope{WebScopeType::NOT_SET};
     bool m_scopeHasBeenSet = false;
 
     Aws::String m_userAgent;

@@ -18,16 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-FreeTrialInfoError::FreeTrialInfoError() : 
-    m_accountIdHasBeenSet(false),
-    m_code(FreeTrialInfoErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 FreeTrialInfoError::FreeTrialInfoError(JsonView jsonValue)
-  : FreeTrialInfoError()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ FreeTrialInfoError& FreeTrialInfoError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("code"))
   {
     m_code = FreeTrialInfoErrorCodeMapper::GetFreeTrialInfoErrorCodeForName(jsonValue.GetString("code"));
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

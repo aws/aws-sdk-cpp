@@ -18,17 +18,7 @@ namespace AppTest
 namespace Model
 {
 
-TestSuiteLatestVersion::TestSuiteLatestVersion() : 
-    m_version(0),
-    m_versionHasBeenSet(false),
-    m_status(TestSuiteLifecycle::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false)
-{
-}
-
 TestSuiteLatestVersion::TestSuiteLatestVersion(JsonView jsonValue)
-  : TestSuiteLatestVersion()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ TestSuiteLatestVersion& TestSuiteLatestVersion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetInteger("version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = TestSuiteLifecycleMapper::GetTestSuiteLifecycleForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusReason"))
   {
     m_statusReason = jsonValue.GetString("statusReason");
-
     m_statusReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

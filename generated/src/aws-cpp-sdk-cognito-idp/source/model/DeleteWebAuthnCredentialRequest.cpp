@@ -12,12 +12,6 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteWebAuthnCredentialRequest::DeleteWebAuthnCredentialRequest() : 
-    m_accessTokenHasBeenSet(false),
-    m_credentialIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteWebAuthnCredentialRequest::SerializePayload() const
 {
   JsonValue payload;

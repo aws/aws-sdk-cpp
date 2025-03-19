@@ -12,16 +12,6 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListFileCommitHistoryRequest::ListFileCommitHistoryRequest() : 
-    m_repositoryNameHasBeenSet(false),
-    m_commitSpecifierHasBeenSet(false),
-    m_filePathHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListFileCommitHistoryRequest::SerializePayload() const
 {
   JsonValue payload;

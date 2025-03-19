@@ -18,10 +18,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetBlobResult::GetBlobResult()
-{
-}
-
 GetBlobResult::GetBlobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -33,14 +29,15 @@ GetBlobResult& GetBlobResult::operator =(const Aws::AmazonWebServiceResult<JsonV
   if(jsonValue.ValueExists("content"))
   {
     m_content = HashingUtils::Base64Decode(jsonValue.GetString("content"));
+    m_contentHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

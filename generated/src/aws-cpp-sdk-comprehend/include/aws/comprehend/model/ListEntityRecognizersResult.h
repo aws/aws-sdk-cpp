@@ -29,7 +29,7 @@ namespace Model
   class ListEntityRecognizersResult
   {
   public:
-    AWS_COMPREHEND_API ListEntityRecognizersResult();
+    AWS_COMPREHEND_API ListEntityRecognizersResult() = default;
     AWS_COMPREHEND_API ListEntityRecognizersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COMPREHEND_API ListEntityRecognizersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>The list of properties of an entity recognizer.</p>
      */
-    inline const Aws::Vector<EntityRecognizerProperties>& GetEntityRecognizerPropertiesList() const{ return m_entityRecognizerPropertiesList; }
-    inline void SetEntityRecognizerPropertiesList(const Aws::Vector<EntityRecognizerProperties>& value) { m_entityRecognizerPropertiesList = value; }
-    inline void SetEntityRecognizerPropertiesList(Aws::Vector<EntityRecognizerProperties>&& value) { m_entityRecognizerPropertiesList = std::move(value); }
-    inline ListEntityRecognizersResult& WithEntityRecognizerPropertiesList(const Aws::Vector<EntityRecognizerProperties>& value) { SetEntityRecognizerPropertiesList(value); return *this;}
-    inline ListEntityRecognizersResult& WithEntityRecognizerPropertiesList(Aws::Vector<EntityRecognizerProperties>&& value) { SetEntityRecognizerPropertiesList(std::move(value)); return *this;}
-    inline ListEntityRecognizersResult& AddEntityRecognizerPropertiesList(const EntityRecognizerProperties& value) { m_entityRecognizerPropertiesList.push_back(value); return *this; }
-    inline ListEntityRecognizersResult& AddEntityRecognizerPropertiesList(EntityRecognizerProperties&& value) { m_entityRecognizerPropertiesList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<EntityRecognizerProperties>& GetEntityRecognizerPropertiesList() const { return m_entityRecognizerPropertiesList; }
+    template<typename EntityRecognizerPropertiesListT = Aws::Vector<EntityRecognizerProperties>>
+    void SetEntityRecognizerPropertiesList(EntityRecognizerPropertiesListT&& value) { m_entityRecognizerPropertiesListHasBeenSet = true; m_entityRecognizerPropertiesList = std::forward<EntityRecognizerPropertiesListT>(value); }
+    template<typename EntityRecognizerPropertiesListT = Aws::Vector<EntityRecognizerProperties>>
+    ListEntityRecognizersResult& WithEntityRecognizerPropertiesList(EntityRecognizerPropertiesListT&& value) { SetEntityRecognizerPropertiesList(std::forward<EntityRecognizerPropertiesListT>(value)); return *this;}
+    template<typename EntityRecognizerPropertiesListT = EntityRecognizerProperties>
+    ListEntityRecognizersResult& AddEntityRecognizerPropertiesList(EntityRecognizerPropertiesListT&& value) { m_entityRecognizerPropertiesListHasBeenSet = true; m_entityRecognizerPropertiesList.emplace_back(std::forward<EntityRecognizerPropertiesListT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Identifies the next page of results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListEntityRecognizersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListEntityRecognizersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListEntityRecognizersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListEntityRecognizersResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListEntityRecognizersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListEntityRecognizersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListEntityRecognizersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListEntityRecognizersResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<EntityRecognizerProperties> m_entityRecognizerPropertiesList;
+    bool m_entityRecognizerPropertiesListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

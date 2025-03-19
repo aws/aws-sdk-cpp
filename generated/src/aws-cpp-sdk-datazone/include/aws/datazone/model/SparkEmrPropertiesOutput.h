@@ -34,7 +34,7 @@ namespace Model
   class SparkEmrPropertiesOutput
   {
   public:
-    AWS_DATAZONE_API SparkEmrPropertiesOutput();
+    AWS_DATAZONE_API SparkEmrPropertiesOutput() = default;
     AWS_DATAZONE_API SparkEmrPropertiesOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API SparkEmrPropertiesOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,148 +44,130 @@ namespace Model
     /**
      * <p>The compute ARN of the Spark EMR.</p>
      */
-    inline const Aws::String& GetComputeArn() const{ return m_computeArn; }
+    inline const Aws::String& GetComputeArn() const { return m_computeArn; }
     inline bool ComputeArnHasBeenSet() const { return m_computeArnHasBeenSet; }
-    inline void SetComputeArn(const Aws::String& value) { m_computeArnHasBeenSet = true; m_computeArn = value; }
-    inline void SetComputeArn(Aws::String&& value) { m_computeArnHasBeenSet = true; m_computeArn = std::move(value); }
-    inline void SetComputeArn(const char* value) { m_computeArnHasBeenSet = true; m_computeArn.assign(value); }
-    inline SparkEmrPropertiesOutput& WithComputeArn(const Aws::String& value) { SetComputeArn(value); return *this;}
-    inline SparkEmrPropertiesOutput& WithComputeArn(Aws::String&& value) { SetComputeArn(std::move(value)); return *this;}
-    inline SparkEmrPropertiesOutput& WithComputeArn(const char* value) { SetComputeArn(value); return *this;}
+    template<typename ComputeArnT = Aws::String>
+    void SetComputeArn(ComputeArnT&& value) { m_computeArnHasBeenSet = true; m_computeArn = std::forward<ComputeArnT>(value); }
+    template<typename ComputeArnT = Aws::String>
+    SparkEmrPropertiesOutput& WithComputeArn(ComputeArnT&& value) { SetComputeArn(std::forward<ComputeArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The credentials of the Spark EMR.</p>
      */
-    inline const UsernamePassword& GetCredentials() const{ return m_credentials; }
+    inline const UsernamePassword& GetCredentials() const { return m_credentials; }
     inline bool CredentialsHasBeenSet() const { return m_credentialsHasBeenSet; }
-    inline void SetCredentials(const UsernamePassword& value) { m_credentialsHasBeenSet = true; m_credentials = value; }
-    inline void SetCredentials(UsernamePassword&& value) { m_credentialsHasBeenSet = true; m_credentials = std::move(value); }
-    inline SparkEmrPropertiesOutput& WithCredentials(const UsernamePassword& value) { SetCredentials(value); return *this;}
-    inline SparkEmrPropertiesOutput& WithCredentials(UsernamePassword&& value) { SetCredentials(std::move(value)); return *this;}
+    template<typename CredentialsT = UsernamePassword>
+    void SetCredentials(CredentialsT&& value) { m_credentialsHasBeenSet = true; m_credentials = std::forward<CredentialsT>(value); }
+    template<typename CredentialsT = UsernamePassword>
+    SparkEmrPropertiesOutput& WithCredentials(CredentialsT&& value) { SetCredentials(std::forward<CredentialsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The credential expiration of the Spark EMR.</p>
      */
-    inline const Aws::Utils::DateTime& GetCredentialsExpiration() const{ return m_credentialsExpiration; }
+    inline const Aws::Utils::DateTime& GetCredentialsExpiration() const { return m_credentialsExpiration; }
     inline bool CredentialsExpirationHasBeenSet() const { return m_credentialsExpirationHasBeenSet; }
-    inline void SetCredentialsExpiration(const Aws::Utils::DateTime& value) { m_credentialsExpirationHasBeenSet = true; m_credentialsExpiration = value; }
-    inline void SetCredentialsExpiration(Aws::Utils::DateTime&& value) { m_credentialsExpirationHasBeenSet = true; m_credentialsExpiration = std::move(value); }
-    inline SparkEmrPropertiesOutput& WithCredentialsExpiration(const Aws::Utils::DateTime& value) { SetCredentialsExpiration(value); return *this;}
-    inline SparkEmrPropertiesOutput& WithCredentialsExpiration(Aws::Utils::DateTime&& value) { SetCredentialsExpiration(std::move(value)); return *this;}
+    template<typename CredentialsExpirationT = Aws::Utils::DateTime>
+    void SetCredentialsExpiration(CredentialsExpirationT&& value) { m_credentialsExpirationHasBeenSet = true; m_credentialsExpiration = std::forward<CredentialsExpirationT>(value); }
+    template<typename CredentialsExpirationT = Aws::Utils::DateTime>
+    SparkEmrPropertiesOutput& WithCredentialsExpiration(CredentialsExpirationT&& value) { SetCredentialsExpiration(std::forward<CredentialsExpirationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The governance type of the Spark EMR.</p>
      */
-    inline const GovernanceType& GetGovernanceType() const{ return m_governanceType; }
+    inline GovernanceType GetGovernanceType() const { return m_governanceType; }
     inline bool GovernanceTypeHasBeenSet() const { return m_governanceTypeHasBeenSet; }
-    inline void SetGovernanceType(const GovernanceType& value) { m_governanceTypeHasBeenSet = true; m_governanceType = value; }
-    inline void SetGovernanceType(GovernanceType&& value) { m_governanceTypeHasBeenSet = true; m_governanceType = std::move(value); }
-    inline SparkEmrPropertiesOutput& WithGovernanceType(const GovernanceType& value) { SetGovernanceType(value); return *this;}
-    inline SparkEmrPropertiesOutput& WithGovernanceType(GovernanceType&& value) { SetGovernanceType(std::move(value)); return *this;}
+    inline void SetGovernanceType(GovernanceType value) { m_governanceTypeHasBeenSet = true; m_governanceType = value; }
+    inline SparkEmrPropertiesOutput& WithGovernanceType(GovernanceType value) { SetGovernanceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The instance profile ARN of the Spark EMR.</p>
      */
-    inline const Aws::String& GetInstanceProfileArn() const{ return m_instanceProfileArn; }
+    inline const Aws::String& GetInstanceProfileArn() const { return m_instanceProfileArn; }
     inline bool InstanceProfileArnHasBeenSet() const { return m_instanceProfileArnHasBeenSet; }
-    inline void SetInstanceProfileArn(const Aws::String& value) { m_instanceProfileArnHasBeenSet = true; m_instanceProfileArn = value; }
-    inline void SetInstanceProfileArn(Aws::String&& value) { m_instanceProfileArnHasBeenSet = true; m_instanceProfileArn = std::move(value); }
-    inline void SetInstanceProfileArn(const char* value) { m_instanceProfileArnHasBeenSet = true; m_instanceProfileArn.assign(value); }
-    inline SparkEmrPropertiesOutput& WithInstanceProfileArn(const Aws::String& value) { SetInstanceProfileArn(value); return *this;}
-    inline SparkEmrPropertiesOutput& WithInstanceProfileArn(Aws::String&& value) { SetInstanceProfileArn(std::move(value)); return *this;}
-    inline SparkEmrPropertiesOutput& WithInstanceProfileArn(const char* value) { SetInstanceProfileArn(value); return *this;}
+    template<typename InstanceProfileArnT = Aws::String>
+    void SetInstanceProfileArn(InstanceProfileArnT&& value) { m_instanceProfileArnHasBeenSet = true; m_instanceProfileArn = std::forward<InstanceProfileArnT>(value); }
+    template<typename InstanceProfileArnT = Aws::String>
+    SparkEmrPropertiesOutput& WithInstanceProfileArn(InstanceProfileArnT&& value) { SetInstanceProfileArn(std::forward<InstanceProfileArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Java virtual env of the Spark EMR.</p>
      */
-    inline const Aws::String& GetJavaVirtualEnv() const{ return m_javaVirtualEnv; }
+    inline const Aws::String& GetJavaVirtualEnv() const { return m_javaVirtualEnv; }
     inline bool JavaVirtualEnvHasBeenSet() const { return m_javaVirtualEnvHasBeenSet; }
-    inline void SetJavaVirtualEnv(const Aws::String& value) { m_javaVirtualEnvHasBeenSet = true; m_javaVirtualEnv = value; }
-    inline void SetJavaVirtualEnv(Aws::String&& value) { m_javaVirtualEnvHasBeenSet = true; m_javaVirtualEnv = std::move(value); }
-    inline void SetJavaVirtualEnv(const char* value) { m_javaVirtualEnvHasBeenSet = true; m_javaVirtualEnv.assign(value); }
-    inline SparkEmrPropertiesOutput& WithJavaVirtualEnv(const Aws::String& value) { SetJavaVirtualEnv(value); return *this;}
-    inline SparkEmrPropertiesOutput& WithJavaVirtualEnv(Aws::String&& value) { SetJavaVirtualEnv(std::move(value)); return *this;}
-    inline SparkEmrPropertiesOutput& WithJavaVirtualEnv(const char* value) { SetJavaVirtualEnv(value); return *this;}
+    template<typename JavaVirtualEnvT = Aws::String>
+    void SetJavaVirtualEnv(JavaVirtualEnvT&& value) { m_javaVirtualEnvHasBeenSet = true; m_javaVirtualEnv = std::forward<JavaVirtualEnvT>(value); }
+    template<typename JavaVirtualEnvT = Aws::String>
+    SparkEmrPropertiesOutput& WithJavaVirtualEnv(JavaVirtualEnvT&& value) { SetJavaVirtualEnv(std::forward<JavaVirtualEnvT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The livy endpoint of the Spark EMR.</p>
      */
-    inline const Aws::String& GetLivyEndpoint() const{ return m_livyEndpoint; }
+    inline const Aws::String& GetLivyEndpoint() const { return m_livyEndpoint; }
     inline bool LivyEndpointHasBeenSet() const { return m_livyEndpointHasBeenSet; }
-    inline void SetLivyEndpoint(const Aws::String& value) { m_livyEndpointHasBeenSet = true; m_livyEndpoint = value; }
-    inline void SetLivyEndpoint(Aws::String&& value) { m_livyEndpointHasBeenSet = true; m_livyEndpoint = std::move(value); }
-    inline void SetLivyEndpoint(const char* value) { m_livyEndpointHasBeenSet = true; m_livyEndpoint.assign(value); }
-    inline SparkEmrPropertiesOutput& WithLivyEndpoint(const Aws::String& value) { SetLivyEndpoint(value); return *this;}
-    inline SparkEmrPropertiesOutput& WithLivyEndpoint(Aws::String&& value) { SetLivyEndpoint(std::move(value)); return *this;}
-    inline SparkEmrPropertiesOutput& WithLivyEndpoint(const char* value) { SetLivyEndpoint(value); return *this;}
+    template<typename LivyEndpointT = Aws::String>
+    void SetLivyEndpoint(LivyEndpointT&& value) { m_livyEndpointHasBeenSet = true; m_livyEndpoint = std::forward<LivyEndpointT>(value); }
+    template<typename LivyEndpointT = Aws::String>
+    SparkEmrPropertiesOutput& WithLivyEndpoint(LivyEndpointT&& value) { SetLivyEndpoint(std::forward<LivyEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The log URI of the Spark EMR.</p>
      */
-    inline const Aws::String& GetLogUri() const{ return m_logUri; }
+    inline const Aws::String& GetLogUri() const { return m_logUri; }
     inline bool LogUriHasBeenSet() const { return m_logUriHasBeenSet; }
-    inline void SetLogUri(const Aws::String& value) { m_logUriHasBeenSet = true; m_logUri = value; }
-    inline void SetLogUri(Aws::String&& value) { m_logUriHasBeenSet = true; m_logUri = std::move(value); }
-    inline void SetLogUri(const char* value) { m_logUriHasBeenSet = true; m_logUri.assign(value); }
-    inline SparkEmrPropertiesOutput& WithLogUri(const Aws::String& value) { SetLogUri(value); return *this;}
-    inline SparkEmrPropertiesOutput& WithLogUri(Aws::String&& value) { SetLogUri(std::move(value)); return *this;}
-    inline SparkEmrPropertiesOutput& WithLogUri(const char* value) { SetLogUri(value); return *this;}
+    template<typename LogUriT = Aws::String>
+    void SetLogUri(LogUriT&& value) { m_logUriHasBeenSet = true; m_logUri = std::forward<LogUriT>(value); }
+    template<typename LogUriT = Aws::String>
+    SparkEmrPropertiesOutput& WithLogUri(LogUriT&& value) { SetLogUri(std::forward<LogUriT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Python virtual env of the Spark EMR.</p>
      */
-    inline const Aws::String& GetPythonVirtualEnv() const{ return m_pythonVirtualEnv; }
+    inline const Aws::String& GetPythonVirtualEnv() const { return m_pythonVirtualEnv; }
     inline bool PythonVirtualEnvHasBeenSet() const { return m_pythonVirtualEnvHasBeenSet; }
-    inline void SetPythonVirtualEnv(const Aws::String& value) { m_pythonVirtualEnvHasBeenSet = true; m_pythonVirtualEnv = value; }
-    inline void SetPythonVirtualEnv(Aws::String&& value) { m_pythonVirtualEnvHasBeenSet = true; m_pythonVirtualEnv = std::move(value); }
-    inline void SetPythonVirtualEnv(const char* value) { m_pythonVirtualEnvHasBeenSet = true; m_pythonVirtualEnv.assign(value); }
-    inline SparkEmrPropertiesOutput& WithPythonVirtualEnv(const Aws::String& value) { SetPythonVirtualEnv(value); return *this;}
-    inline SparkEmrPropertiesOutput& WithPythonVirtualEnv(Aws::String&& value) { SetPythonVirtualEnv(std::move(value)); return *this;}
-    inline SparkEmrPropertiesOutput& WithPythonVirtualEnv(const char* value) { SetPythonVirtualEnv(value); return *this;}
+    template<typename PythonVirtualEnvT = Aws::String>
+    void SetPythonVirtualEnv(PythonVirtualEnvT&& value) { m_pythonVirtualEnvHasBeenSet = true; m_pythonVirtualEnv = std::forward<PythonVirtualEnvT>(value); }
+    template<typename PythonVirtualEnvT = Aws::String>
+    SparkEmrPropertiesOutput& WithPythonVirtualEnv(PythonVirtualEnvT&& value) { SetPythonVirtualEnv(std::forward<PythonVirtualEnvT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The runtime role of the Spark EMR.</p>
      */
-    inline const Aws::String& GetRuntimeRole() const{ return m_runtimeRole; }
+    inline const Aws::String& GetRuntimeRole() const { return m_runtimeRole; }
     inline bool RuntimeRoleHasBeenSet() const { return m_runtimeRoleHasBeenSet; }
-    inline void SetRuntimeRole(const Aws::String& value) { m_runtimeRoleHasBeenSet = true; m_runtimeRole = value; }
-    inline void SetRuntimeRole(Aws::String&& value) { m_runtimeRoleHasBeenSet = true; m_runtimeRole = std::move(value); }
-    inline void SetRuntimeRole(const char* value) { m_runtimeRoleHasBeenSet = true; m_runtimeRole.assign(value); }
-    inline SparkEmrPropertiesOutput& WithRuntimeRole(const Aws::String& value) { SetRuntimeRole(value); return *this;}
-    inline SparkEmrPropertiesOutput& WithRuntimeRole(Aws::String&& value) { SetRuntimeRole(std::move(value)); return *this;}
-    inline SparkEmrPropertiesOutput& WithRuntimeRole(const char* value) { SetRuntimeRole(value); return *this;}
+    template<typename RuntimeRoleT = Aws::String>
+    void SetRuntimeRole(RuntimeRoleT&& value) { m_runtimeRoleHasBeenSet = true; m_runtimeRole = std::forward<RuntimeRoleT>(value); }
+    template<typename RuntimeRoleT = Aws::String>
+    SparkEmrPropertiesOutput& WithRuntimeRole(RuntimeRoleT&& value) { SetRuntimeRole(std::forward<RuntimeRoleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The trusted certificate S3 URL of the Spark EMR.</p>
      */
-    inline const Aws::String& GetTrustedCertificatesS3Uri() const{ return m_trustedCertificatesS3Uri; }
+    inline const Aws::String& GetTrustedCertificatesS3Uri() const { return m_trustedCertificatesS3Uri; }
     inline bool TrustedCertificatesS3UriHasBeenSet() const { return m_trustedCertificatesS3UriHasBeenSet; }
-    inline void SetTrustedCertificatesS3Uri(const Aws::String& value) { m_trustedCertificatesS3UriHasBeenSet = true; m_trustedCertificatesS3Uri = value; }
-    inline void SetTrustedCertificatesS3Uri(Aws::String&& value) { m_trustedCertificatesS3UriHasBeenSet = true; m_trustedCertificatesS3Uri = std::move(value); }
-    inline void SetTrustedCertificatesS3Uri(const char* value) { m_trustedCertificatesS3UriHasBeenSet = true; m_trustedCertificatesS3Uri.assign(value); }
-    inline SparkEmrPropertiesOutput& WithTrustedCertificatesS3Uri(const Aws::String& value) { SetTrustedCertificatesS3Uri(value); return *this;}
-    inline SparkEmrPropertiesOutput& WithTrustedCertificatesS3Uri(Aws::String&& value) { SetTrustedCertificatesS3Uri(std::move(value)); return *this;}
-    inline SparkEmrPropertiesOutput& WithTrustedCertificatesS3Uri(const char* value) { SetTrustedCertificatesS3Uri(value); return *this;}
+    template<typename TrustedCertificatesS3UriT = Aws::String>
+    void SetTrustedCertificatesS3Uri(TrustedCertificatesS3UriT&& value) { m_trustedCertificatesS3UriHasBeenSet = true; m_trustedCertificatesS3Uri = std::forward<TrustedCertificatesS3UriT>(value); }
+    template<typename TrustedCertificatesS3UriT = Aws::String>
+    SparkEmrPropertiesOutput& WithTrustedCertificatesS3Uri(TrustedCertificatesS3UriT&& value) { SetTrustedCertificatesS3Uri(std::forward<TrustedCertificatesS3UriT>(value)); return *this;}
     ///@}
   private:
 
@@ -195,10 +177,10 @@ namespace Model
     UsernamePassword m_credentials;
     bool m_credentialsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_credentialsExpiration;
+    Aws::Utils::DateTime m_credentialsExpiration{};
     bool m_credentialsExpirationHasBeenSet = false;
 
-    GovernanceType m_governanceType;
+    GovernanceType m_governanceType{GovernanceType::NOT_SET};
     bool m_governanceTypeHasBeenSet = false;
 
     Aws::String m_instanceProfileArn;

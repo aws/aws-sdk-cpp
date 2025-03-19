@@ -21,7 +21,7 @@ namespace Model
   class ResetAuthorizersCacheRequest : public ApiGatewayV2Request
   {
   public:
-    AWS_APIGATEWAYV2_API ResetAuthorizersCacheRequest();
+    AWS_APIGATEWAYV2_API ResetAuthorizersCacheRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The API identifier.</p>
      */
-    inline const Aws::String& GetApiId() const{ return m_apiId; }
+    inline const Aws::String& GetApiId() const { return m_apiId; }
     inline bool ApiIdHasBeenSet() const { return m_apiIdHasBeenSet; }
-    inline void SetApiId(const Aws::String& value) { m_apiIdHasBeenSet = true; m_apiId = value; }
-    inline void SetApiId(Aws::String&& value) { m_apiIdHasBeenSet = true; m_apiId = std::move(value); }
-    inline void SetApiId(const char* value) { m_apiIdHasBeenSet = true; m_apiId.assign(value); }
-    inline ResetAuthorizersCacheRequest& WithApiId(const Aws::String& value) { SetApiId(value); return *this;}
-    inline ResetAuthorizersCacheRequest& WithApiId(Aws::String&& value) { SetApiId(std::move(value)); return *this;}
-    inline ResetAuthorizersCacheRequest& WithApiId(const char* value) { SetApiId(value); return *this;}
+    template<typename ApiIdT = Aws::String>
+    void SetApiId(ApiIdT&& value) { m_apiIdHasBeenSet = true; m_apiId = std::forward<ApiIdT>(value); }
+    template<typename ApiIdT = Aws::String>
+    ResetAuthorizersCacheRequest& WithApiId(ApiIdT&& value) { SetApiId(std::forward<ApiIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,14 +49,12 @@ namespace Model
      * <p>The stage name. Stage names can contain only alphanumeric characters,
      * hyphens, and underscores, or be $default. Maximum length is 128 characters.</p>
      */
-    inline const Aws::String& GetStageName() const{ return m_stageName; }
+    inline const Aws::String& GetStageName() const { return m_stageName; }
     inline bool StageNameHasBeenSet() const { return m_stageNameHasBeenSet; }
-    inline void SetStageName(const Aws::String& value) { m_stageNameHasBeenSet = true; m_stageName = value; }
-    inline void SetStageName(Aws::String&& value) { m_stageNameHasBeenSet = true; m_stageName = std::move(value); }
-    inline void SetStageName(const char* value) { m_stageNameHasBeenSet = true; m_stageName.assign(value); }
-    inline ResetAuthorizersCacheRequest& WithStageName(const Aws::String& value) { SetStageName(value); return *this;}
-    inline ResetAuthorizersCacheRequest& WithStageName(Aws::String&& value) { SetStageName(std::move(value)); return *this;}
-    inline ResetAuthorizersCacheRequest& WithStageName(const char* value) { SetStageName(value); return *this;}
+    template<typename StageNameT = Aws::String>
+    void SetStageName(StageNameT&& value) { m_stageNameHasBeenSet = true; m_stageName = std::forward<StageNameT>(value); }
+    template<typename StageNameT = Aws::String>
+    ResetAuthorizersCacheRequest& WithStageName(StageNameT&& value) { SetStageName(std::forward<StageNameT>(value)); return *this;}
     ///@}
   private:
 

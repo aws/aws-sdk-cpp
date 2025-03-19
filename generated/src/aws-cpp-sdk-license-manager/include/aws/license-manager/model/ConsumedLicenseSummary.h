@@ -31,7 +31,7 @@ namespace Model
   class ConsumedLicenseSummary
   {
   public:
-    AWS_LICENSEMANAGER_API ConsumedLicenseSummary();
+    AWS_LICENSEMANAGER_API ConsumedLicenseSummary() = default;
     AWS_LICENSEMANAGER_API ConsumedLicenseSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_LICENSEMANAGER_API ConsumedLicenseSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,29 +41,27 @@ namespace Model
     /**
      * <p>Resource type of the resource consuming a license.</p>
      */
-    inline const ResourceType& GetResourceType() const{ return m_resourceType; }
+    inline ResourceType GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline ConsumedLicenseSummary& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
-    inline ConsumedLicenseSummary& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    inline void SetResourceType(ResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline ConsumedLicenseSummary& WithResourceType(ResourceType value) { SetResourceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Number of licenses consumed by the resource.</p>
      */
-    inline long long GetConsumedLicenses() const{ return m_consumedLicenses; }
+    inline long long GetConsumedLicenses() const { return m_consumedLicenses; }
     inline bool ConsumedLicensesHasBeenSet() const { return m_consumedLicensesHasBeenSet; }
     inline void SetConsumedLicenses(long long value) { m_consumedLicensesHasBeenSet = true; m_consumedLicenses = value; }
     inline ConsumedLicenseSummary& WithConsumedLicenses(long long value) { SetConsumedLicenses(value); return *this;}
     ///@}
   private:
 
-    ResourceType m_resourceType;
+    ResourceType m_resourceType{ResourceType::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
 
-    long long m_consumedLicenses;
+    long long m_consumedLicenses{0};
     bool m_consumedLicensesHasBeenSet = false;
   };
 

@@ -34,7 +34,7 @@ namespace Model
   class AssetBundleExportJobAnalysisOverrideProperties
   {
   public:
-    AWS_QUICKSIGHT_API AssetBundleExportJobAnalysisOverrideProperties();
+    AWS_QUICKSIGHT_API AssetBundleExportJobAnalysisOverrideProperties() = default;
     AWS_QUICKSIGHT_API AssetBundleExportJobAnalysisOverrideProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API AssetBundleExportJobAnalysisOverrideProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * <p>The ARN of the specific <code>Analysis</code> resource whose override
      * properties are configured in this structure.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline AssetBundleExportJobAnalysisOverrideProperties& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline AssetBundleExportJobAnalysisOverrideProperties& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline AssetBundleExportJobAnalysisOverrideProperties& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    AssetBundleExportJobAnalysisOverrideProperties& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,13 @@ namespace Model
      * <p>A list of <code>Analysis</code> resource properties to generate variables for
      * in the returned CloudFormation template.</p>
      */
-    inline const Aws::Vector<AssetBundleExportJobAnalysisPropertyToOverride>& GetProperties() const{ return m_properties; }
+    inline const Aws::Vector<AssetBundleExportJobAnalysisPropertyToOverride>& GetProperties() const { return m_properties; }
     inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
-    inline void SetProperties(const Aws::Vector<AssetBundleExportJobAnalysisPropertyToOverride>& value) { m_propertiesHasBeenSet = true; m_properties = value; }
-    inline void SetProperties(Aws::Vector<AssetBundleExportJobAnalysisPropertyToOverride>&& value) { m_propertiesHasBeenSet = true; m_properties = std::move(value); }
-    inline AssetBundleExportJobAnalysisOverrideProperties& WithProperties(const Aws::Vector<AssetBundleExportJobAnalysisPropertyToOverride>& value) { SetProperties(value); return *this;}
-    inline AssetBundleExportJobAnalysisOverrideProperties& WithProperties(Aws::Vector<AssetBundleExportJobAnalysisPropertyToOverride>&& value) { SetProperties(std::move(value)); return *this;}
-    inline AssetBundleExportJobAnalysisOverrideProperties& AddProperties(const AssetBundleExportJobAnalysisPropertyToOverride& value) { m_propertiesHasBeenSet = true; m_properties.push_back(value); return *this; }
-    inline AssetBundleExportJobAnalysisOverrideProperties& AddProperties(AssetBundleExportJobAnalysisPropertyToOverride&& value) { m_propertiesHasBeenSet = true; m_properties.push_back(std::move(value)); return *this; }
+    template<typename PropertiesT = Aws::Vector<AssetBundleExportJobAnalysisPropertyToOverride>>
+    void SetProperties(PropertiesT&& value) { m_propertiesHasBeenSet = true; m_properties = std::forward<PropertiesT>(value); }
+    template<typename PropertiesT = Aws::Vector<AssetBundleExportJobAnalysisPropertyToOverride>>
+    AssetBundleExportJobAnalysisOverrideProperties& WithProperties(PropertiesT&& value) { SetProperties(std::forward<PropertiesT>(value)); return *this;}
+    inline AssetBundleExportJobAnalysisOverrideProperties& AddProperties(AssetBundleExportJobAnalysisPropertyToOverride value) { m_propertiesHasBeenSet = true; m_properties.push_back(value); return *this; }
     ///@}
   private:
 

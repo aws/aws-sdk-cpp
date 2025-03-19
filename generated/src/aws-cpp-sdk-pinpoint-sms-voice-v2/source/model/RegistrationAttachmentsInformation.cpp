@@ -18,19 +18,7 @@ namespace PinpointSMSVoiceV2
 namespace Model
 {
 
-RegistrationAttachmentsInformation::RegistrationAttachmentsInformation() : 
-    m_registrationAttachmentArnHasBeenSet(false),
-    m_registrationAttachmentIdHasBeenSet(false),
-    m_attachmentStatus(AttachmentStatus::NOT_SET),
-    m_attachmentStatusHasBeenSet(false),
-    m_attachmentUploadErrorReason(AttachmentUploadErrorReason::NOT_SET),
-    m_attachmentUploadErrorReasonHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false)
-{
-}
-
 RegistrationAttachmentsInformation::RegistrationAttachmentsInformation(JsonView jsonValue)
-  : RegistrationAttachmentsInformation()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ RegistrationAttachmentsInformation& RegistrationAttachmentsInformation::operator
   if(jsonValue.ValueExists("RegistrationAttachmentArn"))
   {
     m_registrationAttachmentArn = jsonValue.GetString("RegistrationAttachmentArn");
-
     m_registrationAttachmentArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegistrationAttachmentId"))
   {
     m_registrationAttachmentId = jsonValue.GetString("RegistrationAttachmentId");
-
     m_registrationAttachmentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttachmentStatus"))
   {
     m_attachmentStatus = AttachmentStatusMapper::GetAttachmentStatusForName(jsonValue.GetString("AttachmentStatus"));
-
     m_attachmentStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttachmentUploadErrorReason"))
   {
     m_attachmentUploadErrorReason = AttachmentUploadErrorReasonMapper::GetAttachmentUploadErrorReasonForName(jsonValue.GetString("AttachmentUploadErrorReason"));
-
     m_attachmentUploadErrorReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

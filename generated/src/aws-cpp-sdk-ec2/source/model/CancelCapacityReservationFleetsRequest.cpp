@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CancelCapacityReservationFleetsRequest::CancelCapacityReservationFleetsRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_capacityReservationFleetIdsHasBeenSet(false)
-{
-}
-
 Aws::String CancelCapacityReservationFleetsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -48,7 +48,7 @@ namespace Model
   class AdditionalDataset
   {
   public:
-    AWS_FORECASTSERVICE_API AdditionalDataset();
+    AWS_FORECASTSERVICE_API AdditionalDataset() = default;
     AWS_FORECASTSERVICE_API AdditionalDataset(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API AdditionalDataset& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -59,14 +59,12 @@ namespace Model
      * <p>The name of the additional dataset. Valid names: <code>"holiday"</code> and
      * <code>"weather"</code>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AdditionalDataset& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AdditionalDataset& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AdditionalDataset& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    AdditionalDataset& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,18 +103,16 @@ namespace Model
      * </li> <li> <p>"US" - UNITED STATES</p> </li> <li> <p>"UK" - UNITED KINGDOM</p>
      * </li> <li> <p>"UY" - URUGUAY</p> </li> <li> <p>"VE" - VENEZUELA</p> </li> </ul>
      */
-    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetConfiguration() const{ return m_configuration; }
+    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline AdditionalDataset& WithConfiguration(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetConfiguration(value); return *this;}
-    inline AdditionalDataset& WithConfiguration(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetConfiguration(std::move(value)); return *this;}
-    inline AdditionalDataset& AddConfiguration(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_configurationHasBeenSet = true; m_configuration.emplace(key, value); return *this; }
-    inline AdditionalDataset& AddConfiguration(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_configurationHasBeenSet = true; m_configuration.emplace(std::move(key), value); return *this; }
-    inline AdditionalDataset& AddConfiguration(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_configurationHasBeenSet = true; m_configuration.emplace(key, std::move(value)); return *this; }
-    inline AdditionalDataset& AddConfiguration(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_configurationHasBeenSet = true; m_configuration.emplace(std::move(key), std::move(value)); return *this; }
-    inline AdditionalDataset& AddConfiguration(const char* key, Aws::Vector<Aws::String>&& value) { m_configurationHasBeenSet = true; m_configuration.emplace(key, std::move(value)); return *this; }
-    inline AdditionalDataset& AddConfiguration(const char* key, const Aws::Vector<Aws::String>& value) { m_configurationHasBeenSet = true; m_configuration.emplace(key, value); return *this; }
+    template<typename ConfigurationT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    AdditionalDataset& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
+    template<typename ConfigurationKeyT = Aws::String, typename ConfigurationValueT = Aws::Vector<Aws::String>>
+    AdditionalDataset& AddConfiguration(ConfigurationKeyT&& key, ConfigurationValueT&& value) {
+      m_configurationHasBeenSet = true; m_configuration.emplace(std::forward<ConfigurationKeyT>(key), std::forward<ConfigurationValueT>(value)); return *this;
+    }
     ///@}
   private:
 

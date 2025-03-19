@@ -18,13 +18,7 @@ namespace SSM
 namespace Model
 {
 
-AttachmentInformation::AttachmentInformation() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 AttachmentInformation::AttachmentInformation(JsonView jsonValue)
-  : AttachmentInformation()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AttachmentInformation& AttachmentInformation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

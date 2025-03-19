@@ -31,7 +31,7 @@ namespace Model
   class Overrides
   {
   public:
-    AWS_MEDICALIMAGING_API Overrides();
+    AWS_MEDICALIMAGING_API Overrides() = default;
     AWS_MEDICALIMAGING_API Overrides(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDICALIMAGING_API Overrides& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDICALIMAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
      * <code>UpdateImageSetMetadata</code> operations, even if Patient, Study, or
      * Series level metadata are mismatched.</p>
      */
-    inline bool GetForced() const{ return m_forced; }
+    inline bool GetForced() const { return m_forced; }
     inline bool ForcedHasBeenSet() const { return m_forcedHasBeenSet; }
     inline void SetForced(bool value) { m_forcedHasBeenSet = true; m_forced = value; }
     inline Overrides& WithForced(bool value) { SetForced(value); return *this;}
     ///@}
   private:
 
-    bool m_forced;
+    bool m_forced{false};
     bool m_forcedHasBeenSet = false;
   };
 

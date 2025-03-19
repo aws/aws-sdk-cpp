@@ -18,16 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-FreeTrialFeatureConfigurationResult::FreeTrialFeatureConfigurationResult() : 
-    m_name(FreeTrialFeatureResult::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_freeTrialDaysRemaining(0),
-    m_freeTrialDaysRemainingHasBeenSet(false)
-{
-}
-
 FreeTrialFeatureConfigurationResult::FreeTrialFeatureConfigurationResult(JsonView jsonValue)
-  : FreeTrialFeatureConfigurationResult()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ FreeTrialFeatureConfigurationResult& FreeTrialFeatureConfigurationResult::operat
   if(jsonValue.ValueExists("name"))
   {
     m_name = FreeTrialFeatureResultMapper::GetFreeTrialFeatureResultForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("freeTrialDaysRemaining"))
   {
     m_freeTrialDaysRemaining = jsonValue.GetInteger("freeTrialDaysRemaining");
-
     m_freeTrialDaysRemainingHasBeenSet = true;
   }
-
   return *this;
 }
 

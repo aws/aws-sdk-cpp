@@ -18,14 +18,7 @@ namespace AppIntegrationsService
 namespace Model
 {
 
-Subscription::Subscription() : 
-    m_eventHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 Subscription::Subscription(JsonView jsonValue)
-  : Subscription()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Subscription& Subscription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Event"))
   {
     m_event = jsonValue.GetString("Event");
-
     m_eventHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

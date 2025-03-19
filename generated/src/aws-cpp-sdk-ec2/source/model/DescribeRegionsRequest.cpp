@@ -10,16 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribeRegionsRequest::DescribeRegionsRequest() : 
-    m_regionNamesHasBeenSet(false),
-    m_allRegions(false),
-    m_allRegionsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_filtersHasBeenSet(false)
-{
-}
-
 Aws::String DescribeRegionsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

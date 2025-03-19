@@ -12,11 +12,6 @@ using namespace Aws::PinpointEmail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteEmailIdentityRequest::DeleteEmailIdentityRequest() : 
-    m_emailIdentityHasBeenSet(false)
-{
-}
-
 Aws::String DeleteEmailIdentityRequest::SerializePayload() const
 {
   return {};

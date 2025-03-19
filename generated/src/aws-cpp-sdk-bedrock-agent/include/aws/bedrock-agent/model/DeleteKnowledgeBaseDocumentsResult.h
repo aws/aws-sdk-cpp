@@ -29,7 +29,7 @@ namespace Model
   class DeleteKnowledgeBaseDocumentsResult
   {
   public:
-    AWS_BEDROCKAGENT_API DeleteKnowledgeBaseDocumentsResult();
+    AWS_BEDROCKAGENT_API DeleteKnowledgeBaseDocumentsResult() = default;
     AWS_BEDROCKAGENT_API DeleteKnowledgeBaseDocumentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BEDROCKAGENT_API DeleteKnowledgeBaseDocumentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,30 +39,30 @@ namespace Model
      * <p>A list of objects, each of which contains information about the documents
      * that were deleted.</p>
      */
-    inline const Aws::Vector<KnowledgeBaseDocumentDetail>& GetDocumentDetails() const{ return m_documentDetails; }
-    inline void SetDocumentDetails(const Aws::Vector<KnowledgeBaseDocumentDetail>& value) { m_documentDetails = value; }
-    inline void SetDocumentDetails(Aws::Vector<KnowledgeBaseDocumentDetail>&& value) { m_documentDetails = std::move(value); }
-    inline DeleteKnowledgeBaseDocumentsResult& WithDocumentDetails(const Aws::Vector<KnowledgeBaseDocumentDetail>& value) { SetDocumentDetails(value); return *this;}
-    inline DeleteKnowledgeBaseDocumentsResult& WithDocumentDetails(Aws::Vector<KnowledgeBaseDocumentDetail>&& value) { SetDocumentDetails(std::move(value)); return *this;}
-    inline DeleteKnowledgeBaseDocumentsResult& AddDocumentDetails(const KnowledgeBaseDocumentDetail& value) { m_documentDetails.push_back(value); return *this; }
-    inline DeleteKnowledgeBaseDocumentsResult& AddDocumentDetails(KnowledgeBaseDocumentDetail&& value) { m_documentDetails.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<KnowledgeBaseDocumentDetail>& GetDocumentDetails() const { return m_documentDetails; }
+    template<typename DocumentDetailsT = Aws::Vector<KnowledgeBaseDocumentDetail>>
+    void SetDocumentDetails(DocumentDetailsT&& value) { m_documentDetailsHasBeenSet = true; m_documentDetails = std::forward<DocumentDetailsT>(value); }
+    template<typename DocumentDetailsT = Aws::Vector<KnowledgeBaseDocumentDetail>>
+    DeleteKnowledgeBaseDocumentsResult& WithDocumentDetails(DocumentDetailsT&& value) { SetDocumentDetails(std::forward<DocumentDetailsT>(value)); return *this;}
+    template<typename DocumentDetailsT = KnowledgeBaseDocumentDetail>
+    DeleteKnowledgeBaseDocumentsResult& AddDocumentDetails(DocumentDetailsT&& value) { m_documentDetailsHasBeenSet = true; m_documentDetails.emplace_back(std::forward<DocumentDetailsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteKnowledgeBaseDocumentsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteKnowledgeBaseDocumentsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteKnowledgeBaseDocumentsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteKnowledgeBaseDocumentsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<KnowledgeBaseDocumentDetail> m_documentDetails;
+    bool m_documentDetailsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

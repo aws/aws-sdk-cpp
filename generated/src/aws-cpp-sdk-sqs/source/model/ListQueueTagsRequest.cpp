@@ -12,11 +12,6 @@ using namespace Aws::SQS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListQueueTagsRequest::ListQueueTagsRequest() : 
-    m_queueUrlHasBeenSet(false)
-{
-}
-
 Aws::String ListQueueTagsRequest::SerializePayload() const
 {
   JsonValue payload;

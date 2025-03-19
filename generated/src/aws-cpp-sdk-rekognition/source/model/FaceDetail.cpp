@@ -18,30 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-FaceDetail::FaceDetail() : 
-    m_boundingBoxHasBeenSet(false),
-    m_ageRangeHasBeenSet(false),
-    m_smileHasBeenSet(false),
-    m_eyeglassesHasBeenSet(false),
-    m_sunglassesHasBeenSet(false),
-    m_genderHasBeenSet(false),
-    m_beardHasBeenSet(false),
-    m_mustacheHasBeenSet(false),
-    m_eyesOpenHasBeenSet(false),
-    m_mouthOpenHasBeenSet(false),
-    m_emotionsHasBeenSet(false),
-    m_landmarksHasBeenSet(false),
-    m_poseHasBeenSet(false),
-    m_qualityHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false),
-    m_faceOccludedHasBeenSet(false),
-    m_eyeDirectionHasBeenSet(false)
-{
-}
-
 FaceDetail::FaceDetail(JsonView jsonValue)
-  : FaceDetail()
 {
   *this = jsonValue;
 }
@@ -51,73 +28,53 @@ FaceDetail& FaceDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BoundingBox"))
   {
     m_boundingBox = jsonValue.GetObject("BoundingBox");
-
     m_boundingBoxHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AgeRange"))
   {
     m_ageRange = jsonValue.GetObject("AgeRange");
-
     m_ageRangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Smile"))
   {
     m_smile = jsonValue.GetObject("Smile");
-
     m_smileHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Eyeglasses"))
   {
     m_eyeglasses = jsonValue.GetObject("Eyeglasses");
-
     m_eyeglassesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Sunglasses"))
   {
     m_sunglasses = jsonValue.GetObject("Sunglasses");
-
     m_sunglassesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Gender"))
   {
     m_gender = jsonValue.GetObject("Gender");
-
     m_genderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Beard"))
   {
     m_beard = jsonValue.GetObject("Beard");
-
     m_beardHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Mustache"))
   {
     m_mustache = jsonValue.GetObject("Mustache");
-
     m_mustacheHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EyesOpen"))
   {
     m_eyesOpen = jsonValue.GetObject("EyesOpen");
-
     m_eyesOpenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MouthOpen"))
   {
     m_mouthOpen = jsonValue.GetObject("MouthOpen");
-
     m_mouthOpenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Emotions"))
   {
     Aws::Utils::Array<JsonView> emotionsJsonList = jsonValue.GetArray("Emotions");
@@ -127,7 +84,6 @@ FaceDetail& FaceDetail::operator =(JsonView jsonValue)
     }
     m_emotionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Landmarks"))
   {
     Aws::Utils::Array<JsonView> landmarksJsonList = jsonValue.GetArray("Landmarks");
@@ -137,42 +93,31 @@ FaceDetail& FaceDetail::operator =(JsonView jsonValue)
     }
     m_landmarksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Pose"))
   {
     m_pose = jsonValue.GetObject("Pose");
-
     m_poseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Quality"))
   {
     m_quality = jsonValue.GetObject("Quality");
-
     m_qualityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Confidence"))
   {
     m_confidence = jsonValue.GetDouble("Confidence");
-
     m_confidenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FaceOccluded"))
   {
     m_faceOccluded = jsonValue.GetObject("FaceOccluded");
-
     m_faceOccludedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EyeDirection"))
   {
     m_eyeDirection = jsonValue.GetObject("EyeDirection");
-
     m_eyeDirectionHasBeenSet = true;
   }
-
   return *this;
 }
 

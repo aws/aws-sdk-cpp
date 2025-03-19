@@ -18,15 +18,7 @@ namespace EMR
 namespace Model
 {
 
-FailureDetails::FailureDetails() : 
-    m_reasonHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_logFileHasBeenSet(false)
-{
-}
-
 FailureDetails::FailureDetails(JsonView jsonValue)
-  : FailureDetails()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ FailureDetails& FailureDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Reason"))
   {
     m_reason = jsonValue.GetString("Reason");
-
     m_reasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogFile"))
   {
     m_logFile = jsonValue.GetString("LogFile");
-
     m_logFileHasBeenSet = true;
   }
-
   return *this;
 }
 

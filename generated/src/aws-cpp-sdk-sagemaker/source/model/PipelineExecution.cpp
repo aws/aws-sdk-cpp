@@ -18,27 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-PipelineExecution::PipelineExecution() : 
-    m_pipelineArnHasBeenSet(false),
-    m_pipelineExecutionArnHasBeenSet(false),
-    m_pipelineExecutionDisplayNameHasBeenSet(false),
-    m_pipelineExecutionStatus(PipelineExecutionStatus::NOT_SET),
-    m_pipelineExecutionStatusHasBeenSet(false),
-    m_pipelineExecutionDescriptionHasBeenSet(false),
-    m_pipelineExperimentConfigHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_lastModifiedByHasBeenSet(false),
-    m_parallelismConfigurationHasBeenSet(false),
-    m_selectiveExecutionConfigHasBeenSet(false),
-    m_pipelineParametersHasBeenSet(false)
-{
-}
-
 PipelineExecution::PipelineExecution(JsonView jsonValue)
-  : PipelineExecution()
 {
   *this = jsonValue;
 }
@@ -48,94 +28,68 @@ PipelineExecution& PipelineExecution::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PipelineArn"))
   {
     m_pipelineArn = jsonValue.GetString("PipelineArn");
-
     m_pipelineArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PipelineExecutionArn"))
   {
     m_pipelineExecutionArn = jsonValue.GetString("PipelineExecutionArn");
-
     m_pipelineExecutionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PipelineExecutionDisplayName"))
   {
     m_pipelineExecutionDisplayName = jsonValue.GetString("PipelineExecutionDisplayName");
-
     m_pipelineExecutionDisplayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PipelineExecutionStatus"))
   {
     m_pipelineExecutionStatus = PipelineExecutionStatusMapper::GetPipelineExecutionStatusForName(jsonValue.GetString("PipelineExecutionStatus"));
-
     m_pipelineExecutionStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PipelineExecutionDescription"))
   {
     m_pipelineExecutionDescription = jsonValue.GetString("PipelineExecutionDescription");
-
     m_pipelineExecutionDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PipelineExperimentConfig"))
   {
     m_pipelineExperimentConfig = jsonValue.GetObject("PipelineExperimentConfig");
-
     m_pipelineExperimentConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = jsonValue.GetString("FailureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedBy"))
   {
     m_createdBy = jsonValue.GetObject("CreatedBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedBy"))
   {
     m_lastModifiedBy = jsonValue.GetObject("LastModifiedBy");
-
     m_lastModifiedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParallelismConfiguration"))
   {
     m_parallelismConfiguration = jsonValue.GetObject("ParallelismConfiguration");
-
     m_parallelismConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SelectiveExecutionConfig"))
   {
     m_selectiveExecutionConfig = jsonValue.GetObject("SelectiveExecutionConfig");
-
     m_selectiveExecutionConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PipelineParameters"))
   {
     Aws::Utils::Array<JsonView> pipelineParametersJsonList = jsonValue.GetArray("PipelineParameters");
@@ -145,7 +99,6 @@ PipelineExecution& PipelineExecution::operator =(JsonView jsonValue)
     }
     m_pipelineParametersHasBeenSet = true;
   }
-
   return *this;
 }
 

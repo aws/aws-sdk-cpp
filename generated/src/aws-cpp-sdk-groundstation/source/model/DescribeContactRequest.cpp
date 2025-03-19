@@ -12,11 +12,6 @@ using namespace Aws::GroundStation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeContactRequest::DescribeContactRequest() : 
-    m_contactIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeContactRequest::SerializePayload() const
 {
   return {};

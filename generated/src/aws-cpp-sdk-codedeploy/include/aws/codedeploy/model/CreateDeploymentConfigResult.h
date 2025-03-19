@@ -33,7 +33,7 @@ namespace Model
   class CreateDeploymentConfigResult
   {
   public:
-    AWS_CODEDEPLOY_API CreateDeploymentConfigResult();
+    AWS_CODEDEPLOY_API CreateDeploymentConfigResult() = default;
     AWS_CODEDEPLOY_API CreateDeploymentConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODEDEPLOY_API CreateDeploymentConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,30 +42,28 @@ namespace Model
     /**
      * <p>A unique deployment configuration ID.</p>
      */
-    inline const Aws::String& GetDeploymentConfigId() const{ return m_deploymentConfigId; }
-    inline void SetDeploymentConfigId(const Aws::String& value) { m_deploymentConfigId = value; }
-    inline void SetDeploymentConfigId(Aws::String&& value) { m_deploymentConfigId = std::move(value); }
-    inline void SetDeploymentConfigId(const char* value) { m_deploymentConfigId.assign(value); }
-    inline CreateDeploymentConfigResult& WithDeploymentConfigId(const Aws::String& value) { SetDeploymentConfigId(value); return *this;}
-    inline CreateDeploymentConfigResult& WithDeploymentConfigId(Aws::String&& value) { SetDeploymentConfigId(std::move(value)); return *this;}
-    inline CreateDeploymentConfigResult& WithDeploymentConfigId(const char* value) { SetDeploymentConfigId(value); return *this;}
+    inline const Aws::String& GetDeploymentConfigId() const { return m_deploymentConfigId; }
+    template<typename DeploymentConfigIdT = Aws::String>
+    void SetDeploymentConfigId(DeploymentConfigIdT&& value) { m_deploymentConfigIdHasBeenSet = true; m_deploymentConfigId = std::forward<DeploymentConfigIdT>(value); }
+    template<typename DeploymentConfigIdT = Aws::String>
+    CreateDeploymentConfigResult& WithDeploymentConfigId(DeploymentConfigIdT&& value) { SetDeploymentConfigId(std::forward<DeploymentConfigIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateDeploymentConfigResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateDeploymentConfigResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateDeploymentConfigResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateDeploymentConfigResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_deploymentConfigId;
+    bool m_deploymentConfigIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

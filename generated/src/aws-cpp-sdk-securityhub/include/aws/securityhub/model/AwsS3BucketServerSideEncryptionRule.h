@@ -31,7 +31,7 @@ namespace Model
   class AwsS3BucketServerSideEncryptionRule
   {
   public:
-    AWS_SECURITYHUB_API AwsS3BucketServerSideEncryptionRule();
+    AWS_SECURITYHUB_API AwsS3BucketServerSideEncryptionRule() = default;
     AWS_SECURITYHUB_API AwsS3BucketServerSideEncryptionRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsS3BucketServerSideEncryptionRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * bucket. If a <code>PUT</code> object request doesn't specify any server-side
      * encryption, this default encryption is applied.</p>
      */
-    inline const AwsS3BucketServerSideEncryptionByDefault& GetApplyServerSideEncryptionByDefault() const{ return m_applyServerSideEncryptionByDefault; }
+    inline const AwsS3BucketServerSideEncryptionByDefault& GetApplyServerSideEncryptionByDefault() const { return m_applyServerSideEncryptionByDefault; }
     inline bool ApplyServerSideEncryptionByDefaultHasBeenSet() const { return m_applyServerSideEncryptionByDefaultHasBeenSet; }
-    inline void SetApplyServerSideEncryptionByDefault(const AwsS3BucketServerSideEncryptionByDefault& value) { m_applyServerSideEncryptionByDefaultHasBeenSet = true; m_applyServerSideEncryptionByDefault = value; }
-    inline void SetApplyServerSideEncryptionByDefault(AwsS3BucketServerSideEncryptionByDefault&& value) { m_applyServerSideEncryptionByDefaultHasBeenSet = true; m_applyServerSideEncryptionByDefault = std::move(value); }
-    inline AwsS3BucketServerSideEncryptionRule& WithApplyServerSideEncryptionByDefault(const AwsS3BucketServerSideEncryptionByDefault& value) { SetApplyServerSideEncryptionByDefault(value); return *this;}
-    inline AwsS3BucketServerSideEncryptionRule& WithApplyServerSideEncryptionByDefault(AwsS3BucketServerSideEncryptionByDefault&& value) { SetApplyServerSideEncryptionByDefault(std::move(value)); return *this;}
+    template<typename ApplyServerSideEncryptionByDefaultT = AwsS3BucketServerSideEncryptionByDefault>
+    void SetApplyServerSideEncryptionByDefault(ApplyServerSideEncryptionByDefaultT&& value) { m_applyServerSideEncryptionByDefaultHasBeenSet = true; m_applyServerSideEncryptionByDefault = std::forward<ApplyServerSideEncryptionByDefaultT>(value); }
+    template<typename ApplyServerSideEncryptionByDefaultT = AwsS3BucketServerSideEncryptionByDefault>
+    AwsS3BucketServerSideEncryptionRule& WithApplyServerSideEncryptionByDefault(ApplyServerSideEncryptionByDefaultT&& value) { SetApplyServerSideEncryptionByDefault(std::forward<ApplyServerSideEncryptionByDefaultT>(value)); return *this;}
     ///@}
   private:
 

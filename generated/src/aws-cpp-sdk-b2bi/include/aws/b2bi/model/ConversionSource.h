@@ -33,7 +33,7 @@ namespace Model
   class ConversionSource
   {
   public:
-    AWS_B2BI_API ConversionSource();
+    AWS_B2BI_API ConversionSource() = default;
     AWS_B2BI_API ConversionSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_B2BI_API ConversionSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_B2BI_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,26 @@ namespace Model
     /**
      * <p>The format for the input file: either JSON or XML.</p>
      */
-    inline const ConversionSourceFormat& GetFileFormat() const{ return m_fileFormat; }
+    inline ConversionSourceFormat GetFileFormat() const { return m_fileFormat; }
     inline bool FileFormatHasBeenSet() const { return m_fileFormatHasBeenSet; }
-    inline void SetFileFormat(const ConversionSourceFormat& value) { m_fileFormatHasBeenSet = true; m_fileFormat = value; }
-    inline void SetFileFormat(ConversionSourceFormat&& value) { m_fileFormatHasBeenSet = true; m_fileFormat = std::move(value); }
-    inline ConversionSource& WithFileFormat(const ConversionSourceFormat& value) { SetFileFormat(value); return *this;}
-    inline ConversionSource& WithFileFormat(ConversionSourceFormat&& value) { SetFileFormat(std::move(value)); return *this;}
+    inline void SetFileFormat(ConversionSourceFormat value) { m_fileFormatHasBeenSet = true; m_fileFormat = value; }
+    inline ConversionSource& WithFileFormat(ConversionSourceFormat value) { SetFileFormat(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>File to be converted</p>
      */
-    inline const InputFileSource& GetInputFile() const{ return m_inputFile; }
+    inline const InputFileSource& GetInputFile() const { return m_inputFile; }
     inline bool InputFileHasBeenSet() const { return m_inputFileHasBeenSet; }
-    inline void SetInputFile(const InputFileSource& value) { m_inputFileHasBeenSet = true; m_inputFile = value; }
-    inline void SetInputFile(InputFileSource&& value) { m_inputFileHasBeenSet = true; m_inputFile = std::move(value); }
-    inline ConversionSource& WithInputFile(const InputFileSource& value) { SetInputFile(value); return *this;}
-    inline ConversionSource& WithInputFile(InputFileSource&& value) { SetInputFile(std::move(value)); return *this;}
+    template<typename InputFileT = InputFileSource>
+    void SetInputFile(InputFileT&& value) { m_inputFileHasBeenSet = true; m_inputFile = std::forward<InputFileT>(value); }
+    template<typename InputFileT = InputFileSource>
+    ConversionSource& WithInputFile(InputFileT&& value) { SetInputFile(std::forward<InputFileT>(value)); return *this;}
     ///@}
   private:
 
-    ConversionSourceFormat m_fileFormat;
+    ConversionSourceFormat m_fileFormat{ConversionSourceFormat::NOT_SET};
     bool m_fileFormatHasBeenSet = false;
 
     InputFileSource m_inputFile;

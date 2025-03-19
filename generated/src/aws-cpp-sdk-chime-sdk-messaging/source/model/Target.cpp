@@ -18,13 +18,7 @@ namespace ChimeSDKMessaging
 namespace Model
 {
 
-Target::Target() : 
-    m_memberArnHasBeenSet(false)
-{
-}
-
 Target::Target(JsonView jsonValue)
-  : Target()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Target& Target::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MemberArn"))
   {
     m_memberArn = jsonValue.GetString("MemberArn");
-
     m_memberArnHasBeenSet = true;
   }
-
   return *this;
 }
 

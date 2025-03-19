@@ -18,13 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-ContentRetrievalRule::ContentRetrievalRule() : 
-    m_eligibleDataSourcesHasBeenSet(false)
-{
-}
-
 ContentRetrievalRule::ContentRetrievalRule(JsonView jsonValue)
-  : ContentRetrievalRule()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ContentRetrievalRule& ContentRetrievalRule::operator =(JsonView jsonValue)
     }
     m_eligibleDataSourcesHasBeenSet = true;
   }
-
   return *this;
 }
 

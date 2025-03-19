@@ -18,20 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-SchemaStatusDetail::SchemaStatusDetail() : 
-    m_status(SchemaStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_reasonsHasBeenSet(false),
-    m_analysisRuleType(AnalysisRuleType::NOT_SET),
-    m_analysisRuleTypeHasBeenSet(false),
-    m_configurationsHasBeenSet(false),
-    m_analysisType(AnalysisType::NOT_SET),
-    m_analysisTypeHasBeenSet(false)
-{
-}
-
 SchemaStatusDetail::SchemaStatusDetail(JsonView jsonValue)
-  : SchemaStatusDetail()
 {
   *this = jsonValue;
 }
@@ -41,10 +28,8 @@ SchemaStatusDetail& SchemaStatusDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("status"))
   {
     m_status = SchemaStatusMapper::GetSchemaStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reasons"))
   {
     Aws::Utils::Array<JsonView> reasonsJsonList = jsonValue.GetArray("reasons");
@@ -54,14 +39,11 @@ SchemaStatusDetail& SchemaStatusDetail::operator =(JsonView jsonValue)
     }
     m_reasonsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("analysisRuleType"))
   {
     m_analysisRuleType = AnalysisRuleTypeMapper::GetAnalysisRuleTypeForName(jsonValue.GetString("analysisRuleType"));
-
     m_analysisRuleTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configurations"))
   {
     Aws::Utils::Array<JsonView> configurationsJsonList = jsonValue.GetArray("configurations");
@@ -71,14 +53,11 @@ SchemaStatusDetail& SchemaStatusDetail::operator =(JsonView jsonValue)
     }
     m_configurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("analysisType"))
   {
     m_analysisType = AnalysisTypeMapper::GetAnalysisTypeForName(jsonValue.GetString("analysisType"));
-
     m_analysisTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

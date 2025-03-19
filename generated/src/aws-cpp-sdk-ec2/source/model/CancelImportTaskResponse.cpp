@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CancelImportTaskResponse::CancelImportTaskResponse()
-{
-}
-
 CancelImportTaskResponse::CancelImportTaskResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,16 +38,19 @@ CancelImportTaskResponse& CancelImportTaskResponse::operator =(const Aws::Amazon
     if(!importTaskIdNode.IsNull())
     {
       m_importTaskId = Aws::Utils::Xml::DecodeEscapedXmlText(importTaskIdNode.GetText());
+      m_importTaskIdHasBeenSet = true;
     }
     XmlNode previousStateNode = resultNode.FirstChild("previousState");
     if(!previousStateNode.IsNull())
     {
       m_previousState = Aws::Utils::Xml::DecodeEscapedXmlText(previousStateNode.GetText());
+      m_previousStateHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
       m_state = Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText());
+      m_stateHasBeenSet = true;
     }
   }
 
@@ -60,6 +59,7 @@ CancelImportTaskResponse& CancelImportTaskResponse::operator =(const Aws::Amazon
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::CancelImportTaskResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

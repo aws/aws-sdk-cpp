@@ -18,18 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-Limitation::Limitation() : 
-    m_databaseIdHasBeenSet(false),
-    m_engineNameHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_impactHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 Limitation::Limitation(JsonView jsonValue)
-  : Limitation()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ Limitation& Limitation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DatabaseId"))
   {
     m_databaseId = jsonValue.GetString("DatabaseId");
-
     m_databaseIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EngineName"))
   {
     m_engineName = jsonValue.GetString("EngineName");
-
     m_engineNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Impact"))
   {
     m_impact = jsonValue.GetString("Impact");
-
     m_impactHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

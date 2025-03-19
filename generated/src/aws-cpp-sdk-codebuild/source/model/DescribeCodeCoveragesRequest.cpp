@@ -12,22 +12,6 @@ using namespace Aws::CodeBuild::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeCodeCoveragesRequest::DescribeCodeCoveragesRequest() : 
-    m_reportArnHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_sortOrder(SortOrderType::NOT_SET),
-    m_sortOrderHasBeenSet(false),
-    m_sortBy(ReportCodeCoverageSortByType::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_minLineCoveragePercentage(0.0),
-    m_minLineCoveragePercentageHasBeenSet(false),
-    m_maxLineCoveragePercentage(0.0),
-    m_maxLineCoveragePercentageHasBeenSet(false)
-{
-}
-
 Aws::String DescribeCodeCoveragesRequest::SerializePayload() const
 {
   JsonValue payload;

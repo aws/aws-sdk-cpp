@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TableInlineVisualization::TableInlineVisualization() : 
-    m_dataBarsHasBeenSet(false)
-{
-}
-
 TableInlineVisualization::TableInlineVisualization(JsonView jsonValue)
-  : TableInlineVisualization()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TableInlineVisualization& TableInlineVisualization::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("DataBars"))
   {
     m_dataBars = jsonValue.GetObject("DataBars");
-
     m_dataBarsHasBeenSet = true;
   }
-
   return *this;
 }
 

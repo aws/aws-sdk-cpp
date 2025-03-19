@@ -12,10 +12,6 @@ using namespace Aws::IoTTwinMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetPricingPlanRequest::GetPricingPlanRequest()
-{
-}
-
 Aws::String GetPricingPlanRequest::SerializePayload() const
 {
   return {};

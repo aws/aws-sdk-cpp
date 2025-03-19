@@ -12,11 +12,6 @@ using namespace Aws::ivsrealtime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopCompositionRequest::StopCompositionRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String StopCompositionRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -32,7 +32,7 @@ namespace Model
   class GetObjectAttributesParts
   {
   public:
-    AWS_S3CRT_API GetObjectAttributesParts();
+    AWS_S3CRT_API GetObjectAttributesParts() = default;
     AWS_S3CRT_API GetObjectAttributesParts(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CRT_API GetObjectAttributesParts& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p>The total number of parts.</p>
      */
-    inline int GetTotalPartsCount() const{ return m_totalPartsCount; }
+    inline int GetTotalPartsCount() const { return m_totalPartsCount; }
     inline bool TotalPartsCountHasBeenSet() const { return m_totalPartsCountHasBeenSet; }
     inline void SetTotalPartsCount(int value) { m_totalPartsCountHasBeenSet = true; m_totalPartsCount = value; }
     inline GetObjectAttributesParts& WithTotalPartsCount(int value) { SetTotalPartsCount(value); return *this;}
@@ -53,7 +53,7 @@ namespace Model
     /**
      * <p>The marker for the current part.</p>
      */
-    inline int GetPartNumberMarker() const{ return m_partNumberMarker; }
+    inline int GetPartNumberMarker() const { return m_partNumberMarker; }
     inline bool PartNumberMarkerHasBeenSet() const { return m_partNumberMarkerHasBeenSet; }
     inline void SetPartNumberMarker(int value) { m_partNumberMarkerHasBeenSet = true; m_partNumberMarker = value; }
     inline GetObjectAttributesParts& WithPartNumberMarker(int value) { SetPartNumberMarker(value); return *this;}
@@ -65,7 +65,7 @@ namespace Model
      * as well as the value to use for the <code>PartNumberMarker</code> request
      * parameter in a subsequent request.</p>
      */
-    inline int GetNextPartNumberMarker() const{ return m_nextPartNumberMarker; }
+    inline int GetNextPartNumberMarker() const { return m_nextPartNumberMarker; }
     inline bool NextPartNumberMarkerHasBeenSet() const { return m_nextPartNumberMarkerHasBeenSet; }
     inline void SetNextPartNumberMarker(int value) { m_nextPartNumberMarkerHasBeenSet = true; m_nextPartNumberMarker = value; }
     inline GetObjectAttributesParts& WithNextPartNumberMarker(int value) { SetNextPartNumberMarker(value); return *this;}
@@ -75,7 +75,7 @@ namespace Model
     /**
      * <p>The maximum number of parts allowed in the response.</p>
      */
-    inline int GetMaxParts() const{ return m_maxParts; }
+    inline int GetMaxParts() const { return m_maxParts; }
     inline bool MaxPartsHasBeenSet() const { return m_maxPartsHasBeenSet; }
     inline void SetMaxParts(int value) { m_maxPartsHasBeenSet = true; m_maxParts = value; }
     inline GetObjectAttributesParts& WithMaxParts(int value) { SetMaxParts(value); return *this;}
@@ -88,7 +88,7 @@ namespace Model
      * if the number of parts exceeds the limit returned in the <code>MaxParts</code>
      * element.</p>
      */
-    inline bool GetIsTruncated() const{ return m_isTruncated; }
+    inline bool GetIsTruncated() const { return m_isTruncated; }
     inline bool IsTruncatedHasBeenSet() const { return m_isTruncatedHasBeenSet; }
     inline void SetIsTruncated(bool value) { m_isTruncatedHasBeenSet = true; m_isTruncated = value; }
     inline GetObjectAttributesParts& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
@@ -107,30 +107,30 @@ namespace Model
      * whether a additional checksum is applied to the object specified in the request,
      * the response returns <code>Part</code>.</p> </li> </ul> 
      */
-    inline const Aws::Vector<ObjectPart>& GetParts() const{ return m_parts; }
+    inline const Aws::Vector<ObjectPart>& GetParts() const { return m_parts; }
     inline bool PartsHasBeenSet() const { return m_partsHasBeenSet; }
-    inline void SetParts(const Aws::Vector<ObjectPart>& value) { m_partsHasBeenSet = true; m_parts = value; }
-    inline void SetParts(Aws::Vector<ObjectPart>&& value) { m_partsHasBeenSet = true; m_parts = std::move(value); }
-    inline GetObjectAttributesParts& WithParts(const Aws::Vector<ObjectPart>& value) { SetParts(value); return *this;}
-    inline GetObjectAttributesParts& WithParts(Aws::Vector<ObjectPart>&& value) { SetParts(std::move(value)); return *this;}
-    inline GetObjectAttributesParts& AddParts(const ObjectPart& value) { m_partsHasBeenSet = true; m_parts.push_back(value); return *this; }
-    inline GetObjectAttributesParts& AddParts(ObjectPart&& value) { m_partsHasBeenSet = true; m_parts.push_back(std::move(value)); return *this; }
+    template<typename PartsT = Aws::Vector<ObjectPart>>
+    void SetParts(PartsT&& value) { m_partsHasBeenSet = true; m_parts = std::forward<PartsT>(value); }
+    template<typename PartsT = Aws::Vector<ObjectPart>>
+    GetObjectAttributesParts& WithParts(PartsT&& value) { SetParts(std::forward<PartsT>(value)); return *this;}
+    template<typename PartsT = ObjectPart>
+    GetObjectAttributesParts& AddParts(PartsT&& value) { m_partsHasBeenSet = true; m_parts.emplace_back(std::forward<PartsT>(value)); return *this; }
     ///@}
   private:
 
-    int m_totalPartsCount;
+    int m_totalPartsCount{0};
     bool m_totalPartsCountHasBeenSet = false;
 
-    int m_partNumberMarker;
+    int m_partNumberMarker{0};
     bool m_partNumberMarkerHasBeenSet = false;
 
-    int m_nextPartNumberMarker;
+    int m_nextPartNumberMarker{0};
     bool m_nextPartNumberMarkerHasBeenSet = false;
 
-    int m_maxParts;
+    int m_maxParts{0};
     bool m_maxPartsHasBeenSet = false;
 
-    bool m_isTruncated;
+    bool m_isTruncated{false};
     bool m_isTruncatedHasBeenSet = false;
 
     Aws::Vector<ObjectPart> m_parts;

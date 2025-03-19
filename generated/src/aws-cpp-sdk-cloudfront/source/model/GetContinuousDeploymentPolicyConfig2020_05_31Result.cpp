@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetContinuousDeploymentPolicyConfig2020_05_31Result::GetContinuousDeploymentPolicyConfig2020_05_31Result()
-{
-}
-
 GetContinuousDeploymentPolicyConfig2020_05_31Result::GetContinuousDeploymentPolicyConfig2020_05_31Result(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -33,6 +29,7 @@ GetContinuousDeploymentPolicyConfig2020_05_31Result& GetContinuousDeploymentPoli
   if(!resultNode.IsNull())
   {
     m_continuousDeploymentPolicyConfig = resultNode;
+    m_continuousDeploymentPolicyConfigHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
@@ -40,12 +37,14 @@ GetContinuousDeploymentPolicyConfig2020_05_31Result& GetContinuousDeploymentPoli
   if(eTagIter != headers.end())
   {
     m_eTag = eTagIter->second;
+    m_eTagHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

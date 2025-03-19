@@ -18,19 +18,7 @@ namespace ServiceCatalog
 namespace Model
 {
 
-ParameterConstraints::ParameterConstraints() : 
-    m_allowedValuesHasBeenSet(false),
-    m_allowedPatternHasBeenSet(false),
-    m_constraintDescriptionHasBeenSet(false),
-    m_maxLengthHasBeenSet(false),
-    m_minLengthHasBeenSet(false),
-    m_maxValueHasBeenSet(false),
-    m_minValueHasBeenSet(false)
-{
-}
-
 ParameterConstraints::ParameterConstraints(JsonView jsonValue)
-  : ParameterConstraints()
 {
   *this = jsonValue;
 }
@@ -46,49 +34,36 @@ ParameterConstraints& ParameterConstraints::operator =(JsonView jsonValue)
     }
     m_allowedValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllowedPattern"))
   {
     m_allowedPattern = jsonValue.GetString("AllowedPattern");
-
     m_allowedPatternHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConstraintDescription"))
   {
     m_constraintDescription = jsonValue.GetString("ConstraintDescription");
-
     m_constraintDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxLength"))
   {
     m_maxLength = jsonValue.GetString("MaxLength");
-
     m_maxLengthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinLength"))
   {
     m_minLength = jsonValue.GetString("MinLength");
-
     m_minLengthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxValue"))
   {
     m_maxValue = jsonValue.GetString("MaxValue");
-
     m_maxValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinValue"))
   {
     m_minValue = jsonValue.GetString("MinValue");
-
     m_minValueHasBeenSet = true;
   }
-
   return *this;
 }
 

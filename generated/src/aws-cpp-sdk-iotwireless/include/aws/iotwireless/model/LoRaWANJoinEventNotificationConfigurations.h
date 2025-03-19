@@ -32,7 +32,7 @@ namespace Model
   class LoRaWANJoinEventNotificationConfigurations
   {
   public:
-    AWS_IOTWIRELESS_API LoRaWANJoinEventNotificationConfigurations();
+    AWS_IOTWIRELESS_API LoRaWANJoinEventNotificationConfigurations() = default;
     AWS_IOTWIRELESS_API LoRaWANJoinEventNotificationConfigurations(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API LoRaWANJoinEventNotificationConfigurations& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>Denotes whether the Dev EUI join event topic is enabled or disabled.</p>
      */
-    inline const EventNotificationTopicStatus& GetDevEuiEventTopic() const{ return m_devEuiEventTopic; }
+    inline EventNotificationTopicStatus GetDevEuiEventTopic() const { return m_devEuiEventTopic; }
     inline bool DevEuiEventTopicHasBeenSet() const { return m_devEuiEventTopicHasBeenSet; }
-    inline void SetDevEuiEventTopic(const EventNotificationTopicStatus& value) { m_devEuiEventTopicHasBeenSet = true; m_devEuiEventTopic = value; }
-    inline void SetDevEuiEventTopic(EventNotificationTopicStatus&& value) { m_devEuiEventTopicHasBeenSet = true; m_devEuiEventTopic = std::move(value); }
-    inline LoRaWANJoinEventNotificationConfigurations& WithDevEuiEventTopic(const EventNotificationTopicStatus& value) { SetDevEuiEventTopic(value); return *this;}
-    inline LoRaWANJoinEventNotificationConfigurations& WithDevEuiEventTopic(EventNotificationTopicStatus&& value) { SetDevEuiEventTopic(std::move(value)); return *this;}
+    inline void SetDevEuiEventTopic(EventNotificationTopicStatus value) { m_devEuiEventTopicHasBeenSet = true; m_devEuiEventTopic = value; }
+    inline LoRaWANJoinEventNotificationConfigurations& WithDevEuiEventTopic(EventNotificationTopicStatus value) { SetDevEuiEventTopic(value); return *this;}
     ///@}
   private:
 
-    EventNotificationTopicStatus m_devEuiEventTopic;
+    EventNotificationTopicStatus m_devEuiEventTopic{EventNotificationTopicStatus::NOT_SET};
     bool m_devEuiEventTopicHasBeenSet = false;
   };
 

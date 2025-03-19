@@ -22,7 +22,7 @@ namespace Model
   class AssociatePricingRulesRequest : public BillingConductorRequest
   {
   public:
-    AWS_BILLINGCONDUCTOR_API AssociatePricingRulesRequest();
+    AWS_BILLINGCONDUCTOR_API AssociatePricingRulesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
      * <p> The <code>PricingPlanArn</code> that the <code>PricingRuleArns</code> are
      * associated with. </p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline AssociatePricingRulesRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline AssociatePricingRulesRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline AssociatePricingRulesRequest& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    AssociatePricingRulesRequest& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,15 +51,14 @@ namespace Model
      * <p> The <code>PricingRuleArns</code> that are associated with the Pricing Plan.
      * </p>
      */
-    inline const Aws::Vector<Aws::String>& GetPricingRuleArns() const{ return m_pricingRuleArns; }
+    inline const Aws::Vector<Aws::String>& GetPricingRuleArns() const { return m_pricingRuleArns; }
     inline bool PricingRuleArnsHasBeenSet() const { return m_pricingRuleArnsHasBeenSet; }
-    inline void SetPricingRuleArns(const Aws::Vector<Aws::String>& value) { m_pricingRuleArnsHasBeenSet = true; m_pricingRuleArns = value; }
-    inline void SetPricingRuleArns(Aws::Vector<Aws::String>&& value) { m_pricingRuleArnsHasBeenSet = true; m_pricingRuleArns = std::move(value); }
-    inline AssociatePricingRulesRequest& WithPricingRuleArns(const Aws::Vector<Aws::String>& value) { SetPricingRuleArns(value); return *this;}
-    inline AssociatePricingRulesRequest& WithPricingRuleArns(Aws::Vector<Aws::String>&& value) { SetPricingRuleArns(std::move(value)); return *this;}
-    inline AssociatePricingRulesRequest& AddPricingRuleArns(const Aws::String& value) { m_pricingRuleArnsHasBeenSet = true; m_pricingRuleArns.push_back(value); return *this; }
-    inline AssociatePricingRulesRequest& AddPricingRuleArns(Aws::String&& value) { m_pricingRuleArnsHasBeenSet = true; m_pricingRuleArns.push_back(std::move(value)); return *this; }
-    inline AssociatePricingRulesRequest& AddPricingRuleArns(const char* value) { m_pricingRuleArnsHasBeenSet = true; m_pricingRuleArns.push_back(value); return *this; }
+    template<typename PricingRuleArnsT = Aws::Vector<Aws::String>>
+    void SetPricingRuleArns(PricingRuleArnsT&& value) { m_pricingRuleArnsHasBeenSet = true; m_pricingRuleArns = std::forward<PricingRuleArnsT>(value); }
+    template<typename PricingRuleArnsT = Aws::Vector<Aws::String>>
+    AssociatePricingRulesRequest& WithPricingRuleArns(PricingRuleArnsT&& value) { SetPricingRuleArns(std::forward<PricingRuleArnsT>(value)); return *this;}
+    template<typename PricingRuleArnsT = Aws::String>
+    AssociatePricingRulesRequest& AddPricingRuleArns(PricingRuleArnsT&& value) { m_pricingRuleArnsHasBeenSet = true; m_pricingRuleArns.emplace_back(std::forward<PricingRuleArnsT>(value)); return *this; }
     ///@}
   private:
 

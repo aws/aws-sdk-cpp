@@ -18,20 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-GeospatialCoordinateBounds::GeospatialCoordinateBounds() : 
-    m_north(0.0),
-    m_northHasBeenSet(false),
-    m_south(0.0),
-    m_southHasBeenSet(false),
-    m_west(0.0),
-    m_westHasBeenSet(false),
-    m_east(0.0),
-    m_eastHasBeenSet(false)
-{
-}
-
 GeospatialCoordinateBounds::GeospatialCoordinateBounds(JsonView jsonValue)
-  : GeospatialCoordinateBounds()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ GeospatialCoordinateBounds& GeospatialCoordinateBounds::operator =(JsonView json
   if(jsonValue.ValueExists("North"))
   {
     m_north = jsonValue.GetDouble("North");
-
     m_northHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("South"))
   {
     m_south = jsonValue.GetDouble("South");
-
     m_southHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("West"))
   {
     m_west = jsonValue.GetDouble("West");
-
     m_westHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("East"))
   {
     m_east = jsonValue.GetDouble("East");
-
     m_eastHasBeenSet = true;
   }
-
   return *this;
 }
 

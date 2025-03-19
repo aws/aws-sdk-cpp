@@ -18,22 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-Condition::Condition() : 
-    m_equalsHasBeenSet(false),
-    m_notEqualsHasBeenSet(false),
-    m_greaterThan(0),
-    m_greaterThanHasBeenSet(false),
-    m_greaterThanOrEqual(0),
-    m_greaterThanOrEqualHasBeenSet(false),
-    m_lessThan(0),
-    m_lessThanHasBeenSet(false),
-    m_lessThanOrEqual(0),
-    m_lessThanOrEqualHasBeenSet(false)
-{
-}
-
 Condition::Condition(JsonView jsonValue)
-  : Condition()
 {
   *this = jsonValue;
 }
@@ -49,7 +34,6 @@ Condition& Condition::operator =(JsonView jsonValue)
     }
     m_equalsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("notEquals"))
   {
     Aws::Utils::Array<JsonView> notEqualsJsonList = jsonValue.GetArray("notEquals");
@@ -59,35 +43,26 @@ Condition& Condition::operator =(JsonView jsonValue)
     }
     m_notEqualsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("greaterThan"))
   {
     m_greaterThan = jsonValue.GetInt64("greaterThan");
-
     m_greaterThanHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("greaterThanOrEqual"))
   {
     m_greaterThanOrEqual = jsonValue.GetInt64("greaterThanOrEqual");
-
     m_greaterThanOrEqualHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lessThan"))
   {
     m_lessThan = jsonValue.GetInt64("lessThan");
-
     m_lessThanHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lessThanOrEqual"))
   {
     m_lessThanOrEqual = jsonValue.GetInt64("lessThanOrEqual");
-
     m_lessThanOrEqualHasBeenSet = true;
   }
-
   return *this;
 }
 

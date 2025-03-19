@@ -31,7 +31,7 @@ namespace Model
   class LivePreRollConfiguration
   {
   public:
-    AWS_MEDIATAILOR_API LivePreRollConfiguration();
+    AWS_MEDIATAILOR_API LivePreRollConfiguration() = default;
     AWS_MEDIATAILOR_API LivePreRollConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API LivePreRollConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * parameters as needed when calling the ADS. Alternately, for testing, you can
      * provide a static VAST URL. The maximum length is 25,000 characters.</p>
      */
-    inline const Aws::String& GetAdDecisionServerUrl() const{ return m_adDecisionServerUrl; }
+    inline const Aws::String& GetAdDecisionServerUrl() const { return m_adDecisionServerUrl; }
     inline bool AdDecisionServerUrlHasBeenSet() const { return m_adDecisionServerUrlHasBeenSet; }
-    inline void SetAdDecisionServerUrl(const Aws::String& value) { m_adDecisionServerUrlHasBeenSet = true; m_adDecisionServerUrl = value; }
-    inline void SetAdDecisionServerUrl(Aws::String&& value) { m_adDecisionServerUrlHasBeenSet = true; m_adDecisionServerUrl = std::move(value); }
-    inline void SetAdDecisionServerUrl(const char* value) { m_adDecisionServerUrlHasBeenSet = true; m_adDecisionServerUrl.assign(value); }
-    inline LivePreRollConfiguration& WithAdDecisionServerUrl(const Aws::String& value) { SetAdDecisionServerUrl(value); return *this;}
-    inline LivePreRollConfiguration& WithAdDecisionServerUrl(Aws::String&& value) { SetAdDecisionServerUrl(std::move(value)); return *this;}
-    inline LivePreRollConfiguration& WithAdDecisionServerUrl(const char* value) { SetAdDecisionServerUrl(value); return *this;}
+    template<typename AdDecisionServerUrlT = Aws::String>
+    void SetAdDecisionServerUrl(AdDecisionServerUrlT&& value) { m_adDecisionServerUrlHasBeenSet = true; m_adDecisionServerUrl = std::forward<AdDecisionServerUrlT>(value); }
+    template<typename AdDecisionServerUrlT = Aws::String>
+    LivePreRollConfiguration& WithAdDecisionServerUrl(AdDecisionServerUrlT&& value) { SetAdDecisionServerUrl(std::forward<AdDecisionServerUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,7 +59,7 @@ namespace Model
      * MediaTailor won't play pre-roll ads to exceed this duration, regardless of the
      * total duration of ads that the ADS returns.</p>
      */
-    inline int GetMaxDurationSeconds() const{ return m_maxDurationSeconds; }
+    inline int GetMaxDurationSeconds() const { return m_maxDurationSeconds; }
     inline bool MaxDurationSecondsHasBeenSet() const { return m_maxDurationSecondsHasBeenSet; }
     inline void SetMaxDurationSeconds(int value) { m_maxDurationSecondsHasBeenSet = true; m_maxDurationSeconds = value; }
     inline LivePreRollConfiguration& WithMaxDurationSeconds(int value) { SetMaxDurationSeconds(value); return *this;}
@@ -71,7 +69,7 @@ namespace Model
     Aws::String m_adDecisionServerUrl;
     bool m_adDecisionServerUrlHasBeenSet = false;
 
-    int m_maxDurationSeconds;
+    int m_maxDurationSeconds{0};
     bool m_maxDurationSecondsHasBeenSet = false;
   };
 

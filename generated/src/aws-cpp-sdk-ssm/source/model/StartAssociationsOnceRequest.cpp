@@ -12,11 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartAssociationsOnceRequest::StartAssociationsOnceRequest() : 
-    m_associationIdsHasBeenSet(false)
-{
-}
-
 Aws::String StartAssociationsOnceRequest::SerializePayload() const
 {
   JsonValue payload;

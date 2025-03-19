@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-InvalidRequestException::InvalidRequestException() : 
-    m_messageHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 InvalidRequestException::InvalidRequestException(JsonView jsonValue)
-  : InvalidRequestException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ InvalidRequestException& InvalidRequestException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Reason"))
   {
     m_reason = jsonValue.GetObject("Reason");
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

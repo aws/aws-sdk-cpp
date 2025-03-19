@@ -18,13 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-ProtectedJobDirectAnalysisConfigurationDetails::ProtectedJobDirectAnalysisConfigurationDetails() : 
-    m_receiverAccountIdsHasBeenSet(false)
-{
-}
-
 ProtectedJobDirectAnalysisConfigurationDetails::ProtectedJobDirectAnalysisConfigurationDetails(JsonView jsonValue)
-  : ProtectedJobDirectAnalysisConfigurationDetails()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ProtectedJobDirectAnalysisConfigurationDetails& ProtectedJobDirectAnalysisConfig
     }
     m_receiverAccountIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

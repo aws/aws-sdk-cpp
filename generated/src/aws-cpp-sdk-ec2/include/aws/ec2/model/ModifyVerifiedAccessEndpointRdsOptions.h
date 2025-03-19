@@ -32,7 +32,7 @@ namespace Model
   class ModifyVerifiedAccessEndpointRdsOptions
   {
   public:
-    AWS_EC2_API ModifyVerifiedAccessEndpointRdsOptions();
+    AWS_EC2_API ModifyVerifiedAccessEndpointRdsOptions() = default;
     AWS_EC2_API ModifyVerifiedAccessEndpointRdsOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API ModifyVerifiedAccessEndpointRdsOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,22 +44,21 @@ namespace Model
     /**
      * <p>The IDs of the subnets.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
+    inline const Aws::Vector<Aws::String>& GetSubnetIds() const { return m_subnetIds; }
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
-    inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
-    inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
-    inline ModifyVerifiedAccessEndpointRdsOptions& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
-    inline ModifyVerifiedAccessEndpointRdsOptions& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
-    inline ModifyVerifiedAccessEndpointRdsOptions& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
-    inline ModifyVerifiedAccessEndpointRdsOptions& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
-    inline ModifyVerifiedAccessEndpointRdsOptions& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
+    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
+    void SetSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::forward<SubnetIdsT>(value); }
+    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
+    ModifyVerifiedAccessEndpointRdsOptions& WithSubnetIds(SubnetIdsT&& value) { SetSubnetIds(std::forward<SubnetIdsT>(value)); return *this;}
+    template<typename SubnetIdsT = Aws::String>
+    ModifyVerifiedAccessEndpointRdsOptions& AddSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.emplace_back(std::forward<SubnetIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The port.</p>
      */
-    inline int GetPort() const{ return m_port; }
+    inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline ModifyVerifiedAccessEndpointRdsOptions& WithPort(int value) { SetPort(value); return *this;}
@@ -69,21 +68,19 @@ namespace Model
     /**
      * <p>The RDS endpoint.</p>
      */
-    inline const Aws::String& GetRdsEndpoint() const{ return m_rdsEndpoint; }
+    inline const Aws::String& GetRdsEndpoint() const { return m_rdsEndpoint; }
     inline bool RdsEndpointHasBeenSet() const { return m_rdsEndpointHasBeenSet; }
-    inline void SetRdsEndpoint(const Aws::String& value) { m_rdsEndpointHasBeenSet = true; m_rdsEndpoint = value; }
-    inline void SetRdsEndpoint(Aws::String&& value) { m_rdsEndpointHasBeenSet = true; m_rdsEndpoint = std::move(value); }
-    inline void SetRdsEndpoint(const char* value) { m_rdsEndpointHasBeenSet = true; m_rdsEndpoint.assign(value); }
-    inline ModifyVerifiedAccessEndpointRdsOptions& WithRdsEndpoint(const Aws::String& value) { SetRdsEndpoint(value); return *this;}
-    inline ModifyVerifiedAccessEndpointRdsOptions& WithRdsEndpoint(Aws::String&& value) { SetRdsEndpoint(std::move(value)); return *this;}
-    inline ModifyVerifiedAccessEndpointRdsOptions& WithRdsEndpoint(const char* value) { SetRdsEndpoint(value); return *this;}
+    template<typename RdsEndpointT = Aws::String>
+    void SetRdsEndpoint(RdsEndpointT&& value) { m_rdsEndpointHasBeenSet = true; m_rdsEndpoint = std::forward<RdsEndpointT>(value); }
+    template<typename RdsEndpointT = Aws::String>
+    ModifyVerifiedAccessEndpointRdsOptions& WithRdsEndpoint(RdsEndpointT&& value) { SetRdsEndpoint(std::forward<RdsEndpointT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_subnetIds;
     bool m_subnetIdsHasBeenSet = false;
 
-    int m_port;
+    int m_port{0};
     bool m_portHasBeenSet = false;
 
     Aws::String m_rdsEndpoint;

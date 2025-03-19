@@ -18,20 +18,7 @@ namespace KafkaConnect
 namespace Model
 {
 
-CustomPluginRevisionSummary::CustomPluginRevisionSummary() : 
-    m_contentType(CustomPluginContentType::NOT_SET),
-    m_contentTypeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_fileDescriptionHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_revision(0),
-    m_revisionHasBeenSet(false)
-{
-}
-
 CustomPluginRevisionSummary::CustomPluginRevisionSummary(JsonView jsonValue)
-  : CustomPluginRevisionSummary()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ CustomPluginRevisionSummary& CustomPluginRevisionSummary::operator =(JsonView js
   if(jsonValue.ValueExists("contentType"))
   {
     m_contentType = CustomPluginContentTypeMapper::GetCustomPluginContentTypeForName(jsonValue.GetString("contentType"));
-
     m_contentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fileDescription"))
   {
     m_fileDescription = jsonValue.GetObject("fileDescription");
-
     m_fileDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("location"))
   {
     m_location = jsonValue.GetObject("location");
-
     m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("revision"))
   {
     m_revision = jsonValue.GetInt64("revision");
-
     m_revisionHasBeenSet = true;
   }
-
   return *this;
 }
 

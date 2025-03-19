@@ -32,7 +32,7 @@ namespace Model
   class LakeFormationTagPolicyDetails
   {
   public:
-    AWS_DATAEXCHANGE_API LakeFormationTagPolicyDetails();
+    AWS_DATAEXCHANGE_API LakeFormationTagPolicyDetails() = default;
     AWS_DATAEXCHANGE_API LakeFormationTagPolicyDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAEXCHANGE_API LakeFormationTagPolicyDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The underlying Glue database that the notification is referring to.</p>
      */
-    inline const Aws::String& GetDatabase() const{ return m_database; }
+    inline const Aws::String& GetDatabase() const { return m_database; }
     inline bool DatabaseHasBeenSet() const { return m_databaseHasBeenSet; }
-    inline void SetDatabase(const Aws::String& value) { m_databaseHasBeenSet = true; m_database = value; }
-    inline void SetDatabase(Aws::String&& value) { m_databaseHasBeenSet = true; m_database = std::move(value); }
-    inline void SetDatabase(const char* value) { m_databaseHasBeenSet = true; m_database.assign(value); }
-    inline LakeFormationTagPolicyDetails& WithDatabase(const Aws::String& value) { SetDatabase(value); return *this;}
-    inline LakeFormationTagPolicyDetails& WithDatabase(Aws::String&& value) { SetDatabase(std::move(value)); return *this;}
-    inline LakeFormationTagPolicyDetails& WithDatabase(const char* value) { SetDatabase(value); return *this;}
+    template<typename DatabaseT = Aws::String>
+    void SetDatabase(DatabaseT&& value) { m_databaseHasBeenSet = true; m_database = std::forward<DatabaseT>(value); }
+    template<typename DatabaseT = Aws::String>
+    LakeFormationTagPolicyDetails& WithDatabase(DatabaseT&& value) { SetDatabase(std::forward<DatabaseT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The underlying Glue table that the notification is referring to.</p>
      */
-    inline const Aws::String& GetTable() const{ return m_table; }
+    inline const Aws::String& GetTable() const { return m_table; }
     inline bool TableHasBeenSet() const { return m_tableHasBeenSet; }
-    inline void SetTable(const Aws::String& value) { m_tableHasBeenSet = true; m_table = value; }
-    inline void SetTable(Aws::String&& value) { m_tableHasBeenSet = true; m_table = std::move(value); }
-    inline void SetTable(const char* value) { m_tableHasBeenSet = true; m_table.assign(value); }
-    inline LakeFormationTagPolicyDetails& WithTable(const Aws::String& value) { SetTable(value); return *this;}
-    inline LakeFormationTagPolicyDetails& WithTable(Aws::String&& value) { SetTable(std::move(value)); return *this;}
-    inline LakeFormationTagPolicyDetails& WithTable(const char* value) { SetTable(value); return *this;}
+    template<typename TableT = Aws::String>
+    void SetTable(TableT&& value) { m_tableHasBeenSet = true; m_table = std::forward<TableT>(value); }
+    template<typename TableT = Aws::String>
+    LakeFormationTagPolicyDetails& WithTable(TableT&& value) { SetTable(std::forward<TableT>(value)); return *this;}
     ///@}
   private:
 

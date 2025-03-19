@@ -28,7 +28,7 @@ namespace Model
   class DeregisterNotificationHubResult
   {
   public:
-    AWS_NOTIFICATIONS_API DeregisterNotificationHubResult();
+    AWS_NOTIFICATIONS_API DeregisterNotificationHubResult() = default;
     AWS_NOTIFICATIONS_API DeregisterNotificationHubResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NOTIFICATIONS_API DeregisterNotificationHubResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,43 +37,42 @@ namespace Model
     /**
      * <p>The <code>NotificationConfiguration</code> Region.</p>
      */
-    inline const Aws::String& GetNotificationHubRegion() const{ return m_notificationHubRegion; }
-    inline void SetNotificationHubRegion(const Aws::String& value) { m_notificationHubRegion = value; }
-    inline void SetNotificationHubRegion(Aws::String&& value) { m_notificationHubRegion = std::move(value); }
-    inline void SetNotificationHubRegion(const char* value) { m_notificationHubRegion.assign(value); }
-    inline DeregisterNotificationHubResult& WithNotificationHubRegion(const Aws::String& value) { SetNotificationHubRegion(value); return *this;}
-    inline DeregisterNotificationHubResult& WithNotificationHubRegion(Aws::String&& value) { SetNotificationHubRegion(std::move(value)); return *this;}
-    inline DeregisterNotificationHubResult& WithNotificationHubRegion(const char* value) { SetNotificationHubRegion(value); return *this;}
+    inline const Aws::String& GetNotificationHubRegion() const { return m_notificationHubRegion; }
+    template<typename NotificationHubRegionT = Aws::String>
+    void SetNotificationHubRegion(NotificationHubRegionT&& value) { m_notificationHubRegionHasBeenSet = true; m_notificationHubRegion = std::forward<NotificationHubRegionT>(value); }
+    template<typename NotificationHubRegionT = Aws::String>
+    DeregisterNotificationHubResult& WithNotificationHubRegion(NotificationHubRegionT&& value) { SetNotificationHubRegion(std::forward<NotificationHubRegionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> <code>NotificationConfiguration</code> status information.</p>
      */
-    inline const NotificationHubStatusSummary& GetStatusSummary() const{ return m_statusSummary; }
-    inline void SetStatusSummary(const NotificationHubStatusSummary& value) { m_statusSummary = value; }
-    inline void SetStatusSummary(NotificationHubStatusSummary&& value) { m_statusSummary = std::move(value); }
-    inline DeregisterNotificationHubResult& WithStatusSummary(const NotificationHubStatusSummary& value) { SetStatusSummary(value); return *this;}
-    inline DeregisterNotificationHubResult& WithStatusSummary(NotificationHubStatusSummary&& value) { SetStatusSummary(std::move(value)); return *this;}
+    inline const NotificationHubStatusSummary& GetStatusSummary() const { return m_statusSummary; }
+    template<typename StatusSummaryT = NotificationHubStatusSummary>
+    void SetStatusSummary(StatusSummaryT&& value) { m_statusSummaryHasBeenSet = true; m_statusSummary = std::forward<StatusSummaryT>(value); }
+    template<typename StatusSummaryT = NotificationHubStatusSummary>
+    DeregisterNotificationHubResult& WithStatusSummary(StatusSummaryT&& value) { SetStatusSummary(std::forward<StatusSummaryT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeregisterNotificationHubResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeregisterNotificationHubResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeregisterNotificationHubResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeregisterNotificationHubResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_notificationHubRegion;
+    bool m_notificationHubRegionHasBeenSet = false;
 
     NotificationHubStatusSummary m_statusSummary;
+    bool m_statusSummaryHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

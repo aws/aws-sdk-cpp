@@ -35,7 +35,7 @@ namespace Model
   class EnvironmentLink
   {
   public:
-    AWS_ELASTICBEANSTALK_API EnvironmentLink();
+    AWS_ELASTICBEANSTALK_API EnvironmentLink() = default;
     AWS_ELASTICBEANSTALK_API EnvironmentLink(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICBEANSTALK_API EnvironmentLink& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,28 +47,24 @@ namespace Model
     /**
      * <p>The name of the link.</p>
      */
-    inline const Aws::String& GetLinkName() const{ return m_linkName; }
+    inline const Aws::String& GetLinkName() const { return m_linkName; }
     inline bool LinkNameHasBeenSet() const { return m_linkNameHasBeenSet; }
-    inline void SetLinkName(const Aws::String& value) { m_linkNameHasBeenSet = true; m_linkName = value; }
-    inline void SetLinkName(Aws::String&& value) { m_linkNameHasBeenSet = true; m_linkName = std::move(value); }
-    inline void SetLinkName(const char* value) { m_linkNameHasBeenSet = true; m_linkName.assign(value); }
-    inline EnvironmentLink& WithLinkName(const Aws::String& value) { SetLinkName(value); return *this;}
-    inline EnvironmentLink& WithLinkName(Aws::String&& value) { SetLinkName(std::move(value)); return *this;}
-    inline EnvironmentLink& WithLinkName(const char* value) { SetLinkName(value); return *this;}
+    template<typename LinkNameT = Aws::String>
+    void SetLinkName(LinkNameT&& value) { m_linkNameHasBeenSet = true; m_linkName = std::forward<LinkNameT>(value); }
+    template<typename LinkNameT = Aws::String>
+    EnvironmentLink& WithLinkName(LinkNameT&& value) { SetLinkName(std::forward<LinkNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the linked environment (the dependency).</p>
      */
-    inline const Aws::String& GetEnvironmentName() const{ return m_environmentName; }
+    inline const Aws::String& GetEnvironmentName() const { return m_environmentName; }
     inline bool EnvironmentNameHasBeenSet() const { return m_environmentNameHasBeenSet; }
-    inline void SetEnvironmentName(const Aws::String& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
-    inline void SetEnvironmentName(Aws::String&& value) { m_environmentNameHasBeenSet = true; m_environmentName = std::move(value); }
-    inline void SetEnvironmentName(const char* value) { m_environmentNameHasBeenSet = true; m_environmentName.assign(value); }
-    inline EnvironmentLink& WithEnvironmentName(const Aws::String& value) { SetEnvironmentName(value); return *this;}
-    inline EnvironmentLink& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(std::move(value)); return *this;}
-    inline EnvironmentLink& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
+    template<typename EnvironmentNameT = Aws::String>
+    void SetEnvironmentName(EnvironmentNameT&& value) { m_environmentNameHasBeenSet = true; m_environmentName = std::forward<EnvironmentNameT>(value); }
+    template<typename EnvironmentNameT = Aws::String>
+    EnvironmentLink& WithEnvironmentName(EnvironmentNameT&& value) { SetEnvironmentName(std::forward<EnvironmentNameT>(value)); return *this;}
     ///@}
   private:
 

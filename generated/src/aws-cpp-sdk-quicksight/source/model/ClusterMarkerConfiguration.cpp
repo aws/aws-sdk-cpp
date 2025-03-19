@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ClusterMarkerConfiguration::ClusterMarkerConfiguration() : 
-    m_clusterMarkerHasBeenSet(false)
-{
-}
-
 ClusterMarkerConfiguration::ClusterMarkerConfiguration(JsonView jsonValue)
-  : ClusterMarkerConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ClusterMarkerConfiguration& ClusterMarkerConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("ClusterMarker"))
   {
     m_clusterMarker = jsonValue.GetObject("ClusterMarker");
-
     m_clusterMarkerHasBeenSet = true;
   }
-
   return *this;
 }
 

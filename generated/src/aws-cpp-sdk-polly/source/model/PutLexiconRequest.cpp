@@ -12,12 +12,6 @@ using namespace Aws::Polly::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutLexiconRequest::PutLexiconRequest() : 
-    m_nameHasBeenSet(false),
-    m_contentHasBeenSet(false)
-{
-}
-
 Aws::String PutLexiconRequest::SerializePayload() const
 {
   JsonValue payload;

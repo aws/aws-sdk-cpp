@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetBlockResult::GetBlockResult()
-{
-}
-
 GetBlockResult::GetBlockResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ GetBlockResult& GetBlockResult::operator =(const Aws::AmazonWebServiceResult<Jso
   if(jsonValue.ValueExists("Block"))
   {
     m_block = jsonValue.GetObject("Block");
-
+    m_blockHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Proof"))
   {
     m_proof = jsonValue.GetObject("Proof");
-
+    m_proofHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

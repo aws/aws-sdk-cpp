@@ -18,17 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ParameterTextAreaControl::ParameterTextAreaControl() : 
-    m_parameterControlIdHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_sourceParameterNameHasBeenSet(false),
-    m_delimiterHasBeenSet(false),
-    m_displayOptionsHasBeenSet(false)
-{
-}
-
 ParameterTextAreaControl::ParameterTextAreaControl(JsonView jsonValue)
-  : ParameterTextAreaControl()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ ParameterTextAreaControl& ParameterTextAreaControl::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("ParameterControlId"))
   {
     m_parameterControlId = jsonValue.GetString("ParameterControlId");
-
     m_parameterControlIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Title"))
   {
     m_title = jsonValue.GetString("Title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceParameterName"))
   {
     m_sourceParameterName = jsonValue.GetString("SourceParameterName");
-
     m_sourceParameterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Delimiter"))
   {
     m_delimiter = jsonValue.GetString("Delimiter");
-
     m_delimiterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayOptions"))
   {
     m_displayOptions = jsonValue.GetObject("DisplayOptions");
-
     m_displayOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -35,7 +35,7 @@ namespace Model
   class PathFormat
   {
   public:
-    AWS_LEXMODELSV2_API PathFormat();
+    AWS_LEXMODELSV2_API PathFormat() = default;
     AWS_LEXMODELSV2_API PathFormat(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API PathFormat& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,15 +47,14 @@ namespace Model
      * bucket. Specify this list if you only want Lex to read the files under this set
      * of sub-folders.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetObjectPrefixes() const{ return m_objectPrefixes; }
+    inline const Aws::Vector<Aws::String>& GetObjectPrefixes() const { return m_objectPrefixes; }
     inline bool ObjectPrefixesHasBeenSet() const { return m_objectPrefixesHasBeenSet; }
-    inline void SetObjectPrefixes(const Aws::Vector<Aws::String>& value) { m_objectPrefixesHasBeenSet = true; m_objectPrefixes = value; }
-    inline void SetObjectPrefixes(Aws::Vector<Aws::String>&& value) { m_objectPrefixesHasBeenSet = true; m_objectPrefixes = std::move(value); }
-    inline PathFormat& WithObjectPrefixes(const Aws::Vector<Aws::String>& value) { SetObjectPrefixes(value); return *this;}
-    inline PathFormat& WithObjectPrefixes(Aws::Vector<Aws::String>&& value) { SetObjectPrefixes(std::move(value)); return *this;}
-    inline PathFormat& AddObjectPrefixes(const Aws::String& value) { m_objectPrefixesHasBeenSet = true; m_objectPrefixes.push_back(value); return *this; }
-    inline PathFormat& AddObjectPrefixes(Aws::String&& value) { m_objectPrefixesHasBeenSet = true; m_objectPrefixes.push_back(std::move(value)); return *this; }
-    inline PathFormat& AddObjectPrefixes(const char* value) { m_objectPrefixesHasBeenSet = true; m_objectPrefixes.push_back(value); return *this; }
+    template<typename ObjectPrefixesT = Aws::Vector<Aws::String>>
+    void SetObjectPrefixes(ObjectPrefixesT&& value) { m_objectPrefixesHasBeenSet = true; m_objectPrefixes = std::forward<ObjectPrefixesT>(value); }
+    template<typename ObjectPrefixesT = Aws::Vector<Aws::String>>
+    PathFormat& WithObjectPrefixes(ObjectPrefixesT&& value) { SetObjectPrefixes(std::forward<ObjectPrefixesT>(value)); return *this;}
+    template<typename ObjectPrefixesT = Aws::String>
+    PathFormat& AddObjectPrefixes(ObjectPrefixesT&& value) { m_objectPrefixesHasBeenSet = true; m_objectPrefixes.emplace_back(std::forward<ObjectPrefixesT>(value)); return *this; }
     ///@}
   private:
 

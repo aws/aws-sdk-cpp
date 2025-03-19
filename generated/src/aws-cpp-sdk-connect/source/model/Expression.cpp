@@ -18,16 +18,7 @@ namespace Connect
 namespace Model
 {
 
-Expression::Expression() : 
-    m_attributeConditionHasBeenSet(false),
-    m_andExpressionHasBeenSet(false),
-    m_orExpressionHasBeenSet(false),
-    m_notAttributeConditionHasBeenSet(false)
-{
-}
-
 Expression::Expression(JsonView jsonValue)
-  : Expression()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ Expression& Expression::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AttributeCondition"))
   {
     m_attributeCondition = jsonValue.GetObject("AttributeCondition");
-
     m_attributeConditionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AndExpression"))
   {
     Aws::Utils::Array<JsonView> andExpressionJsonList = jsonValue.GetArray("AndExpression");
@@ -50,7 +39,6 @@ Expression& Expression::operator =(JsonView jsonValue)
     }
     m_andExpressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrExpression"))
   {
     Aws::Utils::Array<JsonView> orExpressionJsonList = jsonValue.GetArray("OrExpression");
@@ -60,14 +48,11 @@ Expression& Expression::operator =(JsonView jsonValue)
     }
     m_orExpressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotAttributeCondition"))
   {
     m_notAttributeCondition = jsonValue.GetObject("NotAttributeCondition");
-
     m_notAttributeConditionHasBeenSet = true;
   }
-
   return *this;
 }
 

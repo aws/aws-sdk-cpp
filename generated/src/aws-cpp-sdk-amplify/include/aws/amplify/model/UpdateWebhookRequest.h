@@ -25,7 +25,7 @@ namespace Model
   class UpdateWebhookRequest : public AmplifyRequest
   {
   public:
-    AWS_AMPLIFY_API UpdateWebhookRequest();
+    AWS_AMPLIFY_API UpdateWebhookRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,42 +40,36 @@ namespace Model
     /**
      * <p>The unique ID for a webhook. </p>
      */
-    inline const Aws::String& GetWebhookId() const{ return m_webhookId; }
+    inline const Aws::String& GetWebhookId() const { return m_webhookId; }
     inline bool WebhookIdHasBeenSet() const { return m_webhookIdHasBeenSet; }
-    inline void SetWebhookId(const Aws::String& value) { m_webhookIdHasBeenSet = true; m_webhookId = value; }
-    inline void SetWebhookId(Aws::String&& value) { m_webhookIdHasBeenSet = true; m_webhookId = std::move(value); }
-    inline void SetWebhookId(const char* value) { m_webhookIdHasBeenSet = true; m_webhookId.assign(value); }
-    inline UpdateWebhookRequest& WithWebhookId(const Aws::String& value) { SetWebhookId(value); return *this;}
-    inline UpdateWebhookRequest& WithWebhookId(Aws::String&& value) { SetWebhookId(std::move(value)); return *this;}
-    inline UpdateWebhookRequest& WithWebhookId(const char* value) { SetWebhookId(value); return *this;}
+    template<typename WebhookIdT = Aws::String>
+    void SetWebhookId(WebhookIdT&& value) { m_webhookIdHasBeenSet = true; m_webhookId = std::forward<WebhookIdT>(value); }
+    template<typename WebhookIdT = Aws::String>
+    UpdateWebhookRequest& WithWebhookId(WebhookIdT&& value) { SetWebhookId(std::forward<WebhookIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name for a branch that is part of an Amplify app. </p>
      */
-    inline const Aws::String& GetBranchName() const{ return m_branchName; }
+    inline const Aws::String& GetBranchName() const { return m_branchName; }
     inline bool BranchNameHasBeenSet() const { return m_branchNameHasBeenSet; }
-    inline void SetBranchName(const Aws::String& value) { m_branchNameHasBeenSet = true; m_branchName = value; }
-    inline void SetBranchName(Aws::String&& value) { m_branchNameHasBeenSet = true; m_branchName = std::move(value); }
-    inline void SetBranchName(const char* value) { m_branchNameHasBeenSet = true; m_branchName.assign(value); }
-    inline UpdateWebhookRequest& WithBranchName(const Aws::String& value) { SetBranchName(value); return *this;}
-    inline UpdateWebhookRequest& WithBranchName(Aws::String&& value) { SetBranchName(std::move(value)); return *this;}
-    inline UpdateWebhookRequest& WithBranchName(const char* value) { SetBranchName(value); return *this;}
+    template<typename BranchNameT = Aws::String>
+    void SetBranchName(BranchNameT&& value) { m_branchNameHasBeenSet = true; m_branchName = std::forward<BranchNameT>(value); }
+    template<typename BranchNameT = Aws::String>
+    UpdateWebhookRequest& WithBranchName(BranchNameT&& value) { SetBranchName(std::forward<BranchNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description for a webhook. </p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateWebhookRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateWebhookRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateWebhookRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateWebhookRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
   private:
 

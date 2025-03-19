@@ -18,25 +18,7 @@ namespace Connect
 namespace Model
 {
 
-AgentStatus::AgentStatus() : 
-    m_agentStatusARNHasBeenSet(false),
-    m_agentStatusIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_type(AgentStatusType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_displayOrder(0),
-    m_displayOrderHasBeenSet(false),
-    m_state(AgentStatusState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastModifiedRegionHasBeenSet(false)
-{
-}
-
 AgentStatus::AgentStatus(JsonView jsonValue)
-  : AgentStatus()
 {
   *this = jsonValue;
 }
@@ -46,52 +28,38 @@ AgentStatus& AgentStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AgentStatusARN"))
   {
     m_agentStatusARN = jsonValue.GetString("AgentStatusARN");
-
     m_agentStatusARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AgentStatusId"))
   {
     m_agentStatusId = jsonValue.GetString("AgentStatusId");
-
     m_agentStatusIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = AgentStatusTypeMapper::GetAgentStatusTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayOrder"))
   {
     m_displayOrder = jsonValue.GetInteger("DisplayOrder");
-
     m_displayOrderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = AgentStatusStateMapper::GetAgentStatusStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -101,21 +69,16 @@ AgentStatus& AgentStatus::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedRegion"))
   {
     m_lastModifiedRegion = jsonValue.GetString("LastModifiedRegion");
-
     m_lastModifiedRegionHasBeenSet = true;
   }
-
   return *this;
 }
 

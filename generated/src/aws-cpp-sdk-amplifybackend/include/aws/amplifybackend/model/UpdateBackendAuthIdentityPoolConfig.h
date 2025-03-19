@@ -31,7 +31,7 @@ namespace Model
   class UpdateBackendAuthIdentityPoolConfig
   {
   public:
-    AWS_AMPLIFYBACKEND_API UpdateBackendAuthIdentityPoolConfig();
+    AWS_AMPLIFYBACKEND_API UpdateBackendAuthIdentityPoolConfig() = default;
     AWS_AMPLIFYBACKEND_API UpdateBackendAuthIdentityPoolConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYBACKEND_API UpdateBackendAuthIdentityPoolConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYBACKEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
      * <p>A boolean value that can be set to allow or disallow guest-level
      * authorization into your Amplify app.</p>
      */
-    inline bool GetUnauthenticatedLogin() const{ return m_unauthenticatedLogin; }
+    inline bool GetUnauthenticatedLogin() const { return m_unauthenticatedLogin; }
     inline bool UnauthenticatedLoginHasBeenSet() const { return m_unauthenticatedLoginHasBeenSet; }
     inline void SetUnauthenticatedLogin(bool value) { m_unauthenticatedLoginHasBeenSet = true; m_unauthenticatedLogin = value; }
     inline UpdateBackendAuthIdentityPoolConfig& WithUnauthenticatedLogin(bool value) { SetUnauthenticatedLogin(value); return *this;}
     ///@}
   private:
 
-    bool m_unauthenticatedLogin;
+    bool m_unauthenticatedLogin{false};
     bool m_unauthenticatedLoginHasBeenSet = false;
   };
 

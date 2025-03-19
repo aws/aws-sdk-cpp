@@ -18,17 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-AccountLink::AccountLink() : 
-    m_accountLinkIdHasBeenSet(false),
-    m_accountLinkStatus(AccountLinkStatusEnum::NOT_SET),
-    m_accountLinkStatusHasBeenSet(false),
-    m_sourceAccountIdHasBeenSet(false),
-    m_targetAccountIdHasBeenSet(false)
-{
-}
-
 AccountLink::AccountLink(JsonView jsonValue)
-  : AccountLink()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ AccountLink& AccountLink::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AccountLinkId"))
   {
     m_accountLinkId = jsonValue.GetString("AccountLinkId");
-
     m_accountLinkIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountLinkStatus"))
   {
     m_accountLinkStatus = AccountLinkStatusEnumMapper::GetAccountLinkStatusEnumForName(jsonValue.GetString("AccountLinkStatus"));
-
     m_accountLinkStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceAccountId"))
   {
     m_sourceAccountId = jsonValue.GetString("SourceAccountId");
-
     m_sourceAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetAccountId"))
   {
     m_targetAccountId = jsonValue.GetString("TargetAccountId");
-
     m_targetAccountIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -25,7 +25,7 @@ namespace Model
   class GetPipelineBlueprintRequest : public OSISRequest
   {
   public:
-    AWS_OSIS_API GetPipelineBlueprintRequest();
+    AWS_OSIS_API GetPipelineBlueprintRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The name of the blueprint to retrieve.</p>
      */
-    inline const Aws::String& GetBlueprintName() const{ return m_blueprintName; }
+    inline const Aws::String& GetBlueprintName() const { return m_blueprintName; }
     inline bool BlueprintNameHasBeenSet() const { return m_blueprintNameHasBeenSet; }
-    inline void SetBlueprintName(const Aws::String& value) { m_blueprintNameHasBeenSet = true; m_blueprintName = value; }
-    inline void SetBlueprintName(Aws::String&& value) { m_blueprintNameHasBeenSet = true; m_blueprintName = std::move(value); }
-    inline void SetBlueprintName(const char* value) { m_blueprintNameHasBeenSet = true; m_blueprintName.assign(value); }
-    inline GetPipelineBlueprintRequest& WithBlueprintName(const Aws::String& value) { SetBlueprintName(value); return *this;}
-    inline GetPipelineBlueprintRequest& WithBlueprintName(Aws::String&& value) { SetBlueprintName(std::move(value)); return *this;}
-    inline GetPipelineBlueprintRequest& WithBlueprintName(const char* value) { SetBlueprintName(value); return *this;}
+    template<typename BlueprintNameT = Aws::String>
+    void SetBlueprintName(BlueprintNameT&& value) { m_blueprintNameHasBeenSet = true; m_blueprintName = std::forward<BlueprintNameT>(value); }
+    template<typename BlueprintNameT = Aws::String>
+    GetPipelineBlueprintRequest& WithBlueprintName(BlueprintNameT&& value) { SetBlueprintName(std::forward<BlueprintNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The format format of the blueprint to retrieve.</p>
      */
-    inline const Aws::String& GetFormat() const{ return m_format; }
+    inline const Aws::String& GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const Aws::String& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(Aws::String&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline void SetFormat(const char* value) { m_formatHasBeenSet = true; m_format.assign(value); }
-    inline GetPipelineBlueprintRequest& WithFormat(const Aws::String& value) { SetFormat(value); return *this;}
-    inline GetPipelineBlueprintRequest& WithFormat(Aws::String&& value) { SetFormat(std::move(value)); return *this;}
-    inline GetPipelineBlueprintRequest& WithFormat(const char* value) { SetFormat(value); return *this;}
+    template<typename FormatT = Aws::String>
+    void SetFormat(FormatT&& value) { m_formatHasBeenSet = true; m_format = std::forward<FormatT>(value); }
+    template<typename FormatT = Aws::String>
+    GetPipelineBlueprintRequest& WithFormat(FormatT&& value) { SetFormat(std::forward<FormatT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,11 +12,6 @@ using namespace Aws::VPCLattice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteServiceRequest::DeleteServiceRequest() : 
-    m_serviceIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteServiceRequest::SerializePayload() const
 {
   return {};

@@ -17,16 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeMaintenanceStartTimeResult::DescribeMaintenanceStartTimeResult() : 
-    m_hourOfDay(0),
-    m_minuteOfHour(0),
-    m_dayOfWeek(0),
-    m_dayOfMonth(0)
-{
-}
-
 DescribeMaintenanceStartTimeResult::DescribeMaintenanceStartTimeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeMaintenanceStartTimeResult()
 {
   *this = result;
 }
@@ -37,51 +28,45 @@ DescribeMaintenanceStartTimeResult& DescribeMaintenanceStartTimeResult::operator
   if(jsonValue.ValueExists("GatewayARN"))
   {
     m_gatewayARN = jsonValue.GetString("GatewayARN");
-
+    m_gatewayARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HourOfDay"))
   {
     m_hourOfDay = jsonValue.GetInteger("HourOfDay");
-
+    m_hourOfDayHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinuteOfHour"))
   {
     m_minuteOfHour = jsonValue.GetInteger("MinuteOfHour");
-
+    m_minuteOfHourHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DayOfWeek"))
   {
     m_dayOfWeek = jsonValue.GetInteger("DayOfWeek");
-
+    m_dayOfWeekHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DayOfMonth"))
   {
     m_dayOfMonth = jsonValue.GetInteger("DayOfMonth");
-
+    m_dayOfMonthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Timezone"))
   {
     m_timezone = jsonValue.GetString("Timezone");
-
+    m_timezoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SoftwareUpdatePreferences"))
   {
     m_softwareUpdatePreferences = jsonValue.GetObject("SoftwareUpdatePreferences");
-
+    m_softwareUpdatePreferencesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

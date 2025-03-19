@@ -18,16 +18,7 @@ namespace Route53RecoveryReadiness
 namespace Model
 {
 
-Resource::Resource() : 
-    m_componentIdHasBeenSet(false),
-    m_dnsTargetResourceHasBeenSet(false),
-    m_readinessScopesHasBeenSet(false),
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 Resource::Resource(JsonView jsonValue)
-  : Resource()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ Resource& Resource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("componentId"))
   {
     m_componentId = jsonValue.GetString("componentId");
-
     m_componentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dnsTargetResource"))
   {
     m_dnsTargetResource = jsonValue.GetObject("dnsTargetResource");
-
     m_dnsTargetResourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("readinessScopes"))
   {
     Aws::Utils::Array<JsonView> readinessScopesJsonList = jsonValue.GetArray("readinessScopes");
@@ -57,14 +44,11 @@ Resource& Resource::operator =(JsonView jsonValue)
     }
     m_readinessScopesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceArn"))
   {
     m_resourceArn = jsonValue.GetString("resourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   return *this;
 }
 

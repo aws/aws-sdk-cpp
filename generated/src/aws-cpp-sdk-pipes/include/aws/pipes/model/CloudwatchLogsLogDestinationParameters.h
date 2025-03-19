@@ -32,7 +32,7 @@ namespace Model
   class CloudwatchLogsLogDestinationParameters
   {
   public:
-    AWS_PIPES_API CloudwatchLogsLogDestinationParameters();
+    AWS_PIPES_API CloudwatchLogsLogDestinationParameters() = default;
     AWS_PIPES_API CloudwatchLogsLogDestinationParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API CloudwatchLogsLogDestinationParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The Amazon Web Services Resource Name (ARN) for the CloudWatch log group to
      * which EventBridge sends the log records.</p>
      */
-    inline const Aws::String& GetLogGroupArn() const{ return m_logGroupArn; }
+    inline const Aws::String& GetLogGroupArn() const { return m_logGroupArn; }
     inline bool LogGroupArnHasBeenSet() const { return m_logGroupArnHasBeenSet; }
-    inline void SetLogGroupArn(const Aws::String& value) { m_logGroupArnHasBeenSet = true; m_logGroupArn = value; }
-    inline void SetLogGroupArn(Aws::String&& value) { m_logGroupArnHasBeenSet = true; m_logGroupArn = std::move(value); }
-    inline void SetLogGroupArn(const char* value) { m_logGroupArnHasBeenSet = true; m_logGroupArn.assign(value); }
-    inline CloudwatchLogsLogDestinationParameters& WithLogGroupArn(const Aws::String& value) { SetLogGroupArn(value); return *this;}
-    inline CloudwatchLogsLogDestinationParameters& WithLogGroupArn(Aws::String&& value) { SetLogGroupArn(std::move(value)); return *this;}
-    inline CloudwatchLogsLogDestinationParameters& WithLogGroupArn(const char* value) { SetLogGroupArn(value); return *this;}
+    template<typename LogGroupArnT = Aws::String>
+    void SetLogGroupArn(LogGroupArnT&& value) { m_logGroupArnHasBeenSet = true; m_logGroupArn = std::forward<LogGroupArnT>(value); }
+    template<typename LogGroupArnT = Aws::String>
+    CloudwatchLogsLogDestinationParameters& WithLogGroupArn(LogGroupArnT&& value) { SetLogGroupArn(std::forward<LogGroupArnT>(value)); return *this;}
     ///@}
   private:
 

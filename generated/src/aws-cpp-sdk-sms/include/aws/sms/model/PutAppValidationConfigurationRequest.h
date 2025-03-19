@@ -24,7 +24,7 @@ namespace Model
   class PutAppValidationConfigurationRequest : public SMSRequest
   {
   public:
-    AWS_SMS_API PutAppValidationConfigurationRequest();
+    AWS_SMS_API PutAppValidationConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,42 +41,40 @@ namespace Model
     /**
      * <p>The ID of the application.</p>
      */
-    inline const Aws::String& GetAppId() const{ return m_appId; }
+    inline const Aws::String& GetAppId() const { return m_appId; }
     inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
-    inline void SetAppId(const Aws::String& value) { m_appIdHasBeenSet = true; m_appId = value; }
-    inline void SetAppId(Aws::String&& value) { m_appIdHasBeenSet = true; m_appId = std::move(value); }
-    inline void SetAppId(const char* value) { m_appIdHasBeenSet = true; m_appId.assign(value); }
-    inline PutAppValidationConfigurationRequest& WithAppId(const Aws::String& value) { SetAppId(value); return *this;}
-    inline PutAppValidationConfigurationRequest& WithAppId(Aws::String&& value) { SetAppId(std::move(value)); return *this;}
-    inline PutAppValidationConfigurationRequest& WithAppId(const char* value) { SetAppId(value); return *this;}
+    template<typename AppIdT = Aws::String>
+    void SetAppId(AppIdT&& value) { m_appIdHasBeenSet = true; m_appId = std::forward<AppIdT>(value); }
+    template<typename AppIdT = Aws::String>
+    PutAppValidationConfigurationRequest& WithAppId(AppIdT&& value) { SetAppId(std::forward<AppIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration for application validation.</p>
      */
-    inline const Aws::Vector<AppValidationConfiguration>& GetAppValidationConfigurations() const{ return m_appValidationConfigurations; }
+    inline const Aws::Vector<AppValidationConfiguration>& GetAppValidationConfigurations() const { return m_appValidationConfigurations; }
     inline bool AppValidationConfigurationsHasBeenSet() const { return m_appValidationConfigurationsHasBeenSet; }
-    inline void SetAppValidationConfigurations(const Aws::Vector<AppValidationConfiguration>& value) { m_appValidationConfigurationsHasBeenSet = true; m_appValidationConfigurations = value; }
-    inline void SetAppValidationConfigurations(Aws::Vector<AppValidationConfiguration>&& value) { m_appValidationConfigurationsHasBeenSet = true; m_appValidationConfigurations = std::move(value); }
-    inline PutAppValidationConfigurationRequest& WithAppValidationConfigurations(const Aws::Vector<AppValidationConfiguration>& value) { SetAppValidationConfigurations(value); return *this;}
-    inline PutAppValidationConfigurationRequest& WithAppValidationConfigurations(Aws::Vector<AppValidationConfiguration>&& value) { SetAppValidationConfigurations(std::move(value)); return *this;}
-    inline PutAppValidationConfigurationRequest& AddAppValidationConfigurations(const AppValidationConfiguration& value) { m_appValidationConfigurationsHasBeenSet = true; m_appValidationConfigurations.push_back(value); return *this; }
-    inline PutAppValidationConfigurationRequest& AddAppValidationConfigurations(AppValidationConfiguration&& value) { m_appValidationConfigurationsHasBeenSet = true; m_appValidationConfigurations.push_back(std::move(value)); return *this; }
+    template<typename AppValidationConfigurationsT = Aws::Vector<AppValidationConfiguration>>
+    void SetAppValidationConfigurations(AppValidationConfigurationsT&& value) { m_appValidationConfigurationsHasBeenSet = true; m_appValidationConfigurations = std::forward<AppValidationConfigurationsT>(value); }
+    template<typename AppValidationConfigurationsT = Aws::Vector<AppValidationConfiguration>>
+    PutAppValidationConfigurationRequest& WithAppValidationConfigurations(AppValidationConfigurationsT&& value) { SetAppValidationConfigurations(std::forward<AppValidationConfigurationsT>(value)); return *this;}
+    template<typename AppValidationConfigurationsT = AppValidationConfiguration>
+    PutAppValidationConfigurationRequest& AddAppValidationConfigurations(AppValidationConfigurationsT&& value) { m_appValidationConfigurationsHasBeenSet = true; m_appValidationConfigurations.emplace_back(std::forward<AppValidationConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The configuration for instance validation.</p>
      */
-    inline const Aws::Vector<ServerGroupValidationConfiguration>& GetServerGroupValidationConfigurations() const{ return m_serverGroupValidationConfigurations; }
+    inline const Aws::Vector<ServerGroupValidationConfiguration>& GetServerGroupValidationConfigurations() const { return m_serverGroupValidationConfigurations; }
     inline bool ServerGroupValidationConfigurationsHasBeenSet() const { return m_serverGroupValidationConfigurationsHasBeenSet; }
-    inline void SetServerGroupValidationConfigurations(const Aws::Vector<ServerGroupValidationConfiguration>& value) { m_serverGroupValidationConfigurationsHasBeenSet = true; m_serverGroupValidationConfigurations = value; }
-    inline void SetServerGroupValidationConfigurations(Aws::Vector<ServerGroupValidationConfiguration>&& value) { m_serverGroupValidationConfigurationsHasBeenSet = true; m_serverGroupValidationConfigurations = std::move(value); }
-    inline PutAppValidationConfigurationRequest& WithServerGroupValidationConfigurations(const Aws::Vector<ServerGroupValidationConfiguration>& value) { SetServerGroupValidationConfigurations(value); return *this;}
-    inline PutAppValidationConfigurationRequest& WithServerGroupValidationConfigurations(Aws::Vector<ServerGroupValidationConfiguration>&& value) { SetServerGroupValidationConfigurations(std::move(value)); return *this;}
-    inline PutAppValidationConfigurationRequest& AddServerGroupValidationConfigurations(const ServerGroupValidationConfiguration& value) { m_serverGroupValidationConfigurationsHasBeenSet = true; m_serverGroupValidationConfigurations.push_back(value); return *this; }
-    inline PutAppValidationConfigurationRequest& AddServerGroupValidationConfigurations(ServerGroupValidationConfiguration&& value) { m_serverGroupValidationConfigurationsHasBeenSet = true; m_serverGroupValidationConfigurations.push_back(std::move(value)); return *this; }
+    template<typename ServerGroupValidationConfigurationsT = Aws::Vector<ServerGroupValidationConfiguration>>
+    void SetServerGroupValidationConfigurations(ServerGroupValidationConfigurationsT&& value) { m_serverGroupValidationConfigurationsHasBeenSet = true; m_serverGroupValidationConfigurations = std::forward<ServerGroupValidationConfigurationsT>(value); }
+    template<typename ServerGroupValidationConfigurationsT = Aws::Vector<ServerGroupValidationConfiguration>>
+    PutAppValidationConfigurationRequest& WithServerGroupValidationConfigurations(ServerGroupValidationConfigurationsT&& value) { SetServerGroupValidationConfigurations(std::forward<ServerGroupValidationConfigurationsT>(value)); return *this;}
+    template<typename ServerGroupValidationConfigurationsT = ServerGroupValidationConfiguration>
+    PutAppValidationConfigurationRequest& AddServerGroupValidationConfigurations(ServerGroupValidationConfigurationsT&& value) { m_serverGroupValidationConfigurationsHasBeenSet = true; m_serverGroupValidationConfigurations.emplace_back(std::forward<ServerGroupValidationConfigurationsT>(value)); return *this; }
     ///@}
   private:
 

@@ -18,21 +18,7 @@ namespace ECS
 namespace Model
 {
 
-HealthCheck::HealthCheck() : 
-    m_commandHasBeenSet(false),
-    m_interval(0),
-    m_intervalHasBeenSet(false),
-    m_timeout(0),
-    m_timeoutHasBeenSet(false),
-    m_retries(0),
-    m_retriesHasBeenSet(false),
-    m_startPeriod(0),
-    m_startPeriodHasBeenSet(false)
-{
-}
-
 HealthCheck::HealthCheck(JsonView jsonValue)
-  : HealthCheck()
 {
   *this = jsonValue;
 }
@@ -48,35 +34,26 @@ HealthCheck& HealthCheck::operator =(JsonView jsonValue)
     }
     m_commandHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("interval"))
   {
     m_interval = jsonValue.GetInteger("interval");
-
     m_intervalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timeout"))
   {
     m_timeout = jsonValue.GetInteger("timeout");
-
     m_timeoutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("retries"))
   {
     m_retries = jsonValue.GetInteger("retries");
-
     m_retriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startPeriod"))
   {
     m_startPeriod = jsonValue.GetInteger("startPeriod");
-
     m_startPeriodHasBeenSet = true;
   }
-
   return *this;
 }
 

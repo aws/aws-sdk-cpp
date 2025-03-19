@@ -29,7 +29,7 @@ namespace Model
   class AddDraftAppVersionResourceMappingsResult
   {
   public:
-    AWS_RESILIENCEHUB_API AddDraftAppVersionResourceMappingsResult();
+    AWS_RESILIENCEHUB_API AddDraftAppVersionResourceMappingsResult() = default;
     AWS_RESILIENCEHUB_API AddDraftAppVersionResourceMappingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RESILIENCEHUB_API AddDraftAppVersionResourceMappingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,26 +44,22 @@ namespace Model
      * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
      * Reference</i> guide.</p>
      */
-    inline const Aws::String& GetAppArn() const{ return m_appArn; }
-    inline void SetAppArn(const Aws::String& value) { m_appArn = value; }
-    inline void SetAppArn(Aws::String&& value) { m_appArn = std::move(value); }
-    inline void SetAppArn(const char* value) { m_appArn.assign(value); }
-    inline AddDraftAppVersionResourceMappingsResult& WithAppArn(const Aws::String& value) { SetAppArn(value); return *this;}
-    inline AddDraftAppVersionResourceMappingsResult& WithAppArn(Aws::String&& value) { SetAppArn(std::move(value)); return *this;}
-    inline AddDraftAppVersionResourceMappingsResult& WithAppArn(const char* value) { SetAppArn(value); return *this;}
+    inline const Aws::String& GetAppArn() const { return m_appArn; }
+    template<typename AppArnT = Aws::String>
+    void SetAppArn(AppArnT&& value) { m_appArnHasBeenSet = true; m_appArn = std::forward<AppArnT>(value); }
+    template<typename AppArnT = Aws::String>
+    AddDraftAppVersionResourceMappingsResult& WithAppArn(AppArnT&& value) { SetAppArn(std::forward<AppArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the application.</p>
      */
-    inline const Aws::String& GetAppVersion() const{ return m_appVersion; }
-    inline void SetAppVersion(const Aws::String& value) { m_appVersion = value; }
-    inline void SetAppVersion(Aws::String&& value) { m_appVersion = std::move(value); }
-    inline void SetAppVersion(const char* value) { m_appVersion.assign(value); }
-    inline AddDraftAppVersionResourceMappingsResult& WithAppVersion(const Aws::String& value) { SetAppVersion(value); return *this;}
-    inline AddDraftAppVersionResourceMappingsResult& WithAppVersion(Aws::String&& value) { SetAppVersion(std::move(value)); return *this;}
-    inline AddDraftAppVersionResourceMappingsResult& WithAppVersion(const char* value) { SetAppVersion(value); return *this;}
+    inline const Aws::String& GetAppVersion() const { return m_appVersion; }
+    template<typename AppVersionT = Aws::String>
+    void SetAppVersion(AppVersionT&& value) { m_appVersionHasBeenSet = true; m_appVersion = std::forward<AppVersionT>(value); }
+    template<typename AppVersionT = Aws::String>
+    AddDraftAppVersionResourceMappingsResult& WithAppVersion(AppVersionT&& value) { SetAppVersion(std::forward<AppVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,34 +68,36 @@ namespace Model
      * a physical resource. You can use sources such as CloudFormation, Terraform state
      * files, AppRegistry applications, or Amazon EKS.</p>
      */
-    inline const Aws::Vector<ResourceMapping>& GetResourceMappings() const{ return m_resourceMappings; }
-    inline void SetResourceMappings(const Aws::Vector<ResourceMapping>& value) { m_resourceMappings = value; }
-    inline void SetResourceMappings(Aws::Vector<ResourceMapping>&& value) { m_resourceMappings = std::move(value); }
-    inline AddDraftAppVersionResourceMappingsResult& WithResourceMappings(const Aws::Vector<ResourceMapping>& value) { SetResourceMappings(value); return *this;}
-    inline AddDraftAppVersionResourceMappingsResult& WithResourceMappings(Aws::Vector<ResourceMapping>&& value) { SetResourceMappings(std::move(value)); return *this;}
-    inline AddDraftAppVersionResourceMappingsResult& AddResourceMappings(const ResourceMapping& value) { m_resourceMappings.push_back(value); return *this; }
-    inline AddDraftAppVersionResourceMappingsResult& AddResourceMappings(ResourceMapping&& value) { m_resourceMappings.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ResourceMapping>& GetResourceMappings() const { return m_resourceMappings; }
+    template<typename ResourceMappingsT = Aws::Vector<ResourceMapping>>
+    void SetResourceMappings(ResourceMappingsT&& value) { m_resourceMappingsHasBeenSet = true; m_resourceMappings = std::forward<ResourceMappingsT>(value); }
+    template<typename ResourceMappingsT = Aws::Vector<ResourceMapping>>
+    AddDraftAppVersionResourceMappingsResult& WithResourceMappings(ResourceMappingsT&& value) { SetResourceMappings(std::forward<ResourceMappingsT>(value)); return *this;}
+    template<typename ResourceMappingsT = ResourceMapping>
+    AddDraftAppVersionResourceMappingsResult& AddResourceMappings(ResourceMappingsT&& value) { m_resourceMappingsHasBeenSet = true; m_resourceMappings.emplace_back(std::forward<ResourceMappingsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AddDraftAppVersionResourceMappingsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AddDraftAppVersionResourceMappingsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AddDraftAppVersionResourceMappingsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AddDraftAppVersionResourceMappingsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_appArn;
+    bool m_appArnHasBeenSet = false;
 
     Aws::String m_appVersion;
+    bool m_appVersionHasBeenSet = false;
 
     Aws::Vector<ResourceMapping> m_resourceMappings;
+    bool m_resourceMappingsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

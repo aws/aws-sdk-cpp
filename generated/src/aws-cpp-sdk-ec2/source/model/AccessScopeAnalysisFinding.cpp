@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-AccessScopeAnalysisFinding::AccessScopeAnalysisFinding() : 
-    m_networkInsightsAccessScopeAnalysisIdHasBeenSet(false),
-    m_networkInsightsAccessScopeIdHasBeenSet(false),
-    m_findingIdHasBeenSet(false),
-    m_findingComponentsHasBeenSet(false)
-{
-}
-
 AccessScopeAnalysisFinding::AccessScopeAnalysisFinding(const XmlNode& xmlNode)
-  : AccessScopeAnalysisFinding()
 {
   *this = xmlNode;
 }
@@ -62,6 +53,7 @@ AccessScopeAnalysisFinding& AccessScopeAnalysisFinding::operator =(const XmlNode
     if(!findingComponentsNode.IsNull())
     {
       XmlNode findingComponentsMember = findingComponentsNode.FirstChild("item");
+      m_findingComponentsHasBeenSet = !findingComponentsMember.IsNull();
       while(!findingComponentsMember.IsNull())
       {
         m_findingComponents.push_back(findingComponentsMember);

@@ -33,7 +33,7 @@ namespace Model
   class TableOptimizerVpcConfiguration
   {
   public:
-    AWS_GLUE_API TableOptimizerVpcConfiguration();
+    AWS_GLUE_API TableOptimizerVpcConfiguration() = default;
     AWS_GLUE_API TableOptimizerVpcConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API TableOptimizerVpcConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The name of the Glue connection used for the VPC for the table optimizer.</p>
      */
-    inline const Aws::String& GetGlueConnectionName() const{ return m_glueConnectionName; }
+    inline const Aws::String& GetGlueConnectionName() const { return m_glueConnectionName; }
     inline bool GlueConnectionNameHasBeenSet() const { return m_glueConnectionNameHasBeenSet; }
-    inline void SetGlueConnectionName(const Aws::String& value) { m_glueConnectionNameHasBeenSet = true; m_glueConnectionName = value; }
-    inline void SetGlueConnectionName(Aws::String&& value) { m_glueConnectionNameHasBeenSet = true; m_glueConnectionName = std::move(value); }
-    inline void SetGlueConnectionName(const char* value) { m_glueConnectionNameHasBeenSet = true; m_glueConnectionName.assign(value); }
-    inline TableOptimizerVpcConfiguration& WithGlueConnectionName(const Aws::String& value) { SetGlueConnectionName(value); return *this;}
-    inline TableOptimizerVpcConfiguration& WithGlueConnectionName(Aws::String&& value) { SetGlueConnectionName(std::move(value)); return *this;}
-    inline TableOptimizerVpcConfiguration& WithGlueConnectionName(const char* value) { SetGlueConnectionName(value); return *this;}
+    template<typename GlueConnectionNameT = Aws::String>
+    void SetGlueConnectionName(GlueConnectionNameT&& value) { m_glueConnectionNameHasBeenSet = true; m_glueConnectionName = std::forward<GlueConnectionNameT>(value); }
+    template<typename GlueConnectionNameT = Aws::String>
+    TableOptimizerVpcConfiguration& WithGlueConnectionName(GlueConnectionNameT&& value) { SetGlueConnectionName(std::forward<GlueConnectionNameT>(value)); return *this;}
     ///@}
   private:
 

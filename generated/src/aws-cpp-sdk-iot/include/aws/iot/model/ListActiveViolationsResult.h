@@ -29,7 +29,7 @@ namespace Model
   class ListActiveViolationsResult
   {
   public:
-    AWS_IOT_API ListActiveViolationsResult();
+    AWS_IOT_API ListActiveViolationsResult() = default;
     AWS_IOT_API ListActiveViolationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API ListActiveViolationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The list of active violations.</p>
      */
-    inline const Aws::Vector<ActiveViolation>& GetActiveViolations() const{ return m_activeViolations; }
-    inline void SetActiveViolations(const Aws::Vector<ActiveViolation>& value) { m_activeViolations = value; }
-    inline void SetActiveViolations(Aws::Vector<ActiveViolation>&& value) { m_activeViolations = std::move(value); }
-    inline ListActiveViolationsResult& WithActiveViolations(const Aws::Vector<ActiveViolation>& value) { SetActiveViolations(value); return *this;}
-    inline ListActiveViolationsResult& WithActiveViolations(Aws::Vector<ActiveViolation>&& value) { SetActiveViolations(std::move(value)); return *this;}
-    inline ListActiveViolationsResult& AddActiveViolations(const ActiveViolation& value) { m_activeViolations.push_back(value); return *this; }
-    inline ListActiveViolationsResult& AddActiveViolations(ActiveViolation&& value) { m_activeViolations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ActiveViolation>& GetActiveViolations() const { return m_activeViolations; }
+    template<typename ActiveViolationsT = Aws::Vector<ActiveViolation>>
+    void SetActiveViolations(ActiveViolationsT&& value) { m_activeViolationsHasBeenSet = true; m_activeViolations = std::forward<ActiveViolationsT>(value); }
+    template<typename ActiveViolationsT = Aws::Vector<ActiveViolation>>
+    ListActiveViolationsResult& WithActiveViolations(ActiveViolationsT&& value) { SetActiveViolations(std::forward<ActiveViolationsT>(value)); return *this;}
+    template<typename ActiveViolationsT = ActiveViolation>
+    ListActiveViolationsResult& AddActiveViolations(ActiveViolationsT&& value) { m_activeViolationsHasBeenSet = true; m_activeViolations.emplace_back(std::forward<ActiveViolationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>A token that can be used to retrieve the next set of results, or
      * <code>null</code> if there are no additional results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListActiveViolationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListActiveViolationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListActiveViolationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListActiveViolationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListActiveViolationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListActiveViolationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListActiveViolationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListActiveViolationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ActiveViolation> m_activeViolations;
+    bool m_activeViolationsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

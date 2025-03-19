@@ -18,14 +18,7 @@ namespace TranscribeStreamingService
 namespace Model
 {
 
-MedicalScribeSessionControlEvent::MedicalScribeSessionControlEvent() : 
-    m_type(MedicalScribeSessionControlEventType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 MedicalScribeSessionControlEvent::MedicalScribeSessionControlEvent(JsonView jsonValue)
-  : MedicalScribeSessionControlEvent()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ MedicalScribeSessionControlEvent& MedicalScribeSessionControlEvent::operator =(J
   if(jsonValue.ValueExists("Type"))
   {
     m_type = MedicalScribeSessionControlEventTypeMapper::GetMedicalScribeSessionControlEventTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

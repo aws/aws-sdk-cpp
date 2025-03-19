@@ -33,7 +33,7 @@ namespace Model
   class GetDeploymentResult
   {
   public:
-    AWS_GREENGRASSV2_API GetDeploymentResult();
+    AWS_GREENGRASSV2_API GetDeploymentResult() = default;
     AWS_GREENGRASSV2_API GetDeploymentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GREENGRASSV2_API GetDeploymentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,76 +44,64 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
      * of the target IoT thing or thing group.</p>
      */
-    inline const Aws::String& GetTargetArn() const{ return m_targetArn; }
-    inline void SetTargetArn(const Aws::String& value) { m_targetArn = value; }
-    inline void SetTargetArn(Aws::String&& value) { m_targetArn = std::move(value); }
-    inline void SetTargetArn(const char* value) { m_targetArn.assign(value); }
-    inline GetDeploymentResult& WithTargetArn(const Aws::String& value) { SetTargetArn(value); return *this;}
-    inline GetDeploymentResult& WithTargetArn(Aws::String&& value) { SetTargetArn(std::move(value)); return *this;}
-    inline GetDeploymentResult& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}
+    inline const Aws::String& GetTargetArn() const { return m_targetArn; }
+    template<typename TargetArnT = Aws::String>
+    void SetTargetArn(TargetArnT&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::forward<TargetArnT>(value); }
+    template<typename TargetArnT = Aws::String>
+    GetDeploymentResult& WithTargetArn(TargetArnT&& value) { SetTargetArn(std::forward<TargetArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The revision number of the deployment.</p>
      */
-    inline const Aws::String& GetRevisionId() const{ return m_revisionId; }
-    inline void SetRevisionId(const Aws::String& value) { m_revisionId = value; }
-    inline void SetRevisionId(Aws::String&& value) { m_revisionId = std::move(value); }
-    inline void SetRevisionId(const char* value) { m_revisionId.assign(value); }
-    inline GetDeploymentResult& WithRevisionId(const Aws::String& value) { SetRevisionId(value); return *this;}
-    inline GetDeploymentResult& WithRevisionId(Aws::String&& value) { SetRevisionId(std::move(value)); return *this;}
-    inline GetDeploymentResult& WithRevisionId(const char* value) { SetRevisionId(value); return *this;}
+    inline const Aws::String& GetRevisionId() const { return m_revisionId; }
+    template<typename RevisionIdT = Aws::String>
+    void SetRevisionId(RevisionIdT&& value) { m_revisionIdHasBeenSet = true; m_revisionId = std::forward<RevisionIdT>(value); }
+    template<typename RevisionIdT = Aws::String>
+    GetDeploymentResult& WithRevisionId(RevisionIdT&& value) { SetRevisionId(std::forward<RevisionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the deployment.</p>
      */
-    inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
-    inline void SetDeploymentId(const Aws::String& value) { m_deploymentId = value; }
-    inline void SetDeploymentId(Aws::String&& value) { m_deploymentId = std::move(value); }
-    inline void SetDeploymentId(const char* value) { m_deploymentId.assign(value); }
-    inline GetDeploymentResult& WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
-    inline GetDeploymentResult& WithDeploymentId(Aws::String&& value) { SetDeploymentId(std::move(value)); return *this;}
-    inline GetDeploymentResult& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
+    inline const Aws::String& GetDeploymentId() const { return m_deploymentId; }
+    template<typename DeploymentIdT = Aws::String>
+    void SetDeploymentId(DeploymentIdT&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::forward<DeploymentIdT>(value); }
+    template<typename DeploymentIdT = Aws::String>
+    GetDeploymentResult& WithDeploymentId(DeploymentIdT&& value) { SetDeploymentId(std::forward<DeploymentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the deployment.</p>
      */
-    inline const Aws::String& GetDeploymentName() const{ return m_deploymentName; }
-    inline void SetDeploymentName(const Aws::String& value) { m_deploymentName = value; }
-    inline void SetDeploymentName(Aws::String&& value) { m_deploymentName = std::move(value); }
-    inline void SetDeploymentName(const char* value) { m_deploymentName.assign(value); }
-    inline GetDeploymentResult& WithDeploymentName(const Aws::String& value) { SetDeploymentName(value); return *this;}
-    inline GetDeploymentResult& WithDeploymentName(Aws::String&& value) { SetDeploymentName(std::move(value)); return *this;}
-    inline GetDeploymentResult& WithDeploymentName(const char* value) { SetDeploymentName(value); return *this;}
+    inline const Aws::String& GetDeploymentName() const { return m_deploymentName; }
+    template<typename DeploymentNameT = Aws::String>
+    void SetDeploymentName(DeploymentNameT&& value) { m_deploymentNameHasBeenSet = true; m_deploymentName = std::forward<DeploymentNameT>(value); }
+    template<typename DeploymentNameT = Aws::String>
+    GetDeploymentResult& WithDeploymentName(DeploymentNameT&& value) { SetDeploymentName(std::forward<DeploymentNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the deployment.</p>
      */
-    inline const DeploymentStatus& GetDeploymentStatus() const{ return m_deploymentStatus; }
-    inline void SetDeploymentStatus(const DeploymentStatus& value) { m_deploymentStatus = value; }
-    inline void SetDeploymentStatus(DeploymentStatus&& value) { m_deploymentStatus = std::move(value); }
-    inline GetDeploymentResult& WithDeploymentStatus(const DeploymentStatus& value) { SetDeploymentStatus(value); return *this;}
-    inline GetDeploymentResult& WithDeploymentStatus(DeploymentStatus&& value) { SetDeploymentStatus(std::move(value)); return *this;}
+    inline DeploymentStatus GetDeploymentStatus() const { return m_deploymentStatus; }
+    inline void SetDeploymentStatus(DeploymentStatus value) { m_deploymentStatusHasBeenSet = true; m_deploymentStatus = value; }
+    inline GetDeploymentResult& WithDeploymentStatus(DeploymentStatus value) { SetDeploymentStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the IoT job that applies the deployment to target devices.</p>
      */
-    inline const Aws::String& GetIotJobId() const{ return m_iotJobId; }
-    inline void SetIotJobId(const Aws::String& value) { m_iotJobId = value; }
-    inline void SetIotJobId(Aws::String&& value) { m_iotJobId = std::move(value); }
-    inline void SetIotJobId(const char* value) { m_iotJobId.assign(value); }
-    inline GetDeploymentResult& WithIotJobId(const Aws::String& value) { SetIotJobId(value); return *this;}
-    inline GetDeploymentResult& WithIotJobId(Aws::String&& value) { SetIotJobId(std::move(value)); return *this;}
-    inline GetDeploymentResult& WithIotJobId(const char* value) { SetIotJobId(value); return *this;}
+    inline const Aws::String& GetIotJobId() const { return m_iotJobId; }
+    template<typename IotJobIdT = Aws::String>
+    void SetIotJobId(IotJobIdT&& value) { m_iotJobIdHasBeenSet = true; m_iotJobId = std::forward<IotJobIdT>(value); }
+    template<typename IotJobIdT = Aws::String>
+    GetDeploymentResult& WithIotJobId(IotJobIdT&& value) { SetIotJobId(std::forward<IotJobIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -122,13 +110,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
      * of the IoT job that applies the deployment to target devices.</p>
      */
-    inline const Aws::String& GetIotJobArn() const{ return m_iotJobArn; }
-    inline void SetIotJobArn(const Aws::String& value) { m_iotJobArn = value; }
-    inline void SetIotJobArn(Aws::String&& value) { m_iotJobArn = std::move(value); }
-    inline void SetIotJobArn(const char* value) { m_iotJobArn.assign(value); }
-    inline GetDeploymentResult& WithIotJobArn(const Aws::String& value) { SetIotJobArn(value); return *this;}
-    inline GetDeploymentResult& WithIotJobArn(Aws::String&& value) { SetIotJobArn(std::move(value)); return *this;}
-    inline GetDeploymentResult& WithIotJobArn(const char* value) { SetIotJobArn(value); return *this;}
+    inline const Aws::String& GetIotJobArn() const { return m_iotJobArn; }
+    template<typename IotJobArnT = Aws::String>
+    void SetIotJobArn(IotJobArnT&& value) { m_iotJobArnHasBeenSet = true; m_iotJobArn = std::forward<IotJobArnT>(value); }
+    template<typename IotJobArnT = Aws::String>
+    GetDeploymentResult& WithIotJobArn(IotJobArnT&& value) { SetIotJobArn(std::forward<IotJobArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -137,17 +123,15 @@ namespace Model
      * a component, and each key's value is the version and configuration to deploy for
      * that component.</p>
      */
-    inline const Aws::Map<Aws::String, ComponentDeploymentSpecification>& GetComponents() const{ return m_components; }
-    inline void SetComponents(const Aws::Map<Aws::String, ComponentDeploymentSpecification>& value) { m_components = value; }
-    inline void SetComponents(Aws::Map<Aws::String, ComponentDeploymentSpecification>&& value) { m_components = std::move(value); }
-    inline GetDeploymentResult& WithComponents(const Aws::Map<Aws::String, ComponentDeploymentSpecification>& value) { SetComponents(value); return *this;}
-    inline GetDeploymentResult& WithComponents(Aws::Map<Aws::String, ComponentDeploymentSpecification>&& value) { SetComponents(std::move(value)); return *this;}
-    inline GetDeploymentResult& AddComponents(const Aws::String& key, const ComponentDeploymentSpecification& value) { m_components.emplace(key, value); return *this; }
-    inline GetDeploymentResult& AddComponents(Aws::String&& key, const ComponentDeploymentSpecification& value) { m_components.emplace(std::move(key), value); return *this; }
-    inline GetDeploymentResult& AddComponents(const Aws::String& key, ComponentDeploymentSpecification&& value) { m_components.emplace(key, std::move(value)); return *this; }
-    inline GetDeploymentResult& AddComponents(Aws::String&& key, ComponentDeploymentSpecification&& value) { m_components.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetDeploymentResult& AddComponents(const char* key, ComponentDeploymentSpecification&& value) { m_components.emplace(key, std::move(value)); return *this; }
-    inline GetDeploymentResult& AddComponents(const char* key, const ComponentDeploymentSpecification& value) { m_components.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, ComponentDeploymentSpecification>& GetComponents() const { return m_components; }
+    template<typename ComponentsT = Aws::Map<Aws::String, ComponentDeploymentSpecification>>
+    void SetComponents(ComponentsT&& value) { m_componentsHasBeenSet = true; m_components = std::forward<ComponentsT>(value); }
+    template<typename ComponentsT = Aws::Map<Aws::String, ComponentDeploymentSpecification>>
+    GetDeploymentResult& WithComponents(ComponentsT&& value) { SetComponents(std::forward<ComponentsT>(value)); return *this;}
+    template<typename ComponentsKeyT = Aws::String, typename ComponentsValueT = ComponentDeploymentSpecification>
+    GetDeploymentResult& AddComponents(ComponentsKeyT&& key, ComponentsValueT&& value) {
+      m_componentsHasBeenSet = true; m_components.emplace(std::forward<ComponentsKeyT>(key), std::forward<ComponentsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -155,11 +139,11 @@ namespace Model
      * <p>The deployment policies for the deployment. These policies define how the
      * deployment updates components and handles failure.</p>
      */
-    inline const DeploymentPolicies& GetDeploymentPolicies() const{ return m_deploymentPolicies; }
-    inline void SetDeploymentPolicies(const DeploymentPolicies& value) { m_deploymentPolicies = value; }
-    inline void SetDeploymentPolicies(DeploymentPolicies&& value) { m_deploymentPolicies = std::move(value); }
-    inline GetDeploymentResult& WithDeploymentPolicies(const DeploymentPolicies& value) { SetDeploymentPolicies(value); return *this;}
-    inline GetDeploymentResult& WithDeploymentPolicies(DeploymentPolicies&& value) { SetDeploymentPolicies(std::move(value)); return *this;}
+    inline const DeploymentPolicies& GetDeploymentPolicies() const { return m_deploymentPolicies; }
+    template<typename DeploymentPoliciesT = DeploymentPolicies>
+    void SetDeploymentPolicies(DeploymentPoliciesT&& value) { m_deploymentPoliciesHasBeenSet = true; m_deploymentPolicies = std::forward<DeploymentPoliciesT>(value); }
+    template<typename DeploymentPoliciesT = DeploymentPolicies>
+    GetDeploymentResult& WithDeploymentPolicies(DeploymentPoliciesT&& value) { SetDeploymentPolicies(std::forward<DeploymentPoliciesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -168,11 +152,11 @@ namespace Model
      * specifies the rollout, timeout, and stop configurations for the deployment
      * configuration.</p>
      */
-    inline const DeploymentIoTJobConfiguration& GetIotJobConfiguration() const{ return m_iotJobConfiguration; }
-    inline void SetIotJobConfiguration(const DeploymentIoTJobConfiguration& value) { m_iotJobConfiguration = value; }
-    inline void SetIotJobConfiguration(DeploymentIoTJobConfiguration&& value) { m_iotJobConfiguration = std::move(value); }
-    inline GetDeploymentResult& WithIotJobConfiguration(const DeploymentIoTJobConfiguration& value) { SetIotJobConfiguration(value); return *this;}
-    inline GetDeploymentResult& WithIotJobConfiguration(DeploymentIoTJobConfiguration&& value) { SetIotJobConfiguration(std::move(value)); return *this;}
+    inline const DeploymentIoTJobConfiguration& GetIotJobConfiguration() const { return m_iotJobConfiguration; }
+    template<typename IotJobConfigurationT = DeploymentIoTJobConfiguration>
+    void SetIotJobConfiguration(IotJobConfigurationT&& value) { m_iotJobConfigurationHasBeenSet = true; m_iotJobConfiguration = std::forward<IotJobConfigurationT>(value); }
+    template<typename IotJobConfigurationT = DeploymentIoTJobConfiguration>
+    GetDeploymentResult& WithIotJobConfiguration(IotJobConfigurationT&& value) { SetIotJobConfiguration(std::forward<IotJobConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -180,19 +164,19 @@ namespace Model
      * <p>The time at which the deployment was created, expressed in ISO 8601
      * format.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTimestamp() const{ return m_creationTimestamp; }
-    inline void SetCreationTimestamp(const Aws::Utils::DateTime& value) { m_creationTimestamp = value; }
-    inline void SetCreationTimestamp(Aws::Utils::DateTime&& value) { m_creationTimestamp = std::move(value); }
-    inline GetDeploymentResult& WithCreationTimestamp(const Aws::Utils::DateTime& value) { SetCreationTimestamp(value); return *this;}
-    inline GetDeploymentResult& WithCreationTimestamp(Aws::Utils::DateTime&& value) { SetCreationTimestamp(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTimestamp() const { return m_creationTimestamp; }
+    template<typename CreationTimestampT = Aws::Utils::DateTime>
+    void SetCreationTimestamp(CreationTimestampT&& value) { m_creationTimestampHasBeenSet = true; m_creationTimestamp = std::forward<CreationTimestampT>(value); }
+    template<typename CreationTimestampT = Aws::Utils::DateTime>
+    GetDeploymentResult& WithCreationTimestamp(CreationTimestampT&& value) { SetCreationTimestamp(std::forward<CreationTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Whether or not the deployment is the latest revision for its target.</p>
      */
-    inline bool GetIsLatestForTarget() const{ return m_isLatestForTarget; }
-    inline void SetIsLatestForTarget(bool value) { m_isLatestForTarget = value; }
+    inline bool GetIsLatestForTarget() const { return m_isLatestForTarget; }
+    inline void SetIsLatestForTarget(bool value) { m_isLatestForTargetHasBeenSet = true; m_isLatestForTarget = value; }
     inline GetDeploymentResult& WithIsLatestForTarget(bool value) { SetIsLatestForTarget(value); return *this;}
     ///@}
 
@@ -202,13 +186,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
      * within a subdeployment.</p>
      */
-    inline const Aws::String& GetParentTargetArn() const{ return m_parentTargetArn; }
-    inline void SetParentTargetArn(const Aws::String& value) { m_parentTargetArn = value; }
-    inline void SetParentTargetArn(Aws::String&& value) { m_parentTargetArn = std::move(value); }
-    inline void SetParentTargetArn(const char* value) { m_parentTargetArn.assign(value); }
-    inline GetDeploymentResult& WithParentTargetArn(const Aws::String& value) { SetParentTargetArn(value); return *this;}
-    inline GetDeploymentResult& WithParentTargetArn(Aws::String&& value) { SetParentTargetArn(std::move(value)); return *this;}
-    inline GetDeploymentResult& WithParentTargetArn(const char* value) { SetParentTargetArn(value); return *this;}
+    inline const Aws::String& GetParentTargetArn() const { return m_parentTargetArn; }
+    template<typename ParentTargetArnT = Aws::String>
+    void SetParentTargetArn(ParentTargetArnT&& value) { m_parentTargetArnHasBeenSet = true; m_parentTargetArn = std::forward<ParentTargetArnT>(value); }
+    template<typename ParentTargetArnT = Aws::String>
+    GetDeploymentResult& WithParentTargetArn(ParentTargetArnT&& value) { SetParentTargetArn(std::forward<ParentTargetArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -218,61 +200,71 @@ namespace Model
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
      * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline GetDeploymentResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline GetDeploymentResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline GetDeploymentResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline GetDeploymentResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetDeploymentResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetDeploymentResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetDeploymentResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetDeploymentResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetDeploymentResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    GetDeploymentResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    GetDeploymentResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetDeploymentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetDeploymentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetDeploymentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetDeploymentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_targetArn;
+    bool m_targetArnHasBeenSet = false;
 
     Aws::String m_revisionId;
+    bool m_revisionIdHasBeenSet = false;
 
     Aws::String m_deploymentId;
+    bool m_deploymentIdHasBeenSet = false;
 
     Aws::String m_deploymentName;
+    bool m_deploymentNameHasBeenSet = false;
 
-    DeploymentStatus m_deploymentStatus;
+    DeploymentStatus m_deploymentStatus{DeploymentStatus::NOT_SET};
+    bool m_deploymentStatusHasBeenSet = false;
 
     Aws::String m_iotJobId;
+    bool m_iotJobIdHasBeenSet = false;
 
     Aws::String m_iotJobArn;
+    bool m_iotJobArnHasBeenSet = false;
 
     Aws::Map<Aws::String, ComponentDeploymentSpecification> m_components;
+    bool m_componentsHasBeenSet = false;
 
     DeploymentPolicies m_deploymentPolicies;
+    bool m_deploymentPoliciesHasBeenSet = false;
 
     DeploymentIoTJobConfiguration m_iotJobConfiguration;
+    bool m_iotJobConfigurationHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTimestamp;
+    Aws::Utils::DateTime m_creationTimestamp{};
+    bool m_creationTimestampHasBeenSet = false;
 
-    bool m_isLatestForTarget;
+    bool m_isLatestForTarget{false};
+    bool m_isLatestForTargetHasBeenSet = false;
 
     Aws::String m_parentTargetArn;
+    bool m_parentTargetArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

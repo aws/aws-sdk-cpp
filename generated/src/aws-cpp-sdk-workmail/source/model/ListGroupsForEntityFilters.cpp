@@ -18,13 +18,7 @@ namespace WorkMail
 namespace Model
 {
 
-ListGroupsForEntityFilters::ListGroupsForEntityFilters() : 
-    m_groupNamePrefixHasBeenSet(false)
-{
-}
-
 ListGroupsForEntityFilters::ListGroupsForEntityFilters(JsonView jsonValue)
-  : ListGroupsForEntityFilters()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ListGroupsForEntityFilters& ListGroupsForEntityFilters::operator =(JsonView json
   if(jsonValue.ValueExists("GroupNamePrefix"))
   {
     m_groupNamePrefix = jsonValue.GetString("GroupNamePrefix");
-
     m_groupNamePrefixHasBeenSet = true;
   }
-
   return *this;
 }
 

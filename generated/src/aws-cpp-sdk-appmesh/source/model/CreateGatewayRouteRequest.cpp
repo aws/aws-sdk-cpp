@@ -15,18 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-CreateGatewayRouteRequest::CreateGatewayRouteRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_gatewayRouteNameHasBeenSet(false),
-    m_meshNameHasBeenSet(false),
-    m_meshOwnerHasBeenSet(false),
-    m_specHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_virtualGatewayNameHasBeenSet(false)
-{
-}
-
 Aws::String CreateGatewayRouteRequest::SerializePayload() const
 {
   JsonValue payload;

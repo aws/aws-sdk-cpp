@@ -18,20 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-ServiceConfiguration::ServiceConfiguration() : 
-    m_memory(0),
-    m_memoryHasBeenSet(false),
-    m_cpu(0),
-    m_cpuHasBeenSet(false),
-    m_containerConfigurationsHasBeenSet(false),
-    m_autoScalingConfiguration(AutoScalingConfiguration::NOT_SET),
-    m_autoScalingConfigurationHasBeenSet(false),
-    m_taskDefinitionArnHasBeenSet(false)
-{
-}
-
 ServiceConfiguration::ServiceConfiguration(JsonView jsonValue)
-  : ServiceConfiguration()
 {
   *this = jsonValue;
 }
@@ -41,17 +28,13 @@ ServiceConfiguration& ServiceConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("memory"))
   {
     m_memory = jsonValue.GetInteger("memory");
-
     m_memoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cpu"))
   {
     m_cpu = jsonValue.GetInteger("cpu");
-
     m_cpuHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("containerConfigurations"))
   {
     Aws::Utils::Array<JsonView> containerConfigurationsJsonList = jsonValue.GetArray("containerConfigurations");
@@ -61,21 +44,16 @@ ServiceConfiguration& ServiceConfiguration::operator =(JsonView jsonValue)
     }
     m_containerConfigurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("autoScalingConfiguration"))
   {
     m_autoScalingConfiguration = AutoScalingConfigurationMapper::GetAutoScalingConfigurationForName(jsonValue.GetString("autoScalingConfiguration"));
-
     m_autoScalingConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskDefinitionArn"))
   {
     m_taskDefinitionArn = jsonValue.GetString("taskDefinitionArn");
-
     m_taskDefinitionArnHasBeenSet = true;
   }
-
   return *this;
 }
 

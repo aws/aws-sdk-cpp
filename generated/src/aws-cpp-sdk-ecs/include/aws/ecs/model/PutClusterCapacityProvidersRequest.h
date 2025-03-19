@@ -23,7 +23,7 @@ namespace Model
   class PutClusterCapacityProvidersRequest : public ECSRequest
   {
   public:
-    AWS_ECS_API PutClusterCapacityProvidersRequest();
+    AWS_ECS_API PutClusterCapacityProvidersRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * the capacity provider settings for. If you don't specify a cluster, the default
      * cluster is assumed.</p>
      */
-    inline const Aws::String& GetCluster() const{ return m_cluster; }
+    inline const Aws::String& GetCluster() const { return m_cluster; }
     inline bool ClusterHasBeenSet() const { return m_clusterHasBeenSet; }
-    inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
-    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = std::move(value); }
-    inline void SetCluster(const char* value) { m_clusterHasBeenSet = true; m_cluster.assign(value); }
-    inline PutClusterCapacityProvidersRequest& WithCluster(const Aws::String& value) { SetCluster(value); return *this;}
-    inline PutClusterCapacityProvidersRequest& WithCluster(Aws::String&& value) { SetCluster(std::move(value)); return *this;}
-    inline PutClusterCapacityProvidersRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
+    template<typename ClusterT = Aws::String>
+    void SetCluster(ClusterT&& value) { m_clusterHasBeenSet = true; m_cluster = std::forward<ClusterT>(value); }
+    template<typename ClusterT = Aws::String>
+    PutClusterCapacityProvidersRequest& WithCluster(ClusterT&& value) { SetCluster(std::forward<ClusterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,15 +62,14 @@ namespace Model
      * Fargate capacity providers are available to all accounts and only need to be
      * associated with a cluster to be used.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCapacityProviders() const{ return m_capacityProviders; }
+    inline const Aws::Vector<Aws::String>& GetCapacityProviders() const { return m_capacityProviders; }
     inline bool CapacityProvidersHasBeenSet() const { return m_capacityProvidersHasBeenSet; }
-    inline void SetCapacityProviders(const Aws::Vector<Aws::String>& value) { m_capacityProvidersHasBeenSet = true; m_capacityProviders = value; }
-    inline void SetCapacityProviders(Aws::Vector<Aws::String>&& value) { m_capacityProvidersHasBeenSet = true; m_capacityProviders = std::move(value); }
-    inline PutClusterCapacityProvidersRequest& WithCapacityProviders(const Aws::Vector<Aws::String>& value) { SetCapacityProviders(value); return *this;}
-    inline PutClusterCapacityProvidersRequest& WithCapacityProviders(Aws::Vector<Aws::String>&& value) { SetCapacityProviders(std::move(value)); return *this;}
-    inline PutClusterCapacityProvidersRequest& AddCapacityProviders(const Aws::String& value) { m_capacityProvidersHasBeenSet = true; m_capacityProviders.push_back(value); return *this; }
-    inline PutClusterCapacityProvidersRequest& AddCapacityProviders(Aws::String&& value) { m_capacityProvidersHasBeenSet = true; m_capacityProviders.push_back(std::move(value)); return *this; }
-    inline PutClusterCapacityProvidersRequest& AddCapacityProviders(const char* value) { m_capacityProvidersHasBeenSet = true; m_capacityProviders.push_back(value); return *this; }
+    template<typename CapacityProvidersT = Aws::Vector<Aws::String>>
+    void SetCapacityProviders(CapacityProvidersT&& value) { m_capacityProvidersHasBeenSet = true; m_capacityProviders = std::forward<CapacityProvidersT>(value); }
+    template<typename CapacityProvidersT = Aws::Vector<Aws::String>>
+    PutClusterCapacityProvidersRequest& WithCapacityProviders(CapacityProvidersT&& value) { SetCapacityProviders(std::forward<CapacityProvidersT>(value)); return *this;}
+    template<typename CapacityProvidersT = Aws::String>
+    PutClusterCapacityProvidersRequest& AddCapacityProviders(CapacityProvidersT&& value) { m_capacityProvidersHasBeenSet = true; m_capacityProviders.emplace_back(std::forward<CapacityProvidersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -96,14 +93,14 @@ namespace Model
      * Fargate capacity providers are available to all accounts and only need to be
      * associated with a cluster to be used.</p>
      */
-    inline const Aws::Vector<CapacityProviderStrategyItem>& GetDefaultCapacityProviderStrategy() const{ return m_defaultCapacityProviderStrategy; }
+    inline const Aws::Vector<CapacityProviderStrategyItem>& GetDefaultCapacityProviderStrategy() const { return m_defaultCapacityProviderStrategy; }
     inline bool DefaultCapacityProviderStrategyHasBeenSet() const { return m_defaultCapacityProviderStrategyHasBeenSet; }
-    inline void SetDefaultCapacityProviderStrategy(const Aws::Vector<CapacityProviderStrategyItem>& value) { m_defaultCapacityProviderStrategyHasBeenSet = true; m_defaultCapacityProviderStrategy = value; }
-    inline void SetDefaultCapacityProviderStrategy(Aws::Vector<CapacityProviderStrategyItem>&& value) { m_defaultCapacityProviderStrategyHasBeenSet = true; m_defaultCapacityProviderStrategy = std::move(value); }
-    inline PutClusterCapacityProvidersRequest& WithDefaultCapacityProviderStrategy(const Aws::Vector<CapacityProviderStrategyItem>& value) { SetDefaultCapacityProviderStrategy(value); return *this;}
-    inline PutClusterCapacityProvidersRequest& WithDefaultCapacityProviderStrategy(Aws::Vector<CapacityProviderStrategyItem>&& value) { SetDefaultCapacityProviderStrategy(std::move(value)); return *this;}
-    inline PutClusterCapacityProvidersRequest& AddDefaultCapacityProviderStrategy(const CapacityProviderStrategyItem& value) { m_defaultCapacityProviderStrategyHasBeenSet = true; m_defaultCapacityProviderStrategy.push_back(value); return *this; }
-    inline PutClusterCapacityProvidersRequest& AddDefaultCapacityProviderStrategy(CapacityProviderStrategyItem&& value) { m_defaultCapacityProviderStrategyHasBeenSet = true; m_defaultCapacityProviderStrategy.push_back(std::move(value)); return *this; }
+    template<typename DefaultCapacityProviderStrategyT = Aws::Vector<CapacityProviderStrategyItem>>
+    void SetDefaultCapacityProviderStrategy(DefaultCapacityProviderStrategyT&& value) { m_defaultCapacityProviderStrategyHasBeenSet = true; m_defaultCapacityProviderStrategy = std::forward<DefaultCapacityProviderStrategyT>(value); }
+    template<typename DefaultCapacityProviderStrategyT = Aws::Vector<CapacityProviderStrategyItem>>
+    PutClusterCapacityProvidersRequest& WithDefaultCapacityProviderStrategy(DefaultCapacityProviderStrategyT&& value) { SetDefaultCapacityProviderStrategy(std::forward<DefaultCapacityProviderStrategyT>(value)); return *this;}
+    template<typename DefaultCapacityProviderStrategyT = CapacityProviderStrategyItem>
+    PutClusterCapacityProvidersRequest& AddDefaultCapacityProviderStrategy(DefaultCapacityProviderStrategyT&& value) { m_defaultCapacityProviderStrategyHasBeenSet = true; m_defaultCapacityProviderStrategy.emplace_back(std::forward<DefaultCapacityProviderStrategyT>(value)); return *this; }
     ///@}
   private:
 

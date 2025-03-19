@@ -38,7 +38,7 @@ namespace Model
   class BurnRateConfiguration
   {
   public:
-    AWS_APPLICATIONSIGNALS_API BurnRateConfiguration();
+    AWS_APPLICATIONSIGNALS_API BurnRateConfiguration() = default;
     AWS_APPLICATIONSIGNALS_API BurnRateConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONSIGNALS_API BurnRateConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONSIGNALS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,14 @@ namespace Model
     /**
      * <p>The number of minutes to use as the look-back window.</p>
      */
-    inline int GetLookBackWindowMinutes() const{ return m_lookBackWindowMinutes; }
+    inline int GetLookBackWindowMinutes() const { return m_lookBackWindowMinutes; }
     inline bool LookBackWindowMinutesHasBeenSet() const { return m_lookBackWindowMinutesHasBeenSet; }
     inline void SetLookBackWindowMinutes(int value) { m_lookBackWindowMinutesHasBeenSet = true; m_lookBackWindowMinutes = value; }
     inline BurnRateConfiguration& WithLookBackWindowMinutes(int value) { SetLookBackWindowMinutes(value); return *this;}
     ///@}
   private:
 
-    int m_lookBackWindowMinutes;
+    int m_lookBackWindowMinutes{0};
     bool m_lookBackWindowMinutesHasBeenSet = false;
   };
 

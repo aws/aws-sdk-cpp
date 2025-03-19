@@ -12,11 +12,6 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopImageBuilderRequest::StopImageBuilderRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String StopImageBuilderRequest::SerializePayload() const
 {
   JsonValue payload;

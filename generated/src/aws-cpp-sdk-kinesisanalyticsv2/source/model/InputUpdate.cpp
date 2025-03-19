@@ -18,19 +18,7 @@ namespace KinesisAnalyticsV2
 namespace Model
 {
 
-InputUpdate::InputUpdate() : 
-    m_inputIdHasBeenSet(false),
-    m_namePrefixUpdateHasBeenSet(false),
-    m_inputProcessingConfigurationUpdateHasBeenSet(false),
-    m_kinesisStreamsInputUpdateHasBeenSet(false),
-    m_kinesisFirehoseInputUpdateHasBeenSet(false),
-    m_inputSchemaUpdateHasBeenSet(false),
-    m_inputParallelismUpdateHasBeenSet(false)
-{
-}
-
 InputUpdate::InputUpdate(JsonView jsonValue)
-  : InputUpdate()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ InputUpdate& InputUpdate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InputId"))
   {
     m_inputId = jsonValue.GetString("InputId");
-
     m_inputIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NamePrefixUpdate"))
   {
     m_namePrefixUpdate = jsonValue.GetString("NamePrefixUpdate");
-
     m_namePrefixUpdateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InputProcessingConfigurationUpdate"))
   {
     m_inputProcessingConfigurationUpdate = jsonValue.GetObject("InputProcessingConfigurationUpdate");
-
     m_inputProcessingConfigurationUpdateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KinesisStreamsInputUpdate"))
   {
     m_kinesisStreamsInputUpdate = jsonValue.GetObject("KinesisStreamsInputUpdate");
-
     m_kinesisStreamsInputUpdateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KinesisFirehoseInputUpdate"))
   {
     m_kinesisFirehoseInputUpdate = jsonValue.GetObject("KinesisFirehoseInputUpdate");
-
     m_kinesisFirehoseInputUpdateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InputSchemaUpdate"))
   {
     m_inputSchemaUpdate = jsonValue.GetObject("InputSchemaUpdate");
-
     m_inputSchemaUpdateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InputParallelismUpdate"))
   {
     m_inputParallelismUpdate = jsonValue.GetObject("InputParallelismUpdate");
-
     m_inputParallelismUpdateHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -10,14 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DisassociateEnclaveCertificateIamRoleRequest::DisassociateEnclaveCertificateIamRoleRequest() : 
-    m_certificateArnHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateEnclaveCertificateIamRoleRequest::SerializePayload() const
 {
   Aws::StringStream ss;

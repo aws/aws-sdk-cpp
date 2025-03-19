@@ -15,17 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListEntityOwnersRequest::ListEntityOwnersRequest() : 
-    m_domainIdentifierHasBeenSet(false),
-    m_entityIdentifierHasBeenSet(false),
-    m_entityType(DataZoneEntityType::NOT_SET),
-    m_entityTypeHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListEntityOwnersRequest::SerializePayload() const
 {
   return {};

@@ -12,13 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchDeleteTopicReviewedAnswerRequest::BatchDeleteTopicReviewedAnswerRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_topicIdHasBeenSet(false),
-    m_answerIdsHasBeenSet(false)
-{
-}
-
 Aws::String BatchDeleteTopicReviewedAnswerRequest::SerializePayload() const
 {
   JsonValue payload;

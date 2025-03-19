@@ -32,7 +32,7 @@ namespace Model
   class S3ObjectDoc
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API S3ObjectDoc();
+    AWS_BEDROCKAGENTRUNTIME_API S3ObjectDoc() = default;
     AWS_BEDROCKAGENTRUNTIME_API S3ObjectDoc(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API S3ObjectDoc& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The file location of the S3 wrapper object.</p>
      */
-    inline const Aws::String& GetUri() const{ return m_uri; }
+    inline const Aws::String& GetUri() const { return m_uri; }
     inline bool UriHasBeenSet() const { return m_uriHasBeenSet; }
-    inline void SetUri(const Aws::String& value) { m_uriHasBeenSet = true; m_uri = value; }
-    inline void SetUri(Aws::String&& value) { m_uriHasBeenSet = true; m_uri = std::move(value); }
-    inline void SetUri(const char* value) { m_uriHasBeenSet = true; m_uri.assign(value); }
-    inline S3ObjectDoc& WithUri(const Aws::String& value) { SetUri(value); return *this;}
-    inline S3ObjectDoc& WithUri(Aws::String&& value) { SetUri(std::move(value)); return *this;}
-    inline S3ObjectDoc& WithUri(const char* value) { SetUri(value); return *this;}
+    template<typename UriT = Aws::String>
+    void SetUri(UriT&& value) { m_uriHasBeenSet = true; m_uri = std::forward<UriT>(value); }
+    template<typename UriT = Aws::String>
+    S3ObjectDoc& WithUri(UriT&& value) { SetUri(std::forward<UriT>(value)); return *this;}
     ///@}
   private:
 

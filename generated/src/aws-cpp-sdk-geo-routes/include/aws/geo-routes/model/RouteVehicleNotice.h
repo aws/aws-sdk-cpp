@@ -35,7 +35,7 @@ namespace Model
   class RouteVehicleNotice
   {
   public:
-    AWS_GEOROUTES_API RouteVehicleNotice();
+    AWS_GEOROUTES_API RouteVehicleNotice() = default;
     AWS_GEOROUTES_API RouteVehicleNotice(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RouteVehicleNotice& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,26 +45,24 @@ namespace Model
     /**
      * <p>Code corresponding to the issue.</p>
      */
-    inline const RouteVehicleNoticeCode& GetCode() const{ return m_code; }
+    inline RouteVehicleNoticeCode GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const RouteVehicleNoticeCode& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(RouteVehicleNoticeCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline RouteVehicleNotice& WithCode(const RouteVehicleNoticeCode& value) { SetCode(value); return *this;}
-    inline RouteVehicleNotice& WithCode(RouteVehicleNoticeCode&& value) { SetCode(std::move(value)); return *this;}
+    inline void SetCode(RouteVehicleNoticeCode value) { m_codeHasBeenSet = true; m_code = value; }
+    inline RouteVehicleNotice& WithCode(RouteVehicleNoticeCode value) { SetCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Additional details of the notice.</p>
      */
-    inline const Aws::Vector<RouteVehicleNoticeDetail>& GetDetails() const{ return m_details; }
+    inline const Aws::Vector<RouteVehicleNoticeDetail>& GetDetails() const { return m_details; }
     inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
-    inline void SetDetails(const Aws::Vector<RouteVehicleNoticeDetail>& value) { m_detailsHasBeenSet = true; m_details = value; }
-    inline void SetDetails(Aws::Vector<RouteVehicleNoticeDetail>&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
-    inline RouteVehicleNotice& WithDetails(const Aws::Vector<RouteVehicleNoticeDetail>& value) { SetDetails(value); return *this;}
-    inline RouteVehicleNotice& WithDetails(Aws::Vector<RouteVehicleNoticeDetail>&& value) { SetDetails(std::move(value)); return *this;}
-    inline RouteVehicleNotice& AddDetails(const RouteVehicleNoticeDetail& value) { m_detailsHasBeenSet = true; m_details.push_back(value); return *this; }
-    inline RouteVehicleNotice& AddDetails(RouteVehicleNoticeDetail&& value) { m_detailsHasBeenSet = true; m_details.push_back(std::move(value)); return *this; }
+    template<typename DetailsT = Aws::Vector<RouteVehicleNoticeDetail>>
+    void SetDetails(DetailsT&& value) { m_detailsHasBeenSet = true; m_details = std::forward<DetailsT>(value); }
+    template<typename DetailsT = Aws::Vector<RouteVehicleNoticeDetail>>
+    RouteVehicleNotice& WithDetails(DetailsT&& value) { SetDetails(std::forward<DetailsT>(value)); return *this;}
+    template<typename DetailsT = RouteVehicleNoticeDetail>
+    RouteVehicleNotice& AddDetails(DetailsT&& value) { m_detailsHasBeenSet = true; m_details.emplace_back(std::forward<DetailsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -73,22 +71,20 @@ namespace Model
      * ignored, High impact notices must be evaluated further to determine the
      * impact.</p>
      */
-    inline const RouteNoticeImpact& GetImpact() const{ return m_impact; }
+    inline RouteNoticeImpact GetImpact() const { return m_impact; }
     inline bool ImpactHasBeenSet() const { return m_impactHasBeenSet; }
-    inline void SetImpact(const RouteNoticeImpact& value) { m_impactHasBeenSet = true; m_impact = value; }
-    inline void SetImpact(RouteNoticeImpact&& value) { m_impactHasBeenSet = true; m_impact = std::move(value); }
-    inline RouteVehicleNotice& WithImpact(const RouteNoticeImpact& value) { SetImpact(value); return *this;}
-    inline RouteVehicleNotice& WithImpact(RouteNoticeImpact&& value) { SetImpact(std::move(value)); return *this;}
+    inline void SetImpact(RouteNoticeImpact value) { m_impactHasBeenSet = true; m_impact = value; }
+    inline RouteVehicleNotice& WithImpact(RouteNoticeImpact value) { SetImpact(value); return *this;}
     ///@}
   private:
 
-    RouteVehicleNoticeCode m_code;
+    RouteVehicleNoticeCode m_code{RouteVehicleNoticeCode::NOT_SET};
     bool m_codeHasBeenSet = false;
 
     Aws::Vector<RouteVehicleNoticeDetail> m_details;
     bool m_detailsHasBeenSet = false;
 
-    RouteNoticeImpact m_impact;
+    RouteNoticeImpact m_impact{RouteNoticeImpact::NOT_SET};
     bool m_impactHasBeenSet = false;
   };
 

@@ -32,7 +32,7 @@ namespace Model
   class RetentionMetrics
   {
   public:
-    AWS_GLUE_API RetentionMetrics();
+    AWS_GLUE_API RetentionMetrics() = default;
     AWS_GLUE_API RetentionMetrics(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API RetentionMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>A structure containing the Iceberg retention metrics for the optimizer
      * run.</p>
      */
-    inline const IcebergRetentionMetrics& GetIcebergMetrics() const{ return m_icebergMetrics; }
+    inline const IcebergRetentionMetrics& GetIcebergMetrics() const { return m_icebergMetrics; }
     inline bool IcebergMetricsHasBeenSet() const { return m_icebergMetricsHasBeenSet; }
-    inline void SetIcebergMetrics(const IcebergRetentionMetrics& value) { m_icebergMetricsHasBeenSet = true; m_icebergMetrics = value; }
-    inline void SetIcebergMetrics(IcebergRetentionMetrics&& value) { m_icebergMetricsHasBeenSet = true; m_icebergMetrics = std::move(value); }
-    inline RetentionMetrics& WithIcebergMetrics(const IcebergRetentionMetrics& value) { SetIcebergMetrics(value); return *this;}
-    inline RetentionMetrics& WithIcebergMetrics(IcebergRetentionMetrics&& value) { SetIcebergMetrics(std::move(value)); return *this;}
+    template<typename IcebergMetricsT = IcebergRetentionMetrics>
+    void SetIcebergMetrics(IcebergMetricsT&& value) { m_icebergMetricsHasBeenSet = true; m_icebergMetrics = std::forward<IcebergMetricsT>(value); }
+    template<typename IcebergMetricsT = IcebergRetentionMetrics>
+    RetentionMetrics& WithIcebergMetrics(IcebergMetricsT&& value) { SetIcebergMetrics(std::forward<IcebergMetricsT>(value)); return *this;}
     ///@}
   private:
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetBackendResult::GetBackendResult()
-{
-}
-
 GetBackendResult::GetBackendResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,23 @@ GetBackendResult& GetBackendResult::operator =(const Aws::AmazonWebServiceResult
   if(jsonValue.ValueExists("amplifyFeatureFlags"))
   {
     m_amplifyFeatureFlags = jsonValue.GetString("amplifyFeatureFlags");
-
+    m_amplifyFeatureFlagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("amplifyMetaConfig"))
   {
     m_amplifyMetaConfig = jsonValue.GetString("amplifyMetaConfig");
-
+    m_amplifyMetaConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("appId"))
   {
     m_appId = jsonValue.GetString("appId");
-
+    m_appIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("appName"))
   {
     m_appName = jsonValue.GetString("appName");
-
+    m_appNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("backendEnvironmentList"))
   {
     Aws::Utils::Array<JsonView> backendEnvironmentListJsonList = jsonValue.GetArray("backendEnvironmentList");
@@ -60,26 +52,25 @@ GetBackendResult& GetBackendResult::operator =(const Aws::AmazonWebServiceResult
     {
       m_backendEnvironmentList.push_back(backendEnvironmentListJsonList[backendEnvironmentListIndex].AsString());
     }
+    m_backendEnvironmentListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("backendEnvironmentName"))
   {
     m_backendEnvironmentName = jsonValue.GetString("backendEnvironmentName");
-
+    m_backendEnvironmentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("error"))
   {
     m_error = jsonValue.GetString("error");
-
+    m_errorHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

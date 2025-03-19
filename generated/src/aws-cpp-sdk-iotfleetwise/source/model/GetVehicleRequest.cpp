@@ -12,11 +12,6 @@ using namespace Aws::IoTFleetWise::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetVehicleRequest::GetVehicleRequest() : 
-    m_vehicleNameHasBeenSet(false)
-{
-}
-
 Aws::String GetVehicleRequest::SerializePayload() const
 {
   JsonValue payload;

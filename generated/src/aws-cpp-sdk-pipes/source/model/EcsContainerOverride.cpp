@@ -18,23 +18,7 @@ namespace Pipes
 namespace Model
 {
 
-EcsContainerOverride::EcsContainerOverride() : 
-    m_commandHasBeenSet(false),
-    m_cpu(0),
-    m_cpuHasBeenSet(false),
-    m_environmentHasBeenSet(false),
-    m_environmentFilesHasBeenSet(false),
-    m_memory(0),
-    m_memoryHasBeenSet(false),
-    m_memoryReservation(0),
-    m_memoryReservationHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_resourceRequirementsHasBeenSet(false)
-{
-}
-
 EcsContainerOverride::EcsContainerOverride(JsonView jsonValue)
-  : EcsContainerOverride()
 {
   *this = jsonValue;
 }
@@ -50,14 +34,11 @@ EcsContainerOverride& EcsContainerOverride::operator =(JsonView jsonValue)
     }
     m_commandHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Cpu"))
   {
     m_cpu = jsonValue.GetInteger("Cpu");
-
     m_cpuHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Environment"))
   {
     Aws::Utils::Array<JsonView> environmentJsonList = jsonValue.GetArray("Environment");
@@ -67,7 +48,6 @@ EcsContainerOverride& EcsContainerOverride::operator =(JsonView jsonValue)
     }
     m_environmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnvironmentFiles"))
   {
     Aws::Utils::Array<JsonView> environmentFilesJsonList = jsonValue.GetArray("EnvironmentFiles");
@@ -77,28 +57,21 @@ EcsContainerOverride& EcsContainerOverride::operator =(JsonView jsonValue)
     }
     m_environmentFilesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Memory"))
   {
     m_memory = jsonValue.GetInteger("Memory");
-
     m_memoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MemoryReservation"))
   {
     m_memoryReservation = jsonValue.GetInteger("MemoryReservation");
-
     m_memoryReservationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceRequirements"))
   {
     Aws::Utils::Array<JsonView> resourceRequirementsJsonList = jsonValue.GetArray("ResourceRequirements");
@@ -108,7 +81,6 @@ EcsContainerOverride& EcsContainerOverride::operator =(JsonView jsonValue)
     }
     m_resourceRequirementsHasBeenSet = true;
   }
-
   return *this;
 }
 

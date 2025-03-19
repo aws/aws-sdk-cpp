@@ -20,21 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VerifiedAccessEndpointRdsOptions::VerifiedAccessEndpointRdsOptions() : 
-    m_protocol(VerifiedAccessEndpointProtocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_rdsDbInstanceArnHasBeenSet(false),
-    m_rdsDbClusterArnHasBeenSet(false),
-    m_rdsDbProxyArnHasBeenSet(false),
-    m_rdsEndpointHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false)
-{
-}
-
 VerifiedAccessEndpointRdsOptions::VerifiedAccessEndpointRdsOptions(const XmlNode& xmlNode)
-  : VerifiedAccessEndpointRdsOptions()
 {
   *this = xmlNode;
 }
@@ -48,7 +34,7 @@ VerifiedAccessEndpointRdsOptions& VerifiedAccessEndpointRdsOptions::operator =(c
     XmlNode protocolNode = resultNode.FirstChild("protocol");
     if(!protocolNode.IsNull())
     {
-      m_protocol = VerifiedAccessEndpointProtocolMapper::GetVerifiedAccessEndpointProtocolForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText()).c_str()).c_str());
+      m_protocol = VerifiedAccessEndpointProtocolMapper::GetVerifiedAccessEndpointProtocolForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText()).c_str()));
       m_protocolHasBeenSet = true;
     }
     XmlNode portNode = resultNode.FirstChild("port");
@@ -85,6 +71,7 @@ VerifiedAccessEndpointRdsOptions& VerifiedAccessEndpointRdsOptions::operator =(c
     if(!subnetIdsNode.IsNull())
     {
       XmlNode subnetIdsMember = subnetIdsNode.FirstChild("item");
+      m_subnetIdsHasBeenSet = !subnetIdsMember.IsNull();
       while(!subnetIdsMember.IsNull())
       {
         m_subnetIds.push_back(subnetIdsMember.GetText());

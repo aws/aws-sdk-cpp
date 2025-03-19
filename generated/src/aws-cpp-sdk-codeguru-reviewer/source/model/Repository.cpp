@@ -18,16 +18,7 @@ namespace CodeGuruReviewer
 namespace Model
 {
 
-Repository::Repository() : 
-    m_codeCommitHasBeenSet(false),
-    m_bitbucketHasBeenSet(false),
-    m_gitHubEnterpriseServerHasBeenSet(false),
-    m_s3BucketHasBeenSet(false)
-{
-}
-
 Repository::Repository(JsonView jsonValue)
-  : Repository()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ Repository& Repository::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CodeCommit"))
   {
     m_codeCommit = jsonValue.GetObject("CodeCommit");
-
     m_codeCommitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Bitbucket"))
   {
     m_bitbucket = jsonValue.GetObject("Bitbucket");
-
     m_bitbucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GitHubEnterpriseServer"))
   {
     m_gitHubEnterpriseServer = jsonValue.GetObject("GitHubEnterpriseServer");
-
     m_gitHubEnterpriseServerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Bucket"))
   {
     m_s3Bucket = jsonValue.GetObject("S3Bucket");
-
     m_s3BucketHasBeenSet = true;
   }
-
   return *this;
 }
 

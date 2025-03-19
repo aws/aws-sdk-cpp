@@ -29,7 +29,7 @@ namespace Model
   class CreateContactRequest : public ConnectRequest
   {
   public:
-    AWS_CONNECT_API CreateContactRequest();
+    AWS_CONNECT_API CreateContactRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline CreateContactRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline CreateContactRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline CreateContactRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    CreateContactRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
      * retries safe with idempotent APIs</a>.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateContactRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateContactRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateContactRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateContactRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,14 +75,12 @@ namespace Model
      * <p>The unique identifier for an Amazon Connect contact. This identifier is
      * related to the contact starting.</p>
      */
-    inline const Aws::String& GetRelatedContactId() const{ return m_relatedContactId; }
+    inline const Aws::String& GetRelatedContactId() const { return m_relatedContactId; }
     inline bool RelatedContactIdHasBeenSet() const { return m_relatedContactIdHasBeenSet; }
-    inline void SetRelatedContactId(const Aws::String& value) { m_relatedContactIdHasBeenSet = true; m_relatedContactId = value; }
-    inline void SetRelatedContactId(Aws::String&& value) { m_relatedContactIdHasBeenSet = true; m_relatedContactId = std::move(value); }
-    inline void SetRelatedContactId(const char* value) { m_relatedContactIdHasBeenSet = true; m_relatedContactId.assign(value); }
-    inline CreateContactRequest& WithRelatedContactId(const Aws::String& value) { SetRelatedContactId(value); return *this;}
-    inline CreateContactRequest& WithRelatedContactId(Aws::String&& value) { SetRelatedContactId(std::move(value)); return *this;}
-    inline CreateContactRequest& WithRelatedContactId(const char* value) { SetRelatedContactId(value); return *this;}
+    template<typename RelatedContactIdT = Aws::String>
+    void SetRelatedContactId(RelatedContactIdT&& value) { m_relatedContactIdHasBeenSet = true; m_relatedContactId = std::forward<RelatedContactIdT>(value); }
+    template<typename RelatedContactIdT = Aws::String>
+    CreateContactRequest& WithRelatedContactId(RelatedContactIdT&& value) { SetRelatedContactId(std::forward<RelatedContactIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,19 +91,16 @@ namespace Model
      * key-value pairs per contact. Attribute keys can include only alphanumeric, dash,
      * and underscore characters.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline CreateContactRequest& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
-    inline CreateContactRequest& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline CreateContactRequest& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
-    inline CreateContactRequest& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
-    inline CreateContactRequest& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
-    inline CreateContactRequest& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateContactRequest& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
-    inline CreateContactRequest& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
-    inline CreateContactRequest& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
+    template<typename AttributesT = Aws::Map<Aws::String, Aws::String>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Map<Aws::String, Aws::String>>
+    CreateContactRequest& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    template<typename AttributesKeyT = Aws::String, typename AttributesValueT = Aws::String>
+    CreateContactRequest& AddAttributes(AttributesKeyT&& key, AttributesValueT&& value) {
+      m_attributesHasBeenSet = true; m_attributes.emplace(std::forward<AttributesKeyT>(key), std::forward<AttributesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -118,18 +109,16 @@ namespace Model
      * Tasks can have the following reference types at the time of creation: URL |
      * NUMBER | STRING | DATE | EMAIL | ATTACHMENT.</p>
      */
-    inline const Aws::Map<Aws::String, Reference>& GetReferences() const{ return m_references; }
+    inline const Aws::Map<Aws::String, Reference>& GetReferences() const { return m_references; }
     inline bool ReferencesHasBeenSet() const { return m_referencesHasBeenSet; }
-    inline void SetReferences(const Aws::Map<Aws::String, Reference>& value) { m_referencesHasBeenSet = true; m_references = value; }
-    inline void SetReferences(Aws::Map<Aws::String, Reference>&& value) { m_referencesHasBeenSet = true; m_references = std::move(value); }
-    inline CreateContactRequest& WithReferences(const Aws::Map<Aws::String, Reference>& value) { SetReferences(value); return *this;}
-    inline CreateContactRequest& WithReferences(Aws::Map<Aws::String, Reference>&& value) { SetReferences(std::move(value)); return *this;}
-    inline CreateContactRequest& AddReferences(const Aws::String& key, const Reference& value) { m_referencesHasBeenSet = true; m_references.emplace(key, value); return *this; }
-    inline CreateContactRequest& AddReferences(Aws::String&& key, const Reference& value) { m_referencesHasBeenSet = true; m_references.emplace(std::move(key), value); return *this; }
-    inline CreateContactRequest& AddReferences(const Aws::String& key, Reference&& value) { m_referencesHasBeenSet = true; m_references.emplace(key, std::move(value)); return *this; }
-    inline CreateContactRequest& AddReferences(Aws::String&& key, Reference&& value) { m_referencesHasBeenSet = true; m_references.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateContactRequest& AddReferences(const char* key, Reference&& value) { m_referencesHasBeenSet = true; m_references.emplace(key, std::move(value)); return *this; }
-    inline CreateContactRequest& AddReferences(const char* key, const Reference& value) { m_referencesHasBeenSet = true; m_references.emplace(key, value); return *this; }
+    template<typename ReferencesT = Aws::Map<Aws::String, Reference>>
+    void SetReferences(ReferencesT&& value) { m_referencesHasBeenSet = true; m_references = std::forward<ReferencesT>(value); }
+    template<typename ReferencesT = Aws::Map<Aws::String, Reference>>
+    CreateContactRequest& WithReferences(ReferencesT&& value) { SetReferences(std::forward<ReferencesT>(value)); return *this;}
+    template<typename ReferencesKeyT = Aws::String, typename ReferencesValueT = Reference>
+    CreateContactRequest& AddReferences(ReferencesKeyT&& key, ReferencesValueT&& value) {
+      m_referencesHasBeenSet = true; m_references.emplace(std::forward<ReferencesKeyT>(key), std::forward<ReferencesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -138,12 +127,10 @@ namespace Model
      * the EMAIL channel. The following information that states other channels are
      * supported is incorrect. We are working to update this topic.</p> 
      */
-    inline const Channel& GetChannel() const{ return m_channel; }
+    inline Channel GetChannel() const { return m_channel; }
     inline bool ChannelHasBeenSet() const { return m_channelHasBeenSet; }
-    inline void SetChannel(const Channel& value) { m_channelHasBeenSet = true; m_channel = value; }
-    inline void SetChannel(Channel&& value) { m_channelHasBeenSet = true; m_channel = std::move(value); }
-    inline CreateContactRequest& WithChannel(const Channel& value) { SetChannel(value); return *this;}
-    inline CreateContactRequest& WithChannel(Channel&& value) { SetChannel(std::move(value)); return *this;}
+    inline void SetChannel(Channel value) { m_channelHasBeenSet = true; m_channel = value; }
+    inline CreateContactRequest& WithChannel(Channel value) { SetChannel(value); return *this;}
     ///@}
 
     ///@{
@@ -153,19 +140,17 @@ namespace Model
      * The following information that states other initiation methods are supported is
      * incorrect. We are working to update this topic.</p> 
      */
-    inline const ContactInitiationMethod& GetInitiationMethod() const{ return m_initiationMethod; }
+    inline ContactInitiationMethod GetInitiationMethod() const { return m_initiationMethod; }
     inline bool InitiationMethodHasBeenSet() const { return m_initiationMethodHasBeenSet; }
-    inline void SetInitiationMethod(const ContactInitiationMethod& value) { m_initiationMethodHasBeenSet = true; m_initiationMethod = value; }
-    inline void SetInitiationMethod(ContactInitiationMethod&& value) { m_initiationMethodHasBeenSet = true; m_initiationMethod = std::move(value); }
-    inline CreateContactRequest& WithInitiationMethod(const ContactInitiationMethod& value) { SetInitiationMethod(value); return *this;}
-    inline CreateContactRequest& WithInitiationMethod(ContactInitiationMethod&& value) { SetInitiationMethod(std::move(value)); return *this;}
+    inline void SetInitiationMethod(ContactInitiationMethod value) { m_initiationMethodHasBeenSet = true; m_initiationMethod = value; }
+    inline CreateContactRequest& WithInitiationMethod(ContactInitiationMethod value) { SetInitiationMethod(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Number of minutes the contact will be active for before expiring</p>
      */
-    inline int GetExpiryDurationInMinutes() const{ return m_expiryDurationInMinutes; }
+    inline int GetExpiryDurationInMinutes() const { return m_expiryDurationInMinutes; }
     inline bool ExpiryDurationInMinutesHasBeenSet() const { return m_expiryDurationInMinutesHasBeenSet; }
     inline void SetExpiryDurationInMinutes(int value) { m_expiryDurationInMinutesHasBeenSet = true; m_expiryDurationInMinutes = value; }
     inline CreateContactRequest& WithExpiryDurationInMinutes(int value) { SetExpiryDurationInMinutes(value); return *this;}
@@ -175,52 +160,46 @@ namespace Model
     /**
      * <p>User details for the contact</p>
      */
-    inline const UserInfo& GetUserInfo() const{ return m_userInfo; }
+    inline const UserInfo& GetUserInfo() const { return m_userInfo; }
     inline bool UserInfoHasBeenSet() const { return m_userInfoHasBeenSet; }
-    inline void SetUserInfo(const UserInfo& value) { m_userInfoHasBeenSet = true; m_userInfo = value; }
-    inline void SetUserInfo(UserInfo&& value) { m_userInfoHasBeenSet = true; m_userInfo = std::move(value); }
-    inline CreateContactRequest& WithUserInfo(const UserInfo& value) { SetUserInfo(value); return *this;}
-    inline CreateContactRequest& WithUserInfo(UserInfo&& value) { SetUserInfo(std::move(value)); return *this;}
+    template<typename UserInfoT = UserInfo>
+    void SetUserInfo(UserInfoT&& value) { m_userInfoHasBeenSet = true; m_userInfo = std::forward<UserInfoT>(value); }
+    template<typename UserInfoT = UserInfo>
+    CreateContactRequest& WithUserInfo(UserInfoT&& value) { SetUserInfo(std::forward<UserInfoT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Initial state of the contact when it's created</p>
      */
-    inline const InitiateAs& GetInitiateAs() const{ return m_initiateAs; }
+    inline InitiateAs GetInitiateAs() const { return m_initiateAs; }
     inline bool InitiateAsHasBeenSet() const { return m_initiateAsHasBeenSet; }
-    inline void SetInitiateAs(const InitiateAs& value) { m_initiateAsHasBeenSet = true; m_initiateAs = value; }
-    inline void SetInitiateAs(InitiateAs&& value) { m_initiateAsHasBeenSet = true; m_initiateAs = std::move(value); }
-    inline CreateContactRequest& WithInitiateAs(const InitiateAs& value) { SetInitiateAs(value); return *this;}
-    inline CreateContactRequest& WithInitiateAs(InitiateAs&& value) { SetInitiateAs(std::move(value)); return *this;}
+    inline void SetInitiateAs(InitiateAs value) { m_initiateAsHasBeenSet = true; m_initiateAs = value; }
+    inline CreateContactRequest& WithInitiateAs(InitiateAs value) { SetInitiateAs(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of a the contact.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateContactRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateContactRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateContactRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateContactRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the contact.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateContactRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateContactRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateContactRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateContactRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -235,18 +214,16 @@ namespace Model
      * <code>SegmentAttributes</code> like { <code> "connect:ContactExpiry":
      * {"ValueMap" : { "ExpiryDuration": { "ValueInteger": 135}}}}</code>. </p> 
      */
-    inline const Aws::Map<Aws::String, SegmentAttributeValue>& GetSegmentAttributes() const{ return m_segmentAttributes; }
+    inline const Aws::Map<Aws::String, SegmentAttributeValue>& GetSegmentAttributes() const { return m_segmentAttributes; }
     inline bool SegmentAttributesHasBeenSet() const { return m_segmentAttributesHasBeenSet; }
-    inline void SetSegmentAttributes(const Aws::Map<Aws::String, SegmentAttributeValue>& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes = value; }
-    inline void SetSegmentAttributes(Aws::Map<Aws::String, SegmentAttributeValue>&& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes = std::move(value); }
-    inline CreateContactRequest& WithSegmentAttributes(const Aws::Map<Aws::String, SegmentAttributeValue>& value) { SetSegmentAttributes(value); return *this;}
-    inline CreateContactRequest& WithSegmentAttributes(Aws::Map<Aws::String, SegmentAttributeValue>&& value) { SetSegmentAttributes(std::move(value)); return *this;}
-    inline CreateContactRequest& AddSegmentAttributes(const Aws::String& key, const SegmentAttributeValue& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes.emplace(key, value); return *this; }
-    inline CreateContactRequest& AddSegmentAttributes(Aws::String&& key, const SegmentAttributeValue& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes.emplace(std::move(key), value); return *this; }
-    inline CreateContactRequest& AddSegmentAttributes(const Aws::String& key, SegmentAttributeValue&& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes.emplace(key, std::move(value)); return *this; }
-    inline CreateContactRequest& AddSegmentAttributes(Aws::String&& key, SegmentAttributeValue&& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateContactRequest& AddSegmentAttributes(const char* key, SegmentAttributeValue&& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes.emplace(key, std::move(value)); return *this; }
-    inline CreateContactRequest& AddSegmentAttributes(const char* key, const SegmentAttributeValue& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes.emplace(key, value); return *this; }
+    template<typename SegmentAttributesT = Aws::Map<Aws::String, SegmentAttributeValue>>
+    void SetSegmentAttributes(SegmentAttributesT&& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes = std::forward<SegmentAttributesT>(value); }
+    template<typename SegmentAttributesT = Aws::Map<Aws::String, SegmentAttributeValue>>
+    CreateContactRequest& WithSegmentAttributes(SegmentAttributesT&& value) { SetSegmentAttributes(std::forward<SegmentAttributesT>(value)); return *this;}
+    template<typename SegmentAttributesKeyT = Aws::String, typename SegmentAttributesValueT = SegmentAttributeValue>
+    CreateContactRequest& AddSegmentAttributes(SegmentAttributesKeyT&& key, SegmentAttributesValueT&& value) {
+      m_segmentAttributesHasBeenSet = true; m_segmentAttributes.emplace(std::forward<SegmentAttributesKeyT>(key), std::forward<SegmentAttributesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -257,14 +234,12 @@ namespace Model
      * Amazon Connect Contact Lens with external voice systems</a> in the <i>Amazon
      * Connect Administrator Guide</i>.</p>
      */
-    inline const Aws::String& GetPreviousContactId() const{ return m_previousContactId; }
+    inline const Aws::String& GetPreviousContactId() const { return m_previousContactId; }
     inline bool PreviousContactIdHasBeenSet() const { return m_previousContactIdHasBeenSet; }
-    inline void SetPreviousContactId(const Aws::String& value) { m_previousContactIdHasBeenSet = true; m_previousContactId = value; }
-    inline void SetPreviousContactId(Aws::String&& value) { m_previousContactIdHasBeenSet = true; m_previousContactId = std::move(value); }
-    inline void SetPreviousContactId(const char* value) { m_previousContactIdHasBeenSet = true; m_previousContactId.assign(value); }
-    inline CreateContactRequest& WithPreviousContactId(const Aws::String& value) { SetPreviousContactId(value); return *this;}
-    inline CreateContactRequest& WithPreviousContactId(Aws::String&& value) { SetPreviousContactId(std::move(value)); return *this;}
-    inline CreateContactRequest& WithPreviousContactId(const char* value) { SetPreviousContactId(value); return *this;}
+    template<typename PreviousContactIdT = Aws::String>
+    void SetPreviousContactId(PreviousContactIdT&& value) { m_previousContactIdHasBeenSet = true; m_previousContactId = std::forward<PreviousContactIdT>(value); }
+    template<typename PreviousContactIdT = Aws::String>
+    CreateContactRequest& WithPreviousContactId(PreviousContactIdT&& value) { SetPreviousContactId(std::forward<PreviousContactIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -283,19 +258,19 @@ namespace Model
     Aws::Map<Aws::String, Reference> m_references;
     bool m_referencesHasBeenSet = false;
 
-    Channel m_channel;
+    Channel m_channel{Channel::NOT_SET};
     bool m_channelHasBeenSet = false;
 
-    ContactInitiationMethod m_initiationMethod;
+    ContactInitiationMethod m_initiationMethod{ContactInitiationMethod::NOT_SET};
     bool m_initiationMethodHasBeenSet = false;
 
-    int m_expiryDurationInMinutes;
+    int m_expiryDurationInMinutes{0};
     bool m_expiryDurationInMinutesHasBeenSet = false;
 
     UserInfo m_userInfo;
     bool m_userInfoHasBeenSet = false;
 
-    InitiateAs m_initiateAs;
+    InitiateAs m_initiateAs{InitiateAs::NOT_SET};
     bool m_initiateAsHasBeenSet = false;
 
     Aws::String m_name;

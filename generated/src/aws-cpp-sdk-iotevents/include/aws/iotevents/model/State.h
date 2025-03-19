@@ -34,7 +34,7 @@ namespace Model
   class State
   {
   public:
-    AWS_IOTEVENTS_API State();
+    AWS_IOTEVENTS_API State() = default;
     AWS_IOTEVENTS_API State(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API State& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The name of the state.</p>
      */
-    inline const Aws::String& GetStateName() const{ return m_stateName; }
+    inline const Aws::String& GetStateName() const { return m_stateName; }
     inline bool StateNameHasBeenSet() const { return m_stateNameHasBeenSet; }
-    inline void SetStateName(const Aws::String& value) { m_stateNameHasBeenSet = true; m_stateName = value; }
-    inline void SetStateName(Aws::String&& value) { m_stateNameHasBeenSet = true; m_stateName = std::move(value); }
-    inline void SetStateName(const char* value) { m_stateNameHasBeenSet = true; m_stateName.assign(value); }
-    inline State& WithStateName(const Aws::String& value) { SetStateName(value); return *this;}
-    inline State& WithStateName(Aws::String&& value) { SetStateName(std::move(value)); return *this;}
-    inline State& WithStateName(const char* value) { SetStateName(value); return *this;}
+    template<typename StateNameT = Aws::String>
+    void SetStateName(StateNameT&& value) { m_stateNameHasBeenSet = true; m_stateName = std::forward<StateNameT>(value); }
+    template<typename StateNameT = Aws::String>
+    State& WithStateName(StateNameT&& value) { SetStateName(std::forward<StateNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +57,12 @@ namespace Model
      * <p>When an input is received and the <code>condition</code> is TRUE, perform the
      * specified <code>actions</code>.</p>
      */
-    inline const OnInputLifecycle& GetOnInput() const{ return m_onInput; }
+    inline const OnInputLifecycle& GetOnInput() const { return m_onInput; }
     inline bool OnInputHasBeenSet() const { return m_onInputHasBeenSet; }
-    inline void SetOnInput(const OnInputLifecycle& value) { m_onInputHasBeenSet = true; m_onInput = value; }
-    inline void SetOnInput(OnInputLifecycle&& value) { m_onInputHasBeenSet = true; m_onInput = std::move(value); }
-    inline State& WithOnInput(const OnInputLifecycle& value) { SetOnInput(value); return *this;}
-    inline State& WithOnInput(OnInputLifecycle&& value) { SetOnInput(std::move(value)); return *this;}
+    template<typename OnInputT = OnInputLifecycle>
+    void SetOnInput(OnInputT&& value) { m_onInputHasBeenSet = true; m_onInput = std::forward<OnInputT>(value); }
+    template<typename OnInputT = OnInputLifecycle>
+    State& WithOnInput(OnInputT&& value) { SetOnInput(std::forward<OnInputT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +70,12 @@ namespace Model
      * <p>When entering this state, perform these <code>actions</code> if the
      * <code>condition</code> is TRUE.</p>
      */
-    inline const OnEnterLifecycle& GetOnEnter() const{ return m_onEnter; }
+    inline const OnEnterLifecycle& GetOnEnter() const { return m_onEnter; }
     inline bool OnEnterHasBeenSet() const { return m_onEnterHasBeenSet; }
-    inline void SetOnEnter(const OnEnterLifecycle& value) { m_onEnterHasBeenSet = true; m_onEnter = value; }
-    inline void SetOnEnter(OnEnterLifecycle&& value) { m_onEnterHasBeenSet = true; m_onEnter = std::move(value); }
-    inline State& WithOnEnter(const OnEnterLifecycle& value) { SetOnEnter(value); return *this;}
-    inline State& WithOnEnter(OnEnterLifecycle&& value) { SetOnEnter(std::move(value)); return *this;}
+    template<typename OnEnterT = OnEnterLifecycle>
+    void SetOnEnter(OnEnterT&& value) { m_onEnterHasBeenSet = true; m_onEnter = std::forward<OnEnterT>(value); }
+    template<typename OnEnterT = OnEnterLifecycle>
+    State& WithOnEnter(OnEnterT&& value) { SetOnEnter(std::forward<OnEnterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,12 +83,12 @@ namespace Model
      * <p>When exiting this state, perform these <code>actions</code> if the specified
      * <code>condition</code> is <code>TRUE</code>.</p>
      */
-    inline const OnExitLifecycle& GetOnExit() const{ return m_onExit; }
+    inline const OnExitLifecycle& GetOnExit() const { return m_onExit; }
     inline bool OnExitHasBeenSet() const { return m_onExitHasBeenSet; }
-    inline void SetOnExit(const OnExitLifecycle& value) { m_onExitHasBeenSet = true; m_onExit = value; }
-    inline void SetOnExit(OnExitLifecycle&& value) { m_onExitHasBeenSet = true; m_onExit = std::move(value); }
-    inline State& WithOnExit(const OnExitLifecycle& value) { SetOnExit(value); return *this;}
-    inline State& WithOnExit(OnExitLifecycle&& value) { SetOnExit(std::move(value)); return *this;}
+    template<typename OnExitT = OnExitLifecycle>
+    void SetOnExit(OnExitT&& value) { m_onExitHasBeenSet = true; m_onExit = std::forward<OnExitT>(value); }
+    template<typename OnExitT = OnExitLifecycle>
+    State& WithOnExit(OnExitT&& value) { SetOnExit(std::forward<OnExitT>(value)); return *this;}
     ///@}
   private:
 

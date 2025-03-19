@@ -18,18 +18,7 @@ namespace SagemakerEdgeManager
 namespace Model
 {
 
-DeploymentResult::DeploymentResult() : 
-    m_deploymentNameHasBeenSet(false),
-    m_deploymentStatusHasBeenSet(false),
-    m_deploymentStatusMessageHasBeenSet(false),
-    m_deploymentStartTimeHasBeenSet(false),
-    m_deploymentEndTimeHasBeenSet(false),
-    m_deploymentModelsHasBeenSet(false)
-{
-}
-
 DeploymentResult::DeploymentResult(JsonView jsonValue)
-  : DeploymentResult()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ DeploymentResult& DeploymentResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DeploymentName"))
   {
     m_deploymentName = jsonValue.GetString("DeploymentName");
-
     m_deploymentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeploymentStatus"))
   {
     m_deploymentStatus = jsonValue.GetString("DeploymentStatus");
-
     m_deploymentStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeploymentStatusMessage"))
   {
     m_deploymentStatusMessage = jsonValue.GetString("DeploymentStatusMessage");
-
     m_deploymentStatusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeploymentStartTime"))
   {
     m_deploymentStartTime = jsonValue.GetDouble("DeploymentStartTime");
-
     m_deploymentStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeploymentEndTime"))
   {
     m_deploymentEndTime = jsonValue.GetDouble("DeploymentEndTime");
-
     m_deploymentEndTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeploymentModels"))
   {
     Aws::Utils::Array<JsonView> deploymentModelsJsonList = jsonValue.GetArray("DeploymentModels");
@@ -80,7 +59,6 @@ DeploymentResult& DeploymentResult::operator =(JsonView jsonValue)
     }
     m_deploymentModelsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetBucketEncryptionResult::GetBucketEncryptionResult()
-{
-}
-
 GetBucketEncryptionResult::GetBucketEncryptionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -33,6 +29,7 @@ GetBucketEncryptionResult& GetBucketEncryptionResult::operator =(const Aws::Amaz
   if(!resultNode.IsNull())
   {
     m_serverSideEncryptionConfiguration = resultNode;
+    m_serverSideEncryptionConfigurationHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
@@ -40,6 +37,7 @@ GetBucketEncryptionResult& GetBucketEncryptionResult::operator =(const Aws::Amaz
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

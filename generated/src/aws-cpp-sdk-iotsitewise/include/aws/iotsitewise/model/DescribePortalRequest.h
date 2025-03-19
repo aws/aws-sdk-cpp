@@ -21,7 +21,7 @@ namespace Model
   class DescribePortalRequest : public IoTSiteWiseRequest
   {
   public:
-    AWS_IOTSITEWISE_API DescribePortalRequest();
+    AWS_IOTSITEWISE_API DescribePortalRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The ID of the portal.</p>
      */
-    inline const Aws::String& GetPortalId() const{ return m_portalId; }
+    inline const Aws::String& GetPortalId() const { return m_portalId; }
     inline bool PortalIdHasBeenSet() const { return m_portalIdHasBeenSet; }
-    inline void SetPortalId(const Aws::String& value) { m_portalIdHasBeenSet = true; m_portalId = value; }
-    inline void SetPortalId(Aws::String&& value) { m_portalIdHasBeenSet = true; m_portalId = std::move(value); }
-    inline void SetPortalId(const char* value) { m_portalIdHasBeenSet = true; m_portalId.assign(value); }
-    inline DescribePortalRequest& WithPortalId(const Aws::String& value) { SetPortalId(value); return *this;}
-    inline DescribePortalRequest& WithPortalId(Aws::String&& value) { SetPortalId(std::move(value)); return *this;}
-    inline DescribePortalRequest& WithPortalId(const char* value) { SetPortalId(value); return *this;}
+    template<typename PortalIdT = Aws::String>
+    void SetPortalId(PortalIdT&& value) { m_portalIdHasBeenSet = true; m_portalId = std::forward<PortalIdT>(value); }
+    template<typename PortalIdT = Aws::String>
+    DescribePortalRequest& WithPortalId(PortalIdT&& value) { SetPortalId(std::forward<PortalIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -20,22 +20,7 @@ namespace EC2
 namespace Model
 {
 
-LaunchTemplateInstanceMetadataOptionsRequest::LaunchTemplateInstanceMetadataOptionsRequest() : 
-    m_httpTokens(LaunchTemplateHttpTokensState::NOT_SET),
-    m_httpTokensHasBeenSet(false),
-    m_httpPutResponseHopLimit(0),
-    m_httpPutResponseHopLimitHasBeenSet(false),
-    m_httpEndpoint(LaunchTemplateInstanceMetadataEndpointState::NOT_SET),
-    m_httpEndpointHasBeenSet(false),
-    m_httpProtocolIpv6(LaunchTemplateInstanceMetadataProtocolIpv6::NOT_SET),
-    m_httpProtocolIpv6HasBeenSet(false),
-    m_instanceMetadataTags(LaunchTemplateInstanceMetadataTagsState::NOT_SET),
-    m_instanceMetadataTagsHasBeenSet(false)
-{
-}
-
 LaunchTemplateInstanceMetadataOptionsRequest::LaunchTemplateInstanceMetadataOptionsRequest(const XmlNode& xmlNode)
-  : LaunchTemplateInstanceMetadataOptionsRequest()
 {
   *this = xmlNode;
 }
@@ -49,7 +34,7 @@ LaunchTemplateInstanceMetadataOptionsRequest& LaunchTemplateInstanceMetadataOpti
     XmlNode httpTokensNode = resultNode.FirstChild("HttpTokens");
     if(!httpTokensNode.IsNull())
     {
-      m_httpTokens = LaunchTemplateHttpTokensStateMapper::GetLaunchTemplateHttpTokensStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(httpTokensNode.GetText()).c_str()).c_str());
+      m_httpTokens = LaunchTemplateHttpTokensStateMapper::GetLaunchTemplateHttpTokensStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(httpTokensNode.GetText()).c_str()));
       m_httpTokensHasBeenSet = true;
     }
     XmlNode httpPutResponseHopLimitNode = resultNode.FirstChild("HttpPutResponseHopLimit");
@@ -61,19 +46,19 @@ LaunchTemplateInstanceMetadataOptionsRequest& LaunchTemplateInstanceMetadataOpti
     XmlNode httpEndpointNode = resultNode.FirstChild("HttpEndpoint");
     if(!httpEndpointNode.IsNull())
     {
-      m_httpEndpoint = LaunchTemplateInstanceMetadataEndpointStateMapper::GetLaunchTemplateInstanceMetadataEndpointStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(httpEndpointNode.GetText()).c_str()).c_str());
+      m_httpEndpoint = LaunchTemplateInstanceMetadataEndpointStateMapper::GetLaunchTemplateInstanceMetadataEndpointStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(httpEndpointNode.GetText()).c_str()));
       m_httpEndpointHasBeenSet = true;
     }
     XmlNode httpProtocolIpv6Node = resultNode.FirstChild("HttpProtocolIpv6");
     if(!httpProtocolIpv6Node.IsNull())
     {
-      m_httpProtocolIpv6 = LaunchTemplateInstanceMetadataProtocolIpv6Mapper::GetLaunchTemplateInstanceMetadataProtocolIpv6ForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(httpProtocolIpv6Node.GetText()).c_str()).c_str());
+      m_httpProtocolIpv6 = LaunchTemplateInstanceMetadataProtocolIpv6Mapper::GetLaunchTemplateInstanceMetadataProtocolIpv6ForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(httpProtocolIpv6Node.GetText()).c_str()));
       m_httpProtocolIpv6HasBeenSet = true;
     }
     XmlNode instanceMetadataTagsNode = resultNode.FirstChild("InstanceMetadataTags");
     if(!instanceMetadataTagsNode.IsNull())
     {
-      m_instanceMetadataTags = LaunchTemplateInstanceMetadataTagsStateMapper::GetLaunchTemplateInstanceMetadataTagsStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceMetadataTagsNode.GetText()).c_str()).c_str());
+      m_instanceMetadataTags = LaunchTemplateInstanceMetadataTagsStateMapper::GetLaunchTemplateInstanceMetadataTagsStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceMetadataTagsNode.GetText()).c_str()));
       m_instanceMetadataTagsHasBeenSet = true;
     }
   }

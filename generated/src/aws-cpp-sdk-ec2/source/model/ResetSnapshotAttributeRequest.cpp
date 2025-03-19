@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ResetSnapshotAttributeRequest::ResetSnapshotAttributeRequest() : 
-    m_attribute(SnapshotAttributeName::NOT_SET),
-    m_attributeHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String ResetSnapshotAttributeRequest::SerializePayload() const
 {
   Aws::StringStream ss;

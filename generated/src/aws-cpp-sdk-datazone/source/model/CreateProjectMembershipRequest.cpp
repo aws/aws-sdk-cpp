@@ -12,15 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateProjectMembershipRequest::CreateProjectMembershipRequest() : 
-    m_designation(UserDesignation::NOT_SET),
-    m_designationHasBeenSet(false),
-    m_domainIdentifierHasBeenSet(false),
-    m_memberHasBeenSet(false),
-    m_projectIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String CreateProjectMembershipRequest::SerializePayload() const
 {
   JsonValue payload;

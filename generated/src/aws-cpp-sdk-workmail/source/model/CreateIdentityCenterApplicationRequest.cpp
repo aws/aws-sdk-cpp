@@ -12,14 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateIdentityCenterApplicationRequest::CreateIdentityCenterApplicationRequest() : 
-    m_nameHasBeenSet(false),
-    m_instanceArnHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateIdentityCenterApplicationRequest::SerializePayload() const
 {
   JsonValue payload;

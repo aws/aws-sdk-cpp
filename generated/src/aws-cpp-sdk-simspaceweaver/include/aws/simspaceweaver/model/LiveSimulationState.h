@@ -34,7 +34,7 @@ namespace Model
   class LiveSimulationState
   {
   public:
-    AWS_SIMSPACEWEAVER_API LiveSimulationState();
+    AWS_SIMSPACEWEAVER_API LiveSimulationState() = default;
     AWS_SIMSPACEWEAVER_API LiveSimulationState(Aws::Utils::Json::JsonView jsonValue);
     AWS_SIMSPACEWEAVER_API LiveSimulationState& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SIMSPACEWEAVER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,14 @@ namespace Model
      * <p>A list of simulation clocks.</p>  <p>At this time, a simulation has
      * only one clock.</p> 
      */
-    inline const Aws::Vector<SimulationClock>& GetClocks() const{ return m_clocks; }
+    inline const Aws::Vector<SimulationClock>& GetClocks() const { return m_clocks; }
     inline bool ClocksHasBeenSet() const { return m_clocksHasBeenSet; }
-    inline void SetClocks(const Aws::Vector<SimulationClock>& value) { m_clocksHasBeenSet = true; m_clocks = value; }
-    inline void SetClocks(Aws::Vector<SimulationClock>&& value) { m_clocksHasBeenSet = true; m_clocks = std::move(value); }
-    inline LiveSimulationState& WithClocks(const Aws::Vector<SimulationClock>& value) { SetClocks(value); return *this;}
-    inline LiveSimulationState& WithClocks(Aws::Vector<SimulationClock>&& value) { SetClocks(std::move(value)); return *this;}
-    inline LiveSimulationState& AddClocks(const SimulationClock& value) { m_clocksHasBeenSet = true; m_clocks.push_back(value); return *this; }
-    inline LiveSimulationState& AddClocks(SimulationClock&& value) { m_clocksHasBeenSet = true; m_clocks.push_back(std::move(value)); return *this; }
+    template<typename ClocksT = Aws::Vector<SimulationClock>>
+    void SetClocks(ClocksT&& value) { m_clocksHasBeenSet = true; m_clocks = std::forward<ClocksT>(value); }
+    template<typename ClocksT = Aws::Vector<SimulationClock>>
+    LiveSimulationState& WithClocks(ClocksT&& value) { SetClocks(std::forward<ClocksT>(value)); return *this;}
+    template<typename ClocksT = SimulationClock>
+    LiveSimulationState& AddClocks(ClocksT&& value) { m_clocksHasBeenSet = true; m_clocks.emplace_back(std::forward<ClocksT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -62,14 +62,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains">Key
      * concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.</p>
      */
-    inline const Aws::Vector<Domain>& GetDomains() const{ return m_domains; }
+    inline const Aws::Vector<Domain>& GetDomains() const { return m_domains; }
     inline bool DomainsHasBeenSet() const { return m_domainsHasBeenSet; }
-    inline void SetDomains(const Aws::Vector<Domain>& value) { m_domainsHasBeenSet = true; m_domains = value; }
-    inline void SetDomains(Aws::Vector<Domain>&& value) { m_domainsHasBeenSet = true; m_domains = std::move(value); }
-    inline LiveSimulationState& WithDomains(const Aws::Vector<Domain>& value) { SetDomains(value); return *this;}
-    inline LiveSimulationState& WithDomains(Aws::Vector<Domain>&& value) { SetDomains(std::move(value)); return *this;}
-    inline LiveSimulationState& AddDomains(const Domain& value) { m_domainsHasBeenSet = true; m_domains.push_back(value); return *this; }
-    inline LiveSimulationState& AddDomains(Domain&& value) { m_domainsHasBeenSet = true; m_domains.push_back(std::move(value)); return *this; }
+    template<typename DomainsT = Aws::Vector<Domain>>
+    void SetDomains(DomainsT&& value) { m_domainsHasBeenSet = true; m_domains = std::forward<DomainsT>(value); }
+    template<typename DomainsT = Aws::Vector<Domain>>
+    LiveSimulationState& WithDomains(DomainsT&& value) { SetDomains(std::forward<DomainsT>(value)); return *this;}
+    template<typename DomainsT = Domain>
+    LiveSimulationState& AddDomains(DomainsT&& value) { m_domainsHasBeenSet = true; m_domains.emplace_back(std::forward<DomainsT>(value)); return *this; }
     ///@}
   private:
 

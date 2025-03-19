@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListMediaAnalysisJobsResult::ListMediaAnalysisJobsResult()
-{
-}
-
 ListMediaAnalysisJobsResult::ListMediaAnalysisJobsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListMediaAnalysisJobsResult& ListMediaAnalysisJobsResult::operator =(const Aws::
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MediaAnalysisJobs"))
   {
     Aws::Utils::Array<JsonView> mediaAnalysisJobsJsonList = jsonValue.GetArray("MediaAnalysisJobs");
@@ -42,14 +37,15 @@ ListMediaAnalysisJobsResult& ListMediaAnalysisJobsResult::operator =(const Aws::
     {
       m_mediaAnalysisJobs.push_back(mediaAnalysisJobsJsonList[mediaAnalysisJobsIndex].AsObject());
     }
+    m_mediaAnalysisJobsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

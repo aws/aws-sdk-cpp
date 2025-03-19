@@ -12,13 +12,6 @@ using namespace Aws::MigrationHubStrategyRecommendations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartRecommendationReportGenerationRequest::StartRecommendationReportGenerationRequest() : 
-    m_groupIdFilterHasBeenSet(false),
-    m_outputFormat(OutputFormat::NOT_SET),
-    m_outputFormatHasBeenSet(false)
-{
-}
-
 Aws::String StartRecommendationReportGenerationRequest::SerializePayload() const
 {
   JsonValue payload;

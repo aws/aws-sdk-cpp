@@ -17,15 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeLocationAzureBlobResult::DescribeLocationAzureBlobResult() : 
-    m_authenticationType(AzureBlobAuthenticationType::NOT_SET),
-    m_blobType(AzureBlobType::NOT_SET),
-    m_accessTier(AzureAccessTier::NOT_SET)
-{
-}
-
 DescribeLocationAzureBlobResult::DescribeLocationAzureBlobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeLocationAzureBlobResult()
 {
   *this = result;
 }
@@ -36,33 +28,28 @@ DescribeLocationAzureBlobResult& DescribeLocationAzureBlobResult::operator =(con
   if(jsonValue.ValueExists("LocationArn"))
   {
     m_locationArn = jsonValue.GetString("LocationArn");
-
+    m_locationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LocationUri"))
   {
     m_locationUri = jsonValue.GetString("LocationUri");
-
+    m_locationUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthenticationType"))
   {
     m_authenticationType = AzureBlobAuthenticationTypeMapper::GetAzureBlobAuthenticationTypeForName(jsonValue.GetString("AuthenticationType"));
-
+    m_authenticationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BlobType"))
   {
     m_blobType = AzureBlobTypeMapper::GetAzureBlobTypeForName(jsonValue.GetString("BlobType"));
-
+    m_blobTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccessTier"))
   {
     m_accessTier = AzureAccessTierMapper::GetAzureAccessTierForName(jsonValue.GetString("AccessTier"));
-
+    m_accessTierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AgentArns"))
   {
     Aws::Utils::Array<JsonView> agentArnsJsonList = jsonValue.GetArray("AgentArns");
@@ -70,20 +57,20 @@ DescribeLocationAzureBlobResult& DescribeLocationAzureBlobResult::operator =(con
     {
       m_agentArns.push_back(agentArnsJsonList[agentArnsIndex].AsString());
     }
+    m_agentArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

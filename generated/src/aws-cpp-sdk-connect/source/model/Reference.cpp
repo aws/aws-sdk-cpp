@@ -18,19 +18,7 @@ namespace Connect
 namespace Model
 {
 
-Reference::Reference() : 
-    m_valueHasBeenSet(false),
-    m_type(ReferenceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_status(ReferenceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_statusReasonHasBeenSet(false)
-{
-}
-
 Reference::Reference(JsonView jsonValue)
-  : Reference()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ Reference& Reference::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ReferenceTypeMapper::GetReferenceTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ReferenceStatusMapper::GetReferenceStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusReason"))
   {
     m_statusReason = jsonValue.GetString("StatusReason");
-
     m_statusReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

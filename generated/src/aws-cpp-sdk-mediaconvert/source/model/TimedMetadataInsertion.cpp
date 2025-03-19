@@ -18,13 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-TimedMetadataInsertion::TimedMetadataInsertion() : 
-    m_id3InsertionsHasBeenSet(false)
-{
-}
-
 TimedMetadataInsertion::TimedMetadataInsertion(JsonView jsonValue)
-  : TimedMetadataInsertion()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ TimedMetadataInsertion& TimedMetadataInsertion::operator =(JsonView jsonValue)
     }
     m_id3InsertionsHasBeenSet = true;
   }
-
   return *this;
 }
 

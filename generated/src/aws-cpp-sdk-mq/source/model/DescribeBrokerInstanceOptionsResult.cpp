@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeBrokerInstanceOptionsResult::DescribeBrokerInstanceOptionsResult() : 
-    m_maxResults(0)
-{
-}
-
 DescribeBrokerInstanceOptionsResult::DescribeBrokerInstanceOptionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeBrokerInstanceOptionsResult()
 {
   *this = result;
 }
@@ -38,26 +32,25 @@ DescribeBrokerInstanceOptionsResult& DescribeBrokerInstanceOptionsResult::operat
     {
       m_brokerInstanceOptions.push_back(brokerInstanceOptionsJsonList[brokerInstanceOptionsIndex].AsObject());
     }
+    m_brokerInstanceOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxResults"))
   {
     m_maxResults = jsonValue.GetInteger("maxResults");
-
+    m_maxResultsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

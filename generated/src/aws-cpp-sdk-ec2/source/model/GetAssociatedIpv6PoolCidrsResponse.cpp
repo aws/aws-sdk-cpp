@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAssociatedIpv6PoolCidrsResponse::GetAssociatedIpv6PoolCidrsResponse()
-{
-}
-
 GetAssociatedIpv6PoolCidrsResponse::GetAssociatedIpv6PoolCidrsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ GetAssociatedIpv6PoolCidrsResponse& GetAssociatedIpv6PoolCidrsResponse::operator
     if(!ipv6CidrAssociationsNode.IsNull())
     {
       XmlNode ipv6CidrAssociationsMember = ipv6CidrAssociationsNode.FirstChild("item");
+      m_ipv6CidrAssociationsHasBeenSet = !ipv6CidrAssociationsMember.IsNull();
       while(!ipv6CidrAssociationsMember.IsNull())
       {
         m_ipv6CidrAssociations.push_back(ipv6CidrAssociationsMember);
         ipv6CidrAssociationsMember = ipv6CidrAssociationsMember.NextNode("item");
       }
 
+      m_ipv6CidrAssociationsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ GetAssociatedIpv6PoolCidrsResponse& GetAssociatedIpv6PoolCidrsResponse::operator
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::GetAssociatedIpv6PoolCidrsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

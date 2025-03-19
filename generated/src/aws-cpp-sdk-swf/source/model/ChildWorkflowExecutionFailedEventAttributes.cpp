@@ -18,20 +18,7 @@ namespace SWF
 namespace Model
 {
 
-ChildWorkflowExecutionFailedEventAttributes::ChildWorkflowExecutionFailedEventAttributes() : 
-    m_workflowExecutionHasBeenSet(false),
-    m_workflowTypeHasBeenSet(false),
-    m_reasonHasBeenSet(false),
-    m_detailsHasBeenSet(false),
-    m_initiatedEventId(0),
-    m_initiatedEventIdHasBeenSet(false),
-    m_startedEventId(0),
-    m_startedEventIdHasBeenSet(false)
-{
-}
-
 ChildWorkflowExecutionFailedEventAttributes::ChildWorkflowExecutionFailedEventAttributes(JsonView jsonValue)
-  : ChildWorkflowExecutionFailedEventAttributes()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ ChildWorkflowExecutionFailedEventAttributes& ChildWorkflowExecutionFailedEventAt
   if(jsonValue.ValueExists("workflowExecution"))
   {
     m_workflowExecution = jsonValue.GetObject("workflowExecution");
-
     m_workflowExecutionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workflowType"))
   {
     m_workflowType = jsonValue.GetObject("workflowType");
-
     m_workflowTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = jsonValue.GetString("reason");
-
     m_reasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("details"))
   {
     m_details = jsonValue.GetString("details");
-
     m_detailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("initiatedEventId"))
   {
     m_initiatedEventId = jsonValue.GetInt64("initiatedEventId");
-
     m_initiatedEventIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startedEventId"))
   {
     m_startedEventId = jsonValue.GetInt64("startedEventId");
-
     m_startedEventIdHasBeenSet = true;
   }
-
   return *this;
 }
 

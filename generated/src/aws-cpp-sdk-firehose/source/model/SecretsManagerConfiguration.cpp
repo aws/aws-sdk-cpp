@@ -18,16 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-SecretsManagerConfiguration::SecretsManagerConfiguration() : 
-    m_secretARNHasBeenSet(false),
-    m_roleARNHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 SecretsManagerConfiguration::SecretsManagerConfiguration(JsonView jsonValue)
-  : SecretsManagerConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ SecretsManagerConfiguration& SecretsManagerConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("SecretARN"))
   {
     m_secretARN = jsonValue.GetString("SecretARN");
-
     m_secretARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleARN"))
   {
     m_roleARN = jsonValue.GetString("RoleARN");
-
     m_roleARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace EMRServerless
 namespace Model
 {
 
-WorkerTypeSpecificationInput::WorkerTypeSpecificationInput() : 
-    m_imageConfigurationHasBeenSet(false)
-{
-}
-
 WorkerTypeSpecificationInput::WorkerTypeSpecificationInput(JsonView jsonValue)
-  : WorkerTypeSpecificationInput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ WorkerTypeSpecificationInput& WorkerTypeSpecificationInput::operator =(JsonView 
   if(jsonValue.ValueExists("imageConfiguration"))
   {
     m_imageConfiguration = jsonValue.GetObject("imageConfiguration");
-
     m_imageConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

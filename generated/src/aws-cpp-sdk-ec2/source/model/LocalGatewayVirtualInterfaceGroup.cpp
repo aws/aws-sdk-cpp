@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-LocalGatewayVirtualInterfaceGroup::LocalGatewayVirtualInterfaceGroup() : 
-    m_localGatewayVirtualInterfaceGroupIdHasBeenSet(false),
-    m_localGatewayVirtualInterfaceIdsHasBeenSet(false),
-    m_localGatewayIdHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 LocalGatewayVirtualInterfaceGroup::LocalGatewayVirtualInterfaceGroup(const XmlNode& xmlNode)
-  : LocalGatewayVirtualInterfaceGroup()
 {
   *this = xmlNode;
 }
@@ -51,6 +41,7 @@ LocalGatewayVirtualInterfaceGroup& LocalGatewayVirtualInterfaceGroup::operator =
     if(!localGatewayVirtualInterfaceIdsNode.IsNull())
     {
       XmlNode localGatewayVirtualInterfaceIdsMember = localGatewayVirtualInterfaceIdsNode.FirstChild("item");
+      m_localGatewayVirtualInterfaceIdsHasBeenSet = !localGatewayVirtualInterfaceIdsMember.IsNull();
       while(!localGatewayVirtualInterfaceIdsMember.IsNull())
       {
         m_localGatewayVirtualInterfaceIds.push_back(localGatewayVirtualInterfaceIdsMember.GetText());
@@ -75,6 +66,7 @@ LocalGatewayVirtualInterfaceGroup& LocalGatewayVirtualInterfaceGroup::operator =
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

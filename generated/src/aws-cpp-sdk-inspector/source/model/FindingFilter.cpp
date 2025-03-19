@@ -18,20 +18,7 @@ namespace Inspector
 namespace Model
 {
 
-FindingFilter::FindingFilter() : 
-    m_agentIdsHasBeenSet(false),
-    m_autoScalingGroupsHasBeenSet(false),
-    m_ruleNamesHasBeenSet(false),
-    m_severitiesHasBeenSet(false),
-    m_rulesPackageArnsHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_userAttributesHasBeenSet(false),
-    m_creationTimeRangeHasBeenSet(false)
-{
-}
-
 FindingFilter::FindingFilter(JsonView jsonValue)
-  : FindingFilter()
 {
   *this = jsonValue;
 }
@@ -47,7 +34,6 @@ FindingFilter& FindingFilter::operator =(JsonView jsonValue)
     }
     m_agentIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("autoScalingGroups"))
   {
     Aws::Utils::Array<JsonView> autoScalingGroupsJsonList = jsonValue.GetArray("autoScalingGroups");
@@ -57,7 +43,6 @@ FindingFilter& FindingFilter::operator =(JsonView jsonValue)
     }
     m_autoScalingGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ruleNames"))
   {
     Aws::Utils::Array<JsonView> ruleNamesJsonList = jsonValue.GetArray("ruleNames");
@@ -67,7 +52,6 @@ FindingFilter& FindingFilter::operator =(JsonView jsonValue)
     }
     m_ruleNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("severities"))
   {
     Aws::Utils::Array<JsonView> severitiesJsonList = jsonValue.GetArray("severities");
@@ -77,7 +61,6 @@ FindingFilter& FindingFilter::operator =(JsonView jsonValue)
     }
     m_severitiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rulesPackageArns"))
   {
     Aws::Utils::Array<JsonView> rulesPackageArnsJsonList = jsonValue.GetArray("rulesPackageArns");
@@ -87,7 +70,6 @@ FindingFilter& FindingFilter::operator =(JsonView jsonValue)
     }
     m_rulesPackageArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attributes"))
   {
     Aws::Utils::Array<JsonView> attributesJsonList = jsonValue.GetArray("attributes");
@@ -97,7 +79,6 @@ FindingFilter& FindingFilter::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userAttributes"))
   {
     Aws::Utils::Array<JsonView> userAttributesJsonList = jsonValue.GetArray("userAttributes");
@@ -107,14 +88,11 @@ FindingFilter& FindingFilter::operator =(JsonView jsonValue)
     }
     m_userAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTimeRange"))
   {
     m_creationTimeRange = jsonValue.GetObject("creationTimeRange");
-
     m_creationTimeRangeHasBeenSet = true;
   }
-
   return *this;
 }
 

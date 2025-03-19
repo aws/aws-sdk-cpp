@@ -18,16 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-GenerationConfiguration::GenerationConfiguration() : 
-    m_promptTemplateHasBeenSet(false),
-    m_guardrailConfigurationHasBeenSet(false),
-    m_kbInferenceConfigHasBeenSet(false),
-    m_additionalModelRequestFieldsHasBeenSet(false)
-{
-}
-
 GenerationConfiguration::GenerationConfiguration(JsonView jsonValue)
-  : GenerationConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ GenerationConfiguration& GenerationConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("promptTemplate"))
   {
     m_promptTemplate = jsonValue.GetObject("promptTemplate");
-
     m_promptTemplateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("guardrailConfiguration"))
   {
     m_guardrailConfiguration = jsonValue.GetObject("guardrailConfiguration");
-
     m_guardrailConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kbInferenceConfig"))
   {
     m_kbInferenceConfig = jsonValue.GetObject("kbInferenceConfig");
-
     m_kbInferenceConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("additionalModelRequestFields"))
   {
     Aws::Map<Aws::String, JsonView> additionalModelRequestFieldsJsonMap = jsonValue.GetObject("additionalModelRequestFields").GetAllObjects();
@@ -64,7 +49,6 @@ GenerationConfiguration& GenerationConfiguration::operator =(JsonView jsonValue)
     }
     m_additionalModelRequestFieldsHasBeenSet = true;
   }
-
   return *this;
 }
 

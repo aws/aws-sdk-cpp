@@ -25,7 +25,7 @@ namespace Model
   class CreateNatGatewayRequest : public EC2Request
   {
   public:
-    AWS_EC2_API CreateNatGatewayRequest();
+    AWS_EC2_API CreateNatGatewayRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,14 +47,12 @@ namespace Model
      * private NAT gateway. If the Elastic IP address is associated with another
      * resource, you must first disassociate it.</p>
      */
-    inline const Aws::String& GetAllocationId() const{ return m_allocationId; }
+    inline const Aws::String& GetAllocationId() const { return m_allocationId; }
     inline bool AllocationIdHasBeenSet() const { return m_allocationIdHasBeenSet; }
-    inline void SetAllocationId(const Aws::String& value) { m_allocationIdHasBeenSet = true; m_allocationId = value; }
-    inline void SetAllocationId(Aws::String&& value) { m_allocationIdHasBeenSet = true; m_allocationId = std::move(value); }
-    inline void SetAllocationId(const char* value) { m_allocationIdHasBeenSet = true; m_allocationId.assign(value); }
-    inline CreateNatGatewayRequest& WithAllocationId(const Aws::String& value) { SetAllocationId(value); return *this;}
-    inline CreateNatGatewayRequest& WithAllocationId(Aws::String&& value) { SetAllocationId(std::move(value)); return *this;}
-    inline CreateNatGatewayRequest& WithAllocationId(const char* value) { SetAllocationId(value); return *this;}
+    template<typename AllocationIdT = Aws::String>
+    void SetAllocationId(AllocationIdT&& value) { m_allocationIdHasBeenSet = true; m_allocationId = std::forward<AllocationIdT>(value); }
+    template<typename AllocationIdT = Aws::String>
+    CreateNatGatewayRequest& WithAllocationId(AllocationIdT&& value) { SetAllocationId(std::forward<AllocationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">Ensuring
      * idempotency</a>.</p> <p>Constraint: Maximum 64 ASCII characters.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateNatGatewayRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateNatGatewayRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateNatGatewayRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateNatGatewayRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,7 +77,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline CreateNatGatewayRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -91,28 +87,26 @@ namespace Model
     /**
      * <p>The ID of the subnet in which to create the NAT gateway.</p>
      */
-    inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
+    inline const Aws::String& GetSubnetId() const { return m_subnetId; }
     inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
-    inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
-    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
-    inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
-    inline CreateNatGatewayRequest& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
-    inline CreateNatGatewayRequest& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
-    inline CreateNatGatewayRequest& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+    template<typename SubnetIdT = Aws::String>
+    void SetSubnetId(SubnetIdT&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::forward<SubnetIdT>(value); }
+    template<typename SubnetIdT = Aws::String>
+    CreateNatGatewayRequest& WithSubnetId(SubnetIdT&& value) { SetSubnetId(std::forward<SubnetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags to assign to the NAT gateway.</p>
      */
-    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const { return m_tagSpecifications; }
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
-    inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
-    inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
-    inline CreateNatGatewayRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
-    inline CreateNatGatewayRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
-    inline CreateNatGatewayRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
-    inline CreateNatGatewayRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
+    template<typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+    void SetTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::forward<TagSpecificationsT>(value); }
+    template<typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+    CreateNatGatewayRequest& WithTagSpecifications(TagSpecificationsT&& value) { SetTagSpecifications(std::forward<TagSpecificationsT>(value)); return *this;}
+    template<typename TagSpecificationsT = TagSpecification>
+    CreateNatGatewayRequest& AddTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.emplace_back(std::forward<TagSpecificationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -120,12 +114,10 @@ namespace Model
      * <p>Indicates whether the NAT gateway supports public or private connectivity.
      * The default is public connectivity.</p>
      */
-    inline const ConnectivityType& GetConnectivityType() const{ return m_connectivityType; }
+    inline ConnectivityType GetConnectivityType() const { return m_connectivityType; }
     inline bool ConnectivityTypeHasBeenSet() const { return m_connectivityTypeHasBeenSet; }
-    inline void SetConnectivityType(const ConnectivityType& value) { m_connectivityTypeHasBeenSet = true; m_connectivityType = value; }
-    inline void SetConnectivityType(ConnectivityType&& value) { m_connectivityTypeHasBeenSet = true; m_connectivityType = std::move(value); }
-    inline CreateNatGatewayRequest& WithConnectivityType(const ConnectivityType& value) { SetConnectivityType(value); return *this;}
-    inline CreateNatGatewayRequest& WithConnectivityType(ConnectivityType&& value) { SetConnectivityType(std::move(value)); return *this;}
+    inline void SetConnectivityType(ConnectivityType value) { m_connectivityTypeHasBeenSet = true; m_connectivityType = value; }
+    inline CreateNatGatewayRequest& WithConnectivityType(ConnectivityType value) { SetConnectivityType(value); return *this;}
     ///@}
 
     ///@{
@@ -133,14 +125,12 @@ namespace Model
      * <p>The private IPv4 address to assign to the NAT gateway. If you don't provide
      * an address, a private IPv4 address will be automatically assigned.</p>
      */
-    inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
+    inline const Aws::String& GetPrivateIpAddress() const { return m_privateIpAddress; }
     inline bool PrivateIpAddressHasBeenSet() const { return m_privateIpAddressHasBeenSet; }
-    inline void SetPrivateIpAddress(const Aws::String& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
-    inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = std::move(value); }
-    inline void SetPrivateIpAddress(const char* value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress.assign(value); }
-    inline CreateNatGatewayRequest& WithPrivateIpAddress(const Aws::String& value) { SetPrivateIpAddress(value); return *this;}
-    inline CreateNatGatewayRequest& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(std::move(value)); return *this;}
-    inline CreateNatGatewayRequest& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
+    template<typename PrivateIpAddressT = Aws::String>
+    void SetPrivateIpAddress(PrivateIpAddressT&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = std::forward<PrivateIpAddressT>(value); }
+    template<typename PrivateIpAddressT = Aws::String>
+    CreateNatGatewayRequest& WithPrivateIpAddress(PrivateIpAddressT&& value) { SetPrivateIpAddress(std::forward<PrivateIpAddressT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -149,15 +139,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-working-with.html">Create
      * a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSecondaryAllocationIds() const{ return m_secondaryAllocationIds; }
+    inline const Aws::Vector<Aws::String>& GetSecondaryAllocationIds() const { return m_secondaryAllocationIds; }
     inline bool SecondaryAllocationIdsHasBeenSet() const { return m_secondaryAllocationIdsHasBeenSet; }
-    inline void SetSecondaryAllocationIds(const Aws::Vector<Aws::String>& value) { m_secondaryAllocationIdsHasBeenSet = true; m_secondaryAllocationIds = value; }
-    inline void SetSecondaryAllocationIds(Aws::Vector<Aws::String>&& value) { m_secondaryAllocationIdsHasBeenSet = true; m_secondaryAllocationIds = std::move(value); }
-    inline CreateNatGatewayRequest& WithSecondaryAllocationIds(const Aws::Vector<Aws::String>& value) { SetSecondaryAllocationIds(value); return *this;}
-    inline CreateNatGatewayRequest& WithSecondaryAllocationIds(Aws::Vector<Aws::String>&& value) { SetSecondaryAllocationIds(std::move(value)); return *this;}
-    inline CreateNatGatewayRequest& AddSecondaryAllocationIds(const Aws::String& value) { m_secondaryAllocationIdsHasBeenSet = true; m_secondaryAllocationIds.push_back(value); return *this; }
-    inline CreateNatGatewayRequest& AddSecondaryAllocationIds(Aws::String&& value) { m_secondaryAllocationIdsHasBeenSet = true; m_secondaryAllocationIds.push_back(std::move(value)); return *this; }
-    inline CreateNatGatewayRequest& AddSecondaryAllocationIds(const char* value) { m_secondaryAllocationIdsHasBeenSet = true; m_secondaryAllocationIds.push_back(value); return *this; }
+    template<typename SecondaryAllocationIdsT = Aws::Vector<Aws::String>>
+    void SetSecondaryAllocationIds(SecondaryAllocationIdsT&& value) { m_secondaryAllocationIdsHasBeenSet = true; m_secondaryAllocationIds = std::forward<SecondaryAllocationIdsT>(value); }
+    template<typename SecondaryAllocationIdsT = Aws::Vector<Aws::String>>
+    CreateNatGatewayRequest& WithSecondaryAllocationIds(SecondaryAllocationIdsT&& value) { SetSecondaryAllocationIds(std::forward<SecondaryAllocationIdsT>(value)); return *this;}
+    template<typename SecondaryAllocationIdsT = Aws::String>
+    CreateNatGatewayRequest& AddSecondaryAllocationIds(SecondaryAllocationIdsT&& value) { m_secondaryAllocationIdsHasBeenSet = true; m_secondaryAllocationIds.emplace_back(std::forward<SecondaryAllocationIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -167,15 +156,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-working-with.html">Create
      * a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSecondaryPrivateIpAddresses() const{ return m_secondaryPrivateIpAddresses; }
+    inline const Aws::Vector<Aws::String>& GetSecondaryPrivateIpAddresses() const { return m_secondaryPrivateIpAddresses; }
     inline bool SecondaryPrivateIpAddressesHasBeenSet() const { return m_secondaryPrivateIpAddressesHasBeenSet; }
-    inline void SetSecondaryPrivateIpAddresses(const Aws::Vector<Aws::String>& value) { m_secondaryPrivateIpAddressesHasBeenSet = true; m_secondaryPrivateIpAddresses = value; }
-    inline void SetSecondaryPrivateIpAddresses(Aws::Vector<Aws::String>&& value) { m_secondaryPrivateIpAddressesHasBeenSet = true; m_secondaryPrivateIpAddresses = std::move(value); }
-    inline CreateNatGatewayRequest& WithSecondaryPrivateIpAddresses(const Aws::Vector<Aws::String>& value) { SetSecondaryPrivateIpAddresses(value); return *this;}
-    inline CreateNatGatewayRequest& WithSecondaryPrivateIpAddresses(Aws::Vector<Aws::String>&& value) { SetSecondaryPrivateIpAddresses(std::move(value)); return *this;}
-    inline CreateNatGatewayRequest& AddSecondaryPrivateIpAddresses(const Aws::String& value) { m_secondaryPrivateIpAddressesHasBeenSet = true; m_secondaryPrivateIpAddresses.push_back(value); return *this; }
-    inline CreateNatGatewayRequest& AddSecondaryPrivateIpAddresses(Aws::String&& value) { m_secondaryPrivateIpAddressesHasBeenSet = true; m_secondaryPrivateIpAddresses.push_back(std::move(value)); return *this; }
-    inline CreateNatGatewayRequest& AddSecondaryPrivateIpAddresses(const char* value) { m_secondaryPrivateIpAddressesHasBeenSet = true; m_secondaryPrivateIpAddresses.push_back(value); return *this; }
+    template<typename SecondaryPrivateIpAddressesT = Aws::Vector<Aws::String>>
+    void SetSecondaryPrivateIpAddresses(SecondaryPrivateIpAddressesT&& value) { m_secondaryPrivateIpAddressesHasBeenSet = true; m_secondaryPrivateIpAddresses = std::forward<SecondaryPrivateIpAddressesT>(value); }
+    template<typename SecondaryPrivateIpAddressesT = Aws::Vector<Aws::String>>
+    CreateNatGatewayRequest& WithSecondaryPrivateIpAddresses(SecondaryPrivateIpAddressesT&& value) { SetSecondaryPrivateIpAddresses(std::forward<SecondaryPrivateIpAddressesT>(value)); return *this;}
+    template<typename SecondaryPrivateIpAddressesT = Aws::String>
+    CreateNatGatewayRequest& AddSecondaryPrivateIpAddresses(SecondaryPrivateIpAddressesT&& value) { m_secondaryPrivateIpAddressesHasBeenSet = true; m_secondaryPrivateIpAddresses.emplace_back(std::forward<SecondaryPrivateIpAddressesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -186,7 +174,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-working-with.html">Create
      * a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
      */
-    inline int GetSecondaryPrivateIpAddressCount() const{ return m_secondaryPrivateIpAddressCount; }
+    inline int GetSecondaryPrivateIpAddressCount() const { return m_secondaryPrivateIpAddressCount; }
     inline bool SecondaryPrivateIpAddressCountHasBeenSet() const { return m_secondaryPrivateIpAddressCountHasBeenSet; }
     inline void SetSecondaryPrivateIpAddressCount(int value) { m_secondaryPrivateIpAddressCountHasBeenSet = true; m_secondaryPrivateIpAddressCount = value; }
     inline CreateNatGatewayRequest& WithSecondaryPrivateIpAddressCount(int value) { SetSecondaryPrivateIpAddressCount(value); return *this;}
@@ -199,7 +187,7 @@ namespace Model
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_subnetId;
@@ -208,7 +196,7 @@ namespace Model
     Aws::Vector<TagSpecification> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet = false;
 
-    ConnectivityType m_connectivityType;
+    ConnectivityType m_connectivityType{ConnectivityType::NOT_SET};
     bool m_connectivityTypeHasBeenSet = false;
 
     Aws::String m_privateIpAddress;
@@ -220,7 +208,7 @@ namespace Model
     Aws::Vector<Aws::String> m_secondaryPrivateIpAddresses;
     bool m_secondaryPrivateIpAddressesHasBeenSet = false;
 
-    int m_secondaryPrivateIpAddressCount;
+    int m_secondaryPrivateIpAddressCount{0};
     bool m_secondaryPrivateIpAddressCountHasBeenSet = false;
   };
 

@@ -12,13 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchCreateTopicReviewedAnswerRequest::BatchCreateTopicReviewedAnswerRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_topicIdHasBeenSet(false),
-    m_answersHasBeenSet(false)
-{
-}
-
 Aws::String BatchCreateTopicReviewedAnswerRequest::SerializePayload() const
 {
   JsonValue payload;

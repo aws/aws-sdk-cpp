@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListRefreshSchedulesResult::ListRefreshSchedulesResult() : 
-    m_status(0)
-{
-}
-
 ListRefreshSchedulesResult::ListRefreshSchedulesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ListRefreshSchedulesResult()
 {
   *this = result;
 }
@@ -38,18 +32,19 @@ ListRefreshSchedulesResult& ListRefreshSchedulesResult::operator =(const Aws::Am
     {
       m_refreshSchedules.push_back(refreshSchedulesJsonList[refreshSchedulesIndex].AsObject());
     }
+    m_refreshSchedulesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

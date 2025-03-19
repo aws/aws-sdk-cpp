@@ -22,7 +22,7 @@ namespace Model
   class CreateCertificateAuthorityAuditReportRequest : public ACMPCARequest
   {
   public:
-    AWS_ACMPCA_API CreateCertificateAuthorityAuditReportRequest();
+    AWS_ACMPCA_API CreateCertificateAuthorityAuditReportRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
      * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code>.</p>
      */
-    inline const Aws::String& GetCertificateAuthorityArn() const{ return m_certificateAuthorityArn; }
+    inline const Aws::String& GetCertificateAuthorityArn() const { return m_certificateAuthorityArn; }
     inline bool CertificateAuthorityArnHasBeenSet() const { return m_certificateAuthorityArnHasBeenSet; }
-    inline void SetCertificateAuthorityArn(const Aws::String& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = value; }
-    inline void SetCertificateAuthorityArn(Aws::String&& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = std::move(value); }
-    inline void SetCertificateAuthorityArn(const char* value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn.assign(value); }
-    inline CreateCertificateAuthorityAuditReportRequest& WithCertificateAuthorityArn(const Aws::String& value) { SetCertificateAuthorityArn(value); return *this;}
-    inline CreateCertificateAuthorityAuditReportRequest& WithCertificateAuthorityArn(Aws::String&& value) { SetCertificateAuthorityArn(std::move(value)); return *this;}
-    inline CreateCertificateAuthorityAuditReportRequest& WithCertificateAuthorityArn(const char* value) { SetCertificateAuthorityArn(value); return *this;}
+    template<typename CertificateAuthorityArnT = Aws::String>
+    void SetCertificateAuthorityArn(CertificateAuthorityArnT&& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = std::forward<CertificateAuthorityArnT>(value); }
+    template<typename CertificateAuthorityArnT = Aws::String>
+    CreateCertificateAuthorityAuditReportRequest& WithCertificateAuthorityArn(CertificateAuthorityArnT&& value) { SetCertificateAuthorityArn(std::forward<CertificateAuthorityArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the S3 bucket that will contain the audit report.</p>
      */
-    inline const Aws::String& GetS3BucketName() const{ return m_s3BucketName; }
+    inline const Aws::String& GetS3BucketName() const { return m_s3BucketName; }
     inline bool S3BucketNameHasBeenSet() const { return m_s3BucketNameHasBeenSet; }
-    inline void SetS3BucketName(const Aws::String& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = value; }
-    inline void SetS3BucketName(Aws::String&& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = std::move(value); }
-    inline void SetS3BucketName(const char* value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName.assign(value); }
-    inline CreateCertificateAuthorityAuditReportRequest& WithS3BucketName(const Aws::String& value) { SetS3BucketName(value); return *this;}
-    inline CreateCertificateAuthorityAuditReportRequest& WithS3BucketName(Aws::String&& value) { SetS3BucketName(std::move(value)); return *this;}
-    inline CreateCertificateAuthorityAuditReportRequest& WithS3BucketName(const char* value) { SetS3BucketName(value); return *this;}
+    template<typename S3BucketNameT = Aws::String>
+    void SetS3BucketName(S3BucketNameT&& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = std::forward<S3BucketNameT>(value); }
+    template<typename S3BucketNameT = Aws::String>
+    CreateCertificateAuthorityAuditReportRequest& WithS3BucketName(S3BucketNameT&& value) { SetS3BucketName(std::forward<S3BucketNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,12 +67,10 @@ namespace Model
      * <p>The format in which to create the report. This can be either <b>JSON</b> or
      * <b>CSV</b>.</p>
      */
-    inline const AuditReportResponseFormat& GetAuditReportResponseFormat() const{ return m_auditReportResponseFormat; }
+    inline AuditReportResponseFormat GetAuditReportResponseFormat() const { return m_auditReportResponseFormat; }
     inline bool AuditReportResponseFormatHasBeenSet() const { return m_auditReportResponseFormatHasBeenSet; }
-    inline void SetAuditReportResponseFormat(const AuditReportResponseFormat& value) { m_auditReportResponseFormatHasBeenSet = true; m_auditReportResponseFormat = value; }
-    inline void SetAuditReportResponseFormat(AuditReportResponseFormat&& value) { m_auditReportResponseFormatHasBeenSet = true; m_auditReportResponseFormat = std::move(value); }
-    inline CreateCertificateAuthorityAuditReportRequest& WithAuditReportResponseFormat(const AuditReportResponseFormat& value) { SetAuditReportResponseFormat(value); return *this;}
-    inline CreateCertificateAuthorityAuditReportRequest& WithAuditReportResponseFormat(AuditReportResponseFormat&& value) { SetAuditReportResponseFormat(std::move(value)); return *this;}
+    inline void SetAuditReportResponseFormat(AuditReportResponseFormat value) { m_auditReportResponseFormatHasBeenSet = true; m_auditReportResponseFormat = value; }
+    inline CreateCertificateAuthorityAuditReportRequest& WithAuditReportResponseFormat(AuditReportResponseFormat value) { SetAuditReportResponseFormat(value); return *this;}
     ///@}
   private:
 
@@ -86,7 +80,7 @@ namespace Model
     Aws::String m_s3BucketName;
     bool m_s3BucketNameHasBeenSet = false;
 
-    AuditReportResponseFormat m_auditReportResponseFormat;
+    AuditReportResponseFormat m_auditReportResponseFormat{AuditReportResponseFormat::NOT_SET};
     bool m_auditReportResponseFormatHasBeenSet = false;
   };
 

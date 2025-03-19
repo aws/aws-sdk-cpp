@@ -28,7 +28,7 @@ namespace Model
   class GetSizeConstraintSetResult
   {
   public:
-    AWS_WAF_API GetSizeConstraintSetResult();
+    AWS_WAF_API GetSizeConstraintSetResult() = default;
     AWS_WAF_API GetSizeConstraintSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WAF_API GetSizeConstraintSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -46,28 +46,28 @@ namespace Model
      * <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code> </p> </li>
      * </ul>
      */
-    inline const SizeConstraintSet& GetSizeConstraintSet() const{ return m_sizeConstraintSet; }
-    inline void SetSizeConstraintSet(const SizeConstraintSet& value) { m_sizeConstraintSet = value; }
-    inline void SetSizeConstraintSet(SizeConstraintSet&& value) { m_sizeConstraintSet = std::move(value); }
-    inline GetSizeConstraintSetResult& WithSizeConstraintSet(const SizeConstraintSet& value) { SetSizeConstraintSet(value); return *this;}
-    inline GetSizeConstraintSetResult& WithSizeConstraintSet(SizeConstraintSet&& value) { SetSizeConstraintSet(std::move(value)); return *this;}
+    inline const SizeConstraintSet& GetSizeConstraintSet() const { return m_sizeConstraintSet; }
+    template<typename SizeConstraintSetT = SizeConstraintSet>
+    void SetSizeConstraintSet(SizeConstraintSetT&& value) { m_sizeConstraintSetHasBeenSet = true; m_sizeConstraintSet = std::forward<SizeConstraintSetT>(value); }
+    template<typename SizeConstraintSetT = SizeConstraintSet>
+    GetSizeConstraintSetResult& WithSizeConstraintSet(SizeConstraintSetT&& value) { SetSizeConstraintSet(std::forward<SizeConstraintSetT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetSizeConstraintSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetSizeConstraintSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetSizeConstraintSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetSizeConstraintSetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     SizeConstraintSet m_sizeConstraintSet;
+    bool m_sizeConstraintSetHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,7 +29,7 @@ namespace Model
   class SAPODataMetadata
   {
   public:
-    AWS_APPFLOW_API SAPODataMetadata();
+    AWS_APPFLOW_API SAPODataMetadata() = default;
     AWS_APPFLOW_API SAPODataMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API SAPODataMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;

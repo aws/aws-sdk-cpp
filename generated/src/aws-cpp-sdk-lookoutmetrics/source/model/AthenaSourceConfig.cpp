@@ -18,19 +18,7 @@ namespace LookoutMetrics
 namespace Model
 {
 
-AthenaSourceConfig::AthenaSourceConfig() : 
-    m_roleArnHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_dataCatalogHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_workGroupNameHasBeenSet(false),
-    m_s3ResultsPathHasBeenSet(false),
-    m_backTestConfigurationHasBeenSet(false)
-{
-}
-
 AthenaSourceConfig::AthenaSourceConfig(JsonView jsonValue)
-  : AthenaSourceConfig()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ AthenaSourceConfig& AthenaSourceConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseName"))
   {
     m_databaseName = jsonValue.GetString("DatabaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataCatalog"))
   {
     m_dataCatalog = jsonValue.GetString("DataCatalog");
-
     m_dataCatalogHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableName"))
   {
     m_tableName = jsonValue.GetString("TableName");
-
     m_tableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkGroupName"))
   {
     m_workGroupName = jsonValue.GetString("WorkGroupName");
-
     m_workGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3ResultsPath"))
   {
     m_s3ResultsPath = jsonValue.GetString("S3ResultsPath");
-
     m_s3ResultsPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackTestConfiguration"))
   {
     m_backTestConfiguration = jsonValue.GetObject("BackTestConfiguration");
-
     m_backTestConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

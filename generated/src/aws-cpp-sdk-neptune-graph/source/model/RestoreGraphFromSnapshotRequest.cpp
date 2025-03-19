@@ -12,21 +12,6 @@ using namespace Aws::NeptuneGraph::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RestoreGraphFromSnapshotRequest::RestoreGraphFromSnapshotRequest() : 
-    m_snapshotIdentifierHasBeenSet(false),
-    m_graphNameHasBeenSet(false),
-    m_provisionedMemory(0),
-    m_provisionedMemoryHasBeenSet(false),
-    m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_replicaCount(0),
-    m_replicaCountHasBeenSet(false),
-    m_publicConnectivity(false),
-    m_publicConnectivityHasBeenSet(false)
-{
-}
-
 Aws::String RestoreGraphFromSnapshotRequest::SerializePayload() const
 {
   JsonValue payload;

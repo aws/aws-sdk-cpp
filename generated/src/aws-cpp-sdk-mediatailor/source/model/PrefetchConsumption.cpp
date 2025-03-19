@@ -18,15 +18,7 @@ namespace MediaTailor
 namespace Model
 {
 
-PrefetchConsumption::PrefetchConsumption() : 
-    m_availMatchingCriteriaHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
-{
-}
-
 PrefetchConsumption::PrefetchConsumption(JsonView jsonValue)
-  : PrefetchConsumption()
 {
   *this = jsonValue;
 }
@@ -42,21 +34,16 @@ PrefetchConsumption& PrefetchConsumption::operator =(JsonView jsonValue)
     }
     m_availMatchingCriteriaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-EvaluatePullRequestApprovalRulesResult::EvaluatePullRequestApprovalRulesResult()
-{
-}
-
 EvaluatePullRequestApprovalRulesResult::EvaluatePullRequestApprovalRulesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ EvaluatePullRequestApprovalRulesResult& EvaluatePullRequestApprovalRulesResult::
   if(jsonValue.ValueExists("evaluation"))
   {
     m_evaluation = jsonValue.GetObject("evaluation");
-
+    m_evaluationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -12,14 +12,6 @@ using namespace Aws::Chime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateRoomRequest::CreateRoomRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateRoomRequest::SerializePayload() const
 {
   JsonValue payload;

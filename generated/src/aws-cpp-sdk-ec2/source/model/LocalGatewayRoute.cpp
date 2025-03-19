@@ -20,25 +20,7 @@ namespace EC2
 namespace Model
 {
 
-LocalGatewayRoute::LocalGatewayRoute() : 
-    m_destinationCidrBlockHasBeenSet(false),
-    m_localGatewayVirtualInterfaceGroupIdHasBeenSet(false),
-    m_type(LocalGatewayRouteType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_state(LocalGatewayRouteState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_localGatewayRouteTableIdHasBeenSet(false),
-    m_localGatewayRouteTableArnHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_coipPoolIdHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_destinationPrefixListIdHasBeenSet(false)
-{
-}
-
 LocalGatewayRoute::LocalGatewayRoute(const XmlNode& xmlNode)
-  : LocalGatewayRoute()
 {
   *this = xmlNode;
 }
@@ -64,13 +46,13 @@ LocalGatewayRoute& LocalGatewayRoute::operator =(const XmlNode& xmlNode)
     XmlNode typeNode = resultNode.FirstChild("type");
     if(!typeNode.IsNull())
     {
-      m_type = LocalGatewayRouteTypeMapper::GetLocalGatewayRouteTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = LocalGatewayRouteTypeMapper::GetLocalGatewayRouteTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = LocalGatewayRouteStateMapper::GetLocalGatewayRouteStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = LocalGatewayRouteStateMapper::GetLocalGatewayRouteStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode localGatewayRouteTableIdNode = resultNode.FirstChild("localGatewayRouteTableId");

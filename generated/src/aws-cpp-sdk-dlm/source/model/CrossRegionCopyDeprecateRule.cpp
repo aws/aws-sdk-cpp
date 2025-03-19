@@ -18,16 +18,7 @@ namespace DLM
 namespace Model
 {
 
-CrossRegionCopyDeprecateRule::CrossRegionCopyDeprecateRule() : 
-    m_interval(0),
-    m_intervalHasBeenSet(false),
-    m_intervalUnit(RetentionIntervalUnitValues::NOT_SET),
-    m_intervalUnitHasBeenSet(false)
-{
-}
-
 CrossRegionCopyDeprecateRule::CrossRegionCopyDeprecateRule(JsonView jsonValue)
-  : CrossRegionCopyDeprecateRule()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ CrossRegionCopyDeprecateRule& CrossRegionCopyDeprecateRule::operator =(JsonView 
   if(jsonValue.ValueExists("Interval"))
   {
     m_interval = jsonValue.GetInteger("Interval");
-
     m_intervalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IntervalUnit"))
   {
     m_intervalUnit = RetentionIntervalUnitValuesMapper::GetRetentionIntervalUnitValuesForName(jsonValue.GetString("IntervalUnit"));
-
     m_intervalUnitHasBeenSet = true;
   }
-
   return *this;
 }
 

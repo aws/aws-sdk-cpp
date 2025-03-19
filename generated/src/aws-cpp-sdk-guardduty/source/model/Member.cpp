@@ -18,20 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-Member::Member() : 
-    m_accountIdHasBeenSet(false),
-    m_detectorIdHasBeenSet(false),
-    m_masterIdHasBeenSet(false),
-    m_emailHasBeenSet(false),
-    m_relationshipStatusHasBeenSet(false),
-    m_invitedAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_administratorIdHasBeenSet(false)
-{
-}
-
 Member::Member(JsonView jsonValue)
-  : Member()
 {
   *this = jsonValue;
 }
@@ -41,59 +28,43 @@ Member& Member::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("detectorId"))
   {
     m_detectorId = jsonValue.GetString("detectorId");
-
     m_detectorIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("masterId"))
   {
     m_masterId = jsonValue.GetString("masterId");
-
     m_masterIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("email"))
   {
     m_email = jsonValue.GetString("email");
-
     m_emailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("relationshipStatus"))
   {
     m_relationshipStatus = jsonValue.GetString("relationshipStatus");
-
     m_relationshipStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("invitedAt"))
   {
     m_invitedAt = jsonValue.GetString("invitedAt");
-
     m_invitedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("administratorId"))
   {
     m_administratorId = jsonValue.GetString("administratorId");
-
     m_administratorIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,19 +18,7 @@ namespace ServiceCatalog
 namespace Model
 {
 
-ProvisionedProductPlanSummary::ProvisionedProductPlanSummary() : 
-    m_planNameHasBeenSet(false),
-    m_planIdHasBeenSet(false),
-    m_provisionProductIdHasBeenSet(false),
-    m_provisionProductNameHasBeenSet(false),
-    m_planType(ProvisionedProductPlanType::NOT_SET),
-    m_planTypeHasBeenSet(false),
-    m_provisioningArtifactIdHasBeenSet(false)
-{
-}
-
 ProvisionedProductPlanSummary::ProvisionedProductPlanSummary(JsonView jsonValue)
-  : ProvisionedProductPlanSummary()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ ProvisionedProductPlanSummary& ProvisionedProductPlanSummary::operator =(JsonVie
   if(jsonValue.ValueExists("PlanName"))
   {
     m_planName = jsonValue.GetString("PlanName");
-
     m_planNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PlanId"))
   {
     m_planId = jsonValue.GetString("PlanId");
-
     m_planIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisionProductId"))
   {
     m_provisionProductId = jsonValue.GetString("ProvisionProductId");
-
     m_provisionProductIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisionProductName"))
   {
     m_provisionProductName = jsonValue.GetString("ProvisionProductName");
-
     m_provisionProductNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PlanType"))
   {
     m_planType = ProvisionedProductPlanTypeMapper::GetProvisionedProductPlanTypeForName(jsonValue.GetString("PlanType"));
-
     m_planTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisioningArtifactId"))
   {
     m_provisioningArtifactId = jsonValue.GetString("ProvisioningArtifactId");
-
     m_provisioningArtifactIdHasBeenSet = true;
   }
-
   return *this;
 }
 

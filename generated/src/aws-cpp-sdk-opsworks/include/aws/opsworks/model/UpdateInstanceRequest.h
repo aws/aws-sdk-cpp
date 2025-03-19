@@ -24,7 +24,7 @@ namespace Model
   class UpdateInstanceRequest : public OpsWorksRequest
   {
   public:
-    AWS_OPSWORKS_API UpdateInstanceRequest();
+    AWS_OPSWORKS_API UpdateInstanceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,29 +41,26 @@ namespace Model
     /**
      * <p>The instance ID.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline UpdateInstanceRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline UpdateInstanceRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline UpdateInstanceRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    UpdateInstanceRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The instance's layer IDs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetLayerIds() const{ return m_layerIds; }
+    inline const Aws::Vector<Aws::String>& GetLayerIds() const { return m_layerIds; }
     inline bool LayerIdsHasBeenSet() const { return m_layerIdsHasBeenSet; }
-    inline void SetLayerIds(const Aws::Vector<Aws::String>& value) { m_layerIdsHasBeenSet = true; m_layerIds = value; }
-    inline void SetLayerIds(Aws::Vector<Aws::String>&& value) { m_layerIdsHasBeenSet = true; m_layerIds = std::move(value); }
-    inline UpdateInstanceRequest& WithLayerIds(const Aws::Vector<Aws::String>& value) { SetLayerIds(value); return *this;}
-    inline UpdateInstanceRequest& WithLayerIds(Aws::Vector<Aws::String>&& value) { SetLayerIds(std::move(value)); return *this;}
-    inline UpdateInstanceRequest& AddLayerIds(const Aws::String& value) { m_layerIdsHasBeenSet = true; m_layerIds.push_back(value); return *this; }
-    inline UpdateInstanceRequest& AddLayerIds(Aws::String&& value) { m_layerIdsHasBeenSet = true; m_layerIds.push_back(std::move(value)); return *this; }
-    inline UpdateInstanceRequest& AddLayerIds(const char* value) { m_layerIdsHasBeenSet = true; m_layerIds.push_back(value); return *this; }
+    template<typename LayerIdsT = Aws::Vector<Aws::String>>
+    void SetLayerIds(LayerIdsT&& value) { m_layerIdsHasBeenSet = true; m_layerIds = std::forward<LayerIdsT>(value); }
+    template<typename LayerIdsT = Aws::Vector<Aws::String>>
+    UpdateInstanceRequest& WithLayerIds(LayerIdsT&& value) { SetLayerIds(std::forward<LayerIdsT>(value)); return *this;}
+    template<typename LayerIdsT = Aws::String>
+    UpdateInstanceRequest& AddLayerIds(LayerIdsT&& value) { m_layerIdsHasBeenSet = true; m_layerIds.emplace_back(std::forward<LayerIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -77,14 +74,12 @@ namespace Model
      * types are in the <b>API Name</b> column of the <b>Available Instance Types</b>
      * table.</p>
      */
-    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+    inline const Aws::String& GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
-    inline UpdateInstanceRequest& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
-    inline UpdateInstanceRequest& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
-    inline UpdateInstanceRequest& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+    template<typename InstanceTypeT = Aws::String>
+    void SetInstanceType(InstanceTypeT&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::forward<InstanceTypeT>(value); }
+    template<typename InstanceTypeT = Aws::String>
+    UpdateInstanceRequest& WithInstanceType(InstanceTypeT&& value) { SetInstanceType(std::forward<InstanceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,12 +87,10 @@ namespace Model
      * <p>For load-based or time-based instances, the type. Windows stacks can use only
      * time-based instances.</p>
      */
-    inline const AutoScalingType& GetAutoScalingType() const{ return m_autoScalingType; }
+    inline AutoScalingType GetAutoScalingType() const { return m_autoScalingType; }
     inline bool AutoScalingTypeHasBeenSet() const { return m_autoScalingTypeHasBeenSet; }
-    inline void SetAutoScalingType(const AutoScalingType& value) { m_autoScalingTypeHasBeenSet = true; m_autoScalingType = value; }
-    inline void SetAutoScalingType(AutoScalingType&& value) { m_autoScalingTypeHasBeenSet = true; m_autoScalingType = std::move(value); }
-    inline UpdateInstanceRequest& WithAutoScalingType(const AutoScalingType& value) { SetAutoScalingType(value); return *this;}
-    inline UpdateInstanceRequest& WithAutoScalingType(AutoScalingType&& value) { SetAutoScalingType(std::move(value)); return *this;}
+    inline void SetAutoScalingType(AutoScalingType value) { m_autoScalingTypeHasBeenSet = true; m_autoScalingType = value; }
+    inline UpdateInstanceRequest& WithAutoScalingType(AutoScalingType value) { SetAutoScalingType(value); return *this;}
     ///@}
 
     ///@{
@@ -106,14 +99,12 @@ namespace Model
      * names.</p> <ul> <li> <p>Linux-based instances: 63 characters</p> </li> <li>
      * <p>Windows-based instances: 15 characters</p> </li> </ul>
      */
-    inline const Aws::String& GetHostname() const{ return m_hostname; }
+    inline const Aws::String& GetHostname() const { return m_hostname; }
     inline bool HostnameHasBeenSet() const { return m_hostnameHasBeenSet; }
-    inline void SetHostname(const Aws::String& value) { m_hostnameHasBeenSet = true; m_hostname = value; }
-    inline void SetHostname(Aws::String&& value) { m_hostnameHasBeenSet = true; m_hostname = std::move(value); }
-    inline void SetHostname(const char* value) { m_hostnameHasBeenSet = true; m_hostname.assign(value); }
-    inline UpdateInstanceRequest& WithHostname(const Aws::String& value) { SetHostname(value); return *this;}
-    inline UpdateInstanceRequest& WithHostname(Aws::String&& value) { SetHostname(std::move(value)); return *this;}
-    inline UpdateInstanceRequest& WithHostname(const char* value) { SetHostname(value); return *this;}
+    template<typename HostnameT = Aws::String>
+    void SetHostname(HostnameT&& value) { m_hostnameHasBeenSet = true; m_hostname = std::forward<HostnameT>(value); }
+    template<typename HostnameT = Aws::String>
+    UpdateInstanceRequest& WithHostname(HostnameT&& value) { SetHostname(std::forward<HostnameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -145,14 +136,12 @@ namespace Model
      * system for the updated stack, but you cannot change from Linux to Windows or
      * Windows to Linux.</p> 
      */
-    inline const Aws::String& GetOs() const{ return m_os; }
+    inline const Aws::String& GetOs() const { return m_os; }
     inline bool OsHasBeenSet() const { return m_osHasBeenSet; }
-    inline void SetOs(const Aws::String& value) { m_osHasBeenSet = true; m_os = value; }
-    inline void SetOs(Aws::String&& value) { m_osHasBeenSet = true; m_os = std::move(value); }
-    inline void SetOs(const char* value) { m_osHasBeenSet = true; m_os.assign(value); }
-    inline UpdateInstanceRequest& WithOs(const Aws::String& value) { SetOs(value); return *this;}
-    inline UpdateInstanceRequest& WithOs(Aws::String&& value) { SetOs(std::move(value)); return *this;}
-    inline UpdateInstanceRequest& WithOs(const char* value) { SetOs(value); return *this;}
+    template<typename OsT = Aws::String>
+    void SetOs(OsT&& value) { m_osHasBeenSet = true; m_os = std::forward<OsT>(value); }
+    template<typename OsT = Aws::String>
+    UpdateInstanceRequest& WithOs(OsT&& value) { SetOs(std::forward<OsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -162,28 +151,24 @@ namespace Model
      * apply a new AMI to an instance by running UpdateInstance. UpdateInstance does
      * not work on instances that are using custom AMIs. </p>
      */
-    inline const Aws::String& GetAmiId() const{ return m_amiId; }
+    inline const Aws::String& GetAmiId() const { return m_amiId; }
     inline bool AmiIdHasBeenSet() const { return m_amiIdHasBeenSet; }
-    inline void SetAmiId(const Aws::String& value) { m_amiIdHasBeenSet = true; m_amiId = value; }
-    inline void SetAmiId(Aws::String&& value) { m_amiIdHasBeenSet = true; m_amiId = std::move(value); }
-    inline void SetAmiId(const char* value) { m_amiIdHasBeenSet = true; m_amiId.assign(value); }
-    inline UpdateInstanceRequest& WithAmiId(const Aws::String& value) { SetAmiId(value); return *this;}
-    inline UpdateInstanceRequest& WithAmiId(Aws::String&& value) { SetAmiId(std::move(value)); return *this;}
-    inline UpdateInstanceRequest& WithAmiId(const char* value) { SetAmiId(value); return *this;}
+    template<typename AmiIdT = Aws::String>
+    void SetAmiId(AmiIdT&& value) { m_amiIdHasBeenSet = true; m_amiId = std::forward<AmiIdT>(value); }
+    template<typename AmiIdT = Aws::String>
+    UpdateInstanceRequest& WithAmiId(AmiIdT&& value) { SetAmiId(std::forward<AmiIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The instance's Amazon EC2 key name.</p>
      */
-    inline const Aws::String& GetSshKeyName() const{ return m_sshKeyName; }
+    inline const Aws::String& GetSshKeyName() const { return m_sshKeyName; }
     inline bool SshKeyNameHasBeenSet() const { return m_sshKeyNameHasBeenSet; }
-    inline void SetSshKeyName(const Aws::String& value) { m_sshKeyNameHasBeenSet = true; m_sshKeyName = value; }
-    inline void SetSshKeyName(Aws::String&& value) { m_sshKeyNameHasBeenSet = true; m_sshKeyName = std::move(value); }
-    inline void SetSshKeyName(const char* value) { m_sshKeyNameHasBeenSet = true; m_sshKeyName.assign(value); }
-    inline UpdateInstanceRequest& WithSshKeyName(const Aws::String& value) { SetSshKeyName(value); return *this;}
-    inline UpdateInstanceRequest& WithSshKeyName(Aws::String&& value) { SetSshKeyName(std::move(value)); return *this;}
-    inline UpdateInstanceRequest& WithSshKeyName(const char* value) { SetSshKeyName(value); return *this;}
+    template<typename SshKeyNameT = Aws::String>
+    void SetSshKeyName(SshKeyNameT&& value) { m_sshKeyNameHasBeenSet = true; m_sshKeyName = std::forward<SshKeyNameT>(value); }
+    template<typename SshKeyNameT = Aws::String>
+    UpdateInstanceRequest& WithSshKeyName(SshKeyNameT&& value) { SetSshKeyName(std::forward<SshKeyNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -194,12 +179,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * Families and Types</a>.</p>
      */
-    inline const Architecture& GetArchitecture() const{ return m_architecture; }
+    inline Architecture GetArchitecture() const { return m_architecture; }
     inline bool ArchitectureHasBeenSet() const { return m_architectureHasBeenSet; }
-    inline void SetArchitecture(const Architecture& value) { m_architectureHasBeenSet = true; m_architecture = value; }
-    inline void SetArchitecture(Architecture&& value) { m_architectureHasBeenSet = true; m_architecture = std::move(value); }
-    inline UpdateInstanceRequest& WithArchitecture(const Architecture& value) { SetArchitecture(value); return *this;}
-    inline UpdateInstanceRequest& WithArchitecture(Architecture&& value) { SetArchitecture(std::move(value)); return *this;}
+    inline void SetArchitecture(Architecture value) { m_architectureHasBeenSet = true; m_architecture = value; }
+    inline UpdateInstanceRequest& WithArchitecture(Architecture value) { SetArchitecture(value); return *this;}
     ///@}
 
     ///@{
@@ -214,7 +197,7 @@ namespace Model
      * <code>true</code>, to ensure that your instances have the latest security
      * updates.</p> 
      */
-    inline bool GetInstallUpdatesOnBoot() const{ return m_installUpdatesOnBoot; }
+    inline bool GetInstallUpdatesOnBoot() const { return m_installUpdatesOnBoot; }
     inline bool InstallUpdatesOnBootHasBeenSet() const { return m_installUpdatesOnBootHasBeenSet; }
     inline void SetInstallUpdatesOnBoot(bool value) { m_installUpdatesOnBootHasBeenSet = true; m_installUpdatesOnBoot = value; }
     inline UpdateInstanceRequest& WithInstallUpdatesOnBoot(bool value) { SetInstallUpdatesOnBoot(value); return *this;}
@@ -224,7 +207,7 @@ namespace Model
     /**
      * <p>This property cannot be updated.</p>
      */
-    inline bool GetEbsOptimized() const{ return m_ebsOptimized; }
+    inline bool GetEbsOptimized() const { return m_ebsOptimized; }
     inline bool EbsOptimizedHasBeenSet() const { return m_ebsOptimizedHasBeenSet; }
     inline void SetEbsOptimized(bool value) { m_ebsOptimizedHasBeenSet = true; m_ebsOptimized = value; }
     inline UpdateInstanceRequest& WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
@@ -244,14 +227,12 @@ namespace Model
      * <a>DescribeAgentVersions</a>.</p> <p>AgentVersion cannot be set to Chef
      * 12.2.</p>
      */
-    inline const Aws::String& GetAgentVersion() const{ return m_agentVersion; }
+    inline const Aws::String& GetAgentVersion() const { return m_agentVersion; }
     inline bool AgentVersionHasBeenSet() const { return m_agentVersionHasBeenSet; }
-    inline void SetAgentVersion(const Aws::String& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
-    inline void SetAgentVersion(Aws::String&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = std::move(value); }
-    inline void SetAgentVersion(const char* value) { m_agentVersionHasBeenSet = true; m_agentVersion.assign(value); }
-    inline UpdateInstanceRequest& WithAgentVersion(const Aws::String& value) { SetAgentVersion(value); return *this;}
-    inline UpdateInstanceRequest& WithAgentVersion(Aws::String&& value) { SetAgentVersion(std::move(value)); return *this;}
-    inline UpdateInstanceRequest& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
+    template<typename AgentVersionT = Aws::String>
+    void SetAgentVersion(AgentVersionT&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = std::forward<AgentVersionT>(value); }
+    template<typename AgentVersionT = Aws::String>
+    UpdateInstanceRequest& WithAgentVersion(AgentVersionT&& value) { SetAgentVersion(std::forward<AgentVersionT>(value)); return *this;}
     ///@}
   private:
 
@@ -264,7 +245,7 @@ namespace Model
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet = false;
 
-    AutoScalingType m_autoScalingType;
+    AutoScalingType m_autoScalingType{AutoScalingType::NOT_SET};
     bool m_autoScalingTypeHasBeenSet = false;
 
     Aws::String m_hostname;
@@ -279,13 +260,13 @@ namespace Model
     Aws::String m_sshKeyName;
     bool m_sshKeyNameHasBeenSet = false;
 
-    Architecture m_architecture;
+    Architecture m_architecture{Architecture::NOT_SET};
     bool m_architectureHasBeenSet = false;
 
-    bool m_installUpdatesOnBoot;
+    bool m_installUpdatesOnBoot{false};
     bool m_installUpdatesOnBootHasBeenSet = false;
 
-    bool m_ebsOptimized;
+    bool m_ebsOptimized{false};
     bool m_ebsOptimizedHasBeenSet = false;
 
     Aws::String m_agentVersion;

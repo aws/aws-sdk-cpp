@@ -34,7 +34,7 @@ namespace Model
   class JobManifestSpec
   {
   public:
-    AWS_S3CONTROL_API JobManifestSpec();
+    AWS_S3CONTROL_API JobManifestSpec() = default;
     AWS_S3CONTROL_API JobManifestSpec(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API JobManifestSpec& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,12 +45,10 @@ namespace Model
     /**
      * <p>Indicates which of the available formats the specified manifest uses.</p>
      */
-    inline const JobManifestFormat& GetFormat() const{ return m_format; }
+    inline JobManifestFormat GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const JobManifestFormat& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(JobManifestFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline JobManifestSpec& WithFormat(const JobManifestFormat& value) { SetFormat(value); return *this;}
-    inline JobManifestSpec& WithFormat(JobManifestFormat&& value) { SetFormat(std::move(value)); return *this;}
+    inline void SetFormat(JobManifestFormat value) { m_formatHasBeenSet = true; m_format = value; }
+    inline JobManifestSpec& WithFormat(JobManifestFormat value) { SetFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -59,18 +57,17 @@ namespace Model
      * <code>S3BatchOperations_CSV_20180820</code> format, this element describes which
      * columns contain the required data.</p>
      */
-    inline const Aws::Vector<JobManifestFieldName>& GetFields() const{ return m_fields; }
+    inline const Aws::Vector<JobManifestFieldName>& GetFields() const { return m_fields; }
     inline bool FieldsHasBeenSet() const { return m_fieldsHasBeenSet; }
-    inline void SetFields(const Aws::Vector<JobManifestFieldName>& value) { m_fieldsHasBeenSet = true; m_fields = value; }
-    inline void SetFields(Aws::Vector<JobManifestFieldName>&& value) { m_fieldsHasBeenSet = true; m_fields = std::move(value); }
-    inline JobManifestSpec& WithFields(const Aws::Vector<JobManifestFieldName>& value) { SetFields(value); return *this;}
-    inline JobManifestSpec& WithFields(Aws::Vector<JobManifestFieldName>&& value) { SetFields(std::move(value)); return *this;}
-    inline JobManifestSpec& AddFields(const JobManifestFieldName& value) { m_fieldsHasBeenSet = true; m_fields.push_back(value); return *this; }
-    inline JobManifestSpec& AddFields(JobManifestFieldName&& value) { m_fieldsHasBeenSet = true; m_fields.push_back(std::move(value)); return *this; }
+    template<typename FieldsT = Aws::Vector<JobManifestFieldName>>
+    void SetFields(FieldsT&& value) { m_fieldsHasBeenSet = true; m_fields = std::forward<FieldsT>(value); }
+    template<typename FieldsT = Aws::Vector<JobManifestFieldName>>
+    JobManifestSpec& WithFields(FieldsT&& value) { SetFields(std::forward<FieldsT>(value)); return *this;}
+    inline JobManifestSpec& AddFields(JobManifestFieldName value) { m_fieldsHasBeenSet = true; m_fields.push_back(value); return *this; }
     ///@}
   private:
 
-    JobManifestFormat m_format;
+    JobManifestFormat m_format{JobManifestFormat::NOT_SET};
     bool m_formatHasBeenSet = false;
 
     Aws::Vector<JobManifestFieldName> m_fields;

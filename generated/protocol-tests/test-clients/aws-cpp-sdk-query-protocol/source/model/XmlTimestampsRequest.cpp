@@ -10,10 +10,6 @@
 using namespace Aws::QueryProtocol::Model;
 using namespace Aws::Utils;
 
-XmlTimestampsRequest::XmlTimestampsRequest()
-{
-}
-
 Aws::String XmlTimestampsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -29,7 +29,7 @@ namespace Model
   class RoutingCriteria
   {
   public:
-    AWS_BEDROCK_API RoutingCriteria();
+    AWS_BEDROCK_API RoutingCriteria() = default;
     AWS_BEDROCK_API RoutingCriteria(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API RoutingCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,14 +39,14 @@ namespace Model
     /**
      * <p>The criteria's response quality difference.</p>
      */
-    inline double GetResponseQualityDifference() const{ return m_responseQualityDifference; }
+    inline double GetResponseQualityDifference() const { return m_responseQualityDifference; }
     inline bool ResponseQualityDifferenceHasBeenSet() const { return m_responseQualityDifferenceHasBeenSet; }
     inline void SetResponseQualityDifference(double value) { m_responseQualityDifferenceHasBeenSet = true; m_responseQualityDifference = value; }
     inline RoutingCriteria& WithResponseQualityDifference(double value) { SetResponseQualityDifference(value); return *this;}
     ///@}
   private:
 
-    double m_responseQualityDifference;
+    double m_responseQualityDifference{0.0};
     bool m_responseQualityDifferenceHasBeenSet = false;
   };
 

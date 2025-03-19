@@ -10,11 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-GetAccessKeyLastUsedRequest::GetAccessKeyLastUsedRequest() : 
-    m_accessKeyIdHasBeenSet(false)
-{
-}
-
 Aws::String GetAccessKeyLastUsedRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -18,18 +18,7 @@ namespace ApplicationAutoScaling
 namespace Model
 {
 
-PredictiveScalingMetricDataQuery::PredictiveScalingMetricDataQuery() : 
-    m_idHasBeenSet(false),
-    m_expressionHasBeenSet(false),
-    m_metricStatHasBeenSet(false),
-    m_labelHasBeenSet(false),
-    m_returnData(false),
-    m_returnDataHasBeenSet(false)
-{
-}
-
 PredictiveScalingMetricDataQuery::PredictiveScalingMetricDataQuery(JsonView jsonValue)
-  : PredictiveScalingMetricDataQuery()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ PredictiveScalingMetricDataQuery& PredictiveScalingMetricDataQuery::operator =(J
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Expression"))
   {
     m_expression = jsonValue.GetString("Expression");
-
     m_expressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricStat"))
   {
     m_metricStat = jsonValue.GetObject("MetricStat");
-
     m_metricStatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Label"))
   {
     m_label = jsonValue.GetString("Label");
-
     m_labelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReturnData"))
   {
     m_returnData = jsonValue.GetBool("ReturnData");
-
     m_returnDataHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -28,7 +28,7 @@ namespace Model
   class DeleteObjectRequest : public S3CrtRequest
   {
   public:
-    AWS_S3CRT_API DeleteObjectRequest();
+    AWS_S3CRT_API DeleteObjectRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -82,28 +82,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
      * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
-    inline const Aws::String& GetBucket() const{ return m_bucket; }
+    inline const Aws::String& GetBucket() const { return m_bucket; }
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
-    inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
-    inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
-    inline DeleteObjectRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
-    inline DeleteObjectRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
-    inline DeleteObjectRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
+    template<typename BucketT = Aws::String>
+    void SetBucket(BucketT&& value) { m_bucketHasBeenSet = true; m_bucket = std::forward<BucketT>(value); }
+    template<typename BucketT = Aws::String>
+    DeleteObjectRequest& WithBucket(BucketT&& value) { SetBucket(std::forward<BucketT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Key name of the object to delete.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline DeleteObjectRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline DeleteObjectRequest& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline DeleteObjectRequest& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    DeleteObjectRequest& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,14 +110,12 @@ namespace Model
      * delete enabled.</p>  <p>This functionality is not supported for directory
      * buckets.</p> 
      */
-    inline const Aws::String& GetMFA() const{ return m_mFA; }
+    inline const Aws::String& GetMFA() const { return m_mFA; }
     inline bool MFAHasBeenSet() const { return m_mFAHasBeenSet; }
-    inline void SetMFA(const Aws::String& value) { m_mFAHasBeenSet = true; m_mFA = value; }
-    inline void SetMFA(Aws::String&& value) { m_mFAHasBeenSet = true; m_mFA = std::move(value); }
-    inline void SetMFA(const char* value) { m_mFAHasBeenSet = true; m_mFA.assign(value); }
-    inline DeleteObjectRequest& WithMFA(const Aws::String& value) { SetMFA(value); return *this;}
-    inline DeleteObjectRequest& WithMFA(Aws::String&& value) { SetMFA(std::move(value)); return *this;}
-    inline DeleteObjectRequest& WithMFA(const char* value) { SetMFA(value); return *this;}
+    template<typename MFAT = Aws::String>
+    void SetMFA(MFAT&& value) { m_mFAHasBeenSet = true; m_mFA = std::forward<MFAT>(value); }
+    template<typename MFAT = Aws::String>
+    DeleteObjectRequest& WithMFA(MFAT&& value) { SetMFA(std::forward<MFAT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -130,24 +124,20 @@ namespace Model
      * <p>For directory buckets in this API operation, only the <code>null</code> value
      * of the version ID is supported.</p> 
      */
-    inline const Aws::String& GetVersionId() const{ return m_versionId; }
+    inline const Aws::String& GetVersionId() const { return m_versionId; }
     inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
-    inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
-    inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
-    inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
-    inline DeleteObjectRequest& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
-    inline DeleteObjectRequest& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
-    inline DeleteObjectRequest& WithVersionId(const char* value) { SetVersionId(value); return *this;}
+    template<typename VersionIdT = Aws::String>
+    void SetVersionId(VersionIdT&& value) { m_versionIdHasBeenSet = true; m_versionId = std::forward<VersionIdT>(value); }
+    template<typename VersionIdT = Aws::String>
+    DeleteObjectRequest& WithVersionId(VersionIdT&& value) { SetVersionId(std::forward<VersionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const RequestPayer& GetRequestPayer() const{ return m_requestPayer; }
+    inline RequestPayer GetRequestPayer() const { return m_requestPayer; }
     inline bool RequestPayerHasBeenSet() const { return m_requestPayerHasBeenSet; }
-    inline void SetRequestPayer(const RequestPayer& value) { m_requestPayerHasBeenSet = true; m_requestPayer = value; }
-    inline void SetRequestPayer(RequestPayer&& value) { m_requestPayerHasBeenSet = true; m_requestPayer = std::move(value); }
-    inline DeleteObjectRequest& WithRequestPayer(const RequestPayer& value) { SetRequestPayer(value); return *this;}
-    inline DeleteObjectRequest& WithRequestPayer(RequestPayer&& value) { SetRequestPayer(std::move(value)); return *this;}
+    inline void SetRequestPayer(RequestPayer value) { m_requestPayerHasBeenSet = true; m_requestPayer = value; }
+    inline DeleteObjectRequest& WithRequestPayer(RequestPayer value) { SetRequestPayer(value); return *this;}
     ///@}
 
     ///@{
@@ -157,7 +147,7 @@ namespace Model
      * <code>s3:BypassGovernanceRetention</code> permission.</p>  <p>This
      * functionality is not supported for directory buckets.</p> 
      */
-    inline bool GetBypassGovernanceRetention() const{ return m_bypassGovernanceRetention; }
+    inline bool GetBypassGovernanceRetention() const { return m_bypassGovernanceRetention; }
     inline bool BypassGovernanceRetentionHasBeenSet() const { return m_bypassGovernanceRetentionHasBeenSet; }
     inline void SetBypassGovernanceRetention(bool value) { m_bypassGovernanceRetentionHasBeenSet = true; m_bypassGovernanceRetention = value; }
     inline DeleteObjectRequest& WithBypassGovernanceRetention(bool value) { SetBypassGovernanceRetention(value); return *this;}
@@ -169,14 +159,12 @@ namespace Model
      * provide does not match the actual owner of the bucket, the request fails with
      * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
-    inline const Aws::String& GetExpectedBucketOwner() const{ return m_expectedBucketOwner; }
+    inline const Aws::String& GetExpectedBucketOwner() const { return m_expectedBucketOwner; }
     inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }
-    inline void SetExpectedBucketOwner(const Aws::String& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = value; }
-    inline void SetExpectedBucketOwner(Aws::String&& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = std::move(value); }
-    inline void SetExpectedBucketOwner(const char* value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner.assign(value); }
-    inline DeleteObjectRequest& WithExpectedBucketOwner(const Aws::String& value) { SetExpectedBucketOwner(value); return *this;}
-    inline DeleteObjectRequest& WithExpectedBucketOwner(Aws::String&& value) { SetExpectedBucketOwner(std::move(value)); return *this;}
-    inline DeleteObjectRequest& WithExpectedBucketOwner(const char* value) { SetExpectedBucketOwner(value); return *this;}
+    template<typename ExpectedBucketOwnerT = Aws::String>
+    void SetExpectedBucketOwner(ExpectedBucketOwnerT&& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = std::forward<ExpectedBucketOwnerT>(value); }
+    template<typename ExpectedBucketOwnerT = Aws::String>
+    DeleteObjectRequest& WithExpectedBucketOwner(ExpectedBucketOwnerT&& value) { SetExpectedBucketOwner(std::forward<ExpectedBucketOwnerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -189,14 +177,12 @@ namespace Model
      * href="https://tools.ietf.org/html/rfc7232">RFC 7232</a>.</p>  <p>This
      * functionality is only supported for directory buckets.</p> 
      */
-    inline const Aws::String& GetIfMatch() const{ return m_ifMatch; }
+    inline const Aws::String& GetIfMatch() const { return m_ifMatch; }
     inline bool IfMatchHasBeenSet() const { return m_ifMatchHasBeenSet; }
-    inline void SetIfMatch(const Aws::String& value) { m_ifMatchHasBeenSet = true; m_ifMatch = value; }
-    inline void SetIfMatch(Aws::String&& value) { m_ifMatchHasBeenSet = true; m_ifMatch = std::move(value); }
-    inline void SetIfMatch(const char* value) { m_ifMatchHasBeenSet = true; m_ifMatch.assign(value); }
-    inline DeleteObjectRequest& WithIfMatch(const Aws::String& value) { SetIfMatch(value); return *this;}
-    inline DeleteObjectRequest& WithIfMatch(Aws::String&& value) { SetIfMatch(std::move(value)); return *this;}
-    inline DeleteObjectRequest& WithIfMatch(const char* value) { SetIfMatch(value); return *this;}
+    template<typename IfMatchT = Aws::String>
+    void SetIfMatch(IfMatchT&& value) { m_ifMatchHasBeenSet = true; m_ifMatch = std::forward<IfMatchT>(value); }
+    template<typename IfMatchT = Aws::String>
+    DeleteObjectRequest& WithIfMatch(IfMatchT&& value) { SetIfMatch(std::forward<IfMatchT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -208,12 +194,12 @@ namespace Model
      * returns a <code>204 Success (No Content)</code> response.</p>  <p>This
      * functionality is only supported for directory buckets.</p> 
      */
-    inline const Aws::Utils::DateTime& GetIfMatchLastModifiedTime() const{ return m_ifMatchLastModifiedTime; }
+    inline const Aws::Utils::DateTime& GetIfMatchLastModifiedTime() const { return m_ifMatchLastModifiedTime; }
     inline bool IfMatchLastModifiedTimeHasBeenSet() const { return m_ifMatchLastModifiedTimeHasBeenSet; }
-    inline void SetIfMatchLastModifiedTime(const Aws::Utils::DateTime& value) { m_ifMatchLastModifiedTimeHasBeenSet = true; m_ifMatchLastModifiedTime = value; }
-    inline void SetIfMatchLastModifiedTime(Aws::Utils::DateTime&& value) { m_ifMatchLastModifiedTimeHasBeenSet = true; m_ifMatchLastModifiedTime = std::move(value); }
-    inline DeleteObjectRequest& WithIfMatchLastModifiedTime(const Aws::Utils::DateTime& value) { SetIfMatchLastModifiedTime(value); return *this;}
-    inline DeleteObjectRequest& WithIfMatchLastModifiedTime(Aws::Utils::DateTime&& value) { SetIfMatchLastModifiedTime(std::move(value)); return *this;}
+    template<typename IfMatchLastModifiedTimeT = Aws::Utils::DateTime>
+    void SetIfMatchLastModifiedTime(IfMatchLastModifiedTimeT&& value) { m_ifMatchLastModifiedTimeHasBeenSet = true; m_ifMatchLastModifiedTime = std::forward<IfMatchLastModifiedTimeT>(value); }
+    template<typename IfMatchLastModifiedTimeT = Aws::Utils::DateTime>
+    DeleteObjectRequest& WithIfMatchLastModifiedTime(IfMatchLastModifiedTimeT&& value) { SetIfMatchLastModifiedTime(std::forward<IfMatchLastModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -228,7 +214,7 @@ namespace Model
      * <code>x-amz-if-match-size</code> conditional headers in conjunction with
      * each-other or individually.</p> 
      */
-    inline long long GetIfMatchSize() const{ return m_ifMatchSize; }
+    inline long long GetIfMatchSize() const { return m_ifMatchSize; }
     inline bool IfMatchSizeHasBeenSet() const { return m_ifMatchSizeHasBeenSet; }
     inline void SetIfMatchSize(long long value) { m_ifMatchSizeHasBeenSet = true; m_ifMatchSize = value; }
     inline DeleteObjectRequest& WithIfMatchSize(long long value) { SetIfMatchSize(value); return *this;}
@@ -236,19 +222,16 @@ namespace Model
 
     ///@{
     
-    inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const { return m_customizedAccessLogTag; }
     inline bool CustomizedAccessLogTagHasBeenSet() const { return m_customizedAccessLogTagHasBeenSet; }
-    inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }
-    inline void SetCustomizedAccessLogTag(Aws::Map<Aws::String, Aws::String>&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = std::move(value); }
-    inline DeleteObjectRequest& WithCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { SetCustomizedAccessLogTag(value); return *this;}
-    inline DeleteObjectRequest& WithCustomizedAccessLogTag(Aws::Map<Aws::String, Aws::String>&& value) { SetCustomizedAccessLogTag(std::move(value)); return *this;}
-    inline DeleteObjectRequest& AddCustomizedAccessLogTag(const Aws::String& key, const Aws::String& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, value); return *this; }
-    inline DeleteObjectRequest& AddCustomizedAccessLogTag(Aws::String&& key, const Aws::String& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), value); return *this; }
-    inline DeleteObjectRequest& AddCustomizedAccessLogTag(const Aws::String& key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, std::move(value)); return *this; }
-    inline DeleteObjectRequest& AddCustomizedAccessLogTag(Aws::String&& key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), std::move(value)); return *this; }
-    inline DeleteObjectRequest& AddCustomizedAccessLogTag(const char* key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, std::move(value)); return *this; }
-    inline DeleteObjectRequest& AddCustomizedAccessLogTag(Aws::String&& key, const char* value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), value); return *this; }
-    inline DeleteObjectRequest& AddCustomizedAccessLogTag(const char* key, const char* value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, value); return *this; }
+    template<typename CustomizedAccessLogTagT = Aws::Map<Aws::String, Aws::String>>
+    void SetCustomizedAccessLogTag(CustomizedAccessLogTagT&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = std::forward<CustomizedAccessLogTagT>(value); }
+    template<typename CustomizedAccessLogTagT = Aws::Map<Aws::String, Aws::String>>
+    DeleteObjectRequest& WithCustomizedAccessLogTag(CustomizedAccessLogTagT&& value) { SetCustomizedAccessLogTag(std::forward<CustomizedAccessLogTagT>(value)); return *this;}
+    template<typename CustomizedAccessLogTagKeyT = Aws::String, typename CustomizedAccessLogTagValueT = Aws::String>
+    DeleteObjectRequest& AddCustomizedAccessLogTag(CustomizedAccessLogTagKeyT&& key, CustomizedAccessLogTagValueT&& value) {
+      m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::forward<CustomizedAccessLogTagKeyT>(key), std::forward<CustomizedAccessLogTagValueT>(value)); return *this;
+    }
     ///@}
   private:
 
@@ -264,10 +247,10 @@ namespace Model
     Aws::String m_versionId;
     bool m_versionIdHasBeenSet = false;
 
-    RequestPayer m_requestPayer;
+    RequestPayer m_requestPayer{RequestPayer::NOT_SET};
     bool m_requestPayerHasBeenSet = false;
 
-    bool m_bypassGovernanceRetention;
+    bool m_bypassGovernanceRetention{false};
     bool m_bypassGovernanceRetentionHasBeenSet = false;
 
     Aws::String m_expectedBucketOwner;
@@ -276,10 +259,10 @@ namespace Model
     Aws::String m_ifMatch;
     bool m_ifMatchHasBeenSet = false;
 
-    Aws::Utils::DateTime m_ifMatchLastModifiedTime;
+    Aws::Utils::DateTime m_ifMatchLastModifiedTime{};
     bool m_ifMatchLastModifiedTimeHasBeenSet = false;
 
-    long long m_ifMatchSize;
+    long long m_ifMatchSize{0};
     bool m_ifMatchSizeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;

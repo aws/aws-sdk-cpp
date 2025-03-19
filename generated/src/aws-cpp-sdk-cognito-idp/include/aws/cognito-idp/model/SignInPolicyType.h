@@ -35,7 +35,7 @@ namespace Model
   class SignInPolicyType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API SignInPolicyType();
+    AWS_COGNITOIDENTITYPROVIDER_API SignInPolicyType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API SignInPolicyType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API SignInPolicyType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,13 @@ namespace Model
      * permit users to start authentication with a standard username and password, or
      * with other one-time password and hardware factors.</p>
      */
-    inline const Aws::Vector<AuthFactorType>& GetAllowedFirstAuthFactors() const{ return m_allowedFirstAuthFactors; }
+    inline const Aws::Vector<AuthFactorType>& GetAllowedFirstAuthFactors() const { return m_allowedFirstAuthFactors; }
     inline bool AllowedFirstAuthFactorsHasBeenSet() const { return m_allowedFirstAuthFactorsHasBeenSet; }
-    inline void SetAllowedFirstAuthFactors(const Aws::Vector<AuthFactorType>& value) { m_allowedFirstAuthFactorsHasBeenSet = true; m_allowedFirstAuthFactors = value; }
-    inline void SetAllowedFirstAuthFactors(Aws::Vector<AuthFactorType>&& value) { m_allowedFirstAuthFactorsHasBeenSet = true; m_allowedFirstAuthFactors = std::move(value); }
-    inline SignInPolicyType& WithAllowedFirstAuthFactors(const Aws::Vector<AuthFactorType>& value) { SetAllowedFirstAuthFactors(value); return *this;}
-    inline SignInPolicyType& WithAllowedFirstAuthFactors(Aws::Vector<AuthFactorType>&& value) { SetAllowedFirstAuthFactors(std::move(value)); return *this;}
-    inline SignInPolicyType& AddAllowedFirstAuthFactors(const AuthFactorType& value) { m_allowedFirstAuthFactorsHasBeenSet = true; m_allowedFirstAuthFactors.push_back(value); return *this; }
-    inline SignInPolicyType& AddAllowedFirstAuthFactors(AuthFactorType&& value) { m_allowedFirstAuthFactorsHasBeenSet = true; m_allowedFirstAuthFactors.push_back(std::move(value)); return *this; }
+    template<typename AllowedFirstAuthFactorsT = Aws::Vector<AuthFactorType>>
+    void SetAllowedFirstAuthFactors(AllowedFirstAuthFactorsT&& value) { m_allowedFirstAuthFactorsHasBeenSet = true; m_allowedFirstAuthFactors = std::forward<AllowedFirstAuthFactorsT>(value); }
+    template<typename AllowedFirstAuthFactorsT = Aws::Vector<AuthFactorType>>
+    SignInPolicyType& WithAllowedFirstAuthFactors(AllowedFirstAuthFactorsT&& value) { SetAllowedFirstAuthFactors(std::forward<AllowedFirstAuthFactorsT>(value)); return *this;}
+    inline SignInPolicyType& AddAllowedFirstAuthFactors(AuthFactorType value) { m_allowedFirstAuthFactorsHasBeenSet = true; m_allowedFirstAuthFactors.push_back(value); return *this; }
     ///@}
   private:
 

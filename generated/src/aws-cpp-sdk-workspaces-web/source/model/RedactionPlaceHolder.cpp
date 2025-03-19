@@ -18,15 +18,7 @@ namespace WorkSpacesWeb
 namespace Model
 {
 
-RedactionPlaceHolder::RedactionPlaceHolder() : 
-    m_redactionPlaceHolderTextHasBeenSet(false),
-    m_redactionPlaceHolderType(RedactionPlaceHolderType::NOT_SET),
-    m_redactionPlaceHolderTypeHasBeenSet(false)
-{
-}
-
 RedactionPlaceHolder::RedactionPlaceHolder(JsonView jsonValue)
-  : RedactionPlaceHolder()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ RedactionPlaceHolder& RedactionPlaceHolder::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("redactionPlaceHolderText"))
   {
     m_redactionPlaceHolderText = jsonValue.GetString("redactionPlaceHolderText");
-
     m_redactionPlaceHolderTextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("redactionPlaceHolderType"))
   {
     m_redactionPlaceHolderType = RedactionPlaceHolderTypeMapper::GetRedactionPlaceHolderTypeForName(jsonValue.GetString("redactionPlaceHolderType"));
-
     m_redactionPlaceHolderTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

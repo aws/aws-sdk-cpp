@@ -12,11 +12,6 @@ using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopDataMigrationRequest::StopDataMigrationRequest() : 
-    m_dataMigrationIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String StopDataMigrationRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,23 +18,7 @@ namespace Glue
 namespace Model
 {
 
-TransformFilterCriteria::TransformFilterCriteria() : 
-    m_nameHasBeenSet(false),
-    m_transformType(TransformType::NOT_SET),
-    m_transformTypeHasBeenSet(false),
-    m_status(TransformStatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_glueVersionHasBeenSet(false),
-    m_createdBeforeHasBeenSet(false),
-    m_createdAfterHasBeenSet(false),
-    m_lastModifiedBeforeHasBeenSet(false),
-    m_lastModifiedAfterHasBeenSet(false),
-    m_schemaHasBeenSet(false)
-{
-}
-
 TransformFilterCriteria::TransformFilterCriteria(JsonView jsonValue)
-  : TransformFilterCriteria()
 {
   *this = jsonValue;
 }
@@ -44,59 +28,43 @@ TransformFilterCriteria& TransformFilterCriteria::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TransformType"))
   {
     m_transformType = TransformTypeMapper::GetTransformTypeForName(jsonValue.GetString("TransformType"));
-
     m_transformTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = TransformStatusTypeMapper::GetTransformStatusTypeForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GlueVersion"))
   {
     m_glueVersion = jsonValue.GetString("GlueVersion");
-
     m_glueVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedBefore"))
   {
     m_createdBefore = jsonValue.GetDouble("CreatedBefore");
-
     m_createdBeforeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAfter"))
   {
     m_createdAfter = jsonValue.GetDouble("CreatedAfter");
-
     m_createdAfterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedBefore"))
   {
     m_lastModifiedBefore = jsonValue.GetDouble("LastModifiedBefore");
-
     m_lastModifiedBeforeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedAfter"))
   {
     m_lastModifiedAfter = jsonValue.GetDouble("LastModifiedAfter");
-
     m_lastModifiedAfterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Schema"))
   {
     Aws::Utils::Array<JsonView> schemaJsonList = jsonValue.GetArray("Schema");
@@ -106,7 +74,6 @@ TransformFilterCriteria& TransformFilterCriteria::operator =(JsonView jsonValue)
     }
     m_schemaHasBeenSet = true;
   }
-
   return *this;
 }
 

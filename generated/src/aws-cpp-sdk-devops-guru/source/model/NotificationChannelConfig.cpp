@@ -18,14 +18,7 @@ namespace DevOpsGuru
 namespace Model
 {
 
-NotificationChannelConfig::NotificationChannelConfig() : 
-    m_snsHasBeenSet(false),
-    m_filtersHasBeenSet(false)
-{
-}
-
 NotificationChannelConfig::NotificationChannelConfig(JsonView jsonValue)
-  : NotificationChannelConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ NotificationChannelConfig& NotificationChannelConfig::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Sns"))
   {
     m_sns = jsonValue.GetObject("Sns");
-
     m_snsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Filters"))
   {
     m_filters = jsonValue.GetObject("Filters");
-
     m_filtersHasBeenSet = true;
   }
-
   return *this;
 }
 

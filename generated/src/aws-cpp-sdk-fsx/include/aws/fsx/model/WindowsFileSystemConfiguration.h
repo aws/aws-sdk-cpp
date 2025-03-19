@@ -39,7 +39,7 @@ namespace Model
   class WindowsFileSystemConfiguration
   {
   public:
-    AWS_FSX_API WindowsFileSystemConfiguration();
+    AWS_FSX_API WindowsFileSystemConfiguration() = default;
     AWS_FSX_API WindowsFileSystemConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API WindowsFileSystemConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,24 +50,22 @@ namespace Model
      * <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory
      * instance that the file system is joined to.</p>
      */
-    inline const Aws::String& GetActiveDirectoryId() const{ return m_activeDirectoryId; }
+    inline const Aws::String& GetActiveDirectoryId() const { return m_activeDirectoryId; }
     inline bool ActiveDirectoryIdHasBeenSet() const { return m_activeDirectoryIdHasBeenSet; }
-    inline void SetActiveDirectoryId(const Aws::String& value) { m_activeDirectoryIdHasBeenSet = true; m_activeDirectoryId = value; }
-    inline void SetActiveDirectoryId(Aws::String&& value) { m_activeDirectoryIdHasBeenSet = true; m_activeDirectoryId = std::move(value); }
-    inline void SetActiveDirectoryId(const char* value) { m_activeDirectoryIdHasBeenSet = true; m_activeDirectoryId.assign(value); }
-    inline WindowsFileSystemConfiguration& WithActiveDirectoryId(const Aws::String& value) { SetActiveDirectoryId(value); return *this;}
-    inline WindowsFileSystemConfiguration& WithActiveDirectoryId(Aws::String&& value) { SetActiveDirectoryId(std::move(value)); return *this;}
-    inline WindowsFileSystemConfiguration& WithActiveDirectoryId(const char* value) { SetActiveDirectoryId(value); return *this;}
+    template<typename ActiveDirectoryIdT = Aws::String>
+    void SetActiveDirectoryId(ActiveDirectoryIdT&& value) { m_activeDirectoryIdHasBeenSet = true; m_activeDirectoryId = std::forward<ActiveDirectoryIdT>(value); }
+    template<typename ActiveDirectoryIdT = Aws::String>
+    WindowsFileSystemConfiguration& WithActiveDirectoryId(ActiveDirectoryIdT&& value) { SetActiveDirectoryId(std::forward<ActiveDirectoryIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const SelfManagedActiveDirectoryAttributes& GetSelfManagedActiveDirectoryConfiguration() const{ return m_selfManagedActiveDirectoryConfiguration; }
+    inline const SelfManagedActiveDirectoryAttributes& GetSelfManagedActiveDirectoryConfiguration() const { return m_selfManagedActiveDirectoryConfiguration; }
     inline bool SelfManagedActiveDirectoryConfigurationHasBeenSet() const { return m_selfManagedActiveDirectoryConfigurationHasBeenSet; }
-    inline void SetSelfManagedActiveDirectoryConfiguration(const SelfManagedActiveDirectoryAttributes& value) { m_selfManagedActiveDirectoryConfigurationHasBeenSet = true; m_selfManagedActiveDirectoryConfiguration = value; }
-    inline void SetSelfManagedActiveDirectoryConfiguration(SelfManagedActiveDirectoryAttributes&& value) { m_selfManagedActiveDirectoryConfigurationHasBeenSet = true; m_selfManagedActiveDirectoryConfiguration = std::move(value); }
-    inline WindowsFileSystemConfiguration& WithSelfManagedActiveDirectoryConfiguration(const SelfManagedActiveDirectoryAttributes& value) { SetSelfManagedActiveDirectoryConfiguration(value); return *this;}
-    inline WindowsFileSystemConfiguration& WithSelfManagedActiveDirectoryConfiguration(SelfManagedActiveDirectoryAttributes&& value) { SetSelfManagedActiveDirectoryConfiguration(std::move(value)); return *this;}
+    template<typename SelfManagedActiveDirectoryConfigurationT = SelfManagedActiveDirectoryAttributes>
+    void SetSelfManagedActiveDirectoryConfiguration(SelfManagedActiveDirectoryConfigurationT&& value) { m_selfManagedActiveDirectoryConfigurationHasBeenSet = true; m_selfManagedActiveDirectoryConfiguration = std::forward<SelfManagedActiveDirectoryConfigurationT>(value); }
+    template<typename SelfManagedActiveDirectoryConfigurationT = SelfManagedActiveDirectoryAttributes>
+    WindowsFileSystemConfiguration& WithSelfManagedActiveDirectoryConfiguration(SelfManagedActiveDirectoryConfigurationT&& value) { SetSelfManagedActiveDirectoryConfiguration(std::forward<SelfManagedActiveDirectoryConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,12 +83,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">Single-AZ
      * and Multi-AZ File Systems</a>.</p>
      */
-    inline const WindowsDeploymentType& GetDeploymentType() const{ return m_deploymentType; }
+    inline WindowsDeploymentType GetDeploymentType() const { return m_deploymentType; }
     inline bool DeploymentTypeHasBeenSet() const { return m_deploymentTypeHasBeenSet; }
-    inline void SetDeploymentType(const WindowsDeploymentType& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = value; }
-    inline void SetDeploymentType(WindowsDeploymentType&& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = std::move(value); }
-    inline WindowsFileSystemConfiguration& WithDeploymentType(const WindowsDeploymentType& value) { SetDeploymentType(value); return *this;}
-    inline WindowsFileSystemConfiguration& WithDeploymentType(WindowsDeploymentType&& value) { SetDeploymentType(std::move(value)); return *this;}
+    inline void SetDeploymentType(WindowsDeploymentType value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = value; }
+    inline WindowsFileSystemConfiguration& WithDeploymentType(WindowsDeploymentType value) { SetDeploymentType(value); return *this;}
     ///@}
 
     ///@{
@@ -101,14 +97,12 @@ namespace Model
      * deployment types, this is the DNS name of the file system.</p> <p>This endpoint
      * is temporarily unavailable when the file system is undergoing maintenance.</p>
      */
-    inline const Aws::String& GetRemoteAdministrationEndpoint() const{ return m_remoteAdministrationEndpoint; }
+    inline const Aws::String& GetRemoteAdministrationEndpoint() const { return m_remoteAdministrationEndpoint; }
     inline bool RemoteAdministrationEndpointHasBeenSet() const { return m_remoteAdministrationEndpointHasBeenSet; }
-    inline void SetRemoteAdministrationEndpoint(const Aws::String& value) { m_remoteAdministrationEndpointHasBeenSet = true; m_remoteAdministrationEndpoint = value; }
-    inline void SetRemoteAdministrationEndpoint(Aws::String&& value) { m_remoteAdministrationEndpointHasBeenSet = true; m_remoteAdministrationEndpoint = std::move(value); }
-    inline void SetRemoteAdministrationEndpoint(const char* value) { m_remoteAdministrationEndpointHasBeenSet = true; m_remoteAdministrationEndpoint.assign(value); }
-    inline WindowsFileSystemConfiguration& WithRemoteAdministrationEndpoint(const Aws::String& value) { SetRemoteAdministrationEndpoint(value); return *this;}
-    inline WindowsFileSystemConfiguration& WithRemoteAdministrationEndpoint(Aws::String&& value) { SetRemoteAdministrationEndpoint(std::move(value)); return *this;}
-    inline WindowsFileSystemConfiguration& WithRemoteAdministrationEndpoint(const char* value) { SetRemoteAdministrationEndpoint(value); return *this;}
+    template<typename RemoteAdministrationEndpointT = Aws::String>
+    void SetRemoteAdministrationEndpoint(RemoteAdministrationEndpointT&& value) { m_remoteAdministrationEndpointHasBeenSet = true; m_remoteAdministrationEndpoint = std::forward<RemoteAdministrationEndpointT>(value); }
+    template<typename RemoteAdministrationEndpointT = Aws::String>
+    WindowsFileSystemConfiguration& WithRemoteAdministrationEndpoint(RemoteAdministrationEndpointT&& value) { SetRemoteAdministrationEndpoint(std::forward<RemoteAdministrationEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -123,14 +117,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html#single-multi-az-resources">Availability
      * and durability: Single-AZ and Multi-AZ file systems</a>.</p>
      */
-    inline const Aws::String& GetPreferredSubnetId() const{ return m_preferredSubnetId; }
+    inline const Aws::String& GetPreferredSubnetId() const { return m_preferredSubnetId; }
     inline bool PreferredSubnetIdHasBeenSet() const { return m_preferredSubnetIdHasBeenSet; }
-    inline void SetPreferredSubnetId(const Aws::String& value) { m_preferredSubnetIdHasBeenSet = true; m_preferredSubnetId = value; }
-    inline void SetPreferredSubnetId(Aws::String&& value) { m_preferredSubnetIdHasBeenSet = true; m_preferredSubnetId = std::move(value); }
-    inline void SetPreferredSubnetId(const char* value) { m_preferredSubnetIdHasBeenSet = true; m_preferredSubnetId.assign(value); }
-    inline WindowsFileSystemConfiguration& WithPreferredSubnetId(const Aws::String& value) { SetPreferredSubnetId(value); return *this;}
-    inline WindowsFileSystemConfiguration& WithPreferredSubnetId(Aws::String&& value) { SetPreferredSubnetId(std::move(value)); return *this;}
-    inline WindowsFileSystemConfiguration& WithPreferredSubnetId(const char* value) { SetPreferredSubnetId(value); return *this;}
+    template<typename PreferredSubnetIdT = Aws::String>
+    void SetPreferredSubnetId(PreferredSubnetIdT&& value) { m_preferredSubnetIdHasBeenSet = true; m_preferredSubnetId = std::forward<PreferredSubnetIdT>(value); }
+    template<typename PreferredSubnetIdT = Aws::String>
+    WindowsFileSystemConfiguration& WithPreferredSubnetId(PreferredSubnetIdT&& value) { SetPreferredSubnetId(std::forward<PreferredSubnetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -146,14 +138,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html">Accessing
      * File Shares</a>.</p>
      */
-    inline const Aws::String& GetPreferredFileServerIp() const{ return m_preferredFileServerIp; }
+    inline const Aws::String& GetPreferredFileServerIp() const { return m_preferredFileServerIp; }
     inline bool PreferredFileServerIpHasBeenSet() const { return m_preferredFileServerIpHasBeenSet; }
-    inline void SetPreferredFileServerIp(const Aws::String& value) { m_preferredFileServerIpHasBeenSet = true; m_preferredFileServerIp = value; }
-    inline void SetPreferredFileServerIp(Aws::String&& value) { m_preferredFileServerIpHasBeenSet = true; m_preferredFileServerIp = std::move(value); }
-    inline void SetPreferredFileServerIp(const char* value) { m_preferredFileServerIpHasBeenSet = true; m_preferredFileServerIp.assign(value); }
-    inline WindowsFileSystemConfiguration& WithPreferredFileServerIp(const Aws::String& value) { SetPreferredFileServerIp(value); return *this;}
-    inline WindowsFileSystemConfiguration& WithPreferredFileServerIp(Aws::String&& value) { SetPreferredFileServerIp(std::move(value)); return *this;}
-    inline WindowsFileSystemConfiguration& WithPreferredFileServerIp(const char* value) { SetPreferredFileServerIp(value); return *this;}
+    template<typename PreferredFileServerIpT = Aws::String>
+    void SetPreferredFileServerIp(PreferredFileServerIpT&& value) { m_preferredFileServerIpHasBeenSet = true; m_preferredFileServerIp = std::forward<PreferredFileServerIpT>(value); }
+    template<typename PreferredFileServerIpT = Aws::String>
+    WindowsFileSystemConfiguration& WithPreferredFileServerIp(PreferredFileServerIpT&& value) { SetPreferredFileServerIp(std::forward<PreferredFileServerIpT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -161,7 +151,7 @@ namespace Model
      * <p>The throughput of the Amazon FSx file system, measured in megabytes per
      * second.</p>
      */
-    inline int GetThroughputCapacity() const{ return m_throughputCapacity; }
+    inline int GetThroughputCapacity() const { return m_throughputCapacity; }
     inline bool ThroughputCapacityHasBeenSet() const { return m_throughputCapacityHasBeenSet; }
     inline void SetThroughputCapacity(int value) { m_throughputCapacityHasBeenSet = true; m_throughputCapacity = value; }
     inline WindowsFileSystemConfiguration& WithThroughputCapacity(int value) { SetThroughputCapacity(value); return *this;}
@@ -171,14 +161,13 @@ namespace Model
     /**
      * <p>The list of maintenance operations in progress for this file system.</p>
      */
-    inline const Aws::Vector<FileSystemMaintenanceOperation>& GetMaintenanceOperationsInProgress() const{ return m_maintenanceOperationsInProgress; }
+    inline const Aws::Vector<FileSystemMaintenanceOperation>& GetMaintenanceOperationsInProgress() const { return m_maintenanceOperationsInProgress; }
     inline bool MaintenanceOperationsInProgressHasBeenSet() const { return m_maintenanceOperationsInProgressHasBeenSet; }
-    inline void SetMaintenanceOperationsInProgress(const Aws::Vector<FileSystemMaintenanceOperation>& value) { m_maintenanceOperationsInProgressHasBeenSet = true; m_maintenanceOperationsInProgress = value; }
-    inline void SetMaintenanceOperationsInProgress(Aws::Vector<FileSystemMaintenanceOperation>&& value) { m_maintenanceOperationsInProgressHasBeenSet = true; m_maintenanceOperationsInProgress = std::move(value); }
-    inline WindowsFileSystemConfiguration& WithMaintenanceOperationsInProgress(const Aws::Vector<FileSystemMaintenanceOperation>& value) { SetMaintenanceOperationsInProgress(value); return *this;}
-    inline WindowsFileSystemConfiguration& WithMaintenanceOperationsInProgress(Aws::Vector<FileSystemMaintenanceOperation>&& value) { SetMaintenanceOperationsInProgress(std::move(value)); return *this;}
-    inline WindowsFileSystemConfiguration& AddMaintenanceOperationsInProgress(const FileSystemMaintenanceOperation& value) { m_maintenanceOperationsInProgressHasBeenSet = true; m_maintenanceOperationsInProgress.push_back(value); return *this; }
-    inline WindowsFileSystemConfiguration& AddMaintenanceOperationsInProgress(FileSystemMaintenanceOperation&& value) { m_maintenanceOperationsInProgressHasBeenSet = true; m_maintenanceOperationsInProgress.push_back(std::move(value)); return *this; }
+    template<typename MaintenanceOperationsInProgressT = Aws::Vector<FileSystemMaintenanceOperation>>
+    void SetMaintenanceOperationsInProgress(MaintenanceOperationsInProgressT&& value) { m_maintenanceOperationsInProgressHasBeenSet = true; m_maintenanceOperationsInProgress = std::forward<MaintenanceOperationsInProgressT>(value); }
+    template<typename MaintenanceOperationsInProgressT = Aws::Vector<FileSystemMaintenanceOperation>>
+    WindowsFileSystemConfiguration& WithMaintenanceOperationsInProgress(MaintenanceOperationsInProgressT&& value) { SetMaintenanceOperationsInProgress(std::forward<MaintenanceOperationsInProgressT>(value)); return *this;}
+    inline WindowsFileSystemConfiguration& AddMaintenanceOperationsInProgress(FileSystemMaintenanceOperation value) { m_maintenanceOperationsInProgressHasBeenSet = true; m_maintenanceOperationsInProgress.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -187,28 +176,24 @@ namespace Model
      * the UTC time zone. d is the weekday number, from 1 through 7, beginning with
      * Monday and ending with Sunday.</p>
      */
-    inline const Aws::String& GetWeeklyMaintenanceStartTime() const{ return m_weeklyMaintenanceStartTime; }
+    inline const Aws::String& GetWeeklyMaintenanceStartTime() const { return m_weeklyMaintenanceStartTime; }
     inline bool WeeklyMaintenanceStartTimeHasBeenSet() const { return m_weeklyMaintenanceStartTimeHasBeenSet; }
-    inline void SetWeeklyMaintenanceStartTime(const Aws::String& value) { m_weeklyMaintenanceStartTimeHasBeenSet = true; m_weeklyMaintenanceStartTime = value; }
-    inline void SetWeeklyMaintenanceStartTime(Aws::String&& value) { m_weeklyMaintenanceStartTimeHasBeenSet = true; m_weeklyMaintenanceStartTime = std::move(value); }
-    inline void SetWeeklyMaintenanceStartTime(const char* value) { m_weeklyMaintenanceStartTimeHasBeenSet = true; m_weeklyMaintenanceStartTime.assign(value); }
-    inline WindowsFileSystemConfiguration& WithWeeklyMaintenanceStartTime(const Aws::String& value) { SetWeeklyMaintenanceStartTime(value); return *this;}
-    inline WindowsFileSystemConfiguration& WithWeeklyMaintenanceStartTime(Aws::String&& value) { SetWeeklyMaintenanceStartTime(std::move(value)); return *this;}
-    inline WindowsFileSystemConfiguration& WithWeeklyMaintenanceStartTime(const char* value) { SetWeeklyMaintenanceStartTime(value); return *this;}
+    template<typename WeeklyMaintenanceStartTimeT = Aws::String>
+    void SetWeeklyMaintenanceStartTime(WeeklyMaintenanceStartTimeT&& value) { m_weeklyMaintenanceStartTimeHasBeenSet = true; m_weeklyMaintenanceStartTime = std::forward<WeeklyMaintenanceStartTimeT>(value); }
+    template<typename WeeklyMaintenanceStartTimeT = Aws::String>
+    WindowsFileSystemConfiguration& WithWeeklyMaintenanceStartTime(WeeklyMaintenanceStartTimeT&& value) { SetWeeklyMaintenanceStartTime(std::forward<WeeklyMaintenanceStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The preferred time to take daily automatic backups, in the UTC time zone.</p>
      */
-    inline const Aws::String& GetDailyAutomaticBackupStartTime() const{ return m_dailyAutomaticBackupStartTime; }
+    inline const Aws::String& GetDailyAutomaticBackupStartTime() const { return m_dailyAutomaticBackupStartTime; }
     inline bool DailyAutomaticBackupStartTimeHasBeenSet() const { return m_dailyAutomaticBackupStartTimeHasBeenSet; }
-    inline void SetDailyAutomaticBackupStartTime(const Aws::String& value) { m_dailyAutomaticBackupStartTimeHasBeenSet = true; m_dailyAutomaticBackupStartTime = value; }
-    inline void SetDailyAutomaticBackupStartTime(Aws::String&& value) { m_dailyAutomaticBackupStartTimeHasBeenSet = true; m_dailyAutomaticBackupStartTime = std::move(value); }
-    inline void SetDailyAutomaticBackupStartTime(const char* value) { m_dailyAutomaticBackupStartTimeHasBeenSet = true; m_dailyAutomaticBackupStartTime.assign(value); }
-    inline WindowsFileSystemConfiguration& WithDailyAutomaticBackupStartTime(const Aws::String& value) { SetDailyAutomaticBackupStartTime(value); return *this;}
-    inline WindowsFileSystemConfiguration& WithDailyAutomaticBackupStartTime(Aws::String&& value) { SetDailyAutomaticBackupStartTime(std::move(value)); return *this;}
-    inline WindowsFileSystemConfiguration& WithDailyAutomaticBackupStartTime(const char* value) { SetDailyAutomaticBackupStartTime(value); return *this;}
+    template<typename DailyAutomaticBackupStartTimeT = Aws::String>
+    void SetDailyAutomaticBackupStartTime(DailyAutomaticBackupStartTimeT&& value) { m_dailyAutomaticBackupStartTimeHasBeenSet = true; m_dailyAutomaticBackupStartTime = std::forward<DailyAutomaticBackupStartTimeT>(value); }
+    template<typename DailyAutomaticBackupStartTimeT = Aws::String>
+    WindowsFileSystemConfiguration& WithDailyAutomaticBackupStartTime(DailyAutomaticBackupStartTimeT&& value) { SetDailyAutomaticBackupStartTime(std::forward<DailyAutomaticBackupStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -217,7 +202,7 @@ namespace Model
      * automatic backups. You can retain automatic backups for a maximum of 90
      * days.</p>
      */
-    inline int GetAutomaticBackupRetentionDays() const{ return m_automaticBackupRetentionDays; }
+    inline int GetAutomaticBackupRetentionDays() const { return m_automaticBackupRetentionDays; }
     inline bool AutomaticBackupRetentionDaysHasBeenSet() const { return m_automaticBackupRetentionDaysHasBeenSet; }
     inline void SetAutomaticBackupRetentionDays(int value) { m_automaticBackupRetentionDaysHasBeenSet = true; m_automaticBackupRetentionDays = value; }
     inline WindowsFileSystemConfiguration& WithAutomaticBackupRetentionDays(int value) { SetAutomaticBackupRetentionDays(value); return *this;}
@@ -233,7 +218,7 @@ namespace Model
      * more tags when creating a user-initiated backup, no tags are copied from the
      * file system, regardless of this value.</p>
      */
-    inline bool GetCopyTagsToBackups() const{ return m_copyTagsToBackups; }
+    inline bool GetCopyTagsToBackups() const { return m_copyTagsToBackups; }
     inline bool CopyTagsToBackupsHasBeenSet() const { return m_copyTagsToBackupsHasBeenSet; }
     inline void SetCopyTagsToBackups(bool value) { m_copyTagsToBackupsHasBeenSet = true; m_copyTagsToBackups = value; }
     inline WindowsFileSystemConfiguration& WithCopyTagsToBackups(bool value) { SetCopyTagsToBackups(value); return *this;}
@@ -241,14 +226,14 @@ namespace Model
 
     ///@{
     
-    inline const Aws::Vector<Alias>& GetAliases() const{ return m_aliases; }
+    inline const Aws::Vector<Alias>& GetAliases() const { return m_aliases; }
     inline bool AliasesHasBeenSet() const { return m_aliasesHasBeenSet; }
-    inline void SetAliases(const Aws::Vector<Alias>& value) { m_aliasesHasBeenSet = true; m_aliases = value; }
-    inline void SetAliases(Aws::Vector<Alias>&& value) { m_aliasesHasBeenSet = true; m_aliases = std::move(value); }
-    inline WindowsFileSystemConfiguration& WithAliases(const Aws::Vector<Alias>& value) { SetAliases(value); return *this;}
-    inline WindowsFileSystemConfiguration& WithAliases(Aws::Vector<Alias>&& value) { SetAliases(std::move(value)); return *this;}
-    inline WindowsFileSystemConfiguration& AddAliases(const Alias& value) { m_aliasesHasBeenSet = true; m_aliases.push_back(value); return *this; }
-    inline WindowsFileSystemConfiguration& AddAliases(Alias&& value) { m_aliasesHasBeenSet = true; m_aliases.push_back(std::move(value)); return *this; }
+    template<typename AliasesT = Aws::Vector<Alias>>
+    void SetAliases(AliasesT&& value) { m_aliasesHasBeenSet = true; m_aliases = std::forward<AliasesT>(value); }
+    template<typename AliasesT = Aws::Vector<Alias>>
+    WindowsFileSystemConfiguration& WithAliases(AliasesT&& value) { SetAliases(std::forward<AliasesT>(value)); return *this;}
+    template<typename AliasesT = Alias>
+    WindowsFileSystemConfiguration& AddAliases(AliasesT&& value) { m_aliasesHasBeenSet = true; m_aliases.emplace_back(std::forward<AliasesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -257,12 +242,12 @@ namespace Model
      * log user accesses of files, folders, and file shares on the Amazon FSx for
      * Windows File Server file system.</p>
      */
-    inline const WindowsAuditLogConfiguration& GetAuditLogConfiguration() const{ return m_auditLogConfiguration; }
+    inline const WindowsAuditLogConfiguration& GetAuditLogConfiguration() const { return m_auditLogConfiguration; }
     inline bool AuditLogConfigurationHasBeenSet() const { return m_auditLogConfigurationHasBeenSet; }
-    inline void SetAuditLogConfiguration(const WindowsAuditLogConfiguration& value) { m_auditLogConfigurationHasBeenSet = true; m_auditLogConfiguration = value; }
-    inline void SetAuditLogConfiguration(WindowsAuditLogConfiguration&& value) { m_auditLogConfigurationHasBeenSet = true; m_auditLogConfiguration = std::move(value); }
-    inline WindowsFileSystemConfiguration& WithAuditLogConfiguration(const WindowsAuditLogConfiguration& value) { SetAuditLogConfiguration(value); return *this;}
-    inline WindowsFileSystemConfiguration& WithAuditLogConfiguration(WindowsAuditLogConfiguration&& value) { SetAuditLogConfiguration(std::move(value)); return *this;}
+    template<typename AuditLogConfigurationT = WindowsAuditLogConfiguration>
+    void SetAuditLogConfiguration(AuditLogConfigurationT&& value) { m_auditLogConfigurationHasBeenSet = true; m_auditLogConfiguration = std::forward<AuditLogConfigurationT>(value); }
+    template<typename AuditLogConfigurationT = WindowsAuditLogConfiguration>
+    WindowsFileSystemConfiguration& WithAuditLogConfiguration(AuditLogConfigurationT&& value) { SetAuditLogConfiguration(std::forward<AuditLogConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -273,12 +258,12 @@ namespace Model
      * storage, up to the maximum limit associated with your chosen throughput
      * capacity.</p>
      */
-    inline const DiskIopsConfiguration& GetDiskIopsConfiguration() const{ return m_diskIopsConfiguration; }
+    inline const DiskIopsConfiguration& GetDiskIopsConfiguration() const { return m_diskIopsConfiguration; }
     inline bool DiskIopsConfigurationHasBeenSet() const { return m_diskIopsConfigurationHasBeenSet; }
-    inline void SetDiskIopsConfiguration(const DiskIopsConfiguration& value) { m_diskIopsConfigurationHasBeenSet = true; m_diskIopsConfiguration = value; }
-    inline void SetDiskIopsConfiguration(DiskIopsConfiguration&& value) { m_diskIopsConfigurationHasBeenSet = true; m_diskIopsConfiguration = std::move(value); }
-    inline WindowsFileSystemConfiguration& WithDiskIopsConfiguration(const DiskIopsConfiguration& value) { SetDiskIopsConfiguration(value); return *this;}
-    inline WindowsFileSystemConfiguration& WithDiskIopsConfiguration(DiskIopsConfiguration&& value) { SetDiskIopsConfiguration(std::move(value)); return *this;}
+    template<typename DiskIopsConfigurationT = DiskIopsConfiguration>
+    void SetDiskIopsConfiguration(DiskIopsConfigurationT&& value) { m_diskIopsConfigurationHasBeenSet = true; m_diskIopsConfiguration = std::forward<DiskIopsConfigurationT>(value); }
+    template<typename DiskIopsConfigurationT = DiskIopsConfiguration>
+    WindowsFileSystemConfiguration& WithDiskIopsConfiguration(DiskIopsConfigurationT&& value) { SetDiskIopsConfiguration(std::forward<DiskIopsConfigurationT>(value)); return *this;}
     ///@}
   private:
 
@@ -288,7 +273,7 @@ namespace Model
     SelfManagedActiveDirectoryAttributes m_selfManagedActiveDirectoryConfiguration;
     bool m_selfManagedActiveDirectoryConfigurationHasBeenSet = false;
 
-    WindowsDeploymentType m_deploymentType;
+    WindowsDeploymentType m_deploymentType{WindowsDeploymentType::NOT_SET};
     bool m_deploymentTypeHasBeenSet = false;
 
     Aws::String m_remoteAdministrationEndpoint;
@@ -300,7 +285,7 @@ namespace Model
     Aws::String m_preferredFileServerIp;
     bool m_preferredFileServerIpHasBeenSet = false;
 
-    int m_throughputCapacity;
+    int m_throughputCapacity{0};
     bool m_throughputCapacityHasBeenSet = false;
 
     Aws::Vector<FileSystemMaintenanceOperation> m_maintenanceOperationsInProgress;
@@ -312,10 +297,10 @@ namespace Model
     Aws::String m_dailyAutomaticBackupStartTime;
     bool m_dailyAutomaticBackupStartTimeHasBeenSet = false;
 
-    int m_automaticBackupRetentionDays;
+    int m_automaticBackupRetentionDays{0};
     bool m_automaticBackupRetentionDaysHasBeenSet = false;
 
-    bool m_copyTagsToBackups;
+    bool m_copyTagsToBackups{false};
     bool m_copyTagsToBackupsHasBeenSet = false;
 
     Aws::Vector<Alias> m_aliases;

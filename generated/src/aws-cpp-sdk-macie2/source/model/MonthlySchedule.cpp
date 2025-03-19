@@ -18,14 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-MonthlySchedule::MonthlySchedule() : 
-    m_dayOfMonth(0),
-    m_dayOfMonthHasBeenSet(false)
-{
-}
-
 MonthlySchedule::MonthlySchedule(JsonView jsonValue)
-  : MonthlySchedule()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ MonthlySchedule& MonthlySchedule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("dayOfMonth"))
   {
     m_dayOfMonth = jsonValue.GetInteger("dayOfMonth");
-
     m_dayOfMonthHasBeenSet = true;
   }
-
   return *this;
 }
 

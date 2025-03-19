@@ -33,7 +33,7 @@ namespace Model
   class DocumentIdOptions
   {
   public:
-    AWS_FIREHOSE_API DocumentIdOptions();
+    AWS_FIREHOSE_API DocumentIdOptions() = default;
     AWS_FIREHOSE_API DocumentIdOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API DocumentIdOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,16 +54,14 @@ namespace Model
      * observability data, to consume less resources in the Amazon OpenSearch Service
      * domain, resulting in improved performance.</p>
      */
-    inline const DefaultDocumentIdFormat& GetDefaultDocumentIdFormat() const{ return m_defaultDocumentIdFormat; }
+    inline DefaultDocumentIdFormat GetDefaultDocumentIdFormat() const { return m_defaultDocumentIdFormat; }
     inline bool DefaultDocumentIdFormatHasBeenSet() const { return m_defaultDocumentIdFormatHasBeenSet; }
-    inline void SetDefaultDocumentIdFormat(const DefaultDocumentIdFormat& value) { m_defaultDocumentIdFormatHasBeenSet = true; m_defaultDocumentIdFormat = value; }
-    inline void SetDefaultDocumentIdFormat(DefaultDocumentIdFormat&& value) { m_defaultDocumentIdFormatHasBeenSet = true; m_defaultDocumentIdFormat = std::move(value); }
-    inline DocumentIdOptions& WithDefaultDocumentIdFormat(const DefaultDocumentIdFormat& value) { SetDefaultDocumentIdFormat(value); return *this;}
-    inline DocumentIdOptions& WithDefaultDocumentIdFormat(DefaultDocumentIdFormat&& value) { SetDefaultDocumentIdFormat(std::move(value)); return *this;}
+    inline void SetDefaultDocumentIdFormat(DefaultDocumentIdFormat value) { m_defaultDocumentIdFormatHasBeenSet = true; m_defaultDocumentIdFormat = value; }
+    inline DocumentIdOptions& WithDefaultDocumentIdFormat(DefaultDocumentIdFormat value) { SetDefaultDocumentIdFormat(value); return *this;}
     ///@}
   private:
 
-    DefaultDocumentIdFormat m_defaultDocumentIdFormat;
+    DefaultDocumentIdFormat m_defaultDocumentIdFormat{DefaultDocumentIdFormat::NOT_SET};
     bool m_defaultDocumentIdFormatHasBeenSet = false;
   };
 

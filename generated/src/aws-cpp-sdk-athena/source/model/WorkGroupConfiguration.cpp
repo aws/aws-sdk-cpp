@@ -18,29 +18,7 @@ namespace Athena
 namespace Model
 {
 
-WorkGroupConfiguration::WorkGroupConfiguration() : 
-    m_resultConfigurationHasBeenSet(false),
-    m_enforceWorkGroupConfiguration(false),
-    m_enforceWorkGroupConfigurationHasBeenSet(false),
-    m_publishCloudWatchMetricsEnabled(false),
-    m_publishCloudWatchMetricsEnabledHasBeenSet(false),
-    m_bytesScannedCutoffPerQuery(0),
-    m_bytesScannedCutoffPerQueryHasBeenSet(false),
-    m_requesterPaysEnabled(false),
-    m_requesterPaysEnabledHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_additionalConfigurationHasBeenSet(false),
-    m_executionRoleHasBeenSet(false),
-    m_customerContentEncryptionConfigurationHasBeenSet(false),
-    m_enableMinimumEncryptionConfiguration(false),
-    m_enableMinimumEncryptionConfigurationHasBeenSet(false),
-    m_identityCenterConfigurationHasBeenSet(false),
-    m_queryResultsS3AccessGrantsConfigurationHasBeenSet(false)
-{
-}
-
 WorkGroupConfiguration::WorkGroupConfiguration(JsonView jsonValue)
-  : WorkGroupConfiguration()
 {
   *this = jsonValue;
 }
@@ -50,87 +28,63 @@ WorkGroupConfiguration& WorkGroupConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ResultConfiguration"))
   {
     m_resultConfiguration = jsonValue.GetObject("ResultConfiguration");
-
     m_resultConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnforceWorkGroupConfiguration"))
   {
     m_enforceWorkGroupConfiguration = jsonValue.GetBool("EnforceWorkGroupConfiguration");
-
     m_enforceWorkGroupConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PublishCloudWatchMetricsEnabled"))
   {
     m_publishCloudWatchMetricsEnabled = jsonValue.GetBool("PublishCloudWatchMetricsEnabled");
-
     m_publishCloudWatchMetricsEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BytesScannedCutoffPerQuery"))
   {
     m_bytesScannedCutoffPerQuery = jsonValue.GetInt64("BytesScannedCutoffPerQuery");
-
     m_bytesScannedCutoffPerQueryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequesterPaysEnabled"))
   {
     m_requesterPaysEnabled = jsonValue.GetBool("RequesterPaysEnabled");
-
     m_requesterPaysEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EngineVersion"))
   {
     m_engineVersion = jsonValue.GetObject("EngineVersion");
-
     m_engineVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdditionalConfiguration"))
   {
     m_additionalConfiguration = jsonValue.GetString("AdditionalConfiguration");
-
     m_additionalConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutionRole"))
   {
     m_executionRole = jsonValue.GetString("ExecutionRole");
-
     m_executionRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomerContentEncryptionConfiguration"))
   {
     m_customerContentEncryptionConfiguration = jsonValue.GetObject("CustomerContentEncryptionConfiguration");
-
     m_customerContentEncryptionConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnableMinimumEncryptionConfiguration"))
   {
     m_enableMinimumEncryptionConfiguration = jsonValue.GetBool("EnableMinimumEncryptionConfiguration");
-
     m_enableMinimumEncryptionConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdentityCenterConfiguration"))
   {
     m_identityCenterConfiguration = jsonValue.GetObject("IdentityCenterConfiguration");
-
     m_identityCenterConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueryResultsS3AccessGrantsConfiguration"))
   {
     m_queryResultsS3AccessGrantsConfiguration = jsonValue.GetObject("QueryResultsS3AccessGrantsConfiguration");
-
     m_queryResultsS3AccessGrantsConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

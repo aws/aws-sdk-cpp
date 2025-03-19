@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteVerifiedAccessInstanceResponse::DeleteVerifiedAccessInstanceResponse()
-{
-}
-
 DeleteVerifiedAccessInstanceResponse::DeleteVerifiedAccessInstanceResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DeleteVerifiedAccessInstanceResponse& DeleteVerifiedAccessInstanceResponse::oper
     if(!verifiedAccessInstanceNode.IsNull())
     {
       m_verifiedAccessInstance = verifiedAccessInstanceNode;
+      m_verifiedAccessInstanceHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ DeleteVerifiedAccessInstanceResponse& DeleteVerifiedAccessInstanceResponse::oper
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DeleteVerifiedAccessInstanceResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

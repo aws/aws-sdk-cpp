@@ -18,16 +18,7 @@ namespace DirectConnect
 namespace Model
 {
 
-MacSecKey::MacSecKey() : 
-    m_secretARNHasBeenSet(false),
-    m_cknHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_startOnHasBeenSet(false)
-{
-}
-
 MacSecKey::MacSecKey(JsonView jsonValue)
-  : MacSecKey()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ MacSecKey& MacSecKey::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("secretARN"))
   {
     m_secretARN = jsonValue.GetString("secretARN");
-
     m_secretARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ckn"))
   {
     m_ckn = jsonValue.GetString("ckn");
-
     m_cknHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = jsonValue.GetString("state");
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startOn"))
   {
     m_startOn = jsonValue.GetString("startOn");
-
     m_startOnHasBeenSet = true;
   }
-
   return *this;
 }
 

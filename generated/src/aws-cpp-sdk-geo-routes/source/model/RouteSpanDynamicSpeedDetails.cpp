@@ -18,18 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteSpanDynamicSpeedDetails::RouteSpanDynamicSpeedDetails() : 
-    m_bestCaseSpeed(0.0),
-    m_bestCaseSpeedHasBeenSet(false),
-    m_turnDuration(0),
-    m_turnDurationHasBeenSet(false),
-    m_typicalSpeed(0.0),
-    m_typicalSpeedHasBeenSet(false)
-{
-}
-
 RouteSpanDynamicSpeedDetails::RouteSpanDynamicSpeedDetails(JsonView jsonValue)
-  : RouteSpanDynamicSpeedDetails()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ RouteSpanDynamicSpeedDetails& RouteSpanDynamicSpeedDetails::operator =(JsonView 
   if(jsonValue.ValueExists("BestCaseSpeed"))
   {
     m_bestCaseSpeed = jsonValue.GetDouble("BestCaseSpeed");
-
     m_bestCaseSpeedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TurnDuration"))
   {
     m_turnDuration = jsonValue.GetInt64("TurnDuration");
-
     m_turnDurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TypicalSpeed"))
   {
     m_typicalSpeed = jsonValue.GetDouble("TypicalSpeed");
-
     m_typicalSpeedHasBeenSet = true;
   }
-
   return *this;
 }
 

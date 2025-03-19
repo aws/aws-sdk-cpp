@@ -34,7 +34,7 @@ namespace Model
   class MutualAuthenticationAttributes
   {
   public:
-    AWS_ELASTICLOADBALANCINGV2_API MutualAuthenticationAttributes();
+    AWS_ELASTICLOADBALANCINGV2_API MutualAuthenticationAttributes() = default;
     AWS_ELASTICLOADBALANCINGV2_API MutualAuthenticationAttributes(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICLOADBALANCINGV2_API MutualAuthenticationAttributes& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,35 +48,31 @@ namespace Model
      * <code>passthrough</code> or <code>verify</code>. The default value is
      * <code>off</code>.</p>
      */
-    inline const Aws::String& GetMode() const{ return m_mode; }
+    inline const Aws::String& GetMode() const { return m_mode; }
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-    inline void SetMode(const Aws::String& value) { m_modeHasBeenSet = true; m_mode = value; }
-    inline void SetMode(Aws::String&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
-    inline void SetMode(const char* value) { m_modeHasBeenSet = true; m_mode.assign(value); }
-    inline MutualAuthenticationAttributes& WithMode(const Aws::String& value) { SetMode(value); return *this;}
-    inline MutualAuthenticationAttributes& WithMode(Aws::String&& value) { SetMode(std::move(value)); return *this;}
-    inline MutualAuthenticationAttributes& WithMode(const char* value) { SetMode(value); return *this;}
+    template<typename ModeT = Aws::String>
+    void SetMode(ModeT&& value) { m_modeHasBeenSet = true; m_mode = std::forward<ModeT>(value); }
+    template<typename ModeT = Aws::String>
+    MutualAuthenticationAttributes& WithMode(ModeT&& value) { SetMode(std::forward<ModeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the trust store.</p>
      */
-    inline const Aws::String& GetTrustStoreArn() const{ return m_trustStoreArn; }
+    inline const Aws::String& GetTrustStoreArn() const { return m_trustStoreArn; }
     inline bool TrustStoreArnHasBeenSet() const { return m_trustStoreArnHasBeenSet; }
-    inline void SetTrustStoreArn(const Aws::String& value) { m_trustStoreArnHasBeenSet = true; m_trustStoreArn = value; }
-    inline void SetTrustStoreArn(Aws::String&& value) { m_trustStoreArnHasBeenSet = true; m_trustStoreArn = std::move(value); }
-    inline void SetTrustStoreArn(const char* value) { m_trustStoreArnHasBeenSet = true; m_trustStoreArn.assign(value); }
-    inline MutualAuthenticationAttributes& WithTrustStoreArn(const Aws::String& value) { SetTrustStoreArn(value); return *this;}
-    inline MutualAuthenticationAttributes& WithTrustStoreArn(Aws::String&& value) { SetTrustStoreArn(std::move(value)); return *this;}
-    inline MutualAuthenticationAttributes& WithTrustStoreArn(const char* value) { SetTrustStoreArn(value); return *this;}
+    template<typename TrustStoreArnT = Aws::String>
+    void SetTrustStoreArn(TrustStoreArnT&& value) { m_trustStoreArnHasBeenSet = true; m_trustStoreArn = std::forward<TrustStoreArnT>(value); }
+    template<typename TrustStoreArnT = Aws::String>
+    MutualAuthenticationAttributes& WithTrustStoreArn(TrustStoreArnT&& value) { SetTrustStoreArn(std::forward<TrustStoreArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether expired client certificates are ignored.</p>
      */
-    inline bool GetIgnoreClientCertificateExpiry() const{ return m_ignoreClientCertificateExpiry; }
+    inline bool GetIgnoreClientCertificateExpiry() const { return m_ignoreClientCertificateExpiry; }
     inline bool IgnoreClientCertificateExpiryHasBeenSet() const { return m_ignoreClientCertificateExpiryHasBeenSet; }
     inline void SetIgnoreClientCertificateExpiry(bool value) { m_ignoreClientCertificateExpiryHasBeenSet = true; m_ignoreClientCertificateExpiry = value; }
     inline MutualAuthenticationAttributes& WithIgnoreClientCertificateExpiry(bool value) { SetIgnoreClientCertificateExpiry(value); return *this;}
@@ -86,24 +82,20 @@ namespace Model
     /**
      * <p>Indicates a shared trust stores association status.</p>
      */
-    inline const TrustStoreAssociationStatusEnum& GetTrustStoreAssociationStatus() const{ return m_trustStoreAssociationStatus; }
+    inline TrustStoreAssociationStatusEnum GetTrustStoreAssociationStatus() const { return m_trustStoreAssociationStatus; }
     inline bool TrustStoreAssociationStatusHasBeenSet() const { return m_trustStoreAssociationStatusHasBeenSet; }
-    inline void SetTrustStoreAssociationStatus(const TrustStoreAssociationStatusEnum& value) { m_trustStoreAssociationStatusHasBeenSet = true; m_trustStoreAssociationStatus = value; }
-    inline void SetTrustStoreAssociationStatus(TrustStoreAssociationStatusEnum&& value) { m_trustStoreAssociationStatusHasBeenSet = true; m_trustStoreAssociationStatus = std::move(value); }
-    inline MutualAuthenticationAttributes& WithTrustStoreAssociationStatus(const TrustStoreAssociationStatusEnum& value) { SetTrustStoreAssociationStatus(value); return *this;}
-    inline MutualAuthenticationAttributes& WithTrustStoreAssociationStatus(TrustStoreAssociationStatusEnum&& value) { SetTrustStoreAssociationStatus(std::move(value)); return *this;}
+    inline void SetTrustStoreAssociationStatus(TrustStoreAssociationStatusEnum value) { m_trustStoreAssociationStatusHasBeenSet = true; m_trustStoreAssociationStatus = value; }
+    inline MutualAuthenticationAttributes& WithTrustStoreAssociationStatus(TrustStoreAssociationStatusEnum value) { SetTrustStoreAssociationStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether trust store CA certificate names are advertised.</p>
      */
-    inline const AdvertiseTrustStoreCaNamesEnum& GetAdvertiseTrustStoreCaNames() const{ return m_advertiseTrustStoreCaNames; }
+    inline AdvertiseTrustStoreCaNamesEnum GetAdvertiseTrustStoreCaNames() const { return m_advertiseTrustStoreCaNames; }
     inline bool AdvertiseTrustStoreCaNamesHasBeenSet() const { return m_advertiseTrustStoreCaNamesHasBeenSet; }
-    inline void SetAdvertiseTrustStoreCaNames(const AdvertiseTrustStoreCaNamesEnum& value) { m_advertiseTrustStoreCaNamesHasBeenSet = true; m_advertiseTrustStoreCaNames = value; }
-    inline void SetAdvertiseTrustStoreCaNames(AdvertiseTrustStoreCaNamesEnum&& value) { m_advertiseTrustStoreCaNamesHasBeenSet = true; m_advertiseTrustStoreCaNames = std::move(value); }
-    inline MutualAuthenticationAttributes& WithAdvertiseTrustStoreCaNames(const AdvertiseTrustStoreCaNamesEnum& value) { SetAdvertiseTrustStoreCaNames(value); return *this;}
-    inline MutualAuthenticationAttributes& WithAdvertiseTrustStoreCaNames(AdvertiseTrustStoreCaNamesEnum&& value) { SetAdvertiseTrustStoreCaNames(std::move(value)); return *this;}
+    inline void SetAdvertiseTrustStoreCaNames(AdvertiseTrustStoreCaNamesEnum value) { m_advertiseTrustStoreCaNamesHasBeenSet = true; m_advertiseTrustStoreCaNames = value; }
+    inline MutualAuthenticationAttributes& WithAdvertiseTrustStoreCaNames(AdvertiseTrustStoreCaNamesEnum value) { SetAdvertiseTrustStoreCaNames(value); return *this;}
     ///@}
   private:
 
@@ -113,13 +105,13 @@ namespace Model
     Aws::String m_trustStoreArn;
     bool m_trustStoreArnHasBeenSet = false;
 
-    bool m_ignoreClientCertificateExpiry;
+    bool m_ignoreClientCertificateExpiry{false};
     bool m_ignoreClientCertificateExpiryHasBeenSet = false;
 
-    TrustStoreAssociationStatusEnum m_trustStoreAssociationStatus;
+    TrustStoreAssociationStatusEnum m_trustStoreAssociationStatus{TrustStoreAssociationStatusEnum::NOT_SET};
     bool m_trustStoreAssociationStatusHasBeenSet = false;
 
-    AdvertiseTrustStoreCaNamesEnum m_advertiseTrustStoreCaNames;
+    AdvertiseTrustStoreCaNamesEnum m_advertiseTrustStoreCaNames{AdvertiseTrustStoreCaNamesEnum::NOT_SET};
     bool m_advertiseTrustStoreCaNamesHasBeenSet = false;
   };
 

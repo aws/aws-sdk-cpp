@@ -18,18 +18,7 @@ namespace ApplicationDiscoveryService
 namespace Model
 {
 
-ConfigurationTag::ConfigurationTag() : 
-    m_configurationType(ConfigurationItemType::NOT_SET),
-    m_configurationTypeHasBeenSet(false),
-    m_configurationIdHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_timeOfCreationHasBeenSet(false)
-{
-}
-
 ConfigurationTag::ConfigurationTag(JsonView jsonValue)
-  : ConfigurationTag()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ ConfigurationTag& ConfigurationTag::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("configurationType"))
   {
     m_configurationType = ConfigurationItemTypeMapper::GetConfigurationItemTypeForName(jsonValue.GetString("configurationType"));
-
     m_configurationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configurationId"))
   {
     m_configurationId = jsonValue.GetString("configurationId");
-
     m_configurationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timeOfCreation"))
   {
     m_timeOfCreation = jsonValue.GetDouble("timeOfCreation");
-
     m_timeOfCreationHasBeenSet = true;
   }
-
   return *this;
 }
 

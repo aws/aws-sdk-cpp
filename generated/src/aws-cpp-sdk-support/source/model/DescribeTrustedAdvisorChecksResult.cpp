@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeTrustedAdvisorChecksResult::DescribeTrustedAdvisorChecksResult()
-{
-}
-
 DescribeTrustedAdvisorChecksResult::DescribeTrustedAdvisorChecksResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ DescribeTrustedAdvisorChecksResult& DescribeTrustedAdvisorChecksResult::operator
     {
       m_checks.push_back(checksJsonList[checksIndex].AsObject());
     }
+    m_checksHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

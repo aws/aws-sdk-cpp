@@ -12,14 +12,6 @@ using namespace Aws::JSONRPC10::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SimpleScalarPropertiesRequest::SimpleScalarPropertiesRequest() : 
-    m_floatValue(0.0),
-    m_floatValueHasBeenSet(false),
-    m_doubleValue(0.0),
-    m_doubleValueHasBeenSet(false)
-{
-}
-
 Aws::String SimpleScalarPropertiesRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,14 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-IntentStatistics::IntentStatistics() : 
-    m_discoveredIntentCount(0),
-    m_discoveredIntentCountHasBeenSet(false)
-{
-}
-
 IntentStatistics::IntentStatistics(JsonView jsonValue)
-  : IntentStatistics()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ IntentStatistics& IntentStatistics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("discoveredIntentCount"))
   {
     m_discoveredIntentCount = jsonValue.GetInteger("discoveredIntentCount");
-
     m_discoveredIntentCountHasBeenSet = true;
   }
-
   return *this;
 }
 

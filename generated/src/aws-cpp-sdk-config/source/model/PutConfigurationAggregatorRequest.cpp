@@ -12,15 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutConfigurationAggregatorRequest::PutConfigurationAggregatorRequest() : 
-    m_configurationAggregatorNameHasBeenSet(false),
-    m_accountAggregationSourcesHasBeenSet(false),
-    m_organizationAggregationSourceHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_aggregatorFiltersHasBeenSet(false)
-{
-}
-
 Aws::String PutConfigurationAggregatorRequest::SerializePayload() const
 {
   JsonValue payload;

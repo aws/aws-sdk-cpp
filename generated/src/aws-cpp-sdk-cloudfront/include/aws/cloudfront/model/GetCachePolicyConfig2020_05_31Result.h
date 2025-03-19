@@ -28,7 +28,7 @@ namespace Model
   class GetCachePolicyConfig2020_05_31Result
   {
   public:
-    AWS_CLOUDFRONT_API GetCachePolicyConfig2020_05_31Result();
+    AWS_CLOUDFRONT_API GetCachePolicyConfig2020_05_31Result() = default;
     AWS_CLOUDFRONT_API GetCachePolicyConfig2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDFRONT_API GetCachePolicyConfig2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,43 +37,42 @@ namespace Model
     /**
      * <p>The cache policy configuration.</p>
      */
-    inline const CachePolicyConfig& GetCachePolicyConfig() const{ return m_cachePolicyConfig; }
-    inline void SetCachePolicyConfig(const CachePolicyConfig& value) { m_cachePolicyConfig = value; }
-    inline void SetCachePolicyConfig(CachePolicyConfig&& value) { m_cachePolicyConfig = std::move(value); }
-    inline GetCachePolicyConfig2020_05_31Result& WithCachePolicyConfig(const CachePolicyConfig& value) { SetCachePolicyConfig(value); return *this;}
-    inline GetCachePolicyConfig2020_05_31Result& WithCachePolicyConfig(CachePolicyConfig&& value) { SetCachePolicyConfig(std::move(value)); return *this;}
+    inline const CachePolicyConfig& GetCachePolicyConfig() const { return m_cachePolicyConfig; }
+    template<typename CachePolicyConfigT = CachePolicyConfig>
+    void SetCachePolicyConfig(CachePolicyConfigT&& value) { m_cachePolicyConfigHasBeenSet = true; m_cachePolicyConfig = std::forward<CachePolicyConfigT>(value); }
+    template<typename CachePolicyConfigT = CachePolicyConfig>
+    GetCachePolicyConfig2020_05_31Result& WithCachePolicyConfig(CachePolicyConfigT&& value) { SetCachePolicyConfig(std::forward<CachePolicyConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current version of the cache policy.</p>
      */
-    inline const Aws::String& GetETag() const{ return m_eTag; }
-    inline void SetETag(const Aws::String& value) { m_eTag = value; }
-    inline void SetETag(Aws::String&& value) { m_eTag = std::move(value); }
-    inline void SetETag(const char* value) { m_eTag.assign(value); }
-    inline GetCachePolicyConfig2020_05_31Result& WithETag(const Aws::String& value) { SetETag(value); return *this;}
-    inline GetCachePolicyConfig2020_05_31Result& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
-    inline GetCachePolicyConfig2020_05_31Result& WithETag(const char* value) { SetETag(value); return *this;}
+    inline const Aws::String& GetETag() const { return m_eTag; }
+    template<typename ETagT = Aws::String>
+    void SetETag(ETagT&& value) { m_eTagHasBeenSet = true; m_eTag = std::forward<ETagT>(value); }
+    template<typename ETagT = Aws::String>
+    GetCachePolicyConfig2020_05_31Result& WithETag(ETagT&& value) { SetETag(std::forward<ETagT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetCachePolicyConfig2020_05_31Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetCachePolicyConfig2020_05_31Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetCachePolicyConfig2020_05_31Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetCachePolicyConfig2020_05_31Result& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     CachePolicyConfig m_cachePolicyConfig;
+    bool m_cachePolicyConfigHasBeenSet = false;
 
     Aws::String m_eTag;
+    bool m_eTagHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

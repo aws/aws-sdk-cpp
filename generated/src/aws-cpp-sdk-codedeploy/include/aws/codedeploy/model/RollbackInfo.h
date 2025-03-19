@@ -31,7 +31,7 @@ namespace Model
   class RollbackInfo
   {
   public:
-    AWS_CODEDEPLOY_API RollbackInfo();
+    AWS_CODEDEPLOY_API RollbackInfo() = default;
     AWS_CODEDEPLOY_API RollbackInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API RollbackInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The ID of the deployment rollback.</p>
      */
-    inline const Aws::String& GetRollbackDeploymentId() const{ return m_rollbackDeploymentId; }
+    inline const Aws::String& GetRollbackDeploymentId() const { return m_rollbackDeploymentId; }
     inline bool RollbackDeploymentIdHasBeenSet() const { return m_rollbackDeploymentIdHasBeenSet; }
-    inline void SetRollbackDeploymentId(const Aws::String& value) { m_rollbackDeploymentIdHasBeenSet = true; m_rollbackDeploymentId = value; }
-    inline void SetRollbackDeploymentId(Aws::String&& value) { m_rollbackDeploymentIdHasBeenSet = true; m_rollbackDeploymentId = std::move(value); }
-    inline void SetRollbackDeploymentId(const char* value) { m_rollbackDeploymentIdHasBeenSet = true; m_rollbackDeploymentId.assign(value); }
-    inline RollbackInfo& WithRollbackDeploymentId(const Aws::String& value) { SetRollbackDeploymentId(value); return *this;}
-    inline RollbackInfo& WithRollbackDeploymentId(Aws::String&& value) { SetRollbackDeploymentId(std::move(value)); return *this;}
-    inline RollbackInfo& WithRollbackDeploymentId(const char* value) { SetRollbackDeploymentId(value); return *this;}
+    template<typename RollbackDeploymentIdT = Aws::String>
+    void SetRollbackDeploymentId(RollbackDeploymentIdT&& value) { m_rollbackDeploymentIdHasBeenSet = true; m_rollbackDeploymentId = std::forward<RollbackDeploymentIdT>(value); }
+    template<typename RollbackDeploymentIdT = Aws::String>
+    RollbackInfo& WithRollbackDeploymentId(RollbackDeploymentIdT&& value) { SetRollbackDeploymentId(std::forward<RollbackDeploymentIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * <p>The deployment ID of the deployment that was underway and triggered a
      * rollback deployment because it failed or was stopped.</p>
      */
-    inline const Aws::String& GetRollbackTriggeringDeploymentId() const{ return m_rollbackTriggeringDeploymentId; }
+    inline const Aws::String& GetRollbackTriggeringDeploymentId() const { return m_rollbackTriggeringDeploymentId; }
     inline bool RollbackTriggeringDeploymentIdHasBeenSet() const { return m_rollbackTriggeringDeploymentIdHasBeenSet; }
-    inline void SetRollbackTriggeringDeploymentId(const Aws::String& value) { m_rollbackTriggeringDeploymentIdHasBeenSet = true; m_rollbackTriggeringDeploymentId = value; }
-    inline void SetRollbackTriggeringDeploymentId(Aws::String&& value) { m_rollbackTriggeringDeploymentIdHasBeenSet = true; m_rollbackTriggeringDeploymentId = std::move(value); }
-    inline void SetRollbackTriggeringDeploymentId(const char* value) { m_rollbackTriggeringDeploymentIdHasBeenSet = true; m_rollbackTriggeringDeploymentId.assign(value); }
-    inline RollbackInfo& WithRollbackTriggeringDeploymentId(const Aws::String& value) { SetRollbackTriggeringDeploymentId(value); return *this;}
-    inline RollbackInfo& WithRollbackTriggeringDeploymentId(Aws::String&& value) { SetRollbackTriggeringDeploymentId(std::move(value)); return *this;}
-    inline RollbackInfo& WithRollbackTriggeringDeploymentId(const char* value) { SetRollbackTriggeringDeploymentId(value); return *this;}
+    template<typename RollbackTriggeringDeploymentIdT = Aws::String>
+    void SetRollbackTriggeringDeploymentId(RollbackTriggeringDeploymentIdT&& value) { m_rollbackTriggeringDeploymentIdHasBeenSet = true; m_rollbackTriggeringDeploymentId = std::forward<RollbackTriggeringDeploymentIdT>(value); }
+    template<typename RollbackTriggeringDeploymentIdT = Aws::String>
+    RollbackInfo& WithRollbackTriggeringDeploymentId(RollbackTriggeringDeploymentIdT&& value) { SetRollbackTriggeringDeploymentId(std::forward<RollbackTriggeringDeploymentIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +68,12 @@ namespace Model
      * whether the deployment can't be rolled back, is in progress, failed, or
      * succeeded). </p>
      */
-    inline const Aws::String& GetRollbackMessage() const{ return m_rollbackMessage; }
+    inline const Aws::String& GetRollbackMessage() const { return m_rollbackMessage; }
     inline bool RollbackMessageHasBeenSet() const { return m_rollbackMessageHasBeenSet; }
-    inline void SetRollbackMessage(const Aws::String& value) { m_rollbackMessageHasBeenSet = true; m_rollbackMessage = value; }
-    inline void SetRollbackMessage(Aws::String&& value) { m_rollbackMessageHasBeenSet = true; m_rollbackMessage = std::move(value); }
-    inline void SetRollbackMessage(const char* value) { m_rollbackMessageHasBeenSet = true; m_rollbackMessage.assign(value); }
-    inline RollbackInfo& WithRollbackMessage(const Aws::String& value) { SetRollbackMessage(value); return *this;}
-    inline RollbackInfo& WithRollbackMessage(Aws::String&& value) { SetRollbackMessage(std::move(value)); return *this;}
-    inline RollbackInfo& WithRollbackMessage(const char* value) { SetRollbackMessage(value); return *this;}
+    template<typename RollbackMessageT = Aws::String>
+    void SetRollbackMessage(RollbackMessageT&& value) { m_rollbackMessageHasBeenSet = true; m_rollbackMessage = std::forward<RollbackMessageT>(value); }
+    template<typename RollbackMessageT = Aws::String>
+    RollbackInfo& WithRollbackMessage(RollbackMessageT&& value) { SetRollbackMessage(std::forward<RollbackMessageT>(value)); return *this;}
     ///@}
   private:
 

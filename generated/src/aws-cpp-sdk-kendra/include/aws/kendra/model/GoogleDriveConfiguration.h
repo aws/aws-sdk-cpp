@@ -34,7 +34,7 @@ namespace Model
   class GoogleDriveConfiguration
   {
   public:
-    AWS_KENDRA_API GoogleDriveConfiguration();
+    AWS_KENDRA_API GoogleDriveConfiguration() = default;
     AWS_KENDRA_API GoogleDriveConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API GoogleDriveConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-google-drive.html">Using
      * a Google Workspace Drive data source</a>.</p>
      */
-    inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
+    inline const Aws::String& GetSecretArn() const { return m_secretArn; }
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
-    inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
-    inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
-    inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
-    inline GoogleDriveConfiguration& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
-    inline GoogleDriveConfiguration& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
-    inline GoogleDriveConfiguration& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
+    template<typename SecretArnT = Aws::String>
+    void SetSecretArn(SecretArnT&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::forward<SecretArnT>(value); }
+    template<typename SecretArnT = Aws::String>
+    GoogleDriveConfiguration& WithSecretArn(SecretArnT&& value) { SetSecretArn(std::forward<SecretArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,15 +64,14 @@ namespace Model
      * pattern, the exclusion pattern takes precedence and the item isn't included in
      * the index.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetInclusionPatterns() const{ return m_inclusionPatterns; }
+    inline const Aws::Vector<Aws::String>& GetInclusionPatterns() const { return m_inclusionPatterns; }
     inline bool InclusionPatternsHasBeenSet() const { return m_inclusionPatternsHasBeenSet; }
-    inline void SetInclusionPatterns(const Aws::Vector<Aws::String>& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns = value; }
-    inline void SetInclusionPatterns(Aws::Vector<Aws::String>&& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns = std::move(value); }
-    inline GoogleDriveConfiguration& WithInclusionPatterns(const Aws::Vector<Aws::String>& value) { SetInclusionPatterns(value); return *this;}
-    inline GoogleDriveConfiguration& WithInclusionPatterns(Aws::Vector<Aws::String>&& value) { SetInclusionPatterns(std::move(value)); return *this;}
-    inline GoogleDriveConfiguration& AddInclusionPatterns(const Aws::String& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns.push_back(value); return *this; }
-    inline GoogleDriveConfiguration& AddInclusionPatterns(Aws::String&& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns.push_back(std::move(value)); return *this; }
-    inline GoogleDriveConfiguration& AddInclusionPatterns(const char* value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns.push_back(value); return *this; }
+    template<typename InclusionPatternsT = Aws::Vector<Aws::String>>
+    void SetInclusionPatterns(InclusionPatternsT&& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns = std::forward<InclusionPatternsT>(value); }
+    template<typename InclusionPatternsT = Aws::Vector<Aws::String>>
+    GoogleDriveConfiguration& WithInclusionPatterns(InclusionPatternsT&& value) { SetInclusionPatterns(std::forward<InclusionPatternsT>(value)); return *this;}
+    template<typename InclusionPatternsT = Aws::String>
+    GoogleDriveConfiguration& AddInclusionPatterns(InclusionPatternsT&& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns.emplace_back(std::forward<InclusionPatternsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -86,15 +83,14 @@ namespace Model
      * pattern, the exclusion pattern takes precedence and the item isn't included in
      * the index.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExclusionPatterns() const{ return m_exclusionPatterns; }
+    inline const Aws::Vector<Aws::String>& GetExclusionPatterns() const { return m_exclusionPatterns; }
     inline bool ExclusionPatternsHasBeenSet() const { return m_exclusionPatternsHasBeenSet; }
-    inline void SetExclusionPatterns(const Aws::Vector<Aws::String>& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns = value; }
-    inline void SetExclusionPatterns(Aws::Vector<Aws::String>&& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns = std::move(value); }
-    inline GoogleDriveConfiguration& WithExclusionPatterns(const Aws::Vector<Aws::String>& value) { SetExclusionPatterns(value); return *this;}
-    inline GoogleDriveConfiguration& WithExclusionPatterns(Aws::Vector<Aws::String>&& value) { SetExclusionPatterns(std::move(value)); return *this;}
-    inline GoogleDriveConfiguration& AddExclusionPatterns(const Aws::String& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.push_back(value); return *this; }
-    inline GoogleDriveConfiguration& AddExclusionPatterns(Aws::String&& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.push_back(std::move(value)); return *this; }
-    inline GoogleDriveConfiguration& AddExclusionPatterns(const char* value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.push_back(value); return *this; }
+    template<typename ExclusionPatternsT = Aws::Vector<Aws::String>>
+    void SetExclusionPatterns(ExclusionPatternsT&& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns = std::forward<ExclusionPatternsT>(value); }
+    template<typename ExclusionPatternsT = Aws::Vector<Aws::String>>
+    GoogleDriveConfiguration& WithExclusionPatterns(ExclusionPatternsT&& value) { SetExclusionPatterns(std::forward<ExclusionPatternsT>(value)); return *this;}
+    template<typename ExclusionPatternsT = Aws::String>
+    GoogleDriveConfiguration& AddExclusionPatterns(ExclusionPatternsT&& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.emplace_back(std::forward<ExclusionPatternsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -106,14 +102,14 @@ namespace Model
      * data source fields</a>. The Google Drive data source field names must exist in
      * your Google Drive custom metadata.</p>
      */
-    inline const Aws::Vector<DataSourceToIndexFieldMapping>& GetFieldMappings() const{ return m_fieldMappings; }
+    inline const Aws::Vector<DataSourceToIndexFieldMapping>& GetFieldMappings() const { return m_fieldMappings; }
     inline bool FieldMappingsHasBeenSet() const { return m_fieldMappingsHasBeenSet; }
-    inline void SetFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings = value; }
-    inline void SetFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings = std::move(value); }
-    inline GoogleDriveConfiguration& WithFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { SetFieldMappings(value); return *this;}
-    inline GoogleDriveConfiguration& WithFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { SetFieldMappings(std::move(value)); return *this;}
-    inline GoogleDriveConfiguration& AddFieldMappings(const DataSourceToIndexFieldMapping& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings.push_back(value); return *this; }
-    inline GoogleDriveConfiguration& AddFieldMappings(DataSourceToIndexFieldMapping&& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings.push_back(std::move(value)); return *this; }
+    template<typename FieldMappingsT = Aws::Vector<DataSourceToIndexFieldMapping>>
+    void SetFieldMappings(FieldMappingsT&& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings = std::forward<FieldMappingsT>(value); }
+    template<typename FieldMappingsT = Aws::Vector<DataSourceToIndexFieldMapping>>
+    GoogleDriveConfiguration& WithFieldMappings(FieldMappingsT&& value) { SetFieldMappings(std::forward<FieldMappingsT>(value)); return *this;}
+    template<typename FieldMappingsT = DataSourceToIndexFieldMapping>
+    GoogleDriveConfiguration& AddFieldMappings(FieldMappingsT&& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings.emplace_back(std::forward<FieldMappingsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -123,15 +119,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-google-drive.html">Using
      * a Google Workspace Drive data source</a>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExcludeMimeTypes() const{ return m_excludeMimeTypes; }
+    inline const Aws::Vector<Aws::String>& GetExcludeMimeTypes() const { return m_excludeMimeTypes; }
     inline bool ExcludeMimeTypesHasBeenSet() const { return m_excludeMimeTypesHasBeenSet; }
-    inline void SetExcludeMimeTypes(const Aws::Vector<Aws::String>& value) { m_excludeMimeTypesHasBeenSet = true; m_excludeMimeTypes = value; }
-    inline void SetExcludeMimeTypes(Aws::Vector<Aws::String>&& value) { m_excludeMimeTypesHasBeenSet = true; m_excludeMimeTypes = std::move(value); }
-    inline GoogleDriveConfiguration& WithExcludeMimeTypes(const Aws::Vector<Aws::String>& value) { SetExcludeMimeTypes(value); return *this;}
-    inline GoogleDriveConfiguration& WithExcludeMimeTypes(Aws::Vector<Aws::String>&& value) { SetExcludeMimeTypes(std::move(value)); return *this;}
-    inline GoogleDriveConfiguration& AddExcludeMimeTypes(const Aws::String& value) { m_excludeMimeTypesHasBeenSet = true; m_excludeMimeTypes.push_back(value); return *this; }
-    inline GoogleDriveConfiguration& AddExcludeMimeTypes(Aws::String&& value) { m_excludeMimeTypesHasBeenSet = true; m_excludeMimeTypes.push_back(std::move(value)); return *this; }
-    inline GoogleDriveConfiguration& AddExcludeMimeTypes(const char* value) { m_excludeMimeTypesHasBeenSet = true; m_excludeMimeTypes.push_back(value); return *this; }
+    template<typename ExcludeMimeTypesT = Aws::Vector<Aws::String>>
+    void SetExcludeMimeTypes(ExcludeMimeTypesT&& value) { m_excludeMimeTypesHasBeenSet = true; m_excludeMimeTypes = std::forward<ExcludeMimeTypesT>(value); }
+    template<typename ExcludeMimeTypesT = Aws::Vector<Aws::String>>
+    GoogleDriveConfiguration& WithExcludeMimeTypes(ExcludeMimeTypesT&& value) { SetExcludeMimeTypes(std::forward<ExcludeMimeTypesT>(value)); return *this;}
+    template<typename ExcludeMimeTypesT = Aws::String>
+    GoogleDriveConfiguration& AddExcludeMimeTypes(ExcludeMimeTypesT&& value) { m_excludeMimeTypesHasBeenSet = true; m_excludeMimeTypes.emplace_back(std::forward<ExcludeMimeTypesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -140,15 +135,14 @@ namespace Model
      * excluded from the index. Documents shared with excluded users are indexed unless
      * they are excluded in another way.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExcludeUserAccounts() const{ return m_excludeUserAccounts; }
+    inline const Aws::Vector<Aws::String>& GetExcludeUserAccounts() const { return m_excludeUserAccounts; }
     inline bool ExcludeUserAccountsHasBeenSet() const { return m_excludeUserAccountsHasBeenSet; }
-    inline void SetExcludeUserAccounts(const Aws::Vector<Aws::String>& value) { m_excludeUserAccountsHasBeenSet = true; m_excludeUserAccounts = value; }
-    inline void SetExcludeUserAccounts(Aws::Vector<Aws::String>&& value) { m_excludeUserAccountsHasBeenSet = true; m_excludeUserAccounts = std::move(value); }
-    inline GoogleDriveConfiguration& WithExcludeUserAccounts(const Aws::Vector<Aws::String>& value) { SetExcludeUserAccounts(value); return *this;}
-    inline GoogleDriveConfiguration& WithExcludeUserAccounts(Aws::Vector<Aws::String>&& value) { SetExcludeUserAccounts(std::move(value)); return *this;}
-    inline GoogleDriveConfiguration& AddExcludeUserAccounts(const Aws::String& value) { m_excludeUserAccountsHasBeenSet = true; m_excludeUserAccounts.push_back(value); return *this; }
-    inline GoogleDriveConfiguration& AddExcludeUserAccounts(Aws::String&& value) { m_excludeUserAccountsHasBeenSet = true; m_excludeUserAccounts.push_back(std::move(value)); return *this; }
-    inline GoogleDriveConfiguration& AddExcludeUserAccounts(const char* value) { m_excludeUserAccountsHasBeenSet = true; m_excludeUserAccounts.push_back(value); return *this; }
+    template<typename ExcludeUserAccountsT = Aws::Vector<Aws::String>>
+    void SetExcludeUserAccounts(ExcludeUserAccountsT&& value) { m_excludeUserAccountsHasBeenSet = true; m_excludeUserAccounts = std::forward<ExcludeUserAccountsT>(value); }
+    template<typename ExcludeUserAccountsT = Aws::Vector<Aws::String>>
+    GoogleDriveConfiguration& WithExcludeUserAccounts(ExcludeUserAccountsT&& value) { SetExcludeUserAccounts(std::forward<ExcludeUserAccountsT>(value)); return *this;}
+    template<typename ExcludeUserAccountsT = Aws::String>
+    GoogleDriveConfiguration& AddExcludeUserAccounts(ExcludeUserAccountsT&& value) { m_excludeUserAccountsHasBeenSet = true; m_excludeUserAccounts.emplace_back(std::forward<ExcludeUserAccountsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -156,15 +150,14 @@ namespace Model
      * <p>A list of identifiers or shared drives to exclude from the index. All files
      * and folders stored on the shared drive are excluded.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExcludeSharedDrives() const{ return m_excludeSharedDrives; }
+    inline const Aws::Vector<Aws::String>& GetExcludeSharedDrives() const { return m_excludeSharedDrives; }
     inline bool ExcludeSharedDrivesHasBeenSet() const { return m_excludeSharedDrivesHasBeenSet; }
-    inline void SetExcludeSharedDrives(const Aws::Vector<Aws::String>& value) { m_excludeSharedDrivesHasBeenSet = true; m_excludeSharedDrives = value; }
-    inline void SetExcludeSharedDrives(Aws::Vector<Aws::String>&& value) { m_excludeSharedDrivesHasBeenSet = true; m_excludeSharedDrives = std::move(value); }
-    inline GoogleDriveConfiguration& WithExcludeSharedDrives(const Aws::Vector<Aws::String>& value) { SetExcludeSharedDrives(value); return *this;}
-    inline GoogleDriveConfiguration& WithExcludeSharedDrives(Aws::Vector<Aws::String>&& value) { SetExcludeSharedDrives(std::move(value)); return *this;}
-    inline GoogleDriveConfiguration& AddExcludeSharedDrives(const Aws::String& value) { m_excludeSharedDrivesHasBeenSet = true; m_excludeSharedDrives.push_back(value); return *this; }
-    inline GoogleDriveConfiguration& AddExcludeSharedDrives(Aws::String&& value) { m_excludeSharedDrivesHasBeenSet = true; m_excludeSharedDrives.push_back(std::move(value)); return *this; }
-    inline GoogleDriveConfiguration& AddExcludeSharedDrives(const char* value) { m_excludeSharedDrivesHasBeenSet = true; m_excludeSharedDrives.push_back(value); return *this; }
+    template<typename ExcludeSharedDrivesT = Aws::Vector<Aws::String>>
+    void SetExcludeSharedDrives(ExcludeSharedDrivesT&& value) { m_excludeSharedDrivesHasBeenSet = true; m_excludeSharedDrives = std::forward<ExcludeSharedDrivesT>(value); }
+    template<typename ExcludeSharedDrivesT = Aws::Vector<Aws::String>>
+    GoogleDriveConfiguration& WithExcludeSharedDrives(ExcludeSharedDrivesT&& value) { SetExcludeSharedDrives(std::forward<ExcludeSharedDrivesT>(value)); return *this;}
+    template<typename ExcludeSharedDrivesT = Aws::String>
+    GoogleDriveConfiguration& AddExcludeSharedDrives(ExcludeSharedDrivesT&& value) { m_excludeSharedDrivesHasBeenSet = true; m_excludeSharedDrives.emplace_back(std::forward<ExcludeSharedDrivesT>(value)); return *this; }
     ///@}
   private:
 

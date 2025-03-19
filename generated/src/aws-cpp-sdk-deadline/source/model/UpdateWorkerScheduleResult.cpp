@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateWorkerScheduleResult::UpdateWorkerScheduleResult() : 
-    m_desiredWorkerStatus(DesiredWorkerStatus::NOT_SET),
-    m_updateIntervalSeconds(0)
-{
-}
-
 UpdateWorkerScheduleResult::UpdateWorkerScheduleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateWorkerScheduleResult()
 {
   *this = result;
 }
@@ -39,8 +32,8 @@ UpdateWorkerScheduleResult& UpdateWorkerScheduleResult::operator =(const Aws::Am
     {
       m_assignedSessions[assignedSessionsItem.first] = assignedSessionsItem.second.AsObject();
     }
+    m_assignedSessionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cancelSessionActions"))
   {
     Aws::Map<Aws::String, JsonView> cancelSessionActionsJsonMap = jsonValue.GetObject("cancelSessionActions").GetAllObjects();
@@ -55,26 +48,25 @@ UpdateWorkerScheduleResult& UpdateWorkerScheduleResult::operator =(const Aws::Am
       }
       m_cancelSessionActions[cancelSessionActionsItem.first] = std::move(sessionActionIdListList);
     }
+    m_cancelSessionActionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("desiredWorkerStatus"))
   {
     m_desiredWorkerStatus = DesiredWorkerStatusMapper::GetDesiredWorkerStatusForName(jsonValue.GetString("desiredWorkerStatus"));
-
+    m_desiredWorkerStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateIntervalSeconds"))
   {
     m_updateIntervalSeconds = jsonValue.GetInteger("updateIntervalSeconds");
-
+    m_updateIntervalSecondsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

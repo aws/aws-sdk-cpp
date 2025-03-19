@@ -31,7 +31,7 @@ namespace Model
   class Region
   {
   public:
-    AWS_S3CONTROL_API Region();
+    AWS_S3CONTROL_API Region() = default;
     AWS_S3CONTROL_API Region(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API Region& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the associated bucket for the Region.</p>
      */
-    inline const Aws::String& GetBucket() const{ return m_bucket; }
+    inline const Aws::String& GetBucket() const { return m_bucket; }
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
-    inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
-    inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
-    inline Region& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
-    inline Region& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
-    inline Region& WithBucket(const char* value) { SetBucket(value); return *this;}
+    template<typename BucketT = Aws::String>
+    void SetBucket(BucketT&& value) { m_bucketHasBeenSet = true; m_bucket = std::forward<BucketT>(value); }
+    template<typename BucketT = Aws::String>
+    Region& WithBucket(BucketT&& value) { SetBucket(std::forward<BucketT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>The Amazon Web Services account ID that owns the Amazon S3 bucket that's
      * associated with this Multi-Region Access Point.</p>
      */
-    inline const Aws::String& GetBucketAccountId() const{ return m_bucketAccountId; }
+    inline const Aws::String& GetBucketAccountId() const { return m_bucketAccountId; }
     inline bool BucketAccountIdHasBeenSet() const { return m_bucketAccountIdHasBeenSet; }
-    inline void SetBucketAccountId(const Aws::String& value) { m_bucketAccountIdHasBeenSet = true; m_bucketAccountId = value; }
-    inline void SetBucketAccountId(Aws::String&& value) { m_bucketAccountIdHasBeenSet = true; m_bucketAccountId = std::move(value); }
-    inline void SetBucketAccountId(const char* value) { m_bucketAccountIdHasBeenSet = true; m_bucketAccountId.assign(value); }
-    inline Region& WithBucketAccountId(const Aws::String& value) { SetBucketAccountId(value); return *this;}
-    inline Region& WithBucketAccountId(Aws::String&& value) { SetBucketAccountId(std::move(value)); return *this;}
-    inline Region& WithBucketAccountId(const char* value) { SetBucketAccountId(value); return *this;}
+    template<typename BucketAccountIdT = Aws::String>
+    void SetBucketAccountId(BucketAccountIdT&& value) { m_bucketAccountIdHasBeenSet = true; m_bucketAccountId = std::forward<BucketAccountIdT>(value); }
+    template<typename BucketAccountIdT = Aws::String>
+    Region& WithBucketAccountId(BucketAccountIdT&& value) { SetBucketAccountId(std::forward<BucketAccountIdT>(value)); return *this;}
     ///@}
   private:
 

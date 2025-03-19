@@ -20,19 +20,7 @@ namespace ElasticLoadBalancing
 namespace Model
 {
 
-Listener::Listener() : 
-    m_protocolHasBeenSet(false),
-    m_loadBalancerPort(0),
-    m_loadBalancerPortHasBeenSet(false),
-    m_instanceProtocolHasBeenSet(false),
-    m_instancePort(0),
-    m_instancePortHasBeenSet(false),
-    m_sSLCertificateIdHasBeenSet(false)
-{
-}
-
 Listener::Listener(const XmlNode& xmlNode)
-  : Listener()
 {
   *this = xmlNode;
 }

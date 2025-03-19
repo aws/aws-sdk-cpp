@@ -12,18 +12,6 @@ using namespace Aws::Bedrock::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateMarketplaceModelEndpointRequest::CreateMarketplaceModelEndpointRequest() : 
-    m_modelSourceIdentifierHasBeenSet(false),
-    m_endpointConfigHasBeenSet(false),
-    m_acceptEula(false),
-    m_acceptEulaHasBeenSet(false),
-    m_endpointNameHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateMarketplaceModelEndpointRequest::SerializePayload() const
 {
   JsonValue payload;

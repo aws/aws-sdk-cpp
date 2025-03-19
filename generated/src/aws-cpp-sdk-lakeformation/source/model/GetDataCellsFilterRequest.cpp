@@ -12,14 +12,6 @@ using namespace Aws::LakeFormation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDataCellsFilterRequest::GetDataCellsFilterRequest() : 
-    m_tableCatalogIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String GetDataCellsFilterRequest::SerializePayload() const
 {
   JsonValue payload;

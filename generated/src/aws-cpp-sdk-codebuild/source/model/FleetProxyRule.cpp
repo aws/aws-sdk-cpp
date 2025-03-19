@@ -18,17 +18,7 @@ namespace CodeBuild
 namespace Model
 {
 
-FleetProxyRule::FleetProxyRule() : 
-    m_type(FleetProxyRuleType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_effect(FleetProxyRuleEffectType::NOT_SET),
-    m_effectHasBeenSet(false),
-    m_entitiesHasBeenSet(false)
-{
-}
-
 FleetProxyRule::FleetProxyRule(JsonView jsonValue)
-  : FleetProxyRule()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ FleetProxyRule& FleetProxyRule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = FleetProxyRuleTypeMapper::GetFleetProxyRuleTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("effect"))
   {
     m_effect = FleetProxyRuleEffectTypeMapper::GetFleetProxyRuleEffectTypeForName(jsonValue.GetString("effect"));
-
     m_effectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("entities"))
   {
     Aws::Utils::Array<JsonView> entitiesJsonList = jsonValue.GetArray("entities");
@@ -58,7 +44,6 @@ FleetProxyRule& FleetProxyRule::operator =(JsonView jsonValue)
     }
     m_entitiesHasBeenSet = true;
   }
-
   return *this;
 }
 

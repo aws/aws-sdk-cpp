@@ -31,7 +31,7 @@ namespace Model
   class CPU
   {
   public:
-    AWS_DRS_API CPU();
+    AWS_DRS_API CPU() = default;
     AWS_DRS_API CPU(Aws::Utils::Json::JsonView jsonValue);
     AWS_DRS_API CPU& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>The number of CPU cores.</p>
      */
-    inline long long GetCores() const{ return m_cores; }
+    inline long long GetCores() const { return m_cores; }
     inline bool CoresHasBeenSet() const { return m_coresHasBeenSet; }
     inline void SetCores(long long value) { m_coresHasBeenSet = true; m_cores = value; }
     inline CPU& WithCores(long long value) { SetCores(value); return *this;}
@@ -51,18 +51,16 @@ namespace Model
     /**
      * <p>The model name of the CPU.</p>
      */
-    inline const Aws::String& GetModelName() const{ return m_modelName; }
+    inline const Aws::String& GetModelName() const { return m_modelName; }
     inline bool ModelNameHasBeenSet() const { return m_modelNameHasBeenSet; }
-    inline void SetModelName(const Aws::String& value) { m_modelNameHasBeenSet = true; m_modelName = value; }
-    inline void SetModelName(Aws::String&& value) { m_modelNameHasBeenSet = true; m_modelName = std::move(value); }
-    inline void SetModelName(const char* value) { m_modelNameHasBeenSet = true; m_modelName.assign(value); }
-    inline CPU& WithModelName(const Aws::String& value) { SetModelName(value); return *this;}
-    inline CPU& WithModelName(Aws::String&& value) { SetModelName(std::move(value)); return *this;}
-    inline CPU& WithModelName(const char* value) { SetModelName(value); return *this;}
+    template<typename ModelNameT = Aws::String>
+    void SetModelName(ModelNameT&& value) { m_modelNameHasBeenSet = true; m_modelName = std::forward<ModelNameT>(value); }
+    template<typename ModelNameT = Aws::String>
+    CPU& WithModelName(ModelNameT&& value) { SetModelName(std::forward<ModelNameT>(value)); return *this;}
     ///@}
   private:
 
-    long long m_cores;
+    long long m_cores{0};
     bool m_coresHasBeenSet = false;
 
     Aws::String m_modelName;

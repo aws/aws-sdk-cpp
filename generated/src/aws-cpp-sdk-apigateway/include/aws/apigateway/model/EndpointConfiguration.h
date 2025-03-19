@@ -35,7 +35,7 @@ namespace Model
   class EndpointConfiguration
   {
   public:
-    AWS_APIGATEWAY_API EndpointConfiguration();
+    AWS_APIGATEWAY_API EndpointConfiguration() = default;
     AWS_APIGATEWAY_API EndpointConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_APIGATEWAY_API EndpointConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,13 @@ namespace Model
      * endpoint type is <code>REGIONAL</code>. For a private API, the endpoint type is
      * <code>PRIVATE</code>.</p>
      */
-    inline const Aws::Vector<EndpointType>& GetTypes() const{ return m_types; }
+    inline const Aws::Vector<EndpointType>& GetTypes() const { return m_types; }
     inline bool TypesHasBeenSet() const { return m_typesHasBeenSet; }
-    inline void SetTypes(const Aws::Vector<EndpointType>& value) { m_typesHasBeenSet = true; m_types = value; }
-    inline void SetTypes(Aws::Vector<EndpointType>&& value) { m_typesHasBeenSet = true; m_types = std::move(value); }
-    inline EndpointConfiguration& WithTypes(const Aws::Vector<EndpointType>& value) { SetTypes(value); return *this;}
-    inline EndpointConfiguration& WithTypes(Aws::Vector<EndpointType>&& value) { SetTypes(std::move(value)); return *this;}
-    inline EndpointConfiguration& AddTypes(const EndpointType& value) { m_typesHasBeenSet = true; m_types.push_back(value); return *this; }
-    inline EndpointConfiguration& AddTypes(EndpointType&& value) { m_typesHasBeenSet = true; m_types.push_back(std::move(value)); return *this; }
+    template<typename TypesT = Aws::Vector<EndpointType>>
+    void SetTypes(TypesT&& value) { m_typesHasBeenSet = true; m_types = std::forward<TypesT>(value); }
+    template<typename TypesT = Aws::Vector<EndpointType>>
+    EndpointConfiguration& WithTypes(TypesT&& value) { SetTypes(std::forward<TypesT>(value)); return *this;}
+    inline EndpointConfiguration& AddTypes(EndpointType value) { m_typesHasBeenSet = true; m_types.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -64,15 +63,14 @@ namespace Model
      * <p>A list of VpcEndpointIds of an API (RestApi) against which to create Route53
      * ALIASes. It is only supported for <code>PRIVATE</code> endpoint type.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetVpcEndpointIds() const{ return m_vpcEndpointIds; }
+    inline const Aws::Vector<Aws::String>& GetVpcEndpointIds() const { return m_vpcEndpointIds; }
     inline bool VpcEndpointIdsHasBeenSet() const { return m_vpcEndpointIdsHasBeenSet; }
-    inline void SetVpcEndpointIds(const Aws::Vector<Aws::String>& value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds = value; }
-    inline void SetVpcEndpointIds(Aws::Vector<Aws::String>&& value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds = std::move(value); }
-    inline EndpointConfiguration& WithVpcEndpointIds(const Aws::Vector<Aws::String>& value) { SetVpcEndpointIds(value); return *this;}
-    inline EndpointConfiguration& WithVpcEndpointIds(Aws::Vector<Aws::String>&& value) { SetVpcEndpointIds(std::move(value)); return *this;}
-    inline EndpointConfiguration& AddVpcEndpointIds(const Aws::String& value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds.push_back(value); return *this; }
-    inline EndpointConfiguration& AddVpcEndpointIds(Aws::String&& value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds.push_back(std::move(value)); return *this; }
-    inline EndpointConfiguration& AddVpcEndpointIds(const char* value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds.push_back(value); return *this; }
+    template<typename VpcEndpointIdsT = Aws::Vector<Aws::String>>
+    void SetVpcEndpointIds(VpcEndpointIdsT&& value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds = std::forward<VpcEndpointIdsT>(value); }
+    template<typename VpcEndpointIdsT = Aws::Vector<Aws::String>>
+    EndpointConfiguration& WithVpcEndpointIds(VpcEndpointIdsT&& value) { SetVpcEndpointIds(std::forward<VpcEndpointIdsT>(value)); return *this;}
+    template<typename VpcEndpointIdsT = Aws::String>
+    EndpointConfiguration& AddVpcEndpointIds(VpcEndpointIdsT&& value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds.emplace_back(std::forward<VpcEndpointIdsT>(value)); return *this; }
     ///@}
   private:
 

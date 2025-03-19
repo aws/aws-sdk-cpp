@@ -12,11 +12,6 @@ using namespace Aws::MQ::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RebootBrokerRequest::RebootBrokerRequest() : 
-    m_brokerIdHasBeenSet(false)
-{
-}
-
 Aws::String RebootBrokerRequest::SerializePayload() const
 {
   return {};

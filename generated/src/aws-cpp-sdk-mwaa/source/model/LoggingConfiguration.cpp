@@ -18,17 +18,7 @@ namespace MWAA
 namespace Model
 {
 
-LoggingConfiguration::LoggingConfiguration() : 
-    m_dagProcessingLogsHasBeenSet(false),
-    m_schedulerLogsHasBeenSet(false),
-    m_webserverLogsHasBeenSet(false),
-    m_workerLogsHasBeenSet(false),
-    m_taskLogsHasBeenSet(false)
-{
-}
-
 LoggingConfiguration::LoggingConfiguration(JsonView jsonValue)
-  : LoggingConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ LoggingConfiguration& LoggingConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DagProcessingLogs"))
   {
     m_dagProcessingLogs = jsonValue.GetObject("DagProcessingLogs");
-
     m_dagProcessingLogsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SchedulerLogs"))
   {
     m_schedulerLogs = jsonValue.GetObject("SchedulerLogs");
-
     m_schedulerLogsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WebserverLogs"))
   {
     m_webserverLogs = jsonValue.GetObject("WebserverLogs");
-
     m_webserverLogsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkerLogs"))
   {
     m_workerLogs = jsonValue.GetObject("WorkerLogs");
-
     m_workerLogsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TaskLogs"))
   {
     m_taskLogs = jsonValue.GetObject("TaskLogs");
-
     m_taskLogsHasBeenSet = true;
   }
-
   return *this;
 }
 

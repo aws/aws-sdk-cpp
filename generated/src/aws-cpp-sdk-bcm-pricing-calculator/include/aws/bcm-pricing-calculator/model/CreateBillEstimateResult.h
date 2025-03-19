@@ -31,7 +31,7 @@ namespace Model
   class CreateBillEstimateResult
   {
   public:
-    AWS_BCMPRICINGCALCULATOR_API CreateBillEstimateResult();
+    AWS_BCMPRICINGCALCULATOR_API CreateBillEstimateResult() = default;
     AWS_BCMPRICINGCALCULATOR_API CreateBillEstimateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BCMPRICINGCALCULATOR_API CreateBillEstimateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,26 +40,22 @@ namespace Model
     /**
      * <p> The unique identifier of your newly created Bill estimate. </p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline CreateBillEstimateResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline CreateBillEstimateResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline CreateBillEstimateResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    CreateBillEstimateResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The name of your newly created Bill estimate. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline CreateBillEstimateResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateBillEstimateResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateBillEstimateResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateBillEstimateResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,11 +64,9 @@ namespace Model
      * take anywhere between 8 to 12 hours. The status will allow you to identify when
      * the Bill estimate is complete or has failed. </p>
      */
-    inline const BillEstimateStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const BillEstimateStatus& value) { m_status = value; }
-    inline void SetStatus(BillEstimateStatus&& value) { m_status = std::move(value); }
-    inline CreateBillEstimateResult& WithStatus(const BillEstimateStatus& value) { SetStatus(value); return *this;}
-    inline CreateBillEstimateResult& WithStatus(BillEstimateStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline BillEstimateStatus GetStatus() const { return m_status; }
+    inline void SetStatus(BillEstimateStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline CreateBillEstimateResult& WithStatus(BillEstimateStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -80,13 +74,11 @@ namespace Model
      * <p> This attribute provides the reason if a Bill estimate result generation
      * fails. </p>
      */
-    inline const Aws::String& GetFailureMessage() const{ return m_failureMessage; }
-    inline void SetFailureMessage(const Aws::String& value) { m_failureMessage = value; }
-    inline void SetFailureMessage(Aws::String&& value) { m_failureMessage = std::move(value); }
-    inline void SetFailureMessage(const char* value) { m_failureMessage.assign(value); }
-    inline CreateBillEstimateResult& WithFailureMessage(const Aws::String& value) { SetFailureMessage(value); return *this;}
-    inline CreateBillEstimateResult& WithFailureMessage(Aws::String&& value) { SetFailureMessage(std::move(value)); return *this;}
-    inline CreateBillEstimateResult& WithFailureMessage(const char* value) { SetFailureMessage(value); return *this;}
+    inline const Aws::String& GetFailureMessage() const { return m_failureMessage; }
+    template<typename FailureMessageT = Aws::String>
+    void SetFailureMessage(FailureMessageT&& value) { m_failureMessageHasBeenSet = true; m_failureMessage = std::forward<FailureMessageT>(value); }
+    template<typename FailureMessageT = Aws::String>
+    CreateBillEstimateResult& WithFailureMessage(FailureMessageT&& value) { SetFailureMessage(std::forward<FailureMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,11 +87,11 @@ namespace Model
      * estimate. This is set to the last complete anniversary bill month start and end
      * timestamp. </p>
      */
-    inline const BillInterval& GetBillInterval() const{ return m_billInterval; }
-    inline void SetBillInterval(const BillInterval& value) { m_billInterval = value; }
-    inline void SetBillInterval(BillInterval&& value) { m_billInterval = std::move(value); }
-    inline CreateBillEstimateResult& WithBillInterval(const BillInterval& value) { SetBillInterval(value); return *this;}
-    inline CreateBillEstimateResult& WithBillInterval(BillInterval&& value) { SetBillInterval(std::move(value)); return *this;}
+    inline const BillInterval& GetBillInterval() const { return m_billInterval; }
+    template<typename BillIntervalT = BillInterval>
+    void SetBillInterval(BillIntervalT&& value) { m_billIntervalHasBeenSet = true; m_billInterval = std::forward<BillIntervalT>(value); }
+    template<typename BillIntervalT = BillInterval>
+    CreateBillEstimateResult& WithBillInterval(BillIntervalT&& value) { SetBillInterval(std::forward<BillIntervalT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,11 +103,11 @@ namespace Model
      * service, detailing the pre-tax cost of each service, comparing the completed
      * anniversary bill to the estimated bill on a per-service basis. </p>
      */
-    inline const BillEstimateCostSummary& GetCostSummary() const{ return m_costSummary; }
-    inline void SetCostSummary(const BillEstimateCostSummary& value) { m_costSummary = value; }
-    inline void SetCostSummary(BillEstimateCostSummary&& value) { m_costSummary = std::move(value); }
-    inline CreateBillEstimateResult& WithCostSummary(const BillEstimateCostSummary& value) { SetCostSummary(value); return *this;}
-    inline CreateBillEstimateResult& WithCostSummary(BillEstimateCostSummary&& value) { SetCostSummary(std::move(value)); return *this;}
+    inline const BillEstimateCostSummary& GetCostSummary() const { return m_costSummary; }
+    template<typename CostSummaryT = BillEstimateCostSummary>
+    void SetCostSummary(CostSummaryT&& value) { m_costSummaryHasBeenSet = true; m_costSummary = std::forward<CostSummaryT>(value); }
+    template<typename CostSummaryT = BillEstimateCostSummary>
+    CreateBillEstimateResult& WithCostSummary(CostSummaryT&& value) { SetCostSummary(std::forward<CostSummaryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -123,11 +115,11 @@ namespace Model
      * <p> The timestamp of when the Bill estimate create process was started (not when
      * it successfully completed or failed). </p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline CreateBillEstimateResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline CreateBillEstimateResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    CreateBillEstimateResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -135,42 +127,49 @@ namespace Model
      * <p> The timestamp of when the Bill estimate will expire. A Bill estimate becomes
      * inaccessible after expiration. </p>
      */
-    inline const Aws::Utils::DateTime& GetExpiresAt() const{ return m_expiresAt; }
-    inline void SetExpiresAt(const Aws::Utils::DateTime& value) { m_expiresAt = value; }
-    inline void SetExpiresAt(Aws::Utils::DateTime&& value) { m_expiresAt = std::move(value); }
-    inline CreateBillEstimateResult& WithExpiresAt(const Aws::Utils::DateTime& value) { SetExpiresAt(value); return *this;}
-    inline CreateBillEstimateResult& WithExpiresAt(Aws::Utils::DateTime&& value) { SetExpiresAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetExpiresAt() const { return m_expiresAt; }
+    template<typename ExpiresAtT = Aws::Utils::DateTime>
+    void SetExpiresAt(ExpiresAtT&& value) { m_expiresAtHasBeenSet = true; m_expiresAt = std::forward<ExpiresAtT>(value); }
+    template<typename ExpiresAtT = Aws::Utils::DateTime>
+    CreateBillEstimateResult& WithExpiresAt(ExpiresAtT&& value) { SetExpiresAt(std::forward<ExpiresAtT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateBillEstimateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateBillEstimateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateBillEstimateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateBillEstimateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
-    BillEstimateStatus m_status;
+    BillEstimateStatus m_status{BillEstimateStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_failureMessage;
+    bool m_failureMessageHasBeenSet = false;
 
     BillInterval m_billInterval;
+    bool m_billIntervalHasBeenSet = false;
 
     BillEstimateCostSummary m_costSummary;
+    bool m_costSummaryHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_expiresAt;
+    Aws::Utils::DateTime m_expiresAt{};
+    bool m_expiresAtHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

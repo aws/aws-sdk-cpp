@@ -18,19 +18,7 @@ namespace IoTAnalytics
 namespace Model
 {
 
-DatasetSummary::DatasetSummary() : 
-    m_datasetNameHasBeenSet(false),
-    m_status(DatasetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false),
-    m_triggersHasBeenSet(false),
-    m_actionsHasBeenSet(false)
-{
-}
-
 DatasetSummary::DatasetSummary(JsonView jsonValue)
-  : DatasetSummary()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ DatasetSummary& DatasetSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("datasetName"))
   {
     m_datasetName = jsonValue.GetString("datasetName");
-
     m_datasetNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = DatasetStatusMapper::GetDatasetStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetDouble("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdateTime"))
   {
     m_lastUpdateTime = jsonValue.GetDouble("lastUpdateTime");
-
     m_lastUpdateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("triggers"))
   {
     Aws::Utils::Array<JsonView> triggersJsonList = jsonValue.GetArray("triggers");
@@ -74,7 +54,6 @@ DatasetSummary& DatasetSummary::operator =(JsonView jsonValue)
     }
     m_triggersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actions"))
   {
     Aws::Utils::Array<JsonView> actionsJsonList = jsonValue.GetArray("actions");
@@ -84,7 +63,6 @@ DatasetSummary& DatasetSummary::operator =(JsonView jsonValue)
     }
     m_actionsHasBeenSet = true;
   }
-
   return *this;
 }
 

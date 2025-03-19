@@ -12,12 +12,6 @@ using namespace Aws::QConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAIGuardrailRequest::GetAIGuardrailRequest() : 
-    m_aiGuardrailIdHasBeenSet(false),
-    m_assistantIdHasBeenSet(false)
-{
-}
-
 Aws::String GetAIGuardrailRequest::SerializePayload() const
 {
   return {};

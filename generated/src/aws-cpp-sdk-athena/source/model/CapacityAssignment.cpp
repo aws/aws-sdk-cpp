@@ -18,13 +18,7 @@ namespace Athena
 namespace Model
 {
 
-CapacityAssignment::CapacityAssignment() : 
-    m_workGroupNamesHasBeenSet(false)
-{
-}
-
 CapacityAssignment::CapacityAssignment(JsonView jsonValue)
-  : CapacityAssignment()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ CapacityAssignment& CapacityAssignment::operator =(JsonView jsonValue)
     }
     m_workGroupNamesHasBeenSet = true;
   }
-
   return *this;
 }
 

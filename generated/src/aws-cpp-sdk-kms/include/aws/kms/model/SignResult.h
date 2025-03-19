@@ -29,7 +29,7 @@ namespace Model
   class SignResult
   {
   public:
-    AWS_KMS_API SignResult();
+    AWS_KMS_API SignResult() = default;
     AWS_KMS_API SignResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KMS_API SignResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
      * ARN</a>) of the asymmetric KMS key that was used to sign the message.</p>
      */
-    inline const Aws::String& GetKeyId() const{ return m_keyId; }
-    inline void SetKeyId(const Aws::String& value) { m_keyId = value; }
-    inline void SetKeyId(Aws::String&& value) { m_keyId = std::move(value); }
-    inline void SetKeyId(const char* value) { m_keyId.assign(value); }
-    inline SignResult& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
-    inline SignResult& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
-    inline SignResult& WithKeyId(const char* value) { SetKeyId(value); return *this;}
+    inline const Aws::String& GetKeyId() const { return m_keyId; }
+    template<typename KeyIdT = Aws::String>
+    void SetKeyId(KeyIdT&& value) { m_keyIdHasBeenSet = true; m_keyId = std::forward<KeyIdT>(value); }
+    template<typename KeyIdT = Aws::String>
+    SignResult& WithKeyId(KeyIdT&& value) { SetKeyId(std::forward<KeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,43 +62,43 @@ namespace Model
      * Services CLI, the value is Base64-encoded. Otherwise, it is not
      * Base64-encoded.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetSignature() const{ return m_signature; }
-    inline void SetSignature(const Aws::Utils::ByteBuffer& value) { m_signature = value; }
-    inline void SetSignature(Aws::Utils::ByteBuffer&& value) { m_signature = std::move(value); }
-    inline SignResult& WithSignature(const Aws::Utils::ByteBuffer& value) { SetSignature(value); return *this;}
-    inline SignResult& WithSignature(Aws::Utils::ByteBuffer&& value) { SetSignature(std::move(value)); return *this;}
+    inline const Aws::Utils::ByteBuffer& GetSignature() const { return m_signature; }
+    template<typename SignatureT = Aws::Utils::ByteBuffer>
+    void SetSignature(SignatureT&& value) { m_signatureHasBeenSet = true; m_signature = std::forward<SignatureT>(value); }
+    template<typename SignatureT = Aws::Utils::ByteBuffer>
+    SignResult& WithSignature(SignatureT&& value) { SetSignature(std::forward<SignatureT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The signing algorithm that was used to sign the message.</p>
      */
-    inline const SigningAlgorithmSpec& GetSigningAlgorithm() const{ return m_signingAlgorithm; }
-    inline void SetSigningAlgorithm(const SigningAlgorithmSpec& value) { m_signingAlgorithm = value; }
-    inline void SetSigningAlgorithm(SigningAlgorithmSpec&& value) { m_signingAlgorithm = std::move(value); }
-    inline SignResult& WithSigningAlgorithm(const SigningAlgorithmSpec& value) { SetSigningAlgorithm(value); return *this;}
-    inline SignResult& WithSigningAlgorithm(SigningAlgorithmSpec&& value) { SetSigningAlgorithm(std::move(value)); return *this;}
+    inline SigningAlgorithmSpec GetSigningAlgorithm() const { return m_signingAlgorithm; }
+    inline void SetSigningAlgorithm(SigningAlgorithmSpec value) { m_signingAlgorithmHasBeenSet = true; m_signingAlgorithm = value; }
+    inline SignResult& WithSigningAlgorithm(SigningAlgorithmSpec value) { SetSigningAlgorithm(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline SignResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline SignResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline SignResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    SignResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_keyId;
+    bool m_keyIdHasBeenSet = false;
 
-    Aws::Utils::ByteBuffer m_signature;
+    Aws::Utils::ByteBuffer m_signature{};
+    bool m_signatureHasBeenSet = false;
 
-    SigningAlgorithmSpec m_signingAlgorithm;
+    SigningAlgorithmSpec m_signingAlgorithm{SigningAlgorithmSpec::NOT_SET};
+    bool m_signingAlgorithmHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,7 +33,7 @@ namespace Model
   class ConditionBasedCollectionScheme
   {
   public:
-    AWS_IOTFLEETWISE_API ConditionBasedCollectionScheme();
+    AWS_IOTFLEETWISE_API ConditionBasedCollectionScheme() = default;
     AWS_IOTFLEETWISE_API ConditionBasedCollectionScheme(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API ConditionBasedCollectionScheme& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The logical expression used to recognize what data to collect. For example,
      * <code>$variable.`Vehicle.OutsideAirTemperature` &gt;= 105.0</code>.</p>
      */
-    inline const Aws::String& GetExpression() const{ return m_expression; }
+    inline const Aws::String& GetExpression() const { return m_expression; }
     inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
-    inline void SetExpression(const Aws::String& value) { m_expressionHasBeenSet = true; m_expression = value; }
-    inline void SetExpression(Aws::String&& value) { m_expressionHasBeenSet = true; m_expression = std::move(value); }
-    inline void SetExpression(const char* value) { m_expressionHasBeenSet = true; m_expression.assign(value); }
-    inline ConditionBasedCollectionScheme& WithExpression(const Aws::String& value) { SetExpression(value); return *this;}
-    inline ConditionBasedCollectionScheme& WithExpression(Aws::String&& value) { SetExpression(std::move(value)); return *this;}
-    inline ConditionBasedCollectionScheme& WithExpression(const char* value) { SetExpression(value); return *this;}
+    template<typename ExpressionT = Aws::String>
+    void SetExpression(ExpressionT&& value) { m_expressionHasBeenSet = true; m_expression = std::forward<ExpressionT>(value); }
+    template<typename ExpressionT = Aws::String>
+    ConditionBasedCollectionScheme& WithExpression(ExpressionT&& value) { SetExpression(std::forward<ExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,7 +58,7 @@ namespace Model
      * in milliseconds.</p>  <p>If a signal changes often, you might want to
      * collect data at a slower rate.</p> 
      */
-    inline long long GetMinimumTriggerIntervalMs() const{ return m_minimumTriggerIntervalMs; }
+    inline long long GetMinimumTriggerIntervalMs() const { return m_minimumTriggerIntervalMs; }
     inline bool MinimumTriggerIntervalMsHasBeenSet() const { return m_minimumTriggerIntervalMsHasBeenSet; }
     inline void SetMinimumTriggerIntervalMs(long long value) { m_minimumTriggerIntervalMsHasBeenSet = true; m_minimumTriggerIntervalMs = value; }
     inline ConditionBasedCollectionScheme& WithMinimumTriggerIntervalMs(long long value) { SetMinimumTriggerIntervalMs(value); return *this;}
@@ -74,19 +72,17 @@ namespace Model
      * interested on triggering when the airbag is already exploded; they only care
      * about the change from not deployed =&gt; deployed.</p>
      */
-    inline const TriggerMode& GetTriggerMode() const{ return m_triggerMode; }
+    inline TriggerMode GetTriggerMode() const { return m_triggerMode; }
     inline bool TriggerModeHasBeenSet() const { return m_triggerModeHasBeenSet; }
-    inline void SetTriggerMode(const TriggerMode& value) { m_triggerModeHasBeenSet = true; m_triggerMode = value; }
-    inline void SetTriggerMode(TriggerMode&& value) { m_triggerModeHasBeenSet = true; m_triggerMode = std::move(value); }
-    inline ConditionBasedCollectionScheme& WithTriggerMode(const TriggerMode& value) { SetTriggerMode(value); return *this;}
-    inline ConditionBasedCollectionScheme& WithTriggerMode(TriggerMode&& value) { SetTriggerMode(std::move(value)); return *this;}
+    inline void SetTriggerMode(TriggerMode value) { m_triggerModeHasBeenSet = true; m_triggerMode = value; }
+    inline ConditionBasedCollectionScheme& WithTriggerMode(TriggerMode value) { SetTriggerMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the version of the conditional expression language.</p>
      */
-    inline int GetConditionLanguageVersion() const{ return m_conditionLanguageVersion; }
+    inline int GetConditionLanguageVersion() const { return m_conditionLanguageVersion; }
     inline bool ConditionLanguageVersionHasBeenSet() const { return m_conditionLanguageVersionHasBeenSet; }
     inline void SetConditionLanguageVersion(int value) { m_conditionLanguageVersionHasBeenSet = true; m_conditionLanguageVersion = value; }
     inline ConditionBasedCollectionScheme& WithConditionLanguageVersion(int value) { SetConditionLanguageVersion(value); return *this;}
@@ -96,13 +92,13 @@ namespace Model
     Aws::String m_expression;
     bool m_expressionHasBeenSet = false;
 
-    long long m_minimumTriggerIntervalMs;
+    long long m_minimumTriggerIntervalMs{0};
     bool m_minimumTriggerIntervalMsHasBeenSet = false;
 
-    TriggerMode m_triggerMode;
+    TriggerMode m_triggerMode{TriggerMode::NOT_SET};
     bool m_triggerModeHasBeenSet = false;
 
-    int m_conditionLanguageVersion;
+    int m_conditionLanguageVersion{0};
     bool m_conditionLanguageVersionHasBeenSet = false;
   };
 

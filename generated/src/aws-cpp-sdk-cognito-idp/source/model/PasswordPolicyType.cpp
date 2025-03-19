@@ -18,26 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-PasswordPolicyType::PasswordPolicyType() : 
-    m_minimumLength(0),
-    m_minimumLengthHasBeenSet(false),
-    m_requireUppercase(false),
-    m_requireUppercaseHasBeenSet(false),
-    m_requireLowercase(false),
-    m_requireLowercaseHasBeenSet(false),
-    m_requireNumbers(false),
-    m_requireNumbersHasBeenSet(false),
-    m_requireSymbols(false),
-    m_requireSymbolsHasBeenSet(false),
-    m_passwordHistorySize(0),
-    m_passwordHistorySizeHasBeenSet(false),
-    m_temporaryPasswordValidityDays(0),
-    m_temporaryPasswordValidityDaysHasBeenSet(false)
-{
-}
-
 PasswordPolicyType::PasswordPolicyType(JsonView jsonValue)
-  : PasswordPolicyType()
 {
   *this = jsonValue;
 }
@@ -47,52 +28,38 @@ PasswordPolicyType& PasswordPolicyType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MinimumLength"))
   {
     m_minimumLength = jsonValue.GetInteger("MinimumLength");
-
     m_minimumLengthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequireUppercase"))
   {
     m_requireUppercase = jsonValue.GetBool("RequireUppercase");
-
     m_requireUppercaseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequireLowercase"))
   {
     m_requireLowercase = jsonValue.GetBool("RequireLowercase");
-
     m_requireLowercaseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequireNumbers"))
   {
     m_requireNumbers = jsonValue.GetBool("RequireNumbers");
-
     m_requireNumbersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequireSymbols"))
   {
     m_requireSymbols = jsonValue.GetBool("RequireSymbols");
-
     m_requireSymbolsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PasswordHistorySize"))
   {
     m_passwordHistorySize = jsonValue.GetInteger("PasswordHistorySize");
-
     m_passwordHistorySizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TemporaryPasswordValidityDays"))
   {
     m_temporaryPasswordValidityDays = jsonValue.GetInteger("TemporaryPasswordValidityDays");
-
     m_temporaryPasswordValidityDaysHasBeenSet = true;
   }
-
   return *this;
 }
 

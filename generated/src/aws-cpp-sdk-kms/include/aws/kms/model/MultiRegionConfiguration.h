@@ -36,7 +36,7 @@ namespace Model
   class MultiRegionConfiguration
   {
   public:
-    AWS_KMS_API MultiRegionConfiguration();
+    AWS_KMS_API MultiRegionConfiguration() = default;
     AWS_KMS_API MultiRegionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KMS_API MultiRegionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,10 @@ namespace Model
      * <p>Indicates whether the KMS key is a <code>PRIMARY</code> or
      * <code>REPLICA</code> key.</p>
      */
-    inline const MultiRegionKeyType& GetMultiRegionKeyType() const{ return m_multiRegionKeyType; }
+    inline MultiRegionKeyType GetMultiRegionKeyType() const { return m_multiRegionKeyType; }
     inline bool MultiRegionKeyTypeHasBeenSet() const { return m_multiRegionKeyTypeHasBeenSet; }
-    inline void SetMultiRegionKeyType(const MultiRegionKeyType& value) { m_multiRegionKeyTypeHasBeenSet = true; m_multiRegionKeyType = value; }
-    inline void SetMultiRegionKeyType(MultiRegionKeyType&& value) { m_multiRegionKeyTypeHasBeenSet = true; m_multiRegionKeyType = std::move(value); }
-    inline MultiRegionConfiguration& WithMultiRegionKeyType(const MultiRegionKeyType& value) { SetMultiRegionKeyType(value); return *this;}
-    inline MultiRegionConfiguration& WithMultiRegionKeyType(MultiRegionKeyType&& value) { SetMultiRegionKeyType(std::move(value)); return *this;}
+    inline void SetMultiRegionKeyType(MultiRegionKeyType value) { m_multiRegionKeyTypeHasBeenSet = true; m_multiRegionKeyType = value; }
+    inline MultiRegionConfiguration& WithMultiRegionKeyType(MultiRegionKeyType value) { SetMultiRegionKeyType(value); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +58,12 @@ namespace Model
      * <p>Displays the key ARN and Region of the primary key. This field includes the
      * current KMS key if it is the primary key.</p>
      */
-    inline const MultiRegionKey& GetPrimaryKey() const{ return m_primaryKey; }
+    inline const MultiRegionKey& GetPrimaryKey() const { return m_primaryKey; }
     inline bool PrimaryKeyHasBeenSet() const { return m_primaryKeyHasBeenSet; }
-    inline void SetPrimaryKey(const MultiRegionKey& value) { m_primaryKeyHasBeenSet = true; m_primaryKey = value; }
-    inline void SetPrimaryKey(MultiRegionKey&& value) { m_primaryKeyHasBeenSet = true; m_primaryKey = std::move(value); }
-    inline MultiRegionConfiguration& WithPrimaryKey(const MultiRegionKey& value) { SetPrimaryKey(value); return *this;}
-    inline MultiRegionConfiguration& WithPrimaryKey(MultiRegionKey&& value) { SetPrimaryKey(std::move(value)); return *this;}
+    template<typename PrimaryKeyT = MultiRegionKey>
+    void SetPrimaryKey(PrimaryKeyT&& value) { m_primaryKeyHasBeenSet = true; m_primaryKey = std::forward<PrimaryKeyT>(value); }
+    template<typename PrimaryKeyT = MultiRegionKey>
+    MultiRegionConfiguration& WithPrimaryKey(PrimaryKeyT&& value) { SetPrimaryKey(std::forward<PrimaryKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,18 +71,18 @@ namespace Model
      * <p>displays the key ARNs and Regions of all replica keys. This field includes
      * the current KMS key if it is a replica key.</p>
      */
-    inline const Aws::Vector<MultiRegionKey>& GetReplicaKeys() const{ return m_replicaKeys; }
+    inline const Aws::Vector<MultiRegionKey>& GetReplicaKeys() const { return m_replicaKeys; }
     inline bool ReplicaKeysHasBeenSet() const { return m_replicaKeysHasBeenSet; }
-    inline void SetReplicaKeys(const Aws::Vector<MultiRegionKey>& value) { m_replicaKeysHasBeenSet = true; m_replicaKeys = value; }
-    inline void SetReplicaKeys(Aws::Vector<MultiRegionKey>&& value) { m_replicaKeysHasBeenSet = true; m_replicaKeys = std::move(value); }
-    inline MultiRegionConfiguration& WithReplicaKeys(const Aws::Vector<MultiRegionKey>& value) { SetReplicaKeys(value); return *this;}
-    inline MultiRegionConfiguration& WithReplicaKeys(Aws::Vector<MultiRegionKey>&& value) { SetReplicaKeys(std::move(value)); return *this;}
-    inline MultiRegionConfiguration& AddReplicaKeys(const MultiRegionKey& value) { m_replicaKeysHasBeenSet = true; m_replicaKeys.push_back(value); return *this; }
-    inline MultiRegionConfiguration& AddReplicaKeys(MultiRegionKey&& value) { m_replicaKeysHasBeenSet = true; m_replicaKeys.push_back(std::move(value)); return *this; }
+    template<typename ReplicaKeysT = Aws::Vector<MultiRegionKey>>
+    void SetReplicaKeys(ReplicaKeysT&& value) { m_replicaKeysHasBeenSet = true; m_replicaKeys = std::forward<ReplicaKeysT>(value); }
+    template<typename ReplicaKeysT = Aws::Vector<MultiRegionKey>>
+    MultiRegionConfiguration& WithReplicaKeys(ReplicaKeysT&& value) { SetReplicaKeys(std::forward<ReplicaKeysT>(value)); return *this;}
+    template<typename ReplicaKeysT = MultiRegionKey>
+    MultiRegionConfiguration& AddReplicaKeys(ReplicaKeysT&& value) { m_replicaKeysHasBeenSet = true; m_replicaKeys.emplace_back(std::forward<ReplicaKeysT>(value)); return *this; }
     ///@}
   private:
 
-    MultiRegionKeyType m_multiRegionKeyType;
+    MultiRegionKeyType m_multiRegionKeyType{MultiRegionKeyType::NOT_SET};
     bool m_multiRegionKeyTypeHasBeenSet = false;
 
     MultiRegionKey m_primaryKey;

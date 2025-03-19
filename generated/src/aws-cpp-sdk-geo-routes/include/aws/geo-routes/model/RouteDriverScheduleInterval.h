@@ -30,7 +30,7 @@ namespace Model
   class RouteDriverScheduleInterval
   {
   public:
-    AWS_GEOROUTES_API RouteDriverScheduleInterval();
+    AWS_GEOROUTES_API RouteDriverScheduleInterval() = default;
     AWS_GEOROUTES_API RouteDriverScheduleInterval(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RouteDriverScheduleInterval& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
      * <p>Maximum allowed driving time before stopping to rest.</p> <p> <b>Unit</b>:
      * <code>seconds</code> </p>
      */
-    inline long long GetDriveDuration() const{ return m_driveDuration; }
+    inline long long GetDriveDuration() const { return m_driveDuration; }
     inline bool DriveDurationHasBeenSet() const { return m_driveDurationHasBeenSet; }
     inline void SetDriveDuration(long long value) { m_driveDurationHasBeenSet = true; m_driveDuration = value; }
     inline RouteDriverScheduleInterval& WithDriveDuration(long long value) { SetDriveDuration(value); return *this;}
@@ -52,17 +52,17 @@ namespace Model
      * <p>Resting time before the driver can continue driving.</p> <p> <b>Unit</b>:
      * <code>seconds</code> </p>
      */
-    inline long long GetRestDuration() const{ return m_restDuration; }
+    inline long long GetRestDuration() const { return m_restDuration; }
     inline bool RestDurationHasBeenSet() const { return m_restDurationHasBeenSet; }
     inline void SetRestDuration(long long value) { m_restDurationHasBeenSet = true; m_restDuration = value; }
     inline RouteDriverScheduleInterval& WithRestDuration(long long value) { SetRestDuration(value); return *this;}
     ///@}
   private:
 
-    long long m_driveDuration;
+    long long m_driveDuration{0};
     bool m_driveDurationHasBeenSet = false;
 
-    long long m_restDuration;
+    long long m_restDuration{0};
     bool m_restDurationHasBeenSet = false;
   };
 

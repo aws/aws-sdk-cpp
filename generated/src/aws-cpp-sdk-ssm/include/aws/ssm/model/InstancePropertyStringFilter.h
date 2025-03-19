@@ -34,7 +34,7 @@ namespace Model
   class InstancePropertyStringFilter
   {
   public:
-    AWS_SSM_API InstancePropertyStringFilter();
+    AWS_SSM_API InstancePropertyStringFilter() = default;
     AWS_SSM_API InstancePropertyStringFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API InstancePropertyStringFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,41 +44,36 @@ namespace Model
     /**
      * <p>The filter key name to describe your managed nodes.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline InstancePropertyStringFilter& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline InstancePropertyStringFilter& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline InstancePropertyStringFilter& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    InstancePropertyStringFilter& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The filter key name to describe your managed nodes.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline InstancePropertyStringFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline InstancePropertyStringFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline InstancePropertyStringFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline InstancePropertyStringFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline InstancePropertyStringFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    InstancePropertyStringFilter& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    InstancePropertyStringFilter& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The operator used by the filter call.</p>
      */
-    inline const InstancePropertyFilterOperator& GetOperator() const{ return m_operator; }
+    inline InstancePropertyFilterOperator GetOperator() const { return m_operator; }
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-    inline void SetOperator(const InstancePropertyFilterOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-    inline void SetOperator(InstancePropertyFilterOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-    inline InstancePropertyStringFilter& WithOperator(const InstancePropertyFilterOperator& value) { SetOperator(value); return *this;}
-    inline InstancePropertyStringFilter& WithOperator(InstancePropertyFilterOperator&& value) { SetOperator(std::move(value)); return *this;}
+    inline void SetOperator(InstancePropertyFilterOperator value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline InstancePropertyStringFilter& WithOperator(InstancePropertyFilterOperator value) { SetOperator(value); return *this;}
     ///@}
   private:
 
@@ -88,7 +83,7 @@ namespace Model
     Aws::Vector<Aws::String> m_values;
     bool m_valuesHasBeenSet = false;
 
-    InstancePropertyFilterOperator m_operator;
+    InstancePropertyFilterOperator m_operator{InstancePropertyFilterOperator::NOT_SET};
     bool m_operatorHasBeenSet = false;
   };
 

@@ -18,15 +18,7 @@ namespace CloudWatchEvidently
 namespace Model
 {
 
-EvaluationRequest::EvaluationRequest() : 
-    m_entityIdHasBeenSet(false),
-    m_evaluationContextHasBeenSet(false),
-    m_featureHasBeenSet(false)
-{
-}
-
 EvaluationRequest::EvaluationRequest(JsonView jsonValue)
-  : EvaluationRequest()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ EvaluationRequest& EvaluationRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("entityId"))
   {
     m_entityId = jsonValue.GetString("entityId");
-
     m_entityIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("evaluationContext"))
   {
     m_evaluationContext = jsonValue.GetString("evaluationContext");
-
     m_evaluationContextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("feature"))
   {
     m_feature = jsonValue.GetString("feature");
-
     m_featureHasBeenSet = true;
   }
-
   return *this;
 }
 

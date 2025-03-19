@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeregisterGatewayInstanceResult::DeregisterGatewayInstanceResult() : 
-    m_instanceState(InstanceState::NOT_SET)
-{
-}
-
 DeregisterGatewayInstanceResult::DeregisterGatewayInstanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeregisterGatewayInstanceResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ DeregisterGatewayInstanceResult& DeregisterGatewayInstanceResult::operator =(con
   if(jsonValue.ValueExists("gatewayInstanceArn"))
   {
     m_gatewayInstanceArn = jsonValue.GetString("gatewayInstanceArn");
-
+    m_gatewayInstanceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceState"))
   {
     m_instanceState = InstanceStateMapper::GetInstanceStateForName(jsonValue.GetString("instanceState"));
-
+    m_instanceStateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

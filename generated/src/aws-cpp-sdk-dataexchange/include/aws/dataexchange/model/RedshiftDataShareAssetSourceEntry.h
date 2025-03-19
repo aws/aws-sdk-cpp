@@ -32,7 +32,7 @@ namespace Model
   class RedshiftDataShareAssetSourceEntry
   {
   public:
-    AWS_DATAEXCHANGE_API RedshiftDataShareAssetSourceEntry();
+    AWS_DATAEXCHANGE_API RedshiftDataShareAssetSourceEntry() = default;
     AWS_DATAEXCHANGE_API RedshiftDataShareAssetSourceEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAEXCHANGE_API RedshiftDataShareAssetSourceEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the datashare asset.</p>
      */
-    inline const Aws::String& GetDataShareArn() const{ return m_dataShareArn; }
+    inline const Aws::String& GetDataShareArn() const { return m_dataShareArn; }
     inline bool DataShareArnHasBeenSet() const { return m_dataShareArnHasBeenSet; }
-    inline void SetDataShareArn(const Aws::String& value) { m_dataShareArnHasBeenSet = true; m_dataShareArn = value; }
-    inline void SetDataShareArn(Aws::String&& value) { m_dataShareArnHasBeenSet = true; m_dataShareArn = std::move(value); }
-    inline void SetDataShareArn(const char* value) { m_dataShareArnHasBeenSet = true; m_dataShareArn.assign(value); }
-    inline RedshiftDataShareAssetSourceEntry& WithDataShareArn(const Aws::String& value) { SetDataShareArn(value); return *this;}
-    inline RedshiftDataShareAssetSourceEntry& WithDataShareArn(Aws::String&& value) { SetDataShareArn(std::move(value)); return *this;}
-    inline RedshiftDataShareAssetSourceEntry& WithDataShareArn(const char* value) { SetDataShareArn(value); return *this;}
+    template<typename DataShareArnT = Aws::String>
+    void SetDataShareArn(DataShareArnT&& value) { m_dataShareArnHasBeenSet = true; m_dataShareArn = std::forward<DataShareArnT>(value); }
+    template<typename DataShareArnT = Aws::String>
+    RedshiftDataShareAssetSourceEntry& WithDataShareArn(DataShareArnT&& value) { SetDataShareArn(std::forward<DataShareArnT>(value)); return *this;}
     ///@}
   private:
 

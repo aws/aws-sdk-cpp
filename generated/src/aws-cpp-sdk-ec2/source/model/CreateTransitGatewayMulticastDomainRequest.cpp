@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateTransitGatewayMulticastDomainRequest::CreateTransitGatewayMulticastDomainRequest() : 
-    m_transitGatewayIdHasBeenSet(false),
-    m_optionsHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String CreateTransitGatewayMulticastDomainRequest::SerializePayload() const
 {
   Aws::StringStream ss;

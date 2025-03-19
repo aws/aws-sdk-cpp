@@ -12,14 +12,6 @@ using namespace Aws::Backup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutRestoreValidationResultRequest::PutRestoreValidationResultRequest() : 
-    m_restoreJobIdHasBeenSet(false),
-    m_validationStatus(RestoreValidationStatus::NOT_SET),
-    m_validationStatusHasBeenSet(false),
-    m_validationStatusMessageHasBeenSet(false)
-{
-}
-
 Aws::String PutRestoreValidationResultRequest::SerializePayload() const
 {
   JsonValue payload;

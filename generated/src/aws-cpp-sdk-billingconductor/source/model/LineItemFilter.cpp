@@ -18,17 +18,7 @@ namespace BillingConductor
 namespace Model
 {
 
-LineItemFilter::LineItemFilter() : 
-    m_attribute(LineItemFilterAttributeName::NOT_SET),
-    m_attributeHasBeenSet(false),
-    m_matchOption(MatchOption::NOT_SET),
-    m_matchOptionHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 LineItemFilter::LineItemFilter(JsonView jsonValue)
-  : LineItemFilter()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ LineItemFilter& LineItemFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Attribute"))
   {
     m_attribute = LineItemFilterAttributeNameMapper::GetLineItemFilterAttributeNameForName(jsonValue.GetString("Attribute"));
-
     m_attributeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MatchOption"))
   {
     m_matchOption = MatchOptionMapper::GetMatchOptionForName(jsonValue.GetString("MatchOption"));
-
     m_matchOptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -58,7 +44,6 @@ LineItemFilter& LineItemFilter::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

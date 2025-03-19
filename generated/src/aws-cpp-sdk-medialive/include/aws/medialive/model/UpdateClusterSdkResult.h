@@ -36,7 +36,7 @@ namespace Model
   class UpdateClusterSdkResult
   {
   public:
-    AWS_MEDIALIVE_API UpdateClusterSdkResult();
+    AWS_MEDIALIVE_API UpdateClusterSdkResult() = default;
     AWS_MEDIALIVE_API UpdateClusterSdkResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIALIVE_API UpdateClusterSdkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,13 +45,11 @@ namespace Model
     /**
      * The ARN of the Cluster.
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline UpdateClusterSdkResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline UpdateClusterSdkResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline UpdateClusterSdkResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    UpdateClusterSdkResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,51 +59,44 @@ namespace Model
      * ChannelPlacementGroup. A ChannelPlacementGroup is attached to a Node. A Node
      * belongs to a Cluster.
      */
-    inline const Aws::Vector<Aws::String>& GetChannelIds() const{ return m_channelIds; }
-    inline void SetChannelIds(const Aws::Vector<Aws::String>& value) { m_channelIds = value; }
-    inline void SetChannelIds(Aws::Vector<Aws::String>&& value) { m_channelIds = std::move(value); }
-    inline UpdateClusterSdkResult& WithChannelIds(const Aws::Vector<Aws::String>& value) { SetChannelIds(value); return *this;}
-    inline UpdateClusterSdkResult& WithChannelIds(Aws::Vector<Aws::String>&& value) { SetChannelIds(std::move(value)); return *this;}
-    inline UpdateClusterSdkResult& AddChannelIds(const Aws::String& value) { m_channelIds.push_back(value); return *this; }
-    inline UpdateClusterSdkResult& AddChannelIds(Aws::String&& value) { m_channelIds.push_back(std::move(value)); return *this; }
-    inline UpdateClusterSdkResult& AddChannelIds(const char* value) { m_channelIds.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetChannelIds() const { return m_channelIds; }
+    template<typename ChannelIdsT = Aws::Vector<Aws::String>>
+    void SetChannelIds(ChannelIdsT&& value) { m_channelIdsHasBeenSet = true; m_channelIds = std::forward<ChannelIdsT>(value); }
+    template<typename ChannelIdsT = Aws::Vector<Aws::String>>
+    UpdateClusterSdkResult& WithChannelIds(ChannelIdsT&& value) { SetChannelIds(std::forward<ChannelIdsT>(value)); return *this;}
+    template<typename ChannelIdsT = Aws::String>
+    UpdateClusterSdkResult& AddChannelIds(ChannelIdsT&& value) { m_channelIdsHasBeenSet = true; m_channelIds.emplace_back(std::forward<ChannelIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * The hardware type for the Cluster
      */
-    inline const ClusterType& GetClusterType() const{ return m_clusterType; }
-    inline void SetClusterType(const ClusterType& value) { m_clusterType = value; }
-    inline void SetClusterType(ClusterType&& value) { m_clusterType = std::move(value); }
-    inline UpdateClusterSdkResult& WithClusterType(const ClusterType& value) { SetClusterType(value); return *this;}
-    inline UpdateClusterSdkResult& WithClusterType(ClusterType&& value) { SetClusterType(std::move(value)); return *this;}
+    inline ClusterType GetClusterType() const { return m_clusterType; }
+    inline void SetClusterType(ClusterType value) { m_clusterTypeHasBeenSet = true; m_clusterType = value; }
+    inline UpdateClusterSdkResult& WithClusterType(ClusterType value) { SetClusterType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * The unique ID of the Cluster.
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline UpdateClusterSdkResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline UpdateClusterSdkResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline UpdateClusterSdkResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    UpdateClusterSdkResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The user-specified name of the Cluster.
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline UpdateClusterSdkResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateClusterSdkResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateClusterSdkResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateClusterSdkResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,51 +104,55 @@ namespace Model
      * Network settings that connect the Nodes in the Cluster to one or more of the
      * Networks that the Cluster is associated with.
      */
-    inline const ClusterNetworkSettings& GetNetworkSettings() const{ return m_networkSettings; }
-    inline void SetNetworkSettings(const ClusterNetworkSettings& value) { m_networkSettings = value; }
-    inline void SetNetworkSettings(ClusterNetworkSettings&& value) { m_networkSettings = std::move(value); }
-    inline UpdateClusterSdkResult& WithNetworkSettings(const ClusterNetworkSettings& value) { SetNetworkSettings(value); return *this;}
-    inline UpdateClusterSdkResult& WithNetworkSettings(ClusterNetworkSettings&& value) { SetNetworkSettings(std::move(value)); return *this;}
+    inline const ClusterNetworkSettings& GetNetworkSettings() const { return m_networkSettings; }
+    template<typename NetworkSettingsT = ClusterNetworkSettings>
+    void SetNetworkSettings(NetworkSettingsT&& value) { m_networkSettingsHasBeenSet = true; m_networkSettings = std::forward<NetworkSettingsT>(value); }
+    template<typename NetworkSettingsT = ClusterNetworkSettings>
+    UpdateClusterSdkResult& WithNetworkSettings(NetworkSettingsT&& value) { SetNetworkSettings(std::forward<NetworkSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The current state of the Cluster.
      */
-    inline const ClusterState& GetState() const{ return m_state; }
-    inline void SetState(const ClusterState& value) { m_state = value; }
-    inline void SetState(ClusterState&& value) { m_state = std::move(value); }
-    inline UpdateClusterSdkResult& WithState(const ClusterState& value) { SetState(value); return *this;}
-    inline UpdateClusterSdkResult& WithState(ClusterState&& value) { SetState(std::move(value)); return *this;}
+    inline ClusterState GetState() const { return m_state; }
+    inline void SetState(ClusterState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline UpdateClusterSdkResult& WithState(ClusterState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateClusterSdkResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateClusterSdkResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateClusterSdkResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateClusterSdkResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_channelIds;
+    bool m_channelIdsHasBeenSet = false;
 
-    ClusterType m_clusterType;
+    ClusterType m_clusterType{ClusterType::NOT_SET};
+    bool m_clusterTypeHasBeenSet = false;
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     ClusterNetworkSettings m_networkSettings;
+    bool m_networkSettingsHasBeenSet = false;
 
-    ClusterState m_state;
+    ClusterState m_state{ClusterState::NOT_SET};
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

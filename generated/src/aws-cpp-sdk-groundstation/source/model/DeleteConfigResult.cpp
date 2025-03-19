@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteConfigResult::DeleteConfigResult() : 
-    m_configType(ConfigCapabilityType::NOT_SET)
-{
-}
-
 DeleteConfigResult::DeleteConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteConfigResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ DeleteConfigResult& DeleteConfigResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("configArn"))
   {
     m_configArn = jsonValue.GetString("configArn");
-
+    m_configArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configId"))
   {
     m_configId = jsonValue.GetString("configId");
-
+    m_configIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configType"))
   {
     m_configType = ConfigCapabilityTypeMapper::GetConfigCapabilityTypeForName(jsonValue.GetString("configType"));
-
+    m_configTypeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

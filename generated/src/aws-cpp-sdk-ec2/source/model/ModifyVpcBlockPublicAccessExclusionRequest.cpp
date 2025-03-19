@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ModifyVpcBlockPublicAccessExclusionRequest::ModifyVpcBlockPublicAccessExclusionRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_exclusionIdHasBeenSet(false),
-    m_internetGatewayExclusionMode(InternetGatewayExclusionMode::NOT_SET),
-    m_internetGatewayExclusionModeHasBeenSet(false)
-{
-}
-
 Aws::String ModifyVpcBlockPublicAccessExclusionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

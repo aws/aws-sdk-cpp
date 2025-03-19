@@ -12,15 +12,6 @@ using namespace Aws::MigrationHubStrategyRecommendations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutPortfolioPreferencesRequest::PutPortfolioPreferencesRequest() : 
-    m_applicationMode(ApplicationMode::NOT_SET),
-    m_applicationModeHasBeenSet(false),
-    m_applicationPreferencesHasBeenSet(false),
-    m_databasePreferencesHasBeenSet(false),
-    m_prioritizeBusinessGoalsHasBeenSet(false)
-{
-}
-
 Aws::String PutPortfolioPreferencesRequest::SerializePayload() const
 {
   JsonValue payload;

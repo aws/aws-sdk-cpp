@@ -18,21 +18,7 @@ namespace BackupSearch
 namespace Model
 {
 
-S3ResultItem::S3ResultItem() : 
-    m_backupResourceArnHasBeenSet(false),
-    m_sourceResourceArnHasBeenSet(false),
-    m_backupVaultNameHasBeenSet(false),
-    m_objectKeyHasBeenSet(false),
-    m_objectSize(0),
-    m_objectSizeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_eTagHasBeenSet(false),
-    m_versionIdHasBeenSet(false)
-{
-}
-
 S3ResultItem::S3ResultItem(JsonView jsonValue)
-  : S3ResultItem()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ S3ResultItem& S3ResultItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BackupResourceArn"))
   {
     m_backupResourceArn = jsonValue.GetString("BackupResourceArn");
-
     m_backupResourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceResourceArn"))
   {
     m_sourceResourceArn = jsonValue.GetString("SourceResourceArn");
-
     m_sourceResourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackupVaultName"))
   {
     m_backupVaultName = jsonValue.GetString("BackupVaultName");
-
     m_backupVaultNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ObjectKey"))
   {
     m_objectKey = jsonValue.GetString("ObjectKey");
-
     m_objectKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ObjectSize"))
   {
     m_objectSize = jsonValue.GetInt64("ObjectSize");
-
     m_objectSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ETag"))
   {
     m_eTag = jsonValue.GetString("ETag");
-
     m_eTagHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VersionId"))
   {
     m_versionId = jsonValue.GetString("VersionId");
-
     m_versionIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,15 +12,6 @@ using namespace Aws::IoTWireless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateServiceProfileRequest::CreateServiceProfileRequest() : 
-    m_nameHasBeenSet(false),
-    m_loRaWANHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateServiceProfileRequest::SerializePayload() const
 {
   JsonValue payload;

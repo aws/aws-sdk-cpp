@@ -18,25 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-Project::Project() : 
-    m_additionalCommentsHasBeenSet(false),
-    m_apnProgramsHasBeenSet(false),
-    m_competitorName(CompetitorName::NOT_SET),
-    m_competitorNameHasBeenSet(false),
-    m_customerBusinessProblemHasBeenSet(false),
-    m_customerUseCaseHasBeenSet(false),
-    m_deliveryModelsHasBeenSet(false),
-    m_expectedCustomerSpendHasBeenSet(false),
-    m_otherCompetitorNamesHasBeenSet(false),
-    m_otherSolutionDescriptionHasBeenSet(false),
-    m_relatedOpportunityIdentifierHasBeenSet(false),
-    m_salesActivitiesHasBeenSet(false),
-    m_titleHasBeenSet(false)
-{
-}
-
 Project::Project(JsonView jsonValue)
-  : Project()
 {
   *this = jsonValue;
 }
@@ -46,10 +28,8 @@ Project& Project::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AdditionalComments"))
   {
     m_additionalComments = jsonValue.GetString("AdditionalComments");
-
     m_additionalCommentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApnPrograms"))
   {
     Aws::Utils::Array<JsonView> apnProgramsJsonList = jsonValue.GetArray("ApnPrograms");
@@ -59,28 +39,21 @@ Project& Project::operator =(JsonView jsonValue)
     }
     m_apnProgramsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompetitorName"))
   {
     m_competitorName = CompetitorNameMapper::GetCompetitorNameForName(jsonValue.GetString("CompetitorName"));
-
     m_competitorNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomerBusinessProblem"))
   {
     m_customerBusinessProblem = jsonValue.GetString("CustomerBusinessProblem");
-
     m_customerBusinessProblemHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomerUseCase"))
   {
     m_customerUseCase = jsonValue.GetString("CustomerUseCase");
-
     m_customerUseCaseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeliveryModels"))
   {
     Aws::Utils::Array<JsonView> deliveryModelsJsonList = jsonValue.GetArray("DeliveryModels");
@@ -90,7 +63,6 @@ Project& Project::operator =(JsonView jsonValue)
     }
     m_deliveryModelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpectedCustomerSpend"))
   {
     Aws::Utils::Array<JsonView> expectedCustomerSpendJsonList = jsonValue.GetArray("ExpectedCustomerSpend");
@@ -100,28 +72,21 @@ Project& Project::operator =(JsonView jsonValue)
     }
     m_expectedCustomerSpendHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OtherCompetitorNames"))
   {
     m_otherCompetitorNames = jsonValue.GetString("OtherCompetitorNames");
-
     m_otherCompetitorNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OtherSolutionDescription"))
   {
     m_otherSolutionDescription = jsonValue.GetString("OtherSolutionDescription");
-
     m_otherSolutionDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RelatedOpportunityIdentifier"))
   {
     m_relatedOpportunityIdentifier = jsonValue.GetString("RelatedOpportunityIdentifier");
-
     m_relatedOpportunityIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SalesActivities"))
   {
     Aws::Utils::Array<JsonView> salesActivitiesJsonList = jsonValue.GetArray("SalesActivities");
@@ -131,14 +96,11 @@ Project& Project::operator =(JsonView jsonValue)
     }
     m_salesActivitiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Title"))
   {
     m_title = jsonValue.GetString("Title");
-
     m_titleHasBeenSet = true;
   }
-
   return *this;
 }
 

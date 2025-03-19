@@ -18,14 +18,7 @@ namespace PaymentCryptographyData
 namespace Model
 {
 
-AsymmetricEncryptionAttributes::AsymmetricEncryptionAttributes() : 
-    m_paddingType(PaddingType::NOT_SET),
-    m_paddingTypeHasBeenSet(false)
-{
-}
-
 AsymmetricEncryptionAttributes::AsymmetricEncryptionAttributes(JsonView jsonValue)
-  : AsymmetricEncryptionAttributes()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AsymmetricEncryptionAttributes& AsymmetricEncryptionAttributes::operator =(JsonV
   if(jsonValue.ValueExists("PaddingType"))
   {
     m_paddingType = PaddingTypeMapper::GetPaddingTypeForName(jsonValue.GetString("PaddingType"));
-
     m_paddingTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

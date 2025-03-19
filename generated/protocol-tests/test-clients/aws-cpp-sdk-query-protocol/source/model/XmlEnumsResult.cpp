@@ -17,15 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-XmlEnumsResult::XmlEnumsResult() : 
-    m_fooEnum1(FooEnum::NOT_SET),
-    m_fooEnum2(FooEnum::NOT_SET),
-    m_fooEnum3(FooEnum::NOT_SET)
-{
-}
-
 XmlEnumsResult::XmlEnumsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : XmlEnumsResult()
 {
   *this = result;
 }
@@ -45,45 +37,53 @@ XmlEnumsResult& XmlEnumsResult::operator =(const Aws::AmazonWebServiceResult<Xml
     XmlNode fooEnum1Node = resultNode.FirstChild("fooEnum1");
     if(!fooEnum1Node.IsNull())
     {
-      m_fooEnum1 = FooEnumMapper::GetFooEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fooEnum1Node.GetText()).c_str()).c_str());
+      m_fooEnum1 = FooEnumMapper::GetFooEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fooEnum1Node.GetText()).c_str()));
+      m_fooEnum1HasBeenSet = true;
     }
     XmlNode fooEnum2Node = resultNode.FirstChild("fooEnum2");
     if(!fooEnum2Node.IsNull())
     {
-      m_fooEnum2 = FooEnumMapper::GetFooEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fooEnum2Node.GetText()).c_str()).c_str());
+      m_fooEnum2 = FooEnumMapper::GetFooEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fooEnum2Node.GetText()).c_str()));
+      m_fooEnum2HasBeenSet = true;
     }
     XmlNode fooEnum3Node = resultNode.FirstChild("fooEnum3");
     if(!fooEnum3Node.IsNull())
     {
-      m_fooEnum3 = FooEnumMapper::GetFooEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fooEnum3Node.GetText()).c_str()).c_str());
+      m_fooEnum3 = FooEnumMapper::GetFooEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fooEnum3Node.GetText()).c_str()));
+      m_fooEnum3HasBeenSet = true;
     }
     XmlNode fooEnumListNode = resultNode.FirstChild("fooEnumList");
     if(!fooEnumListNode.IsNull())
     {
       XmlNode fooEnumListMember = fooEnumListNode.FirstChild("member");
+      m_fooEnumListHasBeenSet = !fooEnumListMember.IsNull();
       while(!fooEnumListMember.IsNull())
       {
         m_fooEnumList.push_back(FooEnumMapper::GetFooEnumForName(StringUtils::Trim(fooEnumListMember.GetText().c_str())));
         fooEnumListMember = fooEnumListMember.NextNode("member");
       }
 
+      m_fooEnumListHasBeenSet = true;
     }
     XmlNode fooEnumSetNode = resultNode.FirstChild("fooEnumSet");
     if(!fooEnumSetNode.IsNull())
     {
       XmlNode fooEnumSetMember = fooEnumSetNode.FirstChild("member");
+      m_fooEnumSetHasBeenSet = !fooEnumSetMember.IsNull();
       while(!fooEnumSetMember.IsNull())
       {
         m_fooEnumSet.push_back(FooEnumMapper::GetFooEnumForName(StringUtils::Trim(fooEnumSetMember.GetText().c_str())));
         fooEnumSetMember = fooEnumSetMember.NextNode("member");
       }
 
+      m_fooEnumSetHasBeenSet = true;
     }
     XmlNode fooEnumMapNode = resultNode.FirstChild("fooEnumMap");
 
     if(!fooEnumMapNode.IsNull())
     {
       XmlNode fooEnumMapEntry = fooEnumMapNode.FirstChild("entry");
+      m_fooEnumMapHasBeenSet = !fooEnumMapEntry.IsNull();
       while(!fooEnumMapEntry.IsNull())
       {
         XmlNode keyNode = fooEnumMapEntry.FirstChild("key");
@@ -93,12 +93,14 @@ XmlEnumsResult& XmlEnumsResult::operator =(const Aws::AmazonWebServiceResult<Xml
         fooEnumMapEntry = fooEnumMapEntry.NextNode("entry");
       }
 
+      m_fooEnumMapHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::QueryProtocol::Model::XmlEnumsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

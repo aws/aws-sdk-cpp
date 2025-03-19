@@ -12,12 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeregisterComputeRequest::DeregisterComputeRequest() : 
-    m_fleetIdHasBeenSet(false),
-    m_computeNameHasBeenSet(false)
-{
-}
-
 Aws::String DeregisterComputeRequest::SerializePayload() const
 {
   JsonValue payload;

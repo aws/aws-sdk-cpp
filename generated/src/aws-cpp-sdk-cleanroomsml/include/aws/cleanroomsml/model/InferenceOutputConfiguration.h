@@ -34,7 +34,7 @@ namespace Model
   class InferenceOutputConfiguration
   {
   public:
-    AWS_CLEANROOMSML_API InferenceOutputConfiguration();
+    AWS_CLEANROOMSML_API InferenceOutputConfiguration() = default;
     AWS_CLEANROOMSML_API InferenceOutputConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API InferenceOutputConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,26 @@ namespace Model
     /**
      * <p>The MIME type used to specify the output data.</p>
      */
-    inline const Aws::String& GetAccept() const{ return m_accept; }
+    inline const Aws::String& GetAccept() const { return m_accept; }
     inline bool AcceptHasBeenSet() const { return m_acceptHasBeenSet; }
-    inline void SetAccept(const Aws::String& value) { m_acceptHasBeenSet = true; m_accept = value; }
-    inline void SetAccept(Aws::String&& value) { m_acceptHasBeenSet = true; m_accept = std::move(value); }
-    inline void SetAccept(const char* value) { m_acceptHasBeenSet = true; m_accept.assign(value); }
-    inline InferenceOutputConfiguration& WithAccept(const Aws::String& value) { SetAccept(value); return *this;}
-    inline InferenceOutputConfiguration& WithAccept(Aws::String&& value) { SetAccept(std::move(value)); return *this;}
-    inline InferenceOutputConfiguration& WithAccept(const char* value) { SetAccept(value); return *this;}
+    template<typename AcceptT = Aws::String>
+    void SetAccept(AcceptT&& value) { m_acceptHasBeenSet = true; m_accept = std::forward<AcceptT>(value); }
+    template<typename AcceptT = Aws::String>
+    InferenceOutputConfiguration& WithAccept(AcceptT&& value) { SetAccept(std::forward<AcceptT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Defines the members that can receive inference output.</p>
      */
-    inline const Aws::Vector<InferenceReceiverMember>& GetMembers() const{ return m_members; }
+    inline const Aws::Vector<InferenceReceiverMember>& GetMembers() const { return m_members; }
     inline bool MembersHasBeenSet() const { return m_membersHasBeenSet; }
-    inline void SetMembers(const Aws::Vector<InferenceReceiverMember>& value) { m_membersHasBeenSet = true; m_members = value; }
-    inline void SetMembers(Aws::Vector<InferenceReceiverMember>&& value) { m_membersHasBeenSet = true; m_members = std::move(value); }
-    inline InferenceOutputConfiguration& WithMembers(const Aws::Vector<InferenceReceiverMember>& value) { SetMembers(value); return *this;}
-    inline InferenceOutputConfiguration& WithMembers(Aws::Vector<InferenceReceiverMember>&& value) { SetMembers(std::move(value)); return *this;}
-    inline InferenceOutputConfiguration& AddMembers(const InferenceReceiverMember& value) { m_membersHasBeenSet = true; m_members.push_back(value); return *this; }
-    inline InferenceOutputConfiguration& AddMembers(InferenceReceiverMember&& value) { m_membersHasBeenSet = true; m_members.push_back(std::move(value)); return *this; }
+    template<typename MembersT = Aws::Vector<InferenceReceiverMember>>
+    void SetMembers(MembersT&& value) { m_membersHasBeenSet = true; m_members = std::forward<MembersT>(value); }
+    template<typename MembersT = Aws::Vector<InferenceReceiverMember>>
+    InferenceOutputConfiguration& WithMembers(MembersT&& value) { SetMembers(std::forward<MembersT>(value)); return *this;}
+    template<typename MembersT = InferenceReceiverMember>
+    InferenceOutputConfiguration& AddMembers(MembersT&& value) { m_membersHasBeenSet = true; m_members.emplace_back(std::forward<MembersT>(value)); return *this; }
     ///@}
   private:
 

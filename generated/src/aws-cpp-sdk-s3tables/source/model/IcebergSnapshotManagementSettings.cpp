@@ -18,16 +18,7 @@ namespace S3Tables
 namespace Model
 {
 
-IcebergSnapshotManagementSettings::IcebergSnapshotManagementSettings() : 
-    m_minSnapshotsToKeep(0),
-    m_minSnapshotsToKeepHasBeenSet(false),
-    m_maxSnapshotAgeHours(0),
-    m_maxSnapshotAgeHoursHasBeenSet(false)
-{
-}
-
 IcebergSnapshotManagementSettings::IcebergSnapshotManagementSettings(JsonView jsonValue)
-  : IcebergSnapshotManagementSettings()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ IcebergSnapshotManagementSettings& IcebergSnapshotManagementSettings::operator =
   if(jsonValue.ValueExists("minSnapshotsToKeep"))
   {
     m_minSnapshotsToKeep = jsonValue.GetInteger("minSnapshotsToKeep");
-
     m_minSnapshotsToKeepHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxSnapshotAgeHours"))
   {
     m_maxSnapshotAgeHours = jsonValue.GetInteger("maxSnapshotAgeHours");
-
     m_maxSnapshotAgeHoursHasBeenSet = true;
   }
-
   return *this;
 }
 

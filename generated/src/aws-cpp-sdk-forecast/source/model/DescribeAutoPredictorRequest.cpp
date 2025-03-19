@@ -12,11 +12,6 @@ using namespace Aws::ForecastService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeAutoPredictorRequest::DescribeAutoPredictorRequest() : 
-    m_predictorArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAutoPredictorRequest::SerializePayload() const
 {
   JsonValue payload;

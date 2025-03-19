@@ -39,7 +39,7 @@ namespace Model
   class CostEstimationResourceCollectionFilter
   {
   public:
-    AWS_DEVOPSGURU_API CostEstimationResourceCollectionFilter();
+    AWS_DEVOPSGURU_API CostEstimationResourceCollectionFilter() = default;
     AWS_DEVOPSGURU_API CostEstimationResourceCollectionFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API CostEstimationResourceCollectionFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,12 +50,12 @@ namespace Model
      * <p>An object that specifies the CloudFormation stack that defines the Amazon Web
      * Services resources used to create a monthly estimate for DevOps Guru.</p>
      */
-    inline const CloudFormationCostEstimationResourceCollectionFilter& GetCloudFormation() const{ return m_cloudFormation; }
+    inline const CloudFormationCostEstimationResourceCollectionFilter& GetCloudFormation() const { return m_cloudFormation; }
     inline bool CloudFormationHasBeenSet() const { return m_cloudFormationHasBeenSet; }
-    inline void SetCloudFormation(const CloudFormationCostEstimationResourceCollectionFilter& value) { m_cloudFormationHasBeenSet = true; m_cloudFormation = value; }
-    inline void SetCloudFormation(CloudFormationCostEstimationResourceCollectionFilter&& value) { m_cloudFormationHasBeenSet = true; m_cloudFormation = std::move(value); }
-    inline CostEstimationResourceCollectionFilter& WithCloudFormation(const CloudFormationCostEstimationResourceCollectionFilter& value) { SetCloudFormation(value); return *this;}
-    inline CostEstimationResourceCollectionFilter& WithCloudFormation(CloudFormationCostEstimationResourceCollectionFilter&& value) { SetCloudFormation(std::move(value)); return *this;}
+    template<typename CloudFormationT = CloudFormationCostEstimationResourceCollectionFilter>
+    void SetCloudFormation(CloudFormationT&& value) { m_cloudFormationHasBeenSet = true; m_cloudFormation = std::forward<CloudFormationT>(value); }
+    template<typename CloudFormationT = CloudFormationCostEstimationResourceCollectionFilter>
+    CostEstimationResourceCollectionFilter& WithCloudFormation(CloudFormationT&& value) { SetCloudFormation(std::forward<CloudFormationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,14 +89,14 @@ namespace Model
      * <code>Devops-Guru-production-application/RDS</code> or
      * <code>Devops-Guru-production-application/containers</code>.</p> 
      */
-    inline const Aws::Vector<TagCostEstimationResourceCollectionFilter>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<TagCostEstimationResourceCollectionFilter>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<TagCostEstimationResourceCollectionFilter>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<TagCostEstimationResourceCollectionFilter>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CostEstimationResourceCollectionFilter& WithTags(const Aws::Vector<TagCostEstimationResourceCollectionFilter>& value) { SetTags(value); return *this;}
-    inline CostEstimationResourceCollectionFilter& WithTags(Aws::Vector<TagCostEstimationResourceCollectionFilter>&& value) { SetTags(std::move(value)); return *this;}
-    inline CostEstimationResourceCollectionFilter& AddTags(const TagCostEstimationResourceCollectionFilter& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CostEstimationResourceCollectionFilter& AddTags(TagCostEstimationResourceCollectionFilter&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<TagCostEstimationResourceCollectionFilter>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<TagCostEstimationResourceCollectionFilter>>
+    CostEstimationResourceCollectionFilter& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = TagCostEstimationResourceCollectionFilter>
+    CostEstimationResourceCollectionFilter& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

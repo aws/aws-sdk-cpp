@@ -38,7 +38,7 @@ namespace Model
   class InstanceFleetConfig
   {
   public:
-    AWS_EMR_API InstanceFleetConfig();
+    AWS_EMR_API InstanceFleetConfig() = default;
     AWS_EMR_API InstanceFleetConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API InstanceFleetConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
     /**
      * <p>The friendly name of the instance fleet.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline InstanceFleetConfig& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline InstanceFleetConfig& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline InstanceFleetConfig& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    InstanceFleetConfig& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,12 +61,10 @@ namespace Model
      * <p>The node type that the instance fleet hosts. Valid values are MASTER, CORE,
      * and TASK.</p>
      */
-    inline const InstanceFleetType& GetInstanceFleetType() const{ return m_instanceFleetType; }
+    inline InstanceFleetType GetInstanceFleetType() const { return m_instanceFleetType; }
     inline bool InstanceFleetTypeHasBeenSet() const { return m_instanceFleetTypeHasBeenSet; }
-    inline void SetInstanceFleetType(const InstanceFleetType& value) { m_instanceFleetTypeHasBeenSet = true; m_instanceFleetType = value; }
-    inline void SetInstanceFleetType(InstanceFleetType&& value) { m_instanceFleetTypeHasBeenSet = true; m_instanceFleetType = std::move(value); }
-    inline InstanceFleetConfig& WithInstanceFleetType(const InstanceFleetType& value) { SetInstanceFleetType(value); return *this;}
-    inline InstanceFleetConfig& WithInstanceFleetType(InstanceFleetType&& value) { SetInstanceFleetType(std::move(value)); return *this;}
+    inline void SetInstanceFleetType(InstanceFleetType value) { m_instanceFleetTypeHasBeenSet = true; m_instanceFleetType = value; }
+    inline InstanceFleetConfig& WithInstanceFleetType(InstanceFleetType value) { SetInstanceFleetType(value); return *this;}
     ///@}
 
     ///@{
@@ -91,7 +87,7 @@ namespace Model
      * <code>TargetOnDemandCapacity</code> can be specified, and its value must be
      * 1.</p> 
      */
-    inline int GetTargetOnDemandCapacity() const{ return m_targetOnDemandCapacity; }
+    inline int GetTargetOnDemandCapacity() const { return m_targetOnDemandCapacity; }
     inline bool TargetOnDemandCapacityHasBeenSet() const { return m_targetOnDemandCapacityHasBeenSet; }
     inline void SetTargetOnDemandCapacity(int value) { m_targetOnDemandCapacityHasBeenSet = true; m_targetOnDemandCapacity = value; }
     inline InstanceFleetConfig& WithTargetOnDemandCapacity(int value) { SetTargetOnDemandCapacity(value); return *this;}
@@ -116,7 +112,7 @@ namespace Model
      * <code>TargetOnDemandCapacity</code> can be specified, and its value must be
      * 1.</p> 
      */
-    inline int GetTargetSpotCapacity() const{ return m_targetSpotCapacity; }
+    inline int GetTargetSpotCapacity() const { return m_targetSpotCapacity; }
     inline bool TargetSpotCapacityHasBeenSet() const { return m_targetSpotCapacityHasBeenSet; }
     inline void SetTargetSpotCapacity(int value) { m_targetSpotCapacityHasBeenSet = true; m_targetSpotCapacity = value; }
     inline InstanceFleetConfig& WithTargetSpotCapacity(int value) { SetTargetSpotCapacity(value); return *this;}
@@ -127,65 +123,63 @@ namespace Model
      * <p>The instance type configurations that define the Amazon EC2 instances in the
      * instance fleet.</p>
      */
-    inline const Aws::Vector<InstanceTypeConfig>& GetInstanceTypeConfigs() const{ return m_instanceTypeConfigs; }
+    inline const Aws::Vector<InstanceTypeConfig>& GetInstanceTypeConfigs() const { return m_instanceTypeConfigs; }
     inline bool InstanceTypeConfigsHasBeenSet() const { return m_instanceTypeConfigsHasBeenSet; }
-    inline void SetInstanceTypeConfigs(const Aws::Vector<InstanceTypeConfig>& value) { m_instanceTypeConfigsHasBeenSet = true; m_instanceTypeConfigs = value; }
-    inline void SetInstanceTypeConfigs(Aws::Vector<InstanceTypeConfig>&& value) { m_instanceTypeConfigsHasBeenSet = true; m_instanceTypeConfigs = std::move(value); }
-    inline InstanceFleetConfig& WithInstanceTypeConfigs(const Aws::Vector<InstanceTypeConfig>& value) { SetInstanceTypeConfigs(value); return *this;}
-    inline InstanceFleetConfig& WithInstanceTypeConfigs(Aws::Vector<InstanceTypeConfig>&& value) { SetInstanceTypeConfigs(std::move(value)); return *this;}
-    inline InstanceFleetConfig& AddInstanceTypeConfigs(const InstanceTypeConfig& value) { m_instanceTypeConfigsHasBeenSet = true; m_instanceTypeConfigs.push_back(value); return *this; }
-    inline InstanceFleetConfig& AddInstanceTypeConfigs(InstanceTypeConfig&& value) { m_instanceTypeConfigsHasBeenSet = true; m_instanceTypeConfigs.push_back(std::move(value)); return *this; }
+    template<typename InstanceTypeConfigsT = Aws::Vector<InstanceTypeConfig>>
+    void SetInstanceTypeConfigs(InstanceTypeConfigsT&& value) { m_instanceTypeConfigsHasBeenSet = true; m_instanceTypeConfigs = std::forward<InstanceTypeConfigsT>(value); }
+    template<typename InstanceTypeConfigsT = Aws::Vector<InstanceTypeConfig>>
+    InstanceFleetConfig& WithInstanceTypeConfigs(InstanceTypeConfigsT&& value) { SetInstanceTypeConfigs(std::forward<InstanceTypeConfigsT>(value)); return *this;}
+    template<typename InstanceTypeConfigsT = InstanceTypeConfig>
+    InstanceFleetConfig& AddInstanceTypeConfigs(InstanceTypeConfigsT&& value) { m_instanceTypeConfigsHasBeenSet = true; m_instanceTypeConfigs.emplace_back(std::forward<InstanceTypeConfigsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The launch specification for the instance fleet.</p>
      */
-    inline const InstanceFleetProvisioningSpecifications& GetLaunchSpecifications() const{ return m_launchSpecifications; }
+    inline const InstanceFleetProvisioningSpecifications& GetLaunchSpecifications() const { return m_launchSpecifications; }
     inline bool LaunchSpecificationsHasBeenSet() const { return m_launchSpecificationsHasBeenSet; }
-    inline void SetLaunchSpecifications(const InstanceFleetProvisioningSpecifications& value) { m_launchSpecificationsHasBeenSet = true; m_launchSpecifications = value; }
-    inline void SetLaunchSpecifications(InstanceFleetProvisioningSpecifications&& value) { m_launchSpecificationsHasBeenSet = true; m_launchSpecifications = std::move(value); }
-    inline InstanceFleetConfig& WithLaunchSpecifications(const InstanceFleetProvisioningSpecifications& value) { SetLaunchSpecifications(value); return *this;}
-    inline InstanceFleetConfig& WithLaunchSpecifications(InstanceFleetProvisioningSpecifications&& value) { SetLaunchSpecifications(std::move(value)); return *this;}
+    template<typename LaunchSpecificationsT = InstanceFleetProvisioningSpecifications>
+    void SetLaunchSpecifications(LaunchSpecificationsT&& value) { m_launchSpecificationsHasBeenSet = true; m_launchSpecifications = std::forward<LaunchSpecificationsT>(value); }
+    template<typename LaunchSpecificationsT = InstanceFleetProvisioningSpecifications>
+    InstanceFleetConfig& WithLaunchSpecifications(LaunchSpecificationsT&& value) { SetLaunchSpecifications(std::forward<LaunchSpecificationsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resize specification for the instance fleet.</p>
      */
-    inline const InstanceFleetResizingSpecifications& GetResizeSpecifications() const{ return m_resizeSpecifications; }
+    inline const InstanceFleetResizingSpecifications& GetResizeSpecifications() const { return m_resizeSpecifications; }
     inline bool ResizeSpecificationsHasBeenSet() const { return m_resizeSpecificationsHasBeenSet; }
-    inline void SetResizeSpecifications(const InstanceFleetResizingSpecifications& value) { m_resizeSpecificationsHasBeenSet = true; m_resizeSpecifications = value; }
-    inline void SetResizeSpecifications(InstanceFleetResizingSpecifications&& value) { m_resizeSpecificationsHasBeenSet = true; m_resizeSpecifications = std::move(value); }
-    inline InstanceFleetConfig& WithResizeSpecifications(const InstanceFleetResizingSpecifications& value) { SetResizeSpecifications(value); return *this;}
-    inline InstanceFleetConfig& WithResizeSpecifications(InstanceFleetResizingSpecifications&& value) { SetResizeSpecifications(std::move(value)); return *this;}
+    template<typename ResizeSpecificationsT = InstanceFleetResizingSpecifications>
+    void SetResizeSpecifications(ResizeSpecificationsT&& value) { m_resizeSpecificationsHasBeenSet = true; m_resizeSpecifications = std::forward<ResizeSpecificationsT>(value); }
+    template<typename ResizeSpecificationsT = InstanceFleetResizingSpecifications>
+    InstanceFleetConfig& WithResizeSpecifications(ResizeSpecificationsT&& value) { SetResizeSpecifications(std::forward<ResizeSpecificationsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Reserved.</p>
      */
-    inline const Aws::String& GetContext() const{ return m_context; }
+    inline const Aws::String& GetContext() const { return m_context; }
     inline bool ContextHasBeenSet() const { return m_contextHasBeenSet; }
-    inline void SetContext(const Aws::String& value) { m_contextHasBeenSet = true; m_context = value; }
-    inline void SetContext(Aws::String&& value) { m_contextHasBeenSet = true; m_context = std::move(value); }
-    inline void SetContext(const char* value) { m_contextHasBeenSet = true; m_context.assign(value); }
-    inline InstanceFleetConfig& WithContext(const Aws::String& value) { SetContext(value); return *this;}
-    inline InstanceFleetConfig& WithContext(Aws::String&& value) { SetContext(std::move(value)); return *this;}
-    inline InstanceFleetConfig& WithContext(const char* value) { SetContext(value); return *this;}
+    template<typename ContextT = Aws::String>
+    void SetContext(ContextT&& value) { m_contextHasBeenSet = true; m_context = std::forward<ContextT>(value); }
+    template<typename ContextT = Aws::String>
+    InstanceFleetConfig& WithContext(ContextT&& value) { SetContext(std::forward<ContextT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    InstanceFleetType m_instanceFleetType;
+    InstanceFleetType m_instanceFleetType{InstanceFleetType::NOT_SET};
     bool m_instanceFleetTypeHasBeenSet = false;
 
-    int m_targetOnDemandCapacity;
+    int m_targetOnDemandCapacity{0};
     bool m_targetOnDemandCapacityHasBeenSet = false;
 
-    int m_targetSpotCapacity;
+    int m_targetSpotCapacity{0};
     bool m_targetSpotCapacityHasBeenSet = false;
 
     Aws::Vector<InstanceTypeConfig> m_instanceTypeConfigs;

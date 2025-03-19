@@ -33,7 +33,7 @@ namespace Model
   class TableMaintenanceSettings
   {
   public:
-    AWS_S3TABLES_API TableMaintenanceSettings();
+    AWS_S3TABLES_API TableMaintenanceSettings() = default;
     AWS_S3TABLES_API TableMaintenanceSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_S3TABLES_API TableMaintenanceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_S3TABLES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>Contains details about the Iceberg compaction settings for the table.</p>
      */
-    inline const IcebergCompactionSettings& GetIcebergCompaction() const{ return m_icebergCompaction; }
+    inline const IcebergCompactionSettings& GetIcebergCompaction() const { return m_icebergCompaction; }
     inline bool IcebergCompactionHasBeenSet() const { return m_icebergCompactionHasBeenSet; }
-    inline void SetIcebergCompaction(const IcebergCompactionSettings& value) { m_icebergCompactionHasBeenSet = true; m_icebergCompaction = value; }
-    inline void SetIcebergCompaction(IcebergCompactionSettings&& value) { m_icebergCompactionHasBeenSet = true; m_icebergCompaction = std::move(value); }
-    inline TableMaintenanceSettings& WithIcebergCompaction(const IcebergCompactionSettings& value) { SetIcebergCompaction(value); return *this;}
-    inline TableMaintenanceSettings& WithIcebergCompaction(IcebergCompactionSettings&& value) { SetIcebergCompaction(std::move(value)); return *this;}
+    template<typename IcebergCompactionT = IcebergCompactionSettings>
+    void SetIcebergCompaction(IcebergCompactionT&& value) { m_icebergCompactionHasBeenSet = true; m_icebergCompaction = std::forward<IcebergCompactionT>(value); }
+    template<typename IcebergCompactionT = IcebergCompactionSettings>
+    TableMaintenanceSettings& WithIcebergCompaction(IcebergCompactionT&& value) { SetIcebergCompaction(std::forward<IcebergCompactionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,12 +56,12 @@ namespace Model
      * <p>Contains details about the Iceberg snapshot management settings for the
      * table.</p>
      */
-    inline const IcebergSnapshotManagementSettings& GetIcebergSnapshotManagement() const{ return m_icebergSnapshotManagement; }
+    inline const IcebergSnapshotManagementSettings& GetIcebergSnapshotManagement() const { return m_icebergSnapshotManagement; }
     inline bool IcebergSnapshotManagementHasBeenSet() const { return m_icebergSnapshotManagementHasBeenSet; }
-    inline void SetIcebergSnapshotManagement(const IcebergSnapshotManagementSettings& value) { m_icebergSnapshotManagementHasBeenSet = true; m_icebergSnapshotManagement = value; }
-    inline void SetIcebergSnapshotManagement(IcebergSnapshotManagementSettings&& value) { m_icebergSnapshotManagementHasBeenSet = true; m_icebergSnapshotManagement = std::move(value); }
-    inline TableMaintenanceSettings& WithIcebergSnapshotManagement(const IcebergSnapshotManagementSettings& value) { SetIcebergSnapshotManagement(value); return *this;}
-    inline TableMaintenanceSettings& WithIcebergSnapshotManagement(IcebergSnapshotManagementSettings&& value) { SetIcebergSnapshotManagement(std::move(value)); return *this;}
+    template<typename IcebergSnapshotManagementT = IcebergSnapshotManagementSettings>
+    void SetIcebergSnapshotManagement(IcebergSnapshotManagementT&& value) { m_icebergSnapshotManagementHasBeenSet = true; m_icebergSnapshotManagement = std::forward<IcebergSnapshotManagementT>(value); }
+    template<typename IcebergSnapshotManagementT = IcebergSnapshotManagementSettings>
+    TableMaintenanceSettings& WithIcebergSnapshotManagement(IcebergSnapshotManagementT&& value) { SetIcebergSnapshotManagement(std::forward<IcebergSnapshotManagementT>(value)); return *this;}
     ///@}
   private:
 

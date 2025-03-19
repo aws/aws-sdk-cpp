@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails::AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails() : 
-    m_minimumInstanceMetadataServiceVersionHasBeenSet(false)
-{
-}
-
 AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails::AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails(JsonView jsonValue)
-  : AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails& AwsSageMakerNot
   if(jsonValue.ValueExists("MinimumInstanceMetadataServiceVersion"))
   {
     m_minimumInstanceMetadataServiceVersion = jsonValue.GetString("MinimumInstanceMetadataServiceVersion");
-
     m_minimumInstanceMetadataServiceVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

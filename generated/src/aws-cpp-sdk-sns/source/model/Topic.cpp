@@ -20,13 +20,7 @@ namespace SNS
 namespace Model
 {
 
-Topic::Topic() : 
-    m_topicArnHasBeenSet(false)
-{
-}
-
 Topic::Topic(const XmlNode& xmlNode)
-  : Topic()
 {
   *this = xmlNode;
 }

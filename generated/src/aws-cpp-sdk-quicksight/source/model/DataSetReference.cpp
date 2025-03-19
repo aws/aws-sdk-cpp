@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DataSetReference::DataSetReference() : 
-    m_dataSetPlaceholderHasBeenSet(false),
-    m_dataSetArnHasBeenSet(false)
-{
-}
-
 DataSetReference::DataSetReference(JsonView jsonValue)
-  : DataSetReference()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DataSetReference& DataSetReference::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DataSetPlaceholder"))
   {
     m_dataSetPlaceholder = jsonValue.GetString("DataSetPlaceholder");
-
     m_dataSetPlaceholderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSetArn"))
   {
     m_dataSetArn = jsonValue.GetString("DataSetArn");
-
     m_dataSetArnHasBeenSet = true;
   }
-
   return *this;
 }
 

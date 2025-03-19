@@ -21,7 +21,7 @@ namespace Model
   class GetNetworkRequest : public PrivateNetworksRequest
   {
   public:
-    AWS_PRIVATENETWORKS_API GetNetworkRequest();
+    AWS_PRIVATENETWORKS_API GetNetworkRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the network.</p>
      */
-    inline const Aws::String& GetNetworkArn() const{ return m_networkArn; }
+    inline const Aws::String& GetNetworkArn() const { return m_networkArn; }
     inline bool NetworkArnHasBeenSet() const { return m_networkArnHasBeenSet; }
-    inline void SetNetworkArn(const Aws::String& value) { m_networkArnHasBeenSet = true; m_networkArn = value; }
-    inline void SetNetworkArn(Aws::String&& value) { m_networkArnHasBeenSet = true; m_networkArn = std::move(value); }
-    inline void SetNetworkArn(const char* value) { m_networkArnHasBeenSet = true; m_networkArn.assign(value); }
-    inline GetNetworkRequest& WithNetworkArn(const Aws::String& value) { SetNetworkArn(value); return *this;}
-    inline GetNetworkRequest& WithNetworkArn(Aws::String&& value) { SetNetworkArn(std::move(value)); return *this;}
-    inline GetNetworkRequest& WithNetworkArn(const char* value) { SetNetworkArn(value); return *this;}
+    template<typename NetworkArnT = Aws::String>
+    void SetNetworkArn(NetworkArnT&& value) { m_networkArnHasBeenSet = true; m_networkArn = std::forward<NetworkArnT>(value); }
+    template<typename NetworkArnT = Aws::String>
+    GetNetworkRequest& WithNetworkArn(NetworkArnT&& value) { SetNetworkArn(std::forward<NetworkArnT>(value)); return *this;}
     ///@}
   private:
 

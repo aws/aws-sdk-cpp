@@ -32,7 +32,7 @@ namespace Model
   class Highlight
   {
   public:
-    AWS_GEOPLACES_API Highlight();
+    AWS_GEOPLACES_API Highlight() = default;
     AWS_GEOPLACES_API Highlight(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOPLACES_API Highlight& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOPLACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>Start index of the highlight.</p>
      */
-    inline int GetStartIndex() const{ return m_startIndex; }
+    inline int GetStartIndex() const { return m_startIndex; }
     inline bool StartIndexHasBeenSet() const { return m_startIndexHasBeenSet; }
     inline void SetStartIndex(int value) { m_startIndexHasBeenSet = true; m_startIndex = value; }
     inline Highlight& WithStartIndex(int value) { SetStartIndex(value); return *this;}
@@ -52,7 +52,7 @@ namespace Model
     /**
      * <p>End index of the highlight.</p>
      */
-    inline int GetEndIndex() const{ return m_endIndex; }
+    inline int GetEndIndex() const { return m_endIndex; }
     inline bool EndIndexHasBeenSet() const { return m_endIndexHasBeenSet; }
     inline void SetEndIndex(int value) { m_endIndexHasBeenSet = true; m_endIndex = value; }
     inline Highlight& WithEndIndex(int value) { SetEndIndex(value); return *this;}
@@ -62,21 +62,19 @@ namespace Model
     /**
      * <p>The highlight's value.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline Highlight& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline Highlight& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline Highlight& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    Highlight& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
-    int m_startIndex;
+    int m_startIndex{0};
     bool m_startIndexHasBeenSet = false;
 
-    int m_endIndex;
+    int m_endIndex{0};
     bool m_endIndexHasBeenSet = false;
 
     Aws::String m_value;

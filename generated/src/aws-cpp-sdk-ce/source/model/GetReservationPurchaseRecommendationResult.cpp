@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetReservationPurchaseRecommendationResult::GetReservationPurchaseRecommendationResult()
-{
-}
-
 GetReservationPurchaseRecommendationResult::GetReservationPurchaseRecommendationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ GetReservationPurchaseRecommendationResult& GetReservationPurchaseRecommendation
   if(jsonValue.ValueExists("Metadata"))
   {
     m_metadata = jsonValue.GetObject("Metadata");
-
+    m_metadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Recommendations"))
   {
     Aws::Utils::Array<JsonView> recommendationsJsonList = jsonValue.GetArray("Recommendations");
@@ -42,20 +37,20 @@ GetReservationPurchaseRecommendationResult& GetReservationPurchaseRecommendation
     {
       m_recommendations.push_back(recommendationsJsonList[recommendationsIndex].AsObject());
     }
+    m_recommendationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextPageToken"))
   {
     m_nextPageToken = jsonValue.GetString("NextPageToken");
-
+    m_nextPageTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

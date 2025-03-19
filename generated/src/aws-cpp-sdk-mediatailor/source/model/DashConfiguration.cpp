@@ -18,16 +18,7 @@ namespace MediaTailor
 namespace Model
 {
 
-DashConfiguration::DashConfiguration() : 
-    m_manifestEndpointPrefixHasBeenSet(false),
-    m_mpdLocationHasBeenSet(false),
-    m_originManifestType(OriginManifestType::NOT_SET),
-    m_originManifestTypeHasBeenSet(false)
-{
-}
-
 DashConfiguration::DashConfiguration(JsonView jsonValue)
-  : DashConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ DashConfiguration& DashConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ManifestEndpointPrefix"))
   {
     m_manifestEndpointPrefix = jsonValue.GetString("ManifestEndpointPrefix");
-
     m_manifestEndpointPrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MpdLocation"))
   {
     m_mpdLocation = jsonValue.GetString("MpdLocation");
-
     m_mpdLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OriginManifestType"))
   {
     m_originManifestType = OriginManifestTypeMapper::GetOriginManifestTypeForName(jsonValue.GetString("OriginManifestType"));
-
     m_originManifestTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

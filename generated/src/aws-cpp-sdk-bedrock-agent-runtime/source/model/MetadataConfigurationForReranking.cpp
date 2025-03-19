@@ -18,15 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-MetadataConfigurationForReranking::MetadataConfigurationForReranking() : 
-    m_selectionMode(RerankingMetadataSelectionMode::NOT_SET),
-    m_selectionModeHasBeenSet(false),
-    m_selectiveModeConfigurationHasBeenSet(false)
-{
-}
-
 MetadataConfigurationForReranking::MetadataConfigurationForReranking(JsonView jsonValue)
-  : MetadataConfigurationForReranking()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ MetadataConfigurationForReranking& MetadataConfigurationForReranking::operator =
   if(jsonValue.ValueExists("selectionMode"))
   {
     m_selectionMode = RerankingMetadataSelectionModeMapper::GetRerankingMetadataSelectionModeForName(jsonValue.GetString("selectionMode"));
-
     m_selectionModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("selectiveModeConfiguration"))
   {
     m_selectiveModeConfiguration = jsonValue.GetObject("selectiveModeConfiguration");
-
     m_selectiveModeConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

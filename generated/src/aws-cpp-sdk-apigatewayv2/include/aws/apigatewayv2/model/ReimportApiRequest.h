@@ -28,7 +28,7 @@ namespace Model
   class ReimportApiRequest : public ApiGatewayV2Request
   {
   public:
-    AWS_APIGATEWAYV2_API ReimportApiRequest();
+    AWS_APIGATEWAYV2_API ReimportApiRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The API identifier.</p>
      */
-    inline const Aws::String& GetApiId() const{ return m_apiId; }
+    inline const Aws::String& GetApiId() const { return m_apiId; }
     inline bool ApiIdHasBeenSet() const { return m_apiIdHasBeenSet; }
-    inline void SetApiId(const Aws::String& value) { m_apiIdHasBeenSet = true; m_apiId = value; }
-    inline void SetApiId(Aws::String&& value) { m_apiIdHasBeenSet = true; m_apiId = std::move(value); }
-    inline void SetApiId(const char* value) { m_apiIdHasBeenSet = true; m_apiId.assign(value); }
-    inline ReimportApiRequest& WithApiId(const Aws::String& value) { SetApiId(value); return *this;}
-    inline ReimportApiRequest& WithApiId(Aws::String&& value) { SetApiId(std::move(value)); return *this;}
-    inline ReimportApiRequest& WithApiId(const char* value) { SetApiId(value); return *this;}
+    template<typename ApiIdT = Aws::String>
+    void SetApiId(ApiIdT&& value) { m_apiIdHasBeenSet = true; m_apiId = std::forward<ApiIdT>(value); }
+    template<typename ApiIdT = Aws::String>
+    ReimportApiRequest& WithApiId(ApiIdT&& value) { SetApiId(std::forward<ApiIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html">Set
      * the OpenAPI basePath Property</a>. Supported only for HTTP APIs.</p>
      */
-    inline const Aws::String& GetBasepath() const{ return m_basepath; }
+    inline const Aws::String& GetBasepath() const { return m_basepath; }
     inline bool BasepathHasBeenSet() const { return m_basepathHasBeenSet; }
-    inline void SetBasepath(const Aws::String& value) { m_basepathHasBeenSet = true; m_basepath = value; }
-    inline void SetBasepath(Aws::String&& value) { m_basepathHasBeenSet = true; m_basepath = std::move(value); }
-    inline void SetBasepath(const char* value) { m_basepathHasBeenSet = true; m_basepath.assign(value); }
-    inline ReimportApiRequest& WithBasepath(const Aws::String& value) { SetBasepath(value); return *this;}
-    inline ReimportApiRequest& WithBasepath(Aws::String&& value) { SetBasepath(std::move(value)); return *this;}
-    inline ReimportApiRequest& WithBasepath(const char* value) { SetBasepath(value); return *this;}
+    template<typename BasepathT = Aws::String>
+    void SetBasepath(BasepathT&& value) { m_basepathHasBeenSet = true; m_basepath = std::forward<BasepathT>(value); }
+    template<typename BasepathT = Aws::String>
+    ReimportApiRequest& WithBasepath(BasepathT&& value) { SetBasepath(std::forward<BasepathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,7 +74,7 @@ namespace Model
      * <p>Specifies whether to rollback the API creation when a warning is encountered.
      * By default, API creation continues if a warning is encountered.</p>
      */
-    inline bool GetFailOnWarnings() const{ return m_failOnWarnings; }
+    inline bool GetFailOnWarnings() const { return m_failOnWarnings; }
     inline bool FailOnWarningsHasBeenSet() const { return m_failOnWarningsHasBeenSet; }
     inline void SetFailOnWarnings(bool value) { m_failOnWarningsHasBeenSet = true; m_failOnWarnings = value; }
     inline ReimportApiRequest& WithFailOnWarnings(bool value) { SetFailOnWarnings(value); return *this;}
@@ -88,14 +84,12 @@ namespace Model
     /**
      * <p>The OpenAPI definition. Supported only for HTTP APIs.</p>
      */
-    inline const Aws::String& GetRequestBody() const{ return m_requestBody; }
+    inline const Aws::String& GetRequestBody() const { return m_requestBody; }
     inline bool RequestBodyHasBeenSet() const { return m_requestBodyHasBeenSet; }
-    inline void SetRequestBody(const Aws::String& value) { m_requestBodyHasBeenSet = true; m_requestBody = value; }
-    inline void SetRequestBody(Aws::String&& value) { m_requestBodyHasBeenSet = true; m_requestBody = std::move(value); }
-    inline void SetRequestBody(const char* value) { m_requestBodyHasBeenSet = true; m_requestBody.assign(value); }
-    inline ReimportApiRequest& WithRequestBody(const Aws::String& value) { SetRequestBody(value); return *this;}
-    inline ReimportApiRequest& WithRequestBody(Aws::String&& value) { SetRequestBody(std::move(value)); return *this;}
-    inline ReimportApiRequest& WithRequestBody(const char* value) { SetRequestBody(value); return *this;}
+    template<typename RequestBodyT = Aws::String>
+    void SetRequestBody(RequestBodyT&& value) { m_requestBodyHasBeenSet = true; m_requestBody = std::forward<RequestBodyT>(value); }
+    template<typename RequestBodyT = Aws::String>
+    ReimportApiRequest& WithRequestBody(RequestBodyT&& value) { SetRequestBody(std::forward<RequestBodyT>(value)); return *this;}
     ///@}
   private:
 
@@ -105,7 +99,7 @@ namespace Model
     Aws::String m_basepath;
     bool m_basepathHasBeenSet = false;
 
-    bool m_failOnWarnings;
+    bool m_failOnWarnings{false};
     bool m_failOnWarningsHasBeenSet = false;
 
     Aws::String m_requestBody;

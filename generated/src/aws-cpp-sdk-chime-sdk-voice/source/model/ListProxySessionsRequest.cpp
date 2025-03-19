@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListProxySessionsRequest::ListProxySessionsRequest() : 
-    m_voiceConnectorIdHasBeenSet(false),
-    m_status(ProxySessionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListProxySessionsRequest::SerializePayload() const
 {
   return {};

@@ -20,62 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-Snapshot::Snapshot() : 
-    m_snapshotIdentifierHasBeenSet(false),
-    m_clusterIdentifierHasBeenSet(false),
-    m_snapshotCreateTimeHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_clusterCreateTimeHasBeenSet(false),
-    m_masterUsernameHasBeenSet(false),
-    m_clusterVersionHasBeenSet(false),
-    m_engineFullVersionHasBeenSet(false),
-    m_snapshotTypeHasBeenSet(false),
-    m_nodeTypeHasBeenSet(false),
-    m_numberOfNodes(0),
-    m_numberOfNodesHasBeenSet(false),
-    m_dBNameHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_encryptedWithHSM(false),
-    m_encryptedWithHSMHasBeenSet(false),
-    m_accountsWithRestoreAccessHasBeenSet(false),
-    m_ownerAccountHasBeenSet(false),
-    m_totalBackupSizeInMegaBytes(0.0),
-    m_totalBackupSizeInMegaBytesHasBeenSet(false),
-    m_actualIncrementalBackupSizeInMegaBytes(0.0),
-    m_actualIncrementalBackupSizeInMegaBytesHasBeenSet(false),
-    m_backupProgressInMegaBytes(0.0),
-    m_backupProgressInMegaBytesHasBeenSet(false),
-    m_currentBackupRateInMegaBytesPerSecond(0.0),
-    m_currentBackupRateInMegaBytesPerSecondHasBeenSet(false),
-    m_estimatedSecondsToCompletion(0),
-    m_estimatedSecondsToCompletionHasBeenSet(false),
-    m_elapsedTimeInSeconds(0),
-    m_elapsedTimeInSecondsHasBeenSet(false),
-    m_sourceRegionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_restorableNodeTypesHasBeenSet(false),
-    m_enhancedVpcRouting(false),
-    m_enhancedVpcRoutingHasBeenSet(false),
-    m_maintenanceTrackNameHasBeenSet(false),
-    m_manualSnapshotRetentionPeriod(0),
-    m_manualSnapshotRetentionPeriodHasBeenSet(false),
-    m_manualSnapshotRemainingDays(0),
-    m_manualSnapshotRemainingDaysHasBeenSet(false),
-    m_snapshotRetentionStartTimeHasBeenSet(false),
-    m_masterPasswordSecretArnHasBeenSet(false),
-    m_masterPasswordSecretKmsKeyIdHasBeenSet(false),
-    m_snapshotArnHasBeenSet(false)
-{
-}
-
 Snapshot::Snapshot(const XmlNode& xmlNode)
-  : Snapshot()
 {
   *this = xmlNode;
 }
@@ -198,6 +143,7 @@ Snapshot& Snapshot::operator =(const XmlNode& xmlNode)
     if(!accountsWithRestoreAccessNode.IsNull())
     {
       XmlNode accountsWithRestoreAccessMember = accountsWithRestoreAccessNode.FirstChild("AccountWithRestoreAccess");
+      m_accountsWithRestoreAccessHasBeenSet = !accountsWithRestoreAccessMember.IsNull();
       while(!accountsWithRestoreAccessMember.IsNull())
       {
         m_accountsWithRestoreAccess.push_back(accountsWithRestoreAccessMember);
@@ -258,6 +204,7 @@ Snapshot& Snapshot::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("Tag");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
@@ -270,6 +217,7 @@ Snapshot& Snapshot::operator =(const XmlNode& xmlNode)
     if(!restorableNodeTypesNode.IsNull())
     {
       XmlNode restorableNodeTypesMember = restorableNodeTypesNode.FirstChild("NodeType");
+      m_restorableNodeTypesHasBeenSet = !restorableNodeTypesMember.IsNull();
       while(!restorableNodeTypesMember.IsNull())
       {
         m_restorableNodeTypes.push_back(restorableNodeTypesMember.GetText());

@@ -18,14 +18,7 @@ namespace GroundStation
 namespace Model
 {
 
-EphemerisTypeDescription::EphemerisTypeDescription() : 
-    m_oemHasBeenSet(false),
-    m_tleHasBeenSet(false)
-{
-}
-
 EphemerisTypeDescription::EphemerisTypeDescription(JsonView jsonValue)
-  : EphemerisTypeDescription()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EphemerisTypeDescription& EphemerisTypeDescription::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("oem"))
   {
     m_oem = jsonValue.GetObject("oem");
-
     m_oemHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tle"))
   {
     m_tle = jsonValue.GetObject("tle");
-
     m_tleHasBeenSet = true;
   }
-
   return *this;
 }
 

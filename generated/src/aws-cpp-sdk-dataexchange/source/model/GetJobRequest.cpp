@@ -12,11 +12,6 @@ using namespace Aws::DataExchange::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetJobRequest::GetJobRequest() : 
-    m_jobIdHasBeenSet(false)
-{
-}
-
 Aws::String GetJobRequest::SerializePayload() const
 {
   return {};

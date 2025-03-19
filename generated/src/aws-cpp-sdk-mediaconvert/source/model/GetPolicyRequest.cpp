@@ -12,10 +12,6 @@ using namespace Aws::MediaConvert::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetPolicyRequest::GetPolicyRequest()
-{
-}
-
 Aws::String GetPolicyRequest::SerializePayload() const
 {
   return {};

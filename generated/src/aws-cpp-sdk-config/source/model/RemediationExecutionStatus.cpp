@@ -18,18 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-RemediationExecutionStatus::RemediationExecutionStatus() : 
-    m_resourceKeyHasBeenSet(false),
-    m_state(RemediationExecutionState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stepDetailsHasBeenSet(false),
-    m_invocationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
-{
-}
-
 RemediationExecutionStatus::RemediationExecutionStatus(JsonView jsonValue)
-  : RemediationExecutionStatus()
 {
   *this = jsonValue;
 }
@@ -39,17 +28,13 @@ RemediationExecutionStatus& RemediationExecutionStatus::operator =(JsonView json
   if(jsonValue.ValueExists("ResourceKey"))
   {
     m_resourceKey = jsonValue.GetObject("ResourceKey");
-
     m_resourceKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = RemediationExecutionStateMapper::GetRemediationExecutionStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StepDetails"))
   {
     Aws::Utils::Array<JsonView> stepDetailsJsonList = jsonValue.GetArray("StepDetails");
@@ -59,21 +44,16 @@ RemediationExecutionStatus& RemediationExecutionStatus::operator =(JsonView json
     }
     m_stepDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InvocationTime"))
   {
     m_invocationTime = jsonValue.GetDouble("InvocationTime");
-
     m_invocationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

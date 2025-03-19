@@ -18,16 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-RenewalSettings::RenewalSettings() : 
-    m_automaticRenewal(ReservationAutomaticRenewal::NOT_SET),
-    m_automaticRenewalHasBeenSet(false),
-    m_renewalCount(0),
-    m_renewalCountHasBeenSet(false)
-{
-}
-
 RenewalSettings::RenewalSettings(JsonView jsonValue)
-  : RenewalSettings()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ RenewalSettings& RenewalSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("automaticRenewal"))
   {
     m_automaticRenewal = ReservationAutomaticRenewalMapper::GetReservationAutomaticRenewalForName(jsonValue.GetString("automaticRenewal"));
-
     m_automaticRenewalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("renewalCount"))
   {
     m_renewalCount = jsonValue.GetInteger("renewalCount");
-
     m_renewalCountHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-S3JobDefinition::S3JobDefinition() : 
-    m_bucketCriteriaHasBeenSet(false),
-    m_bucketDefinitionsHasBeenSet(false),
-    m_scopingHasBeenSet(false)
-{
-}
-
 S3JobDefinition::S3JobDefinition(JsonView jsonValue)
-  : S3JobDefinition()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ S3JobDefinition& S3JobDefinition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bucketCriteria"))
   {
     m_bucketCriteria = jsonValue.GetObject("bucketCriteria");
-
     m_bucketCriteriaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bucketDefinitions"))
   {
     Aws::Utils::Array<JsonView> bucketDefinitionsJsonList = jsonValue.GetArray("bucketDefinitions");
@@ -49,14 +39,11 @@ S3JobDefinition& S3JobDefinition::operator =(JsonView jsonValue)
     }
     m_bucketDefinitionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scoping"))
   {
     m_scoping = jsonValue.GetObject("scoping");
-
     m_scopingHasBeenSet = true;
   }
-
   return *this;
 }
 

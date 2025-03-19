@@ -28,7 +28,7 @@ namespace Model
   class DeleteAttributeGroupResult
   {
   public:
-    AWS_APPREGISTRY_API DeleteAttributeGroupResult();
+    AWS_APPREGISTRY_API DeleteAttributeGroupResult() = default;
     AWS_APPREGISTRY_API DeleteAttributeGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPREGISTRY_API DeleteAttributeGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the deleted attribute group.</p>
      */
-    inline const AttributeGroupSummary& GetAttributeGroup() const{ return m_attributeGroup; }
-    inline void SetAttributeGroup(const AttributeGroupSummary& value) { m_attributeGroup = value; }
-    inline void SetAttributeGroup(AttributeGroupSummary&& value) { m_attributeGroup = std::move(value); }
-    inline DeleteAttributeGroupResult& WithAttributeGroup(const AttributeGroupSummary& value) { SetAttributeGroup(value); return *this;}
-    inline DeleteAttributeGroupResult& WithAttributeGroup(AttributeGroupSummary&& value) { SetAttributeGroup(std::move(value)); return *this;}
+    inline const AttributeGroupSummary& GetAttributeGroup() const { return m_attributeGroup; }
+    template<typename AttributeGroupT = AttributeGroupSummary>
+    void SetAttributeGroup(AttributeGroupT&& value) { m_attributeGroupHasBeenSet = true; m_attributeGroup = std::forward<AttributeGroupT>(value); }
+    template<typename AttributeGroupT = AttributeGroupSummary>
+    DeleteAttributeGroupResult& WithAttributeGroup(AttributeGroupT&& value) { SetAttributeGroup(std::forward<AttributeGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteAttributeGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteAttributeGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteAttributeGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteAttributeGroupResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AttributeGroupSummary m_attributeGroup;
+    bool m_attributeGroupHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

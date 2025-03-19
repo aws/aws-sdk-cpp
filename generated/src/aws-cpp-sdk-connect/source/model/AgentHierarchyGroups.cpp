@@ -18,17 +18,7 @@ namespace Connect
 namespace Model
 {
 
-AgentHierarchyGroups::AgentHierarchyGroups() : 
-    m_l1IdsHasBeenSet(false),
-    m_l2IdsHasBeenSet(false),
-    m_l3IdsHasBeenSet(false),
-    m_l4IdsHasBeenSet(false),
-    m_l5IdsHasBeenSet(false)
-{
-}
-
 AgentHierarchyGroups::AgentHierarchyGroups(JsonView jsonValue)
-  : AgentHierarchyGroups()
 {
   *this = jsonValue;
 }
@@ -44,7 +34,6 @@ AgentHierarchyGroups& AgentHierarchyGroups::operator =(JsonView jsonValue)
     }
     m_l1IdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("L2Ids"))
   {
     Aws::Utils::Array<JsonView> l2IdsJsonList = jsonValue.GetArray("L2Ids");
@@ -54,7 +43,6 @@ AgentHierarchyGroups& AgentHierarchyGroups::operator =(JsonView jsonValue)
     }
     m_l2IdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("L3Ids"))
   {
     Aws::Utils::Array<JsonView> l3IdsJsonList = jsonValue.GetArray("L3Ids");
@@ -64,7 +52,6 @@ AgentHierarchyGroups& AgentHierarchyGroups::operator =(JsonView jsonValue)
     }
     m_l3IdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("L4Ids"))
   {
     Aws::Utils::Array<JsonView> l4IdsJsonList = jsonValue.GetArray("L4Ids");
@@ -74,7 +61,6 @@ AgentHierarchyGroups& AgentHierarchyGroups::operator =(JsonView jsonValue)
     }
     m_l4IdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("L5Ids"))
   {
     Aws::Utils::Array<JsonView> l5IdsJsonList = jsonValue.GetArray("L5Ids");
@@ -84,7 +70,6 @@ AgentHierarchyGroups& AgentHierarchyGroups::operator =(JsonView jsonValue)
     }
     m_l5IdsHasBeenSet = true;
   }
-
   return *this;
 }
 

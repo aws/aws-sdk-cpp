@@ -18,15 +18,7 @@ namespace IoTEventsData
 namespace Model
 {
 
-SystemEvent::SystemEvent() : 
-    m_eventType(EventType::NOT_SET),
-    m_eventTypeHasBeenSet(false),
-    m_stateChangeConfigurationHasBeenSet(false)
-{
-}
-
 SystemEvent::SystemEvent(JsonView jsonValue)
-  : SystemEvent()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SystemEvent& SystemEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("eventType"))
   {
     m_eventType = EventTypeMapper::GetEventTypeForName(jsonValue.GetString("eventType"));
-
     m_eventTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stateChangeConfiguration"))
   {
     m_stateChangeConfiguration = jsonValue.GetObject("stateChangeConfiguration");
-
     m_stateChangeConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,22 +18,7 @@ namespace Athena
 namespace Model
 {
 
-CapacityReservation::CapacityReservation() : 
-    m_nameHasBeenSet(false),
-    m_status(CapacityReservationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_targetDpus(0),
-    m_targetDpusHasBeenSet(false),
-    m_allocatedDpus(0),
-    m_allocatedDpusHasBeenSet(false),
-    m_lastAllocationHasBeenSet(false),
-    m_lastSuccessfulAllocationTimeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
-{
-}
-
 CapacityReservation::CapacityReservation(JsonView jsonValue)
-  : CapacityReservation()
 {
   *this = jsonValue;
 }
@@ -43,52 +28,38 @@ CapacityReservation& CapacityReservation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = CapacityReservationStatusMapper::GetCapacityReservationStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetDpus"))
   {
     m_targetDpus = jsonValue.GetInteger("TargetDpus");
-
     m_targetDpusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllocatedDpus"))
   {
     m_allocatedDpus = jsonValue.GetInteger("AllocatedDpus");
-
     m_allocatedDpusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastAllocation"))
   {
     m_lastAllocation = jsonValue.GetObject("LastAllocation");
-
     m_lastAllocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastSuccessfulAllocationTime"))
   {
     m_lastSuccessfulAllocationTime = jsonValue.GetDouble("LastSuccessfulAllocationTime");
-
     m_lastSuccessfulAllocationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

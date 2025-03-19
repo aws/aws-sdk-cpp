@@ -18,25 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEcsClusterDetails::AwsEcsClusterDetails() : 
-    m_clusterArnHasBeenSet(false),
-    m_activeServicesCount(0),
-    m_activeServicesCountHasBeenSet(false),
-    m_capacityProvidersHasBeenSet(false),
-    m_clusterSettingsHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_defaultCapacityProviderStrategyHasBeenSet(false),
-    m_clusterNameHasBeenSet(false),
-    m_registeredContainerInstancesCount(0),
-    m_registeredContainerInstancesCountHasBeenSet(false),
-    m_runningTasksCount(0),
-    m_runningTasksCountHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 AwsEcsClusterDetails::AwsEcsClusterDetails(JsonView jsonValue)
-  : AwsEcsClusterDetails()
 {
   *this = jsonValue;
 }
@@ -46,17 +28,13 @@ AwsEcsClusterDetails& AwsEcsClusterDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ClusterArn"))
   {
     m_clusterArn = jsonValue.GetString("ClusterArn");
-
     m_clusterArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActiveServicesCount"))
   {
     m_activeServicesCount = jsonValue.GetInteger("ActiveServicesCount");
-
     m_activeServicesCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CapacityProviders"))
   {
     Aws::Utils::Array<JsonView> capacityProvidersJsonList = jsonValue.GetArray("CapacityProviders");
@@ -66,7 +44,6 @@ AwsEcsClusterDetails& AwsEcsClusterDetails::operator =(JsonView jsonValue)
     }
     m_capacityProvidersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClusterSettings"))
   {
     Aws::Utils::Array<JsonView> clusterSettingsJsonList = jsonValue.GetArray("ClusterSettings");
@@ -76,14 +53,11 @@ AwsEcsClusterDetails& AwsEcsClusterDetails::operator =(JsonView jsonValue)
     }
     m_clusterSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Configuration"))
   {
     m_configuration = jsonValue.GetObject("Configuration");
-
     m_configurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultCapacityProviderStrategy"))
   {
     Aws::Utils::Array<JsonView> defaultCapacityProviderStrategyJsonList = jsonValue.GetArray("DefaultCapacityProviderStrategy");
@@ -93,35 +67,26 @@ AwsEcsClusterDetails& AwsEcsClusterDetails::operator =(JsonView jsonValue)
     }
     m_defaultCapacityProviderStrategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClusterName"))
   {
     m_clusterName = jsonValue.GetString("ClusterName");
-
     m_clusterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegisteredContainerInstancesCount"))
   {
     m_registeredContainerInstancesCount = jsonValue.GetInteger("RegisteredContainerInstancesCount");
-
     m_registeredContainerInstancesCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RunningTasksCount"))
   {
     m_runningTasksCount = jsonValue.GetInteger("RunningTasksCount");
-
     m_runningTasksCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

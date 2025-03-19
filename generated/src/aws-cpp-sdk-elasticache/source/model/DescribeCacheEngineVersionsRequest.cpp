@@ -10,18 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-DescribeCacheEngineVersionsRequest::DescribeCacheEngineVersionsRequest() : 
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_cacheParameterGroupFamilyHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_defaultOnly(false),
-    m_defaultOnlyHasBeenSet(false)
-{
-}
-
 Aws::String DescribeCacheEngineVersionsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

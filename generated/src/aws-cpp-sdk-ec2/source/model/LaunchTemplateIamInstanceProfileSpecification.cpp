@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-LaunchTemplateIamInstanceProfileSpecification::LaunchTemplateIamInstanceProfileSpecification() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 LaunchTemplateIamInstanceProfileSpecification::LaunchTemplateIamInstanceProfileSpecification(const XmlNode& xmlNode)
-  : LaunchTemplateIamInstanceProfileSpecification()
 {
   *this = xmlNode;
 }

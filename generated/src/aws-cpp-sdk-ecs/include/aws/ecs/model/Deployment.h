@@ -44,7 +44,7 @@ namespace Model
   class Deployment
   {
   public:
-    AWS_ECS_API Deployment();
+    AWS_ECS_API Deployment() = default;
     AWS_ECS_API Deployment(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Deployment& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,14 +54,12 @@ namespace Model
     /**
      * <p>The ID of the deployment.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline Deployment& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline Deployment& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline Deployment& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    Deployment& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +71,12 @@ namespace Model
      * deployment.</p> </dd> <dt>INACTIVE</dt> <dd> <p>A deployment that has been
      * completely replaced.</p> </dd> </dl>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline Deployment& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline Deployment& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline Deployment& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    Deployment& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,14 +84,12 @@ namespace Model
      * <p>The most recent task definition that was specified for the tasks in the
      * service to use.</p>
      */
-    inline const Aws::String& GetTaskDefinition() const{ return m_taskDefinition; }
+    inline const Aws::String& GetTaskDefinition() const { return m_taskDefinition; }
     inline bool TaskDefinitionHasBeenSet() const { return m_taskDefinitionHasBeenSet; }
-    inline void SetTaskDefinition(const Aws::String& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = value; }
-    inline void SetTaskDefinition(Aws::String&& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = std::move(value); }
-    inline void SetTaskDefinition(const char* value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition.assign(value); }
-    inline Deployment& WithTaskDefinition(const Aws::String& value) { SetTaskDefinition(value); return *this;}
-    inline Deployment& WithTaskDefinition(Aws::String&& value) { SetTaskDefinition(std::move(value)); return *this;}
-    inline Deployment& WithTaskDefinition(const char* value) { SetTaskDefinition(value); return *this;}
+    template<typename TaskDefinitionT = Aws::String>
+    void SetTaskDefinition(TaskDefinitionT&& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = std::forward<TaskDefinitionT>(value); }
+    template<typename TaskDefinitionT = Aws::String>
+    Deployment& WithTaskDefinition(TaskDefinitionT&& value) { SetTaskDefinition(std::forward<TaskDefinitionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,7 +97,7 @@ namespace Model
      * <p>The most recent desired count of tasks that was specified for the service to
      * deploy or maintain.</p>
      */
-    inline int GetDesiredCount() const{ return m_desiredCount; }
+    inline int GetDesiredCount() const { return m_desiredCount; }
     inline bool DesiredCountHasBeenSet() const { return m_desiredCountHasBeenSet; }
     inline void SetDesiredCount(int value) { m_desiredCountHasBeenSet = true; m_desiredCount = value; }
     inline Deployment& WithDesiredCount(int value) { SetDesiredCount(value); return *this;}
@@ -114,7 +108,7 @@ namespace Model
      * <p>The number of tasks in the deployment that are in the <code>PENDING</code>
      * status.</p>
      */
-    inline int GetPendingCount() const{ return m_pendingCount; }
+    inline int GetPendingCount() const { return m_pendingCount; }
     inline bool PendingCountHasBeenSet() const { return m_pendingCountHasBeenSet; }
     inline void SetPendingCount(int value) { m_pendingCountHasBeenSet = true; m_pendingCount = value; }
     inline Deployment& WithPendingCount(int value) { SetPendingCount(value); return *this;}
@@ -125,7 +119,7 @@ namespace Model
      * <p>The number of tasks in the deployment that are in the <code>RUNNING</code>
      * status.</p>
      */
-    inline int GetRunningCount() const{ return m_runningCount; }
+    inline int GetRunningCount() const { return m_runningCount; }
     inline bool RunningCountHasBeenSet() const { return m_runningCountHasBeenSet; }
     inline void SetRunningCount(int value) { m_runningCountHasBeenSet = true; m_runningCount = value; }
     inline Deployment& WithRunningCount(int value) { SetRunningCount(value); return *this;}
@@ -140,7 +134,7 @@ namespace Model
      * has one or more successfully running tasks, the failed task count resets to zero
      * and stops being evaluated.</p> 
      */
-    inline int GetFailedTasks() const{ return m_failedTasks; }
+    inline int GetFailedTasks() const { return m_failedTasks; }
     inline bool FailedTasksHasBeenSet() const { return m_failedTasksHasBeenSet; }
     inline void SetFailedTasks(int value) { m_failedTasksHasBeenSet = true; m_failedTasks = value; }
     inline Deployment& WithFailedTasks(int value) { SetFailedTasks(value); return *this;}
@@ -150,12 +144,12 @@ namespace Model
     /**
      * <p>The Unix timestamp for the time when the service deployment was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline Deployment& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline Deployment& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    Deployment& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -163,26 +157,26 @@ namespace Model
      * <p>The Unix timestamp for the time when the service deployment was last
      * updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-    inline Deployment& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-    inline Deployment& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    Deployment& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The capacity provider strategy that the deployment is using.</p>
      */
-    inline const Aws::Vector<CapacityProviderStrategyItem>& GetCapacityProviderStrategy() const{ return m_capacityProviderStrategy; }
+    inline const Aws::Vector<CapacityProviderStrategyItem>& GetCapacityProviderStrategy() const { return m_capacityProviderStrategy; }
     inline bool CapacityProviderStrategyHasBeenSet() const { return m_capacityProviderStrategyHasBeenSet; }
-    inline void SetCapacityProviderStrategy(const Aws::Vector<CapacityProviderStrategyItem>& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy = value; }
-    inline void SetCapacityProviderStrategy(Aws::Vector<CapacityProviderStrategyItem>&& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy = std::move(value); }
-    inline Deployment& WithCapacityProviderStrategy(const Aws::Vector<CapacityProviderStrategyItem>& value) { SetCapacityProviderStrategy(value); return *this;}
-    inline Deployment& WithCapacityProviderStrategy(Aws::Vector<CapacityProviderStrategyItem>&& value) { SetCapacityProviderStrategy(std::move(value)); return *this;}
-    inline Deployment& AddCapacityProviderStrategy(const CapacityProviderStrategyItem& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy.push_back(value); return *this; }
-    inline Deployment& AddCapacityProviderStrategy(CapacityProviderStrategyItem&& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy.push_back(std::move(value)); return *this; }
+    template<typename CapacityProviderStrategyT = Aws::Vector<CapacityProviderStrategyItem>>
+    void SetCapacityProviderStrategy(CapacityProviderStrategyT&& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy = std::forward<CapacityProviderStrategyT>(value); }
+    template<typename CapacityProviderStrategyT = Aws::Vector<CapacityProviderStrategyItem>>
+    Deployment& WithCapacityProviderStrategy(CapacityProviderStrategyT&& value) { SetCapacityProviderStrategy(std::forward<CapacityProviderStrategyT>(value)); return *this;}
+    template<typename CapacityProviderStrategyT = CapacityProviderStrategyItem>
+    Deployment& AddCapacityProviderStrategy(CapacityProviderStrategyT&& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy.emplace_back(std::forward<CapacityProviderStrategyT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -193,12 +187,10 @@ namespace Model
      * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
-    inline const LaunchType& GetLaunchType() const{ return m_launchType; }
+    inline LaunchType GetLaunchType() const { return m_launchType; }
     inline bool LaunchTypeHasBeenSet() const { return m_launchTypeHasBeenSet; }
-    inline void SetLaunchType(const LaunchType& value) { m_launchTypeHasBeenSet = true; m_launchType = value; }
-    inline void SetLaunchType(LaunchType&& value) { m_launchTypeHasBeenSet = true; m_launchType = std::move(value); }
-    inline Deployment& WithLaunchType(const LaunchType& value) { SetLaunchType(value); return *this;}
-    inline Deployment& WithLaunchType(LaunchType&& value) { SetLaunchType(std::move(value)); return *this;}
+    inline void SetLaunchType(LaunchType value) { m_launchTypeHasBeenSet = true; m_launchType = value; }
+    inline Deployment& WithLaunchType(LaunchType value) { SetLaunchType(value); return *this;}
     ///@}
 
     ///@{
@@ -211,14 +203,12 @@ namespace Model
      * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
-    inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
+    inline const Aws::String& GetPlatformVersion() const { return m_platformVersion; }
     inline bool PlatformVersionHasBeenSet() const { return m_platformVersionHasBeenSet; }
-    inline void SetPlatformVersion(const Aws::String& value) { m_platformVersionHasBeenSet = true; m_platformVersion = value; }
-    inline void SetPlatformVersion(Aws::String&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::move(value); }
-    inline void SetPlatformVersion(const char* value) { m_platformVersionHasBeenSet = true; m_platformVersion.assign(value); }
-    inline Deployment& WithPlatformVersion(const Aws::String& value) { SetPlatformVersion(value); return *this;}
-    inline Deployment& WithPlatformVersion(Aws::String&& value) { SetPlatformVersion(std::move(value)); return *this;}
-    inline Deployment& WithPlatformVersion(const char* value) { SetPlatformVersion(value); return *this;}
+    template<typename PlatformVersionT = Aws::String>
+    void SetPlatformVersion(PlatformVersionT&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::forward<PlatformVersionT>(value); }
+    template<typename PlatformVersionT = Aws::String>
+    Deployment& WithPlatformVersion(PlatformVersionT&& value) { SetPlatformVersion(std::forward<PlatformVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -229,14 +219,12 @@ namespace Model
      * <code>platformFamily</code> value as the service, for example, <code>
      * LINUX.</code>.</p>
      */
-    inline const Aws::String& GetPlatformFamily() const{ return m_platformFamily; }
+    inline const Aws::String& GetPlatformFamily() const { return m_platformFamily; }
     inline bool PlatformFamilyHasBeenSet() const { return m_platformFamilyHasBeenSet; }
-    inline void SetPlatformFamily(const Aws::String& value) { m_platformFamilyHasBeenSet = true; m_platformFamily = value; }
-    inline void SetPlatformFamily(Aws::String&& value) { m_platformFamilyHasBeenSet = true; m_platformFamily = std::move(value); }
-    inline void SetPlatformFamily(const char* value) { m_platformFamilyHasBeenSet = true; m_platformFamily.assign(value); }
-    inline Deployment& WithPlatformFamily(const Aws::String& value) { SetPlatformFamily(value); return *this;}
-    inline Deployment& WithPlatformFamily(Aws::String&& value) { SetPlatformFamily(std::move(value)); return *this;}
-    inline Deployment& WithPlatformFamily(const char* value) { SetPlatformFamily(value); return *this;}
+    template<typename PlatformFamilyT = Aws::String>
+    void SetPlatformFamily(PlatformFamilyT&& value) { m_platformFamilyHasBeenSet = true; m_platformFamily = std::forward<PlatformFamilyT>(value); }
+    template<typename PlatformFamilyT = Aws::String>
+    Deployment& WithPlatformFamily(PlatformFamilyT&& value) { SetPlatformFamily(std::forward<PlatformFamilyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -245,12 +233,12 @@ namespace Model
      * own elastic network interface by using the <code>awsvpc</code> networking
      * mode.</p>
      */
-    inline const NetworkConfiguration& GetNetworkConfiguration() const{ return m_networkConfiguration; }
+    inline const NetworkConfiguration& GetNetworkConfiguration() const { return m_networkConfiguration; }
     inline bool NetworkConfigurationHasBeenSet() const { return m_networkConfigurationHasBeenSet; }
-    inline void SetNetworkConfiguration(const NetworkConfiguration& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = value; }
-    inline void SetNetworkConfiguration(NetworkConfiguration&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::move(value); }
-    inline Deployment& WithNetworkConfiguration(const NetworkConfiguration& value) { SetNetworkConfiguration(value); return *this;}
-    inline Deployment& WithNetworkConfiguration(NetworkConfiguration&& value) { SetNetworkConfiguration(std::move(value)); return *this;}
+    template<typename NetworkConfigurationT = NetworkConfiguration>
+    void SetNetworkConfiguration(NetworkConfigurationT&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::forward<NetworkConfigurationT>(value); }
+    template<typename NetworkConfigurationT = NetworkConfiguration>
+    Deployment& WithNetworkConfiguration(NetworkConfigurationT&& value) { SetNetworkConfiguration(std::forward<NetworkConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -266,26 +254,22 @@ namespace Model
      * state doesn't launch any new tasks. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeploymentCircuitBreaker.html">DeploymentCircuitBreaker</a>.</p>
      */
-    inline const DeploymentRolloutState& GetRolloutState() const{ return m_rolloutState; }
+    inline DeploymentRolloutState GetRolloutState() const { return m_rolloutState; }
     inline bool RolloutStateHasBeenSet() const { return m_rolloutStateHasBeenSet; }
-    inline void SetRolloutState(const DeploymentRolloutState& value) { m_rolloutStateHasBeenSet = true; m_rolloutState = value; }
-    inline void SetRolloutState(DeploymentRolloutState&& value) { m_rolloutStateHasBeenSet = true; m_rolloutState = std::move(value); }
-    inline Deployment& WithRolloutState(const DeploymentRolloutState& value) { SetRolloutState(value); return *this;}
-    inline Deployment& WithRolloutState(DeploymentRolloutState&& value) { SetRolloutState(std::move(value)); return *this;}
+    inline void SetRolloutState(DeploymentRolloutState value) { m_rolloutStateHasBeenSet = true; m_rolloutState = value; }
+    inline Deployment& WithRolloutState(DeploymentRolloutState value) { SetRolloutState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the rollout state of a deployment.</p>
      */
-    inline const Aws::String& GetRolloutStateReason() const{ return m_rolloutStateReason; }
+    inline const Aws::String& GetRolloutStateReason() const { return m_rolloutStateReason; }
     inline bool RolloutStateReasonHasBeenSet() const { return m_rolloutStateReasonHasBeenSet; }
-    inline void SetRolloutStateReason(const Aws::String& value) { m_rolloutStateReasonHasBeenSet = true; m_rolloutStateReason = value; }
-    inline void SetRolloutStateReason(Aws::String&& value) { m_rolloutStateReasonHasBeenSet = true; m_rolloutStateReason = std::move(value); }
-    inline void SetRolloutStateReason(const char* value) { m_rolloutStateReasonHasBeenSet = true; m_rolloutStateReason.assign(value); }
-    inline Deployment& WithRolloutStateReason(const Aws::String& value) { SetRolloutStateReason(value); return *this;}
-    inline Deployment& WithRolloutStateReason(Aws::String&& value) { SetRolloutStateReason(std::move(value)); return *this;}
-    inline Deployment& WithRolloutStateReason(const char* value) { SetRolloutStateReason(value); return *this;}
+    template<typename RolloutStateReasonT = Aws::String>
+    void SetRolloutStateReason(RolloutStateReasonT&& value) { m_rolloutStateReasonHasBeenSet = true; m_rolloutStateReason = std::forward<RolloutStateReasonT>(value); }
+    template<typename RolloutStateReasonT = Aws::String>
+    Deployment& WithRolloutStateReason(RolloutStateReasonT&& value) { SetRolloutStateReason(std::forward<RolloutStateReasonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -303,12 +287,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
      * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      */
-    inline const ServiceConnectConfiguration& GetServiceConnectConfiguration() const{ return m_serviceConnectConfiguration; }
+    inline const ServiceConnectConfiguration& GetServiceConnectConfiguration() const { return m_serviceConnectConfiguration; }
     inline bool ServiceConnectConfigurationHasBeenSet() const { return m_serviceConnectConfigurationHasBeenSet; }
-    inline void SetServiceConnectConfiguration(const ServiceConnectConfiguration& value) { m_serviceConnectConfigurationHasBeenSet = true; m_serviceConnectConfiguration = value; }
-    inline void SetServiceConnectConfiguration(ServiceConnectConfiguration&& value) { m_serviceConnectConfigurationHasBeenSet = true; m_serviceConnectConfiguration = std::move(value); }
-    inline Deployment& WithServiceConnectConfiguration(const ServiceConnectConfiguration& value) { SetServiceConnectConfiguration(value); return *this;}
-    inline Deployment& WithServiceConnectConfiguration(ServiceConnectConfiguration&& value) { SetServiceConnectConfiguration(std::move(value)); return *this;}
+    template<typename ServiceConnectConfigurationT = ServiceConnectConfiguration>
+    void SetServiceConnectConfiguration(ServiceConnectConfigurationT&& value) { m_serviceConnectConfigurationHasBeenSet = true; m_serviceConnectConfiguration = std::forward<ServiceConnectConfigurationT>(value); }
+    template<typename ServiceConnectConfigurationT = ServiceConnectConfiguration>
+    Deployment& WithServiceConnectConfiguration(ServiceConnectConfigurationT&& value) { SetServiceConnectConfiguration(std::forward<ServiceConnectConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -317,14 +301,14 @@ namespace Model
      * deployment. Each list entry maps a discovery name to a Cloud Map service
      * name.</p>
      */
-    inline const Aws::Vector<ServiceConnectServiceResource>& GetServiceConnectResources() const{ return m_serviceConnectResources; }
+    inline const Aws::Vector<ServiceConnectServiceResource>& GetServiceConnectResources() const { return m_serviceConnectResources; }
     inline bool ServiceConnectResourcesHasBeenSet() const { return m_serviceConnectResourcesHasBeenSet; }
-    inline void SetServiceConnectResources(const Aws::Vector<ServiceConnectServiceResource>& value) { m_serviceConnectResourcesHasBeenSet = true; m_serviceConnectResources = value; }
-    inline void SetServiceConnectResources(Aws::Vector<ServiceConnectServiceResource>&& value) { m_serviceConnectResourcesHasBeenSet = true; m_serviceConnectResources = std::move(value); }
-    inline Deployment& WithServiceConnectResources(const Aws::Vector<ServiceConnectServiceResource>& value) { SetServiceConnectResources(value); return *this;}
-    inline Deployment& WithServiceConnectResources(Aws::Vector<ServiceConnectServiceResource>&& value) { SetServiceConnectResources(std::move(value)); return *this;}
-    inline Deployment& AddServiceConnectResources(const ServiceConnectServiceResource& value) { m_serviceConnectResourcesHasBeenSet = true; m_serviceConnectResources.push_back(value); return *this; }
-    inline Deployment& AddServiceConnectResources(ServiceConnectServiceResource&& value) { m_serviceConnectResourcesHasBeenSet = true; m_serviceConnectResources.push_back(std::move(value)); return *this; }
+    template<typename ServiceConnectResourcesT = Aws::Vector<ServiceConnectServiceResource>>
+    void SetServiceConnectResources(ServiceConnectResourcesT&& value) { m_serviceConnectResourcesHasBeenSet = true; m_serviceConnectResources = std::forward<ServiceConnectResourcesT>(value); }
+    template<typename ServiceConnectResourcesT = Aws::Vector<ServiceConnectServiceResource>>
+    Deployment& WithServiceConnectResources(ServiceConnectResourcesT&& value) { SetServiceConnectResources(std::forward<ServiceConnectResourcesT>(value)); return *this;}
+    template<typename ServiceConnectResourcesT = ServiceConnectServiceResource>
+    Deployment& AddServiceConnectResources(ServiceConnectResourcesT&& value) { m_serviceConnectResourcesHasBeenSet = true; m_serviceConnectResources.emplace_back(std::forward<ServiceConnectResourcesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -336,40 +320,40 @@ namespace Model
      * The <code>name</code> of the volume must match the <code>name</code> from the
      * task definition.</p>
      */
-    inline const Aws::Vector<ServiceVolumeConfiguration>& GetVolumeConfigurations() const{ return m_volumeConfigurations; }
+    inline const Aws::Vector<ServiceVolumeConfiguration>& GetVolumeConfigurations() const { return m_volumeConfigurations; }
     inline bool VolumeConfigurationsHasBeenSet() const { return m_volumeConfigurationsHasBeenSet; }
-    inline void SetVolumeConfigurations(const Aws::Vector<ServiceVolumeConfiguration>& value) { m_volumeConfigurationsHasBeenSet = true; m_volumeConfigurations = value; }
-    inline void SetVolumeConfigurations(Aws::Vector<ServiceVolumeConfiguration>&& value) { m_volumeConfigurationsHasBeenSet = true; m_volumeConfigurations = std::move(value); }
-    inline Deployment& WithVolumeConfigurations(const Aws::Vector<ServiceVolumeConfiguration>& value) { SetVolumeConfigurations(value); return *this;}
-    inline Deployment& WithVolumeConfigurations(Aws::Vector<ServiceVolumeConfiguration>&& value) { SetVolumeConfigurations(std::move(value)); return *this;}
-    inline Deployment& AddVolumeConfigurations(const ServiceVolumeConfiguration& value) { m_volumeConfigurationsHasBeenSet = true; m_volumeConfigurations.push_back(value); return *this; }
-    inline Deployment& AddVolumeConfigurations(ServiceVolumeConfiguration&& value) { m_volumeConfigurationsHasBeenSet = true; m_volumeConfigurations.push_back(std::move(value)); return *this; }
+    template<typename VolumeConfigurationsT = Aws::Vector<ServiceVolumeConfiguration>>
+    void SetVolumeConfigurations(VolumeConfigurationsT&& value) { m_volumeConfigurationsHasBeenSet = true; m_volumeConfigurations = std::forward<VolumeConfigurationsT>(value); }
+    template<typename VolumeConfigurationsT = Aws::Vector<ServiceVolumeConfiguration>>
+    Deployment& WithVolumeConfigurations(VolumeConfigurationsT&& value) { SetVolumeConfigurations(std::forward<VolumeConfigurationsT>(value)); return *this;}
+    template<typename VolumeConfigurationsT = ServiceVolumeConfiguration>
+    Deployment& AddVolumeConfigurations(VolumeConfigurationsT&& value) { m_volumeConfigurationsHasBeenSet = true; m_volumeConfigurations.emplace_back(std::forward<VolumeConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The Fargate ephemeral storage settings for the deployment.</p>
      */
-    inline const DeploymentEphemeralStorage& GetFargateEphemeralStorage() const{ return m_fargateEphemeralStorage; }
+    inline const DeploymentEphemeralStorage& GetFargateEphemeralStorage() const { return m_fargateEphemeralStorage; }
     inline bool FargateEphemeralStorageHasBeenSet() const { return m_fargateEphemeralStorageHasBeenSet; }
-    inline void SetFargateEphemeralStorage(const DeploymentEphemeralStorage& value) { m_fargateEphemeralStorageHasBeenSet = true; m_fargateEphemeralStorage = value; }
-    inline void SetFargateEphemeralStorage(DeploymentEphemeralStorage&& value) { m_fargateEphemeralStorageHasBeenSet = true; m_fargateEphemeralStorage = std::move(value); }
-    inline Deployment& WithFargateEphemeralStorage(const DeploymentEphemeralStorage& value) { SetFargateEphemeralStorage(value); return *this;}
-    inline Deployment& WithFargateEphemeralStorage(DeploymentEphemeralStorage&& value) { SetFargateEphemeralStorage(std::move(value)); return *this;}
+    template<typename FargateEphemeralStorageT = DeploymentEphemeralStorage>
+    void SetFargateEphemeralStorage(FargateEphemeralStorageT&& value) { m_fargateEphemeralStorageHasBeenSet = true; m_fargateEphemeralStorage = std::forward<FargateEphemeralStorageT>(value); }
+    template<typename FargateEphemeralStorageT = DeploymentEphemeralStorage>
+    Deployment& WithFargateEphemeralStorage(FargateEphemeralStorageT&& value) { SetFargateEphemeralStorage(std::forward<FargateEphemeralStorageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The VPC Lattice configuration for the service deployment.</p>
      */
-    inline const Aws::Vector<VpcLatticeConfiguration>& GetVpcLatticeConfigurations() const{ return m_vpcLatticeConfigurations; }
+    inline const Aws::Vector<VpcLatticeConfiguration>& GetVpcLatticeConfigurations() const { return m_vpcLatticeConfigurations; }
     inline bool VpcLatticeConfigurationsHasBeenSet() const { return m_vpcLatticeConfigurationsHasBeenSet; }
-    inline void SetVpcLatticeConfigurations(const Aws::Vector<VpcLatticeConfiguration>& value) { m_vpcLatticeConfigurationsHasBeenSet = true; m_vpcLatticeConfigurations = value; }
-    inline void SetVpcLatticeConfigurations(Aws::Vector<VpcLatticeConfiguration>&& value) { m_vpcLatticeConfigurationsHasBeenSet = true; m_vpcLatticeConfigurations = std::move(value); }
-    inline Deployment& WithVpcLatticeConfigurations(const Aws::Vector<VpcLatticeConfiguration>& value) { SetVpcLatticeConfigurations(value); return *this;}
-    inline Deployment& WithVpcLatticeConfigurations(Aws::Vector<VpcLatticeConfiguration>&& value) { SetVpcLatticeConfigurations(std::move(value)); return *this;}
-    inline Deployment& AddVpcLatticeConfigurations(const VpcLatticeConfiguration& value) { m_vpcLatticeConfigurationsHasBeenSet = true; m_vpcLatticeConfigurations.push_back(value); return *this; }
-    inline Deployment& AddVpcLatticeConfigurations(VpcLatticeConfiguration&& value) { m_vpcLatticeConfigurationsHasBeenSet = true; m_vpcLatticeConfigurations.push_back(std::move(value)); return *this; }
+    template<typename VpcLatticeConfigurationsT = Aws::Vector<VpcLatticeConfiguration>>
+    void SetVpcLatticeConfigurations(VpcLatticeConfigurationsT&& value) { m_vpcLatticeConfigurationsHasBeenSet = true; m_vpcLatticeConfigurations = std::forward<VpcLatticeConfigurationsT>(value); }
+    template<typename VpcLatticeConfigurationsT = Aws::Vector<VpcLatticeConfiguration>>
+    Deployment& WithVpcLatticeConfigurations(VpcLatticeConfigurationsT&& value) { SetVpcLatticeConfigurations(std::forward<VpcLatticeConfigurationsT>(value)); return *this;}
+    template<typename VpcLatticeConfigurationsT = VpcLatticeConfiguration>
+    Deployment& AddVpcLatticeConfigurations(VpcLatticeConfigurationsT&& value) { m_vpcLatticeConfigurationsHasBeenSet = true; m_vpcLatticeConfigurations.emplace_back(std::forward<VpcLatticeConfigurationsT>(value)); return *this; }
     ///@}
   private:
 
@@ -382,28 +366,28 @@ namespace Model
     Aws::String m_taskDefinition;
     bool m_taskDefinitionHasBeenSet = false;
 
-    int m_desiredCount;
+    int m_desiredCount{0};
     bool m_desiredCountHasBeenSet = false;
 
-    int m_pendingCount;
+    int m_pendingCount{0};
     bool m_pendingCountHasBeenSet = false;
 
-    int m_runningCount;
+    int m_runningCount{0};
     bool m_runningCountHasBeenSet = false;
 
-    int m_failedTasks;
+    int m_failedTasks{0};
     bool m_failedTasksHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
+    Aws::Utils::DateTime m_updatedAt{};
     bool m_updatedAtHasBeenSet = false;
 
     Aws::Vector<CapacityProviderStrategyItem> m_capacityProviderStrategy;
     bool m_capacityProviderStrategyHasBeenSet = false;
 
-    LaunchType m_launchType;
+    LaunchType m_launchType{LaunchType::NOT_SET};
     bool m_launchTypeHasBeenSet = false;
 
     Aws::String m_platformVersion;
@@ -415,7 +399,7 @@ namespace Model
     NetworkConfiguration m_networkConfiguration;
     bool m_networkConfigurationHasBeenSet = false;
 
-    DeploymentRolloutState m_rolloutState;
+    DeploymentRolloutState m_rolloutState{DeploymentRolloutState::NOT_SET};
     bool m_rolloutStateHasBeenSet = false;
 
     Aws::String m_rolloutStateReason;

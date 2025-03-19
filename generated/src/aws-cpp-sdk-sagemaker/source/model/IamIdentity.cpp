@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-IamIdentity::IamIdentity() : 
-    m_arnHasBeenSet(false),
-    m_principalIdHasBeenSet(false),
-    m_sourceIdentityHasBeenSet(false)
-{
-}
-
 IamIdentity::IamIdentity(JsonView jsonValue)
-  : IamIdentity()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ IamIdentity& IamIdentity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrincipalId"))
   {
     m_principalId = jsonValue.GetString("PrincipalId");
-
     m_principalIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceIdentity"))
   {
     m_sourceIdentity = jsonValue.GetString("SourceIdentity");
-
     m_sourceIdentityHasBeenSet = true;
   }
-
   return *this;
 }
 

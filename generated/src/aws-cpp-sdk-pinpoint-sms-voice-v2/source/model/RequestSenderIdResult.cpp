@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RequestSenderIdResult::RequestSenderIdResult() : 
-    m_deletionProtectionEnabled(false),
-    m_registered(false)
-{
-}
-
 RequestSenderIdResult::RequestSenderIdResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : RequestSenderIdResult()
 {
   *this = result;
 }
@@ -35,21 +28,18 @@ RequestSenderIdResult& RequestSenderIdResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("SenderIdArn"))
   {
     m_senderIdArn = jsonValue.GetString("SenderIdArn");
-
+    m_senderIdArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SenderId"))
   {
     m_senderId = jsonValue.GetString("SenderId");
-
+    m_senderIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsoCountryCode"))
   {
     m_isoCountryCode = jsonValue.GetString("IsoCountryCode");
-
+    m_isoCountryCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MessageTypes"))
   {
     Aws::Utils::Array<JsonView> messageTypesJsonList = jsonValue.GetArray("MessageTypes");
@@ -57,26 +47,23 @@ RequestSenderIdResult& RequestSenderIdResult::operator =(const Aws::AmazonWebSer
     {
       m_messageTypes.push_back(MessageTypeMapper::GetMessageTypeForName(messageTypesJsonList[messageTypesIndex].AsString()));
     }
+    m_messageTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MonthlyLeasingPrice"))
   {
     m_monthlyLeasingPrice = jsonValue.GetString("MonthlyLeasingPrice");
-
+    m_monthlyLeasingPriceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeletionProtectionEnabled"))
   {
     m_deletionProtectionEnabled = jsonValue.GetBool("DeletionProtectionEnabled");
-
+    m_deletionProtectionEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Registered"))
   {
     m_registered = jsonValue.GetBool("Registered");
-
+    m_registeredHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -84,14 +71,15 @@ RequestSenderIdResult& RequestSenderIdResult::operator =(const Aws::AmazonWebSer
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
+    m_tagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

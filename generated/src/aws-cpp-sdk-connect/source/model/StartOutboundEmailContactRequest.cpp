@@ -12,18 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartOutboundEmailContactRequest::StartOutboundEmailContactRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_contactIdHasBeenSet(false),
-    m_fromEmailAddressHasBeenSet(false),
-    m_destinationEmailAddressHasBeenSet(false),
-    m_additionalRecipientsHasBeenSet(false),
-    m_emailMessageHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String StartOutboundEmailContactRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,16 +18,7 @@ namespace QLDBSession
 namespace Model
 {
 
-IOUsage::IOUsage() : 
-    m_readIOs(0),
-    m_readIOsHasBeenSet(false),
-    m_writeIOs(0),
-    m_writeIOsHasBeenSet(false)
-{
-}
-
 IOUsage::IOUsage(JsonView jsonValue)
-  : IOUsage()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ IOUsage& IOUsage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ReadIOs"))
   {
     m_readIOs = jsonValue.GetInt64("ReadIOs");
-
     m_readIOsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WriteIOs"))
   {
     m_writeIOs = jsonValue.GetInt64("WriteIOs");
-
     m_writeIOsHasBeenSet = true;
   }
-
   return *this;
 }
 

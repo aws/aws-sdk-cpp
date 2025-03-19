@@ -45,7 +45,7 @@ namespace Model
   class SecurityGroupRuleRequest
   {
   public:
-    AWS_EC2_API SecurityGroupRuleRequest();
+    AWS_EC2_API SecurityGroupRuleRequest() = default;
     AWS_EC2_API SecurityGroupRuleRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API SecurityGroupRuleRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -60,14 +60,12 @@ namespace Model
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
      * Numbers</a>). </p> <p>Use <code>-1</code> to specify all protocols.</p>
      */
-    inline const Aws::String& GetIpProtocol() const{ return m_ipProtocol; }
+    inline const Aws::String& GetIpProtocol() const { return m_ipProtocol; }
     inline bool IpProtocolHasBeenSet() const { return m_ipProtocolHasBeenSet; }
-    inline void SetIpProtocol(const Aws::String& value) { m_ipProtocolHasBeenSet = true; m_ipProtocol = value; }
-    inline void SetIpProtocol(Aws::String&& value) { m_ipProtocolHasBeenSet = true; m_ipProtocol = std::move(value); }
-    inline void SetIpProtocol(const char* value) { m_ipProtocolHasBeenSet = true; m_ipProtocol.assign(value); }
-    inline SecurityGroupRuleRequest& WithIpProtocol(const Aws::String& value) { SetIpProtocol(value); return *this;}
-    inline SecurityGroupRuleRequest& WithIpProtocol(Aws::String&& value) { SetIpProtocol(std::move(value)); return *this;}
-    inline SecurityGroupRuleRequest& WithIpProtocol(const char* value) { SetIpProtocol(value); return *this;}
+    template<typename IpProtocolT = Aws::String>
+    void SetIpProtocol(IpProtocolT&& value) { m_ipProtocolHasBeenSet = true; m_ipProtocol = std::forward<IpProtocolT>(value); }
+    template<typename IpProtocolT = Aws::String>
+    SecurityGroupRuleRequest& WithIpProtocol(IpProtocolT&& value) { SetIpProtocol(std::forward<IpProtocolT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,7 +73,7 @@ namespace Model
      * <p>If the protocol is TCP or UDP, this is the start of the port range. If the
      * protocol is ICMP or ICMPv6, this is the ICMP type or -1 (all ICMP types).</p>
      */
-    inline int GetFromPort() const{ return m_fromPort; }
+    inline int GetFromPort() const { return m_fromPort; }
     inline bool FromPortHasBeenSet() const { return m_fromPortHasBeenSet; }
     inline void SetFromPort(int value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
     inline SecurityGroupRuleRequest& WithFromPort(int value) { SetFromPort(value); return *this;}
@@ -88,7 +86,7 @@ namespace Model
      * start port is -1 (all ICMP types), then the end port must be -1 (all ICMP
      * codes).</p>
      */
-    inline int GetToPort() const{ return m_toPort; }
+    inline int GetToPort() const { return m_toPort; }
     inline bool ToPortHasBeenSet() const { return m_toPortHasBeenSet; }
     inline void SetToPort(int value) { m_toPortHasBeenSet = true; m_toPort = value; }
     inline SecurityGroupRuleRequest& WithToPort(int value) { SetToPort(value); return *this;}
@@ -99,14 +97,12 @@ namespace Model
      * <p>The IPv4 CIDR range. To specify a single IPv4 address, use the /32 prefix
      * length. </p>
      */
-    inline const Aws::String& GetCidrIpv4() const{ return m_cidrIpv4; }
+    inline const Aws::String& GetCidrIpv4() const { return m_cidrIpv4; }
     inline bool CidrIpv4HasBeenSet() const { return m_cidrIpv4HasBeenSet; }
-    inline void SetCidrIpv4(const Aws::String& value) { m_cidrIpv4HasBeenSet = true; m_cidrIpv4 = value; }
-    inline void SetCidrIpv4(Aws::String&& value) { m_cidrIpv4HasBeenSet = true; m_cidrIpv4 = std::move(value); }
-    inline void SetCidrIpv4(const char* value) { m_cidrIpv4HasBeenSet = true; m_cidrIpv4.assign(value); }
-    inline SecurityGroupRuleRequest& WithCidrIpv4(const Aws::String& value) { SetCidrIpv4(value); return *this;}
-    inline SecurityGroupRuleRequest& WithCidrIpv4(Aws::String&& value) { SetCidrIpv4(std::move(value)); return *this;}
-    inline SecurityGroupRuleRequest& WithCidrIpv4(const char* value) { SetCidrIpv4(value); return *this;}
+    template<typename CidrIpv4T = Aws::String>
+    void SetCidrIpv4(CidrIpv4T&& value) { m_cidrIpv4HasBeenSet = true; m_cidrIpv4 = std::forward<CidrIpv4T>(value); }
+    template<typename CidrIpv4T = Aws::String>
+    SecurityGroupRuleRequest& WithCidrIpv4(CidrIpv4T&& value) { SetCidrIpv4(std::forward<CidrIpv4T>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,28 +110,24 @@ namespace Model
      * <p>The IPv6 CIDR range. To specify a single IPv6 address, use the /128 prefix
      * length.</p>
      */
-    inline const Aws::String& GetCidrIpv6() const{ return m_cidrIpv6; }
+    inline const Aws::String& GetCidrIpv6() const { return m_cidrIpv6; }
     inline bool CidrIpv6HasBeenSet() const { return m_cidrIpv6HasBeenSet; }
-    inline void SetCidrIpv6(const Aws::String& value) { m_cidrIpv6HasBeenSet = true; m_cidrIpv6 = value; }
-    inline void SetCidrIpv6(Aws::String&& value) { m_cidrIpv6HasBeenSet = true; m_cidrIpv6 = std::move(value); }
-    inline void SetCidrIpv6(const char* value) { m_cidrIpv6HasBeenSet = true; m_cidrIpv6.assign(value); }
-    inline SecurityGroupRuleRequest& WithCidrIpv6(const Aws::String& value) { SetCidrIpv6(value); return *this;}
-    inline SecurityGroupRuleRequest& WithCidrIpv6(Aws::String&& value) { SetCidrIpv6(std::move(value)); return *this;}
-    inline SecurityGroupRuleRequest& WithCidrIpv6(const char* value) { SetCidrIpv6(value); return *this;}
+    template<typename CidrIpv6T = Aws::String>
+    void SetCidrIpv6(CidrIpv6T&& value) { m_cidrIpv6HasBeenSet = true; m_cidrIpv6 = std::forward<CidrIpv6T>(value); }
+    template<typename CidrIpv6T = Aws::String>
+    SecurityGroupRuleRequest& WithCidrIpv6(CidrIpv6T&& value) { SetCidrIpv6(std::forward<CidrIpv6T>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the prefix list.</p>
      */
-    inline const Aws::String& GetPrefixListId() const{ return m_prefixListId; }
+    inline const Aws::String& GetPrefixListId() const { return m_prefixListId; }
     inline bool PrefixListIdHasBeenSet() const { return m_prefixListIdHasBeenSet; }
-    inline void SetPrefixListId(const Aws::String& value) { m_prefixListIdHasBeenSet = true; m_prefixListId = value; }
-    inline void SetPrefixListId(Aws::String&& value) { m_prefixListIdHasBeenSet = true; m_prefixListId = std::move(value); }
-    inline void SetPrefixListId(const char* value) { m_prefixListIdHasBeenSet = true; m_prefixListId.assign(value); }
-    inline SecurityGroupRuleRequest& WithPrefixListId(const Aws::String& value) { SetPrefixListId(value); return *this;}
-    inline SecurityGroupRuleRequest& WithPrefixListId(Aws::String&& value) { SetPrefixListId(std::move(value)); return *this;}
-    inline SecurityGroupRuleRequest& WithPrefixListId(const char* value) { SetPrefixListId(value); return *this;}
+    template<typename PrefixListIdT = Aws::String>
+    void SetPrefixListId(PrefixListIdT&& value) { m_prefixListIdHasBeenSet = true; m_prefixListId = std::forward<PrefixListIdT>(value); }
+    template<typename PrefixListIdT = Aws::String>
+    SecurityGroupRuleRequest& WithPrefixListId(PrefixListIdT&& value) { SetPrefixListId(std::forward<PrefixListIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -143,38 +135,34 @@ namespace Model
      * <p>The ID of the security group that is referenced in the security group
      * rule.</p>
      */
-    inline const Aws::String& GetReferencedGroupId() const{ return m_referencedGroupId; }
+    inline const Aws::String& GetReferencedGroupId() const { return m_referencedGroupId; }
     inline bool ReferencedGroupIdHasBeenSet() const { return m_referencedGroupIdHasBeenSet; }
-    inline void SetReferencedGroupId(const Aws::String& value) { m_referencedGroupIdHasBeenSet = true; m_referencedGroupId = value; }
-    inline void SetReferencedGroupId(Aws::String&& value) { m_referencedGroupIdHasBeenSet = true; m_referencedGroupId = std::move(value); }
-    inline void SetReferencedGroupId(const char* value) { m_referencedGroupIdHasBeenSet = true; m_referencedGroupId.assign(value); }
-    inline SecurityGroupRuleRequest& WithReferencedGroupId(const Aws::String& value) { SetReferencedGroupId(value); return *this;}
-    inline SecurityGroupRuleRequest& WithReferencedGroupId(Aws::String&& value) { SetReferencedGroupId(std::move(value)); return *this;}
-    inline SecurityGroupRuleRequest& WithReferencedGroupId(const char* value) { SetReferencedGroupId(value); return *this;}
+    template<typename ReferencedGroupIdT = Aws::String>
+    void SetReferencedGroupId(ReferencedGroupIdT&& value) { m_referencedGroupIdHasBeenSet = true; m_referencedGroupId = std::forward<ReferencedGroupIdT>(value); }
+    template<typename ReferencedGroupIdT = Aws::String>
+    SecurityGroupRuleRequest& WithReferencedGroupId(ReferencedGroupIdT&& value) { SetReferencedGroupId(std::forward<ReferencedGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the security group rule.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline SecurityGroupRuleRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline SecurityGroupRuleRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline SecurityGroupRuleRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    SecurityGroupRuleRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_ipProtocol;
     bool m_ipProtocolHasBeenSet = false;
 
-    int m_fromPort;
+    int m_fromPort{0};
     bool m_fromPortHasBeenSet = false;
 
-    int m_toPort;
+    int m_toPort{0};
     bool m_toPortHasBeenSet = false;
 
     Aws::String m_cidrIpv4;

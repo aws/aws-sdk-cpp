@@ -13,16 +13,6 @@ using namespace Aws::KMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ImportKeyMaterialRequest::ImportKeyMaterialRequest() : 
-    m_keyIdHasBeenSet(false),
-    m_importTokenHasBeenSet(false),
-    m_encryptedKeyMaterialHasBeenSet(false),
-    m_validToHasBeenSet(false),
-    m_expirationModel(ExpirationModelType::NOT_SET),
-    m_expirationModelHasBeenSet(false)
-{
-}
-
 Aws::String ImportKeyMaterialRequest::SerializePayload() const
 {
   JsonValue payload;

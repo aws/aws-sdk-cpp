@@ -32,7 +32,7 @@ namespace Model
   class LogDeliveryConfiguration
   {
   public:
-    AWS_TIMESTREAMINFLUXDB_API LogDeliveryConfiguration();
+    AWS_TIMESTREAMINFLUXDB_API LogDeliveryConfiguration() = default;
     AWS_TIMESTREAMINFLUXDB_API LogDeliveryConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMINFLUXDB_API LogDeliveryConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMINFLUXDB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Configuration for S3 bucket log delivery.</p>
      */
-    inline const S3Configuration& GetS3Configuration() const{ return m_s3Configuration; }
+    inline const S3Configuration& GetS3Configuration() const { return m_s3Configuration; }
     inline bool S3ConfigurationHasBeenSet() const { return m_s3ConfigurationHasBeenSet; }
-    inline void SetS3Configuration(const S3Configuration& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = value; }
-    inline void SetS3Configuration(S3Configuration&& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = std::move(value); }
-    inline LogDeliveryConfiguration& WithS3Configuration(const S3Configuration& value) { SetS3Configuration(value); return *this;}
-    inline LogDeliveryConfiguration& WithS3Configuration(S3Configuration&& value) { SetS3Configuration(std::move(value)); return *this;}
+    template<typename S3ConfigurationT = S3Configuration>
+    void SetS3Configuration(S3ConfigurationT&& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = std::forward<S3ConfigurationT>(value); }
+    template<typename S3ConfigurationT = S3Configuration>
+    LogDeliveryConfiguration& WithS3Configuration(S3ConfigurationT&& value) { SetS3Configuration(std::forward<S3ConfigurationT>(value)); return *this;}
     ///@}
   private:
 

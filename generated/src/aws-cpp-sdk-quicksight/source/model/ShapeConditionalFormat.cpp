@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ShapeConditionalFormat::ShapeConditionalFormat() : 
-    m_backgroundColorHasBeenSet(false)
-{
-}
-
 ShapeConditionalFormat::ShapeConditionalFormat(JsonView jsonValue)
-  : ShapeConditionalFormat()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ShapeConditionalFormat& ShapeConditionalFormat::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BackgroundColor"))
   {
     m_backgroundColor = jsonValue.GetObject("BackgroundColor");
-
     m_backgroundColorHasBeenSet = true;
   }
-
   return *this;
 }
 

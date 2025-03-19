@@ -20,17 +20,7 @@ namespace SES
 namespace Model
 {
 
-BouncedRecipientInfo::BouncedRecipientInfo() : 
-    m_recipientHasBeenSet(false),
-    m_recipientArnHasBeenSet(false),
-    m_bounceType(BounceType::NOT_SET),
-    m_bounceTypeHasBeenSet(false),
-    m_recipientDsnFieldsHasBeenSet(false)
-{
-}
-
 BouncedRecipientInfo::BouncedRecipientInfo(const XmlNode& xmlNode)
-  : BouncedRecipientInfo()
 {
   *this = xmlNode;
 }
@@ -56,7 +46,7 @@ BouncedRecipientInfo& BouncedRecipientInfo::operator =(const XmlNode& xmlNode)
     XmlNode bounceTypeNode = resultNode.FirstChild("BounceType");
     if(!bounceTypeNode.IsNull())
     {
-      m_bounceType = BounceTypeMapper::GetBounceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bounceTypeNode.GetText()).c_str()).c_str());
+      m_bounceType = BounceTypeMapper::GetBounceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bounceTypeNode.GetText()).c_str()));
       m_bounceTypeHasBeenSet = true;
     }
     XmlNode recipientDsnFieldsNode = resultNode.FirstChild("RecipientDsnFields");

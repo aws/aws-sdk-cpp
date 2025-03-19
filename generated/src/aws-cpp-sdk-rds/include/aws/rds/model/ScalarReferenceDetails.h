@@ -30,7 +30,7 @@ namespace Model
   class ScalarReferenceDetails
   {
   public:
-    AWS_RDS_API ScalarReferenceDetails();
+    AWS_RDS_API ScalarReferenceDetails() = default;
     AWS_RDS_API ScalarReferenceDetails(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_RDS_API ScalarReferenceDetails& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -42,14 +42,14 @@ namespace Model
     /**
      * <p>The value of a scalar reference.</p>
      */
-    inline double GetValue() const{ return m_value; }
+    inline double GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
     inline ScalarReferenceDetails& WithValue(double value) { SetValue(value); return *this;}
     ///@}
   private:
 
-    double m_value;
+    double m_value{0.0};
     bool m_valueHasBeenSet = false;
   };
 

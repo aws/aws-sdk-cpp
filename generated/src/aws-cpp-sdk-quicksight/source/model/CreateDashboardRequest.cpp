@@ -12,25 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDashboardRequest::CreateDashboardRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_dashboardIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_permissionsHasBeenSet(false),
-    m_sourceEntityHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_versionDescriptionHasBeenSet(false),
-    m_dashboardPublishOptionsHasBeenSet(false),
-    m_themeArnHasBeenSet(false),
-    m_definitionHasBeenSet(false),
-    m_validationStrategyHasBeenSet(false),
-    m_folderArnsHasBeenSet(false),
-    m_linkSharingConfigurationHasBeenSet(false),
-    m_linkEntitiesHasBeenSet(false)
-{
-}
-
 Aws::String CreateDashboardRequest::SerializePayload() const
 {
   JsonValue payload;

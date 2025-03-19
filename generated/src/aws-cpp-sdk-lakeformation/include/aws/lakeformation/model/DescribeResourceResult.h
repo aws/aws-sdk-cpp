@@ -28,7 +28,7 @@ namespace Model
   class DescribeResourceResult
   {
   public:
-    AWS_LAKEFORMATION_API DescribeResourceResult();
+    AWS_LAKEFORMATION_API DescribeResourceResult() = default;
     AWS_LAKEFORMATION_API DescribeResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LAKEFORMATION_API DescribeResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>A structure containing information about an Lake Formation resource.</p>
      */
-    inline const ResourceInfo& GetResourceInfo() const{ return m_resourceInfo; }
-    inline void SetResourceInfo(const ResourceInfo& value) { m_resourceInfo = value; }
-    inline void SetResourceInfo(ResourceInfo&& value) { m_resourceInfo = std::move(value); }
-    inline DescribeResourceResult& WithResourceInfo(const ResourceInfo& value) { SetResourceInfo(value); return *this;}
-    inline DescribeResourceResult& WithResourceInfo(ResourceInfo&& value) { SetResourceInfo(std::move(value)); return *this;}
+    inline const ResourceInfo& GetResourceInfo() const { return m_resourceInfo; }
+    template<typename ResourceInfoT = ResourceInfo>
+    void SetResourceInfo(ResourceInfoT&& value) { m_resourceInfoHasBeenSet = true; m_resourceInfo = std::forward<ResourceInfoT>(value); }
+    template<typename ResourceInfoT = ResourceInfo>
+    DescribeResourceResult& WithResourceInfo(ResourceInfoT&& value) { SetResourceInfo(std::forward<ResourceInfoT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeResourceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeResourceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeResourceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeResourceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ResourceInfo m_resourceInfo;
+    bool m_resourceInfoHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,15 +18,7 @@ namespace AppSync
 namespace Model
 {
 
-CachingConfig::CachingConfig() : 
-    m_ttl(0),
-    m_ttlHasBeenSet(false),
-    m_cachingKeysHasBeenSet(false)
-{
-}
-
 CachingConfig::CachingConfig(JsonView jsonValue)
-  : CachingConfig()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ CachingConfig& CachingConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ttl"))
   {
     m_ttl = jsonValue.GetInt64("ttl");
-
     m_ttlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cachingKeys"))
   {
     Aws::Utils::Array<JsonView> cachingKeysJsonList = jsonValue.GetArray("cachingKeys");
@@ -49,7 +39,6 @@ CachingConfig& CachingConfig::operator =(JsonView jsonValue)
     }
     m_cachingKeysHasBeenSet = true;
   }
-
   return *this;
 }
 

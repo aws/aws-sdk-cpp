@@ -33,7 +33,7 @@ namespace Model
   class AuditTaskMetadata
   {
   public:
-    AWS_IOT_API AuditTaskMetadata();
+    AWS_IOT_API AuditTaskMetadata() = default;
     AWS_IOT_API AuditTaskMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API AuditTaskMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The ID of this audit.</p>
      */
-    inline const Aws::String& GetTaskId() const{ return m_taskId; }
+    inline const Aws::String& GetTaskId() const { return m_taskId; }
     inline bool TaskIdHasBeenSet() const { return m_taskIdHasBeenSet; }
-    inline void SetTaskId(const Aws::String& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
-    inline void SetTaskId(Aws::String&& value) { m_taskIdHasBeenSet = true; m_taskId = std::move(value); }
-    inline void SetTaskId(const char* value) { m_taskIdHasBeenSet = true; m_taskId.assign(value); }
-    inline AuditTaskMetadata& WithTaskId(const Aws::String& value) { SetTaskId(value); return *this;}
-    inline AuditTaskMetadata& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
-    inline AuditTaskMetadata& WithTaskId(const char* value) { SetTaskId(value); return *this;}
+    template<typename TaskIdT = Aws::String>
+    void SetTaskId(TaskIdT&& value) { m_taskIdHasBeenSet = true; m_taskId = std::forward<TaskIdT>(value); }
+    template<typename TaskIdT = Aws::String>
+    AuditTaskMetadata& WithTaskId(TaskIdT&& value) { SetTaskId(std::forward<TaskIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +56,10 @@ namespace Model
      * <p>The status of this audit. One of "IN_PROGRESS", "COMPLETED", "FAILED", or
      * "CANCELED".</p>
      */
-    inline const AuditTaskStatus& GetTaskStatus() const{ return m_taskStatus; }
+    inline AuditTaskStatus GetTaskStatus() const { return m_taskStatus; }
     inline bool TaskStatusHasBeenSet() const { return m_taskStatusHasBeenSet; }
-    inline void SetTaskStatus(const AuditTaskStatus& value) { m_taskStatusHasBeenSet = true; m_taskStatus = value; }
-    inline void SetTaskStatus(AuditTaskStatus&& value) { m_taskStatusHasBeenSet = true; m_taskStatus = std::move(value); }
-    inline AuditTaskMetadata& WithTaskStatus(const AuditTaskStatus& value) { SetTaskStatus(value); return *this;}
-    inline AuditTaskMetadata& WithTaskStatus(AuditTaskStatus&& value) { SetTaskStatus(std::move(value)); return *this;}
+    inline void SetTaskStatus(AuditTaskStatus value) { m_taskStatusHasBeenSet = true; m_taskStatus = value; }
+    inline AuditTaskMetadata& WithTaskStatus(AuditTaskStatus value) { SetTaskStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -71,22 +67,20 @@ namespace Model
      * <p>The type of this audit. One of "ON_DEMAND_AUDIT_TASK" or
      * "SCHEDULED_AUDIT_TASK".</p>
      */
-    inline const AuditTaskType& GetTaskType() const{ return m_taskType; }
+    inline AuditTaskType GetTaskType() const { return m_taskType; }
     inline bool TaskTypeHasBeenSet() const { return m_taskTypeHasBeenSet; }
-    inline void SetTaskType(const AuditTaskType& value) { m_taskTypeHasBeenSet = true; m_taskType = value; }
-    inline void SetTaskType(AuditTaskType&& value) { m_taskTypeHasBeenSet = true; m_taskType = std::move(value); }
-    inline AuditTaskMetadata& WithTaskType(const AuditTaskType& value) { SetTaskType(value); return *this;}
-    inline AuditTaskMetadata& WithTaskType(AuditTaskType&& value) { SetTaskType(std::move(value)); return *this;}
+    inline void SetTaskType(AuditTaskType value) { m_taskTypeHasBeenSet = true; m_taskType = value; }
+    inline AuditTaskMetadata& WithTaskType(AuditTaskType value) { SetTaskType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_taskId;
     bool m_taskIdHasBeenSet = false;
 
-    AuditTaskStatus m_taskStatus;
+    AuditTaskStatus m_taskStatus{AuditTaskStatus::NOT_SET};
     bool m_taskStatusHasBeenSet = false;
 
-    AuditTaskType m_taskType;
+    AuditTaskType m_taskType{AuditTaskType::NOT_SET};
     bool m_taskTypeHasBeenSet = false;
   };
 

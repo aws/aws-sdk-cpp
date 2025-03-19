@@ -20,23 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-CustomOriginConfig::CustomOriginConfig() : 
-    m_hTTPPort(0),
-    m_hTTPPortHasBeenSet(false),
-    m_hTTPSPort(0),
-    m_hTTPSPortHasBeenSet(false),
-    m_originProtocolPolicy(OriginProtocolPolicy::NOT_SET),
-    m_originProtocolPolicyHasBeenSet(false),
-    m_originSslProtocolsHasBeenSet(false),
-    m_originReadTimeout(0),
-    m_originReadTimeoutHasBeenSet(false),
-    m_originKeepaliveTimeout(0),
-    m_originKeepaliveTimeoutHasBeenSet(false)
-{
-}
-
 CustomOriginConfig::CustomOriginConfig(const XmlNode& xmlNode)
-  : CustomOriginConfig()
 {
   *this = xmlNode;
 }
@@ -62,7 +46,7 @@ CustomOriginConfig& CustomOriginConfig::operator =(const XmlNode& xmlNode)
     XmlNode originProtocolPolicyNode = resultNode.FirstChild("OriginProtocolPolicy");
     if(!originProtocolPolicyNode.IsNull())
     {
-      m_originProtocolPolicy = OriginProtocolPolicyMapper::GetOriginProtocolPolicyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(originProtocolPolicyNode.GetText()).c_str()).c_str());
+      m_originProtocolPolicy = OriginProtocolPolicyMapper::GetOriginProtocolPolicyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(originProtocolPolicyNode.GetText()).c_str()));
       m_originProtocolPolicyHasBeenSet = true;
     }
     XmlNode originSslProtocolsNode = resultNode.FirstChild("OriginSslProtocols");

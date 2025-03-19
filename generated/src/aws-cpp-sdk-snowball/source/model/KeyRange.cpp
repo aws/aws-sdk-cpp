@@ -18,14 +18,7 @@ namespace Snowball
 namespace Model
 {
 
-KeyRange::KeyRange() : 
-    m_beginMarkerHasBeenSet(false),
-    m_endMarkerHasBeenSet(false)
-{
-}
-
 KeyRange::KeyRange(JsonView jsonValue)
-  : KeyRange()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ KeyRange& KeyRange::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BeginMarker"))
   {
     m_beginMarker = jsonValue.GetString("BeginMarker");
-
     m_beginMarkerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndMarker"))
   {
     m_endMarker = jsonValue.GetString("EndMarker");
-
     m_endMarkerHasBeenSet = true;
   }
-
   return *this;
 }
 

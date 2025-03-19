@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-Byoasn::Byoasn() : 
-    m_asnHasBeenSet(false),
-    m_ipamIdHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_state(AsnState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 Byoasn::Byoasn(const XmlNode& xmlNode)
-  : Byoasn()
 {
   *this = xmlNode;
 }
@@ -62,7 +52,7 @@ Byoasn& Byoasn::operator =(const XmlNode& xmlNode)
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = AsnStateMapper::GetAsnStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = AsnStateMapper::GetAsnStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
   }

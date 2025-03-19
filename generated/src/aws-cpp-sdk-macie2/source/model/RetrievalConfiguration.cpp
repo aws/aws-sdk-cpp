@@ -18,16 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-RetrievalConfiguration::RetrievalConfiguration() : 
-    m_externalIdHasBeenSet(false),
-    m_retrievalMode(RetrievalMode::NOT_SET),
-    m_retrievalModeHasBeenSet(false),
-    m_roleNameHasBeenSet(false)
-{
-}
-
 RetrievalConfiguration::RetrievalConfiguration(JsonView jsonValue)
-  : RetrievalConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ RetrievalConfiguration& RetrievalConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("externalId"))
   {
     m_externalId = jsonValue.GetString("externalId");
-
     m_externalIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("retrievalMode"))
   {
     m_retrievalMode = RetrievalModeMapper::GetRetrievalModeForName(jsonValue.GetString("retrievalMode"));
-
     m_retrievalModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleName"))
   {
     m_roleName = jsonValue.GetString("roleName");
-
     m_roleNameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-SuccessConditions::SuccessConditions() : 
-    m_conditionsHasBeenSet(false)
-{
-}
-
 SuccessConditions::SuccessConditions(JsonView jsonValue)
-  : SuccessConditions()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ SuccessConditions& SuccessConditions::operator =(JsonView jsonValue)
     }
     m_conditionsHasBeenSet = true;
   }
-
   return *this;
 }
 

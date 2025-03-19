@@ -18,20 +18,7 @@ namespace Outposts
 namespace Model
 {
 
-CapacityTaskSummary::CapacityTaskSummary() : 
-    m_capacityTaskIdHasBeenSet(false),
-    m_outpostIdHasBeenSet(false),
-    m_orderIdHasBeenSet(false),
-    m_capacityTaskStatus(CapacityTaskStatus::NOT_SET),
-    m_capacityTaskStatusHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_completionDateHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false)
-{
-}
-
 CapacityTaskSummary::CapacityTaskSummary(JsonView jsonValue)
-  : CapacityTaskSummary()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ CapacityTaskSummary& CapacityTaskSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CapacityTaskId"))
   {
     m_capacityTaskId = jsonValue.GetString("CapacityTaskId");
-
     m_capacityTaskIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutpostId"))
   {
     m_outpostId = jsonValue.GetString("OutpostId");
-
     m_outpostIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrderId"))
   {
     m_orderId = jsonValue.GetString("OrderId");
-
     m_orderIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CapacityTaskStatus"))
   {
     m_capacityTaskStatus = CapacityTaskStatusMapper::GetCapacityTaskStatusForName(jsonValue.GetString("CapacityTaskStatus"));
-
     m_capacityTaskStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetDouble("CreationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompletionDate"))
   {
     m_completionDate = jsonValue.GetDouble("CompletionDate");
-
     m_completionDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetDouble("LastModifiedDate");
-
     m_lastModifiedDateHasBeenSet = true;
   }
-
   return *this;
 }
 

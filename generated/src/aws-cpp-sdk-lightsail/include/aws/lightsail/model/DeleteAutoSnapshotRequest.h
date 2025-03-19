@@ -21,7 +21,7 @@ namespace Model
   class DeleteAutoSnapshotRequest : public LightsailRequest
   {
   public:
-    AWS_LIGHTSAIL_API DeleteAutoSnapshotRequest();
+    AWS_LIGHTSAIL_API DeleteAutoSnapshotRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The name of the source instance or disk from which to delete the automatic
      * snapshot.</p>
      */
-    inline const Aws::String& GetResourceName() const{ return m_resourceName; }
+    inline const Aws::String& GetResourceName() const { return m_resourceName; }
     inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
-    inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
-    inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
-    inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
-    inline DeleteAutoSnapshotRequest& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
-    inline DeleteAutoSnapshotRequest& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
-    inline DeleteAutoSnapshotRequest& WithResourceName(const char* value) { SetResourceName(value); return *this;}
+    template<typename ResourceNameT = Aws::String>
+    void SetResourceName(ResourceNameT&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::forward<ResourceNameT>(value); }
+    template<typename ResourceNameT = Aws::String>
+    DeleteAutoSnapshotRequest& WithResourceName(ResourceNameT&& value) { SetResourceName(std::forward<ResourceNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +53,12 @@ namespace Model
      * format. Use the <code>get auto snapshots</code> operation to get the available
      * automatic snapshots for a resource.</p>
      */
-    inline const Aws::String& GetDate() const{ return m_date; }
+    inline const Aws::String& GetDate() const { return m_date; }
     inline bool DateHasBeenSet() const { return m_dateHasBeenSet; }
-    inline void SetDate(const Aws::String& value) { m_dateHasBeenSet = true; m_date = value; }
-    inline void SetDate(Aws::String&& value) { m_dateHasBeenSet = true; m_date = std::move(value); }
-    inline void SetDate(const char* value) { m_dateHasBeenSet = true; m_date.assign(value); }
-    inline DeleteAutoSnapshotRequest& WithDate(const Aws::String& value) { SetDate(value); return *this;}
-    inline DeleteAutoSnapshotRequest& WithDate(Aws::String&& value) { SetDate(std::move(value)); return *this;}
-    inline DeleteAutoSnapshotRequest& WithDate(const char* value) { SetDate(value); return *this;}
+    template<typename DateT = Aws::String>
+    void SetDate(DateT&& value) { m_dateHasBeenSet = true; m_date = std::forward<DateT>(value); }
+    template<typename DateT = Aws::String>
+    DeleteAutoSnapshotRequest& WithDate(DateT&& value) { SetDate(std::forward<DateT>(value)); return *this;}
     ///@}
   private:
 

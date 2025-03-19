@@ -32,7 +32,7 @@ namespace Model
   class StatusReport
   {
   public:
-    AWS_ROUTE53_API StatusReport();
+    AWS_ROUTE53_API StatusReport() = default;
     AWS_ROUTE53_API StatusReport(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ROUTE53_API StatusReport& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,14 +44,12 @@ namespace Model
      * <p>A description of the status of the health check endpoint as reported by one
      * of the Amazon Route 53 health checkers.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline StatusReport& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline StatusReport& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline StatusReport& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    StatusReport& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,19 +60,19 @@ namespace Model
      * <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751
      * UTC.</p>
      */
-    inline const Aws::Utils::DateTime& GetCheckedTime() const{ return m_checkedTime; }
+    inline const Aws::Utils::DateTime& GetCheckedTime() const { return m_checkedTime; }
     inline bool CheckedTimeHasBeenSet() const { return m_checkedTimeHasBeenSet; }
-    inline void SetCheckedTime(const Aws::Utils::DateTime& value) { m_checkedTimeHasBeenSet = true; m_checkedTime = value; }
-    inline void SetCheckedTime(Aws::Utils::DateTime&& value) { m_checkedTimeHasBeenSet = true; m_checkedTime = std::move(value); }
-    inline StatusReport& WithCheckedTime(const Aws::Utils::DateTime& value) { SetCheckedTime(value); return *this;}
-    inline StatusReport& WithCheckedTime(Aws::Utils::DateTime&& value) { SetCheckedTime(std::move(value)); return *this;}
+    template<typename CheckedTimeT = Aws::Utils::DateTime>
+    void SetCheckedTime(CheckedTimeT&& value) { m_checkedTimeHasBeenSet = true; m_checkedTime = std::forward<CheckedTimeT>(value); }
+    template<typename CheckedTimeT = Aws::Utils::DateTime>
+    StatusReport& WithCheckedTime(CheckedTimeT&& value) { SetCheckedTime(std::forward<CheckedTimeT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_status;
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_checkedTime;
+    Aws::Utils::DateTime m_checkedTime{};
     bool m_checkedTimeHasBeenSet = false;
   };
 

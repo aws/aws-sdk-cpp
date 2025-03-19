@@ -37,7 +37,7 @@ namespace Model
   class InputUpdate
   {
   public:
-    AWS_KINESISANALYTICS_API InputUpdate();
+    AWS_KINESISANALYTICS_API InputUpdate() = default;
     AWS_KINESISANALYTICS_API InputUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICS_API InputUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
     /**
      * <p>Input ID of the application input to be updated.</p>
      */
-    inline const Aws::String& GetInputId() const{ return m_inputId; }
+    inline const Aws::String& GetInputId() const { return m_inputId; }
     inline bool InputIdHasBeenSet() const { return m_inputIdHasBeenSet; }
-    inline void SetInputId(const Aws::String& value) { m_inputIdHasBeenSet = true; m_inputId = value; }
-    inline void SetInputId(Aws::String&& value) { m_inputIdHasBeenSet = true; m_inputId = std::move(value); }
-    inline void SetInputId(const char* value) { m_inputIdHasBeenSet = true; m_inputId.assign(value); }
-    inline InputUpdate& WithInputId(const Aws::String& value) { SetInputId(value); return *this;}
-    inline InputUpdate& WithInputId(Aws::String&& value) { SetInputId(std::move(value)); return *this;}
-    inline InputUpdate& WithInputId(const char* value) { SetInputId(value); return *this;}
+    template<typename InputIdT = Aws::String>
+    void SetInputId(InputIdT&& value) { m_inputIdHasBeenSet = true; m_inputId = std::forward<InputIdT>(value); }
+    template<typename InputIdT = Aws::String>
+    InputUpdate& WithInputId(InputIdT&& value) { SetInputId(std::forward<InputIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,26 +60,24 @@ namespace Model
      * <p>Name prefix for in-application streams that Amazon Kinesis Analytics creates
      * for the specific streaming source.</p>
      */
-    inline const Aws::String& GetNamePrefixUpdate() const{ return m_namePrefixUpdate; }
+    inline const Aws::String& GetNamePrefixUpdate() const { return m_namePrefixUpdate; }
     inline bool NamePrefixUpdateHasBeenSet() const { return m_namePrefixUpdateHasBeenSet; }
-    inline void SetNamePrefixUpdate(const Aws::String& value) { m_namePrefixUpdateHasBeenSet = true; m_namePrefixUpdate = value; }
-    inline void SetNamePrefixUpdate(Aws::String&& value) { m_namePrefixUpdateHasBeenSet = true; m_namePrefixUpdate = std::move(value); }
-    inline void SetNamePrefixUpdate(const char* value) { m_namePrefixUpdateHasBeenSet = true; m_namePrefixUpdate.assign(value); }
-    inline InputUpdate& WithNamePrefixUpdate(const Aws::String& value) { SetNamePrefixUpdate(value); return *this;}
-    inline InputUpdate& WithNamePrefixUpdate(Aws::String&& value) { SetNamePrefixUpdate(std::move(value)); return *this;}
-    inline InputUpdate& WithNamePrefixUpdate(const char* value) { SetNamePrefixUpdate(value); return *this;}
+    template<typename NamePrefixUpdateT = Aws::String>
+    void SetNamePrefixUpdate(NamePrefixUpdateT&& value) { m_namePrefixUpdateHasBeenSet = true; m_namePrefixUpdate = std::forward<NamePrefixUpdateT>(value); }
+    template<typename NamePrefixUpdateT = Aws::String>
+    InputUpdate& WithNamePrefixUpdate(NamePrefixUpdateT&& value) { SetNamePrefixUpdate(std::forward<NamePrefixUpdateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Describes updates for an input processing configuration.</p>
      */
-    inline const InputProcessingConfigurationUpdate& GetInputProcessingConfigurationUpdate() const{ return m_inputProcessingConfigurationUpdate; }
+    inline const InputProcessingConfigurationUpdate& GetInputProcessingConfigurationUpdate() const { return m_inputProcessingConfigurationUpdate; }
     inline bool InputProcessingConfigurationUpdateHasBeenSet() const { return m_inputProcessingConfigurationUpdateHasBeenSet; }
-    inline void SetInputProcessingConfigurationUpdate(const InputProcessingConfigurationUpdate& value) { m_inputProcessingConfigurationUpdateHasBeenSet = true; m_inputProcessingConfigurationUpdate = value; }
-    inline void SetInputProcessingConfigurationUpdate(InputProcessingConfigurationUpdate&& value) { m_inputProcessingConfigurationUpdateHasBeenSet = true; m_inputProcessingConfigurationUpdate = std::move(value); }
-    inline InputUpdate& WithInputProcessingConfigurationUpdate(const InputProcessingConfigurationUpdate& value) { SetInputProcessingConfigurationUpdate(value); return *this;}
-    inline InputUpdate& WithInputProcessingConfigurationUpdate(InputProcessingConfigurationUpdate&& value) { SetInputProcessingConfigurationUpdate(std::move(value)); return *this;}
+    template<typename InputProcessingConfigurationUpdateT = InputProcessingConfigurationUpdate>
+    void SetInputProcessingConfigurationUpdate(InputProcessingConfigurationUpdateT&& value) { m_inputProcessingConfigurationUpdateHasBeenSet = true; m_inputProcessingConfigurationUpdate = std::forward<InputProcessingConfigurationUpdateT>(value); }
+    template<typename InputProcessingConfigurationUpdateT = InputProcessingConfigurationUpdate>
+    InputUpdate& WithInputProcessingConfigurationUpdate(InputProcessingConfigurationUpdateT&& value) { SetInputProcessingConfigurationUpdate(std::forward<InputProcessingConfigurationUpdateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,12 +85,12 @@ namespace Model
      * <p>If an Amazon Kinesis stream is the streaming source to be updated, provides
      * an updated stream Amazon Resource Name (ARN) and IAM role ARN.</p>
      */
-    inline const KinesisStreamsInputUpdate& GetKinesisStreamsInputUpdate() const{ return m_kinesisStreamsInputUpdate; }
+    inline const KinesisStreamsInputUpdate& GetKinesisStreamsInputUpdate() const { return m_kinesisStreamsInputUpdate; }
     inline bool KinesisStreamsInputUpdateHasBeenSet() const { return m_kinesisStreamsInputUpdateHasBeenSet; }
-    inline void SetKinesisStreamsInputUpdate(const KinesisStreamsInputUpdate& value) { m_kinesisStreamsInputUpdateHasBeenSet = true; m_kinesisStreamsInputUpdate = value; }
-    inline void SetKinesisStreamsInputUpdate(KinesisStreamsInputUpdate&& value) { m_kinesisStreamsInputUpdateHasBeenSet = true; m_kinesisStreamsInputUpdate = std::move(value); }
-    inline InputUpdate& WithKinesisStreamsInputUpdate(const KinesisStreamsInputUpdate& value) { SetKinesisStreamsInputUpdate(value); return *this;}
-    inline InputUpdate& WithKinesisStreamsInputUpdate(KinesisStreamsInputUpdate&& value) { SetKinesisStreamsInputUpdate(std::move(value)); return *this;}
+    template<typename KinesisStreamsInputUpdateT = KinesisStreamsInputUpdate>
+    void SetKinesisStreamsInputUpdate(KinesisStreamsInputUpdateT&& value) { m_kinesisStreamsInputUpdateHasBeenSet = true; m_kinesisStreamsInputUpdate = std::forward<KinesisStreamsInputUpdateT>(value); }
+    template<typename KinesisStreamsInputUpdateT = KinesisStreamsInputUpdate>
+    InputUpdate& WithKinesisStreamsInputUpdate(KinesisStreamsInputUpdateT&& value) { SetKinesisStreamsInputUpdate(std::forward<KinesisStreamsInputUpdateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,12 +98,12 @@ namespace Model
      * <p>If an Amazon Kinesis Firehose delivery stream is the streaming source to be
      * updated, provides an updated stream ARN and IAM role ARN.</p>
      */
-    inline const KinesisFirehoseInputUpdate& GetKinesisFirehoseInputUpdate() const{ return m_kinesisFirehoseInputUpdate; }
+    inline const KinesisFirehoseInputUpdate& GetKinesisFirehoseInputUpdate() const { return m_kinesisFirehoseInputUpdate; }
     inline bool KinesisFirehoseInputUpdateHasBeenSet() const { return m_kinesisFirehoseInputUpdateHasBeenSet; }
-    inline void SetKinesisFirehoseInputUpdate(const KinesisFirehoseInputUpdate& value) { m_kinesisFirehoseInputUpdateHasBeenSet = true; m_kinesisFirehoseInputUpdate = value; }
-    inline void SetKinesisFirehoseInputUpdate(KinesisFirehoseInputUpdate&& value) { m_kinesisFirehoseInputUpdateHasBeenSet = true; m_kinesisFirehoseInputUpdate = std::move(value); }
-    inline InputUpdate& WithKinesisFirehoseInputUpdate(const KinesisFirehoseInputUpdate& value) { SetKinesisFirehoseInputUpdate(value); return *this;}
-    inline InputUpdate& WithKinesisFirehoseInputUpdate(KinesisFirehoseInputUpdate&& value) { SetKinesisFirehoseInputUpdate(std::move(value)); return *this;}
+    template<typename KinesisFirehoseInputUpdateT = KinesisFirehoseInputUpdate>
+    void SetKinesisFirehoseInputUpdate(KinesisFirehoseInputUpdateT&& value) { m_kinesisFirehoseInputUpdateHasBeenSet = true; m_kinesisFirehoseInputUpdate = std::forward<KinesisFirehoseInputUpdateT>(value); }
+    template<typename KinesisFirehoseInputUpdateT = KinesisFirehoseInputUpdate>
+    InputUpdate& WithKinesisFirehoseInputUpdate(KinesisFirehoseInputUpdateT&& value) { SetKinesisFirehoseInputUpdate(std::forward<KinesisFirehoseInputUpdateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,12 +112,12 @@ namespace Model
      * the streaming source map to columns of the in-application stream that is
      * created.</p>
      */
-    inline const InputSchemaUpdate& GetInputSchemaUpdate() const{ return m_inputSchemaUpdate; }
+    inline const InputSchemaUpdate& GetInputSchemaUpdate() const { return m_inputSchemaUpdate; }
     inline bool InputSchemaUpdateHasBeenSet() const { return m_inputSchemaUpdateHasBeenSet; }
-    inline void SetInputSchemaUpdate(const InputSchemaUpdate& value) { m_inputSchemaUpdateHasBeenSet = true; m_inputSchemaUpdate = value; }
-    inline void SetInputSchemaUpdate(InputSchemaUpdate&& value) { m_inputSchemaUpdateHasBeenSet = true; m_inputSchemaUpdate = std::move(value); }
-    inline InputUpdate& WithInputSchemaUpdate(const InputSchemaUpdate& value) { SetInputSchemaUpdate(value); return *this;}
-    inline InputUpdate& WithInputSchemaUpdate(InputSchemaUpdate&& value) { SetInputSchemaUpdate(std::move(value)); return *this;}
+    template<typename InputSchemaUpdateT = InputSchemaUpdate>
+    void SetInputSchemaUpdate(InputSchemaUpdateT&& value) { m_inputSchemaUpdateHasBeenSet = true; m_inputSchemaUpdate = std::forward<InputSchemaUpdateT>(value); }
+    template<typename InputSchemaUpdateT = InputSchemaUpdate>
+    InputUpdate& WithInputSchemaUpdate(InputSchemaUpdateT&& value) { SetInputSchemaUpdate(std::forward<InputSchemaUpdateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -129,12 +125,12 @@ namespace Model
      * <p>Describes the parallelism updates (the number in-application streams Amazon
      * Kinesis Analytics creates for the specific streaming source).</p>
      */
-    inline const InputParallelismUpdate& GetInputParallelismUpdate() const{ return m_inputParallelismUpdate; }
+    inline const InputParallelismUpdate& GetInputParallelismUpdate() const { return m_inputParallelismUpdate; }
     inline bool InputParallelismUpdateHasBeenSet() const { return m_inputParallelismUpdateHasBeenSet; }
-    inline void SetInputParallelismUpdate(const InputParallelismUpdate& value) { m_inputParallelismUpdateHasBeenSet = true; m_inputParallelismUpdate = value; }
-    inline void SetInputParallelismUpdate(InputParallelismUpdate&& value) { m_inputParallelismUpdateHasBeenSet = true; m_inputParallelismUpdate = std::move(value); }
-    inline InputUpdate& WithInputParallelismUpdate(const InputParallelismUpdate& value) { SetInputParallelismUpdate(value); return *this;}
-    inline InputUpdate& WithInputParallelismUpdate(InputParallelismUpdate&& value) { SetInputParallelismUpdate(std::move(value)); return *this;}
+    template<typename InputParallelismUpdateT = InputParallelismUpdate>
+    void SetInputParallelismUpdate(InputParallelismUpdateT&& value) { m_inputParallelismUpdateHasBeenSet = true; m_inputParallelismUpdate = std::forward<InputParallelismUpdateT>(value); }
+    template<typename InputParallelismUpdateT = InputParallelismUpdate>
+    InputUpdate& WithInputParallelismUpdate(InputParallelismUpdateT&& value) { SetInputParallelismUpdate(std::forward<InputParallelismUpdateT>(value)); return *this;}
     ///@}
   private:
 

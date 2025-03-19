@@ -18,21 +18,7 @@ namespace chatbot
 namespace Model
 {
 
-ChimeWebhookConfiguration::ChimeWebhookConfiguration() : 
-    m_webhookDescriptionHasBeenSet(false),
-    m_chatConfigurationArnHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false),
-    m_snsTopicArnsHasBeenSet(false),
-    m_configurationNameHasBeenSet(false),
-    m_loggingLevelHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_stateReasonHasBeenSet(false)
-{
-}
-
 ChimeWebhookConfiguration::ChimeWebhookConfiguration(JsonView jsonValue)
-  : ChimeWebhookConfiguration()
 {
   *this = jsonValue;
 }
@@ -42,24 +28,18 @@ ChimeWebhookConfiguration& ChimeWebhookConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("WebhookDescription"))
   {
     m_webhookDescription = jsonValue.GetString("WebhookDescription");
-
     m_webhookDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChatConfigurationArn"))
   {
     m_chatConfigurationArn = jsonValue.GetString("ChatConfigurationArn");
-
     m_chatConfigurationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IamRoleArn"))
   {
     m_iamRoleArn = jsonValue.GetString("IamRoleArn");
-
     m_iamRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnsTopicArns"))
   {
     Aws::Utils::Array<JsonView> snsTopicArnsJsonList = jsonValue.GetArray("SnsTopicArns");
@@ -69,21 +49,16 @@ ChimeWebhookConfiguration& ChimeWebhookConfiguration::operator =(JsonView jsonVa
     }
     m_snsTopicArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConfigurationName"))
   {
     m_configurationName = jsonValue.GetString("ConfigurationName");
-
     m_configurationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LoggingLevel"))
   {
     m_loggingLevel = jsonValue.GetString("LoggingLevel");
-
     m_loggingLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -93,21 +68,16 @@ ChimeWebhookConfiguration& ChimeWebhookConfiguration::operator =(JsonView jsonVa
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = jsonValue.GetString("State");
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StateReason"))
   {
     m_stateReason = jsonValue.GetString("StateReason");
-
     m_stateReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

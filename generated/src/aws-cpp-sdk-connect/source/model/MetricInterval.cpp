@@ -18,16 +18,7 @@ namespace Connect
 namespace Model
 {
 
-MetricInterval::MetricInterval() : 
-    m_interval(IntervalPeriod::NOT_SET),
-    m_intervalHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
-{
-}
-
 MetricInterval::MetricInterval(JsonView jsonValue)
-  : MetricInterval()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ MetricInterval& MetricInterval::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Interval"))
   {
     m_interval = IntervalPeriodMapper::GetIntervalPeriodForName(jsonValue.GetString("Interval"));
-
     m_intervalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

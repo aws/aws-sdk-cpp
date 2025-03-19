@@ -12,12 +12,6 @@ using namespace Aws::QLDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelJournalKinesisStreamRequest::CancelJournalKinesisStreamRequest() : 
-    m_ledgerNameHasBeenSet(false),
-    m_streamIdHasBeenSet(false)
-{
-}
-
 Aws::String CancelJournalKinesisStreamRequest::SerializePayload() const
 {
   return {};

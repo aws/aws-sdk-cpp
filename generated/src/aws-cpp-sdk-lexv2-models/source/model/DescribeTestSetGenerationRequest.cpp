@@ -12,11 +12,6 @@ using namespace Aws::LexModelsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeTestSetGenerationRequest::DescribeTestSetGenerationRequest() : 
-    m_testSetGenerationIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeTestSetGenerationRequest::SerializePayload() const
 {
   return {};

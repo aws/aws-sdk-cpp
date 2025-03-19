@@ -12,11 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteReservationRequest::DeleteReservationRequest() : 
-    m_reservationIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteReservationRequest::SerializePayload() const
 {
   return {};

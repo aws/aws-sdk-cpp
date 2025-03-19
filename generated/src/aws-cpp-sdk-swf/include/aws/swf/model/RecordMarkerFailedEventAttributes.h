@@ -33,7 +33,7 @@ namespace Model
   class RecordMarkerFailedEventAttributes
   {
   public:
-    AWS_SWF_API RecordMarkerFailedEventAttributes();
+    AWS_SWF_API RecordMarkerFailedEventAttributes() = default;
     AWS_SWF_API RecordMarkerFailedEventAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API RecordMarkerFailedEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The marker's name.</p>
      */
-    inline const Aws::String& GetMarkerName() const{ return m_markerName; }
+    inline const Aws::String& GetMarkerName() const { return m_markerName; }
     inline bool MarkerNameHasBeenSet() const { return m_markerNameHasBeenSet; }
-    inline void SetMarkerName(const Aws::String& value) { m_markerNameHasBeenSet = true; m_markerName = value; }
-    inline void SetMarkerName(Aws::String&& value) { m_markerNameHasBeenSet = true; m_markerName = std::move(value); }
-    inline void SetMarkerName(const char* value) { m_markerNameHasBeenSet = true; m_markerName.assign(value); }
-    inline RecordMarkerFailedEventAttributes& WithMarkerName(const Aws::String& value) { SetMarkerName(value); return *this;}
-    inline RecordMarkerFailedEventAttributes& WithMarkerName(Aws::String&& value) { SetMarkerName(std::move(value)); return *this;}
-    inline RecordMarkerFailedEventAttributes& WithMarkerName(const char* value) { SetMarkerName(value); return *this;}
+    template<typename MarkerNameT = Aws::String>
+    void SetMarkerName(MarkerNameT&& value) { m_markerNameHasBeenSet = true; m_markerName = std::forward<MarkerNameT>(value); }
+    template<typename MarkerNameT = Aws::String>
+    RecordMarkerFailedEventAttributes& WithMarkerName(MarkerNameT&& value) { SetMarkerName(std::forward<MarkerNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,12 +61,10 @@ namespace Model
      * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
      * Guide</i>.</p> 
      */
-    inline const RecordMarkerFailedCause& GetCause() const{ return m_cause; }
+    inline RecordMarkerFailedCause GetCause() const { return m_cause; }
     inline bool CauseHasBeenSet() const { return m_causeHasBeenSet; }
-    inline void SetCause(const RecordMarkerFailedCause& value) { m_causeHasBeenSet = true; m_cause = value; }
-    inline void SetCause(RecordMarkerFailedCause&& value) { m_causeHasBeenSet = true; m_cause = std::move(value); }
-    inline RecordMarkerFailedEventAttributes& WithCause(const RecordMarkerFailedCause& value) { SetCause(value); return *this;}
-    inline RecordMarkerFailedEventAttributes& WithCause(RecordMarkerFailedCause&& value) { SetCause(std::move(value)); return *this;}
+    inline void SetCause(RecordMarkerFailedCause value) { m_causeHasBeenSet = true; m_cause = value; }
+    inline RecordMarkerFailedEventAttributes& WithCause(RecordMarkerFailedCause value) { SetCause(value); return *this;}
     ///@}
 
     ///@{
@@ -78,7 +74,7 @@ namespace Model
      * this cancellation request. This information can be useful for diagnosing
      * problems by tracing back the chain of events leading up to this event.</p>
      */
-    inline long long GetDecisionTaskCompletedEventId() const{ return m_decisionTaskCompletedEventId; }
+    inline long long GetDecisionTaskCompletedEventId() const { return m_decisionTaskCompletedEventId; }
     inline bool DecisionTaskCompletedEventIdHasBeenSet() const { return m_decisionTaskCompletedEventIdHasBeenSet; }
     inline void SetDecisionTaskCompletedEventId(long long value) { m_decisionTaskCompletedEventIdHasBeenSet = true; m_decisionTaskCompletedEventId = value; }
     inline RecordMarkerFailedEventAttributes& WithDecisionTaskCompletedEventId(long long value) { SetDecisionTaskCompletedEventId(value); return *this;}
@@ -88,10 +84,10 @@ namespace Model
     Aws::String m_markerName;
     bool m_markerNameHasBeenSet = false;
 
-    RecordMarkerFailedCause m_cause;
+    RecordMarkerFailedCause m_cause{RecordMarkerFailedCause::NOT_SET};
     bool m_causeHasBeenSet = false;
 
-    long long m_decisionTaskCompletedEventId;
+    long long m_decisionTaskCompletedEventId{0};
     bool m_decisionTaskCompletedEventIdHasBeenSet = false;
   };
 

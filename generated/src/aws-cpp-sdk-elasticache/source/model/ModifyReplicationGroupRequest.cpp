@@ -10,50 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-ModifyReplicationGroupRequest::ModifyReplicationGroupRequest() : 
-    m_replicationGroupIdHasBeenSet(false),
-    m_replicationGroupDescriptionHasBeenSet(false),
-    m_primaryClusterIdHasBeenSet(false),
-    m_snapshottingClusterIdHasBeenSet(false),
-    m_automaticFailoverEnabled(false),
-    m_automaticFailoverEnabledHasBeenSet(false),
-    m_multiAZEnabled(false),
-    m_multiAZEnabledHasBeenSet(false),
-    m_cacheSecurityGroupNamesHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_preferredMaintenanceWindowHasBeenSet(false),
-    m_notificationTopicArnHasBeenSet(false),
-    m_cacheParameterGroupNameHasBeenSet(false),
-    m_notificationTopicStatusHasBeenSet(false),
-    m_applyImmediately(false),
-    m_applyImmediatelyHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_autoMinorVersionUpgrade(false),
-    m_autoMinorVersionUpgradeHasBeenSet(false),
-    m_snapshotRetentionLimit(0),
-    m_snapshotRetentionLimitHasBeenSet(false),
-    m_snapshotWindowHasBeenSet(false),
-    m_cacheNodeTypeHasBeenSet(false),
-    m_authTokenHasBeenSet(false),
-    m_authTokenUpdateStrategy(AuthTokenUpdateStrategyType::NOT_SET),
-    m_authTokenUpdateStrategyHasBeenSet(false),
-    m_userGroupIdsToAddHasBeenSet(false),
-    m_userGroupIdsToRemoveHasBeenSet(false),
-    m_removeUserGroups(false),
-    m_removeUserGroupsHasBeenSet(false),
-    m_logDeliveryConfigurationsHasBeenSet(false),
-    m_ipDiscovery(IpDiscovery::NOT_SET),
-    m_ipDiscoveryHasBeenSet(false),
-    m_transitEncryptionEnabled(false),
-    m_transitEncryptionEnabledHasBeenSet(false),
-    m_transitEncryptionMode(TransitEncryptionMode::NOT_SET),
-    m_transitEncryptionModeHasBeenSet(false),
-    m_clusterMode(ClusterMode::NOT_SET),
-    m_clusterModeHasBeenSet(false)
-{
-}
-
 Aws::String ModifyReplicationGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

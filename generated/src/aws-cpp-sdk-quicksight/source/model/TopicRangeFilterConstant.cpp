@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TopicRangeFilterConstant::TopicRangeFilterConstant() : 
-    m_constantType(ConstantType::NOT_SET),
-    m_constantTypeHasBeenSet(false),
-    m_rangeConstantHasBeenSet(false)
-{
-}
-
 TopicRangeFilterConstant::TopicRangeFilterConstant(JsonView jsonValue)
-  : TopicRangeFilterConstant()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ TopicRangeFilterConstant& TopicRangeFilterConstant::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("ConstantType"))
   {
     m_constantType = ConstantTypeMapper::GetConstantTypeForName(jsonValue.GetString("ConstantType"));
-
     m_constantTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RangeConstant"))
   {
     m_rangeConstant = jsonValue.GetObject("RangeConstant");
-
     m_rangeConstantHasBeenSet = true;
   }
-
   return *this;
 }
 

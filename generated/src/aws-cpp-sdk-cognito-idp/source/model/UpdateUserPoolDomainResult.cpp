@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateUserPoolDomainResult::UpdateUserPoolDomainResult() : 
-    m_managedLoginVersion(0)
-{
-}
-
 UpdateUserPoolDomainResult::UpdateUserPoolDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateUserPoolDomainResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ UpdateUserPoolDomainResult& UpdateUserPoolDomainResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("ManagedLoginVersion"))
   {
     m_managedLoginVersion = jsonValue.GetInteger("ManagedLoginVersion");
-
+    m_managedLoginVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CloudFrontDomain"))
   {
     m_cloudFrontDomain = jsonValue.GetString("CloudFrontDomain");
-
+    m_cloudFrontDomainHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

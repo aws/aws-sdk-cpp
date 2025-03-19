@@ -33,7 +33,7 @@ namespace Model
   class PostContactSummary
   {
   public:
-    AWS_CONNECTCONTACTLENS_API PostContactSummary();
+    AWS_CONNECTCONTACTLENS_API PostContactSummary() = default;
     AWS_CONNECTCONTACTLENS_API PostContactSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCONTACTLENS_API PostContactSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCONTACTLENS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,22 @@ namespace Model
     /**
      * <p>The content of the summary.</p>
      */
-    inline const Aws::String& GetContent() const{ return m_content; }
+    inline const Aws::String& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
-    inline PostContactSummary& WithContent(const Aws::String& value) { SetContent(value); return *this;}
-    inline PostContactSummary& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
-    inline PostContactSummary& WithContent(const char* value) { SetContent(value); return *this;}
+    template<typename ContentT = Aws::String>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = Aws::String>
+    PostContactSummary& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Whether the summary was successfully COMPLETED or FAILED to be generated.</p>
      */
-    inline const PostContactSummaryStatus& GetStatus() const{ return m_status; }
+    inline PostContactSummaryStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const PostContactSummaryStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(PostContactSummaryStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline PostContactSummary& WithStatus(const PostContactSummaryStatus& value) { SetStatus(value); return *this;}
-    inline PostContactSummary& WithStatus(PostContactSummaryStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(PostContactSummaryStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline PostContactSummary& WithStatus(PostContactSummaryStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -80,22 +76,20 @@ namespace Model
      * that isn't supported by generative AI-powered post-contact summaries. </p> </li>
      * <li> <p> <code>INTERNAL_ERROR</code>: Internal system error.</p> </li> </ul>
      */
-    inline const PostContactSummaryFailureCode& GetFailureCode() const{ return m_failureCode; }
+    inline PostContactSummaryFailureCode GetFailureCode() const { return m_failureCode; }
     inline bool FailureCodeHasBeenSet() const { return m_failureCodeHasBeenSet; }
-    inline void SetFailureCode(const PostContactSummaryFailureCode& value) { m_failureCodeHasBeenSet = true; m_failureCode = value; }
-    inline void SetFailureCode(PostContactSummaryFailureCode&& value) { m_failureCodeHasBeenSet = true; m_failureCode = std::move(value); }
-    inline PostContactSummary& WithFailureCode(const PostContactSummaryFailureCode& value) { SetFailureCode(value); return *this;}
-    inline PostContactSummary& WithFailureCode(PostContactSummaryFailureCode&& value) { SetFailureCode(std::move(value)); return *this;}
+    inline void SetFailureCode(PostContactSummaryFailureCode value) { m_failureCodeHasBeenSet = true; m_failureCode = value; }
+    inline PostContactSummary& WithFailureCode(PostContactSummaryFailureCode value) { SetFailureCode(value); return *this;}
     ///@}
   private:
 
     Aws::String m_content;
     bool m_contentHasBeenSet = false;
 
-    PostContactSummaryStatus m_status;
+    PostContactSummaryStatus m_status{PostContactSummaryStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    PostContactSummaryFailureCode m_failureCode;
+    PostContactSummaryFailureCode m_failureCode{PostContactSummaryFailureCode::NOT_SET};
     bool m_failureCodeHasBeenSet = false;
   };
 

@@ -35,7 +35,7 @@ namespace Model
   class SendBulkEmailResult
   {
   public:
-    AWS_SESV2_API SendBulkEmailResult();
+    AWS_SESV2_API SendBulkEmailResult() = default;
     AWS_SESV2_API SendBulkEmailResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SESV2_API SendBulkEmailResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,30 +45,30 @@ namespace Model
      * <p>One object per intended recipient. Check each response object and retry any
      * messages with a failure status.</p>
      */
-    inline const Aws::Vector<BulkEmailEntryResult>& GetBulkEmailEntryResults() const{ return m_bulkEmailEntryResults; }
-    inline void SetBulkEmailEntryResults(const Aws::Vector<BulkEmailEntryResult>& value) { m_bulkEmailEntryResults = value; }
-    inline void SetBulkEmailEntryResults(Aws::Vector<BulkEmailEntryResult>&& value) { m_bulkEmailEntryResults = std::move(value); }
-    inline SendBulkEmailResult& WithBulkEmailEntryResults(const Aws::Vector<BulkEmailEntryResult>& value) { SetBulkEmailEntryResults(value); return *this;}
-    inline SendBulkEmailResult& WithBulkEmailEntryResults(Aws::Vector<BulkEmailEntryResult>&& value) { SetBulkEmailEntryResults(std::move(value)); return *this;}
-    inline SendBulkEmailResult& AddBulkEmailEntryResults(const BulkEmailEntryResult& value) { m_bulkEmailEntryResults.push_back(value); return *this; }
-    inline SendBulkEmailResult& AddBulkEmailEntryResults(BulkEmailEntryResult&& value) { m_bulkEmailEntryResults.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BulkEmailEntryResult>& GetBulkEmailEntryResults() const { return m_bulkEmailEntryResults; }
+    template<typename BulkEmailEntryResultsT = Aws::Vector<BulkEmailEntryResult>>
+    void SetBulkEmailEntryResults(BulkEmailEntryResultsT&& value) { m_bulkEmailEntryResultsHasBeenSet = true; m_bulkEmailEntryResults = std::forward<BulkEmailEntryResultsT>(value); }
+    template<typename BulkEmailEntryResultsT = Aws::Vector<BulkEmailEntryResult>>
+    SendBulkEmailResult& WithBulkEmailEntryResults(BulkEmailEntryResultsT&& value) { SetBulkEmailEntryResults(std::forward<BulkEmailEntryResultsT>(value)); return *this;}
+    template<typename BulkEmailEntryResultsT = BulkEmailEntryResult>
+    SendBulkEmailResult& AddBulkEmailEntryResults(BulkEmailEntryResultsT&& value) { m_bulkEmailEntryResultsHasBeenSet = true; m_bulkEmailEntryResults.emplace_back(std::forward<BulkEmailEntryResultsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline SendBulkEmailResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline SendBulkEmailResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline SendBulkEmailResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    SendBulkEmailResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<BulkEmailEntryResult> m_bulkEmailEntryResults;
+    bool m_bulkEmailEntryResultsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

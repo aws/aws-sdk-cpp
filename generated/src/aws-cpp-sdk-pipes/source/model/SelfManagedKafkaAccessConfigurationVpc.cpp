@@ -18,14 +18,7 @@ namespace Pipes
 namespace Model
 {
 
-SelfManagedKafkaAccessConfigurationVpc::SelfManagedKafkaAccessConfigurationVpc() : 
-    m_subnetsHasBeenSet(false),
-    m_securityGroupHasBeenSet(false)
-{
-}
-
 SelfManagedKafkaAccessConfigurationVpc::SelfManagedKafkaAccessConfigurationVpc(JsonView jsonValue)
-  : SelfManagedKafkaAccessConfigurationVpc()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ SelfManagedKafkaAccessConfigurationVpc& SelfManagedKafkaAccessConfigurationVpc::
     }
     m_subnetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityGroup"))
   {
     Aws::Utils::Array<JsonView> securityGroupJsonList = jsonValue.GetArray("SecurityGroup");
@@ -51,7 +43,6 @@ SelfManagedKafkaAccessConfigurationVpc& SelfManagedKafkaAccessConfigurationVpc::
     }
     m_securityGroupHasBeenSet = true;
   }
-
   return *this;
 }
 

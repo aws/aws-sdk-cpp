@@ -22,7 +22,7 @@ namespace Model
   class DeletePerformanceAnalysisReportRequest : public PIRequest
   {
   public:
-    AWS_PI_API DeletePerformanceAnalysisReportRequest();
+    AWS_PI_API DeletePerformanceAnalysisReportRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,12 +40,10 @@ namespace Model
      * <p>The Amazon Web Services service for which Performance Insights will return
      * metrics. Valid value is <code>RDS</code>.</p>
      */
-    inline const ServiceType& GetServiceType() const{ return m_serviceType; }
+    inline ServiceType GetServiceType() const { return m_serviceType; }
     inline bool ServiceTypeHasBeenSet() const { return m_serviceTypeHasBeenSet; }
-    inline void SetServiceType(const ServiceType& value) { m_serviceTypeHasBeenSet = true; m_serviceType = value; }
-    inline void SetServiceType(ServiceType&& value) { m_serviceTypeHasBeenSet = true; m_serviceType = std::move(value); }
-    inline DeletePerformanceAnalysisReportRequest& WithServiceType(const ServiceType& value) { SetServiceType(value); return *this;}
-    inline DeletePerformanceAnalysisReportRequest& WithServiceType(ServiceType&& value) { SetServiceType(std::move(value)); return *this;}
+    inline void SetServiceType(ServiceType value) { m_serviceTypeHasBeenSet = true; m_serviceType = value; }
+    inline DeletePerformanceAnalysisReportRequest& WithServiceType(ServiceType value) { SetServiceType(value); return *this;}
     ///@}
 
     ///@{
@@ -58,32 +56,28 @@ namespace Model
      * specify its <code>DbiResourceId</code> value. For example, specify
      * <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>.</p>
      */
-    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-    inline DeletePerformanceAnalysisReportRequest& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-    inline DeletePerformanceAnalysisReportRequest& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline DeletePerformanceAnalysisReportRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    DeletePerformanceAnalysisReportRequest& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the analysis report for deletion.</p>
      */
-    inline const Aws::String& GetAnalysisReportId() const{ return m_analysisReportId; }
+    inline const Aws::String& GetAnalysisReportId() const { return m_analysisReportId; }
     inline bool AnalysisReportIdHasBeenSet() const { return m_analysisReportIdHasBeenSet; }
-    inline void SetAnalysisReportId(const Aws::String& value) { m_analysisReportIdHasBeenSet = true; m_analysisReportId = value; }
-    inline void SetAnalysisReportId(Aws::String&& value) { m_analysisReportIdHasBeenSet = true; m_analysisReportId = std::move(value); }
-    inline void SetAnalysisReportId(const char* value) { m_analysisReportIdHasBeenSet = true; m_analysisReportId.assign(value); }
-    inline DeletePerformanceAnalysisReportRequest& WithAnalysisReportId(const Aws::String& value) { SetAnalysisReportId(value); return *this;}
-    inline DeletePerformanceAnalysisReportRequest& WithAnalysisReportId(Aws::String&& value) { SetAnalysisReportId(std::move(value)); return *this;}
-    inline DeletePerformanceAnalysisReportRequest& WithAnalysisReportId(const char* value) { SetAnalysisReportId(value); return *this;}
+    template<typename AnalysisReportIdT = Aws::String>
+    void SetAnalysisReportId(AnalysisReportIdT&& value) { m_analysisReportIdHasBeenSet = true; m_analysisReportId = std::forward<AnalysisReportIdT>(value); }
+    template<typename AnalysisReportIdT = Aws::String>
+    DeletePerformanceAnalysisReportRequest& WithAnalysisReportId(AnalysisReportIdT&& value) { SetAnalysisReportId(std::forward<AnalysisReportIdT>(value)); return *this;}
     ///@}
   private:
 
-    ServiceType m_serviceType;
+    ServiceType m_serviceType{ServiceType::NOT_SET};
     bool m_serviceTypeHasBeenSet = false;
 
     Aws::String m_identifier;

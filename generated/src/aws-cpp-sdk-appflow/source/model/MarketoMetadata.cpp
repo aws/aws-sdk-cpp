@@ -18,10 +18,6 @@ namespace Appflow
 namespace Model
 {
 
-MarketoMetadata::MarketoMetadata()
-{
-}
-
 MarketoMetadata::MarketoMetadata(JsonView jsonValue)
 {
   *this = jsonValue;

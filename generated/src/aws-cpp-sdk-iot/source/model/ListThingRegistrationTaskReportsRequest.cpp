@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListThingRegistrationTaskReportsRequest::ListThingRegistrationTaskReportsRequest() : 
-    m_taskIdHasBeenSet(false),
-    m_reportType(ReportType::NOT_SET),
-    m_reportTypeHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListThingRegistrationTaskReportsRequest::SerializePayload() const
 {
   return {};

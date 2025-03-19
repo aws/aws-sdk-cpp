@@ -18,30 +18,7 @@ namespace PaymentCryptography
 namespace Model
 {
 
-Key::Key() : 
-    m_keyArnHasBeenSet(false),
-    m_keyAttributesHasBeenSet(false),
-    m_keyCheckValueHasBeenSet(false),
-    m_keyCheckValueAlgorithm(KeyCheckValueAlgorithm::NOT_SET),
-    m_keyCheckValueAlgorithmHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_exportable(false),
-    m_exportableHasBeenSet(false),
-    m_keyState(KeyState::NOT_SET),
-    m_keyStateHasBeenSet(false),
-    m_keyOrigin(KeyOrigin::NOT_SET),
-    m_keyOriginHasBeenSet(false),
-    m_createTimestampHasBeenSet(false),
-    m_usageStartTimestampHasBeenSet(false),
-    m_usageStopTimestampHasBeenSet(false),
-    m_deletePendingTimestampHasBeenSet(false),
-    m_deleteTimestampHasBeenSet(false)
-{
-}
-
 Key::Key(JsonView jsonValue)
-  : Key()
 {
   *this = jsonValue;
 }
@@ -51,94 +28,68 @@ Key& Key::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("KeyArn"))
   {
     m_keyArn = jsonValue.GetString("KeyArn");
-
     m_keyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyAttributes"))
   {
     m_keyAttributes = jsonValue.GetObject("KeyAttributes");
-
     m_keyAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyCheckValue"))
   {
     m_keyCheckValue = jsonValue.GetString("KeyCheckValue");
-
     m_keyCheckValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyCheckValueAlgorithm"))
   {
     m_keyCheckValueAlgorithm = KeyCheckValueAlgorithmMapper::GetKeyCheckValueAlgorithmForName(jsonValue.GetString("KeyCheckValueAlgorithm"));
-
     m_keyCheckValueAlgorithmHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Exportable"))
   {
     m_exportable = jsonValue.GetBool("Exportable");
-
     m_exportableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyState"))
   {
     m_keyState = KeyStateMapper::GetKeyStateForName(jsonValue.GetString("KeyState"));
-
     m_keyStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyOrigin"))
   {
     m_keyOrigin = KeyOriginMapper::GetKeyOriginForName(jsonValue.GetString("KeyOrigin"));
-
     m_keyOriginHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateTimestamp"))
   {
     m_createTimestamp = jsonValue.GetDouble("CreateTimestamp");
-
     m_createTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UsageStartTimestamp"))
   {
     m_usageStartTimestamp = jsonValue.GetDouble("UsageStartTimestamp");
-
     m_usageStartTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UsageStopTimestamp"))
   {
     m_usageStopTimestamp = jsonValue.GetDouble("UsageStopTimestamp");
-
     m_usageStopTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeletePendingTimestamp"))
   {
     m_deletePendingTimestamp = jsonValue.GetDouble("DeletePendingTimestamp");
-
     m_deletePendingTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeleteTimestamp"))
   {
     m_deleteTimestamp = jsonValue.GetDouble("DeleteTimestamp");
-
     m_deleteTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

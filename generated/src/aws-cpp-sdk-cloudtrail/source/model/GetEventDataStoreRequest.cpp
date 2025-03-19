@@ -12,11 +12,6 @@ using namespace Aws::CloudTrail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetEventDataStoreRequest::GetEventDataStoreRequest() : 
-    m_eventDataStoreHasBeenSet(false)
-{
-}
-
 Aws::String GetEventDataStoreRequest::SerializePayload() const
 {
   JsonValue payload;

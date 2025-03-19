@@ -18,14 +18,7 @@ namespace DataSync
 namespace Model
 {
 
-StorageSystemListEntry::StorageSystemListEntry() : 
-    m_storageSystemArnHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 StorageSystemListEntry::StorageSystemListEntry(JsonView jsonValue)
-  : StorageSystemListEntry()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ StorageSystemListEntry& StorageSystemListEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StorageSystemArn"))
   {
     m_storageSystemArn = jsonValue.GetString("StorageSystemArn");
-
     m_storageSystemArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace SageMakerGeospatial
 namespace Model
 {
 
-CloudRemovalConfigInput::CloudRemovalConfigInput() : 
-    m_algorithmName(AlgorithmNameCloudRemoval::NOT_SET),
-    m_algorithmNameHasBeenSet(false),
-    m_interpolationValueHasBeenSet(false),
-    m_targetBandsHasBeenSet(false)
-{
-}
-
 CloudRemovalConfigInput::CloudRemovalConfigInput(JsonView jsonValue)
-  : CloudRemovalConfigInput()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ CloudRemovalConfigInput& CloudRemovalConfigInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AlgorithmName"))
   {
     m_algorithmName = AlgorithmNameCloudRemovalMapper::GetAlgorithmNameCloudRemovalForName(jsonValue.GetString("AlgorithmName"));
-
     m_algorithmNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InterpolationValue"))
   {
     m_interpolationValue = jsonValue.GetString("InterpolationValue");
-
     m_interpolationValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetBands"))
   {
     Aws::Utils::Array<JsonView> targetBandsJsonList = jsonValue.GetArray("TargetBands");
@@ -57,7 +44,6 @@ CloudRemovalConfigInput& CloudRemovalConfigInput::operator =(JsonView jsonValue)
     }
     m_targetBandsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,15 +12,6 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AdminListDevicesRequest::AdminListDevicesRequest() : 
-    m_userPoolIdHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_paginationTokenHasBeenSet(false)
-{
-}
-
 Aws::String AdminListDevicesRequest::SerializePayload() const
 {
   JsonValue payload;

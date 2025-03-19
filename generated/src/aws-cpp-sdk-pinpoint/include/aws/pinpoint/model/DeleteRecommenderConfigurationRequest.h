@@ -21,7 +21,7 @@ namespace Model
   class DeleteRecommenderConfigurationRequest : public PinpointRequest
   {
   public:
-    AWS_PINPOINT_API DeleteRecommenderConfigurationRequest();
+    AWS_PINPOINT_API DeleteRecommenderConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
      * identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint
      * console.</p>
      */
-    inline const Aws::String& GetRecommenderId() const{ return m_recommenderId; }
+    inline const Aws::String& GetRecommenderId() const { return m_recommenderId; }
     inline bool RecommenderIdHasBeenSet() const { return m_recommenderIdHasBeenSet; }
-    inline void SetRecommenderId(const Aws::String& value) { m_recommenderIdHasBeenSet = true; m_recommenderId = value; }
-    inline void SetRecommenderId(Aws::String&& value) { m_recommenderIdHasBeenSet = true; m_recommenderId = std::move(value); }
-    inline void SetRecommenderId(const char* value) { m_recommenderIdHasBeenSet = true; m_recommenderId.assign(value); }
-    inline DeleteRecommenderConfigurationRequest& WithRecommenderId(const Aws::String& value) { SetRecommenderId(value); return *this;}
-    inline DeleteRecommenderConfigurationRequest& WithRecommenderId(Aws::String&& value) { SetRecommenderId(std::move(value)); return *this;}
-    inline DeleteRecommenderConfigurationRequest& WithRecommenderId(const char* value) { SetRecommenderId(value); return *this;}
+    template<typename RecommenderIdT = Aws::String>
+    void SetRecommenderId(RecommenderIdT&& value) { m_recommenderIdHasBeenSet = true; m_recommenderId = std::forward<RecommenderIdT>(value); }
+    template<typename RecommenderIdT = Aws::String>
+    DeleteRecommenderConfigurationRequest& WithRecommenderId(RecommenderIdT&& value) { SetRecommenderId(std::forward<RecommenderIdT>(value)); return *this;}
     ///@}
   private:
 

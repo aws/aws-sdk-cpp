@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetIdMappingTableResult::GetIdMappingTableResult()
-{
-}
-
 GetIdMappingTableResult::GetIdMappingTableResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetIdMappingTableResult& GetIdMappingTableResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("idMappingTable"))
   {
     m_idMappingTable = jsonValue.GetObject("idMappingTable");
-
+    m_idMappingTableHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

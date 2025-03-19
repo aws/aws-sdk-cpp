@@ -12,11 +12,6 @@ using namespace Aws::IoTSiteWise::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeActionRequest::DescribeActionRequest() : 
-    m_actionIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeActionRequest::SerializePayload() const
 {
   return {};

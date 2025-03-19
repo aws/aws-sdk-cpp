@@ -27,7 +27,7 @@ namespace Model
   class AddCustomAttributesRequest : public CognitoIdentityProviderRequest
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API AddCustomAttributesRequest();
+    AWS_COGNITOIDENTITYPROVIDER_API AddCustomAttributesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The ID of the user pool where you want to add custom attributes.</p>
      */
-    inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
+    inline const Aws::String& GetUserPoolId() const { return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
-    inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
-    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
-    inline void SetUserPoolId(const char* value) { m_userPoolIdHasBeenSet = true; m_userPoolId.assign(value); }
-    inline AddCustomAttributesRequest& WithUserPoolId(const Aws::String& value) { SetUserPoolId(value); return *this;}
-    inline AddCustomAttributesRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
-    inline AddCustomAttributesRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+    template<typename UserPoolIdT = Aws::String>
+    void SetUserPoolId(UserPoolIdT&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::forward<UserPoolIdT>(value); }
+    template<typename UserPoolIdT = Aws::String>
+    AddCustomAttributesRequest& WithUserPoolId(UserPoolIdT&& value) { SetUserPoolId(std::forward<UserPoolIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +71,14 @@ namespace Model
      * with a <code>dev:</code> prefix. You can only set the value of a developer-only
      * attribute with administrative IAM credentials.</p> </dd> </dl>
      */
-    inline const Aws::Vector<SchemaAttributeType>& GetCustomAttributes() const{ return m_customAttributes; }
+    inline const Aws::Vector<SchemaAttributeType>& GetCustomAttributes() const { return m_customAttributes; }
     inline bool CustomAttributesHasBeenSet() const { return m_customAttributesHasBeenSet; }
-    inline void SetCustomAttributes(const Aws::Vector<SchemaAttributeType>& value) { m_customAttributesHasBeenSet = true; m_customAttributes = value; }
-    inline void SetCustomAttributes(Aws::Vector<SchemaAttributeType>&& value) { m_customAttributesHasBeenSet = true; m_customAttributes = std::move(value); }
-    inline AddCustomAttributesRequest& WithCustomAttributes(const Aws::Vector<SchemaAttributeType>& value) { SetCustomAttributes(value); return *this;}
-    inline AddCustomAttributesRequest& WithCustomAttributes(Aws::Vector<SchemaAttributeType>&& value) { SetCustomAttributes(std::move(value)); return *this;}
-    inline AddCustomAttributesRequest& AddCustomAttributes(const SchemaAttributeType& value) { m_customAttributesHasBeenSet = true; m_customAttributes.push_back(value); return *this; }
-    inline AddCustomAttributesRequest& AddCustomAttributes(SchemaAttributeType&& value) { m_customAttributesHasBeenSet = true; m_customAttributes.push_back(std::move(value)); return *this; }
+    template<typename CustomAttributesT = Aws::Vector<SchemaAttributeType>>
+    void SetCustomAttributes(CustomAttributesT&& value) { m_customAttributesHasBeenSet = true; m_customAttributes = std::forward<CustomAttributesT>(value); }
+    template<typename CustomAttributesT = Aws::Vector<SchemaAttributeType>>
+    AddCustomAttributesRequest& WithCustomAttributes(CustomAttributesT&& value) { SetCustomAttributes(std::forward<CustomAttributesT>(value)); return *this;}
+    template<typename CustomAttributesT = SchemaAttributeType>
+    AddCustomAttributesRequest& AddCustomAttributes(CustomAttributesT&& value) { m_customAttributesHasBeenSet = true; m_customAttributes.emplace_back(std::forward<CustomAttributesT>(value)); return *this; }
     ///@}
   private:
 

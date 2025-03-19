@@ -18,23 +18,7 @@ namespace Lambda
 namespace Model
 {
 
-ProvisionedConcurrencyConfigListItem::ProvisionedConcurrencyConfigListItem() : 
-    m_functionArnHasBeenSet(false),
-    m_requestedProvisionedConcurrentExecutions(0),
-    m_requestedProvisionedConcurrentExecutionsHasBeenSet(false),
-    m_availableProvisionedConcurrentExecutions(0),
-    m_availableProvisionedConcurrentExecutionsHasBeenSet(false),
-    m_allocatedProvisionedConcurrentExecutions(0),
-    m_allocatedProvisionedConcurrentExecutionsHasBeenSet(false),
-    m_status(ProvisionedConcurrencyStatusEnum::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false)
-{
-}
-
 ProvisionedConcurrencyConfigListItem::ProvisionedConcurrencyConfigListItem(JsonView jsonValue)
-  : ProvisionedConcurrencyConfigListItem()
 {
   *this = jsonValue;
 }
@@ -44,52 +28,38 @@ ProvisionedConcurrencyConfigListItem& ProvisionedConcurrencyConfigListItem::oper
   if(jsonValue.ValueExists("FunctionArn"))
   {
     m_functionArn = jsonValue.GetString("FunctionArn");
-
     m_functionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestedProvisionedConcurrentExecutions"))
   {
     m_requestedProvisionedConcurrentExecutions = jsonValue.GetInteger("RequestedProvisionedConcurrentExecutions");
-
     m_requestedProvisionedConcurrentExecutionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailableProvisionedConcurrentExecutions"))
   {
     m_availableProvisionedConcurrentExecutions = jsonValue.GetInteger("AvailableProvisionedConcurrentExecutions");
-
     m_availableProvisionedConcurrentExecutionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllocatedProvisionedConcurrentExecutions"))
   {
     m_allocatedProvisionedConcurrentExecutions = jsonValue.GetInteger("AllocatedProvisionedConcurrentExecutions");
-
     m_allocatedProvisionedConcurrentExecutionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ProvisionedConcurrencyStatusEnumMapper::GetProvisionedConcurrencyStatusEnumForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusReason"))
   {
     m_statusReason = jsonValue.GetString("StatusReason");
-
     m_statusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModified"))
   {
     m_lastModified = jsonValue.GetString("LastModified");
-
     m_lastModifiedHasBeenSet = true;
   }
-
   return *this;
 }
 

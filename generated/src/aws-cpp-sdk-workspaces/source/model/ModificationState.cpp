@@ -18,16 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-ModificationState::ModificationState() : 
-    m_resource(ModificationResourceEnum::NOT_SET),
-    m_resourceHasBeenSet(false),
-    m_state(ModificationStateEnum::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 ModificationState::ModificationState(JsonView jsonValue)
-  : ModificationState()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ModificationState& ModificationState::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Resource"))
   {
     m_resource = ModificationResourceEnumMapper::GetModificationResourceEnumForName(jsonValue.GetString("Resource"));
-
     m_resourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = ModificationStateEnumMapper::GetModificationStateEnumForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

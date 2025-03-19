@@ -10,14 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-BundleInstanceRequest::BundleInstanceRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_storageHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String BundleInstanceRequest::SerializePayload() const
 {
   Aws::StringStream ss;

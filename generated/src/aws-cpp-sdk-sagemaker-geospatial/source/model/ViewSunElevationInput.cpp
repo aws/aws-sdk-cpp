@@ -18,16 +18,7 @@ namespace SageMakerGeospatial
 namespace Model
 {
 
-ViewSunElevationInput::ViewSunElevationInput() : 
-    m_lowerBound(0.0),
-    m_lowerBoundHasBeenSet(false),
-    m_upperBound(0.0),
-    m_upperBoundHasBeenSet(false)
-{
-}
-
 ViewSunElevationInput::ViewSunElevationInput(JsonView jsonValue)
-  : ViewSunElevationInput()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ViewSunElevationInput& ViewSunElevationInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LowerBound"))
   {
     m_lowerBound = jsonValue.GetDouble("LowerBound");
-
     m_lowerBoundHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpperBound"))
   {
     m_upperBound = jsonValue.GetDouble("UpperBound");
-
     m_upperBoundHasBeenSet = true;
   }
-
   return *this;
 }
 

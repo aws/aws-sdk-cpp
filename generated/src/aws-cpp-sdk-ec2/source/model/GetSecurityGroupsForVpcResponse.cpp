@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSecurityGroupsForVpcResponse::GetSecurityGroupsForVpcResponse()
-{
-}
-
 GetSecurityGroupsForVpcResponse::GetSecurityGroupsForVpcResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ GetSecurityGroupsForVpcResponse& GetSecurityGroupsForVpcResponse::operator =(con
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
     XmlNode securityGroupForVpcsNode = resultNode.FirstChild("securityGroupForVpcSet");
     if(!securityGroupForVpcsNode.IsNull())
     {
       XmlNode securityGroupForVpcsMember = securityGroupForVpcsNode.FirstChild("item");
+      m_securityGroupForVpcsHasBeenSet = !securityGroupForVpcsMember.IsNull();
       while(!securityGroupForVpcsMember.IsNull())
       {
         m_securityGroupForVpcs.push_back(securityGroupForVpcsMember);
         securityGroupForVpcsMember = securityGroupForVpcsMember.NextNode("item");
       }
 
+      m_securityGroupForVpcsHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ GetSecurityGroupsForVpcResponse& GetSecurityGroupsForVpcResponse::operator =(con
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::GetSecurityGroupsForVpcResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

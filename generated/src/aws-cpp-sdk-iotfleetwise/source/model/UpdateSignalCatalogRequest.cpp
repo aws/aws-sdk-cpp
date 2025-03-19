@@ -12,15 +12,6 @@ using namespace Aws::IoTFleetWise::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSignalCatalogRequest::UpdateSignalCatalogRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_nodesToAddHasBeenSet(false),
-    m_nodesToUpdateHasBeenSet(false),
-    m_nodesToRemoveHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSignalCatalogRequest::SerializePayload() const
 {
   JsonValue payload;

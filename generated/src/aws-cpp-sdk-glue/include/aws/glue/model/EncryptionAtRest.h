@@ -33,7 +33,7 @@ namespace Model
   class EncryptionAtRest
   {
   public:
-    AWS_GLUE_API EncryptionAtRest();
+    AWS_GLUE_API EncryptionAtRest() = default;
     AWS_GLUE_API EncryptionAtRest(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API EncryptionAtRest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,22 @@ namespace Model
     /**
      * <p>The encryption-at-rest mode for encrypting Data Catalog data.</p>
      */
-    inline const CatalogEncryptionMode& GetCatalogEncryptionMode() const{ return m_catalogEncryptionMode; }
+    inline CatalogEncryptionMode GetCatalogEncryptionMode() const { return m_catalogEncryptionMode; }
     inline bool CatalogEncryptionModeHasBeenSet() const { return m_catalogEncryptionModeHasBeenSet; }
-    inline void SetCatalogEncryptionMode(const CatalogEncryptionMode& value) { m_catalogEncryptionModeHasBeenSet = true; m_catalogEncryptionMode = value; }
-    inline void SetCatalogEncryptionMode(CatalogEncryptionMode&& value) { m_catalogEncryptionModeHasBeenSet = true; m_catalogEncryptionMode = std::move(value); }
-    inline EncryptionAtRest& WithCatalogEncryptionMode(const CatalogEncryptionMode& value) { SetCatalogEncryptionMode(value); return *this;}
-    inline EncryptionAtRest& WithCatalogEncryptionMode(CatalogEncryptionMode&& value) { SetCatalogEncryptionMode(std::move(value)); return *this;}
+    inline void SetCatalogEncryptionMode(CatalogEncryptionMode value) { m_catalogEncryptionModeHasBeenSet = true; m_catalogEncryptionMode = value; }
+    inline EncryptionAtRest& WithCatalogEncryptionMode(CatalogEncryptionMode value) { SetCatalogEncryptionMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the KMS key to use for encryption at rest.</p>
      */
-    inline const Aws::String& GetSseAwsKmsKeyId() const{ return m_sseAwsKmsKeyId; }
+    inline const Aws::String& GetSseAwsKmsKeyId() const { return m_sseAwsKmsKeyId; }
     inline bool SseAwsKmsKeyIdHasBeenSet() const { return m_sseAwsKmsKeyIdHasBeenSet; }
-    inline void SetSseAwsKmsKeyId(const Aws::String& value) { m_sseAwsKmsKeyIdHasBeenSet = true; m_sseAwsKmsKeyId = value; }
-    inline void SetSseAwsKmsKeyId(Aws::String&& value) { m_sseAwsKmsKeyIdHasBeenSet = true; m_sseAwsKmsKeyId = std::move(value); }
-    inline void SetSseAwsKmsKeyId(const char* value) { m_sseAwsKmsKeyIdHasBeenSet = true; m_sseAwsKmsKeyId.assign(value); }
-    inline EncryptionAtRest& WithSseAwsKmsKeyId(const Aws::String& value) { SetSseAwsKmsKeyId(value); return *this;}
-    inline EncryptionAtRest& WithSseAwsKmsKeyId(Aws::String&& value) { SetSseAwsKmsKeyId(std::move(value)); return *this;}
-    inline EncryptionAtRest& WithSseAwsKmsKeyId(const char* value) { SetSseAwsKmsKeyId(value); return *this;}
+    template<typename SseAwsKmsKeyIdT = Aws::String>
+    void SetSseAwsKmsKeyId(SseAwsKmsKeyIdT&& value) { m_sseAwsKmsKeyIdHasBeenSet = true; m_sseAwsKmsKeyId = std::forward<SseAwsKmsKeyIdT>(value); }
+    template<typename SseAwsKmsKeyIdT = Aws::String>
+    EncryptionAtRest& WithSseAwsKmsKeyId(SseAwsKmsKeyIdT&& value) { SetSseAwsKmsKeyId(std::forward<SseAwsKmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,18 +66,16 @@ namespace Model
      * <p>The role that Glue assumes to encrypt and decrypt the Data Catalog objects on
      * the caller's behalf.</p>
      */
-    inline const Aws::String& GetCatalogEncryptionServiceRole() const{ return m_catalogEncryptionServiceRole; }
+    inline const Aws::String& GetCatalogEncryptionServiceRole() const { return m_catalogEncryptionServiceRole; }
     inline bool CatalogEncryptionServiceRoleHasBeenSet() const { return m_catalogEncryptionServiceRoleHasBeenSet; }
-    inline void SetCatalogEncryptionServiceRole(const Aws::String& value) { m_catalogEncryptionServiceRoleHasBeenSet = true; m_catalogEncryptionServiceRole = value; }
-    inline void SetCatalogEncryptionServiceRole(Aws::String&& value) { m_catalogEncryptionServiceRoleHasBeenSet = true; m_catalogEncryptionServiceRole = std::move(value); }
-    inline void SetCatalogEncryptionServiceRole(const char* value) { m_catalogEncryptionServiceRoleHasBeenSet = true; m_catalogEncryptionServiceRole.assign(value); }
-    inline EncryptionAtRest& WithCatalogEncryptionServiceRole(const Aws::String& value) { SetCatalogEncryptionServiceRole(value); return *this;}
-    inline EncryptionAtRest& WithCatalogEncryptionServiceRole(Aws::String&& value) { SetCatalogEncryptionServiceRole(std::move(value)); return *this;}
-    inline EncryptionAtRest& WithCatalogEncryptionServiceRole(const char* value) { SetCatalogEncryptionServiceRole(value); return *this;}
+    template<typename CatalogEncryptionServiceRoleT = Aws::String>
+    void SetCatalogEncryptionServiceRole(CatalogEncryptionServiceRoleT&& value) { m_catalogEncryptionServiceRoleHasBeenSet = true; m_catalogEncryptionServiceRole = std::forward<CatalogEncryptionServiceRoleT>(value); }
+    template<typename CatalogEncryptionServiceRoleT = Aws::String>
+    EncryptionAtRest& WithCatalogEncryptionServiceRole(CatalogEncryptionServiceRoleT&& value) { SetCatalogEncryptionServiceRole(std::forward<CatalogEncryptionServiceRoleT>(value)); return *this;}
     ///@}
   private:
 
-    CatalogEncryptionMode m_catalogEncryptionMode;
+    CatalogEncryptionMode m_catalogEncryptionMode{CatalogEncryptionMode::NOT_SET};
     bool m_catalogEncryptionModeHasBeenSet = false;
 
     Aws::String m_sseAwsKmsKeyId;

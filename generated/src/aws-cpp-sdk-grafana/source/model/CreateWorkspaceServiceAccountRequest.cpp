@@ -12,14 +12,6 @@ using namespace Aws::ManagedGrafana::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateWorkspaceServiceAccountRequest::CreateWorkspaceServiceAccountRequest() : 
-    m_grafanaRole(Role::NOT_SET),
-    m_grafanaRoleHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_workspaceIdHasBeenSet(false)
-{
-}
-
 Aws::String CreateWorkspaceServiceAccountRequest::SerializePayload() const
 {
   JsonValue payload;

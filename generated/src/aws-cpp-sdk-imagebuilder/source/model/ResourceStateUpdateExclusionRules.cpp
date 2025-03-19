@@ -18,13 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-ResourceStateUpdateExclusionRules::ResourceStateUpdateExclusionRules() : 
-    m_amisHasBeenSet(false)
-{
-}
-
 ResourceStateUpdateExclusionRules::ResourceStateUpdateExclusionRules(JsonView jsonValue)
-  : ResourceStateUpdateExclusionRules()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ResourceStateUpdateExclusionRules& ResourceStateUpdateExclusionRules::operator =
   if(jsonValue.ValueExists("amis"))
   {
     m_amis = jsonValue.GetObject("amis");
-
     m_amisHasBeenSet = true;
   }
-
   return *this;
 }
 

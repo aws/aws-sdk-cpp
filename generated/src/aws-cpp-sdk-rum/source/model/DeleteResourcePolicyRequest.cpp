@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteResourcePolicyRequest::DeleteResourcePolicyRequest() : 
-    m_nameHasBeenSet(false),
-    m_policyRevisionIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteResourcePolicyRequest::SerializePayload() const
 {
   return {};

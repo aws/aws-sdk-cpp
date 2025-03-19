@@ -31,7 +31,7 @@ namespace Model
   class LineageRunDetails
   {
   public:
-    AWS_DATAZONE_API LineageRunDetails();
+    AWS_DATAZONE_API LineageRunDetails() = default;
     AWS_DATAZONE_API LineageRunDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API LineageRunDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The SQL query run details of a data lineage run.</p>
      */
-    inline const LineageSqlQueryRunDetails& GetSqlQueryRunDetails() const{ return m_sqlQueryRunDetails; }
+    inline const LineageSqlQueryRunDetails& GetSqlQueryRunDetails() const { return m_sqlQueryRunDetails; }
     inline bool SqlQueryRunDetailsHasBeenSet() const { return m_sqlQueryRunDetailsHasBeenSet; }
-    inline void SetSqlQueryRunDetails(const LineageSqlQueryRunDetails& value) { m_sqlQueryRunDetailsHasBeenSet = true; m_sqlQueryRunDetails = value; }
-    inline void SetSqlQueryRunDetails(LineageSqlQueryRunDetails&& value) { m_sqlQueryRunDetailsHasBeenSet = true; m_sqlQueryRunDetails = std::move(value); }
-    inline LineageRunDetails& WithSqlQueryRunDetails(const LineageSqlQueryRunDetails& value) { SetSqlQueryRunDetails(value); return *this;}
-    inline LineageRunDetails& WithSqlQueryRunDetails(LineageSqlQueryRunDetails&& value) { SetSqlQueryRunDetails(std::move(value)); return *this;}
+    template<typename SqlQueryRunDetailsT = LineageSqlQueryRunDetails>
+    void SetSqlQueryRunDetails(SqlQueryRunDetailsT&& value) { m_sqlQueryRunDetailsHasBeenSet = true; m_sqlQueryRunDetails = std::forward<SqlQueryRunDetailsT>(value); }
+    template<typename SqlQueryRunDetailsT = LineageSqlQueryRunDetails>
+    LineageRunDetails& WithSqlQueryRunDetails(SqlQueryRunDetailsT&& value) { SetSqlQueryRunDetails(std::forward<SqlQueryRunDetailsT>(value)); return *this;}
     ///@}
   private:
 

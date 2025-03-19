@@ -18,19 +18,7 @@ namespace AppConfig
 namespace Model
 {
 
-DeploymentEvent::DeploymentEvent() : 
-    m_eventType(DeploymentEventType::NOT_SET),
-    m_eventTypeHasBeenSet(false),
-    m_triggeredBy(TriggeredBy::NOT_SET),
-    m_triggeredByHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_actionInvocationsHasBeenSet(false),
-    m_occurredAtHasBeenSet(false)
-{
-}
-
 DeploymentEvent::DeploymentEvent(JsonView jsonValue)
-  : DeploymentEvent()
 {
   *this = jsonValue;
 }
@@ -40,24 +28,18 @@ DeploymentEvent& DeploymentEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EventType"))
   {
     m_eventType = DeploymentEventTypeMapper::GetDeploymentEventTypeForName(jsonValue.GetString("EventType"));
-
     m_eventTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TriggeredBy"))
   {
     m_triggeredBy = TriggeredByMapper::GetTriggeredByForName(jsonValue.GetString("TriggeredBy"));
-
     m_triggeredByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActionInvocations"))
   {
     Aws::Utils::Array<JsonView> actionInvocationsJsonList = jsonValue.GetArray("ActionInvocations");
@@ -67,14 +49,11 @@ DeploymentEvent& DeploymentEvent::operator =(JsonView jsonValue)
     }
     m_actionInvocationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OccurredAt"))
   {
     m_occurredAt = jsonValue.GetString("OccurredAt");
-
     m_occurredAtHasBeenSet = true;
   }
-
   return *this;
 }
 

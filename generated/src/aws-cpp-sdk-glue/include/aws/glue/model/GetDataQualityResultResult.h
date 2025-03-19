@@ -33,7 +33,7 @@ namespace Model
   class GetDataQualityResultResult
   {
   public:
-    AWS_GLUE_API GetDataQualityResultResult();
+    AWS_GLUE_API GetDataQualityResultResult() = default;
     AWS_GLUE_API GetDataQualityResultResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUE_API GetDataQualityResultResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,26 +42,22 @@ namespace Model
     /**
      * <p>A unique result ID for the data quality result.</p>
      */
-    inline const Aws::String& GetResultId() const{ return m_resultId; }
-    inline void SetResultId(const Aws::String& value) { m_resultId = value; }
-    inline void SetResultId(Aws::String&& value) { m_resultId = std::move(value); }
-    inline void SetResultId(const char* value) { m_resultId.assign(value); }
-    inline GetDataQualityResultResult& WithResultId(const Aws::String& value) { SetResultId(value); return *this;}
-    inline GetDataQualityResultResult& WithResultId(Aws::String&& value) { SetResultId(std::move(value)); return *this;}
-    inline GetDataQualityResultResult& WithResultId(const char* value) { SetResultId(value); return *this;}
+    inline const Aws::String& GetResultId() const { return m_resultId; }
+    template<typename ResultIdT = Aws::String>
+    void SetResultId(ResultIdT&& value) { m_resultIdHasBeenSet = true; m_resultId = std::forward<ResultIdT>(value); }
+    template<typename ResultIdT = Aws::String>
+    GetDataQualityResultResult& WithResultId(ResultIdT&& value) { SetResultId(std::forward<ResultIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Profile ID for the data quality result.</p>
      */
-    inline const Aws::String& GetProfileId() const{ return m_profileId; }
-    inline void SetProfileId(const Aws::String& value) { m_profileId = value; }
-    inline void SetProfileId(Aws::String&& value) { m_profileId = std::move(value); }
-    inline void SetProfileId(const char* value) { m_profileId.assign(value); }
-    inline GetDataQualityResultResult& WithProfileId(const Aws::String& value) { SetProfileId(value); return *this;}
-    inline GetDataQualityResultResult& WithProfileId(Aws::String&& value) { SetProfileId(std::move(value)); return *this;}
-    inline GetDataQualityResultResult& WithProfileId(const char* value) { SetProfileId(value); return *this;}
+    inline const Aws::String& GetProfileId() const { return m_profileId; }
+    template<typename ProfileIdT = Aws::String>
+    void SetProfileId(ProfileIdT&& value) { m_profileIdHasBeenSet = true; m_profileId = std::forward<ProfileIdT>(value); }
+    template<typename ProfileIdT = Aws::String>
+    GetDataQualityResultResult& WithProfileId(ProfileIdT&& value) { SetProfileId(std::forward<ProfileIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,8 +65,8 @@ namespace Model
      * <p>An aggregate data quality score. Represents the ratio of rules that passed to
      * the total number of rules.</p>
      */
-    inline double GetScore() const{ return m_score; }
-    inline void SetScore(double value) { m_score = value; }
+    inline double GetScore() const { return m_score; }
+    inline void SetScore(double value) { m_scoreHasBeenSet = true; m_score = value; }
     inline GetDataQualityResultResult& WithScore(double value) { SetScore(value); return *this;}
     ///@}
 
@@ -78,24 +74,22 @@ namespace Model
     /**
      * <p>The table associated with the data quality result, if any.</p>
      */
-    inline const DataSource& GetDataSource() const{ return m_dataSource; }
-    inline void SetDataSource(const DataSource& value) { m_dataSource = value; }
-    inline void SetDataSource(DataSource&& value) { m_dataSource = std::move(value); }
-    inline GetDataQualityResultResult& WithDataSource(const DataSource& value) { SetDataSource(value); return *this;}
-    inline GetDataQualityResultResult& WithDataSource(DataSource&& value) { SetDataSource(std::move(value)); return *this;}
+    inline const DataSource& GetDataSource() const { return m_dataSource; }
+    template<typename DataSourceT = DataSource>
+    void SetDataSource(DataSourceT&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::forward<DataSourceT>(value); }
+    template<typename DataSourceT = DataSource>
+    GetDataQualityResultResult& WithDataSource(DataSourceT&& value) { SetDataSource(std::forward<DataSourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the ruleset associated with the data quality result.</p>
      */
-    inline const Aws::String& GetRulesetName() const{ return m_rulesetName; }
-    inline void SetRulesetName(const Aws::String& value) { m_rulesetName = value; }
-    inline void SetRulesetName(Aws::String&& value) { m_rulesetName = std::move(value); }
-    inline void SetRulesetName(const char* value) { m_rulesetName.assign(value); }
-    inline GetDataQualityResultResult& WithRulesetName(const Aws::String& value) { SetRulesetName(value); return *this;}
-    inline GetDataQualityResultResult& WithRulesetName(Aws::String&& value) { SetRulesetName(std::move(value)); return *this;}
-    inline GetDataQualityResultResult& WithRulesetName(const char* value) { SetRulesetName(value); return *this;}
+    inline const Aws::String& GetRulesetName() const { return m_rulesetName; }
+    template<typename RulesetNameT = Aws::String>
+    void SetRulesetName(RulesetNameT&& value) { m_rulesetNameHasBeenSet = true; m_rulesetName = std::forward<RulesetNameT>(value); }
+    template<typename RulesetNameT = Aws::String>
+    GetDataQualityResultResult& WithRulesetName(RulesetNameT&& value) { SetRulesetName(std::forward<RulesetNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,24 +99,22 @@ namespace Model
      * of multiple nodes, the <code>evaluationContext</code> can differentiate the
      * nodes.</p>
      */
-    inline const Aws::String& GetEvaluationContext() const{ return m_evaluationContext; }
-    inline void SetEvaluationContext(const Aws::String& value) { m_evaluationContext = value; }
-    inline void SetEvaluationContext(Aws::String&& value) { m_evaluationContext = std::move(value); }
-    inline void SetEvaluationContext(const char* value) { m_evaluationContext.assign(value); }
-    inline GetDataQualityResultResult& WithEvaluationContext(const Aws::String& value) { SetEvaluationContext(value); return *this;}
-    inline GetDataQualityResultResult& WithEvaluationContext(Aws::String&& value) { SetEvaluationContext(std::move(value)); return *this;}
-    inline GetDataQualityResultResult& WithEvaluationContext(const char* value) { SetEvaluationContext(value); return *this;}
+    inline const Aws::String& GetEvaluationContext() const { return m_evaluationContext; }
+    template<typename EvaluationContextT = Aws::String>
+    void SetEvaluationContext(EvaluationContextT&& value) { m_evaluationContextHasBeenSet = true; m_evaluationContext = std::forward<EvaluationContextT>(value); }
+    template<typename EvaluationContextT = Aws::String>
+    GetDataQualityResultResult& WithEvaluationContext(EvaluationContextT&& value) { SetEvaluationContext(std::forward<EvaluationContextT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time when the run for this data quality result started.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartedOn() const{ return m_startedOn; }
-    inline void SetStartedOn(const Aws::Utils::DateTime& value) { m_startedOn = value; }
-    inline void SetStartedOn(Aws::Utils::DateTime&& value) { m_startedOn = std::move(value); }
-    inline GetDataQualityResultResult& WithStartedOn(const Aws::Utils::DateTime& value) { SetStartedOn(value); return *this;}
-    inline GetDataQualityResultResult& WithStartedOn(Aws::Utils::DateTime&& value) { SetStartedOn(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetStartedOn() const { return m_startedOn; }
+    template<typename StartedOnT = Aws::Utils::DateTime>
+    void SetStartedOn(StartedOnT&& value) { m_startedOnHasBeenSet = true; m_startedOn = std::forward<StartedOnT>(value); }
+    template<typename StartedOnT = Aws::Utils::DateTime>
+    GetDataQualityResultResult& WithStartedOn(StartedOnT&& value) { SetStartedOn(std::forward<StartedOnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -130,50 +122,44 @@ namespace Model
      * <p>The date and time when the run for this data quality result was
      * completed.</p>
      */
-    inline const Aws::Utils::DateTime& GetCompletedOn() const{ return m_completedOn; }
-    inline void SetCompletedOn(const Aws::Utils::DateTime& value) { m_completedOn = value; }
-    inline void SetCompletedOn(Aws::Utils::DateTime&& value) { m_completedOn = std::move(value); }
-    inline GetDataQualityResultResult& WithCompletedOn(const Aws::Utils::DateTime& value) { SetCompletedOn(value); return *this;}
-    inline GetDataQualityResultResult& WithCompletedOn(Aws::Utils::DateTime&& value) { SetCompletedOn(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCompletedOn() const { return m_completedOn; }
+    template<typename CompletedOnT = Aws::Utils::DateTime>
+    void SetCompletedOn(CompletedOnT&& value) { m_completedOnHasBeenSet = true; m_completedOn = std::forward<CompletedOnT>(value); }
+    template<typename CompletedOnT = Aws::Utils::DateTime>
+    GetDataQualityResultResult& WithCompletedOn(CompletedOnT&& value) { SetCompletedOn(std::forward<CompletedOnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The job name associated with the data quality result, if any.</p>
      */
-    inline const Aws::String& GetJobName() const{ return m_jobName; }
-    inline void SetJobName(const Aws::String& value) { m_jobName = value; }
-    inline void SetJobName(Aws::String&& value) { m_jobName = std::move(value); }
-    inline void SetJobName(const char* value) { m_jobName.assign(value); }
-    inline GetDataQualityResultResult& WithJobName(const Aws::String& value) { SetJobName(value); return *this;}
-    inline GetDataQualityResultResult& WithJobName(Aws::String&& value) { SetJobName(std::move(value)); return *this;}
-    inline GetDataQualityResultResult& WithJobName(const char* value) { SetJobName(value); return *this;}
+    inline const Aws::String& GetJobName() const { return m_jobName; }
+    template<typename JobNameT = Aws::String>
+    void SetJobName(JobNameT&& value) { m_jobNameHasBeenSet = true; m_jobName = std::forward<JobNameT>(value); }
+    template<typename JobNameT = Aws::String>
+    GetDataQualityResultResult& WithJobName(JobNameT&& value) { SetJobName(std::forward<JobNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The job run ID associated with the data quality result, if any.</p>
      */
-    inline const Aws::String& GetJobRunId() const{ return m_jobRunId; }
-    inline void SetJobRunId(const Aws::String& value) { m_jobRunId = value; }
-    inline void SetJobRunId(Aws::String&& value) { m_jobRunId = std::move(value); }
-    inline void SetJobRunId(const char* value) { m_jobRunId.assign(value); }
-    inline GetDataQualityResultResult& WithJobRunId(const Aws::String& value) { SetJobRunId(value); return *this;}
-    inline GetDataQualityResultResult& WithJobRunId(Aws::String&& value) { SetJobRunId(std::move(value)); return *this;}
-    inline GetDataQualityResultResult& WithJobRunId(const char* value) { SetJobRunId(value); return *this;}
+    inline const Aws::String& GetJobRunId() const { return m_jobRunId; }
+    template<typename JobRunIdT = Aws::String>
+    void SetJobRunId(JobRunIdT&& value) { m_jobRunIdHasBeenSet = true; m_jobRunId = std::forward<JobRunIdT>(value); }
+    template<typename JobRunIdT = Aws::String>
+    GetDataQualityResultResult& WithJobRunId(JobRunIdT&& value) { SetJobRunId(std::forward<JobRunIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique run ID associated with the ruleset evaluation.</p>
      */
-    inline const Aws::String& GetRulesetEvaluationRunId() const{ return m_rulesetEvaluationRunId; }
-    inline void SetRulesetEvaluationRunId(const Aws::String& value) { m_rulesetEvaluationRunId = value; }
-    inline void SetRulesetEvaluationRunId(Aws::String&& value) { m_rulesetEvaluationRunId = std::move(value); }
-    inline void SetRulesetEvaluationRunId(const char* value) { m_rulesetEvaluationRunId.assign(value); }
-    inline GetDataQualityResultResult& WithRulesetEvaluationRunId(const Aws::String& value) { SetRulesetEvaluationRunId(value); return *this;}
-    inline GetDataQualityResultResult& WithRulesetEvaluationRunId(Aws::String&& value) { SetRulesetEvaluationRunId(std::move(value)); return *this;}
-    inline GetDataQualityResultResult& WithRulesetEvaluationRunId(const char* value) { SetRulesetEvaluationRunId(value); return *this;}
+    inline const Aws::String& GetRulesetEvaluationRunId() const { return m_rulesetEvaluationRunId; }
+    template<typename RulesetEvaluationRunIdT = Aws::String>
+    void SetRulesetEvaluationRunId(RulesetEvaluationRunIdT&& value) { m_rulesetEvaluationRunIdHasBeenSet = true; m_rulesetEvaluationRunId = std::forward<RulesetEvaluationRunIdT>(value); }
+    template<typename RulesetEvaluationRunIdT = Aws::String>
+    GetDataQualityResultResult& WithRulesetEvaluationRunId(RulesetEvaluationRunIdT&& value) { SetRulesetEvaluationRunId(std::forward<RulesetEvaluationRunIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -181,13 +167,13 @@ namespace Model
      * <p>A list of <code>DataQualityRuleResult</code> objects representing the results
      * for each rule. </p>
      */
-    inline const Aws::Vector<DataQualityRuleResult>& GetRuleResults() const{ return m_ruleResults; }
-    inline void SetRuleResults(const Aws::Vector<DataQualityRuleResult>& value) { m_ruleResults = value; }
-    inline void SetRuleResults(Aws::Vector<DataQualityRuleResult>&& value) { m_ruleResults = std::move(value); }
-    inline GetDataQualityResultResult& WithRuleResults(const Aws::Vector<DataQualityRuleResult>& value) { SetRuleResults(value); return *this;}
-    inline GetDataQualityResultResult& WithRuleResults(Aws::Vector<DataQualityRuleResult>&& value) { SetRuleResults(std::move(value)); return *this;}
-    inline GetDataQualityResultResult& AddRuleResults(const DataQualityRuleResult& value) { m_ruleResults.push_back(value); return *this; }
-    inline GetDataQualityResultResult& AddRuleResults(DataQualityRuleResult&& value) { m_ruleResults.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DataQualityRuleResult>& GetRuleResults() const { return m_ruleResults; }
+    template<typename RuleResultsT = Aws::Vector<DataQualityRuleResult>>
+    void SetRuleResults(RuleResultsT&& value) { m_ruleResultsHasBeenSet = true; m_ruleResults = std::forward<RuleResultsT>(value); }
+    template<typename RuleResultsT = Aws::Vector<DataQualityRuleResult>>
+    GetDataQualityResultResult& WithRuleResults(RuleResultsT&& value) { SetRuleResults(std::forward<RuleResultsT>(value)); return *this;}
+    template<typename RuleResultsT = DataQualityRuleResult>
+    GetDataQualityResultResult& AddRuleResults(RuleResultsT&& value) { m_ruleResultsHasBeenSet = true; m_ruleResults.emplace_back(std::forward<RuleResultsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -195,13 +181,13 @@ namespace Model
      * <p>A list of <code>DataQualityAnalyzerResult</code> objects representing the
      * results for each analyzer. </p>
      */
-    inline const Aws::Vector<DataQualityAnalyzerResult>& GetAnalyzerResults() const{ return m_analyzerResults; }
-    inline void SetAnalyzerResults(const Aws::Vector<DataQualityAnalyzerResult>& value) { m_analyzerResults = value; }
-    inline void SetAnalyzerResults(Aws::Vector<DataQualityAnalyzerResult>&& value) { m_analyzerResults = std::move(value); }
-    inline GetDataQualityResultResult& WithAnalyzerResults(const Aws::Vector<DataQualityAnalyzerResult>& value) { SetAnalyzerResults(value); return *this;}
-    inline GetDataQualityResultResult& WithAnalyzerResults(Aws::Vector<DataQualityAnalyzerResult>&& value) { SetAnalyzerResults(std::move(value)); return *this;}
-    inline GetDataQualityResultResult& AddAnalyzerResults(const DataQualityAnalyzerResult& value) { m_analyzerResults.push_back(value); return *this; }
-    inline GetDataQualityResultResult& AddAnalyzerResults(DataQualityAnalyzerResult&& value) { m_analyzerResults.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DataQualityAnalyzerResult>& GetAnalyzerResults() const { return m_analyzerResults; }
+    template<typename AnalyzerResultsT = Aws::Vector<DataQualityAnalyzerResult>>
+    void SetAnalyzerResults(AnalyzerResultsT&& value) { m_analyzerResultsHasBeenSet = true; m_analyzerResults = std::forward<AnalyzerResultsT>(value); }
+    template<typename AnalyzerResultsT = Aws::Vector<DataQualityAnalyzerResult>>
+    GetDataQualityResultResult& WithAnalyzerResults(AnalyzerResultsT&& value) { SetAnalyzerResults(std::forward<AnalyzerResultsT>(value)); return *this;}
+    template<typename AnalyzerResultsT = DataQualityAnalyzerResult>
+    GetDataQualityResultResult& AddAnalyzerResults(AnalyzerResultsT&& value) { m_analyzerResultsHasBeenSet = true; m_analyzerResults.emplace_back(std::forward<AnalyzerResultsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -209,56 +195,69 @@ namespace Model
      * <p>A list of <code>DataQualityObservation</code> objects representing the
      * observations generated after evaluating the rules and analyzers. </p>
      */
-    inline const Aws::Vector<DataQualityObservation>& GetObservations() const{ return m_observations; }
-    inline void SetObservations(const Aws::Vector<DataQualityObservation>& value) { m_observations = value; }
-    inline void SetObservations(Aws::Vector<DataQualityObservation>&& value) { m_observations = std::move(value); }
-    inline GetDataQualityResultResult& WithObservations(const Aws::Vector<DataQualityObservation>& value) { SetObservations(value); return *this;}
-    inline GetDataQualityResultResult& WithObservations(Aws::Vector<DataQualityObservation>&& value) { SetObservations(std::move(value)); return *this;}
-    inline GetDataQualityResultResult& AddObservations(const DataQualityObservation& value) { m_observations.push_back(value); return *this; }
-    inline GetDataQualityResultResult& AddObservations(DataQualityObservation&& value) { m_observations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DataQualityObservation>& GetObservations() const { return m_observations; }
+    template<typename ObservationsT = Aws::Vector<DataQualityObservation>>
+    void SetObservations(ObservationsT&& value) { m_observationsHasBeenSet = true; m_observations = std::forward<ObservationsT>(value); }
+    template<typename ObservationsT = Aws::Vector<DataQualityObservation>>
+    GetDataQualityResultResult& WithObservations(ObservationsT&& value) { SetObservations(std::forward<ObservationsT>(value)); return *this;}
+    template<typename ObservationsT = DataQualityObservation>
+    GetDataQualityResultResult& AddObservations(ObservationsT&& value) { m_observationsHasBeenSet = true; m_observations.emplace_back(std::forward<ObservationsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetDataQualityResultResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetDataQualityResultResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetDataQualityResultResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetDataQualityResultResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_resultId;
+    bool m_resultIdHasBeenSet = false;
 
     Aws::String m_profileId;
+    bool m_profileIdHasBeenSet = false;
 
-    double m_score;
+    double m_score{0.0};
+    bool m_scoreHasBeenSet = false;
 
     DataSource m_dataSource;
+    bool m_dataSourceHasBeenSet = false;
 
     Aws::String m_rulesetName;
+    bool m_rulesetNameHasBeenSet = false;
 
     Aws::String m_evaluationContext;
+    bool m_evaluationContextHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startedOn;
+    Aws::Utils::DateTime m_startedOn{};
+    bool m_startedOnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_completedOn;
+    Aws::Utils::DateTime m_completedOn{};
+    bool m_completedOnHasBeenSet = false;
 
     Aws::String m_jobName;
+    bool m_jobNameHasBeenSet = false;
 
     Aws::String m_jobRunId;
+    bool m_jobRunIdHasBeenSet = false;
 
     Aws::String m_rulesetEvaluationRunId;
+    bool m_rulesetEvaluationRunIdHasBeenSet = false;
 
     Aws::Vector<DataQualityRuleResult> m_ruleResults;
+    bool m_ruleResultsHasBeenSet = false;
 
     Aws::Vector<DataQualityAnalyzerResult> m_analyzerResults;
+    bool m_analyzerResultsHasBeenSet = false;
 
     Aws::Vector<DataQualityObservation> m_observations;
+    bool m_observationsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

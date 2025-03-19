@@ -12,11 +12,6 @@ using namespace Aws::Personalize::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeFeatureTransformationRequest::DescribeFeatureTransformationRequest() : 
-    m_featureTransformationArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeFeatureTransformationRequest::SerializePayload() const
 {
   JsonValue payload;

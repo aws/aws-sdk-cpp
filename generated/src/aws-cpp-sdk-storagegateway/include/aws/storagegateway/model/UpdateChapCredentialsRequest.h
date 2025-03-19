@@ -29,7 +29,7 @@ namespace Model
   class UpdateChapCredentialsRequest : public StorageGatewayRequest
   {
   public:
-    AWS_STORAGEGATEWAY_API UpdateChapCredentialsRequest();
+    AWS_STORAGEGATEWAY_API UpdateChapCredentialsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,14 +48,12 @@ namespace Model
      * <a>DescribeStorediSCSIVolumes</a> operation to return the TargetARN for
      * specified VolumeARN.</p>
      */
-    inline const Aws::String& GetTargetARN() const{ return m_targetARN; }
+    inline const Aws::String& GetTargetARN() const { return m_targetARN; }
     inline bool TargetARNHasBeenSet() const { return m_targetARNHasBeenSet; }
-    inline void SetTargetARN(const Aws::String& value) { m_targetARNHasBeenSet = true; m_targetARN = value; }
-    inline void SetTargetARN(Aws::String&& value) { m_targetARNHasBeenSet = true; m_targetARN = std::move(value); }
-    inline void SetTargetARN(const char* value) { m_targetARNHasBeenSet = true; m_targetARN.assign(value); }
-    inline UpdateChapCredentialsRequest& WithTargetARN(const Aws::String& value) { SetTargetARN(value); return *this;}
-    inline UpdateChapCredentialsRequest& WithTargetARN(Aws::String&& value) { SetTargetARN(std::move(value)); return *this;}
-    inline UpdateChapCredentialsRequest& WithTargetARN(const char* value) { SetTargetARN(value); return *this;}
+    template<typename TargetARNT = Aws::String>
+    void SetTargetARN(TargetARNT&& value) { m_targetARNHasBeenSet = true; m_targetARN = std::forward<TargetARNT>(value); }
+    template<typename TargetARNT = Aws::String>
+    UpdateChapCredentialsRequest& WithTargetARN(TargetARNT&& value) { SetTargetARN(std::forward<TargetARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,28 +62,24 @@ namespace Model
      * provide to participate in mutual CHAP with the target.</p>  <p>The secret
      * key must be between 12 and 16 bytes when encoded in UTF-8.</p> 
      */
-    inline const Aws::String& GetSecretToAuthenticateInitiator() const{ return m_secretToAuthenticateInitiator; }
+    inline const Aws::String& GetSecretToAuthenticateInitiator() const { return m_secretToAuthenticateInitiator; }
     inline bool SecretToAuthenticateInitiatorHasBeenSet() const { return m_secretToAuthenticateInitiatorHasBeenSet; }
-    inline void SetSecretToAuthenticateInitiator(const Aws::String& value) { m_secretToAuthenticateInitiatorHasBeenSet = true; m_secretToAuthenticateInitiator = value; }
-    inline void SetSecretToAuthenticateInitiator(Aws::String&& value) { m_secretToAuthenticateInitiatorHasBeenSet = true; m_secretToAuthenticateInitiator = std::move(value); }
-    inline void SetSecretToAuthenticateInitiator(const char* value) { m_secretToAuthenticateInitiatorHasBeenSet = true; m_secretToAuthenticateInitiator.assign(value); }
-    inline UpdateChapCredentialsRequest& WithSecretToAuthenticateInitiator(const Aws::String& value) { SetSecretToAuthenticateInitiator(value); return *this;}
-    inline UpdateChapCredentialsRequest& WithSecretToAuthenticateInitiator(Aws::String&& value) { SetSecretToAuthenticateInitiator(std::move(value)); return *this;}
-    inline UpdateChapCredentialsRequest& WithSecretToAuthenticateInitiator(const char* value) { SetSecretToAuthenticateInitiator(value); return *this;}
+    template<typename SecretToAuthenticateInitiatorT = Aws::String>
+    void SetSecretToAuthenticateInitiator(SecretToAuthenticateInitiatorT&& value) { m_secretToAuthenticateInitiatorHasBeenSet = true; m_secretToAuthenticateInitiator = std::forward<SecretToAuthenticateInitiatorT>(value); }
+    template<typename SecretToAuthenticateInitiatorT = Aws::String>
+    UpdateChapCredentialsRequest& WithSecretToAuthenticateInitiator(SecretToAuthenticateInitiatorT&& value) { SetSecretToAuthenticateInitiator(std::forward<SecretToAuthenticateInitiatorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The iSCSI initiator that connects to the target.</p>
      */
-    inline const Aws::String& GetInitiatorName() const{ return m_initiatorName; }
+    inline const Aws::String& GetInitiatorName() const { return m_initiatorName; }
     inline bool InitiatorNameHasBeenSet() const { return m_initiatorNameHasBeenSet; }
-    inline void SetInitiatorName(const Aws::String& value) { m_initiatorNameHasBeenSet = true; m_initiatorName = value; }
-    inline void SetInitiatorName(Aws::String&& value) { m_initiatorNameHasBeenSet = true; m_initiatorName = std::move(value); }
-    inline void SetInitiatorName(const char* value) { m_initiatorNameHasBeenSet = true; m_initiatorName.assign(value); }
-    inline UpdateChapCredentialsRequest& WithInitiatorName(const Aws::String& value) { SetInitiatorName(value); return *this;}
-    inline UpdateChapCredentialsRequest& WithInitiatorName(Aws::String&& value) { SetInitiatorName(std::move(value)); return *this;}
-    inline UpdateChapCredentialsRequest& WithInitiatorName(const char* value) { SetInitiatorName(value); return *this;}
+    template<typename InitiatorNameT = Aws::String>
+    void SetInitiatorName(InitiatorNameT&& value) { m_initiatorNameHasBeenSet = true; m_initiatorName = std::forward<InitiatorNameT>(value); }
+    template<typename InitiatorNameT = Aws::String>
+    UpdateChapCredentialsRequest& WithInitiatorName(InitiatorNameT&& value) { SetInitiatorName(std::forward<InitiatorNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,14 +89,12 @@ namespace Model
      * of 12. Maximum bytes of 16.</p>  <p>The secret key must be between 12 and
      * 16 bytes when encoded in UTF-8.</p> 
      */
-    inline const Aws::String& GetSecretToAuthenticateTarget() const{ return m_secretToAuthenticateTarget; }
+    inline const Aws::String& GetSecretToAuthenticateTarget() const { return m_secretToAuthenticateTarget; }
     inline bool SecretToAuthenticateTargetHasBeenSet() const { return m_secretToAuthenticateTargetHasBeenSet; }
-    inline void SetSecretToAuthenticateTarget(const Aws::String& value) { m_secretToAuthenticateTargetHasBeenSet = true; m_secretToAuthenticateTarget = value; }
-    inline void SetSecretToAuthenticateTarget(Aws::String&& value) { m_secretToAuthenticateTargetHasBeenSet = true; m_secretToAuthenticateTarget = std::move(value); }
-    inline void SetSecretToAuthenticateTarget(const char* value) { m_secretToAuthenticateTargetHasBeenSet = true; m_secretToAuthenticateTarget.assign(value); }
-    inline UpdateChapCredentialsRequest& WithSecretToAuthenticateTarget(const Aws::String& value) { SetSecretToAuthenticateTarget(value); return *this;}
-    inline UpdateChapCredentialsRequest& WithSecretToAuthenticateTarget(Aws::String&& value) { SetSecretToAuthenticateTarget(std::move(value)); return *this;}
-    inline UpdateChapCredentialsRequest& WithSecretToAuthenticateTarget(const char* value) { SetSecretToAuthenticateTarget(value); return *this;}
+    template<typename SecretToAuthenticateTargetT = Aws::String>
+    void SetSecretToAuthenticateTarget(SecretToAuthenticateTargetT&& value) { m_secretToAuthenticateTargetHasBeenSet = true; m_secretToAuthenticateTarget = std::forward<SecretToAuthenticateTargetT>(value); }
+    template<typename SecretToAuthenticateTargetT = Aws::String>
+    UpdateChapCredentialsRequest& WithSecretToAuthenticateTarget(SecretToAuthenticateTargetT&& value) { SetSecretToAuthenticateTarget(std::forward<SecretToAuthenticateTargetT>(value)); return *this;}
     ///@}
   private:
 

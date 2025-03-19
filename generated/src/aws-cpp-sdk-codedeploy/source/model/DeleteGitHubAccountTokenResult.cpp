@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteGitHubAccountTokenResult::DeleteGitHubAccountTokenResult()
-{
-}
-
 DeleteGitHubAccountTokenResult::DeleteGitHubAccountTokenResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DeleteGitHubAccountTokenResult& DeleteGitHubAccountTokenResult::operator =(const
   if(jsonValue.ValueExists("tokenName"))
   {
     m_tokenName = jsonValue.GetString("tokenName");
-
+    m_tokenNameHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

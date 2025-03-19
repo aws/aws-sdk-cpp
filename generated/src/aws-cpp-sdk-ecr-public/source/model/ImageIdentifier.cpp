@@ -18,14 +18,7 @@ namespace ECRPublic
 namespace Model
 {
 
-ImageIdentifier::ImageIdentifier() : 
-    m_imageDigestHasBeenSet(false),
-    m_imageTagHasBeenSet(false)
-{
-}
-
 ImageIdentifier::ImageIdentifier(JsonView jsonValue)
-  : ImageIdentifier()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ImageIdentifier& ImageIdentifier::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("imageDigest"))
   {
     m_imageDigest = jsonValue.GetString("imageDigest");
-
     m_imageDigestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageTag"))
   {
     m_imageTag = jsonValue.GetString("imageTag");
-
     m_imageTagHasBeenSet = true;
   }
-
   return *this;
 }
 

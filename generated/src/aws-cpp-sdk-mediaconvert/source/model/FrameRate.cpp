@@ -18,16 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-FrameRate::FrameRate() : 
-    m_denominator(0),
-    m_denominatorHasBeenSet(false),
-    m_numerator(0),
-    m_numeratorHasBeenSet(false)
-{
-}
-
 FrameRate::FrameRate(JsonView jsonValue)
-  : FrameRate()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ FrameRate& FrameRate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("denominator"))
   {
     m_denominator = jsonValue.GetInteger("denominator");
-
     m_denominatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numerator"))
   {
     m_numerator = jsonValue.GetInteger("numerator");
-
     m_numeratorHasBeenSet = true;
   }
-
   return *this;
 }
 

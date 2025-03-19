@@ -20,15 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-ManagedRule::ManagedRule() : 
-    m_templateNameHasBeenSet(false),
-    m_resourceARNHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 ManagedRule::ManagedRule(const XmlNode& xmlNode)
-  : ManagedRule()
 {
   *this = xmlNode;
 }
@@ -55,6 +47,7 @@ ManagedRule& ManagedRule::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("member");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

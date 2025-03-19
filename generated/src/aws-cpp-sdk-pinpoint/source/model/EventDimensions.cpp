@@ -18,15 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-EventDimensions::EventDimensions() : 
-    m_attributesHasBeenSet(false),
-    m_eventTypeHasBeenSet(false),
-    m_metricsHasBeenSet(false)
-{
-}
-
 EventDimensions::EventDimensions(JsonView jsonValue)
-  : EventDimensions()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ EventDimensions& EventDimensions::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventType"))
   {
     m_eventType = jsonValue.GetObject("EventType");
-
     m_eventTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Metrics"))
   {
     Aws::Map<Aws::String, JsonView> metricsJsonMap = jsonValue.GetObject("Metrics").GetAllObjects();
@@ -59,7 +48,6 @@ EventDimensions& EventDimensions::operator =(JsonView jsonValue)
     }
     m_metricsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,12 +12,6 @@ using namespace Aws::CodeBuild::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RetryBuildRequest::RetryBuildRequest() : 
-    m_idHasBeenSet(false),
-    m_idempotencyTokenHasBeenSet(false)
-{
-}
-
 Aws::String RetryBuildRequest::SerializePayload() const
 {
   JsonValue payload;

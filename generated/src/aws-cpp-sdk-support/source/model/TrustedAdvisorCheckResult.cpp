@@ -18,18 +18,7 @@ namespace Support
 namespace Model
 {
 
-TrustedAdvisorCheckResult::TrustedAdvisorCheckResult() : 
-    m_checkIdHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_resourcesSummaryHasBeenSet(false),
-    m_categorySpecificSummaryHasBeenSet(false),
-    m_flaggedResourcesHasBeenSet(false)
-{
-}
-
 TrustedAdvisorCheckResult::TrustedAdvisorCheckResult(JsonView jsonValue)
-  : TrustedAdvisorCheckResult()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ TrustedAdvisorCheckResult& TrustedAdvisorCheckResult::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("checkId"))
   {
     m_checkId = jsonValue.GetString("checkId");
-
     m_checkIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timestamp"))
   {
     m_timestamp = jsonValue.GetString("timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourcesSummary"))
   {
     m_resourcesSummary = jsonValue.GetObject("resourcesSummary");
-
     m_resourcesSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("categorySpecificSummary"))
   {
     m_categorySpecificSummary = jsonValue.GetObject("categorySpecificSummary");
-
     m_categorySpecificSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("flaggedResources"))
   {
     Aws::Utils::Array<JsonView> flaggedResourcesJsonList = jsonValue.GetArray("flaggedResources");
@@ -80,7 +59,6 @@ TrustedAdvisorCheckResult& TrustedAdvisorCheckResult::operator =(JsonView jsonVa
     }
     m_flaggedResourcesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeBundleTasksResponse::DescribeBundleTasksResponse()
-{
-}
-
 DescribeBundleTasksResponse::DescribeBundleTasksResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ DescribeBundleTasksResponse& DescribeBundleTasksResponse::operator =(const Aws::
     if(!bundleTasksNode.IsNull())
     {
       XmlNode bundleTasksMember = bundleTasksNode.FirstChild("item");
+      m_bundleTasksHasBeenSet = !bundleTasksMember.IsNull();
       while(!bundleTasksMember.IsNull())
       {
         m_bundleTasks.push_back(bundleTasksMember);
         bundleTasksMember = bundleTasksMember.NextNode("item");
       }
 
+      m_bundleTasksHasBeenSet = true;
     }
   }
 
@@ -56,6 +54,7 @@ DescribeBundleTasksResponse& DescribeBundleTasksResponse::operator =(const Aws::
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeBundleTasksResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

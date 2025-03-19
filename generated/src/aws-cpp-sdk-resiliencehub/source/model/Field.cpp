@@ -18,15 +18,7 @@ namespace ResilienceHub
 namespace Model
 {
 
-Field::Field() : 
-    m_aggregation(FieldAggregationType::NOT_SET),
-    m_aggregationHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Field::Field(JsonView jsonValue)
-  : Field()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Field& Field::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("aggregation"))
   {
     m_aggregation = FieldAggregationTypeMapper::GetFieldAggregationTypeForName(jsonValue.GetString("aggregation"));
-
     m_aggregationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

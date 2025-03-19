@@ -12,12 +12,6 @@ using namespace Aws::MediaConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RemoveFlowVpcInterfaceRequest::RemoveFlowVpcInterfaceRequest() : 
-    m_flowArnHasBeenSet(false),
-    m_vpcInterfaceNameHasBeenSet(false)
-{
-}
-
 Aws::String RemoveFlowVpcInterfaceRequest::SerializePayload() const
 {
   return {};

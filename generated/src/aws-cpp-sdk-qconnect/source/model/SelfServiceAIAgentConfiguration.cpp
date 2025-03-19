@@ -18,16 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-SelfServiceAIAgentConfiguration::SelfServiceAIAgentConfiguration() : 
-    m_associationConfigurationsHasBeenSet(false),
-    m_selfServiceAIGuardrailIdHasBeenSet(false),
-    m_selfServiceAnswerGenerationAIPromptIdHasBeenSet(false),
-    m_selfServicePreProcessingAIPromptIdHasBeenSet(false)
-{
-}
-
 SelfServiceAIAgentConfiguration::SelfServiceAIAgentConfiguration(JsonView jsonValue)
-  : SelfServiceAIAgentConfiguration()
 {
   *this = jsonValue;
 }
@@ -43,28 +34,21 @@ SelfServiceAIAgentConfiguration& SelfServiceAIAgentConfiguration::operator =(Jso
     }
     m_associationConfigurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("selfServiceAIGuardrailId"))
   {
     m_selfServiceAIGuardrailId = jsonValue.GetString("selfServiceAIGuardrailId");
-
     m_selfServiceAIGuardrailIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("selfServiceAnswerGenerationAIPromptId"))
   {
     m_selfServiceAnswerGenerationAIPromptId = jsonValue.GetString("selfServiceAnswerGenerationAIPromptId");
-
     m_selfServiceAnswerGenerationAIPromptIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("selfServicePreProcessingAIPromptId"))
   {
     m_selfServicePreProcessingAIPromptId = jsonValue.GetString("selfServicePreProcessingAIPromptId");
-
     m_selfServicePreProcessingAIPromptIdHasBeenSet = true;
   }
-
   return *this;
 }
 

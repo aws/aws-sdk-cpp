@@ -18,15 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-DedicatedIpPool::DedicatedIpPool() : 
-    m_poolNameHasBeenSet(false),
-    m_scalingMode(ScalingMode::NOT_SET),
-    m_scalingModeHasBeenSet(false)
-{
-}
-
 DedicatedIpPool::DedicatedIpPool(JsonView jsonValue)
-  : DedicatedIpPool()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DedicatedIpPool& DedicatedIpPool::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PoolName"))
   {
     m_poolName = jsonValue.GetString("PoolName");
-
     m_poolNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScalingMode"))
   {
     m_scalingMode = ScalingModeMapper::GetScalingModeForName(jsonValue.GetString("ScalingMode"));
-
     m_scalingModeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,21 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-RuleAction::RuleAction() : 
-    m_addHeaderHasBeenSet(false),
-    m_archiveHasBeenSet(false),
-    m_deliverToMailboxHasBeenSet(false),
-    m_deliverToQBusinessHasBeenSet(false),
-    m_dropHasBeenSet(false),
-    m_relayHasBeenSet(false),
-    m_replaceRecipientHasBeenSet(false),
-    m_sendHasBeenSet(false),
-    m_writeToS3HasBeenSet(false)
-{
-}
-
 RuleAction::RuleAction(JsonView jsonValue)
-  : RuleAction()
 {
   *this = jsonValue;
 }
@@ -42,66 +28,48 @@ RuleAction& RuleAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AddHeader"))
   {
     m_addHeader = jsonValue.GetObject("AddHeader");
-
     m_addHeaderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Archive"))
   {
     m_archive = jsonValue.GetObject("Archive");
-
     m_archiveHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeliverToMailbox"))
   {
     m_deliverToMailbox = jsonValue.GetObject("DeliverToMailbox");
-
     m_deliverToMailboxHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeliverToQBusiness"))
   {
     m_deliverToQBusiness = jsonValue.GetObject("DeliverToQBusiness");
-
     m_deliverToQBusinessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Drop"))
   {
     m_drop = jsonValue.GetObject("Drop");
-
     m_dropHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Relay"))
   {
     m_relay = jsonValue.GetObject("Relay");
-
     m_relayHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplaceRecipient"))
   {
     m_replaceRecipient = jsonValue.GetObject("ReplaceRecipient");
-
     m_replaceRecipientHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Send"))
   {
     m_send = jsonValue.GetObject("Send");
-
     m_sendHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WriteToS3"))
   {
     m_writeToS3 = jsonValue.GetObject("WriteToS3");
-
     m_writeToS3HasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::Macie2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetCustomDataIdentifiersRequest::BatchGetCustomDataIdentifiersRequest() : 
-    m_idsHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetCustomDataIdentifiersRequest::SerializePayload() const
 {
   JsonValue payload;

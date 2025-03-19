@@ -12,11 +12,6 @@ using namespace Aws::CodeGuruProfiler::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetNotificationConfigurationRequest::GetNotificationConfigurationRequest() : 
-    m_profilingGroupNameHasBeenSet(false)
-{
-}
-
 Aws::String GetNotificationConfigurationRequest::SerializePayload() const
 {
   return {};

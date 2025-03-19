@@ -18,14 +18,7 @@ namespace MTurk
 namespace Model
 {
 
-ReviewReport::ReviewReport() : 
-    m_reviewResultsHasBeenSet(false),
-    m_reviewActionsHasBeenSet(false)
-{
-}
-
 ReviewReport::ReviewReport(JsonView jsonValue)
-  : ReviewReport()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ ReviewReport& ReviewReport::operator =(JsonView jsonValue)
     }
     m_reviewResultsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReviewActions"))
   {
     Aws::Utils::Array<JsonView> reviewActionsJsonList = jsonValue.GetArray("ReviewActions");
@@ -51,7 +43,6 @@ ReviewReport& ReviewReport::operator =(JsonView jsonValue)
     }
     m_reviewActionsHasBeenSet = true;
   }
-
   return *this;
 }
 

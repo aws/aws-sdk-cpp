@@ -18,15 +18,7 @@ namespace SSMContacts
 namespace Model
 {
 
-PreviewOverride::PreviewOverride() : 
-    m_newMembersHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
-{
-}
-
 PreviewOverride::PreviewOverride(JsonView jsonValue)
-  : PreviewOverride()
 {
   *this = jsonValue;
 }
@@ -42,21 +34,16 @@ PreviewOverride& PreviewOverride::operator =(JsonView jsonValue)
     }
     m_newMembersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

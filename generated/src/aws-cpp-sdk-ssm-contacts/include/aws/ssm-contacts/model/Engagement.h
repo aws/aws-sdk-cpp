@@ -33,7 +33,7 @@ namespace Model
   class Engagement
   {
   public:
-    AWS_SSMCONTACTS_API Engagement();
+    AWS_SSMCONTACTS_API Engagement() = default;
     AWS_SSMCONTACTS_API Engagement(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMCONTACTS_API Engagement& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMCONTACTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the engagement.</p>
      */
-    inline const Aws::String& GetEngagementArn() const{ return m_engagementArn; }
+    inline const Aws::String& GetEngagementArn() const { return m_engagementArn; }
     inline bool EngagementArnHasBeenSet() const { return m_engagementArnHasBeenSet; }
-    inline void SetEngagementArn(const Aws::String& value) { m_engagementArnHasBeenSet = true; m_engagementArn = value; }
-    inline void SetEngagementArn(Aws::String&& value) { m_engagementArnHasBeenSet = true; m_engagementArn = std::move(value); }
-    inline void SetEngagementArn(const char* value) { m_engagementArnHasBeenSet = true; m_engagementArn.assign(value); }
-    inline Engagement& WithEngagementArn(const Aws::String& value) { SetEngagementArn(value); return *this;}
-    inline Engagement& WithEngagementArn(Aws::String&& value) { SetEngagementArn(std::move(value)); return *this;}
-    inline Engagement& WithEngagementArn(const char* value) { SetEngagementArn(value); return *this;}
+    template<typename EngagementArnT = Aws::String>
+    void SetEngagementArn(EngagementArnT&& value) { m_engagementArnHasBeenSet = true; m_engagementArn = std::forward<EngagementArnT>(value); }
+    template<typename EngagementArnT = Aws::String>
+    Engagement& WithEngagementArn(EngagementArnT&& value) { SetEngagementArn(std::forward<EngagementArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,66 +56,60 @@ namespace Model
      * <p>The ARN of the escalation plan or contact that Incident Manager is
      * engaging.</p>
      */
-    inline const Aws::String& GetContactArn() const{ return m_contactArn; }
+    inline const Aws::String& GetContactArn() const { return m_contactArn; }
     inline bool ContactArnHasBeenSet() const { return m_contactArnHasBeenSet; }
-    inline void SetContactArn(const Aws::String& value) { m_contactArnHasBeenSet = true; m_contactArn = value; }
-    inline void SetContactArn(Aws::String&& value) { m_contactArnHasBeenSet = true; m_contactArn = std::move(value); }
-    inline void SetContactArn(const char* value) { m_contactArnHasBeenSet = true; m_contactArn.assign(value); }
-    inline Engagement& WithContactArn(const Aws::String& value) { SetContactArn(value); return *this;}
-    inline Engagement& WithContactArn(Aws::String&& value) { SetContactArn(std::move(value)); return *this;}
-    inline Engagement& WithContactArn(const char* value) { SetContactArn(value); return *this;}
+    template<typename ContactArnT = Aws::String>
+    void SetContactArn(ContactArnT&& value) { m_contactArnHasBeenSet = true; m_contactArn = std::forward<ContactArnT>(value); }
+    template<typename ContactArnT = Aws::String>
+    Engagement& WithContactArn(ContactArnT&& value) { SetContactArn(std::forward<ContactArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The user that started the engagement.</p>
      */
-    inline const Aws::String& GetSender() const{ return m_sender; }
+    inline const Aws::String& GetSender() const { return m_sender; }
     inline bool SenderHasBeenSet() const { return m_senderHasBeenSet; }
-    inline void SetSender(const Aws::String& value) { m_senderHasBeenSet = true; m_sender = value; }
-    inline void SetSender(Aws::String&& value) { m_senderHasBeenSet = true; m_sender = std::move(value); }
-    inline void SetSender(const char* value) { m_senderHasBeenSet = true; m_sender.assign(value); }
-    inline Engagement& WithSender(const Aws::String& value) { SetSender(value); return *this;}
-    inline Engagement& WithSender(Aws::String&& value) { SetSender(std::move(value)); return *this;}
-    inline Engagement& WithSender(const char* value) { SetSender(value); return *this;}
+    template<typename SenderT = Aws::String>
+    void SetSender(SenderT&& value) { m_senderHasBeenSet = true; m_sender = std::forward<SenderT>(value); }
+    template<typename SenderT = Aws::String>
+    Engagement& WithSender(SenderT&& value) { SetSender(std::forward<SenderT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the incident that's engaging the contact.</p>
      */
-    inline const Aws::String& GetIncidentId() const{ return m_incidentId; }
+    inline const Aws::String& GetIncidentId() const { return m_incidentId; }
     inline bool IncidentIdHasBeenSet() const { return m_incidentIdHasBeenSet; }
-    inline void SetIncidentId(const Aws::String& value) { m_incidentIdHasBeenSet = true; m_incidentId = value; }
-    inline void SetIncidentId(Aws::String&& value) { m_incidentIdHasBeenSet = true; m_incidentId = std::move(value); }
-    inline void SetIncidentId(const char* value) { m_incidentIdHasBeenSet = true; m_incidentId.assign(value); }
-    inline Engagement& WithIncidentId(const Aws::String& value) { SetIncidentId(value); return *this;}
-    inline Engagement& WithIncidentId(Aws::String&& value) { SetIncidentId(std::move(value)); return *this;}
-    inline Engagement& WithIncidentId(const char* value) { SetIncidentId(value); return *this;}
+    template<typename IncidentIdT = Aws::String>
+    void SetIncidentId(IncidentIdT&& value) { m_incidentIdHasBeenSet = true; m_incidentId = std::forward<IncidentIdT>(value); }
+    template<typename IncidentIdT = Aws::String>
+    Engagement& WithIncidentId(IncidentIdT&& value) { SetIncidentId(std::forward<IncidentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time that the engagement began.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline Engagement& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline Engagement& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    Engagement& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time that the engagement ended.</p>
      */
-    inline const Aws::Utils::DateTime& GetStopTime() const{ return m_stopTime; }
+    inline const Aws::Utils::DateTime& GetStopTime() const { return m_stopTime; }
     inline bool StopTimeHasBeenSet() const { return m_stopTimeHasBeenSet; }
-    inline void SetStopTime(const Aws::Utils::DateTime& value) { m_stopTimeHasBeenSet = true; m_stopTime = value; }
-    inline void SetStopTime(Aws::Utils::DateTime&& value) { m_stopTimeHasBeenSet = true; m_stopTime = std::move(value); }
-    inline Engagement& WithStopTime(const Aws::Utils::DateTime& value) { SetStopTime(value); return *this;}
-    inline Engagement& WithStopTime(Aws::Utils::DateTime&& value) { SetStopTime(std::move(value)); return *this;}
+    template<typename StopTimeT = Aws::Utils::DateTime>
+    void SetStopTime(StopTimeT&& value) { m_stopTimeHasBeenSet = true; m_stopTime = std::forward<StopTimeT>(value); }
+    template<typename StopTimeT = Aws::Utils::DateTime>
+    Engagement& WithStopTime(StopTimeT&& value) { SetStopTime(std::forward<StopTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -133,10 +125,10 @@ namespace Model
     Aws::String m_incidentId;
     bool m_incidentIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_stopTime;
+    Aws::Utils::DateTime m_stopTime{};
     bool m_stopTimeHasBeenSet = false;
   };
 

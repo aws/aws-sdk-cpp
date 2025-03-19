@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateProvisioningTemplateVersionResult::CreateProvisioningTemplateVersionResult() : 
-    m_versionId(0),
-    m_isDefaultVersion(false)
-{
-}
-
 CreateProvisioningTemplateVersionResult::CreateProvisioningTemplateVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateProvisioningTemplateVersionResult()
 {
   *this = result;
 }
@@ -35,33 +28,30 @@ CreateProvisioningTemplateVersionResult& CreateProvisioningTemplateVersionResult
   if(jsonValue.ValueExists("templateArn"))
   {
     m_templateArn = jsonValue.GetString("templateArn");
-
+    m_templateArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("templateName"))
   {
     m_templateName = jsonValue.GetString("templateName");
-
+    m_templateNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("versionId"))
   {
     m_versionId = jsonValue.GetInteger("versionId");
-
+    m_versionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isDefaultVersion"))
   {
     m_isDefaultVersion = jsonValue.GetBool("isDefaultVersion");
-
+    m_isDefaultVersionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

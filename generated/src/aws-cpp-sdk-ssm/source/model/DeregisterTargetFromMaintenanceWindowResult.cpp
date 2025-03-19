@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeregisterTargetFromMaintenanceWindowResult::DeregisterTargetFromMaintenanceWindowResult()
-{
-}
-
 DeregisterTargetFromMaintenanceWindowResult::DeregisterTargetFromMaintenanceWindowResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ DeregisterTargetFromMaintenanceWindowResult& DeregisterTargetFromMaintenanceWind
   if(jsonValue.ValueExists("WindowId"))
   {
     m_windowId = jsonValue.GetString("WindowId");
-
+    m_windowIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WindowTargetId"))
   {
     m_windowTargetId = jsonValue.GetString("WindowTargetId");
-
+    m_windowTargetIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

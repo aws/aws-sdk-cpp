@@ -29,7 +29,7 @@ namespace Model
   class UpdateGlobalTableSettingsResult
   {
   public:
-    AWS_DYNAMODB_API UpdateGlobalTableSettingsResult();
+    AWS_DYNAMODB_API UpdateGlobalTableSettingsResult() = default;
     AWS_DYNAMODB_API UpdateGlobalTableSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DYNAMODB_API UpdateGlobalTableSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>The name of the global table.</p>
      */
-    inline const Aws::String& GetGlobalTableName() const{ return m_globalTableName; }
-    inline void SetGlobalTableName(const Aws::String& value) { m_globalTableName = value; }
-    inline void SetGlobalTableName(Aws::String&& value) { m_globalTableName = std::move(value); }
-    inline void SetGlobalTableName(const char* value) { m_globalTableName.assign(value); }
-    inline UpdateGlobalTableSettingsResult& WithGlobalTableName(const Aws::String& value) { SetGlobalTableName(value); return *this;}
-    inline UpdateGlobalTableSettingsResult& WithGlobalTableName(Aws::String&& value) { SetGlobalTableName(std::move(value)); return *this;}
-    inline UpdateGlobalTableSettingsResult& WithGlobalTableName(const char* value) { SetGlobalTableName(value); return *this;}
+    inline const Aws::String& GetGlobalTableName() const { return m_globalTableName; }
+    template<typename GlobalTableNameT = Aws::String>
+    void SetGlobalTableName(GlobalTableNameT&& value) { m_globalTableNameHasBeenSet = true; m_globalTableName = std::forward<GlobalTableNameT>(value); }
+    template<typename GlobalTableNameT = Aws::String>
+    UpdateGlobalTableSettingsResult& WithGlobalTableName(GlobalTableNameT&& value) { SetGlobalTableName(std::forward<GlobalTableNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Region-specific settings for the global table.</p>
      */
-    inline const Aws::Vector<ReplicaSettingsDescription>& GetReplicaSettings() const{ return m_replicaSettings; }
-    inline void SetReplicaSettings(const Aws::Vector<ReplicaSettingsDescription>& value) { m_replicaSettings = value; }
-    inline void SetReplicaSettings(Aws::Vector<ReplicaSettingsDescription>&& value) { m_replicaSettings = std::move(value); }
-    inline UpdateGlobalTableSettingsResult& WithReplicaSettings(const Aws::Vector<ReplicaSettingsDescription>& value) { SetReplicaSettings(value); return *this;}
-    inline UpdateGlobalTableSettingsResult& WithReplicaSettings(Aws::Vector<ReplicaSettingsDescription>&& value) { SetReplicaSettings(std::move(value)); return *this;}
-    inline UpdateGlobalTableSettingsResult& AddReplicaSettings(const ReplicaSettingsDescription& value) { m_replicaSettings.push_back(value); return *this; }
-    inline UpdateGlobalTableSettingsResult& AddReplicaSettings(ReplicaSettingsDescription&& value) { m_replicaSettings.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ReplicaSettingsDescription>& GetReplicaSettings() const { return m_replicaSettings; }
+    template<typename ReplicaSettingsT = Aws::Vector<ReplicaSettingsDescription>>
+    void SetReplicaSettings(ReplicaSettingsT&& value) { m_replicaSettingsHasBeenSet = true; m_replicaSettings = std::forward<ReplicaSettingsT>(value); }
+    template<typename ReplicaSettingsT = Aws::Vector<ReplicaSettingsDescription>>
+    UpdateGlobalTableSettingsResult& WithReplicaSettings(ReplicaSettingsT&& value) { SetReplicaSettings(std::forward<ReplicaSettingsT>(value)); return *this;}
+    template<typename ReplicaSettingsT = ReplicaSettingsDescription>
+    UpdateGlobalTableSettingsResult& AddReplicaSettings(ReplicaSettingsT&& value) { m_replicaSettingsHasBeenSet = true; m_replicaSettings.emplace_back(std::forward<ReplicaSettingsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateGlobalTableSettingsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateGlobalTableSettingsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateGlobalTableSettingsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateGlobalTableSettingsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_globalTableName;
+    bool m_globalTableNameHasBeenSet = false;
 
     Aws::Vector<ReplicaSettingsDescription> m_replicaSettings;
+    bool m_replicaSettingsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

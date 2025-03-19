@@ -18,13 +18,7 @@ namespace Glue
 namespace Model
 {
 
-DataSource::DataSource() : 
-    m_glueTableHasBeenSet(false)
-{
-}
-
 DataSource::DataSource(JsonView jsonValue)
-  : DataSource()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DataSource& DataSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GlueTable"))
   {
     m_glueTable = jsonValue.GetObject("GlueTable");
-
     m_glueTableHasBeenSet = true;
   }
-
   return *this;
 }
 

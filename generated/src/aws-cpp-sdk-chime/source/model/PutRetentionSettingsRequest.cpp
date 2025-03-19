@@ -12,12 +12,6 @@ using namespace Aws::Chime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutRetentionSettingsRequest::PutRetentionSettingsRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_retentionSettingsHasBeenSet(false)
-{
-}
-
 Aws::String PutRetentionSettingsRequest::SerializePayload() const
 {
   JsonValue payload;

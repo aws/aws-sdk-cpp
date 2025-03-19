@@ -18,14 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-NeptuneAnalyticsConfiguration::NeptuneAnalyticsConfiguration() : 
-    m_fieldMappingHasBeenSet(false),
-    m_graphArnHasBeenSet(false)
-{
-}
-
 NeptuneAnalyticsConfiguration::NeptuneAnalyticsConfiguration(JsonView jsonValue)
-  : NeptuneAnalyticsConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ NeptuneAnalyticsConfiguration& NeptuneAnalyticsConfiguration::operator =(JsonVie
   if(jsonValue.ValueExists("fieldMapping"))
   {
     m_fieldMapping = jsonValue.GetObject("fieldMapping");
-
     m_fieldMappingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("graphArn"))
   {
     m_graphArn = jsonValue.GetString("graphArn");
-
     m_graphArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class EntityNotExistsException
   {
   public:
-    AWS_WORKDOCS_API EntityNotExistsException();
+    AWS_WORKDOCS_API EntityNotExistsException() = default;
     AWS_WORKDOCS_API EntityNotExistsException(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKDOCS_API EntityNotExistsException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKDOCS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,29 +40,26 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline EntityNotExistsException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline EntityNotExistsException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline EntityNotExistsException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    EntityNotExistsException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The IDs of the non-existent resources.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetEntityIds() const{ return m_entityIds; }
+    inline const Aws::Vector<Aws::String>& GetEntityIds() const { return m_entityIds; }
     inline bool EntityIdsHasBeenSet() const { return m_entityIdsHasBeenSet; }
-    inline void SetEntityIds(const Aws::Vector<Aws::String>& value) { m_entityIdsHasBeenSet = true; m_entityIds = value; }
-    inline void SetEntityIds(Aws::Vector<Aws::String>&& value) { m_entityIdsHasBeenSet = true; m_entityIds = std::move(value); }
-    inline EntityNotExistsException& WithEntityIds(const Aws::Vector<Aws::String>& value) { SetEntityIds(value); return *this;}
-    inline EntityNotExistsException& WithEntityIds(Aws::Vector<Aws::String>&& value) { SetEntityIds(std::move(value)); return *this;}
-    inline EntityNotExistsException& AddEntityIds(const Aws::String& value) { m_entityIdsHasBeenSet = true; m_entityIds.push_back(value); return *this; }
-    inline EntityNotExistsException& AddEntityIds(Aws::String&& value) { m_entityIdsHasBeenSet = true; m_entityIds.push_back(std::move(value)); return *this; }
-    inline EntityNotExistsException& AddEntityIds(const char* value) { m_entityIdsHasBeenSet = true; m_entityIds.push_back(value); return *this; }
+    template<typename EntityIdsT = Aws::Vector<Aws::String>>
+    void SetEntityIds(EntityIdsT&& value) { m_entityIdsHasBeenSet = true; m_entityIds = std::forward<EntityIdsT>(value); }
+    template<typename EntityIdsT = Aws::Vector<Aws::String>>
+    EntityNotExistsException& WithEntityIds(EntityIdsT&& value) { SetEntityIds(std::forward<EntityIdsT>(value)); return *this;}
+    template<typename EntityIdsT = Aws::String>
+    EntityNotExistsException& AddEntityIds(EntityIdsT&& value) { m_entityIdsHasBeenSet = true; m_entityIds.emplace_back(std::forward<EntityIdsT>(value)); return *this; }
     ///@}
   private:
 

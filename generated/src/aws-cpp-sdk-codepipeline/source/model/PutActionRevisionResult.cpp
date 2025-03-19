@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutActionRevisionResult::PutActionRevisionResult() : 
-    m_newRevision(false)
-{
-}
-
 PutActionRevisionResult::PutActionRevisionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : PutActionRevisionResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ PutActionRevisionResult& PutActionRevisionResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("newRevision"))
   {
     m_newRevision = jsonValue.GetBool("newRevision");
-
+    m_newRevisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pipelineExecutionId"))
   {
     m_pipelineExecutionId = jsonValue.GetString("pipelineExecutionId");
-
+    m_pipelineExecutionIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

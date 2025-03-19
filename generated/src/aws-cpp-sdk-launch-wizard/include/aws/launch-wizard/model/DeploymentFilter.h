@@ -35,7 +35,7 @@ namespace Model
   class DeploymentFilter
   {
   public:
-    AWS_LAUNCHWIZARD_API DeploymentFilter();
+    AWS_LAUNCHWIZARD_API DeploymentFilter() = default;
     AWS_LAUNCHWIZARD_API DeploymentFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAUNCHWIZARD_API DeploymentFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAUNCHWIZARD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
     /**
      * <p>The name of the filter. Filter names are case-sensitive.</p>
      */
-    inline const DeploymentFilterKey& GetName() const{ return m_name; }
+    inline DeploymentFilterKey GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const DeploymentFilterKey& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(DeploymentFilterKey&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline DeploymentFilter& WithName(const DeploymentFilterKey& value) { SetName(value); return *this;}
-    inline DeploymentFilter& WithName(DeploymentFilterKey&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(DeploymentFilterKey value) { m_nameHasBeenSet = true; m_name = value; }
+    inline DeploymentFilter& WithName(DeploymentFilterKey value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -59,19 +57,18 @@ namespace Model
      * values for a filter, the values are joined with an <code>OR</code>, and the
      * request returns all results that match any of the specified values.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline DeploymentFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline DeploymentFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline DeploymentFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline DeploymentFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline DeploymentFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    DeploymentFilter& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    DeploymentFilter& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
   private:
 
-    DeploymentFilterKey m_name;
+    DeploymentFilterKey m_name{DeploymentFilterKey::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;

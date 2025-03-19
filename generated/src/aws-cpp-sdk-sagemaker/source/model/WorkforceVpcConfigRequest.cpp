@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-WorkforceVpcConfigRequest::WorkforceVpcConfigRequest() : 
-    m_vpcIdHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_subnetsHasBeenSet(false)
-{
-}
-
 WorkforceVpcConfigRequest::WorkforceVpcConfigRequest(JsonView jsonValue)
-  : WorkforceVpcConfigRequest()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ WorkforceVpcConfigRequest& WorkforceVpcConfigRequest::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("VpcId"))
   {
     m_vpcId = jsonValue.GetString("VpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityGroupIds"))
   {
     Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
@@ -49,7 +39,6 @@ WorkforceVpcConfigRequest& WorkforceVpcConfigRequest::operator =(JsonView jsonVa
     }
     m_securityGroupIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Subnets"))
   {
     Aws::Utils::Array<JsonView> subnetsJsonList = jsonValue.GetArray("Subnets");
@@ -59,7 +48,6 @@ WorkforceVpcConfigRequest& WorkforceVpcConfigRequest::operator =(JsonView jsonVa
     }
     m_subnetsHasBeenSet = true;
   }
-
   return *this;
 }
 

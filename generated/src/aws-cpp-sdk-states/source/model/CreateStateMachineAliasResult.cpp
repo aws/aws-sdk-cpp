@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateStateMachineAliasResult::CreateStateMachineAliasResult()
-{
-}
-
 CreateStateMachineAliasResult::CreateStateMachineAliasResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ CreateStateMachineAliasResult& CreateStateMachineAliasResult::operator =(const A
   if(jsonValue.ValueExists("stateMachineAliasArn"))
   {
     m_stateMachineAliasArn = jsonValue.GetString("stateMachineAliasArn");
-
+    m_stateMachineAliasArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDate"))
   {
     m_creationDate = jsonValue.GetDouble("creationDate");
-
+    m_creationDateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -12,12 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteEmailAddressRequest::DeleteEmailAddressRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_emailAddressIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteEmailAddressRequest::SerializePayload() const
 {
   return {};

@@ -12,11 +12,6 @@ using namespace Aws::ForecastService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeExplainabilityExportRequest::DescribeExplainabilityExportRequest() : 
-    m_explainabilityExportArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeExplainabilityExportRequest::SerializePayload() const
 {
   JsonValue payload;

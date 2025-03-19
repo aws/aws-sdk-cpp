@@ -12,19 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetMetricDataRequest::GetMetricDataRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_groupingsHasBeenSet(false),
-    m_historicalMetricsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String GetMetricDataRequest::SerializePayload() const
 {
   JsonValue payload;

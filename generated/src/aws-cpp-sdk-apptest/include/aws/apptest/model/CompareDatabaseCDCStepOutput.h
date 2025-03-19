@@ -32,7 +32,7 @@ namespace Model
   class CompareDatabaseCDCStepOutput
   {
   public:
-    AWS_APPTEST_API CompareDatabaseCDCStepOutput();
+    AWS_APPTEST_API CompareDatabaseCDCStepOutput() = default;
     AWS_APPTEST_API CompareDatabaseCDCStepOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API CompareDatabaseCDCStepOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,33 +42,29 @@ namespace Model
     /**
      * <p>The comparison output of the compare database CDC step output.</p>
      */
-    inline const Aws::String& GetComparisonOutputLocation() const{ return m_comparisonOutputLocation; }
+    inline const Aws::String& GetComparisonOutputLocation() const { return m_comparisonOutputLocation; }
     inline bool ComparisonOutputLocationHasBeenSet() const { return m_comparisonOutputLocationHasBeenSet; }
-    inline void SetComparisonOutputLocation(const Aws::String& value) { m_comparisonOutputLocationHasBeenSet = true; m_comparisonOutputLocation = value; }
-    inline void SetComparisonOutputLocation(Aws::String&& value) { m_comparisonOutputLocationHasBeenSet = true; m_comparisonOutputLocation = std::move(value); }
-    inline void SetComparisonOutputLocation(const char* value) { m_comparisonOutputLocationHasBeenSet = true; m_comparisonOutputLocation.assign(value); }
-    inline CompareDatabaseCDCStepOutput& WithComparisonOutputLocation(const Aws::String& value) { SetComparisonOutputLocation(value); return *this;}
-    inline CompareDatabaseCDCStepOutput& WithComparisonOutputLocation(Aws::String&& value) { SetComparisonOutputLocation(std::move(value)); return *this;}
-    inline CompareDatabaseCDCStepOutput& WithComparisonOutputLocation(const char* value) { SetComparisonOutputLocation(value); return *this;}
+    template<typename ComparisonOutputLocationT = Aws::String>
+    void SetComparisonOutputLocation(ComparisonOutputLocationT&& value) { m_comparisonOutputLocationHasBeenSet = true; m_comparisonOutputLocation = std::forward<ComparisonOutputLocationT>(value); }
+    template<typename ComparisonOutputLocationT = Aws::String>
+    CompareDatabaseCDCStepOutput& WithComparisonOutputLocation(ComparisonOutputLocationT&& value) { SetComparisonOutputLocation(std::forward<ComparisonOutputLocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The comparison status of the compare database CDC step output.</p>
      */
-    inline const ComparisonStatusEnum& GetComparisonStatus() const{ return m_comparisonStatus; }
+    inline ComparisonStatusEnum GetComparisonStatus() const { return m_comparisonStatus; }
     inline bool ComparisonStatusHasBeenSet() const { return m_comparisonStatusHasBeenSet; }
-    inline void SetComparisonStatus(const ComparisonStatusEnum& value) { m_comparisonStatusHasBeenSet = true; m_comparisonStatus = value; }
-    inline void SetComparisonStatus(ComparisonStatusEnum&& value) { m_comparisonStatusHasBeenSet = true; m_comparisonStatus = std::move(value); }
-    inline CompareDatabaseCDCStepOutput& WithComparisonStatus(const ComparisonStatusEnum& value) { SetComparisonStatus(value); return *this;}
-    inline CompareDatabaseCDCStepOutput& WithComparisonStatus(ComparisonStatusEnum&& value) { SetComparisonStatus(std::move(value)); return *this;}
+    inline void SetComparisonStatus(ComparisonStatusEnum value) { m_comparisonStatusHasBeenSet = true; m_comparisonStatus = value; }
+    inline CompareDatabaseCDCStepOutput& WithComparisonStatus(ComparisonStatusEnum value) { SetComparisonStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_comparisonOutputLocation;
     bool m_comparisonOutputLocationHasBeenSet = false;
 
-    ComparisonStatusEnum m_comparisonStatus;
+    ComparisonStatusEnum m_comparisonStatus{ComparisonStatusEnum::NOT_SET};
     bool m_comparisonStatusHasBeenSet = false;
   };
 

@@ -29,7 +29,7 @@ namespace Model
   class ListSourceApiAssociationsResult
   {
   public:
-    AWS_APPSYNC_API ListSourceApiAssociationsResult();
+    AWS_APPSYNC_API ListSourceApiAssociationsResult() = default;
     AWS_APPSYNC_API ListSourceApiAssociationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPSYNC_API ListSourceApiAssociationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The <code>SourceApiAssociationSummary</code> object data.</p>
      */
-    inline const Aws::Vector<SourceApiAssociationSummary>& GetSourceApiAssociationSummaries() const{ return m_sourceApiAssociationSummaries; }
-    inline void SetSourceApiAssociationSummaries(const Aws::Vector<SourceApiAssociationSummary>& value) { m_sourceApiAssociationSummaries = value; }
-    inline void SetSourceApiAssociationSummaries(Aws::Vector<SourceApiAssociationSummary>&& value) { m_sourceApiAssociationSummaries = std::move(value); }
-    inline ListSourceApiAssociationsResult& WithSourceApiAssociationSummaries(const Aws::Vector<SourceApiAssociationSummary>& value) { SetSourceApiAssociationSummaries(value); return *this;}
-    inline ListSourceApiAssociationsResult& WithSourceApiAssociationSummaries(Aws::Vector<SourceApiAssociationSummary>&& value) { SetSourceApiAssociationSummaries(std::move(value)); return *this;}
-    inline ListSourceApiAssociationsResult& AddSourceApiAssociationSummaries(const SourceApiAssociationSummary& value) { m_sourceApiAssociationSummaries.push_back(value); return *this; }
-    inline ListSourceApiAssociationsResult& AddSourceApiAssociationSummaries(SourceApiAssociationSummary&& value) { m_sourceApiAssociationSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SourceApiAssociationSummary>& GetSourceApiAssociationSummaries() const { return m_sourceApiAssociationSummaries; }
+    template<typename SourceApiAssociationSummariesT = Aws::Vector<SourceApiAssociationSummary>>
+    void SetSourceApiAssociationSummaries(SourceApiAssociationSummariesT&& value) { m_sourceApiAssociationSummariesHasBeenSet = true; m_sourceApiAssociationSummaries = std::forward<SourceApiAssociationSummariesT>(value); }
+    template<typename SourceApiAssociationSummariesT = Aws::Vector<SourceApiAssociationSummary>>
+    ListSourceApiAssociationsResult& WithSourceApiAssociationSummaries(SourceApiAssociationSummariesT&& value) { SetSourceApiAssociationSummaries(std::forward<SourceApiAssociationSummariesT>(value)); return *this;}
+    template<typename SourceApiAssociationSummariesT = SourceApiAssociationSummary>
+    ListSourceApiAssociationsResult& AddSourceApiAssociationSummaries(SourceApiAssociationSummariesT&& value) { m_sourceApiAssociationSummariesHasBeenSet = true; m_sourceApiAssociationSummaries.emplace_back(std::forward<SourceApiAssociationSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>An identifier that was returned from the previous call to this operation,
      * which you can use to return the next set of items in the list.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListSourceApiAssociationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListSourceApiAssociationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListSourceApiAssociationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListSourceApiAssociationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListSourceApiAssociationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListSourceApiAssociationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListSourceApiAssociationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListSourceApiAssociationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<SourceApiAssociationSummary> m_sourceApiAssociationSummaries;
+    bool m_sourceApiAssociationSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

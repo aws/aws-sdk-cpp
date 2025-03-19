@@ -33,7 +33,7 @@ namespace Model
   class AssociateClientDeviceWithCoreDeviceEntry
   {
   public:
-    AWS_GREENGRASSV2_API AssociateClientDeviceWithCoreDeviceEntry();
+    AWS_GREENGRASSV2_API AssociateClientDeviceWithCoreDeviceEntry() = default;
     AWS_GREENGRASSV2_API AssociateClientDeviceWithCoreDeviceEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASSV2_API AssociateClientDeviceWithCoreDeviceEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The name of the IoT thing that represents the client device to associate.</p>
      */
-    inline const Aws::String& GetThingName() const{ return m_thingName; }
+    inline const Aws::String& GetThingName() const { return m_thingName; }
     inline bool ThingNameHasBeenSet() const { return m_thingNameHasBeenSet; }
-    inline void SetThingName(const Aws::String& value) { m_thingNameHasBeenSet = true; m_thingName = value; }
-    inline void SetThingName(Aws::String&& value) { m_thingNameHasBeenSet = true; m_thingName = std::move(value); }
-    inline void SetThingName(const char* value) { m_thingNameHasBeenSet = true; m_thingName.assign(value); }
-    inline AssociateClientDeviceWithCoreDeviceEntry& WithThingName(const Aws::String& value) { SetThingName(value); return *this;}
-    inline AssociateClientDeviceWithCoreDeviceEntry& WithThingName(Aws::String&& value) { SetThingName(std::move(value)); return *this;}
-    inline AssociateClientDeviceWithCoreDeviceEntry& WithThingName(const char* value) { SetThingName(value); return *this;}
+    template<typename ThingNameT = Aws::String>
+    void SetThingName(ThingNameT&& value) { m_thingNameHasBeenSet = true; m_thingName = std::forward<ThingNameT>(value); }
+    template<typename ThingNameT = Aws::String>
+    AssociateClientDeviceWithCoreDeviceEntry& WithThingName(ThingNameT&& value) { SetThingName(std::forward<ThingNameT>(value)); return *this;}
     ///@}
   private:
 

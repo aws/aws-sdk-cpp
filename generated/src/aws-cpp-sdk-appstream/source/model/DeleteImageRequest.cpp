@@ -12,11 +12,6 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteImageRequest::DeleteImageRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteImageRequest::SerializePayload() const
 {
   JsonValue payload;

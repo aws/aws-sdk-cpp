@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-ResourceConflictException::ResourceConflictException() : 
-    m_messageHasBeenSet(false),
-    m_codeHasBeenSet(false)
-{
-}
-
 ResourceConflictException::ResourceConflictException(JsonView jsonValue)
-  : ResourceConflictException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ResourceConflictException& ResourceConflictException::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Code"))
   {
     m_code = jsonValue.GetString("Code");
-
     m_codeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-StaticFile::StaticFile() : 
-    m_imageStaticFileHasBeenSet(false),
-    m_spatialStaticFileHasBeenSet(false)
-{
-}
-
 StaticFile::StaticFile(JsonView jsonValue)
-  : StaticFile()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ StaticFile& StaticFile::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ImageStaticFile"))
   {
     m_imageStaticFile = jsonValue.GetObject("ImageStaticFile");
-
     m_imageStaticFileHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SpatialStaticFile"))
   {
     m_spatialStaticFile = jsonValue.GetObject("SpatialStaticFile");
-
     m_spatialStaticFileHasBeenSet = true;
   }
-
   return *this;
 }
 

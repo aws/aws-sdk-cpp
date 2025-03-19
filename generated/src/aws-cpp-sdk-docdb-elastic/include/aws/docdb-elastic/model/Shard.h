@@ -32,7 +32,7 @@ namespace Model
   class Shard
   {
   public:
-    AWS_DOCDBELASTIC_API Shard();
+    AWS_DOCDBELASTIC_API Shard() = default;
     AWS_DOCDBELASTIC_API Shard(Aws::Utils::Json::JsonView jsonValue);
     AWS_DOCDBELASTIC_API Shard& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DOCDBELASTIC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,40 +42,34 @@ namespace Model
     /**
      * <p>The time when the shard was created in Universal Coordinated Time (UTC).</p>
      */
-    inline const Aws::String& GetCreateTime() const{ return m_createTime; }
+    inline const Aws::String& GetCreateTime() const { return m_createTime; }
     inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
-    inline void SetCreateTime(const Aws::String& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
-    inline void SetCreateTime(Aws::String&& value) { m_createTimeHasBeenSet = true; m_createTime = std::move(value); }
-    inline void SetCreateTime(const char* value) { m_createTimeHasBeenSet = true; m_createTime.assign(value); }
-    inline Shard& WithCreateTime(const Aws::String& value) { SetCreateTime(value); return *this;}
-    inline Shard& WithCreateTime(Aws::String&& value) { SetCreateTime(std::move(value)); return *this;}
-    inline Shard& WithCreateTime(const char* value) { SetCreateTime(value); return *this;}
+    template<typename CreateTimeT = Aws::String>
+    void SetCreateTime(CreateTimeT&& value) { m_createTimeHasBeenSet = true; m_createTime = std::forward<CreateTimeT>(value); }
+    template<typename CreateTimeT = Aws::String>
+    Shard& WithCreateTime(CreateTimeT&& value) { SetCreateTime(std::forward<CreateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the shard.</p>
      */
-    inline const Aws::String& GetShardId() const{ return m_shardId; }
+    inline const Aws::String& GetShardId() const { return m_shardId; }
     inline bool ShardIdHasBeenSet() const { return m_shardIdHasBeenSet; }
-    inline void SetShardId(const Aws::String& value) { m_shardIdHasBeenSet = true; m_shardId = value; }
-    inline void SetShardId(Aws::String&& value) { m_shardIdHasBeenSet = true; m_shardId = std::move(value); }
-    inline void SetShardId(const char* value) { m_shardIdHasBeenSet = true; m_shardId.assign(value); }
-    inline Shard& WithShardId(const Aws::String& value) { SetShardId(value); return *this;}
-    inline Shard& WithShardId(Aws::String&& value) { SetShardId(std::move(value)); return *this;}
-    inline Shard& WithShardId(const char* value) { SetShardId(value); return *this;}
+    template<typename ShardIdT = Aws::String>
+    void SetShardId(ShardIdT&& value) { m_shardIdHasBeenSet = true; m_shardId = std::forward<ShardIdT>(value); }
+    template<typename ShardIdT = Aws::String>
+    Shard& WithShardId(ShardIdT&& value) { SetShardId(std::forward<ShardIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current status of the shard.</p>
      */
-    inline const Status& GetStatus() const{ return m_status; }
+    inline Status GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Status& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Status&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline Shard& WithStatus(const Status& value) { SetStatus(value); return *this;}
-    inline Shard& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(Status value) { m_statusHasBeenSet = true; m_status = value; }
+    inline Shard& WithStatus(Status value) { SetStatus(value); return *this;}
     ///@}
   private:
 
@@ -85,7 +79,7 @@ namespace Model
     Aws::String m_shardId;
     bool m_shardIdHasBeenSet = false;
 
-    Status m_status;
+    Status m_status{Status::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

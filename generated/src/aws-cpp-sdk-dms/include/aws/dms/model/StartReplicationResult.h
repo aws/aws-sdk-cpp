@@ -33,7 +33,7 @@ namespace Model
   class StartReplicationResult
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API StartReplicationResult();
+    AWS_DATABASEMIGRATIONSERVICE_API StartReplicationResult() = default;
     AWS_DATABASEMIGRATIONSERVICE_API StartReplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATABASEMIGRATIONSERVICE_API StartReplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,28 +42,28 @@ namespace Model
     /**
      * <p>The replication that DMS started.</p>
      */
-    inline const Replication& GetReplication() const{ return m_replication; }
-    inline void SetReplication(const Replication& value) { m_replication = value; }
-    inline void SetReplication(Replication&& value) { m_replication = std::move(value); }
-    inline StartReplicationResult& WithReplication(const Replication& value) { SetReplication(value); return *this;}
-    inline StartReplicationResult& WithReplication(Replication&& value) { SetReplication(std::move(value)); return *this;}
+    inline const Replication& GetReplication() const { return m_replication; }
+    template<typename ReplicationT = Replication>
+    void SetReplication(ReplicationT&& value) { m_replicationHasBeenSet = true; m_replication = std::forward<ReplicationT>(value); }
+    template<typename ReplicationT = Replication>
+    StartReplicationResult& WithReplication(ReplicationT&& value) { SetReplication(std::forward<ReplicationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartReplicationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartReplicationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartReplicationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartReplicationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Replication m_replication;
+    bool m_replicationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

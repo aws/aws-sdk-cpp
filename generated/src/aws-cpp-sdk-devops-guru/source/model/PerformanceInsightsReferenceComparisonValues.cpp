@@ -18,14 +18,7 @@ namespace DevOpsGuru
 namespace Model
 {
 
-PerformanceInsightsReferenceComparisonValues::PerformanceInsightsReferenceComparisonValues() : 
-    m_referenceScalarHasBeenSet(false),
-    m_referenceMetricHasBeenSet(false)
-{
-}
-
 PerformanceInsightsReferenceComparisonValues::PerformanceInsightsReferenceComparisonValues(JsonView jsonValue)
-  : PerformanceInsightsReferenceComparisonValues()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ PerformanceInsightsReferenceComparisonValues& PerformanceInsightsReferenceCompar
   if(jsonValue.ValueExists("ReferenceScalar"))
   {
     m_referenceScalar = jsonValue.GetObject("ReferenceScalar");
-
     m_referenceScalarHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReferenceMetric"))
   {
     m_referenceMetric = jsonValue.GetObject("ReferenceMetric");
-
     m_referenceMetricHasBeenSet = true;
   }
-
   return *this;
 }
 

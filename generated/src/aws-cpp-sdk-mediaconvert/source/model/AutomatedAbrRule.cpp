@@ -18,18 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-AutomatedAbrRule::AutomatedAbrRule() : 
-    m_allowedRenditionsHasBeenSet(false),
-    m_forceIncludeRenditionsHasBeenSet(false),
-    m_minBottomRenditionSizeHasBeenSet(false),
-    m_minTopRenditionSizeHasBeenSet(false),
-    m_type(RuleType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 AutomatedAbrRule::AutomatedAbrRule(JsonView jsonValue)
-  : AutomatedAbrRule()
 {
   *this = jsonValue;
 }
@@ -45,7 +34,6 @@ AutomatedAbrRule& AutomatedAbrRule::operator =(JsonView jsonValue)
     }
     m_allowedRenditionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("forceIncludeRenditions"))
   {
     Aws::Utils::Array<JsonView> forceIncludeRenditionsJsonList = jsonValue.GetArray("forceIncludeRenditions");
@@ -55,28 +43,21 @@ AutomatedAbrRule& AutomatedAbrRule::operator =(JsonView jsonValue)
     }
     m_forceIncludeRenditionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("minBottomRenditionSize"))
   {
     m_minBottomRenditionSize = jsonValue.GetObject("minBottomRenditionSize");
-
     m_minBottomRenditionSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("minTopRenditionSize"))
   {
     m_minTopRenditionSize = jsonValue.GetObject("minTopRenditionSize");
-
     m_minTopRenditionSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = RuleTypeMapper::GetRuleTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

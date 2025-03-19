@@ -25,7 +25,7 @@ namespace Model
   class PutOrganizationConfigRuleRequest : public ConfigServiceRequest
   {
   public:
-    AWS_CONFIGSERVICE_API PutOrganizationConfigRuleRequest();
+    AWS_CONFIGSERVICE_API PutOrganizationConfigRuleRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name that you assign to an organization Config rule.</p>
      */
-    inline const Aws::String& GetOrganizationConfigRuleName() const{ return m_organizationConfigRuleName; }
+    inline const Aws::String& GetOrganizationConfigRuleName() const { return m_organizationConfigRuleName; }
     inline bool OrganizationConfigRuleNameHasBeenSet() const { return m_organizationConfigRuleNameHasBeenSet; }
-    inline void SetOrganizationConfigRuleName(const Aws::String& value) { m_organizationConfigRuleNameHasBeenSet = true; m_organizationConfigRuleName = value; }
-    inline void SetOrganizationConfigRuleName(Aws::String&& value) { m_organizationConfigRuleNameHasBeenSet = true; m_organizationConfigRuleName = std::move(value); }
-    inline void SetOrganizationConfigRuleName(const char* value) { m_organizationConfigRuleNameHasBeenSet = true; m_organizationConfigRuleName.assign(value); }
-    inline PutOrganizationConfigRuleRequest& WithOrganizationConfigRuleName(const Aws::String& value) { SetOrganizationConfigRuleName(value); return *this;}
-    inline PutOrganizationConfigRuleRequest& WithOrganizationConfigRuleName(Aws::String&& value) { SetOrganizationConfigRuleName(std::move(value)); return *this;}
-    inline PutOrganizationConfigRuleRequest& WithOrganizationConfigRuleName(const char* value) { SetOrganizationConfigRuleName(value); return *this;}
+    template<typename OrganizationConfigRuleNameT = Aws::String>
+    void SetOrganizationConfigRuleName(OrganizationConfigRuleNameT&& value) { m_organizationConfigRuleNameHasBeenSet = true; m_organizationConfigRuleName = std::forward<OrganizationConfigRuleNameT>(value); }
+    template<typename OrganizationConfigRuleNameT = Aws::String>
+    PutOrganizationConfigRuleRequest& WithOrganizationConfigRuleName(OrganizationConfigRuleNameT&& value) { SetOrganizationConfigRuleName(std::forward<OrganizationConfigRuleNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +58,12 @@ namespace Model
      * with which you want Config to run evaluations for the rule if the trigger type
      * is periodic.</p>
      */
-    inline const OrganizationManagedRuleMetadata& GetOrganizationManagedRuleMetadata() const{ return m_organizationManagedRuleMetadata; }
+    inline const OrganizationManagedRuleMetadata& GetOrganizationManagedRuleMetadata() const { return m_organizationManagedRuleMetadata; }
     inline bool OrganizationManagedRuleMetadataHasBeenSet() const { return m_organizationManagedRuleMetadataHasBeenSet; }
-    inline void SetOrganizationManagedRuleMetadata(const OrganizationManagedRuleMetadata& value) { m_organizationManagedRuleMetadataHasBeenSet = true; m_organizationManagedRuleMetadata = value; }
-    inline void SetOrganizationManagedRuleMetadata(OrganizationManagedRuleMetadata&& value) { m_organizationManagedRuleMetadataHasBeenSet = true; m_organizationManagedRuleMetadata = std::move(value); }
-    inline PutOrganizationConfigRuleRequest& WithOrganizationManagedRuleMetadata(const OrganizationManagedRuleMetadata& value) { SetOrganizationManagedRuleMetadata(value); return *this;}
-    inline PutOrganizationConfigRuleRequest& WithOrganizationManagedRuleMetadata(OrganizationManagedRuleMetadata&& value) { SetOrganizationManagedRuleMetadata(std::move(value)); return *this;}
+    template<typename OrganizationManagedRuleMetadataT = OrganizationManagedRuleMetadata>
+    void SetOrganizationManagedRuleMetadata(OrganizationManagedRuleMetadataT&& value) { m_organizationManagedRuleMetadataHasBeenSet = true; m_organizationManagedRuleMetadata = std::forward<OrganizationManagedRuleMetadataT>(value); }
+    template<typename OrganizationManagedRuleMetadataT = OrganizationManagedRuleMetadata>
+    PutOrganizationConfigRuleRequest& WithOrganizationManagedRuleMetadata(OrganizationManagedRuleMetadataT&& value) { SetOrganizationManagedRuleMetadata(std::forward<OrganizationManagedRuleMetadataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,12 +75,12 @@ namespace Model
      * also provides the frequency with which you want Config to run evaluations for
      * the rule if the trigger type is periodic.</p>
      */
-    inline const OrganizationCustomRuleMetadata& GetOrganizationCustomRuleMetadata() const{ return m_organizationCustomRuleMetadata; }
+    inline const OrganizationCustomRuleMetadata& GetOrganizationCustomRuleMetadata() const { return m_organizationCustomRuleMetadata; }
     inline bool OrganizationCustomRuleMetadataHasBeenSet() const { return m_organizationCustomRuleMetadataHasBeenSet; }
-    inline void SetOrganizationCustomRuleMetadata(const OrganizationCustomRuleMetadata& value) { m_organizationCustomRuleMetadataHasBeenSet = true; m_organizationCustomRuleMetadata = value; }
-    inline void SetOrganizationCustomRuleMetadata(OrganizationCustomRuleMetadata&& value) { m_organizationCustomRuleMetadataHasBeenSet = true; m_organizationCustomRuleMetadata = std::move(value); }
-    inline PutOrganizationConfigRuleRequest& WithOrganizationCustomRuleMetadata(const OrganizationCustomRuleMetadata& value) { SetOrganizationCustomRuleMetadata(value); return *this;}
-    inline PutOrganizationConfigRuleRequest& WithOrganizationCustomRuleMetadata(OrganizationCustomRuleMetadata&& value) { SetOrganizationCustomRuleMetadata(std::move(value)); return *this;}
+    template<typename OrganizationCustomRuleMetadataT = OrganizationCustomRuleMetadata>
+    void SetOrganizationCustomRuleMetadata(OrganizationCustomRuleMetadataT&& value) { m_organizationCustomRuleMetadataHasBeenSet = true; m_organizationCustomRuleMetadata = std::forward<OrganizationCustomRuleMetadataT>(value); }
+    template<typename OrganizationCustomRuleMetadataT = OrganizationCustomRuleMetadata>
+    PutOrganizationConfigRuleRequest& WithOrganizationCustomRuleMetadata(OrganizationCustomRuleMetadataT&& value) { SetOrganizationCustomRuleMetadata(std::forward<OrganizationCustomRuleMetadataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,15 +88,14 @@ namespace Model
      * <p>A comma-separated list of accounts that you want to exclude from an
      * organization Config rule.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExcludedAccounts() const{ return m_excludedAccounts; }
+    inline const Aws::Vector<Aws::String>& GetExcludedAccounts() const { return m_excludedAccounts; }
     inline bool ExcludedAccountsHasBeenSet() const { return m_excludedAccountsHasBeenSet; }
-    inline void SetExcludedAccounts(const Aws::Vector<Aws::String>& value) { m_excludedAccountsHasBeenSet = true; m_excludedAccounts = value; }
-    inline void SetExcludedAccounts(Aws::Vector<Aws::String>&& value) { m_excludedAccountsHasBeenSet = true; m_excludedAccounts = std::move(value); }
-    inline PutOrganizationConfigRuleRequest& WithExcludedAccounts(const Aws::Vector<Aws::String>& value) { SetExcludedAccounts(value); return *this;}
-    inline PutOrganizationConfigRuleRequest& WithExcludedAccounts(Aws::Vector<Aws::String>&& value) { SetExcludedAccounts(std::move(value)); return *this;}
-    inline PutOrganizationConfigRuleRequest& AddExcludedAccounts(const Aws::String& value) { m_excludedAccountsHasBeenSet = true; m_excludedAccounts.push_back(value); return *this; }
-    inline PutOrganizationConfigRuleRequest& AddExcludedAccounts(Aws::String&& value) { m_excludedAccountsHasBeenSet = true; m_excludedAccounts.push_back(std::move(value)); return *this; }
-    inline PutOrganizationConfigRuleRequest& AddExcludedAccounts(const char* value) { m_excludedAccountsHasBeenSet = true; m_excludedAccounts.push_back(value); return *this; }
+    template<typename ExcludedAccountsT = Aws::Vector<Aws::String>>
+    void SetExcludedAccounts(ExcludedAccountsT&& value) { m_excludedAccountsHasBeenSet = true; m_excludedAccounts = std::forward<ExcludedAccountsT>(value); }
+    template<typename ExcludedAccountsT = Aws::Vector<Aws::String>>
+    PutOrganizationConfigRuleRequest& WithExcludedAccounts(ExcludedAccountsT&& value) { SetExcludedAccounts(std::forward<ExcludedAccountsT>(value)); return *this;}
+    template<typename ExcludedAccountsT = Aws::String>
+    PutOrganizationConfigRuleRequest& AddExcludedAccounts(ExcludedAccountsT&& value) { m_excludedAccountsHasBeenSet = true; m_excludedAccounts.emplace_back(std::forward<ExcludedAccountsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -110,12 +107,12 @@ namespace Model
      * Amazon Web Services resource, and organization trigger types that initiate
      * Config to evaluate Amazon Web Services resources against a rule.</p>
      */
-    inline const OrganizationCustomPolicyRuleMetadata& GetOrganizationCustomPolicyRuleMetadata() const{ return m_organizationCustomPolicyRuleMetadata; }
+    inline const OrganizationCustomPolicyRuleMetadata& GetOrganizationCustomPolicyRuleMetadata() const { return m_organizationCustomPolicyRuleMetadata; }
     inline bool OrganizationCustomPolicyRuleMetadataHasBeenSet() const { return m_organizationCustomPolicyRuleMetadataHasBeenSet; }
-    inline void SetOrganizationCustomPolicyRuleMetadata(const OrganizationCustomPolicyRuleMetadata& value) { m_organizationCustomPolicyRuleMetadataHasBeenSet = true; m_organizationCustomPolicyRuleMetadata = value; }
-    inline void SetOrganizationCustomPolicyRuleMetadata(OrganizationCustomPolicyRuleMetadata&& value) { m_organizationCustomPolicyRuleMetadataHasBeenSet = true; m_organizationCustomPolicyRuleMetadata = std::move(value); }
-    inline PutOrganizationConfigRuleRequest& WithOrganizationCustomPolicyRuleMetadata(const OrganizationCustomPolicyRuleMetadata& value) { SetOrganizationCustomPolicyRuleMetadata(value); return *this;}
-    inline PutOrganizationConfigRuleRequest& WithOrganizationCustomPolicyRuleMetadata(OrganizationCustomPolicyRuleMetadata&& value) { SetOrganizationCustomPolicyRuleMetadata(std::move(value)); return *this;}
+    template<typename OrganizationCustomPolicyRuleMetadataT = OrganizationCustomPolicyRuleMetadata>
+    void SetOrganizationCustomPolicyRuleMetadata(OrganizationCustomPolicyRuleMetadataT&& value) { m_organizationCustomPolicyRuleMetadataHasBeenSet = true; m_organizationCustomPolicyRuleMetadata = std::forward<OrganizationCustomPolicyRuleMetadataT>(value); }
+    template<typename OrganizationCustomPolicyRuleMetadataT = OrganizationCustomPolicyRuleMetadata>
+    PutOrganizationConfigRuleRequest& WithOrganizationCustomPolicyRuleMetadata(OrganizationCustomPolicyRuleMetadataT&& value) { SetOrganizationCustomPolicyRuleMetadata(std::forward<OrganizationCustomPolicyRuleMetadataT>(value)); return *this;}
     ///@}
   private:
 

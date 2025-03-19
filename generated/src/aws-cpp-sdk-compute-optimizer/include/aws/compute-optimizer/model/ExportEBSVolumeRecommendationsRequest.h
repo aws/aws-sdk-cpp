@@ -26,7 +26,7 @@ namespace Model
   class ExportEBSVolumeRecommendationsRequest : public ComputeOptimizerRequest
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API ExportEBSVolumeRecommendationsRequest();
+    AWS_COMPUTEOPTIMIZER_API ExportEBSVolumeRecommendationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -50,15 +50,14 @@ namespace Model
      * export if this parameter, or the include member accounts parameter, is
      * omitted.</p> <p>You can specify multiple account IDs per request.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAccountIds() const{ return m_accountIds; }
+    inline const Aws::Vector<Aws::String>& GetAccountIds() const { return m_accountIds; }
     inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
-    inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
-    inline void SetAccountIds(Aws::Vector<Aws::String>&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::move(value); }
-    inline ExportEBSVolumeRecommendationsRequest& WithAccountIds(const Aws::Vector<Aws::String>& value) { SetAccountIds(value); return *this;}
-    inline ExportEBSVolumeRecommendationsRequest& WithAccountIds(Aws::Vector<Aws::String>&& value) { SetAccountIds(std::move(value)); return *this;}
-    inline ExportEBSVolumeRecommendationsRequest& AddAccountIds(const Aws::String& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
-    inline ExportEBSVolumeRecommendationsRequest& AddAccountIds(Aws::String&& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(std::move(value)); return *this; }
-    inline ExportEBSVolumeRecommendationsRequest& AddAccountIds(const char* value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
+    template<typename AccountIdsT = Aws::Vector<Aws::String>>
+    void SetAccountIds(AccountIdsT&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::forward<AccountIdsT>(value); }
+    template<typename AccountIdsT = Aws::Vector<Aws::String>>
+    ExportEBSVolumeRecommendationsRequest& WithAccountIds(AccountIdsT&& value) { SetAccountIds(std::forward<AccountIdsT>(value)); return *this;}
+    template<typename AccountIdsT = Aws::String>
+    ExportEBSVolumeRecommendationsRequest& AddAccountIds(AccountIdsT&& value) { m_accountIdsHasBeenSet = true; m_accountIds.emplace_back(std::forward<AccountIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -66,14 +65,14 @@ namespace Model
      * <p>An array of objects to specify a filter that exports a more specific set of
      * Amazon EBS volume recommendations.</p>
      */
-    inline const Aws::Vector<EBSFilter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<EBSFilter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<EBSFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<EBSFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline ExportEBSVolumeRecommendationsRequest& WithFilters(const Aws::Vector<EBSFilter>& value) { SetFilters(value); return *this;}
-    inline ExportEBSVolumeRecommendationsRequest& WithFilters(Aws::Vector<EBSFilter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline ExportEBSVolumeRecommendationsRequest& AddFilters(const EBSFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline ExportEBSVolumeRecommendationsRequest& AddFilters(EBSFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<EBSFilter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<EBSFilter>>
+    ExportEBSVolumeRecommendationsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = EBSFilter>
+    ExportEBSVolumeRecommendationsRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -83,24 +82,23 @@ namespace Model
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported
      * files</a> in the <i>Compute Optimizer User Guide</i>.</p>
      */
-    inline const Aws::Vector<ExportableVolumeField>& GetFieldsToExport() const{ return m_fieldsToExport; }
+    inline const Aws::Vector<ExportableVolumeField>& GetFieldsToExport() const { return m_fieldsToExport; }
     inline bool FieldsToExportHasBeenSet() const { return m_fieldsToExportHasBeenSet; }
-    inline void SetFieldsToExport(const Aws::Vector<ExportableVolumeField>& value) { m_fieldsToExportHasBeenSet = true; m_fieldsToExport = value; }
-    inline void SetFieldsToExport(Aws::Vector<ExportableVolumeField>&& value) { m_fieldsToExportHasBeenSet = true; m_fieldsToExport = std::move(value); }
-    inline ExportEBSVolumeRecommendationsRequest& WithFieldsToExport(const Aws::Vector<ExportableVolumeField>& value) { SetFieldsToExport(value); return *this;}
-    inline ExportEBSVolumeRecommendationsRequest& WithFieldsToExport(Aws::Vector<ExportableVolumeField>&& value) { SetFieldsToExport(std::move(value)); return *this;}
-    inline ExportEBSVolumeRecommendationsRequest& AddFieldsToExport(const ExportableVolumeField& value) { m_fieldsToExportHasBeenSet = true; m_fieldsToExport.push_back(value); return *this; }
-    inline ExportEBSVolumeRecommendationsRequest& AddFieldsToExport(ExportableVolumeField&& value) { m_fieldsToExportHasBeenSet = true; m_fieldsToExport.push_back(std::move(value)); return *this; }
+    template<typename FieldsToExportT = Aws::Vector<ExportableVolumeField>>
+    void SetFieldsToExport(FieldsToExportT&& value) { m_fieldsToExportHasBeenSet = true; m_fieldsToExport = std::forward<FieldsToExportT>(value); }
+    template<typename FieldsToExportT = Aws::Vector<ExportableVolumeField>>
+    ExportEBSVolumeRecommendationsRequest& WithFieldsToExport(FieldsToExportT&& value) { SetFieldsToExport(std::forward<FieldsToExportT>(value)); return *this;}
+    inline ExportEBSVolumeRecommendationsRequest& AddFieldsToExport(ExportableVolumeField value) { m_fieldsToExportHasBeenSet = true; m_fieldsToExport.push_back(value); return *this; }
     ///@}
 
     ///@{
     
-    inline const S3DestinationConfig& GetS3DestinationConfig() const{ return m_s3DestinationConfig; }
+    inline const S3DestinationConfig& GetS3DestinationConfig() const { return m_s3DestinationConfig; }
     inline bool S3DestinationConfigHasBeenSet() const { return m_s3DestinationConfigHasBeenSet; }
-    inline void SetS3DestinationConfig(const S3DestinationConfig& value) { m_s3DestinationConfigHasBeenSet = true; m_s3DestinationConfig = value; }
-    inline void SetS3DestinationConfig(S3DestinationConfig&& value) { m_s3DestinationConfigHasBeenSet = true; m_s3DestinationConfig = std::move(value); }
-    inline ExportEBSVolumeRecommendationsRequest& WithS3DestinationConfig(const S3DestinationConfig& value) { SetS3DestinationConfig(value); return *this;}
-    inline ExportEBSVolumeRecommendationsRequest& WithS3DestinationConfig(S3DestinationConfig&& value) { SetS3DestinationConfig(std::move(value)); return *this;}
+    template<typename S3DestinationConfigT = S3DestinationConfig>
+    void SetS3DestinationConfig(S3DestinationConfigT&& value) { m_s3DestinationConfigHasBeenSet = true; m_s3DestinationConfig = std::forward<S3DestinationConfigT>(value); }
+    template<typename S3DestinationConfigT = S3DestinationConfig>
+    ExportEBSVolumeRecommendationsRequest& WithS3DestinationConfig(S3DestinationConfigT&& value) { SetS3DestinationConfig(std::forward<S3DestinationConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,12 +106,10 @@ namespace Model
      * <p>The format of the export file.</p> <p>The only export file format currently
      * supported is <code>Csv</code>.</p>
      */
-    inline const FileFormat& GetFileFormat() const{ return m_fileFormat; }
+    inline FileFormat GetFileFormat() const { return m_fileFormat; }
     inline bool FileFormatHasBeenSet() const { return m_fileFormatHasBeenSet; }
-    inline void SetFileFormat(const FileFormat& value) { m_fileFormatHasBeenSet = true; m_fileFormat = value; }
-    inline void SetFileFormat(FileFormat&& value) { m_fileFormatHasBeenSet = true; m_fileFormat = std::move(value); }
-    inline ExportEBSVolumeRecommendationsRequest& WithFileFormat(const FileFormat& value) { SetFileFormat(value); return *this;}
-    inline ExportEBSVolumeRecommendationsRequest& WithFileFormat(FileFormat&& value) { SetFileFormat(std::move(value)); return *this;}
+    inline void SetFileFormat(FileFormat value) { m_fileFormatHasBeenSet = true; m_fileFormat = value; }
+    inline ExportEBSVolumeRecommendationsRequest& WithFileFormat(FileFormat value) { SetFileFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -132,7 +128,7 @@ namespace Model
      * member accounts are not included in the export if this parameter, or the account
      * IDs parameter, is omitted.</p>
      */
-    inline bool GetIncludeMemberAccounts() const{ return m_includeMemberAccounts; }
+    inline bool GetIncludeMemberAccounts() const { return m_includeMemberAccounts; }
     inline bool IncludeMemberAccountsHasBeenSet() const { return m_includeMemberAccountsHasBeenSet; }
     inline void SetIncludeMemberAccounts(bool value) { m_includeMemberAccountsHasBeenSet = true; m_includeMemberAccounts = value; }
     inline ExportEBSVolumeRecommendationsRequest& WithIncludeMemberAccounts(bool value) { SetIncludeMemberAccounts(value); return *this;}
@@ -151,10 +147,10 @@ namespace Model
     S3DestinationConfig m_s3DestinationConfig;
     bool m_s3DestinationConfigHasBeenSet = false;
 
-    FileFormat m_fileFormat;
+    FileFormat m_fileFormat{FileFormat::NOT_SET};
     bool m_fileFormatHasBeenSet = false;
 
-    bool m_includeMemberAccounts;
+    bool m_includeMemberAccounts{false};
     bool m_includeMemberAccountsHasBeenSet = false;
   };
 

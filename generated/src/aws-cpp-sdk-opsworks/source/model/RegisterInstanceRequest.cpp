@@ -12,17 +12,6 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterInstanceRequest::RegisterInstanceRequest() : 
-    m_stackIdHasBeenSet(false),
-    m_hostnameHasBeenSet(false),
-    m_publicIpHasBeenSet(false),
-    m_privateIpHasBeenSet(false),
-    m_rsaPublicKeyHasBeenSet(false),
-    m_rsaPublicKeyFingerprintHasBeenSet(false),
-    m_instanceIdentityHasBeenSet(false)
-{
-}
-
 Aws::String RegisterInstanceRequest::SerializePayload() const
 {
   JsonValue payload;

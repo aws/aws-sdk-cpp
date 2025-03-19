@@ -20,22 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-S3Location::S3Location() : 
-    m_bucketNameHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_encryptionHasBeenSet(false),
-    m_cannedACL(ObjectCannedACL::NOT_SET),
-    m_cannedACLHasBeenSet(false),
-    m_accessControlListHasBeenSet(false),
-    m_taggingHasBeenSet(false),
-    m_userMetadataHasBeenSet(false),
-    m_storageClass(StorageClass::NOT_SET),
-    m_storageClassHasBeenSet(false)
-{
-}
-
 S3Location::S3Location(const XmlNode& xmlNode)
-  : S3Location()
 {
   *this = xmlNode;
 }
@@ -67,13 +52,14 @@ S3Location& S3Location::operator =(const XmlNode& xmlNode)
     XmlNode cannedACLNode = resultNode.FirstChild("CannedACL");
     if(!cannedACLNode.IsNull())
     {
-      m_cannedACL = ObjectCannedACLMapper::GetObjectCannedACLForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(cannedACLNode.GetText()).c_str()).c_str());
+      m_cannedACL = ObjectCannedACLMapper::GetObjectCannedACLForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(cannedACLNode.GetText()).c_str()));
       m_cannedACLHasBeenSet = true;
     }
     XmlNode accessControlListNode = resultNode.FirstChild("AccessControlList");
     if(!accessControlListNode.IsNull())
     {
       XmlNode accessControlListMember = accessControlListNode.FirstChild("Grant");
+      m_accessControlListHasBeenSet = !accessControlListMember.IsNull();
       while(!accessControlListMember.IsNull())
       {
         m_accessControlList.push_back(accessControlListMember);
@@ -92,6 +78,7 @@ S3Location& S3Location::operator =(const XmlNode& xmlNode)
     if(!userMetadataNode.IsNull())
     {
       XmlNode userMetadataMember = userMetadataNode.FirstChild("MetadataEntry");
+      m_userMetadataHasBeenSet = !userMetadataMember.IsNull();
       while(!userMetadataMember.IsNull())
       {
         m_userMetadata.push_back(userMetadataMember);
@@ -103,7 +90,7 @@ S3Location& S3Location::operator =(const XmlNode& xmlNode)
     XmlNode storageClassNode = resultNode.FirstChild("StorageClass");
     if(!storageClassNode.IsNull())
     {
-      m_storageClass = StorageClassMapper::GetStorageClassForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageClassNode.GetText()).c_str()).c_str());
+      m_storageClass = StorageClassMapper::GetStorageClassForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageClassNode.GetText()).c_str()));
       m_storageClassHasBeenSet = true;
     }
   }

@@ -29,7 +29,7 @@ namespace Model
   class CreateBudgetActionRequest : public BudgetsRequest
   {
   public:
-    AWS_BUDGETS_API CreateBudgetActionRequest();
+    AWS_BUDGETS_API CreateBudgetActionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,36 +44,30 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline CreateBudgetActionRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline CreateBudgetActionRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline CreateBudgetActionRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    CreateBudgetActionRequest& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetBudgetName() const{ return m_budgetName; }
+    inline const Aws::String& GetBudgetName() const { return m_budgetName; }
     inline bool BudgetNameHasBeenSet() const { return m_budgetNameHasBeenSet; }
-    inline void SetBudgetName(const Aws::String& value) { m_budgetNameHasBeenSet = true; m_budgetName = value; }
-    inline void SetBudgetName(Aws::String&& value) { m_budgetNameHasBeenSet = true; m_budgetName = std::move(value); }
-    inline void SetBudgetName(const char* value) { m_budgetNameHasBeenSet = true; m_budgetName.assign(value); }
-    inline CreateBudgetActionRequest& WithBudgetName(const Aws::String& value) { SetBudgetName(value); return *this;}
-    inline CreateBudgetActionRequest& WithBudgetName(Aws::String&& value) { SetBudgetName(std::move(value)); return *this;}
-    inline CreateBudgetActionRequest& WithBudgetName(const char* value) { SetBudgetName(value); return *this;}
+    template<typename BudgetNameT = Aws::String>
+    void SetBudgetName(BudgetNameT&& value) { m_budgetNameHasBeenSet = true; m_budgetName = std::forward<BudgetNameT>(value); }
+    template<typename BudgetNameT = Aws::String>
+    CreateBudgetActionRequest& WithBudgetName(BudgetNameT&& value) { SetBudgetName(std::forward<BudgetNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const NotificationType& GetNotificationType() const{ return m_notificationType; }
+    inline NotificationType GetNotificationType() const { return m_notificationType; }
     inline bool NotificationTypeHasBeenSet() const { return m_notificationTypeHasBeenSet; }
-    inline void SetNotificationType(const NotificationType& value) { m_notificationTypeHasBeenSet = true; m_notificationType = value; }
-    inline void SetNotificationType(NotificationType&& value) { m_notificationTypeHasBeenSet = true; m_notificationType = std::move(value); }
-    inline CreateBudgetActionRequest& WithNotificationType(const NotificationType& value) { SetNotificationType(value); return *this;}
-    inline CreateBudgetActionRequest& WithNotificationType(NotificationType&& value) { SetNotificationType(std::move(value)); return *this;}
+    inline void SetNotificationType(NotificationType value) { m_notificationTypeHasBeenSet = true; m_notificationType = value; }
+    inline CreateBudgetActionRequest& WithNotificationType(NotificationType value) { SetNotificationType(value); return *this;}
     ///@}
 
     ///@{
@@ -81,32 +75,30 @@ namespace Model
      * <p> The type of action. This defines the type of tasks that can be carried out
      * by this action. This field also determines the format for definition. </p>
      */
-    inline const ActionType& GetActionType() const{ return m_actionType; }
+    inline ActionType GetActionType() const { return m_actionType; }
     inline bool ActionTypeHasBeenSet() const { return m_actionTypeHasBeenSet; }
-    inline void SetActionType(const ActionType& value) { m_actionTypeHasBeenSet = true; m_actionType = value; }
-    inline void SetActionType(ActionType&& value) { m_actionTypeHasBeenSet = true; m_actionType = std::move(value); }
-    inline CreateBudgetActionRequest& WithActionType(const ActionType& value) { SetActionType(value); return *this;}
-    inline CreateBudgetActionRequest& WithActionType(ActionType&& value) { SetActionType(std::move(value)); return *this;}
+    inline void SetActionType(ActionType value) { m_actionTypeHasBeenSet = true; m_actionType = value; }
+    inline CreateBudgetActionRequest& WithActionType(ActionType value) { SetActionType(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const ActionThreshold& GetActionThreshold() const{ return m_actionThreshold; }
+    inline const ActionThreshold& GetActionThreshold() const { return m_actionThreshold; }
     inline bool ActionThresholdHasBeenSet() const { return m_actionThresholdHasBeenSet; }
-    inline void SetActionThreshold(const ActionThreshold& value) { m_actionThresholdHasBeenSet = true; m_actionThreshold = value; }
-    inline void SetActionThreshold(ActionThreshold&& value) { m_actionThresholdHasBeenSet = true; m_actionThreshold = std::move(value); }
-    inline CreateBudgetActionRequest& WithActionThreshold(const ActionThreshold& value) { SetActionThreshold(value); return *this;}
-    inline CreateBudgetActionRequest& WithActionThreshold(ActionThreshold&& value) { SetActionThreshold(std::move(value)); return *this;}
+    template<typename ActionThresholdT = ActionThreshold>
+    void SetActionThreshold(ActionThresholdT&& value) { m_actionThresholdHasBeenSet = true; m_actionThreshold = std::forward<ActionThresholdT>(value); }
+    template<typename ActionThresholdT = ActionThreshold>
+    CreateBudgetActionRequest& WithActionThreshold(ActionThresholdT&& value) { SetActionThreshold(std::forward<ActionThresholdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Definition& GetDefinition() const{ return m_definition; }
+    inline const Definition& GetDefinition() const { return m_definition; }
     inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
-    inline void SetDefinition(const Definition& value) { m_definitionHasBeenSet = true; m_definition = value; }
-    inline void SetDefinition(Definition&& value) { m_definitionHasBeenSet = true; m_definition = std::move(value); }
-    inline CreateBudgetActionRequest& WithDefinition(const Definition& value) { SetDefinition(value); return *this;}
-    inline CreateBudgetActionRequest& WithDefinition(Definition&& value) { SetDefinition(std::move(value)); return *this;}
+    template<typename DefinitionT = Definition>
+    void SetDefinition(DefinitionT&& value) { m_definitionHasBeenSet = true; m_definition = std::forward<DefinitionT>(value); }
+    template<typename DefinitionT = Definition>
+    CreateBudgetActionRequest& WithDefinition(DefinitionT&& value) { SetDefinition(std::forward<DefinitionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,38 +106,34 @@ namespace Model
      * <p> The role passed for action execution and reversion. Roles and actions must
      * be in the same account. </p>
      */
-    inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
+    inline const Aws::String& GetExecutionRoleArn() const { return m_executionRoleArn; }
     inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
-    inline void SetExecutionRoleArn(const Aws::String& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = value; }
-    inline void SetExecutionRoleArn(Aws::String&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::move(value); }
-    inline void SetExecutionRoleArn(const char* value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn.assign(value); }
-    inline CreateBudgetActionRequest& WithExecutionRoleArn(const Aws::String& value) { SetExecutionRoleArn(value); return *this;}
-    inline CreateBudgetActionRequest& WithExecutionRoleArn(Aws::String&& value) { SetExecutionRoleArn(std::move(value)); return *this;}
-    inline CreateBudgetActionRequest& WithExecutionRoleArn(const char* value) { SetExecutionRoleArn(value); return *this;}
+    template<typename ExecutionRoleArnT = Aws::String>
+    void SetExecutionRoleArn(ExecutionRoleArnT&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::forward<ExecutionRoleArnT>(value); }
+    template<typename ExecutionRoleArnT = Aws::String>
+    CreateBudgetActionRequest& WithExecutionRoleArn(ExecutionRoleArnT&& value) { SetExecutionRoleArn(std::forward<ExecutionRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> This specifies if the action needs manual or automatic approval. </p>
      */
-    inline const ApprovalModel& GetApprovalModel() const{ return m_approvalModel; }
+    inline ApprovalModel GetApprovalModel() const { return m_approvalModel; }
     inline bool ApprovalModelHasBeenSet() const { return m_approvalModelHasBeenSet; }
-    inline void SetApprovalModel(const ApprovalModel& value) { m_approvalModelHasBeenSet = true; m_approvalModel = value; }
-    inline void SetApprovalModel(ApprovalModel&& value) { m_approvalModelHasBeenSet = true; m_approvalModel = std::move(value); }
-    inline CreateBudgetActionRequest& WithApprovalModel(const ApprovalModel& value) { SetApprovalModel(value); return *this;}
-    inline CreateBudgetActionRequest& WithApprovalModel(ApprovalModel&& value) { SetApprovalModel(std::move(value)); return *this;}
+    inline void SetApprovalModel(ApprovalModel value) { m_approvalModelHasBeenSet = true; m_approvalModel = value; }
+    inline CreateBudgetActionRequest& WithApprovalModel(ApprovalModel value) { SetApprovalModel(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<Subscriber>& GetSubscribers() const{ return m_subscribers; }
+    inline const Aws::Vector<Subscriber>& GetSubscribers() const { return m_subscribers; }
     inline bool SubscribersHasBeenSet() const { return m_subscribersHasBeenSet; }
-    inline void SetSubscribers(const Aws::Vector<Subscriber>& value) { m_subscribersHasBeenSet = true; m_subscribers = value; }
-    inline void SetSubscribers(Aws::Vector<Subscriber>&& value) { m_subscribersHasBeenSet = true; m_subscribers = std::move(value); }
-    inline CreateBudgetActionRequest& WithSubscribers(const Aws::Vector<Subscriber>& value) { SetSubscribers(value); return *this;}
-    inline CreateBudgetActionRequest& WithSubscribers(Aws::Vector<Subscriber>&& value) { SetSubscribers(std::move(value)); return *this;}
-    inline CreateBudgetActionRequest& AddSubscribers(const Subscriber& value) { m_subscribersHasBeenSet = true; m_subscribers.push_back(value); return *this; }
-    inline CreateBudgetActionRequest& AddSubscribers(Subscriber&& value) { m_subscribersHasBeenSet = true; m_subscribers.push_back(std::move(value)); return *this; }
+    template<typename SubscribersT = Aws::Vector<Subscriber>>
+    void SetSubscribers(SubscribersT&& value) { m_subscribersHasBeenSet = true; m_subscribers = std::forward<SubscribersT>(value); }
+    template<typename SubscribersT = Aws::Vector<Subscriber>>
+    CreateBudgetActionRequest& WithSubscribers(SubscribersT&& value) { SetSubscribers(std::forward<SubscribersT>(value)); return *this;}
+    template<typename SubscribersT = Subscriber>
+    CreateBudgetActionRequest& AddSubscribers(SubscribersT&& value) { m_subscribersHasBeenSet = true; m_subscribers.emplace_back(std::forward<SubscribersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -154,14 +142,14 @@ namespace Model
      * tag consists of a key and a value, and each key must be unique for the
      * resource.</p>
      */
-    inline const Aws::Vector<ResourceTag>& GetResourceTags() const{ return m_resourceTags; }
+    inline const Aws::Vector<ResourceTag>& GetResourceTags() const { return m_resourceTags; }
     inline bool ResourceTagsHasBeenSet() const { return m_resourceTagsHasBeenSet; }
-    inline void SetResourceTags(const Aws::Vector<ResourceTag>& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = value; }
-    inline void SetResourceTags(Aws::Vector<ResourceTag>&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = std::move(value); }
-    inline CreateBudgetActionRequest& WithResourceTags(const Aws::Vector<ResourceTag>& value) { SetResourceTags(value); return *this;}
-    inline CreateBudgetActionRequest& WithResourceTags(Aws::Vector<ResourceTag>&& value) { SetResourceTags(std::move(value)); return *this;}
-    inline CreateBudgetActionRequest& AddResourceTags(const ResourceTag& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(value); return *this; }
-    inline CreateBudgetActionRequest& AddResourceTags(ResourceTag&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(std::move(value)); return *this; }
+    template<typename ResourceTagsT = Aws::Vector<ResourceTag>>
+    void SetResourceTags(ResourceTagsT&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = std::forward<ResourceTagsT>(value); }
+    template<typename ResourceTagsT = Aws::Vector<ResourceTag>>
+    CreateBudgetActionRequest& WithResourceTags(ResourceTagsT&& value) { SetResourceTags(std::forward<ResourceTagsT>(value)); return *this;}
+    template<typename ResourceTagsT = ResourceTag>
+    CreateBudgetActionRequest& AddResourceTags(ResourceTagsT&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.emplace_back(std::forward<ResourceTagsT>(value)); return *this; }
     ///@}
   private:
 
@@ -171,10 +159,10 @@ namespace Model
     Aws::String m_budgetName;
     bool m_budgetNameHasBeenSet = false;
 
-    NotificationType m_notificationType;
+    NotificationType m_notificationType{NotificationType::NOT_SET};
     bool m_notificationTypeHasBeenSet = false;
 
-    ActionType m_actionType;
+    ActionType m_actionType{ActionType::NOT_SET};
     bool m_actionTypeHasBeenSet = false;
 
     ActionThreshold m_actionThreshold;
@@ -186,7 +174,7 @@ namespace Model
     Aws::String m_executionRoleArn;
     bool m_executionRoleArnHasBeenSet = false;
 
-    ApprovalModel m_approvalModel;
+    ApprovalModel m_approvalModel{ApprovalModel::NOT_SET};
     bool m_approvalModelHasBeenSet = false;
 
     Aws::Vector<Subscriber> m_subscribers;

@@ -20,19 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-BuildConfiguration::BuildConfiguration() : 
-    m_artifactNameHasBeenSet(false),
-    m_codeBuildServiceRoleHasBeenSet(false),
-    m_computeType(ComputeType::NOT_SET),
-    m_computeTypeHasBeenSet(false),
-    m_imageHasBeenSet(false),
-    m_timeoutInMinutes(0),
-    m_timeoutInMinutesHasBeenSet(false)
-{
-}
-
 BuildConfiguration::BuildConfiguration(const XmlNode& xmlNode)
-  : BuildConfiguration()
 {
   *this = xmlNode;
 }
@@ -58,7 +46,7 @@ BuildConfiguration& BuildConfiguration::operator =(const XmlNode& xmlNode)
     XmlNode computeTypeNode = resultNode.FirstChild("ComputeType");
     if(!computeTypeNode.IsNull())
     {
-      m_computeType = ComputeTypeMapper::GetComputeTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(computeTypeNode.GetText()).c_str()).c_str());
+      m_computeType = ComputeTypeMapper::GetComputeTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(computeTypeNode.GetText()).c_str()));
       m_computeTypeHasBeenSet = true;
     }
     XmlNode imageNode = resultNode.FirstChild("Image");

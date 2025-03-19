@@ -21,7 +21,7 @@ namespace Model
   class DeleteCallAnalyticsJobRequest : public TranscribeServiceRequest
   {
   public:
-    AWS_TRANSCRIBESERVICE_API DeleteCallAnalyticsJobRequest();
+    AWS_TRANSCRIBESERVICE_API DeleteCallAnalyticsJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The name of the Call Analytics job you want to delete. Job names are case
      * sensitive.</p>
      */
-    inline const Aws::String& GetCallAnalyticsJobName() const{ return m_callAnalyticsJobName; }
+    inline const Aws::String& GetCallAnalyticsJobName() const { return m_callAnalyticsJobName; }
     inline bool CallAnalyticsJobNameHasBeenSet() const { return m_callAnalyticsJobNameHasBeenSet; }
-    inline void SetCallAnalyticsJobName(const Aws::String& value) { m_callAnalyticsJobNameHasBeenSet = true; m_callAnalyticsJobName = value; }
-    inline void SetCallAnalyticsJobName(Aws::String&& value) { m_callAnalyticsJobNameHasBeenSet = true; m_callAnalyticsJobName = std::move(value); }
-    inline void SetCallAnalyticsJobName(const char* value) { m_callAnalyticsJobNameHasBeenSet = true; m_callAnalyticsJobName.assign(value); }
-    inline DeleteCallAnalyticsJobRequest& WithCallAnalyticsJobName(const Aws::String& value) { SetCallAnalyticsJobName(value); return *this;}
-    inline DeleteCallAnalyticsJobRequest& WithCallAnalyticsJobName(Aws::String&& value) { SetCallAnalyticsJobName(std::move(value)); return *this;}
-    inline DeleteCallAnalyticsJobRequest& WithCallAnalyticsJobName(const char* value) { SetCallAnalyticsJobName(value); return *this;}
+    template<typename CallAnalyticsJobNameT = Aws::String>
+    void SetCallAnalyticsJobName(CallAnalyticsJobNameT&& value) { m_callAnalyticsJobNameHasBeenSet = true; m_callAnalyticsJobName = std::forward<CallAnalyticsJobNameT>(value); }
+    template<typename CallAnalyticsJobNameT = Aws::String>
+    DeleteCallAnalyticsJobRequest& WithCallAnalyticsJobName(CallAnalyticsJobNameT&& value) { SetCallAnalyticsJobName(std::forward<CallAnalyticsJobNameT>(value)); return *this;}
     ///@}
   private:
 

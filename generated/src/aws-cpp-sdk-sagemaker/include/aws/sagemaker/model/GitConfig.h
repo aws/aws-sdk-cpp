@@ -32,7 +32,7 @@ namespace Model
   class GitConfig
   {
   public:
-    AWS_SAGEMAKER_API GitConfig();
+    AWS_SAGEMAKER_API GitConfig() = default;
     AWS_SAGEMAKER_API GitConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API GitConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The URL where the Git repository is located.</p>
      */
-    inline const Aws::String& GetRepositoryUrl() const{ return m_repositoryUrl; }
+    inline const Aws::String& GetRepositoryUrl() const { return m_repositoryUrl; }
     inline bool RepositoryUrlHasBeenSet() const { return m_repositoryUrlHasBeenSet; }
-    inline void SetRepositoryUrl(const Aws::String& value) { m_repositoryUrlHasBeenSet = true; m_repositoryUrl = value; }
-    inline void SetRepositoryUrl(Aws::String&& value) { m_repositoryUrlHasBeenSet = true; m_repositoryUrl = std::move(value); }
-    inline void SetRepositoryUrl(const char* value) { m_repositoryUrlHasBeenSet = true; m_repositoryUrl.assign(value); }
-    inline GitConfig& WithRepositoryUrl(const Aws::String& value) { SetRepositoryUrl(value); return *this;}
-    inline GitConfig& WithRepositoryUrl(Aws::String&& value) { SetRepositoryUrl(std::move(value)); return *this;}
-    inline GitConfig& WithRepositoryUrl(const char* value) { SetRepositoryUrl(value); return *this;}
+    template<typename RepositoryUrlT = Aws::String>
+    void SetRepositoryUrl(RepositoryUrlT&& value) { m_repositoryUrlHasBeenSet = true; m_repositoryUrl = std::forward<RepositoryUrlT>(value); }
+    template<typename RepositoryUrlT = Aws::String>
+    GitConfig& WithRepositoryUrl(RepositoryUrlT&& value) { SetRepositoryUrl(std::forward<RepositoryUrlT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The default branch for the Git repository.</p>
      */
-    inline const Aws::String& GetBranch() const{ return m_branch; }
+    inline const Aws::String& GetBranch() const { return m_branch; }
     inline bool BranchHasBeenSet() const { return m_branchHasBeenSet; }
-    inline void SetBranch(const Aws::String& value) { m_branchHasBeenSet = true; m_branch = value; }
-    inline void SetBranch(Aws::String&& value) { m_branchHasBeenSet = true; m_branch = std::move(value); }
-    inline void SetBranch(const char* value) { m_branchHasBeenSet = true; m_branch.assign(value); }
-    inline GitConfig& WithBranch(const Aws::String& value) { SetBranch(value); return *this;}
-    inline GitConfig& WithBranch(Aws::String&& value) { SetBranch(std::move(value)); return *this;}
-    inline GitConfig& WithBranch(const char* value) { SetBranch(value); return *this;}
+    template<typename BranchT = Aws::String>
+    void SetBranch(BranchT&& value) { m_branchHasBeenSet = true; m_branch = std::forward<BranchT>(value); }
+    template<typename BranchT = Aws::String>
+    GitConfig& WithBranch(BranchT&& value) { SetBranch(std::forward<BranchT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +70,12 @@ namespace Model
      * following format:</p> <p> <code>{"username": <i>UserName</i>, "password":
      * <i>Password</i>}</code> </p>
      */
-    inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
+    inline const Aws::String& GetSecretArn() const { return m_secretArn; }
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
-    inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
-    inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
-    inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
-    inline GitConfig& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
-    inline GitConfig& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
-    inline GitConfig& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
+    template<typename SecretArnT = Aws::String>
+    void SetSecretArn(SecretArnT&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::forward<SecretArnT>(value); }
+    template<typename SecretArnT = Aws::String>
+    GitConfig& WithSecretArn(SecretArnT&& value) { SetSecretArn(std::forward<SecretArnT>(value)); return *this;}
     ///@}
   private:
 

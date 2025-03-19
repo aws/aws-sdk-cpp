@@ -12,11 +12,6 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutAccountVdmAttributesRequest::PutAccountVdmAttributesRequest() : 
-    m_vdmAttributesHasBeenSet(false)
-{
-}
-
 Aws::String PutAccountVdmAttributesRequest::SerializePayload() const
 {
   JsonValue payload;

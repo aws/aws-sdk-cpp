@@ -33,7 +33,7 @@ namespace Model
   class ImageScanState
   {
   public:
-    AWS_IMAGEBUILDER_API ImageScanState();
+    AWS_IMAGEBUILDER_API ImageScanState() = default;
     AWS_IMAGEBUILDER_API ImageScanState(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API ImageScanState& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,30 +43,26 @@ namespace Model
     /**
      * <p>The current state of vulnerability scans for the image.</p>
      */
-    inline const ImageScanStatus& GetStatus() const{ return m_status; }
+    inline ImageScanStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ImageScanStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ImageScanStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ImageScanState& WithStatus(const ImageScanStatus& value) { SetStatus(value); return *this;}
-    inline ImageScanState& WithStatus(ImageScanStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ImageScanStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ImageScanState& WithStatus(ImageScanStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The reason for the scan status for the image.</p>
      */
-    inline const Aws::String& GetReason() const{ return m_reason; }
+    inline const Aws::String& GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-    inline ImageScanState& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-    inline ImageScanState& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-    inline ImageScanState& WithReason(const char* value) { SetReason(value); return *this;}
+    template<typename ReasonT = Aws::String>
+    void SetReason(ReasonT&& value) { m_reasonHasBeenSet = true; m_reason = std::forward<ReasonT>(value); }
+    template<typename ReasonT = Aws::String>
+    ImageScanState& WithReason(ReasonT&& value) { SetReason(std::forward<ReasonT>(value)); return *this;}
     ///@}
   private:
 
-    ImageScanStatus m_status;
+    ImageScanStatus m_status{ImageScanStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_reason;

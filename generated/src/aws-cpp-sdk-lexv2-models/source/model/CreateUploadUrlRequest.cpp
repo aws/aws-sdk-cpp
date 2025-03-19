@@ -12,10 +12,6 @@ using namespace Aws::LexModelsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateUploadUrlRequest::CreateUploadUrlRequest()
-{
-}
-
 Aws::String CreateUploadUrlRequest::SerializePayload() const
 {
   return {};

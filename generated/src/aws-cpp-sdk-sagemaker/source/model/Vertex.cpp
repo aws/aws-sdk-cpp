@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-Vertex::Vertex() : 
-    m_arnHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_lineageType(LineageType::NOT_SET),
-    m_lineageTypeHasBeenSet(false)
-{
-}
-
 Vertex::Vertex(JsonView jsonValue)
-  : Vertex()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ Vertex& Vertex::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LineageType"))
   {
     m_lineageType = LineageTypeMapper::GetLineageTypeForName(jsonValue.GetString("LineageType"));
-
     m_lineageTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

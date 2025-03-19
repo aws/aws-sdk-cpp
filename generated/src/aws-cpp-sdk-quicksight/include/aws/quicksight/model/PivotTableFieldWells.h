@@ -33,7 +33,7 @@ namespace Model
   class PivotTableFieldWells
   {
   public:
-    AWS_QUICKSIGHT_API PivotTableFieldWells();
+    AWS_QUICKSIGHT_API PivotTableFieldWells() = default;
     AWS_QUICKSIGHT_API PivotTableFieldWells(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API PivotTableFieldWells& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>The aggregated field well for the pivot table.</p>
      */
-    inline const PivotTableAggregatedFieldWells& GetPivotTableAggregatedFieldWells() const{ return m_pivotTableAggregatedFieldWells; }
+    inline const PivotTableAggregatedFieldWells& GetPivotTableAggregatedFieldWells() const { return m_pivotTableAggregatedFieldWells; }
     inline bool PivotTableAggregatedFieldWellsHasBeenSet() const { return m_pivotTableAggregatedFieldWellsHasBeenSet; }
-    inline void SetPivotTableAggregatedFieldWells(const PivotTableAggregatedFieldWells& value) { m_pivotTableAggregatedFieldWellsHasBeenSet = true; m_pivotTableAggregatedFieldWells = value; }
-    inline void SetPivotTableAggregatedFieldWells(PivotTableAggregatedFieldWells&& value) { m_pivotTableAggregatedFieldWellsHasBeenSet = true; m_pivotTableAggregatedFieldWells = std::move(value); }
-    inline PivotTableFieldWells& WithPivotTableAggregatedFieldWells(const PivotTableAggregatedFieldWells& value) { SetPivotTableAggregatedFieldWells(value); return *this;}
-    inline PivotTableFieldWells& WithPivotTableAggregatedFieldWells(PivotTableAggregatedFieldWells&& value) { SetPivotTableAggregatedFieldWells(std::move(value)); return *this;}
+    template<typename PivotTableAggregatedFieldWellsT = PivotTableAggregatedFieldWells>
+    void SetPivotTableAggregatedFieldWells(PivotTableAggregatedFieldWellsT&& value) { m_pivotTableAggregatedFieldWellsHasBeenSet = true; m_pivotTableAggregatedFieldWells = std::forward<PivotTableAggregatedFieldWellsT>(value); }
+    template<typename PivotTableAggregatedFieldWellsT = PivotTableAggregatedFieldWells>
+    PivotTableFieldWells& WithPivotTableAggregatedFieldWells(PivotTableAggregatedFieldWellsT&& value) { SetPivotTableAggregatedFieldWells(std::forward<PivotTableAggregatedFieldWellsT>(value)); return *this;}
     ///@}
   private:
 

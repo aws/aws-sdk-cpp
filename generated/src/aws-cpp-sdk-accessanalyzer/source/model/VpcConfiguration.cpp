@@ -18,13 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-VpcConfiguration::VpcConfiguration() : 
-    m_vpcIdHasBeenSet(false)
-{
-}
-
 VpcConfiguration::VpcConfiguration(JsonView jsonValue)
-  : VpcConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ VpcConfiguration& VpcConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("vpcId"))
   {
     m_vpcId = jsonValue.GetString("vpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,17 +18,7 @@ namespace SFN
 namespace Model
 {
 
-StateMachineListItem::StateMachineListItem() : 
-    m_stateMachineArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(StateMachineType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
-{
-}
-
 StateMachineListItem::StateMachineListItem(JsonView jsonValue)
-  : StateMachineListItem()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ StateMachineListItem& StateMachineListItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("stateMachineArn"))
   {
     m_stateMachineArn = jsonValue.GetString("stateMachineArn");
-
     m_stateMachineArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = StateMachineTypeMapper::GetStateMachineTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDate"))
   {
     m_creationDate = jsonValue.GetDouble("creationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   return *this;
 }
 

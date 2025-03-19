@@ -25,7 +25,7 @@ namespace Model
   class GetCostForecastRequest : public CostExplorerRequest
   {
   public:
-    AWS_COSTEXPLORER_API GetCostForecastRequest();
+    AWS_COSTEXPLORER_API GetCostForecastRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,12 +43,12 @@ namespace Model
      * <p>The period of time that you want the forecast to cover. The start date must
      * be equal to or no later than the current date to avoid a validation error.</p>
      */
-    inline const DateInterval& GetTimePeriod() const{ return m_timePeriod; }
+    inline const DateInterval& GetTimePeriod() const { return m_timePeriod; }
     inline bool TimePeriodHasBeenSet() const { return m_timePeriodHasBeenSet; }
-    inline void SetTimePeriod(const DateInterval& value) { m_timePeriodHasBeenSet = true; m_timePeriod = value; }
-    inline void SetTimePeriod(DateInterval&& value) { m_timePeriodHasBeenSet = true; m_timePeriod = std::move(value); }
-    inline GetCostForecastRequest& WithTimePeriod(const DateInterval& value) { SetTimePeriod(value); return *this;}
-    inline GetCostForecastRequest& WithTimePeriod(DateInterval&& value) { SetTimePeriod(std::move(value)); return *this;}
+    template<typename TimePeriodT = DateInterval>
+    void SetTimePeriod(TimePeriodT&& value) { m_timePeriodHasBeenSet = true; m_timePeriod = std::forward<TimePeriodT>(value); }
+    template<typename TimePeriodT = DateInterval>
+    GetCostForecastRequest& WithTimePeriod(TimePeriodT&& value) { SetTimePeriod(std::forward<TimePeriodT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,12 +62,10 @@ namespace Model
      * <p>NET_AMORTIZED_COST</p> </li> <li> <p>NET_UNBLENDED_COST</p> </li> <li>
      * <p>UNBLENDED_COST</p> </li> </ul>
      */
-    inline const Metric& GetMetric() const{ return m_metric; }
+    inline Metric GetMetric() const { return m_metric; }
     inline bool MetricHasBeenSet() const { return m_metricHasBeenSet; }
-    inline void SetMetric(const Metric& value) { m_metricHasBeenSet = true; m_metric = value; }
-    inline void SetMetric(Metric&& value) { m_metricHasBeenSet = true; m_metric = std::move(value); }
-    inline GetCostForecastRequest& WithMetric(const Metric& value) { SetMetric(value); return *this;}
-    inline GetCostForecastRequest& WithMetric(Metric&& value) { SetMetric(std::move(value)); return *this;}
+    inline void SetMetric(Metric value) { m_metricHasBeenSet = true; m_metric = value; }
+    inline GetCostForecastRequest& WithMetric(Metric value) { SetMetric(value); return *this;}
     ///@}
 
     ///@{
@@ -77,12 +75,10 @@ namespace Model
      * <p>The <code>GetCostForecast</code> operation supports only <code>DAILY</code>
      * and <code>MONTHLY</code> granularities.</p>
      */
-    inline const Granularity& GetGranularity() const{ return m_granularity; }
+    inline Granularity GetGranularity() const { return m_granularity; }
     inline bool GranularityHasBeenSet() const { return m_granularityHasBeenSet; }
-    inline void SetGranularity(const Granularity& value) { m_granularityHasBeenSet = true; m_granularity = value; }
-    inline void SetGranularity(Granularity&& value) { m_granularityHasBeenSet = true; m_granularity = std::move(value); }
-    inline GetCostForecastRequest& WithGranularity(const Granularity& value) { SetGranularity(value); return *this;}
-    inline GetCostForecastRequest& WithGranularity(Granularity&& value) { SetGranularity(std::move(value)); return *this;}
+    inline void SetGranularity(Granularity value) { m_granularityHasBeenSet = true; m_granularity = value; }
+    inline GetCostForecastRequest& WithGranularity(Granularity value) { SetGranularity(value); return *this;}
     ///@}
 
     ///@{
@@ -105,12 +101,12 @@ namespace Model
      * <code>BILLING_ENTITY</code> </p> </li> <li> <p> <code>RESERVATION_ID</code> </p>
      * </li> <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li> </ul>
      */
-    inline const Expression& GetFilter() const{ return m_filter; }
+    inline const Expression& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const Expression& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(Expression&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline GetCostForecastRequest& WithFilter(const Expression& value) { SetFilter(value); return *this;}
-    inline GetCostForecastRequest& WithFilter(Expression&& value) { SetFilter(std::move(value)); return *this;}
+    template<typename FilterT = Expression>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = Expression>
+    GetCostForecastRequest& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -121,14 +117,12 @@ namespace Model
      * Amazon Web Services Billing and Cost Management features. The BillingViewArn can
      * be retrieved by calling the ListBillingViews API.</p>
      */
-    inline const Aws::String& GetBillingViewArn() const{ return m_billingViewArn; }
+    inline const Aws::String& GetBillingViewArn() const { return m_billingViewArn; }
     inline bool BillingViewArnHasBeenSet() const { return m_billingViewArnHasBeenSet; }
-    inline void SetBillingViewArn(const Aws::String& value) { m_billingViewArnHasBeenSet = true; m_billingViewArn = value; }
-    inline void SetBillingViewArn(Aws::String&& value) { m_billingViewArnHasBeenSet = true; m_billingViewArn = std::move(value); }
-    inline void SetBillingViewArn(const char* value) { m_billingViewArnHasBeenSet = true; m_billingViewArn.assign(value); }
-    inline GetCostForecastRequest& WithBillingViewArn(const Aws::String& value) { SetBillingViewArn(value); return *this;}
-    inline GetCostForecastRequest& WithBillingViewArn(Aws::String&& value) { SetBillingViewArn(std::move(value)); return *this;}
-    inline GetCostForecastRequest& WithBillingViewArn(const char* value) { SetBillingViewArn(value); return *this;}
+    template<typename BillingViewArnT = Aws::String>
+    void SetBillingViewArn(BillingViewArnT&& value) { m_billingViewArnHasBeenSet = true; m_billingViewArn = std::forward<BillingViewArnT>(value); }
+    template<typename BillingViewArnT = Aws::String>
+    GetCostForecastRequest& WithBillingViewArn(BillingViewArnT&& value) { SetBillingViewArn(std::forward<BillingViewArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -139,7 +133,7 @@ namespace Model
      * actual value falling in the prediction interval. Higher confidence levels result
      * in wider prediction intervals.</p>
      */
-    inline int GetPredictionIntervalLevel() const{ return m_predictionIntervalLevel; }
+    inline int GetPredictionIntervalLevel() const { return m_predictionIntervalLevel; }
     inline bool PredictionIntervalLevelHasBeenSet() const { return m_predictionIntervalLevelHasBeenSet; }
     inline void SetPredictionIntervalLevel(int value) { m_predictionIntervalLevelHasBeenSet = true; m_predictionIntervalLevel = value; }
     inline GetCostForecastRequest& WithPredictionIntervalLevel(int value) { SetPredictionIntervalLevel(value); return *this;}
@@ -149,10 +143,10 @@ namespace Model
     DateInterval m_timePeriod;
     bool m_timePeriodHasBeenSet = false;
 
-    Metric m_metric;
+    Metric m_metric{Metric::NOT_SET};
     bool m_metricHasBeenSet = false;
 
-    Granularity m_granularity;
+    Granularity m_granularity{Granularity::NOT_SET};
     bool m_granularityHasBeenSet = false;
 
     Expression m_filter;
@@ -161,7 +155,7 @@ namespace Model
     Aws::String m_billingViewArn;
     bool m_billingViewArnHasBeenSet = false;
 
-    int m_predictionIntervalLevel;
+    int m_predictionIntervalLevel{0};
     bool m_predictionIntervalLevelHasBeenSet = false;
   };
 

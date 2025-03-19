@@ -18,19 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-ProtectedJobSummary::ProtectedJobSummary() : 
-    m_idHasBeenSet(false),
-    m_membershipIdHasBeenSet(false),
-    m_membershipArnHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_status(ProtectedJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_receiverConfigurationsHasBeenSet(false)
-{
-}
-
 ProtectedJobSummary::ProtectedJobSummary(JsonView jsonValue)
-  : ProtectedJobSummary()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ ProtectedJobSummary& ProtectedJobSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("membershipId"))
   {
     m_membershipId = jsonValue.GetString("membershipId");
-
     m_membershipIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("membershipArn"))
   {
     m_membershipArn = jsonValue.GetString("membershipArn");
-
     m_membershipArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createTime"))
   {
     m_createTime = jsonValue.GetDouble("createTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ProtectedJobStatusMapper::GetProtectedJobStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("receiverConfigurations"))
   {
     Aws::Utils::Array<JsonView> receiverConfigurationsJsonList = jsonValue.GetArray("receiverConfigurations");
@@ -81,7 +59,6 @@ ProtectedJobSummary& ProtectedJobSummary::operator =(JsonView jsonValue)
     }
     m_receiverConfigurationsHasBeenSet = true;
   }
-
   return *this;
 }
 

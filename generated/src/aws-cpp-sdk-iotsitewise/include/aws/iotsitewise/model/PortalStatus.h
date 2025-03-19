@@ -33,7 +33,7 @@ namespace Model
   class PortalStatus
   {
   public:
-    AWS_IOTSITEWISE_API PortalStatus();
+    AWS_IOTSITEWISE_API PortalStatus() = default;
     AWS_IOTSITEWISE_API PortalStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API PortalStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,26 @@ namespace Model
     /**
      * <p>The current state of the portal.</p>
      */
-    inline const PortalState& GetState() const{ return m_state; }
+    inline PortalState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const PortalState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(PortalState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline PortalStatus& WithState(const PortalState& value) { SetState(value); return *this;}
-    inline PortalStatus& WithState(PortalState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(PortalState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline PortalStatus& WithState(PortalState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains associated error information, if any.</p>
      */
-    inline const MonitorErrorDetails& GetError() const{ return m_error; }
+    inline const MonitorErrorDetails& GetError() const { return m_error; }
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-    inline void SetError(const MonitorErrorDetails& value) { m_errorHasBeenSet = true; m_error = value; }
-    inline void SetError(MonitorErrorDetails&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-    inline PortalStatus& WithError(const MonitorErrorDetails& value) { SetError(value); return *this;}
-    inline PortalStatus& WithError(MonitorErrorDetails&& value) { SetError(std::move(value)); return *this;}
+    template<typename ErrorT = MonitorErrorDetails>
+    void SetError(ErrorT&& value) { m_errorHasBeenSet = true; m_error = std::forward<ErrorT>(value); }
+    template<typename ErrorT = MonitorErrorDetails>
+    PortalStatus& WithError(ErrorT&& value) { SetError(std::forward<ErrorT>(value)); return *this;}
     ///@}
   private:
 
-    PortalState m_state;
+    PortalState m_state{PortalState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     MonitorErrorDetails m_error;

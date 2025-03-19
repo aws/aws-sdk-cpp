@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-HeatMapAggregatedFieldWells::HeatMapAggregatedFieldWells() : 
-    m_rowsHasBeenSet(false),
-    m_columnsHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 HeatMapAggregatedFieldWells::HeatMapAggregatedFieldWells(JsonView jsonValue)
-  : HeatMapAggregatedFieldWells()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ HeatMapAggregatedFieldWells& HeatMapAggregatedFieldWells::operator =(JsonView js
     }
     m_rowsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Columns"))
   {
     Aws::Utils::Array<JsonView> columnsJsonList = jsonValue.GetArray("Columns");
@@ -52,7 +43,6 @@ HeatMapAggregatedFieldWells& HeatMapAggregatedFieldWells::operator =(JsonView js
     }
     m_columnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -62,7 +52,6 @@ HeatMapAggregatedFieldWells& HeatMapAggregatedFieldWells::operator =(JsonView js
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

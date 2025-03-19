@@ -18,15 +18,7 @@ namespace Panorama
 namespace Model
 {
 
-NodeSignal::NodeSignal() : 
-    m_nodeInstanceIdHasBeenSet(false),
-    m_signal(NodeSignalValue::NOT_SET),
-    m_signalHasBeenSet(false)
-{
-}
-
 NodeSignal::NodeSignal(JsonView jsonValue)
-  : NodeSignal()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ NodeSignal& NodeSignal::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("NodeInstanceId"))
   {
     m_nodeInstanceId = jsonValue.GetString("NodeInstanceId");
-
     m_nodeInstanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Signal"))
   {
     m_signal = NodeSignalValueMapper::GetNodeSignalValueForName(jsonValue.GetString("Signal"));
-
     m_signalHasBeenSet = true;
   }
-
   return *this;
 }
 

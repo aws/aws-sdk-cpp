@@ -12,19 +12,6 @@ using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-TestInvokeMethodRequest::TestInvokeMethodRequest() : 
-    m_restApiIdHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_httpMethodHasBeenSet(false),
-    m_pathWithQueryStringHasBeenSet(false),
-    m_multiValueHeadersHasBeenSet(false),
-    m_clientCertificateIdHasBeenSet(false),
-    m_stageVariablesHasBeenSet(false),
-    m_requestBodyHasBeenSet(false),
-    m_requestHeadersHasBeenSet(false)
-{
-}
-
 Aws::String TestInvokeMethodRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -29,7 +29,7 @@ namespace Model
   class ListMetricAttributionMetricsResult
   {
   public:
-    AWS_PERSONALIZE_API ListMetricAttributionMetricsResult();
+    AWS_PERSONALIZE_API ListMetricAttributionMetricsResult() = default;
     AWS_PERSONALIZE_API ListMetricAttributionMetricsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PERSONALIZE_API ListMetricAttributionMetricsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The metrics for the specified metric attribution.</p>
      */
-    inline const Aws::Vector<MetricAttribute>& GetMetrics() const{ return m_metrics; }
-    inline void SetMetrics(const Aws::Vector<MetricAttribute>& value) { m_metrics = value; }
-    inline void SetMetrics(Aws::Vector<MetricAttribute>&& value) { m_metrics = std::move(value); }
-    inline ListMetricAttributionMetricsResult& WithMetrics(const Aws::Vector<MetricAttribute>& value) { SetMetrics(value); return *this;}
-    inline ListMetricAttributionMetricsResult& WithMetrics(Aws::Vector<MetricAttribute>&& value) { SetMetrics(std::move(value)); return *this;}
-    inline ListMetricAttributionMetricsResult& AddMetrics(const MetricAttribute& value) { m_metrics.push_back(value); return *this; }
-    inline ListMetricAttributionMetricsResult& AddMetrics(MetricAttribute&& value) { m_metrics.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<MetricAttribute>& GetMetrics() const { return m_metrics; }
+    template<typename MetricsT = Aws::Vector<MetricAttribute>>
+    void SetMetrics(MetricsT&& value) { m_metricsHasBeenSet = true; m_metrics = std::forward<MetricsT>(value); }
+    template<typename MetricsT = Aws::Vector<MetricAttribute>>
+    ListMetricAttributionMetricsResult& WithMetrics(MetricsT&& value) { SetMetrics(std::forward<MetricsT>(value)); return *this;}
+    template<typename MetricsT = MetricAttribute>
+    ListMetricAttributionMetricsResult& AddMetrics(MetricsT&& value) { m_metricsHasBeenSet = true; m_metrics.emplace_back(std::forward<MetricsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * <code>ListMetricAttributionMetricsResponse</code> request to retrieve the next
      * page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListMetricAttributionMetricsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListMetricAttributionMetricsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListMetricAttributionMetricsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListMetricAttributionMetricsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListMetricAttributionMetricsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListMetricAttributionMetricsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListMetricAttributionMetricsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListMetricAttributionMetricsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<MetricAttribute> m_metrics;
+    bool m_metricsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

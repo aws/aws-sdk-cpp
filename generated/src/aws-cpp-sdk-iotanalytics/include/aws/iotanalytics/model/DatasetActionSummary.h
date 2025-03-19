@@ -33,7 +33,7 @@ namespace Model
   class DatasetActionSummary
   {
   public:
-    AWS_IOTANALYTICS_API DatasetActionSummary();
+    AWS_IOTANALYTICS_API DatasetActionSummary() = default;
     AWS_IOTANALYTICS_API DatasetActionSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API DatasetActionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The name of the action that automatically creates the dataset's contents.</p>
      */
-    inline const Aws::String& GetActionName() const{ return m_actionName; }
+    inline const Aws::String& GetActionName() const { return m_actionName; }
     inline bool ActionNameHasBeenSet() const { return m_actionNameHasBeenSet; }
-    inline void SetActionName(const Aws::String& value) { m_actionNameHasBeenSet = true; m_actionName = value; }
-    inline void SetActionName(Aws::String&& value) { m_actionNameHasBeenSet = true; m_actionName = std::move(value); }
-    inline void SetActionName(const char* value) { m_actionNameHasBeenSet = true; m_actionName.assign(value); }
-    inline DatasetActionSummary& WithActionName(const Aws::String& value) { SetActionName(value); return *this;}
-    inline DatasetActionSummary& WithActionName(Aws::String&& value) { SetActionName(std::move(value)); return *this;}
-    inline DatasetActionSummary& WithActionName(const char* value) { SetActionName(value); return *this;}
+    template<typename ActionNameT = Aws::String>
+    void SetActionName(ActionNameT&& value) { m_actionNameHasBeenSet = true; m_actionName = std::forward<ActionNameT>(value); }
+    template<typename ActionNameT = Aws::String>
+    DatasetActionSummary& WithActionName(ActionNameT&& value) { SetActionName(std::forward<ActionNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,19 +56,17 @@ namespace Model
      * <p>The type of action by which the dataset's contents are automatically
      * created.</p>
      */
-    inline const DatasetActionType& GetActionType() const{ return m_actionType; }
+    inline DatasetActionType GetActionType() const { return m_actionType; }
     inline bool ActionTypeHasBeenSet() const { return m_actionTypeHasBeenSet; }
-    inline void SetActionType(const DatasetActionType& value) { m_actionTypeHasBeenSet = true; m_actionType = value; }
-    inline void SetActionType(DatasetActionType&& value) { m_actionTypeHasBeenSet = true; m_actionType = std::move(value); }
-    inline DatasetActionSummary& WithActionType(const DatasetActionType& value) { SetActionType(value); return *this;}
-    inline DatasetActionSummary& WithActionType(DatasetActionType&& value) { SetActionType(std::move(value)); return *this;}
+    inline void SetActionType(DatasetActionType value) { m_actionTypeHasBeenSet = true; m_actionType = value; }
+    inline DatasetActionSummary& WithActionType(DatasetActionType value) { SetActionType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_actionName;
     bool m_actionNameHasBeenSet = false;
 
-    DatasetActionType m_actionType;
+    DatasetActionType m_actionType{DatasetActionType::NOT_SET};
     bool m_actionTypeHasBeenSet = false;
   };
 

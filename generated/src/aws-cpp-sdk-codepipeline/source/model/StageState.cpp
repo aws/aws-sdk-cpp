@@ -18,22 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-StageState::StageState() : 
-    m_stageNameHasBeenSet(false),
-    m_inboundExecutionHasBeenSet(false),
-    m_inboundExecutionsHasBeenSet(false),
-    m_inboundTransitionStateHasBeenSet(false),
-    m_actionStatesHasBeenSet(false),
-    m_latestExecutionHasBeenSet(false),
-    m_beforeEntryConditionStateHasBeenSet(false),
-    m_onSuccessConditionStateHasBeenSet(false),
-    m_onFailureConditionStateHasBeenSet(false),
-    m_retryStageMetadataHasBeenSet(false)
-{
-}
-
 StageState::StageState(JsonView jsonValue)
-  : StageState()
 {
   *this = jsonValue;
 }
@@ -43,17 +28,13 @@ StageState& StageState::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("stageName"))
   {
     m_stageName = jsonValue.GetString("stageName");
-
     m_stageNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inboundExecution"))
   {
     m_inboundExecution = jsonValue.GetObject("inboundExecution");
-
     m_inboundExecutionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inboundExecutions"))
   {
     Aws::Utils::Array<JsonView> inboundExecutionsJsonList = jsonValue.GetArray("inboundExecutions");
@@ -63,14 +44,11 @@ StageState& StageState::operator =(JsonView jsonValue)
     }
     m_inboundExecutionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inboundTransitionState"))
   {
     m_inboundTransitionState = jsonValue.GetObject("inboundTransitionState");
-
     m_inboundTransitionStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actionStates"))
   {
     Aws::Utils::Array<JsonView> actionStatesJsonList = jsonValue.GetArray("actionStates");
@@ -80,42 +58,31 @@ StageState& StageState::operator =(JsonView jsonValue)
     }
     m_actionStatesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("latestExecution"))
   {
     m_latestExecution = jsonValue.GetObject("latestExecution");
-
     m_latestExecutionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("beforeEntryConditionState"))
   {
     m_beforeEntryConditionState = jsonValue.GetObject("beforeEntryConditionState");
-
     m_beforeEntryConditionStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("onSuccessConditionState"))
   {
     m_onSuccessConditionState = jsonValue.GetObject("onSuccessConditionState");
-
     m_onSuccessConditionStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("onFailureConditionState"))
   {
     m_onFailureConditionState = jsonValue.GetObject("onFailureConditionState");
-
     m_onFailureConditionStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("retryStageMetadata"))
   {
     m_retryStageMetadata = jsonValue.GetObject("retryStageMetadata");
-
     m_retryStageMetadataHasBeenSet = true;
   }
-
   return *this;
 }
 

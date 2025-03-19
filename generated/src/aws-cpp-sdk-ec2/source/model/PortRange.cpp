@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-PortRange::PortRange() : 
-    m_from(0),
-    m_fromHasBeenSet(false),
-    m_to(0),
-    m_toHasBeenSet(false)
-{
-}
-
 PortRange::PortRange(const XmlNode& xmlNode)
-  : PortRange()
 {
   *this = xmlNode;
 }

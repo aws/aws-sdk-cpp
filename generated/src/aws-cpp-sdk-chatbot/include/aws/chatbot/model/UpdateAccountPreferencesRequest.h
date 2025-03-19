@@ -19,7 +19,7 @@ namespace Model
   class UpdateAccountPreferencesRequest : public ChatbotRequest
   {
   public:
-    AWS_CHATBOT_API UpdateAccountPreferencesRequest();
+    AWS_CHATBOT_API UpdateAccountPreferencesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,7 +34,7 @@ namespace Model
     /**
      * <p>Enables use of a user role requirement in your chat configuration.</p>
      */
-    inline bool GetUserAuthorizationRequired() const{ return m_userAuthorizationRequired; }
+    inline bool GetUserAuthorizationRequired() const { return m_userAuthorizationRequired; }
     inline bool UserAuthorizationRequiredHasBeenSet() const { return m_userAuthorizationRequiredHasBeenSet; }
     inline void SetUserAuthorizationRequired(bool value) { m_userAuthorizationRequiredHasBeenSet = true; m_userAuthorizationRequired = value; }
     inline UpdateAccountPreferencesRequest& WithUserAuthorizationRequired(bool value) { SetUserAuthorizationRequired(value); return *this;}
@@ -52,17 +52,17 @@ namespace Model
      * interactions in chat channels with Amazon Q for training AI technologies for AWS
      * Chatbot. </p>
      */
-    inline bool GetTrainingDataCollectionEnabled() const{ return m_trainingDataCollectionEnabled; }
+    inline bool GetTrainingDataCollectionEnabled() const { return m_trainingDataCollectionEnabled; }
     inline bool TrainingDataCollectionEnabledHasBeenSet() const { return m_trainingDataCollectionEnabledHasBeenSet; }
     inline void SetTrainingDataCollectionEnabled(bool value) { m_trainingDataCollectionEnabledHasBeenSet = true; m_trainingDataCollectionEnabled = value; }
     inline UpdateAccountPreferencesRequest& WithTrainingDataCollectionEnabled(bool value) { SetTrainingDataCollectionEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_userAuthorizationRequired;
+    bool m_userAuthorizationRequired{false};
     bool m_userAuthorizationRequiredHasBeenSet = false;
 
-    bool m_trainingDataCollectionEnabled;
+    bool m_trainingDataCollectionEnabled{false};
     bool m_trainingDataCollectionEnabledHasBeenSet = false;
   };
 

@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DateAxisOptions::DateAxisOptions() : 
-    m_missingDateVisibility(Visibility::NOT_SET),
-    m_missingDateVisibilityHasBeenSet(false)
-{
-}
-
 DateAxisOptions::DateAxisOptions(JsonView jsonValue)
-  : DateAxisOptions()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ DateAxisOptions& DateAxisOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MissingDateVisibility"))
   {
     m_missingDateVisibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("MissingDateVisibility"));
-
     m_missingDateVisibilityHasBeenSet = true;
   }
-
   return *this;
 }
 

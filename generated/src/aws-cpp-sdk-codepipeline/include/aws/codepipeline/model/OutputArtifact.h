@@ -33,7 +33,7 @@ namespace Model
   class OutputArtifact
   {
   public:
-    AWS_CODEPIPELINE_API OutputArtifact();
+    AWS_CODEPIPELINE_API OutputArtifact() = default;
     AWS_CODEPIPELINE_API OutputArtifact(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API OutputArtifact& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * different following actions.</p> <p>Output artifact names must be unique within
      * a pipeline.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline OutputArtifact& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline OutputArtifact& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline OutputArtifact& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    OutputArtifact& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,15 +62,14 @@ namespace Model
      * <p>The files that you want to associate with the output artifact that will be
      * exported from the compute action.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetFiles() const{ return m_files; }
+    inline const Aws::Vector<Aws::String>& GetFiles() const { return m_files; }
     inline bool FilesHasBeenSet() const { return m_filesHasBeenSet; }
-    inline void SetFiles(const Aws::Vector<Aws::String>& value) { m_filesHasBeenSet = true; m_files = value; }
-    inline void SetFiles(Aws::Vector<Aws::String>&& value) { m_filesHasBeenSet = true; m_files = std::move(value); }
-    inline OutputArtifact& WithFiles(const Aws::Vector<Aws::String>& value) { SetFiles(value); return *this;}
-    inline OutputArtifact& WithFiles(Aws::Vector<Aws::String>&& value) { SetFiles(std::move(value)); return *this;}
-    inline OutputArtifact& AddFiles(const Aws::String& value) { m_filesHasBeenSet = true; m_files.push_back(value); return *this; }
-    inline OutputArtifact& AddFiles(Aws::String&& value) { m_filesHasBeenSet = true; m_files.push_back(std::move(value)); return *this; }
-    inline OutputArtifact& AddFiles(const char* value) { m_filesHasBeenSet = true; m_files.push_back(value); return *this; }
+    template<typename FilesT = Aws::Vector<Aws::String>>
+    void SetFiles(FilesT&& value) { m_filesHasBeenSet = true; m_files = std::forward<FilesT>(value); }
+    template<typename FilesT = Aws::Vector<Aws::String>>
+    OutputArtifact& WithFiles(FilesT&& value) { SetFiles(std::forward<FilesT>(value)); return *this;}
+    template<typename FilesT = Aws::String>
+    OutputArtifact& AddFiles(FilesT&& value) { m_filesHasBeenSet = true; m_files.emplace_back(std::forward<FilesT>(value)); return *this; }
     ///@}
   private:
 

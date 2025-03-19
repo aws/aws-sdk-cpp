@@ -18,14 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-IdMappingConfig::IdMappingConfig() : 
-    m_allowUseAsDimensionColumn(false),
-    m_allowUseAsDimensionColumnHasBeenSet(false)
-{
-}
-
 IdMappingConfig::IdMappingConfig(JsonView jsonValue)
-  : IdMappingConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ IdMappingConfig& IdMappingConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("allowUseAsDimensionColumn"))
   {
     m_allowUseAsDimensionColumn = jsonValue.GetBool("allowUseAsDimensionColumn");
-
     m_allowUseAsDimensionColumnHasBeenSet = true;
   }
-
   return *this;
 }
 

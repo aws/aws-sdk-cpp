@@ -21,7 +21,7 @@ namespace Model
   class GetBucketsRequest : public LightsailRequest
   {
   public:
-    AWS_LIGHTSAIL_API GetBucketsRequest();
+    AWS_LIGHTSAIL_API GetBucketsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * the response includes all of your buckets in the Amazon Web Services Region
      * where the request is made.</p>
      */
-    inline const Aws::String& GetBucketName() const{ return m_bucketName; }
+    inline const Aws::String& GetBucketName() const { return m_bucketName; }
     inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
-    inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
-    inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::move(value); }
-    inline void SetBucketName(const char* value) { m_bucketNameHasBeenSet = true; m_bucketName.assign(value); }
-    inline GetBucketsRequest& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
-    inline GetBucketsRequest& WithBucketName(Aws::String&& value) { SetBucketName(std::move(value)); return *this;}
-    inline GetBucketsRequest& WithBucketName(const char* value) { SetBucketName(value); return *this;}
+    template<typename BucketNameT = Aws::String>
+    void SetBucketName(BucketNameT&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::forward<BucketNameT>(value); }
+    template<typename BucketNameT = Aws::String>
+    GetBucketsRequest& WithBucketName(BucketNameT&& value) { SetBucketName(std::forward<BucketNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * results are paginated, the response will return a next page token that you can
      * specify as the page token in a subsequent request.</p>
      */
-    inline const Aws::String& GetPageToken() const{ return m_pageToken; }
+    inline const Aws::String& GetPageToken() const { return m_pageToken; }
     inline bool PageTokenHasBeenSet() const { return m_pageTokenHasBeenSet; }
-    inline void SetPageToken(const Aws::String& value) { m_pageTokenHasBeenSet = true; m_pageToken = value; }
-    inline void SetPageToken(Aws::String&& value) { m_pageTokenHasBeenSet = true; m_pageToken = std::move(value); }
-    inline void SetPageToken(const char* value) { m_pageTokenHasBeenSet = true; m_pageToken.assign(value); }
-    inline GetBucketsRequest& WithPageToken(const Aws::String& value) { SetPageToken(value); return *this;}
-    inline GetBucketsRequest& WithPageToken(Aws::String&& value) { SetPageToken(std::move(value)); return *this;}
-    inline GetBucketsRequest& WithPageToken(const char* value) { SetPageToken(value); return *this;}
+    template<typename PageTokenT = Aws::String>
+    void SetPageToken(PageTokenT&& value) { m_pageTokenHasBeenSet = true; m_pageToken = std::forward<PageTokenT>(value); }
+    template<typename PageTokenT = Aws::String>
+    GetBucketsRequest& WithPageToken(PageTokenT&& value) { SetPageToken(std::forward<PageTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,7 +70,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a>
      * action.</p>
      */
-    inline bool GetIncludeConnectedResources() const{ return m_includeConnectedResources; }
+    inline bool GetIncludeConnectedResources() const { return m_includeConnectedResources; }
     inline bool IncludeConnectedResourcesHasBeenSet() const { return m_includeConnectedResourcesHasBeenSet; }
     inline void SetIncludeConnectedResources(bool value) { m_includeConnectedResourcesHasBeenSet = true; m_includeConnectedResources = value; }
     inline GetBucketsRequest& WithIncludeConnectedResources(bool value) { SetIncludeConnectedResources(value); return *this;}
@@ -87,7 +83,7 @@ namespace Model
     Aws::String m_pageToken;
     bool m_pageTokenHasBeenSet = false;
 
-    bool m_includeConnectedResources;
+    bool m_includeConnectedResources{false};
     bool m_includeConnectedResourcesHasBeenSet = false;
   };
 

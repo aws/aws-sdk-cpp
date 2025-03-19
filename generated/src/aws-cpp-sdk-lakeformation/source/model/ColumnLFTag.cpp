@@ -18,14 +18,7 @@ namespace LakeFormation
 namespace Model
 {
 
-ColumnLFTag::ColumnLFTag() : 
-    m_nameHasBeenSet(false),
-    m_lFTagsHasBeenSet(false)
-{
-}
-
 ColumnLFTag::ColumnLFTag(JsonView jsonValue)
-  : ColumnLFTag()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ColumnLFTag& ColumnLFTag::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LFTags"))
   {
     Aws::Utils::Array<JsonView> lFTagsJsonList = jsonValue.GetArray("LFTags");
@@ -48,7 +39,6 @@ ColumnLFTag& ColumnLFTag::operator =(JsonView jsonValue)
     }
     m_lFTagsHasBeenSet = true;
   }
-
   return *this;
 }
 

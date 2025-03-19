@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-UniqueKey::UniqueKey() : 
-    m_columnNamesHasBeenSet(false)
-{
-}
-
 UniqueKey::UniqueKey(JsonView jsonValue)
-  : UniqueKey()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ UniqueKey& UniqueKey::operator =(JsonView jsonValue)
     }
     m_columnNamesHasBeenSet = true;
   }
-
   return *this;
 }
 

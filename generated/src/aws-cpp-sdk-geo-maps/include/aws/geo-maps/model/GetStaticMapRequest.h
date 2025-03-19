@@ -30,7 +30,7 @@ namespace Model
   class GetStaticMapRequest : public GeoMapsRequest
   {
   public:
-    AWS_GEOMAPS_API GetStaticMapRequest();
+    AWS_GEOMAPS_API GetStaticMapRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -49,14 +49,12 @@ namespace Model
      * north-easterly edges of the image. The underlying area becomes the view of the
      * image. </p> <p>Example: -123.17075,49.26959,-123.08125,49.31429</p>
      */
-    inline const Aws::String& GetBoundingBox() const{ return m_boundingBox; }
+    inline const Aws::String& GetBoundingBox() const { return m_boundingBox; }
     inline bool BoundingBoxHasBeenSet() const { return m_boundingBoxHasBeenSet; }
-    inline void SetBoundingBox(const Aws::String& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = value; }
-    inline void SetBoundingBox(Aws::String&& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = std::move(value); }
-    inline void SetBoundingBox(const char* value) { m_boundingBoxHasBeenSet = true; m_boundingBox.assign(value); }
-    inline GetStaticMapRequest& WithBoundingBox(const Aws::String& value) { SetBoundingBox(value); return *this;}
-    inline GetStaticMapRequest& WithBoundingBox(Aws::String&& value) { SetBoundingBox(std::move(value)); return *this;}
-    inline GetStaticMapRequest& WithBoundingBox(const char* value) { SetBoundingBox(value); return *this;}
+    template<typename BoundingBoxT = Aws::String>
+    void SetBoundingBox(BoundingBoxT&& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = std::forward<BoundingBoxT>(value); }
+    template<typename BoundingBoxT = Aws::String>
+    GetStaticMapRequest& WithBoundingBox(BoundingBoxT&& value) { SetBoundingBox(std::forward<BoundingBoxT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,14 +65,12 @@ namespace Model
      * or <code>Radius</code> </p>  <p>Example:
      * 97.170451,78.039098,99.045536,27.176178</p>
      */
-    inline const Aws::String& GetBoundedPositions() const{ return m_boundedPositions; }
+    inline const Aws::String& GetBoundedPositions() const { return m_boundedPositions; }
     inline bool BoundedPositionsHasBeenSet() const { return m_boundedPositionsHasBeenSet; }
-    inline void SetBoundedPositions(const Aws::String& value) { m_boundedPositionsHasBeenSet = true; m_boundedPositions = value; }
-    inline void SetBoundedPositions(Aws::String&& value) { m_boundedPositionsHasBeenSet = true; m_boundedPositions = std::move(value); }
-    inline void SetBoundedPositions(const char* value) { m_boundedPositionsHasBeenSet = true; m_boundedPositions.assign(value); }
-    inline GetStaticMapRequest& WithBoundedPositions(const Aws::String& value) { SetBoundedPositions(value); return *this;}
-    inline GetStaticMapRequest& WithBoundedPositions(Aws::String&& value) { SetBoundedPositions(std::move(value)); return *this;}
-    inline GetStaticMapRequest& WithBoundedPositions(const char* value) { SetBoundedPositions(value); return *this;}
+    template<typename BoundedPositionsT = Aws::String>
+    void SetBoundedPositions(BoundedPositionsT&& value) { m_boundedPositionsHasBeenSet = true; m_boundedPositions = std::forward<BoundedPositionsT>(value); }
+    template<typename BoundedPositionsT = Aws::String>
+    GetStaticMapRequest& WithBoundedPositions(BoundedPositionsT&& value) { SetBoundedPositions(std::forward<BoundedPositionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,14 +80,12 @@ namespace Model
      * <p>Cannot be used with <code>Zoom</code> and or <code>Radius</code> </p> 
      * <p>Example: 49.295,-123.108</p>
      */
-    inline const Aws::String& GetCenter() const{ return m_center; }
+    inline const Aws::String& GetCenter() const { return m_center; }
     inline bool CenterHasBeenSet() const { return m_centerHasBeenSet; }
-    inline void SetCenter(const Aws::String& value) { m_centerHasBeenSet = true; m_center = value; }
-    inline void SetCenter(Aws::String&& value) { m_centerHasBeenSet = true; m_center = std::move(value); }
-    inline void SetCenter(const char* value) { m_centerHasBeenSet = true; m_center.assign(value); }
-    inline GetStaticMapRequest& WithCenter(const Aws::String& value) { SetCenter(value); return *this;}
-    inline GetStaticMapRequest& WithCenter(Aws::String&& value) { SetCenter(std::move(value)); return *this;}
-    inline GetStaticMapRequest& WithCenter(const char* value) { SetCenter(value); return *this;}
+    template<typename CenterT = Aws::String>
+    void SetCenter(CenterT&& value) { m_centerHasBeenSet = true; m_center = std::forward<CenterT>(value); }
+    template<typename CenterT = Aws::String>
+    GetStaticMapRequest& WithCenter(CenterT&& value) { SetCenter(std::forward<CenterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,12 +95,10 @@ namespace Model
      * <code>Light</code> </p> <p>Default value: <code>Light</code> </p> 
      * <p>Valid values for <code>ColorScheme</code> are case sensitive.</p> 
      */
-    inline const ColorScheme& GetColorScheme() const{ return m_colorScheme; }
+    inline ColorScheme GetColorScheme() const { return m_colorScheme; }
     inline bool ColorSchemeHasBeenSet() const { return m_colorSchemeHasBeenSet; }
-    inline void SetColorScheme(const ColorScheme& value) { m_colorSchemeHasBeenSet = true; m_colorScheme = value; }
-    inline void SetColorScheme(ColorScheme&& value) { m_colorSchemeHasBeenSet = true; m_colorScheme = std::move(value); }
-    inline GetStaticMapRequest& WithColorScheme(const ColorScheme& value) { SetColorScheme(value); return *this;}
-    inline GetStaticMapRequest& WithColorScheme(ColorScheme&& value) { SetColorScheme(std::move(value)); return *this;}
+    inline void SetColorScheme(ColorScheme value) { m_colorSchemeHasBeenSet = true; m_colorScheme = value; }
+    inline GetStaticMapRequest& WithColorScheme(ColorScheme value) { SetColorScheme(value); return *this;}
     ///@}
 
     ///@{
@@ -118,14 +110,12 @@ namespace Model
      * <p>Currently it supports the following geometry types: point, line and polygon.
      * It does not support multiPoint , multiLine and multiPolgyon.</p> 
      */
-    inline const Aws::String& GetCompactOverlay() const{ return m_compactOverlay; }
+    inline const Aws::String& GetCompactOverlay() const { return m_compactOverlay; }
     inline bool CompactOverlayHasBeenSet() const { return m_compactOverlayHasBeenSet; }
-    inline void SetCompactOverlay(const Aws::String& value) { m_compactOverlayHasBeenSet = true; m_compactOverlay = value; }
-    inline void SetCompactOverlay(Aws::String&& value) { m_compactOverlayHasBeenSet = true; m_compactOverlay = std::move(value); }
-    inline void SetCompactOverlay(const char* value) { m_compactOverlayHasBeenSet = true; m_compactOverlay.assign(value); }
-    inline GetStaticMapRequest& WithCompactOverlay(const Aws::String& value) { SetCompactOverlay(value); return *this;}
-    inline GetStaticMapRequest& WithCompactOverlay(Aws::String&& value) { SetCompactOverlay(std::move(value)); return *this;}
-    inline GetStaticMapRequest& WithCompactOverlay(const char* value) { SetCompactOverlay(value); return *this;}
+    template<typename CompactOverlayT = Aws::String>
+    void SetCompactOverlay(CompactOverlayT&& value) { m_compactOverlayHasBeenSet = true; m_compactOverlay = std::forward<CompactOverlayT>(value); }
+    template<typename CompactOverlayT = Aws::String>
+    GetStaticMapRequest& WithCompactOverlay(CompactOverlayT&& value) { SetCompactOverlay(std::forward<CompactOverlayT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -133,7 +123,7 @@ namespace Model
      * <p>It is a flag that takes in true or false. It prevents the labels that are on
      * the edge of the image from being cut or obscured.</p>
      */
-    inline bool GetCropLabels() const{ return m_cropLabels; }
+    inline bool GetCropLabels() const { return m_cropLabels; }
     inline bool CropLabelsHasBeenSet() const { return m_cropLabelsHasBeenSet; }
     inline void SetCropLabels(bool value) { m_cropLabelsHasBeenSet = true; m_cropLabels = value; }
     inline GetStaticMapRequest& WithCropLabels(bool value) { SetCropLabels(value); return *this;}
@@ -148,21 +138,19 @@ namespace Model
      * [[-90.076345,51.504107],[-0.074451,51.506892]]},"properties":
      * {"color":"#00DD00"}}]}</code> </p>
      */
-    inline const Aws::String& GetGeoJsonOverlay() const{ return m_geoJsonOverlay; }
+    inline const Aws::String& GetGeoJsonOverlay() const { return m_geoJsonOverlay; }
     inline bool GeoJsonOverlayHasBeenSet() const { return m_geoJsonOverlayHasBeenSet; }
-    inline void SetGeoJsonOverlay(const Aws::String& value) { m_geoJsonOverlayHasBeenSet = true; m_geoJsonOverlay = value; }
-    inline void SetGeoJsonOverlay(Aws::String&& value) { m_geoJsonOverlayHasBeenSet = true; m_geoJsonOverlay = std::move(value); }
-    inline void SetGeoJsonOverlay(const char* value) { m_geoJsonOverlayHasBeenSet = true; m_geoJsonOverlay.assign(value); }
-    inline GetStaticMapRequest& WithGeoJsonOverlay(const Aws::String& value) { SetGeoJsonOverlay(value); return *this;}
-    inline GetStaticMapRequest& WithGeoJsonOverlay(Aws::String&& value) { SetGeoJsonOverlay(std::move(value)); return *this;}
-    inline GetStaticMapRequest& WithGeoJsonOverlay(const char* value) { SetGeoJsonOverlay(value); return *this;}
+    template<typename GeoJsonOverlayT = Aws::String>
+    void SetGeoJsonOverlay(GeoJsonOverlayT&& value) { m_geoJsonOverlayHasBeenSet = true; m_geoJsonOverlay = std::forward<GeoJsonOverlayT>(value); }
+    template<typename GeoJsonOverlayT = Aws::String>
+    GetStaticMapRequest& WithGeoJsonOverlay(GeoJsonOverlayT&& value) { SetGeoJsonOverlay(std::forward<GeoJsonOverlayT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the height of the map image.</p>
      */
-    inline int GetHeight() const{ return m_height; }
+    inline int GetHeight() const { return m_height; }
     inline bool HeightHasBeenSet() const { return m_heightHasBeenSet; }
     inline void SetHeight(int value) { m_heightHasBeenSet = true; m_height = value; }
     inline GetStaticMapRequest& WithHeight(int value) { SetHeight(value); return *this;}
@@ -173,14 +161,12 @@ namespace Model
      * <p>Optional: The API key to be used for authorization. Either an API key or
      * valid SigV4 signature must be provided when making a request. </p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline GetStaticMapRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline GetStaticMapRequest& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline GetStaticMapRequest& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    GetStaticMapRequest& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -188,12 +174,10 @@ namespace Model
      * <p>Overrides the label size auto-calculated by <code>FileName</code>. Takes in
      * one of the values - <code>Small</code> or <code>Large</code>.</p>
      */
-    inline const LabelSize& GetLabelSize() const{ return m_labelSize; }
+    inline LabelSize GetLabelSize() const { return m_labelSize; }
     inline bool LabelSizeHasBeenSet() const { return m_labelSizeHasBeenSet; }
-    inline void SetLabelSize(const LabelSize& value) { m_labelSizeHasBeenSet = true; m_labelSize = value; }
-    inline void SetLabelSize(LabelSize&& value) { m_labelSizeHasBeenSet = true; m_labelSize = std::move(value); }
-    inline GetStaticMapRequest& WithLabelSize(const LabelSize& value) { SetLabelSize(value); return *this;}
-    inline GetStaticMapRequest& WithLabelSize(LabelSize&& value) { SetLabelSize(std::move(value)); return *this;}
+    inline void SetLabelSize(LabelSize value) { m_labelSizeHasBeenSet = true; m_labelSize = value; }
+    inline GetStaticMapRequest& WithLabelSize(LabelSize value) { SetLabelSize(value); return *this;}
     ///@}
 
     ///@{
@@ -237,14 +221,12 @@ namespace Model
      * <code>uz</code> </p> </li> <li> <p> <code>vi</code> </p> </li> <li> <p>
      * <code>zh</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetLanguage() const{ return m_language; }
+    inline const Aws::String& GetLanguage() const { return m_language; }
     inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
-    inline void SetLanguage(const Aws::String& value) { m_languageHasBeenSet = true; m_language = value; }
-    inline void SetLanguage(Aws::String&& value) { m_languageHasBeenSet = true; m_language = std::move(value); }
-    inline void SetLanguage(const char* value) { m_languageHasBeenSet = true; m_language.assign(value); }
-    inline GetStaticMapRequest& WithLanguage(const Aws::String& value) { SetLanguage(value); return *this;}
-    inline GetStaticMapRequest& WithLanguage(Aws::String&& value) { SetLanguage(std::move(value)); return *this;}
-    inline GetStaticMapRequest& WithLanguage(const char* value) { SetLanguage(value); return *this;}
+    template<typename LanguageT = Aws::String>
+    void SetLanguage(LanguageT&& value) { m_languageHasBeenSet = true; m_language = std::forward<LanguageT>(value); }
+    template<typename LanguageT = Aws::String>
+    GetStaticMapRequest& WithLanguage(LanguageT&& value) { SetLanguage(std::forward<LanguageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -254,7 +236,7 @@ namespace Model
      * by:</p> <p>Min: <code>1</code> </p> <p>Max: <code>min(height, width)/4</code>
      * </p>  <p>Example: <code>100</code> </p>
      */
-    inline int GetPadding() const{ return m_padding; }
+    inline int GetPadding() const { return m_padding; }
     inline bool PaddingHasBeenSet() const { return m_paddingHasBeenSet; }
     inline void SetPadding(int value) { m_paddingHasBeenSet = true; m_padding = value; }
     inline GetStaticMapRequest& WithPadding(int value) { SetPadding(value); return *this;}
@@ -281,14 +263,12 @@ namespace Model
      * Artigas</p> </li> <li> <p> <code>VNM</code>: Vietnam's view on the Paracel
      * Islands and Spratly Islands</p> </li> </ul>
      */
-    inline const Aws::String& GetPoliticalView() const{ return m_politicalView; }
+    inline const Aws::String& GetPoliticalView() const { return m_politicalView; }
     inline bool PoliticalViewHasBeenSet() const { return m_politicalViewHasBeenSet; }
-    inline void SetPoliticalView(const Aws::String& value) { m_politicalViewHasBeenSet = true; m_politicalView = value; }
-    inline void SetPoliticalView(Aws::String&& value) { m_politicalViewHasBeenSet = true; m_politicalView = std::move(value); }
-    inline void SetPoliticalView(const char* value) { m_politicalViewHasBeenSet = true; m_politicalView.assign(value); }
-    inline GetStaticMapRequest& WithPoliticalView(const Aws::String& value) { SetPoliticalView(value); return *this;}
-    inline GetStaticMapRequest& WithPoliticalView(Aws::String&& value) { SetPoliticalView(std::move(value)); return *this;}
-    inline GetStaticMapRequest& WithPoliticalView(const char* value) { SetPoliticalView(value); return *this;}
+    template<typename PoliticalViewT = Aws::String>
+    void SetPoliticalView(PoliticalViewT&& value) { m_politicalViewHasBeenSet = true; m_politicalView = std::forward<PoliticalViewT>(value); }
+    template<typename PoliticalViewT = Aws::String>
+    GetStaticMapRequest& WithPoliticalView(PoliticalViewT&& value) { SetPoliticalView(std::forward<PoliticalViewT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -296,12 +276,10 @@ namespace Model
      * <p>Determines if the result image will display icons representing points of
      * interest on the map.</p>
      */
-    inline const MapFeatureMode& GetPointsOfInterests() const{ return m_pointsOfInterests; }
+    inline MapFeatureMode GetPointsOfInterests() const { return m_pointsOfInterests; }
     inline bool PointsOfInterestsHasBeenSet() const { return m_pointsOfInterestsHasBeenSet; }
-    inline void SetPointsOfInterests(const MapFeatureMode& value) { m_pointsOfInterestsHasBeenSet = true; m_pointsOfInterests = value; }
-    inline void SetPointsOfInterests(MapFeatureMode&& value) { m_pointsOfInterestsHasBeenSet = true; m_pointsOfInterests = std::move(value); }
-    inline GetStaticMapRequest& WithPointsOfInterests(const MapFeatureMode& value) { SetPointsOfInterests(value); return *this;}
-    inline GetStaticMapRequest& WithPointsOfInterests(MapFeatureMode&& value) { SetPointsOfInterests(std::move(value)); return *this;}
+    inline void SetPointsOfInterests(MapFeatureMode value) { m_pointsOfInterestsHasBeenSet = true; m_pointsOfInterests = value; }
+    inline GetStaticMapRequest& WithPointsOfInterests(MapFeatureMode value) { SetPointsOfInterests(value); return *this;}
     ///@}
 
     ///@{
@@ -311,7 +289,7 @@ namespace Model
      * <p>Example: <code>1500</code> </p>  <p>Cannot be used with
      * <code>Zoom</code>.</p>  <p> <b>Unit</b>: <code>Meters</code> </p> <p/>
      */
-    inline long long GetRadius() const{ return m_radius; }
+    inline long long GetRadius() const { return m_radius; }
     inline bool RadiusHasBeenSet() const { return m_radiusHasBeenSet; }
     inline void SetRadius(long long value) { m_radiusHasBeenSet = true; m_radius = value; }
     inline GetStaticMapRequest& WithRadius(long long value) { SetRadius(value); return *this;}
@@ -323,14 +301,12 @@ namespace Model
      * the pattern of <code>^map(@2x)?$</code>.</p> <p>Example: <code>map,
      * map@2x</code> </p>
      */
-    inline const Aws::String& GetFileName() const{ return m_fileName; }
+    inline const Aws::String& GetFileName() const { return m_fileName; }
     inline bool FileNameHasBeenSet() const { return m_fileNameHasBeenSet; }
-    inline void SetFileName(const Aws::String& value) { m_fileNameHasBeenSet = true; m_fileName = value; }
-    inline void SetFileName(Aws::String&& value) { m_fileNameHasBeenSet = true; m_fileName = std::move(value); }
-    inline void SetFileName(const char* value) { m_fileNameHasBeenSet = true; m_fileName.assign(value); }
-    inline GetStaticMapRequest& WithFileName(const Aws::String& value) { SetFileName(value); return *this;}
-    inline GetStaticMapRequest& WithFileName(Aws::String&& value) { SetFileName(std::move(value)); return *this;}
-    inline GetStaticMapRequest& WithFileName(const char* value) { SetFileName(value); return *this;}
+    template<typename FileNameT = Aws::String>
+    void SetFileName(FileNameT&& value) { m_fileNameHasBeenSet = true; m_fileName = std::forward<FileNameT>(value); }
+    template<typename FileNameT = Aws::String>
+    GetStaticMapRequest& WithFileName(FileNameT&& value) { SetFileName(std::forward<FileNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -339,31 +315,27 @@ namespace Model
      * in the input. </p> <p>Example: <code>KilometersMiles, Miles, Kilometers,
      * MilesKilometers</code> </p>
      */
-    inline const ScaleBarUnit& GetScaleBarUnit() const{ return m_scaleBarUnit; }
+    inline ScaleBarUnit GetScaleBarUnit() const { return m_scaleBarUnit; }
     inline bool ScaleBarUnitHasBeenSet() const { return m_scaleBarUnitHasBeenSet; }
-    inline void SetScaleBarUnit(const ScaleBarUnit& value) { m_scaleBarUnitHasBeenSet = true; m_scaleBarUnit = value; }
-    inline void SetScaleBarUnit(ScaleBarUnit&& value) { m_scaleBarUnitHasBeenSet = true; m_scaleBarUnit = std::move(value); }
-    inline GetStaticMapRequest& WithScaleBarUnit(const ScaleBarUnit& value) { SetScaleBarUnit(value); return *this;}
-    inline GetStaticMapRequest& WithScaleBarUnit(ScaleBarUnit&& value) { SetScaleBarUnit(std::move(value)); return *this;}
+    inline void SetScaleBarUnit(ScaleBarUnit value) { m_scaleBarUnitHasBeenSet = true; m_scaleBarUnit = value; }
+    inline GetStaticMapRequest& WithScaleBarUnit(ScaleBarUnit value) { SetScaleBarUnit(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> <code>Style</code> specifies the desired map style.</p>
      */
-    inline const StaticMapStyle& GetStyle() const{ return m_style; }
+    inline StaticMapStyle GetStyle() const { return m_style; }
     inline bool StyleHasBeenSet() const { return m_styleHasBeenSet; }
-    inline void SetStyle(const StaticMapStyle& value) { m_styleHasBeenSet = true; m_style = value; }
-    inline void SetStyle(StaticMapStyle&& value) { m_styleHasBeenSet = true; m_style = std::move(value); }
-    inline GetStaticMapRequest& WithStyle(const StaticMapStyle& value) { SetStyle(value); return *this;}
-    inline GetStaticMapRequest& WithStyle(StaticMapStyle&& value) { SetStyle(std::move(value)); return *this;}
+    inline void SetStyle(StaticMapStyle value) { m_styleHasBeenSet = true; m_style = value; }
+    inline GetStaticMapRequest& WithStyle(StaticMapStyle value) { SetStyle(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the width of the map image.</p>
      */
-    inline int GetWidth() const{ return m_width; }
+    inline int GetWidth() const { return m_width; }
     inline bool WidthHasBeenSet() const { return m_widthHasBeenSet; }
     inline void SetWidth(int value) { m_widthHasBeenSet = true; m_width = value; }
     inline GetStaticMapRequest& WithWidth(int value) { SetWidth(value); return *this;}
@@ -374,7 +346,7 @@ namespace Model
      * <p>Specifies the zoom level of the map image.</p>  <p>Cannot be used with
      * <code>Radius</code>.</p> 
      */
-    inline double GetZoom() const{ return m_zoom; }
+    inline double GetZoom() const { return m_zoom; }
     inline bool ZoomHasBeenSet() const { return m_zoomHasBeenSet; }
     inline void SetZoom(double value) { m_zoomHasBeenSet = true; m_zoom = value; }
     inline GetStaticMapRequest& WithZoom(double value) { SetZoom(value); return *this;}
@@ -390,55 +362,55 @@ namespace Model
     Aws::String m_center;
     bool m_centerHasBeenSet = false;
 
-    ColorScheme m_colorScheme;
+    ColorScheme m_colorScheme{ColorScheme::NOT_SET};
     bool m_colorSchemeHasBeenSet = false;
 
     Aws::String m_compactOverlay;
     bool m_compactOverlayHasBeenSet = false;
 
-    bool m_cropLabels;
+    bool m_cropLabels{false};
     bool m_cropLabelsHasBeenSet = false;
 
     Aws::String m_geoJsonOverlay;
     bool m_geoJsonOverlayHasBeenSet = false;
 
-    int m_height;
+    int m_height{0};
     bool m_heightHasBeenSet = false;
 
     Aws::String m_key;
     bool m_keyHasBeenSet = false;
 
-    LabelSize m_labelSize;
+    LabelSize m_labelSize{LabelSize::NOT_SET};
     bool m_labelSizeHasBeenSet = false;
 
     Aws::String m_language;
     bool m_languageHasBeenSet = false;
 
-    int m_padding;
+    int m_padding{0};
     bool m_paddingHasBeenSet = false;
 
     Aws::String m_politicalView;
     bool m_politicalViewHasBeenSet = false;
 
-    MapFeatureMode m_pointsOfInterests;
+    MapFeatureMode m_pointsOfInterests{MapFeatureMode::NOT_SET};
     bool m_pointsOfInterestsHasBeenSet = false;
 
-    long long m_radius;
+    long long m_radius{0};
     bool m_radiusHasBeenSet = false;
 
     Aws::String m_fileName;
     bool m_fileNameHasBeenSet = false;
 
-    ScaleBarUnit m_scaleBarUnit;
+    ScaleBarUnit m_scaleBarUnit{ScaleBarUnit::NOT_SET};
     bool m_scaleBarUnitHasBeenSet = false;
 
-    StaticMapStyle m_style;
+    StaticMapStyle m_style{StaticMapStyle::NOT_SET};
     bool m_styleHasBeenSet = false;
 
-    int m_width;
+    int m_width{0};
     bool m_widthHasBeenSet = false;
 
-    double m_zoom;
+    double m_zoom{0.0};
     bool m_zoomHasBeenSet = false;
   };
 

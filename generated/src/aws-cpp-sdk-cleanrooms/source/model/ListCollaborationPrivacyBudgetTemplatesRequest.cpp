@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListCollaborationPrivacyBudgetTemplatesRequest::ListCollaborationPrivacyBudgetTemplatesRequest() : 
-    m_collaborationIdentifierHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListCollaborationPrivacyBudgetTemplatesRequest::SerializePayload() const
 {
   return {};

@@ -18,13 +18,7 @@ namespace tnb
 namespace Model
 {
 
-FunctionArtifactMeta::FunctionArtifactMeta() : 
-    m_overridesHasBeenSet(false)
-{
-}
-
 FunctionArtifactMeta::FunctionArtifactMeta(JsonView jsonValue)
-  : FunctionArtifactMeta()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ FunctionArtifactMeta& FunctionArtifactMeta::operator =(JsonView jsonValue)
     }
     m_overridesHasBeenSet = true;
   }
-
   return *this;
 }
 

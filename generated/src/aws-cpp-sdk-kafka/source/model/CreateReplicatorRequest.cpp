@@ -12,16 +12,6 @@ using namespace Aws::Kafka::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateReplicatorRequest::CreateReplicatorRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_kafkaClustersHasBeenSet(false),
-    m_replicationInfoListHasBeenSet(false),
-    m_replicatorNameHasBeenSet(false),
-    m_serviceExecutionRoleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateReplicatorRequest::SerializePayload() const
 {
   JsonValue payload;

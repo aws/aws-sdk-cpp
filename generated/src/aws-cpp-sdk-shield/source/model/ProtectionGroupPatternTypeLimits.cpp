@@ -18,13 +18,7 @@ namespace Shield
 namespace Model
 {
 
-ProtectionGroupPatternTypeLimits::ProtectionGroupPatternTypeLimits() : 
-    m_arbitraryPatternLimitsHasBeenSet(false)
-{
-}
-
 ProtectionGroupPatternTypeLimits::ProtectionGroupPatternTypeLimits(JsonView jsonValue)
-  : ProtectionGroupPatternTypeLimits()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ProtectionGroupPatternTypeLimits& ProtectionGroupPatternTypeLimits::operator =(J
   if(jsonValue.ValueExists("ArbitraryPatternLimits"))
   {
     m_arbitraryPatternLimits = jsonValue.GetObject("ArbitraryPatternLimits");
-
     m_arbitraryPatternLimitsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace BCMPricingCalculator
 namespace Model
 {
 
-AddSavingsPlanAction::AddSavingsPlanAction() : 
-    m_savingsPlanOfferingIdHasBeenSet(false),
-    m_commitment(0.0),
-    m_commitmentHasBeenSet(false)
-{
-}
-
 AddSavingsPlanAction::AddSavingsPlanAction(JsonView jsonValue)
-  : AddSavingsPlanAction()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AddSavingsPlanAction& AddSavingsPlanAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("savingsPlanOfferingId"))
   {
     m_savingsPlanOfferingId = jsonValue.GetString("savingsPlanOfferingId");
-
     m_savingsPlanOfferingIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("commitment"))
   {
     m_commitment = jsonValue.GetDouble("commitment");
-
     m_commitmentHasBeenSet = true;
   }
-
   return *this;
 }
 

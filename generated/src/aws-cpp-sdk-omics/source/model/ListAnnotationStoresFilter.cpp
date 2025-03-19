@@ -18,14 +18,7 @@ namespace Omics
 namespace Model
 {
 
-ListAnnotationStoresFilter::ListAnnotationStoresFilter() : 
-    m_status(StoreStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 ListAnnotationStoresFilter::ListAnnotationStoresFilter(JsonView jsonValue)
-  : ListAnnotationStoresFilter()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ListAnnotationStoresFilter& ListAnnotationStoresFilter::operator =(JsonView json
   if(jsonValue.ValueExists("status"))
   {
     m_status = StoreStatusMapper::GetStoreStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

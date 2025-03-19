@@ -18,19 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RoutePedestrianPlace::RoutePedestrianPlace() : 
-    m_nameHasBeenSet(false),
-    m_originalPositionHasBeenSet(false),
-    m_positionHasBeenSet(false),
-    m_sideOfStreet(RouteSideOfStreet::NOT_SET),
-    m_sideOfStreetHasBeenSet(false),
-    m_waypointIndex(0),
-    m_waypointIndexHasBeenSet(false)
-{
-}
-
 RoutePedestrianPlace::RoutePedestrianPlace(JsonView jsonValue)
-  : RoutePedestrianPlace()
 {
   *this = jsonValue;
 }
@@ -40,10 +28,8 @@ RoutePedestrianPlace& RoutePedestrianPlace::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OriginalPosition"))
   {
     Aws::Utils::Array<JsonView> originalPositionJsonList = jsonValue.GetArray("OriginalPosition");
@@ -53,7 +39,6 @@ RoutePedestrianPlace& RoutePedestrianPlace::operator =(JsonView jsonValue)
     }
     m_originalPositionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Position"))
   {
     Aws::Utils::Array<JsonView> positionJsonList = jsonValue.GetArray("Position");
@@ -63,21 +48,16 @@ RoutePedestrianPlace& RoutePedestrianPlace::operator =(JsonView jsonValue)
     }
     m_positionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SideOfStreet"))
   {
     m_sideOfStreet = RouteSideOfStreetMapper::GetRouteSideOfStreetForName(jsonValue.GetString("SideOfStreet"));
-
     m_sideOfStreetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WaypointIndex"))
   {
     m_waypointIndex = jsonValue.GetInteger("WaypointIndex");
-
     m_waypointIndexHasBeenSet = true;
   }
-
   return *this;
 }
 

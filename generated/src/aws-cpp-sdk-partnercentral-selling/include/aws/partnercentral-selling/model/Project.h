@@ -37,7 +37,7 @@ namespace Model
   class Project
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API Project();
+    AWS_PARTNERCENTRALSELLING_API Project() = default;
     AWS_PARTNERCENTRALSELLING_API Project(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API Project& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
      * <p>Captures additional comments or information for the <code>Opportunity</code>
      * that weren't captured in other fields.</p>
      */
-    inline const Aws::String& GetAdditionalComments() const{ return m_additionalComments; }
+    inline const Aws::String& GetAdditionalComments() const { return m_additionalComments; }
     inline bool AdditionalCommentsHasBeenSet() const { return m_additionalCommentsHasBeenSet; }
-    inline void SetAdditionalComments(const Aws::String& value) { m_additionalCommentsHasBeenSet = true; m_additionalComments = value; }
-    inline void SetAdditionalComments(Aws::String&& value) { m_additionalCommentsHasBeenSet = true; m_additionalComments = std::move(value); }
-    inline void SetAdditionalComments(const char* value) { m_additionalCommentsHasBeenSet = true; m_additionalComments.assign(value); }
-    inline Project& WithAdditionalComments(const Aws::String& value) { SetAdditionalComments(value); return *this;}
-    inline Project& WithAdditionalComments(Aws::String&& value) { SetAdditionalComments(std::move(value)); return *this;}
-    inline Project& WithAdditionalComments(const char* value) { SetAdditionalComments(value); return *this;}
+    template<typename AdditionalCommentsT = Aws::String>
+    void SetAdditionalComments(AdditionalCommentsT&& value) { m_additionalCommentsHasBeenSet = true; m_additionalComments = std::forward<AdditionalCommentsT>(value); }
+    template<typename AdditionalCommentsT = Aws::String>
+    Project& WithAdditionalComments(AdditionalCommentsT&& value) { SetAdditionalComments(std::forward<AdditionalCommentsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,15 +68,14 @@ namespace Model
      * Well-Architected | Windows | Workspaces/AppStream Accelerator Program | WWPS
      * NDPP</code> </p>
      */
-    inline const Aws::Vector<Aws::String>& GetApnPrograms() const{ return m_apnPrograms; }
+    inline const Aws::Vector<Aws::String>& GetApnPrograms() const { return m_apnPrograms; }
     inline bool ApnProgramsHasBeenSet() const { return m_apnProgramsHasBeenSet; }
-    inline void SetApnPrograms(const Aws::Vector<Aws::String>& value) { m_apnProgramsHasBeenSet = true; m_apnPrograms = value; }
-    inline void SetApnPrograms(Aws::Vector<Aws::String>&& value) { m_apnProgramsHasBeenSet = true; m_apnPrograms = std::move(value); }
-    inline Project& WithApnPrograms(const Aws::Vector<Aws::String>& value) { SetApnPrograms(value); return *this;}
-    inline Project& WithApnPrograms(Aws::Vector<Aws::String>&& value) { SetApnPrograms(std::move(value)); return *this;}
-    inline Project& AddApnPrograms(const Aws::String& value) { m_apnProgramsHasBeenSet = true; m_apnPrograms.push_back(value); return *this; }
-    inline Project& AddApnPrograms(Aws::String&& value) { m_apnProgramsHasBeenSet = true; m_apnPrograms.push_back(std::move(value)); return *this; }
-    inline Project& AddApnPrograms(const char* value) { m_apnProgramsHasBeenSet = true; m_apnPrograms.push_back(value); return *this; }
+    template<typename ApnProgramsT = Aws::Vector<Aws::String>>
+    void SetApnPrograms(ApnProgramsT&& value) { m_apnProgramsHasBeenSet = true; m_apnPrograms = std::forward<ApnProgramsT>(value); }
+    template<typename ApnProgramsT = Aws::Vector<Aws::String>>
+    Project& WithApnPrograms(ApnProgramsT&& value) { SetApnPrograms(std::forward<ApnProgramsT>(value)); return *this;}
+    template<typename ApnProgramsT = Aws::String>
+    Project& AddApnPrograms(ApnProgramsT&& value) { m_apnProgramsHasBeenSet = true; m_apnPrograms.emplace_back(std::forward<ApnProgramsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -86,12 +83,10 @@ namespace Model
      * <p>Name of the <code>Opportunity</code>'s competitor (if any). Use
      * <code>Other</code> to submit a value not in the picklist.</p>
      */
-    inline const CompetitorName& GetCompetitorName() const{ return m_competitorName; }
+    inline CompetitorName GetCompetitorName() const { return m_competitorName; }
     inline bool CompetitorNameHasBeenSet() const { return m_competitorNameHasBeenSet; }
-    inline void SetCompetitorName(const CompetitorName& value) { m_competitorNameHasBeenSet = true; m_competitorName = value; }
-    inline void SetCompetitorName(CompetitorName&& value) { m_competitorNameHasBeenSet = true; m_competitorName = std::move(value); }
-    inline Project& WithCompetitorName(const CompetitorName& value) { SetCompetitorName(value); return *this;}
-    inline Project& WithCompetitorName(CompetitorName&& value) { SetCompetitorName(std::move(value)); return *this;}
+    inline void SetCompetitorName(CompetitorName value) { m_competitorNameHasBeenSet = true; m_competitorName = value; }
+    inline Project& WithCompetitorName(CompetitorName value) { SetCompetitorName(value); return *this;}
     ///@}
 
     ///@{
@@ -108,14 +103,12 @@ namespace Model
      * understand the nature of the <code>Opportunity</code> and the strategic fit of
      * the partner's solution.</p>
      */
-    inline const Aws::String& GetCustomerBusinessProblem() const{ return m_customerBusinessProblem; }
+    inline const Aws::String& GetCustomerBusinessProblem() const { return m_customerBusinessProblem; }
     inline bool CustomerBusinessProblemHasBeenSet() const { return m_customerBusinessProblemHasBeenSet; }
-    inline void SetCustomerBusinessProblem(const Aws::String& value) { m_customerBusinessProblemHasBeenSet = true; m_customerBusinessProblem = value; }
-    inline void SetCustomerBusinessProblem(Aws::String&& value) { m_customerBusinessProblemHasBeenSet = true; m_customerBusinessProblem = std::move(value); }
-    inline void SetCustomerBusinessProblem(const char* value) { m_customerBusinessProblemHasBeenSet = true; m_customerBusinessProblem.assign(value); }
-    inline Project& WithCustomerBusinessProblem(const Aws::String& value) { SetCustomerBusinessProblem(value); return *this;}
-    inline Project& WithCustomerBusinessProblem(Aws::String&& value) { SetCustomerBusinessProblem(std::move(value)); return *this;}
-    inline Project& WithCustomerBusinessProblem(const char* value) { SetCustomerBusinessProblem(value); return *this;}
+    template<typename CustomerBusinessProblemT = Aws::String>
+    void SetCustomerBusinessProblem(CustomerBusinessProblemT&& value) { m_customerBusinessProblemHasBeenSet = true; m_customerBusinessProblem = std::forward<CustomerBusinessProblemT>(value); }
+    template<typename CustomerBusinessProblemT = Aws::String>
+    Project& WithCustomerBusinessProblem(CustomerBusinessProblemT&& value) { SetCustomerBusinessProblem(std::forward<CustomerBusinessProblemT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -140,14 +133,12 @@ namespace Model
      * Security &amp; Compliance | Storage &amp; Backup | Training | VMC | VMWare | Web
      * development &amp; DevOps</code> </p>
      */
-    inline const Aws::String& GetCustomerUseCase() const{ return m_customerUseCase; }
+    inline const Aws::String& GetCustomerUseCase() const { return m_customerUseCase; }
     inline bool CustomerUseCaseHasBeenSet() const { return m_customerUseCaseHasBeenSet; }
-    inline void SetCustomerUseCase(const Aws::String& value) { m_customerUseCaseHasBeenSet = true; m_customerUseCase = value; }
-    inline void SetCustomerUseCase(Aws::String&& value) { m_customerUseCaseHasBeenSet = true; m_customerUseCase = std::move(value); }
-    inline void SetCustomerUseCase(const char* value) { m_customerUseCaseHasBeenSet = true; m_customerUseCase.assign(value); }
-    inline Project& WithCustomerUseCase(const Aws::String& value) { SetCustomerUseCase(value); return *this;}
-    inline Project& WithCustomerUseCase(Aws::String&& value) { SetCustomerUseCase(std::move(value)); return *this;}
-    inline Project& WithCustomerUseCase(const char* value) { SetCustomerUseCase(value); return *this;}
+    template<typename CustomerUseCaseT = Aws::String>
+    void SetCustomerUseCase(CustomerUseCaseT&& value) { m_customerUseCaseHasBeenSet = true; m_customerUseCase = std::forward<CustomerUseCaseT>(value); }
+    template<typename CustomerUseCaseT = Aws::String>
+    Project& WithCustomerUseCase(CustomerUseCaseT&& value) { SetCustomerUseCase(std::forward<CustomerUseCaseT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -168,14 +159,13 @@ namespace Model
      * customers.</p> </li> <li> <p>Other: Delivery model not described above.</p>
      * </li> </ul>
      */
-    inline const Aws::Vector<DeliveryModel>& GetDeliveryModels() const{ return m_deliveryModels; }
+    inline const Aws::Vector<DeliveryModel>& GetDeliveryModels() const { return m_deliveryModels; }
     inline bool DeliveryModelsHasBeenSet() const { return m_deliveryModelsHasBeenSet; }
-    inline void SetDeliveryModels(const Aws::Vector<DeliveryModel>& value) { m_deliveryModelsHasBeenSet = true; m_deliveryModels = value; }
-    inline void SetDeliveryModels(Aws::Vector<DeliveryModel>&& value) { m_deliveryModelsHasBeenSet = true; m_deliveryModels = std::move(value); }
-    inline Project& WithDeliveryModels(const Aws::Vector<DeliveryModel>& value) { SetDeliveryModels(value); return *this;}
-    inline Project& WithDeliveryModels(Aws::Vector<DeliveryModel>&& value) { SetDeliveryModels(std::move(value)); return *this;}
-    inline Project& AddDeliveryModels(const DeliveryModel& value) { m_deliveryModelsHasBeenSet = true; m_deliveryModels.push_back(value); return *this; }
-    inline Project& AddDeliveryModels(DeliveryModel&& value) { m_deliveryModelsHasBeenSet = true; m_deliveryModels.push_back(std::move(value)); return *this; }
+    template<typename DeliveryModelsT = Aws::Vector<DeliveryModel>>
+    void SetDeliveryModels(DeliveryModelsT&& value) { m_deliveryModelsHasBeenSet = true; m_deliveryModels = std::forward<DeliveryModelsT>(value); }
+    template<typename DeliveryModelsT = Aws::Vector<DeliveryModel>>
+    Project& WithDeliveryModels(DeliveryModelsT&& value) { SetDeliveryModels(std::forward<DeliveryModelsT>(value)); return *this;}
+    inline Project& AddDeliveryModels(DeliveryModel value) { m_deliveryModelsHasBeenSet = true; m_deliveryModels.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -184,14 +174,14 @@ namespace Model
      * services related to the opportunity. This helps in evaluating the potential
      * financial value of the opportunity for AWS.</p>
      */
-    inline const Aws::Vector<ExpectedCustomerSpend>& GetExpectedCustomerSpend() const{ return m_expectedCustomerSpend; }
+    inline const Aws::Vector<ExpectedCustomerSpend>& GetExpectedCustomerSpend() const { return m_expectedCustomerSpend; }
     inline bool ExpectedCustomerSpendHasBeenSet() const { return m_expectedCustomerSpendHasBeenSet; }
-    inline void SetExpectedCustomerSpend(const Aws::Vector<ExpectedCustomerSpend>& value) { m_expectedCustomerSpendHasBeenSet = true; m_expectedCustomerSpend = value; }
-    inline void SetExpectedCustomerSpend(Aws::Vector<ExpectedCustomerSpend>&& value) { m_expectedCustomerSpendHasBeenSet = true; m_expectedCustomerSpend = std::move(value); }
-    inline Project& WithExpectedCustomerSpend(const Aws::Vector<ExpectedCustomerSpend>& value) { SetExpectedCustomerSpend(value); return *this;}
-    inline Project& WithExpectedCustomerSpend(Aws::Vector<ExpectedCustomerSpend>&& value) { SetExpectedCustomerSpend(std::move(value)); return *this;}
-    inline Project& AddExpectedCustomerSpend(const ExpectedCustomerSpend& value) { m_expectedCustomerSpendHasBeenSet = true; m_expectedCustomerSpend.push_back(value); return *this; }
-    inline Project& AddExpectedCustomerSpend(ExpectedCustomerSpend&& value) { m_expectedCustomerSpendHasBeenSet = true; m_expectedCustomerSpend.push_back(std::move(value)); return *this; }
+    template<typename ExpectedCustomerSpendT = Aws::Vector<ExpectedCustomerSpend>>
+    void SetExpectedCustomerSpend(ExpectedCustomerSpendT&& value) { m_expectedCustomerSpendHasBeenSet = true; m_expectedCustomerSpend = std::forward<ExpectedCustomerSpendT>(value); }
+    template<typename ExpectedCustomerSpendT = Aws::Vector<ExpectedCustomerSpend>>
+    Project& WithExpectedCustomerSpend(ExpectedCustomerSpendT&& value) { SetExpectedCustomerSpend(std::forward<ExpectedCustomerSpendT>(value)); return *this;}
+    template<typename ExpectedCustomerSpendT = ExpectedCustomerSpend>
+    Project& AddExpectedCustomerSpend(ExpectedCustomerSpendT&& value) { m_expectedCustomerSpendHasBeenSet = true; m_expectedCustomerSpend.emplace_back(std::forward<ExpectedCustomerSpendT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -199,14 +189,12 @@ namespace Model
      * <p>Only allowed when <code>CompetitorNames</code> has <code>Other</code>
      * selected.</p>
      */
-    inline const Aws::String& GetOtherCompetitorNames() const{ return m_otherCompetitorNames; }
+    inline const Aws::String& GetOtherCompetitorNames() const { return m_otherCompetitorNames; }
     inline bool OtherCompetitorNamesHasBeenSet() const { return m_otherCompetitorNamesHasBeenSet; }
-    inline void SetOtherCompetitorNames(const Aws::String& value) { m_otherCompetitorNamesHasBeenSet = true; m_otherCompetitorNames = value; }
-    inline void SetOtherCompetitorNames(Aws::String&& value) { m_otherCompetitorNamesHasBeenSet = true; m_otherCompetitorNames = std::move(value); }
-    inline void SetOtherCompetitorNames(const char* value) { m_otherCompetitorNamesHasBeenSet = true; m_otherCompetitorNames.assign(value); }
-    inline Project& WithOtherCompetitorNames(const Aws::String& value) { SetOtherCompetitorNames(value); return *this;}
-    inline Project& WithOtherCompetitorNames(Aws::String&& value) { SetOtherCompetitorNames(std::move(value)); return *this;}
-    inline Project& WithOtherCompetitorNames(const char* value) { SetOtherCompetitorNames(value); return *this;}
+    template<typename OtherCompetitorNamesT = Aws::String>
+    void SetOtherCompetitorNames(OtherCompetitorNamesT&& value) { m_otherCompetitorNamesHasBeenSet = true; m_otherCompetitorNames = std::forward<OtherCompetitorNamesT>(value); }
+    template<typename OtherCompetitorNamesT = Aws::String>
+    Project& WithOtherCompetitorNames(OtherCompetitorNamesT&& value) { SetOtherCompetitorNames(std::forward<OtherCompetitorNamesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -215,28 +203,24 @@ namespace Model
      * <code> RelatedEntityIdentifiers.Solutions</code> field value is
      * <code>Other</code>.</p>
      */
-    inline const Aws::String& GetOtherSolutionDescription() const{ return m_otherSolutionDescription; }
+    inline const Aws::String& GetOtherSolutionDescription() const { return m_otherSolutionDescription; }
     inline bool OtherSolutionDescriptionHasBeenSet() const { return m_otherSolutionDescriptionHasBeenSet; }
-    inline void SetOtherSolutionDescription(const Aws::String& value) { m_otherSolutionDescriptionHasBeenSet = true; m_otherSolutionDescription = value; }
-    inline void SetOtherSolutionDescription(Aws::String&& value) { m_otherSolutionDescriptionHasBeenSet = true; m_otherSolutionDescription = std::move(value); }
-    inline void SetOtherSolutionDescription(const char* value) { m_otherSolutionDescriptionHasBeenSet = true; m_otherSolutionDescription.assign(value); }
-    inline Project& WithOtherSolutionDescription(const Aws::String& value) { SetOtherSolutionDescription(value); return *this;}
-    inline Project& WithOtherSolutionDescription(Aws::String&& value) { SetOtherSolutionDescription(std::move(value)); return *this;}
-    inline Project& WithOtherSolutionDescription(const char* value) { SetOtherSolutionDescription(value); return *this;}
+    template<typename OtherSolutionDescriptionT = Aws::String>
+    void SetOtherSolutionDescription(OtherSolutionDescriptionT&& value) { m_otherSolutionDescriptionHasBeenSet = true; m_otherSolutionDescription = std::forward<OtherSolutionDescriptionT>(value); }
+    template<typename OtherSolutionDescriptionT = Aws::String>
+    Project& WithOtherSolutionDescription(OtherSolutionDescriptionT&& value) { SetOtherSolutionDescription(std::forward<OtherSolutionDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the current opportunity's parent opportunity identifier.</p>
      */
-    inline const Aws::String& GetRelatedOpportunityIdentifier() const{ return m_relatedOpportunityIdentifier; }
+    inline const Aws::String& GetRelatedOpportunityIdentifier() const { return m_relatedOpportunityIdentifier; }
     inline bool RelatedOpportunityIdentifierHasBeenSet() const { return m_relatedOpportunityIdentifierHasBeenSet; }
-    inline void SetRelatedOpportunityIdentifier(const Aws::String& value) { m_relatedOpportunityIdentifierHasBeenSet = true; m_relatedOpportunityIdentifier = value; }
-    inline void SetRelatedOpportunityIdentifier(Aws::String&& value) { m_relatedOpportunityIdentifierHasBeenSet = true; m_relatedOpportunityIdentifier = std::move(value); }
-    inline void SetRelatedOpportunityIdentifier(const char* value) { m_relatedOpportunityIdentifierHasBeenSet = true; m_relatedOpportunityIdentifier.assign(value); }
-    inline Project& WithRelatedOpportunityIdentifier(const Aws::String& value) { SetRelatedOpportunityIdentifier(value); return *this;}
-    inline Project& WithRelatedOpportunityIdentifier(Aws::String&& value) { SetRelatedOpportunityIdentifier(std::move(value)); return *this;}
-    inline Project& WithRelatedOpportunityIdentifier(const char* value) { SetRelatedOpportunityIdentifier(value); return *this;}
+    template<typename RelatedOpportunityIdentifierT = Aws::String>
+    void SetRelatedOpportunityIdentifier(RelatedOpportunityIdentifierT&& value) { m_relatedOpportunityIdentifierHasBeenSet = true; m_relatedOpportunityIdentifier = std::forward<RelatedOpportunityIdentifierT>(value); }
+    template<typename RelatedOpportunityIdentifierT = Aws::String>
+    Project& WithRelatedOpportunityIdentifier(RelatedOpportunityIdentifierT&& value) { SetRelatedOpportunityIdentifier(std::forward<RelatedOpportunityIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -259,28 +243,25 @@ namespace Model
      * of work (SOW), and formalize the agreement and detail the project scope and
      * deliverables.</p> </li> </ul>
      */
-    inline const Aws::Vector<SalesActivity>& GetSalesActivities() const{ return m_salesActivities; }
+    inline const Aws::Vector<SalesActivity>& GetSalesActivities() const { return m_salesActivities; }
     inline bool SalesActivitiesHasBeenSet() const { return m_salesActivitiesHasBeenSet; }
-    inline void SetSalesActivities(const Aws::Vector<SalesActivity>& value) { m_salesActivitiesHasBeenSet = true; m_salesActivities = value; }
-    inline void SetSalesActivities(Aws::Vector<SalesActivity>&& value) { m_salesActivitiesHasBeenSet = true; m_salesActivities = std::move(value); }
-    inline Project& WithSalesActivities(const Aws::Vector<SalesActivity>& value) { SetSalesActivities(value); return *this;}
-    inline Project& WithSalesActivities(Aws::Vector<SalesActivity>&& value) { SetSalesActivities(std::move(value)); return *this;}
-    inline Project& AddSalesActivities(const SalesActivity& value) { m_salesActivitiesHasBeenSet = true; m_salesActivities.push_back(value); return *this; }
-    inline Project& AddSalesActivities(SalesActivity&& value) { m_salesActivitiesHasBeenSet = true; m_salesActivities.push_back(std::move(value)); return *this; }
+    template<typename SalesActivitiesT = Aws::Vector<SalesActivity>>
+    void SetSalesActivities(SalesActivitiesT&& value) { m_salesActivitiesHasBeenSet = true; m_salesActivities = std::forward<SalesActivitiesT>(value); }
+    template<typename SalesActivitiesT = Aws::Vector<SalesActivity>>
+    Project& WithSalesActivities(SalesActivitiesT&& value) { SetSalesActivities(std::forward<SalesActivitiesT>(value)); return *this;}
+    inline Project& AddSalesActivities(SalesActivity value) { m_salesActivitiesHasBeenSet = true; m_salesActivities.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Specifies the <code>Opportunity</code>'s title or name.</p>
      */
-    inline const Aws::String& GetTitle() const{ return m_title; }
+    inline const Aws::String& GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-    inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
-    inline Project& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-    inline Project& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-    inline Project& WithTitle(const char* value) { SetTitle(value); return *this;}
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    Project& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
   private:
 
@@ -290,7 +271,7 @@ namespace Model
     Aws::Vector<Aws::String> m_apnPrograms;
     bool m_apnProgramsHasBeenSet = false;
 
-    CompetitorName m_competitorName;
+    CompetitorName m_competitorName{CompetitorName::NOT_SET};
     bool m_competitorNameHasBeenSet = false;
 
     Aws::String m_customerBusinessProblem;

@@ -25,7 +25,7 @@ namespace Model
   class ListDomainUnitsForParentRequest : public DataZoneRequest
   {
   public:
-    AWS_DATAZONE_API ListDomainUnitsForParentRequest();
+    AWS_DATAZONE_API ListDomainUnitsForParentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p>The ID of the domain in which you want to list domain units for a parent
      * domain unit.</p>
      */
-    inline const Aws::String& GetDomainIdentifier() const{ return m_domainIdentifier; }
+    inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
     inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
-    inline void SetDomainIdentifier(const Aws::String& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = value; }
-    inline void SetDomainIdentifier(Aws::String&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::move(value); }
-    inline void SetDomainIdentifier(const char* value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier.assign(value); }
-    inline ListDomainUnitsForParentRequest& WithDomainIdentifier(const Aws::String& value) { SetDomainIdentifier(value); return *this;}
-    inline ListDomainUnitsForParentRequest& WithDomainIdentifier(Aws::String&& value) { SetDomainIdentifier(std::move(value)); return *this;}
-    inline ListDomainUnitsForParentRequest& WithDomainIdentifier(const char* value) { SetDomainIdentifier(value); return *this;}
+    template<typename DomainIdentifierT = Aws::String>
+    void SetDomainIdentifier(DomainIdentifierT&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::forward<DomainIdentifierT>(value); }
+    template<typename DomainIdentifierT = Aws::String>
+    ListDomainUnitsForParentRequest& WithDomainIdentifier(DomainIdentifierT&& value) { SetDomainIdentifier(std::forward<DomainIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,7 +59,7 @@ namespace Model
      * that you can use in a subsequent call to ListDomainUnitsForParent to list the
      * next set of domain units.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListDomainUnitsForParentRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -75,35 +73,31 @@ namespace Model
      * token named NextToken. You can specify this NextToken value in a subsequent call
      * to ListDomainUnitsForParent to list the next set of domain units.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListDomainUnitsForParentRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListDomainUnitsForParentRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListDomainUnitsForParentRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListDomainUnitsForParentRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the parent domain unit.</p>
      */
-    inline const Aws::String& GetParentDomainUnitIdentifier() const{ return m_parentDomainUnitIdentifier; }
+    inline const Aws::String& GetParentDomainUnitIdentifier() const { return m_parentDomainUnitIdentifier; }
     inline bool ParentDomainUnitIdentifierHasBeenSet() const { return m_parentDomainUnitIdentifierHasBeenSet; }
-    inline void SetParentDomainUnitIdentifier(const Aws::String& value) { m_parentDomainUnitIdentifierHasBeenSet = true; m_parentDomainUnitIdentifier = value; }
-    inline void SetParentDomainUnitIdentifier(Aws::String&& value) { m_parentDomainUnitIdentifierHasBeenSet = true; m_parentDomainUnitIdentifier = std::move(value); }
-    inline void SetParentDomainUnitIdentifier(const char* value) { m_parentDomainUnitIdentifierHasBeenSet = true; m_parentDomainUnitIdentifier.assign(value); }
-    inline ListDomainUnitsForParentRequest& WithParentDomainUnitIdentifier(const Aws::String& value) { SetParentDomainUnitIdentifier(value); return *this;}
-    inline ListDomainUnitsForParentRequest& WithParentDomainUnitIdentifier(Aws::String&& value) { SetParentDomainUnitIdentifier(std::move(value)); return *this;}
-    inline ListDomainUnitsForParentRequest& WithParentDomainUnitIdentifier(const char* value) { SetParentDomainUnitIdentifier(value); return *this;}
+    template<typename ParentDomainUnitIdentifierT = Aws::String>
+    void SetParentDomainUnitIdentifier(ParentDomainUnitIdentifierT&& value) { m_parentDomainUnitIdentifierHasBeenSet = true; m_parentDomainUnitIdentifier = std::forward<ParentDomainUnitIdentifierT>(value); }
+    template<typename ParentDomainUnitIdentifierT = Aws::String>
+    ListDomainUnitsForParentRequest& WithParentDomainUnitIdentifier(ParentDomainUnitIdentifierT&& value) { SetParentDomainUnitIdentifier(std::forward<ParentDomainUnitIdentifierT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_domainIdentifier;
     bool m_domainIdentifierHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

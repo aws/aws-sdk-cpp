@@ -18,14 +18,7 @@ namespace CleanRoomsML
 namespace Model
 {
 
-TrainedModelsConfigurationPolicy::TrainedModelsConfigurationPolicy() : 
-    m_containerLogsHasBeenSet(false),
-    m_containerMetricsHasBeenSet(false)
-{
-}
-
 TrainedModelsConfigurationPolicy::TrainedModelsConfigurationPolicy(JsonView jsonValue)
-  : TrainedModelsConfigurationPolicy()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ TrainedModelsConfigurationPolicy& TrainedModelsConfigurationPolicy::operator =(J
     }
     m_containerLogsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("containerMetrics"))
   {
     m_containerMetrics = jsonValue.GetObject("containerMetrics");
-
     m_containerMetricsHasBeenSet = true;
   }
-
   return *this;
 }
 

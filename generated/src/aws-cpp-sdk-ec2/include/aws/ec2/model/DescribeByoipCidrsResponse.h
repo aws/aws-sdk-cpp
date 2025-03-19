@@ -30,7 +30,7 @@ namespace Model
   class DescribeByoipCidrsResponse
   {
   public:
-    AWS_EC2_API DescribeByoipCidrsResponse();
+    AWS_EC2_API DescribeByoipCidrsResponse() = default;
     AWS_EC2_API DescribeByoipCidrsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DescribeByoipCidrsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,13 +39,13 @@ namespace Model
     /**
      * <p>Information about your address ranges.</p>
      */
-    inline const Aws::Vector<ByoipCidr>& GetByoipCidrs() const{ return m_byoipCidrs; }
-    inline void SetByoipCidrs(const Aws::Vector<ByoipCidr>& value) { m_byoipCidrs = value; }
-    inline void SetByoipCidrs(Aws::Vector<ByoipCidr>&& value) { m_byoipCidrs = std::move(value); }
-    inline DescribeByoipCidrsResponse& WithByoipCidrs(const Aws::Vector<ByoipCidr>& value) { SetByoipCidrs(value); return *this;}
-    inline DescribeByoipCidrsResponse& WithByoipCidrs(Aws::Vector<ByoipCidr>&& value) { SetByoipCidrs(std::move(value)); return *this;}
-    inline DescribeByoipCidrsResponse& AddByoipCidrs(const ByoipCidr& value) { m_byoipCidrs.push_back(value); return *this; }
-    inline DescribeByoipCidrsResponse& AddByoipCidrs(ByoipCidr&& value) { m_byoipCidrs.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ByoipCidr>& GetByoipCidrs() const { return m_byoipCidrs; }
+    template<typename ByoipCidrsT = Aws::Vector<ByoipCidr>>
+    void SetByoipCidrs(ByoipCidrsT&& value) { m_byoipCidrsHasBeenSet = true; m_byoipCidrs = std::forward<ByoipCidrsT>(value); }
+    template<typename ByoipCidrsT = Aws::Vector<ByoipCidr>>
+    DescribeByoipCidrsResponse& WithByoipCidrs(ByoipCidrsT&& value) { SetByoipCidrs(std::forward<ByoipCidrsT>(value)); return *this;}
+    template<typename ByoipCidrsT = ByoipCidr>
+    DescribeByoipCidrsResponse& AddByoipCidrs(ByoipCidrsT&& value) { m_byoipCidrsHasBeenSet = true; m_byoipCidrs.emplace_back(std::forward<ByoipCidrsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,30 +53,31 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeByoipCidrsResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeByoipCidrsResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeByoipCidrsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeByoipCidrsResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeByoipCidrsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeByoipCidrsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeByoipCidrsResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ByoipCidr> m_byoipCidrs;
+    bool m_byoipCidrsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

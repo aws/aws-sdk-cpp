@@ -18,26 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-PlayerSession::PlayerSession() : 
-    m_playerSessionIdHasBeenSet(false),
-    m_playerIdHasBeenSet(false),
-    m_gameSessionIdHasBeenSet(false),
-    m_fleetIdHasBeenSet(false),
-    m_fleetArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_terminationTimeHasBeenSet(false),
-    m_status(PlayerSessionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_dnsNameHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_playerDataHasBeenSet(false)
-{
-}
-
 PlayerSession::PlayerSession(JsonView jsonValue)
-  : PlayerSession()
 {
   *this = jsonValue;
 }
@@ -47,87 +28,63 @@ PlayerSession& PlayerSession::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PlayerSessionId"))
   {
     m_playerSessionId = jsonValue.GetString("PlayerSessionId");
-
     m_playerSessionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PlayerId"))
   {
     m_playerId = jsonValue.GetString("PlayerId");
-
     m_playerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GameSessionId"))
   {
     m_gameSessionId = jsonValue.GetString("GameSessionId");
-
     m_gameSessionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FleetId"))
   {
     m_fleetId = jsonValue.GetString("FleetId");
-
     m_fleetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FleetArn"))
   {
     m_fleetArn = jsonValue.GetString("FleetArn");
-
     m_fleetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TerminationTime"))
   {
     m_terminationTime = jsonValue.GetDouble("TerminationTime");
-
     m_terminationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = PlayerSessionStatusMapper::GetPlayerSessionStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IpAddress"))
   {
     m_ipAddress = jsonValue.GetString("IpAddress");
-
     m_ipAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DnsName"))
   {
     m_dnsName = jsonValue.GetString("DnsName");
-
     m_dnsNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Port"))
   {
     m_port = jsonValue.GetInteger("Port");
-
     m_portHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PlayerData"))
   {
     m_playerData = jsonValue.GetString("PlayerData");
-
     m_playerDataHasBeenSet = true;
   }
-
   return *this;
 }
 

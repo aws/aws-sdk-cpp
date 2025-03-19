@@ -18,10 +18,6 @@ namespace SageMaker
 namespace Model
 {
 
-MonitoringParquetDatasetFormat::MonitoringParquetDatasetFormat()
-{
-}
-
 MonitoringParquetDatasetFormat::MonitoringParquetDatasetFormat(JsonView jsonValue)
 {
   *this = jsonValue;

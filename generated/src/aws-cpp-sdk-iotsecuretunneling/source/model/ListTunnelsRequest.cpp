@@ -12,14 +12,6 @@ using namespace Aws::IoTSecureTunneling::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListTunnelsRequest::ListTunnelsRequest() : 
-    m_thingNameHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListTunnelsRequest::SerializePayload() const
 {
   JsonValue payload;

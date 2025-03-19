@@ -33,7 +33,7 @@ namespace Model
   class UploadUrlMetadata
   {
   public:
-    AWS_CONNECT_API UploadUrlMetadata();
+    AWS_CONNECT_API UploadUrlMetadata() = default;
     AWS_CONNECT_API UploadUrlMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API UploadUrlMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>A pre-signed S3 URL that should be used for uploading the attached file. </p>
      */
-    inline const Aws::String& GetUrl() const{ return m_url; }
+    inline const Aws::String& GetUrl() const { return m_url; }
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
-    inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
-    inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
-    inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
-    inline UploadUrlMetadata& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
-    inline UploadUrlMetadata& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
-    inline UploadUrlMetadata& WithUrl(const char* value) { SetUrl(value); return *this;}
+    template<typename UrlT = Aws::String>
+    void SetUrl(UrlT&& value) { m_urlHasBeenSet = true; m_url = std::forward<UrlT>(value); }
+    template<typename UrlT = Aws::String>
+    UploadUrlMetadata& WithUrl(UrlT&& value) { SetUrl(std::forward<UrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * format: <code>yyyy-MM-ddThh:mm:ss.SSSZ</code>. For example,
      * <code>2019-11-08T02:41:28.172Z</code>.</p>
      */
-    inline const Aws::String& GetUrlExpiry() const{ return m_urlExpiry; }
+    inline const Aws::String& GetUrlExpiry() const { return m_urlExpiry; }
     inline bool UrlExpiryHasBeenSet() const { return m_urlExpiryHasBeenSet; }
-    inline void SetUrlExpiry(const Aws::String& value) { m_urlExpiryHasBeenSet = true; m_urlExpiry = value; }
-    inline void SetUrlExpiry(Aws::String&& value) { m_urlExpiryHasBeenSet = true; m_urlExpiry = std::move(value); }
-    inline void SetUrlExpiry(const char* value) { m_urlExpiryHasBeenSet = true; m_urlExpiry.assign(value); }
-    inline UploadUrlMetadata& WithUrlExpiry(const Aws::String& value) { SetUrlExpiry(value); return *this;}
-    inline UploadUrlMetadata& WithUrlExpiry(Aws::String&& value) { SetUrlExpiry(std::move(value)); return *this;}
-    inline UploadUrlMetadata& WithUrlExpiry(const char* value) { SetUrlExpiry(value); return *this;}
+    template<typename UrlExpiryT = Aws::String>
+    void SetUrlExpiry(UrlExpiryT&& value) { m_urlExpiryHasBeenSet = true; m_urlExpiry = std::forward<UrlExpiryT>(value); }
+    template<typename UrlExpiryT = Aws::String>
+    UploadUrlMetadata& WithUrlExpiry(UrlExpiryT&& value) { SetUrlExpiry(std::forward<UrlExpiryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,19 +70,16 @@ namespace Model
      * <p>A map of headers that should be provided when uploading the attached file.
      * </p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetHeadersToInclude() const{ return m_headersToInclude; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetHeadersToInclude() const { return m_headersToInclude; }
     inline bool HeadersToIncludeHasBeenSet() const { return m_headersToIncludeHasBeenSet; }
-    inline void SetHeadersToInclude(const Aws::Map<Aws::String, Aws::String>& value) { m_headersToIncludeHasBeenSet = true; m_headersToInclude = value; }
-    inline void SetHeadersToInclude(Aws::Map<Aws::String, Aws::String>&& value) { m_headersToIncludeHasBeenSet = true; m_headersToInclude = std::move(value); }
-    inline UploadUrlMetadata& WithHeadersToInclude(const Aws::Map<Aws::String, Aws::String>& value) { SetHeadersToInclude(value); return *this;}
-    inline UploadUrlMetadata& WithHeadersToInclude(Aws::Map<Aws::String, Aws::String>&& value) { SetHeadersToInclude(std::move(value)); return *this;}
-    inline UploadUrlMetadata& AddHeadersToInclude(const Aws::String& key, const Aws::String& value) { m_headersToIncludeHasBeenSet = true; m_headersToInclude.emplace(key, value); return *this; }
-    inline UploadUrlMetadata& AddHeadersToInclude(Aws::String&& key, const Aws::String& value) { m_headersToIncludeHasBeenSet = true; m_headersToInclude.emplace(std::move(key), value); return *this; }
-    inline UploadUrlMetadata& AddHeadersToInclude(const Aws::String& key, Aws::String&& value) { m_headersToIncludeHasBeenSet = true; m_headersToInclude.emplace(key, std::move(value)); return *this; }
-    inline UploadUrlMetadata& AddHeadersToInclude(Aws::String&& key, Aws::String&& value) { m_headersToIncludeHasBeenSet = true; m_headersToInclude.emplace(std::move(key), std::move(value)); return *this; }
-    inline UploadUrlMetadata& AddHeadersToInclude(const char* key, Aws::String&& value) { m_headersToIncludeHasBeenSet = true; m_headersToInclude.emplace(key, std::move(value)); return *this; }
-    inline UploadUrlMetadata& AddHeadersToInclude(Aws::String&& key, const char* value) { m_headersToIncludeHasBeenSet = true; m_headersToInclude.emplace(std::move(key), value); return *this; }
-    inline UploadUrlMetadata& AddHeadersToInclude(const char* key, const char* value) { m_headersToIncludeHasBeenSet = true; m_headersToInclude.emplace(key, value); return *this; }
+    template<typename HeadersToIncludeT = Aws::Map<Aws::String, Aws::String>>
+    void SetHeadersToInclude(HeadersToIncludeT&& value) { m_headersToIncludeHasBeenSet = true; m_headersToInclude = std::forward<HeadersToIncludeT>(value); }
+    template<typename HeadersToIncludeT = Aws::Map<Aws::String, Aws::String>>
+    UploadUrlMetadata& WithHeadersToInclude(HeadersToIncludeT&& value) { SetHeadersToInclude(std::forward<HeadersToIncludeT>(value)); return *this;}
+    template<typename HeadersToIncludeKeyT = Aws::String, typename HeadersToIncludeValueT = Aws::String>
+    UploadUrlMetadata& AddHeadersToInclude(HeadersToIncludeKeyT&& key, HeadersToIncludeValueT&& value) {
+      m_headersToIncludeHasBeenSet = true; m_headersToInclude.emplace(std::forward<HeadersToIncludeKeyT>(key), std::forward<HeadersToIncludeValueT>(value)); return *this;
+    }
     ///@}
   private:
 

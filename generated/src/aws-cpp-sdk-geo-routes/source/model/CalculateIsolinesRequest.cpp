@@ -15,33 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-CalculateIsolinesRequest::CalculateIsolinesRequest() : 
-    m_allowHasBeenSet(false),
-    m_arrivalTimeHasBeenSet(false),
-    m_avoidHasBeenSet(false),
-    m_departNow(false),
-    m_departNowHasBeenSet(false),
-    m_departureTimeHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_destinationOptionsHasBeenSet(false),
-    m_isolineGeometryFormat(GeometryFormat::NOT_SET),
-    m_isolineGeometryFormatHasBeenSet(false),
-    m_isolineGranularityHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_optimizeIsolineFor(IsolineOptimizationObjective::NOT_SET),
-    m_optimizeIsolineForHasBeenSet(false),
-    m_optimizeRoutingFor(RoutingObjective::NOT_SET),
-    m_optimizeRoutingForHasBeenSet(false),
-    m_originHasBeenSet(false),
-    m_originOptionsHasBeenSet(false),
-    m_thresholdsHasBeenSet(false),
-    m_trafficHasBeenSet(false),
-    m_travelMode(IsolineTravelMode::NOT_SET),
-    m_travelModeHasBeenSet(false),
-    m_travelModeOptionsHasBeenSet(false)
-{
-}
-
 Aws::String CalculateIsolinesRequest::SerializePayload() const
 {
   JsonValue payload;

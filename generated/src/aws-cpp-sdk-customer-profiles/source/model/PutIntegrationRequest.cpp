@@ -12,18 +12,6 @@ using namespace Aws::CustomerProfiles::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutIntegrationRequest::PutIntegrationRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_uriHasBeenSet(false),
-    m_objectTypeNameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_flowDefinitionHasBeenSet(false),
-    m_objectTypeNamesHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_eventTriggerNamesHasBeenSet(false)
-{
-}
-
 Aws::String PutIntegrationRequest::SerializePayload() const
 {
   JsonValue payload;

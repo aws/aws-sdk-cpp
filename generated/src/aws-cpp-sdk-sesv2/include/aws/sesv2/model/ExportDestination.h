@@ -33,7 +33,7 @@ namespace Model
   class ExportDestination
   {
   public:
-    AWS_SESV2_API ExportDestination();
+    AWS_SESV2_API ExportDestination() = default;
     AWS_SESV2_API ExportDestination(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API ExportDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,30 +45,26 @@ namespace Model
      * following:</p> <ul> <li> <p> <code>CSV</code> - A comma-separated values
      * file.</p> </li> <li> <p> <code>JSON</code> - A Json file.</p> </li> </ul>
      */
-    inline const DataFormat& GetDataFormat() const{ return m_dataFormat; }
+    inline DataFormat GetDataFormat() const { return m_dataFormat; }
     inline bool DataFormatHasBeenSet() const { return m_dataFormatHasBeenSet; }
-    inline void SetDataFormat(const DataFormat& value) { m_dataFormatHasBeenSet = true; m_dataFormat = value; }
-    inline void SetDataFormat(DataFormat&& value) { m_dataFormatHasBeenSet = true; m_dataFormat = std::move(value); }
-    inline ExportDestination& WithDataFormat(const DataFormat& value) { SetDataFormat(value); return *this;}
-    inline ExportDestination& WithDataFormat(DataFormat&& value) { SetDataFormat(std::move(value)); return *this;}
+    inline void SetDataFormat(DataFormat value) { m_dataFormatHasBeenSet = true; m_dataFormat = value; }
+    inline ExportDestination& WithDataFormat(DataFormat value) { SetDataFormat(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An Amazon S3 pre-signed URL that points to the generated export file.</p>
      */
-    inline const Aws::String& GetS3Url() const{ return m_s3Url; }
+    inline const Aws::String& GetS3Url() const { return m_s3Url; }
     inline bool S3UrlHasBeenSet() const { return m_s3UrlHasBeenSet; }
-    inline void SetS3Url(const Aws::String& value) { m_s3UrlHasBeenSet = true; m_s3Url = value; }
-    inline void SetS3Url(Aws::String&& value) { m_s3UrlHasBeenSet = true; m_s3Url = std::move(value); }
-    inline void SetS3Url(const char* value) { m_s3UrlHasBeenSet = true; m_s3Url.assign(value); }
-    inline ExportDestination& WithS3Url(const Aws::String& value) { SetS3Url(value); return *this;}
-    inline ExportDestination& WithS3Url(Aws::String&& value) { SetS3Url(std::move(value)); return *this;}
-    inline ExportDestination& WithS3Url(const char* value) { SetS3Url(value); return *this;}
+    template<typename S3UrlT = Aws::String>
+    void SetS3Url(S3UrlT&& value) { m_s3UrlHasBeenSet = true; m_s3Url = std::forward<S3UrlT>(value); }
+    template<typename S3UrlT = Aws::String>
+    ExportDestination& WithS3Url(S3UrlT&& value) { SetS3Url(std::forward<S3UrlT>(value)); return *this;}
     ///@}
   private:
 
-    DataFormat m_dataFormat;
+    DataFormat m_dataFormat{DataFormat::NOT_SET};
     bool m_dataFormatHasBeenSet = false;
 
     Aws::String m_s3Url;

@@ -12,15 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateNamespaceRequest::CreateNamespaceRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_identityStore(IdentityStore::NOT_SET),
-    m_identityStoreHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateNamespaceRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,22 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-LifeCycleSummary::LifeCycleSummary() : 
-    m_closedLostReason(ClosedLostReason::NOT_SET),
-    m_closedLostReasonHasBeenSet(false),
-    m_nextStepsHasBeenSet(false),
-    m_reviewCommentsHasBeenSet(false),
-    m_reviewStatus(ReviewStatus::NOT_SET),
-    m_reviewStatusHasBeenSet(false),
-    m_reviewStatusReasonHasBeenSet(false),
-    m_stage(Stage::NOT_SET),
-    m_stageHasBeenSet(false),
-    m_targetCloseDateHasBeenSet(false)
-{
-}
-
 LifeCycleSummary::LifeCycleSummary(JsonView jsonValue)
-  : LifeCycleSummary()
 {
   *this = jsonValue;
 }
@@ -43,52 +28,38 @@ LifeCycleSummary& LifeCycleSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ClosedLostReason"))
   {
     m_closedLostReason = ClosedLostReasonMapper::GetClosedLostReasonForName(jsonValue.GetString("ClosedLostReason"));
-
     m_closedLostReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextSteps"))
   {
     m_nextSteps = jsonValue.GetString("NextSteps");
-
     m_nextStepsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReviewComments"))
   {
     m_reviewComments = jsonValue.GetString("ReviewComments");
-
     m_reviewCommentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReviewStatus"))
   {
     m_reviewStatus = ReviewStatusMapper::GetReviewStatusForName(jsonValue.GetString("ReviewStatus"));
-
     m_reviewStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReviewStatusReason"))
   {
     m_reviewStatusReason = jsonValue.GetString("ReviewStatusReason");
-
     m_reviewStatusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Stage"))
   {
     m_stage = StageMapper::GetStageForName(jsonValue.GetString("Stage"));
-
     m_stageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetCloseDate"))
   {
     m_targetCloseDate = jsonValue.GetString("TargetCloseDate");
-
     m_targetCloseDateHasBeenSet = true;
   }
-
   return *this;
 }
 

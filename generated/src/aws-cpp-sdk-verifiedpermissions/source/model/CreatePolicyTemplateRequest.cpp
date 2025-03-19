@@ -12,15 +12,6 @@ using namespace Aws::VerifiedPermissions::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreatePolicyTemplateRequest::CreatePolicyTemplateRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_policyStoreIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_statementHasBeenSet(false)
-{
-}
-
 Aws::String CreatePolicyTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,17 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-ModifyingProperties::ModifyingProperties() : 
-    m_nameHasBeenSet(false),
-    m_activeValueHasBeenSet(false),
-    m_pendingValueHasBeenSet(false),
-    m_valueType(PropertyValueType::NOT_SET),
-    m_valueTypeHasBeenSet(false)
-{
-}
-
 ModifyingProperties::ModifyingProperties(JsonView jsonValue)
-  : ModifyingProperties()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ModifyingProperties& ModifyingProperties::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActiveValue"))
   {
     m_activeValue = jsonValue.GetString("ActiveValue");
-
     m_activeValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PendingValue"))
   {
     m_pendingValue = jsonValue.GetString("PendingValue");
-
     m_pendingValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValueType"))
   {
     m_valueType = PropertyValueTypeMapper::GetPropertyValueTypeForName(jsonValue.GetString("ValueType"));
-
     m_valueTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

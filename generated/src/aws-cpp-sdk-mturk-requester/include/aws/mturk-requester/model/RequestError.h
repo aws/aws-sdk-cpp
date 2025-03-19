@@ -31,7 +31,7 @@ namespace Model
   class RequestError
   {
   public:
-    AWS_MTURK_API RequestError();
+    AWS_MTURK_API RequestError() = default;
     AWS_MTURK_API RequestError(Aws::Utils::Json::JsonView jsonValue);
     AWS_MTURK_API RequestError& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MTURK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,26 +39,22 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline RequestError& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline RequestError& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline RequestError& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    RequestError& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetTurkErrorCode() const{ return m_turkErrorCode; }
+    inline const Aws::String& GetTurkErrorCode() const { return m_turkErrorCode; }
     inline bool TurkErrorCodeHasBeenSet() const { return m_turkErrorCodeHasBeenSet; }
-    inline void SetTurkErrorCode(const Aws::String& value) { m_turkErrorCodeHasBeenSet = true; m_turkErrorCode = value; }
-    inline void SetTurkErrorCode(Aws::String&& value) { m_turkErrorCodeHasBeenSet = true; m_turkErrorCode = std::move(value); }
-    inline void SetTurkErrorCode(const char* value) { m_turkErrorCodeHasBeenSet = true; m_turkErrorCode.assign(value); }
-    inline RequestError& WithTurkErrorCode(const Aws::String& value) { SetTurkErrorCode(value); return *this;}
-    inline RequestError& WithTurkErrorCode(Aws::String&& value) { SetTurkErrorCode(std::move(value)); return *this;}
-    inline RequestError& WithTurkErrorCode(const char* value) { SetTurkErrorCode(value); return *this;}
+    template<typename TurkErrorCodeT = Aws::String>
+    void SetTurkErrorCode(TurkErrorCodeT&& value) { m_turkErrorCodeHasBeenSet = true; m_turkErrorCode = std::forward<TurkErrorCodeT>(value); }
+    template<typename TurkErrorCodeT = Aws::String>
+    RequestError& WithTurkErrorCode(TurkErrorCodeT&& value) { SetTurkErrorCode(std::forward<TurkErrorCodeT>(value)); return *this;}
     ///@}
   private:
 

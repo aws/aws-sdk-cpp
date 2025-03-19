@@ -12,11 +12,6 @@ using namespace Aws::EMRServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopApplicationRequest::StopApplicationRequest() : 
-    m_applicationIdHasBeenSet(false)
-{
-}
-
 Aws::String StopApplicationRequest::SerializePayload() const
 {
   return {};

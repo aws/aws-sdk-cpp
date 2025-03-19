@@ -12,11 +12,6 @@ using namespace Aws::ivsrealtime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetIngestConfigurationRequest::GetIngestConfigurationRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String GetIngestConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

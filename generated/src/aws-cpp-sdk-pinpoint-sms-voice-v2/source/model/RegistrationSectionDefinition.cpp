@@ -18,14 +18,7 @@ namespace PinpointSMSVoiceV2
 namespace Model
 {
 
-RegistrationSectionDefinition::RegistrationSectionDefinition() : 
-    m_sectionPathHasBeenSet(false),
-    m_displayHintsHasBeenSet(false)
-{
-}
-
 RegistrationSectionDefinition::RegistrationSectionDefinition(JsonView jsonValue)
-  : RegistrationSectionDefinition()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RegistrationSectionDefinition& RegistrationSectionDefinition::operator =(JsonVie
   if(jsonValue.ValueExists("SectionPath"))
   {
     m_sectionPath = jsonValue.GetString("SectionPath");
-
     m_sectionPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayHints"))
   {
     m_displayHints = jsonValue.GetObject("DisplayHints");
-
     m_displayHintsHasBeenSet = true;
   }
-
   return *this;
 }
 

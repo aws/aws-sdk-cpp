@@ -18,10 +18,6 @@ namespace Appflow
 namespace Model
 {
 
-VeevaMetadata::VeevaMetadata()
-{
-}
-
 VeevaMetadata::VeevaMetadata(JsonView jsonValue)
 {
   *this = jsonValue;

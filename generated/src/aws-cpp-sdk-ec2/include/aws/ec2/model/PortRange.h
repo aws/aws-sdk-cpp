@@ -29,7 +29,7 @@ namespace Model
   class PortRange
   {
   public:
-    AWS_EC2_API PortRange();
+    AWS_EC2_API PortRange() = default;
     AWS_EC2_API PortRange(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API PortRange& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>The first port in the range.</p>
      */
-    inline int GetFrom() const{ return m_from; }
+    inline int GetFrom() const { return m_from; }
     inline bool FromHasBeenSet() const { return m_fromHasBeenSet; }
     inline void SetFrom(int value) { m_fromHasBeenSet = true; m_from = value; }
     inline PortRange& WithFrom(int value) { SetFrom(value); return *this;}
@@ -51,17 +51,17 @@ namespace Model
     /**
      * <p>The last port in the range.</p>
      */
-    inline int GetTo() const{ return m_to; }
+    inline int GetTo() const { return m_to; }
     inline bool ToHasBeenSet() const { return m_toHasBeenSet; }
     inline void SetTo(int value) { m_toHasBeenSet = true; m_to = value; }
     inline PortRange& WithTo(int value) { SetTo(value); return *this;}
     ///@}
   private:
 
-    int m_from;
+    int m_from{0};
     bool m_fromHasBeenSet = false;
 
-    int m_to;
+    int m_to{0};
     bool m_toHasBeenSet = false;
   };
 

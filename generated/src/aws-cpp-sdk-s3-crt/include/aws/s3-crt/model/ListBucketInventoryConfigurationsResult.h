@@ -29,7 +29,7 @@ namespace Model
   class ListBucketInventoryConfigurationsResult
   {
   public:
-    AWS_S3CRT_API ListBucketInventoryConfigurationsResult();
+    AWS_S3CRT_API ListBucketInventoryConfigurationsResult() = default;
     AWS_S3CRT_API ListBucketInventoryConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_S3CRT_API ListBucketInventoryConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,26 +39,24 @@ namespace Model
      * <p>If sent in the request, the marker that is used as a starting point for this
      * inventory configuration list response.</p>
      */
-    inline const Aws::String& GetContinuationToken() const{ return m_continuationToken; }
-    inline void SetContinuationToken(const Aws::String& value) { m_continuationToken = value; }
-    inline void SetContinuationToken(Aws::String&& value) { m_continuationToken = std::move(value); }
-    inline void SetContinuationToken(const char* value) { m_continuationToken.assign(value); }
-    inline ListBucketInventoryConfigurationsResult& WithContinuationToken(const Aws::String& value) { SetContinuationToken(value); return *this;}
-    inline ListBucketInventoryConfigurationsResult& WithContinuationToken(Aws::String&& value) { SetContinuationToken(std::move(value)); return *this;}
-    inline ListBucketInventoryConfigurationsResult& WithContinuationToken(const char* value) { SetContinuationToken(value); return *this;}
+    inline const Aws::String& GetContinuationToken() const { return m_continuationToken; }
+    template<typename ContinuationTokenT = Aws::String>
+    void SetContinuationToken(ContinuationTokenT&& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = std::forward<ContinuationTokenT>(value); }
+    template<typename ContinuationTokenT = Aws::String>
+    ListBucketInventoryConfigurationsResult& WithContinuationToken(ContinuationTokenT&& value) { SetContinuationToken(std::forward<ContinuationTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of inventory configurations for a bucket.</p>
      */
-    inline const Aws::Vector<InventoryConfiguration>& GetInventoryConfigurationList() const{ return m_inventoryConfigurationList; }
-    inline void SetInventoryConfigurationList(const Aws::Vector<InventoryConfiguration>& value) { m_inventoryConfigurationList = value; }
-    inline void SetInventoryConfigurationList(Aws::Vector<InventoryConfiguration>&& value) { m_inventoryConfigurationList = std::move(value); }
-    inline ListBucketInventoryConfigurationsResult& WithInventoryConfigurationList(const Aws::Vector<InventoryConfiguration>& value) { SetInventoryConfigurationList(value); return *this;}
-    inline ListBucketInventoryConfigurationsResult& WithInventoryConfigurationList(Aws::Vector<InventoryConfiguration>&& value) { SetInventoryConfigurationList(std::move(value)); return *this;}
-    inline ListBucketInventoryConfigurationsResult& AddInventoryConfigurationList(const InventoryConfiguration& value) { m_inventoryConfigurationList.push_back(value); return *this; }
-    inline ListBucketInventoryConfigurationsResult& AddInventoryConfigurationList(InventoryConfiguration&& value) { m_inventoryConfigurationList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<InventoryConfiguration>& GetInventoryConfigurationList() const { return m_inventoryConfigurationList; }
+    template<typename InventoryConfigurationListT = Aws::Vector<InventoryConfiguration>>
+    void SetInventoryConfigurationList(InventoryConfigurationListT&& value) { m_inventoryConfigurationListHasBeenSet = true; m_inventoryConfigurationList = std::forward<InventoryConfigurationListT>(value); }
+    template<typename InventoryConfigurationListT = Aws::Vector<InventoryConfiguration>>
+    ListBucketInventoryConfigurationsResult& WithInventoryConfigurationList(InventoryConfigurationListT&& value) { SetInventoryConfigurationList(std::forward<InventoryConfigurationListT>(value)); return *this;}
+    template<typename InventoryConfigurationListT = InventoryConfiguration>
+    ListBucketInventoryConfigurationsResult& AddInventoryConfigurationList(InventoryConfigurationListT&& value) { m_inventoryConfigurationListHasBeenSet = true; m_inventoryConfigurationList.emplace_back(std::forward<InventoryConfigurationListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -67,8 +65,8 @@ namespace Model
      * value of true indicates that the list is not complete and the
      * NextContinuationToken is provided for a subsequent request.</p>
      */
-    inline bool GetIsTruncated() const{ return m_isTruncated; }
-    inline void SetIsTruncated(bool value) { m_isTruncated = value; }
+    inline bool GetIsTruncated() const { return m_isTruncated; }
+    inline void SetIsTruncated(bool value) { m_isTruncatedHasBeenSet = true; m_isTruncated = value; }
     inline ListBucketInventoryConfigurationsResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
     ///@}
 
@@ -79,36 +77,37 @@ namespace Model
      * a subsequent request. The continuation token is an opaque value that Amazon S3
      * understands.</p>
      */
-    inline const Aws::String& GetNextContinuationToken() const{ return m_nextContinuationToken; }
-    inline void SetNextContinuationToken(const Aws::String& value) { m_nextContinuationToken = value; }
-    inline void SetNextContinuationToken(Aws::String&& value) { m_nextContinuationToken = std::move(value); }
-    inline void SetNextContinuationToken(const char* value) { m_nextContinuationToken.assign(value); }
-    inline ListBucketInventoryConfigurationsResult& WithNextContinuationToken(const Aws::String& value) { SetNextContinuationToken(value); return *this;}
-    inline ListBucketInventoryConfigurationsResult& WithNextContinuationToken(Aws::String&& value) { SetNextContinuationToken(std::move(value)); return *this;}
-    inline ListBucketInventoryConfigurationsResult& WithNextContinuationToken(const char* value) { SetNextContinuationToken(value); return *this;}
+    inline const Aws::String& GetNextContinuationToken() const { return m_nextContinuationToken; }
+    template<typename NextContinuationTokenT = Aws::String>
+    void SetNextContinuationToken(NextContinuationTokenT&& value) { m_nextContinuationTokenHasBeenSet = true; m_nextContinuationToken = std::forward<NextContinuationTokenT>(value); }
+    template<typename NextContinuationTokenT = Aws::String>
+    ListBucketInventoryConfigurationsResult& WithNextContinuationToken(NextContinuationTokenT&& value) { SetNextContinuationToken(std::forward<NextContinuationTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListBucketInventoryConfigurationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListBucketInventoryConfigurationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListBucketInventoryConfigurationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListBucketInventoryConfigurationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_continuationToken;
+    bool m_continuationTokenHasBeenSet = false;
 
     Aws::Vector<InventoryConfiguration> m_inventoryConfigurationList;
+    bool m_inventoryConfigurationListHasBeenSet = false;
 
-    bool m_isTruncated;
+    bool m_isTruncated{false};
+    bool m_isTruncatedHasBeenSet = false;
 
     Aws::String m_nextContinuationToken;
+    bool m_nextContinuationTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

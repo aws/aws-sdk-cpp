@@ -28,20 +28,18 @@ namespace Model
   class DescribeCacheResult
   {
   public:
-    AWS_STORAGEGATEWAY_API DescribeCacheResult();
+    AWS_STORAGEGATEWAY_API DescribeCacheResult() = default;
     AWS_STORAGEGATEWAY_API DescribeCacheResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_STORAGEGATEWAY_API DescribeCacheResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
-    inline void SetGatewayARN(const Aws::String& value) { m_gatewayARN = value; }
-    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARN = std::move(value); }
-    inline void SetGatewayARN(const char* value) { m_gatewayARN.assign(value); }
-    inline DescribeCacheResult& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
-    inline DescribeCacheResult& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
-    inline DescribeCacheResult& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+    inline const Aws::String& GetGatewayARN() const { return m_gatewayARN; }
+    template<typename GatewayARNT = Aws::String>
+    void SetGatewayARN(GatewayARNT&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::forward<GatewayARNT>(value); }
+    template<typename GatewayARNT = Aws::String>
+    DescribeCacheResult& WithGatewayARN(GatewayARNT&& value) { SetGatewayARN(std::forward<GatewayARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -50,22 +48,21 @@ namespace Model
      * storage. Each string has a minimum length of 1 and maximum length of 300. You
      * can get the disk IDs from the <a>ListLocalDisks</a> API.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDiskIds() const{ return m_diskIds; }
-    inline void SetDiskIds(const Aws::Vector<Aws::String>& value) { m_diskIds = value; }
-    inline void SetDiskIds(Aws::Vector<Aws::String>&& value) { m_diskIds = std::move(value); }
-    inline DescribeCacheResult& WithDiskIds(const Aws::Vector<Aws::String>& value) { SetDiskIds(value); return *this;}
-    inline DescribeCacheResult& WithDiskIds(Aws::Vector<Aws::String>&& value) { SetDiskIds(std::move(value)); return *this;}
-    inline DescribeCacheResult& AddDiskIds(const Aws::String& value) { m_diskIds.push_back(value); return *this; }
-    inline DescribeCacheResult& AddDiskIds(Aws::String&& value) { m_diskIds.push_back(std::move(value)); return *this; }
-    inline DescribeCacheResult& AddDiskIds(const char* value) { m_diskIds.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetDiskIds() const { return m_diskIds; }
+    template<typename DiskIdsT = Aws::Vector<Aws::String>>
+    void SetDiskIds(DiskIdsT&& value) { m_diskIdsHasBeenSet = true; m_diskIds = std::forward<DiskIdsT>(value); }
+    template<typename DiskIdsT = Aws::Vector<Aws::String>>
+    DescribeCacheResult& WithDiskIds(DiskIdsT&& value) { SetDiskIds(std::forward<DiskIdsT>(value)); return *this;}
+    template<typename DiskIdsT = Aws::String>
+    DescribeCacheResult& AddDiskIds(DiskIdsT&& value) { m_diskIdsHasBeenSet = true; m_diskIds.emplace_back(std::forward<DiskIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The amount of cache in bytes allocated to a gateway.</p>
      */
-    inline long long GetCacheAllocatedInBytes() const{ return m_cacheAllocatedInBytes; }
-    inline void SetCacheAllocatedInBytes(long long value) { m_cacheAllocatedInBytes = value; }
+    inline long long GetCacheAllocatedInBytes() const { return m_cacheAllocatedInBytes; }
+    inline void SetCacheAllocatedInBytes(long long value) { m_cacheAllocatedInBytesHasBeenSet = true; m_cacheAllocatedInBytes = value; }
     inline DescribeCacheResult& WithCacheAllocatedInBytes(long long value) { SetCacheAllocatedInBytes(value); return *this;}
     ///@}
 
@@ -75,8 +72,8 @@ namespace Model
      * gateway-cached volume setup. The sample is taken at the end of the reporting
      * period.</p>
      */
-    inline double GetCacheUsedPercentage() const{ return m_cacheUsedPercentage; }
-    inline void SetCacheUsedPercentage(double value) { m_cacheUsedPercentage = value; }
+    inline double GetCacheUsedPercentage() const { return m_cacheUsedPercentage; }
+    inline void SetCacheUsedPercentage(double value) { m_cacheUsedPercentageHasBeenSet = true; m_cacheUsedPercentage = value; }
     inline DescribeCacheResult& WithCacheUsedPercentage(double value) { SetCacheUsedPercentage(value); return *this;}
     ///@}
 
@@ -86,8 +83,8 @@ namespace Model
      * cache that has not been persisted to Amazon Web Services. The sample is taken at
      * the end of the reporting period.</p>
      */
-    inline double GetCacheDirtyPercentage() const{ return m_cacheDirtyPercentage; }
-    inline void SetCacheDirtyPercentage(double value) { m_cacheDirtyPercentage = value; }
+    inline double GetCacheDirtyPercentage() const { return m_cacheDirtyPercentage; }
+    inline void SetCacheDirtyPercentage(double value) { m_cacheDirtyPercentageHasBeenSet = true; m_cacheDirtyPercentage = value; }
     inline DescribeCacheResult& WithCacheDirtyPercentage(double value) { SetCacheDirtyPercentage(value); return *this;}
     ///@}
 
@@ -96,8 +93,8 @@ namespace Model
      * <p>Percent of application read operations from the file shares that are served
      * from cache. The sample is taken at the end of the reporting period.</p>
      */
-    inline double GetCacheHitPercentage() const{ return m_cacheHitPercentage; }
-    inline void SetCacheHitPercentage(double value) { m_cacheHitPercentage = value; }
+    inline double GetCacheHitPercentage() const { return m_cacheHitPercentage; }
+    inline void SetCacheHitPercentage(double value) { m_cacheHitPercentageHasBeenSet = true; m_cacheHitPercentage = value; }
     inline DescribeCacheResult& WithCacheHitPercentage(double value) { SetCacheHitPercentage(value); return *this;}
     ///@}
 
@@ -106,38 +103,44 @@ namespace Model
      * <p>Percent of application read operations from the file shares that are not
      * served from cache. The sample is taken at the end of the reporting period.</p>
      */
-    inline double GetCacheMissPercentage() const{ return m_cacheMissPercentage; }
-    inline void SetCacheMissPercentage(double value) { m_cacheMissPercentage = value; }
+    inline double GetCacheMissPercentage() const { return m_cacheMissPercentage; }
+    inline void SetCacheMissPercentage(double value) { m_cacheMissPercentageHasBeenSet = true; m_cacheMissPercentage = value; }
     inline DescribeCacheResult& WithCacheMissPercentage(double value) { SetCacheMissPercentage(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeCacheResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeCacheResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeCacheResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeCacheResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_gatewayARN;
+    bool m_gatewayARNHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_diskIds;
+    bool m_diskIdsHasBeenSet = false;
 
-    long long m_cacheAllocatedInBytes;
+    long long m_cacheAllocatedInBytes{0};
+    bool m_cacheAllocatedInBytesHasBeenSet = false;
 
-    double m_cacheUsedPercentage;
+    double m_cacheUsedPercentage{0.0};
+    bool m_cacheUsedPercentageHasBeenSet = false;
 
-    double m_cacheDirtyPercentage;
+    double m_cacheDirtyPercentage{0.0};
+    bool m_cacheDirtyPercentageHasBeenSet = false;
 
-    double m_cacheHitPercentage;
+    double m_cacheHitPercentage{0.0};
+    bool m_cacheHitPercentageHasBeenSet = false;
 
-    double m_cacheMissPercentage;
+    double m_cacheMissPercentage{0.0};
+    bool m_cacheMissPercentageHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -37,52 +37,51 @@ namespace Model
   class GetDeploymentsResult
   {
   public:
-    AWS_APIGATEWAY_API GetDeploymentsResult();
+    AWS_APIGATEWAY_API GetDeploymentsResult() = default;
     AWS_APIGATEWAY_API GetDeploymentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APIGATEWAY_API GetDeploymentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::String& GetPosition() const{ return m_position; }
-    inline void SetPosition(const Aws::String& value) { m_position = value; }
-    inline void SetPosition(Aws::String&& value) { m_position = std::move(value); }
-    inline void SetPosition(const char* value) { m_position.assign(value); }
-    inline GetDeploymentsResult& WithPosition(const Aws::String& value) { SetPosition(value); return *this;}
-    inline GetDeploymentsResult& WithPosition(Aws::String&& value) { SetPosition(std::move(value)); return *this;}
-    inline GetDeploymentsResult& WithPosition(const char* value) { SetPosition(value); return *this;}
+    inline const Aws::String& GetPosition() const { return m_position; }
+    template<typename PositionT = Aws::String>
+    void SetPosition(PositionT&& value) { m_positionHasBeenSet = true; m_position = std::forward<PositionT>(value); }
+    template<typename PositionT = Aws::String>
+    GetDeploymentsResult& WithPosition(PositionT&& value) { SetPosition(std::forward<PositionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current page of elements from this collection.</p>
      */
-    inline const Aws::Vector<Deployment>& GetItems() const{ return m_items; }
-    inline void SetItems(const Aws::Vector<Deployment>& value) { m_items = value; }
-    inline void SetItems(Aws::Vector<Deployment>&& value) { m_items = std::move(value); }
-    inline GetDeploymentsResult& WithItems(const Aws::Vector<Deployment>& value) { SetItems(value); return *this;}
-    inline GetDeploymentsResult& WithItems(Aws::Vector<Deployment>&& value) { SetItems(std::move(value)); return *this;}
-    inline GetDeploymentsResult& AddItems(const Deployment& value) { m_items.push_back(value); return *this; }
-    inline GetDeploymentsResult& AddItems(Deployment&& value) { m_items.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Deployment>& GetItems() const { return m_items; }
+    template<typename ItemsT = Aws::Vector<Deployment>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<Deployment>>
+    GetDeploymentsResult& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = Deployment>
+    GetDeploymentsResult& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetDeploymentsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetDeploymentsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetDeploymentsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetDeploymentsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_position;
+    bool m_positionHasBeenSet = false;
 
     Aws::Vector<Deployment> m_items;
+    bool m_itemsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

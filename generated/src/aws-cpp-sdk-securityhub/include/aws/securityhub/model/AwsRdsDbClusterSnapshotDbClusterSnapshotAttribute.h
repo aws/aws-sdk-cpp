@@ -33,7 +33,7 @@ namespace Model
   class AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute
   {
   public:
-    AWS_SECURITYHUB_API AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute();
+    AWS_SECURITYHUB_API AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute() = default;
     AWS_SECURITYHUB_API AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * <code>restore</code> refers to the list of Amazon Web Services accounts that
      * have permission to copy or restore the manual DB cluster snapshot. </p>
      */
-    inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
+    inline const Aws::String& GetAttributeName() const { return m_attributeName; }
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
-    inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
-    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
-    inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
-    inline AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
-    inline AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
-    inline AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
+    template<typename AttributeNameT = Aws::String>
+    void SetAttributeName(AttributeNameT&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::forward<AttributeNameT>(value); }
+    template<typename AttributeNameT = Aws::String>
+    AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute& WithAttributeName(AttributeNameT&& value) { SetAttributeName(std::forward<AttributeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,15 +62,14 @@ namespace Model
      * <code>all</code> is in the list, then the manual DB cluster snapshot is public
      * and available for any Amazon Web Services account to copy or restore. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetAttributeValues() const{ return m_attributeValues; }
+    inline const Aws::Vector<Aws::String>& GetAttributeValues() const { return m_attributeValues; }
     inline bool AttributeValuesHasBeenSet() const { return m_attributeValuesHasBeenSet; }
-    inline void SetAttributeValues(const Aws::Vector<Aws::String>& value) { m_attributeValuesHasBeenSet = true; m_attributeValues = value; }
-    inline void SetAttributeValues(Aws::Vector<Aws::String>&& value) { m_attributeValuesHasBeenSet = true; m_attributeValues = std::move(value); }
-    inline AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute& WithAttributeValues(const Aws::Vector<Aws::String>& value) { SetAttributeValues(value); return *this;}
-    inline AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute& WithAttributeValues(Aws::Vector<Aws::String>&& value) { SetAttributeValues(std::move(value)); return *this;}
-    inline AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute& AddAttributeValues(const Aws::String& value) { m_attributeValuesHasBeenSet = true; m_attributeValues.push_back(value); return *this; }
-    inline AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute& AddAttributeValues(Aws::String&& value) { m_attributeValuesHasBeenSet = true; m_attributeValues.push_back(std::move(value)); return *this; }
-    inline AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute& AddAttributeValues(const char* value) { m_attributeValuesHasBeenSet = true; m_attributeValues.push_back(value); return *this; }
+    template<typename AttributeValuesT = Aws::Vector<Aws::String>>
+    void SetAttributeValues(AttributeValuesT&& value) { m_attributeValuesHasBeenSet = true; m_attributeValues = std::forward<AttributeValuesT>(value); }
+    template<typename AttributeValuesT = Aws::Vector<Aws::String>>
+    AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute& WithAttributeValues(AttributeValuesT&& value) { SetAttributeValues(std::forward<AttributeValuesT>(value)); return *this;}
+    template<typename AttributeValuesT = Aws::String>
+    AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute& AddAttributeValues(AttributeValuesT&& value) { m_attributeValuesHasBeenSet = true; m_attributeValues.emplace_back(std::forward<AttributeValuesT>(value)); return *this; }
     ///@}
   private:
 

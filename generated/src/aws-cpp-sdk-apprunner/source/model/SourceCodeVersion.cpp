@@ -18,15 +18,7 @@ namespace AppRunner
 namespace Model
 {
 
-SourceCodeVersion::SourceCodeVersion() : 
-    m_type(SourceCodeVersionType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 SourceCodeVersion::SourceCodeVersion(JsonView jsonValue)
-  : SourceCodeVersion()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SourceCodeVersion& SourceCodeVersion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = SourceCodeVersionTypeMapper::GetSourceCodeVersionTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

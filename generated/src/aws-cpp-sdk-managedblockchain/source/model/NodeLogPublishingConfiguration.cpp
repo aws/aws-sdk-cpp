@@ -18,13 +18,7 @@ namespace ManagedBlockchain
 namespace Model
 {
 
-NodeLogPublishingConfiguration::NodeLogPublishingConfiguration() : 
-    m_fabricHasBeenSet(false)
-{
-}
-
 NodeLogPublishingConfiguration::NodeLogPublishingConfiguration(JsonView jsonValue)
-  : NodeLogPublishingConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ NodeLogPublishingConfiguration& NodeLogPublishingConfiguration::operator =(JsonV
   if(jsonValue.ValueExists("Fabric"))
   {
     m_fabric = jsonValue.GetObject("Fabric");
-
     m_fabricHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -40,7 +40,7 @@ namespace Model
   class Notification
   {
   public:
-    AWS_SNOWBALL_API Notification();
+    AWS_SNOWBALL_API Notification() = default;
     AWS_SNOWBALL_API Notification(Aws::Utils::Json::JsonView jsonValue);
     AWS_SNOWBALL_API Notification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,35 +56,32 @@ namespace Model
      * href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a>
      * Amazon Simple Notification Service (Amazon SNS) API action.</p>
      */
-    inline const Aws::String& GetSnsTopicARN() const{ return m_snsTopicARN; }
+    inline const Aws::String& GetSnsTopicARN() const { return m_snsTopicARN; }
     inline bool SnsTopicARNHasBeenSet() const { return m_snsTopicARNHasBeenSet; }
-    inline void SetSnsTopicARN(const Aws::String& value) { m_snsTopicARNHasBeenSet = true; m_snsTopicARN = value; }
-    inline void SetSnsTopicARN(Aws::String&& value) { m_snsTopicARNHasBeenSet = true; m_snsTopicARN = std::move(value); }
-    inline void SetSnsTopicARN(const char* value) { m_snsTopicARNHasBeenSet = true; m_snsTopicARN.assign(value); }
-    inline Notification& WithSnsTopicARN(const Aws::String& value) { SetSnsTopicARN(value); return *this;}
-    inline Notification& WithSnsTopicARN(Aws::String&& value) { SetSnsTopicARN(std::move(value)); return *this;}
-    inline Notification& WithSnsTopicARN(const char* value) { SetSnsTopicARN(value); return *this;}
+    template<typename SnsTopicARNT = Aws::String>
+    void SetSnsTopicARN(SnsTopicARNT&& value) { m_snsTopicARNHasBeenSet = true; m_snsTopicARN = std::forward<SnsTopicARNT>(value); }
+    template<typename SnsTopicARNT = Aws::String>
+    Notification& WithSnsTopicARN(SnsTopicARNT&& value) { SetSnsTopicARN(std::forward<SnsTopicARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of job states that will trigger a notification for this job.</p>
      */
-    inline const Aws::Vector<JobState>& GetJobStatesToNotify() const{ return m_jobStatesToNotify; }
+    inline const Aws::Vector<JobState>& GetJobStatesToNotify() const { return m_jobStatesToNotify; }
     inline bool JobStatesToNotifyHasBeenSet() const { return m_jobStatesToNotifyHasBeenSet; }
-    inline void SetJobStatesToNotify(const Aws::Vector<JobState>& value) { m_jobStatesToNotifyHasBeenSet = true; m_jobStatesToNotify = value; }
-    inline void SetJobStatesToNotify(Aws::Vector<JobState>&& value) { m_jobStatesToNotifyHasBeenSet = true; m_jobStatesToNotify = std::move(value); }
-    inline Notification& WithJobStatesToNotify(const Aws::Vector<JobState>& value) { SetJobStatesToNotify(value); return *this;}
-    inline Notification& WithJobStatesToNotify(Aws::Vector<JobState>&& value) { SetJobStatesToNotify(std::move(value)); return *this;}
-    inline Notification& AddJobStatesToNotify(const JobState& value) { m_jobStatesToNotifyHasBeenSet = true; m_jobStatesToNotify.push_back(value); return *this; }
-    inline Notification& AddJobStatesToNotify(JobState&& value) { m_jobStatesToNotifyHasBeenSet = true; m_jobStatesToNotify.push_back(std::move(value)); return *this; }
+    template<typename JobStatesToNotifyT = Aws::Vector<JobState>>
+    void SetJobStatesToNotify(JobStatesToNotifyT&& value) { m_jobStatesToNotifyHasBeenSet = true; m_jobStatesToNotify = std::forward<JobStatesToNotifyT>(value); }
+    template<typename JobStatesToNotifyT = Aws::Vector<JobState>>
+    Notification& WithJobStatesToNotify(JobStatesToNotifyT&& value) { SetJobStatesToNotify(std::forward<JobStatesToNotifyT>(value)); return *this;}
+    inline Notification& AddJobStatesToNotify(JobState value) { m_jobStatesToNotifyHasBeenSet = true; m_jobStatesToNotify.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Any change in job state will trigger a notification for this job.</p>
      */
-    inline bool GetNotifyAll() const{ return m_notifyAll; }
+    inline bool GetNotifyAll() const { return m_notifyAll; }
     inline bool NotifyAllHasBeenSet() const { return m_notifyAllHasBeenSet; }
     inline void SetNotifyAll(bool value) { m_notifyAllHasBeenSet = true; m_notifyAll = value; }
     inline Notification& WithNotifyAll(bool value) { SetNotifyAll(value); return *this;}
@@ -95,14 +92,12 @@ namespace Model
      * <p>Used to send SNS notifications for the person picking up the device
      * (identified during job creation).</p>
      */
-    inline const Aws::String& GetDevicePickupSnsTopicARN() const{ return m_devicePickupSnsTopicARN; }
+    inline const Aws::String& GetDevicePickupSnsTopicARN() const { return m_devicePickupSnsTopicARN; }
     inline bool DevicePickupSnsTopicARNHasBeenSet() const { return m_devicePickupSnsTopicARNHasBeenSet; }
-    inline void SetDevicePickupSnsTopicARN(const Aws::String& value) { m_devicePickupSnsTopicARNHasBeenSet = true; m_devicePickupSnsTopicARN = value; }
-    inline void SetDevicePickupSnsTopicARN(Aws::String&& value) { m_devicePickupSnsTopicARNHasBeenSet = true; m_devicePickupSnsTopicARN = std::move(value); }
-    inline void SetDevicePickupSnsTopicARN(const char* value) { m_devicePickupSnsTopicARNHasBeenSet = true; m_devicePickupSnsTopicARN.assign(value); }
-    inline Notification& WithDevicePickupSnsTopicARN(const Aws::String& value) { SetDevicePickupSnsTopicARN(value); return *this;}
-    inline Notification& WithDevicePickupSnsTopicARN(Aws::String&& value) { SetDevicePickupSnsTopicARN(std::move(value)); return *this;}
-    inline Notification& WithDevicePickupSnsTopicARN(const char* value) { SetDevicePickupSnsTopicARN(value); return *this;}
+    template<typename DevicePickupSnsTopicARNT = Aws::String>
+    void SetDevicePickupSnsTopicARN(DevicePickupSnsTopicARNT&& value) { m_devicePickupSnsTopicARNHasBeenSet = true; m_devicePickupSnsTopicARN = std::forward<DevicePickupSnsTopicARNT>(value); }
+    template<typename DevicePickupSnsTopicARNT = Aws::String>
+    Notification& WithDevicePickupSnsTopicARN(DevicePickupSnsTopicARNT&& value) { SetDevicePickupSnsTopicARN(std::forward<DevicePickupSnsTopicARNT>(value)); return *this;}
     ///@}
   private:
 
@@ -112,7 +107,7 @@ namespace Model
     Aws::Vector<JobState> m_jobStatesToNotify;
     bool m_jobStatesToNotifyHasBeenSet = false;
 
-    bool m_notifyAll;
+    bool m_notifyAll{false};
     bool m_notifyAllHasBeenSet = false;
 
     Aws::String m_devicePickupSnsTopicARN;

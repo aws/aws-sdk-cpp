@@ -18,14 +18,7 @@ namespace LakeFormation
 namespace Model
 {
 
-LFTagError::LFTagError() : 
-    m_lFTagHasBeenSet(false),
-    m_errorHasBeenSet(false)
-{
-}
-
 LFTagError::LFTagError(JsonView jsonValue)
-  : LFTagError()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ LFTagError& LFTagError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LFTag"))
   {
     m_lFTag = jsonValue.GetObject("LFTag");
-
     m_lFTagHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Error"))
   {
     m_error = jsonValue.GetObject("Error");
-
     m_errorHasBeenSet = true;
   }
-
   return *this;
 }
 

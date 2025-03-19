@@ -18,17 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-ParameterDetail::ParameterDetail() : 
-    m_descriptionHasBeenSet(false),
-    m_required(false),
-    m_requiredHasBeenSet(false),
-    m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 ParameterDetail::ParameterDetail(JsonView jsonValue)
-  : ParameterDetail()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ ParameterDetail& ParameterDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("required"))
   {
     m_required = jsonValue.GetBool("required");
-
     m_requiredHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = TypeMapper::GetTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

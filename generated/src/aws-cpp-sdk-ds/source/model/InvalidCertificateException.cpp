@@ -18,14 +18,7 @@ namespace DirectoryService
 namespace Model
 {
 
-InvalidCertificateException::InvalidCertificateException() : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 InvalidCertificateException::InvalidCertificateException(JsonView jsonValue)
-  : InvalidCertificateException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ InvalidCertificateException& InvalidCertificateException::operator =(JsonView js
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestId"))
   {
     m_requestId = jsonValue.GetString("RequestId");
-
     m_requestIdHasBeenSet = true;
   }
-
   return *this;
 }
 

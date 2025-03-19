@@ -18,14 +18,7 @@ namespace deadline
 namespace Model
 {
 
-SessionsStatisticsResources::SessionsStatisticsResources() : 
-    m_queueIdsHasBeenSet(false),
-    m_fleetIdsHasBeenSet(false)
-{
-}
-
 SessionsStatisticsResources::SessionsStatisticsResources(JsonView jsonValue)
-  : SessionsStatisticsResources()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ SessionsStatisticsResources& SessionsStatisticsResources::operator =(JsonView js
     }
     m_queueIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fleetIds"))
   {
     Aws::Utils::Array<JsonView> fleetIdsJsonList = jsonValue.GetArray("fleetIds");
@@ -51,7 +43,6 @@ SessionsStatisticsResources& SessionsStatisticsResources::operator =(JsonView js
     }
     m_fleetIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

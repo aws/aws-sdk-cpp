@@ -18,13 +18,7 @@ namespace Glue
 namespace Model
 {
 
-OrphanFileDeletionMetrics::OrphanFileDeletionMetrics() : 
-    m_icebergMetricsHasBeenSet(false)
-{
-}
-
 OrphanFileDeletionMetrics::OrphanFileDeletionMetrics(JsonView jsonValue)
-  : OrphanFileDeletionMetrics()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ OrphanFileDeletionMetrics& OrphanFileDeletionMetrics::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("IcebergMetrics"))
   {
     m_icebergMetrics = jsonValue.GetObject("IcebergMetrics");
-
     m_icebergMetricsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-CoverageCost::CoverageCost() : 
-    m_onDemandCostHasBeenSet(false)
-{
-}
-
 CoverageCost::CoverageCost(JsonView jsonValue)
-  : CoverageCost()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CoverageCost& CoverageCost::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OnDemandCost"))
   {
     m_onDemandCost = jsonValue.GetString("OnDemandCost");
-
     m_onDemandCostHasBeenSet = true;
   }
-
   return *this;
 }
 

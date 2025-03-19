@@ -13,13 +13,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateTopicRuleRequest::CreateTopicRuleRequest() : 
-    m_ruleNameHasBeenSet(false),
-    m_topicRulePayloadHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateTopicRuleRequest::SerializePayload() const
 {
   JsonValue payload;

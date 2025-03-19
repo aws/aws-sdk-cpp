@@ -28,7 +28,7 @@ namespace Model
   class ModifyAquaConfigurationResult
   {
   public:
-    AWS_REDSHIFT_API ModifyAquaConfigurationResult();
+    AWS_REDSHIFT_API ModifyAquaConfigurationResult() = default;
     AWS_REDSHIFT_API ModifyAquaConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_REDSHIFT_API ModifyAquaConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,26 +38,28 @@ namespace Model
      * <p>This parameter is retired. Amazon Redshift automatically determines whether
      * to use AQUA (Advanced Query Accelerator). </p>
      */
-    inline const AquaConfiguration& GetAquaConfiguration() const{ return m_aquaConfiguration; }
-    inline void SetAquaConfiguration(const AquaConfiguration& value) { m_aquaConfiguration = value; }
-    inline void SetAquaConfiguration(AquaConfiguration&& value) { m_aquaConfiguration = std::move(value); }
-    inline ModifyAquaConfigurationResult& WithAquaConfiguration(const AquaConfiguration& value) { SetAquaConfiguration(value); return *this;}
-    inline ModifyAquaConfigurationResult& WithAquaConfiguration(AquaConfiguration&& value) { SetAquaConfiguration(std::move(value)); return *this;}
+    inline const AquaConfiguration& GetAquaConfiguration() const { return m_aquaConfiguration; }
+    template<typename AquaConfigurationT = AquaConfiguration>
+    void SetAquaConfiguration(AquaConfigurationT&& value) { m_aquaConfigurationHasBeenSet = true; m_aquaConfiguration = std::forward<AquaConfigurationT>(value); }
+    template<typename AquaConfigurationT = AquaConfiguration>
+    ModifyAquaConfigurationResult& WithAquaConfiguration(AquaConfigurationT&& value) { SetAquaConfiguration(std::forward<AquaConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ModifyAquaConfigurationResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ModifyAquaConfigurationResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ModifyAquaConfigurationResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     AquaConfiguration m_aquaConfiguration;
+    bool m_aquaConfigurationHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

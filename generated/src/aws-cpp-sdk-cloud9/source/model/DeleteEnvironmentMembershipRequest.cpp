@@ -12,12 +12,6 @@ using namespace Aws::Cloud9::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteEnvironmentMembershipRequest::DeleteEnvironmentMembershipRequest() : 
-    m_environmentIdHasBeenSet(false),
-    m_userArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteEnvironmentMembershipRequest::SerializePayload() const
 {
   JsonValue payload;

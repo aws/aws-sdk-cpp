@@ -29,7 +29,7 @@ namespace Model
   class ListTrackersResult
   {
   public:
-    AWS_LOCATIONSERVICE_API ListTrackersResult();
+    AWS_LOCATIONSERVICE_API ListTrackersResult() = default;
     AWS_LOCATIONSERVICE_API ListTrackersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOCATIONSERVICE_API ListTrackersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,13 @@ namespace Model
      * include tracker name, description and timestamps for when the tracker was
      * created and last updated.</p>
      */
-    inline const Aws::Vector<ListTrackersResponseEntry>& GetEntries() const{ return m_entries; }
-    inline void SetEntries(const Aws::Vector<ListTrackersResponseEntry>& value) { m_entries = value; }
-    inline void SetEntries(Aws::Vector<ListTrackersResponseEntry>&& value) { m_entries = std::move(value); }
-    inline ListTrackersResult& WithEntries(const Aws::Vector<ListTrackersResponseEntry>& value) { SetEntries(value); return *this;}
-    inline ListTrackersResult& WithEntries(Aws::Vector<ListTrackersResponseEntry>&& value) { SetEntries(std::move(value)); return *this;}
-    inline ListTrackersResult& AddEntries(const ListTrackersResponseEntry& value) { m_entries.push_back(value); return *this; }
-    inline ListTrackersResult& AddEntries(ListTrackersResponseEntry&& value) { m_entries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ListTrackersResponseEntry>& GetEntries() const { return m_entries; }
+    template<typename EntriesT = Aws::Vector<ListTrackersResponseEntry>>
+    void SetEntries(EntriesT&& value) { m_entriesHasBeenSet = true; m_entries = std::forward<EntriesT>(value); }
+    template<typename EntriesT = Aws::Vector<ListTrackersResponseEntry>>
+    ListTrackersResult& WithEntries(EntriesT&& value) { SetEntries(std::forward<EntriesT>(value)); return *this;}
+    template<typename EntriesT = ListTrackersResponseEntry>
+    ListTrackersResult& AddEntries(EntriesT&& value) { m_entriesHasBeenSet = true; m_entries.emplace_back(std::forward<EntriesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,32 +54,31 @@ namespace Model
      * <p>A pagination token indicating there are additional pages available. You can
      * use the token in a following request to fetch the next set of results. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListTrackersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListTrackersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListTrackersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListTrackersResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListTrackersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListTrackersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListTrackersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListTrackersResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ListTrackersResponseEntry> m_entries;
+    bool m_entriesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

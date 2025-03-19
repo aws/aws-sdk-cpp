@@ -37,7 +37,7 @@ namespace Model
   class RerankingMetadataSelectiveModeConfiguration
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API RerankingMetadataSelectiveModeConfiguration();
+    AWS_BEDROCKAGENTRUNTIME_API RerankingMetadataSelectiveModeConfiguration() = default;
     AWS_BEDROCKAGENTRUNTIME_API RerankingMetadataSelectiveModeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API RerankingMetadataSelectiveModeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,14 @@ namespace Model
      * <p>An array of objects, each of which specifies a metadata field to exclude from
      * consideration when reranking.</p>
      */
-    inline const Aws::Vector<FieldForReranking>& GetFieldsToExclude() const{ return m_fieldsToExclude; }
+    inline const Aws::Vector<FieldForReranking>& GetFieldsToExclude() const { return m_fieldsToExclude; }
     inline bool FieldsToExcludeHasBeenSet() const { return m_fieldsToExcludeHasBeenSet; }
-    inline void SetFieldsToExclude(const Aws::Vector<FieldForReranking>& value) { m_fieldsToExcludeHasBeenSet = true; m_fieldsToExclude = value; }
-    inline void SetFieldsToExclude(Aws::Vector<FieldForReranking>&& value) { m_fieldsToExcludeHasBeenSet = true; m_fieldsToExclude = std::move(value); }
-    inline RerankingMetadataSelectiveModeConfiguration& WithFieldsToExclude(const Aws::Vector<FieldForReranking>& value) { SetFieldsToExclude(value); return *this;}
-    inline RerankingMetadataSelectiveModeConfiguration& WithFieldsToExclude(Aws::Vector<FieldForReranking>&& value) { SetFieldsToExclude(std::move(value)); return *this;}
-    inline RerankingMetadataSelectiveModeConfiguration& AddFieldsToExclude(const FieldForReranking& value) { m_fieldsToExcludeHasBeenSet = true; m_fieldsToExclude.push_back(value); return *this; }
-    inline RerankingMetadataSelectiveModeConfiguration& AddFieldsToExclude(FieldForReranking&& value) { m_fieldsToExcludeHasBeenSet = true; m_fieldsToExclude.push_back(std::move(value)); return *this; }
+    template<typename FieldsToExcludeT = Aws::Vector<FieldForReranking>>
+    void SetFieldsToExclude(FieldsToExcludeT&& value) { m_fieldsToExcludeHasBeenSet = true; m_fieldsToExclude = std::forward<FieldsToExcludeT>(value); }
+    template<typename FieldsToExcludeT = Aws::Vector<FieldForReranking>>
+    RerankingMetadataSelectiveModeConfiguration& WithFieldsToExclude(FieldsToExcludeT&& value) { SetFieldsToExclude(std::forward<FieldsToExcludeT>(value)); return *this;}
+    template<typename FieldsToExcludeT = FieldForReranking>
+    RerankingMetadataSelectiveModeConfiguration& AddFieldsToExclude(FieldsToExcludeT&& value) { m_fieldsToExcludeHasBeenSet = true; m_fieldsToExclude.emplace_back(std::forward<FieldsToExcludeT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -63,14 +63,14 @@ namespace Model
      * <p>An array of objects, each of which specifies a metadata field to include in
      * consideration when reranking. The remaining metadata fields are ignored.</p>
      */
-    inline const Aws::Vector<FieldForReranking>& GetFieldsToInclude() const{ return m_fieldsToInclude; }
+    inline const Aws::Vector<FieldForReranking>& GetFieldsToInclude() const { return m_fieldsToInclude; }
     inline bool FieldsToIncludeHasBeenSet() const { return m_fieldsToIncludeHasBeenSet; }
-    inline void SetFieldsToInclude(const Aws::Vector<FieldForReranking>& value) { m_fieldsToIncludeHasBeenSet = true; m_fieldsToInclude = value; }
-    inline void SetFieldsToInclude(Aws::Vector<FieldForReranking>&& value) { m_fieldsToIncludeHasBeenSet = true; m_fieldsToInclude = std::move(value); }
-    inline RerankingMetadataSelectiveModeConfiguration& WithFieldsToInclude(const Aws::Vector<FieldForReranking>& value) { SetFieldsToInclude(value); return *this;}
-    inline RerankingMetadataSelectiveModeConfiguration& WithFieldsToInclude(Aws::Vector<FieldForReranking>&& value) { SetFieldsToInclude(std::move(value)); return *this;}
-    inline RerankingMetadataSelectiveModeConfiguration& AddFieldsToInclude(const FieldForReranking& value) { m_fieldsToIncludeHasBeenSet = true; m_fieldsToInclude.push_back(value); return *this; }
-    inline RerankingMetadataSelectiveModeConfiguration& AddFieldsToInclude(FieldForReranking&& value) { m_fieldsToIncludeHasBeenSet = true; m_fieldsToInclude.push_back(std::move(value)); return *this; }
+    template<typename FieldsToIncludeT = Aws::Vector<FieldForReranking>>
+    void SetFieldsToInclude(FieldsToIncludeT&& value) { m_fieldsToIncludeHasBeenSet = true; m_fieldsToInclude = std::forward<FieldsToIncludeT>(value); }
+    template<typename FieldsToIncludeT = Aws::Vector<FieldForReranking>>
+    RerankingMetadataSelectiveModeConfiguration& WithFieldsToInclude(FieldsToIncludeT&& value) { SetFieldsToInclude(std::forward<FieldsToIncludeT>(value)); return *this;}
+    template<typename FieldsToIncludeT = FieldForReranking>
+    RerankingMetadataSelectiveModeConfiguration& AddFieldsToInclude(FieldsToIncludeT&& value) { m_fieldsToIncludeHasBeenSet = true; m_fieldsToInclude.emplace_back(std::forward<FieldsToIncludeT>(value)); return *this; }
     ///@}
   private:
 

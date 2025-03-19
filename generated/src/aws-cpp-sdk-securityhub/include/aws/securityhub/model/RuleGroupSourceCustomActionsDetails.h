@@ -33,7 +33,7 @@ namespace Model
   class RuleGroupSourceCustomActionsDetails
   {
   public:
-    AWS_SECURITYHUB_API RuleGroupSourceCustomActionsDetails();
+    AWS_SECURITYHUB_API RuleGroupSourceCustomActionsDetails() = default;
     AWS_SECURITYHUB_API RuleGroupSourceCustomActionsDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API RuleGroupSourceCustomActionsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,24 @@ namespace Model
     /**
      * <p>The definition of a custom action.</p>
      */
-    inline const StatelessCustomActionDefinition& GetActionDefinition() const{ return m_actionDefinition; }
+    inline const StatelessCustomActionDefinition& GetActionDefinition() const { return m_actionDefinition; }
     inline bool ActionDefinitionHasBeenSet() const { return m_actionDefinitionHasBeenSet; }
-    inline void SetActionDefinition(const StatelessCustomActionDefinition& value) { m_actionDefinitionHasBeenSet = true; m_actionDefinition = value; }
-    inline void SetActionDefinition(StatelessCustomActionDefinition&& value) { m_actionDefinitionHasBeenSet = true; m_actionDefinition = std::move(value); }
-    inline RuleGroupSourceCustomActionsDetails& WithActionDefinition(const StatelessCustomActionDefinition& value) { SetActionDefinition(value); return *this;}
-    inline RuleGroupSourceCustomActionsDetails& WithActionDefinition(StatelessCustomActionDefinition&& value) { SetActionDefinition(std::move(value)); return *this;}
+    template<typename ActionDefinitionT = StatelessCustomActionDefinition>
+    void SetActionDefinition(ActionDefinitionT&& value) { m_actionDefinitionHasBeenSet = true; m_actionDefinition = std::forward<ActionDefinitionT>(value); }
+    template<typename ActionDefinitionT = StatelessCustomActionDefinition>
+    RuleGroupSourceCustomActionsDetails& WithActionDefinition(ActionDefinitionT&& value) { SetActionDefinition(std::forward<ActionDefinitionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A descriptive name of the custom action.</p>
      */
-    inline const Aws::String& GetActionName() const{ return m_actionName; }
+    inline const Aws::String& GetActionName() const { return m_actionName; }
     inline bool ActionNameHasBeenSet() const { return m_actionNameHasBeenSet; }
-    inline void SetActionName(const Aws::String& value) { m_actionNameHasBeenSet = true; m_actionName = value; }
-    inline void SetActionName(Aws::String&& value) { m_actionNameHasBeenSet = true; m_actionName = std::move(value); }
-    inline void SetActionName(const char* value) { m_actionNameHasBeenSet = true; m_actionName.assign(value); }
-    inline RuleGroupSourceCustomActionsDetails& WithActionName(const Aws::String& value) { SetActionName(value); return *this;}
-    inline RuleGroupSourceCustomActionsDetails& WithActionName(Aws::String&& value) { SetActionName(std::move(value)); return *this;}
-    inline RuleGroupSourceCustomActionsDetails& WithActionName(const char* value) { SetActionName(value); return *this;}
+    template<typename ActionNameT = Aws::String>
+    void SetActionName(ActionNameT&& value) { m_actionNameHasBeenSet = true; m_actionName = std::forward<ActionNameT>(value); }
+    template<typename ActionNameT = Aws::String>
+    RuleGroupSourceCustomActionsDetails& WithActionName(ActionNameT&& value) { SetActionName(std::forward<ActionNameT>(value)); return *this;}
     ///@}
   private:
 

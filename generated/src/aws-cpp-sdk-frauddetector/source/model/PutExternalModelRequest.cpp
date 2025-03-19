@@ -12,19 +12,6 @@ using namespace Aws::FraudDetector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutExternalModelRequest::PutExternalModelRequest() : 
-    m_modelEndpointHasBeenSet(false),
-    m_modelSource(ModelSource::NOT_SET),
-    m_modelSourceHasBeenSet(false),
-    m_invokeModelEndpointRoleArnHasBeenSet(false),
-    m_inputConfigurationHasBeenSet(false),
-    m_outputConfigurationHasBeenSet(false),
-    m_modelEndpointStatus(ModelEndpointStatus::NOT_SET),
-    m_modelEndpointStatusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String PutExternalModelRequest::SerializePayload() const
 {
   JsonValue payload;

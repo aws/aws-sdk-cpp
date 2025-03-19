@@ -18,13 +18,7 @@ namespace KinesisAnalyticsV2
 namespace Model
 {
 
-ApplicationMaintenanceConfigurationUpdate::ApplicationMaintenanceConfigurationUpdate() : 
-    m_applicationMaintenanceWindowStartTimeUpdateHasBeenSet(false)
-{
-}
-
 ApplicationMaintenanceConfigurationUpdate::ApplicationMaintenanceConfigurationUpdate(JsonView jsonValue)
-  : ApplicationMaintenanceConfigurationUpdate()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ApplicationMaintenanceConfigurationUpdate& ApplicationMaintenanceConfigurationUp
   if(jsonValue.ValueExists("ApplicationMaintenanceWindowStartTimeUpdate"))
   {
     m_applicationMaintenanceWindowStartTimeUpdate = jsonValue.GetString("ApplicationMaintenanceWindowStartTimeUpdate");
-
     m_applicationMaintenanceWindowStartTimeUpdateHasBeenSet = true;
   }
-
   return *this;
 }
 

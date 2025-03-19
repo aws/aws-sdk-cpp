@@ -29,7 +29,7 @@ namespace Model
   class ListDatasetContentsResult
   {
   public:
-    AWS_IOTANALYTICS_API ListDatasetContentsResult();
+    AWS_IOTANALYTICS_API ListDatasetContentsResult() = default;
     AWS_IOTANALYTICS_API ListDatasetContentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTANALYTICS_API ListDatasetContentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Summary information about dataset contents that have been created.</p>
      */
-    inline const Aws::Vector<DatasetContentSummary>& GetDatasetContentSummaries() const{ return m_datasetContentSummaries; }
-    inline void SetDatasetContentSummaries(const Aws::Vector<DatasetContentSummary>& value) { m_datasetContentSummaries = value; }
-    inline void SetDatasetContentSummaries(Aws::Vector<DatasetContentSummary>&& value) { m_datasetContentSummaries = std::move(value); }
-    inline ListDatasetContentsResult& WithDatasetContentSummaries(const Aws::Vector<DatasetContentSummary>& value) { SetDatasetContentSummaries(value); return *this;}
-    inline ListDatasetContentsResult& WithDatasetContentSummaries(Aws::Vector<DatasetContentSummary>&& value) { SetDatasetContentSummaries(std::move(value)); return *this;}
-    inline ListDatasetContentsResult& AddDatasetContentSummaries(const DatasetContentSummary& value) { m_datasetContentSummaries.push_back(value); return *this; }
-    inline ListDatasetContentsResult& AddDatasetContentSummaries(DatasetContentSummary&& value) { m_datasetContentSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DatasetContentSummary>& GetDatasetContentSummaries() const { return m_datasetContentSummaries; }
+    template<typename DatasetContentSummariesT = Aws::Vector<DatasetContentSummary>>
+    void SetDatasetContentSummaries(DatasetContentSummariesT&& value) { m_datasetContentSummariesHasBeenSet = true; m_datasetContentSummaries = std::forward<DatasetContentSummariesT>(value); }
+    template<typename DatasetContentSummariesT = Aws::Vector<DatasetContentSummary>>
+    ListDatasetContentsResult& WithDatasetContentSummaries(DatasetContentSummariesT&& value) { SetDatasetContentSummaries(std::forward<DatasetContentSummariesT>(value)); return *this;}
+    template<typename DatasetContentSummariesT = DatasetContentSummary>
+    ListDatasetContentsResult& AddDatasetContentSummaries(DatasetContentSummariesT&& value) { m_datasetContentSummariesHasBeenSet = true; m_datasetContentSummaries.emplace_back(std::forward<DatasetContentSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The token to retrieve the next set of results, or <code>null</code> if there
      * are no more results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListDatasetContentsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListDatasetContentsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListDatasetContentsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListDatasetContentsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListDatasetContentsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListDatasetContentsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListDatasetContentsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListDatasetContentsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DatasetContentSummary> m_datasetContentSummaries;
+    bool m_datasetContentSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,11 +12,6 @@ using namespace Aws::SecurityIR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCaseRequest::GetCaseRequest() : 
-    m_caseIdHasBeenSet(false)
-{
-}
-
 Aws::String GetCaseRequest::SerializePayload() const
 {
   return {};

@@ -37,7 +37,7 @@ namespace Model
   class Analysis
   {
   public:
-    AWS_QUICKSIGHT_API Analysis();
+    AWS_QUICKSIGHT_API Analysis() = default;
     AWS_QUICKSIGHT_API Analysis(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Analysis& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,121 +47,110 @@ namespace Model
     /**
      * <p>The ID of the analysis.</p>
      */
-    inline const Aws::String& GetAnalysisId() const{ return m_analysisId; }
+    inline const Aws::String& GetAnalysisId() const { return m_analysisId; }
     inline bool AnalysisIdHasBeenSet() const { return m_analysisIdHasBeenSet; }
-    inline void SetAnalysisId(const Aws::String& value) { m_analysisIdHasBeenSet = true; m_analysisId = value; }
-    inline void SetAnalysisId(Aws::String&& value) { m_analysisIdHasBeenSet = true; m_analysisId = std::move(value); }
-    inline void SetAnalysisId(const char* value) { m_analysisIdHasBeenSet = true; m_analysisId.assign(value); }
-    inline Analysis& WithAnalysisId(const Aws::String& value) { SetAnalysisId(value); return *this;}
-    inline Analysis& WithAnalysisId(Aws::String&& value) { SetAnalysisId(std::move(value)); return *this;}
-    inline Analysis& WithAnalysisId(const char* value) { SetAnalysisId(value); return *this;}
+    template<typename AnalysisIdT = Aws::String>
+    void SetAnalysisId(AnalysisIdT&& value) { m_analysisIdHasBeenSet = true; m_analysisId = std::forward<AnalysisIdT>(value); }
+    template<typename AnalysisIdT = Aws::String>
+    Analysis& WithAnalysisId(AnalysisIdT&& value) { SetAnalysisId(std::forward<AnalysisIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the analysis.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline Analysis& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline Analysis& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline Analysis& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    Analysis& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The descriptive name of the analysis.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Analysis& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Analysis& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Analysis& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Analysis& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Status associated with the analysis.</p>
      */
-    inline const ResourceStatus& GetStatus() const{ return m_status; }
+    inline ResourceStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ResourceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ResourceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline Analysis& WithStatus(const ResourceStatus& value) { SetStatus(value); return *this;}
-    inline Analysis& WithStatus(ResourceStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ResourceStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline Analysis& WithStatus(ResourceStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Errors associated with the analysis.</p>
      */
-    inline const Aws::Vector<AnalysisError>& GetErrors() const{ return m_errors; }
+    inline const Aws::Vector<AnalysisError>& GetErrors() const { return m_errors; }
     inline bool ErrorsHasBeenSet() const { return m_errorsHasBeenSet; }
-    inline void SetErrors(const Aws::Vector<AnalysisError>& value) { m_errorsHasBeenSet = true; m_errors = value; }
-    inline void SetErrors(Aws::Vector<AnalysisError>&& value) { m_errorsHasBeenSet = true; m_errors = std::move(value); }
-    inline Analysis& WithErrors(const Aws::Vector<AnalysisError>& value) { SetErrors(value); return *this;}
-    inline Analysis& WithErrors(Aws::Vector<AnalysisError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline Analysis& AddErrors(const AnalysisError& value) { m_errorsHasBeenSet = true; m_errors.push_back(value); return *this; }
-    inline Analysis& AddErrors(AnalysisError&& value) { m_errorsHasBeenSet = true; m_errors.push_back(std::move(value)); return *this; }
+    template<typename ErrorsT = Aws::Vector<AnalysisError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<AnalysisError>>
+    Analysis& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = AnalysisError>
+    Analysis& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The ARNs of the datasets of the analysis.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDataSetArns() const{ return m_dataSetArns; }
+    inline const Aws::Vector<Aws::String>& GetDataSetArns() const { return m_dataSetArns; }
     inline bool DataSetArnsHasBeenSet() const { return m_dataSetArnsHasBeenSet; }
-    inline void SetDataSetArns(const Aws::Vector<Aws::String>& value) { m_dataSetArnsHasBeenSet = true; m_dataSetArns = value; }
-    inline void SetDataSetArns(Aws::Vector<Aws::String>&& value) { m_dataSetArnsHasBeenSet = true; m_dataSetArns = std::move(value); }
-    inline Analysis& WithDataSetArns(const Aws::Vector<Aws::String>& value) { SetDataSetArns(value); return *this;}
-    inline Analysis& WithDataSetArns(Aws::Vector<Aws::String>&& value) { SetDataSetArns(std::move(value)); return *this;}
-    inline Analysis& AddDataSetArns(const Aws::String& value) { m_dataSetArnsHasBeenSet = true; m_dataSetArns.push_back(value); return *this; }
-    inline Analysis& AddDataSetArns(Aws::String&& value) { m_dataSetArnsHasBeenSet = true; m_dataSetArns.push_back(std::move(value)); return *this; }
-    inline Analysis& AddDataSetArns(const char* value) { m_dataSetArnsHasBeenSet = true; m_dataSetArns.push_back(value); return *this; }
+    template<typename DataSetArnsT = Aws::Vector<Aws::String>>
+    void SetDataSetArns(DataSetArnsT&& value) { m_dataSetArnsHasBeenSet = true; m_dataSetArns = std::forward<DataSetArnsT>(value); }
+    template<typename DataSetArnsT = Aws::Vector<Aws::String>>
+    Analysis& WithDataSetArns(DataSetArnsT&& value) { SetDataSetArns(std::forward<DataSetArnsT>(value)); return *this;}
+    template<typename DataSetArnsT = Aws::String>
+    Analysis& AddDataSetArns(DataSetArnsT&& value) { m_dataSetArnsHasBeenSet = true; m_dataSetArns.emplace_back(std::forward<DataSetArnsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the theme of the analysis.</p>
      */
-    inline const Aws::String& GetThemeArn() const{ return m_themeArn; }
+    inline const Aws::String& GetThemeArn() const { return m_themeArn; }
     inline bool ThemeArnHasBeenSet() const { return m_themeArnHasBeenSet; }
-    inline void SetThemeArn(const Aws::String& value) { m_themeArnHasBeenSet = true; m_themeArn = value; }
-    inline void SetThemeArn(Aws::String&& value) { m_themeArnHasBeenSet = true; m_themeArn = std::move(value); }
-    inline void SetThemeArn(const char* value) { m_themeArnHasBeenSet = true; m_themeArn.assign(value); }
-    inline Analysis& WithThemeArn(const Aws::String& value) { SetThemeArn(value); return *this;}
-    inline Analysis& WithThemeArn(Aws::String&& value) { SetThemeArn(std::move(value)); return *this;}
-    inline Analysis& WithThemeArn(const char* value) { SetThemeArn(value); return *this;}
+    template<typename ThemeArnT = Aws::String>
+    void SetThemeArn(ThemeArnT&& value) { m_themeArnHasBeenSet = true; m_themeArn = std::forward<ThemeArnT>(value); }
+    template<typename ThemeArnT = Aws::String>
+    Analysis& WithThemeArn(ThemeArnT&& value) { SetThemeArn(std::forward<ThemeArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time that the analysis was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
+    inline const Aws::Utils::DateTime& GetCreatedTime() const { return m_createdTime; }
     inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
-    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
-    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
-    inline Analysis& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
-    inline Analysis& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    void SetCreatedTime(CreatedTimeT&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::forward<CreatedTimeT>(value); }
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    Analysis& WithCreatedTime(CreatedTimeT&& value) { SetCreatedTime(std::forward<CreatedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time that the analysis was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedTime() const { return m_lastUpdatedTime; }
     inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
-    inline void SetLastUpdatedTime(const Aws::Utils::DateTime& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
-    inline void SetLastUpdatedTime(Aws::Utils::DateTime&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::move(value); }
-    inline Analysis& WithLastUpdatedTime(const Aws::Utils::DateTime& value) { SetLastUpdatedTime(value); return *this;}
-    inline Analysis& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
+    template<typename LastUpdatedTimeT = Aws::Utils::DateTime>
+    void SetLastUpdatedTime(LastUpdatedTimeT&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::forward<LastUpdatedTimeT>(value); }
+    template<typename LastUpdatedTimeT = Aws::Utils::DateTime>
+    Analysis& WithLastUpdatedTime(LastUpdatedTimeT&& value) { SetLastUpdatedTime(std::forward<LastUpdatedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -169,14 +158,14 @@ namespace Model
      * <p>A list of the associated sheets with the unique identifier and name of each
      * sheet.</p>
      */
-    inline const Aws::Vector<Sheet>& GetSheets() const{ return m_sheets; }
+    inline const Aws::Vector<Sheet>& GetSheets() const { return m_sheets; }
     inline bool SheetsHasBeenSet() const { return m_sheetsHasBeenSet; }
-    inline void SetSheets(const Aws::Vector<Sheet>& value) { m_sheetsHasBeenSet = true; m_sheets = value; }
-    inline void SetSheets(Aws::Vector<Sheet>&& value) { m_sheetsHasBeenSet = true; m_sheets = std::move(value); }
-    inline Analysis& WithSheets(const Aws::Vector<Sheet>& value) { SetSheets(value); return *this;}
-    inline Analysis& WithSheets(Aws::Vector<Sheet>&& value) { SetSheets(std::move(value)); return *this;}
-    inline Analysis& AddSheets(const Sheet& value) { m_sheetsHasBeenSet = true; m_sheets.push_back(value); return *this; }
-    inline Analysis& AddSheets(Sheet&& value) { m_sheetsHasBeenSet = true; m_sheets.push_back(std::move(value)); return *this; }
+    template<typename SheetsT = Aws::Vector<Sheet>>
+    void SetSheets(SheetsT&& value) { m_sheetsHasBeenSet = true; m_sheets = std::forward<SheetsT>(value); }
+    template<typename SheetsT = Aws::Vector<Sheet>>
+    Analysis& WithSheets(SheetsT&& value) { SetSheets(std::forward<SheetsT>(value)); return *this;}
+    template<typename SheetsT = Sheet>
+    Analysis& AddSheets(SheetsT&& value) { m_sheetsHasBeenSet = true; m_sheets.emplace_back(std::forward<SheetsT>(value)); return *this; }
     ///@}
   private:
 
@@ -189,7 +178,7 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    ResourceStatus m_status;
+    ResourceStatus m_status{ResourceStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::Vector<AnalysisError> m_errors;
@@ -201,10 +190,10 @@ namespace Model
     Aws::String m_themeArn;
     bool m_themeArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTime;
+    Aws::Utils::DateTime m_createdTime{};
     bool m_createdTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedTime;
+    Aws::Utils::DateTime m_lastUpdatedTime{};
     bool m_lastUpdatedTimeHasBeenSet = false;
 
     Aws::Vector<Sheet> m_sheets;

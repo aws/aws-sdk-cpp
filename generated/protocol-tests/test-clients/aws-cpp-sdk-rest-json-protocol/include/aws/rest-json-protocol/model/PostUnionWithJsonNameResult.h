@@ -28,35 +28,35 @@ namespace Model
   class PostUnionWithJsonNameResult
   {
   public:
-    AWS_RESTJSONPROTOCOL_API PostUnionWithJsonNameResult();
+    AWS_RESTJSONPROTOCOL_API PostUnionWithJsonNameResult() = default;
     AWS_RESTJSONPROTOCOL_API PostUnionWithJsonNameResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RESTJSONPROTOCOL_API PostUnionWithJsonNameResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const UnionWithJsonName& GetValue() const{ return m_value; }
-    inline void SetValue(const UnionWithJsonName& value) { m_value = value; }
-    inline void SetValue(UnionWithJsonName&& value) { m_value = std::move(value); }
-    inline PostUnionWithJsonNameResult& WithValue(const UnionWithJsonName& value) { SetValue(value); return *this;}
-    inline PostUnionWithJsonNameResult& WithValue(UnionWithJsonName&& value) { SetValue(std::move(value)); return *this;}
+    inline const UnionWithJsonName& GetValue() const { return m_value; }
+    template<typename ValueT = UnionWithJsonName>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = UnionWithJsonName>
+    PostUnionWithJsonNameResult& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PostUnionWithJsonNameResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PostUnionWithJsonNameResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PostUnionWithJsonNameResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PostUnionWithJsonNameResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     UnionWithJsonName m_value;
+    bool m_valueHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

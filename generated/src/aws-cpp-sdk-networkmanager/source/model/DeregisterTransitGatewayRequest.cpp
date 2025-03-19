@@ -12,12 +12,6 @@ using namespace Aws::NetworkManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeregisterTransitGatewayRequest::DeregisterTransitGatewayRequest() : 
-    m_globalNetworkIdHasBeenSet(false),
-    m_transitGatewayArnHasBeenSet(false)
-{
-}
-
 Aws::String DeregisterTransitGatewayRequest::SerializePayload() const
 {
   return {};

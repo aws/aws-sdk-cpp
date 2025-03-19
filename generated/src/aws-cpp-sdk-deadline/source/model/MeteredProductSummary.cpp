@@ -18,17 +18,7 @@ namespace deadline
 namespace Model
 {
 
-MeteredProductSummary::MeteredProductSummary() : 
-    m_productIdHasBeenSet(false),
-    m_familyHasBeenSet(false),
-    m_vendorHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false)
-{
-}
-
 MeteredProductSummary::MeteredProductSummary(JsonView jsonValue)
-  : MeteredProductSummary()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ MeteredProductSummary& MeteredProductSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("productId"))
   {
     m_productId = jsonValue.GetString("productId");
-
     m_productIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("family"))
   {
     m_family = jsonValue.GetString("family");
-
     m_familyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vendor"))
   {
     m_vendor = jsonValue.GetString("vendor");
-
     m_vendorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("port"))
   {
     m_port = jsonValue.GetInteger("port");
-
     m_portHasBeenSet = true;
   }
-
   return *this;
 }
 

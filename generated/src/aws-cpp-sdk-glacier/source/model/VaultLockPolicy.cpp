@@ -18,13 +18,7 @@ namespace Glacier
 namespace Model
 {
 
-VaultLockPolicy::VaultLockPolicy() : 
-    m_policyHasBeenSet(false)
-{
-}
-
 VaultLockPolicy::VaultLockPolicy(JsonView jsonValue)
-  : VaultLockPolicy()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ VaultLockPolicy& VaultLockPolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Policy"))
   {
     m_policy = jsonValue.GetString("Policy");
-
     m_policyHasBeenSet = true;
   }
-
   return *this;
 }
 

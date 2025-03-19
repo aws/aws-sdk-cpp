@@ -18,13 +18,7 @@ namespace SSMIncidents
 namespace Model
 {
 
-AutomationExecution::AutomationExecution() : 
-    m_ssmExecutionArnHasBeenSet(false)
-{
-}
-
 AutomationExecution::AutomationExecution(JsonView jsonValue)
-  : AutomationExecution()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AutomationExecution& AutomationExecution::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ssmExecutionArn"))
   {
     m_ssmExecutionArn = jsonValue.GetString("ssmExecutionArn");
-
     m_ssmExecutionArnHasBeenSet = true;
   }
-
   return *this;
 }
 

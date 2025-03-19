@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetSdkRequest::GetSdkRequest() : 
-    m_restApiIdHasBeenSet(false),
-    m_stageNameHasBeenSet(false),
-    m_sdkTypeHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 Aws::String GetSdkRequest::SerializePayload() const
 {
   return {};

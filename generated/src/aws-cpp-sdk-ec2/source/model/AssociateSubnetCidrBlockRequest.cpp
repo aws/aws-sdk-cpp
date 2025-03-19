@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-AssociateSubnetCidrBlockRequest::AssociateSubnetCidrBlockRequest() : 
-    m_ipv6IpamPoolIdHasBeenSet(false),
-    m_ipv6NetmaskLength(0),
-    m_ipv6NetmaskLengthHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_ipv6CidrBlockHasBeenSet(false)
-{
-}
-
 Aws::String AssociateSubnetCidrBlockRequest::SerializePayload() const
 {
   Aws::StringStream ss;

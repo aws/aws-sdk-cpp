@@ -12,17 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListDocumentMetadataHistoryRequest::ListDocumentMetadataHistoryRequest() : 
-    m_nameHasBeenSet(false),
-    m_documentVersionHasBeenSet(false),
-    m_metadata(DocumentMetadataEnum::NOT_SET),
-    m_metadataHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListDocumentMetadataHistoryRequest::SerializePayload() const
 {
   JsonValue payload;

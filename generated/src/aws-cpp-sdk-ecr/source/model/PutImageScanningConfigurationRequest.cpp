@@ -12,13 +12,6 @@ using namespace Aws::ECR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutImageScanningConfigurationRequest::PutImageScanningConfigurationRequest() : 
-    m_registryIdHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_imageScanningConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String PutImageScanningConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

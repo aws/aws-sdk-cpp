@@ -12,13 +12,6 @@ using namespace Aws::Kafka::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateBrokerTypeRequest::UpdateBrokerTypeRequest() : 
-    m_clusterArnHasBeenSet(false),
-    m_currentVersionHasBeenSet(false),
-    m_targetInstanceTypeHasBeenSet(false)
-{
-}
-
 Aws::String UpdateBrokerTypeRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-AlgorithmStatusDetails::AlgorithmStatusDetails() : 
-    m_validationStatusesHasBeenSet(false),
-    m_imageScanStatusesHasBeenSet(false)
-{
-}
-
 AlgorithmStatusDetails::AlgorithmStatusDetails(JsonView jsonValue)
-  : AlgorithmStatusDetails()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ AlgorithmStatusDetails& AlgorithmStatusDetails::operator =(JsonView jsonValue)
     }
     m_validationStatusesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImageScanStatuses"))
   {
     Aws::Utils::Array<JsonView> imageScanStatusesJsonList = jsonValue.GetArray("ImageScanStatuses");
@@ -51,7 +43,6 @@ AlgorithmStatusDetails& AlgorithmStatusDetails::operator =(JsonView jsonValue)
     }
     m_imageScanStatusesHasBeenSet = true;
   }
-
   return *this;
 }
 

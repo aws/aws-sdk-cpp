@@ -18,16 +18,7 @@ namespace EKS
 namespace Model
 {
 
-ComputeConfigRequest::ComputeConfigRequest() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_nodePoolsHasBeenSet(false),
-    m_nodeRoleArnHasBeenSet(false)
-{
-}
-
 ComputeConfigRequest::ComputeConfigRequest(JsonView jsonValue)
-  : ComputeConfigRequest()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ ComputeConfigRequest& ComputeConfigRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nodePools"))
   {
     Aws::Utils::Array<JsonView> nodePoolsJsonList = jsonValue.GetArray("nodePools");
@@ -50,14 +39,11 @@ ComputeConfigRequest& ComputeConfigRequest::operator =(JsonView jsonValue)
     }
     m_nodePoolsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nodeRoleArn"))
   {
     m_nodeRoleArn = jsonValue.GetString("nodeRoleArn");
-
     m_nodeRoleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

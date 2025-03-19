@@ -18,14 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-OrganizationDetails::OrganizationDetails() : 
-    m_updatedAtHasBeenSet(false),
-    m_organizationStatisticsHasBeenSet(false)
-{
-}
-
 OrganizationDetails::OrganizationDetails(JsonView jsonValue)
-  : OrganizationDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ OrganizationDetails& OrganizationDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("organizationStatistics"))
   {
     m_organizationStatistics = jsonValue.GetObject("organizationStatistics");
-
     m_organizationStatisticsHasBeenSet = true;
   }
-
   return *this;
 }
 

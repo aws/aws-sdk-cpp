@@ -34,7 +34,7 @@ namespace Model
   class ResourceFilter
   {
   public:
-    AWS_RESOURCEGROUPS_API ResourceFilter();
+    AWS_RESOURCEGROUPS_API ResourceFilter() = default;
     AWS_RESOURCEGROUPS_API ResourceFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESOURCEGROUPS_API ResourceFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESOURCEGROUPS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
     /**
      * <p>The name of the filter. Filter names are case-sensitive.</p>
      */
-    inline const ResourceFilterName& GetName() const{ return m_name; }
+    inline ResourceFilterName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const ResourceFilterName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(ResourceFilterName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline ResourceFilter& WithName(const ResourceFilterName& value) { SetName(value); return *this;}
-    inline ResourceFilter& WithName(ResourceFilterName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(ResourceFilterName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline ResourceFilter& WithName(ResourceFilterName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -57,19 +55,18 @@ namespace Model
      * <p>One or more filter values. Allowed filter values vary by resource filter
      * name, and are case-sensitive.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline ResourceFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline ResourceFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline ResourceFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline ResourceFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline ResourceFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    ResourceFilter& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    ResourceFilter& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
   private:
 
-    ResourceFilterName m_name;
+    ResourceFilterName m_name{ResourceFilterName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;

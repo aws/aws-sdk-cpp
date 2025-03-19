@@ -28,7 +28,7 @@ namespace Model
   class ParquetInput
   {
   public:
-    AWS_S3CRT_API ParquetInput();
+    AWS_S3CRT_API ParquetInput() = default;
     AWS_S3CRT_API ParquetInput(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CRT_API ParquetInput& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 

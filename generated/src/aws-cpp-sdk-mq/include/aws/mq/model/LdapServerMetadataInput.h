@@ -34,7 +34,7 @@ namespace Model
   class LdapServerMetadataInput
   {
   public:
-    AWS_MQ_API LdapServerMetadataInput();
+    AWS_MQ_API LdapServerMetadataInput() = default;
     AWS_MQ_API LdapServerMetadataInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_MQ_API LdapServerMetadataInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MQ_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,15 +45,14 @@ namespace Model
      * <p>Specifies the location of the LDAP server such as Directory Service for
      * Microsoft Active Directory. Optional failover server.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetHosts() const{ return m_hosts; }
+    inline const Aws::Vector<Aws::String>& GetHosts() const { return m_hosts; }
     inline bool HostsHasBeenSet() const { return m_hostsHasBeenSet; }
-    inline void SetHosts(const Aws::Vector<Aws::String>& value) { m_hostsHasBeenSet = true; m_hosts = value; }
-    inline void SetHosts(Aws::Vector<Aws::String>&& value) { m_hostsHasBeenSet = true; m_hosts = std::move(value); }
-    inline LdapServerMetadataInput& WithHosts(const Aws::Vector<Aws::String>& value) { SetHosts(value); return *this;}
-    inline LdapServerMetadataInput& WithHosts(Aws::Vector<Aws::String>&& value) { SetHosts(std::move(value)); return *this;}
-    inline LdapServerMetadataInput& AddHosts(const Aws::String& value) { m_hostsHasBeenSet = true; m_hosts.push_back(value); return *this; }
-    inline LdapServerMetadataInput& AddHosts(Aws::String&& value) { m_hostsHasBeenSet = true; m_hosts.push_back(std::move(value)); return *this; }
-    inline LdapServerMetadataInput& AddHosts(const char* value) { m_hostsHasBeenSet = true; m_hosts.push_back(value); return *this; }
+    template<typename HostsT = Aws::Vector<Aws::String>>
+    void SetHosts(HostsT&& value) { m_hostsHasBeenSet = true; m_hosts = std::forward<HostsT>(value); }
+    template<typename HostsT = Aws::Vector<Aws::String>>
+    LdapServerMetadataInput& WithHosts(HostsT&& value) { SetHosts(std::forward<HostsT>(value)); return *this;}
+    template<typename HostsT = Aws::String>
+    LdapServerMetadataInput& AddHosts(HostsT&& value) { m_hostsHasBeenSet = true; m_hosts.emplace_back(std::forward<HostsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -63,14 +62,12 @@ namespace Model
            
      *       dc=example, dc=com.</p>
      */
-    inline const Aws::String& GetRoleBase() const{ return m_roleBase; }
+    inline const Aws::String& GetRoleBase() const { return m_roleBase; }
     inline bool RoleBaseHasBeenSet() const { return m_roleBaseHasBeenSet; }
-    inline void SetRoleBase(const Aws::String& value) { m_roleBaseHasBeenSet = true; m_roleBase = value; }
-    inline void SetRoleBase(Aws::String&& value) { m_roleBaseHasBeenSet = true; m_roleBase = std::move(value); }
-    inline void SetRoleBase(const char* value) { m_roleBaseHasBeenSet = true; m_roleBase.assign(value); }
-    inline LdapServerMetadataInput& WithRoleBase(const Aws::String& value) { SetRoleBase(value); return *this;}
-    inline LdapServerMetadataInput& WithRoleBase(Aws::String&& value) { SetRoleBase(std::move(value)); return *this;}
-    inline LdapServerMetadataInput& WithRoleBase(const char* value) { SetRoleBase(value); return *this;}
+    template<typename RoleBaseT = Aws::String>
+    void SetRoleBase(RoleBaseT&& value) { m_roleBaseHasBeenSet = true; m_roleBase = std::forward<RoleBaseT>(value); }
+    template<typename RoleBaseT = Aws::String>
+    LdapServerMetadataInput& WithRoleBase(RoleBaseT&& value) { SetRoleBase(std::forward<RoleBaseT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,14 +75,12 @@ namespace Model
      * <p>Specifies the LDAP attribute that identifies the group name attribute in the
      * object returned from the group membership query.</p>
      */
-    inline const Aws::String& GetRoleName() const{ return m_roleName; }
+    inline const Aws::String& GetRoleName() const { return m_roleName; }
     inline bool RoleNameHasBeenSet() const { return m_roleNameHasBeenSet; }
-    inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
-    inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = std::move(value); }
-    inline void SetRoleName(const char* value) { m_roleNameHasBeenSet = true; m_roleName.assign(value); }
-    inline LdapServerMetadataInput& WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
-    inline LdapServerMetadataInput& WithRoleName(Aws::String&& value) { SetRoleName(std::move(value)); return *this;}
-    inline LdapServerMetadataInput& WithRoleName(const char* value) { SetRoleName(value); return *this;}
+    template<typename RoleNameT = Aws::String>
+    void SetRoleName(RoleNameT&& value) { m_roleNameHasBeenSet = true; m_roleName = std::forward<RoleNameT>(value); }
+    template<typename RoleNameT = Aws::String>
+    LdapServerMetadataInput& WithRoleName(RoleNameT&& value) { SetRoleName(std::forward<RoleNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,14 +94,12 @@ namespace Model
      * have a member attribute equal to uid=janedoe under the subtree selected by the
      * roleBase.</p>
      */
-    inline const Aws::String& GetRoleSearchMatching() const{ return m_roleSearchMatching; }
+    inline const Aws::String& GetRoleSearchMatching() const { return m_roleSearchMatching; }
     inline bool RoleSearchMatchingHasBeenSet() const { return m_roleSearchMatchingHasBeenSet; }
-    inline void SetRoleSearchMatching(const Aws::String& value) { m_roleSearchMatchingHasBeenSet = true; m_roleSearchMatching = value; }
-    inline void SetRoleSearchMatching(Aws::String&& value) { m_roleSearchMatchingHasBeenSet = true; m_roleSearchMatching = std::move(value); }
-    inline void SetRoleSearchMatching(const char* value) { m_roleSearchMatchingHasBeenSet = true; m_roleSearchMatching.assign(value); }
-    inline LdapServerMetadataInput& WithRoleSearchMatching(const Aws::String& value) { SetRoleSearchMatching(value); return *this;}
-    inline LdapServerMetadataInput& WithRoleSearchMatching(Aws::String&& value) { SetRoleSearchMatching(std::move(value)); return *this;}
-    inline LdapServerMetadataInput& WithRoleSearchMatching(const char* value) { SetRoleSearchMatching(value); return *this;}
+    template<typename RoleSearchMatchingT = Aws::String>
+    void SetRoleSearchMatching(RoleSearchMatchingT&& value) { m_roleSearchMatchingHasBeenSet = true; m_roleSearchMatching = std::forward<RoleSearchMatchingT>(value); }
+    template<typename RoleSearchMatchingT = Aws::String>
+    LdapServerMetadataInput& WithRoleSearchMatching(RoleSearchMatchingT&& value) { SetRoleSearchMatching(std::forward<RoleSearchMatchingT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,7 +107,7 @@ namespace Model
      * <p>The directory search scope for the role. If set to true, scope is to search
      * the entire subtree.</p>
      */
-    inline bool GetRoleSearchSubtree() const{ return m_roleSearchSubtree; }
+    inline bool GetRoleSearchSubtree() const { return m_roleSearchSubtree; }
     inline bool RoleSearchSubtreeHasBeenSet() const { return m_roleSearchSubtreeHasBeenSet; }
     inline void SetRoleSearchSubtree(bool value) { m_roleSearchSubtreeHasBeenSet = true; m_roleSearchSubtree = value; }
     inline LdapServerMetadataInput& WithRoleSearchSubtree(bool value) { SetRoleSearchSubtree(value); return *this;}
@@ -127,14 +120,12 @@ namespace Model
      * dc=example,
                   dc=com.</p>
      */
-    inline const Aws::String& GetServiceAccountPassword() const{ return m_serviceAccountPassword; }
+    inline const Aws::String& GetServiceAccountPassword() const { return m_serviceAccountPassword; }
     inline bool ServiceAccountPasswordHasBeenSet() const { return m_serviceAccountPasswordHasBeenSet; }
-    inline void SetServiceAccountPassword(const Aws::String& value) { m_serviceAccountPasswordHasBeenSet = true; m_serviceAccountPassword = value; }
-    inline void SetServiceAccountPassword(Aws::String&& value) { m_serviceAccountPasswordHasBeenSet = true; m_serviceAccountPassword = std::move(value); }
-    inline void SetServiceAccountPassword(const char* value) { m_serviceAccountPasswordHasBeenSet = true; m_serviceAccountPassword.assign(value); }
-    inline LdapServerMetadataInput& WithServiceAccountPassword(const Aws::String& value) { SetServiceAccountPassword(value); return *this;}
-    inline LdapServerMetadataInput& WithServiceAccountPassword(Aws::String&& value) { SetServiceAccountPassword(std::move(value)); return *this;}
-    inline LdapServerMetadataInput& WithServiceAccountPassword(const char* value) { SetServiceAccountPassword(value); return *this;}
+    template<typename ServiceAccountPasswordT = Aws::String>
+    void SetServiceAccountPassword(ServiceAccountPasswordT&& value) { m_serviceAccountPasswordHasBeenSet = true; m_serviceAccountPassword = std::forward<ServiceAccountPasswordT>(value); }
+    template<typename ServiceAccountPasswordT = Aws::String>
+    LdapServerMetadataInput& WithServiceAccountPassword(ServiceAccountPasswordT&& value) { SetServiceAccountPassword(std::forward<ServiceAccountPasswordT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -144,14 +135,12 @@ namespace Model
      * dc=example,
                   dc=com.</p>
      */
-    inline const Aws::String& GetServiceAccountUsername() const{ return m_serviceAccountUsername; }
+    inline const Aws::String& GetServiceAccountUsername() const { return m_serviceAccountUsername; }
     inline bool ServiceAccountUsernameHasBeenSet() const { return m_serviceAccountUsernameHasBeenSet; }
-    inline void SetServiceAccountUsername(const Aws::String& value) { m_serviceAccountUsernameHasBeenSet = true; m_serviceAccountUsername = value; }
-    inline void SetServiceAccountUsername(Aws::String&& value) { m_serviceAccountUsernameHasBeenSet = true; m_serviceAccountUsername = std::move(value); }
-    inline void SetServiceAccountUsername(const char* value) { m_serviceAccountUsernameHasBeenSet = true; m_serviceAccountUsername.assign(value); }
-    inline LdapServerMetadataInput& WithServiceAccountUsername(const Aws::String& value) { SetServiceAccountUsername(value); return *this;}
-    inline LdapServerMetadataInput& WithServiceAccountUsername(Aws::String&& value) { SetServiceAccountUsername(std::move(value)); return *this;}
-    inline LdapServerMetadataInput& WithServiceAccountUsername(const char* value) { SetServiceAccountUsername(value); return *this;}
+    template<typename ServiceAccountUsernameT = Aws::String>
+    void SetServiceAccountUsername(ServiceAccountUsernameT&& value) { m_serviceAccountUsernameHasBeenSet = true; m_serviceAccountUsername = std::forward<ServiceAccountUsernameT>(value); }
+    template<typename ServiceAccountUsernameT = Aws::String>
+    LdapServerMetadataInput& WithServiceAccountUsername(ServiceAccountUsernameT&& value) { SetServiceAccountUsername(std::forward<ServiceAccountUsernameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -164,28 +153,24 @@ namespace Model
      * restricted to the subtree beneath ou=Users, ou=corp, dc=corp, dc=example,
      * dc=com.</p>
      */
-    inline const Aws::String& GetUserBase() const{ return m_userBase; }
+    inline const Aws::String& GetUserBase() const { return m_userBase; }
     inline bool UserBaseHasBeenSet() const { return m_userBaseHasBeenSet; }
-    inline void SetUserBase(const Aws::String& value) { m_userBaseHasBeenSet = true; m_userBase = value; }
-    inline void SetUserBase(Aws::String&& value) { m_userBaseHasBeenSet = true; m_userBase = std::move(value); }
-    inline void SetUserBase(const char* value) { m_userBaseHasBeenSet = true; m_userBase.assign(value); }
-    inline LdapServerMetadataInput& WithUserBase(const Aws::String& value) { SetUserBase(value); return *this;}
-    inline LdapServerMetadataInput& WithUserBase(Aws::String&& value) { SetUserBase(std::move(value)); return *this;}
-    inline LdapServerMetadataInput& WithUserBase(const char* value) { SetUserBase(value); return *this;}
+    template<typename UserBaseT = Aws::String>
+    void SetUserBase(UserBaseT&& value) { m_userBaseHasBeenSet = true; m_userBase = std::forward<UserBaseT>(value); }
+    template<typename UserBaseT = Aws::String>
+    LdapServerMetadataInput& WithUserBase(UserBaseT&& value) { SetUserBase(std::forward<UserBaseT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the name of the LDAP attribute for the user group membership.</p>
      */
-    inline const Aws::String& GetUserRoleName() const{ return m_userRoleName; }
+    inline const Aws::String& GetUserRoleName() const { return m_userRoleName; }
     inline bool UserRoleNameHasBeenSet() const { return m_userRoleNameHasBeenSet; }
-    inline void SetUserRoleName(const Aws::String& value) { m_userRoleNameHasBeenSet = true; m_userRoleName = value; }
-    inline void SetUserRoleName(Aws::String&& value) { m_userRoleNameHasBeenSet = true; m_userRoleName = std::move(value); }
-    inline void SetUserRoleName(const char* value) { m_userRoleNameHasBeenSet = true; m_userRoleName.assign(value); }
-    inline LdapServerMetadataInput& WithUserRoleName(const Aws::String& value) { SetUserRoleName(value); return *this;}
-    inline LdapServerMetadataInput& WithUserRoleName(Aws::String&& value) { SetUserRoleName(std::move(value)); return *this;}
-    inline LdapServerMetadataInput& WithUserRoleName(const char* value) { SetUserRoleName(value); return *this;}
+    template<typename UserRoleNameT = Aws::String>
+    void SetUserRoleName(UserRoleNameT&& value) { m_userRoleNameHasBeenSet = true; m_userRoleName = std::forward<UserRoleNameT>(value); }
+    template<typename UserRoleNameT = Aws::String>
+    LdapServerMetadataInput& WithUserRoleName(UserRoleNameT&& value) { SetUserRoleName(std::forward<UserRoleNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -198,14 +183,12 @@ namespace Model
      * dc=example,
                   dc=com.</p>
      */
-    inline const Aws::String& GetUserSearchMatching() const{ return m_userSearchMatching; }
+    inline const Aws::String& GetUserSearchMatching() const { return m_userSearchMatching; }
     inline bool UserSearchMatchingHasBeenSet() const { return m_userSearchMatchingHasBeenSet; }
-    inline void SetUserSearchMatching(const Aws::String& value) { m_userSearchMatchingHasBeenSet = true; m_userSearchMatching = value; }
-    inline void SetUserSearchMatching(Aws::String&& value) { m_userSearchMatchingHasBeenSet = true; m_userSearchMatching = std::move(value); }
-    inline void SetUserSearchMatching(const char* value) { m_userSearchMatchingHasBeenSet = true; m_userSearchMatching.assign(value); }
-    inline LdapServerMetadataInput& WithUserSearchMatching(const Aws::String& value) { SetUserSearchMatching(value); return *this;}
-    inline LdapServerMetadataInput& WithUserSearchMatching(Aws::String&& value) { SetUserSearchMatching(std::move(value)); return *this;}
-    inline LdapServerMetadataInput& WithUserSearchMatching(const char* value) { SetUserSearchMatching(value); return *this;}
+    template<typename UserSearchMatchingT = Aws::String>
+    void SetUserSearchMatching(UserSearchMatchingT&& value) { m_userSearchMatchingHasBeenSet = true; m_userSearchMatching = std::forward<UserSearchMatchingT>(value); }
+    template<typename UserSearchMatchingT = Aws::String>
+    LdapServerMetadataInput& WithUserSearchMatching(UserSearchMatchingT&& value) { SetUserSearchMatching(std::forward<UserSearchMatchingT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -213,7 +196,7 @@ namespace Model
      * <p>The directory search scope for the user. If set to true, scope is to search
      * the entire subtree.</p>
      */
-    inline bool GetUserSearchSubtree() const{ return m_userSearchSubtree; }
+    inline bool GetUserSearchSubtree() const { return m_userSearchSubtree; }
     inline bool UserSearchSubtreeHasBeenSet() const { return m_userSearchSubtreeHasBeenSet; }
     inline void SetUserSearchSubtree(bool value) { m_userSearchSubtreeHasBeenSet = true; m_userSearchSubtree = value; }
     inline LdapServerMetadataInput& WithUserSearchSubtree(bool value) { SetUserSearchSubtree(value); return *this;}
@@ -232,7 +215,7 @@ namespace Model
     Aws::String m_roleSearchMatching;
     bool m_roleSearchMatchingHasBeenSet = false;
 
-    bool m_roleSearchSubtree;
+    bool m_roleSearchSubtree{false};
     bool m_roleSearchSubtreeHasBeenSet = false;
 
     Aws::String m_serviceAccountPassword;
@@ -250,7 +233,7 @@ namespace Model
     Aws::String m_userSearchMatching;
     bool m_userSearchMatchingHasBeenSet = false;
 
-    bool m_userSearchSubtree;
+    bool m_userSearchSubtree{false};
     bool m_userSearchSubtreeHasBeenSet = false;
   };
 

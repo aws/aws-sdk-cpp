@@ -18,13 +18,7 @@ namespace KafkaConnect
 namespace Model
 {
 
-PluginDescription::PluginDescription() : 
-    m_customPluginHasBeenSet(false)
-{
-}
-
 PluginDescription::PluginDescription(JsonView jsonValue)
-  : PluginDescription()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PluginDescription& PluginDescription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("customPlugin"))
   {
     m_customPlugin = jsonValue.GetObject("customPlugin");
-
     m_customPluginHasBeenSet = true;
   }
-
   return *this;
 }
 

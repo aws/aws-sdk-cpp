@@ -18,20 +18,7 @@ namespace Connect
 namespace Model
 {
 
-TrafficDistributionGroupSummary::TrafficDistributionGroupSummary() : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_instanceArnHasBeenSet(false),
-    m_status(TrafficDistributionGroupStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_isDefault(false),
-    m_isDefaultHasBeenSet(false)
-{
-}
-
 TrafficDistributionGroupSummary::TrafficDistributionGroupSummary(JsonView jsonValue)
-  : TrafficDistributionGroupSummary()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ TrafficDistributionGroupSummary& TrafficDistributionGroupSummary::operator =(Jso
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceArn"))
   {
     m_instanceArn = jsonValue.GetString("InstanceArn");
-
     m_instanceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = TrafficDistributionGroupStatusMapper::GetTrafficDistributionGroupStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsDefault"))
   {
     m_isDefault = jsonValue.GetBool("IsDefault");
-
     m_isDefaultHasBeenSet = true;
   }
-
   return *this;
 }
 

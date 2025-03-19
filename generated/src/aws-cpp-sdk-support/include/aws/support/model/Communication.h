@@ -36,7 +36,7 @@ namespace Model
   class Communication
   {
   public:
-    AWS_SUPPORT_API Communication();
+    AWS_SUPPORT_API Communication() = default;
     AWS_SUPPORT_API Communication(Aws::Utils::Json::JsonView jsonValue);
     AWS_SUPPORT_API Communication& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SUPPORT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
      * alphanumeric string formatted as shown in this example:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
-    inline const Aws::String& GetCaseId() const{ return m_caseId; }
+    inline const Aws::String& GetCaseId() const { return m_caseId; }
     inline bool CaseIdHasBeenSet() const { return m_caseIdHasBeenSet; }
-    inline void SetCaseId(const Aws::String& value) { m_caseIdHasBeenSet = true; m_caseId = value; }
-    inline void SetCaseId(Aws::String&& value) { m_caseIdHasBeenSet = true; m_caseId = std::move(value); }
-    inline void SetCaseId(const char* value) { m_caseIdHasBeenSet = true; m_caseId.assign(value); }
-    inline Communication& WithCaseId(const Aws::String& value) { SetCaseId(value); return *this;}
-    inline Communication& WithCaseId(Aws::String&& value) { SetCaseId(std::move(value)); return *this;}
-    inline Communication& WithCaseId(const char* value) { SetCaseId(value); return *this;}
+    template<typename CaseIdT = Aws::String>
+    void SetCaseId(CaseIdT&& value) { m_caseIdHasBeenSet = true; m_caseId = std::forward<CaseIdT>(value); }
+    template<typename CaseIdT = Aws::String>
+    Communication& WithCaseId(CaseIdT&& value) { SetCaseId(std::forward<CaseIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * <p>The text of the communication between the customer and Amazon Web Services
      * Support.</p>
      */
-    inline const Aws::String& GetBody() const{ return m_body; }
+    inline const Aws::String& GetBody() const { return m_body; }
     inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
-    inline void SetBody(const Aws::String& value) { m_bodyHasBeenSet = true; m_body = value; }
-    inline void SetBody(Aws::String&& value) { m_bodyHasBeenSet = true; m_body = std::move(value); }
-    inline void SetBody(const char* value) { m_bodyHasBeenSet = true; m_body.assign(value); }
-    inline Communication& WithBody(const Aws::String& value) { SetBody(value); return *this;}
-    inline Communication& WithBody(Aws::String&& value) { SetBody(std::move(value)); return *this;}
-    inline Communication& WithBody(const char* value) { SetBody(value); return *this;}
+    template<typename BodyT = Aws::String>
+    void SetBody(BodyT&& value) { m_bodyHasBeenSet = true; m_body = std::forward<BodyT>(value); }
+    template<typename BodyT = Aws::String>
+    Communication& WithBody(BodyT&& value) { SetBody(std::forward<BodyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,42 +77,38 @@ namespace Model
      * Web Services Support team display "Amazon Web Services," and don't show an email
      * address. </p>
      */
-    inline const Aws::String& GetSubmittedBy() const{ return m_submittedBy; }
+    inline const Aws::String& GetSubmittedBy() const { return m_submittedBy; }
     inline bool SubmittedByHasBeenSet() const { return m_submittedByHasBeenSet; }
-    inline void SetSubmittedBy(const Aws::String& value) { m_submittedByHasBeenSet = true; m_submittedBy = value; }
-    inline void SetSubmittedBy(Aws::String&& value) { m_submittedByHasBeenSet = true; m_submittedBy = std::move(value); }
-    inline void SetSubmittedBy(const char* value) { m_submittedByHasBeenSet = true; m_submittedBy.assign(value); }
-    inline Communication& WithSubmittedBy(const Aws::String& value) { SetSubmittedBy(value); return *this;}
-    inline Communication& WithSubmittedBy(Aws::String&& value) { SetSubmittedBy(std::move(value)); return *this;}
-    inline Communication& WithSubmittedBy(const char* value) { SetSubmittedBy(value); return *this;}
+    template<typename SubmittedByT = Aws::String>
+    void SetSubmittedBy(SubmittedByT&& value) { m_submittedByHasBeenSet = true; m_submittedBy = std::forward<SubmittedByT>(value); }
+    template<typename SubmittedByT = Aws::String>
+    Communication& WithSubmittedBy(SubmittedByT&& value) { SetSubmittedBy(std::forward<SubmittedByT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time the communication was created.</p>
      */
-    inline const Aws::String& GetTimeCreated() const{ return m_timeCreated; }
+    inline const Aws::String& GetTimeCreated() const { return m_timeCreated; }
     inline bool TimeCreatedHasBeenSet() const { return m_timeCreatedHasBeenSet; }
-    inline void SetTimeCreated(const Aws::String& value) { m_timeCreatedHasBeenSet = true; m_timeCreated = value; }
-    inline void SetTimeCreated(Aws::String&& value) { m_timeCreatedHasBeenSet = true; m_timeCreated = std::move(value); }
-    inline void SetTimeCreated(const char* value) { m_timeCreatedHasBeenSet = true; m_timeCreated.assign(value); }
-    inline Communication& WithTimeCreated(const Aws::String& value) { SetTimeCreated(value); return *this;}
-    inline Communication& WithTimeCreated(Aws::String&& value) { SetTimeCreated(std::move(value)); return *this;}
-    inline Communication& WithTimeCreated(const char* value) { SetTimeCreated(value); return *this;}
+    template<typename TimeCreatedT = Aws::String>
+    void SetTimeCreated(TimeCreatedT&& value) { m_timeCreatedHasBeenSet = true; m_timeCreated = std::forward<TimeCreatedT>(value); }
+    template<typename TimeCreatedT = Aws::String>
+    Communication& WithTimeCreated(TimeCreatedT&& value) { SetTimeCreated(std::forward<TimeCreatedT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the attachments to the case communication.</p>
      */
-    inline const Aws::Vector<AttachmentDetails>& GetAttachmentSet() const{ return m_attachmentSet; }
+    inline const Aws::Vector<AttachmentDetails>& GetAttachmentSet() const { return m_attachmentSet; }
     inline bool AttachmentSetHasBeenSet() const { return m_attachmentSetHasBeenSet; }
-    inline void SetAttachmentSet(const Aws::Vector<AttachmentDetails>& value) { m_attachmentSetHasBeenSet = true; m_attachmentSet = value; }
-    inline void SetAttachmentSet(Aws::Vector<AttachmentDetails>&& value) { m_attachmentSetHasBeenSet = true; m_attachmentSet = std::move(value); }
-    inline Communication& WithAttachmentSet(const Aws::Vector<AttachmentDetails>& value) { SetAttachmentSet(value); return *this;}
-    inline Communication& WithAttachmentSet(Aws::Vector<AttachmentDetails>&& value) { SetAttachmentSet(std::move(value)); return *this;}
-    inline Communication& AddAttachmentSet(const AttachmentDetails& value) { m_attachmentSetHasBeenSet = true; m_attachmentSet.push_back(value); return *this; }
-    inline Communication& AddAttachmentSet(AttachmentDetails&& value) { m_attachmentSetHasBeenSet = true; m_attachmentSet.push_back(std::move(value)); return *this; }
+    template<typename AttachmentSetT = Aws::Vector<AttachmentDetails>>
+    void SetAttachmentSet(AttachmentSetT&& value) { m_attachmentSetHasBeenSet = true; m_attachmentSet = std::forward<AttachmentSetT>(value); }
+    template<typename AttachmentSetT = Aws::Vector<AttachmentDetails>>
+    Communication& WithAttachmentSet(AttachmentSetT&& value) { SetAttachmentSet(std::forward<AttachmentSetT>(value)); return *this;}
+    template<typename AttachmentSetT = AttachmentDetails>
+    Communication& AddAttachmentSet(AttachmentSetT&& value) { m_attachmentSetHasBeenSet = true; m_attachmentSet.emplace_back(std::forward<AttachmentSetT>(value)); return *this; }
     ///@}
   private:
 

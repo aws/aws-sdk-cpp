@@ -21,7 +21,7 @@ namespace Model
   class DeleteLayerRequest : public OpsWorksRequest
   {
   public:
-    AWS_OPSWORKS_API DeleteLayerRequest();
+    AWS_OPSWORKS_API DeleteLayerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The layer ID.</p>
      */
-    inline const Aws::String& GetLayerId() const{ return m_layerId; }
+    inline const Aws::String& GetLayerId() const { return m_layerId; }
     inline bool LayerIdHasBeenSet() const { return m_layerIdHasBeenSet; }
-    inline void SetLayerId(const Aws::String& value) { m_layerIdHasBeenSet = true; m_layerId = value; }
-    inline void SetLayerId(Aws::String&& value) { m_layerIdHasBeenSet = true; m_layerId = std::move(value); }
-    inline void SetLayerId(const char* value) { m_layerIdHasBeenSet = true; m_layerId.assign(value); }
-    inline DeleteLayerRequest& WithLayerId(const Aws::String& value) { SetLayerId(value); return *this;}
-    inline DeleteLayerRequest& WithLayerId(Aws::String&& value) { SetLayerId(std::move(value)); return *this;}
-    inline DeleteLayerRequest& WithLayerId(const char* value) { SetLayerId(value); return *this;}
+    template<typename LayerIdT = Aws::String>
+    void SetLayerId(LayerIdT&& value) { m_layerIdHasBeenSet = true; m_layerId = std::forward<LayerIdT>(value); }
+    template<typename LayerIdT = Aws::String>
+    DeleteLayerRequest& WithLayerId(LayerIdT&& value) { SetLayerId(std::forward<LayerIdT>(value)); return *this;}
     ///@}
   private:
 

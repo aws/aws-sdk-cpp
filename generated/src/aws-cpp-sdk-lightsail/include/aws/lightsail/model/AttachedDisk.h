@@ -32,7 +32,7 @@ namespace Model
   class AttachedDisk
   {
   public:
-    AWS_LIGHTSAIL_API AttachedDisk();
+    AWS_LIGHTSAIL_API AttachedDisk() = default;
     AWS_LIGHTSAIL_API AttachedDisk(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API AttachedDisk& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,21 +42,19 @@ namespace Model
     /**
      * <p>The path of the disk (<code>/dev/xvdf</code>).</p>
      */
-    inline const Aws::String& GetPath() const{ return m_path; }
+    inline const Aws::String& GetPath() const { return m_path; }
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-    inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-    inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-    inline AttachedDisk& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-    inline AttachedDisk& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-    inline AttachedDisk& WithPath(const char* value) { SetPath(value); return *this;}
+    template<typename PathT = Aws::String>
+    void SetPath(PathT&& value) { m_pathHasBeenSet = true; m_path = std::forward<PathT>(value); }
+    template<typename PathT = Aws::String>
+    AttachedDisk& WithPath(PathT&& value) { SetPath(std::forward<PathT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The size of the disk in GB.</p>
      */
-    inline int GetSizeInGb() const{ return m_sizeInGb; }
+    inline int GetSizeInGb() const { return m_sizeInGb; }
     inline bool SizeInGbHasBeenSet() const { return m_sizeInGbHasBeenSet; }
     inline void SetSizeInGb(int value) { m_sizeInGbHasBeenSet = true; m_sizeInGb = value; }
     inline AttachedDisk& WithSizeInGb(int value) { SetSizeInGb(value); return *this;}
@@ -66,7 +64,7 @@ namespace Model
     Aws::String m_path;
     bool m_pathHasBeenSet = false;
 
-    int m_sizeInGb;
+    int m_sizeInGb{0};
     bool m_sizeInGbHasBeenSet = false;
   };
 

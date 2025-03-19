@@ -18,14 +18,7 @@ namespace LexRuntimeService
 namespace Model
 {
 
-IntentConfidence::IntentConfidence() : 
-    m_score(0.0),
-    m_scoreHasBeenSet(false)
-{
-}
-
 IntentConfidence::IntentConfidence(JsonView jsonValue)
-  : IntentConfidence()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ IntentConfidence& IntentConfidence::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("score"))
   {
     m_score = jsonValue.GetDouble("score");
-
     m_scoreHasBeenSet = true;
   }
-
   return *this;
 }
 

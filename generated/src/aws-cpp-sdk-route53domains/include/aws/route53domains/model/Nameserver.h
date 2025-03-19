@@ -32,7 +32,7 @@ namespace Model
   class Nameserver
   {
   public:
-    AWS_ROUTE53DOMAINS_API Nameserver();
+    AWS_ROUTE53DOMAINS_API Nameserver() = default;
     AWS_ROUTE53DOMAINS_API Nameserver(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53DOMAINS_API Nameserver& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53DOMAINS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The fully qualified host name of the name server.</p> <p>Constraint: Maximum
      * 255 characters</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Nameserver& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Nameserver& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Nameserver& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Nameserver& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,15 +59,14 @@ namespace Model
      * you need to specify the IP address for ns.example.com.</p> <p>Constraints: The
      * list can contain only one IPv4 and one IPv6 address.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetGlueIps() const{ return m_glueIps; }
+    inline const Aws::Vector<Aws::String>& GetGlueIps() const { return m_glueIps; }
     inline bool GlueIpsHasBeenSet() const { return m_glueIpsHasBeenSet; }
-    inline void SetGlueIps(const Aws::Vector<Aws::String>& value) { m_glueIpsHasBeenSet = true; m_glueIps = value; }
-    inline void SetGlueIps(Aws::Vector<Aws::String>&& value) { m_glueIpsHasBeenSet = true; m_glueIps = std::move(value); }
-    inline Nameserver& WithGlueIps(const Aws::Vector<Aws::String>& value) { SetGlueIps(value); return *this;}
-    inline Nameserver& WithGlueIps(Aws::Vector<Aws::String>&& value) { SetGlueIps(std::move(value)); return *this;}
-    inline Nameserver& AddGlueIps(const Aws::String& value) { m_glueIpsHasBeenSet = true; m_glueIps.push_back(value); return *this; }
-    inline Nameserver& AddGlueIps(Aws::String&& value) { m_glueIpsHasBeenSet = true; m_glueIps.push_back(std::move(value)); return *this; }
-    inline Nameserver& AddGlueIps(const char* value) { m_glueIpsHasBeenSet = true; m_glueIps.push_back(value); return *this; }
+    template<typename GlueIpsT = Aws::Vector<Aws::String>>
+    void SetGlueIps(GlueIpsT&& value) { m_glueIpsHasBeenSet = true; m_glueIps = std::forward<GlueIpsT>(value); }
+    template<typename GlueIpsT = Aws::Vector<Aws::String>>
+    Nameserver& WithGlueIps(GlueIpsT&& value) { SetGlueIps(std::forward<GlueIpsT>(value)); return *this;}
+    template<typename GlueIpsT = Aws::String>
+    Nameserver& AddGlueIps(GlueIpsT&& value) { m_glueIpsHasBeenSet = true; m_glueIps.emplace_back(std::forward<GlueIpsT>(value)); return *this; }
     ///@}
   private:
 

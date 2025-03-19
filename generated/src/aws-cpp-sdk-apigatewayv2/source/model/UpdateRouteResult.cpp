@@ -17,15 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateRouteResult::UpdateRouteResult() : 
-    m_apiGatewayManaged(false),
-    m_apiKeyRequired(false),
-    m_authorizationType(AuthorizationType::NOT_SET)
-{
-}
-
 UpdateRouteResult::UpdateRouteResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateRouteResult()
 {
   *this = result;
 }
@@ -36,15 +28,13 @@ UpdateRouteResult& UpdateRouteResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("apiGatewayManaged"))
   {
     m_apiGatewayManaged = jsonValue.GetBool("apiGatewayManaged");
-
+    m_apiGatewayManagedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("apiKeyRequired"))
   {
     m_apiKeyRequired = jsonValue.GetBool("apiKeyRequired");
-
+    m_apiKeyRequiredHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authorizationScopes"))
   {
     Aws::Utils::Array<JsonView> authorizationScopesJsonList = jsonValue.GetArray("authorizationScopes");
@@ -52,32 +42,28 @@ UpdateRouteResult& UpdateRouteResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_authorizationScopes.push_back(authorizationScopesJsonList[authorizationScopesIndex].AsString());
     }
+    m_authorizationScopesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authorizationType"))
   {
     m_authorizationType = AuthorizationTypeMapper::GetAuthorizationTypeForName(jsonValue.GetString("authorizationType"));
-
+    m_authorizationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authorizerId"))
   {
     m_authorizerId = jsonValue.GetString("authorizerId");
-
+    m_authorizerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modelSelectionExpression"))
   {
     m_modelSelectionExpression = jsonValue.GetString("modelSelectionExpression");
-
+    m_modelSelectionExpressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operationName"))
   {
     m_operationName = jsonValue.GetString("operationName");
-
+    m_operationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("requestModels"))
   {
     Aws::Map<Aws::String, JsonView> requestModelsJsonMap = jsonValue.GetObject("requestModels").GetAllObjects();
@@ -85,8 +71,8 @@ UpdateRouteResult& UpdateRouteResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_requestModels[requestModelsItem.first] = requestModelsItem.second.AsString();
     }
+    m_requestModelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("requestParameters"))
   {
     Aws::Map<Aws::String, JsonView> requestParametersJsonMap = jsonValue.GetObject("requestParameters").GetAllObjects();
@@ -94,38 +80,35 @@ UpdateRouteResult& UpdateRouteResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_requestParameters[requestParametersItem.first] = requestParametersItem.second.AsObject();
     }
+    m_requestParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("routeId"))
   {
     m_routeId = jsonValue.GetString("routeId");
-
+    m_routeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("routeKey"))
   {
     m_routeKey = jsonValue.GetString("routeKey");
-
+    m_routeKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("routeResponseSelectionExpression"))
   {
     m_routeResponseSelectionExpression = jsonValue.GetString("routeResponseSelectionExpression");
-
+    m_routeResponseSelectionExpressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("target"))
   {
     m_target = jsonValue.GetString("target");
-
+    m_targetHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,15 +18,7 @@ namespace IoT
 namespace Model
 {
 
-LogTarget::LogTarget() : 
-    m_targetType(LogTargetType::NOT_SET),
-    m_targetTypeHasBeenSet(false),
-    m_targetNameHasBeenSet(false)
-{
-}
-
 LogTarget::LogTarget(JsonView jsonValue)
-  : LogTarget()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ LogTarget& LogTarget::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("targetType"))
   {
     m_targetType = LogTargetTypeMapper::GetLogTargetTypeForName(jsonValue.GetString("targetType"));
-
     m_targetTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetName"))
   {
     m_targetName = jsonValue.GetString("targetName");
-
     m_targetNameHasBeenSet = true;
   }
-
   return *this;
 }
 

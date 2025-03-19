@@ -12,13 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateContactAttributesRequest::UpdateContactAttributesRequest() : 
-    m_initialContactIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_attributesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateContactAttributesRequest::SerializePayload() const
 {
   JsonValue payload;

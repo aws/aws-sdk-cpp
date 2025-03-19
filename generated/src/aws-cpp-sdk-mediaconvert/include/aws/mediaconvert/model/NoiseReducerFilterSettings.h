@@ -29,7 +29,7 @@ namespace Model
   class NoiseReducerFilterSettings
   {
   public:
-    AWS_MEDIACONVERT_API NoiseReducerFilterSettings();
+    AWS_MEDIACONVERT_API NoiseReducerFilterSettings() = default;
     AWS_MEDIACONVERT_API NoiseReducerFilterSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API NoiseReducerFilterSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
      * Relative strength of noise reducing filter. Higher values produce stronger
      * filtering.
      */
-    inline int GetStrength() const{ return m_strength; }
+    inline int GetStrength() const { return m_strength; }
     inline bool StrengthHasBeenSet() const { return m_strengthHasBeenSet; }
     inline void SetStrength(int value) { m_strengthHasBeenSet = true; m_strength = value; }
     inline NoiseReducerFilterSettings& WithStrength(int value) { SetStrength(value); return *this;}
     ///@}
   private:
 
-    int m_strength;
+    int m_strength{0};
     bool m_strengthHasBeenSet = false;
   };
 

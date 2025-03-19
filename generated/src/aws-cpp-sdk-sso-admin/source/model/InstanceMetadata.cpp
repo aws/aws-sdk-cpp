@@ -18,19 +18,7 @@ namespace SSOAdmin
 namespace Model
 {
 
-InstanceMetadata::InstanceMetadata() : 
-    m_createdDateHasBeenSet(false),
-    m_identityStoreIdHasBeenSet(false),
-    m_instanceArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ownerAccountIdHasBeenSet(false),
-    m_status(InstanceStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 InstanceMetadata::InstanceMetadata(JsonView jsonValue)
-  : InstanceMetadata()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ InstanceMetadata& InstanceMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CreatedDate"))
   {
     m_createdDate = jsonValue.GetDouble("CreatedDate");
-
     m_createdDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdentityStoreId"))
   {
     m_identityStoreId = jsonValue.GetString("IdentityStoreId");
-
     m_identityStoreIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceArn"))
   {
     m_instanceArn = jsonValue.GetString("InstanceArn");
-
     m_instanceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OwnerAccountId"))
   {
     m_ownerAccountId = jsonValue.GetString("OwnerAccountId");
-
     m_ownerAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = InstanceStatusMapper::GetInstanceStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

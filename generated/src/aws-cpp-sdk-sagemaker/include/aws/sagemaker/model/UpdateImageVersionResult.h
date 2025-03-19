@@ -27,7 +27,7 @@ namespace Model
   class UpdateImageVersionResult
   {
   public:
-    AWS_SAGEMAKER_API UpdateImageVersionResult();
+    AWS_SAGEMAKER_API UpdateImageVersionResult() = default;
     AWS_SAGEMAKER_API UpdateImageVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API UpdateImageVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The ARN of the image version.</p>
      */
-    inline const Aws::String& GetImageVersionArn() const{ return m_imageVersionArn; }
-    inline void SetImageVersionArn(const Aws::String& value) { m_imageVersionArn = value; }
-    inline void SetImageVersionArn(Aws::String&& value) { m_imageVersionArn = std::move(value); }
-    inline void SetImageVersionArn(const char* value) { m_imageVersionArn.assign(value); }
-    inline UpdateImageVersionResult& WithImageVersionArn(const Aws::String& value) { SetImageVersionArn(value); return *this;}
-    inline UpdateImageVersionResult& WithImageVersionArn(Aws::String&& value) { SetImageVersionArn(std::move(value)); return *this;}
-    inline UpdateImageVersionResult& WithImageVersionArn(const char* value) { SetImageVersionArn(value); return *this;}
+    inline const Aws::String& GetImageVersionArn() const { return m_imageVersionArn; }
+    template<typename ImageVersionArnT = Aws::String>
+    void SetImageVersionArn(ImageVersionArnT&& value) { m_imageVersionArnHasBeenSet = true; m_imageVersionArn = std::forward<ImageVersionArnT>(value); }
+    template<typename ImageVersionArnT = Aws::String>
+    UpdateImageVersionResult& WithImageVersionArn(ImageVersionArnT&& value) { SetImageVersionArn(std::forward<ImageVersionArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateImageVersionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateImageVersionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateImageVersionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateImageVersionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_imageVersionArn;
+    bool m_imageVersionArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

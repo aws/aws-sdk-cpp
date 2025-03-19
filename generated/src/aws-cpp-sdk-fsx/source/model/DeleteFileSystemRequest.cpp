@@ -12,16 +12,6 @@ using namespace Aws::FSx::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteFileSystemRequest::DeleteFileSystemRequest() : 
-    m_fileSystemIdHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_windowsConfigurationHasBeenSet(false),
-    m_lustreConfigurationHasBeenSet(false),
-    m_openZFSConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String DeleteFileSystemRequest::SerializePayload() const
 {
   JsonValue payload;

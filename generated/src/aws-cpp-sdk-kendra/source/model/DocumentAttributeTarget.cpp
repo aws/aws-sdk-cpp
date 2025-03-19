@@ -18,16 +18,7 @@ namespace kendra
 namespace Model
 {
 
-DocumentAttributeTarget::DocumentAttributeTarget() : 
-    m_targetDocumentAttributeKeyHasBeenSet(false),
-    m_targetDocumentAttributeValueDeletion(false),
-    m_targetDocumentAttributeValueDeletionHasBeenSet(false),
-    m_targetDocumentAttributeValueHasBeenSet(false)
-{
-}
-
 DocumentAttributeTarget::DocumentAttributeTarget(JsonView jsonValue)
-  : DocumentAttributeTarget()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ DocumentAttributeTarget& DocumentAttributeTarget::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TargetDocumentAttributeKey"))
   {
     m_targetDocumentAttributeKey = jsonValue.GetString("TargetDocumentAttributeKey");
-
     m_targetDocumentAttributeKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetDocumentAttributeValueDeletion"))
   {
     m_targetDocumentAttributeValueDeletion = jsonValue.GetBool("TargetDocumentAttributeValueDeletion");
-
     m_targetDocumentAttributeValueDeletionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetDocumentAttributeValue"))
   {
     m_targetDocumentAttributeValue = jsonValue.GetObject("TargetDocumentAttributeValue");
-
     m_targetDocumentAttributeValueHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-CoreNetworkPolicyError::CoreNetworkPolicyError() : 
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_pathHasBeenSet(false)
-{
-}
-
 CoreNetworkPolicyError::CoreNetworkPolicyError(JsonView jsonValue)
-  : CoreNetworkPolicyError()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ CoreNetworkPolicyError& CoreNetworkPolicyError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = jsonValue.GetString("ErrorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Path"))
   {
     m_path = jsonValue.GetString("Path");
-
     m_pathHasBeenSet = true;
   }
-
   return *this;
 }
 

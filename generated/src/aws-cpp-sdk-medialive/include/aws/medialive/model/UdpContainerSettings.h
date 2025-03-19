@@ -31,7 +31,7 @@ namespace Model
   class UdpContainerSettings
   {
   public:
-    AWS_MEDIALIVE_API UdpContainerSettings();
+    AWS_MEDIALIVE_API UdpContainerSettings() = default;
     AWS_MEDIALIVE_API UdpContainerSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API UdpContainerSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,12 +39,12 @@ namespace Model
 
     ///@{
     
-    inline const M2tsSettings& GetM2tsSettings() const{ return m_m2tsSettings; }
+    inline const M2tsSettings& GetM2tsSettings() const { return m_m2tsSettings; }
     inline bool M2tsSettingsHasBeenSet() const { return m_m2tsSettingsHasBeenSet; }
-    inline void SetM2tsSettings(const M2tsSettings& value) { m_m2tsSettingsHasBeenSet = true; m_m2tsSettings = value; }
-    inline void SetM2tsSettings(M2tsSettings&& value) { m_m2tsSettingsHasBeenSet = true; m_m2tsSettings = std::move(value); }
-    inline UdpContainerSettings& WithM2tsSettings(const M2tsSettings& value) { SetM2tsSettings(value); return *this;}
-    inline UdpContainerSettings& WithM2tsSettings(M2tsSettings&& value) { SetM2tsSettings(std::move(value)); return *this;}
+    template<typename M2tsSettingsT = M2tsSettings>
+    void SetM2tsSettings(M2tsSettingsT&& value) { m_m2tsSettingsHasBeenSet = true; m_m2tsSettings = std::forward<M2tsSettingsT>(value); }
+    template<typename M2tsSettingsT = M2tsSettings>
+    UdpContainerSettings& WithM2tsSettings(M2tsSettingsT&& value) { SetM2tsSettings(std::forward<M2tsSettingsT>(value)); return *this;}
     ///@}
   private:
 

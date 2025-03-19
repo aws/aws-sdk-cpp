@@ -32,7 +32,7 @@ namespace Model
   class OrderBy
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API OrderBy();
+    AWS_COMPUTEOPTIMIZER_API OrderBy() = default;
     AWS_COMPUTEOPTIMIZER_API OrderBy(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API OrderBy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,31 +42,27 @@ namespace Model
     /**
      * <p>The dimension values to sort the recommendations.</p>
      */
-    inline const Dimension& GetDimension() const{ return m_dimension; }
+    inline Dimension GetDimension() const { return m_dimension; }
     inline bool DimensionHasBeenSet() const { return m_dimensionHasBeenSet; }
-    inline void SetDimension(const Dimension& value) { m_dimensionHasBeenSet = true; m_dimension = value; }
-    inline void SetDimension(Dimension&& value) { m_dimensionHasBeenSet = true; m_dimension = std::move(value); }
-    inline OrderBy& WithDimension(const Dimension& value) { SetDimension(value); return *this;}
-    inline OrderBy& WithDimension(Dimension&& value) { SetDimension(std::move(value)); return *this;}
+    inline void SetDimension(Dimension value) { m_dimensionHasBeenSet = true; m_dimension = value; }
+    inline OrderBy& WithDimension(Dimension value) { SetDimension(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The order to sort the recommendations.</p>
      */
-    inline const Order& GetOrder() const{ return m_order; }
+    inline Order GetOrder() const { return m_order; }
     inline bool OrderHasBeenSet() const { return m_orderHasBeenSet; }
-    inline void SetOrder(const Order& value) { m_orderHasBeenSet = true; m_order = value; }
-    inline void SetOrder(Order&& value) { m_orderHasBeenSet = true; m_order = std::move(value); }
-    inline OrderBy& WithOrder(const Order& value) { SetOrder(value); return *this;}
-    inline OrderBy& WithOrder(Order&& value) { SetOrder(std::move(value)); return *this;}
+    inline void SetOrder(Order value) { m_orderHasBeenSet = true; m_order = value; }
+    inline OrderBy& WithOrder(Order value) { SetOrder(value); return *this;}
     ///@}
   private:
 
-    Dimension m_dimension;
+    Dimension m_dimension{Dimension::NOT_SET};
     bool m_dimensionHasBeenSet = false;
 
-    Order m_order;
+    Order m_order{Order::NOT_SET};
     bool m_orderHasBeenSet = false;
   };
 

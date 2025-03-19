@@ -12,11 +12,6 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteConnectorRequest::DeleteConnectorRequest() : 
-    m_connectorIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteConnectorRequest::SerializePayload() const
 {
   JsonValue payload;

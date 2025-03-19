@@ -29,7 +29,7 @@ namespace Model
   class GetDeviceMethodsResult
   {
   public:
-    AWS_IOT1CLICKDEVICESSERVICE_API GetDeviceMethodsResult();
+    AWS_IOT1CLICKDEVICESSERVICE_API GetDeviceMethodsResult() = default;
     AWS_IOT1CLICKDEVICESSERVICE_API GetDeviceMethodsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT1CLICKDEVICESSERVICE_API GetDeviceMethodsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>List of available device APIs.</p>
      */
-    inline const Aws::Vector<DeviceMethod>& GetDeviceMethods() const{ return m_deviceMethods; }
-    inline void SetDeviceMethods(const Aws::Vector<DeviceMethod>& value) { m_deviceMethods = value; }
-    inline void SetDeviceMethods(Aws::Vector<DeviceMethod>&& value) { m_deviceMethods = std::move(value); }
-    inline GetDeviceMethodsResult& WithDeviceMethods(const Aws::Vector<DeviceMethod>& value) { SetDeviceMethods(value); return *this;}
-    inline GetDeviceMethodsResult& WithDeviceMethods(Aws::Vector<DeviceMethod>&& value) { SetDeviceMethods(std::move(value)); return *this;}
-    inline GetDeviceMethodsResult& AddDeviceMethods(const DeviceMethod& value) { m_deviceMethods.push_back(value); return *this; }
-    inline GetDeviceMethodsResult& AddDeviceMethods(DeviceMethod&& value) { m_deviceMethods.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DeviceMethod>& GetDeviceMethods() const { return m_deviceMethods; }
+    template<typename DeviceMethodsT = Aws::Vector<DeviceMethod>>
+    void SetDeviceMethods(DeviceMethodsT&& value) { m_deviceMethodsHasBeenSet = true; m_deviceMethods = std::forward<DeviceMethodsT>(value); }
+    template<typename DeviceMethodsT = Aws::Vector<DeviceMethod>>
+    GetDeviceMethodsResult& WithDeviceMethods(DeviceMethodsT&& value) { SetDeviceMethods(std::forward<DeviceMethodsT>(value)); return *this;}
+    template<typename DeviceMethodsT = DeviceMethod>
+    GetDeviceMethodsResult& AddDeviceMethods(DeviceMethodsT&& value) { m_deviceMethodsHasBeenSet = true; m_deviceMethods.emplace_back(std::forward<DeviceMethodsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetDeviceMethodsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetDeviceMethodsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetDeviceMethodsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetDeviceMethodsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DeviceMethod> m_deviceMethods;
+    bool m_deviceMethodsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

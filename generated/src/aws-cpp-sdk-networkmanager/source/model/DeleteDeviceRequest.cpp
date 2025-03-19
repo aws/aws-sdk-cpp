@@ -12,12 +12,6 @@ using namespace Aws::NetworkManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDeviceRequest::DeleteDeviceRequest() : 
-    m_globalNetworkIdHasBeenSet(false),
-    m_deviceIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDeviceRequest::SerializePayload() const
 {
   return {};

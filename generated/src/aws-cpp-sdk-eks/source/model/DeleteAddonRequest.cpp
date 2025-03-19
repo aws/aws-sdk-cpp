@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteAddonRequest::DeleteAddonRequest() : 
-    m_clusterNameHasBeenSet(false),
-    m_addonNameHasBeenSet(false),
-    m_preserve(false),
-    m_preserveHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAddonRequest::SerializePayload() const
 {
   return {};

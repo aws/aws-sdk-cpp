@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateConfigurationSetEventDestinationResult::UpdateConfigurationSetEventDestinationResult()
-{
-}
-
 UpdateConfigurationSetEventDestinationResult::UpdateConfigurationSetEventDestinationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -43,6 +39,7 @@ UpdateConfigurationSetEventDestinationResult& UpdateConfigurationSetEventDestina
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::SES::Model::UpdateConfigurationSetEventDestinationResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

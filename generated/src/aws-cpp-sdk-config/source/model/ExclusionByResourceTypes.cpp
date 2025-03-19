@@ -18,13 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-ExclusionByResourceTypes::ExclusionByResourceTypes() : 
-    m_resourceTypesHasBeenSet(false)
-{
-}
-
 ExclusionByResourceTypes::ExclusionByResourceTypes(JsonView jsonValue)
-  : ExclusionByResourceTypes()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ExclusionByResourceTypes& ExclusionByResourceTypes::operator =(JsonView jsonValu
     }
     m_resourceTypesHasBeenSet = true;
   }
-
   return *this;
 }
 

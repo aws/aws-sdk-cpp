@@ -28,7 +28,7 @@ namespace Model
   class CreateSubscriberResult
   {
   public:
-    AWS_SECURITYLAKE_API CreateSubscriberResult();
+    AWS_SECURITYLAKE_API CreateSubscriberResult() = default;
     AWS_SECURITYLAKE_API CreateSubscriberResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SECURITYLAKE_API CreateSubscriberResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>Retrieve information about the subscriber created using the
      * <code>CreateSubscriber</code> API.</p>
      */
-    inline const SubscriberResource& GetSubscriber() const{ return m_subscriber; }
-    inline void SetSubscriber(const SubscriberResource& value) { m_subscriber = value; }
-    inline void SetSubscriber(SubscriberResource&& value) { m_subscriber = std::move(value); }
-    inline CreateSubscriberResult& WithSubscriber(const SubscriberResource& value) { SetSubscriber(value); return *this;}
-    inline CreateSubscriberResult& WithSubscriber(SubscriberResource&& value) { SetSubscriber(std::move(value)); return *this;}
+    inline const SubscriberResource& GetSubscriber() const { return m_subscriber; }
+    template<typename SubscriberT = SubscriberResource>
+    void SetSubscriber(SubscriberT&& value) { m_subscriberHasBeenSet = true; m_subscriber = std::forward<SubscriberT>(value); }
+    template<typename SubscriberT = SubscriberResource>
+    CreateSubscriberResult& WithSubscriber(SubscriberT&& value) { SetSubscriber(std::forward<SubscriberT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateSubscriberResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateSubscriberResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateSubscriberResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateSubscriberResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     SubscriberResource m_subscriber;
+    bool m_subscriberHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

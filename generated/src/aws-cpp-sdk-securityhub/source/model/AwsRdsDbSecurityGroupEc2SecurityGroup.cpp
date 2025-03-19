@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsRdsDbSecurityGroupEc2SecurityGroup::AwsRdsDbSecurityGroupEc2SecurityGroup() : 
-    m_ec2SecurityGroupIdHasBeenSet(false),
-    m_ec2SecurityGroupNameHasBeenSet(false),
-    m_ec2SecurityGroupOwnerIdHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 AwsRdsDbSecurityGroupEc2SecurityGroup::AwsRdsDbSecurityGroupEc2SecurityGroup(JsonView jsonValue)
-  : AwsRdsDbSecurityGroupEc2SecurityGroup()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ AwsRdsDbSecurityGroupEc2SecurityGroup& AwsRdsDbSecurityGroupEc2SecurityGroup::op
   if(jsonValue.ValueExists("Ec2SecurityGroupId"))
   {
     m_ec2SecurityGroupId = jsonValue.GetString("Ec2SecurityGroupId");
-
     m_ec2SecurityGroupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ec2SecurityGroupName"))
   {
     m_ec2SecurityGroupName = jsonValue.GetString("Ec2SecurityGroupName");
-
     m_ec2SecurityGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ec2SecurityGroupOwnerId"))
   {
     m_ec2SecurityGroupOwnerId = jsonValue.GetString("Ec2SecurityGroupOwnerId");
-
     m_ec2SecurityGroupOwnerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

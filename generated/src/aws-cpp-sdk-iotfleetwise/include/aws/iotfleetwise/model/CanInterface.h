@@ -32,7 +32,7 @@ namespace Model
   class CanInterface
   {
   public:
-    AWS_IOTFLEETWISE_API CanInterface();
+    AWS_IOTFLEETWISE_API CanInterface() = default;
     AWS_IOTFLEETWISE_API CanInterface(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API CanInterface& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,42 +42,36 @@ namespace Model
     /**
      * <p>The unique name of the interface.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CanInterface& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CanInterface& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CanInterface& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CanInterface& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the communication protocol for the interface.</p>
      */
-    inline const Aws::String& GetProtocolName() const{ return m_protocolName; }
+    inline const Aws::String& GetProtocolName() const { return m_protocolName; }
     inline bool ProtocolNameHasBeenSet() const { return m_protocolNameHasBeenSet; }
-    inline void SetProtocolName(const Aws::String& value) { m_protocolNameHasBeenSet = true; m_protocolName = value; }
-    inline void SetProtocolName(Aws::String&& value) { m_protocolNameHasBeenSet = true; m_protocolName = std::move(value); }
-    inline void SetProtocolName(const char* value) { m_protocolNameHasBeenSet = true; m_protocolName.assign(value); }
-    inline CanInterface& WithProtocolName(const Aws::String& value) { SetProtocolName(value); return *this;}
-    inline CanInterface& WithProtocolName(Aws::String&& value) { SetProtocolName(std::move(value)); return *this;}
-    inline CanInterface& WithProtocolName(const char* value) { SetProtocolName(value); return *this;}
+    template<typename ProtocolNameT = Aws::String>
+    void SetProtocolName(ProtocolNameT&& value) { m_protocolNameHasBeenSet = true; m_protocolName = std::forward<ProtocolNameT>(value); }
+    template<typename ProtocolNameT = Aws::String>
+    CanInterface& WithProtocolName(ProtocolNameT&& value) { SetProtocolName(std::forward<ProtocolNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the communication protocol for the interface.</p>
      */
-    inline const Aws::String& GetProtocolVersion() const{ return m_protocolVersion; }
+    inline const Aws::String& GetProtocolVersion() const { return m_protocolVersion; }
     inline bool ProtocolVersionHasBeenSet() const { return m_protocolVersionHasBeenSet; }
-    inline void SetProtocolVersion(const Aws::String& value) { m_protocolVersionHasBeenSet = true; m_protocolVersion = value; }
-    inline void SetProtocolVersion(Aws::String&& value) { m_protocolVersionHasBeenSet = true; m_protocolVersion = std::move(value); }
-    inline void SetProtocolVersion(const char* value) { m_protocolVersionHasBeenSet = true; m_protocolVersion.assign(value); }
-    inline CanInterface& WithProtocolVersion(const Aws::String& value) { SetProtocolVersion(value); return *this;}
-    inline CanInterface& WithProtocolVersion(Aws::String&& value) { SetProtocolVersion(std::move(value)); return *this;}
-    inline CanInterface& WithProtocolVersion(const char* value) { SetProtocolVersion(value); return *this;}
+    template<typename ProtocolVersionT = Aws::String>
+    void SetProtocolVersion(ProtocolVersionT&& value) { m_protocolVersionHasBeenSet = true; m_protocolVersion = std::forward<ProtocolVersionT>(value); }
+    template<typename ProtocolVersionT = Aws::String>
+    CanInterface& WithProtocolVersion(ProtocolVersionT&& value) { SetProtocolVersion(std::forward<ProtocolVersionT>(value)); return *this;}
     ///@}
   private:
 

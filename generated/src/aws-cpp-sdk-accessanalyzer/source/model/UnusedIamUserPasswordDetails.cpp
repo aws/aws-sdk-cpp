@@ -18,13 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-UnusedIamUserPasswordDetails::UnusedIamUserPasswordDetails() : 
-    m_lastAccessedHasBeenSet(false)
-{
-}
-
 UnusedIamUserPasswordDetails::UnusedIamUserPasswordDetails(JsonView jsonValue)
-  : UnusedIamUserPasswordDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ UnusedIamUserPasswordDetails& UnusedIamUserPasswordDetails::operator =(JsonView 
   if(jsonValue.ValueExists("lastAccessed"))
   {
     m_lastAccessed = jsonValue.GetString("lastAccessed");
-
     m_lastAccessedHasBeenSet = true;
   }
-
   return *this;
 }
 

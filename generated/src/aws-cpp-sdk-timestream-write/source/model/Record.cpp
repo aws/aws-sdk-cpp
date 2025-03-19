@@ -18,23 +18,7 @@ namespace TimestreamWrite
 namespace Model
 {
 
-Record::Record() : 
-    m_dimensionsHasBeenSet(false),
-    m_measureNameHasBeenSet(false),
-    m_measureValueHasBeenSet(false),
-    m_measureValueType(MeasureValueType::NOT_SET),
-    m_measureValueTypeHasBeenSet(false),
-    m_timeHasBeenSet(false),
-    m_timeUnit(TimeUnit::NOT_SET),
-    m_timeUnitHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false),
-    m_measureValuesHasBeenSet(false)
-{
-}
-
 Record::Record(JsonView jsonValue)
-  : Record()
 {
   *this = jsonValue;
 }
@@ -50,49 +34,36 @@ Record& Record::operator =(JsonView jsonValue)
     }
     m_dimensionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MeasureName"))
   {
     m_measureName = jsonValue.GetString("MeasureName");
-
     m_measureNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MeasureValue"))
   {
     m_measureValue = jsonValue.GetString("MeasureValue");
-
     m_measureValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MeasureValueType"))
   {
     m_measureValueType = MeasureValueTypeMapper::GetMeasureValueTypeForName(jsonValue.GetString("MeasureValueType"));
-
     m_measureValueTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Time"))
   {
     m_time = jsonValue.GetString("Time");
-
     m_timeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeUnit"))
   {
     m_timeUnit = TimeUnitMapper::GetTimeUnitForName(jsonValue.GetString("TimeUnit"));
-
     m_timeUnitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetInt64("Version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MeasureValues"))
   {
     Aws::Utils::Array<JsonView> measureValuesJsonList = jsonValue.GetArray("MeasureValues");
@@ -102,7 +73,6 @@ Record& Record::operator =(JsonView jsonValue)
     }
     m_measureValuesHasBeenSet = true;
   }
-
   return *this;
 }
 

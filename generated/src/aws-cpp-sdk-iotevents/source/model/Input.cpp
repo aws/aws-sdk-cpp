@@ -18,14 +18,7 @@ namespace IoTEvents
 namespace Model
 {
 
-Input::Input() : 
-    m_inputConfigurationHasBeenSet(false),
-    m_inputDefinitionHasBeenSet(false)
-{
-}
-
 Input::Input(JsonView jsonValue)
-  : Input()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Input& Input::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("inputConfiguration"))
   {
     m_inputConfiguration = jsonValue.GetObject("inputConfiguration");
-
     m_inputConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputDefinition"))
   {
     m_inputDefinition = jsonValue.GetObject("inputDefinition");
-
     m_inputDefinitionHasBeenSet = true;
   }
-
   return *this;
 }
 

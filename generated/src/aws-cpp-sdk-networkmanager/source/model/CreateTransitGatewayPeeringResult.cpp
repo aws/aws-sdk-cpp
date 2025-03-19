@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateTransitGatewayPeeringResult::CreateTransitGatewayPeeringResult()
-{
-}
-
 CreateTransitGatewayPeeringResult::CreateTransitGatewayPeeringResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateTransitGatewayPeeringResult& CreateTransitGatewayPeeringResult::operator =
   if(jsonValue.ValueExists("TransitGatewayPeering"))
   {
     m_transitGatewayPeering = jsonValue.GetObject("TransitGatewayPeering");
-
+    m_transitGatewayPeeringHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

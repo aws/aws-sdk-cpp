@@ -10,14 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-GetSSHPublicKeyRequest::GetSSHPublicKeyRequest() : 
-    m_userNameHasBeenSet(false),
-    m_sSHPublicKeyIdHasBeenSet(false),
-    m_encoding(EncodingType::NOT_SET),
-    m_encodingHasBeenSet(false)
-{
-}
-
 Aws::String GetSSHPublicKeyRequest::SerializePayload() const
 {
   Aws::StringStream ss;

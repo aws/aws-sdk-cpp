@@ -32,7 +32,7 @@ namespace Model
   class S3DataSpec
   {
   public:
-    AWS_MACHINELEARNING_API S3DataSpec();
+    AWS_MACHINELEARNING_API S3DataSpec() = default;
     AWS_MACHINELEARNING_API S3DataSpec(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACHINELEARNING_API S3DataSpec& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACHINELEARNING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * specifies a data file or an Amazon Simple Storage Service (Amazon S3) directory
      * or bucket containing data files.</p>
      */
-    inline const Aws::String& GetDataLocationS3() const{ return m_dataLocationS3; }
+    inline const Aws::String& GetDataLocationS3() const { return m_dataLocationS3; }
     inline bool DataLocationS3HasBeenSet() const { return m_dataLocationS3HasBeenSet; }
-    inline void SetDataLocationS3(const Aws::String& value) { m_dataLocationS3HasBeenSet = true; m_dataLocationS3 = value; }
-    inline void SetDataLocationS3(Aws::String&& value) { m_dataLocationS3HasBeenSet = true; m_dataLocationS3 = std::move(value); }
-    inline void SetDataLocationS3(const char* value) { m_dataLocationS3HasBeenSet = true; m_dataLocationS3.assign(value); }
-    inline S3DataSpec& WithDataLocationS3(const Aws::String& value) { SetDataLocationS3(value); return *this;}
-    inline S3DataSpec& WithDataLocationS3(Aws::String&& value) { SetDataLocationS3(std::move(value)); return *this;}
-    inline S3DataSpec& WithDataLocationS3(const char* value) { SetDataLocationS3(value); return *this;}
+    template<typename DataLocationS3T = Aws::String>
+    void SetDataLocationS3(DataLocationS3T&& value) { m_dataLocationS3HasBeenSet = true; m_dataLocationS3 = std::forward<DataLocationS3T>(value); }
+    template<typename DataLocationS3T = Aws::String>
+    S3DataSpec& WithDataLocationS3(DataLocationS3T&& value) { SetDataLocationS3(std::forward<DataLocationS3T>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,14 +114,12 @@ namespace Model
      * "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv",
      * "complement":"true"}}</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetDataRearrangement() const{ return m_dataRearrangement; }
+    inline const Aws::String& GetDataRearrangement() const { return m_dataRearrangement; }
     inline bool DataRearrangementHasBeenSet() const { return m_dataRearrangementHasBeenSet; }
-    inline void SetDataRearrangement(const Aws::String& value) { m_dataRearrangementHasBeenSet = true; m_dataRearrangement = value; }
-    inline void SetDataRearrangement(Aws::String&& value) { m_dataRearrangementHasBeenSet = true; m_dataRearrangement = std::move(value); }
-    inline void SetDataRearrangement(const char* value) { m_dataRearrangementHasBeenSet = true; m_dataRearrangement.assign(value); }
-    inline S3DataSpec& WithDataRearrangement(const Aws::String& value) { SetDataRearrangement(value); return *this;}
-    inline S3DataSpec& WithDataRearrangement(Aws::String&& value) { SetDataRearrangement(std::move(value)); return *this;}
-    inline S3DataSpec& WithDataRearrangement(const char* value) { SetDataRearrangement(value); return *this;}
+    template<typename DataRearrangementT = Aws::String>
+    void SetDataRearrangement(DataRearrangementT&& value) { m_dataRearrangementHasBeenSet = true; m_dataRearrangement = std::forward<DataRearrangementT>(value); }
+    template<typename DataRearrangementT = Aws::String>
+    S3DataSpec& WithDataRearrangement(DataRearrangementT&& value) { SetDataRearrangement(std::forward<DataRearrangementT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -147,14 +143,12 @@ namespace Model
      * "WEIGHTED_INT_SEQUENCE" }, { "fieldName": "F8", "fieldType":
      * "WEIGHTED_STRING_SEQUENCE" } ],</p> <p>"excludedVariableNames": [ "F6" ] }</p>
      */
-    inline const Aws::String& GetDataSchema() const{ return m_dataSchema; }
+    inline const Aws::String& GetDataSchema() const { return m_dataSchema; }
     inline bool DataSchemaHasBeenSet() const { return m_dataSchemaHasBeenSet; }
-    inline void SetDataSchema(const Aws::String& value) { m_dataSchemaHasBeenSet = true; m_dataSchema = value; }
-    inline void SetDataSchema(Aws::String&& value) { m_dataSchemaHasBeenSet = true; m_dataSchema = std::move(value); }
-    inline void SetDataSchema(const char* value) { m_dataSchemaHasBeenSet = true; m_dataSchema.assign(value); }
-    inline S3DataSpec& WithDataSchema(const Aws::String& value) { SetDataSchema(value); return *this;}
-    inline S3DataSpec& WithDataSchema(Aws::String&& value) { SetDataSchema(std::move(value)); return *this;}
-    inline S3DataSpec& WithDataSchema(const char* value) { SetDataSchema(value); return *this;}
+    template<typename DataSchemaT = Aws::String>
+    void SetDataSchema(DataSchemaT&& value) { m_dataSchemaHasBeenSet = true; m_dataSchema = std::forward<DataSchemaT>(value); }
+    template<typename DataSchemaT = Aws::String>
+    S3DataSpec& WithDataSchema(DataSchemaT&& value) { SetDataSchema(std::forward<DataSchemaT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -162,14 +156,12 @@ namespace Model
      * <p>Describes the schema location in Amazon S3. You must provide either the
      * <code>DataSchema</code> or the <code>DataSchemaLocationS3</code>.</p>
      */
-    inline const Aws::String& GetDataSchemaLocationS3() const{ return m_dataSchemaLocationS3; }
+    inline const Aws::String& GetDataSchemaLocationS3() const { return m_dataSchemaLocationS3; }
     inline bool DataSchemaLocationS3HasBeenSet() const { return m_dataSchemaLocationS3HasBeenSet; }
-    inline void SetDataSchemaLocationS3(const Aws::String& value) { m_dataSchemaLocationS3HasBeenSet = true; m_dataSchemaLocationS3 = value; }
-    inline void SetDataSchemaLocationS3(Aws::String&& value) { m_dataSchemaLocationS3HasBeenSet = true; m_dataSchemaLocationS3 = std::move(value); }
-    inline void SetDataSchemaLocationS3(const char* value) { m_dataSchemaLocationS3HasBeenSet = true; m_dataSchemaLocationS3.assign(value); }
-    inline S3DataSpec& WithDataSchemaLocationS3(const Aws::String& value) { SetDataSchemaLocationS3(value); return *this;}
-    inline S3DataSpec& WithDataSchemaLocationS3(Aws::String&& value) { SetDataSchemaLocationS3(std::move(value)); return *this;}
-    inline S3DataSpec& WithDataSchemaLocationS3(const char* value) { SetDataSchemaLocationS3(value); return *this;}
+    template<typename DataSchemaLocationS3T = Aws::String>
+    void SetDataSchemaLocationS3(DataSchemaLocationS3T&& value) { m_dataSchemaLocationS3HasBeenSet = true; m_dataSchemaLocationS3 = std::forward<DataSchemaLocationS3T>(value); }
+    template<typename DataSchemaLocationS3T = Aws::String>
+    S3DataSpec& WithDataSchemaLocationS3(DataSchemaLocationS3T&& value) { SetDataSchemaLocationS3(std::forward<DataSchemaLocationS3T>(value)); return *this;}
     ///@}
   private:
 

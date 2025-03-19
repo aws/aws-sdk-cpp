@@ -12,31 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAccountSubscriptionRequest::CreateAccountSubscriptionRequest() : 
-    m_edition(Edition::NOT_SET),
-    m_editionHasBeenSet(false),
-    m_authenticationMethod(AuthenticationMethodOption::NOT_SET),
-    m_authenticationMethodHasBeenSet(false),
-    m_awsAccountIdHasBeenSet(false),
-    m_accountNameHasBeenSet(false),
-    m_notificationEmailHasBeenSet(false),
-    m_activeDirectoryNameHasBeenSet(false),
-    m_realmHasBeenSet(false),
-    m_directoryIdHasBeenSet(false),
-    m_adminGroupHasBeenSet(false),
-    m_authorGroupHasBeenSet(false),
-    m_readerGroupHasBeenSet(false),
-    m_adminProGroupHasBeenSet(false),
-    m_authorProGroupHasBeenSet(false),
-    m_readerProGroupHasBeenSet(false),
-    m_firstNameHasBeenSet(false),
-    m_lastNameHasBeenSet(false),
-    m_emailAddressHasBeenSet(false),
-    m_contactNumberHasBeenSet(false),
-    m_iAMIdentityCenterInstanceArnHasBeenSet(false)
-{
-}
-
 Aws::String CreateAccountSubscriptionRequest::SerializePayload() const
 {
   JsonValue payload;

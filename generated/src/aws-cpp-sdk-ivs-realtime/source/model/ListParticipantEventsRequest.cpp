@@ -12,16 +12,6 @@ using namespace Aws::ivsrealtime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListParticipantEventsRequest::ListParticipantEventsRequest() : 
-    m_stageArnHasBeenSet(false),
-    m_sessionIdHasBeenSet(false),
-    m_participantIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListParticipantEventsRequest::SerializePayload() const
 {
   JsonValue payload;

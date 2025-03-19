@@ -33,7 +33,7 @@ namespace Model
   class CreateApplicationResult
   {
   public:
-    AWS_KINESISANALYTICS_API CreateApplicationResult();
+    AWS_KINESISANALYTICS_API CreateApplicationResult() = default;
     AWS_KINESISANALYTICS_API CreateApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KINESISANALYTICS_API CreateApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,28 +44,28 @@ namespace Model
      * Analytics returns a response with a summary of the application it created,
      * including the application Amazon Resource Name (ARN), name, and status.</p>
      */
-    inline const ApplicationSummary& GetApplicationSummary() const{ return m_applicationSummary; }
-    inline void SetApplicationSummary(const ApplicationSummary& value) { m_applicationSummary = value; }
-    inline void SetApplicationSummary(ApplicationSummary&& value) { m_applicationSummary = std::move(value); }
-    inline CreateApplicationResult& WithApplicationSummary(const ApplicationSummary& value) { SetApplicationSummary(value); return *this;}
-    inline CreateApplicationResult& WithApplicationSummary(ApplicationSummary&& value) { SetApplicationSummary(std::move(value)); return *this;}
+    inline const ApplicationSummary& GetApplicationSummary() const { return m_applicationSummary; }
+    template<typename ApplicationSummaryT = ApplicationSummary>
+    void SetApplicationSummary(ApplicationSummaryT&& value) { m_applicationSummaryHasBeenSet = true; m_applicationSummary = std::forward<ApplicationSummaryT>(value); }
+    template<typename ApplicationSummaryT = ApplicationSummary>
+    CreateApplicationResult& WithApplicationSummary(ApplicationSummaryT&& value) { SetApplicationSummary(std::forward<ApplicationSummaryT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateApplicationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateApplicationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateApplicationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateApplicationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ApplicationSummary m_applicationSummary;
+    bool m_applicationSummaryHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

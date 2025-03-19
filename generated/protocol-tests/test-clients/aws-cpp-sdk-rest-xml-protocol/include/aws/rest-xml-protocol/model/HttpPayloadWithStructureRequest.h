@@ -22,7 +22,7 @@ namespace Model
   class HttpPayloadWithStructureRequest : public RestXmlProtocolRequest
   {
   public:
-    AWS_RESTXMLPROTOCOL_API HttpPayloadWithStructureRequest();
+    AWS_RESTXMLPROTOCOL_API HttpPayloadWithStructureRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,24 +37,22 @@ namespace Model
 
     ///@{
     
-    inline const NestedPayload& GetNested() const{ return m_nested; }
+    inline const NestedPayload& GetNested() const { return m_nested; }
     inline bool NestedHasBeenSet() const { return m_nestedHasBeenSet; }
-    inline void SetNested(const NestedPayload& value) { m_nestedHasBeenSet = true; m_nested = value; }
-    inline void SetNested(NestedPayload&& value) { m_nestedHasBeenSet = true; m_nested = std::move(value); }
-    inline HttpPayloadWithStructureRequest& WithNested(const NestedPayload& value) { SetNested(value); return *this;}
-    inline HttpPayloadWithStructureRequest& WithNested(NestedPayload&& value) { SetNested(std::move(value)); return *this;}
+    template<typename NestedT = NestedPayload>
+    void SetNested(NestedT&& value) { m_nestedHasBeenSet = true; m_nested = std::forward<NestedT>(value); }
+    template<typename NestedT = NestedPayload>
+    HttpPayloadWithStructureRequest& WithNested(NestedT&& value) { SetNested(std::forward<NestedT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
-    inline HttpPayloadWithStructureRequest& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline HttpPayloadWithStructureRequest& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline HttpPayloadWithStructureRequest& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    HttpPayloadWithStructureRequest& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 

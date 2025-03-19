@@ -34,7 +34,7 @@ namespace Model
   class TaskTemplateField
   {
   public:
-    AWS_CONNECT_API TaskTemplateField();
+    AWS_CONNECT_API TaskTemplateField() = default;
     AWS_CONNECT_API TaskTemplateField(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API TaskTemplateField& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,53 +44,48 @@ namespace Model
     /**
      * <p>The unique identifier for the field.</p>
      */
-    inline const TaskTemplateFieldIdentifier& GetId() const{ return m_id; }
+    inline const TaskTemplateFieldIdentifier& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const TaskTemplateFieldIdentifier& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(TaskTemplateFieldIdentifier&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline TaskTemplateField& WithId(const TaskTemplateFieldIdentifier& value) { SetId(value); return *this;}
-    inline TaskTemplateField& WithId(TaskTemplateFieldIdentifier&& value) { SetId(std::move(value)); return *this;}
+    template<typename IdT = TaskTemplateFieldIdentifier>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = TaskTemplateFieldIdentifier>
+    TaskTemplateField& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the field.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline TaskTemplateField& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline TaskTemplateField& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline TaskTemplateField& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    TaskTemplateField& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates the type of field.</p>
      */
-    inline const TaskTemplateFieldType& GetType() const{ return m_type; }
+    inline TaskTemplateFieldType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const TaskTemplateFieldType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(TaskTemplateFieldType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline TaskTemplateField& WithType(const TaskTemplateFieldType& value) { SetType(value); return *this;}
-    inline TaskTemplateField& WithType(TaskTemplateFieldType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(TaskTemplateFieldType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline TaskTemplateField& WithType(TaskTemplateFieldType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of options for a single select field.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSingleSelectOptions() const{ return m_singleSelectOptions; }
+    inline const Aws::Vector<Aws::String>& GetSingleSelectOptions() const { return m_singleSelectOptions; }
     inline bool SingleSelectOptionsHasBeenSet() const { return m_singleSelectOptionsHasBeenSet; }
-    inline void SetSingleSelectOptions(const Aws::Vector<Aws::String>& value) { m_singleSelectOptionsHasBeenSet = true; m_singleSelectOptions = value; }
-    inline void SetSingleSelectOptions(Aws::Vector<Aws::String>&& value) { m_singleSelectOptionsHasBeenSet = true; m_singleSelectOptions = std::move(value); }
-    inline TaskTemplateField& WithSingleSelectOptions(const Aws::Vector<Aws::String>& value) { SetSingleSelectOptions(value); return *this;}
-    inline TaskTemplateField& WithSingleSelectOptions(Aws::Vector<Aws::String>&& value) { SetSingleSelectOptions(std::move(value)); return *this;}
-    inline TaskTemplateField& AddSingleSelectOptions(const Aws::String& value) { m_singleSelectOptionsHasBeenSet = true; m_singleSelectOptions.push_back(value); return *this; }
-    inline TaskTemplateField& AddSingleSelectOptions(Aws::String&& value) { m_singleSelectOptionsHasBeenSet = true; m_singleSelectOptions.push_back(std::move(value)); return *this; }
-    inline TaskTemplateField& AddSingleSelectOptions(const char* value) { m_singleSelectOptionsHasBeenSet = true; m_singleSelectOptions.push_back(value); return *this; }
+    template<typename SingleSelectOptionsT = Aws::Vector<Aws::String>>
+    void SetSingleSelectOptions(SingleSelectOptionsT&& value) { m_singleSelectOptionsHasBeenSet = true; m_singleSelectOptions = std::forward<SingleSelectOptionsT>(value); }
+    template<typename SingleSelectOptionsT = Aws::Vector<Aws::String>>
+    TaskTemplateField& WithSingleSelectOptions(SingleSelectOptionsT&& value) { SetSingleSelectOptions(std::forward<SingleSelectOptionsT>(value)); return *this;}
+    template<typename SingleSelectOptionsT = Aws::String>
+    TaskTemplateField& AddSingleSelectOptions(SingleSelectOptionsT&& value) { m_singleSelectOptionsHasBeenSet = true; m_singleSelectOptions.emplace_back(std::forward<SingleSelectOptionsT>(value)); return *this; }
     ///@}
   private:
 
@@ -100,7 +95,7 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    TaskTemplateFieldType m_type;
+    TaskTemplateFieldType m_type{TaskTemplateFieldType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_singleSelectOptions;

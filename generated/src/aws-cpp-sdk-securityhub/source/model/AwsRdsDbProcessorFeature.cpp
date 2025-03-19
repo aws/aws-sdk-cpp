@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsRdsDbProcessorFeature::AwsRdsDbProcessorFeature() : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 AwsRdsDbProcessorFeature::AwsRdsDbProcessorFeature(JsonView jsonValue)
-  : AwsRdsDbProcessorFeature()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsRdsDbProcessorFeature& AwsRdsDbProcessorFeature::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

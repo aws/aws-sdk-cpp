@@ -35,7 +35,7 @@ namespace Model
   class IdpMetadata
   {
   public:
-    AWS_MANAGEDGRAFANA_API IdpMetadata();
+    AWS_MANAGEDGRAFANA_API IdpMetadata() = default;
     AWS_MANAGEDGRAFANA_API IdpMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDGRAFANA_API IdpMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDGRAFANA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,24 @@ namespace Model
     /**
      * <p>The URL of the location containing the IdP metadata.</p>
      */
-    inline const Aws::String& GetUrl() const{ return m_url; }
+    inline const Aws::String& GetUrl() const { return m_url; }
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
-    inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
-    inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
-    inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
-    inline IdpMetadata& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
-    inline IdpMetadata& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
-    inline IdpMetadata& WithUrl(const char* value) { SetUrl(value); return *this;}
+    template<typename UrlT = Aws::String>
+    void SetUrl(UrlT&& value) { m_urlHasBeenSet = true; m_url = std::forward<UrlT>(value); }
+    template<typename UrlT = Aws::String>
+    IdpMetadata& WithUrl(UrlT&& value) { SetUrl(std::forward<UrlT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The full IdP metadata, in XML format.</p>
      */
-    inline const Aws::String& GetXml() const{ return m_xml; }
+    inline const Aws::String& GetXml() const { return m_xml; }
     inline bool XmlHasBeenSet() const { return m_xmlHasBeenSet; }
-    inline void SetXml(const Aws::String& value) { m_xmlHasBeenSet = true; m_xml = value; }
-    inline void SetXml(Aws::String&& value) { m_xmlHasBeenSet = true; m_xml = std::move(value); }
-    inline void SetXml(const char* value) { m_xmlHasBeenSet = true; m_xml.assign(value); }
-    inline IdpMetadata& WithXml(const Aws::String& value) { SetXml(value); return *this;}
-    inline IdpMetadata& WithXml(Aws::String&& value) { SetXml(std::move(value)); return *this;}
-    inline IdpMetadata& WithXml(const char* value) { SetXml(value); return *this;}
+    template<typename XmlT = Aws::String>
+    void SetXml(XmlT&& value) { m_xmlHasBeenSet = true; m_xml = std::forward<XmlT>(value); }
+    template<typename XmlT = Aws::String>
+    IdpMetadata& WithXml(XmlT&& value) { SetXml(std::forward<XmlT>(value)); return *this;}
     ///@}
   private:
 

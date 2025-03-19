@@ -33,7 +33,7 @@ namespace Model
   class LayerVersionContentOutput
   {
   public:
-    AWS_LAMBDA_API LayerVersionContentOutput();
+    AWS_LAMBDA_API LayerVersionContentOutput() = default;
     AWS_LAMBDA_API LayerVersionContentOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API LayerVersionContentOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,35 +43,31 @@ namespace Model
     /**
      * <p>A link to the layer archive in Amazon S3 that is valid for 10 minutes.</p>
      */
-    inline const Aws::String& GetLocation() const{ return m_location; }
+    inline const Aws::String& GetLocation() const { return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-    inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
-    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-    inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
-    inline LayerVersionContentOutput& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-    inline LayerVersionContentOutput& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-    inline LayerVersionContentOutput& WithLocation(const char* value) { SetLocation(value); return *this;}
+    template<typename LocationT = Aws::String>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Aws::String>
+    LayerVersionContentOutput& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The SHA-256 hash of the layer archive.</p>
      */
-    inline const Aws::String& GetCodeSha256() const{ return m_codeSha256; }
+    inline const Aws::String& GetCodeSha256() const { return m_codeSha256; }
     inline bool CodeSha256HasBeenSet() const { return m_codeSha256HasBeenSet; }
-    inline void SetCodeSha256(const Aws::String& value) { m_codeSha256HasBeenSet = true; m_codeSha256 = value; }
-    inline void SetCodeSha256(Aws::String&& value) { m_codeSha256HasBeenSet = true; m_codeSha256 = std::move(value); }
-    inline void SetCodeSha256(const char* value) { m_codeSha256HasBeenSet = true; m_codeSha256.assign(value); }
-    inline LayerVersionContentOutput& WithCodeSha256(const Aws::String& value) { SetCodeSha256(value); return *this;}
-    inline LayerVersionContentOutput& WithCodeSha256(Aws::String&& value) { SetCodeSha256(std::move(value)); return *this;}
-    inline LayerVersionContentOutput& WithCodeSha256(const char* value) { SetCodeSha256(value); return *this;}
+    template<typename CodeSha256T = Aws::String>
+    void SetCodeSha256(CodeSha256T&& value) { m_codeSha256HasBeenSet = true; m_codeSha256 = std::forward<CodeSha256T>(value); }
+    template<typename CodeSha256T = Aws::String>
+    LayerVersionContentOutput& WithCodeSha256(CodeSha256T&& value) { SetCodeSha256(std::forward<CodeSha256T>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The size of the layer archive in bytes.</p>
      */
-    inline long long GetCodeSize() const{ return m_codeSize; }
+    inline long long GetCodeSize() const { return m_codeSize; }
     inline bool CodeSizeHasBeenSet() const { return m_codeSizeHasBeenSet; }
     inline void SetCodeSize(long long value) { m_codeSizeHasBeenSet = true; m_codeSize = value; }
     inline LayerVersionContentOutput& WithCodeSize(long long value) { SetCodeSize(value); return *this;}
@@ -81,28 +77,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for a signing profile version.</p>
      */
-    inline const Aws::String& GetSigningProfileVersionArn() const{ return m_signingProfileVersionArn; }
+    inline const Aws::String& GetSigningProfileVersionArn() const { return m_signingProfileVersionArn; }
     inline bool SigningProfileVersionArnHasBeenSet() const { return m_signingProfileVersionArnHasBeenSet; }
-    inline void SetSigningProfileVersionArn(const Aws::String& value) { m_signingProfileVersionArnHasBeenSet = true; m_signingProfileVersionArn = value; }
-    inline void SetSigningProfileVersionArn(Aws::String&& value) { m_signingProfileVersionArnHasBeenSet = true; m_signingProfileVersionArn = std::move(value); }
-    inline void SetSigningProfileVersionArn(const char* value) { m_signingProfileVersionArnHasBeenSet = true; m_signingProfileVersionArn.assign(value); }
-    inline LayerVersionContentOutput& WithSigningProfileVersionArn(const Aws::String& value) { SetSigningProfileVersionArn(value); return *this;}
-    inline LayerVersionContentOutput& WithSigningProfileVersionArn(Aws::String&& value) { SetSigningProfileVersionArn(std::move(value)); return *this;}
-    inline LayerVersionContentOutput& WithSigningProfileVersionArn(const char* value) { SetSigningProfileVersionArn(value); return *this;}
+    template<typename SigningProfileVersionArnT = Aws::String>
+    void SetSigningProfileVersionArn(SigningProfileVersionArnT&& value) { m_signingProfileVersionArnHasBeenSet = true; m_signingProfileVersionArn = std::forward<SigningProfileVersionArnT>(value); }
+    template<typename SigningProfileVersionArnT = Aws::String>
+    LayerVersionContentOutput& WithSigningProfileVersionArn(SigningProfileVersionArnT&& value) { SetSigningProfileVersionArn(std::forward<SigningProfileVersionArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of a signing job.</p>
      */
-    inline const Aws::String& GetSigningJobArn() const{ return m_signingJobArn; }
+    inline const Aws::String& GetSigningJobArn() const { return m_signingJobArn; }
     inline bool SigningJobArnHasBeenSet() const { return m_signingJobArnHasBeenSet; }
-    inline void SetSigningJobArn(const Aws::String& value) { m_signingJobArnHasBeenSet = true; m_signingJobArn = value; }
-    inline void SetSigningJobArn(Aws::String&& value) { m_signingJobArnHasBeenSet = true; m_signingJobArn = std::move(value); }
-    inline void SetSigningJobArn(const char* value) { m_signingJobArnHasBeenSet = true; m_signingJobArn.assign(value); }
-    inline LayerVersionContentOutput& WithSigningJobArn(const Aws::String& value) { SetSigningJobArn(value); return *this;}
-    inline LayerVersionContentOutput& WithSigningJobArn(Aws::String&& value) { SetSigningJobArn(std::move(value)); return *this;}
-    inline LayerVersionContentOutput& WithSigningJobArn(const char* value) { SetSigningJobArn(value); return *this;}
+    template<typename SigningJobArnT = Aws::String>
+    void SetSigningJobArn(SigningJobArnT&& value) { m_signingJobArnHasBeenSet = true; m_signingJobArn = std::forward<SigningJobArnT>(value); }
+    template<typename SigningJobArnT = Aws::String>
+    LayerVersionContentOutput& WithSigningJobArn(SigningJobArnT&& value) { SetSigningJobArn(std::forward<SigningJobArnT>(value)); return *this;}
     ///@}
   private:
 
@@ -112,7 +104,7 @@ namespace Model
     Aws::String m_codeSha256;
     bool m_codeSha256HasBeenSet = false;
 
-    long long m_codeSize;
+    long long m_codeSize{0};
     bool m_codeSizeHasBeenSet = false;
 
     Aws::String m_signingProfileVersionArn;

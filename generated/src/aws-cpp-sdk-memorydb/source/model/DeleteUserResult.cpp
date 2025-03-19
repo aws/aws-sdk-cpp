@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteUserResult::DeleteUserResult()
-{
-}
-
 DeleteUserResult::DeleteUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DeleteUserResult& DeleteUserResult::operator =(const Aws::AmazonWebServiceResult
   if(jsonValue.ValueExists("User"))
   {
     m_user = jsonValue.GetObject("User");
-
+    m_userHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

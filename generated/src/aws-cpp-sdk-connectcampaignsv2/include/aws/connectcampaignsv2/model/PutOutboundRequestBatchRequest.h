@@ -26,7 +26,7 @@ namespace Model
   class PutOutboundRequestBatchRequest : public ConnectCampaignsV2Request
   {
   public:
-    AWS_CONNECTCAMPAIGNSV2_API PutOutboundRequestBatchRequest();
+    AWS_CONNECTCAMPAIGNSV2_API PutOutboundRequestBatchRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,26 +39,24 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline PutOutboundRequestBatchRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline PutOutboundRequestBatchRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline PutOutboundRequestBatchRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    PutOutboundRequestBatchRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<OutboundRequest>& GetOutboundRequests() const{ return m_outboundRequests; }
+    inline const Aws::Vector<OutboundRequest>& GetOutboundRequests() const { return m_outboundRequests; }
     inline bool OutboundRequestsHasBeenSet() const { return m_outboundRequestsHasBeenSet; }
-    inline void SetOutboundRequests(const Aws::Vector<OutboundRequest>& value) { m_outboundRequestsHasBeenSet = true; m_outboundRequests = value; }
-    inline void SetOutboundRequests(Aws::Vector<OutboundRequest>&& value) { m_outboundRequestsHasBeenSet = true; m_outboundRequests = std::move(value); }
-    inline PutOutboundRequestBatchRequest& WithOutboundRequests(const Aws::Vector<OutboundRequest>& value) { SetOutboundRequests(value); return *this;}
-    inline PutOutboundRequestBatchRequest& WithOutboundRequests(Aws::Vector<OutboundRequest>&& value) { SetOutboundRequests(std::move(value)); return *this;}
-    inline PutOutboundRequestBatchRequest& AddOutboundRequests(const OutboundRequest& value) { m_outboundRequestsHasBeenSet = true; m_outboundRequests.push_back(value); return *this; }
-    inline PutOutboundRequestBatchRequest& AddOutboundRequests(OutboundRequest&& value) { m_outboundRequestsHasBeenSet = true; m_outboundRequests.push_back(std::move(value)); return *this; }
+    template<typename OutboundRequestsT = Aws::Vector<OutboundRequest>>
+    void SetOutboundRequests(OutboundRequestsT&& value) { m_outboundRequestsHasBeenSet = true; m_outboundRequests = std::forward<OutboundRequestsT>(value); }
+    template<typename OutboundRequestsT = Aws::Vector<OutboundRequest>>
+    PutOutboundRequestBatchRequest& WithOutboundRequests(OutboundRequestsT&& value) { SetOutboundRequests(std::forward<OutboundRequestsT>(value)); return *this;}
+    template<typename OutboundRequestsT = OutboundRequest>
+    PutOutboundRequestBatchRequest& AddOutboundRequests(OutboundRequestsT&& value) { m_outboundRequestsHasBeenSet = true; m_outboundRequests.emplace_back(std::forward<OutboundRequestsT>(value)); return *this; }
     ///@}
   private:
 

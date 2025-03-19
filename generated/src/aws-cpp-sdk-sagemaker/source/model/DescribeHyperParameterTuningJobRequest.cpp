@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeHyperParameterTuningJobRequest::DescribeHyperParameterTuningJobRequest() : 
-    m_hyperParameterTuningJobNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeHyperParameterTuningJobRequest::SerializePayload() const
 {
   JsonValue payload;

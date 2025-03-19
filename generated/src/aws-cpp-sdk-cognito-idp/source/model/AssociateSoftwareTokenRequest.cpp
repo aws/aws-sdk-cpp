@@ -12,12 +12,6 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateSoftwareTokenRequest::AssociateSoftwareTokenRequest() : 
-    m_accessTokenHasBeenSet(false),
-    m_sessionHasBeenSet(false)
-{
-}
-
 Aws::String AssociateSoftwareTokenRequest::SerializePayload() const
 {
   JsonValue payload;

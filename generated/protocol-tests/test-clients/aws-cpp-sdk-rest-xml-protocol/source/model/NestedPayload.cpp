@@ -20,14 +20,7 @@ namespace RestXmlProtocol
 namespace Model
 {
 
-NestedPayload::NestedPayload() : 
-    m_greetingHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 NestedPayload::NestedPayload(const XmlNode& xmlNode)
-  : NestedPayload()
 {
   *this = xmlNode;
 }

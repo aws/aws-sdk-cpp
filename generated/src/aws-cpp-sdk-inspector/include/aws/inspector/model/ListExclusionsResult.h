@@ -28,7 +28,7 @@ namespace Model
   class ListExclusionsResult
   {
   public:
-    AWS_INSPECTOR_API ListExclusionsResult();
+    AWS_INSPECTOR_API ListExclusionsResult() = default;
     AWS_INSPECTOR_API ListExclusionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_INSPECTOR_API ListExclusionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,14 +37,13 @@ namespace Model
     /**
      * <p>A list of exclusions' ARNs returned by the action.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExclusionArns() const{ return m_exclusionArns; }
-    inline void SetExclusionArns(const Aws::Vector<Aws::String>& value) { m_exclusionArns = value; }
-    inline void SetExclusionArns(Aws::Vector<Aws::String>&& value) { m_exclusionArns = std::move(value); }
-    inline ListExclusionsResult& WithExclusionArns(const Aws::Vector<Aws::String>& value) { SetExclusionArns(value); return *this;}
-    inline ListExclusionsResult& WithExclusionArns(Aws::Vector<Aws::String>&& value) { SetExclusionArns(std::move(value)); return *this;}
-    inline ListExclusionsResult& AddExclusionArns(const Aws::String& value) { m_exclusionArns.push_back(value); return *this; }
-    inline ListExclusionsResult& AddExclusionArns(Aws::String&& value) { m_exclusionArns.push_back(std::move(value)); return *this; }
-    inline ListExclusionsResult& AddExclusionArns(const char* value) { m_exclusionArns.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetExclusionArns() const { return m_exclusionArns; }
+    template<typename ExclusionArnsT = Aws::Vector<Aws::String>>
+    void SetExclusionArns(ExclusionArnsT&& value) { m_exclusionArnsHasBeenSet = true; m_exclusionArns = std::forward<ExclusionArnsT>(value); }
+    template<typename ExclusionArnsT = Aws::Vector<Aws::String>>
+    ListExclusionsResult& WithExclusionArns(ExclusionArnsT&& value) { SetExclusionArns(std::forward<ExclusionArnsT>(value)); return *this;}
+    template<typename ExclusionArnsT = Aws::String>
+    ListExclusionsResult& AddExclusionArns(ExclusionArnsT&& value) { m_exclusionArnsHasBeenSet = true; m_exclusionArns.emplace_back(std::forward<ExclusionArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,32 +53,31 @@ namespace Model
      * nextToken parameter in a subsequent pagination request. If there is no more data
      * to be listed, this parameter is set to null.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListExclusionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListExclusionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListExclusionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListExclusionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListExclusionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListExclusionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListExclusionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListExclusionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_exclusionArns;
+    bool m_exclusionArnsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

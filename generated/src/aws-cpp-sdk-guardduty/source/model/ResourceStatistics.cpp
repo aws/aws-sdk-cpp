@@ -18,18 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-ResourceStatistics::ResourceStatistics() : 
-    m_accountIdHasBeenSet(false),
-    m_lastGeneratedAtHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_totalFindings(0),
-    m_totalFindingsHasBeenSet(false)
-{
-}
-
 ResourceStatistics::ResourceStatistics(JsonView jsonValue)
-  : ResourceStatistics()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ ResourceStatistics& ResourceStatistics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastGeneratedAt"))
   {
     m_lastGeneratedAt = jsonValue.GetDouble("lastGeneratedAt");
-
     m_lastGeneratedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceId"))
   {
     m_resourceId = jsonValue.GetString("resourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = jsonValue.GetString("resourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalFindings"))
   {
     m_totalFindings = jsonValue.GetInteger("totalFindings");
-
     m_totalFindingsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace Pipes
 namespace Model
 {
 
-DimensionMapping::DimensionMapping() : 
-    m_dimensionValueHasBeenSet(false),
-    m_dimensionValueType(DimensionValueType::NOT_SET),
-    m_dimensionValueTypeHasBeenSet(false),
-    m_dimensionNameHasBeenSet(false)
-{
-}
-
 DimensionMapping::DimensionMapping(JsonView jsonValue)
-  : DimensionMapping()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ DimensionMapping& DimensionMapping::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DimensionValue"))
   {
     m_dimensionValue = jsonValue.GetString("DimensionValue");
-
     m_dimensionValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DimensionValueType"))
   {
     m_dimensionValueType = DimensionValueTypeMapper::GetDimensionValueTypeForName(jsonValue.GetString("DimensionValueType"));
-
     m_dimensionValueTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DimensionName"))
   {
     m_dimensionName = jsonValue.GetString("DimensionName");
-
     m_dimensionNameHasBeenSet = true;
   }
-
   return *this;
 }
 

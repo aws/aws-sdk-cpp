@@ -18,13 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-GrpcGatewayRouteRewrite::GrpcGatewayRouteRewrite() : 
-    m_hostnameHasBeenSet(false)
-{
-}
-
 GrpcGatewayRouteRewrite::GrpcGatewayRouteRewrite(JsonView jsonValue)
-  : GrpcGatewayRouteRewrite()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ GrpcGatewayRouteRewrite& GrpcGatewayRouteRewrite::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("hostname"))
   {
     m_hostname = jsonValue.GetObject("hostname");
-
     m_hostnameHasBeenSet = true;
   }
-
   return *this;
 }
 

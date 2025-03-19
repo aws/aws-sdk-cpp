@@ -12,12 +12,6 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateApprovalRuleTemplateNameRequest::UpdateApprovalRuleTemplateNameRequest() : 
-    m_oldApprovalRuleTemplateNameHasBeenSet(false),
-    m_newApprovalRuleTemplateNameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateApprovalRuleTemplateNameRequest::SerializePayload() const
 {
   JsonValue payload;

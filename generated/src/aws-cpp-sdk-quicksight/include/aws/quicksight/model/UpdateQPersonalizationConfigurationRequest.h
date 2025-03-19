@@ -22,7 +22,7 @@ namespace Model
   class UpdateQPersonalizationConfigurationRequest : public QuickSightRequest
   {
   public:
-    AWS_QUICKSIGHT_API UpdateQPersonalizationConfigurationRequest();
+    AWS_QUICKSIGHT_API UpdateQPersonalizationConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
      * <p>The ID of the Amazon Web Services account account that contains the
      * personalization configuration that the user wants to update.</p>
      */
-    inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
+    inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-    inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
-    inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
-    inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
-    inline UpdateQPersonalizationConfigurationRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
-    inline UpdateQPersonalizationConfigurationRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
-    inline UpdateQPersonalizationConfigurationRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+    template<typename AwsAccountIdT = Aws::String>
+    void SetAwsAccountId(AwsAccountIdT&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::forward<AwsAccountIdT>(value); }
+    template<typename AwsAccountIdT = Aws::String>
+    UpdateQPersonalizationConfigurationRequest& WithAwsAccountId(AwsAccountIdT&& value) { SetAwsAccountId(std::forward<AwsAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,19 +52,17 @@ namespace Model
      * specific metadata, specifically location and job information, in your IAM
      * Identity Center instance.</p>
      */
-    inline const PersonalizationMode& GetPersonalizationMode() const{ return m_personalizationMode; }
+    inline PersonalizationMode GetPersonalizationMode() const { return m_personalizationMode; }
     inline bool PersonalizationModeHasBeenSet() const { return m_personalizationModeHasBeenSet; }
-    inline void SetPersonalizationMode(const PersonalizationMode& value) { m_personalizationModeHasBeenSet = true; m_personalizationMode = value; }
-    inline void SetPersonalizationMode(PersonalizationMode&& value) { m_personalizationModeHasBeenSet = true; m_personalizationMode = std::move(value); }
-    inline UpdateQPersonalizationConfigurationRequest& WithPersonalizationMode(const PersonalizationMode& value) { SetPersonalizationMode(value); return *this;}
-    inline UpdateQPersonalizationConfigurationRequest& WithPersonalizationMode(PersonalizationMode&& value) { SetPersonalizationMode(std::move(value)); return *this;}
+    inline void SetPersonalizationMode(PersonalizationMode value) { m_personalizationModeHasBeenSet = true; m_personalizationMode = value; }
+    inline UpdateQPersonalizationConfigurationRequest& WithPersonalizationMode(PersonalizationMode value) { SetPersonalizationMode(value); return *this;}
     ///@}
   private:
 
     Aws::String m_awsAccountId;
     bool m_awsAccountIdHasBeenSet = false;
 
-    PersonalizationMode m_personalizationMode;
+    PersonalizationMode m_personalizationMode{PersonalizationMode::NOT_SET};
     bool m_personalizationModeHasBeenSet = false;
   };
 

@@ -20,14 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-MetricStreamStatisticsConfiguration::MetricStreamStatisticsConfiguration() : 
-    m_includeMetricsHasBeenSet(false),
-    m_additionalStatisticsHasBeenSet(false)
-{
-}
-
 MetricStreamStatisticsConfiguration::MetricStreamStatisticsConfiguration(const XmlNode& xmlNode)
-  : MetricStreamStatisticsConfiguration()
 {
   *this = xmlNode;
 }
@@ -42,6 +35,7 @@ MetricStreamStatisticsConfiguration& MetricStreamStatisticsConfiguration::operat
     if(!includeMetricsNode.IsNull())
     {
       XmlNode includeMetricsMember = includeMetricsNode.FirstChild("member");
+      m_includeMetricsHasBeenSet = !includeMetricsMember.IsNull();
       while(!includeMetricsMember.IsNull())
       {
         m_includeMetrics.push_back(includeMetricsMember);
@@ -54,6 +48,7 @@ MetricStreamStatisticsConfiguration& MetricStreamStatisticsConfiguration::operat
     if(!additionalStatisticsNode.IsNull())
     {
       XmlNode additionalStatisticsMember = additionalStatisticsNode.FirstChild("member");
+      m_additionalStatisticsHasBeenSet = !additionalStatisticsMember.IsNull();
       while(!additionalStatisticsMember.IsNull())
       {
         m_additionalStatistics.push_back(additionalStatisticsMember.GetText());

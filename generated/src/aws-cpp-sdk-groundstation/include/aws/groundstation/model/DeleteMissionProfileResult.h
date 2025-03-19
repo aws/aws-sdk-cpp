@@ -32,7 +32,7 @@ namespace Model
   class DeleteMissionProfileResult
   {
   public:
-    AWS_GROUNDSTATION_API DeleteMissionProfileResult();
+    AWS_GROUNDSTATION_API DeleteMissionProfileResult() = default;
     AWS_GROUNDSTATION_API DeleteMissionProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GROUNDSTATION_API DeleteMissionProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,30 +41,28 @@ namespace Model
     /**
      * <p>UUID of a mission profile.</p>
      */
-    inline const Aws::String& GetMissionProfileId() const{ return m_missionProfileId; }
-    inline void SetMissionProfileId(const Aws::String& value) { m_missionProfileId = value; }
-    inline void SetMissionProfileId(Aws::String&& value) { m_missionProfileId = std::move(value); }
-    inline void SetMissionProfileId(const char* value) { m_missionProfileId.assign(value); }
-    inline DeleteMissionProfileResult& WithMissionProfileId(const Aws::String& value) { SetMissionProfileId(value); return *this;}
-    inline DeleteMissionProfileResult& WithMissionProfileId(Aws::String&& value) { SetMissionProfileId(std::move(value)); return *this;}
-    inline DeleteMissionProfileResult& WithMissionProfileId(const char* value) { SetMissionProfileId(value); return *this;}
+    inline const Aws::String& GetMissionProfileId() const { return m_missionProfileId; }
+    template<typename MissionProfileIdT = Aws::String>
+    void SetMissionProfileId(MissionProfileIdT&& value) { m_missionProfileIdHasBeenSet = true; m_missionProfileId = std::forward<MissionProfileIdT>(value); }
+    template<typename MissionProfileIdT = Aws::String>
+    DeleteMissionProfileResult& WithMissionProfileId(MissionProfileIdT&& value) { SetMissionProfileId(std::forward<MissionProfileIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteMissionProfileResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteMissionProfileResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteMissionProfileResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteMissionProfileResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_missionProfileId;
+    bool m_missionProfileIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

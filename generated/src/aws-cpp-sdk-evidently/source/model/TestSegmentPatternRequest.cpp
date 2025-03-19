@@ -12,12 +12,6 @@ using namespace Aws::CloudWatchEvidently::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-TestSegmentPatternRequest::TestSegmentPatternRequest() : 
-    m_patternHasBeenSet(false),
-    m_payloadHasBeenSet(false)
-{
-}
-
 Aws::String TestSegmentPatternRequest::SerializePayload() const
 {
   JsonValue payload;

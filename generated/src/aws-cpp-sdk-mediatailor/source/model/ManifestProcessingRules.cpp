@@ -18,13 +18,7 @@ namespace MediaTailor
 namespace Model
 {
 
-ManifestProcessingRules::ManifestProcessingRules() : 
-    m_adMarkerPassthroughHasBeenSet(false)
-{
-}
-
 ManifestProcessingRules::ManifestProcessingRules(JsonView jsonValue)
-  : ManifestProcessingRules()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ManifestProcessingRules& ManifestProcessingRules::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AdMarkerPassthrough"))
   {
     m_adMarkerPassthrough = jsonValue.GetObject("AdMarkerPassthrough");
-
     m_adMarkerPassthroughHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace GlobalAccelerator
 namespace Model
 {
 
-PortOverride::PortOverride() : 
-    m_listenerPort(0),
-    m_listenerPortHasBeenSet(false),
-    m_endpointPort(0),
-    m_endpointPortHasBeenSet(false)
-{
-}
-
 PortOverride::PortOverride(JsonView jsonValue)
-  : PortOverride()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ PortOverride& PortOverride::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ListenerPort"))
   {
     m_listenerPort = jsonValue.GetInteger("ListenerPort");
-
     m_listenerPortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointPort"))
   {
     m_endpointPort = jsonValue.GetInteger("EndpointPort");
-
     m_endpointPortHasBeenSet = true;
   }
-
   return *this;
 }
 

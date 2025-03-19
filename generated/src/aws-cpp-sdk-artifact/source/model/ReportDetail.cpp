@@ -18,37 +18,7 @@ namespace Artifact
 namespace Model
 {
 
-ReportDetail::ReportDetail() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_periodStartHasBeenSet(false),
-    m_periodEndHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastModifiedAtHasBeenSet(false),
-    m_deletedAtHasBeenSet(false),
-    m_state(PublishedState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_seriesHasBeenSet(false),
-    m_categoryHasBeenSet(false),
-    m_companyNameHasBeenSet(false),
-    m_productNameHasBeenSet(false),
-    m_termArnHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false),
-    m_acceptanceType(AcceptanceType::NOT_SET),
-    m_acceptanceTypeHasBeenSet(false),
-    m_sequenceNumber(0),
-    m_sequenceNumberHasBeenSet(false),
-    m_uploadState(UploadState::NOT_SET),
-    m_uploadStateHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
-{
-}
-
 ReportDetail::ReportDetail(JsonView jsonValue)
-  : ReportDetail()
 {
   *this = jsonValue;
 }
@@ -58,143 +28,103 @@ ReportDetail& ReportDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("periodStart"))
   {
     m_periodStart = jsonValue.GetString("periodStart");
-
     m_periodStartHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("periodEnd"))
   {
     m_periodEnd = jsonValue.GetString("periodEnd");
-
     m_periodEndHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedAt"))
   {
     m_lastModifiedAt = jsonValue.GetString("lastModifiedAt");
-
     m_lastModifiedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deletedAt"))
   {
     m_deletedAt = jsonValue.GetString("deletedAt");
-
     m_deletedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = PublishedStateMapper::GetPublishedStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("series"))
   {
     m_series = jsonValue.GetString("series");
-
     m_seriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("category"))
   {
     m_category = jsonValue.GetString("category");
-
     m_categoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("companyName"))
   {
     m_companyName = jsonValue.GetString("companyName");
-
     m_companyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("productName"))
   {
     m_productName = jsonValue.GetString("productName");
-
     m_productNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("termArn"))
   {
     m_termArn = jsonValue.GetString("termArn");
-
     m_termArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetInt64("version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("acceptanceType"))
   {
     m_acceptanceType = AcceptanceTypeMapper::GetAcceptanceTypeForName(jsonValue.GetString("acceptanceType"));
-
     m_acceptanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sequenceNumber"))
   {
     m_sequenceNumber = jsonValue.GetInt64("sequenceNumber");
-
     m_sequenceNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("uploadState"))
   {
     m_uploadState = UploadStateMapper::GetUploadStateForName(jsonValue.GetString("uploadState"));
-
     m_uploadStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusMessage"))
   {
     m_statusMessage = jsonValue.GetString("statusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

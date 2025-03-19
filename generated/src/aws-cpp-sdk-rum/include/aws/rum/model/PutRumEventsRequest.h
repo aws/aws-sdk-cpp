@@ -25,7 +25,7 @@ namespace Model
   class PutRumEventsRequest : public CloudWatchRUMRequest
   {
   public:
-    AWS_CLOUDWATCHRUM_API PutRumEventsRequest();
+    AWS_CLOUDWATCHRUM_API PutRumEventsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-resource-policies.html">Using
      * resource-based policies with CloudWatch RUM</a>.</p>
      */
-    inline const Aws::String& GetAlias() const{ return m_alias; }
+    inline const Aws::String& GetAlias() const { return m_alias; }
     inline bool AliasHasBeenSet() const { return m_aliasHasBeenSet; }
-    inline void SetAlias(const Aws::String& value) { m_aliasHasBeenSet = true; m_alias = value; }
-    inline void SetAlias(Aws::String&& value) { m_aliasHasBeenSet = true; m_alias = std::move(value); }
-    inline void SetAlias(const char* value) { m_aliasHasBeenSet = true; m_alias.assign(value); }
-    inline PutRumEventsRequest& WithAlias(const Aws::String& value) { SetAlias(value); return *this;}
-    inline PutRumEventsRequest& WithAlias(Aws::String&& value) { SetAlias(std::move(value)); return *this;}
-    inline PutRumEventsRequest& WithAlias(const char* value) { SetAlias(value); return *this;}
+    template<typename AliasT = Aws::String>
+    void SetAlias(AliasT&& value) { m_aliasHasBeenSet = true; m_alias = std::forward<AliasT>(value); }
+    template<typename AliasT = Aws::String>
+    PutRumEventsRequest& WithAlias(AliasT&& value) { SetAlias(std::forward<AliasT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,54 +58,50 @@ namespace Model
      * <p>A structure that contains information about the app monitor that collected
      * this telemetry information.</p>
      */
-    inline const AppMonitorDetails& GetAppMonitorDetails() const{ return m_appMonitorDetails; }
+    inline const AppMonitorDetails& GetAppMonitorDetails() const { return m_appMonitorDetails; }
     inline bool AppMonitorDetailsHasBeenSet() const { return m_appMonitorDetailsHasBeenSet; }
-    inline void SetAppMonitorDetails(const AppMonitorDetails& value) { m_appMonitorDetailsHasBeenSet = true; m_appMonitorDetails = value; }
-    inline void SetAppMonitorDetails(AppMonitorDetails&& value) { m_appMonitorDetailsHasBeenSet = true; m_appMonitorDetails = std::move(value); }
-    inline PutRumEventsRequest& WithAppMonitorDetails(const AppMonitorDetails& value) { SetAppMonitorDetails(value); return *this;}
-    inline PutRumEventsRequest& WithAppMonitorDetails(AppMonitorDetails&& value) { SetAppMonitorDetails(std::move(value)); return *this;}
+    template<typename AppMonitorDetailsT = AppMonitorDetails>
+    void SetAppMonitorDetails(AppMonitorDetailsT&& value) { m_appMonitorDetailsHasBeenSet = true; m_appMonitorDetails = std::forward<AppMonitorDetailsT>(value); }
+    template<typename AppMonitorDetailsT = AppMonitorDetails>
+    PutRumEventsRequest& WithAppMonitorDetails(AppMonitorDetailsT&& value) { SetAppMonitorDetails(std::forward<AppMonitorDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier for this batch of RUM event data.</p>
      */
-    inline const Aws::String& GetBatchId() const{ return m_batchId; }
+    inline const Aws::String& GetBatchId() const { return m_batchId; }
     inline bool BatchIdHasBeenSet() const { return m_batchIdHasBeenSet; }
-    inline void SetBatchId(const Aws::String& value) { m_batchIdHasBeenSet = true; m_batchId = value; }
-    inline void SetBatchId(Aws::String&& value) { m_batchIdHasBeenSet = true; m_batchId = std::move(value); }
-    inline void SetBatchId(const char* value) { m_batchIdHasBeenSet = true; m_batchId.assign(value); }
-    inline PutRumEventsRequest& WithBatchId(const Aws::String& value) { SetBatchId(value); return *this;}
-    inline PutRumEventsRequest& WithBatchId(Aws::String&& value) { SetBatchId(std::move(value)); return *this;}
-    inline PutRumEventsRequest& WithBatchId(const char* value) { SetBatchId(value); return *this;}
+    template<typename BatchIdT = Aws::String>
+    void SetBatchId(BatchIdT&& value) { m_batchIdHasBeenSet = true; m_batchId = std::forward<BatchIdT>(value); }
+    template<typename BatchIdT = Aws::String>
+    PutRumEventsRequest& WithBatchId(BatchIdT&& value) { SetBatchId(std::forward<BatchIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the app monitor that is sending this data.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline PutRumEventsRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline PutRumEventsRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline PutRumEventsRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    PutRumEventsRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of structures that contain the telemetry event data.</p>
      */
-    inline const Aws::Vector<RumEvent>& GetRumEvents() const{ return m_rumEvents; }
+    inline const Aws::Vector<RumEvent>& GetRumEvents() const { return m_rumEvents; }
     inline bool RumEventsHasBeenSet() const { return m_rumEventsHasBeenSet; }
-    inline void SetRumEvents(const Aws::Vector<RumEvent>& value) { m_rumEventsHasBeenSet = true; m_rumEvents = value; }
-    inline void SetRumEvents(Aws::Vector<RumEvent>&& value) { m_rumEventsHasBeenSet = true; m_rumEvents = std::move(value); }
-    inline PutRumEventsRequest& WithRumEvents(const Aws::Vector<RumEvent>& value) { SetRumEvents(value); return *this;}
-    inline PutRumEventsRequest& WithRumEvents(Aws::Vector<RumEvent>&& value) { SetRumEvents(std::move(value)); return *this;}
-    inline PutRumEventsRequest& AddRumEvents(const RumEvent& value) { m_rumEventsHasBeenSet = true; m_rumEvents.push_back(value); return *this; }
-    inline PutRumEventsRequest& AddRumEvents(RumEvent&& value) { m_rumEventsHasBeenSet = true; m_rumEvents.push_back(std::move(value)); return *this; }
+    template<typename RumEventsT = Aws::Vector<RumEvent>>
+    void SetRumEvents(RumEventsT&& value) { m_rumEventsHasBeenSet = true; m_rumEvents = std::forward<RumEventsT>(value); }
+    template<typename RumEventsT = Aws::Vector<RumEvent>>
+    PutRumEventsRequest& WithRumEvents(RumEventsT&& value) { SetRumEvents(std::forward<RumEventsT>(value)); return *this;}
+    template<typename RumEventsT = RumEvent>
+    PutRumEventsRequest& AddRumEvents(RumEventsT&& value) { m_rumEventsHasBeenSet = true; m_rumEvents.emplace_back(std::forward<RumEventsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -115,12 +109,12 @@ namespace Model
      * <p>A structure that contains information about the user session that this batch
      * of events was collected from.</p>
      */
-    inline const UserDetails& GetUserDetails() const{ return m_userDetails; }
+    inline const UserDetails& GetUserDetails() const { return m_userDetails; }
     inline bool UserDetailsHasBeenSet() const { return m_userDetailsHasBeenSet; }
-    inline void SetUserDetails(const UserDetails& value) { m_userDetailsHasBeenSet = true; m_userDetails = value; }
-    inline void SetUserDetails(UserDetails&& value) { m_userDetailsHasBeenSet = true; m_userDetails = std::move(value); }
-    inline PutRumEventsRequest& WithUserDetails(const UserDetails& value) { SetUserDetails(value); return *this;}
-    inline PutRumEventsRequest& WithUserDetails(UserDetails&& value) { SetUserDetails(std::move(value)); return *this;}
+    template<typename UserDetailsT = UserDetails>
+    void SetUserDetails(UserDetailsT&& value) { m_userDetailsHasBeenSet = true; m_userDetails = std::forward<UserDetailsT>(value); }
+    template<typename UserDetailsT = UserDetails>
+    PutRumEventsRequest& WithUserDetails(UserDetailsT&& value) { SetUserDetails(std::forward<UserDetailsT>(value)); return *this;}
     ///@}
   private:
 

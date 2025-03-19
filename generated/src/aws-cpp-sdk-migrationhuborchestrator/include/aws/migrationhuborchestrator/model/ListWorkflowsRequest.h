@@ -26,7 +26,7 @@ namespace Model
   class ListWorkflowsRequest : public MigrationHubOrchestratorRequest
   {
   public:
-    AWS_MIGRATIONHUBORCHESTRATOR_API ListWorkflowsRequest();
+    AWS_MIGRATIONHUBORCHESTRATOR_API ListWorkflowsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p>The maximum number of results that can be returned.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListWorkflowsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -53,72 +53,62 @@ namespace Model
     /**
      * <p>The pagination token.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListWorkflowsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListWorkflowsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListWorkflowsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListWorkflowsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the template.</p>
      */
-    inline const Aws::String& GetTemplateId() const{ return m_templateId; }
+    inline const Aws::String& GetTemplateId() const { return m_templateId; }
     inline bool TemplateIdHasBeenSet() const { return m_templateIdHasBeenSet; }
-    inline void SetTemplateId(const Aws::String& value) { m_templateIdHasBeenSet = true; m_templateId = value; }
-    inline void SetTemplateId(Aws::String&& value) { m_templateIdHasBeenSet = true; m_templateId = std::move(value); }
-    inline void SetTemplateId(const char* value) { m_templateIdHasBeenSet = true; m_templateId.assign(value); }
-    inline ListWorkflowsRequest& WithTemplateId(const Aws::String& value) { SetTemplateId(value); return *this;}
-    inline ListWorkflowsRequest& WithTemplateId(Aws::String&& value) { SetTemplateId(std::move(value)); return *this;}
-    inline ListWorkflowsRequest& WithTemplateId(const char* value) { SetTemplateId(value); return *this;}
+    template<typename TemplateIdT = Aws::String>
+    void SetTemplateId(TemplateIdT&& value) { m_templateIdHasBeenSet = true; m_templateId = std::forward<TemplateIdT>(value); }
+    template<typename TemplateIdT = Aws::String>
+    ListWorkflowsRequest& WithTemplateId(TemplateIdT&& value) { SetTemplateId(std::forward<TemplateIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the application configured in Application Discovery Service.</p>
      */
-    inline const Aws::String& GetAdsApplicationConfigurationName() const{ return m_adsApplicationConfigurationName; }
+    inline const Aws::String& GetAdsApplicationConfigurationName() const { return m_adsApplicationConfigurationName; }
     inline bool AdsApplicationConfigurationNameHasBeenSet() const { return m_adsApplicationConfigurationNameHasBeenSet; }
-    inline void SetAdsApplicationConfigurationName(const Aws::String& value) { m_adsApplicationConfigurationNameHasBeenSet = true; m_adsApplicationConfigurationName = value; }
-    inline void SetAdsApplicationConfigurationName(Aws::String&& value) { m_adsApplicationConfigurationNameHasBeenSet = true; m_adsApplicationConfigurationName = std::move(value); }
-    inline void SetAdsApplicationConfigurationName(const char* value) { m_adsApplicationConfigurationNameHasBeenSet = true; m_adsApplicationConfigurationName.assign(value); }
-    inline ListWorkflowsRequest& WithAdsApplicationConfigurationName(const Aws::String& value) { SetAdsApplicationConfigurationName(value); return *this;}
-    inline ListWorkflowsRequest& WithAdsApplicationConfigurationName(Aws::String&& value) { SetAdsApplicationConfigurationName(std::move(value)); return *this;}
-    inline ListWorkflowsRequest& WithAdsApplicationConfigurationName(const char* value) { SetAdsApplicationConfigurationName(value); return *this;}
+    template<typename AdsApplicationConfigurationNameT = Aws::String>
+    void SetAdsApplicationConfigurationName(AdsApplicationConfigurationNameT&& value) { m_adsApplicationConfigurationNameHasBeenSet = true; m_adsApplicationConfigurationName = std::forward<AdsApplicationConfigurationNameT>(value); }
+    template<typename AdsApplicationConfigurationNameT = Aws::String>
+    ListWorkflowsRequest& WithAdsApplicationConfigurationName(AdsApplicationConfigurationNameT&& value) { SetAdsApplicationConfigurationName(std::forward<AdsApplicationConfigurationNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the migration workflow.</p>
      */
-    inline const MigrationWorkflowStatusEnum& GetStatus() const{ return m_status; }
+    inline MigrationWorkflowStatusEnum GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const MigrationWorkflowStatusEnum& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(MigrationWorkflowStatusEnum&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ListWorkflowsRequest& WithStatus(const MigrationWorkflowStatusEnum& value) { SetStatus(value); return *this;}
-    inline ListWorkflowsRequest& WithStatus(MigrationWorkflowStatusEnum&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(MigrationWorkflowStatusEnum value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ListWorkflowsRequest& WithStatus(MigrationWorkflowStatusEnum value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the migration workflow.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ListWorkflowsRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ListWorkflowsRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ListWorkflowsRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ListWorkflowsRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
@@ -130,7 +120,7 @@ namespace Model
     Aws::String m_adsApplicationConfigurationName;
     bool m_adsApplicationConfigurationNameHasBeenSet = false;
 
-    MigrationWorkflowStatusEnum m_status;
+    MigrationWorkflowStatusEnum m_status{MigrationWorkflowStatusEnum::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_name;

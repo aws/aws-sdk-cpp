@@ -20,13 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-PathPatternConditionConfig::PathPatternConditionConfig() : 
-    m_valuesHasBeenSet(false)
-{
-}
-
 PathPatternConditionConfig::PathPatternConditionConfig(const XmlNode& xmlNode)
-  : PathPatternConditionConfig()
 {
   *this = xmlNode;
 }
@@ -41,6 +35,7 @@ PathPatternConditionConfig& PathPatternConditionConfig::operator =(const XmlNode
     if(!valuesNode.IsNull())
     {
       XmlNode valuesMember = valuesNode.FirstChild("member");
+      m_valuesHasBeenSet = !valuesMember.IsNull();
       while(!valuesMember.IsNull())
       {
         m_values.push_back(valuesMember.GetText());

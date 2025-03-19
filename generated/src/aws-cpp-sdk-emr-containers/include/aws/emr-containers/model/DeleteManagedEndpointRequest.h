@@ -21,7 +21,7 @@ namespace Model
   class DeleteManagedEndpointRequest : public EMRContainersRequest
   {
   public:
-    AWS_EMRCONTAINERS_API DeleteManagedEndpointRequest();
+    AWS_EMRCONTAINERS_API DeleteManagedEndpointRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>The ID of the managed endpoint.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline DeleteManagedEndpointRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline DeleteManagedEndpointRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline DeleteManagedEndpointRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    DeleteManagedEndpointRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the endpoint's virtual cluster.</p>
      */
-    inline const Aws::String& GetVirtualClusterId() const{ return m_virtualClusterId; }
+    inline const Aws::String& GetVirtualClusterId() const { return m_virtualClusterId; }
     inline bool VirtualClusterIdHasBeenSet() const { return m_virtualClusterIdHasBeenSet; }
-    inline void SetVirtualClusterId(const Aws::String& value) { m_virtualClusterIdHasBeenSet = true; m_virtualClusterId = value; }
-    inline void SetVirtualClusterId(Aws::String&& value) { m_virtualClusterIdHasBeenSet = true; m_virtualClusterId = std::move(value); }
-    inline void SetVirtualClusterId(const char* value) { m_virtualClusterIdHasBeenSet = true; m_virtualClusterId.assign(value); }
-    inline DeleteManagedEndpointRequest& WithVirtualClusterId(const Aws::String& value) { SetVirtualClusterId(value); return *this;}
-    inline DeleteManagedEndpointRequest& WithVirtualClusterId(Aws::String&& value) { SetVirtualClusterId(std::move(value)); return *this;}
-    inline DeleteManagedEndpointRequest& WithVirtualClusterId(const char* value) { SetVirtualClusterId(value); return *this;}
+    template<typename VirtualClusterIdT = Aws::String>
+    void SetVirtualClusterId(VirtualClusterIdT&& value) { m_virtualClusterIdHasBeenSet = true; m_virtualClusterId = std::forward<VirtualClusterIdT>(value); }
+    template<typename VirtualClusterIdT = Aws::String>
+    DeleteManagedEndpointRequest& WithVirtualClusterId(VirtualClusterIdT&& value) { SetVirtualClusterId(std::forward<VirtualClusterIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,14 +12,6 @@ using namespace Aws::PcaConnectorScep::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateChallengeRequest::CreateChallengeRequest() : 
-    m_connectorArnHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateChallengeRequest::SerializePayload() const
 {
   JsonValue payload;

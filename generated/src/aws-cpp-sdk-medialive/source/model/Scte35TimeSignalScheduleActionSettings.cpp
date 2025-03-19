@@ -18,13 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-Scte35TimeSignalScheduleActionSettings::Scte35TimeSignalScheduleActionSettings() : 
-    m_scte35DescriptorsHasBeenSet(false)
-{
-}
-
 Scte35TimeSignalScheduleActionSettings::Scte35TimeSignalScheduleActionSettings(JsonView jsonValue)
-  : Scte35TimeSignalScheduleActionSettings()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ Scte35TimeSignalScheduleActionSettings& Scte35TimeSignalScheduleActionSettings::
     }
     m_scte35DescriptorsHasBeenSet = true;
   }
-
   return *this;
 }
 

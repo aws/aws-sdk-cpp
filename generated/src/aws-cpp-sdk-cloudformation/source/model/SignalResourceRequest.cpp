@@ -10,15 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-SignalResourceRequest::SignalResourceRequest() : 
-    m_stackNameHasBeenSet(false),
-    m_logicalResourceIdHasBeenSet(false),
-    m_uniqueIdHasBeenSet(false),
-    m_status(ResourceSignalStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 Aws::String SignalResourceRequest::SerializePayload() const
 {
   Aws::StringStream ss;

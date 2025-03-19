@@ -32,7 +32,7 @@ namespace Model
   class SubModule
   {
   public:
-    AWS_CODECOMMIT_API SubModule();
+    AWS_CODECOMMIT_API SubModule() = default;
     AWS_CODECOMMIT_API SubModule(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECOMMIT_API SubModule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The commit ID that contains the reference to the submodule.</p>
      */
-    inline const Aws::String& GetCommitId() const{ return m_commitId; }
+    inline const Aws::String& GetCommitId() const { return m_commitId; }
     inline bool CommitIdHasBeenSet() const { return m_commitIdHasBeenSet; }
-    inline void SetCommitId(const Aws::String& value) { m_commitIdHasBeenSet = true; m_commitId = value; }
-    inline void SetCommitId(Aws::String&& value) { m_commitIdHasBeenSet = true; m_commitId = std::move(value); }
-    inline void SetCommitId(const char* value) { m_commitIdHasBeenSet = true; m_commitId.assign(value); }
-    inline SubModule& WithCommitId(const Aws::String& value) { SetCommitId(value); return *this;}
-    inline SubModule& WithCommitId(Aws::String&& value) { SetCommitId(std::move(value)); return *this;}
-    inline SubModule& WithCommitId(const char* value) { SetCommitId(value); return *this;}
+    template<typename CommitIdT = Aws::String>
+    void SetCommitId(CommitIdT&& value) { m_commitIdHasBeenSet = true; m_commitId = std::forward<CommitIdT>(value); }
+    template<typename CommitIdT = Aws::String>
+    SubModule& WithCommitId(CommitIdT&& value) { SetCommitId(std::forward<CommitIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>The fully qualified path to the folder that contains the reference to the
      * submodule.</p>
      */
-    inline const Aws::String& GetAbsolutePath() const{ return m_absolutePath; }
+    inline const Aws::String& GetAbsolutePath() const { return m_absolutePath; }
     inline bool AbsolutePathHasBeenSet() const { return m_absolutePathHasBeenSet; }
-    inline void SetAbsolutePath(const Aws::String& value) { m_absolutePathHasBeenSet = true; m_absolutePath = value; }
-    inline void SetAbsolutePath(Aws::String&& value) { m_absolutePathHasBeenSet = true; m_absolutePath = std::move(value); }
-    inline void SetAbsolutePath(const char* value) { m_absolutePathHasBeenSet = true; m_absolutePath.assign(value); }
-    inline SubModule& WithAbsolutePath(const Aws::String& value) { SetAbsolutePath(value); return *this;}
-    inline SubModule& WithAbsolutePath(Aws::String&& value) { SetAbsolutePath(std::move(value)); return *this;}
-    inline SubModule& WithAbsolutePath(const char* value) { SetAbsolutePath(value); return *this;}
+    template<typename AbsolutePathT = Aws::String>
+    void SetAbsolutePath(AbsolutePathT&& value) { m_absolutePathHasBeenSet = true; m_absolutePath = std::forward<AbsolutePathT>(value); }
+    template<typename AbsolutePathT = Aws::String>
+    SubModule& WithAbsolutePath(AbsolutePathT&& value) { SetAbsolutePath(std::forward<AbsolutePathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +68,12 @@ namespace Model
      * <p>The relative path of the submodule from the folder where the query
      * originated.</p>
      */
-    inline const Aws::String& GetRelativePath() const{ return m_relativePath; }
+    inline const Aws::String& GetRelativePath() const { return m_relativePath; }
     inline bool RelativePathHasBeenSet() const { return m_relativePathHasBeenSet; }
-    inline void SetRelativePath(const Aws::String& value) { m_relativePathHasBeenSet = true; m_relativePath = value; }
-    inline void SetRelativePath(Aws::String&& value) { m_relativePathHasBeenSet = true; m_relativePath = std::move(value); }
-    inline void SetRelativePath(const char* value) { m_relativePathHasBeenSet = true; m_relativePath.assign(value); }
-    inline SubModule& WithRelativePath(const Aws::String& value) { SetRelativePath(value); return *this;}
-    inline SubModule& WithRelativePath(Aws::String&& value) { SetRelativePath(std::move(value)); return *this;}
-    inline SubModule& WithRelativePath(const char* value) { SetRelativePath(value); return *this;}
+    template<typename RelativePathT = Aws::String>
+    void SetRelativePath(RelativePathT&& value) { m_relativePathHasBeenSet = true; m_relativePath = std::forward<RelativePathT>(value); }
+    template<typename RelativePathT = Aws::String>
+    SubModule& WithRelativePath(RelativePathT&& value) { SetRelativePath(std::forward<RelativePathT>(value)); return *this;}
     ///@}
   private:
 

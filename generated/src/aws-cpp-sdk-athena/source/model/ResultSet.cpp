@@ -18,14 +18,7 @@ namespace Athena
 namespace Model
 {
 
-ResultSet::ResultSet() : 
-    m_rowsHasBeenSet(false),
-    m_resultSetMetadataHasBeenSet(false)
-{
-}
-
 ResultSet::ResultSet(JsonView jsonValue)
-  : ResultSet()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ ResultSet& ResultSet::operator =(JsonView jsonValue)
     }
     m_rowsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResultSetMetadata"))
   {
     m_resultSetMetadata = jsonValue.GetObject("ResultSetMetadata");
-
     m_resultSetMetadataHasBeenSet = true;
   }
-
   return *this;
 }
 

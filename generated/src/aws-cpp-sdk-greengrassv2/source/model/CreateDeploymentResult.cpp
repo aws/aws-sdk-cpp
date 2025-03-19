@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateDeploymentResult::CreateDeploymentResult()
-{
-}
-
 CreateDeploymentResult::CreateDeploymentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ CreateDeploymentResult& CreateDeploymentResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("deploymentId"))
   {
     m_deploymentId = jsonValue.GetString("deploymentId");
-
+    m_deploymentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("iotJobId"))
   {
     m_iotJobId = jsonValue.GetString("iotJobId");
-
+    m_iotJobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("iotJobArn"))
   {
     m_iotJobArn = jsonValue.GetString("iotJobArn");
-
+    m_iotJobArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

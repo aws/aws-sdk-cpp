@@ -28,7 +28,7 @@ namespace Model
   class ModifyAddressAttributeResponse
   {
   public:
-    AWS_EC2_API ModifyAddressAttributeResponse();
+    AWS_EC2_API ModifyAddressAttributeResponse() = default;
     AWS_EC2_API ModifyAddressAttributeResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API ModifyAddressAttributeResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>Information about the Elastic IP address.</p>
      */
-    inline const AddressAttribute& GetAddress() const{ return m_address; }
-    inline void SetAddress(const AddressAttribute& value) { m_address = value; }
-    inline void SetAddress(AddressAttribute&& value) { m_address = std::move(value); }
-    inline ModifyAddressAttributeResponse& WithAddress(const AddressAttribute& value) { SetAddress(value); return *this;}
-    inline ModifyAddressAttributeResponse& WithAddress(AddressAttribute&& value) { SetAddress(std::move(value)); return *this;}
+    inline const AddressAttribute& GetAddress() const { return m_address; }
+    template<typename AddressT = AddressAttribute>
+    void SetAddress(AddressT&& value) { m_addressHasBeenSet = true; m_address = std::forward<AddressT>(value); }
+    template<typename AddressT = AddressAttribute>
+    ModifyAddressAttributeResponse& WithAddress(AddressT&& value) { SetAddress(std::forward<AddressT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ModifyAddressAttributeResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ModifyAddressAttributeResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ModifyAddressAttributeResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     AddressAttribute m_address;
+    bool m_addressHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

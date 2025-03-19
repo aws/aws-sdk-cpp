@@ -18,13 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-UnsatisfiedConnectionConditionsFlowValidationDetails::UnsatisfiedConnectionConditionsFlowValidationDetails() : 
-    m_connectionHasBeenSet(false)
-{
-}
-
 UnsatisfiedConnectionConditionsFlowValidationDetails::UnsatisfiedConnectionConditionsFlowValidationDetails(JsonView jsonValue)
-  : UnsatisfiedConnectionConditionsFlowValidationDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ UnsatisfiedConnectionConditionsFlowValidationDetails& UnsatisfiedConnectionCondi
   if(jsonValue.ValueExists("connection"))
   {
     m_connection = jsonValue.GetString("connection");
-
     m_connectionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -24,7 +24,7 @@ namespace Model
   class PutEventSelectorsRequest : public CloudTrailRequest
   {
   public:
-    AWS_CLOUDTRAIL_API PutEventSelectorsRequest();
+    AWS_CLOUDTRAIL_API PutEventSelectorsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -50,14 +50,12 @@ namespace Model
      * </ul> <p>If you specify a trail ARN, it must be in the following format.</p> <p>
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
-    inline const Aws::String& GetTrailName() const{ return m_trailName; }
+    inline const Aws::String& GetTrailName() const { return m_trailName; }
     inline bool TrailNameHasBeenSet() const { return m_trailNameHasBeenSet; }
-    inline void SetTrailName(const Aws::String& value) { m_trailNameHasBeenSet = true; m_trailName = value; }
-    inline void SetTrailName(Aws::String&& value) { m_trailNameHasBeenSet = true; m_trailName = std::move(value); }
-    inline void SetTrailName(const char* value) { m_trailNameHasBeenSet = true; m_trailName.assign(value); }
-    inline PutEventSelectorsRequest& WithTrailName(const Aws::String& value) { SetTrailName(value); return *this;}
-    inline PutEventSelectorsRequest& WithTrailName(Aws::String&& value) { SetTrailName(std::move(value)); return *this;}
-    inline PutEventSelectorsRequest& WithTrailName(const char* value) { SetTrailName(value); return *this;}
+    template<typename TrailNameT = Aws::String>
+    void SetTrailName(TrailNameT&& value) { m_trailNameHasBeenSet = true; m_trailName = std::forward<TrailNameT>(value); }
+    template<typename TrailNameT = Aws::String>
+    PutEventSelectorsRequest& WithTrailName(TrailNameT&& value) { SetTrailName(std::forward<TrailNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +71,14 @@ namespace Model
      * but not both. If you apply <code>EventSelectors</code> to a trail, any existing
      * <code>AdvancedEventSelectors</code> are overwritten.</p>
      */
-    inline const Aws::Vector<EventSelector>& GetEventSelectors() const{ return m_eventSelectors; }
+    inline const Aws::Vector<EventSelector>& GetEventSelectors() const { return m_eventSelectors; }
     inline bool EventSelectorsHasBeenSet() const { return m_eventSelectorsHasBeenSet; }
-    inline void SetEventSelectors(const Aws::Vector<EventSelector>& value) { m_eventSelectorsHasBeenSet = true; m_eventSelectors = value; }
-    inline void SetEventSelectors(Aws::Vector<EventSelector>&& value) { m_eventSelectorsHasBeenSet = true; m_eventSelectors = std::move(value); }
-    inline PutEventSelectorsRequest& WithEventSelectors(const Aws::Vector<EventSelector>& value) { SetEventSelectors(value); return *this;}
-    inline PutEventSelectorsRequest& WithEventSelectors(Aws::Vector<EventSelector>&& value) { SetEventSelectors(std::move(value)); return *this;}
-    inline PutEventSelectorsRequest& AddEventSelectors(const EventSelector& value) { m_eventSelectorsHasBeenSet = true; m_eventSelectors.push_back(value); return *this; }
-    inline PutEventSelectorsRequest& AddEventSelectors(EventSelector&& value) { m_eventSelectorsHasBeenSet = true; m_eventSelectors.push_back(std::move(value)); return *this; }
+    template<typename EventSelectorsT = Aws::Vector<EventSelector>>
+    void SetEventSelectors(EventSelectorsT&& value) { m_eventSelectorsHasBeenSet = true; m_eventSelectors = std::forward<EventSelectorsT>(value); }
+    template<typename EventSelectorsT = Aws::Vector<EventSelector>>
+    PutEventSelectorsRequest& WithEventSelectors(EventSelectorsT&& value) { SetEventSelectors(std::forward<EventSelectorsT>(value)); return *this;}
+    template<typename EventSelectorsT = EventSelector>
+    PutEventSelectorsRequest& AddEventSelectors(EventSelectorsT&& value) { m_eventSelectorsHasBeenSet = true; m_eventSelectors.emplace_back(std::forward<EventSelectorsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -99,14 +97,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-network-events-with-cloudtrail.html">Logging
      * network activity events</a> in the <i>CloudTrail User Guide</i>. </p>
      */
-    inline const Aws::Vector<AdvancedEventSelector>& GetAdvancedEventSelectors() const{ return m_advancedEventSelectors; }
+    inline const Aws::Vector<AdvancedEventSelector>& GetAdvancedEventSelectors() const { return m_advancedEventSelectors; }
     inline bool AdvancedEventSelectorsHasBeenSet() const { return m_advancedEventSelectorsHasBeenSet; }
-    inline void SetAdvancedEventSelectors(const Aws::Vector<AdvancedEventSelector>& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors = value; }
-    inline void SetAdvancedEventSelectors(Aws::Vector<AdvancedEventSelector>&& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors = std::move(value); }
-    inline PutEventSelectorsRequest& WithAdvancedEventSelectors(const Aws::Vector<AdvancedEventSelector>& value) { SetAdvancedEventSelectors(value); return *this;}
-    inline PutEventSelectorsRequest& WithAdvancedEventSelectors(Aws::Vector<AdvancedEventSelector>&& value) { SetAdvancedEventSelectors(std::move(value)); return *this;}
-    inline PutEventSelectorsRequest& AddAdvancedEventSelectors(const AdvancedEventSelector& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors.push_back(value); return *this; }
-    inline PutEventSelectorsRequest& AddAdvancedEventSelectors(AdvancedEventSelector&& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors.push_back(std::move(value)); return *this; }
+    template<typename AdvancedEventSelectorsT = Aws::Vector<AdvancedEventSelector>>
+    void SetAdvancedEventSelectors(AdvancedEventSelectorsT&& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors = std::forward<AdvancedEventSelectorsT>(value); }
+    template<typename AdvancedEventSelectorsT = Aws::Vector<AdvancedEventSelector>>
+    PutEventSelectorsRequest& WithAdvancedEventSelectors(AdvancedEventSelectorsT&& value) { SetAdvancedEventSelectors(std::forward<AdvancedEventSelectorsT>(value)); return *this;}
+    template<typename AdvancedEventSelectorsT = AdvancedEventSelector>
+    PutEventSelectorsRequest& AddAdvancedEventSelectors(AdvancedEventSelectorsT&& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors.emplace_back(std::forward<AdvancedEventSelectorsT>(value)); return *this; }
     ///@}
   private:
 

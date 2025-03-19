@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ItemsLimitConfiguration::ItemsLimitConfiguration() : 
-    m_itemsLimit(0),
-    m_itemsLimitHasBeenSet(false),
-    m_otherCategories(OtherCategories::NOT_SET),
-    m_otherCategoriesHasBeenSet(false)
-{
-}
-
 ItemsLimitConfiguration::ItemsLimitConfiguration(JsonView jsonValue)
-  : ItemsLimitConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ItemsLimitConfiguration& ItemsLimitConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ItemsLimit"))
   {
     m_itemsLimit = jsonValue.GetInt64("ItemsLimit");
-
     m_itemsLimitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OtherCategories"))
   {
     m_otherCategories = OtherCategoriesMapper::GetOtherCategoriesForName(jsonValue.GetString("OtherCategories"));
-
     m_otherCategoriesHasBeenSet = true;
   }
-
   return *this;
 }
 

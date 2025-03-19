@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetMergeOptionsResult::GetMergeOptionsResult()
-{
-}
-
 GetMergeOptionsResult::GetMergeOptionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,32 +32,30 @@ GetMergeOptionsResult& GetMergeOptionsResult::operator =(const Aws::AmazonWebSer
     {
       m_mergeOptions.push_back(MergeOptionTypeEnumMapper::GetMergeOptionTypeEnumForName(mergeOptionsJsonList[mergeOptionsIndex].AsString()));
     }
+    m_mergeOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceCommitId"))
   {
     m_sourceCommitId = jsonValue.GetString("sourceCommitId");
-
+    m_sourceCommitIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destinationCommitId"))
   {
     m_destinationCommitId = jsonValue.GetString("destinationCommitId");
-
+    m_destinationCommitIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("baseCommitId"))
   {
     m_baseCommitId = jsonValue.GetString("baseCommitId");
-
+    m_baseCommitIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

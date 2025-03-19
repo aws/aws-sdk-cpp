@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetGroupConfigurationResult::GetGroupConfigurationResult()
-{
-}
-
 GetGroupConfigurationResult::GetGroupConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetGroupConfigurationResult& GetGroupConfigurationResult::operator =(const Aws::
   if(jsonValue.ValueExists("GroupConfiguration"))
   {
     m_groupConfiguration = jsonValue.GetObject("GroupConfiguration");
-
+    m_groupConfigurationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

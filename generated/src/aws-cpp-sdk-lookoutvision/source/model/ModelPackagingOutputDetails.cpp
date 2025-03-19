@@ -18,13 +18,7 @@ namespace LookoutforVision
 namespace Model
 {
 
-ModelPackagingOutputDetails::ModelPackagingOutputDetails() : 
-    m_greengrassHasBeenSet(false)
-{
-}
-
 ModelPackagingOutputDetails::ModelPackagingOutputDetails(JsonView jsonValue)
-  : ModelPackagingOutputDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ModelPackagingOutputDetails& ModelPackagingOutputDetails::operator =(JsonView js
   if(jsonValue.ValueExists("Greengrass"))
   {
     m_greengrass = jsonValue.GetObject("Greengrass");
-
     m_greengrassHasBeenSet = true;
   }
-
   return *this;
 }
 

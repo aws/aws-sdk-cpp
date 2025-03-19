@@ -12,11 +12,6 @@ using namespace Aws::Backup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeRestoreJobRequest::DescribeRestoreJobRequest() : 
-    m_restoreJobIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeRestoreJobRequest::SerializePayload() const
 {
   return {};

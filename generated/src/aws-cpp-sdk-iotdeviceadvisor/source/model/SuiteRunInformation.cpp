@@ -18,25 +18,7 @@ namespace IoTDeviceAdvisor
 namespace Model
 {
 
-SuiteRunInformation::SuiteRunInformation() : 
-    m_suiteDefinitionIdHasBeenSet(false),
-    m_suiteDefinitionVersionHasBeenSet(false),
-    m_suiteDefinitionNameHasBeenSet(false),
-    m_suiteRunIdHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_endAtHasBeenSet(false),
-    m_status(SuiteRunStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_passed(0),
-    m_passedHasBeenSet(false),
-    m_failed(0),
-    m_failedHasBeenSet(false)
-{
-}
-
 SuiteRunInformation::SuiteRunInformation(JsonView jsonValue)
-  : SuiteRunInformation()
 {
   *this = jsonValue;
 }
@@ -46,73 +28,53 @@ SuiteRunInformation& SuiteRunInformation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("suiteDefinitionId"))
   {
     m_suiteDefinitionId = jsonValue.GetString("suiteDefinitionId");
-
     m_suiteDefinitionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("suiteDefinitionVersion"))
   {
     m_suiteDefinitionVersion = jsonValue.GetString("suiteDefinitionVersion");
-
     m_suiteDefinitionVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("suiteDefinitionName"))
   {
     m_suiteDefinitionName = jsonValue.GetString("suiteDefinitionName");
-
     m_suiteDefinitionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("suiteRunId"))
   {
     m_suiteRunId = jsonValue.GetString("suiteRunId");
-
     m_suiteRunIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startedAt"))
   {
     m_startedAt = jsonValue.GetDouble("startedAt");
-
     m_startedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endAt"))
   {
     m_endAt = jsonValue.GetDouble("endAt");
-
     m_endAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = SuiteRunStatusMapper::GetSuiteRunStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("passed"))
   {
     m_passed = jsonValue.GetInteger("passed");
-
     m_passedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failed"))
   {
     m_failed = jsonValue.GetInteger("failed");
-
     m_failedHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -29,7 +29,7 @@ namespace Model
   class ListOrdersResult
   {
   public:
-    AWS_OUTPOSTS_API ListOrdersResult();
+    AWS_OUTPOSTS_API ListOrdersResult() = default;
     AWS_OUTPOSTS_API ListOrdersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OUTPOSTS_API ListOrdersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,43 +38,42 @@ namespace Model
     /**
      * <p> Information about the orders. </p>
      */
-    inline const Aws::Vector<OrderSummary>& GetOrders() const{ return m_orders; }
-    inline void SetOrders(const Aws::Vector<OrderSummary>& value) { m_orders = value; }
-    inline void SetOrders(Aws::Vector<OrderSummary>&& value) { m_orders = std::move(value); }
-    inline ListOrdersResult& WithOrders(const Aws::Vector<OrderSummary>& value) { SetOrders(value); return *this;}
-    inline ListOrdersResult& WithOrders(Aws::Vector<OrderSummary>&& value) { SetOrders(std::move(value)); return *this;}
-    inline ListOrdersResult& AddOrders(const OrderSummary& value) { m_orders.push_back(value); return *this; }
-    inline ListOrdersResult& AddOrders(OrderSummary&& value) { m_orders.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<OrderSummary>& GetOrders() const { return m_orders; }
+    template<typename OrdersT = Aws::Vector<OrderSummary>>
+    void SetOrders(OrdersT&& value) { m_ordersHasBeenSet = true; m_orders = std::forward<OrdersT>(value); }
+    template<typename OrdersT = Aws::Vector<OrderSummary>>
+    ListOrdersResult& WithOrders(OrdersT&& value) { SetOrders(std::forward<OrdersT>(value)); return *this;}
+    template<typename OrdersT = OrderSummary>
+    ListOrdersResult& AddOrders(OrdersT&& value) { m_ordersHasBeenSet = true; m_orders.emplace_back(std::forward<OrdersT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListOrdersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListOrdersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListOrdersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListOrdersResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListOrdersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListOrdersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListOrdersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListOrdersResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<OrderSummary> m_orders;
+    bool m_ordersHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,12 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeRetentionConfigurationsRequest::DescribeRetentionConfigurationsRequest() : 
-    m_retentionConfigurationNamesHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeRetentionConfigurationsRequest::SerializePayload() const
 {
   JsonValue payload;

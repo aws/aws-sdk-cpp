@@ -34,7 +34,7 @@ namespace Model
   class AnomalyGroupStatistics
   {
   public:
-    AWS_LOOKOUTMETRICS_API AnomalyGroupStatistics();
+    AWS_LOOKOUTMETRICS_API AnomalyGroupStatistics() = default;
     AWS_LOOKOUTMETRICS_API AnomalyGroupStatistics(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTMETRICS_API AnomalyGroupStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,21 +44,19 @@ namespace Model
     /**
      * <p>The start of the time range that was searched.</p>
      */
-    inline const Aws::String& GetEvaluationStartDate() const{ return m_evaluationStartDate; }
+    inline const Aws::String& GetEvaluationStartDate() const { return m_evaluationStartDate; }
     inline bool EvaluationStartDateHasBeenSet() const { return m_evaluationStartDateHasBeenSet; }
-    inline void SetEvaluationStartDate(const Aws::String& value) { m_evaluationStartDateHasBeenSet = true; m_evaluationStartDate = value; }
-    inline void SetEvaluationStartDate(Aws::String&& value) { m_evaluationStartDateHasBeenSet = true; m_evaluationStartDate = std::move(value); }
-    inline void SetEvaluationStartDate(const char* value) { m_evaluationStartDateHasBeenSet = true; m_evaluationStartDate.assign(value); }
-    inline AnomalyGroupStatistics& WithEvaluationStartDate(const Aws::String& value) { SetEvaluationStartDate(value); return *this;}
-    inline AnomalyGroupStatistics& WithEvaluationStartDate(Aws::String&& value) { SetEvaluationStartDate(std::move(value)); return *this;}
-    inline AnomalyGroupStatistics& WithEvaluationStartDate(const char* value) { SetEvaluationStartDate(value); return *this;}
+    template<typename EvaluationStartDateT = Aws::String>
+    void SetEvaluationStartDate(EvaluationStartDateT&& value) { m_evaluationStartDateHasBeenSet = true; m_evaluationStartDate = std::forward<EvaluationStartDateT>(value); }
+    template<typename EvaluationStartDateT = Aws::String>
+    AnomalyGroupStatistics& WithEvaluationStartDate(EvaluationStartDateT&& value) { SetEvaluationStartDate(std::forward<EvaluationStartDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of groups found.</p>
      */
-    inline int GetTotalCount() const{ return m_totalCount; }
+    inline int GetTotalCount() const { return m_totalCount; }
     inline bool TotalCountHasBeenSet() const { return m_totalCountHasBeenSet; }
     inline void SetTotalCount(int value) { m_totalCountHasBeenSet = true; m_totalCount = value; }
     inline AnomalyGroupStatistics& WithTotalCount(int value) { SetTotalCount(value); return *this;}
@@ -68,21 +66,21 @@ namespace Model
     /**
      * <p>Statistics for individual metrics within the group.</p>
      */
-    inline const Aws::Vector<ItemizedMetricStats>& GetItemizedMetricStatsList() const{ return m_itemizedMetricStatsList; }
+    inline const Aws::Vector<ItemizedMetricStats>& GetItemizedMetricStatsList() const { return m_itemizedMetricStatsList; }
     inline bool ItemizedMetricStatsListHasBeenSet() const { return m_itemizedMetricStatsListHasBeenSet; }
-    inline void SetItemizedMetricStatsList(const Aws::Vector<ItemizedMetricStats>& value) { m_itemizedMetricStatsListHasBeenSet = true; m_itemizedMetricStatsList = value; }
-    inline void SetItemizedMetricStatsList(Aws::Vector<ItemizedMetricStats>&& value) { m_itemizedMetricStatsListHasBeenSet = true; m_itemizedMetricStatsList = std::move(value); }
-    inline AnomalyGroupStatistics& WithItemizedMetricStatsList(const Aws::Vector<ItemizedMetricStats>& value) { SetItemizedMetricStatsList(value); return *this;}
-    inline AnomalyGroupStatistics& WithItemizedMetricStatsList(Aws::Vector<ItemizedMetricStats>&& value) { SetItemizedMetricStatsList(std::move(value)); return *this;}
-    inline AnomalyGroupStatistics& AddItemizedMetricStatsList(const ItemizedMetricStats& value) { m_itemizedMetricStatsListHasBeenSet = true; m_itemizedMetricStatsList.push_back(value); return *this; }
-    inline AnomalyGroupStatistics& AddItemizedMetricStatsList(ItemizedMetricStats&& value) { m_itemizedMetricStatsListHasBeenSet = true; m_itemizedMetricStatsList.push_back(std::move(value)); return *this; }
+    template<typename ItemizedMetricStatsListT = Aws::Vector<ItemizedMetricStats>>
+    void SetItemizedMetricStatsList(ItemizedMetricStatsListT&& value) { m_itemizedMetricStatsListHasBeenSet = true; m_itemizedMetricStatsList = std::forward<ItemizedMetricStatsListT>(value); }
+    template<typename ItemizedMetricStatsListT = Aws::Vector<ItemizedMetricStats>>
+    AnomalyGroupStatistics& WithItemizedMetricStatsList(ItemizedMetricStatsListT&& value) { SetItemizedMetricStatsList(std::forward<ItemizedMetricStatsListT>(value)); return *this;}
+    template<typename ItemizedMetricStatsListT = ItemizedMetricStats>
+    AnomalyGroupStatistics& AddItemizedMetricStatsList(ItemizedMetricStatsListT&& value) { m_itemizedMetricStatsListHasBeenSet = true; m_itemizedMetricStatsList.emplace_back(std::forward<ItemizedMetricStatsListT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_evaluationStartDate;
     bool m_evaluationStartDateHasBeenSet = false;
 
-    int m_totalCount;
+    int m_totalCount{0};
     bool m_totalCountHasBeenSet = false;
 
     Aws::Vector<ItemizedMetricStats> m_itemizedMetricStatsList;

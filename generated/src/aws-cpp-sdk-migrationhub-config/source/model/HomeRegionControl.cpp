@@ -18,16 +18,7 @@ namespace MigrationHubConfig
 namespace Model
 {
 
-HomeRegionControl::HomeRegionControl() : 
-    m_controlIdHasBeenSet(false),
-    m_homeRegionHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_requestedTimeHasBeenSet(false)
-{
-}
-
 HomeRegionControl::HomeRegionControl(JsonView jsonValue)
-  : HomeRegionControl()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ HomeRegionControl& HomeRegionControl::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ControlId"))
   {
     m_controlId = jsonValue.GetString("ControlId");
-
     m_controlIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HomeRegion"))
   {
     m_homeRegion = jsonValue.GetString("HomeRegion");
-
     m_homeRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Target"))
   {
     m_target = jsonValue.GetObject("Target");
-
     m_targetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestedTime"))
   {
     m_requestedTime = jsonValue.GetDouble("RequestedTime");
-
     m_requestedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

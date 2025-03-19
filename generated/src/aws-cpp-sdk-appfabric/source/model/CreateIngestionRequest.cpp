@@ -12,18 +12,6 @@ using namespace Aws::AppFabric::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateIngestionRequest::CreateIngestionRequest() : 
-    m_appBundleIdentifierHasBeenSet(false),
-    m_appHasBeenSet(false),
-    m_tenantIdHasBeenSet(false),
-    m_ingestionType(IngestionType::NOT_SET),
-    m_ingestionTypeHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateIngestionRequest::SerializePayload() const
 {
   JsonValue payload;

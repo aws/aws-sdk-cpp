@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetTimeSeriesServiceStatisticsResult::GetTimeSeriesServiceStatisticsResult() : 
-    m_containsOldGroupVersions(false)
-{
-}
-
 GetTimeSeriesServiceStatisticsResult::GetTimeSeriesServiceStatisticsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetTimeSeriesServiceStatisticsResult()
 {
   *this = result;
 }
@@ -38,26 +32,25 @@ GetTimeSeriesServiceStatisticsResult& GetTimeSeriesServiceStatisticsResult::oper
     {
       m_timeSeriesServiceStatistics.push_back(timeSeriesServiceStatisticsJsonList[timeSeriesServiceStatisticsIndex].AsObject());
     }
+    m_timeSeriesServiceStatisticsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContainsOldGroupVersions"))
   {
     m_containsOldGroupVersions = jsonValue.GetBool("ContainsOldGroupVersions");
-
+    m_containsOldGroupVersionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

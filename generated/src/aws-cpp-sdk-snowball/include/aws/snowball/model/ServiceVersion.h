@@ -31,7 +31,7 @@ namespace Model
   class ServiceVersion
   {
   public:
-    AWS_SNOWBALL_API ServiceVersion();
+    AWS_SNOWBALL_API ServiceVersion() = default;
     AWS_SNOWBALL_API ServiceVersion(Aws::Utils::Json::JsonView jsonValue);
     AWS_SNOWBALL_API ServiceVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The version number of the requested service.</p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
+    inline const Aws::String& GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-    inline ServiceVersion& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline ServiceVersion& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline ServiceVersion& WithVersion(const char* value) { SetVersion(value); return *this;}
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    ServiceVersion& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
   private:
 

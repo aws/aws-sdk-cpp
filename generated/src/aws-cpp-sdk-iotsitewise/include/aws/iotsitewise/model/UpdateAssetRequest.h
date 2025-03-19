@@ -22,7 +22,7 @@ namespace Model
   class UpdateAssetRequest : public IoTSiteWiseRequest
   {
   public:
-    AWS_IOTSITEWISE_API UpdateAssetRequest();
+    AWS_IOTSITEWISE_API UpdateAssetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,28 +41,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
      * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
-    inline const Aws::String& GetAssetId() const{ return m_assetId; }
+    inline const Aws::String& GetAssetId() const { return m_assetId; }
     inline bool AssetIdHasBeenSet() const { return m_assetIdHasBeenSet; }
-    inline void SetAssetId(const Aws::String& value) { m_assetIdHasBeenSet = true; m_assetId = value; }
-    inline void SetAssetId(Aws::String&& value) { m_assetIdHasBeenSet = true; m_assetId = std::move(value); }
-    inline void SetAssetId(const char* value) { m_assetIdHasBeenSet = true; m_assetId.assign(value); }
-    inline UpdateAssetRequest& WithAssetId(const Aws::String& value) { SetAssetId(value); return *this;}
-    inline UpdateAssetRequest& WithAssetId(Aws::String&& value) { SetAssetId(std::move(value)); return *this;}
-    inline UpdateAssetRequest& WithAssetId(const char* value) { SetAssetId(value); return *this;}
+    template<typename AssetIdT = Aws::String>
+    void SetAssetId(AssetIdT&& value) { m_assetIdHasBeenSet = true; m_assetId = std::forward<AssetIdT>(value); }
+    template<typename AssetIdT = Aws::String>
+    UpdateAssetRequest& WithAssetId(AssetIdT&& value) { SetAssetId(std::forward<AssetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A friendly name for the asset.</p>
      */
-    inline const Aws::String& GetAssetName() const{ return m_assetName; }
+    inline const Aws::String& GetAssetName() const { return m_assetName; }
     inline bool AssetNameHasBeenSet() const { return m_assetNameHasBeenSet; }
-    inline void SetAssetName(const Aws::String& value) { m_assetNameHasBeenSet = true; m_assetName = value; }
-    inline void SetAssetName(Aws::String&& value) { m_assetNameHasBeenSet = true; m_assetName = std::move(value); }
-    inline void SetAssetName(const char* value) { m_assetNameHasBeenSet = true; m_assetName.assign(value); }
-    inline UpdateAssetRequest& WithAssetName(const Aws::String& value) { SetAssetName(value); return *this;}
-    inline UpdateAssetRequest& WithAssetName(Aws::String&& value) { SetAssetName(std::move(value)); return *this;}
-    inline UpdateAssetRequest& WithAssetName(const char* value) { SetAssetName(value); return *this;}
+    template<typename AssetNameT = Aws::String>
+    void SetAssetName(AssetNameT&& value) { m_assetNameHasBeenSet = true; m_assetName = std::forward<AssetNameT>(value); }
+    template<typename AssetNameT = Aws::String>
+    UpdateAssetRequest& WithAssetName(AssetNameT&& value) { SetAssetName(std::forward<AssetNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,28 +67,24 @@ namespace Model
      * idempotency of the request. Don't reuse this client token if a new idempotent
      * request is required.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline UpdateAssetRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline UpdateAssetRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline UpdateAssetRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    UpdateAssetRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description for the asset.</p>
      */
-    inline const Aws::String& GetAssetDescription() const{ return m_assetDescription; }
+    inline const Aws::String& GetAssetDescription() const { return m_assetDescription; }
     inline bool AssetDescriptionHasBeenSet() const { return m_assetDescriptionHasBeenSet; }
-    inline void SetAssetDescription(const Aws::String& value) { m_assetDescriptionHasBeenSet = true; m_assetDescription = value; }
-    inline void SetAssetDescription(Aws::String&& value) { m_assetDescriptionHasBeenSet = true; m_assetDescription = std::move(value); }
-    inline void SetAssetDescription(const char* value) { m_assetDescriptionHasBeenSet = true; m_assetDescription.assign(value); }
-    inline UpdateAssetRequest& WithAssetDescription(const Aws::String& value) { SetAssetDescription(value); return *this;}
-    inline UpdateAssetRequest& WithAssetDescription(Aws::String&& value) { SetAssetDescription(std::move(value)); return *this;}
-    inline UpdateAssetRequest& WithAssetDescription(const char* value) { SetAssetDescription(value); return *this;}
+    template<typename AssetDescriptionT = Aws::String>
+    void SetAssetDescription(AssetDescriptionT&& value) { m_assetDescriptionHasBeenSet = true; m_assetDescription = std::forward<AssetDescriptionT>(value); }
+    template<typename AssetDescriptionT = Aws::String>
+    UpdateAssetRequest& WithAssetDescription(AssetDescriptionT&& value) { SetAssetDescription(std::forward<AssetDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,14 +95,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
      * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
-    inline const Aws::String& GetAssetExternalId() const{ return m_assetExternalId; }
+    inline const Aws::String& GetAssetExternalId() const { return m_assetExternalId; }
     inline bool AssetExternalIdHasBeenSet() const { return m_assetExternalIdHasBeenSet; }
-    inline void SetAssetExternalId(const Aws::String& value) { m_assetExternalIdHasBeenSet = true; m_assetExternalId = value; }
-    inline void SetAssetExternalId(Aws::String&& value) { m_assetExternalIdHasBeenSet = true; m_assetExternalId = std::move(value); }
-    inline void SetAssetExternalId(const char* value) { m_assetExternalIdHasBeenSet = true; m_assetExternalId.assign(value); }
-    inline UpdateAssetRequest& WithAssetExternalId(const Aws::String& value) { SetAssetExternalId(value); return *this;}
-    inline UpdateAssetRequest& WithAssetExternalId(Aws::String&& value) { SetAssetExternalId(std::move(value)); return *this;}
-    inline UpdateAssetRequest& WithAssetExternalId(const char* value) { SetAssetExternalId(value); return *this;}
+    template<typename AssetExternalIdT = Aws::String>
+    void SetAssetExternalId(AssetExternalIdT&& value) { m_assetExternalIdHasBeenSet = true; m_assetExternalId = std::forward<AssetExternalIdT>(value); }
+    template<typename AssetExternalIdT = Aws::String>
+    UpdateAssetRequest& WithAssetExternalId(AssetExternalIdT&& value) { SetAssetExternalId(std::forward<AssetExternalIdT>(value)); return *this;}
     ///@}
   private:
 

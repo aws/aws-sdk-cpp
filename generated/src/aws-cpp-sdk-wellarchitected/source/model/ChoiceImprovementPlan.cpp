@@ -18,15 +18,7 @@ namespace WellArchitected
 namespace Model
 {
 
-ChoiceImprovementPlan::ChoiceImprovementPlan() : 
-    m_choiceIdHasBeenSet(false),
-    m_displayTextHasBeenSet(false),
-    m_improvementPlanUrlHasBeenSet(false)
-{
-}
-
 ChoiceImprovementPlan::ChoiceImprovementPlan(JsonView jsonValue)
-  : ChoiceImprovementPlan()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ChoiceImprovementPlan& ChoiceImprovementPlan::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ChoiceId"))
   {
     m_choiceId = jsonValue.GetString("ChoiceId");
-
     m_choiceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayText"))
   {
     m_displayText = jsonValue.GetString("DisplayText");
-
     m_displayTextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImprovementPlanUrl"))
   {
     m_improvementPlanUrl = jsonValue.GetString("ImprovementPlanUrl");
-
     m_improvementPlanUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

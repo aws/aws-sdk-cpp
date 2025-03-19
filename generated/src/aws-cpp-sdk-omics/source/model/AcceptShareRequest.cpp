@@ -12,11 +12,6 @@ using namespace Aws::Omics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AcceptShareRequest::AcceptShareRequest() : 
-    m_shareIdHasBeenSet(false)
-{
-}
-
 Aws::String AcceptShareRequest::SerializePayload() const
 {
   return {};

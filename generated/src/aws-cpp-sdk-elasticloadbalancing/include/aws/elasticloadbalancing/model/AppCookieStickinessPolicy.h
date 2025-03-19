@@ -32,7 +32,7 @@ namespace Model
   class AppCookieStickinessPolicy
   {
   public:
-    AWS_ELASTICLOADBALANCING_API AppCookieStickinessPolicy();
+    AWS_ELASTICLOADBALANCING_API AppCookieStickinessPolicy() = default;
     AWS_ELASTICLOADBALANCING_API AppCookieStickinessPolicy(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICLOADBALANCING_API AppCookieStickinessPolicy& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,28 +45,24 @@ namespace Model
      * <p>The mnemonic name for the policy being created. The name must be unique
      * within a set of policies for this load balancer.</p>
      */
-    inline const Aws::String& GetPolicyName() const{ return m_policyName; }
+    inline const Aws::String& GetPolicyName() const { return m_policyName; }
     inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
-    inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
-    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
-    inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
-    inline AppCookieStickinessPolicy& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
-    inline AppCookieStickinessPolicy& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
-    inline AppCookieStickinessPolicy& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+    template<typename PolicyNameT = Aws::String>
+    void SetPolicyName(PolicyNameT&& value) { m_policyNameHasBeenSet = true; m_policyName = std::forward<PolicyNameT>(value); }
+    template<typename PolicyNameT = Aws::String>
+    AppCookieStickinessPolicy& WithPolicyName(PolicyNameT&& value) { SetPolicyName(std::forward<PolicyNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the application cookie used for stickiness.</p>
      */
-    inline const Aws::String& GetCookieName() const{ return m_cookieName; }
+    inline const Aws::String& GetCookieName() const { return m_cookieName; }
     inline bool CookieNameHasBeenSet() const { return m_cookieNameHasBeenSet; }
-    inline void SetCookieName(const Aws::String& value) { m_cookieNameHasBeenSet = true; m_cookieName = value; }
-    inline void SetCookieName(Aws::String&& value) { m_cookieNameHasBeenSet = true; m_cookieName = std::move(value); }
-    inline void SetCookieName(const char* value) { m_cookieNameHasBeenSet = true; m_cookieName.assign(value); }
-    inline AppCookieStickinessPolicy& WithCookieName(const Aws::String& value) { SetCookieName(value); return *this;}
-    inline AppCookieStickinessPolicy& WithCookieName(Aws::String&& value) { SetCookieName(std::move(value)); return *this;}
-    inline AppCookieStickinessPolicy& WithCookieName(const char* value) { SetCookieName(value); return *this;}
+    template<typename CookieNameT = Aws::String>
+    void SetCookieName(CookieNameT&& value) { m_cookieNameHasBeenSet = true; m_cookieName = std::forward<CookieNameT>(value); }
+    template<typename CookieNameT = Aws::String>
+    AppCookieStickinessPolicy& WithCookieName(CookieNameT&& value) { SetCookieName(std::forward<CookieNameT>(value)); return *this;}
     ///@}
   private:
 

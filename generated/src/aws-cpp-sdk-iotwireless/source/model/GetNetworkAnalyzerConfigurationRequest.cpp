@@ -12,11 +12,6 @@ using namespace Aws::IoTWireless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetNetworkAnalyzerConfigurationRequest::GetNetworkAnalyzerConfigurationRequest() : 
-    m_configurationNameHasBeenSet(false)
-{
-}
-
 Aws::String GetNetworkAnalyzerConfigurationRequest::SerializePayload() const
 {
   return {};

@@ -31,7 +31,7 @@ namespace Model
   class DocumentOverrideConfiguration
   {
   public:
-    AWS_BEDROCKDATAAUTOMATION_API DocumentOverrideConfiguration();
+    AWS_BEDROCKDATAAUTOMATION_API DocumentOverrideConfiguration() = default;
     AWS_BEDROCKDATAAUTOMATION_API DocumentOverrideConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKDATAAUTOMATION_API DocumentOverrideConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKDATAAUTOMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,12 +39,12 @@ namespace Model
 
     ///@{
     
-    inline const SplitterConfiguration& GetSplitter() const{ return m_splitter; }
+    inline const SplitterConfiguration& GetSplitter() const { return m_splitter; }
     inline bool SplitterHasBeenSet() const { return m_splitterHasBeenSet; }
-    inline void SetSplitter(const SplitterConfiguration& value) { m_splitterHasBeenSet = true; m_splitter = value; }
-    inline void SetSplitter(SplitterConfiguration&& value) { m_splitterHasBeenSet = true; m_splitter = std::move(value); }
-    inline DocumentOverrideConfiguration& WithSplitter(const SplitterConfiguration& value) { SetSplitter(value); return *this;}
-    inline DocumentOverrideConfiguration& WithSplitter(SplitterConfiguration&& value) { SetSplitter(std::move(value)); return *this;}
+    template<typename SplitterT = SplitterConfiguration>
+    void SetSplitter(SplitterT&& value) { m_splitterHasBeenSet = true; m_splitter = std::forward<SplitterT>(value); }
+    template<typename SplitterT = SplitterConfiguration>
+    DocumentOverrideConfiguration& WithSplitter(SplitterT&& value) { SetSplitter(std::forward<SplitterT>(value)); return *this;}
     ///@}
   private:
 

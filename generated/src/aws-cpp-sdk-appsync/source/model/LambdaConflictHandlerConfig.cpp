@@ -18,13 +18,7 @@ namespace AppSync
 namespace Model
 {
 
-LambdaConflictHandlerConfig::LambdaConflictHandlerConfig() : 
-    m_lambdaConflictHandlerArnHasBeenSet(false)
-{
-}
-
 LambdaConflictHandlerConfig::LambdaConflictHandlerConfig(JsonView jsonValue)
-  : LambdaConflictHandlerConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ LambdaConflictHandlerConfig& LambdaConflictHandlerConfig::operator =(JsonView js
   if(jsonValue.ValueExists("lambdaConflictHandlerArn"))
   {
     m_lambdaConflictHandlerArn = jsonValue.GetString("lambdaConflictHandlerArn");
-
     m_lambdaConflictHandlerArnHasBeenSet = true;
   }
-
   return *this;
 }
 

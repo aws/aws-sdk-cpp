@@ -32,7 +32,7 @@ namespace Model
   class CreateBucketConfiguration
   {
   public:
-    AWS_S3_API CreateBucketConfiguration();
+    AWS_S3_API CreateBucketConfiguration() = default;
     AWS_S3_API CreateBucketConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3_API CreateBucketConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -53,12 +53,10 @@ namespace Model
      * and Endpoints</a>.</p>  <p>This functionality is not supported for
      * directory buckets.</p> 
      */
-    inline const BucketLocationConstraint& GetLocationConstraint() const{ return m_locationConstraint; }
+    inline BucketLocationConstraint GetLocationConstraint() const { return m_locationConstraint; }
     inline bool LocationConstraintHasBeenSet() const { return m_locationConstraintHasBeenSet; }
-    inline void SetLocationConstraint(const BucketLocationConstraint& value) { m_locationConstraintHasBeenSet = true; m_locationConstraint = value; }
-    inline void SetLocationConstraint(BucketLocationConstraint&& value) { m_locationConstraintHasBeenSet = true; m_locationConstraint = std::move(value); }
-    inline CreateBucketConfiguration& WithLocationConstraint(const BucketLocationConstraint& value) { SetLocationConstraint(value); return *this;}
-    inline CreateBucketConfiguration& WithLocationConstraint(BucketLocationConstraint&& value) { SetLocationConstraint(std::move(value)); return *this;}
+    inline void SetLocationConstraint(BucketLocationConstraint value) { m_locationConstraintHasBeenSet = true; m_locationConstraint = value; }
+    inline CreateBucketConfiguration& WithLocationConstraint(BucketLocationConstraint value) { SetLocationConstraint(value); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +70,12 @@ namespace Model
      * accounts for Dedicated Local Zones</a> in the <i>Amazon S3 User Guide</i>. </p>
      *  <p>This functionality is only supported by directory buckets.</p> 
      */
-    inline const LocationInfo& GetLocation() const{ return m_location; }
+    inline const LocationInfo& GetLocation() const { return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-    inline void SetLocation(const LocationInfo& value) { m_locationHasBeenSet = true; m_location = value; }
-    inline void SetLocation(LocationInfo&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-    inline CreateBucketConfiguration& WithLocation(const LocationInfo& value) { SetLocation(value); return *this;}
-    inline CreateBucketConfiguration& WithLocation(LocationInfo&& value) { SetLocation(std::move(value)); return *this;}
+    template<typename LocationT = LocationInfo>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = LocationInfo>
+    CreateBucketConfiguration& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,16 +83,16 @@ namespace Model
      * <p>Specifies the information about the bucket that will be created.</p> 
      * <p>This functionality is only supported by directory buckets.</p> 
      */
-    inline const BucketInfo& GetBucket() const{ return m_bucket; }
+    inline const BucketInfo& GetBucket() const { return m_bucket; }
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
-    inline void SetBucket(const BucketInfo& value) { m_bucketHasBeenSet = true; m_bucket = value; }
-    inline void SetBucket(BucketInfo&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
-    inline CreateBucketConfiguration& WithBucket(const BucketInfo& value) { SetBucket(value); return *this;}
-    inline CreateBucketConfiguration& WithBucket(BucketInfo&& value) { SetBucket(std::move(value)); return *this;}
+    template<typename BucketT = BucketInfo>
+    void SetBucket(BucketT&& value) { m_bucketHasBeenSet = true; m_bucket = std::forward<BucketT>(value); }
+    template<typename BucketT = BucketInfo>
+    CreateBucketConfiguration& WithBucket(BucketT&& value) { SetBucket(std::forward<BucketT>(value)); return *this;}
     ///@}
   private:
 
-    BucketLocationConstraint m_locationConstraint;
+    BucketLocationConstraint m_locationConstraint{BucketLocationConstraint::NOT_SET};
     bool m_locationConstraintHasBeenSet = false;
 
     LocationInfo m_location;

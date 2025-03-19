@@ -23,7 +23,7 @@ namespace Model
   class DescribeBundleTasksRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DescribeBundleTasksRequest();
+    AWS_EC2_API DescribeBundleTasksRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,15 +42,14 @@ namespace Model
     /**
      * <p>The bundle task IDs.</p> <p>Default: Describes all your bundle tasks.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetBundleIds() const{ return m_bundleIds; }
+    inline const Aws::Vector<Aws::String>& GetBundleIds() const { return m_bundleIds; }
     inline bool BundleIdsHasBeenSet() const { return m_bundleIdsHasBeenSet; }
-    inline void SetBundleIds(const Aws::Vector<Aws::String>& value) { m_bundleIdsHasBeenSet = true; m_bundleIds = value; }
-    inline void SetBundleIds(Aws::Vector<Aws::String>&& value) { m_bundleIdsHasBeenSet = true; m_bundleIds = std::move(value); }
-    inline DescribeBundleTasksRequest& WithBundleIds(const Aws::Vector<Aws::String>& value) { SetBundleIds(value); return *this;}
-    inline DescribeBundleTasksRequest& WithBundleIds(Aws::Vector<Aws::String>&& value) { SetBundleIds(std::move(value)); return *this;}
-    inline DescribeBundleTasksRequest& AddBundleIds(const Aws::String& value) { m_bundleIdsHasBeenSet = true; m_bundleIds.push_back(value); return *this; }
-    inline DescribeBundleTasksRequest& AddBundleIds(Aws::String&& value) { m_bundleIdsHasBeenSet = true; m_bundleIds.push_back(std::move(value)); return *this; }
-    inline DescribeBundleTasksRequest& AddBundleIds(const char* value) { m_bundleIdsHasBeenSet = true; m_bundleIds.push_back(value); return *this; }
+    template<typename BundleIdsT = Aws::Vector<Aws::String>>
+    void SetBundleIds(BundleIdsT&& value) { m_bundleIdsHasBeenSet = true; m_bundleIds = std::forward<BundleIdsT>(value); }
+    template<typename BundleIdsT = Aws::Vector<Aws::String>>
+    DescribeBundleTasksRequest& WithBundleIds(BundleIdsT&& value) { SetBundleIds(std::forward<BundleIdsT>(value)); return *this;}
+    template<typename BundleIdsT = Aws::String>
+    DescribeBundleTasksRequest& AddBundleIds(BundleIdsT&& value) { m_bundleIdsHasBeenSet = true; m_bundleIds.emplace_back(std::forward<BundleIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -60,7 +59,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DescribeBundleTasksRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -84,21 +83,21 @@ namespace Model
      * <code>update-time</code> - The time of the most recent update for the task.</p>
      * </li> </ul>
      */
-    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline DescribeBundleTasksRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-    inline DescribeBundleTasksRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline DescribeBundleTasksRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline DescribeBundleTasksRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    DescribeBundleTasksRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = Filter>
+    DescribeBundleTasksRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_bundleIds;
     bool m_bundleIdsHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;

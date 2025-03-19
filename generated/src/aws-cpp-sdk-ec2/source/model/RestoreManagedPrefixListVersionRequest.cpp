@@ -10,17 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-RestoreManagedPrefixListVersionRequest::RestoreManagedPrefixListVersionRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_prefixListIdHasBeenSet(false),
-    m_previousVersion(0),
-    m_previousVersionHasBeenSet(false),
-    m_currentVersion(0),
-    m_currentVersionHasBeenSet(false)
-{
-}
-
 Aws::String RestoreManagedPrefixListVersionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

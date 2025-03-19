@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-DataSource::DataSource() : 
-    m_s3DataSourceHasBeenSet(false),
-    m_fileSystemDataSourceHasBeenSet(false)
-{
-}
-
 DataSource::DataSource(JsonView jsonValue)
-  : DataSource()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DataSource& DataSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3DataSource"))
   {
     m_s3DataSource = jsonValue.GetObject("S3DataSource");
-
     m_s3DataSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileSystemDataSource"))
   {
     m_fileSystemDataSource = jsonValue.GetObject("FileSystemDataSource");
-
     m_fileSystemDataSourceHasBeenSet = true;
   }
-
   return *this;
 }
 

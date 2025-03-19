@@ -10,12 +10,6 @@
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-AbortEnvironmentUpdateRequest::AbortEnvironmentUpdateRequest() : 
-    m_environmentIdHasBeenSet(false),
-    m_environmentNameHasBeenSet(false)
-{
-}
-
 Aws::String AbortEnvironmentUpdateRequest::SerializePayload() const
 {
   Aws::StringStream ss;

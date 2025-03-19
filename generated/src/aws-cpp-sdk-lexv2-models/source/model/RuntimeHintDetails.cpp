@@ -18,14 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-RuntimeHintDetails::RuntimeHintDetails() : 
-    m_runtimeHintValuesHasBeenSet(false),
-    m_subSlotHintsHasBeenSet(false)
-{
-}
-
 RuntimeHintDetails::RuntimeHintDetails(JsonView jsonValue)
-  : RuntimeHintDetails()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ RuntimeHintDetails& RuntimeHintDetails::operator =(JsonView jsonValue)
     }
     m_runtimeHintValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subSlotHints"))
   {
     Aws::Map<Aws::String, JsonView> subSlotHintsJsonMap = jsonValue.GetObject("subSlotHints").GetAllObjects();
@@ -51,7 +43,6 @@ RuntimeHintDetails& RuntimeHintDetails::operator =(JsonView jsonValue)
     }
     m_subSlotHintsHasBeenSet = true;
   }
-
   return *this;
 }
 

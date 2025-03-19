@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAuditMitigationActionsTaskResult::DescribeAuditMitigationActionsTaskResult() : 
-    m_taskStatus(AuditMitigationActionsTaskStatus::NOT_SET)
-{
-}
-
 DescribeAuditMitigationActionsTaskResult::DescribeAuditMitigationActionsTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeAuditMitigationActionsTaskResult()
 {
   *this = result;
 }
@@ -34,21 +28,18 @@ DescribeAuditMitigationActionsTaskResult& DescribeAuditMitigationActionsTaskResu
   if(jsonValue.ValueExists("taskStatus"))
   {
     m_taskStatus = AuditMitigationActionsTaskStatusMapper::GetAuditMitigationActionsTaskStatusForName(jsonValue.GetString("taskStatus"));
-
+    m_taskStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetDouble("startTime");
-
+    m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetDouble("endTime");
-
+    m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskStatistics"))
   {
     Aws::Map<Aws::String, JsonView> taskStatisticsJsonMap = jsonValue.GetObject("taskStatistics").GetAllObjects();
@@ -56,14 +47,13 @@ DescribeAuditMitigationActionsTaskResult& DescribeAuditMitigationActionsTaskResu
     {
       m_taskStatistics[taskStatisticsItem.first] = taskStatisticsItem.second.AsObject();
     }
+    m_taskStatisticsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("target"))
   {
     m_target = jsonValue.GetObject("target");
-
+    m_targetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("auditCheckToActionsMapping"))
   {
     Aws::Map<Aws::String, JsonView> auditCheckToActionsMappingJsonMap = jsonValue.GetObject("auditCheckToActionsMapping").GetAllObjects();
@@ -78,8 +68,8 @@ DescribeAuditMitigationActionsTaskResult& DescribeAuditMitigationActionsTaskResu
       }
       m_auditCheckToActionsMapping[auditCheckToActionsMappingItem.first] = std::move(mitigationActionNameListList);
     }
+    m_auditCheckToActionsMappingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actionsDefinition"))
   {
     Aws::Utils::Array<JsonView> actionsDefinitionJsonList = jsonValue.GetArray("actionsDefinition");
@@ -87,14 +77,15 @@ DescribeAuditMitigationActionsTaskResult& DescribeAuditMitigationActionsTaskResu
     {
       m_actionsDefinition.push_back(actionsDefinitionJsonList[actionsDefinitionIndex].AsObject());
     }
+    m_actionsDefinitionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

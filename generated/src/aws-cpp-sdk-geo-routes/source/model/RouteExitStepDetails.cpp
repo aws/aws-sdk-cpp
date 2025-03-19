@@ -18,21 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteExitStepDetails::RouteExitStepDetails() : 
-    m_intersectionHasBeenSet(false),
-    m_relativeExit(0),
-    m_relativeExitHasBeenSet(false),
-    m_steeringDirection(RouteSteeringDirection::NOT_SET),
-    m_steeringDirectionHasBeenSet(false),
-    m_turnAngle(0.0),
-    m_turnAngleHasBeenSet(false),
-    m_turnIntensity(RouteTurnIntensity::NOT_SET),
-    m_turnIntensityHasBeenSet(false)
-{
-}
-
 RouteExitStepDetails::RouteExitStepDetails(JsonView jsonValue)
-  : RouteExitStepDetails()
 {
   *this = jsonValue;
 }
@@ -48,35 +34,26 @@ RouteExitStepDetails& RouteExitStepDetails::operator =(JsonView jsonValue)
     }
     m_intersectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RelativeExit"))
   {
     m_relativeExit = jsonValue.GetInteger("RelativeExit");
-
     m_relativeExitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SteeringDirection"))
   {
     m_steeringDirection = RouteSteeringDirectionMapper::GetRouteSteeringDirectionForName(jsonValue.GetString("SteeringDirection"));
-
     m_steeringDirectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TurnAngle"))
   {
     m_turnAngle = jsonValue.GetDouble("TurnAngle");
-
     m_turnAngleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TurnIntensity"))
   {
     m_turnIntensity = RouteTurnIntensityMapper::GetRouteTurnIntensityForName(jsonValue.GetString("TurnIntensity"));
-
     m_turnIntensityHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,17 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TopicNumericRangeFilter::TopicNumericRangeFilter() : 
-    m_inclusive(false),
-    m_inclusiveHasBeenSet(false),
-    m_constantHasBeenSet(false),
-    m_aggregation(NamedFilterAggType::NOT_SET),
-    m_aggregationHasBeenSet(false)
-{
-}
-
 TopicNumericRangeFilter::TopicNumericRangeFilter(JsonView jsonValue)
-  : TopicNumericRangeFilter()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ TopicNumericRangeFilter& TopicNumericRangeFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Inclusive"))
   {
     m_inclusive = jsonValue.GetBool("Inclusive");
-
     m_inclusiveHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Constant"))
   {
     m_constant = jsonValue.GetObject("Constant");
-
     m_constantHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Aggregation"))
   {
     m_aggregation = NamedFilterAggTypeMapper::GetNamedFilterAggTypeForName(jsonValue.GetString("Aggregation"));
-
     m_aggregationHasBeenSet = true;
   }
-
   return *this;
 }
 

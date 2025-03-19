@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetProvisionedConcurrencyConfigRequest::GetProvisionedConcurrencyConfigRequest() : 
-    m_functionNameHasBeenSet(false),
-    m_qualifierHasBeenSet(false)
-{
-}
-
 Aws::String GetProvisionedConcurrencyConfigRequest::SerializePayload() const
 {
   return {};

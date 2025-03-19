@@ -12,12 +12,6 @@ using namespace Aws::ECR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeletePullThroughCacheRuleRequest::DeletePullThroughCacheRuleRequest() : 
-    m_ecrRepositoryPrefixHasBeenSet(false),
-    m_registryIdHasBeenSet(false)
-{
-}
-
 Aws::String DeletePullThroughCacheRuleRequest::SerializePayload() const
 {
   JsonValue payload;

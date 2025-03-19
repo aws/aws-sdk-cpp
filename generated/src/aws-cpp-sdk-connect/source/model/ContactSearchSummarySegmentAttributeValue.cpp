@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-ContactSearchSummarySegmentAttributeValue::ContactSearchSummarySegmentAttributeValue() : 
-    m_valueStringHasBeenSet(false)
-{
-}
-
 ContactSearchSummarySegmentAttributeValue::ContactSearchSummarySegmentAttributeValue(JsonView jsonValue)
-  : ContactSearchSummarySegmentAttributeValue()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ContactSearchSummarySegmentAttributeValue& ContactSearchSummarySegmentAttributeV
   if(jsonValue.ValueExists("ValueString"))
   {
     m_valueString = jsonValue.GetString("ValueString");
-
     m_valueStringHasBeenSet = true;
   }
-
   return *this;
 }
 

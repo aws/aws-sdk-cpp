@@ -18,13 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-MetadataCatalogConfig::MetadataCatalogConfig() : 
-    m_glueDataCatalogHasBeenSet(false)
-{
-}
-
 MetadataCatalogConfig::MetadataCatalogConfig(JsonView jsonValue)
-  : MetadataCatalogConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MetadataCatalogConfig& MetadataCatalogConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("glueDataCatalog"))
   {
     m_glueDataCatalog = jsonValue.GetObject("glueDataCatalog");
-
     m_glueDataCatalogHasBeenSet = true;
   }
-
   return *this;
 }
 

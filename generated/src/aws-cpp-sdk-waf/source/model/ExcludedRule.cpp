@@ -18,13 +18,7 @@ namespace WAF
 namespace Model
 {
 
-ExcludedRule::ExcludedRule() : 
-    m_ruleIdHasBeenSet(false)
-{
-}
-
 ExcludedRule::ExcludedRule(JsonView jsonValue)
-  : ExcludedRule()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ExcludedRule& ExcludedRule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RuleId"))
   {
     m_ruleId = jsonValue.GetString("RuleId");
-
     m_ruleIdHasBeenSet = true;
   }
-
   return *this;
 }
 

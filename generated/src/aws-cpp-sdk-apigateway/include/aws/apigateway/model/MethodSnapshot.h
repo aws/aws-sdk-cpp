@@ -32,7 +32,7 @@ namespace Model
   class MethodSnapshot
   {
   public:
-    AWS_APIGATEWAY_API MethodSnapshot();
+    AWS_APIGATEWAY_API MethodSnapshot() = default;
     AWS_APIGATEWAY_API MethodSnapshot(Aws::Utils::Json::JsonView jsonValue);
     AWS_APIGATEWAY_API MethodSnapshot& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,21 +45,19 @@ namespace Model
      * for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a
      * Cognito user pool.</p>
      */
-    inline const Aws::String& GetAuthorizationType() const{ return m_authorizationType; }
+    inline const Aws::String& GetAuthorizationType() const { return m_authorizationType; }
     inline bool AuthorizationTypeHasBeenSet() const { return m_authorizationTypeHasBeenSet; }
-    inline void SetAuthorizationType(const Aws::String& value) { m_authorizationTypeHasBeenSet = true; m_authorizationType = value; }
-    inline void SetAuthorizationType(Aws::String&& value) { m_authorizationTypeHasBeenSet = true; m_authorizationType = std::move(value); }
-    inline void SetAuthorizationType(const char* value) { m_authorizationTypeHasBeenSet = true; m_authorizationType.assign(value); }
-    inline MethodSnapshot& WithAuthorizationType(const Aws::String& value) { SetAuthorizationType(value); return *this;}
-    inline MethodSnapshot& WithAuthorizationType(Aws::String&& value) { SetAuthorizationType(std::move(value)); return *this;}
-    inline MethodSnapshot& WithAuthorizationType(const char* value) { SetAuthorizationType(value); return *this;}
+    template<typename AuthorizationTypeT = Aws::String>
+    void SetAuthorizationType(AuthorizationTypeT&& value) { m_authorizationTypeHasBeenSet = true; m_authorizationType = std::forward<AuthorizationTypeT>(value); }
+    template<typename AuthorizationTypeT = Aws::String>
+    MethodSnapshot& WithAuthorizationType(AuthorizationTypeT&& value) { SetAuthorizationType(std::forward<AuthorizationTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies whether the method requires a valid ApiKey.</p>
      */
-    inline bool GetApiKeyRequired() const{ return m_apiKeyRequired; }
+    inline bool GetApiKeyRequired() const { return m_apiKeyRequired; }
     inline bool ApiKeyRequiredHasBeenSet() const { return m_apiKeyRequiredHasBeenSet; }
     inline void SetApiKeyRequired(bool value) { m_apiKeyRequiredHasBeenSet = true; m_apiKeyRequired = value; }
     inline MethodSnapshot& WithApiKeyRequired(bool value) { SetApiKeyRequired(value); return *this;}
@@ -69,7 +67,7 @@ namespace Model
     Aws::String m_authorizationType;
     bool m_authorizationTypeHasBeenSet = false;
 
-    bool m_apiKeyRequired;
+    bool m_apiKeyRequired{false};
     bool m_apiKeyRequiredHasBeenSet = false;
   };
 

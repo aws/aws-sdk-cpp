@@ -12,12 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterPatchBaselineForPatchGroupRequest::RegisterPatchBaselineForPatchGroupRequest() : 
-    m_baselineIdHasBeenSet(false),
-    m_patchGroupHasBeenSet(false)
-{
-}
-
 Aws::String RegisterPatchBaselineForPatchGroupRequest::SerializePayload() const
 {
   JsonValue payload;

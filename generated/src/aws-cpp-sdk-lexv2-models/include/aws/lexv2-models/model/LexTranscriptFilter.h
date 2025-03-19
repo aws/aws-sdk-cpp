@@ -32,7 +32,7 @@ namespace Model
   class LexTranscriptFilter
   {
   public:
-    AWS_LEXMODELSV2_API LexTranscriptFilter();
+    AWS_LEXMODELSV2_API LexTranscriptFilter() = default;
     AWS_LEXMODELSV2_API LexTranscriptFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API LexTranscriptFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * transcript. Specify this object if you want Amazon Lex to only read the files
      * that are within the date range.</p>
      */
-    inline const DateRangeFilter& GetDateRangeFilter() const{ return m_dateRangeFilter; }
+    inline const DateRangeFilter& GetDateRangeFilter() const { return m_dateRangeFilter; }
     inline bool DateRangeFilterHasBeenSet() const { return m_dateRangeFilterHasBeenSet; }
-    inline void SetDateRangeFilter(const DateRangeFilter& value) { m_dateRangeFilterHasBeenSet = true; m_dateRangeFilter = value; }
-    inline void SetDateRangeFilter(DateRangeFilter&& value) { m_dateRangeFilterHasBeenSet = true; m_dateRangeFilter = std::move(value); }
-    inline LexTranscriptFilter& WithDateRangeFilter(const DateRangeFilter& value) { SetDateRangeFilter(value); return *this;}
-    inline LexTranscriptFilter& WithDateRangeFilter(DateRangeFilter&& value) { SetDateRangeFilter(std::move(value)); return *this;}
+    template<typename DateRangeFilterT = DateRangeFilter>
+    void SetDateRangeFilter(DateRangeFilterT&& value) { m_dateRangeFilterHasBeenSet = true; m_dateRangeFilter = std::forward<DateRangeFilterT>(value); }
+    template<typename DateRangeFilterT = DateRangeFilter>
+    LexTranscriptFilter& WithDateRangeFilter(DateRangeFilterT&& value) { SetDateRangeFilter(std::forward<DateRangeFilterT>(value)); return *this;}
     ///@}
   private:
 

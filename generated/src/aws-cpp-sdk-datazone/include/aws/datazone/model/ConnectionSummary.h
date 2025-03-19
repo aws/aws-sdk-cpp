@@ -35,7 +35,7 @@ namespace Model
   class ConnectionSummary
   {
   public:
-    AWS_DATAZONE_API ConnectionSummary();
+    AWS_DATAZONE_API ConnectionSummary() = default;
     AWS_DATAZONE_API ConnectionSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API ConnectionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,122 +45,108 @@ namespace Model
     /**
      * <p>The ID of a connection.</p>
      */
-    inline const Aws::String& GetConnectionId() const{ return m_connectionId; }
+    inline const Aws::String& GetConnectionId() const { return m_connectionId; }
     inline bool ConnectionIdHasBeenSet() const { return m_connectionIdHasBeenSet; }
-    inline void SetConnectionId(const Aws::String& value) { m_connectionIdHasBeenSet = true; m_connectionId = value; }
-    inline void SetConnectionId(Aws::String&& value) { m_connectionIdHasBeenSet = true; m_connectionId = std::move(value); }
-    inline void SetConnectionId(const char* value) { m_connectionIdHasBeenSet = true; m_connectionId.assign(value); }
-    inline ConnectionSummary& WithConnectionId(const Aws::String& value) { SetConnectionId(value); return *this;}
-    inline ConnectionSummary& WithConnectionId(Aws::String&& value) { SetConnectionId(std::move(value)); return *this;}
-    inline ConnectionSummary& WithConnectionId(const char* value) { SetConnectionId(value); return *this;}
+    template<typename ConnectionIdT = Aws::String>
+    void SetConnectionId(ConnectionIdT&& value) { m_connectionIdHasBeenSet = true; m_connectionId = std::forward<ConnectionIdT>(value); }
+    template<typename ConnectionIdT = Aws::String>
+    ConnectionSummary& WithConnectionId(ConnectionIdT&& value) { SetConnectionId(std::forward<ConnectionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The domain ID of a connection.</p>
      */
-    inline const Aws::String& GetDomainId() const{ return m_domainId; }
+    inline const Aws::String& GetDomainId() const { return m_domainId; }
     inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
-    inline void SetDomainId(const Aws::String& value) { m_domainIdHasBeenSet = true; m_domainId = value; }
-    inline void SetDomainId(Aws::String&& value) { m_domainIdHasBeenSet = true; m_domainId = std::move(value); }
-    inline void SetDomainId(const char* value) { m_domainIdHasBeenSet = true; m_domainId.assign(value); }
-    inline ConnectionSummary& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
-    inline ConnectionSummary& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
-    inline ConnectionSummary& WithDomainId(const char* value) { SetDomainId(value); return *this;}
+    template<typename DomainIdT = Aws::String>
+    void SetDomainId(DomainIdT&& value) { m_domainIdHasBeenSet = true; m_domainId = std::forward<DomainIdT>(value); }
+    template<typename DomainIdT = Aws::String>
+    ConnectionSummary& WithDomainId(DomainIdT&& value) { SetDomainId(std::forward<DomainIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The domain unit ID of a connection.</p>
      */
-    inline const Aws::String& GetDomainUnitId() const{ return m_domainUnitId; }
+    inline const Aws::String& GetDomainUnitId() const { return m_domainUnitId; }
     inline bool DomainUnitIdHasBeenSet() const { return m_domainUnitIdHasBeenSet; }
-    inline void SetDomainUnitId(const Aws::String& value) { m_domainUnitIdHasBeenSet = true; m_domainUnitId = value; }
-    inline void SetDomainUnitId(Aws::String&& value) { m_domainUnitIdHasBeenSet = true; m_domainUnitId = std::move(value); }
-    inline void SetDomainUnitId(const char* value) { m_domainUnitIdHasBeenSet = true; m_domainUnitId.assign(value); }
-    inline ConnectionSummary& WithDomainUnitId(const Aws::String& value) { SetDomainUnitId(value); return *this;}
-    inline ConnectionSummary& WithDomainUnitId(Aws::String&& value) { SetDomainUnitId(std::move(value)); return *this;}
-    inline ConnectionSummary& WithDomainUnitId(const char* value) { SetDomainUnitId(value); return *this;}
+    template<typename DomainUnitIdT = Aws::String>
+    void SetDomainUnitId(DomainUnitIdT&& value) { m_domainUnitIdHasBeenSet = true; m_domainUnitId = std::forward<DomainUnitIdT>(value); }
+    template<typename DomainUnitIdT = Aws::String>
+    ConnectionSummary& WithDomainUnitId(DomainUnitIdT&& value) { SetDomainUnitId(std::forward<DomainUnitIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The environment ID of a connection.</p>
      */
-    inline const Aws::String& GetEnvironmentId() const{ return m_environmentId; }
+    inline const Aws::String& GetEnvironmentId() const { return m_environmentId; }
     inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
-    inline void SetEnvironmentId(const Aws::String& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
-    inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::move(value); }
-    inline void SetEnvironmentId(const char* value) { m_environmentIdHasBeenSet = true; m_environmentId.assign(value); }
-    inline ConnectionSummary& WithEnvironmentId(const Aws::String& value) { SetEnvironmentId(value); return *this;}
-    inline ConnectionSummary& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(std::move(value)); return *this;}
-    inline ConnectionSummary& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
+    template<typename EnvironmentIdT = Aws::String>
+    void SetEnvironmentId(EnvironmentIdT&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::forward<EnvironmentIdT>(value); }
+    template<typename EnvironmentIdT = Aws::String>
+    ConnectionSummary& WithEnvironmentId(EnvironmentIdT&& value) { SetEnvironmentId(std::forward<EnvironmentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The connection name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ConnectionSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ConnectionSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ConnectionSummary& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ConnectionSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The connection physical endpoints.</p>
      */
-    inline const Aws::Vector<PhysicalEndpoint>& GetPhysicalEndpoints() const{ return m_physicalEndpoints; }
+    inline const Aws::Vector<PhysicalEndpoint>& GetPhysicalEndpoints() const { return m_physicalEndpoints; }
     inline bool PhysicalEndpointsHasBeenSet() const { return m_physicalEndpointsHasBeenSet; }
-    inline void SetPhysicalEndpoints(const Aws::Vector<PhysicalEndpoint>& value) { m_physicalEndpointsHasBeenSet = true; m_physicalEndpoints = value; }
-    inline void SetPhysicalEndpoints(Aws::Vector<PhysicalEndpoint>&& value) { m_physicalEndpointsHasBeenSet = true; m_physicalEndpoints = std::move(value); }
-    inline ConnectionSummary& WithPhysicalEndpoints(const Aws::Vector<PhysicalEndpoint>& value) { SetPhysicalEndpoints(value); return *this;}
-    inline ConnectionSummary& WithPhysicalEndpoints(Aws::Vector<PhysicalEndpoint>&& value) { SetPhysicalEndpoints(std::move(value)); return *this;}
-    inline ConnectionSummary& AddPhysicalEndpoints(const PhysicalEndpoint& value) { m_physicalEndpointsHasBeenSet = true; m_physicalEndpoints.push_back(value); return *this; }
-    inline ConnectionSummary& AddPhysicalEndpoints(PhysicalEndpoint&& value) { m_physicalEndpointsHasBeenSet = true; m_physicalEndpoints.push_back(std::move(value)); return *this; }
+    template<typename PhysicalEndpointsT = Aws::Vector<PhysicalEndpoint>>
+    void SetPhysicalEndpoints(PhysicalEndpointsT&& value) { m_physicalEndpointsHasBeenSet = true; m_physicalEndpoints = std::forward<PhysicalEndpointsT>(value); }
+    template<typename PhysicalEndpointsT = Aws::Vector<PhysicalEndpoint>>
+    ConnectionSummary& WithPhysicalEndpoints(PhysicalEndpointsT&& value) { SetPhysicalEndpoints(std::forward<PhysicalEndpointsT>(value)); return *this;}
+    template<typename PhysicalEndpointsT = PhysicalEndpoint>
+    ConnectionSummary& AddPhysicalEndpoints(PhysicalEndpointsT&& value) { m_physicalEndpointsHasBeenSet = true; m_physicalEndpoints.emplace_back(std::forward<PhysicalEndpointsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The connection project ID.</p>
      */
-    inline const Aws::String& GetProjectId() const{ return m_projectId; }
+    inline const Aws::String& GetProjectId() const { return m_projectId; }
     inline bool ProjectIdHasBeenSet() const { return m_projectIdHasBeenSet; }
-    inline void SetProjectId(const Aws::String& value) { m_projectIdHasBeenSet = true; m_projectId = value; }
-    inline void SetProjectId(Aws::String&& value) { m_projectIdHasBeenSet = true; m_projectId = std::move(value); }
-    inline void SetProjectId(const char* value) { m_projectIdHasBeenSet = true; m_projectId.assign(value); }
-    inline ConnectionSummary& WithProjectId(const Aws::String& value) { SetProjectId(value); return *this;}
-    inline ConnectionSummary& WithProjectId(Aws::String&& value) { SetProjectId(std::move(value)); return *this;}
-    inline ConnectionSummary& WithProjectId(const char* value) { SetProjectId(value); return *this;}
+    template<typename ProjectIdT = Aws::String>
+    void SetProjectId(ProjectIdT&& value) { m_projectIdHasBeenSet = true; m_projectId = std::forward<ProjectIdT>(value); }
+    template<typename ProjectIdT = Aws::String>
+    ConnectionSummary& WithProjectId(ProjectIdT&& value) { SetProjectId(std::forward<ProjectIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The connection props.</p>
      */
-    inline const ConnectionPropertiesOutput& GetProps() const{ return m_props; }
+    inline const ConnectionPropertiesOutput& GetProps() const { return m_props; }
     inline bool PropsHasBeenSet() const { return m_propsHasBeenSet; }
-    inline void SetProps(const ConnectionPropertiesOutput& value) { m_propsHasBeenSet = true; m_props = value; }
-    inline void SetProps(ConnectionPropertiesOutput&& value) { m_propsHasBeenSet = true; m_props = std::move(value); }
-    inline ConnectionSummary& WithProps(const ConnectionPropertiesOutput& value) { SetProps(value); return *this;}
-    inline ConnectionSummary& WithProps(ConnectionPropertiesOutput&& value) { SetProps(std::move(value)); return *this;}
+    template<typename PropsT = ConnectionPropertiesOutput>
+    void SetProps(PropsT&& value) { m_propsHasBeenSet = true; m_props = std::forward<PropsT>(value); }
+    template<typename PropsT = ConnectionPropertiesOutput>
+    ConnectionSummary& WithProps(PropsT&& value) { SetProps(std::forward<PropsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The connection type.</p>
      */
-    inline const ConnectionType& GetType() const{ return m_type; }
+    inline ConnectionType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ConnectionType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ConnectionType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ConnectionSummary& WithType(const ConnectionType& value) { SetType(value); return *this;}
-    inline ConnectionSummary& WithType(ConnectionType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ConnectionType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ConnectionSummary& WithType(ConnectionType value) { SetType(value); return *this;}
     ///@}
   private:
 
@@ -188,7 +174,7 @@ namespace Model
     ConnectionPropertiesOutput m_props;
     bool m_propsHasBeenSet = false;
 
-    ConnectionType m_type;
+    ConnectionType m_type{ConnectionType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

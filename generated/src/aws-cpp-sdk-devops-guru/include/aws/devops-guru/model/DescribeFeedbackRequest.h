@@ -21,7 +21,7 @@ namespace Model
   class DescribeFeedbackRequest : public DevOpsGuruRequest
   {
   public:
-    AWS_DEVOPSGURU_API DescribeFeedbackRequest();
+    AWS_DEVOPSGURU_API DescribeFeedbackRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p> The ID of the insight for which the feedback was provided. </p>
      */
-    inline const Aws::String& GetInsightId() const{ return m_insightId; }
+    inline const Aws::String& GetInsightId() const { return m_insightId; }
     inline bool InsightIdHasBeenSet() const { return m_insightIdHasBeenSet; }
-    inline void SetInsightId(const Aws::String& value) { m_insightIdHasBeenSet = true; m_insightId = value; }
-    inline void SetInsightId(Aws::String&& value) { m_insightIdHasBeenSet = true; m_insightId = std::move(value); }
-    inline void SetInsightId(const char* value) { m_insightIdHasBeenSet = true; m_insightId.assign(value); }
-    inline DescribeFeedbackRequest& WithInsightId(const Aws::String& value) { SetInsightId(value); return *this;}
-    inline DescribeFeedbackRequest& WithInsightId(Aws::String&& value) { SetInsightId(std::move(value)); return *this;}
-    inline DescribeFeedbackRequest& WithInsightId(const char* value) { SetInsightId(value); return *this;}
+    template<typename InsightIdT = Aws::String>
+    void SetInsightId(InsightIdT&& value) { m_insightIdHasBeenSet = true; m_insightId = std::forward<InsightIdT>(value); }
+    template<typename InsightIdT = Aws::String>
+    DescribeFeedbackRequest& WithInsightId(InsightIdT&& value) { SetInsightId(std::forward<InsightIdT>(value)); return *this;}
     ///@}
   private:
 

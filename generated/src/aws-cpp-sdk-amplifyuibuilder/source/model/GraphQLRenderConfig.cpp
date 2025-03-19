@@ -18,17 +18,7 @@ namespace AmplifyUIBuilder
 namespace Model
 {
 
-GraphQLRenderConfig::GraphQLRenderConfig() : 
-    m_typesFilePathHasBeenSet(false),
-    m_queriesFilePathHasBeenSet(false),
-    m_mutationsFilePathHasBeenSet(false),
-    m_subscriptionsFilePathHasBeenSet(false),
-    m_fragmentsFilePathHasBeenSet(false)
-{
-}
-
 GraphQLRenderConfig::GraphQLRenderConfig(JsonView jsonValue)
-  : GraphQLRenderConfig()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ GraphQLRenderConfig& GraphQLRenderConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("typesFilePath"))
   {
     m_typesFilePath = jsonValue.GetString("typesFilePath");
-
     m_typesFilePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queriesFilePath"))
   {
     m_queriesFilePath = jsonValue.GetString("queriesFilePath");
-
     m_queriesFilePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mutationsFilePath"))
   {
     m_mutationsFilePath = jsonValue.GetString("mutationsFilePath");
-
     m_mutationsFilePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subscriptionsFilePath"))
   {
     m_subscriptionsFilePath = jsonValue.GetString("subscriptionsFilePath");
-
     m_subscriptionsFilePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fragmentsFilePath"))
   {
     m_fragmentsFilePath = jsonValue.GetString("fragmentsFilePath");
-
     m_fragmentsFilePathHasBeenSet = true;
   }
-
   return *this;
 }
 

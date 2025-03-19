@@ -20,14 +20,7 @@ namespace Route53
 namespace Model
 {
 
-ChangeBatch::ChangeBatch() : 
-    m_commentHasBeenSet(false),
-    m_changesHasBeenSet(false)
-{
-}
-
 ChangeBatch::ChangeBatch(const XmlNode& xmlNode)
-  : ChangeBatch()
 {
   *this = xmlNode;
 }
@@ -48,6 +41,7 @@ ChangeBatch& ChangeBatch::operator =(const XmlNode& xmlNode)
     if(!changesNode.IsNull())
     {
       XmlNode changesMember = changesNode.FirstChild("Change");
+      m_changesHasBeenSet = !changesMember.IsNull();
       while(!changesMember.IsNull())
       {
         m_changes.push_back(changesMember);

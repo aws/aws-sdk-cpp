@@ -33,7 +33,7 @@ namespace Model
   class AssigneeContact
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API AssigneeContact();
+    AWS_PARTNERCENTRALSELLING_API AssigneeContact() = default;
     AWS_PARTNERCENTRALSELLING_API AssigneeContact(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API AssigneeContact& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * organization. Use the value <code>PartnerAccountManager</code> to update details
      * of the opportunity owner.</p>
      */
-    inline const Aws::String& GetBusinessTitle() const{ return m_businessTitle; }
+    inline const Aws::String& GetBusinessTitle() const { return m_businessTitle; }
     inline bool BusinessTitleHasBeenSet() const { return m_businessTitleHasBeenSet; }
-    inline void SetBusinessTitle(const Aws::String& value) { m_businessTitleHasBeenSet = true; m_businessTitle = value; }
-    inline void SetBusinessTitle(Aws::String&& value) { m_businessTitleHasBeenSet = true; m_businessTitle = std::move(value); }
-    inline void SetBusinessTitle(const char* value) { m_businessTitleHasBeenSet = true; m_businessTitle.assign(value); }
-    inline AssigneeContact& WithBusinessTitle(const Aws::String& value) { SetBusinessTitle(value); return *this;}
-    inline AssigneeContact& WithBusinessTitle(Aws::String&& value) { SetBusinessTitle(std::move(value)); return *this;}
-    inline AssigneeContact& WithBusinessTitle(const char* value) { SetBusinessTitle(value); return *this;}
+    template<typename BusinessTitleT = Aws::String>
+    void SetBusinessTitle(BusinessTitleT&& value) { m_businessTitleHasBeenSet = true; m_businessTitle = std::forward<BusinessTitleT>(value); }
+    template<typename BusinessTitleT = Aws::String>
+    AssigneeContact& WithBusinessTitle(BusinessTitleT&& value) { SetBusinessTitle(std::forward<BusinessTitleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * <p>Provides the email address of the assignee. This email is used for
      * communications and notifications related to the opportunity.</p>
      */
-    inline const Aws::String& GetEmail() const{ return m_email; }
+    inline const Aws::String& GetEmail() const { return m_email; }
     inline bool EmailHasBeenSet() const { return m_emailHasBeenSet; }
-    inline void SetEmail(const Aws::String& value) { m_emailHasBeenSet = true; m_email = value; }
-    inline void SetEmail(Aws::String&& value) { m_emailHasBeenSet = true; m_email = std::move(value); }
-    inline void SetEmail(const char* value) { m_emailHasBeenSet = true; m_email.assign(value); }
-    inline AssigneeContact& WithEmail(const Aws::String& value) { SetEmail(value); return *this;}
-    inline AssigneeContact& WithEmail(Aws::String&& value) { SetEmail(std::move(value)); return *this;}
-    inline AssigneeContact& WithEmail(const char* value) { SetEmail(value); return *this;}
+    template<typename EmailT = Aws::String>
+    void SetEmail(EmailT&& value) { m_emailHasBeenSet = true; m_email = std::forward<EmailT>(value); }
+    template<typename EmailT = Aws::String>
+    AssigneeContact& WithEmail(EmailT&& value) { SetEmail(std::forward<EmailT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +73,12 @@ namespace Model
      * automatically retrieves this value from the user profile by referencing the
      * associated email address.</p>
      */
-    inline const Aws::String& GetFirstName() const{ return m_firstName; }
+    inline const Aws::String& GetFirstName() const { return m_firstName; }
     inline bool FirstNameHasBeenSet() const { return m_firstNameHasBeenSet; }
-    inline void SetFirstName(const Aws::String& value) { m_firstNameHasBeenSet = true; m_firstName = value; }
-    inline void SetFirstName(Aws::String&& value) { m_firstNameHasBeenSet = true; m_firstName = std::move(value); }
-    inline void SetFirstName(const char* value) { m_firstNameHasBeenSet = true; m_firstName.assign(value); }
-    inline AssigneeContact& WithFirstName(const Aws::String& value) { SetFirstName(value); return *this;}
-    inline AssigneeContact& WithFirstName(Aws::String&& value) { SetFirstName(std::move(value)); return *this;}
-    inline AssigneeContact& WithFirstName(const char* value) { SetFirstName(value); return *this;}
+    template<typename FirstNameT = Aws::String>
+    void SetFirstName(FirstNameT&& value) { m_firstNameHasBeenSet = true; m_firstName = std::forward<FirstNameT>(value); }
+    template<typename FirstNameT = Aws::String>
+    AssigneeContact& WithFirstName(FirstNameT&& value) { SetFirstName(std::forward<FirstNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,14 +87,12 @@ namespace Model
      * automatically retrieves this value from the user profile by referencing the
      * associated email address.</p>
      */
-    inline const Aws::String& GetLastName() const{ return m_lastName; }
+    inline const Aws::String& GetLastName() const { return m_lastName; }
     inline bool LastNameHasBeenSet() const { return m_lastNameHasBeenSet; }
-    inline void SetLastName(const Aws::String& value) { m_lastNameHasBeenSet = true; m_lastName = value; }
-    inline void SetLastName(Aws::String&& value) { m_lastNameHasBeenSet = true; m_lastName = std::move(value); }
-    inline void SetLastName(const char* value) { m_lastNameHasBeenSet = true; m_lastName.assign(value); }
-    inline AssigneeContact& WithLastName(const Aws::String& value) { SetLastName(value); return *this;}
-    inline AssigneeContact& WithLastName(Aws::String&& value) { SetLastName(std::move(value)); return *this;}
-    inline AssigneeContact& WithLastName(const char* value) { SetLastName(value); return *this;}
+    template<typename LastNameT = Aws::String>
+    void SetLastName(LastNameT&& value) { m_lastNameHasBeenSet = true; m_lastName = std::forward<LastNameT>(value); }
+    template<typename LastNameT = Aws::String>
+    AssigneeContact& WithLastName(LastNameT&& value) { SetLastName(std::forward<LastNameT>(value)); return *this;}
     ///@}
   private:
 

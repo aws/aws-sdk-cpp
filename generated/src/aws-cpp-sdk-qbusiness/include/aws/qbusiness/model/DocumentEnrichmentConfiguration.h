@@ -37,7 +37,7 @@ namespace Model
   class DocumentEnrichmentConfiguration
   {
   public:
-    AWS_QBUSINESS_API DocumentEnrichmentConfiguration();
+    AWS_QBUSINESS_API DocumentEnrichmentConfiguration() = default;
     AWS_QBUSINESS_API DocumentEnrichmentConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API DocumentEnrichmentConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,34 +48,34 @@ namespace Model
      * <p>Configuration information to alter document attributes or metadata fields and
      * content when ingesting documents into Amazon Q Business.</p>
      */
-    inline const Aws::Vector<InlineDocumentEnrichmentConfiguration>& GetInlineConfigurations() const{ return m_inlineConfigurations; }
+    inline const Aws::Vector<InlineDocumentEnrichmentConfiguration>& GetInlineConfigurations() const { return m_inlineConfigurations; }
     inline bool InlineConfigurationsHasBeenSet() const { return m_inlineConfigurationsHasBeenSet; }
-    inline void SetInlineConfigurations(const Aws::Vector<InlineDocumentEnrichmentConfiguration>& value) { m_inlineConfigurationsHasBeenSet = true; m_inlineConfigurations = value; }
-    inline void SetInlineConfigurations(Aws::Vector<InlineDocumentEnrichmentConfiguration>&& value) { m_inlineConfigurationsHasBeenSet = true; m_inlineConfigurations = std::move(value); }
-    inline DocumentEnrichmentConfiguration& WithInlineConfigurations(const Aws::Vector<InlineDocumentEnrichmentConfiguration>& value) { SetInlineConfigurations(value); return *this;}
-    inline DocumentEnrichmentConfiguration& WithInlineConfigurations(Aws::Vector<InlineDocumentEnrichmentConfiguration>&& value) { SetInlineConfigurations(std::move(value)); return *this;}
-    inline DocumentEnrichmentConfiguration& AddInlineConfigurations(const InlineDocumentEnrichmentConfiguration& value) { m_inlineConfigurationsHasBeenSet = true; m_inlineConfigurations.push_back(value); return *this; }
-    inline DocumentEnrichmentConfiguration& AddInlineConfigurations(InlineDocumentEnrichmentConfiguration&& value) { m_inlineConfigurationsHasBeenSet = true; m_inlineConfigurations.push_back(std::move(value)); return *this; }
+    template<typename InlineConfigurationsT = Aws::Vector<InlineDocumentEnrichmentConfiguration>>
+    void SetInlineConfigurations(InlineConfigurationsT&& value) { m_inlineConfigurationsHasBeenSet = true; m_inlineConfigurations = std::forward<InlineConfigurationsT>(value); }
+    template<typename InlineConfigurationsT = Aws::Vector<InlineDocumentEnrichmentConfiguration>>
+    DocumentEnrichmentConfiguration& WithInlineConfigurations(InlineConfigurationsT&& value) { SetInlineConfigurations(std::forward<InlineConfigurationsT>(value)); return *this;}
+    template<typename InlineConfigurationsT = InlineDocumentEnrichmentConfiguration>
+    DocumentEnrichmentConfiguration& AddInlineConfigurations(InlineConfigurationsT&& value) { m_inlineConfigurationsHasBeenSet = true; m_inlineConfigurations.emplace_back(std::forward<InlineConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const HookConfiguration& GetPreExtractionHookConfiguration() const{ return m_preExtractionHookConfiguration; }
+    inline const HookConfiguration& GetPreExtractionHookConfiguration() const { return m_preExtractionHookConfiguration; }
     inline bool PreExtractionHookConfigurationHasBeenSet() const { return m_preExtractionHookConfigurationHasBeenSet; }
-    inline void SetPreExtractionHookConfiguration(const HookConfiguration& value) { m_preExtractionHookConfigurationHasBeenSet = true; m_preExtractionHookConfiguration = value; }
-    inline void SetPreExtractionHookConfiguration(HookConfiguration&& value) { m_preExtractionHookConfigurationHasBeenSet = true; m_preExtractionHookConfiguration = std::move(value); }
-    inline DocumentEnrichmentConfiguration& WithPreExtractionHookConfiguration(const HookConfiguration& value) { SetPreExtractionHookConfiguration(value); return *this;}
-    inline DocumentEnrichmentConfiguration& WithPreExtractionHookConfiguration(HookConfiguration&& value) { SetPreExtractionHookConfiguration(std::move(value)); return *this;}
+    template<typename PreExtractionHookConfigurationT = HookConfiguration>
+    void SetPreExtractionHookConfiguration(PreExtractionHookConfigurationT&& value) { m_preExtractionHookConfigurationHasBeenSet = true; m_preExtractionHookConfiguration = std::forward<PreExtractionHookConfigurationT>(value); }
+    template<typename PreExtractionHookConfigurationT = HookConfiguration>
+    DocumentEnrichmentConfiguration& WithPreExtractionHookConfiguration(PreExtractionHookConfigurationT&& value) { SetPreExtractionHookConfiguration(std::forward<PreExtractionHookConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const HookConfiguration& GetPostExtractionHookConfiguration() const{ return m_postExtractionHookConfiguration; }
+    inline const HookConfiguration& GetPostExtractionHookConfiguration() const { return m_postExtractionHookConfiguration; }
     inline bool PostExtractionHookConfigurationHasBeenSet() const { return m_postExtractionHookConfigurationHasBeenSet; }
-    inline void SetPostExtractionHookConfiguration(const HookConfiguration& value) { m_postExtractionHookConfigurationHasBeenSet = true; m_postExtractionHookConfiguration = value; }
-    inline void SetPostExtractionHookConfiguration(HookConfiguration&& value) { m_postExtractionHookConfigurationHasBeenSet = true; m_postExtractionHookConfiguration = std::move(value); }
-    inline DocumentEnrichmentConfiguration& WithPostExtractionHookConfiguration(const HookConfiguration& value) { SetPostExtractionHookConfiguration(value); return *this;}
-    inline DocumentEnrichmentConfiguration& WithPostExtractionHookConfiguration(HookConfiguration&& value) { SetPostExtractionHookConfiguration(std::move(value)); return *this;}
+    template<typename PostExtractionHookConfigurationT = HookConfiguration>
+    void SetPostExtractionHookConfiguration(PostExtractionHookConfigurationT&& value) { m_postExtractionHookConfigurationHasBeenSet = true; m_postExtractionHookConfiguration = std::forward<PostExtractionHookConfigurationT>(value); }
+    template<typename PostExtractionHookConfigurationT = HookConfiguration>
+    DocumentEnrichmentConfiguration& WithPostExtractionHookConfiguration(PostExtractionHookConfigurationT&& value) { SetPostExtractionHookConfiguration(std::forward<PostExtractionHookConfigurationT>(value)); return *this;}
     ///@}
   private:
 

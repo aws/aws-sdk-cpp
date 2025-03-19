@@ -21,7 +21,7 @@ namespace Model
   class DeleteOptOutListRequest : public PinpointSMSVoiceV2Request
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API DeleteOptOutListRequest();
+    AWS_PINPOINTSMSVOICEV2_API DeleteOptOutListRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * Messaging SMS and Voice resource then you must use the full Amazon Resource
      * Name(ARN).</p> 
      */
-    inline const Aws::String& GetOptOutListName() const{ return m_optOutListName; }
+    inline const Aws::String& GetOptOutListName() const { return m_optOutListName; }
     inline bool OptOutListNameHasBeenSet() const { return m_optOutListNameHasBeenSet; }
-    inline void SetOptOutListName(const Aws::String& value) { m_optOutListNameHasBeenSet = true; m_optOutListName = value; }
-    inline void SetOptOutListName(Aws::String&& value) { m_optOutListNameHasBeenSet = true; m_optOutListName = std::move(value); }
-    inline void SetOptOutListName(const char* value) { m_optOutListNameHasBeenSet = true; m_optOutListName.assign(value); }
-    inline DeleteOptOutListRequest& WithOptOutListName(const Aws::String& value) { SetOptOutListName(value); return *this;}
-    inline DeleteOptOutListRequest& WithOptOutListName(Aws::String&& value) { SetOptOutListName(std::move(value)); return *this;}
-    inline DeleteOptOutListRequest& WithOptOutListName(const char* value) { SetOptOutListName(value); return *this;}
+    template<typename OptOutListNameT = Aws::String>
+    void SetOptOutListName(OptOutListNameT&& value) { m_optOutListNameHasBeenSet = true; m_optOutListName = std::forward<OptOutListNameT>(value); }
+    template<typename OptOutListNameT = Aws::String>
+    DeleteOptOutListRequest& WithOptOutListName(OptOutListNameT&& value) { SetOptOutListName(std::forward<OptOutListNameT>(value)); return *this;}
     ///@}
   private:
 

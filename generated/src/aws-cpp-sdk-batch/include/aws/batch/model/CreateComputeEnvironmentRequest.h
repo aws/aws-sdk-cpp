@@ -30,7 +30,7 @@ namespace Model
   class CreateComputeEnvironmentRequest : public BatchRequest
   {
   public:
-    AWS_BATCH_API CreateComputeEnvironmentRequest();
+    AWS_BATCH_API CreateComputeEnvironmentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,14 +47,12 @@ namespace Model
      * It can contain uppercase and lowercase letters, numbers, hyphens (-), and
      * underscores (_).</p>
      */
-    inline const Aws::String& GetComputeEnvironmentName() const{ return m_computeEnvironmentName; }
+    inline const Aws::String& GetComputeEnvironmentName() const { return m_computeEnvironmentName; }
     inline bool ComputeEnvironmentNameHasBeenSet() const { return m_computeEnvironmentNameHasBeenSet; }
-    inline void SetComputeEnvironmentName(const Aws::String& value) { m_computeEnvironmentNameHasBeenSet = true; m_computeEnvironmentName = value; }
-    inline void SetComputeEnvironmentName(Aws::String&& value) { m_computeEnvironmentNameHasBeenSet = true; m_computeEnvironmentName = std::move(value); }
-    inline void SetComputeEnvironmentName(const char* value) { m_computeEnvironmentNameHasBeenSet = true; m_computeEnvironmentName.assign(value); }
-    inline CreateComputeEnvironmentRequest& WithComputeEnvironmentName(const Aws::String& value) { SetComputeEnvironmentName(value); return *this;}
-    inline CreateComputeEnvironmentRequest& WithComputeEnvironmentName(Aws::String&& value) { SetComputeEnvironmentName(std::move(value)); return *this;}
-    inline CreateComputeEnvironmentRequest& WithComputeEnvironmentName(const char* value) { SetComputeEnvironmentName(value); return *this;}
+    template<typename ComputeEnvironmentNameT = Aws::String>
+    void SetComputeEnvironmentName(ComputeEnvironmentNameT&& value) { m_computeEnvironmentNameHasBeenSet = true; m_computeEnvironmentName = std::forward<ComputeEnvironmentNameT>(value); }
+    template<typename ComputeEnvironmentNameT = Aws::String>
+    CreateComputeEnvironmentRequest& WithComputeEnvironmentName(ComputeEnvironmentNameT&& value) { SetComputeEnvironmentName(std::forward<ComputeEnvironmentNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,12 +62,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
      * Environments</a> in the <i>Batch User Guide</i>.</p>
      */
-    inline const CEType& GetType() const{ return m_type; }
+    inline CEType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const CEType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(CEType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline CreateComputeEnvironmentRequest& WithType(const CEType& value) { SetType(value); return *this;}
-    inline CreateComputeEnvironmentRequest& WithType(CEType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(CEType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline CreateComputeEnvironmentRequest& WithType(CEType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -95,12 +91,10 @@ namespace Model
      * <code>desiredvCpus</code> value of <code>36</code>. This instance doesn't scale
      * down to a <code>c5.large</code> instance.</p>
      */
-    inline const CEState& GetState() const{ return m_state; }
+    inline CEState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const CEState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(CEState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline CreateComputeEnvironmentRequest& WithState(const CEState& value) { SetState(value); return *this;}
-    inline CreateComputeEnvironmentRequest& WithState(CEState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(CEState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline CreateComputeEnvironmentRequest& WithState(CEState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
@@ -112,7 +106,7 @@ namespace Model
      * supported when the <code>type</code> parameter is set to
      * <code>UNMANAGED</code>.</p> 
      */
-    inline int GetUnmanagedvCpus() const{ return m_unmanagedvCpus; }
+    inline int GetUnmanagedvCpus() const { return m_unmanagedvCpus; }
     inline bool UnmanagedvCpusHasBeenSet() const { return m_unmanagedvCpusHasBeenSet; }
     inline void SetUnmanagedvCpus(int value) { m_unmanagedvCpusHasBeenSet = true; m_unmanagedvCpus = value; }
     inline CreateComputeEnvironmentRequest& WithUnmanagedvCpus(int value) { SetUnmanagedvCpus(value); return *this;}
@@ -126,12 +120,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
      * Environments</a> in the <i>Batch User Guide</i>.</p>
      */
-    inline const ComputeResource& GetComputeResources() const{ return m_computeResources; }
+    inline const ComputeResource& GetComputeResources() const { return m_computeResources; }
     inline bool ComputeResourcesHasBeenSet() const { return m_computeResourcesHasBeenSet; }
-    inline void SetComputeResources(const ComputeResource& value) { m_computeResourcesHasBeenSet = true; m_computeResources = value; }
-    inline void SetComputeResources(ComputeResource&& value) { m_computeResourcesHasBeenSet = true; m_computeResources = std::move(value); }
-    inline CreateComputeEnvironmentRequest& WithComputeResources(const ComputeResource& value) { SetComputeResources(value); return *this;}
-    inline CreateComputeEnvironmentRequest& WithComputeResources(ComputeResource&& value) { SetComputeResources(std::move(value)); return *this;}
+    template<typename ComputeResourcesT = ComputeResource>
+    void SetComputeResources(ComputeResourcesT&& value) { m_computeResourcesHasBeenSet = true; m_computeResources = std::forward<ComputeResourcesT>(value); }
+    template<typename ComputeResourcesT = ComputeResource>
+    CreateComputeEnvironmentRequest& WithComputeResources(ComputeResourcesT&& value) { SetComputeResources(std::forward<ComputeResourcesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -159,14 +153,12 @@ namespace Model
      * specify the full ARN of your service role when you create compute
      * environments.</p> 
      */
-    inline const Aws::String& GetServiceRole() const{ return m_serviceRole; }
+    inline const Aws::String& GetServiceRole() const { return m_serviceRole; }
     inline bool ServiceRoleHasBeenSet() const { return m_serviceRoleHasBeenSet; }
-    inline void SetServiceRole(const Aws::String& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = value; }
-    inline void SetServiceRole(Aws::String&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = std::move(value); }
-    inline void SetServiceRole(const char* value) { m_serviceRoleHasBeenSet = true; m_serviceRole.assign(value); }
-    inline CreateComputeEnvironmentRequest& WithServiceRole(const Aws::String& value) { SetServiceRole(value); return *this;}
-    inline CreateComputeEnvironmentRequest& WithServiceRole(Aws::String&& value) { SetServiceRole(std::move(value)); return *this;}
-    inline CreateComputeEnvironmentRequest& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
+    template<typename ServiceRoleT = Aws::String>
+    void SetServiceRole(ServiceRoleT&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = std::forward<ServiceRoleT>(value); }
+    template<typename ServiceRoleT = Aws::String>
+    CreateComputeEnvironmentRequest& WithServiceRole(ServiceRoleT&& value) { SetServiceRole(std::forward<ServiceRoleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -183,19 +175,16 @@ namespace Model
      * API operations. These tags don't propagate to the underlying compute
      * resources.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateComputeEnvironmentRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateComputeEnvironmentRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateComputeEnvironmentRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateComputeEnvironmentRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateComputeEnvironmentRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateComputeEnvironmentRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateComputeEnvironmentRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateComputeEnvironmentRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateComputeEnvironmentRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateComputeEnvironmentRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateComputeEnvironmentRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -203,39 +192,37 @@ namespace Model
      * <p>The details for the Amazon EKS cluster that supports the compute
      * environment.</p>
      */
-    inline const EksConfiguration& GetEksConfiguration() const{ return m_eksConfiguration; }
+    inline const EksConfiguration& GetEksConfiguration() const { return m_eksConfiguration; }
     inline bool EksConfigurationHasBeenSet() const { return m_eksConfigurationHasBeenSet; }
-    inline void SetEksConfiguration(const EksConfiguration& value) { m_eksConfigurationHasBeenSet = true; m_eksConfiguration = value; }
-    inline void SetEksConfiguration(EksConfiguration&& value) { m_eksConfigurationHasBeenSet = true; m_eksConfiguration = std::move(value); }
-    inline CreateComputeEnvironmentRequest& WithEksConfiguration(const EksConfiguration& value) { SetEksConfiguration(value); return *this;}
-    inline CreateComputeEnvironmentRequest& WithEksConfiguration(EksConfiguration&& value) { SetEksConfiguration(std::move(value)); return *this;}
+    template<typename EksConfigurationT = EksConfiguration>
+    void SetEksConfiguration(EksConfigurationT&& value) { m_eksConfigurationHasBeenSet = true; m_eksConfiguration = std::forward<EksConfigurationT>(value); }
+    template<typename EksConfigurationT = EksConfiguration>
+    CreateComputeEnvironmentRequest& WithEksConfiguration(EksConfigurationT&& value) { SetEksConfiguration(std::forward<EksConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Reserved.</p>
      */
-    inline const Aws::String& GetContext() const{ return m_context; }
+    inline const Aws::String& GetContext() const { return m_context; }
     inline bool ContextHasBeenSet() const { return m_contextHasBeenSet; }
-    inline void SetContext(const Aws::String& value) { m_contextHasBeenSet = true; m_context = value; }
-    inline void SetContext(Aws::String&& value) { m_contextHasBeenSet = true; m_context = std::move(value); }
-    inline void SetContext(const char* value) { m_contextHasBeenSet = true; m_context.assign(value); }
-    inline CreateComputeEnvironmentRequest& WithContext(const Aws::String& value) { SetContext(value); return *this;}
-    inline CreateComputeEnvironmentRequest& WithContext(Aws::String&& value) { SetContext(std::move(value)); return *this;}
-    inline CreateComputeEnvironmentRequest& WithContext(const char* value) { SetContext(value); return *this;}
+    template<typename ContextT = Aws::String>
+    void SetContext(ContextT&& value) { m_contextHasBeenSet = true; m_context = std::forward<ContextT>(value); }
+    template<typename ContextT = Aws::String>
+    CreateComputeEnvironmentRequest& WithContext(ContextT&& value) { SetContext(std::forward<ContextT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_computeEnvironmentName;
     bool m_computeEnvironmentNameHasBeenSet = false;
 
-    CEType m_type;
+    CEType m_type{CEType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    CEState m_state;
+    CEState m_state{CEState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
-    int m_unmanagedvCpus;
+    int m_unmanagedvCpus{0};
     bool m_unmanagedvCpusHasBeenSet = false;
 
     ComputeResource m_computeResources;

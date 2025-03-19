@@ -35,7 +35,7 @@ namespace Model
   class StartAttachedFileUploadResult
   {
   public:
-    AWS_CONNECT_API StartAttachedFileUploadResult();
+    AWS_CONNECT_API StartAttachedFileUploadResult() = default;
     AWS_CONNECT_API StartAttachedFileUploadResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECT_API StartAttachedFileUploadResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,26 +44,22 @@ namespace Model
     /**
      * <p>The unique identifier of the attached file resource (ARN).</p>
      */
-    inline const Aws::String& GetFileArn() const{ return m_fileArn; }
-    inline void SetFileArn(const Aws::String& value) { m_fileArn = value; }
-    inline void SetFileArn(Aws::String&& value) { m_fileArn = std::move(value); }
-    inline void SetFileArn(const char* value) { m_fileArn.assign(value); }
-    inline StartAttachedFileUploadResult& WithFileArn(const Aws::String& value) { SetFileArn(value); return *this;}
-    inline StartAttachedFileUploadResult& WithFileArn(Aws::String&& value) { SetFileArn(std::move(value)); return *this;}
-    inline StartAttachedFileUploadResult& WithFileArn(const char* value) { SetFileArn(value); return *this;}
+    inline const Aws::String& GetFileArn() const { return m_fileArn; }
+    template<typename FileArnT = Aws::String>
+    void SetFileArn(FileArnT&& value) { m_fileArnHasBeenSet = true; m_fileArn = std::forward<FileArnT>(value); }
+    template<typename FileArnT = Aws::String>
+    StartAttachedFileUploadResult& WithFileArn(FileArnT&& value) { SetFileArn(std::forward<FileArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the attached file resource.</p>
      */
-    inline const Aws::String& GetFileId() const{ return m_fileId; }
-    inline void SetFileId(const Aws::String& value) { m_fileId = value; }
-    inline void SetFileId(Aws::String&& value) { m_fileId = std::move(value); }
-    inline void SetFileId(const char* value) { m_fileId.assign(value); }
-    inline StartAttachedFileUploadResult& WithFileId(const Aws::String& value) { SetFileId(value); return *this;}
-    inline StartAttachedFileUploadResult& WithFileId(Aws::String&& value) { SetFileId(std::move(value)); return *this;}
-    inline StartAttachedFileUploadResult& WithFileId(const char* value) { SetFileId(value); return *this;}
+    inline const Aws::String& GetFileId() const { return m_fileId; }
+    template<typename FileIdT = Aws::String>
+    void SetFileId(FileIdT&& value) { m_fileIdHasBeenSet = true; m_fileId = std::forward<FileIdT>(value); }
+    template<typename FileIdT = Aws::String>
+    StartAttachedFileUploadResult& WithFileId(FileIdT&& value) { SetFileId(std::forward<FileIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,73 +68,74 @@ namespace Model
      * in ISO 8601 format: <code>yyyy-MM-ddThh:mm:ss.SSSZ</code>. For example,
      * <code>2024-05-03T02:41:28.172Z</code>.</p>
      */
-    inline const Aws::String& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::String& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::String&& value) { m_creationTime = std::move(value); }
-    inline void SetCreationTime(const char* value) { m_creationTime.assign(value); }
-    inline StartAttachedFileUploadResult& WithCreationTime(const Aws::String& value) { SetCreationTime(value); return *this;}
-    inline StartAttachedFileUploadResult& WithCreationTime(Aws::String&& value) { SetCreationTime(std::move(value)); return *this;}
-    inline StartAttachedFileUploadResult& WithCreationTime(const char* value) { SetCreationTime(value); return *this;}
+    inline const Aws::String& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::String>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::String>
+    StartAttachedFileUploadResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current status of the attached file.</p>
      */
-    inline const FileStatusType& GetFileStatus() const{ return m_fileStatus; }
-    inline void SetFileStatus(const FileStatusType& value) { m_fileStatus = value; }
-    inline void SetFileStatus(FileStatusType&& value) { m_fileStatus = std::move(value); }
-    inline StartAttachedFileUploadResult& WithFileStatus(const FileStatusType& value) { SetFileStatus(value); return *this;}
-    inline StartAttachedFileUploadResult& WithFileStatus(FileStatusType&& value) { SetFileStatus(std::move(value)); return *this;}
+    inline FileStatusType GetFileStatus() const { return m_fileStatus; }
+    inline void SetFileStatus(FileStatusType value) { m_fileStatusHasBeenSet = true; m_fileStatus = value; }
+    inline StartAttachedFileUploadResult& WithFileStatus(FileStatusType value) { SetFileStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Represents the identity that created the file.</p>
      */
-    inline const CreatedByInfo& GetCreatedBy() const{ return m_createdBy; }
-    inline void SetCreatedBy(const CreatedByInfo& value) { m_createdBy = value; }
-    inline void SetCreatedBy(CreatedByInfo&& value) { m_createdBy = std::move(value); }
-    inline StartAttachedFileUploadResult& WithCreatedBy(const CreatedByInfo& value) { SetCreatedBy(value); return *this;}
-    inline StartAttachedFileUploadResult& WithCreatedBy(CreatedByInfo&& value) { SetCreatedBy(std::move(value)); return *this;}
+    inline const CreatedByInfo& GetCreatedBy() const { return m_createdBy; }
+    template<typename CreatedByT = CreatedByInfo>
+    void SetCreatedBy(CreatedByT&& value) { m_createdByHasBeenSet = true; m_createdBy = std::forward<CreatedByT>(value); }
+    template<typename CreatedByT = CreatedByInfo>
+    StartAttachedFileUploadResult& WithCreatedBy(CreatedByT&& value) { SetCreatedBy(std::forward<CreatedByT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The headers to be provided while uploading the file to the URL.</p>
      */
-    inline const UploadUrlMetadata& GetUploadUrlMetadata() const{ return m_uploadUrlMetadata; }
-    inline void SetUploadUrlMetadata(const UploadUrlMetadata& value) { m_uploadUrlMetadata = value; }
-    inline void SetUploadUrlMetadata(UploadUrlMetadata&& value) { m_uploadUrlMetadata = std::move(value); }
-    inline StartAttachedFileUploadResult& WithUploadUrlMetadata(const UploadUrlMetadata& value) { SetUploadUrlMetadata(value); return *this;}
-    inline StartAttachedFileUploadResult& WithUploadUrlMetadata(UploadUrlMetadata&& value) { SetUploadUrlMetadata(std::move(value)); return *this;}
+    inline const UploadUrlMetadata& GetUploadUrlMetadata() const { return m_uploadUrlMetadata; }
+    template<typename UploadUrlMetadataT = UploadUrlMetadata>
+    void SetUploadUrlMetadata(UploadUrlMetadataT&& value) { m_uploadUrlMetadataHasBeenSet = true; m_uploadUrlMetadata = std::forward<UploadUrlMetadataT>(value); }
+    template<typename UploadUrlMetadataT = UploadUrlMetadata>
+    StartAttachedFileUploadResult& WithUploadUrlMetadata(UploadUrlMetadataT&& value) { SetUploadUrlMetadata(std::forward<UploadUrlMetadataT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartAttachedFileUploadResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartAttachedFileUploadResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartAttachedFileUploadResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartAttachedFileUploadResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_fileArn;
+    bool m_fileArnHasBeenSet = false;
 
     Aws::String m_fileId;
+    bool m_fileIdHasBeenSet = false;
 
     Aws::String m_creationTime;
+    bool m_creationTimeHasBeenSet = false;
 
-    FileStatusType m_fileStatus;
+    FileStatusType m_fileStatus{FileStatusType::NOT_SET};
+    bool m_fileStatusHasBeenSet = false;
 
     CreatedByInfo m_createdBy;
+    bool m_createdByHasBeenSet = false;
 
     UploadUrlMetadata m_uploadUrlMetadata;
+    bool m_uploadUrlMetadataHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

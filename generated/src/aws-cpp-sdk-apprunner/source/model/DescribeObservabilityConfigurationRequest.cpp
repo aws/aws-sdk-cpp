@@ -12,11 +12,6 @@ using namespace Aws::AppRunner::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeObservabilityConfigurationRequest::DescribeObservabilityConfigurationRequest() : 
-    m_observabilityConfigurationArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeObservabilityConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

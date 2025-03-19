@@ -18,15 +18,7 @@ namespace CodeCommit
 namespace Model
 {
 
-ApprovalRuleEventMetadata::ApprovalRuleEventMetadata() : 
-    m_approvalRuleNameHasBeenSet(false),
-    m_approvalRuleIdHasBeenSet(false),
-    m_approvalRuleContentHasBeenSet(false)
-{
-}
-
 ApprovalRuleEventMetadata::ApprovalRuleEventMetadata(JsonView jsonValue)
-  : ApprovalRuleEventMetadata()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ApprovalRuleEventMetadata& ApprovalRuleEventMetadata::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("approvalRuleName"))
   {
     m_approvalRuleName = jsonValue.GetString("approvalRuleName");
-
     m_approvalRuleNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("approvalRuleId"))
   {
     m_approvalRuleId = jsonValue.GetString("approvalRuleId");
-
     m_approvalRuleIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("approvalRuleContent"))
   {
     m_approvalRuleContent = jsonValue.GetString("approvalRuleContent");
-
     m_approvalRuleContentHasBeenSet = true;
   }
-
   return *this;
 }
 

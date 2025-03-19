@@ -18,15 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-RelatedEntityIdentifiers::RelatedEntityIdentifiers() : 
-    m_awsMarketplaceOffersHasBeenSet(false),
-    m_awsProductsHasBeenSet(false),
-    m_solutionsHasBeenSet(false)
-{
-}
-
 RelatedEntityIdentifiers::RelatedEntityIdentifiers(JsonView jsonValue)
-  : RelatedEntityIdentifiers()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ RelatedEntityIdentifiers& RelatedEntityIdentifiers::operator =(JsonView jsonValu
     }
     m_awsMarketplaceOffersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AwsProducts"))
   {
     Aws::Utils::Array<JsonView> awsProductsJsonList = jsonValue.GetArray("AwsProducts");
@@ -52,7 +43,6 @@ RelatedEntityIdentifiers& RelatedEntityIdentifiers::operator =(JsonView jsonValu
     }
     m_awsProductsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Solutions"))
   {
     Aws::Utils::Array<JsonView> solutionsJsonList = jsonValue.GetArray("Solutions");
@@ -62,7 +52,6 @@ RelatedEntityIdentifiers& RelatedEntityIdentifiers::operator =(JsonView jsonValu
     }
     m_solutionsHasBeenSet = true;
   }
-
   return *this;
 }
 

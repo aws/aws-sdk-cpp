@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListUserProficienciesRequest::ListUserProficienciesRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListUserProficienciesRequest::SerializePayload() const
 {
   return {};

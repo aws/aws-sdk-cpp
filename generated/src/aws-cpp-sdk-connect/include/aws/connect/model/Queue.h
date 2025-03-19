@@ -36,7 +36,7 @@ namespace Model
   class Queue
   {
   public:
-    AWS_CONNECT_API Queue();
+    AWS_CONNECT_API Queue() = default;
     AWS_CONNECT_API Queue(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Queue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,94 +46,84 @@ namespace Model
     /**
      * <p>The name of the queue.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Queue& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Queue& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Queue& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Queue& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) for the queue.</p>
      */
-    inline const Aws::String& GetQueueArn() const{ return m_queueArn; }
+    inline const Aws::String& GetQueueArn() const { return m_queueArn; }
     inline bool QueueArnHasBeenSet() const { return m_queueArnHasBeenSet; }
-    inline void SetQueueArn(const Aws::String& value) { m_queueArnHasBeenSet = true; m_queueArn = value; }
-    inline void SetQueueArn(Aws::String&& value) { m_queueArnHasBeenSet = true; m_queueArn = std::move(value); }
-    inline void SetQueueArn(const char* value) { m_queueArnHasBeenSet = true; m_queueArn.assign(value); }
-    inline Queue& WithQueueArn(const Aws::String& value) { SetQueueArn(value); return *this;}
-    inline Queue& WithQueueArn(Aws::String&& value) { SetQueueArn(std::move(value)); return *this;}
-    inline Queue& WithQueueArn(const char* value) { SetQueueArn(value); return *this;}
+    template<typename QueueArnT = Aws::String>
+    void SetQueueArn(QueueArnT&& value) { m_queueArnHasBeenSet = true; m_queueArn = std::forward<QueueArnT>(value); }
+    template<typename QueueArnT = Aws::String>
+    Queue& WithQueueArn(QueueArnT&& value) { SetQueueArn(std::forward<QueueArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier for the queue.</p>
      */
-    inline const Aws::String& GetQueueId() const{ return m_queueId; }
+    inline const Aws::String& GetQueueId() const { return m_queueId; }
     inline bool QueueIdHasBeenSet() const { return m_queueIdHasBeenSet; }
-    inline void SetQueueId(const Aws::String& value) { m_queueIdHasBeenSet = true; m_queueId = value; }
-    inline void SetQueueId(Aws::String&& value) { m_queueIdHasBeenSet = true; m_queueId = std::move(value); }
-    inline void SetQueueId(const char* value) { m_queueIdHasBeenSet = true; m_queueId.assign(value); }
-    inline Queue& WithQueueId(const Aws::String& value) { SetQueueId(value); return *this;}
-    inline Queue& WithQueueId(Aws::String&& value) { SetQueueId(std::move(value)); return *this;}
-    inline Queue& WithQueueId(const char* value) { SetQueueId(value); return *this;}
+    template<typename QueueIdT = Aws::String>
+    void SetQueueId(QueueIdT&& value) { m_queueIdHasBeenSet = true; m_queueId = std::forward<QueueIdT>(value); }
+    template<typename QueueIdT = Aws::String>
+    Queue& WithQueueId(QueueIdT&& value) { SetQueueId(std::forward<QueueIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the queue.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline Queue& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline Queue& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline Queue& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    Queue& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The outbound caller ID name, number, and outbound whisper flow.</p>
      */
-    inline const OutboundCallerConfig& GetOutboundCallerConfig() const{ return m_outboundCallerConfig; }
+    inline const OutboundCallerConfig& GetOutboundCallerConfig() const { return m_outboundCallerConfig; }
     inline bool OutboundCallerConfigHasBeenSet() const { return m_outboundCallerConfigHasBeenSet; }
-    inline void SetOutboundCallerConfig(const OutboundCallerConfig& value) { m_outboundCallerConfigHasBeenSet = true; m_outboundCallerConfig = value; }
-    inline void SetOutboundCallerConfig(OutboundCallerConfig&& value) { m_outboundCallerConfigHasBeenSet = true; m_outboundCallerConfig = std::move(value); }
-    inline Queue& WithOutboundCallerConfig(const OutboundCallerConfig& value) { SetOutboundCallerConfig(value); return *this;}
-    inline Queue& WithOutboundCallerConfig(OutboundCallerConfig&& value) { SetOutboundCallerConfig(std::move(value)); return *this;}
+    template<typename OutboundCallerConfigT = OutboundCallerConfig>
+    void SetOutboundCallerConfig(OutboundCallerConfigT&& value) { m_outboundCallerConfigHasBeenSet = true; m_outboundCallerConfig = std::forward<OutboundCallerConfigT>(value); }
+    template<typename OutboundCallerConfigT = OutboundCallerConfig>
+    Queue& WithOutboundCallerConfig(OutboundCallerConfigT&& value) { SetOutboundCallerConfig(std::forward<OutboundCallerConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The outbound email address ID for a specified queue.</p>
      */
-    inline const OutboundEmailConfig& GetOutboundEmailConfig() const{ return m_outboundEmailConfig; }
+    inline const OutboundEmailConfig& GetOutboundEmailConfig() const { return m_outboundEmailConfig; }
     inline bool OutboundEmailConfigHasBeenSet() const { return m_outboundEmailConfigHasBeenSet; }
-    inline void SetOutboundEmailConfig(const OutboundEmailConfig& value) { m_outboundEmailConfigHasBeenSet = true; m_outboundEmailConfig = value; }
-    inline void SetOutboundEmailConfig(OutboundEmailConfig&& value) { m_outboundEmailConfigHasBeenSet = true; m_outboundEmailConfig = std::move(value); }
-    inline Queue& WithOutboundEmailConfig(const OutboundEmailConfig& value) { SetOutboundEmailConfig(value); return *this;}
-    inline Queue& WithOutboundEmailConfig(OutboundEmailConfig&& value) { SetOutboundEmailConfig(std::move(value)); return *this;}
+    template<typename OutboundEmailConfigT = OutboundEmailConfig>
+    void SetOutboundEmailConfig(OutboundEmailConfigT&& value) { m_outboundEmailConfigHasBeenSet = true; m_outboundEmailConfig = std::forward<OutboundEmailConfigT>(value); }
+    template<typename OutboundEmailConfigT = OutboundEmailConfig>
+    Queue& WithOutboundEmailConfig(OutboundEmailConfigT&& value) { SetOutboundEmailConfig(std::forward<OutboundEmailConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier for the hours of operation.</p>
      */
-    inline const Aws::String& GetHoursOfOperationId() const{ return m_hoursOfOperationId; }
+    inline const Aws::String& GetHoursOfOperationId() const { return m_hoursOfOperationId; }
     inline bool HoursOfOperationIdHasBeenSet() const { return m_hoursOfOperationIdHasBeenSet; }
-    inline void SetHoursOfOperationId(const Aws::String& value) { m_hoursOfOperationIdHasBeenSet = true; m_hoursOfOperationId = value; }
-    inline void SetHoursOfOperationId(Aws::String&& value) { m_hoursOfOperationIdHasBeenSet = true; m_hoursOfOperationId = std::move(value); }
-    inline void SetHoursOfOperationId(const char* value) { m_hoursOfOperationIdHasBeenSet = true; m_hoursOfOperationId.assign(value); }
-    inline Queue& WithHoursOfOperationId(const Aws::String& value) { SetHoursOfOperationId(value); return *this;}
-    inline Queue& WithHoursOfOperationId(Aws::String&& value) { SetHoursOfOperationId(std::move(value)); return *this;}
-    inline Queue& WithHoursOfOperationId(const char* value) { SetHoursOfOperationId(value); return *this;}
+    template<typename HoursOfOperationIdT = Aws::String>
+    void SetHoursOfOperationId(HoursOfOperationIdT&& value) { m_hoursOfOperationIdHasBeenSet = true; m_hoursOfOperationId = std::forward<HoursOfOperationIdT>(value); }
+    template<typename HoursOfOperationIdT = Aws::String>
+    Queue& WithHoursOfOperationId(HoursOfOperationIdT&& value) { SetHoursOfOperationId(std::forward<HoursOfOperationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -141,7 +131,7 @@ namespace Model
      * <p>The maximum number of contacts that can be in the queue before it is
      * considered full.</p>
      */
-    inline int GetMaxContacts() const{ return m_maxContacts; }
+    inline int GetMaxContacts() const { return m_maxContacts; }
     inline bool MaxContactsHasBeenSet() const { return m_maxContactsHasBeenSet; }
     inline void SetMaxContacts(int value) { m_maxContactsHasBeenSet = true; m_maxContacts = value; }
     inline Queue& WithMaxContacts(int value) { SetMaxContacts(value); return *this;}
@@ -151,12 +141,10 @@ namespace Model
     /**
      * <p>The status of the queue.</p>
      */
-    inline const QueueStatus& GetStatus() const{ return m_status; }
+    inline QueueStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const QueueStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(QueueStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline Queue& WithStatus(const QueueStatus& value) { SetStatus(value); return *this;}
-    inline Queue& WithStatus(QueueStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(QueueStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline Queue& WithStatus(QueueStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -164,45 +152,40 @@ namespace Model
      * <p>The tags used to organize, track, or control access for this resource. For
      * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline Queue& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline Queue& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline Queue& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline Queue& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline Queue& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline Queue& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline Queue& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline Queue& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline Queue& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    Queue& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    Queue& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The timestamp when this resource was last modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
-    inline Queue& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline Queue& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    Queue& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services Region where this resource was last modified.</p>
      */
-    inline const Aws::String& GetLastModifiedRegion() const{ return m_lastModifiedRegion; }
+    inline const Aws::String& GetLastModifiedRegion() const { return m_lastModifiedRegion; }
     inline bool LastModifiedRegionHasBeenSet() const { return m_lastModifiedRegionHasBeenSet; }
-    inline void SetLastModifiedRegion(const Aws::String& value) { m_lastModifiedRegionHasBeenSet = true; m_lastModifiedRegion = value; }
-    inline void SetLastModifiedRegion(Aws::String&& value) { m_lastModifiedRegionHasBeenSet = true; m_lastModifiedRegion = std::move(value); }
-    inline void SetLastModifiedRegion(const char* value) { m_lastModifiedRegionHasBeenSet = true; m_lastModifiedRegion.assign(value); }
-    inline Queue& WithLastModifiedRegion(const Aws::String& value) { SetLastModifiedRegion(value); return *this;}
-    inline Queue& WithLastModifiedRegion(Aws::String&& value) { SetLastModifiedRegion(std::move(value)); return *this;}
-    inline Queue& WithLastModifiedRegion(const char* value) { SetLastModifiedRegion(value); return *this;}
+    template<typename LastModifiedRegionT = Aws::String>
+    void SetLastModifiedRegion(LastModifiedRegionT&& value) { m_lastModifiedRegionHasBeenSet = true; m_lastModifiedRegion = std::forward<LastModifiedRegionT>(value); }
+    template<typename LastModifiedRegionT = Aws::String>
+    Queue& WithLastModifiedRegion(LastModifiedRegionT&& value) { SetLastModifiedRegion(std::forward<LastModifiedRegionT>(value)); return *this;}
     ///@}
   private:
 
@@ -227,16 +210,16 @@ namespace Model
     Aws::String m_hoursOfOperationId;
     bool m_hoursOfOperationIdHasBeenSet = false;
 
-    int m_maxContacts;
+    int m_maxContacts{0};
     bool m_maxContactsHasBeenSet = false;
 
-    QueueStatus m_status;
+    QueueStatus m_status{QueueStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
     bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::String m_lastModifiedRegion;

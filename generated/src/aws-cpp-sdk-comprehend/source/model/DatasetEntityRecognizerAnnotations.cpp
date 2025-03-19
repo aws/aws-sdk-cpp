@@ -18,13 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-DatasetEntityRecognizerAnnotations::DatasetEntityRecognizerAnnotations() : 
-    m_s3UriHasBeenSet(false)
-{
-}
-
 DatasetEntityRecognizerAnnotations::DatasetEntityRecognizerAnnotations(JsonView jsonValue)
-  : DatasetEntityRecognizerAnnotations()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DatasetEntityRecognizerAnnotations& DatasetEntityRecognizerAnnotations::operator
   if(jsonValue.ValueExists("S3Uri"))
   {
     m_s3Uri = jsonValue.GetString("S3Uri");
-
     m_s3UriHasBeenSet = true;
   }
-
   return *this;
 }
 

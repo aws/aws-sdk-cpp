@@ -10,23 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-AuthorizeSecurityGroupEgressRequest::AuthorizeSecurityGroupEgressRequest() : 
-    m_tagSpecificationsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_groupIdHasBeenSet(false),
-    m_sourceSecurityGroupNameHasBeenSet(false),
-    m_sourceSecurityGroupOwnerIdHasBeenSet(false),
-    m_ipProtocolHasBeenSet(false),
-    m_fromPort(0),
-    m_fromPortHasBeenSet(false),
-    m_toPort(0),
-    m_toPortHasBeenSet(false),
-    m_cidrIpHasBeenSet(false),
-    m_ipPermissionsHasBeenSet(false)
-{
-}
-
 Aws::String AuthorizeSecurityGroupEgressRequest::SerializePayload() const
 {
   Aws::StringStream ss;

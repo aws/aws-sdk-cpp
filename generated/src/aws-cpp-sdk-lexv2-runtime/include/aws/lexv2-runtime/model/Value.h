@@ -33,7 +33,7 @@ namespace Model
   class Value
   {
   public:
-    AWS_LEXRUNTIMEV2_API Value();
+    AWS_LEXRUNTIMEV2_API Value() = default;
     AWS_LEXRUNTIMEV2_API Value(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXRUNTIMEV2_API Value& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXRUNTIMEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The part of the user's response to the slot elicitation that Amazon Lex V2
      * determines is relevant to the slot value.</p>
      */
-    inline const Aws::String& GetOriginalValue() const{ return m_originalValue; }
+    inline const Aws::String& GetOriginalValue() const { return m_originalValue; }
     inline bool OriginalValueHasBeenSet() const { return m_originalValueHasBeenSet; }
-    inline void SetOriginalValue(const Aws::String& value) { m_originalValueHasBeenSet = true; m_originalValue = value; }
-    inline void SetOriginalValue(Aws::String&& value) { m_originalValueHasBeenSet = true; m_originalValue = std::move(value); }
-    inline void SetOriginalValue(const char* value) { m_originalValueHasBeenSet = true; m_originalValue.assign(value); }
-    inline Value& WithOriginalValue(const Aws::String& value) { SetOriginalValue(value); return *this;}
-    inline Value& WithOriginalValue(Aws::String&& value) { SetOriginalValue(std::move(value)); return *this;}
-    inline Value& WithOriginalValue(const char* value) { SetOriginalValue(value); return *this;}
+    template<typename OriginalValueT = Aws::String>
+    void SetOriginalValue(OriginalValueT&& value) { m_originalValueHasBeenSet = true; m_originalValue = std::forward<OriginalValueT>(value); }
+    template<typename OriginalValueT = Aws::String>
+    Value& WithOriginalValue(OriginalValueT&& value) { SetOriginalValue(std::forward<OriginalValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * bot. You can choose to use the value entered by the user, or you can have Amazon
      * Lex V2 choose the first value in the <code>resolvedValues</code> list.</p>
      */
-    inline const Aws::String& GetInterpretedValue() const{ return m_interpretedValue; }
+    inline const Aws::String& GetInterpretedValue() const { return m_interpretedValue; }
     inline bool InterpretedValueHasBeenSet() const { return m_interpretedValueHasBeenSet; }
-    inline void SetInterpretedValue(const Aws::String& value) { m_interpretedValueHasBeenSet = true; m_interpretedValue = value; }
-    inline void SetInterpretedValue(Aws::String&& value) { m_interpretedValueHasBeenSet = true; m_interpretedValue = std::move(value); }
-    inline void SetInterpretedValue(const char* value) { m_interpretedValueHasBeenSet = true; m_interpretedValue.assign(value); }
-    inline Value& WithInterpretedValue(const Aws::String& value) { SetInterpretedValue(value); return *this;}
-    inline Value& WithInterpretedValue(Aws::String&& value) { SetInterpretedValue(std::move(value)); return *this;}
-    inline Value& WithInterpretedValue(const char* value) { SetInterpretedValue(value); return *this;}
+    template<typename InterpretedValueT = Aws::String>
+    void SetInterpretedValue(InterpretedValueT&& value) { m_interpretedValueHasBeenSet = true; m_interpretedValue = std::forward<InterpretedValueT>(value); }
+    template<typename InterpretedValueT = Aws::String>
+    Value& WithInterpretedValue(InterpretedValueT&& value) { SetInterpretedValue(std::forward<InterpretedValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,15 +72,14 @@ namespace Model
      * <p>A list of values that Amazon Lex V2 determines are possible resolutions for
      * the user input. The first value matches the <code>interpretedValue</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetResolvedValues() const{ return m_resolvedValues; }
+    inline const Aws::Vector<Aws::String>& GetResolvedValues() const { return m_resolvedValues; }
     inline bool ResolvedValuesHasBeenSet() const { return m_resolvedValuesHasBeenSet; }
-    inline void SetResolvedValues(const Aws::Vector<Aws::String>& value) { m_resolvedValuesHasBeenSet = true; m_resolvedValues = value; }
-    inline void SetResolvedValues(Aws::Vector<Aws::String>&& value) { m_resolvedValuesHasBeenSet = true; m_resolvedValues = std::move(value); }
-    inline Value& WithResolvedValues(const Aws::Vector<Aws::String>& value) { SetResolvedValues(value); return *this;}
-    inline Value& WithResolvedValues(Aws::Vector<Aws::String>&& value) { SetResolvedValues(std::move(value)); return *this;}
-    inline Value& AddResolvedValues(const Aws::String& value) { m_resolvedValuesHasBeenSet = true; m_resolvedValues.push_back(value); return *this; }
-    inline Value& AddResolvedValues(Aws::String&& value) { m_resolvedValuesHasBeenSet = true; m_resolvedValues.push_back(std::move(value)); return *this; }
-    inline Value& AddResolvedValues(const char* value) { m_resolvedValuesHasBeenSet = true; m_resolvedValues.push_back(value); return *this; }
+    template<typename ResolvedValuesT = Aws::Vector<Aws::String>>
+    void SetResolvedValues(ResolvedValuesT&& value) { m_resolvedValuesHasBeenSet = true; m_resolvedValues = std::forward<ResolvedValuesT>(value); }
+    template<typename ResolvedValuesT = Aws::Vector<Aws::String>>
+    Value& WithResolvedValues(ResolvedValuesT&& value) { SetResolvedValues(std::forward<ResolvedValuesT>(value)); return *this;}
+    template<typename ResolvedValuesT = Aws::String>
+    Value& AddResolvedValues(ResolvedValuesT&& value) { m_resolvedValuesHasBeenSet = true; m_resolvedValues.emplace_back(std::forward<ResolvedValuesT>(value)); return *this; }
     ///@}
   private:
 

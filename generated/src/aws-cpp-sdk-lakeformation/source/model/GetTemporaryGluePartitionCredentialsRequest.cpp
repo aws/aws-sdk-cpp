@@ -12,17 +12,6 @@ using namespace Aws::LakeFormation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTemporaryGluePartitionCredentialsRequest::GetTemporaryGluePartitionCredentialsRequest() : 
-    m_tableArnHasBeenSet(false),
-    m_partitionHasBeenSet(false),
-    m_permissionsHasBeenSet(false),
-    m_durationSeconds(0),
-    m_durationSecondsHasBeenSet(false),
-    m_auditContextHasBeenSet(false),
-    m_supportedPermissionTypesHasBeenSet(false)
-{
-}
-
 Aws::String GetTemporaryGluePartitionCredentialsRequest::SerializePayload() const
 {
   JsonValue payload;

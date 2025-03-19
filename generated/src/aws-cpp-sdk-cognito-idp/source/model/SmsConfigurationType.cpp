@@ -18,15 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-SmsConfigurationType::SmsConfigurationType() : 
-    m_snsCallerArnHasBeenSet(false),
-    m_externalIdHasBeenSet(false),
-    m_snsRegionHasBeenSet(false)
-{
-}
-
 SmsConfigurationType::SmsConfigurationType(JsonView jsonValue)
-  : SmsConfigurationType()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ SmsConfigurationType& SmsConfigurationType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SnsCallerArn"))
   {
     m_snsCallerArn = jsonValue.GetString("SnsCallerArn");
-
     m_snsCallerArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExternalId"))
   {
     m_externalId = jsonValue.GetString("ExternalId");
-
     m_externalIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnsRegion"))
   {
     m_snsRegion = jsonValue.GetString("SnsRegion");
-
     m_snsRegionHasBeenSet = true;
   }
-
   return *this;
 }
 

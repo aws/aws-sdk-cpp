@@ -12,15 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateCloudWatchAlarmTemplateGroupRequest::CreateCloudWatchAlarmTemplateGroupRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_requestId(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_requestIdHasBeenSet(true)
-{
-}
-
 Aws::String CreateCloudWatchAlarmTemplateGroupRequest::SerializePayload() const
 {
   JsonValue payload;

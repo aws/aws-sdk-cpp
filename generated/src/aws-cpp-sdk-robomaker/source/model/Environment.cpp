@@ -18,13 +18,7 @@ namespace RoboMaker
 namespace Model
 {
 
-Environment::Environment() : 
-    m_uriHasBeenSet(false)
-{
-}
-
 Environment::Environment(JsonView jsonValue)
-  : Environment()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Environment& Environment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("uri"))
   {
     m_uri = jsonValue.GetString("uri");
-
     m_uriHasBeenSet = true;
   }
-
   return *this;
 }
 

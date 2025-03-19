@@ -15,23 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListConnectionsRequest::ListConnectionsRequest() : 
-    m_domainIdentifierHasBeenSet(false),
-    m_environmentIdentifierHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_projectIdentifierHasBeenSet(false),
-    m_sortBy(SortFieldConnection::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false),
-    m_type(ConnectionType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 Aws::String ListConnectionsRequest::SerializePayload() const
 {
   return {};

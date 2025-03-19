@@ -18,14 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-RouteStatus::RouteStatus() : 
-    m_status(RouteStatusCode::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 RouteStatus::RouteStatus(JsonView jsonValue)
-  : RouteStatus()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ RouteStatus& RouteStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("status"))
   {
     m_status = RouteStatusCodeMapper::GetRouteStatusCodeForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

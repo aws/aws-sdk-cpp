@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SimpleScalarPropertiesResult::SimpleScalarPropertiesResult() : 
-    m_floatValue(0.0),
-    m_doubleValue(0.0)
-{
-}
-
 SimpleScalarPropertiesResult::SimpleScalarPropertiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : SimpleScalarPropertiesResult()
 {
   *this = result;
 }
@@ -35,21 +28,20 @@ SimpleScalarPropertiesResult& SimpleScalarPropertiesResult::operator =(const Aws
   if(jsonValue.ValueExists("floatValue"))
   {
     m_floatValue = jsonValue.GetDouble("floatValue");
-
+    m_floatValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("doubleValue"))
   {
     m_doubleValue = jsonValue.GetDouble("doubleValue");
-
+    m_doubleValueHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

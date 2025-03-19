@@ -18,18 +18,7 @@ namespace LicenseManagerUserSubscriptions
 namespace Model
 {
 
-IdentityProviderSummary::IdentityProviderSummary() : 
-    m_failureMessageHasBeenSet(false),
-    m_identityProviderHasBeenSet(false),
-    m_identityProviderArnHasBeenSet(false),
-    m_productHasBeenSet(false),
-    m_settingsHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 IdentityProviderSummary::IdentityProviderSummary(JsonView jsonValue)
-  : IdentityProviderSummary()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ IdentityProviderSummary& IdentityProviderSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FailureMessage"))
   {
     m_failureMessage = jsonValue.GetString("FailureMessage");
-
     m_failureMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdentityProvider"))
   {
     m_identityProvider = jsonValue.GetObject("IdentityProvider");
-
     m_identityProviderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdentityProviderArn"))
   {
     m_identityProviderArn = jsonValue.GetString("IdentityProviderArn");
-
     m_identityProviderArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Product"))
   {
     m_product = jsonValue.GetString("Product");
-
     m_productHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Settings"))
   {
     m_settings = jsonValue.GetObject("Settings");
-
     m_settingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

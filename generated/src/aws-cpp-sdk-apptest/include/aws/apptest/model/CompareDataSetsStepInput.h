@@ -33,7 +33,7 @@ namespace Model
   class CompareDataSetsStepInput
   {
   public:
-    AWS_APPTEST_API CompareDataSetsStepInput();
+    AWS_APPTEST_API CompareDataSetsStepInput() = default;
     AWS_APPTEST_API CompareDataSetsStepInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API CompareDataSetsStepInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,56 +43,52 @@ namespace Model
     /**
      * <p>The source location of the compare data sets step input location.</p>
      */
-    inline const Aws::String& GetSourceLocation() const{ return m_sourceLocation; }
+    inline const Aws::String& GetSourceLocation() const { return m_sourceLocation; }
     inline bool SourceLocationHasBeenSet() const { return m_sourceLocationHasBeenSet; }
-    inline void SetSourceLocation(const Aws::String& value) { m_sourceLocationHasBeenSet = true; m_sourceLocation = value; }
-    inline void SetSourceLocation(Aws::String&& value) { m_sourceLocationHasBeenSet = true; m_sourceLocation = std::move(value); }
-    inline void SetSourceLocation(const char* value) { m_sourceLocationHasBeenSet = true; m_sourceLocation.assign(value); }
-    inline CompareDataSetsStepInput& WithSourceLocation(const Aws::String& value) { SetSourceLocation(value); return *this;}
-    inline CompareDataSetsStepInput& WithSourceLocation(Aws::String&& value) { SetSourceLocation(std::move(value)); return *this;}
-    inline CompareDataSetsStepInput& WithSourceLocation(const char* value) { SetSourceLocation(value); return *this;}
+    template<typename SourceLocationT = Aws::String>
+    void SetSourceLocation(SourceLocationT&& value) { m_sourceLocationHasBeenSet = true; m_sourceLocation = std::forward<SourceLocationT>(value); }
+    template<typename SourceLocationT = Aws::String>
+    CompareDataSetsStepInput& WithSourceLocation(SourceLocationT&& value) { SetSourceLocation(std::forward<SourceLocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The target location of the compare data sets step input location.</p>
      */
-    inline const Aws::String& GetTargetLocation() const{ return m_targetLocation; }
+    inline const Aws::String& GetTargetLocation() const { return m_targetLocation; }
     inline bool TargetLocationHasBeenSet() const { return m_targetLocationHasBeenSet; }
-    inline void SetTargetLocation(const Aws::String& value) { m_targetLocationHasBeenSet = true; m_targetLocation = value; }
-    inline void SetTargetLocation(Aws::String&& value) { m_targetLocationHasBeenSet = true; m_targetLocation = std::move(value); }
-    inline void SetTargetLocation(const char* value) { m_targetLocationHasBeenSet = true; m_targetLocation.assign(value); }
-    inline CompareDataSetsStepInput& WithTargetLocation(const Aws::String& value) { SetTargetLocation(value); return *this;}
-    inline CompareDataSetsStepInput& WithTargetLocation(Aws::String&& value) { SetTargetLocation(std::move(value)); return *this;}
-    inline CompareDataSetsStepInput& WithTargetLocation(const char* value) { SetTargetLocation(value); return *this;}
+    template<typename TargetLocationT = Aws::String>
+    void SetTargetLocation(TargetLocationT&& value) { m_targetLocationHasBeenSet = true; m_targetLocation = std::forward<TargetLocationT>(value); }
+    template<typename TargetLocationT = Aws::String>
+    CompareDataSetsStepInput& WithTargetLocation(TargetLocationT&& value) { SetTargetLocation(std::forward<TargetLocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source data sets of the compare data sets step input location.</p>
      */
-    inline const Aws::Vector<DataSet>& GetSourceDataSets() const{ return m_sourceDataSets; }
+    inline const Aws::Vector<DataSet>& GetSourceDataSets() const { return m_sourceDataSets; }
     inline bool SourceDataSetsHasBeenSet() const { return m_sourceDataSetsHasBeenSet; }
-    inline void SetSourceDataSets(const Aws::Vector<DataSet>& value) { m_sourceDataSetsHasBeenSet = true; m_sourceDataSets = value; }
-    inline void SetSourceDataSets(Aws::Vector<DataSet>&& value) { m_sourceDataSetsHasBeenSet = true; m_sourceDataSets = std::move(value); }
-    inline CompareDataSetsStepInput& WithSourceDataSets(const Aws::Vector<DataSet>& value) { SetSourceDataSets(value); return *this;}
-    inline CompareDataSetsStepInput& WithSourceDataSets(Aws::Vector<DataSet>&& value) { SetSourceDataSets(std::move(value)); return *this;}
-    inline CompareDataSetsStepInput& AddSourceDataSets(const DataSet& value) { m_sourceDataSetsHasBeenSet = true; m_sourceDataSets.push_back(value); return *this; }
-    inline CompareDataSetsStepInput& AddSourceDataSets(DataSet&& value) { m_sourceDataSetsHasBeenSet = true; m_sourceDataSets.push_back(std::move(value)); return *this; }
+    template<typename SourceDataSetsT = Aws::Vector<DataSet>>
+    void SetSourceDataSets(SourceDataSetsT&& value) { m_sourceDataSetsHasBeenSet = true; m_sourceDataSets = std::forward<SourceDataSetsT>(value); }
+    template<typename SourceDataSetsT = Aws::Vector<DataSet>>
+    CompareDataSetsStepInput& WithSourceDataSets(SourceDataSetsT&& value) { SetSourceDataSets(std::forward<SourceDataSetsT>(value)); return *this;}
+    template<typename SourceDataSetsT = DataSet>
+    CompareDataSetsStepInput& AddSourceDataSets(SourceDataSetsT&& value) { m_sourceDataSetsHasBeenSet = true; m_sourceDataSets.emplace_back(std::forward<SourceDataSetsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The target data sets of the compare data sets step input location.</p>
      */
-    inline const Aws::Vector<DataSet>& GetTargetDataSets() const{ return m_targetDataSets; }
+    inline const Aws::Vector<DataSet>& GetTargetDataSets() const { return m_targetDataSets; }
     inline bool TargetDataSetsHasBeenSet() const { return m_targetDataSetsHasBeenSet; }
-    inline void SetTargetDataSets(const Aws::Vector<DataSet>& value) { m_targetDataSetsHasBeenSet = true; m_targetDataSets = value; }
-    inline void SetTargetDataSets(Aws::Vector<DataSet>&& value) { m_targetDataSetsHasBeenSet = true; m_targetDataSets = std::move(value); }
-    inline CompareDataSetsStepInput& WithTargetDataSets(const Aws::Vector<DataSet>& value) { SetTargetDataSets(value); return *this;}
-    inline CompareDataSetsStepInput& WithTargetDataSets(Aws::Vector<DataSet>&& value) { SetTargetDataSets(std::move(value)); return *this;}
-    inline CompareDataSetsStepInput& AddTargetDataSets(const DataSet& value) { m_targetDataSetsHasBeenSet = true; m_targetDataSets.push_back(value); return *this; }
-    inline CompareDataSetsStepInput& AddTargetDataSets(DataSet&& value) { m_targetDataSetsHasBeenSet = true; m_targetDataSets.push_back(std::move(value)); return *this; }
+    template<typename TargetDataSetsT = Aws::Vector<DataSet>>
+    void SetTargetDataSets(TargetDataSetsT&& value) { m_targetDataSetsHasBeenSet = true; m_targetDataSets = std::forward<TargetDataSetsT>(value); }
+    template<typename TargetDataSetsT = Aws::Vector<DataSet>>
+    CompareDataSetsStepInput& WithTargetDataSets(TargetDataSetsT&& value) { SetTargetDataSets(std::forward<TargetDataSetsT>(value)); return *this;}
+    template<typename TargetDataSetsT = DataSet>
+    CompareDataSetsStepInput& AddTargetDataSets(TargetDataSetsT&& value) { m_targetDataSetsHasBeenSet = true; m_targetDataSets.emplace_back(std::forward<TargetDataSetsT>(value)); return *this; }
     ///@}
   private:
 

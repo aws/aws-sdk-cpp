@@ -18,16 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-LogConfiguration::LogConfiguration() : 
-    m_logDestination(LogDestination::NOT_SET),
-    m_logDestinationHasBeenSet(false),
-    m_s3BucketNameHasBeenSet(false),
-    m_logGroupArnHasBeenSet(false)
-{
-}
-
 LogConfiguration::LogConfiguration(JsonView jsonValue)
-  : LogConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ LogConfiguration& LogConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LogDestination"))
   {
     m_logDestination = LogDestinationMapper::GetLogDestinationForName(jsonValue.GetString("LogDestination"));
-
     m_logDestinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3BucketName"))
   {
     m_s3BucketName = jsonValue.GetString("S3BucketName");
-
     m_s3BucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogGroupArn"))
   {
     m_logGroupArn = jsonValue.GetString("LogGroupArn");
-
     m_logGroupArnHasBeenSet = true;
   }
-
   return *this;
 }
 

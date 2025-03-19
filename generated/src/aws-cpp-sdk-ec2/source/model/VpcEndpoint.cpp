@@ -20,42 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VpcEndpoint::VpcEndpoint() : 
-    m_vpcEndpointIdHasBeenSet(false),
-    m_vpcEndpointType(VpcEndpointType::NOT_SET),
-    m_vpcEndpointTypeHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_state(State::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_policyDocumentHasBeenSet(false),
-    m_routeTableIdsHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_groupsHasBeenSet(false),
-    m_ipAddressType(IpAddressType::NOT_SET),
-    m_ipAddressTypeHasBeenSet(false),
-    m_dnsOptionsHasBeenSet(false),
-    m_privateDnsEnabled(false),
-    m_privateDnsEnabledHasBeenSet(false),
-    m_requesterManaged(false),
-    m_requesterManagedHasBeenSet(false),
-    m_networkInterfaceIdsHasBeenSet(false),
-    m_dnsEntriesHasBeenSet(false),
-    m_creationTimestampHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_lastErrorHasBeenSet(false),
-    m_ipv4PrefixesHasBeenSet(false),
-    m_ipv6PrefixesHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_serviceNetworkArnHasBeenSet(false),
-    m_resourceConfigurationArnHasBeenSet(false),
-    m_serviceRegionHasBeenSet(false)
-{
-}
-
 VpcEndpoint::VpcEndpoint(const XmlNode& xmlNode)
-  : VpcEndpoint()
 {
   *this = xmlNode;
 }
@@ -75,7 +40,7 @@ VpcEndpoint& VpcEndpoint::operator =(const XmlNode& xmlNode)
     XmlNode vpcEndpointTypeNode = resultNode.FirstChild("vpcEndpointType");
     if(!vpcEndpointTypeNode.IsNull())
     {
-      m_vpcEndpointType = VpcEndpointTypeMapper::GetVpcEndpointTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(vpcEndpointTypeNode.GetText()).c_str()).c_str());
+      m_vpcEndpointType = VpcEndpointTypeMapper::GetVpcEndpointTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(vpcEndpointTypeNode.GetText()).c_str()));
       m_vpcEndpointTypeHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
@@ -93,7 +58,7 @@ VpcEndpoint& VpcEndpoint::operator =(const XmlNode& xmlNode)
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = StateMapper::GetStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = StateMapper::GetStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode policyDocumentNode = resultNode.FirstChild("policyDocument");
@@ -106,6 +71,7 @@ VpcEndpoint& VpcEndpoint::operator =(const XmlNode& xmlNode)
     if(!routeTableIdsNode.IsNull())
     {
       XmlNode routeTableIdsMember = routeTableIdsNode.FirstChild("item");
+      m_routeTableIdsHasBeenSet = !routeTableIdsMember.IsNull();
       while(!routeTableIdsMember.IsNull())
       {
         m_routeTableIds.push_back(routeTableIdsMember.GetText());
@@ -118,6 +84,7 @@ VpcEndpoint& VpcEndpoint::operator =(const XmlNode& xmlNode)
     if(!subnetIdsNode.IsNull())
     {
       XmlNode subnetIdsMember = subnetIdsNode.FirstChild("item");
+      m_subnetIdsHasBeenSet = !subnetIdsMember.IsNull();
       while(!subnetIdsMember.IsNull())
       {
         m_subnetIds.push_back(subnetIdsMember.GetText());
@@ -130,6 +97,7 @@ VpcEndpoint& VpcEndpoint::operator =(const XmlNode& xmlNode)
     if(!groupsNode.IsNull())
     {
       XmlNode groupsMember = groupsNode.FirstChild("item");
+      m_groupsHasBeenSet = !groupsMember.IsNull();
       while(!groupsMember.IsNull())
       {
         m_groups.push_back(groupsMember);
@@ -141,7 +109,7 @@ VpcEndpoint& VpcEndpoint::operator =(const XmlNode& xmlNode)
     XmlNode ipAddressTypeNode = resultNode.FirstChild("ipAddressType");
     if(!ipAddressTypeNode.IsNull())
     {
-      m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipAddressTypeNode.GetText()).c_str()).c_str());
+      m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipAddressTypeNode.GetText()).c_str()));
       m_ipAddressTypeHasBeenSet = true;
     }
     XmlNode dnsOptionsNode = resultNode.FirstChild("dnsOptions");
@@ -166,6 +134,7 @@ VpcEndpoint& VpcEndpoint::operator =(const XmlNode& xmlNode)
     if(!networkInterfaceIdsNode.IsNull())
     {
       XmlNode networkInterfaceIdsMember = networkInterfaceIdsNode.FirstChild("item");
+      m_networkInterfaceIdsHasBeenSet = !networkInterfaceIdsMember.IsNull();
       while(!networkInterfaceIdsMember.IsNull())
       {
         m_networkInterfaceIds.push_back(networkInterfaceIdsMember.GetText());
@@ -178,6 +147,7 @@ VpcEndpoint& VpcEndpoint::operator =(const XmlNode& xmlNode)
     if(!dnsEntriesNode.IsNull())
     {
       XmlNode dnsEntriesMember = dnsEntriesNode.FirstChild("item");
+      m_dnsEntriesHasBeenSet = !dnsEntriesMember.IsNull();
       while(!dnsEntriesMember.IsNull())
       {
         m_dnsEntries.push_back(dnsEntriesMember);
@@ -196,6 +166,7 @@ VpcEndpoint& VpcEndpoint::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
@@ -220,6 +191,7 @@ VpcEndpoint& VpcEndpoint::operator =(const XmlNode& xmlNode)
     if(!ipv4PrefixesNode.IsNull())
     {
       XmlNode ipv4PrefixesMember = ipv4PrefixesNode.FirstChild("item");
+      m_ipv4PrefixesHasBeenSet = !ipv4PrefixesMember.IsNull();
       while(!ipv4PrefixesMember.IsNull())
       {
         m_ipv4Prefixes.push_back(ipv4PrefixesMember);
@@ -232,6 +204,7 @@ VpcEndpoint& VpcEndpoint::operator =(const XmlNode& xmlNode)
     if(!ipv6PrefixesNode.IsNull())
     {
       XmlNode ipv6PrefixesMember = ipv6PrefixesNode.FirstChild("item");
+      m_ipv6PrefixesHasBeenSet = !ipv6PrefixesMember.IsNull();
       while(!ipv6PrefixesMember.IsNull())
       {
         m_ipv6Prefixes.push_back(ipv6PrefixesMember);

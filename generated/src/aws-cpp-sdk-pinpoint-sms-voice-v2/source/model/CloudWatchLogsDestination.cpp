@@ -18,14 +18,7 @@ namespace PinpointSMSVoiceV2
 namespace Model
 {
 
-CloudWatchLogsDestination::CloudWatchLogsDestination() : 
-    m_iamRoleArnHasBeenSet(false),
-    m_logGroupArnHasBeenSet(false)
-{
-}
-
 CloudWatchLogsDestination::CloudWatchLogsDestination(JsonView jsonValue)
-  : CloudWatchLogsDestination()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CloudWatchLogsDestination& CloudWatchLogsDestination::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("IamRoleArn"))
   {
     m_iamRoleArn = jsonValue.GetString("IamRoleArn");
-
     m_iamRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogGroupArn"))
   {
     m_logGroupArn = jsonValue.GetString("LogGroupArn");
-
     m_logGroupArnHasBeenSet = true;
   }
-
   return *this;
 }
 

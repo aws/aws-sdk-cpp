@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-AutoMLJobArtifacts::AutoMLJobArtifacts() : 
-    m_candidateDefinitionNotebookLocationHasBeenSet(false),
-    m_dataExplorationNotebookLocationHasBeenSet(false)
-{
-}
-
 AutoMLJobArtifacts::AutoMLJobArtifacts(JsonView jsonValue)
-  : AutoMLJobArtifacts()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AutoMLJobArtifacts& AutoMLJobArtifacts::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CandidateDefinitionNotebookLocation"))
   {
     m_candidateDefinitionNotebookLocation = jsonValue.GetString("CandidateDefinitionNotebookLocation");
-
     m_candidateDefinitionNotebookLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataExplorationNotebookLocation"))
   {
     m_dataExplorationNotebookLocation = jsonValue.GetString("DataExplorationNotebookLocation");
-
     m_dataExplorationNotebookLocationHasBeenSet = true;
   }
-
   return *this;
 }
 

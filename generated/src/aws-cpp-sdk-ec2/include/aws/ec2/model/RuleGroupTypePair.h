@@ -31,7 +31,7 @@ namespace Model
   class RuleGroupTypePair
   {
   public:
-    AWS_EC2_API RuleGroupTypePair();
+    AWS_EC2_API RuleGroupTypePair() = default;
     AWS_EC2_API RuleGroupTypePair(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API RuleGroupTypePair& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The ARN of the rule group.</p>
      */
-    inline const Aws::String& GetRuleGroupArn() const{ return m_ruleGroupArn; }
+    inline const Aws::String& GetRuleGroupArn() const { return m_ruleGroupArn; }
     inline bool RuleGroupArnHasBeenSet() const { return m_ruleGroupArnHasBeenSet; }
-    inline void SetRuleGroupArn(const Aws::String& value) { m_ruleGroupArnHasBeenSet = true; m_ruleGroupArn = value; }
-    inline void SetRuleGroupArn(Aws::String&& value) { m_ruleGroupArnHasBeenSet = true; m_ruleGroupArn = std::move(value); }
-    inline void SetRuleGroupArn(const char* value) { m_ruleGroupArnHasBeenSet = true; m_ruleGroupArn.assign(value); }
-    inline RuleGroupTypePair& WithRuleGroupArn(const Aws::String& value) { SetRuleGroupArn(value); return *this;}
-    inline RuleGroupTypePair& WithRuleGroupArn(Aws::String&& value) { SetRuleGroupArn(std::move(value)); return *this;}
-    inline RuleGroupTypePair& WithRuleGroupArn(const char* value) { SetRuleGroupArn(value); return *this;}
+    template<typename RuleGroupArnT = Aws::String>
+    void SetRuleGroupArn(RuleGroupArnT&& value) { m_ruleGroupArnHasBeenSet = true; m_ruleGroupArn = std::forward<RuleGroupArnT>(value); }
+    template<typename RuleGroupArnT = Aws::String>
+    RuleGroupTypePair& WithRuleGroupArn(RuleGroupArnT&& value) { SetRuleGroupArn(std::forward<RuleGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The rule group type. The possible values are <code>Domain List</code> and
      * <code>Suricata</code>.</p>
      */
-    inline const Aws::String& GetRuleGroupType() const{ return m_ruleGroupType; }
+    inline const Aws::String& GetRuleGroupType() const { return m_ruleGroupType; }
     inline bool RuleGroupTypeHasBeenSet() const { return m_ruleGroupTypeHasBeenSet; }
-    inline void SetRuleGroupType(const Aws::String& value) { m_ruleGroupTypeHasBeenSet = true; m_ruleGroupType = value; }
-    inline void SetRuleGroupType(Aws::String&& value) { m_ruleGroupTypeHasBeenSet = true; m_ruleGroupType = std::move(value); }
-    inline void SetRuleGroupType(const char* value) { m_ruleGroupTypeHasBeenSet = true; m_ruleGroupType.assign(value); }
-    inline RuleGroupTypePair& WithRuleGroupType(const Aws::String& value) { SetRuleGroupType(value); return *this;}
-    inline RuleGroupTypePair& WithRuleGroupType(Aws::String&& value) { SetRuleGroupType(std::move(value)); return *this;}
-    inline RuleGroupTypePair& WithRuleGroupType(const char* value) { SetRuleGroupType(value); return *this;}
+    template<typename RuleGroupTypeT = Aws::String>
+    void SetRuleGroupType(RuleGroupTypeT&& value) { m_ruleGroupTypeHasBeenSet = true; m_ruleGroupType = std::forward<RuleGroupTypeT>(value); }
+    template<typename RuleGroupTypeT = Aws::String>
+    RuleGroupTypePair& WithRuleGroupType(RuleGroupTypeT&& value) { SetRuleGroupType(std::forward<RuleGroupTypeT>(value)); return *this;}
     ///@}
   private:
 

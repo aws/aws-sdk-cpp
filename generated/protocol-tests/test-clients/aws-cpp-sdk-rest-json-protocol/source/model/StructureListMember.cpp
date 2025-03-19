@@ -18,14 +18,7 @@ namespace RestJsonProtocol
 namespace Model
 {
 
-StructureListMember::StructureListMember() : 
-    m_aHasBeenSet(false),
-    m_bHasBeenSet(false)
-{
-}
-
 StructureListMember::StructureListMember(JsonView jsonValue)
-  : StructureListMember()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ StructureListMember& StructureListMember::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("value"))
   {
     m_a = jsonValue.GetString("value");
-
     m_aHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("other"))
   {
     m_b = jsonValue.GetString("other");
-
     m_bHasBeenSet = true;
   }
-
   return *this;
 }
 

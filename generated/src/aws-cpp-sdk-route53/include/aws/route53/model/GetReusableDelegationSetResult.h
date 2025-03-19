@@ -34,7 +34,7 @@ namespace Model
   class GetReusableDelegationSetResult
   {
   public:
-    AWS_ROUTE53_API GetReusableDelegationSetResult();
+    AWS_ROUTE53_API GetReusableDelegationSetResult() = default;
     AWS_ROUTE53_API GetReusableDelegationSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ROUTE53_API GetReusableDelegationSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -44,28 +44,28 @@ namespace Model
      * <p>A complex type that contains information about the reusable delegation
      * set.</p>
      */
-    inline const DelegationSet& GetDelegationSet() const{ return m_delegationSet; }
-    inline void SetDelegationSet(const DelegationSet& value) { m_delegationSet = value; }
-    inline void SetDelegationSet(DelegationSet&& value) { m_delegationSet = std::move(value); }
-    inline GetReusableDelegationSetResult& WithDelegationSet(const DelegationSet& value) { SetDelegationSet(value); return *this;}
-    inline GetReusableDelegationSetResult& WithDelegationSet(DelegationSet&& value) { SetDelegationSet(std::move(value)); return *this;}
+    inline const DelegationSet& GetDelegationSet() const { return m_delegationSet; }
+    template<typename DelegationSetT = DelegationSet>
+    void SetDelegationSet(DelegationSetT&& value) { m_delegationSetHasBeenSet = true; m_delegationSet = std::forward<DelegationSetT>(value); }
+    template<typename DelegationSetT = DelegationSet>
+    GetReusableDelegationSetResult& WithDelegationSet(DelegationSetT&& value) { SetDelegationSet(std::forward<DelegationSetT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetReusableDelegationSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetReusableDelegationSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetReusableDelegationSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetReusableDelegationSetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DelegationSet m_delegationSet;
+    bool m_delegationSetHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

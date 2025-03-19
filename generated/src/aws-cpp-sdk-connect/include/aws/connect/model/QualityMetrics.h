@@ -33,7 +33,7 @@ namespace Model
   class QualityMetrics
   {
   public:
-    AWS_CONNECT_API QualityMetrics();
+    AWS_CONNECT_API QualityMetrics() = default;
     AWS_CONNECT_API QualityMetrics(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API QualityMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>Information about the quality of Agent media connection.</p>
      */
-    inline const AgentQualityMetrics& GetAgent() const{ return m_agent; }
+    inline const AgentQualityMetrics& GetAgent() const { return m_agent; }
     inline bool AgentHasBeenSet() const { return m_agentHasBeenSet; }
-    inline void SetAgent(const AgentQualityMetrics& value) { m_agentHasBeenSet = true; m_agent = value; }
-    inline void SetAgent(AgentQualityMetrics&& value) { m_agentHasBeenSet = true; m_agent = std::move(value); }
-    inline QualityMetrics& WithAgent(const AgentQualityMetrics& value) { SetAgent(value); return *this;}
-    inline QualityMetrics& WithAgent(AgentQualityMetrics&& value) { SetAgent(std::move(value)); return *this;}
+    template<typename AgentT = AgentQualityMetrics>
+    void SetAgent(AgentT&& value) { m_agentHasBeenSet = true; m_agent = std::forward<AgentT>(value); }
+    template<typename AgentT = AgentQualityMetrics>
+    QualityMetrics& WithAgent(AgentT&& value) { SetAgent(std::forward<AgentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the quality of Customer media connection.</p>
      */
-    inline const CustomerQualityMetrics& GetCustomer() const{ return m_customer; }
+    inline const CustomerQualityMetrics& GetCustomer() const { return m_customer; }
     inline bool CustomerHasBeenSet() const { return m_customerHasBeenSet; }
-    inline void SetCustomer(const CustomerQualityMetrics& value) { m_customerHasBeenSet = true; m_customer = value; }
-    inline void SetCustomer(CustomerQualityMetrics&& value) { m_customerHasBeenSet = true; m_customer = std::move(value); }
-    inline QualityMetrics& WithCustomer(const CustomerQualityMetrics& value) { SetCustomer(value); return *this;}
-    inline QualityMetrics& WithCustomer(CustomerQualityMetrics&& value) { SetCustomer(std::move(value)); return *this;}
+    template<typename CustomerT = CustomerQualityMetrics>
+    void SetCustomer(CustomerT&& value) { m_customerHasBeenSet = true; m_customer = std::forward<CustomerT>(value); }
+    template<typename CustomerT = CustomerQualityMetrics>
+    QualityMetrics& WithCustomer(CustomerT&& value) { SetCustomer(std::forward<CustomerT>(value)); return *this;}
     ///@}
   private:
 

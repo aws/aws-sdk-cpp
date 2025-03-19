@@ -20,14 +20,7 @@ namespace SimpleDB
 namespace Model
 {
 
-InvalidParameterValue::InvalidParameterValue() : 
-    m_boxUsage(0.0),
-    m_boxUsageHasBeenSet(false)
-{
-}
-
 InvalidParameterValue::InvalidParameterValue(const XmlNode& xmlNode)
-  : InvalidParameterValue()
 {
   *this = xmlNode;
 }

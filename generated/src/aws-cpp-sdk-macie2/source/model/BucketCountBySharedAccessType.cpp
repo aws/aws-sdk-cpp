@@ -18,20 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-BucketCountBySharedAccessType::BucketCountBySharedAccessType() : 
-    m_external(0),
-    m_externalHasBeenSet(false),
-    m_internal(0),
-    m_internalHasBeenSet(false),
-    m_notShared(0),
-    m_notSharedHasBeenSet(false),
-    m_unknown(0),
-    m_unknownHasBeenSet(false)
-{
-}
-
 BucketCountBySharedAccessType::BucketCountBySharedAccessType(JsonView jsonValue)
-  : BucketCountBySharedAccessType()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ BucketCountBySharedAccessType& BucketCountBySharedAccessType::operator =(JsonVie
   if(jsonValue.ValueExists("external"))
   {
     m_external = jsonValue.GetInt64("external");
-
     m_externalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("internal"))
   {
     m_internal = jsonValue.GetInt64("internal");
-
     m_internalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("notShared"))
   {
     m_notShared = jsonValue.GetInt64("notShared");
-
     m_notSharedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unknown"))
   {
     m_unknown = jsonValue.GetInt64("unknown");
-
     m_unknownHasBeenSet = true;
   }
-
   return *this;
 }
 

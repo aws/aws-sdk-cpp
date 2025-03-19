@@ -18,17 +18,7 @@ namespace SWF
 namespace Model
 {
 
-TimerStartedEventAttributes::TimerStartedEventAttributes() : 
-    m_timerIdHasBeenSet(false),
-    m_controlHasBeenSet(false),
-    m_startToFireTimeoutHasBeenSet(false),
-    m_decisionTaskCompletedEventId(0),
-    m_decisionTaskCompletedEventIdHasBeenSet(false)
-{
-}
-
 TimerStartedEventAttributes::TimerStartedEventAttributes(JsonView jsonValue)
-  : TimerStartedEventAttributes()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ TimerStartedEventAttributes& TimerStartedEventAttributes::operator =(JsonView js
   if(jsonValue.ValueExists("timerId"))
   {
     m_timerId = jsonValue.GetString("timerId");
-
     m_timerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("control"))
   {
     m_control = jsonValue.GetString("control");
-
     m_controlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startToFireTimeout"))
   {
     m_startToFireTimeout = jsonValue.GetString("startToFireTimeout");
-
     m_startToFireTimeoutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("decisionTaskCompletedEventId"))
   {
     m_decisionTaskCompletedEventId = jsonValue.GetInt64("decisionTaskCompletedEventId");
-
     m_decisionTaskCompletedEventIdHasBeenSet = true;
   }
-
   return *this;
 }
 

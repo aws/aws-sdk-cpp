@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-QueueSearchFilter::QueueSearchFilter() : 
-    m_tagFilterHasBeenSet(false)
-{
-}
-
 QueueSearchFilter::QueueSearchFilter(JsonView jsonValue)
-  : QueueSearchFilter()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ QueueSearchFilter& QueueSearchFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TagFilter"))
   {
     m_tagFilter = jsonValue.GetObject("TagFilter");
-
     m_tagFilterHasBeenSet = true;
   }
-
   return *this;
 }
 

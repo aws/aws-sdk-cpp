@@ -34,7 +34,7 @@ namespace Model
   class FlowTraceNodeOutputContent
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API FlowTraceNodeOutputContent();
+    AWS_BEDROCKAGENTRUNTIME_API FlowTraceNodeOutputContent() = default;
     AWS_BEDROCKAGENTRUNTIME_API FlowTraceNodeOutputContent(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API FlowTraceNodeOutputContent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
     /**
      * <p>The content of the node output.</p>
      */
-    inline Aws::Utils::DocumentView GetDocument() const{ return m_document; }
+    inline Aws::Utils::DocumentView GetDocument() const { return m_document; }
     inline bool DocumentHasBeenSet() const { return m_documentHasBeenSet; }
-    inline void SetDocument(const Aws::Utils::Document& value) { m_documentHasBeenSet = true; m_document = value; }
-    inline void SetDocument(Aws::Utils::Document&& value) { m_documentHasBeenSet = true; m_document = std::move(value); }
-    inline FlowTraceNodeOutputContent& WithDocument(const Aws::Utils::Document& value) { SetDocument(value); return *this;}
-    inline FlowTraceNodeOutputContent& WithDocument(Aws::Utils::Document&& value) { SetDocument(std::move(value)); return *this;}
+    template<typename DocumentT = Aws::Utils::Document>
+    void SetDocument(DocumentT&& value) { m_documentHasBeenSet = true; m_document = std::forward<DocumentT>(value); }
+    template<typename DocumentT = Aws::Utils::Document>
+    FlowTraceNodeOutputContent& WithDocument(DocumentT&& value) { SetDocument(std::forward<DocumentT>(value)); return *this;}
     ///@}
   private:
 

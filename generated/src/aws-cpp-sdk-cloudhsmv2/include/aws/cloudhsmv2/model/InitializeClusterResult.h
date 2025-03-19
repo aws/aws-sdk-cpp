@@ -28,7 +28,7 @@ namespace Model
   class InitializeClusterResult
   {
   public:
-    AWS_CLOUDHSMV2_API InitializeClusterResult();
+    AWS_CLOUDHSMV2_API InitializeClusterResult() = default;
     AWS_CLOUDHSMV2_API InitializeClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDHSMV2_API InitializeClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,43 +37,40 @@ namespace Model
     /**
      * <p>The cluster's state.</p>
      */
-    inline const ClusterState& GetState() const{ return m_state; }
-    inline void SetState(const ClusterState& value) { m_state = value; }
-    inline void SetState(ClusterState&& value) { m_state = std::move(value); }
-    inline InitializeClusterResult& WithState(const ClusterState& value) { SetState(value); return *this;}
-    inline InitializeClusterResult& WithState(ClusterState&& value) { SetState(std::move(value)); return *this;}
+    inline ClusterState GetState() const { return m_state; }
+    inline void SetState(ClusterState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline InitializeClusterResult& WithState(ClusterState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the cluster's state.</p>
      */
-    inline const Aws::String& GetStateMessage() const{ return m_stateMessage; }
-    inline void SetStateMessage(const Aws::String& value) { m_stateMessage = value; }
-    inline void SetStateMessage(Aws::String&& value) { m_stateMessage = std::move(value); }
-    inline void SetStateMessage(const char* value) { m_stateMessage.assign(value); }
-    inline InitializeClusterResult& WithStateMessage(const Aws::String& value) { SetStateMessage(value); return *this;}
-    inline InitializeClusterResult& WithStateMessage(Aws::String&& value) { SetStateMessage(std::move(value)); return *this;}
-    inline InitializeClusterResult& WithStateMessage(const char* value) { SetStateMessage(value); return *this;}
+    inline const Aws::String& GetStateMessage() const { return m_stateMessage; }
+    template<typename StateMessageT = Aws::String>
+    void SetStateMessage(StateMessageT&& value) { m_stateMessageHasBeenSet = true; m_stateMessage = std::forward<StateMessageT>(value); }
+    template<typename StateMessageT = Aws::String>
+    InitializeClusterResult& WithStateMessage(StateMessageT&& value) { SetStateMessage(std::forward<StateMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline InitializeClusterResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline InitializeClusterResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline InitializeClusterResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    InitializeClusterResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    ClusterState m_state;
+    ClusterState m_state{ClusterState::NOT_SET};
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_stateMessage;
+    bool m_stateMessageHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

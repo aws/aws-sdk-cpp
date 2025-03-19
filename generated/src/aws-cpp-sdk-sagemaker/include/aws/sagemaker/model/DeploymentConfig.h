@@ -34,7 +34,7 @@ namespace Model
   class DeploymentConfig
   {
   public:
-    AWS_SAGEMAKER_API DeploymentConfig();
+    AWS_SAGEMAKER_API DeploymentConfig() = default;
     AWS_SAGEMAKER_API DeploymentConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API DeploymentConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,12 +50,12 @@ namespace Model
      * uses a blue/green deployment strategy with all at once traffic shifting by
      * default.</p>
      */
-    inline const BlueGreenUpdatePolicy& GetBlueGreenUpdatePolicy() const{ return m_blueGreenUpdatePolicy; }
+    inline const BlueGreenUpdatePolicy& GetBlueGreenUpdatePolicy() const { return m_blueGreenUpdatePolicy; }
     inline bool BlueGreenUpdatePolicyHasBeenSet() const { return m_blueGreenUpdatePolicyHasBeenSet; }
-    inline void SetBlueGreenUpdatePolicy(const BlueGreenUpdatePolicy& value) { m_blueGreenUpdatePolicyHasBeenSet = true; m_blueGreenUpdatePolicy = value; }
-    inline void SetBlueGreenUpdatePolicy(BlueGreenUpdatePolicy&& value) { m_blueGreenUpdatePolicyHasBeenSet = true; m_blueGreenUpdatePolicy = std::move(value); }
-    inline DeploymentConfig& WithBlueGreenUpdatePolicy(const BlueGreenUpdatePolicy& value) { SetBlueGreenUpdatePolicy(value); return *this;}
-    inline DeploymentConfig& WithBlueGreenUpdatePolicy(BlueGreenUpdatePolicy&& value) { SetBlueGreenUpdatePolicy(std::move(value)); return *this;}
+    template<typename BlueGreenUpdatePolicyT = BlueGreenUpdatePolicy>
+    void SetBlueGreenUpdatePolicy(BlueGreenUpdatePolicyT&& value) { m_blueGreenUpdatePolicyHasBeenSet = true; m_blueGreenUpdatePolicy = std::forward<BlueGreenUpdatePolicyT>(value); }
+    template<typename BlueGreenUpdatePolicyT = BlueGreenUpdatePolicy>
+    DeploymentConfig& WithBlueGreenUpdatePolicy(BlueGreenUpdatePolicyT&& value) { SetBlueGreenUpdatePolicy(std::forward<BlueGreenUpdatePolicyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,12 +63,12 @@ namespace Model
      * <p>Specifies a rolling deployment strategy for updating a SageMaker
      * endpoint.</p>
      */
-    inline const RollingUpdatePolicy& GetRollingUpdatePolicy() const{ return m_rollingUpdatePolicy; }
+    inline const RollingUpdatePolicy& GetRollingUpdatePolicy() const { return m_rollingUpdatePolicy; }
     inline bool RollingUpdatePolicyHasBeenSet() const { return m_rollingUpdatePolicyHasBeenSet; }
-    inline void SetRollingUpdatePolicy(const RollingUpdatePolicy& value) { m_rollingUpdatePolicyHasBeenSet = true; m_rollingUpdatePolicy = value; }
-    inline void SetRollingUpdatePolicy(RollingUpdatePolicy&& value) { m_rollingUpdatePolicyHasBeenSet = true; m_rollingUpdatePolicy = std::move(value); }
-    inline DeploymentConfig& WithRollingUpdatePolicy(const RollingUpdatePolicy& value) { SetRollingUpdatePolicy(value); return *this;}
-    inline DeploymentConfig& WithRollingUpdatePolicy(RollingUpdatePolicy&& value) { SetRollingUpdatePolicy(std::move(value)); return *this;}
+    template<typename RollingUpdatePolicyT = RollingUpdatePolicy>
+    void SetRollingUpdatePolicy(RollingUpdatePolicyT&& value) { m_rollingUpdatePolicyHasBeenSet = true; m_rollingUpdatePolicy = std::forward<RollingUpdatePolicyT>(value); }
+    template<typename RollingUpdatePolicyT = RollingUpdatePolicy>
+    DeploymentConfig& WithRollingUpdatePolicy(RollingUpdatePolicyT&& value) { SetRollingUpdatePolicy(std::forward<RollingUpdatePolicyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,12 +76,12 @@ namespace Model
      * <p>Automatic rollback configuration for handling endpoint deployment failures
      * and recovery.</p>
      */
-    inline const AutoRollbackConfig& GetAutoRollbackConfiguration() const{ return m_autoRollbackConfiguration; }
+    inline const AutoRollbackConfig& GetAutoRollbackConfiguration() const { return m_autoRollbackConfiguration; }
     inline bool AutoRollbackConfigurationHasBeenSet() const { return m_autoRollbackConfigurationHasBeenSet; }
-    inline void SetAutoRollbackConfiguration(const AutoRollbackConfig& value) { m_autoRollbackConfigurationHasBeenSet = true; m_autoRollbackConfiguration = value; }
-    inline void SetAutoRollbackConfiguration(AutoRollbackConfig&& value) { m_autoRollbackConfigurationHasBeenSet = true; m_autoRollbackConfiguration = std::move(value); }
-    inline DeploymentConfig& WithAutoRollbackConfiguration(const AutoRollbackConfig& value) { SetAutoRollbackConfiguration(value); return *this;}
-    inline DeploymentConfig& WithAutoRollbackConfiguration(AutoRollbackConfig&& value) { SetAutoRollbackConfiguration(std::move(value)); return *this;}
+    template<typename AutoRollbackConfigurationT = AutoRollbackConfig>
+    void SetAutoRollbackConfiguration(AutoRollbackConfigurationT&& value) { m_autoRollbackConfigurationHasBeenSet = true; m_autoRollbackConfiguration = std::forward<AutoRollbackConfigurationT>(value); }
+    template<typename AutoRollbackConfigurationT = AutoRollbackConfig>
+    DeploymentConfig& WithAutoRollbackConfiguration(AutoRollbackConfigurationT&& value) { SetAutoRollbackConfiguration(std::forward<AutoRollbackConfigurationT>(value)); return *this;}
     ///@}
   private:
 

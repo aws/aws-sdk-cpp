@@ -12,11 +12,6 @@ using namespace Aws::CodePipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeregisterWebhookWithThirdPartyRequest::DeregisterWebhookWithThirdPartyRequest() : 
-    m_webhookNameHasBeenSet(false)
-{
-}
-
 Aws::String DeregisterWebhookWithThirdPartyRequest::SerializePayload() const
 {
   JsonValue payload;

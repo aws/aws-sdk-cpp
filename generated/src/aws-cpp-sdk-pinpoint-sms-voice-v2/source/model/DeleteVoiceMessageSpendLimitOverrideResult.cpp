@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteVoiceMessageSpendLimitOverrideResult::DeleteVoiceMessageSpendLimitOverrideResult() : 
-    m_monthlyLimit(0)
-{
-}
-
 DeleteVoiceMessageSpendLimitOverrideResult::DeleteVoiceMessageSpendLimitOverrideResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteVoiceMessageSpendLimitOverrideResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ DeleteVoiceMessageSpendLimitOverrideResult& DeleteVoiceMessageSpendLimitOverride
   if(jsonValue.ValueExists("MonthlyLimit"))
   {
     m_monthlyLimit = jsonValue.GetInt64("MonthlyLimit");
-
+    m_monthlyLimitHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

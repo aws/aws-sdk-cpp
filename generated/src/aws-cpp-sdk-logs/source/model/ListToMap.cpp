@@ -18,20 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-ListToMap::ListToMap() : 
-    m_sourceHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_valueKeyHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_flatten(false),
-    m_flattenHasBeenSet(false),
-    m_flattenedElement(FlattenedElement::NOT_SET),
-    m_flattenedElementHasBeenSet(false)
-{
-}
-
 ListToMap::ListToMap(JsonView jsonValue)
-  : ListToMap()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ ListToMap& ListToMap::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("source"))
   {
     m_source = jsonValue.GetString("source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("valueKey"))
   {
     m_valueKey = jsonValue.GetString("valueKey");
-
     m_valueKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("target"))
   {
     m_target = jsonValue.GetString("target");
-
     m_targetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("flatten"))
   {
     m_flatten = jsonValue.GetBool("flatten");
-
     m_flattenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("flattenedElement"))
   {
     m_flattenedElement = FlattenedElementMapper::GetFlattenedElementForName(jsonValue.GetString("flattenedElement"));
-
     m_flattenedElementHasBeenSet = true;
   }
-
   return *this;
 }
 

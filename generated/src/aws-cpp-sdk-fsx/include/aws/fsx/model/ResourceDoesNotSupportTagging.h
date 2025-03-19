@@ -32,7 +32,7 @@ namespace Model
   class ResourceDoesNotSupportTagging
   {
   public:
-    AWS_FSX_API ResourceDoesNotSupportTagging();
+    AWS_FSX_API ResourceDoesNotSupportTagging() = default;
     AWS_FSX_API ResourceDoesNotSupportTagging(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API ResourceDoesNotSupportTagging& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,22 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the resource that doesn't support
      * tagging.</p>
      */
-    inline const Aws::String& GetResourceARN() const{ return m_resourceARN; }
+    inline const Aws::String& GetResourceARN() const { return m_resourceARN; }
     inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
-    inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
-    inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::move(value); }
-    inline void SetResourceARN(const char* value) { m_resourceARNHasBeenSet = true; m_resourceARN.assign(value); }
-    inline ResourceDoesNotSupportTagging& WithResourceARN(const Aws::String& value) { SetResourceARN(value); return *this;}
-    inline ResourceDoesNotSupportTagging& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
-    inline ResourceDoesNotSupportTagging& WithResourceARN(const char* value) { SetResourceARN(value); return *this;}
+    template<typename ResourceARNT = Aws::String>
+    void SetResourceARN(ResourceARNT&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::forward<ResourceARNT>(value); }
+    template<typename ResourceARNT = Aws::String>
+    ResourceDoesNotSupportTagging& WithResourceARN(ResourceARNT&& value) { SetResourceARN(std::forward<ResourceARNT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline ResourceDoesNotSupportTagging& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline ResourceDoesNotSupportTagging& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline ResourceDoesNotSupportTagging& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    ResourceDoesNotSupportTagging& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 

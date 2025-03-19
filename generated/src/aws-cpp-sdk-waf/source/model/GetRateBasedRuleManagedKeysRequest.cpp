@@ -12,12 +12,6 @@ using namespace Aws::WAF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRateBasedRuleManagedKeysRequest::GetRateBasedRuleManagedKeysRequest() : 
-    m_ruleIdHasBeenSet(false),
-    m_nextMarkerHasBeenSet(false)
-{
-}
-
 Aws::String GetRateBasedRuleManagedKeysRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -40,7 +40,7 @@ namespace Model
   class LambdaFunctionRecommendation
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API LambdaFunctionRecommendation();
+    AWS_COMPUTEOPTIMIZER_API LambdaFunctionRecommendation() = default;
     AWS_COMPUTEOPTIMIZER_API LambdaFunctionRecommendation(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API LambdaFunctionRecommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,49 +50,43 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the current function.</p>
      */
-    inline const Aws::String& GetFunctionArn() const{ return m_functionArn; }
+    inline const Aws::String& GetFunctionArn() const { return m_functionArn; }
     inline bool FunctionArnHasBeenSet() const { return m_functionArnHasBeenSet; }
-    inline void SetFunctionArn(const Aws::String& value) { m_functionArnHasBeenSet = true; m_functionArn = value; }
-    inline void SetFunctionArn(Aws::String&& value) { m_functionArnHasBeenSet = true; m_functionArn = std::move(value); }
-    inline void SetFunctionArn(const char* value) { m_functionArnHasBeenSet = true; m_functionArn.assign(value); }
-    inline LambdaFunctionRecommendation& WithFunctionArn(const Aws::String& value) { SetFunctionArn(value); return *this;}
-    inline LambdaFunctionRecommendation& WithFunctionArn(Aws::String&& value) { SetFunctionArn(std::move(value)); return *this;}
-    inline LambdaFunctionRecommendation& WithFunctionArn(const char* value) { SetFunctionArn(value); return *this;}
+    template<typename FunctionArnT = Aws::String>
+    void SetFunctionArn(FunctionArnT&& value) { m_functionArnHasBeenSet = true; m_functionArn = std::forward<FunctionArnT>(value); }
+    template<typename FunctionArnT = Aws::String>
+    LambdaFunctionRecommendation& WithFunctionArn(FunctionArnT&& value) { SetFunctionArn(std::forward<FunctionArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version number of the current function.</p>
      */
-    inline const Aws::String& GetFunctionVersion() const{ return m_functionVersion; }
+    inline const Aws::String& GetFunctionVersion() const { return m_functionVersion; }
     inline bool FunctionVersionHasBeenSet() const { return m_functionVersionHasBeenSet; }
-    inline void SetFunctionVersion(const Aws::String& value) { m_functionVersionHasBeenSet = true; m_functionVersion = value; }
-    inline void SetFunctionVersion(Aws::String&& value) { m_functionVersionHasBeenSet = true; m_functionVersion = std::move(value); }
-    inline void SetFunctionVersion(const char* value) { m_functionVersionHasBeenSet = true; m_functionVersion.assign(value); }
-    inline LambdaFunctionRecommendation& WithFunctionVersion(const Aws::String& value) { SetFunctionVersion(value); return *this;}
-    inline LambdaFunctionRecommendation& WithFunctionVersion(Aws::String&& value) { SetFunctionVersion(std::move(value)); return *this;}
-    inline LambdaFunctionRecommendation& WithFunctionVersion(const char* value) { SetFunctionVersion(value); return *this;}
+    template<typename FunctionVersionT = Aws::String>
+    void SetFunctionVersion(FunctionVersionT&& value) { m_functionVersionHasBeenSet = true; m_functionVersion = std::forward<FunctionVersionT>(value); }
+    template<typename FunctionVersionT = Aws::String>
+    LambdaFunctionRecommendation& WithFunctionVersion(FunctionVersionT&& value) { SetFunctionVersion(std::forward<FunctionVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services account ID of the function.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline LambdaFunctionRecommendation& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline LambdaFunctionRecommendation& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline LambdaFunctionRecommendation& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    LambdaFunctionRecommendation& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The amount of memory, in MB, that's allocated to the current function.</p>
      */
-    inline int GetCurrentMemorySize() const{ return m_currentMemorySize; }
+    inline int GetCurrentMemorySize() const { return m_currentMemorySize; }
     inline bool CurrentMemorySizeHasBeenSet() const { return m_currentMemorySizeHasBeenSet; }
     inline void SetCurrentMemorySize(int value) { m_currentMemorySizeHasBeenSet = true; m_currentMemorySize = value; }
     inline LambdaFunctionRecommendation& WithCurrentMemorySize(int value) { SetCurrentMemorySize(value); return *this;}
@@ -103,7 +97,7 @@ namespace Model
      * <p>The number of times your function code was applied during the look-back
      * period.</p>
      */
-    inline long long GetNumberOfInvocations() const{ return m_numberOfInvocations; }
+    inline long long GetNumberOfInvocations() const { return m_numberOfInvocations; }
     inline bool NumberOfInvocationsHasBeenSet() const { return m_numberOfInvocationsHasBeenSet; }
     inline void SetNumberOfInvocations(long long value) { m_numberOfInvocationsHasBeenSet = true; m_numberOfInvocations = value; }
     inline LambdaFunctionRecommendation& WithNumberOfInvocations(long long value) { SetNumberOfInvocations(value); return *this;}
@@ -114,14 +108,14 @@ namespace Model
      * <p>An array of objects that describe the utilization metrics of the
      * function.</p>
      */
-    inline const Aws::Vector<LambdaFunctionUtilizationMetric>& GetUtilizationMetrics() const{ return m_utilizationMetrics; }
+    inline const Aws::Vector<LambdaFunctionUtilizationMetric>& GetUtilizationMetrics() const { return m_utilizationMetrics; }
     inline bool UtilizationMetricsHasBeenSet() const { return m_utilizationMetricsHasBeenSet; }
-    inline void SetUtilizationMetrics(const Aws::Vector<LambdaFunctionUtilizationMetric>& value) { m_utilizationMetricsHasBeenSet = true; m_utilizationMetrics = value; }
-    inline void SetUtilizationMetrics(Aws::Vector<LambdaFunctionUtilizationMetric>&& value) { m_utilizationMetricsHasBeenSet = true; m_utilizationMetrics = std::move(value); }
-    inline LambdaFunctionRecommendation& WithUtilizationMetrics(const Aws::Vector<LambdaFunctionUtilizationMetric>& value) { SetUtilizationMetrics(value); return *this;}
-    inline LambdaFunctionRecommendation& WithUtilizationMetrics(Aws::Vector<LambdaFunctionUtilizationMetric>&& value) { SetUtilizationMetrics(std::move(value)); return *this;}
-    inline LambdaFunctionRecommendation& AddUtilizationMetrics(const LambdaFunctionUtilizationMetric& value) { m_utilizationMetricsHasBeenSet = true; m_utilizationMetrics.push_back(value); return *this; }
-    inline LambdaFunctionRecommendation& AddUtilizationMetrics(LambdaFunctionUtilizationMetric&& value) { m_utilizationMetricsHasBeenSet = true; m_utilizationMetrics.push_back(std::move(value)); return *this; }
+    template<typename UtilizationMetricsT = Aws::Vector<LambdaFunctionUtilizationMetric>>
+    void SetUtilizationMetrics(UtilizationMetricsT&& value) { m_utilizationMetricsHasBeenSet = true; m_utilizationMetrics = std::forward<UtilizationMetricsT>(value); }
+    template<typename UtilizationMetricsT = Aws::Vector<LambdaFunctionUtilizationMetric>>
+    LambdaFunctionRecommendation& WithUtilizationMetrics(UtilizationMetricsT&& value) { SetUtilizationMetrics(std::forward<UtilizationMetricsT>(value)); return *this;}
+    template<typename UtilizationMetricsT = LambdaFunctionUtilizationMetric>
+    LambdaFunctionRecommendation& AddUtilizationMetrics(UtilizationMetricsT&& value) { m_utilizationMetricsHasBeenSet = true; m_utilizationMetrics.emplace_back(std::forward<UtilizationMetricsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -129,7 +123,7 @@ namespace Model
      * <p>The number of days for which utilization metrics were analyzed for the
      * function.</p>
      */
-    inline double GetLookbackPeriodInDays() const{ return m_lookbackPeriodInDays; }
+    inline double GetLookbackPeriodInDays() const { return m_lookbackPeriodInDays; }
     inline bool LookbackPeriodInDaysHasBeenSet() const { return m_lookbackPeriodInDaysHasBeenSet; }
     inline void SetLookbackPeriodInDays(double value) { m_lookbackPeriodInDaysHasBeenSet = true; m_lookbackPeriodInDays = value; }
     inline LambdaFunctionRecommendation& WithLookbackPeriodInDays(double value) { SetLookbackPeriodInDays(value); return *this;}
@@ -139,12 +133,12 @@ namespace Model
     /**
      * <p>The timestamp of when the function recommendation was last generated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastRefreshTimestamp() const{ return m_lastRefreshTimestamp; }
+    inline const Aws::Utils::DateTime& GetLastRefreshTimestamp() const { return m_lastRefreshTimestamp; }
     inline bool LastRefreshTimestampHasBeenSet() const { return m_lastRefreshTimestampHasBeenSet; }
-    inline void SetLastRefreshTimestamp(const Aws::Utils::DateTime& value) { m_lastRefreshTimestampHasBeenSet = true; m_lastRefreshTimestamp = value; }
-    inline void SetLastRefreshTimestamp(Aws::Utils::DateTime&& value) { m_lastRefreshTimestampHasBeenSet = true; m_lastRefreshTimestamp = std::move(value); }
-    inline LambdaFunctionRecommendation& WithLastRefreshTimestamp(const Aws::Utils::DateTime& value) { SetLastRefreshTimestamp(value); return *this;}
-    inline LambdaFunctionRecommendation& WithLastRefreshTimestamp(Aws::Utils::DateTime&& value) { SetLastRefreshTimestamp(std::move(value)); return *this;}
+    template<typename LastRefreshTimestampT = Aws::Utils::DateTime>
+    void SetLastRefreshTimestamp(LastRefreshTimestampT&& value) { m_lastRefreshTimestampHasBeenSet = true; m_lastRefreshTimestamp = std::forward<LastRefreshTimestampT>(value); }
+    template<typename LastRefreshTimestampT = Aws::Utils::DateTime>
+    LambdaFunctionRecommendation& WithLastRefreshTimestamp(LastRefreshTimestampT&& value) { SetLastRefreshTimestamp(std::forward<LastRefreshTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -170,12 +164,10 @@ namespace Model
      * <code>Unavailable</code> in your <code>GetLambdaFunctionRecommendations</code>
      * request.</p>  </li> </ul>
      */
-    inline const LambdaFunctionRecommendationFinding& GetFinding() const{ return m_finding; }
+    inline LambdaFunctionRecommendationFinding GetFinding() const { return m_finding; }
     inline bool FindingHasBeenSet() const { return m_findingHasBeenSet; }
-    inline void SetFinding(const LambdaFunctionRecommendationFinding& value) { m_findingHasBeenSet = true; m_finding = value; }
-    inline void SetFinding(LambdaFunctionRecommendationFinding&& value) { m_findingHasBeenSet = true; m_finding = std::move(value); }
-    inline LambdaFunctionRecommendation& WithFinding(const LambdaFunctionRecommendationFinding& value) { SetFinding(value); return *this;}
-    inline LambdaFunctionRecommendation& WithFinding(LambdaFunctionRecommendationFinding&& value) { SetFinding(std::move(value)); return *this;}
+    inline void SetFinding(LambdaFunctionRecommendationFinding value) { m_findingHasBeenSet = true; m_finding = value; }
+    inline LambdaFunctionRecommendation& WithFinding(LambdaFunctionRecommendationFinding value) { SetFinding(value); return *this;}
     ///@}
 
     ///@{
@@ -205,14 +197,13 @@ namespace Model
      * code is part of the <code>Unavailable</code> finding classification.</p> </li>
      * </ul>
      */
-    inline const Aws::Vector<LambdaFunctionRecommendationFindingReasonCode>& GetFindingReasonCodes() const{ return m_findingReasonCodes; }
+    inline const Aws::Vector<LambdaFunctionRecommendationFindingReasonCode>& GetFindingReasonCodes() const { return m_findingReasonCodes; }
     inline bool FindingReasonCodesHasBeenSet() const { return m_findingReasonCodesHasBeenSet; }
-    inline void SetFindingReasonCodes(const Aws::Vector<LambdaFunctionRecommendationFindingReasonCode>& value) { m_findingReasonCodesHasBeenSet = true; m_findingReasonCodes = value; }
-    inline void SetFindingReasonCodes(Aws::Vector<LambdaFunctionRecommendationFindingReasonCode>&& value) { m_findingReasonCodesHasBeenSet = true; m_findingReasonCodes = std::move(value); }
-    inline LambdaFunctionRecommendation& WithFindingReasonCodes(const Aws::Vector<LambdaFunctionRecommendationFindingReasonCode>& value) { SetFindingReasonCodes(value); return *this;}
-    inline LambdaFunctionRecommendation& WithFindingReasonCodes(Aws::Vector<LambdaFunctionRecommendationFindingReasonCode>&& value) { SetFindingReasonCodes(std::move(value)); return *this;}
-    inline LambdaFunctionRecommendation& AddFindingReasonCodes(const LambdaFunctionRecommendationFindingReasonCode& value) { m_findingReasonCodesHasBeenSet = true; m_findingReasonCodes.push_back(value); return *this; }
-    inline LambdaFunctionRecommendation& AddFindingReasonCodes(LambdaFunctionRecommendationFindingReasonCode&& value) { m_findingReasonCodesHasBeenSet = true; m_findingReasonCodes.push_back(std::move(value)); return *this; }
+    template<typename FindingReasonCodesT = Aws::Vector<LambdaFunctionRecommendationFindingReasonCode>>
+    void SetFindingReasonCodes(FindingReasonCodesT&& value) { m_findingReasonCodesHasBeenSet = true; m_findingReasonCodes = std::forward<FindingReasonCodesT>(value); }
+    template<typename FindingReasonCodesT = Aws::Vector<LambdaFunctionRecommendationFindingReasonCode>>
+    LambdaFunctionRecommendation& WithFindingReasonCodes(FindingReasonCodesT&& value) { SetFindingReasonCodes(std::forward<FindingReasonCodesT>(value)); return *this;}
+    inline LambdaFunctionRecommendation& AddFindingReasonCodes(LambdaFunctionRecommendationFindingReasonCode value) { m_findingReasonCodesHasBeenSet = true; m_findingReasonCodes.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -220,14 +211,14 @@ namespace Model
      * <p>An array of objects that describe the memory configuration recommendation
      * options for the function.</p>
      */
-    inline const Aws::Vector<LambdaFunctionMemoryRecommendationOption>& GetMemorySizeRecommendationOptions() const{ return m_memorySizeRecommendationOptions; }
+    inline const Aws::Vector<LambdaFunctionMemoryRecommendationOption>& GetMemorySizeRecommendationOptions() const { return m_memorySizeRecommendationOptions; }
     inline bool MemorySizeRecommendationOptionsHasBeenSet() const { return m_memorySizeRecommendationOptionsHasBeenSet; }
-    inline void SetMemorySizeRecommendationOptions(const Aws::Vector<LambdaFunctionMemoryRecommendationOption>& value) { m_memorySizeRecommendationOptionsHasBeenSet = true; m_memorySizeRecommendationOptions = value; }
-    inline void SetMemorySizeRecommendationOptions(Aws::Vector<LambdaFunctionMemoryRecommendationOption>&& value) { m_memorySizeRecommendationOptionsHasBeenSet = true; m_memorySizeRecommendationOptions = std::move(value); }
-    inline LambdaFunctionRecommendation& WithMemorySizeRecommendationOptions(const Aws::Vector<LambdaFunctionMemoryRecommendationOption>& value) { SetMemorySizeRecommendationOptions(value); return *this;}
-    inline LambdaFunctionRecommendation& WithMemorySizeRecommendationOptions(Aws::Vector<LambdaFunctionMemoryRecommendationOption>&& value) { SetMemorySizeRecommendationOptions(std::move(value)); return *this;}
-    inline LambdaFunctionRecommendation& AddMemorySizeRecommendationOptions(const LambdaFunctionMemoryRecommendationOption& value) { m_memorySizeRecommendationOptionsHasBeenSet = true; m_memorySizeRecommendationOptions.push_back(value); return *this; }
-    inline LambdaFunctionRecommendation& AddMemorySizeRecommendationOptions(LambdaFunctionMemoryRecommendationOption&& value) { m_memorySizeRecommendationOptionsHasBeenSet = true; m_memorySizeRecommendationOptions.push_back(std::move(value)); return *this; }
+    template<typename MemorySizeRecommendationOptionsT = Aws::Vector<LambdaFunctionMemoryRecommendationOption>>
+    void SetMemorySizeRecommendationOptions(MemorySizeRecommendationOptionsT&& value) { m_memorySizeRecommendationOptionsHasBeenSet = true; m_memorySizeRecommendationOptions = std::forward<MemorySizeRecommendationOptionsT>(value); }
+    template<typename MemorySizeRecommendationOptionsT = Aws::Vector<LambdaFunctionMemoryRecommendationOption>>
+    LambdaFunctionRecommendation& WithMemorySizeRecommendationOptions(MemorySizeRecommendationOptionsT&& value) { SetMemorySizeRecommendationOptions(std::forward<MemorySizeRecommendationOptionsT>(value)); return *this;}
+    template<typename MemorySizeRecommendationOptionsT = LambdaFunctionMemoryRecommendationOption>
+    LambdaFunctionRecommendation& AddMemorySizeRecommendationOptions(MemorySizeRecommendationOptionsT&& value) { m_memorySizeRecommendationOptionsHasBeenSet = true; m_memorySizeRecommendationOptions.emplace_back(std::forward<MemorySizeRecommendationOptionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -236,12 +227,10 @@ namespace Model
      * its workloads. The higher the risk, the more likely the current Lambda function
      * requires more memory.</p>
      */
-    inline const CurrentPerformanceRisk& GetCurrentPerformanceRisk() const{ return m_currentPerformanceRisk; }
+    inline CurrentPerformanceRisk GetCurrentPerformanceRisk() const { return m_currentPerformanceRisk; }
     inline bool CurrentPerformanceRiskHasBeenSet() const { return m_currentPerformanceRiskHasBeenSet; }
-    inline void SetCurrentPerformanceRisk(const CurrentPerformanceRisk& value) { m_currentPerformanceRiskHasBeenSet = true; m_currentPerformanceRisk = value; }
-    inline void SetCurrentPerformanceRisk(CurrentPerformanceRisk&& value) { m_currentPerformanceRiskHasBeenSet = true; m_currentPerformanceRisk = std::move(value); }
-    inline LambdaFunctionRecommendation& WithCurrentPerformanceRisk(const CurrentPerformanceRisk& value) { SetCurrentPerformanceRisk(value); return *this;}
-    inline LambdaFunctionRecommendation& WithCurrentPerformanceRisk(CurrentPerformanceRisk&& value) { SetCurrentPerformanceRisk(std::move(value)); return *this;}
+    inline void SetCurrentPerformanceRisk(CurrentPerformanceRisk value) { m_currentPerformanceRiskHasBeenSet = true; m_currentPerformanceRisk = value; }
+    inline LambdaFunctionRecommendation& WithCurrentPerformanceRisk(CurrentPerformanceRisk value) { SetCurrentPerformanceRisk(value); return *this;}
     ///@}
 
     ///@{
@@ -249,26 +238,26 @@ namespace Model
      * <p> Describes the effective recommendation preferences for Lambda functions.
      * </p>
      */
-    inline const LambdaEffectiveRecommendationPreferences& GetEffectiveRecommendationPreferences() const{ return m_effectiveRecommendationPreferences; }
+    inline const LambdaEffectiveRecommendationPreferences& GetEffectiveRecommendationPreferences() const { return m_effectiveRecommendationPreferences; }
     inline bool EffectiveRecommendationPreferencesHasBeenSet() const { return m_effectiveRecommendationPreferencesHasBeenSet; }
-    inline void SetEffectiveRecommendationPreferences(const LambdaEffectiveRecommendationPreferences& value) { m_effectiveRecommendationPreferencesHasBeenSet = true; m_effectiveRecommendationPreferences = value; }
-    inline void SetEffectiveRecommendationPreferences(LambdaEffectiveRecommendationPreferences&& value) { m_effectiveRecommendationPreferencesHasBeenSet = true; m_effectiveRecommendationPreferences = std::move(value); }
-    inline LambdaFunctionRecommendation& WithEffectiveRecommendationPreferences(const LambdaEffectiveRecommendationPreferences& value) { SetEffectiveRecommendationPreferences(value); return *this;}
-    inline LambdaFunctionRecommendation& WithEffectiveRecommendationPreferences(LambdaEffectiveRecommendationPreferences&& value) { SetEffectiveRecommendationPreferences(std::move(value)); return *this;}
+    template<typename EffectiveRecommendationPreferencesT = LambdaEffectiveRecommendationPreferences>
+    void SetEffectiveRecommendationPreferences(EffectiveRecommendationPreferencesT&& value) { m_effectiveRecommendationPreferencesHasBeenSet = true; m_effectiveRecommendationPreferences = std::forward<EffectiveRecommendationPreferencesT>(value); }
+    template<typename EffectiveRecommendationPreferencesT = LambdaEffectiveRecommendationPreferences>
+    LambdaFunctionRecommendation& WithEffectiveRecommendationPreferences(EffectiveRecommendationPreferencesT&& value) { SetEffectiveRecommendationPreferences(std::forward<EffectiveRecommendationPreferencesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> A list of tags assigned to your Lambda function recommendations. </p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline LambdaFunctionRecommendation& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline LambdaFunctionRecommendation& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline LambdaFunctionRecommendation& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline LambdaFunctionRecommendation& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    LambdaFunctionRecommendation& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    LambdaFunctionRecommendation& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
@@ -281,22 +270,22 @@ namespace Model
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet = false;
 
-    int m_currentMemorySize;
+    int m_currentMemorySize{0};
     bool m_currentMemorySizeHasBeenSet = false;
 
-    long long m_numberOfInvocations;
+    long long m_numberOfInvocations{0};
     bool m_numberOfInvocationsHasBeenSet = false;
 
     Aws::Vector<LambdaFunctionUtilizationMetric> m_utilizationMetrics;
     bool m_utilizationMetricsHasBeenSet = false;
 
-    double m_lookbackPeriodInDays;
+    double m_lookbackPeriodInDays{0.0};
     bool m_lookbackPeriodInDaysHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastRefreshTimestamp;
+    Aws::Utils::DateTime m_lastRefreshTimestamp{};
     bool m_lastRefreshTimestampHasBeenSet = false;
 
-    LambdaFunctionRecommendationFinding m_finding;
+    LambdaFunctionRecommendationFinding m_finding{LambdaFunctionRecommendationFinding::NOT_SET};
     bool m_findingHasBeenSet = false;
 
     Aws::Vector<LambdaFunctionRecommendationFindingReasonCode> m_findingReasonCodes;
@@ -305,7 +294,7 @@ namespace Model
     Aws::Vector<LambdaFunctionMemoryRecommendationOption> m_memorySizeRecommendationOptions;
     bool m_memorySizeRecommendationOptionsHasBeenSet = false;
 
-    CurrentPerformanceRisk m_currentPerformanceRisk;
+    CurrentPerformanceRisk m_currentPerformanceRisk{CurrentPerformanceRisk::NOT_SET};
     bool m_currentPerformanceRiskHasBeenSet = false;
 
     LambdaEffectiveRecommendationPreferences m_effectiveRecommendationPreferences;

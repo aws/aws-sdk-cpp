@@ -12,11 +12,6 @@ using namespace Aws::EventBridge::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ActivateEventSourceRequest::ActivateEventSourceRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String ActivateEventSourceRequest::SerializePayload() const
 {
   JsonValue payload;

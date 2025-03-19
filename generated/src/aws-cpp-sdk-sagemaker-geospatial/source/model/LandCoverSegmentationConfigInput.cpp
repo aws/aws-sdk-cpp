@@ -18,10 +18,6 @@ namespace SageMakerGeospatial
 namespace Model
 {
 
-LandCoverSegmentationConfigInput::LandCoverSegmentationConfigInput()
-{
-}
-
 LandCoverSegmentationConfigInput::LandCoverSegmentationConfigInput(JsonView jsonValue)
 {
   *this = jsonValue;

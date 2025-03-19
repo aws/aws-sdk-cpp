@@ -39,7 +39,7 @@ namespace Model
   class RedshiftDestinationConfiguration
   {
   public:
-    AWS_FIREHOSE_API RedshiftDestinationConfiguration();
+    AWS_FIREHOSE_API RedshiftDestinationConfiguration() = default;
     AWS_FIREHOSE_API RedshiftDestinationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API RedshiftDestinationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,68 +52,60 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
-    inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
+    inline const Aws::String& GetRoleARN() const { return m_roleARN; }
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
-    inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
-    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
-    inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
-    inline RedshiftDestinationConfiguration& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
-    inline RedshiftDestinationConfiguration& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
-    inline RedshiftDestinationConfiguration& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
+    template<typename RoleARNT = Aws::String>
+    void SetRoleARN(RoleARNT&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::forward<RoleARNT>(value); }
+    template<typename RoleARNT = Aws::String>
+    RedshiftDestinationConfiguration& WithRoleARN(RoleARNT&& value) { SetRoleARN(std::forward<RoleARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The database connection string.</p>
      */
-    inline const Aws::String& GetClusterJDBCURL() const{ return m_clusterJDBCURL; }
+    inline const Aws::String& GetClusterJDBCURL() const { return m_clusterJDBCURL; }
     inline bool ClusterJDBCURLHasBeenSet() const { return m_clusterJDBCURLHasBeenSet; }
-    inline void SetClusterJDBCURL(const Aws::String& value) { m_clusterJDBCURLHasBeenSet = true; m_clusterJDBCURL = value; }
-    inline void SetClusterJDBCURL(Aws::String&& value) { m_clusterJDBCURLHasBeenSet = true; m_clusterJDBCURL = std::move(value); }
-    inline void SetClusterJDBCURL(const char* value) { m_clusterJDBCURLHasBeenSet = true; m_clusterJDBCURL.assign(value); }
-    inline RedshiftDestinationConfiguration& WithClusterJDBCURL(const Aws::String& value) { SetClusterJDBCURL(value); return *this;}
-    inline RedshiftDestinationConfiguration& WithClusterJDBCURL(Aws::String&& value) { SetClusterJDBCURL(std::move(value)); return *this;}
-    inline RedshiftDestinationConfiguration& WithClusterJDBCURL(const char* value) { SetClusterJDBCURL(value); return *this;}
+    template<typename ClusterJDBCURLT = Aws::String>
+    void SetClusterJDBCURL(ClusterJDBCURLT&& value) { m_clusterJDBCURLHasBeenSet = true; m_clusterJDBCURL = std::forward<ClusterJDBCURLT>(value); }
+    template<typename ClusterJDBCURLT = Aws::String>
+    RedshiftDestinationConfiguration& WithClusterJDBCURL(ClusterJDBCURLT&& value) { SetClusterJDBCURL(std::forward<ClusterJDBCURLT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The <code>COPY</code> command.</p>
      */
-    inline const CopyCommand& GetCopyCommand() const{ return m_copyCommand; }
+    inline const CopyCommand& GetCopyCommand() const { return m_copyCommand; }
     inline bool CopyCommandHasBeenSet() const { return m_copyCommandHasBeenSet; }
-    inline void SetCopyCommand(const CopyCommand& value) { m_copyCommandHasBeenSet = true; m_copyCommand = value; }
-    inline void SetCopyCommand(CopyCommand&& value) { m_copyCommandHasBeenSet = true; m_copyCommand = std::move(value); }
-    inline RedshiftDestinationConfiguration& WithCopyCommand(const CopyCommand& value) { SetCopyCommand(value); return *this;}
-    inline RedshiftDestinationConfiguration& WithCopyCommand(CopyCommand&& value) { SetCopyCommand(std::move(value)); return *this;}
+    template<typename CopyCommandT = CopyCommand>
+    void SetCopyCommand(CopyCommandT&& value) { m_copyCommandHasBeenSet = true; m_copyCommand = std::forward<CopyCommandT>(value); }
+    template<typename CopyCommandT = CopyCommand>
+    RedshiftDestinationConfiguration& WithCopyCommand(CopyCommandT&& value) { SetCopyCommand(std::forward<CopyCommandT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the user.</p>
      */
-    inline const Aws::String& GetUsername() const{ return m_username; }
+    inline const Aws::String& GetUsername() const { return m_username; }
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
-    inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
-    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
-    inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
-    inline RedshiftDestinationConfiguration& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
-    inline RedshiftDestinationConfiguration& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
-    inline RedshiftDestinationConfiguration& WithUsername(const char* value) { SetUsername(value); return *this;}
+    template<typename UsernameT = Aws::String>
+    void SetUsername(UsernameT&& value) { m_usernameHasBeenSet = true; m_username = std::forward<UsernameT>(value); }
+    template<typename UsernameT = Aws::String>
+    RedshiftDestinationConfiguration& WithUsername(UsernameT&& value) { SetUsername(std::forward<UsernameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The user password.</p>
      */
-    inline const Aws::String& GetPassword() const{ return m_password; }
+    inline const Aws::String& GetPassword() const { return m_password; }
     inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
-    inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
-    inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = std::move(value); }
-    inline void SetPassword(const char* value) { m_passwordHasBeenSet = true; m_password.assign(value); }
-    inline RedshiftDestinationConfiguration& WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
-    inline RedshiftDestinationConfiguration& WithPassword(Aws::String&& value) { SetPassword(std::move(value)); return *this;}
-    inline RedshiftDestinationConfiguration& WithPassword(const char* value) { SetPassword(value); return *this;}
+    template<typename PasswordT = Aws::String>
+    void SetPassword(PasswordT&& value) { m_passwordHasBeenSet = true; m_password = std::forward<PasswordT>(value); }
+    template<typename PasswordT = Aws::String>
+    RedshiftDestinationConfiguration& WithPassword(PasswordT&& value) { SetPassword(std::forward<PasswordT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -121,12 +113,12 @@ namespace Model
      * <p>The retry behavior in case Firehose is unable to deliver documents to Amazon
      * Redshift. Default value is 3600 (60 minutes).</p>
      */
-    inline const RedshiftRetryOptions& GetRetryOptions() const{ return m_retryOptions; }
+    inline const RedshiftRetryOptions& GetRetryOptions() const { return m_retryOptions; }
     inline bool RetryOptionsHasBeenSet() const { return m_retryOptionsHasBeenSet; }
-    inline void SetRetryOptions(const RedshiftRetryOptions& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = value; }
-    inline void SetRetryOptions(RedshiftRetryOptions&& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = std::move(value); }
-    inline RedshiftDestinationConfiguration& WithRetryOptions(const RedshiftRetryOptions& value) { SetRetryOptions(value); return *this;}
-    inline RedshiftDestinationConfiguration& WithRetryOptions(RedshiftRetryOptions&& value) { SetRetryOptions(std::move(value)); return *this;}
+    template<typename RetryOptionsT = RedshiftRetryOptions>
+    void SetRetryOptions(RetryOptionsT&& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = std::forward<RetryOptionsT>(value); }
+    template<typename RetryOptionsT = RedshiftRetryOptions>
+    RedshiftDestinationConfiguration& WithRetryOptions(RetryOptionsT&& value) { SetRetryOptions(std::forward<RetryOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -139,24 +131,24 @@ namespace Model
      * Redshift <code>COPY</code> operation that reads from the S3 bucket doesn't
      * support these compression formats.</p>
      */
-    inline const S3DestinationConfiguration& GetS3Configuration() const{ return m_s3Configuration; }
+    inline const S3DestinationConfiguration& GetS3Configuration() const { return m_s3Configuration; }
     inline bool S3ConfigurationHasBeenSet() const { return m_s3ConfigurationHasBeenSet; }
-    inline void SetS3Configuration(const S3DestinationConfiguration& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = value; }
-    inline void SetS3Configuration(S3DestinationConfiguration&& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = std::move(value); }
-    inline RedshiftDestinationConfiguration& WithS3Configuration(const S3DestinationConfiguration& value) { SetS3Configuration(value); return *this;}
-    inline RedshiftDestinationConfiguration& WithS3Configuration(S3DestinationConfiguration&& value) { SetS3Configuration(std::move(value)); return *this;}
+    template<typename S3ConfigurationT = S3DestinationConfiguration>
+    void SetS3Configuration(S3ConfigurationT&& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = std::forward<S3ConfigurationT>(value); }
+    template<typename S3ConfigurationT = S3DestinationConfiguration>
+    RedshiftDestinationConfiguration& WithS3Configuration(S3ConfigurationT&& value) { SetS3Configuration(std::forward<S3ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The data processing configuration.</p>
      */
-    inline const ProcessingConfiguration& GetProcessingConfiguration() const{ return m_processingConfiguration; }
+    inline const ProcessingConfiguration& GetProcessingConfiguration() const { return m_processingConfiguration; }
     inline bool ProcessingConfigurationHasBeenSet() const { return m_processingConfigurationHasBeenSet; }
-    inline void SetProcessingConfiguration(const ProcessingConfiguration& value) { m_processingConfigurationHasBeenSet = true; m_processingConfiguration = value; }
-    inline void SetProcessingConfiguration(ProcessingConfiguration&& value) { m_processingConfigurationHasBeenSet = true; m_processingConfiguration = std::move(value); }
-    inline RedshiftDestinationConfiguration& WithProcessingConfiguration(const ProcessingConfiguration& value) { SetProcessingConfiguration(value); return *this;}
-    inline RedshiftDestinationConfiguration& WithProcessingConfiguration(ProcessingConfiguration&& value) { SetProcessingConfiguration(std::move(value)); return *this;}
+    template<typename ProcessingConfigurationT = ProcessingConfiguration>
+    void SetProcessingConfiguration(ProcessingConfigurationT&& value) { m_processingConfigurationHasBeenSet = true; m_processingConfiguration = std::forward<ProcessingConfigurationT>(value); }
+    template<typename ProcessingConfigurationT = ProcessingConfiguration>
+    RedshiftDestinationConfiguration& WithProcessingConfiguration(ProcessingConfigurationT&& value) { SetProcessingConfiguration(std::forward<ProcessingConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -165,36 +157,34 @@ namespace Model
      * it to enable Amazon S3 backup if it is disabled. If backup is enabled, you can't
      * update the Firehose stream to disable it. </p>
      */
-    inline const RedshiftS3BackupMode& GetS3BackupMode() const{ return m_s3BackupMode; }
+    inline RedshiftS3BackupMode GetS3BackupMode() const { return m_s3BackupMode; }
     inline bool S3BackupModeHasBeenSet() const { return m_s3BackupModeHasBeenSet; }
-    inline void SetS3BackupMode(const RedshiftS3BackupMode& value) { m_s3BackupModeHasBeenSet = true; m_s3BackupMode = value; }
-    inline void SetS3BackupMode(RedshiftS3BackupMode&& value) { m_s3BackupModeHasBeenSet = true; m_s3BackupMode = std::move(value); }
-    inline RedshiftDestinationConfiguration& WithS3BackupMode(const RedshiftS3BackupMode& value) { SetS3BackupMode(value); return *this;}
-    inline RedshiftDestinationConfiguration& WithS3BackupMode(RedshiftS3BackupMode&& value) { SetS3BackupMode(std::move(value)); return *this;}
+    inline void SetS3BackupMode(RedshiftS3BackupMode value) { m_s3BackupModeHasBeenSet = true; m_s3BackupMode = value; }
+    inline RedshiftDestinationConfiguration& WithS3BackupMode(RedshiftS3BackupMode value) { SetS3BackupMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration for backup in Amazon S3.</p>
      */
-    inline const S3DestinationConfiguration& GetS3BackupConfiguration() const{ return m_s3BackupConfiguration; }
+    inline const S3DestinationConfiguration& GetS3BackupConfiguration() const { return m_s3BackupConfiguration; }
     inline bool S3BackupConfigurationHasBeenSet() const { return m_s3BackupConfigurationHasBeenSet; }
-    inline void SetS3BackupConfiguration(const S3DestinationConfiguration& value) { m_s3BackupConfigurationHasBeenSet = true; m_s3BackupConfiguration = value; }
-    inline void SetS3BackupConfiguration(S3DestinationConfiguration&& value) { m_s3BackupConfigurationHasBeenSet = true; m_s3BackupConfiguration = std::move(value); }
-    inline RedshiftDestinationConfiguration& WithS3BackupConfiguration(const S3DestinationConfiguration& value) { SetS3BackupConfiguration(value); return *this;}
-    inline RedshiftDestinationConfiguration& WithS3BackupConfiguration(S3DestinationConfiguration&& value) { SetS3BackupConfiguration(std::move(value)); return *this;}
+    template<typename S3BackupConfigurationT = S3DestinationConfiguration>
+    void SetS3BackupConfiguration(S3BackupConfigurationT&& value) { m_s3BackupConfigurationHasBeenSet = true; m_s3BackupConfiguration = std::forward<S3BackupConfigurationT>(value); }
+    template<typename S3BackupConfigurationT = S3DestinationConfiguration>
+    RedshiftDestinationConfiguration& WithS3BackupConfiguration(S3BackupConfigurationT&& value) { SetS3BackupConfiguration(std::forward<S3BackupConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The CloudWatch logging options for your Firehose stream.</p>
      */
-    inline const CloudWatchLoggingOptions& GetCloudWatchLoggingOptions() const{ return m_cloudWatchLoggingOptions; }
+    inline const CloudWatchLoggingOptions& GetCloudWatchLoggingOptions() const { return m_cloudWatchLoggingOptions; }
     inline bool CloudWatchLoggingOptionsHasBeenSet() const { return m_cloudWatchLoggingOptionsHasBeenSet; }
-    inline void SetCloudWatchLoggingOptions(const CloudWatchLoggingOptions& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = value; }
-    inline void SetCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = std::move(value); }
-    inline RedshiftDestinationConfiguration& WithCloudWatchLoggingOptions(const CloudWatchLoggingOptions& value) { SetCloudWatchLoggingOptions(value); return *this;}
-    inline RedshiftDestinationConfiguration& WithCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { SetCloudWatchLoggingOptions(std::move(value)); return *this;}
+    template<typename CloudWatchLoggingOptionsT = CloudWatchLoggingOptions>
+    void SetCloudWatchLoggingOptions(CloudWatchLoggingOptionsT&& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = std::forward<CloudWatchLoggingOptionsT>(value); }
+    template<typename CloudWatchLoggingOptionsT = CloudWatchLoggingOptions>
+    RedshiftDestinationConfiguration& WithCloudWatchLoggingOptions(CloudWatchLoggingOptionsT&& value) { SetCloudWatchLoggingOptions(std::forward<CloudWatchLoggingOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -202,12 +192,12 @@ namespace Model
      * <p> The configuration that defines how you access secrets for Amazon Redshift.
      * </p>
      */
-    inline const SecretsManagerConfiguration& GetSecretsManagerConfiguration() const{ return m_secretsManagerConfiguration; }
+    inline const SecretsManagerConfiguration& GetSecretsManagerConfiguration() const { return m_secretsManagerConfiguration; }
     inline bool SecretsManagerConfigurationHasBeenSet() const { return m_secretsManagerConfigurationHasBeenSet; }
-    inline void SetSecretsManagerConfiguration(const SecretsManagerConfiguration& value) { m_secretsManagerConfigurationHasBeenSet = true; m_secretsManagerConfiguration = value; }
-    inline void SetSecretsManagerConfiguration(SecretsManagerConfiguration&& value) { m_secretsManagerConfigurationHasBeenSet = true; m_secretsManagerConfiguration = std::move(value); }
-    inline RedshiftDestinationConfiguration& WithSecretsManagerConfiguration(const SecretsManagerConfiguration& value) { SetSecretsManagerConfiguration(value); return *this;}
-    inline RedshiftDestinationConfiguration& WithSecretsManagerConfiguration(SecretsManagerConfiguration&& value) { SetSecretsManagerConfiguration(std::move(value)); return *this;}
+    template<typename SecretsManagerConfigurationT = SecretsManagerConfiguration>
+    void SetSecretsManagerConfiguration(SecretsManagerConfigurationT&& value) { m_secretsManagerConfigurationHasBeenSet = true; m_secretsManagerConfiguration = std::forward<SecretsManagerConfigurationT>(value); }
+    template<typename SecretsManagerConfigurationT = SecretsManagerConfiguration>
+    RedshiftDestinationConfiguration& WithSecretsManagerConfiguration(SecretsManagerConfigurationT&& value) { SetSecretsManagerConfiguration(std::forward<SecretsManagerConfigurationT>(value)); return *this;}
     ///@}
   private:
 
@@ -235,7 +225,7 @@ namespace Model
     ProcessingConfiguration m_processingConfiguration;
     bool m_processingConfigurationHasBeenSet = false;
 
-    RedshiftS3BackupMode m_s3BackupMode;
+    RedshiftS3BackupMode m_s3BackupMode{RedshiftS3BackupMode::NOT_SET};
     bool m_s3BackupModeHasBeenSet = false;
 
     S3DestinationConfiguration m_s3BackupConfiguration;

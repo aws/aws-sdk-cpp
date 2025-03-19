@@ -12,13 +12,6 @@ using namespace Aws::Organizations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-EnablePolicyTypeRequest::EnablePolicyTypeRequest() : 
-    m_rootIdHasBeenSet(false),
-    m_policyType(PolicyType::NOT_SET),
-    m_policyTypeHasBeenSet(false)
-{
-}
-
 Aws::String EnablePolicyTypeRequest::SerializePayload() const
 {
   JsonValue payload;

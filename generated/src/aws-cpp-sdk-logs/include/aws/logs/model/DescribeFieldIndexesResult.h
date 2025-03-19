@@ -29,7 +29,7 @@ namespace Model
   class DescribeFieldIndexesResult
   {
   public:
-    AWS_CLOUDWATCHLOGS_API DescribeFieldIndexesResult();
+    AWS_CLOUDWATCHLOGS_API DescribeFieldIndexesResult() = default;
     AWS_CLOUDWATCHLOGS_API DescribeFieldIndexesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDWATCHLOGS_API DescribeFieldIndexesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,43 +38,42 @@ namespace Model
     /**
      * <p>An array containing the field index information.</p>
      */
-    inline const Aws::Vector<FieldIndex>& GetFieldIndexes() const{ return m_fieldIndexes; }
-    inline void SetFieldIndexes(const Aws::Vector<FieldIndex>& value) { m_fieldIndexes = value; }
-    inline void SetFieldIndexes(Aws::Vector<FieldIndex>&& value) { m_fieldIndexes = std::move(value); }
-    inline DescribeFieldIndexesResult& WithFieldIndexes(const Aws::Vector<FieldIndex>& value) { SetFieldIndexes(value); return *this;}
-    inline DescribeFieldIndexesResult& WithFieldIndexes(Aws::Vector<FieldIndex>&& value) { SetFieldIndexes(std::move(value)); return *this;}
-    inline DescribeFieldIndexesResult& AddFieldIndexes(const FieldIndex& value) { m_fieldIndexes.push_back(value); return *this; }
-    inline DescribeFieldIndexesResult& AddFieldIndexes(FieldIndex&& value) { m_fieldIndexes.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FieldIndex>& GetFieldIndexes() const { return m_fieldIndexes; }
+    template<typename FieldIndexesT = Aws::Vector<FieldIndex>>
+    void SetFieldIndexes(FieldIndexesT&& value) { m_fieldIndexesHasBeenSet = true; m_fieldIndexes = std::forward<FieldIndexesT>(value); }
+    template<typename FieldIndexesT = Aws::Vector<FieldIndex>>
+    DescribeFieldIndexesResult& WithFieldIndexes(FieldIndexesT&& value) { SetFieldIndexes(std::forward<FieldIndexesT>(value)); return *this;}
+    template<typename FieldIndexesT = FieldIndex>
+    DescribeFieldIndexesResult& AddFieldIndexes(FieldIndexesT&& value) { m_fieldIndexesHasBeenSet = true; m_fieldIndexes.emplace_back(std::forward<FieldIndexesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeFieldIndexesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeFieldIndexesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeFieldIndexesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeFieldIndexesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeFieldIndexesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeFieldIndexesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeFieldIndexesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeFieldIndexesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<FieldIndex> m_fieldIndexes;
+    bool m_fieldIndexesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

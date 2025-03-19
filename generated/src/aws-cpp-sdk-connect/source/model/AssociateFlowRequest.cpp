@@ -12,15 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateFlowRequest::AssociateFlowRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_flowIdHasBeenSet(false),
-    m_resourceType(FlowAssociationResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false)
-{
-}
-
 Aws::String AssociateFlowRequest::SerializePayload() const
 {
   JsonValue payload;

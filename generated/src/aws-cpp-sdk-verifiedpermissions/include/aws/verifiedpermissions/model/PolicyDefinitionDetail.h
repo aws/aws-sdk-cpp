@@ -36,7 +36,7 @@ namespace Model
   class PolicyDefinitionDetail
   {
   public:
-    AWS_VERIFIEDPERMISSIONS_API PolicyDefinitionDetail();
+    AWS_VERIFIEDPERMISSIONS_API PolicyDefinitionDetail() = default;
     AWS_VERIFIEDPERMISSIONS_API PolicyDefinitionDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_VERIFIEDPERMISSIONS_API PolicyDefinitionDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VERIFIEDPERMISSIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,12 @@ namespace Model
      * <p>Information about a static policy that wasn't created with a policy
      * template.</p>
      */
-    inline const StaticPolicyDefinitionDetail& GetStatic() const{ return m_static; }
+    inline const StaticPolicyDefinitionDetail& GetStatic() const { return m_static; }
     inline bool StaticHasBeenSet() const { return m_staticHasBeenSet; }
-    inline void SetStatic(const StaticPolicyDefinitionDetail& value) { m_staticHasBeenSet = true; m_static = value; }
-    inline void SetStatic(StaticPolicyDefinitionDetail&& value) { m_staticHasBeenSet = true; m_static = std::move(value); }
-    inline PolicyDefinitionDetail& WithStatic(const StaticPolicyDefinitionDetail& value) { SetStatic(value); return *this;}
-    inline PolicyDefinitionDetail& WithStatic(StaticPolicyDefinitionDetail&& value) { SetStatic(std::move(value)); return *this;}
+    template<typename StaticT = StaticPolicyDefinitionDetail>
+    void SetStatic(StaticT&& value) { m_staticHasBeenSet = true; m_static = std::forward<StaticT>(value); }
+    template<typename StaticT = StaticPolicyDefinitionDetail>
+    PolicyDefinitionDetail& WithStatic(StaticT&& value) { SetStatic(std::forward<StaticT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +60,12 @@ namespace Model
      * <p>Information about a template-linked policy that was created by instantiating
      * a policy template.</p>
      */
-    inline const TemplateLinkedPolicyDefinitionDetail& GetTemplateLinked() const{ return m_templateLinked; }
+    inline const TemplateLinkedPolicyDefinitionDetail& GetTemplateLinked() const { return m_templateLinked; }
     inline bool TemplateLinkedHasBeenSet() const { return m_templateLinkedHasBeenSet; }
-    inline void SetTemplateLinked(const TemplateLinkedPolicyDefinitionDetail& value) { m_templateLinkedHasBeenSet = true; m_templateLinked = value; }
-    inline void SetTemplateLinked(TemplateLinkedPolicyDefinitionDetail&& value) { m_templateLinkedHasBeenSet = true; m_templateLinked = std::move(value); }
-    inline PolicyDefinitionDetail& WithTemplateLinked(const TemplateLinkedPolicyDefinitionDetail& value) { SetTemplateLinked(value); return *this;}
-    inline PolicyDefinitionDetail& WithTemplateLinked(TemplateLinkedPolicyDefinitionDetail&& value) { SetTemplateLinked(std::move(value)); return *this;}
+    template<typename TemplateLinkedT = TemplateLinkedPolicyDefinitionDetail>
+    void SetTemplateLinked(TemplateLinkedT&& value) { m_templateLinkedHasBeenSet = true; m_templateLinked = std::forward<TemplateLinkedT>(value); }
+    template<typename TemplateLinkedT = TemplateLinkedPolicyDefinitionDetail>
+    PolicyDefinitionDetail& WithTemplateLinked(TemplateLinkedT&& value) { SetTemplateLinked(std::forward<TemplateLinkedT>(value)); return *this;}
     ///@}
   private:
 

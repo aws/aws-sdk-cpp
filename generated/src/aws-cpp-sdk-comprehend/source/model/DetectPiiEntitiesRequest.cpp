@@ -12,13 +12,6 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DetectPiiEntitiesRequest::DetectPiiEntitiesRequest() : 
-    m_textHasBeenSet(false),
-    m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false)
-{
-}
-
 Aws::String DetectPiiEntitiesRequest::SerializePayload() const
 {
   JsonValue payload;

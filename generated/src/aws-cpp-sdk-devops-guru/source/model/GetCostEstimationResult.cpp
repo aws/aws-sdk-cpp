@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetCostEstimationResult::GetCostEstimationResult() : 
-    m_status(CostEstimationStatus::NOT_SET),
-    m_totalCost(0.0)
-{
-}
-
 GetCostEstimationResult::GetCostEstimationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetCostEstimationResult()
 {
   *this = result;
 }
@@ -35,15 +28,13 @@ GetCostEstimationResult& GetCostEstimationResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("ResourceCollection"))
   {
     m_resourceCollection = jsonValue.GetObject("ResourceCollection");
-
+    m_resourceCollectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = CostEstimationStatusMapper::GetCostEstimationStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Costs"))
   {
     Aws::Utils::Array<JsonView> costsJsonList = jsonValue.GetArray("Costs");
@@ -51,32 +42,30 @@ GetCostEstimationResult& GetCostEstimationResult::operator =(const Aws::AmazonWe
     {
       m_costs.push_back(costsJsonList[costsIndex].AsObject());
     }
+    m_costsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeRange"))
   {
     m_timeRange = jsonValue.GetObject("TimeRange");
-
+    m_timeRangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalCost"))
   {
     m_totalCost = jsonValue.GetDouble("TotalCost");
-
+    m_totalCostHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

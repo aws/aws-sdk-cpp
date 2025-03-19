@@ -24,7 +24,7 @@ namespace Model
   class StartTestExecutionRequest : public LexModelsV2Request
   {
   public:
-    AWS_LEXMODELSV2_API StartTestExecutionRequest();
+    AWS_LEXMODELSV2_API StartTestExecutionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,26 +39,24 @@ namespace Model
     /**
      * <p>The test set Id for the test set execution.</p>
      */
-    inline const Aws::String& GetTestSetId() const{ return m_testSetId; }
+    inline const Aws::String& GetTestSetId() const { return m_testSetId; }
     inline bool TestSetIdHasBeenSet() const { return m_testSetIdHasBeenSet; }
-    inline void SetTestSetId(const Aws::String& value) { m_testSetIdHasBeenSet = true; m_testSetId = value; }
-    inline void SetTestSetId(Aws::String&& value) { m_testSetIdHasBeenSet = true; m_testSetId = std::move(value); }
-    inline void SetTestSetId(const char* value) { m_testSetIdHasBeenSet = true; m_testSetId.assign(value); }
-    inline StartTestExecutionRequest& WithTestSetId(const Aws::String& value) { SetTestSetId(value); return *this;}
-    inline StartTestExecutionRequest& WithTestSetId(Aws::String&& value) { SetTestSetId(std::move(value)); return *this;}
-    inline StartTestExecutionRequest& WithTestSetId(const char* value) { SetTestSetId(value); return *this;}
+    template<typename TestSetIdT = Aws::String>
+    void SetTestSetId(TestSetIdT&& value) { m_testSetIdHasBeenSet = true; m_testSetId = std::forward<TestSetIdT>(value); }
+    template<typename TestSetIdT = Aws::String>
+    StartTestExecutionRequest& WithTestSetId(TestSetIdT&& value) { SetTestSetId(std::forward<TestSetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The target bot for the test set execution.</p>
      */
-    inline const TestExecutionTarget& GetTarget() const{ return m_target; }
+    inline const TestExecutionTarget& GetTarget() const { return m_target; }
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-    inline void SetTarget(const TestExecutionTarget& value) { m_targetHasBeenSet = true; m_target = value; }
-    inline void SetTarget(TestExecutionTarget&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-    inline StartTestExecutionRequest& WithTarget(const TestExecutionTarget& value) { SetTarget(value); return *this;}
-    inline StartTestExecutionRequest& WithTarget(TestExecutionTarget&& value) { SetTarget(std::move(value)); return *this;}
+    template<typename TargetT = TestExecutionTarget>
+    void SetTarget(TargetT&& value) { m_targetHasBeenSet = true; m_target = std::forward<TargetT>(value); }
+    template<typename TargetT = TestExecutionTarget>
+    StartTestExecutionRequest& WithTarget(TargetT&& value) { SetTarget(std::forward<TargetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,24 +66,20 @@ namespace Model
      * non-streaming, RecognizeUtterance and RecognizeText Amazon Lex Runtime API are
      * used.</p>
      */
-    inline const TestExecutionApiMode& GetApiMode() const{ return m_apiMode; }
+    inline TestExecutionApiMode GetApiMode() const { return m_apiMode; }
     inline bool ApiModeHasBeenSet() const { return m_apiModeHasBeenSet; }
-    inline void SetApiMode(const TestExecutionApiMode& value) { m_apiModeHasBeenSet = true; m_apiMode = value; }
-    inline void SetApiMode(TestExecutionApiMode&& value) { m_apiModeHasBeenSet = true; m_apiMode = std::move(value); }
-    inline StartTestExecutionRequest& WithApiMode(const TestExecutionApiMode& value) { SetApiMode(value); return *this;}
-    inline StartTestExecutionRequest& WithApiMode(TestExecutionApiMode&& value) { SetApiMode(std::move(value)); return *this;}
+    inline void SetApiMode(TestExecutionApiMode value) { m_apiModeHasBeenSet = true; m_apiMode = value; }
+    inline StartTestExecutionRequest& WithApiMode(TestExecutionApiMode value) { SetApiMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether audio or text is used.</p>
      */
-    inline const TestExecutionModality& GetTestExecutionModality() const{ return m_testExecutionModality; }
+    inline TestExecutionModality GetTestExecutionModality() const { return m_testExecutionModality; }
     inline bool TestExecutionModalityHasBeenSet() const { return m_testExecutionModalityHasBeenSet; }
-    inline void SetTestExecutionModality(const TestExecutionModality& value) { m_testExecutionModalityHasBeenSet = true; m_testExecutionModality = value; }
-    inline void SetTestExecutionModality(TestExecutionModality&& value) { m_testExecutionModalityHasBeenSet = true; m_testExecutionModality = std::move(value); }
-    inline StartTestExecutionRequest& WithTestExecutionModality(const TestExecutionModality& value) { SetTestExecutionModality(value); return *this;}
-    inline StartTestExecutionRequest& WithTestExecutionModality(TestExecutionModality&& value) { SetTestExecutionModality(std::move(value)); return *this;}
+    inline void SetTestExecutionModality(TestExecutionModality value) { m_testExecutionModalityHasBeenSet = true; m_testExecutionModality = value; }
+    inline StartTestExecutionRequest& WithTestExecutionModality(TestExecutionModality value) { SetTestExecutionModality(value); return *this;}
     ///@}
   private:
 
@@ -95,10 +89,10 @@ namespace Model
     TestExecutionTarget m_target;
     bool m_targetHasBeenSet = false;
 
-    TestExecutionApiMode m_apiMode;
+    TestExecutionApiMode m_apiMode{TestExecutionApiMode::NOT_SET};
     bool m_apiModeHasBeenSet = false;
 
-    TestExecutionModality m_testExecutionModality;
+    TestExecutionModality m_testExecutionModality{TestExecutionModality::NOT_SET};
     bool m_testExecutionModalityHasBeenSet = false;
   };
 

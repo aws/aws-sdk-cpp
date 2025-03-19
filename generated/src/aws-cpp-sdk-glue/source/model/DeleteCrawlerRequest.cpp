@@ -12,11 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteCrawlerRequest::DeleteCrawlerRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCrawlerRequest::SerializePayload() const
 {
   JsonValue payload;

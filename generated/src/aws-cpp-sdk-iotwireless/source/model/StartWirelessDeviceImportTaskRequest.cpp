@@ -12,15 +12,6 @@ using namespace Aws::IoTWireless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartWirelessDeviceImportTaskRequest::StartWirelessDeviceImportTaskRequest() : 
-    m_destinationNameHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false),
-    m_sidewalkHasBeenSet(false)
-{
-}
-
 Aws::String StartWirelessDeviceImportTaskRequest::SerializePayload() const
 {
   JsonValue payload;

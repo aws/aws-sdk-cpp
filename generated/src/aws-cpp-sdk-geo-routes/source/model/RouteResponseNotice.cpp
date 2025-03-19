@@ -18,16 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteResponseNotice::RouteResponseNotice() : 
-    m_code(RouteResponseNoticeCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_impact(RouteNoticeImpact::NOT_SET),
-    m_impactHasBeenSet(false)
-{
-}
-
 RouteResponseNotice::RouteResponseNotice(JsonView jsonValue)
-  : RouteResponseNotice()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ RouteResponseNotice& RouteResponseNotice::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Code"))
   {
     m_code = RouteResponseNoticeCodeMapper::GetRouteResponseNoticeCodeForName(jsonValue.GetString("Code"));
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Impact"))
   {
     m_impact = RouteNoticeImpactMapper::GetRouteNoticeImpactForName(jsonValue.GetString("Impact"));
-
     m_impactHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -27,7 +27,7 @@ namespace Model
   class StartQueryExecutionResult
   {
   public:
-    AWS_ATHENA_API StartQueryExecutionResult();
+    AWS_ATHENA_API StartQueryExecutionResult() = default;
     AWS_ATHENA_API StartQueryExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ATHENA_API StartQueryExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The unique ID of the query that ran as a result of this request.</p>
      */
-    inline const Aws::String& GetQueryExecutionId() const{ return m_queryExecutionId; }
-    inline void SetQueryExecutionId(const Aws::String& value) { m_queryExecutionId = value; }
-    inline void SetQueryExecutionId(Aws::String&& value) { m_queryExecutionId = std::move(value); }
-    inline void SetQueryExecutionId(const char* value) { m_queryExecutionId.assign(value); }
-    inline StartQueryExecutionResult& WithQueryExecutionId(const Aws::String& value) { SetQueryExecutionId(value); return *this;}
-    inline StartQueryExecutionResult& WithQueryExecutionId(Aws::String&& value) { SetQueryExecutionId(std::move(value)); return *this;}
-    inline StartQueryExecutionResult& WithQueryExecutionId(const char* value) { SetQueryExecutionId(value); return *this;}
+    inline const Aws::String& GetQueryExecutionId() const { return m_queryExecutionId; }
+    template<typename QueryExecutionIdT = Aws::String>
+    void SetQueryExecutionId(QueryExecutionIdT&& value) { m_queryExecutionIdHasBeenSet = true; m_queryExecutionId = std::forward<QueryExecutionIdT>(value); }
+    template<typename QueryExecutionIdT = Aws::String>
+    StartQueryExecutionResult& WithQueryExecutionId(QueryExecutionIdT&& value) { SetQueryExecutionId(std::forward<QueryExecutionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartQueryExecutionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartQueryExecutionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartQueryExecutionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartQueryExecutionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_queryExecutionId;
+    bool m_queryExecutionIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

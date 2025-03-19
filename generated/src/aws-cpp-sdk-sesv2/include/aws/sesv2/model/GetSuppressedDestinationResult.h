@@ -33,7 +33,7 @@ namespace Model
   class GetSuppressedDestinationResult
   {
   public:
-    AWS_SESV2_API GetSuppressedDestinationResult();
+    AWS_SESV2_API GetSuppressedDestinationResult() = default;
     AWS_SESV2_API GetSuppressedDestinationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SESV2_API GetSuppressedDestinationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,28 +42,28 @@ namespace Model
     /**
      * <p>An object containing information about the suppressed email address.</p>
      */
-    inline const SuppressedDestination& GetSuppressedDestination() const{ return m_suppressedDestination; }
-    inline void SetSuppressedDestination(const SuppressedDestination& value) { m_suppressedDestination = value; }
-    inline void SetSuppressedDestination(SuppressedDestination&& value) { m_suppressedDestination = std::move(value); }
-    inline GetSuppressedDestinationResult& WithSuppressedDestination(const SuppressedDestination& value) { SetSuppressedDestination(value); return *this;}
-    inline GetSuppressedDestinationResult& WithSuppressedDestination(SuppressedDestination&& value) { SetSuppressedDestination(std::move(value)); return *this;}
+    inline const SuppressedDestination& GetSuppressedDestination() const { return m_suppressedDestination; }
+    template<typename SuppressedDestinationT = SuppressedDestination>
+    void SetSuppressedDestination(SuppressedDestinationT&& value) { m_suppressedDestinationHasBeenSet = true; m_suppressedDestination = std::forward<SuppressedDestinationT>(value); }
+    template<typename SuppressedDestinationT = SuppressedDestination>
+    GetSuppressedDestinationResult& WithSuppressedDestination(SuppressedDestinationT&& value) { SetSuppressedDestination(std::forward<SuppressedDestinationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetSuppressedDestinationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetSuppressedDestinationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetSuppressedDestinationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetSuppressedDestinationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     SuppressedDestination m_suppressedDestination;
+    bool m_suppressedDestinationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

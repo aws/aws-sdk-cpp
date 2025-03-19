@@ -18,14 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-SlotResolutionSetting::SlotResolutionSetting() : 
-    m_slotResolutionStrategy(SlotResolutionStrategy::NOT_SET),
-    m_slotResolutionStrategyHasBeenSet(false)
-{
-}
-
 SlotResolutionSetting::SlotResolutionSetting(JsonView jsonValue)
-  : SlotResolutionSetting()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SlotResolutionSetting& SlotResolutionSetting::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("slotResolutionStrategy"))
   {
     m_slotResolutionStrategy = SlotResolutionStrategyMapper::GetSlotResolutionStrategyForName(jsonValue.GetString("slotResolutionStrategy"));
-
     m_slotResolutionStrategyHasBeenSet = true;
   }
-
   return *this;
 }
 

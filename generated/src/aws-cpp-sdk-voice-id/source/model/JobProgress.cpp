@@ -18,14 +18,7 @@ namespace VoiceID
 namespace Model
 {
 
-JobProgress::JobProgress() : 
-    m_percentComplete(0),
-    m_percentCompleteHasBeenSet(false)
-{
-}
-
 JobProgress::JobProgress(JsonView jsonValue)
-  : JobProgress()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ JobProgress& JobProgress::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PercentComplete"))
   {
     m_percentComplete = jsonValue.GetInteger("PercentComplete");
-
     m_percentCompleteHasBeenSet = true;
   }
-
   return *this;
 }
 

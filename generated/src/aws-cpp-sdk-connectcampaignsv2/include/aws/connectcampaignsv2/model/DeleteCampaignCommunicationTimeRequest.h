@@ -30,7 +30,7 @@ namespace Model
   class DeleteCampaignCommunicationTimeRequest : public ConnectCampaignsV2Request
   {
   public:
-    AWS_CONNECTCAMPAIGNSV2_API DeleteCampaignCommunicationTimeRequest();
+    AWS_CONNECTCAMPAIGNSV2_API DeleteCampaignCommunicationTimeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,31 +45,27 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline DeleteCampaignCommunicationTimeRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline DeleteCampaignCommunicationTimeRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline DeleteCampaignCommunicationTimeRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    DeleteCampaignCommunicationTimeRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const CommunicationTimeConfigType& GetConfig() const{ return m_config; }
+    inline CommunicationTimeConfigType GetConfig() const { return m_config; }
     inline bool ConfigHasBeenSet() const { return m_configHasBeenSet; }
-    inline void SetConfig(const CommunicationTimeConfigType& value) { m_configHasBeenSet = true; m_config = value; }
-    inline void SetConfig(CommunicationTimeConfigType&& value) { m_configHasBeenSet = true; m_config = std::move(value); }
-    inline DeleteCampaignCommunicationTimeRequest& WithConfig(const CommunicationTimeConfigType& value) { SetConfig(value); return *this;}
-    inline DeleteCampaignCommunicationTimeRequest& WithConfig(CommunicationTimeConfigType&& value) { SetConfig(std::move(value)); return *this;}
+    inline void SetConfig(CommunicationTimeConfigType value) { m_configHasBeenSet = true; m_config = value; }
+    inline DeleteCampaignCommunicationTimeRequest& WithConfig(CommunicationTimeConfigType value) { SetConfig(value); return *this;}
     ///@}
   private:
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    CommunicationTimeConfigType m_config;
+    CommunicationTimeConfigType m_config{CommunicationTimeConfigType::NOT_SET};
     bool m_configHasBeenSet = false;
   };
 

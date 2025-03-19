@@ -12,13 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAssociationStatusRequest::UpdateAssociationStatusRequest() : 
-    m_nameHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_associationStatusHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAssociationStatusRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,15 +18,7 @@ namespace CodeBuild
 namespace Model
 {
 
-RegistryCredential::RegistryCredential() : 
-    m_credentialHasBeenSet(false),
-    m_credentialProvider(CredentialProviderType::NOT_SET),
-    m_credentialProviderHasBeenSet(false)
-{
-}
-
 RegistryCredential::RegistryCredential(JsonView jsonValue)
-  : RegistryCredential()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ RegistryCredential& RegistryCredential::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("credential"))
   {
     m_credential = jsonValue.GetString("credential");
-
     m_credentialHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("credentialProvider"))
   {
     m_credentialProvider = CredentialProviderTypeMapper::GetCredentialProviderTypeForName(jsonValue.GetString("credentialProvider"));
-
     m_credentialProviderHasBeenSet = true;
   }
-
   return *this;
 }
 

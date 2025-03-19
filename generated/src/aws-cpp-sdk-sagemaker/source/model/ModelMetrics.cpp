@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ModelMetrics::ModelMetrics() : 
-    m_modelQualityHasBeenSet(false),
-    m_modelDataQualityHasBeenSet(false),
-    m_biasHasBeenSet(false),
-    m_explainabilityHasBeenSet(false)
-{
-}
-
 ModelMetrics::ModelMetrics(JsonView jsonValue)
-  : ModelMetrics()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ModelMetrics& ModelMetrics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ModelQuality"))
   {
     m_modelQuality = jsonValue.GetObject("ModelQuality");
-
     m_modelQualityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelDataQuality"))
   {
     m_modelDataQuality = jsonValue.GetObject("ModelDataQuality");
-
     m_modelDataQualityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Bias"))
   {
     m_bias = jsonValue.GetObject("Bias");
-
     m_biasHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Explainability"))
   {
     m_explainability = jsonValue.GetObject("Explainability");
-
     m_explainabilityHasBeenSet = true;
   }
-
   return *this;
 }
 

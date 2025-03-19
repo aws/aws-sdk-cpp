@@ -18,15 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-CisaData::CisaData() : 
-    m_actionHasBeenSet(false),
-    m_dateAddedHasBeenSet(false),
-    m_dateDueHasBeenSet(false)
-{
-}
-
 CisaData::CisaData(JsonView jsonValue)
-  : CisaData()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ CisaData& CisaData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("action"))
   {
     m_action = jsonValue.GetString("action");
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dateAdded"))
   {
     m_dateAdded = jsonValue.GetDouble("dateAdded");
-
     m_dateAddedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dateDue"))
   {
     m_dateDue = jsonValue.GetDouble("dateDue");
-
     m_dateDueHasBeenSet = true;
   }
-
   return *this;
 }
 

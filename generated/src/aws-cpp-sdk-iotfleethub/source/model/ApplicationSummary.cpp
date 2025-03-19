@@ -18,22 +18,7 @@ namespace IoTFleetHub
 namespace Model
 {
 
-ApplicationSummary::ApplicationSummary() : 
-    m_applicationIdHasBeenSet(false),
-    m_applicationNameHasBeenSet(false),
-    m_applicationDescriptionHasBeenSet(false),
-    m_applicationUrlHasBeenSet(false),
-    m_applicationCreationDate(0),
-    m_applicationCreationDateHasBeenSet(false),
-    m_applicationLastUpdateDate(0),
-    m_applicationLastUpdateDateHasBeenSet(false),
-    m_applicationState(ApplicationState::NOT_SET),
-    m_applicationStateHasBeenSet(false)
-{
-}
-
 ApplicationSummary::ApplicationSummary(JsonView jsonValue)
-  : ApplicationSummary()
 {
   *this = jsonValue;
 }
@@ -43,52 +28,38 @@ ApplicationSummary& ApplicationSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("applicationId"))
   {
     m_applicationId = jsonValue.GetString("applicationId");
-
     m_applicationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("applicationName"))
   {
     m_applicationName = jsonValue.GetString("applicationName");
-
     m_applicationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("applicationDescription"))
   {
     m_applicationDescription = jsonValue.GetString("applicationDescription");
-
     m_applicationDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("applicationUrl"))
   {
     m_applicationUrl = jsonValue.GetString("applicationUrl");
-
     m_applicationUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("applicationCreationDate"))
   {
     m_applicationCreationDate = jsonValue.GetInt64("applicationCreationDate");
-
     m_applicationCreationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("applicationLastUpdateDate"))
   {
     m_applicationLastUpdateDate = jsonValue.GetInt64("applicationLastUpdateDate");
-
     m_applicationLastUpdateDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("applicationState"))
   {
     m_applicationState = ApplicationStateMapper::GetApplicationStateForName(jsonValue.GetString("applicationState"));
-
     m_applicationStateHasBeenSet = true;
   }
-
   return *this;
 }
 

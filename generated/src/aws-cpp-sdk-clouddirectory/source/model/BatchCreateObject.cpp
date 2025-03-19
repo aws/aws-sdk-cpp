@@ -18,17 +18,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-BatchCreateObject::BatchCreateObject() : 
-    m_schemaFacetHasBeenSet(false),
-    m_objectAttributeListHasBeenSet(false),
-    m_parentReferenceHasBeenSet(false),
-    m_linkNameHasBeenSet(false),
-    m_batchReferenceNameHasBeenSet(false)
-{
-}
-
 BatchCreateObject::BatchCreateObject(JsonView jsonValue)
-  : BatchCreateObject()
 {
   *this = jsonValue;
 }
@@ -44,7 +34,6 @@ BatchCreateObject& BatchCreateObject::operator =(JsonView jsonValue)
     }
     m_schemaFacetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ObjectAttributeList"))
   {
     Aws::Utils::Array<JsonView> objectAttributeListJsonList = jsonValue.GetArray("ObjectAttributeList");
@@ -54,28 +43,21 @@ BatchCreateObject& BatchCreateObject::operator =(JsonView jsonValue)
     }
     m_objectAttributeListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParentReference"))
   {
     m_parentReference = jsonValue.GetObject("ParentReference");
-
     m_parentReferenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LinkName"))
   {
     m_linkName = jsonValue.GetString("LinkName");
-
     m_linkNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BatchReferenceName"))
   {
     m_batchReferenceName = jsonValue.GetString("BatchReferenceName");
-
     m_batchReferenceNameHasBeenSet = true;
   }
-
   return *this;
 }
 

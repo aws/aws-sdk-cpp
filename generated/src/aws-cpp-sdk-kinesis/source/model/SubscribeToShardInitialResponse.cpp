@@ -20,10 +20,6 @@ namespace Kinesis
 namespace Model
 {
 
-SubscribeToShardInitialResponse::SubscribeToShardInitialResponse()
-{
-}
-
 SubscribeToShardInitialResponse::SubscribeToShardInitialResponse(JsonView jsonValue)
 {
   *this = jsonValue;

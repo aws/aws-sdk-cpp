@@ -20,16 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-TypeFilters::TypeFilters() : 
-    m_category(Category::NOT_SET),
-    m_categoryHasBeenSet(false),
-    m_publisherIdHasBeenSet(false),
-    m_typeNamePrefixHasBeenSet(false)
-{
-}
-
 TypeFilters::TypeFilters(const XmlNode& xmlNode)
-  : TypeFilters()
 {
   *this = xmlNode;
 }
@@ -43,7 +34,7 @@ TypeFilters& TypeFilters::operator =(const XmlNode& xmlNode)
     XmlNode categoryNode = resultNode.FirstChild("Category");
     if(!categoryNode.IsNull())
     {
-      m_category = CategoryMapper::GetCategoryForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(categoryNode.GetText()).c_str()).c_str());
+      m_category = CategoryMapper::GetCategoryForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(categoryNode.GetText()).c_str()));
       m_categoryHasBeenSet = true;
     }
     XmlNode publisherIdNode = resultNode.FirstChild("PublisherId");

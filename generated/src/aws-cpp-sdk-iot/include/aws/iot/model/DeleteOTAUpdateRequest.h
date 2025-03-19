@@ -25,7 +25,7 @@ namespace Model
   class DeleteOTAUpdateRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API DeleteOTAUpdateRequest();
+    AWS_IOT_API DeleteOTAUpdateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The ID of the OTA update to delete.</p>
      */
-    inline const Aws::String& GetOtaUpdateId() const{ return m_otaUpdateId; }
+    inline const Aws::String& GetOtaUpdateId() const { return m_otaUpdateId; }
     inline bool OtaUpdateIdHasBeenSet() const { return m_otaUpdateIdHasBeenSet; }
-    inline void SetOtaUpdateId(const Aws::String& value) { m_otaUpdateIdHasBeenSet = true; m_otaUpdateId = value; }
-    inline void SetOtaUpdateId(Aws::String&& value) { m_otaUpdateIdHasBeenSet = true; m_otaUpdateId = std::move(value); }
-    inline void SetOtaUpdateId(const char* value) { m_otaUpdateIdHasBeenSet = true; m_otaUpdateId.assign(value); }
-    inline DeleteOTAUpdateRequest& WithOtaUpdateId(const Aws::String& value) { SetOtaUpdateId(value); return *this;}
-    inline DeleteOTAUpdateRequest& WithOtaUpdateId(Aws::String&& value) { SetOtaUpdateId(std::move(value)); return *this;}
-    inline DeleteOTAUpdateRequest& WithOtaUpdateId(const char* value) { SetOtaUpdateId(value); return *this;}
+    template<typename OtaUpdateIdT = Aws::String>
+    void SetOtaUpdateId(OtaUpdateIdT&& value) { m_otaUpdateIdHasBeenSet = true; m_otaUpdateId = std::forward<OtaUpdateIdT>(value); }
+    template<typename OtaUpdateIdT = Aws::String>
+    DeleteOTAUpdateRequest& WithOtaUpdateId(OtaUpdateIdT&& value) { SetOtaUpdateId(std::forward<OtaUpdateIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,7 +56,7 @@ namespace Model
      * OTA update is deleted. Ignored if the stream specified in the OTAUpdate is
      * supplied by the user.</p>
      */
-    inline bool GetDeleteStream() const{ return m_deleteStream; }
+    inline bool GetDeleteStream() const { return m_deleteStream; }
     inline bool DeleteStreamHasBeenSet() const { return m_deleteStreamHasBeenSet; }
     inline void SetDeleteStream(bool value) { m_deleteStreamHasBeenSet = true; m_deleteStream = value; }
     inline DeleteOTAUpdateRequest& WithDeleteStream(bool value) { SetDeleteStream(value); return *this;}
@@ -70,7 +68,7 @@ namespace Model
      * "IN_PROGRESS". Otherwise, if the job is not in a terminal state ("COMPLETED" or
      * "CANCELED") an exception will occur. The default is false.</p>
      */
-    inline bool GetForceDeleteAWSJob() const{ return m_forceDeleteAWSJob; }
+    inline bool GetForceDeleteAWSJob() const { return m_forceDeleteAWSJob; }
     inline bool ForceDeleteAWSJobHasBeenSet() const { return m_forceDeleteAWSJobHasBeenSet; }
     inline void SetForceDeleteAWSJob(bool value) { m_forceDeleteAWSJobHasBeenSet = true; m_forceDeleteAWSJob = value; }
     inline DeleteOTAUpdateRequest& WithForceDeleteAWSJob(bool value) { SetForceDeleteAWSJob(value); return *this;}
@@ -80,10 +78,10 @@ namespace Model
     Aws::String m_otaUpdateId;
     bool m_otaUpdateIdHasBeenSet = false;
 
-    bool m_deleteStream;
+    bool m_deleteStream{false};
     bool m_deleteStreamHasBeenSet = false;
 
-    bool m_forceDeleteAWSJob;
+    bool m_forceDeleteAWSJob{false};
     bool m_forceDeleteAWSJobHasBeenSet = false;
   };
 

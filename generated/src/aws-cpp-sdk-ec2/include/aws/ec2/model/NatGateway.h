@@ -38,7 +38,7 @@ namespace Model
   class NatGateway
   {
   public:
-    AWS_EC2_API NatGateway();
+    AWS_EC2_API NatGateway() = default;
     AWS_EC2_API NatGateway(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API NatGateway& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -50,24 +50,24 @@ namespace Model
     /**
      * <p>The date and time the NAT gateway was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
+    inline const Aws::Utils::DateTime& GetCreateTime() const { return m_createTime; }
     inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
-    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
-    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = std::move(value); }
-    inline NatGateway& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
-    inline NatGateway& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    void SetCreateTime(CreateTimeT&& value) { m_createTimeHasBeenSet = true; m_createTime = std::forward<CreateTimeT>(value); }
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    NatGateway& WithCreateTime(CreateTimeT&& value) { SetCreateTime(std::forward<CreateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time the NAT gateway was deleted, if applicable.</p>
      */
-    inline const Aws::Utils::DateTime& GetDeleteTime() const{ return m_deleteTime; }
+    inline const Aws::Utils::DateTime& GetDeleteTime() const { return m_deleteTime; }
     inline bool DeleteTimeHasBeenSet() const { return m_deleteTimeHasBeenSet; }
-    inline void SetDeleteTime(const Aws::Utils::DateTime& value) { m_deleteTimeHasBeenSet = true; m_deleteTime = value; }
-    inline void SetDeleteTime(Aws::Utils::DateTime&& value) { m_deleteTimeHasBeenSet = true; m_deleteTime = std::move(value); }
-    inline NatGateway& WithDeleteTime(const Aws::Utils::DateTime& value) { SetDeleteTime(value); return *this;}
-    inline NatGateway& WithDeleteTime(Aws::Utils::DateTime&& value) { SetDeleteTime(std::move(value)); return *this;}
+    template<typename DeleteTimeT = Aws::Utils::DateTime>
+    void SetDeleteTime(DeleteTimeT&& value) { m_deleteTimeHasBeenSet = true; m_deleteTime = std::forward<DeleteTimeT>(value); }
+    template<typename DeleteTimeT = Aws::Utils::DateTime>
+    NatGateway& WithDeleteTime(DeleteTimeT&& value) { SetDeleteTime(std::forward<DeleteTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,14 +78,12 @@ namespace Model
      * <code>Resource.AlreadyAssociated</code> | <code>InternalError</code> |
      * <code>InvalidSubnetID.NotFound</code>)</p>
      */
-    inline const Aws::String& GetFailureCode() const{ return m_failureCode; }
+    inline const Aws::String& GetFailureCode() const { return m_failureCode; }
     inline bool FailureCodeHasBeenSet() const { return m_failureCodeHasBeenSet; }
-    inline void SetFailureCode(const Aws::String& value) { m_failureCodeHasBeenSet = true; m_failureCode = value; }
-    inline void SetFailureCode(Aws::String&& value) { m_failureCodeHasBeenSet = true; m_failureCode = std::move(value); }
-    inline void SetFailureCode(const char* value) { m_failureCodeHasBeenSet = true; m_failureCode.assign(value); }
-    inline NatGateway& WithFailureCode(const Aws::String& value) { SetFailureCode(value); return *this;}
-    inline NatGateway& WithFailureCode(Aws::String&& value) { SetFailureCode(std::move(value)); return *this;}
-    inline NatGateway& WithFailureCode(const char* value) { SetFailureCode(value); return *this;}
+    template<typename FailureCodeT = Aws::String>
+    void SetFailureCode(FailureCodeT&& value) { m_failureCodeHasBeenSet = true; m_failureCode = std::forward<FailureCodeT>(value); }
+    template<typename FailureCodeT = Aws::String>
+    NatGateway& WithFailureCode(FailureCodeT&& value) { SetFailureCode(std::forward<FailureCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,14 +102,12 @@ namespace Model
      * specified subnet subnet-xxxxxxxx does not exist or could not be found."</p>
      * </li> </ul>
      */
-    inline const Aws::String& GetFailureMessage() const{ return m_failureMessage; }
+    inline const Aws::String& GetFailureMessage() const { return m_failureMessage; }
     inline bool FailureMessageHasBeenSet() const { return m_failureMessageHasBeenSet; }
-    inline void SetFailureMessage(const Aws::String& value) { m_failureMessageHasBeenSet = true; m_failureMessage = value; }
-    inline void SetFailureMessage(Aws::String&& value) { m_failureMessageHasBeenSet = true; m_failureMessage = std::move(value); }
-    inline void SetFailureMessage(const char* value) { m_failureMessageHasBeenSet = true; m_failureMessage.assign(value); }
-    inline NatGateway& WithFailureMessage(const Aws::String& value) { SetFailureMessage(value); return *this;}
-    inline NatGateway& WithFailureMessage(Aws::String&& value) { SetFailureMessage(std::move(value)); return *this;}
-    inline NatGateway& WithFailureMessage(const char* value) { SetFailureMessage(value); return *this;}
+    template<typename FailureMessageT = Aws::String>
+    void SetFailureMessage(FailureMessageT&& value) { m_failureMessageHasBeenSet = true; m_failureMessage = std::forward<FailureMessageT>(value); }
+    template<typename FailureMessageT = Aws::String>
+    NatGateway& WithFailureMessage(FailureMessageT&& value) { SetFailureMessage(std::forward<FailureMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -119,28 +115,26 @@ namespace Model
      * <p>Information about the IP addresses and network interface associated with the
      * NAT gateway.</p>
      */
-    inline const Aws::Vector<NatGatewayAddress>& GetNatGatewayAddresses() const{ return m_natGatewayAddresses; }
+    inline const Aws::Vector<NatGatewayAddress>& GetNatGatewayAddresses() const { return m_natGatewayAddresses; }
     inline bool NatGatewayAddressesHasBeenSet() const { return m_natGatewayAddressesHasBeenSet; }
-    inline void SetNatGatewayAddresses(const Aws::Vector<NatGatewayAddress>& value) { m_natGatewayAddressesHasBeenSet = true; m_natGatewayAddresses = value; }
-    inline void SetNatGatewayAddresses(Aws::Vector<NatGatewayAddress>&& value) { m_natGatewayAddressesHasBeenSet = true; m_natGatewayAddresses = std::move(value); }
-    inline NatGateway& WithNatGatewayAddresses(const Aws::Vector<NatGatewayAddress>& value) { SetNatGatewayAddresses(value); return *this;}
-    inline NatGateway& WithNatGatewayAddresses(Aws::Vector<NatGatewayAddress>&& value) { SetNatGatewayAddresses(std::move(value)); return *this;}
-    inline NatGateway& AddNatGatewayAddresses(const NatGatewayAddress& value) { m_natGatewayAddressesHasBeenSet = true; m_natGatewayAddresses.push_back(value); return *this; }
-    inline NatGateway& AddNatGatewayAddresses(NatGatewayAddress&& value) { m_natGatewayAddressesHasBeenSet = true; m_natGatewayAddresses.push_back(std::move(value)); return *this; }
+    template<typename NatGatewayAddressesT = Aws::Vector<NatGatewayAddress>>
+    void SetNatGatewayAddresses(NatGatewayAddressesT&& value) { m_natGatewayAddressesHasBeenSet = true; m_natGatewayAddresses = std::forward<NatGatewayAddressesT>(value); }
+    template<typename NatGatewayAddressesT = Aws::Vector<NatGatewayAddress>>
+    NatGateway& WithNatGatewayAddresses(NatGatewayAddressesT&& value) { SetNatGatewayAddresses(std::forward<NatGatewayAddressesT>(value)); return *this;}
+    template<typename NatGatewayAddressesT = NatGatewayAddress>
+    NatGateway& AddNatGatewayAddresses(NatGatewayAddressesT&& value) { m_natGatewayAddressesHasBeenSet = true; m_natGatewayAddresses.emplace_back(std::forward<NatGatewayAddressesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The ID of the NAT gateway.</p>
      */
-    inline const Aws::String& GetNatGatewayId() const{ return m_natGatewayId; }
+    inline const Aws::String& GetNatGatewayId() const { return m_natGatewayId; }
     inline bool NatGatewayIdHasBeenSet() const { return m_natGatewayIdHasBeenSet; }
-    inline void SetNatGatewayId(const Aws::String& value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId = value; }
-    inline void SetNatGatewayId(Aws::String&& value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId = std::move(value); }
-    inline void SetNatGatewayId(const char* value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId.assign(value); }
-    inline NatGateway& WithNatGatewayId(const Aws::String& value) { SetNatGatewayId(value); return *this;}
-    inline NatGateway& WithNatGatewayId(Aws::String&& value) { SetNatGatewayId(std::move(value)); return *this;}
-    inline NatGateway& WithNatGatewayId(const char* value) { SetNatGatewayId(value); return *this;}
+    template<typename NatGatewayIdT = Aws::String>
+    void SetNatGatewayId(NatGatewayIdT&& value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId = std::forward<NatGatewayIdT>(value); }
+    template<typename NatGatewayIdT = Aws::String>
+    NatGateway& WithNatGatewayId(NatGatewayIdT&& value) { SetNatGatewayId(std::forward<NatGatewayIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -149,12 +143,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html#vpc-limits-gateways">documented
      * limits</a>, contact Amazon Web Services Support.</p>
      */
-    inline const ProvisionedBandwidth& GetProvisionedBandwidth() const{ return m_provisionedBandwidth; }
+    inline const ProvisionedBandwidth& GetProvisionedBandwidth() const { return m_provisionedBandwidth; }
     inline bool ProvisionedBandwidthHasBeenSet() const { return m_provisionedBandwidthHasBeenSet; }
-    inline void SetProvisionedBandwidth(const ProvisionedBandwidth& value) { m_provisionedBandwidthHasBeenSet = true; m_provisionedBandwidth = value; }
-    inline void SetProvisionedBandwidth(ProvisionedBandwidth&& value) { m_provisionedBandwidthHasBeenSet = true; m_provisionedBandwidth = std::move(value); }
-    inline NatGateway& WithProvisionedBandwidth(const ProvisionedBandwidth& value) { SetProvisionedBandwidth(value); return *this;}
-    inline NatGateway& WithProvisionedBandwidth(ProvisionedBandwidth&& value) { SetProvisionedBandwidth(std::move(value)); return *this;}
+    template<typename ProvisionedBandwidthT = ProvisionedBandwidth>
+    void SetProvisionedBandwidth(ProvisionedBandwidthT&& value) { m_provisionedBandwidthHasBeenSet = true; m_provisionedBandwidth = std::forward<ProvisionedBandwidthT>(value); }
+    template<typename ProvisionedBandwidthT = ProvisionedBandwidth>
+    NatGateway& WithProvisionedBandwidth(ProvisionedBandwidthT&& value) { SetProvisionedBandwidth(std::forward<ProvisionedBandwidthT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -171,54 +165,48 @@ namespace Model
      * NAT gateway has been terminated and is no longer processing traffic.</p> </li>
      * </ul>
      */
-    inline const NatGatewayState& GetState() const{ return m_state; }
+    inline NatGatewayState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const NatGatewayState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(NatGatewayState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline NatGateway& WithState(const NatGatewayState& value) { SetState(value); return *this;}
-    inline NatGateway& WithState(NatGatewayState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(NatGatewayState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline NatGateway& WithState(NatGatewayState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the subnet in which the NAT gateway is located.</p>
      */
-    inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
+    inline const Aws::String& GetSubnetId() const { return m_subnetId; }
     inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
-    inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
-    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
-    inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
-    inline NatGateway& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
-    inline NatGateway& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
-    inline NatGateway& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+    template<typename SubnetIdT = Aws::String>
+    void SetSubnetId(SubnetIdT&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::forward<SubnetIdT>(value); }
+    template<typename SubnetIdT = Aws::String>
+    NatGateway& WithSubnetId(SubnetIdT&& value) { SetSubnetId(std::forward<SubnetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the VPC in which the NAT gateway is located.</p>
      */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+    inline const Aws::String& GetVpcId() const { return m_vpcId; }
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
-    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
-    inline NatGateway& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-    inline NatGateway& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-    inline NatGateway& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+    template<typename VpcIdT = Aws::String>
+    void SetVpcId(VpcIdT&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::forward<VpcIdT>(value); }
+    template<typename VpcIdT = Aws::String>
+    NatGateway& WithVpcId(VpcIdT&& value) { SetVpcId(std::forward<VpcIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags for the NAT gateway.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline NatGateway& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline NatGateway& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline NatGateway& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline NatGateway& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    NatGateway& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    NatGateway& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -226,19 +214,17 @@ namespace Model
      * <p>Indicates whether the NAT gateway supports public or private
      * connectivity.</p>
      */
-    inline const ConnectivityType& GetConnectivityType() const{ return m_connectivityType; }
+    inline ConnectivityType GetConnectivityType() const { return m_connectivityType; }
     inline bool ConnectivityTypeHasBeenSet() const { return m_connectivityTypeHasBeenSet; }
-    inline void SetConnectivityType(const ConnectivityType& value) { m_connectivityTypeHasBeenSet = true; m_connectivityType = value; }
-    inline void SetConnectivityType(ConnectivityType&& value) { m_connectivityTypeHasBeenSet = true; m_connectivityType = std::move(value); }
-    inline NatGateway& WithConnectivityType(const ConnectivityType& value) { SetConnectivityType(value); return *this;}
-    inline NatGateway& WithConnectivityType(ConnectivityType&& value) { SetConnectivityType(std::move(value)); return *this;}
+    inline void SetConnectivityType(ConnectivityType value) { m_connectivityTypeHasBeenSet = true; m_connectivityType = value; }
+    inline NatGateway& WithConnectivityType(ConnectivityType value) { SetConnectivityType(value); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_createTime;
+    Aws::Utils::DateTime m_createTime{};
     bool m_createTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_deleteTime;
+    Aws::Utils::DateTime m_deleteTime{};
     bool m_deleteTimeHasBeenSet = false;
 
     Aws::String m_failureCode;
@@ -256,7 +242,7 @@ namespace Model
     ProvisionedBandwidth m_provisionedBandwidth;
     bool m_provisionedBandwidthHasBeenSet = false;
 
-    NatGatewayState m_state;
+    NatGatewayState m_state{NatGatewayState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     Aws::String m_subnetId;
@@ -268,7 +254,7 @@ namespace Model
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    ConnectivityType m_connectivityType;
+    ConnectivityType m_connectivityType{ConnectivityType::NOT_SET};
     bool m_connectivityTypeHasBeenSet = false;
   };
 

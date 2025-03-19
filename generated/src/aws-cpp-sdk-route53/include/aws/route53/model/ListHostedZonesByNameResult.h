@@ -35,7 +35,7 @@ namespace Model
   class ListHostedZonesByNameResult
   {
   public:
-    AWS_ROUTE53_API ListHostedZonesByNameResult();
+    AWS_ROUTE53_API ListHostedZonesByNameResult() = default;
     AWS_ROUTE53_API ListHostedZonesByNameResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ROUTE53_API ListHostedZonesByNameResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -44,13 +44,13 @@ namespace Model
     /**
      * <p>A complex type that contains general information about the hosted zone.</p>
      */
-    inline const Aws::Vector<HostedZone>& GetHostedZones() const{ return m_hostedZones; }
-    inline void SetHostedZones(const Aws::Vector<HostedZone>& value) { m_hostedZones = value; }
-    inline void SetHostedZones(Aws::Vector<HostedZone>&& value) { m_hostedZones = std::move(value); }
-    inline ListHostedZonesByNameResult& WithHostedZones(const Aws::Vector<HostedZone>& value) { SetHostedZones(value); return *this;}
-    inline ListHostedZonesByNameResult& WithHostedZones(Aws::Vector<HostedZone>&& value) { SetHostedZones(std::move(value)); return *this;}
-    inline ListHostedZonesByNameResult& AddHostedZones(const HostedZone& value) { m_hostedZones.push_back(value); return *this; }
-    inline ListHostedZonesByNameResult& AddHostedZones(HostedZone&& value) { m_hostedZones.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<HostedZone>& GetHostedZones() const { return m_hostedZones; }
+    template<typename HostedZonesT = Aws::Vector<HostedZone>>
+    void SetHostedZones(HostedZonesT&& value) { m_hostedZonesHasBeenSet = true; m_hostedZones = std::forward<HostedZonesT>(value); }
+    template<typename HostedZonesT = Aws::Vector<HostedZone>>
+    ListHostedZonesByNameResult& WithHostedZones(HostedZonesT&& value) { SetHostedZones(std::forward<HostedZonesT>(value)); return *this;}
+    template<typename HostedZonesT = HostedZone>
+    ListHostedZonesByNameResult& AddHostedZones(HostedZonesT&& value) { m_hostedZonesHasBeenSet = true; m_hostedZones.emplace_back(std::forward<HostedZonesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -60,13 +60,11 @@ namespace Model
      * <code>dnsname</code> parameter in the request that produced the current
      * response.</p>
      */
-    inline const Aws::String& GetDNSName() const{ return m_dNSName; }
-    inline void SetDNSName(const Aws::String& value) { m_dNSName = value; }
-    inline void SetDNSName(Aws::String&& value) { m_dNSName = std::move(value); }
-    inline void SetDNSName(const char* value) { m_dNSName.assign(value); }
-    inline ListHostedZonesByNameResult& WithDNSName(const Aws::String& value) { SetDNSName(value); return *this;}
-    inline ListHostedZonesByNameResult& WithDNSName(Aws::String&& value) { SetDNSName(std::move(value)); return *this;}
-    inline ListHostedZonesByNameResult& WithDNSName(const char* value) { SetDNSName(value); return *this;}
+    inline const Aws::String& GetDNSName() const { return m_dNSName; }
+    template<typename DNSNameT = Aws::String>
+    void SetDNSName(DNSNameT&& value) { m_dNSNameHasBeenSet = true; m_dNSName = std::forward<DNSNameT>(value); }
+    template<typename DNSNameT = Aws::String>
+    ListHostedZonesByNameResult& WithDNSName(DNSNameT&& value) { SetDNSName(std::forward<DNSNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,13 +72,11 @@ namespace Model
      * <p>The ID that Amazon Route 53 assigned to the hosted zone when you created
      * it.</p>
      */
-    inline const Aws::String& GetHostedZoneId() const{ return m_hostedZoneId; }
-    inline void SetHostedZoneId(const Aws::String& value) { m_hostedZoneId = value; }
-    inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneId = std::move(value); }
-    inline void SetHostedZoneId(const char* value) { m_hostedZoneId.assign(value); }
-    inline ListHostedZonesByNameResult& WithHostedZoneId(const Aws::String& value) { SetHostedZoneId(value); return *this;}
-    inline ListHostedZonesByNameResult& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(std::move(value)); return *this;}
-    inline ListHostedZonesByNameResult& WithHostedZoneId(const char* value) { SetHostedZoneId(value); return *this;}
+    inline const Aws::String& GetHostedZoneId() const { return m_hostedZoneId; }
+    template<typename HostedZoneIdT = Aws::String>
+    void SetHostedZoneId(HostedZoneIdT&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = std::forward<HostedZoneIdT>(value); }
+    template<typename HostedZoneIdT = Aws::String>
+    ListHostedZonesByNameResult& WithHostedZoneId(HostedZoneIdT&& value) { SetHostedZoneId(std::forward<HostedZoneIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,8 +88,8 @@ namespace Model
      * elements in the <code>dnsname</code> and <code>hostedzoneid</code>
      * parameters.</p>
      */
-    inline bool GetIsTruncated() const{ return m_isTruncated; }
-    inline void SetIsTruncated(bool value) { m_isTruncated = value; }
+    inline bool GetIsTruncated() const { return m_isTruncated; }
+    inline void SetIsTruncated(bool value) { m_isTruncatedHasBeenSet = true; m_isTruncated = value; }
     inline ListHostedZonesByNameResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
     ///@}
 
@@ -107,13 +103,11 @@ namespace Model
      * <p>This element is present only if <code>IsTruncated</code> is
      * <code>true</code>.</p>
      */
-    inline const Aws::String& GetNextDNSName() const{ return m_nextDNSName; }
-    inline void SetNextDNSName(const Aws::String& value) { m_nextDNSName = value; }
-    inline void SetNextDNSName(Aws::String&& value) { m_nextDNSName = std::move(value); }
-    inline void SetNextDNSName(const char* value) { m_nextDNSName.assign(value); }
-    inline ListHostedZonesByNameResult& WithNextDNSName(const Aws::String& value) { SetNextDNSName(value); return *this;}
-    inline ListHostedZonesByNameResult& WithNextDNSName(Aws::String&& value) { SetNextDNSName(std::move(value)); return *this;}
-    inline ListHostedZonesByNameResult& WithNextDNSName(const char* value) { SetNextDNSName(value); return *this;}
+    inline const Aws::String& GetNextDNSName() const { return m_nextDNSName; }
+    template<typename NextDNSNameT = Aws::String>
+    void SetNextDNSName(NextDNSNameT&& value) { m_nextDNSNameHasBeenSet = true; m_nextDNSName = std::forward<NextDNSNameT>(value); }
+    template<typename NextDNSNameT = Aws::String>
+    ListHostedZonesByNameResult& WithNextDNSName(NextDNSNameT&& value) { SetNextDNSName(std::forward<NextDNSNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -126,13 +120,11 @@ namespace Model
      * <code>hostedzoneid</code> parameters, respectively.</p> <p>This element is
      * present only if <code>IsTruncated</code> is <code>true</code>.</p>
      */
-    inline const Aws::String& GetNextHostedZoneId() const{ return m_nextHostedZoneId; }
-    inline void SetNextHostedZoneId(const Aws::String& value) { m_nextHostedZoneId = value; }
-    inline void SetNextHostedZoneId(Aws::String&& value) { m_nextHostedZoneId = std::move(value); }
-    inline void SetNextHostedZoneId(const char* value) { m_nextHostedZoneId.assign(value); }
-    inline ListHostedZonesByNameResult& WithNextHostedZoneId(const Aws::String& value) { SetNextHostedZoneId(value); return *this;}
-    inline ListHostedZonesByNameResult& WithNextHostedZoneId(Aws::String&& value) { SetNextHostedZoneId(std::move(value)); return *this;}
-    inline ListHostedZonesByNameResult& WithNextHostedZoneId(const char* value) { SetNextHostedZoneId(value); return *this;}
+    inline const Aws::String& GetNextHostedZoneId() const { return m_nextHostedZoneId; }
+    template<typename NextHostedZoneIdT = Aws::String>
+    void SetNextHostedZoneId(NextHostedZoneIdT&& value) { m_nextHostedZoneIdHasBeenSet = true; m_nextHostedZoneId = std::forward<NextHostedZoneIdT>(value); }
+    template<typename NextHostedZoneIdT = Aws::String>
+    ListHostedZonesByNameResult& WithNextHostedZoneId(NextHostedZoneIdT&& value) { SetNextHostedZoneId(std::forward<NextHostedZoneIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -141,42 +133,46 @@ namespace Model
      * call to <code>ListHostedZonesByName</code> that produced the current
      * response.</p>
      */
-    inline const Aws::String& GetMaxItems() const{ return m_maxItems; }
-    inline void SetMaxItems(const Aws::String& value) { m_maxItems = value; }
-    inline void SetMaxItems(Aws::String&& value) { m_maxItems = std::move(value); }
-    inline void SetMaxItems(const char* value) { m_maxItems.assign(value); }
-    inline ListHostedZonesByNameResult& WithMaxItems(const Aws::String& value) { SetMaxItems(value); return *this;}
-    inline ListHostedZonesByNameResult& WithMaxItems(Aws::String&& value) { SetMaxItems(std::move(value)); return *this;}
-    inline ListHostedZonesByNameResult& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
+    inline const Aws::String& GetMaxItems() const { return m_maxItems; }
+    template<typename MaxItemsT = Aws::String>
+    void SetMaxItems(MaxItemsT&& value) { m_maxItemsHasBeenSet = true; m_maxItems = std::forward<MaxItemsT>(value); }
+    template<typename MaxItemsT = Aws::String>
+    ListHostedZonesByNameResult& WithMaxItems(MaxItemsT&& value) { SetMaxItems(std::forward<MaxItemsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListHostedZonesByNameResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListHostedZonesByNameResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListHostedZonesByNameResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListHostedZonesByNameResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<HostedZone> m_hostedZones;
+    bool m_hostedZonesHasBeenSet = false;
 
     Aws::String m_dNSName;
+    bool m_dNSNameHasBeenSet = false;
 
     Aws::String m_hostedZoneId;
+    bool m_hostedZoneIdHasBeenSet = false;
 
-    bool m_isTruncated;
+    bool m_isTruncated{false};
+    bool m_isTruncatedHasBeenSet = false;
 
     Aws::String m_nextDNSName;
+    bool m_nextDNSNameHasBeenSet = false;
 
     Aws::String m_nextHostedZoneId;
+    bool m_nextHostedZoneIdHasBeenSet = false;
 
     Aws::String m_maxItems;
+    bool m_maxItemsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

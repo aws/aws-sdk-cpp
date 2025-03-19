@@ -12,13 +12,6 @@ using namespace Aws::CleanRooms::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateCollaborationRequest::UpdateCollaborationRequest() : 
-    m_collaborationIdentifierHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateCollaborationRequest::SerializePayload() const
 {
   JsonValue payload;

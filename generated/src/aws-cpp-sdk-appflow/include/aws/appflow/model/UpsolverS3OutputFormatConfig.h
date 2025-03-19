@@ -34,7 +34,7 @@ namespace Model
   class UpsolverS3OutputFormatConfig
   {
   public:
-    AWS_APPFLOW_API UpsolverS3OutputFormatConfig();
+    AWS_APPFLOW_API UpsolverS3OutputFormatConfig() = default;
     AWS_APPFLOW_API UpsolverS3OutputFormatConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API UpsolverS3OutputFormatConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,36 +45,34 @@ namespace Model
      * <p> Indicates the file type that Amazon AppFlow places in the Upsolver Amazon S3
      * bucket. </p>
      */
-    inline const FileType& GetFileType() const{ return m_fileType; }
+    inline FileType GetFileType() const { return m_fileType; }
     inline bool FileTypeHasBeenSet() const { return m_fileTypeHasBeenSet; }
-    inline void SetFileType(const FileType& value) { m_fileTypeHasBeenSet = true; m_fileType = value; }
-    inline void SetFileType(FileType&& value) { m_fileTypeHasBeenSet = true; m_fileType = std::move(value); }
-    inline UpsolverS3OutputFormatConfig& WithFileType(const FileType& value) { SetFileType(value); return *this;}
-    inline UpsolverS3OutputFormatConfig& WithFileType(FileType&& value) { SetFileType(std::move(value)); return *this;}
+    inline void SetFileType(FileType value) { m_fileTypeHasBeenSet = true; m_fileType = value; }
+    inline UpsolverS3OutputFormatConfig& WithFileType(FileType value) { SetFileType(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const PrefixConfig& GetPrefixConfig() const{ return m_prefixConfig; }
+    inline const PrefixConfig& GetPrefixConfig() const { return m_prefixConfig; }
     inline bool PrefixConfigHasBeenSet() const { return m_prefixConfigHasBeenSet; }
-    inline void SetPrefixConfig(const PrefixConfig& value) { m_prefixConfigHasBeenSet = true; m_prefixConfig = value; }
-    inline void SetPrefixConfig(PrefixConfig&& value) { m_prefixConfigHasBeenSet = true; m_prefixConfig = std::move(value); }
-    inline UpsolverS3OutputFormatConfig& WithPrefixConfig(const PrefixConfig& value) { SetPrefixConfig(value); return *this;}
-    inline UpsolverS3OutputFormatConfig& WithPrefixConfig(PrefixConfig&& value) { SetPrefixConfig(std::move(value)); return *this;}
+    template<typename PrefixConfigT = PrefixConfig>
+    void SetPrefixConfig(PrefixConfigT&& value) { m_prefixConfigHasBeenSet = true; m_prefixConfig = std::forward<PrefixConfigT>(value); }
+    template<typename PrefixConfigT = PrefixConfig>
+    UpsolverS3OutputFormatConfig& WithPrefixConfig(PrefixConfigT&& value) { SetPrefixConfig(std::forward<PrefixConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const AggregationConfig& GetAggregationConfig() const{ return m_aggregationConfig; }
+    inline const AggregationConfig& GetAggregationConfig() const { return m_aggregationConfig; }
     inline bool AggregationConfigHasBeenSet() const { return m_aggregationConfigHasBeenSet; }
-    inline void SetAggregationConfig(const AggregationConfig& value) { m_aggregationConfigHasBeenSet = true; m_aggregationConfig = value; }
-    inline void SetAggregationConfig(AggregationConfig&& value) { m_aggregationConfigHasBeenSet = true; m_aggregationConfig = std::move(value); }
-    inline UpsolverS3OutputFormatConfig& WithAggregationConfig(const AggregationConfig& value) { SetAggregationConfig(value); return *this;}
-    inline UpsolverS3OutputFormatConfig& WithAggregationConfig(AggregationConfig&& value) { SetAggregationConfig(std::move(value)); return *this;}
+    template<typename AggregationConfigT = AggregationConfig>
+    void SetAggregationConfig(AggregationConfigT&& value) { m_aggregationConfigHasBeenSet = true; m_aggregationConfig = std::forward<AggregationConfigT>(value); }
+    template<typename AggregationConfigT = AggregationConfig>
+    UpsolverS3OutputFormatConfig& WithAggregationConfig(AggregationConfigT&& value) { SetAggregationConfig(std::forward<AggregationConfigT>(value)); return *this;}
     ///@}
   private:
 
-    FileType m_fileType;
+    FileType m_fileType{FileType::NOT_SET};
     bool m_fileTypeHasBeenSet = false;
 
     PrefixConfig m_prefixConfig;

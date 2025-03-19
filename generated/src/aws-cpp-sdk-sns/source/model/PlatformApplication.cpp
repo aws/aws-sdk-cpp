@@ -20,14 +20,7 @@ namespace SNS
 namespace Model
 {
 
-PlatformApplication::PlatformApplication() : 
-    m_platformApplicationArnHasBeenSet(false),
-    m_attributesHasBeenSet(false)
-{
-}
-
 PlatformApplication::PlatformApplication(const XmlNode& xmlNode)
-  : PlatformApplication()
 {
   *this = xmlNode;
 }
@@ -49,6 +42,7 @@ PlatformApplication& PlatformApplication::operator =(const XmlNode& xmlNode)
     if(!attributesNode.IsNull())
     {
       XmlNode attributesEntry = attributesNode.FirstChild("entry");
+      m_attributesHasBeenSet = !attributesEntry.IsNull();
       while(!attributesEntry.IsNull())
       {
         XmlNode keyNode = attributesEntry.FirstChild("key");

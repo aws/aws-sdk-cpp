@@ -32,7 +32,7 @@ namespace Model
   class ProtectedJobStatistics
   {
   public:
-    AWS_CLEANROOMS_API ProtectedJobStatistics();
+    AWS_CLEANROOMS_API ProtectedJobStatistics() = default;
     AWS_CLEANROOMS_API ProtectedJobStatistics(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API ProtectedJobStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * <p>The duration of the protected job, from creation until job completion, in
      * milliseconds.</p>
      */
-    inline long long GetTotalDurationInMillis() const{ return m_totalDurationInMillis; }
+    inline long long GetTotalDurationInMillis() const { return m_totalDurationInMillis; }
     inline bool TotalDurationInMillisHasBeenSet() const { return m_totalDurationInMillisHasBeenSet; }
     inline void SetTotalDurationInMillis(long long value) { m_totalDurationInMillisHasBeenSet = true; m_totalDurationInMillis = value; }
     inline ProtectedJobStatistics& WithTotalDurationInMillis(long long value) { SetTotalDurationInMillis(value); return *this;}
@@ -53,16 +53,16 @@ namespace Model
     /**
      * <p> The billed resource utilization for the protected job.</p>
      */
-    inline const BilledJobResourceUtilization& GetBilledResourceUtilization() const{ return m_billedResourceUtilization; }
+    inline const BilledJobResourceUtilization& GetBilledResourceUtilization() const { return m_billedResourceUtilization; }
     inline bool BilledResourceUtilizationHasBeenSet() const { return m_billedResourceUtilizationHasBeenSet; }
-    inline void SetBilledResourceUtilization(const BilledJobResourceUtilization& value) { m_billedResourceUtilizationHasBeenSet = true; m_billedResourceUtilization = value; }
-    inline void SetBilledResourceUtilization(BilledJobResourceUtilization&& value) { m_billedResourceUtilizationHasBeenSet = true; m_billedResourceUtilization = std::move(value); }
-    inline ProtectedJobStatistics& WithBilledResourceUtilization(const BilledJobResourceUtilization& value) { SetBilledResourceUtilization(value); return *this;}
-    inline ProtectedJobStatistics& WithBilledResourceUtilization(BilledJobResourceUtilization&& value) { SetBilledResourceUtilization(std::move(value)); return *this;}
+    template<typename BilledResourceUtilizationT = BilledJobResourceUtilization>
+    void SetBilledResourceUtilization(BilledResourceUtilizationT&& value) { m_billedResourceUtilizationHasBeenSet = true; m_billedResourceUtilization = std::forward<BilledResourceUtilizationT>(value); }
+    template<typename BilledResourceUtilizationT = BilledJobResourceUtilization>
+    ProtectedJobStatistics& WithBilledResourceUtilization(BilledResourceUtilizationT&& value) { SetBilledResourceUtilization(std::forward<BilledResourceUtilizationT>(value)); return *this;}
     ///@}
   private:
 
-    long long m_totalDurationInMillis;
+    long long m_totalDurationInMillis{0};
     bool m_totalDurationInMillisHasBeenSet = false;
 
     BilledJobResourceUtilization m_billedResourceUtilization;

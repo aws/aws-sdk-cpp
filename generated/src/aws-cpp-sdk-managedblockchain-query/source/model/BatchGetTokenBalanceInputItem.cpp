@@ -18,15 +18,7 @@ namespace ManagedBlockchainQuery
 namespace Model
 {
 
-BatchGetTokenBalanceInputItem::BatchGetTokenBalanceInputItem() : 
-    m_tokenIdentifierHasBeenSet(false),
-    m_ownerIdentifierHasBeenSet(false),
-    m_atBlockchainInstantHasBeenSet(false)
-{
-}
-
 BatchGetTokenBalanceInputItem::BatchGetTokenBalanceInputItem(JsonView jsonValue)
-  : BatchGetTokenBalanceInputItem()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ BatchGetTokenBalanceInputItem& BatchGetTokenBalanceInputItem::operator =(JsonVie
   if(jsonValue.ValueExists("tokenIdentifier"))
   {
     m_tokenIdentifier = jsonValue.GetObject("tokenIdentifier");
-
     m_tokenIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ownerIdentifier"))
   {
     m_ownerIdentifier = jsonValue.GetObject("ownerIdentifier");
-
     m_ownerIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("atBlockchainInstant"))
   {
     m_atBlockchainInstant = jsonValue.GetObject("atBlockchainInstant");
-
     m_atBlockchainInstantHasBeenSet = true;
   }
-
   return *this;
 }
 

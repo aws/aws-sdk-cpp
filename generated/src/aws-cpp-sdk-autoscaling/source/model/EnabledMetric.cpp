@@ -20,14 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-EnabledMetric::EnabledMetric() : 
-    m_metricHasBeenSet(false),
-    m_granularityHasBeenSet(false)
-{
-}
-
 EnabledMetric::EnabledMetric(const XmlNode& xmlNode)
-  : EnabledMetric()
 {
   *this = xmlNode;
 }

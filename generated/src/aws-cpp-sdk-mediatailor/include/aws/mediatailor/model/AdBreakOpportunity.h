@@ -30,7 +30,7 @@ namespace Model
   class AdBreakOpportunity
   {
   public:
-    AWS_MEDIATAILOR_API AdBreakOpportunity();
+    AWS_MEDIATAILOR_API AdBreakOpportunity() = default;
     AWS_MEDIATAILOR_API AdBreakOpportunity(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API AdBreakOpportunity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,14 @@ namespace Model
      * <p>The offset in milliseconds from the start of the VOD source at which an ad
      * marker was detected.</p>
      */
-    inline long long GetOffsetMillis() const{ return m_offsetMillis; }
+    inline long long GetOffsetMillis() const { return m_offsetMillis; }
     inline bool OffsetMillisHasBeenSet() const { return m_offsetMillisHasBeenSet; }
     inline void SetOffsetMillis(long long value) { m_offsetMillisHasBeenSet = true; m_offsetMillis = value; }
     inline AdBreakOpportunity& WithOffsetMillis(long long value) { SetOffsetMillis(value); return *this;}
     ///@}
   private:
 
-    long long m_offsetMillis;
+    long long m_offsetMillis{0};
     bool m_offsetMillisHasBeenSet = false;
   };
 

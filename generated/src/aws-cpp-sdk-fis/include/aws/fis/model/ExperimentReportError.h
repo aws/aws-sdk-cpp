@@ -32,7 +32,7 @@ namespace Model
   class ExperimentReportError
   {
   public:
-    AWS_FIS_API ExperimentReportError();
+    AWS_FIS_API ExperimentReportError() = default;
     AWS_FIS_API ExperimentReportError(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIS_API ExperimentReportError& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The error code for the failed experiment report generation.</p>
      */
-    inline const Aws::String& GetCode() const{ return m_code; }
+    inline const Aws::String& GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
-    inline ExperimentReportError& WithCode(const Aws::String& value) { SetCode(value); return *this;}
-    inline ExperimentReportError& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
-    inline ExperimentReportError& WithCode(const char* value) { SetCode(value); return *this;}
+    template<typename CodeT = Aws::String>
+    void SetCode(CodeT&& value) { m_codeHasBeenSet = true; m_code = std::forward<CodeT>(value); }
+    template<typename CodeT = Aws::String>
+    ExperimentReportError& WithCode(CodeT&& value) { SetCode(std::forward<CodeT>(value)); return *this;}
     ///@}
   private:
 

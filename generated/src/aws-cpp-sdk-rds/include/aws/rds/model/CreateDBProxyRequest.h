@@ -25,7 +25,7 @@ namespace Model
   class CreateDBProxyRequest : public RDSRequest
   {
   public:
-    AWS_RDS_API CreateDBProxyRequest();
+    AWS_RDS_API CreateDBProxyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,14 +48,12 @@ namespace Model
      * digits, and hyphens; it can't end with a hyphen or contain two consecutive
      * hyphens.</p>
      */
-    inline const Aws::String& GetDBProxyName() const{ return m_dBProxyName; }
+    inline const Aws::String& GetDBProxyName() const { return m_dBProxyName; }
     inline bool DBProxyNameHasBeenSet() const { return m_dBProxyNameHasBeenSet; }
-    inline void SetDBProxyName(const Aws::String& value) { m_dBProxyNameHasBeenSet = true; m_dBProxyName = value; }
-    inline void SetDBProxyName(Aws::String&& value) { m_dBProxyNameHasBeenSet = true; m_dBProxyName = std::move(value); }
-    inline void SetDBProxyName(const char* value) { m_dBProxyNameHasBeenSet = true; m_dBProxyName.assign(value); }
-    inline CreateDBProxyRequest& WithDBProxyName(const Aws::String& value) { SetDBProxyName(value); return *this;}
-    inline CreateDBProxyRequest& WithDBProxyName(Aws::String&& value) { SetDBProxyName(std::move(value)); return *this;}
-    inline CreateDBProxyRequest& WithDBProxyName(const char* value) { SetDBProxyName(value); return *this;}
+    template<typename DBProxyNameT = Aws::String>
+    void SetDBProxyName(DBProxyNameT&& value) { m_dBProxyNameHasBeenSet = true; m_dBProxyName = std::forward<DBProxyNameT>(value); }
+    template<typename DBProxyNameT = Aws::String>
+    CreateDBProxyRequest& WithDBProxyName(DBProxyNameT&& value) { SetDBProxyName(std::forward<DBProxyNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,26 +65,24 @@ namespace Model
      * PostgreSQL databases, specify <code>POSTGRESQL</code>. For RDS for Microsoft SQL
      * Server, specify <code>SQLSERVER</code>.</p>
      */
-    inline const EngineFamily& GetEngineFamily() const{ return m_engineFamily; }
+    inline EngineFamily GetEngineFamily() const { return m_engineFamily; }
     inline bool EngineFamilyHasBeenSet() const { return m_engineFamilyHasBeenSet; }
-    inline void SetEngineFamily(const EngineFamily& value) { m_engineFamilyHasBeenSet = true; m_engineFamily = value; }
-    inline void SetEngineFamily(EngineFamily&& value) { m_engineFamilyHasBeenSet = true; m_engineFamily = std::move(value); }
-    inline CreateDBProxyRequest& WithEngineFamily(const EngineFamily& value) { SetEngineFamily(value); return *this;}
-    inline CreateDBProxyRequest& WithEngineFamily(EngineFamily&& value) { SetEngineFamily(std::move(value)); return *this;}
+    inline void SetEngineFamily(EngineFamily value) { m_engineFamilyHasBeenSet = true; m_engineFamily = value; }
+    inline CreateDBProxyRequest& WithEngineFamily(EngineFamily value) { SetEngineFamily(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The authorization mechanism that the proxy uses.</p>
      */
-    inline const Aws::Vector<UserAuthConfig>& GetAuth() const{ return m_auth; }
+    inline const Aws::Vector<UserAuthConfig>& GetAuth() const { return m_auth; }
     inline bool AuthHasBeenSet() const { return m_authHasBeenSet; }
-    inline void SetAuth(const Aws::Vector<UserAuthConfig>& value) { m_authHasBeenSet = true; m_auth = value; }
-    inline void SetAuth(Aws::Vector<UserAuthConfig>&& value) { m_authHasBeenSet = true; m_auth = std::move(value); }
-    inline CreateDBProxyRequest& WithAuth(const Aws::Vector<UserAuthConfig>& value) { SetAuth(value); return *this;}
-    inline CreateDBProxyRequest& WithAuth(Aws::Vector<UserAuthConfig>&& value) { SetAuth(std::move(value)); return *this;}
-    inline CreateDBProxyRequest& AddAuth(const UserAuthConfig& value) { m_authHasBeenSet = true; m_auth.push_back(value); return *this; }
-    inline CreateDBProxyRequest& AddAuth(UserAuthConfig&& value) { m_authHasBeenSet = true; m_auth.push_back(std::move(value)); return *this; }
+    template<typename AuthT = Aws::Vector<UserAuthConfig>>
+    void SetAuth(AuthT&& value) { m_authHasBeenSet = true; m_auth = std::forward<AuthT>(value); }
+    template<typename AuthT = Aws::Vector<UserAuthConfig>>
+    CreateDBProxyRequest& WithAuth(AuthT&& value) { SetAuth(std::forward<AuthT>(value)); return *this;}
+    template<typename AuthT = UserAuthConfig>
+    CreateDBProxyRequest& AddAuth(AuthT&& value) { m_authHasBeenSet = true; m_auth.emplace_back(std::forward<AuthT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -94,44 +90,40 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access
      * secrets in Amazon Web Services Secrets Manager.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline CreateDBProxyRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline CreateDBProxyRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline CreateDBProxyRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    CreateDBProxyRequest& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>One or more VPC subnet IDs to associate with the new proxy.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetVpcSubnetIds() const{ return m_vpcSubnetIds; }
+    inline const Aws::Vector<Aws::String>& GetVpcSubnetIds() const { return m_vpcSubnetIds; }
     inline bool VpcSubnetIdsHasBeenSet() const { return m_vpcSubnetIdsHasBeenSet; }
-    inline void SetVpcSubnetIds(const Aws::Vector<Aws::String>& value) { m_vpcSubnetIdsHasBeenSet = true; m_vpcSubnetIds = value; }
-    inline void SetVpcSubnetIds(Aws::Vector<Aws::String>&& value) { m_vpcSubnetIdsHasBeenSet = true; m_vpcSubnetIds = std::move(value); }
-    inline CreateDBProxyRequest& WithVpcSubnetIds(const Aws::Vector<Aws::String>& value) { SetVpcSubnetIds(value); return *this;}
-    inline CreateDBProxyRequest& WithVpcSubnetIds(Aws::Vector<Aws::String>&& value) { SetVpcSubnetIds(std::move(value)); return *this;}
-    inline CreateDBProxyRequest& AddVpcSubnetIds(const Aws::String& value) { m_vpcSubnetIdsHasBeenSet = true; m_vpcSubnetIds.push_back(value); return *this; }
-    inline CreateDBProxyRequest& AddVpcSubnetIds(Aws::String&& value) { m_vpcSubnetIdsHasBeenSet = true; m_vpcSubnetIds.push_back(std::move(value)); return *this; }
-    inline CreateDBProxyRequest& AddVpcSubnetIds(const char* value) { m_vpcSubnetIdsHasBeenSet = true; m_vpcSubnetIds.push_back(value); return *this; }
+    template<typename VpcSubnetIdsT = Aws::Vector<Aws::String>>
+    void SetVpcSubnetIds(VpcSubnetIdsT&& value) { m_vpcSubnetIdsHasBeenSet = true; m_vpcSubnetIds = std::forward<VpcSubnetIdsT>(value); }
+    template<typename VpcSubnetIdsT = Aws::Vector<Aws::String>>
+    CreateDBProxyRequest& WithVpcSubnetIds(VpcSubnetIdsT&& value) { SetVpcSubnetIds(std::forward<VpcSubnetIdsT>(value)); return *this;}
+    template<typename VpcSubnetIdsT = Aws::String>
+    CreateDBProxyRequest& AddVpcSubnetIds(VpcSubnetIdsT&& value) { m_vpcSubnetIdsHasBeenSet = true; m_vpcSubnetIds.emplace_back(std::forward<VpcSubnetIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>One or more VPC security group IDs to associate with the new proxy.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const{ return m_vpcSecurityGroupIds; }
+    inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const { return m_vpcSecurityGroupIds; }
     inline bool VpcSecurityGroupIdsHasBeenSet() const { return m_vpcSecurityGroupIdsHasBeenSet; }
-    inline void SetVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = value; }
-    inline void SetVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = std::move(value); }
-    inline CreateDBProxyRequest& WithVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetVpcSecurityGroupIds(value); return *this;}
-    inline CreateDBProxyRequest& WithVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetVpcSecurityGroupIds(std::move(value)); return *this;}
-    inline CreateDBProxyRequest& AddVpcSecurityGroupIds(const Aws::String& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
-    inline CreateDBProxyRequest& AddVpcSecurityGroupIds(Aws::String&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(std::move(value)); return *this; }
-    inline CreateDBProxyRequest& AddVpcSecurityGroupIds(const char* value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
+    template<typename VpcSecurityGroupIdsT = Aws::Vector<Aws::String>>
+    void SetVpcSecurityGroupIds(VpcSecurityGroupIdsT&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = std::forward<VpcSecurityGroupIdsT>(value); }
+    template<typename VpcSecurityGroupIdsT = Aws::Vector<Aws::String>>
+    CreateDBProxyRequest& WithVpcSecurityGroupIds(VpcSecurityGroupIdsT&& value) { SetVpcSecurityGroupIds(std::forward<VpcSecurityGroupIdsT>(value)); return *this;}
+    template<typename VpcSecurityGroupIdsT = Aws::String>
+    CreateDBProxyRequest& AddVpcSecurityGroupIds(VpcSecurityGroupIdsT&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.emplace_back(std::forward<VpcSecurityGroupIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -140,7 +132,7 @@ namespace Model
      * connections to the proxy. By enabling this setting, you can enforce encrypted
      * TLS connections to the proxy.</p>
      */
-    inline bool GetRequireTLS() const{ return m_requireTLS; }
+    inline bool GetRequireTLS() const { return m_requireTLS; }
     inline bool RequireTLSHasBeenSet() const { return m_requireTLSHasBeenSet; }
     inline void SetRequireTLS(bool value) { m_requireTLSHasBeenSet = true; m_requireTLS = value; }
     inline CreateDBProxyRequest& WithRequireTLS(bool value) { SetRequireTLS(value); return *this;}
@@ -152,7 +144,7 @@ namespace Model
      * the proxy disconnects it. You can set this value higher or lower than the
      * connection timeout limit for the associated database.</p>
      */
-    inline int GetIdleClientTimeout() const{ return m_idleClientTimeout; }
+    inline int GetIdleClientTimeout() const { return m_idleClientTimeout; }
     inline bool IdleClientTimeoutHasBeenSet() const { return m_idleClientTimeoutHasBeenSet; }
     inline void SetIdleClientTimeout(int value) { m_idleClientTimeoutHasBeenSet = true; m_idleClientTimeout = value; }
     inline CreateDBProxyRequest& WithIdleClientTimeout(int value) { SetIdleClientTimeout(value); return *this;}
@@ -168,7 +160,7 @@ namespace Model
      * you have security measures in place to safeguard any sensitive information that
      * appears in the logs.</p>
      */
-    inline bool GetDebugLogging() const{ return m_debugLogging; }
+    inline bool GetDebugLogging() const { return m_debugLogging; }
     inline bool DebugLoggingHasBeenSet() const { return m_debugLoggingHasBeenSet; }
     inline void SetDebugLogging(bool value) { m_debugLoggingHasBeenSet = true; m_debugLogging = value; }
     inline CreateDBProxyRequest& WithDebugLogging(bool value) { SetDebugLogging(value); return *this;}
@@ -179,21 +171,21 @@ namespace Model
      * <p>An optional set of key-value pairs to associate arbitrary data of your
      * choosing with the proxy.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateDBProxyRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateDBProxyRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateDBProxyRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateDBProxyRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateDBProxyRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateDBProxyRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_dBProxyName;
     bool m_dBProxyNameHasBeenSet = false;
 
-    EngineFamily m_engineFamily;
+    EngineFamily m_engineFamily{EngineFamily::NOT_SET};
     bool m_engineFamilyHasBeenSet = false;
 
     Aws::Vector<UserAuthConfig> m_auth;
@@ -208,13 +200,13 @@ namespace Model
     Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
     bool m_vpcSecurityGroupIdsHasBeenSet = false;
 
-    bool m_requireTLS;
+    bool m_requireTLS{false};
     bool m_requireTLSHasBeenSet = false;
 
-    int m_idleClientTimeout;
+    int m_idleClientTimeout{0};
     bool m_idleClientTimeoutHasBeenSet = false;
 
-    bool m_debugLogging;
+    bool m_debugLogging{false};
     bool m_debugLoggingHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;

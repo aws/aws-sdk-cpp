@@ -27,7 +27,7 @@ namespace Model
   class CreateCertificateProviderResult
   {
   public:
-    AWS_IOT_API CreateCertificateProviderResult();
+    AWS_IOT_API CreateCertificateProviderResult() = default;
     AWS_IOT_API CreateCertificateProviderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API CreateCertificateProviderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,45 +36,42 @@ namespace Model
     /**
      * <p>The name of the certificate provider.</p>
      */
-    inline const Aws::String& GetCertificateProviderName() const{ return m_certificateProviderName; }
-    inline void SetCertificateProviderName(const Aws::String& value) { m_certificateProviderName = value; }
-    inline void SetCertificateProviderName(Aws::String&& value) { m_certificateProviderName = std::move(value); }
-    inline void SetCertificateProviderName(const char* value) { m_certificateProviderName.assign(value); }
-    inline CreateCertificateProviderResult& WithCertificateProviderName(const Aws::String& value) { SetCertificateProviderName(value); return *this;}
-    inline CreateCertificateProviderResult& WithCertificateProviderName(Aws::String&& value) { SetCertificateProviderName(std::move(value)); return *this;}
-    inline CreateCertificateProviderResult& WithCertificateProviderName(const char* value) { SetCertificateProviderName(value); return *this;}
+    inline const Aws::String& GetCertificateProviderName() const { return m_certificateProviderName; }
+    template<typename CertificateProviderNameT = Aws::String>
+    void SetCertificateProviderName(CertificateProviderNameT&& value) { m_certificateProviderNameHasBeenSet = true; m_certificateProviderName = std::forward<CertificateProviderNameT>(value); }
+    template<typename CertificateProviderNameT = Aws::String>
+    CreateCertificateProviderResult& WithCertificateProviderName(CertificateProviderNameT&& value) { SetCertificateProviderName(std::forward<CertificateProviderNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the certificate provider.</p>
      */
-    inline const Aws::String& GetCertificateProviderArn() const{ return m_certificateProviderArn; }
-    inline void SetCertificateProviderArn(const Aws::String& value) { m_certificateProviderArn = value; }
-    inline void SetCertificateProviderArn(Aws::String&& value) { m_certificateProviderArn = std::move(value); }
-    inline void SetCertificateProviderArn(const char* value) { m_certificateProviderArn.assign(value); }
-    inline CreateCertificateProviderResult& WithCertificateProviderArn(const Aws::String& value) { SetCertificateProviderArn(value); return *this;}
-    inline CreateCertificateProviderResult& WithCertificateProviderArn(Aws::String&& value) { SetCertificateProviderArn(std::move(value)); return *this;}
-    inline CreateCertificateProviderResult& WithCertificateProviderArn(const char* value) { SetCertificateProviderArn(value); return *this;}
+    inline const Aws::String& GetCertificateProviderArn() const { return m_certificateProviderArn; }
+    template<typename CertificateProviderArnT = Aws::String>
+    void SetCertificateProviderArn(CertificateProviderArnT&& value) { m_certificateProviderArnHasBeenSet = true; m_certificateProviderArn = std::forward<CertificateProviderArnT>(value); }
+    template<typename CertificateProviderArnT = Aws::String>
+    CreateCertificateProviderResult& WithCertificateProviderArn(CertificateProviderArnT&& value) { SetCertificateProviderArn(std::forward<CertificateProviderArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateCertificateProviderResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateCertificateProviderResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateCertificateProviderResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateCertificateProviderResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_certificateProviderName;
+    bool m_certificateProviderNameHasBeenSet = false;
 
     Aws::String m_certificateProviderArn;
+    bool m_certificateProviderArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

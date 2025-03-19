@@ -32,7 +32,7 @@ namespace Model
   class GetDetectorResult
   {
   public:
-    AWS_GUARDDUTY_API GetDetectorResult();
+    AWS_GUARDDUTY_API GetDetectorResult() = default;
     AWS_GUARDDUTY_API GetDetectorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GUARDDUTY_API GetDetectorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,121 +41,114 @@ namespace Model
     /**
      * <p>The timestamp of when the detector was created.</p>
      */
-    inline const Aws::String& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::String& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::String&& value) { m_createdAt = std::move(value); }
-    inline void SetCreatedAt(const char* value) { m_createdAt.assign(value); }
-    inline GetDetectorResult& WithCreatedAt(const Aws::String& value) { SetCreatedAt(value); return *this;}
-    inline GetDetectorResult& WithCreatedAt(Aws::String&& value) { SetCreatedAt(std::move(value)); return *this;}
-    inline GetDetectorResult& WithCreatedAt(const char* value) { SetCreatedAt(value); return *this;}
+    inline const Aws::String& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::String>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::String>
+    GetDetectorResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The publishing frequency of the finding.</p>
      */
-    inline const FindingPublishingFrequency& GetFindingPublishingFrequency() const{ return m_findingPublishingFrequency; }
-    inline void SetFindingPublishingFrequency(const FindingPublishingFrequency& value) { m_findingPublishingFrequency = value; }
-    inline void SetFindingPublishingFrequency(FindingPublishingFrequency&& value) { m_findingPublishingFrequency = std::move(value); }
-    inline GetDetectorResult& WithFindingPublishingFrequency(const FindingPublishingFrequency& value) { SetFindingPublishingFrequency(value); return *this;}
-    inline GetDetectorResult& WithFindingPublishingFrequency(FindingPublishingFrequency&& value) { SetFindingPublishingFrequency(std::move(value)); return *this;}
+    inline FindingPublishingFrequency GetFindingPublishingFrequency() const { return m_findingPublishingFrequency; }
+    inline void SetFindingPublishingFrequency(FindingPublishingFrequency value) { m_findingPublishingFrequencyHasBeenSet = true; m_findingPublishingFrequency = value; }
+    inline GetDetectorResult& WithFindingPublishingFrequency(FindingPublishingFrequency value) { SetFindingPublishingFrequency(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The GuardDuty service role.</p>
      */
-    inline const Aws::String& GetServiceRole() const{ return m_serviceRole; }
-    inline void SetServiceRole(const Aws::String& value) { m_serviceRole = value; }
-    inline void SetServiceRole(Aws::String&& value) { m_serviceRole = std::move(value); }
-    inline void SetServiceRole(const char* value) { m_serviceRole.assign(value); }
-    inline GetDetectorResult& WithServiceRole(const Aws::String& value) { SetServiceRole(value); return *this;}
-    inline GetDetectorResult& WithServiceRole(Aws::String&& value) { SetServiceRole(std::move(value)); return *this;}
-    inline GetDetectorResult& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
+    inline const Aws::String& GetServiceRole() const { return m_serviceRole; }
+    template<typename ServiceRoleT = Aws::String>
+    void SetServiceRole(ServiceRoleT&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = std::forward<ServiceRoleT>(value); }
+    template<typename ServiceRoleT = Aws::String>
+    GetDetectorResult& WithServiceRole(ServiceRoleT&& value) { SetServiceRole(std::forward<ServiceRoleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The detector status.</p>
      */
-    inline const DetectorStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const DetectorStatus& value) { m_status = value; }
-    inline void SetStatus(DetectorStatus&& value) { m_status = std::move(value); }
-    inline GetDetectorResult& WithStatus(const DetectorStatus& value) { SetStatus(value); return *this;}
-    inline GetDetectorResult& WithStatus(DetectorStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline DetectorStatus GetStatus() const { return m_status; }
+    inline void SetStatus(DetectorStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetDetectorResult& WithStatus(DetectorStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The last-updated timestamp for the detector.</p>
      */
-    inline const Aws::String& GetUpdatedAt() const{ return m_updatedAt; }
-    inline void SetUpdatedAt(const Aws::String& value) { m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::String&& value) { m_updatedAt = std::move(value); }
-    inline void SetUpdatedAt(const char* value) { m_updatedAt.assign(value); }
-    inline GetDetectorResult& WithUpdatedAt(const Aws::String& value) { SetUpdatedAt(value); return *this;}
-    inline GetDetectorResult& WithUpdatedAt(Aws::String&& value) { SetUpdatedAt(std::move(value)); return *this;}
-    inline GetDetectorResult& WithUpdatedAt(const char* value) { SetUpdatedAt(value); return *this;}
+    inline const Aws::String& GetUpdatedAt() const { return m_updatedAt; }
+    template<typename UpdatedAtT = Aws::String>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::String>
+    GetDetectorResult& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags of the detector resource.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline GetDetectorResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline GetDetectorResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline GetDetectorResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline GetDetectorResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetDetectorResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetDetectorResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetDetectorResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetDetectorResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetDetectorResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    GetDetectorResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    GetDetectorResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>Describes the features that have been enabled for the detector.</p>
      */
-    inline const Aws::Vector<DetectorFeatureConfigurationResult>& GetFeatures() const{ return m_features; }
-    inline void SetFeatures(const Aws::Vector<DetectorFeatureConfigurationResult>& value) { m_features = value; }
-    inline void SetFeatures(Aws::Vector<DetectorFeatureConfigurationResult>&& value) { m_features = std::move(value); }
-    inline GetDetectorResult& WithFeatures(const Aws::Vector<DetectorFeatureConfigurationResult>& value) { SetFeatures(value); return *this;}
-    inline GetDetectorResult& WithFeatures(Aws::Vector<DetectorFeatureConfigurationResult>&& value) { SetFeatures(std::move(value)); return *this;}
-    inline GetDetectorResult& AddFeatures(const DetectorFeatureConfigurationResult& value) { m_features.push_back(value); return *this; }
-    inline GetDetectorResult& AddFeatures(DetectorFeatureConfigurationResult&& value) { m_features.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DetectorFeatureConfigurationResult>& GetFeatures() const { return m_features; }
+    template<typename FeaturesT = Aws::Vector<DetectorFeatureConfigurationResult>>
+    void SetFeatures(FeaturesT&& value) { m_featuresHasBeenSet = true; m_features = std::forward<FeaturesT>(value); }
+    template<typename FeaturesT = Aws::Vector<DetectorFeatureConfigurationResult>>
+    GetDetectorResult& WithFeatures(FeaturesT&& value) { SetFeatures(std::forward<FeaturesT>(value)); return *this;}
+    template<typename FeaturesT = DetectorFeatureConfigurationResult>
+    GetDetectorResult& AddFeatures(FeaturesT&& value) { m_featuresHasBeenSet = true; m_features.emplace_back(std::forward<FeaturesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetDetectorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetDetectorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetDetectorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetDetectorResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_createdAt;
+    bool m_createdAtHasBeenSet = false;
 
-    FindingPublishingFrequency m_findingPublishingFrequency;
+    FindingPublishingFrequency m_findingPublishingFrequency{FindingPublishingFrequency::NOT_SET};
+    bool m_findingPublishingFrequencyHasBeenSet = false;
 
     Aws::String m_serviceRole;
+    bool m_serviceRoleHasBeenSet = false;
 
-    DetectorStatus m_status;
+    DetectorStatus m_status{DetectorStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_updatedAt;
+    bool m_updatedAtHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<DetectorFeatureConfigurationResult> m_features;
+    bool m_featuresHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

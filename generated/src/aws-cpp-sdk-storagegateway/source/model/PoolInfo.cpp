@@ -18,22 +18,7 @@ namespace StorageGateway
 namespace Model
 {
 
-PoolInfo::PoolInfo() : 
-    m_poolARNHasBeenSet(false),
-    m_poolNameHasBeenSet(false),
-    m_storageClass(TapeStorageClass::NOT_SET),
-    m_storageClassHasBeenSet(false),
-    m_retentionLockType(RetentionLockType::NOT_SET),
-    m_retentionLockTypeHasBeenSet(false),
-    m_retentionLockTimeInDays(0),
-    m_retentionLockTimeInDaysHasBeenSet(false),
-    m_poolStatus(PoolStatus::NOT_SET),
-    m_poolStatusHasBeenSet(false)
-{
-}
-
 PoolInfo::PoolInfo(JsonView jsonValue)
-  : PoolInfo()
 {
   *this = jsonValue;
 }
@@ -43,45 +28,33 @@ PoolInfo& PoolInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PoolARN"))
   {
     m_poolARN = jsonValue.GetString("PoolARN");
-
     m_poolARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PoolName"))
   {
     m_poolName = jsonValue.GetString("PoolName");
-
     m_poolNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StorageClass"))
   {
     m_storageClass = TapeStorageClassMapper::GetTapeStorageClassForName(jsonValue.GetString("StorageClass"));
-
     m_storageClassHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RetentionLockType"))
   {
     m_retentionLockType = RetentionLockTypeMapper::GetRetentionLockTypeForName(jsonValue.GetString("RetentionLockType"));
-
     m_retentionLockTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RetentionLockTimeInDays"))
   {
     m_retentionLockTimeInDays = jsonValue.GetInteger("RetentionLockTimeInDays");
-
     m_retentionLockTimeInDaysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PoolStatus"))
   {
     m_poolStatus = PoolStatusMapper::GetPoolStatusForName(jsonValue.GetString("PoolStatus"));
-
     m_poolStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

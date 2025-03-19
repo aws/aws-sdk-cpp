@@ -12,11 +12,6 @@ using namespace Aws::IoTWireless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteWirelessGatewayRequest::DeleteWirelessGatewayRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String DeleteWirelessGatewayRequest::SerializePayload() const
 {
   return {};

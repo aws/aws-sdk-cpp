@@ -34,7 +34,7 @@ namespace Model
   class Compliance
   {
   public:
-    AWS_CONFIGSERVICE_API Compliance();
+    AWS_CONFIGSERVICE_API Compliance() = default;
     AWS_CONFIGSERVICE_API Compliance(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Compliance& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,12 +55,10 @@ namespace Model
      * does not support the <code>NOT_APPLICABLE</code> value for the
      * <code>Compliance</code> data type.</p>
      */
-    inline const ComplianceType& GetComplianceType() const{ return m_complianceType; }
+    inline ComplianceType GetComplianceType() const { return m_complianceType; }
     inline bool ComplianceTypeHasBeenSet() const { return m_complianceTypeHasBeenSet; }
-    inline void SetComplianceType(const ComplianceType& value) { m_complianceTypeHasBeenSet = true; m_complianceType = value; }
-    inline void SetComplianceType(ComplianceType&& value) { m_complianceTypeHasBeenSet = true; m_complianceType = std::move(value); }
-    inline Compliance& WithComplianceType(const ComplianceType& value) { SetComplianceType(value); return *this;}
-    inline Compliance& WithComplianceType(ComplianceType&& value) { SetComplianceType(std::move(value)); return *this;}
+    inline void SetComplianceType(ComplianceType value) { m_complianceTypeHasBeenSet = true; m_complianceType = value; }
+    inline Compliance& WithComplianceType(ComplianceType value) { SetComplianceType(value); return *this;}
     ///@}
 
     ///@{
@@ -68,16 +66,16 @@ namespace Model
      * <p>The number of Amazon Web Services resources or Config rules that cause a
      * result of <code>NON_COMPLIANT</code>, up to a maximum number.</p>
      */
-    inline const ComplianceContributorCount& GetComplianceContributorCount() const{ return m_complianceContributorCount; }
+    inline const ComplianceContributorCount& GetComplianceContributorCount() const { return m_complianceContributorCount; }
     inline bool ComplianceContributorCountHasBeenSet() const { return m_complianceContributorCountHasBeenSet; }
-    inline void SetComplianceContributorCount(const ComplianceContributorCount& value) { m_complianceContributorCountHasBeenSet = true; m_complianceContributorCount = value; }
-    inline void SetComplianceContributorCount(ComplianceContributorCount&& value) { m_complianceContributorCountHasBeenSet = true; m_complianceContributorCount = std::move(value); }
-    inline Compliance& WithComplianceContributorCount(const ComplianceContributorCount& value) { SetComplianceContributorCount(value); return *this;}
-    inline Compliance& WithComplianceContributorCount(ComplianceContributorCount&& value) { SetComplianceContributorCount(std::move(value)); return *this;}
+    template<typename ComplianceContributorCountT = ComplianceContributorCount>
+    void SetComplianceContributorCount(ComplianceContributorCountT&& value) { m_complianceContributorCountHasBeenSet = true; m_complianceContributorCount = std::forward<ComplianceContributorCountT>(value); }
+    template<typename ComplianceContributorCountT = ComplianceContributorCount>
+    Compliance& WithComplianceContributorCount(ComplianceContributorCountT&& value) { SetComplianceContributorCount(std::forward<ComplianceContributorCountT>(value)); return *this;}
     ///@}
   private:
 
-    ComplianceType m_complianceType;
+    ComplianceType m_complianceType{ComplianceType::NOT_SET};
     bool m_complianceTypeHasBeenSet = false;
 
     ComplianceContributorCount m_complianceContributorCount;

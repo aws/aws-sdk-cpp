@@ -18,14 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-TableCreationConfiguration::TableCreationConfiguration() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 TableCreationConfiguration::TableCreationConfiguration(JsonView jsonValue)
-  : TableCreationConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ TableCreationConfiguration& TableCreationConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   return *this;
 }
 

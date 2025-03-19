@@ -33,7 +33,7 @@ namespace Model
   class PublicAccess
   {
   public:
-    AWS_GUARDDUTY_API PublicAccess();
+    AWS_GUARDDUTY_API PublicAccess() = default;
     AWS_GUARDDUTY_API PublicAccess(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API PublicAccess& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p>Contains information about how permissions are configured for the S3
      * bucket.</p>
      */
-    inline const PermissionConfiguration& GetPermissionConfiguration() const{ return m_permissionConfiguration; }
+    inline const PermissionConfiguration& GetPermissionConfiguration() const { return m_permissionConfiguration; }
     inline bool PermissionConfigurationHasBeenSet() const { return m_permissionConfigurationHasBeenSet; }
-    inline void SetPermissionConfiguration(const PermissionConfiguration& value) { m_permissionConfigurationHasBeenSet = true; m_permissionConfiguration = value; }
-    inline void SetPermissionConfiguration(PermissionConfiguration&& value) { m_permissionConfigurationHasBeenSet = true; m_permissionConfiguration = std::move(value); }
-    inline PublicAccess& WithPermissionConfiguration(const PermissionConfiguration& value) { SetPermissionConfiguration(value); return *this;}
-    inline PublicAccess& WithPermissionConfiguration(PermissionConfiguration&& value) { SetPermissionConfiguration(std::move(value)); return *this;}
+    template<typename PermissionConfigurationT = PermissionConfiguration>
+    void SetPermissionConfiguration(PermissionConfigurationT&& value) { m_permissionConfigurationHasBeenSet = true; m_permissionConfiguration = std::forward<PermissionConfigurationT>(value); }
+    template<typename PermissionConfigurationT = PermissionConfiguration>
+    PublicAccess& WithPermissionConfiguration(PermissionConfigurationT&& value) { SetPermissionConfiguration(std::forward<PermissionConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +57,12 @@ namespace Model
      * <p>Describes the effective permission on this bucket after factoring all
      * attached policies.</p>
      */
-    inline const Aws::String& GetEffectivePermission() const{ return m_effectivePermission; }
+    inline const Aws::String& GetEffectivePermission() const { return m_effectivePermission; }
     inline bool EffectivePermissionHasBeenSet() const { return m_effectivePermissionHasBeenSet; }
-    inline void SetEffectivePermission(const Aws::String& value) { m_effectivePermissionHasBeenSet = true; m_effectivePermission = value; }
-    inline void SetEffectivePermission(Aws::String&& value) { m_effectivePermissionHasBeenSet = true; m_effectivePermission = std::move(value); }
-    inline void SetEffectivePermission(const char* value) { m_effectivePermissionHasBeenSet = true; m_effectivePermission.assign(value); }
-    inline PublicAccess& WithEffectivePermission(const Aws::String& value) { SetEffectivePermission(value); return *this;}
-    inline PublicAccess& WithEffectivePermission(Aws::String&& value) { SetEffectivePermission(std::move(value)); return *this;}
-    inline PublicAccess& WithEffectivePermission(const char* value) { SetEffectivePermission(value); return *this;}
+    template<typename EffectivePermissionT = Aws::String>
+    void SetEffectivePermission(EffectivePermissionT&& value) { m_effectivePermissionHasBeenSet = true; m_effectivePermission = std::forward<EffectivePermissionT>(value); }
+    template<typename EffectivePermissionT = Aws::String>
+    PublicAccess& WithEffectivePermission(EffectivePermissionT&& value) { SetEffectivePermission(std::forward<EffectivePermissionT>(value)); return *this;}
     ///@}
   private:
 

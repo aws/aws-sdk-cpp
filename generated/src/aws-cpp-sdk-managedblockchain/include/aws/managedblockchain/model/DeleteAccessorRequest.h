@@ -21,7 +21,7 @@ namespace Model
   class DeleteAccessorRequest : public ManagedBlockchainRequest
   {
   public:
-    AWS_MANAGEDBLOCKCHAIN_API DeleteAccessorRequest();
+    AWS_MANAGEDBLOCKCHAIN_API DeleteAccessorRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The unique identifier of the accessor.</p>
      */
-    inline const Aws::String& GetAccessorId() const{ return m_accessorId; }
+    inline const Aws::String& GetAccessorId() const { return m_accessorId; }
     inline bool AccessorIdHasBeenSet() const { return m_accessorIdHasBeenSet; }
-    inline void SetAccessorId(const Aws::String& value) { m_accessorIdHasBeenSet = true; m_accessorId = value; }
-    inline void SetAccessorId(Aws::String&& value) { m_accessorIdHasBeenSet = true; m_accessorId = std::move(value); }
-    inline void SetAccessorId(const char* value) { m_accessorIdHasBeenSet = true; m_accessorId.assign(value); }
-    inline DeleteAccessorRequest& WithAccessorId(const Aws::String& value) { SetAccessorId(value); return *this;}
-    inline DeleteAccessorRequest& WithAccessorId(Aws::String&& value) { SetAccessorId(std::move(value)); return *this;}
-    inline DeleteAccessorRequest& WithAccessorId(const char* value) { SetAccessorId(value); return *this;}
+    template<typename AccessorIdT = Aws::String>
+    void SetAccessorId(AccessorIdT&& value) { m_accessorIdHasBeenSet = true; m_accessorId = std::forward<AccessorIdT>(value); }
+    template<typename AccessorIdT = Aws::String>
+    DeleteAccessorRequest& WithAccessorId(AccessorIdT&& value) { SetAccessorId(std::forward<AccessorIdT>(value)); return *this;}
     ///@}
   private:
 

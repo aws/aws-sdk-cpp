@@ -18,13 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-DomainInformationContainer::DomainInformationContainer() : 
-    m_aWSDomainInformationHasBeenSet(false)
-{
-}
-
 DomainInformationContainer::DomainInformationContainer(JsonView jsonValue)
-  : DomainInformationContainer()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DomainInformationContainer& DomainInformationContainer::operator =(JsonView json
   if(jsonValue.ValueExists("AWSDomainInformation"))
   {
     m_aWSDomainInformation = jsonValue.GetObject("AWSDomainInformation");
-
     m_aWSDomainInformationHasBeenSet = true;
   }
-
   return *this;
 }
 

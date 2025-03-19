@@ -33,7 +33,7 @@ namespace Model
   class InstanceTagNotificationAttribute
   {
   public:
-    AWS_EC2_API InstanceTagNotificationAttribute();
+    AWS_EC2_API InstanceTagNotificationAttribute() = default;
     AWS_EC2_API InstanceTagNotificationAttribute(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API InstanceTagNotificationAttribute& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,15 +45,14 @@ namespace Model
     /**
      * <p>The registered tag keys.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetInstanceTagKeys() const{ return m_instanceTagKeys; }
+    inline const Aws::Vector<Aws::String>& GetInstanceTagKeys() const { return m_instanceTagKeys; }
     inline bool InstanceTagKeysHasBeenSet() const { return m_instanceTagKeysHasBeenSet; }
-    inline void SetInstanceTagKeys(const Aws::Vector<Aws::String>& value) { m_instanceTagKeysHasBeenSet = true; m_instanceTagKeys = value; }
-    inline void SetInstanceTagKeys(Aws::Vector<Aws::String>&& value) { m_instanceTagKeysHasBeenSet = true; m_instanceTagKeys = std::move(value); }
-    inline InstanceTagNotificationAttribute& WithInstanceTagKeys(const Aws::Vector<Aws::String>& value) { SetInstanceTagKeys(value); return *this;}
-    inline InstanceTagNotificationAttribute& WithInstanceTagKeys(Aws::Vector<Aws::String>&& value) { SetInstanceTagKeys(std::move(value)); return *this;}
-    inline InstanceTagNotificationAttribute& AddInstanceTagKeys(const Aws::String& value) { m_instanceTagKeysHasBeenSet = true; m_instanceTagKeys.push_back(value); return *this; }
-    inline InstanceTagNotificationAttribute& AddInstanceTagKeys(Aws::String&& value) { m_instanceTagKeysHasBeenSet = true; m_instanceTagKeys.push_back(std::move(value)); return *this; }
-    inline InstanceTagNotificationAttribute& AddInstanceTagKeys(const char* value) { m_instanceTagKeysHasBeenSet = true; m_instanceTagKeys.push_back(value); return *this; }
+    template<typename InstanceTagKeysT = Aws::Vector<Aws::String>>
+    void SetInstanceTagKeys(InstanceTagKeysT&& value) { m_instanceTagKeysHasBeenSet = true; m_instanceTagKeys = std::forward<InstanceTagKeysT>(value); }
+    template<typename InstanceTagKeysT = Aws::Vector<Aws::String>>
+    InstanceTagNotificationAttribute& WithInstanceTagKeys(InstanceTagKeysT&& value) { SetInstanceTagKeys(std::forward<InstanceTagKeysT>(value)); return *this;}
+    template<typename InstanceTagKeysT = Aws::String>
+    InstanceTagNotificationAttribute& AddInstanceTagKeys(InstanceTagKeysT&& value) { m_instanceTagKeysHasBeenSet = true; m_instanceTagKeys.emplace_back(std::forward<InstanceTagKeysT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -62,7 +61,7 @@ namespace Model
      * in scheduled event notifications. <code>true</code> indicates that all tag keys
      * in the current Region are registered.</p>
      */
-    inline bool GetIncludeAllTagsOfInstance() const{ return m_includeAllTagsOfInstance; }
+    inline bool GetIncludeAllTagsOfInstance() const { return m_includeAllTagsOfInstance; }
     inline bool IncludeAllTagsOfInstanceHasBeenSet() const { return m_includeAllTagsOfInstanceHasBeenSet; }
     inline void SetIncludeAllTagsOfInstance(bool value) { m_includeAllTagsOfInstanceHasBeenSet = true; m_includeAllTagsOfInstance = value; }
     inline InstanceTagNotificationAttribute& WithIncludeAllTagsOfInstance(bool value) { SetIncludeAllTagsOfInstance(value); return *this;}
@@ -72,7 +71,7 @@ namespace Model
     Aws::Vector<Aws::String> m_instanceTagKeys;
     bool m_instanceTagKeysHasBeenSet = false;
 
-    bool m_includeAllTagsOfInstance;
+    bool m_includeAllTagsOfInstance{false};
     bool m_includeAllTagsOfInstanceHasBeenSet = false;
   };
 

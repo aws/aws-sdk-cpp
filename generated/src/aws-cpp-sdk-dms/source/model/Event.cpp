@@ -18,18 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-Event::Event() : 
-    m_sourceIdentifierHasBeenSet(false),
-    m_sourceType(SourceType::NOT_SET),
-    m_sourceTypeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_eventCategoriesHasBeenSet(false),
-    m_dateHasBeenSet(false)
-{
-}
-
 Event::Event(JsonView jsonValue)
-  : Event()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ Event& Event::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SourceIdentifier"))
   {
     m_sourceIdentifier = jsonValue.GetString("SourceIdentifier");
-
     m_sourceIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceType"))
   {
     m_sourceType = SourceTypeMapper::GetSourceTypeForName(jsonValue.GetString("SourceType"));
-
     m_sourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventCategories"))
   {
     Aws::Utils::Array<JsonView> eventCategoriesJsonList = jsonValue.GetArray("EventCategories");
@@ -66,14 +49,11 @@ Event& Event::operator =(JsonView jsonValue)
     }
     m_eventCategoriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Date"))
   {
     m_date = jsonValue.GetDouble("Date");
-
     m_dateHasBeenSet = true;
   }
-
   return *this;
 }
 

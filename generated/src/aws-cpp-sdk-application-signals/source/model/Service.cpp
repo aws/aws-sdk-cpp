@@ -18,16 +18,7 @@ namespace ApplicationSignals
 namespace Model
 {
 
-Service::Service() : 
-    m_keyAttributesHasBeenSet(false),
-    m_attributeMapsHasBeenSet(false),
-    m_metricReferencesHasBeenSet(false),
-    m_logGroupReferencesHasBeenSet(false)
-{
-}
-
 Service::Service(JsonView jsonValue)
-  : Service()
 {
   *this = jsonValue;
 }
@@ -43,7 +34,6 @@ Service& Service::operator =(JsonView jsonValue)
     }
     m_keyAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttributeMaps"))
   {
     Aws::Utils::Array<JsonView> attributeMapsJsonList = jsonValue.GetArray("AttributeMaps");
@@ -59,7 +49,6 @@ Service& Service::operator =(JsonView jsonValue)
     }
     m_attributeMapsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricReferences"))
   {
     Aws::Utils::Array<JsonView> metricReferencesJsonList = jsonValue.GetArray("MetricReferences");
@@ -69,7 +58,6 @@ Service& Service::operator =(JsonView jsonValue)
     }
     m_metricReferencesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogGroupReferences"))
   {
     Aws::Utils::Array<JsonView> logGroupReferencesJsonList = jsonValue.GetArray("LogGroupReferences");
@@ -85,7 +73,6 @@ Service& Service::operator =(JsonView jsonValue)
     }
     m_logGroupReferencesHasBeenSet = true;
   }
-
   return *this;
 }
 

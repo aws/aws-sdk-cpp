@@ -33,7 +33,7 @@ namespace Model
   class ExperimentReport
   {
   public:
-    AWS_FIS_API ExperimentReport();
+    AWS_FIS_API ExperimentReport() = default;
     AWS_FIS_API ExperimentReport(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIS_API ExperimentReport& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,26 @@ namespace Model
     /**
      * <p>The state of the experiment report.</p>
      */
-    inline const ExperimentReportState& GetState() const{ return m_state; }
+    inline const ExperimentReportState& GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const ExperimentReportState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(ExperimentReportState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline ExperimentReport& WithState(const ExperimentReportState& value) { SetState(value); return *this;}
-    inline ExperimentReport& WithState(ExperimentReportState&& value) { SetState(std::move(value)); return *this;}
+    template<typename StateT = ExperimentReportState>
+    void SetState(StateT&& value) { m_stateHasBeenSet = true; m_state = std::forward<StateT>(value); }
+    template<typename StateT = ExperimentReportState>
+    ExperimentReport& WithState(StateT&& value) { SetState(std::forward<StateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The S3 destination of the experiment report.</p>
      */
-    inline const Aws::Vector<ExperimentReportS3Report>& GetS3Reports() const{ return m_s3Reports; }
+    inline const Aws::Vector<ExperimentReportS3Report>& GetS3Reports() const { return m_s3Reports; }
     inline bool S3ReportsHasBeenSet() const { return m_s3ReportsHasBeenSet; }
-    inline void SetS3Reports(const Aws::Vector<ExperimentReportS3Report>& value) { m_s3ReportsHasBeenSet = true; m_s3Reports = value; }
-    inline void SetS3Reports(Aws::Vector<ExperimentReportS3Report>&& value) { m_s3ReportsHasBeenSet = true; m_s3Reports = std::move(value); }
-    inline ExperimentReport& WithS3Reports(const Aws::Vector<ExperimentReportS3Report>& value) { SetS3Reports(value); return *this;}
-    inline ExperimentReport& WithS3Reports(Aws::Vector<ExperimentReportS3Report>&& value) { SetS3Reports(std::move(value)); return *this;}
-    inline ExperimentReport& AddS3Reports(const ExperimentReportS3Report& value) { m_s3ReportsHasBeenSet = true; m_s3Reports.push_back(value); return *this; }
-    inline ExperimentReport& AddS3Reports(ExperimentReportS3Report&& value) { m_s3ReportsHasBeenSet = true; m_s3Reports.push_back(std::move(value)); return *this; }
+    template<typename S3ReportsT = Aws::Vector<ExperimentReportS3Report>>
+    void SetS3Reports(S3ReportsT&& value) { m_s3ReportsHasBeenSet = true; m_s3Reports = std::forward<S3ReportsT>(value); }
+    template<typename S3ReportsT = Aws::Vector<ExperimentReportS3Report>>
+    ExperimentReport& WithS3Reports(S3ReportsT&& value) { SetS3Reports(std::forward<S3ReportsT>(value)); return *this;}
+    template<typename S3ReportsT = ExperimentReportS3Report>
+    ExperimentReport& AddS3Reports(S3ReportsT&& value) { m_s3ReportsHasBeenSet = true; m_s3Reports.emplace_back(std::forward<S3ReportsT>(value)); return *this; }
     ///@}
   private:
 

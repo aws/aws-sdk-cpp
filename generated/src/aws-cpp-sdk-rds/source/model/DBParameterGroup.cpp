@@ -20,16 +20,7 @@ namespace RDS
 namespace Model
 {
 
-DBParameterGroup::DBParameterGroup() : 
-    m_dBParameterGroupNameHasBeenSet(false),
-    m_dBParameterGroupFamilyHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_dBParameterGroupArnHasBeenSet(false)
-{
-}
-
 DBParameterGroup::DBParameterGroup(const XmlNode& xmlNode)
-  : DBParameterGroup()
 {
   *this = xmlNode;
 }

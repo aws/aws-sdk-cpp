@@ -18,19 +18,7 @@ namespace GeoPlaces
 namespace Model
 {
 
-PostalCodeDetails::PostalCodeDetails() : 
-    m_postalCodeHasBeenSet(false),
-    m_postalAuthority(PostalAuthority::NOT_SET),
-    m_postalAuthorityHasBeenSet(false),
-    m_postalCodeType(PostalCodeType::NOT_SET),
-    m_postalCodeTypeHasBeenSet(false),
-    m_uspsZipHasBeenSet(false),
-    m_uspsZipPlus4HasBeenSet(false)
-{
-}
-
 PostalCodeDetails::PostalCodeDetails(JsonView jsonValue)
-  : PostalCodeDetails()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ PostalCodeDetails& PostalCodeDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PostalCode"))
   {
     m_postalCode = jsonValue.GetString("PostalCode");
-
     m_postalCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PostalAuthority"))
   {
     m_postalAuthority = PostalAuthorityMapper::GetPostalAuthorityForName(jsonValue.GetString("PostalAuthority"));
-
     m_postalAuthorityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PostalCodeType"))
   {
     m_postalCodeType = PostalCodeTypeMapper::GetPostalCodeTypeForName(jsonValue.GetString("PostalCodeType"));
-
     m_postalCodeTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UspsZip"))
   {
     m_uspsZip = jsonValue.GetObject("UspsZip");
-
     m_uspsZipHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UspsZipPlus4"))
   {
     m_uspsZipPlus4 = jsonValue.GetObject("UspsZipPlus4");
-
     m_uspsZipPlus4HasBeenSet = true;
   }
-
   return *this;
 }
 

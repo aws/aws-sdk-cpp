@@ -33,7 +33,7 @@ namespace Model
   class BatchDeleteEvaluationJobItem
   {
   public:
-    AWS_BEDROCK_API BatchDeleteEvaluationJobItem();
+    AWS_BEDROCK_API BatchDeleteEvaluationJobItem() = default;
     AWS_BEDROCK_API BatchDeleteEvaluationJobItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API BatchDeleteEvaluationJobItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,33 +43,29 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the evaluation job for deletion.</p>
      */
-    inline const Aws::String& GetJobIdentifier() const{ return m_jobIdentifier; }
+    inline const Aws::String& GetJobIdentifier() const { return m_jobIdentifier; }
     inline bool JobIdentifierHasBeenSet() const { return m_jobIdentifierHasBeenSet; }
-    inline void SetJobIdentifier(const Aws::String& value) { m_jobIdentifierHasBeenSet = true; m_jobIdentifier = value; }
-    inline void SetJobIdentifier(Aws::String&& value) { m_jobIdentifierHasBeenSet = true; m_jobIdentifier = std::move(value); }
-    inline void SetJobIdentifier(const char* value) { m_jobIdentifierHasBeenSet = true; m_jobIdentifier.assign(value); }
-    inline BatchDeleteEvaluationJobItem& WithJobIdentifier(const Aws::String& value) { SetJobIdentifier(value); return *this;}
-    inline BatchDeleteEvaluationJobItem& WithJobIdentifier(Aws::String&& value) { SetJobIdentifier(std::move(value)); return *this;}
-    inline BatchDeleteEvaluationJobItem& WithJobIdentifier(const char* value) { SetJobIdentifier(value); return *this;}
+    template<typename JobIdentifierT = Aws::String>
+    void SetJobIdentifier(JobIdentifierT&& value) { m_jobIdentifierHasBeenSet = true; m_jobIdentifier = std::forward<JobIdentifierT>(value); }
+    template<typename JobIdentifierT = Aws::String>
+    BatchDeleteEvaluationJobItem& WithJobIdentifier(JobIdentifierT&& value) { SetJobIdentifier(std::forward<JobIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the evaluation job for deletion.</p>
      */
-    inline const EvaluationJobStatus& GetJobStatus() const{ return m_jobStatus; }
+    inline EvaluationJobStatus GetJobStatus() const { return m_jobStatus; }
     inline bool JobStatusHasBeenSet() const { return m_jobStatusHasBeenSet; }
-    inline void SetJobStatus(const EvaluationJobStatus& value) { m_jobStatusHasBeenSet = true; m_jobStatus = value; }
-    inline void SetJobStatus(EvaluationJobStatus&& value) { m_jobStatusHasBeenSet = true; m_jobStatus = std::move(value); }
-    inline BatchDeleteEvaluationJobItem& WithJobStatus(const EvaluationJobStatus& value) { SetJobStatus(value); return *this;}
-    inline BatchDeleteEvaluationJobItem& WithJobStatus(EvaluationJobStatus&& value) { SetJobStatus(std::move(value)); return *this;}
+    inline void SetJobStatus(EvaluationJobStatus value) { m_jobStatusHasBeenSet = true; m_jobStatus = value; }
+    inline BatchDeleteEvaluationJobItem& WithJobStatus(EvaluationJobStatus value) { SetJobStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_jobIdentifier;
     bool m_jobIdentifierHasBeenSet = false;
 
-    EvaluationJobStatus m_jobStatus;
+    EvaluationJobStatus m_jobStatus{EvaluationJobStatus::NOT_SET};
     bool m_jobStatusHasBeenSet = false;
   };
 

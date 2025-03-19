@@ -18,16 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-ConditionalSplitActivity::ConditionalSplitActivity() : 
-    m_conditionHasBeenSet(false),
-    m_evaluationWaitTimeHasBeenSet(false),
-    m_falseActivityHasBeenSet(false),
-    m_trueActivityHasBeenSet(false)
-{
-}
-
 ConditionalSplitActivity::ConditionalSplitActivity(JsonView jsonValue)
-  : ConditionalSplitActivity()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ConditionalSplitActivity& ConditionalSplitActivity::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Condition"))
   {
     m_condition = jsonValue.GetObject("Condition");
-
     m_conditionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluationWaitTime"))
   {
     m_evaluationWaitTime = jsonValue.GetObject("EvaluationWaitTime");
-
     m_evaluationWaitTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FalseActivity"))
   {
     m_falseActivity = jsonValue.GetString("FalseActivity");
-
     m_falseActivityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrueActivity"))
   {
     m_trueActivity = jsonValue.GetString("TrueActivity");
-
     m_trueActivityHasBeenSet = true;
   }
-
   return *this;
 }
 

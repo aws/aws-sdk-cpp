@@ -15,20 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetSparqlStreamRequest::GetSparqlStreamRequest() : 
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_iteratorType(IteratorType::NOT_SET),
-    m_iteratorTypeHasBeenSet(false),
-    m_commitNum(0),
-    m_commitNumHasBeenSet(false),
-    m_opNum(0),
-    m_opNumHasBeenSet(false),
-    m_encoding(Encoding::NOT_SET),
-    m_encodingHasBeenSet(false)
-{
-}
-
 Aws::String GetSparqlStreamRequest::SerializePayload() const
 {
   return {};

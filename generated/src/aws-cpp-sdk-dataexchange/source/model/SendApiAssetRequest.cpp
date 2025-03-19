@@ -16,17 +16,6 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 using namespace Aws;
 
-SendApiAssetRequest::SendApiAssetRequest() : 
-    m_queryStringParametersHasBeenSet(false),
-    m_assetIdHasBeenSet(false),
-    m_dataSetIdHasBeenSet(false),
-    m_requestHeadersHasBeenSet(false),
-    m_methodHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_revisionIdHasBeenSet(false)
-{
-}
-
 
 void SendApiAssetRequest::AddQueryStringParameters(URI& uri) const
 {

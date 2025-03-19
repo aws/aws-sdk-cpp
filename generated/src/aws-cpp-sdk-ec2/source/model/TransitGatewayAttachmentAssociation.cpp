@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TransitGatewayAttachmentAssociation::TransitGatewayAttachmentAssociation() : 
-    m_transitGatewayRouteTableIdHasBeenSet(false),
-    m_state(TransitGatewayAssociationState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 TransitGatewayAttachmentAssociation::TransitGatewayAttachmentAssociation(const XmlNode& xmlNode)
-  : TransitGatewayAttachmentAssociation()
 {
   *this = xmlNode;
 }
@@ -48,7 +40,7 @@ TransitGatewayAttachmentAssociation& TransitGatewayAttachmentAssociation::operat
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = TransitGatewayAssociationStateMapper::GetTransitGatewayAssociationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = TransitGatewayAssociationStateMapper::GetTransitGatewayAssociationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
   }

@@ -18,16 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-KinesisVideoStreamSourceTaskConfiguration::KinesisVideoStreamSourceTaskConfiguration() : 
-    m_streamArnHasBeenSet(false),
-    m_channelId(0),
-    m_channelIdHasBeenSet(false),
-    m_fragmentNumberHasBeenSet(false)
-{
-}
-
 KinesisVideoStreamSourceTaskConfiguration::KinesisVideoStreamSourceTaskConfiguration(JsonView jsonValue)
-  : KinesisVideoStreamSourceTaskConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ KinesisVideoStreamSourceTaskConfiguration& KinesisVideoStreamSourceTaskConfigura
   if(jsonValue.ValueExists("StreamArn"))
   {
     m_streamArn = jsonValue.GetString("StreamArn");
-
     m_streamArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChannelId"))
   {
     m_channelId = jsonValue.GetInteger("ChannelId");
-
     m_channelIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FragmentNumber"))
   {
     m_fragmentNumber = jsonValue.GetString("FragmentNumber");
-
     m_fragmentNumberHasBeenSet = true;
   }
-
   return *this;
 }
 

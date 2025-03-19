@@ -18,20 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-EventDestinationDefinition::EventDestinationDefinition() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_matchingEventTypesHasBeenSet(false),
-    m_kinesisFirehoseDestinationHasBeenSet(false),
-    m_cloudWatchDestinationHasBeenSet(false),
-    m_snsDestinationHasBeenSet(false),
-    m_eventBridgeDestinationHasBeenSet(false),
-    m_pinpointDestinationHasBeenSet(false)
-{
-}
-
 EventDestinationDefinition::EventDestinationDefinition(JsonView jsonValue)
-  : EventDestinationDefinition()
 {
   *this = jsonValue;
 }
@@ -41,10 +28,8 @@ EventDestinationDefinition& EventDestinationDefinition::operator =(JsonView json
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MatchingEventTypes"))
   {
     Aws::Utils::Array<JsonView> matchingEventTypesJsonList = jsonValue.GetArray("MatchingEventTypes");
@@ -54,42 +39,31 @@ EventDestinationDefinition& EventDestinationDefinition::operator =(JsonView json
     }
     m_matchingEventTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KinesisFirehoseDestination"))
   {
     m_kinesisFirehoseDestination = jsonValue.GetObject("KinesisFirehoseDestination");
-
     m_kinesisFirehoseDestinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CloudWatchDestination"))
   {
     m_cloudWatchDestination = jsonValue.GetObject("CloudWatchDestination");
-
     m_cloudWatchDestinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnsDestination"))
   {
     m_snsDestination = jsonValue.GetObject("SnsDestination");
-
     m_snsDestinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventBridgeDestination"))
   {
     m_eventBridgeDestination = jsonValue.GetObject("EventBridgeDestination");
-
     m_eventBridgeDestinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PinpointDestination"))
   {
     m_pinpointDestination = jsonValue.GetObject("PinpointDestination");
-
     m_pinpointDestinationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,19 +18,7 @@ namespace MigrationHubStrategyRecommendations
 namespace Model
 {
 
-ServerStrategy::ServerStrategy() : 
-    m_isPreferred(false),
-    m_isPreferredHasBeenSet(false),
-    m_numberOfApplicationComponents(0),
-    m_numberOfApplicationComponentsHasBeenSet(false),
-    m_recommendationHasBeenSet(false),
-    m_status(StrategyRecommendation::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 ServerStrategy::ServerStrategy(JsonView jsonValue)
-  : ServerStrategy()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ ServerStrategy& ServerStrategy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("isPreferred"))
   {
     m_isPreferred = jsonValue.GetBool("isPreferred");
-
     m_isPreferredHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numberOfApplicationComponents"))
   {
     m_numberOfApplicationComponents = jsonValue.GetInteger("numberOfApplicationComponents");
-
     m_numberOfApplicationComponentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recommendation"))
   {
     m_recommendation = jsonValue.GetObject("recommendation");
-
     m_recommendationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = StrategyRecommendationMapper::GetStrategyRecommendationForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

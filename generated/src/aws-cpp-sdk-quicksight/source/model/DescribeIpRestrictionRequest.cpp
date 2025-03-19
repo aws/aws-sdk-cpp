@@ -12,11 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeIpRestrictionRequest::DescribeIpRestrictionRequest() : 
-    m_awsAccountIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeIpRestrictionRequest::SerializePayload() const
 {
   return {};

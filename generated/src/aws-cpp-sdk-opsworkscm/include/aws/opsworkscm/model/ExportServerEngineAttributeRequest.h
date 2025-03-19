@@ -23,7 +23,7 @@ namespace Model
   class ExportServerEngineAttributeRequest : public OpsWorksCMRequest
   {
   public:
-    AWS_OPSWORKSCM_API ExportServerEngineAttributeRequest();
+    AWS_OPSWORKSCM_API ExportServerEngineAttributeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
      * is <code>Userdata</code>. This exports a user data script that includes
      * parameters and values provided in the <code>InputAttributes</code> list.</p>
      */
-    inline const Aws::String& GetExportAttributeName() const{ return m_exportAttributeName; }
+    inline const Aws::String& GetExportAttributeName() const { return m_exportAttributeName; }
     inline bool ExportAttributeNameHasBeenSet() const { return m_exportAttributeNameHasBeenSet; }
-    inline void SetExportAttributeName(const Aws::String& value) { m_exportAttributeNameHasBeenSet = true; m_exportAttributeName = value; }
-    inline void SetExportAttributeName(Aws::String&& value) { m_exportAttributeNameHasBeenSet = true; m_exportAttributeName = std::move(value); }
-    inline void SetExportAttributeName(const char* value) { m_exportAttributeNameHasBeenSet = true; m_exportAttributeName.assign(value); }
-    inline ExportServerEngineAttributeRequest& WithExportAttributeName(const Aws::String& value) { SetExportAttributeName(value); return *this;}
-    inline ExportServerEngineAttributeRequest& WithExportAttributeName(Aws::String&& value) { SetExportAttributeName(std::move(value)); return *this;}
-    inline ExportServerEngineAttributeRequest& WithExportAttributeName(const char* value) { SetExportAttributeName(value); return *this;}
+    template<typename ExportAttributeNameT = Aws::String>
+    void SetExportAttributeName(ExportAttributeNameT&& value) { m_exportAttributeNameHasBeenSet = true; m_exportAttributeName = std::forward<ExportAttributeNameT>(value); }
+    template<typename ExportAttributeNameT = Aws::String>
+    ExportServerEngineAttributeRequest& WithExportAttributeName(ExportAttributeNameT&& value) { SetExportAttributeName(std::forward<ExportAttributeNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the server from which you are exporting the attribute.</p>
      */
-    inline const Aws::String& GetServerName() const{ return m_serverName; }
+    inline const Aws::String& GetServerName() const { return m_serverName; }
     inline bool ServerNameHasBeenSet() const { return m_serverNameHasBeenSet; }
-    inline void SetServerName(const Aws::String& value) { m_serverNameHasBeenSet = true; m_serverName = value; }
-    inline void SetServerName(Aws::String&& value) { m_serverNameHasBeenSet = true; m_serverName = std::move(value); }
-    inline void SetServerName(const char* value) { m_serverNameHasBeenSet = true; m_serverName.assign(value); }
-    inline ExportServerEngineAttributeRequest& WithServerName(const Aws::String& value) { SetServerName(value); return *this;}
-    inline ExportServerEngineAttributeRequest& WithServerName(Aws::String&& value) { SetServerName(std::move(value)); return *this;}
-    inline ExportServerEngineAttributeRequest& WithServerName(const char* value) { SetServerName(value); return *this;}
+    template<typename ServerNameT = Aws::String>
+    void SetServerName(ServerNameT&& value) { m_serverNameHasBeenSet = true; m_serverName = std::forward<ServerNameT>(value); }
+    template<typename ServerNameT = Aws::String>
+    ExportServerEngineAttributeRequest& WithServerName(ServerNameT&& value) { SetServerName(std::forward<ServerNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,14 +79,14 @@ namespace Model
      * OpsWorks for Chef Automate uses the most current version. In Puppet, this
      * parameter is ignored.</p> </li> </ul>
      */
-    inline const Aws::Vector<EngineAttribute>& GetInputAttributes() const{ return m_inputAttributes; }
+    inline const Aws::Vector<EngineAttribute>& GetInputAttributes() const { return m_inputAttributes; }
     inline bool InputAttributesHasBeenSet() const { return m_inputAttributesHasBeenSet; }
-    inline void SetInputAttributes(const Aws::Vector<EngineAttribute>& value) { m_inputAttributesHasBeenSet = true; m_inputAttributes = value; }
-    inline void SetInputAttributes(Aws::Vector<EngineAttribute>&& value) { m_inputAttributesHasBeenSet = true; m_inputAttributes = std::move(value); }
-    inline ExportServerEngineAttributeRequest& WithInputAttributes(const Aws::Vector<EngineAttribute>& value) { SetInputAttributes(value); return *this;}
-    inline ExportServerEngineAttributeRequest& WithInputAttributes(Aws::Vector<EngineAttribute>&& value) { SetInputAttributes(std::move(value)); return *this;}
-    inline ExportServerEngineAttributeRequest& AddInputAttributes(const EngineAttribute& value) { m_inputAttributesHasBeenSet = true; m_inputAttributes.push_back(value); return *this; }
-    inline ExportServerEngineAttributeRequest& AddInputAttributes(EngineAttribute&& value) { m_inputAttributesHasBeenSet = true; m_inputAttributes.push_back(std::move(value)); return *this; }
+    template<typename InputAttributesT = Aws::Vector<EngineAttribute>>
+    void SetInputAttributes(InputAttributesT&& value) { m_inputAttributesHasBeenSet = true; m_inputAttributes = std::forward<InputAttributesT>(value); }
+    template<typename InputAttributesT = Aws::Vector<EngineAttribute>>
+    ExportServerEngineAttributeRequest& WithInputAttributes(InputAttributesT&& value) { SetInputAttributes(std::forward<InputAttributesT>(value)); return *this;}
+    template<typename InputAttributesT = EngineAttribute>
+    ExportServerEngineAttributeRequest& AddInputAttributes(InputAttributesT&& value) { m_inputAttributesHasBeenSet = true; m_inputAttributes.emplace_back(std::forward<InputAttributesT>(value)); return *this; }
     ///@}
   private:
 

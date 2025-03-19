@@ -22,7 +22,7 @@ namespace Model
   class UpdateResolverTypeRequest : public SecurityIRRequest
   {
   public:
-    AWS_SECURITYIR_API UpdateResolverTypeRequest();
+    AWS_SECURITYIR_API UpdateResolverTypeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,33 +37,29 @@ namespace Model
     /**
      * <p>Required element for UpdateResolverType to identify the case to update.</p>
      */
-    inline const Aws::String& GetCaseId() const{ return m_caseId; }
+    inline const Aws::String& GetCaseId() const { return m_caseId; }
     inline bool CaseIdHasBeenSet() const { return m_caseIdHasBeenSet; }
-    inline void SetCaseId(const Aws::String& value) { m_caseIdHasBeenSet = true; m_caseId = value; }
-    inline void SetCaseId(Aws::String&& value) { m_caseIdHasBeenSet = true; m_caseId = std::move(value); }
-    inline void SetCaseId(const char* value) { m_caseIdHasBeenSet = true; m_caseId.assign(value); }
-    inline UpdateResolverTypeRequest& WithCaseId(const Aws::String& value) { SetCaseId(value); return *this;}
-    inline UpdateResolverTypeRequest& WithCaseId(Aws::String&& value) { SetCaseId(std::move(value)); return *this;}
-    inline UpdateResolverTypeRequest& WithCaseId(const char* value) { SetCaseId(value); return *this;}
+    template<typename CaseIdT = Aws::String>
+    void SetCaseId(CaseIdT&& value) { m_caseIdHasBeenSet = true; m_caseId = std::forward<CaseIdT>(value); }
+    template<typename CaseIdT = Aws::String>
+    UpdateResolverTypeRequest& WithCaseId(CaseIdT&& value) { SetCaseId(std::forward<CaseIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Required element for UpdateResolverType to identify the new resolver.</p>
      */
-    inline const ResolverType& GetResolverType() const{ return m_resolverType; }
+    inline ResolverType GetResolverType() const { return m_resolverType; }
     inline bool ResolverTypeHasBeenSet() const { return m_resolverTypeHasBeenSet; }
-    inline void SetResolverType(const ResolverType& value) { m_resolverTypeHasBeenSet = true; m_resolverType = value; }
-    inline void SetResolverType(ResolverType&& value) { m_resolverTypeHasBeenSet = true; m_resolverType = std::move(value); }
-    inline UpdateResolverTypeRequest& WithResolverType(const ResolverType& value) { SetResolverType(value); return *this;}
-    inline UpdateResolverTypeRequest& WithResolverType(ResolverType&& value) { SetResolverType(std::move(value)); return *this;}
+    inline void SetResolverType(ResolverType value) { m_resolverTypeHasBeenSet = true; m_resolverType = value; }
+    inline UpdateResolverTypeRequest& WithResolverType(ResolverType value) { SetResolverType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_caseId;
     bool m_caseIdHasBeenSet = false;
 
-    ResolverType m_resolverType;
+    ResolverType m_resolverType{ResolverType::NOT_SET};
     bool m_resolverTypeHasBeenSet = false;
   };
 

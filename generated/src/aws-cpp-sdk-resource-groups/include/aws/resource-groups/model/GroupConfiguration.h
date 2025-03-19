@@ -41,7 +41,7 @@ namespace Model
   class GroupConfiguration
   {
   public:
-    AWS_RESOURCEGROUPS_API GroupConfiguration();
+    AWS_RESOURCEGROUPS_API GroupConfiguration() = default;
     AWS_RESOURCEGROUPS_API GroupConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESOURCEGROUPS_API GroupConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESOURCEGROUPS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,14 @@ namespace Model
     /**
      * <p>The configuration currently associated with the group and in effect.</p>
      */
-    inline const Aws::Vector<GroupConfigurationItem>& GetConfiguration() const{ return m_configuration; }
+    inline const Aws::Vector<GroupConfigurationItem>& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const Aws::Vector<GroupConfigurationItem>& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(Aws::Vector<GroupConfigurationItem>&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline GroupConfiguration& WithConfiguration(const Aws::Vector<GroupConfigurationItem>& value) { SetConfiguration(value); return *this;}
-    inline GroupConfiguration& WithConfiguration(Aws::Vector<GroupConfigurationItem>&& value) { SetConfiguration(std::move(value)); return *this;}
-    inline GroupConfiguration& AddConfiguration(const GroupConfigurationItem& value) { m_configurationHasBeenSet = true; m_configuration.push_back(value); return *this; }
-    inline GroupConfiguration& AddConfiguration(GroupConfigurationItem&& value) { m_configurationHasBeenSet = true; m_configuration.push_back(std::move(value)); return *this; }
+    template<typename ConfigurationT = Aws::Vector<GroupConfigurationItem>>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = Aws::Vector<GroupConfigurationItem>>
+    GroupConfiguration& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
+    template<typename ConfigurationT = GroupConfigurationItem>
+    GroupConfiguration& AddConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration.emplace_back(std::forward<ConfigurationT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -66,26 +66,24 @@ namespace Model
      * <p>If present, the new configuration that is in the process of being applied to
      * the group.</p>
      */
-    inline const Aws::Vector<GroupConfigurationItem>& GetProposedConfiguration() const{ return m_proposedConfiguration; }
+    inline const Aws::Vector<GroupConfigurationItem>& GetProposedConfiguration() const { return m_proposedConfiguration; }
     inline bool ProposedConfigurationHasBeenSet() const { return m_proposedConfigurationHasBeenSet; }
-    inline void SetProposedConfiguration(const Aws::Vector<GroupConfigurationItem>& value) { m_proposedConfigurationHasBeenSet = true; m_proposedConfiguration = value; }
-    inline void SetProposedConfiguration(Aws::Vector<GroupConfigurationItem>&& value) { m_proposedConfigurationHasBeenSet = true; m_proposedConfiguration = std::move(value); }
-    inline GroupConfiguration& WithProposedConfiguration(const Aws::Vector<GroupConfigurationItem>& value) { SetProposedConfiguration(value); return *this;}
-    inline GroupConfiguration& WithProposedConfiguration(Aws::Vector<GroupConfigurationItem>&& value) { SetProposedConfiguration(std::move(value)); return *this;}
-    inline GroupConfiguration& AddProposedConfiguration(const GroupConfigurationItem& value) { m_proposedConfigurationHasBeenSet = true; m_proposedConfiguration.push_back(value); return *this; }
-    inline GroupConfiguration& AddProposedConfiguration(GroupConfigurationItem&& value) { m_proposedConfigurationHasBeenSet = true; m_proposedConfiguration.push_back(std::move(value)); return *this; }
+    template<typename ProposedConfigurationT = Aws::Vector<GroupConfigurationItem>>
+    void SetProposedConfiguration(ProposedConfigurationT&& value) { m_proposedConfigurationHasBeenSet = true; m_proposedConfiguration = std::forward<ProposedConfigurationT>(value); }
+    template<typename ProposedConfigurationT = Aws::Vector<GroupConfigurationItem>>
+    GroupConfiguration& WithProposedConfiguration(ProposedConfigurationT&& value) { SetProposedConfiguration(std::forward<ProposedConfigurationT>(value)); return *this;}
+    template<typename ProposedConfigurationT = GroupConfigurationItem>
+    GroupConfiguration& AddProposedConfiguration(ProposedConfigurationT&& value) { m_proposedConfigurationHasBeenSet = true; m_proposedConfiguration.emplace_back(std::forward<ProposedConfigurationT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The current status of an attempt to update the group configuration.</p>
      */
-    inline const GroupConfigurationStatus& GetStatus() const{ return m_status; }
+    inline GroupConfigurationStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const GroupConfigurationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(GroupConfigurationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline GroupConfiguration& WithStatus(const GroupConfigurationStatus& value) { SetStatus(value); return *this;}
-    inline GroupConfiguration& WithStatus(GroupConfigurationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(GroupConfigurationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GroupConfiguration& WithStatus(GroupConfigurationStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -93,14 +91,12 @@ namespace Model
      * <p>If present, the reason why a request to update the group configuration
      * failed.</p>
      */
-    inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
+    inline const Aws::String& GetFailureReason() const { return m_failureReason; }
     inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
-    inline void SetFailureReason(const Aws::String& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
-    inline void SetFailureReason(Aws::String&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
-    inline void SetFailureReason(const char* value) { m_failureReasonHasBeenSet = true; m_failureReason.assign(value); }
-    inline GroupConfiguration& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
-    inline GroupConfiguration& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
-    inline GroupConfiguration& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+    template<typename FailureReasonT = Aws::String>
+    void SetFailureReason(FailureReasonT&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::forward<FailureReasonT>(value); }
+    template<typename FailureReasonT = Aws::String>
+    GroupConfiguration& WithFailureReason(FailureReasonT&& value) { SetFailureReason(std::forward<FailureReasonT>(value)); return *this;}
     ///@}
   private:
 
@@ -110,7 +106,7 @@ namespace Model
     Aws::Vector<GroupConfigurationItem> m_proposedConfiguration;
     bool m_proposedConfigurationHasBeenSet = false;
 
-    GroupConfigurationStatus m_status;
+    GroupConfigurationStatus m_status{GroupConfigurationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_failureReason;

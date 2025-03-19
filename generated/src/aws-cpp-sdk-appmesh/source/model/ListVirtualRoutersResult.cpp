@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListVirtualRoutersResult::ListVirtualRoutersResult()
-{
-}
-
 ListVirtualRoutersResult::ListVirtualRoutersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListVirtualRoutersResult& ListVirtualRoutersResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("virtualRouters"))
   {
     Aws::Utils::Array<JsonView> virtualRoutersJsonList = jsonValue.GetArray("virtualRouters");
@@ -42,14 +37,15 @@ ListVirtualRoutersResult& ListVirtualRoutersResult::operator =(const Aws::Amazon
     {
       m_virtualRouters.push_back(virtualRoutersJsonList[virtualRoutersIndex].AsObject());
     }
+    m_virtualRoutersHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

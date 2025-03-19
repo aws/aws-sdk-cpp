@@ -32,7 +32,7 @@ namespace Model
   class NamedEntityRef
   {
   public:
-    AWS_QUICKSIGHT_API NamedEntityRef();
+    AWS_QUICKSIGHT_API NamedEntityRef() = default;
     AWS_QUICKSIGHT_API NamedEntityRef(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API NamedEntityRef& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The <code>NamedEntityName</code> for the <code>NamedEntityRef</code>.</p>
      */
-    inline const Aws::String& GetNamedEntityName() const{ return m_namedEntityName; }
+    inline const Aws::String& GetNamedEntityName() const { return m_namedEntityName; }
     inline bool NamedEntityNameHasBeenSet() const { return m_namedEntityNameHasBeenSet; }
-    inline void SetNamedEntityName(const Aws::String& value) { m_namedEntityNameHasBeenSet = true; m_namedEntityName = value; }
-    inline void SetNamedEntityName(Aws::String&& value) { m_namedEntityNameHasBeenSet = true; m_namedEntityName = std::move(value); }
-    inline void SetNamedEntityName(const char* value) { m_namedEntityNameHasBeenSet = true; m_namedEntityName.assign(value); }
-    inline NamedEntityRef& WithNamedEntityName(const Aws::String& value) { SetNamedEntityName(value); return *this;}
-    inline NamedEntityRef& WithNamedEntityName(Aws::String&& value) { SetNamedEntityName(std::move(value)); return *this;}
-    inline NamedEntityRef& WithNamedEntityName(const char* value) { SetNamedEntityName(value); return *this;}
+    template<typename NamedEntityNameT = Aws::String>
+    void SetNamedEntityName(NamedEntityNameT&& value) { m_namedEntityNameHasBeenSet = true; m_namedEntityName = std::forward<NamedEntityNameT>(value); }
+    template<typename NamedEntityNameT = Aws::String>
+    NamedEntityRef& WithNamedEntityName(NamedEntityNameT&& value) { SetNamedEntityName(std::forward<NamedEntityNameT>(value)); return *this;}
     ///@}
   private:
 

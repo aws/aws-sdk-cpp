@@ -18,17 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-AnalysisSearchFilter::AnalysisSearchFilter() : 
-    m_operator(FilterOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_name(AnalysisFilterAttribute::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 AnalysisSearchFilter::AnalysisSearchFilter(JsonView jsonValue)
-  : AnalysisSearchFilter()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ AnalysisSearchFilter& AnalysisSearchFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Operator"))
   {
     m_operator = FilterOperatorMapper::GetFilterOperatorForName(jsonValue.GetString("Operator"));
-
     m_operatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = AnalysisFilterAttributeMapper::GetAnalysisFilterAttributeForName(jsonValue.GetString("Name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

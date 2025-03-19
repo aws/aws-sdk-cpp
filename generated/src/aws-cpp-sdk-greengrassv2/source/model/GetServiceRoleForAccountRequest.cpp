@@ -12,10 +12,6 @@ using namespace Aws::GreengrassV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetServiceRoleForAccountRequest::GetServiceRoleForAccountRequest()
-{
-}
-
 Aws::String GetServiceRoleForAccountRequest::SerializePayload() const
 {
   return {};

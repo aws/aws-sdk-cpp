@@ -12,14 +12,6 @@ using namespace Aws::B2BI::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GenerateMappingRequest::GenerateMappingRequest() : 
-    m_inputFileContentHasBeenSet(false),
-    m_outputFileContentHasBeenSet(false),
-    m_mappingType(MappingType::NOT_SET),
-    m_mappingTypeHasBeenSet(false)
-{
-}
-
 Aws::String GenerateMappingRequest::SerializePayload() const
 {
   JsonValue payload;

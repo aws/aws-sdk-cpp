@@ -18,15 +18,7 @@ namespace Transfer
 namespace Model
 {
 
-ListedWorkflow::ListedWorkflow() : 
-    m_workflowIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_arnHasBeenSet(false)
-{
-}
-
 ListedWorkflow::ListedWorkflow(JsonView jsonValue)
-  : ListedWorkflow()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ListedWorkflow& ListedWorkflow::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("WorkflowId"))
   {
     m_workflowId = jsonValue.GetString("WorkflowId");
-
     m_workflowIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

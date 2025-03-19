@@ -12,15 +12,6 @@ using namespace Aws::kendra::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeletePrincipalMappingRequest::DeletePrincipalMappingRequest() : 
-    m_indexIdHasBeenSet(false),
-    m_dataSourceIdHasBeenSet(false),
-    m_groupIdHasBeenSet(false),
-    m_orderingId(0),
-    m_orderingIdHasBeenSet(false)
-{
-}
-
 Aws::String DeletePrincipalMappingRequest::SerializePayload() const
 {
   JsonValue payload;

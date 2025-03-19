@@ -31,7 +31,7 @@ namespace Model
   class TableCreationConfiguration
   {
   public:
-    AWS_FIREHOSE_API TableCreationConfiguration();
+    AWS_FIREHOSE_API TableCreationConfiguration() = default;
     AWS_FIREHOSE_API TableCreationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API TableCreationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
      * <p> Specify whether you want to enable automatic table creation. </p> <p>Amazon
      * Data Firehose is in preview release and is subject to change.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline TableCreationConfiguration& WithEnabled(bool value) { SetEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
   };
 

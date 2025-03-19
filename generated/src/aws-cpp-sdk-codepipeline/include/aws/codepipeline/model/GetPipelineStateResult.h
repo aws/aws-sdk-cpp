@@ -36,7 +36,7 @@ namespace Model
   class GetPipelineStateResult
   {
   public:
-    AWS_CODEPIPELINE_API GetPipelineStateResult();
+    AWS_CODEPIPELINE_API GetPipelineStateResult() = default;
     AWS_CODEPIPELINE_API GetPipelineStateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODEPIPELINE_API GetPipelineStateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,13 +45,11 @@ namespace Model
     /**
      * <p>The name of the pipeline for which you want to get the state.</p>
      */
-    inline const Aws::String& GetPipelineName() const{ return m_pipelineName; }
-    inline void SetPipelineName(const Aws::String& value) { m_pipelineName = value; }
-    inline void SetPipelineName(Aws::String&& value) { m_pipelineName = std::move(value); }
-    inline void SetPipelineName(const char* value) { m_pipelineName.assign(value); }
-    inline GetPipelineStateResult& WithPipelineName(const Aws::String& value) { SetPipelineName(value); return *this;}
-    inline GetPipelineStateResult& WithPipelineName(Aws::String&& value) { SetPipelineName(std::move(value)); return *this;}
-    inline GetPipelineStateResult& WithPipelineName(const char* value) { SetPipelineName(value); return *this;}
+    inline const Aws::String& GetPipelineName() const { return m_pipelineName; }
+    template<typename PipelineNameT = Aws::String>
+    void SetPipelineName(PipelineNameT&& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = std::forward<PipelineNameT>(value); }
+    template<typename PipelineNameT = Aws::String>
+    GetPipelineStateResult& WithPipelineName(PipelineNameT&& value) { SetPipelineName(std::forward<PipelineNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,8 +57,8 @@ namespace Model
      * <p>The version number of the pipeline.</p>  <p>A newly created pipeline is
      * always assigned a version number of <code>1</code>.</p> 
      */
-    inline int GetPipelineVersion() const{ return m_pipelineVersion; }
-    inline void SetPipelineVersion(int value) { m_pipelineVersion = value; }
+    inline int GetPipelineVersion() const { return m_pipelineVersion; }
+    inline void SetPipelineVersion(int value) { m_pipelineVersionHasBeenSet = true; m_pipelineVersion = value; }
     inline GetPipelineStateResult& WithPipelineVersion(int value) { SetPipelineVersion(value); return *this;}
     ///@}
 
@@ -69,60 +67,64 @@ namespace Model
      * <p>A list of the pipeline stage output information, including stage name, state,
      * most recent run details, whether the stage is disabled, and other data.</p>
      */
-    inline const Aws::Vector<StageState>& GetStageStates() const{ return m_stageStates; }
-    inline void SetStageStates(const Aws::Vector<StageState>& value) { m_stageStates = value; }
-    inline void SetStageStates(Aws::Vector<StageState>&& value) { m_stageStates = std::move(value); }
-    inline GetPipelineStateResult& WithStageStates(const Aws::Vector<StageState>& value) { SetStageStates(value); return *this;}
-    inline GetPipelineStateResult& WithStageStates(Aws::Vector<StageState>&& value) { SetStageStates(std::move(value)); return *this;}
-    inline GetPipelineStateResult& AddStageStates(const StageState& value) { m_stageStates.push_back(value); return *this; }
-    inline GetPipelineStateResult& AddStageStates(StageState&& value) { m_stageStates.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<StageState>& GetStageStates() const { return m_stageStates; }
+    template<typename StageStatesT = Aws::Vector<StageState>>
+    void SetStageStates(StageStatesT&& value) { m_stageStatesHasBeenSet = true; m_stageStates = std::forward<StageStatesT>(value); }
+    template<typename StageStatesT = Aws::Vector<StageState>>
+    GetPipelineStateResult& WithStageStates(StageStatesT&& value) { SetStageStates(std::forward<StageStatesT>(value)); return *this;}
+    template<typename StageStatesT = StageState>
+    GetPipelineStateResult& AddStageStates(StageStatesT&& value) { m_stageStatesHasBeenSet = true; m_stageStates.emplace_back(std::forward<StageStatesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The date and time the pipeline was created, in timestamp format.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreated() const{ return m_created; }
-    inline void SetCreated(const Aws::Utils::DateTime& value) { m_created = value; }
-    inline void SetCreated(Aws::Utils::DateTime&& value) { m_created = std::move(value); }
-    inline GetPipelineStateResult& WithCreated(const Aws::Utils::DateTime& value) { SetCreated(value); return *this;}
-    inline GetPipelineStateResult& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreated() const { return m_created; }
+    template<typename CreatedT = Aws::Utils::DateTime>
+    void SetCreated(CreatedT&& value) { m_createdHasBeenSet = true; m_created = std::forward<CreatedT>(value); }
+    template<typename CreatedT = Aws::Utils::DateTime>
+    GetPipelineStateResult& WithCreated(CreatedT&& value) { SetCreated(std::forward<CreatedT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time the pipeline was last updated, in timestamp format.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdated() const{ return m_updated; }
-    inline void SetUpdated(const Aws::Utils::DateTime& value) { m_updated = value; }
-    inline void SetUpdated(Aws::Utils::DateTime&& value) { m_updated = std::move(value); }
-    inline GetPipelineStateResult& WithUpdated(const Aws::Utils::DateTime& value) { SetUpdated(value); return *this;}
-    inline GetPipelineStateResult& WithUpdated(Aws::Utils::DateTime&& value) { SetUpdated(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetUpdated() const { return m_updated; }
+    template<typename UpdatedT = Aws::Utils::DateTime>
+    void SetUpdated(UpdatedT&& value) { m_updatedHasBeenSet = true; m_updated = std::forward<UpdatedT>(value); }
+    template<typename UpdatedT = Aws::Utils::DateTime>
+    GetPipelineStateResult& WithUpdated(UpdatedT&& value) { SetUpdated(std::forward<UpdatedT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetPipelineStateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetPipelineStateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetPipelineStateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetPipelineStateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_pipelineName;
+    bool m_pipelineNameHasBeenSet = false;
 
-    int m_pipelineVersion;
+    int m_pipelineVersion{0};
+    bool m_pipelineVersionHasBeenSet = false;
 
     Aws::Vector<StageState> m_stageStates;
+    bool m_stageStatesHasBeenSet = false;
 
-    Aws::Utils::DateTime m_created;
+    Aws::Utils::DateTime m_created{};
+    bool m_createdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updated;
+    Aws::Utils::DateTime m_updated{};
+    bool m_updatedHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

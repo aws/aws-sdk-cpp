@@ -18,20 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-AnomalySubscription::AnomalySubscription() : 
-    m_subscriptionArnHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_monitorArnListHasBeenSet(false),
-    m_subscribersHasBeenSet(false),
-    m_frequency(AnomalySubscriptionFrequency::NOT_SET),
-    m_frequencyHasBeenSet(false),
-    m_subscriptionNameHasBeenSet(false),
-    m_thresholdExpressionHasBeenSet(false)
-{
-}
-
 AnomalySubscription::AnomalySubscription(JsonView jsonValue)
-  : AnomalySubscription()
 {
   *this = jsonValue;
 }
@@ -41,17 +28,13 @@ AnomalySubscription& AnomalySubscription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SubscriptionArn"))
   {
     m_subscriptionArn = jsonValue.GetString("SubscriptionArn");
-
     m_subscriptionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MonitorArnList"))
   {
     Aws::Utils::Array<JsonView> monitorArnListJsonList = jsonValue.GetArray("MonitorArnList");
@@ -61,7 +44,6 @@ AnomalySubscription& AnomalySubscription::operator =(JsonView jsonValue)
     }
     m_monitorArnListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Subscribers"))
   {
     Aws::Utils::Array<JsonView> subscribersJsonList = jsonValue.GetArray("Subscribers");
@@ -71,28 +53,21 @@ AnomalySubscription& AnomalySubscription::operator =(JsonView jsonValue)
     }
     m_subscribersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Frequency"))
   {
     m_frequency = AnomalySubscriptionFrequencyMapper::GetAnomalySubscriptionFrequencyForName(jsonValue.GetString("Frequency"));
-
     m_frequencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubscriptionName"))
   {
     m_subscriptionName = jsonValue.GetString("SubscriptionName");
-
     m_subscriptionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ThresholdExpression"))
   {
     m_thresholdExpression = jsonValue.GetObject("ThresholdExpression");
-
     m_thresholdExpressionHasBeenSet = true;
   }
-
   return *this;
 }
 

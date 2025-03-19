@@ -12,11 +12,6 @@ using namespace Aws::GuardDuty::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAdministratorAccountRequest::GetAdministratorAccountRequest() : 
-    m_detectorIdHasBeenSet(false)
-{
-}
-
 Aws::String GetAdministratorAccountRequest::SerializePayload() const
 {
   return {};

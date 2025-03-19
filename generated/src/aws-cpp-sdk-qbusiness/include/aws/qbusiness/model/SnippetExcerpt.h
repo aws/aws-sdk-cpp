@@ -33,7 +33,7 @@ namespace Model
   class SnippetExcerpt
   {
   public:
-    AWS_QBUSINESS_API SnippetExcerpt();
+    AWS_QBUSINESS_API SnippetExcerpt() = default;
     AWS_QBUSINESS_API SnippetExcerpt(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API SnippetExcerpt& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The relevant text excerpt from a source that was used to generate a citation
      * text segment in an Amazon Q chat response.</p>
      */
-    inline const Aws::String& GetText() const{ return m_text; }
+    inline const Aws::String& GetText() const { return m_text; }
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-    inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-    inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-    inline SnippetExcerpt& WithText(const Aws::String& value) { SetText(value); return *this;}
-    inline SnippetExcerpt& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-    inline SnippetExcerpt& WithText(const char* value) { SetText(value); return *this;}
+    template<typename TextT = Aws::String>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = Aws::String>
+    SnippetExcerpt& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
   private:
 

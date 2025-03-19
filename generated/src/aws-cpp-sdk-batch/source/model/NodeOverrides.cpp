@@ -18,15 +18,7 @@ namespace Batch
 namespace Model
 {
 
-NodeOverrides::NodeOverrides() : 
-    m_numNodes(0),
-    m_numNodesHasBeenSet(false),
-    m_nodePropertyOverridesHasBeenSet(false)
-{
-}
-
 NodeOverrides::NodeOverrides(JsonView jsonValue)
-  : NodeOverrides()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ NodeOverrides& NodeOverrides::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("numNodes"))
   {
     m_numNodes = jsonValue.GetInteger("numNodes");
-
     m_numNodesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nodePropertyOverrides"))
   {
     Aws::Utils::Array<JsonView> nodePropertyOverridesJsonList = jsonValue.GetArray("nodePropertyOverrides");
@@ -49,7 +39,6 @@ NodeOverrides& NodeOverrides::operator =(JsonView jsonValue)
     }
     m_nodePropertyOverridesHasBeenSet = true;
   }
-
   return *this;
 }
 

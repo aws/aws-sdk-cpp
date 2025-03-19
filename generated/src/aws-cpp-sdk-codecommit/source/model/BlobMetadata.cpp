@@ -18,15 +18,7 @@ namespace CodeCommit
 namespace Model
 {
 
-BlobMetadata::BlobMetadata() : 
-    m_blobIdHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_modeHasBeenSet(false)
-{
-}
-
 BlobMetadata::BlobMetadata(JsonView jsonValue)
-  : BlobMetadata()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ BlobMetadata& BlobMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("blobId"))
   {
     m_blobId = jsonValue.GetString("blobId");
-
     m_blobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("path"))
   {
     m_path = jsonValue.GetString("path");
-
     m_pathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mode"))
   {
     m_mode = jsonValue.GetString("mode");
-
     m_modeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace ApplicationSignals
 namespace Model
 {
 
-ExclusionWindow::ExclusionWindow() : 
-    m_windowHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_recurrenceRuleHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 ExclusionWindow::ExclusionWindow(JsonView jsonValue)
-  : ExclusionWindow()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ExclusionWindow& ExclusionWindow::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Window"))
   {
     m_window = jsonValue.GetObject("Window");
-
     m_windowHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecurrenceRule"))
   {
     m_recurrenceRule = jsonValue.GetObject("RecurrenceRule");
-
     m_recurrenceRuleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Reason"))
   {
     m_reason = jsonValue.GetString("Reason");
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

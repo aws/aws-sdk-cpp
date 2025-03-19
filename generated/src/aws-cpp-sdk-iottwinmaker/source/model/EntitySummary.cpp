@@ -18,22 +18,7 @@ namespace IoTTwinMaker
 namespace Model
 {
 
-EntitySummary::EntitySummary() : 
-    m_entityIdHasBeenSet(false),
-    m_entityNameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_parentEntityIdHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_hasChildEntities(false),
-    m_hasChildEntitiesHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_updateDateTimeHasBeenSet(false)
-{
-}
-
 EntitySummary::EntitySummary(JsonView jsonValue)
-  : EntitySummary()
 {
   *this = jsonValue;
 }
@@ -43,66 +28,48 @@ EntitySummary& EntitySummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("entityId"))
   {
     m_entityId = jsonValue.GetString("entityId");
-
     m_entityIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("entityName"))
   {
     m_entityName = jsonValue.GetString("entityName");
-
     m_entityNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parentEntityId"))
   {
     m_parentEntityId = jsonValue.GetString("parentEntityId");
-
     m_parentEntityIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetObject("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hasChildEntities"))
   {
     m_hasChildEntities = jsonValue.GetBool("hasChildEntities");
-
     m_hasChildEntitiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
-
     m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateDateTime"))
   {
     m_updateDateTime = jsonValue.GetDouble("updateDateTime");
-
     m_updateDateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

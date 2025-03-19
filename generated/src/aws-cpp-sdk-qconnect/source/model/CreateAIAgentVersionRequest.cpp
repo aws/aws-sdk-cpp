@@ -12,15 +12,6 @@ using namespace Aws::QConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAIAgentVersionRequest::CreateAIAgentVersionRequest() : 
-    m_aiAgentIdHasBeenSet(false),
-    m_assistantIdHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_modifiedTimeHasBeenSet(false)
-{
-}
-
 Aws::String CreateAIAgentVersionRequest::SerializePayload() const
 {
   JsonValue payload;

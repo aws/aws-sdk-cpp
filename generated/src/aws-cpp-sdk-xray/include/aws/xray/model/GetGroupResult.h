@@ -28,7 +28,7 @@ namespace Model
   class GetGroupResult
   {
   public:
-    AWS_XRAY_API GetGroupResult();
+    AWS_XRAY_API GetGroupResult() = default;
     AWS_XRAY_API GetGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_XRAY_API GetGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,28 +39,28 @@ namespace Model
      * group, the filter expression, and the insight configuration assigned to the
      * group.</p>
      */
-    inline const Group& GetGroup() const{ return m_group; }
-    inline void SetGroup(const Group& value) { m_group = value; }
-    inline void SetGroup(Group&& value) { m_group = std::move(value); }
-    inline GetGroupResult& WithGroup(const Group& value) { SetGroup(value); return *this;}
-    inline GetGroupResult& WithGroup(Group&& value) { SetGroup(std::move(value)); return *this;}
+    inline const Group& GetGroup() const { return m_group; }
+    template<typename GroupT = Group>
+    void SetGroup(GroupT&& value) { m_groupHasBeenSet = true; m_group = std::forward<GroupT>(value); }
+    template<typename GroupT = Group>
+    GetGroupResult& WithGroup(GroupT&& value) { SetGroup(std::forward<GroupT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetGroupResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Group m_group;
+    bool m_groupHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

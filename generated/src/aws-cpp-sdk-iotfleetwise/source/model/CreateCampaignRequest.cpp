@@ -12,31 +12,6 @@ using namespace Aws::IoTFleetWise::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateCampaignRequest::CreateCampaignRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_signalCatalogArnHasBeenSet(false),
-    m_targetArnHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_expiryTimeHasBeenSet(false),
-    m_postTriggerCollectionDuration(0),
-    m_postTriggerCollectionDurationHasBeenSet(false),
-    m_diagnosticsMode(DiagnosticsMode::NOT_SET),
-    m_diagnosticsModeHasBeenSet(false),
-    m_spoolingMode(SpoolingMode::NOT_SET),
-    m_spoolingModeHasBeenSet(false),
-    m_compression(Compression::NOT_SET),
-    m_compressionHasBeenSet(false),
-    m_signalsToCollectHasBeenSet(false),
-    m_collectionSchemeHasBeenSet(false),
-    m_dataExtraDimensionsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_dataDestinationConfigsHasBeenSet(false),
-    m_dataPartitionsHasBeenSet(false),
-    m_signalsToFetchHasBeenSet(false)
-{
-}
-
 Aws::String CreateCampaignRequest::SerializePayload() const
 {
   JsonValue payload;

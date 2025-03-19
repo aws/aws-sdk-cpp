@@ -12,13 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAliasRequest::DeleteAliasRequest() : 
-    m_organizationIdHasBeenSet(false),
-    m_entityIdHasBeenSet(false),
-    m_aliasHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAliasRequest::SerializePayload() const
 {
   JsonValue payload;

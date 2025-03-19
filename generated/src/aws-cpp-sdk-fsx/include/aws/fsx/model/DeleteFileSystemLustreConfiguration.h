@@ -34,7 +34,7 @@ namespace Model
   class DeleteFileSystemLustreConfiguration
   {
   public:
-    AWS_FSX_API DeleteFileSystemLustreConfiguration();
+    AWS_FSX_API DeleteFileSystemLustreConfiguration() = default;
     AWS_FSX_API DeleteFileSystemLustreConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API DeleteFileSystemLustreConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,7 +50,7 @@ namespace Model
      * <code>false</code> in order to delete the file system and take a final
      * backup.</p> 
      */
-    inline bool GetSkipFinalBackup() const{ return m_skipFinalBackup; }
+    inline bool GetSkipFinalBackup() const { return m_skipFinalBackup; }
     inline bool SkipFinalBackupHasBeenSet() const { return m_skipFinalBackupHasBeenSet; }
     inline void SetSkipFinalBackup(bool value) { m_skipFinalBackupHasBeenSet = true; m_skipFinalBackup = value; }
     inline DeleteFileSystemLustreConfiguration& WithSkipFinalBackup(bool value) { SetSkipFinalBackup(value); return *this;}
@@ -64,18 +64,18 @@ namespace Model
      * more <code>FinalBackupTags</code> when deleting a file system, Amazon FSx will
      * not copy any existing file system tags to the backup.</p>
      */
-    inline const Aws::Vector<Tag>& GetFinalBackupTags() const{ return m_finalBackupTags; }
+    inline const Aws::Vector<Tag>& GetFinalBackupTags() const { return m_finalBackupTags; }
     inline bool FinalBackupTagsHasBeenSet() const { return m_finalBackupTagsHasBeenSet; }
-    inline void SetFinalBackupTags(const Aws::Vector<Tag>& value) { m_finalBackupTagsHasBeenSet = true; m_finalBackupTags = value; }
-    inline void SetFinalBackupTags(Aws::Vector<Tag>&& value) { m_finalBackupTagsHasBeenSet = true; m_finalBackupTags = std::move(value); }
-    inline DeleteFileSystemLustreConfiguration& WithFinalBackupTags(const Aws::Vector<Tag>& value) { SetFinalBackupTags(value); return *this;}
-    inline DeleteFileSystemLustreConfiguration& WithFinalBackupTags(Aws::Vector<Tag>&& value) { SetFinalBackupTags(std::move(value)); return *this;}
-    inline DeleteFileSystemLustreConfiguration& AddFinalBackupTags(const Tag& value) { m_finalBackupTagsHasBeenSet = true; m_finalBackupTags.push_back(value); return *this; }
-    inline DeleteFileSystemLustreConfiguration& AddFinalBackupTags(Tag&& value) { m_finalBackupTagsHasBeenSet = true; m_finalBackupTags.push_back(std::move(value)); return *this; }
+    template<typename FinalBackupTagsT = Aws::Vector<Tag>>
+    void SetFinalBackupTags(FinalBackupTagsT&& value) { m_finalBackupTagsHasBeenSet = true; m_finalBackupTags = std::forward<FinalBackupTagsT>(value); }
+    template<typename FinalBackupTagsT = Aws::Vector<Tag>>
+    DeleteFileSystemLustreConfiguration& WithFinalBackupTags(FinalBackupTagsT&& value) { SetFinalBackupTags(std::forward<FinalBackupTagsT>(value)); return *this;}
+    template<typename FinalBackupTagsT = Tag>
+    DeleteFileSystemLustreConfiguration& AddFinalBackupTags(FinalBackupTagsT&& value) { m_finalBackupTagsHasBeenSet = true; m_finalBackupTags.emplace_back(std::forward<FinalBackupTagsT>(value)); return *this; }
     ///@}
   private:
 
-    bool m_skipFinalBackup;
+    bool m_skipFinalBackup{false};
     bool m_skipFinalBackupHasBeenSet = false;
 
     Aws::Vector<Tag> m_finalBackupTags;

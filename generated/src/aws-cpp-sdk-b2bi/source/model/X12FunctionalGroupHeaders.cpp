@@ -18,15 +18,7 @@ namespace B2BI
 namespace Model
 {
 
-X12FunctionalGroupHeaders::X12FunctionalGroupHeaders() : 
-    m_applicationSenderCodeHasBeenSet(false),
-    m_applicationReceiverCodeHasBeenSet(false),
-    m_responsibleAgencyCodeHasBeenSet(false)
-{
-}
-
 X12FunctionalGroupHeaders::X12FunctionalGroupHeaders(JsonView jsonValue)
-  : X12FunctionalGroupHeaders()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ X12FunctionalGroupHeaders& X12FunctionalGroupHeaders::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("applicationSenderCode"))
   {
     m_applicationSenderCode = jsonValue.GetString("applicationSenderCode");
-
     m_applicationSenderCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("applicationReceiverCode"))
   {
     m_applicationReceiverCode = jsonValue.GetString("applicationReceiverCode");
-
     m_applicationReceiverCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("responsibleAgencyCode"))
   {
     m_responsibleAgencyCode = jsonValue.GetString("responsibleAgencyCode");
-
     m_responsibleAgencyCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

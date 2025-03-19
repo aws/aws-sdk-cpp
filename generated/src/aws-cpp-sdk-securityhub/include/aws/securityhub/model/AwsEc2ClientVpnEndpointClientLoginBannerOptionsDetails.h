@@ -33,7 +33,7 @@ namespace Model
   class AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetails();
+    AWS_SECURITYHUB_API AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetails() = default;
     AWS_SECURITYHUB_API AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p> Current state of text banner feature. </p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetails& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -54,18 +54,16 @@ namespace Model
      * <p> Customizable text that will be displayed in a banner on Amazon Web Services
      * provided clients when a VPN session is established. </p>
      */
-    inline const Aws::String& GetBannerText() const{ return m_bannerText; }
+    inline const Aws::String& GetBannerText() const { return m_bannerText; }
     inline bool BannerTextHasBeenSet() const { return m_bannerTextHasBeenSet; }
-    inline void SetBannerText(const Aws::String& value) { m_bannerTextHasBeenSet = true; m_bannerText = value; }
-    inline void SetBannerText(Aws::String&& value) { m_bannerTextHasBeenSet = true; m_bannerText = std::move(value); }
-    inline void SetBannerText(const char* value) { m_bannerTextHasBeenSet = true; m_bannerText.assign(value); }
-    inline AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetails& WithBannerText(const Aws::String& value) { SetBannerText(value); return *this;}
-    inline AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetails& WithBannerText(Aws::String&& value) { SetBannerText(std::move(value)); return *this;}
-    inline AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetails& WithBannerText(const char* value) { SetBannerText(value); return *this;}
+    template<typename BannerTextT = Aws::String>
+    void SetBannerText(BannerTextT&& value) { m_bannerTextHasBeenSet = true; m_bannerText = std::forward<BannerTextT>(value); }
+    template<typename BannerTextT = Aws::String>
+    AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetails& WithBannerText(BannerTextT&& value) { SetBannerText(std::forward<BannerTextT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
     Aws::String m_bannerText;

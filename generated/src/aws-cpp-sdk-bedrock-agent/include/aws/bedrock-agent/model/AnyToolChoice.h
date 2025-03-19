@@ -34,7 +34,7 @@ namespace Model
   class AnyToolChoice
   {
   public:
-    AWS_BEDROCKAGENT_API AnyToolChoice();
+    AWS_BEDROCKAGENT_API AnyToolChoice() = default;
     AWS_BEDROCKAGENT_API AnyToolChoice(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API AnyToolChoice& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;

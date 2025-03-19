@@ -10,21 +10,6 @@
 using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils;
 
-DescribeAlarmsRequest::DescribeAlarmsRequest() : 
-    m_alarmNamesHasBeenSet(false),
-    m_alarmNamePrefixHasBeenSet(false),
-    m_alarmTypesHasBeenSet(false),
-    m_childrenOfAlarmNameHasBeenSet(false),
-    m_parentsOfAlarmNameHasBeenSet(false),
-    m_stateValue(StateValue::NOT_SET),
-    m_stateValueHasBeenSet(false),
-    m_actionPrefixHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAlarmsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

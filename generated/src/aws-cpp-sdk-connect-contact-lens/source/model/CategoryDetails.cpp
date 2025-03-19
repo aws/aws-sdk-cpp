@@ -18,13 +18,7 @@ namespace ConnectContactLens
 namespace Model
 {
 
-CategoryDetails::CategoryDetails() : 
-    m_pointsOfInterestHasBeenSet(false)
-{
-}
-
 CategoryDetails::CategoryDetails(JsonView jsonValue)
-  : CategoryDetails()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ CategoryDetails& CategoryDetails::operator =(JsonView jsonValue)
     }
     m_pointsOfInterestHasBeenSet = true;
   }
-
   return *this;
 }
 

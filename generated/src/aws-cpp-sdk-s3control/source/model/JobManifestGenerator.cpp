@@ -20,13 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-JobManifestGenerator::JobManifestGenerator() : 
-    m_s3JobManifestGeneratorHasBeenSet(false)
-{
-}
-
 JobManifestGenerator::JobManifestGenerator(const XmlNode& xmlNode)
-  : JobManifestGenerator()
 {
   *this = xmlNode;
 }

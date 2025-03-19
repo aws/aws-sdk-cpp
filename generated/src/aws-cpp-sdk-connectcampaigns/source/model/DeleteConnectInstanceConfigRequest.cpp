@@ -12,11 +12,6 @@ using namespace Aws::ConnectCampaigns::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteConnectInstanceConfigRequest::DeleteConnectInstanceConfigRequest() : 
-    m_connectInstanceIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteConnectInstanceConfigRequest::SerializePayload() const
 {
   return {};

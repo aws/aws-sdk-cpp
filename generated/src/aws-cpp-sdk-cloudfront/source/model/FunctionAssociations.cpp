@@ -20,15 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-FunctionAssociations::FunctionAssociations() : 
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_itemsHasBeenSet(false)
-{
-}
-
 FunctionAssociations::FunctionAssociations(const XmlNode& xmlNode)
-  : FunctionAssociations()
 {
   *this = xmlNode;
 }
@@ -49,6 +41,7 @@ FunctionAssociations& FunctionAssociations::operator =(const XmlNode& xmlNode)
     if(!itemsNode.IsNull())
     {
       XmlNode itemsMember = itemsNode.FirstChild("FunctionAssociation");
+      m_itemsHasBeenSet = !itemsMember.IsNull();
       while(!itemsMember.IsNull())
       {
         m_items.push_back(itemsMember);

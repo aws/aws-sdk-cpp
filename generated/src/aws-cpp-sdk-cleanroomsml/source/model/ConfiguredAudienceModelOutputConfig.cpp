@@ -18,14 +18,7 @@ namespace CleanRoomsML
 namespace Model
 {
 
-ConfiguredAudienceModelOutputConfig::ConfiguredAudienceModelOutputConfig() : 
-    m_destinationHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 ConfiguredAudienceModelOutputConfig::ConfiguredAudienceModelOutputConfig(JsonView jsonValue)
-  : ConfiguredAudienceModelOutputConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ConfiguredAudienceModelOutputConfig& ConfiguredAudienceModelOutputConfig::operat
   if(jsonValue.ValueExists("destination"))
   {
     m_destination = jsonValue.GetObject("destination");
-
     m_destinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

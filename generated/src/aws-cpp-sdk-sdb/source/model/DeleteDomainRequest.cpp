@@ -10,11 +10,6 @@
 using namespace Aws::SimpleDB::Model;
 using namespace Aws::Utils;
 
-DeleteDomainRequest::DeleteDomainRequest() : 
-    m_domainNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDomainRequest::SerializePayload() const
 {
   Aws::StringStream ss;

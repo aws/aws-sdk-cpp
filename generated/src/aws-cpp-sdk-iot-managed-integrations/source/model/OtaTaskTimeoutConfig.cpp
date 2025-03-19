@@ -18,14 +18,7 @@ namespace IoTManagedIntegrations
 namespace Model
 {
 
-OtaTaskTimeoutConfig::OtaTaskTimeoutConfig() : 
-    m_inProgressTimeoutInMinutes(0),
-    m_inProgressTimeoutInMinutesHasBeenSet(false)
-{
-}
-
 OtaTaskTimeoutConfig::OtaTaskTimeoutConfig(JsonView jsonValue)
-  : OtaTaskTimeoutConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ OtaTaskTimeoutConfig& OtaTaskTimeoutConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InProgressTimeoutInMinutes"))
   {
     m_inProgressTimeoutInMinutes = jsonValue.GetInt64("InProgressTimeoutInMinutes");
-
     m_inProgressTimeoutInMinutesHasBeenSet = true;
   }
-
   return *this;
 }
 

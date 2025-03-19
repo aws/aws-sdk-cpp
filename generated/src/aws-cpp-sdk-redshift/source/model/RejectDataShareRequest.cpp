@@ -10,11 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-RejectDataShareRequest::RejectDataShareRequest() : 
-    m_dataShareArnHasBeenSet(false)
-{
-}
-
 Aws::String RejectDataShareRequest::SerializePayload() const
 {
   Aws::StringStream ss;

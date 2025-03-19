@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-WithdrawByoipCidrResponse::WithdrawByoipCidrResponse()
-{
-}
-
 WithdrawByoipCidrResponse::WithdrawByoipCidrResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ WithdrawByoipCidrResponse& WithdrawByoipCidrResponse::operator =(const Aws::Amaz
     if(!byoipCidrNode.IsNull())
     {
       m_byoipCidr = byoipCidrNode;
+      m_byoipCidrHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ WithdrawByoipCidrResponse& WithdrawByoipCidrResponse::operator =(const Aws::Amaz
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::WithdrawByoipCidrResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

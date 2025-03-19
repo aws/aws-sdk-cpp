@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeleteInternetGatewayRequest::DeleteInternetGatewayRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_internetGatewayIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteInternetGatewayRequest::SerializePayload() const
 {
   Aws::StringStream ss;

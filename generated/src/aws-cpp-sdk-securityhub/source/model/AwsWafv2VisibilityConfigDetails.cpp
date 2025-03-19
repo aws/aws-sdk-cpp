@@ -18,17 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsWafv2VisibilityConfigDetails::AwsWafv2VisibilityConfigDetails() : 
-    m_cloudWatchMetricsEnabled(false),
-    m_cloudWatchMetricsEnabledHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_sampledRequestsEnabled(false),
-    m_sampledRequestsEnabledHasBeenSet(false)
-{
-}
-
 AwsWafv2VisibilityConfigDetails::AwsWafv2VisibilityConfigDetails(JsonView jsonValue)
-  : AwsWafv2VisibilityConfigDetails()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ AwsWafv2VisibilityConfigDetails& AwsWafv2VisibilityConfigDetails::operator =(Jso
   if(jsonValue.ValueExists("CloudWatchMetricsEnabled"))
   {
     m_cloudWatchMetricsEnabled = jsonValue.GetBool("CloudWatchMetricsEnabled");
-
     m_cloudWatchMetricsEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricName"))
   {
     m_metricName = jsonValue.GetString("MetricName");
-
     m_metricNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SampledRequestsEnabled"))
   {
     m_sampledRequestsEnabled = jsonValue.GetBool("SampledRequestsEnabled");
-
     m_sampledRequestsEnabledHasBeenSet = true;
   }
-
   return *this;
 }
 

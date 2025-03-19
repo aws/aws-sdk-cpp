@@ -12,21 +12,6 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateFlywheelRequest::CreateFlywheelRequest() : 
-    m_flywheelNameHasBeenSet(false),
-    m_activeModelArnHasBeenSet(false),
-    m_dataAccessRoleArnHasBeenSet(false),
-    m_taskConfigHasBeenSet(false),
-    m_modelType(ModelType::NOT_SET),
-    m_modelTypeHasBeenSet(false),
-    m_dataLakeS3UriHasBeenSet(false),
-    m_dataSecurityConfigHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateFlywheelRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CompleteLifecycleActionResult::CompleteLifecycleActionResult()
-{
-}
-
 CompleteLifecycleActionResult::CompleteLifecycleActionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -43,6 +39,7 @@ CompleteLifecycleActionResult& CompleteLifecycleActionResult::operator =(const A
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::AutoScaling::Model::CompleteLifecycleActionResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

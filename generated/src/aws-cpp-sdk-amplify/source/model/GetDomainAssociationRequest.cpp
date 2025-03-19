@@ -12,12 +12,6 @@ using namespace Aws::Amplify::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDomainAssociationRequest::GetDomainAssociationRequest() : 
-    m_appIdHasBeenSet(false),
-    m_domainNameHasBeenSet(false)
-{
-}
-
 Aws::String GetDomainAssociationRequest::SerializePayload() const
 {
   return {};

@@ -15,12 +15,6 @@ using namespace Aws::RestXmlProtocol::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-HttpPrefixHeadersRequest::HttpPrefixHeadersRequest() : 
-    m_fooHasBeenSet(false),
-    m_fooMapHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
 
 Aws::String HttpPrefixHeadersRequest::SerializePayload() const
 {

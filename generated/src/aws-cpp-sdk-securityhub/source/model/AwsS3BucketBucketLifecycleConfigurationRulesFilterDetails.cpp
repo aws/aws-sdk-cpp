@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails::AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails() : 
-    m_predicateHasBeenSet(false)
-{
-}
-
 AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails::AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails(JsonView jsonValue)
-  : AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails& AwsS3BucketBucketLife
   if(jsonValue.ValueExists("Predicate"))
   {
     m_predicate = jsonValue.GetObject("Predicate");
-
     m_predicateHasBeenSet = true;
   }
-
   return *this;
 }
 

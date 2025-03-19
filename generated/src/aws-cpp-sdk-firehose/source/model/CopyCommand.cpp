@@ -18,15 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-CopyCommand::CopyCommand() : 
-    m_dataTableNameHasBeenSet(false),
-    m_dataTableColumnsHasBeenSet(false),
-    m_copyOptionsHasBeenSet(false)
-{
-}
-
 CopyCommand::CopyCommand(JsonView jsonValue)
-  : CopyCommand()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ CopyCommand& CopyCommand::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DataTableName"))
   {
     m_dataTableName = jsonValue.GetString("DataTableName");
-
     m_dataTableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataTableColumns"))
   {
     m_dataTableColumns = jsonValue.GetString("DataTableColumns");
-
     m_dataTableColumnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CopyOptions"))
   {
     m_copyOptions = jsonValue.GetString("CopyOptions");
-
     m_copyOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

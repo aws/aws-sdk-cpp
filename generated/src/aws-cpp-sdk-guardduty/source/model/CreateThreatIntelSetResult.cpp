@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateThreatIntelSetResult::CreateThreatIntelSetResult()
-{
-}
-
 CreateThreatIntelSetResult::CreateThreatIntelSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateThreatIntelSetResult& CreateThreatIntelSetResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("threatIntelSetId"))
   {
     m_threatIntelSetId = jsonValue.GetString("threatIntelSetId");
-
+    m_threatIntelSetIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

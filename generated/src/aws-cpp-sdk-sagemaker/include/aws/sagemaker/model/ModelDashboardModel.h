@@ -37,7 +37,7 @@ namespace Model
   class ModelDashboardModel
   {
   public:
-    AWS_SAGEMAKER_API ModelDashboardModel();
+    AWS_SAGEMAKER_API ModelDashboardModel() = default;
     AWS_SAGEMAKER_API ModelDashboardModel(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ModelDashboardModel& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,62 +47,62 @@ namespace Model
     /**
      * <p>A model displayed in the Model Dashboard.</p>
      */
-    inline const Model& GetModel() const{ return m_model; }
+    inline const Model& GetModel() const { return m_model; }
     inline bool ModelHasBeenSet() const { return m_modelHasBeenSet; }
-    inline void SetModel(const Model& value) { m_modelHasBeenSet = true; m_model = value; }
-    inline void SetModel(Model&& value) { m_modelHasBeenSet = true; m_model = std::move(value); }
-    inline ModelDashboardModel& WithModel(const Model& value) { SetModel(value); return *this;}
-    inline ModelDashboardModel& WithModel(Model&& value) { SetModel(std::move(value)); return *this;}
+    template<typename ModelT = Model>
+    void SetModel(ModelT&& value) { m_modelHasBeenSet = true; m_model = std::forward<ModelT>(value); }
+    template<typename ModelT = Model>
+    ModelDashboardModel& WithModel(ModelT&& value) { SetModel(std::forward<ModelT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The endpoints that host a model.</p>
      */
-    inline const Aws::Vector<ModelDashboardEndpoint>& GetEndpoints() const{ return m_endpoints; }
+    inline const Aws::Vector<ModelDashboardEndpoint>& GetEndpoints() const { return m_endpoints; }
     inline bool EndpointsHasBeenSet() const { return m_endpointsHasBeenSet; }
-    inline void SetEndpoints(const Aws::Vector<ModelDashboardEndpoint>& value) { m_endpointsHasBeenSet = true; m_endpoints = value; }
-    inline void SetEndpoints(Aws::Vector<ModelDashboardEndpoint>&& value) { m_endpointsHasBeenSet = true; m_endpoints = std::move(value); }
-    inline ModelDashboardModel& WithEndpoints(const Aws::Vector<ModelDashboardEndpoint>& value) { SetEndpoints(value); return *this;}
-    inline ModelDashboardModel& WithEndpoints(Aws::Vector<ModelDashboardEndpoint>&& value) { SetEndpoints(std::move(value)); return *this;}
-    inline ModelDashboardModel& AddEndpoints(const ModelDashboardEndpoint& value) { m_endpointsHasBeenSet = true; m_endpoints.push_back(value); return *this; }
-    inline ModelDashboardModel& AddEndpoints(ModelDashboardEndpoint&& value) { m_endpointsHasBeenSet = true; m_endpoints.push_back(std::move(value)); return *this; }
+    template<typename EndpointsT = Aws::Vector<ModelDashboardEndpoint>>
+    void SetEndpoints(EndpointsT&& value) { m_endpointsHasBeenSet = true; m_endpoints = std::forward<EndpointsT>(value); }
+    template<typename EndpointsT = Aws::Vector<ModelDashboardEndpoint>>
+    ModelDashboardModel& WithEndpoints(EndpointsT&& value) { SetEndpoints(std::forward<EndpointsT>(value)); return *this;}
+    template<typename EndpointsT = ModelDashboardEndpoint>
+    ModelDashboardModel& AddEndpoints(EndpointsT&& value) { m_endpointsHasBeenSet = true; m_endpoints.emplace_back(std::forward<EndpointsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const TransformJob& GetLastBatchTransformJob() const{ return m_lastBatchTransformJob; }
+    inline const TransformJob& GetLastBatchTransformJob() const { return m_lastBatchTransformJob; }
     inline bool LastBatchTransformJobHasBeenSet() const { return m_lastBatchTransformJobHasBeenSet; }
-    inline void SetLastBatchTransformJob(const TransformJob& value) { m_lastBatchTransformJobHasBeenSet = true; m_lastBatchTransformJob = value; }
-    inline void SetLastBatchTransformJob(TransformJob&& value) { m_lastBatchTransformJobHasBeenSet = true; m_lastBatchTransformJob = std::move(value); }
-    inline ModelDashboardModel& WithLastBatchTransformJob(const TransformJob& value) { SetLastBatchTransformJob(value); return *this;}
-    inline ModelDashboardModel& WithLastBatchTransformJob(TransformJob&& value) { SetLastBatchTransformJob(std::move(value)); return *this;}
+    template<typename LastBatchTransformJobT = TransformJob>
+    void SetLastBatchTransformJob(LastBatchTransformJobT&& value) { m_lastBatchTransformJobHasBeenSet = true; m_lastBatchTransformJob = std::forward<LastBatchTransformJobT>(value); }
+    template<typename LastBatchTransformJobT = TransformJob>
+    ModelDashboardModel& WithLastBatchTransformJob(LastBatchTransformJobT&& value) { SetLastBatchTransformJob(std::forward<LastBatchTransformJobT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The monitoring schedules for a model.</p>
      */
-    inline const Aws::Vector<ModelDashboardMonitoringSchedule>& GetMonitoringSchedules() const{ return m_monitoringSchedules; }
+    inline const Aws::Vector<ModelDashboardMonitoringSchedule>& GetMonitoringSchedules() const { return m_monitoringSchedules; }
     inline bool MonitoringSchedulesHasBeenSet() const { return m_monitoringSchedulesHasBeenSet; }
-    inline void SetMonitoringSchedules(const Aws::Vector<ModelDashboardMonitoringSchedule>& value) { m_monitoringSchedulesHasBeenSet = true; m_monitoringSchedules = value; }
-    inline void SetMonitoringSchedules(Aws::Vector<ModelDashboardMonitoringSchedule>&& value) { m_monitoringSchedulesHasBeenSet = true; m_monitoringSchedules = std::move(value); }
-    inline ModelDashboardModel& WithMonitoringSchedules(const Aws::Vector<ModelDashboardMonitoringSchedule>& value) { SetMonitoringSchedules(value); return *this;}
-    inline ModelDashboardModel& WithMonitoringSchedules(Aws::Vector<ModelDashboardMonitoringSchedule>&& value) { SetMonitoringSchedules(std::move(value)); return *this;}
-    inline ModelDashboardModel& AddMonitoringSchedules(const ModelDashboardMonitoringSchedule& value) { m_monitoringSchedulesHasBeenSet = true; m_monitoringSchedules.push_back(value); return *this; }
-    inline ModelDashboardModel& AddMonitoringSchedules(ModelDashboardMonitoringSchedule&& value) { m_monitoringSchedulesHasBeenSet = true; m_monitoringSchedules.push_back(std::move(value)); return *this; }
+    template<typename MonitoringSchedulesT = Aws::Vector<ModelDashboardMonitoringSchedule>>
+    void SetMonitoringSchedules(MonitoringSchedulesT&& value) { m_monitoringSchedulesHasBeenSet = true; m_monitoringSchedules = std::forward<MonitoringSchedulesT>(value); }
+    template<typename MonitoringSchedulesT = Aws::Vector<ModelDashboardMonitoringSchedule>>
+    ModelDashboardModel& WithMonitoringSchedules(MonitoringSchedulesT&& value) { SetMonitoringSchedules(std::forward<MonitoringSchedulesT>(value)); return *this;}
+    template<typename MonitoringSchedulesT = ModelDashboardMonitoringSchedule>
+    ModelDashboardModel& AddMonitoringSchedules(MonitoringSchedulesT&& value) { m_monitoringSchedulesHasBeenSet = true; m_monitoringSchedules.emplace_back(std::forward<MonitoringSchedulesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The model card for a model.</p>
      */
-    inline const ModelDashboardModelCard& GetModelCard() const{ return m_modelCard; }
+    inline const ModelDashboardModelCard& GetModelCard() const { return m_modelCard; }
     inline bool ModelCardHasBeenSet() const { return m_modelCardHasBeenSet; }
-    inline void SetModelCard(const ModelDashboardModelCard& value) { m_modelCardHasBeenSet = true; m_modelCard = value; }
-    inline void SetModelCard(ModelDashboardModelCard&& value) { m_modelCardHasBeenSet = true; m_modelCard = std::move(value); }
-    inline ModelDashboardModel& WithModelCard(const ModelDashboardModelCard& value) { SetModelCard(value); return *this;}
-    inline ModelDashboardModel& WithModelCard(ModelDashboardModelCard&& value) { SetModelCard(std::move(value)); return *this;}
+    template<typename ModelCardT = ModelDashboardModelCard>
+    void SetModelCard(ModelCardT&& value) { m_modelCardHasBeenSet = true; m_modelCard = std::forward<ModelCardT>(value); }
+    template<typename ModelCardT = ModelDashboardModelCard>
+    ModelDashboardModel& WithModelCard(ModelCardT&& value) { SetModelCard(std::forward<ModelCardT>(value)); return *this;}
     ///@}
   private:
 

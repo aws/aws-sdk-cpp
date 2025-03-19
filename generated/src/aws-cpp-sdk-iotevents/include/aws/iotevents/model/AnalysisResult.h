@@ -34,7 +34,7 @@ namespace Model
   class AnalysisResult
   {
   public:
-    AWS_IOTEVENTS_API AnalysisResult();
+    AWS_IOTEVENTS_API AnalysisResult() = default;
     AWS_IOTEVENTS_API AnalysisResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API AnalysisResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -60,14 +60,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-analyze-api.html">Running
      * detector model analyses</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline AnalysisResult& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline AnalysisResult& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline AnalysisResult& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    AnalysisResult& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,26 +82,22 @@ namespace Model
      * result notifies you about a problem found in your detector model. You must fix
      * all errors before you can publish your detector model.</p> </li> </ul>
      */
-    inline const AnalysisResultLevel& GetLevel() const{ return m_level; }
+    inline AnalysisResultLevel GetLevel() const { return m_level; }
     inline bool LevelHasBeenSet() const { return m_levelHasBeenSet; }
-    inline void SetLevel(const AnalysisResultLevel& value) { m_levelHasBeenSet = true; m_level = value; }
-    inline void SetLevel(AnalysisResultLevel&& value) { m_levelHasBeenSet = true; m_level = std::move(value); }
-    inline AnalysisResult& WithLevel(const AnalysisResultLevel& value) { SetLevel(value); return *this;}
-    inline AnalysisResult& WithLevel(AnalysisResultLevel&& value) { SetLevel(std::move(value)); return *this;}
+    inline void SetLevel(AnalysisResultLevel value) { m_levelHasBeenSet = true; m_level = value; }
+    inline AnalysisResult& WithLevel(AnalysisResultLevel value) { SetLevel(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains additional information about the analysis result.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline AnalysisResult& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline AnalysisResult& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline AnalysisResult& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    AnalysisResult& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,21 +105,21 @@ namespace Model
      * <p>Contains one or more locations that you can use to locate the fields in your
      * detector model that the analysis result references.</p>
      */
-    inline const Aws::Vector<AnalysisResultLocation>& GetLocations() const{ return m_locations; }
+    inline const Aws::Vector<AnalysisResultLocation>& GetLocations() const { return m_locations; }
     inline bool LocationsHasBeenSet() const { return m_locationsHasBeenSet; }
-    inline void SetLocations(const Aws::Vector<AnalysisResultLocation>& value) { m_locationsHasBeenSet = true; m_locations = value; }
-    inline void SetLocations(Aws::Vector<AnalysisResultLocation>&& value) { m_locationsHasBeenSet = true; m_locations = std::move(value); }
-    inline AnalysisResult& WithLocations(const Aws::Vector<AnalysisResultLocation>& value) { SetLocations(value); return *this;}
-    inline AnalysisResult& WithLocations(Aws::Vector<AnalysisResultLocation>&& value) { SetLocations(std::move(value)); return *this;}
-    inline AnalysisResult& AddLocations(const AnalysisResultLocation& value) { m_locationsHasBeenSet = true; m_locations.push_back(value); return *this; }
-    inline AnalysisResult& AddLocations(AnalysisResultLocation&& value) { m_locationsHasBeenSet = true; m_locations.push_back(std::move(value)); return *this; }
+    template<typename LocationsT = Aws::Vector<AnalysisResultLocation>>
+    void SetLocations(LocationsT&& value) { m_locationsHasBeenSet = true; m_locations = std::forward<LocationsT>(value); }
+    template<typename LocationsT = Aws::Vector<AnalysisResultLocation>>
+    AnalysisResult& WithLocations(LocationsT&& value) { SetLocations(std::forward<LocationsT>(value)); return *this;}
+    template<typename LocationsT = AnalysisResultLocation>
+    AnalysisResult& AddLocations(LocationsT&& value) { m_locationsHasBeenSet = true; m_locations.emplace_back(std::forward<LocationsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_type;
     bool m_typeHasBeenSet = false;
 
-    AnalysisResultLevel m_level;
+    AnalysisResultLevel m_level{AnalysisResultLevel::NOT_SET};
     bool m_levelHasBeenSet = false;
 
     Aws::String m_message;

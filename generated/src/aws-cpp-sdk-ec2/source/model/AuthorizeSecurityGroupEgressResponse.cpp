@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AuthorizeSecurityGroupEgressResponse::AuthorizeSecurityGroupEgressResponse() : 
-    m_return(false)
-{
-}
-
 AuthorizeSecurityGroupEgressResponse::AuthorizeSecurityGroupEgressResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : AuthorizeSecurityGroupEgressResponse()
 {
   *this = result;
 }
@@ -44,17 +38,20 @@ AuthorizeSecurityGroupEgressResponse& AuthorizeSecurityGroupEgressResponse::oper
     if(!returnNode.IsNull())
     {
       m_return = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(returnNode.GetText()).c_str()).c_str());
+      m_returnHasBeenSet = true;
     }
     XmlNode securityGroupRulesNode = resultNode.FirstChild("securityGroupRuleSet");
     if(!securityGroupRulesNode.IsNull())
     {
       XmlNode securityGroupRulesMember = securityGroupRulesNode.FirstChild("item");
+      m_securityGroupRulesHasBeenSet = !securityGroupRulesMember.IsNull();
       while(!securityGroupRulesMember.IsNull())
       {
         m_securityGroupRules.push_back(securityGroupRulesMember);
         securityGroupRulesMember = securityGroupRulesMember.NextNode("item");
       }
 
+      m_securityGroupRulesHasBeenSet = true;
     }
   }
 
@@ -63,6 +60,7 @@ AuthorizeSecurityGroupEgressResponse& AuthorizeSecurityGroupEgressResponse::oper
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::AuthorizeSecurityGroupEgressResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

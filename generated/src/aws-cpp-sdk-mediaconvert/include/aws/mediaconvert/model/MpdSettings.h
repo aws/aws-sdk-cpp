@@ -41,7 +41,7 @@ namespace Model
   class MpdSettings
   {
   public:
-    AWS_MEDIACONVERT_API MpdSettings();
+    AWS_MEDIACONVERT_API MpdSettings() = default;
     AWS_MEDIACONVERT_API MpdSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API MpdSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -57,12 +57,10 @@ namespace Model
      * manifest: <Accessibility schemeIdUri="urn:scte:dash:cc:cea-608:2015"
      * value="CC1=eng"/>
      */
-    inline const MpdAccessibilityCaptionHints& GetAccessibilityCaptionHints() const{ return m_accessibilityCaptionHints; }
+    inline MpdAccessibilityCaptionHints GetAccessibilityCaptionHints() const { return m_accessibilityCaptionHints; }
     inline bool AccessibilityCaptionHintsHasBeenSet() const { return m_accessibilityCaptionHintsHasBeenSet; }
-    inline void SetAccessibilityCaptionHints(const MpdAccessibilityCaptionHints& value) { m_accessibilityCaptionHintsHasBeenSet = true; m_accessibilityCaptionHints = value; }
-    inline void SetAccessibilityCaptionHints(MpdAccessibilityCaptionHints&& value) { m_accessibilityCaptionHintsHasBeenSet = true; m_accessibilityCaptionHints = std::move(value); }
-    inline MpdSettings& WithAccessibilityCaptionHints(const MpdAccessibilityCaptionHints& value) { SetAccessibilityCaptionHints(value); return *this;}
-    inline MpdSettings& WithAccessibilityCaptionHints(MpdAccessibilityCaptionHints&& value) { SetAccessibilityCaptionHints(std::move(value)); return *this;}
+    inline void SetAccessibilityCaptionHints(MpdAccessibilityCaptionHints value) { m_accessibilityCaptionHintsHasBeenSet = true; m_accessibilityCaptionHints = value; }
+    inline MpdSettings& WithAccessibilityCaptionHints(MpdAccessibilityCaptionHints value) { SetAccessibilityCaptionHints(value); return *this;}
     ///@}
 
     ///@{
@@ -80,12 +78,10 @@ namespace Model
      * to the end of the file. When you keep the default value, any minor discrepancies
      * between audio and video duration will depend on your output audio codec.
      */
-    inline const MpdAudioDuration& GetAudioDuration() const{ return m_audioDuration; }
+    inline MpdAudioDuration GetAudioDuration() const { return m_audioDuration; }
     inline bool AudioDurationHasBeenSet() const { return m_audioDurationHasBeenSet; }
-    inline void SetAudioDuration(const MpdAudioDuration& value) { m_audioDurationHasBeenSet = true; m_audioDuration = value; }
-    inline void SetAudioDuration(MpdAudioDuration&& value) { m_audioDurationHasBeenSet = true; m_audioDuration = std::move(value); }
-    inline MpdSettings& WithAudioDuration(const MpdAudioDuration& value) { SetAudioDuration(value); return *this;}
-    inline MpdSettings& WithAudioDuration(MpdAudioDuration&& value) { SetAudioDuration(std::move(value)); return *this;}
+    inline void SetAudioDuration(MpdAudioDuration value) { m_audioDurationHasBeenSet = true; m_audioDuration = value; }
+    inline MpdSettings& WithAudioDuration(MpdAudioDuration value) { SetAudioDuration(value); return *this;}
     ///@}
 
     ///@{
@@ -97,12 +93,10 @@ namespace Model
      * files. This set of fragmented MP4 files is separate from your video and audio
      * fragmented MP4 files.
      */
-    inline const MpdCaptionContainerType& GetCaptionContainerType() const{ return m_captionContainerType; }
+    inline MpdCaptionContainerType GetCaptionContainerType() const { return m_captionContainerType; }
     inline bool CaptionContainerTypeHasBeenSet() const { return m_captionContainerTypeHasBeenSet; }
-    inline void SetCaptionContainerType(const MpdCaptionContainerType& value) { m_captionContainerTypeHasBeenSet = true; m_captionContainerType = value; }
-    inline void SetCaptionContainerType(MpdCaptionContainerType&& value) { m_captionContainerTypeHasBeenSet = true; m_captionContainerType = std::move(value); }
-    inline MpdSettings& WithCaptionContainerType(const MpdCaptionContainerType& value) { SetCaptionContainerType(value); return *this;}
-    inline MpdSettings& WithCaptionContainerType(MpdCaptionContainerType&& value) { SetCaptionContainerType(std::move(value)); return *this;}
+    inline void SetCaptionContainerType(MpdCaptionContainerType value) { m_captionContainerTypeHasBeenSet = true; m_captionContainerType = value; }
+    inline MpdSettings& WithCaptionContainerType(MpdCaptionContainerType value) { SetCaptionContainerType(value); return *this;}
     ///@}
 
     ///@{
@@ -113,12 +107,10 @@ namespace Model
      * ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or
      * leave blank.
      */
-    inline const MpdKlvMetadata& GetKlvMetadata() const{ return m_klvMetadata; }
+    inline MpdKlvMetadata GetKlvMetadata() const { return m_klvMetadata; }
     inline bool KlvMetadataHasBeenSet() const { return m_klvMetadataHasBeenSet; }
-    inline void SetKlvMetadata(const MpdKlvMetadata& value) { m_klvMetadataHasBeenSet = true; m_klvMetadata = value; }
-    inline void SetKlvMetadata(MpdKlvMetadata&& value) { m_klvMetadataHasBeenSet = true; m_klvMetadata = std::move(value); }
-    inline MpdSettings& WithKlvMetadata(const MpdKlvMetadata& value) { SetKlvMetadata(value); return *this;}
-    inline MpdSettings& WithKlvMetadata(MpdKlvMetadata&& value) { SetKlvMetadata(std::move(value)); return *this;}
+    inline void SetKlvMetadata(MpdKlvMetadata value) { m_klvMetadataHasBeenSet = true; m_klvMetadata = value; }
+    inline MpdSettings& WithKlvMetadata(MpdKlvMetadata value) { SetKlvMetadata(value); return *this;}
     ///@}
 
     ///@{
@@ -133,12 +125,10 @@ namespace Model
      * SCTE-35 source to Passthrough, ESAM SCTE-35 to insert, or ID3 metadata to
      * Passthrough.
      */
-    inline const MpdManifestMetadataSignaling& GetManifestMetadataSignaling() const{ return m_manifestMetadataSignaling; }
+    inline MpdManifestMetadataSignaling GetManifestMetadataSignaling() const { return m_manifestMetadataSignaling; }
     inline bool ManifestMetadataSignalingHasBeenSet() const { return m_manifestMetadataSignalingHasBeenSet; }
-    inline void SetManifestMetadataSignaling(const MpdManifestMetadataSignaling& value) { m_manifestMetadataSignalingHasBeenSet = true; m_manifestMetadataSignaling = value; }
-    inline void SetManifestMetadataSignaling(MpdManifestMetadataSignaling&& value) { m_manifestMetadataSignalingHasBeenSet = true; m_manifestMetadataSignaling = std::move(value); }
-    inline MpdSettings& WithManifestMetadataSignaling(const MpdManifestMetadataSignaling& value) { SetManifestMetadataSignaling(value); return *this;}
-    inline MpdSettings& WithManifestMetadataSignaling(MpdManifestMetadataSignaling&& value) { SetManifestMetadataSignaling(std::move(value)); return *this;}
+    inline void SetManifestMetadataSignaling(MpdManifestMetadataSignaling value) { m_manifestMetadataSignalingHasBeenSet = true; m_manifestMetadataSignaling = value; }
+    inline MpdSettings& WithManifestMetadataSignaling(MpdManifestMetadataSignaling value) { SetManifestMetadataSignaling(value); return *this;}
     ///@}
 
     ///@{
@@ -147,12 +137,10 @@ namespace Model
      * to put SCTE-35 markers in this output at the insertion points that you specify
      * in an ESAM XML document. Provide the document in the setting SCC XML.
      */
-    inline const MpdScte35Esam& GetScte35Esam() const{ return m_scte35Esam; }
+    inline MpdScte35Esam GetScte35Esam() const { return m_scte35Esam; }
     inline bool Scte35EsamHasBeenSet() const { return m_scte35EsamHasBeenSet; }
-    inline void SetScte35Esam(const MpdScte35Esam& value) { m_scte35EsamHasBeenSet = true; m_scte35Esam = value; }
-    inline void SetScte35Esam(MpdScte35Esam&& value) { m_scte35EsamHasBeenSet = true; m_scte35Esam = std::move(value); }
-    inline MpdSettings& WithScte35Esam(const MpdScte35Esam& value) { SetScte35Esam(value); return *this;}
-    inline MpdSettings& WithScte35Esam(MpdScte35Esam&& value) { SetScte35Esam(std::move(value)); return *this;}
+    inline void SetScte35Esam(MpdScte35Esam value) { m_scte35EsamHasBeenSet = true; m_scte35Esam = value; }
+    inline MpdSettings& WithScte35Esam(MpdScte35Esam value) { SetScte35Esam(value); return *this;}
     ///@}
 
     ///@{
@@ -162,12 +150,10 @@ namespace Model
      * appear in this output. Choose None if you don't want those SCTE-35 markers in
      * this output.
      */
-    inline const MpdScte35Source& GetScte35Source() const{ return m_scte35Source; }
+    inline MpdScte35Source GetScte35Source() const { return m_scte35Source; }
     inline bool Scte35SourceHasBeenSet() const { return m_scte35SourceHasBeenSet; }
-    inline void SetScte35Source(const MpdScte35Source& value) { m_scte35SourceHasBeenSet = true; m_scte35Source = value; }
-    inline void SetScte35Source(MpdScte35Source&& value) { m_scte35SourceHasBeenSet = true; m_scte35Source = std::move(value); }
-    inline MpdSettings& WithScte35Source(const MpdScte35Source& value) { SetScte35Source(value); return *this;}
-    inline MpdSettings& WithScte35Source(MpdScte35Source&& value) { SetScte35Source(std::move(value)); return *this;}
+    inline void SetScte35Source(MpdScte35Source value) { m_scte35SourceHasBeenSet = true; m_scte35Source = value; }
+    inline MpdSettings& WithScte35Source(MpdScte35Source value) { SetScte35Source(value); return *this;}
     ///@}
 
     ///@{
@@ -177,12 +163,10 @@ namespace Model
      * instance of ID3 metadata in a separate Event Message (eMSG) box. To exclude this
      * ID3 metadata: Set ID3 metadata to None or leave blank.
      */
-    inline const MpdTimedMetadata& GetTimedMetadata() const{ return m_timedMetadata; }
+    inline MpdTimedMetadata GetTimedMetadata() const { return m_timedMetadata; }
     inline bool TimedMetadataHasBeenSet() const { return m_timedMetadataHasBeenSet; }
-    inline void SetTimedMetadata(const MpdTimedMetadata& value) { m_timedMetadataHasBeenSet = true; m_timedMetadata = value; }
-    inline void SetTimedMetadata(MpdTimedMetadata&& value) { m_timedMetadataHasBeenSet = true; m_timedMetadata = std::move(value); }
-    inline MpdSettings& WithTimedMetadata(const MpdTimedMetadata& value) { SetTimedMetadata(value); return *this;}
-    inline MpdSettings& WithTimedMetadata(MpdTimedMetadata&& value) { SetTimedMetadata(std::move(value)); return *this;}
+    inline void SetTimedMetadata(MpdTimedMetadata value) { m_timedMetadataHasBeenSet = true; m_timedMetadata = value; }
+    inline MpdSettings& WithTimedMetadata(MpdTimedMetadata value) { SetTimedMetadata(value); return *this;}
     ///@}
 
     ///@{
@@ -195,12 +179,10 @@ Leave blank to use the default value Version 0.
 When you specify Version
      * 1, you must also set ID3 metadata to Passthrough.
      */
-    inline const MpdTimedMetadataBoxVersion& GetTimedMetadataBoxVersion() const{ return m_timedMetadataBoxVersion; }
+    inline MpdTimedMetadataBoxVersion GetTimedMetadataBoxVersion() const { return m_timedMetadataBoxVersion; }
     inline bool TimedMetadataBoxVersionHasBeenSet() const { return m_timedMetadataBoxVersionHasBeenSet; }
-    inline void SetTimedMetadataBoxVersion(const MpdTimedMetadataBoxVersion& value) { m_timedMetadataBoxVersionHasBeenSet = true; m_timedMetadataBoxVersion = value; }
-    inline void SetTimedMetadataBoxVersion(MpdTimedMetadataBoxVersion&& value) { m_timedMetadataBoxVersionHasBeenSet = true; m_timedMetadataBoxVersion = std::move(value); }
-    inline MpdSettings& WithTimedMetadataBoxVersion(const MpdTimedMetadataBoxVersion& value) { SetTimedMetadataBoxVersion(value); return *this;}
-    inline MpdSettings& WithTimedMetadataBoxVersion(MpdTimedMetadataBoxVersion&& value) { SetTimedMetadataBoxVersion(std::move(value)); return *this;}
+    inline void SetTimedMetadataBoxVersion(MpdTimedMetadataBoxVersion value) { m_timedMetadataBoxVersionHasBeenSet = true; m_timedMetadataBoxVersion = value; }
+    inline MpdSettings& WithTimedMetadataBoxVersion(MpdTimedMetadataBoxVersion value) { SetTimedMetadataBoxVersion(value); return *this;}
     ///@}
 
     ///@{
@@ -211,14 +193,12 @@ When you specify Version
      * When you specify a value for ID3 metadata scheme ID URI, you must also set ID3
      * metadata to Passthrough.
      */
-    inline const Aws::String& GetTimedMetadataSchemeIdUri() const{ return m_timedMetadataSchemeIdUri; }
+    inline const Aws::String& GetTimedMetadataSchemeIdUri() const { return m_timedMetadataSchemeIdUri; }
     inline bool TimedMetadataSchemeIdUriHasBeenSet() const { return m_timedMetadataSchemeIdUriHasBeenSet; }
-    inline void SetTimedMetadataSchemeIdUri(const Aws::String& value) { m_timedMetadataSchemeIdUriHasBeenSet = true; m_timedMetadataSchemeIdUri = value; }
-    inline void SetTimedMetadataSchemeIdUri(Aws::String&& value) { m_timedMetadataSchemeIdUriHasBeenSet = true; m_timedMetadataSchemeIdUri = std::move(value); }
-    inline void SetTimedMetadataSchemeIdUri(const char* value) { m_timedMetadataSchemeIdUriHasBeenSet = true; m_timedMetadataSchemeIdUri.assign(value); }
-    inline MpdSettings& WithTimedMetadataSchemeIdUri(const Aws::String& value) { SetTimedMetadataSchemeIdUri(value); return *this;}
-    inline MpdSettings& WithTimedMetadataSchemeIdUri(Aws::String&& value) { SetTimedMetadataSchemeIdUri(std::move(value)); return *this;}
-    inline MpdSettings& WithTimedMetadataSchemeIdUri(const char* value) { SetTimedMetadataSchemeIdUri(value); return *this;}
+    template<typename TimedMetadataSchemeIdUriT = Aws::String>
+    void SetTimedMetadataSchemeIdUri(TimedMetadataSchemeIdUriT&& value) { m_timedMetadataSchemeIdUriHasBeenSet = true; m_timedMetadataSchemeIdUri = std::forward<TimedMetadataSchemeIdUriT>(value); }
+    template<typename TimedMetadataSchemeIdUriT = Aws::String>
+    MpdSettings& WithTimedMetadataSchemeIdUri(TimedMetadataSchemeIdUriT&& value) { SetTimedMetadataSchemeIdUri(std::forward<TimedMetadataSchemeIdUriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -228,42 +208,40 @@ When you specify Version
      * Semantics. When you specify a value for ID3 Metadata Value, you must also set
      * ID3 metadata to Passthrough.
      */
-    inline const Aws::String& GetTimedMetadataValue() const{ return m_timedMetadataValue; }
+    inline const Aws::String& GetTimedMetadataValue() const { return m_timedMetadataValue; }
     inline bool TimedMetadataValueHasBeenSet() const { return m_timedMetadataValueHasBeenSet; }
-    inline void SetTimedMetadataValue(const Aws::String& value) { m_timedMetadataValueHasBeenSet = true; m_timedMetadataValue = value; }
-    inline void SetTimedMetadataValue(Aws::String&& value) { m_timedMetadataValueHasBeenSet = true; m_timedMetadataValue = std::move(value); }
-    inline void SetTimedMetadataValue(const char* value) { m_timedMetadataValueHasBeenSet = true; m_timedMetadataValue.assign(value); }
-    inline MpdSettings& WithTimedMetadataValue(const Aws::String& value) { SetTimedMetadataValue(value); return *this;}
-    inline MpdSettings& WithTimedMetadataValue(Aws::String&& value) { SetTimedMetadataValue(std::move(value)); return *this;}
-    inline MpdSettings& WithTimedMetadataValue(const char* value) { SetTimedMetadataValue(value); return *this;}
+    template<typename TimedMetadataValueT = Aws::String>
+    void SetTimedMetadataValue(TimedMetadataValueT&& value) { m_timedMetadataValueHasBeenSet = true; m_timedMetadataValue = std::forward<TimedMetadataValueT>(value); }
+    template<typename TimedMetadataValueT = Aws::String>
+    MpdSettings& WithTimedMetadataValue(TimedMetadataValueT&& value) { SetTimedMetadataValue(std::forward<TimedMetadataValueT>(value)); return *this;}
     ///@}
   private:
 
-    MpdAccessibilityCaptionHints m_accessibilityCaptionHints;
+    MpdAccessibilityCaptionHints m_accessibilityCaptionHints{MpdAccessibilityCaptionHints::NOT_SET};
     bool m_accessibilityCaptionHintsHasBeenSet = false;
 
-    MpdAudioDuration m_audioDuration;
+    MpdAudioDuration m_audioDuration{MpdAudioDuration::NOT_SET};
     bool m_audioDurationHasBeenSet = false;
 
-    MpdCaptionContainerType m_captionContainerType;
+    MpdCaptionContainerType m_captionContainerType{MpdCaptionContainerType::NOT_SET};
     bool m_captionContainerTypeHasBeenSet = false;
 
-    MpdKlvMetadata m_klvMetadata;
+    MpdKlvMetadata m_klvMetadata{MpdKlvMetadata::NOT_SET};
     bool m_klvMetadataHasBeenSet = false;
 
-    MpdManifestMetadataSignaling m_manifestMetadataSignaling;
+    MpdManifestMetadataSignaling m_manifestMetadataSignaling{MpdManifestMetadataSignaling::NOT_SET};
     bool m_manifestMetadataSignalingHasBeenSet = false;
 
-    MpdScte35Esam m_scte35Esam;
+    MpdScte35Esam m_scte35Esam{MpdScte35Esam::NOT_SET};
     bool m_scte35EsamHasBeenSet = false;
 
-    MpdScte35Source m_scte35Source;
+    MpdScte35Source m_scte35Source{MpdScte35Source::NOT_SET};
     bool m_scte35SourceHasBeenSet = false;
 
-    MpdTimedMetadata m_timedMetadata;
+    MpdTimedMetadata m_timedMetadata{MpdTimedMetadata::NOT_SET};
     bool m_timedMetadataHasBeenSet = false;
 
-    MpdTimedMetadataBoxVersion m_timedMetadataBoxVersion;
+    MpdTimedMetadataBoxVersion m_timedMetadataBoxVersion{MpdTimedMetadataBoxVersion::NOT_SET};
     bool m_timedMetadataBoxVersionHasBeenSet = false;
 
     Aws::String m_timedMetadataSchemeIdUri;

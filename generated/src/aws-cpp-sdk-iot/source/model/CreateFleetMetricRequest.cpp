@@ -12,22 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateFleetMetricRequest::CreateFleetMetricRequest() : 
-    m_metricNameHasBeenSet(false),
-    m_queryStringHasBeenSet(false),
-    m_aggregationTypeHasBeenSet(false),
-    m_period(0),
-    m_periodHasBeenSet(false),
-    m_aggregationFieldHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_queryVersionHasBeenSet(false),
-    m_indexNameHasBeenSet(false),
-    m_unit(FleetMetricUnit::NOT_SET),
-    m_unitHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateFleetMetricRequest::SerializePayload() const
 {
   JsonValue payload;

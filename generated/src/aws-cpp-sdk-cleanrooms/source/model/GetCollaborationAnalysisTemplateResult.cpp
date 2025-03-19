@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetCollaborationAnalysisTemplateResult::GetCollaborationAnalysisTemplateResult()
-{
-}
-
 GetCollaborationAnalysisTemplateResult::GetCollaborationAnalysisTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetCollaborationAnalysisTemplateResult& GetCollaborationAnalysisTemplateResult::
   if(jsonValue.ValueExists("collaborationAnalysisTemplate"))
   {
     m_collaborationAnalysisTemplate = jsonValue.GetObject("collaborationAnalysisTemplate");
-
+    m_collaborationAnalysisTemplateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

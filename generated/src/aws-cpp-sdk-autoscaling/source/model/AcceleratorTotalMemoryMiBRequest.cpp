@@ -20,16 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-AcceleratorTotalMemoryMiBRequest::AcceleratorTotalMemoryMiBRequest() : 
-    m_min(0),
-    m_minHasBeenSet(false),
-    m_max(0),
-    m_maxHasBeenSet(false)
-{
-}
-
 AcceleratorTotalMemoryMiBRequest::AcceleratorTotalMemoryMiBRequest(const XmlNode& xmlNode)
-  : AcceleratorTotalMemoryMiBRequest()
 {
   *this = xmlNode;
 }

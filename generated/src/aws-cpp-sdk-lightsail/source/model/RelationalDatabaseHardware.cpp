@@ -18,18 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-RelationalDatabaseHardware::RelationalDatabaseHardware() : 
-    m_cpuCount(0),
-    m_cpuCountHasBeenSet(false),
-    m_diskSizeInGb(0),
-    m_diskSizeInGbHasBeenSet(false),
-    m_ramSizeInGb(0.0),
-    m_ramSizeInGbHasBeenSet(false)
-{
-}
-
 RelationalDatabaseHardware::RelationalDatabaseHardware(JsonView jsonValue)
-  : RelationalDatabaseHardware()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ RelationalDatabaseHardware& RelationalDatabaseHardware::operator =(JsonView json
   if(jsonValue.ValueExists("cpuCount"))
   {
     m_cpuCount = jsonValue.GetInteger("cpuCount");
-
     m_cpuCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("diskSizeInGb"))
   {
     m_diskSizeInGb = jsonValue.GetInteger("diskSizeInGb");
-
     m_diskSizeInGbHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ramSizeInGb"))
   {
     m_ramSizeInGb = jsonValue.GetDouble("ramSizeInGb");
-
     m_ramSizeInGbHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -27,7 +27,7 @@ namespace Model
   class InvokeEndpointAsyncResult
   {
   public:
-    AWS_SAGEMAKERRUNTIME_API InvokeEndpointAsyncResult();
+    AWS_SAGEMAKERRUNTIME_API InvokeEndpointAsyncResult() = default;
     AWS_SAGEMAKERRUNTIME_API InvokeEndpointAsyncResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKERRUNTIME_API InvokeEndpointAsyncResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,60 +38,56 @@ namespace Model
      * <code>InferenceId</code> specified in the input. Amazon SageMaker will generate
      * an identifier for you if you do not specify one.</p>
      */
-    inline const Aws::String& GetInferenceId() const{ return m_inferenceId; }
-    inline void SetInferenceId(const Aws::String& value) { m_inferenceId = value; }
-    inline void SetInferenceId(Aws::String&& value) { m_inferenceId = std::move(value); }
-    inline void SetInferenceId(const char* value) { m_inferenceId.assign(value); }
-    inline InvokeEndpointAsyncResult& WithInferenceId(const Aws::String& value) { SetInferenceId(value); return *this;}
-    inline InvokeEndpointAsyncResult& WithInferenceId(Aws::String&& value) { SetInferenceId(std::move(value)); return *this;}
-    inline InvokeEndpointAsyncResult& WithInferenceId(const char* value) { SetInferenceId(value); return *this;}
+    inline const Aws::String& GetInferenceId() const { return m_inferenceId; }
+    template<typename InferenceIdT = Aws::String>
+    void SetInferenceId(InferenceIdT&& value) { m_inferenceIdHasBeenSet = true; m_inferenceId = std::forward<InferenceIdT>(value); }
+    template<typename InferenceIdT = Aws::String>
+    InvokeEndpointAsyncResult& WithInferenceId(InferenceIdT&& value) { SetInferenceId(std::forward<InferenceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon S3 URI where the inference response payload is stored.</p>
      */
-    inline const Aws::String& GetOutputLocation() const{ return m_outputLocation; }
-    inline void SetOutputLocation(const Aws::String& value) { m_outputLocation = value; }
-    inline void SetOutputLocation(Aws::String&& value) { m_outputLocation = std::move(value); }
-    inline void SetOutputLocation(const char* value) { m_outputLocation.assign(value); }
-    inline InvokeEndpointAsyncResult& WithOutputLocation(const Aws::String& value) { SetOutputLocation(value); return *this;}
-    inline InvokeEndpointAsyncResult& WithOutputLocation(Aws::String&& value) { SetOutputLocation(std::move(value)); return *this;}
-    inline InvokeEndpointAsyncResult& WithOutputLocation(const char* value) { SetOutputLocation(value); return *this;}
+    inline const Aws::String& GetOutputLocation() const { return m_outputLocation; }
+    template<typename OutputLocationT = Aws::String>
+    void SetOutputLocation(OutputLocationT&& value) { m_outputLocationHasBeenSet = true; m_outputLocation = std::forward<OutputLocationT>(value); }
+    template<typename OutputLocationT = Aws::String>
+    InvokeEndpointAsyncResult& WithOutputLocation(OutputLocationT&& value) { SetOutputLocation(std::forward<OutputLocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon S3 URI where the inference failure response payload is stored.</p>
      */
-    inline const Aws::String& GetFailureLocation() const{ return m_failureLocation; }
-    inline void SetFailureLocation(const Aws::String& value) { m_failureLocation = value; }
-    inline void SetFailureLocation(Aws::String&& value) { m_failureLocation = std::move(value); }
-    inline void SetFailureLocation(const char* value) { m_failureLocation.assign(value); }
-    inline InvokeEndpointAsyncResult& WithFailureLocation(const Aws::String& value) { SetFailureLocation(value); return *this;}
-    inline InvokeEndpointAsyncResult& WithFailureLocation(Aws::String&& value) { SetFailureLocation(std::move(value)); return *this;}
-    inline InvokeEndpointAsyncResult& WithFailureLocation(const char* value) { SetFailureLocation(value); return *this;}
+    inline const Aws::String& GetFailureLocation() const { return m_failureLocation; }
+    template<typename FailureLocationT = Aws::String>
+    void SetFailureLocation(FailureLocationT&& value) { m_failureLocationHasBeenSet = true; m_failureLocation = std::forward<FailureLocationT>(value); }
+    template<typename FailureLocationT = Aws::String>
+    InvokeEndpointAsyncResult& WithFailureLocation(FailureLocationT&& value) { SetFailureLocation(std::forward<FailureLocationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline InvokeEndpointAsyncResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline InvokeEndpointAsyncResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline InvokeEndpointAsyncResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    InvokeEndpointAsyncResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_inferenceId;
+    bool m_inferenceIdHasBeenSet = false;
 
     Aws::String m_outputLocation;
+    bool m_outputLocationHasBeenSet = false;
 
     Aws::String m_failureLocation;
+    bool m_failureLocationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

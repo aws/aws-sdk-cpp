@@ -33,7 +33,7 @@ namespace Model
   class PolicyTargetSummary
   {
   public:
-    AWS_ORGANIZATIONS_API PolicyTargetSummary();
+    AWS_ORGANIZATIONS_API PolicyTargetSummary() = default;
     AWS_ORGANIZATIONS_API PolicyTargetSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_ORGANIZATIONS_API PolicyTargetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ORGANIZATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,12 @@ namespace Model
      * the OU is in). This string is followed by a second "-" dash and from 8 to 32
      * additional lowercase letters or digits.</p> </li> </ul>
      */
-    inline const Aws::String& GetTargetId() const{ return m_targetId; }
+    inline const Aws::String& GetTargetId() const { return m_targetId; }
     inline bool TargetIdHasBeenSet() const { return m_targetIdHasBeenSet; }
-    inline void SetTargetId(const Aws::String& value) { m_targetIdHasBeenSet = true; m_targetId = value; }
-    inline void SetTargetId(Aws::String&& value) { m_targetIdHasBeenSet = true; m_targetId = std::move(value); }
-    inline void SetTargetId(const char* value) { m_targetIdHasBeenSet = true; m_targetId.assign(value); }
-    inline PolicyTargetSummary& WithTargetId(const Aws::String& value) { SetTargetId(value); return *this;}
-    inline PolicyTargetSummary& WithTargetId(Aws::String&& value) { SetTargetId(std::move(value)); return *this;}
-    inline PolicyTargetSummary& WithTargetId(const char* value) { SetTargetId(value); return *this;}
+    template<typename TargetIdT = Aws::String>
+    void SetTargetId(TargetIdT&& value) { m_targetIdHasBeenSet = true; m_targetId = std::forward<TargetIdT>(value); }
+    template<typename TargetIdT = Aws::String>
+    PolicyTargetSummary& WithTargetId(TargetIdT&& value) { SetTargetId(std::forward<TargetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +67,12 @@ namespace Model
      * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
      * Authorization Reference</i>.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline PolicyTargetSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline PolicyTargetSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline PolicyTargetSummary& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    PolicyTargetSummary& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,26 +82,22 @@ namespace Model
      * validate this parameter is a string of any of the characters in the ASCII
      * character range.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline PolicyTargetSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline PolicyTargetSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline PolicyTargetSummary& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    PolicyTargetSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the policy target.</p>
      */
-    inline const TargetType& GetType() const{ return m_type; }
+    inline TargetType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const TargetType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(TargetType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline PolicyTargetSummary& WithType(const TargetType& value) { SetType(value); return *this;}
-    inline PolicyTargetSummary& WithType(TargetType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(TargetType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline PolicyTargetSummary& WithType(TargetType value) { SetType(value); return *this;}
     ///@}
   private:
 
@@ -118,7 +110,7 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    TargetType m_type;
+    TargetType m_type{TargetType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

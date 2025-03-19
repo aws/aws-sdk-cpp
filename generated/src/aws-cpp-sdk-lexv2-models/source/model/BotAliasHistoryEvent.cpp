@@ -18,15 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-BotAliasHistoryEvent::BotAliasHistoryEvent() : 
-    m_botVersionHasBeenSet(false),
-    m_startDateHasBeenSet(false),
-    m_endDateHasBeenSet(false)
-{
-}
-
 BotAliasHistoryEvent::BotAliasHistoryEvent(JsonView jsonValue)
-  : BotAliasHistoryEvent()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ BotAliasHistoryEvent& BotAliasHistoryEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("botVersion"))
   {
     m_botVersion = jsonValue.GetString("botVersion");
-
     m_botVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startDate"))
   {
     m_startDate = jsonValue.GetDouble("startDate");
-
     m_startDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endDate"))
   {
     m_endDate = jsonValue.GetDouble("endDate");
-
     m_endDateHasBeenSet = true;
   }
-
   return *this;
 }
 

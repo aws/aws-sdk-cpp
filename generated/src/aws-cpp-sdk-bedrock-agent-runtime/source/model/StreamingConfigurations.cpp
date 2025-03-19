@@ -18,16 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-StreamingConfigurations::StreamingConfigurations() : 
-    m_applyGuardrailInterval(0),
-    m_applyGuardrailIntervalHasBeenSet(false),
-    m_streamFinalResponse(false),
-    m_streamFinalResponseHasBeenSet(false)
-{
-}
-
 StreamingConfigurations::StreamingConfigurations(JsonView jsonValue)
-  : StreamingConfigurations()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ StreamingConfigurations& StreamingConfigurations::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("applyGuardrailInterval"))
   {
     m_applyGuardrailInterval = jsonValue.GetInteger("applyGuardrailInterval");
-
     m_applyGuardrailIntervalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("streamFinalResponse"))
   {
     m_streamFinalResponse = jsonValue.GetBool("streamFinalResponse");
-
     m_streamFinalResponseHasBeenSet = true;
   }
-
   return *this;
 }
 

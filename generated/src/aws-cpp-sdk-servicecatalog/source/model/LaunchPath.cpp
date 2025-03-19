@@ -18,14 +18,7 @@ namespace ServiceCatalog
 namespace Model
 {
 
-LaunchPath::LaunchPath() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 LaunchPath::LaunchPath(JsonView jsonValue)
-  : LaunchPath()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ LaunchPath& LaunchPath::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

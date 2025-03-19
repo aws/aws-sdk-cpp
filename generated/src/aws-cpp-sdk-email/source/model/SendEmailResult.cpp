@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SendEmailResult::SendEmailResult()
-{
-}
-
 SendEmailResult::SendEmailResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ SendEmailResult& SendEmailResult::operator =(const Aws::AmazonWebServiceResult<X
     if(!messageIdNode.IsNull())
     {
       m_messageId = Aws::Utils::Xml::DecodeEscapedXmlText(messageIdNode.GetText());
+      m_messageIdHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::SES::Model::SendEmailResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

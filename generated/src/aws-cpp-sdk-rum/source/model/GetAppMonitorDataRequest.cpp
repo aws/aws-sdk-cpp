@@ -12,16 +12,6 @@ using namespace Aws::CloudWatchRUM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAppMonitorDataRequest::GetAppMonitorDataRequest() : 
-    m_filtersHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_timeRangeHasBeenSet(false)
-{
-}
-
 Aws::String GetAppMonitorDataRequest::SerializePayload() const
 {
   JsonValue payload;

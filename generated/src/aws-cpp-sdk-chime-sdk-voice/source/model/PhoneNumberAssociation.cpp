@@ -18,16 +18,7 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
-PhoneNumberAssociation::PhoneNumberAssociation() : 
-    m_valueHasBeenSet(false),
-    m_name(PhoneNumberAssociationName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_associatedTimestampHasBeenSet(false)
-{
-}
-
 PhoneNumberAssociation::PhoneNumberAssociation(JsonView jsonValue)
-  : PhoneNumberAssociation()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ PhoneNumberAssociation& PhoneNumberAssociation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = PhoneNumberAssociationNameMapper::GetPhoneNumberAssociationNameForName(jsonValue.GetString("Name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssociatedTimestamp"))
   {
     m_associatedTimestamp = jsonValue.GetString("AssociatedTimestamp");
-
     m_associatedTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

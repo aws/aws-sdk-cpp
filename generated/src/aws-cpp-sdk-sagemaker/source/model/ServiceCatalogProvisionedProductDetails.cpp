@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ServiceCatalogProvisionedProductDetails::ServiceCatalogProvisionedProductDetails() : 
-    m_provisionedProductIdHasBeenSet(false),
-    m_provisionedProductStatusMessageHasBeenSet(false)
-{
-}
-
 ServiceCatalogProvisionedProductDetails::ServiceCatalogProvisionedProductDetails(JsonView jsonValue)
-  : ServiceCatalogProvisionedProductDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ServiceCatalogProvisionedProductDetails& ServiceCatalogProvisionedProductDetails
   if(jsonValue.ValueExists("ProvisionedProductId"))
   {
     m_provisionedProductId = jsonValue.GetString("ProvisionedProductId");
-
     m_provisionedProductIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisionedProductStatusMessage"))
   {
     m_provisionedProductStatusMessage = jsonValue.GetString("ProvisionedProductStatusMessage");
-
     m_provisionedProductStatusMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

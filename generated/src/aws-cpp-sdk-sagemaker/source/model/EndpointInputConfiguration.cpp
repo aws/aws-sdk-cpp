@@ -18,17 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-EndpointInputConfiguration::EndpointInputConfiguration() : 
-    m_instanceType(ProductionVariantInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_serverlessConfigHasBeenSet(false),
-    m_inferenceSpecificationNameHasBeenSet(false),
-    m_environmentParameterRangesHasBeenSet(false)
-{
-}
-
 EndpointInputConfiguration::EndpointInputConfiguration(JsonView jsonValue)
-  : EndpointInputConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ EndpointInputConfiguration& EndpointInputConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("InstanceType"))
   {
     m_instanceType = ProductionVariantInstanceTypeMapper::GetProductionVariantInstanceTypeForName(jsonValue.GetString("InstanceType"));
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServerlessConfig"))
   {
     m_serverlessConfig = jsonValue.GetObject("ServerlessConfig");
-
     m_serverlessConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InferenceSpecificationName"))
   {
     m_inferenceSpecificationName = jsonValue.GetString("InferenceSpecificationName");
-
     m_inferenceSpecificationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnvironmentParameterRanges"))
   {
     m_environmentParameterRanges = jsonValue.GetObject("EnvironmentParameterRanges");
-
     m_environmentParameterRangesHasBeenSet = true;
   }
-
   return *this;
 }
 

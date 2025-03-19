@@ -12,13 +12,6 @@ using namespace Aws::SWF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RespondActivityTaskFailedRequest::RespondActivityTaskFailedRequest() : 
-    m_taskTokenHasBeenSet(false),
-    m_reasonHasBeenSet(false),
-    m_detailsHasBeenSet(false)
-{
-}
-
 Aws::String RespondActivityTaskFailedRequest::SerializePayload() const
 {
   JsonValue payload;

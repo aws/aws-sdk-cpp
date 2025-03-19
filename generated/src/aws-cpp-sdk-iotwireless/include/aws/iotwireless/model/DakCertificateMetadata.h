@@ -31,7 +31,7 @@ namespace Model
   class DakCertificateMetadata
   {
   public:
-    AWS_IOTWIRELESS_API DakCertificateMetadata();
+    AWS_IOTWIRELESS_API DakCertificateMetadata() = default;
     AWS_IOTWIRELESS_API DakCertificateMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API DakCertificateMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The certificate ID for the DAK.</p>
      */
-    inline const Aws::String& GetCertificateId() const{ return m_certificateId; }
+    inline const Aws::String& GetCertificateId() const { return m_certificateId; }
     inline bool CertificateIdHasBeenSet() const { return m_certificateIdHasBeenSet; }
-    inline void SetCertificateId(const Aws::String& value) { m_certificateIdHasBeenSet = true; m_certificateId = value; }
-    inline void SetCertificateId(Aws::String&& value) { m_certificateIdHasBeenSet = true; m_certificateId = std::move(value); }
-    inline void SetCertificateId(const char* value) { m_certificateIdHasBeenSet = true; m_certificateId.assign(value); }
-    inline DakCertificateMetadata& WithCertificateId(const Aws::String& value) { SetCertificateId(value); return *this;}
-    inline DakCertificateMetadata& WithCertificateId(Aws::String&& value) { SetCertificateId(std::move(value)); return *this;}
-    inline DakCertificateMetadata& WithCertificateId(const char* value) { SetCertificateId(value); return *this;}
+    template<typename CertificateIdT = Aws::String>
+    void SetCertificateId(CertificateIdT&& value) { m_certificateIdHasBeenSet = true; m_certificateId = std::forward<CertificateIdT>(value); }
+    template<typename CertificateIdT = Aws::String>
+    DakCertificateMetadata& WithCertificateId(CertificateIdT&& value) { SetCertificateId(std::forward<CertificateIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,7 +54,7 @@ namespace Model
      * <p>The maximum number of signatures that the DAK can sign. A value of
      * <code>-1</code> indicates that there's no device limit.</p>
      */
-    inline int GetMaxAllowedSignature() const{ return m_maxAllowedSignature; }
+    inline int GetMaxAllowedSignature() const { return m_maxAllowedSignature; }
     inline bool MaxAllowedSignatureHasBeenSet() const { return m_maxAllowedSignatureHasBeenSet; }
     inline void SetMaxAllowedSignature(int value) { m_maxAllowedSignatureHasBeenSet = true; m_maxAllowedSignature = value; }
     inline DakCertificateMetadata& WithMaxAllowedSignature(int value) { SetMaxAllowedSignature(value); return *this;}
@@ -66,7 +64,7 @@ namespace Model
     /**
      * <p>Whether factory support has been enabled.</p>
      */
-    inline bool GetFactorySupport() const{ return m_factorySupport; }
+    inline bool GetFactorySupport() const { return m_factorySupport; }
     inline bool FactorySupportHasBeenSet() const { return m_factorySupportHasBeenSet; }
     inline void SetFactorySupport(bool value) { m_factorySupportHasBeenSet = true; m_factorySupport = value; }
     inline DakCertificateMetadata& WithFactorySupport(bool value) { SetFactorySupport(value); return *this;}
@@ -77,38 +75,34 @@ namespace Model
      * <p>The advertised product ID (APID) that's used for pre-production and
      * production applications.</p>
      */
-    inline const Aws::String& GetApId() const{ return m_apId; }
+    inline const Aws::String& GetApId() const { return m_apId; }
     inline bool ApIdHasBeenSet() const { return m_apIdHasBeenSet; }
-    inline void SetApId(const Aws::String& value) { m_apIdHasBeenSet = true; m_apId = value; }
-    inline void SetApId(Aws::String&& value) { m_apIdHasBeenSet = true; m_apId = std::move(value); }
-    inline void SetApId(const char* value) { m_apIdHasBeenSet = true; m_apId.assign(value); }
-    inline DakCertificateMetadata& WithApId(const Aws::String& value) { SetApId(value); return *this;}
-    inline DakCertificateMetadata& WithApId(Aws::String&& value) { SetApId(std::move(value)); return *this;}
-    inline DakCertificateMetadata& WithApId(const char* value) { SetApId(value); return *this;}
+    template<typename ApIdT = Aws::String>
+    void SetApId(ApIdT&& value) { m_apIdHasBeenSet = true; m_apId = std::forward<ApIdT>(value); }
+    template<typename ApIdT = Aws::String>
+    DakCertificateMetadata& WithApId(ApIdT&& value) { SetApId(std::forward<ApIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The device type ID that's used for prototyping applications.</p>
      */
-    inline const Aws::String& GetDeviceTypeId() const{ return m_deviceTypeId; }
+    inline const Aws::String& GetDeviceTypeId() const { return m_deviceTypeId; }
     inline bool DeviceTypeIdHasBeenSet() const { return m_deviceTypeIdHasBeenSet; }
-    inline void SetDeviceTypeId(const Aws::String& value) { m_deviceTypeIdHasBeenSet = true; m_deviceTypeId = value; }
-    inline void SetDeviceTypeId(Aws::String&& value) { m_deviceTypeIdHasBeenSet = true; m_deviceTypeId = std::move(value); }
-    inline void SetDeviceTypeId(const char* value) { m_deviceTypeIdHasBeenSet = true; m_deviceTypeId.assign(value); }
-    inline DakCertificateMetadata& WithDeviceTypeId(const Aws::String& value) { SetDeviceTypeId(value); return *this;}
-    inline DakCertificateMetadata& WithDeviceTypeId(Aws::String&& value) { SetDeviceTypeId(std::move(value)); return *this;}
-    inline DakCertificateMetadata& WithDeviceTypeId(const char* value) { SetDeviceTypeId(value); return *this;}
+    template<typename DeviceTypeIdT = Aws::String>
+    void SetDeviceTypeId(DeviceTypeIdT&& value) { m_deviceTypeIdHasBeenSet = true; m_deviceTypeId = std::forward<DeviceTypeIdT>(value); }
+    template<typename DeviceTypeIdT = Aws::String>
+    DakCertificateMetadata& WithDeviceTypeId(DeviceTypeIdT&& value) { SetDeviceTypeId(std::forward<DeviceTypeIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_certificateId;
     bool m_certificateIdHasBeenSet = false;
 
-    int m_maxAllowedSignature;
+    int m_maxAllowedSignature{0};
     bool m_maxAllowedSignatureHasBeenSet = false;
 
-    bool m_factorySupport;
+    bool m_factorySupport{false};
     bool m_factorySupportHasBeenSet = false;
 
     Aws::String m_apId;

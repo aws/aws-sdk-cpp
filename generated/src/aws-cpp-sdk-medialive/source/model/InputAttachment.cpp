@@ -18,17 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-InputAttachment::InputAttachment() : 
-    m_automaticInputFailoverSettingsHasBeenSet(false),
-    m_inputAttachmentNameHasBeenSet(false),
-    m_inputIdHasBeenSet(false),
-    m_inputSettingsHasBeenSet(false),
-    m_logicalInterfaceNamesHasBeenSet(false)
-{
-}
-
 InputAttachment::InputAttachment(JsonView jsonValue)
-  : InputAttachment()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ InputAttachment& InputAttachment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("automaticInputFailoverSettings"))
   {
     m_automaticInputFailoverSettings = jsonValue.GetObject("automaticInputFailoverSettings");
-
     m_automaticInputFailoverSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputAttachmentName"))
   {
     m_inputAttachmentName = jsonValue.GetString("inputAttachmentName");
-
     m_inputAttachmentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputId"))
   {
     m_inputId = jsonValue.GetString("inputId");
-
     m_inputIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputSettings"))
   {
     m_inputSettings = jsonValue.GetObject("inputSettings");
-
     m_inputSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logicalInterfaceNames"))
   {
     Aws::Utils::Array<JsonView> logicalInterfaceNamesJsonList = jsonValue.GetArray("logicalInterfaceNames");
@@ -72,7 +54,6 @@ InputAttachment& InputAttachment::operator =(JsonView jsonValue)
     }
     m_logicalInterfaceNamesHasBeenSet = true;
   }
-
   return *this;
 }
 

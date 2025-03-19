@@ -35,7 +35,7 @@ namespace Model
   class EvaluationFormSingleSelectQuestionProperties
   {
   public:
-    AWS_CONNECT_API EvaluationFormSingleSelectQuestionProperties();
+    AWS_CONNECT_API EvaluationFormSingleSelectQuestionProperties() = default;
     AWS_CONNECT_API EvaluationFormSingleSelectQuestionProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API EvaluationFormSingleSelectQuestionProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,45 +45,43 @@ namespace Model
     /**
      * <p>The answer options of the single select question.</p>
      */
-    inline const Aws::Vector<EvaluationFormSingleSelectQuestionOption>& GetOptions() const{ return m_options; }
+    inline const Aws::Vector<EvaluationFormSingleSelectQuestionOption>& GetOptions() const { return m_options; }
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-    inline void SetOptions(const Aws::Vector<EvaluationFormSingleSelectQuestionOption>& value) { m_optionsHasBeenSet = true; m_options = value; }
-    inline void SetOptions(Aws::Vector<EvaluationFormSingleSelectQuestionOption>&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-    inline EvaluationFormSingleSelectQuestionProperties& WithOptions(const Aws::Vector<EvaluationFormSingleSelectQuestionOption>& value) { SetOptions(value); return *this;}
-    inline EvaluationFormSingleSelectQuestionProperties& WithOptions(Aws::Vector<EvaluationFormSingleSelectQuestionOption>&& value) { SetOptions(std::move(value)); return *this;}
-    inline EvaluationFormSingleSelectQuestionProperties& AddOptions(const EvaluationFormSingleSelectQuestionOption& value) { m_optionsHasBeenSet = true; m_options.push_back(value); return *this; }
-    inline EvaluationFormSingleSelectQuestionProperties& AddOptions(EvaluationFormSingleSelectQuestionOption&& value) { m_optionsHasBeenSet = true; m_options.push_back(std::move(value)); return *this; }
+    template<typename OptionsT = Aws::Vector<EvaluationFormSingleSelectQuestionOption>>
+    void SetOptions(OptionsT&& value) { m_optionsHasBeenSet = true; m_options = std::forward<OptionsT>(value); }
+    template<typename OptionsT = Aws::Vector<EvaluationFormSingleSelectQuestionOption>>
+    EvaluationFormSingleSelectQuestionProperties& WithOptions(OptionsT&& value) { SetOptions(std::forward<OptionsT>(value)); return *this;}
+    template<typename OptionsT = EvaluationFormSingleSelectQuestionOption>
+    EvaluationFormSingleSelectQuestionProperties& AddOptions(OptionsT&& value) { m_optionsHasBeenSet = true; m_options.emplace_back(std::forward<OptionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The display mode of the single select question.</p>
      */
-    inline const EvaluationFormSingleSelectQuestionDisplayMode& GetDisplayAs() const{ return m_displayAs; }
+    inline EvaluationFormSingleSelectQuestionDisplayMode GetDisplayAs() const { return m_displayAs; }
     inline bool DisplayAsHasBeenSet() const { return m_displayAsHasBeenSet; }
-    inline void SetDisplayAs(const EvaluationFormSingleSelectQuestionDisplayMode& value) { m_displayAsHasBeenSet = true; m_displayAs = value; }
-    inline void SetDisplayAs(EvaluationFormSingleSelectQuestionDisplayMode&& value) { m_displayAsHasBeenSet = true; m_displayAs = std::move(value); }
-    inline EvaluationFormSingleSelectQuestionProperties& WithDisplayAs(const EvaluationFormSingleSelectQuestionDisplayMode& value) { SetDisplayAs(value); return *this;}
-    inline EvaluationFormSingleSelectQuestionProperties& WithDisplayAs(EvaluationFormSingleSelectQuestionDisplayMode&& value) { SetDisplayAs(std::move(value)); return *this;}
+    inline void SetDisplayAs(EvaluationFormSingleSelectQuestionDisplayMode value) { m_displayAsHasBeenSet = true; m_displayAs = value; }
+    inline EvaluationFormSingleSelectQuestionProperties& WithDisplayAs(EvaluationFormSingleSelectQuestionDisplayMode value) { SetDisplayAs(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The display mode of the single select question.</p>
      */
-    inline const EvaluationFormSingleSelectQuestionAutomation& GetAutomation() const{ return m_automation; }
+    inline const EvaluationFormSingleSelectQuestionAutomation& GetAutomation() const { return m_automation; }
     inline bool AutomationHasBeenSet() const { return m_automationHasBeenSet; }
-    inline void SetAutomation(const EvaluationFormSingleSelectQuestionAutomation& value) { m_automationHasBeenSet = true; m_automation = value; }
-    inline void SetAutomation(EvaluationFormSingleSelectQuestionAutomation&& value) { m_automationHasBeenSet = true; m_automation = std::move(value); }
-    inline EvaluationFormSingleSelectQuestionProperties& WithAutomation(const EvaluationFormSingleSelectQuestionAutomation& value) { SetAutomation(value); return *this;}
-    inline EvaluationFormSingleSelectQuestionProperties& WithAutomation(EvaluationFormSingleSelectQuestionAutomation&& value) { SetAutomation(std::move(value)); return *this;}
+    template<typename AutomationT = EvaluationFormSingleSelectQuestionAutomation>
+    void SetAutomation(AutomationT&& value) { m_automationHasBeenSet = true; m_automation = std::forward<AutomationT>(value); }
+    template<typename AutomationT = EvaluationFormSingleSelectQuestionAutomation>
+    EvaluationFormSingleSelectQuestionProperties& WithAutomation(AutomationT&& value) { SetAutomation(std::forward<AutomationT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<EvaluationFormSingleSelectQuestionOption> m_options;
     bool m_optionsHasBeenSet = false;
 
-    EvaluationFormSingleSelectQuestionDisplayMode m_displayAs;
+    EvaluationFormSingleSelectQuestionDisplayMode m_displayAs{EvaluationFormSingleSelectQuestionDisplayMode::NOT_SET};
     bool m_displayAsHasBeenSet = false;
 
     EvaluationFormSingleSelectQuestionAutomation m_automation;

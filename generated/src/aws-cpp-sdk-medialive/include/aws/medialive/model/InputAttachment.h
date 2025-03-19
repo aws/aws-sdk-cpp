@@ -34,7 +34,7 @@ namespace Model
   class InputAttachment
   {
   public:
-    AWS_MEDIALIVE_API InputAttachment();
+    AWS_MEDIALIVE_API InputAttachment() = default;
     AWS_MEDIALIVE_API InputAttachment(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API InputAttachment& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * User-specified settings for defining what the conditions are for declaring the
      * input unhealthy and failing over to a different input.
      */
-    inline const AutomaticInputFailoverSettings& GetAutomaticInputFailoverSettings() const{ return m_automaticInputFailoverSettings; }
+    inline const AutomaticInputFailoverSettings& GetAutomaticInputFailoverSettings() const { return m_automaticInputFailoverSettings; }
     inline bool AutomaticInputFailoverSettingsHasBeenSet() const { return m_automaticInputFailoverSettingsHasBeenSet; }
-    inline void SetAutomaticInputFailoverSettings(const AutomaticInputFailoverSettings& value) { m_automaticInputFailoverSettingsHasBeenSet = true; m_automaticInputFailoverSettings = value; }
-    inline void SetAutomaticInputFailoverSettings(AutomaticInputFailoverSettings&& value) { m_automaticInputFailoverSettingsHasBeenSet = true; m_automaticInputFailoverSettings = std::move(value); }
-    inline InputAttachment& WithAutomaticInputFailoverSettings(const AutomaticInputFailoverSettings& value) { SetAutomaticInputFailoverSettings(value); return *this;}
-    inline InputAttachment& WithAutomaticInputFailoverSettings(AutomaticInputFailoverSettings&& value) { SetAutomaticInputFailoverSettings(std::move(value)); return *this;}
+    template<typename AutomaticInputFailoverSettingsT = AutomaticInputFailoverSettings>
+    void SetAutomaticInputFailoverSettings(AutomaticInputFailoverSettingsT&& value) { m_automaticInputFailoverSettingsHasBeenSet = true; m_automaticInputFailoverSettings = std::forward<AutomaticInputFailoverSettingsT>(value); }
+    template<typename AutomaticInputFailoverSettingsT = AutomaticInputFailoverSettings>
+    InputAttachment& WithAutomaticInputFailoverSettings(AutomaticInputFailoverSettingsT&& value) { SetAutomaticInputFailoverSettings(std::forward<AutomaticInputFailoverSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,40 +58,36 @@ namespace Model
      * User-specified name for the attachment. This is required if the user wants to
      * use this input in an input switch action.
      */
-    inline const Aws::String& GetInputAttachmentName() const{ return m_inputAttachmentName; }
+    inline const Aws::String& GetInputAttachmentName() const { return m_inputAttachmentName; }
     inline bool InputAttachmentNameHasBeenSet() const { return m_inputAttachmentNameHasBeenSet; }
-    inline void SetInputAttachmentName(const Aws::String& value) { m_inputAttachmentNameHasBeenSet = true; m_inputAttachmentName = value; }
-    inline void SetInputAttachmentName(Aws::String&& value) { m_inputAttachmentNameHasBeenSet = true; m_inputAttachmentName = std::move(value); }
-    inline void SetInputAttachmentName(const char* value) { m_inputAttachmentNameHasBeenSet = true; m_inputAttachmentName.assign(value); }
-    inline InputAttachment& WithInputAttachmentName(const Aws::String& value) { SetInputAttachmentName(value); return *this;}
-    inline InputAttachment& WithInputAttachmentName(Aws::String&& value) { SetInputAttachmentName(std::move(value)); return *this;}
-    inline InputAttachment& WithInputAttachmentName(const char* value) { SetInputAttachmentName(value); return *this;}
+    template<typename InputAttachmentNameT = Aws::String>
+    void SetInputAttachmentName(InputAttachmentNameT&& value) { m_inputAttachmentNameHasBeenSet = true; m_inputAttachmentName = std::forward<InputAttachmentNameT>(value); }
+    template<typename InputAttachmentNameT = Aws::String>
+    InputAttachment& WithInputAttachmentName(InputAttachmentNameT&& value) { SetInputAttachmentName(std::forward<InputAttachmentNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The ID of the input
      */
-    inline const Aws::String& GetInputId() const{ return m_inputId; }
+    inline const Aws::String& GetInputId() const { return m_inputId; }
     inline bool InputIdHasBeenSet() const { return m_inputIdHasBeenSet; }
-    inline void SetInputId(const Aws::String& value) { m_inputIdHasBeenSet = true; m_inputId = value; }
-    inline void SetInputId(Aws::String&& value) { m_inputIdHasBeenSet = true; m_inputId = std::move(value); }
-    inline void SetInputId(const char* value) { m_inputIdHasBeenSet = true; m_inputId.assign(value); }
-    inline InputAttachment& WithInputId(const Aws::String& value) { SetInputId(value); return *this;}
-    inline InputAttachment& WithInputId(Aws::String&& value) { SetInputId(std::move(value)); return *this;}
-    inline InputAttachment& WithInputId(const char* value) { SetInputId(value); return *this;}
+    template<typename InputIdT = Aws::String>
+    void SetInputId(InputIdT&& value) { m_inputIdHasBeenSet = true; m_inputId = std::forward<InputIdT>(value); }
+    template<typename InputIdT = Aws::String>
+    InputAttachment& WithInputId(InputIdT&& value) { SetInputId(std::forward<InputIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Settings of an input (caption selector, etc.)
      */
-    inline const InputSettings& GetInputSettings() const{ return m_inputSettings; }
+    inline const InputSettings& GetInputSettings() const { return m_inputSettings; }
     inline bool InputSettingsHasBeenSet() const { return m_inputSettingsHasBeenSet; }
-    inline void SetInputSettings(const InputSettings& value) { m_inputSettingsHasBeenSet = true; m_inputSettings = value; }
-    inline void SetInputSettings(InputSettings&& value) { m_inputSettingsHasBeenSet = true; m_inputSettings = std::move(value); }
-    inline InputAttachment& WithInputSettings(const InputSettings& value) { SetInputSettings(value); return *this;}
-    inline InputAttachment& WithInputSettings(InputSettings&& value) { SetInputSettings(std::move(value)); return *this;}
+    template<typename InputSettingsT = InputSettings>
+    void SetInputSettings(InputSettingsT&& value) { m_inputSettingsHasBeenSet = true; m_inputSettings = std::forward<InputSettingsT>(value); }
+    template<typename InputSettingsT = InputSettings>
+    InputAttachment& WithInputSettings(InputSettingsT&& value) { SetInputSettings(std::forward<InputSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,15 +95,14 @@ namespace Model
      * Optional assignment of an input to a logical interface on the Node. Only applies
      * to on premises channels.
      */
-    inline const Aws::Vector<Aws::String>& GetLogicalInterfaceNames() const{ return m_logicalInterfaceNames; }
+    inline const Aws::Vector<Aws::String>& GetLogicalInterfaceNames() const { return m_logicalInterfaceNames; }
     inline bool LogicalInterfaceNamesHasBeenSet() const { return m_logicalInterfaceNamesHasBeenSet; }
-    inline void SetLogicalInterfaceNames(const Aws::Vector<Aws::String>& value) { m_logicalInterfaceNamesHasBeenSet = true; m_logicalInterfaceNames = value; }
-    inline void SetLogicalInterfaceNames(Aws::Vector<Aws::String>&& value) { m_logicalInterfaceNamesHasBeenSet = true; m_logicalInterfaceNames = std::move(value); }
-    inline InputAttachment& WithLogicalInterfaceNames(const Aws::Vector<Aws::String>& value) { SetLogicalInterfaceNames(value); return *this;}
-    inline InputAttachment& WithLogicalInterfaceNames(Aws::Vector<Aws::String>&& value) { SetLogicalInterfaceNames(std::move(value)); return *this;}
-    inline InputAttachment& AddLogicalInterfaceNames(const Aws::String& value) { m_logicalInterfaceNamesHasBeenSet = true; m_logicalInterfaceNames.push_back(value); return *this; }
-    inline InputAttachment& AddLogicalInterfaceNames(Aws::String&& value) { m_logicalInterfaceNamesHasBeenSet = true; m_logicalInterfaceNames.push_back(std::move(value)); return *this; }
-    inline InputAttachment& AddLogicalInterfaceNames(const char* value) { m_logicalInterfaceNamesHasBeenSet = true; m_logicalInterfaceNames.push_back(value); return *this; }
+    template<typename LogicalInterfaceNamesT = Aws::Vector<Aws::String>>
+    void SetLogicalInterfaceNames(LogicalInterfaceNamesT&& value) { m_logicalInterfaceNamesHasBeenSet = true; m_logicalInterfaceNames = std::forward<LogicalInterfaceNamesT>(value); }
+    template<typename LogicalInterfaceNamesT = Aws::Vector<Aws::String>>
+    InputAttachment& WithLogicalInterfaceNames(LogicalInterfaceNamesT&& value) { SetLogicalInterfaceNames(std::forward<LogicalInterfaceNamesT>(value)); return *this;}
+    template<typename LogicalInterfaceNamesT = Aws::String>
+    InputAttachment& AddLogicalInterfaceNames(LogicalInterfaceNamesT&& value) { m_logicalInterfaceNamesHasBeenSet = true; m_logicalInterfaceNames.emplace_back(std::forward<LogicalInterfaceNamesT>(value)); return *this; }
     ///@}
   private:
 

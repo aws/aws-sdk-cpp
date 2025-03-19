@@ -20,13 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-IpamPools::IpamPools() : 
-    m_ipv4IpamPoolIdHasBeenSet(false)
-{
-}
-
 IpamPools::IpamPools(const XmlNode& xmlNode)
-  : IpamPools()
 {
   *this = xmlNode;
 }

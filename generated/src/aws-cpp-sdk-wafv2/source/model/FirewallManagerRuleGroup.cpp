@@ -18,18 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-FirewallManagerRuleGroup::FirewallManagerRuleGroup() : 
-    m_nameHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_firewallManagerStatementHasBeenSet(false),
-    m_overrideActionHasBeenSet(false),
-    m_visibilityConfigHasBeenSet(false)
-{
-}
-
 FirewallManagerRuleGroup::FirewallManagerRuleGroup(JsonView jsonValue)
-  : FirewallManagerRuleGroup()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ FirewallManagerRuleGroup& FirewallManagerRuleGroup::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Priority"))
   {
     m_priority = jsonValue.GetInteger("Priority");
-
     m_priorityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FirewallManagerStatement"))
   {
     m_firewallManagerStatement = jsonValue.GetObject("FirewallManagerStatement");
-
     m_firewallManagerStatementHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OverrideAction"))
   {
     m_overrideAction = jsonValue.GetObject("OverrideAction");
-
     m_overrideActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VisibilityConfig"))
   {
     m_visibilityConfig = jsonValue.GetObject("VisibilityConfig");
-
     m_visibilityConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

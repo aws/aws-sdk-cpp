@@ -12,17 +12,6 @@ using namespace Aws::MigrationHubStrategyRecommendations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartImportFileTaskRequest::StartImportFileTaskRequest() : 
-    m_s3BucketHasBeenSet(false),
-    m_dataSourceType(DataSourceType::NOT_SET),
-    m_dataSourceTypeHasBeenSet(false),
-    m_groupIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_s3bucketForReportDataHasBeenSet(false),
-    m_s3keyHasBeenSet(false)
-{
-}
-
 Aws::String StartImportFileTaskRequest::SerializePayload() const
 {
   JsonValue payload;

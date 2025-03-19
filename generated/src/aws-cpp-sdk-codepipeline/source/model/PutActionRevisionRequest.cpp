@@ -12,14 +12,6 @@ using namespace Aws::CodePipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutActionRevisionRequest::PutActionRevisionRequest() : 
-    m_pipelineNameHasBeenSet(false),
-    m_stageNameHasBeenSet(false),
-    m_actionNameHasBeenSet(false),
-    m_actionRevisionHasBeenSet(false)
-{
-}
-
 Aws::String PutActionRevisionRequest::SerializePayload() const
 {
   JsonValue payload;

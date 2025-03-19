@@ -42,7 +42,7 @@ namespace Model
   class PresetWatermark
   {
   public:
-    AWS_ELASTICTRANSCODER_API PresetWatermark();
+    AWS_ELASTICTRANSCODER_API PresetWatermark() = default;
     AWS_ELASTICTRANSCODER_API PresetWatermark(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICTRANSCODER_API PresetWatermark& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,14 +53,12 @@ namespace Model
      * <p> A unique identifier for the settings for one watermark. The value of
      * <code>Id</code> can be up to 40 characters long. </p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline PresetWatermark& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline PresetWatermark& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline PresetWatermark& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    PresetWatermark& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +72,12 @@ namespace Model
      * calculation.</p> <p>If you specify the value in pixels, it must be less than or
      * equal to the value of <code>MaxWidth</code>.</p> </li> </ul>
      */
-    inline const Aws::String& GetMaxWidth() const{ return m_maxWidth; }
+    inline const Aws::String& GetMaxWidth() const { return m_maxWidth; }
     inline bool MaxWidthHasBeenSet() const { return m_maxWidthHasBeenSet; }
-    inline void SetMaxWidth(const Aws::String& value) { m_maxWidthHasBeenSet = true; m_maxWidth = value; }
-    inline void SetMaxWidth(Aws::String&& value) { m_maxWidthHasBeenSet = true; m_maxWidth = std::move(value); }
-    inline void SetMaxWidth(const char* value) { m_maxWidthHasBeenSet = true; m_maxWidth.assign(value); }
-    inline PresetWatermark& WithMaxWidth(const Aws::String& value) { SetMaxWidth(value); return *this;}
-    inline PresetWatermark& WithMaxWidth(Aws::String&& value) { SetMaxWidth(std::move(value)); return *this;}
-    inline PresetWatermark& WithMaxWidth(const char* value) { SetMaxWidth(value); return *this;}
+    template<typename MaxWidthT = Aws::String>
+    void SetMaxWidth(MaxWidthT&& value) { m_maxWidthHasBeenSet = true; m_maxWidth = std::forward<MaxWidthT>(value); }
+    template<typename MaxWidthT = Aws::String>
+    PresetWatermark& WithMaxWidth(MaxWidthT&& value) { SetMaxWidth(std::forward<MaxWidthT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,14 +91,12 @@ namespace Model
      * calculation.</p> </li> </ul> <p>If you specify the value in pixels, it must be
      * less than or equal to the value of <code>MaxHeight</code>.</p>
      */
-    inline const Aws::String& GetMaxHeight() const{ return m_maxHeight; }
+    inline const Aws::String& GetMaxHeight() const { return m_maxHeight; }
     inline bool MaxHeightHasBeenSet() const { return m_maxHeightHasBeenSet; }
-    inline void SetMaxHeight(const Aws::String& value) { m_maxHeightHasBeenSet = true; m_maxHeight = value; }
-    inline void SetMaxHeight(Aws::String&& value) { m_maxHeightHasBeenSet = true; m_maxHeight = std::move(value); }
-    inline void SetMaxHeight(const char* value) { m_maxHeightHasBeenSet = true; m_maxHeight.assign(value); }
-    inline PresetWatermark& WithMaxHeight(const Aws::String& value) { SetMaxHeight(value); return *this;}
-    inline PresetWatermark& WithMaxHeight(Aws::String&& value) { SetMaxHeight(std::move(value)); return *this;}
-    inline PresetWatermark& WithMaxHeight(const char* value) { SetMaxHeight(value); return *this;}
+    template<typename MaxHeightT = Aws::String>
+    void SetMaxHeight(MaxHeightT&& value) { m_maxHeightHasBeenSet = true; m_maxHeight = std::forward<MaxHeightT>(value); }
+    template<typename MaxHeightT = Aws::String>
+    PresetWatermark& WithMaxHeight(MaxHeightT&& value) { SetMaxHeight(std::forward<MaxHeightT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -121,14 +115,12 @@ namespace Model
      * If you specify this option, Elastic Transcoder does not scale the watermark
      * up.</p> </li> </ul>
      */
-    inline const Aws::String& GetSizingPolicy() const{ return m_sizingPolicy; }
+    inline const Aws::String& GetSizingPolicy() const { return m_sizingPolicy; }
     inline bool SizingPolicyHasBeenSet() const { return m_sizingPolicyHasBeenSet; }
-    inline void SetSizingPolicy(const Aws::String& value) { m_sizingPolicyHasBeenSet = true; m_sizingPolicy = value; }
-    inline void SetSizingPolicy(Aws::String&& value) { m_sizingPolicyHasBeenSet = true; m_sizingPolicy = std::move(value); }
-    inline void SetSizingPolicy(const char* value) { m_sizingPolicyHasBeenSet = true; m_sizingPolicy.assign(value); }
-    inline PresetWatermark& WithSizingPolicy(const Aws::String& value) { SetSizingPolicy(value); return *this;}
-    inline PresetWatermark& WithSizingPolicy(Aws::String&& value) { SetSizingPolicy(std::move(value)); return *this;}
-    inline PresetWatermark& WithSizingPolicy(const char* value) { SetSizingPolicy(value); return *this;}
+    template<typename SizingPolicyT = Aws::String>
+    void SetSizingPolicy(SizingPolicyT&& value) { m_sizingPolicyHasBeenSet = true; m_sizingPolicy = std::forward<SizingPolicyT>(value); }
+    template<typename SizingPolicyT = Aws::String>
+    PresetWatermark& WithSizingPolicy(SizingPolicyT&& value) { SetSizingPolicy(std::forward<SizingPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -140,14 +132,12 @@ namespace Model
      * border of the video.</p> </li> <li> <p> <b>Center</b>: The watermark is centered
      * between the left and right borders.</p> </li> </ul>
      */
-    inline const Aws::String& GetHorizontalAlign() const{ return m_horizontalAlign; }
+    inline const Aws::String& GetHorizontalAlign() const { return m_horizontalAlign; }
     inline bool HorizontalAlignHasBeenSet() const { return m_horizontalAlignHasBeenSet; }
-    inline void SetHorizontalAlign(const Aws::String& value) { m_horizontalAlignHasBeenSet = true; m_horizontalAlign = value; }
-    inline void SetHorizontalAlign(Aws::String&& value) { m_horizontalAlignHasBeenSet = true; m_horizontalAlign = std::move(value); }
-    inline void SetHorizontalAlign(const char* value) { m_horizontalAlignHasBeenSet = true; m_horizontalAlign.assign(value); }
-    inline PresetWatermark& WithHorizontalAlign(const Aws::String& value) { SetHorizontalAlign(value); return *this;}
-    inline PresetWatermark& WithHorizontalAlign(Aws::String&& value) { SetHorizontalAlign(std::move(value)); return *this;}
-    inline PresetWatermark& WithHorizontalAlign(const char* value) { SetHorizontalAlign(value); return *this;}
+    template<typename HorizontalAlignT = Aws::String>
+    void SetHorizontalAlign(HorizontalAlignT&& value) { m_horizontalAlignHasBeenSet = true; m_horizontalAlign = std::forward<HorizontalAlignT>(value); }
+    template<typename HorizontalAlignT = Aws::String>
+    PresetWatermark& WithHorizontalAlign(HorizontalAlignT&& value) { SetHorizontalAlign(std::forward<HorizontalAlignT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -169,14 +159,12 @@ namespace Model
      * to include the black bars that are added by Elastic Transcoder, if any, in the
      * offset calculation.</p>
      */
-    inline const Aws::String& GetHorizontalOffset() const{ return m_horizontalOffset; }
+    inline const Aws::String& GetHorizontalOffset() const { return m_horizontalOffset; }
     inline bool HorizontalOffsetHasBeenSet() const { return m_horizontalOffsetHasBeenSet; }
-    inline void SetHorizontalOffset(const Aws::String& value) { m_horizontalOffsetHasBeenSet = true; m_horizontalOffset = value; }
-    inline void SetHorizontalOffset(Aws::String&& value) { m_horizontalOffsetHasBeenSet = true; m_horizontalOffset = std::move(value); }
-    inline void SetHorizontalOffset(const char* value) { m_horizontalOffsetHasBeenSet = true; m_horizontalOffset.assign(value); }
-    inline PresetWatermark& WithHorizontalOffset(const Aws::String& value) { SetHorizontalOffset(value); return *this;}
-    inline PresetWatermark& WithHorizontalOffset(Aws::String&& value) { SetHorizontalOffset(std::move(value)); return *this;}
-    inline PresetWatermark& WithHorizontalOffset(const char* value) { SetHorizontalOffset(value); return *this;}
+    template<typename HorizontalOffsetT = Aws::String>
+    void SetHorizontalOffset(HorizontalOffsetT&& value) { m_horizontalOffsetHasBeenSet = true; m_horizontalOffset = std::forward<HorizontalOffsetT>(value); }
+    template<typename HorizontalOffsetT = Aws::String>
+    PresetWatermark& WithHorizontalOffset(HorizontalOffsetT&& value) { SetHorizontalOffset(std::forward<HorizontalOffsetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -188,14 +176,12 @@ namespace Model
      * border of the video.</p> </li> <li> <p> <b>Center</b>: The watermark is centered
      * between the top and bottom borders.</p> </li> </ul>
      */
-    inline const Aws::String& GetVerticalAlign() const{ return m_verticalAlign; }
+    inline const Aws::String& GetVerticalAlign() const { return m_verticalAlign; }
     inline bool VerticalAlignHasBeenSet() const { return m_verticalAlignHasBeenSet; }
-    inline void SetVerticalAlign(const Aws::String& value) { m_verticalAlignHasBeenSet = true; m_verticalAlign = value; }
-    inline void SetVerticalAlign(Aws::String&& value) { m_verticalAlignHasBeenSet = true; m_verticalAlign = std::move(value); }
-    inline void SetVerticalAlign(const char* value) { m_verticalAlignHasBeenSet = true; m_verticalAlign.assign(value); }
-    inline PresetWatermark& WithVerticalAlign(const Aws::String& value) { SetVerticalAlign(value); return *this;}
-    inline PresetWatermark& WithVerticalAlign(Aws::String&& value) { SetVerticalAlign(std::move(value)); return *this;}
-    inline PresetWatermark& WithVerticalAlign(const char* value) { SetVerticalAlign(value); return *this;}
+    template<typename VerticalAlignT = Aws::String>
+    void SetVerticalAlign(VerticalAlignT&& value) { m_verticalAlignHasBeenSet = true; m_verticalAlign = std::forward<VerticalAlignT>(value); }
+    template<typename VerticalAlignT = Aws::String>
+    PresetWatermark& WithVerticalAlign(VerticalAlignT&& value) { SetVerticalAlign(std::forward<VerticalAlignT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -218,14 +204,12 @@ namespace Model
      * the black bars that are added by Elastic Transcoder, if any, in the offset
      * calculation.</p>
      */
-    inline const Aws::String& GetVerticalOffset() const{ return m_verticalOffset; }
+    inline const Aws::String& GetVerticalOffset() const { return m_verticalOffset; }
     inline bool VerticalOffsetHasBeenSet() const { return m_verticalOffsetHasBeenSet; }
-    inline void SetVerticalOffset(const Aws::String& value) { m_verticalOffsetHasBeenSet = true; m_verticalOffset = value; }
-    inline void SetVerticalOffset(Aws::String&& value) { m_verticalOffsetHasBeenSet = true; m_verticalOffset = std::move(value); }
-    inline void SetVerticalOffset(const char* value) { m_verticalOffsetHasBeenSet = true; m_verticalOffset.assign(value); }
-    inline PresetWatermark& WithVerticalOffset(const Aws::String& value) { SetVerticalOffset(value); return *this;}
-    inline PresetWatermark& WithVerticalOffset(Aws::String&& value) { SetVerticalOffset(std::move(value)); return *this;}
-    inline PresetWatermark& WithVerticalOffset(const char* value) { SetVerticalOffset(value); return *this;}
+    template<typename VerticalOffsetT = Aws::String>
+    void SetVerticalOffset(VerticalOffsetT&& value) { m_verticalOffsetHasBeenSet = true; m_verticalOffset = std::forward<VerticalOffsetT>(value); }
+    template<typename VerticalOffsetT = Aws::String>
+    PresetWatermark& WithVerticalOffset(VerticalOffsetT&& value) { SetVerticalOffset(std::forward<VerticalOffsetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -239,14 +223,12 @@ namespace Model
      * 0 for <code>Opacity</code>. The .jpg file format doesn't support
      * transparency.</p>
      */
-    inline const Aws::String& GetOpacity() const{ return m_opacity; }
+    inline const Aws::String& GetOpacity() const { return m_opacity; }
     inline bool OpacityHasBeenSet() const { return m_opacityHasBeenSet; }
-    inline void SetOpacity(const Aws::String& value) { m_opacityHasBeenSet = true; m_opacity = value; }
-    inline void SetOpacity(Aws::String&& value) { m_opacityHasBeenSet = true; m_opacity = std::move(value); }
-    inline void SetOpacity(const char* value) { m_opacityHasBeenSet = true; m_opacity.assign(value); }
-    inline PresetWatermark& WithOpacity(const Aws::String& value) { SetOpacity(value); return *this;}
-    inline PresetWatermark& WithOpacity(Aws::String&& value) { SetOpacity(std::move(value)); return *this;}
-    inline PresetWatermark& WithOpacity(const char* value) { SetOpacity(value); return *this;}
+    template<typename OpacityT = Aws::String>
+    void SetOpacity(OpacityT&& value) { m_opacityHasBeenSet = true; m_opacity = std::forward<OpacityT>(value); }
+    template<typename OpacityT = Aws::String>
+    PresetWatermark& WithOpacity(OpacityT&& value) { SetOpacity(std::forward<OpacityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -266,14 +248,12 @@ namespace Model
      * are calculated based on the borders of the video including black bars added by
      * Elastic Transcoder, if any.</p> </li> </ul>
      */
-    inline const Aws::String& GetTarget() const{ return m_target; }
+    inline const Aws::String& GetTarget() const { return m_target; }
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-    inline void SetTarget(const Aws::String& value) { m_targetHasBeenSet = true; m_target = value; }
-    inline void SetTarget(Aws::String&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-    inline void SetTarget(const char* value) { m_targetHasBeenSet = true; m_target.assign(value); }
-    inline PresetWatermark& WithTarget(const Aws::String& value) { SetTarget(value); return *this;}
-    inline PresetWatermark& WithTarget(Aws::String&& value) { SetTarget(std::move(value)); return *this;}
-    inline PresetWatermark& WithTarget(const char* value) { SetTarget(value); return *this;}
+    template<typename TargetT = Aws::String>
+    void SetTarget(TargetT&& value) { m_targetHasBeenSet = true; m_target = std::forward<TargetT>(value); }
+    template<typename TargetT = Aws::String>
+    PresetWatermark& WithTarget(TargetT&& value) { SetTarget(std::forward<TargetT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,11 +12,6 @@ using namespace Aws::BackupGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartVirtualMachinesMetadataSyncRequest::StartVirtualMachinesMetadataSyncRequest() : 
-    m_hypervisorArnHasBeenSet(false)
-{
-}
-
 Aws::String StartVirtualMachinesMetadataSyncRequest::SerializePayload() const
 {
   JsonValue payload;

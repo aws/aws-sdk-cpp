@@ -18,16 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-ModelInvocationJobS3InputDataConfig::ModelInvocationJobS3InputDataConfig() : 
-    m_s3InputFormat(S3InputFormat::NOT_SET),
-    m_s3InputFormatHasBeenSet(false),
-    m_s3UriHasBeenSet(false),
-    m_s3BucketOwnerHasBeenSet(false)
-{
-}
-
 ModelInvocationJobS3InputDataConfig::ModelInvocationJobS3InputDataConfig(JsonView jsonValue)
-  : ModelInvocationJobS3InputDataConfig()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ModelInvocationJobS3InputDataConfig& ModelInvocationJobS3InputDataConfig::operat
   if(jsonValue.ValueExists("s3InputFormat"))
   {
     m_s3InputFormat = S3InputFormatMapper::GetS3InputFormatForName(jsonValue.GetString("s3InputFormat"));
-
     m_s3InputFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3Uri"))
   {
     m_s3Uri = jsonValue.GetString("s3Uri");
-
     m_s3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3BucketOwner"))
   {
     m_s3BucketOwner = jsonValue.GetString("s3BucketOwner");
-
     m_s3BucketOwnerHasBeenSet = true;
   }
-
   return *this;
 }
 

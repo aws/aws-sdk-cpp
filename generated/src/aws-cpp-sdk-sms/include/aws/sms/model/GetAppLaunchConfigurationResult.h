@@ -29,7 +29,7 @@ namespace Model
   class GetAppLaunchConfigurationResult
   {
   public:
-    AWS_SMS_API GetAppLaunchConfigurationResult();
+    AWS_SMS_API GetAppLaunchConfigurationResult() = default;
     AWS_SMS_API GetAppLaunchConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SMS_API GetAppLaunchConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,11 @@ namespace Model
     /**
      * <p>The ID of the application.</p>
      */
-    inline const Aws::String& GetAppId() const{ return m_appId; }
-    inline void SetAppId(const Aws::String& value) { m_appId = value; }
-    inline void SetAppId(Aws::String&& value) { m_appId = std::move(value); }
-    inline void SetAppId(const char* value) { m_appId.assign(value); }
-    inline GetAppLaunchConfigurationResult& WithAppId(const Aws::String& value) { SetAppId(value); return *this;}
-    inline GetAppLaunchConfigurationResult& WithAppId(Aws::String&& value) { SetAppId(std::move(value)); return *this;}
-    inline GetAppLaunchConfigurationResult& WithAppId(const char* value) { SetAppId(value); return *this;}
+    inline const Aws::String& GetAppId() const { return m_appId; }
+    template<typename AppIdT = Aws::String>
+    void SetAppId(AppIdT&& value) { m_appIdHasBeenSet = true; m_appId = std::forward<AppIdT>(value); }
+    template<typename AppIdT = Aws::String>
+    GetAppLaunchConfigurationResult& WithAppId(AppIdT&& value) { SetAppId(std::forward<AppIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,13 +50,11 @@ namespace Model
      * <p>The name of the service role in the customer's account that CloudFormation
      * uses to launch the application.</p>
      */
-    inline const Aws::String& GetRoleName() const{ return m_roleName; }
-    inline void SetRoleName(const Aws::String& value) { m_roleName = value; }
-    inline void SetRoleName(Aws::String&& value) { m_roleName = std::move(value); }
-    inline void SetRoleName(const char* value) { m_roleName.assign(value); }
-    inline GetAppLaunchConfigurationResult& WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
-    inline GetAppLaunchConfigurationResult& WithRoleName(Aws::String&& value) { SetRoleName(std::move(value)); return *this;}
-    inline GetAppLaunchConfigurationResult& WithRoleName(const char* value) { SetRoleName(value); return *this;}
+    inline const Aws::String& GetRoleName() const { return m_roleName; }
+    template<typename RoleNameT = Aws::String>
+    void SetRoleName(RoleNameT&& value) { m_roleNameHasBeenSet = true; m_roleName = std::forward<RoleNameT>(value); }
+    template<typename RoleNameT = Aws::String>
+    GetAppLaunchConfigurationResult& WithRoleName(RoleNameT&& value) { SetRoleName(std::forward<RoleNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,8 +62,8 @@ namespace Model
      * <p>Indicates whether the application is configured to launch automatically after
      * replication is complete.</p>
      */
-    inline bool GetAutoLaunch() const{ return m_autoLaunch; }
-    inline void SetAutoLaunch(bool value) { m_autoLaunch = value; }
+    inline bool GetAutoLaunch() const { return m_autoLaunch; }
+    inline void SetAutoLaunch(bool value) { m_autoLaunchHasBeenSet = true; m_autoLaunch = value; }
     inline GetAppLaunchConfigurationResult& WithAutoLaunch(bool value) { SetAutoLaunch(value); return *this;}
     ///@}
 
@@ -75,36 +71,39 @@ namespace Model
     /**
      * <p>The launch configurations for server groups in this application.</p>
      */
-    inline const Aws::Vector<ServerGroupLaunchConfiguration>& GetServerGroupLaunchConfigurations() const{ return m_serverGroupLaunchConfigurations; }
-    inline void SetServerGroupLaunchConfigurations(const Aws::Vector<ServerGroupLaunchConfiguration>& value) { m_serverGroupLaunchConfigurations = value; }
-    inline void SetServerGroupLaunchConfigurations(Aws::Vector<ServerGroupLaunchConfiguration>&& value) { m_serverGroupLaunchConfigurations = std::move(value); }
-    inline GetAppLaunchConfigurationResult& WithServerGroupLaunchConfigurations(const Aws::Vector<ServerGroupLaunchConfiguration>& value) { SetServerGroupLaunchConfigurations(value); return *this;}
-    inline GetAppLaunchConfigurationResult& WithServerGroupLaunchConfigurations(Aws::Vector<ServerGroupLaunchConfiguration>&& value) { SetServerGroupLaunchConfigurations(std::move(value)); return *this;}
-    inline GetAppLaunchConfigurationResult& AddServerGroupLaunchConfigurations(const ServerGroupLaunchConfiguration& value) { m_serverGroupLaunchConfigurations.push_back(value); return *this; }
-    inline GetAppLaunchConfigurationResult& AddServerGroupLaunchConfigurations(ServerGroupLaunchConfiguration&& value) { m_serverGroupLaunchConfigurations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ServerGroupLaunchConfiguration>& GetServerGroupLaunchConfigurations() const { return m_serverGroupLaunchConfigurations; }
+    template<typename ServerGroupLaunchConfigurationsT = Aws::Vector<ServerGroupLaunchConfiguration>>
+    void SetServerGroupLaunchConfigurations(ServerGroupLaunchConfigurationsT&& value) { m_serverGroupLaunchConfigurationsHasBeenSet = true; m_serverGroupLaunchConfigurations = std::forward<ServerGroupLaunchConfigurationsT>(value); }
+    template<typename ServerGroupLaunchConfigurationsT = Aws::Vector<ServerGroupLaunchConfiguration>>
+    GetAppLaunchConfigurationResult& WithServerGroupLaunchConfigurations(ServerGroupLaunchConfigurationsT&& value) { SetServerGroupLaunchConfigurations(std::forward<ServerGroupLaunchConfigurationsT>(value)); return *this;}
+    template<typename ServerGroupLaunchConfigurationsT = ServerGroupLaunchConfiguration>
+    GetAppLaunchConfigurationResult& AddServerGroupLaunchConfigurations(ServerGroupLaunchConfigurationsT&& value) { m_serverGroupLaunchConfigurationsHasBeenSet = true; m_serverGroupLaunchConfigurations.emplace_back(std::forward<ServerGroupLaunchConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetAppLaunchConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetAppLaunchConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetAppLaunchConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetAppLaunchConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_appId;
+    bool m_appIdHasBeenSet = false;
 
     Aws::String m_roleName;
+    bool m_roleNameHasBeenSet = false;
 
-    bool m_autoLaunch;
+    bool m_autoLaunch{false};
+    bool m_autoLaunchHasBeenSet = false;
 
     Aws::Vector<ServerGroupLaunchConfiguration> m_serverGroupLaunchConfigurations;
+    bool m_serverGroupLaunchConfigurationsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

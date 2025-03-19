@@ -29,7 +29,7 @@ namespace Model
   class GetOtaTaskConfigurationResult
   {
   public:
-    AWS_IOTMANAGEDINTEGRATIONS_API GetOtaTaskConfigurationResult();
+    AWS_IOTMANAGEDINTEGRATIONS_API GetOtaTaskConfigurationResult() = default;
     AWS_IOTMANAGEDINTEGRATIONS_API GetOtaTaskConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTMANAGEDINTEGRATIONS_API GetOtaTaskConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,50 +38,44 @@ namespace Model
     /**
      * <p>The over-the-air (OTA) task configuration id.</p>
      */
-    inline const Aws::String& GetTaskConfigurationId() const{ return m_taskConfigurationId; }
-    inline void SetTaskConfigurationId(const Aws::String& value) { m_taskConfigurationId = value; }
-    inline void SetTaskConfigurationId(Aws::String&& value) { m_taskConfigurationId = std::move(value); }
-    inline void SetTaskConfigurationId(const char* value) { m_taskConfigurationId.assign(value); }
-    inline GetOtaTaskConfigurationResult& WithTaskConfigurationId(const Aws::String& value) { SetTaskConfigurationId(value); return *this;}
-    inline GetOtaTaskConfigurationResult& WithTaskConfigurationId(Aws::String&& value) { SetTaskConfigurationId(std::move(value)); return *this;}
-    inline GetOtaTaskConfigurationResult& WithTaskConfigurationId(const char* value) { SetTaskConfigurationId(value); return *this;}
+    inline const Aws::String& GetTaskConfigurationId() const { return m_taskConfigurationId; }
+    template<typename TaskConfigurationIdT = Aws::String>
+    void SetTaskConfigurationId(TaskConfigurationIdT&& value) { m_taskConfigurationIdHasBeenSet = true; m_taskConfigurationId = std::forward<TaskConfigurationIdT>(value); }
+    template<typename TaskConfigurationIdT = Aws::String>
+    GetOtaTaskConfigurationResult& WithTaskConfigurationId(TaskConfigurationIdT&& value) { SetTaskConfigurationId(std::forward<TaskConfigurationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the over-the-air (OTA) task configuration.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline GetOtaTaskConfigurationResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetOtaTaskConfigurationResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetOtaTaskConfigurationResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetOtaTaskConfigurationResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Describes the type of configuration used for the over-the-air (OTA) task.</p>
      */
-    inline const PushConfig& GetPushConfig() const{ return m_pushConfig; }
-    inline void SetPushConfig(const PushConfig& value) { m_pushConfig = value; }
-    inline void SetPushConfig(PushConfig&& value) { m_pushConfig = std::move(value); }
-    inline GetOtaTaskConfigurationResult& WithPushConfig(const PushConfig& value) { SetPushConfig(value); return *this;}
-    inline GetOtaTaskConfigurationResult& WithPushConfig(PushConfig&& value) { SetPushConfig(std::move(value)); return *this;}
+    inline const PushConfig& GetPushConfig() const { return m_pushConfig; }
+    template<typename PushConfigT = PushConfig>
+    void SetPushConfig(PushConfigT&& value) { m_pushConfigHasBeenSet = true; m_pushConfig = std::forward<PushConfigT>(value); }
+    template<typename PushConfigT = PushConfig>
+    GetOtaTaskConfigurationResult& WithPushConfig(PushConfigT&& value) { SetPushConfig(std::forward<PushConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the over-the-air (OTA) task configuration.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline GetOtaTaskConfigurationResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline GetOtaTaskConfigurationResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline GetOtaTaskConfigurationResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    GetOtaTaskConfigurationResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,36 +83,40 @@ namespace Model
      * <p>The timestamp value of when the over-the-air (OTA) task configuration was
      * created at.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline GetOtaTaskConfigurationResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline GetOtaTaskConfigurationResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    GetOtaTaskConfigurationResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetOtaTaskConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetOtaTaskConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetOtaTaskConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetOtaTaskConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_taskConfigurationId;
+    bool m_taskConfigurationIdHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     PushConfig m_pushConfig;
+    bool m_pushConfigHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

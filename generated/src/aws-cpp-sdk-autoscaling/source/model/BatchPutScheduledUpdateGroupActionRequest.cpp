@@ -10,12 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-BatchPutScheduledUpdateGroupActionRequest::BatchPutScheduledUpdateGroupActionRequest() : 
-    m_autoScalingGroupNameHasBeenSet(false),
-    m_scheduledUpdateGroupActionsHasBeenSet(false)
-{
-}
-
 Aws::String BatchPutScheduledUpdateGroupActionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

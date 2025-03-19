@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AddListenerCertificatesResult::AddListenerCertificatesResult()
-{
-}
-
 AddListenerCertificatesResult::AddListenerCertificatesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,18 +38,21 @@ AddListenerCertificatesResult& AddListenerCertificatesResult::operator =(const A
     if(!certificatesNode.IsNull())
     {
       XmlNode certificatesMember = certificatesNode.FirstChild("member");
+      m_certificatesHasBeenSet = !certificatesMember.IsNull();
       while(!certificatesMember.IsNull())
       {
         m_certificates.push_back(certificatesMember);
         certificatesMember = certificatesMember.NextNode("member");
       }
 
+      m_certificatesHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElasticLoadBalancingv2::Model::AddListenerCertificatesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

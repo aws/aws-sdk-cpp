@@ -34,7 +34,7 @@ namespace Model
   class AnomalyObject
   {
   public:
-    AWS_GUARDDUTY_API AnomalyObject();
+    AWS_GUARDDUTY_API AnomalyObject() = default;
     AWS_GUARDDUTY_API AnomalyObject(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API AnomalyObject& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,43 +44,39 @@ namespace Model
     /**
      * <p>The type of behavior of the profile.</p>
      */
-    inline const ProfileType& GetProfileType() const{ return m_profileType; }
+    inline ProfileType GetProfileType() const { return m_profileType; }
     inline bool ProfileTypeHasBeenSet() const { return m_profileTypeHasBeenSet; }
-    inline void SetProfileType(const ProfileType& value) { m_profileTypeHasBeenSet = true; m_profileType = value; }
-    inline void SetProfileType(ProfileType&& value) { m_profileTypeHasBeenSet = true; m_profileType = std::move(value); }
-    inline AnomalyObject& WithProfileType(const ProfileType& value) { SetProfileType(value); return *this;}
-    inline AnomalyObject& WithProfileType(ProfileType&& value) { SetProfileType(std::move(value)); return *this;}
+    inline void SetProfileType(ProfileType value) { m_profileTypeHasBeenSet = true; m_profileType = value; }
+    inline AnomalyObject& WithProfileType(ProfileType value) { SetProfileType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The frequency of the anomaly.</p>
      */
-    inline const ProfileSubtype& GetProfileSubtype() const{ return m_profileSubtype; }
+    inline ProfileSubtype GetProfileSubtype() const { return m_profileSubtype; }
     inline bool ProfileSubtypeHasBeenSet() const { return m_profileSubtypeHasBeenSet; }
-    inline void SetProfileSubtype(const ProfileSubtype& value) { m_profileSubtypeHasBeenSet = true; m_profileSubtype = value; }
-    inline void SetProfileSubtype(ProfileSubtype&& value) { m_profileSubtypeHasBeenSet = true; m_profileSubtype = std::move(value); }
-    inline AnomalyObject& WithProfileSubtype(const ProfileSubtype& value) { SetProfileSubtype(value); return *this;}
-    inline AnomalyObject& WithProfileSubtype(ProfileSubtype&& value) { SetProfileSubtype(std::move(value)); return *this;}
+    inline void SetProfileSubtype(ProfileSubtype value) { m_profileSubtypeHasBeenSet = true; m_profileSubtype = value; }
+    inline AnomalyObject& WithProfileSubtype(ProfileSubtype value) { SetProfileSubtype(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The recorded value.</p>
      */
-    inline const Observations& GetObservations() const{ return m_observations; }
+    inline const Observations& GetObservations() const { return m_observations; }
     inline bool ObservationsHasBeenSet() const { return m_observationsHasBeenSet; }
-    inline void SetObservations(const Observations& value) { m_observationsHasBeenSet = true; m_observations = value; }
-    inline void SetObservations(Observations&& value) { m_observationsHasBeenSet = true; m_observations = std::move(value); }
-    inline AnomalyObject& WithObservations(const Observations& value) { SetObservations(value); return *this;}
-    inline AnomalyObject& WithObservations(Observations&& value) { SetObservations(std::move(value)); return *this;}
+    template<typename ObservationsT = Observations>
+    void SetObservations(ObservationsT&& value) { m_observationsHasBeenSet = true; m_observations = std::forward<ObservationsT>(value); }
+    template<typename ObservationsT = Observations>
+    AnomalyObject& WithObservations(ObservationsT&& value) { SetObservations(std::forward<ObservationsT>(value)); return *this;}
     ///@}
   private:
 
-    ProfileType m_profileType;
+    ProfileType m_profileType{ProfileType::NOT_SET};
     bool m_profileTypeHasBeenSet = false;
 
-    ProfileSubtype m_profileSubtype;
+    ProfileSubtype m_profileSubtype{ProfileSubtype::NOT_SET};
     bool m_profileSubtypeHasBeenSet = false;
 
     Observations m_observations;

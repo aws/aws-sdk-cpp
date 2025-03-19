@@ -34,7 +34,7 @@ namespace Model
   class Principal
   {
   public:
-    AWS_QBUSINESS_API Principal();
+    AWS_QBUSINESS_API Principal() = default;
     AWS_QBUSINESS_API Principal(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Principal& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,24 +44,24 @@ namespace Model
     /**
      * <p>The user associated with the principal.</p>
      */
-    inline const PrincipalUser& GetUser() const{ return m_user; }
+    inline const PrincipalUser& GetUser() const { return m_user; }
     inline bool UserHasBeenSet() const { return m_userHasBeenSet; }
-    inline void SetUser(const PrincipalUser& value) { m_userHasBeenSet = true; m_user = value; }
-    inline void SetUser(PrincipalUser&& value) { m_userHasBeenSet = true; m_user = std::move(value); }
-    inline Principal& WithUser(const PrincipalUser& value) { SetUser(value); return *this;}
-    inline Principal& WithUser(PrincipalUser&& value) { SetUser(std::move(value)); return *this;}
+    template<typename UserT = PrincipalUser>
+    void SetUser(UserT&& value) { m_userHasBeenSet = true; m_user = std::forward<UserT>(value); }
+    template<typename UserT = PrincipalUser>
+    Principal& WithUser(UserT&& value) { SetUser(std::forward<UserT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The group associated with the principal.</p>
      */
-    inline const PrincipalGroup& GetGroup() const{ return m_group; }
+    inline const PrincipalGroup& GetGroup() const { return m_group; }
     inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
-    inline void SetGroup(const PrincipalGroup& value) { m_groupHasBeenSet = true; m_group = value; }
-    inline void SetGroup(PrincipalGroup&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
-    inline Principal& WithGroup(const PrincipalGroup& value) { SetGroup(value); return *this;}
-    inline Principal& WithGroup(PrincipalGroup&& value) { SetGroup(std::move(value)); return *this;}
+    template<typename GroupT = PrincipalGroup>
+    void SetGroup(GroupT&& value) { m_groupHasBeenSet = true; m_group = std::forward<GroupT>(value); }
+    template<typename GroupT = PrincipalGroup>
+    Principal& WithGroup(GroupT&& value) { SetGroup(std::forward<GroupT>(value)); return *this;}
     ///@}
   private:
 

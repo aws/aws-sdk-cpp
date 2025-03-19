@@ -18,27 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-AnomalyDetector::AnomalyDetector() : 
-    m_anomalyDetectorArnHasBeenSet(false),
-    m_detectorNameHasBeenSet(false),
-    m_logGroupArnListHasBeenSet(false),
-    m_evaluationFrequency(EvaluationFrequency::NOT_SET),
-    m_evaluationFrequencyHasBeenSet(false),
-    m_filterPatternHasBeenSet(false),
-    m_anomalyDetectorStatus(AnomalyDetectorStatus::NOT_SET),
-    m_anomalyDetectorStatusHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_creationTimeStamp(0),
-    m_creationTimeStampHasBeenSet(false),
-    m_lastModifiedTimeStamp(0),
-    m_lastModifiedTimeStampHasBeenSet(false),
-    m_anomalyVisibilityTime(0),
-    m_anomalyVisibilityTimeHasBeenSet(false)
-{
-}
-
 AnomalyDetector::AnomalyDetector(JsonView jsonValue)
-  : AnomalyDetector()
 {
   *this = jsonValue;
 }
@@ -48,17 +28,13 @@ AnomalyDetector& AnomalyDetector::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("anomalyDetectorArn"))
   {
     m_anomalyDetectorArn = jsonValue.GetString("anomalyDetectorArn");
-
     m_anomalyDetectorArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("detectorName"))
   {
     m_detectorName = jsonValue.GetString("detectorName");
-
     m_detectorNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logGroupArnList"))
   {
     Aws::Utils::Array<JsonView> logGroupArnListJsonList = jsonValue.GetArray("logGroupArnList");
@@ -68,56 +44,41 @@ AnomalyDetector& AnomalyDetector::operator =(JsonView jsonValue)
     }
     m_logGroupArnListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("evaluationFrequency"))
   {
     m_evaluationFrequency = EvaluationFrequencyMapper::GetEvaluationFrequencyForName(jsonValue.GetString("evaluationFrequency"));
-
     m_evaluationFrequencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("filterPattern"))
   {
     m_filterPattern = jsonValue.GetString("filterPattern");
-
     m_filterPatternHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("anomalyDetectorStatus"))
   {
     m_anomalyDetectorStatus = AnomalyDetectorStatusMapper::GetAnomalyDetectorStatusForName(jsonValue.GetString("anomalyDetectorStatus"));
-
     m_anomalyDetectorStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTimeStamp"))
   {
     m_creationTimeStamp = jsonValue.GetInt64("creationTimeStamp");
-
     m_creationTimeStampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedTimeStamp"))
   {
     m_lastModifiedTimeStamp = jsonValue.GetInt64("lastModifiedTimeStamp");
-
     m_lastModifiedTimeStampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("anomalyVisibilityTime"))
   {
     m_anomalyVisibilityTime = jsonValue.GetInt64("anomalyVisibilityTime");
-
     m_anomalyVisibilityTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

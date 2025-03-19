@@ -20,13 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-PredictiveScalingCustomizedCapacityMetric::PredictiveScalingCustomizedCapacityMetric() : 
-    m_metricDataQueriesHasBeenSet(false)
-{
-}
-
 PredictiveScalingCustomizedCapacityMetric::PredictiveScalingCustomizedCapacityMetric(const XmlNode& xmlNode)
-  : PredictiveScalingCustomizedCapacityMetric()
 {
   *this = xmlNode;
 }
@@ -41,6 +35,7 @@ PredictiveScalingCustomizedCapacityMetric& PredictiveScalingCustomizedCapacityMe
     if(!metricDataQueriesNode.IsNull())
     {
       XmlNode metricDataQueriesMember = metricDataQueriesNode.FirstChild("member");
+      m_metricDataQueriesHasBeenSet = !metricDataQueriesMember.IsNull();
       while(!metricDataQueriesMember.IsNull())
       {
         m_metricDataQueries.push_back(metricDataQueriesMember);

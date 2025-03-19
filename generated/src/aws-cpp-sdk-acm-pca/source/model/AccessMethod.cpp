@@ -18,15 +18,7 @@ namespace ACMPCA
 namespace Model
 {
 
-AccessMethod::AccessMethod() : 
-    m_customObjectIdentifierHasBeenSet(false),
-    m_accessMethodType(AccessMethodType::NOT_SET),
-    m_accessMethodTypeHasBeenSet(false)
-{
-}
-
 AccessMethod::AccessMethod(JsonView jsonValue)
-  : AccessMethod()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AccessMethod& AccessMethod::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CustomObjectIdentifier"))
   {
     m_customObjectIdentifier = jsonValue.GetString("CustomObjectIdentifier");
-
     m_customObjectIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccessMethodType"))
   {
     m_accessMethodType = AccessMethodTypeMapper::GetAccessMethodTypeForName(jsonValue.GetString("AccessMethodType"));
-
     m_accessMethodTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

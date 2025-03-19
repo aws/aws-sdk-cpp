@@ -33,7 +33,7 @@ namespace Model
   class WordCloudAggregatedFieldWells
   {
   public:
-    AWS_QUICKSIGHT_API WordCloudAggregatedFieldWells();
+    AWS_QUICKSIGHT_API WordCloudAggregatedFieldWells() = default;
     AWS_QUICKSIGHT_API WordCloudAggregatedFieldWells(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API WordCloudAggregatedFieldWells& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
      * <p>The group by field well of a word cloud. Values are grouped by group by
      * fields.</p>
      */
-    inline const Aws::Vector<DimensionField>& GetGroupBy() const{ return m_groupBy; }
+    inline const Aws::Vector<DimensionField>& GetGroupBy() const { return m_groupBy; }
     inline bool GroupByHasBeenSet() const { return m_groupByHasBeenSet; }
-    inline void SetGroupBy(const Aws::Vector<DimensionField>& value) { m_groupByHasBeenSet = true; m_groupBy = value; }
-    inline void SetGroupBy(Aws::Vector<DimensionField>&& value) { m_groupByHasBeenSet = true; m_groupBy = std::move(value); }
-    inline WordCloudAggregatedFieldWells& WithGroupBy(const Aws::Vector<DimensionField>& value) { SetGroupBy(value); return *this;}
-    inline WordCloudAggregatedFieldWells& WithGroupBy(Aws::Vector<DimensionField>&& value) { SetGroupBy(std::move(value)); return *this;}
-    inline WordCloudAggregatedFieldWells& AddGroupBy(const DimensionField& value) { m_groupByHasBeenSet = true; m_groupBy.push_back(value); return *this; }
-    inline WordCloudAggregatedFieldWells& AddGroupBy(DimensionField&& value) { m_groupByHasBeenSet = true; m_groupBy.push_back(std::move(value)); return *this; }
+    template<typename GroupByT = Aws::Vector<DimensionField>>
+    void SetGroupBy(GroupByT&& value) { m_groupByHasBeenSet = true; m_groupBy = std::forward<GroupByT>(value); }
+    template<typename GroupByT = Aws::Vector<DimensionField>>
+    WordCloudAggregatedFieldWells& WithGroupBy(GroupByT&& value) { SetGroupBy(std::forward<GroupByT>(value)); return *this;}
+    template<typename GroupByT = DimensionField>
+    WordCloudAggregatedFieldWells& AddGroupBy(GroupByT&& value) { m_groupByHasBeenSet = true; m_groupBy.emplace_back(std::forward<GroupByT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -59,14 +59,14 @@ namespace Model
      * <p>The size field well of a word cloud. Values are aggregated based on group by
      * fields.</p>
      */
-    inline const Aws::Vector<MeasureField>& GetSize() const{ return m_size; }
+    inline const Aws::Vector<MeasureField>& GetSize() const { return m_size; }
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
-    inline void SetSize(const Aws::Vector<MeasureField>& value) { m_sizeHasBeenSet = true; m_size = value; }
-    inline void SetSize(Aws::Vector<MeasureField>&& value) { m_sizeHasBeenSet = true; m_size = std::move(value); }
-    inline WordCloudAggregatedFieldWells& WithSize(const Aws::Vector<MeasureField>& value) { SetSize(value); return *this;}
-    inline WordCloudAggregatedFieldWells& WithSize(Aws::Vector<MeasureField>&& value) { SetSize(std::move(value)); return *this;}
-    inline WordCloudAggregatedFieldWells& AddSize(const MeasureField& value) { m_sizeHasBeenSet = true; m_size.push_back(value); return *this; }
-    inline WordCloudAggregatedFieldWells& AddSize(MeasureField&& value) { m_sizeHasBeenSet = true; m_size.push_back(std::move(value)); return *this; }
+    template<typename SizeT = Aws::Vector<MeasureField>>
+    void SetSize(SizeT&& value) { m_sizeHasBeenSet = true; m_size = std::forward<SizeT>(value); }
+    template<typename SizeT = Aws::Vector<MeasureField>>
+    WordCloudAggregatedFieldWells& WithSize(SizeT&& value) { SetSize(std::forward<SizeT>(value)); return *this;}
+    template<typename SizeT = MeasureField>
+    WordCloudAggregatedFieldWells& AddSize(SizeT&& value) { m_sizeHasBeenSet = true; m_size.emplace_back(std::forward<SizeT>(value)); return *this; }
     ///@}
   private:
 

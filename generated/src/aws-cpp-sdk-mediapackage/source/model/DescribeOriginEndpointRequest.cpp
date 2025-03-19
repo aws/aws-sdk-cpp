@@ -12,11 +12,6 @@ using namespace Aws::MediaPackage::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeOriginEndpointRequest::DescribeOriginEndpointRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String DescribeOriginEndpointRequest::SerializePayload() const
 {
   return {};

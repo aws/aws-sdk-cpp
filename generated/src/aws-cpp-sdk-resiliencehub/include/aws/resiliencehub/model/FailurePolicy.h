@@ -29,7 +29,7 @@ namespace Model
   class FailurePolicy
   {
   public:
-    AWS_RESILIENCEHUB_API FailurePolicy();
+    AWS_RESILIENCEHUB_API FailurePolicy() = default;
     AWS_RESILIENCEHUB_API FailurePolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API FailurePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,7 +39,7 @@ namespace Model
     /**
      * <p>Recovery Point Objective (RPO) in seconds.</p>
      */
-    inline int GetRpoInSecs() const{ return m_rpoInSecs; }
+    inline int GetRpoInSecs() const { return m_rpoInSecs; }
     inline bool RpoInSecsHasBeenSet() const { return m_rpoInSecsHasBeenSet; }
     inline void SetRpoInSecs(int value) { m_rpoInSecsHasBeenSet = true; m_rpoInSecs = value; }
     inline FailurePolicy& WithRpoInSecs(int value) { SetRpoInSecs(value); return *this;}
@@ -49,17 +49,17 @@ namespace Model
     /**
      * <p>Recovery Time Objective (RTO) in seconds.</p>
      */
-    inline int GetRtoInSecs() const{ return m_rtoInSecs; }
+    inline int GetRtoInSecs() const { return m_rtoInSecs; }
     inline bool RtoInSecsHasBeenSet() const { return m_rtoInSecsHasBeenSet; }
     inline void SetRtoInSecs(int value) { m_rtoInSecsHasBeenSet = true; m_rtoInSecs = value; }
     inline FailurePolicy& WithRtoInSecs(int value) { SetRtoInSecs(value); return *this;}
     ///@}
   private:
 
-    int m_rpoInSecs;
+    int m_rpoInSecs{0};
     bool m_rpoInSecsHasBeenSet = false;
 
-    int m_rtoInSecs;
+    int m_rtoInSecs{0};
     bool m_rtoInSecsHasBeenSet = false;
   };
 

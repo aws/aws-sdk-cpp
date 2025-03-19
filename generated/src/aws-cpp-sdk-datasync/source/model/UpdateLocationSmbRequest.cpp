@@ -13,24 +13,6 @@ using namespace Aws::DataSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateLocationSmbRequest::UpdateLocationSmbRequest() : 
-    m_locationArnHasBeenSet(false),
-    m_subdirectoryHasBeenSet(false),
-    m_serverHostnameHasBeenSet(false),
-    m_userHasBeenSet(false),
-    m_domainHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_agentArnsHasBeenSet(false),
-    m_mountOptionsHasBeenSet(false),
-    m_authenticationType(SmbAuthenticationType::NOT_SET),
-    m_authenticationTypeHasBeenSet(false),
-    m_dnsIpAddressesHasBeenSet(false),
-    m_kerberosPrincipalHasBeenSet(false),
-    m_kerberosKeytabHasBeenSet(false),
-    m_kerberosKrb5ConfHasBeenSet(false)
-{
-}
-
 Aws::String UpdateLocationSmbRequest::SerializePayload() const
 {
   JsonValue payload;

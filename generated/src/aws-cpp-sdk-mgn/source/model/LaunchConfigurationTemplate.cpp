@@ -19,38 +19,7 @@ namespace mgn
 namespace Model
 {
 
-LaunchConfigurationTemplate::LaunchConfigurationTemplate() : 
-    m_arnHasBeenSet(false),
-    m_associatePublicIpAddress(false),
-    m_associatePublicIpAddressHasBeenSet(false),
-    m_bootMode(BootMode::NOT_SET),
-    m_bootModeHasBeenSet(false),
-    m_copyPrivateIp(false),
-    m_copyPrivateIpHasBeenSet(false),
-    m_copyTags(false),
-    m_copyTagsHasBeenSet(false),
-    m_ec2LaunchTemplateIDHasBeenSet(false),
-    m_enableMapAutoTagging(false),
-    m_enableMapAutoTaggingHasBeenSet(false),
-    m_largeVolumeConfHasBeenSet(false),
-    m_launchConfigurationTemplateIDHasBeenSet(false),
-    m_launchDisposition(LaunchDisposition::NOT_SET),
-    m_launchDispositionHasBeenSet(false),
-    m_licensingHasBeenSet(false),
-    m_mapAutoTaggingMpeIDHasBeenSet(false),
-    m_postLaunchActionsHasBeenSet(false),
-    m_smallVolumeConfHasBeenSet(false),
-    m_smallVolumeMaxSize(0),
-    m_smallVolumeMaxSizeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_targetInstanceTypeRightSizingMethod(TargetInstanceTypeRightSizingMethod::NOT_SET),
-    m_targetInstanceTypeRightSizingMethodHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 LaunchConfigurationTemplate::LaunchConfigurationTemplate(JsonView jsonValue)
-  : LaunchConfigurationTemplate()
 {
   *this = jsonValue;
 }
@@ -60,108 +29,78 @@ LaunchConfigurationTemplate& LaunchConfigurationTemplate::operator =(JsonView js
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("associatePublicIpAddress"))
   {
     m_associatePublicIpAddress = jsonValue.GetBool("associatePublicIpAddress");
-
     m_associatePublicIpAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bootMode"))
   {
     m_bootMode = BootModeMapper::GetBootModeForName(jsonValue.GetString("bootMode"));
-
     m_bootModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("copyPrivateIp"))
   {
     m_copyPrivateIp = jsonValue.GetBool("copyPrivateIp");
-
     m_copyPrivateIpHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("copyTags"))
   {
     m_copyTags = jsonValue.GetBool("copyTags");
-
     m_copyTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ec2LaunchTemplateID"))
   {
     m_ec2LaunchTemplateID = jsonValue.GetString("ec2LaunchTemplateID");
-
     m_ec2LaunchTemplateIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enableMapAutoTagging"))
   {
     m_enableMapAutoTagging = jsonValue.GetBool("enableMapAutoTagging");
-
     m_enableMapAutoTaggingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("largeVolumeConf"))
   {
     m_largeVolumeConf = jsonValue.GetObject("largeVolumeConf");
-
     m_largeVolumeConfHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("launchConfigurationTemplateID"))
   {
     m_launchConfigurationTemplateID = jsonValue.GetString("launchConfigurationTemplateID");
-
     m_launchConfigurationTemplateIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("launchDisposition"))
   {
     m_launchDisposition = LaunchDispositionMapper::GetLaunchDispositionForName(jsonValue.GetString("launchDisposition"));
-
     m_launchDispositionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("licensing"))
   {
     m_licensing = jsonValue.GetObject("licensing");
-
     m_licensingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mapAutoTaggingMpeID"))
   {
     m_mapAutoTaggingMpeID = jsonValue.GetString("mapAutoTaggingMpeID");
-
     m_mapAutoTaggingMpeIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("postLaunchActions"))
   {
     m_postLaunchActions = jsonValue.GetObject("postLaunchActions");
-
     m_postLaunchActionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("smallVolumeConf"))
   {
     m_smallVolumeConf = jsonValue.GetObject("smallVolumeConf");
-
     m_smallVolumeConfHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("smallVolumeMaxSize"))
   {
     m_smallVolumeMaxSize = jsonValue.GetInt64("smallVolumeMaxSize");
-
     m_smallVolumeMaxSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -171,14 +110,11 @@ LaunchConfigurationTemplate& LaunchConfigurationTemplate::operator =(JsonView js
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetInstanceTypeRightSizingMethod"))
   {
     m_targetInstanceTypeRightSizingMethod = TargetInstanceTypeRightSizingMethodMapper::GetTargetInstanceTypeRightSizingMethodForName(jsonValue.GetString("targetInstanceTypeRightSizingMethod"));
-
     m_targetInstanceTypeRightSizingMethodHasBeenSet = true;
   }
-
   return *this;
 }
 

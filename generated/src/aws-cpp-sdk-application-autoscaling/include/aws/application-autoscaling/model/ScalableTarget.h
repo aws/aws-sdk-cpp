@@ -35,7 +35,7 @@ namespace Model
   class ScalableTarget
   {
   public:
-    AWS_APPLICATIONAUTOSCALING_API ScalableTarget();
+    AWS_APPLICATIONAUTOSCALING_API ScalableTarget() = default;
     AWS_APPLICATIONAUTOSCALING_API ScalableTarget(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONAUTOSCALING_API ScalableTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONAUTOSCALING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,10 @@ namespace Model
      * <p>The namespace of the Amazon Web Services service that provides the resource,
      * or a <code>custom-resource</code>.</p>
      */
-    inline const ServiceNamespace& GetServiceNamespace() const{ return m_serviceNamespace; }
+    inline ServiceNamespace GetServiceNamespace() const { return m_serviceNamespace; }
     inline bool ServiceNamespaceHasBeenSet() const { return m_serviceNamespaceHasBeenSet; }
-    inline void SetServiceNamespace(const ServiceNamespace& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = value; }
-    inline void SetServiceNamespace(ServiceNamespace&& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = std::move(value); }
-    inline ScalableTarget& WithServiceNamespace(const ServiceNamespace& value) { SetServiceNamespace(value); return *this;}
-    inline ScalableTarget& WithServiceNamespace(ServiceNamespace&& value) { SetServiceNamespace(std::move(value)); return *this;}
+    inline void SetServiceNamespace(ServiceNamespace value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = value; }
+    inline ScalableTarget& WithServiceNamespace(ServiceNamespace value) { SetServiceNamespace(value); return *this;}
     ///@}
 
     ///@{
@@ -116,14 +114,12 @@ namespace Model
      * unique identifier is the pool ID. Example:
      * <code>workspacespool/wspool-123456</code>.</p> </li> </ul>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline ScalableTarget& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline ScalableTarget& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline ScalableTarget& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    ScalableTarget& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -178,19 +174,17 @@ namespace Model
      * <p> <code>workspaces:workspacespool:DesiredUserSessions</code> - The number of
      * user sessions for the WorkSpaces in the pool.</p> </li> </ul>
      */
-    inline const ScalableDimension& GetScalableDimension() const{ return m_scalableDimension; }
+    inline ScalableDimension GetScalableDimension() const { return m_scalableDimension; }
     inline bool ScalableDimensionHasBeenSet() const { return m_scalableDimensionHasBeenSet; }
-    inline void SetScalableDimension(const ScalableDimension& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = value; }
-    inline void SetScalableDimension(ScalableDimension&& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = std::move(value); }
-    inline ScalableTarget& WithScalableDimension(const ScalableDimension& value) { SetScalableDimension(value); return *this;}
-    inline ScalableTarget& WithScalableDimension(ScalableDimension&& value) { SetScalableDimension(std::move(value)); return *this;}
+    inline void SetScalableDimension(ScalableDimension value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = value; }
+    inline ScalableTarget& WithScalableDimension(ScalableDimension value) { SetScalableDimension(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The minimum value to scale to in response to a scale-in activity.</p>
      */
-    inline int GetMinCapacity() const{ return m_minCapacity; }
+    inline int GetMinCapacity() const { return m_minCapacity; }
     inline bool MinCapacityHasBeenSet() const { return m_minCapacityHasBeenSet; }
     inline void SetMinCapacity(int value) { m_minCapacityHasBeenSet = true; m_minCapacity = value; }
     inline ScalableTarget& WithMinCapacity(int value) { SetMinCapacity(value); return *this;}
@@ -200,7 +194,7 @@ namespace Model
     /**
      * <p>The maximum value to scale to in response to a scale-out activity.</p>
      */
-    inline int GetMaxCapacity() const{ return m_maxCapacity; }
+    inline int GetMaxCapacity() const { return m_maxCapacity; }
     inline bool MaxCapacityHasBeenSet() const { return m_maxCapacityHasBeenSet; }
     inline void SetMaxCapacity(int value) { m_maxCapacityHasBeenSet = true; m_maxCapacity = value; }
     inline ScalableTarget& WithMaxCapacity(int value) { SetMaxCapacity(value); return *this;}
@@ -210,7 +204,7 @@ namespace Model
     /**
      * <p> The predicted capacity of the scalable target. </p>
      */
-    inline int GetPredictedCapacity() const{ return m_predictedCapacity; }
+    inline int GetPredictedCapacity() const { return m_predictedCapacity; }
     inline bool PredictedCapacityHasBeenSet() const { return m_predictedCapacityHasBeenSet; }
     inline void SetPredictedCapacity(int value) { m_predictedCapacityHasBeenSet = true; m_predictedCapacity = value; }
     inline ScalableTarget& WithPredictedCapacity(int value) { SetPredictedCapacity(value); return *this;}
@@ -221,26 +215,24 @@ namespace Model
      * <p>The ARN of an IAM role that allows Application Auto Scaling to modify the
      * scalable target on your behalf.</p>
      */
-    inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
+    inline const Aws::String& GetRoleARN() const { return m_roleARN; }
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
-    inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
-    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
-    inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
-    inline ScalableTarget& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
-    inline ScalableTarget& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
-    inline ScalableTarget& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
+    template<typename RoleARNT = Aws::String>
+    void SetRoleARN(RoleARNT&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::forward<RoleARNT>(value); }
+    template<typename RoleARNT = Aws::String>
+    ScalableTarget& WithRoleARN(RoleARNT&& value) { SetRoleARN(std::forward<RoleARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Unix timestamp for when the scalable target was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline ScalableTarget& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline ScalableTarget& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    ScalableTarget& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -248,51 +240,49 @@ namespace Model
      * <p>Specifies whether the scaling activities for a scalable target are in a
      * suspended state.</p>
      */
-    inline const SuspendedState& GetSuspendedState() const{ return m_suspendedState; }
+    inline const SuspendedState& GetSuspendedState() const { return m_suspendedState; }
     inline bool SuspendedStateHasBeenSet() const { return m_suspendedStateHasBeenSet; }
-    inline void SetSuspendedState(const SuspendedState& value) { m_suspendedStateHasBeenSet = true; m_suspendedState = value; }
-    inline void SetSuspendedState(SuspendedState&& value) { m_suspendedStateHasBeenSet = true; m_suspendedState = std::move(value); }
-    inline ScalableTarget& WithSuspendedState(const SuspendedState& value) { SetSuspendedState(value); return *this;}
-    inline ScalableTarget& WithSuspendedState(SuspendedState&& value) { SetSuspendedState(std::move(value)); return *this;}
+    template<typename SuspendedStateT = SuspendedState>
+    void SetSuspendedState(SuspendedStateT&& value) { m_suspendedStateHasBeenSet = true; m_suspendedState = std::forward<SuspendedStateT>(value); }
+    template<typename SuspendedStateT = SuspendedState>
+    ScalableTarget& WithSuspendedState(SuspendedStateT&& value) { SetSuspendedState(std::forward<SuspendedStateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the scalable target.</p>
      */
-    inline const Aws::String& GetScalableTargetARN() const{ return m_scalableTargetARN; }
+    inline const Aws::String& GetScalableTargetARN() const { return m_scalableTargetARN; }
     inline bool ScalableTargetARNHasBeenSet() const { return m_scalableTargetARNHasBeenSet; }
-    inline void SetScalableTargetARN(const Aws::String& value) { m_scalableTargetARNHasBeenSet = true; m_scalableTargetARN = value; }
-    inline void SetScalableTargetARN(Aws::String&& value) { m_scalableTargetARNHasBeenSet = true; m_scalableTargetARN = std::move(value); }
-    inline void SetScalableTargetARN(const char* value) { m_scalableTargetARNHasBeenSet = true; m_scalableTargetARN.assign(value); }
-    inline ScalableTarget& WithScalableTargetARN(const Aws::String& value) { SetScalableTargetARN(value); return *this;}
-    inline ScalableTarget& WithScalableTargetARN(Aws::String&& value) { SetScalableTargetARN(std::move(value)); return *this;}
-    inline ScalableTarget& WithScalableTargetARN(const char* value) { SetScalableTargetARN(value); return *this;}
+    template<typename ScalableTargetARNT = Aws::String>
+    void SetScalableTargetARN(ScalableTargetARNT&& value) { m_scalableTargetARNHasBeenSet = true; m_scalableTargetARN = std::forward<ScalableTargetARNT>(value); }
+    template<typename ScalableTargetARNT = Aws::String>
+    ScalableTarget& WithScalableTargetARN(ScalableTargetARNT&& value) { SetScalableTargetARN(std::forward<ScalableTargetARNT>(value)); return *this;}
     ///@}
   private:
 
-    ServiceNamespace m_serviceNamespace;
+    ServiceNamespace m_serviceNamespace{ServiceNamespace::NOT_SET};
     bool m_serviceNamespaceHasBeenSet = false;
 
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet = false;
 
-    ScalableDimension m_scalableDimension;
+    ScalableDimension m_scalableDimension{ScalableDimension::NOT_SET};
     bool m_scalableDimensionHasBeenSet = false;
 
-    int m_minCapacity;
+    int m_minCapacity{0};
     bool m_minCapacityHasBeenSet = false;
 
-    int m_maxCapacity;
+    int m_maxCapacity{0};
     bool m_maxCapacityHasBeenSet = false;
 
-    int m_predictedCapacity;
+    int m_predictedCapacity{0};
     bool m_predictedCapacityHasBeenSet = false;
 
     Aws::String m_roleARN;
     bool m_roleARNHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
     SuspendedState m_suspendedState;

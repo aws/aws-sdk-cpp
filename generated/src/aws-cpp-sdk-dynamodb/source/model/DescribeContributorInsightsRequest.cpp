@@ -12,12 +12,6 @@ using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeContributorInsightsRequest::DescribeContributorInsightsRequest() : 
-    m_tableNameHasBeenSet(false),
-    m_indexNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeContributorInsightsRequest::SerializePayload() const
 {
   JsonValue payload;

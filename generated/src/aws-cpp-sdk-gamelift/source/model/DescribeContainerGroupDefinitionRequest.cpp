@@ -12,13 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeContainerGroupDefinitionRequest::DescribeContainerGroupDefinitionRequest() : 
-    m_nameHasBeenSet(false),
-    m_versionNumber(0),
-    m_versionNumberHasBeenSet(false)
-{
-}
-
 Aws::String DescribeContainerGroupDefinitionRequest::SerializePayload() const
 {
   JsonValue payload;

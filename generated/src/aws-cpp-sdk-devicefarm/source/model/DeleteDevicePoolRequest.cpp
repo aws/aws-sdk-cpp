@@ -12,11 +12,6 @@ using namespace Aws::DeviceFarm::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDevicePoolRequest::DeleteDevicePoolRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDevicePoolRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,14 +12,6 @@ using namespace Aws::VerifiedPermissions::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateIdentitySourceRequest::UpdateIdentitySourceRequest() : 
-    m_policyStoreIdHasBeenSet(false),
-    m_identitySourceIdHasBeenSet(false),
-    m_updateConfigurationHasBeenSet(false),
-    m_principalEntityTypeHasBeenSet(false)
-{
-}
-
 Aws::String UpdateIdentitySourceRequest::SerializePayload() const
 {
   JsonValue payload;

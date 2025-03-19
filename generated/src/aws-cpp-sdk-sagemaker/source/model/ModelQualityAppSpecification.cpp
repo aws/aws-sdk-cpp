@@ -18,20 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ModelQualityAppSpecification::ModelQualityAppSpecification() : 
-    m_imageUriHasBeenSet(false),
-    m_containerEntrypointHasBeenSet(false),
-    m_containerArgumentsHasBeenSet(false),
-    m_recordPreprocessorSourceUriHasBeenSet(false),
-    m_postAnalyticsProcessorSourceUriHasBeenSet(false),
-    m_problemType(MonitoringProblemType::NOT_SET),
-    m_problemTypeHasBeenSet(false),
-    m_environmentHasBeenSet(false)
-{
-}
-
 ModelQualityAppSpecification::ModelQualityAppSpecification(JsonView jsonValue)
-  : ModelQualityAppSpecification()
 {
   *this = jsonValue;
 }
@@ -41,10 +28,8 @@ ModelQualityAppSpecification& ModelQualityAppSpecification::operator =(JsonView 
   if(jsonValue.ValueExists("ImageUri"))
   {
     m_imageUri = jsonValue.GetString("ImageUri");
-
     m_imageUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContainerEntrypoint"))
   {
     Aws::Utils::Array<JsonView> containerEntrypointJsonList = jsonValue.GetArray("ContainerEntrypoint");
@@ -54,7 +39,6 @@ ModelQualityAppSpecification& ModelQualityAppSpecification::operator =(JsonView 
     }
     m_containerEntrypointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContainerArguments"))
   {
     Aws::Utils::Array<JsonView> containerArgumentsJsonList = jsonValue.GetArray("ContainerArguments");
@@ -64,28 +48,21 @@ ModelQualityAppSpecification& ModelQualityAppSpecification::operator =(JsonView 
     }
     m_containerArgumentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecordPreprocessorSourceUri"))
   {
     m_recordPreprocessorSourceUri = jsonValue.GetString("RecordPreprocessorSourceUri");
-
     m_recordPreprocessorSourceUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PostAnalyticsProcessorSourceUri"))
   {
     m_postAnalyticsProcessorSourceUri = jsonValue.GetString("PostAnalyticsProcessorSourceUri");
-
     m_postAnalyticsProcessorSourceUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProblemType"))
   {
     m_problemType = MonitoringProblemTypeMapper::GetMonitoringProblemTypeForName(jsonValue.GetString("ProblemType"));
-
     m_problemTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Environment"))
   {
     Aws::Map<Aws::String, JsonView> environmentJsonMap = jsonValue.GetObject("Environment").GetAllObjects();
@@ -95,7 +72,6 @@ ModelQualityAppSpecification& ModelQualityAppSpecification::operator =(JsonView 
     }
     m_environmentHasBeenSet = true;
   }
-
   return *this;
 }
 

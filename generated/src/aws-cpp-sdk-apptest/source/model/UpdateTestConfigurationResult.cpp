@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateTestConfigurationResult::UpdateTestConfigurationResult() : 
-    m_testConfigurationVersion(0)
-{
-}
-
 UpdateTestConfigurationResult::UpdateTestConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateTestConfigurationResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ UpdateTestConfigurationResult& UpdateTestConfigurationResult::operator =(const A
   if(jsonValue.ValueExists("testConfigurationId"))
   {
     m_testConfigurationId = jsonValue.GetString("testConfigurationId");
-
+    m_testConfigurationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("testConfigurationVersion"))
   {
     m_testConfigurationVersion = jsonValue.GetInteger("testConfigurationVersion");
-
+    m_testConfigurationVersionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

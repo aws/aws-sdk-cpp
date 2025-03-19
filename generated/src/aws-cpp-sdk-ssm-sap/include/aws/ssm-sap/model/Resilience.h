@@ -35,7 +35,7 @@ namespace Model
   class Resilience
   {
   public:
-    AWS_SSMSAP_API Resilience();
+    AWS_SSMSAP_API Resilience() = default;
     AWS_SSMSAP_API Resilience(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMSAP_API Resilience& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMSAP_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,50 +45,42 @@ namespace Model
     /**
      * <p>The tier of the component.</p>
      */
-    inline const Aws::String& GetHsrTier() const{ return m_hsrTier; }
+    inline const Aws::String& GetHsrTier() const { return m_hsrTier; }
     inline bool HsrTierHasBeenSet() const { return m_hsrTierHasBeenSet; }
-    inline void SetHsrTier(const Aws::String& value) { m_hsrTierHasBeenSet = true; m_hsrTier = value; }
-    inline void SetHsrTier(Aws::String&& value) { m_hsrTierHasBeenSet = true; m_hsrTier = std::move(value); }
-    inline void SetHsrTier(const char* value) { m_hsrTierHasBeenSet = true; m_hsrTier.assign(value); }
-    inline Resilience& WithHsrTier(const Aws::String& value) { SetHsrTier(value); return *this;}
-    inline Resilience& WithHsrTier(Aws::String&& value) { SetHsrTier(std::move(value)); return *this;}
-    inline Resilience& WithHsrTier(const char* value) { SetHsrTier(value); return *this;}
+    template<typename HsrTierT = Aws::String>
+    void SetHsrTier(HsrTierT&& value) { m_hsrTierHasBeenSet = true; m_hsrTier = std::forward<HsrTierT>(value); }
+    template<typename HsrTierT = Aws::String>
+    Resilience& WithHsrTier(HsrTierT&& value) { SetHsrTier(std::forward<HsrTierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The replication mode of the component.</p>
      */
-    inline const ReplicationMode& GetHsrReplicationMode() const{ return m_hsrReplicationMode; }
+    inline ReplicationMode GetHsrReplicationMode() const { return m_hsrReplicationMode; }
     inline bool HsrReplicationModeHasBeenSet() const { return m_hsrReplicationModeHasBeenSet; }
-    inline void SetHsrReplicationMode(const ReplicationMode& value) { m_hsrReplicationModeHasBeenSet = true; m_hsrReplicationMode = value; }
-    inline void SetHsrReplicationMode(ReplicationMode&& value) { m_hsrReplicationModeHasBeenSet = true; m_hsrReplicationMode = std::move(value); }
-    inline Resilience& WithHsrReplicationMode(const ReplicationMode& value) { SetHsrReplicationMode(value); return *this;}
-    inline Resilience& WithHsrReplicationMode(ReplicationMode&& value) { SetHsrReplicationMode(std::move(value)); return *this;}
+    inline void SetHsrReplicationMode(ReplicationMode value) { m_hsrReplicationModeHasBeenSet = true; m_hsrReplicationMode = value; }
+    inline Resilience& WithHsrReplicationMode(ReplicationMode value) { SetHsrReplicationMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The operation mode of the component.</p>
      */
-    inline const OperationMode& GetHsrOperationMode() const{ return m_hsrOperationMode; }
+    inline OperationMode GetHsrOperationMode() const { return m_hsrOperationMode; }
     inline bool HsrOperationModeHasBeenSet() const { return m_hsrOperationModeHasBeenSet; }
-    inline void SetHsrOperationMode(const OperationMode& value) { m_hsrOperationModeHasBeenSet = true; m_hsrOperationMode = value; }
-    inline void SetHsrOperationMode(OperationMode&& value) { m_hsrOperationModeHasBeenSet = true; m_hsrOperationMode = std::move(value); }
-    inline Resilience& WithHsrOperationMode(const OperationMode& value) { SetHsrOperationMode(value); return *this;}
-    inline Resilience& WithHsrOperationMode(OperationMode&& value) { SetHsrOperationMode(std::move(value)); return *this;}
+    inline void SetHsrOperationMode(OperationMode value) { m_hsrOperationModeHasBeenSet = true; m_hsrOperationMode = value; }
+    inline Resilience& WithHsrOperationMode(OperationMode value) { SetHsrOperationMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The cluster status of the component.</p>
      */
-    inline const ClusterStatus& GetClusterStatus() const{ return m_clusterStatus; }
+    inline ClusterStatus GetClusterStatus() const { return m_clusterStatus; }
     inline bool ClusterStatusHasBeenSet() const { return m_clusterStatusHasBeenSet; }
-    inline void SetClusterStatus(const ClusterStatus& value) { m_clusterStatusHasBeenSet = true; m_clusterStatus = value; }
-    inline void SetClusterStatus(ClusterStatus&& value) { m_clusterStatusHasBeenSet = true; m_clusterStatus = std::move(value); }
-    inline Resilience& WithClusterStatus(const ClusterStatus& value) { SetClusterStatus(value); return *this;}
-    inline Resilience& WithClusterStatus(ClusterStatus&& value) { SetClusterStatus(std::move(value)); return *this;}
+    inline void SetClusterStatus(ClusterStatus value) { m_clusterStatusHasBeenSet = true; m_clusterStatus = value; }
+    inline Resilience& WithClusterStatus(ClusterStatus value) { SetClusterStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -96,7 +88,7 @@ namespace Model
      * <p>Indicates if or not enqueue replication is enabled for the ASCS
      * component.</p>
      */
-    inline bool GetEnqueueReplication() const{ return m_enqueueReplication; }
+    inline bool GetEnqueueReplication() const { return m_enqueueReplication; }
     inline bool EnqueueReplicationHasBeenSet() const { return m_enqueueReplicationHasBeenSet; }
     inline void SetEnqueueReplication(bool value) { m_enqueueReplicationHasBeenSet = true; m_enqueueReplication = value; }
     inline Resilience& WithEnqueueReplication(bool value) { SetEnqueueReplication(value); return *this;}
@@ -106,16 +98,16 @@ namespace Model
     Aws::String m_hsrTier;
     bool m_hsrTierHasBeenSet = false;
 
-    ReplicationMode m_hsrReplicationMode;
+    ReplicationMode m_hsrReplicationMode{ReplicationMode::NOT_SET};
     bool m_hsrReplicationModeHasBeenSet = false;
 
-    OperationMode m_hsrOperationMode;
+    OperationMode m_hsrOperationMode{OperationMode::NOT_SET};
     bool m_hsrOperationModeHasBeenSet = false;
 
-    ClusterStatus m_clusterStatus;
+    ClusterStatus m_clusterStatus{ClusterStatus::NOT_SET};
     bool m_clusterStatusHasBeenSet = false;
 
-    bool m_enqueueReplication;
+    bool m_enqueueReplication{false};
     bool m_enqueueReplicationHasBeenSet = false;
   };
 

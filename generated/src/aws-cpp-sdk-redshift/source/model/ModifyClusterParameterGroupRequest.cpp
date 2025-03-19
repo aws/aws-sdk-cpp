@@ -10,12 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-ModifyClusterParameterGroupRequest::ModifyClusterParameterGroupRequest() : 
-    m_parameterGroupNameHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 Aws::String ModifyClusterParameterGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

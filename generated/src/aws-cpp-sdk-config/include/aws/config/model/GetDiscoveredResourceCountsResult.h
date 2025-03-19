@@ -29,7 +29,7 @@ namespace Model
   class GetDiscoveredResourceCountsResult
   {
   public:
-    AWS_CONFIGSERVICE_API GetDiscoveredResourceCountsResult();
+    AWS_CONFIGSERVICE_API GetDiscoveredResourceCountsResult() = default;
     AWS_CONFIGSERVICE_API GetDiscoveredResourceCountsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONFIGSERVICE_API GetDiscoveredResourceCountsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -46,8 +46,8 @@ namespace Model
      * type, <code>"AWS::EC2::Instances"</code>, in the request.</p> </li> <li>
      * <p>Config returns 25 for <code>totalDiscoveredResources</code>.</p> </li> </ol>
      */
-    inline long long GetTotalDiscoveredResources() const{ return m_totalDiscoveredResources; }
-    inline void SetTotalDiscoveredResources(long long value) { m_totalDiscoveredResources = value; }
+    inline long long GetTotalDiscoveredResources() const { return m_totalDiscoveredResources; }
+    inline void SetTotalDiscoveredResources(long long value) { m_totalDiscoveredResourcesHasBeenSet = true; m_totalDiscoveredResources = value; }
     inline GetDiscoveredResourceCountsResult& WithTotalDiscoveredResources(long long value) { SetTotalDiscoveredResources(value); return *this;}
     ///@}
 
@@ -56,13 +56,13 @@ namespace Model
      * <p>The list of <code>ResourceCount</code> objects. Each object is listed in
      * descending order by the number of resources.</p>
      */
-    inline const Aws::Vector<ResourceCount>& GetResourceCounts() const{ return m_resourceCounts; }
-    inline void SetResourceCounts(const Aws::Vector<ResourceCount>& value) { m_resourceCounts = value; }
-    inline void SetResourceCounts(Aws::Vector<ResourceCount>&& value) { m_resourceCounts = std::move(value); }
-    inline GetDiscoveredResourceCountsResult& WithResourceCounts(const Aws::Vector<ResourceCount>& value) { SetResourceCounts(value); return *this;}
-    inline GetDiscoveredResourceCountsResult& WithResourceCounts(Aws::Vector<ResourceCount>&& value) { SetResourceCounts(std::move(value)); return *this;}
-    inline GetDiscoveredResourceCountsResult& AddResourceCounts(const ResourceCount& value) { m_resourceCounts.push_back(value); return *this; }
-    inline GetDiscoveredResourceCountsResult& AddResourceCounts(ResourceCount&& value) { m_resourceCounts.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ResourceCount>& GetResourceCounts() const { return m_resourceCounts; }
+    template<typename ResourceCountsT = Aws::Vector<ResourceCount>>
+    void SetResourceCounts(ResourceCountsT&& value) { m_resourceCountsHasBeenSet = true; m_resourceCounts = std::forward<ResourceCountsT>(value); }
+    template<typename ResourceCountsT = Aws::Vector<ResourceCount>>
+    GetDiscoveredResourceCountsResult& WithResourceCounts(ResourceCountsT&& value) { SetResourceCounts(std::forward<ResourceCountsT>(value)); return *this;}
+    template<typename ResourceCountsT = ResourceCount>
+    GetDiscoveredResourceCountsResult& AddResourceCounts(ResourceCountsT&& value) { m_resourceCountsHasBeenSet = true; m_resourceCounts.emplace_back(std::forward<ResourceCountsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -70,34 +70,34 @@ namespace Model
      * <p>The string that you use in a subsequent request to get the next page of
      * results in a paginated response.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetDiscoveredResourceCountsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetDiscoveredResourceCountsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetDiscoveredResourceCountsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetDiscoveredResourceCountsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetDiscoveredResourceCountsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetDiscoveredResourceCountsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetDiscoveredResourceCountsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetDiscoveredResourceCountsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    long long m_totalDiscoveredResources;
+    long long m_totalDiscoveredResources{0};
+    bool m_totalDiscoveredResourcesHasBeenSet = false;
 
     Aws::Vector<ResourceCount> m_resourceCounts;
+    bool m_resourceCountsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

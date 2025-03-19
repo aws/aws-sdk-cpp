@@ -33,7 +33,7 @@ namespace Model
   class WeeklySchedule
   {
   public:
-    AWS_INSPECTOR2_API WeeklySchedule();
+    AWS_INSPECTOR2_API WeeklySchedule() = default;
     AWS_INSPECTOR2_API WeeklySchedule(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API WeeklySchedule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,25 @@ namespace Model
     /**
      * <p>The weekly schedule's days.</p>
      */
-    inline const Aws::Vector<Day>& GetDays() const{ return m_days; }
+    inline const Aws::Vector<Day>& GetDays() const { return m_days; }
     inline bool DaysHasBeenSet() const { return m_daysHasBeenSet; }
-    inline void SetDays(const Aws::Vector<Day>& value) { m_daysHasBeenSet = true; m_days = value; }
-    inline void SetDays(Aws::Vector<Day>&& value) { m_daysHasBeenSet = true; m_days = std::move(value); }
-    inline WeeklySchedule& WithDays(const Aws::Vector<Day>& value) { SetDays(value); return *this;}
-    inline WeeklySchedule& WithDays(Aws::Vector<Day>&& value) { SetDays(std::move(value)); return *this;}
-    inline WeeklySchedule& AddDays(const Day& value) { m_daysHasBeenSet = true; m_days.push_back(value); return *this; }
-    inline WeeklySchedule& AddDays(Day&& value) { m_daysHasBeenSet = true; m_days.push_back(std::move(value)); return *this; }
+    template<typename DaysT = Aws::Vector<Day>>
+    void SetDays(DaysT&& value) { m_daysHasBeenSet = true; m_days = std::forward<DaysT>(value); }
+    template<typename DaysT = Aws::Vector<Day>>
+    WeeklySchedule& WithDays(DaysT&& value) { SetDays(std::forward<DaysT>(value)); return *this;}
+    inline WeeklySchedule& AddDays(Day value) { m_daysHasBeenSet = true; m_days.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The weekly schedule's start time.</p>
      */
-    inline const Time& GetStartTime() const{ return m_startTime; }
+    inline const Time& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Time& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Time&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline WeeklySchedule& WithStartTime(const Time& value) { SetStartTime(value); return *this;}
-    inline WeeklySchedule& WithStartTime(Time&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Time>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Time>
+    WeeklySchedule& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
   private:
 

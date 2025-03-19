@@ -33,7 +33,7 @@ namespace Model
   class ComputeConfig
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API ComputeConfig();
+    AWS_DATABASEMIGRATIONSERVICE_API ComputeConfig() = default;
     AWS_DATABASEMIGRATIONSERVICE_API ComputeConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API ComputeConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * example, <code>"us-west-2"</code>. You can't set this parameter if the
      * <code>MultiAZ</code> parameter is set to <code>true</code>.</p>
      */
-    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+    inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
-    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
-    inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
-    inline ComputeConfig& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
-    inline ComputeConfig& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
-    inline ComputeConfig& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+    template<typename AvailabilityZoneT = Aws::String>
+    void SetAvailabilityZone(AvailabilityZoneT&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::forward<AvailabilityZoneT>(value); }
+    template<typename AvailabilityZoneT = Aws::String>
+    ComputeConfig& WithAvailabilityZone(AvailabilityZoneT&& value) { SetAvailabilityZone(std::forward<AvailabilityZoneT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
      * specify a comma-separated list of internet addresses for up to four DNS name
      * servers. For example: <code>"1.1.1.1,2.2.2.2,3.3.3.3,4.4.4.4"</code> </p>
      */
-    inline const Aws::String& GetDnsNameServers() const{ return m_dnsNameServers; }
+    inline const Aws::String& GetDnsNameServers() const { return m_dnsNameServers; }
     inline bool DnsNameServersHasBeenSet() const { return m_dnsNameServersHasBeenSet; }
-    inline void SetDnsNameServers(const Aws::String& value) { m_dnsNameServersHasBeenSet = true; m_dnsNameServers = value; }
-    inline void SetDnsNameServers(Aws::String&& value) { m_dnsNameServersHasBeenSet = true; m_dnsNameServers = std::move(value); }
-    inline void SetDnsNameServers(const char* value) { m_dnsNameServersHasBeenSet = true; m_dnsNameServers.assign(value); }
-    inline ComputeConfig& WithDnsNameServers(const Aws::String& value) { SetDnsNameServers(value); return *this;}
-    inline ComputeConfig& WithDnsNameServers(Aws::String&& value) { SetDnsNameServers(std::move(value)); return *this;}
-    inline ComputeConfig& WithDnsNameServers(const char* value) { SetDnsNameServers(value); return *this;}
+    template<typename DnsNameServersT = Aws::String>
+    void SetDnsNameServers(DnsNameServersT&& value) { m_dnsNameServersHasBeenSet = true; m_dnsNameServers = std::forward<DnsNameServersT>(value); }
+    template<typename DnsNameServersT = Aws::String>
+    ComputeConfig& WithDnsNameServers(DnsNameServersT&& value) { SetDnsNameServers(std::forward<DnsNameServersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,14 +80,12 @@ namespace Model
      * Web Services account. Your Amazon Web Services account has a different default
      * encryption key for each Amazon Web Services Region.</p>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline ComputeConfig& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline ComputeConfig& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline ComputeConfig& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    ComputeConfig& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,7 +97,7 @@ namespace Model
      * can specify for DMS Serverless is 384. The <code>MaxCapacityUnits</code>
      * parameter is the only DCU parameter you are required to specify.</p>
      */
-    inline int GetMaxCapacityUnits() const{ return m_maxCapacityUnits; }
+    inline int GetMaxCapacityUnits() const { return m_maxCapacityUnits; }
     inline bool MaxCapacityUnitsHasBeenSet() const { return m_maxCapacityUnitsHasBeenSet; }
     inline void SetMaxCapacityUnits(int value) { m_maxCapacityUnitsHasBeenSet = true; m_maxCapacityUnits = value; }
     inline ComputeConfig& WithMaxCapacityUnits(int value) { SetMaxCapacityUnits(value); return *this;}
@@ -120,7 +114,7 @@ namespace Model
      * source activity, DMS scales down your replication until it reaches the value
      * specified in <code>MinCapacityUnits</code>.</p>
      */
-    inline int GetMinCapacityUnits() const{ return m_minCapacityUnits; }
+    inline int GetMinCapacityUnits() const { return m_minCapacityUnits; }
     inline bool MinCapacityUnitsHasBeenSet() const { return m_minCapacityUnitsHasBeenSet; }
     inline void SetMinCapacityUnits(int value) { m_minCapacityUnitsHasBeenSet = true; m_minCapacityUnits = value; }
     inline ComputeConfig& WithMinCapacityUnits(int value) { SetMinCapacityUnits(value); return *this;}
@@ -132,7 +126,7 @@ namespace Model
      * You can't set the <code>AvailabilityZone</code> parameter if the
      * <code>MultiAZ</code> parameter is set to <code>true</code>.</p>
      */
-    inline bool GetMultiAZ() const{ return m_multiAZ; }
+    inline bool GetMultiAZ() const { return m_multiAZ; }
     inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
     inline ComputeConfig& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
@@ -149,14 +143,12 @@ namespace Model
      * <code>Thu</code>, <code>Fri</code>, <code>Sat</code>, and <code>Sun</code>.</p>
      * <p>Constraints include a minimum 30-minute window.</p>
      */
-    inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
+    inline const Aws::String& GetPreferredMaintenanceWindow() const { return m_preferredMaintenanceWindow; }
     inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
-    inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
-    inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
-    inline void SetPreferredMaintenanceWindow(const char* value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow.assign(value); }
-    inline ComputeConfig& WithPreferredMaintenanceWindow(const Aws::String& value) { SetPreferredMaintenanceWindow(value); return *this;}
-    inline ComputeConfig& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
-    inline ComputeConfig& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
+    template<typename PreferredMaintenanceWindowT = Aws::String>
+    void SetPreferredMaintenanceWindow(PreferredMaintenanceWindowT&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::forward<PreferredMaintenanceWindowT>(value); }
+    template<typename PreferredMaintenanceWindowT = Aws::String>
+    ComputeConfig& WithPreferredMaintenanceWindow(PreferredMaintenanceWindowT&& value) { SetPreferredMaintenanceWindow(std::forward<PreferredMaintenanceWindowT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -164,14 +156,12 @@ namespace Model
      * <p>Specifies a subnet group identifier to associate with the DMS Serverless
      * replication.</p>
      */
-    inline const Aws::String& GetReplicationSubnetGroupId() const{ return m_replicationSubnetGroupId; }
+    inline const Aws::String& GetReplicationSubnetGroupId() const { return m_replicationSubnetGroupId; }
     inline bool ReplicationSubnetGroupIdHasBeenSet() const { return m_replicationSubnetGroupIdHasBeenSet; }
-    inline void SetReplicationSubnetGroupId(const Aws::String& value) { m_replicationSubnetGroupIdHasBeenSet = true; m_replicationSubnetGroupId = value; }
-    inline void SetReplicationSubnetGroupId(Aws::String&& value) { m_replicationSubnetGroupIdHasBeenSet = true; m_replicationSubnetGroupId = std::move(value); }
-    inline void SetReplicationSubnetGroupId(const char* value) { m_replicationSubnetGroupIdHasBeenSet = true; m_replicationSubnetGroupId.assign(value); }
-    inline ComputeConfig& WithReplicationSubnetGroupId(const Aws::String& value) { SetReplicationSubnetGroupId(value); return *this;}
-    inline ComputeConfig& WithReplicationSubnetGroupId(Aws::String&& value) { SetReplicationSubnetGroupId(std::move(value)); return *this;}
-    inline ComputeConfig& WithReplicationSubnetGroupId(const char* value) { SetReplicationSubnetGroupId(value); return *this;}
+    template<typename ReplicationSubnetGroupIdT = Aws::String>
+    void SetReplicationSubnetGroupId(ReplicationSubnetGroupIdT&& value) { m_replicationSubnetGroupIdHasBeenSet = true; m_replicationSubnetGroupId = std::forward<ReplicationSubnetGroupIdT>(value); }
+    template<typename ReplicationSubnetGroupIdT = Aws::String>
+    ComputeConfig& WithReplicationSubnetGroupId(ReplicationSubnetGroupIdT&& value) { SetReplicationSubnetGroupId(std::forward<ReplicationSubnetGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -180,15 +170,14 @@ namespace Model
      * Serverless replication. The VPC security group must work with the VPC containing
      * the replication.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const{ return m_vpcSecurityGroupIds; }
+    inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const { return m_vpcSecurityGroupIds; }
     inline bool VpcSecurityGroupIdsHasBeenSet() const { return m_vpcSecurityGroupIdsHasBeenSet; }
-    inline void SetVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = value; }
-    inline void SetVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = std::move(value); }
-    inline ComputeConfig& WithVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetVpcSecurityGroupIds(value); return *this;}
-    inline ComputeConfig& WithVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetVpcSecurityGroupIds(std::move(value)); return *this;}
-    inline ComputeConfig& AddVpcSecurityGroupIds(const Aws::String& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
-    inline ComputeConfig& AddVpcSecurityGroupIds(Aws::String&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(std::move(value)); return *this; }
-    inline ComputeConfig& AddVpcSecurityGroupIds(const char* value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
+    template<typename VpcSecurityGroupIdsT = Aws::Vector<Aws::String>>
+    void SetVpcSecurityGroupIds(VpcSecurityGroupIdsT&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = std::forward<VpcSecurityGroupIdsT>(value); }
+    template<typename VpcSecurityGroupIdsT = Aws::Vector<Aws::String>>
+    ComputeConfig& WithVpcSecurityGroupIds(VpcSecurityGroupIdsT&& value) { SetVpcSecurityGroupIds(std::forward<VpcSecurityGroupIdsT>(value)); return *this;}
+    template<typename VpcSecurityGroupIdsT = Aws::String>
+    ComputeConfig& AddVpcSecurityGroupIds(VpcSecurityGroupIdsT&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.emplace_back(std::forward<VpcSecurityGroupIdsT>(value)); return *this; }
     ///@}
   private:
 
@@ -201,13 +190,13 @@ namespace Model
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet = false;
 
-    int m_maxCapacityUnits;
+    int m_maxCapacityUnits{0};
     bool m_maxCapacityUnitsHasBeenSet = false;
 
-    int m_minCapacityUnits;
+    int m_minCapacityUnits{0};
     bool m_minCapacityUnitsHasBeenSet = false;
 
-    bool m_multiAZ;
+    bool m_multiAZ{false};
     bool m_multiAZHasBeenSet = false;
 
     Aws::String m_preferredMaintenanceWindow;

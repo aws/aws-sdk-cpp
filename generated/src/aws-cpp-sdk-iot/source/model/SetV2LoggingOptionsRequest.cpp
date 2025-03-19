@@ -12,15 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SetV2LoggingOptionsRequest::SetV2LoggingOptionsRequest() : 
-    m_roleArnHasBeenSet(false),
-    m_defaultLogLevel(LogLevel::NOT_SET),
-    m_defaultLogLevelHasBeenSet(false),
-    m_disableAllLogs(false),
-    m_disableAllLogsHasBeenSet(false)
-{
-}
-
 Aws::String SetV2LoggingOptionsRequest::SerializePayload() const
 {
   JsonValue payload;

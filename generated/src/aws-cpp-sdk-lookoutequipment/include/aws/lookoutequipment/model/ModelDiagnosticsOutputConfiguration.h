@@ -33,7 +33,7 @@ namespace Model
   class ModelDiagnosticsOutputConfiguration
   {
   public:
-    AWS_LOOKOUTEQUIPMENT_API ModelDiagnosticsOutputConfiguration();
+    AWS_LOOKOUTEQUIPMENT_API ModelDiagnosticsOutputConfiguration() = default;
     AWS_LOOKOUTEQUIPMENT_API ModelDiagnosticsOutputConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTEQUIPMENT_API ModelDiagnosticsOutputConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>The Amazon S3 location for the pointwise model diagnostics. </p>
      */
-    inline const ModelDiagnosticsS3OutputConfiguration& GetS3OutputConfiguration() const{ return m_s3OutputConfiguration; }
+    inline const ModelDiagnosticsS3OutputConfiguration& GetS3OutputConfiguration() const { return m_s3OutputConfiguration; }
     inline bool S3OutputConfigurationHasBeenSet() const { return m_s3OutputConfigurationHasBeenSet; }
-    inline void SetS3OutputConfiguration(const ModelDiagnosticsS3OutputConfiguration& value) { m_s3OutputConfigurationHasBeenSet = true; m_s3OutputConfiguration = value; }
-    inline void SetS3OutputConfiguration(ModelDiagnosticsS3OutputConfiguration&& value) { m_s3OutputConfigurationHasBeenSet = true; m_s3OutputConfiguration = std::move(value); }
-    inline ModelDiagnosticsOutputConfiguration& WithS3OutputConfiguration(const ModelDiagnosticsS3OutputConfiguration& value) { SetS3OutputConfiguration(value); return *this;}
-    inline ModelDiagnosticsOutputConfiguration& WithS3OutputConfiguration(ModelDiagnosticsS3OutputConfiguration&& value) { SetS3OutputConfiguration(std::move(value)); return *this;}
+    template<typename S3OutputConfigurationT = ModelDiagnosticsS3OutputConfiguration>
+    void SetS3OutputConfiguration(S3OutputConfigurationT&& value) { m_s3OutputConfigurationHasBeenSet = true; m_s3OutputConfiguration = std::forward<S3OutputConfigurationT>(value); }
+    template<typename S3OutputConfigurationT = ModelDiagnosticsS3OutputConfiguration>
+    ModelDiagnosticsOutputConfiguration& WithS3OutputConfiguration(S3OutputConfigurationT&& value) { SetS3OutputConfiguration(std::forward<S3OutputConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +56,12 @@ namespace Model
      * <p>The Amazon Web Services Key Management Service (KMS) key identifier to
      * encrypt the pointwise model diagnostics files.</p>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline ModelDiagnosticsOutputConfiguration& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline ModelDiagnosticsOutputConfiguration& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline ModelDiagnosticsOutputConfiguration& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    ModelDiagnosticsOutputConfiguration& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -34,7 +34,7 @@ namespace Model
   class CreateBackendAuthForgotPasswordConfig
   {
   public:
-    AWS_AMPLIFYBACKEND_API CreateBackendAuthForgotPasswordConfig();
+    AWS_AMPLIFYBACKEND_API CreateBackendAuthForgotPasswordConfig() = default;
     AWS_AMPLIFYBACKEND_API CreateBackendAuthForgotPasswordConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYBACKEND_API CreateBackendAuthForgotPasswordConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYBACKEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
      * <p><b>(DEPRECATED)</b> Describes which mode to use (either SMS or email) to
      * deliver messages to app users who want to recover their password.</p>
      */
-    inline const DeliveryMethod& GetDeliveryMethod() const{ return m_deliveryMethod; }
+    inline DeliveryMethod GetDeliveryMethod() const { return m_deliveryMethod; }
     inline bool DeliveryMethodHasBeenSet() const { return m_deliveryMethodHasBeenSet; }
-    inline void SetDeliveryMethod(const DeliveryMethod& value) { m_deliveryMethodHasBeenSet = true; m_deliveryMethod = value; }
-    inline void SetDeliveryMethod(DeliveryMethod&& value) { m_deliveryMethodHasBeenSet = true; m_deliveryMethod = std::move(value); }
-    inline CreateBackendAuthForgotPasswordConfig& WithDeliveryMethod(const DeliveryMethod& value) { SetDeliveryMethod(value); return *this;}
-    inline CreateBackendAuthForgotPasswordConfig& WithDeliveryMethod(DeliveryMethod&& value) { SetDeliveryMethod(std::move(value)); return *this;}
+    inline void SetDeliveryMethod(DeliveryMethod value) { m_deliveryMethodHasBeenSet = true; m_deliveryMethod = value; }
+    inline CreateBackendAuthForgotPasswordConfig& WithDeliveryMethod(DeliveryMethod value) { SetDeliveryMethod(value); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +56,12 @@ namespace Model
      * <p><b>(DEPRECATED)</b> The configuration for the email sent when an app user
      * forgets their password.</p>
      */
-    inline const EmailSettings& GetEmailSettings() const{ return m_emailSettings; }
+    inline const EmailSettings& GetEmailSettings() const { return m_emailSettings; }
     inline bool EmailSettingsHasBeenSet() const { return m_emailSettingsHasBeenSet; }
-    inline void SetEmailSettings(const EmailSettings& value) { m_emailSettingsHasBeenSet = true; m_emailSettings = value; }
-    inline void SetEmailSettings(EmailSettings&& value) { m_emailSettingsHasBeenSet = true; m_emailSettings = std::move(value); }
-    inline CreateBackendAuthForgotPasswordConfig& WithEmailSettings(const EmailSettings& value) { SetEmailSettings(value); return *this;}
-    inline CreateBackendAuthForgotPasswordConfig& WithEmailSettings(EmailSettings&& value) { SetEmailSettings(std::move(value)); return *this;}
+    template<typename EmailSettingsT = EmailSettings>
+    void SetEmailSettings(EmailSettingsT&& value) { m_emailSettingsHasBeenSet = true; m_emailSettings = std::forward<EmailSettingsT>(value); }
+    template<typename EmailSettingsT = EmailSettings>
+    CreateBackendAuthForgotPasswordConfig& WithEmailSettings(EmailSettingsT&& value) { SetEmailSettings(std::forward<EmailSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,16 +69,16 @@ namespace Model
      * <p><b>(DEPRECATED)</b> The configuration for the SMS message sent when an app
      * user forgets their password.</p>
      */
-    inline const SmsSettings& GetSmsSettings() const{ return m_smsSettings; }
+    inline const SmsSettings& GetSmsSettings() const { return m_smsSettings; }
     inline bool SmsSettingsHasBeenSet() const { return m_smsSettingsHasBeenSet; }
-    inline void SetSmsSettings(const SmsSettings& value) { m_smsSettingsHasBeenSet = true; m_smsSettings = value; }
-    inline void SetSmsSettings(SmsSettings&& value) { m_smsSettingsHasBeenSet = true; m_smsSettings = std::move(value); }
-    inline CreateBackendAuthForgotPasswordConfig& WithSmsSettings(const SmsSettings& value) { SetSmsSettings(value); return *this;}
-    inline CreateBackendAuthForgotPasswordConfig& WithSmsSettings(SmsSettings&& value) { SetSmsSettings(std::move(value)); return *this;}
+    template<typename SmsSettingsT = SmsSettings>
+    void SetSmsSettings(SmsSettingsT&& value) { m_smsSettingsHasBeenSet = true; m_smsSettings = std::forward<SmsSettingsT>(value); }
+    template<typename SmsSettingsT = SmsSettings>
+    CreateBackendAuthForgotPasswordConfig& WithSmsSettings(SmsSettingsT&& value) { SetSmsSettings(std::forward<SmsSettingsT>(value)); return *this;}
     ///@}
   private:
 
-    DeliveryMethod m_deliveryMethod;
+    DeliveryMethod m_deliveryMethod{DeliveryMethod::NOT_SET};
     bool m_deliveryMethodHasBeenSet = false;
 
     EmailSettings m_emailSettings;

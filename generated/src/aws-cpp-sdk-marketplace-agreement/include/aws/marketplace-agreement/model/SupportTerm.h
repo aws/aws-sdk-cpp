@@ -32,7 +32,7 @@ namespace Model
   class SupportTerm
   {
   public:
-    AWS_AGREEMENTSERVICE_API SupportTerm();
+    AWS_AGREEMENTSERVICE_API SupportTerm() = default;
     AWS_AGREEMENTSERVICE_API SupportTerm(Aws::Utils::Json::JsonView jsonValue);
     AWS_AGREEMENTSERVICE_API SupportTerm& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AGREEMENTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
      * <p>Free-text field about the refund policy description that will be shown to
      * customers as is on the website and console.</p>
      */
-    inline const Aws::String& GetRefundPolicy() const{ return m_refundPolicy; }
+    inline const Aws::String& GetRefundPolicy() const { return m_refundPolicy; }
     inline bool RefundPolicyHasBeenSet() const { return m_refundPolicyHasBeenSet; }
-    inline void SetRefundPolicy(const Aws::String& value) { m_refundPolicyHasBeenSet = true; m_refundPolicy = value; }
-    inline void SetRefundPolicy(Aws::String&& value) { m_refundPolicyHasBeenSet = true; m_refundPolicy = std::move(value); }
-    inline void SetRefundPolicy(const char* value) { m_refundPolicyHasBeenSet = true; m_refundPolicy.assign(value); }
-    inline SupportTerm& WithRefundPolicy(const Aws::String& value) { SetRefundPolicy(value); return *this;}
-    inline SupportTerm& WithRefundPolicy(Aws::String&& value) { SetRefundPolicy(std::move(value)); return *this;}
-    inline SupportTerm& WithRefundPolicy(const char* value) { SetRefundPolicy(value); return *this;}
+    template<typename RefundPolicyT = Aws::String>
+    void SetRefundPolicy(RefundPolicyT&& value) { m_refundPolicyHasBeenSet = true; m_refundPolicy = std::forward<RefundPolicyT>(value); }
+    template<typename RefundPolicyT = Aws::String>
+    SupportTerm& WithRefundPolicy(RefundPolicyT&& value) { SetRefundPolicy(std::forward<RefundPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Category of the term being updated.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline SupportTerm& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline SupportTerm& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline SupportTerm& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    SupportTerm& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
   private:
 

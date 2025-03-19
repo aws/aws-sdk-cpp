@@ -34,7 +34,7 @@ namespace Model
   class ConflictingAlias
   {
   public:
-    AWS_CLOUDFRONT_API ConflictingAlias();
+    AWS_CLOUDFRONT_API ConflictingAlias() = default;
     AWS_CLOUDFRONT_API ConflictingAlias(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API ConflictingAlias& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>An alias (also called a CNAME).</p>
      */
-    inline const Aws::String& GetAlias() const{ return m_alias; }
+    inline const Aws::String& GetAlias() const { return m_alias; }
     inline bool AliasHasBeenSet() const { return m_aliasHasBeenSet; }
-    inline void SetAlias(const Aws::String& value) { m_aliasHasBeenSet = true; m_alias = value; }
-    inline void SetAlias(Aws::String&& value) { m_aliasHasBeenSet = true; m_alias = std::move(value); }
-    inline void SetAlias(const char* value) { m_aliasHasBeenSet = true; m_alias.assign(value); }
-    inline ConflictingAlias& WithAlias(const Aws::String& value) { SetAlias(value); return *this;}
-    inline ConflictingAlias& WithAlias(Aws::String&& value) { SetAlias(std::move(value)); return *this;}
-    inline ConflictingAlias& WithAlias(const char* value) { SetAlias(value); return *this;}
+    template<typename AliasT = Aws::String>
+    void SetAlias(AliasT&& value) { m_aliasHasBeenSet = true; m_alias = std::forward<AliasT>(value); }
+    template<typename AliasT = Aws::String>
+    ConflictingAlias& WithAlias(AliasT&& value) { SetAlias(std::forward<AliasT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * <p>The (partially hidden) ID of the CloudFront distribution associated with the
      * alias.</p>
      */
-    inline const Aws::String& GetDistributionId() const{ return m_distributionId; }
+    inline const Aws::String& GetDistributionId() const { return m_distributionId; }
     inline bool DistributionIdHasBeenSet() const { return m_distributionIdHasBeenSet; }
-    inline void SetDistributionId(const Aws::String& value) { m_distributionIdHasBeenSet = true; m_distributionId = value; }
-    inline void SetDistributionId(Aws::String&& value) { m_distributionIdHasBeenSet = true; m_distributionId = std::move(value); }
-    inline void SetDistributionId(const char* value) { m_distributionIdHasBeenSet = true; m_distributionId.assign(value); }
-    inline ConflictingAlias& WithDistributionId(const Aws::String& value) { SetDistributionId(value); return *this;}
-    inline ConflictingAlias& WithDistributionId(Aws::String&& value) { SetDistributionId(std::move(value)); return *this;}
-    inline ConflictingAlias& WithDistributionId(const char* value) { SetDistributionId(value); return *this;}
+    template<typename DistributionIdT = Aws::String>
+    void SetDistributionId(DistributionIdT&& value) { m_distributionIdHasBeenSet = true; m_distributionId = std::forward<DistributionIdT>(value); }
+    template<typename DistributionIdT = Aws::String>
+    ConflictingAlias& WithDistributionId(DistributionIdT&& value) { SetDistributionId(std::forward<DistributionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +71,12 @@ namespace Model
      * <p>The (partially hidden) ID of the Amazon Web Services account that owns the
      * distribution that's associated with the alias.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline ConflictingAlias& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline ConflictingAlias& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline ConflictingAlias& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    ConflictingAlias& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -36,7 +36,7 @@ namespace Model
   class ServiceCatalogProvisioningUpdateDetails
   {
   public:
-    AWS_SAGEMAKER_API ServiceCatalogProvisioningUpdateDetails();
+    AWS_SAGEMAKER_API ServiceCatalogProvisioningUpdateDetails() = default;
     AWS_SAGEMAKER_API ServiceCatalogProvisioningUpdateDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ServiceCatalogProvisioningUpdateDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,28 +46,26 @@ namespace Model
     /**
      * <p>The ID of the provisioning artifact.</p>
      */
-    inline const Aws::String& GetProvisioningArtifactId() const{ return m_provisioningArtifactId; }
+    inline const Aws::String& GetProvisioningArtifactId() const { return m_provisioningArtifactId; }
     inline bool ProvisioningArtifactIdHasBeenSet() const { return m_provisioningArtifactIdHasBeenSet; }
-    inline void SetProvisioningArtifactId(const Aws::String& value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId = value; }
-    inline void SetProvisioningArtifactId(Aws::String&& value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId = std::move(value); }
-    inline void SetProvisioningArtifactId(const char* value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId.assign(value); }
-    inline ServiceCatalogProvisioningUpdateDetails& WithProvisioningArtifactId(const Aws::String& value) { SetProvisioningArtifactId(value); return *this;}
-    inline ServiceCatalogProvisioningUpdateDetails& WithProvisioningArtifactId(Aws::String&& value) { SetProvisioningArtifactId(std::move(value)); return *this;}
-    inline ServiceCatalogProvisioningUpdateDetails& WithProvisioningArtifactId(const char* value) { SetProvisioningArtifactId(value); return *this;}
+    template<typename ProvisioningArtifactIdT = Aws::String>
+    void SetProvisioningArtifactId(ProvisioningArtifactIdT&& value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId = std::forward<ProvisioningArtifactIdT>(value); }
+    template<typename ProvisioningArtifactIdT = Aws::String>
+    ServiceCatalogProvisioningUpdateDetails& WithProvisioningArtifactId(ProvisioningArtifactIdT&& value) { SetProvisioningArtifactId(std::forward<ProvisioningArtifactIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of key value pairs that you specify when you provision a product.</p>
      */
-    inline const Aws::Vector<ProvisioningParameter>& GetProvisioningParameters() const{ return m_provisioningParameters; }
+    inline const Aws::Vector<ProvisioningParameter>& GetProvisioningParameters() const { return m_provisioningParameters; }
     inline bool ProvisioningParametersHasBeenSet() const { return m_provisioningParametersHasBeenSet; }
-    inline void SetProvisioningParameters(const Aws::Vector<ProvisioningParameter>& value) { m_provisioningParametersHasBeenSet = true; m_provisioningParameters = value; }
-    inline void SetProvisioningParameters(Aws::Vector<ProvisioningParameter>&& value) { m_provisioningParametersHasBeenSet = true; m_provisioningParameters = std::move(value); }
-    inline ServiceCatalogProvisioningUpdateDetails& WithProvisioningParameters(const Aws::Vector<ProvisioningParameter>& value) { SetProvisioningParameters(value); return *this;}
-    inline ServiceCatalogProvisioningUpdateDetails& WithProvisioningParameters(Aws::Vector<ProvisioningParameter>&& value) { SetProvisioningParameters(std::move(value)); return *this;}
-    inline ServiceCatalogProvisioningUpdateDetails& AddProvisioningParameters(const ProvisioningParameter& value) { m_provisioningParametersHasBeenSet = true; m_provisioningParameters.push_back(value); return *this; }
-    inline ServiceCatalogProvisioningUpdateDetails& AddProvisioningParameters(ProvisioningParameter&& value) { m_provisioningParametersHasBeenSet = true; m_provisioningParameters.push_back(std::move(value)); return *this; }
+    template<typename ProvisioningParametersT = Aws::Vector<ProvisioningParameter>>
+    void SetProvisioningParameters(ProvisioningParametersT&& value) { m_provisioningParametersHasBeenSet = true; m_provisioningParameters = std::forward<ProvisioningParametersT>(value); }
+    template<typename ProvisioningParametersT = Aws::Vector<ProvisioningParameter>>
+    ServiceCatalogProvisioningUpdateDetails& WithProvisioningParameters(ProvisioningParametersT&& value) { SetProvisioningParameters(std::forward<ProvisioningParametersT>(value)); return *this;}
+    template<typename ProvisioningParametersT = ProvisioningParameter>
+    ServiceCatalogProvisioningUpdateDetails& AddProvisioningParameters(ProvisioningParametersT&& value) { m_provisioningParametersHasBeenSet = true; m_provisioningParameters.emplace_back(std::forward<ProvisioningParametersT>(value)); return *this; }
     ///@}
   private:
 

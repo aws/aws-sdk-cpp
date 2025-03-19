@@ -33,7 +33,7 @@ namespace Model
   class InstanceAccessControlAttributeConfiguration
   {
   public:
-    AWS_SSOADMIN_API InstanceAccessControlAttributeConfiguration();
+    AWS_SSOADMIN_API InstanceAccessControlAttributeConfiguration() = default;
     AWS_SSOADMIN_API InstanceAccessControlAttributeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOADMIN_API InstanceAccessControlAttributeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOADMIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
      * <p>Lists the attributes that are configured for ABAC in the specified IAM
      * Identity Center instance.</p>
      */
-    inline const Aws::Vector<AccessControlAttribute>& GetAccessControlAttributes() const{ return m_accessControlAttributes; }
+    inline const Aws::Vector<AccessControlAttribute>& GetAccessControlAttributes() const { return m_accessControlAttributes; }
     inline bool AccessControlAttributesHasBeenSet() const { return m_accessControlAttributesHasBeenSet; }
-    inline void SetAccessControlAttributes(const Aws::Vector<AccessControlAttribute>& value) { m_accessControlAttributesHasBeenSet = true; m_accessControlAttributes = value; }
-    inline void SetAccessControlAttributes(Aws::Vector<AccessControlAttribute>&& value) { m_accessControlAttributesHasBeenSet = true; m_accessControlAttributes = std::move(value); }
-    inline InstanceAccessControlAttributeConfiguration& WithAccessControlAttributes(const Aws::Vector<AccessControlAttribute>& value) { SetAccessControlAttributes(value); return *this;}
-    inline InstanceAccessControlAttributeConfiguration& WithAccessControlAttributes(Aws::Vector<AccessControlAttribute>&& value) { SetAccessControlAttributes(std::move(value)); return *this;}
-    inline InstanceAccessControlAttributeConfiguration& AddAccessControlAttributes(const AccessControlAttribute& value) { m_accessControlAttributesHasBeenSet = true; m_accessControlAttributes.push_back(value); return *this; }
-    inline InstanceAccessControlAttributeConfiguration& AddAccessControlAttributes(AccessControlAttribute&& value) { m_accessControlAttributesHasBeenSet = true; m_accessControlAttributes.push_back(std::move(value)); return *this; }
+    template<typename AccessControlAttributesT = Aws::Vector<AccessControlAttribute>>
+    void SetAccessControlAttributes(AccessControlAttributesT&& value) { m_accessControlAttributesHasBeenSet = true; m_accessControlAttributes = std::forward<AccessControlAttributesT>(value); }
+    template<typename AccessControlAttributesT = Aws::Vector<AccessControlAttribute>>
+    InstanceAccessControlAttributeConfiguration& WithAccessControlAttributes(AccessControlAttributesT&& value) { SetAccessControlAttributes(std::forward<AccessControlAttributesT>(value)); return *this;}
+    template<typename AccessControlAttributesT = AccessControlAttribute>
+    InstanceAccessControlAttributeConfiguration& AddAccessControlAttributes(AccessControlAttributesT&& value) { m_accessControlAttributesHasBeenSet = true; m_accessControlAttributes.emplace_back(std::forward<AccessControlAttributesT>(value)); return *this; }
     ///@}
   private:
 

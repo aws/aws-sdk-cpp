@@ -12,18 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateContactFlowVersionRequest::CreateContactFlowVersionRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_contactFlowIdHasBeenSet(false),
-    m_flowContentSha256HasBeenSet(false),
-    m_contactFlowVersion(0),
-    m_contactFlowVersionHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastModifiedRegionHasBeenSet(false)
-{
-}
-
 Aws::String CreateContactFlowVersionRequest::SerializePayload() const
 {
   JsonValue payload;

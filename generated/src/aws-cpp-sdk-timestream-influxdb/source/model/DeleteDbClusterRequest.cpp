@@ -12,11 +12,6 @@ using namespace Aws::TimestreamInfluxDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDbClusterRequest::DeleteDbClusterRequest() : 
-    m_dbClusterIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDbClusterRequest::SerializePayload() const
 {
   JsonValue payload;

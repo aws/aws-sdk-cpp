@@ -12,12 +12,6 @@ using namespace Aws::IoTFleetWise::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateVehicleFleetRequest::DisassociateVehicleFleetRequest() : 
-    m_vehicleNameHasBeenSet(false),
-    m_fleetIdHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateVehicleFleetRequest::SerializePayload() const
 {
   JsonValue payload;

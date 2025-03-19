@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeletePropertygraphStatisticsResult::DeletePropertygraphStatisticsResult() : 
-    m_statusCode(0)
-{
-}
-
 DeletePropertygraphStatisticsResult::DeletePropertygraphStatisticsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeletePropertygraphStatisticsResult()
 {
   *this = result;
 }
@@ -34,25 +28,24 @@ DeletePropertygraphStatisticsResult& DeletePropertygraphStatisticsResult::operat
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("payload"))
   {
     m_payload = jsonValue.GetObject("payload");
-
+    m_payloadHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_statusCode = static_cast<int>(result.GetResponseCode());
-
+  m_statusCodeHasBeenSet = true;
   return *this;
 }

@@ -12,12 +12,6 @@ using namespace Aws::IoTTwinMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSceneRequest::GetSceneRequest() : 
-    m_workspaceIdHasBeenSet(false),
-    m_sceneIdHasBeenSet(false)
-{
-}
-
 Aws::String GetSceneRequest::SerializePayload() const
 {
   return {};

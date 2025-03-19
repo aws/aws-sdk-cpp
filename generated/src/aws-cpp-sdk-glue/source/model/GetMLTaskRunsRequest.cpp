@@ -12,16 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetMLTaskRunsRequest::GetMLTaskRunsRequest() : 
-    m_transformIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_sortHasBeenSet(false)
-{
-}
-
 Aws::String GetMLTaskRunsRequest::SerializePayload() const
 {
   JsonValue payload;

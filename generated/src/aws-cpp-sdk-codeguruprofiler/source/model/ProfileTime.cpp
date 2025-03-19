@@ -18,13 +18,7 @@ namespace CodeGuruProfiler
 namespace Model
 {
 
-ProfileTime::ProfileTime() : 
-    m_startHasBeenSet(false)
-{
-}
-
 ProfileTime::ProfileTime(JsonView jsonValue)
-  : ProfileTime()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ProfileTime& ProfileTime::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("start"))
   {
     m_start = jsonValue.GetString("start");
-
     m_startHasBeenSet = true;
   }
-
   return *this;
 }
 

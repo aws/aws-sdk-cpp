@@ -32,7 +32,7 @@ namespace Model
   class AllQueryArguments
   {
   public:
-    AWS_WAFV2_API AllQueryArguments();
+    AWS_WAFV2_API AllQueryArguments() = default;
     AWS_WAFV2_API AllQueryArguments(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API AllQueryArguments& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;

@@ -12,16 +12,6 @@ using namespace Aws::ChimeSDKMessaging::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateChannelFlowRequest::CreateChannelFlowRequest() : 
-    m_appInstanceArnHasBeenSet(false),
-    m_processorsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateChannelFlowRequest::SerializePayload() const
 {
   JsonValue payload;

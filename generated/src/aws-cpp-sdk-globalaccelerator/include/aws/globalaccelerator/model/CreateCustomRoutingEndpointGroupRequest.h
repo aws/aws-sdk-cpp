@@ -24,7 +24,7 @@ namespace Model
   class CreateCustomRoutingEndpointGroupRequest : public GlobalAcceleratorRequest
   {
   public:
-    AWS_GLOBALACCELERATOR_API CreateCustomRoutingEndpointGroupRequest();
+    AWS_GLOBALACCELERATOR_API CreateCustomRoutingEndpointGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the listener for a custom routing
      * endpoint.</p>
      */
-    inline const Aws::String& GetListenerArn() const{ return m_listenerArn; }
+    inline const Aws::String& GetListenerArn() const { return m_listenerArn; }
     inline bool ListenerArnHasBeenSet() const { return m_listenerArnHasBeenSet; }
-    inline void SetListenerArn(const Aws::String& value) { m_listenerArnHasBeenSet = true; m_listenerArn = value; }
-    inline void SetListenerArn(Aws::String&& value) { m_listenerArnHasBeenSet = true; m_listenerArn = std::move(value); }
-    inline void SetListenerArn(const char* value) { m_listenerArnHasBeenSet = true; m_listenerArn.assign(value); }
-    inline CreateCustomRoutingEndpointGroupRequest& WithListenerArn(const Aws::String& value) { SetListenerArn(value); return *this;}
-    inline CreateCustomRoutingEndpointGroupRequest& WithListenerArn(Aws::String&& value) { SetListenerArn(std::move(value)); return *this;}
-    inline CreateCustomRoutingEndpointGroupRequest& WithListenerArn(const char* value) { SetListenerArn(value); return *this;}
+    template<typename ListenerArnT = Aws::String>
+    void SetListenerArn(ListenerArnT&& value) { m_listenerArnHasBeenSet = true; m_listenerArn = std::forward<ListenerArnT>(value); }
+    template<typename ListenerArnT = Aws::String>
+    CreateCustomRoutingEndpointGroupRequest& WithListenerArn(ListenerArnT&& value) { SetListenerArn(std::forward<ListenerArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>The Amazon Web Services Region where the endpoint group is located. A
      * listener can have only one endpoint group in a specific Region.</p>
      */
-    inline const Aws::String& GetEndpointGroupRegion() const{ return m_endpointGroupRegion; }
+    inline const Aws::String& GetEndpointGroupRegion() const { return m_endpointGroupRegion; }
     inline bool EndpointGroupRegionHasBeenSet() const { return m_endpointGroupRegionHasBeenSet; }
-    inline void SetEndpointGroupRegion(const Aws::String& value) { m_endpointGroupRegionHasBeenSet = true; m_endpointGroupRegion = value; }
-    inline void SetEndpointGroupRegion(Aws::String&& value) { m_endpointGroupRegionHasBeenSet = true; m_endpointGroupRegion = std::move(value); }
-    inline void SetEndpointGroupRegion(const char* value) { m_endpointGroupRegionHasBeenSet = true; m_endpointGroupRegion.assign(value); }
-    inline CreateCustomRoutingEndpointGroupRequest& WithEndpointGroupRegion(const Aws::String& value) { SetEndpointGroupRegion(value); return *this;}
-    inline CreateCustomRoutingEndpointGroupRequest& WithEndpointGroupRegion(Aws::String&& value) { SetEndpointGroupRegion(std::move(value)); return *this;}
-    inline CreateCustomRoutingEndpointGroupRequest& WithEndpointGroupRegion(const char* value) { SetEndpointGroupRegion(value); return *this;}
+    template<typename EndpointGroupRegionT = Aws::String>
+    void SetEndpointGroupRegion(EndpointGroupRegionT&& value) { m_endpointGroupRegionHasBeenSet = true; m_endpointGroupRegion = std::forward<EndpointGroupRegionT>(value); }
+    template<typename EndpointGroupRegionT = Aws::String>
+    CreateCustomRoutingEndpointGroupRequest& WithEndpointGroupRegion(EndpointGroupRegionT&& value) { SetEndpointGroupRegion(std::forward<EndpointGroupRegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +68,14 @@ namespace Model
      * <p>Sets the port range and protocol for all endpoints (virtual private cloud
      * subnets) in a custom routing endpoint group to accept client traffic on.</p>
      */
-    inline const Aws::Vector<CustomRoutingDestinationConfiguration>& GetDestinationConfigurations() const{ return m_destinationConfigurations; }
+    inline const Aws::Vector<CustomRoutingDestinationConfiguration>& GetDestinationConfigurations() const { return m_destinationConfigurations; }
     inline bool DestinationConfigurationsHasBeenSet() const { return m_destinationConfigurationsHasBeenSet; }
-    inline void SetDestinationConfigurations(const Aws::Vector<CustomRoutingDestinationConfiguration>& value) { m_destinationConfigurationsHasBeenSet = true; m_destinationConfigurations = value; }
-    inline void SetDestinationConfigurations(Aws::Vector<CustomRoutingDestinationConfiguration>&& value) { m_destinationConfigurationsHasBeenSet = true; m_destinationConfigurations = std::move(value); }
-    inline CreateCustomRoutingEndpointGroupRequest& WithDestinationConfigurations(const Aws::Vector<CustomRoutingDestinationConfiguration>& value) { SetDestinationConfigurations(value); return *this;}
-    inline CreateCustomRoutingEndpointGroupRequest& WithDestinationConfigurations(Aws::Vector<CustomRoutingDestinationConfiguration>&& value) { SetDestinationConfigurations(std::move(value)); return *this;}
-    inline CreateCustomRoutingEndpointGroupRequest& AddDestinationConfigurations(const CustomRoutingDestinationConfiguration& value) { m_destinationConfigurationsHasBeenSet = true; m_destinationConfigurations.push_back(value); return *this; }
-    inline CreateCustomRoutingEndpointGroupRequest& AddDestinationConfigurations(CustomRoutingDestinationConfiguration&& value) { m_destinationConfigurationsHasBeenSet = true; m_destinationConfigurations.push_back(std::move(value)); return *this; }
+    template<typename DestinationConfigurationsT = Aws::Vector<CustomRoutingDestinationConfiguration>>
+    void SetDestinationConfigurations(DestinationConfigurationsT&& value) { m_destinationConfigurationsHasBeenSet = true; m_destinationConfigurations = std::forward<DestinationConfigurationsT>(value); }
+    template<typename DestinationConfigurationsT = Aws::Vector<CustomRoutingDestinationConfiguration>>
+    CreateCustomRoutingEndpointGroupRequest& WithDestinationConfigurations(DestinationConfigurationsT&& value) { SetDestinationConfigurations(std::forward<DestinationConfigurationsT>(value)); return *this;}
+    template<typename DestinationConfigurationsT = CustomRoutingDestinationConfiguration>
+    CreateCustomRoutingEndpointGroupRequest& AddDestinationConfigurations(DestinationConfigurationsT&& value) { m_destinationConfigurationsHasBeenSet = true; m_destinationConfigurations.emplace_back(std::forward<DestinationConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -87,14 +83,12 @@ namespace Model
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency—that is, the uniqueness—of the request.</p>
      */
-    inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
+    inline const Aws::String& GetIdempotencyToken() const { return m_idempotencyToken; }
     inline bool IdempotencyTokenHasBeenSet() const { return m_idempotencyTokenHasBeenSet; }
-    inline void SetIdempotencyToken(const Aws::String& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = value; }
-    inline void SetIdempotencyToken(Aws::String&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::move(value); }
-    inline void SetIdempotencyToken(const char* value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken.assign(value); }
-    inline CreateCustomRoutingEndpointGroupRequest& WithIdempotencyToken(const Aws::String& value) { SetIdempotencyToken(value); return *this;}
-    inline CreateCustomRoutingEndpointGroupRequest& WithIdempotencyToken(Aws::String&& value) { SetIdempotencyToken(std::move(value)); return *this;}
-    inline CreateCustomRoutingEndpointGroupRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
+    template<typename IdempotencyTokenT = Aws::String>
+    void SetIdempotencyToken(IdempotencyTokenT&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::forward<IdempotencyTokenT>(value); }
+    template<typename IdempotencyTokenT = Aws::String>
+    CreateCustomRoutingEndpointGroupRequest& WithIdempotencyToken(IdempotencyTokenT&& value) { SetIdempotencyToken(std::forward<IdempotencyTokenT>(value)); return *this;}
     ///@}
   private:
 

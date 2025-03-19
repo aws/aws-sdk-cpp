@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteCollectionResult::DeleteCollectionResult() : 
-    m_statusCode(0)
-{
-}
-
 DeleteCollectionResult::DeleteCollectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteCollectionResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ DeleteCollectionResult& DeleteCollectionResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("StatusCode"))
   {
     m_statusCode = jsonValue.GetInteger("StatusCode");
-
+    m_statusCodeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

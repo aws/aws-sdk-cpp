@@ -37,7 +37,7 @@ namespace Model
   class CreateBatchPredictionResult
   {
   public:
-    AWS_MACHINELEARNING_API CreateBatchPredictionResult();
+    AWS_MACHINELEARNING_API CreateBatchPredictionResult() = default;
     AWS_MACHINELEARNING_API CreateBatchPredictionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MACHINELEARNING_API CreateBatchPredictionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -48,30 +48,28 @@ namespace Model
      * This value is identical to the value of the <code>BatchPredictionId</code> in
      * the request.</p>
      */
-    inline const Aws::String& GetBatchPredictionId() const{ return m_batchPredictionId; }
-    inline void SetBatchPredictionId(const Aws::String& value) { m_batchPredictionId = value; }
-    inline void SetBatchPredictionId(Aws::String&& value) { m_batchPredictionId = std::move(value); }
-    inline void SetBatchPredictionId(const char* value) { m_batchPredictionId.assign(value); }
-    inline CreateBatchPredictionResult& WithBatchPredictionId(const Aws::String& value) { SetBatchPredictionId(value); return *this;}
-    inline CreateBatchPredictionResult& WithBatchPredictionId(Aws::String&& value) { SetBatchPredictionId(std::move(value)); return *this;}
-    inline CreateBatchPredictionResult& WithBatchPredictionId(const char* value) { SetBatchPredictionId(value); return *this;}
+    inline const Aws::String& GetBatchPredictionId() const { return m_batchPredictionId; }
+    template<typename BatchPredictionIdT = Aws::String>
+    void SetBatchPredictionId(BatchPredictionIdT&& value) { m_batchPredictionIdHasBeenSet = true; m_batchPredictionId = std::forward<BatchPredictionIdT>(value); }
+    template<typename BatchPredictionIdT = Aws::String>
+    CreateBatchPredictionResult& WithBatchPredictionId(BatchPredictionIdT&& value) { SetBatchPredictionId(std::forward<BatchPredictionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateBatchPredictionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateBatchPredictionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateBatchPredictionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateBatchPredictionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_batchPredictionId;
+    bool m_batchPredictionIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

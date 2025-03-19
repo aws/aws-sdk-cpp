@@ -12,14 +12,6 @@ using namespace Aws::Organizations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListDelegatedServicesForAccountRequest::ListDelegatedServicesForAccountRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListDelegatedServicesForAccountRequest::SerializePayload() const
 {
   JsonValue payload;

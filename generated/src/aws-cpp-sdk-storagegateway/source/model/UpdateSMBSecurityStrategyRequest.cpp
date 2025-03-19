@@ -12,13 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSMBSecurityStrategyRequest::UpdateSMBSecurityStrategyRequest() : 
-    m_gatewayARNHasBeenSet(false),
-    m_sMBSecurityStrategy(SMBSecurityStrategy::NOT_SET),
-    m_sMBSecurityStrategyHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSMBSecurityStrategyRequest::SerializePayload() const
 {
   JsonValue payload;

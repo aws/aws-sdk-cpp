@@ -12,14 +12,6 @@ using namespace Aws::mgn::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateWaveRequest::UpdateWaveRequest() : 
-    m_accountIDHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_waveIDHasBeenSet(false)
-{
-}
-
 Aws::String UpdateWaveRequest::SerializePayload() const
 {
   JsonValue payload;

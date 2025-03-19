@@ -18,14 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-LifecycleExecutionResourcesImpactedSummary::LifecycleExecutionResourcesImpactedSummary() : 
-    m_hasImpactedResources(false),
-    m_hasImpactedResourcesHasBeenSet(false)
-{
-}
-
 LifecycleExecutionResourcesImpactedSummary::LifecycleExecutionResourcesImpactedSummary(JsonView jsonValue)
-  : LifecycleExecutionResourcesImpactedSummary()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ LifecycleExecutionResourcesImpactedSummary& LifecycleExecutionResourcesImpactedS
   if(jsonValue.ValueExists("hasImpactedResources"))
   {
     m_hasImpactedResources = jsonValue.GetBool("hasImpactedResources");
-
     m_hasImpactedResourcesHasBeenSet = true;
   }
-
   return *this;
 }
 

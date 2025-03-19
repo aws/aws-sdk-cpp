@@ -12,12 +12,6 @@ using namespace Aws::ServiceCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateBudgetFromResourceRequest::DisassociateBudgetFromResourceRequest() : 
-    m_budgetNameHasBeenSet(false),
-    m_resourceIdHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateBudgetFromResourceRequest::SerializePayload() const
 {
   JsonValue payload;

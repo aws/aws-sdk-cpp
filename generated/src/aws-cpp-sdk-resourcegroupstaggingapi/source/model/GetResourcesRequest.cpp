@@ -12,22 +12,6 @@ using namespace Aws::ResourceGroupsTaggingAPI::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetResourcesRequest::GetResourcesRequest() : 
-    m_paginationTokenHasBeenSet(false),
-    m_tagFiltersHasBeenSet(false),
-    m_resourcesPerPage(0),
-    m_resourcesPerPageHasBeenSet(false),
-    m_tagsPerPage(0),
-    m_tagsPerPageHasBeenSet(false),
-    m_resourceTypeFiltersHasBeenSet(false),
-    m_includeComplianceDetails(false),
-    m_includeComplianceDetailsHasBeenSet(false),
-    m_excludeCompliantResources(false),
-    m_excludeCompliantResourcesHasBeenSet(false),
-    m_resourceARNListHasBeenSet(false)
-{
-}
-
 Aws::String GetResourcesRequest::SerializePayload() const
 {
   JsonValue payload;

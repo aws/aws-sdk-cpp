@@ -18,13 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-ActionPayload::ActionPayload() : 
-    m_stringValueHasBeenSet(false)
-{
-}
-
 ActionPayload::ActionPayload(JsonView jsonValue)
-  : ActionPayload()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ActionPayload& ActionPayload::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("stringValue"))
   {
     m_stringValue = jsonValue.GetString("stringValue");
-
     m_stringValueHasBeenSet = true;
   }
-
   return *this;
 }
 

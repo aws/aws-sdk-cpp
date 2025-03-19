@@ -20,15 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-S3GeneratedManifestDescriptor::S3GeneratedManifestDescriptor() : 
-    m_format(GeneratedManifestFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_locationHasBeenSet(false)
-{
-}
-
 S3GeneratedManifestDescriptor::S3GeneratedManifestDescriptor(const XmlNode& xmlNode)
-  : S3GeneratedManifestDescriptor()
 {
   *this = xmlNode;
 }
@@ -42,7 +34,7 @@ S3GeneratedManifestDescriptor& S3GeneratedManifestDescriptor::operator =(const X
     XmlNode formatNode = resultNode.FirstChild("Format");
     if(!formatNode.IsNull())
     {
-      m_format = GeneratedManifestFormatMapper::GetGeneratedManifestFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(formatNode.GetText()).c_str()).c_str());
+      m_format = GeneratedManifestFormatMapper::GetGeneratedManifestFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(formatNode.GetText()).c_str()));
       m_formatHasBeenSet = true;
     }
     XmlNode locationNode = resultNode.FirstChild("Location");

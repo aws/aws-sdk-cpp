@@ -18,13 +18,7 @@ namespace GeoPlaces
 namespace Model
 {
 
-AccessPoint::AccessPoint() : 
-    m_positionHasBeenSet(false)
-{
-}
-
 AccessPoint::AccessPoint(JsonView jsonValue)
-  : AccessPoint()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ AccessPoint& AccessPoint::operator =(JsonView jsonValue)
     }
     m_positionHasBeenSet = true;
   }
-
   return *this;
 }
 

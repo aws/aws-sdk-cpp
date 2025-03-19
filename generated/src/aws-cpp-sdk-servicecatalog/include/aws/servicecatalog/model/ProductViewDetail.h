@@ -35,7 +35,7 @@ namespace Model
   class ProductViewDetail
   {
   public:
-    AWS_SERVICECATALOG_API ProductViewDetail();
+    AWS_SERVICECATALOG_API ProductViewDetail() = default;
     AWS_SERVICECATALOG_API ProductViewDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICECATALOG_API ProductViewDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
     /**
      * <p>Summary information about the product view.</p>
      */
-    inline const ProductViewSummary& GetProductViewSummary() const{ return m_productViewSummary; }
+    inline const ProductViewSummary& GetProductViewSummary() const { return m_productViewSummary; }
     inline bool ProductViewSummaryHasBeenSet() const { return m_productViewSummaryHasBeenSet; }
-    inline void SetProductViewSummary(const ProductViewSummary& value) { m_productViewSummaryHasBeenSet = true; m_productViewSummary = value; }
-    inline void SetProductViewSummary(ProductViewSummary&& value) { m_productViewSummaryHasBeenSet = true; m_productViewSummary = std::move(value); }
-    inline ProductViewDetail& WithProductViewSummary(const ProductViewSummary& value) { SetProductViewSummary(value); return *this;}
-    inline ProductViewDetail& WithProductViewSummary(ProductViewSummary&& value) { SetProductViewSummary(std::move(value)); return *this;}
+    template<typename ProductViewSummaryT = ProductViewSummary>
+    void SetProductViewSummary(ProductViewSummaryT&& value) { m_productViewSummaryHasBeenSet = true; m_productViewSummary = std::forward<ProductViewSummaryT>(value); }
+    template<typename ProductViewSummaryT = ProductViewSummary>
+    ProductViewDetail& WithProductViewSummary(ProductViewSummaryT&& value) { SetProductViewSummary(std::forward<ProductViewSummaryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,38 +60,34 @@ namespace Model
      * creation has started; the product is not ready for use.</p> </li> <li> <p>
      * <code>FAILED</code> - An action failed.</p> </li> </ul>
      */
-    inline const Status& GetStatus() const{ return m_status; }
+    inline Status GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Status& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Status&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ProductViewDetail& WithStatus(const Status& value) { SetStatus(value); return *this;}
-    inline ProductViewDetail& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(Status value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ProductViewDetail& WithStatus(Status value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the product.</p>
      */
-    inline const Aws::String& GetProductARN() const{ return m_productARN; }
+    inline const Aws::String& GetProductARN() const { return m_productARN; }
     inline bool ProductARNHasBeenSet() const { return m_productARNHasBeenSet; }
-    inline void SetProductARN(const Aws::String& value) { m_productARNHasBeenSet = true; m_productARN = value; }
-    inline void SetProductARN(Aws::String&& value) { m_productARNHasBeenSet = true; m_productARN = std::move(value); }
-    inline void SetProductARN(const char* value) { m_productARNHasBeenSet = true; m_productARN.assign(value); }
-    inline ProductViewDetail& WithProductARN(const Aws::String& value) { SetProductARN(value); return *this;}
-    inline ProductViewDetail& WithProductARN(Aws::String&& value) { SetProductARN(std::move(value)); return *this;}
-    inline ProductViewDetail& WithProductARN(const char* value) { SetProductARN(value); return *this;}
+    template<typename ProductARNT = Aws::String>
+    void SetProductARN(ProductARNT&& value) { m_productARNHasBeenSet = true; m_productARN = std::forward<ProductARNT>(value); }
+    template<typename ProductARNT = Aws::String>
+    ProductViewDetail& WithProductARN(ProductARNT&& value) { SetProductARN(std::forward<ProductARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The UTC time stamp of the creation time.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
+    inline const Aws::Utils::DateTime& GetCreatedTime() const { return m_createdTime; }
     inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
-    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
-    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
-    inline ProductViewDetail& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
-    inline ProductViewDetail& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    void SetCreatedTime(CreatedTimeT&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::forward<CreatedTimeT>(value); }
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    ProductViewDetail& WithCreatedTime(CreatedTimeT&& value) { SetCreatedTime(std::forward<CreatedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,25 +99,25 @@ namespace Model
      * This response contains the same fields as the <code>ConnectionParameters</code>
      * request, with the addition of the <code>LastSync</code> response.</p>
      */
-    inline const SourceConnectionDetail& GetSourceConnection() const{ return m_sourceConnection; }
+    inline const SourceConnectionDetail& GetSourceConnection() const { return m_sourceConnection; }
     inline bool SourceConnectionHasBeenSet() const { return m_sourceConnectionHasBeenSet; }
-    inline void SetSourceConnection(const SourceConnectionDetail& value) { m_sourceConnectionHasBeenSet = true; m_sourceConnection = value; }
-    inline void SetSourceConnection(SourceConnectionDetail&& value) { m_sourceConnectionHasBeenSet = true; m_sourceConnection = std::move(value); }
-    inline ProductViewDetail& WithSourceConnection(const SourceConnectionDetail& value) { SetSourceConnection(value); return *this;}
-    inline ProductViewDetail& WithSourceConnection(SourceConnectionDetail&& value) { SetSourceConnection(std::move(value)); return *this;}
+    template<typename SourceConnectionT = SourceConnectionDetail>
+    void SetSourceConnection(SourceConnectionT&& value) { m_sourceConnectionHasBeenSet = true; m_sourceConnection = std::forward<SourceConnectionT>(value); }
+    template<typename SourceConnectionT = SourceConnectionDetail>
+    ProductViewDetail& WithSourceConnection(SourceConnectionT&& value) { SetSourceConnection(std::forward<SourceConnectionT>(value)); return *this;}
     ///@}
   private:
 
     ProductViewSummary m_productViewSummary;
     bool m_productViewSummaryHasBeenSet = false;
 
-    Status m_status;
+    Status m_status{Status::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_productARN;
     bool m_productARNHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTime;
+    Aws::Utils::DateTime m_createdTime{};
     bool m_createdTimeHasBeenSet = false;
 
     SourceConnectionDetail m_sourceConnection;

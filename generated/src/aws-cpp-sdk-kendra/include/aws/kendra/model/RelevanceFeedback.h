@@ -34,7 +34,7 @@ namespace Model
   class RelevanceFeedback
   {
   public:
-    AWS_KENDRA_API RelevanceFeedback();
+    AWS_KENDRA_API RelevanceFeedback() = default;
     AWS_KENDRA_API RelevanceFeedback(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API RelevanceFeedback& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,33 +45,29 @@ namespace Model
      * <p>The identifier of the search result that the user provided relevance feedback
      * for.</p>
      */
-    inline const Aws::String& GetResultId() const{ return m_resultId; }
+    inline const Aws::String& GetResultId() const { return m_resultId; }
     inline bool ResultIdHasBeenSet() const { return m_resultIdHasBeenSet; }
-    inline void SetResultId(const Aws::String& value) { m_resultIdHasBeenSet = true; m_resultId = value; }
-    inline void SetResultId(Aws::String&& value) { m_resultIdHasBeenSet = true; m_resultId = std::move(value); }
-    inline void SetResultId(const char* value) { m_resultIdHasBeenSet = true; m_resultId.assign(value); }
-    inline RelevanceFeedback& WithResultId(const Aws::String& value) { SetResultId(value); return *this;}
-    inline RelevanceFeedback& WithResultId(Aws::String&& value) { SetResultId(std::move(value)); return *this;}
-    inline RelevanceFeedback& WithResultId(const char* value) { SetResultId(value); return *this;}
+    template<typename ResultIdT = Aws::String>
+    void SetResultId(ResultIdT&& value) { m_resultIdHasBeenSet = true; m_resultId = std::forward<ResultIdT>(value); }
+    template<typename ResultIdT = Aws::String>
+    RelevanceFeedback& WithResultId(ResultIdT&& value) { SetResultId(std::forward<ResultIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Whether the document was relevant or not relevant to the search.</p>
      */
-    inline const RelevanceType& GetRelevanceValue() const{ return m_relevanceValue; }
+    inline RelevanceType GetRelevanceValue() const { return m_relevanceValue; }
     inline bool RelevanceValueHasBeenSet() const { return m_relevanceValueHasBeenSet; }
-    inline void SetRelevanceValue(const RelevanceType& value) { m_relevanceValueHasBeenSet = true; m_relevanceValue = value; }
-    inline void SetRelevanceValue(RelevanceType&& value) { m_relevanceValueHasBeenSet = true; m_relevanceValue = std::move(value); }
-    inline RelevanceFeedback& WithRelevanceValue(const RelevanceType& value) { SetRelevanceValue(value); return *this;}
-    inline RelevanceFeedback& WithRelevanceValue(RelevanceType&& value) { SetRelevanceValue(std::move(value)); return *this;}
+    inline void SetRelevanceValue(RelevanceType value) { m_relevanceValueHasBeenSet = true; m_relevanceValue = value; }
+    inline RelevanceFeedback& WithRelevanceValue(RelevanceType value) { SetRelevanceValue(value); return *this;}
     ///@}
   private:
 
     Aws::String m_resultId;
     bool m_resultIdHasBeenSet = false;
 
-    RelevanceType m_relevanceValue;
+    RelevanceType m_relevanceValue{RelevanceType::NOT_SET};
     bool m_relevanceValueHasBeenSet = false;
   };
 

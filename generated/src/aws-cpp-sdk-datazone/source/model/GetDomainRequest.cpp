@@ -12,11 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDomainRequest::GetDomainRequest() : 
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String GetDomainRequest::SerializePayload() const
 {
   return {};

@@ -26,7 +26,7 @@ namespace Model
   class CreateHealthCheckRequest : public Route53Request
   {
   public:
-    AWS_ROUTE53_API CreateHealthCheckRequest();
+    AWS_ROUTE53_API CreateHealthCheckRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -59,26 +59,24 @@ namespace Model
      * indefinitely. The <code>CallerReference</code> for a deleted health check will
      * be deleted after a number of days.</p>
      */
-    inline const Aws::String& GetCallerReference() const{ return m_callerReference; }
+    inline const Aws::String& GetCallerReference() const { return m_callerReference; }
     inline bool CallerReferenceHasBeenSet() const { return m_callerReferenceHasBeenSet; }
-    inline void SetCallerReference(const Aws::String& value) { m_callerReferenceHasBeenSet = true; m_callerReference = value; }
-    inline void SetCallerReference(Aws::String&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = std::move(value); }
-    inline void SetCallerReference(const char* value) { m_callerReferenceHasBeenSet = true; m_callerReference.assign(value); }
-    inline CreateHealthCheckRequest& WithCallerReference(const Aws::String& value) { SetCallerReference(value); return *this;}
-    inline CreateHealthCheckRequest& WithCallerReference(Aws::String&& value) { SetCallerReference(std::move(value)); return *this;}
-    inline CreateHealthCheckRequest& WithCallerReference(const char* value) { SetCallerReference(value); return *this;}
+    template<typename CallerReferenceT = Aws::String>
+    void SetCallerReference(CallerReferenceT&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = std::forward<CallerReferenceT>(value); }
+    template<typename CallerReferenceT = Aws::String>
+    CreateHealthCheckRequest& WithCallerReference(CallerReferenceT&& value) { SetCallerReference(std::forward<CallerReferenceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A complex type that contains settings for a new health check.</p>
      */
-    inline const HealthCheckConfig& GetHealthCheckConfig() const{ return m_healthCheckConfig; }
+    inline const HealthCheckConfig& GetHealthCheckConfig() const { return m_healthCheckConfig; }
     inline bool HealthCheckConfigHasBeenSet() const { return m_healthCheckConfigHasBeenSet; }
-    inline void SetHealthCheckConfig(const HealthCheckConfig& value) { m_healthCheckConfigHasBeenSet = true; m_healthCheckConfig = value; }
-    inline void SetHealthCheckConfig(HealthCheckConfig&& value) { m_healthCheckConfigHasBeenSet = true; m_healthCheckConfig = std::move(value); }
-    inline CreateHealthCheckRequest& WithHealthCheckConfig(const HealthCheckConfig& value) { SetHealthCheckConfig(value); return *this;}
-    inline CreateHealthCheckRequest& WithHealthCheckConfig(HealthCheckConfig&& value) { SetHealthCheckConfig(std::move(value)); return *this;}
+    template<typename HealthCheckConfigT = HealthCheckConfig>
+    void SetHealthCheckConfig(HealthCheckConfigT&& value) { m_healthCheckConfigHasBeenSet = true; m_healthCheckConfig = std::forward<HealthCheckConfigT>(value); }
+    template<typename HealthCheckConfigT = HealthCheckConfig>
+    CreateHealthCheckRequest& WithHealthCheckConfig(HealthCheckConfigT&& value) { SetHealthCheckConfig(std::forward<HealthCheckConfigT>(value)); return *this;}
     ///@}
   private:
 

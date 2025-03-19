@@ -18,10 +18,6 @@ namespace MediaLive
 namespace Model
 {
 
-MultiplexGroupSettings::MultiplexGroupSettings()
-{
-}
-
 MultiplexGroupSettings::MultiplexGroupSettings(JsonView jsonValue)
 {
   *this = jsonValue;

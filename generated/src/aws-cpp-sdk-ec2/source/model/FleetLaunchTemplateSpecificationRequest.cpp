@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-FleetLaunchTemplateSpecificationRequest::FleetLaunchTemplateSpecificationRequest() : 
-    m_launchTemplateIdHasBeenSet(false),
-    m_launchTemplateNameHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 FleetLaunchTemplateSpecificationRequest::FleetLaunchTemplateSpecificationRequest(const XmlNode& xmlNode)
-  : FleetLaunchTemplateSpecificationRequest()
 {
   *this = xmlNode;
 }

@@ -10,11 +10,6 @@
 using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils;
 
-StopMetricStreamsRequest::StopMetricStreamsRequest() : 
-    m_namesHasBeenSet(false)
-{
-}
-
 Aws::String StopMetricStreamsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -12,34 +12,6 @@ using namespace Aws::TimestreamInfluxDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDbInstanceRequest::CreateDbInstanceRequest() : 
-    m_nameHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_organizationHasBeenSet(false),
-    m_bucketHasBeenSet(false),
-    m_dbInstanceType(DbInstanceType::NOT_SET),
-    m_dbInstanceTypeHasBeenSet(false),
-    m_vpcSubnetIdsHasBeenSet(false),
-    m_vpcSecurityGroupIdsHasBeenSet(false),
-    m_publiclyAccessible(false),
-    m_publiclyAccessibleHasBeenSet(false),
-    m_dbStorageType(DbStorageType::NOT_SET),
-    m_dbStorageTypeHasBeenSet(false),
-    m_allocatedStorage(0),
-    m_allocatedStorageHasBeenSet(false),
-    m_dbParameterGroupIdentifierHasBeenSet(false),
-    m_deploymentType(DeploymentType::NOT_SET),
-    m_deploymentTypeHasBeenSet(false),
-    m_logDeliveryConfigurationHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_networkType(NetworkType::NOT_SET),
-    m_networkTypeHasBeenSet(false)
-{
-}
-
 Aws::String CreateDbInstanceRequest::SerializePayload() const
 {
   JsonValue payload;

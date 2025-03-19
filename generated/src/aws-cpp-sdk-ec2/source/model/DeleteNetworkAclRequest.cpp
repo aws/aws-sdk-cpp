@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeleteNetworkAclRequest::DeleteNetworkAclRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_networkAclIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteNetworkAclRequest::SerializePayload() const
 {
   Aws::StringStream ss;

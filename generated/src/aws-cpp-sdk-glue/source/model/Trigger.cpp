@@ -18,24 +18,7 @@ namespace Glue
 namespace Model
 {
 
-Trigger::Trigger() : 
-    m_nameHasBeenSet(false),
-    m_workflowNameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_type(TriggerType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_state(TriggerState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_actionsHasBeenSet(false),
-    m_predicateHasBeenSet(false),
-    m_eventBatchingConditionHasBeenSet(false)
-{
-}
-
 Trigger::Trigger(JsonView jsonValue)
-  : Trigger()
 {
   *this = jsonValue;
 }
@@ -45,52 +28,38 @@ Trigger& Trigger::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkflowName"))
   {
     m_workflowName = jsonValue.GetString("WorkflowName");
-
     m_workflowNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = TriggerTypeMapper::GetTriggerTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = TriggerStateMapper::GetTriggerStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Schedule"))
   {
     m_schedule = jsonValue.GetString("Schedule");
-
     m_scheduleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Actions"))
   {
     Aws::Utils::Array<JsonView> actionsJsonList = jsonValue.GetArray("Actions");
@@ -100,21 +69,16 @@ Trigger& Trigger::operator =(JsonView jsonValue)
     }
     m_actionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Predicate"))
   {
     m_predicate = jsonValue.GetObject("Predicate");
-
     m_predicateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventBatchingCondition"))
   {
     m_eventBatchingCondition = jsonValue.GetObject("EventBatchingCondition");
-
     m_eventBatchingConditionHasBeenSet = true;
   }
-
   return *this;
 }
 

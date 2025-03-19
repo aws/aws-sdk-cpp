@@ -12,12 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateConnectionAliasPermissionRequest::UpdateConnectionAliasPermissionRequest() : 
-    m_aliasIdHasBeenSet(false),
-    m_connectionAliasPermissionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateConnectionAliasPermissionRequest::SerializePayload() const
 {
   JsonValue payload;

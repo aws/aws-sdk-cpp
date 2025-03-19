@@ -18,19 +18,7 @@ namespace EventBridge
 namespace Model
 {
 
-PutEventsRequestEntry::PutEventsRequestEntry() : 
-    m_timeHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_resourcesHasBeenSet(false),
-    m_detailTypeHasBeenSet(false),
-    m_detailHasBeenSet(false),
-    m_eventBusNameHasBeenSet(false),
-    m_traceHeaderHasBeenSet(false)
-{
-}
-
 PutEventsRequestEntry::PutEventsRequestEntry(JsonView jsonValue)
-  : PutEventsRequestEntry()
 {
   *this = jsonValue;
 }
@@ -40,17 +28,13 @@ PutEventsRequestEntry& PutEventsRequestEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Time"))
   {
     m_time = jsonValue.GetDouble("Time");
-
     m_timeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Source"))
   {
     m_source = jsonValue.GetString("Source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Resources"))
   {
     Aws::Utils::Array<JsonView> resourcesJsonList = jsonValue.GetArray("Resources");
@@ -60,35 +44,26 @@ PutEventsRequestEntry& PutEventsRequestEntry::operator =(JsonView jsonValue)
     }
     m_resourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DetailType"))
   {
     m_detailType = jsonValue.GetString("DetailType");
-
     m_detailTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Detail"))
   {
     m_detail = jsonValue.GetString("Detail");
-
     m_detailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventBusName"))
   {
     m_eventBusName = jsonValue.GetString("EventBusName");
-
     m_eventBusNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TraceHeader"))
   {
     m_traceHeader = jsonValue.GetString("TraceHeader");
-
     m_traceHeaderHasBeenSet = true;
   }
-
   return *this;
 }
 

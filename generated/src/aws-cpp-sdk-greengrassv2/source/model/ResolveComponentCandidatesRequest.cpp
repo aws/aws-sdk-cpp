@@ -12,12 +12,6 @@ using namespace Aws::GreengrassV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ResolveComponentCandidatesRequest::ResolveComponentCandidatesRequest() : 
-    m_platformHasBeenSet(false),
-    m_componentCandidatesHasBeenSet(false)
-{
-}
-
 Aws::String ResolveComponentCandidatesRequest::SerializePayload() const
 {
   JsonValue payload;

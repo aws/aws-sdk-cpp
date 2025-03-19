@@ -21,7 +21,7 @@ namespace Model
   class MigrateWorkspaceRequest : public WorkSpacesRequest
   {
   public:
-    AWS_WORKSPACES_API MigrateWorkspaceRequest();
+    AWS_WORKSPACES_API MigrateWorkspaceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
     /**
      * <p>The identifier of the WorkSpace to migrate from.</p>
      */
-    inline const Aws::String& GetSourceWorkspaceId() const{ return m_sourceWorkspaceId; }
+    inline const Aws::String& GetSourceWorkspaceId() const { return m_sourceWorkspaceId; }
     inline bool SourceWorkspaceIdHasBeenSet() const { return m_sourceWorkspaceIdHasBeenSet; }
-    inline void SetSourceWorkspaceId(const Aws::String& value) { m_sourceWorkspaceIdHasBeenSet = true; m_sourceWorkspaceId = value; }
-    inline void SetSourceWorkspaceId(Aws::String&& value) { m_sourceWorkspaceIdHasBeenSet = true; m_sourceWorkspaceId = std::move(value); }
-    inline void SetSourceWorkspaceId(const char* value) { m_sourceWorkspaceIdHasBeenSet = true; m_sourceWorkspaceId.assign(value); }
-    inline MigrateWorkspaceRequest& WithSourceWorkspaceId(const Aws::String& value) { SetSourceWorkspaceId(value); return *this;}
-    inline MigrateWorkspaceRequest& WithSourceWorkspaceId(Aws::String&& value) { SetSourceWorkspaceId(std::move(value)); return *this;}
-    inline MigrateWorkspaceRequest& WithSourceWorkspaceId(const char* value) { SetSourceWorkspaceId(value); return *this;}
+    template<typename SourceWorkspaceIdT = Aws::String>
+    void SetSourceWorkspaceId(SourceWorkspaceIdT&& value) { m_sourceWorkspaceIdHasBeenSet = true; m_sourceWorkspaceId = std::forward<SourceWorkspaceIdT>(value); }
+    template<typename SourceWorkspaceIdT = Aws::String>
+    MigrateWorkspaceRequest& WithSourceWorkspaceId(SourceWorkspaceIdT&& value) { SetSourceWorkspaceId(std::forward<SourceWorkspaceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the target bundle type to migrate the WorkSpace to.</p>
      */
-    inline const Aws::String& GetBundleId() const{ return m_bundleId; }
+    inline const Aws::String& GetBundleId() const { return m_bundleId; }
     inline bool BundleIdHasBeenSet() const { return m_bundleIdHasBeenSet; }
-    inline void SetBundleId(const Aws::String& value) { m_bundleIdHasBeenSet = true; m_bundleId = value; }
-    inline void SetBundleId(Aws::String&& value) { m_bundleIdHasBeenSet = true; m_bundleId = std::move(value); }
-    inline void SetBundleId(const char* value) { m_bundleIdHasBeenSet = true; m_bundleId.assign(value); }
-    inline MigrateWorkspaceRequest& WithBundleId(const Aws::String& value) { SetBundleId(value); return *this;}
-    inline MigrateWorkspaceRequest& WithBundleId(Aws::String&& value) { SetBundleId(std::move(value)); return *this;}
-    inline MigrateWorkspaceRequest& WithBundleId(const char* value) { SetBundleId(value); return *this;}
+    template<typename BundleIdT = Aws::String>
+    void SetBundleId(BundleIdT&& value) { m_bundleIdHasBeenSet = true; m_bundleId = std::forward<BundleIdT>(value); }
+    template<typename BundleIdT = Aws::String>
+    MigrateWorkspaceRequest& WithBundleId(BundleIdT&& value) { SetBundleId(std::forward<BundleIdT>(value)); return *this;}
     ///@}
   private:
 

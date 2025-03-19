@@ -18,14 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-Ec2Configuration::Ec2Configuration() : 
-    m_scanMode(Ec2ScanMode::NOT_SET),
-    m_scanModeHasBeenSet(false)
-{
-}
-
 Ec2Configuration::Ec2Configuration(JsonView jsonValue)
-  : Ec2Configuration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ Ec2Configuration& Ec2Configuration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("scanMode"))
   {
     m_scanMode = Ec2ScanModeMapper::GetEc2ScanModeForName(jsonValue.GetString("scanMode"));
-
     m_scanModeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace AppRegistry
 namespace Model
 {
 
-AppRegistryConfiguration::AppRegistryConfiguration() : 
-    m_tagQueryConfigurationHasBeenSet(false)
-{
-}
-
 AppRegistryConfiguration::AppRegistryConfiguration(JsonView jsonValue)
-  : AppRegistryConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AppRegistryConfiguration& AppRegistryConfiguration::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("tagQueryConfiguration"))
   {
     m_tagQueryConfiguration = jsonValue.GetObject("tagQueryConfiguration");
-
     m_tagQueryConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

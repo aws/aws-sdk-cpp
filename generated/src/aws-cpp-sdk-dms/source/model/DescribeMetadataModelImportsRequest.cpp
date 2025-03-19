@@ -12,15 +12,6 @@ using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeMetadataModelImportsRequest::DescribeMetadataModelImportsRequest() : 
-    m_migrationProjectIdentifierHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeMetadataModelImportsRequest::SerializePayload() const
 {
   JsonValue payload;

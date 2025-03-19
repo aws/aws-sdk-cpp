@@ -18,17 +18,7 @@ namespace Notifications
 namespace Model
 {
 
-TextPartValue::TextPartValue() : 
-    m_type(TextPartType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_displayTextHasBeenSet(false),
-    m_textByLocaleHasBeenSet(false),
-    m_urlHasBeenSet(false)
-{
-}
-
 TextPartValue::TextPartValue(JsonView jsonValue)
-  : TextPartValue()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ TextPartValue& TextPartValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = TextPartTypeMapper::GetTextPartTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("displayText"))
   {
     m_displayText = jsonValue.GetString("displayText");
-
     m_displayTextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("textByLocale"))
   {
     Aws::Map<Aws::String, JsonView> textByLocaleJsonMap = jsonValue.GetObject("textByLocale").GetAllObjects();
@@ -58,14 +44,11 @@ TextPartValue& TextPartValue::operator =(JsonView jsonValue)
     }
     m_textByLocaleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("url"))
   {
     m_url = jsonValue.GetString("url");
-
     m_urlHasBeenSet = true;
   }
-
   return *this;
 }
 

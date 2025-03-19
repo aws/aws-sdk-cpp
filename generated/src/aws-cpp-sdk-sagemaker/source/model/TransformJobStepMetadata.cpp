@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-TransformJobStepMetadata::TransformJobStepMetadata() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 TransformJobStepMetadata::TransformJobStepMetadata(JsonView jsonValue)
-  : TransformJobStepMetadata()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TransformJobStepMetadata& TransformJobStepMetadata::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class IntegerParameter
   {
   public:
-    AWS_QUICKSIGHT_API IntegerParameter();
+    AWS_QUICKSIGHT_API IntegerParameter() = default;
     AWS_QUICKSIGHT_API IntegerParameter(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API IntegerParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,26 +42,24 @@ namespace Model
     /**
      * <p>The name of the integer parameter.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline IntegerParameter& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline IntegerParameter& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline IntegerParameter& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    IntegerParameter& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The values for the integer parameter.</p>
      */
-    inline const Aws::Vector<long long>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<long long>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<long long>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<long long>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline IntegerParameter& WithValues(const Aws::Vector<long long>& value) { SetValues(value); return *this;}
-    inline IntegerParameter& WithValues(Aws::Vector<long long>&& value) { SetValues(std::move(value)); return *this;}
+    template<typename ValuesT = Aws::Vector<long long>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<long long>>
+    IntegerParameter& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
     inline IntegerParameter& AddValues(long long value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
     ///@}
   private:

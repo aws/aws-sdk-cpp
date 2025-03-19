@@ -27,7 +27,7 @@ namespace Model
   class UpdateHostKeyResult
   {
   public:
-    AWS_TRANSFER_API UpdateHostKeyResult();
+    AWS_TRANSFER_API UpdateHostKeyResult() = default;
     AWS_TRANSFER_API UpdateHostKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TRANSFER_API UpdateHostKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,45 +37,42 @@ namespace Model
      * <p>Returns the server identifier for the server that contains the updated host
      * key.</p>
      */
-    inline const Aws::String& GetServerId() const{ return m_serverId; }
-    inline void SetServerId(const Aws::String& value) { m_serverId = value; }
-    inline void SetServerId(Aws::String&& value) { m_serverId = std::move(value); }
-    inline void SetServerId(const char* value) { m_serverId.assign(value); }
-    inline UpdateHostKeyResult& WithServerId(const Aws::String& value) { SetServerId(value); return *this;}
-    inline UpdateHostKeyResult& WithServerId(Aws::String&& value) { SetServerId(std::move(value)); return *this;}
-    inline UpdateHostKeyResult& WithServerId(const char* value) { SetServerId(value); return *this;}
+    inline const Aws::String& GetServerId() const { return m_serverId; }
+    template<typename ServerIdT = Aws::String>
+    void SetServerId(ServerIdT&& value) { m_serverIdHasBeenSet = true; m_serverId = std::forward<ServerIdT>(value); }
+    template<typename ServerIdT = Aws::String>
+    UpdateHostKeyResult& WithServerId(ServerIdT&& value) { SetServerId(std::forward<ServerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Returns the host key identifier for the updated host key.</p>
      */
-    inline const Aws::String& GetHostKeyId() const{ return m_hostKeyId; }
-    inline void SetHostKeyId(const Aws::String& value) { m_hostKeyId = value; }
-    inline void SetHostKeyId(Aws::String&& value) { m_hostKeyId = std::move(value); }
-    inline void SetHostKeyId(const char* value) { m_hostKeyId.assign(value); }
-    inline UpdateHostKeyResult& WithHostKeyId(const Aws::String& value) { SetHostKeyId(value); return *this;}
-    inline UpdateHostKeyResult& WithHostKeyId(Aws::String&& value) { SetHostKeyId(std::move(value)); return *this;}
-    inline UpdateHostKeyResult& WithHostKeyId(const char* value) { SetHostKeyId(value); return *this;}
+    inline const Aws::String& GetHostKeyId() const { return m_hostKeyId; }
+    template<typename HostKeyIdT = Aws::String>
+    void SetHostKeyId(HostKeyIdT&& value) { m_hostKeyIdHasBeenSet = true; m_hostKeyId = std::forward<HostKeyIdT>(value); }
+    template<typename HostKeyIdT = Aws::String>
+    UpdateHostKeyResult& WithHostKeyId(HostKeyIdT&& value) { SetHostKeyId(std::forward<HostKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateHostKeyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateHostKeyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateHostKeyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateHostKeyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_serverId;
+    bool m_serverIdHasBeenSet = false;
 
     Aws::String m_hostKeyId;
+    bool m_hostKeyIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

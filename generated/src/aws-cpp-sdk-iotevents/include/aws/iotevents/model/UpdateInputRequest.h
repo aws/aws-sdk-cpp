@@ -22,7 +22,7 @@ namespace Model
   class UpdateInputRequest : public IoTEventsRequest
   {
   public:
-    AWS_IOTEVENTS_API UpdateInputRequest();
+    AWS_IOTEVENTS_API UpdateInputRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,40 +37,36 @@ namespace Model
     /**
      * <p>The name of the input you want to update.</p>
      */
-    inline const Aws::String& GetInputName() const{ return m_inputName; }
+    inline const Aws::String& GetInputName() const { return m_inputName; }
     inline bool InputNameHasBeenSet() const { return m_inputNameHasBeenSet; }
-    inline void SetInputName(const Aws::String& value) { m_inputNameHasBeenSet = true; m_inputName = value; }
-    inline void SetInputName(Aws::String&& value) { m_inputNameHasBeenSet = true; m_inputName = std::move(value); }
-    inline void SetInputName(const char* value) { m_inputNameHasBeenSet = true; m_inputName.assign(value); }
-    inline UpdateInputRequest& WithInputName(const Aws::String& value) { SetInputName(value); return *this;}
-    inline UpdateInputRequest& WithInputName(Aws::String&& value) { SetInputName(std::move(value)); return *this;}
-    inline UpdateInputRequest& WithInputName(const char* value) { SetInputName(value); return *this;}
+    template<typename InputNameT = Aws::String>
+    void SetInputName(InputNameT&& value) { m_inputNameHasBeenSet = true; m_inputName = std::forward<InputNameT>(value); }
+    template<typename InputNameT = Aws::String>
+    UpdateInputRequest& WithInputName(InputNameT&& value) { SetInputName(std::forward<InputNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A brief description of the input.</p>
      */
-    inline const Aws::String& GetInputDescription() const{ return m_inputDescription; }
+    inline const Aws::String& GetInputDescription() const { return m_inputDescription; }
     inline bool InputDescriptionHasBeenSet() const { return m_inputDescriptionHasBeenSet; }
-    inline void SetInputDescription(const Aws::String& value) { m_inputDescriptionHasBeenSet = true; m_inputDescription = value; }
-    inline void SetInputDescription(Aws::String&& value) { m_inputDescriptionHasBeenSet = true; m_inputDescription = std::move(value); }
-    inline void SetInputDescription(const char* value) { m_inputDescriptionHasBeenSet = true; m_inputDescription.assign(value); }
-    inline UpdateInputRequest& WithInputDescription(const Aws::String& value) { SetInputDescription(value); return *this;}
-    inline UpdateInputRequest& WithInputDescription(Aws::String&& value) { SetInputDescription(std::move(value)); return *this;}
-    inline UpdateInputRequest& WithInputDescription(const char* value) { SetInputDescription(value); return *this;}
+    template<typename InputDescriptionT = Aws::String>
+    void SetInputDescription(InputDescriptionT&& value) { m_inputDescriptionHasBeenSet = true; m_inputDescription = std::forward<InputDescriptionT>(value); }
+    template<typename InputDescriptionT = Aws::String>
+    UpdateInputRequest& WithInputDescription(InputDescriptionT&& value) { SetInputDescription(std::forward<InputDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The definition of the input.</p>
      */
-    inline const InputDefinition& GetInputDefinition() const{ return m_inputDefinition; }
+    inline const InputDefinition& GetInputDefinition() const { return m_inputDefinition; }
     inline bool InputDefinitionHasBeenSet() const { return m_inputDefinitionHasBeenSet; }
-    inline void SetInputDefinition(const InputDefinition& value) { m_inputDefinitionHasBeenSet = true; m_inputDefinition = value; }
-    inline void SetInputDefinition(InputDefinition&& value) { m_inputDefinitionHasBeenSet = true; m_inputDefinition = std::move(value); }
-    inline UpdateInputRequest& WithInputDefinition(const InputDefinition& value) { SetInputDefinition(value); return *this;}
-    inline UpdateInputRequest& WithInputDefinition(InputDefinition&& value) { SetInputDefinition(std::move(value)); return *this;}
+    template<typename InputDefinitionT = InputDefinition>
+    void SetInputDefinition(InputDefinitionT&& value) { m_inputDefinitionHasBeenSet = true; m_inputDefinition = std::forward<InputDefinitionT>(value); }
+    template<typename InputDefinitionT = InputDefinition>
+    UpdateInputRequest& WithInputDefinition(InputDefinitionT&& value) { SetInputDefinition(std::forward<InputDefinitionT>(value)); return *this;}
     ///@}
   private:
 

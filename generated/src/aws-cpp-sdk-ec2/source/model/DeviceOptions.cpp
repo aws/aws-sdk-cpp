@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-DeviceOptions::DeviceOptions() : 
-    m_tenantIdHasBeenSet(false),
-    m_publicSigningKeyUrlHasBeenSet(false)
-{
-}
-
 DeviceOptions::DeviceOptions(const XmlNode& xmlNode)
-  : DeviceOptions()
 {
   *this = xmlNode;
 }

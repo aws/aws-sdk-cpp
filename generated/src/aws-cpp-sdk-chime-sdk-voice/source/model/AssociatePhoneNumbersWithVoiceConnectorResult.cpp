@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AssociatePhoneNumbersWithVoiceConnectorResult::AssociatePhoneNumbersWithVoiceConnectorResult()
-{
-}
-
 AssociatePhoneNumbersWithVoiceConnectorResult::AssociatePhoneNumbersWithVoiceConnectorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ AssociatePhoneNumbersWithVoiceConnectorResult& AssociatePhoneNumbersWithVoiceCon
     {
       m_phoneNumberErrors.push_back(phoneNumberErrorsJsonList[phoneNumberErrorsIndex].AsObject());
     }
+    m_phoneNumberErrorsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

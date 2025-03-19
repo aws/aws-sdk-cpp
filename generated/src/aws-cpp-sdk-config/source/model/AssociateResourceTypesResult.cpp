@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AssociateResourceTypesResult::AssociateResourceTypesResult()
-{
-}
-
 AssociateResourceTypesResult::AssociateResourceTypesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ AssociateResourceTypesResult& AssociateResourceTypesResult::operator =(const Aws
   if(jsonValue.ValueExists("ConfigurationRecorder"))
   {
     m_configurationRecorder = jsonValue.GetObject("ConfigurationRecorder");
-
+    m_configurationRecorderHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

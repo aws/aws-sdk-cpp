@@ -12,12 +12,6 @@ using namespace Aws::ChimeSDKVoice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutVoiceConnectorOriginationRequest::PutVoiceConnectorOriginationRequest() : 
-    m_voiceConnectorIdHasBeenSet(false),
-    m_originationHasBeenSet(false)
-{
-}
-
 Aws::String PutVoiceConnectorOriginationRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -38,7 +38,7 @@ namespace Model
   class CustomResponse
   {
   public:
-    AWS_WAFV2_API CustomResponse();
+    AWS_WAFV2_API CustomResponse() = default;
     AWS_WAFV2_API CustomResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API CustomResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,7 +51,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html">Supported
      * status codes for custom response</a> in the <i>WAF Developer Guide</i>. </p>
      */
-    inline int GetResponseCode() const{ return m_responseCode; }
+    inline int GetResponseCode() const { return m_responseCode; }
     inline bool ResponseCodeHasBeenSet() const { return m_responseCodeHasBeenSet; }
     inline void SetResponseCode(int value) { m_responseCodeHasBeenSet = true; m_responseCode = value; }
     inline CustomResponse& WithResponseCode(int value) { SetResponseCode(value); return *this;}
@@ -67,14 +67,12 @@ namespace Model
      * ACL default action <code>BlockAction</code> setting, you reference the response
      * body using this key. </p>
      */
-    inline const Aws::String& GetCustomResponseBodyKey() const{ return m_customResponseBodyKey; }
+    inline const Aws::String& GetCustomResponseBodyKey() const { return m_customResponseBodyKey; }
     inline bool CustomResponseBodyKeyHasBeenSet() const { return m_customResponseBodyKeyHasBeenSet; }
-    inline void SetCustomResponseBodyKey(const Aws::String& value) { m_customResponseBodyKeyHasBeenSet = true; m_customResponseBodyKey = value; }
-    inline void SetCustomResponseBodyKey(Aws::String&& value) { m_customResponseBodyKeyHasBeenSet = true; m_customResponseBodyKey = std::move(value); }
-    inline void SetCustomResponseBodyKey(const char* value) { m_customResponseBodyKeyHasBeenSet = true; m_customResponseBodyKey.assign(value); }
-    inline CustomResponse& WithCustomResponseBodyKey(const Aws::String& value) { SetCustomResponseBodyKey(value); return *this;}
-    inline CustomResponse& WithCustomResponseBodyKey(Aws::String&& value) { SetCustomResponseBodyKey(std::move(value)); return *this;}
-    inline CustomResponse& WithCustomResponseBodyKey(const char* value) { SetCustomResponseBodyKey(value); return *this;}
+    template<typename CustomResponseBodyKeyT = Aws::String>
+    void SetCustomResponseBodyKey(CustomResponseBodyKeyT&& value) { m_customResponseBodyKeyHasBeenSet = true; m_customResponseBodyKey = std::forward<CustomResponseBodyKeyT>(value); }
+    template<typename CustomResponseBodyKeyT = Aws::String>
+    CustomResponse& WithCustomResponseBodyKey(CustomResponseBodyKeyT&& value) { SetCustomResponseBodyKey(std::forward<CustomResponseBodyKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,18 +84,18 @@ namespace Model
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
      * quotas</a> in the <i>WAF Developer Guide</i>. </p>
      */
-    inline const Aws::Vector<CustomHTTPHeader>& GetResponseHeaders() const{ return m_responseHeaders; }
+    inline const Aws::Vector<CustomHTTPHeader>& GetResponseHeaders() const { return m_responseHeaders; }
     inline bool ResponseHeadersHasBeenSet() const { return m_responseHeadersHasBeenSet; }
-    inline void SetResponseHeaders(const Aws::Vector<CustomHTTPHeader>& value) { m_responseHeadersHasBeenSet = true; m_responseHeaders = value; }
-    inline void SetResponseHeaders(Aws::Vector<CustomHTTPHeader>&& value) { m_responseHeadersHasBeenSet = true; m_responseHeaders = std::move(value); }
-    inline CustomResponse& WithResponseHeaders(const Aws::Vector<CustomHTTPHeader>& value) { SetResponseHeaders(value); return *this;}
-    inline CustomResponse& WithResponseHeaders(Aws::Vector<CustomHTTPHeader>&& value) { SetResponseHeaders(std::move(value)); return *this;}
-    inline CustomResponse& AddResponseHeaders(const CustomHTTPHeader& value) { m_responseHeadersHasBeenSet = true; m_responseHeaders.push_back(value); return *this; }
-    inline CustomResponse& AddResponseHeaders(CustomHTTPHeader&& value) { m_responseHeadersHasBeenSet = true; m_responseHeaders.push_back(std::move(value)); return *this; }
+    template<typename ResponseHeadersT = Aws::Vector<CustomHTTPHeader>>
+    void SetResponseHeaders(ResponseHeadersT&& value) { m_responseHeadersHasBeenSet = true; m_responseHeaders = std::forward<ResponseHeadersT>(value); }
+    template<typename ResponseHeadersT = Aws::Vector<CustomHTTPHeader>>
+    CustomResponse& WithResponseHeaders(ResponseHeadersT&& value) { SetResponseHeaders(std::forward<ResponseHeadersT>(value)); return *this;}
+    template<typename ResponseHeadersT = CustomHTTPHeader>
+    CustomResponse& AddResponseHeaders(ResponseHeadersT&& value) { m_responseHeadersHasBeenSet = true; m_responseHeaders.emplace_back(std::forward<ResponseHeadersT>(value)); return *this; }
     ///@}
   private:
 
-    int m_responseCode;
+    int m_responseCode{0};
     bool m_responseCodeHasBeenSet = false;
 
     Aws::String m_customResponseBodyKey;

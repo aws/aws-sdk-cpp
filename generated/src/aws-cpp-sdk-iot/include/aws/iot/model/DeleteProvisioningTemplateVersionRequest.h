@@ -21,7 +21,7 @@ namespace Model
   class DeleteProvisioningTemplateVersionRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API DeleteProvisioningTemplateVersionRequest();
+    AWS_IOT_API DeleteProvisioningTemplateVersionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,21 +36,19 @@ namespace Model
     /**
      * <p>The name of the provisioning template version to delete.</p>
      */
-    inline const Aws::String& GetTemplateName() const{ return m_templateName; }
+    inline const Aws::String& GetTemplateName() const { return m_templateName; }
     inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
-    inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
-    inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
-    inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
-    inline DeleteProvisioningTemplateVersionRequest& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
-    inline DeleteProvisioningTemplateVersionRequest& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
-    inline DeleteProvisioningTemplateVersionRequest& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
+    template<typename TemplateNameT = Aws::String>
+    void SetTemplateName(TemplateNameT&& value) { m_templateNameHasBeenSet = true; m_templateName = std::forward<TemplateNameT>(value); }
+    template<typename TemplateNameT = Aws::String>
+    DeleteProvisioningTemplateVersionRequest& WithTemplateName(TemplateNameT&& value) { SetTemplateName(std::forward<TemplateNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The provisioning template version ID to delete.</p>
      */
-    inline int GetVersionId() const{ return m_versionId; }
+    inline int GetVersionId() const { return m_versionId; }
     inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
     inline void SetVersionId(int value) { m_versionIdHasBeenSet = true; m_versionId = value; }
     inline DeleteProvisioningTemplateVersionRequest& WithVersionId(int value) { SetVersionId(value); return *this;}
@@ -60,7 +58,7 @@ namespace Model
     Aws::String m_templateName;
     bool m_templateNameHasBeenSet = false;
 
-    int m_versionId;
+    int m_versionId{0};
     bool m_versionIdHasBeenSet = false;
   };
 

@@ -36,7 +36,7 @@ namespace Model
   class ImageDetail
   {
   public:
-    AWS_ECR_API ImageDetail();
+    AWS_ECR_API ImageDetail() = default;
     AWS_ECR_API ImageDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECR_API ImageDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,57 +47,50 @@ namespace Model
      * <p>The Amazon Web Services account ID associated with the registry to which this
      * image belongs.</p>
      */
-    inline const Aws::String& GetRegistryId() const{ return m_registryId; }
+    inline const Aws::String& GetRegistryId() const { return m_registryId; }
     inline bool RegistryIdHasBeenSet() const { return m_registryIdHasBeenSet; }
-    inline void SetRegistryId(const Aws::String& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
-    inline void SetRegistryId(Aws::String&& value) { m_registryIdHasBeenSet = true; m_registryId = std::move(value); }
-    inline void SetRegistryId(const char* value) { m_registryIdHasBeenSet = true; m_registryId.assign(value); }
-    inline ImageDetail& WithRegistryId(const Aws::String& value) { SetRegistryId(value); return *this;}
-    inline ImageDetail& WithRegistryId(Aws::String&& value) { SetRegistryId(std::move(value)); return *this;}
-    inline ImageDetail& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
+    template<typename RegistryIdT = Aws::String>
+    void SetRegistryId(RegistryIdT&& value) { m_registryIdHasBeenSet = true; m_registryId = std::forward<RegistryIdT>(value); }
+    template<typename RegistryIdT = Aws::String>
+    ImageDetail& WithRegistryId(RegistryIdT&& value) { SetRegistryId(std::forward<RegistryIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the repository to which this image belongs.</p>
      */
-    inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
+    inline const Aws::String& GetRepositoryName() const { return m_repositoryName; }
     inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
-    inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
-    inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
-    inline ImageDetail& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
-    inline ImageDetail& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
-    inline ImageDetail& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+    template<typename RepositoryNameT = Aws::String>
+    void SetRepositoryName(RepositoryNameT&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::forward<RepositoryNameT>(value); }
+    template<typename RepositoryNameT = Aws::String>
+    ImageDetail& WithRepositoryName(RepositoryNameT&& value) { SetRepositoryName(std::forward<RepositoryNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The <code>sha256</code> digest of the image manifest.</p>
      */
-    inline const Aws::String& GetImageDigest() const{ return m_imageDigest; }
+    inline const Aws::String& GetImageDigest() const { return m_imageDigest; }
     inline bool ImageDigestHasBeenSet() const { return m_imageDigestHasBeenSet; }
-    inline void SetImageDigest(const Aws::String& value) { m_imageDigestHasBeenSet = true; m_imageDigest = value; }
-    inline void SetImageDigest(Aws::String&& value) { m_imageDigestHasBeenSet = true; m_imageDigest = std::move(value); }
-    inline void SetImageDigest(const char* value) { m_imageDigestHasBeenSet = true; m_imageDigest.assign(value); }
-    inline ImageDetail& WithImageDigest(const Aws::String& value) { SetImageDigest(value); return *this;}
-    inline ImageDetail& WithImageDigest(Aws::String&& value) { SetImageDigest(std::move(value)); return *this;}
-    inline ImageDetail& WithImageDigest(const char* value) { SetImageDigest(value); return *this;}
+    template<typename ImageDigestT = Aws::String>
+    void SetImageDigest(ImageDigestT&& value) { m_imageDigestHasBeenSet = true; m_imageDigest = std::forward<ImageDigestT>(value); }
+    template<typename ImageDigestT = Aws::String>
+    ImageDetail& WithImageDigest(ImageDigestT&& value) { SetImageDigest(std::forward<ImageDigestT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of tags associated with this image.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetImageTags() const{ return m_imageTags; }
+    inline const Aws::Vector<Aws::String>& GetImageTags() const { return m_imageTags; }
     inline bool ImageTagsHasBeenSet() const { return m_imageTagsHasBeenSet; }
-    inline void SetImageTags(const Aws::Vector<Aws::String>& value) { m_imageTagsHasBeenSet = true; m_imageTags = value; }
-    inline void SetImageTags(Aws::Vector<Aws::String>&& value) { m_imageTagsHasBeenSet = true; m_imageTags = std::move(value); }
-    inline ImageDetail& WithImageTags(const Aws::Vector<Aws::String>& value) { SetImageTags(value); return *this;}
-    inline ImageDetail& WithImageTags(Aws::Vector<Aws::String>&& value) { SetImageTags(std::move(value)); return *this;}
-    inline ImageDetail& AddImageTags(const Aws::String& value) { m_imageTagsHasBeenSet = true; m_imageTags.push_back(value); return *this; }
-    inline ImageDetail& AddImageTags(Aws::String&& value) { m_imageTagsHasBeenSet = true; m_imageTags.push_back(std::move(value)); return *this; }
-    inline ImageDetail& AddImageTags(const char* value) { m_imageTagsHasBeenSet = true; m_imageTags.push_back(value); return *this; }
+    template<typename ImageTagsT = Aws::Vector<Aws::String>>
+    void SetImageTags(ImageTagsT&& value) { m_imageTagsHasBeenSet = true; m_imageTags = std::forward<ImageTagsT>(value); }
+    template<typename ImageTagsT = Aws::Vector<Aws::String>>
+    ImageDetail& WithImageTags(ImageTagsT&& value) { SetImageTags(std::forward<ImageTagsT>(value)); return *this;}
+    template<typename ImageTagsT = Aws::String>
+    ImageDetail& AddImageTags(ImageTagsT&& value) { m_imageTagsHasBeenSet = true; m_imageTags.emplace_back(std::forward<ImageTagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -110,7 +103,7 @@ namespace Model
      * Docker might return a larger image than the image sizes returned by
      * <a>DescribeImages</a>.</p> 
      */
-    inline long long GetImageSizeInBytes() const{ return m_imageSizeInBytes; }
+    inline long long GetImageSizeInBytes() const { return m_imageSizeInBytes; }
     inline bool ImageSizeInBytesHasBeenSet() const { return m_imageSizeInBytesHasBeenSet; }
     inline void SetImageSizeInBytes(long long value) { m_imageSizeInBytesHasBeenSet = true; m_imageSizeInBytes = value; }
     inline ImageDetail& WithImageSizeInBytes(long long value) { SetImageSizeInBytes(value); return *this;}
@@ -121,64 +114,60 @@ namespace Model
      * <p>The date and time, expressed in standard JavaScript date format, at which the
      * current image was pushed to the repository. </p>
      */
-    inline const Aws::Utils::DateTime& GetImagePushedAt() const{ return m_imagePushedAt; }
+    inline const Aws::Utils::DateTime& GetImagePushedAt() const { return m_imagePushedAt; }
     inline bool ImagePushedAtHasBeenSet() const { return m_imagePushedAtHasBeenSet; }
-    inline void SetImagePushedAt(const Aws::Utils::DateTime& value) { m_imagePushedAtHasBeenSet = true; m_imagePushedAt = value; }
-    inline void SetImagePushedAt(Aws::Utils::DateTime&& value) { m_imagePushedAtHasBeenSet = true; m_imagePushedAt = std::move(value); }
-    inline ImageDetail& WithImagePushedAt(const Aws::Utils::DateTime& value) { SetImagePushedAt(value); return *this;}
-    inline ImageDetail& WithImagePushedAt(Aws::Utils::DateTime&& value) { SetImagePushedAt(std::move(value)); return *this;}
+    template<typename ImagePushedAtT = Aws::Utils::DateTime>
+    void SetImagePushedAt(ImagePushedAtT&& value) { m_imagePushedAtHasBeenSet = true; m_imagePushedAt = std::forward<ImagePushedAtT>(value); }
+    template<typename ImagePushedAtT = Aws::Utils::DateTime>
+    ImageDetail& WithImagePushedAt(ImagePushedAtT&& value) { SetImagePushedAt(std::forward<ImagePushedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current state of the scan.</p>
      */
-    inline const ImageScanStatus& GetImageScanStatus() const{ return m_imageScanStatus; }
+    inline const ImageScanStatus& GetImageScanStatus() const { return m_imageScanStatus; }
     inline bool ImageScanStatusHasBeenSet() const { return m_imageScanStatusHasBeenSet; }
-    inline void SetImageScanStatus(const ImageScanStatus& value) { m_imageScanStatusHasBeenSet = true; m_imageScanStatus = value; }
-    inline void SetImageScanStatus(ImageScanStatus&& value) { m_imageScanStatusHasBeenSet = true; m_imageScanStatus = std::move(value); }
-    inline ImageDetail& WithImageScanStatus(const ImageScanStatus& value) { SetImageScanStatus(value); return *this;}
-    inline ImageDetail& WithImageScanStatus(ImageScanStatus&& value) { SetImageScanStatus(std::move(value)); return *this;}
+    template<typename ImageScanStatusT = ImageScanStatus>
+    void SetImageScanStatus(ImageScanStatusT&& value) { m_imageScanStatusHasBeenSet = true; m_imageScanStatus = std::forward<ImageScanStatusT>(value); }
+    template<typename ImageScanStatusT = ImageScanStatus>
+    ImageDetail& WithImageScanStatus(ImageScanStatusT&& value) { SetImageScanStatus(std::forward<ImageScanStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A summary of the last completed image scan.</p>
      */
-    inline const ImageScanFindingsSummary& GetImageScanFindingsSummary() const{ return m_imageScanFindingsSummary; }
+    inline const ImageScanFindingsSummary& GetImageScanFindingsSummary() const { return m_imageScanFindingsSummary; }
     inline bool ImageScanFindingsSummaryHasBeenSet() const { return m_imageScanFindingsSummaryHasBeenSet; }
-    inline void SetImageScanFindingsSummary(const ImageScanFindingsSummary& value) { m_imageScanFindingsSummaryHasBeenSet = true; m_imageScanFindingsSummary = value; }
-    inline void SetImageScanFindingsSummary(ImageScanFindingsSummary&& value) { m_imageScanFindingsSummaryHasBeenSet = true; m_imageScanFindingsSummary = std::move(value); }
-    inline ImageDetail& WithImageScanFindingsSummary(const ImageScanFindingsSummary& value) { SetImageScanFindingsSummary(value); return *this;}
-    inline ImageDetail& WithImageScanFindingsSummary(ImageScanFindingsSummary&& value) { SetImageScanFindingsSummary(std::move(value)); return *this;}
+    template<typename ImageScanFindingsSummaryT = ImageScanFindingsSummary>
+    void SetImageScanFindingsSummary(ImageScanFindingsSummaryT&& value) { m_imageScanFindingsSummaryHasBeenSet = true; m_imageScanFindingsSummary = std::forward<ImageScanFindingsSummaryT>(value); }
+    template<typename ImageScanFindingsSummaryT = ImageScanFindingsSummary>
+    ImageDetail& WithImageScanFindingsSummary(ImageScanFindingsSummaryT&& value) { SetImageScanFindingsSummary(std::forward<ImageScanFindingsSummaryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The media type of the image manifest.</p>
      */
-    inline const Aws::String& GetImageManifestMediaType() const{ return m_imageManifestMediaType; }
+    inline const Aws::String& GetImageManifestMediaType() const { return m_imageManifestMediaType; }
     inline bool ImageManifestMediaTypeHasBeenSet() const { return m_imageManifestMediaTypeHasBeenSet; }
-    inline void SetImageManifestMediaType(const Aws::String& value) { m_imageManifestMediaTypeHasBeenSet = true; m_imageManifestMediaType = value; }
-    inline void SetImageManifestMediaType(Aws::String&& value) { m_imageManifestMediaTypeHasBeenSet = true; m_imageManifestMediaType = std::move(value); }
-    inline void SetImageManifestMediaType(const char* value) { m_imageManifestMediaTypeHasBeenSet = true; m_imageManifestMediaType.assign(value); }
-    inline ImageDetail& WithImageManifestMediaType(const Aws::String& value) { SetImageManifestMediaType(value); return *this;}
-    inline ImageDetail& WithImageManifestMediaType(Aws::String&& value) { SetImageManifestMediaType(std::move(value)); return *this;}
-    inline ImageDetail& WithImageManifestMediaType(const char* value) { SetImageManifestMediaType(value); return *this;}
+    template<typename ImageManifestMediaTypeT = Aws::String>
+    void SetImageManifestMediaType(ImageManifestMediaTypeT&& value) { m_imageManifestMediaTypeHasBeenSet = true; m_imageManifestMediaType = std::forward<ImageManifestMediaTypeT>(value); }
+    template<typename ImageManifestMediaTypeT = Aws::String>
+    ImageDetail& WithImageManifestMediaType(ImageManifestMediaTypeT&& value) { SetImageManifestMediaType(std::forward<ImageManifestMediaTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The artifact media type of the image.</p>
      */
-    inline const Aws::String& GetArtifactMediaType() const{ return m_artifactMediaType; }
+    inline const Aws::String& GetArtifactMediaType() const { return m_artifactMediaType; }
     inline bool ArtifactMediaTypeHasBeenSet() const { return m_artifactMediaTypeHasBeenSet; }
-    inline void SetArtifactMediaType(const Aws::String& value) { m_artifactMediaTypeHasBeenSet = true; m_artifactMediaType = value; }
-    inline void SetArtifactMediaType(Aws::String&& value) { m_artifactMediaTypeHasBeenSet = true; m_artifactMediaType = std::move(value); }
-    inline void SetArtifactMediaType(const char* value) { m_artifactMediaTypeHasBeenSet = true; m_artifactMediaType.assign(value); }
-    inline ImageDetail& WithArtifactMediaType(const Aws::String& value) { SetArtifactMediaType(value); return *this;}
-    inline ImageDetail& WithArtifactMediaType(Aws::String&& value) { SetArtifactMediaType(std::move(value)); return *this;}
-    inline ImageDetail& WithArtifactMediaType(const char* value) { SetArtifactMediaType(value); return *this;}
+    template<typename ArtifactMediaTypeT = Aws::String>
+    void SetArtifactMediaType(ArtifactMediaTypeT&& value) { m_artifactMediaTypeHasBeenSet = true; m_artifactMediaType = std::forward<ArtifactMediaTypeT>(value); }
+    template<typename ArtifactMediaTypeT = Aws::String>
+    ImageDetail& WithArtifactMediaType(ArtifactMediaTypeT&& value) { SetArtifactMediaType(std::forward<ArtifactMediaTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -192,12 +181,12 @@ namespace Model
      * <code>lastRecordedPullTime</code> timestamp at least once every 24 hours, the
      * result may not be the exact time that the image was last pulled.</p> 
      */
-    inline const Aws::Utils::DateTime& GetLastRecordedPullTime() const{ return m_lastRecordedPullTime; }
+    inline const Aws::Utils::DateTime& GetLastRecordedPullTime() const { return m_lastRecordedPullTime; }
     inline bool LastRecordedPullTimeHasBeenSet() const { return m_lastRecordedPullTimeHasBeenSet; }
-    inline void SetLastRecordedPullTime(const Aws::Utils::DateTime& value) { m_lastRecordedPullTimeHasBeenSet = true; m_lastRecordedPullTime = value; }
-    inline void SetLastRecordedPullTime(Aws::Utils::DateTime&& value) { m_lastRecordedPullTimeHasBeenSet = true; m_lastRecordedPullTime = std::move(value); }
-    inline ImageDetail& WithLastRecordedPullTime(const Aws::Utils::DateTime& value) { SetLastRecordedPullTime(value); return *this;}
-    inline ImageDetail& WithLastRecordedPullTime(Aws::Utils::DateTime&& value) { SetLastRecordedPullTime(std::move(value)); return *this;}
+    template<typename LastRecordedPullTimeT = Aws::Utils::DateTime>
+    void SetLastRecordedPullTime(LastRecordedPullTimeT&& value) { m_lastRecordedPullTimeHasBeenSet = true; m_lastRecordedPullTime = std::forward<LastRecordedPullTimeT>(value); }
+    template<typename LastRecordedPullTimeT = Aws::Utils::DateTime>
+    ImageDetail& WithLastRecordedPullTime(LastRecordedPullTimeT&& value) { SetLastRecordedPullTime(std::forward<LastRecordedPullTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -213,10 +202,10 @@ namespace Model
     Aws::Vector<Aws::String> m_imageTags;
     bool m_imageTagsHasBeenSet = false;
 
-    long long m_imageSizeInBytes;
+    long long m_imageSizeInBytes{0};
     bool m_imageSizeInBytesHasBeenSet = false;
 
-    Aws::Utils::DateTime m_imagePushedAt;
+    Aws::Utils::DateTime m_imagePushedAt{};
     bool m_imagePushedAtHasBeenSet = false;
 
     ImageScanStatus m_imageScanStatus;
@@ -231,7 +220,7 @@ namespace Model
     Aws::String m_artifactMediaType;
     bool m_artifactMediaTypeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastRecordedPullTime;
+    Aws::Utils::DateTime m_lastRecordedPullTime{};
     bool m_lastRecordedPullTimeHasBeenSet = false;
   };
 

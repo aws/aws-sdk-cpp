@@ -18,23 +18,7 @@ namespace WellArchitected
 namespace Model
 {
 
-ReviewTemplateLensReview::ReviewTemplateLensReview() : 
-    m_lensAliasHasBeenSet(false),
-    m_lensArnHasBeenSet(false),
-    m_lensVersionHasBeenSet(false),
-    m_lensNameHasBeenSet(false),
-    m_lensStatus(LensStatus::NOT_SET),
-    m_lensStatusHasBeenSet(false),
-    m_pillarReviewSummariesHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_notesHasBeenSet(false),
-    m_questionCountsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 ReviewTemplateLensReview::ReviewTemplateLensReview(JsonView jsonValue)
-  : ReviewTemplateLensReview()
 {
   *this = jsonValue;
 }
@@ -44,38 +28,28 @@ ReviewTemplateLensReview& ReviewTemplateLensReview::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("LensAlias"))
   {
     m_lensAlias = jsonValue.GetString("LensAlias");
-
     m_lensAliasHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LensArn"))
   {
     m_lensArn = jsonValue.GetString("LensArn");
-
     m_lensArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LensVersion"))
   {
     m_lensVersion = jsonValue.GetString("LensVersion");
-
     m_lensVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LensName"))
   {
     m_lensName = jsonValue.GetString("LensName");
-
     m_lensNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LensStatus"))
   {
     m_lensStatus = LensStatusMapper::GetLensStatusForName(jsonValue.GetString("LensStatus"));
-
     m_lensStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PillarReviewSummaries"))
   {
     Aws::Utils::Array<JsonView> pillarReviewSummariesJsonList = jsonValue.GetArray("PillarReviewSummaries");
@@ -85,21 +59,16 @@ ReviewTemplateLensReview& ReviewTemplateLensReview::operator =(JsonView jsonValu
     }
     m_pillarReviewSummariesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("UpdatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Notes"))
   {
     m_notes = jsonValue.GetString("Notes");
-
     m_notesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QuestionCounts"))
   {
     Aws::Map<Aws::String, JsonView> questionCountsJsonMap = jsonValue.GetObject("QuestionCounts").GetAllObjects();
@@ -109,14 +78,11 @@ ReviewTemplateLensReview& ReviewTemplateLensReview::operator =(JsonView jsonValu
     }
     m_questionCountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
     m_nextTokenHasBeenSet = true;
   }
-
   return *this;
 }
 

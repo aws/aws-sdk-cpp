@@ -18,14 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-Unauthenticated::Unauthenticated() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 Unauthenticated::Unauthenticated(JsonView jsonValue)
-  : Unauthenticated()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ Unauthenticated& Unauthenticated::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   return *this;
 }
 

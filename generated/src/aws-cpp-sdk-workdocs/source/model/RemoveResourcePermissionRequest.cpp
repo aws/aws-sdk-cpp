@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-RemoveResourcePermissionRequest::RemoveResourcePermissionRequest() : 
-    m_authenticationTokenHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_principalIdHasBeenSet(false),
-    m_principalType(PrincipalType::NOT_SET),
-    m_principalTypeHasBeenSet(false)
-{
-}
-
 Aws::String RemoveResourcePermissionRequest::SerializePayload() const
 {
   return {};

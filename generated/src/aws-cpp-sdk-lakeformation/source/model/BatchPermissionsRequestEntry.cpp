@@ -18,18 +18,7 @@ namespace LakeFormation
 namespace Model
 {
 
-BatchPermissionsRequestEntry::BatchPermissionsRequestEntry() : 
-    m_idHasBeenSet(false),
-    m_principalHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_permissionsHasBeenSet(false),
-    m_conditionHasBeenSet(false),
-    m_permissionsWithGrantOptionHasBeenSet(false)
-{
-}
-
 BatchPermissionsRequestEntry::BatchPermissionsRequestEntry(JsonView jsonValue)
-  : BatchPermissionsRequestEntry()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ BatchPermissionsRequestEntry& BatchPermissionsRequestEntry::operator =(JsonView 
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Principal"))
   {
     m_principal = jsonValue.GetObject("Principal");
-
     m_principalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Resource"))
   {
     m_resource = jsonValue.GetObject("Resource");
-
     m_resourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Permissions"))
   {
     Aws::Utils::Array<JsonView> permissionsJsonList = jsonValue.GetArray("Permissions");
@@ -66,14 +49,11 @@ BatchPermissionsRequestEntry& BatchPermissionsRequestEntry::operator =(JsonView 
     }
     m_permissionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Condition"))
   {
     m_condition = jsonValue.GetObject("Condition");
-
     m_conditionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PermissionsWithGrantOption"))
   {
     Aws::Utils::Array<JsonView> permissionsWithGrantOptionJsonList = jsonValue.GetArray("PermissionsWithGrantOption");
@@ -83,7 +63,6 @@ BatchPermissionsRequestEntry& BatchPermissionsRequestEntry::operator =(JsonView 
     }
     m_permissionsWithGrantOptionHasBeenSet = true;
   }
-
   return *this;
 }
 

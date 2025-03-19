@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-QualityMetrics::QualityMetrics() : 
-    m_agentHasBeenSet(false),
-    m_customerHasBeenSet(false)
-{
-}
-
 QualityMetrics::QualityMetrics(JsonView jsonValue)
-  : QualityMetrics()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ QualityMetrics& QualityMetrics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Agent"))
   {
     m_agent = jsonValue.GetObject("Agent");
-
     m_agentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Customer"))
   {
     m_customer = jsonValue.GetObject("Customer");
-
     m_customerHasBeenSet = true;
   }
-
   return *this;
 }
 

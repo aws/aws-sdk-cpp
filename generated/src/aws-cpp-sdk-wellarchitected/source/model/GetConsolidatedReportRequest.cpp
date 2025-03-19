@@ -15,17 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetConsolidatedReportRequest::GetConsolidatedReportRequest() : 
-    m_format(ReportFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_includeSharedResources(false),
-    m_includeSharedResourcesHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String GetConsolidatedReportRequest::SerializePayload() const
 {
   return {};

@@ -34,7 +34,7 @@ namespace Model
   class RefreshFrequency
   {
   public:
-    AWS_QUICKSIGHT_API RefreshFrequency();
+    AWS_QUICKSIGHT_API RefreshFrequency() = default;
     AWS_QUICKSIGHT_API RefreshFrequency(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API RefreshFrequency& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,12 +55,10 @@ namespace Model
      * week.</p> </li> <li> <p> <code>MONTHLY</code>: The dataset refreshes every
      * month.</p> </li> </ul>
      */
-    inline const RefreshInterval& GetInterval() const{ return m_interval; }
+    inline RefreshInterval GetInterval() const { return m_interval; }
     inline bool IntervalHasBeenSet() const { return m_intervalHasBeenSet; }
-    inline void SetInterval(const RefreshInterval& value) { m_intervalHasBeenSet = true; m_interval = value; }
-    inline void SetInterval(RefreshInterval&& value) { m_intervalHasBeenSet = true; m_interval = std::move(value); }
-    inline RefreshFrequency& WithInterval(const RefreshInterval& value) { SetInterval(value); return *this;}
-    inline RefreshFrequency& WithInterval(RefreshInterval&& value) { SetInterval(std::move(value)); return *this;}
+    inline void SetInterval(RefreshInterval value) { m_intervalHasBeenSet = true; m_interval = value; }
+    inline RefreshFrequency& WithInterval(RefreshInterval value) { SetInterval(value); return *this;}
     ///@}
 
     ///@{
@@ -68,12 +66,12 @@ namespace Model
      * <p>The day of the week that you want to schedule the refresh on. This value is
      * required for weekly and monthly refresh intervals.</p>
      */
-    inline const ScheduleRefreshOnEntity& GetRefreshOnDay() const{ return m_refreshOnDay; }
+    inline const ScheduleRefreshOnEntity& GetRefreshOnDay() const { return m_refreshOnDay; }
     inline bool RefreshOnDayHasBeenSet() const { return m_refreshOnDayHasBeenSet; }
-    inline void SetRefreshOnDay(const ScheduleRefreshOnEntity& value) { m_refreshOnDayHasBeenSet = true; m_refreshOnDay = value; }
-    inline void SetRefreshOnDay(ScheduleRefreshOnEntity&& value) { m_refreshOnDayHasBeenSet = true; m_refreshOnDay = std::move(value); }
-    inline RefreshFrequency& WithRefreshOnDay(const ScheduleRefreshOnEntity& value) { SetRefreshOnDay(value); return *this;}
-    inline RefreshFrequency& WithRefreshOnDay(ScheduleRefreshOnEntity&& value) { SetRefreshOnDay(std::move(value)); return *this;}
+    template<typename RefreshOnDayT = ScheduleRefreshOnEntity>
+    void SetRefreshOnDay(RefreshOnDayT&& value) { m_refreshOnDayHasBeenSet = true; m_refreshOnDay = std::forward<RefreshOnDayT>(value); }
+    template<typename RefreshOnDayT = ScheduleRefreshOnEntity>
+    RefreshFrequency& WithRefreshOnDay(RefreshOnDayT&& value) { SetRefreshOnDay(std::forward<RefreshOnDayT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,14 +80,12 @@ namespace Model
      * match a corresponding ID found on
      * <code>java.util.time.getAvailableIDs()</code>.</p>
      */
-    inline const Aws::String& GetTimezone() const{ return m_timezone; }
+    inline const Aws::String& GetTimezone() const { return m_timezone; }
     inline bool TimezoneHasBeenSet() const { return m_timezoneHasBeenSet; }
-    inline void SetTimezone(const Aws::String& value) { m_timezoneHasBeenSet = true; m_timezone = value; }
-    inline void SetTimezone(Aws::String&& value) { m_timezoneHasBeenSet = true; m_timezone = std::move(value); }
-    inline void SetTimezone(const char* value) { m_timezoneHasBeenSet = true; m_timezone.assign(value); }
-    inline RefreshFrequency& WithTimezone(const Aws::String& value) { SetTimezone(value); return *this;}
-    inline RefreshFrequency& WithTimezone(Aws::String&& value) { SetTimezone(std::move(value)); return *this;}
-    inline RefreshFrequency& WithTimezone(const char* value) { SetTimezone(value); return *this;}
+    template<typename TimezoneT = Aws::String>
+    void SetTimezone(TimezoneT&& value) { m_timezoneHasBeenSet = true; m_timezone = std::forward<TimezoneT>(value); }
+    template<typename TimezoneT = Aws::String>
+    RefreshFrequency& WithTimezone(TimezoneT&& value) { SetTimezone(std::forward<TimezoneT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,18 +94,16 @@ namespace Model
      * in HH:MM format. This field is not required for schedules that refresh
      * hourly.</p>
      */
-    inline const Aws::String& GetTimeOfTheDay() const{ return m_timeOfTheDay; }
+    inline const Aws::String& GetTimeOfTheDay() const { return m_timeOfTheDay; }
     inline bool TimeOfTheDayHasBeenSet() const { return m_timeOfTheDayHasBeenSet; }
-    inline void SetTimeOfTheDay(const Aws::String& value) { m_timeOfTheDayHasBeenSet = true; m_timeOfTheDay = value; }
-    inline void SetTimeOfTheDay(Aws::String&& value) { m_timeOfTheDayHasBeenSet = true; m_timeOfTheDay = std::move(value); }
-    inline void SetTimeOfTheDay(const char* value) { m_timeOfTheDayHasBeenSet = true; m_timeOfTheDay.assign(value); }
-    inline RefreshFrequency& WithTimeOfTheDay(const Aws::String& value) { SetTimeOfTheDay(value); return *this;}
-    inline RefreshFrequency& WithTimeOfTheDay(Aws::String&& value) { SetTimeOfTheDay(std::move(value)); return *this;}
-    inline RefreshFrequency& WithTimeOfTheDay(const char* value) { SetTimeOfTheDay(value); return *this;}
+    template<typename TimeOfTheDayT = Aws::String>
+    void SetTimeOfTheDay(TimeOfTheDayT&& value) { m_timeOfTheDayHasBeenSet = true; m_timeOfTheDay = std::forward<TimeOfTheDayT>(value); }
+    template<typename TimeOfTheDayT = Aws::String>
+    RefreshFrequency& WithTimeOfTheDay(TimeOfTheDayT&& value) { SetTimeOfTheDay(std::forward<TimeOfTheDayT>(value)); return *this;}
     ///@}
   private:
 
-    RefreshInterval m_interval;
+    RefreshInterval m_interval{RefreshInterval::NOT_SET};
     bool m_intervalHasBeenSet = false;
 
     ScheduleRefreshOnEntity m_refreshOnDay;

@@ -18,23 +18,7 @@ namespace DirectoryService
 namespace Model
 {
 
-DomainController::DomainController() : 
-    m_directoryIdHasBeenSet(false),
-    m_domainControllerIdHasBeenSet(false),
-    m_dnsIpAddrHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_status(DomainControllerStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_launchTimeHasBeenSet(false),
-    m_statusLastUpdatedDateTimeHasBeenSet(false)
-{
-}
-
 DomainController::DomainController(JsonView jsonValue)
-  : DomainController()
 {
   *this = jsonValue;
 }
@@ -44,73 +28,53 @@ DomainController& DomainController::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DirectoryId"))
   {
     m_directoryId = jsonValue.GetString("DirectoryId");
-
     m_directoryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DomainControllerId"))
   {
     m_domainControllerId = jsonValue.GetString("DomainControllerId");
-
     m_domainControllerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DnsIpAddr"))
   {
     m_dnsIpAddr = jsonValue.GetString("DnsIpAddr");
-
     m_dnsIpAddrHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcId"))
   {
     m_vpcId = jsonValue.GetString("VpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetId"))
   {
     m_subnetId = jsonValue.GetString("SubnetId");
-
     m_subnetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailabilityZone"))
   {
     m_availabilityZone = jsonValue.GetString("AvailabilityZone");
-
     m_availabilityZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = DomainControllerStatusMapper::GetDomainControllerStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusReason"))
   {
     m_statusReason = jsonValue.GetString("StatusReason");
-
     m_statusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LaunchTime"))
   {
     m_launchTime = jsonValue.GetDouble("LaunchTime");
-
     m_launchTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusLastUpdatedDateTime"))
   {
     m_statusLastUpdatedDateTime = jsonValue.GetDouble("StatusLastUpdatedDateTime");
-
     m_statusLastUpdatedDateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

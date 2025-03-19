@@ -10,14 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-ListMFADeviceTagsRequest::ListMFADeviceTagsRequest() : 
-    m_serialNumberHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false)
-{
-}
-
 Aws::String ListMFADeviceTagsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

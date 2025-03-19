@@ -12,12 +12,6 @@ using namespace Aws::Omics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchDeleteReadSetRequest::BatchDeleteReadSetRequest() : 
-    m_idsHasBeenSet(false),
-    m_sequenceStoreIdHasBeenSet(false)
-{
-}
-
 Aws::String BatchDeleteReadSetRequest::SerializePayload() const
 {
   JsonValue payload;

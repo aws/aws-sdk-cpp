@@ -32,7 +32,7 @@ namespace Model
   class MonetaryValue
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API MonetaryValue();
+    AWS_PARTNERCENTRALSELLING_API MonetaryValue() = default;
     AWS_PARTNERCENTRALSELLING_API MonetaryValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API MonetaryValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,33 +42,29 @@ namespace Model
     /**
      * <p>Specifies the payment amount.</p>
      */
-    inline const Aws::String& GetAmount() const{ return m_amount; }
+    inline const Aws::String& GetAmount() const { return m_amount; }
     inline bool AmountHasBeenSet() const { return m_amountHasBeenSet; }
-    inline void SetAmount(const Aws::String& value) { m_amountHasBeenSet = true; m_amount = value; }
-    inline void SetAmount(Aws::String&& value) { m_amountHasBeenSet = true; m_amount = std::move(value); }
-    inline void SetAmount(const char* value) { m_amountHasBeenSet = true; m_amount.assign(value); }
-    inline MonetaryValue& WithAmount(const Aws::String& value) { SetAmount(value); return *this;}
-    inline MonetaryValue& WithAmount(Aws::String&& value) { SetAmount(std::move(value)); return *this;}
-    inline MonetaryValue& WithAmount(const char* value) { SetAmount(value); return *this;}
+    template<typename AmountT = Aws::String>
+    void SetAmount(AmountT&& value) { m_amountHasBeenSet = true; m_amount = std::forward<AmountT>(value); }
+    template<typename AmountT = Aws::String>
+    MonetaryValue& WithAmount(AmountT&& value) { SetAmount(std::forward<AmountT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the payment currency.</p>
      */
-    inline const CurrencyCode& GetCurrencyCode() const{ return m_currencyCode; }
+    inline CurrencyCode GetCurrencyCode() const { return m_currencyCode; }
     inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
-    inline void SetCurrencyCode(const CurrencyCode& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
-    inline void SetCurrencyCode(CurrencyCode&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = std::move(value); }
-    inline MonetaryValue& WithCurrencyCode(const CurrencyCode& value) { SetCurrencyCode(value); return *this;}
-    inline MonetaryValue& WithCurrencyCode(CurrencyCode&& value) { SetCurrencyCode(std::move(value)); return *this;}
+    inline void SetCurrencyCode(CurrencyCode value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
+    inline MonetaryValue& WithCurrencyCode(CurrencyCode value) { SetCurrencyCode(value); return *this;}
     ///@}
   private:
 
     Aws::String m_amount;
     bool m_amountHasBeenSet = false;
 
-    CurrencyCode m_currencyCode;
+    CurrencyCode m_currencyCode{CurrencyCode::NOT_SET};
     bool m_currencyCodeHasBeenSet = false;
   };
 

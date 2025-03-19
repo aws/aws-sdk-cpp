@@ -12,15 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListBuildsRequest::ListBuildsRequest() : 
-    m_status(BuildStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListBuildsRequest::SerializePayload() const
 {
   JsonValue payload;

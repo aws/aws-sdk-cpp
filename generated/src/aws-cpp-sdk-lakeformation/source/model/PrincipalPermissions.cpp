@@ -18,14 +18,7 @@ namespace LakeFormation
 namespace Model
 {
 
-PrincipalPermissions::PrincipalPermissions() : 
-    m_principalHasBeenSet(false),
-    m_permissionsHasBeenSet(false)
-{
-}
-
 PrincipalPermissions::PrincipalPermissions(JsonView jsonValue)
-  : PrincipalPermissions()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ PrincipalPermissions& PrincipalPermissions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Principal"))
   {
     m_principal = jsonValue.GetObject("Principal");
-
     m_principalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Permissions"))
   {
     Aws::Utils::Array<JsonView> permissionsJsonList = jsonValue.GetArray("Permissions");
@@ -48,7 +39,6 @@ PrincipalPermissions& PrincipalPermissions::operator =(JsonView jsonValue)
     }
     m_permissionsHasBeenSet = true;
   }
-
   return *this;
 }
 

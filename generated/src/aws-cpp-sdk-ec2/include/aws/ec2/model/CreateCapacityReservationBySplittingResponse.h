@@ -28,7 +28,7 @@ namespace Model
   class CreateCapacityReservationBySplittingResponse
   {
   public:
-    AWS_EC2_API CreateCapacityReservationBySplittingResponse();
+    AWS_EC2_API CreateCapacityReservationBySplittingResponse() = default;
     AWS_EC2_API CreateCapacityReservationBySplittingResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API CreateCapacityReservationBySplittingResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,22 +37,22 @@ namespace Model
     /**
      * <p> Information about the source Capacity Reservation. </p>
      */
-    inline const CapacityReservation& GetSourceCapacityReservation() const{ return m_sourceCapacityReservation; }
-    inline void SetSourceCapacityReservation(const CapacityReservation& value) { m_sourceCapacityReservation = value; }
-    inline void SetSourceCapacityReservation(CapacityReservation&& value) { m_sourceCapacityReservation = std::move(value); }
-    inline CreateCapacityReservationBySplittingResponse& WithSourceCapacityReservation(const CapacityReservation& value) { SetSourceCapacityReservation(value); return *this;}
-    inline CreateCapacityReservationBySplittingResponse& WithSourceCapacityReservation(CapacityReservation&& value) { SetSourceCapacityReservation(std::move(value)); return *this;}
+    inline const CapacityReservation& GetSourceCapacityReservation() const { return m_sourceCapacityReservation; }
+    template<typename SourceCapacityReservationT = CapacityReservation>
+    void SetSourceCapacityReservation(SourceCapacityReservationT&& value) { m_sourceCapacityReservationHasBeenSet = true; m_sourceCapacityReservation = std::forward<SourceCapacityReservationT>(value); }
+    template<typename SourceCapacityReservationT = CapacityReservation>
+    CreateCapacityReservationBySplittingResponse& WithSourceCapacityReservation(SourceCapacityReservationT&& value) { SetSourceCapacityReservation(std::forward<SourceCapacityReservationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Information about the destination Capacity Reservation. </p>
      */
-    inline const CapacityReservation& GetDestinationCapacityReservation() const{ return m_destinationCapacityReservation; }
-    inline void SetDestinationCapacityReservation(const CapacityReservation& value) { m_destinationCapacityReservation = value; }
-    inline void SetDestinationCapacityReservation(CapacityReservation&& value) { m_destinationCapacityReservation = std::move(value); }
-    inline CreateCapacityReservationBySplittingResponse& WithDestinationCapacityReservation(const CapacityReservation& value) { SetDestinationCapacityReservation(value); return *this;}
-    inline CreateCapacityReservationBySplittingResponse& WithDestinationCapacityReservation(CapacityReservation&& value) { SetDestinationCapacityReservation(std::move(value)); return *this;}
+    inline const CapacityReservation& GetDestinationCapacityReservation() const { return m_destinationCapacityReservation; }
+    template<typename DestinationCapacityReservationT = CapacityReservation>
+    void SetDestinationCapacityReservation(DestinationCapacityReservationT&& value) { m_destinationCapacityReservationHasBeenSet = true; m_destinationCapacityReservation = std::forward<DestinationCapacityReservationT>(value); }
+    template<typename DestinationCapacityReservationT = CapacityReservation>
+    CreateCapacityReservationBySplittingResponse& WithDestinationCapacityReservation(DestinationCapacityReservationT&& value) { SetDestinationCapacityReservation(std::forward<DestinationCapacityReservationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,28 +60,32 @@ namespace Model
      * <p> The number of instances in the new Capacity Reservation. The number of
      * instances in the source Capacity Reservation was reduced by this amount. </p>
      */
-    inline int GetInstanceCount() const{ return m_instanceCount; }
-    inline void SetInstanceCount(int value) { m_instanceCount = value; }
+    inline int GetInstanceCount() const { return m_instanceCount; }
+    inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
     inline CreateCapacityReservationBySplittingResponse& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CreateCapacityReservationBySplittingResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CreateCapacityReservationBySplittingResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CreateCapacityReservationBySplittingResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     CapacityReservation m_sourceCapacityReservation;
+    bool m_sourceCapacityReservationHasBeenSet = false;
 
     CapacityReservation m_destinationCapacityReservation;
+    bool m_destinationCapacityReservationHasBeenSet = false;
 
-    int m_instanceCount;
+    int m_instanceCount{0};
+    bool m_instanceCountHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

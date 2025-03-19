@@ -36,7 +36,7 @@ namespace Model
   class ListToMap
   {
   public:
-    AWS_CLOUDWATCHLOGS_API ListToMap();
+    AWS_CLOUDWATCHLOGS_API ListToMap() = default;
     AWS_CLOUDWATCHLOGS_API ListToMap(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API ListToMap& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,28 +47,24 @@ namespace Model
      * <p>The key in the log event that has a list of objects that will be converted to
      * a map.</p>
      */
-    inline const Aws::String& GetSource() const{ return m_source; }
+    inline const Aws::String& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
-    inline ListToMap& WithSource(const Aws::String& value) { SetSource(value); return *this;}
-    inline ListToMap& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
-    inline ListToMap& WithSource(const char* value) { SetSource(value); return *this;}
+    template<typename SourceT = Aws::String>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = Aws::String>
+    ListToMap& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The key of the field to be extracted as keys in the generated map</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline ListToMap& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline ListToMap& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline ListToMap& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    ListToMap& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,28 +74,24 @@ namespace Model
      * generated map. Otherwise, original objects in the source list will be put into
      * the values of the generated map.</p>
      */
-    inline const Aws::String& GetValueKey() const{ return m_valueKey; }
+    inline const Aws::String& GetValueKey() const { return m_valueKey; }
     inline bool ValueKeyHasBeenSet() const { return m_valueKeyHasBeenSet; }
-    inline void SetValueKey(const Aws::String& value) { m_valueKeyHasBeenSet = true; m_valueKey = value; }
-    inline void SetValueKey(Aws::String&& value) { m_valueKeyHasBeenSet = true; m_valueKey = std::move(value); }
-    inline void SetValueKey(const char* value) { m_valueKeyHasBeenSet = true; m_valueKey.assign(value); }
-    inline ListToMap& WithValueKey(const Aws::String& value) { SetValueKey(value); return *this;}
-    inline ListToMap& WithValueKey(Aws::String&& value) { SetValueKey(std::move(value)); return *this;}
-    inline ListToMap& WithValueKey(const char* value) { SetValueKey(value); return *this;}
+    template<typename ValueKeyT = Aws::String>
+    void SetValueKey(ValueKeyT&& value) { m_valueKeyHasBeenSet = true; m_valueKey = std::forward<ValueKeyT>(value); }
+    template<typename ValueKeyT = Aws::String>
+    ListToMap& WithValueKey(ValueKeyT&& value) { SetValueKey(std::forward<ValueKeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The key of the field that will hold the generated map </p>
      */
-    inline const Aws::String& GetTarget() const{ return m_target; }
+    inline const Aws::String& GetTarget() const { return m_target; }
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-    inline void SetTarget(const Aws::String& value) { m_targetHasBeenSet = true; m_target = value; }
-    inline void SetTarget(Aws::String&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-    inline void SetTarget(const char* value) { m_targetHasBeenSet = true; m_target.assign(value); }
-    inline ListToMap& WithTarget(const Aws::String& value) { SetTarget(value); return *this;}
-    inline ListToMap& WithTarget(Aws::String&& value) { SetTarget(std::move(value)); return *this;}
-    inline ListToMap& WithTarget(const char* value) { SetTarget(value); return *this;}
+    template<typename TargetT = Aws::String>
+    void SetTarget(TargetT&& value) { m_targetHasBeenSet = true; m_target = std::forward<TargetT>(value); }
+    template<typename TargetT = Aws::String>
+    ListToMap& WithTarget(TargetT&& value) { SetTarget(std::forward<TargetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,7 +100,7 @@ namespace Model
      * items. Specify <code>true</code> to flatten the list. The default is
      * <code>false</code> </p>
      */
-    inline bool GetFlatten() const{ return m_flatten; }
+    inline bool GetFlatten() const { return m_flatten; }
     inline bool FlattenHasBeenSet() const { return m_flattenHasBeenSet; }
     inline void SetFlatten(bool value) { m_flattenHasBeenSet = true; m_flatten = value; }
     inline ListToMap& WithFlatten(bool value) { SetFlatten(value); return *this;}
@@ -121,12 +113,10 @@ namespace Model
      * <code>last</code>, to keep. </p> <p>You must specify this parameter if
      * <code>flatten</code> is <code>true</code> </p>
      */
-    inline const FlattenedElement& GetFlattenedElement() const{ return m_flattenedElement; }
+    inline FlattenedElement GetFlattenedElement() const { return m_flattenedElement; }
     inline bool FlattenedElementHasBeenSet() const { return m_flattenedElementHasBeenSet; }
-    inline void SetFlattenedElement(const FlattenedElement& value) { m_flattenedElementHasBeenSet = true; m_flattenedElement = value; }
-    inline void SetFlattenedElement(FlattenedElement&& value) { m_flattenedElementHasBeenSet = true; m_flattenedElement = std::move(value); }
-    inline ListToMap& WithFlattenedElement(const FlattenedElement& value) { SetFlattenedElement(value); return *this;}
-    inline ListToMap& WithFlattenedElement(FlattenedElement&& value) { SetFlattenedElement(std::move(value)); return *this;}
+    inline void SetFlattenedElement(FlattenedElement value) { m_flattenedElementHasBeenSet = true; m_flattenedElement = value; }
+    inline ListToMap& WithFlattenedElement(FlattenedElement value) { SetFlattenedElement(value); return *this;}
     ///@}
   private:
 
@@ -142,10 +132,10 @@ namespace Model
     Aws::String m_target;
     bool m_targetHasBeenSet = false;
 
-    bool m_flatten;
+    bool m_flatten{false};
     bool m_flattenHasBeenSet = false;
 
-    FlattenedElement m_flattenedElement;
+    FlattenedElement m_flattenedElement{FlattenedElement::NOT_SET};
     bool m_flattenedElementHasBeenSet = false;
   };
 

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StopPiiEntitiesDetectionJobResult::StopPiiEntitiesDetectionJobResult() : 
-    m_jobStatus(JobStatus::NOT_SET)
-{
-}
-
 StopPiiEntitiesDetectionJobResult::StopPiiEntitiesDetectionJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : StopPiiEntitiesDetectionJobResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ StopPiiEntitiesDetectionJobResult& StopPiiEntitiesDetectionJobResult::operator =
   if(jsonValue.ValueExists("JobId"))
   {
     m_jobId = jsonValue.GetString("JobId");
-
+    m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobStatus"))
   {
     m_jobStatus = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("JobStatus"));
-
+    m_jobStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

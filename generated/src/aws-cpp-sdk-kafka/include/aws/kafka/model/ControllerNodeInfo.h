@@ -35,7 +35,7 @@ namespace Model
   class ControllerNodeInfo
   {
   public:
-    AWS_KAFKA_API ControllerNodeInfo();
+    AWS_KAFKA_API ControllerNodeInfo() = default;
     AWS_KAFKA_API ControllerNodeInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API ControllerNodeInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,15 +47,14 @@ namespace Model
             <p>Endpoints for accessing the Controller.</p>
          
      */
-    inline const Aws::Vector<Aws::String>& GetEndpoints() const{ return m_endpoints; }
+    inline const Aws::Vector<Aws::String>& GetEndpoints() const { return m_endpoints; }
     inline bool EndpointsHasBeenSet() const { return m_endpointsHasBeenSet; }
-    inline void SetEndpoints(const Aws::Vector<Aws::String>& value) { m_endpointsHasBeenSet = true; m_endpoints = value; }
-    inline void SetEndpoints(Aws::Vector<Aws::String>&& value) { m_endpointsHasBeenSet = true; m_endpoints = std::move(value); }
-    inline ControllerNodeInfo& WithEndpoints(const Aws::Vector<Aws::String>& value) { SetEndpoints(value); return *this;}
-    inline ControllerNodeInfo& WithEndpoints(Aws::Vector<Aws::String>&& value) { SetEndpoints(std::move(value)); return *this;}
-    inline ControllerNodeInfo& AddEndpoints(const Aws::String& value) { m_endpointsHasBeenSet = true; m_endpoints.push_back(value); return *this; }
-    inline ControllerNodeInfo& AddEndpoints(Aws::String&& value) { m_endpointsHasBeenSet = true; m_endpoints.push_back(std::move(value)); return *this; }
-    inline ControllerNodeInfo& AddEndpoints(const char* value) { m_endpointsHasBeenSet = true; m_endpoints.push_back(value); return *this; }
+    template<typename EndpointsT = Aws::Vector<Aws::String>>
+    void SetEndpoints(EndpointsT&& value) { m_endpointsHasBeenSet = true; m_endpoints = std::forward<EndpointsT>(value); }
+    template<typename EndpointsT = Aws::Vector<Aws::String>>
+    ControllerNodeInfo& WithEndpoints(EndpointsT&& value) { SetEndpoints(std::forward<EndpointsT>(value)); return *this;}
+    template<typename EndpointsT = Aws::String>
+    ControllerNodeInfo& AddEndpoints(EndpointsT&& value) { m_endpointsHasBeenSet = true; m_endpoints.emplace_back(std::forward<EndpointsT>(value)); return *this; }
     ///@}
   private:
 

@@ -29,7 +29,7 @@ namespace Model
   class DoubleRange
   {
   public:
-    AWS_RDS_API DoubleRange();
+    AWS_RDS_API DoubleRange() = default;
     AWS_RDS_API DoubleRange(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_RDS_API DoubleRange& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>The minimum value in the range.</p>
      */
-    inline double GetFrom() const{ return m_from; }
+    inline double GetFrom() const { return m_from; }
     inline bool FromHasBeenSet() const { return m_fromHasBeenSet; }
     inline void SetFrom(double value) { m_fromHasBeenSet = true; m_from = value; }
     inline DoubleRange& WithFrom(double value) { SetFrom(value); return *this;}
@@ -51,17 +51,17 @@ namespace Model
     /**
      * <p>The maximum value in the range.</p>
      */
-    inline double GetTo() const{ return m_to; }
+    inline double GetTo() const { return m_to; }
     inline bool ToHasBeenSet() const { return m_toHasBeenSet; }
     inline void SetTo(double value) { m_toHasBeenSet = true; m_to = value; }
     inline DoubleRange& WithTo(double value) { SetTo(value); return *this;}
     ///@}
   private:
 
-    double m_from;
+    double m_from{0.0};
     bool m_fromHasBeenSet = false;
 
-    double m_to;
+    double m_to{0.0};
     bool m_toHasBeenSet = false;
   };
 

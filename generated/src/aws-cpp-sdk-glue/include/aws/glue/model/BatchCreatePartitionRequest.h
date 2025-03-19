@@ -23,7 +23,7 @@ namespace Model
   class BatchCreatePartitionRequest : public GlueRequest
   {
   public:
-    AWS_GLUE_API BatchCreatePartitionRequest();
+    AWS_GLUE_API BatchCreatePartitionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <p>The ID of the catalog in which the partition is to be created. Currently,
      * this should be the Amazon Web Services account ID.</p>
      */
-    inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
+    inline const Aws::String& GetCatalogId() const { return m_catalogId; }
     inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
-    inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
-    inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
-    inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
-    inline BatchCreatePartitionRequest& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
-    inline BatchCreatePartitionRequest& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
-    inline BatchCreatePartitionRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
+    template<typename CatalogIdT = Aws::String>
+    void SetCatalogId(CatalogIdT&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::forward<CatalogIdT>(value); }
+    template<typename CatalogIdT = Aws::String>
+    BatchCreatePartitionRequest& WithCatalogId(CatalogIdT&& value) { SetCatalogId(std::forward<CatalogIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,28 +54,24 @@ namespace Model
      * <p>The name of the metadata database in which the partition is to be
      * created.</p>
      */
-    inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+    inline const Aws::String& GetDatabaseName() const { return m_databaseName; }
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
-    inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
-    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
-    inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
-    inline BatchCreatePartitionRequest& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
-    inline BatchCreatePartitionRequest& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
-    inline BatchCreatePartitionRequest& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+    template<typename DatabaseNameT = Aws::String>
+    void SetDatabaseName(DatabaseNameT&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::forward<DatabaseNameT>(value); }
+    template<typename DatabaseNameT = Aws::String>
+    BatchCreatePartitionRequest& WithDatabaseName(DatabaseNameT&& value) { SetDatabaseName(std::forward<DatabaseNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the metadata table in which the partition is to be created.</p>
      */
-    inline const Aws::String& GetTableName() const{ return m_tableName; }
+    inline const Aws::String& GetTableName() const { return m_tableName; }
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
-    inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
-    inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
-    inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
-    inline BatchCreatePartitionRequest& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-    inline BatchCreatePartitionRequest& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-    inline BatchCreatePartitionRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
+    template<typename TableNameT = Aws::String>
+    void SetTableName(TableNameT&& value) { m_tableNameHasBeenSet = true; m_tableName = std::forward<TableNameT>(value); }
+    template<typename TableNameT = Aws::String>
+    BatchCreatePartitionRequest& WithTableName(TableNameT&& value) { SetTableName(std::forward<TableNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,14 +79,14 @@ namespace Model
      * <p>A list of <code>PartitionInput</code> structures that define the partitions
      * to be created.</p>
      */
-    inline const Aws::Vector<PartitionInput>& GetPartitionInputList() const{ return m_partitionInputList; }
+    inline const Aws::Vector<PartitionInput>& GetPartitionInputList() const { return m_partitionInputList; }
     inline bool PartitionInputListHasBeenSet() const { return m_partitionInputListHasBeenSet; }
-    inline void SetPartitionInputList(const Aws::Vector<PartitionInput>& value) { m_partitionInputListHasBeenSet = true; m_partitionInputList = value; }
-    inline void SetPartitionInputList(Aws::Vector<PartitionInput>&& value) { m_partitionInputListHasBeenSet = true; m_partitionInputList = std::move(value); }
-    inline BatchCreatePartitionRequest& WithPartitionInputList(const Aws::Vector<PartitionInput>& value) { SetPartitionInputList(value); return *this;}
-    inline BatchCreatePartitionRequest& WithPartitionInputList(Aws::Vector<PartitionInput>&& value) { SetPartitionInputList(std::move(value)); return *this;}
-    inline BatchCreatePartitionRequest& AddPartitionInputList(const PartitionInput& value) { m_partitionInputListHasBeenSet = true; m_partitionInputList.push_back(value); return *this; }
-    inline BatchCreatePartitionRequest& AddPartitionInputList(PartitionInput&& value) { m_partitionInputListHasBeenSet = true; m_partitionInputList.push_back(std::move(value)); return *this; }
+    template<typename PartitionInputListT = Aws::Vector<PartitionInput>>
+    void SetPartitionInputList(PartitionInputListT&& value) { m_partitionInputListHasBeenSet = true; m_partitionInputList = std::forward<PartitionInputListT>(value); }
+    template<typename PartitionInputListT = Aws::Vector<PartitionInput>>
+    BatchCreatePartitionRequest& WithPartitionInputList(PartitionInputListT&& value) { SetPartitionInputList(std::forward<PartitionInputListT>(value)); return *this;}
+    template<typename PartitionInputListT = PartitionInput>
+    BatchCreatePartitionRequest& AddPartitionInputList(PartitionInputListT&& value) { m_partitionInputListHasBeenSet = true; m_partitionInputList.emplace_back(std::forward<PartitionInputListT>(value)); return *this; }
     ///@}
   private:
 

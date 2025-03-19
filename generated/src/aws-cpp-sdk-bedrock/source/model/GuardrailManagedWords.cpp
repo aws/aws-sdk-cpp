@@ -18,14 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-GuardrailManagedWords::GuardrailManagedWords() : 
-    m_type(GuardrailManagedWordsType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 GuardrailManagedWords::GuardrailManagedWords(JsonView jsonValue)
-  : GuardrailManagedWords()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ GuardrailManagedWords& GuardrailManagedWords::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = GuardrailManagedWordsTypeMapper::GetGuardrailManagedWordsTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

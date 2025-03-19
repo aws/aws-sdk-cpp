@@ -20,14 +20,7 @@ namespace ElasticLoadBalancing
 namespace Model
 {
 
-AppCookieStickinessPolicy::AppCookieStickinessPolicy() : 
-    m_policyNameHasBeenSet(false),
-    m_cookieNameHasBeenSet(false)
-{
-}
-
 AppCookieStickinessPolicy::AppCookieStickinessPolicy(const XmlNode& xmlNode)
-  : AppCookieStickinessPolicy()
 {
   *this = xmlNode;
 }

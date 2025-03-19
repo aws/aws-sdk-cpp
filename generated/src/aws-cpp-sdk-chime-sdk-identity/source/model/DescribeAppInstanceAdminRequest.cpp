@@ -12,12 +12,6 @@ using namespace Aws::ChimeSDKIdentity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeAppInstanceAdminRequest::DescribeAppInstanceAdminRequest() : 
-    m_appInstanceAdminArnHasBeenSet(false),
-    m_appInstanceArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAppInstanceAdminRequest::SerializePayload() const
 {
   return {};

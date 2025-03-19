@@ -29,7 +29,7 @@ namespace Model
   class CreateNatGatewayResponse
   {
   public:
-    AWS_EC2_API CreateNatGatewayResponse();
+    AWS_EC2_API CreateNatGatewayResponse() = default;
     AWS_EC2_API CreateNatGatewayResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API CreateNatGatewayResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,41 +39,42 @@ namespace Model
      * <p>Unique, case-sensitive identifier to ensure the idempotency of the request.
      * Only returned if a client token was provided in the request.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-    inline void SetClientToken(const Aws::String& value) { m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientToken.assign(value); }
-    inline CreateNatGatewayResponse& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateNatGatewayResponse& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateNatGatewayResponse& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateNatGatewayResponse& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the NAT gateway.</p>
      */
-    inline const NatGateway& GetNatGateway() const{ return m_natGateway; }
-    inline void SetNatGateway(const NatGateway& value) { m_natGateway = value; }
-    inline void SetNatGateway(NatGateway&& value) { m_natGateway = std::move(value); }
-    inline CreateNatGatewayResponse& WithNatGateway(const NatGateway& value) { SetNatGateway(value); return *this;}
-    inline CreateNatGatewayResponse& WithNatGateway(NatGateway&& value) { SetNatGateway(std::move(value)); return *this;}
+    inline const NatGateway& GetNatGateway() const { return m_natGateway; }
+    template<typename NatGatewayT = NatGateway>
+    void SetNatGateway(NatGatewayT&& value) { m_natGatewayHasBeenSet = true; m_natGateway = std::forward<NatGatewayT>(value); }
+    template<typename NatGatewayT = NatGateway>
+    CreateNatGatewayResponse& WithNatGateway(NatGatewayT&& value) { SetNatGateway(std::forward<NatGatewayT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CreateNatGatewayResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CreateNatGatewayResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CreateNatGatewayResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
 
     NatGateway m_natGateway;
+    bool m_natGatewayHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

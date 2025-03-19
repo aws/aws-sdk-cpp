@@ -18,13 +18,7 @@ namespace MarketplaceCatalog
 namespace Model
 {
 
-ResaleAuthorizationStatusFilter::ResaleAuthorizationStatusFilter() : 
-    m_valueListHasBeenSet(false)
-{
-}
-
 ResaleAuthorizationStatusFilter::ResaleAuthorizationStatusFilter(JsonView jsonValue)
-  : ResaleAuthorizationStatusFilter()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ResaleAuthorizationStatusFilter& ResaleAuthorizationStatusFilter::operator =(Jso
     }
     m_valueListHasBeenSet = true;
   }
-
   return *this;
 }
 

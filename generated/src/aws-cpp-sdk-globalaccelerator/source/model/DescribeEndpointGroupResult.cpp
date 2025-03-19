@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeEndpointGroupResult::DescribeEndpointGroupResult()
-{
-}
-
 DescribeEndpointGroupResult::DescribeEndpointGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeEndpointGroupResult& DescribeEndpointGroupResult::operator =(const Aws::
   if(jsonValue.ValueExists("EndpointGroup"))
   {
     m_endpointGroup = jsonValue.GetObject("EndpointGroup");
-
+    m_endpointGroupHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -17,16 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeConsumableResourceResult::DescribeConsumableResourceResult() : 
-    m_totalQuantity(0),
-    m_inUseQuantity(0),
-    m_availableQuantity(0),
-    m_createdAt(0)
-{
-}
-
 DescribeConsumableResourceResult::DescribeConsumableResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeConsumableResourceResult()
 {
   *this = result;
 }
@@ -37,45 +28,38 @@ DescribeConsumableResourceResult& DescribeConsumableResourceResult::operator =(c
   if(jsonValue.ValueExists("consumableResourceName"))
   {
     m_consumableResourceName = jsonValue.GetString("consumableResourceName");
-
+    m_consumableResourceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("consumableResourceArn"))
   {
     m_consumableResourceArn = jsonValue.GetString("consumableResourceArn");
-
+    m_consumableResourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalQuantity"))
   {
     m_totalQuantity = jsonValue.GetInt64("totalQuantity");
-
+    m_totalQuantityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inUseQuantity"))
   {
     m_inUseQuantity = jsonValue.GetInt64("inUseQuantity");
-
+    m_inUseQuantityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("availableQuantity"))
   {
     m_availableQuantity = jsonValue.GetInt64("availableQuantity");
-
+    m_availableQuantityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = jsonValue.GetString("resourceType");
-
+    m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetInt64("createdAt");
-
+    m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -83,14 +67,15 @@ DescribeConsumableResourceResult& DescribeConsumableResourceResult::operator =(c
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

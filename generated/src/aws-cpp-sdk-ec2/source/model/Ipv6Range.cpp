@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-Ipv6Range::Ipv6Range() : 
-    m_descriptionHasBeenSet(false),
-    m_cidrIpv6HasBeenSet(false)
-{
-}
-
 Ipv6Range::Ipv6Range(const XmlNode& xmlNode)
-  : Ipv6Range()
 {
   *this = xmlNode;
 }

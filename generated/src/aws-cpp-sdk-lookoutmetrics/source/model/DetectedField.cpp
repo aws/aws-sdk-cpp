@@ -18,16 +18,7 @@ namespace LookoutMetrics
 namespace Model
 {
 
-DetectedField::DetectedField() : 
-    m_valueHasBeenSet(false),
-    m_confidence(Confidence::NOT_SET),
-    m_confidenceHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 DetectedField::DetectedField(JsonView jsonValue)
-  : DetectedField()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ DetectedField& DetectedField::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetObject("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Confidence"))
   {
     m_confidence = ConfidenceMapper::GetConfidenceForName(jsonValue.GetString("Confidence"));
-
     m_confidenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

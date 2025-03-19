@@ -18,15 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-RecordField::RecordField() : 
-    m_nameHasBeenSet(false),
-    m_mandatory(false),
-    m_mandatoryHasBeenSet(false)
-{
-}
-
 RecordField::RecordField(JsonView jsonValue)
-  : RecordField()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ RecordField& RecordField::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mandatory"))
   {
     m_mandatory = jsonValue.GetBool("mandatory");
-
     m_mandatoryHasBeenSet = true;
   }
-
   return *this;
 }
 

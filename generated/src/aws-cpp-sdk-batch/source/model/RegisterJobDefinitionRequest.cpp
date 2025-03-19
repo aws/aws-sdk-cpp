@@ -12,27 +12,6 @@ using namespace Aws::Batch::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterJobDefinitionRequest::RegisterJobDefinitionRequest() : 
-    m_jobDefinitionNameHasBeenSet(false),
-    m_type(JobDefinitionType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_schedulingPriority(0),
-    m_schedulingPriorityHasBeenSet(false),
-    m_containerPropertiesHasBeenSet(false),
-    m_nodePropertiesHasBeenSet(false),
-    m_retryStrategyHasBeenSet(false),
-    m_propagateTags(false),
-    m_propagateTagsHasBeenSet(false),
-    m_timeoutHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_platformCapabilitiesHasBeenSet(false),
-    m_eksPropertiesHasBeenSet(false),
-    m_ecsPropertiesHasBeenSet(false),
-    m_consumableResourcePropertiesHasBeenSet(false)
-{
-}
-
 Aws::String RegisterJobDefinitionRequest::SerializePayload() const
 {
   JsonValue payload;

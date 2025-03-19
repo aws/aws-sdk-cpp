@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-EmailAddressInfo::EmailAddressInfo() : 
-    m_emailAddressHasBeenSet(false),
-    m_displayNameHasBeenSet(false)
-{
-}
-
 EmailAddressInfo::EmailAddressInfo(JsonView jsonValue)
-  : EmailAddressInfo()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EmailAddressInfo& EmailAddressInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EmailAddress"))
   {
     m_emailAddress = jsonValue.GetString("EmailAddress");
-
     m_emailAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayName"))
   {
     m_displayName = jsonValue.GetString("DisplayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace deadline
 namespace Model
 {
 
-UsageTrackingResource::UsageTrackingResource() : 
-    m_queueIdHasBeenSet(false)
-{
-}
-
 UsageTrackingResource::UsageTrackingResource(JsonView jsonValue)
-  : UsageTrackingResource()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ UsageTrackingResource& UsageTrackingResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("queueId"))
   {
     m_queueId = jsonValue.GetString("queueId");
-
     m_queueIdHasBeenSet = true;
   }
-
   return *this;
 }
 

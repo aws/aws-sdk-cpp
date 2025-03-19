@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateAssistantResult::CreateAssistantResult()
-{
-}
-
 CreateAssistantResult::CreateAssistantResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateAssistantResult& CreateAssistantResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("assistant"))
   {
     m_assistant = jsonValue.GetObject("assistant");
-
+    m_assistantHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

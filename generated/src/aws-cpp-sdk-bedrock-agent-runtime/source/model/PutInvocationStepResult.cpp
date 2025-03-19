@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutInvocationStepResult::PutInvocationStepResult()
-{
-}
-
 PutInvocationStepResult::PutInvocationStepResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ PutInvocationStepResult& PutInvocationStepResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("invocationStepId"))
   {
     m_invocationStepId = jsonValue.GetString("invocationStepId");
-
+    m_invocationStepIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

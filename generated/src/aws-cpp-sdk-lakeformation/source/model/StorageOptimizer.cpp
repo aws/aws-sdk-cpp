@@ -18,18 +18,7 @@ namespace LakeFormation
 namespace Model
 {
 
-StorageOptimizer::StorageOptimizer() : 
-    m_storageOptimizerType(OptimizerType::NOT_SET),
-    m_storageOptimizerTypeHasBeenSet(false),
-    m_configHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_warningsHasBeenSet(false),
-    m_lastRunDetailsHasBeenSet(false)
-{
-}
-
 StorageOptimizer::StorageOptimizer(JsonView jsonValue)
-  : StorageOptimizer()
 {
   *this = jsonValue;
 }
@@ -39,10 +28,8 @@ StorageOptimizer& StorageOptimizer::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StorageOptimizerType"))
   {
     m_storageOptimizerType = OptimizerTypeMapper::GetOptimizerTypeForName(jsonValue.GetString("StorageOptimizerType"));
-
     m_storageOptimizerTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Config"))
   {
     Aws::Map<Aws::String, JsonView> configJsonMap = jsonValue.GetObject("Config").GetAllObjects();
@@ -52,28 +39,21 @@ StorageOptimizer& StorageOptimizer::operator =(JsonView jsonValue)
     }
     m_configHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Warnings"))
   {
     m_warnings = jsonValue.GetString("Warnings");
-
     m_warningsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastRunDetails"))
   {
     m_lastRunDetails = jsonValue.GetString("LastRunDetails");
-
     m_lastRunDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

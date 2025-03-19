@@ -18,14 +18,7 @@ namespace AmplifyUIBuilder
 namespace Model
 {
 
-FormStyleConfig::FormStyleConfig() : 
-    m_tokenReferenceHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 FormStyleConfig::FormStyleConfig(JsonView jsonValue)
-  : FormStyleConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ FormStyleConfig& FormStyleConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("tokenReference"))
   {
     m_tokenReference = jsonValue.GetString("tokenReference");
-
     m_tokenReferenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,25 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-ActionExecutionDetail::ActionExecutionDetail() : 
-    m_pipelineExecutionIdHasBeenSet(false),
-    m_actionExecutionIdHasBeenSet(false),
-    m_pipelineVersion(0),
-    m_pipelineVersionHasBeenSet(false),
-    m_stageNameHasBeenSet(false),
-    m_actionNameHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false),
-    m_updatedByHasBeenSet(false),
-    m_status(ActionExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_inputHasBeenSet(false),
-    m_outputHasBeenSet(false)
-{
-}
-
 ActionExecutionDetail::ActionExecutionDetail(JsonView jsonValue)
-  : ActionExecutionDetail()
 {
   *this = jsonValue;
 }
@@ -46,80 +28,58 @@ ActionExecutionDetail& ActionExecutionDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("pipelineExecutionId"))
   {
     m_pipelineExecutionId = jsonValue.GetString("pipelineExecutionId");
-
     m_pipelineExecutionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actionExecutionId"))
   {
     m_actionExecutionId = jsonValue.GetString("actionExecutionId");
-
     m_actionExecutionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pipelineVersion"))
   {
     m_pipelineVersion = jsonValue.GetInteger("pipelineVersion");
-
     m_pipelineVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stageName"))
   {
     m_stageName = jsonValue.GetString("stageName");
-
     m_stageNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actionName"))
   {
     m_actionName = jsonValue.GetString("actionName");
-
     m_actionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetDouble("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdateTime"))
   {
     m_lastUpdateTime = jsonValue.GetDouble("lastUpdateTime");
-
     m_lastUpdateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedBy"))
   {
     m_updatedBy = jsonValue.GetString("updatedBy");
-
     m_updatedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ActionExecutionStatusMapper::GetActionExecutionStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("input"))
   {
     m_input = jsonValue.GetObject("input");
-
     m_inputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("output"))
   {
     m_output = jsonValue.GetObject("output");
-
     m_outputHasBeenSet = true;
   }
-
   return *this;
 }
 

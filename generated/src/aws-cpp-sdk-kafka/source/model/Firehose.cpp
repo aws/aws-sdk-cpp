@@ -18,15 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-Firehose::Firehose() : 
-    m_deliveryStreamHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 Firehose::Firehose(JsonView jsonValue)
-  : Firehose()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Firehose& Firehose::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("deliveryStream"))
   {
     m_deliveryStream = jsonValue.GetString("deliveryStream");
-
     m_deliveryStreamHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   return *this;
 }
 

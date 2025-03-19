@@ -34,7 +34,7 @@ namespace Model
   class FolderMetadata
   {
   public:
-    AWS_WORKDOCS_API FolderMetadata();
+    AWS_WORKDOCS_API FolderMetadata() = default;
     AWS_WORKDOCS_API FolderMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKDOCS_API FolderMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKDOCS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,92 +44,82 @@ namespace Model
     /**
      * <p>The ID of the folder.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline FolderMetadata& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline FolderMetadata& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline FolderMetadata& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    FolderMetadata& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the folder.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline FolderMetadata& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline FolderMetadata& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline FolderMetadata& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    FolderMetadata& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the creator.</p>
      */
-    inline const Aws::String& GetCreatorId() const{ return m_creatorId; }
+    inline const Aws::String& GetCreatorId() const { return m_creatorId; }
     inline bool CreatorIdHasBeenSet() const { return m_creatorIdHasBeenSet; }
-    inline void SetCreatorId(const Aws::String& value) { m_creatorIdHasBeenSet = true; m_creatorId = value; }
-    inline void SetCreatorId(Aws::String&& value) { m_creatorIdHasBeenSet = true; m_creatorId = std::move(value); }
-    inline void SetCreatorId(const char* value) { m_creatorIdHasBeenSet = true; m_creatorId.assign(value); }
-    inline FolderMetadata& WithCreatorId(const Aws::String& value) { SetCreatorId(value); return *this;}
-    inline FolderMetadata& WithCreatorId(Aws::String&& value) { SetCreatorId(std::move(value)); return *this;}
-    inline FolderMetadata& WithCreatorId(const char* value) { SetCreatorId(value); return *this;}
+    template<typename CreatorIdT = Aws::String>
+    void SetCreatorId(CreatorIdT&& value) { m_creatorIdHasBeenSet = true; m_creatorId = std::forward<CreatorIdT>(value); }
+    template<typename CreatorIdT = Aws::String>
+    FolderMetadata& WithCreatorId(CreatorIdT&& value) { SetCreatorId(std::forward<CreatorIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the parent folder.</p>
      */
-    inline const Aws::String& GetParentFolderId() const{ return m_parentFolderId; }
+    inline const Aws::String& GetParentFolderId() const { return m_parentFolderId; }
     inline bool ParentFolderIdHasBeenSet() const { return m_parentFolderIdHasBeenSet; }
-    inline void SetParentFolderId(const Aws::String& value) { m_parentFolderIdHasBeenSet = true; m_parentFolderId = value; }
-    inline void SetParentFolderId(Aws::String&& value) { m_parentFolderIdHasBeenSet = true; m_parentFolderId = std::move(value); }
-    inline void SetParentFolderId(const char* value) { m_parentFolderIdHasBeenSet = true; m_parentFolderId.assign(value); }
-    inline FolderMetadata& WithParentFolderId(const Aws::String& value) { SetParentFolderId(value); return *this;}
-    inline FolderMetadata& WithParentFolderId(Aws::String&& value) { SetParentFolderId(std::move(value)); return *this;}
-    inline FolderMetadata& WithParentFolderId(const char* value) { SetParentFolderId(value); return *this;}
+    template<typename ParentFolderIdT = Aws::String>
+    void SetParentFolderId(ParentFolderIdT&& value) { m_parentFolderIdHasBeenSet = true; m_parentFolderId = std::forward<ParentFolderIdT>(value); }
+    template<typename ParentFolderIdT = Aws::String>
+    FolderMetadata& WithParentFolderId(ParentFolderIdT&& value) { SetParentFolderId(std::forward<ParentFolderIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time when the folder was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const{ return m_createdTimestamp; }
+    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const { return m_createdTimestamp; }
     inline bool CreatedTimestampHasBeenSet() const { return m_createdTimestampHasBeenSet; }
-    inline void SetCreatedTimestamp(const Aws::Utils::DateTime& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = value; }
-    inline void SetCreatedTimestamp(Aws::Utils::DateTime&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::move(value); }
-    inline FolderMetadata& WithCreatedTimestamp(const Aws::Utils::DateTime& value) { SetCreatedTimestamp(value); return *this;}
-    inline FolderMetadata& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    void SetCreatedTimestamp(CreatedTimestampT&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::forward<CreatedTimestampT>(value); }
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    FolderMetadata& WithCreatedTimestamp(CreatedTimestampT&& value) { SetCreatedTimestamp(std::forward<CreatedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time when the folder was updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetModifiedTimestamp() const{ return m_modifiedTimestamp; }
+    inline const Aws::Utils::DateTime& GetModifiedTimestamp() const { return m_modifiedTimestamp; }
     inline bool ModifiedTimestampHasBeenSet() const { return m_modifiedTimestampHasBeenSet; }
-    inline void SetModifiedTimestamp(const Aws::Utils::DateTime& value) { m_modifiedTimestampHasBeenSet = true; m_modifiedTimestamp = value; }
-    inline void SetModifiedTimestamp(Aws::Utils::DateTime&& value) { m_modifiedTimestampHasBeenSet = true; m_modifiedTimestamp = std::move(value); }
-    inline FolderMetadata& WithModifiedTimestamp(const Aws::Utils::DateTime& value) { SetModifiedTimestamp(value); return *this;}
-    inline FolderMetadata& WithModifiedTimestamp(Aws::Utils::DateTime&& value) { SetModifiedTimestamp(std::move(value)); return *this;}
+    template<typename ModifiedTimestampT = Aws::Utils::DateTime>
+    void SetModifiedTimestamp(ModifiedTimestampT&& value) { m_modifiedTimestampHasBeenSet = true; m_modifiedTimestamp = std::forward<ModifiedTimestampT>(value); }
+    template<typename ModifiedTimestampT = Aws::Utils::DateTime>
+    FolderMetadata& WithModifiedTimestamp(ModifiedTimestampT&& value) { SetModifiedTimestamp(std::forward<ModifiedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resource state of the folder.</p>
      */
-    inline const ResourceStateType& GetResourceState() const{ return m_resourceState; }
+    inline ResourceStateType GetResourceState() const { return m_resourceState; }
     inline bool ResourceStateHasBeenSet() const { return m_resourceStateHasBeenSet; }
-    inline void SetResourceState(const ResourceStateType& value) { m_resourceStateHasBeenSet = true; m_resourceState = value; }
-    inline void SetResourceState(ResourceStateType&& value) { m_resourceStateHasBeenSet = true; m_resourceState = std::move(value); }
-    inline FolderMetadata& WithResourceState(const ResourceStateType& value) { SetResourceState(value); return *this;}
-    inline FolderMetadata& WithResourceState(ResourceStateType&& value) { SetResourceState(std::move(value)); return *this;}
+    inline void SetResourceState(ResourceStateType value) { m_resourceStateHasBeenSet = true; m_resourceState = value; }
+    inline FolderMetadata& WithResourceState(ResourceStateType value) { SetResourceState(value); return *this;}
     ///@}
 
     ///@{
@@ -137,36 +127,33 @@ namespace Model
      * <p>The unique identifier created from the subfolders and documents of the
      * folder.</p>
      */
-    inline const Aws::String& GetSignature() const{ return m_signature; }
+    inline const Aws::String& GetSignature() const { return m_signature; }
     inline bool SignatureHasBeenSet() const { return m_signatureHasBeenSet; }
-    inline void SetSignature(const Aws::String& value) { m_signatureHasBeenSet = true; m_signature = value; }
-    inline void SetSignature(Aws::String&& value) { m_signatureHasBeenSet = true; m_signature = std::move(value); }
-    inline void SetSignature(const char* value) { m_signatureHasBeenSet = true; m_signature.assign(value); }
-    inline FolderMetadata& WithSignature(const Aws::String& value) { SetSignature(value); return *this;}
-    inline FolderMetadata& WithSignature(Aws::String&& value) { SetSignature(std::move(value)); return *this;}
-    inline FolderMetadata& WithSignature(const char* value) { SetSignature(value); return *this;}
+    template<typename SignatureT = Aws::String>
+    void SetSignature(SignatureT&& value) { m_signatureHasBeenSet = true; m_signature = std::forward<SignatureT>(value); }
+    template<typename SignatureT = Aws::String>
+    FolderMetadata& WithSignature(SignatureT&& value) { SetSignature(std::forward<SignatureT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>List of labels on the folder.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetLabels() const{ return m_labels; }
+    inline const Aws::Vector<Aws::String>& GetLabels() const { return m_labels; }
     inline bool LabelsHasBeenSet() const { return m_labelsHasBeenSet; }
-    inline void SetLabels(const Aws::Vector<Aws::String>& value) { m_labelsHasBeenSet = true; m_labels = value; }
-    inline void SetLabels(Aws::Vector<Aws::String>&& value) { m_labelsHasBeenSet = true; m_labels = std::move(value); }
-    inline FolderMetadata& WithLabels(const Aws::Vector<Aws::String>& value) { SetLabels(value); return *this;}
-    inline FolderMetadata& WithLabels(Aws::Vector<Aws::String>&& value) { SetLabels(std::move(value)); return *this;}
-    inline FolderMetadata& AddLabels(const Aws::String& value) { m_labelsHasBeenSet = true; m_labels.push_back(value); return *this; }
-    inline FolderMetadata& AddLabels(Aws::String&& value) { m_labelsHasBeenSet = true; m_labels.push_back(std::move(value)); return *this; }
-    inline FolderMetadata& AddLabels(const char* value) { m_labelsHasBeenSet = true; m_labels.push_back(value); return *this; }
+    template<typename LabelsT = Aws::Vector<Aws::String>>
+    void SetLabels(LabelsT&& value) { m_labelsHasBeenSet = true; m_labels = std::forward<LabelsT>(value); }
+    template<typename LabelsT = Aws::Vector<Aws::String>>
+    FolderMetadata& WithLabels(LabelsT&& value) { SetLabels(std::forward<LabelsT>(value)); return *this;}
+    template<typename LabelsT = Aws::String>
+    FolderMetadata& AddLabels(LabelsT&& value) { m_labelsHasBeenSet = true; m_labels.emplace_back(std::forward<LabelsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The size of the folder metadata.</p>
      */
-    inline long long GetSize() const{ return m_size; }
+    inline long long GetSize() const { return m_size; }
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
     inline void SetSize(long long value) { m_sizeHasBeenSet = true; m_size = value; }
     inline FolderMetadata& WithSize(long long value) { SetSize(value); return *this;}
@@ -176,7 +163,7 @@ namespace Model
     /**
      * <p>The size of the latest version of the folder metadata.</p>
      */
-    inline long long GetLatestVersionSize() const{ return m_latestVersionSize; }
+    inline long long GetLatestVersionSize() const { return m_latestVersionSize; }
     inline bool LatestVersionSizeHasBeenSet() const { return m_latestVersionSizeHasBeenSet; }
     inline void SetLatestVersionSize(long long value) { m_latestVersionSizeHasBeenSet = true; m_latestVersionSize = value; }
     inline FolderMetadata& WithLatestVersionSize(long long value) { SetLatestVersionSize(value); return *this;}
@@ -195,13 +182,13 @@ namespace Model
     Aws::String m_parentFolderId;
     bool m_parentFolderIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTimestamp;
+    Aws::Utils::DateTime m_createdTimestamp{};
     bool m_createdTimestampHasBeenSet = false;
 
-    Aws::Utils::DateTime m_modifiedTimestamp;
+    Aws::Utils::DateTime m_modifiedTimestamp{};
     bool m_modifiedTimestampHasBeenSet = false;
 
-    ResourceStateType m_resourceState;
+    ResourceStateType m_resourceState{ResourceStateType::NOT_SET};
     bool m_resourceStateHasBeenSet = false;
 
     Aws::String m_signature;
@@ -210,10 +197,10 @@ namespace Model
     Aws::Vector<Aws::String> m_labels;
     bool m_labelsHasBeenSet = false;
 
-    long long m_size;
+    long long m_size{0};
     bool m_sizeHasBeenSet = false;
 
-    long long m_latestVersionSize;
+    long long m_latestVersionSize{0};
     bool m_latestVersionSizeHasBeenSet = false;
   };
 

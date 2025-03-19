@@ -12,11 +12,6 @@ using namespace Aws::SavingsPlans::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteQueuedSavingsPlanRequest::DeleteQueuedSavingsPlanRequest() : 
-    m_savingsPlanIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteQueuedSavingsPlanRequest::SerializePayload() const
 {
   JsonValue payload;

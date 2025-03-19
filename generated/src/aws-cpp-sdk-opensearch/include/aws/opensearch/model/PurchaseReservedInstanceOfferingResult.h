@@ -33,7 +33,7 @@ namespace Model
   class PurchaseReservedInstanceOfferingResult
   {
   public:
-    AWS_OPENSEARCHSERVICE_API PurchaseReservedInstanceOfferingResult();
+    AWS_OPENSEARCHSERVICE_API PurchaseReservedInstanceOfferingResult() = default;
     AWS_OPENSEARCHSERVICE_API PurchaseReservedInstanceOfferingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OPENSEARCHSERVICE_API PurchaseReservedInstanceOfferingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,45 +42,42 @@ namespace Model
     /**
      * <p>The ID of the Reserved Instance offering that was purchased.</p>
      */
-    inline const Aws::String& GetReservedInstanceId() const{ return m_reservedInstanceId; }
-    inline void SetReservedInstanceId(const Aws::String& value) { m_reservedInstanceId = value; }
-    inline void SetReservedInstanceId(Aws::String&& value) { m_reservedInstanceId = std::move(value); }
-    inline void SetReservedInstanceId(const char* value) { m_reservedInstanceId.assign(value); }
-    inline PurchaseReservedInstanceOfferingResult& WithReservedInstanceId(const Aws::String& value) { SetReservedInstanceId(value); return *this;}
-    inline PurchaseReservedInstanceOfferingResult& WithReservedInstanceId(Aws::String&& value) { SetReservedInstanceId(std::move(value)); return *this;}
-    inline PurchaseReservedInstanceOfferingResult& WithReservedInstanceId(const char* value) { SetReservedInstanceId(value); return *this;}
+    inline const Aws::String& GetReservedInstanceId() const { return m_reservedInstanceId; }
+    template<typename ReservedInstanceIdT = Aws::String>
+    void SetReservedInstanceId(ReservedInstanceIdT&& value) { m_reservedInstanceIdHasBeenSet = true; m_reservedInstanceId = std::forward<ReservedInstanceIdT>(value); }
+    template<typename ReservedInstanceIdT = Aws::String>
+    PurchaseReservedInstanceOfferingResult& WithReservedInstanceId(ReservedInstanceIdT&& value) { SetReservedInstanceId(std::forward<ReservedInstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The customer-specified identifier used to track this reservation.</p>
      */
-    inline const Aws::String& GetReservationName() const{ return m_reservationName; }
-    inline void SetReservationName(const Aws::String& value) { m_reservationName = value; }
-    inline void SetReservationName(Aws::String&& value) { m_reservationName = std::move(value); }
-    inline void SetReservationName(const char* value) { m_reservationName.assign(value); }
-    inline PurchaseReservedInstanceOfferingResult& WithReservationName(const Aws::String& value) { SetReservationName(value); return *this;}
-    inline PurchaseReservedInstanceOfferingResult& WithReservationName(Aws::String&& value) { SetReservationName(std::move(value)); return *this;}
-    inline PurchaseReservedInstanceOfferingResult& WithReservationName(const char* value) { SetReservationName(value); return *this;}
+    inline const Aws::String& GetReservationName() const { return m_reservationName; }
+    template<typename ReservationNameT = Aws::String>
+    void SetReservationName(ReservationNameT&& value) { m_reservationNameHasBeenSet = true; m_reservationName = std::forward<ReservationNameT>(value); }
+    template<typename ReservationNameT = Aws::String>
+    PurchaseReservedInstanceOfferingResult& WithReservationName(ReservationNameT&& value) { SetReservationName(std::forward<ReservationNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PurchaseReservedInstanceOfferingResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PurchaseReservedInstanceOfferingResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PurchaseReservedInstanceOfferingResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PurchaseReservedInstanceOfferingResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_reservedInstanceId;
+    bool m_reservedInstanceIdHasBeenSet = false;
 
     Aws::String m_reservationName;
+    bool m_reservationNameHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

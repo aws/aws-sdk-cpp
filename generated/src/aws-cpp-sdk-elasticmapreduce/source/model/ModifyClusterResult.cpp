@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ModifyClusterResult::ModifyClusterResult() : 
-    m_stepConcurrencyLevel(0)
-{
-}
-
 ModifyClusterResult::ModifyClusterResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ModifyClusterResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ ModifyClusterResult& ModifyClusterResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("StepConcurrencyLevel"))
   {
     m_stepConcurrencyLevel = jsonValue.GetInteger("StepConcurrencyLevel");
-
+    m_stepConcurrencyLevelHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEfsAccessPointPosixUserDetails::AwsEfsAccessPointPosixUserDetails() : 
-    m_gidHasBeenSet(false),
-    m_secondaryGidsHasBeenSet(false),
-    m_uidHasBeenSet(false)
-{
-}
-
 AwsEfsAccessPointPosixUserDetails::AwsEfsAccessPointPosixUserDetails(JsonView jsonValue)
-  : AwsEfsAccessPointPosixUserDetails()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ AwsEfsAccessPointPosixUserDetails& AwsEfsAccessPointPosixUserDetails::operator =
   if(jsonValue.ValueExists("Gid"))
   {
     m_gid = jsonValue.GetString("Gid");
-
     m_gidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecondaryGids"))
   {
     Aws::Utils::Array<JsonView> secondaryGidsJsonList = jsonValue.GetArray("SecondaryGids");
@@ -49,14 +39,11 @@ AwsEfsAccessPointPosixUserDetails& AwsEfsAccessPointPosixUserDetails::operator =
     }
     m_secondaryGidsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Uid"))
   {
     m_uid = jsonValue.GetString("Uid");
-
     m_uidHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,13 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateEnvironmentRoleRequest::DisassociateEnvironmentRoleRequest() : 
-    m_domainIdentifierHasBeenSet(false),
-    m_environmentIdentifierHasBeenSet(false),
-    m_environmentRoleArnHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateEnvironmentRoleRequest::SerializePayload() const
 {
   return {};

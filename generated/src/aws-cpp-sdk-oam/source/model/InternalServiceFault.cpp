@@ -19,14 +19,7 @@ namespace OAM
 namespace Model
 {
 
-InternalServiceFault::InternalServiceFault() : 
-    m_messageHasBeenSet(false),
-    m_amznErrorTypeHasBeenSet(false)
-{
-}
-
 InternalServiceFault::InternalServiceFault(JsonView jsonValue)
-  : InternalServiceFault()
 {
   *this = jsonValue;
 }
@@ -36,10 +29,8 @@ InternalServiceFault& InternalServiceFault::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

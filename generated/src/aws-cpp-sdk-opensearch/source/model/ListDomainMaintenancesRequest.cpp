@@ -15,18 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListDomainMaintenancesRequest::ListDomainMaintenancesRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_action(MaintenanceType::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_status(MaintenanceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListDomainMaintenancesRequest::SerializePayload() const
 {
   return {};

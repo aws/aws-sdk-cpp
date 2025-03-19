@@ -32,7 +32,7 @@ namespace Model
   class SessionCommand
   {
   public:
-    AWS_GLUE_API SessionCommand();
+    AWS_GLUE_API SessionCommand() = default;
     AWS_GLUE_API SessionCommand(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API SessionCommand& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>Specifies the name of the SessionCommand. Can be 'glueetl' or
      * 'gluestreaming'.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline SessionCommand& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline SessionCommand& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline SessionCommand& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    SessionCommand& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>Specifies the Python version. The Python version indicates the version
      * supported for jobs of type Spark.</p>
      */
-    inline const Aws::String& GetPythonVersion() const{ return m_pythonVersion; }
+    inline const Aws::String& GetPythonVersion() const { return m_pythonVersion; }
     inline bool PythonVersionHasBeenSet() const { return m_pythonVersionHasBeenSet; }
-    inline void SetPythonVersion(const Aws::String& value) { m_pythonVersionHasBeenSet = true; m_pythonVersion = value; }
-    inline void SetPythonVersion(Aws::String&& value) { m_pythonVersionHasBeenSet = true; m_pythonVersion = std::move(value); }
-    inline void SetPythonVersion(const char* value) { m_pythonVersionHasBeenSet = true; m_pythonVersion.assign(value); }
-    inline SessionCommand& WithPythonVersion(const Aws::String& value) { SetPythonVersion(value); return *this;}
-    inline SessionCommand& WithPythonVersion(Aws::String&& value) { SetPythonVersion(std::move(value)); return *this;}
-    inline SessionCommand& WithPythonVersion(const char* value) { SetPythonVersion(value); return *this;}
+    template<typename PythonVersionT = Aws::String>
+    void SetPythonVersion(PythonVersionT&& value) { m_pythonVersionHasBeenSet = true; m_pythonVersion = std::forward<PythonVersionT>(value); }
+    template<typename PythonVersionT = Aws::String>
+    SessionCommand& WithPythonVersion(PythonVersionT&& value) { SetPythonVersion(std::forward<PythonVersionT>(value)); return *this;}
     ///@}
   private:
 

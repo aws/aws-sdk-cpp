@@ -18,16 +18,7 @@ namespace FMS
 namespace Model
 {
 
-FirewallSubnetMissingVPCEndpointViolation::FirewallSubnetMissingVPCEndpointViolation() : 
-    m_firewallSubnetIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_subnetAvailabilityZoneHasBeenSet(false),
-    m_subnetAvailabilityZoneIdHasBeenSet(false)
-{
-}
-
 FirewallSubnetMissingVPCEndpointViolation::FirewallSubnetMissingVPCEndpointViolation(JsonView jsonValue)
-  : FirewallSubnetMissingVPCEndpointViolation()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ FirewallSubnetMissingVPCEndpointViolation& FirewallSubnetMissingVPCEndpointViola
   if(jsonValue.ValueExists("FirewallSubnetId"))
   {
     m_firewallSubnetId = jsonValue.GetString("FirewallSubnetId");
-
     m_firewallSubnetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcId"))
   {
     m_vpcId = jsonValue.GetString("VpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetAvailabilityZone"))
   {
     m_subnetAvailabilityZone = jsonValue.GetString("SubnetAvailabilityZone");
-
     m_subnetAvailabilityZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetAvailabilityZoneId"))
   {
     m_subnetAvailabilityZoneId = jsonValue.GetString("SubnetAvailabilityZoneId");
-
     m_subnetAvailabilityZoneIdHasBeenSet = true;
   }
-
   return *this;
 }
 

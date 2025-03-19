@@ -28,7 +28,7 @@ namespace Model
   class CreateAssessmentFrameworkResult
   {
   public:
-    AWS_AUDITMANAGER_API CreateAssessmentFrameworkResult();
+    AWS_AUDITMANAGER_API CreateAssessmentFrameworkResult() = default;
     AWS_AUDITMANAGER_API CreateAssessmentFrameworkResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_AUDITMANAGER_API CreateAssessmentFrameworkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p> The name of the new framework that the
      * <code>CreateAssessmentFramework</code> API returned. </p>
      */
-    inline const Framework& GetFramework() const{ return m_framework; }
-    inline void SetFramework(const Framework& value) { m_framework = value; }
-    inline void SetFramework(Framework&& value) { m_framework = std::move(value); }
-    inline CreateAssessmentFrameworkResult& WithFramework(const Framework& value) { SetFramework(value); return *this;}
-    inline CreateAssessmentFrameworkResult& WithFramework(Framework&& value) { SetFramework(std::move(value)); return *this;}
+    inline const Framework& GetFramework() const { return m_framework; }
+    template<typename FrameworkT = Framework>
+    void SetFramework(FrameworkT&& value) { m_frameworkHasBeenSet = true; m_framework = std::forward<FrameworkT>(value); }
+    template<typename FrameworkT = Framework>
+    CreateAssessmentFrameworkResult& WithFramework(FrameworkT&& value) { SetFramework(std::forward<FrameworkT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateAssessmentFrameworkResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateAssessmentFrameworkResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateAssessmentFrameworkResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateAssessmentFrameworkResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Framework m_framework;
+    bool m_frameworkHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

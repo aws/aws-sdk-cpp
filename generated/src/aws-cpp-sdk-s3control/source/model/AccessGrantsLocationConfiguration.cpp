@@ -20,13 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-AccessGrantsLocationConfiguration::AccessGrantsLocationConfiguration() : 
-    m_s3SubPrefixHasBeenSet(false)
-{
-}
-
 AccessGrantsLocationConfiguration::AccessGrantsLocationConfiguration(const XmlNode& xmlNode)
-  : AccessGrantsLocationConfiguration()
 {
   *this = xmlNode;
 }

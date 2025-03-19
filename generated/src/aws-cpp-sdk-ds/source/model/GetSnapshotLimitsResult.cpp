@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSnapshotLimitsResult::GetSnapshotLimitsResult()
-{
-}
-
 GetSnapshotLimitsResult::GetSnapshotLimitsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetSnapshotLimitsResult& GetSnapshotLimitsResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("SnapshotLimits"))
   {
     m_snapshotLimits = jsonValue.GetObject("SnapshotLimits");
-
+    m_snapshotLimitsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

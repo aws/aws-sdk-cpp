@@ -23,7 +23,7 @@ namespace Model
   class DescribeClientVpnEndpointsRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DescribeClientVpnEndpointsRequest();
+    AWS_EC2_API DescribeClientVpnEndpointsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,15 +42,14 @@ namespace Model
     /**
      * <p>The ID of the Client VPN endpoint.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetClientVpnEndpointIds() const{ return m_clientVpnEndpointIds; }
+    inline const Aws::Vector<Aws::String>& GetClientVpnEndpointIds() const { return m_clientVpnEndpointIds; }
     inline bool ClientVpnEndpointIdsHasBeenSet() const { return m_clientVpnEndpointIdsHasBeenSet; }
-    inline void SetClientVpnEndpointIds(const Aws::Vector<Aws::String>& value) { m_clientVpnEndpointIdsHasBeenSet = true; m_clientVpnEndpointIds = value; }
-    inline void SetClientVpnEndpointIds(Aws::Vector<Aws::String>&& value) { m_clientVpnEndpointIdsHasBeenSet = true; m_clientVpnEndpointIds = std::move(value); }
-    inline DescribeClientVpnEndpointsRequest& WithClientVpnEndpointIds(const Aws::Vector<Aws::String>& value) { SetClientVpnEndpointIds(value); return *this;}
-    inline DescribeClientVpnEndpointsRequest& WithClientVpnEndpointIds(Aws::Vector<Aws::String>&& value) { SetClientVpnEndpointIds(std::move(value)); return *this;}
-    inline DescribeClientVpnEndpointsRequest& AddClientVpnEndpointIds(const Aws::String& value) { m_clientVpnEndpointIdsHasBeenSet = true; m_clientVpnEndpointIds.push_back(value); return *this; }
-    inline DescribeClientVpnEndpointsRequest& AddClientVpnEndpointIds(Aws::String&& value) { m_clientVpnEndpointIdsHasBeenSet = true; m_clientVpnEndpointIds.push_back(std::move(value)); return *this; }
-    inline DescribeClientVpnEndpointsRequest& AddClientVpnEndpointIds(const char* value) { m_clientVpnEndpointIdsHasBeenSet = true; m_clientVpnEndpointIds.push_back(value); return *this; }
+    template<typename ClientVpnEndpointIdsT = Aws::Vector<Aws::String>>
+    void SetClientVpnEndpointIds(ClientVpnEndpointIdsT&& value) { m_clientVpnEndpointIdsHasBeenSet = true; m_clientVpnEndpointIds = std::forward<ClientVpnEndpointIdsT>(value); }
+    template<typename ClientVpnEndpointIdsT = Aws::Vector<Aws::String>>
+    DescribeClientVpnEndpointsRequest& WithClientVpnEndpointIds(ClientVpnEndpointIdsT&& value) { SetClientVpnEndpointIds(std::forward<ClientVpnEndpointIdsT>(value)); return *this;}
+    template<typename ClientVpnEndpointIdsT = Aws::String>
+    DescribeClientVpnEndpointsRequest& AddClientVpnEndpointIds(ClientVpnEndpointIdsT&& value) { m_clientVpnEndpointIdsHasBeenSet = true; m_clientVpnEndpointIds.emplace_back(std::forward<ClientVpnEndpointIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -59,7 +58,7 @@ namespace Model
      * remaining results can be seen by sending another request with the nextToken
      * value.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeClientVpnEndpointsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -69,14 +68,12 @@ namespace Model
     /**
      * <p>The token to retrieve the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeClientVpnEndpointsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeClientVpnEndpointsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeClientVpnEndpointsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeClientVpnEndpointsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,14 +83,14 @@ namespace Model
      * <li> <p> <code>transport-protocol</code> - The transport protocol
      * (<code>tcp</code> | <code>udp</code>).</p> </li> </ul>
      */
-    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline DescribeClientVpnEndpointsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-    inline DescribeClientVpnEndpointsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline DescribeClientVpnEndpointsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline DescribeClientVpnEndpointsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    DescribeClientVpnEndpointsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = Filter>
+    DescribeClientVpnEndpointsRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -103,7 +100,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DescribeClientVpnEndpointsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -113,7 +110,7 @@ namespace Model
     Aws::Vector<Aws::String> m_clientVpnEndpointIds;
     bool m_clientVpnEndpointIdsHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
@@ -122,7 +119,7 @@ namespace Model
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

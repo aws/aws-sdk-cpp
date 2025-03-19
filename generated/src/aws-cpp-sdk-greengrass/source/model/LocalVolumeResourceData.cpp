@@ -18,15 +18,7 @@ namespace Greengrass
 namespace Model
 {
 
-LocalVolumeResourceData::LocalVolumeResourceData() : 
-    m_destinationPathHasBeenSet(false),
-    m_groupOwnerSettingHasBeenSet(false),
-    m_sourcePathHasBeenSet(false)
-{
-}
-
 LocalVolumeResourceData::LocalVolumeResourceData(JsonView jsonValue)
-  : LocalVolumeResourceData()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ LocalVolumeResourceData& LocalVolumeResourceData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DestinationPath"))
   {
     m_destinationPath = jsonValue.GetString("DestinationPath");
-
     m_destinationPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupOwnerSetting"))
   {
     m_groupOwnerSetting = jsonValue.GetObject("GroupOwnerSetting");
-
     m_groupOwnerSettingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourcePath"))
   {
     m_sourcePath = jsonValue.GetString("SourcePath");
-
     m_sourcePathHasBeenSet = true;
   }
-
   return *this;
 }
 

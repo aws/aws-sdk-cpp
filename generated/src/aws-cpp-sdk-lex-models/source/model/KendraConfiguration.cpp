@@ -18,15 +18,7 @@ namespace LexModelBuildingService
 namespace Model
 {
 
-KendraConfiguration::KendraConfiguration() : 
-    m_kendraIndexHasBeenSet(false),
-    m_queryFilterStringHasBeenSet(false),
-    m_roleHasBeenSet(false)
-{
-}
-
 KendraConfiguration::KendraConfiguration(JsonView jsonValue)
-  : KendraConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ KendraConfiguration& KendraConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("kendraIndex"))
   {
     m_kendraIndex = jsonValue.GetString("kendraIndex");
-
     m_kendraIndexHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queryFilterString"))
   {
     m_queryFilterString = jsonValue.GetString("queryFilterString");
-
     m_queryFilterStringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("role"))
   {
     m_role = jsonValue.GetString("role");
-
     m_roleHasBeenSet = true;
   }
-
   return *this;
 }
 

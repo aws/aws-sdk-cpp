@@ -12,12 +12,6 @@ using namespace Aws::LookoutEquipment::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeLabelRequest::DescribeLabelRequest() : 
-    m_labelGroupNameHasBeenSet(false),
-    m_labelIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeLabelRequest::SerializePayload() const
 {
   JsonValue payload;

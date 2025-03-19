@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListAttachedPoliciesRequest::ListAttachedPoliciesRequest() : 
-    m_targetHasBeenSet(false),
-    m_recursive(false),
-    m_recursiveHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_pageSize(0),
-    m_pageSizeHasBeenSet(false)
-{
-}
-
 Aws::String ListAttachedPoliciesRequest::SerializePayload() const
 {
   return {};

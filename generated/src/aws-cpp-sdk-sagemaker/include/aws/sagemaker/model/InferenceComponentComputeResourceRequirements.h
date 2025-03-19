@@ -31,7 +31,7 @@ namespace Model
   class InferenceComponentComputeResourceRequirements
   {
   public:
-    AWS_SAGEMAKER_API InferenceComponentComputeResourceRequirements();
+    AWS_SAGEMAKER_API InferenceComponentComputeResourceRequirements() = default;
     AWS_SAGEMAKER_API InferenceComponentComputeResourceRequirements(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API InferenceComponentComputeResourceRequirements& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
      * <p>The number of CPU cores to allocate to run a model that you assign to an
      * inference component.</p>
      */
-    inline double GetNumberOfCpuCoresRequired() const{ return m_numberOfCpuCoresRequired; }
+    inline double GetNumberOfCpuCoresRequired() const { return m_numberOfCpuCoresRequired; }
     inline bool NumberOfCpuCoresRequiredHasBeenSet() const { return m_numberOfCpuCoresRequiredHasBeenSet; }
     inline void SetNumberOfCpuCoresRequired(double value) { m_numberOfCpuCoresRequiredHasBeenSet = true; m_numberOfCpuCoresRequired = value; }
     inline InferenceComponentComputeResourceRequirements& WithNumberOfCpuCoresRequired(double value) { SetNumberOfCpuCoresRequired(value); return *this;}
@@ -54,7 +54,7 @@ namespace Model
      * inference component. Accelerators include GPUs and Amazon Web Services
      * Inferentia.</p>
      */
-    inline double GetNumberOfAcceleratorDevicesRequired() const{ return m_numberOfAcceleratorDevicesRequired; }
+    inline double GetNumberOfAcceleratorDevicesRequired() const { return m_numberOfAcceleratorDevicesRequired; }
     inline bool NumberOfAcceleratorDevicesRequiredHasBeenSet() const { return m_numberOfAcceleratorDevicesRequiredHasBeenSet; }
     inline void SetNumberOfAcceleratorDevicesRequired(double value) { m_numberOfAcceleratorDevicesRequiredHasBeenSet = true; m_numberOfAcceleratorDevicesRequired = value; }
     inline InferenceComponentComputeResourceRequirements& WithNumberOfAcceleratorDevicesRequired(double value) { SetNumberOfAcceleratorDevicesRequired(value); return *this;}
@@ -65,7 +65,7 @@ namespace Model
      * <p>The minimum MB of memory to allocate to run a model that you assign to an
      * inference component.</p>
      */
-    inline int GetMinMemoryRequiredInMb() const{ return m_minMemoryRequiredInMb; }
+    inline int GetMinMemoryRequiredInMb() const { return m_minMemoryRequiredInMb; }
     inline bool MinMemoryRequiredInMbHasBeenSet() const { return m_minMemoryRequiredInMbHasBeenSet; }
     inline void SetMinMemoryRequiredInMb(int value) { m_minMemoryRequiredInMbHasBeenSet = true; m_minMemoryRequiredInMb = value; }
     inline InferenceComponentComputeResourceRequirements& WithMinMemoryRequiredInMb(int value) { SetMinMemoryRequiredInMb(value); return *this;}
@@ -76,23 +76,23 @@ namespace Model
      * <p>The maximum MB of memory to allocate to run a model that you assign to an
      * inference component.</p>
      */
-    inline int GetMaxMemoryRequiredInMb() const{ return m_maxMemoryRequiredInMb; }
+    inline int GetMaxMemoryRequiredInMb() const { return m_maxMemoryRequiredInMb; }
     inline bool MaxMemoryRequiredInMbHasBeenSet() const { return m_maxMemoryRequiredInMbHasBeenSet; }
     inline void SetMaxMemoryRequiredInMb(int value) { m_maxMemoryRequiredInMbHasBeenSet = true; m_maxMemoryRequiredInMb = value; }
     inline InferenceComponentComputeResourceRequirements& WithMaxMemoryRequiredInMb(int value) { SetMaxMemoryRequiredInMb(value); return *this;}
     ///@}
   private:
 
-    double m_numberOfCpuCoresRequired;
+    double m_numberOfCpuCoresRequired{0.0};
     bool m_numberOfCpuCoresRequiredHasBeenSet = false;
 
-    double m_numberOfAcceleratorDevicesRequired;
+    double m_numberOfAcceleratorDevicesRequired{0.0};
     bool m_numberOfAcceleratorDevicesRequiredHasBeenSet = false;
 
-    int m_minMemoryRequiredInMb;
+    int m_minMemoryRequiredInMb{0};
     bool m_minMemoryRequiredInMbHasBeenSet = false;
 
-    int m_maxMemoryRequiredInMb;
+    int m_maxMemoryRequiredInMb{0};
     bool m_maxMemoryRequiredInMbHasBeenSet = false;
   };
 

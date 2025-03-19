@@ -18,14 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-RuleConfiguration::RuleConfiguration() : 
-    m_contentBlockerRuleHasBeenSet(false),
-    m_contentRetrievalRuleHasBeenSet(false)
-{
-}
-
 RuleConfiguration::RuleConfiguration(JsonView jsonValue)
-  : RuleConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RuleConfiguration& RuleConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("contentBlockerRule"))
   {
     m_contentBlockerRule = jsonValue.GetObject("contentBlockerRule");
-
     m_contentBlockerRuleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("contentRetrievalRule"))
   {
     m_contentRetrievalRule = jsonValue.GetObject("contentRetrievalRule");
-
     m_contentRetrievalRuleHasBeenSet = true;
   }
-
   return *this;
 }
 

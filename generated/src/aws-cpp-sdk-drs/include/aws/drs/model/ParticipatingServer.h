@@ -34,7 +34,7 @@ namespace Model
   class ParticipatingServer
   {
   public:
-    AWS_DRS_API ParticipatingServer();
+    AWS_DRS_API ParticipatingServer() = default;
     AWS_DRS_API ParticipatingServer(Aws::Utils::Json::JsonView jsonValue);
     AWS_DRS_API ParticipatingServer& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,59 +44,53 @@ namespace Model
     /**
      * <p>The post-launch action runs of a participating server.</p>
      */
-    inline const LaunchActionsStatus& GetLaunchActionsStatus() const{ return m_launchActionsStatus; }
+    inline const LaunchActionsStatus& GetLaunchActionsStatus() const { return m_launchActionsStatus; }
     inline bool LaunchActionsStatusHasBeenSet() const { return m_launchActionsStatusHasBeenSet; }
-    inline void SetLaunchActionsStatus(const LaunchActionsStatus& value) { m_launchActionsStatusHasBeenSet = true; m_launchActionsStatus = value; }
-    inline void SetLaunchActionsStatus(LaunchActionsStatus&& value) { m_launchActionsStatusHasBeenSet = true; m_launchActionsStatus = std::move(value); }
-    inline ParticipatingServer& WithLaunchActionsStatus(const LaunchActionsStatus& value) { SetLaunchActionsStatus(value); return *this;}
-    inline ParticipatingServer& WithLaunchActionsStatus(LaunchActionsStatus&& value) { SetLaunchActionsStatus(std::move(value)); return *this;}
+    template<typename LaunchActionsStatusT = LaunchActionsStatus>
+    void SetLaunchActionsStatus(LaunchActionsStatusT&& value) { m_launchActionsStatusHasBeenSet = true; m_launchActionsStatus = std::forward<LaunchActionsStatusT>(value); }
+    template<typename LaunchActionsStatusT = LaunchActionsStatus>
+    ParticipatingServer& WithLaunchActionsStatus(LaunchActionsStatusT&& value) { SetLaunchActionsStatus(std::forward<LaunchActionsStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The launch status of a participating server.</p>
      */
-    inline const LaunchStatus& GetLaunchStatus() const{ return m_launchStatus; }
+    inline LaunchStatus GetLaunchStatus() const { return m_launchStatus; }
     inline bool LaunchStatusHasBeenSet() const { return m_launchStatusHasBeenSet; }
-    inline void SetLaunchStatus(const LaunchStatus& value) { m_launchStatusHasBeenSet = true; m_launchStatus = value; }
-    inline void SetLaunchStatus(LaunchStatus&& value) { m_launchStatusHasBeenSet = true; m_launchStatus = std::move(value); }
-    inline ParticipatingServer& WithLaunchStatus(const LaunchStatus& value) { SetLaunchStatus(value); return *this;}
-    inline ParticipatingServer& WithLaunchStatus(LaunchStatus&& value) { SetLaunchStatus(std::move(value)); return *this;}
+    inline void SetLaunchStatus(LaunchStatus value) { m_launchStatusHasBeenSet = true; m_launchStatus = value; }
+    inline ParticipatingServer& WithLaunchStatus(LaunchStatus value) { SetLaunchStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Recovery Instance ID of a participating server.</p>
      */
-    inline const Aws::String& GetRecoveryInstanceID() const{ return m_recoveryInstanceID; }
+    inline const Aws::String& GetRecoveryInstanceID() const { return m_recoveryInstanceID; }
     inline bool RecoveryInstanceIDHasBeenSet() const { return m_recoveryInstanceIDHasBeenSet; }
-    inline void SetRecoveryInstanceID(const Aws::String& value) { m_recoveryInstanceIDHasBeenSet = true; m_recoveryInstanceID = value; }
-    inline void SetRecoveryInstanceID(Aws::String&& value) { m_recoveryInstanceIDHasBeenSet = true; m_recoveryInstanceID = std::move(value); }
-    inline void SetRecoveryInstanceID(const char* value) { m_recoveryInstanceIDHasBeenSet = true; m_recoveryInstanceID.assign(value); }
-    inline ParticipatingServer& WithRecoveryInstanceID(const Aws::String& value) { SetRecoveryInstanceID(value); return *this;}
-    inline ParticipatingServer& WithRecoveryInstanceID(Aws::String&& value) { SetRecoveryInstanceID(std::move(value)); return *this;}
-    inline ParticipatingServer& WithRecoveryInstanceID(const char* value) { SetRecoveryInstanceID(value); return *this;}
+    template<typename RecoveryInstanceIDT = Aws::String>
+    void SetRecoveryInstanceID(RecoveryInstanceIDT&& value) { m_recoveryInstanceIDHasBeenSet = true; m_recoveryInstanceID = std::forward<RecoveryInstanceIDT>(value); }
+    template<typename RecoveryInstanceIDT = Aws::String>
+    ParticipatingServer& WithRecoveryInstanceID(RecoveryInstanceIDT&& value) { SetRecoveryInstanceID(std::forward<RecoveryInstanceIDT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Source Server ID of a participating server.</p>
      */
-    inline const Aws::String& GetSourceServerID() const{ return m_sourceServerID; }
+    inline const Aws::String& GetSourceServerID() const { return m_sourceServerID; }
     inline bool SourceServerIDHasBeenSet() const { return m_sourceServerIDHasBeenSet; }
-    inline void SetSourceServerID(const Aws::String& value) { m_sourceServerIDHasBeenSet = true; m_sourceServerID = value; }
-    inline void SetSourceServerID(Aws::String&& value) { m_sourceServerIDHasBeenSet = true; m_sourceServerID = std::move(value); }
-    inline void SetSourceServerID(const char* value) { m_sourceServerIDHasBeenSet = true; m_sourceServerID.assign(value); }
-    inline ParticipatingServer& WithSourceServerID(const Aws::String& value) { SetSourceServerID(value); return *this;}
-    inline ParticipatingServer& WithSourceServerID(Aws::String&& value) { SetSourceServerID(std::move(value)); return *this;}
-    inline ParticipatingServer& WithSourceServerID(const char* value) { SetSourceServerID(value); return *this;}
+    template<typename SourceServerIDT = Aws::String>
+    void SetSourceServerID(SourceServerIDT&& value) { m_sourceServerIDHasBeenSet = true; m_sourceServerID = std::forward<SourceServerIDT>(value); }
+    template<typename SourceServerIDT = Aws::String>
+    ParticipatingServer& WithSourceServerID(SourceServerIDT&& value) { SetSourceServerID(std::forward<SourceServerIDT>(value)); return *this;}
     ///@}
   private:
 
     LaunchActionsStatus m_launchActionsStatus;
     bool m_launchActionsStatusHasBeenSet = false;
 
-    LaunchStatus m_launchStatus;
+    LaunchStatus m_launchStatus{LaunchStatus::NOT_SET};
     bool m_launchStatusHasBeenSet = false;
 
     Aws::String m_recoveryInstanceID;

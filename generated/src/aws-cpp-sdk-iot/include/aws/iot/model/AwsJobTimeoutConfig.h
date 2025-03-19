@@ -33,7 +33,7 @@ namespace Model
   class AwsJobTimeoutConfig
   {
   public:
-    AWS_IOT_API AwsJobTimeoutConfig();
+    AWS_IOT_API AwsJobTimeoutConfig() = default;
     AWS_IOT_API AwsJobTimeoutConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API AwsJobTimeoutConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,14 @@ namespace Model
      * status for longer than this interval, the job execution will fail and switch to
      * the terminal <code>TIMED_OUT</code> status.</p>
      */
-    inline long long GetInProgressTimeoutInMinutes() const{ return m_inProgressTimeoutInMinutes; }
+    inline long long GetInProgressTimeoutInMinutes() const { return m_inProgressTimeoutInMinutes; }
     inline bool InProgressTimeoutInMinutesHasBeenSet() const { return m_inProgressTimeoutInMinutesHasBeenSet; }
     inline void SetInProgressTimeoutInMinutes(long long value) { m_inProgressTimeoutInMinutesHasBeenSet = true; m_inProgressTimeoutInMinutes = value; }
     inline AwsJobTimeoutConfig& WithInProgressTimeoutInMinutes(long long value) { SetInProgressTimeoutInMinutes(value); return *this;}
     ///@}
   private:
 
-    long long m_inProgressTimeoutInMinutes;
+    long long m_inProgressTimeoutInMinutes{0};
     bool m_inProgressTimeoutInMinutesHasBeenSet = false;
   };
 

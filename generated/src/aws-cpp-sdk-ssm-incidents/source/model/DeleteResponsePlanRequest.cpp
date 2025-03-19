@@ -12,11 +12,6 @@ using namespace Aws::SSMIncidents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteResponsePlanRequest::DeleteResponsePlanRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteResponsePlanRequest::SerializePayload() const
 {
   JsonValue payload;

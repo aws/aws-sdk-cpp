@@ -12,13 +12,6 @@ using namespace Aws::KendraRanking::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RescoreRequest::RescoreRequest() : 
-    m_rescoreExecutionPlanIdHasBeenSet(false),
-    m_searchQueryHasBeenSet(false),
-    m_documentsHasBeenSet(false)
-{
-}
-
 Aws::String RescoreRequest::SerializePayload() const
 {
   JsonValue payload;

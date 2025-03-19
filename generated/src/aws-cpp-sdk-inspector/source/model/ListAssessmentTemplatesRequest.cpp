@@ -12,15 +12,6 @@ using namespace Aws::Inspector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListAssessmentTemplatesRequest::ListAssessmentTemplatesRequest() : 
-    m_assessmentTargetArnsHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListAssessmentTemplatesRequest::SerializePayload() const
 {
   JsonValue payload;

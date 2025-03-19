@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeregisterTransitGatewayResult::DeregisterTransitGatewayResult()
-{
-}
-
 DeregisterTransitGatewayResult::DeregisterTransitGatewayResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DeregisterTransitGatewayResult& DeregisterTransitGatewayResult::operator =(const
   if(jsonValue.ValueExists("TransitGatewayRegistration"))
   {
     m_transitGatewayRegistration = jsonValue.GetObject("TransitGatewayRegistration");
-
+    m_transitGatewayRegistrationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

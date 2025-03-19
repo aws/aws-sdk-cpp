@@ -12,12 +12,6 @@ using namespace Aws::mgn::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteJobRequest::DeleteJobRequest() : 
-    m_accountIDHasBeenSet(false),
-    m_jobIDHasBeenSet(false)
-{
-}
-
 Aws::String DeleteJobRequest::SerializePayload() const
 {
   JsonValue payload;

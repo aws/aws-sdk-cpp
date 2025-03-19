@@ -18,15 +18,7 @@ namespace SageMakerFeatureStoreRuntime
 namespace Model
 {
 
-BatchGetRecordIdentifier::BatchGetRecordIdentifier() : 
-    m_featureGroupNameHasBeenSet(false),
-    m_recordIdentifiersValueAsStringHasBeenSet(false),
-    m_featureNamesHasBeenSet(false)
-{
-}
-
 BatchGetRecordIdentifier::BatchGetRecordIdentifier(JsonView jsonValue)
-  : BatchGetRecordIdentifier()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ BatchGetRecordIdentifier& BatchGetRecordIdentifier::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("FeatureGroupName"))
   {
     m_featureGroupName = jsonValue.GetString("FeatureGroupName");
-
     m_featureGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecordIdentifiersValueAsString"))
   {
     Aws::Utils::Array<JsonView> recordIdentifiersValueAsStringJsonList = jsonValue.GetArray("RecordIdentifiersValueAsString");
@@ -49,7 +39,6 @@ BatchGetRecordIdentifier& BatchGetRecordIdentifier::operator =(JsonView jsonValu
     }
     m_recordIdentifiersValueAsStringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FeatureNames"))
   {
     Aws::Utils::Array<JsonView> featureNamesJsonList = jsonValue.GetArray("FeatureNames");
@@ -59,7 +48,6 @@ BatchGetRecordIdentifier& BatchGetRecordIdentifier::operator =(JsonView jsonValu
     }
     m_featureNamesHasBeenSet = true;
   }
-
   return *this;
 }
 

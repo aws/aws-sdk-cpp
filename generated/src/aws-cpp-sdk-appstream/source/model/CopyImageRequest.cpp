@@ -12,14 +12,6 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CopyImageRequest::CopyImageRequest() : 
-    m_sourceImageNameHasBeenSet(false),
-    m_destinationImageNameHasBeenSet(false),
-    m_destinationRegionHasBeenSet(false),
-    m_destinationImageDescriptionHasBeenSet(false)
-{
-}
-
 Aws::String CopyImageRequest::SerializePayload() const
 {
   JsonValue payload;

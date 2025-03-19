@@ -36,7 +36,7 @@ namespace Model
   class HiveJsonSerDe
   {
   public:
-    AWS_FIREHOSE_API HiveJsonSerDe();
+    AWS_FIREHOSE_API HiveJsonSerDe() = default;
     AWS_FIREHOSE_API HiveJsonSerDe(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API HiveJsonSerDe& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,15 +53,14 @@ namespace Model
      * parse timestamps in epoch milliseconds. If you don't specify a format, Firehose
      * uses <code>java.sql.Timestamp::valueOf</code> by default.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTimestampFormats() const{ return m_timestampFormats; }
+    inline const Aws::Vector<Aws::String>& GetTimestampFormats() const { return m_timestampFormats; }
     inline bool TimestampFormatsHasBeenSet() const { return m_timestampFormatsHasBeenSet; }
-    inline void SetTimestampFormats(const Aws::Vector<Aws::String>& value) { m_timestampFormatsHasBeenSet = true; m_timestampFormats = value; }
-    inline void SetTimestampFormats(Aws::Vector<Aws::String>&& value) { m_timestampFormatsHasBeenSet = true; m_timestampFormats = std::move(value); }
-    inline HiveJsonSerDe& WithTimestampFormats(const Aws::Vector<Aws::String>& value) { SetTimestampFormats(value); return *this;}
-    inline HiveJsonSerDe& WithTimestampFormats(Aws::Vector<Aws::String>&& value) { SetTimestampFormats(std::move(value)); return *this;}
-    inline HiveJsonSerDe& AddTimestampFormats(const Aws::String& value) { m_timestampFormatsHasBeenSet = true; m_timestampFormats.push_back(value); return *this; }
-    inline HiveJsonSerDe& AddTimestampFormats(Aws::String&& value) { m_timestampFormatsHasBeenSet = true; m_timestampFormats.push_back(std::move(value)); return *this; }
-    inline HiveJsonSerDe& AddTimestampFormats(const char* value) { m_timestampFormatsHasBeenSet = true; m_timestampFormats.push_back(value); return *this; }
+    template<typename TimestampFormatsT = Aws::Vector<Aws::String>>
+    void SetTimestampFormats(TimestampFormatsT&& value) { m_timestampFormatsHasBeenSet = true; m_timestampFormats = std::forward<TimestampFormatsT>(value); }
+    template<typename TimestampFormatsT = Aws::Vector<Aws::String>>
+    HiveJsonSerDe& WithTimestampFormats(TimestampFormatsT&& value) { SetTimestampFormats(std::forward<TimestampFormatsT>(value)); return *this;}
+    template<typename TimestampFormatsT = Aws::String>
+    HiveJsonSerDe& AddTimestampFormats(TimestampFormatsT&& value) { m_timestampFormatsHasBeenSet = true; m_timestampFormats.emplace_back(std::forward<TimestampFormatsT>(value)); return *this; }
     ///@}
   private:
 

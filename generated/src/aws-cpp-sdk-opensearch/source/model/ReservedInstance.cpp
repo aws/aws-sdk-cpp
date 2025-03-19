@@ -18,33 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-ReservedInstance::ReservedInstance() : 
-    m_reservationNameHasBeenSet(false),
-    m_reservedInstanceIdHasBeenSet(false),
-    m_billingSubscriptionId(0),
-    m_billingSubscriptionIdHasBeenSet(false),
-    m_reservedInstanceOfferingIdHasBeenSet(false),
-    m_instanceType(OpenSearchPartitionInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_fixedPrice(0.0),
-    m_fixedPriceHasBeenSet(false),
-    m_usagePrice(0.0),
-    m_usagePriceHasBeenSet(false),
-    m_currencyCodeHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_paymentOption(ReservedInstancePaymentOption::NOT_SET),
-    m_paymentOptionHasBeenSet(false),
-    m_recurringChargesHasBeenSet(false)
-{
-}
-
 ReservedInstance::ReservedInstance(JsonView jsonValue)
-  : ReservedInstance()
 {
   *this = jsonValue;
 }
@@ -54,94 +28,68 @@ ReservedInstance& ReservedInstance::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ReservationName"))
   {
     m_reservationName = jsonValue.GetString("ReservationName");
-
     m_reservationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReservedInstanceId"))
   {
     m_reservedInstanceId = jsonValue.GetString("ReservedInstanceId");
-
     m_reservedInstanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BillingSubscriptionId"))
   {
     m_billingSubscriptionId = jsonValue.GetInt64("BillingSubscriptionId");
-
     m_billingSubscriptionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReservedInstanceOfferingId"))
   {
     m_reservedInstanceOfferingId = jsonValue.GetString("ReservedInstanceOfferingId");
-
     m_reservedInstanceOfferingIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceType"))
   {
     m_instanceType = OpenSearchPartitionInstanceTypeMapper::GetOpenSearchPartitionInstanceTypeForName(jsonValue.GetString("InstanceType"));
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Duration"))
   {
     m_duration = jsonValue.GetInteger("Duration");
-
     m_durationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FixedPrice"))
   {
     m_fixedPrice = jsonValue.GetDouble("FixedPrice");
-
     m_fixedPriceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UsagePrice"))
   {
     m_usagePrice = jsonValue.GetDouble("UsagePrice");
-
     m_usagePriceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrencyCode"))
   {
     m_currencyCode = jsonValue.GetString("CurrencyCode");
-
     m_currencyCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceCount"))
   {
     m_instanceCount = jsonValue.GetInteger("InstanceCount");
-
     m_instanceCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = jsonValue.GetString("State");
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PaymentOption"))
   {
     m_paymentOption = ReservedInstancePaymentOptionMapper::GetReservedInstancePaymentOptionForName(jsonValue.GetString("PaymentOption"));
-
     m_paymentOptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecurringCharges"))
   {
     Aws::Utils::Array<JsonView> recurringChargesJsonList = jsonValue.GetArray("RecurringCharges");
@@ -151,7 +99,6 @@ ReservedInstance& ReservedInstance::operator =(JsonView jsonValue)
     }
     m_recurringChargesHasBeenSet = true;
   }
-
   return *this;
 }
 

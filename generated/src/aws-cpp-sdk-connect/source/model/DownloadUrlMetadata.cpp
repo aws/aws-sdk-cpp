@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-DownloadUrlMetadata::DownloadUrlMetadata() : 
-    m_urlHasBeenSet(false),
-    m_urlExpiryHasBeenSet(false)
-{
-}
-
 DownloadUrlMetadata::DownloadUrlMetadata(JsonView jsonValue)
-  : DownloadUrlMetadata()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DownloadUrlMetadata& DownloadUrlMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Url"))
   {
     m_url = jsonValue.GetString("Url");
-
     m_urlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UrlExpiry"))
   {
     m_urlExpiry = jsonValue.GetString("UrlExpiry");
-
     m_urlExpiryHasBeenSet = true;
   }
-
   return *this;
 }
 

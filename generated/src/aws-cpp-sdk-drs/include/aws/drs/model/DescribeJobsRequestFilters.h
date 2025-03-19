@@ -32,7 +32,7 @@ namespace Model
   class DescribeJobsRequestFilters
   {
   public:
-    AWS_DRS_API DescribeJobsRequestFilters();
+    AWS_DRS_API DescribeJobsRequestFilters() = default;
     AWS_DRS_API DescribeJobsRequestFilters(Aws::Utils::Json::JsonView jsonValue);
     AWS_DRS_API DescribeJobsRequestFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The start date in a date range query.</p>
      */
-    inline const Aws::String& GetFromDate() const{ return m_fromDate; }
+    inline const Aws::String& GetFromDate() const { return m_fromDate; }
     inline bool FromDateHasBeenSet() const { return m_fromDateHasBeenSet; }
-    inline void SetFromDate(const Aws::String& value) { m_fromDateHasBeenSet = true; m_fromDate = value; }
-    inline void SetFromDate(Aws::String&& value) { m_fromDateHasBeenSet = true; m_fromDate = std::move(value); }
-    inline void SetFromDate(const char* value) { m_fromDateHasBeenSet = true; m_fromDate.assign(value); }
-    inline DescribeJobsRequestFilters& WithFromDate(const Aws::String& value) { SetFromDate(value); return *this;}
-    inline DescribeJobsRequestFilters& WithFromDate(Aws::String&& value) { SetFromDate(std::move(value)); return *this;}
-    inline DescribeJobsRequestFilters& WithFromDate(const char* value) { SetFromDate(value); return *this;}
+    template<typename FromDateT = Aws::String>
+    void SetFromDate(FromDateT&& value) { m_fromDateHasBeenSet = true; m_fromDate = std::forward<FromDateT>(value); }
+    template<typename FromDateT = Aws::String>
+    DescribeJobsRequestFilters& WithFromDate(FromDateT&& value) { SetFromDate(std::forward<FromDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,29 +55,26 @@ namespace Model
      * <p>An array of Job IDs that should be returned. An empty array means all
      * jobs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetJobIDs() const{ return m_jobIDs; }
+    inline const Aws::Vector<Aws::String>& GetJobIDs() const { return m_jobIDs; }
     inline bool JobIDsHasBeenSet() const { return m_jobIDsHasBeenSet; }
-    inline void SetJobIDs(const Aws::Vector<Aws::String>& value) { m_jobIDsHasBeenSet = true; m_jobIDs = value; }
-    inline void SetJobIDs(Aws::Vector<Aws::String>&& value) { m_jobIDsHasBeenSet = true; m_jobIDs = std::move(value); }
-    inline DescribeJobsRequestFilters& WithJobIDs(const Aws::Vector<Aws::String>& value) { SetJobIDs(value); return *this;}
-    inline DescribeJobsRequestFilters& WithJobIDs(Aws::Vector<Aws::String>&& value) { SetJobIDs(std::move(value)); return *this;}
-    inline DescribeJobsRequestFilters& AddJobIDs(const Aws::String& value) { m_jobIDsHasBeenSet = true; m_jobIDs.push_back(value); return *this; }
-    inline DescribeJobsRequestFilters& AddJobIDs(Aws::String&& value) { m_jobIDsHasBeenSet = true; m_jobIDs.push_back(std::move(value)); return *this; }
-    inline DescribeJobsRequestFilters& AddJobIDs(const char* value) { m_jobIDsHasBeenSet = true; m_jobIDs.push_back(value); return *this; }
+    template<typename JobIDsT = Aws::Vector<Aws::String>>
+    void SetJobIDs(JobIDsT&& value) { m_jobIDsHasBeenSet = true; m_jobIDs = std::forward<JobIDsT>(value); }
+    template<typename JobIDsT = Aws::Vector<Aws::String>>
+    DescribeJobsRequestFilters& WithJobIDs(JobIDsT&& value) { SetJobIDs(std::forward<JobIDsT>(value)); return *this;}
+    template<typename JobIDsT = Aws::String>
+    DescribeJobsRequestFilters& AddJobIDs(JobIDsT&& value) { m_jobIDsHasBeenSet = true; m_jobIDs.emplace_back(std::forward<JobIDsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The end date in a date range query.</p>
      */
-    inline const Aws::String& GetToDate() const{ return m_toDate; }
+    inline const Aws::String& GetToDate() const { return m_toDate; }
     inline bool ToDateHasBeenSet() const { return m_toDateHasBeenSet; }
-    inline void SetToDate(const Aws::String& value) { m_toDateHasBeenSet = true; m_toDate = value; }
-    inline void SetToDate(Aws::String&& value) { m_toDateHasBeenSet = true; m_toDate = std::move(value); }
-    inline void SetToDate(const char* value) { m_toDateHasBeenSet = true; m_toDate.assign(value); }
-    inline DescribeJobsRequestFilters& WithToDate(const Aws::String& value) { SetToDate(value); return *this;}
-    inline DescribeJobsRequestFilters& WithToDate(Aws::String&& value) { SetToDate(std::move(value)); return *this;}
-    inline DescribeJobsRequestFilters& WithToDate(const char* value) { SetToDate(value); return *this;}
+    template<typename ToDateT = Aws::String>
+    void SetToDate(ToDateT&& value) { m_toDateHasBeenSet = true; m_toDate = std::forward<ToDateT>(value); }
+    template<typename ToDateT = Aws::String>
+    DescribeJobsRequestFilters& WithToDate(ToDateT&& value) { SetToDate(std::forward<ToDateT>(value)); return *this;}
     ///@}
   private:
 

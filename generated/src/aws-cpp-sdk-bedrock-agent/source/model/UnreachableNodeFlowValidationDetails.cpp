@@ -18,13 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-UnreachableNodeFlowValidationDetails::UnreachableNodeFlowValidationDetails() : 
-    m_nodeHasBeenSet(false)
-{
-}
-
 UnreachableNodeFlowValidationDetails::UnreachableNodeFlowValidationDetails(JsonView jsonValue)
-  : UnreachableNodeFlowValidationDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ UnreachableNodeFlowValidationDetails& UnreachableNodeFlowValidationDetails::oper
   if(jsonValue.ValueExists("node"))
   {
     m_node = jsonValue.GetString("node");
-
     m_nodeHasBeenSet = true;
   }
-
   return *this;
 }
 

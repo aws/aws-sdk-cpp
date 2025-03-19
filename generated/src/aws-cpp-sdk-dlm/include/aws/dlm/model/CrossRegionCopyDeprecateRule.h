@@ -32,7 +32,7 @@ namespace Model
   class CrossRegionCopyDeprecateRule
   {
   public:
-    AWS_DLM_API CrossRegionCopyDeprecateRule();
+    AWS_DLM_API CrossRegionCopyDeprecateRule() = default;
     AWS_DLM_API CrossRegionCopyDeprecateRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_DLM_API CrossRegionCopyDeprecateRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DLM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
      * can't be greater than 10 years. This is equivalent to 120 months, 520 weeks, or
      * 3650 days.</p>
      */
-    inline int GetInterval() const{ return m_interval; }
+    inline int GetInterval() const { return m_interval; }
     inline bool IntervalHasBeenSet() const { return m_intervalHasBeenSet; }
     inline void SetInterval(int value) { m_intervalHasBeenSet = true; m_interval = value; }
     inline CrossRegionCopyDeprecateRule& WithInterval(int value) { SetInterval(value); return *this;}
@@ -57,19 +57,17 @@ namespace Model
      * deprecate a cross-Region AMI copy after 3 months, specify
      * <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>.</p>
      */
-    inline const RetentionIntervalUnitValues& GetIntervalUnit() const{ return m_intervalUnit; }
+    inline RetentionIntervalUnitValues GetIntervalUnit() const { return m_intervalUnit; }
     inline bool IntervalUnitHasBeenSet() const { return m_intervalUnitHasBeenSet; }
-    inline void SetIntervalUnit(const RetentionIntervalUnitValues& value) { m_intervalUnitHasBeenSet = true; m_intervalUnit = value; }
-    inline void SetIntervalUnit(RetentionIntervalUnitValues&& value) { m_intervalUnitHasBeenSet = true; m_intervalUnit = std::move(value); }
-    inline CrossRegionCopyDeprecateRule& WithIntervalUnit(const RetentionIntervalUnitValues& value) { SetIntervalUnit(value); return *this;}
-    inline CrossRegionCopyDeprecateRule& WithIntervalUnit(RetentionIntervalUnitValues&& value) { SetIntervalUnit(std::move(value)); return *this;}
+    inline void SetIntervalUnit(RetentionIntervalUnitValues value) { m_intervalUnitHasBeenSet = true; m_intervalUnit = value; }
+    inline CrossRegionCopyDeprecateRule& WithIntervalUnit(RetentionIntervalUnitValues value) { SetIntervalUnit(value); return *this;}
     ///@}
   private:
 
-    int m_interval;
+    int m_interval{0};
     bool m_intervalHasBeenSet = false;
 
-    RetentionIntervalUnitValues m_intervalUnit;
+    RetentionIntervalUnitValues m_intervalUnit{RetentionIntervalUnitValues::NOT_SET};
     bool m_intervalUnitHasBeenSet = false;
   };
 

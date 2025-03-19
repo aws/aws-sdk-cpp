@@ -12,15 +12,6 @@ using namespace Aws::Personalize::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateRecommenderRequest::CreateRecommenderRequest() : 
-    m_nameHasBeenSet(false),
-    m_datasetGroupArnHasBeenSet(false),
-    m_recipeArnHasBeenSet(false),
-    m_recommenderConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateRecommenderRequest::SerializePayload() const
 {
   JsonValue payload;

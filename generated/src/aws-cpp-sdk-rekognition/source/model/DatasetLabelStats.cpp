@@ -18,16 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-DatasetLabelStats::DatasetLabelStats() : 
-    m_entryCount(0),
-    m_entryCountHasBeenSet(false),
-    m_boundingBoxCount(0),
-    m_boundingBoxCountHasBeenSet(false)
-{
-}
-
 DatasetLabelStats::DatasetLabelStats(JsonView jsonValue)
-  : DatasetLabelStats()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ DatasetLabelStats& DatasetLabelStats::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EntryCount"))
   {
     m_entryCount = jsonValue.GetInteger("EntryCount");
-
     m_entryCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BoundingBoxCount"))
   {
     m_boundingBoxCount = jsonValue.GetInteger("BoundingBoxCount");
-
     m_boundingBoxCountHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CopyProjectVersionResult::CopyProjectVersionResult()
-{
-}
-
 CopyProjectVersionResult::CopyProjectVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CopyProjectVersionResult& CopyProjectVersionResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("ProjectVersionArn"))
   {
     m_projectVersionArn = jsonValue.GetString("ProjectVersionArn");
-
+    m_projectVersionArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

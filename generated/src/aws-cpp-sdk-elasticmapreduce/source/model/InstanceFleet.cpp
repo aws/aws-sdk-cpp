@@ -18,29 +18,7 @@ namespace EMR
 namespace Model
 {
 
-InstanceFleet::InstanceFleet() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_instanceFleetType(InstanceFleetType::NOT_SET),
-    m_instanceFleetTypeHasBeenSet(false),
-    m_targetOnDemandCapacity(0),
-    m_targetOnDemandCapacityHasBeenSet(false),
-    m_targetSpotCapacity(0),
-    m_targetSpotCapacityHasBeenSet(false),
-    m_provisionedOnDemandCapacity(0),
-    m_provisionedOnDemandCapacityHasBeenSet(false),
-    m_provisionedSpotCapacity(0),
-    m_provisionedSpotCapacityHasBeenSet(false),
-    m_instanceTypeSpecificationsHasBeenSet(false),
-    m_launchSpecificationsHasBeenSet(false),
-    m_resizeSpecificationsHasBeenSet(false),
-    m_contextHasBeenSet(false)
-{
-}
-
 InstanceFleet::InstanceFleet(JsonView jsonValue)
-  : InstanceFleet()
 {
   *this = jsonValue;
 }
@@ -50,59 +28,43 @@ InstanceFleet& InstanceFleet::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetObject("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceFleetType"))
   {
     m_instanceFleetType = InstanceFleetTypeMapper::GetInstanceFleetTypeForName(jsonValue.GetString("InstanceFleetType"));
-
     m_instanceFleetTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetOnDemandCapacity"))
   {
     m_targetOnDemandCapacity = jsonValue.GetInteger("TargetOnDemandCapacity");
-
     m_targetOnDemandCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetSpotCapacity"))
   {
     m_targetSpotCapacity = jsonValue.GetInteger("TargetSpotCapacity");
-
     m_targetSpotCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisionedOnDemandCapacity"))
   {
     m_provisionedOnDemandCapacity = jsonValue.GetInteger("ProvisionedOnDemandCapacity");
-
     m_provisionedOnDemandCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisionedSpotCapacity"))
   {
     m_provisionedSpotCapacity = jsonValue.GetInteger("ProvisionedSpotCapacity");
-
     m_provisionedSpotCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceTypeSpecifications"))
   {
     Aws::Utils::Array<JsonView> instanceTypeSpecificationsJsonList = jsonValue.GetArray("InstanceTypeSpecifications");
@@ -112,28 +74,21 @@ InstanceFleet& InstanceFleet::operator =(JsonView jsonValue)
     }
     m_instanceTypeSpecificationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LaunchSpecifications"))
   {
     m_launchSpecifications = jsonValue.GetObject("LaunchSpecifications");
-
     m_launchSpecificationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResizeSpecifications"))
   {
     m_resizeSpecifications = jsonValue.GetObject("ResizeSpecifications");
-
     m_resizeSpecificationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Context"))
   {
     m_context = jsonValue.GetString("Context");
-
     m_contextHasBeenSet = true;
   }
-
   return *this;
 }
 

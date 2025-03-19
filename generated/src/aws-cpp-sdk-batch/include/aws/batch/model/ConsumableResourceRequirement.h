@@ -32,7 +32,7 @@ namespace Model
   class ConsumableResourceRequirement
   {
   public:
-    AWS_BATCH_API ConsumableResourceRequirement();
+    AWS_BATCH_API ConsumableResourceRequirement() = default;
     AWS_BATCH_API ConsumableResourceRequirement(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API ConsumableResourceRequirement& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,21 +42,19 @@ namespace Model
     /**
      * <p>The name or ARN of the consumable resource.</p>
      */
-    inline const Aws::String& GetConsumableResource() const{ return m_consumableResource; }
+    inline const Aws::String& GetConsumableResource() const { return m_consumableResource; }
     inline bool ConsumableResourceHasBeenSet() const { return m_consumableResourceHasBeenSet; }
-    inline void SetConsumableResource(const Aws::String& value) { m_consumableResourceHasBeenSet = true; m_consumableResource = value; }
-    inline void SetConsumableResource(Aws::String&& value) { m_consumableResourceHasBeenSet = true; m_consumableResource = std::move(value); }
-    inline void SetConsumableResource(const char* value) { m_consumableResourceHasBeenSet = true; m_consumableResource.assign(value); }
-    inline ConsumableResourceRequirement& WithConsumableResource(const Aws::String& value) { SetConsumableResource(value); return *this;}
-    inline ConsumableResourceRequirement& WithConsumableResource(Aws::String&& value) { SetConsumableResource(std::move(value)); return *this;}
-    inline ConsumableResourceRequirement& WithConsumableResource(const char* value) { SetConsumableResource(value); return *this;}
+    template<typename ConsumableResourceT = Aws::String>
+    void SetConsumableResource(ConsumableResourceT&& value) { m_consumableResourceHasBeenSet = true; m_consumableResource = std::forward<ConsumableResourceT>(value); }
+    template<typename ConsumableResourceT = Aws::String>
+    ConsumableResourceRequirement& WithConsumableResource(ConsumableResourceT&& value) { SetConsumableResource(std::forward<ConsumableResourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The quantity of the consumable resource that is needed.</p>
      */
-    inline long long GetQuantity() const{ return m_quantity; }
+    inline long long GetQuantity() const { return m_quantity; }
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
     inline void SetQuantity(long long value) { m_quantityHasBeenSet = true; m_quantity = value; }
     inline ConsumableResourceRequirement& WithQuantity(long long value) { SetQuantity(value); return *this;}
@@ -66,7 +64,7 @@ namespace Model
     Aws::String m_consumableResource;
     bool m_consumableResourceHasBeenSet = false;
 
-    long long m_quantity;
+    long long m_quantity{0};
     bool m_quantityHasBeenSet = false;
   };
 

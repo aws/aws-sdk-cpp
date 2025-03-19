@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetQuantumTaskRequest::GetQuantumTaskRequest() : 
-    m_additionalAttributeNamesHasBeenSet(false),
-    m_quantumTaskArnHasBeenSet(false)
-{
-}
-
 Aws::String GetQuantumTaskRequest::SerializePayload() const
 {
   return {};

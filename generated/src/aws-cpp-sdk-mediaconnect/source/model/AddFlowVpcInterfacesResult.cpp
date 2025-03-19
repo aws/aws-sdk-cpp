@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AddFlowVpcInterfacesResult::AddFlowVpcInterfacesResult()
-{
-}
-
 AddFlowVpcInterfacesResult::AddFlowVpcInterfacesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ AddFlowVpcInterfacesResult& AddFlowVpcInterfacesResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("flowArn"))
   {
     m_flowArn = jsonValue.GetString("flowArn");
-
+    m_flowArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcInterfaces"))
   {
     Aws::Utils::Array<JsonView> vpcInterfacesJsonList = jsonValue.GetArray("vpcInterfaces");
@@ -42,14 +37,15 @@ AddFlowVpcInterfacesResult& AddFlowVpcInterfacesResult::operator =(const Aws::Am
     {
       m_vpcInterfaces.push_back(vpcInterfacesJsonList[vpcInterfacesIndex].AsObject());
     }
+    m_vpcInterfacesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

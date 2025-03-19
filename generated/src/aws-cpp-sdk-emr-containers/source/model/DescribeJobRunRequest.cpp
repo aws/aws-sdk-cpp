@@ -12,12 +12,6 @@ using namespace Aws::EMRContainers::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeJobRunRequest::DescribeJobRunRequest() : 
-    m_idHasBeenSet(false),
-    m_virtualClusterIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeJobRunRequest::SerializePayload() const
 {
   return {};

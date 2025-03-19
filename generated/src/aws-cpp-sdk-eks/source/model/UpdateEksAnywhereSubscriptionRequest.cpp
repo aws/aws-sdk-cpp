@@ -12,15 +12,6 @@ using namespace Aws::EKS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateEksAnywhereSubscriptionRequest::UpdateEksAnywhereSubscriptionRequest() : 
-    m_idHasBeenSet(false),
-    m_autoRenew(false),
-    m_autoRenewHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
-{
-}
-
 Aws::String UpdateEksAnywhereSubscriptionRequest::SerializePayload() const
 {
   JsonValue payload;

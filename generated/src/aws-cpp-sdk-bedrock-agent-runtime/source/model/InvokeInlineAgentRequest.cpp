@@ -12,33 +12,6 @@ using namespace Aws::BedrockAgentRuntime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-InvokeInlineAgentRequest::InvokeInlineAgentRequest() : 
-    m_actionGroupsHasBeenSet(false),
-    m_agentCollaboration(AgentCollaboration::NOT_SET),
-    m_agentCollaborationHasBeenSet(false),
-    m_bedrockModelConfigurationsHasBeenSet(false),
-    m_collaboratorConfigurationsHasBeenSet(false),
-    m_collaboratorsHasBeenSet(false),
-    m_customerEncryptionKeyArnHasBeenSet(false),
-    m_enableTrace(false),
-    m_enableTraceHasBeenSet(false),
-    m_endSession(false),
-    m_endSessionHasBeenSet(false),
-    m_foundationModelHasBeenSet(false),
-    m_guardrailConfigurationHasBeenSet(false),
-    m_idleSessionTTLInSeconds(0),
-    m_idleSessionTTLInSecondsHasBeenSet(false),
-    m_inlineSessionStateHasBeenSet(false),
-    m_inputTextHasBeenSet(false),
-    m_instructionHasBeenSet(false),
-    m_knowledgeBasesHasBeenSet(false),
-    m_promptOverrideConfigurationHasBeenSet(false),
-    m_sessionIdHasBeenSet(false),
-    m_streamingConfigurationsHasBeenSet(false),
-    m_handler(), m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
-{
-}
-
 Aws::String InvokeInlineAgentRequest::SerializePayload() const
 {
   JsonValue payload;

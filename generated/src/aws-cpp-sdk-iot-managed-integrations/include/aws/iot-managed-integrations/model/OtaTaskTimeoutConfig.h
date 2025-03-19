@@ -29,7 +29,7 @@ namespace Model
   class OtaTaskTimeoutConfig
   {
   public:
-    AWS_IOTMANAGEDINTEGRATIONS_API OtaTaskTimeoutConfig();
+    AWS_IOTMANAGEDINTEGRATIONS_API OtaTaskTimeoutConfig() = default;
     AWS_IOTMANAGEDINTEGRATIONS_API OtaTaskTimeoutConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTMANAGEDINTEGRATIONS_API OtaTaskTimeoutConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTMANAGEDINTEGRATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
      * <p>Specifies the amount of time the device has to finish execution of this task.
      * The timeout interval can be anywhere between 1 minute and 7 days.</p>
      */
-    inline long long GetInProgressTimeoutInMinutes() const{ return m_inProgressTimeoutInMinutes; }
+    inline long long GetInProgressTimeoutInMinutes() const { return m_inProgressTimeoutInMinutes; }
     inline bool InProgressTimeoutInMinutesHasBeenSet() const { return m_inProgressTimeoutInMinutesHasBeenSet; }
     inline void SetInProgressTimeoutInMinutes(long long value) { m_inProgressTimeoutInMinutesHasBeenSet = true; m_inProgressTimeoutInMinutes = value; }
     inline OtaTaskTimeoutConfig& WithInProgressTimeoutInMinutes(long long value) { SetInProgressTimeoutInMinutes(value); return *this;}
     ///@}
   private:
 
-    long long m_inProgressTimeoutInMinutes;
+    long long m_inProgressTimeoutInMinutes{0};
     bool m_inProgressTimeoutInMinutesHasBeenSet = false;
   };
 

@@ -32,7 +32,7 @@ namespace Model
   class RedshiftCredentialConfiguration
   {
   public:
-    AWS_DATAZONE_API RedshiftCredentialConfiguration();
+    AWS_DATAZONE_API RedshiftCredentialConfiguration() = default;
     AWS_DATAZONE_API RedshiftCredentialConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API RedshiftCredentialConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The ARN of a secret manager for an Amazon Redshift cluster.</p>
      */
-    inline const Aws::String& GetSecretManagerArn() const{ return m_secretManagerArn; }
+    inline const Aws::String& GetSecretManagerArn() const { return m_secretManagerArn; }
     inline bool SecretManagerArnHasBeenSet() const { return m_secretManagerArnHasBeenSet; }
-    inline void SetSecretManagerArn(const Aws::String& value) { m_secretManagerArnHasBeenSet = true; m_secretManagerArn = value; }
-    inline void SetSecretManagerArn(Aws::String&& value) { m_secretManagerArnHasBeenSet = true; m_secretManagerArn = std::move(value); }
-    inline void SetSecretManagerArn(const char* value) { m_secretManagerArnHasBeenSet = true; m_secretManagerArn.assign(value); }
-    inline RedshiftCredentialConfiguration& WithSecretManagerArn(const Aws::String& value) { SetSecretManagerArn(value); return *this;}
-    inline RedshiftCredentialConfiguration& WithSecretManagerArn(Aws::String&& value) { SetSecretManagerArn(std::move(value)); return *this;}
-    inline RedshiftCredentialConfiguration& WithSecretManagerArn(const char* value) { SetSecretManagerArn(value); return *this;}
+    template<typename SecretManagerArnT = Aws::String>
+    void SetSecretManagerArn(SecretManagerArnT&& value) { m_secretManagerArnHasBeenSet = true; m_secretManagerArn = std::forward<SecretManagerArnT>(value); }
+    template<typename SecretManagerArnT = Aws::String>
+    RedshiftCredentialConfiguration& WithSecretManagerArn(SecretManagerArnT&& value) { SetSecretManagerArn(std::forward<SecretManagerArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,12 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteHoursOfOperationRequest::DeleteHoursOfOperationRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_hoursOfOperationIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteHoursOfOperationRequest::SerializePayload() const
 {
   return {};

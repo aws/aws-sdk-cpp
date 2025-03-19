@@ -35,7 +35,7 @@ namespace Model
   class DescribeApplicationsResult
   {
   public:
-    AWS_ELASTICBEANSTALK_API DescribeApplicationsResult();
+    AWS_ELASTICBEANSTALK_API DescribeApplicationsResult() = default;
     AWS_ELASTICBEANSTALK_API DescribeApplicationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ELASTICBEANSTALK_API DescribeApplicationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -44,28 +44,30 @@ namespace Model
     /**
      * <p>This parameter contains a list of <a>ApplicationDescription</a>.</p>
      */
-    inline const Aws::Vector<ApplicationDescription>& GetApplications() const{ return m_applications; }
-    inline void SetApplications(const Aws::Vector<ApplicationDescription>& value) { m_applications = value; }
-    inline void SetApplications(Aws::Vector<ApplicationDescription>&& value) { m_applications = std::move(value); }
-    inline DescribeApplicationsResult& WithApplications(const Aws::Vector<ApplicationDescription>& value) { SetApplications(value); return *this;}
-    inline DescribeApplicationsResult& WithApplications(Aws::Vector<ApplicationDescription>&& value) { SetApplications(std::move(value)); return *this;}
-    inline DescribeApplicationsResult& AddApplications(const ApplicationDescription& value) { m_applications.push_back(value); return *this; }
-    inline DescribeApplicationsResult& AddApplications(ApplicationDescription&& value) { m_applications.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ApplicationDescription>& GetApplications() const { return m_applications; }
+    template<typename ApplicationsT = Aws::Vector<ApplicationDescription>>
+    void SetApplications(ApplicationsT&& value) { m_applicationsHasBeenSet = true; m_applications = std::forward<ApplicationsT>(value); }
+    template<typename ApplicationsT = Aws::Vector<ApplicationDescription>>
+    DescribeApplicationsResult& WithApplications(ApplicationsT&& value) { SetApplications(std::forward<ApplicationsT>(value)); return *this;}
+    template<typename ApplicationsT = ApplicationDescription>
+    DescribeApplicationsResult& AddApplications(ApplicationsT&& value) { m_applicationsHasBeenSet = true; m_applications.emplace_back(std::forward<ApplicationsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeApplicationsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeApplicationsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeApplicationsResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ApplicationDescription> m_applications;
+    bool m_applicationsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

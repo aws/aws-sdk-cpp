@@ -12,19 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListUserProfilesRequest::ListUserProfilesRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false),
-    m_sortBy(UserProfileSortKey::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_domainIdEqualsHasBeenSet(false),
-    m_userProfileNameContainsHasBeenSet(false)
-{
-}
-
 Aws::String ListUserProfilesRequest::SerializePayload() const
 {
   JsonValue payload;

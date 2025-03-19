@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-FormatConfiguration::FormatConfiguration() : 
-    m_stringFormatConfigurationHasBeenSet(false),
-    m_numberFormatConfigurationHasBeenSet(false),
-    m_dateTimeFormatConfigurationHasBeenSet(false)
-{
-}
-
 FormatConfiguration::FormatConfiguration(JsonView jsonValue)
-  : FormatConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ FormatConfiguration& FormatConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StringFormatConfiguration"))
   {
     m_stringFormatConfiguration = jsonValue.GetObject("StringFormatConfiguration");
-
     m_stringFormatConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberFormatConfiguration"))
   {
     m_numberFormatConfiguration = jsonValue.GetObject("NumberFormatConfiguration");
-
     m_numberFormatConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DateTimeFormatConfiguration"))
   {
     m_dateTimeFormatConfiguration = jsonValue.GetObject("DateTimeFormatConfiguration");
-
     m_dateTimeFormatConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

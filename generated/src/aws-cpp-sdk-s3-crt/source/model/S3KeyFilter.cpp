@@ -20,13 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-S3KeyFilter::S3KeyFilter() : 
-    m_filterRulesHasBeenSet(false)
-{
-}
-
 S3KeyFilter::S3KeyFilter(const XmlNode& xmlNode)
-  : S3KeyFilter()
 {
   *this = xmlNode;
 }
@@ -41,6 +35,7 @@ S3KeyFilter& S3KeyFilter::operator =(const XmlNode& xmlNode)
     if(!filterRulesNode.IsNull())
     {
       XmlNode filterRuleMember = filterRulesNode;
+      m_filterRulesHasBeenSet = !filterRuleMember.IsNull();
       while(!filterRuleMember.IsNull())
       {
         m_filterRules.push_back(filterRuleMember);

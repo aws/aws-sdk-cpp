@@ -33,7 +33,7 @@ namespace Model
   class SlotDefaultValueSpecification
   {
   public:
-    AWS_LEXMODELSV2_API SlotDefaultValueSpecification();
+    AWS_LEXMODELSV2_API SlotDefaultValueSpecification() = default;
     AWS_LEXMODELSV2_API SlotDefaultValueSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API SlotDefaultValueSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
      * <p>A list of default values. Amazon Lex chooses the default value to use in the
      * order that they are presented in the list.</p>
      */
-    inline const Aws::Vector<SlotDefaultValue>& GetDefaultValueList() const{ return m_defaultValueList; }
+    inline const Aws::Vector<SlotDefaultValue>& GetDefaultValueList() const { return m_defaultValueList; }
     inline bool DefaultValueListHasBeenSet() const { return m_defaultValueListHasBeenSet; }
-    inline void SetDefaultValueList(const Aws::Vector<SlotDefaultValue>& value) { m_defaultValueListHasBeenSet = true; m_defaultValueList = value; }
-    inline void SetDefaultValueList(Aws::Vector<SlotDefaultValue>&& value) { m_defaultValueListHasBeenSet = true; m_defaultValueList = std::move(value); }
-    inline SlotDefaultValueSpecification& WithDefaultValueList(const Aws::Vector<SlotDefaultValue>& value) { SetDefaultValueList(value); return *this;}
-    inline SlotDefaultValueSpecification& WithDefaultValueList(Aws::Vector<SlotDefaultValue>&& value) { SetDefaultValueList(std::move(value)); return *this;}
-    inline SlotDefaultValueSpecification& AddDefaultValueList(const SlotDefaultValue& value) { m_defaultValueListHasBeenSet = true; m_defaultValueList.push_back(value); return *this; }
-    inline SlotDefaultValueSpecification& AddDefaultValueList(SlotDefaultValue&& value) { m_defaultValueListHasBeenSet = true; m_defaultValueList.push_back(std::move(value)); return *this; }
+    template<typename DefaultValueListT = Aws::Vector<SlotDefaultValue>>
+    void SetDefaultValueList(DefaultValueListT&& value) { m_defaultValueListHasBeenSet = true; m_defaultValueList = std::forward<DefaultValueListT>(value); }
+    template<typename DefaultValueListT = Aws::Vector<SlotDefaultValue>>
+    SlotDefaultValueSpecification& WithDefaultValueList(DefaultValueListT&& value) { SetDefaultValueList(std::forward<DefaultValueListT>(value)); return *this;}
+    template<typename DefaultValueListT = SlotDefaultValue>
+    SlotDefaultValueSpecification& AddDefaultValueList(DefaultValueListT&& value) { m_defaultValueListHasBeenSet = true; m_defaultValueList.emplace_back(std::forward<DefaultValueListT>(value)); return *this; }
     ///@}
   private:
 

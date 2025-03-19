@@ -28,7 +28,7 @@ namespace Model
   class CreateReplicationConfigRequest : public DatabaseMigrationServiceRequest
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API CreateReplicationConfigRequest();
+    AWS_DATABASEMIGRATIONSERVICE_API CreateReplicationConfigRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -52,14 +52,12 @@ namespace Model
      * this unique identifier or a corresponding ARN in action filters to identify the
      * specific replication and replication configuration to operate on.</p>
      */
-    inline const Aws::String& GetReplicationConfigIdentifier() const{ return m_replicationConfigIdentifier; }
+    inline const Aws::String& GetReplicationConfigIdentifier() const { return m_replicationConfigIdentifier; }
     inline bool ReplicationConfigIdentifierHasBeenSet() const { return m_replicationConfigIdentifierHasBeenSet; }
-    inline void SetReplicationConfigIdentifier(const Aws::String& value) { m_replicationConfigIdentifierHasBeenSet = true; m_replicationConfigIdentifier = value; }
-    inline void SetReplicationConfigIdentifier(Aws::String&& value) { m_replicationConfigIdentifierHasBeenSet = true; m_replicationConfigIdentifier = std::move(value); }
-    inline void SetReplicationConfigIdentifier(const char* value) { m_replicationConfigIdentifierHasBeenSet = true; m_replicationConfigIdentifier.assign(value); }
-    inline CreateReplicationConfigRequest& WithReplicationConfigIdentifier(const Aws::String& value) { SetReplicationConfigIdentifier(value); return *this;}
-    inline CreateReplicationConfigRequest& WithReplicationConfigIdentifier(Aws::String&& value) { SetReplicationConfigIdentifier(std::move(value)); return *this;}
-    inline CreateReplicationConfigRequest& WithReplicationConfigIdentifier(const char* value) { SetReplicationConfigIdentifier(value); return *this;}
+    template<typename ReplicationConfigIdentifierT = Aws::String>
+    void SetReplicationConfigIdentifier(ReplicationConfigIdentifierT&& value) { m_replicationConfigIdentifierHasBeenSet = true; m_replicationConfigIdentifier = std::forward<ReplicationConfigIdentifierT>(value); }
+    template<typename ReplicationConfigIdentifierT = Aws::String>
+    CreateReplicationConfigRequest& WithReplicationConfigIdentifier(ReplicationConfigIdentifierT&& value) { SetReplicationConfigIdentifier(std::forward<ReplicationConfigIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,14 +65,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the source endpoint for this DMS Serverless
      * replication configuration.</p>
      */
-    inline const Aws::String& GetSourceEndpointArn() const{ return m_sourceEndpointArn; }
+    inline const Aws::String& GetSourceEndpointArn() const { return m_sourceEndpointArn; }
     inline bool SourceEndpointArnHasBeenSet() const { return m_sourceEndpointArnHasBeenSet; }
-    inline void SetSourceEndpointArn(const Aws::String& value) { m_sourceEndpointArnHasBeenSet = true; m_sourceEndpointArn = value; }
-    inline void SetSourceEndpointArn(Aws::String&& value) { m_sourceEndpointArnHasBeenSet = true; m_sourceEndpointArn = std::move(value); }
-    inline void SetSourceEndpointArn(const char* value) { m_sourceEndpointArnHasBeenSet = true; m_sourceEndpointArn.assign(value); }
-    inline CreateReplicationConfigRequest& WithSourceEndpointArn(const Aws::String& value) { SetSourceEndpointArn(value); return *this;}
-    inline CreateReplicationConfigRequest& WithSourceEndpointArn(Aws::String&& value) { SetSourceEndpointArn(std::move(value)); return *this;}
-    inline CreateReplicationConfigRequest& WithSourceEndpointArn(const char* value) { SetSourceEndpointArn(value); return *this;}
+    template<typename SourceEndpointArnT = Aws::String>
+    void SetSourceEndpointArn(SourceEndpointArnT&& value) { m_sourceEndpointArnHasBeenSet = true; m_sourceEndpointArn = std::forward<SourceEndpointArnT>(value); }
+    template<typename SourceEndpointArnT = Aws::String>
+    CreateReplicationConfigRequest& WithSourceEndpointArn(SourceEndpointArnT&& value) { SetSourceEndpointArn(std::forward<SourceEndpointArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,26 +78,24 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the target endpoint for this DMS serverless
      * replication configuration.</p>
      */
-    inline const Aws::String& GetTargetEndpointArn() const{ return m_targetEndpointArn; }
+    inline const Aws::String& GetTargetEndpointArn() const { return m_targetEndpointArn; }
     inline bool TargetEndpointArnHasBeenSet() const { return m_targetEndpointArnHasBeenSet; }
-    inline void SetTargetEndpointArn(const Aws::String& value) { m_targetEndpointArnHasBeenSet = true; m_targetEndpointArn = value; }
-    inline void SetTargetEndpointArn(Aws::String&& value) { m_targetEndpointArnHasBeenSet = true; m_targetEndpointArn = std::move(value); }
-    inline void SetTargetEndpointArn(const char* value) { m_targetEndpointArnHasBeenSet = true; m_targetEndpointArn.assign(value); }
-    inline CreateReplicationConfigRequest& WithTargetEndpointArn(const Aws::String& value) { SetTargetEndpointArn(value); return *this;}
-    inline CreateReplicationConfigRequest& WithTargetEndpointArn(Aws::String&& value) { SetTargetEndpointArn(std::move(value)); return *this;}
-    inline CreateReplicationConfigRequest& WithTargetEndpointArn(const char* value) { SetTargetEndpointArn(value); return *this;}
+    template<typename TargetEndpointArnT = Aws::String>
+    void SetTargetEndpointArn(TargetEndpointArnT&& value) { m_targetEndpointArnHasBeenSet = true; m_targetEndpointArn = std::forward<TargetEndpointArnT>(value); }
+    template<typename TargetEndpointArnT = Aws::String>
+    CreateReplicationConfigRequest& WithTargetEndpointArn(TargetEndpointArnT&& value) { SetTargetEndpointArn(std::forward<TargetEndpointArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Configuration parameters for provisioning an DMS Serverless replication.</p>
      */
-    inline const ComputeConfig& GetComputeConfig() const{ return m_computeConfig; }
+    inline const ComputeConfig& GetComputeConfig() const { return m_computeConfig; }
     inline bool ComputeConfigHasBeenSet() const { return m_computeConfigHasBeenSet; }
-    inline void SetComputeConfig(const ComputeConfig& value) { m_computeConfigHasBeenSet = true; m_computeConfig = value; }
-    inline void SetComputeConfig(ComputeConfig&& value) { m_computeConfigHasBeenSet = true; m_computeConfig = std::move(value); }
-    inline CreateReplicationConfigRequest& WithComputeConfig(const ComputeConfig& value) { SetComputeConfig(value); return *this;}
-    inline CreateReplicationConfigRequest& WithComputeConfig(ComputeConfig&& value) { SetComputeConfig(std::move(value)); return *this;}
+    template<typename ComputeConfigT = ComputeConfig>
+    void SetComputeConfig(ComputeConfigT&& value) { m_computeConfigHasBeenSet = true; m_computeConfig = std::forward<ComputeConfigT>(value); }
+    template<typename ComputeConfigT = ComputeConfig>
+    CreateReplicationConfigRequest& WithComputeConfig(ComputeConfigT&& value) { SetComputeConfig(std::forward<ComputeConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,12 +105,10 @@ namespace Model
      * <code>"full-load"</code> </p> </li> <li> <p> <code>"cdc"</code> </p> </li> <li>
      * <p> <code>"full-load-and-cdc"</code> </p> </li> </ul>
      */
-    inline const MigrationTypeValue& GetReplicationType() const{ return m_replicationType; }
+    inline MigrationTypeValue GetReplicationType() const { return m_replicationType; }
     inline bool ReplicationTypeHasBeenSet() const { return m_replicationTypeHasBeenSet; }
-    inline void SetReplicationType(const MigrationTypeValue& value) { m_replicationTypeHasBeenSet = true; m_replicationType = value; }
-    inline void SetReplicationType(MigrationTypeValue&& value) { m_replicationTypeHasBeenSet = true; m_replicationType = std::move(value); }
-    inline CreateReplicationConfigRequest& WithReplicationType(const MigrationTypeValue& value) { SetReplicationType(value); return *this;}
-    inline CreateReplicationConfigRequest& WithReplicationType(MigrationTypeValue&& value) { SetReplicationType(std::move(value)); return *this;}
+    inline void SetReplicationType(MigrationTypeValue value) { m_replicationTypeHasBeenSet = true; m_replicationType = value; }
+    inline CreateReplicationConfigRequest& WithReplicationType(MigrationTypeValue value) { SetReplicationType(value); return *this;}
     ///@}
 
     ///@{
@@ -126,14 +118,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.SelectionTransformation.html">
      * Specifying table selection and transformations rules using JSON</a>.</p>
      */
-    inline const Aws::String& GetTableMappings() const{ return m_tableMappings; }
+    inline const Aws::String& GetTableMappings() const { return m_tableMappings; }
     inline bool TableMappingsHasBeenSet() const { return m_tableMappingsHasBeenSet; }
-    inline void SetTableMappings(const Aws::String& value) { m_tableMappingsHasBeenSet = true; m_tableMappings = value; }
-    inline void SetTableMappings(Aws::String&& value) { m_tableMappingsHasBeenSet = true; m_tableMappings = std::move(value); }
-    inline void SetTableMappings(const char* value) { m_tableMappingsHasBeenSet = true; m_tableMappings.assign(value); }
-    inline CreateReplicationConfigRequest& WithTableMappings(const Aws::String& value) { SetTableMappings(value); return *this;}
-    inline CreateReplicationConfigRequest& WithTableMappings(Aws::String&& value) { SetTableMappings(std::move(value)); return *this;}
-    inline CreateReplicationConfigRequest& WithTableMappings(const char* value) { SetTableMappings(value); return *this;}
+    template<typename TableMappingsT = Aws::String>
+    void SetTableMappings(TableMappingsT&& value) { m_tableMappingsHasBeenSet = true; m_tableMappings = std::forward<TableMappingsT>(value); }
+    template<typename TableMappingsT = Aws::String>
+    CreateReplicationConfigRequest& WithTableMappings(TableMappingsT&& value) { SetTableMappings(std::forward<TableMappingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -143,14 +133,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.ChangeProcessingTuning.html">
      * Change processing tuning settings</a>.</p>
      */
-    inline const Aws::String& GetReplicationSettings() const{ return m_replicationSettings; }
+    inline const Aws::String& GetReplicationSettings() const { return m_replicationSettings; }
     inline bool ReplicationSettingsHasBeenSet() const { return m_replicationSettingsHasBeenSet; }
-    inline void SetReplicationSettings(const Aws::String& value) { m_replicationSettingsHasBeenSet = true; m_replicationSettings = value; }
-    inline void SetReplicationSettings(Aws::String&& value) { m_replicationSettingsHasBeenSet = true; m_replicationSettings = std::move(value); }
-    inline void SetReplicationSettings(const char* value) { m_replicationSettingsHasBeenSet = true; m_replicationSettings.assign(value); }
-    inline CreateReplicationConfigRequest& WithReplicationSettings(const Aws::String& value) { SetReplicationSettings(value); return *this;}
-    inline CreateReplicationConfigRequest& WithReplicationSettings(Aws::String&& value) { SetReplicationSettings(std::move(value)); return *this;}
-    inline CreateReplicationConfigRequest& WithReplicationSettings(const char* value) { SetReplicationSettings(value); return *this;}
+    template<typename ReplicationSettingsT = Aws::String>
+    void SetReplicationSettings(ReplicationSettingsT&& value) { m_replicationSettingsHasBeenSet = true; m_replicationSettings = std::forward<ReplicationSettingsT>(value); }
+    template<typename ReplicationSettingsT = Aws::String>
+    CreateReplicationConfigRequest& WithReplicationSettings(ReplicationSettingsT&& value) { SetReplicationSettings(std::forward<ReplicationSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -160,14 +148,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">
      * Specifying supplemental data for task settings</a>.</p>
      */
-    inline const Aws::String& GetSupplementalSettings() const{ return m_supplementalSettings; }
+    inline const Aws::String& GetSupplementalSettings() const { return m_supplementalSettings; }
     inline bool SupplementalSettingsHasBeenSet() const { return m_supplementalSettingsHasBeenSet; }
-    inline void SetSupplementalSettings(const Aws::String& value) { m_supplementalSettingsHasBeenSet = true; m_supplementalSettings = value; }
-    inline void SetSupplementalSettings(Aws::String&& value) { m_supplementalSettingsHasBeenSet = true; m_supplementalSettings = std::move(value); }
-    inline void SetSupplementalSettings(const char* value) { m_supplementalSettingsHasBeenSet = true; m_supplementalSettings.assign(value); }
-    inline CreateReplicationConfigRequest& WithSupplementalSettings(const Aws::String& value) { SetSupplementalSettings(value); return *this;}
-    inline CreateReplicationConfigRequest& WithSupplementalSettings(Aws::String&& value) { SetSupplementalSettings(std::move(value)); return *this;}
-    inline CreateReplicationConfigRequest& WithSupplementalSettings(const char* value) { SetSupplementalSettings(value); return *this;}
+    template<typename SupplementalSettingsT = Aws::String>
+    void SetSupplementalSettings(SupplementalSettingsT&& value) { m_supplementalSettingsHasBeenSet = true; m_supplementalSettings = std::forward<SupplementalSettingsT>(value); }
+    template<typename SupplementalSettingsT = Aws::String>
+    CreateReplicationConfigRequest& WithSupplementalSettings(SupplementalSettingsT&& value) { SetSupplementalSettings(std::forward<SupplementalSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -178,14 +164,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#CHAP_Security.FineGrainedAccess">
      * Fine-grained access control using resource names and tags</a>.</p>
      */
-    inline const Aws::String& GetResourceIdentifier() const{ return m_resourceIdentifier; }
+    inline const Aws::String& GetResourceIdentifier() const { return m_resourceIdentifier; }
     inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }
-    inline void SetResourceIdentifier(const Aws::String& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = value; }
-    inline void SetResourceIdentifier(Aws::String&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::move(value); }
-    inline void SetResourceIdentifier(const char* value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier.assign(value); }
-    inline CreateReplicationConfigRequest& WithResourceIdentifier(const Aws::String& value) { SetResourceIdentifier(value); return *this;}
-    inline CreateReplicationConfigRequest& WithResourceIdentifier(Aws::String&& value) { SetResourceIdentifier(std::move(value)); return *this;}
-    inline CreateReplicationConfigRequest& WithResourceIdentifier(const char* value) { SetResourceIdentifier(value); return *this;}
+    template<typename ResourceIdentifierT = Aws::String>
+    void SetResourceIdentifier(ResourceIdentifierT&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::forward<ResourceIdentifierT>(value); }
+    template<typename ResourceIdentifierT = Aws::String>
+    CreateReplicationConfigRequest& WithResourceIdentifier(ResourceIdentifierT&& value) { SetResourceIdentifier(std::forward<ResourceIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -195,14 +179,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tagging.html">
      * Tagging resources in Database Migration Service</a>.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateReplicationConfigRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateReplicationConfigRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateReplicationConfigRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateReplicationConfigRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateReplicationConfigRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateReplicationConfigRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
@@ -218,7 +202,7 @@ namespace Model
     ComputeConfig m_computeConfig;
     bool m_computeConfigHasBeenSet = false;
 
-    MigrationTypeValue m_replicationType;
+    MigrationTypeValue m_replicationType{MigrationTypeValue::NOT_SET};
     bool m_replicationTypeHasBeenSet = false;
 
     Aws::String m_tableMappings;

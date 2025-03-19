@@ -18,14 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-FailureException::FailureException() : 
-    m_exceptionNameHasBeenSet(false),
-    m_exceptionDescriptionHasBeenSet(false)
-{
-}
-
 FailureException::FailureException(JsonView jsonValue)
-  : FailureException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ FailureException& FailureException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ExceptionName"))
   {
     m_exceptionName = jsonValue.GetString("ExceptionName");
-
     m_exceptionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExceptionDescription"))
   {
     m_exceptionDescription = jsonValue.GetString("ExceptionDescription");
-
     m_exceptionDescriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

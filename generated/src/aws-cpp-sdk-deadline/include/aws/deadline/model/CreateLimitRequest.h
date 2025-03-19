@@ -22,7 +22,7 @@ namespace Model
   class CreateLimitRequest : public DeadlineRequest
   {
   public:
-    AWS_DEADLINE_API CreateLimitRequest();
+    AWS_DEADLINE_API CreateLimitRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <p>The unique token which the server uses to recognize retries of the same
      * request.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateLimitRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateLimitRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateLimitRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateLimitRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * content. Escape or encode this content before displaying it on a webpage or any
      * other system that might interpret the content of this field.</p> 
      */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline const Aws::String& GetDisplayName() const { return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-    inline CreateLimitRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline CreateLimitRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline CreateLimitRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    template<typename DisplayNameT = Aws::String>
+    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
+    template<typename DisplayNameT = Aws::String>
+    CreateLimitRequest& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +68,12 @@ namespace Model
      * <code>amounts</code> field of the <code>hostRequirements</code> in a step of a
      * job template to declare the limit requirement.</p>
      */
-    inline const Aws::String& GetAmountRequirementName() const{ return m_amountRequirementName; }
+    inline const Aws::String& GetAmountRequirementName() const { return m_amountRequirementName; }
     inline bool AmountRequirementNameHasBeenSet() const { return m_amountRequirementNameHasBeenSet; }
-    inline void SetAmountRequirementName(const Aws::String& value) { m_amountRequirementNameHasBeenSet = true; m_amountRequirementName = value; }
-    inline void SetAmountRequirementName(Aws::String&& value) { m_amountRequirementNameHasBeenSet = true; m_amountRequirementName = std::move(value); }
-    inline void SetAmountRequirementName(const char* value) { m_amountRequirementNameHasBeenSet = true; m_amountRequirementName.assign(value); }
-    inline CreateLimitRequest& WithAmountRequirementName(const Aws::String& value) { SetAmountRequirementName(value); return *this;}
-    inline CreateLimitRequest& WithAmountRequirementName(Aws::String&& value) { SetAmountRequirementName(std::move(value)); return *this;}
-    inline CreateLimitRequest& WithAmountRequirementName(const char* value) { SetAmountRequirementName(value); return *this;}
+    template<typename AmountRequirementNameT = Aws::String>
+    void SetAmountRequirementName(AmountRequirementNameT&& value) { m_amountRequirementNameHasBeenSet = true; m_amountRequirementName = std::forward<AmountRequirementNameT>(value); }
+    template<typename AmountRequirementNameT = Aws::String>
+    CreateLimitRequest& WithAmountRequirementName(AmountRequirementNameT&& value) { SetAmountRequirementName(std::forward<AmountRequirementNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,7 +84,7 @@ namespace Model
      * value is -1, there is no restriction on the number of resources that can be
      * acquired for this limit.</p>
      */
-    inline int GetMaxCount() const{ return m_maxCount; }
+    inline int GetMaxCount() const { return m_maxCount; }
     inline bool MaxCountHasBeenSet() const { return m_maxCountHasBeenSet; }
     inline void SetMaxCount(int value) { m_maxCountHasBeenSet = true; m_maxCount = value; }
     inline CreateLimitRequest& WithMaxCount(int value) { SetMaxCount(value); return *this;}
@@ -100,14 +94,12 @@ namespace Model
     /**
      * <p>The farm ID of the farm that contains the limit.</p>
      */
-    inline const Aws::String& GetFarmId() const{ return m_farmId; }
+    inline const Aws::String& GetFarmId() const { return m_farmId; }
     inline bool FarmIdHasBeenSet() const { return m_farmIdHasBeenSet; }
-    inline void SetFarmId(const Aws::String& value) { m_farmIdHasBeenSet = true; m_farmId = value; }
-    inline void SetFarmId(Aws::String&& value) { m_farmIdHasBeenSet = true; m_farmId = std::move(value); }
-    inline void SetFarmId(const char* value) { m_farmIdHasBeenSet = true; m_farmId.assign(value); }
-    inline CreateLimitRequest& WithFarmId(const Aws::String& value) { SetFarmId(value); return *this;}
-    inline CreateLimitRequest& WithFarmId(Aws::String&& value) { SetFarmId(std::move(value)); return *this;}
-    inline CreateLimitRequest& WithFarmId(const char* value) { SetFarmId(value); return *this;}
+    template<typename FarmIdT = Aws::String>
+    void SetFarmId(FarmIdT&& value) { m_farmIdHasBeenSet = true; m_farmId = std::forward<FarmIdT>(value); }
+    template<typename FarmIdT = Aws::String>
+    CreateLimitRequest& WithFarmId(FarmIdT&& value) { SetFarmId(std::forward<FarmIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -117,14 +109,12 @@ namespace Model
      * this content before displaying it on a webpage or any other system that might
      * interpret the content of this field.</p> 
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateLimitRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateLimitRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateLimitRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateLimitRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
   private:
 
@@ -137,7 +127,7 @@ namespace Model
     Aws::String m_amountRequirementName;
     bool m_amountRequirementNameHasBeenSet = false;
 
-    int m_maxCount;
+    int m_maxCount{0};
     bool m_maxCountHasBeenSet = false;
 
     Aws::String m_farmId;

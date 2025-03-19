@@ -18,17 +18,7 @@ namespace RedshiftServerless
 namespace Model
 {
 
-CreateSnapshotScheduleActionParameters::CreateSnapshotScheduleActionParameters() : 
-    m_namespaceNameHasBeenSet(false),
-    m_retentionPeriod(0),
-    m_retentionPeriodHasBeenSet(false),
-    m_snapshotNamePrefixHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 CreateSnapshotScheduleActionParameters::CreateSnapshotScheduleActionParameters(JsonView jsonValue)
-  : CreateSnapshotScheduleActionParameters()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ CreateSnapshotScheduleActionParameters& CreateSnapshotScheduleActionParameters::
   if(jsonValue.ValueExists("namespaceName"))
   {
     m_namespaceName = jsonValue.GetString("namespaceName");
-
     m_namespaceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("retentionPeriod"))
   {
     m_retentionPeriod = jsonValue.GetInteger("retentionPeriod");
-
     m_retentionPeriodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("snapshotNamePrefix"))
   {
     m_snapshotNamePrefix = jsonValue.GetString("snapshotNamePrefix");
-
     m_snapshotNamePrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -65,7 +49,6 @@ CreateSnapshotScheduleActionParameters& CreateSnapshotScheduleActionParameters::
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,22 +12,6 @@ using namespace Aws::imagebuilder::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateLifecyclePolicyRequest::CreateLifecyclePolicyRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(LifecyclePolicyStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_executionRoleHasBeenSet(false),
-    m_resourceType(LifecyclePolicyResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_policyDetailsHasBeenSet(false),
-    m_resourceSelectionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateLifecyclePolicyRequest::SerializePayload() const
 {
   JsonValue payload;

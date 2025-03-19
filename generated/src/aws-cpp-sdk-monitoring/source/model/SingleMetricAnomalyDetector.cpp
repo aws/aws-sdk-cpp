@@ -20,17 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-SingleMetricAnomalyDetector::SingleMetricAnomalyDetector() : 
-    m_accountIdHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_dimensionsHasBeenSet(false),
-    m_statHasBeenSet(false)
-{
-}
-
 SingleMetricAnomalyDetector::SingleMetricAnomalyDetector(const XmlNode& xmlNode)
-  : SingleMetricAnomalyDetector()
 {
   *this = xmlNode;
 }
@@ -63,6 +53,7 @@ SingleMetricAnomalyDetector& SingleMetricAnomalyDetector::operator =(const XmlNo
     if(!dimensionsNode.IsNull())
     {
       XmlNode dimensionsMember = dimensionsNode.FirstChild("member");
+      m_dimensionsHasBeenSet = !dimensionsMember.IsNull();
       while(!dimensionsMember.IsNull())
       {
         m_dimensions.push_back(dimensionsMember);

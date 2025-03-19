@@ -18,13 +18,7 @@ namespace MigrationHub
 namespace Model
 {
 
-ProgressUpdateStreamSummary::ProgressUpdateStreamSummary() : 
-    m_progressUpdateStreamNameHasBeenSet(false)
-{
-}
-
 ProgressUpdateStreamSummary::ProgressUpdateStreamSummary(JsonView jsonValue)
-  : ProgressUpdateStreamSummary()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ProgressUpdateStreamSummary& ProgressUpdateStreamSummary::operator =(JsonView js
   if(jsonValue.ValueExists("ProgressUpdateStreamName"))
   {
     m_progressUpdateStreamName = jsonValue.GetString("ProgressUpdateStreamName");
-
     m_progressUpdateStreamNameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -39,7 +39,7 @@ namespace Model
   class OntapVolumeConfiguration
   {
   public:
-    AWS_FSX_API OntapVolumeConfiguration();
+    AWS_FSX_API OntapVolumeConfiguration() = default;
     AWS_FSX_API OntapVolumeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API OntapVolumeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,12 +54,10 @@ namespace Model
      * FlexCache volume.</p> </li> <li> <p> <code>CACHE</code> specifies that the
      * volume is a FlexCache volume.</p> </li> </ul>
      */
-    inline const FlexCacheEndpointType& GetFlexCacheEndpointType() const{ return m_flexCacheEndpointType; }
+    inline FlexCacheEndpointType GetFlexCacheEndpointType() const { return m_flexCacheEndpointType; }
     inline bool FlexCacheEndpointTypeHasBeenSet() const { return m_flexCacheEndpointTypeHasBeenSet; }
-    inline void SetFlexCacheEndpointType(const FlexCacheEndpointType& value) { m_flexCacheEndpointTypeHasBeenSet = true; m_flexCacheEndpointType = value; }
-    inline void SetFlexCacheEndpointType(FlexCacheEndpointType&& value) { m_flexCacheEndpointTypeHasBeenSet = true; m_flexCacheEndpointType = std::move(value); }
-    inline OntapVolumeConfiguration& WithFlexCacheEndpointType(const FlexCacheEndpointType& value) { SetFlexCacheEndpointType(value); return *this;}
-    inline OntapVolumeConfiguration& WithFlexCacheEndpointType(FlexCacheEndpointType&& value) { SetFlexCacheEndpointType(std::move(value)); return *this;}
+    inline void SetFlexCacheEndpointType(FlexCacheEndpointType value) { m_flexCacheEndpointTypeHasBeenSet = true; m_flexCacheEndpointType = value; }
+    inline OntapVolumeConfiguration& WithFlexCacheEndpointType(FlexCacheEndpointType value) { SetFlexCacheEndpointType(value); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +70,12 @@ namespace Model
      * <code>/vol1/vol2/vol3</code>, or <code>/vol1/dir2/vol3</code>, or even
      * <code>/dir1/dir2/vol3</code>.</p>
      */
-    inline const Aws::String& GetJunctionPath() const{ return m_junctionPath; }
+    inline const Aws::String& GetJunctionPath() const { return m_junctionPath; }
     inline bool JunctionPathHasBeenSet() const { return m_junctionPathHasBeenSet; }
-    inline void SetJunctionPath(const Aws::String& value) { m_junctionPathHasBeenSet = true; m_junctionPath = value; }
-    inline void SetJunctionPath(Aws::String&& value) { m_junctionPathHasBeenSet = true; m_junctionPath = std::move(value); }
-    inline void SetJunctionPath(const char* value) { m_junctionPathHasBeenSet = true; m_junctionPath.assign(value); }
-    inline OntapVolumeConfiguration& WithJunctionPath(const Aws::String& value) { SetJunctionPath(value); return *this;}
-    inline OntapVolumeConfiguration& WithJunctionPath(Aws::String&& value) { SetJunctionPath(std::move(value)); return *this;}
-    inline OntapVolumeConfiguration& WithJunctionPath(const char* value) { SetJunctionPath(value); return *this;}
+    template<typename JunctionPathT = Aws::String>
+    void SetJunctionPath(JunctionPathT&& value) { m_junctionPathHasBeenSet = true; m_junctionPath = std::forward<JunctionPathT>(value); }
+    template<typename JunctionPathT = Aws::String>
+    OntapVolumeConfiguration& WithJunctionPath(JunctionPathT&& value) { SetJunctionPath(std::forward<JunctionPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,19 +83,17 @@ namespace Model
      * <p>The security style for the volume, which can be <code>UNIX</code>,
      * <code>NTFS</code>, or <code>MIXED</code>.</p>
      */
-    inline const SecurityStyle& GetSecurityStyle() const{ return m_securityStyle; }
+    inline SecurityStyle GetSecurityStyle() const { return m_securityStyle; }
     inline bool SecurityStyleHasBeenSet() const { return m_securityStyleHasBeenSet; }
-    inline void SetSecurityStyle(const SecurityStyle& value) { m_securityStyleHasBeenSet = true; m_securityStyle = value; }
-    inline void SetSecurityStyle(SecurityStyle&& value) { m_securityStyleHasBeenSet = true; m_securityStyle = std::move(value); }
-    inline OntapVolumeConfiguration& WithSecurityStyle(const SecurityStyle& value) { SetSecurityStyle(value); return *this;}
-    inline OntapVolumeConfiguration& WithSecurityStyle(SecurityStyle&& value) { SetSecurityStyle(std::move(value)); return *this;}
+    inline void SetSecurityStyle(SecurityStyle value) { m_securityStyleHasBeenSet = true; m_securityStyle = value; }
+    inline OntapVolumeConfiguration& WithSecurityStyle(SecurityStyle value) { SetSecurityStyle(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configured size of the volume, in megabytes (MBs).</p>
      */
-    inline int GetSizeInMegabytes() const{ return m_sizeInMegabytes; }
+    inline int GetSizeInMegabytes() const { return m_sizeInMegabytes; }
     inline bool SizeInMegabytesHasBeenSet() const { return m_sizeInMegabytesHasBeenSet; }
     inline void SetSizeInMegabytes(int value) { m_sizeInMegabytesHasBeenSet = true; m_sizeInMegabytes = value; }
     inline OntapVolumeConfiguration& WithSizeInMegabytes(int value) { SetSizeInMegabytes(value); return *this;}
@@ -109,7 +103,7 @@ namespace Model
     /**
      * <p>The volume's storage efficiency setting.</p>
      */
-    inline bool GetStorageEfficiencyEnabled() const{ return m_storageEfficiencyEnabled; }
+    inline bool GetStorageEfficiencyEnabled() const { return m_storageEfficiencyEnabled; }
     inline bool StorageEfficiencyEnabledHasBeenSet() const { return m_storageEfficiencyEnabledHasBeenSet; }
     inline void SetStorageEfficiencyEnabled(bool value) { m_storageEfficiencyEnabledHasBeenSet = true; m_storageEfficiencyEnabled = value; }
     inline OntapVolumeConfiguration& WithStorageEfficiencyEnabled(bool value) { SetStorageEfficiencyEnabled(value); return *this;}
@@ -119,14 +113,12 @@ namespace Model
     /**
      * <p>The ID of the volume's storage virtual machine.</p>
      */
-    inline const Aws::String& GetStorageVirtualMachineId() const{ return m_storageVirtualMachineId; }
+    inline const Aws::String& GetStorageVirtualMachineId() const { return m_storageVirtualMachineId; }
     inline bool StorageVirtualMachineIdHasBeenSet() const { return m_storageVirtualMachineIdHasBeenSet; }
-    inline void SetStorageVirtualMachineId(const Aws::String& value) { m_storageVirtualMachineIdHasBeenSet = true; m_storageVirtualMachineId = value; }
-    inline void SetStorageVirtualMachineId(Aws::String&& value) { m_storageVirtualMachineIdHasBeenSet = true; m_storageVirtualMachineId = std::move(value); }
-    inline void SetStorageVirtualMachineId(const char* value) { m_storageVirtualMachineIdHasBeenSet = true; m_storageVirtualMachineId.assign(value); }
-    inline OntapVolumeConfiguration& WithStorageVirtualMachineId(const Aws::String& value) { SetStorageVirtualMachineId(value); return *this;}
-    inline OntapVolumeConfiguration& WithStorageVirtualMachineId(Aws::String&& value) { SetStorageVirtualMachineId(std::move(value)); return *this;}
-    inline OntapVolumeConfiguration& WithStorageVirtualMachineId(const char* value) { SetStorageVirtualMachineId(value); return *this;}
+    template<typename StorageVirtualMachineIdT = Aws::String>
+    void SetStorageVirtualMachineId(StorageVirtualMachineIdT&& value) { m_storageVirtualMachineIdHasBeenSet = true; m_storageVirtualMachineId = std::forward<StorageVirtualMachineIdT>(value); }
+    template<typename StorageVirtualMachineIdT = Aws::String>
+    OntapVolumeConfiguration& WithStorageVirtualMachineId(StorageVirtualMachineIdT&& value) { SetStorageVirtualMachineId(std::forward<StorageVirtualMachineIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -139,7 +131,7 @@ namespace Model
      * when set to <code>false</code>, helps you identify which volumes to delete
      * before you can delete the SVM.</p>
      */
-    inline bool GetStorageVirtualMachineRoot() const{ return m_storageVirtualMachineRoot; }
+    inline bool GetStorageVirtualMachineRoot() const { return m_storageVirtualMachineRoot; }
     inline bool StorageVirtualMachineRootHasBeenSet() const { return m_storageVirtualMachineRootHasBeenSet; }
     inline void SetStorageVirtualMachineRoot(bool value) { m_storageVirtualMachineRootHasBeenSet = true; m_storageVirtualMachineRoot = value; }
     inline OntapVolumeConfiguration& WithStorageVirtualMachineRoot(bool value) { SetStorageVirtualMachineRoot(value); return *this;}
@@ -149,26 +141,24 @@ namespace Model
     /**
      * <p>The volume's <code>TieringPolicy</code> setting.</p>
      */
-    inline const TieringPolicy& GetTieringPolicy() const{ return m_tieringPolicy; }
+    inline const TieringPolicy& GetTieringPolicy() const { return m_tieringPolicy; }
     inline bool TieringPolicyHasBeenSet() const { return m_tieringPolicyHasBeenSet; }
-    inline void SetTieringPolicy(const TieringPolicy& value) { m_tieringPolicyHasBeenSet = true; m_tieringPolicy = value; }
-    inline void SetTieringPolicy(TieringPolicy&& value) { m_tieringPolicyHasBeenSet = true; m_tieringPolicy = std::move(value); }
-    inline OntapVolumeConfiguration& WithTieringPolicy(const TieringPolicy& value) { SetTieringPolicy(value); return *this;}
-    inline OntapVolumeConfiguration& WithTieringPolicy(TieringPolicy&& value) { SetTieringPolicy(std::move(value)); return *this;}
+    template<typename TieringPolicyT = TieringPolicy>
+    void SetTieringPolicy(TieringPolicyT&& value) { m_tieringPolicyHasBeenSet = true; m_tieringPolicy = std::forward<TieringPolicyT>(value); }
+    template<typename TieringPolicyT = TieringPolicy>
+    OntapVolumeConfiguration& WithTieringPolicy(TieringPolicyT&& value) { SetTieringPolicy(std::forward<TieringPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The volume's universally unique identifier (UUID).</p>
      */
-    inline const Aws::String& GetUUID() const{ return m_uUID; }
+    inline const Aws::String& GetUUID() const { return m_uUID; }
     inline bool UUIDHasBeenSet() const { return m_uUIDHasBeenSet; }
-    inline void SetUUID(const Aws::String& value) { m_uUIDHasBeenSet = true; m_uUID = value; }
-    inline void SetUUID(Aws::String&& value) { m_uUIDHasBeenSet = true; m_uUID = std::move(value); }
-    inline void SetUUID(const char* value) { m_uUIDHasBeenSet = true; m_uUID.assign(value); }
-    inline OntapVolumeConfiguration& WithUUID(const Aws::String& value) { SetUUID(value); return *this;}
-    inline OntapVolumeConfiguration& WithUUID(Aws::String&& value) { SetUUID(std::move(value)); return *this;}
-    inline OntapVolumeConfiguration& WithUUID(const char* value) { SetUUID(value); return *this;}
+    template<typename UUIDT = Aws::String>
+    void SetUUID(UUIDT&& value) { m_uUIDHasBeenSet = true; m_uUID = std::forward<UUIDT>(value); }
+    template<typename UUIDT = Aws::String>
+    OntapVolumeConfiguration& WithUUID(UUIDT&& value) { SetUUID(std::forward<UUIDT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -182,12 +172,10 @@ namespace Model
      * A load-sharing mirror reduces the network traffic to a FlexVol volume by
      * providing additional read-only access to clients.</p> </li> </ul>
      */
-    inline const OntapVolumeType& GetOntapVolumeType() const{ return m_ontapVolumeType; }
+    inline OntapVolumeType GetOntapVolumeType() const { return m_ontapVolumeType; }
     inline bool OntapVolumeTypeHasBeenSet() const { return m_ontapVolumeTypeHasBeenSet; }
-    inline void SetOntapVolumeType(const OntapVolumeType& value) { m_ontapVolumeTypeHasBeenSet = true; m_ontapVolumeType = value; }
-    inline void SetOntapVolumeType(OntapVolumeType&& value) { m_ontapVolumeTypeHasBeenSet = true; m_ontapVolumeType = std::move(value); }
-    inline OntapVolumeConfiguration& WithOntapVolumeType(const OntapVolumeType& value) { SetOntapVolumeType(value); return *this;}
-    inline OntapVolumeConfiguration& WithOntapVolumeType(OntapVolumeType&& value) { SetOntapVolumeType(std::move(value)); return *this;}
+    inline void SetOntapVolumeType(OntapVolumeType value) { m_ontapVolumeTypeHasBeenSet = true; m_ontapVolumeType = value; }
+    inline OntapVolumeConfiguration& WithOntapVolumeType(OntapVolumeType value) { SetOntapVolumeType(value); return *this;}
     ///@}
 
     ///@{
@@ -207,14 +195,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot
      * policies</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
      */
-    inline const Aws::String& GetSnapshotPolicy() const{ return m_snapshotPolicy; }
+    inline const Aws::String& GetSnapshotPolicy() const { return m_snapshotPolicy; }
     inline bool SnapshotPolicyHasBeenSet() const { return m_snapshotPolicyHasBeenSet; }
-    inline void SetSnapshotPolicy(const Aws::String& value) { m_snapshotPolicyHasBeenSet = true; m_snapshotPolicy = value; }
-    inline void SetSnapshotPolicy(Aws::String&& value) { m_snapshotPolicyHasBeenSet = true; m_snapshotPolicy = std::move(value); }
-    inline void SetSnapshotPolicy(const char* value) { m_snapshotPolicyHasBeenSet = true; m_snapshotPolicy.assign(value); }
-    inline OntapVolumeConfiguration& WithSnapshotPolicy(const Aws::String& value) { SetSnapshotPolicy(value); return *this;}
-    inline OntapVolumeConfiguration& WithSnapshotPolicy(Aws::String&& value) { SetSnapshotPolicy(std::move(value)); return *this;}
-    inline OntapVolumeConfiguration& WithSnapshotPolicy(const char* value) { SetSnapshotPolicy(value); return *this;}
+    template<typename SnapshotPolicyT = Aws::String>
+    void SetSnapshotPolicy(SnapshotPolicyT&& value) { m_snapshotPolicyHasBeenSet = true; m_snapshotPolicy = std::forward<SnapshotPolicyT>(value); }
+    template<typename SnapshotPolicyT = Aws::String>
+    OntapVolumeConfiguration& WithSnapshotPolicy(SnapshotPolicyT&& value) { SetSnapshotPolicy(std::forward<SnapshotPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -227,7 +213,7 @@ namespace Model
      * when creating a user-initiated backup, no tags are copied from the volume,
      * regardless of this value.</p>
      */
-    inline bool GetCopyTagsToBackups() const{ return m_copyTagsToBackups; }
+    inline bool GetCopyTagsToBackups() const { return m_copyTagsToBackups; }
     inline bool CopyTagsToBackupsHasBeenSet() const { return m_copyTagsToBackupsHasBeenSet; }
     inline void SetCopyTagsToBackups(bool value) { m_copyTagsToBackupsHasBeenSet = true; m_copyTagsToBackups = value; }
     inline OntapVolumeConfiguration& WithCopyTagsToBackups(bool value) { SetCopyTagsToBackups(value); return *this;}
@@ -237,12 +223,12 @@ namespace Model
     /**
      * <p>The SnapLock configuration object for an FSx for ONTAP SnapLock volume. </p>
      */
-    inline const SnaplockConfiguration& GetSnaplockConfiguration() const{ return m_snaplockConfiguration; }
+    inline const SnaplockConfiguration& GetSnaplockConfiguration() const { return m_snaplockConfiguration; }
     inline bool SnaplockConfigurationHasBeenSet() const { return m_snaplockConfigurationHasBeenSet; }
-    inline void SetSnaplockConfiguration(const SnaplockConfiguration& value) { m_snaplockConfigurationHasBeenSet = true; m_snaplockConfiguration = value; }
-    inline void SetSnaplockConfiguration(SnaplockConfiguration&& value) { m_snaplockConfigurationHasBeenSet = true; m_snaplockConfiguration = std::move(value); }
-    inline OntapVolumeConfiguration& WithSnaplockConfiguration(const SnaplockConfiguration& value) { SetSnaplockConfiguration(value); return *this;}
-    inline OntapVolumeConfiguration& WithSnaplockConfiguration(SnaplockConfiguration&& value) { SetSnaplockConfiguration(std::move(value)); return *this;}
+    template<typename SnaplockConfigurationT = SnaplockConfiguration>
+    void SetSnaplockConfiguration(SnaplockConfigurationT&& value) { m_snaplockConfigurationHasBeenSet = true; m_snaplockConfiguration = std::forward<SnaplockConfigurationT>(value); }
+    template<typename SnaplockConfigurationT = SnaplockConfiguration>
+    OntapVolumeConfiguration& WithSnaplockConfiguration(SnaplockConfigurationT&& value) { SetSnaplockConfiguration(std::forward<SnaplockConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -252,12 +238,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types.html">Volume
      * types</a> in Amazon FSx for NetApp ONTAP User Guide.</p>
      */
-    inline const VolumeStyle& GetVolumeStyle() const{ return m_volumeStyle; }
+    inline VolumeStyle GetVolumeStyle() const { return m_volumeStyle; }
     inline bool VolumeStyleHasBeenSet() const { return m_volumeStyleHasBeenSet; }
-    inline void SetVolumeStyle(const VolumeStyle& value) { m_volumeStyleHasBeenSet = true; m_volumeStyle = value; }
-    inline void SetVolumeStyle(VolumeStyle&& value) { m_volumeStyleHasBeenSet = true; m_volumeStyle = std::move(value); }
-    inline OntapVolumeConfiguration& WithVolumeStyle(const VolumeStyle& value) { SetVolumeStyle(value); return *this;}
-    inline OntapVolumeConfiguration& WithVolumeStyle(VolumeStyle&& value) { SetVolumeStyle(std::move(value)); return *this;}
+    inline void SetVolumeStyle(VolumeStyle value) { m_volumeStyleHasBeenSet = true; m_volumeStyle = value; }
+    inline OntapVolumeConfiguration& WithVolumeStyle(VolumeStyle value) { SetVolumeStyle(value); return *this;}
     ///@}
 
     ///@{
@@ -265,44 +249,44 @@ namespace Model
      * <p>This structure specifies configuration options for a volume’s storage
      * aggregate or aggregates.</p>
      */
-    inline const AggregateConfiguration& GetAggregateConfiguration() const{ return m_aggregateConfiguration; }
+    inline const AggregateConfiguration& GetAggregateConfiguration() const { return m_aggregateConfiguration; }
     inline bool AggregateConfigurationHasBeenSet() const { return m_aggregateConfigurationHasBeenSet; }
-    inline void SetAggregateConfiguration(const AggregateConfiguration& value) { m_aggregateConfigurationHasBeenSet = true; m_aggregateConfiguration = value; }
-    inline void SetAggregateConfiguration(AggregateConfiguration&& value) { m_aggregateConfigurationHasBeenSet = true; m_aggregateConfiguration = std::move(value); }
-    inline OntapVolumeConfiguration& WithAggregateConfiguration(const AggregateConfiguration& value) { SetAggregateConfiguration(value); return *this;}
-    inline OntapVolumeConfiguration& WithAggregateConfiguration(AggregateConfiguration&& value) { SetAggregateConfiguration(std::move(value)); return *this;}
+    template<typename AggregateConfigurationT = AggregateConfiguration>
+    void SetAggregateConfiguration(AggregateConfigurationT&& value) { m_aggregateConfigurationHasBeenSet = true; m_aggregateConfiguration = std::forward<AggregateConfigurationT>(value); }
+    template<typename AggregateConfigurationT = AggregateConfiguration>
+    OntapVolumeConfiguration& WithAggregateConfiguration(AggregateConfigurationT&& value) { SetAggregateConfiguration(std::forward<AggregateConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configured size of the volume, in bytes.</p>
      */
-    inline long long GetSizeInBytes() const{ return m_sizeInBytes; }
+    inline long long GetSizeInBytes() const { return m_sizeInBytes; }
     inline bool SizeInBytesHasBeenSet() const { return m_sizeInBytesHasBeenSet; }
     inline void SetSizeInBytes(long long value) { m_sizeInBytesHasBeenSet = true; m_sizeInBytes = value; }
     inline OntapVolumeConfiguration& WithSizeInBytes(long long value) { SetSizeInBytes(value); return *this;}
     ///@}
   private:
 
-    FlexCacheEndpointType m_flexCacheEndpointType;
+    FlexCacheEndpointType m_flexCacheEndpointType{FlexCacheEndpointType::NOT_SET};
     bool m_flexCacheEndpointTypeHasBeenSet = false;
 
     Aws::String m_junctionPath;
     bool m_junctionPathHasBeenSet = false;
 
-    SecurityStyle m_securityStyle;
+    SecurityStyle m_securityStyle{SecurityStyle::NOT_SET};
     bool m_securityStyleHasBeenSet = false;
 
-    int m_sizeInMegabytes;
+    int m_sizeInMegabytes{0};
     bool m_sizeInMegabytesHasBeenSet = false;
 
-    bool m_storageEfficiencyEnabled;
+    bool m_storageEfficiencyEnabled{false};
     bool m_storageEfficiencyEnabledHasBeenSet = false;
 
     Aws::String m_storageVirtualMachineId;
     bool m_storageVirtualMachineIdHasBeenSet = false;
 
-    bool m_storageVirtualMachineRoot;
+    bool m_storageVirtualMachineRoot{false};
     bool m_storageVirtualMachineRootHasBeenSet = false;
 
     TieringPolicy m_tieringPolicy;
@@ -311,25 +295,25 @@ namespace Model
     Aws::String m_uUID;
     bool m_uUIDHasBeenSet = false;
 
-    OntapVolumeType m_ontapVolumeType;
+    OntapVolumeType m_ontapVolumeType{OntapVolumeType::NOT_SET};
     bool m_ontapVolumeTypeHasBeenSet = false;
 
     Aws::String m_snapshotPolicy;
     bool m_snapshotPolicyHasBeenSet = false;
 
-    bool m_copyTagsToBackups;
+    bool m_copyTagsToBackups{false};
     bool m_copyTagsToBackupsHasBeenSet = false;
 
     SnaplockConfiguration m_snaplockConfiguration;
     bool m_snaplockConfigurationHasBeenSet = false;
 
-    VolumeStyle m_volumeStyle;
+    VolumeStyle m_volumeStyle{VolumeStyle::NOT_SET};
     bool m_volumeStyleHasBeenSet = false;
 
     AggregateConfiguration m_aggregateConfiguration;
     bool m_aggregateConfigurationHasBeenSet = false;
 
-    long long m_sizeInBytes;
+    long long m_sizeInBytes{0};
     bool m_sizeInBytesHasBeenSet = false;
   };
 

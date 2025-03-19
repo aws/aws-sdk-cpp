@@ -31,7 +31,7 @@ namespace Model
   class RefreshTokenRequestBody
   {
   public:
-    AWS_AMPLIFYUIBUILDER_API RefreshTokenRequestBody();
+    AWS_AMPLIFYUIBUILDER_API RefreshTokenRequestBody() = default;
     AWS_AMPLIFYUIBUILDER_API RefreshTokenRequestBody(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API RefreshTokenRequestBody& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
      * <p>The token to use to refresh a previously issued access token that might have
      * expired.</p>
      */
-    inline const Aws::String& GetToken() const{ return m_token; }
+    inline const Aws::String& GetToken() const { return m_token; }
     inline bool TokenHasBeenSet() const { return m_tokenHasBeenSet; }
-    inline void SetToken(const Aws::String& value) { m_tokenHasBeenSet = true; m_token = value; }
-    inline void SetToken(Aws::String&& value) { m_tokenHasBeenSet = true; m_token = std::move(value); }
-    inline void SetToken(const char* value) { m_tokenHasBeenSet = true; m_token.assign(value); }
-    inline RefreshTokenRequestBody& WithToken(const Aws::String& value) { SetToken(value); return *this;}
-    inline RefreshTokenRequestBody& WithToken(Aws::String&& value) { SetToken(std::move(value)); return *this;}
-    inline RefreshTokenRequestBody& WithToken(const char* value) { SetToken(value); return *this;}
+    template<typename TokenT = Aws::String>
+    void SetToken(TokenT&& value) { m_tokenHasBeenSet = true; m_token = std::forward<TokenT>(value); }
+    template<typename TokenT = Aws::String>
+    RefreshTokenRequestBody& WithToken(TokenT&& value) { SetToken(std::forward<TokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the client to request the token from.</p>
      */
-    inline const Aws::String& GetClientId() const{ return m_clientId; }
+    inline const Aws::String& GetClientId() const { return m_clientId; }
     inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
-    inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
-    inline void SetClientId(Aws::String&& value) { m_clientIdHasBeenSet = true; m_clientId = std::move(value); }
-    inline void SetClientId(const char* value) { m_clientIdHasBeenSet = true; m_clientId.assign(value); }
-    inline RefreshTokenRequestBody& WithClientId(const Aws::String& value) { SetClientId(value); return *this;}
-    inline RefreshTokenRequestBody& WithClientId(Aws::String&& value) { SetClientId(std::move(value)); return *this;}
-    inline RefreshTokenRequestBody& WithClientId(const char* value) { SetClientId(value); return *this;}
+    template<typename ClientIdT = Aws::String>
+    void SetClientId(ClientIdT&& value) { m_clientIdHasBeenSet = true; m_clientId = std::forward<ClientIdT>(value); }
+    template<typename ClientIdT = Aws::String>
+    RefreshTokenRequestBody& WithClientId(ClientIdT&& value) { SetClientId(std::forward<ClientIdT>(value)); return *this;}
     ///@}
   private:
 

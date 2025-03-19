@@ -12,11 +12,6 @@ using namespace Aws::HealthLake::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteFHIRDatastoreRequest::DeleteFHIRDatastoreRequest() : 
-    m_datastoreIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteFHIRDatastoreRequest::SerializePayload() const
 {
   JsonValue payload;

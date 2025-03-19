@@ -21,7 +21,7 @@ namespace Model
   class UpdateHITReviewStatusRequest : public MTurkRequest
   {
   public:
-    AWS_MTURK_API UpdateHITReviewStatusRequest();
+    AWS_MTURK_API UpdateHITReviewStatusRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p> The ID of the HIT to update. </p>
      */
-    inline const Aws::String& GetHITId() const{ return m_hITId; }
+    inline const Aws::String& GetHITId() const { return m_hITId; }
     inline bool HITIdHasBeenSet() const { return m_hITIdHasBeenSet; }
-    inline void SetHITId(const Aws::String& value) { m_hITIdHasBeenSet = true; m_hITId = value; }
-    inline void SetHITId(Aws::String&& value) { m_hITIdHasBeenSet = true; m_hITId = std::move(value); }
-    inline void SetHITId(const char* value) { m_hITIdHasBeenSet = true; m_hITId.assign(value); }
-    inline UpdateHITReviewStatusRequest& WithHITId(const Aws::String& value) { SetHITId(value); return *this;}
-    inline UpdateHITReviewStatusRequest& WithHITId(Aws::String&& value) { SetHITId(std::move(value)); return *this;}
-    inline UpdateHITReviewStatusRequest& WithHITId(const char* value) { SetHITId(value); return *this;}
+    template<typename HITIdT = Aws::String>
+    void SetHITId(HITIdT&& value) { m_hITIdHasBeenSet = true; m_hITId = std::forward<HITIdT>(value); }
+    template<typename HITIdT = Aws::String>
+    UpdateHITReviewStatusRequest& WithHITId(HITIdT&& value) { SetHITId(std::forward<HITIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,7 +54,7 @@ namespace Model
      * this to true will only transition a HIT from <code>Reviewing</code> to
      * <code>Reviewable</code> </p> </li> </ul>
      */
-    inline bool GetRevert() const{ return m_revert; }
+    inline bool GetRevert() const { return m_revert; }
     inline bool RevertHasBeenSet() const { return m_revertHasBeenSet; }
     inline void SetRevert(bool value) { m_revertHasBeenSet = true; m_revert = value; }
     inline UpdateHITReviewStatusRequest& WithRevert(bool value) { SetRevert(value); return *this;}
@@ -66,7 +64,7 @@ namespace Model
     Aws::String m_hITId;
     bool m_hITIdHasBeenSet = false;
 
-    bool m_revert;
+    bool m_revert{false};
     bool m_revertHasBeenSet = false;
   };
 

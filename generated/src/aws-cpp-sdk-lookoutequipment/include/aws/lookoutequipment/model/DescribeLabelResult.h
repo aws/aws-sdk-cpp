@@ -29,7 +29,7 @@ namespace Model
   class DescribeLabelResult
   {
   public:
-    AWS_LOOKOUTEQUIPMENT_API DescribeLabelResult();
+    AWS_LOOKOUTEQUIPMENT_API DescribeLabelResult() = default;
     AWS_LOOKOUTEQUIPMENT_API DescribeLabelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOOKOUTEQUIPMENT_API DescribeLabelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,72 +38,64 @@ namespace Model
     /**
      * <p> The name of the requested label group. </p>
      */
-    inline const Aws::String& GetLabelGroupName() const{ return m_labelGroupName; }
-    inline void SetLabelGroupName(const Aws::String& value) { m_labelGroupName = value; }
-    inline void SetLabelGroupName(Aws::String&& value) { m_labelGroupName = std::move(value); }
-    inline void SetLabelGroupName(const char* value) { m_labelGroupName.assign(value); }
-    inline DescribeLabelResult& WithLabelGroupName(const Aws::String& value) { SetLabelGroupName(value); return *this;}
-    inline DescribeLabelResult& WithLabelGroupName(Aws::String&& value) { SetLabelGroupName(std::move(value)); return *this;}
-    inline DescribeLabelResult& WithLabelGroupName(const char* value) { SetLabelGroupName(value); return *this;}
+    inline const Aws::String& GetLabelGroupName() const { return m_labelGroupName; }
+    template<typename LabelGroupNameT = Aws::String>
+    void SetLabelGroupName(LabelGroupNameT&& value) { m_labelGroupNameHasBeenSet = true; m_labelGroupName = std::forward<LabelGroupNameT>(value); }
+    template<typename LabelGroupNameT = Aws::String>
+    DescribeLabelResult& WithLabelGroupName(LabelGroupNameT&& value) { SetLabelGroupName(std::forward<LabelGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The Amazon Resource Name (ARN) of the requested label group. </p>
      */
-    inline const Aws::String& GetLabelGroupArn() const{ return m_labelGroupArn; }
-    inline void SetLabelGroupArn(const Aws::String& value) { m_labelGroupArn = value; }
-    inline void SetLabelGroupArn(Aws::String&& value) { m_labelGroupArn = std::move(value); }
-    inline void SetLabelGroupArn(const char* value) { m_labelGroupArn.assign(value); }
-    inline DescribeLabelResult& WithLabelGroupArn(const Aws::String& value) { SetLabelGroupArn(value); return *this;}
-    inline DescribeLabelResult& WithLabelGroupArn(Aws::String&& value) { SetLabelGroupArn(std::move(value)); return *this;}
-    inline DescribeLabelResult& WithLabelGroupArn(const char* value) { SetLabelGroupArn(value); return *this;}
+    inline const Aws::String& GetLabelGroupArn() const { return m_labelGroupArn; }
+    template<typename LabelGroupArnT = Aws::String>
+    void SetLabelGroupArn(LabelGroupArnT&& value) { m_labelGroupArnHasBeenSet = true; m_labelGroupArn = std::forward<LabelGroupArnT>(value); }
+    template<typename LabelGroupArnT = Aws::String>
+    DescribeLabelResult& WithLabelGroupArn(LabelGroupArnT&& value) { SetLabelGroupArn(std::forward<LabelGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The ID of the requested label. </p>
      */
-    inline const Aws::String& GetLabelId() const{ return m_labelId; }
-    inline void SetLabelId(const Aws::String& value) { m_labelId = value; }
-    inline void SetLabelId(Aws::String&& value) { m_labelId = std::move(value); }
-    inline void SetLabelId(const char* value) { m_labelId.assign(value); }
-    inline DescribeLabelResult& WithLabelId(const Aws::String& value) { SetLabelId(value); return *this;}
-    inline DescribeLabelResult& WithLabelId(Aws::String&& value) { SetLabelId(std::move(value)); return *this;}
-    inline DescribeLabelResult& WithLabelId(const char* value) { SetLabelId(value); return *this;}
+    inline const Aws::String& GetLabelId() const { return m_labelId; }
+    template<typename LabelIdT = Aws::String>
+    void SetLabelId(LabelIdT&& value) { m_labelIdHasBeenSet = true; m_labelId = std::forward<LabelIdT>(value); }
+    template<typename LabelIdT = Aws::String>
+    DescribeLabelResult& WithLabelId(LabelIdT&& value) { SetLabelId(std::forward<LabelIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The start time of the requested label. </p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTime = std::move(value); }
-    inline DescribeLabelResult& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline DescribeLabelResult& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    DescribeLabelResult& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The end time of the requested label. </p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTime = std::move(value); }
-    inline DescribeLabelResult& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline DescribeLabelResult& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    DescribeLabelResult& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Indicates whether a labeled event represents an anomaly. </p>
      */
-    inline const LabelRating& GetRating() const{ return m_rating; }
-    inline void SetRating(const LabelRating& value) { m_rating = value; }
-    inline void SetRating(LabelRating&& value) { m_rating = std::move(value); }
-    inline DescribeLabelResult& WithRating(const LabelRating& value) { SetRating(value); return *this;}
-    inline DescribeLabelResult& WithRating(LabelRating&& value) { SetRating(std::move(value)); return *this;}
+    inline LabelRating GetRating() const { return m_rating; }
+    inline void SetRating(LabelRating value) { m_ratingHasBeenSet = true; m_rating = value; }
+    inline DescribeLabelResult& WithRating(LabelRating value) { SetRating(value); return *this;}
     ///@}
 
     ///@{
@@ -112,13 +104,11 @@ namespace Model
      * this field will be retained for service usage. Follow best practices for the
      * security of your data.</p>
      */
-    inline const Aws::String& GetFaultCode() const{ return m_faultCode; }
-    inline void SetFaultCode(const Aws::String& value) { m_faultCode = value; }
-    inline void SetFaultCode(Aws::String&& value) { m_faultCode = std::move(value); }
-    inline void SetFaultCode(const char* value) { m_faultCode.assign(value); }
-    inline DescribeLabelResult& WithFaultCode(const Aws::String& value) { SetFaultCode(value); return *this;}
-    inline DescribeLabelResult& WithFaultCode(Aws::String&& value) { SetFaultCode(std::move(value)); return *this;}
-    inline DescribeLabelResult& WithFaultCode(const char* value) { SetFaultCode(value); return *this;}
+    inline const Aws::String& GetFaultCode() const { return m_faultCode; }
+    template<typename FaultCodeT = Aws::String>
+    void SetFaultCode(FaultCodeT&& value) { m_faultCodeHasBeenSet = true; m_faultCode = std::forward<FaultCodeT>(value); }
+    template<typename FaultCodeT = Aws::String>
+    DescribeLabelResult& WithFaultCode(FaultCodeT&& value) { SetFaultCode(std::forward<FaultCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -127,72 +117,77 @@ namespace Model
      * this field will be retained for service usage. Follow best practices for the
      * security of your data.</p>
      */
-    inline const Aws::String& GetNotes() const{ return m_notes; }
-    inline void SetNotes(const Aws::String& value) { m_notes = value; }
-    inline void SetNotes(Aws::String&& value) { m_notes = std::move(value); }
-    inline void SetNotes(const char* value) { m_notes.assign(value); }
-    inline DescribeLabelResult& WithNotes(const Aws::String& value) { SetNotes(value); return *this;}
-    inline DescribeLabelResult& WithNotes(Aws::String&& value) { SetNotes(std::move(value)); return *this;}
-    inline DescribeLabelResult& WithNotes(const char* value) { SetNotes(value); return *this;}
+    inline const Aws::String& GetNotes() const { return m_notes; }
+    template<typename NotesT = Aws::String>
+    void SetNotes(NotesT&& value) { m_notesHasBeenSet = true; m_notes = std::forward<NotesT>(value); }
+    template<typename NotesT = Aws::String>
+    DescribeLabelResult& WithNotes(NotesT&& value) { SetNotes(std::forward<NotesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Indicates that a label pertains to a particular piece of equipment. </p>
      */
-    inline const Aws::String& GetEquipment() const{ return m_equipment; }
-    inline void SetEquipment(const Aws::String& value) { m_equipment = value; }
-    inline void SetEquipment(Aws::String&& value) { m_equipment = std::move(value); }
-    inline void SetEquipment(const char* value) { m_equipment.assign(value); }
-    inline DescribeLabelResult& WithEquipment(const Aws::String& value) { SetEquipment(value); return *this;}
-    inline DescribeLabelResult& WithEquipment(Aws::String&& value) { SetEquipment(std::move(value)); return *this;}
-    inline DescribeLabelResult& WithEquipment(const char* value) { SetEquipment(value); return *this;}
+    inline const Aws::String& GetEquipment() const { return m_equipment; }
+    template<typename EquipmentT = Aws::String>
+    void SetEquipment(EquipmentT&& value) { m_equipmentHasBeenSet = true; m_equipment = std::forward<EquipmentT>(value); }
+    template<typename EquipmentT = Aws::String>
+    DescribeLabelResult& WithEquipment(EquipmentT&& value) { SetEquipment(std::forward<EquipmentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The time at which the label was created. </p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline DescribeLabelResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline DescribeLabelResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    DescribeLabelResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeLabelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeLabelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeLabelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeLabelResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_labelGroupName;
+    bool m_labelGroupNameHasBeenSet = false;
 
     Aws::String m_labelGroupArn;
+    bool m_labelGroupArnHasBeenSet = false;
 
     Aws::String m_labelId;
+    bool m_labelIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
+    bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
+    bool m_endTimeHasBeenSet = false;
 
-    LabelRating m_rating;
+    LabelRating m_rating{LabelRating::NOT_SET};
+    bool m_ratingHasBeenSet = false;
 
     Aws::String m_faultCode;
+    bool m_faultCodeHasBeenSet = false;
 
     Aws::String m_notes;
+    bool m_notesHasBeenSet = false;
 
     Aws::String m_equipment;
+    bool m_equipmentHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

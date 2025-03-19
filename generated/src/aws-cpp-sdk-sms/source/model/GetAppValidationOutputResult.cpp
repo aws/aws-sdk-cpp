@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAppValidationOutputResult::GetAppValidationOutputResult()
-{
-}
-
 GetAppValidationOutputResult::GetAppValidationOutputResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ GetAppValidationOutputResult& GetAppValidationOutputResult::operator =(const Aws
     {
       m_validationOutputList.push_back(validationOutputListJsonList[validationOutputListIndex].AsObject());
     }
+    m_validationOutputListHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

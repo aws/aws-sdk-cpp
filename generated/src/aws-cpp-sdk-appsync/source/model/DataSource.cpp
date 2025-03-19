@@ -18,27 +18,7 @@ namespace AppSync
 namespace Model
 {
 
-DataSource::DataSource() : 
-    m_dataSourceArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_type(DataSourceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_serviceRoleArnHasBeenSet(false),
-    m_dynamodbConfigHasBeenSet(false),
-    m_lambdaConfigHasBeenSet(false),
-    m_elasticsearchConfigHasBeenSet(false),
-    m_openSearchServiceConfigHasBeenSet(false),
-    m_httpConfigHasBeenSet(false),
-    m_relationalDatabaseConfigHasBeenSet(false),
-    m_eventBridgeConfigHasBeenSet(false),
-    m_metricsConfig(DataSourceLevelMetricsConfig::NOT_SET),
-    m_metricsConfigHasBeenSet(false)
-{
-}
-
 DataSource::DataSource(JsonView jsonValue)
-  : DataSource()
 {
   *this = jsonValue;
 }
@@ -48,94 +28,68 @@ DataSource& DataSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("dataSourceArn"))
   {
     m_dataSourceArn = jsonValue.GetString("dataSourceArn");
-
     m_dataSourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = DataSourceTypeMapper::GetDataSourceTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceRoleArn"))
   {
     m_serviceRoleArn = jsonValue.GetString("serviceRoleArn");
-
     m_serviceRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dynamodbConfig"))
   {
     m_dynamodbConfig = jsonValue.GetObject("dynamodbConfig");
-
     m_dynamodbConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lambdaConfig"))
   {
     m_lambdaConfig = jsonValue.GetObject("lambdaConfig");
-
     m_lambdaConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("elasticsearchConfig"))
   {
     m_elasticsearchConfig = jsonValue.GetObject("elasticsearchConfig");
-
     m_elasticsearchConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("openSearchServiceConfig"))
   {
     m_openSearchServiceConfig = jsonValue.GetObject("openSearchServiceConfig");
-
     m_openSearchServiceConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("httpConfig"))
   {
     m_httpConfig = jsonValue.GetObject("httpConfig");
-
     m_httpConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("relationalDatabaseConfig"))
   {
     m_relationalDatabaseConfig = jsonValue.GetObject("relationalDatabaseConfig");
-
     m_relationalDatabaseConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventBridgeConfig"))
   {
     m_eventBridgeConfig = jsonValue.GetObject("eventBridgeConfig");
-
     m_eventBridgeConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metricsConfig"))
   {
     m_metricsConfig = DataSourceLevelMetricsConfigMapper::GetDataSourceLevelMetricsConfigForName(jsonValue.GetString("metricsConfig"));
-
     m_metricsConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

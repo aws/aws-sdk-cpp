@@ -12,12 +12,6 @@ using namespace Aws::deadline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetFleetRequest::GetFleetRequest() : 
-    m_farmIdHasBeenSet(false),
-    m_fleetIdHasBeenSet(false)
-{
-}
-
 Aws::String GetFleetRequest::SerializePayload() const
 {
   return {};

@@ -10,19 +10,6 @@
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-CreateConfigurationTemplateRequest::CreateConfigurationTemplateRequest() : 
-    m_applicationNameHasBeenSet(false),
-    m_templateNameHasBeenSet(false),
-    m_solutionStackNameHasBeenSet(false),
-    m_platformArnHasBeenSet(false),
-    m_sourceConfigurationHasBeenSet(false),
-    m_environmentIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_optionSettingsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateConfigurationTemplateRequest::SerializePayload() const
 {
   Aws::StringStream ss;

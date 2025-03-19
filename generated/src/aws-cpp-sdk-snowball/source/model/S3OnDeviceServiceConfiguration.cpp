@@ -18,20 +18,7 @@ namespace Snowball
 namespace Model
 {
 
-S3OnDeviceServiceConfiguration::S3OnDeviceServiceConfiguration() : 
-    m_storageLimit(0.0),
-    m_storageLimitHasBeenSet(false),
-    m_storageUnit(StorageUnit::NOT_SET),
-    m_storageUnitHasBeenSet(false),
-    m_serviceSize(0),
-    m_serviceSizeHasBeenSet(false),
-    m_faultTolerance(0),
-    m_faultToleranceHasBeenSet(false)
-{
-}
-
 S3OnDeviceServiceConfiguration::S3OnDeviceServiceConfiguration(JsonView jsonValue)
-  : S3OnDeviceServiceConfiguration()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ S3OnDeviceServiceConfiguration& S3OnDeviceServiceConfiguration::operator =(JsonV
   if(jsonValue.ValueExists("StorageLimit"))
   {
     m_storageLimit = jsonValue.GetDouble("StorageLimit");
-
     m_storageLimitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StorageUnit"))
   {
     m_storageUnit = StorageUnitMapper::GetStorageUnitForName(jsonValue.GetString("StorageUnit"));
-
     m_storageUnitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceSize"))
   {
     m_serviceSize = jsonValue.GetInteger("ServiceSize");
-
     m_serviceSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FaultTolerance"))
   {
     m_faultTolerance = jsonValue.GetInteger("FaultTolerance");
-
     m_faultToleranceHasBeenSet = true;
   }
-
   return *this;
 }
 

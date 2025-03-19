@@ -18,13 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-ParseWAF::ParseWAF() : 
-    m_sourceHasBeenSet(false)
-{
-}
-
 ParseWAF::ParseWAF(JsonView jsonValue)
-  : ParseWAF()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ParseWAF& ParseWAF::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("source"))
   {
     m_source = jsonValue.GetString("source");
-
     m_sourceHasBeenSet = true;
   }
-
   return *this;
 }
 

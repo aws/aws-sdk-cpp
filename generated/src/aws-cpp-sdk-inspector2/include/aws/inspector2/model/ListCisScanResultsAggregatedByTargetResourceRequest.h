@@ -24,7 +24,7 @@ namespace Model
   class ListCisScanResultsAggregatedByTargetResourceRequest : public Inspector2Request
   {
   public:
-    AWS_INSPECTOR2_API ListCisScanResultsAggregatedByTargetResourceRequest();
+    AWS_INSPECTOR2_API ListCisScanResultsAggregatedByTargetResourceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,12 +39,12 @@ namespace Model
     /**
      * <p>The filter criteria.</p>
      */
-    inline const CisScanResultsAggregatedByTargetResourceFilterCriteria& GetFilterCriteria() const{ return m_filterCriteria; }
+    inline const CisScanResultsAggregatedByTargetResourceFilterCriteria& GetFilterCriteria() const { return m_filterCriteria; }
     inline bool FilterCriteriaHasBeenSet() const { return m_filterCriteriaHasBeenSet; }
-    inline void SetFilterCriteria(const CisScanResultsAggregatedByTargetResourceFilterCriteria& value) { m_filterCriteriaHasBeenSet = true; m_filterCriteria = value; }
-    inline void SetFilterCriteria(CisScanResultsAggregatedByTargetResourceFilterCriteria&& value) { m_filterCriteriaHasBeenSet = true; m_filterCriteria = std::move(value); }
-    inline ListCisScanResultsAggregatedByTargetResourceRequest& WithFilterCriteria(const CisScanResultsAggregatedByTargetResourceFilterCriteria& value) { SetFilterCriteria(value); return *this;}
-    inline ListCisScanResultsAggregatedByTargetResourceRequest& WithFilterCriteria(CisScanResultsAggregatedByTargetResourceFilterCriteria&& value) { SetFilterCriteria(std::move(value)); return *this;}
+    template<typename FilterCriteriaT = CisScanResultsAggregatedByTargetResourceFilterCriteria>
+    void SetFilterCriteria(FilterCriteriaT&& value) { m_filterCriteriaHasBeenSet = true; m_filterCriteria = std::forward<FilterCriteriaT>(value); }
+    template<typename FilterCriteriaT = CisScanResultsAggregatedByTargetResourceFilterCriteria>
+    ListCisScanResultsAggregatedByTargetResourceRequest& WithFilterCriteria(FilterCriteriaT&& value) { SetFilterCriteria(std::forward<FilterCriteriaT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,7 +52,7 @@ namespace Model
      * <p>The maximum number of scan results aggregated by a target resource to be
      * returned in a single page of results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListCisScanResultsAggregatedByTargetResourceRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -63,59 +63,51 @@ namespace Model
      * <p>The pagination token from a previous request that's used to retrieve the next
      * page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListCisScanResultsAggregatedByTargetResourceRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCisScanResultsAggregatedByTargetResourceRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCisScanResultsAggregatedByTargetResourceRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCisScanResultsAggregatedByTargetResourceRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The scan ARN.</p>
      */
-    inline const Aws::String& GetScanArn() const{ return m_scanArn; }
+    inline const Aws::String& GetScanArn() const { return m_scanArn; }
     inline bool ScanArnHasBeenSet() const { return m_scanArnHasBeenSet; }
-    inline void SetScanArn(const Aws::String& value) { m_scanArnHasBeenSet = true; m_scanArn = value; }
-    inline void SetScanArn(Aws::String&& value) { m_scanArnHasBeenSet = true; m_scanArn = std::move(value); }
-    inline void SetScanArn(const char* value) { m_scanArnHasBeenSet = true; m_scanArn.assign(value); }
-    inline ListCisScanResultsAggregatedByTargetResourceRequest& WithScanArn(const Aws::String& value) { SetScanArn(value); return *this;}
-    inline ListCisScanResultsAggregatedByTargetResourceRequest& WithScanArn(Aws::String&& value) { SetScanArn(std::move(value)); return *this;}
-    inline ListCisScanResultsAggregatedByTargetResourceRequest& WithScanArn(const char* value) { SetScanArn(value); return *this;}
+    template<typename ScanArnT = Aws::String>
+    void SetScanArn(ScanArnT&& value) { m_scanArnHasBeenSet = true; m_scanArn = std::forward<ScanArnT>(value); }
+    template<typename ScanArnT = Aws::String>
+    ListCisScanResultsAggregatedByTargetResourceRequest& WithScanArn(ScanArnT&& value) { SetScanArn(std::forward<ScanArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The sort by order.</p>
      */
-    inline const CisScanResultsAggregatedByTargetResourceSortBy& GetSortBy() const{ return m_sortBy; }
+    inline CisScanResultsAggregatedByTargetResourceSortBy GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const CisScanResultsAggregatedByTargetResourceSortBy& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(CisScanResultsAggregatedByTargetResourceSortBy&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline ListCisScanResultsAggregatedByTargetResourceRequest& WithSortBy(const CisScanResultsAggregatedByTargetResourceSortBy& value) { SetSortBy(value); return *this;}
-    inline ListCisScanResultsAggregatedByTargetResourceRequest& WithSortBy(CisScanResultsAggregatedByTargetResourceSortBy&& value) { SetSortBy(std::move(value)); return *this;}
+    inline void SetSortBy(CisScanResultsAggregatedByTargetResourceSortBy value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+    inline ListCisScanResultsAggregatedByTargetResourceRequest& WithSortBy(CisScanResultsAggregatedByTargetResourceSortBy value) { SetSortBy(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The sort order.</p>
      */
-    inline const CisSortOrder& GetSortOrder() const{ return m_sortOrder; }
+    inline CisSortOrder GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const CisSortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(CisSortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline ListCisScanResultsAggregatedByTargetResourceRequest& WithSortOrder(const CisSortOrder& value) { SetSortOrder(value); return *this;}
-    inline ListCisScanResultsAggregatedByTargetResourceRequest& WithSortOrder(CisSortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(CisSortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline ListCisScanResultsAggregatedByTargetResourceRequest& WithSortOrder(CisSortOrder value) { SetSortOrder(value); return *this;}
     ///@}
   private:
 
     CisScanResultsAggregatedByTargetResourceFilterCriteria m_filterCriteria;
     bool m_filterCriteriaHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
@@ -124,10 +116,10 @@ namespace Model
     Aws::String m_scanArn;
     bool m_scanArnHasBeenSet = false;
 
-    CisScanResultsAggregatedByTargetResourceSortBy m_sortBy;
+    CisScanResultsAggregatedByTargetResourceSortBy m_sortBy{CisScanResultsAggregatedByTargetResourceSortBy::NOT_SET};
     bool m_sortByHasBeenSet = false;
 
-    CisSortOrder m_sortOrder;
+    CisSortOrder m_sortOrder{CisSortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
   };
 

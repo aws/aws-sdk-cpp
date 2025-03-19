@@ -12,11 +12,6 @@ using namespace Aws::DirectConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeHostedConnectionsRequest::DescribeHostedConnectionsRequest() : 
-    m_connectionIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeHostedConnectionsRequest::SerializePayload() const
 {
   JsonValue payload;

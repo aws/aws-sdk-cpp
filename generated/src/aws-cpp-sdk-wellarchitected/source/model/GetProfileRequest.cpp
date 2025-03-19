@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetProfileRequest::GetProfileRequest() : 
-    m_profileArnHasBeenSet(false),
-    m_profileVersionHasBeenSet(false)
-{
-}
-
 Aws::String GetProfileRequest::SerializePayload() const
 {
   return {};

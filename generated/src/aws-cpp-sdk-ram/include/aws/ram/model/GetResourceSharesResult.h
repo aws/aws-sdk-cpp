@@ -29,7 +29,7 @@ namespace Model
   class GetResourceSharesResult
   {
   public:
-    AWS_RAM_API GetResourceSharesResult();
+    AWS_RAM_API GetResourceSharesResult() = default;
     AWS_RAM_API GetResourceSharesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RAM_API GetResourceSharesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>An array of objects that contain the information about the resource
      * shares.</p>
      */
-    inline const Aws::Vector<ResourceShare>& GetResourceShares() const{ return m_resourceShares; }
-    inline void SetResourceShares(const Aws::Vector<ResourceShare>& value) { m_resourceShares = value; }
-    inline void SetResourceShares(Aws::Vector<ResourceShare>&& value) { m_resourceShares = std::move(value); }
-    inline GetResourceSharesResult& WithResourceShares(const Aws::Vector<ResourceShare>& value) { SetResourceShares(value); return *this;}
-    inline GetResourceSharesResult& WithResourceShares(Aws::Vector<ResourceShare>&& value) { SetResourceShares(std::move(value)); return *this;}
-    inline GetResourceSharesResult& AddResourceShares(const ResourceShare& value) { m_resourceShares.push_back(value); return *this; }
-    inline GetResourceSharesResult& AddResourceShares(ResourceShare&& value) { m_resourceShares.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ResourceShare>& GetResourceShares() const { return m_resourceShares; }
+    template<typename ResourceSharesT = Aws::Vector<ResourceShare>>
+    void SetResourceShares(ResourceSharesT&& value) { m_resourceSharesHasBeenSet = true; m_resourceShares = std::forward<ResourceSharesT>(value); }
+    template<typename ResourceSharesT = Aws::Vector<ResourceShare>>
+    GetResourceSharesResult& WithResourceShares(ResourceSharesT&& value) { SetResourceShares(std::forward<ResourceSharesT>(value)); return *this;}
+    template<typename ResourceSharesT = ResourceShare>
+    GetResourceSharesResult& AddResourceShares(ResourceSharesT&& value) { m_resourceSharesHasBeenSet = true; m_resourceShares.emplace_back(std::forward<ResourceSharesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -57,32 +57,31 @@ namespace Model
      * element comes back as <code>null</code>. This indicates that this is the last
      * page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetResourceSharesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetResourceSharesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetResourceSharesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetResourceSharesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetResourceSharesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetResourceSharesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetResourceSharesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetResourceSharesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ResourceShare> m_resourceShares;
+    bool m_resourceSharesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

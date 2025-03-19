@@ -34,7 +34,7 @@ namespace Model
   class Warning
   {
   public:
-    AWS_TEXTRACT_API Warning();
+    AWS_TEXTRACT_API Warning() = default;
     AWS_TEXTRACT_API Warning(Aws::Utils::Json::JsonView jsonValue);
     AWS_TEXTRACT_API Warning& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,26 +44,24 @@ namespace Model
     /**
      * <p>The error code for the warning.</p>
      */
-    inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
+    inline const Aws::String& GetErrorCode() const { return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-    inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-    inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
-    inline Warning& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
-    inline Warning& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
-    inline Warning& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+    template<typename ErrorCodeT = Aws::String>
+    void SetErrorCode(ErrorCodeT&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::forward<ErrorCodeT>(value); }
+    template<typename ErrorCodeT = Aws::String>
+    Warning& WithErrorCode(ErrorCodeT&& value) { SetErrorCode(std::forward<ErrorCodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of the pages that the warning applies to.</p>
      */
-    inline const Aws::Vector<int>& GetPages() const{ return m_pages; }
+    inline const Aws::Vector<int>& GetPages() const { return m_pages; }
     inline bool PagesHasBeenSet() const { return m_pagesHasBeenSet; }
-    inline void SetPages(const Aws::Vector<int>& value) { m_pagesHasBeenSet = true; m_pages = value; }
-    inline void SetPages(Aws::Vector<int>&& value) { m_pagesHasBeenSet = true; m_pages = std::move(value); }
-    inline Warning& WithPages(const Aws::Vector<int>& value) { SetPages(value); return *this;}
-    inline Warning& WithPages(Aws::Vector<int>&& value) { SetPages(std::move(value)); return *this;}
+    template<typename PagesT = Aws::Vector<int>>
+    void SetPages(PagesT&& value) { m_pagesHasBeenSet = true; m_pages = std::forward<PagesT>(value); }
+    template<typename PagesT = Aws::Vector<int>>
+    Warning& WithPages(PagesT&& value) { SetPages(std::forward<PagesT>(value)); return *this;}
     inline Warning& AddPages(int value) { m_pagesHasBeenSet = true; m_pages.push_back(value); return *this; }
     ///@}
   private:

@@ -30,7 +30,7 @@ namespace Model
   class ListInsightsMetricDataResult
   {
   public:
-    AWS_CLOUDTRAIL_API ListInsightsMetricDataResult();
+    AWS_CLOUDTRAIL_API ListInsightsMetricDataResult() = default;
     AWS_CLOUDTRAIL_API ListInsightsMetricDataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDTRAIL_API ListInsightsMetricDataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,11 @@ namespace Model
      * <p>The Amazon Web Services service to which the request was made, such as
      * <code>iam.amazonaws.com</code> or <code>s3.amazonaws.com</code>.</p>
      */
-    inline const Aws::String& GetEventSource() const{ return m_eventSource; }
-    inline void SetEventSource(const Aws::String& value) { m_eventSource = value; }
-    inline void SetEventSource(Aws::String&& value) { m_eventSource = std::move(value); }
-    inline void SetEventSource(const char* value) { m_eventSource.assign(value); }
-    inline ListInsightsMetricDataResult& WithEventSource(const Aws::String& value) { SetEventSource(value); return *this;}
-    inline ListInsightsMetricDataResult& WithEventSource(Aws::String&& value) { SetEventSource(std::move(value)); return *this;}
-    inline ListInsightsMetricDataResult& WithEventSource(const char* value) { SetEventSource(value); return *this;}
+    inline const Aws::String& GetEventSource() const { return m_eventSource; }
+    template<typename EventSourceT = Aws::String>
+    void SetEventSource(EventSourceT&& value) { m_eventSourceHasBeenSet = true; m_eventSource = std::forward<EventSourceT>(value); }
+    template<typename EventSourceT = Aws::String>
+    ListInsightsMetricDataResult& WithEventSource(EventSourceT&& value) { SetEventSource(std::forward<EventSourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,13 +52,11 @@ namespace Model
      * <p>The name of the event, typically the Amazon Web Services API on which unusual
      * levels of activity were recorded.</p>
      */
-    inline const Aws::String& GetEventName() const{ return m_eventName; }
-    inline void SetEventName(const Aws::String& value) { m_eventName = value; }
-    inline void SetEventName(Aws::String&& value) { m_eventName = std::move(value); }
-    inline void SetEventName(const char* value) { m_eventName.assign(value); }
-    inline ListInsightsMetricDataResult& WithEventName(const Aws::String& value) { SetEventName(value); return *this;}
-    inline ListInsightsMetricDataResult& WithEventName(Aws::String&& value) { SetEventName(std::move(value)); return *this;}
-    inline ListInsightsMetricDataResult& WithEventName(const char* value) { SetEventName(value); return *this;}
+    inline const Aws::String& GetEventName() const { return m_eventName; }
+    template<typename EventNameT = Aws::String>
+    void SetEventName(EventNameT&& value) { m_eventNameHasBeenSet = true; m_eventName = std::forward<EventNameT>(value); }
+    template<typename EventNameT = Aws::String>
+    ListInsightsMetricDataResult& WithEventName(EventNameT&& value) { SetEventName(std::forward<EventNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,11 +68,9 @@ namespace Model
      * <code>ApiErrorRateInsight</code> Insights type analyzes management API calls
      * that result in error codes.</p>
      */
-    inline const InsightType& GetInsightType() const{ return m_insightType; }
-    inline void SetInsightType(const InsightType& value) { m_insightType = value; }
-    inline void SetInsightType(InsightType&& value) { m_insightType = std::move(value); }
-    inline ListInsightsMetricDataResult& WithInsightType(const InsightType& value) { SetInsightType(value); return *this;}
-    inline ListInsightsMetricDataResult& WithInsightType(InsightType&& value) { SetInsightType(std::move(value)); return *this;}
+    inline InsightType GetInsightType() const { return m_insightType; }
+    inline void SetInsightType(InsightType value) { m_insightTypeHasBeenSet = true; m_insightType = value; }
+    inline ListInsightsMetricDataResult& WithInsightType(InsightType value) { SetInsightType(value); return *this;}
     ///@}
 
     ///@{
@@ -86,13 +80,11 @@ namespace Model
      * <code>ApiErrorRateInsight</code> Insights type, this is the error to retrieve
      * data for. For example, <code>AccessDenied</code>.</p>
      */
-    inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
-    inline void SetErrorCode(const Aws::String& value) { m_errorCode = value; }
-    inline void SetErrorCode(Aws::String&& value) { m_errorCode = std::move(value); }
-    inline void SetErrorCode(const char* value) { m_errorCode.assign(value); }
-    inline ListInsightsMetricDataResult& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
-    inline ListInsightsMetricDataResult& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
-    inline ListInsightsMetricDataResult& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+    inline const Aws::String& GetErrorCode() const { return m_errorCode; }
+    template<typename ErrorCodeT = Aws::String>
+    void SetErrorCode(ErrorCodeT&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::forward<ErrorCodeT>(value); }
+    template<typename ErrorCodeT = Aws::String>
+    ListInsightsMetricDataResult& WithErrorCode(ErrorCodeT&& value) { SetErrorCode(std::forward<ErrorCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,13 +92,13 @@ namespace Model
      * <p>List of timestamps at intervals corresponding to the specified time
      * period.</p>
      */
-    inline const Aws::Vector<Aws::Utils::DateTime>& GetTimestamps() const{ return m_timestamps; }
-    inline void SetTimestamps(const Aws::Vector<Aws::Utils::DateTime>& value) { m_timestamps = value; }
-    inline void SetTimestamps(Aws::Vector<Aws::Utils::DateTime>&& value) { m_timestamps = std::move(value); }
-    inline ListInsightsMetricDataResult& WithTimestamps(const Aws::Vector<Aws::Utils::DateTime>& value) { SetTimestamps(value); return *this;}
-    inline ListInsightsMetricDataResult& WithTimestamps(Aws::Vector<Aws::Utils::DateTime>&& value) { SetTimestamps(std::move(value)); return *this;}
-    inline ListInsightsMetricDataResult& AddTimestamps(const Aws::Utils::DateTime& value) { m_timestamps.push_back(value); return *this; }
-    inline ListInsightsMetricDataResult& AddTimestamps(Aws::Utils::DateTime&& value) { m_timestamps.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Aws::Utils::DateTime>& GetTimestamps() const { return m_timestamps; }
+    template<typename TimestampsT = Aws::Vector<Aws::Utils::DateTime>>
+    void SetTimestamps(TimestampsT&& value) { m_timestampsHasBeenSet = true; m_timestamps = std::forward<TimestampsT>(value); }
+    template<typename TimestampsT = Aws::Vector<Aws::Utils::DateTime>>
+    ListInsightsMetricDataResult& WithTimestamps(TimestampsT&& value) { SetTimestamps(std::forward<TimestampsT>(value)); return *this;}
+    template<typename TimestampsT = Aws::Utils::DateTime>
+    ListInsightsMetricDataResult& AddTimestamps(TimestampsT&& value) { m_timestampsHasBeenSet = true; m_timestamps.emplace_back(std::forward<TimestampsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -114,12 +106,12 @@ namespace Model
      * <p>List of values representing the API call rate or error rate at each
      * timestamp. The number of values is equal to the number of timestamps.</p>
      */
-    inline const Aws::Vector<double>& GetValues() const{ return m_values; }
-    inline void SetValues(const Aws::Vector<double>& value) { m_values = value; }
-    inline void SetValues(Aws::Vector<double>&& value) { m_values = std::move(value); }
-    inline ListInsightsMetricDataResult& WithValues(const Aws::Vector<double>& value) { SetValues(value); return *this;}
-    inline ListInsightsMetricDataResult& WithValues(Aws::Vector<double>&& value) { SetValues(std::move(value)); return *this;}
-    inline ListInsightsMetricDataResult& AddValues(double value) { m_values.push_back(value); return *this; }
+    inline const Aws::Vector<double>& GetValues() const { return m_values; }
+    template<typename ValuesT = Aws::Vector<double>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<double>>
+    ListInsightsMetricDataResult& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    inline ListInsightsMetricDataResult& AddValues(double value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -128,42 +120,46 @@ namespace Model
      * You can set the <code>NextToken</code> parameter in the next request to this
      * value to continue retrieval.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListInsightsMetricDataResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListInsightsMetricDataResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListInsightsMetricDataResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListInsightsMetricDataResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListInsightsMetricDataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListInsightsMetricDataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListInsightsMetricDataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListInsightsMetricDataResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_eventSource;
+    bool m_eventSourceHasBeenSet = false;
 
     Aws::String m_eventName;
+    bool m_eventNameHasBeenSet = false;
 
-    InsightType m_insightType;
+    InsightType m_insightType{InsightType::NOT_SET};
+    bool m_insightTypeHasBeenSet = false;
 
     Aws::String m_errorCode;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::Vector<Aws::Utils::DateTime> m_timestamps;
+    bool m_timestampsHasBeenSet = false;
 
     Aws::Vector<double> m_values;
+    bool m_valuesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

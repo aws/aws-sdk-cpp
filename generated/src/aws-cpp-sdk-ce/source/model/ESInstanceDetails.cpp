@@ -18,19 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-ESInstanceDetails::ESInstanceDetails() : 
-    m_instanceClassHasBeenSet(false),
-    m_instanceSizeHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_currentGeneration(false),
-    m_currentGenerationHasBeenSet(false),
-    m_sizeFlexEligible(false),
-    m_sizeFlexEligibleHasBeenSet(false)
-{
-}
-
 ESInstanceDetails::ESInstanceDetails(JsonView jsonValue)
-  : ESInstanceDetails()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ ESInstanceDetails& ESInstanceDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InstanceClass"))
   {
     m_instanceClass = jsonValue.GetString("InstanceClass");
-
     m_instanceClassHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceSize"))
   {
     m_instanceSize = jsonValue.GetString("InstanceSize");
-
     m_instanceSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetString("Region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentGeneration"))
   {
     m_currentGeneration = jsonValue.GetBool("CurrentGeneration");
-
     m_currentGenerationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SizeFlexEligible"))
   {
     m_sizeFlexEligible = jsonValue.GetBool("SizeFlexEligible");
-
     m_sizeFlexEligibleHasBeenSet = true;
   }
-
   return *this;
 }
 

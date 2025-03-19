@@ -12,11 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteConformancePackRequest::DeleteConformancePackRequest() : 
-    m_conformancePackNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteConformancePackRequest::SerializePayload() const
 {
   JsonValue payload;

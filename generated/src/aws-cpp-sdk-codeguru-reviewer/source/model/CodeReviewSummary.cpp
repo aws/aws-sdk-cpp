@@ -18,27 +18,7 @@ namespace CodeGuruReviewer
 namespace Model
 {
 
-CodeReviewSummary::CodeReviewSummary() : 
-    m_nameHasBeenSet(false),
-    m_codeReviewArnHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_providerType(ProviderType::NOT_SET),
-    m_providerTypeHasBeenSet(false),
-    m_state(JobState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_createdTimeStampHasBeenSet(false),
-    m_lastUpdatedTimeStampHasBeenSet(false),
-    m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_pullRequestIdHasBeenSet(false),
-    m_metricsSummaryHasBeenSet(false),
-    m_sourceCodeTypeHasBeenSet(false)
-{
-}
-
 CodeReviewSummary::CodeReviewSummary(JsonView jsonValue)
-  : CodeReviewSummary()
 {
   *this = jsonValue;
 }
@@ -48,87 +28,63 @@ CodeReviewSummary& CodeReviewSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CodeReviewArn"))
   {
     m_codeReviewArn = jsonValue.GetString("CodeReviewArn");
-
     m_codeReviewArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RepositoryName"))
   {
     m_repositoryName = jsonValue.GetString("RepositoryName");
-
     m_repositoryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Owner"))
   {
     m_owner = jsonValue.GetString("Owner");
-
     m_ownerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProviderType"))
   {
     m_providerType = ProviderTypeMapper::GetProviderTypeForName(jsonValue.GetString("ProviderType"));
-
     m_providerTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = JobStateMapper::GetJobStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimeStamp"))
   {
     m_createdTimeStamp = jsonValue.GetDouble("CreatedTimeStamp");
-
     m_createdTimeStampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTimeStamp"))
   {
     m_lastUpdatedTimeStamp = jsonValue.GetDouble("LastUpdatedTimeStamp");
-
     m_lastUpdatedTimeStampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = TypeMapper::GetTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PullRequestId"))
   {
     m_pullRequestId = jsonValue.GetString("PullRequestId");
-
     m_pullRequestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricsSummary"))
   {
     m_metricsSummary = jsonValue.GetObject("MetricsSummary");
-
     m_metricsSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceCodeType"))
   {
     m_sourceCodeType = jsonValue.GetObject("SourceCodeType");
-
     m_sourceCodeTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::LakeFormation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ExtendTransactionRequest::ExtendTransactionRequest() : 
-    m_transactionIdHasBeenSet(false)
-{
-}
-
 Aws::String ExtendTransactionRequest::SerializePayload() const
 {
   JsonValue payload;

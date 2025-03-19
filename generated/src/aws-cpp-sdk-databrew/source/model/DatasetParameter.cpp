@@ -18,19 +18,7 @@ namespace GlueDataBrew
 namespace Model
 {
 
-DatasetParameter::DatasetParameter() : 
-    m_nameHasBeenSet(false),
-    m_type(ParameterType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_datetimeOptionsHasBeenSet(false),
-    m_createColumn(false),
-    m_createColumnHasBeenSet(false),
-    m_filterHasBeenSet(false)
-{
-}
-
 DatasetParameter::DatasetParameter(JsonView jsonValue)
-  : DatasetParameter()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ DatasetParameter& DatasetParameter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ParameterTypeMapper::GetParameterTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatetimeOptions"))
   {
     m_datetimeOptions = jsonValue.GetObject("DatetimeOptions");
-
     m_datetimeOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateColumn"))
   {
     m_createColumn = jsonValue.GetBool("CreateColumn");
-
     m_createColumnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Filter"))
   {
     m_filter = jsonValue.GetObject("Filter");
-
     m_filterHasBeenSet = true;
   }
-
   return *this;
 }
 

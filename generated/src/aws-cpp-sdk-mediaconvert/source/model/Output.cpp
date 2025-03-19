@@ -18,20 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-Output::Output() : 
-    m_audioDescriptionsHasBeenSet(false),
-    m_captionDescriptionsHasBeenSet(false),
-    m_containerSettingsHasBeenSet(false),
-    m_extensionHasBeenSet(false),
-    m_nameModifierHasBeenSet(false),
-    m_outputSettingsHasBeenSet(false),
-    m_presetHasBeenSet(false),
-    m_videoDescriptionHasBeenSet(false)
-{
-}
-
 Output::Output(JsonView jsonValue)
-  : Output()
 {
   *this = jsonValue;
 }
@@ -47,7 +34,6 @@ Output& Output::operator =(JsonView jsonValue)
     }
     m_audioDescriptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("captionDescriptions"))
   {
     Aws::Utils::Array<JsonView> captionDescriptionsJsonList = jsonValue.GetArray("captionDescriptions");
@@ -57,49 +43,36 @@ Output& Output::operator =(JsonView jsonValue)
     }
     m_captionDescriptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("containerSettings"))
   {
     m_containerSettings = jsonValue.GetObject("containerSettings");
-
     m_containerSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("extension"))
   {
     m_extension = jsonValue.GetString("extension");
-
     m_extensionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nameModifier"))
   {
     m_nameModifier = jsonValue.GetString("nameModifier");
-
     m_nameModifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputSettings"))
   {
     m_outputSettings = jsonValue.GetObject("outputSettings");
-
     m_outputSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("preset"))
   {
     m_preset = jsonValue.GetString("preset");
-
     m_presetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("videoDescription"))
   {
     m_videoDescription = jsonValue.GetObject("videoDescription");
-
     m_videoDescriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

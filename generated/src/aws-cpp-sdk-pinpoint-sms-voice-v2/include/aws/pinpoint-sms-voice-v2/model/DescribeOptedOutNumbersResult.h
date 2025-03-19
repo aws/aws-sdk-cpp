@@ -29,7 +29,7 @@ namespace Model
   class DescribeOptedOutNumbersResult
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API DescribeOptedOutNumbersResult();
+    AWS_PINPOINTSMSVOICEV2_API DescribeOptedOutNumbersResult() = default;
     AWS_PINPOINTSMSVOICEV2_API DescribeOptedOutNumbersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINTSMSVOICEV2_API DescribeOptedOutNumbersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,26 +38,22 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the OptOutList.</p>
      */
-    inline const Aws::String& GetOptOutListArn() const{ return m_optOutListArn; }
-    inline void SetOptOutListArn(const Aws::String& value) { m_optOutListArn = value; }
-    inline void SetOptOutListArn(Aws::String&& value) { m_optOutListArn = std::move(value); }
-    inline void SetOptOutListArn(const char* value) { m_optOutListArn.assign(value); }
-    inline DescribeOptedOutNumbersResult& WithOptOutListArn(const Aws::String& value) { SetOptOutListArn(value); return *this;}
-    inline DescribeOptedOutNumbersResult& WithOptOutListArn(Aws::String&& value) { SetOptOutListArn(std::move(value)); return *this;}
-    inline DescribeOptedOutNumbersResult& WithOptOutListArn(const char* value) { SetOptOutListArn(value); return *this;}
+    inline const Aws::String& GetOptOutListArn() const { return m_optOutListArn; }
+    template<typename OptOutListArnT = Aws::String>
+    void SetOptOutListArn(OptOutListArnT&& value) { m_optOutListArnHasBeenSet = true; m_optOutListArn = std::forward<OptOutListArnT>(value); }
+    template<typename OptOutListArnT = Aws::String>
+    DescribeOptedOutNumbersResult& WithOptOutListArn(OptOutListArnT&& value) { SetOptOutListArn(std::forward<OptOutListArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the OptOutList.</p>
      */
-    inline const Aws::String& GetOptOutListName() const{ return m_optOutListName; }
-    inline void SetOptOutListName(const Aws::String& value) { m_optOutListName = value; }
-    inline void SetOptOutListName(Aws::String&& value) { m_optOutListName = std::move(value); }
-    inline void SetOptOutListName(const char* value) { m_optOutListName.assign(value); }
-    inline DescribeOptedOutNumbersResult& WithOptOutListName(const Aws::String& value) { SetOptOutListName(value); return *this;}
-    inline DescribeOptedOutNumbersResult& WithOptOutListName(Aws::String&& value) { SetOptOutListName(std::move(value)); return *this;}
-    inline DescribeOptedOutNumbersResult& WithOptOutListName(const char* value) { SetOptOutListName(value); return *this;}
+    inline const Aws::String& GetOptOutListName() const { return m_optOutListName; }
+    template<typename OptOutListNameT = Aws::String>
+    void SetOptOutListName(OptOutListNameT&& value) { m_optOutListNameHasBeenSet = true; m_optOutListName = std::forward<OptOutListNameT>(value); }
+    template<typename OptOutListNameT = Aws::String>
+    DescribeOptedOutNumbersResult& WithOptOutListName(OptOutListNameT&& value) { SetOptOutListName(std::forward<OptOutListNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,13 +61,13 @@ namespace Model
      * <p>An array of OptedOutNumbersInformation objects that provide information about
      * the requested OptedOutNumbers.</p>
      */
-    inline const Aws::Vector<OptedOutNumberInformation>& GetOptedOutNumbers() const{ return m_optedOutNumbers; }
-    inline void SetOptedOutNumbers(const Aws::Vector<OptedOutNumberInformation>& value) { m_optedOutNumbers = value; }
-    inline void SetOptedOutNumbers(Aws::Vector<OptedOutNumberInformation>&& value) { m_optedOutNumbers = std::move(value); }
-    inline DescribeOptedOutNumbersResult& WithOptedOutNumbers(const Aws::Vector<OptedOutNumberInformation>& value) { SetOptedOutNumbers(value); return *this;}
-    inline DescribeOptedOutNumbersResult& WithOptedOutNumbers(Aws::Vector<OptedOutNumberInformation>&& value) { SetOptedOutNumbers(std::move(value)); return *this;}
-    inline DescribeOptedOutNumbersResult& AddOptedOutNumbers(const OptedOutNumberInformation& value) { m_optedOutNumbers.push_back(value); return *this; }
-    inline DescribeOptedOutNumbersResult& AddOptedOutNumbers(OptedOutNumberInformation&& value) { m_optedOutNumbers.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<OptedOutNumberInformation>& GetOptedOutNumbers() const { return m_optedOutNumbers; }
+    template<typename OptedOutNumbersT = Aws::Vector<OptedOutNumberInformation>>
+    void SetOptedOutNumbers(OptedOutNumbersT&& value) { m_optedOutNumbersHasBeenSet = true; m_optedOutNumbers = std::forward<OptedOutNumbersT>(value); }
+    template<typename OptedOutNumbersT = Aws::Vector<OptedOutNumberInformation>>
+    DescribeOptedOutNumbersResult& WithOptedOutNumbers(OptedOutNumbersT&& value) { SetOptedOutNumbers(std::forward<OptedOutNumbersT>(value)); return *this;}
+    template<typename OptedOutNumbersT = OptedOutNumberInformation>
+    DescribeOptedOutNumbersResult& AddOptedOutNumbers(OptedOutNumbersT&& value) { m_optedOutNumbersHasBeenSet = true; m_optedOutNumbers.emplace_back(std::forward<OptedOutNumbersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -79,36 +75,37 @@ namespace Model
      * <p>The token to be used for the next set of paginated results. If this field is
      * empty then there are no more results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeOptedOutNumbersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeOptedOutNumbersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeOptedOutNumbersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeOptedOutNumbersResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeOptedOutNumbersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeOptedOutNumbersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeOptedOutNumbersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeOptedOutNumbersResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_optOutListArn;
+    bool m_optOutListArnHasBeenSet = false;
 
     Aws::String m_optOutListName;
+    bool m_optOutListNameHasBeenSet = false;
 
     Aws::Vector<OptedOutNumberInformation> m_optedOutNumbers;
+    bool m_optedOutNumbersHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

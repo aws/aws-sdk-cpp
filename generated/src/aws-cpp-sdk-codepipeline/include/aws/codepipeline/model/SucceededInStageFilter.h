@@ -32,7 +32,7 @@ namespace Model
   class SucceededInStageFilter
   {
   public:
-    AWS_CODEPIPELINE_API SucceededInStageFilter();
+    AWS_CODEPIPELINE_API SucceededInStageFilter() = default;
     AWS_CODEPIPELINE_API SucceededInStageFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API SucceededInStageFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The name of the stage for filtering for pipeline executions where the stage
      * was successful in the current pipeline version.</p>
      */
-    inline const Aws::String& GetStageName() const{ return m_stageName; }
+    inline const Aws::String& GetStageName() const { return m_stageName; }
     inline bool StageNameHasBeenSet() const { return m_stageNameHasBeenSet; }
-    inline void SetStageName(const Aws::String& value) { m_stageNameHasBeenSet = true; m_stageName = value; }
-    inline void SetStageName(Aws::String&& value) { m_stageNameHasBeenSet = true; m_stageName = std::move(value); }
-    inline void SetStageName(const char* value) { m_stageNameHasBeenSet = true; m_stageName.assign(value); }
-    inline SucceededInStageFilter& WithStageName(const Aws::String& value) { SetStageName(value); return *this;}
-    inline SucceededInStageFilter& WithStageName(Aws::String&& value) { SetStageName(std::move(value)); return *this;}
-    inline SucceededInStageFilter& WithStageName(const char* value) { SetStageName(value); return *this;}
+    template<typename StageNameT = Aws::String>
+    void SetStageName(StageNameT&& value) { m_stageNameHasBeenSet = true; m_stageName = std::forward<StageNameT>(value); }
+    template<typename StageNameT = Aws::String>
+    SucceededInStageFilter& WithStageName(StageNameT&& value) { SetStageName(std::forward<StageNameT>(value)); return *this;}
     ///@}
   private:
 

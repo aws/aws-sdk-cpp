@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-OnlineStoreConfigUpdate::OnlineStoreConfigUpdate() : 
-    m_ttlDurationHasBeenSet(false)
-{
-}
-
 OnlineStoreConfigUpdate::OnlineStoreConfigUpdate(JsonView jsonValue)
-  : OnlineStoreConfigUpdate()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ OnlineStoreConfigUpdate& OnlineStoreConfigUpdate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TtlDuration"))
   {
     m_ttlDuration = jsonValue.GetObject("TtlDuration");
-
     m_ttlDurationHasBeenSet = true;
   }
-
   return *this;
 }
 

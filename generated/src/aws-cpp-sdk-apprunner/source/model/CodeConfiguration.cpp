@@ -18,15 +18,7 @@ namespace AppRunner
 namespace Model
 {
 
-CodeConfiguration::CodeConfiguration() : 
-    m_configurationSource(ConfigurationSource::NOT_SET),
-    m_configurationSourceHasBeenSet(false),
-    m_codeConfigurationValuesHasBeenSet(false)
-{
-}
-
 CodeConfiguration::CodeConfiguration(JsonView jsonValue)
-  : CodeConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ CodeConfiguration& CodeConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ConfigurationSource"))
   {
     m_configurationSource = ConfigurationSourceMapper::GetConfigurationSourceForName(jsonValue.GetString("ConfigurationSource"));
-
     m_configurationSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CodeConfigurationValues"))
   {
     m_codeConfigurationValues = jsonValue.GetObject("CodeConfigurationValues");
-
     m_codeConfigurationValuesHasBeenSet = true;
   }
-
   return *this;
 }
 

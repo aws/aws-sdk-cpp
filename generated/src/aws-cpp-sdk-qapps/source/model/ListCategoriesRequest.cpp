@@ -13,11 +13,6 @@ using namespace Aws::QApps::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListCategoriesRequest::ListCategoriesRequest() : 
-    m_instanceIdHasBeenSet(false)
-{
-}
-
 Aws::String ListCategoriesRequest::SerializePayload() const
 {
   return {};

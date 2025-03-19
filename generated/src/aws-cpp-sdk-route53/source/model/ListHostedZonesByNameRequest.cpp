@@ -17,12 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListHostedZonesByNameRequest::ListHostedZonesByNameRequest() : 
-    m_dNSNameHasBeenSet(false),
-    m_hostedZoneIdHasBeenSet(false),
-    m_maxItemsHasBeenSet(false)
-{
-}
 
 Aws::String ListHostedZonesByNameRequest::SerializePayload() const
 {

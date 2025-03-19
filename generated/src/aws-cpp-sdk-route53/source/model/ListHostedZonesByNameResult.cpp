@@ -16,13 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListHostedZonesByNameResult::ListHostedZonesByNameResult() : 
-    m_isTruncated(false)
-{
-}
-
 ListHostedZonesByNameResult::ListHostedZonesByNameResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : ListHostedZonesByNameResult()
 {
   *this = result;
 }
@@ -38,42 +32,50 @@ ListHostedZonesByNameResult& ListHostedZonesByNameResult::operator =(const Aws::
     if(!hostedZonesNode.IsNull())
     {
       XmlNode hostedZonesMember = hostedZonesNode.FirstChild("HostedZone");
+      m_hostedZonesHasBeenSet = !hostedZonesMember.IsNull();
       while(!hostedZonesMember.IsNull())
       {
         m_hostedZones.push_back(hostedZonesMember);
         hostedZonesMember = hostedZonesMember.NextNode("HostedZone");
       }
 
+      m_hostedZonesHasBeenSet = true;
     }
     XmlNode dNSNameNode = resultNode.FirstChild("DNSName");
     if(!dNSNameNode.IsNull())
     {
       m_dNSName = Aws::Utils::Xml::DecodeEscapedXmlText(dNSNameNode.GetText());
+      m_dNSNameHasBeenSet = true;
     }
     XmlNode hostedZoneIdNode = resultNode.FirstChild("HostedZoneId");
     if(!hostedZoneIdNode.IsNull())
     {
       m_hostedZoneId = Aws::Utils::Xml::DecodeEscapedXmlText(hostedZoneIdNode.GetText());
+      m_hostedZoneIdHasBeenSet = true;
     }
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
     if(!isTruncatedNode.IsNull())
     {
       m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isTruncatedNode.GetText()).c_str()).c_str());
+      m_isTruncatedHasBeenSet = true;
     }
     XmlNode nextDNSNameNode = resultNode.FirstChild("NextDNSName");
     if(!nextDNSNameNode.IsNull())
     {
       m_nextDNSName = Aws::Utils::Xml::DecodeEscapedXmlText(nextDNSNameNode.GetText());
+      m_nextDNSNameHasBeenSet = true;
     }
     XmlNode nextHostedZoneIdNode = resultNode.FirstChild("NextHostedZoneId");
     if(!nextHostedZoneIdNode.IsNull())
     {
       m_nextHostedZoneId = Aws::Utils::Xml::DecodeEscapedXmlText(nextHostedZoneIdNode.GetText());
+      m_nextHostedZoneIdHasBeenSet = true;
     }
     XmlNode maxItemsNode = resultNode.FirstChild("MaxItems");
     if(!maxItemsNode.IsNull())
     {
       m_maxItems = Aws::Utils::Xml::DecodeEscapedXmlText(maxItemsNode.GetText());
+      m_maxItemsHasBeenSet = true;
     }
   }
 
@@ -82,6 +84,7 @@ ListHostedZonesByNameResult& ListHostedZonesByNameResult::operator =(const Aws::
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

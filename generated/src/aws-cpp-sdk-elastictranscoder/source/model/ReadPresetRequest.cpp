@@ -12,11 +12,6 @@ using namespace Aws::ElasticTranscoder::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ReadPresetRequest::ReadPresetRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String ReadPresetRequest::SerializePayload() const
 {
   return {};

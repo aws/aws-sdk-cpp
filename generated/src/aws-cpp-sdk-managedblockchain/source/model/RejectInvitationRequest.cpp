@@ -12,11 +12,6 @@ using namespace Aws::ManagedBlockchain::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RejectInvitationRequest::RejectInvitationRequest() : 
-    m_invitationIdHasBeenSet(false)
-{
-}
-
 Aws::String RejectInvitationRequest::SerializePayload() const
 {
   return {};

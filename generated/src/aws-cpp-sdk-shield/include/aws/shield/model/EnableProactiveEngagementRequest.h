@@ -19,7 +19,7 @@ namespace Model
   class EnableProactiveEngagementRequest : public ShieldRequest
   {
   public:
-    AWS_SHIELD_API EnableProactiveEngagementRequest();
+    AWS_SHIELD_API EnableProactiveEngagementRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

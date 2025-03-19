@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteTargetAccountConfigurationResult::DeleteTargetAccountConfigurationResult()
-{
-}
-
 DeleteTargetAccountConfigurationResult::DeleteTargetAccountConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DeleteTargetAccountConfigurationResult& DeleteTargetAccountConfigurationResult::
   if(jsonValue.ValueExists("targetAccountConfiguration"))
   {
     m_targetAccountConfiguration = jsonValue.GetObject("targetAccountConfiguration");
-
+    m_targetAccountConfigurationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

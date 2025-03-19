@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DatetimeOffsetsResult::DatetimeOffsetsResult()
-{
-}
-
 DatetimeOffsetsResult::DatetimeOffsetsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,6 +32,7 @@ DatetimeOffsetsResult& DatetimeOffsetsResult::operator =(const Aws::AmazonWebSer
     if(!datetimeNode.IsNull())
     {
       m_datetime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(datetimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+      m_datetimeHasBeenSet = true;
     }
   }
 
@@ -44,6 +41,7 @@ DatetimeOffsetsResult& DatetimeOffsetsResult::operator =(const Aws::AmazonWebSer
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

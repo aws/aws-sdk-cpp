@@ -18,14 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-QuietTime::QuietTime() : 
-    m_endHasBeenSet(false),
-    m_startHasBeenSet(false)
-{
-}
-
 QuietTime::QuietTime(JsonView jsonValue)
-  : QuietTime()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ QuietTime& QuietTime::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("End"))
   {
     m_end = jsonValue.GetString("End");
-
     m_endHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Start"))
   {
     m_start = jsonValue.GetString("Start");
-
     m_startHasBeenSet = true;
   }
-
   return *this;
 }
 

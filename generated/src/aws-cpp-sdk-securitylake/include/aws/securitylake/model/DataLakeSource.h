@@ -37,7 +37,7 @@ namespace Model
   class DataLakeSource
   {
   public:
-    AWS_SECURITYLAKE_API DataLakeSource();
+    AWS_SECURITYLAKE_API DataLakeSource() = default;
     AWS_SECURITYLAKE_API DataLakeSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYLAKE_API DataLakeSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYLAKE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
     /**
      * <p>The ID of the Security Lake account for which logs are collected.</p>
      */
-    inline const Aws::String& GetAccount() const{ return m_account; }
+    inline const Aws::String& GetAccount() const { return m_account; }
     inline bool AccountHasBeenSet() const { return m_accountHasBeenSet; }
-    inline void SetAccount(const Aws::String& value) { m_accountHasBeenSet = true; m_account = value; }
-    inline void SetAccount(Aws::String&& value) { m_accountHasBeenSet = true; m_account = std::move(value); }
-    inline void SetAccount(const char* value) { m_accountHasBeenSet = true; m_account.assign(value); }
-    inline DataLakeSource& WithAccount(const Aws::String& value) { SetAccount(value); return *this;}
-    inline DataLakeSource& WithAccount(Aws::String&& value) { SetAccount(std::move(value)); return *this;}
-    inline DataLakeSource& WithAccount(const char* value) { SetAccount(value); return *this;}
+    template<typename AccountT = Aws::String>
+    void SetAccount(AccountT&& value) { m_accountHasBeenSet = true; m_account = std::forward<AccountT>(value); }
+    template<typename AccountT = Aws::String>
+    DataLakeSource& WithAccount(AccountT&& value) { SetAccount(std::forward<AccountT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,15 +63,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/security-lake/latest/userguide/adding-custom-sources.html#ocsf-eventclass.html">Supported
      * OCSF Event classes</a> in the Amazon Security Lake User Guide.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetEventClasses() const{ return m_eventClasses; }
+    inline const Aws::Vector<Aws::String>& GetEventClasses() const { return m_eventClasses; }
     inline bool EventClassesHasBeenSet() const { return m_eventClassesHasBeenSet; }
-    inline void SetEventClasses(const Aws::Vector<Aws::String>& value) { m_eventClassesHasBeenSet = true; m_eventClasses = value; }
-    inline void SetEventClasses(Aws::Vector<Aws::String>&& value) { m_eventClassesHasBeenSet = true; m_eventClasses = std::move(value); }
-    inline DataLakeSource& WithEventClasses(const Aws::Vector<Aws::String>& value) { SetEventClasses(value); return *this;}
-    inline DataLakeSource& WithEventClasses(Aws::Vector<Aws::String>&& value) { SetEventClasses(std::move(value)); return *this;}
-    inline DataLakeSource& AddEventClasses(const Aws::String& value) { m_eventClassesHasBeenSet = true; m_eventClasses.push_back(value); return *this; }
-    inline DataLakeSource& AddEventClasses(Aws::String&& value) { m_eventClassesHasBeenSet = true; m_eventClasses.push_back(std::move(value)); return *this; }
-    inline DataLakeSource& AddEventClasses(const char* value) { m_eventClassesHasBeenSet = true; m_eventClasses.push_back(value); return *this; }
+    template<typename EventClassesT = Aws::Vector<Aws::String>>
+    void SetEventClasses(EventClassesT&& value) { m_eventClassesHasBeenSet = true; m_eventClasses = std::forward<EventClassesT>(value); }
+    template<typename EventClassesT = Aws::Vector<Aws::String>>
+    DataLakeSource& WithEventClasses(EventClassesT&& value) { SetEventClasses(std::forward<EventClassesT>(value)); return *this;}
+    template<typename EventClassesT = Aws::String>
+    DataLakeSource& AddEventClasses(EventClassesT&& value) { m_eventClassesHasBeenSet = true; m_eventClasses.emplace_back(std::forward<EventClassesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -82,28 +79,26 @@ namespace Model
      * collected. Amazon Security Lake supports log and event collection for natively
      * supported Amazon Web Services services.</p>
      */
-    inline const Aws::String& GetSourceName() const{ return m_sourceName; }
+    inline const Aws::String& GetSourceName() const { return m_sourceName; }
     inline bool SourceNameHasBeenSet() const { return m_sourceNameHasBeenSet; }
-    inline void SetSourceName(const Aws::String& value) { m_sourceNameHasBeenSet = true; m_sourceName = value; }
-    inline void SetSourceName(Aws::String&& value) { m_sourceNameHasBeenSet = true; m_sourceName = std::move(value); }
-    inline void SetSourceName(const char* value) { m_sourceNameHasBeenSet = true; m_sourceName.assign(value); }
-    inline DataLakeSource& WithSourceName(const Aws::String& value) { SetSourceName(value); return *this;}
-    inline DataLakeSource& WithSourceName(Aws::String&& value) { SetSourceName(std::move(value)); return *this;}
-    inline DataLakeSource& WithSourceName(const char* value) { SetSourceName(value); return *this;}
+    template<typename SourceNameT = Aws::String>
+    void SetSourceName(SourceNameT&& value) { m_sourceNameHasBeenSet = true; m_sourceName = std::forward<SourceNameT>(value); }
+    template<typename SourceNameT = Aws::String>
+    DataLakeSource& WithSourceName(SourceNameT&& value) { SetSourceName(std::forward<SourceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The log status for the Security Lake account.</p>
      */
-    inline const Aws::Vector<DataLakeSourceStatus>& GetSourceStatuses() const{ return m_sourceStatuses; }
+    inline const Aws::Vector<DataLakeSourceStatus>& GetSourceStatuses() const { return m_sourceStatuses; }
     inline bool SourceStatusesHasBeenSet() const { return m_sourceStatusesHasBeenSet; }
-    inline void SetSourceStatuses(const Aws::Vector<DataLakeSourceStatus>& value) { m_sourceStatusesHasBeenSet = true; m_sourceStatuses = value; }
-    inline void SetSourceStatuses(Aws::Vector<DataLakeSourceStatus>&& value) { m_sourceStatusesHasBeenSet = true; m_sourceStatuses = std::move(value); }
-    inline DataLakeSource& WithSourceStatuses(const Aws::Vector<DataLakeSourceStatus>& value) { SetSourceStatuses(value); return *this;}
-    inline DataLakeSource& WithSourceStatuses(Aws::Vector<DataLakeSourceStatus>&& value) { SetSourceStatuses(std::move(value)); return *this;}
-    inline DataLakeSource& AddSourceStatuses(const DataLakeSourceStatus& value) { m_sourceStatusesHasBeenSet = true; m_sourceStatuses.push_back(value); return *this; }
-    inline DataLakeSource& AddSourceStatuses(DataLakeSourceStatus&& value) { m_sourceStatusesHasBeenSet = true; m_sourceStatuses.push_back(std::move(value)); return *this; }
+    template<typename SourceStatusesT = Aws::Vector<DataLakeSourceStatus>>
+    void SetSourceStatuses(SourceStatusesT&& value) { m_sourceStatusesHasBeenSet = true; m_sourceStatuses = std::forward<SourceStatusesT>(value); }
+    template<typename SourceStatusesT = Aws::Vector<DataLakeSourceStatus>>
+    DataLakeSource& WithSourceStatuses(SourceStatusesT&& value) { SetSourceStatuses(std::forward<SourceStatusesT>(value)); return *this;}
+    template<typename SourceStatusesT = DataLakeSourceStatus>
+    DataLakeSource& AddSourceStatuses(SourceStatusesT&& value) { m_sourceStatusesHasBeenSet = true; m_sourceStatuses.emplace_back(std::forward<SourceStatusesT>(value)); return *this; }
     ///@}
   private:
 

@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-CustomDataIdentifiersResult::CustomDataIdentifiersResult() : 
-    m_detectionsHasBeenSet(false),
-    m_totalCount(0),
-    m_totalCountHasBeenSet(false)
-{
-}
-
 CustomDataIdentifiersResult::CustomDataIdentifiersResult(JsonView jsonValue)
-  : CustomDataIdentifiersResult()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ CustomDataIdentifiersResult& CustomDataIdentifiersResult::operator =(JsonView js
     }
     m_detectionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalCount"))
   {
     m_totalCount = jsonValue.GetInt64("TotalCount");
-
     m_totalCountHasBeenSet = true;
   }
-
   return *this;
 }
 

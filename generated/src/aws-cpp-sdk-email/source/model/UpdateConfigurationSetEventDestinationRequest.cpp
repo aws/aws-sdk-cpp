@@ -10,12 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-UpdateConfigurationSetEventDestinationRequest::UpdateConfigurationSetEventDestinationRequest() : 
-    m_configurationSetNameHasBeenSet(false),
-    m_eventDestinationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateConfigurationSetEventDestinationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

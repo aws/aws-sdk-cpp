@@ -22,7 +22,7 @@ namespace Model
   class SetKeepJobFlowAliveWhenNoStepsRequest : public EMRRequest
   {
   public:
-    AWS_EMR_API SetKeepJobFlowAliveWhenNoStepsRequest();
+    AWS_EMR_API SetKeepJobFlowAliveWhenNoStepsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,15 +43,14 @@ namespace Model
      * and can also be obtained from <a
      * href="https://docs.aws.amazon.com/emr/latest/APIReference/API_DescribeJobFlows.html">DescribeJobFlows</a>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetJobFlowIds() const{ return m_jobFlowIds; }
+    inline const Aws::Vector<Aws::String>& GetJobFlowIds() const { return m_jobFlowIds; }
     inline bool JobFlowIdsHasBeenSet() const { return m_jobFlowIdsHasBeenSet; }
-    inline void SetJobFlowIds(const Aws::Vector<Aws::String>& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds = value; }
-    inline void SetJobFlowIds(Aws::Vector<Aws::String>&& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds = std::move(value); }
-    inline SetKeepJobFlowAliveWhenNoStepsRequest& WithJobFlowIds(const Aws::Vector<Aws::String>& value) { SetJobFlowIds(value); return *this;}
-    inline SetKeepJobFlowAliveWhenNoStepsRequest& WithJobFlowIds(Aws::Vector<Aws::String>&& value) { SetJobFlowIds(std::move(value)); return *this;}
-    inline SetKeepJobFlowAliveWhenNoStepsRequest& AddJobFlowIds(const Aws::String& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds.push_back(value); return *this; }
-    inline SetKeepJobFlowAliveWhenNoStepsRequest& AddJobFlowIds(Aws::String&& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds.push_back(std::move(value)); return *this; }
-    inline SetKeepJobFlowAliveWhenNoStepsRequest& AddJobFlowIds(const char* value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds.push_back(value); return *this; }
+    template<typename JobFlowIdsT = Aws::Vector<Aws::String>>
+    void SetJobFlowIds(JobFlowIdsT&& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds = std::forward<JobFlowIdsT>(value); }
+    template<typename JobFlowIdsT = Aws::Vector<Aws::String>>
+    SetKeepJobFlowAliveWhenNoStepsRequest& WithJobFlowIds(JobFlowIdsT&& value) { SetJobFlowIds(std::forward<JobFlowIdsT>(value)); return *this;}
+    template<typename JobFlowIdsT = Aws::String>
+    SetKeepJobFlowAliveWhenNoStepsRequest& AddJobFlowIds(JobFlowIdsT&& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds.emplace_back(std::forward<JobFlowIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -59,7 +58,7 @@ namespace Model
      * <p>A Boolean that indicates whether to terminate the cluster after all steps are
      * executed.</p>
      */
-    inline bool GetKeepJobFlowAliveWhenNoSteps() const{ return m_keepJobFlowAliveWhenNoSteps; }
+    inline bool GetKeepJobFlowAliveWhenNoSteps() const { return m_keepJobFlowAliveWhenNoSteps; }
     inline bool KeepJobFlowAliveWhenNoStepsHasBeenSet() const { return m_keepJobFlowAliveWhenNoStepsHasBeenSet; }
     inline void SetKeepJobFlowAliveWhenNoSteps(bool value) { m_keepJobFlowAliveWhenNoStepsHasBeenSet = true; m_keepJobFlowAliveWhenNoSteps = value; }
     inline SetKeepJobFlowAliveWhenNoStepsRequest& WithKeepJobFlowAliveWhenNoSteps(bool value) { SetKeepJobFlowAliveWhenNoSteps(value); return *this;}
@@ -69,7 +68,7 @@ namespace Model
     Aws::Vector<Aws::String> m_jobFlowIds;
     bool m_jobFlowIdsHasBeenSet = false;
 
-    bool m_keepJobFlowAliveWhenNoSteps;
+    bool m_keepJobFlowAliveWhenNoSteps{false};
     bool m_keepJobFlowAliveWhenNoStepsHasBeenSet = false;
   };
 

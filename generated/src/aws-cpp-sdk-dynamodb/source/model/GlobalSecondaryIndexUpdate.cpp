@@ -18,15 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-GlobalSecondaryIndexUpdate::GlobalSecondaryIndexUpdate() : 
-    m_updateHasBeenSet(false),
-    m_createHasBeenSet(false),
-    m_deleteHasBeenSet(false)
-{
-}
-
 GlobalSecondaryIndexUpdate::GlobalSecondaryIndexUpdate(JsonView jsonValue)
-  : GlobalSecondaryIndexUpdate()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ GlobalSecondaryIndexUpdate& GlobalSecondaryIndexUpdate::operator =(JsonView json
   if(jsonValue.ValueExists("Update"))
   {
     m_update = jsonValue.GetObject("Update");
-
     m_updateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Create"))
   {
     m_create = jsonValue.GetObject("Create");
-
     m_createHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Delete"))
   {
     m_delete = jsonValue.GetObject("Delete");
-
     m_deleteHasBeenSet = true;
   }
-
   return *this;
 }
 

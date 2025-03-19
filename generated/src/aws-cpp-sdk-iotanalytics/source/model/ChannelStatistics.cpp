@@ -18,13 +18,7 @@ namespace IoTAnalytics
 namespace Model
 {
 
-ChannelStatistics::ChannelStatistics() : 
-    m_sizeHasBeenSet(false)
-{
-}
-
 ChannelStatistics::ChannelStatistics(JsonView jsonValue)
-  : ChannelStatistics()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ChannelStatistics& ChannelStatistics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("size"))
   {
     m_size = jsonValue.GetObject("size");
-
     m_sizeHasBeenSet = true;
   }
-
   return *this;
 }
 

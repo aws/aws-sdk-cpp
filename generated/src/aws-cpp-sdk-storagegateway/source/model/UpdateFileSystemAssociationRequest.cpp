@@ -12,15 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateFileSystemAssociationRequest::UpdateFileSystemAssociationRequest() : 
-    m_fileSystemAssociationARNHasBeenSet(false),
-    m_userNameHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_auditDestinationARNHasBeenSet(false),
-    m_cacheAttributesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateFileSystemAssociationRequest::SerializePayload() const
 {
   JsonValue payload;

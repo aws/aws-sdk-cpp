@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeServiceAccessPoliciesResult::DescribeServiceAccessPoliciesResult()
-{
-}
-
 DescribeServiceAccessPoliciesResult::DescribeServiceAccessPoliciesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ DescribeServiceAccessPoliciesResult& DescribeServiceAccessPoliciesResult::operat
     if(!accessPoliciesNode.IsNull())
     {
       m_accessPolicies = accessPoliciesNode;
+      m_accessPoliciesHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::CloudSearch::Model::DescribeServiceAccessPoliciesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

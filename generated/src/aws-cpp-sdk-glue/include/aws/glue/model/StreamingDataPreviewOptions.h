@@ -30,7 +30,7 @@ namespace Model
   class StreamingDataPreviewOptions
   {
   public:
-    AWS_GLUE_API StreamingDataPreviewOptions();
+    AWS_GLUE_API StreamingDataPreviewOptions() = default;
     AWS_GLUE_API StreamingDataPreviewOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API StreamingDataPreviewOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>The polling time in milliseconds.</p>
      */
-    inline long long GetPollingTime() const{ return m_pollingTime; }
+    inline long long GetPollingTime() const { return m_pollingTime; }
     inline bool PollingTimeHasBeenSet() const { return m_pollingTimeHasBeenSet; }
     inline void SetPollingTime(long long value) { m_pollingTimeHasBeenSet = true; m_pollingTime = value; }
     inline StreamingDataPreviewOptions& WithPollingTime(long long value) { SetPollingTime(value); return *this;}
@@ -50,17 +50,17 @@ namespace Model
     /**
      * <p>The limit to the number of records polled.</p>
      */
-    inline long long GetRecordPollingLimit() const{ return m_recordPollingLimit; }
+    inline long long GetRecordPollingLimit() const { return m_recordPollingLimit; }
     inline bool RecordPollingLimitHasBeenSet() const { return m_recordPollingLimitHasBeenSet; }
     inline void SetRecordPollingLimit(long long value) { m_recordPollingLimitHasBeenSet = true; m_recordPollingLimit = value; }
     inline StreamingDataPreviewOptions& WithRecordPollingLimit(long long value) { SetRecordPollingLimit(value); return *this;}
     ///@}
   private:
 
-    long long m_pollingTime;
+    long long m_pollingTime{0};
     bool m_pollingTimeHasBeenSet = false;
 
-    long long m_recordPollingLimit;
+    long long m_recordPollingLimit{0};
     bool m_recordPollingLimitHasBeenSet = false;
   };
 

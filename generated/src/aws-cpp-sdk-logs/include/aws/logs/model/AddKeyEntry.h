@@ -33,7 +33,7 @@ namespace Model
   class AddKeyEntry
   {
   public:
-    AWS_CLOUDWATCHLOGS_API AddKeyEntry();
+    AWS_CLOUDWATCHLOGS_API AddKeyEntry() = default;
     AWS_CLOUDWATCHLOGS_API AddKeyEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API AddKeyEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The key of the new entry to be added to the log event</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline AddKeyEntry& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline AddKeyEntry& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline AddKeyEntry& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    AddKeyEntry& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of the new entry to be added to the log event</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline AddKeyEntry& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline AddKeyEntry& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline AddKeyEntry& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    AddKeyEntry& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,7 +68,7 @@ namespace Model
      * <p>Specifies whether to overwrite the value if the key already exists in the log
      * event. If you omit this, the default is <code>false</code>.</p>
      */
-    inline bool GetOverwriteIfExists() const{ return m_overwriteIfExists; }
+    inline bool GetOverwriteIfExists() const { return m_overwriteIfExists; }
     inline bool OverwriteIfExistsHasBeenSet() const { return m_overwriteIfExistsHasBeenSet; }
     inline void SetOverwriteIfExists(bool value) { m_overwriteIfExistsHasBeenSet = true; m_overwriteIfExists = value; }
     inline AddKeyEntry& WithOverwriteIfExists(bool value) { SetOverwriteIfExists(value); return *this;}
@@ -85,7 +81,7 @@ namespace Model
     Aws::String m_value;
     bool m_valueHasBeenSet = false;
 
-    bool m_overwriteIfExists;
+    bool m_overwriteIfExists{false};
     bool m_overwriteIfExistsHasBeenSet = false;
   };
 

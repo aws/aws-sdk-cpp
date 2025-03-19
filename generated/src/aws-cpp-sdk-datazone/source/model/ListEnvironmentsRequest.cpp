@@ -15,23 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListEnvironmentsRequest::ListEnvironmentsRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_awsAccountRegionHasBeenSet(false),
-    m_domainIdentifierHasBeenSet(false),
-    m_environmentBlueprintIdentifierHasBeenSet(false),
-    m_environmentProfileIdentifierHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_projectIdentifierHasBeenSet(false),
-    m_providerHasBeenSet(false),
-    m_status(EnvironmentStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 Aws::String ListEnvironmentsRequest::SerializePayload() const
 {
   return {};

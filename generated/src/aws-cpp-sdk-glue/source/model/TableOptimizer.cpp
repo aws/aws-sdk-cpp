@@ -18,16 +18,7 @@ namespace Glue
 namespace Model
 {
 
-TableOptimizer::TableOptimizer() : 
-    m_type(TableOptimizerType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_lastRunHasBeenSet(false)
-{
-}
-
 TableOptimizer::TableOptimizer(JsonView jsonValue)
-  : TableOptimizer()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ TableOptimizer& TableOptimizer::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = TableOptimizerTypeMapper::GetTableOptimizerTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configuration"))
   {
     m_configuration = jsonValue.GetObject("configuration");
-
     m_configurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastRun"))
   {
     m_lastRun = jsonValue.GetObject("lastRun");
-
     m_lastRunHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,12 +12,6 @@ using namespace Aws::IoTWireless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateWirelessDeviceWithFuotaTaskRequest::AssociateWirelessDeviceWithFuotaTaskRequest() : 
-    m_idHasBeenSet(false),
-    m_wirelessDeviceIdHasBeenSet(false)
-{
-}
-
 Aws::String AssociateWirelessDeviceWithFuotaTaskRequest::SerializePayload() const
 {
   JsonValue payload;

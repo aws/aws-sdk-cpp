@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListConfigurationRevisionsRequest::ListConfigurationRevisionsRequest() : 
-    m_configurationIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListConfigurationRevisionsRequest::SerializePayload() const
 {
   return {};

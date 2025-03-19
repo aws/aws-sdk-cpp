@@ -30,7 +30,7 @@ namespace Model
   class BatchGetFindingDetailsResult
   {
   public:
-    AWS_INSPECTOR2_API BatchGetFindingDetailsResult();
+    AWS_INSPECTOR2_API BatchGetFindingDetailsResult() = default;
     AWS_INSPECTOR2_API BatchGetFindingDetailsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_INSPECTOR2_API BatchGetFindingDetailsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,46 @@ namespace Model
     /**
      * <p>Error information for findings that details could not be returned for.</p>
      */
-    inline const Aws::Vector<FindingDetailsError>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<FindingDetailsError>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<FindingDetailsError>&& value) { m_errors = std::move(value); }
-    inline BatchGetFindingDetailsResult& WithErrors(const Aws::Vector<FindingDetailsError>& value) { SetErrors(value); return *this;}
-    inline BatchGetFindingDetailsResult& WithErrors(Aws::Vector<FindingDetailsError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline BatchGetFindingDetailsResult& AddErrors(const FindingDetailsError& value) { m_errors.push_back(value); return *this; }
-    inline BatchGetFindingDetailsResult& AddErrors(FindingDetailsError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FindingDetailsError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<FindingDetailsError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<FindingDetailsError>>
+    BatchGetFindingDetailsResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = FindingDetailsError>
+    BatchGetFindingDetailsResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A finding's vulnerability details.</p>
      */
-    inline const Aws::Vector<FindingDetail>& GetFindingDetails() const{ return m_findingDetails; }
-    inline void SetFindingDetails(const Aws::Vector<FindingDetail>& value) { m_findingDetails = value; }
-    inline void SetFindingDetails(Aws::Vector<FindingDetail>&& value) { m_findingDetails = std::move(value); }
-    inline BatchGetFindingDetailsResult& WithFindingDetails(const Aws::Vector<FindingDetail>& value) { SetFindingDetails(value); return *this;}
-    inline BatchGetFindingDetailsResult& WithFindingDetails(Aws::Vector<FindingDetail>&& value) { SetFindingDetails(std::move(value)); return *this;}
-    inline BatchGetFindingDetailsResult& AddFindingDetails(const FindingDetail& value) { m_findingDetails.push_back(value); return *this; }
-    inline BatchGetFindingDetailsResult& AddFindingDetails(FindingDetail&& value) { m_findingDetails.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FindingDetail>& GetFindingDetails() const { return m_findingDetails; }
+    template<typename FindingDetailsT = Aws::Vector<FindingDetail>>
+    void SetFindingDetails(FindingDetailsT&& value) { m_findingDetailsHasBeenSet = true; m_findingDetails = std::forward<FindingDetailsT>(value); }
+    template<typename FindingDetailsT = Aws::Vector<FindingDetail>>
+    BatchGetFindingDetailsResult& WithFindingDetails(FindingDetailsT&& value) { SetFindingDetails(std::forward<FindingDetailsT>(value)); return *this;}
+    template<typename FindingDetailsT = FindingDetail>
+    BatchGetFindingDetailsResult& AddFindingDetails(FindingDetailsT&& value) { m_findingDetailsHasBeenSet = true; m_findingDetails.emplace_back(std::forward<FindingDetailsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchGetFindingDetailsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchGetFindingDetailsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchGetFindingDetailsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchGetFindingDetailsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<FindingDetailsError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::Vector<FindingDetail> m_findingDetails;
+    bool m_findingDetailsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

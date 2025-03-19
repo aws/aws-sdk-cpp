@@ -18,13 +18,7 @@ namespace AuditManager
 namespace Model
 {
 
-Scope::Scope() : 
-    m_awsAccountsHasBeenSet(false)
-{
-}
-
 Scope::Scope(JsonView jsonValue)
-  : Scope()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ Scope& Scope::operator =(JsonView jsonValue)
     }
     m_awsAccountsHasBeenSet = true;
   }
-
   return *this;
 }
 

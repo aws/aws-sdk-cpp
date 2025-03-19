@@ -28,7 +28,7 @@ namespace Model
   class GetAccessKeyInfoResult
   {
   public:
-    AWS_STS_API GetAccessKeyInfoResult();
+    AWS_STS_API GetAccessKeyInfoResult() = default;
     AWS_STS_API GetAccessKeyInfoResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_STS_API GetAccessKeyInfoResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The number used to identify the Amazon Web Services account.</p>
      */
-    inline const Aws::String& GetAccount() const{ return m_account; }
-    inline void SetAccount(const Aws::String& value) { m_account = value; }
-    inline void SetAccount(Aws::String&& value) { m_account = std::move(value); }
-    inline void SetAccount(const char* value) { m_account.assign(value); }
-    inline GetAccessKeyInfoResult& WithAccount(const Aws::String& value) { SetAccount(value); return *this;}
-    inline GetAccessKeyInfoResult& WithAccount(Aws::String&& value) { SetAccount(std::move(value)); return *this;}
-    inline GetAccessKeyInfoResult& WithAccount(const char* value) { SetAccount(value); return *this;}
+    inline const Aws::String& GetAccount() const { return m_account; }
+    template<typename AccountT = Aws::String>
+    void SetAccount(AccountT&& value) { m_accountHasBeenSet = true; m_account = std::forward<AccountT>(value); }
+    template<typename AccountT = Aws::String>
+    GetAccessKeyInfoResult& WithAccount(AccountT&& value) { SetAccount(std::forward<AccountT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline GetAccessKeyInfoResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline GetAccessKeyInfoResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    GetAccessKeyInfoResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_account;
+    bool m_accountHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

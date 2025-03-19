@@ -33,7 +33,7 @@ namespace Model
   class ShrinkPolicy
   {
   public:
-    AWS_EMR_API ShrinkPolicy();
+    AWS_EMR_API ShrinkPolicy() = default;
     AWS_EMR_API ShrinkPolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API ShrinkPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * <p>The desired timeout for decommissioning an instance. Overrides the default
      * YARN decommissioning timeout.</p>
      */
-    inline int GetDecommissionTimeout() const{ return m_decommissionTimeout; }
+    inline int GetDecommissionTimeout() const { return m_decommissionTimeout; }
     inline bool DecommissionTimeoutHasBeenSet() const { return m_decommissionTimeoutHasBeenSet; }
     inline void SetDecommissionTimeout(int value) { m_decommissionTimeoutHasBeenSet = true; m_decommissionTimeout = value; }
     inline ShrinkPolicy& WithDecommissionTimeout(int value) { SetDecommissionTimeout(value); return *this;}
@@ -55,16 +55,16 @@ namespace Model
      * <p>Custom policy for requesting termination protection or termination of
      * specific instances when shrinking an instance group.</p>
      */
-    inline const InstanceResizePolicy& GetInstanceResizePolicy() const{ return m_instanceResizePolicy; }
+    inline const InstanceResizePolicy& GetInstanceResizePolicy() const { return m_instanceResizePolicy; }
     inline bool InstanceResizePolicyHasBeenSet() const { return m_instanceResizePolicyHasBeenSet; }
-    inline void SetInstanceResizePolicy(const InstanceResizePolicy& value) { m_instanceResizePolicyHasBeenSet = true; m_instanceResizePolicy = value; }
-    inline void SetInstanceResizePolicy(InstanceResizePolicy&& value) { m_instanceResizePolicyHasBeenSet = true; m_instanceResizePolicy = std::move(value); }
-    inline ShrinkPolicy& WithInstanceResizePolicy(const InstanceResizePolicy& value) { SetInstanceResizePolicy(value); return *this;}
-    inline ShrinkPolicy& WithInstanceResizePolicy(InstanceResizePolicy&& value) { SetInstanceResizePolicy(std::move(value)); return *this;}
+    template<typename InstanceResizePolicyT = InstanceResizePolicy>
+    void SetInstanceResizePolicy(InstanceResizePolicyT&& value) { m_instanceResizePolicyHasBeenSet = true; m_instanceResizePolicy = std::forward<InstanceResizePolicyT>(value); }
+    template<typename InstanceResizePolicyT = InstanceResizePolicy>
+    ShrinkPolicy& WithInstanceResizePolicy(InstanceResizePolicyT&& value) { SetInstanceResizePolicy(std::forward<InstanceResizePolicyT>(value)); return *this;}
     ///@}
   private:
 
-    int m_decommissionTimeout;
+    int m_decommissionTimeout{0};
     bool m_decommissionTimeoutHasBeenSet = false;
 
     InstanceResizePolicy m_instanceResizePolicy;

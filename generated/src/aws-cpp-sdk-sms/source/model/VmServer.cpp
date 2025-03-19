@@ -18,18 +18,7 @@ namespace SMS
 namespace Model
 {
 
-VmServer::VmServer() : 
-    m_vmServerAddressHasBeenSet(false),
-    m_vmNameHasBeenSet(false),
-    m_vmManagerNameHasBeenSet(false),
-    m_vmManagerType(VmManagerType::NOT_SET),
-    m_vmManagerTypeHasBeenSet(false),
-    m_vmPathHasBeenSet(false)
-{
-}
-
 VmServer::VmServer(JsonView jsonValue)
-  : VmServer()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ VmServer& VmServer::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("vmServerAddress"))
   {
     m_vmServerAddress = jsonValue.GetObject("vmServerAddress");
-
     m_vmServerAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vmName"))
   {
     m_vmName = jsonValue.GetString("vmName");
-
     m_vmNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vmManagerName"))
   {
     m_vmManagerName = jsonValue.GetString("vmManagerName");
-
     m_vmManagerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vmManagerType"))
   {
     m_vmManagerType = VmManagerTypeMapper::GetVmManagerTypeForName(jsonValue.GetString("vmManagerType"));
-
     m_vmManagerTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vmPath"))
   {
     m_vmPath = jsonValue.GetString("vmPath");
-
     m_vmPathHasBeenSet = true;
   }
-
   return *this;
 }
 

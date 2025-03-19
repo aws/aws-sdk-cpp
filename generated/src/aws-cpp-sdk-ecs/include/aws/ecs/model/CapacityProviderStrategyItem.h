@@ -58,7 +58,7 @@ namespace Model
   class CapacityProviderStrategyItem
   {
   public:
-    AWS_ECS_API CapacityProviderStrategyItem();
+    AWS_ECS_API CapacityProviderStrategyItem() = default;
     AWS_ECS_API CapacityProviderStrategyItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API CapacityProviderStrategyItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -68,14 +68,12 @@ namespace Model
     /**
      * <p>The short name of the capacity provider.</p>
      */
-    inline const Aws::String& GetCapacityProvider() const{ return m_capacityProvider; }
+    inline const Aws::String& GetCapacityProvider() const { return m_capacityProvider; }
     inline bool CapacityProviderHasBeenSet() const { return m_capacityProviderHasBeenSet; }
-    inline void SetCapacityProvider(const Aws::String& value) { m_capacityProviderHasBeenSet = true; m_capacityProvider = value; }
-    inline void SetCapacityProvider(Aws::String&& value) { m_capacityProviderHasBeenSet = true; m_capacityProvider = std::move(value); }
-    inline void SetCapacityProvider(const char* value) { m_capacityProviderHasBeenSet = true; m_capacityProvider.assign(value); }
-    inline CapacityProviderStrategyItem& WithCapacityProvider(const Aws::String& value) { SetCapacityProvider(value); return *this;}
-    inline CapacityProviderStrategyItem& WithCapacityProvider(Aws::String&& value) { SetCapacityProvider(std::move(value)); return *this;}
-    inline CapacityProviderStrategyItem& WithCapacityProvider(const char* value) { SetCapacityProvider(value); return *this;}
+    template<typename CapacityProviderT = Aws::String>
+    void SetCapacityProvider(CapacityProviderT&& value) { m_capacityProviderHasBeenSet = true; m_capacityProvider = std::forward<CapacityProviderT>(value); }
+    template<typename CapacityProviderT = Aws::String>
+    CapacityProviderStrategyItem& WithCapacityProvider(CapacityProviderT&& value) { SetCapacityProvider(std::forward<CapacityProviderT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,7 +97,7 @@ namespace Model
      * <i>capacityProviderB</i>, then for every one task that's run using
      * <i>capacityProviderA</i>, four tasks would use <i>capacityProviderB</i>.</p>
      */
-    inline int GetWeight() const{ return m_weight; }
+    inline int GetWeight() const { return m_weight; }
     inline bool WeightHasBeenSet() const { return m_weightHasBeenSet; }
     inline void SetWeight(int value) { m_weightHasBeenSet = true; m_weight = value; }
     inline CapacityProviderStrategyItem& WithWeight(int value) { SetWeight(value); return *this;}
@@ -112,7 +110,7 @@ namespace Model
      * strategy can have a <i>base</i> defined. If no value is specified, the default
      * value of <code>0</code> is used.</p>
      */
-    inline int GetBase() const{ return m_base; }
+    inline int GetBase() const { return m_base; }
     inline bool BaseHasBeenSet() const { return m_baseHasBeenSet; }
     inline void SetBase(int value) { m_baseHasBeenSet = true; m_base = value; }
     inline CapacityProviderStrategyItem& WithBase(int value) { SetBase(value); return *this;}
@@ -122,10 +120,10 @@ namespace Model
     Aws::String m_capacityProvider;
     bool m_capacityProviderHasBeenSet = false;
 
-    int m_weight;
+    int m_weight{0};
     bool m_weightHasBeenSet = false;
 
-    int m_base;
+    int m_base{0};
     bool m_baseHasBeenSet = false;
   };
 

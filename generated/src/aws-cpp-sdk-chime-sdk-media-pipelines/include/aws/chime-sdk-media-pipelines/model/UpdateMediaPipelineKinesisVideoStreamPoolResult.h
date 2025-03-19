@@ -28,7 +28,7 @@ namespace Model
   class UpdateMediaPipelineKinesisVideoStreamPoolResult
   {
   public:
-    AWS_CHIMESDKMEDIAPIPELINES_API UpdateMediaPipelineKinesisVideoStreamPoolResult();
+    AWS_CHIMESDKMEDIAPIPELINES_API UpdateMediaPipelineKinesisVideoStreamPoolResult() = default;
     AWS_CHIMESDKMEDIAPIPELINES_API UpdateMediaPipelineKinesisVideoStreamPoolResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHIMESDKMEDIAPIPELINES_API UpdateMediaPipelineKinesisVideoStreamPoolResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The video stream pool configuration object.</p>
      */
-    inline const KinesisVideoStreamPoolConfiguration& GetKinesisVideoStreamPoolConfiguration() const{ return m_kinesisVideoStreamPoolConfiguration; }
-    inline void SetKinesisVideoStreamPoolConfiguration(const KinesisVideoStreamPoolConfiguration& value) { m_kinesisVideoStreamPoolConfiguration = value; }
-    inline void SetKinesisVideoStreamPoolConfiguration(KinesisVideoStreamPoolConfiguration&& value) { m_kinesisVideoStreamPoolConfiguration = std::move(value); }
-    inline UpdateMediaPipelineKinesisVideoStreamPoolResult& WithKinesisVideoStreamPoolConfiguration(const KinesisVideoStreamPoolConfiguration& value) { SetKinesisVideoStreamPoolConfiguration(value); return *this;}
-    inline UpdateMediaPipelineKinesisVideoStreamPoolResult& WithKinesisVideoStreamPoolConfiguration(KinesisVideoStreamPoolConfiguration&& value) { SetKinesisVideoStreamPoolConfiguration(std::move(value)); return *this;}
+    inline const KinesisVideoStreamPoolConfiguration& GetKinesisVideoStreamPoolConfiguration() const { return m_kinesisVideoStreamPoolConfiguration; }
+    template<typename KinesisVideoStreamPoolConfigurationT = KinesisVideoStreamPoolConfiguration>
+    void SetKinesisVideoStreamPoolConfiguration(KinesisVideoStreamPoolConfigurationT&& value) { m_kinesisVideoStreamPoolConfigurationHasBeenSet = true; m_kinesisVideoStreamPoolConfiguration = std::forward<KinesisVideoStreamPoolConfigurationT>(value); }
+    template<typename KinesisVideoStreamPoolConfigurationT = KinesisVideoStreamPoolConfiguration>
+    UpdateMediaPipelineKinesisVideoStreamPoolResult& WithKinesisVideoStreamPoolConfiguration(KinesisVideoStreamPoolConfigurationT&& value) { SetKinesisVideoStreamPoolConfiguration(std::forward<KinesisVideoStreamPoolConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateMediaPipelineKinesisVideoStreamPoolResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateMediaPipelineKinesisVideoStreamPoolResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateMediaPipelineKinesisVideoStreamPoolResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateMediaPipelineKinesisVideoStreamPoolResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     KinesisVideoStreamPoolConfiguration m_kinesisVideoStreamPoolConfiguration;
+    bool m_kinesisVideoStreamPoolConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,12 +12,6 @@ using namespace Aws::VPCLattice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAccessLogSubscriptionRequest::UpdateAccessLogSubscriptionRequest() : 
-    m_accessLogSubscriptionIdentifierHasBeenSet(false),
-    m_destinationArnHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAccessLogSubscriptionRequest::SerializePayload() const
 {
   JsonValue payload;

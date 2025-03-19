@@ -12,15 +12,6 @@ using namespace Aws::ForecastService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListMonitorEvaluationsRequest::ListMonitorEvaluationsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_monitorArnHasBeenSet(false),
-    m_filtersHasBeenSet(false)
-{
-}
-
 Aws::String ListMonitorEvaluationsRequest::SerializePayload() const
 {
   JsonValue payload;

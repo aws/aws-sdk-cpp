@@ -32,7 +32,7 @@ namespace Model
   class TN3270Summary
   {
   public:
-    AWS_APPTEST_API TN3270Summary();
+    AWS_APPTEST_API TN3270Summary() = default;
     AWS_APPTEST_API TN3270Summary(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API TN3270Summary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p>The step input of the TN3270 summary.</p>
      */
-    inline const TN3270StepInput& GetStepInput() const{ return m_stepInput; }
+    inline const TN3270StepInput& GetStepInput() const { return m_stepInput; }
     inline bool StepInputHasBeenSet() const { return m_stepInputHasBeenSet; }
-    inline void SetStepInput(const TN3270StepInput& value) { m_stepInputHasBeenSet = true; m_stepInput = value; }
-    inline void SetStepInput(TN3270StepInput&& value) { m_stepInputHasBeenSet = true; m_stepInput = std::move(value); }
-    inline TN3270Summary& WithStepInput(const TN3270StepInput& value) { SetStepInput(value); return *this;}
-    inline TN3270Summary& WithStepInput(TN3270StepInput&& value) { SetStepInput(std::move(value)); return *this;}
+    template<typename StepInputT = TN3270StepInput>
+    void SetStepInput(StepInputT&& value) { m_stepInputHasBeenSet = true; m_stepInput = std::forward<StepInputT>(value); }
+    template<typename StepInputT = TN3270StepInput>
+    TN3270Summary& WithStepInput(StepInputT&& value) { SetStepInput(std::forward<StepInputT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The step output of the TN3270 summary.</p>
      */
-    inline const TN3270StepOutput& GetStepOutput() const{ return m_stepOutput; }
+    inline const TN3270StepOutput& GetStepOutput() const { return m_stepOutput; }
     inline bool StepOutputHasBeenSet() const { return m_stepOutputHasBeenSet; }
-    inline void SetStepOutput(const TN3270StepOutput& value) { m_stepOutputHasBeenSet = true; m_stepOutput = value; }
-    inline void SetStepOutput(TN3270StepOutput&& value) { m_stepOutputHasBeenSet = true; m_stepOutput = std::move(value); }
-    inline TN3270Summary& WithStepOutput(const TN3270StepOutput& value) { SetStepOutput(value); return *this;}
-    inline TN3270Summary& WithStepOutput(TN3270StepOutput&& value) { SetStepOutput(std::move(value)); return *this;}
+    template<typename StepOutputT = TN3270StepOutput>
+    void SetStepOutput(StepOutputT&& value) { m_stepOutputHasBeenSet = true; m_stepOutput = std::forward<StepOutputT>(value); }
+    template<typename StepOutputT = TN3270StepOutput>
+    TN3270Summary& WithStepOutput(StepOutputT&& value) { SetStepOutput(std::forward<StepOutputT>(value)); return *this;}
     ///@}
   private:
 

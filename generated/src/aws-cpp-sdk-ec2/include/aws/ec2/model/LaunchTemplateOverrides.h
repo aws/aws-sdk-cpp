@@ -33,7 +33,7 @@ namespace Model
   class LaunchTemplateOverrides
   {
   public:
-    AWS_EC2_API LaunchTemplateOverrides();
+    AWS_EC2_API LaunchTemplateOverrides() = default;
     AWS_EC2_API LaunchTemplateOverrides(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API LaunchTemplateOverrides& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,12 +45,10 @@ namespace Model
     /**
      * <p>The instance type.</p>
      */
-    inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
+    inline InstanceType GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline LaunchTemplateOverrides& WithInstanceType(const InstanceType& value) { SetInstanceType(value); return *this;}
-    inline LaunchTemplateOverrides& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
+    inline void SetInstanceType(InstanceType value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline LaunchTemplateOverrides& WithInstanceType(InstanceType value) { SetInstanceType(value); return *this;}
     ///@}
 
     ///@{
@@ -62,42 +60,36 @@ namespace Model
      * instances will be interrupted more frequently than if you do not specify this
      * parameter.</p> 
      */
-    inline const Aws::String& GetSpotPrice() const{ return m_spotPrice; }
+    inline const Aws::String& GetSpotPrice() const { return m_spotPrice; }
     inline bool SpotPriceHasBeenSet() const { return m_spotPriceHasBeenSet; }
-    inline void SetSpotPrice(const Aws::String& value) { m_spotPriceHasBeenSet = true; m_spotPrice = value; }
-    inline void SetSpotPrice(Aws::String&& value) { m_spotPriceHasBeenSet = true; m_spotPrice = std::move(value); }
-    inline void SetSpotPrice(const char* value) { m_spotPriceHasBeenSet = true; m_spotPrice.assign(value); }
-    inline LaunchTemplateOverrides& WithSpotPrice(const Aws::String& value) { SetSpotPrice(value); return *this;}
-    inline LaunchTemplateOverrides& WithSpotPrice(Aws::String&& value) { SetSpotPrice(std::move(value)); return *this;}
-    inline LaunchTemplateOverrides& WithSpotPrice(const char* value) { SetSpotPrice(value); return *this;}
+    template<typename SpotPriceT = Aws::String>
+    void SetSpotPrice(SpotPriceT&& value) { m_spotPriceHasBeenSet = true; m_spotPrice = std::forward<SpotPriceT>(value); }
+    template<typename SpotPriceT = Aws::String>
+    LaunchTemplateOverrides& WithSpotPrice(SpotPriceT&& value) { SetSpotPrice(std::forward<SpotPriceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the subnet in which to launch the instances.</p>
      */
-    inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
+    inline const Aws::String& GetSubnetId() const { return m_subnetId; }
     inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
-    inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
-    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
-    inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
-    inline LaunchTemplateOverrides& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
-    inline LaunchTemplateOverrides& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
-    inline LaunchTemplateOverrides& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+    template<typename SubnetIdT = Aws::String>
+    void SetSubnetId(SubnetIdT&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::forward<SubnetIdT>(value); }
+    template<typename SubnetIdT = Aws::String>
+    LaunchTemplateOverrides& WithSubnetId(SubnetIdT&& value) { SetSubnetId(std::forward<SubnetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Availability Zone in which to launch the instances.</p>
      */
-    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+    inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
-    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
-    inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
-    inline LaunchTemplateOverrides& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
-    inline LaunchTemplateOverrides& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
-    inline LaunchTemplateOverrides& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+    template<typename AvailabilityZoneT = Aws::String>
+    void SetAvailabilityZone(AvailabilityZoneT&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::forward<AvailabilityZoneT>(value); }
+    template<typename AvailabilityZoneT = Aws::String>
+    LaunchTemplateOverrides& WithAvailabilityZone(AvailabilityZoneT&& value) { SetAvailabilityZone(std::forward<AvailabilityZoneT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,7 +106,7 @@ namespace Model
      * <code>TargetCapacity</code>, resulting in only 1 instance being launched, the
      * price used is per <i>instance</i> hour.</p> 
      */
-    inline double GetWeightedCapacity() const{ return m_weightedCapacity; }
+    inline double GetWeightedCapacity() const { return m_weightedCapacity; }
     inline bool WeightedCapacityHasBeenSet() const { return m_weightedCapacityHasBeenSet; }
     inline void SetWeightedCapacity(double value) { m_weightedCapacityHasBeenSet = true; m_weightedCapacity = value; }
     inline LaunchTemplateOverrides& WithWeightedCapacity(double value) { SetWeightedCapacity(value); return *this;}
@@ -135,7 +127,7 @@ namespace Model
      * priority. You can set the same priority for different launch template
      * overrides.</p>
      */
-    inline double GetPriority() const{ return m_priority; }
+    inline double GetPriority() const { return m_priority; }
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
     inline void SetPriority(double value) { m_priorityHasBeenSet = true; m_priority = value; }
     inline LaunchTemplateOverrides& WithPriority(double value) { SetPriority(value); return *this;}
@@ -150,16 +142,16 @@ namespace Model
      * <p>If you specify <code>InstanceRequirements</code>, you can't specify
      * <code>InstanceType</code>.</p> 
      */
-    inline const InstanceRequirements& GetInstanceRequirements() const{ return m_instanceRequirements; }
+    inline const InstanceRequirements& GetInstanceRequirements() const { return m_instanceRequirements; }
     inline bool InstanceRequirementsHasBeenSet() const { return m_instanceRequirementsHasBeenSet; }
-    inline void SetInstanceRequirements(const InstanceRequirements& value) { m_instanceRequirementsHasBeenSet = true; m_instanceRequirements = value; }
-    inline void SetInstanceRequirements(InstanceRequirements&& value) { m_instanceRequirementsHasBeenSet = true; m_instanceRequirements = std::move(value); }
-    inline LaunchTemplateOverrides& WithInstanceRequirements(const InstanceRequirements& value) { SetInstanceRequirements(value); return *this;}
-    inline LaunchTemplateOverrides& WithInstanceRequirements(InstanceRequirements&& value) { SetInstanceRequirements(std::move(value)); return *this;}
+    template<typename InstanceRequirementsT = InstanceRequirements>
+    void SetInstanceRequirements(InstanceRequirementsT&& value) { m_instanceRequirementsHasBeenSet = true; m_instanceRequirements = std::forward<InstanceRequirementsT>(value); }
+    template<typename InstanceRequirementsT = InstanceRequirements>
+    LaunchTemplateOverrides& WithInstanceRequirements(InstanceRequirementsT&& value) { SetInstanceRequirements(std::forward<InstanceRequirementsT>(value)); return *this;}
     ///@}
   private:
 
-    InstanceType m_instanceType;
+    InstanceType m_instanceType{InstanceType::NOT_SET};
     bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_spotPrice;
@@ -171,10 +163,10 @@ namespace Model
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet = false;
 
-    double m_weightedCapacity;
+    double m_weightedCapacity{0.0};
     bool m_weightedCapacityHasBeenSet = false;
 
-    double m_priority;
+    double m_priority{0.0};
     bool m_priorityHasBeenSet = false;
 
     InstanceRequirements m_instanceRequirements;

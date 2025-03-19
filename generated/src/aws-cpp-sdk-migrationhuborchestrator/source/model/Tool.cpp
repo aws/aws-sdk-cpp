@@ -18,14 +18,7 @@ namespace MigrationHubOrchestrator
 namespace Model
 {
 
-Tool::Tool() : 
-    m_nameHasBeenSet(false),
-    m_urlHasBeenSet(false)
-{
-}
-
 Tool::Tool(JsonView jsonValue)
-  : Tool()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Tool& Tool::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("url"))
   {
     m_url = jsonValue.GetString("url");
-
     m_urlHasBeenSet = true;
   }
-
   return *this;
 }
 

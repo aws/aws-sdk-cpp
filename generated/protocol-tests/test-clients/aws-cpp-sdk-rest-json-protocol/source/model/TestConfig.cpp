@@ -18,14 +18,7 @@ namespace RestJsonProtocol
 namespace Model
 {
 
-TestConfig::TestConfig() : 
-    m_timeout(0),
-    m_timeoutHasBeenSet(false)
-{
-}
-
 TestConfig::TestConfig(JsonView jsonValue)
-  : TestConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ TestConfig& TestConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("timeout"))
   {
     m_timeout = jsonValue.GetInteger("timeout");
-
     m_timeoutHasBeenSet = true;
   }
-
   return *this;
 }
 

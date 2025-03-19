@@ -27,7 +27,7 @@ namespace Model
   class DeleteEphemerisResult
   {
   public:
-    AWS_GROUNDSTATION_API DeleteEphemerisResult();
+    AWS_GROUNDSTATION_API DeleteEphemerisResult() = default;
     AWS_GROUNDSTATION_API DeleteEphemerisResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GROUNDSTATION_API DeleteEphemerisResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The AWS Ground Station ephemeris ID.</p>
      */
-    inline const Aws::String& GetEphemerisId() const{ return m_ephemerisId; }
-    inline void SetEphemerisId(const Aws::String& value) { m_ephemerisId = value; }
-    inline void SetEphemerisId(Aws::String&& value) { m_ephemerisId = std::move(value); }
-    inline void SetEphemerisId(const char* value) { m_ephemerisId.assign(value); }
-    inline DeleteEphemerisResult& WithEphemerisId(const Aws::String& value) { SetEphemerisId(value); return *this;}
-    inline DeleteEphemerisResult& WithEphemerisId(Aws::String&& value) { SetEphemerisId(std::move(value)); return *this;}
-    inline DeleteEphemerisResult& WithEphemerisId(const char* value) { SetEphemerisId(value); return *this;}
+    inline const Aws::String& GetEphemerisId() const { return m_ephemerisId; }
+    template<typename EphemerisIdT = Aws::String>
+    void SetEphemerisId(EphemerisIdT&& value) { m_ephemerisIdHasBeenSet = true; m_ephemerisId = std::forward<EphemerisIdT>(value); }
+    template<typename EphemerisIdT = Aws::String>
+    DeleteEphemerisResult& WithEphemerisId(EphemerisIdT&& value) { SetEphemerisId(std::forward<EphemerisIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteEphemerisResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteEphemerisResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteEphemerisResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteEphemerisResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_ephemerisId;
+    bool m_ephemerisIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

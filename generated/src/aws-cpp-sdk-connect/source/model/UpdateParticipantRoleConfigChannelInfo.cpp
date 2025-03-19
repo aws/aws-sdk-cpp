@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-UpdateParticipantRoleConfigChannelInfo::UpdateParticipantRoleConfigChannelInfo() : 
-    m_chatHasBeenSet(false)
-{
-}
-
 UpdateParticipantRoleConfigChannelInfo::UpdateParticipantRoleConfigChannelInfo(JsonView jsonValue)
-  : UpdateParticipantRoleConfigChannelInfo()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ UpdateParticipantRoleConfigChannelInfo& UpdateParticipantRoleConfigChannelInfo::
   if(jsonValue.ValueExists("Chat"))
   {
     m_chat = jsonValue.GetObject("Chat");
-
     m_chatHasBeenSet = true;
   }
-
   return *this;
 }
 

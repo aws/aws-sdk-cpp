@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DefaultInteractiveLayoutConfiguration::DefaultInteractiveLayoutConfiguration() : 
-    m_gridHasBeenSet(false),
-    m_freeFormHasBeenSet(false)
-{
-}
-
 DefaultInteractiveLayoutConfiguration::DefaultInteractiveLayoutConfiguration(JsonView jsonValue)
-  : DefaultInteractiveLayoutConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DefaultInteractiveLayoutConfiguration& DefaultInteractiveLayoutConfiguration::op
   if(jsonValue.ValueExists("Grid"))
   {
     m_grid = jsonValue.GetObject("Grid");
-
     m_gridHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FreeForm"))
   {
     m_freeForm = jsonValue.GetObject("FreeForm");
-
     m_freeFormHasBeenSet = true;
   }
-
   return *this;
 }
 

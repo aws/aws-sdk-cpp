@@ -29,7 +29,7 @@ namespace Model
   class GetExternalModelsResult
   {
   public:
-    AWS_FRAUDDETECTOR_API GetExternalModelsResult();
+    AWS_FRAUDDETECTOR_API GetExternalModelsResult() = default;
     AWS_FRAUDDETECTOR_API GetExternalModelsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FRAUDDETECTOR_API GetExternalModelsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>Gets the Amazon SageMaker models.</p>
      */
-    inline const Aws::Vector<ExternalModel>& GetExternalModels() const{ return m_externalModels; }
-    inline void SetExternalModels(const Aws::Vector<ExternalModel>& value) { m_externalModels = value; }
-    inline void SetExternalModels(Aws::Vector<ExternalModel>&& value) { m_externalModels = std::move(value); }
-    inline GetExternalModelsResult& WithExternalModels(const Aws::Vector<ExternalModel>& value) { SetExternalModels(value); return *this;}
-    inline GetExternalModelsResult& WithExternalModels(Aws::Vector<ExternalModel>&& value) { SetExternalModels(std::move(value)); return *this;}
-    inline GetExternalModelsResult& AddExternalModels(const ExternalModel& value) { m_externalModels.push_back(value); return *this; }
-    inline GetExternalModelsResult& AddExternalModels(ExternalModel&& value) { m_externalModels.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ExternalModel>& GetExternalModels() const { return m_externalModels; }
+    template<typename ExternalModelsT = Aws::Vector<ExternalModel>>
+    void SetExternalModels(ExternalModelsT&& value) { m_externalModelsHasBeenSet = true; m_externalModels = std::forward<ExternalModelsT>(value); }
+    template<typename ExternalModelsT = Aws::Vector<ExternalModel>>
+    GetExternalModelsResult& WithExternalModels(ExternalModelsT&& value) { SetExternalModels(std::forward<ExternalModelsT>(value)); return *this;}
+    template<typename ExternalModelsT = ExternalModel>
+    GetExternalModelsResult& AddExternalModels(ExternalModelsT&& value) { m_externalModelsHasBeenSet = true; m_externalModels.emplace_back(std::forward<ExternalModelsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The next page token to be used in subsequent requests.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetExternalModelsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetExternalModelsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetExternalModelsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetExternalModelsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetExternalModelsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetExternalModelsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetExternalModelsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetExternalModelsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ExternalModel> m_externalModels;
+    bool m_externalModelsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

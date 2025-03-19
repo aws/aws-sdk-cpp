@@ -28,78 +28,73 @@ namespace Model
   class ExecuteBudgetActionResult
   {
   public:
-    AWS_BUDGETS_API ExecuteBudgetActionResult();
+    AWS_BUDGETS_API ExecuteBudgetActionResult() = default;
     AWS_BUDGETS_API ExecuteBudgetActionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BUDGETS_API ExecuteBudgetActionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
-    inline void SetAccountId(const Aws::String& value) { m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountId.assign(value); }
-    inline ExecuteBudgetActionResult& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline ExecuteBudgetActionResult& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline ExecuteBudgetActionResult& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    ExecuteBudgetActionResult& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetBudgetName() const{ return m_budgetName; }
-    inline void SetBudgetName(const Aws::String& value) { m_budgetName = value; }
-    inline void SetBudgetName(Aws::String&& value) { m_budgetName = std::move(value); }
-    inline void SetBudgetName(const char* value) { m_budgetName.assign(value); }
-    inline ExecuteBudgetActionResult& WithBudgetName(const Aws::String& value) { SetBudgetName(value); return *this;}
-    inline ExecuteBudgetActionResult& WithBudgetName(Aws::String&& value) { SetBudgetName(std::move(value)); return *this;}
-    inline ExecuteBudgetActionResult& WithBudgetName(const char* value) { SetBudgetName(value); return *this;}
+    inline const Aws::String& GetBudgetName() const { return m_budgetName; }
+    template<typename BudgetNameT = Aws::String>
+    void SetBudgetName(BudgetNameT&& value) { m_budgetNameHasBeenSet = true; m_budgetName = std::forward<BudgetNameT>(value); }
+    template<typename BudgetNameT = Aws::String>
+    ExecuteBudgetActionResult& WithBudgetName(BudgetNameT&& value) { SetBudgetName(std::forward<BudgetNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> A system-generated universally unique identifier (UUID) for the action. </p>
      */
-    inline const Aws::String& GetActionId() const{ return m_actionId; }
-    inline void SetActionId(const Aws::String& value) { m_actionId = value; }
-    inline void SetActionId(Aws::String&& value) { m_actionId = std::move(value); }
-    inline void SetActionId(const char* value) { m_actionId.assign(value); }
-    inline ExecuteBudgetActionResult& WithActionId(const Aws::String& value) { SetActionId(value); return *this;}
-    inline ExecuteBudgetActionResult& WithActionId(Aws::String&& value) { SetActionId(std::move(value)); return *this;}
-    inline ExecuteBudgetActionResult& WithActionId(const char* value) { SetActionId(value); return *this;}
+    inline const Aws::String& GetActionId() const { return m_actionId; }
+    template<typename ActionIdT = Aws::String>
+    void SetActionId(ActionIdT&& value) { m_actionIdHasBeenSet = true; m_actionId = std::forward<ActionIdT>(value); }
+    template<typename ActionIdT = Aws::String>
+    ExecuteBudgetActionResult& WithActionId(ActionIdT&& value) { SetActionId(std::forward<ActionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The type of execution. </p>
      */
-    inline const ExecutionType& GetExecutionType() const{ return m_executionType; }
-    inline void SetExecutionType(const ExecutionType& value) { m_executionType = value; }
-    inline void SetExecutionType(ExecutionType&& value) { m_executionType = std::move(value); }
-    inline ExecuteBudgetActionResult& WithExecutionType(const ExecutionType& value) { SetExecutionType(value); return *this;}
-    inline ExecuteBudgetActionResult& WithExecutionType(ExecutionType&& value) { SetExecutionType(std::move(value)); return *this;}
+    inline ExecutionType GetExecutionType() const { return m_executionType; }
+    inline void SetExecutionType(ExecutionType value) { m_executionTypeHasBeenSet = true; m_executionType = value; }
+    inline ExecuteBudgetActionResult& WithExecutionType(ExecutionType value) { SetExecutionType(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ExecuteBudgetActionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ExecuteBudgetActionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ExecuteBudgetActionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ExecuteBudgetActionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_accountId;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_budgetName;
+    bool m_budgetNameHasBeenSet = false;
 
     Aws::String m_actionId;
+    bool m_actionIdHasBeenSet = false;
 
-    ExecutionType m_executionType;
+    ExecutionType m_executionType{ExecutionType::NOT_SET};
+    bool m_executionTypeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

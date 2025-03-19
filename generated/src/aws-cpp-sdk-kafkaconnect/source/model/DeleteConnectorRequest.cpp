@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteConnectorRequest::DeleteConnectorRequest() : 
-    m_connectorArnHasBeenSet(false),
-    m_currentVersionHasBeenSet(false)
-{
-}
-
 Aws::String DeleteConnectorRequest::SerializePayload() const
 {
   return {};

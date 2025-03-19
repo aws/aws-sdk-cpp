@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-AutoParameter::AutoParameter() : 
-    m_nameHasBeenSet(false),
-    m_valueHintHasBeenSet(false)
-{
-}
-
 AutoParameter::AutoParameter(JsonView jsonValue)
-  : AutoParameter()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AutoParameter& AutoParameter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValueHint"))
   {
     m_valueHint = jsonValue.GetString("ValueHint");
-
     m_valueHintHasBeenSet = true;
   }
-
   return *this;
 }
 

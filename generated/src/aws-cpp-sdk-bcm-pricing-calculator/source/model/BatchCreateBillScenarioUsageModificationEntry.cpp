@@ -18,21 +18,7 @@ namespace BCMPricingCalculator
 namespace Model
 {
 
-BatchCreateBillScenarioUsageModificationEntry::BatchCreateBillScenarioUsageModificationEntry() : 
-    m_serviceCodeHasBeenSet(false),
-    m_usageTypeHasBeenSet(false),
-    m_operationHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_groupHasBeenSet(false),
-    m_usageAccountIdHasBeenSet(false),
-    m_amountsHasBeenSet(false),
-    m_historicalUsageHasBeenSet(false)
-{
-}
-
 BatchCreateBillScenarioUsageModificationEntry::BatchCreateBillScenarioUsageModificationEntry(JsonView jsonValue)
-  : BatchCreateBillScenarioUsageModificationEntry()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ BatchCreateBillScenarioUsageModificationEntry& BatchCreateBillScenarioUsageModif
   if(jsonValue.ValueExists("serviceCode"))
   {
     m_serviceCode = jsonValue.GetString("serviceCode");
-
     m_serviceCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("usageType"))
   {
     m_usageType = jsonValue.GetString("usageType");
-
     m_usageTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operation"))
   {
     m_operation = jsonValue.GetString("operation");
-
     m_operationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("availabilityZone"))
   {
     m_availabilityZone = jsonValue.GetString("availabilityZone");
-
     m_availabilityZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("group"))
   {
     m_group = jsonValue.GetString("group");
-
     m_groupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("usageAccountId"))
   {
     m_usageAccountId = jsonValue.GetString("usageAccountId");
-
     m_usageAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("amounts"))
   {
     Aws::Utils::Array<JsonView> amountsJsonList = jsonValue.GetArray("amounts");
@@ -97,14 +69,11 @@ BatchCreateBillScenarioUsageModificationEntry& BatchCreateBillScenarioUsageModif
     }
     m_amountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("historicalUsage"))
   {
     m_historicalUsage = jsonValue.GetObject("historicalUsage");
-
     m_historicalUsageHasBeenSet = true;
   }
-
   return *this;
 }
 

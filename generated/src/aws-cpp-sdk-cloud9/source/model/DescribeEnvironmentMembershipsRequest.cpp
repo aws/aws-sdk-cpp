@@ -12,16 +12,6 @@ using namespace Aws::Cloud9::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeEnvironmentMembershipsRequest::DescribeEnvironmentMembershipsRequest() : 
-    m_userArnHasBeenSet(false),
-    m_environmentIdHasBeenSet(false),
-    m_permissionsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeEnvironmentMembershipsRequest::SerializePayload() const
 {
   JsonValue payload;

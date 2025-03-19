@@ -18,18 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-JourneySMSMessage::JourneySMSMessage() : 
-    m_messageType(MessageType::NOT_SET),
-    m_messageTypeHasBeenSet(false),
-    m_originationNumberHasBeenSet(false),
-    m_senderIdHasBeenSet(false),
-    m_entityIdHasBeenSet(false),
-    m_templateIdHasBeenSet(false)
-{
-}
-
 JourneySMSMessage::JourneySMSMessage(JsonView jsonValue)
-  : JourneySMSMessage()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ JourneySMSMessage& JourneySMSMessage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MessageType"))
   {
     m_messageType = MessageTypeMapper::GetMessageTypeForName(jsonValue.GetString("MessageType"));
-
     m_messageTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OriginationNumber"))
   {
     m_originationNumber = jsonValue.GetString("OriginationNumber");
-
     m_originationNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SenderId"))
   {
     m_senderId = jsonValue.GetString("SenderId");
-
     m_senderIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EntityId"))
   {
     m_entityId = jsonValue.GetString("EntityId");
-
     m_entityIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TemplateId"))
   {
     m_templateId = jsonValue.GetString("TemplateId");
-
     m_templateIdHasBeenSet = true;
   }
-
   return *this;
 }
 

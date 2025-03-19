@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateStoreImageTaskRequest::CreateStoreImageTaskRequest() : 
-    m_imageIdHasBeenSet(false),
-    m_bucketHasBeenSet(false),
-    m_s3ObjectTagsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String CreateStoreImageTaskRequest::SerializePayload() const
 {
   Aws::StringStream ss;

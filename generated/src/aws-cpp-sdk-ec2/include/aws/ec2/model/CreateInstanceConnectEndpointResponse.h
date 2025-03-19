@@ -29,7 +29,7 @@ namespace Model
   class CreateInstanceConnectEndpointResponse
   {
   public:
-    AWS_EC2_API CreateInstanceConnectEndpointResponse();
+    AWS_EC2_API CreateInstanceConnectEndpointResponse() = default;
     AWS_EC2_API CreateInstanceConnectEndpointResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API CreateInstanceConnectEndpointResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,11 +38,11 @@ namespace Model
     /**
      * <p>Information about the EC2 Instance Connect Endpoint.</p>
      */
-    inline const Ec2InstanceConnectEndpoint& GetInstanceConnectEndpoint() const{ return m_instanceConnectEndpoint; }
-    inline void SetInstanceConnectEndpoint(const Ec2InstanceConnectEndpoint& value) { m_instanceConnectEndpoint = value; }
-    inline void SetInstanceConnectEndpoint(Ec2InstanceConnectEndpoint&& value) { m_instanceConnectEndpoint = std::move(value); }
-    inline CreateInstanceConnectEndpointResponse& WithInstanceConnectEndpoint(const Ec2InstanceConnectEndpoint& value) { SetInstanceConnectEndpoint(value); return *this;}
-    inline CreateInstanceConnectEndpointResponse& WithInstanceConnectEndpoint(Ec2InstanceConnectEndpoint&& value) { SetInstanceConnectEndpoint(std::move(value)); return *this;}
+    inline const Ec2InstanceConnectEndpoint& GetInstanceConnectEndpoint() const { return m_instanceConnectEndpoint; }
+    template<typename InstanceConnectEndpointT = Ec2InstanceConnectEndpoint>
+    void SetInstanceConnectEndpoint(InstanceConnectEndpointT&& value) { m_instanceConnectEndpointHasBeenSet = true; m_instanceConnectEndpoint = std::forward<InstanceConnectEndpointT>(value); }
+    template<typename InstanceConnectEndpointT = Ec2InstanceConnectEndpoint>
+    CreateInstanceConnectEndpointResponse& WithInstanceConnectEndpoint(InstanceConnectEndpointT&& value) { SetInstanceConnectEndpoint(std::forward<InstanceConnectEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -50,30 +50,31 @@ namespace Model
      * <p>Unique, case-sensitive idempotency token provided by the client in the the
      * request.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-    inline void SetClientToken(const Aws::String& value) { m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientToken.assign(value); }
-    inline CreateInstanceConnectEndpointResponse& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateInstanceConnectEndpointResponse& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateInstanceConnectEndpointResponse& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateInstanceConnectEndpointResponse& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CreateInstanceConnectEndpointResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CreateInstanceConnectEndpointResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CreateInstanceConnectEndpointResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Ec2InstanceConnectEndpoint m_instanceConnectEndpoint;
+    bool m_instanceConnectEndpointHasBeenSet = false;
 
     Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

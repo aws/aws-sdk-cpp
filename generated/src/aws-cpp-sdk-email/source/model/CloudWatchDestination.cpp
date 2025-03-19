@@ -20,13 +20,7 @@ namespace SES
 namespace Model
 {
 
-CloudWatchDestination::CloudWatchDestination() : 
-    m_dimensionConfigurationsHasBeenSet(false)
-{
-}
-
 CloudWatchDestination::CloudWatchDestination(const XmlNode& xmlNode)
-  : CloudWatchDestination()
 {
   *this = xmlNode;
 }
@@ -41,6 +35,7 @@ CloudWatchDestination& CloudWatchDestination::operator =(const XmlNode& xmlNode)
     if(!dimensionConfigurationsNode.IsNull())
     {
       XmlNode dimensionConfigurationsMember = dimensionConfigurationsNode.FirstChild("member");
+      m_dimensionConfigurationsHasBeenSet = !dimensionConfigurationsMember.IsNull();
       while(!dimensionConfigurationsMember.IsNull())
       {
         m_dimensionConfigurations.push_back(dimensionConfigurationsMember);

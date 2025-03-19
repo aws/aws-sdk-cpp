@@ -18,17 +18,7 @@ namespace Connect
 namespace Model
 {
 
-ParticipantTimerConfiguration::ParticipantTimerConfiguration() : 
-    m_participantRole(TimerEligibleParticipantRoles::NOT_SET),
-    m_participantRoleHasBeenSet(false),
-    m_timerType(ParticipantTimerType::NOT_SET),
-    m_timerTypeHasBeenSet(false),
-    m_timerValueHasBeenSet(false)
-{
-}
-
 ParticipantTimerConfiguration::ParticipantTimerConfiguration(JsonView jsonValue)
-  : ParticipantTimerConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ ParticipantTimerConfiguration& ParticipantTimerConfiguration::operator =(JsonVie
   if(jsonValue.ValueExists("ParticipantRole"))
   {
     m_participantRole = TimerEligibleParticipantRolesMapper::GetTimerEligibleParticipantRolesForName(jsonValue.GetString("ParticipantRole"));
-
     m_participantRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimerType"))
   {
     m_timerType = ParticipantTimerTypeMapper::GetParticipantTimerTypeForName(jsonValue.GetString("TimerType"));
-
     m_timerTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimerValue"))
   {
     m_timerValue = jsonValue.GetObject("TimerValue");
-
     m_timerValueHasBeenSet = true;
   }
-
   return *this;
 }
 

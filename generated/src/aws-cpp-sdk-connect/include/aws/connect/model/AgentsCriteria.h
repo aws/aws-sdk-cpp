@@ -35,7 +35,7 @@ namespace Model
   class AgentsCriteria
   {
   public:
-    AWS_CONNECT_API AgentsCriteria();
+    AWS_CONNECT_API AgentsCriteria() = default;
     AWS_CONNECT_API AgentsCriteria(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API AgentsCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,15 +45,14 @@ namespace Model
     /**
      * <p>An object to specify a list of agents, by user ID.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAgentIds() const{ return m_agentIds; }
+    inline const Aws::Vector<Aws::String>& GetAgentIds() const { return m_agentIds; }
     inline bool AgentIdsHasBeenSet() const { return m_agentIdsHasBeenSet; }
-    inline void SetAgentIds(const Aws::Vector<Aws::String>& value) { m_agentIdsHasBeenSet = true; m_agentIds = value; }
-    inline void SetAgentIds(Aws::Vector<Aws::String>&& value) { m_agentIdsHasBeenSet = true; m_agentIds = std::move(value); }
-    inline AgentsCriteria& WithAgentIds(const Aws::Vector<Aws::String>& value) { SetAgentIds(value); return *this;}
-    inline AgentsCriteria& WithAgentIds(Aws::Vector<Aws::String>&& value) { SetAgentIds(std::move(value)); return *this;}
-    inline AgentsCriteria& AddAgentIds(const Aws::String& value) { m_agentIdsHasBeenSet = true; m_agentIds.push_back(value); return *this; }
-    inline AgentsCriteria& AddAgentIds(Aws::String&& value) { m_agentIdsHasBeenSet = true; m_agentIds.push_back(std::move(value)); return *this; }
-    inline AgentsCriteria& AddAgentIds(const char* value) { m_agentIdsHasBeenSet = true; m_agentIds.push_back(value); return *this; }
+    template<typename AgentIdsT = Aws::Vector<Aws::String>>
+    void SetAgentIds(AgentIdsT&& value) { m_agentIdsHasBeenSet = true; m_agentIds = std::forward<AgentIdsT>(value); }
+    template<typename AgentIdsT = Aws::Vector<Aws::String>>
+    AgentsCriteria& WithAgentIds(AgentIdsT&& value) { SetAgentIds(std::forward<AgentIdsT>(value)); return *this;}
+    template<typename AgentIdsT = Aws::String>
+    AgentsCriteria& AddAgentIds(AgentIdsT&& value) { m_agentIdsHasBeenSet = true; m_agentIds.emplace_back(std::forward<AgentIdsT>(value)); return *this; }
     ///@}
   private:
 

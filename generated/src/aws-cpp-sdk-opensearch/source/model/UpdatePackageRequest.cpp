@@ -12,16 +12,6 @@ using namespace Aws::OpenSearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdatePackageRequest::UpdatePackageRequest() : 
-    m_packageIDHasBeenSet(false),
-    m_packageSourceHasBeenSet(false),
-    m_packageDescriptionHasBeenSet(false),
-    m_commitMessageHasBeenSet(false),
-    m_packageConfigurationHasBeenSet(false),
-    m_packageEncryptionOptionsHasBeenSet(false)
-{
-}
-
 Aws::String UpdatePackageRequest::SerializePayload() const
 {
   JsonValue payload;

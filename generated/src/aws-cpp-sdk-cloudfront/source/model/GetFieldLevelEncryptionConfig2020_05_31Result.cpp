@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetFieldLevelEncryptionConfig2020_05_31Result::GetFieldLevelEncryptionConfig2020_05_31Result()
-{
-}
-
 GetFieldLevelEncryptionConfig2020_05_31Result::GetFieldLevelEncryptionConfig2020_05_31Result(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -33,6 +29,7 @@ GetFieldLevelEncryptionConfig2020_05_31Result& GetFieldLevelEncryptionConfig2020
   if(!resultNode.IsNull())
   {
     m_fieldLevelEncryptionConfig = resultNode;
+    m_fieldLevelEncryptionConfigHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
@@ -40,12 +37,14 @@ GetFieldLevelEncryptionConfig2020_05_31Result& GetFieldLevelEncryptionConfig2020
   if(eTagIter != headers.end())
   {
     m_eTag = eTagIter->second;
+    m_eTagHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

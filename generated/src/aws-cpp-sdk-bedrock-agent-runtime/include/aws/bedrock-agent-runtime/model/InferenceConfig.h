@@ -32,7 +32,7 @@ namespace Model
   class InferenceConfig
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API InferenceConfig();
+    AWS_BEDROCKAGENTRUNTIME_API InferenceConfig() = default;
     AWS_BEDROCKAGENTRUNTIME_API InferenceConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API InferenceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p> Configuration settings specific to text generation while generating
      * responses using RetrieveAndGenerate. </p>
      */
-    inline const TextInferenceConfig& GetTextInferenceConfig() const{ return m_textInferenceConfig; }
+    inline const TextInferenceConfig& GetTextInferenceConfig() const { return m_textInferenceConfig; }
     inline bool TextInferenceConfigHasBeenSet() const { return m_textInferenceConfigHasBeenSet; }
-    inline void SetTextInferenceConfig(const TextInferenceConfig& value) { m_textInferenceConfigHasBeenSet = true; m_textInferenceConfig = value; }
-    inline void SetTextInferenceConfig(TextInferenceConfig&& value) { m_textInferenceConfigHasBeenSet = true; m_textInferenceConfig = std::move(value); }
-    inline InferenceConfig& WithTextInferenceConfig(const TextInferenceConfig& value) { SetTextInferenceConfig(value); return *this;}
-    inline InferenceConfig& WithTextInferenceConfig(TextInferenceConfig&& value) { SetTextInferenceConfig(std::move(value)); return *this;}
+    template<typename TextInferenceConfigT = TextInferenceConfig>
+    void SetTextInferenceConfig(TextInferenceConfigT&& value) { m_textInferenceConfigHasBeenSet = true; m_textInferenceConfig = std::forward<TextInferenceConfigT>(value); }
+    template<typename TextInferenceConfigT = TextInferenceConfig>
+    InferenceConfig& WithTextInferenceConfig(TextInferenceConfigT&& value) { SetTextInferenceConfig(std::forward<TextInferenceConfigT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,11 +12,6 @@ using namespace Aws::IoTFleetHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeApplicationRequest::DescribeApplicationRequest() : 
-    m_applicationIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeApplicationRequest::SerializePayload() const
 {
   return {};

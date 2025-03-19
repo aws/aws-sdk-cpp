@@ -22,7 +22,7 @@ namespace Model
   class EnableAddOnRequest : public LightsailRequest
   {
   public:
-    AWS_LIGHTSAIL_API EnableAddOnRequest();
+    AWS_LIGHTSAIL_API EnableAddOnRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,26 +39,24 @@ namespace Model
     /**
      * <p>The name of the source resource for which to enable or modify the add-on.</p>
      */
-    inline const Aws::String& GetResourceName() const{ return m_resourceName; }
+    inline const Aws::String& GetResourceName() const { return m_resourceName; }
     inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
-    inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
-    inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
-    inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
-    inline EnableAddOnRequest& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
-    inline EnableAddOnRequest& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
-    inline EnableAddOnRequest& WithResourceName(const char* value) { SetResourceName(value); return *this;}
+    template<typename ResourceNameT = Aws::String>
+    void SetResourceName(ResourceNameT&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::forward<ResourceNameT>(value); }
+    template<typename ResourceNameT = Aws::String>
+    EnableAddOnRequest& WithResourceName(ResourceNameT&& value) { SetResourceName(std::forward<ResourceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of strings representing the add-on to enable or modify.</p>
      */
-    inline const AddOnRequest& GetAddOnRequest() const{ return m_addOnRequest; }
+    inline const AddOnRequest& GetAddOnRequest() const { return m_addOnRequest; }
     inline bool AddOnRequestHasBeenSet() const { return m_addOnRequestHasBeenSet; }
-    inline void SetAddOnRequest(const AddOnRequest& value) { m_addOnRequestHasBeenSet = true; m_addOnRequest = value; }
-    inline void SetAddOnRequest(AddOnRequest&& value) { m_addOnRequestHasBeenSet = true; m_addOnRequest = std::move(value); }
-    inline EnableAddOnRequest& WithAddOnRequest(const AddOnRequest& value) { SetAddOnRequest(value); return *this;}
-    inline EnableAddOnRequest& WithAddOnRequest(AddOnRequest&& value) { SetAddOnRequest(std::move(value)); return *this;}
+    template<typename AddOnRequestT = AddOnRequest>
+    void SetAddOnRequest(AddOnRequestT&& value) { m_addOnRequestHasBeenSet = true; m_addOnRequest = std::forward<AddOnRequestT>(value); }
+    template<typename AddOnRequestT = AddOnRequest>
+    EnableAddOnRequest& WithAddOnRequest(AddOnRequestT&& value) { SetAddOnRequest(std::forward<AddOnRequestT>(value)); return *this;}
     ///@}
   private:
 

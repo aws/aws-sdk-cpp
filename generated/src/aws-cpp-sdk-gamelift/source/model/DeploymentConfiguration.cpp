@@ -18,18 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-DeploymentConfiguration::DeploymentConfiguration() : 
-    m_protectionStrategy(DeploymentProtectionStrategy::NOT_SET),
-    m_protectionStrategyHasBeenSet(false),
-    m_minimumHealthyPercentage(0),
-    m_minimumHealthyPercentageHasBeenSet(false),
-    m_impairmentStrategy(DeploymentImpairmentStrategy::NOT_SET),
-    m_impairmentStrategyHasBeenSet(false)
-{
-}
-
 DeploymentConfiguration::DeploymentConfiguration(JsonView jsonValue)
-  : DeploymentConfiguration()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ DeploymentConfiguration& DeploymentConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ProtectionStrategy"))
   {
     m_protectionStrategy = DeploymentProtectionStrategyMapper::GetDeploymentProtectionStrategyForName(jsonValue.GetString("ProtectionStrategy"));
-
     m_protectionStrategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinimumHealthyPercentage"))
   {
     m_minimumHealthyPercentage = jsonValue.GetInteger("MinimumHealthyPercentage");
-
     m_minimumHealthyPercentageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImpairmentStrategy"))
   {
     m_impairmentStrategy = DeploymentImpairmentStrategyMapper::GetDeploymentImpairmentStrategyForName(jsonValue.GetString("ImpairmentStrategy"));
-
     m_impairmentStrategyHasBeenSet = true;
   }
-
   return *this;
 }
 

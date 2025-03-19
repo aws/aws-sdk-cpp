@@ -31,7 +31,7 @@ namespace Model
   class ParticipantDetails
   {
   public:
-    AWS_CONNECT_API ParticipantDetails();
+    AWS_CONNECT_API ParticipantDetails() = default;
     AWS_CONNECT_API ParticipantDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API ParticipantDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>Display name of the participant.</p>
      */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline const Aws::String& GetDisplayName() const { return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-    inline ParticipantDetails& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline ParticipantDetails& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline ParticipantDetails& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    template<typename DisplayNameT = Aws::String>
+    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
+    template<typename DisplayNameT = Aws::String>
+    ParticipantDetails& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
     ///@}
   private:
 

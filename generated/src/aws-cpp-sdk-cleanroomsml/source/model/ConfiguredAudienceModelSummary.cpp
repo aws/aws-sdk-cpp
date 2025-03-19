@@ -18,21 +18,7 @@ namespace CleanRoomsML
 namespace Model
 {
 
-ConfiguredAudienceModelSummary::ConfiguredAudienceModelSummary() : 
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_audienceModelArnHasBeenSet(false),
-    m_outputConfigHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_configuredAudienceModelArnHasBeenSet(false),
-    m_status(ConfiguredAudienceModelStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 ConfiguredAudienceModelSummary::ConfiguredAudienceModelSummary(JsonView jsonValue)
-  : ConfiguredAudienceModelSummary()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ ConfiguredAudienceModelSummary& ConfiguredAudienceModelSummary::operator =(JsonV
   if(jsonValue.ValueExists("createTime"))
   {
     m_createTime = jsonValue.GetString("createTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateTime"))
   {
     m_updateTime = jsonValue.GetString("updateTime");
-
     m_updateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("audienceModelArn"))
   {
     m_audienceModelArn = jsonValue.GetString("audienceModelArn");
-
     m_audienceModelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputConfig"))
   {
     m_outputConfig = jsonValue.GetObject("outputConfig");
-
     m_outputConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configuredAudienceModelArn"))
   {
     m_configuredAudienceModelArn = jsonValue.GetString("configuredAudienceModelArn");
-
     m_configuredAudienceModelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ConfiguredAudienceModelStatusMapper::GetConfiguredAudienceModelStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

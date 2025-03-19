@@ -35,7 +35,7 @@ namespace Model
   class LastUpdate
   {
   public:
-    AWS_MWAA_API LastUpdate();
+    AWS_MWAA_API LastUpdate() = default;
     AWS_MWAA_API LastUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_MWAA_API LastUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MWAA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,36 +45,34 @@ namespace Model
     /**
      * <p>The status of the last update on the environment.</p>
      */
-    inline const UpdateStatus& GetStatus() const{ return m_status; }
+    inline UpdateStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const UpdateStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(UpdateStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline LastUpdate& WithStatus(const UpdateStatus& value) { SetStatus(value); return *this;}
-    inline LastUpdate& WithStatus(UpdateStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(UpdateStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline LastUpdate& WithStatus(UpdateStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The day and time of the last update on the environment.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline LastUpdate& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline LastUpdate& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    LastUpdate& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The error that was encountered during the last update of the environment.</p>
      */
-    inline const UpdateError& GetError() const{ return m_error; }
+    inline const UpdateError& GetError() const { return m_error; }
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-    inline void SetError(const UpdateError& value) { m_errorHasBeenSet = true; m_error = value; }
-    inline void SetError(UpdateError&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-    inline LastUpdate& WithError(const UpdateError& value) { SetError(value); return *this;}
-    inline LastUpdate& WithError(UpdateError&& value) { SetError(std::move(value)); return *this;}
+    template<typename ErrorT = UpdateError>
+    void SetError(ErrorT&& value) { m_errorHasBeenSet = true; m_error = std::forward<ErrorT>(value); }
+    template<typename ErrorT = UpdateError>
+    LastUpdate& WithError(ErrorT&& value) { SetError(std::forward<ErrorT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,21 +80,19 @@ namespace Model
      * <p>The source of the last update to the environment. Includes internal processes
      * by Amazon MWAA, such as an environment maintenance update.</p>
      */
-    inline const Aws::String& GetSource() const{ return m_source; }
+    inline const Aws::String& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
-    inline LastUpdate& WithSource(const Aws::String& value) { SetSource(value); return *this;}
-    inline LastUpdate& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
-    inline LastUpdate& WithSource(const char* value) { SetSource(value); return *this;}
+    template<typename SourceT = Aws::String>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = Aws::String>
+    LastUpdate& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
   private:
 
-    UpdateStatus m_status;
+    UpdateStatus m_status{UpdateStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
     UpdateError m_error;

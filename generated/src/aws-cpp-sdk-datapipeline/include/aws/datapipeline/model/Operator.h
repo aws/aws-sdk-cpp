@@ -34,7 +34,7 @@ namespace Model
   class Operator
   {
   public:
-    AWS_DATAPIPELINE_API Operator();
+    AWS_DATAPIPELINE_API Operator() = default;
     AWS_DATAPIPELINE_API Operator(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAPIPELINE_API Operator& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -61,31 +61,28 @@ namespace Model
      * as symbols may be reserved by AWS Data Pipeline. User-defined fields that you
      * add to a pipeline should prefix their name with the string "my".</p>
      */
-    inline const OperatorType& GetType() const{ return m_type; }
+    inline OperatorType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const OperatorType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(OperatorType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline Operator& WithType(const OperatorType& value) { SetType(value); return *this;}
-    inline Operator& WithType(OperatorType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(OperatorType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline Operator& WithType(OperatorType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value that the actual field value will be compared with.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline Operator& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline Operator& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline Operator& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline Operator& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline Operator& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    Operator& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    Operator& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
   private:
 
-    OperatorType m_type;
+    OperatorType m_type{OperatorType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;

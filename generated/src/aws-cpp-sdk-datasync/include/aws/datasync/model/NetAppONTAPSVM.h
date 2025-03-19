@@ -36,7 +36,7 @@ namespace Model
   class NetAppONTAPSVM
   {
   public:
-    AWS_DATASYNC_API NetAppONTAPSVM();
+    AWS_DATASYNC_API NetAppONTAPSVM() = default;
     AWS_DATASYNC_API NetAppONTAPSVM(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API NetAppONTAPSVM& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,49 +47,43 @@ namespace Model
      * <p>The universally unique identifier (UUID) of the cluster associated with the
      * SVM.</p>
      */
-    inline const Aws::String& GetClusterUuid() const{ return m_clusterUuid; }
+    inline const Aws::String& GetClusterUuid() const { return m_clusterUuid; }
     inline bool ClusterUuidHasBeenSet() const { return m_clusterUuidHasBeenSet; }
-    inline void SetClusterUuid(const Aws::String& value) { m_clusterUuidHasBeenSet = true; m_clusterUuid = value; }
-    inline void SetClusterUuid(Aws::String&& value) { m_clusterUuidHasBeenSet = true; m_clusterUuid = std::move(value); }
-    inline void SetClusterUuid(const char* value) { m_clusterUuidHasBeenSet = true; m_clusterUuid.assign(value); }
-    inline NetAppONTAPSVM& WithClusterUuid(const Aws::String& value) { SetClusterUuid(value); return *this;}
-    inline NetAppONTAPSVM& WithClusterUuid(Aws::String&& value) { SetClusterUuid(std::move(value)); return *this;}
-    inline NetAppONTAPSVM& WithClusterUuid(const char* value) { SetClusterUuid(value); return *this;}
+    template<typename ClusterUuidT = Aws::String>
+    void SetClusterUuid(ClusterUuidT&& value) { m_clusterUuidHasBeenSet = true; m_clusterUuid = std::forward<ClusterUuidT>(value); }
+    template<typename ClusterUuidT = Aws::String>
+    NetAppONTAPSVM& WithClusterUuid(ClusterUuidT&& value) { SetClusterUuid(std::forward<ClusterUuidT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The UUID of the SVM.</p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline NetAppONTAPSVM& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline NetAppONTAPSVM& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline NetAppONTAPSVM& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    NetAppONTAPSVM& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the SVM</p>
      */
-    inline const Aws::String& GetSvmName() const{ return m_svmName; }
+    inline const Aws::String& GetSvmName() const { return m_svmName; }
     inline bool SvmNameHasBeenSet() const { return m_svmNameHasBeenSet; }
-    inline void SetSvmName(const Aws::String& value) { m_svmNameHasBeenSet = true; m_svmName = value; }
-    inline void SetSvmName(Aws::String&& value) { m_svmNameHasBeenSet = true; m_svmName = std::move(value); }
-    inline void SetSvmName(const char* value) { m_svmNameHasBeenSet = true; m_svmName.assign(value); }
-    inline NetAppONTAPSVM& WithSvmName(const Aws::String& value) { SetSvmName(value); return *this;}
-    inline NetAppONTAPSVM& WithSvmName(Aws::String&& value) { SetSvmName(std::move(value)); return *this;}
-    inline NetAppONTAPSVM& WithSvmName(const char* value) { SetSvmName(value); return *this;}
+    template<typename SvmNameT = Aws::String>
+    void SetSvmName(SvmNameT&& value) { m_svmNameHasBeenSet = true; m_svmName = std::forward<SvmNameT>(value); }
+    template<typename SvmNameT = Aws::String>
+    NetAppONTAPSVM& WithSvmName(SvmNameT&& value) { SetSvmName(std::forward<SvmNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of CIFS shares in the SVM.</p>
      */
-    inline long long GetCifsShareCount() const{ return m_cifsShareCount; }
+    inline long long GetCifsShareCount() const { return m_cifsShareCount; }
     inline bool CifsShareCountHasBeenSet() const { return m_cifsShareCountHasBeenSet; }
     inline void SetCifsShareCount(long long value) { m_cifsShareCountHasBeenSet = true; m_cifsShareCount = value; }
     inline NetAppONTAPSVM& WithCifsShareCount(long long value) { SetCifsShareCount(value); return *this;}
@@ -99,22 +93,21 @@ namespace Model
     /**
      * <p>The data transfer protocols (such as NFS) configured for the SVM.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetEnabledProtocols() const{ return m_enabledProtocols; }
+    inline const Aws::Vector<Aws::String>& GetEnabledProtocols() const { return m_enabledProtocols; }
     inline bool EnabledProtocolsHasBeenSet() const { return m_enabledProtocolsHasBeenSet; }
-    inline void SetEnabledProtocols(const Aws::Vector<Aws::String>& value) { m_enabledProtocolsHasBeenSet = true; m_enabledProtocols = value; }
-    inline void SetEnabledProtocols(Aws::Vector<Aws::String>&& value) { m_enabledProtocolsHasBeenSet = true; m_enabledProtocols = std::move(value); }
-    inline NetAppONTAPSVM& WithEnabledProtocols(const Aws::Vector<Aws::String>& value) { SetEnabledProtocols(value); return *this;}
-    inline NetAppONTAPSVM& WithEnabledProtocols(Aws::Vector<Aws::String>&& value) { SetEnabledProtocols(std::move(value)); return *this;}
-    inline NetAppONTAPSVM& AddEnabledProtocols(const Aws::String& value) { m_enabledProtocolsHasBeenSet = true; m_enabledProtocols.push_back(value); return *this; }
-    inline NetAppONTAPSVM& AddEnabledProtocols(Aws::String&& value) { m_enabledProtocolsHasBeenSet = true; m_enabledProtocols.push_back(std::move(value)); return *this; }
-    inline NetAppONTAPSVM& AddEnabledProtocols(const char* value) { m_enabledProtocolsHasBeenSet = true; m_enabledProtocols.push_back(value); return *this; }
+    template<typename EnabledProtocolsT = Aws::Vector<Aws::String>>
+    void SetEnabledProtocols(EnabledProtocolsT&& value) { m_enabledProtocolsHasBeenSet = true; m_enabledProtocols = std::forward<EnabledProtocolsT>(value); }
+    template<typename EnabledProtocolsT = Aws::Vector<Aws::String>>
+    NetAppONTAPSVM& WithEnabledProtocols(EnabledProtocolsT&& value) { SetEnabledProtocols(std::forward<EnabledProtocolsT>(value)); return *this;}
+    template<typename EnabledProtocolsT = Aws::String>
+    NetAppONTAPSVM& AddEnabledProtocols(EnabledProtocolsT&& value) { m_enabledProtocolsHasBeenSet = true; m_enabledProtocols.emplace_back(std::forward<EnabledProtocolsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The storage space that's being used in the SVM.</p>
      */
-    inline long long GetTotalCapacityUsed() const{ return m_totalCapacityUsed; }
+    inline long long GetTotalCapacityUsed() const { return m_totalCapacityUsed; }
     inline bool TotalCapacityUsedHasBeenSet() const { return m_totalCapacityUsedHasBeenSet; }
     inline void SetTotalCapacityUsed(long long value) { m_totalCapacityUsedHasBeenSet = true; m_totalCapacityUsed = value; }
     inline NetAppONTAPSVM& WithTotalCapacityUsed(long long value) { SetTotalCapacityUsed(value); return *this;}
@@ -124,7 +117,7 @@ namespace Model
     /**
      * <p>The total storage space that's available in the SVM.</p>
      */
-    inline long long GetTotalCapacityProvisioned() const{ return m_totalCapacityProvisioned; }
+    inline long long GetTotalCapacityProvisioned() const { return m_totalCapacityProvisioned; }
     inline bool TotalCapacityProvisionedHasBeenSet() const { return m_totalCapacityProvisionedHasBeenSet; }
     inline void SetTotalCapacityProvisioned(long long value) { m_totalCapacityProvisionedHasBeenSet = true; m_totalCapacityProvisioned = value; }
     inline NetAppONTAPSVM& WithTotalCapacityProvisioned(long long value) { SetTotalCapacityProvisioned(value); return *this;}
@@ -135,7 +128,7 @@ namespace Model
      * <p>The storage space that's being used in the SVM without accounting for
      * compression or deduplication.</p>
      */
-    inline long long GetTotalLogicalCapacityUsed() const{ return m_totalLogicalCapacityUsed; }
+    inline long long GetTotalLogicalCapacityUsed() const { return m_totalLogicalCapacityUsed; }
     inline bool TotalLogicalCapacityUsedHasBeenSet() const { return m_totalLogicalCapacityUsedHasBeenSet; }
     inline void SetTotalLogicalCapacityUsed(long long value) { m_totalLogicalCapacityUsedHasBeenSet = true; m_totalLogicalCapacityUsed = value; }
     inline NetAppONTAPSVM& WithTotalLogicalCapacityUsed(long long value) { SetTotalLogicalCapacityUsed(value); return *this;}
@@ -145,12 +138,12 @@ namespace Model
     /**
      * <p>The performance data that DataSync Discovery collects about the SVM.</p>
      */
-    inline const MaxP95Performance& GetMaxP95Performance() const{ return m_maxP95Performance; }
+    inline const MaxP95Performance& GetMaxP95Performance() const { return m_maxP95Performance; }
     inline bool MaxP95PerformanceHasBeenSet() const { return m_maxP95PerformanceHasBeenSet; }
-    inline void SetMaxP95Performance(const MaxP95Performance& value) { m_maxP95PerformanceHasBeenSet = true; m_maxP95Performance = value; }
-    inline void SetMaxP95Performance(MaxP95Performance&& value) { m_maxP95PerformanceHasBeenSet = true; m_maxP95Performance = std::move(value); }
-    inline NetAppONTAPSVM& WithMaxP95Performance(const MaxP95Performance& value) { SetMaxP95Performance(value); return *this;}
-    inline NetAppONTAPSVM& WithMaxP95Performance(MaxP95Performance&& value) { SetMaxP95Performance(std::move(value)); return *this;}
+    template<typename MaxP95PerformanceT = MaxP95Performance>
+    void SetMaxP95Performance(MaxP95PerformanceT&& value) { m_maxP95PerformanceHasBeenSet = true; m_maxP95Performance = std::forward<MaxP95PerformanceT>(value); }
+    template<typename MaxP95PerformanceT = MaxP95Performance>
+    NetAppONTAPSVM& WithMaxP95Performance(MaxP95PerformanceT&& value) { SetMaxP95Performance(std::forward<MaxP95PerformanceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -160,21 +153,21 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-understand-recommendations.html">Recommendations
      * provided by DataSync Discovery</a>.</p>
      */
-    inline const Aws::Vector<Recommendation>& GetRecommendations() const{ return m_recommendations; }
+    inline const Aws::Vector<Recommendation>& GetRecommendations() const { return m_recommendations; }
     inline bool RecommendationsHasBeenSet() const { return m_recommendationsHasBeenSet; }
-    inline void SetRecommendations(const Aws::Vector<Recommendation>& value) { m_recommendationsHasBeenSet = true; m_recommendations = value; }
-    inline void SetRecommendations(Aws::Vector<Recommendation>&& value) { m_recommendationsHasBeenSet = true; m_recommendations = std::move(value); }
-    inline NetAppONTAPSVM& WithRecommendations(const Aws::Vector<Recommendation>& value) { SetRecommendations(value); return *this;}
-    inline NetAppONTAPSVM& WithRecommendations(Aws::Vector<Recommendation>&& value) { SetRecommendations(std::move(value)); return *this;}
-    inline NetAppONTAPSVM& AddRecommendations(const Recommendation& value) { m_recommendationsHasBeenSet = true; m_recommendations.push_back(value); return *this; }
-    inline NetAppONTAPSVM& AddRecommendations(Recommendation&& value) { m_recommendationsHasBeenSet = true; m_recommendations.push_back(std::move(value)); return *this; }
+    template<typename RecommendationsT = Aws::Vector<Recommendation>>
+    void SetRecommendations(RecommendationsT&& value) { m_recommendationsHasBeenSet = true; m_recommendations = std::forward<RecommendationsT>(value); }
+    template<typename RecommendationsT = Aws::Vector<Recommendation>>
+    NetAppONTAPSVM& WithRecommendations(RecommendationsT&& value) { SetRecommendations(std::forward<RecommendationsT>(value)); return *this;}
+    template<typename RecommendationsT = Recommendation>
+    NetAppONTAPSVM& AddRecommendations(RecommendationsT&& value) { m_recommendationsHasBeenSet = true; m_recommendations.emplace_back(std::forward<RecommendationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The number of NFS volumes in the SVM.</p>
      */
-    inline long long GetNfsExportedVolumes() const{ return m_nfsExportedVolumes; }
+    inline long long GetNfsExportedVolumes() const { return m_nfsExportedVolumes; }
     inline bool NfsExportedVolumesHasBeenSet() const { return m_nfsExportedVolumesHasBeenSet; }
     inline void SetNfsExportedVolumes(long long value) { m_nfsExportedVolumesHasBeenSet = true; m_nfsExportedVolumes = value; }
     inline NetAppONTAPSVM& WithNfsExportedVolumes(long long value) { SetNfsExportedVolumes(value); return *this;}
@@ -187,19 +180,17 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-statuses.html#recommendation-statuses-table">Recommendation
      * statuses</a>.</p>
      */
-    inline const RecommendationStatus& GetRecommendationStatus() const{ return m_recommendationStatus; }
+    inline RecommendationStatus GetRecommendationStatus() const { return m_recommendationStatus; }
     inline bool RecommendationStatusHasBeenSet() const { return m_recommendationStatusHasBeenSet; }
-    inline void SetRecommendationStatus(const RecommendationStatus& value) { m_recommendationStatusHasBeenSet = true; m_recommendationStatus = value; }
-    inline void SetRecommendationStatus(RecommendationStatus&& value) { m_recommendationStatusHasBeenSet = true; m_recommendationStatus = std::move(value); }
-    inline NetAppONTAPSVM& WithRecommendationStatus(const RecommendationStatus& value) { SetRecommendationStatus(value); return *this;}
-    inline NetAppONTAPSVM& WithRecommendationStatus(RecommendationStatus&& value) { SetRecommendationStatus(std::move(value)); return *this;}
+    inline void SetRecommendationStatus(RecommendationStatus value) { m_recommendationStatusHasBeenSet = true; m_recommendationStatus = value; }
+    inline NetAppONTAPSVM& WithRecommendationStatus(RecommendationStatus value) { SetRecommendationStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The amount of storage in the SVM that's being used for snapshots.</p>
      */
-    inline long long GetTotalSnapshotCapacityUsed() const{ return m_totalSnapshotCapacityUsed; }
+    inline long long GetTotalSnapshotCapacityUsed() const { return m_totalSnapshotCapacityUsed; }
     inline bool TotalSnapshotCapacityUsedHasBeenSet() const { return m_totalSnapshotCapacityUsedHasBeenSet; }
     inline void SetTotalSnapshotCapacityUsed(long long value) { m_totalSnapshotCapacityUsedHasBeenSet = true; m_totalSnapshotCapacityUsed = value; }
     inline NetAppONTAPSVM& WithTotalSnapshotCapacityUsed(long long value) { SetTotalSnapshotCapacityUsed(value); return *this;}
@@ -209,7 +200,7 @@ namespace Model
     /**
      * <p>The number of LUNs (logical unit numbers) in the SVM.</p>
      */
-    inline long long GetLunCount() const{ return m_lunCount; }
+    inline long long GetLunCount() const { return m_lunCount; }
     inline bool LunCountHasBeenSet() const { return m_lunCountHasBeenSet; }
     inline void SetLunCount(long long value) { m_lunCountHasBeenSet = true; m_lunCount = value; }
     inline NetAppONTAPSVM& WithLunCount(long long value) { SetLunCount(value); return *this;}
@@ -225,19 +216,19 @@ namespace Model
     Aws::String m_svmName;
     bool m_svmNameHasBeenSet = false;
 
-    long long m_cifsShareCount;
+    long long m_cifsShareCount{0};
     bool m_cifsShareCountHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_enabledProtocols;
     bool m_enabledProtocolsHasBeenSet = false;
 
-    long long m_totalCapacityUsed;
+    long long m_totalCapacityUsed{0};
     bool m_totalCapacityUsedHasBeenSet = false;
 
-    long long m_totalCapacityProvisioned;
+    long long m_totalCapacityProvisioned{0};
     bool m_totalCapacityProvisionedHasBeenSet = false;
 
-    long long m_totalLogicalCapacityUsed;
+    long long m_totalLogicalCapacityUsed{0};
     bool m_totalLogicalCapacityUsedHasBeenSet = false;
 
     MaxP95Performance m_maxP95Performance;
@@ -246,16 +237,16 @@ namespace Model
     Aws::Vector<Recommendation> m_recommendations;
     bool m_recommendationsHasBeenSet = false;
 
-    long long m_nfsExportedVolumes;
+    long long m_nfsExportedVolumes{0};
     bool m_nfsExportedVolumesHasBeenSet = false;
 
-    RecommendationStatus m_recommendationStatus;
+    RecommendationStatus m_recommendationStatus{RecommendationStatus::NOT_SET};
     bool m_recommendationStatusHasBeenSet = false;
 
-    long long m_totalSnapshotCapacityUsed;
+    long long m_totalSnapshotCapacityUsed{0};
     bool m_totalSnapshotCapacityUsedHasBeenSet = false;
 
-    long long m_lunCount;
+    long long m_lunCount{0};
     bool m_lunCountHasBeenSet = false;
   };
 

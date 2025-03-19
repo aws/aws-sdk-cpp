@@ -31,7 +31,7 @@ namespace Model
   class GuardrailWordConfig
   {
   public:
-    AWS_QCONNECT_API GuardrailWordConfig();
+    AWS_QCONNECT_API GuardrailWordConfig() = default;
     AWS_QCONNECT_API GuardrailWordConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API GuardrailWordConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>Text of the word configured for the AI Guardrail to block.</p>
      */
-    inline const Aws::String& GetText() const{ return m_text; }
+    inline const Aws::String& GetText() const { return m_text; }
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-    inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-    inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-    inline GuardrailWordConfig& WithText(const Aws::String& value) { SetText(value); return *this;}
-    inline GuardrailWordConfig& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-    inline GuardrailWordConfig& WithText(const char* value) { SetText(value); return *this;}
+    template<typename TextT = Aws::String>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = Aws::String>
+    GuardrailWordConfig& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
   private:
 

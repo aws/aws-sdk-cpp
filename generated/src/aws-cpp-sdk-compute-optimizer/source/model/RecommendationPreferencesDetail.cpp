@@ -18,26 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-RecommendationPreferencesDetail::RecommendationPreferencesDetail() : 
-    m_scopeHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_enhancedInfrastructureMetrics(EnhancedInfrastructureMetrics::NOT_SET),
-    m_enhancedInfrastructureMetricsHasBeenSet(false),
-    m_inferredWorkloadTypes(InferredWorkloadTypesPreference::NOT_SET),
-    m_inferredWorkloadTypesHasBeenSet(false),
-    m_externalMetricsPreferenceHasBeenSet(false),
-    m_lookBackPeriod(LookBackPeriodPreference::NOT_SET),
-    m_lookBackPeriodHasBeenSet(false),
-    m_utilizationPreferencesHasBeenSet(false),
-    m_preferredResourcesHasBeenSet(false),
-    m_savingsEstimationMode(SavingsEstimationMode::NOT_SET),
-    m_savingsEstimationModeHasBeenSet(false)
-{
-}
-
 RecommendationPreferencesDetail::RecommendationPreferencesDetail(JsonView jsonValue)
-  : RecommendationPreferencesDetail()
 {
   *this = jsonValue;
 }
@@ -47,45 +28,33 @@ RecommendationPreferencesDetail& RecommendationPreferencesDetail::operator =(Jso
   if(jsonValue.ValueExists("scope"))
   {
     m_scope = jsonValue.GetObject("scope");
-
     m_scopeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("resourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enhancedInfrastructureMetrics"))
   {
     m_enhancedInfrastructureMetrics = EnhancedInfrastructureMetricsMapper::GetEnhancedInfrastructureMetricsForName(jsonValue.GetString("enhancedInfrastructureMetrics"));
-
     m_enhancedInfrastructureMetricsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inferredWorkloadTypes"))
   {
     m_inferredWorkloadTypes = InferredWorkloadTypesPreferenceMapper::GetInferredWorkloadTypesPreferenceForName(jsonValue.GetString("inferredWorkloadTypes"));
-
     m_inferredWorkloadTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("externalMetricsPreference"))
   {
     m_externalMetricsPreference = jsonValue.GetObject("externalMetricsPreference");
-
     m_externalMetricsPreferenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lookBackPeriod"))
   {
     m_lookBackPeriod = LookBackPeriodPreferenceMapper::GetLookBackPeriodPreferenceForName(jsonValue.GetString("lookBackPeriod"));
-
     m_lookBackPeriodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("utilizationPreferences"))
   {
     Aws::Utils::Array<JsonView> utilizationPreferencesJsonList = jsonValue.GetArray("utilizationPreferences");
@@ -95,7 +64,6 @@ RecommendationPreferencesDetail& RecommendationPreferencesDetail::operator =(Jso
     }
     m_utilizationPreferencesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("preferredResources"))
   {
     Aws::Utils::Array<JsonView> preferredResourcesJsonList = jsonValue.GetArray("preferredResources");
@@ -105,14 +73,11 @@ RecommendationPreferencesDetail& RecommendationPreferencesDetail::operator =(Jso
     }
     m_preferredResourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("savingsEstimationMode"))
   {
     m_savingsEstimationMode = SavingsEstimationModeMapper::GetSavingsEstimationModeForName(jsonValue.GetString("savingsEstimationMode"));
-
     m_savingsEstimationModeHasBeenSet = true;
   }
-
   return *this;
 }
 

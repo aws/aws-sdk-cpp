@@ -18,15 +18,7 @@ namespace Batch
 namespace Model
 {
 
-EksPersistentVolumeClaim::EksPersistentVolumeClaim() : 
-    m_claimNameHasBeenSet(false),
-    m_readOnly(false),
-    m_readOnlyHasBeenSet(false)
-{
-}
-
 EksPersistentVolumeClaim::EksPersistentVolumeClaim(JsonView jsonValue)
-  : EksPersistentVolumeClaim()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ EksPersistentVolumeClaim& EksPersistentVolumeClaim::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("claimName"))
   {
     m_claimName = jsonValue.GetString("claimName");
-
     m_claimNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("readOnly"))
   {
     m_readOnly = jsonValue.GetBool("readOnly");
-
     m_readOnlyHasBeenSet = true;
   }
-
   return *this;
 }
 

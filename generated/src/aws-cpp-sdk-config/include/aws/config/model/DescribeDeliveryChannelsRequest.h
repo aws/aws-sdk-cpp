@@ -26,7 +26,7 @@ namespace Model
   class DescribeDeliveryChannelsRequest : public ConfigServiceRequest
   {
   public:
-    AWS_CONFIGSERVICE_API DescribeDeliveryChannelsRequest();
+    AWS_CONFIGSERVICE_API DescribeDeliveryChannelsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,15 +43,14 @@ namespace Model
     /**
      * <p>A list of delivery channel names.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDeliveryChannelNames() const{ return m_deliveryChannelNames; }
+    inline const Aws::Vector<Aws::String>& GetDeliveryChannelNames() const { return m_deliveryChannelNames; }
     inline bool DeliveryChannelNamesHasBeenSet() const { return m_deliveryChannelNamesHasBeenSet; }
-    inline void SetDeliveryChannelNames(const Aws::Vector<Aws::String>& value) { m_deliveryChannelNamesHasBeenSet = true; m_deliveryChannelNames = value; }
-    inline void SetDeliveryChannelNames(Aws::Vector<Aws::String>&& value) { m_deliveryChannelNamesHasBeenSet = true; m_deliveryChannelNames = std::move(value); }
-    inline DescribeDeliveryChannelsRequest& WithDeliveryChannelNames(const Aws::Vector<Aws::String>& value) { SetDeliveryChannelNames(value); return *this;}
-    inline DescribeDeliveryChannelsRequest& WithDeliveryChannelNames(Aws::Vector<Aws::String>&& value) { SetDeliveryChannelNames(std::move(value)); return *this;}
-    inline DescribeDeliveryChannelsRequest& AddDeliveryChannelNames(const Aws::String& value) { m_deliveryChannelNamesHasBeenSet = true; m_deliveryChannelNames.push_back(value); return *this; }
-    inline DescribeDeliveryChannelsRequest& AddDeliveryChannelNames(Aws::String&& value) { m_deliveryChannelNamesHasBeenSet = true; m_deliveryChannelNames.push_back(std::move(value)); return *this; }
-    inline DescribeDeliveryChannelsRequest& AddDeliveryChannelNames(const char* value) { m_deliveryChannelNamesHasBeenSet = true; m_deliveryChannelNames.push_back(value); return *this; }
+    template<typename DeliveryChannelNamesT = Aws::Vector<Aws::String>>
+    void SetDeliveryChannelNames(DeliveryChannelNamesT&& value) { m_deliveryChannelNamesHasBeenSet = true; m_deliveryChannelNames = std::forward<DeliveryChannelNamesT>(value); }
+    template<typename DeliveryChannelNamesT = Aws::Vector<Aws::String>>
+    DescribeDeliveryChannelsRequest& WithDeliveryChannelNames(DeliveryChannelNamesT&& value) { SetDeliveryChannelNames(std::forward<DeliveryChannelNamesT>(value)); return *this;}
+    template<typename DeliveryChannelNamesT = Aws::String>
+    DescribeDeliveryChannelsRequest& AddDeliveryChannelNames(DeliveryChannelNamesT&& value) { m_deliveryChannelNamesHasBeenSet = true; m_deliveryChannelNames.emplace_back(std::forward<DeliveryChannelNamesT>(value)); return *this; }
     ///@}
   private:
 

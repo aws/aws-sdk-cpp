@@ -12,11 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeletePatchBaselineRequest::DeletePatchBaselineRequest() : 
-    m_baselineIdHasBeenSet(false)
-{
-}
-
 Aws::String DeletePatchBaselineRequest::SerializePayload() const
 {
   JsonValue payload;

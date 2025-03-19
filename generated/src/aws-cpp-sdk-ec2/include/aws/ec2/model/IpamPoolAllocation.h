@@ -33,7 +33,7 @@ namespace Model
   class IpamPoolAllocation
   {
   public:
-    AWS_EC2_API IpamPoolAllocation();
+    AWS_EC2_API IpamPoolAllocation() = default;
     AWS_EC2_API IpamPoolAllocation(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API IpamPoolAllocation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,96 +48,82 @@ namespace Model
      * An IPv4 CIDR example is <code>10.24.34.0/23</code>. An IPv6 CIDR example is
      * <code>2001:DB8::/32</code>.</p>
      */
-    inline const Aws::String& GetCidr() const{ return m_cidr; }
+    inline const Aws::String& GetCidr() const { return m_cidr; }
     inline bool CidrHasBeenSet() const { return m_cidrHasBeenSet; }
-    inline void SetCidr(const Aws::String& value) { m_cidrHasBeenSet = true; m_cidr = value; }
-    inline void SetCidr(Aws::String&& value) { m_cidrHasBeenSet = true; m_cidr = std::move(value); }
-    inline void SetCidr(const char* value) { m_cidrHasBeenSet = true; m_cidr.assign(value); }
-    inline IpamPoolAllocation& WithCidr(const Aws::String& value) { SetCidr(value); return *this;}
-    inline IpamPoolAllocation& WithCidr(Aws::String&& value) { SetCidr(std::move(value)); return *this;}
-    inline IpamPoolAllocation& WithCidr(const char* value) { SetCidr(value); return *this;}
+    template<typename CidrT = Aws::String>
+    void SetCidr(CidrT&& value) { m_cidrHasBeenSet = true; m_cidr = std::forward<CidrT>(value); }
+    template<typename CidrT = Aws::String>
+    IpamPoolAllocation& WithCidr(CidrT&& value) { SetCidr(std::forward<CidrT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of an allocation.</p>
      */
-    inline const Aws::String& GetIpamPoolAllocationId() const{ return m_ipamPoolAllocationId; }
+    inline const Aws::String& GetIpamPoolAllocationId() const { return m_ipamPoolAllocationId; }
     inline bool IpamPoolAllocationIdHasBeenSet() const { return m_ipamPoolAllocationIdHasBeenSet; }
-    inline void SetIpamPoolAllocationId(const Aws::String& value) { m_ipamPoolAllocationIdHasBeenSet = true; m_ipamPoolAllocationId = value; }
-    inline void SetIpamPoolAllocationId(Aws::String&& value) { m_ipamPoolAllocationIdHasBeenSet = true; m_ipamPoolAllocationId = std::move(value); }
-    inline void SetIpamPoolAllocationId(const char* value) { m_ipamPoolAllocationIdHasBeenSet = true; m_ipamPoolAllocationId.assign(value); }
-    inline IpamPoolAllocation& WithIpamPoolAllocationId(const Aws::String& value) { SetIpamPoolAllocationId(value); return *this;}
-    inline IpamPoolAllocation& WithIpamPoolAllocationId(Aws::String&& value) { SetIpamPoolAllocationId(std::move(value)); return *this;}
-    inline IpamPoolAllocation& WithIpamPoolAllocationId(const char* value) { SetIpamPoolAllocationId(value); return *this;}
+    template<typename IpamPoolAllocationIdT = Aws::String>
+    void SetIpamPoolAllocationId(IpamPoolAllocationIdT&& value) { m_ipamPoolAllocationIdHasBeenSet = true; m_ipamPoolAllocationId = std::forward<IpamPoolAllocationIdT>(value); }
+    template<typename IpamPoolAllocationIdT = Aws::String>
+    IpamPoolAllocation& WithIpamPoolAllocationId(IpamPoolAllocationIdT&& value) { SetIpamPoolAllocationId(std::forward<IpamPoolAllocationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the pool allocation.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline IpamPoolAllocation& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline IpamPoolAllocation& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline IpamPoolAllocation& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    IpamPoolAllocation& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the resource.</p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline IpamPoolAllocation& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline IpamPoolAllocation& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline IpamPoolAllocation& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    IpamPoolAllocation& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the resource.</p>
      */
-    inline const IpamPoolAllocationResourceType& GetResourceType() const{ return m_resourceType; }
+    inline IpamPoolAllocationResourceType GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const IpamPoolAllocationResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(IpamPoolAllocationResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline IpamPoolAllocation& WithResourceType(const IpamPoolAllocationResourceType& value) { SetResourceType(value); return *this;}
-    inline IpamPoolAllocation& WithResourceType(IpamPoolAllocationResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    inline void SetResourceType(IpamPoolAllocationResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline IpamPoolAllocation& WithResourceType(IpamPoolAllocationResourceType value) { SetResourceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services Region of the resource.</p>
      */
-    inline const Aws::String& GetResourceRegion() const{ return m_resourceRegion; }
+    inline const Aws::String& GetResourceRegion() const { return m_resourceRegion; }
     inline bool ResourceRegionHasBeenSet() const { return m_resourceRegionHasBeenSet; }
-    inline void SetResourceRegion(const Aws::String& value) { m_resourceRegionHasBeenSet = true; m_resourceRegion = value; }
-    inline void SetResourceRegion(Aws::String&& value) { m_resourceRegionHasBeenSet = true; m_resourceRegion = std::move(value); }
-    inline void SetResourceRegion(const char* value) { m_resourceRegionHasBeenSet = true; m_resourceRegion.assign(value); }
-    inline IpamPoolAllocation& WithResourceRegion(const Aws::String& value) { SetResourceRegion(value); return *this;}
-    inline IpamPoolAllocation& WithResourceRegion(Aws::String&& value) { SetResourceRegion(std::move(value)); return *this;}
-    inline IpamPoolAllocation& WithResourceRegion(const char* value) { SetResourceRegion(value); return *this;}
+    template<typename ResourceRegionT = Aws::String>
+    void SetResourceRegion(ResourceRegionT&& value) { m_resourceRegionHasBeenSet = true; m_resourceRegion = std::forward<ResourceRegionT>(value); }
+    template<typename ResourceRegionT = Aws::String>
+    IpamPoolAllocation& WithResourceRegion(ResourceRegionT&& value) { SetResourceRegion(std::forward<ResourceRegionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The owner of the resource.</p>
      */
-    inline const Aws::String& GetResourceOwner() const{ return m_resourceOwner; }
+    inline const Aws::String& GetResourceOwner() const { return m_resourceOwner; }
     inline bool ResourceOwnerHasBeenSet() const { return m_resourceOwnerHasBeenSet; }
-    inline void SetResourceOwner(const Aws::String& value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner = value; }
-    inline void SetResourceOwner(Aws::String&& value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner = std::move(value); }
-    inline void SetResourceOwner(const char* value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner.assign(value); }
-    inline IpamPoolAllocation& WithResourceOwner(const Aws::String& value) { SetResourceOwner(value); return *this;}
-    inline IpamPoolAllocation& WithResourceOwner(Aws::String&& value) { SetResourceOwner(std::move(value)); return *this;}
-    inline IpamPoolAllocation& WithResourceOwner(const char* value) { SetResourceOwner(value); return *this;}
+    template<typename ResourceOwnerT = Aws::String>
+    void SetResourceOwner(ResourceOwnerT&& value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner = std::forward<ResourceOwnerT>(value); }
+    template<typename ResourceOwnerT = Aws::String>
+    IpamPoolAllocation& WithResourceOwner(ResourceOwnerT&& value) { SetResourceOwner(std::forward<ResourceOwnerT>(value)); return *this;}
     ///@}
   private:
 
@@ -153,7 +139,7 @@ namespace Model
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet = false;
 
-    IpamPoolAllocationResourceType m_resourceType;
+    IpamPoolAllocationResourceType m_resourceType{IpamPoolAllocationResourceType::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_resourceRegion;

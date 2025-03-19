@@ -18,15 +18,7 @@ namespace Detective
 namespace Model
 {
 
-DatasourcePackageUsageInfo::DatasourcePackageUsageInfo() : 
-    m_volumeUsageInBytes(0),
-    m_volumeUsageInBytesHasBeenSet(false),
-    m_volumeUsageUpdateTimeHasBeenSet(false)
-{
-}
-
 DatasourcePackageUsageInfo::DatasourcePackageUsageInfo(JsonView jsonValue)
-  : DatasourcePackageUsageInfo()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DatasourcePackageUsageInfo& DatasourcePackageUsageInfo::operator =(JsonView json
   if(jsonValue.ValueExists("VolumeUsageInBytes"))
   {
     m_volumeUsageInBytes = jsonValue.GetInt64("VolumeUsageInBytes");
-
     m_volumeUsageInBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeUsageUpdateTime"))
   {
     m_volumeUsageUpdateTime = jsonValue.GetString("VolumeUsageUpdateTime");
-
     m_volumeUsageUpdateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

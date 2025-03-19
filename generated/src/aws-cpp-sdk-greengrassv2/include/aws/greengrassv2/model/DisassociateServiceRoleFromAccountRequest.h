@@ -19,7 +19,7 @@ namespace Model
   class DisassociateServiceRoleFromAccountRequest : public GreengrassV2Request
   {
   public:
-    AWS_GREENGRASSV2_API DisassociateServiceRoleFromAccountRequest();
+    AWS_GREENGRASSV2_API DisassociateServiceRoleFromAccountRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

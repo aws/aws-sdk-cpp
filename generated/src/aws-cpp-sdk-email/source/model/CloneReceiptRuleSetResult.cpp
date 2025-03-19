@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CloneReceiptRuleSetResult::CloneReceiptRuleSetResult()
-{
-}
-
 CloneReceiptRuleSetResult::CloneReceiptRuleSetResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -43,6 +39,7 @@ CloneReceiptRuleSetResult& CloneReceiptRuleSetResult::operator =(const Aws::Amaz
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::SES::Model::CloneReceiptRuleSetResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

@@ -29,7 +29,7 @@ namespace Model
   class ListRuleGroupsResult
   {
   public:
-    AWS_NETWORKFIREWALL_API ListRuleGroupsResult();
+    AWS_NETWORKFIREWALL_API ListRuleGroupsResult() = default;
     AWS_NETWORKFIREWALL_API ListRuleGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NETWORKFIREWALL_API ListRuleGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,13 +42,11 @@ namespace Model
      * response. To retrieve the next batch of objects, use the token returned from the
      * prior request in your next request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListRuleGroupsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListRuleGroupsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListRuleGroupsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListRuleGroupsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,32 +55,33 @@ namespace Model
      * setting for max results and the number of rule groups, this might not be the
      * full list. </p>
      */
-    inline const Aws::Vector<RuleGroupMetadata>& GetRuleGroups() const{ return m_ruleGroups; }
-    inline void SetRuleGroups(const Aws::Vector<RuleGroupMetadata>& value) { m_ruleGroups = value; }
-    inline void SetRuleGroups(Aws::Vector<RuleGroupMetadata>&& value) { m_ruleGroups = std::move(value); }
-    inline ListRuleGroupsResult& WithRuleGroups(const Aws::Vector<RuleGroupMetadata>& value) { SetRuleGroups(value); return *this;}
-    inline ListRuleGroupsResult& WithRuleGroups(Aws::Vector<RuleGroupMetadata>&& value) { SetRuleGroups(std::move(value)); return *this;}
-    inline ListRuleGroupsResult& AddRuleGroups(const RuleGroupMetadata& value) { m_ruleGroups.push_back(value); return *this; }
-    inline ListRuleGroupsResult& AddRuleGroups(RuleGroupMetadata&& value) { m_ruleGroups.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RuleGroupMetadata>& GetRuleGroups() const { return m_ruleGroups; }
+    template<typename RuleGroupsT = Aws::Vector<RuleGroupMetadata>>
+    void SetRuleGroups(RuleGroupsT&& value) { m_ruleGroupsHasBeenSet = true; m_ruleGroups = std::forward<RuleGroupsT>(value); }
+    template<typename RuleGroupsT = Aws::Vector<RuleGroupMetadata>>
+    ListRuleGroupsResult& WithRuleGroups(RuleGroupsT&& value) { SetRuleGroups(std::forward<RuleGroupsT>(value)); return *this;}
+    template<typename RuleGroupsT = RuleGroupMetadata>
+    ListRuleGroupsResult& AddRuleGroups(RuleGroupsT&& value) { m_ruleGroupsHasBeenSet = true; m_ruleGroups.emplace_back(std::forward<RuleGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListRuleGroupsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListRuleGroupsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListRuleGroupsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListRuleGroupsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<RuleGroupMetadata> m_ruleGroups;
+    bool m_ruleGroupsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

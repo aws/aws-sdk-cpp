@@ -18,16 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-AbpV1_0_x::AbpV1_0_x() : 
-    m_devAddrHasBeenSet(false),
-    m_sessionKeysHasBeenSet(false),
-    m_fCntStart(0),
-    m_fCntStartHasBeenSet(false)
-{
-}
-
 AbpV1_0_x::AbpV1_0_x(JsonView jsonValue)
-  : AbpV1_0_x()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ AbpV1_0_x& AbpV1_0_x::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DevAddr"))
   {
     m_devAddr = jsonValue.GetString("DevAddr");
-
     m_devAddrHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SessionKeys"))
   {
     m_sessionKeys = jsonValue.GetObject("SessionKeys");
-
     m_sessionKeysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FCntStart"))
   {
     m_fCntStart = jsonValue.GetInteger("FCntStart");
-
     m_fCntStartHasBeenSet = true;
   }
-
   return *this;
 }
 

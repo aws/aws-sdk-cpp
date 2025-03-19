@@ -12,12 +12,6 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSettingsRequest::UpdateSettingsRequest() : 
-    m_directoryIdHasBeenSet(false),
-    m_settingsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSettingsRequest::SerializePayload() const
 {
   JsonValue payload;

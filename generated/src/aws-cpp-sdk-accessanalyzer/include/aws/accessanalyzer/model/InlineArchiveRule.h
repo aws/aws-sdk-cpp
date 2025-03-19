@@ -34,7 +34,7 @@ namespace Model
   class InlineArchiveRule
   {
   public:
-    AWS_ACCESSANALYZER_API InlineArchiveRule();
+    AWS_ACCESSANALYZER_API InlineArchiveRule() = default;
     AWS_ACCESSANALYZER_API InlineArchiveRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API InlineArchiveRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,32 +44,28 @@ namespace Model
     /**
      * <p>The name of the rule.</p>
      */
-    inline const Aws::String& GetRuleName() const{ return m_ruleName; }
+    inline const Aws::String& GetRuleName() const { return m_ruleName; }
     inline bool RuleNameHasBeenSet() const { return m_ruleNameHasBeenSet; }
-    inline void SetRuleName(const Aws::String& value) { m_ruleNameHasBeenSet = true; m_ruleName = value; }
-    inline void SetRuleName(Aws::String&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::move(value); }
-    inline void SetRuleName(const char* value) { m_ruleNameHasBeenSet = true; m_ruleName.assign(value); }
-    inline InlineArchiveRule& WithRuleName(const Aws::String& value) { SetRuleName(value); return *this;}
-    inline InlineArchiveRule& WithRuleName(Aws::String&& value) { SetRuleName(std::move(value)); return *this;}
-    inline InlineArchiveRule& WithRuleName(const char* value) { SetRuleName(value); return *this;}
+    template<typename RuleNameT = Aws::String>
+    void SetRuleName(RuleNameT&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::forward<RuleNameT>(value); }
+    template<typename RuleNameT = Aws::String>
+    InlineArchiveRule& WithRuleName(RuleNameT&& value) { SetRuleName(std::forward<RuleNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The condition and values for a criterion.</p>
      */
-    inline const Aws::Map<Aws::String, Criterion>& GetFilter() const{ return m_filter; }
+    inline const Aws::Map<Aws::String, Criterion>& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const Aws::Map<Aws::String, Criterion>& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(Aws::Map<Aws::String, Criterion>&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline InlineArchiveRule& WithFilter(const Aws::Map<Aws::String, Criterion>& value) { SetFilter(value); return *this;}
-    inline InlineArchiveRule& WithFilter(Aws::Map<Aws::String, Criterion>&& value) { SetFilter(std::move(value)); return *this;}
-    inline InlineArchiveRule& AddFilter(const Aws::String& key, const Criterion& value) { m_filterHasBeenSet = true; m_filter.emplace(key, value); return *this; }
-    inline InlineArchiveRule& AddFilter(Aws::String&& key, const Criterion& value) { m_filterHasBeenSet = true; m_filter.emplace(std::move(key), value); return *this; }
-    inline InlineArchiveRule& AddFilter(const Aws::String& key, Criterion&& value) { m_filterHasBeenSet = true; m_filter.emplace(key, std::move(value)); return *this; }
-    inline InlineArchiveRule& AddFilter(Aws::String&& key, Criterion&& value) { m_filterHasBeenSet = true; m_filter.emplace(std::move(key), std::move(value)); return *this; }
-    inline InlineArchiveRule& AddFilter(const char* key, Criterion&& value) { m_filterHasBeenSet = true; m_filter.emplace(key, std::move(value)); return *this; }
-    inline InlineArchiveRule& AddFilter(const char* key, const Criterion& value) { m_filterHasBeenSet = true; m_filter.emplace(key, value); return *this; }
+    template<typename FilterT = Aws::Map<Aws::String, Criterion>>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = Aws::Map<Aws::String, Criterion>>
+    InlineArchiveRule& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
+    template<typename FilterKeyT = Aws::String, typename FilterValueT = Criterion>
+    InlineArchiveRule& AddFilter(FilterKeyT&& key, FilterValueT&& value) {
+      m_filterHasBeenSet = true; m_filter.emplace(std::forward<FilterKeyT>(key), std::forward<FilterValueT>(value)); return *this;
+    }
     ///@}
   private:
 

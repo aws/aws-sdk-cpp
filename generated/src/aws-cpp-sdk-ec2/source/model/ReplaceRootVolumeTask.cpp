@@ -20,23 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ReplaceRootVolumeTask::ReplaceRootVolumeTask() : 
-    m_replaceRootVolumeTaskIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_taskState(ReplaceRootVolumeTaskState::NOT_SET),
-    m_taskStateHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_completeTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false),
-    m_deleteReplacedRootVolume(false),
-    m_deleteReplacedRootVolumeHasBeenSet(false)
-{
-}
-
 ReplaceRootVolumeTask::ReplaceRootVolumeTask(const XmlNode& xmlNode)
-  : ReplaceRootVolumeTask()
 {
   *this = xmlNode;
 }
@@ -62,7 +46,7 @@ ReplaceRootVolumeTask& ReplaceRootVolumeTask::operator =(const XmlNode& xmlNode)
     XmlNode taskStateNode = resultNode.FirstChild("taskState");
     if(!taskStateNode.IsNull())
     {
-      m_taskState = ReplaceRootVolumeTaskStateMapper::GetReplaceRootVolumeTaskStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(taskStateNode.GetText()).c_str()).c_str());
+      m_taskState = ReplaceRootVolumeTaskStateMapper::GetReplaceRootVolumeTaskStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(taskStateNode.GetText()).c_str()));
       m_taskStateHasBeenSet = true;
     }
     XmlNode startTimeNode = resultNode.FirstChild("startTime");
@@ -81,6 +65,7 @@ ReplaceRootVolumeTask& ReplaceRootVolumeTask::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

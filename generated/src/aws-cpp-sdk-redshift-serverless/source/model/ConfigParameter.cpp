@@ -18,14 +18,7 @@ namespace RedshiftServerless
 namespace Model
 {
 
-ConfigParameter::ConfigParameter() : 
-    m_parameterKeyHasBeenSet(false),
-    m_parameterValueHasBeenSet(false)
-{
-}
-
 ConfigParameter::ConfigParameter(JsonView jsonValue)
-  : ConfigParameter()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ConfigParameter& ConfigParameter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("parameterKey"))
   {
     m_parameterKey = jsonValue.GetString("parameterKey");
-
     m_parameterKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameterValue"))
   {
     m_parameterValue = jsonValue.GetString("parameterValue");
-
     m_parameterValueHasBeenSet = true;
   }
-
   return *this;
 }
 

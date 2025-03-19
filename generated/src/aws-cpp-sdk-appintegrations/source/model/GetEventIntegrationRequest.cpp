@@ -12,11 +12,6 @@ using namespace Aws::AppIntegrationsService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetEventIntegrationRequest::GetEventIntegrationRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String GetEventIntegrationRequest::SerializePayload() const
 {
   return {};

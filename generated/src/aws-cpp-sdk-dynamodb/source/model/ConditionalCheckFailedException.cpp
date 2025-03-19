@@ -18,14 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-ConditionalCheckFailedException::ConditionalCheckFailedException() : 
-    m_messageHasBeenSet(false),
-    m_itemHasBeenSet(false)
-{
-}
-
 ConditionalCheckFailedException::ConditionalCheckFailedException(JsonView jsonValue)
-  : ConditionalCheckFailedException()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ConditionalCheckFailedException& ConditionalCheckFailedException::operator =(Jso
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Item"))
   {
     Aws::Map<Aws::String, JsonView> itemJsonMap = jsonValue.GetObject("Item").GetAllObjects();
@@ -48,7 +39,6 @@ ConditionalCheckFailedException& ConditionalCheckFailedException::operator =(Jso
     }
     m_itemHasBeenSet = true;
   }
-
   return *this;
 }
 

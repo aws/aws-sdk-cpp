@@ -35,7 +35,7 @@ namespace Model
   class S3ObjectTag
   {
   public:
-    AWS_EC2_API S3ObjectTag();
+    AWS_EC2_API S3ObjectTag() = default;
     AWS_EC2_API S3ObjectTag(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API S3ObjectTag& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -49,14 +49,12 @@ namespace Model
      * be up to 128 Unicode characters in length. May not begin with
      * <code>aws</code>:.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline S3ObjectTag& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline S3ObjectTag& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline S3ObjectTag& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    S3ObjectTag& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * <p>The value of the tag.</p> <p>Constraints: Tag values are case-sensitive and
      * can be up to 256 Unicode characters in length.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline S3ObjectTag& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline S3ObjectTag& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline S3ObjectTag& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    S3ObjectTag& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 

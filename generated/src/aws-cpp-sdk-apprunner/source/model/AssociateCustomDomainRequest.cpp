@@ -12,14 +12,6 @@ using namespace Aws::AppRunner::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateCustomDomainRequest::AssociateCustomDomainRequest() : 
-    m_serviceArnHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_enableWWWSubdomain(false),
-    m_enableWWWSubdomainHasBeenSet(false)
-{
-}
-
 Aws::String AssociateCustomDomainRequest::SerializePayload() const
 {
   JsonValue payload;

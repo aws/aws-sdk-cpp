@@ -35,7 +35,7 @@ namespace Model
   class ListReceiptFiltersResult
   {
   public:
-    AWS_SES_API ListReceiptFiltersResult();
+    AWS_SES_API ListReceiptFiltersResult() = default;
     AWS_SES_API ListReceiptFiltersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_SES_API ListReceiptFiltersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -45,28 +45,30 @@ namespace Model
      * <p>A list of IP address filter data structures, which each consist of a name, an
      * IP address range, and whether to allow or block mail from it.</p>
      */
-    inline const Aws::Vector<ReceiptFilter>& GetFilters() const{ return m_filters; }
-    inline void SetFilters(const Aws::Vector<ReceiptFilter>& value) { m_filters = value; }
-    inline void SetFilters(Aws::Vector<ReceiptFilter>&& value) { m_filters = std::move(value); }
-    inline ListReceiptFiltersResult& WithFilters(const Aws::Vector<ReceiptFilter>& value) { SetFilters(value); return *this;}
-    inline ListReceiptFiltersResult& WithFilters(Aws::Vector<ReceiptFilter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline ListReceiptFiltersResult& AddFilters(const ReceiptFilter& value) { m_filters.push_back(value); return *this; }
-    inline ListReceiptFiltersResult& AddFilters(ReceiptFilter&& value) { m_filters.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ReceiptFilter>& GetFilters() const { return m_filters; }
+    template<typename FiltersT = Aws::Vector<ReceiptFilter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<ReceiptFilter>>
+    ListReceiptFiltersResult& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = ReceiptFilter>
+    ListReceiptFiltersResult& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ListReceiptFiltersResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ListReceiptFiltersResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ListReceiptFiltersResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ReceiptFilter> m_filters;
+    bool m_filtersHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

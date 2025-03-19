@@ -32,7 +32,7 @@ namespace Model
   class RecipeReference
   {
   public:
-    AWS_GLUEDATABREW_API RecipeReference();
+    AWS_GLUEDATABREW_API RecipeReference() = default;
     AWS_GLUEDATABREW_API RecipeReference(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUEDATABREW_API RecipeReference& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The name of the recipe.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline RecipeReference& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline RecipeReference& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline RecipeReference& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    RecipeReference& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier for the version for the recipe. </p>
      */
-    inline const Aws::String& GetRecipeVersion() const{ return m_recipeVersion; }
+    inline const Aws::String& GetRecipeVersion() const { return m_recipeVersion; }
     inline bool RecipeVersionHasBeenSet() const { return m_recipeVersionHasBeenSet; }
-    inline void SetRecipeVersion(const Aws::String& value) { m_recipeVersionHasBeenSet = true; m_recipeVersion = value; }
-    inline void SetRecipeVersion(Aws::String&& value) { m_recipeVersionHasBeenSet = true; m_recipeVersion = std::move(value); }
-    inline void SetRecipeVersion(const char* value) { m_recipeVersionHasBeenSet = true; m_recipeVersion.assign(value); }
-    inline RecipeReference& WithRecipeVersion(const Aws::String& value) { SetRecipeVersion(value); return *this;}
-    inline RecipeReference& WithRecipeVersion(Aws::String&& value) { SetRecipeVersion(std::move(value)); return *this;}
-    inline RecipeReference& WithRecipeVersion(const char* value) { SetRecipeVersion(value); return *this;}
+    template<typename RecipeVersionT = Aws::String>
+    void SetRecipeVersion(RecipeVersionT&& value) { m_recipeVersionHasBeenSet = true; m_recipeVersion = std::forward<RecipeVersionT>(value); }
+    template<typename RecipeVersionT = Aws::String>
+    RecipeReference& WithRecipeVersion(RecipeVersionT&& value) { SetRecipeVersion(std::forward<RecipeVersionT>(value)); return *this;}
     ///@}
   private:
 

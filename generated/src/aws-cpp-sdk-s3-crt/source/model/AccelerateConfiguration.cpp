@@ -20,14 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-AccelerateConfiguration::AccelerateConfiguration() : 
-    m_status(BucketAccelerateStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 AccelerateConfiguration::AccelerateConfiguration(const XmlNode& xmlNode)
-  : AccelerateConfiguration()
 {
   *this = xmlNode;
 }
@@ -41,7 +34,7 @@ AccelerateConfiguration& AccelerateConfiguration::operator =(const XmlNode& xmlN
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = BucketAccelerateStatusMapper::GetBucketAccelerateStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = BucketAccelerateStatusMapper::GetBucketAccelerateStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
   }

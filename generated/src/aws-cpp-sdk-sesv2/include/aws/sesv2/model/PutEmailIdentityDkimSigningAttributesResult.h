@@ -36,7 +36,7 @@ namespace Model
   class PutEmailIdentityDkimSigningAttributesResult
   {
   public:
-    AWS_SESV2_API PutEmailIdentityDkimSigningAttributesResult();
+    AWS_SESV2_API PutEmailIdentityDkimSigningAttributesResult() = default;
     AWS_SESV2_API PutEmailIdentityDkimSigningAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SESV2_API PutEmailIdentityDkimSigningAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -64,11 +64,9 @@ namespace Model
      * <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated
      * for the domain.</p> </li> </ul>
      */
-    inline const DkimStatus& GetDkimStatus() const{ return m_dkimStatus; }
-    inline void SetDkimStatus(const DkimStatus& value) { m_dkimStatus = value; }
-    inline void SetDkimStatus(DkimStatus&& value) { m_dkimStatus = std::move(value); }
-    inline PutEmailIdentityDkimSigningAttributesResult& WithDkimStatus(const DkimStatus& value) { SetDkimStatus(value); return *this;}
-    inline PutEmailIdentityDkimSigningAttributesResult& WithDkimStatus(DkimStatus&& value) { SetDkimStatus(std::move(value)); return *this;}
+    inline DkimStatus GetDkimStatus() const { return m_dkimStatus; }
+    inline void SetDkimStatus(DkimStatus value) { m_dkimStatusHasBeenSet = true; m_dkimStatus = value; }
+    inline PutEmailIdentityDkimSigningAttributesResult& WithDkimStatus(DkimStatus value) { SetDkimStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -85,33 +83,33 @@ namespace Model
      * authentication method you use, Amazon SES searches for the appropriate records
      * in the DNS configuration of the domain for up to 72 hours.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDkimTokens() const{ return m_dkimTokens; }
-    inline void SetDkimTokens(const Aws::Vector<Aws::String>& value) { m_dkimTokens = value; }
-    inline void SetDkimTokens(Aws::Vector<Aws::String>&& value) { m_dkimTokens = std::move(value); }
-    inline PutEmailIdentityDkimSigningAttributesResult& WithDkimTokens(const Aws::Vector<Aws::String>& value) { SetDkimTokens(value); return *this;}
-    inline PutEmailIdentityDkimSigningAttributesResult& WithDkimTokens(Aws::Vector<Aws::String>&& value) { SetDkimTokens(std::move(value)); return *this;}
-    inline PutEmailIdentityDkimSigningAttributesResult& AddDkimTokens(const Aws::String& value) { m_dkimTokens.push_back(value); return *this; }
-    inline PutEmailIdentityDkimSigningAttributesResult& AddDkimTokens(Aws::String&& value) { m_dkimTokens.push_back(std::move(value)); return *this; }
-    inline PutEmailIdentityDkimSigningAttributesResult& AddDkimTokens(const char* value) { m_dkimTokens.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetDkimTokens() const { return m_dkimTokens; }
+    template<typename DkimTokensT = Aws::Vector<Aws::String>>
+    void SetDkimTokens(DkimTokensT&& value) { m_dkimTokensHasBeenSet = true; m_dkimTokens = std::forward<DkimTokensT>(value); }
+    template<typename DkimTokensT = Aws::Vector<Aws::String>>
+    PutEmailIdentityDkimSigningAttributesResult& WithDkimTokens(DkimTokensT&& value) { SetDkimTokens(std::forward<DkimTokensT>(value)); return *this;}
+    template<typename DkimTokensT = Aws::String>
+    PutEmailIdentityDkimSigningAttributesResult& AddDkimTokens(DkimTokensT&& value) { m_dkimTokensHasBeenSet = true; m_dkimTokens.emplace_back(std::forward<DkimTokensT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutEmailIdentityDkimSigningAttributesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutEmailIdentityDkimSigningAttributesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutEmailIdentityDkimSigningAttributesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutEmailIdentityDkimSigningAttributesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    DkimStatus m_dkimStatus;
+    DkimStatus m_dkimStatus{DkimStatus::NOT_SET};
+    bool m_dkimStatusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dkimTokens;
+    bool m_dkimTokensHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,13 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteTollSystem::RouteTollSystem() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 RouteTollSystem::RouteTollSystem(JsonView jsonValue)
-  : RouteTollSystem()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RouteTollSystem& RouteTollSystem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

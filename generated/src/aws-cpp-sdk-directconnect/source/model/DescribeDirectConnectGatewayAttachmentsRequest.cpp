@@ -12,15 +12,6 @@ using namespace Aws::DirectConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeDirectConnectGatewayAttachmentsRequest::DescribeDirectConnectGatewayAttachmentsRequest() : 
-    m_directConnectGatewayIdHasBeenSet(false),
-    m_virtualInterfaceIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDirectConnectGatewayAttachmentsRequest::SerializePayload() const
 {
   JsonValue payload;

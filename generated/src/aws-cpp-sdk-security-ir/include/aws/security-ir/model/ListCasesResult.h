@@ -29,7 +29,7 @@ namespace Model
   class ListCasesResult
   {
   public:
-    AWS_SECURITYIR_API ListCasesResult();
+    AWS_SECURITYIR_API ListCasesResult() = default;
     AWS_SECURITYIR_API ListCasesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SECURITYIR_API ListCasesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,11 @@ namespace Model
     /**
      * <p>Optional element.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListCasesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCasesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCasesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCasesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,43 +51,45 @@ namespace Model
      * closedDate, createdDate, engagementType, lastUpdatedDate, pendingAction,
      * resolverType, and title for each response. </p>
      */
-    inline const Aws::Vector<ListCasesItem>& GetItems() const{ return m_items; }
-    inline void SetItems(const Aws::Vector<ListCasesItem>& value) { m_items = value; }
-    inline void SetItems(Aws::Vector<ListCasesItem>&& value) { m_items = std::move(value); }
-    inline ListCasesResult& WithItems(const Aws::Vector<ListCasesItem>& value) { SetItems(value); return *this;}
-    inline ListCasesResult& WithItems(Aws::Vector<ListCasesItem>&& value) { SetItems(std::move(value)); return *this;}
-    inline ListCasesResult& AddItems(const ListCasesItem& value) { m_items.push_back(value); return *this; }
-    inline ListCasesResult& AddItems(ListCasesItem&& value) { m_items.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ListCasesItem>& GetItems() const { return m_items; }
+    template<typename ItemsT = Aws::Vector<ListCasesItem>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<ListCasesItem>>
+    ListCasesResult& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = ListCasesItem>
+    ListCasesResult& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Response element for ListCases providing the total number of responses.</p>
      */
-    inline long long GetTotal() const{ return m_total; }
-    inline void SetTotal(long long value) { m_total = value; }
+    inline long long GetTotal() const { return m_total; }
+    inline void SetTotal(long long value) { m_totalHasBeenSet = true; m_total = value; }
     inline ListCasesResult& WithTotal(long long value) { SetTotal(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListCasesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListCasesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListCasesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListCasesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<ListCasesItem> m_items;
+    bool m_itemsHasBeenSet = false;
 
-    long long m_total;
+    long long m_total{0};
+    bool m_totalHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

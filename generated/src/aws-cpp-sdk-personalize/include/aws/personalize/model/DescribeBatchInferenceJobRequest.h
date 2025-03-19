@@ -21,7 +21,7 @@ namespace Model
   class DescribeBatchInferenceJobRequest : public PersonalizeRequest
   {
   public:
-    AWS_PERSONALIZE_API DescribeBatchInferenceJobRequest();
+    AWS_PERSONALIZE_API DescribeBatchInferenceJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The ARN of the batch inference job to describe.</p>
      */
-    inline const Aws::String& GetBatchInferenceJobArn() const{ return m_batchInferenceJobArn; }
+    inline const Aws::String& GetBatchInferenceJobArn() const { return m_batchInferenceJobArn; }
     inline bool BatchInferenceJobArnHasBeenSet() const { return m_batchInferenceJobArnHasBeenSet; }
-    inline void SetBatchInferenceJobArn(const Aws::String& value) { m_batchInferenceJobArnHasBeenSet = true; m_batchInferenceJobArn = value; }
-    inline void SetBatchInferenceJobArn(Aws::String&& value) { m_batchInferenceJobArnHasBeenSet = true; m_batchInferenceJobArn = std::move(value); }
-    inline void SetBatchInferenceJobArn(const char* value) { m_batchInferenceJobArnHasBeenSet = true; m_batchInferenceJobArn.assign(value); }
-    inline DescribeBatchInferenceJobRequest& WithBatchInferenceJobArn(const Aws::String& value) { SetBatchInferenceJobArn(value); return *this;}
-    inline DescribeBatchInferenceJobRequest& WithBatchInferenceJobArn(Aws::String&& value) { SetBatchInferenceJobArn(std::move(value)); return *this;}
-    inline DescribeBatchInferenceJobRequest& WithBatchInferenceJobArn(const char* value) { SetBatchInferenceJobArn(value); return *this;}
+    template<typename BatchInferenceJobArnT = Aws::String>
+    void SetBatchInferenceJobArn(BatchInferenceJobArnT&& value) { m_batchInferenceJobArnHasBeenSet = true; m_batchInferenceJobArn = std::forward<BatchInferenceJobArnT>(value); }
+    template<typename BatchInferenceJobArnT = Aws::String>
+    DescribeBatchInferenceJobRequest& WithBatchInferenceJobArn(BatchInferenceJobArnT&& value) { SetBatchInferenceJobArn(std::forward<BatchInferenceJobArnT>(value)); return *this;}
     ///@}
   private:
 

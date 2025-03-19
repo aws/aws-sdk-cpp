@@ -18,14 +18,7 @@ namespace VerifiedPermissions
 namespace Model
 {
 
-ActionIdentifier::ActionIdentifier() : 
-    m_actionTypeHasBeenSet(false),
-    m_actionIdHasBeenSet(false)
-{
-}
-
 ActionIdentifier::ActionIdentifier(JsonView jsonValue)
-  : ActionIdentifier()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ActionIdentifier& ActionIdentifier::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("actionType"))
   {
     m_actionType = jsonValue.GetString("actionType");
-
     m_actionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actionId"))
   {
     m_actionId = jsonValue.GetString("actionId");
-
     m_actionIdHasBeenSet = true;
   }
-
   return *this;
 }
 

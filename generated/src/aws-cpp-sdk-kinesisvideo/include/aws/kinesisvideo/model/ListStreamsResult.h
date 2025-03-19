@@ -29,7 +29,7 @@ namespace Model
   class ListStreamsResult
   {
   public:
-    AWS_KINESISVIDEO_API ListStreamsResult();
+    AWS_KINESISVIDEO_API ListStreamsResult() = default;
     AWS_KINESISVIDEO_API ListStreamsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KINESISVIDEO_API ListStreamsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>An array of <code>StreamInfo</code> objects.</p>
      */
-    inline const Aws::Vector<StreamInfo>& GetStreamInfoList() const{ return m_streamInfoList; }
-    inline void SetStreamInfoList(const Aws::Vector<StreamInfo>& value) { m_streamInfoList = value; }
-    inline void SetStreamInfoList(Aws::Vector<StreamInfo>&& value) { m_streamInfoList = std::move(value); }
-    inline ListStreamsResult& WithStreamInfoList(const Aws::Vector<StreamInfo>& value) { SetStreamInfoList(value); return *this;}
-    inline ListStreamsResult& WithStreamInfoList(Aws::Vector<StreamInfo>&& value) { SetStreamInfoList(std::move(value)); return *this;}
-    inline ListStreamsResult& AddStreamInfoList(const StreamInfo& value) { m_streamInfoList.push_back(value); return *this; }
-    inline ListStreamsResult& AddStreamInfoList(StreamInfo&& value) { m_streamInfoList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<StreamInfo>& GetStreamInfoList() const { return m_streamInfoList; }
+    template<typename StreamInfoListT = Aws::Vector<StreamInfo>>
+    void SetStreamInfoList(StreamInfoListT&& value) { m_streamInfoListHasBeenSet = true; m_streamInfoList = std::forward<StreamInfoListT>(value); }
+    template<typename StreamInfoListT = Aws::Vector<StreamInfo>>
+    ListStreamsResult& WithStreamInfoList(StreamInfoListT&& value) { SetStreamInfoList(std::forward<StreamInfoListT>(value)); return *this;}
+    template<typename StreamInfoListT = StreamInfo>
+    ListStreamsResult& AddStreamInfoList(StreamInfoListT&& value) { m_streamInfoListHasBeenSet = true; m_streamInfoList.emplace_back(std::forward<StreamInfoListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>If the response is truncated, the call returns this element with a token. To
      * get the next batch of streams, use this token in your next request. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListStreamsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListStreamsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListStreamsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListStreamsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListStreamsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListStreamsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListStreamsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListStreamsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<StreamInfo> m_streamInfoList;
+    bool m_streamInfoListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -35,7 +35,7 @@ namespace Model
   class LocationListEntry
   {
   public:
-    AWS_DATASYNC_API LocationListEntry();
+    AWS_DATASYNC_API LocationListEntry() = default;
     AWS_DATASYNC_API LocationListEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API LocationListEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * or Amazon EFS, the location is the export path. For Amazon S3, the location is
      * the prefix path that you want to mount and use as the root of the location.</p>
      */
-    inline const Aws::String& GetLocationArn() const{ return m_locationArn; }
+    inline const Aws::String& GetLocationArn() const { return m_locationArn; }
     inline bool LocationArnHasBeenSet() const { return m_locationArnHasBeenSet; }
-    inline void SetLocationArn(const Aws::String& value) { m_locationArnHasBeenSet = true; m_locationArn = value; }
-    inline void SetLocationArn(Aws::String&& value) { m_locationArnHasBeenSet = true; m_locationArn = std::move(value); }
-    inline void SetLocationArn(const char* value) { m_locationArnHasBeenSet = true; m_locationArn.assign(value); }
-    inline LocationListEntry& WithLocationArn(const Aws::String& value) { SetLocationArn(value); return *this;}
-    inline LocationListEntry& WithLocationArn(Aws::String&& value) { SetLocationArn(std::move(value)); return *this;}
-    inline LocationListEntry& WithLocationArn(const char* value) { SetLocationArn(value); return *this;}
+    template<typename LocationArnT = Aws::String>
+    void SetLocationArn(LocationArnT&& value) { m_locationArnHasBeenSet = true; m_locationArn = std::forward<LocationArnT>(value); }
+    template<typename LocationArnT = Aws::String>
+    LocationListEntry& WithLocationArn(LocationArnT&& value) { SetLocationArn(std::forward<LocationArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +72,12 @@ namespace Model
      * S3, it's the prefix path that you mount to and treat as the root of the
      * location.</p> <p/>
      */
-    inline const Aws::String& GetLocationUri() const{ return m_locationUri; }
+    inline const Aws::String& GetLocationUri() const { return m_locationUri; }
     inline bool LocationUriHasBeenSet() const { return m_locationUriHasBeenSet; }
-    inline void SetLocationUri(const Aws::String& value) { m_locationUriHasBeenSet = true; m_locationUri = value; }
-    inline void SetLocationUri(Aws::String&& value) { m_locationUriHasBeenSet = true; m_locationUri = std::move(value); }
-    inline void SetLocationUri(const char* value) { m_locationUriHasBeenSet = true; m_locationUri.assign(value); }
-    inline LocationListEntry& WithLocationUri(const Aws::String& value) { SetLocationUri(value); return *this;}
-    inline LocationListEntry& WithLocationUri(Aws::String&& value) { SetLocationUri(std::move(value)); return *this;}
-    inline LocationListEntry& WithLocationUri(const char* value) { SetLocationUri(value); return *this;}
+    template<typename LocationUriT = Aws::String>
+    void SetLocationUri(LocationUriT&& value) { m_locationUriHasBeenSet = true; m_locationUri = std::forward<LocationUriT>(value); }
+    template<typename LocationUriT = Aws::String>
+    LocationListEntry& WithLocationUri(LocationUriT&& value) { SetLocationUri(std::forward<LocationUriT>(value)); return *this;}
     ///@}
   private:
 

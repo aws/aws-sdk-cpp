@@ -33,7 +33,7 @@ namespace Model
   class PackageGroupAllowedRepository
   {
   public:
-    AWS_CODEARTIFACT_API PackageGroupAllowedRepository();
+    AWS_CODEARTIFACT_API PackageGroupAllowedRepository() = default;
     AWS_CODEARTIFACT_API PackageGroupAllowedRepository(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEARTIFACT_API PackageGroupAllowedRepository& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEARTIFACT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,33 +43,29 @@ namespace Model
     /**
      * <p> The name of the allowed repository. </p>
      */
-    inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
+    inline const Aws::String& GetRepositoryName() const { return m_repositoryName; }
     inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
-    inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
-    inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
-    inline PackageGroupAllowedRepository& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
-    inline PackageGroupAllowedRepository& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
-    inline PackageGroupAllowedRepository& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+    template<typename RepositoryNameT = Aws::String>
+    void SetRepositoryName(RepositoryNameT&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::forward<RepositoryNameT>(value); }
+    template<typename RepositoryNameT = Aws::String>
+    PackageGroupAllowedRepository& WithRepositoryName(RepositoryNameT&& value) { SetRepositoryName(std::forward<RepositoryNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The origin configuration restriction type of the allowed repository.</p>
      */
-    inline const PackageGroupOriginRestrictionType& GetOriginRestrictionType() const{ return m_originRestrictionType; }
+    inline PackageGroupOriginRestrictionType GetOriginRestrictionType() const { return m_originRestrictionType; }
     inline bool OriginRestrictionTypeHasBeenSet() const { return m_originRestrictionTypeHasBeenSet; }
-    inline void SetOriginRestrictionType(const PackageGroupOriginRestrictionType& value) { m_originRestrictionTypeHasBeenSet = true; m_originRestrictionType = value; }
-    inline void SetOriginRestrictionType(PackageGroupOriginRestrictionType&& value) { m_originRestrictionTypeHasBeenSet = true; m_originRestrictionType = std::move(value); }
-    inline PackageGroupAllowedRepository& WithOriginRestrictionType(const PackageGroupOriginRestrictionType& value) { SetOriginRestrictionType(value); return *this;}
-    inline PackageGroupAllowedRepository& WithOriginRestrictionType(PackageGroupOriginRestrictionType&& value) { SetOriginRestrictionType(std::move(value)); return *this;}
+    inline void SetOriginRestrictionType(PackageGroupOriginRestrictionType value) { m_originRestrictionTypeHasBeenSet = true; m_originRestrictionType = value; }
+    inline PackageGroupAllowedRepository& WithOriginRestrictionType(PackageGroupOriginRestrictionType value) { SetOriginRestrictionType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_repositoryName;
     bool m_repositoryNameHasBeenSet = false;
 
-    PackageGroupOriginRestrictionType m_originRestrictionType;
+    PackageGroupOriginRestrictionType m_originRestrictionType{PackageGroupOriginRestrictionType::NOT_SET};
     bool m_originRestrictionTypeHasBeenSet = false;
   };
 

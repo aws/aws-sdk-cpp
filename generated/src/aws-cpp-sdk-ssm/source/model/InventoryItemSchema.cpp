@@ -18,16 +18,7 @@ namespace SSM
 namespace Model
 {
 
-InventoryItemSchema::InventoryItemSchema() : 
-    m_typeNameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_displayNameHasBeenSet(false)
-{
-}
-
 InventoryItemSchema::InventoryItemSchema(JsonView jsonValue)
-  : InventoryItemSchema()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ InventoryItemSchema& InventoryItemSchema::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TypeName"))
   {
     m_typeName = jsonValue.GetString("TypeName");
-
     m_typeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetString("Version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Attributes"))
   {
     Aws::Utils::Array<JsonView> attributesJsonList = jsonValue.GetArray("Attributes");
@@ -57,14 +44,11 @@ InventoryItemSchema& InventoryItemSchema::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayName"))
   {
     m_displayName = jsonValue.GetString("DisplayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   return *this;
 }
 

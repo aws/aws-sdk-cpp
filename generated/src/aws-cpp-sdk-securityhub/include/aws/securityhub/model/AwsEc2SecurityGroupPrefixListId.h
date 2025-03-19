@@ -31,7 +31,7 @@ namespace Model
   class AwsEc2SecurityGroupPrefixListId
   {
   public:
-    AWS_SECURITYHUB_API AwsEc2SecurityGroupPrefixListId();
+    AWS_SECURITYHUB_API AwsEc2SecurityGroupPrefixListId() = default;
     AWS_SECURITYHUB_API AwsEc2SecurityGroupPrefixListId(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEc2SecurityGroupPrefixListId& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The ID of the prefix.</p>
      */
-    inline const Aws::String& GetPrefixListId() const{ return m_prefixListId; }
+    inline const Aws::String& GetPrefixListId() const { return m_prefixListId; }
     inline bool PrefixListIdHasBeenSet() const { return m_prefixListIdHasBeenSet; }
-    inline void SetPrefixListId(const Aws::String& value) { m_prefixListIdHasBeenSet = true; m_prefixListId = value; }
-    inline void SetPrefixListId(Aws::String&& value) { m_prefixListIdHasBeenSet = true; m_prefixListId = std::move(value); }
-    inline void SetPrefixListId(const char* value) { m_prefixListIdHasBeenSet = true; m_prefixListId.assign(value); }
-    inline AwsEc2SecurityGroupPrefixListId& WithPrefixListId(const Aws::String& value) { SetPrefixListId(value); return *this;}
-    inline AwsEc2SecurityGroupPrefixListId& WithPrefixListId(Aws::String&& value) { SetPrefixListId(std::move(value)); return *this;}
-    inline AwsEc2SecurityGroupPrefixListId& WithPrefixListId(const char* value) { SetPrefixListId(value); return *this;}
+    template<typename PrefixListIdT = Aws::String>
+    void SetPrefixListId(PrefixListIdT&& value) { m_prefixListIdHasBeenSet = true; m_prefixListId = std::forward<PrefixListIdT>(value); }
+    template<typename PrefixListIdT = Aws::String>
+    AwsEc2SecurityGroupPrefixListId& WithPrefixListId(PrefixListIdT&& value) { SetPrefixListId(std::forward<PrefixListIdT>(value)); return *this;}
     ///@}
   private:
 

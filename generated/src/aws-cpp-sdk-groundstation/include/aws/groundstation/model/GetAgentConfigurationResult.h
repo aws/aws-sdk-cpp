@@ -27,7 +27,7 @@ namespace Model
   class GetAgentConfigurationResult
   {
   public:
-    AWS_GROUNDSTATION_API GetAgentConfigurationResult();
+    AWS_GROUNDSTATION_API GetAgentConfigurationResult() = default;
     AWS_GROUNDSTATION_API GetAgentConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GROUNDSTATION_API GetAgentConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,45 +36,42 @@ namespace Model
     /**
      * <p>UUID of agent.</p>
      */
-    inline const Aws::String& GetAgentId() const{ return m_agentId; }
-    inline void SetAgentId(const Aws::String& value) { m_agentId = value; }
-    inline void SetAgentId(Aws::String&& value) { m_agentId = std::move(value); }
-    inline void SetAgentId(const char* value) { m_agentId.assign(value); }
-    inline GetAgentConfigurationResult& WithAgentId(const Aws::String& value) { SetAgentId(value); return *this;}
-    inline GetAgentConfigurationResult& WithAgentId(Aws::String&& value) { SetAgentId(std::move(value)); return *this;}
-    inline GetAgentConfigurationResult& WithAgentId(const char* value) { SetAgentId(value); return *this;}
+    inline const Aws::String& GetAgentId() const { return m_agentId; }
+    template<typename AgentIdT = Aws::String>
+    void SetAgentId(AgentIdT&& value) { m_agentIdHasBeenSet = true; m_agentId = std::forward<AgentIdT>(value); }
+    template<typename AgentIdT = Aws::String>
+    GetAgentConfigurationResult& WithAgentId(AgentIdT&& value) { SetAgentId(std::forward<AgentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Tasking document for agent.</p>
      */
-    inline const Aws::String& GetTaskingDocument() const{ return m_taskingDocument; }
-    inline void SetTaskingDocument(const Aws::String& value) { m_taskingDocument = value; }
-    inline void SetTaskingDocument(Aws::String&& value) { m_taskingDocument = std::move(value); }
-    inline void SetTaskingDocument(const char* value) { m_taskingDocument.assign(value); }
-    inline GetAgentConfigurationResult& WithTaskingDocument(const Aws::String& value) { SetTaskingDocument(value); return *this;}
-    inline GetAgentConfigurationResult& WithTaskingDocument(Aws::String&& value) { SetTaskingDocument(std::move(value)); return *this;}
-    inline GetAgentConfigurationResult& WithTaskingDocument(const char* value) { SetTaskingDocument(value); return *this;}
+    inline const Aws::String& GetTaskingDocument() const { return m_taskingDocument; }
+    template<typename TaskingDocumentT = Aws::String>
+    void SetTaskingDocument(TaskingDocumentT&& value) { m_taskingDocumentHasBeenSet = true; m_taskingDocument = std::forward<TaskingDocumentT>(value); }
+    template<typename TaskingDocumentT = Aws::String>
+    GetAgentConfigurationResult& WithTaskingDocument(TaskingDocumentT&& value) { SetTaskingDocument(std::forward<TaskingDocumentT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetAgentConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetAgentConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetAgentConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetAgentConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_agentId;
+    bool m_agentIdHasBeenSet = false;
 
     Aws::String m_taskingDocument;
+    bool m_taskingDocumentHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

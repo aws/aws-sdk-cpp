@@ -35,7 +35,7 @@ namespace Model
   class UserTurnInputSpecification
   {
   public:
-    AWS_LEXMODELSV2_API UserTurnInputSpecification();
+    AWS_LEXMODELSV2_API UserTurnInputSpecification() = default;
     AWS_LEXMODELSV2_API UserTurnInputSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API UserTurnInputSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,43 +45,40 @@ namespace Model
     /**
      * <p>The utterance input in the user turn.</p>
      */
-    inline const UtteranceInputSpecification& GetUtteranceInput() const{ return m_utteranceInput; }
+    inline const UtteranceInputSpecification& GetUtteranceInput() const { return m_utteranceInput; }
     inline bool UtteranceInputHasBeenSet() const { return m_utteranceInputHasBeenSet; }
-    inline void SetUtteranceInput(const UtteranceInputSpecification& value) { m_utteranceInputHasBeenSet = true; m_utteranceInput = value; }
-    inline void SetUtteranceInput(UtteranceInputSpecification&& value) { m_utteranceInputHasBeenSet = true; m_utteranceInput = std::move(value); }
-    inline UserTurnInputSpecification& WithUtteranceInput(const UtteranceInputSpecification& value) { SetUtteranceInput(value); return *this;}
-    inline UserTurnInputSpecification& WithUtteranceInput(UtteranceInputSpecification&& value) { SetUtteranceInput(std::move(value)); return *this;}
+    template<typename UtteranceInputT = UtteranceInputSpecification>
+    void SetUtteranceInput(UtteranceInputT&& value) { m_utteranceInputHasBeenSet = true; m_utteranceInput = std::forward<UtteranceInputT>(value); }
+    template<typename UtteranceInputT = UtteranceInputSpecification>
+    UserTurnInputSpecification& WithUtteranceInput(UtteranceInputT&& value) { SetUtteranceInput(std::forward<UtteranceInputT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Request attributes of the user turn.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetRequestAttributes() const{ return m_requestAttributes; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetRequestAttributes() const { return m_requestAttributes; }
     inline bool RequestAttributesHasBeenSet() const { return m_requestAttributesHasBeenSet; }
-    inline void SetRequestAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_requestAttributesHasBeenSet = true; m_requestAttributes = value; }
-    inline void SetRequestAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_requestAttributesHasBeenSet = true; m_requestAttributes = std::move(value); }
-    inline UserTurnInputSpecification& WithRequestAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetRequestAttributes(value); return *this;}
-    inline UserTurnInputSpecification& WithRequestAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetRequestAttributes(std::move(value)); return *this;}
-    inline UserTurnInputSpecification& AddRequestAttributes(const Aws::String& key, const Aws::String& value) { m_requestAttributesHasBeenSet = true; m_requestAttributes.emplace(key, value); return *this; }
-    inline UserTurnInputSpecification& AddRequestAttributes(Aws::String&& key, const Aws::String& value) { m_requestAttributesHasBeenSet = true; m_requestAttributes.emplace(std::move(key), value); return *this; }
-    inline UserTurnInputSpecification& AddRequestAttributes(const Aws::String& key, Aws::String&& value) { m_requestAttributesHasBeenSet = true; m_requestAttributes.emplace(key, std::move(value)); return *this; }
-    inline UserTurnInputSpecification& AddRequestAttributes(Aws::String&& key, Aws::String&& value) { m_requestAttributesHasBeenSet = true; m_requestAttributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline UserTurnInputSpecification& AddRequestAttributes(const char* key, Aws::String&& value) { m_requestAttributesHasBeenSet = true; m_requestAttributes.emplace(key, std::move(value)); return *this; }
-    inline UserTurnInputSpecification& AddRequestAttributes(Aws::String&& key, const char* value) { m_requestAttributesHasBeenSet = true; m_requestAttributes.emplace(std::move(key), value); return *this; }
-    inline UserTurnInputSpecification& AddRequestAttributes(const char* key, const char* value) { m_requestAttributesHasBeenSet = true; m_requestAttributes.emplace(key, value); return *this; }
+    template<typename RequestAttributesT = Aws::Map<Aws::String, Aws::String>>
+    void SetRequestAttributes(RequestAttributesT&& value) { m_requestAttributesHasBeenSet = true; m_requestAttributes = std::forward<RequestAttributesT>(value); }
+    template<typename RequestAttributesT = Aws::Map<Aws::String, Aws::String>>
+    UserTurnInputSpecification& WithRequestAttributes(RequestAttributesT&& value) { SetRequestAttributes(std::forward<RequestAttributesT>(value)); return *this;}
+    template<typename RequestAttributesKeyT = Aws::String, typename RequestAttributesValueT = Aws::String>
+    UserTurnInputSpecification& AddRequestAttributes(RequestAttributesKeyT&& key, RequestAttributesValueT&& value) {
+      m_requestAttributesHasBeenSet = true; m_requestAttributes.emplace(std::forward<RequestAttributesKeyT>(key), std::forward<RequestAttributesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>Contains information about the session state in the input.</p>
      */
-    inline const InputSessionStateSpecification& GetSessionState() const{ return m_sessionState; }
+    inline const InputSessionStateSpecification& GetSessionState() const { return m_sessionState; }
     inline bool SessionStateHasBeenSet() const { return m_sessionStateHasBeenSet; }
-    inline void SetSessionState(const InputSessionStateSpecification& value) { m_sessionStateHasBeenSet = true; m_sessionState = value; }
-    inline void SetSessionState(InputSessionStateSpecification&& value) { m_sessionStateHasBeenSet = true; m_sessionState = std::move(value); }
-    inline UserTurnInputSpecification& WithSessionState(const InputSessionStateSpecification& value) { SetSessionState(value); return *this;}
-    inline UserTurnInputSpecification& WithSessionState(InputSessionStateSpecification&& value) { SetSessionState(std::move(value)); return *this;}
+    template<typename SessionStateT = InputSessionStateSpecification>
+    void SetSessionState(SessionStateT&& value) { m_sessionStateHasBeenSet = true; m_sessionState = std::forward<SessionStateT>(value); }
+    template<typename SessionStateT = InputSessionStateSpecification>
+    UserTurnInputSpecification& WithSessionState(SessionStateT&& value) { SetSessionState(std::forward<SessionStateT>(value)); return *this;}
     ///@}
   private:
 

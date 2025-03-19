@@ -18,24 +18,7 @@ namespace LexModelBuildingService
 namespace Model
 {
 
-MigrationSummary::MigrationSummary() : 
-    m_migrationIdHasBeenSet(false),
-    m_v1BotNameHasBeenSet(false),
-    m_v1BotVersionHasBeenSet(false),
-    m_v1BotLocale(Locale::NOT_SET),
-    m_v1BotLocaleHasBeenSet(false),
-    m_v2BotIdHasBeenSet(false),
-    m_v2BotRoleHasBeenSet(false),
-    m_migrationStatus(MigrationStatus::NOT_SET),
-    m_migrationStatusHasBeenSet(false),
-    m_migrationStrategy(MigrationStrategy::NOT_SET),
-    m_migrationStrategyHasBeenSet(false),
-    m_migrationTimestampHasBeenSet(false)
-{
-}
-
 MigrationSummary::MigrationSummary(JsonView jsonValue)
-  : MigrationSummary()
 {
   *this = jsonValue;
 }
@@ -45,66 +28,48 @@ MigrationSummary& MigrationSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("migrationId"))
   {
     m_migrationId = jsonValue.GetString("migrationId");
-
     m_migrationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("v1BotName"))
   {
     m_v1BotName = jsonValue.GetString("v1BotName");
-
     m_v1BotNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("v1BotVersion"))
   {
     m_v1BotVersion = jsonValue.GetString("v1BotVersion");
-
     m_v1BotVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("v1BotLocale"))
   {
     m_v1BotLocale = LocaleMapper::GetLocaleForName(jsonValue.GetString("v1BotLocale"));
-
     m_v1BotLocaleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("v2BotId"))
   {
     m_v2BotId = jsonValue.GetString("v2BotId");
-
     m_v2BotIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("v2BotRole"))
   {
     m_v2BotRole = jsonValue.GetString("v2BotRole");
-
     m_v2BotRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("migrationStatus"))
   {
     m_migrationStatus = MigrationStatusMapper::GetMigrationStatusForName(jsonValue.GetString("migrationStatus"));
-
     m_migrationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("migrationStrategy"))
   {
     m_migrationStrategy = MigrationStrategyMapper::GetMigrationStrategyForName(jsonValue.GetString("migrationStrategy"));
-
     m_migrationStrategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("migrationTimestamp"))
   {
     m_migrationTimestamp = jsonValue.GetDouble("migrationTimestamp");
-
     m_migrationTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

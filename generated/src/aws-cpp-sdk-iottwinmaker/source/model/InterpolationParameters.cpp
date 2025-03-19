@@ -18,16 +18,7 @@ namespace IoTTwinMaker
 namespace Model
 {
 
-InterpolationParameters::InterpolationParameters() : 
-    m_interpolationType(InterpolationType::NOT_SET),
-    m_interpolationTypeHasBeenSet(false),
-    m_intervalInSeconds(0),
-    m_intervalInSecondsHasBeenSet(false)
-{
-}
-
 InterpolationParameters::InterpolationParameters(JsonView jsonValue)
-  : InterpolationParameters()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ InterpolationParameters& InterpolationParameters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("interpolationType"))
   {
     m_interpolationType = InterpolationTypeMapper::GetInterpolationTypeForName(jsonValue.GetString("interpolationType"));
-
     m_interpolationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("intervalInSeconds"))
   {
     m_intervalInSeconds = jsonValue.GetInt64("intervalInSeconds");
-
     m_intervalInSecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AssumeRoleForPodIdentityResult::AssumeRoleForPodIdentityResult()
-{
-}
-
 AssumeRoleForPodIdentityResult::AssumeRoleForPodIdentityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,39 +28,35 @@ AssumeRoleForPodIdentityResult& AssumeRoleForPodIdentityResult::operator =(const
   if(jsonValue.ValueExists("subject"))
   {
     m_subject = jsonValue.GetObject("subject");
-
+    m_subjectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("audience"))
   {
     m_audience = jsonValue.GetString("audience");
-
+    m_audienceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("podIdentityAssociation"))
   {
     m_podIdentityAssociation = jsonValue.GetObject("podIdentityAssociation");
-
+    m_podIdentityAssociationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assumedRoleUser"))
   {
     m_assumedRoleUser = jsonValue.GetObject("assumedRoleUser");
-
+    m_assumedRoleUserHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("credentials"))
   {
     m_credentials = jsonValue.GetObject("credentials");
-
+    m_credentialsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

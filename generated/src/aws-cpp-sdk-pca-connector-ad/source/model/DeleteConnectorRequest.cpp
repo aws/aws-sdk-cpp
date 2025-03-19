@@ -12,11 +12,6 @@ using namespace Aws::PcaConnectorAd::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteConnectorRequest::DeleteConnectorRequest() : 
-    m_connectorArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteConnectorRequest::SerializePayload() const
 {
   return {};

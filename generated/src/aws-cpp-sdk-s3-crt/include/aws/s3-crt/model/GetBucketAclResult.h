@@ -30,7 +30,7 @@ namespace Model
   class GetBucketAclResult
   {
   public:
-    AWS_S3CRT_API GetBucketAclResult();
+    AWS_S3CRT_API GetBucketAclResult() = default;
     AWS_S3CRT_API GetBucketAclResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_S3CRT_API GetBucketAclResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,43 +39,44 @@ namespace Model
     /**
      * <p>Container for the bucket owner's display name and ID.</p>
      */
-    inline const Owner& GetOwner() const{ return m_owner; }
-    inline void SetOwner(const Owner& value) { m_owner = value; }
-    inline void SetOwner(Owner&& value) { m_owner = std::move(value); }
-    inline GetBucketAclResult& WithOwner(const Owner& value) { SetOwner(value); return *this;}
-    inline GetBucketAclResult& WithOwner(Owner&& value) { SetOwner(std::move(value)); return *this;}
+    inline const Owner& GetOwner() const { return m_owner; }
+    template<typename OwnerT = Owner>
+    void SetOwner(OwnerT&& value) { m_ownerHasBeenSet = true; m_owner = std::forward<OwnerT>(value); }
+    template<typename OwnerT = Owner>
+    GetBucketAclResult& WithOwner(OwnerT&& value) { SetOwner(std::forward<OwnerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of grants.</p>
      */
-    inline const Aws::Vector<Grant>& GetGrants() const{ return m_grants; }
-    inline void SetGrants(const Aws::Vector<Grant>& value) { m_grants = value; }
-    inline void SetGrants(Aws::Vector<Grant>&& value) { m_grants = std::move(value); }
-    inline GetBucketAclResult& WithGrants(const Aws::Vector<Grant>& value) { SetGrants(value); return *this;}
-    inline GetBucketAclResult& WithGrants(Aws::Vector<Grant>&& value) { SetGrants(std::move(value)); return *this;}
-    inline GetBucketAclResult& AddGrants(const Grant& value) { m_grants.push_back(value); return *this; }
-    inline GetBucketAclResult& AddGrants(Grant&& value) { m_grants.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Grant>& GetGrants() const { return m_grants; }
+    template<typename GrantsT = Aws::Vector<Grant>>
+    void SetGrants(GrantsT&& value) { m_grantsHasBeenSet = true; m_grants = std::forward<GrantsT>(value); }
+    template<typename GrantsT = Aws::Vector<Grant>>
+    GetBucketAclResult& WithGrants(GrantsT&& value) { SetGrants(std::forward<GrantsT>(value)); return *this;}
+    template<typename GrantsT = Grant>
+    GetBucketAclResult& AddGrants(GrantsT&& value) { m_grantsHasBeenSet = true; m_grants.emplace_back(std::forward<GrantsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetBucketAclResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetBucketAclResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetBucketAclResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetBucketAclResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Owner m_owner;
+    bool m_ownerHasBeenSet = false;
 
     Aws::Vector<Grant> m_grants;
+    bool m_grantsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

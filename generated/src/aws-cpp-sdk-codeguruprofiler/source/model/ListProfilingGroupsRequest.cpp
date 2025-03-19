@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListProfilingGroupsRequest::ListProfilingGroupsRequest() : 
-    m_includeDescription(false),
-    m_includeDescriptionHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListProfilingGroupsRequest::SerializePayload() const
 {
   return {};

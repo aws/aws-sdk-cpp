@@ -18,15 +18,7 @@ namespace GroundStation
 namespace Model
 {
 
-AntennaDownlinkDemodDecodeConfig::AntennaDownlinkDemodDecodeConfig() : 
-    m_decodeConfigHasBeenSet(false),
-    m_demodulationConfigHasBeenSet(false),
-    m_spectrumConfigHasBeenSet(false)
-{
-}
-
 AntennaDownlinkDemodDecodeConfig::AntennaDownlinkDemodDecodeConfig(JsonView jsonValue)
-  : AntennaDownlinkDemodDecodeConfig()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AntennaDownlinkDemodDecodeConfig& AntennaDownlinkDemodDecodeConfig::operator =(J
   if(jsonValue.ValueExists("decodeConfig"))
   {
     m_decodeConfig = jsonValue.GetObject("decodeConfig");
-
     m_decodeConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("demodulationConfig"))
   {
     m_demodulationConfig = jsonValue.GetObject("demodulationConfig");
-
     m_demodulationConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("spectrumConfig"))
   {
     m_spectrumConfig = jsonValue.GetObject("spectrumConfig");
-
     m_spectrumConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

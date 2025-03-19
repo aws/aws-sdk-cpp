@@ -23,7 +23,7 @@ namespace Model
   class SearchQuantumTasksRequest : public BraketRequest
   {
   public:
-    AWS_BRAKET_API SearchQuantumTasksRequest();
+    AWS_BRAKET_API SearchQuantumTasksRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,21 +38,21 @@ namespace Model
     /**
      * <p>Array of <code>SearchQuantumTasksFilter</code> objects.</p>
      */
-    inline const Aws::Vector<SearchQuantumTasksFilter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<SearchQuantumTasksFilter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<SearchQuantumTasksFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<SearchQuantumTasksFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline SearchQuantumTasksRequest& WithFilters(const Aws::Vector<SearchQuantumTasksFilter>& value) { SetFilters(value); return *this;}
-    inline SearchQuantumTasksRequest& WithFilters(Aws::Vector<SearchQuantumTasksFilter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline SearchQuantumTasksRequest& AddFilters(const SearchQuantumTasksFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline SearchQuantumTasksRequest& AddFilters(SearchQuantumTasksFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<SearchQuantumTasksFilter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<SearchQuantumTasksFilter>>
+    SearchQuantumTasksRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = SearchQuantumTasksFilter>
+    SearchQuantumTasksRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Maximum number of results to return in the response.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline SearchQuantumTasksRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -64,21 +64,19 @@ namespace Model
      * token returned from the previous request continue results where the previous
      * request ended.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline SearchQuantumTasksRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline SearchQuantumTasksRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline SearchQuantumTasksRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    SearchQuantumTasksRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<SearchQuantumTasksFilter> m_filters;
     bool m_filtersHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

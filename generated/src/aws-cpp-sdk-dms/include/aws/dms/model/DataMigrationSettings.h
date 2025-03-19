@@ -33,7 +33,7 @@ namespace Model
   class DataMigrationSettings
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API DataMigrationSettings();
+    AWS_DATABASEMIGRATIONSERVICE_API DataMigrationSettings() = default;
     AWS_DATABASEMIGRATIONSERVICE_API DataMigrationSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API DataMigrationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * <p>The number of parallel jobs that trigger parallel threads to unload the
      * tables from the source, and then load them to the target.</p>
      */
-    inline int GetNumberOfJobs() const{ return m_numberOfJobs; }
+    inline int GetNumberOfJobs() const { return m_numberOfJobs; }
     inline bool NumberOfJobsHasBeenSet() const { return m_numberOfJobsHasBeenSet; }
     inline void SetNumberOfJobs(int value) { m_numberOfJobsHasBeenSet = true; m_numberOfJobs = value; }
     inline DataMigrationSettings& WithNumberOfJobs(int value) { SetNumberOfJobs(value); return *this;}
@@ -54,7 +54,7 @@ namespace Model
     /**
      * <p>Whether to enable CloudWatch logging for the data migration.</p>
      */
-    inline bool GetCloudwatchLogsEnabled() const{ return m_cloudwatchLogsEnabled; }
+    inline bool GetCloudwatchLogsEnabled() const { return m_cloudwatchLogsEnabled; }
     inline bool CloudwatchLogsEnabledHasBeenSet() const { return m_cloudwatchLogsEnabledHasBeenSet; }
     inline void SetCloudwatchLogsEnabled(bool value) { m_cloudwatchLogsEnabledHasBeenSet = true; m_cloudwatchLogsEnabled = value; }
     inline DataMigrationSettings& WithCloudwatchLogsEnabled(bool value) { SetCloudwatchLogsEnabled(value); return *this;}
@@ -65,21 +65,19 @@ namespace Model
      * <p>A JSON-formatted string that defines what objects to include and exclude from
      * the migration.</p>
      */
-    inline const Aws::String& GetSelectionRules() const{ return m_selectionRules; }
+    inline const Aws::String& GetSelectionRules() const { return m_selectionRules; }
     inline bool SelectionRulesHasBeenSet() const { return m_selectionRulesHasBeenSet; }
-    inline void SetSelectionRules(const Aws::String& value) { m_selectionRulesHasBeenSet = true; m_selectionRules = value; }
-    inline void SetSelectionRules(Aws::String&& value) { m_selectionRulesHasBeenSet = true; m_selectionRules = std::move(value); }
-    inline void SetSelectionRules(const char* value) { m_selectionRulesHasBeenSet = true; m_selectionRules.assign(value); }
-    inline DataMigrationSettings& WithSelectionRules(const Aws::String& value) { SetSelectionRules(value); return *this;}
-    inline DataMigrationSettings& WithSelectionRules(Aws::String&& value) { SetSelectionRules(std::move(value)); return *this;}
-    inline DataMigrationSettings& WithSelectionRules(const char* value) { SetSelectionRules(value); return *this;}
+    template<typename SelectionRulesT = Aws::String>
+    void SetSelectionRules(SelectionRulesT&& value) { m_selectionRulesHasBeenSet = true; m_selectionRules = std::forward<SelectionRulesT>(value); }
+    template<typename SelectionRulesT = Aws::String>
+    DataMigrationSettings& WithSelectionRules(SelectionRulesT&& value) { SetSelectionRules(std::forward<SelectionRulesT>(value)); return *this;}
     ///@}
   private:
 
-    int m_numberOfJobs;
+    int m_numberOfJobs{0};
     bool m_numberOfJobsHasBeenSet = false;
 
-    bool m_cloudwatchLogsEnabled;
+    bool m_cloudwatchLogsEnabled{false};
     bool m_cloudwatchLogsEnabledHasBeenSet = false;
 
     Aws::String m_selectionRules;

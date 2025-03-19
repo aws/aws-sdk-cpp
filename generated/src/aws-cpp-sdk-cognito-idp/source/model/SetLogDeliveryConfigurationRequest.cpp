@@ -12,12 +12,6 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SetLogDeliveryConfigurationRequest::SetLogDeliveryConfigurationRequest() : 
-    m_userPoolIdHasBeenSet(false),
-    m_logConfigurationsHasBeenSet(false)
-{
-}
-
 Aws::String SetLogDeliveryConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

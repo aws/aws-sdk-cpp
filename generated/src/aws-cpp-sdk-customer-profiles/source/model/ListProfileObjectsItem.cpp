@@ -18,15 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-ListProfileObjectsItem::ListProfileObjectsItem() : 
-    m_objectTypeNameHasBeenSet(false),
-    m_profileObjectUniqueKeyHasBeenSet(false),
-    m_objectHasBeenSet(false)
-{
-}
-
 ListProfileObjectsItem::ListProfileObjectsItem(JsonView jsonValue)
-  : ListProfileObjectsItem()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ListProfileObjectsItem& ListProfileObjectsItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ObjectTypeName"))
   {
     m_objectTypeName = jsonValue.GetString("ObjectTypeName");
-
     m_objectTypeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProfileObjectUniqueKey"))
   {
     m_profileObjectUniqueKey = jsonValue.GetString("ProfileObjectUniqueKey");
-
     m_profileObjectUniqueKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Object"))
   {
     m_object = jsonValue.GetString("Object");
-
     m_objectHasBeenSet = true;
   }
-
   return *this;
 }
 

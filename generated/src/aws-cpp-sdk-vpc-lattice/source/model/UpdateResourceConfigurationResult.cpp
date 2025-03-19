@@ -17,16 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateResourceConfigurationResult::UpdateResourceConfigurationResult() : 
-    m_allowAssociationToShareableServiceNetwork(false),
-    m_protocol(ProtocolType::NOT_SET),
-    m_status(ResourceConfigurationStatus::NOT_SET),
-    m_type(ResourceConfigurationType::NOT_SET)
-{
-}
-
 UpdateResourceConfigurationResult::UpdateResourceConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateResourceConfigurationResult()
 {
   *this = result;
 }
@@ -37,27 +28,23 @@ UpdateResourceConfigurationResult& UpdateResourceConfigurationResult::operator =
   if(jsonValue.ValueExists("allowAssociationToShareableServiceNetwork"))
   {
     m_allowAssociationToShareableServiceNetwork = jsonValue.GetBool("allowAssociationToShareableServiceNetwork");
-
+    m_allowAssociationToShareableServiceNetworkHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("portRanges"))
   {
     Aws::Utils::Array<JsonView> portRangesJsonList = jsonValue.GetArray("portRanges");
@@ -65,50 +52,45 @@ UpdateResourceConfigurationResult& UpdateResourceConfigurationResult::operator =
     {
       m_portRanges.push_back(portRangesJsonList[portRangesIndex].AsString());
     }
+    m_portRangesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("protocol"))
   {
     m_protocol = ProtocolTypeMapper::GetProtocolTypeForName(jsonValue.GetString("protocol"));
-
+    m_protocolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceConfigurationDefinition"))
   {
     m_resourceConfigurationDefinition = jsonValue.GetObject("resourceConfigurationDefinition");
-
+    m_resourceConfigurationDefinitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceConfigurationGroupId"))
   {
     m_resourceConfigurationGroupId = jsonValue.GetString("resourceConfigurationGroupId");
-
+    m_resourceConfigurationGroupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceGatewayId"))
   {
     m_resourceGatewayId = jsonValue.GetString("resourceGatewayId");
-
+    m_resourceGatewayIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ResourceConfigurationStatusMapper::GetResourceConfigurationStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = ResourceConfigurationTypeMapper::GetResourceConfigurationTypeForName(jsonValue.GetString("type"));
-
+    m_typeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

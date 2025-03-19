@@ -43,7 +43,7 @@ namespace Model
   class NetworkEndpoint
   {
   public:
-    AWS_SECURITYHUB_API NetworkEndpoint();
+    AWS_SECURITYHUB_API NetworkEndpoint() = default;
     AWS_SECURITYHUB_API NetworkEndpoint(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API NetworkEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,49 +53,43 @@ namespace Model
     /**
      * <p> The identifier of the network endpoint involved in the attack sequence. </p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline NetworkEndpoint& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline NetworkEndpoint& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline NetworkEndpoint& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    NetworkEndpoint& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The IP address used in the network endpoint. </p>
      */
-    inline const Aws::String& GetIp() const{ return m_ip; }
+    inline const Aws::String& GetIp() const { return m_ip; }
     inline bool IpHasBeenSet() const { return m_ipHasBeenSet; }
-    inline void SetIp(const Aws::String& value) { m_ipHasBeenSet = true; m_ip = value; }
-    inline void SetIp(Aws::String&& value) { m_ipHasBeenSet = true; m_ip = std::move(value); }
-    inline void SetIp(const char* value) { m_ipHasBeenSet = true; m_ip.assign(value); }
-    inline NetworkEndpoint& WithIp(const Aws::String& value) { SetIp(value); return *this;}
-    inline NetworkEndpoint& WithIp(Aws::String&& value) { SetIp(std::move(value)); return *this;}
-    inline NetworkEndpoint& WithIp(const char* value) { SetIp(value); return *this;}
+    template<typename IpT = Aws::String>
+    void SetIp(IpT&& value) { m_ipHasBeenSet = true; m_ip = std::forward<IpT>(value); }
+    template<typename IpT = Aws::String>
+    NetworkEndpoint& WithIp(IpT&& value) { SetIp(std::forward<IpT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The domain information for the network endpoint. </p>
      */
-    inline const Aws::String& GetDomain() const{ return m_domain; }
+    inline const Aws::String& GetDomain() const { return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
-    inline NetworkEndpoint& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
-    inline NetworkEndpoint& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
-    inline NetworkEndpoint& WithDomain(const char* value) { SetDomain(value); return *this;}
+    template<typename DomainT = Aws::String>
+    void SetDomain(DomainT&& value) { m_domainHasBeenSet = true; m_domain = std::forward<DomainT>(value); }
+    template<typename DomainT = Aws::String>
+    NetworkEndpoint& WithDomain(DomainT&& value) { SetDomain(std::forward<DomainT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The port number associated with the network endpoint. </p>
      */
-    inline int GetPort() const{ return m_port; }
+    inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline NetworkEndpoint& WithPort(int value) { SetPort(value); return *this;}
@@ -105,36 +99,36 @@ namespace Model
     /**
      * <p> Information about the location of the network endpoint. </p>
      */
-    inline const NetworkGeoLocation& GetLocation() const{ return m_location; }
+    inline const NetworkGeoLocation& GetLocation() const { return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-    inline void SetLocation(const NetworkGeoLocation& value) { m_locationHasBeenSet = true; m_location = value; }
-    inline void SetLocation(NetworkGeoLocation&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-    inline NetworkEndpoint& WithLocation(const NetworkGeoLocation& value) { SetLocation(value); return *this;}
-    inline NetworkEndpoint& WithLocation(NetworkGeoLocation&& value) { SetLocation(std::move(value)); return *this;}
+    template<typename LocationT = NetworkGeoLocation>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = NetworkGeoLocation>
+    NetworkEndpoint& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The Autonomous System Number (ASN) of the network endpoint. </p>
      */
-    inline const NetworkAutonomousSystem& GetAutonomousSystem() const{ return m_autonomousSystem; }
+    inline const NetworkAutonomousSystem& GetAutonomousSystem() const { return m_autonomousSystem; }
     inline bool AutonomousSystemHasBeenSet() const { return m_autonomousSystemHasBeenSet; }
-    inline void SetAutonomousSystem(const NetworkAutonomousSystem& value) { m_autonomousSystemHasBeenSet = true; m_autonomousSystem = value; }
-    inline void SetAutonomousSystem(NetworkAutonomousSystem&& value) { m_autonomousSystemHasBeenSet = true; m_autonomousSystem = std::move(value); }
-    inline NetworkEndpoint& WithAutonomousSystem(const NetworkAutonomousSystem& value) { SetAutonomousSystem(value); return *this;}
-    inline NetworkEndpoint& WithAutonomousSystem(NetworkAutonomousSystem&& value) { SetAutonomousSystem(std::move(value)); return *this;}
+    template<typename AutonomousSystemT = NetworkAutonomousSystem>
+    void SetAutonomousSystem(AutonomousSystemT&& value) { m_autonomousSystemHasBeenSet = true; m_autonomousSystem = std::forward<AutonomousSystemT>(value); }
+    template<typename AutonomousSystemT = NetworkAutonomousSystem>
+    NetworkEndpoint& WithAutonomousSystem(AutonomousSystemT&& value) { SetAutonomousSystem(std::forward<AutonomousSystemT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Information about the network connection. </p>
      */
-    inline const NetworkConnection& GetConnection() const{ return m_connection; }
+    inline const NetworkConnection& GetConnection() const { return m_connection; }
     inline bool ConnectionHasBeenSet() const { return m_connectionHasBeenSet; }
-    inline void SetConnection(const NetworkConnection& value) { m_connectionHasBeenSet = true; m_connection = value; }
-    inline void SetConnection(NetworkConnection&& value) { m_connectionHasBeenSet = true; m_connection = std::move(value); }
-    inline NetworkEndpoint& WithConnection(const NetworkConnection& value) { SetConnection(value); return *this;}
-    inline NetworkEndpoint& WithConnection(NetworkConnection&& value) { SetConnection(std::move(value)); return *this;}
+    template<typename ConnectionT = NetworkConnection>
+    void SetConnection(ConnectionT&& value) { m_connectionHasBeenSet = true; m_connection = std::forward<ConnectionT>(value); }
+    template<typename ConnectionT = NetworkConnection>
+    NetworkEndpoint& WithConnection(ConnectionT&& value) { SetConnection(std::forward<ConnectionT>(value)); return *this;}
     ///@}
   private:
 
@@ -147,7 +141,7 @@ namespace Model
     Aws::String m_domain;
     bool m_domainHasBeenSet = false;
 
-    int m_port;
+    int m_port{0};
     bool m_portHasBeenSet = false;
 
     NetworkGeoLocation m_location;

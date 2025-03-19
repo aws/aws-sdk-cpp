@@ -18,16 +18,7 @@ namespace Greengrass
 namespace Model
 {
 
-Subscription::Subscription() : 
-    m_idHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_subjectHasBeenSet(false),
-    m_targetHasBeenSet(false)
-{
-}
-
 Subscription::Subscription(JsonView jsonValue)
-  : Subscription()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ Subscription& Subscription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Source"))
   {
     m_source = jsonValue.GetString("Source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Subject"))
   {
     m_subject = jsonValue.GetString("Subject");
-
     m_subjectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Target"))
   {
     m_target = jsonValue.GetString("Target");
-
     m_targetHasBeenSet = true;
   }
-
   return *this;
 }
 

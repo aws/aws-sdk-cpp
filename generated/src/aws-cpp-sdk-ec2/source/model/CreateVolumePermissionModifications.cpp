@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CreateVolumePermissionModifications::CreateVolumePermissionModifications() : 
-    m_addHasBeenSet(false),
-    m_removeHasBeenSet(false)
-{
-}
-
 CreateVolumePermissionModifications::CreateVolumePermissionModifications(const XmlNode& xmlNode)
-  : CreateVolumePermissionModifications()
 {
   *this = xmlNode;
 }
@@ -42,6 +35,7 @@ CreateVolumePermissionModifications& CreateVolumePermissionModifications::operat
     if(!addNode.IsNull())
     {
       XmlNode addMember = addNode.FirstChild("item");
+      m_addHasBeenSet = !addMember.IsNull();
       while(!addMember.IsNull())
       {
         m_add.push_back(addMember);
@@ -54,6 +48,7 @@ CreateVolumePermissionModifications& CreateVolumePermissionModifications::operat
     if(!removeNode.IsNull())
     {
       XmlNode removeMember = removeNode.FirstChild("item");
+      m_removeHasBeenSet = !removeMember.IsNull();
       while(!removeMember.IsNull())
       {
         m_remove.push_back(removeMember);

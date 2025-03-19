@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateLoggingConfigurationResult::UpdateLoggingConfigurationResult() : 
-    m_state(UpdateLoggingConfigurationState::NOT_SET)
-{
-}
-
 UpdateLoggingConfigurationResult::UpdateLoggingConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateLoggingConfigurationResult()
 {
   *this = result;
 }
@@ -34,45 +28,38 @@ UpdateLoggingConfigurationResult& UpdateLoggingConfigurationResult::operator =(c
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createTime"))
   {
     m_createTime = jsonValue.GetString("createTime");
-
+    m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateTime"))
   {
     m_updateTime = jsonValue.GetString("updateTime");
-
+    m_updateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destinationConfiguration"))
   {
     m_destinationConfiguration = jsonValue.GetObject("destinationConfiguration");
-
+    m_destinationConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = UpdateLoggingConfigurationStateMapper::GetUpdateLoggingConfigurationStateForName(jsonValue.GetString("state"));
-
+    m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -80,14 +67,15 @@ UpdateLoggingConfigurationResult& UpdateLoggingConfigurationResult::operator =(c
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

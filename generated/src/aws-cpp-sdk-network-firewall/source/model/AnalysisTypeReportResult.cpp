@@ -18,18 +18,7 @@ namespace NetworkFirewall
 namespace Model
 {
 
-AnalysisTypeReportResult::AnalysisTypeReportResult() : 
-    m_protocolHasBeenSet(false),
-    m_firstAccessedHasBeenSet(false),
-    m_lastAccessedHasBeenSet(false),
-    m_domainHasBeenSet(false),
-    m_hitsHasBeenSet(false),
-    m_uniqueSourcesHasBeenSet(false)
-{
-}
-
 AnalysisTypeReportResult::AnalysisTypeReportResult(JsonView jsonValue)
-  : AnalysisTypeReportResult()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ AnalysisTypeReportResult& AnalysisTypeReportResult::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Protocol"))
   {
     m_protocol = jsonValue.GetString("Protocol");
-
     m_protocolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FirstAccessed"))
   {
     m_firstAccessed = jsonValue.GetDouble("FirstAccessed");
-
     m_firstAccessedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastAccessed"))
   {
     m_lastAccessed = jsonValue.GetDouble("LastAccessed");
-
     m_lastAccessedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Domain"))
   {
     m_domain = jsonValue.GetString("Domain");
-
     m_domainHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Hits"))
   {
     m_hits = jsonValue.GetObject("Hits");
-
     m_hitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UniqueSources"))
   {
     m_uniqueSources = jsonValue.GetObject("UniqueSources");
-
     m_uniqueSourcesHasBeenSet = true;
   }
-
   return *this;
 }
 

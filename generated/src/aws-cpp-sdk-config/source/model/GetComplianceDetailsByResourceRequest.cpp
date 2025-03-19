@@ -12,15 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetComplianceDetailsByResourceRequest::GetComplianceDetailsByResourceRequest() : 
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_complianceTypesHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_resourceEvaluationIdHasBeenSet(false)
-{
-}
-
 Aws::String GetComplianceDetailsByResourceRequest::SerializePayload() const
 {
   JsonValue payload;

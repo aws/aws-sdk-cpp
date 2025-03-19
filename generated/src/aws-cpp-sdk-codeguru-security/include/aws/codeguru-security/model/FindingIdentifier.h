@@ -32,7 +32,7 @@ namespace Model
   class FindingIdentifier
   {
   public:
-    AWS_CODEGURUSECURITY_API FindingIdentifier();
+    AWS_CODEGURUSECURITY_API FindingIdentifier() = default;
     AWS_CODEGURUSECURITY_API FindingIdentifier(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUSECURITY_API FindingIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUSECURITY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The identifier for a finding.</p>
      */
-    inline const Aws::String& GetFindingId() const{ return m_findingId; }
+    inline const Aws::String& GetFindingId() const { return m_findingId; }
     inline bool FindingIdHasBeenSet() const { return m_findingIdHasBeenSet; }
-    inline void SetFindingId(const Aws::String& value) { m_findingIdHasBeenSet = true; m_findingId = value; }
-    inline void SetFindingId(Aws::String&& value) { m_findingIdHasBeenSet = true; m_findingId = std::move(value); }
-    inline void SetFindingId(const char* value) { m_findingIdHasBeenSet = true; m_findingId.assign(value); }
-    inline FindingIdentifier& WithFindingId(const Aws::String& value) { SetFindingId(value); return *this;}
-    inline FindingIdentifier& WithFindingId(Aws::String&& value) { SetFindingId(std::move(value)); return *this;}
-    inline FindingIdentifier& WithFindingId(const char* value) { SetFindingId(value); return *this;}
+    template<typename FindingIdT = Aws::String>
+    void SetFindingId(FindingIdT&& value) { m_findingIdHasBeenSet = true; m_findingId = std::forward<FindingIdT>(value); }
+    template<typename FindingIdT = Aws::String>
+    FindingIdentifier& WithFindingId(FindingIdT&& value) { SetFindingId(std::forward<FindingIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the scan that generated the finding. </p>
      */
-    inline const Aws::String& GetScanName() const{ return m_scanName; }
+    inline const Aws::String& GetScanName() const { return m_scanName; }
     inline bool ScanNameHasBeenSet() const { return m_scanNameHasBeenSet; }
-    inline void SetScanName(const Aws::String& value) { m_scanNameHasBeenSet = true; m_scanName = value; }
-    inline void SetScanName(Aws::String&& value) { m_scanNameHasBeenSet = true; m_scanName = std::move(value); }
-    inline void SetScanName(const char* value) { m_scanNameHasBeenSet = true; m_scanName.assign(value); }
-    inline FindingIdentifier& WithScanName(const Aws::String& value) { SetScanName(value); return *this;}
-    inline FindingIdentifier& WithScanName(Aws::String&& value) { SetScanName(std::move(value)); return *this;}
-    inline FindingIdentifier& WithScanName(const char* value) { SetScanName(value); return *this;}
+    template<typename ScanNameT = Aws::String>
+    void SetScanName(ScanNameT&& value) { m_scanNameHasBeenSet = true; m_scanName = std::forward<ScanNameT>(value); }
+    template<typename ScanNameT = Aws::String>
+    FindingIdentifier& WithScanName(ScanNameT&& value) { SetScanName(std::forward<ScanNameT>(value)); return *this;}
     ///@}
   private:
 

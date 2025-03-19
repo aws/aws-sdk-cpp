@@ -12,15 +12,6 @@ using namespace Aws::BCMPricingCalculator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateBillEstimateRequest::CreateBillEstimateRequest() : 
-    m_billScenarioIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateBillEstimateRequest::SerializePayload() const
 {
   JsonValue payload;

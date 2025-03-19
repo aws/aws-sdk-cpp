@@ -32,7 +32,7 @@ namespace Model
   class SMSChannelRequest
   {
   public:
-    AWS_PINPOINT_API SMSChannelRequest();
+    AWS_PINPOINT_API SMSChannelRequest() = default;
     AWS_PINPOINT_API SMSChannelRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API SMSChannelRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>Specifies whether to enable the SMS channel for the application.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline SMSChannelRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -53,14 +53,12 @@ namespace Model
      * <p>The identity that you want to display on recipients' devices when they
      * receive messages from the SMS channel.</p>
      */
-    inline const Aws::String& GetSenderId() const{ return m_senderId; }
+    inline const Aws::String& GetSenderId() const { return m_senderId; }
     inline bool SenderIdHasBeenSet() const { return m_senderIdHasBeenSet; }
-    inline void SetSenderId(const Aws::String& value) { m_senderIdHasBeenSet = true; m_senderId = value; }
-    inline void SetSenderId(Aws::String&& value) { m_senderIdHasBeenSet = true; m_senderId = std::move(value); }
-    inline void SetSenderId(const char* value) { m_senderIdHasBeenSet = true; m_senderId.assign(value); }
-    inline SMSChannelRequest& WithSenderId(const Aws::String& value) { SetSenderId(value); return *this;}
-    inline SMSChannelRequest& WithSenderId(Aws::String&& value) { SetSenderId(std::move(value)); return *this;}
-    inline SMSChannelRequest& WithSenderId(const char* value) { SetSenderId(value); return *this;}
+    template<typename SenderIdT = Aws::String>
+    void SetSenderId(SenderIdT&& value) { m_senderIdHasBeenSet = true; m_senderId = std::forward<SenderIdT>(value); }
+    template<typename SenderIdT = Aws::String>
+    SMSChannelRequest& WithSenderId(SenderIdT&& value) { SetSenderId(std::forward<SenderIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,18 +66,16 @@ namespace Model
      * <p>The registered short code that you want to use when you send messages through
      * the SMS channel.</p>
      */
-    inline const Aws::String& GetShortCode() const{ return m_shortCode; }
+    inline const Aws::String& GetShortCode() const { return m_shortCode; }
     inline bool ShortCodeHasBeenSet() const { return m_shortCodeHasBeenSet; }
-    inline void SetShortCode(const Aws::String& value) { m_shortCodeHasBeenSet = true; m_shortCode = value; }
-    inline void SetShortCode(Aws::String&& value) { m_shortCodeHasBeenSet = true; m_shortCode = std::move(value); }
-    inline void SetShortCode(const char* value) { m_shortCodeHasBeenSet = true; m_shortCode.assign(value); }
-    inline SMSChannelRequest& WithShortCode(const Aws::String& value) { SetShortCode(value); return *this;}
-    inline SMSChannelRequest& WithShortCode(Aws::String&& value) { SetShortCode(std::move(value)); return *this;}
-    inline SMSChannelRequest& WithShortCode(const char* value) { SetShortCode(value); return *this;}
+    template<typename ShortCodeT = Aws::String>
+    void SetShortCode(ShortCodeT&& value) { m_shortCodeHasBeenSet = true; m_shortCode = std::forward<ShortCodeT>(value); }
+    template<typename ShortCodeT = Aws::String>
+    SMSChannelRequest& WithShortCode(ShortCodeT&& value) { SetShortCode(std::forward<ShortCodeT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
     Aws::String m_senderId;

@@ -33,7 +33,7 @@ namespace Model
   class MLUserDataEncryption
   {
   public:
-    AWS_GLUE_API MLUserDataEncryption();
+    AWS_GLUE_API MLUserDataEncryption() = default;
     AWS_GLUE_API MLUserDataEncryption(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API MLUserDataEncryption& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,30 +46,26 @@ namespace Model
      * encryption with Key Management Service (SSE-KMS) for user data stored in Amazon
      * S3.</p> </li> </ul>
      */
-    inline const MLUserDataEncryptionModeString& GetMlUserDataEncryptionMode() const{ return m_mlUserDataEncryptionMode; }
+    inline MLUserDataEncryptionModeString GetMlUserDataEncryptionMode() const { return m_mlUserDataEncryptionMode; }
     inline bool MlUserDataEncryptionModeHasBeenSet() const { return m_mlUserDataEncryptionModeHasBeenSet; }
-    inline void SetMlUserDataEncryptionMode(const MLUserDataEncryptionModeString& value) { m_mlUserDataEncryptionModeHasBeenSet = true; m_mlUserDataEncryptionMode = value; }
-    inline void SetMlUserDataEncryptionMode(MLUserDataEncryptionModeString&& value) { m_mlUserDataEncryptionModeHasBeenSet = true; m_mlUserDataEncryptionMode = std::move(value); }
-    inline MLUserDataEncryption& WithMlUserDataEncryptionMode(const MLUserDataEncryptionModeString& value) { SetMlUserDataEncryptionMode(value); return *this;}
-    inline MLUserDataEncryption& WithMlUserDataEncryptionMode(MLUserDataEncryptionModeString&& value) { SetMlUserDataEncryptionMode(std::move(value)); return *this;}
+    inline void SetMlUserDataEncryptionMode(MLUserDataEncryptionModeString value) { m_mlUserDataEncryptionModeHasBeenSet = true; m_mlUserDataEncryptionMode = value; }
+    inline MLUserDataEncryption& WithMlUserDataEncryptionMode(MLUserDataEncryptionModeString value) { SetMlUserDataEncryptionMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID for the customer-provided KMS key.</p>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline MLUserDataEncryption& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline MLUserDataEncryption& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline MLUserDataEncryption& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    MLUserDataEncryption& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
   private:
 
-    MLUserDataEncryptionModeString m_mlUserDataEncryptionMode;
+    MLUserDataEncryptionModeString m_mlUserDataEncryptionMode{MLUserDataEncryptionModeString::NOT_SET};
     bool m_mlUserDataEncryptionModeHasBeenSet = false;
 
     Aws::String m_kmsKeyId;

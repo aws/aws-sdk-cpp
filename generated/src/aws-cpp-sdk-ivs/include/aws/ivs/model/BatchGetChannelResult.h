@@ -30,7 +30,7 @@ namespace Model
   class BatchGetChannelResult
   {
   public:
-    AWS_IVS_API BatchGetChannelResult();
+    AWS_IVS_API BatchGetChannelResult() = default;
     AWS_IVS_API BatchGetChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IVS_API BatchGetChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,46 @@ namespace Model
     /**
      * <p/>
      */
-    inline const Aws::Vector<Channel>& GetChannels() const{ return m_channels; }
-    inline void SetChannels(const Aws::Vector<Channel>& value) { m_channels = value; }
-    inline void SetChannels(Aws::Vector<Channel>&& value) { m_channels = std::move(value); }
-    inline BatchGetChannelResult& WithChannels(const Aws::Vector<Channel>& value) { SetChannels(value); return *this;}
-    inline BatchGetChannelResult& WithChannels(Aws::Vector<Channel>&& value) { SetChannels(std::move(value)); return *this;}
-    inline BatchGetChannelResult& AddChannels(const Channel& value) { m_channels.push_back(value); return *this; }
-    inline BatchGetChannelResult& AddChannels(Channel&& value) { m_channels.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Channel>& GetChannels() const { return m_channels; }
+    template<typename ChannelsT = Aws::Vector<Channel>>
+    void SetChannels(ChannelsT&& value) { m_channelsHasBeenSet = true; m_channels = std::forward<ChannelsT>(value); }
+    template<typename ChannelsT = Aws::Vector<Channel>>
+    BatchGetChannelResult& WithChannels(ChannelsT&& value) { SetChannels(std::forward<ChannelsT>(value)); return *this;}
+    template<typename ChannelsT = Channel>
+    BatchGetChannelResult& AddChannels(ChannelsT&& value) { m_channelsHasBeenSet = true; m_channels.emplace_back(std::forward<ChannelsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Each error object is related to a specific ARN in the request.</p>
      */
-    inline const Aws::Vector<BatchError>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<BatchError>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<BatchError>&& value) { m_errors = std::move(value); }
-    inline BatchGetChannelResult& WithErrors(const Aws::Vector<BatchError>& value) { SetErrors(value); return *this;}
-    inline BatchGetChannelResult& WithErrors(Aws::Vector<BatchError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline BatchGetChannelResult& AddErrors(const BatchError& value) { m_errors.push_back(value); return *this; }
-    inline BatchGetChannelResult& AddErrors(BatchError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<BatchError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<BatchError>>
+    BatchGetChannelResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = BatchError>
+    BatchGetChannelResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchGetChannelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchGetChannelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchGetChannelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchGetChannelResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Channel> m_channels;
+    bool m_channelsHasBeenSet = false;
 
     Aws::Vector<BatchError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

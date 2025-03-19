@@ -33,7 +33,7 @@ namespace Model
   class ConnectorEntity
   {
   public:
-    AWS_APPFLOW_API ConnectorEntity();
+    AWS_APPFLOW_API ConnectorEntity() = default;
     AWS_APPFLOW_API ConnectorEntity(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API ConnectorEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p> The name of the connector entity. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ConnectorEntity& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ConnectorEntity& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ConnectorEntity& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ConnectorEntity& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The label applied to the connector entity. </p>
      */
-    inline const Aws::String& GetLabel() const{ return m_label; }
+    inline const Aws::String& GetLabel() const { return m_label; }
     inline bool LabelHasBeenSet() const { return m_labelHasBeenSet; }
-    inline void SetLabel(const Aws::String& value) { m_labelHasBeenSet = true; m_label = value; }
-    inline void SetLabel(Aws::String&& value) { m_labelHasBeenSet = true; m_label = std::move(value); }
-    inline void SetLabel(const char* value) { m_labelHasBeenSet = true; m_label.assign(value); }
-    inline ConnectorEntity& WithLabel(const Aws::String& value) { SetLabel(value); return *this;}
-    inline ConnectorEntity& WithLabel(Aws::String&& value) { SetLabel(std::move(value)); return *this;}
-    inline ConnectorEntity& WithLabel(const char* value) { SetLabel(value); return *this;}
+    template<typename LabelT = Aws::String>
+    void SetLabel(LabelT&& value) { m_labelHasBeenSet = true; m_label = std::forward<LabelT>(value); }
+    template<typename LabelT = Aws::String>
+    ConnectorEntity& WithLabel(LabelT&& value) { SetLabel(std::forward<LabelT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,7 +72,7 @@ namespace Model
      * the nested entities underneath it. This provides a way to retrieve all supported
      * entities in a recursive fashion. </p>
      */
-    inline bool GetHasNestedEntities() const{ return m_hasNestedEntities; }
+    inline bool GetHasNestedEntities() const { return m_hasNestedEntities; }
     inline bool HasNestedEntitiesHasBeenSet() const { return m_hasNestedEntitiesHasBeenSet; }
     inline void SetHasNestedEntities(bool value) { m_hasNestedEntitiesHasBeenSet = true; m_hasNestedEntities = value; }
     inline ConnectorEntity& WithHasNestedEntities(bool value) { SetHasNestedEntities(value); return *this;}
@@ -89,7 +85,7 @@ namespace Model
     Aws::String m_label;
     bool m_labelHasBeenSet = false;
 
-    bool m_hasNestedEntities;
+    bool m_hasNestedEntities{false};
     bool m_hasNestedEntitiesHasBeenSet = false;
   };
 

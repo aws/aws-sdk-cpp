@@ -12,15 +12,6 @@ using namespace Aws::ManagedBlockchainQuery::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListTokenBalancesRequest::ListTokenBalancesRequest() : 
-    m_ownerFilterHasBeenSet(false),
-    m_tokenFilterHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListTokenBalancesRequest::SerializePayload() const
 {
   JsonValue payload;

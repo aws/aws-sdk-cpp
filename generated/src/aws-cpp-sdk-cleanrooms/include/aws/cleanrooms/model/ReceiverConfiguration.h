@@ -33,7 +33,7 @@ namespace Model
   class ReceiverConfiguration
   {
   public:
-    AWS_CLEANROOMS_API ReceiverConfiguration();
+    AWS_CLEANROOMS_API ReceiverConfiguration() = default;
     AWS_CLEANROOMS_API ReceiverConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API ReceiverConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,28 +46,26 @@ namespace Model
      * additional analyses (<code>ADDITIONAL_ANALYSIS</code>), such as a query that is
      * a seed for a lookalike ML model.</p>
      */
-    inline const AnalysisType& GetAnalysisType() const{ return m_analysisType; }
+    inline AnalysisType GetAnalysisType() const { return m_analysisType; }
     inline bool AnalysisTypeHasBeenSet() const { return m_analysisTypeHasBeenSet; }
-    inline void SetAnalysisType(const AnalysisType& value) { m_analysisTypeHasBeenSet = true; m_analysisType = value; }
-    inline void SetAnalysisType(AnalysisType&& value) { m_analysisTypeHasBeenSet = true; m_analysisType = std::move(value); }
-    inline ReceiverConfiguration& WithAnalysisType(const AnalysisType& value) { SetAnalysisType(value); return *this;}
-    inline ReceiverConfiguration& WithAnalysisType(AnalysisType&& value) { SetAnalysisType(std::move(value)); return *this;}
+    inline void SetAnalysisType(AnalysisType value) { m_analysisTypeHasBeenSet = true; m_analysisType = value; }
+    inline ReceiverConfiguration& WithAnalysisType(AnalysisType value) { SetAnalysisType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The configuration details of the receiver configuration.</p>
      */
-    inline const ConfigurationDetails& GetConfigurationDetails() const{ return m_configurationDetails; }
+    inline const ConfigurationDetails& GetConfigurationDetails() const { return m_configurationDetails; }
     inline bool ConfigurationDetailsHasBeenSet() const { return m_configurationDetailsHasBeenSet; }
-    inline void SetConfigurationDetails(const ConfigurationDetails& value) { m_configurationDetailsHasBeenSet = true; m_configurationDetails = value; }
-    inline void SetConfigurationDetails(ConfigurationDetails&& value) { m_configurationDetailsHasBeenSet = true; m_configurationDetails = std::move(value); }
-    inline ReceiverConfiguration& WithConfigurationDetails(const ConfigurationDetails& value) { SetConfigurationDetails(value); return *this;}
-    inline ReceiverConfiguration& WithConfigurationDetails(ConfigurationDetails&& value) { SetConfigurationDetails(std::move(value)); return *this;}
+    template<typename ConfigurationDetailsT = ConfigurationDetails>
+    void SetConfigurationDetails(ConfigurationDetailsT&& value) { m_configurationDetailsHasBeenSet = true; m_configurationDetails = std::forward<ConfigurationDetailsT>(value); }
+    template<typename ConfigurationDetailsT = ConfigurationDetails>
+    ReceiverConfiguration& WithConfigurationDetails(ConfigurationDetailsT&& value) { SetConfigurationDetails(std::forward<ConfigurationDetailsT>(value)); return *this;}
     ///@}
   private:
 
-    AnalysisType m_analysisType;
+    AnalysisType m_analysisType{AnalysisType::NOT_SET};
     bool m_analysisTypeHasBeenSet = false;
 
     ConfigurationDetails m_configurationDetails;

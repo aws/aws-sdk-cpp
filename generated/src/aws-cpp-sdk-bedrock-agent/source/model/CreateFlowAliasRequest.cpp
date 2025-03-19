@@ -12,17 +12,6 @@ using namespace Aws::BedrockAgent::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateFlowAliasRequest::CreateFlowAliasRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_descriptionHasBeenSet(false),
-    m_flowIdentifierHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_routingConfigurationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateFlowAliasRequest::SerializePayload() const
 {
   JsonValue payload;

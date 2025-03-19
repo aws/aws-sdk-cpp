@@ -18,16 +18,7 @@ namespace Glue
 namespace Model
 {
 
-TargetProcessingProperties::TargetProcessingProperties() : 
-    m_roleArnHasBeenSet(false),
-    m_kmsArnHasBeenSet(false),
-    m_connectionNameHasBeenSet(false),
-    m_eventBusArnHasBeenSet(false)
-{
-}
-
 TargetProcessingProperties::TargetProcessingProperties(JsonView jsonValue)
-  : TargetProcessingProperties()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ TargetProcessingProperties& TargetProcessingProperties::operator =(JsonView json
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsArn"))
   {
     m_kmsArn = jsonValue.GetString("KmsArn");
-
     m_kmsArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionName"))
   {
     m_connectionName = jsonValue.GetString("ConnectionName");
-
     m_connectionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventBusArn"))
   {
     m_eventBusArn = jsonValue.GetString("EventBusArn");
-
     m_eventBusArnHasBeenSet = true;
   }
-
   return *this;
 }
 

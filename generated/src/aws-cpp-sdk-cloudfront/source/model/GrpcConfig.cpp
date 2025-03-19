@@ -20,14 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-GrpcConfig::GrpcConfig() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 GrpcConfig::GrpcConfig(const XmlNode& xmlNode)
-  : GrpcConfig()
 {
   *this = xmlNode;
 }

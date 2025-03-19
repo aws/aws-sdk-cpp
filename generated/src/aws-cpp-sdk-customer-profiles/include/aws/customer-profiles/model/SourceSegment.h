@@ -31,7 +31,7 @@ namespace Model
   class SourceSegment
   {
   public:
-    AWS_CUSTOMERPROFILES_API SourceSegment();
+    AWS_CUSTOMERPROFILES_API SourceSegment() = default;
     AWS_CUSTOMERPROFILES_API SourceSegment(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API SourceSegment& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The unique name of the segment definition.</p>
      */
-    inline const Aws::String& GetSegmentDefinitionName() const{ return m_segmentDefinitionName; }
+    inline const Aws::String& GetSegmentDefinitionName() const { return m_segmentDefinitionName; }
     inline bool SegmentDefinitionNameHasBeenSet() const { return m_segmentDefinitionNameHasBeenSet; }
-    inline void SetSegmentDefinitionName(const Aws::String& value) { m_segmentDefinitionNameHasBeenSet = true; m_segmentDefinitionName = value; }
-    inline void SetSegmentDefinitionName(Aws::String&& value) { m_segmentDefinitionNameHasBeenSet = true; m_segmentDefinitionName = std::move(value); }
-    inline void SetSegmentDefinitionName(const char* value) { m_segmentDefinitionNameHasBeenSet = true; m_segmentDefinitionName.assign(value); }
-    inline SourceSegment& WithSegmentDefinitionName(const Aws::String& value) { SetSegmentDefinitionName(value); return *this;}
-    inline SourceSegment& WithSegmentDefinitionName(Aws::String&& value) { SetSegmentDefinitionName(std::move(value)); return *this;}
-    inline SourceSegment& WithSegmentDefinitionName(const char* value) { SetSegmentDefinitionName(value); return *this;}
+    template<typename SegmentDefinitionNameT = Aws::String>
+    void SetSegmentDefinitionName(SegmentDefinitionNameT&& value) { m_segmentDefinitionNameHasBeenSet = true; m_segmentDefinitionName = std::forward<SegmentDefinitionNameT>(value); }
+    template<typename SegmentDefinitionNameT = Aws::String>
+    SourceSegment& WithSegmentDefinitionName(SegmentDefinitionNameT&& value) { SetSegmentDefinitionName(std::forward<SegmentDefinitionNameT>(value)); return *this;}
     ///@}
   private:
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetResourcePolicyResult::GetResourcePolicyResult()
-{
-}
-
 GetResourcePolicyResult::GetResourcePolicyResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ GetResourcePolicyResult& GetResourcePolicyResult::operator =(const Aws::AmazonWe
     if(!policyNode.IsNull())
     {
       m_policy = Aws::Utils::Xml::DecodeEscapedXmlText(policyNode.GetText());
+      m_policyHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElasticLoadBalancingv2::Model::GetResourcePolicyResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

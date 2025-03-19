@@ -28,7 +28,7 @@ namespace Model
   class UpdateApplicationMaintenanceConfigurationResult
   {
   public:
-    AWS_KINESISANALYTICSV2_API UpdateApplicationMaintenanceConfigurationResult();
+    AWS_KINESISANALYTICSV2_API UpdateApplicationMaintenanceConfigurationResult() = default;
     AWS_KINESISANALYTICSV2_API UpdateApplicationMaintenanceConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KINESISANALYTICSV2_API UpdateApplicationMaintenanceConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,43 +37,42 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
-    inline const Aws::String& GetApplicationARN() const{ return m_applicationARN; }
-    inline void SetApplicationARN(const Aws::String& value) { m_applicationARN = value; }
-    inline void SetApplicationARN(Aws::String&& value) { m_applicationARN = std::move(value); }
-    inline void SetApplicationARN(const char* value) { m_applicationARN.assign(value); }
-    inline UpdateApplicationMaintenanceConfigurationResult& WithApplicationARN(const Aws::String& value) { SetApplicationARN(value); return *this;}
-    inline UpdateApplicationMaintenanceConfigurationResult& WithApplicationARN(Aws::String&& value) { SetApplicationARN(std::move(value)); return *this;}
-    inline UpdateApplicationMaintenanceConfigurationResult& WithApplicationARN(const char* value) { SetApplicationARN(value); return *this;}
+    inline const Aws::String& GetApplicationARN() const { return m_applicationARN; }
+    template<typename ApplicationARNT = Aws::String>
+    void SetApplicationARN(ApplicationARNT&& value) { m_applicationARNHasBeenSet = true; m_applicationARN = std::forward<ApplicationARNT>(value); }
+    template<typename ApplicationARNT = Aws::String>
+    UpdateApplicationMaintenanceConfigurationResult& WithApplicationARN(ApplicationARNT&& value) { SetApplicationARN(std::forward<ApplicationARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The application maintenance configuration description after the update.</p>
      */
-    inline const ApplicationMaintenanceConfigurationDescription& GetApplicationMaintenanceConfigurationDescription() const{ return m_applicationMaintenanceConfigurationDescription; }
-    inline void SetApplicationMaintenanceConfigurationDescription(const ApplicationMaintenanceConfigurationDescription& value) { m_applicationMaintenanceConfigurationDescription = value; }
-    inline void SetApplicationMaintenanceConfigurationDescription(ApplicationMaintenanceConfigurationDescription&& value) { m_applicationMaintenanceConfigurationDescription = std::move(value); }
-    inline UpdateApplicationMaintenanceConfigurationResult& WithApplicationMaintenanceConfigurationDescription(const ApplicationMaintenanceConfigurationDescription& value) { SetApplicationMaintenanceConfigurationDescription(value); return *this;}
-    inline UpdateApplicationMaintenanceConfigurationResult& WithApplicationMaintenanceConfigurationDescription(ApplicationMaintenanceConfigurationDescription&& value) { SetApplicationMaintenanceConfigurationDescription(std::move(value)); return *this;}
+    inline const ApplicationMaintenanceConfigurationDescription& GetApplicationMaintenanceConfigurationDescription() const { return m_applicationMaintenanceConfigurationDescription; }
+    template<typename ApplicationMaintenanceConfigurationDescriptionT = ApplicationMaintenanceConfigurationDescription>
+    void SetApplicationMaintenanceConfigurationDescription(ApplicationMaintenanceConfigurationDescriptionT&& value) { m_applicationMaintenanceConfigurationDescriptionHasBeenSet = true; m_applicationMaintenanceConfigurationDescription = std::forward<ApplicationMaintenanceConfigurationDescriptionT>(value); }
+    template<typename ApplicationMaintenanceConfigurationDescriptionT = ApplicationMaintenanceConfigurationDescription>
+    UpdateApplicationMaintenanceConfigurationResult& WithApplicationMaintenanceConfigurationDescription(ApplicationMaintenanceConfigurationDescriptionT&& value) { SetApplicationMaintenanceConfigurationDescription(std::forward<ApplicationMaintenanceConfigurationDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateApplicationMaintenanceConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateApplicationMaintenanceConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateApplicationMaintenanceConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateApplicationMaintenanceConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_applicationARN;
+    bool m_applicationARNHasBeenSet = false;
 
     ApplicationMaintenanceConfigurationDescription m_applicationMaintenanceConfigurationDescription;
+    bool m_applicationMaintenanceConfigurationDescriptionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

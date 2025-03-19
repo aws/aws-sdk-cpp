@@ -12,14 +12,6 @@ using namespace Aws::DirectConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateMacSecKeyRequest::AssociateMacSecKeyRequest() : 
-    m_connectionIdHasBeenSet(false),
-    m_secretARNHasBeenSet(false),
-    m_cknHasBeenSet(false),
-    m_cakHasBeenSet(false)
-{
-}
-
 Aws::String AssociateMacSecKeyRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -33,7 +33,7 @@ namespace Model
   class CanaryRunConfigInput
   {
   public:
-    AWS_SYNTHETICS_API CanaryRunConfigInput();
+    AWS_SYNTHETICS_API CanaryRunConfigInput() = default;
     AWS_SYNTHETICS_API CanaryRunConfigInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_SYNTHETICS_API CanaryRunConfigInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SYNTHETICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,7 +46,7 @@ namespace Model
      * omit this field, the frequency of the canary is used as this value, up to a
      * maximum of 14 minutes.</p>
      */
-    inline int GetTimeoutInSeconds() const{ return m_timeoutInSeconds; }
+    inline int GetTimeoutInSeconds() const { return m_timeoutInSeconds; }
     inline bool TimeoutInSecondsHasBeenSet() const { return m_timeoutInSecondsHasBeenSet; }
     inline void SetTimeoutInSeconds(int value) { m_timeoutInSecondsHasBeenSet = true; m_timeoutInSeconds = value; }
     inline CanaryRunConfigInput& WithTimeoutInSeconds(int value) { SetTimeoutInSeconds(value); return *this;}
@@ -57,7 +57,7 @@ namespace Model
      * <p>The maximum amount of memory available to the canary while it is running, in
      * MB. This value must be a multiple of 64.</p>
      */
-    inline int GetMemoryInMB() const{ return m_memoryInMB; }
+    inline int GetMemoryInMB() const { return m_memoryInMB; }
     inline bool MemoryInMBHasBeenSet() const { return m_memoryInMBHasBeenSet; }
     inline void SetMemoryInMB(int value) { m_memoryInMBHasBeenSet = true; m_memoryInMB = value; }
     inline CanaryRunConfigInput& WithMemoryInMB(int value) { SetMemoryInMB(value); return *this;}
@@ -75,7 +75,7 @@ namespace Model
      * canaries that use version <code>syn-nodejs-2.0</code> or later for their canary
      * runtime.</p>
      */
-    inline bool GetActiveTracing() const{ return m_activeTracing; }
+    inline bool GetActiveTracing() const { return m_activeTracing; }
     inline bool ActiveTracingHasBeenSet() const { return m_activeTracingHasBeenSet; }
     inline void SetActiveTracing(bool value) { m_activeTracingHasBeenSet = true; m_activeTracing = value; }
     inline CanaryRunConfigInput& WithActiveTracing(bool value) { SetActiveTracing(value); return *this;}
@@ -94,29 +94,26 @@ namespace Model
      * keys and values are not encrypted. Do not store sensitive information in this
      * field.</p> 
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetEnvironmentVariables() const{ return m_environmentVariables; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetEnvironmentVariables() const { return m_environmentVariables; }
     inline bool EnvironmentVariablesHasBeenSet() const { return m_environmentVariablesHasBeenSet; }
-    inline void SetEnvironmentVariables(const Aws::Map<Aws::String, Aws::String>& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables = value; }
-    inline void SetEnvironmentVariables(Aws::Map<Aws::String, Aws::String>&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables = std::move(value); }
-    inline CanaryRunConfigInput& WithEnvironmentVariables(const Aws::Map<Aws::String, Aws::String>& value) { SetEnvironmentVariables(value); return *this;}
-    inline CanaryRunConfigInput& WithEnvironmentVariables(Aws::Map<Aws::String, Aws::String>&& value) { SetEnvironmentVariables(std::move(value)); return *this;}
-    inline CanaryRunConfigInput& AddEnvironmentVariables(const Aws::String& key, const Aws::String& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(key, value); return *this; }
-    inline CanaryRunConfigInput& AddEnvironmentVariables(Aws::String&& key, const Aws::String& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(std::move(key), value); return *this; }
-    inline CanaryRunConfigInput& AddEnvironmentVariables(const Aws::String& key, Aws::String&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(key, std::move(value)); return *this; }
-    inline CanaryRunConfigInput& AddEnvironmentVariables(Aws::String&& key, Aws::String&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(std::move(key), std::move(value)); return *this; }
-    inline CanaryRunConfigInput& AddEnvironmentVariables(const char* key, Aws::String&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(key, std::move(value)); return *this; }
-    inline CanaryRunConfigInput& AddEnvironmentVariables(Aws::String&& key, const char* value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(std::move(key), value); return *this; }
-    inline CanaryRunConfigInput& AddEnvironmentVariables(const char* key, const char* value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(key, value); return *this; }
+    template<typename EnvironmentVariablesT = Aws::Map<Aws::String, Aws::String>>
+    void SetEnvironmentVariables(EnvironmentVariablesT&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables = std::forward<EnvironmentVariablesT>(value); }
+    template<typename EnvironmentVariablesT = Aws::Map<Aws::String, Aws::String>>
+    CanaryRunConfigInput& WithEnvironmentVariables(EnvironmentVariablesT&& value) { SetEnvironmentVariables(std::forward<EnvironmentVariablesT>(value)); return *this;}
+    template<typename EnvironmentVariablesKeyT = Aws::String, typename EnvironmentVariablesValueT = Aws::String>
+    CanaryRunConfigInput& AddEnvironmentVariables(EnvironmentVariablesKeyT&& key, EnvironmentVariablesValueT&& value) {
+      m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(std::forward<EnvironmentVariablesKeyT>(key), std::forward<EnvironmentVariablesValueT>(value)); return *this;
+    }
     ///@}
   private:
 
-    int m_timeoutInSeconds;
+    int m_timeoutInSeconds{0};
     bool m_timeoutInSecondsHasBeenSet = false;
 
-    int m_memoryInMB;
+    int m_memoryInMB{0};
     bool m_memoryInMBHasBeenSet = false;
 
-    bool m_activeTracing;
+    bool m_activeTracing{false};
     bool m_activeTracingHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_environmentVariables;

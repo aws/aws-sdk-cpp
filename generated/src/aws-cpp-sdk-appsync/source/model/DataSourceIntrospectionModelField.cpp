@@ -18,16 +18,7 @@ namespace AppSync
 namespace Model
 {
 
-DataSourceIntrospectionModelField::DataSourceIntrospectionModelField() : 
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_length(0),
-    m_lengthHasBeenSet(false)
-{
-}
-
 DataSourceIntrospectionModelField::DataSourceIntrospectionModelField(JsonView jsonValue)
-  : DataSourceIntrospectionModelField()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ DataSourceIntrospectionModelField& DataSourceIntrospectionModelField::operator =
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetObject("type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("length"))
   {
     m_length = jsonValue.GetInt64("length");
-
     m_lengthHasBeenSet = true;
   }
-
   return *this;
 }
 

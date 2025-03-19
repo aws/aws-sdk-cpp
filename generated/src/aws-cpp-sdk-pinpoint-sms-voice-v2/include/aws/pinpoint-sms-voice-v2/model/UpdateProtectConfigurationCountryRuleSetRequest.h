@@ -24,7 +24,7 @@ namespace Model
   class UpdateProtectConfigurationCountryRuleSetRequest : public PinpointSMSVoiceV2Request
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API UpdateProtectConfigurationCountryRuleSetRequest();
+    AWS_PINPOINTSMSVOICEV2_API UpdateProtectConfigurationCountryRuleSetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,26 +41,22 @@ namespace Model
     /**
      * <p>The unique identifier for the protect configuration.</p>
      */
-    inline const Aws::String& GetProtectConfigurationId() const{ return m_protectConfigurationId; }
+    inline const Aws::String& GetProtectConfigurationId() const { return m_protectConfigurationId; }
     inline bool ProtectConfigurationIdHasBeenSet() const { return m_protectConfigurationIdHasBeenSet; }
-    inline void SetProtectConfigurationId(const Aws::String& value) { m_protectConfigurationIdHasBeenSet = true; m_protectConfigurationId = value; }
-    inline void SetProtectConfigurationId(Aws::String&& value) { m_protectConfigurationIdHasBeenSet = true; m_protectConfigurationId = std::move(value); }
-    inline void SetProtectConfigurationId(const char* value) { m_protectConfigurationIdHasBeenSet = true; m_protectConfigurationId.assign(value); }
-    inline UpdateProtectConfigurationCountryRuleSetRequest& WithProtectConfigurationId(const Aws::String& value) { SetProtectConfigurationId(value); return *this;}
-    inline UpdateProtectConfigurationCountryRuleSetRequest& WithProtectConfigurationId(Aws::String&& value) { SetProtectConfigurationId(std::move(value)); return *this;}
-    inline UpdateProtectConfigurationCountryRuleSetRequest& WithProtectConfigurationId(const char* value) { SetProtectConfigurationId(value); return *this;}
+    template<typename ProtectConfigurationIdT = Aws::String>
+    void SetProtectConfigurationId(ProtectConfigurationIdT&& value) { m_protectConfigurationIdHasBeenSet = true; m_protectConfigurationId = std::forward<ProtectConfigurationIdT>(value); }
+    template<typename ProtectConfigurationIdT = Aws::String>
+    UpdateProtectConfigurationCountryRuleSetRequest& WithProtectConfigurationId(ProtectConfigurationIdT&& value) { SetProtectConfigurationId(std::forward<ProtectConfigurationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number capability to apply the CountryRuleSetUpdates updates to.</p>
      */
-    inline const NumberCapability& GetNumberCapability() const{ return m_numberCapability; }
+    inline NumberCapability GetNumberCapability() const { return m_numberCapability; }
     inline bool NumberCapabilityHasBeenSet() const { return m_numberCapabilityHasBeenSet; }
-    inline void SetNumberCapability(const NumberCapability& value) { m_numberCapabilityHasBeenSet = true; m_numberCapability = value; }
-    inline void SetNumberCapability(NumberCapability&& value) { m_numberCapabilityHasBeenSet = true; m_numberCapability = std::move(value); }
-    inline UpdateProtectConfigurationCountryRuleSetRequest& WithNumberCapability(const NumberCapability& value) { SetNumberCapability(value); return *this;}
-    inline UpdateProtectConfigurationCountryRuleSetRequest& WithNumberCapability(NumberCapability&& value) { SetNumberCapability(std::move(value)); return *this;}
+    inline void SetNumberCapability(NumberCapability value) { m_numberCapabilityHasBeenSet = true; m_numberCapability = value; }
+    inline UpdateProtectConfigurationCountryRuleSetRequest& WithNumberCapability(NumberCapability value) { SetNumberCapability(value); return *this;}
     ///@}
 
     ///@{
@@ -72,25 +68,23 @@ namespace Model
      * countries and regions (SMS channel)</a> in the AWS End User Messaging SMS User
      * Guide.</p>
      */
-    inline const Aws::Map<Aws::String, ProtectConfigurationCountryRuleSetInformation>& GetCountryRuleSetUpdates() const{ return m_countryRuleSetUpdates; }
+    inline const Aws::Map<Aws::String, ProtectConfigurationCountryRuleSetInformation>& GetCountryRuleSetUpdates() const { return m_countryRuleSetUpdates; }
     inline bool CountryRuleSetUpdatesHasBeenSet() const { return m_countryRuleSetUpdatesHasBeenSet; }
-    inline void SetCountryRuleSetUpdates(const Aws::Map<Aws::String, ProtectConfigurationCountryRuleSetInformation>& value) { m_countryRuleSetUpdatesHasBeenSet = true; m_countryRuleSetUpdates = value; }
-    inline void SetCountryRuleSetUpdates(Aws::Map<Aws::String, ProtectConfigurationCountryRuleSetInformation>&& value) { m_countryRuleSetUpdatesHasBeenSet = true; m_countryRuleSetUpdates = std::move(value); }
-    inline UpdateProtectConfigurationCountryRuleSetRequest& WithCountryRuleSetUpdates(const Aws::Map<Aws::String, ProtectConfigurationCountryRuleSetInformation>& value) { SetCountryRuleSetUpdates(value); return *this;}
-    inline UpdateProtectConfigurationCountryRuleSetRequest& WithCountryRuleSetUpdates(Aws::Map<Aws::String, ProtectConfigurationCountryRuleSetInformation>&& value) { SetCountryRuleSetUpdates(std::move(value)); return *this;}
-    inline UpdateProtectConfigurationCountryRuleSetRequest& AddCountryRuleSetUpdates(const Aws::String& key, const ProtectConfigurationCountryRuleSetInformation& value) { m_countryRuleSetUpdatesHasBeenSet = true; m_countryRuleSetUpdates.emplace(key, value); return *this; }
-    inline UpdateProtectConfigurationCountryRuleSetRequest& AddCountryRuleSetUpdates(Aws::String&& key, const ProtectConfigurationCountryRuleSetInformation& value) { m_countryRuleSetUpdatesHasBeenSet = true; m_countryRuleSetUpdates.emplace(std::move(key), value); return *this; }
-    inline UpdateProtectConfigurationCountryRuleSetRequest& AddCountryRuleSetUpdates(const Aws::String& key, ProtectConfigurationCountryRuleSetInformation&& value) { m_countryRuleSetUpdatesHasBeenSet = true; m_countryRuleSetUpdates.emplace(key, std::move(value)); return *this; }
-    inline UpdateProtectConfigurationCountryRuleSetRequest& AddCountryRuleSetUpdates(Aws::String&& key, ProtectConfigurationCountryRuleSetInformation&& value) { m_countryRuleSetUpdatesHasBeenSet = true; m_countryRuleSetUpdates.emplace(std::move(key), std::move(value)); return *this; }
-    inline UpdateProtectConfigurationCountryRuleSetRequest& AddCountryRuleSetUpdates(const char* key, ProtectConfigurationCountryRuleSetInformation&& value) { m_countryRuleSetUpdatesHasBeenSet = true; m_countryRuleSetUpdates.emplace(key, std::move(value)); return *this; }
-    inline UpdateProtectConfigurationCountryRuleSetRequest& AddCountryRuleSetUpdates(const char* key, const ProtectConfigurationCountryRuleSetInformation& value) { m_countryRuleSetUpdatesHasBeenSet = true; m_countryRuleSetUpdates.emplace(key, value); return *this; }
+    template<typename CountryRuleSetUpdatesT = Aws::Map<Aws::String, ProtectConfigurationCountryRuleSetInformation>>
+    void SetCountryRuleSetUpdates(CountryRuleSetUpdatesT&& value) { m_countryRuleSetUpdatesHasBeenSet = true; m_countryRuleSetUpdates = std::forward<CountryRuleSetUpdatesT>(value); }
+    template<typename CountryRuleSetUpdatesT = Aws::Map<Aws::String, ProtectConfigurationCountryRuleSetInformation>>
+    UpdateProtectConfigurationCountryRuleSetRequest& WithCountryRuleSetUpdates(CountryRuleSetUpdatesT&& value) { SetCountryRuleSetUpdates(std::forward<CountryRuleSetUpdatesT>(value)); return *this;}
+    template<typename CountryRuleSetUpdatesKeyT = Aws::String, typename CountryRuleSetUpdatesValueT = ProtectConfigurationCountryRuleSetInformation>
+    UpdateProtectConfigurationCountryRuleSetRequest& AddCountryRuleSetUpdates(CountryRuleSetUpdatesKeyT&& key, CountryRuleSetUpdatesValueT&& value) {
+      m_countryRuleSetUpdatesHasBeenSet = true; m_countryRuleSetUpdates.emplace(std::forward<CountryRuleSetUpdatesKeyT>(key), std::forward<CountryRuleSetUpdatesValueT>(value)); return *this;
+    }
     ///@}
   private:
 
     Aws::String m_protectConfigurationId;
     bool m_protectConfigurationIdHasBeenSet = false;
 
-    NumberCapability m_numberCapability;
+    NumberCapability m_numberCapability{NumberCapability::NOT_SET};
     bool m_numberCapabilityHasBeenSet = false;
 
     Aws::Map<Aws::String, ProtectConfigurationCountryRuleSetInformation> m_countryRuleSetUpdates;

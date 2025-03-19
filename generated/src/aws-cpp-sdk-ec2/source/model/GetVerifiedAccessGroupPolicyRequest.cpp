@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-GetVerifiedAccessGroupPolicyRequest::GetVerifiedAccessGroupPolicyRequest() : 
-    m_verifiedAccessGroupIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String GetVerifiedAccessGroupPolicyRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -30,7 +30,7 @@ namespace Model
   class JsonConfiguration
   {
   public:
-    AWS_IOTANALYTICS_API JsonConfiguration();
+    AWS_IOTANALYTICS_API JsonConfiguration() = default;
     AWS_IOTANALYTICS_API JsonConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API JsonConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;

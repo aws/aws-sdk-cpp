@@ -20,84 +20,7 @@ namespace EC2
 namespace Model
 {
 
-Instance::Instance() : 
-    m_architecture(ArchitectureValues::NOT_SET),
-    m_architectureHasBeenSet(false),
-    m_blockDeviceMappingsHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_ebsOptimized(false),
-    m_ebsOptimizedHasBeenSet(false),
-    m_enaSupport(false),
-    m_enaSupportHasBeenSet(false),
-    m_hypervisor(HypervisorType::NOT_SET),
-    m_hypervisorHasBeenSet(false),
-    m_iamInstanceProfileHasBeenSet(false),
-    m_instanceLifecycle(InstanceLifecycleType::NOT_SET),
-    m_instanceLifecycleHasBeenSet(false),
-    m_elasticGpuAssociationsHasBeenSet(false),
-    m_elasticInferenceAcceleratorAssociationsHasBeenSet(false),
-    m_networkInterfacesHasBeenSet(false),
-    m_outpostArnHasBeenSet(false),
-    m_rootDeviceNameHasBeenSet(false),
-    m_rootDeviceType(DeviceType::NOT_SET),
-    m_rootDeviceTypeHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_sourceDestCheck(false),
-    m_sourceDestCheckHasBeenSet(false),
-    m_spotInstanceRequestIdHasBeenSet(false),
-    m_sriovNetSupportHasBeenSet(false),
-    m_stateReasonHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_virtualizationType(VirtualizationType::NOT_SET),
-    m_virtualizationTypeHasBeenSet(false),
-    m_cpuOptionsHasBeenSet(false),
-    m_capacityReservationIdHasBeenSet(false),
-    m_capacityReservationSpecificationHasBeenSet(false),
-    m_hibernationOptionsHasBeenSet(false),
-    m_licensesHasBeenSet(false),
-    m_metadataOptionsHasBeenSet(false),
-    m_enclaveOptionsHasBeenSet(false),
-    m_bootMode(BootModeValues::NOT_SET),
-    m_bootModeHasBeenSet(false),
-    m_platformDetailsHasBeenSet(false),
-    m_usageOperationHasBeenSet(false),
-    m_usageOperationUpdateTimeHasBeenSet(false),
-    m_privateDnsNameOptionsHasBeenSet(false),
-    m_ipv6AddressHasBeenSet(false),
-    m_tpmSupportHasBeenSet(false),
-    m_maintenanceOptionsHasBeenSet(false),
-    m_currentInstanceBootMode(InstanceBootModeValues::NOT_SET),
-    m_currentInstanceBootModeHasBeenSet(false),
-    m_networkPerformanceOptionsHasBeenSet(false),
-    m_operatorHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_privateDnsNameHasBeenSet(false),
-    m_publicDnsNameHasBeenSet(false),
-    m_stateTransitionReasonHasBeenSet(false),
-    m_keyNameHasBeenSet(false),
-    m_amiLaunchIndex(0),
-    m_amiLaunchIndexHasBeenSet(false),
-    m_productCodesHasBeenSet(false),
-    m_instanceType(InstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_launchTimeHasBeenSet(false),
-    m_placementHasBeenSet(false),
-    m_kernelIdHasBeenSet(false),
-    m_ramdiskIdHasBeenSet(false),
-    m_platform(PlatformValues::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_monitoringHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_privateIpAddressHasBeenSet(false),
-    m_publicIpAddressHasBeenSet(false)
-{
-}
-
 Instance::Instance(const XmlNode& xmlNode)
-  : Instance()
 {
   *this = xmlNode;
 }
@@ -111,13 +34,14 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
     XmlNode architectureNode = resultNode.FirstChild("architecture");
     if(!architectureNode.IsNull())
     {
-      m_architecture = ArchitectureValuesMapper::GetArchitectureValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(architectureNode.GetText()).c_str()).c_str());
+      m_architecture = ArchitectureValuesMapper::GetArchitectureValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(architectureNode.GetText()).c_str()));
       m_architectureHasBeenSet = true;
     }
     XmlNode blockDeviceMappingsNode = resultNode.FirstChild("blockDeviceMapping");
     if(!blockDeviceMappingsNode.IsNull())
     {
       XmlNode blockDeviceMappingsMember = blockDeviceMappingsNode.FirstChild("item");
+      m_blockDeviceMappingsHasBeenSet = !blockDeviceMappingsMember.IsNull();
       while(!blockDeviceMappingsMember.IsNull())
       {
         m_blockDeviceMappings.push_back(blockDeviceMappingsMember);
@@ -147,7 +71,7 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
     XmlNode hypervisorNode = resultNode.FirstChild("hypervisor");
     if(!hypervisorNode.IsNull())
     {
-      m_hypervisor = HypervisorTypeMapper::GetHypervisorTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(hypervisorNode.GetText()).c_str()).c_str());
+      m_hypervisor = HypervisorTypeMapper::GetHypervisorTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(hypervisorNode.GetText()).c_str()));
       m_hypervisorHasBeenSet = true;
     }
     XmlNode iamInstanceProfileNode = resultNode.FirstChild("iamInstanceProfile");
@@ -159,13 +83,14 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
     XmlNode instanceLifecycleNode = resultNode.FirstChild("instanceLifecycle");
     if(!instanceLifecycleNode.IsNull())
     {
-      m_instanceLifecycle = InstanceLifecycleTypeMapper::GetInstanceLifecycleTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceLifecycleNode.GetText()).c_str()).c_str());
+      m_instanceLifecycle = InstanceLifecycleTypeMapper::GetInstanceLifecycleTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceLifecycleNode.GetText()).c_str()));
       m_instanceLifecycleHasBeenSet = true;
     }
     XmlNode elasticGpuAssociationsNode = resultNode.FirstChild("elasticGpuAssociationSet");
     if(!elasticGpuAssociationsNode.IsNull())
     {
       XmlNode elasticGpuAssociationsMember = elasticGpuAssociationsNode.FirstChild("item");
+      m_elasticGpuAssociationsHasBeenSet = !elasticGpuAssociationsMember.IsNull();
       while(!elasticGpuAssociationsMember.IsNull())
       {
         m_elasticGpuAssociations.push_back(elasticGpuAssociationsMember);
@@ -178,6 +103,7 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
     if(!elasticInferenceAcceleratorAssociationsNode.IsNull())
     {
       XmlNode elasticInferenceAcceleratorAssociationsMember = elasticInferenceAcceleratorAssociationsNode.FirstChild("item");
+      m_elasticInferenceAcceleratorAssociationsHasBeenSet = !elasticInferenceAcceleratorAssociationsMember.IsNull();
       while(!elasticInferenceAcceleratorAssociationsMember.IsNull())
       {
         m_elasticInferenceAcceleratorAssociations.push_back(elasticInferenceAcceleratorAssociationsMember);
@@ -190,6 +116,7 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
     if(!networkInterfacesNode.IsNull())
     {
       XmlNode networkInterfacesMember = networkInterfacesNode.FirstChild("item");
+      m_networkInterfacesHasBeenSet = !networkInterfacesMember.IsNull();
       while(!networkInterfacesMember.IsNull())
       {
         m_networkInterfaces.push_back(networkInterfacesMember);
@@ -213,13 +140,14 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
     XmlNode rootDeviceTypeNode = resultNode.FirstChild("rootDeviceType");
     if(!rootDeviceTypeNode.IsNull())
     {
-      m_rootDeviceType = DeviceTypeMapper::GetDeviceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(rootDeviceTypeNode.GetText()).c_str()).c_str());
+      m_rootDeviceType = DeviceTypeMapper::GetDeviceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(rootDeviceTypeNode.GetText()).c_str()));
       m_rootDeviceTypeHasBeenSet = true;
     }
     XmlNode securityGroupsNode = resultNode.FirstChild("groupSet");
     if(!securityGroupsNode.IsNull())
     {
       XmlNode securityGroupsMember = securityGroupsNode.FirstChild("item");
+      m_securityGroupsHasBeenSet = !securityGroupsMember.IsNull();
       while(!securityGroupsMember.IsNull())
       {
         m_securityGroups.push_back(securityGroupsMember);
@@ -256,6 +184,7 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
@@ -267,7 +196,7 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
     XmlNode virtualizationTypeNode = resultNode.FirstChild("virtualizationType");
     if(!virtualizationTypeNode.IsNull())
     {
-      m_virtualizationType = VirtualizationTypeMapper::GetVirtualizationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(virtualizationTypeNode.GetText()).c_str()).c_str());
+      m_virtualizationType = VirtualizationTypeMapper::GetVirtualizationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(virtualizationTypeNode.GetText()).c_str()));
       m_virtualizationTypeHasBeenSet = true;
     }
     XmlNode cpuOptionsNode = resultNode.FirstChild("cpuOptions");
@@ -298,6 +227,7 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
     if(!licensesNode.IsNull())
     {
       XmlNode licensesMember = licensesNode.FirstChild("item");
+      m_licensesHasBeenSet = !licensesMember.IsNull();
       while(!licensesMember.IsNull())
       {
         m_licenses.push_back(licensesMember);
@@ -321,7 +251,7 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
     XmlNode bootModeNode = resultNode.FirstChild("bootMode");
     if(!bootModeNode.IsNull())
     {
-      m_bootMode = BootModeValuesMapper::GetBootModeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bootModeNode.GetText()).c_str()).c_str());
+      m_bootMode = BootModeValuesMapper::GetBootModeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bootModeNode.GetText()).c_str()));
       m_bootModeHasBeenSet = true;
     }
     XmlNode platformDetailsNode = resultNode.FirstChild("platformDetails");
@@ -369,7 +299,7 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
     XmlNode currentInstanceBootModeNode = resultNode.FirstChild("currentInstanceBootMode");
     if(!currentInstanceBootModeNode.IsNull())
     {
-      m_currentInstanceBootMode = InstanceBootModeValuesMapper::GetInstanceBootModeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(currentInstanceBootModeNode.GetText()).c_str()).c_str());
+      m_currentInstanceBootMode = InstanceBootModeValuesMapper::GetInstanceBootModeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(currentInstanceBootModeNode.GetText()).c_str()));
       m_currentInstanceBootModeHasBeenSet = true;
     }
     XmlNode networkPerformanceOptionsNode = resultNode.FirstChild("networkPerformanceOptions");
@@ -436,6 +366,7 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
     if(!productCodesNode.IsNull())
     {
       XmlNode productCodesMember = productCodesNode.FirstChild("item");
+      m_productCodesHasBeenSet = !productCodesMember.IsNull();
       while(!productCodesMember.IsNull())
       {
         m_productCodes.push_back(productCodesMember);
@@ -447,7 +378,7 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
     XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
     if(!instanceTypeNode.IsNull())
     {
-      m_instanceType = InstanceTypeMapper::GetInstanceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText()).c_str()).c_str());
+      m_instanceType = InstanceTypeMapper::GetInstanceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText()).c_str()));
       m_instanceTypeHasBeenSet = true;
     }
     XmlNode launchTimeNode = resultNode.FirstChild("launchTime");
@@ -477,7 +408,7 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
     XmlNode platformNode = resultNode.FirstChild("platform");
     if(!platformNode.IsNull())
     {
-      m_platform = PlatformValuesMapper::GetPlatformValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(platformNode.GetText()).c_str()).c_str());
+      m_platform = PlatformValuesMapper::GetPlatformValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(platformNode.GetText()).c_str()));
       m_platformHasBeenSet = true;
     }
     XmlNode monitoringNode = resultNode.FirstChild("monitoring");

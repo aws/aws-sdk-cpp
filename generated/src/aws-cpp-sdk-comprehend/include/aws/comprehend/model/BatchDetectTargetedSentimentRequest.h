@@ -23,7 +23,7 @@ namespace Model
   class BatchDetectTargetedSentimentRequest : public ComprehendRequest
   {
   public:
-    AWS_COMPREHEND_API BatchDetectTargetedSentimentRequest();
+    AWS_COMPREHEND_API BatchDetectTargetedSentimentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,15 +42,14 @@ namespace Model
      * contain a maximum of 25 documents. The maximum size of each document is 5
      * KB.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTextList() const{ return m_textList; }
+    inline const Aws::Vector<Aws::String>& GetTextList() const { return m_textList; }
     inline bool TextListHasBeenSet() const { return m_textListHasBeenSet; }
-    inline void SetTextList(const Aws::Vector<Aws::String>& value) { m_textListHasBeenSet = true; m_textList = value; }
-    inline void SetTextList(Aws::Vector<Aws::String>&& value) { m_textListHasBeenSet = true; m_textList = std::move(value); }
-    inline BatchDetectTargetedSentimentRequest& WithTextList(const Aws::Vector<Aws::String>& value) { SetTextList(value); return *this;}
-    inline BatchDetectTargetedSentimentRequest& WithTextList(Aws::Vector<Aws::String>&& value) { SetTextList(std::move(value)); return *this;}
-    inline BatchDetectTargetedSentimentRequest& AddTextList(const Aws::String& value) { m_textListHasBeenSet = true; m_textList.push_back(value); return *this; }
-    inline BatchDetectTargetedSentimentRequest& AddTextList(Aws::String&& value) { m_textListHasBeenSet = true; m_textList.push_back(std::move(value)); return *this; }
-    inline BatchDetectTargetedSentimentRequest& AddTextList(const char* value) { m_textListHasBeenSet = true; m_textList.push_back(value); return *this; }
+    template<typename TextListT = Aws::Vector<Aws::String>>
+    void SetTextList(TextListT&& value) { m_textListHasBeenSet = true; m_textList = std::forward<TextListT>(value); }
+    template<typename TextListT = Aws::Vector<Aws::String>>
+    BatchDetectTargetedSentimentRequest& WithTextList(TextListT&& value) { SetTextList(std::forward<TextListT>(value)); return *this;}
+    template<typename TextListT = Aws::String>
+    BatchDetectTargetedSentimentRequest& AddTextList(TextListT&& value) { m_textListHasBeenSet = true; m_textList.emplace_back(std::forward<TextListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -58,19 +57,17 @@ namespace Model
      * <p>The language of the input documents. Currently, English is the only supported
      * language.</p>
      */
-    inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
+    inline LanguageCode GetLanguageCode() const { return m_languageCode; }
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
-    inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
-    inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
-    inline BatchDetectTargetedSentimentRequest& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
-    inline BatchDetectTargetedSentimentRequest& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
+    inline void SetLanguageCode(LanguageCode value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
+    inline BatchDetectTargetedSentimentRequest& WithLanguageCode(LanguageCode value) { SetLanguageCode(value); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_textList;
     bool m_textListHasBeenSet = false;
 
-    LanguageCode m_languageCode;
+    LanguageCode m_languageCode{LanguageCode::NOT_SET};
     bool m_languageCodeHasBeenSet = false;
   };
 

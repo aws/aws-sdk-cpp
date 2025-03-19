@@ -12,11 +12,6 @@ using namespace Aws::OSIS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopPipelineRequest::StopPipelineRequest() : 
-    m_pipelineNameHasBeenSet(false)
-{
-}
-
 Aws::String StopPipelineRequest::SerializePayload() const
 {
   return {};

@@ -18,15 +18,7 @@ namespace NetworkFlowMonitor
 namespace Model
 {
 
-TargetIdentifier::TargetIdentifier() : 
-    m_targetIdHasBeenSet(false),
-    m_targetType(TargetType::NOT_SET),
-    m_targetTypeHasBeenSet(false)
-{
-}
-
 TargetIdentifier::TargetIdentifier(JsonView jsonValue)
-  : TargetIdentifier()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ TargetIdentifier& TargetIdentifier::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("targetId"))
   {
     m_targetId = jsonValue.GetObject("targetId");
-
     m_targetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetType"))
   {
     m_targetType = TargetTypeMapper::GetTargetTypeForName(jsonValue.GetString("targetType"));
-
     m_targetTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

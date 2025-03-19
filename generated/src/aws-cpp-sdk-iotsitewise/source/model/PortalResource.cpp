@@ -18,13 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-PortalResource::PortalResource() : 
-    m_idHasBeenSet(false)
-{
-}
-
 PortalResource::PortalResource(JsonView jsonValue)
-  : PortalResource()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PortalResource& PortalResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   return *this;
 }
 

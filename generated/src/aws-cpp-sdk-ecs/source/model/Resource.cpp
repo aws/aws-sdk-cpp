@@ -18,21 +18,7 @@ namespace ECS
 namespace Model
 {
 
-Resource::Resource() : 
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_doubleValue(0.0),
-    m_doubleValueHasBeenSet(false),
-    m_longValue(0),
-    m_longValueHasBeenSet(false),
-    m_integerValue(0),
-    m_integerValueHasBeenSet(false),
-    m_stringSetValueHasBeenSet(false)
-{
-}
-
 Resource::Resource(JsonView jsonValue)
-  : Resource()
 {
   *this = jsonValue;
 }
@@ -42,38 +28,28 @@ Resource& Resource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("doubleValue"))
   {
     m_doubleValue = jsonValue.GetDouble("doubleValue");
-
     m_doubleValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("longValue"))
   {
     m_longValue = jsonValue.GetInt64("longValue");
-
     m_longValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("integerValue"))
   {
     m_integerValue = jsonValue.GetInteger("integerValue");
-
     m_integerValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stringSetValue"))
   {
     Aws::Utils::Array<JsonView> stringSetValueJsonList = jsonValue.GetArray("stringSetValue");
@@ -83,7 +59,6 @@ Resource& Resource::operator =(JsonView jsonValue)
     }
     m_stringSetValueHasBeenSet = true;
   }
-
   return *this;
 }
 

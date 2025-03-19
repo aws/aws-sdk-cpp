@@ -18,14 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-CoreNetworkPolicyException::CoreNetworkPolicyException() : 
-    m_messageHasBeenSet(false),
-    m_errorsHasBeenSet(false)
-{
-}
-
 CoreNetworkPolicyException::CoreNetworkPolicyException(JsonView jsonValue)
-  : CoreNetworkPolicyException()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ CoreNetworkPolicyException& CoreNetworkPolicyException::operator =(JsonView json
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Errors"))
   {
     Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("Errors");
@@ -48,7 +39,6 @@ CoreNetworkPolicyException& CoreNetworkPolicyException::operator =(JsonView json
     }
     m_errorsHasBeenSet = true;
   }
-
   return *this;
 }
 

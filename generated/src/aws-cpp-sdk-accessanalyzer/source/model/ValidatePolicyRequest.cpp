@@ -15,20 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ValidatePolicyRequest::ValidatePolicyRequest() : 
-    m_locale(Locale::NOT_SET),
-    m_localeHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_policyDocumentHasBeenSet(false),
-    m_policyType(PolicyType::NOT_SET),
-    m_policyTypeHasBeenSet(false),
-    m_validatePolicyResourceType(ValidatePolicyResourceType::NOT_SET),
-    m_validatePolicyResourceTypeHasBeenSet(false)
-{
-}
-
 Aws::String ValidatePolicyRequest::SerializePayload() const
 {
   JsonValue payload;

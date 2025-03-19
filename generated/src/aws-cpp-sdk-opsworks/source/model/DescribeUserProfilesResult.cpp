@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeUserProfilesResult::DescribeUserProfilesResult()
-{
-}
-
 DescribeUserProfilesResult::DescribeUserProfilesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ DescribeUserProfilesResult& DescribeUserProfilesResult::operator =(const Aws::Am
     {
       m_userProfiles.push_back(userProfilesJsonList[userProfilesIndex].AsObject());
     }
+    m_userProfilesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeTrainingJobRequest::DescribeTrainingJobRequest() : 
-    m_trainingJobNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeTrainingJobRequest::SerializePayload() const
 {
   JsonValue payload;

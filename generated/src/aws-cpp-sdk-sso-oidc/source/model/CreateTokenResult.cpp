@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateTokenResult::CreateTokenResult() : 
-    m_expiresIn(0)
-{
-}
-
 CreateTokenResult::CreateTokenResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateTokenResult()
 {
   *this = result;
 }
@@ -34,39 +28,35 @@ CreateTokenResult& CreateTokenResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("accessToken"))
   {
     m_accessToken = jsonValue.GetString("accessToken");
-
+    m_accessTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tokenType"))
   {
     m_tokenType = jsonValue.GetString("tokenType");
-
+    m_tokenTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expiresIn"))
   {
     m_expiresIn = jsonValue.GetInteger("expiresIn");
-
+    m_expiresInHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("refreshToken"))
   {
     m_refreshToken = jsonValue.GetString("refreshToken");
-
+    m_refreshTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("idToken"))
   {
     m_idToken = jsonValue.GetString("idToken");
-
+    m_idTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

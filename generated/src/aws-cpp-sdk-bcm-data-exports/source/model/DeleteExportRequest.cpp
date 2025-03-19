@@ -12,11 +12,6 @@ using namespace Aws::BCMDataExports::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteExportRequest::DeleteExportRequest() : 
-    m_exportArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteExportRequest::SerializePayload() const
 {
   JsonValue payload;

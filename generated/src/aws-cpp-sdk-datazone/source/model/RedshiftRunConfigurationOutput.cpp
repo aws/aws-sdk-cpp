@@ -18,18 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-RedshiftRunConfigurationOutput::RedshiftRunConfigurationOutput() : 
-    m_accountIdHasBeenSet(false),
-    m_dataAccessRoleHasBeenSet(false),
-    m_redshiftCredentialConfigurationHasBeenSet(false),
-    m_redshiftStorageHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_relationalFilterConfigurationsHasBeenSet(false)
-{
-}
-
 RedshiftRunConfigurationOutput::RedshiftRunConfigurationOutput(JsonView jsonValue)
-  : RedshiftRunConfigurationOutput()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ RedshiftRunConfigurationOutput& RedshiftRunConfigurationOutput::operator =(JsonV
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataAccessRole"))
   {
     m_dataAccessRole = jsonValue.GetString("dataAccessRole");
-
     m_dataAccessRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("redshiftCredentialConfiguration"))
   {
     m_redshiftCredentialConfiguration = jsonValue.GetObject("redshiftCredentialConfiguration");
-
     m_redshiftCredentialConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("redshiftStorage"))
   {
     m_redshiftStorage = jsonValue.GetObject("redshiftStorage");
-
     m_redshiftStorageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("region"))
   {
     m_region = jsonValue.GetString("region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("relationalFilterConfigurations"))
   {
     Aws::Utils::Array<JsonView> relationalFilterConfigurationsJsonList = jsonValue.GetArray("relationalFilterConfigurations");
@@ -80,7 +59,6 @@ RedshiftRunConfigurationOutput& RedshiftRunConfigurationOutput::operator =(JsonV
     }
     m_relationalFilterConfigurationsHasBeenSet = true;
   }
-
   return *this;
 }
 

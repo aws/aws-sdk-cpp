@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchUpdateRecommendationStatusResult::BatchUpdateRecommendationStatusResult()
-{
-}
-
 BatchUpdateRecommendationStatusResult::BatchUpdateRecommendationStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ BatchUpdateRecommendationStatusResult& BatchUpdateRecommendationStatusResult::op
   if(jsonValue.ValueExists("appArn"))
   {
     m_appArn = jsonValue.GetString("appArn");
-
+    m_appArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failedEntries"))
   {
     Aws::Utils::Array<JsonView> failedEntriesJsonList = jsonValue.GetArray("failedEntries");
@@ -42,8 +37,8 @@ BatchUpdateRecommendationStatusResult& BatchUpdateRecommendationStatusResult::op
     {
       m_failedEntries.push_back(failedEntriesJsonList[failedEntriesIndex].AsObject());
     }
+    m_failedEntriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("successfulEntries"))
   {
     Aws::Utils::Array<JsonView> successfulEntriesJsonList = jsonValue.GetArray("successfulEntries");
@@ -51,14 +46,15 @@ BatchUpdateRecommendationStatusResult& BatchUpdateRecommendationStatusResult::op
     {
       m_successfulEntries.push_back(successfulEntriesJsonList[successfulEntriesIndex].AsObject());
     }
+    m_successfulEntriesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,13 +18,7 @@ namespace mgn
 namespace Model
 {
 
-ExportErrorData::ExportErrorData() : 
-    m_rawErrorHasBeenSet(false)
-{
-}
-
 ExportErrorData::ExportErrorData(JsonView jsonValue)
-  : ExportErrorData()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ExportErrorData& ExportErrorData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("rawError"))
   {
     m_rawError = jsonValue.GetString("rawError");
-
     m_rawErrorHasBeenSet = true;
   }
-
   return *this;
 }
 

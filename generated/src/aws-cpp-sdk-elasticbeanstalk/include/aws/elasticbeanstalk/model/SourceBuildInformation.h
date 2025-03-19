@@ -34,7 +34,7 @@ namespace Model
   class SourceBuildInformation
   {
   public:
-    AWS_ELASTICBEANSTALK_API SourceBuildInformation();
+    AWS_ELASTICBEANSTALK_API SourceBuildInformation() = default;
     AWS_ELASTICBEANSTALK_API SourceBuildInformation(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICBEANSTALK_API SourceBuildInformation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,12 +47,10 @@ namespace Model
      * <p>The type of repository.</p> <ul> <li> <p> <code>Git</code> </p> </li> <li>
      * <p> <code>Zip</code> </p> </li> </ul>
      */
-    inline const SourceType& GetSourceType() const{ return m_sourceType; }
+    inline SourceType GetSourceType() const { return m_sourceType; }
     inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
-    inline void SetSourceType(const SourceType& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
-    inline void SetSourceType(SourceType&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
-    inline SourceBuildInformation& WithSourceType(const SourceType& value) { SetSourceType(value); return *this;}
-    inline SourceBuildInformation& WithSourceType(SourceType&& value) { SetSourceType(std::move(value)); return *this;}
+    inline void SetSourceType(SourceType value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
+    inline SourceBuildInformation& WithSourceType(SourceType value) { SetSourceType(value); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +58,10 @@ namespace Model
      * <p>Location where the repository is stored.</p> <ul> <li> <p>
      * <code>CodeCommit</code> </p> </li> <li> <p> <code>S3</code> </p> </li> </ul>
      */
-    inline const SourceRepository& GetSourceRepository() const{ return m_sourceRepository; }
+    inline SourceRepository GetSourceRepository() const { return m_sourceRepository; }
     inline bool SourceRepositoryHasBeenSet() const { return m_sourceRepositoryHasBeenSet; }
-    inline void SetSourceRepository(const SourceRepository& value) { m_sourceRepositoryHasBeenSet = true; m_sourceRepository = value; }
-    inline void SetSourceRepository(SourceRepository&& value) { m_sourceRepositoryHasBeenSet = true; m_sourceRepository = std::move(value); }
-    inline SourceBuildInformation& WithSourceRepository(const SourceRepository& value) { SetSourceRepository(value); return *this;}
-    inline SourceBuildInformation& WithSourceRepository(SourceRepository&& value) { SetSourceRepository(std::move(value)); return *this;}
+    inline void SetSourceRepository(SourceRepository value) { m_sourceRepositoryHasBeenSet = true; m_sourceRepository = value; }
+    inline SourceBuildInformation& WithSourceRepository(SourceRepository value) { SetSourceRepository(value); return *this;}
     ///@}
 
     ///@{
@@ -79,21 +75,19 @@ namespace Model
      * separated by a forward slash. For example,
      * <code>my-s3-bucket/Folders/my-source-file</code>.</p> </li> </ul>
      */
-    inline const Aws::String& GetSourceLocation() const{ return m_sourceLocation; }
+    inline const Aws::String& GetSourceLocation() const { return m_sourceLocation; }
     inline bool SourceLocationHasBeenSet() const { return m_sourceLocationHasBeenSet; }
-    inline void SetSourceLocation(const Aws::String& value) { m_sourceLocationHasBeenSet = true; m_sourceLocation = value; }
-    inline void SetSourceLocation(Aws::String&& value) { m_sourceLocationHasBeenSet = true; m_sourceLocation = std::move(value); }
-    inline void SetSourceLocation(const char* value) { m_sourceLocationHasBeenSet = true; m_sourceLocation.assign(value); }
-    inline SourceBuildInformation& WithSourceLocation(const Aws::String& value) { SetSourceLocation(value); return *this;}
-    inline SourceBuildInformation& WithSourceLocation(Aws::String&& value) { SetSourceLocation(std::move(value)); return *this;}
-    inline SourceBuildInformation& WithSourceLocation(const char* value) { SetSourceLocation(value); return *this;}
+    template<typename SourceLocationT = Aws::String>
+    void SetSourceLocation(SourceLocationT&& value) { m_sourceLocationHasBeenSet = true; m_sourceLocation = std::forward<SourceLocationT>(value); }
+    template<typename SourceLocationT = Aws::String>
+    SourceBuildInformation& WithSourceLocation(SourceLocationT&& value) { SetSourceLocation(std::forward<SourceLocationT>(value)); return *this;}
     ///@}
   private:
 
-    SourceType m_sourceType;
+    SourceType m_sourceType{SourceType::NOT_SET};
     bool m_sourceTypeHasBeenSet = false;
 
-    SourceRepository m_sourceRepository;
+    SourceRepository m_sourceRepository{SourceRepository::NOT_SET};
     bool m_sourceRepositoryHasBeenSet = false;
 
     Aws::String m_sourceLocation;

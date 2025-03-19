@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-NetworkInterfacePermissionState::NetworkInterfacePermissionState() : 
-    m_state(NetworkInterfacePermissionStateCode::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
-{
-}
-
 NetworkInterfacePermissionState::NetworkInterfacePermissionState(const XmlNode& xmlNode)
-  : NetworkInterfacePermissionState()
 {
   *this = xmlNode;
 }
@@ -42,7 +34,7 @@ NetworkInterfacePermissionState& NetworkInterfacePermissionState::operator =(con
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = NetworkInterfacePermissionStateCodeMapper::GetNetworkInterfacePermissionStateCodeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = NetworkInterfacePermissionStateCodeMapper::GetNetworkInterfacePermissionStateCodeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode statusMessageNode = resultNode.FirstChild("statusMessage");

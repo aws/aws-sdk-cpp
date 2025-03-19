@@ -18,16 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteMatrixBoundaryGeometry::RouteMatrixBoundaryGeometry() : 
-    m_autoCircleHasBeenSet(false),
-    m_circleHasBeenSet(false),
-    m_boundingBoxHasBeenSet(false),
-    m_polygonHasBeenSet(false)
-{
-}
-
 RouteMatrixBoundaryGeometry::RouteMatrixBoundaryGeometry(JsonView jsonValue)
-  : RouteMatrixBoundaryGeometry()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ RouteMatrixBoundaryGeometry& RouteMatrixBoundaryGeometry::operator =(JsonView js
   if(jsonValue.ValueExists("AutoCircle"))
   {
     m_autoCircle = jsonValue.GetObject("AutoCircle");
-
     m_autoCircleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Circle"))
   {
     m_circle = jsonValue.GetObject("Circle");
-
     m_circleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BoundingBox"))
   {
     Aws::Utils::Array<JsonView> boundingBoxJsonList = jsonValue.GetArray("BoundingBox");
@@ -57,7 +44,6 @@ RouteMatrixBoundaryGeometry& RouteMatrixBoundaryGeometry::operator =(JsonView js
     }
     m_boundingBoxHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Polygon"))
   {
     Aws::Utils::Array<JsonView> polygonJsonList = jsonValue.GetArray("Polygon");
@@ -81,7 +67,6 @@ RouteMatrixBoundaryGeometry& RouteMatrixBoundaryGeometry::operator =(JsonView js
     }
     m_polygonHasBeenSet = true;
   }
-
   return *this;
 }
 

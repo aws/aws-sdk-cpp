@@ -32,7 +32,7 @@ namespace Model
   class ProtectedJobS3OutputConfigurationInput
   {
   public:
-    AWS_CLEANROOMS_API ProtectedJobS3OutputConfigurationInput();
+    AWS_CLEANROOMS_API ProtectedJobS3OutputConfigurationInput() = default;
     AWS_CLEANROOMS_API ProtectedJobS3OutputConfigurationInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API ProtectedJobS3OutputConfigurationInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p> The S3 bucket for job output.</p>
      */
-    inline const Aws::String& GetBucket() const{ return m_bucket; }
+    inline const Aws::String& GetBucket() const { return m_bucket; }
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
-    inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
-    inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
-    inline ProtectedJobS3OutputConfigurationInput& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
-    inline ProtectedJobS3OutputConfigurationInput& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
-    inline ProtectedJobS3OutputConfigurationInput& WithBucket(const char* value) { SetBucket(value); return *this;}
+    template<typename BucketT = Aws::String>
+    void SetBucket(BucketT&& value) { m_bucketHasBeenSet = true; m_bucket = std::forward<BucketT>(value); }
+    template<typename BucketT = Aws::String>
+    ProtectedJobS3OutputConfigurationInput& WithBucket(BucketT&& value) { SetBucket(std::forward<BucketT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The S3 prefix to unload the protected job results.</p>
      */
-    inline const Aws::String& GetKeyPrefix() const{ return m_keyPrefix; }
+    inline const Aws::String& GetKeyPrefix() const { return m_keyPrefix; }
     inline bool KeyPrefixHasBeenSet() const { return m_keyPrefixHasBeenSet; }
-    inline void SetKeyPrefix(const Aws::String& value) { m_keyPrefixHasBeenSet = true; m_keyPrefix = value; }
-    inline void SetKeyPrefix(Aws::String&& value) { m_keyPrefixHasBeenSet = true; m_keyPrefix = std::move(value); }
-    inline void SetKeyPrefix(const char* value) { m_keyPrefixHasBeenSet = true; m_keyPrefix.assign(value); }
-    inline ProtectedJobS3OutputConfigurationInput& WithKeyPrefix(const Aws::String& value) { SetKeyPrefix(value); return *this;}
-    inline ProtectedJobS3OutputConfigurationInput& WithKeyPrefix(Aws::String&& value) { SetKeyPrefix(std::move(value)); return *this;}
-    inline ProtectedJobS3OutputConfigurationInput& WithKeyPrefix(const char* value) { SetKeyPrefix(value); return *this;}
+    template<typename KeyPrefixT = Aws::String>
+    void SetKeyPrefix(KeyPrefixT&& value) { m_keyPrefixHasBeenSet = true; m_keyPrefix = std::forward<KeyPrefixT>(value); }
+    template<typename KeyPrefixT = Aws::String>
+    ProtectedJobS3OutputConfigurationInput& WithKeyPrefix(KeyPrefixT&& value) { SetKeyPrefix(std::forward<KeyPrefixT>(value)); return *this;}
     ///@}
   private:
 

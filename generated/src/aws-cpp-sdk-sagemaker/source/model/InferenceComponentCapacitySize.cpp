@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-InferenceComponentCapacitySize::InferenceComponentCapacitySize() : 
-    m_type(InferenceComponentCapacitySizeType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_value(0),
-    m_valueHasBeenSet(false)
-{
-}
-
 InferenceComponentCapacitySize::InferenceComponentCapacitySize(JsonView jsonValue)
-  : InferenceComponentCapacitySize()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ InferenceComponentCapacitySize& InferenceComponentCapacitySize::operator =(JsonV
   if(jsonValue.ValueExists("Type"))
   {
     m_type = InferenceComponentCapacitySizeTypeMapper::GetInferenceComponentCapacitySizeTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetInteger("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

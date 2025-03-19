@@ -30,7 +30,7 @@ namespace Model
   class CustomizationFeatureContentModerationConfig
   {
   public:
-    AWS_REKOGNITION_API CustomizationFeatureContentModerationConfig();
+    AWS_REKOGNITION_API CustomizationFeatureContentModerationConfig() = default;
     AWS_REKOGNITION_API CustomizationFeatureContentModerationConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API CustomizationFeatureContentModerationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,14 @@ namespace Model
      * <p>The confidence level you plan to use to identify if unsafe content is present
      * during inference.</p>
      */
-    inline double GetConfidenceThreshold() const{ return m_confidenceThreshold; }
+    inline double GetConfidenceThreshold() const { return m_confidenceThreshold; }
     inline bool ConfidenceThresholdHasBeenSet() const { return m_confidenceThresholdHasBeenSet; }
     inline void SetConfidenceThreshold(double value) { m_confidenceThresholdHasBeenSet = true; m_confidenceThreshold = value; }
     inline CustomizationFeatureContentModerationConfig& WithConfidenceThreshold(double value) { SetConfidenceThreshold(value); return *this;}
     ///@}
   private:
 
-    double m_confidenceThreshold;
+    double m_confidenceThreshold{0.0};
     bool m_confidenceThresholdHasBeenSet = false;
   };
 

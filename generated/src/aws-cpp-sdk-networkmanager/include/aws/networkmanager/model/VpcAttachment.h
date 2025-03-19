@@ -34,7 +34,7 @@ namespace Model
   class VpcAttachment
   {
   public:
-    AWS_NETWORKMANAGER_API VpcAttachment();
+    AWS_NETWORKMANAGER_API VpcAttachment() = default;
     AWS_NETWORKMANAGER_API VpcAttachment(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API VpcAttachment& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,39 +44,38 @@ namespace Model
     /**
      * <p>Provides details about the VPC attachment.</p>
      */
-    inline const Attachment& GetAttachment() const{ return m_attachment; }
+    inline const Attachment& GetAttachment() const { return m_attachment; }
     inline bool AttachmentHasBeenSet() const { return m_attachmentHasBeenSet; }
-    inline void SetAttachment(const Attachment& value) { m_attachmentHasBeenSet = true; m_attachment = value; }
-    inline void SetAttachment(Attachment&& value) { m_attachmentHasBeenSet = true; m_attachment = std::move(value); }
-    inline VpcAttachment& WithAttachment(const Attachment& value) { SetAttachment(value); return *this;}
-    inline VpcAttachment& WithAttachment(Attachment&& value) { SetAttachment(std::move(value)); return *this;}
+    template<typename AttachmentT = Attachment>
+    void SetAttachment(AttachmentT&& value) { m_attachmentHasBeenSet = true; m_attachment = std::forward<AttachmentT>(value); }
+    template<typename AttachmentT = Attachment>
+    VpcAttachment& WithAttachment(AttachmentT&& value) { SetAttachment(std::forward<AttachmentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The subnet ARNs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSubnetArns() const{ return m_subnetArns; }
+    inline const Aws::Vector<Aws::String>& GetSubnetArns() const { return m_subnetArns; }
     inline bool SubnetArnsHasBeenSet() const { return m_subnetArnsHasBeenSet; }
-    inline void SetSubnetArns(const Aws::Vector<Aws::String>& value) { m_subnetArnsHasBeenSet = true; m_subnetArns = value; }
-    inline void SetSubnetArns(Aws::Vector<Aws::String>&& value) { m_subnetArnsHasBeenSet = true; m_subnetArns = std::move(value); }
-    inline VpcAttachment& WithSubnetArns(const Aws::Vector<Aws::String>& value) { SetSubnetArns(value); return *this;}
-    inline VpcAttachment& WithSubnetArns(Aws::Vector<Aws::String>&& value) { SetSubnetArns(std::move(value)); return *this;}
-    inline VpcAttachment& AddSubnetArns(const Aws::String& value) { m_subnetArnsHasBeenSet = true; m_subnetArns.push_back(value); return *this; }
-    inline VpcAttachment& AddSubnetArns(Aws::String&& value) { m_subnetArnsHasBeenSet = true; m_subnetArns.push_back(std::move(value)); return *this; }
-    inline VpcAttachment& AddSubnetArns(const char* value) { m_subnetArnsHasBeenSet = true; m_subnetArns.push_back(value); return *this; }
+    template<typename SubnetArnsT = Aws::Vector<Aws::String>>
+    void SetSubnetArns(SubnetArnsT&& value) { m_subnetArnsHasBeenSet = true; m_subnetArns = std::forward<SubnetArnsT>(value); }
+    template<typename SubnetArnsT = Aws::Vector<Aws::String>>
+    VpcAttachment& WithSubnetArns(SubnetArnsT&& value) { SetSubnetArns(std::forward<SubnetArnsT>(value)); return *this;}
+    template<typename SubnetArnsT = Aws::String>
+    VpcAttachment& AddSubnetArns(SubnetArnsT&& value) { m_subnetArnsHasBeenSet = true; m_subnetArns.emplace_back(std::forward<SubnetArnsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Provides details about the VPC attachment.</p>
      */
-    inline const VpcOptions& GetOptions() const{ return m_options; }
+    inline const VpcOptions& GetOptions() const { return m_options; }
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-    inline void SetOptions(const VpcOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
-    inline void SetOptions(VpcOptions&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-    inline VpcAttachment& WithOptions(const VpcOptions& value) { SetOptions(value); return *this;}
-    inline VpcAttachment& WithOptions(VpcOptions&& value) { SetOptions(std::move(value)); return *this;}
+    template<typename OptionsT = VpcOptions>
+    void SetOptions(OptionsT&& value) { m_optionsHasBeenSet = true; m_options = std::forward<OptionsT>(value); }
+    template<typename OptionsT = VpcOptions>
+    VpcAttachment& WithOptions(OptionsT&& value) { SetOptions(std::forward<OptionsT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,12 +12,6 @@ using namespace Aws::LexModelBuildingService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateIntentVersionRequest::CreateIntentVersionRequest() : 
-    m_nameHasBeenSet(false),
-    m_checksumHasBeenSet(false)
-{
-}
-
 Aws::String CreateIntentVersionRequest::SerializePayload() const
 {
   JsonValue payload;

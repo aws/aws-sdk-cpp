@@ -21,7 +21,7 @@ namespace Model
   class SendActivationCodeRequest : public NotificationsContactsRequest
   {
   public:
-    AWS_NOTIFICATIONSCONTACTS_API SendActivationCodeRequest();
+    AWS_NOTIFICATIONSCONTACTS_API SendActivationCodeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline SendActivationCodeRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline SendActivationCodeRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline SendActivationCodeRequest& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    SendActivationCodeRequest& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
   private:
 

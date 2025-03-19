@@ -12,11 +12,6 @@ using namespace Aws::MemoryDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListAllowedMultiRegionClusterUpdatesRequest::ListAllowedMultiRegionClusterUpdatesRequest() : 
-    m_multiRegionClusterNameHasBeenSet(false)
-{
-}
-
 Aws::String ListAllowedMultiRegionClusterUpdatesRequest::SerializePayload() const
 {
   JsonValue payload;

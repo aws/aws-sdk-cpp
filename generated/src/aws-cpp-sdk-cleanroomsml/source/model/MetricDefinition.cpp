@@ -18,14 +18,7 @@ namespace CleanRoomsML
 namespace Model
 {
 
-MetricDefinition::MetricDefinition() : 
-    m_nameHasBeenSet(false),
-    m_regexHasBeenSet(false)
-{
-}
-
 MetricDefinition::MetricDefinition(JsonView jsonValue)
-  : MetricDefinition()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ MetricDefinition& MetricDefinition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("regex"))
   {
     m_regex = jsonValue.GetString("regex");
-
     m_regexHasBeenSet = true;
   }
-
   return *this;
 }
 

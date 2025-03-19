@@ -30,7 +30,7 @@ namespace Model
   class ExportStatistics
   {
   public:
-    AWS_SESV2_API ExportStatistics();
+    AWS_SESV2_API ExportStatistics() = default;
     AWS_SESV2_API ExportStatistics(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API ExportStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
      * <p>The number of records that were processed to generate the final export
      * file.</p>
      */
-    inline int GetProcessedRecordsCount() const{ return m_processedRecordsCount; }
+    inline int GetProcessedRecordsCount() const { return m_processedRecordsCount; }
     inline bool ProcessedRecordsCountHasBeenSet() const { return m_processedRecordsCountHasBeenSet; }
     inline void SetProcessedRecordsCount(int value) { m_processedRecordsCountHasBeenSet = true; m_processedRecordsCount = value; }
     inline ExportStatistics& WithProcessedRecordsCount(int value) { SetProcessedRecordsCount(value); return *this;}
@@ -52,17 +52,17 @@ namespace Model
      * <p>The number of records that were exported to the final export file.</p>
      * <p>This value might not be available for all export source types</p>
      */
-    inline int GetExportedRecordsCount() const{ return m_exportedRecordsCount; }
+    inline int GetExportedRecordsCount() const { return m_exportedRecordsCount; }
     inline bool ExportedRecordsCountHasBeenSet() const { return m_exportedRecordsCountHasBeenSet; }
     inline void SetExportedRecordsCount(int value) { m_exportedRecordsCountHasBeenSet = true; m_exportedRecordsCount = value; }
     inline ExportStatistics& WithExportedRecordsCount(int value) { SetExportedRecordsCount(value); return *this;}
     ///@}
   private:
 
-    int m_processedRecordsCount;
+    int m_processedRecordsCount{0};
     bool m_processedRecordsCountHasBeenSet = false;
 
-    int m_exportedRecordsCount;
+    int m_exportedRecordsCount{0};
     bool m_exportedRecordsCountHasBeenSet = false;
   };
 

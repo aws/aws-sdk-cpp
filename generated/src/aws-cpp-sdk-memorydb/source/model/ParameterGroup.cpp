@@ -18,16 +18,7 @@ namespace MemoryDB
 namespace Model
 {
 
-ParameterGroup::ParameterGroup() : 
-    m_nameHasBeenSet(false),
-    m_familyHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_aRNHasBeenSet(false)
-{
-}
-
 ParameterGroup::ParameterGroup(JsonView jsonValue)
-  : ParameterGroup()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ParameterGroup& ParameterGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Family"))
   {
     m_family = jsonValue.GetString("Family");
-
     m_familyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ARN"))
   {
     m_aRN = jsonValue.GetString("ARN");
-
     m_aRNHasBeenSet = true;
   }
-
   return *this;
 }
 

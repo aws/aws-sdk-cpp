@@ -18,13 +18,7 @@ namespace SSM
 namespace Model
 {
 
-ExecutionPreview::ExecutionPreview() : 
-    m_automationHasBeenSet(false)
-{
-}
-
 ExecutionPreview::ExecutionPreview(JsonView jsonValue)
-  : ExecutionPreview()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ExecutionPreview& ExecutionPreview::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Automation"))
   {
     m_automation = jsonValue.GetObject("Automation");
-
     m_automationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -27,7 +27,7 @@ namespace Model
   class CreateWorkforceResult
   {
   public:
-    AWS_SAGEMAKER_API CreateWorkforceResult();
+    AWS_SAGEMAKER_API CreateWorkforceResult() = default;
     AWS_SAGEMAKER_API CreateWorkforceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API CreateWorkforceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the workforce.</p>
      */
-    inline const Aws::String& GetWorkforceArn() const{ return m_workforceArn; }
-    inline void SetWorkforceArn(const Aws::String& value) { m_workforceArn = value; }
-    inline void SetWorkforceArn(Aws::String&& value) { m_workforceArn = std::move(value); }
-    inline void SetWorkforceArn(const char* value) { m_workforceArn.assign(value); }
-    inline CreateWorkforceResult& WithWorkforceArn(const Aws::String& value) { SetWorkforceArn(value); return *this;}
-    inline CreateWorkforceResult& WithWorkforceArn(Aws::String&& value) { SetWorkforceArn(std::move(value)); return *this;}
-    inline CreateWorkforceResult& WithWorkforceArn(const char* value) { SetWorkforceArn(value); return *this;}
+    inline const Aws::String& GetWorkforceArn() const { return m_workforceArn; }
+    template<typename WorkforceArnT = Aws::String>
+    void SetWorkforceArn(WorkforceArnT&& value) { m_workforceArnHasBeenSet = true; m_workforceArn = std::forward<WorkforceArnT>(value); }
+    template<typename WorkforceArnT = Aws::String>
+    CreateWorkforceResult& WithWorkforceArn(WorkforceArnT&& value) { SetWorkforceArn(std::forward<WorkforceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateWorkforceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateWorkforceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateWorkforceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateWorkforceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_workforceArn;
+    bool m_workforceArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

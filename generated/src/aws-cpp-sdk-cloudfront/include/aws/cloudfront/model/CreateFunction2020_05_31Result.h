@@ -28,7 +28,7 @@ namespace Model
   class CreateFunction2020_05_31Result
   {
   public:
-    AWS_CLOUDFRONT_API CreateFunction2020_05_31Result();
+    AWS_CLOUDFRONT_API CreateFunction2020_05_31Result() = default;
     AWS_CLOUDFRONT_API CreateFunction2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDFRONT_API CreateFunction2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,11 +38,11 @@ namespace Model
      * <p>Contains configuration information and metadata about a CloudFront
      * function.</p>
      */
-    inline const FunctionSummary& GetFunctionSummary() const{ return m_functionSummary; }
-    inline void SetFunctionSummary(const FunctionSummary& value) { m_functionSummary = value; }
-    inline void SetFunctionSummary(FunctionSummary&& value) { m_functionSummary = std::move(value); }
-    inline CreateFunction2020_05_31Result& WithFunctionSummary(const FunctionSummary& value) { SetFunctionSummary(value); return *this;}
-    inline CreateFunction2020_05_31Result& WithFunctionSummary(FunctionSummary&& value) { SetFunctionSummary(std::move(value)); return *this;}
+    inline const FunctionSummary& GetFunctionSummary() const { return m_functionSummary; }
+    template<typename FunctionSummaryT = FunctionSummary>
+    void SetFunctionSummary(FunctionSummaryT&& value) { m_functionSummaryHasBeenSet = true; m_functionSummary = std::forward<FunctionSummaryT>(value); }
+    template<typename FunctionSummaryT = FunctionSummary>
+    CreateFunction2020_05_31Result& WithFunctionSummary(FunctionSummaryT&& value) { SetFunctionSummary(std::forward<FunctionSummaryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -50,13 +50,11 @@ namespace Model
      * <p>The URL of the CloudFront function. Use the URL to manage the function with
      * the CloudFront API.</p>
      */
-    inline const Aws::String& GetLocation() const{ return m_location; }
-    inline void SetLocation(const Aws::String& value) { m_location = value; }
-    inline void SetLocation(Aws::String&& value) { m_location = std::move(value); }
-    inline void SetLocation(const char* value) { m_location.assign(value); }
-    inline CreateFunction2020_05_31Result& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-    inline CreateFunction2020_05_31Result& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-    inline CreateFunction2020_05_31Result& WithLocation(const char* value) { SetLocation(value); return *this;}
+    inline const Aws::String& GetLocation() const { return m_location; }
+    template<typename LocationT = Aws::String>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Aws::String>
+    CreateFunction2020_05_31Result& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,34 +62,34 @@ namespace Model
      * <p>The version identifier for the current version of the CloudFront
      * function.</p>
      */
-    inline const Aws::String& GetETag() const{ return m_eTag; }
-    inline void SetETag(const Aws::String& value) { m_eTag = value; }
-    inline void SetETag(Aws::String&& value) { m_eTag = std::move(value); }
-    inline void SetETag(const char* value) { m_eTag.assign(value); }
-    inline CreateFunction2020_05_31Result& WithETag(const Aws::String& value) { SetETag(value); return *this;}
-    inline CreateFunction2020_05_31Result& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
-    inline CreateFunction2020_05_31Result& WithETag(const char* value) { SetETag(value); return *this;}
+    inline const Aws::String& GetETag() const { return m_eTag; }
+    template<typename ETagT = Aws::String>
+    void SetETag(ETagT&& value) { m_eTagHasBeenSet = true; m_eTag = std::forward<ETagT>(value); }
+    template<typename ETagT = Aws::String>
+    CreateFunction2020_05_31Result& WithETag(ETagT&& value) { SetETag(std::forward<ETagT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateFunction2020_05_31Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateFunction2020_05_31Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateFunction2020_05_31Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateFunction2020_05_31Result& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     FunctionSummary m_functionSummary;
+    bool m_functionSummaryHasBeenSet = false;
 
     Aws::String m_location;
+    bool m_locationHasBeenSet = false;
 
     Aws::String m_eTag;
+    bool m_eTagHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

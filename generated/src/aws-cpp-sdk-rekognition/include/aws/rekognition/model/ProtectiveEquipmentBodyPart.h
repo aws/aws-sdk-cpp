@@ -36,7 +36,7 @@ namespace Model
   class ProtectiveEquipmentBodyPart
   {
   public:
-    AWS_REKOGNITION_API ProtectiveEquipmentBodyPart();
+    AWS_REKOGNITION_API ProtectiveEquipmentBodyPart() = default;
     AWS_REKOGNITION_API ProtectiveEquipmentBodyPart(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API ProtectiveEquipmentBodyPart& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,10 @@ namespace Model
     /**
      * <p>The detected body part.</p>
      */
-    inline const BodyPart& GetName() const{ return m_name; }
+    inline BodyPart GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const BodyPart& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(BodyPart&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline ProtectiveEquipmentBodyPart& WithName(const BodyPart& value) { SetName(value); return *this;}
-    inline ProtectiveEquipmentBodyPart& WithName(BodyPart&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(BodyPart value) { m_nameHasBeenSet = true; m_name = value; }
+    inline ProtectiveEquipmentBodyPart& WithName(BodyPart value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -59,7 +57,7 @@ namespace Model
      * <p>The confidence that Amazon Rekognition has in the detection accuracy of the
      * detected body part. </p>
      */
-    inline double GetConfidence() const{ return m_confidence; }
+    inline double GetConfidence() const { return m_confidence; }
     inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
     inline void SetConfidence(double value) { m_confidenceHasBeenSet = true; m_confidence = value; }
     inline ProtectiveEquipmentBodyPart& WithConfidence(double value) { SetConfidence(value); return *this;}
@@ -70,21 +68,21 @@ namespace Model
      * <p>An array of Personal Protective Equipment items detected around a body
      * part.</p>
      */
-    inline const Aws::Vector<EquipmentDetection>& GetEquipmentDetections() const{ return m_equipmentDetections; }
+    inline const Aws::Vector<EquipmentDetection>& GetEquipmentDetections() const { return m_equipmentDetections; }
     inline bool EquipmentDetectionsHasBeenSet() const { return m_equipmentDetectionsHasBeenSet; }
-    inline void SetEquipmentDetections(const Aws::Vector<EquipmentDetection>& value) { m_equipmentDetectionsHasBeenSet = true; m_equipmentDetections = value; }
-    inline void SetEquipmentDetections(Aws::Vector<EquipmentDetection>&& value) { m_equipmentDetectionsHasBeenSet = true; m_equipmentDetections = std::move(value); }
-    inline ProtectiveEquipmentBodyPart& WithEquipmentDetections(const Aws::Vector<EquipmentDetection>& value) { SetEquipmentDetections(value); return *this;}
-    inline ProtectiveEquipmentBodyPart& WithEquipmentDetections(Aws::Vector<EquipmentDetection>&& value) { SetEquipmentDetections(std::move(value)); return *this;}
-    inline ProtectiveEquipmentBodyPart& AddEquipmentDetections(const EquipmentDetection& value) { m_equipmentDetectionsHasBeenSet = true; m_equipmentDetections.push_back(value); return *this; }
-    inline ProtectiveEquipmentBodyPart& AddEquipmentDetections(EquipmentDetection&& value) { m_equipmentDetectionsHasBeenSet = true; m_equipmentDetections.push_back(std::move(value)); return *this; }
+    template<typename EquipmentDetectionsT = Aws::Vector<EquipmentDetection>>
+    void SetEquipmentDetections(EquipmentDetectionsT&& value) { m_equipmentDetectionsHasBeenSet = true; m_equipmentDetections = std::forward<EquipmentDetectionsT>(value); }
+    template<typename EquipmentDetectionsT = Aws::Vector<EquipmentDetection>>
+    ProtectiveEquipmentBodyPart& WithEquipmentDetections(EquipmentDetectionsT&& value) { SetEquipmentDetections(std::forward<EquipmentDetectionsT>(value)); return *this;}
+    template<typename EquipmentDetectionsT = EquipmentDetection>
+    ProtectiveEquipmentBodyPart& AddEquipmentDetections(EquipmentDetectionsT&& value) { m_equipmentDetectionsHasBeenSet = true; m_equipmentDetections.emplace_back(std::forward<EquipmentDetectionsT>(value)); return *this; }
     ///@}
   private:
 
-    BodyPart m_name;
+    BodyPart m_name{BodyPart::NOT_SET};
     bool m_nameHasBeenSet = false;
 
-    double m_confidence;
+    double m_confidence{0.0};
     bool m_confidenceHasBeenSet = false;
 
     Aws::Vector<EquipmentDetection> m_equipmentDetections;

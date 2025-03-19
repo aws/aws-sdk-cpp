@@ -18,19 +18,7 @@ namespace Glue
 namespace Model
 {
 
-InboundIntegration::InboundIntegration() : 
-    m_sourceArnHasBeenSet(false),
-    m_targetArnHasBeenSet(false),
-    m_integrationArnHasBeenSet(false),
-    m_status(IntegrationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_errorsHasBeenSet(false)
-{
-}
-
 InboundIntegration::InboundIntegration(JsonView jsonValue)
-  : InboundIntegration()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ InboundIntegration& InboundIntegration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SourceArn"))
   {
     m_sourceArn = jsonValue.GetString("SourceArn");
-
     m_sourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetArn"))
   {
     m_targetArn = jsonValue.GetString("TargetArn");
-
     m_targetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IntegrationArn"))
   {
     m_integrationArn = jsonValue.GetString("IntegrationArn");
-
     m_integrationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = IntegrationStatusMapper::GetIntegrationStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateTime"))
   {
     m_createTime = jsonValue.GetDouble("CreateTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Errors"))
   {
     Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("Errors");
@@ -81,7 +59,6 @@ InboundIntegration& InboundIntegration::operator =(JsonView jsonValue)
     }
     m_errorsHasBeenSet = true;
   }
-
   return *this;
 }
 

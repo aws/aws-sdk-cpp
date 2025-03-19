@@ -36,7 +36,7 @@ namespace Model
   class Rule
   {
   public:
-    AWS_GLUEDATABREW_API Rule();
+    AWS_GLUEDATABREW_API Rule() = default;
     AWS_GLUEDATABREW_API Rule(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUEDATABREW_API Rule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The name of the rule.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Rule& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Rule& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Rule& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Rule& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,7 +59,7 @@ namespace Model
      * <p>A value that specifies whether the rule is disabled. Once a rule is disabled,
      * a profile job will not validate it during a job run. Default value is false.</p>
      */
-    inline bool GetDisabled() const{ return m_disabled; }
+    inline bool GetDisabled() const { return m_disabled; }
     inline bool DisabledHasBeenSet() const { return m_disabledHasBeenSet; }
     inline void SetDisabled(bool value) { m_disabledHasBeenSet = true; m_disabled = value; }
     inline Rule& WithDisabled(bool value) { SetDisabled(value); return *this;}
@@ -83,14 +81,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/databrew/latest/dg/profile.data-quality-available-checks.html">Available
      * checks</a> </p>
      */
-    inline const Aws::String& GetCheckExpression() const{ return m_checkExpression; }
+    inline const Aws::String& GetCheckExpression() const { return m_checkExpression; }
     inline bool CheckExpressionHasBeenSet() const { return m_checkExpressionHasBeenSet; }
-    inline void SetCheckExpression(const Aws::String& value) { m_checkExpressionHasBeenSet = true; m_checkExpression = value; }
-    inline void SetCheckExpression(Aws::String&& value) { m_checkExpressionHasBeenSet = true; m_checkExpression = std::move(value); }
-    inline void SetCheckExpression(const char* value) { m_checkExpressionHasBeenSet = true; m_checkExpression.assign(value); }
-    inline Rule& WithCheckExpression(const Aws::String& value) { SetCheckExpression(value); return *this;}
-    inline Rule& WithCheckExpression(Aws::String&& value) { SetCheckExpression(std::move(value)); return *this;}
-    inline Rule& WithCheckExpression(const char* value) { SetCheckExpression(value); return *this;}
+    template<typename CheckExpressionT = Aws::String>
+    void SetCheckExpression(CheckExpressionT&& value) { m_checkExpressionHasBeenSet = true; m_checkExpression = std::forward<CheckExpressionT>(value); }
+    template<typename CheckExpressionT = Aws::String>
+    Rule& WithCheckExpression(CheckExpressionT&& value) { SetCheckExpression(std::forward<CheckExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,19 +97,16 @@ namespace Model
      * column names should be enclosed in backticks, for example, <code>":col1":
      * "`Column A`".</code> </p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetSubstitutionMap() const{ return m_substitutionMap; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetSubstitutionMap() const { return m_substitutionMap; }
     inline bool SubstitutionMapHasBeenSet() const { return m_substitutionMapHasBeenSet; }
-    inline void SetSubstitutionMap(const Aws::Map<Aws::String, Aws::String>& value) { m_substitutionMapHasBeenSet = true; m_substitutionMap = value; }
-    inline void SetSubstitutionMap(Aws::Map<Aws::String, Aws::String>&& value) { m_substitutionMapHasBeenSet = true; m_substitutionMap = std::move(value); }
-    inline Rule& WithSubstitutionMap(const Aws::Map<Aws::String, Aws::String>& value) { SetSubstitutionMap(value); return *this;}
-    inline Rule& WithSubstitutionMap(Aws::Map<Aws::String, Aws::String>&& value) { SetSubstitutionMap(std::move(value)); return *this;}
-    inline Rule& AddSubstitutionMap(const Aws::String& key, const Aws::String& value) { m_substitutionMapHasBeenSet = true; m_substitutionMap.emplace(key, value); return *this; }
-    inline Rule& AddSubstitutionMap(Aws::String&& key, const Aws::String& value) { m_substitutionMapHasBeenSet = true; m_substitutionMap.emplace(std::move(key), value); return *this; }
-    inline Rule& AddSubstitutionMap(const Aws::String& key, Aws::String&& value) { m_substitutionMapHasBeenSet = true; m_substitutionMap.emplace(key, std::move(value)); return *this; }
-    inline Rule& AddSubstitutionMap(Aws::String&& key, Aws::String&& value) { m_substitutionMapHasBeenSet = true; m_substitutionMap.emplace(std::move(key), std::move(value)); return *this; }
-    inline Rule& AddSubstitutionMap(const char* key, Aws::String&& value) { m_substitutionMapHasBeenSet = true; m_substitutionMap.emplace(key, std::move(value)); return *this; }
-    inline Rule& AddSubstitutionMap(Aws::String&& key, const char* value) { m_substitutionMapHasBeenSet = true; m_substitutionMap.emplace(std::move(key), value); return *this; }
-    inline Rule& AddSubstitutionMap(const char* key, const char* value) { m_substitutionMapHasBeenSet = true; m_substitutionMap.emplace(key, value); return *this; }
+    template<typename SubstitutionMapT = Aws::Map<Aws::String, Aws::String>>
+    void SetSubstitutionMap(SubstitutionMapT&& value) { m_substitutionMapHasBeenSet = true; m_substitutionMap = std::forward<SubstitutionMapT>(value); }
+    template<typename SubstitutionMapT = Aws::Map<Aws::String, Aws::String>>
+    Rule& WithSubstitutionMap(SubstitutionMapT&& value) { SetSubstitutionMap(std::forward<SubstitutionMapT>(value)); return *this;}
+    template<typename SubstitutionMapKeyT = Aws::String, typename SubstitutionMapValueT = Aws::String>
+    Rule& AddSubstitutionMap(SubstitutionMapKeyT&& key, SubstitutionMapValueT&& value) {
+      m_substitutionMapHasBeenSet = true; m_substitutionMap.emplace(std::forward<SubstitutionMapKeyT>(key), std::forward<SubstitutionMapValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -122,12 +115,12 @@ namespace Model
      * expressions will be applied to each row in a specific column, and the threshold
      * will be used to determine whether the validation succeeds.</p>
      */
-    inline const Threshold& GetThreshold() const{ return m_threshold; }
+    inline const Threshold& GetThreshold() const { return m_threshold; }
     inline bool ThresholdHasBeenSet() const { return m_thresholdHasBeenSet; }
-    inline void SetThreshold(const Threshold& value) { m_thresholdHasBeenSet = true; m_threshold = value; }
-    inline void SetThreshold(Threshold&& value) { m_thresholdHasBeenSet = true; m_threshold = std::move(value); }
-    inline Rule& WithThreshold(const Threshold& value) { SetThreshold(value); return *this;}
-    inline Rule& WithThreshold(Threshold&& value) { SetThreshold(std::move(value)); return *this;}
+    template<typename ThresholdT = Threshold>
+    void SetThreshold(ThresholdT&& value) { m_thresholdHasBeenSet = true; m_threshold = std::forward<ThresholdT>(value); }
+    template<typename ThresholdT = Threshold>
+    Rule& WithThreshold(ThresholdT&& value) { SetThreshold(std::forward<ThresholdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -136,21 +129,21 @@ namespace Model
      * name or regular expression from the dataset. Rule will be applied to selected
      * columns.</p>
      */
-    inline const Aws::Vector<ColumnSelector>& GetColumnSelectors() const{ return m_columnSelectors; }
+    inline const Aws::Vector<ColumnSelector>& GetColumnSelectors() const { return m_columnSelectors; }
     inline bool ColumnSelectorsHasBeenSet() const { return m_columnSelectorsHasBeenSet; }
-    inline void SetColumnSelectors(const Aws::Vector<ColumnSelector>& value) { m_columnSelectorsHasBeenSet = true; m_columnSelectors = value; }
-    inline void SetColumnSelectors(Aws::Vector<ColumnSelector>&& value) { m_columnSelectorsHasBeenSet = true; m_columnSelectors = std::move(value); }
-    inline Rule& WithColumnSelectors(const Aws::Vector<ColumnSelector>& value) { SetColumnSelectors(value); return *this;}
-    inline Rule& WithColumnSelectors(Aws::Vector<ColumnSelector>&& value) { SetColumnSelectors(std::move(value)); return *this;}
-    inline Rule& AddColumnSelectors(const ColumnSelector& value) { m_columnSelectorsHasBeenSet = true; m_columnSelectors.push_back(value); return *this; }
-    inline Rule& AddColumnSelectors(ColumnSelector&& value) { m_columnSelectorsHasBeenSet = true; m_columnSelectors.push_back(std::move(value)); return *this; }
+    template<typename ColumnSelectorsT = Aws::Vector<ColumnSelector>>
+    void SetColumnSelectors(ColumnSelectorsT&& value) { m_columnSelectorsHasBeenSet = true; m_columnSelectors = std::forward<ColumnSelectorsT>(value); }
+    template<typename ColumnSelectorsT = Aws::Vector<ColumnSelector>>
+    Rule& WithColumnSelectors(ColumnSelectorsT&& value) { SetColumnSelectors(std::forward<ColumnSelectorsT>(value)); return *this;}
+    template<typename ColumnSelectorsT = ColumnSelector>
+    Rule& AddColumnSelectors(ColumnSelectorsT&& value) { m_columnSelectorsHasBeenSet = true; m_columnSelectors.emplace_back(std::forward<ColumnSelectorsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    bool m_disabled;
+    bool m_disabled{false};
     bool m_disabledHasBeenSet = false;
 
     Aws::String m_checkExpression;

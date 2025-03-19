@@ -18,15 +18,7 @@ namespace StorageGateway
 namespace Model
 {
 
-NetworkInterface::NetworkInterface() : 
-    m_ipv4AddressHasBeenSet(false),
-    m_macAddressHasBeenSet(false),
-    m_ipv6AddressHasBeenSet(false)
-{
-}
-
 NetworkInterface::NetworkInterface(JsonView jsonValue)
-  : NetworkInterface()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ NetworkInterface& NetworkInterface::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Ipv4Address"))
   {
     m_ipv4Address = jsonValue.GetString("Ipv4Address");
-
     m_ipv4AddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MacAddress"))
   {
     m_macAddress = jsonValue.GetString("MacAddress");
-
     m_macAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ipv6Address"))
   {
     m_ipv6Address = jsonValue.GetString("Ipv6Address");
-
     m_ipv6AddressHasBeenSet = true;
   }
-
   return *this;
 }
 

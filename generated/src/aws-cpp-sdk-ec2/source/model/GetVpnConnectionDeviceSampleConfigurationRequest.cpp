@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-GetVpnConnectionDeviceSampleConfigurationRequest::GetVpnConnectionDeviceSampleConfigurationRequest() : 
-    m_vpnConnectionIdHasBeenSet(false),
-    m_vpnConnectionDeviceTypeIdHasBeenSet(false),
-    m_internetKeyExchangeVersionHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String GetVpnConnectionDeviceSampleConfigurationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

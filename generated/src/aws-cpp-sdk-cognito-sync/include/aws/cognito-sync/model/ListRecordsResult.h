@@ -34,7 +34,7 @@ namespace Model
   class ListRecordsResult
   {
   public:
-    AWS_COGNITOSYNC_API ListRecordsResult();
+    AWS_COGNITOSYNC_API ListRecordsResult() = default;
     AWS_COGNITOSYNC_API ListRecordsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COGNITOSYNC_API ListRecordsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,34 +43,32 @@ namespace Model
     /**
      * A list of all records.
      */
-    inline const Aws::Vector<Record>& GetRecords() const{ return m_records; }
-    inline void SetRecords(const Aws::Vector<Record>& value) { m_records = value; }
-    inline void SetRecords(Aws::Vector<Record>&& value) { m_records = std::move(value); }
-    inline ListRecordsResult& WithRecords(const Aws::Vector<Record>& value) { SetRecords(value); return *this;}
-    inline ListRecordsResult& WithRecords(Aws::Vector<Record>&& value) { SetRecords(std::move(value)); return *this;}
-    inline ListRecordsResult& AddRecords(const Record& value) { m_records.push_back(value); return *this; }
-    inline ListRecordsResult& AddRecords(Record&& value) { m_records.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Record>& GetRecords() const { return m_records; }
+    template<typename RecordsT = Aws::Vector<Record>>
+    void SetRecords(RecordsT&& value) { m_recordsHasBeenSet = true; m_records = std::forward<RecordsT>(value); }
+    template<typename RecordsT = Aws::Vector<Record>>
+    ListRecordsResult& WithRecords(RecordsT&& value) { SetRecords(std::forward<RecordsT>(value)); return *this;}
+    template<typename RecordsT = Record>
+    ListRecordsResult& AddRecords(RecordsT&& value) { m_recordsHasBeenSet = true; m_records.emplace_back(std::forward<RecordsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * A pagination token for obtaining the next page of results.
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListRecordsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListRecordsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListRecordsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListRecordsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Total number of records.
      */
-    inline int GetCount() const{ return m_count; }
-    inline void SetCount(int value) { m_count = value; }
+    inline int GetCount() const { return m_count; }
+    inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
     inline ListRecordsResult& WithCount(int value) { SetCount(value); return *this;}
     ///@}
 
@@ -78,8 +76,8 @@ namespace Model
     /**
      * Server sync count for this dataset.
      */
-    inline long long GetDatasetSyncCount() const{ return m_datasetSyncCount; }
-    inline void SetDatasetSyncCount(long long value) { m_datasetSyncCount = value; }
+    inline long long GetDatasetSyncCount() const { return m_datasetSyncCount; }
+    inline void SetDatasetSyncCount(long long value) { m_datasetSyncCountHasBeenSet = true; m_datasetSyncCount = value; }
     inline ListRecordsResult& WithDatasetSyncCount(long long value) { SetDatasetSyncCount(value); return *this;}
     ///@}
 
@@ -87,35 +85,32 @@ namespace Model
     /**
      * The user/device that made the last change to this record.
      */
-    inline const Aws::String& GetLastModifiedBy() const{ return m_lastModifiedBy; }
-    inline void SetLastModifiedBy(const Aws::String& value) { m_lastModifiedBy = value; }
-    inline void SetLastModifiedBy(Aws::String&& value) { m_lastModifiedBy = std::move(value); }
-    inline void SetLastModifiedBy(const char* value) { m_lastModifiedBy.assign(value); }
-    inline ListRecordsResult& WithLastModifiedBy(const Aws::String& value) { SetLastModifiedBy(value); return *this;}
-    inline ListRecordsResult& WithLastModifiedBy(Aws::String&& value) { SetLastModifiedBy(std::move(value)); return *this;}
-    inline ListRecordsResult& WithLastModifiedBy(const char* value) { SetLastModifiedBy(value); return *this;}
+    inline const Aws::String& GetLastModifiedBy() const { return m_lastModifiedBy; }
+    template<typename LastModifiedByT = Aws::String>
+    void SetLastModifiedBy(LastModifiedByT&& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = std::forward<LastModifiedByT>(value); }
+    template<typename LastModifiedByT = Aws::String>
+    ListRecordsResult& WithLastModifiedBy(LastModifiedByT&& value) { SetLastModifiedBy(std::forward<LastModifiedByT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Names of merged datasets.
      */
-    inline const Aws::Vector<Aws::String>& GetMergedDatasetNames() const{ return m_mergedDatasetNames; }
-    inline void SetMergedDatasetNames(const Aws::Vector<Aws::String>& value) { m_mergedDatasetNames = value; }
-    inline void SetMergedDatasetNames(Aws::Vector<Aws::String>&& value) { m_mergedDatasetNames = std::move(value); }
-    inline ListRecordsResult& WithMergedDatasetNames(const Aws::Vector<Aws::String>& value) { SetMergedDatasetNames(value); return *this;}
-    inline ListRecordsResult& WithMergedDatasetNames(Aws::Vector<Aws::String>&& value) { SetMergedDatasetNames(std::move(value)); return *this;}
-    inline ListRecordsResult& AddMergedDatasetNames(const Aws::String& value) { m_mergedDatasetNames.push_back(value); return *this; }
-    inline ListRecordsResult& AddMergedDatasetNames(Aws::String&& value) { m_mergedDatasetNames.push_back(std::move(value)); return *this; }
-    inline ListRecordsResult& AddMergedDatasetNames(const char* value) { m_mergedDatasetNames.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetMergedDatasetNames() const { return m_mergedDatasetNames; }
+    template<typename MergedDatasetNamesT = Aws::Vector<Aws::String>>
+    void SetMergedDatasetNames(MergedDatasetNamesT&& value) { m_mergedDatasetNamesHasBeenSet = true; m_mergedDatasetNames = std::forward<MergedDatasetNamesT>(value); }
+    template<typename MergedDatasetNamesT = Aws::Vector<Aws::String>>
+    ListRecordsResult& WithMergedDatasetNames(MergedDatasetNamesT&& value) { SetMergedDatasetNames(std::forward<MergedDatasetNamesT>(value)); return *this;}
+    template<typename MergedDatasetNamesT = Aws::String>
+    ListRecordsResult& AddMergedDatasetNames(MergedDatasetNamesT&& value) { m_mergedDatasetNamesHasBeenSet = true; m_mergedDatasetNames.emplace_back(std::forward<MergedDatasetNamesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * Indicates whether the dataset exists.
      */
-    inline bool GetDatasetExists() const{ return m_datasetExists; }
-    inline void SetDatasetExists(bool value) { m_datasetExists = value; }
+    inline bool GetDatasetExists() const { return m_datasetExists; }
+    inline void SetDatasetExists(bool value) { m_datasetExistsHasBeenSet = true; m_datasetExists = value; }
     inline ListRecordsResult& WithDatasetExists(bool value) { SetDatasetExists(value); return *this;}
     ///@}
 
@@ -123,8 +118,8 @@ namespace Model
     /**
      * A boolean value specifying whether to delete the dataset locally.
      */
-    inline bool GetDatasetDeletedAfterRequestedSyncCount() const{ return m_datasetDeletedAfterRequestedSyncCount; }
-    inline void SetDatasetDeletedAfterRequestedSyncCount(bool value) { m_datasetDeletedAfterRequestedSyncCount = value; }
+    inline bool GetDatasetDeletedAfterRequestedSyncCount() const { return m_datasetDeletedAfterRequestedSyncCount; }
+    inline void SetDatasetDeletedAfterRequestedSyncCount(bool value) { m_datasetDeletedAfterRequestedSyncCountHasBeenSet = true; m_datasetDeletedAfterRequestedSyncCount = value; }
     inline ListRecordsResult& WithDatasetDeletedAfterRequestedSyncCount(bool value) { SetDatasetDeletedAfterRequestedSyncCount(value); return *this;}
     ///@}
 
@@ -132,46 +127,52 @@ namespace Model
     /**
      * A token containing a session ID, identity ID, and expiration.
      */
-    inline const Aws::String& GetSyncSessionToken() const{ return m_syncSessionToken; }
-    inline void SetSyncSessionToken(const Aws::String& value) { m_syncSessionToken = value; }
-    inline void SetSyncSessionToken(Aws::String&& value) { m_syncSessionToken = std::move(value); }
-    inline void SetSyncSessionToken(const char* value) { m_syncSessionToken.assign(value); }
-    inline ListRecordsResult& WithSyncSessionToken(const Aws::String& value) { SetSyncSessionToken(value); return *this;}
-    inline ListRecordsResult& WithSyncSessionToken(Aws::String&& value) { SetSyncSessionToken(std::move(value)); return *this;}
-    inline ListRecordsResult& WithSyncSessionToken(const char* value) { SetSyncSessionToken(value); return *this;}
+    inline const Aws::String& GetSyncSessionToken() const { return m_syncSessionToken; }
+    template<typename SyncSessionTokenT = Aws::String>
+    void SetSyncSessionToken(SyncSessionTokenT&& value) { m_syncSessionTokenHasBeenSet = true; m_syncSessionToken = std::forward<SyncSessionTokenT>(value); }
+    template<typename SyncSessionTokenT = Aws::String>
+    ListRecordsResult& WithSyncSessionToken(SyncSessionTokenT&& value) { SetSyncSessionToken(std::forward<SyncSessionTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListRecordsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListRecordsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListRecordsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListRecordsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Record> m_records;
+    bool m_recordsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
-    int m_count;
+    int m_count{0};
+    bool m_countHasBeenSet = false;
 
-    long long m_datasetSyncCount;
+    long long m_datasetSyncCount{0};
+    bool m_datasetSyncCountHasBeenSet = false;
 
     Aws::String m_lastModifiedBy;
+    bool m_lastModifiedByHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_mergedDatasetNames;
+    bool m_mergedDatasetNamesHasBeenSet = false;
 
-    bool m_datasetExists;
+    bool m_datasetExists{false};
+    bool m_datasetExistsHasBeenSet = false;
 
-    bool m_datasetDeletedAfterRequestedSyncCount;
+    bool m_datasetDeletedAfterRequestedSyncCount{false};
+    bool m_datasetDeletedAfterRequestedSyncCountHasBeenSet = false;
 
     Aws::String m_syncSessionToken;
+    bool m_syncSessionTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

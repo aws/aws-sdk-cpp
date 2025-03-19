@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartReplayResult::StartReplayResult() : 
-    m_state(ReplayState::NOT_SET)
-{
-}
-
 StartReplayResult::StartReplayResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : StartReplayResult()
 {
   *this = result;
 }
@@ -34,33 +28,30 @@ StartReplayResult& StartReplayResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("ReplayArn"))
   {
     m_replayArn = jsonValue.GetString("ReplayArn");
-
+    m_replayArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = ReplayStateMapper::GetReplayStateForName(jsonValue.GetString("State"));
-
+    m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StateReason"))
   {
     m_stateReason = jsonValue.GetString("StateReason");
-
+    m_stateReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplayStartTime"))
   {
     m_replayStartTime = jsonValue.GetDouble("ReplayStartTime");
-
+    m_replayStartTimeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

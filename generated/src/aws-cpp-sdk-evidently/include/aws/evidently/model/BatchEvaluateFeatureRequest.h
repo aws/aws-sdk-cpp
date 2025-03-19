@@ -23,7 +23,7 @@ namespace Model
   class BatchEvaluateFeatureRequest : public CloudWatchEvidentlyRequest
   {
   public:
-    AWS_CLOUDWATCHEVIDENTLY_API BatchEvaluateFeatureRequest();
+    AWS_CLOUDWATCHEVIDENTLY_API BatchEvaluateFeatureRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name or ARN of the project that contains the feature being evaluated.</p>
      */
-    inline const Aws::String& GetProject() const{ return m_project; }
+    inline const Aws::String& GetProject() const { return m_project; }
     inline bool ProjectHasBeenSet() const { return m_projectHasBeenSet; }
-    inline void SetProject(const Aws::String& value) { m_projectHasBeenSet = true; m_project = value; }
-    inline void SetProject(Aws::String&& value) { m_projectHasBeenSet = true; m_project = std::move(value); }
-    inline void SetProject(const char* value) { m_projectHasBeenSet = true; m_project.assign(value); }
-    inline BatchEvaluateFeatureRequest& WithProject(const Aws::String& value) { SetProject(value); return *this;}
-    inline BatchEvaluateFeatureRequest& WithProject(Aws::String&& value) { SetProject(std::move(value)); return *this;}
-    inline BatchEvaluateFeatureRequest& WithProject(const char* value) { SetProject(value); return *this;}
+    template<typename ProjectT = Aws::String>
+    void SetProject(ProjectT&& value) { m_projectHasBeenSet = true; m_project = std::forward<ProjectT>(value); }
+    template<typename ProjectT = Aws::String>
+    BatchEvaluateFeatureRequest& WithProject(ProjectT&& value) { SetProject(std::forward<ProjectT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,14 +51,14 @@ namespace Model
      * <p>An array of structures, where each structure assigns a feature variation to
      * one user session.</p>
      */
-    inline const Aws::Vector<EvaluationRequest>& GetRequests() const{ return m_requests; }
+    inline const Aws::Vector<EvaluationRequest>& GetRequests() const { return m_requests; }
     inline bool RequestsHasBeenSet() const { return m_requestsHasBeenSet; }
-    inline void SetRequests(const Aws::Vector<EvaluationRequest>& value) { m_requestsHasBeenSet = true; m_requests = value; }
-    inline void SetRequests(Aws::Vector<EvaluationRequest>&& value) { m_requestsHasBeenSet = true; m_requests = std::move(value); }
-    inline BatchEvaluateFeatureRequest& WithRequests(const Aws::Vector<EvaluationRequest>& value) { SetRequests(value); return *this;}
-    inline BatchEvaluateFeatureRequest& WithRequests(Aws::Vector<EvaluationRequest>&& value) { SetRequests(std::move(value)); return *this;}
-    inline BatchEvaluateFeatureRequest& AddRequests(const EvaluationRequest& value) { m_requestsHasBeenSet = true; m_requests.push_back(value); return *this; }
-    inline BatchEvaluateFeatureRequest& AddRequests(EvaluationRequest&& value) { m_requestsHasBeenSet = true; m_requests.push_back(std::move(value)); return *this; }
+    template<typename RequestsT = Aws::Vector<EvaluationRequest>>
+    void SetRequests(RequestsT&& value) { m_requestsHasBeenSet = true; m_requests = std::forward<RequestsT>(value); }
+    template<typename RequestsT = Aws::Vector<EvaluationRequest>>
+    BatchEvaluateFeatureRequest& WithRequests(RequestsT&& value) { SetRequests(std::forward<RequestsT>(value)); return *this;}
+    template<typename RequestsT = EvaluationRequest>
+    BatchEvaluateFeatureRequest& AddRequests(RequestsT&& value) { m_requestsHasBeenSet = true; m_requests.emplace_back(std::forward<RequestsT>(value)); return *this; }
     ///@}
   private:
 

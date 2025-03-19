@@ -30,7 +30,7 @@ namespace Model
   class CreateDeploymentRequest : public CodeDeployRequest
   {
   public:
-    AWS_CODEDEPLOY_API CreateDeploymentRequest();
+    AWS_CODEDEPLOY_API CreateDeploymentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,40 +48,36 @@ namespace Model
      * <p>The name of an CodeDeploy application associated with the user or Amazon Web
      * Services account.</p>
      */
-    inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
+    inline const Aws::String& GetApplicationName() const { return m_applicationName; }
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
-    inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
-    inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
-    inline CreateDeploymentRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
-    inline CreateDeploymentRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
-    inline CreateDeploymentRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+    template<typename ApplicationNameT = Aws::String>
+    void SetApplicationName(ApplicationNameT&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::forward<ApplicationNameT>(value); }
+    template<typename ApplicationNameT = Aws::String>
+    CreateDeploymentRequest& WithApplicationName(ApplicationNameT&& value) { SetApplicationName(std::forward<ApplicationNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the deployment group.</p>
      */
-    inline const Aws::String& GetDeploymentGroupName() const{ return m_deploymentGroupName; }
+    inline const Aws::String& GetDeploymentGroupName() const { return m_deploymentGroupName; }
     inline bool DeploymentGroupNameHasBeenSet() const { return m_deploymentGroupNameHasBeenSet; }
-    inline void SetDeploymentGroupName(const Aws::String& value) { m_deploymentGroupNameHasBeenSet = true; m_deploymentGroupName = value; }
-    inline void SetDeploymentGroupName(Aws::String&& value) { m_deploymentGroupNameHasBeenSet = true; m_deploymentGroupName = std::move(value); }
-    inline void SetDeploymentGroupName(const char* value) { m_deploymentGroupNameHasBeenSet = true; m_deploymentGroupName.assign(value); }
-    inline CreateDeploymentRequest& WithDeploymentGroupName(const Aws::String& value) { SetDeploymentGroupName(value); return *this;}
-    inline CreateDeploymentRequest& WithDeploymentGroupName(Aws::String&& value) { SetDeploymentGroupName(std::move(value)); return *this;}
-    inline CreateDeploymentRequest& WithDeploymentGroupName(const char* value) { SetDeploymentGroupName(value); return *this;}
+    template<typename DeploymentGroupNameT = Aws::String>
+    void SetDeploymentGroupName(DeploymentGroupNameT&& value) { m_deploymentGroupNameHasBeenSet = true; m_deploymentGroupName = std::forward<DeploymentGroupNameT>(value); }
+    template<typename DeploymentGroupNameT = Aws::String>
+    CreateDeploymentRequest& WithDeploymentGroupName(DeploymentGroupNameT&& value) { SetDeploymentGroupName(std::forward<DeploymentGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The type and location of the revision to deploy. </p>
      */
-    inline const RevisionLocation& GetRevision() const{ return m_revision; }
+    inline const RevisionLocation& GetRevision() const { return m_revision; }
     inline bool RevisionHasBeenSet() const { return m_revisionHasBeenSet; }
-    inline void SetRevision(const RevisionLocation& value) { m_revisionHasBeenSet = true; m_revision = value; }
-    inline void SetRevision(RevisionLocation&& value) { m_revisionHasBeenSet = true; m_revision = std::move(value); }
-    inline CreateDeploymentRequest& WithRevision(const RevisionLocation& value) { SetRevision(value); return *this;}
-    inline CreateDeploymentRequest& WithRevision(RevisionLocation&& value) { SetRevision(std::move(value)); return *this;}
+    template<typename RevisionT = RevisionLocation>
+    void SetRevision(RevisionT&& value) { m_revisionHasBeenSet = true; m_revision = std::forward<RevisionT>(value); }
+    template<typename RevisionT = RevisionLocation>
+    CreateDeploymentRequest& WithRevision(RevisionT&& value) { SetRevision(std::forward<RevisionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,28 +88,24 @@ namespace Model
      * deployment configuration associated with it,
      * <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>
      */
-    inline const Aws::String& GetDeploymentConfigName() const{ return m_deploymentConfigName; }
+    inline const Aws::String& GetDeploymentConfigName() const { return m_deploymentConfigName; }
     inline bool DeploymentConfigNameHasBeenSet() const { return m_deploymentConfigNameHasBeenSet; }
-    inline void SetDeploymentConfigName(const Aws::String& value) { m_deploymentConfigNameHasBeenSet = true; m_deploymentConfigName = value; }
-    inline void SetDeploymentConfigName(Aws::String&& value) { m_deploymentConfigNameHasBeenSet = true; m_deploymentConfigName = std::move(value); }
-    inline void SetDeploymentConfigName(const char* value) { m_deploymentConfigNameHasBeenSet = true; m_deploymentConfigName.assign(value); }
-    inline CreateDeploymentRequest& WithDeploymentConfigName(const Aws::String& value) { SetDeploymentConfigName(value); return *this;}
-    inline CreateDeploymentRequest& WithDeploymentConfigName(Aws::String&& value) { SetDeploymentConfigName(std::move(value)); return *this;}
-    inline CreateDeploymentRequest& WithDeploymentConfigName(const char* value) { SetDeploymentConfigName(value); return *this;}
+    template<typename DeploymentConfigNameT = Aws::String>
+    void SetDeploymentConfigName(DeploymentConfigNameT&& value) { m_deploymentConfigNameHasBeenSet = true; m_deploymentConfigName = std::forward<DeploymentConfigNameT>(value); }
+    template<typename DeploymentConfigNameT = Aws::String>
+    CreateDeploymentRequest& WithDeploymentConfigName(DeploymentConfigNameT&& value) { SetDeploymentConfigName(std::forward<DeploymentConfigNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A comment about the deployment.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateDeploymentRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateDeploymentRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateDeploymentRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateDeploymentRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -141,7 +133,7 @@ namespace Model
      * specify that the <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>,
      * and <code>AfterBlockTraffic</code> failures should be ignored. </p>
      */
-    inline bool GetIgnoreApplicationStopFailures() const{ return m_ignoreApplicationStopFailures; }
+    inline bool GetIgnoreApplicationStopFailures() const { return m_ignoreApplicationStopFailures; }
     inline bool IgnoreApplicationStopFailuresHasBeenSet() const { return m_ignoreApplicationStopFailuresHasBeenSet; }
     inline void SetIgnoreApplicationStopFailures(bool value) { m_ignoreApplicationStopFailuresHasBeenSet = true; m_ignoreApplicationStopFailures = value; }
     inline CreateDeploymentRequest& WithIgnoreApplicationStopFailures(bool value) { SetIgnoreApplicationStopFailures(value); return *this;}
@@ -152,12 +144,12 @@ namespace Model
      * <p> Information about the instances that belong to the replacement environment
      * in a blue/green deployment. </p>
      */
-    inline const TargetInstances& GetTargetInstances() const{ return m_targetInstances; }
+    inline const TargetInstances& GetTargetInstances() const { return m_targetInstances; }
     inline bool TargetInstancesHasBeenSet() const { return m_targetInstancesHasBeenSet; }
-    inline void SetTargetInstances(const TargetInstances& value) { m_targetInstancesHasBeenSet = true; m_targetInstances = value; }
-    inline void SetTargetInstances(TargetInstances&& value) { m_targetInstancesHasBeenSet = true; m_targetInstances = std::move(value); }
-    inline CreateDeploymentRequest& WithTargetInstances(const TargetInstances& value) { SetTargetInstances(value); return *this;}
-    inline CreateDeploymentRequest& WithTargetInstances(TargetInstances&& value) { SetTargetInstances(std::move(value)); return *this;}
+    template<typename TargetInstancesT = TargetInstances>
+    void SetTargetInstances(TargetInstancesT&& value) { m_targetInstancesHasBeenSet = true; m_targetInstances = std::forward<TargetInstancesT>(value); }
+    template<typename TargetInstancesT = TargetInstances>
+    CreateDeploymentRequest& WithTargetInstances(TargetInstancesT&& value) { SetTargetInstances(std::forward<TargetInstancesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -165,12 +157,12 @@ namespace Model
      * <p>Configuration information for an automatic rollback that is added when a
      * deployment is created.</p>
      */
-    inline const AutoRollbackConfiguration& GetAutoRollbackConfiguration() const{ return m_autoRollbackConfiguration; }
+    inline const AutoRollbackConfiguration& GetAutoRollbackConfiguration() const { return m_autoRollbackConfiguration; }
     inline bool AutoRollbackConfigurationHasBeenSet() const { return m_autoRollbackConfigurationHasBeenSet; }
-    inline void SetAutoRollbackConfiguration(const AutoRollbackConfiguration& value) { m_autoRollbackConfigurationHasBeenSet = true; m_autoRollbackConfiguration = value; }
-    inline void SetAutoRollbackConfiguration(AutoRollbackConfiguration&& value) { m_autoRollbackConfigurationHasBeenSet = true; m_autoRollbackConfiguration = std::move(value); }
-    inline CreateDeploymentRequest& WithAutoRollbackConfiguration(const AutoRollbackConfiguration& value) { SetAutoRollbackConfiguration(value); return *this;}
-    inline CreateDeploymentRequest& WithAutoRollbackConfiguration(AutoRollbackConfiguration&& value) { SetAutoRollbackConfiguration(std::move(value)); return *this;}
+    template<typename AutoRollbackConfigurationT = AutoRollbackConfiguration>
+    void SetAutoRollbackConfiguration(AutoRollbackConfigurationT&& value) { m_autoRollbackConfigurationHasBeenSet = true; m_autoRollbackConfiguration = std::forward<AutoRollbackConfigurationT>(value); }
+    template<typename AutoRollbackConfigurationT = AutoRollbackConfiguration>
+    CreateDeploymentRequest& WithAutoRollbackConfiguration(AutoRollbackConfigurationT&& value) { SetAutoRollbackConfiguration(std::forward<AutoRollbackConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -178,7 +170,7 @@ namespace Model
      * <p> Indicates whether to deploy to all instances or only to instances that are
      * not running the latest application revision. </p>
      */
-    inline bool GetUpdateOutdatedInstancesOnly() const{ return m_updateOutdatedInstancesOnly; }
+    inline bool GetUpdateOutdatedInstancesOnly() const { return m_updateOutdatedInstancesOnly; }
     inline bool UpdateOutdatedInstancesOnlyHasBeenSet() const { return m_updateOutdatedInstancesOnlyHasBeenSet; }
     inline void SetUpdateOutdatedInstancesOnly(bool value) { m_updateOutdatedInstancesOnlyHasBeenSet = true; m_updateOutdatedInstancesOnly = value; }
     inline CreateDeploymentRequest& WithUpdateOutdatedInstancesOnly(bool value) { SetUpdateOutdatedInstancesOnly(value); return *this;}
@@ -196,12 +188,10 @@ namespace Model
      * <p>RETAIN: The version of the file already on the instance is kept and used as
      * part of the new deployment.</p> </li> </ul>
      */
-    inline const FileExistsBehavior& GetFileExistsBehavior() const{ return m_fileExistsBehavior; }
+    inline FileExistsBehavior GetFileExistsBehavior() const { return m_fileExistsBehavior; }
     inline bool FileExistsBehaviorHasBeenSet() const { return m_fileExistsBehaviorHasBeenSet; }
-    inline void SetFileExistsBehavior(const FileExistsBehavior& value) { m_fileExistsBehaviorHasBeenSet = true; m_fileExistsBehavior = value; }
-    inline void SetFileExistsBehavior(FileExistsBehavior&& value) { m_fileExistsBehaviorHasBeenSet = true; m_fileExistsBehavior = std::move(value); }
-    inline CreateDeploymentRequest& WithFileExistsBehavior(const FileExistsBehavior& value) { SetFileExistsBehavior(value); return *this;}
-    inline CreateDeploymentRequest& WithFileExistsBehavior(FileExistsBehavior&& value) { SetFileExistsBehavior(std::move(value)); return *this;}
+    inline void SetFileExistsBehavior(FileExistsBehavior value) { m_fileExistsBehaviorHasBeenSet = true; m_fileExistsBehavior = value; }
+    inline CreateDeploymentRequest& WithFileExistsBehavior(FileExistsBehavior value) { SetFileExistsBehavior(value); return *this;}
     ///@}
 
     ///@{
@@ -220,12 +210,12 @@ namespace Model
      * <code>UpdateDeploymentGroup</code> IAM permission when calling
      * <code>CreateDeployment</code>.</p> 
      */
-    inline const AlarmConfiguration& GetOverrideAlarmConfiguration() const{ return m_overrideAlarmConfiguration; }
+    inline const AlarmConfiguration& GetOverrideAlarmConfiguration() const { return m_overrideAlarmConfiguration; }
     inline bool OverrideAlarmConfigurationHasBeenSet() const { return m_overrideAlarmConfigurationHasBeenSet; }
-    inline void SetOverrideAlarmConfiguration(const AlarmConfiguration& value) { m_overrideAlarmConfigurationHasBeenSet = true; m_overrideAlarmConfiguration = value; }
-    inline void SetOverrideAlarmConfiguration(AlarmConfiguration&& value) { m_overrideAlarmConfigurationHasBeenSet = true; m_overrideAlarmConfiguration = std::move(value); }
-    inline CreateDeploymentRequest& WithOverrideAlarmConfiguration(const AlarmConfiguration& value) { SetOverrideAlarmConfiguration(value); return *this;}
-    inline CreateDeploymentRequest& WithOverrideAlarmConfiguration(AlarmConfiguration&& value) { SetOverrideAlarmConfiguration(std::move(value)); return *this;}
+    template<typename OverrideAlarmConfigurationT = AlarmConfiguration>
+    void SetOverrideAlarmConfiguration(OverrideAlarmConfigurationT&& value) { m_overrideAlarmConfigurationHasBeenSet = true; m_overrideAlarmConfiguration = std::forward<OverrideAlarmConfigurationT>(value); }
+    template<typename OverrideAlarmConfigurationT = AlarmConfiguration>
+    CreateDeploymentRequest& WithOverrideAlarmConfiguration(OverrideAlarmConfigurationT&& value) { SetOverrideAlarmConfiguration(std::forward<OverrideAlarmConfigurationT>(value)); return *this;}
     ///@}
   private:
 
@@ -244,7 +234,7 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    bool m_ignoreApplicationStopFailures;
+    bool m_ignoreApplicationStopFailures{false};
     bool m_ignoreApplicationStopFailuresHasBeenSet = false;
 
     TargetInstances m_targetInstances;
@@ -253,10 +243,10 @@ namespace Model
     AutoRollbackConfiguration m_autoRollbackConfiguration;
     bool m_autoRollbackConfigurationHasBeenSet = false;
 
-    bool m_updateOutdatedInstancesOnly;
+    bool m_updateOutdatedInstancesOnly{false};
     bool m_updateOutdatedInstancesOnlyHasBeenSet = false;
 
-    FileExistsBehavior m_fileExistsBehavior;
+    FileExistsBehavior m_fileExistsBehavior{FileExistsBehavior::NOT_SET};
     bool m_fileExistsBehaviorHasBeenSet = false;
 
     AlarmConfiguration m_overrideAlarmConfiguration;

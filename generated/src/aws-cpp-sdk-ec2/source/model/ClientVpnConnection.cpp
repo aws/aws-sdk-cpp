@@ -20,26 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ClientVpnConnection::ClientVpnConnection() : 
-    m_clientVpnEndpointIdHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_connectionIdHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_connectionEstablishedTimeHasBeenSet(false),
-    m_ingressBytesHasBeenSet(false),
-    m_egressBytesHasBeenSet(false),
-    m_ingressPacketsHasBeenSet(false),
-    m_egressPacketsHasBeenSet(false),
-    m_clientIpHasBeenSet(false),
-    m_commonNameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_connectionEndTimeHasBeenSet(false),
-    m_postureComplianceStatusesHasBeenSet(false)
-{
-}
-
 ClientVpnConnection::ClientVpnConnection(const XmlNode& xmlNode)
-  : ClientVpnConnection()
 {
   *this = xmlNode;
 }
@@ -132,6 +113,7 @@ ClientVpnConnection& ClientVpnConnection::operator =(const XmlNode& xmlNode)
     if(!postureComplianceStatusesNode.IsNull())
     {
       XmlNode postureComplianceStatusesMember = postureComplianceStatusesNode.FirstChild("item");
+      m_postureComplianceStatusesHasBeenSet = !postureComplianceStatusesMember.IsNull();
       while(!postureComplianceStatusesMember.IsNull())
       {
         m_postureComplianceStatuses.push_back(postureComplianceStatusesMember.GetText());

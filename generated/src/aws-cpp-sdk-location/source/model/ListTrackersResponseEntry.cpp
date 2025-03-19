@@ -18,16 +18,7 @@ namespace LocationService
 namespace Model
 {
 
-ListTrackersResponseEntry::ListTrackersResponseEntry() : 
-    m_trackerNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
-{
-}
-
 ListTrackersResponseEntry::ListTrackersResponseEntry(JsonView jsonValue)
-  : ListTrackersResponseEntry()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ListTrackersResponseEntry& ListTrackersResponseEntry::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("TrackerName"))
   {
     m_trackerName = jsonValue.GetString("TrackerName");
-
     m_trackerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateTime"))
   {
     m_createTime = jsonValue.GetString("CreateTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdateTime"))
   {
     m_updateTime = jsonValue.GetString("UpdateTime");
-
     m_updateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

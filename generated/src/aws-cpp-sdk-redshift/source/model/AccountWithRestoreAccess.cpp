@@ -20,14 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-AccountWithRestoreAccess::AccountWithRestoreAccess() : 
-    m_accountIdHasBeenSet(false),
-    m_accountAliasHasBeenSet(false)
-{
-}
-
 AccountWithRestoreAccess::AccountWithRestoreAccess(const XmlNode& xmlNode)
-  : AccountWithRestoreAccess()
 {
   *this = xmlNode;
 }

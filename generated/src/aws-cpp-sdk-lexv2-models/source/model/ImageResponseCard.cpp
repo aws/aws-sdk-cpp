@@ -18,16 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-ImageResponseCard::ImageResponseCard() : 
-    m_titleHasBeenSet(false),
-    m_subtitleHasBeenSet(false),
-    m_imageUrlHasBeenSet(false),
-    m_buttonsHasBeenSet(false)
-{
-}
-
 ImageResponseCard::ImageResponseCard(JsonView jsonValue)
-  : ImageResponseCard()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ImageResponseCard& ImageResponseCard::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("title"))
   {
     m_title = jsonValue.GetString("title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subtitle"))
   {
     m_subtitle = jsonValue.GetString("subtitle");
-
     m_subtitleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageUrl"))
   {
     m_imageUrl = jsonValue.GetString("imageUrl");
-
     m_imageUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("buttons"))
   {
     Aws::Utils::Array<JsonView> buttonsJsonList = jsonValue.GetArray("buttons");
@@ -64,7 +49,6 @@ ImageResponseCard& ImageResponseCard::operator =(JsonView jsonValue)
     }
     m_buttonsHasBeenSet = true;
   }
-
   return *this;
 }
 

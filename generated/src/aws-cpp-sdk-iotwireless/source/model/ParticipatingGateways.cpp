@@ -18,17 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-ParticipatingGateways::ParticipatingGateways() : 
-    m_downlinkMode(DownlinkMode::NOT_SET),
-    m_downlinkModeHasBeenSet(false),
-    m_gatewayListHasBeenSet(false),
-    m_transmissionInterval(0),
-    m_transmissionIntervalHasBeenSet(false)
-{
-}
-
 ParticipatingGateways::ParticipatingGateways(JsonView jsonValue)
-  : ParticipatingGateways()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ ParticipatingGateways& ParticipatingGateways::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DownlinkMode"))
   {
     m_downlinkMode = DownlinkModeMapper::GetDownlinkModeForName(jsonValue.GetString("DownlinkMode"));
-
     m_downlinkModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GatewayList"))
   {
     Aws::Utils::Array<JsonView> gatewayListJsonList = jsonValue.GetArray("GatewayList");
@@ -51,14 +39,11 @@ ParticipatingGateways& ParticipatingGateways::operator =(JsonView jsonValue)
     }
     m_gatewayListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TransmissionInterval"))
   {
     m_transmissionInterval = jsonValue.GetInteger("TransmissionInterval");
-
     m_transmissionIntervalHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -10,11 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DescribeEventCategoriesRequest::DescribeEventCategoriesRequest() : 
-    m_sourceTypeHasBeenSet(false)
-{
-}
-
 Aws::String DescribeEventCategoriesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

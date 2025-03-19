@@ -12,14 +12,6 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PostCommentReplyRequest::PostCommentReplyRequest() : 
-    m_inReplyToHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_contentHasBeenSet(false)
-{
-}
-
 Aws::String PostCommentReplyRequest::SerializePayload() const
 {
   JsonValue payload;

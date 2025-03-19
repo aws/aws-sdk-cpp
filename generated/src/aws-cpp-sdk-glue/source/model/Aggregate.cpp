@@ -18,16 +18,7 @@ namespace Glue
 namespace Model
 {
 
-Aggregate::Aggregate() : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_groupsHasBeenSet(false),
-    m_aggsHasBeenSet(false)
-{
-}
-
 Aggregate::Aggregate(JsonView jsonValue)
-  : Aggregate()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ Aggregate& Aggregate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Inputs"))
   {
     Aws::Utils::Array<JsonView> inputsJsonList = jsonValue.GetArray("Inputs");
@@ -50,7 +39,6 @@ Aggregate& Aggregate::operator =(JsonView jsonValue)
     }
     m_inputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Groups"))
   {
     Aws::Utils::Array<JsonView> groupsJsonList = jsonValue.GetArray("Groups");
@@ -67,7 +55,6 @@ Aggregate& Aggregate::operator =(JsonView jsonValue)
     }
     m_groupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Aggs"))
   {
     Aws::Utils::Array<JsonView> aggsJsonList = jsonValue.GetArray("Aggs");
@@ -77,7 +64,6 @@ Aggregate& Aggregate::operator =(JsonView jsonValue)
     }
     m_aggsHasBeenSet = true;
   }
-
   return *this;
 }
 

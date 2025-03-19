@@ -34,7 +34,7 @@ namespace Model
   class Anomaly
   {
   public:
-    AWS_LOOKOUTFORVISION_API Anomaly();
+    AWS_LOOKOUTFORVISION_API Anomaly() = default;
     AWS_LOOKOUTFORVISION_API Anomaly(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTFORVISION_API Anomaly& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTFORVISION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,26 +48,24 @@ namespace Model
      * <code>background</code> anomaly type into the response from
      * <code>DetectAnomalies</code>. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Anomaly& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Anomaly& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Anomaly& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Anomaly& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the pixel mask that covers an anomaly type.</p>
      */
-    inline const PixelAnomaly& GetPixelAnomaly() const{ return m_pixelAnomaly; }
+    inline const PixelAnomaly& GetPixelAnomaly() const { return m_pixelAnomaly; }
     inline bool PixelAnomalyHasBeenSet() const { return m_pixelAnomalyHasBeenSet; }
-    inline void SetPixelAnomaly(const PixelAnomaly& value) { m_pixelAnomalyHasBeenSet = true; m_pixelAnomaly = value; }
-    inline void SetPixelAnomaly(PixelAnomaly&& value) { m_pixelAnomalyHasBeenSet = true; m_pixelAnomaly = std::move(value); }
-    inline Anomaly& WithPixelAnomaly(const PixelAnomaly& value) { SetPixelAnomaly(value); return *this;}
-    inline Anomaly& WithPixelAnomaly(PixelAnomaly&& value) { SetPixelAnomaly(std::move(value)); return *this;}
+    template<typename PixelAnomalyT = PixelAnomaly>
+    void SetPixelAnomaly(PixelAnomalyT&& value) { m_pixelAnomalyHasBeenSet = true; m_pixelAnomaly = std::forward<PixelAnomalyT>(value); }
+    template<typename PixelAnomalyT = PixelAnomaly>
+    Anomaly& WithPixelAnomaly(PixelAnomalyT&& value) { SetPixelAnomaly(std::forward<PixelAnomalyT>(value)); return *this;}
     ///@}
   private:
 

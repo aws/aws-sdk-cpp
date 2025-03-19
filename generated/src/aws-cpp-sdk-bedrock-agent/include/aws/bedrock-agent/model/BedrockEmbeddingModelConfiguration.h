@@ -32,7 +32,7 @@ namespace Model
   class BedrockEmbeddingModelConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API BedrockEmbeddingModelConfiguration();
+    AWS_BEDROCKAGENT_API BedrockEmbeddingModelConfiguration() = default;
     AWS_BEDROCKAGENT_API BedrockEmbeddingModelConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API BedrockEmbeddingModelConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * <p>The dimensions details for the vector configuration used on the Bedrock
      * embeddings model.</p>
      */
-    inline int GetDimensions() const{ return m_dimensions; }
+    inline int GetDimensions() const { return m_dimensions; }
     inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
     inline void SetDimensions(int value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
     inline BedrockEmbeddingModelConfiguration& WithDimensions(int value) { SetDimensions(value); return *this;}
@@ -59,19 +59,17 @@ namespace Model
      * embeddings models</a> for information on the available models and their vector
      * data types.</p>
      */
-    inline const EmbeddingDataType& GetEmbeddingDataType() const{ return m_embeddingDataType; }
+    inline EmbeddingDataType GetEmbeddingDataType() const { return m_embeddingDataType; }
     inline bool EmbeddingDataTypeHasBeenSet() const { return m_embeddingDataTypeHasBeenSet; }
-    inline void SetEmbeddingDataType(const EmbeddingDataType& value) { m_embeddingDataTypeHasBeenSet = true; m_embeddingDataType = value; }
-    inline void SetEmbeddingDataType(EmbeddingDataType&& value) { m_embeddingDataTypeHasBeenSet = true; m_embeddingDataType = std::move(value); }
-    inline BedrockEmbeddingModelConfiguration& WithEmbeddingDataType(const EmbeddingDataType& value) { SetEmbeddingDataType(value); return *this;}
-    inline BedrockEmbeddingModelConfiguration& WithEmbeddingDataType(EmbeddingDataType&& value) { SetEmbeddingDataType(std::move(value)); return *this;}
+    inline void SetEmbeddingDataType(EmbeddingDataType value) { m_embeddingDataTypeHasBeenSet = true; m_embeddingDataType = value; }
+    inline BedrockEmbeddingModelConfiguration& WithEmbeddingDataType(EmbeddingDataType value) { SetEmbeddingDataType(value); return *this;}
     ///@}
   private:
 
-    int m_dimensions;
+    int m_dimensions{0};
     bool m_dimensionsHasBeenSet = false;
 
-    EmbeddingDataType m_embeddingDataType;
+    EmbeddingDataType m_embeddingDataType{EmbeddingDataType::NOT_SET};
     bool m_embeddingDataTypeHasBeenSet = false;
   };
 

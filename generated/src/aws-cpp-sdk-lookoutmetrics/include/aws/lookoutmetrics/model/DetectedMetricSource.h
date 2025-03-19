@@ -31,7 +31,7 @@ namespace Model
   class DetectedMetricSource
   {
   public:
-    AWS_LOOKOUTMETRICS_API DetectedMetricSource();
+    AWS_LOOKOUTMETRICS_API DetectedMetricSource() = default;
     AWS_LOOKOUTMETRICS_API DetectedMetricSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTMETRICS_API DetectedMetricSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The data source's source configuration.</p>
      */
-    inline const DetectedS3SourceConfig& GetS3SourceConfig() const{ return m_s3SourceConfig; }
+    inline const DetectedS3SourceConfig& GetS3SourceConfig() const { return m_s3SourceConfig; }
     inline bool S3SourceConfigHasBeenSet() const { return m_s3SourceConfigHasBeenSet; }
-    inline void SetS3SourceConfig(const DetectedS3SourceConfig& value) { m_s3SourceConfigHasBeenSet = true; m_s3SourceConfig = value; }
-    inline void SetS3SourceConfig(DetectedS3SourceConfig&& value) { m_s3SourceConfigHasBeenSet = true; m_s3SourceConfig = std::move(value); }
-    inline DetectedMetricSource& WithS3SourceConfig(const DetectedS3SourceConfig& value) { SetS3SourceConfig(value); return *this;}
-    inline DetectedMetricSource& WithS3SourceConfig(DetectedS3SourceConfig&& value) { SetS3SourceConfig(std::move(value)); return *this;}
+    template<typename S3SourceConfigT = DetectedS3SourceConfig>
+    void SetS3SourceConfig(S3SourceConfigT&& value) { m_s3SourceConfigHasBeenSet = true; m_s3SourceConfig = std::forward<S3SourceConfigT>(value); }
+    template<typename S3SourceConfigT = DetectedS3SourceConfig>
+    DetectedMetricSource& WithS3SourceConfig(S3SourceConfigT&& value) { SetS3SourceConfig(std::forward<S3SourceConfigT>(value)); return *this;}
     ///@}
   private:
 

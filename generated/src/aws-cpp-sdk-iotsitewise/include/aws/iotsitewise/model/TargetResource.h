@@ -31,7 +31,7 @@ namespace Model
   class TargetResource
   {
   public:
-    AWS_IOTSITEWISE_API TargetResource();
+    AWS_IOTSITEWISE_API TargetResource() = default;
     AWS_IOTSITEWISE_API TargetResource(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API TargetResource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The ID of the asset, in UUID format.</p>
      */
-    inline const Aws::String& GetAssetId() const{ return m_assetId; }
+    inline const Aws::String& GetAssetId() const { return m_assetId; }
     inline bool AssetIdHasBeenSet() const { return m_assetIdHasBeenSet; }
-    inline void SetAssetId(const Aws::String& value) { m_assetIdHasBeenSet = true; m_assetId = value; }
-    inline void SetAssetId(Aws::String&& value) { m_assetIdHasBeenSet = true; m_assetId = std::move(value); }
-    inline void SetAssetId(const char* value) { m_assetIdHasBeenSet = true; m_assetId.assign(value); }
-    inline TargetResource& WithAssetId(const Aws::String& value) { SetAssetId(value); return *this;}
-    inline TargetResource& WithAssetId(Aws::String&& value) { SetAssetId(std::move(value)); return *this;}
-    inline TargetResource& WithAssetId(const char* value) { SetAssetId(value); return *this;}
+    template<typename AssetIdT = Aws::String>
+    void SetAssetId(AssetIdT&& value) { m_assetIdHasBeenSet = true; m_assetId = std::forward<AssetIdT>(value); }
+    template<typename AssetIdT = Aws::String>
+    TargetResource& WithAssetId(AssetIdT&& value) { SetAssetId(std::forward<AssetIdT>(value)); return *this;}
     ///@}
   private:
 

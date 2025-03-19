@@ -18,14 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-UnprocessableEntityException::UnprocessableEntityException() : 
-    m_messageHasBeenSet(false),
-    m_validationErrorsHasBeenSet(false)
-{
-}
-
 UnprocessableEntityException::UnprocessableEntityException(JsonView jsonValue)
-  : UnprocessableEntityException()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ UnprocessableEntityException& UnprocessableEntityException::operator =(JsonView 
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("validationErrors"))
   {
     Aws::Utils::Array<JsonView> validationErrorsJsonList = jsonValue.GetArray("validationErrors");
@@ -48,7 +39,6 @@ UnprocessableEntityException& UnprocessableEntityException::operator =(JsonView 
     }
     m_validationErrorsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteTrustStoreResult::DeleteTrustStoreResult()
-{
-}
-
 DeleteTrustStoreResult::DeleteTrustStoreResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -43,6 +39,7 @@ DeleteTrustStoreResult& DeleteTrustStoreResult::operator =(const Aws::AmazonWebS
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElasticLoadBalancingv2::Model::DeleteTrustStoreResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

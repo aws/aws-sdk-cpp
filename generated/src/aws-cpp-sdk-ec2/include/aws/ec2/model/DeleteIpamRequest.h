@@ -21,7 +21,7 @@ namespace Model
   class DeleteIpamRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DeleteIpamRequest();
+    AWS_EC2_API DeleteIpamRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,7 +43,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DeleteIpamRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -53,14 +53,12 @@ namespace Model
     /**
      * <p>The ID of the IPAM to delete.</p>
      */
-    inline const Aws::String& GetIpamId() const{ return m_ipamId; }
+    inline const Aws::String& GetIpamId() const { return m_ipamId; }
     inline bool IpamIdHasBeenSet() const { return m_ipamIdHasBeenSet; }
-    inline void SetIpamId(const Aws::String& value) { m_ipamIdHasBeenSet = true; m_ipamId = value; }
-    inline void SetIpamId(Aws::String&& value) { m_ipamIdHasBeenSet = true; m_ipamId = std::move(value); }
-    inline void SetIpamId(const char* value) { m_ipamIdHasBeenSet = true; m_ipamId.assign(value); }
-    inline DeleteIpamRequest& WithIpamId(const Aws::String& value) { SetIpamId(value); return *this;}
-    inline DeleteIpamRequest& WithIpamId(Aws::String&& value) { SetIpamId(std::move(value)); return *this;}
-    inline DeleteIpamRequest& WithIpamId(const char* value) { SetIpamId(value); return *this;}
+    template<typename IpamIdT = Aws::String>
+    void SetIpamId(IpamIdT&& value) { m_ipamIdHasBeenSet = true; m_ipamId = std::forward<IpamIdT>(value); }
+    template<typename IpamIdT = Aws::String>
+    DeleteIpamRequest& WithIpamId(IpamIdT&& value) { SetIpamId(std::forward<IpamIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,20 +76,20 @@ namespace Model
      * non-default private scopes in the IPAM.</p> </li> <li> <p>Deletes the default
      * public and private scopes and the IPAM.</p> </li> </ul>
      */
-    inline bool GetCascade() const{ return m_cascade; }
+    inline bool GetCascade() const { return m_cascade; }
     inline bool CascadeHasBeenSet() const { return m_cascadeHasBeenSet; }
     inline void SetCascade(bool value) { m_cascadeHasBeenSet = true; m_cascade = value; }
     inline DeleteIpamRequest& WithCascade(bool value) { SetCascade(value); return *this;}
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_ipamId;
     bool m_ipamIdHasBeenSet = false;
 
-    bool m_cascade;
+    bool m_cascade{false};
     bool m_cascadeHasBeenSet = false;
   };
 

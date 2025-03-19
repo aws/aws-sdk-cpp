@@ -10,18 +10,6 @@
 using namespace Aws::QueryProtocol::Model;
 using namespace Aws::Utils;
 
-QueryMapsRequest::QueryMapsRequest() : 
-    m_mapArgHasBeenSet(false),
-    m_renamedMapArgHasBeenSet(false),
-    m_complexMapArgHasBeenSet(false),
-    m_mapWithXmlMemberNameHasBeenSet(false),
-    m_flattenedMapHasBeenSet(false),
-    m_flattenedMapWithXmlNameHasBeenSet(false),
-    m_mapOfListsHasBeenSet(false),
-    m_nestedStructWithMapHasBeenSet(false)
-{
-}
-
 Aws::String QueryMapsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

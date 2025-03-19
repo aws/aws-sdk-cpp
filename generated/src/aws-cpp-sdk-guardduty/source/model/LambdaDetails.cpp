@@ -18,21 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-LambdaDetails::LambdaDetails() : 
-    m_functionArnHasBeenSet(false),
-    m_functionNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_lastModifiedAtHasBeenSet(false),
-    m_revisionIdHasBeenSet(false),
-    m_functionVersionHasBeenSet(false),
-    m_roleHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 LambdaDetails::LambdaDetails(JsonView jsonValue)
-  : LambdaDetails()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ LambdaDetails& LambdaDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("functionArn"))
   {
     m_functionArn = jsonValue.GetString("functionArn");
-
     m_functionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("functionName"))
   {
     m_functionName = jsonValue.GetString("functionName");
-
     m_functionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedAt"))
   {
     m_lastModifiedAt = jsonValue.GetDouble("lastModifiedAt");
-
     m_lastModifiedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("revisionId"))
   {
     m_revisionId = jsonValue.GetString("revisionId");
-
     m_revisionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("functionVersion"))
   {
     m_functionVersion = jsonValue.GetString("functionVersion");
-
     m_functionVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("role"))
   {
     m_role = jsonValue.GetString("role");
-
     m_roleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcConfig"))
   {
     m_vpcConfig = jsonValue.GetObject("vpcConfig");
-
     m_vpcConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -104,7 +74,6 @@ LambdaDetails& LambdaDetails::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

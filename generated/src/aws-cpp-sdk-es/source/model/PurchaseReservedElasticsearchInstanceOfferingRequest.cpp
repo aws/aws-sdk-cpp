@@ -12,14 +12,6 @@ using namespace Aws::ElasticsearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PurchaseReservedElasticsearchInstanceOfferingRequest::PurchaseReservedElasticsearchInstanceOfferingRequest() : 
-    m_reservedElasticsearchInstanceOfferingIdHasBeenSet(false),
-    m_reservationNameHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false)
-{
-}
-
 Aws::String PurchaseReservedElasticsearchInstanceOfferingRequest::SerializePayload() const
 {
   JsonValue payload;

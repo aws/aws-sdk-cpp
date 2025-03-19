@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetMobileDeviceAccessOverrideResult::GetMobileDeviceAccessOverrideResult() : 
-    m_effect(MobileDeviceAccessRuleEffect::NOT_SET)
-{
-}
-
 GetMobileDeviceAccessOverrideResult::GetMobileDeviceAccessOverrideResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetMobileDeviceAccessOverrideResult()
 {
   *this = result;
 }
@@ -34,45 +28,40 @@ GetMobileDeviceAccessOverrideResult& GetMobileDeviceAccessOverrideResult::operat
   if(jsonValue.ValueExists("UserId"))
   {
     m_userId = jsonValue.GetString("UserId");
-
+    m_userIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeviceId"))
   {
     m_deviceId = jsonValue.GetString("DeviceId");
-
+    m_deviceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Effect"))
   {
     m_effect = MobileDeviceAccessRuleEffectMapper::GetMobileDeviceAccessRuleEffectForName(jsonValue.GetString("Effect"));
-
+    m_effectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DateCreated"))
   {
     m_dateCreated = jsonValue.GetDouble("DateCreated");
-
+    m_dateCreatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DateModified"))
   {
     m_dateModified = jsonValue.GetDouble("DateModified");
-
+    m_dateModifiedHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

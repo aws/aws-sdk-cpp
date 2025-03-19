@@ -32,7 +32,7 @@ namespace Model
   class ConversationState
   {
   public:
-    AWS_QCONNECT_API ConversationState();
+    AWS_QCONNECT_API ConversationState() = default;
     AWS_QCONNECT_API ConversationState(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API ConversationState& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,31 +42,27 @@ namespace Model
     /**
      * <p>The reason of the conversation state.</p>
      */
-    inline const ConversationStatusReason& GetReason() const{ return m_reason; }
+    inline ConversationStatusReason GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const ConversationStatusReason& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(ConversationStatusReason&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline ConversationState& WithReason(const ConversationStatusReason& value) { SetReason(value); return *this;}
-    inline ConversationState& WithReason(ConversationStatusReason&& value) { SetReason(std::move(value)); return *this;}
+    inline void SetReason(ConversationStatusReason value) { m_reasonHasBeenSet = true; m_reason = value; }
+    inline ConversationState& WithReason(ConversationStatusReason value) { SetReason(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the conversation state.</p>
      */
-    inline const ConversationStatus& GetStatus() const{ return m_status; }
+    inline ConversationStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ConversationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ConversationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ConversationState& WithStatus(const ConversationStatus& value) { SetStatus(value); return *this;}
-    inline ConversationState& WithStatus(ConversationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ConversationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ConversationState& WithStatus(ConversationStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    ConversationStatusReason m_reason;
+    ConversationStatusReason m_reason{ConversationStatusReason::NOT_SET};
     bool m_reasonHasBeenSet = false;
 
-    ConversationStatus m_status;
+    ConversationStatus m_status{ConversationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

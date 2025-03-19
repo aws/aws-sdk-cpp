@@ -30,7 +30,7 @@ namespace Model
   class UpdateCustomLineItemFlatChargeDetails
   {
   public:
-    AWS_BILLINGCONDUCTOR_API UpdateCustomLineItemFlatChargeDetails();
+    AWS_BILLINGCONDUCTOR_API UpdateCustomLineItemFlatChargeDetails() = default;
     AWS_BILLINGCONDUCTOR_API UpdateCustomLineItemFlatChargeDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_BILLINGCONDUCTOR_API UpdateCustomLineItemFlatChargeDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
     /**
      * <p> The custom line item's new fixed charge value in USD. </p>
      */
-    inline double GetChargeValue() const{ return m_chargeValue; }
+    inline double GetChargeValue() const { return m_chargeValue; }
     inline bool ChargeValueHasBeenSet() const { return m_chargeValueHasBeenSet; }
     inline void SetChargeValue(double value) { m_chargeValueHasBeenSet = true; m_chargeValue = value; }
     inline UpdateCustomLineItemFlatChargeDetails& WithChargeValue(double value) { SetChargeValue(value); return *this;}
     ///@}
   private:
 
-    double m_chargeValue;
+    double m_chargeValue{0.0};
     bool m_chargeValueHasBeenSet = false;
   };
 

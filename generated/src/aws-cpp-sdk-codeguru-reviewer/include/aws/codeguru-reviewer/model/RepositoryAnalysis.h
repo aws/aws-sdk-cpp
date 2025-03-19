@@ -36,7 +36,7 @@ namespace Model
   class RepositoryAnalysis
   {
   public:
-    AWS_CODEGURUREVIEWER_API RepositoryAnalysis();
+    AWS_CODEGURUREVIEWER_API RepositoryAnalysis() = default;
     AWS_CODEGURUREVIEWER_API RepositoryAnalysis(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUREVIEWER_API RepositoryAnalysis& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUREVIEWER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,22 +48,22 @@ namespace Model
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a>
      * that specifies the tip of a branch in an associated repository.</p>
      */
-    inline const RepositoryHeadSourceCodeType& GetRepositoryHead() const{ return m_repositoryHead; }
+    inline const RepositoryHeadSourceCodeType& GetRepositoryHead() const { return m_repositoryHead; }
     inline bool RepositoryHeadHasBeenSet() const { return m_repositoryHeadHasBeenSet; }
-    inline void SetRepositoryHead(const RepositoryHeadSourceCodeType& value) { m_repositoryHeadHasBeenSet = true; m_repositoryHead = value; }
-    inline void SetRepositoryHead(RepositoryHeadSourceCodeType&& value) { m_repositoryHeadHasBeenSet = true; m_repositoryHead = std::move(value); }
-    inline RepositoryAnalysis& WithRepositoryHead(const RepositoryHeadSourceCodeType& value) { SetRepositoryHead(value); return *this;}
-    inline RepositoryAnalysis& WithRepositoryHead(RepositoryHeadSourceCodeType&& value) { SetRepositoryHead(std::move(value)); return *this;}
+    template<typename RepositoryHeadT = RepositoryHeadSourceCodeType>
+    void SetRepositoryHead(RepositoryHeadT&& value) { m_repositoryHeadHasBeenSet = true; m_repositoryHead = std::forward<RepositoryHeadT>(value); }
+    template<typename RepositoryHeadT = RepositoryHeadSourceCodeType>
+    RepositoryAnalysis& WithRepositoryHead(RepositoryHeadT&& value) { SetRepositoryHead(std::forward<RepositoryHeadT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const SourceCodeType& GetSourceCodeType() const{ return m_sourceCodeType; }
+    inline const SourceCodeType& GetSourceCodeType() const { return m_sourceCodeType; }
     inline bool SourceCodeTypeHasBeenSet() const { return m_sourceCodeTypeHasBeenSet; }
-    inline void SetSourceCodeType(const SourceCodeType& value) { m_sourceCodeTypeHasBeenSet = true; m_sourceCodeType = value; }
-    inline void SetSourceCodeType(SourceCodeType&& value) { m_sourceCodeTypeHasBeenSet = true; m_sourceCodeType = std::move(value); }
-    inline RepositoryAnalysis& WithSourceCodeType(const SourceCodeType& value) { SetSourceCodeType(value); return *this;}
-    inline RepositoryAnalysis& WithSourceCodeType(SourceCodeType&& value) { SetSourceCodeType(std::move(value)); return *this;}
+    template<typename SourceCodeTypeT = SourceCodeType>
+    void SetSourceCodeType(SourceCodeTypeT&& value) { m_sourceCodeTypeHasBeenSet = true; m_sourceCodeType = std::forward<SourceCodeTypeT>(value); }
+    template<typename SourceCodeTypeT = SourceCodeType>
+    RepositoryAnalysis& WithSourceCodeType(SourceCodeTypeT&& value) { SetSourceCodeType(std::forward<SourceCodeTypeT>(value)); return *this;}
     ///@}
   private:
 

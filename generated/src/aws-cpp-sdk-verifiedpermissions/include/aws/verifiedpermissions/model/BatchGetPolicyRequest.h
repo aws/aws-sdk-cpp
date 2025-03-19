@@ -22,7 +22,7 @@ namespace Model
   class BatchGetPolicyRequest : public VerifiedPermissionsRequest
   {
   public:
-    AWS_VERIFIEDPERMISSIONS_API BatchGetPolicyRequest();
+    AWS_VERIFIEDPERMISSIONS_API BatchGetPolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,14 @@ namespace Model
     /**
      * <p>An array of up to 100 policies you want information about.</p>
      */
-    inline const Aws::Vector<BatchGetPolicyInputItem>& GetRequests() const{ return m_requests; }
+    inline const Aws::Vector<BatchGetPolicyInputItem>& GetRequests() const { return m_requests; }
     inline bool RequestsHasBeenSet() const { return m_requestsHasBeenSet; }
-    inline void SetRequests(const Aws::Vector<BatchGetPolicyInputItem>& value) { m_requestsHasBeenSet = true; m_requests = value; }
-    inline void SetRequests(Aws::Vector<BatchGetPolicyInputItem>&& value) { m_requestsHasBeenSet = true; m_requests = std::move(value); }
-    inline BatchGetPolicyRequest& WithRequests(const Aws::Vector<BatchGetPolicyInputItem>& value) { SetRequests(value); return *this;}
-    inline BatchGetPolicyRequest& WithRequests(Aws::Vector<BatchGetPolicyInputItem>&& value) { SetRequests(std::move(value)); return *this;}
-    inline BatchGetPolicyRequest& AddRequests(const BatchGetPolicyInputItem& value) { m_requestsHasBeenSet = true; m_requests.push_back(value); return *this; }
-    inline BatchGetPolicyRequest& AddRequests(BatchGetPolicyInputItem&& value) { m_requestsHasBeenSet = true; m_requests.push_back(std::move(value)); return *this; }
+    template<typename RequestsT = Aws::Vector<BatchGetPolicyInputItem>>
+    void SetRequests(RequestsT&& value) { m_requestsHasBeenSet = true; m_requests = std::forward<RequestsT>(value); }
+    template<typename RequestsT = Aws::Vector<BatchGetPolicyInputItem>>
+    BatchGetPolicyRequest& WithRequests(RequestsT&& value) { SetRequests(std::forward<RequestsT>(value)); return *this;}
+    template<typename RequestsT = BatchGetPolicyInputItem>
+    BatchGetPolicyRequest& AddRequests(RequestsT&& value) { m_requestsHasBeenSet = true; m_requests.emplace_back(std::forward<RequestsT>(value)); return *this; }
     ///@}
   private:
 

@@ -12,12 +12,6 @@ using namespace Aws::ECR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-InitiateLayerUploadRequest::InitiateLayerUploadRequest() : 
-    m_registryIdHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false)
-{
-}
-
 Aws::String InitiateLayerUploadRequest::SerializePayload() const
 {
   JsonValue payload;

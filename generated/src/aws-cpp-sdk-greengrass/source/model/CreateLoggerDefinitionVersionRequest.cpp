@@ -13,13 +13,6 @@ using namespace Aws::Greengrass::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateLoggerDefinitionVersionRequest::CreateLoggerDefinitionVersionRequest() : 
-    m_amznClientTokenHasBeenSet(false),
-    m_loggerDefinitionIdHasBeenSet(false),
-    m_loggersHasBeenSet(false)
-{
-}
-
 Aws::String CreateLoggerDefinitionVersionRequest::SerializePayload() const
 {
   JsonValue payload;

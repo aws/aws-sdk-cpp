@@ -18,13 +18,7 @@ namespace tnb
 namespace Model
 {
 
-PutSolFunctionPackageContentMetadata::PutSolFunctionPackageContentMetadata() : 
-    m_vnfdHasBeenSet(false)
-{
-}
-
 PutSolFunctionPackageContentMetadata::PutSolFunctionPackageContentMetadata(JsonView jsonValue)
-  : PutSolFunctionPackageContentMetadata()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PutSolFunctionPackageContentMetadata& PutSolFunctionPackageContentMetadata::oper
   if(jsonValue.ValueExists("vnfd"))
   {
     m_vnfd = jsonValue.GetObject("vnfd");
-
     m_vnfdHasBeenSet = true;
   }
-
   return *this;
 }
 

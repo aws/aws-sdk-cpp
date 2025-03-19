@@ -18,13 +18,7 @@ namespace ElasticTranscoder
 namespace Model
 {
 
-Clip::Clip() : 
-    m_timeSpanHasBeenSet(false)
-{
-}
-
 Clip::Clip(JsonView jsonValue)
-  : Clip()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Clip& Clip::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TimeSpan"))
   {
     m_timeSpan = jsonValue.GetObject("TimeSpan");
-
     m_timeSpanHasBeenSet = true;
   }
-
   return *this;
 }
 

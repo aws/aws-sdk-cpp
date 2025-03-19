@@ -12,11 +12,6 @@ using namespace Aws::FIS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetActionRequest::GetActionRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String GetActionRequest::SerializePayload() const
 {
   return {};

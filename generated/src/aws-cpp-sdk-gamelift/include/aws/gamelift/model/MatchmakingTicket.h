@@ -38,7 +38,7 @@ namespace Model
   class MatchmakingTicket
   {
   public:
-    AWS_GAMELIFT_API MatchmakingTicket();
+    AWS_GAMELIFT_API MatchmakingTicket() = default;
     AWS_GAMELIFT_API MatchmakingTicket(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API MatchmakingTicket& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
     /**
      * <p>A unique identifier for a matchmaking ticket.</p>
      */
-    inline const Aws::String& GetTicketId() const{ return m_ticketId; }
+    inline const Aws::String& GetTicketId() const { return m_ticketId; }
     inline bool TicketIdHasBeenSet() const { return m_ticketIdHasBeenSet; }
-    inline void SetTicketId(const Aws::String& value) { m_ticketIdHasBeenSet = true; m_ticketId = value; }
-    inline void SetTicketId(Aws::String&& value) { m_ticketIdHasBeenSet = true; m_ticketId = std::move(value); }
-    inline void SetTicketId(const char* value) { m_ticketIdHasBeenSet = true; m_ticketId.assign(value); }
-    inline MatchmakingTicket& WithTicketId(const Aws::String& value) { SetTicketId(value); return *this;}
-    inline MatchmakingTicket& WithTicketId(Aws::String&& value) { SetTicketId(std::move(value)); return *this;}
-    inline MatchmakingTicket& WithTicketId(const char* value) { SetTicketId(value); return *this;}
+    template<typename TicketIdT = Aws::String>
+    void SetTicketId(TicketIdT&& value) { m_ticketIdHasBeenSet = true; m_ticketId = std::forward<TicketIdT>(value); }
+    template<typename TicketIdT = Aws::String>
+    MatchmakingTicket& WithTicketId(TicketIdT&& value) { SetTicketId(std::forward<TicketIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * Matchmaking configurations determine how players are grouped into a match and
      * how a new game session is created for the match.</p>
      */
-    inline const Aws::String& GetConfigurationName() const{ return m_configurationName; }
+    inline const Aws::String& GetConfigurationName() const { return m_configurationName; }
     inline bool ConfigurationNameHasBeenSet() const { return m_configurationNameHasBeenSet; }
-    inline void SetConfigurationName(const Aws::String& value) { m_configurationNameHasBeenSet = true; m_configurationName = value; }
-    inline void SetConfigurationName(Aws::String&& value) { m_configurationNameHasBeenSet = true; m_configurationName = std::move(value); }
-    inline void SetConfigurationName(const char* value) { m_configurationNameHasBeenSet = true; m_configurationName.assign(value); }
-    inline MatchmakingTicket& WithConfigurationName(const Aws::String& value) { SetConfigurationName(value); return *this;}
-    inline MatchmakingTicket& WithConfigurationName(Aws::String&& value) { SetConfigurationName(std::move(value)); return *this;}
-    inline MatchmakingTicket& WithConfigurationName(const char* value) { SetConfigurationName(value); return *this;}
+    template<typename ConfigurationNameT = Aws::String>
+    void SetConfigurationName(ConfigurationNameT&& value) { m_configurationNameHasBeenSet = true; m_configurationName = std::forward<ConfigurationNameT>(value); }
+    template<typename ConfigurationNameT = Aws::String>
+    MatchmakingTicket& WithConfigurationName(ConfigurationNameT&& value) { SetConfigurationName(std::forward<ConfigurationNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,14 +77,12 @@ namespace Model
      * associated with the GameLift matchmaking configuration resource that is used
      * with this ticket.</p>
      */
-    inline const Aws::String& GetConfigurationArn() const{ return m_configurationArn; }
+    inline const Aws::String& GetConfigurationArn() const { return m_configurationArn; }
     inline bool ConfigurationArnHasBeenSet() const { return m_configurationArnHasBeenSet; }
-    inline void SetConfigurationArn(const Aws::String& value) { m_configurationArnHasBeenSet = true; m_configurationArn = value; }
-    inline void SetConfigurationArn(Aws::String&& value) { m_configurationArnHasBeenSet = true; m_configurationArn = std::move(value); }
-    inline void SetConfigurationArn(const char* value) { m_configurationArnHasBeenSet = true; m_configurationArn.assign(value); }
-    inline MatchmakingTicket& WithConfigurationArn(const Aws::String& value) { SetConfigurationArn(value); return *this;}
-    inline MatchmakingTicket& WithConfigurationArn(Aws::String&& value) { SetConfigurationArn(std::move(value)); return *this;}
-    inline MatchmakingTicket& WithConfigurationArn(const char* value) { SetConfigurationArn(value); return *this;}
+    template<typename ConfigurationArnT = Aws::String>
+    void SetConfigurationArn(ConfigurationArnT&& value) { m_configurationArnHasBeenSet = true; m_configurationArn = std::forward<ConfigurationArnT>(value); }
+    template<typename ConfigurationArnT = Aws::String>
+    MatchmakingTicket& WithConfigurationArn(ConfigurationArnT&& value) { SetConfigurationArn(std::forward<ConfigurationArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,12 +107,10 @@ namespace Model
      * successfully complete (statuses FAILED, CANCELLED, TIMED_OUT) can be resubmitted
      * as new requests with new ticket IDs.</p> 
      */
-    inline const MatchmakingConfigurationStatus& GetStatus() const{ return m_status; }
+    inline MatchmakingConfigurationStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const MatchmakingConfigurationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(MatchmakingConfigurationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline MatchmakingTicket& WithStatus(const MatchmakingConfigurationStatus& value) { SetStatus(value); return *this;}
-    inline MatchmakingTicket& WithStatus(MatchmakingConfigurationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(MatchmakingConfigurationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline MatchmakingTicket& WithStatus(MatchmakingConfigurationStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -127,28 +119,24 @@ namespace Model
      * when a ticket has returned to <code>SEARCHING</code> status after a proposed
      * match fails to receive player acceptances.</p>
      */
-    inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
+    inline const Aws::String& GetStatusReason() const { return m_statusReason; }
     inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
-    inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
-    inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
-    inline void SetStatusReason(const char* value) { m_statusReasonHasBeenSet = true; m_statusReason.assign(value); }
-    inline MatchmakingTicket& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
-    inline MatchmakingTicket& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
-    inline MatchmakingTicket& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
+    template<typename StatusReasonT = Aws::String>
+    void SetStatusReason(StatusReasonT&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::forward<StatusReasonT>(value); }
+    template<typename StatusReasonT = Aws::String>
+    MatchmakingTicket& WithStatusReason(StatusReasonT&& value) { SetStatusReason(std::forward<StatusReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Additional information about the current status.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-    inline MatchmakingTicket& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline MatchmakingTicket& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline MatchmakingTicket& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    MatchmakingTicket& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -157,12 +145,12 @@ namespace Model
      * number expressed in Unix time as milliseconds (for example
      * <code>"1469498468.057"</code>).</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline MatchmakingTicket& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline MatchmakingTicket& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    MatchmakingTicket& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -172,12 +160,12 @@ namespace Model
      * expressed in Unix time as milliseconds (for example
      * <code>"1469498468.057"</code>).</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline MatchmakingTicket& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline MatchmakingTicket& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    MatchmakingTicket& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -188,14 +176,14 @@ namespace Model
      * <code>COMPLETED</code>, the <code>Player</code> objects include the team the
      * players were assigned to in the resulting match.</p>
      */
-    inline const Aws::Vector<Player>& GetPlayers() const{ return m_players; }
+    inline const Aws::Vector<Player>& GetPlayers() const { return m_players; }
     inline bool PlayersHasBeenSet() const { return m_playersHasBeenSet; }
-    inline void SetPlayers(const Aws::Vector<Player>& value) { m_playersHasBeenSet = true; m_players = value; }
-    inline void SetPlayers(Aws::Vector<Player>&& value) { m_playersHasBeenSet = true; m_players = std::move(value); }
-    inline MatchmakingTicket& WithPlayers(const Aws::Vector<Player>& value) { SetPlayers(value); return *this;}
-    inline MatchmakingTicket& WithPlayers(Aws::Vector<Player>&& value) { SetPlayers(std::move(value)); return *this;}
-    inline MatchmakingTicket& AddPlayers(const Player& value) { m_playersHasBeenSet = true; m_players.push_back(value); return *this; }
-    inline MatchmakingTicket& AddPlayers(Player&& value) { m_playersHasBeenSet = true; m_players.push_back(std::move(value)); return *this; }
+    template<typename PlayersT = Aws::Vector<Player>>
+    void SetPlayers(PlayersT&& value) { m_playersHasBeenSet = true; m_players = std::forward<PlayersT>(value); }
+    template<typename PlayersT = Aws::Vector<Player>>
+    MatchmakingTicket& WithPlayers(PlayersT&& value) { SetPlayers(std::forward<PlayersT>(value)); return *this;}
+    template<typename PlayersT = Player>
+    MatchmakingTicket& AddPlayers(PlayersT&& value) { m_playersHasBeenSet = true; m_players.emplace_back(std::forward<PlayersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -206,12 +194,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeMatchmaking.html">DescribeMatchmaking</a>
      * .</p>
      */
-    inline const GameSessionConnectionInfo& GetGameSessionConnectionInfo() const{ return m_gameSessionConnectionInfo; }
+    inline const GameSessionConnectionInfo& GetGameSessionConnectionInfo() const { return m_gameSessionConnectionInfo; }
     inline bool GameSessionConnectionInfoHasBeenSet() const { return m_gameSessionConnectionInfoHasBeenSet; }
-    inline void SetGameSessionConnectionInfo(const GameSessionConnectionInfo& value) { m_gameSessionConnectionInfoHasBeenSet = true; m_gameSessionConnectionInfo = value; }
-    inline void SetGameSessionConnectionInfo(GameSessionConnectionInfo&& value) { m_gameSessionConnectionInfoHasBeenSet = true; m_gameSessionConnectionInfo = std::move(value); }
-    inline MatchmakingTicket& WithGameSessionConnectionInfo(const GameSessionConnectionInfo& value) { SetGameSessionConnectionInfo(value); return *this;}
-    inline MatchmakingTicket& WithGameSessionConnectionInfo(GameSessionConnectionInfo&& value) { SetGameSessionConnectionInfo(std::move(value)); return *this;}
+    template<typename GameSessionConnectionInfoT = GameSessionConnectionInfo>
+    void SetGameSessionConnectionInfo(GameSessionConnectionInfoT&& value) { m_gameSessionConnectionInfoHasBeenSet = true; m_gameSessionConnectionInfo = std::forward<GameSessionConnectionInfoT>(value); }
+    template<typename GameSessionConnectionInfoT = GameSessionConnectionInfo>
+    MatchmakingTicket& WithGameSessionConnectionInfo(GameSessionConnectionInfoT&& value) { SetGameSessionConnectionInfo(std::forward<GameSessionConnectionInfoT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -219,7 +207,7 @@ namespace Model
      * <p>Average amount of time (in seconds) that players are currently waiting for a
      * match. If there is not enough recent data, this property may be empty.</p>
      */
-    inline int GetEstimatedWaitTime() const{ return m_estimatedWaitTime; }
+    inline int GetEstimatedWaitTime() const { return m_estimatedWaitTime; }
     inline bool EstimatedWaitTimeHasBeenSet() const { return m_estimatedWaitTimeHasBeenSet; }
     inline void SetEstimatedWaitTime(int value) { m_estimatedWaitTimeHasBeenSet = true; m_estimatedWaitTime = value; }
     inline MatchmakingTicket& WithEstimatedWaitTime(int value) { SetEstimatedWaitTime(value); return *this;}
@@ -235,7 +223,7 @@ namespace Model
     Aws::String m_configurationArn;
     bool m_configurationArnHasBeenSet = false;
 
-    MatchmakingConfigurationStatus m_status;
+    MatchmakingConfigurationStatus m_status{MatchmakingConfigurationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;
@@ -244,10 +232,10 @@ namespace Model
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
 
     Aws::Vector<Player> m_players;
@@ -256,7 +244,7 @@ namespace Model
     GameSessionConnectionInfo m_gameSessionConnectionInfo;
     bool m_gameSessionConnectionInfoHasBeenSet = false;
 
-    int m_estimatedWaitTime;
+    int m_estimatedWaitTime{0};
     bool m_estimatedWaitTimeHasBeenSet = false;
   };
 

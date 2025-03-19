@@ -33,7 +33,7 @@ namespace Model
   class LineChartAggregatedFieldWells
   {
   public:
-    AWS_QUICKSIGHT_API LineChartAggregatedFieldWells();
+    AWS_QUICKSIGHT_API LineChartAggregatedFieldWells() = default;
     AWS_QUICKSIGHT_API LineChartAggregatedFieldWells(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API LineChartAggregatedFieldWells& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
      * <p>The category field wells of a line chart. Values are grouped by category
      * fields.</p>
      */
-    inline const Aws::Vector<DimensionField>& GetCategory() const{ return m_category; }
+    inline const Aws::Vector<DimensionField>& GetCategory() const { return m_category; }
     inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
-    inline void SetCategory(const Aws::Vector<DimensionField>& value) { m_categoryHasBeenSet = true; m_category = value; }
-    inline void SetCategory(Aws::Vector<DimensionField>&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
-    inline LineChartAggregatedFieldWells& WithCategory(const Aws::Vector<DimensionField>& value) { SetCategory(value); return *this;}
-    inline LineChartAggregatedFieldWells& WithCategory(Aws::Vector<DimensionField>&& value) { SetCategory(std::move(value)); return *this;}
-    inline LineChartAggregatedFieldWells& AddCategory(const DimensionField& value) { m_categoryHasBeenSet = true; m_category.push_back(value); return *this; }
-    inline LineChartAggregatedFieldWells& AddCategory(DimensionField&& value) { m_categoryHasBeenSet = true; m_category.push_back(std::move(value)); return *this; }
+    template<typename CategoryT = Aws::Vector<DimensionField>>
+    void SetCategory(CategoryT&& value) { m_categoryHasBeenSet = true; m_category = std::forward<CategoryT>(value); }
+    template<typename CategoryT = Aws::Vector<DimensionField>>
+    LineChartAggregatedFieldWells& WithCategory(CategoryT&& value) { SetCategory(std::forward<CategoryT>(value)); return *this;}
+    template<typename CategoryT = DimensionField>
+    LineChartAggregatedFieldWells& AddCategory(CategoryT&& value) { m_categoryHasBeenSet = true; m_category.emplace_back(std::forward<CategoryT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -59,14 +59,14 @@ namespace Model
      * <p>The value field wells of a line chart. Values are aggregated based on
      * categories.</p>
      */
-    inline const Aws::Vector<MeasureField>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<MeasureField>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<MeasureField>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<MeasureField>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline LineChartAggregatedFieldWells& WithValues(const Aws::Vector<MeasureField>& value) { SetValues(value); return *this;}
-    inline LineChartAggregatedFieldWells& WithValues(Aws::Vector<MeasureField>&& value) { SetValues(std::move(value)); return *this;}
-    inline LineChartAggregatedFieldWells& AddValues(const MeasureField& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline LineChartAggregatedFieldWells& AddValues(MeasureField&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
+    template<typename ValuesT = Aws::Vector<MeasureField>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<MeasureField>>
+    LineChartAggregatedFieldWells& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = MeasureField>
+    LineChartAggregatedFieldWells& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -74,28 +74,28 @@ namespace Model
      * <p>The color field wells of a line chart. Values are grouped by category
      * fields.</p>
      */
-    inline const Aws::Vector<DimensionField>& GetColors() const{ return m_colors; }
+    inline const Aws::Vector<DimensionField>& GetColors() const { return m_colors; }
     inline bool ColorsHasBeenSet() const { return m_colorsHasBeenSet; }
-    inline void SetColors(const Aws::Vector<DimensionField>& value) { m_colorsHasBeenSet = true; m_colors = value; }
-    inline void SetColors(Aws::Vector<DimensionField>&& value) { m_colorsHasBeenSet = true; m_colors = std::move(value); }
-    inline LineChartAggregatedFieldWells& WithColors(const Aws::Vector<DimensionField>& value) { SetColors(value); return *this;}
-    inline LineChartAggregatedFieldWells& WithColors(Aws::Vector<DimensionField>&& value) { SetColors(std::move(value)); return *this;}
-    inline LineChartAggregatedFieldWells& AddColors(const DimensionField& value) { m_colorsHasBeenSet = true; m_colors.push_back(value); return *this; }
-    inline LineChartAggregatedFieldWells& AddColors(DimensionField&& value) { m_colorsHasBeenSet = true; m_colors.push_back(std::move(value)); return *this; }
+    template<typename ColorsT = Aws::Vector<DimensionField>>
+    void SetColors(ColorsT&& value) { m_colorsHasBeenSet = true; m_colors = std::forward<ColorsT>(value); }
+    template<typename ColorsT = Aws::Vector<DimensionField>>
+    LineChartAggregatedFieldWells& WithColors(ColorsT&& value) { SetColors(std::forward<ColorsT>(value)); return *this;}
+    template<typename ColorsT = DimensionField>
+    LineChartAggregatedFieldWells& AddColors(ColorsT&& value) { m_colorsHasBeenSet = true; m_colors.emplace_back(std::forward<ColorsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The small multiples field well of a line chart.</p>
      */
-    inline const Aws::Vector<DimensionField>& GetSmallMultiples() const{ return m_smallMultiples; }
+    inline const Aws::Vector<DimensionField>& GetSmallMultiples() const { return m_smallMultiples; }
     inline bool SmallMultiplesHasBeenSet() const { return m_smallMultiplesHasBeenSet; }
-    inline void SetSmallMultiples(const Aws::Vector<DimensionField>& value) { m_smallMultiplesHasBeenSet = true; m_smallMultiples = value; }
-    inline void SetSmallMultiples(Aws::Vector<DimensionField>&& value) { m_smallMultiplesHasBeenSet = true; m_smallMultiples = std::move(value); }
-    inline LineChartAggregatedFieldWells& WithSmallMultiples(const Aws::Vector<DimensionField>& value) { SetSmallMultiples(value); return *this;}
-    inline LineChartAggregatedFieldWells& WithSmallMultiples(Aws::Vector<DimensionField>&& value) { SetSmallMultiples(std::move(value)); return *this;}
-    inline LineChartAggregatedFieldWells& AddSmallMultiples(const DimensionField& value) { m_smallMultiplesHasBeenSet = true; m_smallMultiples.push_back(value); return *this; }
-    inline LineChartAggregatedFieldWells& AddSmallMultiples(DimensionField&& value) { m_smallMultiplesHasBeenSet = true; m_smallMultiples.push_back(std::move(value)); return *this; }
+    template<typename SmallMultiplesT = Aws::Vector<DimensionField>>
+    void SetSmallMultiples(SmallMultiplesT&& value) { m_smallMultiplesHasBeenSet = true; m_smallMultiples = std::forward<SmallMultiplesT>(value); }
+    template<typename SmallMultiplesT = Aws::Vector<DimensionField>>
+    LineChartAggregatedFieldWells& WithSmallMultiples(SmallMultiplesT&& value) { SetSmallMultiples(std::forward<SmallMultiplesT>(value)); return *this;}
+    template<typename SmallMultiplesT = DimensionField>
+    LineChartAggregatedFieldWells& AddSmallMultiples(SmallMultiplesT&& value) { m_smallMultiplesHasBeenSet = true; m_smallMultiples.emplace_back(std::forward<SmallMultiplesT>(value)); return *this; }
     ///@}
   private:
 

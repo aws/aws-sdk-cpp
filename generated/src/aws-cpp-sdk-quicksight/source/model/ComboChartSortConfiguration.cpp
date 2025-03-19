@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ComboChartSortConfiguration::ComboChartSortConfiguration() : 
-    m_categorySortHasBeenSet(false),
-    m_categoryItemsLimitHasBeenSet(false),
-    m_colorSortHasBeenSet(false),
-    m_colorItemsLimitHasBeenSet(false)
-{
-}
-
 ComboChartSortConfiguration::ComboChartSortConfiguration(JsonView jsonValue)
-  : ComboChartSortConfiguration()
 {
   *this = jsonValue;
 }
@@ -43,14 +34,11 @@ ComboChartSortConfiguration& ComboChartSortConfiguration::operator =(JsonView js
     }
     m_categorySortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CategoryItemsLimit"))
   {
     m_categoryItemsLimit = jsonValue.GetObject("CategoryItemsLimit");
-
     m_categoryItemsLimitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColorSort"))
   {
     Aws::Utils::Array<JsonView> colorSortJsonList = jsonValue.GetArray("ColorSort");
@@ -60,14 +48,11 @@ ComboChartSortConfiguration& ComboChartSortConfiguration::operator =(JsonView js
     }
     m_colorSortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColorItemsLimit"))
   {
     m_colorItemsLimit = jsonValue.GetObject("ColorItemsLimit");
-
     m_colorItemsLimitHasBeenSet = true;
   }
-
   return *this;
 }
 

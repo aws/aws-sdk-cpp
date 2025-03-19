@@ -10,20 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-AllocateAddressRequest::AllocateAddressRequest() : 
-    m_domain(DomainType::NOT_SET),
-    m_domainHasBeenSet(false),
-    m_addressHasBeenSet(false),
-    m_publicIpv4PoolHasBeenSet(false),
-    m_networkBorderGroupHasBeenSet(false),
-    m_customerOwnedIpv4PoolHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false),
-    m_ipamPoolIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String AllocateAddressRequest::SerializePayload() const
 {
   Aws::StringStream ss;

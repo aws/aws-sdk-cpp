@@ -12,22 +12,6 @@ using namespace Aws::Support::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeCasesRequest::DescribeCasesRequest() : 
-    m_caseIdListHasBeenSet(false),
-    m_displayIdHasBeenSet(false),
-    m_afterTimeHasBeenSet(false),
-    m_beforeTimeHasBeenSet(false),
-    m_includeResolvedCases(false),
-    m_includeResolvedCasesHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_languageHasBeenSet(false),
-    m_includeCommunications(false),
-    m_includeCommunicationsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeCasesRequest::SerializePayload() const
 {
   JsonValue payload;

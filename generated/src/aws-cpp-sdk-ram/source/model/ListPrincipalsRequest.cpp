@@ -12,19 +12,6 @@ using namespace Aws::RAM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListPrincipalsRequest::ListPrincipalsRequest() : 
-    m_resourceOwner(ResourceOwner::NOT_SET),
-    m_resourceOwnerHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_principalsHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceShareArnsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListPrincipalsRequest::SerializePayload() const
 {
   JsonValue payload;

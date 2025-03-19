@@ -27,7 +27,7 @@ namespace Model
   class DescribeReservedInstancesModificationsRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DescribeReservedInstancesModificationsRequest();
+    AWS_EC2_API DescribeReservedInstancesModificationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,29 +46,26 @@ namespace Model
     /**
      * <p>IDs for the submitted modification request.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetReservedInstancesModificationIds() const{ return m_reservedInstancesModificationIds; }
+    inline const Aws::Vector<Aws::String>& GetReservedInstancesModificationIds() const { return m_reservedInstancesModificationIds; }
     inline bool ReservedInstancesModificationIdsHasBeenSet() const { return m_reservedInstancesModificationIdsHasBeenSet; }
-    inline void SetReservedInstancesModificationIds(const Aws::Vector<Aws::String>& value) { m_reservedInstancesModificationIdsHasBeenSet = true; m_reservedInstancesModificationIds = value; }
-    inline void SetReservedInstancesModificationIds(Aws::Vector<Aws::String>&& value) { m_reservedInstancesModificationIdsHasBeenSet = true; m_reservedInstancesModificationIds = std::move(value); }
-    inline DescribeReservedInstancesModificationsRequest& WithReservedInstancesModificationIds(const Aws::Vector<Aws::String>& value) { SetReservedInstancesModificationIds(value); return *this;}
-    inline DescribeReservedInstancesModificationsRequest& WithReservedInstancesModificationIds(Aws::Vector<Aws::String>&& value) { SetReservedInstancesModificationIds(std::move(value)); return *this;}
-    inline DescribeReservedInstancesModificationsRequest& AddReservedInstancesModificationIds(const Aws::String& value) { m_reservedInstancesModificationIdsHasBeenSet = true; m_reservedInstancesModificationIds.push_back(value); return *this; }
-    inline DescribeReservedInstancesModificationsRequest& AddReservedInstancesModificationIds(Aws::String&& value) { m_reservedInstancesModificationIdsHasBeenSet = true; m_reservedInstancesModificationIds.push_back(std::move(value)); return *this; }
-    inline DescribeReservedInstancesModificationsRequest& AddReservedInstancesModificationIds(const char* value) { m_reservedInstancesModificationIdsHasBeenSet = true; m_reservedInstancesModificationIds.push_back(value); return *this; }
+    template<typename ReservedInstancesModificationIdsT = Aws::Vector<Aws::String>>
+    void SetReservedInstancesModificationIds(ReservedInstancesModificationIdsT&& value) { m_reservedInstancesModificationIdsHasBeenSet = true; m_reservedInstancesModificationIds = std::forward<ReservedInstancesModificationIdsT>(value); }
+    template<typename ReservedInstancesModificationIdsT = Aws::Vector<Aws::String>>
+    DescribeReservedInstancesModificationsRequest& WithReservedInstancesModificationIds(ReservedInstancesModificationIdsT&& value) { SetReservedInstancesModificationIds(std::forward<ReservedInstancesModificationIdsT>(value)); return *this;}
+    template<typename ReservedInstancesModificationIdsT = Aws::String>
+    DescribeReservedInstancesModificationsRequest& AddReservedInstancesModificationIds(ReservedInstancesModificationIdsT&& value) { m_reservedInstancesModificationIdsHasBeenSet = true; m_reservedInstancesModificationIds.emplace_back(std::forward<ReservedInstancesModificationIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The token to retrieve the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeReservedInstancesModificationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeReservedInstancesModificationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeReservedInstancesModificationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeReservedInstancesModificationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,14 +93,14 @@ namespace Model
      * <code>update-date</code> - The time when the modification request was last
      * updated.</p> </li> </ul>
      */
-    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline DescribeReservedInstancesModificationsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-    inline DescribeReservedInstancesModificationsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline DescribeReservedInstancesModificationsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline DescribeReservedInstancesModificationsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    DescribeReservedInstancesModificationsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = Filter>
+    DescribeReservedInstancesModificationsRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
   private:
 

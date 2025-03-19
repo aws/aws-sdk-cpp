@@ -18,18 +18,7 @@ namespace SnowDeviceManagement
 namespace Model
 {
 
-EbsInstanceBlockDevice::EbsInstanceBlockDevice() : 
-    m_attachTimeHasBeenSet(false),
-    m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false),
-    m_status(AttachmentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_volumeIdHasBeenSet(false)
-{
-}
-
 EbsInstanceBlockDevice::EbsInstanceBlockDevice(JsonView jsonValue)
-  : EbsInstanceBlockDevice()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ EbsInstanceBlockDevice& EbsInstanceBlockDevice::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("attachTime"))
   {
     m_attachTime = jsonValue.GetDouble("attachTime");
-
     m_attachTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deleteOnTermination"))
   {
     m_deleteOnTermination = jsonValue.GetBool("deleteOnTermination");
-
     m_deleteOnTerminationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = AttachmentStatusMapper::GetAttachmentStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("volumeId"))
   {
     m_volumeId = jsonValue.GetString("volumeId");
-
     m_volumeIdHasBeenSet = true;
   }
-
   return *this;
 }
 

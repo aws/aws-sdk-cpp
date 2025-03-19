@@ -12,25 +12,6 @@ using namespace Aws::ServiceCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateProductRequest::CreateProductRequest() : 
-    m_acceptLanguageHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_distributorHasBeenSet(false),
-    m_supportDescriptionHasBeenSet(false),
-    m_supportEmailHasBeenSet(false),
-    m_supportUrlHasBeenSet(false),
-    m_productType(ProductType::NOT_SET),
-    m_productTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_provisioningArtifactParametersHasBeenSet(false),
-    m_idempotencyToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_idempotencyTokenHasBeenSet(true),
-    m_sourceConnectionHasBeenSet(false)
-{
-}
-
 Aws::String CreateProductRequest::SerializePayload() const
 {
   JsonValue payload;

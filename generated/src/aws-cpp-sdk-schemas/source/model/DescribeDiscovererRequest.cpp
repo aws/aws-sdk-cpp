@@ -12,11 +12,6 @@ using namespace Aws::Schemas::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeDiscovererRequest::DescribeDiscovererRequest() : 
-    m_discovererIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDiscovererRequest::SerializePayload() const
 {
   return {};

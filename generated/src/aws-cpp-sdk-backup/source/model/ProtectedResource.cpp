@@ -18,18 +18,7 @@ namespace Backup
 namespace Model
 {
 
-ProtectedResource::ProtectedResource() : 
-    m_resourceArnHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_lastBackupTimeHasBeenSet(false),
-    m_resourceNameHasBeenSet(false),
-    m_lastBackupVaultArnHasBeenSet(false),
-    m_lastRecoveryPointArnHasBeenSet(false)
-{
-}
-
 ProtectedResource::ProtectedResource(JsonView jsonValue)
-  : ProtectedResource()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ ProtectedResource& ProtectedResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ResourceArn"))
   {
     m_resourceArn = jsonValue.GetString("ResourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = jsonValue.GetString("ResourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastBackupTime"))
   {
     m_lastBackupTime = jsonValue.GetDouble("LastBackupTime");
-
     m_lastBackupTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceName"))
   {
     m_resourceName = jsonValue.GetString("ResourceName");
-
     m_resourceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastBackupVaultArn"))
   {
     m_lastBackupVaultArn = jsonValue.GetString("LastBackupVaultArn");
-
     m_lastBackupVaultArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastRecoveryPointArn"))
   {
     m_lastRecoveryPointArn = jsonValue.GetString("LastRecoveryPointArn");
-
     m_lastRecoveryPointArnHasBeenSet = true;
   }
-
   return *this;
 }
 

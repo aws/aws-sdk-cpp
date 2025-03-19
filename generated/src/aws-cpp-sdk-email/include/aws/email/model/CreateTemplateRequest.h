@@ -27,7 +27,7 @@ namespace Model
   class CreateTemplateRequest : public SESRequest
   {
   public:
-    AWS_SES_API CreateTemplateRequest();
+    AWS_SES_API CreateTemplateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,12 +47,12 @@ namespace Model
      * <p>The content of the email, composed of a subject line and either an HTML part
      * or a text-only part.</p>
      */
-    inline const Template& GetTemplate() const{ return m_template; }
+    inline const Template& GetTemplate() const { return m_template; }
     inline bool TemplateHasBeenSet() const { return m_templateHasBeenSet; }
-    inline void SetTemplate(const Template& value) { m_templateHasBeenSet = true; m_template = value; }
-    inline void SetTemplate(Template&& value) { m_templateHasBeenSet = true; m_template = std::move(value); }
-    inline CreateTemplateRequest& WithTemplate(const Template& value) { SetTemplate(value); return *this;}
-    inline CreateTemplateRequest& WithTemplate(Template&& value) { SetTemplate(std::move(value)); return *this;}
+    template<typename TemplateT = Template>
+    void SetTemplate(TemplateT&& value) { m_templateHasBeenSet = true; m_template = std::forward<TemplateT>(value); }
+    template<typename TemplateT = Template>
+    CreateTemplateRequest& WithTemplate(TemplateT&& value) { SetTemplate(std::forward<TemplateT>(value)); return *this;}
     ///@}
   private:
 

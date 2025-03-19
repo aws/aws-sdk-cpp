@@ -12,14 +12,6 @@ using namespace Aws::Kinesis::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRecordsRequest::GetRecordsRequest() : 
-    m_shardIteratorHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_streamARNHasBeenSet(false)
-{
-}
-
 Aws::String GetRecordsRequest::SerializePayload() const
 {
   JsonValue payload;

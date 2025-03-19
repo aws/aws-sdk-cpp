@@ -32,7 +32,7 @@ namespace Model
   class CancelRetrievalResult
   {
   public:
-    AWS_STORAGEGATEWAY_API CancelRetrievalResult();
+    AWS_STORAGEGATEWAY_API CancelRetrievalResult() = default;
     AWS_STORAGEGATEWAY_API CancelRetrievalResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_STORAGEGATEWAY_API CancelRetrievalResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,30 +42,28 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the virtual tape for which retrieval was
      * canceled.</p>
      */
-    inline const Aws::String& GetTapeARN() const{ return m_tapeARN; }
-    inline void SetTapeARN(const Aws::String& value) { m_tapeARN = value; }
-    inline void SetTapeARN(Aws::String&& value) { m_tapeARN = std::move(value); }
-    inline void SetTapeARN(const char* value) { m_tapeARN.assign(value); }
-    inline CancelRetrievalResult& WithTapeARN(const Aws::String& value) { SetTapeARN(value); return *this;}
-    inline CancelRetrievalResult& WithTapeARN(Aws::String&& value) { SetTapeARN(std::move(value)); return *this;}
-    inline CancelRetrievalResult& WithTapeARN(const char* value) { SetTapeARN(value); return *this;}
+    inline const Aws::String& GetTapeARN() const { return m_tapeARN; }
+    template<typename TapeARNT = Aws::String>
+    void SetTapeARN(TapeARNT&& value) { m_tapeARNHasBeenSet = true; m_tapeARN = std::forward<TapeARNT>(value); }
+    template<typename TapeARNT = Aws::String>
+    CancelRetrievalResult& WithTapeARN(TapeARNT&& value) { SetTapeARN(std::forward<TapeARNT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CancelRetrievalResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CancelRetrievalResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CancelRetrievalResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CancelRetrievalResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_tapeARN;
+    bool m_tapeARNHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

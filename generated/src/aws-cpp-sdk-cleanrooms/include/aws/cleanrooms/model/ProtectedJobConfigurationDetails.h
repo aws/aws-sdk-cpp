@@ -31,7 +31,7 @@ namespace Model
   class ProtectedJobConfigurationDetails
   {
   public:
-    AWS_CLEANROOMS_API ProtectedJobConfigurationDetails();
+    AWS_CLEANROOMS_API ProtectedJobConfigurationDetails() = default;
     AWS_CLEANROOMS_API ProtectedJobConfigurationDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API ProtectedJobConfigurationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The details needed to configure the direct analysis.</p>
      */
-    inline const ProtectedJobDirectAnalysisConfigurationDetails& GetDirectAnalysisConfigurationDetails() const{ return m_directAnalysisConfigurationDetails; }
+    inline const ProtectedJobDirectAnalysisConfigurationDetails& GetDirectAnalysisConfigurationDetails() const { return m_directAnalysisConfigurationDetails; }
     inline bool DirectAnalysisConfigurationDetailsHasBeenSet() const { return m_directAnalysisConfigurationDetailsHasBeenSet; }
-    inline void SetDirectAnalysisConfigurationDetails(const ProtectedJobDirectAnalysisConfigurationDetails& value) { m_directAnalysisConfigurationDetailsHasBeenSet = true; m_directAnalysisConfigurationDetails = value; }
-    inline void SetDirectAnalysisConfigurationDetails(ProtectedJobDirectAnalysisConfigurationDetails&& value) { m_directAnalysisConfigurationDetailsHasBeenSet = true; m_directAnalysisConfigurationDetails = std::move(value); }
-    inline ProtectedJobConfigurationDetails& WithDirectAnalysisConfigurationDetails(const ProtectedJobDirectAnalysisConfigurationDetails& value) { SetDirectAnalysisConfigurationDetails(value); return *this;}
-    inline ProtectedJobConfigurationDetails& WithDirectAnalysisConfigurationDetails(ProtectedJobDirectAnalysisConfigurationDetails&& value) { SetDirectAnalysisConfigurationDetails(std::move(value)); return *this;}
+    template<typename DirectAnalysisConfigurationDetailsT = ProtectedJobDirectAnalysisConfigurationDetails>
+    void SetDirectAnalysisConfigurationDetails(DirectAnalysisConfigurationDetailsT&& value) { m_directAnalysisConfigurationDetailsHasBeenSet = true; m_directAnalysisConfigurationDetails = std::forward<DirectAnalysisConfigurationDetailsT>(value); }
+    template<typename DirectAnalysisConfigurationDetailsT = ProtectedJobDirectAnalysisConfigurationDetails>
+    ProtectedJobConfigurationDetails& WithDirectAnalysisConfigurationDetails(DirectAnalysisConfigurationDetailsT&& value) { SetDirectAnalysisConfigurationDetails(std::forward<DirectAnalysisConfigurationDetailsT>(value)); return *this;}
     ///@}
   private:
 

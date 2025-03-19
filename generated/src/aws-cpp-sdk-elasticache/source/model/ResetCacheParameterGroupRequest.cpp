@@ -10,14 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-ResetCacheParameterGroupRequest::ResetCacheParameterGroupRequest() : 
-    m_cacheParameterGroupNameHasBeenSet(false),
-    m_resetAllParameters(false),
-    m_resetAllParametersHasBeenSet(false),
-    m_parameterNameValuesHasBeenSet(false)
-{
-}
-
 Aws::String ResetCacheParameterGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

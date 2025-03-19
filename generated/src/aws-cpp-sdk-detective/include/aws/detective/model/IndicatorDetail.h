@@ -45,7 +45,7 @@ namespace Model
   class IndicatorDetail
   {
   public:
-    AWS_DETECTIVE_API IndicatorDetail();
+    AWS_DETECTIVE_API IndicatorDetail() = default;
     AWS_DETECTIVE_API IndicatorDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_DETECTIVE_API IndicatorDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DETECTIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,24 +55,24 @@ namespace Model
     /**
      * <p>Details about the indicator of compromise.</p>
      */
-    inline const TTPsObservedDetail& GetTTPsObservedDetail() const{ return m_tTPsObservedDetail; }
+    inline const TTPsObservedDetail& GetTTPsObservedDetail() const { return m_tTPsObservedDetail; }
     inline bool TTPsObservedDetailHasBeenSet() const { return m_tTPsObservedDetailHasBeenSet; }
-    inline void SetTTPsObservedDetail(const TTPsObservedDetail& value) { m_tTPsObservedDetailHasBeenSet = true; m_tTPsObservedDetail = value; }
-    inline void SetTTPsObservedDetail(TTPsObservedDetail&& value) { m_tTPsObservedDetailHasBeenSet = true; m_tTPsObservedDetail = std::move(value); }
-    inline IndicatorDetail& WithTTPsObservedDetail(const TTPsObservedDetail& value) { SetTTPsObservedDetail(value); return *this;}
-    inline IndicatorDetail& WithTTPsObservedDetail(TTPsObservedDetail&& value) { SetTTPsObservedDetail(std::move(value)); return *this;}
+    template<typename TTPsObservedDetailT = TTPsObservedDetail>
+    void SetTTPsObservedDetail(TTPsObservedDetailT&& value) { m_tTPsObservedDetailHasBeenSet = true; m_tTPsObservedDetail = std::forward<TTPsObservedDetailT>(value); }
+    template<typename TTPsObservedDetailT = TTPsObservedDetail>
+    IndicatorDetail& WithTTPsObservedDetail(TTPsObservedDetailT&& value) { SetTTPsObservedDetail(std::forward<TTPsObservedDetailT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Identifies unusual and impossible user activity for an account. </p>
      */
-    inline const ImpossibleTravelDetail& GetImpossibleTravelDetail() const{ return m_impossibleTravelDetail; }
+    inline const ImpossibleTravelDetail& GetImpossibleTravelDetail() const { return m_impossibleTravelDetail; }
     inline bool ImpossibleTravelDetailHasBeenSet() const { return m_impossibleTravelDetailHasBeenSet; }
-    inline void SetImpossibleTravelDetail(const ImpossibleTravelDetail& value) { m_impossibleTravelDetailHasBeenSet = true; m_impossibleTravelDetail = value; }
-    inline void SetImpossibleTravelDetail(ImpossibleTravelDetail&& value) { m_impossibleTravelDetailHasBeenSet = true; m_impossibleTravelDetail = std::move(value); }
-    inline IndicatorDetail& WithImpossibleTravelDetail(const ImpossibleTravelDetail& value) { SetImpossibleTravelDetail(value); return *this;}
-    inline IndicatorDetail& WithImpossibleTravelDetail(ImpossibleTravelDetail&& value) { SetImpossibleTravelDetail(std::move(value)); return *this;}
+    template<typename ImpossibleTravelDetailT = ImpossibleTravelDetail>
+    void SetImpossibleTravelDetail(ImpossibleTravelDetailT&& value) { m_impossibleTravelDetailHasBeenSet = true; m_impossibleTravelDetail = std::forward<ImpossibleTravelDetailT>(value); }
+    template<typename ImpossibleTravelDetailT = ImpossibleTravelDetail>
+    IndicatorDetail& WithImpossibleTravelDetail(ImpossibleTravelDetailT&& value) { SetImpossibleTravelDetail(std::forward<ImpossibleTravelDetailT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,72 +81,72 @@ namespace Model
      * threats based on threat intelligence by Detective. This indicator is derived
      * from Amazon Web Services threat intelligence.</p>
      */
-    inline const FlaggedIpAddressDetail& GetFlaggedIpAddressDetail() const{ return m_flaggedIpAddressDetail; }
+    inline const FlaggedIpAddressDetail& GetFlaggedIpAddressDetail() const { return m_flaggedIpAddressDetail; }
     inline bool FlaggedIpAddressDetailHasBeenSet() const { return m_flaggedIpAddressDetailHasBeenSet; }
-    inline void SetFlaggedIpAddressDetail(const FlaggedIpAddressDetail& value) { m_flaggedIpAddressDetailHasBeenSet = true; m_flaggedIpAddressDetail = value; }
-    inline void SetFlaggedIpAddressDetail(FlaggedIpAddressDetail&& value) { m_flaggedIpAddressDetailHasBeenSet = true; m_flaggedIpAddressDetail = std::move(value); }
-    inline IndicatorDetail& WithFlaggedIpAddressDetail(const FlaggedIpAddressDetail& value) { SetFlaggedIpAddressDetail(value); return *this;}
-    inline IndicatorDetail& WithFlaggedIpAddressDetail(FlaggedIpAddressDetail&& value) { SetFlaggedIpAddressDetail(std::move(value)); return *this;}
+    template<typename FlaggedIpAddressDetailT = FlaggedIpAddressDetail>
+    void SetFlaggedIpAddressDetail(FlaggedIpAddressDetailT&& value) { m_flaggedIpAddressDetailHasBeenSet = true; m_flaggedIpAddressDetail = std::forward<FlaggedIpAddressDetailT>(value); }
+    template<typename FlaggedIpAddressDetailT = FlaggedIpAddressDetail>
+    IndicatorDetail& WithFlaggedIpAddressDetail(FlaggedIpAddressDetailT&& value) { SetFlaggedIpAddressDetail(std::forward<FlaggedIpAddressDetailT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains details about the new geographic location.</p>
      */
-    inline const NewGeolocationDetail& GetNewGeolocationDetail() const{ return m_newGeolocationDetail; }
+    inline const NewGeolocationDetail& GetNewGeolocationDetail() const { return m_newGeolocationDetail; }
     inline bool NewGeolocationDetailHasBeenSet() const { return m_newGeolocationDetailHasBeenSet; }
-    inline void SetNewGeolocationDetail(const NewGeolocationDetail& value) { m_newGeolocationDetailHasBeenSet = true; m_newGeolocationDetail = value; }
-    inline void SetNewGeolocationDetail(NewGeolocationDetail&& value) { m_newGeolocationDetailHasBeenSet = true; m_newGeolocationDetail = std::move(value); }
-    inline IndicatorDetail& WithNewGeolocationDetail(const NewGeolocationDetail& value) { SetNewGeolocationDetail(value); return *this;}
-    inline IndicatorDetail& WithNewGeolocationDetail(NewGeolocationDetail&& value) { SetNewGeolocationDetail(std::move(value)); return *this;}
+    template<typename NewGeolocationDetailT = NewGeolocationDetail>
+    void SetNewGeolocationDetail(NewGeolocationDetailT&& value) { m_newGeolocationDetailHasBeenSet = true; m_newGeolocationDetail = std::forward<NewGeolocationDetailT>(value); }
+    template<typename NewGeolocationDetailT = NewGeolocationDetail>
+    IndicatorDetail& WithNewGeolocationDetail(NewGeolocationDetailT&& value) { SetNewGeolocationDetail(std::forward<NewGeolocationDetailT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains details about the new Autonomous System Organization (ASO).</p>
      */
-    inline const NewAsoDetail& GetNewAsoDetail() const{ return m_newAsoDetail; }
+    inline const NewAsoDetail& GetNewAsoDetail() const { return m_newAsoDetail; }
     inline bool NewAsoDetailHasBeenSet() const { return m_newAsoDetailHasBeenSet; }
-    inline void SetNewAsoDetail(const NewAsoDetail& value) { m_newAsoDetailHasBeenSet = true; m_newAsoDetail = value; }
-    inline void SetNewAsoDetail(NewAsoDetail&& value) { m_newAsoDetailHasBeenSet = true; m_newAsoDetail = std::move(value); }
-    inline IndicatorDetail& WithNewAsoDetail(const NewAsoDetail& value) { SetNewAsoDetail(value); return *this;}
-    inline IndicatorDetail& WithNewAsoDetail(NewAsoDetail&& value) { SetNewAsoDetail(std::move(value)); return *this;}
+    template<typename NewAsoDetailT = NewAsoDetail>
+    void SetNewAsoDetail(NewAsoDetailT&& value) { m_newAsoDetailHasBeenSet = true; m_newAsoDetail = std::forward<NewAsoDetailT>(value); }
+    template<typename NewAsoDetailT = NewAsoDetail>
+    IndicatorDetail& WithNewAsoDetail(NewAsoDetailT&& value) { SetNewAsoDetail(std::forward<NewAsoDetailT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains details about the new user agent.</p>
      */
-    inline const NewUserAgentDetail& GetNewUserAgentDetail() const{ return m_newUserAgentDetail; }
+    inline const NewUserAgentDetail& GetNewUserAgentDetail() const { return m_newUserAgentDetail; }
     inline bool NewUserAgentDetailHasBeenSet() const { return m_newUserAgentDetailHasBeenSet; }
-    inline void SetNewUserAgentDetail(const NewUserAgentDetail& value) { m_newUserAgentDetailHasBeenSet = true; m_newUserAgentDetail = value; }
-    inline void SetNewUserAgentDetail(NewUserAgentDetail&& value) { m_newUserAgentDetailHasBeenSet = true; m_newUserAgentDetail = std::move(value); }
-    inline IndicatorDetail& WithNewUserAgentDetail(const NewUserAgentDetail& value) { SetNewUserAgentDetail(value); return *this;}
-    inline IndicatorDetail& WithNewUserAgentDetail(NewUserAgentDetail&& value) { SetNewUserAgentDetail(std::move(value)); return *this;}
+    template<typename NewUserAgentDetailT = NewUserAgentDetail>
+    void SetNewUserAgentDetail(NewUserAgentDetailT&& value) { m_newUserAgentDetailHasBeenSet = true; m_newUserAgentDetail = std::forward<NewUserAgentDetailT>(value); }
+    template<typename NewUserAgentDetailT = NewUserAgentDetail>
+    IndicatorDetail& WithNewUserAgentDetail(NewUserAgentDetailT&& value) { SetNewUserAgentDetail(std::forward<NewUserAgentDetailT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains details about related findings.</p>
      */
-    inline const RelatedFindingDetail& GetRelatedFindingDetail() const{ return m_relatedFindingDetail; }
+    inline const RelatedFindingDetail& GetRelatedFindingDetail() const { return m_relatedFindingDetail; }
     inline bool RelatedFindingDetailHasBeenSet() const { return m_relatedFindingDetailHasBeenSet; }
-    inline void SetRelatedFindingDetail(const RelatedFindingDetail& value) { m_relatedFindingDetailHasBeenSet = true; m_relatedFindingDetail = value; }
-    inline void SetRelatedFindingDetail(RelatedFindingDetail&& value) { m_relatedFindingDetailHasBeenSet = true; m_relatedFindingDetail = std::move(value); }
-    inline IndicatorDetail& WithRelatedFindingDetail(const RelatedFindingDetail& value) { SetRelatedFindingDetail(value); return *this;}
-    inline IndicatorDetail& WithRelatedFindingDetail(RelatedFindingDetail&& value) { SetRelatedFindingDetail(std::move(value)); return *this;}
+    template<typename RelatedFindingDetailT = RelatedFindingDetail>
+    void SetRelatedFindingDetail(RelatedFindingDetailT&& value) { m_relatedFindingDetailHasBeenSet = true; m_relatedFindingDetail = std::forward<RelatedFindingDetailT>(value); }
+    template<typename RelatedFindingDetailT = RelatedFindingDetail>
+    IndicatorDetail& WithRelatedFindingDetail(RelatedFindingDetailT&& value) { SetRelatedFindingDetail(std::forward<RelatedFindingDetailT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains details about related finding groups.</p>
      */
-    inline const RelatedFindingGroupDetail& GetRelatedFindingGroupDetail() const{ return m_relatedFindingGroupDetail; }
+    inline const RelatedFindingGroupDetail& GetRelatedFindingGroupDetail() const { return m_relatedFindingGroupDetail; }
     inline bool RelatedFindingGroupDetailHasBeenSet() const { return m_relatedFindingGroupDetailHasBeenSet; }
-    inline void SetRelatedFindingGroupDetail(const RelatedFindingGroupDetail& value) { m_relatedFindingGroupDetailHasBeenSet = true; m_relatedFindingGroupDetail = value; }
-    inline void SetRelatedFindingGroupDetail(RelatedFindingGroupDetail&& value) { m_relatedFindingGroupDetailHasBeenSet = true; m_relatedFindingGroupDetail = std::move(value); }
-    inline IndicatorDetail& WithRelatedFindingGroupDetail(const RelatedFindingGroupDetail& value) { SetRelatedFindingGroupDetail(value); return *this;}
-    inline IndicatorDetail& WithRelatedFindingGroupDetail(RelatedFindingGroupDetail&& value) { SetRelatedFindingGroupDetail(std::move(value)); return *this;}
+    template<typename RelatedFindingGroupDetailT = RelatedFindingGroupDetail>
+    void SetRelatedFindingGroupDetail(RelatedFindingGroupDetailT&& value) { m_relatedFindingGroupDetailHasBeenSet = true; m_relatedFindingGroupDetail = std::forward<RelatedFindingGroupDetailT>(value); }
+    template<typename RelatedFindingGroupDetailT = RelatedFindingGroupDetail>
+    IndicatorDetail& WithRelatedFindingGroupDetail(RelatedFindingGroupDetailT&& value) { SetRelatedFindingGroupDetail(std::forward<RelatedFindingGroupDetailT>(value)); return *this;}
     ///@}
   private:
 

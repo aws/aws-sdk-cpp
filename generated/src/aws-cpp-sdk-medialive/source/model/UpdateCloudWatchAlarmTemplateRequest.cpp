@@ -12,31 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateCloudWatchAlarmTemplateRequest::UpdateCloudWatchAlarmTemplateRequest() : 
-    m_comparisonOperator(CloudWatchAlarmTemplateComparisonOperator::NOT_SET),
-    m_comparisonOperatorHasBeenSet(false),
-    m_datapointsToAlarm(0),
-    m_datapointsToAlarmHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_evaluationPeriods(0),
-    m_evaluationPeriodsHasBeenSet(false),
-    m_groupIdentifierHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_period(0),
-    m_periodHasBeenSet(false),
-    m_statistic(CloudWatchAlarmTemplateStatistic::NOT_SET),
-    m_statisticHasBeenSet(false),
-    m_targetResourceType(CloudWatchAlarmTemplateTargetResourceType::NOT_SET),
-    m_targetResourceTypeHasBeenSet(false),
-    m_threshold(0.0),
-    m_thresholdHasBeenSet(false),
-    m_treatMissingData(CloudWatchAlarmTemplateTreatMissingData::NOT_SET),
-    m_treatMissingDataHasBeenSet(false)
-{
-}
-
 Aws::String UpdateCloudWatchAlarmTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

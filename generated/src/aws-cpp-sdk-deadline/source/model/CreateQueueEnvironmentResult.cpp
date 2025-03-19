@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateQueueEnvironmentResult::CreateQueueEnvironmentResult()
-{
-}
-
 CreateQueueEnvironmentResult::CreateQueueEnvironmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateQueueEnvironmentResult& CreateQueueEnvironmentResult::operator =(const Aws
   if(jsonValue.ValueExists("queueEnvironmentId"))
   {
     m_queueEnvironmentId = jsonValue.GetString("queueEnvironmentId");
-
+    m_queueEnvironmentIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

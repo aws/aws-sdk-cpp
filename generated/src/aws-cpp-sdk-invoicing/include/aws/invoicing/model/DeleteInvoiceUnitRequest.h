@@ -21,7 +21,7 @@ namespace Model
   class DeleteInvoiceUnitRequest : public InvoicingRequest
   {
   public:
-    AWS_INVOICING_API DeleteInvoiceUnitRequest();
+    AWS_INVOICING_API DeleteInvoiceUnitRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p> The ARN to identify an invoice unit. This information can't be modified or
      * deleted. </p>
      */
-    inline const Aws::String& GetInvoiceUnitArn() const{ return m_invoiceUnitArn; }
+    inline const Aws::String& GetInvoiceUnitArn() const { return m_invoiceUnitArn; }
     inline bool InvoiceUnitArnHasBeenSet() const { return m_invoiceUnitArnHasBeenSet; }
-    inline void SetInvoiceUnitArn(const Aws::String& value) { m_invoiceUnitArnHasBeenSet = true; m_invoiceUnitArn = value; }
-    inline void SetInvoiceUnitArn(Aws::String&& value) { m_invoiceUnitArnHasBeenSet = true; m_invoiceUnitArn = std::move(value); }
-    inline void SetInvoiceUnitArn(const char* value) { m_invoiceUnitArnHasBeenSet = true; m_invoiceUnitArn.assign(value); }
-    inline DeleteInvoiceUnitRequest& WithInvoiceUnitArn(const Aws::String& value) { SetInvoiceUnitArn(value); return *this;}
-    inline DeleteInvoiceUnitRequest& WithInvoiceUnitArn(Aws::String&& value) { SetInvoiceUnitArn(std::move(value)); return *this;}
-    inline DeleteInvoiceUnitRequest& WithInvoiceUnitArn(const char* value) { SetInvoiceUnitArn(value); return *this;}
+    template<typename InvoiceUnitArnT = Aws::String>
+    void SetInvoiceUnitArn(InvoiceUnitArnT&& value) { m_invoiceUnitArnHasBeenSet = true; m_invoiceUnitArn = std::forward<InvoiceUnitArnT>(value); }
+    template<typename InvoiceUnitArnT = Aws::String>
+    DeleteInvoiceUnitRequest& WithInvoiceUnitArn(InvoiceUnitArnT&& value) { SetInvoiceUnitArn(std::forward<InvoiceUnitArnT>(value)); return *this;}
     ///@}
   private:
 

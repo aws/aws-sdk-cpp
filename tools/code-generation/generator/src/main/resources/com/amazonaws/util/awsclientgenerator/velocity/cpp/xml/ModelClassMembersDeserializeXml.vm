@@ -17,6 +17,7 @@
 #if($memberName == $shape.payload)##member is the whole payload (not wrapped)
 #if($member.shape.structure)
     $memberVarName = resultNode;
+    ${CppViewHelper.computeVariableHasBeenSetName($memberName)} = true;
 #break
 #end
 #set($memberIsWholePayload = true)
@@ -44,17 +45,6 @@
 #end##member is list
 #if($member.shape.map || $member.shape.list)
 ##MOVED TO MACRO
-##TODO: remove me start
-## the next block would handle enum perfectly, but it also generates big git diff (of removing extra .c_str() from all root-xml-level enums)
-#elseif($member.shape.enum)
-#if($member.xmlAttribute)
-    if(!${lowerCaseVarName}.empty())
-#else
-    if(!${lowerCaseVarName}Node.IsNull())
-#end
-    {
-      ${memberVarName} = ${member.shape.name}Mapper::Get${member.shape.name}ForName(StringUtils::Trim(${substituteString}.c_str()).c_str());
-##TODO: remove me end
 #elseif($member.shape.enum || $member.shape.blob || $member.shape.primitive || $member.shape.structure || $member.shape.string || $member.shape.timeStamp)
 #set($srcXmlarName = "${lowerCaseVarName}Node")
 #if($member.xmlAttribute)
@@ -70,11 +60,9 @@
       ${memberVarName} = #deserializeXmlSingleElement($member, $srcXmlarName, "", true);
 #end
 #else
-    static_assert(false, "Codegen failure: unknown type to deserialize XML element: ${memberVarName}:${member}");
+      static_assert(false, "Codegen failure: unknown type to deserialize XML element: ${memberVarName}:${member}");
 #end
-#if(!$member.required && $useRequiredField)
       $varNameHasBeenSet = true;
-#end
     }
 #end##don't include responsemetadata member here.
 #end##is the member something that actually goes into the xml payload

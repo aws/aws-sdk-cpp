@@ -22,7 +22,7 @@ namespace Model
   class BatchGetCrawlersRequest : public GlueRequest
   {
   public:
-    AWS_GLUE_API BatchGetCrawlersRequest();
+    AWS_GLUE_API BatchGetCrawlersRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,15 +40,14 @@ namespace Model
      * <p>A list of crawler names, which might be the names returned from the
      * <code>ListCrawlers</code> operation.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCrawlerNames() const{ return m_crawlerNames; }
+    inline const Aws::Vector<Aws::String>& GetCrawlerNames() const { return m_crawlerNames; }
     inline bool CrawlerNamesHasBeenSet() const { return m_crawlerNamesHasBeenSet; }
-    inline void SetCrawlerNames(const Aws::Vector<Aws::String>& value) { m_crawlerNamesHasBeenSet = true; m_crawlerNames = value; }
-    inline void SetCrawlerNames(Aws::Vector<Aws::String>&& value) { m_crawlerNamesHasBeenSet = true; m_crawlerNames = std::move(value); }
-    inline BatchGetCrawlersRequest& WithCrawlerNames(const Aws::Vector<Aws::String>& value) { SetCrawlerNames(value); return *this;}
-    inline BatchGetCrawlersRequest& WithCrawlerNames(Aws::Vector<Aws::String>&& value) { SetCrawlerNames(std::move(value)); return *this;}
-    inline BatchGetCrawlersRequest& AddCrawlerNames(const Aws::String& value) { m_crawlerNamesHasBeenSet = true; m_crawlerNames.push_back(value); return *this; }
-    inline BatchGetCrawlersRequest& AddCrawlerNames(Aws::String&& value) { m_crawlerNamesHasBeenSet = true; m_crawlerNames.push_back(std::move(value)); return *this; }
-    inline BatchGetCrawlersRequest& AddCrawlerNames(const char* value) { m_crawlerNamesHasBeenSet = true; m_crawlerNames.push_back(value); return *this; }
+    template<typename CrawlerNamesT = Aws::Vector<Aws::String>>
+    void SetCrawlerNames(CrawlerNamesT&& value) { m_crawlerNamesHasBeenSet = true; m_crawlerNames = std::forward<CrawlerNamesT>(value); }
+    template<typename CrawlerNamesT = Aws::Vector<Aws::String>>
+    BatchGetCrawlersRequest& WithCrawlerNames(CrawlerNamesT&& value) { SetCrawlerNames(std::forward<CrawlerNamesT>(value)); return *this;}
+    template<typename CrawlerNamesT = Aws::String>
+    BatchGetCrawlersRequest& AddCrawlerNames(CrawlerNamesT&& value) { m_crawlerNamesHasBeenSet = true; m_crawlerNames.emplace_back(std::forward<CrawlerNamesT>(value)); return *this; }
     ///@}
   private:
 

@@ -18,14 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-ErrorDetails::ErrorDetails() : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 ErrorDetails::ErrorDetails(JsonView jsonValue)
-  : ErrorDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ErrorDetails& ErrorDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("code"))
   {
     m_code = jsonValue.GetString("code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

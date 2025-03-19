@@ -31,7 +31,7 @@ namespace Model
   class PublicKeySummary
   {
   public:
-    AWS_CLOUDFRONT_API PublicKeySummary();
+    AWS_CLOUDFRONT_API PublicKeySummary() = default;
     AWS_CLOUDFRONT_API PublicKeySummary(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API PublicKeySummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -42,54 +42,48 @@ namespace Model
     /**
      * <p>The identifier of the public key.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline PublicKeySummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline PublicKeySummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline PublicKeySummary& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    PublicKeySummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A name to help identify the public key.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline PublicKeySummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline PublicKeySummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline PublicKeySummary& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    PublicKeySummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time when the public key was uploaded.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
+    inline const Aws::Utils::DateTime& GetCreatedTime() const { return m_createdTime; }
     inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
-    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
-    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
-    inline PublicKeySummary& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
-    inline PublicKeySummary& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    void SetCreatedTime(CreatedTimeT&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::forward<CreatedTimeT>(value); }
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    PublicKeySummary& WithCreatedTime(CreatedTimeT&& value) { SetCreatedTime(std::forward<CreatedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The public key.</p>
      */
-    inline const Aws::String& GetEncodedKey() const{ return m_encodedKey; }
+    inline const Aws::String& GetEncodedKey() const { return m_encodedKey; }
     inline bool EncodedKeyHasBeenSet() const { return m_encodedKeyHasBeenSet; }
-    inline void SetEncodedKey(const Aws::String& value) { m_encodedKeyHasBeenSet = true; m_encodedKey = value; }
-    inline void SetEncodedKey(Aws::String&& value) { m_encodedKeyHasBeenSet = true; m_encodedKey = std::move(value); }
-    inline void SetEncodedKey(const char* value) { m_encodedKeyHasBeenSet = true; m_encodedKey.assign(value); }
-    inline PublicKeySummary& WithEncodedKey(const Aws::String& value) { SetEncodedKey(value); return *this;}
-    inline PublicKeySummary& WithEncodedKey(Aws::String&& value) { SetEncodedKey(std::move(value)); return *this;}
-    inline PublicKeySummary& WithEncodedKey(const char* value) { SetEncodedKey(value); return *this;}
+    template<typename EncodedKeyT = Aws::String>
+    void SetEncodedKey(EncodedKeyT&& value) { m_encodedKeyHasBeenSet = true; m_encodedKey = std::forward<EncodedKeyT>(value); }
+    template<typename EncodedKeyT = Aws::String>
+    PublicKeySummary& WithEncodedKey(EncodedKeyT&& value) { SetEncodedKey(std::forward<EncodedKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,14 +91,12 @@ namespace Model
      * <p>A comment to describe the public key. The comment cannot be longer than 128
      * characters.</p>
      */
-    inline const Aws::String& GetComment() const{ return m_comment; }
+    inline const Aws::String& GetComment() const { return m_comment; }
     inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
-    inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
-    inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
-    inline void SetComment(const char* value) { m_commentHasBeenSet = true; m_comment.assign(value); }
-    inline PublicKeySummary& WithComment(const Aws::String& value) { SetComment(value); return *this;}
-    inline PublicKeySummary& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
-    inline PublicKeySummary& WithComment(const char* value) { SetComment(value); return *this;}
+    template<typename CommentT = Aws::String>
+    void SetComment(CommentT&& value) { m_commentHasBeenSet = true; m_comment = std::forward<CommentT>(value); }
+    template<typename CommentT = Aws::String>
+    PublicKeySummary& WithComment(CommentT&& value) { SetComment(std::forward<CommentT>(value)); return *this;}
     ///@}
   private:
 
@@ -114,7 +106,7 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTime;
+    Aws::Utils::DateTime m_createdTime{};
     bool m_createdTimeHasBeenSet = false;
 
     Aws::String m_encodedKey;

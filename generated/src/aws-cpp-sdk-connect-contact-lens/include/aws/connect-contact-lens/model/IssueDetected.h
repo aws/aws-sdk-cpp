@@ -32,7 +32,7 @@ namespace Model
   class IssueDetected
   {
   public:
-    AWS_CONNECTCONTACTLENS_API IssueDetected();
+    AWS_CONNECTCONTACTLENS_API IssueDetected() = default;
     AWS_CONNECTCONTACTLENS_API IssueDetected(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCONTACTLENS_API IssueDetected& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCONTACTLENS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The offset for when the issue was detected in the segment.</p>
      */
-    inline const CharacterOffsets& GetCharacterOffsets() const{ return m_characterOffsets; }
+    inline const CharacterOffsets& GetCharacterOffsets() const { return m_characterOffsets; }
     inline bool CharacterOffsetsHasBeenSet() const { return m_characterOffsetsHasBeenSet; }
-    inline void SetCharacterOffsets(const CharacterOffsets& value) { m_characterOffsetsHasBeenSet = true; m_characterOffsets = value; }
-    inline void SetCharacterOffsets(CharacterOffsets&& value) { m_characterOffsetsHasBeenSet = true; m_characterOffsets = std::move(value); }
-    inline IssueDetected& WithCharacterOffsets(const CharacterOffsets& value) { SetCharacterOffsets(value); return *this;}
-    inline IssueDetected& WithCharacterOffsets(CharacterOffsets&& value) { SetCharacterOffsets(std::move(value)); return *this;}
+    template<typename CharacterOffsetsT = CharacterOffsets>
+    void SetCharacterOffsets(CharacterOffsetsT&& value) { m_characterOffsetsHasBeenSet = true; m_characterOffsets = std::forward<CharacterOffsetsT>(value); }
+    template<typename CharacterOffsetsT = CharacterOffsets>
+    IssueDetected& WithCharacterOffsets(CharacterOffsetsT&& value) { SetCharacterOffsets(std::forward<CharacterOffsetsT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,14 +18,7 @@ namespace ConnectCampaignsV2
 namespace Model
 {
 
-LocalTimeZoneConfig::LocalTimeZoneConfig() : 
-    m_defaultTimeZoneHasBeenSet(false),
-    m_localTimeZoneDetectionHasBeenSet(false)
-{
-}
-
 LocalTimeZoneConfig::LocalTimeZoneConfig(JsonView jsonValue)
-  : LocalTimeZoneConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ LocalTimeZoneConfig& LocalTimeZoneConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("defaultTimeZone"))
   {
     m_defaultTimeZone = jsonValue.GetString("defaultTimeZone");
-
     m_defaultTimeZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("localTimeZoneDetection"))
   {
     Aws::Utils::Array<JsonView> localTimeZoneDetectionJsonList = jsonValue.GetArray("localTimeZoneDetection");
@@ -48,7 +39,6 @@ LocalTimeZoneConfig& LocalTimeZoneConfig::operator =(JsonView jsonValue)
     }
     m_localTimeZoneDetectionHasBeenSet = true;
   }
-
   return *this;
 }
 

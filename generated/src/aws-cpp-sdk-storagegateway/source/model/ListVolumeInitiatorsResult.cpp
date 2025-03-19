@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListVolumeInitiatorsResult::ListVolumeInitiatorsResult()
-{
-}
-
 ListVolumeInitiatorsResult::ListVolumeInitiatorsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ ListVolumeInitiatorsResult& ListVolumeInitiatorsResult::operator =(const Aws::Am
     {
       m_initiators.push_back(initiatorsJsonList[initiatorsIndex].AsString());
     }
+    m_initiatorsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

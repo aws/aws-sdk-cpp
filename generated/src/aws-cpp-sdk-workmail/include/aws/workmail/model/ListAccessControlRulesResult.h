@@ -29,7 +29,7 @@ namespace Model
   class ListAccessControlRulesResult
   {
   public:
-    AWS_WORKMAIL_API ListAccessControlRulesResult();
+    AWS_WORKMAIL_API ListAccessControlRulesResult() = default;
     AWS_WORKMAIL_API ListAccessControlRulesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WORKMAIL_API ListAccessControlRulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>The access control rules.</p>
      */
-    inline const Aws::Vector<AccessControlRule>& GetRules() const{ return m_rules; }
-    inline void SetRules(const Aws::Vector<AccessControlRule>& value) { m_rules = value; }
-    inline void SetRules(Aws::Vector<AccessControlRule>&& value) { m_rules = std::move(value); }
-    inline ListAccessControlRulesResult& WithRules(const Aws::Vector<AccessControlRule>& value) { SetRules(value); return *this;}
-    inline ListAccessControlRulesResult& WithRules(Aws::Vector<AccessControlRule>&& value) { SetRules(std::move(value)); return *this;}
-    inline ListAccessControlRulesResult& AddRules(const AccessControlRule& value) { m_rules.push_back(value); return *this; }
-    inline ListAccessControlRulesResult& AddRules(AccessControlRule&& value) { m_rules.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AccessControlRule>& GetRules() const { return m_rules; }
+    template<typename RulesT = Aws::Vector<AccessControlRule>>
+    void SetRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules = std::forward<RulesT>(value); }
+    template<typename RulesT = Aws::Vector<AccessControlRule>>
+    ListAccessControlRulesResult& WithRules(RulesT&& value) { SetRules(std::forward<RulesT>(value)); return *this;}
+    template<typename RulesT = AccessControlRule>
+    ListAccessControlRulesResult& AddRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules.emplace_back(std::forward<RulesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListAccessControlRulesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListAccessControlRulesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListAccessControlRulesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListAccessControlRulesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AccessControlRule> m_rules;
+    bool m_rulesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

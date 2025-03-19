@@ -18,20 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-SolutionBase::SolutionBase() : 
-    m_arnHasBeenSet(false),
-    m_catalogHasBeenSet(false),
-    m_categoryHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(SolutionStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 SolutionBase::SolutionBase(JsonView jsonValue)
-  : SolutionBase()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ SolutionBase& SolutionBase::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Catalog"))
   {
     m_catalog = jsonValue.GetString("Catalog");
-
     m_catalogHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Category"))
   {
     m_category = jsonValue.GetString("Category");
-
     m_categoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedDate"))
   {
     m_createdDate = jsonValue.GetString("CreatedDate");
-
     m_createdDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = SolutionStatusMapper::GetSolutionStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

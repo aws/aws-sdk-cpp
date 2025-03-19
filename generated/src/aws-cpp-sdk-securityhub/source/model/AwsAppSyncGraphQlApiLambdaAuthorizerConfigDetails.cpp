@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails::AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails() : 
-    m_authorizerResultTtlInSeconds(0),
-    m_authorizerResultTtlInSecondsHasBeenSet(false),
-    m_authorizerUriHasBeenSet(false),
-    m_identityValidationExpressionHasBeenSet(false)
-{
-}
-
 AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails::AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails(JsonView jsonValue)
-  : AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails& AwsAppSyncGraphQlApiLambdaAut
   if(jsonValue.ValueExists("AuthorizerResultTtlInSeconds"))
   {
     m_authorizerResultTtlInSeconds = jsonValue.GetInteger("AuthorizerResultTtlInSeconds");
-
     m_authorizerResultTtlInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthorizerUri"))
   {
     m_authorizerUri = jsonValue.GetString("AuthorizerUri");
-
     m_authorizerUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdentityValidationExpression"))
   {
     m_identityValidationExpression = jsonValue.GetString("IdentityValidationExpression");
-
     m_identityValidationExpressionHasBeenSet = true;
   }
-
   return *this;
 }
 

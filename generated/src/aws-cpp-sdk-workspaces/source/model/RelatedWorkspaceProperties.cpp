@@ -18,18 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-RelatedWorkspaceProperties::RelatedWorkspaceProperties() : 
-    m_workspaceIdHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_state(WorkspaceState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_type(StandbyWorkspaceRelationshipType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 RelatedWorkspaceProperties::RelatedWorkspaceProperties(JsonView jsonValue)
-  : RelatedWorkspaceProperties()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ RelatedWorkspaceProperties& RelatedWorkspaceProperties::operator =(JsonView json
   if(jsonValue.ValueExists("WorkspaceId"))
   {
     m_workspaceId = jsonValue.GetString("WorkspaceId");
-
     m_workspaceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetString("Region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = WorkspaceStateMapper::GetWorkspaceStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = StandbyWorkspaceRelationshipTypeMapper::GetStandbyWorkspaceRelationshipTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

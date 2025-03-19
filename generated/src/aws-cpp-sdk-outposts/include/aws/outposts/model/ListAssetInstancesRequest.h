@@ -27,7 +27,7 @@ namespace Model
   class ListAssetInstancesRequest : public OutpostsRequest
   {
   public:
-    AWS_OUTPOSTS_API ListAssetInstancesRequest();
+    AWS_OUTPOSTS_API ListAssetInstancesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,78 +44,72 @@ namespace Model
     /**
      * <p>The ID of the Outpost.</p>
      */
-    inline const Aws::String& GetOutpostIdentifier() const{ return m_outpostIdentifier; }
+    inline const Aws::String& GetOutpostIdentifier() const { return m_outpostIdentifier; }
     inline bool OutpostIdentifierHasBeenSet() const { return m_outpostIdentifierHasBeenSet; }
-    inline void SetOutpostIdentifier(const Aws::String& value) { m_outpostIdentifierHasBeenSet = true; m_outpostIdentifier = value; }
-    inline void SetOutpostIdentifier(Aws::String&& value) { m_outpostIdentifierHasBeenSet = true; m_outpostIdentifier = std::move(value); }
-    inline void SetOutpostIdentifier(const char* value) { m_outpostIdentifierHasBeenSet = true; m_outpostIdentifier.assign(value); }
-    inline ListAssetInstancesRequest& WithOutpostIdentifier(const Aws::String& value) { SetOutpostIdentifier(value); return *this;}
-    inline ListAssetInstancesRequest& WithOutpostIdentifier(Aws::String&& value) { SetOutpostIdentifier(std::move(value)); return *this;}
-    inline ListAssetInstancesRequest& WithOutpostIdentifier(const char* value) { SetOutpostIdentifier(value); return *this;}
+    template<typename OutpostIdentifierT = Aws::String>
+    void SetOutpostIdentifier(OutpostIdentifierT&& value) { m_outpostIdentifierHasBeenSet = true; m_outpostIdentifier = std::forward<OutpostIdentifierT>(value); }
+    template<typename OutpostIdentifierT = Aws::String>
+    ListAssetInstancesRequest& WithOutpostIdentifier(OutpostIdentifierT&& value) { SetOutpostIdentifier(std::forward<OutpostIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Filters the results by asset ID.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAssetIdFilter() const{ return m_assetIdFilter; }
+    inline const Aws::Vector<Aws::String>& GetAssetIdFilter() const { return m_assetIdFilter; }
     inline bool AssetIdFilterHasBeenSet() const { return m_assetIdFilterHasBeenSet; }
-    inline void SetAssetIdFilter(const Aws::Vector<Aws::String>& value) { m_assetIdFilterHasBeenSet = true; m_assetIdFilter = value; }
-    inline void SetAssetIdFilter(Aws::Vector<Aws::String>&& value) { m_assetIdFilterHasBeenSet = true; m_assetIdFilter = std::move(value); }
-    inline ListAssetInstancesRequest& WithAssetIdFilter(const Aws::Vector<Aws::String>& value) { SetAssetIdFilter(value); return *this;}
-    inline ListAssetInstancesRequest& WithAssetIdFilter(Aws::Vector<Aws::String>&& value) { SetAssetIdFilter(std::move(value)); return *this;}
-    inline ListAssetInstancesRequest& AddAssetIdFilter(const Aws::String& value) { m_assetIdFilterHasBeenSet = true; m_assetIdFilter.push_back(value); return *this; }
-    inline ListAssetInstancesRequest& AddAssetIdFilter(Aws::String&& value) { m_assetIdFilterHasBeenSet = true; m_assetIdFilter.push_back(std::move(value)); return *this; }
-    inline ListAssetInstancesRequest& AddAssetIdFilter(const char* value) { m_assetIdFilterHasBeenSet = true; m_assetIdFilter.push_back(value); return *this; }
+    template<typename AssetIdFilterT = Aws::Vector<Aws::String>>
+    void SetAssetIdFilter(AssetIdFilterT&& value) { m_assetIdFilterHasBeenSet = true; m_assetIdFilter = std::forward<AssetIdFilterT>(value); }
+    template<typename AssetIdFilterT = Aws::Vector<Aws::String>>
+    ListAssetInstancesRequest& WithAssetIdFilter(AssetIdFilterT&& value) { SetAssetIdFilter(std::forward<AssetIdFilterT>(value)); return *this;}
+    template<typename AssetIdFilterT = Aws::String>
+    ListAssetInstancesRequest& AddAssetIdFilter(AssetIdFilterT&& value) { m_assetIdFilterHasBeenSet = true; m_assetIdFilter.emplace_back(std::forward<AssetIdFilterT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Filters the results by instance ID.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetInstanceTypeFilter() const{ return m_instanceTypeFilter; }
+    inline const Aws::Vector<Aws::String>& GetInstanceTypeFilter() const { return m_instanceTypeFilter; }
     inline bool InstanceTypeFilterHasBeenSet() const { return m_instanceTypeFilterHasBeenSet; }
-    inline void SetInstanceTypeFilter(const Aws::Vector<Aws::String>& value) { m_instanceTypeFilterHasBeenSet = true; m_instanceTypeFilter = value; }
-    inline void SetInstanceTypeFilter(Aws::Vector<Aws::String>&& value) { m_instanceTypeFilterHasBeenSet = true; m_instanceTypeFilter = std::move(value); }
-    inline ListAssetInstancesRequest& WithInstanceTypeFilter(const Aws::Vector<Aws::String>& value) { SetInstanceTypeFilter(value); return *this;}
-    inline ListAssetInstancesRequest& WithInstanceTypeFilter(Aws::Vector<Aws::String>&& value) { SetInstanceTypeFilter(std::move(value)); return *this;}
-    inline ListAssetInstancesRequest& AddInstanceTypeFilter(const Aws::String& value) { m_instanceTypeFilterHasBeenSet = true; m_instanceTypeFilter.push_back(value); return *this; }
-    inline ListAssetInstancesRequest& AddInstanceTypeFilter(Aws::String&& value) { m_instanceTypeFilterHasBeenSet = true; m_instanceTypeFilter.push_back(std::move(value)); return *this; }
-    inline ListAssetInstancesRequest& AddInstanceTypeFilter(const char* value) { m_instanceTypeFilterHasBeenSet = true; m_instanceTypeFilter.push_back(value); return *this; }
+    template<typename InstanceTypeFilterT = Aws::Vector<Aws::String>>
+    void SetInstanceTypeFilter(InstanceTypeFilterT&& value) { m_instanceTypeFilterHasBeenSet = true; m_instanceTypeFilter = std::forward<InstanceTypeFilterT>(value); }
+    template<typename InstanceTypeFilterT = Aws::Vector<Aws::String>>
+    ListAssetInstancesRequest& WithInstanceTypeFilter(InstanceTypeFilterT&& value) { SetInstanceTypeFilter(std::forward<InstanceTypeFilterT>(value)); return *this;}
+    template<typename InstanceTypeFilterT = Aws::String>
+    ListAssetInstancesRequest& AddInstanceTypeFilter(InstanceTypeFilterT&& value) { m_instanceTypeFilterHasBeenSet = true; m_instanceTypeFilter.emplace_back(std::forward<InstanceTypeFilterT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Filters the results by account ID.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAccountIdFilter() const{ return m_accountIdFilter; }
+    inline const Aws::Vector<Aws::String>& GetAccountIdFilter() const { return m_accountIdFilter; }
     inline bool AccountIdFilterHasBeenSet() const { return m_accountIdFilterHasBeenSet; }
-    inline void SetAccountIdFilter(const Aws::Vector<Aws::String>& value) { m_accountIdFilterHasBeenSet = true; m_accountIdFilter = value; }
-    inline void SetAccountIdFilter(Aws::Vector<Aws::String>&& value) { m_accountIdFilterHasBeenSet = true; m_accountIdFilter = std::move(value); }
-    inline ListAssetInstancesRequest& WithAccountIdFilter(const Aws::Vector<Aws::String>& value) { SetAccountIdFilter(value); return *this;}
-    inline ListAssetInstancesRequest& WithAccountIdFilter(Aws::Vector<Aws::String>&& value) { SetAccountIdFilter(std::move(value)); return *this;}
-    inline ListAssetInstancesRequest& AddAccountIdFilter(const Aws::String& value) { m_accountIdFilterHasBeenSet = true; m_accountIdFilter.push_back(value); return *this; }
-    inline ListAssetInstancesRequest& AddAccountIdFilter(Aws::String&& value) { m_accountIdFilterHasBeenSet = true; m_accountIdFilter.push_back(std::move(value)); return *this; }
-    inline ListAssetInstancesRequest& AddAccountIdFilter(const char* value) { m_accountIdFilterHasBeenSet = true; m_accountIdFilter.push_back(value); return *this; }
+    template<typename AccountIdFilterT = Aws::Vector<Aws::String>>
+    void SetAccountIdFilter(AccountIdFilterT&& value) { m_accountIdFilterHasBeenSet = true; m_accountIdFilter = std::forward<AccountIdFilterT>(value); }
+    template<typename AccountIdFilterT = Aws::Vector<Aws::String>>
+    ListAssetInstancesRequest& WithAccountIdFilter(AccountIdFilterT&& value) { SetAccountIdFilter(std::forward<AccountIdFilterT>(value)); return *this;}
+    template<typename AccountIdFilterT = Aws::String>
+    ListAssetInstancesRequest& AddAccountIdFilter(AccountIdFilterT&& value) { m_accountIdFilterHasBeenSet = true; m_accountIdFilter.emplace_back(std::forward<AccountIdFilterT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Filters the results by Amazon Web Services service.</p>
      */
-    inline const Aws::Vector<AWSServiceName>& GetAwsServiceFilter() const{ return m_awsServiceFilter; }
+    inline const Aws::Vector<AWSServiceName>& GetAwsServiceFilter() const { return m_awsServiceFilter; }
     inline bool AwsServiceFilterHasBeenSet() const { return m_awsServiceFilterHasBeenSet; }
-    inline void SetAwsServiceFilter(const Aws::Vector<AWSServiceName>& value) { m_awsServiceFilterHasBeenSet = true; m_awsServiceFilter = value; }
-    inline void SetAwsServiceFilter(Aws::Vector<AWSServiceName>&& value) { m_awsServiceFilterHasBeenSet = true; m_awsServiceFilter = std::move(value); }
-    inline ListAssetInstancesRequest& WithAwsServiceFilter(const Aws::Vector<AWSServiceName>& value) { SetAwsServiceFilter(value); return *this;}
-    inline ListAssetInstancesRequest& WithAwsServiceFilter(Aws::Vector<AWSServiceName>&& value) { SetAwsServiceFilter(std::move(value)); return *this;}
-    inline ListAssetInstancesRequest& AddAwsServiceFilter(const AWSServiceName& value) { m_awsServiceFilterHasBeenSet = true; m_awsServiceFilter.push_back(value); return *this; }
-    inline ListAssetInstancesRequest& AddAwsServiceFilter(AWSServiceName&& value) { m_awsServiceFilterHasBeenSet = true; m_awsServiceFilter.push_back(std::move(value)); return *this; }
+    template<typename AwsServiceFilterT = Aws::Vector<AWSServiceName>>
+    void SetAwsServiceFilter(AwsServiceFilterT&& value) { m_awsServiceFilterHasBeenSet = true; m_awsServiceFilter = std::forward<AwsServiceFilterT>(value); }
+    template<typename AwsServiceFilterT = Aws::Vector<AWSServiceName>>
+    ListAssetInstancesRequest& WithAwsServiceFilter(AwsServiceFilterT&& value) { SetAwsServiceFilter(std::forward<AwsServiceFilterT>(value)); return *this;}
+    inline ListAssetInstancesRequest& AddAwsServiceFilter(AWSServiceName value) { m_awsServiceFilterHasBeenSet = true; m_awsServiceFilter.push_back(value); return *this; }
     ///@}
 
     ///@{
     
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListAssetInstancesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -123,14 +117,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListAssetInstancesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAssetInstancesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAssetInstancesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAssetInstancesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -149,7 +141,7 @@ namespace Model
     Aws::Vector<AWSServiceName> m_awsServiceFilter;
     bool m_awsServiceFilterHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

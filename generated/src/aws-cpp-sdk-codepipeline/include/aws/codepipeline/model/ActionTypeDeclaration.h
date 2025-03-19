@@ -39,7 +39,7 @@ namespace Model
   class ActionTypeDeclaration
   {
   public:
-    AWS_CODEPIPELINE_API ActionTypeDeclaration();
+    AWS_CODEPIPELINE_API ActionTypeDeclaration() = default;
     AWS_CODEPIPELINE_API ActionTypeDeclaration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API ActionTypeDeclaration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
     /**
      * <p>The description for the action type to be updated.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline ActionTypeDeclaration& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ActionTypeDeclaration& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ActionTypeDeclaration& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ActionTypeDeclaration& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,12 +62,12 @@ namespace Model
      * <p>Information about the executor for an action type that was created with any
      * supported integration model.</p>
      */
-    inline const ActionTypeExecutor& GetExecutor() const{ return m_executor; }
+    inline const ActionTypeExecutor& GetExecutor() const { return m_executor; }
     inline bool ExecutorHasBeenSet() const { return m_executorHasBeenSet; }
-    inline void SetExecutor(const ActionTypeExecutor& value) { m_executorHasBeenSet = true; m_executor = value; }
-    inline void SetExecutor(ActionTypeExecutor&& value) { m_executorHasBeenSet = true; m_executor = std::move(value); }
-    inline ActionTypeDeclaration& WithExecutor(const ActionTypeExecutor& value) { SetExecutor(value); return *this;}
-    inline ActionTypeDeclaration& WithExecutor(ActionTypeExecutor&& value) { SetExecutor(std::move(value)); return *this;}
+    template<typename ExecutorT = ActionTypeExecutor>
+    void SetExecutor(ExecutorT&& value) { m_executorHasBeenSet = true; m_executor = std::forward<ExecutorT>(value); }
+    template<typename ExecutorT = ActionTypeExecutor>
+    ActionTypeDeclaration& WithExecutor(ExecutorT&& value) { SetExecutor(std::forward<ExecutorT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,12 +75,12 @@ namespace Model
      * <p>The action category, owner, provider, and version of the action type to be
      * updated.</p>
      */
-    inline const ActionTypeIdentifier& GetId() const{ return m_id; }
+    inline const ActionTypeIdentifier& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const ActionTypeIdentifier& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(ActionTypeIdentifier&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline ActionTypeDeclaration& WithId(const ActionTypeIdentifier& value) { SetId(value); return *this;}
-    inline ActionTypeDeclaration& WithId(ActionTypeIdentifier&& value) { SetId(std::move(value)); return *this;}
+    template<typename IdT = ActionTypeIdentifier>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = ActionTypeIdentifier>
+    ActionTypeDeclaration& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,12 +89,12 @@ namespace Model
      * action. For example, the minimum and maximum number of input artifacts
      * allowed.</p>
      */
-    inline const ActionTypeArtifactDetails& GetInputArtifactDetails() const{ return m_inputArtifactDetails; }
+    inline const ActionTypeArtifactDetails& GetInputArtifactDetails() const { return m_inputArtifactDetails; }
     inline bool InputArtifactDetailsHasBeenSet() const { return m_inputArtifactDetailsHasBeenSet; }
-    inline void SetInputArtifactDetails(const ActionTypeArtifactDetails& value) { m_inputArtifactDetailsHasBeenSet = true; m_inputArtifactDetails = value; }
-    inline void SetInputArtifactDetails(ActionTypeArtifactDetails&& value) { m_inputArtifactDetailsHasBeenSet = true; m_inputArtifactDetails = std::move(value); }
-    inline ActionTypeDeclaration& WithInputArtifactDetails(const ActionTypeArtifactDetails& value) { SetInputArtifactDetails(value); return *this;}
-    inline ActionTypeDeclaration& WithInputArtifactDetails(ActionTypeArtifactDetails&& value) { SetInputArtifactDetails(std::move(value)); return *this;}
+    template<typename InputArtifactDetailsT = ActionTypeArtifactDetails>
+    void SetInputArtifactDetails(InputArtifactDetailsT&& value) { m_inputArtifactDetailsHasBeenSet = true; m_inputArtifactDetails = std::forward<InputArtifactDetailsT>(value); }
+    template<typename InputArtifactDetailsT = ActionTypeArtifactDetails>
+    ActionTypeDeclaration& WithInputArtifactDetails(InputArtifactDetailsT&& value) { SetInputArtifactDetails(std::forward<InputArtifactDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,50 +103,50 @@ namespace Model
      * result of the action. For example, the minimum and maximum number of output
      * artifacts allowed.</p>
      */
-    inline const ActionTypeArtifactDetails& GetOutputArtifactDetails() const{ return m_outputArtifactDetails; }
+    inline const ActionTypeArtifactDetails& GetOutputArtifactDetails() const { return m_outputArtifactDetails; }
     inline bool OutputArtifactDetailsHasBeenSet() const { return m_outputArtifactDetailsHasBeenSet; }
-    inline void SetOutputArtifactDetails(const ActionTypeArtifactDetails& value) { m_outputArtifactDetailsHasBeenSet = true; m_outputArtifactDetails = value; }
-    inline void SetOutputArtifactDetails(ActionTypeArtifactDetails&& value) { m_outputArtifactDetailsHasBeenSet = true; m_outputArtifactDetails = std::move(value); }
-    inline ActionTypeDeclaration& WithOutputArtifactDetails(const ActionTypeArtifactDetails& value) { SetOutputArtifactDetails(value); return *this;}
-    inline ActionTypeDeclaration& WithOutputArtifactDetails(ActionTypeArtifactDetails&& value) { SetOutputArtifactDetails(std::move(value)); return *this;}
+    template<typename OutputArtifactDetailsT = ActionTypeArtifactDetails>
+    void SetOutputArtifactDetails(OutputArtifactDetailsT&& value) { m_outputArtifactDetailsHasBeenSet = true; m_outputArtifactDetails = std::forward<OutputArtifactDetailsT>(value); }
+    template<typename OutputArtifactDetailsT = ActionTypeArtifactDetails>
+    ActionTypeDeclaration& WithOutputArtifactDetails(OutputArtifactDetailsT&& value) { SetOutputArtifactDetails(std::forward<OutputArtifactDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details identifying the accounts with permissions to use the action type.</p>
      */
-    inline const ActionTypePermissions& GetPermissions() const{ return m_permissions; }
+    inline const ActionTypePermissions& GetPermissions() const { return m_permissions; }
     inline bool PermissionsHasBeenSet() const { return m_permissionsHasBeenSet; }
-    inline void SetPermissions(const ActionTypePermissions& value) { m_permissionsHasBeenSet = true; m_permissions = value; }
-    inline void SetPermissions(ActionTypePermissions&& value) { m_permissionsHasBeenSet = true; m_permissions = std::move(value); }
-    inline ActionTypeDeclaration& WithPermissions(const ActionTypePermissions& value) { SetPermissions(value); return *this;}
-    inline ActionTypeDeclaration& WithPermissions(ActionTypePermissions&& value) { SetPermissions(std::move(value)); return *this;}
+    template<typename PermissionsT = ActionTypePermissions>
+    void SetPermissions(PermissionsT&& value) { m_permissionsHasBeenSet = true; m_permissions = std::forward<PermissionsT>(value); }
+    template<typename PermissionsT = ActionTypePermissions>
+    ActionTypeDeclaration& WithPermissions(PermissionsT&& value) { SetPermissions(std::forward<PermissionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The properties of the action type to be updated.</p>
      */
-    inline const Aws::Vector<ActionTypeProperty>& GetProperties() const{ return m_properties; }
+    inline const Aws::Vector<ActionTypeProperty>& GetProperties() const { return m_properties; }
     inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
-    inline void SetProperties(const Aws::Vector<ActionTypeProperty>& value) { m_propertiesHasBeenSet = true; m_properties = value; }
-    inline void SetProperties(Aws::Vector<ActionTypeProperty>&& value) { m_propertiesHasBeenSet = true; m_properties = std::move(value); }
-    inline ActionTypeDeclaration& WithProperties(const Aws::Vector<ActionTypeProperty>& value) { SetProperties(value); return *this;}
-    inline ActionTypeDeclaration& WithProperties(Aws::Vector<ActionTypeProperty>&& value) { SetProperties(std::move(value)); return *this;}
-    inline ActionTypeDeclaration& AddProperties(const ActionTypeProperty& value) { m_propertiesHasBeenSet = true; m_properties.push_back(value); return *this; }
-    inline ActionTypeDeclaration& AddProperties(ActionTypeProperty&& value) { m_propertiesHasBeenSet = true; m_properties.push_back(std::move(value)); return *this; }
+    template<typename PropertiesT = Aws::Vector<ActionTypeProperty>>
+    void SetProperties(PropertiesT&& value) { m_propertiesHasBeenSet = true; m_properties = std::forward<PropertiesT>(value); }
+    template<typename PropertiesT = Aws::Vector<ActionTypeProperty>>
+    ActionTypeDeclaration& WithProperties(PropertiesT&& value) { SetProperties(std::forward<PropertiesT>(value)); return *this;}
+    template<typename PropertiesT = ActionTypeProperty>
+    ActionTypeDeclaration& AddProperties(PropertiesT&& value) { m_propertiesHasBeenSet = true; m_properties.emplace_back(std::forward<PropertiesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The links associated with the action type to be updated.</p>
      */
-    inline const ActionTypeUrls& GetUrls() const{ return m_urls; }
+    inline const ActionTypeUrls& GetUrls() const { return m_urls; }
     inline bool UrlsHasBeenSet() const { return m_urlsHasBeenSet; }
-    inline void SetUrls(const ActionTypeUrls& value) { m_urlsHasBeenSet = true; m_urls = value; }
-    inline void SetUrls(ActionTypeUrls&& value) { m_urlsHasBeenSet = true; m_urls = std::move(value); }
-    inline ActionTypeDeclaration& WithUrls(const ActionTypeUrls& value) { SetUrls(value); return *this;}
-    inline ActionTypeDeclaration& WithUrls(ActionTypeUrls&& value) { SetUrls(std::move(value)); return *this;}
+    template<typename UrlsT = ActionTypeUrls>
+    void SetUrls(UrlsT&& value) { m_urlsHasBeenSet = true; m_urls = std::forward<UrlsT>(value); }
+    template<typename UrlsT = ActionTypeUrls>
+    ActionTypeDeclaration& WithUrls(UrlsT&& value) { SetUrls(std::forward<UrlsT>(value)); return *this;}
     ///@}
   private:
 

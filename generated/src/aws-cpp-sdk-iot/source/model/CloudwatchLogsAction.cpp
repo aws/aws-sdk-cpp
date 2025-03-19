@@ -18,16 +18,7 @@ namespace IoT
 namespace Model
 {
 
-CloudwatchLogsAction::CloudwatchLogsAction() : 
-    m_roleArnHasBeenSet(false),
-    m_logGroupNameHasBeenSet(false),
-    m_batchMode(false),
-    m_batchModeHasBeenSet(false)
-{
-}
-
 CloudwatchLogsAction::CloudwatchLogsAction(JsonView jsonValue)
-  : CloudwatchLogsAction()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ CloudwatchLogsAction& CloudwatchLogsAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logGroupName"))
   {
     m_logGroupName = jsonValue.GetString("logGroupName");
-
     m_logGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("batchMode"))
   {
     m_batchMode = jsonValue.GetBool("batchMode");
-
     m_batchModeHasBeenSet = true;
   }
-
   return *this;
 }
 

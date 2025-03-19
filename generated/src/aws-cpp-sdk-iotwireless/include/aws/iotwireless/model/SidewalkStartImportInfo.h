@@ -32,7 +32,7 @@ namespace Model
   class SidewalkStartImportInfo
   {
   public:
-    AWS_IOTWIRELESS_API SidewalkStartImportInfo();
+    AWS_IOTWIRELESS_API SidewalkStartImportInfo() = default;
     AWS_IOTWIRELESS_API SidewalkStartImportInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API SidewalkStartImportInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The CSV file contained in an S3 bucket that's used for adding devices to an
      * import task.</p>
      */
-    inline const Aws::String& GetDeviceCreationFile() const{ return m_deviceCreationFile; }
+    inline const Aws::String& GetDeviceCreationFile() const { return m_deviceCreationFile; }
     inline bool DeviceCreationFileHasBeenSet() const { return m_deviceCreationFileHasBeenSet; }
-    inline void SetDeviceCreationFile(const Aws::String& value) { m_deviceCreationFileHasBeenSet = true; m_deviceCreationFile = value; }
-    inline void SetDeviceCreationFile(Aws::String&& value) { m_deviceCreationFileHasBeenSet = true; m_deviceCreationFile = std::move(value); }
-    inline void SetDeviceCreationFile(const char* value) { m_deviceCreationFileHasBeenSet = true; m_deviceCreationFile.assign(value); }
-    inline SidewalkStartImportInfo& WithDeviceCreationFile(const Aws::String& value) { SetDeviceCreationFile(value); return *this;}
-    inline SidewalkStartImportInfo& WithDeviceCreationFile(Aws::String&& value) { SetDeviceCreationFile(std::move(value)); return *this;}
-    inline SidewalkStartImportInfo& WithDeviceCreationFile(const char* value) { SetDeviceCreationFile(value); return *this;}
+    template<typename DeviceCreationFileT = Aws::String>
+    void SetDeviceCreationFile(DeviceCreationFileT&& value) { m_deviceCreationFileHasBeenSet = true; m_deviceCreationFile = std::forward<DeviceCreationFileT>(value); }
+    template<typename DeviceCreationFileT = Aws::String>
+    SidewalkStartImportInfo& WithDeviceCreationFile(DeviceCreationFileT&& value) { SetDeviceCreationFile(std::forward<DeviceCreationFileT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The IAM role that allows AWS IoT Wireless to access the CSV file in the S3
      * bucket.</p>
      */
-    inline const Aws::String& GetRole() const{ return m_role; }
+    inline const Aws::String& GetRole() const { return m_role; }
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
-    inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
-    inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
-    inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
-    inline SidewalkStartImportInfo& WithRole(const Aws::String& value) { SetRole(value); return *this;}
-    inline SidewalkStartImportInfo& WithRole(Aws::String&& value) { SetRole(std::move(value)); return *this;}
-    inline SidewalkStartImportInfo& WithRole(const char* value) { SetRole(value); return *this;}
+    template<typename RoleT = Aws::String>
+    void SetRole(RoleT&& value) { m_roleHasBeenSet = true; m_role = std::forward<RoleT>(value); }
+    template<typename RoleT = Aws::String>
+    SidewalkStartImportInfo& WithRole(RoleT&& value) { SetRole(std::forward<RoleT>(value)); return *this;}
     ///@}
   private:
 

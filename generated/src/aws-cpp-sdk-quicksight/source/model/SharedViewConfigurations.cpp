@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-SharedViewConfigurations::SharedViewConfigurations() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 SharedViewConfigurations::SharedViewConfigurations(JsonView jsonValue)
-  : SharedViewConfigurations()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SharedViewConfigurations& SharedViewConfigurations::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -21,7 +21,7 @@ namespace Model
   class StartDiscovererRequest : public SchemasRequest
   {
   public:
-    AWS_SCHEMAS_API StartDiscovererRequest();
+    AWS_SCHEMAS_API StartDiscovererRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The ID of the discoverer.</p>
      */
-    inline const Aws::String& GetDiscovererId() const{ return m_discovererId; }
+    inline const Aws::String& GetDiscovererId() const { return m_discovererId; }
     inline bool DiscovererIdHasBeenSet() const { return m_discovererIdHasBeenSet; }
-    inline void SetDiscovererId(const Aws::String& value) { m_discovererIdHasBeenSet = true; m_discovererId = value; }
-    inline void SetDiscovererId(Aws::String&& value) { m_discovererIdHasBeenSet = true; m_discovererId = std::move(value); }
-    inline void SetDiscovererId(const char* value) { m_discovererIdHasBeenSet = true; m_discovererId.assign(value); }
-    inline StartDiscovererRequest& WithDiscovererId(const Aws::String& value) { SetDiscovererId(value); return *this;}
-    inline StartDiscovererRequest& WithDiscovererId(Aws::String&& value) { SetDiscovererId(std::move(value)); return *this;}
-    inline StartDiscovererRequest& WithDiscovererId(const char* value) { SetDiscovererId(value); return *this;}
+    template<typename DiscovererIdT = Aws::String>
+    void SetDiscovererId(DiscovererIdT&& value) { m_discovererIdHasBeenSet = true; m_discovererId = std::forward<DiscovererIdT>(value); }
+    template<typename DiscovererIdT = Aws::String>
+    StartDiscovererRequest& WithDiscovererId(DiscovererIdT&& value) { SetDiscovererId(std::forward<DiscovererIdT>(value)); return *this;}
     ///@}
   private:
 

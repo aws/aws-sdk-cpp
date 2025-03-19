@@ -18,17 +18,7 @@ namespace MemoryDB
 namespace Model
 {
 
-Node::Node() : 
-    m_nameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_endpointHasBeenSet(false)
-{
-}
-
 Node::Node(JsonView jsonValue)
-  : Node()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ Node& Node::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailabilityZone"))
   {
     m_availabilityZone = jsonValue.GetString("AvailabilityZone");
-
     m_availabilityZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateTime"))
   {
     m_createTime = jsonValue.GetDouble("CreateTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Endpoint"))
   {
     m_endpoint = jsonValue.GetObject("Endpoint");
-
     m_endpointHasBeenSet = true;
   }
-
   return *this;
 }
 

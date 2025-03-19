@@ -12,12 +12,6 @@ using namespace Aws::IoTManagedIntegrations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteNotificationConfigurationRequest::DeleteNotificationConfigurationRequest() : 
-    m_eventType(EventType::NOT_SET),
-    m_eventTypeHasBeenSet(false)
-{
-}
-
 Aws::String DeleteNotificationConfigurationRequest::SerializePayload() const
 {
   return {};

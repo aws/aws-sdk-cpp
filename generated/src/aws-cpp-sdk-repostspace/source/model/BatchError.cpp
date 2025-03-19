@@ -18,16 +18,7 @@ namespace repostspace
 namespace Model
 {
 
-BatchError::BatchError() : 
-    m_accessorIdHasBeenSet(false),
-    m_error(0),
-    m_errorHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 BatchError::BatchError(JsonView jsonValue)
-  : BatchError()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ BatchError& BatchError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accessorId"))
   {
     m_accessorId = jsonValue.GetString("accessorId");
-
     m_accessorIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("error"))
   {
     m_error = jsonValue.GetInteger("error");
-
     m_errorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

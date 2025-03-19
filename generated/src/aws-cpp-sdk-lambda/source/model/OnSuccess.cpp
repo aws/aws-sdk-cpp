@@ -18,13 +18,7 @@ namespace Lambda
 namespace Model
 {
 
-OnSuccess::OnSuccess() : 
-    m_destinationHasBeenSet(false)
-{
-}
-
 OnSuccess::OnSuccess(JsonView jsonValue)
-  : OnSuccess()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ OnSuccess& OnSuccess::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Destination"))
   {
     m_destination = jsonValue.GetString("Destination");
-
     m_destinationHasBeenSet = true;
   }
-
   return *this;
 }
 

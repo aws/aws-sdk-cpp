@@ -29,7 +29,7 @@ namespace Model
   class ListKxDatabasesResult
   {
   public:
-    AWS_FINSPACE_API ListKxDatabasesResult();
+    AWS_FINSPACE_API ListKxDatabasesResult() = default;
     AWS_FINSPACE_API ListKxDatabasesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FINSPACE_API ListKxDatabasesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>A list of databases in the kdb environment.</p>
      */
-    inline const Aws::Vector<KxDatabaseListEntry>& GetKxDatabases() const{ return m_kxDatabases; }
-    inline void SetKxDatabases(const Aws::Vector<KxDatabaseListEntry>& value) { m_kxDatabases = value; }
-    inline void SetKxDatabases(Aws::Vector<KxDatabaseListEntry>&& value) { m_kxDatabases = std::move(value); }
-    inline ListKxDatabasesResult& WithKxDatabases(const Aws::Vector<KxDatabaseListEntry>& value) { SetKxDatabases(value); return *this;}
-    inline ListKxDatabasesResult& WithKxDatabases(Aws::Vector<KxDatabaseListEntry>&& value) { SetKxDatabases(std::move(value)); return *this;}
-    inline ListKxDatabasesResult& AddKxDatabases(const KxDatabaseListEntry& value) { m_kxDatabases.push_back(value); return *this; }
-    inline ListKxDatabasesResult& AddKxDatabases(KxDatabaseListEntry&& value) { m_kxDatabases.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<KxDatabaseListEntry>& GetKxDatabases() const { return m_kxDatabases; }
+    template<typename KxDatabasesT = Aws::Vector<KxDatabaseListEntry>>
+    void SetKxDatabases(KxDatabasesT&& value) { m_kxDatabasesHasBeenSet = true; m_kxDatabases = std::forward<KxDatabasesT>(value); }
+    template<typename KxDatabasesT = Aws::Vector<KxDatabaseListEntry>>
+    ListKxDatabasesResult& WithKxDatabases(KxDatabasesT&& value) { SetKxDatabases(std::forward<KxDatabasesT>(value)); return *this;}
+    template<typename KxDatabasesT = KxDatabaseListEntry>
+    ListKxDatabasesResult& AddKxDatabases(KxDatabasesT&& value) { m_kxDatabasesHasBeenSet = true; m_kxDatabases.emplace_back(std::forward<KxDatabasesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A token that indicates where a results page should begin.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListKxDatabasesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListKxDatabasesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListKxDatabasesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListKxDatabasesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListKxDatabasesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListKxDatabasesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListKxDatabasesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListKxDatabasesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<KxDatabaseListEntry> m_kxDatabases;
+    bool m_kxDatabasesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,10 +12,6 @@ using namespace Aws::Proton::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetResourcesSummaryRequest::GetResourcesSummaryRequest()
-{
-}
-
 Aws::String GetResourcesSummaryRequest::SerializePayload() const
 {
   return "{}";

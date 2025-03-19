@@ -18,13 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-MarketoSourceProperties::MarketoSourceProperties() : 
-    m_objectHasBeenSet(false)
-{
-}
-
 MarketoSourceProperties::MarketoSourceProperties(JsonView jsonValue)
-  : MarketoSourceProperties()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MarketoSourceProperties& MarketoSourceProperties::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("object"))
   {
     m_object = jsonValue.GetString("object");
-
     m_objectHasBeenSet = true;
   }
-
   return *this;
 }
 

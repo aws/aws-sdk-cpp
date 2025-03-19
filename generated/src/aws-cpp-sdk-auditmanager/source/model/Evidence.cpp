@@ -18,27 +18,7 @@ namespace AuditManager
 namespace Model
 {
 
-Evidence::Evidence() : 
-    m_dataSourceHasBeenSet(false),
-    m_evidenceAwsAccountIdHasBeenSet(false),
-    m_timeHasBeenSet(false),
-    m_eventSourceHasBeenSet(false),
-    m_eventNameHasBeenSet(false),
-    m_evidenceByTypeHasBeenSet(false),
-    m_resourcesIncludedHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_iamIdHasBeenSet(false),
-    m_complianceCheckHasBeenSet(false),
-    m_awsOrganizationHasBeenSet(false),
-    m_awsAccountIdHasBeenSet(false),
-    m_evidenceFolderIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_assessmentReportSelectionHasBeenSet(false)
-{
-}
-
 Evidence::Evidence(JsonView jsonValue)
-  : Evidence()
 {
   *this = jsonValue;
 }
@@ -48,45 +28,33 @@ Evidence& Evidence::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("dataSource"))
   {
     m_dataSource = jsonValue.GetString("dataSource");
-
     m_dataSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("evidenceAwsAccountId"))
   {
     m_evidenceAwsAccountId = jsonValue.GetString("evidenceAwsAccountId");
-
     m_evidenceAwsAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("time"))
   {
     m_time = jsonValue.GetDouble("time");
-
     m_timeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventSource"))
   {
     m_eventSource = jsonValue.GetString("eventSource");
-
     m_eventSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventName"))
   {
     m_eventName = jsonValue.GetString("eventName");
-
     m_eventNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("evidenceByType"))
   {
     m_evidenceByType = jsonValue.GetString("evidenceByType");
-
     m_evidenceByTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourcesIncluded"))
   {
     Aws::Utils::Array<JsonView> resourcesIncludedJsonList = jsonValue.GetArray("resourcesIncluded");
@@ -96,7 +64,6 @@ Evidence& Evidence::operator =(JsonView jsonValue)
     }
     m_resourcesIncludedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attributes"))
   {
     Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("attributes").GetAllObjects();
@@ -106,56 +73,41 @@ Evidence& Evidence::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("iamId"))
   {
     m_iamId = jsonValue.GetString("iamId");
-
     m_iamIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("complianceCheck"))
   {
     m_complianceCheck = jsonValue.GetString("complianceCheck");
-
     m_complianceCheckHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsOrganization"))
   {
     m_awsOrganization = jsonValue.GetString("awsOrganization");
-
     m_awsOrganizationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsAccountId"))
   {
     m_awsAccountId = jsonValue.GetString("awsAccountId");
-
     m_awsAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("evidenceFolderId"))
   {
     m_evidenceFolderId = jsonValue.GetString("evidenceFolderId");
-
     m_evidenceFolderIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assessmentReportSelection"))
   {
     m_assessmentReportSelection = jsonValue.GetString("assessmentReportSelection");
-
     m_assessmentReportSelectionHasBeenSet = true;
   }
-
   return *this;
 }
 

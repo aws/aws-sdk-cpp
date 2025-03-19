@@ -18,14 +18,7 @@ namespace TaxSettings
 namespace Model
 {
 
-VerificationDetails::VerificationDetails() : 
-    m_dateOfBirthHasBeenSet(false),
-    m_taxRegistrationDocumentsHasBeenSet(false)
-{
-}
-
 VerificationDetails::VerificationDetails(JsonView jsonValue)
-  : VerificationDetails()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ VerificationDetails& VerificationDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("dateOfBirth"))
   {
     m_dateOfBirth = jsonValue.GetString("dateOfBirth");
-
     m_dateOfBirthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taxRegistrationDocuments"))
   {
     Aws::Utils::Array<JsonView> taxRegistrationDocumentsJsonList = jsonValue.GetArray("taxRegistrationDocuments");
@@ -48,7 +39,6 @@ VerificationDetails& VerificationDetails::operator =(JsonView jsonValue)
     }
     m_taxRegistrationDocumentsHasBeenSet = true;
   }
-
   return *this;
 }
 

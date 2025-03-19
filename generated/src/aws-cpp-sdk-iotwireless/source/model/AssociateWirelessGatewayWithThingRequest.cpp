@@ -12,12 +12,6 @@ using namespace Aws::IoTWireless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateWirelessGatewayWithThingRequest::AssociateWirelessGatewayWithThingRequest() : 
-    m_idHasBeenSet(false),
-    m_thingArnHasBeenSet(false)
-{
-}
-
 Aws::String AssociateWirelessGatewayWithThingRequest::SerializePayload() const
 {
   JsonValue payload;

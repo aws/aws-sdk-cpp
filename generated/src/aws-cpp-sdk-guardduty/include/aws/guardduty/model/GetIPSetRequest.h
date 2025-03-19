@@ -21,7 +21,7 @@ namespace Model
   class GetIPSetRequest : public GuardDutyRequest
   {
   public:
-    AWS_GUARDDUTY_API GetIPSetRequest();
+    AWS_GUARDDUTY_API GetIPSetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListDetectors.html">ListDetectors</a>
      * API.</p>
      */
-    inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
+    inline const Aws::String& GetDetectorId() const { return m_detectorId; }
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
-    inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
-    inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
-    inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
-    inline GetIPSetRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
-    inline GetIPSetRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
-    inline GetIPSetRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
+    template<typename DetectorIdT = Aws::String>
+    void SetDetectorId(DetectorIdT&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::forward<DetectorIdT>(value); }
+    template<typename DetectorIdT = Aws::String>
+    GetIPSetRequest& WithDetectorId(DetectorIdT&& value) { SetDetectorId(std::forward<DetectorIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique ID of the IPSet to retrieve.</p>
      */
-    inline const Aws::String& GetIpSetId() const{ return m_ipSetId; }
+    inline const Aws::String& GetIpSetId() const { return m_ipSetId; }
     inline bool IpSetIdHasBeenSet() const { return m_ipSetIdHasBeenSet; }
-    inline void SetIpSetId(const Aws::String& value) { m_ipSetIdHasBeenSet = true; m_ipSetId = value; }
-    inline void SetIpSetId(Aws::String&& value) { m_ipSetIdHasBeenSet = true; m_ipSetId = std::move(value); }
-    inline void SetIpSetId(const char* value) { m_ipSetIdHasBeenSet = true; m_ipSetId.assign(value); }
-    inline GetIPSetRequest& WithIpSetId(const Aws::String& value) { SetIpSetId(value); return *this;}
-    inline GetIPSetRequest& WithIpSetId(Aws::String&& value) { SetIpSetId(std::move(value)); return *this;}
-    inline GetIPSetRequest& WithIpSetId(const char* value) { SetIpSetId(value); return *this;}
+    template<typename IpSetIdT = Aws::String>
+    void SetIpSetId(IpSetIdT&& value) { m_ipSetIdHasBeenSet = true; m_ipSetId = std::forward<IpSetIdT>(value); }
+    template<typename IpSetIdT = Aws::String>
+    GetIPSetRequest& WithIpSetId(IpSetIdT&& value) { SetIpSetId(std::forward<IpSetIdT>(value)); return *this;}
     ///@}
   private:
 

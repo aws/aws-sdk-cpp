@@ -18,22 +18,7 @@ namespace Glue
 namespace Model
 {
 
-IcebergRetentionMetrics::IcebergRetentionMetrics() : 
-    m_numberOfDataFilesDeleted(0),
-    m_numberOfDataFilesDeletedHasBeenSet(false),
-    m_numberOfManifestFilesDeleted(0),
-    m_numberOfManifestFilesDeletedHasBeenSet(false),
-    m_numberOfManifestListsDeleted(0),
-    m_numberOfManifestListsDeletedHasBeenSet(false),
-    m_numberOfDpus(0),
-    m_numberOfDpusHasBeenSet(false),
-    m_jobDurationInHour(0.0),
-    m_jobDurationInHourHasBeenSet(false)
-{
-}
-
 IcebergRetentionMetrics::IcebergRetentionMetrics(JsonView jsonValue)
-  : IcebergRetentionMetrics()
 {
   *this = jsonValue;
 }
@@ -43,38 +28,28 @@ IcebergRetentionMetrics& IcebergRetentionMetrics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("NumberOfDataFilesDeleted"))
   {
     m_numberOfDataFilesDeleted = jsonValue.GetInt64("NumberOfDataFilesDeleted");
-
     m_numberOfDataFilesDeletedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfManifestFilesDeleted"))
   {
     m_numberOfManifestFilesDeleted = jsonValue.GetInt64("NumberOfManifestFilesDeleted");
-
     m_numberOfManifestFilesDeletedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfManifestListsDeleted"))
   {
     m_numberOfManifestListsDeleted = jsonValue.GetInt64("NumberOfManifestListsDeleted");
-
     m_numberOfManifestListsDeletedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfDpus"))
   {
     m_numberOfDpus = jsonValue.GetInteger("NumberOfDpus");
-
     m_numberOfDpusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobDurationInHour"))
   {
     m_jobDurationInHour = jsonValue.GetDouble("JobDurationInHour");
-
     m_jobDurationInHourHasBeenSet = true;
   }
-
   return *this;
 }
 

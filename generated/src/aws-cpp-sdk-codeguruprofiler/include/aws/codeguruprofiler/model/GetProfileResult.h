@@ -28,10 +28,9 @@ namespace Model
   class GetProfileResult
   {
   public:
-    AWS_CODEGURUPROFILER_API GetProfileResult();
-    //We have to define these because Microsoft doesn't auto generate them
-    AWS_CODEGURUPROFILER_API GetProfileResult(GetProfileResult&&);
-    AWS_CODEGURUPROFILER_API GetProfileResult& operator=(GetProfileResult&&);
+    AWS_CODEGURUPROFILER_API GetProfileResult() = default;
+    AWS_CODEGURUPROFILER_API GetProfileResult(GetProfileResult&&) = default;
+    AWS_CODEGURUPROFILER_API GetProfileResult& operator=(GetProfileResult&&) = default;
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     GetProfileResult(const GetProfileResult&) = delete;
@@ -47,13 +46,11 @@ namespace Model
     /**
      * <p>The content encoding of the profile.</p>
      */
-    inline const Aws::String& GetContentEncoding() const{ return m_contentEncoding; }
-    inline void SetContentEncoding(const Aws::String& value) { m_contentEncoding = value; }
-    inline void SetContentEncoding(Aws::String&& value) { m_contentEncoding = std::move(value); }
-    inline void SetContentEncoding(const char* value) { m_contentEncoding.assign(value); }
-    inline GetProfileResult& WithContentEncoding(const Aws::String& value) { SetContentEncoding(value); return *this;}
-    inline GetProfileResult& WithContentEncoding(Aws::String&& value) { SetContentEncoding(std::move(value)); return *this;}
-    inline GetProfileResult& WithContentEncoding(const char* value) { SetContentEncoding(value); return *this;}
+    inline const Aws::String& GetContentEncoding() const { return m_contentEncoding; }
+    template<typename ContentEncodingT = Aws::String>
+    void SetContentEncoding(ContentEncodingT&& value) { m_contentEncodingHasBeenSet = true; m_contentEncoding = std::forward<ContentEncodingT>(value); }
+    template<typename ContentEncodingT = Aws::String>
+    GetProfileResult& WithContentEncoding(ContentEncodingT&& value) { SetContentEncoding(std::forward<ContentEncodingT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,13 +59,11 @@ namespace Model
      * <code>application/json</code> or the default
      * <code>application/x-amzn-ion</code>.</p>
      */
-    inline const Aws::String& GetContentType() const{ return m_contentType; }
-    inline void SetContentType(const Aws::String& value) { m_contentType = value; }
-    inline void SetContentType(Aws::String&& value) { m_contentType = std::move(value); }
-    inline void SetContentType(const char* value) { m_contentType.assign(value); }
-    inline GetProfileResult& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
-    inline GetProfileResult& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
-    inline GetProfileResult& WithContentType(const char* value) { SetContentType(value); return *this;}
+    inline const Aws::String& GetContentType() const { return m_contentType; }
+    template<typename ContentTypeT = Aws::String>
+    void SetContentType(ContentTypeT&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::forward<ContentTypeT>(value); }
+    template<typename ContentTypeT = Aws::String>
+    GetProfileResult& WithContentType(ContentTypeT&& value) { SetContentType(std::forward<ContentTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,23 +77,25 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetProfileResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetProfileResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetProfileResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetProfileResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_contentEncoding;
+    bool m_contentEncodingHasBeenSet = false;
 
     Aws::String m_contentType;
+    bool m_contentTypeHasBeenSet = false;
 
-    Aws::Utils::Stream::ResponseStream m_profile;
+    Aws::Utils::Stream::ResponseStream m_profile{};
+    bool m_profileHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

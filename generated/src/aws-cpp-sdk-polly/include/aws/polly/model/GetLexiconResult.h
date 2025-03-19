@@ -29,7 +29,7 @@ namespace Model
   class GetLexiconResult
   {
   public:
-    AWS_POLLY_API GetLexiconResult();
+    AWS_POLLY_API GetLexiconResult() = default;
     AWS_POLLY_API GetLexiconResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_POLLY_API GetLexiconResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,11 +38,11 @@ namespace Model
     /**
      * <p>Lexicon object that provides name and the string content of the lexicon. </p>
      */
-    inline const Lexicon& GetLexicon() const{ return m_lexicon; }
-    inline void SetLexicon(const Lexicon& value) { m_lexicon = value; }
-    inline void SetLexicon(Lexicon&& value) { m_lexicon = std::move(value); }
-    inline GetLexiconResult& WithLexicon(const Lexicon& value) { SetLexicon(value); return *this;}
-    inline GetLexiconResult& WithLexicon(Lexicon&& value) { SetLexicon(std::move(value)); return *this;}
+    inline const Lexicon& GetLexicon() const { return m_lexicon; }
+    template<typename LexiconT = Lexicon>
+    void SetLexicon(LexiconT&& value) { m_lexiconHasBeenSet = true; m_lexicon = std::forward<LexiconT>(value); }
+    template<typename LexiconT = Lexicon>
+    GetLexiconResult& WithLexicon(LexiconT&& value) { SetLexicon(std::forward<LexiconT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,30 +51,31 @@ namespace Model
      * lexicon ARN, number of lexemes defined in the lexicon, and size of lexicon in
      * bytes.</p>
      */
-    inline const LexiconAttributes& GetLexiconAttributes() const{ return m_lexiconAttributes; }
-    inline void SetLexiconAttributes(const LexiconAttributes& value) { m_lexiconAttributes = value; }
-    inline void SetLexiconAttributes(LexiconAttributes&& value) { m_lexiconAttributes = std::move(value); }
-    inline GetLexiconResult& WithLexiconAttributes(const LexiconAttributes& value) { SetLexiconAttributes(value); return *this;}
-    inline GetLexiconResult& WithLexiconAttributes(LexiconAttributes&& value) { SetLexiconAttributes(std::move(value)); return *this;}
+    inline const LexiconAttributes& GetLexiconAttributes() const { return m_lexiconAttributes; }
+    template<typename LexiconAttributesT = LexiconAttributes>
+    void SetLexiconAttributes(LexiconAttributesT&& value) { m_lexiconAttributesHasBeenSet = true; m_lexiconAttributes = std::forward<LexiconAttributesT>(value); }
+    template<typename LexiconAttributesT = LexiconAttributes>
+    GetLexiconResult& WithLexiconAttributes(LexiconAttributesT&& value) { SetLexiconAttributes(std::forward<LexiconAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetLexiconResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetLexiconResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetLexiconResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetLexiconResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Lexicon m_lexicon;
+    bool m_lexiconHasBeenSet = false;
 
     LexiconAttributes m_lexiconAttributes;
+    bool m_lexiconAttributesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

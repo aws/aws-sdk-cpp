@@ -35,7 +35,7 @@ namespace Model
   class AnalyticsSessionMetric
   {
   public:
-    AWS_LEXMODELSV2_API AnalyticsSessionMetric();
+    AWS_LEXMODELSV2_API AnalyticsSessionMetric() = default;
     AWS_LEXMODELSV2_API AnalyticsSessionMetric(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API AnalyticsSessionMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,12 +53,10 @@ namespace Model
      * <li> <p> <code>Concurrency</code> – The number of sessions occurring in the same
      * period of time.</p> </li> </ul>
      */
-    inline const AnalyticsSessionMetricName& GetName() const{ return m_name; }
+    inline AnalyticsSessionMetricName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const AnalyticsSessionMetricName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(AnalyticsSessionMetricName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline AnalyticsSessionMetric& WithName(const AnalyticsSessionMetricName& value) { SetName(value); return *this;}
-    inline AnalyticsSessionMetric& WithName(AnalyticsSessionMetricName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(AnalyticsSessionMetricName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline AnalyticsSessionMetric& WithName(AnalyticsSessionMetricName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -70,34 +68,30 @@ namespace Model
      * <code>Max</code> – The highest count in the category you provide in
      * <code>name</code>.</p> </li> </ul>
      */
-    inline const AnalyticsMetricStatistic& GetStatistic() const{ return m_statistic; }
+    inline AnalyticsMetricStatistic GetStatistic() const { return m_statistic; }
     inline bool StatisticHasBeenSet() const { return m_statisticHasBeenSet; }
-    inline void SetStatistic(const AnalyticsMetricStatistic& value) { m_statisticHasBeenSet = true; m_statistic = value; }
-    inline void SetStatistic(AnalyticsMetricStatistic&& value) { m_statisticHasBeenSet = true; m_statistic = std::move(value); }
-    inline AnalyticsSessionMetric& WithStatistic(const AnalyticsMetricStatistic& value) { SetStatistic(value); return *this;}
-    inline AnalyticsSessionMetric& WithStatistic(AnalyticsMetricStatistic&& value) { SetStatistic(std::move(value)); return *this;}
+    inline void SetStatistic(AnalyticsMetricStatistic value) { m_statisticHasBeenSet = true; m_statistic = value; }
+    inline AnalyticsSessionMetric& WithStatistic(AnalyticsMetricStatistic value) { SetStatistic(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies whether to sort the results in ascending or descending order.</p>
      */
-    inline const AnalyticsSortOrder& GetOrder() const{ return m_order; }
+    inline AnalyticsSortOrder GetOrder() const { return m_order; }
     inline bool OrderHasBeenSet() const { return m_orderHasBeenSet; }
-    inline void SetOrder(const AnalyticsSortOrder& value) { m_orderHasBeenSet = true; m_order = value; }
-    inline void SetOrder(AnalyticsSortOrder&& value) { m_orderHasBeenSet = true; m_order = std::move(value); }
-    inline AnalyticsSessionMetric& WithOrder(const AnalyticsSortOrder& value) { SetOrder(value); return *this;}
-    inline AnalyticsSessionMetric& WithOrder(AnalyticsSortOrder&& value) { SetOrder(std::move(value)); return *this;}
+    inline void SetOrder(AnalyticsSortOrder value) { m_orderHasBeenSet = true; m_order = value; }
+    inline AnalyticsSessionMetric& WithOrder(AnalyticsSortOrder value) { SetOrder(value); return *this;}
     ///@}
   private:
 
-    AnalyticsSessionMetricName m_name;
+    AnalyticsSessionMetricName m_name{AnalyticsSessionMetricName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
-    AnalyticsMetricStatistic m_statistic;
+    AnalyticsMetricStatistic m_statistic{AnalyticsMetricStatistic::NOT_SET};
     bool m_statisticHasBeenSet = false;
 
-    AnalyticsSortOrder m_order;
+    AnalyticsSortOrder m_order{AnalyticsSortOrder::NOT_SET};
     bool m_orderHasBeenSet = false;
   };
 

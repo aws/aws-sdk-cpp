@@ -44,7 +44,7 @@ namespace Model
   class JourneyResponse
   {
   public:
-    AWS_PINPOINT_API JourneyResponse();
+    AWS_PINPOINT_API JourneyResponse() = default;
     AWS_PINPOINT_API JourneyResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API JourneyResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,86 +56,76 @@ namespace Model
      * in the journey. For each Activity object, the key is the unique identifier
      * (string) for an activity and the value is the settings for the activity.</p>
      */
-    inline const Aws::Map<Aws::String, Activity>& GetActivities() const{ return m_activities; }
+    inline const Aws::Map<Aws::String, Activity>& GetActivities() const { return m_activities; }
     inline bool ActivitiesHasBeenSet() const { return m_activitiesHasBeenSet; }
-    inline void SetActivities(const Aws::Map<Aws::String, Activity>& value) { m_activitiesHasBeenSet = true; m_activities = value; }
-    inline void SetActivities(Aws::Map<Aws::String, Activity>&& value) { m_activitiesHasBeenSet = true; m_activities = std::move(value); }
-    inline JourneyResponse& WithActivities(const Aws::Map<Aws::String, Activity>& value) { SetActivities(value); return *this;}
-    inline JourneyResponse& WithActivities(Aws::Map<Aws::String, Activity>&& value) { SetActivities(std::move(value)); return *this;}
-    inline JourneyResponse& AddActivities(const Aws::String& key, const Activity& value) { m_activitiesHasBeenSet = true; m_activities.emplace(key, value); return *this; }
-    inline JourneyResponse& AddActivities(Aws::String&& key, const Activity& value) { m_activitiesHasBeenSet = true; m_activities.emplace(std::move(key), value); return *this; }
-    inline JourneyResponse& AddActivities(const Aws::String& key, Activity&& value) { m_activitiesHasBeenSet = true; m_activities.emplace(key, std::move(value)); return *this; }
-    inline JourneyResponse& AddActivities(Aws::String&& key, Activity&& value) { m_activitiesHasBeenSet = true; m_activities.emplace(std::move(key), std::move(value)); return *this; }
-    inline JourneyResponse& AddActivities(const char* key, Activity&& value) { m_activitiesHasBeenSet = true; m_activities.emplace(key, std::move(value)); return *this; }
-    inline JourneyResponse& AddActivities(const char* key, const Activity& value) { m_activitiesHasBeenSet = true; m_activities.emplace(key, value); return *this; }
+    template<typename ActivitiesT = Aws::Map<Aws::String, Activity>>
+    void SetActivities(ActivitiesT&& value) { m_activitiesHasBeenSet = true; m_activities = std::forward<ActivitiesT>(value); }
+    template<typename ActivitiesT = Aws::Map<Aws::String, Activity>>
+    JourneyResponse& WithActivities(ActivitiesT&& value) { SetActivities(std::forward<ActivitiesT>(value)); return *this;}
+    template<typename ActivitiesKeyT = Aws::String, typename ActivitiesValueT = Activity>
+    JourneyResponse& AddActivities(ActivitiesKeyT&& key, ActivitiesValueT&& value) {
+      m_activitiesHasBeenSet = true; m_activities.emplace(std::forward<ActivitiesKeyT>(key), std::forward<ActivitiesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier for the application that the journey applies to.</p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-    inline JourneyResponse& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline JourneyResponse& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline JourneyResponse& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    JourneyResponse& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date, in ISO 8601 format, when the journey was created.</p>
      */
-    inline const Aws::String& GetCreationDate() const{ return m_creationDate; }
+    inline const Aws::String& GetCreationDate() const { return m_creationDate; }
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
-    inline void SetCreationDate(const Aws::String& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
-    inline void SetCreationDate(Aws::String&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
-    inline void SetCreationDate(const char* value) { m_creationDateHasBeenSet = true; m_creationDate.assign(value); }
-    inline JourneyResponse& WithCreationDate(const Aws::String& value) { SetCreationDate(value); return *this;}
-    inline JourneyResponse& WithCreationDate(Aws::String&& value) { SetCreationDate(std::move(value)); return *this;}
-    inline JourneyResponse& WithCreationDate(const char* value) { SetCreationDate(value); return *this;}
+    template<typename CreationDateT = Aws::String>
+    void SetCreationDate(CreationDateT&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::forward<CreationDateT>(value); }
+    template<typename CreationDateT = Aws::String>
+    JourneyResponse& WithCreationDate(CreationDateT&& value) { SetCreationDate(std::forward<CreationDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier for the journey.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline JourneyResponse& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline JourneyResponse& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline JourneyResponse& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    JourneyResponse& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date, in ISO 8601 format, when the journey was last modified.</p>
      */
-    inline const Aws::String& GetLastModifiedDate() const{ return m_lastModifiedDate; }
+    inline const Aws::String& GetLastModifiedDate() const { return m_lastModifiedDate; }
     inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
-    inline void SetLastModifiedDate(const Aws::String& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
-    inline void SetLastModifiedDate(Aws::String&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::move(value); }
-    inline void SetLastModifiedDate(const char* value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate.assign(value); }
-    inline JourneyResponse& WithLastModifiedDate(const Aws::String& value) { SetLastModifiedDate(value); return *this;}
-    inline JourneyResponse& WithLastModifiedDate(Aws::String&& value) { SetLastModifiedDate(std::move(value)); return *this;}
-    inline JourneyResponse& WithLastModifiedDate(const char* value) { SetLastModifiedDate(value); return *this;}
+    template<typename LastModifiedDateT = Aws::String>
+    void SetLastModifiedDate(LastModifiedDateT&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::forward<LastModifiedDateT>(value); }
+    template<typename LastModifiedDateT = Aws::String>
+    JourneyResponse& WithLastModifiedDate(LastModifiedDateT&& value) { SetLastModifiedDate(std::forward<LastModifiedDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The messaging and entry limits for the journey.</p>
      */
-    inline const JourneyLimits& GetLimits() const{ return m_limits; }
+    inline const JourneyLimits& GetLimits() const { return m_limits; }
     inline bool LimitsHasBeenSet() const { return m_limitsHasBeenSet; }
-    inline void SetLimits(const JourneyLimits& value) { m_limitsHasBeenSet = true; m_limits = value; }
-    inline void SetLimits(JourneyLimits&& value) { m_limitsHasBeenSet = true; m_limits = std::move(value); }
-    inline JourneyResponse& WithLimits(const JourneyLimits& value) { SetLimits(value); return *this;}
-    inline JourneyResponse& WithLimits(JourneyLimits&& value) { SetLimits(std::move(value)); return *this;}
+    template<typename LimitsT = JourneyLimits>
+    void SetLimits(LimitsT&& value) { m_limitsHasBeenSet = true; m_limits = std::forward<LimitsT>(value); }
+    template<typename LimitsT = JourneyLimits>
+    JourneyResponse& WithLimits(LimitsT&& value) { SetLimits(std::forward<LimitsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -144,7 +134,7 @@ namespace Model
      * participant's local time. If this value is true, the schedule uses each
      * participant's local time.</p>
      */
-    inline bool GetLocalTime() const{ return m_localTime; }
+    inline bool GetLocalTime() const { return m_localTime; }
     inline bool LocalTimeHasBeenSet() const { return m_localTimeHasBeenSet; }
     inline void SetLocalTime(bool value) { m_localTimeHasBeenSet = true; m_localTime = value; }
     inline JourneyResponse& WithLocalTime(bool value) { SetLocalTime(value); return *this;}
@@ -154,14 +144,12 @@ namespace Model
     /**
      * <p>The name of the journey.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline JourneyResponse& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline JourneyResponse& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline JourneyResponse& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    JourneyResponse& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -177,12 +165,12 @@ namespace Model
      * of the preceding conditions isn't met, the participant will receive messages
      * from the journey, even if quiet time is enabled.</p>
      */
-    inline const QuietTime& GetQuietTime() const{ return m_quietTime; }
+    inline const QuietTime& GetQuietTime() const { return m_quietTime; }
     inline bool QuietTimeHasBeenSet() const { return m_quietTimeHasBeenSet; }
-    inline void SetQuietTime(const QuietTime& value) { m_quietTimeHasBeenSet = true; m_quietTime = value; }
-    inline void SetQuietTime(QuietTime&& value) { m_quietTimeHasBeenSet = true; m_quietTime = std::move(value); }
-    inline JourneyResponse& WithQuietTime(const QuietTime& value) { SetQuietTime(value); return *this;}
-    inline JourneyResponse& WithQuietTime(QuietTime&& value) { SetQuietTime(std::move(value)); return *this;}
+    template<typename QuietTimeT = QuietTime>
+    void SetQuietTime(QuietTimeT&& value) { m_quietTimeHasBeenSet = true; m_quietTime = std::forward<QuietTimeT>(value); }
+    template<typename QuietTimeT = QuietTime>
+    JourneyResponse& WithQuietTime(QuietTimeT&& value) { SetQuietTime(std::forward<QuietTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -190,52 +178,48 @@ namespace Model
      * <p>The frequency with which Amazon Pinpoint evaluates segment and event data for
      * the journey, as a duration in ISO 8601 format.</p>
      */
-    inline const Aws::String& GetRefreshFrequency() const{ return m_refreshFrequency; }
+    inline const Aws::String& GetRefreshFrequency() const { return m_refreshFrequency; }
     inline bool RefreshFrequencyHasBeenSet() const { return m_refreshFrequencyHasBeenSet; }
-    inline void SetRefreshFrequency(const Aws::String& value) { m_refreshFrequencyHasBeenSet = true; m_refreshFrequency = value; }
-    inline void SetRefreshFrequency(Aws::String&& value) { m_refreshFrequencyHasBeenSet = true; m_refreshFrequency = std::move(value); }
-    inline void SetRefreshFrequency(const char* value) { m_refreshFrequencyHasBeenSet = true; m_refreshFrequency.assign(value); }
-    inline JourneyResponse& WithRefreshFrequency(const Aws::String& value) { SetRefreshFrequency(value); return *this;}
-    inline JourneyResponse& WithRefreshFrequency(Aws::String&& value) { SetRefreshFrequency(std::move(value)); return *this;}
-    inline JourneyResponse& WithRefreshFrequency(const char* value) { SetRefreshFrequency(value); return *this;}
+    template<typename RefreshFrequencyT = Aws::String>
+    void SetRefreshFrequency(RefreshFrequencyT&& value) { m_refreshFrequencyHasBeenSet = true; m_refreshFrequency = std::forward<RefreshFrequencyT>(value); }
+    template<typename RefreshFrequencyT = Aws::String>
+    JourneyResponse& WithRefreshFrequency(RefreshFrequencyT&& value) { SetRefreshFrequency(std::forward<RefreshFrequencyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The schedule settings for the journey.</p>
      */
-    inline const JourneySchedule& GetSchedule() const{ return m_schedule; }
+    inline const JourneySchedule& GetSchedule() const { return m_schedule; }
     inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
-    inline void SetSchedule(const JourneySchedule& value) { m_scheduleHasBeenSet = true; m_schedule = value; }
-    inline void SetSchedule(JourneySchedule&& value) { m_scheduleHasBeenSet = true; m_schedule = std::move(value); }
-    inline JourneyResponse& WithSchedule(const JourneySchedule& value) { SetSchedule(value); return *this;}
-    inline JourneyResponse& WithSchedule(JourneySchedule&& value) { SetSchedule(std::move(value)); return *this;}
+    template<typename ScheduleT = JourneySchedule>
+    void SetSchedule(ScheduleT&& value) { m_scheduleHasBeenSet = true; m_schedule = std::forward<ScheduleT>(value); }
+    template<typename ScheduleT = JourneySchedule>
+    JourneyResponse& WithSchedule(ScheduleT&& value) { SetSchedule(std::forward<ScheduleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier for the first activity in the journey.</p>
      */
-    inline const Aws::String& GetStartActivity() const{ return m_startActivity; }
+    inline const Aws::String& GetStartActivity() const { return m_startActivity; }
     inline bool StartActivityHasBeenSet() const { return m_startActivityHasBeenSet; }
-    inline void SetStartActivity(const Aws::String& value) { m_startActivityHasBeenSet = true; m_startActivity = value; }
-    inline void SetStartActivity(Aws::String&& value) { m_startActivityHasBeenSet = true; m_startActivity = std::move(value); }
-    inline void SetStartActivity(const char* value) { m_startActivityHasBeenSet = true; m_startActivity.assign(value); }
-    inline JourneyResponse& WithStartActivity(const Aws::String& value) { SetStartActivity(value); return *this;}
-    inline JourneyResponse& WithStartActivity(Aws::String&& value) { SetStartActivity(std::move(value)); return *this;}
-    inline JourneyResponse& WithStartActivity(const char* value) { SetStartActivity(value); return *this;}
+    template<typename StartActivityT = Aws::String>
+    void SetStartActivity(StartActivityT&& value) { m_startActivityHasBeenSet = true; m_startActivity = std::forward<StartActivityT>(value); }
+    template<typename StartActivityT = Aws::String>
+    JourneyResponse& WithStartActivity(StartActivityT&& value) { SetStartActivity(std::forward<StartActivityT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The segment that defines which users are participants in the journey.</p>
      */
-    inline const StartCondition& GetStartCondition() const{ return m_startCondition; }
+    inline const StartCondition& GetStartCondition() const { return m_startCondition; }
     inline bool StartConditionHasBeenSet() const { return m_startConditionHasBeenSet; }
-    inline void SetStartCondition(const StartCondition& value) { m_startConditionHasBeenSet = true; m_startCondition = value; }
-    inline void SetStartCondition(StartCondition&& value) { m_startConditionHasBeenSet = true; m_startCondition = std::move(value); }
-    inline JourneyResponse& WithStartCondition(const StartCondition& value) { SetStartCondition(value); return *this;}
-    inline JourneyResponse& WithStartCondition(StartCondition&& value) { SetStartCondition(std::move(value)); return *this;}
+    template<typename StartConditionT = StartCondition>
+    void SetStartCondition(StartConditionT&& value) { m_startConditionHasBeenSet = true; m_startCondition = std::forward<StartConditionT>(value); }
+    template<typename StartConditionT = StartCondition>
+    JourneyResponse& WithStartCondition(StartConditionT&& value) { SetStartCondition(std::forward<StartConditionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -258,31 +242,26 @@ namespace Model
      * However, any existing participants who are currently waiting to start an
      * activity may continue the journey.</p></li></ul>
      */
-    inline const State& GetState() const{ return m_state; }
+    inline State GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const State& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(State&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline JourneyResponse& WithState(const State& value) { SetState(value); return *this;}
-    inline JourneyResponse& WithState(State&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(State value) { m_stateHasBeenSet = true; m_state = value; }
+    inline JourneyResponse& WithState(State value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>This object is not used or supported.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline JourneyResponse& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline JourneyResponse& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline JourneyResponse& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline JourneyResponse& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline JourneyResponse& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline JourneyResponse& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline JourneyResponse& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline JourneyResponse& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline JourneyResponse& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    JourneyResponse& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    JourneyResponse& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -290,7 +269,7 @@ namespace Model
      * <p>Indicates whether endpoints in quiet hours should enter a wait activity until
      * quiet hours have elapsed.</p>
      */
-    inline bool GetWaitForQuietTime() const{ return m_waitForQuietTime; }
+    inline bool GetWaitForQuietTime() const { return m_waitForQuietTime; }
     inline bool WaitForQuietTimeHasBeenSet() const { return m_waitForQuietTimeHasBeenSet; }
     inline void SetWaitForQuietTime(bool value) { m_waitForQuietTimeHasBeenSet = true; m_waitForQuietTime = value; }
     inline JourneyResponse& WithWaitForQuietTime(bool value) { SetWaitForQuietTime(value); return *this;}
@@ -301,7 +280,7 @@ namespace Model
      * <p>Indicates whether the journey participants should be refreshed when a segment
      * is updated.</p>
      */
-    inline bool GetRefreshOnSegmentUpdate() const{ return m_refreshOnSegmentUpdate; }
+    inline bool GetRefreshOnSegmentUpdate() const { return m_refreshOnSegmentUpdate; }
     inline bool RefreshOnSegmentUpdateHasBeenSet() const { return m_refreshOnSegmentUpdateHasBeenSet; }
     inline void SetRefreshOnSegmentUpdate(bool value) { m_refreshOnSegmentUpdateHasBeenSet = true; m_refreshOnSegmentUpdate = value; }
     inline JourneyResponse& WithRefreshOnSegmentUpdate(bool value) { SetRefreshOnSegmentUpdate(value); return *this;}
@@ -311,12 +290,12 @@ namespace Model
     /**
      * <p>The channel-specific configurations for the journey.</p>
      */
-    inline const JourneyChannelSettings& GetJourneyChannelSettings() const{ return m_journeyChannelSettings; }
+    inline const JourneyChannelSettings& GetJourneyChannelSettings() const { return m_journeyChannelSettings; }
     inline bool JourneyChannelSettingsHasBeenSet() const { return m_journeyChannelSettingsHasBeenSet; }
-    inline void SetJourneyChannelSettings(const JourneyChannelSettings& value) { m_journeyChannelSettingsHasBeenSet = true; m_journeyChannelSettings = value; }
-    inline void SetJourneyChannelSettings(JourneyChannelSettings&& value) { m_journeyChannelSettingsHasBeenSet = true; m_journeyChannelSettings = std::move(value); }
-    inline JourneyResponse& WithJourneyChannelSettings(const JourneyChannelSettings& value) { SetJourneyChannelSettings(value); return *this;}
-    inline JourneyResponse& WithJourneyChannelSettings(JourneyChannelSettings&& value) { SetJourneyChannelSettings(std::move(value)); return *this;}
+    template<typename JourneyChannelSettingsT = JourneyChannelSettings>
+    void SetJourneyChannelSettings(JourneyChannelSettingsT&& value) { m_journeyChannelSettingsHasBeenSet = true; m_journeyChannelSettings = std::forward<JourneyChannelSettingsT>(value); }
+    template<typename JourneyChannelSettingsT = JourneyChannelSettings>
+    JourneyResponse& WithJourneyChannelSettings(JourneyChannelSettingsT&& value) { SetJourneyChannelSettings(std::forward<JourneyChannelSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -324,7 +303,7 @@ namespace Model
      * <p>Indicates if journey has Advance Quiet Time enabled. This flag should be set
      * to true in order to allow using OpenHours and ClosedDays.</p>
      */
-    inline bool GetSendingSchedule() const{ return m_sendingSchedule; }
+    inline bool GetSendingSchedule() const { return m_sendingSchedule; }
     inline bool SendingScheduleHasBeenSet() const { return m_sendingScheduleHasBeenSet; }
     inline void SetSendingSchedule(bool value) { m_sendingScheduleHasBeenSet = true; m_sendingSchedule = value; }
     inline JourneyResponse& WithSendingSchedule(bool value) { SetSendingSchedule(value); return *this;}
@@ -335,12 +314,12 @@ namespace Model
      * <p>The time when a journey can send messages. QuietTime should be configured
      * first and SendingSchedule should be set to true.</p>
      */
-    inline const OpenHours& GetOpenHours() const{ return m_openHours; }
+    inline const OpenHours& GetOpenHours() const { return m_openHours; }
     inline bool OpenHoursHasBeenSet() const { return m_openHoursHasBeenSet; }
-    inline void SetOpenHours(const OpenHours& value) { m_openHoursHasBeenSet = true; m_openHours = value; }
-    inline void SetOpenHours(OpenHours&& value) { m_openHoursHasBeenSet = true; m_openHours = std::move(value); }
-    inline JourneyResponse& WithOpenHours(const OpenHours& value) { SetOpenHours(value); return *this;}
-    inline JourneyResponse& WithOpenHours(OpenHours&& value) { SetOpenHours(std::move(value)); return *this;}
+    template<typename OpenHoursT = OpenHours>
+    void SetOpenHours(OpenHoursT&& value) { m_openHoursHasBeenSet = true; m_openHours = std::forward<OpenHoursT>(value); }
+    template<typename OpenHoursT = OpenHours>
+    JourneyResponse& WithOpenHours(OpenHoursT&& value) { SetOpenHours(std::forward<OpenHoursT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -348,12 +327,12 @@ namespace Model
      * <p>The time when a journey will not send messages. QuietTime should be
      * configured first and SendingSchedule should be set to true.</p>
      */
-    inline const ClosedDays& GetClosedDays() const{ return m_closedDays; }
+    inline const ClosedDays& GetClosedDays() const { return m_closedDays; }
     inline bool ClosedDaysHasBeenSet() const { return m_closedDaysHasBeenSet; }
-    inline void SetClosedDays(const ClosedDays& value) { m_closedDaysHasBeenSet = true; m_closedDays = value; }
-    inline void SetClosedDays(ClosedDays&& value) { m_closedDaysHasBeenSet = true; m_closedDays = std::move(value); }
-    inline JourneyResponse& WithClosedDays(const ClosedDays& value) { SetClosedDays(value); return *this;}
-    inline JourneyResponse& WithClosedDays(ClosedDays&& value) { SetClosedDays(std::move(value)); return *this;}
+    template<typename ClosedDaysT = ClosedDays>
+    void SetClosedDays(ClosedDaysT&& value) { m_closedDaysHasBeenSet = true; m_closedDays = std::forward<ClosedDaysT>(value); }
+    template<typename ClosedDaysT = ClosedDays>
+    JourneyResponse& WithClosedDays(ClosedDaysT&& value) { SetClosedDays(std::forward<ClosedDaysT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -370,14 +349,13 @@ namespace Model
      * Italy, Spain, Germany and in regions where Amazon Pinpoint is
      * available.</p></li> </ul>
      */
-    inline const Aws::Vector<__TimezoneEstimationMethodsElement>& GetTimezoneEstimationMethods() const{ return m_timezoneEstimationMethods; }
+    inline const Aws::Vector<__TimezoneEstimationMethodsElement>& GetTimezoneEstimationMethods() const { return m_timezoneEstimationMethods; }
     inline bool TimezoneEstimationMethodsHasBeenSet() const { return m_timezoneEstimationMethodsHasBeenSet; }
-    inline void SetTimezoneEstimationMethods(const Aws::Vector<__TimezoneEstimationMethodsElement>& value) { m_timezoneEstimationMethodsHasBeenSet = true; m_timezoneEstimationMethods = value; }
-    inline void SetTimezoneEstimationMethods(Aws::Vector<__TimezoneEstimationMethodsElement>&& value) { m_timezoneEstimationMethodsHasBeenSet = true; m_timezoneEstimationMethods = std::move(value); }
-    inline JourneyResponse& WithTimezoneEstimationMethods(const Aws::Vector<__TimezoneEstimationMethodsElement>& value) { SetTimezoneEstimationMethods(value); return *this;}
-    inline JourneyResponse& WithTimezoneEstimationMethods(Aws::Vector<__TimezoneEstimationMethodsElement>&& value) { SetTimezoneEstimationMethods(std::move(value)); return *this;}
-    inline JourneyResponse& AddTimezoneEstimationMethods(const __TimezoneEstimationMethodsElement& value) { m_timezoneEstimationMethodsHasBeenSet = true; m_timezoneEstimationMethods.push_back(value); return *this; }
-    inline JourneyResponse& AddTimezoneEstimationMethods(__TimezoneEstimationMethodsElement&& value) { m_timezoneEstimationMethodsHasBeenSet = true; m_timezoneEstimationMethods.push_back(std::move(value)); return *this; }
+    template<typename TimezoneEstimationMethodsT = Aws::Vector<__TimezoneEstimationMethodsElement>>
+    void SetTimezoneEstimationMethods(TimezoneEstimationMethodsT&& value) { m_timezoneEstimationMethodsHasBeenSet = true; m_timezoneEstimationMethods = std::forward<TimezoneEstimationMethodsT>(value); }
+    template<typename TimezoneEstimationMethodsT = Aws::Vector<__TimezoneEstimationMethodsElement>>
+    JourneyResponse& WithTimezoneEstimationMethods(TimezoneEstimationMethodsT&& value) { SetTimezoneEstimationMethods(std::forward<TimezoneEstimationMethodsT>(value)); return *this;}
+    inline JourneyResponse& AddTimezoneEstimationMethods(__TimezoneEstimationMethodsElement value) { m_timezoneEstimationMethodsHasBeenSet = true; m_timezoneEstimationMethods.push_back(value); return *this; }
     ///@}
   private:
 
@@ -399,7 +377,7 @@ namespace Model
     JourneyLimits m_limits;
     bool m_limitsHasBeenSet = false;
 
-    bool m_localTime;
+    bool m_localTime{false};
     bool m_localTimeHasBeenSet = false;
 
     Aws::String m_name;
@@ -420,22 +398,22 @@ namespace Model
     StartCondition m_startCondition;
     bool m_startConditionHasBeenSet = false;
 
-    State m_state;
+    State m_state{State::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    bool m_waitForQuietTime;
+    bool m_waitForQuietTime{false};
     bool m_waitForQuietTimeHasBeenSet = false;
 
-    bool m_refreshOnSegmentUpdate;
+    bool m_refreshOnSegmentUpdate{false};
     bool m_refreshOnSegmentUpdateHasBeenSet = false;
 
     JourneyChannelSettings m_journeyChannelSettings;
     bool m_journeyChannelSettingsHasBeenSet = false;
 
-    bool m_sendingSchedule;
+    bool m_sendingSchedule{false};
     bool m_sendingScheduleHasBeenSet = false;
 
     OpenHours m_openHours;

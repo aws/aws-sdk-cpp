@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ReservedInstancesModificationResponse::ReservedInstancesModificationResponse() : 
-    m_reservedInstancesIdHasBeenSet(false),
-    m_targetConfigurationHasBeenSet(false)
-{
-}
-
 ReservedInstancesModificationResponse::ReservedInstancesModificationResponse(const XmlNode& xmlNode)
-  : ReservedInstancesModificationResponse()
 {
   *this = xmlNode;
 }

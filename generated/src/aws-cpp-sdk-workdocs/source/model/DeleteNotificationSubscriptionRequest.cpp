@@ -12,12 +12,6 @@ using namespace Aws::WorkDocs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteNotificationSubscriptionRequest::DeleteNotificationSubscriptionRequest() : 
-    m_subscriptionIdHasBeenSet(false),
-    m_organizationIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteNotificationSubscriptionRequest::SerializePayload() const
 {
   return {};

@@ -37,7 +37,7 @@ namespace Model
   class SipMediaApplicationAlexaSkillConfiguration
   {
   public:
-    AWS_CHIMESDKVOICE_API SipMediaApplicationAlexaSkillConfiguration();
+    AWS_CHIMESDKVOICE_API SipMediaApplicationAlexaSkillConfiguration() = default;
     AWS_CHIMESDKVOICE_API SipMediaApplicationAlexaSkillConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKVOICE_API SipMediaApplicationAlexaSkillConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,31 +47,28 @@ namespace Model
     /**
      * <p>The status of the Alexa Skill configuration.</p>
      */
-    inline const AlexaSkillStatus& GetAlexaSkillStatus() const{ return m_alexaSkillStatus; }
+    inline AlexaSkillStatus GetAlexaSkillStatus() const { return m_alexaSkillStatus; }
     inline bool AlexaSkillStatusHasBeenSet() const { return m_alexaSkillStatusHasBeenSet; }
-    inline void SetAlexaSkillStatus(const AlexaSkillStatus& value) { m_alexaSkillStatusHasBeenSet = true; m_alexaSkillStatus = value; }
-    inline void SetAlexaSkillStatus(AlexaSkillStatus&& value) { m_alexaSkillStatusHasBeenSet = true; m_alexaSkillStatus = std::move(value); }
-    inline SipMediaApplicationAlexaSkillConfiguration& WithAlexaSkillStatus(const AlexaSkillStatus& value) { SetAlexaSkillStatus(value); return *this;}
-    inline SipMediaApplicationAlexaSkillConfiguration& WithAlexaSkillStatus(AlexaSkillStatus&& value) { SetAlexaSkillStatus(std::move(value)); return *this;}
+    inline void SetAlexaSkillStatus(AlexaSkillStatus value) { m_alexaSkillStatusHasBeenSet = true; m_alexaSkillStatus = value; }
+    inline SipMediaApplicationAlexaSkillConfiguration& WithAlexaSkillStatus(AlexaSkillStatus value) { SetAlexaSkillStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Alexa Skill configuration.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAlexaSkillIds() const{ return m_alexaSkillIds; }
+    inline const Aws::Vector<Aws::String>& GetAlexaSkillIds() const { return m_alexaSkillIds; }
     inline bool AlexaSkillIdsHasBeenSet() const { return m_alexaSkillIdsHasBeenSet; }
-    inline void SetAlexaSkillIds(const Aws::Vector<Aws::String>& value) { m_alexaSkillIdsHasBeenSet = true; m_alexaSkillIds = value; }
-    inline void SetAlexaSkillIds(Aws::Vector<Aws::String>&& value) { m_alexaSkillIdsHasBeenSet = true; m_alexaSkillIds = std::move(value); }
-    inline SipMediaApplicationAlexaSkillConfiguration& WithAlexaSkillIds(const Aws::Vector<Aws::String>& value) { SetAlexaSkillIds(value); return *this;}
-    inline SipMediaApplicationAlexaSkillConfiguration& WithAlexaSkillIds(Aws::Vector<Aws::String>&& value) { SetAlexaSkillIds(std::move(value)); return *this;}
-    inline SipMediaApplicationAlexaSkillConfiguration& AddAlexaSkillIds(const Aws::String& value) { m_alexaSkillIdsHasBeenSet = true; m_alexaSkillIds.push_back(value); return *this; }
-    inline SipMediaApplicationAlexaSkillConfiguration& AddAlexaSkillIds(Aws::String&& value) { m_alexaSkillIdsHasBeenSet = true; m_alexaSkillIds.push_back(std::move(value)); return *this; }
-    inline SipMediaApplicationAlexaSkillConfiguration& AddAlexaSkillIds(const char* value) { m_alexaSkillIdsHasBeenSet = true; m_alexaSkillIds.push_back(value); return *this; }
+    template<typename AlexaSkillIdsT = Aws::Vector<Aws::String>>
+    void SetAlexaSkillIds(AlexaSkillIdsT&& value) { m_alexaSkillIdsHasBeenSet = true; m_alexaSkillIds = std::forward<AlexaSkillIdsT>(value); }
+    template<typename AlexaSkillIdsT = Aws::Vector<Aws::String>>
+    SipMediaApplicationAlexaSkillConfiguration& WithAlexaSkillIds(AlexaSkillIdsT&& value) { SetAlexaSkillIds(std::forward<AlexaSkillIdsT>(value)); return *this;}
+    template<typename AlexaSkillIdsT = Aws::String>
+    SipMediaApplicationAlexaSkillConfiguration& AddAlexaSkillIds(AlexaSkillIdsT&& value) { m_alexaSkillIdsHasBeenSet = true; m_alexaSkillIds.emplace_back(std::forward<AlexaSkillIdsT>(value)); return *this; }
     ///@}
   private:
 
-    AlexaSkillStatus m_alexaSkillStatus;
+    AlexaSkillStatus m_alexaSkillStatus{AlexaSkillStatus::NOT_SET};
     bool m_alexaSkillStatusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_alexaSkillIds;

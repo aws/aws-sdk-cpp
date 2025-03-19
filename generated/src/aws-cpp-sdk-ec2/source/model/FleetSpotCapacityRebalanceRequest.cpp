@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-FleetSpotCapacityRebalanceRequest::FleetSpotCapacityRebalanceRequest() : 
-    m_replacementStrategy(FleetReplacementStrategy::NOT_SET),
-    m_replacementStrategyHasBeenSet(false),
-    m_terminationDelay(0),
-    m_terminationDelayHasBeenSet(false)
-{
-}
-
 FleetSpotCapacityRebalanceRequest::FleetSpotCapacityRebalanceRequest(const XmlNode& xmlNode)
-  : FleetSpotCapacityRebalanceRequest()
 {
   *this = xmlNode;
 }
@@ -43,7 +34,7 @@ FleetSpotCapacityRebalanceRequest& FleetSpotCapacityRebalanceRequest::operator =
     XmlNode replacementStrategyNode = resultNode.FirstChild("ReplacementStrategy");
     if(!replacementStrategyNode.IsNull())
     {
-      m_replacementStrategy = FleetReplacementStrategyMapper::GetFleetReplacementStrategyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(replacementStrategyNode.GetText()).c_str()).c_str());
+      m_replacementStrategy = FleetReplacementStrategyMapper::GetFleetReplacementStrategyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(replacementStrategyNode.GetText()).c_str()));
       m_replacementStrategyHasBeenSet = true;
     }
     XmlNode terminationDelayNode = resultNode.FirstChild("TerminationDelay");

@@ -18,14 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-FlywheelIterationFilter::FlywheelIterationFilter() : 
-    m_creationTimeAfterHasBeenSet(false),
-    m_creationTimeBeforeHasBeenSet(false)
-{
-}
-
 FlywheelIterationFilter::FlywheelIterationFilter(JsonView jsonValue)
-  : FlywheelIterationFilter()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ FlywheelIterationFilter& FlywheelIterationFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CreationTimeAfter"))
   {
     m_creationTimeAfter = jsonValue.GetDouble("CreationTimeAfter");
-
     m_creationTimeAfterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTimeBefore"))
   {
     m_creationTimeBefore = jsonValue.GetDouble("CreationTimeBefore");
-
     m_creationTimeBeforeHasBeenSet = true;
   }
-
   return *this;
 }
 

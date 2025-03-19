@@ -13,14 +13,6 @@ using namespace Aws::QApps::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateLibraryItemMetadataRequest::UpdateLibraryItemMetadataRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_libraryItemIdHasBeenSet(false),
-    m_isVerified(false),
-    m_isVerifiedHasBeenSet(false)
-{
-}
-
 Aws::String UpdateLibraryItemMetadataRequest::SerializePayload() const
 {
   JsonValue payload;

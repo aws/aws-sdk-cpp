@@ -33,7 +33,7 @@ namespace Model
   class WeeklyStartTime
   {
   public:
-    AWS_MQ_API WeeklyStartTime();
+    AWS_MQ_API WeeklyStartTime() = default;
     AWS_MQ_API WeeklyStartTime(Aws::Utils::Json::JsonView jsonValue);
     AWS_MQ_API WeeklyStartTime& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MQ_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,22 @@ namespace Model
     /**
      * <p>Required. The day of the week.</p>
      */
-    inline const DayOfWeek& GetDayOfWeek() const{ return m_dayOfWeek; }
+    inline DayOfWeek GetDayOfWeek() const { return m_dayOfWeek; }
     inline bool DayOfWeekHasBeenSet() const { return m_dayOfWeekHasBeenSet; }
-    inline void SetDayOfWeek(const DayOfWeek& value) { m_dayOfWeekHasBeenSet = true; m_dayOfWeek = value; }
-    inline void SetDayOfWeek(DayOfWeek&& value) { m_dayOfWeekHasBeenSet = true; m_dayOfWeek = std::move(value); }
-    inline WeeklyStartTime& WithDayOfWeek(const DayOfWeek& value) { SetDayOfWeek(value); return *this;}
-    inline WeeklyStartTime& WithDayOfWeek(DayOfWeek&& value) { SetDayOfWeek(std::move(value)); return *this;}
+    inline void SetDayOfWeek(DayOfWeek value) { m_dayOfWeekHasBeenSet = true; m_dayOfWeek = value; }
+    inline WeeklyStartTime& WithDayOfWeek(DayOfWeek value) { SetDayOfWeek(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Required. The time, in 24-hour format.</p>
      */
-    inline const Aws::String& GetTimeOfDay() const{ return m_timeOfDay; }
+    inline const Aws::String& GetTimeOfDay() const { return m_timeOfDay; }
     inline bool TimeOfDayHasBeenSet() const { return m_timeOfDayHasBeenSet; }
-    inline void SetTimeOfDay(const Aws::String& value) { m_timeOfDayHasBeenSet = true; m_timeOfDay = value; }
-    inline void SetTimeOfDay(Aws::String&& value) { m_timeOfDayHasBeenSet = true; m_timeOfDay = std::move(value); }
-    inline void SetTimeOfDay(const char* value) { m_timeOfDayHasBeenSet = true; m_timeOfDay.assign(value); }
-    inline WeeklyStartTime& WithTimeOfDay(const Aws::String& value) { SetTimeOfDay(value); return *this;}
-    inline WeeklyStartTime& WithTimeOfDay(Aws::String&& value) { SetTimeOfDay(std::move(value)); return *this;}
-    inline WeeklyStartTime& WithTimeOfDay(const char* value) { SetTimeOfDay(value); return *this;}
+    template<typename TimeOfDayT = Aws::String>
+    void SetTimeOfDay(TimeOfDayT&& value) { m_timeOfDayHasBeenSet = true; m_timeOfDay = std::forward<TimeOfDayT>(value); }
+    template<typename TimeOfDayT = Aws::String>
+    WeeklyStartTime& WithTimeOfDay(TimeOfDayT&& value) { SetTimeOfDay(std::forward<TimeOfDayT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,18 +66,16 @@ namespace Model
      * <p>The time zone, UTC by default, in either the Country/City format, or the UTC
      * offset format.</p>
      */
-    inline const Aws::String& GetTimeZone() const{ return m_timeZone; }
+    inline const Aws::String& GetTimeZone() const { return m_timeZone; }
     inline bool TimeZoneHasBeenSet() const { return m_timeZoneHasBeenSet; }
-    inline void SetTimeZone(const Aws::String& value) { m_timeZoneHasBeenSet = true; m_timeZone = value; }
-    inline void SetTimeZone(Aws::String&& value) { m_timeZoneHasBeenSet = true; m_timeZone = std::move(value); }
-    inline void SetTimeZone(const char* value) { m_timeZoneHasBeenSet = true; m_timeZone.assign(value); }
-    inline WeeklyStartTime& WithTimeZone(const Aws::String& value) { SetTimeZone(value); return *this;}
-    inline WeeklyStartTime& WithTimeZone(Aws::String&& value) { SetTimeZone(std::move(value)); return *this;}
-    inline WeeklyStartTime& WithTimeZone(const char* value) { SetTimeZone(value); return *this;}
+    template<typename TimeZoneT = Aws::String>
+    void SetTimeZone(TimeZoneT&& value) { m_timeZoneHasBeenSet = true; m_timeZone = std::forward<TimeZoneT>(value); }
+    template<typename TimeZoneT = Aws::String>
+    WeeklyStartTime& WithTimeZone(TimeZoneT&& value) { SetTimeZone(std::forward<TimeZoneT>(value)); return *this;}
     ///@}
   private:
 
-    DayOfWeek m_dayOfWeek;
+    DayOfWeek m_dayOfWeek{DayOfWeek::NOT_SET};
     bool m_dayOfWeekHasBeenSet = false;
 
     Aws::String m_timeOfDay;

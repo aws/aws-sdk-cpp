@@ -18,14 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-InlineAgentTracePart::InlineAgentTracePart() : 
-    m_sessionIdHasBeenSet(false),
-    m_traceHasBeenSet(false)
-{
-}
-
 InlineAgentTracePart::InlineAgentTracePart(JsonView jsonValue)
-  : InlineAgentTracePart()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ InlineAgentTracePart& InlineAgentTracePart::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sessionId"))
   {
     m_sessionId = jsonValue.GetString("sessionId");
-
     m_sessionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("trace"))
   {
     m_trace = jsonValue.GetObject("trace");
-
     m_traceHasBeenSet = true;
   }
-
   return *this;
 }
 

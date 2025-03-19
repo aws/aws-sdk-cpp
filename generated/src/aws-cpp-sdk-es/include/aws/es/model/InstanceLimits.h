@@ -32,7 +32,7 @@ namespace Model
   class InstanceLimits
   {
   public:
-    AWS_ELASTICSEARCHSERVICE_API InstanceLimits();
+    AWS_ELASTICSEARCHSERVICE_API InstanceLimits() = default;
     AWS_ELASTICSEARCHSERVICE_API InstanceLimits(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICSEARCHSERVICE_API InstanceLimits& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,12 +40,12 @@ namespace Model
 
     ///@{
     
-    inline const InstanceCountLimits& GetInstanceCountLimits() const{ return m_instanceCountLimits; }
+    inline const InstanceCountLimits& GetInstanceCountLimits() const { return m_instanceCountLimits; }
     inline bool InstanceCountLimitsHasBeenSet() const { return m_instanceCountLimitsHasBeenSet; }
-    inline void SetInstanceCountLimits(const InstanceCountLimits& value) { m_instanceCountLimitsHasBeenSet = true; m_instanceCountLimits = value; }
-    inline void SetInstanceCountLimits(InstanceCountLimits&& value) { m_instanceCountLimitsHasBeenSet = true; m_instanceCountLimits = std::move(value); }
-    inline InstanceLimits& WithInstanceCountLimits(const InstanceCountLimits& value) { SetInstanceCountLimits(value); return *this;}
-    inline InstanceLimits& WithInstanceCountLimits(InstanceCountLimits&& value) { SetInstanceCountLimits(std::move(value)); return *this;}
+    template<typename InstanceCountLimitsT = InstanceCountLimits>
+    void SetInstanceCountLimits(InstanceCountLimitsT&& value) { m_instanceCountLimitsHasBeenSet = true; m_instanceCountLimits = std::forward<InstanceCountLimitsT>(value); }
+    template<typename InstanceCountLimitsT = InstanceCountLimits>
+    InstanceLimits& WithInstanceCountLimits(InstanceCountLimitsT&& value) { SetInstanceCountLimits(std::forward<InstanceCountLimitsT>(value)); return *this;}
     ///@}
   private:
 

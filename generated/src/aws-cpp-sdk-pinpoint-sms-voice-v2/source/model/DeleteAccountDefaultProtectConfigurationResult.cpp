@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteAccountDefaultProtectConfigurationResult::DeleteAccountDefaultProtectConfigurationResult()
-{
-}
-
 DeleteAccountDefaultProtectConfigurationResult::DeleteAccountDefaultProtectConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ DeleteAccountDefaultProtectConfigurationResult& DeleteAccountDefaultProtectConfi
   if(jsonValue.ValueExists("DefaultProtectConfigurationArn"))
   {
     m_defaultProtectConfigurationArn = jsonValue.GetString("DefaultProtectConfigurationArn");
-
+    m_defaultProtectConfigurationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultProtectConfigurationId"))
   {
     m_defaultProtectConfigurationId = jsonValue.GetString("DefaultProtectConfigurationId");
-
+    m_defaultProtectConfigurationIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

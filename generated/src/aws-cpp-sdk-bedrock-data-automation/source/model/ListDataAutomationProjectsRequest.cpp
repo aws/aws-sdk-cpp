@@ -12,18 +12,6 @@ using namespace Aws::BedrockDataAutomation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListDataAutomationProjectsRequest::ListDataAutomationProjectsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_projectStageFilter(DataAutomationProjectStageFilter::NOT_SET),
-    m_projectStageFilterHasBeenSet(false),
-    m_blueprintFilterHasBeenSet(false),
-    m_resourceOwner(ResourceOwner::NOT_SET),
-    m_resourceOwnerHasBeenSet(false)
-{
-}
-
 Aws::String ListDataAutomationProjectsRequest::SerializePayload() const
 {
   JsonValue payload;

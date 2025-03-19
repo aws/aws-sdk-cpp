@@ -18,70 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-CustomerProfileAttributes::CustomerProfileAttributes() : 
-    m_accountNumberHasBeenSet(false),
-    m_additionalInformationHasBeenSet(false),
-    m_address1HasBeenSet(false),
-    m_address2HasBeenSet(false),
-    m_address3HasBeenSet(false),
-    m_address4HasBeenSet(false),
-    m_billingAddress1HasBeenSet(false),
-    m_billingAddress2HasBeenSet(false),
-    m_billingAddress3HasBeenSet(false),
-    m_billingAddress4HasBeenSet(false),
-    m_billingCityHasBeenSet(false),
-    m_billingCountryHasBeenSet(false),
-    m_billingCountyHasBeenSet(false),
-    m_billingPostalCodeHasBeenSet(false),
-    m_billingProvinceHasBeenSet(false),
-    m_billingStateHasBeenSet(false),
-    m_birthDateHasBeenSet(false),
-    m_businessEmailAddressHasBeenSet(false),
-    m_businessNameHasBeenSet(false),
-    m_businessPhoneNumberHasBeenSet(false),
-    m_cityHasBeenSet(false),
-    m_countryHasBeenSet(false),
-    m_countyHasBeenSet(false),
-    m_customHasBeenSet(false),
-    m_emailAddressHasBeenSet(false),
-    m_firstNameHasBeenSet(false),
-    m_genderHasBeenSet(false),
-    m_homePhoneNumberHasBeenSet(false),
-    m_lastNameHasBeenSet(false),
-    m_mailingAddress1HasBeenSet(false),
-    m_mailingAddress2HasBeenSet(false),
-    m_mailingAddress3HasBeenSet(false),
-    m_mailingAddress4HasBeenSet(false),
-    m_mailingCityHasBeenSet(false),
-    m_mailingCountryHasBeenSet(false),
-    m_mailingCountyHasBeenSet(false),
-    m_mailingPostalCodeHasBeenSet(false),
-    m_mailingProvinceHasBeenSet(false),
-    m_mailingStateHasBeenSet(false),
-    m_middleNameHasBeenSet(false),
-    m_mobilePhoneNumberHasBeenSet(false),
-    m_partyTypeHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false),
-    m_postalCodeHasBeenSet(false),
-    m_profileARNHasBeenSet(false),
-    m_profileIdHasBeenSet(false),
-    m_provinceHasBeenSet(false),
-    m_shippingAddress1HasBeenSet(false),
-    m_shippingAddress2HasBeenSet(false),
-    m_shippingAddress3HasBeenSet(false),
-    m_shippingAddress4HasBeenSet(false),
-    m_shippingCityHasBeenSet(false),
-    m_shippingCountryHasBeenSet(false),
-    m_shippingCountyHasBeenSet(false),
-    m_shippingPostalCodeHasBeenSet(false),
-    m_shippingProvinceHasBeenSet(false),
-    m_shippingStateHasBeenSet(false),
-    m_stateHasBeenSet(false)
-{
-}
-
 CustomerProfileAttributes::CustomerProfileAttributes(JsonView jsonValue)
-  : CustomerProfileAttributes()
 {
   *this = jsonValue;
 }
@@ -91,164 +28,118 @@ CustomerProfileAttributes& CustomerProfileAttributes::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("accountNumber"))
   {
     m_accountNumber = jsonValue.GetString("accountNumber");
-
     m_accountNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("additionalInformation"))
   {
     m_additionalInformation = jsonValue.GetString("additionalInformation");
-
     m_additionalInformationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("address1"))
   {
     m_address1 = jsonValue.GetString("address1");
-
     m_address1HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("address2"))
   {
     m_address2 = jsonValue.GetString("address2");
-
     m_address2HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("address3"))
   {
     m_address3 = jsonValue.GetString("address3");
-
     m_address3HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("address4"))
   {
     m_address4 = jsonValue.GetString("address4");
-
     m_address4HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("billingAddress1"))
   {
     m_billingAddress1 = jsonValue.GetString("billingAddress1");
-
     m_billingAddress1HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("billingAddress2"))
   {
     m_billingAddress2 = jsonValue.GetString("billingAddress2");
-
     m_billingAddress2HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("billingAddress3"))
   {
     m_billingAddress3 = jsonValue.GetString("billingAddress3");
-
     m_billingAddress3HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("billingAddress4"))
   {
     m_billingAddress4 = jsonValue.GetString("billingAddress4");
-
     m_billingAddress4HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("billingCity"))
   {
     m_billingCity = jsonValue.GetString("billingCity");
-
     m_billingCityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("billingCountry"))
   {
     m_billingCountry = jsonValue.GetString("billingCountry");
-
     m_billingCountryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("billingCounty"))
   {
     m_billingCounty = jsonValue.GetString("billingCounty");
-
     m_billingCountyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("billingPostalCode"))
   {
     m_billingPostalCode = jsonValue.GetString("billingPostalCode");
-
     m_billingPostalCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("billingProvince"))
   {
     m_billingProvince = jsonValue.GetString("billingProvince");
-
     m_billingProvinceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("billingState"))
   {
     m_billingState = jsonValue.GetString("billingState");
-
     m_billingStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("birthDate"))
   {
     m_birthDate = jsonValue.GetString("birthDate");
-
     m_birthDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("businessEmailAddress"))
   {
     m_businessEmailAddress = jsonValue.GetString("businessEmailAddress");
-
     m_businessEmailAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("businessName"))
   {
     m_businessName = jsonValue.GetString("businessName");
-
     m_businessNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("businessPhoneNumber"))
   {
     m_businessPhoneNumber = jsonValue.GetString("businessPhoneNumber");
-
     m_businessPhoneNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("city"))
   {
     m_city = jsonValue.GetString("city");
-
     m_cityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("country"))
   {
     m_country = jsonValue.GetString("country");
-
     m_countryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("county"))
   {
     m_county = jsonValue.GetString("county");
-
     m_countyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("custom"))
   {
     Aws::Map<Aws::String, JsonView> customJsonMap = jsonValue.GetObject("custom").GetAllObjects();
@@ -258,245 +149,176 @@ CustomerProfileAttributes& CustomerProfileAttributes::operator =(JsonView jsonVa
     }
     m_customHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("emailAddress"))
   {
     m_emailAddress = jsonValue.GetString("emailAddress");
-
     m_emailAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("firstName"))
   {
     m_firstName = jsonValue.GetString("firstName");
-
     m_firstNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("gender"))
   {
     m_gender = jsonValue.GetString("gender");
-
     m_genderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("homePhoneNumber"))
   {
     m_homePhoneNumber = jsonValue.GetString("homePhoneNumber");
-
     m_homePhoneNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastName"))
   {
     m_lastName = jsonValue.GetString("lastName");
-
     m_lastNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mailingAddress1"))
   {
     m_mailingAddress1 = jsonValue.GetString("mailingAddress1");
-
     m_mailingAddress1HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mailingAddress2"))
   {
     m_mailingAddress2 = jsonValue.GetString("mailingAddress2");
-
     m_mailingAddress2HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mailingAddress3"))
   {
     m_mailingAddress3 = jsonValue.GetString("mailingAddress3");
-
     m_mailingAddress3HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mailingAddress4"))
   {
     m_mailingAddress4 = jsonValue.GetString("mailingAddress4");
-
     m_mailingAddress4HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mailingCity"))
   {
     m_mailingCity = jsonValue.GetString("mailingCity");
-
     m_mailingCityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mailingCountry"))
   {
     m_mailingCountry = jsonValue.GetString("mailingCountry");
-
     m_mailingCountryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mailingCounty"))
   {
     m_mailingCounty = jsonValue.GetString("mailingCounty");
-
     m_mailingCountyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mailingPostalCode"))
   {
     m_mailingPostalCode = jsonValue.GetString("mailingPostalCode");
-
     m_mailingPostalCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mailingProvince"))
   {
     m_mailingProvince = jsonValue.GetString("mailingProvince");
-
     m_mailingProvinceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mailingState"))
   {
     m_mailingState = jsonValue.GetString("mailingState");
-
     m_mailingStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("middleName"))
   {
     m_middleName = jsonValue.GetString("middleName");
-
     m_middleNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mobilePhoneNumber"))
   {
     m_mobilePhoneNumber = jsonValue.GetString("mobilePhoneNumber");
-
     m_mobilePhoneNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("partyType"))
   {
     m_partyType = jsonValue.GetString("partyType");
-
     m_partyTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("phoneNumber"))
   {
     m_phoneNumber = jsonValue.GetString("phoneNumber");
-
     m_phoneNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("postalCode"))
   {
     m_postalCode = jsonValue.GetString("postalCode");
-
     m_postalCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("profileARN"))
   {
     m_profileARN = jsonValue.GetString("profileARN");
-
     m_profileARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("profileId"))
   {
     m_profileId = jsonValue.GetString("profileId");
-
     m_profileIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("province"))
   {
     m_province = jsonValue.GetString("province");
-
     m_provinceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("shippingAddress1"))
   {
     m_shippingAddress1 = jsonValue.GetString("shippingAddress1");
-
     m_shippingAddress1HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("shippingAddress2"))
   {
     m_shippingAddress2 = jsonValue.GetString("shippingAddress2");
-
     m_shippingAddress2HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("shippingAddress3"))
   {
     m_shippingAddress3 = jsonValue.GetString("shippingAddress3");
-
     m_shippingAddress3HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("shippingAddress4"))
   {
     m_shippingAddress4 = jsonValue.GetString("shippingAddress4");
-
     m_shippingAddress4HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("shippingCity"))
   {
     m_shippingCity = jsonValue.GetString("shippingCity");
-
     m_shippingCityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("shippingCountry"))
   {
     m_shippingCountry = jsonValue.GetString("shippingCountry");
-
     m_shippingCountryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("shippingCounty"))
   {
     m_shippingCounty = jsonValue.GetString("shippingCounty");
-
     m_shippingCountyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("shippingPostalCode"))
   {
     m_shippingPostalCode = jsonValue.GetString("shippingPostalCode");
-
     m_shippingPostalCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("shippingProvince"))
   {
     m_shippingProvince = jsonValue.GetString("shippingProvince");
-
     m_shippingProvinceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("shippingState"))
   {
     m_shippingState = jsonValue.GetString("shippingState");
-
     m_shippingStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = jsonValue.GetString("state");
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

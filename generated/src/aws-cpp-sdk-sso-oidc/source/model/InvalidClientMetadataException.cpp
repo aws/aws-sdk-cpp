@@ -18,14 +18,7 @@ namespace SSOOIDC
 namespace Model
 {
 
-InvalidClientMetadataException::InvalidClientMetadataException() : 
-    m_errorHasBeenSet(false),
-    m_error_descriptionHasBeenSet(false)
-{
-}
-
 InvalidClientMetadataException::InvalidClientMetadataException(JsonView jsonValue)
-  : InvalidClientMetadataException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ InvalidClientMetadataException& InvalidClientMetadataException::operator =(JsonV
   if(jsonValue.ValueExists("error"))
   {
     m_error = jsonValue.GetString("error");
-
     m_errorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("error_description"))
   {
     m_error_description = jsonValue.GetString("error_description");
-
     m_error_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

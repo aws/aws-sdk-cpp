@@ -21,7 +21,7 @@ namespace Model
   class DeleteIngestConfigurationRequest : public IvsrealtimeRequest
   {
   public:
-    AWS_IVSREALTIME_API DeleteIngestConfigurationRequest();
+    AWS_IVSREALTIME_API DeleteIngestConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>ARN of the IngestConfiguration.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline DeleteIngestConfigurationRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline DeleteIngestConfigurationRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline DeleteIngestConfigurationRequest& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    DeleteIngestConfigurationRequest& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,7 +51,7 @@ namespace Model
      * is disconnected from the stage, followed by deletion of the IngestConfiguration.
      * Default: <code>false</code>.</p>
      */
-    inline bool GetForce() const{ return m_force; }
+    inline bool GetForce() const { return m_force; }
     inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
     inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
     inline DeleteIngestConfigurationRequest& WithForce(bool value) { SetForce(value); return *this;}
@@ -63,7 +61,7 @@ namespace Model
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    bool m_force;
+    bool m_force{false};
     bool m_forceHasBeenSet = false;
   };
 

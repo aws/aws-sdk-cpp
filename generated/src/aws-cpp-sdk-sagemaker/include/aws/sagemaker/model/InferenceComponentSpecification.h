@@ -36,7 +36,7 @@ namespace Model
   class InferenceComponentSpecification
   {
   public:
-    AWS_SAGEMAKER_API InferenceComponentSpecification();
+    AWS_SAGEMAKER_API InferenceComponentSpecification() = default;
     AWS_SAGEMAKER_API InferenceComponentSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API InferenceComponentSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * <p>The name of an existing SageMaker AI model object in your account that you
      * want to deploy with the inference component.</p>
      */
-    inline const Aws::String& GetModelName() const{ return m_modelName; }
+    inline const Aws::String& GetModelName() const { return m_modelName; }
     inline bool ModelNameHasBeenSet() const { return m_modelNameHasBeenSet; }
-    inline void SetModelName(const Aws::String& value) { m_modelNameHasBeenSet = true; m_modelName = value; }
-    inline void SetModelName(Aws::String&& value) { m_modelNameHasBeenSet = true; m_modelName = std::move(value); }
-    inline void SetModelName(const char* value) { m_modelNameHasBeenSet = true; m_modelName.assign(value); }
-    inline InferenceComponentSpecification& WithModelName(const Aws::String& value) { SetModelName(value); return *this;}
-    inline InferenceComponentSpecification& WithModelName(Aws::String&& value) { SetModelName(std::move(value)); return *this;}
-    inline InferenceComponentSpecification& WithModelName(const char* value) { SetModelName(value); return *this;}
+    template<typename ModelNameT = Aws::String>
+    void SetModelName(ModelNameT&& value) { m_modelNameHasBeenSet = true; m_modelName = std::forward<ModelNameT>(value); }
+    template<typename ModelNameT = Aws::String>
+    InferenceComponentSpecification& WithModelName(ModelNameT&& value) { SetModelName(std::forward<ModelNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,24 +60,24 @@ namespace Model
      * <p>Defines a container that provides the runtime environment for a model that
      * you deploy with an inference component.</p>
      */
-    inline const InferenceComponentContainerSpecification& GetContainer() const{ return m_container; }
+    inline const InferenceComponentContainerSpecification& GetContainer() const { return m_container; }
     inline bool ContainerHasBeenSet() const { return m_containerHasBeenSet; }
-    inline void SetContainer(const InferenceComponentContainerSpecification& value) { m_containerHasBeenSet = true; m_container = value; }
-    inline void SetContainer(InferenceComponentContainerSpecification&& value) { m_containerHasBeenSet = true; m_container = std::move(value); }
-    inline InferenceComponentSpecification& WithContainer(const InferenceComponentContainerSpecification& value) { SetContainer(value); return *this;}
-    inline InferenceComponentSpecification& WithContainer(InferenceComponentContainerSpecification&& value) { SetContainer(std::move(value)); return *this;}
+    template<typename ContainerT = InferenceComponentContainerSpecification>
+    void SetContainer(ContainerT&& value) { m_containerHasBeenSet = true; m_container = std::forward<ContainerT>(value); }
+    template<typename ContainerT = InferenceComponentContainerSpecification>
+    InferenceComponentSpecification& WithContainer(ContainerT&& value) { SetContainer(std::forward<ContainerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Settings that take effect while the model container starts up.</p>
      */
-    inline const InferenceComponentStartupParameters& GetStartupParameters() const{ return m_startupParameters; }
+    inline const InferenceComponentStartupParameters& GetStartupParameters() const { return m_startupParameters; }
     inline bool StartupParametersHasBeenSet() const { return m_startupParametersHasBeenSet; }
-    inline void SetStartupParameters(const InferenceComponentStartupParameters& value) { m_startupParametersHasBeenSet = true; m_startupParameters = value; }
-    inline void SetStartupParameters(InferenceComponentStartupParameters&& value) { m_startupParametersHasBeenSet = true; m_startupParameters = std::move(value); }
-    inline InferenceComponentSpecification& WithStartupParameters(const InferenceComponentStartupParameters& value) { SetStartupParameters(value); return *this;}
-    inline InferenceComponentSpecification& WithStartupParameters(InferenceComponentStartupParameters&& value) { SetStartupParameters(std::move(value)); return *this;}
+    template<typename StartupParametersT = InferenceComponentStartupParameters>
+    void SetStartupParameters(StartupParametersT&& value) { m_startupParametersHasBeenSet = true; m_startupParameters = std::forward<StartupParametersT>(value); }
+    template<typename StartupParametersT = InferenceComponentStartupParameters>
+    InferenceComponentSpecification& WithStartupParameters(StartupParametersT&& value) { SetStartupParameters(std::forward<StartupParametersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,12 +88,12 @@ namespace Model
      * component is loaded by a base inference component, and it uses the compute
      * resources of the base inference component.</p>
      */
-    inline const InferenceComponentComputeResourceRequirements& GetComputeResourceRequirements() const{ return m_computeResourceRequirements; }
+    inline const InferenceComponentComputeResourceRequirements& GetComputeResourceRequirements() const { return m_computeResourceRequirements; }
     inline bool ComputeResourceRequirementsHasBeenSet() const { return m_computeResourceRequirementsHasBeenSet; }
-    inline void SetComputeResourceRequirements(const InferenceComponentComputeResourceRequirements& value) { m_computeResourceRequirementsHasBeenSet = true; m_computeResourceRequirements = value; }
-    inline void SetComputeResourceRequirements(InferenceComponentComputeResourceRequirements&& value) { m_computeResourceRequirementsHasBeenSet = true; m_computeResourceRequirements = std::move(value); }
-    inline InferenceComponentSpecification& WithComputeResourceRequirements(const InferenceComponentComputeResourceRequirements& value) { SetComputeResourceRequirements(value); return *this;}
-    inline InferenceComponentSpecification& WithComputeResourceRequirements(InferenceComponentComputeResourceRequirements&& value) { SetComputeResourceRequirements(std::move(value)); return *this;}
+    template<typename ComputeResourceRequirementsT = InferenceComponentComputeResourceRequirements>
+    void SetComputeResourceRequirements(ComputeResourceRequirementsT&& value) { m_computeResourceRequirementsHasBeenSet = true; m_computeResourceRequirements = std::forward<ComputeResourceRequirementsT>(value); }
+    template<typename ComputeResourceRequirementsT = InferenceComponentComputeResourceRequirements>
+    InferenceComponentSpecification& WithComputeResourceRequirements(ComputeResourceRequirementsT&& value) { SetComputeResourceRequirements(std::forward<ComputeResourceRequirementsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,14 +113,12 @@ namespace Model
      * existing inference component that contains the foundation model that you want to
      * adapt.</p>
      */
-    inline const Aws::String& GetBaseInferenceComponentName() const{ return m_baseInferenceComponentName; }
+    inline const Aws::String& GetBaseInferenceComponentName() const { return m_baseInferenceComponentName; }
     inline bool BaseInferenceComponentNameHasBeenSet() const { return m_baseInferenceComponentNameHasBeenSet; }
-    inline void SetBaseInferenceComponentName(const Aws::String& value) { m_baseInferenceComponentNameHasBeenSet = true; m_baseInferenceComponentName = value; }
-    inline void SetBaseInferenceComponentName(Aws::String&& value) { m_baseInferenceComponentNameHasBeenSet = true; m_baseInferenceComponentName = std::move(value); }
-    inline void SetBaseInferenceComponentName(const char* value) { m_baseInferenceComponentNameHasBeenSet = true; m_baseInferenceComponentName.assign(value); }
-    inline InferenceComponentSpecification& WithBaseInferenceComponentName(const Aws::String& value) { SetBaseInferenceComponentName(value); return *this;}
-    inline InferenceComponentSpecification& WithBaseInferenceComponentName(Aws::String&& value) { SetBaseInferenceComponentName(std::move(value)); return *this;}
-    inline InferenceComponentSpecification& WithBaseInferenceComponentName(const char* value) { SetBaseInferenceComponentName(value); return *this;}
+    template<typename BaseInferenceComponentNameT = Aws::String>
+    void SetBaseInferenceComponentName(BaseInferenceComponentNameT&& value) { m_baseInferenceComponentNameHasBeenSet = true; m_baseInferenceComponentName = std::forward<BaseInferenceComponentNameT>(value); }
+    template<typename BaseInferenceComponentNameT = Aws::String>
+    InferenceComponentSpecification& WithBaseInferenceComponentName(BaseInferenceComponentNameT&& value) { SetBaseInferenceComponentName(std::forward<BaseInferenceComponentNameT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,15 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdatePromptRequest::UpdatePromptRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_promptIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_s3UriHasBeenSet(false)
-{
-}
-
 Aws::String UpdatePromptRequest::SerializePayload() const
 {
   JsonValue payload;

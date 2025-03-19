@@ -18,14 +18,7 @@ namespace DataSync
 namespace Model
 {
 
-NfsMountOptions::NfsMountOptions() : 
-    m_version(NfsVersion::NOT_SET),
-    m_versionHasBeenSet(false)
-{
-}
-
 NfsMountOptions::NfsMountOptions(JsonView jsonValue)
-  : NfsMountOptions()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ NfsMountOptions& NfsMountOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Version"))
   {
     m_version = NfsVersionMapper::GetNfsVersionForName(jsonValue.GetString("Version"));
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

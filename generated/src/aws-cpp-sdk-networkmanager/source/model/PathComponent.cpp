@@ -18,16 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-PathComponent::PathComponent() : 
-    m_sequence(0),
-    m_sequenceHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_destinationCidrBlockHasBeenSet(false)
-{
-}
-
 PathComponent::PathComponent(JsonView jsonValue)
-  : PathComponent()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ PathComponent& PathComponent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Sequence"))
   {
     m_sequence = jsonValue.GetInteger("Sequence");
-
     m_sequenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Resource"))
   {
     m_resource = jsonValue.GetObject("Resource");
-
     m_resourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationCidrBlock"))
   {
     m_destinationCidrBlock = jsonValue.GetString("DestinationCidrBlock");
-
     m_destinationCidrBlockHasBeenSet = true;
   }
-
   return *this;
 }
 

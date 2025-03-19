@@ -18,13 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-DynamodbTableConfiguration::DynamodbTableConfiguration() : 
-    m_tablePolicyHasBeenSet(false)
-{
-}
-
 DynamodbTableConfiguration::DynamodbTableConfiguration(JsonView jsonValue)
-  : DynamodbTableConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DynamodbTableConfiguration& DynamodbTableConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("tablePolicy"))
   {
     m_tablePolicy = jsonValue.GetString("tablePolicy");
-
     m_tablePolicyHasBeenSet = true;
   }
-
   return *this;
 }
 

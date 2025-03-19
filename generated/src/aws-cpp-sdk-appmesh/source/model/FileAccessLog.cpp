@@ -18,14 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-FileAccessLog::FileAccessLog() : 
-    m_formatHasBeenSet(false),
-    m_pathHasBeenSet(false)
-{
-}
-
 FileAccessLog::FileAccessLog(JsonView jsonValue)
-  : FileAccessLog()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ FileAccessLog& FileAccessLog::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("format"))
   {
     m_format = jsonValue.GetObject("format");
-
     m_formatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("path"))
   {
     m_path = jsonValue.GetString("path");
-
     m_pathHasBeenSet = true;
   }
-
   return *this;
 }
 

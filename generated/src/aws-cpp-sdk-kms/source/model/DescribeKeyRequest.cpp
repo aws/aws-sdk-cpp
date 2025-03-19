@@ -12,12 +12,6 @@ using namespace Aws::KMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeKeyRequest::DescribeKeyRequest() : 
-    m_keyIdHasBeenSet(false),
-    m_grantTokensHasBeenSet(false)
-{
-}
-
 Aws::String DescribeKeyRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,16 +18,7 @@ namespace ChimeSDKIdentity
 namespace Model
 {
 
-EndpointState::EndpointState() : 
-    m_status(EndpointStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReason(EndpointStatusReason::NOT_SET),
-    m_statusReasonHasBeenSet(false)
-{
-}
-
 EndpointState::EndpointState(JsonView jsonValue)
-  : EndpointState()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ EndpointState& EndpointState::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Status"))
   {
     m_status = EndpointStatusMapper::GetEndpointStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusReason"))
   {
     m_statusReason = EndpointStatusReasonMapper::GetEndpointStatusReasonForName(jsonValue.GetString("StatusReason"));
-
     m_statusReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

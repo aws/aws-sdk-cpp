@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-LineSeriesAxisDisplayOptions::LineSeriesAxisDisplayOptions() : 
-    m_axisOptionsHasBeenSet(false),
-    m_missingDataConfigurationsHasBeenSet(false)
-{
-}
-
 LineSeriesAxisDisplayOptions::LineSeriesAxisDisplayOptions(JsonView jsonValue)
-  : LineSeriesAxisDisplayOptions()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ LineSeriesAxisDisplayOptions& LineSeriesAxisDisplayOptions::operator =(JsonView 
   if(jsonValue.ValueExists("AxisOptions"))
   {
     m_axisOptions = jsonValue.GetObject("AxisOptions");
-
     m_axisOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MissingDataConfigurations"))
   {
     Aws::Utils::Array<JsonView> missingDataConfigurationsJsonList = jsonValue.GetArray("MissingDataConfigurations");
@@ -48,7 +39,6 @@ LineSeriesAxisDisplayOptions& LineSeriesAxisDisplayOptions::operator =(JsonView 
     }
     m_missingDataConfigurationsHasBeenSet = true;
   }
-
   return *this;
 }
 

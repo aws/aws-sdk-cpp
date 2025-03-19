@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListChannelPlacementGroupsRequest::ListChannelPlacementGroupsRequest() : 
-    m_clusterIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListChannelPlacementGroupsRequest::SerializePayload() const
 {
   return {};

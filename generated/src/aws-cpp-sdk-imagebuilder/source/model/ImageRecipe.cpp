@@ -18,28 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-ImageRecipe::ImageRecipe() : 
-    m_arnHasBeenSet(false),
-    m_type(ImageType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_platform(Platform::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_componentsHasBeenSet(false),
-    m_parentImageHasBeenSet(false),
-    m_blockDeviceMappingsHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_workingDirectoryHasBeenSet(false),
-    m_additionalInstanceConfigurationHasBeenSet(false)
-{
-}
-
 ImageRecipe::ImageRecipe(JsonView jsonValue)
-  : ImageRecipe()
 {
   *this = jsonValue;
 }
@@ -49,52 +28,38 @@ ImageRecipe& ImageRecipe::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = ImageTypeMapper::GetImageTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("platform"))
   {
     m_platform = PlatformMapper::GetPlatformForName(jsonValue.GetString("platform"));
-
     m_platformHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("owner"))
   {
     m_owner = jsonValue.GetString("owner");
-
     m_ownerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("components"))
   {
     Aws::Utils::Array<JsonView> componentsJsonList = jsonValue.GetArray("components");
@@ -104,14 +69,11 @@ ImageRecipe& ImageRecipe::operator =(JsonView jsonValue)
     }
     m_componentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parentImage"))
   {
     m_parentImage = jsonValue.GetString("parentImage");
-
     m_parentImageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("blockDeviceMappings"))
   {
     Aws::Utils::Array<JsonView> blockDeviceMappingsJsonList = jsonValue.GetArray("blockDeviceMappings");
@@ -121,14 +83,11 @@ ImageRecipe& ImageRecipe::operator =(JsonView jsonValue)
     }
     m_blockDeviceMappingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dateCreated"))
   {
     m_dateCreated = jsonValue.GetString("dateCreated");
-
     m_dateCreatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -138,21 +97,16 @@ ImageRecipe& ImageRecipe::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workingDirectory"))
   {
     m_workingDirectory = jsonValue.GetString("workingDirectory");
-
     m_workingDirectoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("additionalInstanceConfiguration"))
   {
     m_additionalInstanceConfiguration = jsonValue.GetObject("additionalInstanceConfiguration");
-
     m_additionalInstanceConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

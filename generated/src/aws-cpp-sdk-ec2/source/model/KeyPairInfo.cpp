@@ -20,20 +20,7 @@ namespace EC2
 namespace Model
 {
 
-KeyPairInfo::KeyPairInfo() : 
-    m_keyPairIdHasBeenSet(false),
-    m_keyType(KeyType::NOT_SET),
-    m_keyTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_publicKeyHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_keyNameHasBeenSet(false),
-    m_keyFingerprintHasBeenSet(false)
-{
-}
-
 KeyPairInfo::KeyPairInfo(const XmlNode& xmlNode)
-  : KeyPairInfo()
 {
   *this = xmlNode;
 }
@@ -53,13 +40,14 @@ KeyPairInfo& KeyPairInfo::operator =(const XmlNode& xmlNode)
     XmlNode keyTypeNode = resultNode.FirstChild("keyType");
     if(!keyTypeNode.IsNull())
     {
-      m_keyType = KeyTypeMapper::GetKeyTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(keyTypeNode.GetText()).c_str()).c_str());
+      m_keyType = KeyTypeMapper::GetKeyTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(keyTypeNode.GetText()).c_str()));
       m_keyTypeHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

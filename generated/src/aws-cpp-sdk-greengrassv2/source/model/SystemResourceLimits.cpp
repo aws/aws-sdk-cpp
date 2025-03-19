@@ -18,16 +18,7 @@ namespace GreengrassV2
 namespace Model
 {
 
-SystemResourceLimits::SystemResourceLimits() : 
-    m_memory(0),
-    m_memoryHasBeenSet(false),
-    m_cpus(0.0),
-    m_cpusHasBeenSet(false)
-{
-}
-
 SystemResourceLimits::SystemResourceLimits(JsonView jsonValue)
-  : SystemResourceLimits()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ SystemResourceLimits& SystemResourceLimits::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("memory"))
   {
     m_memory = jsonValue.GetInt64("memory");
-
     m_memoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cpus"))
   {
     m_cpus = jsonValue.GetDouble("cpus");
-
     m_cpusHasBeenSet = true;
   }
-
   return *this;
 }
 

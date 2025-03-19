@@ -21,7 +21,7 @@ namespace Model
   class StopImportRequest : public CloudTrailRequest
   {
   public:
-    AWS_CLOUDTRAIL_API StopImportRequest();
+    AWS_CLOUDTRAIL_API StopImportRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p> The ID of the import. </p>
      */
-    inline const Aws::String& GetImportId() const{ return m_importId; }
+    inline const Aws::String& GetImportId() const { return m_importId; }
     inline bool ImportIdHasBeenSet() const { return m_importIdHasBeenSet; }
-    inline void SetImportId(const Aws::String& value) { m_importIdHasBeenSet = true; m_importId = value; }
-    inline void SetImportId(Aws::String&& value) { m_importIdHasBeenSet = true; m_importId = std::move(value); }
-    inline void SetImportId(const char* value) { m_importIdHasBeenSet = true; m_importId.assign(value); }
-    inline StopImportRequest& WithImportId(const Aws::String& value) { SetImportId(value); return *this;}
-    inline StopImportRequest& WithImportId(Aws::String&& value) { SetImportId(std::move(value)); return *this;}
-    inline StopImportRequest& WithImportId(const char* value) { SetImportId(value); return *this;}
+    template<typename ImportIdT = Aws::String>
+    void SetImportId(ImportIdT&& value) { m_importIdHasBeenSet = true; m_importId = std::forward<ImportIdT>(value); }
+    template<typename ImportIdT = Aws::String>
+    StopImportRequest& WithImportId(ImportIdT&& value) { SetImportId(std::forward<ImportIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,12 +12,6 @@ using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteUsagePlanKeyRequest::DeleteUsagePlanKeyRequest() : 
-    m_usagePlanIdHasBeenSet(false),
-    m_keyIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteUsagePlanKeyRequest::SerializePayload() const
 {
   return {};

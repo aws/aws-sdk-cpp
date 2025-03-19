@@ -18,13 +18,7 @@ namespace SMS
 namespace Model
 {
 
-SSMOutput::SSMOutput() : 
-    m_s3LocationHasBeenSet(false)
-{
-}
-
 SSMOutput::SSMOutput(JsonView jsonValue)
-  : SSMOutput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SSMOutput& SSMOutput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3Location"))
   {
     m_s3Location = jsonValue.GetObject("s3Location");
-
     m_s3LocationHasBeenSet = true;
   }
-
   return *this;
 }
 

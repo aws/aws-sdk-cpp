@@ -12,14 +12,6 @@ using namespace Aws::ElasticsearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpgradeElasticsearchDomainRequest::UpgradeElasticsearchDomainRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_targetVersionHasBeenSet(false),
-    m_performCheckOnly(false),
-    m_performCheckOnlyHasBeenSet(false)
-{
-}
-
 Aws::String UpgradeElasticsearchDomainRequest::SerializePayload() const
 {
   JsonValue payload;

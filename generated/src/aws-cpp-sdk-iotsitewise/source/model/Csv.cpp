@@ -18,13 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-Csv::Csv() : 
-    m_columnNamesHasBeenSet(false)
-{
-}
-
 Csv::Csv(JsonView jsonValue)
-  : Csv()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ Csv& Csv::operator =(JsonView jsonValue)
     }
     m_columnNamesHasBeenSet = true;
   }
-
   return *this;
 }
 

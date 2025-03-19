@@ -33,7 +33,7 @@ namespace Model
   class CloudWatchLogGroupLogDestination
   {
   public:
-    AWS_LEXMODELSV2_API CloudWatchLogGroupLogDestination();
+    AWS_LEXMODELSV2_API CloudWatchLogGroupLogDestination() = default;
     AWS_LEXMODELSV2_API CloudWatchLogGroupLogDestination(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API CloudWatchLogGroupLogDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the log group where text and metadata logs
      * are delivered.</p>
      */
-    inline const Aws::String& GetCloudWatchLogGroupArn() const{ return m_cloudWatchLogGroupArn; }
+    inline const Aws::String& GetCloudWatchLogGroupArn() const { return m_cloudWatchLogGroupArn; }
     inline bool CloudWatchLogGroupArnHasBeenSet() const { return m_cloudWatchLogGroupArnHasBeenSet; }
-    inline void SetCloudWatchLogGroupArn(const Aws::String& value) { m_cloudWatchLogGroupArnHasBeenSet = true; m_cloudWatchLogGroupArn = value; }
-    inline void SetCloudWatchLogGroupArn(Aws::String&& value) { m_cloudWatchLogGroupArnHasBeenSet = true; m_cloudWatchLogGroupArn = std::move(value); }
-    inline void SetCloudWatchLogGroupArn(const char* value) { m_cloudWatchLogGroupArnHasBeenSet = true; m_cloudWatchLogGroupArn.assign(value); }
-    inline CloudWatchLogGroupLogDestination& WithCloudWatchLogGroupArn(const Aws::String& value) { SetCloudWatchLogGroupArn(value); return *this;}
-    inline CloudWatchLogGroupLogDestination& WithCloudWatchLogGroupArn(Aws::String&& value) { SetCloudWatchLogGroupArn(std::move(value)); return *this;}
-    inline CloudWatchLogGroupLogDestination& WithCloudWatchLogGroupArn(const char* value) { SetCloudWatchLogGroupArn(value); return *this;}
+    template<typename CloudWatchLogGroupArnT = Aws::String>
+    void SetCloudWatchLogGroupArn(CloudWatchLogGroupArnT&& value) { m_cloudWatchLogGroupArnHasBeenSet = true; m_cloudWatchLogGroupArn = std::forward<CloudWatchLogGroupArnT>(value); }
+    template<typename CloudWatchLogGroupArnT = Aws::String>
+    CloudWatchLogGroupLogDestination& WithCloudWatchLogGroupArn(CloudWatchLogGroupArnT&& value) { SetCloudWatchLogGroupArn(std::forward<CloudWatchLogGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>The prefix of the log stream name within the log group that you specified
      * </p>
      */
-    inline const Aws::String& GetLogPrefix() const{ return m_logPrefix; }
+    inline const Aws::String& GetLogPrefix() const { return m_logPrefix; }
     inline bool LogPrefixHasBeenSet() const { return m_logPrefixHasBeenSet; }
-    inline void SetLogPrefix(const Aws::String& value) { m_logPrefixHasBeenSet = true; m_logPrefix = value; }
-    inline void SetLogPrefix(Aws::String&& value) { m_logPrefixHasBeenSet = true; m_logPrefix = std::move(value); }
-    inline void SetLogPrefix(const char* value) { m_logPrefixHasBeenSet = true; m_logPrefix.assign(value); }
-    inline CloudWatchLogGroupLogDestination& WithLogPrefix(const Aws::String& value) { SetLogPrefix(value); return *this;}
-    inline CloudWatchLogGroupLogDestination& WithLogPrefix(Aws::String&& value) { SetLogPrefix(std::move(value)); return *this;}
-    inline CloudWatchLogGroupLogDestination& WithLogPrefix(const char* value) { SetLogPrefix(value); return *this;}
+    template<typename LogPrefixT = Aws::String>
+    void SetLogPrefix(LogPrefixT&& value) { m_logPrefixHasBeenSet = true; m_logPrefix = std::forward<LogPrefixT>(value); }
+    template<typename LogPrefixT = Aws::String>
+    CloudWatchLogGroupLogDestination& WithLogPrefix(LogPrefixT&& value) { SetLogPrefix(std::forward<LogPrefixT>(value)); return *this;}
     ///@}
   private:
 

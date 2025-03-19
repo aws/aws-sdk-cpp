@@ -12,18 +12,6 @@ using namespace Aws::EventBridge::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateApiDestinationRequest::CreateApiDestinationRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_connectionArnHasBeenSet(false),
-    m_invocationEndpointHasBeenSet(false),
-    m_httpMethod(ApiDestinationHttpMethod::NOT_SET),
-    m_httpMethodHasBeenSet(false),
-    m_invocationRateLimitPerSecond(0),
-    m_invocationRateLimitPerSecondHasBeenSet(false)
-{
-}
-
 Aws::String CreateApiDestinationRequest::SerializePayload() const
 {
   JsonValue payload;

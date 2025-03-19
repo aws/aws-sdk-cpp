@@ -20,14 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-InstanceMonitoring::InstanceMonitoring() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 InstanceMonitoring::InstanceMonitoring(const XmlNode& xmlNode)
-  : InstanceMonitoring()
 {
   *this = xmlNode;
 }

@@ -18,15 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-IdNamespaceAssociationInputReferenceConfig::IdNamespaceAssociationInputReferenceConfig() : 
-    m_inputReferenceArnHasBeenSet(false),
-    m_manageResourcePolicies(false),
-    m_manageResourcePoliciesHasBeenSet(false)
-{
-}
-
 IdNamespaceAssociationInputReferenceConfig::IdNamespaceAssociationInputReferenceConfig(JsonView jsonValue)
-  : IdNamespaceAssociationInputReferenceConfig()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ IdNamespaceAssociationInputReferenceConfig& IdNamespaceAssociationInputReference
   if(jsonValue.ValueExists("inputReferenceArn"))
   {
     m_inputReferenceArn = jsonValue.GetString("inputReferenceArn");
-
     m_inputReferenceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("manageResourcePolicies"))
   {
     m_manageResourcePolicies = jsonValue.GetBool("manageResourcePolicies");
-
     m_manageResourcePoliciesHasBeenSet = true;
   }
-
   return *this;
 }
 

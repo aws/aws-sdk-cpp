@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-EvaluateExpressionResult::EvaluateExpressionResult()
-{
-}
-
 EvaluateExpressionResult::EvaluateExpressionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ EvaluateExpressionResult& EvaluateExpressionResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("evaluatedExpression"))
   {
     m_evaluatedExpression = jsonValue.GetString("evaluatedExpression");
-
+    m_evaluatedExpressionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

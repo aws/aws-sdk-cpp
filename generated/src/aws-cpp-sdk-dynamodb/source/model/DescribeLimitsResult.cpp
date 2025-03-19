@@ -17,16 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeLimitsResult::DescribeLimitsResult() : 
-    m_accountMaxReadCapacityUnits(0),
-    m_accountMaxWriteCapacityUnits(0),
-    m_tableMaxReadCapacityUnits(0),
-    m_tableMaxWriteCapacityUnits(0)
-{
-}
-
 DescribeLimitsResult::DescribeLimitsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeLimitsResult()
 {
   *this = result;
 }
@@ -37,33 +28,30 @@ DescribeLimitsResult& DescribeLimitsResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("AccountMaxReadCapacityUnits"))
   {
     m_accountMaxReadCapacityUnits = jsonValue.GetInt64("AccountMaxReadCapacityUnits");
-
+    m_accountMaxReadCapacityUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountMaxWriteCapacityUnits"))
   {
     m_accountMaxWriteCapacityUnits = jsonValue.GetInt64("AccountMaxWriteCapacityUnits");
-
+    m_accountMaxWriteCapacityUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableMaxReadCapacityUnits"))
   {
     m_tableMaxReadCapacityUnits = jsonValue.GetInt64("TableMaxReadCapacityUnits");
-
+    m_tableMaxReadCapacityUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableMaxWriteCapacityUnits"))
   {
     m_tableMaxWriteCapacityUnits = jsonValue.GetInt64("TableMaxWriteCapacityUnits");
-
+    m_tableMaxWriteCapacityUnitsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

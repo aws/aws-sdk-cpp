@@ -18,13 +18,7 @@ namespace ConnectWisdomService
 namespace Model
 {
 
-QuickResponseContentProvider::QuickResponseContentProvider() : 
-    m_contentHasBeenSet(false)
-{
-}
-
 QuickResponseContentProvider::QuickResponseContentProvider(JsonView jsonValue)
-  : QuickResponseContentProvider()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ QuickResponseContentProvider& QuickResponseContentProvider::operator =(JsonView 
   if(jsonValue.ValueExists("content"))
   {
     m_content = jsonValue.GetString("content");
-
     m_contentHasBeenSet = true;
   }
-
   return *this;
 }
 

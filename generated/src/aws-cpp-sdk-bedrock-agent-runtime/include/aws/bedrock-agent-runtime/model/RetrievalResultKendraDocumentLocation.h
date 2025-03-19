@@ -31,7 +31,7 @@ namespace Model
   class RetrievalResultKendraDocumentLocation
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API RetrievalResultKendraDocumentLocation();
+    AWS_BEDROCKAGENTRUNTIME_API RetrievalResultKendraDocumentLocation() = default;
     AWS_BEDROCKAGENTRUNTIME_API RetrievalResultKendraDocumentLocation(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API RetrievalResultKendraDocumentLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The document's uri.</p>
      */
-    inline const Aws::String& GetUri() const{ return m_uri; }
+    inline const Aws::String& GetUri() const { return m_uri; }
     inline bool UriHasBeenSet() const { return m_uriHasBeenSet; }
-    inline void SetUri(const Aws::String& value) { m_uriHasBeenSet = true; m_uri = value; }
-    inline void SetUri(Aws::String&& value) { m_uriHasBeenSet = true; m_uri = std::move(value); }
-    inline void SetUri(const char* value) { m_uriHasBeenSet = true; m_uri.assign(value); }
-    inline RetrievalResultKendraDocumentLocation& WithUri(const Aws::String& value) { SetUri(value); return *this;}
-    inline RetrievalResultKendraDocumentLocation& WithUri(Aws::String&& value) { SetUri(std::move(value)); return *this;}
-    inline RetrievalResultKendraDocumentLocation& WithUri(const char* value) { SetUri(value); return *this;}
+    template<typename UriT = Aws::String>
+    void SetUri(UriT&& value) { m_uriHasBeenSet = true; m_uri = std::forward<UriT>(value); }
+    template<typename UriT = Aws::String>
+    RetrievalResultKendraDocumentLocation& WithUri(UriT&& value) { SetUri(std::forward<UriT>(value)); return *this;}
     ///@}
   private:
 

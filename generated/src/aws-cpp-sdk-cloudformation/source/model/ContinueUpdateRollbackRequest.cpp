@@ -10,14 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-ContinueUpdateRollbackRequest::ContinueUpdateRollbackRequest() : 
-    m_stackNameHasBeenSet(false),
-    m_roleARNHasBeenSet(false),
-    m_resourcesToSkipHasBeenSet(false),
-    m_clientRequestTokenHasBeenSet(false)
-{
-}
-
 Aws::String ContinueUpdateRollbackRequest::SerializePayload() const
 {
   Aws::StringStream ss;

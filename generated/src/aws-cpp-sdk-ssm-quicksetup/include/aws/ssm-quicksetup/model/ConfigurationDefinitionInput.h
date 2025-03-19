@@ -33,7 +33,7 @@ namespace Model
   class ConfigurationDefinitionInput
   {
   public:
-    AWS_SSMQUICKSETUP_API ConfigurationDefinitionInput();
+    AWS_SSMQUICKSETUP_API ConfigurationDefinitionInput() = default;
     AWS_SSMQUICKSETUP_API ConfigurationDefinitionInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMQUICKSETUP_API ConfigurationDefinitionInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMQUICKSETUP_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
      * <p>The ARN of the IAM role used to administrate local configuration
      * deployments.</p>
      */
-    inline const Aws::String& GetLocalDeploymentAdministrationRoleArn() const{ return m_localDeploymentAdministrationRoleArn; }
+    inline const Aws::String& GetLocalDeploymentAdministrationRoleArn() const { return m_localDeploymentAdministrationRoleArn; }
     inline bool LocalDeploymentAdministrationRoleArnHasBeenSet() const { return m_localDeploymentAdministrationRoleArnHasBeenSet; }
-    inline void SetLocalDeploymentAdministrationRoleArn(const Aws::String& value) { m_localDeploymentAdministrationRoleArnHasBeenSet = true; m_localDeploymentAdministrationRoleArn = value; }
-    inline void SetLocalDeploymentAdministrationRoleArn(Aws::String&& value) { m_localDeploymentAdministrationRoleArnHasBeenSet = true; m_localDeploymentAdministrationRoleArn = std::move(value); }
-    inline void SetLocalDeploymentAdministrationRoleArn(const char* value) { m_localDeploymentAdministrationRoleArnHasBeenSet = true; m_localDeploymentAdministrationRoleArn.assign(value); }
-    inline ConfigurationDefinitionInput& WithLocalDeploymentAdministrationRoleArn(const Aws::String& value) { SetLocalDeploymentAdministrationRoleArn(value); return *this;}
-    inline ConfigurationDefinitionInput& WithLocalDeploymentAdministrationRoleArn(Aws::String&& value) { SetLocalDeploymentAdministrationRoleArn(std::move(value)); return *this;}
-    inline ConfigurationDefinitionInput& WithLocalDeploymentAdministrationRoleArn(const char* value) { SetLocalDeploymentAdministrationRoleArn(value); return *this;}
+    template<typename LocalDeploymentAdministrationRoleArnT = Aws::String>
+    void SetLocalDeploymentAdministrationRoleArn(LocalDeploymentAdministrationRoleArnT&& value) { m_localDeploymentAdministrationRoleArnHasBeenSet = true; m_localDeploymentAdministrationRoleArn = std::forward<LocalDeploymentAdministrationRoleArnT>(value); }
+    template<typename LocalDeploymentAdministrationRoleArnT = Aws::String>
+    ConfigurationDefinitionInput& WithLocalDeploymentAdministrationRoleArn(LocalDeploymentAdministrationRoleArnT&& value) { SetLocalDeploymentAdministrationRoleArn(std::forward<LocalDeploymentAdministrationRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the IAM role used to deploy local configurations.</p>
      */
-    inline const Aws::String& GetLocalDeploymentExecutionRoleName() const{ return m_localDeploymentExecutionRoleName; }
+    inline const Aws::String& GetLocalDeploymentExecutionRoleName() const { return m_localDeploymentExecutionRoleName; }
     inline bool LocalDeploymentExecutionRoleNameHasBeenSet() const { return m_localDeploymentExecutionRoleNameHasBeenSet; }
-    inline void SetLocalDeploymentExecutionRoleName(const Aws::String& value) { m_localDeploymentExecutionRoleNameHasBeenSet = true; m_localDeploymentExecutionRoleName = value; }
-    inline void SetLocalDeploymentExecutionRoleName(Aws::String&& value) { m_localDeploymentExecutionRoleNameHasBeenSet = true; m_localDeploymentExecutionRoleName = std::move(value); }
-    inline void SetLocalDeploymentExecutionRoleName(const char* value) { m_localDeploymentExecutionRoleNameHasBeenSet = true; m_localDeploymentExecutionRoleName.assign(value); }
-    inline ConfigurationDefinitionInput& WithLocalDeploymentExecutionRoleName(const Aws::String& value) { SetLocalDeploymentExecutionRoleName(value); return *this;}
-    inline ConfigurationDefinitionInput& WithLocalDeploymentExecutionRoleName(Aws::String&& value) { SetLocalDeploymentExecutionRoleName(std::move(value)); return *this;}
-    inline ConfigurationDefinitionInput& WithLocalDeploymentExecutionRoleName(const char* value) { SetLocalDeploymentExecutionRoleName(value); return *this;}
+    template<typename LocalDeploymentExecutionRoleNameT = Aws::String>
+    void SetLocalDeploymentExecutionRoleName(LocalDeploymentExecutionRoleNameT&& value) { m_localDeploymentExecutionRoleNameHasBeenSet = true; m_localDeploymentExecutionRoleName = std::forward<LocalDeploymentExecutionRoleNameT>(value); }
+    template<typename LocalDeploymentExecutionRoleNameT = Aws::String>
+    ConfigurationDefinitionInput& WithLocalDeploymentExecutionRoleName(LocalDeploymentExecutionRoleNameT&& value) { SetLocalDeploymentExecutionRoleName(std::forward<LocalDeploymentExecutionRoleNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -433,47 +429,40 @@ namespace Model
      * Services Regions you want to deploy the configuration to.</p> </li> </ul> </li>
      * </ul> </dd> </dl>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline ConfigurationDefinitionInput& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
-    inline ConfigurationDefinitionInput& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
-    inline ConfigurationDefinitionInput& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
-    inline ConfigurationDefinitionInput& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-    inline ConfigurationDefinitionInput& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline ConfigurationDefinitionInput& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline ConfigurationDefinitionInput& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline ConfigurationDefinitionInput& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-    inline ConfigurationDefinitionInput& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::String>>
+    ConfigurationDefinitionInput& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
+    template<typename ParametersKeyT = Aws::String, typename ParametersValueT = Aws::String>
+    ConfigurationDefinitionInput& AddParameters(ParametersKeyT&& key, ParametersValueT&& value) {
+      m_parametersHasBeenSet = true; m_parameters.emplace(std::forward<ParametersKeyT>(key), std::forward<ParametersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The type of the Quick Setup configuration.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline ConfigurationDefinitionInput& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline ConfigurationDefinitionInput& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline ConfigurationDefinitionInput& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    ConfigurationDefinitionInput& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the Quick Setup type to use.</p>
      */
-    inline const Aws::String& GetTypeVersion() const{ return m_typeVersion; }
+    inline const Aws::String& GetTypeVersion() const { return m_typeVersion; }
     inline bool TypeVersionHasBeenSet() const { return m_typeVersionHasBeenSet; }
-    inline void SetTypeVersion(const Aws::String& value) { m_typeVersionHasBeenSet = true; m_typeVersion = value; }
-    inline void SetTypeVersion(Aws::String&& value) { m_typeVersionHasBeenSet = true; m_typeVersion = std::move(value); }
-    inline void SetTypeVersion(const char* value) { m_typeVersionHasBeenSet = true; m_typeVersion.assign(value); }
-    inline ConfigurationDefinitionInput& WithTypeVersion(const Aws::String& value) { SetTypeVersion(value); return *this;}
-    inline ConfigurationDefinitionInput& WithTypeVersion(Aws::String&& value) { SetTypeVersion(std::move(value)); return *this;}
-    inline ConfigurationDefinitionInput& WithTypeVersion(const char* value) { SetTypeVersion(value); return *this;}
+    template<typename TypeVersionT = Aws::String>
+    void SetTypeVersion(TypeVersionT&& value) { m_typeVersionHasBeenSet = true; m_typeVersion = std::forward<TypeVersionT>(value); }
+    template<typename TypeVersionT = Aws::String>
+    ConfigurationDefinitionInput& WithTypeVersion(TypeVersionT&& value) { SetTypeVersion(std::forward<TypeVersionT>(value)); return *this;}
     ///@}
   private:
 

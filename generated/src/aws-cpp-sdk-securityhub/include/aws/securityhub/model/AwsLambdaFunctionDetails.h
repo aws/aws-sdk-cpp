@@ -39,7 +39,7 @@ namespace Model
   class AwsLambdaFunctionDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsLambdaFunctionDetails();
+    AWS_SECURITYHUB_API AwsLambdaFunctionDetails() = default;
     AWS_SECURITYHUB_API AwsLambdaFunctionDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsLambdaFunctionDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,78 +49,72 @@ namespace Model
     /**
      * <p>An <code>AwsLambdaFunctionCode</code> object.</p>
      */
-    inline const AwsLambdaFunctionCode& GetCode() const{ return m_code; }
+    inline const AwsLambdaFunctionCode& GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const AwsLambdaFunctionCode& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(AwsLambdaFunctionCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline AwsLambdaFunctionDetails& WithCode(const AwsLambdaFunctionCode& value) { SetCode(value); return *this;}
-    inline AwsLambdaFunctionDetails& WithCode(AwsLambdaFunctionCode&& value) { SetCode(std::move(value)); return *this;}
+    template<typename CodeT = AwsLambdaFunctionCode>
+    void SetCode(CodeT&& value) { m_codeHasBeenSet = true; m_code = std::forward<CodeT>(value); }
+    template<typename CodeT = AwsLambdaFunctionCode>
+    AwsLambdaFunctionDetails& WithCode(CodeT&& value) { SetCode(std::forward<CodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The SHA256 hash of the function's deployment package.</p>
      */
-    inline const Aws::String& GetCodeSha256() const{ return m_codeSha256; }
+    inline const Aws::String& GetCodeSha256() const { return m_codeSha256; }
     inline bool CodeSha256HasBeenSet() const { return m_codeSha256HasBeenSet; }
-    inline void SetCodeSha256(const Aws::String& value) { m_codeSha256HasBeenSet = true; m_codeSha256 = value; }
-    inline void SetCodeSha256(Aws::String&& value) { m_codeSha256HasBeenSet = true; m_codeSha256 = std::move(value); }
-    inline void SetCodeSha256(const char* value) { m_codeSha256HasBeenSet = true; m_codeSha256.assign(value); }
-    inline AwsLambdaFunctionDetails& WithCodeSha256(const Aws::String& value) { SetCodeSha256(value); return *this;}
-    inline AwsLambdaFunctionDetails& WithCodeSha256(Aws::String&& value) { SetCodeSha256(std::move(value)); return *this;}
-    inline AwsLambdaFunctionDetails& WithCodeSha256(const char* value) { SetCodeSha256(value); return *this;}
+    template<typename CodeSha256T = Aws::String>
+    void SetCodeSha256(CodeSha256T&& value) { m_codeSha256HasBeenSet = true; m_codeSha256 = std::forward<CodeSha256T>(value); }
+    template<typename CodeSha256T = Aws::String>
+    AwsLambdaFunctionDetails& WithCodeSha256(CodeSha256T&& value) { SetCodeSha256(std::forward<CodeSha256T>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The function's dead letter queue.</p>
      */
-    inline const AwsLambdaFunctionDeadLetterConfig& GetDeadLetterConfig() const{ return m_deadLetterConfig; }
+    inline const AwsLambdaFunctionDeadLetterConfig& GetDeadLetterConfig() const { return m_deadLetterConfig; }
     inline bool DeadLetterConfigHasBeenSet() const { return m_deadLetterConfigHasBeenSet; }
-    inline void SetDeadLetterConfig(const AwsLambdaFunctionDeadLetterConfig& value) { m_deadLetterConfigHasBeenSet = true; m_deadLetterConfig = value; }
-    inline void SetDeadLetterConfig(AwsLambdaFunctionDeadLetterConfig&& value) { m_deadLetterConfigHasBeenSet = true; m_deadLetterConfig = std::move(value); }
-    inline AwsLambdaFunctionDetails& WithDeadLetterConfig(const AwsLambdaFunctionDeadLetterConfig& value) { SetDeadLetterConfig(value); return *this;}
-    inline AwsLambdaFunctionDetails& WithDeadLetterConfig(AwsLambdaFunctionDeadLetterConfig&& value) { SetDeadLetterConfig(std::move(value)); return *this;}
+    template<typename DeadLetterConfigT = AwsLambdaFunctionDeadLetterConfig>
+    void SetDeadLetterConfig(DeadLetterConfigT&& value) { m_deadLetterConfigHasBeenSet = true; m_deadLetterConfig = std::forward<DeadLetterConfigT>(value); }
+    template<typename DeadLetterConfigT = AwsLambdaFunctionDeadLetterConfig>
+    AwsLambdaFunctionDetails& WithDeadLetterConfig(DeadLetterConfigT&& value) { SetDeadLetterConfig(std::forward<DeadLetterConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The function's environment variables.</p>
      */
-    inline const AwsLambdaFunctionEnvironment& GetEnvironment() const{ return m_environment; }
+    inline const AwsLambdaFunctionEnvironment& GetEnvironment() const { return m_environment; }
     inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
-    inline void SetEnvironment(const AwsLambdaFunctionEnvironment& value) { m_environmentHasBeenSet = true; m_environment = value; }
-    inline void SetEnvironment(AwsLambdaFunctionEnvironment&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
-    inline AwsLambdaFunctionDetails& WithEnvironment(const AwsLambdaFunctionEnvironment& value) { SetEnvironment(value); return *this;}
-    inline AwsLambdaFunctionDetails& WithEnvironment(AwsLambdaFunctionEnvironment&& value) { SetEnvironment(std::move(value)); return *this;}
+    template<typename EnvironmentT = AwsLambdaFunctionEnvironment>
+    void SetEnvironment(EnvironmentT&& value) { m_environmentHasBeenSet = true; m_environment = std::forward<EnvironmentT>(value); }
+    template<typename EnvironmentT = AwsLambdaFunctionEnvironment>
+    AwsLambdaFunctionDetails& WithEnvironment(EnvironmentT&& value) { SetEnvironment(std::forward<EnvironmentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the function.</p>
      */
-    inline const Aws::String& GetFunctionName() const{ return m_functionName; }
+    inline const Aws::String& GetFunctionName() const { return m_functionName; }
     inline bool FunctionNameHasBeenSet() const { return m_functionNameHasBeenSet; }
-    inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
-    inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
-    inline void SetFunctionName(const char* value) { m_functionNameHasBeenSet = true; m_functionName.assign(value); }
-    inline AwsLambdaFunctionDetails& WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
-    inline AwsLambdaFunctionDetails& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
-    inline AwsLambdaFunctionDetails& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
+    template<typename FunctionNameT = Aws::String>
+    void SetFunctionName(FunctionNameT&& value) { m_functionNameHasBeenSet = true; m_functionName = std::forward<FunctionNameT>(value); }
+    template<typename FunctionNameT = Aws::String>
+    AwsLambdaFunctionDetails& WithFunctionName(FunctionNameT&& value) { SetFunctionName(std::forward<FunctionNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The function that Lambda calls to begin executing your function.</p>
      */
-    inline const Aws::String& GetHandler() const{ return m_handler; }
+    inline const Aws::String& GetHandler() const { return m_handler; }
     inline bool HandlerHasBeenSet() const { return m_handlerHasBeenSet; }
-    inline void SetHandler(const Aws::String& value) { m_handlerHasBeenSet = true; m_handler = value; }
-    inline void SetHandler(Aws::String&& value) { m_handlerHasBeenSet = true; m_handler = std::move(value); }
-    inline void SetHandler(const char* value) { m_handlerHasBeenSet = true; m_handler.assign(value); }
-    inline AwsLambdaFunctionDetails& WithHandler(const Aws::String& value) { SetHandler(value); return *this;}
-    inline AwsLambdaFunctionDetails& WithHandler(Aws::String&& value) { SetHandler(std::move(value)); return *this;}
-    inline AwsLambdaFunctionDetails& WithHandler(const char* value) { SetHandler(value); return *this;}
+    template<typename HandlerT = Aws::String>
+    void SetHandler(HandlerT&& value) { m_handlerHasBeenSet = true; m_handler = std::forward<HandlerT>(value); }
+    template<typename HandlerT = Aws::String>
+    AwsLambdaFunctionDetails& WithHandler(HandlerT&& value) { SetHandler(std::forward<HandlerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -129,14 +123,12 @@ namespace Model
      * This key is only returned if you've configured a customer managed customer
      * managed key.</p>
      */
-    inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
+    inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
-    inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
-    inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
-    inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
-    inline AwsLambdaFunctionDetails& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
-    inline AwsLambdaFunctionDetails& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
-    inline AwsLambdaFunctionDetails& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
+    template<typename KmsKeyArnT = Aws::String>
+    void SetKmsKeyArn(KmsKeyArnT&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::forward<KmsKeyArnT>(value); }
+    template<typename KmsKeyArnT = Aws::String>
+    AwsLambdaFunctionDetails& WithKmsKeyArn(KmsKeyArnT&& value) { SetKmsKeyArn(std::forward<KmsKeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -145,49 +137,45 @@ namespace Model
      * about the validation and formatting of timestamp fields in Security Hub, see <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
      */
-    inline const Aws::String& GetLastModified() const{ return m_lastModified; }
+    inline const Aws::String& GetLastModified() const { return m_lastModified; }
     inline bool LastModifiedHasBeenSet() const { return m_lastModifiedHasBeenSet; }
-    inline void SetLastModified(const Aws::String& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
-    inline void SetLastModified(Aws::String&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = std::move(value); }
-    inline void SetLastModified(const char* value) { m_lastModifiedHasBeenSet = true; m_lastModified.assign(value); }
-    inline AwsLambdaFunctionDetails& WithLastModified(const Aws::String& value) { SetLastModified(value); return *this;}
-    inline AwsLambdaFunctionDetails& WithLastModified(Aws::String&& value) { SetLastModified(std::move(value)); return *this;}
-    inline AwsLambdaFunctionDetails& WithLastModified(const char* value) { SetLastModified(value); return *this;}
+    template<typename LastModifiedT = Aws::String>
+    void SetLastModified(LastModifiedT&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = std::forward<LastModifiedT>(value); }
+    template<typename LastModifiedT = Aws::String>
+    AwsLambdaFunctionDetails& WithLastModified(LastModifiedT&& value) { SetLastModified(std::forward<LastModifiedT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The function's layers.</p>
      */
-    inline const Aws::Vector<AwsLambdaFunctionLayer>& GetLayers() const{ return m_layers; }
+    inline const Aws::Vector<AwsLambdaFunctionLayer>& GetLayers() const { return m_layers; }
     inline bool LayersHasBeenSet() const { return m_layersHasBeenSet; }
-    inline void SetLayers(const Aws::Vector<AwsLambdaFunctionLayer>& value) { m_layersHasBeenSet = true; m_layers = value; }
-    inline void SetLayers(Aws::Vector<AwsLambdaFunctionLayer>&& value) { m_layersHasBeenSet = true; m_layers = std::move(value); }
-    inline AwsLambdaFunctionDetails& WithLayers(const Aws::Vector<AwsLambdaFunctionLayer>& value) { SetLayers(value); return *this;}
-    inline AwsLambdaFunctionDetails& WithLayers(Aws::Vector<AwsLambdaFunctionLayer>&& value) { SetLayers(std::move(value)); return *this;}
-    inline AwsLambdaFunctionDetails& AddLayers(const AwsLambdaFunctionLayer& value) { m_layersHasBeenSet = true; m_layers.push_back(value); return *this; }
-    inline AwsLambdaFunctionDetails& AddLayers(AwsLambdaFunctionLayer&& value) { m_layersHasBeenSet = true; m_layers.push_back(std::move(value)); return *this; }
+    template<typename LayersT = Aws::Vector<AwsLambdaFunctionLayer>>
+    void SetLayers(LayersT&& value) { m_layersHasBeenSet = true; m_layers = std::forward<LayersT>(value); }
+    template<typename LayersT = Aws::Vector<AwsLambdaFunctionLayer>>
+    AwsLambdaFunctionDetails& WithLayers(LayersT&& value) { SetLayers(std::forward<LayersT>(value)); return *this;}
+    template<typename LayersT = AwsLambdaFunctionLayer>
+    AwsLambdaFunctionDetails& AddLayers(LayersT&& value) { m_layersHasBeenSet = true; m_layers.emplace_back(std::forward<LayersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>For Lambda@Edge functions, the ARN of the master function.</p>
      */
-    inline const Aws::String& GetMasterArn() const{ return m_masterArn; }
+    inline const Aws::String& GetMasterArn() const { return m_masterArn; }
     inline bool MasterArnHasBeenSet() const { return m_masterArnHasBeenSet; }
-    inline void SetMasterArn(const Aws::String& value) { m_masterArnHasBeenSet = true; m_masterArn = value; }
-    inline void SetMasterArn(Aws::String&& value) { m_masterArnHasBeenSet = true; m_masterArn = std::move(value); }
-    inline void SetMasterArn(const char* value) { m_masterArnHasBeenSet = true; m_masterArn.assign(value); }
-    inline AwsLambdaFunctionDetails& WithMasterArn(const Aws::String& value) { SetMasterArn(value); return *this;}
-    inline AwsLambdaFunctionDetails& WithMasterArn(Aws::String&& value) { SetMasterArn(std::move(value)); return *this;}
-    inline AwsLambdaFunctionDetails& WithMasterArn(const char* value) { SetMasterArn(value); return *this;}
+    template<typename MasterArnT = Aws::String>
+    void SetMasterArn(MasterArnT&& value) { m_masterArnHasBeenSet = true; m_masterArn = std::forward<MasterArnT>(value); }
+    template<typename MasterArnT = Aws::String>
+    AwsLambdaFunctionDetails& WithMasterArn(MasterArnT&& value) { SetMasterArn(std::forward<MasterArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The memory that is allocated to the function.</p>
      */
-    inline int GetMemorySize() const{ return m_memorySize; }
+    inline int GetMemorySize() const { return m_memorySize; }
     inline bool MemorySizeHasBeenSet() const { return m_memorySizeHasBeenSet; }
     inline void SetMemorySize(int value) { m_memorySizeHasBeenSet = true; m_memorySize = value; }
     inline AwsLambdaFunctionDetails& WithMemorySize(int value) { SetMemorySize(value); return *this;}
@@ -197,42 +185,36 @@ namespace Model
     /**
      * <p>The latest updated revision of the function or alias.</p>
      */
-    inline const Aws::String& GetRevisionId() const{ return m_revisionId; }
+    inline const Aws::String& GetRevisionId() const { return m_revisionId; }
     inline bool RevisionIdHasBeenSet() const { return m_revisionIdHasBeenSet; }
-    inline void SetRevisionId(const Aws::String& value) { m_revisionIdHasBeenSet = true; m_revisionId = value; }
-    inline void SetRevisionId(Aws::String&& value) { m_revisionIdHasBeenSet = true; m_revisionId = std::move(value); }
-    inline void SetRevisionId(const char* value) { m_revisionIdHasBeenSet = true; m_revisionId.assign(value); }
-    inline AwsLambdaFunctionDetails& WithRevisionId(const Aws::String& value) { SetRevisionId(value); return *this;}
-    inline AwsLambdaFunctionDetails& WithRevisionId(Aws::String&& value) { SetRevisionId(std::move(value)); return *this;}
-    inline AwsLambdaFunctionDetails& WithRevisionId(const char* value) { SetRevisionId(value); return *this;}
+    template<typename RevisionIdT = Aws::String>
+    void SetRevisionId(RevisionIdT&& value) { m_revisionIdHasBeenSet = true; m_revisionId = std::forward<RevisionIdT>(value); }
+    template<typename RevisionIdT = Aws::String>
+    AwsLambdaFunctionDetails& WithRevisionId(RevisionIdT&& value) { SetRevisionId(std::forward<RevisionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The function's execution role.</p>
      */
-    inline const Aws::String& GetRole() const{ return m_role; }
+    inline const Aws::String& GetRole() const { return m_role; }
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
-    inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
-    inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
-    inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
-    inline AwsLambdaFunctionDetails& WithRole(const Aws::String& value) { SetRole(value); return *this;}
-    inline AwsLambdaFunctionDetails& WithRole(Aws::String&& value) { SetRole(std::move(value)); return *this;}
-    inline AwsLambdaFunctionDetails& WithRole(const char* value) { SetRole(value); return *this;}
+    template<typename RoleT = Aws::String>
+    void SetRole(RoleT&& value) { m_roleHasBeenSet = true; m_role = std::forward<RoleT>(value); }
+    template<typename RoleT = Aws::String>
+    AwsLambdaFunctionDetails& WithRole(RoleT&& value) { SetRole(std::forward<RoleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The runtime environment for the Lambda function.</p>
      */
-    inline const Aws::String& GetRuntime() const{ return m_runtime; }
+    inline const Aws::String& GetRuntime() const { return m_runtime; }
     inline bool RuntimeHasBeenSet() const { return m_runtimeHasBeenSet; }
-    inline void SetRuntime(const Aws::String& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
-    inline void SetRuntime(Aws::String&& value) { m_runtimeHasBeenSet = true; m_runtime = std::move(value); }
-    inline void SetRuntime(const char* value) { m_runtimeHasBeenSet = true; m_runtime.assign(value); }
-    inline AwsLambdaFunctionDetails& WithRuntime(const Aws::String& value) { SetRuntime(value); return *this;}
-    inline AwsLambdaFunctionDetails& WithRuntime(Aws::String&& value) { SetRuntime(std::move(value)); return *this;}
-    inline AwsLambdaFunctionDetails& WithRuntime(const char* value) { SetRuntime(value); return *this;}
+    template<typename RuntimeT = Aws::String>
+    void SetRuntime(RuntimeT&& value) { m_runtimeHasBeenSet = true; m_runtime = std::forward<RuntimeT>(value); }
+    template<typename RuntimeT = Aws::String>
+    AwsLambdaFunctionDetails& WithRuntime(RuntimeT&& value) { SetRuntime(std::forward<RuntimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -240,7 +222,7 @@ namespace Model
      * <p>The amount of time that Lambda allows a function to run before stopping
      * it.</p>
      */
-    inline int GetTimeout() const{ return m_timeout; }
+    inline int GetTimeout() const { return m_timeout; }
     inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
     inline void SetTimeout(int value) { m_timeoutHasBeenSet = true; m_timeout = value; }
     inline AwsLambdaFunctionDetails& WithTimeout(int value) { SetTimeout(value); return *this;}
@@ -250,38 +232,36 @@ namespace Model
     /**
      * <p>The function's X-Ray tracing configuration.</p>
      */
-    inline const AwsLambdaFunctionTracingConfig& GetTracingConfig() const{ return m_tracingConfig; }
+    inline const AwsLambdaFunctionTracingConfig& GetTracingConfig() const { return m_tracingConfig; }
     inline bool TracingConfigHasBeenSet() const { return m_tracingConfigHasBeenSet; }
-    inline void SetTracingConfig(const AwsLambdaFunctionTracingConfig& value) { m_tracingConfigHasBeenSet = true; m_tracingConfig = value; }
-    inline void SetTracingConfig(AwsLambdaFunctionTracingConfig&& value) { m_tracingConfigHasBeenSet = true; m_tracingConfig = std::move(value); }
-    inline AwsLambdaFunctionDetails& WithTracingConfig(const AwsLambdaFunctionTracingConfig& value) { SetTracingConfig(value); return *this;}
-    inline AwsLambdaFunctionDetails& WithTracingConfig(AwsLambdaFunctionTracingConfig&& value) { SetTracingConfig(std::move(value)); return *this;}
+    template<typename TracingConfigT = AwsLambdaFunctionTracingConfig>
+    void SetTracingConfig(TracingConfigT&& value) { m_tracingConfigHasBeenSet = true; m_tracingConfig = std::forward<TracingConfigT>(value); }
+    template<typename TracingConfigT = AwsLambdaFunctionTracingConfig>
+    AwsLambdaFunctionDetails& WithTracingConfig(TracingConfigT&& value) { SetTracingConfig(std::forward<TracingConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The function's networking configuration.</p>
      */
-    inline const AwsLambdaFunctionVpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
+    inline const AwsLambdaFunctionVpcConfig& GetVpcConfig() const { return m_vpcConfig; }
     inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
-    inline void SetVpcConfig(const AwsLambdaFunctionVpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
-    inline void SetVpcConfig(AwsLambdaFunctionVpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
-    inline AwsLambdaFunctionDetails& WithVpcConfig(const AwsLambdaFunctionVpcConfig& value) { SetVpcConfig(value); return *this;}
-    inline AwsLambdaFunctionDetails& WithVpcConfig(AwsLambdaFunctionVpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
+    template<typename VpcConfigT = AwsLambdaFunctionVpcConfig>
+    void SetVpcConfig(VpcConfigT&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::forward<VpcConfigT>(value); }
+    template<typename VpcConfigT = AwsLambdaFunctionVpcConfig>
+    AwsLambdaFunctionDetails& WithVpcConfig(VpcConfigT&& value) { SetVpcConfig(std::forward<VpcConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the Lambda function.</p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
+    inline const Aws::String& GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-    inline AwsLambdaFunctionDetails& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline AwsLambdaFunctionDetails& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline AwsLambdaFunctionDetails& WithVersion(const char* value) { SetVersion(value); return *this;}
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    AwsLambdaFunctionDetails& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -289,15 +269,14 @@ namespace Model
      * <p>The instruction set architecture that the function uses. Valid values are
      * <code>x86_64</code> or <code>arm64</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetArchitectures() const{ return m_architectures; }
+    inline const Aws::Vector<Aws::String>& GetArchitectures() const { return m_architectures; }
     inline bool ArchitecturesHasBeenSet() const { return m_architecturesHasBeenSet; }
-    inline void SetArchitectures(const Aws::Vector<Aws::String>& value) { m_architecturesHasBeenSet = true; m_architectures = value; }
-    inline void SetArchitectures(Aws::Vector<Aws::String>&& value) { m_architecturesHasBeenSet = true; m_architectures = std::move(value); }
-    inline AwsLambdaFunctionDetails& WithArchitectures(const Aws::Vector<Aws::String>& value) { SetArchitectures(value); return *this;}
-    inline AwsLambdaFunctionDetails& WithArchitectures(Aws::Vector<Aws::String>&& value) { SetArchitectures(std::move(value)); return *this;}
-    inline AwsLambdaFunctionDetails& AddArchitectures(const Aws::String& value) { m_architecturesHasBeenSet = true; m_architectures.push_back(value); return *this; }
-    inline AwsLambdaFunctionDetails& AddArchitectures(Aws::String&& value) { m_architecturesHasBeenSet = true; m_architectures.push_back(std::move(value)); return *this; }
-    inline AwsLambdaFunctionDetails& AddArchitectures(const char* value) { m_architecturesHasBeenSet = true; m_architectures.push_back(value); return *this; }
+    template<typename ArchitecturesT = Aws::Vector<Aws::String>>
+    void SetArchitectures(ArchitecturesT&& value) { m_architecturesHasBeenSet = true; m_architectures = std::forward<ArchitecturesT>(value); }
+    template<typename ArchitecturesT = Aws::Vector<Aws::String>>
+    AwsLambdaFunctionDetails& WithArchitectures(ArchitecturesT&& value) { SetArchitectures(std::forward<ArchitecturesT>(value)); return *this;}
+    template<typename ArchitecturesT = Aws::String>
+    AwsLambdaFunctionDetails& AddArchitectures(ArchitecturesT&& value) { m_architecturesHasBeenSet = true; m_architectures.emplace_back(std::forward<ArchitecturesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -306,14 +285,12 @@ namespace Model
      * Lambda. Set to <code>Image</code> for a container image and <code>Zip</code> for
      * a .zip file archive. </p>
      */
-    inline const Aws::String& GetPackageType() const{ return m_packageType; }
+    inline const Aws::String& GetPackageType() const { return m_packageType; }
     inline bool PackageTypeHasBeenSet() const { return m_packageTypeHasBeenSet; }
-    inline void SetPackageType(const Aws::String& value) { m_packageTypeHasBeenSet = true; m_packageType = value; }
-    inline void SetPackageType(Aws::String&& value) { m_packageTypeHasBeenSet = true; m_packageType = std::move(value); }
-    inline void SetPackageType(const char* value) { m_packageTypeHasBeenSet = true; m_packageType.assign(value); }
-    inline AwsLambdaFunctionDetails& WithPackageType(const Aws::String& value) { SetPackageType(value); return *this;}
-    inline AwsLambdaFunctionDetails& WithPackageType(Aws::String&& value) { SetPackageType(std::move(value)); return *this;}
-    inline AwsLambdaFunctionDetails& WithPackageType(const char* value) { SetPackageType(value); return *this;}
+    template<typename PackageTypeT = Aws::String>
+    void SetPackageType(PackageTypeT&& value) { m_packageTypeHasBeenSet = true; m_packageType = std::forward<PackageTypeT>(value); }
+    template<typename PackageTypeT = Aws::String>
+    AwsLambdaFunctionDetails& WithPackageType(PackageTypeT&& value) { SetPackageType(std::forward<PackageTypeT>(value)); return *this;}
     ///@}
   private:
 
@@ -347,7 +324,7 @@ namespace Model
     Aws::String m_masterArn;
     bool m_masterArnHasBeenSet = false;
 
-    int m_memorySize;
+    int m_memorySize{0};
     bool m_memorySizeHasBeenSet = false;
 
     Aws::String m_revisionId;
@@ -359,7 +336,7 @@ namespace Model
     Aws::String m_runtime;
     bool m_runtimeHasBeenSet = false;
 
-    int m_timeout;
+    int m_timeout{0};
     bool m_timeoutHasBeenSet = false;
 
     AwsLambdaFunctionTracingConfig m_tracingConfig;

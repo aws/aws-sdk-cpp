@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CheckNoPublicAccessSdkResult::CheckNoPublicAccessSdkResult() : 
-    m_result(CheckNoPublicAccessResult::NOT_SET)
-{
-}
-
 CheckNoPublicAccessSdkResult::CheckNoPublicAccessSdkResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CheckNoPublicAccessSdkResult()
 {
   *this = result;
 }
@@ -34,15 +28,13 @@ CheckNoPublicAccessSdkResult& CheckNoPublicAccessSdkResult::operator =(const Aws
   if(jsonValue.ValueExists("result"))
   {
     m_result = CheckNoPublicAccessResultMapper::GetCheckNoPublicAccessResultForName(jsonValue.GetString("result"));
-
+    m_resultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
+    m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reasons"))
   {
     Aws::Utils::Array<JsonView> reasonsJsonList = jsonValue.GetArray("reasons");
@@ -50,14 +42,15 @@ CheckNoPublicAccessSdkResult& CheckNoPublicAccessSdkResult::operator =(const Aws
     {
       m_reasons.push_back(reasonsJsonList[reasonsIndex].AsObject());
     }
+    m_reasonsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

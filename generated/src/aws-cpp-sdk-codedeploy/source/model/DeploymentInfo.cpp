@@ -18,49 +18,7 @@ namespace CodeDeploy
 namespace Model
 {
 
-DeploymentInfo::DeploymentInfo() : 
-    m_applicationNameHasBeenSet(false),
-    m_deploymentGroupNameHasBeenSet(false),
-    m_deploymentConfigNameHasBeenSet(false),
-    m_deploymentIdHasBeenSet(false),
-    m_previousRevisionHasBeenSet(false),
-    m_revisionHasBeenSet(false),
-    m_status(DeploymentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_errorInformationHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_completeTimeHasBeenSet(false),
-    m_deploymentOverviewHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_creator(DeploymentCreator::NOT_SET),
-    m_creatorHasBeenSet(false),
-    m_ignoreApplicationStopFailures(false),
-    m_ignoreApplicationStopFailuresHasBeenSet(false),
-    m_autoRollbackConfigurationHasBeenSet(false),
-    m_updateOutdatedInstancesOnly(false),
-    m_updateOutdatedInstancesOnlyHasBeenSet(false),
-    m_rollbackInfoHasBeenSet(false),
-    m_deploymentStyleHasBeenSet(false),
-    m_targetInstancesHasBeenSet(false),
-    m_instanceTerminationWaitTimeStarted(false),
-    m_instanceTerminationWaitTimeStartedHasBeenSet(false),
-    m_blueGreenDeploymentConfigurationHasBeenSet(false),
-    m_loadBalancerInfoHasBeenSet(false),
-    m_additionalDeploymentStatusInfoHasBeenSet(false),
-    m_fileExistsBehavior(FileExistsBehavior::NOT_SET),
-    m_fileExistsBehaviorHasBeenSet(false),
-    m_deploymentStatusMessagesHasBeenSet(false),
-    m_computePlatform(ComputePlatform::NOT_SET),
-    m_computePlatformHasBeenSet(false),
-    m_externalIdHasBeenSet(false),
-    m_relatedDeploymentsHasBeenSet(false),
-    m_overrideAlarmConfigurationHasBeenSet(false)
-{
-}
-
 DeploymentInfo::DeploymentInfo(JsonView jsonValue)
-  : DeploymentInfo()
 {
   *this = jsonValue;
 }
@@ -70,178 +28,128 @@ DeploymentInfo& DeploymentInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("applicationName"))
   {
     m_applicationName = jsonValue.GetString("applicationName");
-
     m_applicationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deploymentGroupName"))
   {
     m_deploymentGroupName = jsonValue.GetString("deploymentGroupName");
-
     m_deploymentGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deploymentConfigName"))
   {
     m_deploymentConfigName = jsonValue.GetString("deploymentConfigName");
-
     m_deploymentConfigNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deploymentId"))
   {
     m_deploymentId = jsonValue.GetString("deploymentId");
-
     m_deploymentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("previousRevision"))
   {
     m_previousRevision = jsonValue.GetObject("previousRevision");
-
     m_previousRevisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("revision"))
   {
     m_revision = jsonValue.GetObject("revision");
-
     m_revisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = DeploymentStatusMapper::GetDeploymentStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorInformation"))
   {
     m_errorInformation = jsonValue.GetObject("errorInformation");
-
     m_errorInformationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createTime"))
   {
     m_createTime = jsonValue.GetDouble("createTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetDouble("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("completeTime"))
   {
     m_completeTime = jsonValue.GetDouble("completeTime");
-
     m_completeTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deploymentOverview"))
   {
     m_deploymentOverview = jsonValue.GetObject("deploymentOverview");
-
     m_deploymentOverviewHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creator"))
   {
     m_creator = DeploymentCreatorMapper::GetDeploymentCreatorForName(jsonValue.GetString("creator"));
-
     m_creatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ignoreApplicationStopFailures"))
   {
     m_ignoreApplicationStopFailures = jsonValue.GetBool("ignoreApplicationStopFailures");
-
     m_ignoreApplicationStopFailuresHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("autoRollbackConfiguration"))
   {
     m_autoRollbackConfiguration = jsonValue.GetObject("autoRollbackConfiguration");
-
     m_autoRollbackConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateOutdatedInstancesOnly"))
   {
     m_updateOutdatedInstancesOnly = jsonValue.GetBool("updateOutdatedInstancesOnly");
-
     m_updateOutdatedInstancesOnlyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rollbackInfo"))
   {
     m_rollbackInfo = jsonValue.GetObject("rollbackInfo");
-
     m_rollbackInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deploymentStyle"))
   {
     m_deploymentStyle = jsonValue.GetObject("deploymentStyle");
-
     m_deploymentStyleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetInstances"))
   {
     m_targetInstances = jsonValue.GetObject("targetInstances");
-
     m_targetInstancesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceTerminationWaitTimeStarted"))
   {
     m_instanceTerminationWaitTimeStarted = jsonValue.GetBool("instanceTerminationWaitTimeStarted");
-
     m_instanceTerminationWaitTimeStartedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("blueGreenDeploymentConfiguration"))
   {
     m_blueGreenDeploymentConfiguration = jsonValue.GetObject("blueGreenDeploymentConfiguration");
-
     m_blueGreenDeploymentConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("loadBalancerInfo"))
   {
     m_loadBalancerInfo = jsonValue.GetObject("loadBalancerInfo");
-
     m_loadBalancerInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("additionalDeploymentStatusInfo"))
   {
     m_additionalDeploymentStatusInfo = jsonValue.GetString("additionalDeploymentStatusInfo");
-
     m_additionalDeploymentStatusInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fileExistsBehavior"))
   {
     m_fileExistsBehavior = FileExistsBehaviorMapper::GetFileExistsBehaviorForName(jsonValue.GetString("fileExistsBehavior"));
-
     m_fileExistsBehaviorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deploymentStatusMessages"))
   {
     Aws::Utils::Array<JsonView> deploymentStatusMessagesJsonList = jsonValue.GetArray("deploymentStatusMessages");
@@ -251,35 +159,26 @@ DeploymentInfo& DeploymentInfo::operator =(JsonView jsonValue)
     }
     m_deploymentStatusMessagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("computePlatform"))
   {
     m_computePlatform = ComputePlatformMapper::GetComputePlatformForName(jsonValue.GetString("computePlatform"));
-
     m_computePlatformHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("externalId"))
   {
     m_externalId = jsonValue.GetString("externalId");
-
     m_externalIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("relatedDeployments"))
   {
     m_relatedDeployments = jsonValue.GetObject("relatedDeployments");
-
     m_relatedDeploymentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("overrideAlarmConfiguration"))
   {
     m_overrideAlarmConfiguration = jsonValue.GetObject("overrideAlarmConfiguration");
-
     m_overrideAlarmConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

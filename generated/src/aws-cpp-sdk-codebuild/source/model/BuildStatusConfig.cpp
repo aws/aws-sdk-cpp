@@ -18,14 +18,7 @@ namespace CodeBuild
 namespace Model
 {
 
-BuildStatusConfig::BuildStatusConfig() : 
-    m_contextHasBeenSet(false),
-    m_targetUrlHasBeenSet(false)
-{
-}
-
 BuildStatusConfig::BuildStatusConfig(JsonView jsonValue)
-  : BuildStatusConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BuildStatusConfig& BuildStatusConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("context"))
   {
     m_context = jsonValue.GetString("context");
-
     m_contextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetUrl"))
   {
     m_targetUrl = jsonValue.GetString("targetUrl");
-
     m_targetUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class FailureDetails
   {
   public:
-    AWS_SSM_API FailureDetails();
+    AWS_SSM_API FailureDetails() = default;
     AWS_SSM_API FailureDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API FailureDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * include the following: InputValidation, PreVerification, Invocation,
      * PostVerification.</p>
      */
-    inline const Aws::String& GetFailureStage() const{ return m_failureStage; }
+    inline const Aws::String& GetFailureStage() const { return m_failureStage; }
     inline bool FailureStageHasBeenSet() const { return m_failureStageHasBeenSet; }
-    inline void SetFailureStage(const Aws::String& value) { m_failureStageHasBeenSet = true; m_failureStage = value; }
-    inline void SetFailureStage(Aws::String&& value) { m_failureStageHasBeenSet = true; m_failureStage = std::move(value); }
-    inline void SetFailureStage(const char* value) { m_failureStageHasBeenSet = true; m_failureStage.assign(value); }
-    inline FailureDetails& WithFailureStage(const Aws::String& value) { SetFailureStage(value); return *this;}
-    inline FailureDetails& WithFailureStage(Aws::String&& value) { SetFailureStage(std::move(value)); return *this;}
-    inline FailureDetails& WithFailureStage(const char* value) { SetFailureStage(value); return *this;}
+    template<typename FailureStageT = Aws::String>
+    void SetFailureStage(FailureStageT&& value) { m_failureStageHasBeenSet = true; m_failureStage = std::forward<FailureStageT>(value); }
+    template<typename FailureStageT = Aws::String>
+    FailureDetails& WithFailureStage(FailureStageT&& value) { SetFailureStage(std::forward<FailureStageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,32 +58,28 @@ namespace Model
      * <p>The type of Automation failure. Failure types include the following: Action,
      * Permission, Throttling, Verification, Internal.</p>
      */
-    inline const Aws::String& GetFailureType() const{ return m_failureType; }
+    inline const Aws::String& GetFailureType() const { return m_failureType; }
     inline bool FailureTypeHasBeenSet() const { return m_failureTypeHasBeenSet; }
-    inline void SetFailureType(const Aws::String& value) { m_failureTypeHasBeenSet = true; m_failureType = value; }
-    inline void SetFailureType(Aws::String&& value) { m_failureTypeHasBeenSet = true; m_failureType = std::move(value); }
-    inline void SetFailureType(const char* value) { m_failureTypeHasBeenSet = true; m_failureType.assign(value); }
-    inline FailureDetails& WithFailureType(const Aws::String& value) { SetFailureType(value); return *this;}
-    inline FailureDetails& WithFailureType(Aws::String&& value) { SetFailureType(std::move(value)); return *this;}
-    inline FailureDetails& WithFailureType(const char* value) { SetFailureType(value); return *this;}
+    template<typename FailureTypeT = Aws::String>
+    void SetFailureType(FailureTypeT&& value) { m_failureTypeHasBeenSet = true; m_failureType = std::forward<FailureTypeT>(value); }
+    template<typename FailureTypeT = Aws::String>
+    FailureDetails& WithFailureType(FailureTypeT&& value) { SetFailureType(std::forward<FailureTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Detailed information about the Automation step failure.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetDetails() const{ return m_details; }
+    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetDetails() const { return m_details; }
     inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
-    inline void SetDetails(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_detailsHasBeenSet = true; m_details = value; }
-    inline void SetDetails(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
-    inline FailureDetails& WithDetails(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetDetails(value); return *this;}
-    inline FailureDetails& WithDetails(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetDetails(std::move(value)); return *this;}
-    inline FailureDetails& AddDetails(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_detailsHasBeenSet = true; m_details.emplace(key, value); return *this; }
-    inline FailureDetails& AddDetails(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_detailsHasBeenSet = true; m_details.emplace(std::move(key), value); return *this; }
-    inline FailureDetails& AddDetails(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_detailsHasBeenSet = true; m_details.emplace(key, std::move(value)); return *this; }
-    inline FailureDetails& AddDetails(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_detailsHasBeenSet = true; m_details.emplace(std::move(key), std::move(value)); return *this; }
-    inline FailureDetails& AddDetails(const char* key, Aws::Vector<Aws::String>&& value) { m_detailsHasBeenSet = true; m_details.emplace(key, std::move(value)); return *this; }
-    inline FailureDetails& AddDetails(const char* key, const Aws::Vector<Aws::String>& value) { m_detailsHasBeenSet = true; m_details.emplace(key, value); return *this; }
+    template<typename DetailsT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    void SetDetails(DetailsT&& value) { m_detailsHasBeenSet = true; m_details = std::forward<DetailsT>(value); }
+    template<typename DetailsT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    FailureDetails& WithDetails(DetailsT&& value) { SetDetails(std::forward<DetailsT>(value)); return *this;}
+    template<typename DetailsKeyT = Aws::String, typename DetailsValueT = Aws::Vector<Aws::String>>
+    FailureDetails& AddDetails(DetailsKeyT&& key, DetailsValueT&& value) {
+      m_detailsHasBeenSet = true; m_details.emplace(std::forward<DetailsKeyT>(key), std::forward<DetailsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

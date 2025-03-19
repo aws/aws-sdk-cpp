@@ -18,15 +18,7 @@ namespace IoTDeviceAdvisor
 namespace Model
 {
 
-DeviceUnderTest::DeviceUnderTest() : 
-    m_thingArnHasBeenSet(false),
-    m_certificateArnHasBeenSet(false),
-    m_deviceRoleArnHasBeenSet(false)
-{
-}
-
 DeviceUnderTest::DeviceUnderTest(JsonView jsonValue)
-  : DeviceUnderTest()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DeviceUnderTest& DeviceUnderTest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("thingArn"))
   {
     m_thingArn = jsonValue.GetString("thingArn");
-
     m_thingArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("certificateArn"))
   {
     m_certificateArn = jsonValue.GetString("certificateArn");
-
     m_certificateArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deviceRoleArn"))
   {
     m_deviceRoleArn = jsonValue.GetString("deviceRoleArn");
-
     m_deviceRoleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

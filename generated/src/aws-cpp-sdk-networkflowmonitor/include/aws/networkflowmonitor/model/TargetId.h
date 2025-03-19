@@ -34,7 +34,7 @@ namespace Model
   class TargetId
   {
   public:
-    AWS_NETWORKFLOWMONITOR_API TargetId();
+    AWS_NETWORKFLOWMONITOR_API TargetId() = default;
     AWS_NETWORKFLOWMONITOR_API TargetId(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFLOWMONITOR_API TargetId& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFLOWMONITOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The identifier for the account for a target.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline TargetId& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline TargetId& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline TargetId& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    TargetId& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
   private:
 

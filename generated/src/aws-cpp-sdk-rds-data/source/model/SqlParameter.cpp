@@ -18,16 +18,7 @@ namespace RDSDataService
 namespace Model
 {
 
-SqlParameter::SqlParameter() : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_typeHint(TypeHint::NOT_SET),
-    m_typeHintHasBeenSet(false)
-{
-}
-
 SqlParameter::SqlParameter(JsonView jsonValue)
-  : SqlParameter()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ SqlParameter& SqlParameter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetObject("value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("typeHint"))
   {
     m_typeHint = TypeHintMapper::GetTypeHintForName(jsonValue.GetString("typeHint"));
-
     m_typeHintHasBeenSet = true;
   }
-
   return *this;
 }
 

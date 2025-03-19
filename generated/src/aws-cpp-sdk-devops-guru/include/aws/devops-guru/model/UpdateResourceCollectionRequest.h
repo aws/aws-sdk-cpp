@@ -22,7 +22,7 @@ namespace Model
   class UpdateResourceCollectionRequest : public DevOpsGuruRequest
   {
   public:
-    AWS_DEVOPSGURU_API UpdateResourceCollectionRequest();
+    AWS_DEVOPSGURU_API UpdateResourceCollectionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,26 +38,24 @@ namespace Model
      * <p> Specifies if the resource collection in the request is added or deleted to
      * the resource collection. </p>
      */
-    inline const UpdateResourceCollectionAction& GetAction() const{ return m_action; }
+    inline UpdateResourceCollectionAction GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const UpdateResourceCollectionAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(UpdateResourceCollectionAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline UpdateResourceCollectionRequest& WithAction(const UpdateResourceCollectionAction& value) { SetAction(value); return *this;}
-    inline UpdateResourceCollectionRequest& WithAction(UpdateResourceCollectionAction&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(UpdateResourceCollectionAction value) { m_actionHasBeenSet = true; m_action = value; }
+    inline UpdateResourceCollectionRequest& WithAction(UpdateResourceCollectionAction value) { SetAction(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const UpdateResourceCollectionFilter& GetResourceCollection() const{ return m_resourceCollection; }
+    inline const UpdateResourceCollectionFilter& GetResourceCollection() const { return m_resourceCollection; }
     inline bool ResourceCollectionHasBeenSet() const { return m_resourceCollectionHasBeenSet; }
-    inline void SetResourceCollection(const UpdateResourceCollectionFilter& value) { m_resourceCollectionHasBeenSet = true; m_resourceCollection = value; }
-    inline void SetResourceCollection(UpdateResourceCollectionFilter&& value) { m_resourceCollectionHasBeenSet = true; m_resourceCollection = std::move(value); }
-    inline UpdateResourceCollectionRequest& WithResourceCollection(const UpdateResourceCollectionFilter& value) { SetResourceCollection(value); return *this;}
-    inline UpdateResourceCollectionRequest& WithResourceCollection(UpdateResourceCollectionFilter&& value) { SetResourceCollection(std::move(value)); return *this;}
+    template<typename ResourceCollectionT = UpdateResourceCollectionFilter>
+    void SetResourceCollection(ResourceCollectionT&& value) { m_resourceCollectionHasBeenSet = true; m_resourceCollection = std::forward<ResourceCollectionT>(value); }
+    template<typename ResourceCollectionT = UpdateResourceCollectionFilter>
+    UpdateResourceCollectionRequest& WithResourceCollection(ResourceCollectionT&& value) { SetResourceCollection(std::forward<ResourceCollectionT>(value)); return *this;}
     ///@}
   private:
 
-    UpdateResourceCollectionAction m_action;
+    UpdateResourceCollectionAction m_action{UpdateResourceCollectionAction::NOT_SET};
     bool m_actionHasBeenSet = false;
 
     UpdateResourceCollectionFilter m_resourceCollection;

@@ -33,7 +33,7 @@ namespace Model
   class RouteMajorRoadLabel
   {
   public:
-    AWS_GEOROUTES_API RouteMajorRoadLabel();
+    AWS_GEOROUTES_API RouteMajorRoadLabel() = default;
     AWS_GEOROUTES_API RouteMajorRoadLabel(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RouteMajorRoadLabel& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>Name of the road (localized).</p>
      */
-    inline const LocalizedString& GetRoadName() const{ return m_roadName; }
+    inline const LocalizedString& GetRoadName() const { return m_roadName; }
     inline bool RoadNameHasBeenSet() const { return m_roadNameHasBeenSet; }
-    inline void SetRoadName(const LocalizedString& value) { m_roadNameHasBeenSet = true; m_roadName = value; }
-    inline void SetRoadName(LocalizedString&& value) { m_roadNameHasBeenSet = true; m_roadName = std::move(value); }
-    inline RouteMajorRoadLabel& WithRoadName(const LocalizedString& value) { SetRoadName(value); return *this;}
-    inline RouteMajorRoadLabel& WithRoadName(LocalizedString&& value) { SetRoadName(std::move(value)); return *this;}
+    template<typename RoadNameT = LocalizedString>
+    void SetRoadName(RoadNameT&& value) { m_roadNameHasBeenSet = true; m_roadName = std::forward<RoadNameT>(value); }
+    template<typename RoadNameT = LocalizedString>
+    RouteMajorRoadLabel& WithRoadName(RoadNameT&& value) { SetRoadName(std::forward<RoadNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Route number of the road.</p>
      */
-    inline const RouteNumber& GetRouteNumber() const{ return m_routeNumber; }
+    inline const RouteNumber& GetRouteNumber() const { return m_routeNumber; }
     inline bool RouteNumberHasBeenSet() const { return m_routeNumberHasBeenSet; }
-    inline void SetRouteNumber(const RouteNumber& value) { m_routeNumberHasBeenSet = true; m_routeNumber = value; }
-    inline void SetRouteNumber(RouteNumber&& value) { m_routeNumberHasBeenSet = true; m_routeNumber = std::move(value); }
-    inline RouteMajorRoadLabel& WithRouteNumber(const RouteNumber& value) { SetRouteNumber(value); return *this;}
-    inline RouteMajorRoadLabel& WithRouteNumber(RouteNumber&& value) { SetRouteNumber(std::move(value)); return *this;}
+    template<typename RouteNumberT = RouteNumber>
+    void SetRouteNumber(RouteNumberT&& value) { m_routeNumberHasBeenSet = true; m_routeNumber = std::forward<RouteNumberT>(value); }
+    template<typename RouteNumberT = RouteNumber>
+    RouteMajorRoadLabel& WithRouteNumber(RouteNumberT&& value) { SetRouteNumber(std::forward<RouteNumberT>(value)); return *this;}
     ///@}
   private:
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetTemplateResult::GetTemplateResult()
-{
-}
-
 GetTemplateResult::GetTemplateResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ GetTemplateResult& GetTemplateResult::operator =(const Aws::AmazonWebServiceResu
     if(!templateBodyNode.IsNull())
     {
       m_templateBody = Aws::Utils::Xml::DecodeEscapedXmlText(templateBodyNode.GetText());
+      m_templateBodyHasBeenSet = true;
     }
     XmlNode stagesAvailableNode = resultNode.FirstChild("StagesAvailable");
     if(!stagesAvailableNode.IsNull())
     {
       XmlNode stagesAvailableMember = stagesAvailableNode.FirstChild("member");
+      m_stagesAvailableHasBeenSet = !stagesAvailableMember.IsNull();
       while(!stagesAvailableMember.IsNull())
       {
         m_stagesAvailable.push_back(TemplateStageMapper::GetTemplateStageForName(StringUtils::Trim(stagesAvailableMember.GetText().c_str())));
         stagesAvailableMember = stagesAvailableMember.NextNode("member");
       }
 
+      m_stagesAvailableHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::CloudFormation::Model::GetTemplateResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

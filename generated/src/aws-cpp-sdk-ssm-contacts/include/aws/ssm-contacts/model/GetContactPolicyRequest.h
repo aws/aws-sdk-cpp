@@ -21,7 +21,7 @@ namespace Model
   class GetContactPolicyRequest : public SSMContactsRequest
   {
   public:
-    AWS_SSMCONTACTS_API GetContactPolicyRequest();
+    AWS_SSMCONTACTS_API GetContactPolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
      */
-    inline const Aws::String& GetContactArn() const{ return m_contactArn; }
+    inline const Aws::String& GetContactArn() const { return m_contactArn; }
     inline bool ContactArnHasBeenSet() const { return m_contactArnHasBeenSet; }
-    inline void SetContactArn(const Aws::String& value) { m_contactArnHasBeenSet = true; m_contactArn = value; }
-    inline void SetContactArn(Aws::String&& value) { m_contactArnHasBeenSet = true; m_contactArn = std::move(value); }
-    inline void SetContactArn(const char* value) { m_contactArnHasBeenSet = true; m_contactArn.assign(value); }
-    inline GetContactPolicyRequest& WithContactArn(const Aws::String& value) { SetContactArn(value); return *this;}
-    inline GetContactPolicyRequest& WithContactArn(Aws::String&& value) { SetContactArn(std::move(value)); return *this;}
-    inline GetContactPolicyRequest& WithContactArn(const char* value) { SetContactArn(value); return *this;}
+    template<typename ContactArnT = Aws::String>
+    void SetContactArn(ContactArnT&& value) { m_contactArnHasBeenSet = true; m_contactArn = std::forward<ContactArnT>(value); }
+    template<typename ContactArnT = Aws::String>
+    GetContactPolicyRequest& WithContactArn(ContactArnT&& value) { SetContactArn(std::forward<ContactArnT>(value)); return *this;}
     ///@}
   private:
 

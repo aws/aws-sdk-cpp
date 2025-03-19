@@ -34,7 +34,7 @@ namespace Model
   class DescribeDeviceResult
   {
   public:
-    AWS_SNOWDEVICEMANAGEMENT_API DescribeDeviceResult();
+    AWS_SNOWDEVICEMANAGEMENT_API DescribeDeviceResult() = default;
     AWS_SNOWDEVICEMANAGEMENT_API DescribeDeviceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SNOWDEVICEMANAGEMENT_API DescribeDeviceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,50 +43,44 @@ namespace Model
     /**
      * <p>The ID of the job used when ordering the device.</p>
      */
-    inline const Aws::String& GetAssociatedWithJob() const{ return m_associatedWithJob; }
-    inline void SetAssociatedWithJob(const Aws::String& value) { m_associatedWithJob = value; }
-    inline void SetAssociatedWithJob(Aws::String&& value) { m_associatedWithJob = std::move(value); }
-    inline void SetAssociatedWithJob(const char* value) { m_associatedWithJob.assign(value); }
-    inline DescribeDeviceResult& WithAssociatedWithJob(const Aws::String& value) { SetAssociatedWithJob(value); return *this;}
-    inline DescribeDeviceResult& WithAssociatedWithJob(Aws::String&& value) { SetAssociatedWithJob(std::move(value)); return *this;}
-    inline DescribeDeviceResult& WithAssociatedWithJob(const char* value) { SetAssociatedWithJob(value); return *this;}
+    inline const Aws::String& GetAssociatedWithJob() const { return m_associatedWithJob; }
+    template<typename AssociatedWithJobT = Aws::String>
+    void SetAssociatedWithJob(AssociatedWithJobT&& value) { m_associatedWithJobHasBeenSet = true; m_associatedWithJob = std::forward<AssociatedWithJobT>(value); }
+    template<typename AssociatedWithJobT = Aws::String>
+    DescribeDeviceResult& WithAssociatedWithJob(AssociatedWithJobT&& value) { SetAssociatedWithJob(std::forward<AssociatedWithJobT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The hardware specifications of the device. </p>
      */
-    inline const Aws::Vector<Capacity>& GetDeviceCapacities() const{ return m_deviceCapacities; }
-    inline void SetDeviceCapacities(const Aws::Vector<Capacity>& value) { m_deviceCapacities = value; }
-    inline void SetDeviceCapacities(Aws::Vector<Capacity>&& value) { m_deviceCapacities = std::move(value); }
-    inline DescribeDeviceResult& WithDeviceCapacities(const Aws::Vector<Capacity>& value) { SetDeviceCapacities(value); return *this;}
-    inline DescribeDeviceResult& WithDeviceCapacities(Aws::Vector<Capacity>&& value) { SetDeviceCapacities(std::move(value)); return *this;}
-    inline DescribeDeviceResult& AddDeviceCapacities(const Capacity& value) { m_deviceCapacities.push_back(value); return *this; }
-    inline DescribeDeviceResult& AddDeviceCapacities(Capacity&& value) { m_deviceCapacities.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Capacity>& GetDeviceCapacities() const { return m_deviceCapacities; }
+    template<typename DeviceCapacitiesT = Aws::Vector<Capacity>>
+    void SetDeviceCapacities(DeviceCapacitiesT&& value) { m_deviceCapacitiesHasBeenSet = true; m_deviceCapacities = std::forward<DeviceCapacitiesT>(value); }
+    template<typename DeviceCapacitiesT = Aws::Vector<Capacity>>
+    DescribeDeviceResult& WithDeviceCapacities(DeviceCapacitiesT&& value) { SetDeviceCapacities(std::forward<DeviceCapacitiesT>(value)); return *this;}
+    template<typename DeviceCapacitiesT = Capacity>
+    DescribeDeviceResult& AddDeviceCapacities(DeviceCapacitiesT&& value) { m_deviceCapacitiesHasBeenSet = true; m_deviceCapacities.emplace_back(std::forward<DeviceCapacitiesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The current state of the device.</p>
      */
-    inline const UnlockState& GetDeviceState() const{ return m_deviceState; }
-    inline void SetDeviceState(const UnlockState& value) { m_deviceState = value; }
-    inline void SetDeviceState(UnlockState&& value) { m_deviceState = std::move(value); }
-    inline DescribeDeviceResult& WithDeviceState(const UnlockState& value) { SetDeviceState(value); return *this;}
-    inline DescribeDeviceResult& WithDeviceState(UnlockState&& value) { SetDeviceState(std::move(value)); return *this;}
+    inline UnlockState GetDeviceState() const { return m_deviceState; }
+    inline void SetDeviceState(UnlockState value) { m_deviceStateHasBeenSet = true; m_deviceState = value; }
+    inline DescribeDeviceResult& WithDeviceState(UnlockState value) { SetDeviceState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of Amazon Web Services Snow Family device.</p>
      */
-    inline const Aws::String& GetDeviceType() const{ return m_deviceType; }
-    inline void SetDeviceType(const Aws::String& value) { m_deviceType = value; }
-    inline void SetDeviceType(Aws::String&& value) { m_deviceType = std::move(value); }
-    inline void SetDeviceType(const char* value) { m_deviceType.assign(value); }
-    inline DescribeDeviceResult& WithDeviceType(const Aws::String& value) { SetDeviceType(value); return *this;}
-    inline DescribeDeviceResult& WithDeviceType(Aws::String&& value) { SetDeviceType(std::move(value)); return *this;}
-    inline DescribeDeviceResult& WithDeviceType(const char* value) { SetDeviceType(value); return *this;}
+    inline const Aws::String& GetDeviceType() const { return m_deviceType; }
+    template<typename DeviceTypeT = Aws::String>
+    void SetDeviceType(DeviceTypeT&& value) { m_deviceTypeHasBeenSet = true; m_deviceType = std::forward<DeviceTypeT>(value); }
+    template<typename DeviceTypeT = Aws::String>
+    DescribeDeviceResult& WithDeviceType(DeviceTypeT&& value) { SetDeviceType(std::forward<DeviceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,11 +88,11 @@ namespace Model
      * <p>When the device last contacted the Amazon Web Services Cloud. Indicates that
      * the device is online.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastReachedOutAt() const{ return m_lastReachedOutAt; }
-    inline void SetLastReachedOutAt(const Aws::Utils::DateTime& value) { m_lastReachedOutAt = value; }
-    inline void SetLastReachedOutAt(Aws::Utils::DateTime&& value) { m_lastReachedOutAt = std::move(value); }
-    inline DescribeDeviceResult& WithLastReachedOutAt(const Aws::Utils::DateTime& value) { SetLastReachedOutAt(value); return *this;}
-    inline DescribeDeviceResult& WithLastReachedOutAt(Aws::Utils::DateTime&& value) { SetLastReachedOutAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastReachedOutAt() const { return m_lastReachedOutAt; }
+    template<typename LastReachedOutAtT = Aws::Utils::DateTime>
+    void SetLastReachedOutAt(LastReachedOutAtT&& value) { m_lastReachedOutAtHasBeenSet = true; m_lastReachedOutAt = std::forward<LastReachedOutAtT>(value); }
+    template<typename LastReachedOutAtT = Aws::Utils::DateTime>
+    DescribeDeviceResult& WithLastReachedOutAt(LastReachedOutAtT&& value) { SetLastReachedOutAt(std::forward<LastReachedOutAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,61 +100,57 @@ namespace Model
      * <p>When the device last pushed an update to the Amazon Web Services Cloud.
      * Indicates when the device cache was refreshed.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
-    inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAt = value; }
-    inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAt = std::move(value); }
-    inline DescribeDeviceResult& WithLastUpdatedAt(const Aws::Utils::DateTime& value) { SetLastUpdatedAt(value); return *this;}
-    inline DescribeDeviceResult& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    DescribeDeviceResult& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the device.</p>
      */
-    inline const Aws::String& GetManagedDeviceArn() const{ return m_managedDeviceArn; }
-    inline void SetManagedDeviceArn(const Aws::String& value) { m_managedDeviceArn = value; }
-    inline void SetManagedDeviceArn(Aws::String&& value) { m_managedDeviceArn = std::move(value); }
-    inline void SetManagedDeviceArn(const char* value) { m_managedDeviceArn.assign(value); }
-    inline DescribeDeviceResult& WithManagedDeviceArn(const Aws::String& value) { SetManagedDeviceArn(value); return *this;}
-    inline DescribeDeviceResult& WithManagedDeviceArn(Aws::String&& value) { SetManagedDeviceArn(std::move(value)); return *this;}
-    inline DescribeDeviceResult& WithManagedDeviceArn(const char* value) { SetManagedDeviceArn(value); return *this;}
+    inline const Aws::String& GetManagedDeviceArn() const { return m_managedDeviceArn; }
+    template<typename ManagedDeviceArnT = Aws::String>
+    void SetManagedDeviceArn(ManagedDeviceArnT&& value) { m_managedDeviceArnHasBeenSet = true; m_managedDeviceArn = std::forward<ManagedDeviceArnT>(value); }
+    template<typename ManagedDeviceArnT = Aws::String>
+    DescribeDeviceResult& WithManagedDeviceArn(ManagedDeviceArnT&& value) { SetManagedDeviceArn(std::forward<ManagedDeviceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the device that you checked the information for.</p>
      */
-    inline const Aws::String& GetManagedDeviceId() const{ return m_managedDeviceId; }
-    inline void SetManagedDeviceId(const Aws::String& value) { m_managedDeviceId = value; }
-    inline void SetManagedDeviceId(Aws::String&& value) { m_managedDeviceId = std::move(value); }
-    inline void SetManagedDeviceId(const char* value) { m_managedDeviceId.assign(value); }
-    inline DescribeDeviceResult& WithManagedDeviceId(const Aws::String& value) { SetManagedDeviceId(value); return *this;}
-    inline DescribeDeviceResult& WithManagedDeviceId(Aws::String&& value) { SetManagedDeviceId(std::move(value)); return *this;}
-    inline DescribeDeviceResult& WithManagedDeviceId(const char* value) { SetManagedDeviceId(value); return *this;}
+    inline const Aws::String& GetManagedDeviceId() const { return m_managedDeviceId; }
+    template<typename ManagedDeviceIdT = Aws::String>
+    void SetManagedDeviceId(ManagedDeviceIdT&& value) { m_managedDeviceIdHasBeenSet = true; m_managedDeviceId = std::forward<ManagedDeviceIdT>(value); }
+    template<typename ManagedDeviceIdT = Aws::String>
+    DescribeDeviceResult& WithManagedDeviceId(ManagedDeviceIdT&& value) { SetManagedDeviceId(std::forward<ManagedDeviceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The network interfaces available on the device.</p>
      */
-    inline const Aws::Vector<PhysicalNetworkInterface>& GetPhysicalNetworkInterfaces() const{ return m_physicalNetworkInterfaces; }
-    inline void SetPhysicalNetworkInterfaces(const Aws::Vector<PhysicalNetworkInterface>& value) { m_physicalNetworkInterfaces = value; }
-    inline void SetPhysicalNetworkInterfaces(Aws::Vector<PhysicalNetworkInterface>&& value) { m_physicalNetworkInterfaces = std::move(value); }
-    inline DescribeDeviceResult& WithPhysicalNetworkInterfaces(const Aws::Vector<PhysicalNetworkInterface>& value) { SetPhysicalNetworkInterfaces(value); return *this;}
-    inline DescribeDeviceResult& WithPhysicalNetworkInterfaces(Aws::Vector<PhysicalNetworkInterface>&& value) { SetPhysicalNetworkInterfaces(std::move(value)); return *this;}
-    inline DescribeDeviceResult& AddPhysicalNetworkInterfaces(const PhysicalNetworkInterface& value) { m_physicalNetworkInterfaces.push_back(value); return *this; }
-    inline DescribeDeviceResult& AddPhysicalNetworkInterfaces(PhysicalNetworkInterface&& value) { m_physicalNetworkInterfaces.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<PhysicalNetworkInterface>& GetPhysicalNetworkInterfaces() const { return m_physicalNetworkInterfaces; }
+    template<typename PhysicalNetworkInterfacesT = Aws::Vector<PhysicalNetworkInterface>>
+    void SetPhysicalNetworkInterfaces(PhysicalNetworkInterfacesT&& value) { m_physicalNetworkInterfacesHasBeenSet = true; m_physicalNetworkInterfaces = std::forward<PhysicalNetworkInterfacesT>(value); }
+    template<typename PhysicalNetworkInterfacesT = Aws::Vector<PhysicalNetworkInterface>>
+    DescribeDeviceResult& WithPhysicalNetworkInterfaces(PhysicalNetworkInterfacesT&& value) { SetPhysicalNetworkInterfaces(std::forward<PhysicalNetworkInterfacesT>(value)); return *this;}
+    template<typename PhysicalNetworkInterfacesT = PhysicalNetworkInterface>
+    DescribeDeviceResult& AddPhysicalNetworkInterfaces(PhysicalNetworkInterfacesT&& value) { m_physicalNetworkInterfacesHasBeenSet = true; m_physicalNetworkInterfaces.emplace_back(std::forward<PhysicalNetworkInterfacesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The software installed on the device.</p>
      */
-    inline const SoftwareInformation& GetSoftware() const{ return m_software; }
-    inline void SetSoftware(const SoftwareInformation& value) { m_software = value; }
-    inline void SetSoftware(SoftwareInformation&& value) { m_software = std::move(value); }
-    inline DescribeDeviceResult& WithSoftware(const SoftwareInformation& value) { SetSoftware(value); return *this;}
-    inline DescribeDeviceResult& WithSoftware(SoftwareInformation&& value) { SetSoftware(std::move(value)); return *this;}
+    inline const SoftwareInformation& GetSoftware() const { return m_software; }
+    template<typename SoftwareT = SoftwareInformation>
+    void SetSoftware(SoftwareT&& value) { m_softwareHasBeenSet = true; m_software = std::forward<SoftwareT>(value); }
+    template<typename SoftwareT = SoftwareInformation>
+    DescribeDeviceResult& WithSoftware(SoftwareT&& value) { SetSoftware(std::forward<SoftwareT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -169,55 +159,62 @@ namespace Model
      * categorize a resource in different ways, such as by purpose, owner, or
      * environment. </p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline DescribeDeviceResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline DescribeDeviceResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline DescribeDeviceResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline DescribeDeviceResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline DescribeDeviceResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline DescribeDeviceResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline DescribeDeviceResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline DescribeDeviceResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline DescribeDeviceResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    DescribeDeviceResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    DescribeDeviceResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeDeviceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeDeviceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeDeviceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeDeviceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_associatedWithJob;
+    bool m_associatedWithJobHasBeenSet = false;
 
     Aws::Vector<Capacity> m_deviceCapacities;
+    bool m_deviceCapacitiesHasBeenSet = false;
 
-    UnlockState m_deviceState;
+    UnlockState m_deviceState{UnlockState::NOT_SET};
+    bool m_deviceStateHasBeenSet = false;
 
     Aws::String m_deviceType;
+    bool m_deviceTypeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastReachedOutAt;
+    Aws::Utils::DateTime m_lastReachedOutAt{};
+    bool m_lastReachedOutAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedAt;
+    Aws::Utils::DateTime m_lastUpdatedAt{};
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::String m_managedDeviceArn;
+    bool m_managedDeviceArnHasBeenSet = false;
 
     Aws::String m_managedDeviceId;
+    bool m_managedDeviceIdHasBeenSet = false;
 
     Aws::Vector<PhysicalNetworkInterface> m_physicalNetworkInterfaces;
+    bool m_physicalNetworkInterfacesHasBeenSet = false;
 
     SoftwareInformation m_software;
+    bool m_softwareHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

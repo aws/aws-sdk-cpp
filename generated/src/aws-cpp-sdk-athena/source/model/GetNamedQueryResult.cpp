@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetNamedQueryResult::GetNamedQueryResult()
-{
-}
-
 GetNamedQueryResult::GetNamedQueryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetNamedQueryResult& GetNamedQueryResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("NamedQuery"))
   {
     m_namedQuery = jsonValue.GetObject("NamedQuery");
-
+    m_namedQueryHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

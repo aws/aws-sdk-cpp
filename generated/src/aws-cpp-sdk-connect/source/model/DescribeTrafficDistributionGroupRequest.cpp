@@ -12,11 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeTrafficDistributionGroupRequest::DescribeTrafficDistributionGroupRequest() : 
-    m_trafficDistributionGroupIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeTrafficDistributionGroupRequest::SerializePayload() const
 {
   return {};

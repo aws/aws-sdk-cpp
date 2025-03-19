@@ -32,7 +32,7 @@ namespace Model
   class Endpoint
   {
   public:
-    AWS_DAX_API Endpoint();
+    AWS_DAX_API Endpoint() = default;
     AWS_DAX_API Endpoint(Aws::Utils::Json::JsonView jsonValue);
     AWS_DAX_API Endpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DAX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,21 +42,19 @@ namespace Model
     /**
      * <p>The DNS hostname of the endpoint.</p>
      */
-    inline const Aws::String& GetAddress() const{ return m_address; }
+    inline const Aws::String& GetAddress() const { return m_address; }
     inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
-    inline void SetAddress(const Aws::String& value) { m_addressHasBeenSet = true; m_address = value; }
-    inline void SetAddress(Aws::String&& value) { m_addressHasBeenSet = true; m_address = std::move(value); }
-    inline void SetAddress(const char* value) { m_addressHasBeenSet = true; m_address.assign(value); }
-    inline Endpoint& WithAddress(const Aws::String& value) { SetAddress(value); return *this;}
-    inline Endpoint& WithAddress(Aws::String&& value) { SetAddress(std::move(value)); return *this;}
-    inline Endpoint& WithAddress(const char* value) { SetAddress(value); return *this;}
+    template<typename AddressT = Aws::String>
+    void SetAddress(AddressT&& value) { m_addressHasBeenSet = true; m_address = std::forward<AddressT>(value); }
+    template<typename AddressT = Aws::String>
+    Endpoint& WithAddress(AddressT&& value) { SetAddress(std::forward<AddressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The port number that applications should use to connect to the endpoint.</p>
      */
-    inline int GetPort() const{ return m_port; }
+    inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline Endpoint& WithPort(int value) { SetPort(value); return *this;}
@@ -67,21 +65,19 @@ namespace Model
      * <p>The URL that applications should use to connect to the endpoint. The default
      * ports are 8111 for the "dax" protocol and 9111 for the "daxs" protocol.</p>
      */
-    inline const Aws::String& GetURL() const{ return m_uRL; }
+    inline const Aws::String& GetURL() const { return m_uRL; }
     inline bool URLHasBeenSet() const { return m_uRLHasBeenSet; }
-    inline void SetURL(const Aws::String& value) { m_uRLHasBeenSet = true; m_uRL = value; }
-    inline void SetURL(Aws::String&& value) { m_uRLHasBeenSet = true; m_uRL = std::move(value); }
-    inline void SetURL(const char* value) { m_uRLHasBeenSet = true; m_uRL.assign(value); }
-    inline Endpoint& WithURL(const Aws::String& value) { SetURL(value); return *this;}
-    inline Endpoint& WithURL(Aws::String&& value) { SetURL(std::move(value)); return *this;}
-    inline Endpoint& WithURL(const char* value) { SetURL(value); return *this;}
+    template<typename URLT = Aws::String>
+    void SetURL(URLT&& value) { m_uRLHasBeenSet = true; m_uRL = std::forward<URLT>(value); }
+    template<typename URLT = Aws::String>
+    Endpoint& WithURL(URLT&& value) { SetURL(std::forward<URLT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_address;
     bool m_addressHasBeenSet = false;
 
-    int m_port;
+    int m_port{0};
     bool m_portHasBeenSet = false;
 
     Aws::String m_uRL;

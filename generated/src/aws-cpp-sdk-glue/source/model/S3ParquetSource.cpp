@@ -18,27 +18,7 @@ namespace Glue
 namespace Model
 {
 
-S3ParquetSource::S3ParquetSource() : 
-    m_nameHasBeenSet(false),
-    m_pathsHasBeenSet(false),
-    m_compressionType(ParquetCompressionType::NOT_SET),
-    m_compressionTypeHasBeenSet(false),
-    m_exclusionsHasBeenSet(false),
-    m_groupSizeHasBeenSet(false),
-    m_groupFilesHasBeenSet(false),
-    m_recurse(false),
-    m_recurseHasBeenSet(false),
-    m_maxBand(0),
-    m_maxBandHasBeenSet(false),
-    m_maxFilesInBand(0),
-    m_maxFilesInBandHasBeenSet(false),
-    m_additionalOptionsHasBeenSet(false),
-    m_outputSchemasHasBeenSet(false)
-{
-}
-
 S3ParquetSource::S3ParquetSource(JsonView jsonValue)
-  : S3ParquetSource()
 {
   *this = jsonValue;
 }
@@ -48,10 +28,8 @@ S3ParquetSource& S3ParquetSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Paths"))
   {
     Aws::Utils::Array<JsonView> pathsJsonList = jsonValue.GetArray("Paths");
@@ -61,14 +39,11 @@ S3ParquetSource& S3ParquetSource::operator =(JsonView jsonValue)
     }
     m_pathsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompressionType"))
   {
     m_compressionType = ParquetCompressionTypeMapper::GetParquetCompressionTypeForName(jsonValue.GetString("CompressionType"));
-
     m_compressionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Exclusions"))
   {
     Aws::Utils::Array<JsonView> exclusionsJsonList = jsonValue.GetArray("Exclusions");
@@ -78,49 +53,36 @@ S3ParquetSource& S3ParquetSource::operator =(JsonView jsonValue)
     }
     m_exclusionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupSize"))
   {
     m_groupSize = jsonValue.GetString("GroupSize");
-
     m_groupSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupFiles"))
   {
     m_groupFiles = jsonValue.GetString("GroupFiles");
-
     m_groupFilesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Recurse"))
   {
     m_recurse = jsonValue.GetBool("Recurse");
-
     m_recurseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxBand"))
   {
     m_maxBand = jsonValue.GetInteger("MaxBand");
-
     m_maxBandHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxFilesInBand"))
   {
     m_maxFilesInBand = jsonValue.GetInteger("MaxFilesInBand");
-
     m_maxFilesInBandHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdditionalOptions"))
   {
     m_additionalOptions = jsonValue.GetObject("AdditionalOptions");
-
     m_additionalOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputSchemas"))
   {
     Aws::Utils::Array<JsonView> outputSchemasJsonList = jsonValue.GetArray("OutputSchemas");
@@ -130,7 +92,6 @@ S3ParquetSource& S3ParquetSource::operator =(JsonView jsonValue)
     }
     m_outputSchemasHasBeenSet = true;
   }
-
   return *this;
 }
 

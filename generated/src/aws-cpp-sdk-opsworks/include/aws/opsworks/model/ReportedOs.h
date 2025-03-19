@@ -32,7 +32,7 @@ namespace Model
   class ReportedOs
   {
   public:
-    AWS_OPSWORKS_API ReportedOs();
+    AWS_OPSWORKS_API ReportedOs() = default;
     AWS_OPSWORKS_API ReportedOs(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKS_API ReportedOs& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,42 +42,36 @@ namespace Model
     /**
      * <p>The operating system family.</p>
      */
-    inline const Aws::String& GetFamily() const{ return m_family; }
+    inline const Aws::String& GetFamily() const { return m_family; }
     inline bool FamilyHasBeenSet() const { return m_familyHasBeenSet; }
-    inline void SetFamily(const Aws::String& value) { m_familyHasBeenSet = true; m_family = value; }
-    inline void SetFamily(Aws::String&& value) { m_familyHasBeenSet = true; m_family = std::move(value); }
-    inline void SetFamily(const char* value) { m_familyHasBeenSet = true; m_family.assign(value); }
-    inline ReportedOs& WithFamily(const Aws::String& value) { SetFamily(value); return *this;}
-    inline ReportedOs& WithFamily(Aws::String&& value) { SetFamily(std::move(value)); return *this;}
-    inline ReportedOs& WithFamily(const char* value) { SetFamily(value); return *this;}
+    template<typename FamilyT = Aws::String>
+    void SetFamily(FamilyT&& value) { m_familyHasBeenSet = true; m_family = std::forward<FamilyT>(value); }
+    template<typename FamilyT = Aws::String>
+    ReportedOs& WithFamily(FamilyT&& value) { SetFamily(std::forward<FamilyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The operating system name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ReportedOs& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ReportedOs& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ReportedOs& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ReportedOs& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The operating system version.</p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
+    inline const Aws::String& GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-    inline ReportedOs& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline ReportedOs& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline ReportedOs& WithVersion(const char* value) { SetVersion(value); return *this;}
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    ReportedOs& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
   private:
 

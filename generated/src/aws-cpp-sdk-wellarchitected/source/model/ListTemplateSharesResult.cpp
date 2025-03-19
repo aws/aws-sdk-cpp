@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListTemplateSharesResult::ListTemplateSharesResult()
-{
-}
-
 ListTemplateSharesResult::ListTemplateSharesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListTemplateSharesResult& ListTemplateSharesResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("TemplateArn"))
   {
     m_templateArn = jsonValue.GetString("TemplateArn");
-
+    m_templateArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TemplateShareSummaries"))
   {
     Aws::Utils::Array<JsonView> templateShareSummariesJsonList = jsonValue.GetArray("TemplateShareSummaries");
@@ -42,20 +37,20 @@ ListTemplateSharesResult& ListTemplateSharesResult::operator =(const Aws::Amazon
     {
       m_templateShareSummaries.push_back(templateShareSummariesJsonList[templateShareSummariesIndex].AsObject());
     }
+    m_templateShareSummariesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

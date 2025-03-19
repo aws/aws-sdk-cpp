@@ -32,7 +32,7 @@ namespace Model
   class KxCacheStorageConfiguration
   {
   public:
-    AWS_FINSPACE_API KxCacheStorageConfiguration();
+    AWS_FINSPACE_API KxCacheStorageConfiguration() = default;
     AWS_FINSPACE_API KxCacheStorageConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACE_API KxCacheStorageConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,21 +49,19 @@ namespace Model
      * 2400 GB. For cache type <code>CACHE_12</code> you can select the cache size in
      * increments of 6000 GB.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline KxCacheStorageConfiguration& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline KxCacheStorageConfiguration& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline KxCacheStorageConfiguration& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    KxCacheStorageConfiguration& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The size of cache in Gigabytes.</p>
      */
-    inline int GetSize() const{ return m_size; }
+    inline int GetSize() const { return m_size; }
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
     inline void SetSize(int value) { m_sizeHasBeenSet = true; m_size = value; }
     inline KxCacheStorageConfiguration& WithSize(int value) { SetSize(value); return *this;}
@@ -73,7 +71,7 @@ namespace Model
     Aws::String m_type;
     bool m_typeHasBeenSet = false;
 
-    int m_size;
+    int m_size{0};
     bool m_sizeHasBeenSet = false;
   };
 

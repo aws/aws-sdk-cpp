@@ -24,7 +24,7 @@ namespace Model
   class UpdateCapabilityRequest : public B2BIRequest
   {
   public:
-    AWS_B2BI_API UpdateCapabilityRequest();
+    AWS_B2BI_API UpdateCapabilityRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,40 +41,36 @@ namespace Model
     /**
      * <p>Specifies a system-assigned unique identifier for the capability.</p>
      */
-    inline const Aws::String& GetCapabilityId() const{ return m_capabilityId; }
+    inline const Aws::String& GetCapabilityId() const { return m_capabilityId; }
     inline bool CapabilityIdHasBeenSet() const { return m_capabilityIdHasBeenSet; }
-    inline void SetCapabilityId(const Aws::String& value) { m_capabilityIdHasBeenSet = true; m_capabilityId = value; }
-    inline void SetCapabilityId(Aws::String&& value) { m_capabilityIdHasBeenSet = true; m_capabilityId = std::move(value); }
-    inline void SetCapabilityId(const char* value) { m_capabilityIdHasBeenSet = true; m_capabilityId.assign(value); }
-    inline UpdateCapabilityRequest& WithCapabilityId(const Aws::String& value) { SetCapabilityId(value); return *this;}
-    inline UpdateCapabilityRequest& WithCapabilityId(Aws::String&& value) { SetCapabilityId(std::move(value)); return *this;}
-    inline UpdateCapabilityRequest& WithCapabilityId(const char* value) { SetCapabilityId(value); return *this;}
+    template<typename CapabilityIdT = Aws::String>
+    void SetCapabilityId(CapabilityIdT&& value) { m_capabilityIdHasBeenSet = true; m_capabilityId = std::forward<CapabilityIdT>(value); }
+    template<typename CapabilityIdT = Aws::String>
+    UpdateCapabilityRequest& WithCapabilityId(CapabilityIdT&& value) { SetCapabilityId(std::forward<CapabilityIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies a new name for the capability, to replace the existing name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateCapabilityRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateCapabilityRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateCapabilityRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateCapabilityRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies a structure that contains the details for a capability.</p>
      */
-    inline const CapabilityConfiguration& GetConfiguration() const{ return m_configuration; }
+    inline const CapabilityConfiguration& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const CapabilityConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(CapabilityConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline UpdateCapabilityRequest& WithConfiguration(const CapabilityConfiguration& value) { SetConfiguration(value); return *this;}
-    inline UpdateCapabilityRequest& WithConfiguration(CapabilityConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    template<typename ConfigurationT = CapabilityConfiguration>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = CapabilityConfiguration>
+    UpdateCapabilityRequest& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,14 +79,14 @@ namespace Model
      * that can be used with this capability. Each item contains the name of the bucket
      * and the key, to identify the document's location.</p>
      */
-    inline const Aws::Vector<S3Location>& GetInstructionsDocuments() const{ return m_instructionsDocuments; }
+    inline const Aws::Vector<S3Location>& GetInstructionsDocuments() const { return m_instructionsDocuments; }
     inline bool InstructionsDocumentsHasBeenSet() const { return m_instructionsDocumentsHasBeenSet; }
-    inline void SetInstructionsDocuments(const Aws::Vector<S3Location>& value) { m_instructionsDocumentsHasBeenSet = true; m_instructionsDocuments = value; }
-    inline void SetInstructionsDocuments(Aws::Vector<S3Location>&& value) { m_instructionsDocumentsHasBeenSet = true; m_instructionsDocuments = std::move(value); }
-    inline UpdateCapabilityRequest& WithInstructionsDocuments(const Aws::Vector<S3Location>& value) { SetInstructionsDocuments(value); return *this;}
-    inline UpdateCapabilityRequest& WithInstructionsDocuments(Aws::Vector<S3Location>&& value) { SetInstructionsDocuments(std::move(value)); return *this;}
-    inline UpdateCapabilityRequest& AddInstructionsDocuments(const S3Location& value) { m_instructionsDocumentsHasBeenSet = true; m_instructionsDocuments.push_back(value); return *this; }
-    inline UpdateCapabilityRequest& AddInstructionsDocuments(S3Location&& value) { m_instructionsDocumentsHasBeenSet = true; m_instructionsDocuments.push_back(std::move(value)); return *this; }
+    template<typename InstructionsDocumentsT = Aws::Vector<S3Location>>
+    void SetInstructionsDocuments(InstructionsDocumentsT&& value) { m_instructionsDocumentsHasBeenSet = true; m_instructionsDocuments = std::forward<InstructionsDocumentsT>(value); }
+    template<typename InstructionsDocumentsT = Aws::Vector<S3Location>>
+    UpdateCapabilityRequest& WithInstructionsDocuments(InstructionsDocumentsT&& value) { SetInstructionsDocuments(std::forward<InstructionsDocumentsT>(value)); return *this;}
+    template<typename InstructionsDocumentsT = S3Location>
+    UpdateCapabilityRequest& AddInstructionsDocuments(InstructionsDocumentsT&& value) { m_instructionsDocumentsHasBeenSet = true; m_instructionsDocuments.emplace_back(std::forward<InstructionsDocumentsT>(value)); return *this; }
     ///@}
   private:
 

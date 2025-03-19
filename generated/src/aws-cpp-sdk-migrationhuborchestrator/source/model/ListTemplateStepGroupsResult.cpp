@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListTemplateStepGroupsResult::ListTemplateStepGroupsResult()
-{
-}
-
 ListTemplateStepGroupsResult::ListTemplateStepGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListTemplateStepGroupsResult& ListTemplateStepGroupsResult::operator =(const Aws
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("templateStepGroupSummary"))
   {
     Aws::Utils::Array<JsonView> templateStepGroupSummaryJsonList = jsonValue.GetArray("templateStepGroupSummary");
@@ -42,14 +37,15 @@ ListTemplateStepGroupsResult& ListTemplateStepGroupsResult::operator =(const Aws
     {
       m_templateStepGroupSummary.push_back(templateStepGroupSummaryJsonList[templateStepGroupSummaryIndex].AsObject());
     }
+    m_templateStepGroupSummaryHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

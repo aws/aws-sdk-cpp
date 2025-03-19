@@ -33,7 +33,7 @@ namespace Model
   class TransformSortCriteria
   {
   public:
-    AWS_GLUE_API TransformSortCriteria();
+    AWS_GLUE_API TransformSortCriteria() = default;
     AWS_GLUE_API TransformSortCriteria(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API TransformSortCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
      * <p>The column to be used in the sorting criteria that are associated with the
      * machine learning transform.</p>
      */
-    inline const TransformSortColumnType& GetColumn() const{ return m_column; }
+    inline TransformSortColumnType GetColumn() const { return m_column; }
     inline bool ColumnHasBeenSet() const { return m_columnHasBeenSet; }
-    inline void SetColumn(const TransformSortColumnType& value) { m_columnHasBeenSet = true; m_column = value; }
-    inline void SetColumn(TransformSortColumnType&& value) { m_columnHasBeenSet = true; m_column = std::move(value); }
-    inline TransformSortCriteria& WithColumn(const TransformSortColumnType& value) { SetColumn(value); return *this;}
-    inline TransformSortCriteria& WithColumn(TransformSortColumnType&& value) { SetColumn(std::move(value)); return *this;}
+    inline void SetColumn(TransformSortColumnType value) { m_columnHasBeenSet = true; m_column = value; }
+    inline TransformSortCriteria& WithColumn(TransformSortColumnType value) { SetColumn(value); return *this;}
     ///@}
 
     ///@{
@@ -57,19 +55,17 @@ namespace Model
      * <p>The sort direction to be used in the sorting criteria that are associated
      * with the machine learning transform.</p>
      */
-    inline const SortDirectionType& GetSortDirection() const{ return m_sortDirection; }
+    inline SortDirectionType GetSortDirection() const { return m_sortDirection; }
     inline bool SortDirectionHasBeenSet() const { return m_sortDirectionHasBeenSet; }
-    inline void SetSortDirection(const SortDirectionType& value) { m_sortDirectionHasBeenSet = true; m_sortDirection = value; }
-    inline void SetSortDirection(SortDirectionType&& value) { m_sortDirectionHasBeenSet = true; m_sortDirection = std::move(value); }
-    inline TransformSortCriteria& WithSortDirection(const SortDirectionType& value) { SetSortDirection(value); return *this;}
-    inline TransformSortCriteria& WithSortDirection(SortDirectionType&& value) { SetSortDirection(std::move(value)); return *this;}
+    inline void SetSortDirection(SortDirectionType value) { m_sortDirectionHasBeenSet = true; m_sortDirection = value; }
+    inline TransformSortCriteria& WithSortDirection(SortDirectionType value) { SetSortDirection(value); return *this;}
     ///@}
   private:
 
-    TransformSortColumnType m_column;
+    TransformSortColumnType m_column{TransformSortColumnType::NOT_SET};
     bool m_columnHasBeenSet = false;
 
-    SortDirectionType m_sortDirection;
+    SortDirectionType m_sortDirection{SortDirectionType::NOT_SET};
     bool m_sortDirectionHasBeenSet = false;
   };
 

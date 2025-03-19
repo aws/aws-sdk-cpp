@@ -12,12 +12,6 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AddCustomAttributesRequest::AddCustomAttributesRequest() : 
-    m_userPoolIdHasBeenSet(false),
-    m_customAttributesHasBeenSet(false)
-{
-}
-
 Aws::String AddCustomAttributesRequest::SerializePayload() const
 {
   JsonValue payload;

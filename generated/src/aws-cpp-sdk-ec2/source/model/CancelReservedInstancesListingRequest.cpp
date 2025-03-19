@@ -10,11 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CancelReservedInstancesListingRequest::CancelReservedInstancesListingRequest() : 
-    m_reservedInstancesListingIdHasBeenSet(false)
-{
-}
-
 Aws::String CancelReservedInstancesListingRequest::SerializePayload() const
 {
   Aws::StringStream ss;

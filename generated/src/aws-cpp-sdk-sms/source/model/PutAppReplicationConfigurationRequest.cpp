@@ -12,12 +12,6 @@ using namespace Aws::SMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutAppReplicationConfigurationRequest::PutAppReplicationConfigurationRequest() : 
-    m_appIdHasBeenSet(false),
-    m_serverGroupReplicationConfigurationsHasBeenSet(false)
-{
-}
-
 Aws::String PutAppReplicationConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

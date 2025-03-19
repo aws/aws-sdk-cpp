@@ -33,7 +33,7 @@ namespace Model
   class GroupStatusDetail
   {
   public:
-    AWS_QBUSINESS_API GroupStatusDetail();
+    AWS_QBUSINESS_API GroupStatusDetail() = default;
     AWS_QBUSINESS_API GroupStatusDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API GroupStatusDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
     /**
      * <p>The status of a group.</p>
      */
-    inline const GroupStatus& GetStatus() const{ return m_status; }
+    inline GroupStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const GroupStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(GroupStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline GroupStatusDetail& WithStatus(const GroupStatus& value) { SetStatus(value); return *this;}
-    inline GroupStatusDetail& WithStatus(GroupStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(GroupStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GroupStatusDetail& WithStatus(GroupStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -56,31 +54,31 @@ namespace Model
      * <p>The Unix timestamp when the Amazon Q Business application was last
      * updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
     inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
-    inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
-    inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::move(value); }
-    inline GroupStatusDetail& WithLastUpdatedAt(const Aws::Utils::DateTime& value) { SetLastUpdatedAt(value); return *this;}
-    inline GroupStatusDetail& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    GroupStatusDetail& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The details of an error associated a group status.</p>
      */
-    inline const ErrorDetail& GetErrorDetail() const{ return m_errorDetail; }
+    inline const ErrorDetail& GetErrorDetail() const { return m_errorDetail; }
     inline bool ErrorDetailHasBeenSet() const { return m_errorDetailHasBeenSet; }
-    inline void SetErrorDetail(const ErrorDetail& value) { m_errorDetailHasBeenSet = true; m_errorDetail = value; }
-    inline void SetErrorDetail(ErrorDetail&& value) { m_errorDetailHasBeenSet = true; m_errorDetail = std::move(value); }
-    inline GroupStatusDetail& WithErrorDetail(const ErrorDetail& value) { SetErrorDetail(value); return *this;}
-    inline GroupStatusDetail& WithErrorDetail(ErrorDetail&& value) { SetErrorDetail(std::move(value)); return *this;}
+    template<typename ErrorDetailT = ErrorDetail>
+    void SetErrorDetail(ErrorDetailT&& value) { m_errorDetailHasBeenSet = true; m_errorDetail = std::forward<ErrorDetailT>(value); }
+    template<typename ErrorDetailT = ErrorDetail>
+    GroupStatusDetail& WithErrorDetail(ErrorDetailT&& value) { SetErrorDetail(std::forward<ErrorDetailT>(value)); return *this;}
     ///@}
   private:
 
-    GroupStatus m_status;
+    GroupStatus m_status{GroupStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedAt;
+    Aws::Utils::DateTime m_lastUpdatedAt{};
     bool m_lastUpdatedAtHasBeenSet = false;
 
     ErrorDetail m_errorDetail;

@@ -35,7 +35,7 @@ namespace Model
   class MeshData
   {
   public:
-    AWS_APPMESH_API MeshData();
+    AWS_APPMESH_API MeshData() = default;
     AWS_APPMESH_API MeshData(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API MeshData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,50 +45,48 @@ namespace Model
     /**
      * <p>The name of the service mesh.</p>
      */
-    inline const Aws::String& GetMeshName() const{ return m_meshName; }
+    inline const Aws::String& GetMeshName() const { return m_meshName; }
     inline bool MeshNameHasBeenSet() const { return m_meshNameHasBeenSet; }
-    inline void SetMeshName(const Aws::String& value) { m_meshNameHasBeenSet = true; m_meshName = value; }
-    inline void SetMeshName(Aws::String&& value) { m_meshNameHasBeenSet = true; m_meshName = std::move(value); }
-    inline void SetMeshName(const char* value) { m_meshNameHasBeenSet = true; m_meshName.assign(value); }
-    inline MeshData& WithMeshName(const Aws::String& value) { SetMeshName(value); return *this;}
-    inline MeshData& WithMeshName(Aws::String&& value) { SetMeshName(std::move(value)); return *this;}
-    inline MeshData& WithMeshName(const char* value) { SetMeshName(value); return *this;}
+    template<typename MeshNameT = Aws::String>
+    void SetMeshName(MeshNameT&& value) { m_meshNameHasBeenSet = true; m_meshName = std::forward<MeshNameT>(value); }
+    template<typename MeshNameT = Aws::String>
+    MeshData& WithMeshName(MeshNameT&& value) { SetMeshName(std::forward<MeshNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The associated metadata for the service mesh.</p>
      */
-    inline const ResourceMetadata& GetMetadata() const{ return m_metadata; }
+    inline const ResourceMetadata& GetMetadata() const { return m_metadata; }
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
-    inline void SetMetadata(const ResourceMetadata& value) { m_metadataHasBeenSet = true; m_metadata = value; }
-    inline void SetMetadata(ResourceMetadata&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
-    inline MeshData& WithMetadata(const ResourceMetadata& value) { SetMetadata(value); return *this;}
-    inline MeshData& WithMetadata(ResourceMetadata&& value) { SetMetadata(std::move(value)); return *this;}
+    template<typename MetadataT = ResourceMetadata>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = ResourceMetadata>
+    MeshData& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The associated specification for the service mesh.</p>
      */
-    inline const MeshSpec& GetSpec() const{ return m_spec; }
+    inline const MeshSpec& GetSpec() const { return m_spec; }
     inline bool SpecHasBeenSet() const { return m_specHasBeenSet; }
-    inline void SetSpec(const MeshSpec& value) { m_specHasBeenSet = true; m_spec = value; }
-    inline void SetSpec(MeshSpec&& value) { m_specHasBeenSet = true; m_spec = std::move(value); }
-    inline MeshData& WithSpec(const MeshSpec& value) { SetSpec(value); return *this;}
-    inline MeshData& WithSpec(MeshSpec&& value) { SetSpec(std::move(value)); return *this;}
+    template<typename SpecT = MeshSpec>
+    void SetSpec(SpecT&& value) { m_specHasBeenSet = true; m_spec = std::forward<SpecT>(value); }
+    template<typename SpecT = MeshSpec>
+    MeshData& WithSpec(SpecT&& value) { SetSpec(std::forward<SpecT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the service mesh.</p>
      */
-    inline const MeshStatus& GetStatus() const{ return m_status; }
+    inline const MeshStatus& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const MeshStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(MeshStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline MeshData& WithStatus(const MeshStatus& value) { SetStatus(value); return *this;}
-    inline MeshData& WithStatus(MeshStatus&& value) { SetStatus(std::move(value)); return *this;}
+    template<typename StatusT = MeshStatus>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = MeshStatus>
+    MeshData& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
   private:
 

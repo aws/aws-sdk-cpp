@@ -10,14 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-DescribeStackSetOperationRequest::DescribeStackSetOperationRequest() : 
-    m_stackSetNameHasBeenSet(false),
-    m_operationIdHasBeenSet(false),
-    m_callAs(CallAs::NOT_SET),
-    m_callAsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeStackSetOperationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

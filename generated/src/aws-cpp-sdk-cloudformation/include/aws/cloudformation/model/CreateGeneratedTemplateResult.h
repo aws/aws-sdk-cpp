@@ -28,7 +28,7 @@ namespace Model
   class CreateGeneratedTemplateResult
   {
   public:
-    AWS_CLOUDFORMATION_API CreateGeneratedTemplateResult();
+    AWS_CLOUDFORMATION_API CreateGeneratedTemplateResult() = default;
     AWS_CLOUDFORMATION_API CreateGeneratedTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDFORMATION_API CreateGeneratedTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The ID of the generated template.</p>
      */
-    inline const Aws::String& GetGeneratedTemplateId() const{ return m_generatedTemplateId; }
-    inline void SetGeneratedTemplateId(const Aws::String& value) { m_generatedTemplateId = value; }
-    inline void SetGeneratedTemplateId(Aws::String&& value) { m_generatedTemplateId = std::move(value); }
-    inline void SetGeneratedTemplateId(const char* value) { m_generatedTemplateId.assign(value); }
-    inline CreateGeneratedTemplateResult& WithGeneratedTemplateId(const Aws::String& value) { SetGeneratedTemplateId(value); return *this;}
-    inline CreateGeneratedTemplateResult& WithGeneratedTemplateId(Aws::String&& value) { SetGeneratedTemplateId(std::move(value)); return *this;}
-    inline CreateGeneratedTemplateResult& WithGeneratedTemplateId(const char* value) { SetGeneratedTemplateId(value); return *this;}
+    inline const Aws::String& GetGeneratedTemplateId() const { return m_generatedTemplateId; }
+    template<typename GeneratedTemplateIdT = Aws::String>
+    void SetGeneratedTemplateId(GeneratedTemplateIdT&& value) { m_generatedTemplateIdHasBeenSet = true; m_generatedTemplateId = std::forward<GeneratedTemplateIdT>(value); }
+    template<typename GeneratedTemplateIdT = Aws::String>
+    CreateGeneratedTemplateResult& WithGeneratedTemplateId(GeneratedTemplateIdT&& value) { SetGeneratedTemplateId(std::forward<GeneratedTemplateIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CreateGeneratedTemplateResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CreateGeneratedTemplateResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CreateGeneratedTemplateResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_generatedTemplateId;
+    bool m_generatedTemplateIdHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,15 +12,6 @@ using namespace Aws::CodeBuild::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListProjectsRequest::ListProjectsRequest() : 
-    m_sortBy(ProjectSortByType::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrderType::NOT_SET),
-    m_sortOrderHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListProjectsRequest::SerializePayload() const
 {
   JsonValue payload;

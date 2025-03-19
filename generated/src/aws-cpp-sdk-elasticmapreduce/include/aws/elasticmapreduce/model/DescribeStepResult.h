@@ -34,7 +34,7 @@ namespace Model
   class DescribeStepResult
   {
   public:
-    AWS_EMR_API DescribeStepResult();
+    AWS_EMR_API DescribeStepResult() = default;
     AWS_EMR_API DescribeStepResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_EMR_API DescribeStepResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,28 +43,28 @@ namespace Model
     /**
      * <p>The step details for the requested step identifier.</p>
      */
-    inline const Step& GetStep() const{ return m_step; }
-    inline void SetStep(const Step& value) { m_step = value; }
-    inline void SetStep(Step&& value) { m_step = std::move(value); }
-    inline DescribeStepResult& WithStep(const Step& value) { SetStep(value); return *this;}
-    inline DescribeStepResult& WithStep(Step&& value) { SetStep(std::move(value)); return *this;}
+    inline const Step& GetStep() const { return m_step; }
+    template<typename StepT = Step>
+    void SetStep(StepT&& value) { m_stepHasBeenSet = true; m_step = std::forward<StepT>(value); }
+    template<typename StepT = Step>
+    DescribeStepResult& WithStep(StepT&& value) { SetStep(std::forward<StepT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeStepResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeStepResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeStepResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeStepResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Step m_step;
+    bool m_stepHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

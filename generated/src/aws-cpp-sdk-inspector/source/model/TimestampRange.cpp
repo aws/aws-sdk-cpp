@@ -18,14 +18,7 @@ namespace Inspector
 namespace Model
 {
 
-TimestampRange::TimestampRange() : 
-    m_beginDateHasBeenSet(false),
-    m_endDateHasBeenSet(false)
-{
-}
-
 TimestampRange::TimestampRange(JsonView jsonValue)
-  : TimestampRange()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TimestampRange& TimestampRange::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("beginDate"))
   {
     m_beginDate = jsonValue.GetDouble("beginDate");
-
     m_beginDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endDate"))
   {
     m_endDate = jsonValue.GetDouble("endDate");
-
     m_endDateHasBeenSet = true;
   }
-
   return *this;
 }
 

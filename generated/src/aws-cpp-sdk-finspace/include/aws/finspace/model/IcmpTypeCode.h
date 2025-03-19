@@ -30,7 +30,7 @@ namespace Model
   class IcmpTypeCode
   {
   public:
-    AWS_FINSPACE_API IcmpTypeCode();
+    AWS_FINSPACE_API IcmpTypeCode() = default;
     AWS_FINSPACE_API IcmpTypeCode(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACE_API IcmpTypeCode& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>The ICMP type. A value of <i>-1</i> means all types. </p>
      */
-    inline int GetType() const{ return m_type; }
+    inline int GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
     inline void SetType(int value) { m_typeHasBeenSet = true; m_type = value; }
     inline IcmpTypeCode& WithType(int value) { SetType(value); return *this;}
@@ -51,17 +51,17 @@ namespace Model
      * <p> The ICMP code. A value of <i>-1</i> means all codes for the specified ICMP
      * type. </p>
      */
-    inline int GetCode() const{ return m_code; }
+    inline int GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
     inline void SetCode(int value) { m_codeHasBeenSet = true; m_code = value; }
     inline IcmpTypeCode& WithCode(int value) { SetCode(value); return *this;}
     ///@}
   private:
 
-    int m_type;
+    int m_type{0};
     bool m_typeHasBeenSet = false;
 
-    int m_code;
+    int m_code{0};
     bool m_codeHasBeenSet = false;
   };
 

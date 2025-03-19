@@ -18,16 +18,7 @@ namespace MachineLearning
 namespace Model
 {
 
-S3DataSpec::S3DataSpec() : 
-    m_dataLocationS3HasBeenSet(false),
-    m_dataRearrangementHasBeenSet(false),
-    m_dataSchemaHasBeenSet(false),
-    m_dataSchemaLocationS3HasBeenSet(false)
-{
-}
-
 S3DataSpec::S3DataSpec(JsonView jsonValue)
-  : S3DataSpec()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ S3DataSpec& S3DataSpec::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DataLocationS3"))
   {
     m_dataLocationS3 = jsonValue.GetString("DataLocationS3");
-
     m_dataLocationS3HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataRearrangement"))
   {
     m_dataRearrangement = jsonValue.GetString("DataRearrangement");
-
     m_dataRearrangementHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSchema"))
   {
     m_dataSchema = jsonValue.GetString("DataSchema");
-
     m_dataSchemaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSchemaLocationS3"))
   {
     m_dataSchemaLocationS3 = jsonValue.GetString("DataSchemaLocationS3");
-
     m_dataSchemaLocationS3HasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeManagedLoginBrandingByClientResult::DescribeManagedLoginBrandingByClientResult()
-{
-}
-
 DescribeManagedLoginBrandingByClientResult::DescribeManagedLoginBrandingByClientResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeManagedLoginBrandingByClientResult& DescribeManagedLoginBrandingByClient
   if(jsonValue.ValueExists("ManagedLoginBranding"))
   {
     m_managedLoginBranding = jsonValue.GetObject("ManagedLoginBranding");
-
+    m_managedLoginBrandingHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

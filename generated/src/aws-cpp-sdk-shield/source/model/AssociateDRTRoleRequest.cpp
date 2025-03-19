@@ -12,11 +12,6 @@ using namespace Aws::Shield::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateDRTRoleRequest::AssociateDRTRoleRequest() : 
-    m_roleArnHasBeenSet(false)
-{
-}
-
 Aws::String AssociateDRTRoleRequest::SerializePayload() const
 {
   JsonValue payload;

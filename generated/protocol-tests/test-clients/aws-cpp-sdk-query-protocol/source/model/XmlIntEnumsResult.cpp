@@ -17,15 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-XmlIntEnumsResult::XmlIntEnumsResult() : 
-    m_intEnum1(0),
-    m_intEnum2(0),
-    m_intEnum3(0)
-{
-}
-
 XmlIntEnumsResult::XmlIntEnumsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : XmlIntEnumsResult()
 {
   *this = result;
 }
@@ -46,44 +38,52 @@ XmlIntEnumsResult& XmlIntEnumsResult::operator =(const Aws::AmazonWebServiceResu
     if(!intEnum1Node.IsNull())
     {
       m_intEnum1 = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(intEnum1Node.GetText()).c_str()).c_str());
+      m_intEnum1HasBeenSet = true;
     }
     XmlNode intEnum2Node = resultNode.FirstChild("intEnum2");
     if(!intEnum2Node.IsNull())
     {
       m_intEnum2 = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(intEnum2Node.GetText()).c_str()).c_str());
+      m_intEnum2HasBeenSet = true;
     }
     XmlNode intEnum3Node = resultNode.FirstChild("intEnum3");
     if(!intEnum3Node.IsNull())
     {
       m_intEnum3 = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(intEnum3Node.GetText()).c_str()).c_str());
+      m_intEnum3HasBeenSet = true;
     }
     XmlNode intEnumListNode = resultNode.FirstChild("intEnumList");
     if(!intEnumListNode.IsNull())
     {
       XmlNode intEnumListMember = intEnumListNode.FirstChild("member");
+      m_intEnumListHasBeenSet = !intEnumListMember.IsNull();
       while(!intEnumListMember.IsNull())
       {
         m_intEnumList.push_back(StringUtils::ConvertToInt32(StringUtils::Trim(intEnumListMember.GetText().c_str()).c_str()));
         intEnumListMember = intEnumListMember.NextNode("member");
       }
 
+      m_intEnumListHasBeenSet = true;
     }
     XmlNode intEnumSetNode = resultNode.FirstChild("intEnumSet");
     if(!intEnumSetNode.IsNull())
     {
       XmlNode intEnumSetMember = intEnumSetNode.FirstChild("member");
+      m_intEnumSetHasBeenSet = !intEnumSetMember.IsNull();
       while(!intEnumSetMember.IsNull())
       {
         m_intEnumSet.push_back(StringUtils::ConvertToInt32(StringUtils::Trim(intEnumSetMember.GetText().c_str()).c_str()));
         intEnumSetMember = intEnumSetMember.NextNode("member");
       }
 
+      m_intEnumSetHasBeenSet = true;
     }
     XmlNode intEnumMapNode = resultNode.FirstChild("intEnumMap");
 
     if(!intEnumMapNode.IsNull())
     {
       XmlNode intEnumMapEntry = intEnumMapNode.FirstChild("entry");
+      m_intEnumMapHasBeenSet = !intEnumMapEntry.IsNull();
       while(!intEnumMapEntry.IsNull())
       {
         XmlNode keyNode = intEnumMapEntry.FirstChild("key");
@@ -93,12 +93,14 @@ XmlIntEnumsResult& XmlIntEnumsResult::operator =(const Aws::AmazonWebServiceResu
         intEnumMapEntry = intEnumMapEntry.NextNode("entry");
       }
 
+      m_intEnumMapHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::QueryProtocol::Model::XmlIntEnumsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

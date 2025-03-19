@@ -33,7 +33,7 @@ namespace Model
   class OpsEntityItem
   {
   public:
-    AWS_SSM_API OpsEntityItem();
+    AWS_SSM_API OpsEntityItem() = default;
     AWS_SSM_API OpsEntityItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API OpsEntityItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,26 @@ namespace Model
     /**
      * <p>The time the OpsData was captured.</p>
      */
-    inline const Aws::String& GetCaptureTime() const{ return m_captureTime; }
+    inline const Aws::String& GetCaptureTime() const { return m_captureTime; }
     inline bool CaptureTimeHasBeenSet() const { return m_captureTimeHasBeenSet; }
-    inline void SetCaptureTime(const Aws::String& value) { m_captureTimeHasBeenSet = true; m_captureTime = value; }
-    inline void SetCaptureTime(Aws::String&& value) { m_captureTimeHasBeenSet = true; m_captureTime = std::move(value); }
-    inline void SetCaptureTime(const char* value) { m_captureTimeHasBeenSet = true; m_captureTime.assign(value); }
-    inline OpsEntityItem& WithCaptureTime(const Aws::String& value) { SetCaptureTime(value); return *this;}
-    inline OpsEntityItem& WithCaptureTime(Aws::String&& value) { SetCaptureTime(std::move(value)); return *this;}
-    inline OpsEntityItem& WithCaptureTime(const char* value) { SetCaptureTime(value); return *this;}
+    template<typename CaptureTimeT = Aws::String>
+    void SetCaptureTime(CaptureTimeT&& value) { m_captureTimeHasBeenSet = true; m_captureTime = std::forward<CaptureTimeT>(value); }
+    template<typename CaptureTimeT = Aws::String>
+    OpsEntityItem& WithCaptureTime(CaptureTimeT&& value) { SetCaptureTime(std::forward<CaptureTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The details of an OpsData summary.</p>
      */
-    inline const Aws::Vector<Aws::Map<Aws::String, Aws::String>>& GetContent() const{ return m_content; }
+    inline const Aws::Vector<Aws::Map<Aws::String, Aws::String>>& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const Aws::Vector<Aws::Map<Aws::String, Aws::String>>& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(Aws::Vector<Aws::Map<Aws::String, Aws::String>>&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline OpsEntityItem& WithContent(const Aws::Vector<Aws::Map<Aws::String, Aws::String>>& value) { SetContent(value); return *this;}
-    inline OpsEntityItem& WithContent(Aws::Vector<Aws::Map<Aws::String, Aws::String>>&& value) { SetContent(std::move(value)); return *this;}
-    inline OpsEntityItem& AddContent(const Aws::Map<Aws::String, Aws::String>& value) { m_contentHasBeenSet = true; m_content.push_back(value); return *this; }
-    inline OpsEntityItem& AddContent(Aws::Map<Aws::String, Aws::String>&& value) { m_contentHasBeenSet = true; m_content.push_back(std::move(value)); return *this; }
+    template<typename ContentT = Aws::Vector<Aws::Map<Aws::String, Aws::String>>>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = Aws::Vector<Aws::Map<Aws::String, Aws::String>>>
+    OpsEntityItem& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
+    template<typename ContentT = Aws::Map<Aws::String, Aws::String>>
+    OpsEntityItem& AddContent(ContentT&& value) { m_contentHasBeenSet = true; m_content.emplace_back(std::forward<ContentT>(value)); return *this; }
     ///@}
   private:
 

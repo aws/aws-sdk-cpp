@@ -18,16 +18,7 @@ namespace TranscribeService
 namespace Model
 {
 
-ChannelDefinition::ChannelDefinition() : 
-    m_channelId(0),
-    m_channelIdHasBeenSet(false),
-    m_participantRole(ParticipantRole::NOT_SET),
-    m_participantRoleHasBeenSet(false)
-{
-}
-
 ChannelDefinition::ChannelDefinition(JsonView jsonValue)
-  : ChannelDefinition()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ChannelDefinition& ChannelDefinition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ChannelId"))
   {
     m_channelId = jsonValue.GetInteger("ChannelId");
-
     m_channelIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParticipantRole"))
   {
     m_participantRole = ParticipantRoleMapper::GetParticipantRoleForName(jsonValue.GetString("ParticipantRole"));
-
     m_participantRoleHasBeenSet = true;
   }
-
   return *this;
 }
 

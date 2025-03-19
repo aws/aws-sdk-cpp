@@ -18,15 +18,7 @@ namespace ConnectCampaignsV2
 namespace Model
 {
 
-OutboundRequest::OutboundRequest() : 
-    m_clientTokenHasBeenSet(false),
-    m_expirationTimeHasBeenSet(false),
-    m_channelSubtypeParametersHasBeenSet(false)
-{
-}
-
 OutboundRequest::OutboundRequest(JsonView jsonValue)
-  : OutboundRequest()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ OutboundRequest& OutboundRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("clientToken"))
   {
     m_clientToken = jsonValue.GetString("clientToken");
-
     m_clientTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expirationTime"))
   {
     m_expirationTime = jsonValue.GetString("expirationTime");
-
     m_expirationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("channelSubtypeParameters"))
   {
     m_channelSubtypeParameters = jsonValue.GetObject("channelSubtypeParameters");
-
     m_channelSubtypeParametersHasBeenSet = true;
   }
-
   return *this;
 }
 

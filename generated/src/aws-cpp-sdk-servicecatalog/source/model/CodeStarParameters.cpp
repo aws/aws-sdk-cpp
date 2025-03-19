@@ -18,16 +18,7 @@ namespace ServiceCatalog
 namespace Model
 {
 
-CodeStarParameters::CodeStarParameters() : 
-    m_connectionArnHasBeenSet(false),
-    m_repositoryHasBeenSet(false),
-    m_branchHasBeenSet(false),
-    m_artifactPathHasBeenSet(false)
-{
-}
-
 CodeStarParameters::CodeStarParameters(JsonView jsonValue)
-  : CodeStarParameters()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ CodeStarParameters& CodeStarParameters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ConnectionArn"))
   {
     m_connectionArn = jsonValue.GetString("ConnectionArn");
-
     m_connectionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Repository"))
   {
     m_repository = jsonValue.GetString("Repository");
-
     m_repositoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Branch"))
   {
     m_branch = jsonValue.GetString("Branch");
-
     m_branchHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ArtifactPath"))
   {
     m_artifactPath = jsonValue.GetString("ArtifactPath");
-
     m_artifactPathHasBeenSet = true;
   }
-
   return *this;
 }
 

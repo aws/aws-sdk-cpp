@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetTemplateStepGroupResult::GetTemplateStepGroupResult() : 
-    m_status(StepGroupStatus::NOT_SET)
-{
-}
-
 GetTemplateStepGroupResult::GetTemplateStepGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetTemplateStepGroupResult()
 {
   *this = result;
 }
@@ -34,45 +28,38 @@ GetTemplateStepGroupResult& GetTemplateStepGroupResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("templateId"))
   {
     m_templateId = jsonValue.GetString("templateId");
-
+    m_templateIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = StepGroupStatusMapper::GetStepGroupStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetDouble("creationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("lastModifiedTime");
-
+    m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tools"))
   {
     Aws::Utils::Array<JsonView> toolsJsonList = jsonValue.GetArray("tools");
@@ -80,8 +67,8 @@ GetTemplateStepGroupResult& GetTemplateStepGroupResult::operator =(const Aws::Am
     {
       m_tools.push_back(toolsJsonList[toolsIndex].AsObject());
     }
+    m_toolsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("previous"))
   {
     Aws::Utils::Array<JsonView> previousJsonList = jsonValue.GetArray("previous");
@@ -89,8 +76,8 @@ GetTemplateStepGroupResult& GetTemplateStepGroupResult::operator =(const Aws::Am
     {
       m_previous.push_back(previousJsonList[previousIndex].AsString());
     }
+    m_previousHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("next"))
   {
     Aws::Utils::Array<JsonView> nextJsonList = jsonValue.GetArray("next");
@@ -98,14 +85,15 @@ GetTemplateStepGroupResult& GetTemplateStepGroupResult::operator =(const Aws::Am
     {
       m_next.push_back(nextJsonList[nextIndex].AsString());
     }
+    m_nextHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

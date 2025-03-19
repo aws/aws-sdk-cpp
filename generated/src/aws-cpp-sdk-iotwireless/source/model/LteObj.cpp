@@ -18,30 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-LteObj::LteObj() : 
-    m_mcc(0),
-    m_mccHasBeenSet(false),
-    m_mnc(0),
-    m_mncHasBeenSet(false),
-    m_eutranCid(0),
-    m_eutranCidHasBeenSet(false),
-    m_tac(0),
-    m_tacHasBeenSet(false),
-    m_lteLocalIdHasBeenSet(false),
-    m_lteTimingAdvance(0),
-    m_lteTimingAdvanceHasBeenSet(false),
-    m_rsrp(0),
-    m_rsrpHasBeenSet(false),
-    m_rsrq(0.0),
-    m_rsrqHasBeenSet(false),
-    m_nrCapable(false),
-    m_nrCapableHasBeenSet(false),
-    m_lteNmrHasBeenSet(false)
-{
-}
-
 LteObj::LteObj(JsonView jsonValue)
-  : LteObj()
 {
   *this = jsonValue;
 }
@@ -51,66 +28,48 @@ LteObj& LteObj::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Mcc"))
   {
     m_mcc = jsonValue.GetInteger("Mcc");
-
     m_mccHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Mnc"))
   {
     m_mnc = jsonValue.GetInteger("Mnc");
-
     m_mncHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EutranCid"))
   {
     m_eutranCid = jsonValue.GetInteger("EutranCid");
-
     m_eutranCidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tac"))
   {
     m_tac = jsonValue.GetInteger("Tac");
-
     m_tacHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LteLocalId"))
   {
     m_lteLocalId = jsonValue.GetObject("LteLocalId");
-
     m_lteLocalIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LteTimingAdvance"))
   {
     m_lteTimingAdvance = jsonValue.GetInteger("LteTimingAdvance");
-
     m_lteTimingAdvanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Rsrp"))
   {
     m_rsrp = jsonValue.GetInteger("Rsrp");
-
     m_rsrpHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Rsrq"))
   {
     m_rsrq = jsonValue.GetDouble("Rsrq");
-
     m_rsrqHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NrCapable"))
   {
     m_nrCapable = jsonValue.GetBool("NrCapable");
-
     m_nrCapableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LteNmr"))
   {
     Aws::Utils::Array<JsonView> lteNmrJsonList = jsonValue.GetArray("LteNmr");
@@ -120,7 +79,6 @@ LteObj& LteObj::operator =(JsonView jsonValue)
     }
     m_lteNmrHasBeenSet = true;
   }
-
   return *this;
 }
 

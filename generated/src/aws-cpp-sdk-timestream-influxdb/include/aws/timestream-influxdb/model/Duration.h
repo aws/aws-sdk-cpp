@@ -32,7 +32,7 @@ namespace Model
   class Duration
   {
   public:
-    AWS_TIMESTREAMINFLUXDB_API Duration();
+    AWS_TIMESTREAMINFLUXDB_API Duration() = default;
     AWS_TIMESTREAMINFLUXDB_API Duration(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMINFLUXDB_API Duration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMINFLUXDB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,29 +42,27 @@ namespace Model
     /**
      * <p>The type of duration for InfluxDB parameters.</p>
      */
-    inline const DurationType& GetDurationType() const{ return m_durationType; }
+    inline DurationType GetDurationType() const { return m_durationType; }
     inline bool DurationTypeHasBeenSet() const { return m_durationTypeHasBeenSet; }
-    inline void SetDurationType(const DurationType& value) { m_durationTypeHasBeenSet = true; m_durationType = value; }
-    inline void SetDurationType(DurationType&& value) { m_durationTypeHasBeenSet = true; m_durationType = std::move(value); }
-    inline Duration& WithDurationType(const DurationType& value) { SetDurationType(value); return *this;}
-    inline Duration& WithDurationType(DurationType&& value) { SetDurationType(std::move(value)); return *this;}
+    inline void SetDurationType(DurationType value) { m_durationTypeHasBeenSet = true; m_durationType = value; }
+    inline Duration& WithDurationType(DurationType value) { SetDurationType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of duration for InfluxDB parameters.</p>
      */
-    inline long long GetValue() const{ return m_value; }
+    inline long long GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(long long value) { m_valueHasBeenSet = true; m_value = value; }
     inline Duration& WithValue(long long value) { SetValue(value); return *this;}
     ///@}
   private:
 
-    DurationType m_durationType;
+    DurationType m_durationType{DurationType::NOT_SET};
     bool m_durationTypeHasBeenSet = false;
 
-    long long m_value;
+    long long m_value{0};
     bool m_valueHasBeenSet = false;
   };
 

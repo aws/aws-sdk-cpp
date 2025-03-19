@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-AssetBundleExportJobError::AssetBundleExportJobError() : 
-    m_arnHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 AssetBundleExportJobError::AssetBundleExportJobError(JsonView jsonValue)
-  : AssetBundleExportJobError()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AssetBundleExportJobError& AssetBundleExportJobError::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -29,7 +29,7 @@ namespace Model
   class ListTrustAnchorsResult
   {
   public:
-    AWS_ROLESANYWHERE_API ListTrustAnchorsResult();
+    AWS_ROLESANYWHERE_API ListTrustAnchorsResult() = default;
     AWS_ROLESANYWHERE_API ListTrustAnchorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROLESANYWHERE_API ListTrustAnchorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,45 +40,44 @@ namespace Model
      * request did not show all results. To get the next results, make the request
      * again with this value.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListTrustAnchorsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListTrustAnchorsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListTrustAnchorsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListTrustAnchorsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of trust anchors.</p>
      */
-    inline const Aws::Vector<TrustAnchorDetail>& GetTrustAnchors() const{ return m_trustAnchors; }
-    inline void SetTrustAnchors(const Aws::Vector<TrustAnchorDetail>& value) { m_trustAnchors = value; }
-    inline void SetTrustAnchors(Aws::Vector<TrustAnchorDetail>&& value) { m_trustAnchors = std::move(value); }
-    inline ListTrustAnchorsResult& WithTrustAnchors(const Aws::Vector<TrustAnchorDetail>& value) { SetTrustAnchors(value); return *this;}
-    inline ListTrustAnchorsResult& WithTrustAnchors(Aws::Vector<TrustAnchorDetail>&& value) { SetTrustAnchors(std::move(value)); return *this;}
-    inline ListTrustAnchorsResult& AddTrustAnchors(const TrustAnchorDetail& value) { m_trustAnchors.push_back(value); return *this; }
-    inline ListTrustAnchorsResult& AddTrustAnchors(TrustAnchorDetail&& value) { m_trustAnchors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TrustAnchorDetail>& GetTrustAnchors() const { return m_trustAnchors; }
+    template<typename TrustAnchorsT = Aws::Vector<TrustAnchorDetail>>
+    void SetTrustAnchors(TrustAnchorsT&& value) { m_trustAnchorsHasBeenSet = true; m_trustAnchors = std::forward<TrustAnchorsT>(value); }
+    template<typename TrustAnchorsT = Aws::Vector<TrustAnchorDetail>>
+    ListTrustAnchorsResult& WithTrustAnchors(TrustAnchorsT&& value) { SetTrustAnchors(std::forward<TrustAnchorsT>(value)); return *this;}
+    template<typename TrustAnchorsT = TrustAnchorDetail>
+    ListTrustAnchorsResult& AddTrustAnchors(TrustAnchorsT&& value) { m_trustAnchorsHasBeenSet = true; m_trustAnchors.emplace_back(std::forward<TrustAnchorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListTrustAnchorsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListTrustAnchorsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListTrustAnchorsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListTrustAnchorsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<TrustAnchorDetail> m_trustAnchors;
+    bool m_trustAnchorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

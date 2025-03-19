@@ -28,7 +28,7 @@ namespace Model
   class UpdateSolNetworkPackageResult
   {
   public:
-    AWS_TNB_API UpdateSolNetworkPackageResult();
+    AWS_TNB_API UpdateSolNetworkPackageResult() = default;
     AWS_TNB_API UpdateSolNetworkPackageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TNB_API UpdateSolNetworkPackageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,26 @@ namespace Model
      * <p>Operational state of the network service descriptor in the network
      * package.</p>
      */
-    inline const NsdOperationalState& GetNsdOperationalState() const{ return m_nsdOperationalState; }
-    inline void SetNsdOperationalState(const NsdOperationalState& value) { m_nsdOperationalState = value; }
-    inline void SetNsdOperationalState(NsdOperationalState&& value) { m_nsdOperationalState = std::move(value); }
-    inline UpdateSolNetworkPackageResult& WithNsdOperationalState(const NsdOperationalState& value) { SetNsdOperationalState(value); return *this;}
-    inline UpdateSolNetworkPackageResult& WithNsdOperationalState(NsdOperationalState&& value) { SetNsdOperationalState(std::move(value)); return *this;}
+    inline NsdOperationalState GetNsdOperationalState() const { return m_nsdOperationalState; }
+    inline void SetNsdOperationalState(NsdOperationalState value) { m_nsdOperationalStateHasBeenSet = true; m_nsdOperationalState = value; }
+    inline UpdateSolNetworkPackageResult& WithNsdOperationalState(NsdOperationalState value) { SetNsdOperationalState(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateSolNetworkPackageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateSolNetworkPackageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateSolNetworkPackageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateSolNetworkPackageResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    NsdOperationalState m_nsdOperationalState;
+    NsdOperationalState m_nsdOperationalState{NsdOperationalState::NOT_SET};
+    bool m_nsdOperationalStateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

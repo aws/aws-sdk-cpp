@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeleteVpcEndpointsRequest::DeleteVpcEndpointsRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_vpcEndpointIdsHasBeenSet(false)
-{
-}
-
 Aws::String DeleteVpcEndpointsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

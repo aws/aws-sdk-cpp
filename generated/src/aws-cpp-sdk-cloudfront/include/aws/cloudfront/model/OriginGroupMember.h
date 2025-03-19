@@ -30,7 +30,7 @@ namespace Model
   class OriginGroupMember
   {
   public:
-    AWS_CLOUDFRONT_API OriginGroupMember();
+    AWS_CLOUDFRONT_API OriginGroupMember() = default;
     AWS_CLOUDFRONT_API OriginGroupMember(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API OriginGroupMember& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The ID for an origin in an origin group.</p>
      */
-    inline const Aws::String& GetOriginId() const{ return m_originId; }
+    inline const Aws::String& GetOriginId() const { return m_originId; }
     inline bool OriginIdHasBeenSet() const { return m_originIdHasBeenSet; }
-    inline void SetOriginId(const Aws::String& value) { m_originIdHasBeenSet = true; m_originId = value; }
-    inline void SetOriginId(Aws::String&& value) { m_originIdHasBeenSet = true; m_originId = std::move(value); }
-    inline void SetOriginId(const char* value) { m_originIdHasBeenSet = true; m_originId.assign(value); }
-    inline OriginGroupMember& WithOriginId(const Aws::String& value) { SetOriginId(value); return *this;}
-    inline OriginGroupMember& WithOriginId(Aws::String&& value) { SetOriginId(std::move(value)); return *this;}
-    inline OriginGroupMember& WithOriginId(const char* value) { SetOriginId(value); return *this;}
+    template<typename OriginIdT = Aws::String>
+    void SetOriginId(OriginIdT&& value) { m_originIdHasBeenSet = true; m_originId = std::forward<OriginIdT>(value); }
+    template<typename OriginIdT = Aws::String>
+    OriginGroupMember& WithOriginId(OriginIdT&& value) { SetOriginId(std::forward<OriginIdT>(value)); return *this;}
     ///@}
   private:
 

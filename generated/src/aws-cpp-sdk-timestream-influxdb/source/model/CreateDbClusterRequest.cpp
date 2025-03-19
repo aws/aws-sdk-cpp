@@ -12,36 +12,6 @@ using namespace Aws::TimestreamInfluxDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDbClusterRequest::CreateDbClusterRequest() : 
-    m_nameHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_organizationHasBeenSet(false),
-    m_bucketHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_dbParameterGroupIdentifierHasBeenSet(false),
-    m_dbInstanceType(DbInstanceType::NOT_SET),
-    m_dbInstanceTypeHasBeenSet(false),
-    m_dbStorageType(DbStorageType::NOT_SET),
-    m_dbStorageTypeHasBeenSet(false),
-    m_allocatedStorage(0),
-    m_allocatedStorageHasBeenSet(false),
-    m_networkType(NetworkType::NOT_SET),
-    m_networkTypeHasBeenSet(false),
-    m_publiclyAccessible(false),
-    m_publiclyAccessibleHasBeenSet(false),
-    m_vpcSubnetIdsHasBeenSet(false),
-    m_vpcSecurityGroupIdsHasBeenSet(false),
-    m_deploymentType(ClusterDeploymentType::NOT_SET),
-    m_deploymentTypeHasBeenSet(false),
-    m_failoverMode(FailoverMode::NOT_SET),
-    m_failoverModeHasBeenSet(false),
-    m_logDeliveryConfigurationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateDbClusterRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -20,15 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-AnalyticsConfiguration::AnalyticsConfiguration() : 
-    m_idHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_storageClassAnalysisHasBeenSet(false)
-{
-}
-
 AnalyticsConfiguration::AnalyticsConfiguration(const XmlNode& xmlNode)
-  : AnalyticsConfiguration()
 {
   *this = xmlNode;
 }

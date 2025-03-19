@@ -28,7 +28,7 @@ namespace Model
   class CreatePortalResult
   {
   public:
-    AWS_IOTSITEWISE_API CreatePortalResult();
+    AWS_IOTSITEWISE_API CreatePortalResult() = default;
     AWS_IOTSITEWISE_API CreatePortalResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTSITEWISE_API CreatePortalResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,13 +37,11 @@ namespace Model
     /**
      * <p>The ID of the created portal.</p>
      */
-    inline const Aws::String& GetPortalId() const{ return m_portalId; }
-    inline void SetPortalId(const Aws::String& value) { m_portalId = value; }
-    inline void SetPortalId(Aws::String&& value) { m_portalId = std::move(value); }
-    inline void SetPortalId(const char* value) { m_portalId.assign(value); }
-    inline CreatePortalResult& WithPortalId(const Aws::String& value) { SetPortalId(value); return *this;}
-    inline CreatePortalResult& WithPortalId(Aws::String&& value) { SetPortalId(std::move(value)); return *this;}
-    inline CreatePortalResult& WithPortalId(const char* value) { SetPortalId(value); return *this;}
+    inline const Aws::String& GetPortalId() const { return m_portalId; }
+    template<typename PortalIdT = Aws::String>
+    void SetPortalId(PortalIdT&& value) { m_portalIdHasBeenSet = true; m_portalId = std::forward<PortalIdT>(value); }
+    template<typename PortalIdT = Aws::String>
+    CreatePortalResult& WithPortalId(PortalIdT&& value) { SetPortalId(std::forward<PortalIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,13 +52,11 @@ namespace Model
      * <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code>
      * </p>
      */
-    inline const Aws::String& GetPortalArn() const{ return m_portalArn; }
-    inline void SetPortalArn(const Aws::String& value) { m_portalArn = value; }
-    inline void SetPortalArn(Aws::String&& value) { m_portalArn = std::move(value); }
-    inline void SetPortalArn(const char* value) { m_portalArn.assign(value); }
-    inline CreatePortalResult& WithPortalArn(const Aws::String& value) { SetPortalArn(value); return *this;}
-    inline CreatePortalResult& WithPortalArn(Aws::String&& value) { SetPortalArn(std::move(value)); return *this;}
-    inline CreatePortalResult& WithPortalArn(const char* value) { SetPortalArn(value); return *this;}
+    inline const Aws::String& GetPortalArn() const { return m_portalArn; }
+    template<typename PortalArnT = Aws::String>
+    void SetPortalArn(PortalArnT&& value) { m_portalArnHasBeenSet = true; m_portalArn = std::forward<PortalArnT>(value); }
+    template<typename PortalArnT = Aws::String>
+    CreatePortalResult& WithPortalArn(PortalArnT&& value) { SetPortalArn(std::forward<PortalArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,13 +66,11 @@ namespace Model
      * IAM for authentication, you must use the IoT SiteWise console to get a URL that
      * you can use to access the portal.</p>
      */
-    inline const Aws::String& GetPortalStartUrl() const{ return m_portalStartUrl; }
-    inline void SetPortalStartUrl(const Aws::String& value) { m_portalStartUrl = value; }
-    inline void SetPortalStartUrl(Aws::String&& value) { m_portalStartUrl = std::move(value); }
-    inline void SetPortalStartUrl(const char* value) { m_portalStartUrl.assign(value); }
-    inline CreatePortalResult& WithPortalStartUrl(const Aws::String& value) { SetPortalStartUrl(value); return *this;}
-    inline CreatePortalResult& WithPortalStartUrl(Aws::String&& value) { SetPortalStartUrl(std::move(value)); return *this;}
-    inline CreatePortalResult& WithPortalStartUrl(const char* value) { SetPortalStartUrl(value); return *this;}
+    inline const Aws::String& GetPortalStartUrl() const { return m_portalStartUrl; }
+    template<typename PortalStartUrlT = Aws::String>
+    void SetPortalStartUrl(PortalStartUrlT&& value) { m_portalStartUrlHasBeenSet = true; m_portalStartUrl = std::forward<PortalStartUrlT>(value); }
+    template<typename PortalStartUrlT = Aws::String>
+    CreatePortalResult& WithPortalStartUrl(PortalStartUrlT&& value) { SetPortalStartUrl(std::forward<PortalStartUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,11 +78,11 @@ namespace Model
      * <p>The status of the portal, which contains a state (<code>CREATING</code> after
      * successfully calling this operation) and any error message.</p>
      */
-    inline const PortalStatus& GetPortalStatus() const{ return m_portalStatus; }
-    inline void SetPortalStatus(const PortalStatus& value) { m_portalStatus = value; }
-    inline void SetPortalStatus(PortalStatus&& value) { m_portalStatus = std::move(value); }
-    inline CreatePortalResult& WithPortalStatus(const PortalStatus& value) { SetPortalStatus(value); return *this;}
-    inline CreatePortalResult& WithPortalStatus(PortalStatus&& value) { SetPortalStatus(std::move(value)); return *this;}
+    inline const PortalStatus& GetPortalStatus() const { return m_portalStatus; }
+    template<typename PortalStatusT = PortalStatus>
+    void SetPortalStatus(PortalStatusT&& value) { m_portalStatusHasBeenSet = true; m_portalStatus = std::forward<PortalStatusT>(value); }
+    template<typename PortalStatusT = PortalStatus>
+    CreatePortalResult& WithPortalStatus(PortalStatusT&& value) { SetPortalStatus(std::forward<PortalStatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,38 +90,40 @@ namespace Model
      * <p>The associated IAM Identity Center application ID, if the portal uses IAM
      * Identity Center.</p>
      */
-    inline const Aws::String& GetSsoApplicationId() const{ return m_ssoApplicationId; }
-    inline void SetSsoApplicationId(const Aws::String& value) { m_ssoApplicationId = value; }
-    inline void SetSsoApplicationId(Aws::String&& value) { m_ssoApplicationId = std::move(value); }
-    inline void SetSsoApplicationId(const char* value) { m_ssoApplicationId.assign(value); }
-    inline CreatePortalResult& WithSsoApplicationId(const Aws::String& value) { SetSsoApplicationId(value); return *this;}
-    inline CreatePortalResult& WithSsoApplicationId(Aws::String&& value) { SetSsoApplicationId(std::move(value)); return *this;}
-    inline CreatePortalResult& WithSsoApplicationId(const char* value) { SetSsoApplicationId(value); return *this;}
+    inline const Aws::String& GetSsoApplicationId() const { return m_ssoApplicationId; }
+    template<typename SsoApplicationIdT = Aws::String>
+    void SetSsoApplicationId(SsoApplicationIdT&& value) { m_ssoApplicationIdHasBeenSet = true; m_ssoApplicationId = std::forward<SsoApplicationIdT>(value); }
+    template<typename SsoApplicationIdT = Aws::String>
+    CreatePortalResult& WithSsoApplicationId(SsoApplicationIdT&& value) { SetSsoApplicationId(std::forward<SsoApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreatePortalResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreatePortalResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreatePortalResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreatePortalResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_portalId;
+    bool m_portalIdHasBeenSet = false;
 
     Aws::String m_portalArn;
+    bool m_portalArnHasBeenSet = false;
 
     Aws::String m_portalStartUrl;
+    bool m_portalStartUrlHasBeenSet = false;
 
     PortalStatus m_portalStatus;
+    bool m_portalStatusHasBeenSet = false;
 
     Aws::String m_ssoApplicationId;
+    bool m_ssoApplicationIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

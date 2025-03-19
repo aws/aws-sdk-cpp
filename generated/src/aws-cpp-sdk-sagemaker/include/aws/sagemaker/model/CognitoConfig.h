@@ -34,7 +34,7 @@ namespace Model
   class CognitoConfig
   {
   public:
-    AWS_SAGEMAKER_API CognitoConfig();
+    AWS_SAGEMAKER_API CognitoConfig() = default;
     AWS_SAGEMAKER_API CognitoConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API CognitoConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,28 +49,24 @@ namespace Model
      * can also sign in through social identity providers like Google, Facebook,
      * Amazon, or Apple, and through SAML identity providers.</p>
      */
-    inline const Aws::String& GetUserPool() const{ return m_userPool; }
+    inline const Aws::String& GetUserPool() const { return m_userPool; }
     inline bool UserPoolHasBeenSet() const { return m_userPoolHasBeenSet; }
-    inline void SetUserPool(const Aws::String& value) { m_userPoolHasBeenSet = true; m_userPool = value; }
-    inline void SetUserPool(Aws::String&& value) { m_userPoolHasBeenSet = true; m_userPool = std::move(value); }
-    inline void SetUserPool(const char* value) { m_userPoolHasBeenSet = true; m_userPool.assign(value); }
-    inline CognitoConfig& WithUserPool(const Aws::String& value) { SetUserPool(value); return *this;}
-    inline CognitoConfig& WithUserPool(Aws::String&& value) { SetUserPool(std::move(value)); return *this;}
-    inline CognitoConfig& WithUserPool(const char* value) { SetUserPool(value); return *this;}
+    template<typename UserPoolT = Aws::String>
+    void SetUserPool(UserPoolT&& value) { m_userPoolHasBeenSet = true; m_userPool = std::forward<UserPoolT>(value); }
+    template<typename UserPoolT = Aws::String>
+    CognitoConfig& WithUserPool(UserPoolT&& value) { SetUserPool(std::forward<UserPoolT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The client ID for your Amazon Cognito user pool.</p>
      */
-    inline const Aws::String& GetClientId() const{ return m_clientId; }
+    inline const Aws::String& GetClientId() const { return m_clientId; }
     inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
-    inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
-    inline void SetClientId(Aws::String&& value) { m_clientIdHasBeenSet = true; m_clientId = std::move(value); }
-    inline void SetClientId(const char* value) { m_clientIdHasBeenSet = true; m_clientId.assign(value); }
-    inline CognitoConfig& WithClientId(const Aws::String& value) { SetClientId(value); return *this;}
-    inline CognitoConfig& WithClientId(Aws::String&& value) { SetClientId(std::move(value)); return *this;}
-    inline CognitoConfig& WithClientId(const char* value) { SetClientId(value); return *this;}
+    template<typename ClientIdT = Aws::String>
+    void SetClientId(ClientIdT&& value) { m_clientIdHasBeenSet = true; m_clientId = std::forward<ClientIdT>(value); }
+    template<typename ClientIdT = Aws::String>
+    CognitoConfig& WithClientId(ClientIdT&& value) { SetClientId(std::forward<ClientIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,18 +18,7 @@ namespace GreengrassV2
 namespace Model
 {
 
-LambdaVolumeMount::LambdaVolumeMount() : 
-    m_sourcePathHasBeenSet(false),
-    m_destinationPathHasBeenSet(false),
-    m_permission(LambdaFilesystemPermission::NOT_SET),
-    m_permissionHasBeenSet(false),
-    m_addGroupOwner(false),
-    m_addGroupOwnerHasBeenSet(false)
-{
-}
-
 LambdaVolumeMount::LambdaVolumeMount(JsonView jsonValue)
-  : LambdaVolumeMount()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ LambdaVolumeMount& LambdaVolumeMount::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sourcePath"))
   {
     m_sourcePath = jsonValue.GetString("sourcePath");
-
     m_sourcePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destinationPath"))
   {
     m_destinationPath = jsonValue.GetString("destinationPath");
-
     m_destinationPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("permission"))
   {
     m_permission = LambdaFilesystemPermissionMapper::GetLambdaFilesystemPermissionForName(jsonValue.GetString("permission"));
-
     m_permissionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("addGroupOwner"))
   {
     m_addGroupOwner = jsonValue.GetBool("addGroupOwner");
-
     m_addGroupOwnerHasBeenSet = true;
   }
-
   return *this;
 }
 

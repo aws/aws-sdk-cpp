@@ -18,40 +18,7 @@ namespace Glue
 namespace Model
 {
 
-Field::Field() : 
-    m_fieldNameHasBeenSet(false),
-    m_labelHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_fieldType(FieldDataType::NOT_SET),
-    m_fieldTypeHasBeenSet(false),
-    m_isPrimaryKey(false),
-    m_isPrimaryKeyHasBeenSet(false),
-    m_isNullable(false),
-    m_isNullableHasBeenSet(false),
-    m_isRetrievable(false),
-    m_isRetrievableHasBeenSet(false),
-    m_isFilterable(false),
-    m_isFilterableHasBeenSet(false),
-    m_isPartitionable(false),
-    m_isPartitionableHasBeenSet(false),
-    m_isCreateable(false),
-    m_isCreateableHasBeenSet(false),
-    m_isUpdateable(false),
-    m_isUpdateableHasBeenSet(false),
-    m_isUpsertable(false),
-    m_isUpsertableHasBeenSet(false),
-    m_isDefaultOnCreate(false),
-    m_isDefaultOnCreateHasBeenSet(false),
-    m_supportedValuesHasBeenSet(false),
-    m_supportedFilterOperatorsHasBeenSet(false),
-    m_parentFieldHasBeenSet(false),
-    m_nativeDataTypeHasBeenSet(false),
-    m_customPropertiesHasBeenSet(false)
-{
-}
-
 Field::Field(JsonView jsonValue)
-  : Field()
 {
   *this = jsonValue;
 }
@@ -61,94 +28,68 @@ Field& Field::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FieldName"))
   {
     m_fieldName = jsonValue.GetString("FieldName");
-
     m_fieldNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Label"))
   {
     m_label = jsonValue.GetString("Label");
-
     m_labelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FieldType"))
   {
     m_fieldType = FieldDataTypeMapper::GetFieldDataTypeForName(jsonValue.GetString("FieldType"));
-
     m_fieldTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsPrimaryKey"))
   {
     m_isPrimaryKey = jsonValue.GetBool("IsPrimaryKey");
-
     m_isPrimaryKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsNullable"))
   {
     m_isNullable = jsonValue.GetBool("IsNullable");
-
     m_isNullableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsRetrievable"))
   {
     m_isRetrievable = jsonValue.GetBool("IsRetrievable");
-
     m_isRetrievableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsFilterable"))
   {
     m_isFilterable = jsonValue.GetBool("IsFilterable");
-
     m_isFilterableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsPartitionable"))
   {
     m_isPartitionable = jsonValue.GetBool("IsPartitionable");
-
     m_isPartitionableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsCreateable"))
   {
     m_isCreateable = jsonValue.GetBool("IsCreateable");
-
     m_isCreateableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsUpdateable"))
   {
     m_isUpdateable = jsonValue.GetBool("IsUpdateable");
-
     m_isUpdateableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsUpsertable"))
   {
     m_isUpsertable = jsonValue.GetBool("IsUpsertable");
-
     m_isUpsertableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsDefaultOnCreate"))
   {
     m_isDefaultOnCreate = jsonValue.GetBool("IsDefaultOnCreate");
-
     m_isDefaultOnCreateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SupportedValues"))
   {
     Aws::Utils::Array<JsonView> supportedValuesJsonList = jsonValue.GetArray("SupportedValues");
@@ -158,7 +99,6 @@ Field& Field::operator =(JsonView jsonValue)
     }
     m_supportedValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SupportedFilterOperators"))
   {
     Aws::Utils::Array<JsonView> supportedFilterOperatorsJsonList = jsonValue.GetArray("SupportedFilterOperators");
@@ -168,21 +108,16 @@ Field& Field::operator =(JsonView jsonValue)
     }
     m_supportedFilterOperatorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParentField"))
   {
     m_parentField = jsonValue.GetString("ParentField");
-
     m_parentFieldHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NativeDataType"))
   {
     m_nativeDataType = jsonValue.GetString("NativeDataType");
-
     m_nativeDataTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomProperties"))
   {
     Aws::Map<Aws::String, JsonView> customPropertiesJsonMap = jsonValue.GetObject("CustomProperties").GetAllObjects();
@@ -192,7 +127,6 @@ Field& Field::operator =(JsonView jsonValue)
     }
     m_customPropertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

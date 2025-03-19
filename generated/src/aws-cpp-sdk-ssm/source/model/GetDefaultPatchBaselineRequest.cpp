@@ -12,12 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDefaultPatchBaselineRequest::GetDefaultPatchBaselineRequest() : 
-    m_operatingSystem(OperatingSystem::NOT_SET),
-    m_operatingSystemHasBeenSet(false)
-{
-}
-
 Aws::String GetDefaultPatchBaselineRequest::SerializePayload() const
 {
   JsonValue payload;

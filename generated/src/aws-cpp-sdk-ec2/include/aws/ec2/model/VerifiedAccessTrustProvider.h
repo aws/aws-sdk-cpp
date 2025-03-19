@@ -40,7 +40,7 @@ namespace Model
   class VerifiedAccessTrustProvider
   {
   public:
-    AWS_EC2_API VerifiedAccessTrustProvider();
+    AWS_EC2_API VerifiedAccessTrustProvider() = default;
     AWS_EC2_API VerifiedAccessTrustProvider(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API VerifiedAccessTrustProvider& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -52,64 +52,54 @@ namespace Model
     /**
      * <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
      */
-    inline const Aws::String& GetVerifiedAccessTrustProviderId() const{ return m_verifiedAccessTrustProviderId; }
+    inline const Aws::String& GetVerifiedAccessTrustProviderId() const { return m_verifiedAccessTrustProviderId; }
     inline bool VerifiedAccessTrustProviderIdHasBeenSet() const { return m_verifiedAccessTrustProviderIdHasBeenSet; }
-    inline void SetVerifiedAccessTrustProviderId(const Aws::String& value) { m_verifiedAccessTrustProviderIdHasBeenSet = true; m_verifiedAccessTrustProviderId = value; }
-    inline void SetVerifiedAccessTrustProviderId(Aws::String&& value) { m_verifiedAccessTrustProviderIdHasBeenSet = true; m_verifiedAccessTrustProviderId = std::move(value); }
-    inline void SetVerifiedAccessTrustProviderId(const char* value) { m_verifiedAccessTrustProviderIdHasBeenSet = true; m_verifiedAccessTrustProviderId.assign(value); }
-    inline VerifiedAccessTrustProvider& WithVerifiedAccessTrustProviderId(const Aws::String& value) { SetVerifiedAccessTrustProviderId(value); return *this;}
-    inline VerifiedAccessTrustProvider& WithVerifiedAccessTrustProviderId(Aws::String&& value) { SetVerifiedAccessTrustProviderId(std::move(value)); return *this;}
-    inline VerifiedAccessTrustProvider& WithVerifiedAccessTrustProviderId(const char* value) { SetVerifiedAccessTrustProviderId(value); return *this;}
+    template<typename VerifiedAccessTrustProviderIdT = Aws::String>
+    void SetVerifiedAccessTrustProviderId(VerifiedAccessTrustProviderIdT&& value) { m_verifiedAccessTrustProviderIdHasBeenSet = true; m_verifiedAccessTrustProviderId = std::forward<VerifiedAccessTrustProviderIdT>(value); }
+    template<typename VerifiedAccessTrustProviderIdT = Aws::String>
+    VerifiedAccessTrustProvider& WithVerifiedAccessTrustProviderId(VerifiedAccessTrustProviderIdT&& value) { SetVerifiedAccessTrustProviderId(std::forward<VerifiedAccessTrustProviderIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description for the Amazon Web Services Verified Access trust provider.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline VerifiedAccessTrustProvider& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline VerifiedAccessTrustProvider& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline VerifiedAccessTrustProvider& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    VerifiedAccessTrustProvider& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of Verified Access trust provider.</p>
      */
-    inline const TrustProviderType& GetTrustProviderType() const{ return m_trustProviderType; }
+    inline TrustProviderType GetTrustProviderType() const { return m_trustProviderType; }
     inline bool TrustProviderTypeHasBeenSet() const { return m_trustProviderTypeHasBeenSet; }
-    inline void SetTrustProviderType(const TrustProviderType& value) { m_trustProviderTypeHasBeenSet = true; m_trustProviderType = value; }
-    inline void SetTrustProviderType(TrustProviderType&& value) { m_trustProviderTypeHasBeenSet = true; m_trustProviderType = std::move(value); }
-    inline VerifiedAccessTrustProvider& WithTrustProviderType(const TrustProviderType& value) { SetTrustProviderType(value); return *this;}
-    inline VerifiedAccessTrustProvider& WithTrustProviderType(TrustProviderType&& value) { SetTrustProviderType(std::move(value)); return *this;}
+    inline void SetTrustProviderType(TrustProviderType value) { m_trustProviderTypeHasBeenSet = true; m_trustProviderType = value; }
+    inline VerifiedAccessTrustProvider& WithTrustProviderType(TrustProviderType value) { SetTrustProviderType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of user-based trust provider.</p>
      */
-    inline const UserTrustProviderType& GetUserTrustProviderType() const{ return m_userTrustProviderType; }
+    inline UserTrustProviderType GetUserTrustProviderType() const { return m_userTrustProviderType; }
     inline bool UserTrustProviderTypeHasBeenSet() const { return m_userTrustProviderTypeHasBeenSet; }
-    inline void SetUserTrustProviderType(const UserTrustProviderType& value) { m_userTrustProviderTypeHasBeenSet = true; m_userTrustProviderType = value; }
-    inline void SetUserTrustProviderType(UserTrustProviderType&& value) { m_userTrustProviderTypeHasBeenSet = true; m_userTrustProviderType = std::move(value); }
-    inline VerifiedAccessTrustProvider& WithUserTrustProviderType(const UserTrustProviderType& value) { SetUserTrustProviderType(value); return *this;}
-    inline VerifiedAccessTrustProvider& WithUserTrustProviderType(UserTrustProviderType&& value) { SetUserTrustProviderType(std::move(value)); return *this;}
+    inline void SetUserTrustProviderType(UserTrustProviderType value) { m_userTrustProviderTypeHasBeenSet = true; m_userTrustProviderType = value; }
+    inline VerifiedAccessTrustProvider& WithUserTrustProviderType(UserTrustProviderType value) { SetUserTrustProviderType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of device-based trust provider.</p>
      */
-    inline const DeviceTrustProviderType& GetDeviceTrustProviderType() const{ return m_deviceTrustProviderType; }
+    inline DeviceTrustProviderType GetDeviceTrustProviderType() const { return m_deviceTrustProviderType; }
     inline bool DeviceTrustProviderTypeHasBeenSet() const { return m_deviceTrustProviderTypeHasBeenSet; }
-    inline void SetDeviceTrustProviderType(const DeviceTrustProviderType& value) { m_deviceTrustProviderTypeHasBeenSet = true; m_deviceTrustProviderType = value; }
-    inline void SetDeviceTrustProviderType(DeviceTrustProviderType&& value) { m_deviceTrustProviderTypeHasBeenSet = true; m_deviceTrustProviderType = std::move(value); }
-    inline VerifiedAccessTrustProvider& WithDeviceTrustProviderType(const DeviceTrustProviderType& value) { SetDeviceTrustProviderType(value); return *this;}
-    inline VerifiedAccessTrustProvider& WithDeviceTrustProviderType(DeviceTrustProviderType&& value) { SetDeviceTrustProviderType(std::move(value)); return *this;}
+    inline void SetDeviceTrustProviderType(DeviceTrustProviderType value) { m_deviceTrustProviderTypeHasBeenSet = true; m_deviceTrustProviderType = value; }
+    inline VerifiedAccessTrustProvider& WithDeviceTrustProviderType(DeviceTrustProviderType value) { SetDeviceTrustProviderType(value); return *this;}
     ///@}
 
     ///@{
@@ -117,104 +107,98 @@ namespace Model
      * <p>The options for an OpenID Connect-compatible user-identity trust
      * provider.</p>
      */
-    inline const OidcOptions& GetOidcOptions() const{ return m_oidcOptions; }
+    inline const OidcOptions& GetOidcOptions() const { return m_oidcOptions; }
     inline bool OidcOptionsHasBeenSet() const { return m_oidcOptionsHasBeenSet; }
-    inline void SetOidcOptions(const OidcOptions& value) { m_oidcOptionsHasBeenSet = true; m_oidcOptions = value; }
-    inline void SetOidcOptions(OidcOptions&& value) { m_oidcOptionsHasBeenSet = true; m_oidcOptions = std::move(value); }
-    inline VerifiedAccessTrustProvider& WithOidcOptions(const OidcOptions& value) { SetOidcOptions(value); return *this;}
-    inline VerifiedAccessTrustProvider& WithOidcOptions(OidcOptions&& value) { SetOidcOptions(std::move(value)); return *this;}
+    template<typename OidcOptionsT = OidcOptions>
+    void SetOidcOptions(OidcOptionsT&& value) { m_oidcOptionsHasBeenSet = true; m_oidcOptions = std::forward<OidcOptionsT>(value); }
+    template<typename OidcOptionsT = OidcOptions>
+    VerifiedAccessTrustProvider& WithOidcOptions(OidcOptionsT&& value) { SetOidcOptions(std::forward<OidcOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The options for device-identity trust provider.</p>
      */
-    inline const DeviceOptions& GetDeviceOptions() const{ return m_deviceOptions; }
+    inline const DeviceOptions& GetDeviceOptions() const { return m_deviceOptions; }
     inline bool DeviceOptionsHasBeenSet() const { return m_deviceOptionsHasBeenSet; }
-    inline void SetDeviceOptions(const DeviceOptions& value) { m_deviceOptionsHasBeenSet = true; m_deviceOptions = value; }
-    inline void SetDeviceOptions(DeviceOptions&& value) { m_deviceOptionsHasBeenSet = true; m_deviceOptions = std::move(value); }
-    inline VerifiedAccessTrustProvider& WithDeviceOptions(const DeviceOptions& value) { SetDeviceOptions(value); return *this;}
-    inline VerifiedAccessTrustProvider& WithDeviceOptions(DeviceOptions&& value) { SetDeviceOptions(std::move(value)); return *this;}
+    template<typename DeviceOptionsT = DeviceOptions>
+    void SetDeviceOptions(DeviceOptionsT&& value) { m_deviceOptionsHasBeenSet = true; m_deviceOptions = std::forward<DeviceOptionsT>(value); }
+    template<typename DeviceOptionsT = DeviceOptions>
+    VerifiedAccessTrustProvider& WithDeviceOptions(DeviceOptionsT&& value) { SetDeviceOptions(std::forward<DeviceOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier to be used when working with policy rules.</p>
      */
-    inline const Aws::String& GetPolicyReferenceName() const{ return m_policyReferenceName; }
+    inline const Aws::String& GetPolicyReferenceName() const { return m_policyReferenceName; }
     inline bool PolicyReferenceNameHasBeenSet() const { return m_policyReferenceNameHasBeenSet; }
-    inline void SetPolicyReferenceName(const Aws::String& value) { m_policyReferenceNameHasBeenSet = true; m_policyReferenceName = value; }
-    inline void SetPolicyReferenceName(Aws::String&& value) { m_policyReferenceNameHasBeenSet = true; m_policyReferenceName = std::move(value); }
-    inline void SetPolicyReferenceName(const char* value) { m_policyReferenceNameHasBeenSet = true; m_policyReferenceName.assign(value); }
-    inline VerifiedAccessTrustProvider& WithPolicyReferenceName(const Aws::String& value) { SetPolicyReferenceName(value); return *this;}
-    inline VerifiedAccessTrustProvider& WithPolicyReferenceName(Aws::String&& value) { SetPolicyReferenceName(std::move(value)); return *this;}
-    inline VerifiedAccessTrustProvider& WithPolicyReferenceName(const char* value) { SetPolicyReferenceName(value); return *this;}
+    template<typename PolicyReferenceNameT = Aws::String>
+    void SetPolicyReferenceName(PolicyReferenceNameT&& value) { m_policyReferenceNameHasBeenSet = true; m_policyReferenceName = std::forward<PolicyReferenceNameT>(value); }
+    template<typename PolicyReferenceNameT = Aws::String>
+    VerifiedAccessTrustProvider& WithPolicyReferenceName(PolicyReferenceNameT&& value) { SetPolicyReferenceName(std::forward<PolicyReferenceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The creation time.</p>
      */
-    inline const Aws::String& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::String& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::String& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::String&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline void SetCreationTime(const char* value) { m_creationTimeHasBeenSet = true; m_creationTime.assign(value); }
-    inline VerifiedAccessTrustProvider& WithCreationTime(const Aws::String& value) { SetCreationTime(value); return *this;}
-    inline VerifiedAccessTrustProvider& WithCreationTime(Aws::String&& value) { SetCreationTime(std::move(value)); return *this;}
-    inline VerifiedAccessTrustProvider& WithCreationTime(const char* value) { SetCreationTime(value); return *this;}
+    template<typename CreationTimeT = Aws::String>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::String>
+    VerifiedAccessTrustProvider& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The last updated time.</p>
      */
-    inline const Aws::String& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
+    inline const Aws::String& GetLastUpdatedTime() const { return m_lastUpdatedTime; }
     inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
-    inline void SetLastUpdatedTime(const Aws::String& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
-    inline void SetLastUpdatedTime(Aws::String&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::move(value); }
-    inline void SetLastUpdatedTime(const char* value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime.assign(value); }
-    inline VerifiedAccessTrustProvider& WithLastUpdatedTime(const Aws::String& value) { SetLastUpdatedTime(value); return *this;}
-    inline VerifiedAccessTrustProvider& WithLastUpdatedTime(Aws::String&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
-    inline VerifiedAccessTrustProvider& WithLastUpdatedTime(const char* value) { SetLastUpdatedTime(value); return *this;}
+    template<typename LastUpdatedTimeT = Aws::String>
+    void SetLastUpdatedTime(LastUpdatedTimeT&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::forward<LastUpdatedTimeT>(value); }
+    template<typename LastUpdatedTimeT = Aws::String>
+    VerifiedAccessTrustProvider& WithLastUpdatedTime(LastUpdatedTimeT&& value) { SetLastUpdatedTime(std::forward<LastUpdatedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline VerifiedAccessTrustProvider& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline VerifiedAccessTrustProvider& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline VerifiedAccessTrustProvider& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline VerifiedAccessTrustProvider& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    VerifiedAccessTrustProvider& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    VerifiedAccessTrustProvider& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The options in use for server side encryption.</p>
      */
-    inline const VerifiedAccessSseSpecificationResponse& GetSseSpecification() const{ return m_sseSpecification; }
+    inline const VerifiedAccessSseSpecificationResponse& GetSseSpecification() const { return m_sseSpecification; }
     inline bool SseSpecificationHasBeenSet() const { return m_sseSpecificationHasBeenSet; }
-    inline void SetSseSpecification(const VerifiedAccessSseSpecificationResponse& value) { m_sseSpecificationHasBeenSet = true; m_sseSpecification = value; }
-    inline void SetSseSpecification(VerifiedAccessSseSpecificationResponse&& value) { m_sseSpecificationHasBeenSet = true; m_sseSpecification = std::move(value); }
-    inline VerifiedAccessTrustProvider& WithSseSpecification(const VerifiedAccessSseSpecificationResponse& value) { SetSseSpecification(value); return *this;}
-    inline VerifiedAccessTrustProvider& WithSseSpecification(VerifiedAccessSseSpecificationResponse&& value) { SetSseSpecification(std::move(value)); return *this;}
+    template<typename SseSpecificationT = VerifiedAccessSseSpecificationResponse>
+    void SetSseSpecification(SseSpecificationT&& value) { m_sseSpecificationHasBeenSet = true; m_sseSpecification = std::forward<SseSpecificationT>(value); }
+    template<typename SseSpecificationT = VerifiedAccessSseSpecificationResponse>
+    VerifiedAccessTrustProvider& WithSseSpecification(SseSpecificationT&& value) { SetSseSpecification(std::forward<SseSpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The OpenID Connect (OIDC) options.</p>
      */
-    inline const NativeApplicationOidcOptions& GetNativeApplicationOidcOptions() const{ return m_nativeApplicationOidcOptions; }
+    inline const NativeApplicationOidcOptions& GetNativeApplicationOidcOptions() const { return m_nativeApplicationOidcOptions; }
     inline bool NativeApplicationOidcOptionsHasBeenSet() const { return m_nativeApplicationOidcOptionsHasBeenSet; }
-    inline void SetNativeApplicationOidcOptions(const NativeApplicationOidcOptions& value) { m_nativeApplicationOidcOptionsHasBeenSet = true; m_nativeApplicationOidcOptions = value; }
-    inline void SetNativeApplicationOidcOptions(NativeApplicationOidcOptions&& value) { m_nativeApplicationOidcOptionsHasBeenSet = true; m_nativeApplicationOidcOptions = std::move(value); }
-    inline VerifiedAccessTrustProvider& WithNativeApplicationOidcOptions(const NativeApplicationOidcOptions& value) { SetNativeApplicationOidcOptions(value); return *this;}
-    inline VerifiedAccessTrustProvider& WithNativeApplicationOidcOptions(NativeApplicationOidcOptions&& value) { SetNativeApplicationOidcOptions(std::move(value)); return *this;}
+    template<typename NativeApplicationOidcOptionsT = NativeApplicationOidcOptions>
+    void SetNativeApplicationOidcOptions(NativeApplicationOidcOptionsT&& value) { m_nativeApplicationOidcOptionsHasBeenSet = true; m_nativeApplicationOidcOptions = std::forward<NativeApplicationOidcOptionsT>(value); }
+    template<typename NativeApplicationOidcOptionsT = NativeApplicationOidcOptions>
+    VerifiedAccessTrustProvider& WithNativeApplicationOidcOptions(NativeApplicationOidcOptionsT&& value) { SetNativeApplicationOidcOptions(std::forward<NativeApplicationOidcOptionsT>(value)); return *this;}
     ///@}
   private:
 
@@ -224,13 +208,13 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    TrustProviderType m_trustProviderType;
+    TrustProviderType m_trustProviderType{TrustProviderType::NOT_SET};
     bool m_trustProviderTypeHasBeenSet = false;
 
-    UserTrustProviderType m_userTrustProviderType;
+    UserTrustProviderType m_userTrustProviderType{UserTrustProviderType::NOT_SET};
     bool m_userTrustProviderTypeHasBeenSet = false;
 
-    DeviceTrustProviderType m_deviceTrustProviderType;
+    DeviceTrustProviderType m_deviceTrustProviderType{DeviceTrustProviderType::NOT_SET};
     bool m_deviceTrustProviderTypeHasBeenSet = false;
 
     OidcOptions m_oidcOptions;

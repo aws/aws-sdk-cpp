@@ -18,17 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-ConfigRuleComplianceFilters::ConfigRuleComplianceFilters() : 
-    m_configRuleNameHasBeenSet(false),
-    m_complianceType(ComplianceType::NOT_SET),
-    m_complianceTypeHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_awsRegionHasBeenSet(false)
-{
-}
-
 ConfigRuleComplianceFilters::ConfigRuleComplianceFilters(JsonView jsonValue)
-  : ConfigRuleComplianceFilters()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ConfigRuleComplianceFilters& ConfigRuleComplianceFilters::operator =(JsonView js
   if(jsonValue.ValueExists("ConfigRuleName"))
   {
     m_configRuleName = jsonValue.GetString("ConfigRuleName");
-
     m_configRuleNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComplianceType"))
   {
     m_complianceType = ComplianceTypeMapper::GetComplianceTypeForName(jsonValue.GetString("ComplianceType"));
-
     m_complianceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AwsRegion"))
   {
     m_awsRegion = jsonValue.GetString("AwsRegion");
-
     m_awsRegionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-WhenSentTo::WhenSentTo() : 
-    m_whenSentToSegmentsListHasBeenSet(false)
-{
-}
-
 WhenSentTo::WhenSentTo(JsonView jsonValue)
-  : WhenSentTo()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ WhenSentTo& WhenSentTo::operator =(JsonView jsonValue)
     }
     m_whenSentToSegmentsListHasBeenSet = true;
   }
-
   return *this;
 }
 

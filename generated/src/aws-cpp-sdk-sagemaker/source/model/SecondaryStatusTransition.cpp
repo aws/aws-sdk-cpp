@@ -18,17 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-SecondaryStatusTransition::SecondaryStatusTransition() : 
-    m_status(SecondaryStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
-{
-}
-
 SecondaryStatusTransition::SecondaryStatusTransition(JsonView jsonValue)
-  : SecondaryStatusTransition()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ SecondaryStatusTransition& SecondaryStatusTransition::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Status"))
   {
     m_status = SecondaryStatusMapper::GetSecondaryStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

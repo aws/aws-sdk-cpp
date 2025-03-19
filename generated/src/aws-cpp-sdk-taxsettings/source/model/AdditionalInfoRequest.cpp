@@ -18,29 +18,7 @@ namespace TaxSettings
 namespace Model
 {
 
-AdditionalInfoRequest::AdditionalInfoRequest() : 
-    m_canadaAdditionalInfoHasBeenSet(false),
-    m_egyptAdditionalInfoHasBeenSet(false),
-    m_estoniaAdditionalInfoHasBeenSet(false),
-    m_georgiaAdditionalInfoHasBeenSet(false),
-    m_greeceAdditionalInfoHasBeenSet(false),
-    m_israelAdditionalInfoHasBeenSet(false),
-    m_italyAdditionalInfoHasBeenSet(false),
-    m_kenyaAdditionalInfoHasBeenSet(false),
-    m_malaysiaAdditionalInfoHasBeenSet(false),
-    m_polandAdditionalInfoHasBeenSet(false),
-    m_romaniaAdditionalInfoHasBeenSet(false),
-    m_saudiArabiaAdditionalInfoHasBeenSet(false),
-    m_southKoreaAdditionalInfoHasBeenSet(false),
-    m_spainAdditionalInfoHasBeenSet(false),
-    m_turkeyAdditionalInfoHasBeenSet(false),
-    m_ukraineAdditionalInfoHasBeenSet(false),
-    m_vietnamAdditionalInfoHasBeenSet(false)
-{
-}
-
 AdditionalInfoRequest::AdditionalInfoRequest(JsonView jsonValue)
-  : AdditionalInfoRequest()
 {
   *this = jsonValue;
 }
@@ -50,122 +28,88 @@ AdditionalInfoRequest& AdditionalInfoRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("canadaAdditionalInfo"))
   {
     m_canadaAdditionalInfo = jsonValue.GetObject("canadaAdditionalInfo");
-
     m_canadaAdditionalInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("egyptAdditionalInfo"))
   {
     m_egyptAdditionalInfo = jsonValue.GetObject("egyptAdditionalInfo");
-
     m_egyptAdditionalInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("estoniaAdditionalInfo"))
   {
     m_estoniaAdditionalInfo = jsonValue.GetObject("estoniaAdditionalInfo");
-
     m_estoniaAdditionalInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("georgiaAdditionalInfo"))
   {
     m_georgiaAdditionalInfo = jsonValue.GetObject("georgiaAdditionalInfo");
-
     m_georgiaAdditionalInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("greeceAdditionalInfo"))
   {
     m_greeceAdditionalInfo = jsonValue.GetObject("greeceAdditionalInfo");
-
     m_greeceAdditionalInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("israelAdditionalInfo"))
   {
     m_israelAdditionalInfo = jsonValue.GetObject("israelAdditionalInfo");
-
     m_israelAdditionalInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("italyAdditionalInfo"))
   {
     m_italyAdditionalInfo = jsonValue.GetObject("italyAdditionalInfo");
-
     m_italyAdditionalInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kenyaAdditionalInfo"))
   {
     m_kenyaAdditionalInfo = jsonValue.GetObject("kenyaAdditionalInfo");
-
     m_kenyaAdditionalInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("malaysiaAdditionalInfo"))
   {
     m_malaysiaAdditionalInfo = jsonValue.GetObject("malaysiaAdditionalInfo");
-
     m_malaysiaAdditionalInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("polandAdditionalInfo"))
   {
     m_polandAdditionalInfo = jsonValue.GetObject("polandAdditionalInfo");
-
     m_polandAdditionalInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("romaniaAdditionalInfo"))
   {
     m_romaniaAdditionalInfo = jsonValue.GetObject("romaniaAdditionalInfo");
-
     m_romaniaAdditionalInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("saudiArabiaAdditionalInfo"))
   {
     m_saudiArabiaAdditionalInfo = jsonValue.GetObject("saudiArabiaAdditionalInfo");
-
     m_saudiArabiaAdditionalInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("southKoreaAdditionalInfo"))
   {
     m_southKoreaAdditionalInfo = jsonValue.GetObject("southKoreaAdditionalInfo");
-
     m_southKoreaAdditionalInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("spainAdditionalInfo"))
   {
     m_spainAdditionalInfo = jsonValue.GetObject("spainAdditionalInfo");
-
     m_spainAdditionalInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("turkeyAdditionalInfo"))
   {
     m_turkeyAdditionalInfo = jsonValue.GetObject("turkeyAdditionalInfo");
-
     m_turkeyAdditionalInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ukraineAdditionalInfo"))
   {
     m_ukraineAdditionalInfo = jsonValue.GetObject("ukraineAdditionalInfo");
-
     m_ukraineAdditionalInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vietnamAdditionalInfo"))
   {
     m_vietnamAdditionalInfo = jsonValue.GetObject("vietnamAdditionalInfo");
-
     m_vietnamAdditionalInfoHasBeenSet = true;
   }
-
   return *this;
 }
 

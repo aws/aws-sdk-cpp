@@ -10,14 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-AcceptAddressTransferRequest::AcceptAddressTransferRequest() : 
-    m_addressHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String AcceptAddressTransferRequest::SerializePayload() const
 {
   Aws::StringStream ss;

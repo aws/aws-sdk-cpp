@@ -16,13 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetObjectAclResult::GetObjectAclResult() : 
-    m_requestCharged(RequestCharged::NOT_SET)
-{
-}
-
 GetObjectAclResult::GetObjectAclResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : GetObjectAclResult()
 {
   *this = result;
 }
@@ -38,17 +32,20 @@ GetObjectAclResult& GetObjectAclResult::operator =(const Aws::AmazonWebServiceRe
     if(!ownerNode.IsNull())
     {
       m_owner = ownerNode;
+      m_ownerHasBeenSet = true;
     }
     XmlNode grantsNode = resultNode.FirstChild("AccessControlList");
     if(!grantsNode.IsNull())
     {
       XmlNode grantsMember = grantsNode.FirstChild("Grant");
+      m_grantsHasBeenSet = !grantsMember.IsNull();
       while(!grantsMember.IsNull())
       {
         m_grants.push_back(grantsMember);
         grantsMember = grantsMember.NextNode("Grant");
       }
 
+      m_grantsHasBeenSet = true;
     }
   }
 
@@ -57,12 +54,14 @@ GetObjectAclResult& GetObjectAclResult::operator =(const Aws::AmazonWebServiceRe
   if(requestChargedIter != headers.end())
   {
     m_requestCharged = RequestChargedMapper::GetRequestChargedForName(requestChargedIter->second);
+    m_requestChargedHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amz-request-id");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

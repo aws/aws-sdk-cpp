@@ -31,7 +31,7 @@ namespace Model
   class DescribeAccessPolicyResult
   {
   public:
-    AWS_IOTSITEWISE_API DescribeAccessPolicyResult();
+    AWS_IOTSITEWISE_API DescribeAccessPolicyResult() = default;
     AWS_IOTSITEWISE_API DescribeAccessPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTSITEWISE_API DescribeAccessPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,11 @@ namespace Model
     /**
      * <p>The ID of the access policy.</p>
      */
-    inline const Aws::String& GetAccessPolicyId() const{ return m_accessPolicyId; }
-    inline void SetAccessPolicyId(const Aws::String& value) { m_accessPolicyId = value; }
-    inline void SetAccessPolicyId(Aws::String&& value) { m_accessPolicyId = std::move(value); }
-    inline void SetAccessPolicyId(const char* value) { m_accessPolicyId.assign(value); }
-    inline DescribeAccessPolicyResult& WithAccessPolicyId(const Aws::String& value) { SetAccessPolicyId(value); return *this;}
-    inline DescribeAccessPolicyResult& WithAccessPolicyId(Aws::String&& value) { SetAccessPolicyId(std::move(value)); return *this;}
-    inline DescribeAccessPolicyResult& WithAccessPolicyId(const char* value) { SetAccessPolicyId(value); return *this;}
+    inline const Aws::String& GetAccessPolicyId() const { return m_accessPolicyId; }
+    template<typename AccessPolicyIdT = Aws::String>
+    void SetAccessPolicyId(AccessPolicyIdT&& value) { m_accessPolicyIdHasBeenSet = true; m_accessPolicyId = std::forward<AccessPolicyIdT>(value); }
+    template<typename AccessPolicyIdT = Aws::String>
+    DescribeAccessPolicyResult& WithAccessPolicyId(AccessPolicyIdT&& value) { SetAccessPolicyId(std::forward<AccessPolicyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,13 +55,11 @@ namespace Model
      * <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code>
      * </p>
      */
-    inline const Aws::String& GetAccessPolicyArn() const{ return m_accessPolicyArn; }
-    inline void SetAccessPolicyArn(const Aws::String& value) { m_accessPolicyArn = value; }
-    inline void SetAccessPolicyArn(Aws::String&& value) { m_accessPolicyArn = std::move(value); }
-    inline void SetAccessPolicyArn(const char* value) { m_accessPolicyArn.assign(value); }
-    inline DescribeAccessPolicyResult& WithAccessPolicyArn(const Aws::String& value) { SetAccessPolicyArn(value); return *this;}
-    inline DescribeAccessPolicyResult& WithAccessPolicyArn(Aws::String&& value) { SetAccessPolicyArn(std::move(value)); return *this;}
-    inline DescribeAccessPolicyResult& WithAccessPolicyArn(const char* value) { SetAccessPolicyArn(value); return *this;}
+    inline const Aws::String& GetAccessPolicyArn() const { return m_accessPolicyArn; }
+    template<typename AccessPolicyArnT = Aws::String>
+    void SetAccessPolicyArn(AccessPolicyArnT&& value) { m_accessPolicyArnHasBeenSet = true; m_accessPolicyArn = std::forward<AccessPolicyArnT>(value); }
+    template<typename AccessPolicyArnT = Aws::String>
+    DescribeAccessPolicyResult& WithAccessPolicyArn(AccessPolicyArnT&& value) { SetAccessPolicyArn(std::forward<AccessPolicyArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,11 +67,11 @@ namespace Model
      * <p>The identity (IAM Identity Center user, IAM Identity Center group, or IAM
      * user) to which this access policy applies.</p>
      */
-    inline const Identity& GetAccessPolicyIdentity() const{ return m_accessPolicyIdentity; }
-    inline void SetAccessPolicyIdentity(const Identity& value) { m_accessPolicyIdentity = value; }
-    inline void SetAccessPolicyIdentity(Identity&& value) { m_accessPolicyIdentity = std::move(value); }
-    inline DescribeAccessPolicyResult& WithAccessPolicyIdentity(const Identity& value) { SetAccessPolicyIdentity(value); return *this;}
-    inline DescribeAccessPolicyResult& WithAccessPolicyIdentity(Identity&& value) { SetAccessPolicyIdentity(std::move(value)); return *this;}
+    inline const Identity& GetAccessPolicyIdentity() const { return m_accessPolicyIdentity; }
+    template<typename AccessPolicyIdentityT = Identity>
+    void SetAccessPolicyIdentity(AccessPolicyIdentityT&& value) { m_accessPolicyIdentityHasBeenSet = true; m_accessPolicyIdentity = std::forward<AccessPolicyIdentityT>(value); }
+    template<typename AccessPolicyIdentityT = Identity>
+    DescribeAccessPolicyResult& WithAccessPolicyIdentity(AccessPolicyIdentityT&& value) { SetAccessPolicyIdentity(std::forward<AccessPolicyIdentityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,11 +79,11 @@ namespace Model
      * <p>The IoT SiteWise Monitor resource (portal or project) to which this access
      * policy provides access.</p>
      */
-    inline const Resource& GetAccessPolicyResource() const{ return m_accessPolicyResource; }
-    inline void SetAccessPolicyResource(const Resource& value) { m_accessPolicyResource = value; }
-    inline void SetAccessPolicyResource(Resource&& value) { m_accessPolicyResource = std::move(value); }
-    inline DescribeAccessPolicyResult& WithAccessPolicyResource(const Resource& value) { SetAccessPolicyResource(value); return *this;}
-    inline DescribeAccessPolicyResult& WithAccessPolicyResource(Resource&& value) { SetAccessPolicyResource(std::move(value)); return *this;}
+    inline const Resource& GetAccessPolicyResource() const { return m_accessPolicyResource; }
+    template<typename AccessPolicyResourceT = Resource>
+    void SetAccessPolicyResource(AccessPolicyResourceT&& value) { m_accessPolicyResourceHasBeenSet = true; m_accessPolicyResource = std::forward<AccessPolicyResourceT>(value); }
+    template<typename AccessPolicyResourceT = Resource>
+    DescribeAccessPolicyResult& WithAccessPolicyResource(AccessPolicyResourceT&& value) { SetAccessPolicyResource(std::forward<AccessPolicyResourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,62 +91,66 @@ namespace Model
      * <p>The access policy permission. Note that a project <code>ADMINISTRATOR</code>
      * is also known as a project owner.</p>
      */
-    inline const Permission& GetAccessPolicyPermission() const{ return m_accessPolicyPermission; }
-    inline void SetAccessPolicyPermission(const Permission& value) { m_accessPolicyPermission = value; }
-    inline void SetAccessPolicyPermission(Permission&& value) { m_accessPolicyPermission = std::move(value); }
-    inline DescribeAccessPolicyResult& WithAccessPolicyPermission(const Permission& value) { SetAccessPolicyPermission(value); return *this;}
-    inline DescribeAccessPolicyResult& WithAccessPolicyPermission(Permission&& value) { SetAccessPolicyPermission(std::move(value)); return *this;}
+    inline Permission GetAccessPolicyPermission() const { return m_accessPolicyPermission; }
+    inline void SetAccessPolicyPermission(Permission value) { m_accessPolicyPermissionHasBeenSet = true; m_accessPolicyPermission = value; }
+    inline DescribeAccessPolicyResult& WithAccessPolicyPermission(Permission value) { SetAccessPolicyPermission(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date the access policy was created, in Unix epoch time.</p>
      */
-    inline const Aws::Utils::DateTime& GetAccessPolicyCreationDate() const{ return m_accessPolicyCreationDate; }
-    inline void SetAccessPolicyCreationDate(const Aws::Utils::DateTime& value) { m_accessPolicyCreationDate = value; }
-    inline void SetAccessPolicyCreationDate(Aws::Utils::DateTime&& value) { m_accessPolicyCreationDate = std::move(value); }
-    inline DescribeAccessPolicyResult& WithAccessPolicyCreationDate(const Aws::Utils::DateTime& value) { SetAccessPolicyCreationDate(value); return *this;}
-    inline DescribeAccessPolicyResult& WithAccessPolicyCreationDate(Aws::Utils::DateTime&& value) { SetAccessPolicyCreationDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetAccessPolicyCreationDate() const { return m_accessPolicyCreationDate; }
+    template<typename AccessPolicyCreationDateT = Aws::Utils::DateTime>
+    void SetAccessPolicyCreationDate(AccessPolicyCreationDateT&& value) { m_accessPolicyCreationDateHasBeenSet = true; m_accessPolicyCreationDate = std::forward<AccessPolicyCreationDateT>(value); }
+    template<typename AccessPolicyCreationDateT = Aws::Utils::DateTime>
+    DescribeAccessPolicyResult& WithAccessPolicyCreationDate(AccessPolicyCreationDateT&& value) { SetAccessPolicyCreationDate(std::forward<AccessPolicyCreationDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date the access policy was last updated, in Unix epoch time.</p>
      */
-    inline const Aws::Utils::DateTime& GetAccessPolicyLastUpdateDate() const{ return m_accessPolicyLastUpdateDate; }
-    inline void SetAccessPolicyLastUpdateDate(const Aws::Utils::DateTime& value) { m_accessPolicyLastUpdateDate = value; }
-    inline void SetAccessPolicyLastUpdateDate(Aws::Utils::DateTime&& value) { m_accessPolicyLastUpdateDate = std::move(value); }
-    inline DescribeAccessPolicyResult& WithAccessPolicyLastUpdateDate(const Aws::Utils::DateTime& value) { SetAccessPolicyLastUpdateDate(value); return *this;}
-    inline DescribeAccessPolicyResult& WithAccessPolicyLastUpdateDate(Aws::Utils::DateTime&& value) { SetAccessPolicyLastUpdateDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetAccessPolicyLastUpdateDate() const { return m_accessPolicyLastUpdateDate; }
+    template<typename AccessPolicyLastUpdateDateT = Aws::Utils::DateTime>
+    void SetAccessPolicyLastUpdateDate(AccessPolicyLastUpdateDateT&& value) { m_accessPolicyLastUpdateDateHasBeenSet = true; m_accessPolicyLastUpdateDate = std::forward<AccessPolicyLastUpdateDateT>(value); }
+    template<typename AccessPolicyLastUpdateDateT = Aws::Utils::DateTime>
+    DescribeAccessPolicyResult& WithAccessPolicyLastUpdateDate(AccessPolicyLastUpdateDateT&& value) { SetAccessPolicyLastUpdateDate(std::forward<AccessPolicyLastUpdateDateT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeAccessPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeAccessPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeAccessPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeAccessPolicyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_accessPolicyId;
+    bool m_accessPolicyIdHasBeenSet = false;
 
     Aws::String m_accessPolicyArn;
+    bool m_accessPolicyArnHasBeenSet = false;
 
     Identity m_accessPolicyIdentity;
+    bool m_accessPolicyIdentityHasBeenSet = false;
 
     Resource m_accessPolicyResource;
+    bool m_accessPolicyResourceHasBeenSet = false;
 
-    Permission m_accessPolicyPermission;
+    Permission m_accessPolicyPermission{Permission::NOT_SET};
+    bool m_accessPolicyPermissionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_accessPolicyCreationDate;
+    Aws::Utils::DateTime m_accessPolicyCreationDate{};
+    bool m_accessPolicyCreationDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_accessPolicyLastUpdateDate;
+    Aws::Utils::DateTime m_accessPolicyLastUpdateDate{};
+    bool m_accessPolicyLastUpdateDateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

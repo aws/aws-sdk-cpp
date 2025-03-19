@@ -32,7 +32,7 @@ namespace Model
   class PayloadTooLargeException
   {
   public:
-    AWS_APPCONFIG_API PayloadTooLargeException();
+    AWS_APPCONFIG_API PayloadTooLargeException() = default;
     AWS_APPCONFIG_API PayloadTooLargeException(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPCONFIG_API PayloadTooLargeException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPCONFIG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,29 +40,25 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline PayloadTooLargeException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline PayloadTooLargeException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline PayloadTooLargeException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    PayloadTooLargeException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const BytesMeasure& GetMeasure() const{ return m_measure; }
+    inline BytesMeasure GetMeasure() const { return m_measure; }
     inline bool MeasureHasBeenSet() const { return m_measureHasBeenSet; }
-    inline void SetMeasure(const BytesMeasure& value) { m_measureHasBeenSet = true; m_measure = value; }
-    inline void SetMeasure(BytesMeasure&& value) { m_measureHasBeenSet = true; m_measure = std::move(value); }
-    inline PayloadTooLargeException& WithMeasure(const BytesMeasure& value) { SetMeasure(value); return *this;}
-    inline PayloadTooLargeException& WithMeasure(BytesMeasure&& value) { SetMeasure(std::move(value)); return *this;}
+    inline void SetMeasure(BytesMeasure value) { m_measureHasBeenSet = true; m_measure = value; }
+    inline PayloadTooLargeException& WithMeasure(BytesMeasure value) { SetMeasure(value); return *this;}
     ///@}
 
     ///@{
     
-    inline double GetLimit() const{ return m_limit; }
+    inline double GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(double value) { m_limitHasBeenSet = true; m_limit = value; }
     inline PayloadTooLargeException& WithLimit(double value) { SetLimit(value); return *this;}
@@ -70,7 +66,7 @@ namespace Model
 
     ///@{
     
-    inline double GetSize() const{ return m_size; }
+    inline double GetSize() const { return m_size; }
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
     inline void SetSize(double value) { m_sizeHasBeenSet = true; m_size = value; }
     inline PayloadTooLargeException& WithSize(double value) { SetSize(value); return *this;}
@@ -80,13 +76,13 @@ namespace Model
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
 
-    BytesMeasure m_measure;
+    BytesMeasure m_measure{BytesMeasure::NOT_SET};
     bool m_measureHasBeenSet = false;
 
-    double m_limit;
+    double m_limit{0.0};
     bool m_limitHasBeenSet = false;
 
-    double m_size;
+    double m_size{0.0};
     bool m_sizeHasBeenSet = false;
   };
 

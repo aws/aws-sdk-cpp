@@ -18,21 +18,7 @@ namespace BackupGateway
 namespace Model
 {
 
-GatewayDetails::GatewayDetails() : 
-    m_gatewayArnHasBeenSet(false),
-    m_gatewayDisplayNameHasBeenSet(false),
-    m_gatewayType(GatewayType::NOT_SET),
-    m_gatewayTypeHasBeenSet(false),
-    m_hypervisorIdHasBeenSet(false),
-    m_lastSeenTimeHasBeenSet(false),
-    m_maintenanceStartTimeHasBeenSet(false),
-    m_nextUpdateAvailabilityTimeHasBeenSet(false),
-    m_vpcEndpointHasBeenSet(false)
-{
-}
-
 GatewayDetails::GatewayDetails(JsonView jsonValue)
-  : GatewayDetails()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ GatewayDetails& GatewayDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GatewayArn"))
   {
     m_gatewayArn = jsonValue.GetString("GatewayArn");
-
     m_gatewayArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GatewayDisplayName"))
   {
     m_gatewayDisplayName = jsonValue.GetString("GatewayDisplayName");
-
     m_gatewayDisplayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GatewayType"))
   {
     m_gatewayType = GatewayTypeMapper::GetGatewayTypeForName(jsonValue.GetString("GatewayType"));
-
     m_gatewayTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HypervisorId"))
   {
     m_hypervisorId = jsonValue.GetString("HypervisorId");
-
     m_hypervisorIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastSeenTime"))
   {
     m_lastSeenTime = jsonValue.GetDouble("LastSeenTime");
-
     m_lastSeenTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaintenanceStartTime"))
   {
     m_maintenanceStartTime = jsonValue.GetObject("MaintenanceStartTime");
-
     m_maintenanceStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextUpdateAvailabilityTime"))
   {
     m_nextUpdateAvailabilityTime = jsonValue.GetDouble("NextUpdateAvailabilityTime");
-
     m_nextUpdateAvailabilityTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcEndpoint"))
   {
     m_vpcEndpoint = jsonValue.GetString("VpcEndpoint");
-
     m_vpcEndpointHasBeenSet = true;
   }
-
   return *this;
 }
 

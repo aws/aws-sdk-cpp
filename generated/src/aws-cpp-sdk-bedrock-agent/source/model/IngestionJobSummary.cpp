@@ -18,21 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-IngestionJobSummary::IngestionJobSummary() : 
-    m_dataSourceIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_ingestionJobIdHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_statisticsHasBeenSet(false),
-    m_status(IngestionJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 IngestionJobSummary::IngestionJobSummary(JsonView jsonValue)
-  : IngestionJobSummary()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ IngestionJobSummary& IngestionJobSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("dataSourceId"))
   {
     m_dataSourceId = jsonValue.GetString("dataSourceId");
-
     m_dataSourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ingestionJobId"))
   {
     m_ingestionJobId = jsonValue.GetString("ingestionJobId");
-
     m_ingestionJobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("knowledgeBaseId"))
   {
     m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
-
     m_knowledgeBaseIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startedAt"))
   {
     m_startedAt = jsonValue.GetString("startedAt");
-
     m_startedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statistics"))
   {
     m_statistics = jsonValue.GetObject("statistics");
-
     m_statisticsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = IngestionJobStatusMapper::GetIngestionJobStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

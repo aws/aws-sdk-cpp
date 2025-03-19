@@ -26,7 +26,7 @@ namespace Model
   class ModifyReplicationTaskRequest : public DatabaseMigrationServiceRequest
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API ModifyReplicationTaskRequest();
+    AWS_DATABASEMIGRATIONSERVICE_API ModifyReplicationTaskRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the replication task.</p>
      */
-    inline const Aws::String& GetReplicationTaskArn() const{ return m_replicationTaskArn; }
+    inline const Aws::String& GetReplicationTaskArn() const { return m_replicationTaskArn; }
     inline bool ReplicationTaskArnHasBeenSet() const { return m_replicationTaskArnHasBeenSet; }
-    inline void SetReplicationTaskArn(const Aws::String& value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn = value; }
-    inline void SetReplicationTaskArn(Aws::String&& value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn = std::move(value); }
-    inline void SetReplicationTaskArn(const char* value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn.assign(value); }
-    inline ModifyReplicationTaskRequest& WithReplicationTaskArn(const Aws::String& value) { SetReplicationTaskArn(value); return *this;}
-    inline ModifyReplicationTaskRequest& WithReplicationTaskArn(Aws::String&& value) { SetReplicationTaskArn(std::move(value)); return *this;}
-    inline ModifyReplicationTaskRequest& WithReplicationTaskArn(const char* value) { SetReplicationTaskArn(value); return *this;}
+    template<typename ReplicationTaskArnT = Aws::String>
+    void SetReplicationTaskArn(ReplicationTaskArnT&& value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn = std::forward<ReplicationTaskArnT>(value); }
+    template<typename ReplicationTaskArnT = Aws::String>
+    ModifyReplicationTaskRequest& WithReplicationTaskArn(ReplicationTaskArnT&& value) { SetReplicationTaskArn(std::forward<ReplicationTaskArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
      * contain two consecutive hyphens.</p> </li> </ul>
      */
-    inline const Aws::String& GetReplicationTaskIdentifier() const{ return m_replicationTaskIdentifier; }
+    inline const Aws::String& GetReplicationTaskIdentifier() const { return m_replicationTaskIdentifier; }
     inline bool ReplicationTaskIdentifierHasBeenSet() const { return m_replicationTaskIdentifierHasBeenSet; }
-    inline void SetReplicationTaskIdentifier(const Aws::String& value) { m_replicationTaskIdentifierHasBeenSet = true; m_replicationTaskIdentifier = value; }
-    inline void SetReplicationTaskIdentifier(Aws::String&& value) { m_replicationTaskIdentifierHasBeenSet = true; m_replicationTaskIdentifier = std::move(value); }
-    inline void SetReplicationTaskIdentifier(const char* value) { m_replicationTaskIdentifierHasBeenSet = true; m_replicationTaskIdentifier.assign(value); }
-    inline ModifyReplicationTaskRequest& WithReplicationTaskIdentifier(const Aws::String& value) { SetReplicationTaskIdentifier(value); return *this;}
-    inline ModifyReplicationTaskRequest& WithReplicationTaskIdentifier(Aws::String&& value) { SetReplicationTaskIdentifier(std::move(value)); return *this;}
-    inline ModifyReplicationTaskRequest& WithReplicationTaskIdentifier(const char* value) { SetReplicationTaskIdentifier(value); return *this;}
+    template<typename ReplicationTaskIdentifierT = Aws::String>
+    void SetReplicationTaskIdentifier(ReplicationTaskIdentifierT&& value) { m_replicationTaskIdentifierHasBeenSet = true; m_replicationTaskIdentifier = std::forward<ReplicationTaskIdentifierT>(value); }
+    template<typename ReplicationTaskIdentifierT = Aws::String>
+    ModifyReplicationTaskRequest& WithReplicationTaskIdentifier(ReplicationTaskIdentifierT&& value) { SetReplicationTaskIdentifier(std::forward<ReplicationTaskIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,12 +71,10 @@ namespace Model
      * <p>The migration type. Valid values: <code>full-load</code> | <code>cdc</code> |
      * <code>full-load-and-cdc</code> </p>
      */
-    inline const MigrationTypeValue& GetMigrationType() const{ return m_migrationType; }
+    inline MigrationTypeValue GetMigrationType() const { return m_migrationType; }
     inline bool MigrationTypeHasBeenSet() const { return m_migrationTypeHasBeenSet; }
-    inline void SetMigrationType(const MigrationTypeValue& value) { m_migrationTypeHasBeenSet = true; m_migrationType = value; }
-    inline void SetMigrationType(MigrationTypeValue&& value) { m_migrationTypeHasBeenSet = true; m_migrationType = std::move(value); }
-    inline ModifyReplicationTaskRequest& WithMigrationType(const MigrationTypeValue& value) { SetMigrationType(value); return *this;}
-    inline ModifyReplicationTaskRequest& WithMigrationType(MigrationTypeValue&& value) { SetMigrationType(std::move(value)); return *this;}
+    inline void SetMigrationType(MigrationTypeValue value) { m_migrationTypeHasBeenSet = true; m_migrationType = value; }
+    inline ModifyReplicationTaskRequest& WithMigrationType(MigrationTypeValue value) { SetMigrationType(value); return *this;}
     ///@}
 
     ///@{
@@ -90,14 +84,12 @@ namespace Model
      * <code>--table-mappings file://mappingfile.json</code>. When working with the DMS
      * API, provide the JSON as the parameter value. </p>
      */
-    inline const Aws::String& GetTableMappings() const{ return m_tableMappings; }
+    inline const Aws::String& GetTableMappings() const { return m_tableMappings; }
     inline bool TableMappingsHasBeenSet() const { return m_tableMappingsHasBeenSet; }
-    inline void SetTableMappings(const Aws::String& value) { m_tableMappingsHasBeenSet = true; m_tableMappings = value; }
-    inline void SetTableMappings(Aws::String&& value) { m_tableMappingsHasBeenSet = true; m_tableMappings = std::move(value); }
-    inline void SetTableMappings(const char* value) { m_tableMappingsHasBeenSet = true; m_tableMappings.assign(value); }
-    inline ModifyReplicationTaskRequest& WithTableMappings(const Aws::String& value) { SetTableMappings(value); return *this;}
-    inline ModifyReplicationTaskRequest& WithTableMappings(Aws::String&& value) { SetTableMappings(std::move(value)); return *this;}
-    inline ModifyReplicationTaskRequest& WithTableMappings(const char* value) { SetTableMappings(value); return *this;}
+    template<typename TableMappingsT = Aws::String>
+    void SetTableMappings(TableMappingsT&& value) { m_tableMappingsHasBeenSet = true; m_tableMappings = std::forward<TableMappingsT>(value); }
+    template<typename TableMappingsT = Aws::String>
+    ModifyReplicationTaskRequest& WithTableMappings(TableMappingsT&& value) { SetTableMappings(std::forward<TableMappingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,14 +97,12 @@ namespace Model
      * <p>JSON file that contains settings for the task, such as task metadata
      * settings.</p>
      */
-    inline const Aws::String& GetReplicationTaskSettings() const{ return m_replicationTaskSettings; }
+    inline const Aws::String& GetReplicationTaskSettings() const { return m_replicationTaskSettings; }
     inline bool ReplicationTaskSettingsHasBeenSet() const { return m_replicationTaskSettingsHasBeenSet; }
-    inline void SetReplicationTaskSettings(const Aws::String& value) { m_replicationTaskSettingsHasBeenSet = true; m_replicationTaskSettings = value; }
-    inline void SetReplicationTaskSettings(Aws::String&& value) { m_replicationTaskSettingsHasBeenSet = true; m_replicationTaskSettings = std::move(value); }
-    inline void SetReplicationTaskSettings(const char* value) { m_replicationTaskSettingsHasBeenSet = true; m_replicationTaskSettings.assign(value); }
-    inline ModifyReplicationTaskRequest& WithReplicationTaskSettings(const Aws::String& value) { SetReplicationTaskSettings(value); return *this;}
-    inline ModifyReplicationTaskRequest& WithReplicationTaskSettings(Aws::String&& value) { SetReplicationTaskSettings(std::move(value)); return *this;}
-    inline ModifyReplicationTaskRequest& WithReplicationTaskSettings(const char* value) { SetReplicationTaskSettings(value); return *this;}
+    template<typename ReplicationTaskSettingsT = Aws::String>
+    void SetReplicationTaskSettings(ReplicationTaskSettingsT&& value) { m_replicationTaskSettingsHasBeenSet = true; m_replicationTaskSettings = std::forward<ReplicationTaskSettingsT>(value); }
+    template<typename ReplicationTaskSettingsT = Aws::String>
+    ModifyReplicationTaskRequest& WithReplicationTaskSettings(ReplicationTaskSettingsT&& value) { SetReplicationTaskSettings(std::forward<ReplicationTaskSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -122,12 +112,12 @@ namespace Model
      * to start. Specifying both values results in an error.</p> <p>Timestamp Example:
      * --cdc-start-time “2018-03-08T12:12:12”</p>
      */
-    inline const Aws::Utils::DateTime& GetCdcStartTime() const{ return m_cdcStartTime; }
+    inline const Aws::Utils::DateTime& GetCdcStartTime() const { return m_cdcStartTime; }
     inline bool CdcStartTimeHasBeenSet() const { return m_cdcStartTimeHasBeenSet; }
-    inline void SetCdcStartTime(const Aws::Utils::DateTime& value) { m_cdcStartTimeHasBeenSet = true; m_cdcStartTime = value; }
-    inline void SetCdcStartTime(Aws::Utils::DateTime&& value) { m_cdcStartTimeHasBeenSet = true; m_cdcStartTime = std::move(value); }
-    inline ModifyReplicationTaskRequest& WithCdcStartTime(const Aws::Utils::DateTime& value) { SetCdcStartTime(value); return *this;}
-    inline ModifyReplicationTaskRequest& WithCdcStartTime(Aws::Utils::DateTime&& value) { SetCdcStartTime(std::move(value)); return *this;}
+    template<typename CdcStartTimeT = Aws::Utils::DateTime>
+    void SetCdcStartTime(CdcStartTimeT&& value) { m_cdcStartTimeHasBeenSet = true; m_cdcStartTime = std::forward<CdcStartTimeT>(value); }
+    template<typename CdcStartTimeT = Aws::Utils::DateTime>
+    ModifyReplicationTaskRequest& WithCdcStartTime(CdcStartTimeT&& value) { SetCdcStartTime(std::forward<CdcStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -148,14 +138,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
      * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
-    inline const Aws::String& GetCdcStartPosition() const{ return m_cdcStartPosition; }
+    inline const Aws::String& GetCdcStartPosition() const { return m_cdcStartPosition; }
     inline bool CdcStartPositionHasBeenSet() const { return m_cdcStartPositionHasBeenSet; }
-    inline void SetCdcStartPosition(const Aws::String& value) { m_cdcStartPositionHasBeenSet = true; m_cdcStartPosition = value; }
-    inline void SetCdcStartPosition(Aws::String&& value) { m_cdcStartPositionHasBeenSet = true; m_cdcStartPosition = std::move(value); }
-    inline void SetCdcStartPosition(const char* value) { m_cdcStartPositionHasBeenSet = true; m_cdcStartPosition.assign(value); }
-    inline ModifyReplicationTaskRequest& WithCdcStartPosition(const Aws::String& value) { SetCdcStartPosition(value); return *this;}
-    inline ModifyReplicationTaskRequest& WithCdcStartPosition(Aws::String&& value) { SetCdcStartPosition(std::move(value)); return *this;}
-    inline ModifyReplicationTaskRequest& WithCdcStartPosition(const char* value) { SetCdcStartPosition(value); return *this;}
+    template<typename CdcStartPositionT = Aws::String>
+    void SetCdcStartPosition(CdcStartPositionT&& value) { m_cdcStartPositionHasBeenSet = true; m_cdcStartPosition = std::forward<CdcStartPositionT>(value); }
+    template<typename CdcStartPositionT = Aws::String>
+    ModifyReplicationTaskRequest& WithCdcStartPosition(CdcStartPositionT&& value) { SetCdcStartPosition(std::forward<CdcStartPositionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -165,14 +153,12 @@ namespace Model
      * --cdc-stop-position “server_time:2018-02-09T12:12:12”</p> <p>Commit time
      * example: --cdc-stop-position “commit_time:2018-02-09T12:12:12“</p>
      */
-    inline const Aws::String& GetCdcStopPosition() const{ return m_cdcStopPosition; }
+    inline const Aws::String& GetCdcStopPosition() const { return m_cdcStopPosition; }
     inline bool CdcStopPositionHasBeenSet() const { return m_cdcStopPositionHasBeenSet; }
-    inline void SetCdcStopPosition(const Aws::String& value) { m_cdcStopPositionHasBeenSet = true; m_cdcStopPosition = value; }
-    inline void SetCdcStopPosition(Aws::String&& value) { m_cdcStopPositionHasBeenSet = true; m_cdcStopPosition = std::move(value); }
-    inline void SetCdcStopPosition(const char* value) { m_cdcStopPositionHasBeenSet = true; m_cdcStopPosition.assign(value); }
-    inline ModifyReplicationTaskRequest& WithCdcStopPosition(const Aws::String& value) { SetCdcStopPosition(value); return *this;}
-    inline ModifyReplicationTaskRequest& WithCdcStopPosition(Aws::String&& value) { SetCdcStopPosition(std::move(value)); return *this;}
-    inline ModifyReplicationTaskRequest& WithCdcStopPosition(const char* value) { SetCdcStopPosition(value); return *this;}
+    template<typename CdcStopPositionT = Aws::String>
+    void SetCdcStopPosition(CdcStopPositionT&& value) { m_cdcStopPositionHasBeenSet = true; m_cdcStopPosition = std::forward<CdcStopPositionT>(value); }
+    template<typename CdcStopPositionT = Aws::String>
+    ModifyReplicationTaskRequest& WithCdcStopPosition(CdcStopPositionT&& value) { SetCdcStopPosition(std::forward<CdcStopPositionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -183,14 +169,12 @@ namespace Model
      * Supplemental Data for Task Settings</a> in the <i>Database Migration Service
      * User Guide.</i> </p>
      */
-    inline const Aws::String& GetTaskData() const{ return m_taskData; }
+    inline const Aws::String& GetTaskData() const { return m_taskData; }
     inline bool TaskDataHasBeenSet() const { return m_taskDataHasBeenSet; }
-    inline void SetTaskData(const Aws::String& value) { m_taskDataHasBeenSet = true; m_taskData = value; }
-    inline void SetTaskData(Aws::String&& value) { m_taskDataHasBeenSet = true; m_taskData = std::move(value); }
-    inline void SetTaskData(const char* value) { m_taskDataHasBeenSet = true; m_taskData.assign(value); }
-    inline ModifyReplicationTaskRequest& WithTaskData(const Aws::String& value) { SetTaskData(value); return *this;}
-    inline ModifyReplicationTaskRequest& WithTaskData(Aws::String&& value) { SetTaskData(std::move(value)); return *this;}
-    inline ModifyReplicationTaskRequest& WithTaskData(const char* value) { SetTaskData(value); return *this;}
+    template<typename TaskDataT = Aws::String>
+    void SetTaskData(TaskDataT&& value) { m_taskDataHasBeenSet = true; m_taskData = std::forward<TaskDataT>(value); }
+    template<typename TaskDataT = Aws::String>
+    ModifyReplicationTaskRequest& WithTaskData(TaskDataT&& value) { SetTaskData(std::forward<TaskDataT>(value)); return *this;}
     ///@}
   private:
 
@@ -200,7 +184,7 @@ namespace Model
     Aws::String m_replicationTaskIdentifier;
     bool m_replicationTaskIdentifierHasBeenSet = false;
 
-    MigrationTypeValue m_migrationType;
+    MigrationTypeValue m_migrationType{MigrationTypeValue::NOT_SET};
     bool m_migrationTypeHasBeenSet = false;
 
     Aws::String m_tableMappings;
@@ -209,7 +193,7 @@ namespace Model
     Aws::String m_replicationTaskSettings;
     bool m_replicationTaskSettingsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_cdcStartTime;
+    Aws::Utils::DateTime m_cdcStartTime{};
     bool m_cdcStartTimeHasBeenSet = false;
 
     Aws::String m_cdcStartPosition;

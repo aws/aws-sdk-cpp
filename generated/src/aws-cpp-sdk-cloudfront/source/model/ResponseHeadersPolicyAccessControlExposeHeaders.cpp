@@ -20,15 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-ResponseHeadersPolicyAccessControlExposeHeaders::ResponseHeadersPolicyAccessControlExposeHeaders() : 
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_itemsHasBeenSet(false)
-{
-}
-
 ResponseHeadersPolicyAccessControlExposeHeaders::ResponseHeadersPolicyAccessControlExposeHeaders(const XmlNode& xmlNode)
-  : ResponseHeadersPolicyAccessControlExposeHeaders()
 {
   *this = xmlNode;
 }
@@ -49,6 +41,7 @@ ResponseHeadersPolicyAccessControlExposeHeaders& ResponseHeadersPolicyAccessCont
     if(!itemsNode.IsNull())
     {
       XmlNode itemsMember = itemsNode.FirstChild("Header");
+      m_itemsHasBeenSet = !itemsMember.IsNull();
       while(!itemsMember.IsNull())
       {
         m_items.push_back(itemsMember.GetText());

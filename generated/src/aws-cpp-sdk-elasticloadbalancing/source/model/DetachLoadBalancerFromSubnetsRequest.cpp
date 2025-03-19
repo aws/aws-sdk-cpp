@@ -10,12 +10,6 @@
 using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils;
 
-DetachLoadBalancerFromSubnetsRequest::DetachLoadBalancerFromSubnetsRequest() : 
-    m_loadBalancerNameHasBeenSet(false),
-    m_subnetsHasBeenSet(false)
-{
-}
-
 Aws::String DetachLoadBalancerFromSubnetsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

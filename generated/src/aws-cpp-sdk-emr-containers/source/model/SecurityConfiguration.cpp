@@ -18,19 +18,7 @@ namespace EMRContainers
 namespace Model
 {
 
-SecurityConfiguration::SecurityConfiguration() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_securityConfigurationDataHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 SecurityConfiguration::SecurityConfiguration(JsonView jsonValue)
-  : SecurityConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ SecurityConfiguration& SecurityConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdBy"))
   {
     m_createdBy = jsonValue.GetString("createdBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("securityConfigurationData"))
   {
     m_securityConfigurationData = jsonValue.GetObject("securityConfigurationData");
-
     m_securityConfigurationDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -88,7 +64,6 @@ SecurityConfiguration& SecurityConfiguration::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

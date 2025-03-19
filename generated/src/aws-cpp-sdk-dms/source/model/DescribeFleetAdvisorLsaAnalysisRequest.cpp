@@ -12,13 +12,6 @@ using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeFleetAdvisorLsaAnalysisRequest::DescribeFleetAdvisorLsaAnalysisRequest() : 
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeFleetAdvisorLsaAnalysisRequest::SerializePayload() const
 {
   JsonValue payload;

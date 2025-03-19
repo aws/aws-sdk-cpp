@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteKxScalingGroupRequest::DeleteKxScalingGroupRequest() : 
-    m_environmentIdHasBeenSet(false),
-    m_scalingGroupNameHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String DeleteKxScalingGroupRequest::SerializePayload() const
 {
   return {};

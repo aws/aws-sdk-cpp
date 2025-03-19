@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ExportQAppSessionDataResult::ExportQAppSessionDataResult()
-{
-}
-
 ExportQAppSessionDataResult::ExportQAppSessionDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ ExportQAppSessionDataResult& ExportQAppSessionDataResult::operator =(const Aws::
   if(jsonValue.ValueExists("csvFileLink"))
   {
     m_csvFileLink = jsonValue.GetString("csvFileLink");
-
+    m_csvFileLinkHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expiresAt"))
   {
     m_expiresAt = jsonValue.GetString("expiresAt");
-
+    m_expiresAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sessionArn"))
   {
     m_sessionArn = jsonValue.GetString("sessionArn");
-
+    m_sessionArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

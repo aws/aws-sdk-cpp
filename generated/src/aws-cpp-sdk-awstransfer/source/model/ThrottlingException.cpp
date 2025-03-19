@@ -18,13 +18,7 @@ namespace Transfer
 namespace Model
 {
 
-ThrottlingException::ThrottlingException() : 
-    m_retryAfterSecondsHasBeenSet(false)
-{
-}
-
 ThrottlingException::ThrottlingException(JsonView jsonValue)
-  : ThrottlingException()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ThrottlingException& ThrottlingException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RetryAfterSeconds"))
   {
     m_retryAfterSeconds = jsonValue.GetString("RetryAfterSeconds");
-
     m_retryAfterSecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

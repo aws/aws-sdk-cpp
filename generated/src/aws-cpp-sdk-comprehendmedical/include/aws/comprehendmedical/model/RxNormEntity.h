@@ -42,7 +42,7 @@ namespace Model
   class RxNormEntity
   {
   public:
-    AWS_COMPREHENDMEDICAL_API RxNormEntity();
+    AWS_COMPREHENDMEDICAL_API RxNormEntity() = default;
     AWS_COMPREHENDMEDICAL_API RxNormEntity(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHENDMEDICAL_API RxNormEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHENDMEDICAL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,7 +53,7 @@ namespace Model
      * <p>The numeric identifier for the entity. This is a monotonically increasing id
      * unique within this response rather than a global unique identifier.</p>
      */
-    inline int GetId() const{ return m_id; }
+    inline int GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
     inline void SetId(int value) { m_idHasBeenSet = true; m_id = value; }
     inline RxNormEntity& WithId(int value) { SetId(value); return *this;}
@@ -63,14 +63,12 @@ namespace Model
     /**
      * <p>The segment of input text extracted from which the entity was detected.</p>
      */
-    inline const Aws::String& GetText() const{ return m_text; }
+    inline const Aws::String& GetText() const { return m_text; }
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-    inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-    inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-    inline RxNormEntity& WithText(const Aws::String& value) { SetText(value); return *this;}
-    inline RxNormEntity& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-    inline RxNormEntity& WithText(const char* value) { SetText(value); return *this;}
+    template<typename TextT = Aws::String>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = Aws::String>
+    RxNormEntity& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,12 +76,10 @@ namespace Model
      * <p>The category of the entity. The recognized categories are
      * <code>GENERIC</code> or <code>BRAND_NAME</code>.</p>
      */
-    inline const RxNormEntityCategory& GetCategory() const{ return m_category; }
+    inline RxNormEntityCategory GetCategory() const { return m_category; }
     inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
-    inline void SetCategory(const RxNormEntityCategory& value) { m_categoryHasBeenSet = true; m_category = value; }
-    inline void SetCategory(RxNormEntityCategory&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
-    inline RxNormEntity& WithCategory(const RxNormEntityCategory& value) { SetCategory(value); return *this;}
-    inline RxNormEntity& WithCategory(RxNormEntityCategory&& value) { SetCategory(std::move(value)); return *this;}
+    inline void SetCategory(RxNormEntityCategory value) { m_categoryHasBeenSet = true; m_category = value; }
+    inline RxNormEntity& WithCategory(RxNormEntityCategory value) { SetCategory(value); return *this;}
     ///@}
 
     ///@{
@@ -91,12 +87,10 @@ namespace Model
      * <p> Describes the specific type of entity. For InferRxNorm, the recognized
      * entity type is <code>MEDICATION</code>.</p>
      */
-    inline const RxNormEntityType& GetType() const{ return m_type; }
+    inline RxNormEntityType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const RxNormEntityType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(RxNormEntityType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline RxNormEntity& WithType(const RxNormEntityType& value) { SetType(value); return *this;}
-    inline RxNormEntity& WithType(RxNormEntityType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(RxNormEntityType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline RxNormEntity& WithType(RxNormEntityType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -104,7 +98,7 @@ namespace Model
      * <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of
      * the detected entity.</p>
      */
-    inline double GetScore() const{ return m_score; }
+    inline double GetScore() const { return m_score; }
     inline bool ScoreHasBeenSet() const { return m_scoreHasBeenSet; }
     inline void SetScore(double value) { m_scoreHasBeenSet = true; m_score = value; }
     inline RxNormEntity& WithScore(double value) { SetScore(value); return *this;}
@@ -115,7 +109,7 @@ namespace Model
      * <p>The 0-based character offset in the input text that shows where the entity
      * begins. The offset returns the UTF-8 code point in the string.</p>
      */
-    inline int GetBeginOffset() const{ return m_beginOffset; }
+    inline int GetBeginOffset() const { return m_beginOffset; }
     inline bool BeginOffsetHasBeenSet() const { return m_beginOffsetHasBeenSet; }
     inline void SetBeginOffset(int value) { m_beginOffsetHasBeenSet = true; m_beginOffset = value; }
     inline RxNormEntity& WithBeginOffset(int value) { SetBeginOffset(value); return *this;}
@@ -126,7 +120,7 @@ namespace Model
      * <p>The 0-based character offset in the input text that shows where the entity
      * ends. The offset returns the UTF-8 code point in the string.</p>
      */
-    inline int GetEndOffset() const{ return m_endOffset; }
+    inline int GetEndOffset() const { return m_endOffset; }
     inline bool EndOffsetHasBeenSet() const { return m_endOffsetHasBeenSet; }
     inline void SetEndOffset(int value) { m_endOffsetHasBeenSet = true; m_endOffset = value; }
     inline RxNormEntity& WithEndOffset(int value) { SetEndOffset(value); return *this;}
@@ -139,28 +133,28 @@ namespace Model
      * <code>FORM</code>, <code>FREQUENCY</code>, <code>RATE</code>,
      * <code>ROUTE_OR_MODE</code>, and <code>STRENGTH</code>.</p>
      */
-    inline const Aws::Vector<RxNormAttribute>& GetAttributes() const{ return m_attributes; }
+    inline const Aws::Vector<RxNormAttribute>& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const Aws::Vector<RxNormAttribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(Aws::Vector<RxNormAttribute>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline RxNormEntity& WithAttributes(const Aws::Vector<RxNormAttribute>& value) { SetAttributes(value); return *this;}
-    inline RxNormEntity& WithAttributes(Aws::Vector<RxNormAttribute>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline RxNormEntity& AddAttributes(const RxNormAttribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
-    inline RxNormEntity& AddAttributes(RxNormAttribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
+    template<typename AttributesT = Aws::Vector<RxNormAttribute>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Vector<RxNormAttribute>>
+    RxNormEntity& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    template<typename AttributesT = RxNormAttribute>
+    RxNormEntity& AddAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes.emplace_back(std::forward<AttributesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Contextual information for the entity.</p>
      */
-    inline const Aws::Vector<RxNormTrait>& GetTraits() const{ return m_traits; }
+    inline const Aws::Vector<RxNormTrait>& GetTraits() const { return m_traits; }
     inline bool TraitsHasBeenSet() const { return m_traitsHasBeenSet; }
-    inline void SetTraits(const Aws::Vector<RxNormTrait>& value) { m_traitsHasBeenSet = true; m_traits = value; }
-    inline void SetTraits(Aws::Vector<RxNormTrait>&& value) { m_traitsHasBeenSet = true; m_traits = std::move(value); }
-    inline RxNormEntity& WithTraits(const Aws::Vector<RxNormTrait>& value) { SetTraits(value); return *this;}
-    inline RxNormEntity& WithTraits(Aws::Vector<RxNormTrait>&& value) { SetTraits(std::move(value)); return *this;}
-    inline RxNormEntity& AddTraits(const RxNormTrait& value) { m_traitsHasBeenSet = true; m_traits.push_back(value); return *this; }
-    inline RxNormEntity& AddTraits(RxNormTrait&& value) { m_traitsHasBeenSet = true; m_traits.push_back(std::move(value)); return *this; }
+    template<typename TraitsT = Aws::Vector<RxNormTrait>>
+    void SetTraits(TraitsT&& value) { m_traitsHasBeenSet = true; m_traits = std::forward<TraitsT>(value); }
+    template<typename TraitsT = Aws::Vector<RxNormTrait>>
+    RxNormEntity& WithTraits(TraitsT&& value) { SetTraits(std::forward<TraitsT>(value)); return *this;}
+    template<typename TraitsT = RxNormTrait>
+    RxNormEntity& AddTraits(TraitsT&& value) { m_traitsHasBeenSet = true; m_traits.emplace_back(std::forward<TraitsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -168,36 +162,36 @@ namespace Model
      * <p>The RxNorm concepts that the entity could refer to, along with a score
      * indicating the likelihood of the match.</p>
      */
-    inline const Aws::Vector<RxNormConcept>& GetRxNormConcepts() const{ return m_rxNormConcepts; }
+    inline const Aws::Vector<RxNormConcept>& GetRxNormConcepts() const { return m_rxNormConcepts; }
     inline bool RxNormConceptsHasBeenSet() const { return m_rxNormConceptsHasBeenSet; }
-    inline void SetRxNormConcepts(const Aws::Vector<RxNormConcept>& value) { m_rxNormConceptsHasBeenSet = true; m_rxNormConcepts = value; }
-    inline void SetRxNormConcepts(Aws::Vector<RxNormConcept>&& value) { m_rxNormConceptsHasBeenSet = true; m_rxNormConcepts = std::move(value); }
-    inline RxNormEntity& WithRxNormConcepts(const Aws::Vector<RxNormConcept>& value) { SetRxNormConcepts(value); return *this;}
-    inline RxNormEntity& WithRxNormConcepts(Aws::Vector<RxNormConcept>&& value) { SetRxNormConcepts(std::move(value)); return *this;}
-    inline RxNormEntity& AddRxNormConcepts(const RxNormConcept& value) { m_rxNormConceptsHasBeenSet = true; m_rxNormConcepts.push_back(value); return *this; }
-    inline RxNormEntity& AddRxNormConcepts(RxNormConcept&& value) { m_rxNormConceptsHasBeenSet = true; m_rxNormConcepts.push_back(std::move(value)); return *this; }
+    template<typename RxNormConceptsT = Aws::Vector<RxNormConcept>>
+    void SetRxNormConcepts(RxNormConceptsT&& value) { m_rxNormConceptsHasBeenSet = true; m_rxNormConcepts = std::forward<RxNormConceptsT>(value); }
+    template<typename RxNormConceptsT = Aws::Vector<RxNormConcept>>
+    RxNormEntity& WithRxNormConcepts(RxNormConceptsT&& value) { SetRxNormConcepts(std::forward<RxNormConceptsT>(value)); return *this;}
+    template<typename RxNormConceptsT = RxNormConcept>
+    RxNormEntity& AddRxNormConcepts(RxNormConceptsT&& value) { m_rxNormConceptsHasBeenSet = true; m_rxNormConcepts.emplace_back(std::forward<RxNormConceptsT>(value)); return *this; }
     ///@}
   private:
 
-    int m_id;
+    int m_id{0};
     bool m_idHasBeenSet = false;
 
     Aws::String m_text;
     bool m_textHasBeenSet = false;
 
-    RxNormEntityCategory m_category;
+    RxNormEntityCategory m_category{RxNormEntityCategory::NOT_SET};
     bool m_categoryHasBeenSet = false;
 
-    RxNormEntityType m_type;
+    RxNormEntityType m_type{RxNormEntityType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    double m_score;
+    double m_score{0.0};
     bool m_scoreHasBeenSet = false;
 
-    int m_beginOffset;
+    int m_beginOffset{0};
     bool m_beginOffsetHasBeenSet = false;
 
-    int m_endOffset;
+    int m_endOffset{0};
     bool m_endOffsetHasBeenSet = false;
 
     Aws::Vector<RxNormAttribute> m_attributes;

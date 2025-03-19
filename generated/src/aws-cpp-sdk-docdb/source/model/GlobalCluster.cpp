@@ -20,24 +20,7 @@ namespace DocDB
 namespace Model
 {
 
-GlobalCluster::GlobalCluster() : 
-    m_globalClusterIdentifierHasBeenSet(false),
-    m_globalClusterResourceIdHasBeenSet(false),
-    m_globalClusterArnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_storageEncrypted(false),
-    m_storageEncryptedHasBeenSet(false),
-    m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false),
-    m_globalClusterMembersHasBeenSet(false)
-{
-}
-
 GlobalCluster::GlobalCluster(const XmlNode& xmlNode)
-  : GlobalCluster()
 {
   *this = xmlNode;
 }
@@ -106,6 +89,7 @@ GlobalCluster& GlobalCluster::operator =(const XmlNode& xmlNode)
     if(!globalClusterMembersNode.IsNull())
     {
       XmlNode globalClusterMembersMember = globalClusterMembersNode.FirstChild("GlobalClusterMember");
+      m_globalClusterMembersHasBeenSet = !globalClusterMembersMember.IsNull();
       while(!globalClusterMembersMember.IsNull())
       {
         m_globalClusterMembers.push_back(globalClusterMembersMember);

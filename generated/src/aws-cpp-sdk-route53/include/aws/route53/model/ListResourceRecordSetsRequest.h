@@ -30,7 +30,7 @@ namespace Model
   class ListResourceRecordSetsRequest : public Route53Request
   {
   public:
-    AWS_ROUTE53_API ListResourceRecordSetsRequest();
+    AWS_ROUTE53_API ListResourceRecordSetsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,14 +48,12 @@ namespace Model
      * <p>The ID of the hosted zone that contains the resource record sets that you
      * want to list.</p>
      */
-    inline const Aws::String& GetHostedZoneId() const{ return m_hostedZoneId; }
+    inline const Aws::String& GetHostedZoneId() const { return m_hostedZoneId; }
     inline bool HostedZoneIdHasBeenSet() const { return m_hostedZoneIdHasBeenSet; }
-    inline void SetHostedZoneId(const Aws::String& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
-    inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = std::move(value); }
-    inline void SetHostedZoneId(const char* value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId.assign(value); }
-    inline ListResourceRecordSetsRequest& WithHostedZoneId(const Aws::String& value) { SetHostedZoneId(value); return *this;}
-    inline ListResourceRecordSetsRequest& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(std::move(value)); return *this;}
-    inline ListResourceRecordSetsRequest& WithHostedZoneId(const char* value) { SetHostedZoneId(value); return *this;}
+    template<typename HostedZoneIdT = Aws::String>
+    void SetHostedZoneId(HostedZoneIdT&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = std::forward<HostedZoneIdT>(value); }
+    template<typename HostedZoneIdT = Aws::String>
+    ListResourceRecordSetsRequest& WithHostedZoneId(HostedZoneIdT&& value) { SetHostedZoneId(std::forward<HostedZoneIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
      * the first resource record set that has a name greater than the value of
      * <code>name</code>.</p>
      */
-    inline const Aws::String& GetStartRecordName() const{ return m_startRecordName; }
+    inline const Aws::String& GetStartRecordName() const { return m_startRecordName; }
     inline bool StartRecordNameHasBeenSet() const { return m_startRecordNameHasBeenSet; }
-    inline void SetStartRecordName(const Aws::String& value) { m_startRecordNameHasBeenSet = true; m_startRecordName = value; }
-    inline void SetStartRecordName(Aws::String&& value) { m_startRecordNameHasBeenSet = true; m_startRecordName = std::move(value); }
-    inline void SetStartRecordName(const char* value) { m_startRecordNameHasBeenSet = true; m_startRecordName.assign(value); }
-    inline ListResourceRecordSetsRequest& WithStartRecordName(const Aws::String& value) { SetStartRecordName(value); return *this;}
-    inline ListResourceRecordSetsRequest& WithStartRecordName(Aws::String&& value) { SetStartRecordName(std::move(value)); return *this;}
-    inline ListResourceRecordSetsRequest& WithStartRecordName(const char* value) { SetStartRecordName(value); return *this;}
+    template<typename StartRecordNameT = Aws::String>
+    void SetStartRecordName(StartRecordNameT&& value) { m_startRecordNameHasBeenSet = true; m_startRecordName = std::forward<StartRecordNameT>(value); }
+    template<typename StartRecordNameT = Aws::String>
+    ListResourceRecordSetsRequest& WithStartRecordName(StartRecordNameT&& value) { SetStartRecordName(std::forward<StartRecordNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,12 +92,10 @@ namespace Model
      * references.</p> </li> </ul> <p>Constraint: Specifying <code>type</code> without
      * specifying <code>name</code> returns an <code>InvalidInput</code> error.</p>
      */
-    inline const RRType& GetStartRecordType() const{ return m_startRecordType; }
+    inline RRType GetStartRecordType() const { return m_startRecordType; }
     inline bool StartRecordTypeHasBeenSet() const { return m_startRecordTypeHasBeenSet; }
-    inline void SetStartRecordType(const RRType& value) { m_startRecordTypeHasBeenSet = true; m_startRecordType = value; }
-    inline void SetStartRecordType(RRType&& value) { m_startRecordTypeHasBeenSet = true; m_startRecordType = std::move(value); }
-    inline ListResourceRecordSetsRequest& WithStartRecordType(const RRType& value) { SetStartRecordType(value); return *this;}
-    inline ListResourceRecordSetsRequest& WithStartRecordType(RRType&& value) { SetStartRecordType(std::move(value)); return *this;}
+    inline void SetStartRecordType(RRType value) { m_startRecordTypeHasBeenSet = true; m_startRecordType = value; }
+    inline ListResourceRecordSetsRequest& WithStartRecordType(RRType value) { SetStartRecordType(value); return *this;}
     ///@}
 
     ///@{
@@ -111,14 +105,12 @@ namespace Model
      * <code>NextRecordIdentifier</code> from the previous response to get the next
      * resource record set that has the current DNS name and type.</p>
      */
-    inline const Aws::String& GetStartRecordIdentifier() const{ return m_startRecordIdentifier; }
+    inline const Aws::String& GetStartRecordIdentifier() const { return m_startRecordIdentifier; }
     inline bool StartRecordIdentifierHasBeenSet() const { return m_startRecordIdentifierHasBeenSet; }
-    inline void SetStartRecordIdentifier(const Aws::String& value) { m_startRecordIdentifierHasBeenSet = true; m_startRecordIdentifier = value; }
-    inline void SetStartRecordIdentifier(Aws::String&& value) { m_startRecordIdentifierHasBeenSet = true; m_startRecordIdentifier = std::move(value); }
-    inline void SetStartRecordIdentifier(const char* value) { m_startRecordIdentifierHasBeenSet = true; m_startRecordIdentifier.assign(value); }
-    inline ListResourceRecordSetsRequest& WithStartRecordIdentifier(const Aws::String& value) { SetStartRecordIdentifier(value); return *this;}
-    inline ListResourceRecordSetsRequest& WithStartRecordIdentifier(Aws::String&& value) { SetStartRecordIdentifier(std::move(value)); return *this;}
-    inline ListResourceRecordSetsRequest& WithStartRecordIdentifier(const char* value) { SetStartRecordIdentifier(value); return *this;}
+    template<typename StartRecordIdentifierT = Aws::String>
+    void SetStartRecordIdentifier(StartRecordIdentifierT&& value) { m_startRecordIdentifierHasBeenSet = true; m_startRecordIdentifier = std::forward<StartRecordIdentifierT>(value); }
+    template<typename StartRecordIdentifierT = Aws::String>
+    ListResourceRecordSetsRequest& WithStartRecordIdentifier(StartRecordIdentifierT&& value) { SetStartRecordIdentifier(std::forward<StartRecordIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -131,14 +123,12 @@ namespace Model
      * elements in the response identify the first resource record set in the next
      * group of <code>maxitems</code> resource record sets.</p>
      */
-    inline const Aws::String& GetMaxItems() const{ return m_maxItems; }
+    inline const Aws::String& GetMaxItems() const { return m_maxItems; }
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
-    inline void SetMaxItems(const Aws::String& value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
-    inline void SetMaxItems(Aws::String&& value) { m_maxItemsHasBeenSet = true; m_maxItems = std::move(value); }
-    inline void SetMaxItems(const char* value) { m_maxItemsHasBeenSet = true; m_maxItems.assign(value); }
-    inline ListResourceRecordSetsRequest& WithMaxItems(const Aws::String& value) { SetMaxItems(value); return *this;}
-    inline ListResourceRecordSetsRequest& WithMaxItems(Aws::String&& value) { SetMaxItems(std::move(value)); return *this;}
-    inline ListResourceRecordSetsRequest& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
+    template<typename MaxItemsT = Aws::String>
+    void SetMaxItems(MaxItemsT&& value) { m_maxItemsHasBeenSet = true; m_maxItems = std::forward<MaxItemsT>(value); }
+    template<typename MaxItemsT = Aws::String>
+    ListResourceRecordSetsRequest& WithMaxItems(MaxItemsT&& value) { SetMaxItems(std::forward<MaxItemsT>(value)); return *this;}
     ///@}
   private:
 
@@ -148,7 +138,7 @@ namespace Model
     Aws::String m_startRecordName;
     bool m_startRecordNameHasBeenSet = false;
 
-    RRType m_startRecordType;
+    RRType m_startRecordType{RRType::NOT_SET};
     bool m_startRecordTypeHasBeenSet = false;
 
     Aws::String m_startRecordIdentifier;

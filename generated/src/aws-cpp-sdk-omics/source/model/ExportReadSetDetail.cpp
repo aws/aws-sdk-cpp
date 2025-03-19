@@ -18,16 +18,7 @@ namespace Omics
 namespace Model
 {
 
-ExportReadSetDetail::ExportReadSetDetail() : 
-    m_idHasBeenSet(false),
-    m_status(ReadSetExportJobItemStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
-{
-}
-
 ExportReadSetDetail::ExportReadSetDetail(JsonView jsonValue)
-  : ExportReadSetDetail()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ExportReadSetDetail& ExportReadSetDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ReadSetExportJobItemStatusMapper::GetReadSetExportJobItemStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusMessage"))
   {
     m_statusMessage = jsonValue.GetString("statusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

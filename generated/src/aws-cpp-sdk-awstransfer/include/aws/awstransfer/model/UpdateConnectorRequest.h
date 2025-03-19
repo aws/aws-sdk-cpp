@@ -23,7 +23,7 @@ namespace Model
   class UpdateConnectorRequest : public TransferRequest
   {
   public:
-    AWS_TRANSFER_API UpdateConnectorRequest();
+    AWS_TRANSFER_API UpdateConnectorRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,40 +40,36 @@ namespace Model
     /**
      * <p>The unique identifier for the connector.</p>
      */
-    inline const Aws::String& GetConnectorId() const{ return m_connectorId; }
+    inline const Aws::String& GetConnectorId() const { return m_connectorId; }
     inline bool ConnectorIdHasBeenSet() const { return m_connectorIdHasBeenSet; }
-    inline void SetConnectorId(const Aws::String& value) { m_connectorIdHasBeenSet = true; m_connectorId = value; }
-    inline void SetConnectorId(Aws::String&& value) { m_connectorIdHasBeenSet = true; m_connectorId = std::move(value); }
-    inline void SetConnectorId(const char* value) { m_connectorIdHasBeenSet = true; m_connectorId.assign(value); }
-    inline UpdateConnectorRequest& WithConnectorId(const Aws::String& value) { SetConnectorId(value); return *this;}
-    inline UpdateConnectorRequest& WithConnectorId(Aws::String&& value) { SetConnectorId(std::move(value)); return *this;}
-    inline UpdateConnectorRequest& WithConnectorId(const char* value) { SetConnectorId(value); return *this;}
+    template<typename ConnectorIdT = Aws::String>
+    void SetConnectorId(ConnectorIdT&& value) { m_connectorIdHasBeenSet = true; m_connectorId = std::forward<ConnectorIdT>(value); }
+    template<typename ConnectorIdT = Aws::String>
+    UpdateConnectorRequest& WithConnectorId(ConnectorIdT&& value) { SetConnectorId(std::forward<ConnectorIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The URL of the partner's AS2 or SFTP endpoint.</p>
      */
-    inline const Aws::String& GetUrl() const{ return m_url; }
+    inline const Aws::String& GetUrl() const { return m_url; }
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
-    inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
-    inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
-    inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
-    inline UpdateConnectorRequest& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
-    inline UpdateConnectorRequest& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
-    inline UpdateConnectorRequest& WithUrl(const char* value) { SetUrl(value); return *this;}
+    template<typename UrlT = Aws::String>
+    void SetUrl(UrlT&& value) { m_urlHasBeenSet = true; m_url = std::forward<UrlT>(value); }
+    template<typename UrlT = Aws::String>
+    UpdateConnectorRequest& WithUrl(UrlT&& value) { SetUrl(std::forward<UrlT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A structure that contains the parameters for an AS2 connector object.</p>
      */
-    inline const As2ConnectorConfig& GetAs2Config() const{ return m_as2Config; }
+    inline const As2ConnectorConfig& GetAs2Config() const { return m_as2Config; }
     inline bool As2ConfigHasBeenSet() const { return m_as2ConfigHasBeenSet; }
-    inline void SetAs2Config(const As2ConnectorConfig& value) { m_as2ConfigHasBeenSet = true; m_as2Config = value; }
-    inline void SetAs2Config(As2ConnectorConfig&& value) { m_as2ConfigHasBeenSet = true; m_as2Config = std::move(value); }
-    inline UpdateConnectorRequest& WithAs2Config(const As2ConnectorConfig& value) { SetAs2Config(value); return *this;}
-    inline UpdateConnectorRequest& WithAs2Config(As2ConnectorConfig&& value) { SetAs2Config(std::move(value)); return *this;}
+    template<typename As2ConfigT = As2ConnectorConfig>
+    void SetAs2Config(As2ConfigT&& value) { m_as2ConfigHasBeenSet = true; m_as2Config = std::forward<As2ConfigT>(value); }
+    template<typename As2ConfigT = As2ConnectorConfig>
+    UpdateConnectorRequest& WithAs2Config(As2ConfigT&& value) { SetAs2Config(std::forward<As2ConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,14 +99,12 @@ namespace Model
      * provides <code>secretsmanager:GetSecretValue</code> permission to Secrets
      * Manager.</p>
      */
-    inline const Aws::String& GetAccessRole() const{ return m_accessRole; }
+    inline const Aws::String& GetAccessRole() const { return m_accessRole; }
     inline bool AccessRoleHasBeenSet() const { return m_accessRoleHasBeenSet; }
-    inline void SetAccessRole(const Aws::String& value) { m_accessRoleHasBeenSet = true; m_accessRole = value; }
-    inline void SetAccessRole(Aws::String&& value) { m_accessRoleHasBeenSet = true; m_accessRole = std::move(value); }
-    inline void SetAccessRole(const char* value) { m_accessRoleHasBeenSet = true; m_accessRole.assign(value); }
-    inline UpdateConnectorRequest& WithAccessRole(const Aws::String& value) { SetAccessRole(value); return *this;}
-    inline UpdateConnectorRequest& WithAccessRole(Aws::String&& value) { SetAccessRole(std::move(value)); return *this;}
-    inline UpdateConnectorRequest& WithAccessRole(const char* value) { SetAccessRole(value); return *this;}
+    template<typename AccessRoleT = Aws::String>
+    void SetAccessRole(AccessRoleT&& value) { m_accessRoleHasBeenSet = true; m_accessRole = std::forward<AccessRoleT>(value); }
+    template<typename AccessRoleT = Aws::String>
+    UpdateConnectorRequest& WithAccessRole(AccessRoleT&& value) { SetAccessRole(std::forward<AccessRoleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -119,40 +113,36 @@ namespace Model
      * role that allows a connector to turn on CloudWatch logging for Amazon S3 events.
      * When set, you can view connector activity in your CloudWatch logs.</p>
      */
-    inline const Aws::String& GetLoggingRole() const{ return m_loggingRole; }
+    inline const Aws::String& GetLoggingRole() const { return m_loggingRole; }
     inline bool LoggingRoleHasBeenSet() const { return m_loggingRoleHasBeenSet; }
-    inline void SetLoggingRole(const Aws::String& value) { m_loggingRoleHasBeenSet = true; m_loggingRole = value; }
-    inline void SetLoggingRole(Aws::String&& value) { m_loggingRoleHasBeenSet = true; m_loggingRole = std::move(value); }
-    inline void SetLoggingRole(const char* value) { m_loggingRoleHasBeenSet = true; m_loggingRole.assign(value); }
-    inline UpdateConnectorRequest& WithLoggingRole(const Aws::String& value) { SetLoggingRole(value); return *this;}
-    inline UpdateConnectorRequest& WithLoggingRole(Aws::String&& value) { SetLoggingRole(std::move(value)); return *this;}
-    inline UpdateConnectorRequest& WithLoggingRole(const char* value) { SetLoggingRole(value); return *this;}
+    template<typename LoggingRoleT = Aws::String>
+    void SetLoggingRole(LoggingRoleT&& value) { m_loggingRoleHasBeenSet = true; m_loggingRole = std::forward<LoggingRoleT>(value); }
+    template<typename LoggingRoleT = Aws::String>
+    UpdateConnectorRequest& WithLoggingRole(LoggingRoleT&& value) { SetLoggingRole(std::forward<LoggingRoleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A structure that contains the parameters for an SFTP connector object.</p>
      */
-    inline const SftpConnectorConfig& GetSftpConfig() const{ return m_sftpConfig; }
+    inline const SftpConnectorConfig& GetSftpConfig() const { return m_sftpConfig; }
     inline bool SftpConfigHasBeenSet() const { return m_sftpConfigHasBeenSet; }
-    inline void SetSftpConfig(const SftpConnectorConfig& value) { m_sftpConfigHasBeenSet = true; m_sftpConfig = value; }
-    inline void SetSftpConfig(SftpConnectorConfig&& value) { m_sftpConfigHasBeenSet = true; m_sftpConfig = std::move(value); }
-    inline UpdateConnectorRequest& WithSftpConfig(const SftpConnectorConfig& value) { SetSftpConfig(value); return *this;}
-    inline UpdateConnectorRequest& WithSftpConfig(SftpConnectorConfig&& value) { SetSftpConfig(std::move(value)); return *this;}
+    template<typename SftpConfigT = SftpConnectorConfig>
+    void SetSftpConfig(SftpConfigT&& value) { m_sftpConfigHasBeenSet = true; m_sftpConfig = std::forward<SftpConfigT>(value); }
+    template<typename SftpConfigT = SftpConnectorConfig>
+    UpdateConnectorRequest& WithSftpConfig(SftpConfigT&& value) { SetSftpConfig(std::forward<SftpConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the name of the security policy for the connector.</p>
      */
-    inline const Aws::String& GetSecurityPolicyName() const{ return m_securityPolicyName; }
+    inline const Aws::String& GetSecurityPolicyName() const { return m_securityPolicyName; }
     inline bool SecurityPolicyNameHasBeenSet() const { return m_securityPolicyNameHasBeenSet; }
-    inline void SetSecurityPolicyName(const Aws::String& value) { m_securityPolicyNameHasBeenSet = true; m_securityPolicyName = value; }
-    inline void SetSecurityPolicyName(Aws::String&& value) { m_securityPolicyNameHasBeenSet = true; m_securityPolicyName = std::move(value); }
-    inline void SetSecurityPolicyName(const char* value) { m_securityPolicyNameHasBeenSet = true; m_securityPolicyName.assign(value); }
-    inline UpdateConnectorRequest& WithSecurityPolicyName(const Aws::String& value) { SetSecurityPolicyName(value); return *this;}
-    inline UpdateConnectorRequest& WithSecurityPolicyName(Aws::String&& value) { SetSecurityPolicyName(std::move(value)); return *this;}
-    inline UpdateConnectorRequest& WithSecurityPolicyName(const char* value) { SetSecurityPolicyName(value); return *this;}
+    template<typename SecurityPolicyNameT = Aws::String>
+    void SetSecurityPolicyName(SecurityPolicyNameT&& value) { m_securityPolicyNameHasBeenSet = true; m_securityPolicyName = std::forward<SecurityPolicyNameT>(value); }
+    template<typename SecurityPolicyNameT = Aws::String>
+    UpdateConnectorRequest& WithSecurityPolicyName(SecurityPolicyNameT&& value) { SetSecurityPolicyName(std::forward<SecurityPolicyNameT>(value)); return *this;}
     ///@}
   private:
 

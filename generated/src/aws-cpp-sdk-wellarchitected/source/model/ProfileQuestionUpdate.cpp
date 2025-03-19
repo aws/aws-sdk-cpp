@@ -18,14 +18,7 @@ namespace WellArchitected
 namespace Model
 {
 
-ProfileQuestionUpdate::ProfileQuestionUpdate() : 
-    m_questionIdHasBeenSet(false),
-    m_selectedChoiceIdsHasBeenSet(false)
-{
-}
-
 ProfileQuestionUpdate::ProfileQuestionUpdate(JsonView jsonValue)
-  : ProfileQuestionUpdate()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ProfileQuestionUpdate& ProfileQuestionUpdate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("QuestionId"))
   {
     m_questionId = jsonValue.GetString("QuestionId");
-
     m_questionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SelectedChoiceIds"))
   {
     Aws::Utils::Array<JsonView> selectedChoiceIdsJsonList = jsonValue.GetArray("SelectedChoiceIds");
@@ -48,7 +39,6 @@ ProfileQuestionUpdate& ProfileQuestionUpdate::operator =(JsonView jsonValue)
     }
     m_selectedChoiceIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

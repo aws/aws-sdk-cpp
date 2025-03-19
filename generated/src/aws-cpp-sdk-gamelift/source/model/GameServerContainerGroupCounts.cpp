@@ -18,20 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-GameServerContainerGroupCounts::GameServerContainerGroupCounts() : 
-    m_pENDING(0),
-    m_pENDINGHasBeenSet(false),
-    m_aCTIVE(0),
-    m_aCTIVEHasBeenSet(false),
-    m_iDLE(0),
-    m_iDLEHasBeenSet(false),
-    m_tERMINATING(0),
-    m_tERMINATINGHasBeenSet(false)
-{
-}
-
 GameServerContainerGroupCounts::GameServerContainerGroupCounts(JsonView jsonValue)
-  : GameServerContainerGroupCounts()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ GameServerContainerGroupCounts& GameServerContainerGroupCounts::operator =(JsonV
   if(jsonValue.ValueExists("PENDING"))
   {
     m_pENDING = jsonValue.GetInteger("PENDING");
-
     m_pENDINGHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ACTIVE"))
   {
     m_aCTIVE = jsonValue.GetInteger("ACTIVE");
-
     m_aCTIVEHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IDLE"))
   {
     m_iDLE = jsonValue.GetInteger("IDLE");
-
     m_iDLEHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TERMINATING"))
   {
     m_tERMINATING = jsonValue.GetInteger("TERMINATING");
-
     m_tERMINATINGHasBeenSet = true;
   }
-
   return *this;
 }
 

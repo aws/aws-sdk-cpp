@@ -18,31 +18,7 @@ namespace EMR
 namespace Model
 {
 
-JobFlowInstancesDetail::JobFlowInstancesDetail() : 
-    m_masterInstanceTypeHasBeenSet(false),
-    m_masterPublicDnsNameHasBeenSet(false),
-    m_masterInstanceIdHasBeenSet(false),
-    m_slaveInstanceTypeHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_instanceGroupsHasBeenSet(false),
-    m_normalizedInstanceHours(0),
-    m_normalizedInstanceHoursHasBeenSet(false),
-    m_ec2KeyNameHasBeenSet(false),
-    m_ec2SubnetIdHasBeenSet(false),
-    m_placementHasBeenSet(false),
-    m_keepJobFlowAliveWhenNoSteps(false),
-    m_keepJobFlowAliveWhenNoStepsHasBeenSet(false),
-    m_terminationProtected(false),
-    m_terminationProtectedHasBeenSet(false),
-    m_unhealthyNodeReplacement(false),
-    m_unhealthyNodeReplacementHasBeenSet(false),
-    m_hadoopVersionHasBeenSet(false)
-{
-}
-
 JobFlowInstancesDetail::JobFlowInstancesDetail(JsonView jsonValue)
-  : JobFlowInstancesDetail()
 {
   *this = jsonValue;
 }
@@ -52,38 +28,28 @@ JobFlowInstancesDetail& JobFlowInstancesDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MasterInstanceType"))
   {
     m_masterInstanceType = jsonValue.GetString("MasterInstanceType");
-
     m_masterInstanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MasterPublicDnsName"))
   {
     m_masterPublicDnsName = jsonValue.GetString("MasterPublicDnsName");
-
     m_masterPublicDnsNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MasterInstanceId"))
   {
     m_masterInstanceId = jsonValue.GetString("MasterInstanceId");
-
     m_masterInstanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SlaveInstanceType"))
   {
     m_slaveInstanceType = jsonValue.GetString("SlaveInstanceType");
-
     m_slaveInstanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceCount"))
   {
     m_instanceCount = jsonValue.GetInteger("InstanceCount");
-
     m_instanceCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceGroups"))
   {
     Aws::Utils::Array<JsonView> instanceGroupsJsonList = jsonValue.GetArray("InstanceGroups");
@@ -93,63 +59,46 @@ JobFlowInstancesDetail& JobFlowInstancesDetail::operator =(JsonView jsonValue)
     }
     m_instanceGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NormalizedInstanceHours"))
   {
     m_normalizedInstanceHours = jsonValue.GetInteger("NormalizedInstanceHours");
-
     m_normalizedInstanceHoursHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ec2KeyName"))
   {
     m_ec2KeyName = jsonValue.GetString("Ec2KeyName");
-
     m_ec2KeyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ec2SubnetId"))
   {
     m_ec2SubnetId = jsonValue.GetString("Ec2SubnetId");
-
     m_ec2SubnetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Placement"))
   {
     m_placement = jsonValue.GetObject("Placement");
-
     m_placementHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeepJobFlowAliveWhenNoSteps"))
   {
     m_keepJobFlowAliveWhenNoSteps = jsonValue.GetBool("KeepJobFlowAliveWhenNoSteps");
-
     m_keepJobFlowAliveWhenNoStepsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TerminationProtected"))
   {
     m_terminationProtected = jsonValue.GetBool("TerminationProtected");
-
     m_terminationProtectedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UnhealthyNodeReplacement"))
   {
     m_unhealthyNodeReplacement = jsonValue.GetBool("UnhealthyNodeReplacement");
-
     m_unhealthyNodeReplacementHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HadoopVersion"))
   {
     m_hadoopVersion = jsonValue.GetString("HadoopVersion");
-
     m_hadoopVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

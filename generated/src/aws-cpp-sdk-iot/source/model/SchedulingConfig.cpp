@@ -18,17 +18,7 @@ namespace IoT
 namespace Model
 {
 
-SchedulingConfig::SchedulingConfig() : 
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_endBehavior(JobEndBehavior::NOT_SET),
-    m_endBehaviorHasBeenSet(false),
-    m_maintenanceWindowsHasBeenSet(false)
-{
-}
-
 SchedulingConfig::SchedulingConfig(JsonView jsonValue)
-  : SchedulingConfig()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ SchedulingConfig& SchedulingConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetString("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetString("endTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endBehavior"))
   {
     m_endBehavior = JobEndBehaviorMapper::GetJobEndBehaviorForName(jsonValue.GetString("endBehavior"));
-
     m_endBehaviorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maintenanceWindows"))
   {
     Aws::Utils::Array<JsonView> maintenanceWindowsJsonList = jsonValue.GetArray("maintenanceWindows");
@@ -65,7 +49,6 @@ SchedulingConfig& SchedulingConfig::operator =(JsonView jsonValue)
     }
     m_maintenanceWindowsHasBeenSet = true;
   }
-
   return *this;
 }
 

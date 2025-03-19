@@ -34,7 +34,7 @@ namespace Model
   class FreeTrialAccountInfo
   {
   public:
-    AWS_INSPECTOR2_API FreeTrialAccountInfo();
+    AWS_INSPECTOR2_API FreeTrialAccountInfo() = default;
     AWS_INSPECTOR2_API FreeTrialAccountInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API FreeTrialAccountInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The account associated with the Amazon Inspector free trial information.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline FreeTrialAccountInfo& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline FreeTrialAccountInfo& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline FreeTrialAccountInfo& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    FreeTrialAccountInfo& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,14 @@ namespace Model
      * <p>Contains information about the Amazon Inspector free trial for an
      * account.</p>
      */
-    inline const Aws::Vector<FreeTrialInfo>& GetFreeTrialInfo() const{ return m_freeTrialInfo; }
+    inline const Aws::Vector<FreeTrialInfo>& GetFreeTrialInfo() const { return m_freeTrialInfo; }
     inline bool FreeTrialInfoHasBeenSet() const { return m_freeTrialInfoHasBeenSet; }
-    inline void SetFreeTrialInfo(const Aws::Vector<FreeTrialInfo>& value) { m_freeTrialInfoHasBeenSet = true; m_freeTrialInfo = value; }
-    inline void SetFreeTrialInfo(Aws::Vector<FreeTrialInfo>&& value) { m_freeTrialInfoHasBeenSet = true; m_freeTrialInfo = std::move(value); }
-    inline FreeTrialAccountInfo& WithFreeTrialInfo(const Aws::Vector<FreeTrialInfo>& value) { SetFreeTrialInfo(value); return *this;}
-    inline FreeTrialAccountInfo& WithFreeTrialInfo(Aws::Vector<FreeTrialInfo>&& value) { SetFreeTrialInfo(std::move(value)); return *this;}
-    inline FreeTrialAccountInfo& AddFreeTrialInfo(const FreeTrialInfo& value) { m_freeTrialInfoHasBeenSet = true; m_freeTrialInfo.push_back(value); return *this; }
-    inline FreeTrialAccountInfo& AddFreeTrialInfo(FreeTrialInfo&& value) { m_freeTrialInfoHasBeenSet = true; m_freeTrialInfo.push_back(std::move(value)); return *this; }
+    template<typename FreeTrialInfoT = Aws::Vector<FreeTrialInfo>>
+    void SetFreeTrialInfo(FreeTrialInfoT&& value) { m_freeTrialInfoHasBeenSet = true; m_freeTrialInfo = std::forward<FreeTrialInfoT>(value); }
+    template<typename FreeTrialInfoT = Aws::Vector<FreeTrialInfo>>
+    FreeTrialAccountInfo& WithFreeTrialInfo(FreeTrialInfoT&& value) { SetFreeTrialInfo(std::forward<FreeTrialInfoT>(value)); return *this;}
+    template<typename FreeTrialInfoT = FreeTrialInfo>
+    FreeTrialAccountInfo& AddFreeTrialInfo(FreeTrialInfoT&& value) { m_freeTrialInfoHasBeenSet = true; m_freeTrialInfo.emplace_back(std::forward<FreeTrialInfoT>(value)); return *this; }
     ///@}
   private:
 

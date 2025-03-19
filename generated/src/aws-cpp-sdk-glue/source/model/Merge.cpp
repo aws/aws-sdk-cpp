@@ -18,16 +18,7 @@ namespace Glue
 namespace Model
 {
 
-Merge::Merge() : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_primaryKeysHasBeenSet(false)
-{
-}
-
 Merge::Merge(JsonView jsonValue)
-  : Merge()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ Merge& Merge::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Inputs"))
   {
     Aws::Utils::Array<JsonView> inputsJsonList = jsonValue.GetArray("Inputs");
@@ -50,14 +39,11 @@ Merge& Merge::operator =(JsonView jsonValue)
     }
     m_inputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Source"))
   {
     m_source = jsonValue.GetString("Source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrimaryKeys"))
   {
     Aws::Utils::Array<JsonView> primaryKeysJsonList = jsonValue.GetArray("PrimaryKeys");
@@ -74,7 +60,6 @@ Merge& Merge::operator =(JsonView jsonValue)
     }
     m_primaryKeysHasBeenSet = true;
   }
-
   return *this;
 }
 

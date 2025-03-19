@@ -12,11 +12,6 @@ using namespace Aws::Macie2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListManagedDataIdentifiersRequest::ListManagedDataIdentifiersRequest() : 
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListManagedDataIdentifiersRequest::SerializePayload() const
 {
   JsonValue payload;

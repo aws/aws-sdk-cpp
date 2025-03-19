@@ -12,13 +12,6 @@ using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ModifyClusterRequest::ModifyClusterRequest() : 
-    m_clusterIdHasBeenSet(false),
-    m_stepConcurrencyLevel(0),
-    m_stepConcurrencyLevelHasBeenSet(false)
-{
-}
-
 Aws::String ModifyClusterRequest::SerializePayload() const
 {
   JsonValue payload;

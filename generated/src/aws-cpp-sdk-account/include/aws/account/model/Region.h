@@ -33,7 +33,7 @@ namespace Model
   class Region
   {
   public:
-    AWS_ACCOUNT_API Region();
+    AWS_ACCOUNT_API Region() = default;
     AWS_ACCOUNT_API Region(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCOUNT_API Region& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCOUNT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The Region code of a given Region (for example, <code>us-east-1</code>).</p>
      */
-    inline const Aws::String& GetRegionName() const{ return m_regionName; }
+    inline const Aws::String& GetRegionName() const { return m_regionName; }
     inline bool RegionNameHasBeenSet() const { return m_regionNameHasBeenSet; }
-    inline void SetRegionName(const Aws::String& value) { m_regionNameHasBeenSet = true; m_regionName = value; }
-    inline void SetRegionName(Aws::String&& value) { m_regionNameHasBeenSet = true; m_regionName = std::move(value); }
-    inline void SetRegionName(const char* value) { m_regionNameHasBeenSet = true; m_regionName.assign(value); }
-    inline Region& WithRegionName(const Aws::String& value) { SetRegionName(value); return *this;}
-    inline Region& WithRegionName(Aws::String&& value) { SetRegionName(std::move(value)); return *this;}
-    inline Region& WithRegionName(const char* value) { SetRegionName(value); return *this;}
+    template<typename RegionNameT = Aws::String>
+    void SetRegionName(RegionNameT&& value) { m_regionNameHasBeenSet = true; m_regionName = std::forward<RegionNameT>(value); }
+    template<typename RegionNameT = Aws::String>
+    Region& WithRegionName(RegionNameT&& value) { SetRegionName(std::forward<RegionNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,19 +56,17 @@ namespace Model
      * <p>One of potential statuses a Region can undergo (Enabled, Enabling, Disabled,
      * Disabling, Enabled_By_Default).</p>
      */
-    inline const RegionOptStatus& GetRegionOptStatus() const{ return m_regionOptStatus; }
+    inline RegionOptStatus GetRegionOptStatus() const { return m_regionOptStatus; }
     inline bool RegionOptStatusHasBeenSet() const { return m_regionOptStatusHasBeenSet; }
-    inline void SetRegionOptStatus(const RegionOptStatus& value) { m_regionOptStatusHasBeenSet = true; m_regionOptStatus = value; }
-    inline void SetRegionOptStatus(RegionOptStatus&& value) { m_regionOptStatusHasBeenSet = true; m_regionOptStatus = std::move(value); }
-    inline Region& WithRegionOptStatus(const RegionOptStatus& value) { SetRegionOptStatus(value); return *this;}
-    inline Region& WithRegionOptStatus(RegionOptStatus&& value) { SetRegionOptStatus(std::move(value)); return *this;}
+    inline void SetRegionOptStatus(RegionOptStatus value) { m_regionOptStatusHasBeenSet = true; m_regionOptStatus = value; }
+    inline Region& WithRegionOptStatus(RegionOptStatus value) { SetRegionOptStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_regionName;
     bool m_regionNameHasBeenSet = false;
 
-    RegionOptStatus m_regionOptStatus;
+    RegionOptStatus m_regionOptStatus{RegionOptStatus::NOT_SET};
     bool m_regionOptStatusHasBeenSet = false;
   };
 

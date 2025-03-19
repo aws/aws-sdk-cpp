@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeResourcePermissionsRequest::DescribeResourcePermissionsRequest() : 
-    m_authenticationTokenHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_principalIdHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String DescribeResourcePermissionsRequest::SerializePayload() const
 {
   return {};

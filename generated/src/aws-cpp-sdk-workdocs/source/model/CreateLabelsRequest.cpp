@@ -13,13 +13,6 @@ using namespace Aws::WorkDocs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateLabelsRequest::CreateLabelsRequest() : 
-    m_resourceIdHasBeenSet(false),
-    m_labelsHasBeenSet(false),
-    m_authenticationTokenHasBeenSet(false)
-{
-}
-
 Aws::String CreateLabelsRequest::SerializePayload() const
 {
   JsonValue payload;

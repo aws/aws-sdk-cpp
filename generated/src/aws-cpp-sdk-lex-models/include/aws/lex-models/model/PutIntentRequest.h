@@ -31,7 +31,7 @@ namespace Model
   class PutIntentRequest : public LexModelBuildingServiceRequest
   {
   public:
-    AWS_LEXMODELBUILDINGSERVICE_API PutIntentRequest();
+    AWS_LEXMODELBUILDINGSERVICE_API PutIntentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -52,28 +52,24 @@ namespace Model
      * href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard
      * Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline PutIntentRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline PutIntentRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline PutIntentRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    PutIntentRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the intent.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline PutIntentRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline PutIntentRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline PutIntentRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    PutIntentRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,14 +78,14 @@ namespace Model
      * from the user using prompts defined in the slots. For more information, see
      * <a>how-it-works</a>. </p>
      */
-    inline const Aws::Vector<Slot>& GetSlots() const{ return m_slots; }
+    inline const Aws::Vector<Slot>& GetSlots() const { return m_slots; }
     inline bool SlotsHasBeenSet() const { return m_slotsHasBeenSet; }
-    inline void SetSlots(const Aws::Vector<Slot>& value) { m_slotsHasBeenSet = true; m_slots = value; }
-    inline void SetSlots(Aws::Vector<Slot>&& value) { m_slotsHasBeenSet = true; m_slots = std::move(value); }
-    inline PutIntentRequest& WithSlots(const Aws::Vector<Slot>& value) { SetSlots(value); return *this;}
-    inline PutIntentRequest& WithSlots(Aws::Vector<Slot>&& value) { SetSlots(std::move(value)); return *this;}
-    inline PutIntentRequest& AddSlots(const Slot& value) { m_slotsHasBeenSet = true; m_slots.push_back(value); return *this; }
-    inline PutIntentRequest& AddSlots(Slot&& value) { m_slotsHasBeenSet = true; m_slots.push_back(std::move(value)); return *this; }
+    template<typename SlotsT = Aws::Vector<Slot>>
+    void SetSlots(SlotsT&& value) { m_slotsHasBeenSet = true; m_slots = std::forward<SlotsT>(value); }
+    template<typename SlotsT = Aws::Vector<Slot>>
+    PutIntentRequest& WithSlots(SlotsT&& value) { SetSlots(std::forward<SlotsT>(value)); return *this;}
+    template<typename SlotsT = Slot>
+    PutIntentRequest& AddSlots(SlotsT&& value) { m_slotsHasBeenSet = true; m_slots.emplace_back(std::forward<SlotsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -98,15 +94,14 @@ namespace Model
      * For example, "I want {PizzaSize} pizza", "Order {Quantity} {PizzaSize} pizzas".
      * </p> <p>In each utterance, a slot name is enclosed in curly braces. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetSampleUtterances() const{ return m_sampleUtterances; }
+    inline const Aws::Vector<Aws::String>& GetSampleUtterances() const { return m_sampleUtterances; }
     inline bool SampleUtterancesHasBeenSet() const { return m_sampleUtterancesHasBeenSet; }
-    inline void SetSampleUtterances(const Aws::Vector<Aws::String>& value) { m_sampleUtterancesHasBeenSet = true; m_sampleUtterances = value; }
-    inline void SetSampleUtterances(Aws::Vector<Aws::String>&& value) { m_sampleUtterancesHasBeenSet = true; m_sampleUtterances = std::move(value); }
-    inline PutIntentRequest& WithSampleUtterances(const Aws::Vector<Aws::String>& value) { SetSampleUtterances(value); return *this;}
-    inline PutIntentRequest& WithSampleUtterances(Aws::Vector<Aws::String>&& value) { SetSampleUtterances(std::move(value)); return *this;}
-    inline PutIntentRequest& AddSampleUtterances(const Aws::String& value) { m_sampleUtterancesHasBeenSet = true; m_sampleUtterances.push_back(value); return *this; }
-    inline PutIntentRequest& AddSampleUtterances(Aws::String&& value) { m_sampleUtterancesHasBeenSet = true; m_sampleUtterances.push_back(std::move(value)); return *this; }
-    inline PutIntentRequest& AddSampleUtterances(const char* value) { m_sampleUtterancesHasBeenSet = true; m_sampleUtterances.push_back(value); return *this; }
+    template<typename SampleUtterancesT = Aws::Vector<Aws::String>>
+    void SetSampleUtterances(SampleUtterancesT&& value) { m_sampleUtterancesHasBeenSet = true; m_sampleUtterances = std::forward<SampleUtterancesT>(value); }
+    template<typename SampleUtterancesT = Aws::Vector<Aws::String>>
+    PutIntentRequest& WithSampleUtterances(SampleUtterancesT&& value) { SetSampleUtterances(std::forward<SampleUtterancesT>(value)); return *this;}
+    template<typename SampleUtterancesT = Aws::String>
+    PutIntentRequest& AddSampleUtterances(SampleUtterancesT&& value) { m_sampleUtterancesHasBeenSet = true; m_sampleUtterances.emplace_back(std::forward<SampleUtterancesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -121,12 +116,12 @@ namespace Model
      * <code>rejectionStatement</code> and the <code>confirmationPrompt</code>, or
      * neither.</p> 
      */
-    inline const Prompt& GetConfirmationPrompt() const{ return m_confirmationPrompt; }
+    inline const Prompt& GetConfirmationPrompt() const { return m_confirmationPrompt; }
     inline bool ConfirmationPromptHasBeenSet() const { return m_confirmationPromptHasBeenSet; }
-    inline void SetConfirmationPrompt(const Prompt& value) { m_confirmationPromptHasBeenSet = true; m_confirmationPrompt = value; }
-    inline void SetConfirmationPrompt(Prompt&& value) { m_confirmationPromptHasBeenSet = true; m_confirmationPrompt = std::move(value); }
-    inline PutIntentRequest& WithConfirmationPrompt(const Prompt& value) { SetConfirmationPrompt(value); return *this;}
-    inline PutIntentRequest& WithConfirmationPrompt(Prompt&& value) { SetConfirmationPrompt(std::move(value)); return *this;}
+    template<typename ConfirmationPromptT = Prompt>
+    void SetConfirmationPrompt(ConfirmationPromptT&& value) { m_confirmationPromptHasBeenSet = true; m_confirmationPrompt = std::forward<ConfirmationPromptT>(value); }
+    template<typename ConfirmationPromptT = Prompt>
+    PutIntentRequest& WithConfirmationPrompt(ConfirmationPromptT&& value) { SetConfirmationPrompt(std::forward<ConfirmationPromptT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -137,12 +132,12 @@ namespace Model
      * the <code>rejectionStatement</code> and the <code>confirmationPrompt</code>, or
      * neither.</p> 
      */
-    inline const Statement& GetRejectionStatement() const{ return m_rejectionStatement; }
+    inline const Statement& GetRejectionStatement() const { return m_rejectionStatement; }
     inline bool RejectionStatementHasBeenSet() const { return m_rejectionStatementHasBeenSet; }
-    inline void SetRejectionStatement(const Statement& value) { m_rejectionStatementHasBeenSet = true; m_rejectionStatement = value; }
-    inline void SetRejectionStatement(Statement&& value) { m_rejectionStatementHasBeenSet = true; m_rejectionStatement = std::move(value); }
-    inline PutIntentRequest& WithRejectionStatement(const Statement& value) { SetRejectionStatement(value); return *this;}
-    inline PutIntentRequest& WithRejectionStatement(Statement&& value) { SetRejectionStatement(std::move(value)); return *this;}
+    template<typename RejectionStatementT = Statement>
+    void SetRejectionStatement(RejectionStatementT&& value) { m_rejectionStatementHasBeenSet = true; m_rejectionStatement = std::forward<RejectionStatementT>(value); }
+    template<typename RejectionStatementT = Statement>
+    PutIntentRequest& WithRejectionStatement(RejectionStatementT&& value) { SetRejectionStatement(std::forward<RejectionStatementT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -160,12 +155,12 @@ namespace Model
      * <code>followUpPrompt</code> field and the <code>conclusionStatement</code> field
      * are mutually exclusive. You can specify only one. </p>
      */
-    inline const FollowUpPrompt& GetFollowUpPrompt() const{ return m_followUpPrompt; }
+    inline const FollowUpPrompt& GetFollowUpPrompt() const { return m_followUpPrompt; }
     inline bool FollowUpPromptHasBeenSet() const { return m_followUpPromptHasBeenSet; }
-    inline void SetFollowUpPrompt(const FollowUpPrompt& value) { m_followUpPromptHasBeenSet = true; m_followUpPrompt = value; }
-    inline void SetFollowUpPrompt(FollowUpPrompt&& value) { m_followUpPromptHasBeenSet = true; m_followUpPrompt = std::move(value); }
-    inline PutIntentRequest& WithFollowUpPrompt(const FollowUpPrompt& value) { SetFollowUpPrompt(value); return *this;}
-    inline PutIntentRequest& WithFollowUpPrompt(FollowUpPrompt&& value) { SetFollowUpPrompt(std::move(value)); return *this;}
+    template<typename FollowUpPromptT = FollowUpPrompt>
+    void SetFollowUpPrompt(FollowUpPromptT&& value) { m_followUpPromptHasBeenSet = true; m_followUpPrompt = std::forward<FollowUpPromptT>(value); }
+    template<typename FollowUpPromptT = FollowUpPrompt>
+    PutIntentRequest& WithFollowUpPrompt(FollowUpPromptT&& value) { SetFollowUpPrompt(std::forward<FollowUpPromptT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -178,12 +173,12 @@ namespace Model
      * <code>followUpPrompt</code> and <code>conclusionStatement</code> are mutually
      * exclusive. You can specify only one.</p> 
      */
-    inline const Statement& GetConclusionStatement() const{ return m_conclusionStatement; }
+    inline const Statement& GetConclusionStatement() const { return m_conclusionStatement; }
     inline bool ConclusionStatementHasBeenSet() const { return m_conclusionStatementHasBeenSet; }
-    inline void SetConclusionStatement(const Statement& value) { m_conclusionStatementHasBeenSet = true; m_conclusionStatement = value; }
-    inline void SetConclusionStatement(Statement&& value) { m_conclusionStatementHasBeenSet = true; m_conclusionStatement = std::move(value); }
-    inline PutIntentRequest& WithConclusionStatement(const Statement& value) { SetConclusionStatement(value); return *this;}
-    inline PutIntentRequest& WithConclusionStatement(Statement&& value) { SetConclusionStatement(std::move(value)); return *this;}
+    template<typename ConclusionStatementT = Statement>
+    void SetConclusionStatement(ConclusionStatementT&& value) { m_conclusionStatementHasBeenSet = true; m_conclusionStatement = std::forward<ConclusionStatementT>(value); }
+    template<typename ConclusionStatementT = Statement>
+    PutIntentRequest& WithConclusionStatement(ConclusionStatementT&& value) { SetConclusionStatement(std::forward<ConclusionStatementT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -196,12 +191,12 @@ namespace Model
      * the corresponding intent slot, <code>GlutenIntolerant</code>, to true. You might
      * find John's phone number and set the corresponding session attribute. </p>
      */
-    inline const CodeHook& GetDialogCodeHook() const{ return m_dialogCodeHook; }
+    inline const CodeHook& GetDialogCodeHook() const { return m_dialogCodeHook; }
     inline bool DialogCodeHookHasBeenSet() const { return m_dialogCodeHookHasBeenSet; }
-    inline void SetDialogCodeHook(const CodeHook& value) { m_dialogCodeHookHasBeenSet = true; m_dialogCodeHook = value; }
-    inline void SetDialogCodeHook(CodeHook&& value) { m_dialogCodeHookHasBeenSet = true; m_dialogCodeHook = std::move(value); }
-    inline PutIntentRequest& WithDialogCodeHook(const CodeHook& value) { SetDialogCodeHook(value); return *this;}
-    inline PutIntentRequest& WithDialogCodeHook(CodeHook&& value) { SetDialogCodeHook(std::move(value)); return *this;}
+    template<typename DialogCodeHookT = CodeHook>
+    void SetDialogCodeHook(DialogCodeHookT&& value) { m_dialogCodeHookHasBeenSet = true; m_dialogCodeHook = std::forward<DialogCodeHookT>(value); }
+    template<typename DialogCodeHookT = CodeHook>
+    PutIntentRequest& WithDialogCodeHook(DialogCodeHookT&& value) { SetDialogCodeHook(std::forward<DialogCodeHookT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -214,12 +209,12 @@ namespace Model
      * function that can process the intent (for example, place an order with a
      * pizzeria). </p>
      */
-    inline const FulfillmentActivity& GetFulfillmentActivity() const{ return m_fulfillmentActivity; }
+    inline const FulfillmentActivity& GetFulfillmentActivity() const { return m_fulfillmentActivity; }
     inline bool FulfillmentActivityHasBeenSet() const { return m_fulfillmentActivityHasBeenSet; }
-    inline void SetFulfillmentActivity(const FulfillmentActivity& value) { m_fulfillmentActivityHasBeenSet = true; m_fulfillmentActivity = value; }
-    inline void SetFulfillmentActivity(FulfillmentActivity&& value) { m_fulfillmentActivityHasBeenSet = true; m_fulfillmentActivity = std::move(value); }
-    inline PutIntentRequest& WithFulfillmentActivity(const FulfillmentActivity& value) { SetFulfillmentActivity(value); return *this;}
-    inline PutIntentRequest& WithFulfillmentActivity(FulfillmentActivity&& value) { SetFulfillmentActivity(std::move(value)); return *this;}
+    template<typename FulfillmentActivityT = FulfillmentActivity>
+    void SetFulfillmentActivity(FulfillmentActivityT&& value) { m_fulfillmentActivityHasBeenSet = true; m_fulfillmentActivity = std::forward<FulfillmentActivityT>(value); }
+    template<typename FulfillmentActivityT = FulfillmentActivity>
+    PutIntentRequest& WithFulfillmentActivity(FulfillmentActivityT&& value) { SetFulfillmentActivity(std::forward<FulfillmentActivityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -229,14 +224,12 @@ namespace Model
      * href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard
      * Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
      */
-    inline const Aws::String& GetParentIntentSignature() const{ return m_parentIntentSignature; }
+    inline const Aws::String& GetParentIntentSignature() const { return m_parentIntentSignature; }
     inline bool ParentIntentSignatureHasBeenSet() const { return m_parentIntentSignatureHasBeenSet; }
-    inline void SetParentIntentSignature(const Aws::String& value) { m_parentIntentSignatureHasBeenSet = true; m_parentIntentSignature = value; }
-    inline void SetParentIntentSignature(Aws::String&& value) { m_parentIntentSignatureHasBeenSet = true; m_parentIntentSignature = std::move(value); }
-    inline void SetParentIntentSignature(const char* value) { m_parentIntentSignatureHasBeenSet = true; m_parentIntentSignature.assign(value); }
-    inline PutIntentRequest& WithParentIntentSignature(const Aws::String& value) { SetParentIntentSignature(value); return *this;}
-    inline PutIntentRequest& WithParentIntentSignature(Aws::String&& value) { SetParentIntentSignature(std::move(value)); return *this;}
-    inline PutIntentRequest& WithParentIntentSignature(const char* value) { SetParentIntentSignature(value); return *this;}
+    template<typename ParentIntentSignatureT = Aws::String>
+    void SetParentIntentSignature(ParentIntentSignatureT&& value) { m_parentIntentSignatureHasBeenSet = true; m_parentIntentSignature = std::forward<ParentIntentSignatureT>(value); }
+    template<typename ParentIntentSignatureT = Aws::String>
+    PutIntentRequest& WithParentIntentSignature(ParentIntentSignatureT&& value) { SetParentIntentSignature(std::forward<ParentIntentSignatureT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -250,14 +243,12 @@ namespace Model
      * match the <code>$LATEST</code> version, you get a
      * <code>PreconditionFailedException</code> exception.</p>
      */
-    inline const Aws::String& GetChecksum() const{ return m_checksum; }
+    inline const Aws::String& GetChecksum() const { return m_checksum; }
     inline bool ChecksumHasBeenSet() const { return m_checksumHasBeenSet; }
-    inline void SetChecksum(const Aws::String& value) { m_checksumHasBeenSet = true; m_checksum = value; }
-    inline void SetChecksum(Aws::String&& value) { m_checksumHasBeenSet = true; m_checksum = std::move(value); }
-    inline void SetChecksum(const char* value) { m_checksumHasBeenSet = true; m_checksum.assign(value); }
-    inline PutIntentRequest& WithChecksum(const Aws::String& value) { SetChecksum(value); return *this;}
-    inline PutIntentRequest& WithChecksum(Aws::String&& value) { SetChecksum(std::move(value)); return *this;}
-    inline PutIntentRequest& WithChecksum(const char* value) { SetChecksum(value); return *this;}
+    template<typename ChecksumT = Aws::String>
+    void SetChecksum(ChecksumT&& value) { m_checksumHasBeenSet = true; m_checksum = std::forward<ChecksumT>(value); }
+    template<typename ChecksumT = Aws::String>
+    PutIntentRequest& WithChecksum(ChecksumT&& value) { SetChecksum(std::forward<ChecksumT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -267,7 +258,7 @@ namespace Model
      * operation. If you do not specify <code>createVersion</code>, the default is
      * <code>false</code>.</p>
      */
-    inline bool GetCreateVersion() const{ return m_createVersion; }
+    inline bool GetCreateVersion() const { return m_createVersion; }
     inline bool CreateVersionHasBeenSet() const { return m_createVersionHasBeenSet; }
     inline void SetCreateVersion(bool value) { m_createVersionHasBeenSet = true; m_createVersion = value; }
     inline PutIntentRequest& WithCreateVersion(bool value) { SetCreateVersion(value); return *this;}
@@ -281,12 +272,12 @@ namespace Model
      * href="http://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html">
      * AMAZON.KendraSearchIntent</a>.</p>
      */
-    inline const KendraConfiguration& GetKendraConfiguration() const{ return m_kendraConfiguration; }
+    inline const KendraConfiguration& GetKendraConfiguration() const { return m_kendraConfiguration; }
     inline bool KendraConfigurationHasBeenSet() const { return m_kendraConfigurationHasBeenSet; }
-    inline void SetKendraConfiguration(const KendraConfiguration& value) { m_kendraConfigurationHasBeenSet = true; m_kendraConfiguration = value; }
-    inline void SetKendraConfiguration(KendraConfiguration&& value) { m_kendraConfigurationHasBeenSet = true; m_kendraConfiguration = std::move(value); }
-    inline PutIntentRequest& WithKendraConfiguration(const KendraConfiguration& value) { SetKendraConfiguration(value); return *this;}
-    inline PutIntentRequest& WithKendraConfiguration(KendraConfiguration&& value) { SetKendraConfiguration(std::move(value)); return *this;}
+    template<typename KendraConfigurationT = KendraConfiguration>
+    void SetKendraConfiguration(KendraConfigurationT&& value) { m_kendraConfigurationHasBeenSet = true; m_kendraConfiguration = std::forward<KendraConfigurationT>(value); }
+    template<typename KendraConfigurationT = KendraConfiguration>
+    PutIntentRequest& WithKendraConfiguration(KendraConfigurationT&& value) { SetKendraConfiguration(std::forward<KendraConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -295,14 +286,14 @@ namespace Model
      * must be active for Amazon Lex to choose the intent in a conversation with the
      * user.</p>
      */
-    inline const Aws::Vector<InputContext>& GetInputContexts() const{ return m_inputContexts; }
+    inline const Aws::Vector<InputContext>& GetInputContexts() const { return m_inputContexts; }
     inline bool InputContextsHasBeenSet() const { return m_inputContextsHasBeenSet; }
-    inline void SetInputContexts(const Aws::Vector<InputContext>& value) { m_inputContextsHasBeenSet = true; m_inputContexts = value; }
-    inline void SetInputContexts(Aws::Vector<InputContext>&& value) { m_inputContextsHasBeenSet = true; m_inputContexts = std::move(value); }
-    inline PutIntentRequest& WithInputContexts(const Aws::Vector<InputContext>& value) { SetInputContexts(value); return *this;}
-    inline PutIntentRequest& WithInputContexts(Aws::Vector<InputContext>&& value) { SetInputContexts(std::move(value)); return *this;}
-    inline PutIntentRequest& AddInputContexts(const InputContext& value) { m_inputContextsHasBeenSet = true; m_inputContexts.push_back(value); return *this; }
-    inline PutIntentRequest& AddInputContexts(InputContext&& value) { m_inputContextsHasBeenSet = true; m_inputContexts.push_back(std::move(value)); return *this; }
+    template<typename InputContextsT = Aws::Vector<InputContext>>
+    void SetInputContexts(InputContextsT&& value) { m_inputContextsHasBeenSet = true; m_inputContexts = std::forward<InputContextsT>(value); }
+    template<typename InputContextsT = Aws::Vector<InputContext>>
+    PutIntentRequest& WithInputContexts(InputContextsT&& value) { SetInputContexts(std::forward<InputContextsT>(value)); return *this;}
+    template<typename InputContextsT = InputContext>
+    PutIntentRequest& AddInputContexts(InputContextsT&& value) { m_inputContextsHasBeenSet = true; m_inputContexts.emplace_back(std::forward<InputContextsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -310,14 +301,14 @@ namespace Model
      * <p>An array of <code>OutputContext</code> objects that lists the contexts that
      * the intent activates when the intent is fulfilled.</p>
      */
-    inline const Aws::Vector<OutputContext>& GetOutputContexts() const{ return m_outputContexts; }
+    inline const Aws::Vector<OutputContext>& GetOutputContexts() const { return m_outputContexts; }
     inline bool OutputContextsHasBeenSet() const { return m_outputContextsHasBeenSet; }
-    inline void SetOutputContexts(const Aws::Vector<OutputContext>& value) { m_outputContextsHasBeenSet = true; m_outputContexts = value; }
-    inline void SetOutputContexts(Aws::Vector<OutputContext>&& value) { m_outputContextsHasBeenSet = true; m_outputContexts = std::move(value); }
-    inline PutIntentRequest& WithOutputContexts(const Aws::Vector<OutputContext>& value) { SetOutputContexts(value); return *this;}
-    inline PutIntentRequest& WithOutputContexts(Aws::Vector<OutputContext>&& value) { SetOutputContexts(std::move(value)); return *this;}
-    inline PutIntentRequest& AddOutputContexts(const OutputContext& value) { m_outputContextsHasBeenSet = true; m_outputContexts.push_back(value); return *this; }
-    inline PutIntentRequest& AddOutputContexts(OutputContext&& value) { m_outputContextsHasBeenSet = true; m_outputContexts.push_back(std::move(value)); return *this; }
+    template<typename OutputContextsT = Aws::Vector<OutputContext>>
+    void SetOutputContexts(OutputContextsT&& value) { m_outputContextsHasBeenSet = true; m_outputContexts = std::forward<OutputContextsT>(value); }
+    template<typename OutputContextsT = Aws::Vector<OutputContext>>
+    PutIntentRequest& WithOutputContexts(OutputContextsT&& value) { SetOutputContexts(std::forward<OutputContextsT>(value)); return *this;}
+    template<typename OutputContextsT = OutputContext>
+    PutIntentRequest& AddOutputContexts(OutputContextsT&& value) { m_outputContextsHasBeenSet = true; m_outputContexts.emplace_back(std::forward<OutputContextsT>(value)); return *this; }
     ///@}
   private:
 
@@ -357,7 +348,7 @@ namespace Model
     Aws::String m_checksum;
     bool m_checksumHasBeenSet = false;
 
-    bool m_createVersion;
+    bool m_createVersion{false};
     bool m_createVersionHasBeenSet = false;
 
     KendraConfiguration m_kendraConfiguration;

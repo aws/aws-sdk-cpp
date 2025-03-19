@@ -18,19 +18,7 @@ namespace Omics
 namespace Model
 {
 
-ImportReadSetJobItem::ImportReadSetJobItem() : 
-    m_idHasBeenSet(false),
-    m_sequenceStoreIdHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_status(ReadSetImportJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_completionTimeHasBeenSet(false)
-{
-}
-
 ImportReadSetJobItem::ImportReadSetJobItem(JsonView jsonValue)
-  : ImportReadSetJobItem()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ ImportReadSetJobItem& ImportReadSetJobItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sequenceStoreId"))
   {
     m_sequenceStoreId = jsonValue.GetString("sequenceStoreId");
-
     m_sequenceStoreIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ReadSetImportJobStatusMapper::GetReadSetImportJobStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("completionTime"))
   {
     m_completionTime = jsonValue.GetString("completionTime");
-
     m_completionTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

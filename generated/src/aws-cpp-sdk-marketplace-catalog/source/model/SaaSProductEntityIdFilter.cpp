@@ -18,13 +18,7 @@ namespace MarketplaceCatalog
 namespace Model
 {
 
-SaaSProductEntityIdFilter::SaaSProductEntityIdFilter() : 
-    m_valueListHasBeenSet(false)
-{
-}
-
 SaaSProductEntityIdFilter::SaaSProductEntityIdFilter(JsonView jsonValue)
-  : SaaSProductEntityIdFilter()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ SaaSProductEntityIdFilter& SaaSProductEntityIdFilter::operator =(JsonView jsonVa
     }
     m_valueListHasBeenSet = true;
   }
-
   return *this;
 }
 

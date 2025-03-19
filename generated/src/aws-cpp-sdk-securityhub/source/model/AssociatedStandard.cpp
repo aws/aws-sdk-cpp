@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AssociatedStandard::AssociatedStandard() : 
-    m_standardsIdHasBeenSet(false)
-{
-}
-
 AssociatedStandard::AssociatedStandard(JsonView jsonValue)
-  : AssociatedStandard()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AssociatedStandard& AssociatedStandard::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StandardsId"))
   {
     m_standardsId = jsonValue.GetString("StandardsId");
-
     m_standardsIdHasBeenSet = true;
   }
-
   return *this;
 }
 

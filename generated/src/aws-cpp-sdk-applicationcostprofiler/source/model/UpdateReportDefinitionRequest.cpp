@@ -12,17 +12,6 @@ using namespace Aws::ApplicationCostProfiler::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateReportDefinitionRequest::UpdateReportDefinitionRequest() : 
-    m_reportIdHasBeenSet(false),
-    m_reportDescriptionHasBeenSet(false),
-    m_reportFrequency(ReportFrequency::NOT_SET),
-    m_reportFrequencyHasBeenSet(false),
-    m_format(Format::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_destinationS3LocationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateReportDefinitionRequest::SerializePayload() const
 {
   JsonValue payload;

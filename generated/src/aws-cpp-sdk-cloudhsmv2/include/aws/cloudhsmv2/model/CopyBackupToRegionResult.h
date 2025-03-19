@@ -28,7 +28,7 @@ namespace Model
   class CopyBackupToRegionResult
   {
   public:
-    AWS_CLOUDHSMV2_API CopyBackupToRegionResult();
+    AWS_CLOUDHSMV2_API CopyBackupToRegionResult() = default;
     AWS_CLOUDHSMV2_API CopyBackupToRegionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDHSMV2_API CopyBackupToRegionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,28 +42,28 @@ namespace Model
      * this operation to use the <a>DescribeBackups</a> operation on the backup that
      * will be copied to the destination region.</p>
      */
-    inline const DestinationBackup& GetDestinationBackup() const{ return m_destinationBackup; }
-    inline void SetDestinationBackup(const DestinationBackup& value) { m_destinationBackup = value; }
-    inline void SetDestinationBackup(DestinationBackup&& value) { m_destinationBackup = std::move(value); }
-    inline CopyBackupToRegionResult& WithDestinationBackup(const DestinationBackup& value) { SetDestinationBackup(value); return *this;}
-    inline CopyBackupToRegionResult& WithDestinationBackup(DestinationBackup&& value) { SetDestinationBackup(std::move(value)); return *this;}
+    inline const DestinationBackup& GetDestinationBackup() const { return m_destinationBackup; }
+    template<typename DestinationBackupT = DestinationBackup>
+    void SetDestinationBackup(DestinationBackupT&& value) { m_destinationBackupHasBeenSet = true; m_destinationBackup = std::forward<DestinationBackupT>(value); }
+    template<typename DestinationBackupT = DestinationBackup>
+    CopyBackupToRegionResult& WithDestinationBackup(DestinationBackupT&& value) { SetDestinationBackup(std::forward<DestinationBackupT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CopyBackupToRegionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CopyBackupToRegionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CopyBackupToRegionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CopyBackupToRegionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DestinationBackup m_destinationBackup;
+    bool m_destinationBackupHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

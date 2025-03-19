@@ -34,7 +34,7 @@ namespace Model
   class Rule
   {
   public:
-    AWS_CLOUDDIRECTORY_API Rule();
+    AWS_CLOUDDIRECTORY_API Rule() = default;
     AWS_CLOUDDIRECTORY_API Rule(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API Rule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,35 +44,30 @@ namespace Model
     /**
      * <p>The type of attribute validation rule.</p>
      */
-    inline const RuleType& GetType() const{ return m_type; }
+    inline RuleType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const RuleType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(RuleType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline Rule& WithType(const RuleType& value) { SetType(value); return *this;}
-    inline Rule& WithType(RuleType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(RuleType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline Rule& WithType(RuleType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The minimum and maximum parameters that are associated with the rule.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline Rule& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
-    inline Rule& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
-    inline Rule& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
-    inline Rule& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-    inline Rule& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline Rule& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline Rule& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline Rule& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-    inline Rule& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::String>>
+    Rule& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
+    template<typename ParametersKeyT = Aws::String, typename ParametersValueT = Aws::String>
+    Rule& AddParameters(ParametersKeyT&& key, ParametersValueT&& value) {
+      m_parametersHasBeenSet = true; m_parameters.emplace(std::forward<ParametersKeyT>(key), std::forward<ParametersValueT>(value)); return *this;
+    }
     ///@}
   private:
 
-    RuleType m_type;
+    RuleType m_type{RuleType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_parameters;

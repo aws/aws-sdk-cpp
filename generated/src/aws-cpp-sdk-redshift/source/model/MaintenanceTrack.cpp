@@ -20,15 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-MaintenanceTrack::MaintenanceTrack() : 
-    m_maintenanceTrackNameHasBeenSet(false),
-    m_databaseVersionHasBeenSet(false),
-    m_updateTargetsHasBeenSet(false)
-{
-}
-
 MaintenanceTrack::MaintenanceTrack(const XmlNode& xmlNode)
-  : MaintenanceTrack()
 {
   *this = xmlNode;
 }
@@ -55,6 +47,7 @@ MaintenanceTrack& MaintenanceTrack::operator =(const XmlNode& xmlNode)
     if(!updateTargetsNode.IsNull())
     {
       XmlNode updateTargetsMember = updateTargetsNode.FirstChild("UpdateTarget");
+      m_updateTargetsHasBeenSet = !updateTargetsMember.IsNull();
       while(!updateTargetsMember.IsNull())
       {
         m_updateTargets.push_back(updateTargetsMember);

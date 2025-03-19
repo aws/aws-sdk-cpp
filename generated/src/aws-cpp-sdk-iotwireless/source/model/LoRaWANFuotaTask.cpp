@@ -18,14 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-LoRaWANFuotaTask::LoRaWANFuotaTask() : 
-    m_rfRegion(SupportedRfRegion::NOT_SET),
-    m_rfRegionHasBeenSet(false)
-{
-}
-
 LoRaWANFuotaTask::LoRaWANFuotaTask(JsonView jsonValue)
-  : LoRaWANFuotaTask()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ LoRaWANFuotaTask& LoRaWANFuotaTask::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RfRegion"))
   {
     m_rfRegion = SupportedRfRegionMapper::GetSupportedRfRegionForName(jsonValue.GetString("RfRegion"));
-
     m_rfRegionHasBeenSet = true;
   }
-
   return *this;
 }
 

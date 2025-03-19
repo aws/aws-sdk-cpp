@@ -20,16 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-MatchObjectAge::MatchObjectAge() : 
-    m_daysGreaterThan(0),
-    m_daysGreaterThanHasBeenSet(false),
-    m_daysLessThan(0),
-    m_daysLessThanHasBeenSet(false)
-{
-}
-
 MatchObjectAge::MatchObjectAge(const XmlNode& xmlNode)
-  : MatchObjectAge()
 {
   *this = xmlNode;
 }

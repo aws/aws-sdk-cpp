@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListIngestionDestinationsRequest::ListIngestionDestinationsRequest() : 
-    m_appBundleIdentifierHasBeenSet(false),
-    m_ingestionIdentifierHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListIngestionDestinationsRequest::SerializePayload() const
 {
   return {};

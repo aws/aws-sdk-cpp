@@ -18,13 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-SensitivityInspectionTemplateExcludes::SensitivityInspectionTemplateExcludes() : 
-    m_managedDataIdentifierIdsHasBeenSet(false)
-{
-}
-
 SensitivityInspectionTemplateExcludes::SensitivityInspectionTemplateExcludes(JsonView jsonValue)
-  : SensitivityInspectionTemplateExcludes()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ SensitivityInspectionTemplateExcludes& SensitivityInspectionTemplateExcludes::op
     }
     m_managedDataIdentifierIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

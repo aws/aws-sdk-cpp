@@ -33,7 +33,7 @@ namespace Model
   class VideoMonitoringSetting
   {
   public:
-    AWS_MEDIACONNECT_API VideoMonitoringSetting();
+    AWS_MEDIACONNECT_API VideoMonitoringSetting() = default;
     AWS_MEDIACONNECT_API VideoMonitoringSetting(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API VideoMonitoringSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * Detects video frames that are black.
      */
-    inline const BlackFrames& GetBlackFrames() const{ return m_blackFrames; }
+    inline const BlackFrames& GetBlackFrames() const { return m_blackFrames; }
     inline bool BlackFramesHasBeenSet() const { return m_blackFramesHasBeenSet; }
-    inline void SetBlackFrames(const BlackFrames& value) { m_blackFramesHasBeenSet = true; m_blackFrames = value; }
-    inline void SetBlackFrames(BlackFrames&& value) { m_blackFramesHasBeenSet = true; m_blackFrames = std::move(value); }
-    inline VideoMonitoringSetting& WithBlackFrames(const BlackFrames& value) { SetBlackFrames(value); return *this;}
-    inline VideoMonitoringSetting& WithBlackFrames(BlackFrames&& value) { SetBlackFrames(std::move(value)); return *this;}
+    template<typename BlackFramesT = BlackFrames>
+    void SetBlackFrames(BlackFramesT&& value) { m_blackFramesHasBeenSet = true; m_blackFrames = std::forward<BlackFramesT>(value); }
+    template<typename BlackFramesT = BlackFrames>
+    VideoMonitoringSetting& WithBlackFrames(BlackFramesT&& value) { SetBlackFrames(std::forward<BlackFramesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Detects video frames that have not changed.
      */
-    inline const FrozenFrames& GetFrozenFrames() const{ return m_frozenFrames; }
+    inline const FrozenFrames& GetFrozenFrames() const { return m_frozenFrames; }
     inline bool FrozenFramesHasBeenSet() const { return m_frozenFramesHasBeenSet; }
-    inline void SetFrozenFrames(const FrozenFrames& value) { m_frozenFramesHasBeenSet = true; m_frozenFrames = value; }
-    inline void SetFrozenFrames(FrozenFrames&& value) { m_frozenFramesHasBeenSet = true; m_frozenFrames = std::move(value); }
-    inline VideoMonitoringSetting& WithFrozenFrames(const FrozenFrames& value) { SetFrozenFrames(value); return *this;}
-    inline VideoMonitoringSetting& WithFrozenFrames(FrozenFrames&& value) { SetFrozenFrames(std::move(value)); return *this;}
+    template<typename FrozenFramesT = FrozenFrames>
+    void SetFrozenFrames(FrozenFramesT&& value) { m_frozenFramesHasBeenSet = true; m_frozenFrames = std::forward<FrozenFramesT>(value); }
+    template<typename FrozenFramesT = FrozenFrames>
+    VideoMonitoringSetting& WithFrozenFrames(FrozenFramesT&& value) { SetFrozenFrames(std::forward<FrozenFramesT>(value)); return *this;}
     ///@}
   private:
 

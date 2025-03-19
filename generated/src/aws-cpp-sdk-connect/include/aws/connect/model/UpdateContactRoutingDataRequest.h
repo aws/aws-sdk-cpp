@@ -22,7 +22,7 @@ namespace Model
   class UpdateContactRoutingDataRequest : public ConnectRequest
   {
   public:
-    AWS_CONNECT_API UpdateContactRoutingDataRequest();
+    AWS_CONNECT_API UpdateContactRoutingDataRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline UpdateContactRoutingDataRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline UpdateContactRoutingDataRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline UpdateContactRoutingDataRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    UpdateContactRoutingDataRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the contact in this instance of Amazon Connect. </p>
      */
-    inline const Aws::String& GetContactId() const{ return m_contactId; }
+    inline const Aws::String& GetContactId() const { return m_contactId; }
     inline bool ContactIdHasBeenSet() const { return m_contactIdHasBeenSet; }
-    inline void SetContactId(const Aws::String& value) { m_contactIdHasBeenSet = true; m_contactId = value; }
-    inline void SetContactId(Aws::String&& value) { m_contactIdHasBeenSet = true; m_contactId = std::move(value); }
-    inline void SetContactId(const char* value) { m_contactIdHasBeenSet = true; m_contactId.assign(value); }
-    inline UpdateContactRoutingDataRequest& WithContactId(const Aws::String& value) { SetContactId(value); return *this;}
-    inline UpdateContactRoutingDataRequest& WithContactId(Aws::String&& value) { SetContactId(std::move(value)); return *this;}
-    inline UpdateContactRoutingDataRequest& WithContactId(const char* value) { SetContactId(value); return *this;}
+    template<typename ContactIdT = Aws::String>
+    void SetContactId(ContactIdT&& value) { m_contactIdHasBeenSet = true; m_contactId = std::forward<ContactIdT>(value); }
+    template<typename ContactIdT = Aws::String>
+    UpdateContactRoutingDataRequest& WithContactId(ContactIdT&& value) { SetContactId(std::forward<ContactIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,7 +66,7 @@ namespace Model
      * that changing their amount of time in queue compared to others also changes
      * their position in queue.</p>
      */
-    inline int GetQueueTimeAdjustmentSeconds() const{ return m_queueTimeAdjustmentSeconds; }
+    inline int GetQueueTimeAdjustmentSeconds() const { return m_queueTimeAdjustmentSeconds; }
     inline bool QueueTimeAdjustmentSecondsHasBeenSet() const { return m_queueTimeAdjustmentSecondsHasBeenSet; }
     inline void SetQueueTimeAdjustmentSeconds(int value) { m_queueTimeAdjustmentSecondsHasBeenSet = true; m_queueTimeAdjustmentSeconds = value; }
     inline UpdateContactRoutingDataRequest& WithQueueTimeAdjustmentSeconds(int value) { SetQueueTimeAdjustmentSeconds(value); return *this;}
@@ -82,7 +78,7 @@ namespace Model
      * is 5. You can raise the priority of a contact compared to other contacts in the
      * queue by assigning them a higher priority, such as 1 or 2.</p>
      */
-    inline long long GetQueuePriority() const{ return m_queuePriority; }
+    inline long long GetQueuePriority() const { return m_queuePriority; }
     inline bool QueuePriorityHasBeenSet() const { return m_queuePriorityHasBeenSet; }
     inline void SetQueuePriority(long long value) { m_queuePriorityHasBeenSet = true; m_queuePriority = value; }
     inline UpdateContactRoutingDataRequest& WithQueuePriority(long long value) { SetQueuePriority(value); return *this;}
@@ -93,12 +89,12 @@ namespace Model
      * <p>Updates the routing criteria on the contact. These properties can be used to
      * change how a&#x2028; contact is routed within the queue.</p>
      */
-    inline const RoutingCriteriaInput& GetRoutingCriteria() const{ return m_routingCriteria; }
+    inline const RoutingCriteriaInput& GetRoutingCriteria() const { return m_routingCriteria; }
     inline bool RoutingCriteriaHasBeenSet() const { return m_routingCriteriaHasBeenSet; }
-    inline void SetRoutingCriteria(const RoutingCriteriaInput& value) { m_routingCriteriaHasBeenSet = true; m_routingCriteria = value; }
-    inline void SetRoutingCriteria(RoutingCriteriaInput&& value) { m_routingCriteriaHasBeenSet = true; m_routingCriteria = std::move(value); }
-    inline UpdateContactRoutingDataRequest& WithRoutingCriteria(const RoutingCriteriaInput& value) { SetRoutingCriteria(value); return *this;}
-    inline UpdateContactRoutingDataRequest& WithRoutingCriteria(RoutingCriteriaInput&& value) { SetRoutingCriteria(std::move(value)); return *this;}
+    template<typename RoutingCriteriaT = RoutingCriteriaInput>
+    void SetRoutingCriteria(RoutingCriteriaT&& value) { m_routingCriteriaHasBeenSet = true; m_routingCriteria = std::forward<RoutingCriteriaT>(value); }
+    template<typename RoutingCriteriaT = RoutingCriteriaInput>
+    UpdateContactRoutingDataRequest& WithRoutingCriteria(RoutingCriteriaT&& value) { SetRoutingCriteria(std::forward<RoutingCriteriaT>(value)); return *this;}
     ///@}
   private:
 
@@ -108,10 +104,10 @@ namespace Model
     Aws::String m_contactId;
     bool m_contactIdHasBeenSet = false;
 
-    int m_queueTimeAdjustmentSeconds;
+    int m_queueTimeAdjustmentSeconds{0};
     bool m_queueTimeAdjustmentSecondsHasBeenSet = false;
 
-    long long m_queuePriority;
+    long long m_queuePriority{0};
     bool m_queuePriorityHasBeenSet = false;
 
     RoutingCriteriaInput m_routingCriteria;

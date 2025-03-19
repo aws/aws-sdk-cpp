@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateApplicationVersionResult::CreateApplicationVersionResult() : 
-    m_resourcesSupported(false)
-{
-}
-
 CreateApplicationVersionResult::CreateApplicationVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateApplicationVersionResult()
 {
   *this = result;
 }
@@ -34,15 +28,13 @@ CreateApplicationVersionResult& CreateApplicationVersionResult::operator =(const
   if(jsonValue.ValueExists("applicationId"))
   {
     m_applicationId = jsonValue.GetString("applicationId");
-
+    m_applicationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameterDefinitions"))
   {
     Aws::Utils::Array<JsonView> parameterDefinitionsJsonList = jsonValue.GetArray("parameterDefinitions");
@@ -50,8 +42,8 @@ CreateApplicationVersionResult& CreateApplicationVersionResult::operator =(const
     {
       m_parameterDefinitions.push_back(parameterDefinitionsJsonList[parameterDefinitionsIndex].AsObject());
     }
+    m_parameterDefinitionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("requiredCapabilities"))
   {
     Aws::Utils::Array<JsonView> requiredCapabilitiesJsonList = jsonValue.GetArray("requiredCapabilities");
@@ -59,44 +51,40 @@ CreateApplicationVersionResult& CreateApplicationVersionResult::operator =(const
     {
       m_requiredCapabilities.push_back(CapabilityMapper::GetCapabilityForName(requiredCapabilitiesJsonList[requiredCapabilitiesIndex].AsString()));
     }
+    m_requiredCapabilitiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourcesSupported"))
   {
     m_resourcesSupported = jsonValue.GetBool("resourcesSupported");
-
+    m_resourcesSupportedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("semanticVersion"))
   {
     m_semanticVersion = jsonValue.GetString("semanticVersion");
-
+    m_semanticVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceCodeArchiveUrl"))
   {
     m_sourceCodeArchiveUrl = jsonValue.GetString("sourceCodeArchiveUrl");
-
+    m_sourceCodeArchiveUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceCodeUrl"))
   {
     m_sourceCodeUrl = jsonValue.GetString("sourceCodeUrl");
-
+    m_sourceCodeUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("templateUrl"))
   {
     m_templateUrl = jsonValue.GetString("templateUrl");
-
+    m_templateUrlHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

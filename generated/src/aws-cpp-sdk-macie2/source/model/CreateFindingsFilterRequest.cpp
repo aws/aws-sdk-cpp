@@ -12,20 +12,6 @@ using namespace Aws::Macie2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateFindingsFilterRequest::CreateFindingsFilterRequest() : 
-    m_action(FindingsFilterAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_descriptionHasBeenSet(false),
-    m_findingCriteriaHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_position(0),
-    m_positionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateFindingsFilterRequest::SerializePayload() const
 {
   JsonValue payload;

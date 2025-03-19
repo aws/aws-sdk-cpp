@@ -12,11 +12,6 @@ using namespace Aws::Inspector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterCrossAccountAccessRoleRequest::RegisterCrossAccountAccessRoleRequest() : 
-    m_roleArnHasBeenSet(false)
-{
-}
-
 Aws::String RegisterCrossAccountAccessRoleRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -29,7 +29,7 @@ namespace Model
   class ListQueuesResult
   {
   public:
-    AWS_MEDIACONVERT_API ListQueuesResult();
+    AWS_MEDIACONVERT_API ListQueuesResult() = default;
     AWS_MEDIACONVERT_API ListQueuesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIACONVERT_API ListQueuesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,26 +38,24 @@ namespace Model
     /**
      * Use this string to request the next batch of queues.
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListQueuesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListQueuesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListQueuesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListQueuesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * List of queues.
      */
-    inline const Aws::Vector<Queue>& GetQueues() const{ return m_queues; }
-    inline void SetQueues(const Aws::Vector<Queue>& value) { m_queues = value; }
-    inline void SetQueues(Aws::Vector<Queue>&& value) { m_queues = std::move(value); }
-    inline ListQueuesResult& WithQueues(const Aws::Vector<Queue>& value) { SetQueues(value); return *this;}
-    inline ListQueuesResult& WithQueues(Aws::Vector<Queue>&& value) { SetQueues(std::move(value)); return *this;}
-    inline ListQueuesResult& AddQueues(const Queue& value) { m_queues.push_back(value); return *this; }
-    inline ListQueuesResult& AddQueues(Queue&& value) { m_queues.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Queue>& GetQueues() const { return m_queues; }
+    template<typename QueuesT = Aws::Vector<Queue>>
+    void SetQueues(QueuesT&& value) { m_queuesHasBeenSet = true; m_queues = std::forward<QueuesT>(value); }
+    template<typename QueuesT = Aws::Vector<Queue>>
+    ListQueuesResult& WithQueues(QueuesT&& value) { SetQueues(std::forward<QueuesT>(value)); return *this;}
+    template<typename QueuesT = Queue>
+    ListQueuesResult& AddQueues(QueuesT&& value) { m_queuesHasBeenSet = true; m_queues.emplace_back(std::forward<QueuesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -65,8 +63,8 @@ namespace Model
      * The maximum number of jobs that MediaConvert can process at one time, across all
      * of your on-demand queues in the current AWS Region.
      */
-    inline int GetTotalConcurrentJobs() const{ return m_totalConcurrentJobs; }
-    inline void SetTotalConcurrentJobs(int value) { m_totalConcurrentJobs = value; }
+    inline int GetTotalConcurrentJobs() const { return m_totalConcurrentJobs; }
+    inline void SetTotalConcurrentJobs(int value) { m_totalConcurrentJobsHasBeenSet = true; m_totalConcurrentJobs = value; }
     inline ListQueuesResult& WithTotalConcurrentJobs(int value) { SetTotalConcurrentJobs(value); return *this;}
     ///@}
 
@@ -76,32 +74,35 @@ namespace Model
      * are available to allocate to a queue. You can allocate these jobs when you
      * create or update a queue.
      */
-    inline int GetUnallocatedConcurrentJobs() const{ return m_unallocatedConcurrentJobs; }
-    inline void SetUnallocatedConcurrentJobs(int value) { m_unallocatedConcurrentJobs = value; }
+    inline int GetUnallocatedConcurrentJobs() const { return m_unallocatedConcurrentJobs; }
+    inline void SetUnallocatedConcurrentJobs(int value) { m_unallocatedConcurrentJobsHasBeenSet = true; m_unallocatedConcurrentJobs = value; }
     inline ListQueuesResult& WithUnallocatedConcurrentJobs(int value) { SetUnallocatedConcurrentJobs(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListQueuesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListQueuesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListQueuesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListQueuesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<Queue> m_queues;
+    bool m_queuesHasBeenSet = false;
 
-    int m_totalConcurrentJobs;
+    int m_totalConcurrentJobs{0};
+    bool m_totalConcurrentJobsHasBeenSet = false;
 
-    int m_unallocatedConcurrentJobs;
+    int m_unallocatedConcurrentJobs{0};
+    bool m_unallocatedConcurrentJobsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

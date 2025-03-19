@@ -12,11 +12,6 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSnapshotRequest::DeleteSnapshotRequest() : 
-    m_snapshotIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSnapshotRequest::SerializePayload() const
 {
   JsonValue payload;

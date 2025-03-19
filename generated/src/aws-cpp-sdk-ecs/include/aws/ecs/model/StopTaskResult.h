@@ -28,7 +28,7 @@ namespace Model
   class StopTaskResult
   {
   public:
-    AWS_ECS_API StopTaskResult();
+    AWS_ECS_API StopTaskResult() = default;
     AWS_ECS_API StopTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ECS_API StopTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The task that was stopped.</p>
      */
-    inline const Task& GetTask() const{ return m_task; }
-    inline void SetTask(const Task& value) { m_task = value; }
-    inline void SetTask(Task&& value) { m_task = std::move(value); }
-    inline StopTaskResult& WithTask(const Task& value) { SetTask(value); return *this;}
-    inline StopTaskResult& WithTask(Task&& value) { SetTask(std::move(value)); return *this;}
+    inline const Task& GetTask() const { return m_task; }
+    template<typename TaskT = Task>
+    void SetTask(TaskT&& value) { m_taskHasBeenSet = true; m_task = std::forward<TaskT>(value); }
+    template<typename TaskT = Task>
+    StopTaskResult& WithTask(TaskT&& value) { SetTask(std::forward<TaskT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StopTaskResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StopTaskResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StopTaskResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StopTaskResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Task m_task;
+    bool m_taskHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

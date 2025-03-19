@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ModelDigests::ModelDigests() : 
-    m_artifactDigestHasBeenSet(false)
-{
-}
-
 ModelDigests::ModelDigests(JsonView jsonValue)
-  : ModelDigests()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ModelDigests& ModelDigests::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ArtifactDigest"))
   {
     m_artifactDigest = jsonValue.GetString("ArtifactDigest");
-
     m_artifactDigestHasBeenSet = true;
   }
-
   return *this;
 }
 

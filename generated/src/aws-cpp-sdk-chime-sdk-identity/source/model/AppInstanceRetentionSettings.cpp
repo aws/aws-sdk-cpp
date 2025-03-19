@@ -18,13 +18,7 @@ namespace ChimeSDKIdentity
 namespace Model
 {
 
-AppInstanceRetentionSettings::AppInstanceRetentionSettings() : 
-    m_channelRetentionSettingsHasBeenSet(false)
-{
-}
-
 AppInstanceRetentionSettings::AppInstanceRetentionSettings(JsonView jsonValue)
-  : AppInstanceRetentionSettings()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AppInstanceRetentionSettings& AppInstanceRetentionSettings::operator =(JsonView 
   if(jsonValue.ValueExists("ChannelRetentionSettings"))
   {
     m_channelRetentionSettings = jsonValue.GetObject("ChannelRetentionSettings");
-
     m_channelRetentionSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

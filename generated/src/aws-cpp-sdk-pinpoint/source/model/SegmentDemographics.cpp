@@ -18,18 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-SegmentDemographics::SegmentDemographics() : 
-    m_appVersionHasBeenSet(false),
-    m_channelHasBeenSet(false),
-    m_deviceTypeHasBeenSet(false),
-    m_makeHasBeenSet(false),
-    m_modelHasBeenSet(false),
-    m_platformHasBeenSet(false)
-{
-}
-
 SegmentDemographics::SegmentDemographics(JsonView jsonValue)
-  : SegmentDemographics()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ SegmentDemographics& SegmentDemographics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AppVersion"))
   {
     m_appVersion = jsonValue.GetObject("AppVersion");
-
     m_appVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Channel"))
   {
     m_channel = jsonValue.GetObject("Channel");
-
     m_channelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeviceType"))
   {
     m_deviceType = jsonValue.GetObject("DeviceType");
-
     m_deviceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Make"))
   {
     m_make = jsonValue.GetObject("Make");
-
     m_makeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Model"))
   {
     m_model = jsonValue.GetObject("Model");
-
     m_modelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Platform"))
   {
     m_platform = jsonValue.GetObject("Platform");
-
     m_platformHasBeenSet = true;
   }
-
   return *this;
 }
 

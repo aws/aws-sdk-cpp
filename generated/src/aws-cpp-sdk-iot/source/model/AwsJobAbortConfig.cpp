@@ -18,13 +18,7 @@ namespace IoT
 namespace Model
 {
 
-AwsJobAbortConfig::AwsJobAbortConfig() : 
-    m_abortCriteriaListHasBeenSet(false)
-{
-}
-
 AwsJobAbortConfig::AwsJobAbortConfig(JsonView jsonValue)
-  : AwsJobAbortConfig()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ AwsJobAbortConfig& AwsJobAbortConfig::operator =(JsonView jsonValue)
     }
     m_abortCriteriaListHasBeenSet = true;
   }
-
   return *this;
 }
 

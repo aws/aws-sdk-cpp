@@ -12,11 +12,6 @@ using namespace Aws::CodeGuruReviewer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeCodeReviewRequest::DescribeCodeReviewRequest() : 
-    m_codeReviewArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeCodeReviewRequest::SerializePayload() const
 {
   return {};

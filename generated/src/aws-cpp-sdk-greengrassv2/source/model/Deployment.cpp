@@ -18,22 +18,7 @@ namespace GreengrassV2
 namespace Model
 {
 
-Deployment::Deployment() : 
-    m_targetArnHasBeenSet(false),
-    m_revisionIdHasBeenSet(false),
-    m_deploymentIdHasBeenSet(false),
-    m_deploymentNameHasBeenSet(false),
-    m_creationTimestampHasBeenSet(false),
-    m_deploymentStatus(DeploymentStatus::NOT_SET),
-    m_deploymentStatusHasBeenSet(false),
-    m_isLatestForTarget(false),
-    m_isLatestForTargetHasBeenSet(false),
-    m_parentTargetArnHasBeenSet(false)
-{
-}
-
 Deployment::Deployment(JsonView jsonValue)
-  : Deployment()
 {
   *this = jsonValue;
 }
@@ -43,59 +28,43 @@ Deployment& Deployment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("targetArn"))
   {
     m_targetArn = jsonValue.GetString("targetArn");
-
     m_targetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("revisionId"))
   {
     m_revisionId = jsonValue.GetString("revisionId");
-
     m_revisionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deploymentId"))
   {
     m_deploymentId = jsonValue.GetString("deploymentId");
-
     m_deploymentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deploymentName"))
   {
     m_deploymentName = jsonValue.GetString("deploymentName");
-
     m_deploymentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTimestamp"))
   {
     m_creationTimestamp = jsonValue.GetDouble("creationTimestamp");
-
     m_creationTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deploymentStatus"))
   {
     m_deploymentStatus = DeploymentStatusMapper::GetDeploymentStatusForName(jsonValue.GetString("deploymentStatus"));
-
     m_deploymentStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isLatestForTarget"))
   {
     m_isLatestForTarget = jsonValue.GetBool("isLatestForTarget");
-
     m_isLatestForTargetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parentTargetArn"))
   {
     m_parentTargetArn = jsonValue.GetString("parentTargetArn");
-
     m_parentTargetArnHasBeenSet = true;
   }
-
   return *this;
 }
 

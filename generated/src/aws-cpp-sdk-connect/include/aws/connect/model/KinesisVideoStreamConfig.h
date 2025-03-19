@@ -33,7 +33,7 @@ namespace Model
   class KinesisVideoStreamConfig
   {
   public:
-    AWS_CONNECT_API KinesisVideoStreamConfig();
+    AWS_CONNECT_API KinesisVideoStreamConfig() = default;
     AWS_CONNECT_API KinesisVideoStreamConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API KinesisVideoStreamConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The prefix of the video stream.</p>
      */
-    inline const Aws::String& GetPrefix() const{ return m_prefix; }
+    inline const Aws::String& GetPrefix() const { return m_prefix; }
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
-    inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
-    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
-    inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
-    inline KinesisVideoStreamConfig& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-    inline KinesisVideoStreamConfig& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
-    inline KinesisVideoStreamConfig& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+    template<typename PrefixT = Aws::String>
+    void SetPrefix(PrefixT&& value) { m_prefixHasBeenSet = true; m_prefix = std::forward<PrefixT>(value); }
+    template<typename PrefixT = Aws::String>
+    KinesisVideoStreamConfig& WithPrefix(PrefixT&& value) { SetPrefix(std::forward<PrefixT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,7 +57,7 @@ namespace Model
      * retains the data in a data store that is associated with the stream.</p> <p>The
      * default value is 0, indicating that the stream does not persist data.</p>
      */
-    inline int GetRetentionPeriodHours() const{ return m_retentionPeriodHours; }
+    inline int GetRetentionPeriodHours() const { return m_retentionPeriodHours; }
     inline bool RetentionPeriodHoursHasBeenSet() const { return m_retentionPeriodHoursHasBeenSet; }
     inline void SetRetentionPeriodHours(int value) { m_retentionPeriodHoursHasBeenSet = true; m_retentionPeriodHours = value; }
     inline KinesisVideoStreamConfig& WithRetentionPeriodHours(int value) { SetRetentionPeriodHours(value); return *this;}
@@ -69,19 +67,19 @@ namespace Model
     /**
      * <p>The encryption configuration.</p>
      */
-    inline const EncryptionConfig& GetEncryptionConfig() const{ return m_encryptionConfig; }
+    inline const EncryptionConfig& GetEncryptionConfig() const { return m_encryptionConfig; }
     inline bool EncryptionConfigHasBeenSet() const { return m_encryptionConfigHasBeenSet; }
-    inline void SetEncryptionConfig(const EncryptionConfig& value) { m_encryptionConfigHasBeenSet = true; m_encryptionConfig = value; }
-    inline void SetEncryptionConfig(EncryptionConfig&& value) { m_encryptionConfigHasBeenSet = true; m_encryptionConfig = std::move(value); }
-    inline KinesisVideoStreamConfig& WithEncryptionConfig(const EncryptionConfig& value) { SetEncryptionConfig(value); return *this;}
-    inline KinesisVideoStreamConfig& WithEncryptionConfig(EncryptionConfig&& value) { SetEncryptionConfig(std::move(value)); return *this;}
+    template<typename EncryptionConfigT = EncryptionConfig>
+    void SetEncryptionConfig(EncryptionConfigT&& value) { m_encryptionConfigHasBeenSet = true; m_encryptionConfig = std::forward<EncryptionConfigT>(value); }
+    template<typename EncryptionConfigT = EncryptionConfig>
+    KinesisVideoStreamConfig& WithEncryptionConfig(EncryptionConfigT&& value) { SetEncryptionConfig(std::forward<EncryptionConfigT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_prefix;
     bool m_prefixHasBeenSet = false;
 
-    int m_retentionPeriodHours;
+    int m_retentionPeriodHours{0};
     bool m_retentionPeriodHoursHasBeenSet = false;
 
     EncryptionConfig m_encryptionConfig;

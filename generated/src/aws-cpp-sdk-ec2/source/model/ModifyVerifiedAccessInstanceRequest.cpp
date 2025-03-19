@@ -10,17 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ModifyVerifiedAccessInstanceRequest::ModifyVerifiedAccessInstanceRequest() : 
-    m_verifiedAccessInstanceIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_cidrEndpointsCustomSubDomainHasBeenSet(false)
-{
-}
-
 Aws::String ModifyVerifiedAccessInstanceRequest::SerializePayload() const
 {
   Aws::StringStream ss;

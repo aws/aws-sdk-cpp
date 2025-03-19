@@ -12,12 +12,6 @@ using namespace Aws::Lambda::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAliasRequest::GetAliasRequest() : 
-    m_functionNameHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String GetAliasRequest::SerializePayload() const
 {
   return {};

@@ -34,7 +34,7 @@ namespace Model
   class DocumentInfo
   {
   public:
-    AWS_KENDRA_API DocumentInfo();
+    AWS_KENDRA_API DocumentInfo() = default;
     AWS_KENDRA_API DocumentInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API DocumentInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The identifier of the document.</p>
      */
-    inline const Aws::String& GetDocumentId() const{ return m_documentId; }
+    inline const Aws::String& GetDocumentId() const { return m_documentId; }
     inline bool DocumentIdHasBeenSet() const { return m_documentIdHasBeenSet; }
-    inline void SetDocumentId(const Aws::String& value) { m_documentIdHasBeenSet = true; m_documentId = value; }
-    inline void SetDocumentId(Aws::String&& value) { m_documentIdHasBeenSet = true; m_documentId = std::move(value); }
-    inline void SetDocumentId(const char* value) { m_documentIdHasBeenSet = true; m_documentId.assign(value); }
-    inline DocumentInfo& WithDocumentId(const Aws::String& value) { SetDocumentId(value); return *this;}
-    inline DocumentInfo& WithDocumentId(Aws::String&& value) { SetDocumentId(std::move(value)); return *this;}
-    inline DocumentInfo& WithDocumentId(const char* value) { SetDocumentId(value); return *this;}
+    template<typename DocumentIdT = Aws::String>
+    void SetDocumentId(DocumentIdT&& value) { m_documentIdHasBeenSet = true; m_documentId = std::forward<DocumentIdT>(value); }
+    template<typename DocumentIdT = Aws::String>
+    DocumentInfo& WithDocumentId(DocumentIdT&& value) { SetDocumentId(std::forward<DocumentIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,14 +64,14 @@ namespace Model
      * <code>dataSourceId</code> and <code>jobExecutionId</code> are provided, but
      * <code>version</code> is not, the version defaults to "0".</p> </li> </ul>
      */
-    inline const Aws::Vector<DocumentAttribute>& GetAttributes() const{ return m_attributes; }
+    inline const Aws::Vector<DocumentAttribute>& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const Aws::Vector<DocumentAttribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(Aws::Vector<DocumentAttribute>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline DocumentInfo& WithAttributes(const Aws::Vector<DocumentAttribute>& value) { SetAttributes(value); return *this;}
-    inline DocumentInfo& WithAttributes(Aws::Vector<DocumentAttribute>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline DocumentInfo& AddAttributes(const DocumentAttribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
-    inline DocumentInfo& AddAttributes(DocumentAttribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
+    template<typename AttributesT = Aws::Vector<DocumentAttribute>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Vector<DocumentAttribute>>
+    DocumentInfo& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    template<typename AttributesT = DocumentAttribute>
+    DocumentInfo& AddAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes.emplace_back(std::forward<AttributesT>(value)); return *this; }
     ///@}
   private:
 

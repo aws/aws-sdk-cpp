@@ -33,7 +33,7 @@ namespace Model
   class DataClassificationDetails
   {
   public:
-    AWS_SECURITYHUB_API DataClassificationDetails();
+    AWS_SECURITYHUB_API DataClassificationDetails() = default;
     AWS_SECURITYHUB_API DataClassificationDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API DataClassificationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,24 @@ namespace Model
     /**
      * <p>The path to the folder or file that contains the sensitive data.</p>
      */
-    inline const Aws::String& GetDetailedResultsLocation() const{ return m_detailedResultsLocation; }
+    inline const Aws::String& GetDetailedResultsLocation() const { return m_detailedResultsLocation; }
     inline bool DetailedResultsLocationHasBeenSet() const { return m_detailedResultsLocationHasBeenSet; }
-    inline void SetDetailedResultsLocation(const Aws::String& value) { m_detailedResultsLocationHasBeenSet = true; m_detailedResultsLocation = value; }
-    inline void SetDetailedResultsLocation(Aws::String&& value) { m_detailedResultsLocationHasBeenSet = true; m_detailedResultsLocation = std::move(value); }
-    inline void SetDetailedResultsLocation(const char* value) { m_detailedResultsLocationHasBeenSet = true; m_detailedResultsLocation.assign(value); }
-    inline DataClassificationDetails& WithDetailedResultsLocation(const Aws::String& value) { SetDetailedResultsLocation(value); return *this;}
-    inline DataClassificationDetails& WithDetailedResultsLocation(Aws::String&& value) { SetDetailedResultsLocation(std::move(value)); return *this;}
-    inline DataClassificationDetails& WithDetailedResultsLocation(const char* value) { SetDetailedResultsLocation(value); return *this;}
+    template<typename DetailedResultsLocationT = Aws::String>
+    void SetDetailedResultsLocation(DetailedResultsLocationT&& value) { m_detailedResultsLocationHasBeenSet = true; m_detailedResultsLocation = std::forward<DetailedResultsLocationT>(value); }
+    template<typename DetailedResultsLocationT = Aws::String>
+    DataClassificationDetails& WithDetailedResultsLocation(DetailedResultsLocationT&& value) { SetDetailedResultsLocation(std::forward<DetailedResultsLocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The details about the sensitive data that was detected on the resource.</p>
      */
-    inline const ClassificationResult& GetResult() const{ return m_result; }
+    inline const ClassificationResult& GetResult() const { return m_result; }
     inline bool ResultHasBeenSet() const { return m_resultHasBeenSet; }
-    inline void SetResult(const ClassificationResult& value) { m_resultHasBeenSet = true; m_result = value; }
-    inline void SetResult(ClassificationResult&& value) { m_resultHasBeenSet = true; m_result = std::move(value); }
-    inline DataClassificationDetails& WithResult(const ClassificationResult& value) { SetResult(value); return *this;}
-    inline DataClassificationDetails& WithResult(ClassificationResult&& value) { SetResult(std::move(value)); return *this;}
+    template<typename ResultT = ClassificationResult>
+    void SetResult(ResultT&& value) { m_resultHasBeenSet = true; m_result = std::forward<ResultT>(value); }
+    template<typename ResultT = ClassificationResult>
+    DataClassificationDetails& WithResult(ResultT&& value) { SetResult(std::forward<ResultT>(value)); return *this;}
     ///@}
   private:
 

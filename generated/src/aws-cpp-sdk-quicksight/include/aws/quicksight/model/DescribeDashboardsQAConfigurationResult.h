@@ -28,7 +28,7 @@ namespace Model
   class DescribeDashboardsQAConfigurationResult
   {
   public:
-    AWS_QUICKSIGHT_API DescribeDashboardsQAConfigurationResult();
+    AWS_QUICKSIGHT_API DescribeDashboardsQAConfigurationResult() = default;
     AWS_QUICKSIGHT_API DescribeDashboardsQAConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QUICKSIGHT_API DescribeDashboardsQAConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,39 +37,38 @@ namespace Model
     /**
      * <p>The status of dashboards QA configuration that you want described.</p>
      */
-    inline const DashboardsQAStatus& GetDashboardsQAStatus() const{ return m_dashboardsQAStatus; }
-    inline void SetDashboardsQAStatus(const DashboardsQAStatus& value) { m_dashboardsQAStatus = value; }
-    inline void SetDashboardsQAStatus(DashboardsQAStatus&& value) { m_dashboardsQAStatus = std::move(value); }
-    inline DescribeDashboardsQAConfigurationResult& WithDashboardsQAStatus(const DashboardsQAStatus& value) { SetDashboardsQAStatus(value); return *this;}
-    inline DescribeDashboardsQAConfigurationResult& WithDashboardsQAStatus(DashboardsQAStatus&& value) { SetDashboardsQAStatus(std::move(value)); return *this;}
+    inline DashboardsQAStatus GetDashboardsQAStatus() const { return m_dashboardsQAStatus; }
+    inline void SetDashboardsQAStatus(DashboardsQAStatus value) { m_dashboardsQAStatusHasBeenSet = true; m_dashboardsQAStatus = value; }
+    inline DescribeDashboardsQAConfigurationResult& WithDashboardsQAStatus(DashboardsQAStatus value) { SetDashboardsQAStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeDashboardsQAConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeDashboardsQAConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeDashboardsQAConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeDashboardsQAConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The HTTP status of the request.</p>
      */
-    inline int GetStatus() const{ return m_status; }
-    inline void SetStatus(int value) { m_status = value; }
+    inline int GetStatus() const { return m_status; }
+    inline void SetStatus(int value) { m_statusHasBeenSet = true; m_status = value; }
     inline DescribeDashboardsQAConfigurationResult& WithStatus(int value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    DashboardsQAStatus m_dashboardsQAStatus;
+    DashboardsQAStatus m_dashboardsQAStatus{DashboardsQAStatus::NOT_SET};
+    bool m_dashboardsQAStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
 
-    int m_status;
+    int m_status{0};
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

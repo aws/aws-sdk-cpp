@@ -18,14 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-FlowCondition::FlowCondition() : 
-    m_expressionHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 FlowCondition::FlowCondition(JsonView jsonValue)
-  : FlowCondition()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ FlowCondition& FlowCondition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("expression"))
   {
     m_expression = jsonValue.GetString("expression");
-
     m_expressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

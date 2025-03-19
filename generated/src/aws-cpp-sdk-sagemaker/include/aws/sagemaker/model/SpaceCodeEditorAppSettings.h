@@ -33,7 +33,7 @@ namespace Model
   class SpaceCodeEditorAppSettings
   {
   public:
-    AWS_SAGEMAKER_API SpaceCodeEditorAppSettings();
+    AWS_SAGEMAKER_API SpaceCodeEditorAppSettings() = default;
     AWS_SAGEMAKER_API SpaceCodeEditorAppSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API SpaceCodeEditorAppSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
 
     ///@{
     
-    inline const ResourceSpec& GetDefaultResourceSpec() const{ return m_defaultResourceSpec; }
+    inline const ResourceSpec& GetDefaultResourceSpec() const { return m_defaultResourceSpec; }
     inline bool DefaultResourceSpecHasBeenSet() const { return m_defaultResourceSpecHasBeenSet; }
-    inline void SetDefaultResourceSpec(const ResourceSpec& value) { m_defaultResourceSpecHasBeenSet = true; m_defaultResourceSpec = value; }
-    inline void SetDefaultResourceSpec(ResourceSpec&& value) { m_defaultResourceSpecHasBeenSet = true; m_defaultResourceSpec = std::move(value); }
-    inline SpaceCodeEditorAppSettings& WithDefaultResourceSpec(const ResourceSpec& value) { SetDefaultResourceSpec(value); return *this;}
-    inline SpaceCodeEditorAppSettings& WithDefaultResourceSpec(ResourceSpec&& value) { SetDefaultResourceSpec(std::move(value)); return *this;}
+    template<typename DefaultResourceSpecT = ResourceSpec>
+    void SetDefaultResourceSpec(DefaultResourceSpecT&& value) { m_defaultResourceSpecHasBeenSet = true; m_defaultResourceSpec = std::forward<DefaultResourceSpecT>(value); }
+    template<typename DefaultResourceSpecT = ResourceSpec>
+    SpaceCodeEditorAppSettings& WithDefaultResourceSpec(DefaultResourceSpecT&& value) { SetDefaultResourceSpec(std::forward<DefaultResourceSpecT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,12 +54,12 @@ namespace Model
      * <p>Settings that are used to configure and manage the lifecycle of CodeEditor
      * applications in a space.</p>
      */
-    inline const SpaceAppLifecycleManagement& GetAppLifecycleManagement() const{ return m_appLifecycleManagement; }
+    inline const SpaceAppLifecycleManagement& GetAppLifecycleManagement() const { return m_appLifecycleManagement; }
     inline bool AppLifecycleManagementHasBeenSet() const { return m_appLifecycleManagementHasBeenSet; }
-    inline void SetAppLifecycleManagement(const SpaceAppLifecycleManagement& value) { m_appLifecycleManagementHasBeenSet = true; m_appLifecycleManagement = value; }
-    inline void SetAppLifecycleManagement(SpaceAppLifecycleManagement&& value) { m_appLifecycleManagementHasBeenSet = true; m_appLifecycleManagement = std::move(value); }
-    inline SpaceCodeEditorAppSettings& WithAppLifecycleManagement(const SpaceAppLifecycleManagement& value) { SetAppLifecycleManagement(value); return *this;}
-    inline SpaceCodeEditorAppSettings& WithAppLifecycleManagement(SpaceAppLifecycleManagement&& value) { SetAppLifecycleManagement(std::move(value)); return *this;}
+    template<typename AppLifecycleManagementT = SpaceAppLifecycleManagement>
+    void SetAppLifecycleManagement(AppLifecycleManagementT&& value) { m_appLifecycleManagementHasBeenSet = true; m_appLifecycleManagement = std::forward<AppLifecycleManagementT>(value); }
+    template<typename AppLifecycleManagementT = SpaceAppLifecycleManagement>
+    SpaceCodeEditorAppSettings& WithAppLifecycleManagement(AppLifecycleManagementT&& value) { SetAppLifecycleManagement(std::forward<AppLifecycleManagementT>(value)); return *this;}
     ///@}
   private:
 

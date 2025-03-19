@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-OptimizationVpcConfig::OptimizationVpcConfig() : 
-    m_securityGroupIdsHasBeenSet(false),
-    m_subnetsHasBeenSet(false)
-{
-}
-
 OptimizationVpcConfig::OptimizationVpcConfig(JsonView jsonValue)
-  : OptimizationVpcConfig()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ OptimizationVpcConfig& OptimizationVpcConfig::operator =(JsonView jsonValue)
     }
     m_securityGroupIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Subnets"))
   {
     Aws::Utils::Array<JsonView> subnetsJsonList = jsonValue.GetArray("Subnets");
@@ -51,7 +43,6 @@ OptimizationVpcConfig& OptimizationVpcConfig::operator =(JsonView jsonValue)
     }
     m_subnetsHasBeenSet = true;
   }
-
   return *this;
 }
 

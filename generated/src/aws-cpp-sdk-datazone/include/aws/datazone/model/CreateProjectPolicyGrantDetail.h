@@ -29,7 +29,7 @@ namespace Model
   class CreateProjectPolicyGrantDetail
   {
   public:
-    AWS_DATAZONE_API CreateProjectPolicyGrantDetail();
+    AWS_DATAZONE_API CreateProjectPolicyGrantDetail() = default;
     AWS_DATAZONE_API CreateProjectPolicyGrantDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API CreateProjectPolicyGrantDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,14 +39,14 @@ namespace Model
     /**
      * <p>Specifies whether the policy grant is applied to child domain units.</p>
      */
-    inline bool GetIncludeChildDomainUnits() const{ return m_includeChildDomainUnits; }
+    inline bool GetIncludeChildDomainUnits() const { return m_includeChildDomainUnits; }
     inline bool IncludeChildDomainUnitsHasBeenSet() const { return m_includeChildDomainUnitsHasBeenSet; }
     inline void SetIncludeChildDomainUnits(bool value) { m_includeChildDomainUnitsHasBeenSet = true; m_includeChildDomainUnits = value; }
     inline CreateProjectPolicyGrantDetail& WithIncludeChildDomainUnits(bool value) { SetIncludeChildDomainUnits(value); return *this;}
     ///@}
   private:
 
-    bool m_includeChildDomainUnits;
+    bool m_includeChildDomainUnits{false};
     bool m_includeChildDomainUnitsHasBeenSet = false;
   };
 

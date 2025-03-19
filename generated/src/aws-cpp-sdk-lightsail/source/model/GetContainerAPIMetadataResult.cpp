@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetContainerAPIMetadataResult::GetContainerAPIMetadataResult()
-{
-}
-
 GetContainerAPIMetadataResult::GetContainerAPIMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -42,14 +38,15 @@ GetContainerAPIMetadataResult& GetContainerAPIMetadataResult::operator =(const A
       }
       m_metadata.push_back(std::move(containerServiceMetadataEntryMap));
     }
+    m_metadataHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

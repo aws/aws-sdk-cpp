@@ -30,7 +30,7 @@ namespace Model
   class SystemsManagerAgent
   {
   public:
-    AWS_IMAGEBUILDER_API SystemsManagerAgent();
+    AWS_IMAGEBUILDER_API SystemsManagerAgent() = default;
     AWS_IMAGEBUILDER_API SystemsManagerAgent(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API SystemsManagerAgent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
      * removed from the final image. If it's set to false, then the agent is left in,
      * so that it is included in the new AMI. The default value is false.</p>
      */
-    inline bool GetUninstallAfterBuild() const{ return m_uninstallAfterBuild; }
+    inline bool GetUninstallAfterBuild() const { return m_uninstallAfterBuild; }
     inline bool UninstallAfterBuildHasBeenSet() const { return m_uninstallAfterBuildHasBeenSet; }
     inline void SetUninstallAfterBuild(bool value) { m_uninstallAfterBuildHasBeenSet = true; m_uninstallAfterBuild = value; }
     inline SystemsManagerAgent& WithUninstallAfterBuild(bool value) { SetUninstallAfterBuild(value); return *this;}
     ///@}
   private:
 
-    bool m_uninstallAfterBuild;
+    bool m_uninstallAfterBuild{false};
     bool m_uninstallAfterBuildHasBeenSet = false;
   };
 

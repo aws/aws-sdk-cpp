@@ -18,14 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-Member::Member() : 
-    m_groupIdentifierHasBeenSet(false),
-    m_userIdentifierHasBeenSet(false)
-{
-}
-
 Member::Member(JsonView jsonValue)
-  : Member()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Member& Member::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("groupIdentifier"))
   {
     m_groupIdentifier = jsonValue.GetString("groupIdentifier");
-
     m_groupIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userIdentifier"))
   {
     m_userIdentifier = jsonValue.GetString("userIdentifier");
-
     m_userIdentifierHasBeenSet = true;
   }
-
   return *this;
 }
 

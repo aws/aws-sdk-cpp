@@ -41,7 +41,7 @@ namespace Model
   class VirtualCluster
   {
   public:
-    AWS_EMRCONTAINERS_API VirtualCluster();
+    AWS_EMRCONTAINERS_API VirtualCluster() = default;
     AWS_EMRCONTAINERS_API VirtualCluster(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRCONTAINERS_API VirtualCluster& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRCONTAINERS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,111 +51,98 @@ namespace Model
     /**
      * <p>The ID of the virtual cluster.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline VirtualCluster& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline VirtualCluster& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline VirtualCluster& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    VirtualCluster& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the virtual cluster.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline VirtualCluster& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline VirtualCluster& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline VirtualCluster& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    VirtualCluster& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the virtual cluster.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline VirtualCluster& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline VirtualCluster& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline VirtualCluster& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    VirtualCluster& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of the virtual cluster.</p>
      */
-    inline const VirtualClusterState& GetState() const{ return m_state; }
+    inline VirtualClusterState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const VirtualClusterState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(VirtualClusterState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline VirtualCluster& WithState(const VirtualClusterState& value) { SetState(value); return *this;}
-    inline VirtualCluster& WithState(VirtualClusterState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(VirtualClusterState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline VirtualCluster& WithState(VirtualClusterState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The container provider of the virtual cluster.</p>
      */
-    inline const ContainerProvider& GetContainerProvider() const{ return m_containerProvider; }
+    inline const ContainerProvider& GetContainerProvider() const { return m_containerProvider; }
     inline bool ContainerProviderHasBeenSet() const { return m_containerProviderHasBeenSet; }
-    inline void SetContainerProvider(const ContainerProvider& value) { m_containerProviderHasBeenSet = true; m_containerProvider = value; }
-    inline void SetContainerProvider(ContainerProvider&& value) { m_containerProviderHasBeenSet = true; m_containerProvider = std::move(value); }
-    inline VirtualCluster& WithContainerProvider(const ContainerProvider& value) { SetContainerProvider(value); return *this;}
-    inline VirtualCluster& WithContainerProvider(ContainerProvider&& value) { SetContainerProvider(std::move(value)); return *this;}
+    template<typename ContainerProviderT = ContainerProvider>
+    void SetContainerProvider(ContainerProviderT&& value) { m_containerProviderHasBeenSet = true; m_containerProvider = std::forward<ContainerProviderT>(value); }
+    template<typename ContainerProviderT = ContainerProvider>
+    VirtualCluster& WithContainerProvider(ContainerProviderT&& value) { SetContainerProvider(std::forward<ContainerProviderT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time when the virtual cluster is created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline VirtualCluster& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline VirtualCluster& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    VirtualCluster& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The assigned tags of the virtual cluster.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline VirtualCluster& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline VirtualCluster& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline VirtualCluster& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline VirtualCluster& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline VirtualCluster& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline VirtualCluster& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline VirtualCluster& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline VirtualCluster& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline VirtualCluster& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    VirtualCluster& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    VirtualCluster& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The ID of the security configuration.</p>
      */
-    inline const Aws::String& GetSecurityConfigurationId() const{ return m_securityConfigurationId; }
+    inline const Aws::String& GetSecurityConfigurationId() const { return m_securityConfigurationId; }
     inline bool SecurityConfigurationIdHasBeenSet() const { return m_securityConfigurationIdHasBeenSet; }
-    inline void SetSecurityConfigurationId(const Aws::String& value) { m_securityConfigurationIdHasBeenSet = true; m_securityConfigurationId = value; }
-    inline void SetSecurityConfigurationId(Aws::String&& value) { m_securityConfigurationIdHasBeenSet = true; m_securityConfigurationId = std::move(value); }
-    inline void SetSecurityConfigurationId(const char* value) { m_securityConfigurationIdHasBeenSet = true; m_securityConfigurationId.assign(value); }
-    inline VirtualCluster& WithSecurityConfigurationId(const Aws::String& value) { SetSecurityConfigurationId(value); return *this;}
-    inline VirtualCluster& WithSecurityConfigurationId(Aws::String&& value) { SetSecurityConfigurationId(std::move(value)); return *this;}
-    inline VirtualCluster& WithSecurityConfigurationId(const char* value) { SetSecurityConfigurationId(value); return *this;}
+    template<typename SecurityConfigurationIdT = Aws::String>
+    void SetSecurityConfigurationId(SecurityConfigurationIdT&& value) { m_securityConfigurationIdHasBeenSet = true; m_securityConfigurationId = std::forward<SecurityConfigurationIdT>(value); }
+    template<typename SecurityConfigurationIdT = Aws::String>
+    VirtualCluster& WithSecurityConfigurationId(SecurityConfigurationIdT&& value) { SetSecurityConfigurationId(std::forward<SecurityConfigurationIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -168,13 +155,13 @@ namespace Model
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    VirtualClusterState m_state;
+    VirtualClusterState m_state{VirtualClusterState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     ContainerProvider m_containerProvider;
     bool m_containerProviderHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;

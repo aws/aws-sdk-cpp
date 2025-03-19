@@ -12,11 +12,6 @@ using namespace Aws::Inspector2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisableDelegatedAdminAccountRequest::DisableDelegatedAdminAccountRequest() : 
-    m_delegatedAdminAccountIdHasBeenSet(false)
-{
-}
-
 Aws::String DisableDelegatedAdminAccountRequest::SerializePayload() const
 {
   JsonValue payload;

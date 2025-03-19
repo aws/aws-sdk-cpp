@@ -18,14 +18,7 @@ namespace Transfer
 namespace Model
 {
 
-SftpConnectorConfig::SftpConnectorConfig() : 
-    m_userSecretIdHasBeenSet(false),
-    m_trustedHostKeysHasBeenSet(false)
-{
-}
-
 SftpConnectorConfig::SftpConnectorConfig(JsonView jsonValue)
-  : SftpConnectorConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SftpConnectorConfig& SftpConnectorConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("UserSecretId"))
   {
     m_userSecretId = jsonValue.GetString("UserSecretId");
-
     m_userSecretIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrustedHostKeys"))
   {
     Aws::Utils::Array<JsonView> trustedHostKeysJsonList = jsonValue.GetArray("TrustedHostKeys");
@@ -48,7 +39,6 @@ SftpConnectorConfig& SftpConnectorConfig::operator =(JsonView jsonValue)
     }
     m_trustedHostKeysHasBeenSet = true;
   }
-
   return *this;
 }
 

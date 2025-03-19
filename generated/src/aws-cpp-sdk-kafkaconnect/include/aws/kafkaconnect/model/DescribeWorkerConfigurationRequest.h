@@ -21,7 +21,7 @@ namespace Model
   class DescribeWorkerConfigurationRequest : public KafkaConnectRequest
   {
   public:
-    AWS_KAFKACONNECT_API DescribeWorkerConfigurationRequest();
+    AWS_KAFKACONNECT_API DescribeWorkerConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the worker configuration that you want to
      * get information about.</p>
      */
-    inline const Aws::String& GetWorkerConfigurationArn() const{ return m_workerConfigurationArn; }
+    inline const Aws::String& GetWorkerConfigurationArn() const { return m_workerConfigurationArn; }
     inline bool WorkerConfigurationArnHasBeenSet() const { return m_workerConfigurationArnHasBeenSet; }
-    inline void SetWorkerConfigurationArn(const Aws::String& value) { m_workerConfigurationArnHasBeenSet = true; m_workerConfigurationArn = value; }
-    inline void SetWorkerConfigurationArn(Aws::String&& value) { m_workerConfigurationArnHasBeenSet = true; m_workerConfigurationArn = std::move(value); }
-    inline void SetWorkerConfigurationArn(const char* value) { m_workerConfigurationArnHasBeenSet = true; m_workerConfigurationArn.assign(value); }
-    inline DescribeWorkerConfigurationRequest& WithWorkerConfigurationArn(const Aws::String& value) { SetWorkerConfigurationArn(value); return *this;}
-    inline DescribeWorkerConfigurationRequest& WithWorkerConfigurationArn(Aws::String&& value) { SetWorkerConfigurationArn(std::move(value)); return *this;}
-    inline DescribeWorkerConfigurationRequest& WithWorkerConfigurationArn(const char* value) { SetWorkerConfigurationArn(value); return *this;}
+    template<typename WorkerConfigurationArnT = Aws::String>
+    void SetWorkerConfigurationArn(WorkerConfigurationArnT&& value) { m_workerConfigurationArnHasBeenSet = true; m_workerConfigurationArn = std::forward<WorkerConfigurationArnT>(value); }
+    template<typename WorkerConfigurationArnT = Aws::String>
+    DescribeWorkerConfigurationRequest& WithWorkerConfigurationArn(WorkerConfigurationArnT&& value) { SetWorkerConfigurationArn(std::forward<WorkerConfigurationArnT>(value)); return *this;}
     ///@}
   private:
 

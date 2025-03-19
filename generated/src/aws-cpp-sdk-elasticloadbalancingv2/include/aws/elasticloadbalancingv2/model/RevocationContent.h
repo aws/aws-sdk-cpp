@@ -32,7 +32,7 @@ namespace Model
   class RevocationContent
   {
   public:
-    AWS_ELASTICLOADBALANCINGV2_API RevocationContent();
+    AWS_ELASTICLOADBALANCINGV2_API RevocationContent() = default;
     AWS_ELASTICLOADBALANCINGV2_API RevocationContent(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICLOADBALANCINGV2_API RevocationContent& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,54 +44,46 @@ namespace Model
     /**
      * <p>The Amazon S3 bucket for the revocation file.</p>
      */
-    inline const Aws::String& GetS3Bucket() const{ return m_s3Bucket; }
+    inline const Aws::String& GetS3Bucket() const { return m_s3Bucket; }
     inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
-    inline void SetS3Bucket(const Aws::String& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
-    inline void SetS3Bucket(Aws::String&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::move(value); }
-    inline void SetS3Bucket(const char* value) { m_s3BucketHasBeenSet = true; m_s3Bucket.assign(value); }
-    inline RevocationContent& WithS3Bucket(const Aws::String& value) { SetS3Bucket(value); return *this;}
-    inline RevocationContent& WithS3Bucket(Aws::String&& value) { SetS3Bucket(std::move(value)); return *this;}
-    inline RevocationContent& WithS3Bucket(const char* value) { SetS3Bucket(value); return *this;}
+    template<typename S3BucketT = Aws::String>
+    void SetS3Bucket(S3BucketT&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::forward<S3BucketT>(value); }
+    template<typename S3BucketT = Aws::String>
+    RevocationContent& WithS3Bucket(S3BucketT&& value) { SetS3Bucket(std::forward<S3BucketT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon S3 path for the revocation file.</p>
      */
-    inline const Aws::String& GetS3Key() const{ return m_s3Key; }
+    inline const Aws::String& GetS3Key() const { return m_s3Key; }
     inline bool S3KeyHasBeenSet() const { return m_s3KeyHasBeenSet; }
-    inline void SetS3Key(const Aws::String& value) { m_s3KeyHasBeenSet = true; m_s3Key = value; }
-    inline void SetS3Key(Aws::String&& value) { m_s3KeyHasBeenSet = true; m_s3Key = std::move(value); }
-    inline void SetS3Key(const char* value) { m_s3KeyHasBeenSet = true; m_s3Key.assign(value); }
-    inline RevocationContent& WithS3Key(const Aws::String& value) { SetS3Key(value); return *this;}
-    inline RevocationContent& WithS3Key(Aws::String&& value) { SetS3Key(std::move(value)); return *this;}
-    inline RevocationContent& WithS3Key(const char* value) { SetS3Key(value); return *this;}
+    template<typename S3KeyT = Aws::String>
+    void SetS3Key(S3KeyT&& value) { m_s3KeyHasBeenSet = true; m_s3Key = std::forward<S3KeyT>(value); }
+    template<typename S3KeyT = Aws::String>
+    RevocationContent& WithS3Key(S3KeyT&& value) { SetS3Key(std::forward<S3KeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon S3 object version of the revocation file.</p>
      */
-    inline const Aws::String& GetS3ObjectVersion() const{ return m_s3ObjectVersion; }
+    inline const Aws::String& GetS3ObjectVersion() const { return m_s3ObjectVersion; }
     inline bool S3ObjectVersionHasBeenSet() const { return m_s3ObjectVersionHasBeenSet; }
-    inline void SetS3ObjectVersion(const Aws::String& value) { m_s3ObjectVersionHasBeenSet = true; m_s3ObjectVersion = value; }
-    inline void SetS3ObjectVersion(Aws::String&& value) { m_s3ObjectVersionHasBeenSet = true; m_s3ObjectVersion = std::move(value); }
-    inline void SetS3ObjectVersion(const char* value) { m_s3ObjectVersionHasBeenSet = true; m_s3ObjectVersion.assign(value); }
-    inline RevocationContent& WithS3ObjectVersion(const Aws::String& value) { SetS3ObjectVersion(value); return *this;}
-    inline RevocationContent& WithS3ObjectVersion(Aws::String&& value) { SetS3ObjectVersion(std::move(value)); return *this;}
-    inline RevocationContent& WithS3ObjectVersion(const char* value) { SetS3ObjectVersion(value); return *this;}
+    template<typename S3ObjectVersionT = Aws::String>
+    void SetS3ObjectVersion(S3ObjectVersionT&& value) { m_s3ObjectVersionHasBeenSet = true; m_s3ObjectVersion = std::forward<S3ObjectVersionT>(value); }
+    template<typename S3ObjectVersionT = Aws::String>
+    RevocationContent& WithS3ObjectVersion(S3ObjectVersionT&& value) { SetS3ObjectVersion(std::forward<S3ObjectVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of revocation file.</p>
      */
-    inline const RevocationType& GetRevocationType() const{ return m_revocationType; }
+    inline RevocationType GetRevocationType() const { return m_revocationType; }
     inline bool RevocationTypeHasBeenSet() const { return m_revocationTypeHasBeenSet; }
-    inline void SetRevocationType(const RevocationType& value) { m_revocationTypeHasBeenSet = true; m_revocationType = value; }
-    inline void SetRevocationType(RevocationType&& value) { m_revocationTypeHasBeenSet = true; m_revocationType = std::move(value); }
-    inline RevocationContent& WithRevocationType(const RevocationType& value) { SetRevocationType(value); return *this;}
-    inline RevocationContent& WithRevocationType(RevocationType&& value) { SetRevocationType(std::move(value)); return *this;}
+    inline void SetRevocationType(RevocationType value) { m_revocationTypeHasBeenSet = true; m_revocationType = value; }
+    inline RevocationContent& WithRevocationType(RevocationType value) { SetRevocationType(value); return *this;}
     ///@}
   private:
 
@@ -104,7 +96,7 @@ namespace Model
     Aws::String m_s3ObjectVersion;
     bool m_s3ObjectVersionHasBeenSet = false;
 
-    RevocationType m_revocationType;
+    RevocationType m_revocationType{RevocationType::NOT_SET};
     bool m_revocationTypeHasBeenSet = false;
   };
 

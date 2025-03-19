@@ -12,11 +12,6 @@ using namespace Aws::DataPipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeletePipelineRequest::DeletePipelineRequest() : 
-    m_pipelineIdHasBeenSet(false)
-{
-}
-
 Aws::String DeletePipelineRequest::SerializePayload() const
 {
   JsonValue payload;

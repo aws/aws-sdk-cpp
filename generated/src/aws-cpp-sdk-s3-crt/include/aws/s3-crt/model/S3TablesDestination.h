@@ -34,7 +34,7 @@ namespace Model
   class S3TablesDestination
   {
   public:
-    AWS_S3CRT_API S3TablesDestination();
+    AWS_S3CRT_API S3TablesDestination() = default;
     AWS_S3CRT_API S3TablesDestination(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CRT_API S3TablesDestination& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,14 +48,12 @@ namespace Model
      * must be in the same Region and Amazon Web Services account as the general
      * purpose bucket. </p>
      */
-    inline const Aws::String& GetTableBucketArn() const{ return m_tableBucketArn; }
+    inline const Aws::String& GetTableBucketArn() const { return m_tableBucketArn; }
     inline bool TableBucketArnHasBeenSet() const { return m_tableBucketArnHasBeenSet; }
-    inline void SetTableBucketArn(const Aws::String& value) { m_tableBucketArnHasBeenSet = true; m_tableBucketArn = value; }
-    inline void SetTableBucketArn(Aws::String&& value) { m_tableBucketArnHasBeenSet = true; m_tableBucketArn = std::move(value); }
-    inline void SetTableBucketArn(const char* value) { m_tableBucketArnHasBeenSet = true; m_tableBucketArn.assign(value); }
-    inline S3TablesDestination& WithTableBucketArn(const Aws::String& value) { SetTableBucketArn(value); return *this;}
-    inline S3TablesDestination& WithTableBucketArn(Aws::String&& value) { SetTableBucketArn(std::move(value)); return *this;}
-    inline S3TablesDestination& WithTableBucketArn(const char* value) { SetTableBucketArn(value); return *this;}
+    template<typename TableBucketArnT = Aws::String>
+    void SetTableBucketArn(TableBucketArnT&& value) { m_tableBucketArnHasBeenSet = true; m_tableBucketArn = std::forward<TableBucketArnT>(value); }
+    template<typename TableBucketArnT = Aws::String>
+    S3TablesDestination& WithTableBucketArn(TableBucketArnT&& value) { SetTableBucketArn(std::forward<TableBucketArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * specified metadata table name must be unique within the
      * <code>aws_s3_metadata</code> namespace in the destination table bucket. </p>
      */
-    inline const Aws::String& GetTableName() const{ return m_tableName; }
+    inline const Aws::String& GetTableName() const { return m_tableName; }
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
-    inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
-    inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
-    inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
-    inline S3TablesDestination& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-    inline S3TablesDestination& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-    inline S3TablesDestination& WithTableName(const char* value) { SetTableName(value); return *this;}
+    template<typename TableNameT = Aws::String>
+    void SetTableName(TableNameT&& value) { m_tableNameHasBeenSet = true; m_tableName = std::forward<TableNameT>(value); }
+    template<typename TableNameT = Aws::String>
+    S3TablesDestination& WithTableName(TableNameT&& value) { SetTableName(std::forward<TableNameT>(value)); return *this;}
     ///@}
   private:
 

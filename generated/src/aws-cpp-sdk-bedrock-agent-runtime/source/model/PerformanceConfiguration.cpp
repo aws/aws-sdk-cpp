@@ -18,14 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-PerformanceConfiguration::PerformanceConfiguration() : 
-    m_latency(PerformanceConfigLatency::NOT_SET),
-    m_latencyHasBeenSet(false)
-{
-}
-
 PerformanceConfiguration::PerformanceConfiguration(JsonView jsonValue)
-  : PerformanceConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ PerformanceConfiguration& PerformanceConfiguration::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("latency"))
   {
     m_latency = PerformanceConfigLatencyMapper::GetPerformanceConfigLatencyForName(jsonValue.GetString("latency"));
-
     m_latencyHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,18 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-DiskInfo::DiskInfo() : 
-    m_nameHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_sizeInGb(0),
-    m_sizeInGbHasBeenSet(false),
-    m_isSystemDisk(false),
-    m_isSystemDiskHasBeenSet(false)
-{
-}
-
 DiskInfo::DiskInfo(JsonView jsonValue)
-  : DiskInfo()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ DiskInfo& DiskInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("path"))
   {
     m_path = jsonValue.GetString("path");
-
     m_pathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sizeInGb"))
   {
     m_sizeInGb = jsonValue.GetInteger("sizeInGb");
-
     m_sizeInGbHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isSystemDisk"))
   {
     m_isSystemDisk = jsonValue.GetBool("isSystemDisk");
-
     m_isSystemDiskHasBeenSet = true;
   }
-
   return *this;
 }
 

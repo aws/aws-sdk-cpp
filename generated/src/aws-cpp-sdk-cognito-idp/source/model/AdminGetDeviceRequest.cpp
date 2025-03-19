@@ -12,13 +12,6 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AdminGetDeviceRequest::AdminGetDeviceRequest() : 
-    m_deviceKeyHasBeenSet(false),
-    m_userPoolIdHasBeenSet(false),
-    m_usernameHasBeenSet(false)
-{
-}
-
 Aws::String AdminGetDeviceRequest::SerializePayload() const
 {
   JsonValue payload;

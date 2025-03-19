@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetBasePathMappingRequest::GetBasePathMappingRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_domainNameIdHasBeenSet(false),
-    m_basePathHasBeenSet(false)
-{
-}
-
 Aws::String GetBasePathMappingRequest::SerializePayload() const
 {
   return {};

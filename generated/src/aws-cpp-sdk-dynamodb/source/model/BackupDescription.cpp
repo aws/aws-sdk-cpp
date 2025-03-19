@@ -18,15 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-BackupDescription::BackupDescription() : 
-    m_backupDetailsHasBeenSet(false),
-    m_sourceTableDetailsHasBeenSet(false),
-    m_sourceTableFeatureDetailsHasBeenSet(false)
-{
-}
-
 BackupDescription::BackupDescription(JsonView jsonValue)
-  : BackupDescription()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ BackupDescription& BackupDescription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BackupDetails"))
   {
     m_backupDetails = jsonValue.GetObject("BackupDetails");
-
     m_backupDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceTableDetails"))
   {
     m_sourceTableDetails = jsonValue.GetObject("SourceTableDetails");
-
     m_sourceTableDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceTableFeatureDetails"))
   {
     m_sourceTableFeatureDetails = jsonValue.GetObject("SourceTableFeatureDetails");
-
     m_sourceTableFeatureDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

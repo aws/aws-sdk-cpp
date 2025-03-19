@@ -18,17 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-GrpcRouteMatch::GrpcRouteMatch() : 
-    m_metadataHasBeenSet(false),
-    m_methodNameHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_serviceNameHasBeenSet(false)
-{
-}
-
 GrpcRouteMatch::GrpcRouteMatch(JsonView jsonValue)
-  : GrpcRouteMatch()
 {
   *this = jsonValue;
 }
@@ -44,28 +34,21 @@ GrpcRouteMatch& GrpcRouteMatch::operator =(JsonView jsonValue)
     }
     m_metadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("methodName"))
   {
     m_methodName = jsonValue.GetString("methodName");
-
     m_methodNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("port"))
   {
     m_port = jsonValue.GetInteger("port");
-
     m_portHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceName"))
   {
     m_serviceName = jsonValue.GetString("serviceName");
-
     m_serviceNameHasBeenSet = true;
   }
-
   return *this;
 }
 

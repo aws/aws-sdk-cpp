@@ -12,16 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeMaintenanceWindowsForTargetRequest::DescribeMaintenanceWindowsForTargetRequest() : 
-    m_targetsHasBeenSet(false),
-    m_resourceType(MaintenanceWindowResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeMaintenanceWindowsForTargetRequest::SerializePayload() const
 {
   JsonValue payload;

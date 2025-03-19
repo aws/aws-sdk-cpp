@@ -36,7 +36,7 @@ namespace Model
   class ExplainabilitySummary
   {
   public:
-    AWS_FORECASTSERVICE_API ExplainabilitySummary();
+    AWS_FORECASTSERVICE_API ExplainabilitySummary() = default;
     AWS_FORECASTSERVICE_API ExplainabilitySummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API ExplainabilitySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,28 +46,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the Explainability.</p>
      */
-    inline const Aws::String& GetExplainabilityArn() const{ return m_explainabilityArn; }
+    inline const Aws::String& GetExplainabilityArn() const { return m_explainabilityArn; }
     inline bool ExplainabilityArnHasBeenSet() const { return m_explainabilityArnHasBeenSet; }
-    inline void SetExplainabilityArn(const Aws::String& value) { m_explainabilityArnHasBeenSet = true; m_explainabilityArn = value; }
-    inline void SetExplainabilityArn(Aws::String&& value) { m_explainabilityArnHasBeenSet = true; m_explainabilityArn = std::move(value); }
-    inline void SetExplainabilityArn(const char* value) { m_explainabilityArnHasBeenSet = true; m_explainabilityArn.assign(value); }
-    inline ExplainabilitySummary& WithExplainabilityArn(const Aws::String& value) { SetExplainabilityArn(value); return *this;}
-    inline ExplainabilitySummary& WithExplainabilityArn(Aws::String&& value) { SetExplainabilityArn(std::move(value)); return *this;}
-    inline ExplainabilitySummary& WithExplainabilityArn(const char* value) { SetExplainabilityArn(value); return *this;}
+    template<typename ExplainabilityArnT = Aws::String>
+    void SetExplainabilityArn(ExplainabilityArnT&& value) { m_explainabilityArnHasBeenSet = true; m_explainabilityArn = std::forward<ExplainabilityArnT>(value); }
+    template<typename ExplainabilityArnT = Aws::String>
+    ExplainabilitySummary& WithExplainabilityArn(ExplainabilityArnT&& value) { SetExplainabilityArn(std::forward<ExplainabilityArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the Explainability.</p>
      */
-    inline const Aws::String& GetExplainabilityName() const{ return m_explainabilityName; }
+    inline const Aws::String& GetExplainabilityName() const { return m_explainabilityName; }
     inline bool ExplainabilityNameHasBeenSet() const { return m_explainabilityNameHasBeenSet; }
-    inline void SetExplainabilityName(const Aws::String& value) { m_explainabilityNameHasBeenSet = true; m_explainabilityName = value; }
-    inline void SetExplainabilityName(Aws::String&& value) { m_explainabilityNameHasBeenSet = true; m_explainabilityName = std::move(value); }
-    inline void SetExplainabilityName(const char* value) { m_explainabilityNameHasBeenSet = true; m_explainabilityName.assign(value); }
-    inline ExplainabilitySummary& WithExplainabilityName(const Aws::String& value) { SetExplainabilityName(value); return *this;}
-    inline ExplainabilitySummary& WithExplainabilityName(Aws::String&& value) { SetExplainabilityName(std::move(value)); return *this;}
-    inline ExplainabilitySummary& WithExplainabilityName(const char* value) { SetExplainabilityName(value); return *this;}
+    template<typename ExplainabilityNameT = Aws::String>
+    void SetExplainabilityName(ExplainabilityNameT&& value) { m_explainabilityNameHasBeenSet = true; m_explainabilityName = std::forward<ExplainabilityNameT>(value); }
+    template<typename ExplainabilityNameT = Aws::String>
+    ExplainabilitySummary& WithExplainabilityName(ExplainabilityNameT&& value) { SetExplainabilityName(std::forward<ExplainabilityNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +71,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create
      * the Explainability.</p>
      */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-    inline ExplainabilitySummary& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-    inline ExplainabilitySummary& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-    inline ExplainabilitySummary& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    ExplainabilitySummary& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,12 +84,12 @@ namespace Model
      * <p>The configuration settings that define the granularity of time series and
      * time points for the Explainability.</p>
      */
-    inline const ExplainabilityConfig& GetExplainabilityConfig() const{ return m_explainabilityConfig; }
+    inline const ExplainabilityConfig& GetExplainabilityConfig() const { return m_explainabilityConfig; }
     inline bool ExplainabilityConfigHasBeenSet() const { return m_explainabilityConfigHasBeenSet; }
-    inline void SetExplainabilityConfig(const ExplainabilityConfig& value) { m_explainabilityConfigHasBeenSet = true; m_explainabilityConfig = value; }
-    inline void SetExplainabilityConfig(ExplainabilityConfig&& value) { m_explainabilityConfigHasBeenSet = true; m_explainabilityConfig = std::move(value); }
-    inline ExplainabilitySummary& WithExplainabilityConfig(const ExplainabilityConfig& value) { SetExplainabilityConfig(value); return *this;}
-    inline ExplainabilitySummary& WithExplainabilityConfig(ExplainabilityConfig&& value) { SetExplainabilityConfig(std::move(value)); return *this;}
+    template<typename ExplainabilityConfigT = ExplainabilityConfig>
+    void SetExplainabilityConfig(ExplainabilityConfigT&& value) { m_explainabilityConfigHasBeenSet = true; m_explainabilityConfig = std::forward<ExplainabilityConfigT>(value); }
+    template<typename ExplainabilityConfigT = ExplainabilityConfig>
+    ExplainabilitySummary& WithExplainabilityConfig(ExplainabilityConfigT&& value) { SetExplainabilityConfig(std::forward<ExplainabilityConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,14 +101,12 @@ namespace Model
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
      * <code>DELETE_FAILED</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline ExplainabilitySummary& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline ExplainabilitySummary& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline ExplainabilitySummary& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    ExplainabilitySummary& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -122,26 +114,24 @@ namespace Model
      * <p>Information about any errors that may have occurred during the Explainability
      * creation process.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline ExplainabilitySummary& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline ExplainabilitySummary& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline ExplainabilitySummary& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    ExplainabilitySummary& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>When the Explainability was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline ExplainabilitySummary& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline ExplainabilitySummary& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    ExplainabilitySummary& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -154,12 +144,12 @@ namespace Model
      * stopped.</p> </li> <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> -
      * When the job finished or failed.</p> </li> </ul>
      */
-    inline const Aws::Utils::DateTime& GetLastModificationTime() const{ return m_lastModificationTime; }
+    inline const Aws::Utils::DateTime& GetLastModificationTime() const { return m_lastModificationTime; }
     inline bool LastModificationTimeHasBeenSet() const { return m_lastModificationTimeHasBeenSet; }
-    inline void SetLastModificationTime(const Aws::Utils::DateTime& value) { m_lastModificationTimeHasBeenSet = true; m_lastModificationTime = value; }
-    inline void SetLastModificationTime(Aws::Utils::DateTime&& value) { m_lastModificationTimeHasBeenSet = true; m_lastModificationTime = std::move(value); }
-    inline ExplainabilitySummary& WithLastModificationTime(const Aws::Utils::DateTime& value) { SetLastModificationTime(value); return *this;}
-    inline ExplainabilitySummary& WithLastModificationTime(Aws::Utils::DateTime&& value) { SetLastModificationTime(std::move(value)); return *this;}
+    template<typename LastModificationTimeT = Aws::Utils::DateTime>
+    void SetLastModificationTime(LastModificationTimeT&& value) { m_lastModificationTimeHasBeenSet = true; m_lastModificationTime = std::forward<LastModificationTimeT>(value); }
+    template<typename LastModificationTimeT = Aws::Utils::DateTime>
+    ExplainabilitySummary& WithLastModificationTime(LastModificationTimeT&& value) { SetLastModificationTime(std::forward<LastModificationTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -181,10 +171,10 @@ namespace Model
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModificationTime;
+    Aws::Utils::DateTime m_lastModificationTime{};
     bool m_lastModificationTimeHasBeenSet = false;
   };
 

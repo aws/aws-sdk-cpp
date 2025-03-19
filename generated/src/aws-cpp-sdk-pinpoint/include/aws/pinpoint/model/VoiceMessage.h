@@ -34,7 +34,7 @@ namespace Model
   class VoiceMessage
   {
   public:
-    AWS_PINPOINT_API VoiceMessage();
+    AWS_PINPOINT_API VoiceMessage() = default;
     AWS_PINPOINT_API VoiceMessage(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API VoiceMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The text of the script to use for the voice message.</p>
      */
-    inline const Aws::String& GetBody() const{ return m_body; }
+    inline const Aws::String& GetBody() const { return m_body; }
     inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
-    inline void SetBody(const Aws::String& value) { m_bodyHasBeenSet = true; m_body = value; }
-    inline void SetBody(Aws::String&& value) { m_bodyHasBeenSet = true; m_body = std::move(value); }
-    inline void SetBody(const char* value) { m_bodyHasBeenSet = true; m_body.assign(value); }
-    inline VoiceMessage& WithBody(const Aws::String& value) { SetBody(value); return *this;}
-    inline VoiceMessage& WithBody(Aws::String&& value) { SetBody(std::move(value)); return *this;}
-    inline VoiceMessage& WithBody(const char* value) { SetBody(value); return *this;}
+    template<typename BodyT = Aws::String>
+    void SetBody(BodyT&& value) { m_bodyHasBeenSet = true; m_body = std::forward<BodyT>(value); }
+    template<typename BodyT = Aws::String>
+    VoiceMessage& WithBody(BodyT&& value) { SetBody(std::forward<BodyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly
      * Developer Guide</a>.</p>
      */
-    inline const Aws::String& GetLanguageCode() const{ return m_languageCode; }
+    inline const Aws::String& GetLanguageCode() const { return m_languageCode; }
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
-    inline void SetLanguageCode(const Aws::String& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
-    inline void SetLanguageCode(Aws::String&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
-    inline void SetLanguageCode(const char* value) { m_languageCodeHasBeenSet = true; m_languageCode.assign(value); }
-    inline VoiceMessage& WithLanguageCode(const Aws::String& value) { SetLanguageCode(value); return *this;}
-    inline VoiceMessage& WithLanguageCode(Aws::String&& value) { SetLanguageCode(std::move(value)); return *this;}
-    inline VoiceMessage& WithLanguageCode(const char* value) { SetLanguageCode(value); return *this;}
+    template<typename LanguageCodeT = Aws::String>
+    void SetLanguageCode(LanguageCodeT&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::forward<LanguageCodeT>(value); }
+    template<typename LanguageCodeT = Aws::String>
+    VoiceMessage& WithLanguageCode(LanguageCodeT&& value) { SetLanguageCode(std::forward<LanguageCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,14 +74,12 @@ namespace Model
      * required, we recommend that you specify the long code in E.164 format, for
      * example +12065550100, to ensure prompt and accurate delivery of the message.</p>
      */
-    inline const Aws::String& GetOriginationNumber() const{ return m_originationNumber; }
+    inline const Aws::String& GetOriginationNumber() const { return m_originationNumber; }
     inline bool OriginationNumberHasBeenSet() const { return m_originationNumberHasBeenSet; }
-    inline void SetOriginationNumber(const Aws::String& value) { m_originationNumberHasBeenSet = true; m_originationNumber = value; }
-    inline void SetOriginationNumber(Aws::String&& value) { m_originationNumberHasBeenSet = true; m_originationNumber = std::move(value); }
-    inline void SetOriginationNumber(const char* value) { m_originationNumberHasBeenSet = true; m_originationNumber.assign(value); }
-    inline VoiceMessage& WithOriginationNumber(const Aws::String& value) { SetOriginationNumber(value); return *this;}
-    inline VoiceMessage& WithOriginationNumber(Aws::String&& value) { SetOriginationNumber(std::move(value)); return *this;}
-    inline VoiceMessage& WithOriginationNumber(const char* value) { SetOriginationNumber(value); return *this;}
+    template<typename OriginationNumberT = Aws::String>
+    void SetOriginationNumber(OriginationNumberT&& value) { m_originationNumberHasBeenSet = true; m_originationNumber = std::forward<OriginationNumberT>(value); }
+    template<typename OriginationNumberT = Aws::String>
+    VoiceMessage& WithOriginationNumber(OriginationNumberT&& value) { SetOriginationNumber(std::forward<OriginationNumberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,18 +87,16 @@ namespace Model
      * <p>The default message variables to use in the voice message. You can override
      * the default variables with individual address variables.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetSubstitutions() const{ return m_substitutions; }
+    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetSubstitutions() const { return m_substitutions; }
     inline bool SubstitutionsHasBeenSet() const { return m_substitutionsHasBeenSet; }
-    inline void SetSubstitutions(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_substitutionsHasBeenSet = true; m_substitutions = value; }
-    inline void SetSubstitutions(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_substitutionsHasBeenSet = true; m_substitutions = std::move(value); }
-    inline VoiceMessage& WithSubstitutions(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetSubstitutions(value); return *this;}
-    inline VoiceMessage& WithSubstitutions(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetSubstitutions(std::move(value)); return *this;}
-    inline VoiceMessage& AddSubstitutions(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(key, value); return *this; }
-    inline VoiceMessage& AddSubstitutions(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(std::move(key), value); return *this; }
-    inline VoiceMessage& AddSubstitutions(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(key, std::move(value)); return *this; }
-    inline VoiceMessage& AddSubstitutions(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(std::move(key), std::move(value)); return *this; }
-    inline VoiceMessage& AddSubstitutions(const char* key, Aws::Vector<Aws::String>&& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(key, std::move(value)); return *this; }
-    inline VoiceMessage& AddSubstitutions(const char* key, const Aws::Vector<Aws::String>& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(key, value); return *this; }
+    template<typename SubstitutionsT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    void SetSubstitutions(SubstitutionsT&& value) { m_substitutionsHasBeenSet = true; m_substitutions = std::forward<SubstitutionsT>(value); }
+    template<typename SubstitutionsT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    VoiceMessage& WithSubstitutions(SubstitutionsT&& value) { SetSubstitutions(std::forward<SubstitutionsT>(value)); return *this;}
+    template<typename SubstitutionsKeyT = Aws::String, typename SubstitutionsValueT = Aws::Vector<Aws::String>>
+    VoiceMessage& AddSubstitutions(SubstitutionsKeyT&& key, SubstitutionsValueT&& value) {
+      m_substitutionsHasBeenSet = true; m_substitutions.emplace(std::forward<SubstitutionsKeyT>(key), std::forward<SubstitutionsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -114,14 +106,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly
      * Developer Guide</a>.</p>
      */
-    inline const Aws::String& GetVoiceId() const{ return m_voiceId; }
+    inline const Aws::String& GetVoiceId() const { return m_voiceId; }
     inline bool VoiceIdHasBeenSet() const { return m_voiceIdHasBeenSet; }
-    inline void SetVoiceId(const Aws::String& value) { m_voiceIdHasBeenSet = true; m_voiceId = value; }
-    inline void SetVoiceId(Aws::String&& value) { m_voiceIdHasBeenSet = true; m_voiceId = std::move(value); }
-    inline void SetVoiceId(const char* value) { m_voiceIdHasBeenSet = true; m_voiceId.assign(value); }
-    inline VoiceMessage& WithVoiceId(const Aws::String& value) { SetVoiceId(value); return *this;}
-    inline VoiceMessage& WithVoiceId(Aws::String&& value) { SetVoiceId(std::move(value)); return *this;}
-    inline VoiceMessage& WithVoiceId(const char* value) { SetVoiceId(value); return *this;}
+    template<typename VoiceIdT = Aws::String>
+    void SetVoiceId(VoiceIdT&& value) { m_voiceIdHasBeenSet = true; m_voiceId = std::forward<VoiceIdT>(value); }
+    template<typename VoiceIdT = Aws::String>
+    VoiceMessage& WithVoiceId(VoiceIdT&& value) { SetVoiceId(std::forward<VoiceIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -33,7 +33,7 @@ namespace Model
   class TooltipOptions
   {
   public:
-    AWS_QUICKSIGHT_API TooltipOptions();
+    AWS_QUICKSIGHT_API TooltipOptions() = default;
     AWS_QUICKSIGHT_API TooltipOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API TooltipOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
     /**
      * <p>Determines whether or not the tooltip is visible.</p>
      */
-    inline const Visibility& GetTooltipVisibility() const{ return m_tooltipVisibility; }
+    inline Visibility GetTooltipVisibility() const { return m_tooltipVisibility; }
     inline bool TooltipVisibilityHasBeenSet() const { return m_tooltipVisibilityHasBeenSet; }
-    inline void SetTooltipVisibility(const Visibility& value) { m_tooltipVisibilityHasBeenSet = true; m_tooltipVisibility = value; }
-    inline void SetTooltipVisibility(Visibility&& value) { m_tooltipVisibilityHasBeenSet = true; m_tooltipVisibility = std::move(value); }
-    inline TooltipOptions& WithTooltipVisibility(const Visibility& value) { SetTooltipVisibility(value); return *this;}
-    inline TooltipOptions& WithTooltipVisibility(Visibility&& value) { SetTooltipVisibility(std::move(value)); return *this;}
+    inline void SetTooltipVisibility(Visibility value) { m_tooltipVisibilityHasBeenSet = true; m_tooltipVisibility = value; }
+    inline TooltipOptions& WithTooltipVisibility(Visibility value) { SetTooltipVisibility(value); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +55,10 @@ namespace Model
      * <ul> <li> <p> <code>BASIC</code>: A basic tooltip.</p> </li> <li> <p>
      * <code>DETAILED</code>: A detailed tooltip.</p> </li> </ul>
      */
-    inline const SelectedTooltipType& GetSelectedTooltipType() const{ return m_selectedTooltipType; }
+    inline SelectedTooltipType GetSelectedTooltipType() const { return m_selectedTooltipType; }
     inline bool SelectedTooltipTypeHasBeenSet() const { return m_selectedTooltipTypeHasBeenSet; }
-    inline void SetSelectedTooltipType(const SelectedTooltipType& value) { m_selectedTooltipTypeHasBeenSet = true; m_selectedTooltipType = value; }
-    inline void SetSelectedTooltipType(SelectedTooltipType&& value) { m_selectedTooltipTypeHasBeenSet = true; m_selectedTooltipType = std::move(value); }
-    inline TooltipOptions& WithSelectedTooltipType(const SelectedTooltipType& value) { SetSelectedTooltipType(value); return *this;}
-    inline TooltipOptions& WithSelectedTooltipType(SelectedTooltipType&& value) { SetSelectedTooltipType(std::move(value)); return *this;}
+    inline void SetSelectedTooltipType(SelectedTooltipType value) { m_selectedTooltipTypeHasBeenSet = true; m_selectedTooltipType = value; }
+    inline TooltipOptions& WithSelectedTooltipType(SelectedTooltipType value) { SetSelectedTooltipType(value); return *this;}
     ///@}
 
     ///@{
@@ -70,19 +66,19 @@ namespace Model
      * <p>The setup for the detailed tooltip. The tooltip setup is always saved. The
      * display type is decided based on the tooltip type.</p>
      */
-    inline const FieldBasedTooltip& GetFieldBasedTooltip() const{ return m_fieldBasedTooltip; }
+    inline const FieldBasedTooltip& GetFieldBasedTooltip() const { return m_fieldBasedTooltip; }
     inline bool FieldBasedTooltipHasBeenSet() const { return m_fieldBasedTooltipHasBeenSet; }
-    inline void SetFieldBasedTooltip(const FieldBasedTooltip& value) { m_fieldBasedTooltipHasBeenSet = true; m_fieldBasedTooltip = value; }
-    inline void SetFieldBasedTooltip(FieldBasedTooltip&& value) { m_fieldBasedTooltipHasBeenSet = true; m_fieldBasedTooltip = std::move(value); }
-    inline TooltipOptions& WithFieldBasedTooltip(const FieldBasedTooltip& value) { SetFieldBasedTooltip(value); return *this;}
-    inline TooltipOptions& WithFieldBasedTooltip(FieldBasedTooltip&& value) { SetFieldBasedTooltip(std::move(value)); return *this;}
+    template<typename FieldBasedTooltipT = FieldBasedTooltip>
+    void SetFieldBasedTooltip(FieldBasedTooltipT&& value) { m_fieldBasedTooltipHasBeenSet = true; m_fieldBasedTooltip = std::forward<FieldBasedTooltipT>(value); }
+    template<typename FieldBasedTooltipT = FieldBasedTooltip>
+    TooltipOptions& WithFieldBasedTooltip(FieldBasedTooltipT&& value) { SetFieldBasedTooltip(std::forward<FieldBasedTooltipT>(value)); return *this;}
     ///@}
   private:
 
-    Visibility m_tooltipVisibility;
+    Visibility m_tooltipVisibility{Visibility::NOT_SET};
     bool m_tooltipVisibilityHasBeenSet = false;
 
-    SelectedTooltipType m_selectedTooltipType;
+    SelectedTooltipType m_selectedTooltipType{SelectedTooltipType::NOT_SET};
     bool m_selectedTooltipTypeHasBeenSet = false;
 
     FieldBasedTooltip m_fieldBasedTooltip;

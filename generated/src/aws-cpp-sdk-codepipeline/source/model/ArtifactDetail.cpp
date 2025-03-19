@@ -18,14 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-ArtifactDetail::ArtifactDetail() : 
-    m_nameHasBeenSet(false),
-    m_s3locationHasBeenSet(false)
-{
-}
-
 ArtifactDetail::ArtifactDetail(JsonView jsonValue)
-  : ArtifactDetail()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ArtifactDetail& ArtifactDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3location"))
   {
     m_s3location = jsonValue.GetObject("s3location");
-
     m_s3locationHasBeenSet = true;
   }
-
   return *this;
 }
 

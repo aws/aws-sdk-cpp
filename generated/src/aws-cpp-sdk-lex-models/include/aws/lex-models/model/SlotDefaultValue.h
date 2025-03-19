@@ -31,7 +31,7 @@ namespace Model
   class SlotDefaultValue
   {
   public:
-    AWS_LEXMODELBUILDINGSERVICE_API SlotDefaultValue();
+    AWS_LEXMODELBUILDINGSERVICE_API SlotDefaultValue() = default;
     AWS_LEXMODELBUILDINGSERVICE_API SlotDefaultValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELBUILDINGSERVICE_API SlotDefaultValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELBUILDINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * slot value of the session attribute "attribute."</p> </li> <li> <p>
      * <code>'value'</code> - The discrete value "value."</p> </li> </ul>
      */
-    inline const Aws::String& GetDefaultValue() const{ return m_defaultValue; }
+    inline const Aws::String& GetDefaultValue() const { return m_defaultValue; }
     inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
-    inline void SetDefaultValue(const Aws::String& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
-    inline void SetDefaultValue(Aws::String&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::move(value); }
-    inline void SetDefaultValue(const char* value) { m_defaultValueHasBeenSet = true; m_defaultValue.assign(value); }
-    inline SlotDefaultValue& WithDefaultValue(const Aws::String& value) { SetDefaultValue(value); return *this;}
-    inline SlotDefaultValue& WithDefaultValue(Aws::String&& value) { SetDefaultValue(std::move(value)); return *this;}
-    inline SlotDefaultValue& WithDefaultValue(const char* value) { SetDefaultValue(value); return *this;}
+    template<typename DefaultValueT = Aws::String>
+    void SetDefaultValue(DefaultValueT&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::forward<DefaultValueT>(value); }
+    template<typename DefaultValueT = Aws::String>
+    SlotDefaultValue& WithDefaultValue(DefaultValueT&& value) { SetDefaultValue(std::forward<DefaultValueT>(value)); return *this;}
     ///@}
   private:
 

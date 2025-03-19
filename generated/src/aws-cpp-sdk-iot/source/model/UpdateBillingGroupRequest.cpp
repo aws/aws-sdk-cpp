@@ -12,14 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateBillingGroupRequest::UpdateBillingGroupRequest() : 
-    m_billingGroupNameHasBeenSet(false),
-    m_billingGroupPropertiesHasBeenSet(false),
-    m_expectedVersion(0),
-    m_expectedVersionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateBillingGroupRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -29,7 +29,7 @@ namespace Model
   class ListRealtimeContactAnalysisSegmentsResult
   {
   public:
-    AWS_CONNECTCONTACTLENS_API ListRealtimeContactAnalysisSegmentsResult();
+    AWS_CONNECTCONTACTLENS_API ListRealtimeContactAnalysisSegmentsResult() = default;
     AWS_CONNECTCONTACTLENS_API ListRealtimeContactAnalysisSegmentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECTCONTACTLENS_API ListRealtimeContactAnalysisSegmentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>An analyzed transcript or category.</p>
      */
-    inline const Aws::Vector<RealtimeContactAnalysisSegment>& GetSegments() const{ return m_segments; }
-    inline void SetSegments(const Aws::Vector<RealtimeContactAnalysisSegment>& value) { m_segments = value; }
-    inline void SetSegments(Aws::Vector<RealtimeContactAnalysisSegment>&& value) { m_segments = std::move(value); }
-    inline ListRealtimeContactAnalysisSegmentsResult& WithSegments(const Aws::Vector<RealtimeContactAnalysisSegment>& value) { SetSegments(value); return *this;}
-    inline ListRealtimeContactAnalysisSegmentsResult& WithSegments(Aws::Vector<RealtimeContactAnalysisSegment>&& value) { SetSegments(std::move(value)); return *this;}
-    inline ListRealtimeContactAnalysisSegmentsResult& AddSegments(const RealtimeContactAnalysisSegment& value) { m_segments.push_back(value); return *this; }
-    inline ListRealtimeContactAnalysisSegmentsResult& AddSegments(RealtimeContactAnalysisSegment&& value) { m_segments.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RealtimeContactAnalysisSegment>& GetSegments() const { return m_segments; }
+    template<typename SegmentsT = Aws::Vector<RealtimeContactAnalysisSegment>>
+    void SetSegments(SegmentsT&& value) { m_segmentsHasBeenSet = true; m_segments = std::forward<SegmentsT>(value); }
+    template<typename SegmentsT = Aws::Vector<RealtimeContactAnalysisSegment>>
+    ListRealtimeContactAnalysisSegmentsResult& WithSegments(SegmentsT&& value) { SetSegments(std::forward<SegmentsT>(value)); return *this;}
+    template<typename SegmentsT = RealtimeContactAnalysisSegment>
+    ListRealtimeContactAnalysisSegmentsResult& AddSegments(SegmentsT&& value) { m_segmentsHasBeenSet = true; m_segments.emplace_back(std::forward<SegmentsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -58,32 +58,31 @@ namespace Model
      * does not include <code>nextToken</code>, the analysis is completed (successfully
      * or failed) and there are no more segments to retrieve.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListRealtimeContactAnalysisSegmentsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListRealtimeContactAnalysisSegmentsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListRealtimeContactAnalysisSegmentsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListRealtimeContactAnalysisSegmentsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListRealtimeContactAnalysisSegmentsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListRealtimeContactAnalysisSegmentsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListRealtimeContactAnalysisSegmentsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListRealtimeContactAnalysisSegmentsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<RealtimeContactAnalysisSegment> m_segments;
+    bool m_segmentsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

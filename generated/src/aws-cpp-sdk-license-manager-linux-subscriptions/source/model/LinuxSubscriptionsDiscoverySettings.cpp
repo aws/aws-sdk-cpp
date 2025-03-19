@@ -18,15 +18,7 @@ namespace LicenseManagerLinuxSubscriptions
 namespace Model
 {
 
-LinuxSubscriptionsDiscoverySettings::LinuxSubscriptionsDiscoverySettings() : 
-    m_organizationIntegration(OrganizationIntegration::NOT_SET),
-    m_organizationIntegrationHasBeenSet(false),
-    m_sourceRegionsHasBeenSet(false)
-{
-}
-
 LinuxSubscriptionsDiscoverySettings::LinuxSubscriptionsDiscoverySettings(JsonView jsonValue)
-  : LinuxSubscriptionsDiscoverySettings()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ LinuxSubscriptionsDiscoverySettings& LinuxSubscriptionsDiscoverySettings::operat
   if(jsonValue.ValueExists("OrganizationIntegration"))
   {
     m_organizationIntegration = OrganizationIntegrationMapper::GetOrganizationIntegrationForName(jsonValue.GetString("OrganizationIntegration"));
-
     m_organizationIntegrationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceRegions"))
   {
     Aws::Utils::Array<JsonView> sourceRegionsJsonList = jsonValue.GetArray("SourceRegions");
@@ -49,7 +39,6 @@ LinuxSubscriptionsDiscoverySettings& LinuxSubscriptionsDiscoverySettings::operat
     }
     m_sourceRegionsHasBeenSet = true;
   }
-
   return *this;
 }
 

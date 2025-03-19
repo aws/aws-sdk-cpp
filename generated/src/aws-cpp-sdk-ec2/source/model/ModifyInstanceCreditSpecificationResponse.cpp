@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ModifyInstanceCreditSpecificationResponse::ModifyInstanceCreditSpecificationResponse()
-{
-}
-
 ModifyInstanceCreditSpecificationResponse::ModifyInstanceCreditSpecificationResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ ModifyInstanceCreditSpecificationResponse& ModifyInstanceCreditSpecificationResp
     if(!successfulInstanceCreditSpecificationsNode.IsNull())
     {
       XmlNode successfulInstanceCreditSpecificationsMember = successfulInstanceCreditSpecificationsNode.FirstChild("item");
+      m_successfulInstanceCreditSpecificationsHasBeenSet = !successfulInstanceCreditSpecificationsMember.IsNull();
       while(!successfulInstanceCreditSpecificationsMember.IsNull())
       {
         m_successfulInstanceCreditSpecifications.push_back(successfulInstanceCreditSpecificationsMember);
         successfulInstanceCreditSpecificationsMember = successfulInstanceCreditSpecificationsMember.NextNode("item");
       }
 
+      m_successfulInstanceCreditSpecificationsHasBeenSet = true;
     }
     XmlNode unsuccessfulInstanceCreditSpecificationsNode = resultNode.FirstChild("unsuccessfulInstanceCreditSpecificationSet");
     if(!unsuccessfulInstanceCreditSpecificationsNode.IsNull())
     {
       XmlNode unsuccessfulInstanceCreditSpecificationsMember = unsuccessfulInstanceCreditSpecificationsNode.FirstChild("item");
+      m_unsuccessfulInstanceCreditSpecificationsHasBeenSet = !unsuccessfulInstanceCreditSpecificationsMember.IsNull();
       while(!unsuccessfulInstanceCreditSpecificationsMember.IsNull())
       {
         m_unsuccessfulInstanceCreditSpecifications.push_back(unsuccessfulInstanceCreditSpecificationsMember);
         unsuccessfulInstanceCreditSpecificationsMember = unsuccessfulInstanceCreditSpecificationsMember.NextNode("item");
       }
 
+      m_unsuccessfulInstanceCreditSpecificationsHasBeenSet = true;
     }
   }
 
@@ -67,6 +67,7 @@ ModifyInstanceCreditSpecificationResponse& ModifyInstanceCreditSpecificationResp
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::ModifyInstanceCreditSpecificationResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

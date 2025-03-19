@@ -18,14 +18,7 @@ namespace EKS
 namespace Model
 {
 
-EncryptionConfig::EncryptionConfig() : 
-    m_resourcesHasBeenSet(false),
-    m_providerHasBeenSet(false)
-{
-}
-
 EncryptionConfig::EncryptionConfig(JsonView jsonValue)
-  : EncryptionConfig()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ EncryptionConfig& EncryptionConfig::operator =(JsonView jsonValue)
     }
     m_resourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("provider"))
   {
     m_provider = jsonValue.GetObject("provider");
-
     m_providerHasBeenSet = true;
   }
-
   return *this;
 }
 

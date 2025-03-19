@@ -20,26 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-ReplicationGroupPendingModifiedValues::ReplicationGroupPendingModifiedValues() : 
-    m_primaryClusterIdHasBeenSet(false),
-    m_automaticFailoverStatus(PendingAutomaticFailoverStatus::NOT_SET),
-    m_automaticFailoverStatusHasBeenSet(false),
-    m_reshardingHasBeenSet(false),
-    m_authTokenStatus(AuthTokenUpdateStatus::NOT_SET),
-    m_authTokenStatusHasBeenSet(false),
-    m_userGroupsHasBeenSet(false),
-    m_logDeliveryConfigurationsHasBeenSet(false),
-    m_transitEncryptionEnabled(false),
-    m_transitEncryptionEnabledHasBeenSet(false),
-    m_transitEncryptionMode(TransitEncryptionMode::NOT_SET),
-    m_transitEncryptionModeHasBeenSet(false),
-    m_clusterMode(ClusterMode::NOT_SET),
-    m_clusterModeHasBeenSet(false)
-{
-}
-
 ReplicationGroupPendingModifiedValues::ReplicationGroupPendingModifiedValues(const XmlNode& xmlNode)
-  : ReplicationGroupPendingModifiedValues()
 {
   *this = xmlNode;
 }
@@ -59,7 +40,7 @@ ReplicationGroupPendingModifiedValues& ReplicationGroupPendingModifiedValues::op
     XmlNode automaticFailoverStatusNode = resultNode.FirstChild("AutomaticFailoverStatus");
     if(!automaticFailoverStatusNode.IsNull())
     {
-      m_automaticFailoverStatus = PendingAutomaticFailoverStatusMapper::GetPendingAutomaticFailoverStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(automaticFailoverStatusNode.GetText()).c_str()).c_str());
+      m_automaticFailoverStatus = PendingAutomaticFailoverStatusMapper::GetPendingAutomaticFailoverStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(automaticFailoverStatusNode.GetText()).c_str()));
       m_automaticFailoverStatusHasBeenSet = true;
     }
     XmlNode reshardingNode = resultNode.FirstChild("Resharding");
@@ -71,7 +52,7 @@ ReplicationGroupPendingModifiedValues& ReplicationGroupPendingModifiedValues::op
     XmlNode authTokenStatusNode = resultNode.FirstChild("AuthTokenStatus");
     if(!authTokenStatusNode.IsNull())
     {
-      m_authTokenStatus = AuthTokenUpdateStatusMapper::GetAuthTokenUpdateStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(authTokenStatusNode.GetText()).c_str()).c_str());
+      m_authTokenStatus = AuthTokenUpdateStatusMapper::GetAuthTokenUpdateStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(authTokenStatusNode.GetText()).c_str()));
       m_authTokenStatusHasBeenSet = true;
     }
     XmlNode userGroupsNode = resultNode.FirstChild("UserGroups");
@@ -84,6 +65,7 @@ ReplicationGroupPendingModifiedValues& ReplicationGroupPendingModifiedValues::op
     if(!logDeliveryConfigurationsNode.IsNull())
     {
       XmlNode logDeliveryConfigurationsMember = logDeliveryConfigurationsNode.FirstChild("member");
+      m_logDeliveryConfigurationsHasBeenSet = !logDeliveryConfigurationsMember.IsNull();
       while(!logDeliveryConfigurationsMember.IsNull())
       {
         m_logDeliveryConfigurations.push_back(logDeliveryConfigurationsMember);
@@ -101,13 +83,13 @@ ReplicationGroupPendingModifiedValues& ReplicationGroupPendingModifiedValues::op
     XmlNode transitEncryptionModeNode = resultNode.FirstChild("TransitEncryptionMode");
     if(!transitEncryptionModeNode.IsNull())
     {
-      m_transitEncryptionMode = TransitEncryptionModeMapper::GetTransitEncryptionModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(transitEncryptionModeNode.GetText()).c_str()).c_str());
+      m_transitEncryptionMode = TransitEncryptionModeMapper::GetTransitEncryptionModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(transitEncryptionModeNode.GetText()).c_str()));
       m_transitEncryptionModeHasBeenSet = true;
     }
     XmlNode clusterModeNode = resultNode.FirstChild("ClusterMode");
     if(!clusterModeNode.IsNull())
     {
-      m_clusterMode = ClusterModeMapper::GetClusterModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(clusterModeNode.GetText()).c_str()).c_str());
+      m_clusterMode = ClusterModeMapper::GetClusterModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(clusterModeNode.GetText()).c_str()));
       m_clusterModeHasBeenSet = true;
     }
   }

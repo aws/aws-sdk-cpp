@@ -28,7 +28,7 @@ namespace Model
   class ImportInstanceResponse
   {
   public:
-    AWS_EC2_API ImportInstanceResponse();
+    AWS_EC2_API ImportInstanceResponse() = default;
     AWS_EC2_API ImportInstanceResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API ImportInstanceResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>Information about the conversion task.</p>
      */
-    inline const ConversionTask& GetConversionTask() const{ return m_conversionTask; }
-    inline void SetConversionTask(const ConversionTask& value) { m_conversionTask = value; }
-    inline void SetConversionTask(ConversionTask&& value) { m_conversionTask = std::move(value); }
-    inline ImportInstanceResponse& WithConversionTask(const ConversionTask& value) { SetConversionTask(value); return *this;}
-    inline ImportInstanceResponse& WithConversionTask(ConversionTask&& value) { SetConversionTask(std::move(value)); return *this;}
+    inline const ConversionTask& GetConversionTask() const { return m_conversionTask; }
+    template<typename ConversionTaskT = ConversionTask>
+    void SetConversionTask(ConversionTaskT&& value) { m_conversionTaskHasBeenSet = true; m_conversionTask = std::forward<ConversionTaskT>(value); }
+    template<typename ConversionTaskT = ConversionTask>
+    ImportInstanceResponse& WithConversionTask(ConversionTaskT&& value) { SetConversionTask(std::forward<ConversionTaskT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ImportInstanceResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ImportInstanceResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ImportInstanceResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     ConversionTask m_conversionTask;
+    bool m_conversionTaskHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

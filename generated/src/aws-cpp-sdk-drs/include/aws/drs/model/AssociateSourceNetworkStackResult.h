@@ -28,7 +28,7 @@ namespace Model
   class AssociateSourceNetworkStackResult
   {
   public:
-    AWS_DRS_API AssociateSourceNetworkStackResult();
+    AWS_DRS_API AssociateSourceNetworkStackResult() = default;
     AWS_DRS_API AssociateSourceNetworkStackResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DRS_API AssociateSourceNetworkStackResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The Source Network association Job.</p>
      */
-    inline const Job& GetJob() const{ return m_job; }
-    inline void SetJob(const Job& value) { m_job = value; }
-    inline void SetJob(Job&& value) { m_job = std::move(value); }
-    inline AssociateSourceNetworkStackResult& WithJob(const Job& value) { SetJob(value); return *this;}
-    inline AssociateSourceNetworkStackResult& WithJob(Job&& value) { SetJob(std::move(value)); return *this;}
+    inline const Job& GetJob() const { return m_job; }
+    template<typename JobT = Job>
+    void SetJob(JobT&& value) { m_jobHasBeenSet = true; m_job = std::forward<JobT>(value); }
+    template<typename JobT = Job>
+    AssociateSourceNetworkStackResult& WithJob(JobT&& value) { SetJob(std::forward<JobT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AssociateSourceNetworkStackResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AssociateSourceNetworkStackResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AssociateSourceNetworkStackResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AssociateSourceNetworkStackResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Job m_job;
+    bool m_jobHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

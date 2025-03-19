@@ -12,21 +12,6 @@ using namespace Aws::BedrockDataAutomation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDataAutomationProjectRequest::CreateDataAutomationProjectRequest() : 
-    m_projectNameHasBeenSet(false),
-    m_projectDescriptionHasBeenSet(false),
-    m_projectStage(DataAutomationProjectStage::NOT_SET),
-    m_projectStageHasBeenSet(false),
-    m_standardOutputConfigurationHasBeenSet(false),
-    m_customOutputConfigurationHasBeenSet(false),
-    m_overrideConfigurationHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_encryptionConfigurationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateDataAutomationProjectRequest::SerializePayload() const
 {
   JsonValue payload;

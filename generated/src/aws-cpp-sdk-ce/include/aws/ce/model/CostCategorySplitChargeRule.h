@@ -35,7 +35,7 @@ namespace Model
   class CostCategorySplitChargeRule
   {
   public:
-    AWS_COSTEXPLORER_API CostCategorySplitChargeRule();
+    AWS_COSTEXPLORER_API CostCategorySplitChargeRule() = default;
     AWS_COSTEXPLORER_API CostCategorySplitChargeRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API CostCategorySplitChargeRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * source or a target in other split charge rules. To indicate uncategorized costs,
      * you can use an empty string as the source.</p>
      */
-    inline const Aws::String& GetSource() const{ return m_source; }
+    inline const Aws::String& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
-    inline CostCategorySplitChargeRule& WithSource(const Aws::String& value) { SetSource(value); return *this;}
-    inline CostCategorySplitChargeRule& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
-    inline CostCategorySplitChargeRule& WithSource(const char* value) { SetSource(value); return *this;}
+    template<typename SourceT = Aws::String>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = Aws::String>
+    CostCategorySplitChargeRule& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,15 +60,14 @@ namespace Model
      * <p>The Cost Category values that you want to split costs across. These values
      * can't be used as a source in other split charge rules. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetTargets() const{ return m_targets; }
+    inline const Aws::Vector<Aws::String>& GetTargets() const { return m_targets; }
     inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
-    inline void SetTargets(const Aws::Vector<Aws::String>& value) { m_targetsHasBeenSet = true; m_targets = value; }
-    inline void SetTargets(Aws::Vector<Aws::String>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
-    inline CostCategorySplitChargeRule& WithTargets(const Aws::Vector<Aws::String>& value) { SetTargets(value); return *this;}
-    inline CostCategorySplitChargeRule& WithTargets(Aws::Vector<Aws::String>&& value) { SetTargets(std::move(value)); return *this;}
-    inline CostCategorySplitChargeRule& AddTargets(const Aws::String& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
-    inline CostCategorySplitChargeRule& AddTargets(Aws::String&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
-    inline CostCategorySplitChargeRule& AddTargets(const char* value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
+    template<typename TargetsT = Aws::Vector<Aws::String>>
+    void SetTargets(TargetsT&& value) { m_targetsHasBeenSet = true; m_targets = std::forward<TargetsT>(value); }
+    template<typename TargetsT = Aws::Vector<Aws::String>>
+    CostCategorySplitChargeRule& WithTargets(TargetsT&& value) { SetTargets(std::forward<TargetsT>(value)); return *this;}
+    template<typename TargetsT = Aws::String>
+    CostCategorySplitChargeRule& AddTargets(TargetsT&& value) { m_targetsHasBeenSet = true; m_targets.emplace_back(std::forward<TargetsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -82,12 +79,10 @@ namespace Model
      * allocation percentage.</p> <p>&gt;<code>Even</code> - Allocates costs evenly
      * across all targets.</p>
      */
-    inline const CostCategorySplitChargeMethod& GetMethod() const{ return m_method; }
+    inline CostCategorySplitChargeMethod GetMethod() const { return m_method; }
     inline bool MethodHasBeenSet() const { return m_methodHasBeenSet; }
-    inline void SetMethod(const CostCategorySplitChargeMethod& value) { m_methodHasBeenSet = true; m_method = value; }
-    inline void SetMethod(CostCategorySplitChargeMethod&& value) { m_methodHasBeenSet = true; m_method = std::move(value); }
-    inline CostCategorySplitChargeRule& WithMethod(const CostCategorySplitChargeMethod& value) { SetMethod(value); return *this;}
-    inline CostCategorySplitChargeRule& WithMethod(CostCategorySplitChargeMethod&& value) { SetMethod(std::move(value)); return *this;}
+    inline void SetMethod(CostCategorySplitChargeMethod value) { m_methodHasBeenSet = true; m_method = value; }
+    inline CostCategorySplitChargeRule& WithMethod(CostCategorySplitChargeMethod value) { SetMethod(value); return *this;}
     ///@}
 
     ///@{
@@ -95,14 +90,14 @@ namespace Model
      * <p>The parameters for a split charge method. This is only required for the
      * <code>FIXED</code> method. </p>
      */
-    inline const Aws::Vector<CostCategorySplitChargeRuleParameter>& GetParameters() const{ return m_parameters; }
+    inline const Aws::Vector<CostCategorySplitChargeRuleParameter>& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const Aws::Vector<CostCategorySplitChargeRuleParameter>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(Aws::Vector<CostCategorySplitChargeRuleParameter>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline CostCategorySplitChargeRule& WithParameters(const Aws::Vector<CostCategorySplitChargeRuleParameter>& value) { SetParameters(value); return *this;}
-    inline CostCategorySplitChargeRule& WithParameters(Aws::Vector<CostCategorySplitChargeRuleParameter>&& value) { SetParameters(std::move(value)); return *this;}
-    inline CostCategorySplitChargeRule& AddParameters(const CostCategorySplitChargeRuleParameter& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
-    inline CostCategorySplitChargeRule& AddParameters(CostCategorySplitChargeRuleParameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
+    template<typename ParametersT = Aws::Vector<CostCategorySplitChargeRuleParameter>>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::Vector<CostCategorySplitChargeRuleParameter>>
+    CostCategorySplitChargeRule& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
+    template<typename ParametersT = CostCategorySplitChargeRuleParameter>
+    CostCategorySplitChargeRule& AddParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters.emplace_back(std::forward<ParametersT>(value)); return *this; }
     ///@}
   private:
 
@@ -112,7 +107,7 @@ namespace Model
     Aws::Vector<Aws::String> m_targets;
     bool m_targetsHasBeenSet = false;
 
-    CostCategorySplitChargeMethod m_method;
+    CostCategorySplitChargeMethod m_method{CostCategorySplitChargeMethod::NOT_SET};
     bool m_methodHasBeenSet = false;
 
     Aws::Vector<CostCategorySplitChargeRuleParameter> m_parameters;

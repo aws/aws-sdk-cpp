@@ -18,16 +18,7 @@ namespace SSOAdmin
 namespace Model
 {
 
-ApplicationAssignmentForPrincipal::ApplicationAssignmentForPrincipal() : 
-    m_applicationArnHasBeenSet(false),
-    m_principalIdHasBeenSet(false),
-    m_principalType(PrincipalType::NOT_SET),
-    m_principalTypeHasBeenSet(false)
-{
-}
-
 ApplicationAssignmentForPrincipal::ApplicationAssignmentForPrincipal(JsonView jsonValue)
-  : ApplicationAssignmentForPrincipal()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ApplicationAssignmentForPrincipal& ApplicationAssignmentForPrincipal::operator =
   if(jsonValue.ValueExists("ApplicationArn"))
   {
     m_applicationArn = jsonValue.GetString("ApplicationArn");
-
     m_applicationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrincipalId"))
   {
     m_principalId = jsonValue.GetString("PrincipalId");
-
     m_principalIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrincipalType"))
   {
     m_principalType = PrincipalTypeMapper::GetPrincipalTypeForName(jsonValue.GetString("PrincipalType"));
-
     m_principalTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

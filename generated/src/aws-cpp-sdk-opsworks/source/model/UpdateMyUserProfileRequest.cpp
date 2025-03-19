@@ -12,11 +12,6 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateMyUserProfileRequest::UpdateMyUserProfileRequest() : 
-    m_sshPublicKeyHasBeenSet(false)
-{
-}
-
 Aws::String UpdateMyUserProfileRequest::SerializePayload() const
 {
   JsonValue payload;

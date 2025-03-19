@@ -18,19 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-LabelingJobForWorkteamSummary::LabelingJobForWorkteamSummary() : 
-    m_labelingJobNameHasBeenSet(false),
-    m_jobReferenceCodeHasBeenSet(false),
-    m_workRequesterAccountIdHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_labelCountersHasBeenSet(false),
-    m_numberOfHumanWorkersPerDataObject(0),
-    m_numberOfHumanWorkersPerDataObjectHasBeenSet(false)
-{
-}
-
 LabelingJobForWorkteamSummary::LabelingJobForWorkteamSummary(JsonView jsonValue)
-  : LabelingJobForWorkteamSummary()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ LabelingJobForWorkteamSummary& LabelingJobForWorkteamSummary::operator =(JsonVie
   if(jsonValue.ValueExists("LabelingJobName"))
   {
     m_labelingJobName = jsonValue.GetString("LabelingJobName");
-
     m_labelingJobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobReferenceCode"))
   {
     m_jobReferenceCode = jsonValue.GetString("JobReferenceCode");
-
     m_jobReferenceCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkRequesterAccountId"))
   {
     m_workRequesterAccountId = jsonValue.GetString("WorkRequesterAccountId");
-
     m_workRequesterAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LabelCounters"))
   {
     m_labelCounters = jsonValue.GetObject("LabelCounters");
-
     m_labelCountersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfHumanWorkersPerDataObject"))
   {
     m_numberOfHumanWorkersPerDataObject = jsonValue.GetInteger("NumberOfHumanWorkersPerDataObject");
-
     m_numberOfHumanWorkersPerDataObjectHasBeenSet = true;
   }
-
   return *this;
 }
 

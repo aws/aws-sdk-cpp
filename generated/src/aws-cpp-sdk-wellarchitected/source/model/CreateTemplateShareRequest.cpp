@@ -12,14 +12,6 @@ using namespace Aws::WellArchitected::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateTemplateShareRequest::CreateTemplateShareRequest() : 
-    m_templateArnHasBeenSet(false),
-    m_sharedWithHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateTemplateShareRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -24,7 +24,7 @@ namespace Model
   class CreateVerifiedAccessInstanceRequest : public EC2Request
   {
   public:
-    AWS_EC2_API CreateVerifiedAccessInstanceRequest();
+    AWS_EC2_API CreateVerifiedAccessInstanceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,28 +43,26 @@ namespace Model
     /**
      * <p>A description for the Verified Access instance.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateVerifiedAccessInstanceRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateVerifiedAccessInstanceRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateVerifiedAccessInstanceRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateVerifiedAccessInstanceRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags to assign to the Verified Access instance.</p>
      */
-    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const { return m_tagSpecifications; }
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
-    inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
-    inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
-    inline CreateVerifiedAccessInstanceRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
-    inline CreateVerifiedAccessInstanceRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
-    inline CreateVerifiedAccessInstanceRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
-    inline CreateVerifiedAccessInstanceRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
+    template<typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+    void SetTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::forward<TagSpecificationsT>(value); }
+    template<typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+    CreateVerifiedAccessInstanceRequest& WithTagSpecifications(TagSpecificationsT&& value) { SetTagSpecifications(std::forward<TagSpecificationsT>(value)); return *this;}
+    template<typename TagSpecificationsT = TagSpecification>
+    CreateVerifiedAccessInstanceRequest& AddTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.emplace_back(std::forward<TagSpecificationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -74,14 +72,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">Ensuring
      * idempotency</a>.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateVerifiedAccessInstanceRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateVerifiedAccessInstanceRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateVerifiedAccessInstanceRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateVerifiedAccessInstanceRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,7 +87,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline CreateVerifiedAccessInstanceRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -102,7 +98,7 @@ namespace Model
      * <p>Enable or disable support for Federal Information Processing Standards (FIPS)
      * on the instance.</p>
      */
-    inline bool GetFIPSEnabled() const{ return m_fIPSEnabled; }
+    inline bool GetFIPSEnabled() const { return m_fIPSEnabled; }
     inline bool FIPSEnabledHasBeenSet() const { return m_fIPSEnabledHasBeenSet; }
     inline void SetFIPSEnabled(bool value) { m_fIPSEnabledHasBeenSet = true; m_fIPSEnabled = value; }
     inline CreateVerifiedAccessInstanceRequest& WithFIPSEnabled(bool value) { SetFIPSEnabled(value); return *this;}
@@ -112,14 +108,12 @@ namespace Model
     /**
      * <p>The custom subdomain.</p>
      */
-    inline const Aws::String& GetCidrEndpointsCustomSubDomain() const{ return m_cidrEndpointsCustomSubDomain; }
+    inline const Aws::String& GetCidrEndpointsCustomSubDomain() const { return m_cidrEndpointsCustomSubDomain; }
     inline bool CidrEndpointsCustomSubDomainHasBeenSet() const { return m_cidrEndpointsCustomSubDomainHasBeenSet; }
-    inline void SetCidrEndpointsCustomSubDomain(const Aws::String& value) { m_cidrEndpointsCustomSubDomainHasBeenSet = true; m_cidrEndpointsCustomSubDomain = value; }
-    inline void SetCidrEndpointsCustomSubDomain(Aws::String&& value) { m_cidrEndpointsCustomSubDomainHasBeenSet = true; m_cidrEndpointsCustomSubDomain = std::move(value); }
-    inline void SetCidrEndpointsCustomSubDomain(const char* value) { m_cidrEndpointsCustomSubDomainHasBeenSet = true; m_cidrEndpointsCustomSubDomain.assign(value); }
-    inline CreateVerifiedAccessInstanceRequest& WithCidrEndpointsCustomSubDomain(const Aws::String& value) { SetCidrEndpointsCustomSubDomain(value); return *this;}
-    inline CreateVerifiedAccessInstanceRequest& WithCidrEndpointsCustomSubDomain(Aws::String&& value) { SetCidrEndpointsCustomSubDomain(std::move(value)); return *this;}
-    inline CreateVerifiedAccessInstanceRequest& WithCidrEndpointsCustomSubDomain(const char* value) { SetCidrEndpointsCustomSubDomain(value); return *this;}
+    template<typename CidrEndpointsCustomSubDomainT = Aws::String>
+    void SetCidrEndpointsCustomSubDomain(CidrEndpointsCustomSubDomainT&& value) { m_cidrEndpointsCustomSubDomainHasBeenSet = true; m_cidrEndpointsCustomSubDomain = std::forward<CidrEndpointsCustomSubDomainT>(value); }
+    template<typename CidrEndpointsCustomSubDomainT = Aws::String>
+    CreateVerifiedAccessInstanceRequest& WithCidrEndpointsCustomSubDomain(CidrEndpointsCustomSubDomainT&& value) { SetCidrEndpointsCustomSubDomain(std::forward<CidrEndpointsCustomSubDomainT>(value)); return *this;}
     ///@}
   private:
 
@@ -132,10 +126,10 @@ namespace Model
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
-    bool m_fIPSEnabled;
+    bool m_fIPSEnabled{false};
     bool m_fIPSEnabledHasBeenSet = false;
 
     Aws::String m_cidrEndpointsCustomSubDomain;

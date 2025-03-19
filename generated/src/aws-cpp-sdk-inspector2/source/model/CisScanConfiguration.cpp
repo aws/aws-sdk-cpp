@@ -18,20 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-CisScanConfiguration::CisScanConfiguration() : 
-    m_ownerIdHasBeenSet(false),
-    m_scanConfigurationArnHasBeenSet(false),
-    m_scanNameHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_securityLevel(CisSecurityLevel::NOT_SET),
-    m_securityLevelHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_targetsHasBeenSet(false)
-{
-}
-
 CisScanConfiguration::CisScanConfiguration(JsonView jsonValue)
-  : CisScanConfiguration()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ CisScanConfiguration& CisScanConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ownerId"))
   {
     m_ownerId = jsonValue.GetString("ownerId");
-
     m_ownerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scanConfigurationArn"))
   {
     m_scanConfigurationArn = jsonValue.GetString("scanConfigurationArn");
-
     m_scanConfigurationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scanName"))
   {
     m_scanName = jsonValue.GetString("scanName");
-
     m_scanNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("schedule"))
   {
     m_schedule = jsonValue.GetObject("schedule");
-
     m_scheduleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("securityLevel"))
   {
     m_securityLevel = CisSecurityLevelMapper::GetCisSecurityLevelForName(jsonValue.GetString("securityLevel"));
-
     m_securityLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -82,14 +59,11 @@ CisScanConfiguration& CisScanConfiguration::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targets"))
   {
     m_targets = jsonValue.GetObject("targets");
-
     m_targetsHasBeenSet = true;
   }
-
   return *this;
 }
 

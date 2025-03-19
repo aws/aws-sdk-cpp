@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-TestRepositoryTriggersResult::TestRepositoryTriggersResult()
-{
-}
-
 TestRepositoryTriggersResult::TestRepositoryTriggersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ TestRepositoryTriggersResult& TestRepositoryTriggersResult::operator =(const Aws
     {
       m_successfulExecutions.push_back(successfulExecutionsJsonList[successfulExecutionsIndex].AsString());
     }
+    m_successfulExecutionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failedExecutions"))
   {
     Aws::Utils::Array<JsonView> failedExecutionsJsonList = jsonValue.GetArray("failedExecutions");
@@ -45,14 +41,15 @@ TestRepositoryTriggersResult& TestRepositoryTriggersResult::operator =(const Aws
     {
       m_failedExecutions.push_back(failedExecutionsJsonList[failedExecutionsIndex].AsObject());
     }
+    m_failedExecutionsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

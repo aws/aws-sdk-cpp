@@ -18,15 +18,7 @@ namespace Proton
 namespace Model
 {
 
-ListServiceInstancesFilter::ListServiceInstancesFilter() : 
-    m_key(ListServiceInstancesFilterBy::NOT_SET),
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 ListServiceInstancesFilter::ListServiceInstancesFilter(JsonView jsonValue)
-  : ListServiceInstancesFilter()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ListServiceInstancesFilter& ListServiceInstancesFilter::operator =(JsonView json
   if(jsonValue.ValueExists("key"))
   {
     m_key = ListServiceInstancesFilterByMapper::GetListServiceInstancesFilterByForName(jsonValue.GetString("key"));
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

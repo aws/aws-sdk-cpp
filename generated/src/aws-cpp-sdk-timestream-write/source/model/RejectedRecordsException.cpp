@@ -18,14 +18,7 @@ namespace TimestreamWrite
 namespace Model
 {
 
-RejectedRecordsException::RejectedRecordsException() : 
-    m_messageHasBeenSet(false),
-    m_rejectedRecordsHasBeenSet(false)
-{
-}
-
 RejectedRecordsException::RejectedRecordsException(JsonView jsonValue)
-  : RejectedRecordsException()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ RejectedRecordsException& RejectedRecordsException::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RejectedRecords"))
   {
     Aws::Utils::Array<JsonView> rejectedRecordsJsonList = jsonValue.GetArray("RejectedRecords");
@@ -48,7 +39,6 @@ RejectedRecordsException& RejectedRecordsException::operator =(JsonView jsonValu
     }
     m_rejectedRecordsHasBeenSet = true;
   }
-
   return *this;
 }
 

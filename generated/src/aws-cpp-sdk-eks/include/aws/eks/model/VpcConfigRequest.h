@@ -33,7 +33,7 @@ namespace Model
   class VpcConfigRequest
   {
   public:
-    AWS_EKS_API VpcConfigRequest();
+    AWS_EKS_API VpcConfigRequest() = default;
     AWS_EKS_API VpcConfigRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API VpcConfigRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,15 +45,14 @@ namespace Model
      * elastic network interfaces in these subnets to allow communication between your
      * nodes and the Kubernetes control plane.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
+    inline const Aws::Vector<Aws::String>& GetSubnetIds() const { return m_subnetIds; }
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
-    inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
-    inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
-    inline VpcConfigRequest& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
-    inline VpcConfigRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
-    inline VpcConfigRequest& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
-    inline VpcConfigRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
-    inline VpcConfigRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
+    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
+    void SetSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::forward<SubnetIdsT>(value); }
+    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
+    VpcConfigRequest& WithSubnetIds(SubnetIdsT&& value) { SetSubnetIds(std::forward<SubnetIdsT>(value)); return *this;}
+    template<typename SubnetIdsT = Aws::String>
+    VpcConfigRequest& AddSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.emplace_back(std::forward<SubnetIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -67,15 +66,14 @@ namespace Model
      * EKS security group considerations</a> in the <i> <i>Amazon EKS User Guide</i>
      * </i>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const { return m_securityGroupIds; }
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
-    inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
-    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
-    inline VpcConfigRequest& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
-    inline VpcConfigRequest& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
-    inline VpcConfigRequest& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
-    inline VpcConfigRequest& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
-    inline VpcConfigRequest& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    void SetSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::forward<SecurityGroupIdsT>(value); }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    VpcConfigRequest& WithSecurityGroupIds(SecurityGroupIdsT&& value) { SetSecurityGroupIds(std::forward<SecurityGroupIdsT>(value)); return *this;}
+    template<typename SecurityGroupIdsT = Aws::String>
+    VpcConfigRequest& AddSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.emplace_back(std::forward<SecurityGroupIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -90,7 +88,7 @@ namespace Model
      * EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i>
      * </i>.</p>
      */
-    inline bool GetEndpointPublicAccess() const{ return m_endpointPublicAccess; }
+    inline bool GetEndpointPublicAccess() const { return m_endpointPublicAccess; }
     inline bool EndpointPublicAccessHasBeenSet() const { return m_endpointPublicAccessHasBeenSet; }
     inline void SetEndpointPublicAccess(bool value) { m_endpointPublicAccessHasBeenSet = true; m_endpointPublicAccess = value; }
     inline VpcConfigRequest& WithEndpointPublicAccess(bool value) { SetEndpointPublicAccess(value); return *this;}
@@ -110,7 +108,7 @@ namespace Model
      * EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i>
      * </i>.</p>
      */
-    inline bool GetEndpointPrivateAccess() const{ return m_endpointPrivateAccess; }
+    inline bool GetEndpointPrivateAccess() const { return m_endpointPrivateAccess; }
     inline bool EndpointPrivateAccessHasBeenSet() const { return m_endpointPrivateAccessHasBeenSet; }
     inline void SetEndpointPrivateAccess(bool value) { m_endpointPrivateAccessHasBeenSet = true; m_endpointPrivateAccess = value; }
     inline VpcConfigRequest& WithEndpointPrivateAccess(bool value) { SetEndpointPrivateAccess(value); return *this;}
@@ -128,15 +126,14 @@ namespace Model
      * EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i>
      * </i>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPublicAccessCidrs() const{ return m_publicAccessCidrs; }
+    inline const Aws::Vector<Aws::String>& GetPublicAccessCidrs() const { return m_publicAccessCidrs; }
     inline bool PublicAccessCidrsHasBeenSet() const { return m_publicAccessCidrsHasBeenSet; }
-    inline void SetPublicAccessCidrs(const Aws::Vector<Aws::String>& value) { m_publicAccessCidrsHasBeenSet = true; m_publicAccessCidrs = value; }
-    inline void SetPublicAccessCidrs(Aws::Vector<Aws::String>&& value) { m_publicAccessCidrsHasBeenSet = true; m_publicAccessCidrs = std::move(value); }
-    inline VpcConfigRequest& WithPublicAccessCidrs(const Aws::Vector<Aws::String>& value) { SetPublicAccessCidrs(value); return *this;}
-    inline VpcConfigRequest& WithPublicAccessCidrs(Aws::Vector<Aws::String>&& value) { SetPublicAccessCidrs(std::move(value)); return *this;}
-    inline VpcConfigRequest& AddPublicAccessCidrs(const Aws::String& value) { m_publicAccessCidrsHasBeenSet = true; m_publicAccessCidrs.push_back(value); return *this; }
-    inline VpcConfigRequest& AddPublicAccessCidrs(Aws::String&& value) { m_publicAccessCidrsHasBeenSet = true; m_publicAccessCidrs.push_back(std::move(value)); return *this; }
-    inline VpcConfigRequest& AddPublicAccessCidrs(const char* value) { m_publicAccessCidrsHasBeenSet = true; m_publicAccessCidrs.push_back(value); return *this; }
+    template<typename PublicAccessCidrsT = Aws::Vector<Aws::String>>
+    void SetPublicAccessCidrs(PublicAccessCidrsT&& value) { m_publicAccessCidrsHasBeenSet = true; m_publicAccessCidrs = std::forward<PublicAccessCidrsT>(value); }
+    template<typename PublicAccessCidrsT = Aws::Vector<Aws::String>>
+    VpcConfigRequest& WithPublicAccessCidrs(PublicAccessCidrsT&& value) { SetPublicAccessCidrs(std::forward<PublicAccessCidrsT>(value)); return *this;}
+    template<typename PublicAccessCidrsT = Aws::String>
+    VpcConfigRequest& AddPublicAccessCidrs(PublicAccessCidrsT&& value) { m_publicAccessCidrsHasBeenSet = true; m_publicAccessCidrs.emplace_back(std::forward<PublicAccessCidrsT>(value)); return *this; }
     ///@}
   private:
 
@@ -146,10 +143,10 @@ namespace Model
     Aws::Vector<Aws::String> m_securityGroupIds;
     bool m_securityGroupIdsHasBeenSet = false;
 
-    bool m_endpointPublicAccess;
+    bool m_endpointPublicAccess{false};
     bool m_endpointPublicAccessHasBeenSet = false;
 
-    bool m_endpointPrivateAccess;
+    bool m_endpointPrivateAccess{false};
     bool m_endpointPrivateAccessHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_publicAccessCidrs;

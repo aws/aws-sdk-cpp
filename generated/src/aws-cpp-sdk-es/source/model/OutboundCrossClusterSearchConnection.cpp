@@ -18,17 +18,7 @@ namespace ElasticsearchService
 namespace Model
 {
 
-OutboundCrossClusterSearchConnection::OutboundCrossClusterSearchConnection() : 
-    m_sourceDomainInfoHasBeenSet(false),
-    m_destinationDomainInfoHasBeenSet(false),
-    m_crossClusterSearchConnectionIdHasBeenSet(false),
-    m_connectionAliasHasBeenSet(false),
-    m_connectionStatusHasBeenSet(false)
-{
-}
-
 OutboundCrossClusterSearchConnection::OutboundCrossClusterSearchConnection(JsonView jsonValue)
-  : OutboundCrossClusterSearchConnection()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ OutboundCrossClusterSearchConnection& OutboundCrossClusterSearchConnection::oper
   if(jsonValue.ValueExists("SourceDomainInfo"))
   {
     m_sourceDomainInfo = jsonValue.GetObject("SourceDomainInfo");
-
     m_sourceDomainInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationDomainInfo"))
   {
     m_destinationDomainInfo = jsonValue.GetObject("DestinationDomainInfo");
-
     m_destinationDomainInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CrossClusterSearchConnectionId"))
   {
     m_crossClusterSearchConnectionId = jsonValue.GetString("CrossClusterSearchConnectionId");
-
     m_crossClusterSearchConnectionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionAlias"))
   {
     m_connectionAlias = jsonValue.GetString("ConnectionAlias");
-
     m_connectionAliasHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionStatus"))
   {
     m_connectionStatus = jsonValue.GetObject("ConnectionStatus");
-
     m_connectionStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

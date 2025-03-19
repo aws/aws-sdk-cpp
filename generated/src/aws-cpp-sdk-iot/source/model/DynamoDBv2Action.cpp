@@ -18,14 +18,7 @@ namespace IoT
 namespace Model
 {
 
-DynamoDBv2Action::DynamoDBv2Action() : 
-    m_roleArnHasBeenSet(false),
-    m_putItemHasBeenSet(false)
-{
-}
-
 DynamoDBv2Action::DynamoDBv2Action(JsonView jsonValue)
-  : DynamoDBv2Action()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DynamoDBv2Action& DynamoDBv2Action::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("putItem"))
   {
     m_putItem = jsonValue.GetObject("putItem");
-
     m_putItemHasBeenSet = true;
   }
-
   return *this;
 }
 

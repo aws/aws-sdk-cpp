@@ -34,7 +34,7 @@ namespace Model
   class PackageDetailsForAssociation
   {
   public:
-    AWS_OPENSEARCHSERVICE_API PackageDetailsForAssociation();
+    AWS_OPENSEARCHSERVICE_API PackageDetailsForAssociation() = default;
     AWS_OPENSEARCHSERVICE_API PackageDetailsForAssociation(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API PackageDetailsForAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>Internal ID of the package that you want to associate with a domain.</p>
      */
-    inline const Aws::String& GetPackageID() const{ return m_packageID; }
+    inline const Aws::String& GetPackageID() const { return m_packageID; }
     inline bool PackageIDHasBeenSet() const { return m_packageIDHasBeenSet; }
-    inline void SetPackageID(const Aws::String& value) { m_packageIDHasBeenSet = true; m_packageID = value; }
-    inline void SetPackageID(Aws::String&& value) { m_packageIDHasBeenSet = true; m_packageID = std::move(value); }
-    inline void SetPackageID(const char* value) { m_packageIDHasBeenSet = true; m_packageID.assign(value); }
-    inline PackageDetailsForAssociation& WithPackageID(const Aws::String& value) { SetPackageID(value); return *this;}
-    inline PackageDetailsForAssociation& WithPackageID(Aws::String&& value) { SetPackageID(std::move(value)); return *this;}
-    inline PackageDetailsForAssociation& WithPackageID(const char* value) { SetPackageID(value); return *this;}
+    template<typename PackageIDT = Aws::String>
+    void SetPackageID(PackageIDT&& value) { m_packageIDHasBeenSet = true; m_packageID = std::forward<PackageIDT>(value); }
+    template<typename PackageIDT = Aws::String>
+    PackageDetailsForAssociation& WithPackageID(PackageIDT&& value) { SetPackageID(std::forward<PackageIDT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,27 +57,26 @@ namespace Model
      * <p>List of package IDs that must be associated with the domain with or before
      * the package can be associated.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPrerequisitePackageIDList() const{ return m_prerequisitePackageIDList; }
+    inline const Aws::Vector<Aws::String>& GetPrerequisitePackageIDList() const { return m_prerequisitePackageIDList; }
     inline bool PrerequisitePackageIDListHasBeenSet() const { return m_prerequisitePackageIDListHasBeenSet; }
-    inline void SetPrerequisitePackageIDList(const Aws::Vector<Aws::String>& value) { m_prerequisitePackageIDListHasBeenSet = true; m_prerequisitePackageIDList = value; }
-    inline void SetPrerequisitePackageIDList(Aws::Vector<Aws::String>&& value) { m_prerequisitePackageIDListHasBeenSet = true; m_prerequisitePackageIDList = std::move(value); }
-    inline PackageDetailsForAssociation& WithPrerequisitePackageIDList(const Aws::Vector<Aws::String>& value) { SetPrerequisitePackageIDList(value); return *this;}
-    inline PackageDetailsForAssociation& WithPrerequisitePackageIDList(Aws::Vector<Aws::String>&& value) { SetPrerequisitePackageIDList(std::move(value)); return *this;}
-    inline PackageDetailsForAssociation& AddPrerequisitePackageIDList(const Aws::String& value) { m_prerequisitePackageIDListHasBeenSet = true; m_prerequisitePackageIDList.push_back(value); return *this; }
-    inline PackageDetailsForAssociation& AddPrerequisitePackageIDList(Aws::String&& value) { m_prerequisitePackageIDListHasBeenSet = true; m_prerequisitePackageIDList.push_back(std::move(value)); return *this; }
-    inline PackageDetailsForAssociation& AddPrerequisitePackageIDList(const char* value) { m_prerequisitePackageIDListHasBeenSet = true; m_prerequisitePackageIDList.push_back(value); return *this; }
+    template<typename PrerequisitePackageIDListT = Aws::Vector<Aws::String>>
+    void SetPrerequisitePackageIDList(PrerequisitePackageIDListT&& value) { m_prerequisitePackageIDListHasBeenSet = true; m_prerequisitePackageIDList = std::forward<PrerequisitePackageIDListT>(value); }
+    template<typename PrerequisitePackageIDListT = Aws::Vector<Aws::String>>
+    PackageDetailsForAssociation& WithPrerequisitePackageIDList(PrerequisitePackageIDListT&& value) { SetPrerequisitePackageIDList(std::forward<PrerequisitePackageIDListT>(value)); return *this;}
+    template<typename PrerequisitePackageIDListT = Aws::String>
+    PackageDetailsForAssociation& AddPrerequisitePackageIDList(PrerequisitePackageIDListT&& value) { m_prerequisitePackageIDListHasBeenSet = true; m_prerequisitePackageIDList.emplace_back(std::forward<PrerequisitePackageIDListT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The configuration parameters for associating the package with a domain.</p>
      */
-    inline const PackageAssociationConfiguration& GetAssociationConfiguration() const{ return m_associationConfiguration; }
+    inline const PackageAssociationConfiguration& GetAssociationConfiguration() const { return m_associationConfiguration; }
     inline bool AssociationConfigurationHasBeenSet() const { return m_associationConfigurationHasBeenSet; }
-    inline void SetAssociationConfiguration(const PackageAssociationConfiguration& value) { m_associationConfigurationHasBeenSet = true; m_associationConfiguration = value; }
-    inline void SetAssociationConfiguration(PackageAssociationConfiguration&& value) { m_associationConfigurationHasBeenSet = true; m_associationConfiguration = std::move(value); }
-    inline PackageDetailsForAssociation& WithAssociationConfiguration(const PackageAssociationConfiguration& value) { SetAssociationConfiguration(value); return *this;}
-    inline PackageDetailsForAssociation& WithAssociationConfiguration(PackageAssociationConfiguration&& value) { SetAssociationConfiguration(std::move(value)); return *this;}
+    template<typename AssociationConfigurationT = PackageAssociationConfiguration>
+    void SetAssociationConfiguration(AssociationConfigurationT&& value) { m_associationConfigurationHasBeenSet = true; m_associationConfiguration = std::forward<AssociationConfigurationT>(value); }
+    template<typename AssociationConfigurationT = PackageAssociationConfiguration>
+    PackageDetailsForAssociation& WithAssociationConfiguration(AssociationConfigurationT&& value) { SetAssociationConfiguration(std::forward<AssociationConfigurationT>(value)); return *this;}
     ///@}
   private:
 

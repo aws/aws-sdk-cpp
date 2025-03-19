@@ -12,12 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartColumnStatisticsTaskRunScheduleRequest::StartColumnStatisticsTaskRunScheduleRequest() : 
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false)
-{
-}
-
 Aws::String StartColumnStatisticsTaskRunScheduleRequest::SerializePayload() const
 {
   JsonValue payload;

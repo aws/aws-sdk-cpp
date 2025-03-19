@@ -12,17 +12,6 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribePullRequestEventsRequest::DescribePullRequestEventsRequest() : 
-    m_pullRequestIdHasBeenSet(false),
-    m_pullRequestEventType(PullRequestEventType::NOT_SET),
-    m_pullRequestEventTypeHasBeenSet(false),
-    m_actorArnHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String DescribePullRequestEventsRequest::SerializePayload() const
 {
   JsonValue payload;

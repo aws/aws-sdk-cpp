@@ -12,14 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateWorkspaceImagePermissionRequest::UpdateWorkspaceImagePermissionRequest() : 
-    m_imageIdHasBeenSet(false),
-    m_allowCopyImage(false),
-    m_allowCopyImageHasBeenSet(false),
-    m_sharedAccountIdHasBeenSet(false)
-{
-}
-
 Aws::String UpdateWorkspaceImagePermissionRequest::SerializePayload() const
 {
   JsonValue payload;

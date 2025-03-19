@@ -18,13 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-ServerlessClientAuthentication::ServerlessClientAuthentication() : 
-    m_saslHasBeenSet(false)
-{
-}
-
 ServerlessClientAuthentication::ServerlessClientAuthentication(JsonView jsonValue)
-  : ServerlessClientAuthentication()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ServerlessClientAuthentication& ServerlessClientAuthentication::operator =(JsonV
   if(jsonValue.ValueExists("sasl"))
   {
     m_sasl = jsonValue.GetObject("sasl");
-
     m_saslHasBeenSet = true;
   }
-
   return *this;
 }
 

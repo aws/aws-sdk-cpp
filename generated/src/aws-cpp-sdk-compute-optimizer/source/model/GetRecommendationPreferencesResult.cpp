@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetRecommendationPreferencesResult::GetRecommendationPreferencesResult()
-{
-}
-
 GetRecommendationPreferencesResult::GetRecommendationPreferencesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ GetRecommendationPreferencesResult& GetRecommendationPreferencesResult::operator
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recommendationPreferencesDetails"))
   {
     Aws::Utils::Array<JsonView> recommendationPreferencesDetailsJsonList = jsonValue.GetArray("recommendationPreferencesDetails");
@@ -42,14 +37,15 @@ GetRecommendationPreferencesResult& GetRecommendationPreferencesResult::operator
     {
       m_recommendationPreferencesDetails.push_back(recommendationPreferencesDetailsJsonList[recommendationPreferencesDetailsIndex].AsObject());
     }
+    m_recommendationPreferencesDetailsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -32,7 +32,7 @@ namespace Model
   class AlertTarget
   {
   public:
-    AWS_IOT_API AlertTarget();
+    AWS_IOT_API AlertTarget() = default;
     AWS_IOT_API AlertTarget(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API AlertTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the notification target to which alerts are
      * sent.</p>
      */
-    inline const Aws::String& GetAlertTargetArn() const{ return m_alertTargetArn; }
+    inline const Aws::String& GetAlertTargetArn() const { return m_alertTargetArn; }
     inline bool AlertTargetArnHasBeenSet() const { return m_alertTargetArnHasBeenSet; }
-    inline void SetAlertTargetArn(const Aws::String& value) { m_alertTargetArnHasBeenSet = true; m_alertTargetArn = value; }
-    inline void SetAlertTargetArn(Aws::String&& value) { m_alertTargetArnHasBeenSet = true; m_alertTargetArn = std::move(value); }
-    inline void SetAlertTargetArn(const char* value) { m_alertTargetArnHasBeenSet = true; m_alertTargetArn.assign(value); }
-    inline AlertTarget& WithAlertTargetArn(const Aws::String& value) { SetAlertTargetArn(value); return *this;}
-    inline AlertTarget& WithAlertTargetArn(Aws::String&& value) { SetAlertTargetArn(std::move(value)); return *this;}
-    inline AlertTarget& WithAlertTargetArn(const char* value) { SetAlertTargetArn(value); return *this;}
+    template<typename AlertTargetArnT = Aws::String>
+    void SetAlertTargetArn(AlertTargetArnT&& value) { m_alertTargetArnHasBeenSet = true; m_alertTargetArn = std::forward<AlertTargetArnT>(value); }
+    template<typename AlertTargetArnT = Aws::String>
+    AlertTarget& WithAlertTargetArn(AlertTargetArnT&& value) { SetAlertTargetArn(std::forward<AlertTargetArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The ARN of the role that grants permission to send alerts to the notification
      * target.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline AlertTarget& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline AlertTarget& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline AlertTarget& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    AlertTarget& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
   private:
 

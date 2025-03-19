@@ -18,36 +18,7 @@ namespace AutoScalingPlans
 namespace Model
 {
 
-ScalingInstruction::ScalingInstruction() : 
-    m_serviceNamespace(ServiceNamespace::NOT_SET),
-    m_serviceNamespaceHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_scalableDimension(ScalableDimension::NOT_SET),
-    m_scalableDimensionHasBeenSet(false),
-    m_minCapacity(0),
-    m_minCapacityHasBeenSet(false),
-    m_maxCapacity(0),
-    m_maxCapacityHasBeenSet(false),
-    m_targetTrackingConfigurationsHasBeenSet(false),
-    m_predefinedLoadMetricSpecificationHasBeenSet(false),
-    m_customizedLoadMetricSpecificationHasBeenSet(false),
-    m_scheduledActionBufferTime(0),
-    m_scheduledActionBufferTimeHasBeenSet(false),
-    m_predictiveScalingMaxCapacityBehavior(PredictiveScalingMaxCapacityBehavior::NOT_SET),
-    m_predictiveScalingMaxCapacityBehaviorHasBeenSet(false),
-    m_predictiveScalingMaxCapacityBuffer(0),
-    m_predictiveScalingMaxCapacityBufferHasBeenSet(false),
-    m_predictiveScalingMode(PredictiveScalingMode::NOT_SET),
-    m_predictiveScalingModeHasBeenSet(false),
-    m_scalingPolicyUpdateBehavior(ScalingPolicyUpdateBehavior::NOT_SET),
-    m_scalingPolicyUpdateBehaviorHasBeenSet(false),
-    m_disableDynamicScaling(false),
-    m_disableDynamicScalingHasBeenSet(false)
-{
-}
-
 ScalingInstruction::ScalingInstruction(JsonView jsonValue)
-  : ScalingInstruction()
 {
   *this = jsonValue;
 }
@@ -57,38 +28,28 @@ ScalingInstruction& ScalingInstruction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ServiceNamespace"))
   {
     m_serviceNamespace = ServiceNamespaceMapper::GetServiceNamespaceForName(jsonValue.GetString("ServiceNamespace"));
-
     m_serviceNamespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScalableDimension"))
   {
     m_scalableDimension = ScalableDimensionMapper::GetScalableDimensionForName(jsonValue.GetString("ScalableDimension"));
-
     m_scalableDimensionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinCapacity"))
   {
     m_minCapacity = jsonValue.GetInteger("MinCapacity");
-
     m_minCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxCapacity"))
   {
     m_maxCapacity = jsonValue.GetInteger("MaxCapacity");
-
     m_maxCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetTrackingConfigurations"))
   {
     Aws::Utils::Array<JsonView> targetTrackingConfigurationsJsonList = jsonValue.GetArray("TargetTrackingConfigurations");
@@ -98,63 +59,46 @@ ScalingInstruction& ScalingInstruction::operator =(JsonView jsonValue)
     }
     m_targetTrackingConfigurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PredefinedLoadMetricSpecification"))
   {
     m_predefinedLoadMetricSpecification = jsonValue.GetObject("PredefinedLoadMetricSpecification");
-
     m_predefinedLoadMetricSpecificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomizedLoadMetricSpecification"))
   {
     m_customizedLoadMetricSpecification = jsonValue.GetObject("CustomizedLoadMetricSpecification");
-
     m_customizedLoadMetricSpecificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScheduledActionBufferTime"))
   {
     m_scheduledActionBufferTime = jsonValue.GetInteger("ScheduledActionBufferTime");
-
     m_scheduledActionBufferTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PredictiveScalingMaxCapacityBehavior"))
   {
     m_predictiveScalingMaxCapacityBehavior = PredictiveScalingMaxCapacityBehaviorMapper::GetPredictiveScalingMaxCapacityBehaviorForName(jsonValue.GetString("PredictiveScalingMaxCapacityBehavior"));
-
     m_predictiveScalingMaxCapacityBehaviorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PredictiveScalingMaxCapacityBuffer"))
   {
     m_predictiveScalingMaxCapacityBuffer = jsonValue.GetInteger("PredictiveScalingMaxCapacityBuffer");
-
     m_predictiveScalingMaxCapacityBufferHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PredictiveScalingMode"))
   {
     m_predictiveScalingMode = PredictiveScalingModeMapper::GetPredictiveScalingModeForName(jsonValue.GetString("PredictiveScalingMode"));
-
     m_predictiveScalingModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScalingPolicyUpdateBehavior"))
   {
     m_scalingPolicyUpdateBehavior = ScalingPolicyUpdateBehaviorMapper::GetScalingPolicyUpdateBehaviorForName(jsonValue.GetString("ScalingPolicyUpdateBehavior"));
-
     m_scalingPolicyUpdateBehaviorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisableDynamicScaling"))
   {
     m_disableDynamicScaling = jsonValue.GetBool("DisableDynamicScaling");
-
     m_disableDynamicScalingHasBeenSet = true;
   }
-
   return *this;
 }
 

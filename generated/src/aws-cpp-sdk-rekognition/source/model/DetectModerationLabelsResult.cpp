@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DetectModerationLabelsResult::DetectModerationLabelsResult()
-{
-}
-
 DetectModerationLabelsResult::DetectModerationLabelsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,26 +32,23 @@ DetectModerationLabelsResult& DetectModerationLabelsResult::operator =(const Aws
     {
       m_moderationLabels.push_back(moderationLabelsJsonList[moderationLabelsIndex].AsObject());
     }
+    m_moderationLabelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModerationModelVersion"))
   {
     m_moderationModelVersion = jsonValue.GetString("ModerationModelVersion");
-
+    m_moderationModelVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HumanLoopActivationOutput"))
   {
     m_humanLoopActivationOutput = jsonValue.GetObject("HumanLoopActivationOutput");
-
+    m_humanLoopActivationOutputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProjectVersion"))
   {
     m_projectVersion = jsonValue.GetString("ProjectVersion");
-
+    m_projectVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContentTypes"))
   {
     Aws::Utils::Array<JsonView> contentTypesJsonList = jsonValue.GetArray("ContentTypes");
@@ -63,14 +56,15 @@ DetectModerationLabelsResult& DetectModerationLabelsResult::operator =(const Aws
     {
       m_contentTypes.push_back(contentTypesJsonList[contentTypesIndex].AsObject());
     }
+    m_contentTypesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

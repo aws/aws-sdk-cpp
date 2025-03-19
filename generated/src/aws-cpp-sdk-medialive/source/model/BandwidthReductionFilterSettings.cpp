@@ -18,16 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-BandwidthReductionFilterSettings::BandwidthReductionFilterSettings() : 
-    m_postFilterSharpening(BandwidthReductionPostFilterSharpening::NOT_SET),
-    m_postFilterSharpeningHasBeenSet(false),
-    m_strength(BandwidthReductionFilterStrength::NOT_SET),
-    m_strengthHasBeenSet(false)
-{
-}
-
 BandwidthReductionFilterSettings::BandwidthReductionFilterSettings(JsonView jsonValue)
-  : BandwidthReductionFilterSettings()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ BandwidthReductionFilterSettings& BandwidthReductionFilterSettings::operator =(J
   if(jsonValue.ValueExists("postFilterSharpening"))
   {
     m_postFilterSharpening = BandwidthReductionPostFilterSharpeningMapper::GetBandwidthReductionPostFilterSharpeningForName(jsonValue.GetString("postFilterSharpening"));
-
     m_postFilterSharpeningHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("strength"))
   {
     m_strength = BandwidthReductionFilterStrengthMapper::GetBandwidthReductionFilterStrengthForName(jsonValue.GetString("strength"));
-
     m_strengthHasBeenSet = true;
   }
-
   return *this;
 }
 

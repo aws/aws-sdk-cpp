@@ -33,7 +33,7 @@ namespace Model
   class BatchCreateBillScenarioCommitmentModificationError
   {
   public:
-    AWS_BCMPRICINGCALCULATOR_API BatchCreateBillScenarioCommitmentModificationError();
+    AWS_BCMPRICINGCALCULATOR_API BatchCreateBillScenarioCommitmentModificationError() = default;
     AWS_BCMPRICINGCALCULATOR_API BatchCreateBillScenarioCommitmentModificationError(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMPRICINGCALCULATOR_API BatchCreateBillScenarioCommitmentModificationError& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMPRICINGCALCULATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,40 +43,34 @@ namespace Model
     /**
      * <p> The key of the entry that caused the error. </p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline BatchCreateBillScenarioCommitmentModificationError& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline BatchCreateBillScenarioCommitmentModificationError& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline BatchCreateBillScenarioCommitmentModificationError& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    BatchCreateBillScenarioCommitmentModificationError& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> A descriptive message for the error that occurred. </p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline BatchCreateBillScenarioCommitmentModificationError& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline BatchCreateBillScenarioCommitmentModificationError& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline BatchCreateBillScenarioCommitmentModificationError& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    BatchCreateBillScenarioCommitmentModificationError& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The error code associated with the failed operation. </p>
      */
-    inline const BatchCreateBillScenarioCommitmentModificationErrorCode& GetErrorCode() const{ return m_errorCode; }
+    inline BatchCreateBillScenarioCommitmentModificationErrorCode GetErrorCode() const { return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    inline void SetErrorCode(const BatchCreateBillScenarioCommitmentModificationErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-    inline void SetErrorCode(BatchCreateBillScenarioCommitmentModificationErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-    inline BatchCreateBillScenarioCommitmentModificationError& WithErrorCode(const BatchCreateBillScenarioCommitmentModificationErrorCode& value) { SetErrorCode(value); return *this;}
-    inline BatchCreateBillScenarioCommitmentModificationError& WithErrorCode(BatchCreateBillScenarioCommitmentModificationErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
+    inline void SetErrorCode(BatchCreateBillScenarioCommitmentModificationErrorCode value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
+    inline BatchCreateBillScenarioCommitmentModificationError& WithErrorCode(BatchCreateBillScenarioCommitmentModificationErrorCode value) { SetErrorCode(value); return *this;}
     ///@}
   private:
 
@@ -86,7 +80,7 @@ namespace Model
     Aws::String m_errorMessage;
     bool m_errorMessageHasBeenSet = false;
 
-    BatchCreateBillScenarioCommitmentModificationErrorCode m_errorCode;
+    BatchCreateBillScenarioCommitmentModificationErrorCode m_errorCode{BatchCreateBillScenarioCommitmentModificationErrorCode::NOT_SET};
     bool m_errorCodeHasBeenSet = false;
   };
 

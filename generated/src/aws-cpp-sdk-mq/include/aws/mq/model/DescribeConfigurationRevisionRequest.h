@@ -21,7 +21,7 @@ namespace Model
   class DescribeConfigurationRevisionRequest : public MQRequest
   {
   public:
-    AWS_MQ_API DescribeConfigurationRevisionRequest();
+    AWS_MQ_API DescribeConfigurationRevisionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>The unique ID that Amazon MQ generates for the configuration.</p>
      */
-    inline const Aws::String& GetConfigurationId() const{ return m_configurationId; }
+    inline const Aws::String& GetConfigurationId() const { return m_configurationId; }
     inline bool ConfigurationIdHasBeenSet() const { return m_configurationIdHasBeenSet; }
-    inline void SetConfigurationId(const Aws::String& value) { m_configurationIdHasBeenSet = true; m_configurationId = value; }
-    inline void SetConfigurationId(Aws::String&& value) { m_configurationIdHasBeenSet = true; m_configurationId = std::move(value); }
-    inline void SetConfigurationId(const char* value) { m_configurationIdHasBeenSet = true; m_configurationId.assign(value); }
-    inline DescribeConfigurationRevisionRequest& WithConfigurationId(const Aws::String& value) { SetConfigurationId(value); return *this;}
-    inline DescribeConfigurationRevisionRequest& WithConfigurationId(Aws::String&& value) { SetConfigurationId(std::move(value)); return *this;}
-    inline DescribeConfigurationRevisionRequest& WithConfigurationId(const char* value) { SetConfigurationId(value); return *this;}
+    template<typename ConfigurationIdT = Aws::String>
+    void SetConfigurationId(ConfigurationIdT&& value) { m_configurationIdHasBeenSet = true; m_configurationId = std::forward<ConfigurationIdT>(value); }
+    template<typename ConfigurationIdT = Aws::String>
+    DescribeConfigurationRevisionRequest& WithConfigurationId(ConfigurationIdT&& value) { SetConfigurationId(std::forward<ConfigurationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The revision of the configuration.</p>
      */
-    inline const Aws::String& GetConfigurationRevision() const{ return m_configurationRevision; }
+    inline const Aws::String& GetConfigurationRevision() const { return m_configurationRevision; }
     inline bool ConfigurationRevisionHasBeenSet() const { return m_configurationRevisionHasBeenSet; }
-    inline void SetConfigurationRevision(const Aws::String& value) { m_configurationRevisionHasBeenSet = true; m_configurationRevision = value; }
-    inline void SetConfigurationRevision(Aws::String&& value) { m_configurationRevisionHasBeenSet = true; m_configurationRevision = std::move(value); }
-    inline void SetConfigurationRevision(const char* value) { m_configurationRevisionHasBeenSet = true; m_configurationRevision.assign(value); }
-    inline DescribeConfigurationRevisionRequest& WithConfigurationRevision(const Aws::String& value) { SetConfigurationRevision(value); return *this;}
-    inline DescribeConfigurationRevisionRequest& WithConfigurationRevision(Aws::String&& value) { SetConfigurationRevision(std::move(value)); return *this;}
-    inline DescribeConfigurationRevisionRequest& WithConfigurationRevision(const char* value) { SetConfigurationRevision(value); return *this;}
+    template<typename ConfigurationRevisionT = Aws::String>
+    void SetConfigurationRevision(ConfigurationRevisionT&& value) { m_configurationRevisionHasBeenSet = true; m_configurationRevision = std::forward<ConfigurationRevisionT>(value); }
+    template<typename ConfigurationRevisionT = Aws::String>
+    DescribeConfigurationRevisionRequest& WithConfigurationRevision(ConfigurationRevisionT&& value) { SetConfigurationRevision(std::forward<ConfigurationRevisionT>(value)); return *this;}
     ///@}
   private:
 

@@ -14,10 +14,6 @@ using namespace Aws::RestXmlProtocol::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-XmlNamespacesRequest::XmlNamespacesRequest() : 
-    m_nestedHasBeenSet(false)
-{
-}
 
 Aws::String XmlNamespacesRequest::SerializePayload() const
 {

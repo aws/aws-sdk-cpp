@@ -22,7 +22,7 @@ namespace Model
   class GetOrganizationConfigRuleDetailedStatusRequest : public ConfigServiceRequest
   {
   public:
-    AWS_CONFIGSERVICE_API GetOrganizationConfigRuleDetailedStatusRequest();
+    AWS_CONFIGSERVICE_API GetOrganizationConfigRuleDetailedStatusRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,26 +40,24 @@ namespace Model
      * <p>The name of your organization Config rule for which you want status details
      * for member accounts.</p>
      */
-    inline const Aws::String& GetOrganizationConfigRuleName() const{ return m_organizationConfigRuleName; }
+    inline const Aws::String& GetOrganizationConfigRuleName() const { return m_organizationConfigRuleName; }
     inline bool OrganizationConfigRuleNameHasBeenSet() const { return m_organizationConfigRuleNameHasBeenSet; }
-    inline void SetOrganizationConfigRuleName(const Aws::String& value) { m_organizationConfigRuleNameHasBeenSet = true; m_organizationConfigRuleName = value; }
-    inline void SetOrganizationConfigRuleName(Aws::String&& value) { m_organizationConfigRuleNameHasBeenSet = true; m_organizationConfigRuleName = std::move(value); }
-    inline void SetOrganizationConfigRuleName(const char* value) { m_organizationConfigRuleNameHasBeenSet = true; m_organizationConfigRuleName.assign(value); }
-    inline GetOrganizationConfigRuleDetailedStatusRequest& WithOrganizationConfigRuleName(const Aws::String& value) { SetOrganizationConfigRuleName(value); return *this;}
-    inline GetOrganizationConfigRuleDetailedStatusRequest& WithOrganizationConfigRuleName(Aws::String&& value) { SetOrganizationConfigRuleName(std::move(value)); return *this;}
-    inline GetOrganizationConfigRuleDetailedStatusRequest& WithOrganizationConfigRuleName(const char* value) { SetOrganizationConfigRuleName(value); return *this;}
+    template<typename OrganizationConfigRuleNameT = Aws::String>
+    void SetOrganizationConfigRuleName(OrganizationConfigRuleNameT&& value) { m_organizationConfigRuleNameHasBeenSet = true; m_organizationConfigRuleName = std::forward<OrganizationConfigRuleNameT>(value); }
+    template<typename OrganizationConfigRuleNameT = Aws::String>
+    GetOrganizationConfigRuleDetailedStatusRequest& WithOrganizationConfigRuleName(OrganizationConfigRuleNameT&& value) { SetOrganizationConfigRuleName(std::forward<OrganizationConfigRuleNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A <code>StatusDetailFilters</code> object.</p>
      */
-    inline const StatusDetailFilters& GetFilters() const{ return m_filters; }
+    inline const StatusDetailFilters& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const StatusDetailFilters& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(StatusDetailFilters&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline GetOrganizationConfigRuleDetailedStatusRequest& WithFilters(const StatusDetailFilters& value) { SetFilters(value); return *this;}
-    inline GetOrganizationConfigRuleDetailedStatusRequest& WithFilters(StatusDetailFilters&& value) { SetFilters(std::move(value)); return *this;}
+    template<typename FiltersT = StatusDetailFilters>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = StatusDetailFilters>
+    GetOrganizationConfigRuleDetailedStatusRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,7 +66,7 @@ namespace Model
      * returned on each page. If you do not specify a number, Config uses the default.
      * The default is 100.</p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline GetOrganizationConfigRuleDetailedStatusRequest& WithLimit(int value) { SetLimit(value); return *this;}
@@ -79,14 +77,12 @@ namespace Model
      * <p>The <code>nextToken</code> string returned on a previous page that you use to
      * get the next page of results in a paginated response. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetOrganizationConfigRuleDetailedStatusRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetOrganizationConfigRuleDetailedStatusRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetOrganizationConfigRuleDetailedStatusRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetOrganizationConfigRuleDetailedStatusRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -96,7 +92,7 @@ namespace Model
     StatusDetailFilters m_filters;
     bool m_filtersHasBeenSet = false;
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
 
     Aws::String m_nextToken;

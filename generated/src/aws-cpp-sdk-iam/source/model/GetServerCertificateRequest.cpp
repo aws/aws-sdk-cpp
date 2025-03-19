@@ -10,11 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-GetServerCertificateRequest::GetServerCertificateRequest() : 
-    m_serverCertificateNameHasBeenSet(false)
-{
-}
-
 Aws::String GetServerCertificateRequest::SerializePayload() const
 {
   Aws::StringStream ss;

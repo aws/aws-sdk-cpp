@@ -22,7 +22,7 @@ namespace Model
   class ListCalculationExecutionsRequest : public AthenaRequest
   {
   public:
-    AWS_ATHENA_API ListCalculationExecutionsRequest();
+    AWS_ATHENA_API ListCalculationExecutionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The session ID.</p>
      */
-    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
     inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-    inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
-    inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
-    inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
-    inline ListCalculationExecutionsRequest& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-    inline ListCalculationExecutionsRequest& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-    inline ListCalculationExecutionsRequest& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    ListCalculationExecutionsRequest& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,19 +61,17 @@ namespace Model
      * without error.</p> <p> <code>FAILED</code> - The calculation failed and is no
      * longer running.</p>
      */
-    inline const CalculationExecutionState& GetStateFilter() const{ return m_stateFilter; }
+    inline CalculationExecutionState GetStateFilter() const { return m_stateFilter; }
     inline bool StateFilterHasBeenSet() const { return m_stateFilterHasBeenSet; }
-    inline void SetStateFilter(const CalculationExecutionState& value) { m_stateFilterHasBeenSet = true; m_stateFilter = value; }
-    inline void SetStateFilter(CalculationExecutionState&& value) { m_stateFilterHasBeenSet = true; m_stateFilter = std::move(value); }
-    inline ListCalculationExecutionsRequest& WithStateFilter(const CalculationExecutionState& value) { SetStateFilter(value); return *this;}
-    inline ListCalculationExecutionsRequest& WithStateFilter(CalculationExecutionState&& value) { SetStateFilter(std::move(value)); return *this;}
+    inline void SetStateFilter(CalculationExecutionState value) { m_stateFilterHasBeenSet = true; m_stateFilter = value; }
+    inline ListCalculationExecutionsRequest& WithStateFilter(CalculationExecutionState value) { SetStateFilter(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of calculation executions to return.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListCalculationExecutionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -88,24 +84,22 @@ namespace Model
      * pass in the <code>NextToken</code> from the response object of the previous page
      * call.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListCalculationExecutionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCalculationExecutionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCalculationExecutionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCalculationExecutionsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_sessionId;
     bool m_sessionIdHasBeenSet = false;
 
-    CalculationExecutionState m_stateFilter;
+    CalculationExecutionState m_stateFilter{CalculationExecutionState::NOT_SET};
     bool m_stateFilterHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

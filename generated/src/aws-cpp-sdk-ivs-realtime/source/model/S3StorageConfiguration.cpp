@@ -18,13 +18,7 @@ namespace ivsrealtime
 namespace Model
 {
 
-S3StorageConfiguration::S3StorageConfiguration() : 
-    m_bucketNameHasBeenSet(false)
-{
-}
-
 S3StorageConfiguration::S3StorageConfiguration(JsonView jsonValue)
-  : S3StorageConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ S3StorageConfiguration& S3StorageConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bucketName"))
   {
     m_bucketName = jsonValue.GetString("bucketName");
-
     m_bucketNameHasBeenSet = true;
   }
-
   return *this;
 }
 

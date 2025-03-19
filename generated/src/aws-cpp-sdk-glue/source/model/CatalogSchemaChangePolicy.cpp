@@ -18,16 +18,7 @@ namespace Glue
 namespace Model
 {
 
-CatalogSchemaChangePolicy::CatalogSchemaChangePolicy() : 
-    m_enableUpdateCatalog(false),
-    m_enableUpdateCatalogHasBeenSet(false),
-    m_updateBehavior(UpdateCatalogBehavior::NOT_SET),
-    m_updateBehaviorHasBeenSet(false)
-{
-}
-
 CatalogSchemaChangePolicy::CatalogSchemaChangePolicy(JsonView jsonValue)
-  : CatalogSchemaChangePolicy()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ CatalogSchemaChangePolicy& CatalogSchemaChangePolicy::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("EnableUpdateCatalog"))
   {
     m_enableUpdateCatalog = jsonValue.GetBool("EnableUpdateCatalog");
-
     m_enableUpdateCatalogHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdateBehavior"))
   {
     m_updateBehavior = UpdateCatalogBehaviorMapper::GetUpdateCatalogBehaviorForName(jsonValue.GetString("UpdateBehavior"));
-
     m_updateBehaviorHasBeenSet = true;
   }
-
   return *this;
 }
 

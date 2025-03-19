@@ -18,13 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-Metadata::Metadata() : 
-    m_usageHasBeenSet(false)
-{
-}
-
 Metadata::Metadata(JsonView jsonValue)
-  : Metadata()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Metadata& Metadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("usage"))
   {
     m_usage = jsonValue.GetObject("usage");
-
     m_usageHasBeenSet = true;
   }
-
   return *this;
 }
 

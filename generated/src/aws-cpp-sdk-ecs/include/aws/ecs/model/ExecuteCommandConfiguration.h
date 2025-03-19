@@ -34,7 +34,7 @@ namespace Model
   class ExecuteCommandConfiguration
   {
   public:
-    AWS_ECS_API ExecuteCommandConfiguration();
+    AWS_ECS_API ExecuteCommandConfiguration() = default;
     AWS_ECS_API ExecuteCommandConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API ExecuteCommandConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * <p>Specify an Key Management Service key ID to encrypt the data between the
      * local client and the container.</p>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline ExecuteCommandConfiguration& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline ExecuteCommandConfiguration& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline ExecuteCommandConfiguration& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    ExecuteCommandConfiguration& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,12 +66,10 @@ namespace Model
      * <code>logConfiguration</code>. If the <code>OVERRIDE</code> logging option is
      * specified, the <code>logConfiguration</code> is required.</p> </li> </ul>
      */
-    inline const ExecuteCommandLogging& GetLogging() const{ return m_logging; }
+    inline ExecuteCommandLogging GetLogging() const { return m_logging; }
     inline bool LoggingHasBeenSet() const { return m_loggingHasBeenSet; }
-    inline void SetLogging(const ExecuteCommandLogging& value) { m_loggingHasBeenSet = true; m_logging = value; }
-    inline void SetLogging(ExecuteCommandLogging&& value) { m_loggingHasBeenSet = true; m_logging = std::move(value); }
-    inline ExecuteCommandConfiguration& WithLogging(const ExecuteCommandLogging& value) { SetLogging(value); return *this;}
-    inline ExecuteCommandConfiguration& WithLogging(ExecuteCommandLogging&& value) { SetLogging(std::move(value)); return *this;}
+    inline void SetLogging(ExecuteCommandLogging value) { m_loggingHasBeenSet = true; m_logging = value; }
+    inline ExecuteCommandConfiguration& WithLogging(ExecuteCommandLogging value) { SetLogging(value); return *this;}
     ///@}
 
     ///@{
@@ -83,19 +79,19 @@ namespace Model
      * <code>logging=OVERRIDE</code> is specified, a <code>logConfiguration</code> must
      * be provided.</p>
      */
-    inline const ExecuteCommandLogConfiguration& GetLogConfiguration() const{ return m_logConfiguration; }
+    inline const ExecuteCommandLogConfiguration& GetLogConfiguration() const { return m_logConfiguration; }
     inline bool LogConfigurationHasBeenSet() const { return m_logConfigurationHasBeenSet; }
-    inline void SetLogConfiguration(const ExecuteCommandLogConfiguration& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = value; }
-    inline void SetLogConfiguration(ExecuteCommandLogConfiguration&& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = std::move(value); }
-    inline ExecuteCommandConfiguration& WithLogConfiguration(const ExecuteCommandLogConfiguration& value) { SetLogConfiguration(value); return *this;}
-    inline ExecuteCommandConfiguration& WithLogConfiguration(ExecuteCommandLogConfiguration&& value) { SetLogConfiguration(std::move(value)); return *this;}
+    template<typename LogConfigurationT = ExecuteCommandLogConfiguration>
+    void SetLogConfiguration(LogConfigurationT&& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = std::forward<LogConfigurationT>(value); }
+    template<typename LogConfigurationT = ExecuteCommandLogConfiguration>
+    ExecuteCommandConfiguration& WithLogConfiguration(LogConfigurationT&& value) { SetLogConfiguration(std::forward<LogConfigurationT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet = false;
 
-    ExecuteCommandLogging m_logging;
+    ExecuteCommandLogging m_logging{ExecuteCommandLogging::NOT_SET};
     bool m_loggingHasBeenSet = false;
 
     ExecuteCommandLogConfiguration m_logConfiguration;

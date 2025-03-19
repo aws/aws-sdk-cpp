@@ -18,36 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-ProjectVersionDescription::ProjectVersionDescription() : 
-    m_projectVersionArnHasBeenSet(false),
-    m_creationTimestampHasBeenSet(false),
-    m_minInferenceUnits(0),
-    m_minInferenceUnitsHasBeenSet(false),
-    m_status(ProjectVersionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_billableTrainingTimeInSeconds(0),
-    m_billableTrainingTimeInSecondsHasBeenSet(false),
-    m_trainingEndTimestampHasBeenSet(false),
-    m_outputConfigHasBeenSet(false),
-    m_trainingDataResultHasBeenSet(false),
-    m_testingDataResultHasBeenSet(false),
-    m_evaluationResultHasBeenSet(false),
-    m_manifestSummaryHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_maxInferenceUnits(0),
-    m_maxInferenceUnitsHasBeenSet(false),
-    m_sourceProjectVersionArnHasBeenSet(false),
-    m_versionDescriptionHasBeenSet(false),
-    m_feature(CustomizationFeature::NOT_SET),
-    m_featureHasBeenSet(false),
-    m_baseModelVersionHasBeenSet(false),
-    m_featureConfigHasBeenSet(false)
-{
-}
-
 ProjectVersionDescription::ProjectVersionDescription(JsonView jsonValue)
-  : ProjectVersionDescription()
 {
   *this = jsonValue;
 }
@@ -57,136 +28,98 @@ ProjectVersionDescription& ProjectVersionDescription::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("ProjectVersionArn"))
   {
     m_projectVersionArn = jsonValue.GetString("ProjectVersionArn");
-
     m_projectVersionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTimestamp"))
   {
     m_creationTimestamp = jsonValue.GetDouble("CreationTimestamp");
-
     m_creationTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinInferenceUnits"))
   {
     m_minInferenceUnits = jsonValue.GetInteger("MinInferenceUnits");
-
     m_minInferenceUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ProjectVersionStatusMapper::GetProjectVersionStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BillableTrainingTimeInSeconds"))
   {
     m_billableTrainingTimeInSeconds = jsonValue.GetInt64("BillableTrainingTimeInSeconds");
-
     m_billableTrainingTimeInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrainingEndTimestamp"))
   {
     m_trainingEndTimestamp = jsonValue.GetDouble("TrainingEndTimestamp");
-
     m_trainingEndTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputConfig"))
   {
     m_outputConfig = jsonValue.GetObject("OutputConfig");
-
     m_outputConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrainingDataResult"))
   {
     m_trainingDataResult = jsonValue.GetObject("TrainingDataResult");
-
     m_trainingDataResultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TestingDataResult"))
   {
     m_testingDataResult = jsonValue.GetObject("TestingDataResult");
-
     m_testingDataResultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluationResult"))
   {
     m_evaluationResult = jsonValue.GetObject("EvaluationResult");
-
     m_evaluationResultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ManifestSummary"))
   {
     m_manifestSummary = jsonValue.GetObject("ManifestSummary");
-
     m_manifestSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxInferenceUnits"))
   {
     m_maxInferenceUnits = jsonValue.GetInteger("MaxInferenceUnits");
-
     m_maxInferenceUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceProjectVersionArn"))
   {
     m_sourceProjectVersionArn = jsonValue.GetString("SourceProjectVersionArn");
-
     m_sourceProjectVersionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VersionDescription"))
   {
     m_versionDescription = jsonValue.GetString("VersionDescription");
-
     m_versionDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Feature"))
   {
     m_feature = CustomizationFeatureMapper::GetCustomizationFeatureForName(jsonValue.GetString("Feature"));
-
     m_featureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BaseModelVersion"))
   {
     m_baseModelVersion = jsonValue.GetString("BaseModelVersion");
-
     m_baseModelVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FeatureConfig"))
   {
     m_featureConfig = jsonValue.GetObject("FeatureConfig");
-
     m_featureConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

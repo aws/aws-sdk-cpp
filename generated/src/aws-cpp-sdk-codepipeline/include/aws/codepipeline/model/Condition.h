@@ -40,7 +40,7 @@ namespace Model
   class Condition
   {
   public:
-    AWS_CODEPIPELINE_API Condition();
+    AWS_CODEPIPELINE_API Condition() = default;
     AWS_CODEPIPELINE_API Condition(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Condition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,30 +51,28 @@ namespace Model
      * <p>The action to be done when the condition is met. For example, rolling back an
      * execution for a failure condition.</p>
      */
-    inline const Result& GetResult() const{ return m_result; }
+    inline Result GetResult() const { return m_result; }
     inline bool ResultHasBeenSet() const { return m_resultHasBeenSet; }
-    inline void SetResult(const Result& value) { m_resultHasBeenSet = true; m_result = value; }
-    inline void SetResult(Result&& value) { m_resultHasBeenSet = true; m_result = std::move(value); }
-    inline Condition& WithResult(const Result& value) { SetResult(value); return *this;}
-    inline Condition& WithResult(Result&& value) { SetResult(std::move(value)); return *this;}
+    inline void SetResult(Result value) { m_resultHasBeenSet = true; m_result = value; }
+    inline Condition& WithResult(Result value) { SetResult(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The rules that make up the condition.</p>
      */
-    inline const Aws::Vector<RuleDeclaration>& GetRules() const{ return m_rules; }
+    inline const Aws::Vector<RuleDeclaration>& GetRules() const { return m_rules; }
     inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
-    inline void SetRules(const Aws::Vector<RuleDeclaration>& value) { m_rulesHasBeenSet = true; m_rules = value; }
-    inline void SetRules(Aws::Vector<RuleDeclaration>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
-    inline Condition& WithRules(const Aws::Vector<RuleDeclaration>& value) { SetRules(value); return *this;}
-    inline Condition& WithRules(Aws::Vector<RuleDeclaration>&& value) { SetRules(std::move(value)); return *this;}
-    inline Condition& AddRules(const RuleDeclaration& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
-    inline Condition& AddRules(RuleDeclaration&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
+    template<typename RulesT = Aws::Vector<RuleDeclaration>>
+    void SetRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules = std::forward<RulesT>(value); }
+    template<typename RulesT = Aws::Vector<RuleDeclaration>>
+    Condition& WithRules(RulesT&& value) { SetRules(std::forward<RulesT>(value)); return *this;}
+    template<typename RulesT = RuleDeclaration>
+    Condition& AddRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules.emplace_back(std::forward<RulesT>(value)); return *this; }
     ///@}
   private:
 
-    Result m_result;
+    Result m_result{Result::NOT_SET};
     bool m_resultHasBeenSet = false;
 
     Aws::Vector<RuleDeclaration> m_rules;

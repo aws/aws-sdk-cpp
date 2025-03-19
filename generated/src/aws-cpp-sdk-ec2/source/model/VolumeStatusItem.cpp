@@ -20,19 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VolumeStatusItem::VolumeStatusItem() : 
-    m_actionsHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_outpostArnHasBeenSet(false),
-    m_eventsHasBeenSet(false),
-    m_volumeIdHasBeenSet(false),
-    m_volumeStatusHasBeenSet(false),
-    m_attachmentStatusesHasBeenSet(false)
-{
-}
-
 VolumeStatusItem::VolumeStatusItem(const XmlNode& xmlNode)
-  : VolumeStatusItem()
 {
   *this = xmlNode;
 }
@@ -47,6 +35,7 @@ VolumeStatusItem& VolumeStatusItem::operator =(const XmlNode& xmlNode)
     if(!actionsNode.IsNull())
     {
       XmlNode actionsMember = actionsNode.FirstChild("item");
+      m_actionsHasBeenSet = !actionsMember.IsNull();
       while(!actionsMember.IsNull())
       {
         m_actions.push_back(actionsMember);
@@ -71,6 +60,7 @@ VolumeStatusItem& VolumeStatusItem::operator =(const XmlNode& xmlNode)
     if(!eventsNode.IsNull())
     {
       XmlNode eventsMember = eventsNode.FirstChild("item");
+      m_eventsHasBeenSet = !eventsMember.IsNull();
       while(!eventsMember.IsNull())
       {
         m_events.push_back(eventsMember);
@@ -95,6 +85,7 @@ VolumeStatusItem& VolumeStatusItem::operator =(const XmlNode& xmlNode)
     if(!attachmentStatusesNode.IsNull())
     {
       XmlNode attachmentStatusesMember = attachmentStatusesNode.FirstChild("item");
+      m_attachmentStatusesHasBeenSet = !attachmentStatusesMember.IsNull();
       while(!attachmentStatusesMember.IsNull())
       {
         m_attachmentStatuses.push_back(attachmentStatusesMember);

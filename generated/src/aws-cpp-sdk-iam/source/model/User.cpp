@@ -20,20 +20,7 @@ namespace IAM
 namespace Model
 {
 
-User::User() : 
-    m_pathHasBeenSet(false),
-    m_userNameHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_passwordLastUsedHasBeenSet(false),
-    m_permissionsBoundaryHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 User::User(const XmlNode& xmlNode)
-  : User()
 {
   *this = xmlNode;
 }
@@ -90,6 +77,7 @@ User& User::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("member");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

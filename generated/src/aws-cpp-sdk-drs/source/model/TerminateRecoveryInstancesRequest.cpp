@@ -12,11 +12,6 @@ using namespace Aws::drs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-TerminateRecoveryInstancesRequest::TerminateRecoveryInstancesRequest() : 
-    m_recoveryInstanceIDsHasBeenSet(false)
-{
-}
-
 Aws::String TerminateRecoveryInstancesRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -33,7 +33,7 @@ namespace Model
   class ConfluenceDataSourceConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API ConfluenceDataSourceConfiguration();
+    AWS_BEDROCKAGENT_API ConfluenceDataSourceConfiguration() = default;
     AWS_BEDROCKAGENT_API ConfluenceDataSourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API ConfluenceDataSourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,24 +44,24 @@ namespace Model
      * <p>The configuration of the Confluence content. For example, configuring
      * specific types of Confluence content.</p>
      */
-    inline const ConfluenceCrawlerConfiguration& GetCrawlerConfiguration() const{ return m_crawlerConfiguration; }
+    inline const ConfluenceCrawlerConfiguration& GetCrawlerConfiguration() const { return m_crawlerConfiguration; }
     inline bool CrawlerConfigurationHasBeenSet() const { return m_crawlerConfigurationHasBeenSet; }
-    inline void SetCrawlerConfiguration(const ConfluenceCrawlerConfiguration& value) { m_crawlerConfigurationHasBeenSet = true; m_crawlerConfiguration = value; }
-    inline void SetCrawlerConfiguration(ConfluenceCrawlerConfiguration&& value) { m_crawlerConfigurationHasBeenSet = true; m_crawlerConfiguration = std::move(value); }
-    inline ConfluenceDataSourceConfiguration& WithCrawlerConfiguration(const ConfluenceCrawlerConfiguration& value) { SetCrawlerConfiguration(value); return *this;}
-    inline ConfluenceDataSourceConfiguration& WithCrawlerConfiguration(ConfluenceCrawlerConfiguration&& value) { SetCrawlerConfiguration(std::move(value)); return *this;}
+    template<typename CrawlerConfigurationT = ConfluenceCrawlerConfiguration>
+    void SetCrawlerConfiguration(CrawlerConfigurationT&& value) { m_crawlerConfigurationHasBeenSet = true; m_crawlerConfiguration = std::forward<CrawlerConfigurationT>(value); }
+    template<typename CrawlerConfigurationT = ConfluenceCrawlerConfiguration>
+    ConfluenceDataSourceConfiguration& WithCrawlerConfiguration(CrawlerConfigurationT&& value) { SetCrawlerConfiguration(std::forward<CrawlerConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The endpoint information to connect to your Confluence data source.</p>
      */
-    inline const ConfluenceSourceConfiguration& GetSourceConfiguration() const{ return m_sourceConfiguration; }
+    inline const ConfluenceSourceConfiguration& GetSourceConfiguration() const { return m_sourceConfiguration; }
     inline bool SourceConfigurationHasBeenSet() const { return m_sourceConfigurationHasBeenSet; }
-    inline void SetSourceConfiguration(const ConfluenceSourceConfiguration& value) { m_sourceConfigurationHasBeenSet = true; m_sourceConfiguration = value; }
-    inline void SetSourceConfiguration(ConfluenceSourceConfiguration&& value) { m_sourceConfigurationHasBeenSet = true; m_sourceConfiguration = std::move(value); }
-    inline ConfluenceDataSourceConfiguration& WithSourceConfiguration(const ConfluenceSourceConfiguration& value) { SetSourceConfiguration(value); return *this;}
-    inline ConfluenceDataSourceConfiguration& WithSourceConfiguration(ConfluenceSourceConfiguration&& value) { SetSourceConfiguration(std::move(value)); return *this;}
+    template<typename SourceConfigurationT = ConfluenceSourceConfiguration>
+    void SetSourceConfiguration(SourceConfigurationT&& value) { m_sourceConfigurationHasBeenSet = true; m_sourceConfiguration = std::forward<SourceConfigurationT>(value); }
+    template<typename SourceConfigurationT = ConfluenceSourceConfiguration>
+    ConfluenceDataSourceConfiguration& WithSourceConfiguration(SourceConfigurationT&& value) { SetSourceConfiguration(std::forward<SourceConfigurationT>(value)); return *this;}
     ///@}
   private:
 

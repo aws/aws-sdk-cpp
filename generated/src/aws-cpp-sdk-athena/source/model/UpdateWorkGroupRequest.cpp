@@ -12,15 +12,6 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateWorkGroupRequest::UpdateWorkGroupRequest() : 
-    m_workGroupHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_configurationUpdatesHasBeenSet(false),
-    m_state(WorkGroupState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 Aws::String UpdateWorkGroupRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -37,7 +37,7 @@ namespace Model
   class ParallelismConfiguration
   {
   public:
-    AWS_KINESISANALYTICSV2_API ParallelismConfiguration();
+    AWS_KINESISANALYTICSV2_API ParallelismConfiguration() = default;
     AWS_KINESISANALYTICSV2_API ParallelismConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API ParallelismConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,12 +51,10 @@ namespace Model
      * <code>AutoScalingEnabled</code>, <code>Parallelism</code>, or
      * <code>ParallelismPerKPU</code> properties.</p>
      */
-    inline const ConfigurationType& GetConfigurationType() const{ return m_configurationType; }
+    inline ConfigurationType GetConfigurationType() const { return m_configurationType; }
     inline bool ConfigurationTypeHasBeenSet() const { return m_configurationTypeHasBeenSet; }
-    inline void SetConfigurationType(const ConfigurationType& value) { m_configurationTypeHasBeenSet = true; m_configurationType = value; }
-    inline void SetConfigurationType(ConfigurationType&& value) { m_configurationTypeHasBeenSet = true; m_configurationType = std::move(value); }
-    inline ParallelismConfiguration& WithConfigurationType(const ConfigurationType& value) { SetConfigurationType(value); return *this;}
-    inline ParallelismConfiguration& WithConfigurationType(ConfigurationType&& value) { SetConfigurationType(std::move(value)); return *this;}
+    inline void SetConfigurationType(ConfigurationType value) { m_configurationTypeHasBeenSet = true; m_configurationType = value; }
+    inline ParallelismConfiguration& WithConfigurationType(ConfigurationType value) { SetConfigurationType(value); return *this;}
     ///@}
 
     ///@{
@@ -72,7 +70,7 @@ namespace Model
      * service can reduce the <code>CurrentParallelism</code> value down to the
      * <code>Parallelism</code> setting.</p>
      */
-    inline int GetParallelism() const{ return m_parallelism; }
+    inline int GetParallelism() const { return m_parallelism; }
     inline bool ParallelismHasBeenSet() const { return m_parallelismHasBeenSet; }
     inline void SetParallelism(int value) { m_parallelismHasBeenSet = true; m_parallelism = value; }
     inline ParallelismConfiguration& WithParallelism(int value) { SetParallelism(value); return *this;}
@@ -86,7 +84,7 @@ namespace Model
      * href="http://aws.amazon.com/kinesis/data-analytics/pricing/">Amazon Managed
      * Service for Apache Flink Pricing</a>.</p>
      */
-    inline int GetParallelismPerKPU() const{ return m_parallelismPerKPU; }
+    inline int GetParallelismPerKPU() const { return m_parallelismPerKPU; }
     inline bool ParallelismPerKPUHasBeenSet() const { return m_parallelismPerKPUHasBeenSet; }
     inline void SetParallelismPerKPU(int value) { m_parallelismPerKPUHasBeenSet = true; m_parallelismPerKPU = value; }
     inline ParallelismConfiguration& WithParallelismPerKPU(int value) { SetParallelismPerKPU(value); return *this;}
@@ -97,23 +95,23 @@ namespace Model
      * <p>Describes whether the Managed Service for Apache Flink service can increase
      * the parallelism of the application in response to increased throughput.</p>
      */
-    inline bool GetAutoScalingEnabled() const{ return m_autoScalingEnabled; }
+    inline bool GetAutoScalingEnabled() const { return m_autoScalingEnabled; }
     inline bool AutoScalingEnabledHasBeenSet() const { return m_autoScalingEnabledHasBeenSet; }
     inline void SetAutoScalingEnabled(bool value) { m_autoScalingEnabledHasBeenSet = true; m_autoScalingEnabled = value; }
     inline ParallelismConfiguration& WithAutoScalingEnabled(bool value) { SetAutoScalingEnabled(value); return *this;}
     ///@}
   private:
 
-    ConfigurationType m_configurationType;
+    ConfigurationType m_configurationType{ConfigurationType::NOT_SET};
     bool m_configurationTypeHasBeenSet = false;
 
-    int m_parallelism;
+    int m_parallelism{0};
     bool m_parallelismHasBeenSet = false;
 
-    int m_parallelismPerKPU;
+    int m_parallelismPerKPU{0};
     bool m_parallelismPerKPUHasBeenSet = false;
 
-    bool m_autoScalingEnabled;
+    bool m_autoScalingEnabled{false};
     bool m_autoScalingEnabledHasBeenSet = false;
   };
 

@@ -35,7 +35,7 @@ namespace Model
   class EmailMessageTemplateContent
   {
   public:
-    AWS_QCONNECT_API EmailMessageTemplateContent();
+    AWS_QCONNECT_API EmailMessageTemplateContent() = default;
     AWS_QCONNECT_API EmailMessageTemplateContent(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API EmailMessageTemplateContent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,40 +45,38 @@ namespace Model
     /**
      * <p>The body to use in email messages.</p>
      */
-    inline const EmailMessageTemplateContentBody& GetBody() const{ return m_body; }
+    inline const EmailMessageTemplateContentBody& GetBody() const { return m_body; }
     inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
-    inline void SetBody(const EmailMessageTemplateContentBody& value) { m_bodyHasBeenSet = true; m_body = value; }
-    inline void SetBody(EmailMessageTemplateContentBody&& value) { m_bodyHasBeenSet = true; m_body = std::move(value); }
-    inline EmailMessageTemplateContent& WithBody(const EmailMessageTemplateContentBody& value) { SetBody(value); return *this;}
-    inline EmailMessageTemplateContent& WithBody(EmailMessageTemplateContentBody&& value) { SetBody(std::move(value)); return *this;}
+    template<typename BodyT = EmailMessageTemplateContentBody>
+    void SetBody(BodyT&& value) { m_bodyHasBeenSet = true; m_body = std::forward<BodyT>(value); }
+    template<typename BodyT = EmailMessageTemplateContentBody>
+    EmailMessageTemplateContent& WithBody(BodyT&& value) { SetBody(std::forward<BodyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The email headers to include in email messages.</p>
      */
-    inline const Aws::Vector<EmailHeader>& GetHeaders() const{ return m_headers; }
+    inline const Aws::Vector<EmailHeader>& GetHeaders() const { return m_headers; }
     inline bool HeadersHasBeenSet() const { return m_headersHasBeenSet; }
-    inline void SetHeaders(const Aws::Vector<EmailHeader>& value) { m_headersHasBeenSet = true; m_headers = value; }
-    inline void SetHeaders(Aws::Vector<EmailHeader>&& value) { m_headersHasBeenSet = true; m_headers = std::move(value); }
-    inline EmailMessageTemplateContent& WithHeaders(const Aws::Vector<EmailHeader>& value) { SetHeaders(value); return *this;}
-    inline EmailMessageTemplateContent& WithHeaders(Aws::Vector<EmailHeader>&& value) { SetHeaders(std::move(value)); return *this;}
-    inline EmailMessageTemplateContent& AddHeaders(const EmailHeader& value) { m_headersHasBeenSet = true; m_headers.push_back(value); return *this; }
-    inline EmailMessageTemplateContent& AddHeaders(EmailHeader&& value) { m_headersHasBeenSet = true; m_headers.push_back(std::move(value)); return *this; }
+    template<typename HeadersT = Aws::Vector<EmailHeader>>
+    void SetHeaders(HeadersT&& value) { m_headersHasBeenSet = true; m_headers = std::forward<HeadersT>(value); }
+    template<typename HeadersT = Aws::Vector<EmailHeader>>
+    EmailMessageTemplateContent& WithHeaders(HeadersT&& value) { SetHeaders(std::forward<HeadersT>(value)); return *this;}
+    template<typename HeadersT = EmailHeader>
+    EmailMessageTemplateContent& AddHeaders(HeadersT&& value) { m_headersHasBeenSet = true; m_headers.emplace_back(std::forward<HeadersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The subject line, or title, to use in email messages.</p>
      */
-    inline const Aws::String& GetSubject() const{ return m_subject; }
+    inline const Aws::String& GetSubject() const { return m_subject; }
     inline bool SubjectHasBeenSet() const { return m_subjectHasBeenSet; }
-    inline void SetSubject(const Aws::String& value) { m_subjectHasBeenSet = true; m_subject = value; }
-    inline void SetSubject(Aws::String&& value) { m_subjectHasBeenSet = true; m_subject = std::move(value); }
-    inline void SetSubject(const char* value) { m_subjectHasBeenSet = true; m_subject.assign(value); }
-    inline EmailMessageTemplateContent& WithSubject(const Aws::String& value) { SetSubject(value); return *this;}
-    inline EmailMessageTemplateContent& WithSubject(Aws::String&& value) { SetSubject(std::move(value)); return *this;}
-    inline EmailMessageTemplateContent& WithSubject(const char* value) { SetSubject(value); return *this;}
+    template<typename SubjectT = Aws::String>
+    void SetSubject(SubjectT&& value) { m_subjectHasBeenSet = true; m_subject = std::forward<SubjectT>(value); }
+    template<typename SubjectT = Aws::String>
+    EmailMessageTemplateContent& WithSubject(SubjectT&& value) { SetSubject(std::forward<SubjectT>(value)); return *this;}
     ///@}
   private:
 

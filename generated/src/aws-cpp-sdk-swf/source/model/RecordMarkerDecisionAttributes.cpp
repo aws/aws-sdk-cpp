@@ -18,14 +18,7 @@ namespace SWF
 namespace Model
 {
 
-RecordMarkerDecisionAttributes::RecordMarkerDecisionAttributes() : 
-    m_markerNameHasBeenSet(false),
-    m_detailsHasBeenSet(false)
-{
-}
-
 RecordMarkerDecisionAttributes::RecordMarkerDecisionAttributes(JsonView jsonValue)
-  : RecordMarkerDecisionAttributes()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RecordMarkerDecisionAttributes& RecordMarkerDecisionAttributes::operator =(JsonV
   if(jsonValue.ValueExists("markerName"))
   {
     m_markerName = jsonValue.GetString("markerName");
-
     m_markerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("details"))
   {
     m_details = jsonValue.GetString("details");
-
     m_detailsHasBeenSet = true;
   }
-
   return *this;
 }
 

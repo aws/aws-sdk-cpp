@@ -28,33 +28,35 @@ namespace Model
   class PurchaseReservedCacheNodesOfferingResult
   {
   public:
-    AWS_ELASTICACHE_API PurchaseReservedCacheNodesOfferingResult();
+    AWS_ELASTICACHE_API PurchaseReservedCacheNodesOfferingResult() = default;
     AWS_ELASTICACHE_API PurchaseReservedCacheNodesOfferingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ELASTICACHE_API PurchaseReservedCacheNodesOfferingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const ReservedCacheNode& GetReservedCacheNode() const{ return m_reservedCacheNode; }
-    inline void SetReservedCacheNode(const ReservedCacheNode& value) { m_reservedCacheNode = value; }
-    inline void SetReservedCacheNode(ReservedCacheNode&& value) { m_reservedCacheNode = std::move(value); }
-    inline PurchaseReservedCacheNodesOfferingResult& WithReservedCacheNode(const ReservedCacheNode& value) { SetReservedCacheNode(value); return *this;}
-    inline PurchaseReservedCacheNodesOfferingResult& WithReservedCacheNode(ReservedCacheNode&& value) { SetReservedCacheNode(std::move(value)); return *this;}
+    inline const ReservedCacheNode& GetReservedCacheNode() const { return m_reservedCacheNode; }
+    template<typename ReservedCacheNodeT = ReservedCacheNode>
+    void SetReservedCacheNode(ReservedCacheNodeT&& value) { m_reservedCacheNodeHasBeenSet = true; m_reservedCacheNode = std::forward<ReservedCacheNodeT>(value); }
+    template<typename ReservedCacheNodeT = ReservedCacheNode>
+    PurchaseReservedCacheNodesOfferingResult& WithReservedCacheNode(ReservedCacheNodeT&& value) { SetReservedCacheNode(std::forward<ReservedCacheNodeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline PurchaseReservedCacheNodesOfferingResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline PurchaseReservedCacheNodesOfferingResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    PurchaseReservedCacheNodesOfferingResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     ReservedCacheNode m_reservedCacheNode;
+    bool m_reservedCacheNodeHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

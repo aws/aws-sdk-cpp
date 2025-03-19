@@ -29,7 +29,7 @@ namespace Model
   class GetWorkflowExecutionResult
   {
   public:
-    AWS_IMAGEBUILDER_API GetWorkflowExecutionResult();
+    AWS_IMAGEBUILDER_API GetWorkflowExecutionResult() = default;
     AWS_IMAGEBUILDER_API GetWorkflowExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IMAGEBUILDER_API GetWorkflowExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,11 @@ namespace Model
     /**
      * <p>The request ID that uniquely identifies this request.</p>
      */
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetWorkflowExecutionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetWorkflowExecutionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetWorkflowExecutionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetWorkflowExecutionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,13 +51,11 @@ namespace Model
      * workflow resource that defines the specified runtime instance of the
      * workflow.</p>
      */
-    inline const Aws::String& GetWorkflowBuildVersionArn() const{ return m_workflowBuildVersionArn; }
-    inline void SetWorkflowBuildVersionArn(const Aws::String& value) { m_workflowBuildVersionArn = value; }
-    inline void SetWorkflowBuildVersionArn(Aws::String&& value) { m_workflowBuildVersionArn = std::move(value); }
-    inline void SetWorkflowBuildVersionArn(const char* value) { m_workflowBuildVersionArn.assign(value); }
-    inline GetWorkflowExecutionResult& WithWorkflowBuildVersionArn(const Aws::String& value) { SetWorkflowBuildVersionArn(value); return *this;}
-    inline GetWorkflowExecutionResult& WithWorkflowBuildVersionArn(Aws::String&& value) { SetWorkflowBuildVersionArn(std::move(value)); return *this;}
-    inline GetWorkflowExecutionResult& WithWorkflowBuildVersionArn(const char* value) { SetWorkflowBuildVersionArn(value); return *this;}
+    inline const Aws::String& GetWorkflowBuildVersionArn() const { return m_workflowBuildVersionArn; }
+    template<typename WorkflowBuildVersionArnT = Aws::String>
+    void SetWorkflowBuildVersionArn(WorkflowBuildVersionArnT&& value) { m_workflowBuildVersionArnHasBeenSet = true; m_workflowBuildVersionArn = std::forward<WorkflowBuildVersionArnT>(value); }
+    template<typename WorkflowBuildVersionArnT = Aws::String>
+    GetWorkflowExecutionResult& WithWorkflowBuildVersionArn(WorkflowBuildVersionArnT&& value) { SetWorkflowBuildVersionArn(std::forward<WorkflowBuildVersionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,13 +63,11 @@ namespace Model
      * <p>The unique identifier that Image Builder assigned to keep track of runtime
      * details when it ran the workflow.</p>
      */
-    inline const Aws::String& GetWorkflowExecutionId() const{ return m_workflowExecutionId; }
-    inline void SetWorkflowExecutionId(const Aws::String& value) { m_workflowExecutionId = value; }
-    inline void SetWorkflowExecutionId(Aws::String&& value) { m_workflowExecutionId = std::move(value); }
-    inline void SetWorkflowExecutionId(const char* value) { m_workflowExecutionId.assign(value); }
-    inline GetWorkflowExecutionResult& WithWorkflowExecutionId(const Aws::String& value) { SetWorkflowExecutionId(value); return *this;}
-    inline GetWorkflowExecutionResult& WithWorkflowExecutionId(Aws::String&& value) { SetWorkflowExecutionId(std::move(value)); return *this;}
-    inline GetWorkflowExecutionResult& WithWorkflowExecutionId(const char* value) { SetWorkflowExecutionId(value); return *this;}
+    inline const Aws::String& GetWorkflowExecutionId() const { return m_workflowExecutionId; }
+    template<typename WorkflowExecutionIdT = Aws::String>
+    void SetWorkflowExecutionId(WorkflowExecutionIdT&& value) { m_workflowExecutionIdHasBeenSet = true; m_workflowExecutionId = std::forward<WorkflowExecutionIdT>(value); }
+    template<typename WorkflowExecutionIdT = Aws::String>
+    GetWorkflowExecutionResult& WithWorkflowExecutionId(WorkflowExecutionIdT&& value) { SetWorkflowExecutionId(std::forward<WorkflowExecutionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,13 +75,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the image resource build version that the
      * specified runtime instance of the workflow created.</p>
      */
-    inline const Aws::String& GetImageBuildVersionArn() const{ return m_imageBuildVersionArn; }
-    inline void SetImageBuildVersionArn(const Aws::String& value) { m_imageBuildVersionArn = value; }
-    inline void SetImageBuildVersionArn(Aws::String&& value) { m_imageBuildVersionArn = std::move(value); }
-    inline void SetImageBuildVersionArn(const char* value) { m_imageBuildVersionArn.assign(value); }
-    inline GetWorkflowExecutionResult& WithImageBuildVersionArn(const Aws::String& value) { SetImageBuildVersionArn(value); return *this;}
-    inline GetWorkflowExecutionResult& WithImageBuildVersionArn(Aws::String&& value) { SetImageBuildVersionArn(std::move(value)); return *this;}
-    inline GetWorkflowExecutionResult& WithImageBuildVersionArn(const char* value) { SetImageBuildVersionArn(value); return *this;}
+    inline const Aws::String& GetImageBuildVersionArn() const { return m_imageBuildVersionArn; }
+    template<typename ImageBuildVersionArnT = Aws::String>
+    void SetImageBuildVersionArn(ImageBuildVersionArnT&& value) { m_imageBuildVersionArnHasBeenSet = true; m_imageBuildVersionArn = std::forward<ImageBuildVersionArnT>(value); }
+    template<typename ImageBuildVersionArnT = Aws::String>
+    GetWorkflowExecutionResult& WithImageBuildVersionArn(ImageBuildVersionArnT&& value) { SetImageBuildVersionArn(std::forward<ImageBuildVersionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,11 +87,9 @@ namespace Model
      * <p>The type of workflow that Image Builder ran for the specified runtime
      * instance of the workflow.</p>
      */
-    inline const WorkflowType& GetType() const{ return m_type; }
-    inline void SetType(const WorkflowType& value) { m_type = value; }
-    inline void SetType(WorkflowType&& value) { m_type = std::move(value); }
-    inline GetWorkflowExecutionResult& WithType(const WorkflowType& value) { SetType(value); return *this;}
-    inline GetWorkflowExecutionResult& WithType(WorkflowType&& value) { SetType(std::move(value)); return *this;}
+    inline WorkflowType GetType() const { return m_type; }
+    inline void SetType(WorkflowType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline GetWorkflowExecutionResult& WithType(WorkflowType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -107,11 +97,9 @@ namespace Model
      * <p>The current runtime status for the specified runtime instance of the
      * workflow.</p>
      */
-    inline const WorkflowExecutionStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const WorkflowExecutionStatus& value) { m_status = value; }
-    inline void SetStatus(WorkflowExecutionStatus&& value) { m_status = std::move(value); }
-    inline GetWorkflowExecutionResult& WithStatus(const WorkflowExecutionStatus& value) { SetStatus(value); return *this;}
-    inline GetWorkflowExecutionResult& WithStatus(WorkflowExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline WorkflowExecutionStatus GetStatus() const { return m_status; }
+    inline void SetStatus(WorkflowExecutionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetWorkflowExecutionResult& WithStatus(WorkflowExecutionStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -119,13 +107,11 @@ namespace Model
      * <p>The output message from the specified runtime instance of the workflow, if
      * applicable.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
-    inline void SetMessage(const Aws::String& value) { m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_message.assign(value); }
-    inline GetWorkflowExecutionResult& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline GetWorkflowExecutionResult& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline GetWorkflowExecutionResult& WithMessage(const char* value) { SetMessage(value); return *this;}
+    inline const Aws::String& GetMessage() const { return m_message; }
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    GetWorkflowExecutionResult& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,8 +120,8 @@ namespace Model
      * that ran. This number should equal the sum of the step counts for steps that
      * succeeded, were skipped, and failed.</p>
      */
-    inline int GetTotalStepCount() const{ return m_totalStepCount; }
-    inline void SetTotalStepCount(int value) { m_totalStepCount = value; }
+    inline int GetTotalStepCount() const { return m_totalStepCount; }
+    inline void SetTotalStepCount(int value) { m_totalStepCountHasBeenSet = true; m_totalStepCount = value; }
     inline GetWorkflowExecutionResult& WithTotalStepCount(int value) { SetTotalStepCount(value); return *this;}
     ///@}
 
@@ -144,8 +130,8 @@ namespace Model
      * <p>A runtime count for the number of steps that ran successfully in the
      * specified runtime instance of the workflow.</p>
      */
-    inline int GetTotalStepsSucceeded() const{ return m_totalStepsSucceeded; }
-    inline void SetTotalStepsSucceeded(int value) { m_totalStepsSucceeded = value; }
+    inline int GetTotalStepsSucceeded() const { return m_totalStepsSucceeded; }
+    inline void SetTotalStepsSucceeded(int value) { m_totalStepsSucceededHasBeenSet = true; m_totalStepsSucceeded = value; }
     inline GetWorkflowExecutionResult& WithTotalStepsSucceeded(int value) { SetTotalStepsSucceeded(value); return *this;}
     ///@}
 
@@ -154,8 +140,8 @@ namespace Model
      * <p>A runtime count for the number of steps that failed in the specified runtime
      * instance of the workflow.</p>
      */
-    inline int GetTotalStepsFailed() const{ return m_totalStepsFailed; }
-    inline void SetTotalStepsFailed(int value) { m_totalStepsFailed = value; }
+    inline int GetTotalStepsFailed() const { return m_totalStepsFailed; }
+    inline void SetTotalStepsFailed(int value) { m_totalStepsFailedHasBeenSet = true; m_totalStepsFailed = value; }
     inline GetWorkflowExecutionResult& WithTotalStepsFailed(int value) { SetTotalStepsFailed(value); return *this;}
     ///@}
 
@@ -164,8 +150,8 @@ namespace Model
      * <p>A runtime count for the number of steps that were skipped in the specified
      * runtime instance of the workflow.</p>
      */
-    inline int GetTotalStepsSkipped() const{ return m_totalStepsSkipped; }
-    inline void SetTotalStepsSkipped(int value) { m_totalStepsSkipped = value; }
+    inline int GetTotalStepsSkipped() const { return m_totalStepsSkipped; }
+    inline void SetTotalStepsSkipped(int value) { m_totalStepsSkippedHasBeenSet = true; m_totalStepsSkipped = value; }
     inline GetWorkflowExecutionResult& WithTotalStepsSkipped(int value) { SetTotalStepsSkipped(value); return *this;}
     ///@}
 
@@ -174,13 +160,11 @@ namespace Model
      * <p>The timestamp when the specified runtime instance of the workflow
      * started.</p>
      */
-    inline const Aws::String& GetStartTime() const{ return m_startTime; }
-    inline void SetStartTime(const Aws::String& value) { m_startTime = value; }
-    inline void SetStartTime(Aws::String&& value) { m_startTime = std::move(value); }
-    inline void SetStartTime(const char* value) { m_startTime.assign(value); }
-    inline GetWorkflowExecutionResult& WithStartTime(const Aws::String& value) { SetStartTime(value); return *this;}
-    inline GetWorkflowExecutionResult& WithStartTime(Aws::String&& value) { SetStartTime(std::move(value)); return *this;}
-    inline GetWorkflowExecutionResult& WithStartTime(const char* value) { SetStartTime(value); return *this;}
+    inline const Aws::String& GetStartTime() const { return m_startTime; }
+    template<typename StartTimeT = Aws::String>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::String>
+    GetWorkflowExecutionResult& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -188,13 +172,11 @@ namespace Model
      * <p>The timestamp when the specified runtime instance of the workflow
      * finished.</p>
      */
-    inline const Aws::String& GetEndTime() const{ return m_endTime; }
-    inline void SetEndTime(const Aws::String& value) { m_endTime = value; }
-    inline void SetEndTime(Aws::String&& value) { m_endTime = std::move(value); }
-    inline void SetEndTime(const char* value) { m_endTime.assign(value); }
-    inline GetWorkflowExecutionResult& WithEndTime(const Aws::String& value) { SetEndTime(value); return *this;}
-    inline GetWorkflowExecutionResult& WithEndTime(Aws::String&& value) { SetEndTime(std::move(value)); return *this;}
-    inline GetWorkflowExecutionResult& WithEndTime(const char* value) { SetEndTime(value); return *this;}
+    inline const Aws::String& GetEndTime() const { return m_endTime; }
+    template<typename EndTimeT = Aws::String>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::String>
+    GetWorkflowExecutionResult& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -202,43 +184,55 @@ namespace Model
      * <p>Test workflows are defined within named runtime groups. The parallel group is
      * a named group that contains one or more test workflows.</p>
      */
-    inline const Aws::String& GetParallelGroup() const{ return m_parallelGroup; }
-    inline void SetParallelGroup(const Aws::String& value) { m_parallelGroup = value; }
-    inline void SetParallelGroup(Aws::String&& value) { m_parallelGroup = std::move(value); }
-    inline void SetParallelGroup(const char* value) { m_parallelGroup.assign(value); }
-    inline GetWorkflowExecutionResult& WithParallelGroup(const Aws::String& value) { SetParallelGroup(value); return *this;}
-    inline GetWorkflowExecutionResult& WithParallelGroup(Aws::String&& value) { SetParallelGroup(std::move(value)); return *this;}
-    inline GetWorkflowExecutionResult& WithParallelGroup(const char* value) { SetParallelGroup(value); return *this;}
+    inline const Aws::String& GetParallelGroup() const { return m_parallelGroup; }
+    template<typename ParallelGroupT = Aws::String>
+    void SetParallelGroup(ParallelGroupT&& value) { m_parallelGroupHasBeenSet = true; m_parallelGroup = std::forward<ParallelGroupT>(value); }
+    template<typename ParallelGroupT = Aws::String>
+    GetWorkflowExecutionResult& WithParallelGroup(ParallelGroupT&& value) { SetParallelGroup(std::forward<ParallelGroupT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
 
     Aws::String m_workflowBuildVersionArn;
+    bool m_workflowBuildVersionArnHasBeenSet = false;
 
     Aws::String m_workflowExecutionId;
+    bool m_workflowExecutionIdHasBeenSet = false;
 
     Aws::String m_imageBuildVersionArn;
+    bool m_imageBuildVersionArnHasBeenSet = false;
 
-    WorkflowType m_type;
+    WorkflowType m_type{WorkflowType::NOT_SET};
+    bool m_typeHasBeenSet = false;
 
-    WorkflowExecutionStatus m_status;
+    WorkflowExecutionStatus m_status{WorkflowExecutionStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_message;
+    bool m_messageHasBeenSet = false;
 
-    int m_totalStepCount;
+    int m_totalStepCount{0};
+    bool m_totalStepCountHasBeenSet = false;
 
-    int m_totalStepsSucceeded;
+    int m_totalStepsSucceeded{0};
+    bool m_totalStepsSucceededHasBeenSet = false;
 
-    int m_totalStepsFailed;
+    int m_totalStepsFailed{0};
+    bool m_totalStepsFailedHasBeenSet = false;
 
-    int m_totalStepsSkipped;
+    int m_totalStepsSkipped{0};
+    bool m_totalStepsSkippedHasBeenSet = false;
 
     Aws::String m_startTime;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::String m_endTime;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::String m_parallelGroup;
+    bool m_parallelGroupHasBeenSet = false;
   };
 
 } // namespace Model

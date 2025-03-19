@@ -20,15 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-CacheParameterGroupStatus::CacheParameterGroupStatus() : 
-    m_cacheParameterGroupNameHasBeenSet(false),
-    m_parameterApplyStatusHasBeenSet(false),
-    m_cacheNodeIdsToRebootHasBeenSet(false)
-{
-}
-
 CacheParameterGroupStatus::CacheParameterGroupStatus(const XmlNode& xmlNode)
-  : CacheParameterGroupStatus()
 {
   *this = xmlNode;
 }
@@ -55,6 +47,7 @@ CacheParameterGroupStatus& CacheParameterGroupStatus::operator =(const XmlNode& 
     if(!cacheNodeIdsToRebootNode.IsNull())
     {
       XmlNode cacheNodeIdsToRebootMember = cacheNodeIdsToRebootNode.FirstChild("CacheNodeId");
+      m_cacheNodeIdsToRebootHasBeenSet = !cacheNodeIdsToRebootMember.IsNull();
       while(!cacheNodeIdsToRebootMember.IsNull())
       {
         m_cacheNodeIdsToReboot.push_back(cacheNodeIdsToRebootMember.GetText());

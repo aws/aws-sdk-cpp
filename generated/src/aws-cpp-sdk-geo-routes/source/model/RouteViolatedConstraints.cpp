@@ -18,41 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteViolatedConstraints::RouteViolatedConstraints() : 
-    m_allHazardsRestricted(false),
-    m_allHazardsRestrictedHasBeenSet(false),
-    m_axleCountHasBeenSet(false),
-    m_hazardousCargosHasBeenSet(false),
-    m_maxHeight(0),
-    m_maxHeightHasBeenSet(false),
-    m_maxKpraLength(0),
-    m_maxKpraLengthHasBeenSet(false),
-    m_maxLength(0),
-    m_maxLengthHasBeenSet(false),
-    m_maxPayloadCapacity(0),
-    m_maxPayloadCapacityHasBeenSet(false),
-    m_maxWeightHasBeenSet(false),
-    m_maxWeightPerAxle(0),
-    m_maxWeightPerAxleHasBeenSet(false),
-    m_maxWeightPerAxleGroupHasBeenSet(false),
-    m_maxWidth(0),
-    m_maxWidthHasBeenSet(false),
-    m_occupancyHasBeenSet(false),
-    m_restrictedTimesHasBeenSet(false),
-    m_timeDependent(false),
-    m_timeDependentHasBeenSet(false),
-    m_trailerCountHasBeenSet(false),
-    m_travelMode(false),
-    m_travelModeHasBeenSet(false),
-    m_truckRoadTypeHasBeenSet(false),
-    m_truckType(RouteTruckType::NOT_SET),
-    m_truckTypeHasBeenSet(false),
-    m_tunnelRestrictionCodeHasBeenSet(false)
-{
-}
-
 RouteViolatedConstraints::RouteViolatedConstraints(JsonView jsonValue)
-  : RouteViolatedConstraints()
 {
   *this = jsonValue;
 }
@@ -62,17 +28,13 @@ RouteViolatedConstraints& RouteViolatedConstraints::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("AllHazardsRestricted"))
   {
     m_allHazardsRestricted = jsonValue.GetBool("AllHazardsRestricted");
-
     m_allHazardsRestrictedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AxleCount"))
   {
     m_axleCount = jsonValue.GetObject("AxleCount");
-
     m_axleCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HazardousCargos"))
   {
     Aws::Utils::Array<JsonView> hazardousCargosJsonList = jsonValue.GetArray("HazardousCargos");
@@ -82,119 +44,86 @@ RouteViolatedConstraints& RouteViolatedConstraints::operator =(JsonView jsonValu
     }
     m_hazardousCargosHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxHeight"))
   {
     m_maxHeight = jsonValue.GetInt64("MaxHeight");
-
     m_maxHeightHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxKpraLength"))
   {
     m_maxKpraLength = jsonValue.GetInt64("MaxKpraLength");
-
     m_maxKpraLengthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxLength"))
   {
     m_maxLength = jsonValue.GetInt64("MaxLength");
-
     m_maxLengthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxPayloadCapacity"))
   {
     m_maxPayloadCapacity = jsonValue.GetInt64("MaxPayloadCapacity");
-
     m_maxPayloadCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxWeight"))
   {
     m_maxWeight = jsonValue.GetObject("MaxWeight");
-
     m_maxWeightHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxWeightPerAxle"))
   {
     m_maxWeightPerAxle = jsonValue.GetInt64("MaxWeightPerAxle");
-
     m_maxWeightPerAxleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxWeightPerAxleGroup"))
   {
     m_maxWeightPerAxleGroup = jsonValue.GetObject("MaxWeightPerAxleGroup");
-
     m_maxWeightPerAxleGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxWidth"))
   {
     m_maxWidth = jsonValue.GetInt64("MaxWidth");
-
     m_maxWidthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Occupancy"))
   {
     m_occupancy = jsonValue.GetObject("Occupancy");
-
     m_occupancyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RestrictedTimes"))
   {
     m_restrictedTimes = jsonValue.GetString("RestrictedTimes");
-
     m_restrictedTimesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeDependent"))
   {
     m_timeDependent = jsonValue.GetBool("TimeDependent");
-
     m_timeDependentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrailerCount"))
   {
     m_trailerCount = jsonValue.GetObject("TrailerCount");
-
     m_trailerCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TravelMode"))
   {
     m_travelMode = jsonValue.GetBool("TravelMode");
-
     m_travelModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TruckRoadType"))
   {
     m_truckRoadType = jsonValue.GetString("TruckRoadType");
-
     m_truckRoadTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TruckType"))
   {
     m_truckType = RouteTruckTypeMapper::GetRouteTruckTypeForName(jsonValue.GetString("TruckType"));
-
     m_truckTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TunnelRestrictionCode"))
   {
     m_tunnelRestrictionCode = jsonValue.GetString("TunnelRestrictionCode");
-
     m_tunnelRestrictionCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

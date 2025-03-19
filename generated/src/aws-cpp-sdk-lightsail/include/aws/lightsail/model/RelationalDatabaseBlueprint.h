@@ -33,7 +33,7 @@ namespace Model
   class RelationalDatabaseBlueprint
   {
   public:
-    AWS_LIGHTSAIL_API RelationalDatabaseBlueprint();
+    AWS_LIGHTSAIL_API RelationalDatabaseBlueprint() = default;
     AWS_LIGHTSAIL_API RelationalDatabaseBlueprint(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API RelationalDatabaseBlueprint& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The ID for the database blueprint.</p>
      */
-    inline const Aws::String& GetBlueprintId() const{ return m_blueprintId; }
+    inline const Aws::String& GetBlueprintId() const { return m_blueprintId; }
     inline bool BlueprintIdHasBeenSet() const { return m_blueprintIdHasBeenSet; }
-    inline void SetBlueprintId(const Aws::String& value) { m_blueprintIdHasBeenSet = true; m_blueprintId = value; }
-    inline void SetBlueprintId(Aws::String&& value) { m_blueprintIdHasBeenSet = true; m_blueprintId = std::move(value); }
-    inline void SetBlueprintId(const char* value) { m_blueprintIdHasBeenSet = true; m_blueprintId.assign(value); }
-    inline RelationalDatabaseBlueprint& WithBlueprintId(const Aws::String& value) { SetBlueprintId(value); return *this;}
-    inline RelationalDatabaseBlueprint& WithBlueprintId(Aws::String&& value) { SetBlueprintId(std::move(value)); return *this;}
-    inline RelationalDatabaseBlueprint& WithBlueprintId(const char* value) { SetBlueprintId(value); return *this;}
+    template<typename BlueprintIdT = Aws::String>
+    void SetBlueprintId(BlueprintIdT&& value) { m_blueprintIdHasBeenSet = true; m_blueprintId = std::forward<BlueprintIdT>(value); }
+    template<typename BlueprintIdT = Aws::String>
+    RelationalDatabaseBlueprint& WithBlueprintId(BlueprintIdT&& value) { SetBlueprintId(std::forward<BlueprintIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +56,10 @@ namespace Model
      * <p>The database software of the database blueprint (for example,
      * <code>MySQL</code>).</p>
      */
-    inline const RelationalDatabaseEngine& GetEngine() const{ return m_engine; }
+    inline RelationalDatabaseEngine GetEngine() const { return m_engine; }
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
-    inline void SetEngine(const RelationalDatabaseEngine& value) { m_engineHasBeenSet = true; m_engine = value; }
-    inline void SetEngine(RelationalDatabaseEngine&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
-    inline RelationalDatabaseBlueprint& WithEngine(const RelationalDatabaseEngine& value) { SetEngine(value); return *this;}
-    inline RelationalDatabaseBlueprint& WithEngine(RelationalDatabaseEngine&& value) { SetEngine(std::move(value)); return *this;}
+    inline void SetEngine(RelationalDatabaseEngine value) { m_engineHasBeenSet = true; m_engine = value; }
+    inline RelationalDatabaseBlueprint& WithEngine(RelationalDatabaseEngine value) { SetEngine(value); return *this;}
     ///@}
 
     ///@{
@@ -71,28 +67,24 @@ namespace Model
      * <p>The database engine version for the database blueprint (for example,
      * <code>5.7.23</code>).</p>
      */
-    inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+    inline const Aws::String& GetEngineVersion() const { return m_engineVersion; }
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
-    inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
-    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
-    inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
-    inline RelationalDatabaseBlueprint& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
-    inline RelationalDatabaseBlueprint& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
-    inline RelationalDatabaseBlueprint& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
+    template<typename EngineVersionT = Aws::String>
+    void SetEngineVersion(EngineVersionT&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::forward<EngineVersionT>(value); }
+    template<typename EngineVersionT = Aws::String>
+    RelationalDatabaseBlueprint& WithEngineVersion(EngineVersionT&& value) { SetEngineVersion(std::forward<EngineVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the database engine for the database blueprint.</p>
      */
-    inline const Aws::String& GetEngineDescription() const{ return m_engineDescription; }
+    inline const Aws::String& GetEngineDescription() const { return m_engineDescription; }
     inline bool EngineDescriptionHasBeenSet() const { return m_engineDescriptionHasBeenSet; }
-    inline void SetEngineDescription(const Aws::String& value) { m_engineDescriptionHasBeenSet = true; m_engineDescription = value; }
-    inline void SetEngineDescription(Aws::String&& value) { m_engineDescriptionHasBeenSet = true; m_engineDescription = std::move(value); }
-    inline void SetEngineDescription(const char* value) { m_engineDescriptionHasBeenSet = true; m_engineDescription.assign(value); }
-    inline RelationalDatabaseBlueprint& WithEngineDescription(const Aws::String& value) { SetEngineDescription(value); return *this;}
-    inline RelationalDatabaseBlueprint& WithEngineDescription(Aws::String&& value) { SetEngineDescription(std::move(value)); return *this;}
-    inline RelationalDatabaseBlueprint& WithEngineDescription(const char* value) { SetEngineDescription(value); return *this;}
+    template<typename EngineDescriptionT = Aws::String>
+    void SetEngineDescription(EngineDescriptionT&& value) { m_engineDescriptionHasBeenSet = true; m_engineDescription = std::forward<EngineDescriptionT>(value); }
+    template<typename EngineDescriptionT = Aws::String>
+    RelationalDatabaseBlueprint& WithEngineDescription(EngineDescriptionT&& value) { SetEngineDescription(std::forward<EngineDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,14 +92,12 @@ namespace Model
      * <p>The description of the database engine version for the database
      * blueprint.</p>
      */
-    inline const Aws::String& GetEngineVersionDescription() const{ return m_engineVersionDescription; }
+    inline const Aws::String& GetEngineVersionDescription() const { return m_engineVersionDescription; }
     inline bool EngineVersionDescriptionHasBeenSet() const { return m_engineVersionDescriptionHasBeenSet; }
-    inline void SetEngineVersionDescription(const Aws::String& value) { m_engineVersionDescriptionHasBeenSet = true; m_engineVersionDescription = value; }
-    inline void SetEngineVersionDescription(Aws::String&& value) { m_engineVersionDescriptionHasBeenSet = true; m_engineVersionDescription = std::move(value); }
-    inline void SetEngineVersionDescription(const char* value) { m_engineVersionDescriptionHasBeenSet = true; m_engineVersionDescription.assign(value); }
-    inline RelationalDatabaseBlueprint& WithEngineVersionDescription(const Aws::String& value) { SetEngineVersionDescription(value); return *this;}
-    inline RelationalDatabaseBlueprint& WithEngineVersionDescription(Aws::String&& value) { SetEngineVersionDescription(std::move(value)); return *this;}
-    inline RelationalDatabaseBlueprint& WithEngineVersionDescription(const char* value) { SetEngineVersionDescription(value); return *this;}
+    template<typename EngineVersionDescriptionT = Aws::String>
+    void SetEngineVersionDescription(EngineVersionDescriptionT&& value) { m_engineVersionDescriptionHasBeenSet = true; m_engineVersionDescription = std::forward<EngineVersionDescriptionT>(value); }
+    template<typename EngineVersionDescriptionT = Aws::String>
+    RelationalDatabaseBlueprint& WithEngineVersionDescription(EngineVersionDescriptionT&& value) { SetEngineVersionDescription(std::forward<EngineVersionDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,7 +105,7 @@ namespace Model
      * <p>A Boolean value indicating whether the engine version is the default for the
      * database blueprint.</p>
      */
-    inline bool GetIsEngineDefault() const{ return m_isEngineDefault; }
+    inline bool GetIsEngineDefault() const { return m_isEngineDefault; }
     inline bool IsEngineDefaultHasBeenSet() const { return m_isEngineDefaultHasBeenSet; }
     inline void SetIsEngineDefault(bool value) { m_isEngineDefaultHasBeenSet = true; m_isEngineDefault = value; }
     inline RelationalDatabaseBlueprint& WithIsEngineDefault(bool value) { SetIsEngineDefault(value); return *this;}
@@ -125,7 +115,7 @@ namespace Model
     Aws::String m_blueprintId;
     bool m_blueprintIdHasBeenSet = false;
 
-    RelationalDatabaseEngine m_engine;
+    RelationalDatabaseEngine m_engine{RelationalDatabaseEngine::NOT_SET};
     bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
@@ -137,7 +127,7 @@ namespace Model
     Aws::String m_engineVersionDescription;
     bool m_engineVersionDescriptionHasBeenSet = false;
 
-    bool m_isEngineDefault;
+    bool m_isEngineDefault{false};
     bool m_isEngineDefaultHasBeenSet = false;
   };
 

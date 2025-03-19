@@ -28,7 +28,7 @@ namespace Model
   class CreateServerlessCacheResult
   {
   public:
-    AWS_ELASTICACHE_API CreateServerlessCacheResult();
+    AWS_ELASTICACHE_API CreateServerlessCacheResult() = default;
     AWS_ELASTICACHE_API CreateServerlessCacheResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ELASTICACHE_API CreateServerlessCacheResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>The response for the attempt to create the serverless cache.</p>
      */
-    inline const ServerlessCache& GetServerlessCache() const{ return m_serverlessCache; }
-    inline void SetServerlessCache(const ServerlessCache& value) { m_serverlessCache = value; }
-    inline void SetServerlessCache(ServerlessCache&& value) { m_serverlessCache = std::move(value); }
-    inline CreateServerlessCacheResult& WithServerlessCache(const ServerlessCache& value) { SetServerlessCache(value); return *this;}
-    inline CreateServerlessCacheResult& WithServerlessCache(ServerlessCache&& value) { SetServerlessCache(std::move(value)); return *this;}
+    inline const ServerlessCache& GetServerlessCache() const { return m_serverlessCache; }
+    template<typename ServerlessCacheT = ServerlessCache>
+    void SetServerlessCache(ServerlessCacheT&& value) { m_serverlessCacheHasBeenSet = true; m_serverlessCache = std::forward<ServerlessCacheT>(value); }
+    template<typename ServerlessCacheT = ServerlessCache>
+    CreateServerlessCacheResult& WithServerlessCache(ServerlessCacheT&& value) { SetServerlessCache(std::forward<ServerlessCacheT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CreateServerlessCacheResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CreateServerlessCacheResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CreateServerlessCacheResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     ServerlessCache m_serverlessCache;
+    bool m_serverlessCacheHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

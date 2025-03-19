@@ -34,7 +34,7 @@ namespace Model
   class LifecycleEvent
   {
   public:
-    AWS_CODEDEPLOY_API LifecycleEvent();
+    AWS_CODEDEPLOY_API LifecycleEvent() = default;
     AWS_CODEDEPLOY_API LifecycleEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API LifecycleEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,50 +46,48 @@ namespace Model
      * <code>BeforeInstall</code>, <code>AfterInstall</code>,
      * <code>ApplicationStart</code>, or <code>ValidateService</code>.</p>
      */
-    inline const Aws::String& GetLifecycleEventName() const{ return m_lifecycleEventName; }
+    inline const Aws::String& GetLifecycleEventName() const { return m_lifecycleEventName; }
     inline bool LifecycleEventNameHasBeenSet() const { return m_lifecycleEventNameHasBeenSet; }
-    inline void SetLifecycleEventName(const Aws::String& value) { m_lifecycleEventNameHasBeenSet = true; m_lifecycleEventName = value; }
-    inline void SetLifecycleEventName(Aws::String&& value) { m_lifecycleEventNameHasBeenSet = true; m_lifecycleEventName = std::move(value); }
-    inline void SetLifecycleEventName(const char* value) { m_lifecycleEventNameHasBeenSet = true; m_lifecycleEventName.assign(value); }
-    inline LifecycleEvent& WithLifecycleEventName(const Aws::String& value) { SetLifecycleEventName(value); return *this;}
-    inline LifecycleEvent& WithLifecycleEventName(Aws::String&& value) { SetLifecycleEventName(std::move(value)); return *this;}
-    inline LifecycleEvent& WithLifecycleEventName(const char* value) { SetLifecycleEventName(value); return *this;}
+    template<typename LifecycleEventNameT = Aws::String>
+    void SetLifecycleEventName(LifecycleEventNameT&& value) { m_lifecycleEventNameHasBeenSet = true; m_lifecycleEventName = std::forward<LifecycleEventNameT>(value); }
+    template<typename LifecycleEventNameT = Aws::String>
+    LifecycleEvent& WithLifecycleEventName(LifecycleEventNameT&& value) { SetLifecycleEventName(std::forward<LifecycleEventNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Diagnostic information about the deployment lifecycle event.</p>
      */
-    inline const Diagnostics& GetDiagnostics() const{ return m_diagnostics; }
+    inline const Diagnostics& GetDiagnostics() const { return m_diagnostics; }
     inline bool DiagnosticsHasBeenSet() const { return m_diagnosticsHasBeenSet; }
-    inline void SetDiagnostics(const Diagnostics& value) { m_diagnosticsHasBeenSet = true; m_diagnostics = value; }
-    inline void SetDiagnostics(Diagnostics&& value) { m_diagnosticsHasBeenSet = true; m_diagnostics = std::move(value); }
-    inline LifecycleEvent& WithDiagnostics(const Diagnostics& value) { SetDiagnostics(value); return *this;}
-    inline LifecycleEvent& WithDiagnostics(Diagnostics&& value) { SetDiagnostics(std::move(value)); return *this;}
+    template<typename DiagnosticsT = Diagnostics>
+    void SetDiagnostics(DiagnosticsT&& value) { m_diagnosticsHasBeenSet = true; m_diagnostics = std::forward<DiagnosticsT>(value); }
+    template<typename DiagnosticsT = Diagnostics>
+    LifecycleEvent& WithDiagnostics(DiagnosticsT&& value) { SetDiagnostics(std::forward<DiagnosticsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A timestamp that indicates when the deployment lifecycle event started.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline LifecycleEvent& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline LifecycleEvent& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    LifecycleEvent& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A timestamp that indicates when the deployment lifecycle event ended.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline LifecycleEvent& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline LifecycleEvent& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    LifecycleEvent& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,12 +100,10 @@ namespace Model
      * lifecycle event has been skipped.</p> </li> <li> <p>Unknown: The deployment
      * lifecycle event is unknown.</p> </li> </ul>
      */
-    inline const LifecycleEventStatus& GetStatus() const{ return m_status; }
+    inline LifecycleEventStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const LifecycleEventStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(LifecycleEventStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline LifecycleEvent& WithStatus(const LifecycleEventStatus& value) { SetStatus(value); return *this;}
-    inline LifecycleEvent& WithStatus(LifecycleEventStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(LifecycleEventStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline LifecycleEvent& WithStatus(LifecycleEventStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
@@ -117,13 +113,13 @@ namespace Model
     Diagnostics m_diagnostics;
     bool m_diagnosticsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
 
-    LifecycleEventStatus m_status;
+    LifecycleEventStatus m_status{LifecycleEventStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

@@ -33,7 +33,7 @@ namespace Model
   class AIGuardrailContentPolicyConfig
   {
   public:
-    AWS_QCONNECT_API AIGuardrailContentPolicyConfig();
+    AWS_QCONNECT_API AIGuardrailContentPolicyConfig() = default;
     AWS_QCONNECT_API AIGuardrailContentPolicyConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API AIGuardrailContentPolicyConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
      * <p>Contains the type of the content filter and how strongly it should apply to
      * prompts and model responses.</p>
      */
-    inline const Aws::Vector<GuardrailContentFilterConfig>& GetFiltersConfig() const{ return m_filtersConfig; }
+    inline const Aws::Vector<GuardrailContentFilterConfig>& GetFiltersConfig() const { return m_filtersConfig; }
     inline bool FiltersConfigHasBeenSet() const { return m_filtersConfigHasBeenSet; }
-    inline void SetFiltersConfig(const Aws::Vector<GuardrailContentFilterConfig>& value) { m_filtersConfigHasBeenSet = true; m_filtersConfig = value; }
-    inline void SetFiltersConfig(Aws::Vector<GuardrailContentFilterConfig>&& value) { m_filtersConfigHasBeenSet = true; m_filtersConfig = std::move(value); }
-    inline AIGuardrailContentPolicyConfig& WithFiltersConfig(const Aws::Vector<GuardrailContentFilterConfig>& value) { SetFiltersConfig(value); return *this;}
-    inline AIGuardrailContentPolicyConfig& WithFiltersConfig(Aws::Vector<GuardrailContentFilterConfig>&& value) { SetFiltersConfig(std::move(value)); return *this;}
-    inline AIGuardrailContentPolicyConfig& AddFiltersConfig(const GuardrailContentFilterConfig& value) { m_filtersConfigHasBeenSet = true; m_filtersConfig.push_back(value); return *this; }
-    inline AIGuardrailContentPolicyConfig& AddFiltersConfig(GuardrailContentFilterConfig&& value) { m_filtersConfigHasBeenSet = true; m_filtersConfig.push_back(std::move(value)); return *this; }
+    template<typename FiltersConfigT = Aws::Vector<GuardrailContentFilterConfig>>
+    void SetFiltersConfig(FiltersConfigT&& value) { m_filtersConfigHasBeenSet = true; m_filtersConfig = std::forward<FiltersConfigT>(value); }
+    template<typename FiltersConfigT = Aws::Vector<GuardrailContentFilterConfig>>
+    AIGuardrailContentPolicyConfig& WithFiltersConfig(FiltersConfigT&& value) { SetFiltersConfig(std::forward<FiltersConfigT>(value)); return *this;}
+    template<typename FiltersConfigT = GuardrailContentFilterConfig>
+    AIGuardrailContentPolicyConfig& AddFiltersConfig(FiltersConfigT&& value) { m_filtersConfigHasBeenSet = true; m_filtersConfig.emplace_back(std::forward<FiltersConfigT>(value)); return *this; }
     ///@}
   private:
 

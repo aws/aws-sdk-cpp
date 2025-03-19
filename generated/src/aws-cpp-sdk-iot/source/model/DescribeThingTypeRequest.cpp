@@ -12,11 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeThingTypeRequest::DescribeThingTypeRequest() : 
-    m_thingTypeNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeThingTypeRequest::SerializePayload() const
 {
   return {};

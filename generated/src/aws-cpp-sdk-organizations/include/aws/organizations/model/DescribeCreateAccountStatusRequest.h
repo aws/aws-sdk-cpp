@@ -21,7 +21,7 @@ namespace Model
   class DescribeCreateAccountStatusRequest : public OrganizationsRequest
   {
   public:
-    AWS_ORGANIZATIONS_API DescribeCreateAccountStatusRequest();
+    AWS_ORGANIZATIONS_API DescribeCreateAccountStatusRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * request ID string requires "car-" followed by from 8 to 32 lowercase letters or
      * digits.</p>
      */
-    inline const Aws::String& GetCreateAccountRequestId() const{ return m_createAccountRequestId; }
+    inline const Aws::String& GetCreateAccountRequestId() const { return m_createAccountRequestId; }
     inline bool CreateAccountRequestIdHasBeenSet() const { return m_createAccountRequestIdHasBeenSet; }
-    inline void SetCreateAccountRequestId(const Aws::String& value) { m_createAccountRequestIdHasBeenSet = true; m_createAccountRequestId = value; }
-    inline void SetCreateAccountRequestId(Aws::String&& value) { m_createAccountRequestIdHasBeenSet = true; m_createAccountRequestId = std::move(value); }
-    inline void SetCreateAccountRequestId(const char* value) { m_createAccountRequestIdHasBeenSet = true; m_createAccountRequestId.assign(value); }
-    inline DescribeCreateAccountStatusRequest& WithCreateAccountRequestId(const Aws::String& value) { SetCreateAccountRequestId(value); return *this;}
-    inline DescribeCreateAccountStatusRequest& WithCreateAccountRequestId(Aws::String&& value) { SetCreateAccountRequestId(std::move(value)); return *this;}
-    inline DescribeCreateAccountStatusRequest& WithCreateAccountRequestId(const char* value) { SetCreateAccountRequestId(value); return *this;}
+    template<typename CreateAccountRequestIdT = Aws::String>
+    void SetCreateAccountRequestId(CreateAccountRequestIdT&& value) { m_createAccountRequestIdHasBeenSet = true; m_createAccountRequestId = std::forward<CreateAccountRequestIdT>(value); }
+    template<typename CreateAccountRequestIdT = Aws::String>
+    DescribeCreateAccountStatusRequest& WithCreateAccountRequestId(CreateAccountRequestIdT&& value) { SetCreateAccountRequestId(std::forward<CreateAccountRequestIdT>(value)); return *this;}
     ///@}
   private:
 

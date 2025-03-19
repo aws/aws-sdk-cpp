@@ -18,46 +18,7 @@ namespace CodeBuild
 namespace Model
 {
 
-Project::Project() : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_secondarySourcesHasBeenSet(false),
-    m_sourceVersionHasBeenSet(false),
-    m_secondarySourceVersionsHasBeenSet(false),
-    m_artifactsHasBeenSet(false),
-    m_secondaryArtifactsHasBeenSet(false),
-    m_cacheHasBeenSet(false),
-    m_environmentHasBeenSet(false),
-    m_serviceRoleHasBeenSet(false),
-    m_timeoutInMinutes(0),
-    m_timeoutInMinutesHasBeenSet(false),
-    m_queuedTimeoutInMinutes(0),
-    m_queuedTimeoutInMinutesHasBeenSet(false),
-    m_encryptionKeyHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_createdHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false),
-    m_webhookHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false),
-    m_badgeHasBeenSet(false),
-    m_logsConfigHasBeenSet(false),
-    m_fileSystemLocationsHasBeenSet(false),
-    m_buildBatchConfigHasBeenSet(false),
-    m_concurrentBuildLimit(0),
-    m_concurrentBuildLimitHasBeenSet(false),
-    m_projectVisibility(ProjectVisibilityType::NOT_SET),
-    m_projectVisibilityHasBeenSet(false),
-    m_publicProjectAliasHasBeenSet(false),
-    m_resourceAccessRoleHasBeenSet(false),
-    m_autoRetryLimit(0),
-    m_autoRetryLimitHasBeenSet(false)
-{
-}
-
 Project::Project(JsonView jsonValue)
-  : Project()
 {
   *this = jsonValue;
 }
@@ -67,31 +28,23 @@ Project& Project::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("source"))
   {
     m_source = jsonValue.GetObject("source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("secondarySources"))
   {
     Aws::Utils::Array<JsonView> secondarySourcesJsonList = jsonValue.GetArray("secondarySources");
@@ -101,14 +54,11 @@ Project& Project::operator =(JsonView jsonValue)
     }
     m_secondarySourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceVersion"))
   {
     m_sourceVersion = jsonValue.GetString("sourceVersion");
-
     m_sourceVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("secondarySourceVersions"))
   {
     Aws::Utils::Array<JsonView> secondarySourceVersionsJsonList = jsonValue.GetArray("secondarySourceVersions");
@@ -118,14 +68,11 @@ Project& Project::operator =(JsonView jsonValue)
     }
     m_secondarySourceVersionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("artifacts"))
   {
     m_artifacts = jsonValue.GetObject("artifacts");
-
     m_artifactsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("secondaryArtifacts"))
   {
     Aws::Utils::Array<JsonView> secondaryArtifactsJsonList = jsonValue.GetArray("secondaryArtifacts");
@@ -135,49 +82,36 @@ Project& Project::operator =(JsonView jsonValue)
     }
     m_secondaryArtifactsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cache"))
   {
     m_cache = jsonValue.GetObject("cache");
-
     m_cacheHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environment"))
   {
     m_environment = jsonValue.GetObject("environment");
-
     m_environmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceRole"))
   {
     m_serviceRole = jsonValue.GetString("serviceRole");
-
     m_serviceRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timeoutInMinutes"))
   {
     m_timeoutInMinutes = jsonValue.GetInteger("timeoutInMinutes");
-
     m_timeoutInMinutesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queuedTimeoutInMinutes"))
   {
     m_queuedTimeoutInMinutes = jsonValue.GetInteger("queuedTimeoutInMinutes");
-
     m_queuedTimeoutInMinutesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encryptionKey"))
   {
     m_encryptionKey = jsonValue.GetString("encryptionKey");
-
     m_encryptionKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -187,49 +121,36 @@ Project& Project::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("created"))
   {
     m_created = jsonValue.GetDouble("created");
-
     m_createdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModified"))
   {
     m_lastModified = jsonValue.GetDouble("lastModified");
-
     m_lastModifiedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("webhook"))
   {
     m_webhook = jsonValue.GetObject("webhook");
-
     m_webhookHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcConfig"))
   {
     m_vpcConfig = jsonValue.GetObject("vpcConfig");
-
     m_vpcConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("badge"))
   {
     m_badge = jsonValue.GetObject("badge");
-
     m_badgeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logsConfig"))
   {
     m_logsConfig = jsonValue.GetObject("logsConfig");
-
     m_logsConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fileSystemLocations"))
   {
     Aws::Utils::Array<JsonView> fileSystemLocationsJsonList = jsonValue.GetArray("fileSystemLocations");
@@ -239,49 +160,36 @@ Project& Project::operator =(JsonView jsonValue)
     }
     m_fileSystemLocationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("buildBatchConfig"))
   {
     m_buildBatchConfig = jsonValue.GetObject("buildBatchConfig");
-
     m_buildBatchConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("concurrentBuildLimit"))
   {
     m_concurrentBuildLimit = jsonValue.GetInteger("concurrentBuildLimit");
-
     m_concurrentBuildLimitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("projectVisibility"))
   {
     m_projectVisibility = ProjectVisibilityTypeMapper::GetProjectVisibilityTypeForName(jsonValue.GetString("projectVisibility"));
-
     m_projectVisibilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("publicProjectAlias"))
   {
     m_publicProjectAlias = jsonValue.GetString("publicProjectAlias");
-
     m_publicProjectAliasHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceAccessRole"))
   {
     m_resourceAccessRole = jsonValue.GetString("resourceAccessRole");
-
     m_resourceAccessRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("autoRetryLimit"))
   {
     m_autoRetryLimit = jsonValue.GetInteger("autoRetryLimit");
-
     m_autoRetryLimitHasBeenSet = true;
   }
-
   return *this;
 }
 

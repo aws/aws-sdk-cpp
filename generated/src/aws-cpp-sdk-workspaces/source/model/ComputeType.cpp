@@ -18,14 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-ComputeType::ComputeType() : 
-    m_name(Compute::NOT_SET),
-    m_nameHasBeenSet(false)
-{
-}
-
 ComputeType::ComputeType(JsonView jsonValue)
-  : ComputeType()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ComputeType& ComputeType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = ComputeMapper::GetComputeForName(jsonValue.GetString("Name"));
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

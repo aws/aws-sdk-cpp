@@ -18,13 +18,7 @@ namespace ECS
 namespace Model
 {
 
-NetworkConfiguration::NetworkConfiguration() : 
-    m_awsvpcConfigurationHasBeenSet(false)
-{
-}
-
 NetworkConfiguration::NetworkConfiguration(JsonView jsonValue)
-  : NetworkConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ NetworkConfiguration& NetworkConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("awsvpcConfiguration"))
   {
     m_awsvpcConfiguration = jsonValue.GetObject("awsvpcConfiguration");
-
     m_awsvpcConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,18 +18,7 @@ namespace IoTTwinMaker
 namespace Model
 {
 
-FilterByAssetModel::FilterByAssetModel() : 
-    m_assetModelIdHasBeenSet(false),
-    m_assetModelExternalIdHasBeenSet(false),
-    m_includeOffspring(false),
-    m_includeOffspringHasBeenSet(false),
-    m_includeAssets(false),
-    m_includeAssetsHasBeenSet(false)
-{
-}
-
 FilterByAssetModel::FilterByAssetModel(JsonView jsonValue)
-  : FilterByAssetModel()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ FilterByAssetModel& FilterByAssetModel::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("assetModelId"))
   {
     m_assetModelId = jsonValue.GetString("assetModelId");
-
     m_assetModelIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assetModelExternalId"))
   {
     m_assetModelExternalId = jsonValue.GetString("assetModelExternalId");
-
     m_assetModelExternalIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("includeOffspring"))
   {
     m_includeOffspring = jsonValue.GetBool("includeOffspring");
-
     m_includeOffspringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("includeAssets"))
   {
     m_includeAssets = jsonValue.GetBool("includeAssets");
-
     m_includeAssetsHasBeenSet = true;
   }
-
   return *this;
 }
 

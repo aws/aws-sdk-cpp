@@ -18,15 +18,7 @@ namespace Glue
 namespace Model
 {
 
-Schedule::Schedule() : 
-    m_scheduleExpressionHasBeenSet(false),
-    m_state(ScheduleState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 Schedule::Schedule(JsonView jsonValue)
-  : Schedule()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Schedule& Schedule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ScheduleExpression"))
   {
     m_scheduleExpression = jsonValue.GetString("ScheduleExpression");
-
     m_scheduleExpressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = ScheduleStateMapper::GetScheduleStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

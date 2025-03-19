@@ -18,14 +18,7 @@ namespace LookoutEquipment
 namespace Model
 {
 
-ModelDiagnosticsS3OutputConfiguration::ModelDiagnosticsS3OutputConfiguration() : 
-    m_bucketHasBeenSet(false),
-    m_prefixHasBeenSet(false)
-{
-}
-
 ModelDiagnosticsS3OutputConfiguration::ModelDiagnosticsS3OutputConfiguration(JsonView jsonValue)
-  : ModelDiagnosticsS3OutputConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ModelDiagnosticsS3OutputConfiguration& ModelDiagnosticsS3OutputConfiguration::op
   if(jsonValue.ValueExists("Bucket"))
   {
     m_bucket = jsonValue.GetString("Bucket");
-
     m_bucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Prefix"))
   {
     m_prefix = jsonValue.GetString("Prefix");
-
     m_prefixHasBeenSet = true;
   }
-
   return *this;
 }
 

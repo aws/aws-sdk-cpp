@@ -21,7 +21,7 @@ namespace Model
   class DeleteGatewayRequest : public MediaConnectRequest
   {
   public:
-    AWS_MEDIACONNECT_API DeleteGatewayRequest();
+    AWS_MEDIACONNECT_API DeleteGatewayRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * The ARN of the gateway that you want to delete.
      */
-    inline const Aws::String& GetGatewayArn() const{ return m_gatewayArn; }
+    inline const Aws::String& GetGatewayArn() const { return m_gatewayArn; }
     inline bool GatewayArnHasBeenSet() const { return m_gatewayArnHasBeenSet; }
-    inline void SetGatewayArn(const Aws::String& value) { m_gatewayArnHasBeenSet = true; m_gatewayArn = value; }
-    inline void SetGatewayArn(Aws::String&& value) { m_gatewayArnHasBeenSet = true; m_gatewayArn = std::move(value); }
-    inline void SetGatewayArn(const char* value) { m_gatewayArnHasBeenSet = true; m_gatewayArn.assign(value); }
-    inline DeleteGatewayRequest& WithGatewayArn(const Aws::String& value) { SetGatewayArn(value); return *this;}
-    inline DeleteGatewayRequest& WithGatewayArn(Aws::String&& value) { SetGatewayArn(std::move(value)); return *this;}
-    inline DeleteGatewayRequest& WithGatewayArn(const char* value) { SetGatewayArn(value); return *this;}
+    template<typename GatewayArnT = Aws::String>
+    void SetGatewayArn(GatewayArnT&& value) { m_gatewayArnHasBeenSet = true; m_gatewayArn = std::forward<GatewayArnT>(value); }
+    template<typename GatewayArnT = Aws::String>
+    DeleteGatewayRequest& WithGatewayArn(GatewayArnT&& value) { SetGatewayArn(std::forward<GatewayArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,14 +12,6 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateContactListRequest::CreateContactListRequest() : 
-    m_contactListNameHasBeenSet(false),
-    m_topicsHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateContactListRequest::SerializePayload() const
 {
   JsonValue payload;

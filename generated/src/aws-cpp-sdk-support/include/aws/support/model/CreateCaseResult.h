@@ -33,7 +33,7 @@ namespace Model
   class CreateCaseResult
   {
   public:
-    AWS_SUPPORT_API CreateCaseResult();
+    AWS_SUPPORT_API CreateCaseResult() = default;
     AWS_SUPPORT_API CreateCaseResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SUPPORT_API CreateCaseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,30 +44,28 @@ namespace Model
      * alphanumeric string in the following format:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
-    inline const Aws::String& GetCaseId() const{ return m_caseId; }
-    inline void SetCaseId(const Aws::String& value) { m_caseId = value; }
-    inline void SetCaseId(Aws::String&& value) { m_caseId = std::move(value); }
-    inline void SetCaseId(const char* value) { m_caseId.assign(value); }
-    inline CreateCaseResult& WithCaseId(const Aws::String& value) { SetCaseId(value); return *this;}
-    inline CreateCaseResult& WithCaseId(Aws::String&& value) { SetCaseId(std::move(value)); return *this;}
-    inline CreateCaseResult& WithCaseId(const char* value) { SetCaseId(value); return *this;}
+    inline const Aws::String& GetCaseId() const { return m_caseId; }
+    template<typename CaseIdT = Aws::String>
+    void SetCaseId(CaseIdT&& value) { m_caseIdHasBeenSet = true; m_caseId = std::forward<CaseIdT>(value); }
+    template<typename CaseIdT = Aws::String>
+    CreateCaseResult& WithCaseId(CaseIdT&& value) { SetCaseId(std::forward<CaseIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateCaseResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateCaseResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateCaseResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateCaseResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_caseId;
+    bool m_caseIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

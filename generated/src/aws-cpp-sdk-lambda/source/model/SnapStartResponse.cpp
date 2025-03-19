@@ -18,16 +18,7 @@ namespace Lambda
 namespace Model
 {
 
-SnapStartResponse::SnapStartResponse() : 
-    m_applyOn(SnapStartApplyOn::NOT_SET),
-    m_applyOnHasBeenSet(false),
-    m_optimizationStatus(SnapStartOptimizationStatus::NOT_SET),
-    m_optimizationStatusHasBeenSet(false)
-{
-}
-
 SnapStartResponse::SnapStartResponse(JsonView jsonValue)
-  : SnapStartResponse()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ SnapStartResponse& SnapStartResponse::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ApplyOn"))
   {
     m_applyOn = SnapStartApplyOnMapper::GetSnapStartApplyOnForName(jsonValue.GetString("ApplyOn"));
-
     m_applyOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OptimizationStatus"))
   {
     m_optimizationStatus = SnapStartOptimizationStatusMapper::GetSnapStartOptimizationStatusForName(jsonValue.GetString("OptimizationStatus"));
-
     m_optimizationStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

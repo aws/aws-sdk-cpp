@@ -18,13 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-ConnectionStatusResourceTypeEventConfiguration::ConnectionStatusResourceTypeEventConfiguration() : 
-    m_loRaWANHasBeenSet(false)
-{
-}
-
 ConnectionStatusResourceTypeEventConfiguration::ConnectionStatusResourceTypeEventConfiguration(JsonView jsonValue)
-  : ConnectionStatusResourceTypeEventConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ConnectionStatusResourceTypeEventConfiguration& ConnectionStatusResourceTypeEven
   if(jsonValue.ValueExists("LoRaWAN"))
   {
     m_loRaWAN = jsonValue.GetObject("LoRaWAN");
-
     m_loRaWANHasBeenSet = true;
   }
-
   return *this;
 }
 

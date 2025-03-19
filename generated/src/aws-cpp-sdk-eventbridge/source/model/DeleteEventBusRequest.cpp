@@ -12,11 +12,6 @@ using namespace Aws::EventBridge::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteEventBusRequest::DeleteEventBusRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteEventBusRequest::SerializePayload() const
 {
   JsonValue payload;

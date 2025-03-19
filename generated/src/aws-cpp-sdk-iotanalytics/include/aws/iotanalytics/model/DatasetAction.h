@@ -34,7 +34,7 @@ namespace Model
   class DatasetAction
   {
   public:
-    AWS_IOTANALYTICS_API DatasetAction();
+    AWS_IOTANALYTICS_API DatasetAction() = default;
     AWS_IOTANALYTICS_API DatasetAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API DatasetAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * <p>The name of the dataset action by which dataset contents are automatically
      * created.</p>
      */
-    inline const Aws::String& GetActionName() const{ return m_actionName; }
+    inline const Aws::String& GetActionName() const { return m_actionName; }
     inline bool ActionNameHasBeenSet() const { return m_actionNameHasBeenSet; }
-    inline void SetActionName(const Aws::String& value) { m_actionNameHasBeenSet = true; m_actionName = value; }
-    inline void SetActionName(Aws::String&& value) { m_actionNameHasBeenSet = true; m_actionName = std::move(value); }
-    inline void SetActionName(const char* value) { m_actionNameHasBeenSet = true; m_actionName.assign(value); }
-    inline DatasetAction& WithActionName(const Aws::String& value) { SetActionName(value); return *this;}
-    inline DatasetAction& WithActionName(Aws::String&& value) { SetActionName(std::move(value)); return *this;}
-    inline DatasetAction& WithActionName(const char* value) { SetActionName(value); return *this;}
+    template<typename ActionNameT = Aws::String>
+    void SetActionName(ActionNameT&& value) { m_actionNameHasBeenSet = true; m_actionName = std::forward<ActionNameT>(value); }
+    template<typename ActionNameT = Aws::String>
+    DatasetAction& WithActionName(ActionNameT&& value) { SetActionName(std::forward<ActionNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +58,12 @@ namespace Model
      * <p>An <code>SqlQueryDatasetAction</code> object that uses an SQL query to
      * automatically create dataset contents.</p>
      */
-    inline const SqlQueryDatasetAction& GetQueryAction() const{ return m_queryAction; }
+    inline const SqlQueryDatasetAction& GetQueryAction() const { return m_queryAction; }
     inline bool QueryActionHasBeenSet() const { return m_queryActionHasBeenSet; }
-    inline void SetQueryAction(const SqlQueryDatasetAction& value) { m_queryActionHasBeenSet = true; m_queryAction = value; }
-    inline void SetQueryAction(SqlQueryDatasetAction&& value) { m_queryActionHasBeenSet = true; m_queryAction = std::move(value); }
-    inline DatasetAction& WithQueryAction(const SqlQueryDatasetAction& value) { SetQueryAction(value); return *this;}
-    inline DatasetAction& WithQueryAction(SqlQueryDatasetAction&& value) { SetQueryAction(std::move(value)); return *this;}
+    template<typename QueryActionT = SqlQueryDatasetAction>
+    void SetQueryAction(QueryActionT&& value) { m_queryActionHasBeenSet = true; m_queryAction = std::forward<QueryActionT>(value); }
+    template<typename QueryActionT = SqlQueryDatasetAction>
+    DatasetAction& WithQueryAction(QueryActionT&& value) { SetQueryAction(std::forward<QueryActionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,12 +72,12 @@ namespace Model
      * create the dataset contents. The application must be in a Docker container along
      * with any required support libraries.</p>
      */
-    inline const ContainerDatasetAction& GetContainerAction() const{ return m_containerAction; }
+    inline const ContainerDatasetAction& GetContainerAction() const { return m_containerAction; }
     inline bool ContainerActionHasBeenSet() const { return m_containerActionHasBeenSet; }
-    inline void SetContainerAction(const ContainerDatasetAction& value) { m_containerActionHasBeenSet = true; m_containerAction = value; }
-    inline void SetContainerAction(ContainerDatasetAction&& value) { m_containerActionHasBeenSet = true; m_containerAction = std::move(value); }
-    inline DatasetAction& WithContainerAction(const ContainerDatasetAction& value) { SetContainerAction(value); return *this;}
-    inline DatasetAction& WithContainerAction(ContainerDatasetAction&& value) { SetContainerAction(std::move(value)); return *this;}
+    template<typename ContainerActionT = ContainerDatasetAction>
+    void SetContainerAction(ContainerActionT&& value) { m_containerActionHasBeenSet = true; m_containerAction = std::forward<ContainerActionT>(value); }
+    template<typename ContainerActionT = ContainerDatasetAction>
+    DatasetAction& WithContainerAction(ContainerActionT&& value) { SetContainerAction(std::forward<ContainerActionT>(value)); return *this;}
     ///@}
   private:
 

@@ -23,7 +23,7 @@ namespace Model
   class ListTestGridSessionsRequest : public DeviceFarmRequest
   {
   public:
-    AWS_DEVICEFARM_API ListTestGridSessionsRequest();
+    AWS_DEVICEFARM_API ListTestGridSessionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,81 +40,77 @@ namespace Model
     /**
      * <p>ARN of a <a>TestGridProject</a>.</p>
      */
-    inline const Aws::String& GetProjectArn() const{ return m_projectArn; }
+    inline const Aws::String& GetProjectArn() const { return m_projectArn; }
     inline bool ProjectArnHasBeenSet() const { return m_projectArnHasBeenSet; }
-    inline void SetProjectArn(const Aws::String& value) { m_projectArnHasBeenSet = true; m_projectArn = value; }
-    inline void SetProjectArn(Aws::String&& value) { m_projectArnHasBeenSet = true; m_projectArn = std::move(value); }
-    inline void SetProjectArn(const char* value) { m_projectArnHasBeenSet = true; m_projectArn.assign(value); }
-    inline ListTestGridSessionsRequest& WithProjectArn(const Aws::String& value) { SetProjectArn(value); return *this;}
-    inline ListTestGridSessionsRequest& WithProjectArn(Aws::String&& value) { SetProjectArn(std::move(value)); return *this;}
-    inline ListTestGridSessionsRequest& WithProjectArn(const char* value) { SetProjectArn(value); return *this;}
+    template<typename ProjectArnT = Aws::String>
+    void SetProjectArn(ProjectArnT&& value) { m_projectArnHasBeenSet = true; m_projectArn = std::forward<ProjectArnT>(value); }
+    template<typename ProjectArnT = Aws::String>
+    ListTestGridSessionsRequest& WithProjectArn(ProjectArnT&& value) { SetProjectArn(std::forward<ProjectArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Return only sessions in this state.</p>
      */
-    inline const TestGridSessionStatus& GetStatus() const{ return m_status; }
+    inline TestGridSessionStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const TestGridSessionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(TestGridSessionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ListTestGridSessionsRequest& WithStatus(const TestGridSessionStatus& value) { SetStatus(value); return *this;}
-    inline ListTestGridSessionsRequest& WithStatus(TestGridSessionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(TestGridSessionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ListTestGridSessionsRequest& WithStatus(TestGridSessionStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Return only sessions created after this time.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTimeAfter() const{ return m_creationTimeAfter; }
+    inline const Aws::Utils::DateTime& GetCreationTimeAfter() const { return m_creationTimeAfter; }
     inline bool CreationTimeAfterHasBeenSet() const { return m_creationTimeAfterHasBeenSet; }
-    inline void SetCreationTimeAfter(const Aws::Utils::DateTime& value) { m_creationTimeAfterHasBeenSet = true; m_creationTimeAfter = value; }
-    inline void SetCreationTimeAfter(Aws::Utils::DateTime&& value) { m_creationTimeAfterHasBeenSet = true; m_creationTimeAfter = std::move(value); }
-    inline ListTestGridSessionsRequest& WithCreationTimeAfter(const Aws::Utils::DateTime& value) { SetCreationTimeAfter(value); return *this;}
-    inline ListTestGridSessionsRequest& WithCreationTimeAfter(Aws::Utils::DateTime&& value) { SetCreationTimeAfter(std::move(value)); return *this;}
+    template<typename CreationTimeAfterT = Aws::Utils::DateTime>
+    void SetCreationTimeAfter(CreationTimeAfterT&& value) { m_creationTimeAfterHasBeenSet = true; m_creationTimeAfter = std::forward<CreationTimeAfterT>(value); }
+    template<typename CreationTimeAfterT = Aws::Utils::DateTime>
+    ListTestGridSessionsRequest& WithCreationTimeAfter(CreationTimeAfterT&& value) { SetCreationTimeAfter(std::forward<CreationTimeAfterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Return only sessions created before this time.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTimeBefore() const{ return m_creationTimeBefore; }
+    inline const Aws::Utils::DateTime& GetCreationTimeBefore() const { return m_creationTimeBefore; }
     inline bool CreationTimeBeforeHasBeenSet() const { return m_creationTimeBeforeHasBeenSet; }
-    inline void SetCreationTimeBefore(const Aws::Utils::DateTime& value) { m_creationTimeBeforeHasBeenSet = true; m_creationTimeBefore = value; }
-    inline void SetCreationTimeBefore(Aws::Utils::DateTime&& value) { m_creationTimeBeforeHasBeenSet = true; m_creationTimeBefore = std::move(value); }
-    inline ListTestGridSessionsRequest& WithCreationTimeBefore(const Aws::Utils::DateTime& value) { SetCreationTimeBefore(value); return *this;}
-    inline ListTestGridSessionsRequest& WithCreationTimeBefore(Aws::Utils::DateTime&& value) { SetCreationTimeBefore(std::move(value)); return *this;}
+    template<typename CreationTimeBeforeT = Aws::Utils::DateTime>
+    void SetCreationTimeBefore(CreationTimeBeforeT&& value) { m_creationTimeBeforeHasBeenSet = true; m_creationTimeBefore = std::forward<CreationTimeBeforeT>(value); }
+    template<typename CreationTimeBeforeT = Aws::Utils::DateTime>
+    ListTestGridSessionsRequest& WithCreationTimeBefore(CreationTimeBeforeT&& value) { SetCreationTimeBefore(std::forward<CreationTimeBeforeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Return only sessions that ended after this time.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTimeAfter() const{ return m_endTimeAfter; }
+    inline const Aws::Utils::DateTime& GetEndTimeAfter() const { return m_endTimeAfter; }
     inline bool EndTimeAfterHasBeenSet() const { return m_endTimeAfterHasBeenSet; }
-    inline void SetEndTimeAfter(const Aws::Utils::DateTime& value) { m_endTimeAfterHasBeenSet = true; m_endTimeAfter = value; }
-    inline void SetEndTimeAfter(Aws::Utils::DateTime&& value) { m_endTimeAfterHasBeenSet = true; m_endTimeAfter = std::move(value); }
-    inline ListTestGridSessionsRequest& WithEndTimeAfter(const Aws::Utils::DateTime& value) { SetEndTimeAfter(value); return *this;}
-    inline ListTestGridSessionsRequest& WithEndTimeAfter(Aws::Utils::DateTime&& value) { SetEndTimeAfter(std::move(value)); return *this;}
+    template<typename EndTimeAfterT = Aws::Utils::DateTime>
+    void SetEndTimeAfter(EndTimeAfterT&& value) { m_endTimeAfterHasBeenSet = true; m_endTimeAfter = std::forward<EndTimeAfterT>(value); }
+    template<typename EndTimeAfterT = Aws::Utils::DateTime>
+    ListTestGridSessionsRequest& WithEndTimeAfter(EndTimeAfterT&& value) { SetEndTimeAfter(std::forward<EndTimeAfterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Return only sessions that ended before this time.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTimeBefore() const{ return m_endTimeBefore; }
+    inline const Aws::Utils::DateTime& GetEndTimeBefore() const { return m_endTimeBefore; }
     inline bool EndTimeBeforeHasBeenSet() const { return m_endTimeBeforeHasBeenSet; }
-    inline void SetEndTimeBefore(const Aws::Utils::DateTime& value) { m_endTimeBeforeHasBeenSet = true; m_endTimeBefore = value; }
-    inline void SetEndTimeBefore(Aws::Utils::DateTime&& value) { m_endTimeBeforeHasBeenSet = true; m_endTimeBefore = std::move(value); }
-    inline ListTestGridSessionsRequest& WithEndTimeBefore(const Aws::Utils::DateTime& value) { SetEndTimeBefore(value); return *this;}
-    inline ListTestGridSessionsRequest& WithEndTimeBefore(Aws::Utils::DateTime&& value) { SetEndTimeBefore(std::move(value)); return *this;}
+    template<typename EndTimeBeforeT = Aws::Utils::DateTime>
+    void SetEndTimeBefore(EndTimeBeforeT&& value) { m_endTimeBeforeHasBeenSet = true; m_endTimeBefore = std::forward<EndTimeBeforeT>(value); }
+    template<typename EndTimeBeforeT = Aws::Utils::DateTime>
+    ListTestGridSessionsRequest& WithEndTimeBefore(EndTimeBeforeT&& value) { SetEndTimeBefore(std::forward<EndTimeBeforeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Return only this many results at a time.</p>
      */
-    inline int GetMaxResult() const{ return m_maxResult; }
+    inline int GetMaxResult() const { return m_maxResult; }
     inline bool MaxResultHasBeenSet() const { return m_maxResultHasBeenSet; }
     inline void SetMaxResult(int value) { m_maxResultHasBeenSet = true; m_maxResult = value; }
     inline ListTestGridSessionsRequest& WithMaxResult(int value) { SetMaxResult(value); return *this;}
@@ -124,36 +120,34 @@ namespace Model
     /**
      * <p>Pagination token.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListTestGridSessionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListTestGridSessionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListTestGridSessionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListTestGridSessionsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_projectArn;
     bool m_projectArnHasBeenSet = false;
 
-    TestGridSessionStatus m_status;
+    TestGridSessionStatus m_status{TestGridSessionStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTimeAfter;
+    Aws::Utils::DateTime m_creationTimeAfter{};
     bool m_creationTimeAfterHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTimeBefore;
+    Aws::Utils::DateTime m_creationTimeBefore{};
     bool m_creationTimeBeforeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTimeAfter;
+    Aws::Utils::DateTime m_endTimeAfter{};
     bool m_endTimeAfterHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTimeBefore;
+    Aws::Utils::DateTime m_endTimeBefore{};
     bool m_endTimeBeforeHasBeenSet = false;
 
-    int m_maxResult;
+    int m_maxResult{0};
     bool m_maxResultHasBeenSet = false;
 
     Aws::String m_nextToken;

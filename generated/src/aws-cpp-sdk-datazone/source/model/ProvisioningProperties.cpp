@@ -18,13 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-ProvisioningProperties::ProvisioningProperties() : 
-    m_cloudFormationHasBeenSet(false)
-{
-}
-
 ProvisioningProperties::ProvisioningProperties(JsonView jsonValue)
-  : ProvisioningProperties()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ProvisioningProperties& ProvisioningProperties::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("cloudFormation"))
   {
     m_cloudFormation = jsonValue.GetObject("cloudFormation");
-
     m_cloudFormationHasBeenSet = true;
   }
-
   return *this;
 }
 

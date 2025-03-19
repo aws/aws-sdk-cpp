@@ -20,15 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-ResourceToImport::ResourceToImport() : 
-    m_resourceTypeHasBeenSet(false),
-    m_logicalResourceIdHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false)
-{
-}
-
 ResourceToImport::ResourceToImport(const XmlNode& xmlNode)
-  : ResourceToImport()
 {
   *this = xmlNode;
 }
@@ -56,6 +48,7 @@ ResourceToImport& ResourceToImport::operator =(const XmlNode& xmlNode)
     if(!resourceIdentifierNode.IsNull())
     {
       XmlNode resourceIdentifierEntry = resourceIdentifierNode.FirstChild("entry");
+      m_resourceIdentifierHasBeenSet = !resourceIdentifierEntry.IsNull();
       while(!resourceIdentifierEntry.IsNull())
       {
         XmlNode keyNode = resourceIdentifierEntry.FirstChild("key");

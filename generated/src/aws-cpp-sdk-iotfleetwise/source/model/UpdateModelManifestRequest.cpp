@@ -12,16 +12,6 @@ using namespace Aws::IoTFleetWise::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateModelManifestRequest::UpdateModelManifestRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_nodesToAddHasBeenSet(false),
-    m_nodesToRemoveHasBeenSet(false),
-    m_status(ManifestStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 Aws::String UpdateModelManifestRequest::SerializePayload() const
 {
   JsonValue payload;

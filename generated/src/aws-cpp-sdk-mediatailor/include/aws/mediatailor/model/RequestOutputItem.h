@@ -33,7 +33,7 @@ namespace Model
   class RequestOutputItem
   {
   public:
-    AWS_MEDIATAILOR_API RequestOutputItem();
+    AWS_MEDIATAILOR_API RequestOutputItem() = default;
     AWS_MEDIATAILOR_API RequestOutputItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API RequestOutputItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>DASH manifest configuration parameters.</p>
      */
-    inline const DashPlaylistSettings& GetDashPlaylistSettings() const{ return m_dashPlaylistSettings; }
+    inline const DashPlaylistSettings& GetDashPlaylistSettings() const { return m_dashPlaylistSettings; }
     inline bool DashPlaylistSettingsHasBeenSet() const { return m_dashPlaylistSettingsHasBeenSet; }
-    inline void SetDashPlaylistSettings(const DashPlaylistSettings& value) { m_dashPlaylistSettingsHasBeenSet = true; m_dashPlaylistSettings = value; }
-    inline void SetDashPlaylistSettings(DashPlaylistSettings&& value) { m_dashPlaylistSettingsHasBeenSet = true; m_dashPlaylistSettings = std::move(value); }
-    inline RequestOutputItem& WithDashPlaylistSettings(const DashPlaylistSettings& value) { SetDashPlaylistSettings(value); return *this;}
-    inline RequestOutputItem& WithDashPlaylistSettings(DashPlaylistSettings&& value) { SetDashPlaylistSettings(std::move(value)); return *this;}
+    template<typename DashPlaylistSettingsT = DashPlaylistSettings>
+    void SetDashPlaylistSettings(DashPlaylistSettingsT&& value) { m_dashPlaylistSettingsHasBeenSet = true; m_dashPlaylistSettings = std::forward<DashPlaylistSettingsT>(value); }
+    template<typename DashPlaylistSettingsT = DashPlaylistSettings>
+    RequestOutputItem& WithDashPlaylistSettings(DashPlaylistSettingsT&& value) { SetDashPlaylistSettings(std::forward<DashPlaylistSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>HLS playlist configuration parameters.</p>
      */
-    inline const HlsPlaylistSettings& GetHlsPlaylistSettings() const{ return m_hlsPlaylistSettings; }
+    inline const HlsPlaylistSettings& GetHlsPlaylistSettings() const { return m_hlsPlaylistSettings; }
     inline bool HlsPlaylistSettingsHasBeenSet() const { return m_hlsPlaylistSettingsHasBeenSet; }
-    inline void SetHlsPlaylistSettings(const HlsPlaylistSettings& value) { m_hlsPlaylistSettingsHasBeenSet = true; m_hlsPlaylistSettings = value; }
-    inline void SetHlsPlaylistSettings(HlsPlaylistSettings&& value) { m_hlsPlaylistSettingsHasBeenSet = true; m_hlsPlaylistSettings = std::move(value); }
-    inline RequestOutputItem& WithHlsPlaylistSettings(const HlsPlaylistSettings& value) { SetHlsPlaylistSettings(value); return *this;}
-    inline RequestOutputItem& WithHlsPlaylistSettings(HlsPlaylistSettings&& value) { SetHlsPlaylistSettings(std::move(value)); return *this;}
+    template<typename HlsPlaylistSettingsT = HlsPlaylistSettings>
+    void SetHlsPlaylistSettings(HlsPlaylistSettingsT&& value) { m_hlsPlaylistSettingsHasBeenSet = true; m_hlsPlaylistSettings = std::forward<HlsPlaylistSettingsT>(value); }
+    template<typename HlsPlaylistSettingsT = HlsPlaylistSettings>
+    RequestOutputItem& WithHlsPlaylistSettings(HlsPlaylistSettingsT&& value) { SetHlsPlaylistSettings(std::forward<HlsPlaylistSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +68,12 @@ namespace Model
      * <p>The name of the manifest for the channel. The name appears in the
      * <code>PlaybackUrl</code>.</p>
      */
-    inline const Aws::String& GetManifestName() const{ return m_manifestName; }
+    inline const Aws::String& GetManifestName() const { return m_manifestName; }
     inline bool ManifestNameHasBeenSet() const { return m_manifestNameHasBeenSet; }
-    inline void SetManifestName(const Aws::String& value) { m_manifestNameHasBeenSet = true; m_manifestName = value; }
-    inline void SetManifestName(Aws::String&& value) { m_manifestNameHasBeenSet = true; m_manifestName = std::move(value); }
-    inline void SetManifestName(const char* value) { m_manifestNameHasBeenSet = true; m_manifestName.assign(value); }
-    inline RequestOutputItem& WithManifestName(const Aws::String& value) { SetManifestName(value); return *this;}
-    inline RequestOutputItem& WithManifestName(Aws::String&& value) { SetManifestName(std::move(value)); return *this;}
-    inline RequestOutputItem& WithManifestName(const char* value) { SetManifestName(value); return *this;}
+    template<typename ManifestNameT = Aws::String>
+    void SetManifestName(ManifestNameT&& value) { m_manifestNameHasBeenSet = true; m_manifestName = std::forward<ManifestNameT>(value); }
+    template<typename ManifestNameT = Aws::String>
+    RequestOutputItem& WithManifestName(ManifestNameT&& value) { SetManifestName(std::forward<ManifestNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,14 +81,12 @@ namespace Model
      * <p>A string used to match which <code>HttpPackageConfiguration</code> is used
      * for each <code>VodSource</code>.</p>
      */
-    inline const Aws::String& GetSourceGroup() const{ return m_sourceGroup; }
+    inline const Aws::String& GetSourceGroup() const { return m_sourceGroup; }
     inline bool SourceGroupHasBeenSet() const { return m_sourceGroupHasBeenSet; }
-    inline void SetSourceGroup(const Aws::String& value) { m_sourceGroupHasBeenSet = true; m_sourceGroup = value; }
-    inline void SetSourceGroup(Aws::String&& value) { m_sourceGroupHasBeenSet = true; m_sourceGroup = std::move(value); }
-    inline void SetSourceGroup(const char* value) { m_sourceGroupHasBeenSet = true; m_sourceGroup.assign(value); }
-    inline RequestOutputItem& WithSourceGroup(const Aws::String& value) { SetSourceGroup(value); return *this;}
-    inline RequestOutputItem& WithSourceGroup(Aws::String&& value) { SetSourceGroup(std::move(value)); return *this;}
-    inline RequestOutputItem& WithSourceGroup(const char* value) { SetSourceGroup(value); return *this;}
+    template<typename SourceGroupT = Aws::String>
+    void SetSourceGroup(SourceGroupT&& value) { m_sourceGroupHasBeenSet = true; m_sourceGroup = std::forward<SourceGroupT>(value); }
+    template<typename SourceGroupT = Aws::String>
+    RequestOutputItem& WithSourceGroup(SourceGroupT&& value) { SetSourceGroup(std::forward<SourceGroupT>(value)); return *this;}
     ///@}
   private:
 

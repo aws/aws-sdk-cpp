@@ -15,27 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListRulesRequest::ListRulesRequest() : 
-    m_action(RuleAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_assetTypesHasBeenSet(false),
-    m_dataProduct(false),
-    m_dataProductHasBeenSet(false),
-    m_domainIdentifierHasBeenSet(false),
-    m_includeCascaded(false),
-    m_includeCascadedHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_projectIdsHasBeenSet(false),
-    m_ruleType(RuleType::NOT_SET),
-    m_ruleTypeHasBeenSet(false),
-    m_targetIdentifierHasBeenSet(false),
-    m_targetType(RuleTargetType::NOT_SET),
-    m_targetTypeHasBeenSet(false)
-{
-}
-
 Aws::String ListRulesRequest::SerializePayload() const
 {
   return {};

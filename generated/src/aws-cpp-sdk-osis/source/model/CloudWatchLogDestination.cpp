@@ -18,13 +18,7 @@ namespace OSIS
 namespace Model
 {
 
-CloudWatchLogDestination::CloudWatchLogDestination() : 
-    m_logGroupHasBeenSet(false)
-{
-}
-
 CloudWatchLogDestination::CloudWatchLogDestination(JsonView jsonValue)
-  : CloudWatchLogDestination()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CloudWatchLogDestination& CloudWatchLogDestination::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("LogGroup"))
   {
     m_logGroup = jsonValue.GetString("LogGroup");
-
     m_logGroupHasBeenSet = true;
   }
-
   return *this;
 }
 

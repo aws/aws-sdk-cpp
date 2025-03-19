@@ -18,16 +18,7 @@ namespace Pipes
 namespace Model
 {
 
-MultiMeasureAttributeMapping::MultiMeasureAttributeMapping() : 
-    m_measureValueHasBeenSet(false),
-    m_measureValueType(MeasureValueType::NOT_SET),
-    m_measureValueTypeHasBeenSet(false),
-    m_multiMeasureAttributeNameHasBeenSet(false)
-{
-}
-
 MultiMeasureAttributeMapping::MultiMeasureAttributeMapping(JsonView jsonValue)
-  : MultiMeasureAttributeMapping()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ MultiMeasureAttributeMapping& MultiMeasureAttributeMapping::operator =(JsonView 
   if(jsonValue.ValueExists("MeasureValue"))
   {
     m_measureValue = jsonValue.GetString("MeasureValue");
-
     m_measureValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MeasureValueType"))
   {
     m_measureValueType = MeasureValueTypeMapper::GetMeasureValueTypeForName(jsonValue.GetString("MeasureValueType"));
-
     m_measureValueTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MultiMeasureAttributeName"))
   {
     m_multiMeasureAttributeName = jsonValue.GetString("MultiMeasureAttributeName");
-
     m_multiMeasureAttributeNameHasBeenSet = true;
   }
-
   return *this;
 }
 

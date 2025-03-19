@@ -33,7 +33,7 @@ namespace Model
   class EcrConfiguration
   {
   public:
-    AWS_INSPECTOR2_API EcrConfiguration();
+    AWS_INSPECTOR2_API EcrConfiguration() = default;
     AWS_INSPECTOR2_API EcrConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API EcrConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,31 +43,27 @@ namespace Model
     /**
      * <p>The rescan duration configured for image pull date.</p>
      */
-    inline const EcrPullDateRescanDuration& GetPullDateRescanDuration() const{ return m_pullDateRescanDuration; }
+    inline EcrPullDateRescanDuration GetPullDateRescanDuration() const { return m_pullDateRescanDuration; }
     inline bool PullDateRescanDurationHasBeenSet() const { return m_pullDateRescanDurationHasBeenSet; }
-    inline void SetPullDateRescanDuration(const EcrPullDateRescanDuration& value) { m_pullDateRescanDurationHasBeenSet = true; m_pullDateRescanDuration = value; }
-    inline void SetPullDateRescanDuration(EcrPullDateRescanDuration&& value) { m_pullDateRescanDurationHasBeenSet = true; m_pullDateRescanDuration = std::move(value); }
-    inline EcrConfiguration& WithPullDateRescanDuration(const EcrPullDateRescanDuration& value) { SetPullDateRescanDuration(value); return *this;}
-    inline EcrConfiguration& WithPullDateRescanDuration(EcrPullDateRescanDuration&& value) { SetPullDateRescanDuration(std::move(value)); return *this;}
+    inline void SetPullDateRescanDuration(EcrPullDateRescanDuration value) { m_pullDateRescanDurationHasBeenSet = true; m_pullDateRescanDuration = value; }
+    inline EcrConfiguration& WithPullDateRescanDuration(EcrPullDateRescanDuration value) { SetPullDateRescanDuration(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The rescan duration configured for image push date.</p>
      */
-    inline const EcrRescanDuration& GetRescanDuration() const{ return m_rescanDuration; }
+    inline EcrRescanDuration GetRescanDuration() const { return m_rescanDuration; }
     inline bool RescanDurationHasBeenSet() const { return m_rescanDurationHasBeenSet; }
-    inline void SetRescanDuration(const EcrRescanDuration& value) { m_rescanDurationHasBeenSet = true; m_rescanDuration = value; }
-    inline void SetRescanDuration(EcrRescanDuration&& value) { m_rescanDurationHasBeenSet = true; m_rescanDuration = std::move(value); }
-    inline EcrConfiguration& WithRescanDuration(const EcrRescanDuration& value) { SetRescanDuration(value); return *this;}
-    inline EcrConfiguration& WithRescanDuration(EcrRescanDuration&& value) { SetRescanDuration(std::move(value)); return *this;}
+    inline void SetRescanDuration(EcrRescanDuration value) { m_rescanDurationHasBeenSet = true; m_rescanDuration = value; }
+    inline EcrConfiguration& WithRescanDuration(EcrRescanDuration value) { SetRescanDuration(value); return *this;}
     ///@}
   private:
 
-    EcrPullDateRescanDuration m_pullDateRescanDuration;
+    EcrPullDateRescanDuration m_pullDateRescanDuration{EcrPullDateRescanDuration::NOT_SET};
     bool m_pullDateRescanDurationHasBeenSet = false;
 
-    EcrRescanDuration m_rescanDuration;
+    EcrRescanDuration m_rescanDuration{EcrRescanDuration::NOT_SET};
     bool m_rescanDurationHasBeenSet = false;
   };
 

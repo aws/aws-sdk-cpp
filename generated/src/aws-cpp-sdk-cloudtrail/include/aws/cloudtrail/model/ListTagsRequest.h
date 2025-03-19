@@ -25,7 +25,7 @@ namespace Model
   class ListTagsRequest : public CloudTrailRequest
   {
   public:
-    AWS_CLOUDTRAIL_API ListTagsRequest();
+    AWS_CLOUDTRAIL_API ListTagsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -50,29 +50,26 @@ namespace Model
      * </p> <p>Example channel ARN format:
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
      */
-    inline const Aws::Vector<Aws::String>& GetResourceIdList() const{ return m_resourceIdList; }
+    inline const Aws::Vector<Aws::String>& GetResourceIdList() const { return m_resourceIdList; }
     inline bool ResourceIdListHasBeenSet() const { return m_resourceIdListHasBeenSet; }
-    inline void SetResourceIdList(const Aws::Vector<Aws::String>& value) { m_resourceIdListHasBeenSet = true; m_resourceIdList = value; }
-    inline void SetResourceIdList(Aws::Vector<Aws::String>&& value) { m_resourceIdListHasBeenSet = true; m_resourceIdList = std::move(value); }
-    inline ListTagsRequest& WithResourceIdList(const Aws::Vector<Aws::String>& value) { SetResourceIdList(value); return *this;}
-    inline ListTagsRequest& WithResourceIdList(Aws::Vector<Aws::String>&& value) { SetResourceIdList(std::move(value)); return *this;}
-    inline ListTagsRequest& AddResourceIdList(const Aws::String& value) { m_resourceIdListHasBeenSet = true; m_resourceIdList.push_back(value); return *this; }
-    inline ListTagsRequest& AddResourceIdList(Aws::String&& value) { m_resourceIdListHasBeenSet = true; m_resourceIdList.push_back(std::move(value)); return *this; }
-    inline ListTagsRequest& AddResourceIdList(const char* value) { m_resourceIdListHasBeenSet = true; m_resourceIdList.push_back(value); return *this; }
+    template<typename ResourceIdListT = Aws::Vector<Aws::String>>
+    void SetResourceIdList(ResourceIdListT&& value) { m_resourceIdListHasBeenSet = true; m_resourceIdList = std::forward<ResourceIdListT>(value); }
+    template<typename ResourceIdListT = Aws::Vector<Aws::String>>
+    ListTagsRequest& WithResourceIdList(ResourceIdListT&& value) { SetResourceIdList(std::forward<ResourceIdListT>(value)); return *this;}
+    template<typename ResourceIdListT = Aws::String>
+    ListTagsRequest& AddResourceIdList(ResourceIdListT&& value) { m_resourceIdListHasBeenSet = true; m_resourceIdList.emplace_back(std::forward<ResourceIdListT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Reserved for future use.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListTagsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListTagsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListTagsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListTagsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 

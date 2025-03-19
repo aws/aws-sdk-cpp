@@ -18,20 +18,7 @@ namespace IoTEventsData
 namespace Model
 {
 
-Alarm::Alarm() : 
-    m_alarmModelNameHasBeenSet(false),
-    m_alarmModelVersionHasBeenSet(false),
-    m_keyValueHasBeenSet(false),
-    m_alarmStateHasBeenSet(false),
-    m_severity(0),
-    m_severityHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
-{
-}
-
 Alarm::Alarm(JsonView jsonValue)
-  : Alarm()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ Alarm& Alarm::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("alarmModelName"))
   {
     m_alarmModelName = jsonValue.GetString("alarmModelName");
-
     m_alarmModelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("alarmModelVersion"))
   {
     m_alarmModelVersion = jsonValue.GetString("alarmModelVersion");
-
     m_alarmModelVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("keyValue"))
   {
     m_keyValue = jsonValue.GetString("keyValue");
-
     m_keyValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("alarmState"))
   {
     m_alarmState = jsonValue.GetObject("alarmState");
-
     m_alarmStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("severity"))
   {
     m_severity = jsonValue.GetInteger("severity");
-
     m_severityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetDouble("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdateTime"))
   {
     m_lastUpdateTime = jsonValue.GetDouble("lastUpdateTime");
-
     m_lastUpdateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

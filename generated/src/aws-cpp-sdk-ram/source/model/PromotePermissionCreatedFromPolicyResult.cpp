@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PromotePermissionCreatedFromPolicyResult::PromotePermissionCreatedFromPolicyResult()
-{
-}
-
 PromotePermissionCreatedFromPolicyResult::PromotePermissionCreatedFromPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ PromotePermissionCreatedFromPolicyResult& PromotePermissionCreatedFromPolicyResu
   if(jsonValue.ValueExists("permission"))
   {
     m_permission = jsonValue.GetObject("permission");
-
+    m_permissionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientToken"))
   {
     m_clientToken = jsonValue.GetString("clientToken");
-
+    m_clientTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

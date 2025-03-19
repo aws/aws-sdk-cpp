@@ -20,14 +20,7 @@ namespace ElasticLoadBalancing
 namespace Model
 {
 
-CrossZoneLoadBalancing::CrossZoneLoadBalancing() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 CrossZoneLoadBalancing::CrossZoneLoadBalancing(const XmlNode& xmlNode)
-  : CrossZoneLoadBalancing()
 {
   *this = xmlNode;
 }

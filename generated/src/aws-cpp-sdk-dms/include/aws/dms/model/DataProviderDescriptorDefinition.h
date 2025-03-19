@@ -31,7 +31,7 @@ namespace Model
   class DataProviderDescriptorDefinition
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API DataProviderDescriptorDefinition();
+    AWS_DATABASEMIGRATIONSERVICE_API DataProviderDescriptorDefinition() = default;
     AWS_DATABASEMIGRATIONSERVICE_API DataProviderDescriptorDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API DataProviderDescriptorDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The name or Amazon Resource Name (ARN) of the data provider.</p>
      */
-    inline const Aws::String& GetDataProviderIdentifier() const{ return m_dataProviderIdentifier; }
+    inline const Aws::String& GetDataProviderIdentifier() const { return m_dataProviderIdentifier; }
     inline bool DataProviderIdentifierHasBeenSet() const { return m_dataProviderIdentifierHasBeenSet; }
-    inline void SetDataProviderIdentifier(const Aws::String& value) { m_dataProviderIdentifierHasBeenSet = true; m_dataProviderIdentifier = value; }
-    inline void SetDataProviderIdentifier(Aws::String&& value) { m_dataProviderIdentifierHasBeenSet = true; m_dataProviderIdentifier = std::move(value); }
-    inline void SetDataProviderIdentifier(const char* value) { m_dataProviderIdentifierHasBeenSet = true; m_dataProviderIdentifier.assign(value); }
-    inline DataProviderDescriptorDefinition& WithDataProviderIdentifier(const Aws::String& value) { SetDataProviderIdentifier(value); return *this;}
-    inline DataProviderDescriptorDefinition& WithDataProviderIdentifier(Aws::String&& value) { SetDataProviderIdentifier(std::move(value)); return *this;}
-    inline DataProviderDescriptorDefinition& WithDataProviderIdentifier(const char* value) { SetDataProviderIdentifier(value); return *this;}
+    template<typename DataProviderIdentifierT = Aws::String>
+    void SetDataProviderIdentifier(DataProviderIdentifierT&& value) { m_dataProviderIdentifierHasBeenSet = true; m_dataProviderIdentifier = std::forward<DataProviderIdentifierT>(value); }
+    template<typename DataProviderIdentifierT = Aws::String>
+    DataProviderDescriptorDefinition& WithDataProviderIdentifier(DataProviderIdentifierT&& value) { SetDataProviderIdentifier(std::forward<DataProviderIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,28 +54,24 @@ namespace Model
      * <p>The identifier of the Amazon Web Services Secrets Manager Secret used to
      * store access credentials for the data provider.</p>
      */
-    inline const Aws::String& GetSecretsManagerSecretId() const{ return m_secretsManagerSecretId; }
+    inline const Aws::String& GetSecretsManagerSecretId() const { return m_secretsManagerSecretId; }
     inline bool SecretsManagerSecretIdHasBeenSet() const { return m_secretsManagerSecretIdHasBeenSet; }
-    inline void SetSecretsManagerSecretId(const Aws::String& value) { m_secretsManagerSecretIdHasBeenSet = true; m_secretsManagerSecretId = value; }
-    inline void SetSecretsManagerSecretId(Aws::String&& value) { m_secretsManagerSecretIdHasBeenSet = true; m_secretsManagerSecretId = std::move(value); }
-    inline void SetSecretsManagerSecretId(const char* value) { m_secretsManagerSecretIdHasBeenSet = true; m_secretsManagerSecretId.assign(value); }
-    inline DataProviderDescriptorDefinition& WithSecretsManagerSecretId(const Aws::String& value) { SetSecretsManagerSecretId(value); return *this;}
-    inline DataProviderDescriptorDefinition& WithSecretsManagerSecretId(Aws::String&& value) { SetSecretsManagerSecretId(std::move(value)); return *this;}
-    inline DataProviderDescriptorDefinition& WithSecretsManagerSecretId(const char* value) { SetSecretsManagerSecretId(value); return *this;}
+    template<typename SecretsManagerSecretIdT = Aws::String>
+    void SetSecretsManagerSecretId(SecretsManagerSecretIdT&& value) { m_secretsManagerSecretIdHasBeenSet = true; m_secretsManagerSecretId = std::forward<SecretsManagerSecretIdT>(value); }
+    template<typename SecretsManagerSecretIdT = Aws::String>
+    DataProviderDescriptorDefinition& WithSecretsManagerSecretId(SecretsManagerSecretIdT&& value) { SetSecretsManagerSecretId(std::forward<SecretsManagerSecretIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the role used to access Amazon Web Services Secrets Manager.</p>
      */
-    inline const Aws::String& GetSecretsManagerAccessRoleArn() const{ return m_secretsManagerAccessRoleArn; }
+    inline const Aws::String& GetSecretsManagerAccessRoleArn() const { return m_secretsManagerAccessRoleArn; }
     inline bool SecretsManagerAccessRoleArnHasBeenSet() const { return m_secretsManagerAccessRoleArnHasBeenSet; }
-    inline void SetSecretsManagerAccessRoleArn(const Aws::String& value) { m_secretsManagerAccessRoleArnHasBeenSet = true; m_secretsManagerAccessRoleArn = value; }
-    inline void SetSecretsManagerAccessRoleArn(Aws::String&& value) { m_secretsManagerAccessRoleArnHasBeenSet = true; m_secretsManagerAccessRoleArn = std::move(value); }
-    inline void SetSecretsManagerAccessRoleArn(const char* value) { m_secretsManagerAccessRoleArnHasBeenSet = true; m_secretsManagerAccessRoleArn.assign(value); }
-    inline DataProviderDescriptorDefinition& WithSecretsManagerAccessRoleArn(const Aws::String& value) { SetSecretsManagerAccessRoleArn(value); return *this;}
-    inline DataProviderDescriptorDefinition& WithSecretsManagerAccessRoleArn(Aws::String&& value) { SetSecretsManagerAccessRoleArn(std::move(value)); return *this;}
-    inline DataProviderDescriptorDefinition& WithSecretsManagerAccessRoleArn(const char* value) { SetSecretsManagerAccessRoleArn(value); return *this;}
+    template<typename SecretsManagerAccessRoleArnT = Aws::String>
+    void SetSecretsManagerAccessRoleArn(SecretsManagerAccessRoleArnT&& value) { m_secretsManagerAccessRoleArnHasBeenSet = true; m_secretsManagerAccessRoleArn = std::forward<SecretsManagerAccessRoleArnT>(value); }
+    template<typename SecretsManagerAccessRoleArnT = Aws::String>
+    DataProviderDescriptorDefinition& WithSecretsManagerAccessRoleArn(SecretsManagerAccessRoleArnT&& value) { SetSecretsManagerAccessRoleArn(std::forward<SecretsManagerAccessRoleArnT>(value)); return *this;}
     ///@}
   private:
 

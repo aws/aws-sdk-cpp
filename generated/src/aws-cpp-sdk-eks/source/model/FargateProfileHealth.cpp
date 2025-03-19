@@ -18,13 +18,7 @@ namespace EKS
 namespace Model
 {
 
-FargateProfileHealth::FargateProfileHealth() : 
-    m_issuesHasBeenSet(false)
-{
-}
-
 FargateProfileHealth::FargateProfileHealth(JsonView jsonValue)
-  : FargateProfileHealth()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ FargateProfileHealth& FargateProfileHealth::operator =(JsonView jsonValue)
     }
     m_issuesHasBeenSet = true;
   }
-
   return *this;
 }
 

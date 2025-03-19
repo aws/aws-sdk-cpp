@@ -12,11 +12,6 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeFlywheelRequest::DescribeFlywheelRequest() : 
-    m_flywheelArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeFlywheelRequest::SerializePayload() const
 {
   JsonValue payload;

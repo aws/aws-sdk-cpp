@@ -18,15 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-WaypointOptimizationImpedingWaypoint::WaypointOptimizationImpedingWaypoint() : 
-    m_failedConstraintsHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_positionHasBeenSet(false)
-{
-}
-
 WaypointOptimizationImpedingWaypoint::WaypointOptimizationImpedingWaypoint(JsonView jsonValue)
-  : WaypointOptimizationImpedingWaypoint()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ WaypointOptimizationImpedingWaypoint& WaypointOptimizationImpedingWaypoint::oper
     }
     m_failedConstraintsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Position"))
   {
     Aws::Utils::Array<JsonView> positionJsonList = jsonValue.GetArray("Position");
@@ -59,7 +48,6 @@ WaypointOptimizationImpedingWaypoint& WaypointOptimizationImpedingWaypoint::oper
     }
     m_positionHasBeenSet = true;
   }
-
   return *this;
 }
 

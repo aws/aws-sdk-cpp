@@ -36,7 +36,7 @@ namespace Model
   class VoiceSettings
   {
   public:
-    AWS_LEXMODELSV2_API VoiceSettings();
+    AWS_LEXMODELSV2_API VoiceSettings() = default;
     AWS_LEXMODELSV2_API VoiceSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API VoiceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The identifier of the Amazon Polly voice to use.</p>
      */
-    inline const Aws::String& GetVoiceId() const{ return m_voiceId; }
+    inline const Aws::String& GetVoiceId() const { return m_voiceId; }
     inline bool VoiceIdHasBeenSet() const { return m_voiceIdHasBeenSet; }
-    inline void SetVoiceId(const Aws::String& value) { m_voiceIdHasBeenSet = true; m_voiceId = value; }
-    inline void SetVoiceId(Aws::String&& value) { m_voiceIdHasBeenSet = true; m_voiceId = std::move(value); }
-    inline void SetVoiceId(const char* value) { m_voiceIdHasBeenSet = true; m_voiceId.assign(value); }
-    inline VoiceSettings& WithVoiceId(const Aws::String& value) { SetVoiceId(value); return *this;}
-    inline VoiceSettings& WithVoiceId(Aws::String&& value) { SetVoiceId(std::move(value)); return *this;}
-    inline VoiceSettings& WithVoiceId(const char* value) { SetVoiceId(value); return *this;}
+    template<typename VoiceIdT = Aws::String>
+    void SetVoiceId(VoiceIdT&& value) { m_voiceIdHasBeenSet = true; m_voiceId = std::forward<VoiceIdT>(value); }
+    template<typename VoiceIdT = Aws::String>
+    VoiceSettings& WithVoiceId(VoiceIdT&& value) { SetVoiceId(std::forward<VoiceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,19 +63,17 @@ namespace Model
      * in the <i>Amazon Polly developer guide</i>.</p> <p>If you do not specify a
      * value, the default is <code>standard</code>.</p>
      */
-    inline const VoiceEngine& GetEngine() const{ return m_engine; }
+    inline VoiceEngine GetEngine() const { return m_engine; }
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
-    inline void SetEngine(const VoiceEngine& value) { m_engineHasBeenSet = true; m_engine = value; }
-    inline void SetEngine(VoiceEngine&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
-    inline VoiceSettings& WithEngine(const VoiceEngine& value) { SetEngine(value); return *this;}
-    inline VoiceSettings& WithEngine(VoiceEngine&& value) { SetEngine(std::move(value)); return *this;}
+    inline void SetEngine(VoiceEngine value) { m_engineHasBeenSet = true; m_engine = value; }
+    inline VoiceSettings& WithEngine(VoiceEngine value) { SetEngine(value); return *this;}
     ///@}
   private:
 
     Aws::String m_voiceId;
     bool m_voiceIdHasBeenSet = false;
 
-    VoiceEngine m_engine;
+    VoiceEngine m_engine{VoiceEngine::NOT_SET};
     bool m_engineHasBeenSet = false;
   };
 

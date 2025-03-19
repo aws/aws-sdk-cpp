@@ -18,16 +18,7 @@ namespace Proton
 namespace Model
 {
 
-RepositorySyncDefinition::RepositorySyncDefinition() : 
-    m_branchHasBeenSet(false),
-    m_directoryHasBeenSet(false),
-    m_parentHasBeenSet(false),
-    m_targetHasBeenSet(false)
-{
-}
-
 RepositorySyncDefinition::RepositorySyncDefinition(JsonView jsonValue)
-  : RepositorySyncDefinition()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ RepositorySyncDefinition& RepositorySyncDefinition::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("branch"))
   {
     m_branch = jsonValue.GetString("branch");
-
     m_branchHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("directory"))
   {
     m_directory = jsonValue.GetString("directory");
-
     m_directoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parent"))
   {
     m_parent = jsonValue.GetString("parent");
-
     m_parentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("target"))
   {
     m_target = jsonValue.GetString("target");
-
     m_targetHasBeenSet = true;
   }
-
   return *this;
 }
 

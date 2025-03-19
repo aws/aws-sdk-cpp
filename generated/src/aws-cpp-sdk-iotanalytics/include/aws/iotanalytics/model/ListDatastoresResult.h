@@ -29,7 +29,7 @@ namespace Model
   class ListDatastoresResult
   {
   public:
-    AWS_IOTANALYTICS_API ListDatastoresResult();
+    AWS_IOTANALYTICS_API ListDatastoresResult() = default;
     AWS_IOTANALYTICS_API ListDatastoresResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTANALYTICS_API ListDatastoresResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list of <code>DatastoreSummary</code> objects.</p>
      */
-    inline const Aws::Vector<DatastoreSummary>& GetDatastoreSummaries() const{ return m_datastoreSummaries; }
-    inline void SetDatastoreSummaries(const Aws::Vector<DatastoreSummary>& value) { m_datastoreSummaries = value; }
-    inline void SetDatastoreSummaries(Aws::Vector<DatastoreSummary>&& value) { m_datastoreSummaries = std::move(value); }
-    inline ListDatastoresResult& WithDatastoreSummaries(const Aws::Vector<DatastoreSummary>& value) { SetDatastoreSummaries(value); return *this;}
-    inline ListDatastoresResult& WithDatastoreSummaries(Aws::Vector<DatastoreSummary>&& value) { SetDatastoreSummaries(std::move(value)); return *this;}
-    inline ListDatastoresResult& AddDatastoreSummaries(const DatastoreSummary& value) { m_datastoreSummaries.push_back(value); return *this; }
-    inline ListDatastoresResult& AddDatastoreSummaries(DatastoreSummary&& value) { m_datastoreSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DatastoreSummary>& GetDatastoreSummaries() const { return m_datastoreSummaries; }
+    template<typename DatastoreSummariesT = Aws::Vector<DatastoreSummary>>
+    void SetDatastoreSummaries(DatastoreSummariesT&& value) { m_datastoreSummariesHasBeenSet = true; m_datastoreSummaries = std::forward<DatastoreSummariesT>(value); }
+    template<typename DatastoreSummariesT = Aws::Vector<DatastoreSummary>>
+    ListDatastoresResult& WithDatastoreSummaries(DatastoreSummariesT&& value) { SetDatastoreSummaries(std::forward<DatastoreSummariesT>(value)); return *this;}
+    template<typename DatastoreSummariesT = DatastoreSummary>
+    ListDatastoresResult& AddDatastoreSummaries(DatastoreSummariesT&& value) { m_datastoreSummariesHasBeenSet = true; m_datastoreSummaries.emplace_back(std::forward<DatastoreSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The token to retrieve the next set of results, or <code>null</code> if there
      * are no more results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListDatastoresResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListDatastoresResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListDatastoresResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListDatastoresResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListDatastoresResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListDatastoresResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListDatastoresResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListDatastoresResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DatastoreSummary> m_datastoreSummaries;
+    bool m_datastoreSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

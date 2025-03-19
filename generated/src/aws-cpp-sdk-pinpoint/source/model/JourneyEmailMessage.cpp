@@ -18,13 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-JourneyEmailMessage::JourneyEmailMessage() : 
-    m_fromAddressHasBeenSet(false)
-{
-}
-
 JourneyEmailMessage::JourneyEmailMessage(JsonView jsonValue)
-  : JourneyEmailMessage()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ JourneyEmailMessage& JourneyEmailMessage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FromAddress"))
   {
     m_fromAddress = jsonValue.GetString("FromAddress");
-
     m_fromAddressHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,21 +18,7 @@ namespace VPCLattice
 namespace Model
 {
 
-RuleUpdateSuccess::RuleUpdateSuccess() : 
-    m_actionHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_isDefault(false),
-    m_isDefaultHasBeenSet(false),
-    m_matchHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false)
-{
-}
-
 RuleUpdateSuccess::RuleUpdateSuccess(JsonView jsonValue)
-  : RuleUpdateSuccess()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ RuleUpdateSuccess& RuleUpdateSuccess::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("action"))
   {
     m_action = jsonValue.GetObject("action");
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isDefault"))
   {
     m_isDefault = jsonValue.GetBool("isDefault");
-
     m_isDefaultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("match"))
   {
     m_match = jsonValue.GetObject("match");
-
     m_matchHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("priority"))
   {
     m_priority = jsonValue.GetInteger("priority");
-
     m_priorityHasBeenSet = true;
   }
-
   return *this;
 }
 

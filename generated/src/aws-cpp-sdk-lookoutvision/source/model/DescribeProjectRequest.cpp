@@ -12,11 +12,6 @@ using namespace Aws::LookoutforVision::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeProjectRequest::DescribeProjectRequest() : 
-    m_projectNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeProjectRequest::SerializePayload() const
 {
   return {};

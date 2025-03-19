@@ -18,16 +18,7 @@ namespace SnowDeviceManagement
 namespace Model
 {
 
-DeviceSummary::DeviceSummary() : 
-    m_associatedWithJobHasBeenSet(false),
-    m_managedDeviceArnHasBeenSet(false),
-    m_managedDeviceIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 DeviceSummary::DeviceSummary(JsonView jsonValue)
-  : DeviceSummary()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ DeviceSummary& DeviceSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("associatedWithJob"))
   {
     m_associatedWithJob = jsonValue.GetString("associatedWithJob");
-
     m_associatedWithJobHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("managedDeviceArn"))
   {
     m_managedDeviceArn = jsonValue.GetString("managedDeviceArn");
-
     m_managedDeviceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("managedDeviceId"))
   {
     m_managedDeviceId = jsonValue.GetString("managedDeviceId");
-
     m_managedDeviceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -64,7 +49,6 @@ DeviceSummary& DeviceSummary::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

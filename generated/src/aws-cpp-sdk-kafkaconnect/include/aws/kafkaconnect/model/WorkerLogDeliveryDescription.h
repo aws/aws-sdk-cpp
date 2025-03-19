@@ -35,7 +35,7 @@ namespace Model
   class WorkerLogDeliveryDescription
   {
   public:
-    AWS_KAFKACONNECT_API WorkerLogDeliveryDescription();
+    AWS_KAFKACONNECT_API WorkerLogDeliveryDescription() = default;
     AWS_KAFKACONNECT_API WorkerLogDeliveryDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKACONNECT_API WorkerLogDeliveryDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,36 +45,36 @@ namespace Model
     /**
      * <p>Details about delivering logs to Amazon CloudWatch Logs.</p>
      */
-    inline const CloudWatchLogsLogDeliveryDescription& GetCloudWatchLogs() const{ return m_cloudWatchLogs; }
+    inline const CloudWatchLogsLogDeliveryDescription& GetCloudWatchLogs() const { return m_cloudWatchLogs; }
     inline bool CloudWatchLogsHasBeenSet() const { return m_cloudWatchLogsHasBeenSet; }
-    inline void SetCloudWatchLogs(const CloudWatchLogsLogDeliveryDescription& value) { m_cloudWatchLogsHasBeenSet = true; m_cloudWatchLogs = value; }
-    inline void SetCloudWatchLogs(CloudWatchLogsLogDeliveryDescription&& value) { m_cloudWatchLogsHasBeenSet = true; m_cloudWatchLogs = std::move(value); }
-    inline WorkerLogDeliveryDescription& WithCloudWatchLogs(const CloudWatchLogsLogDeliveryDescription& value) { SetCloudWatchLogs(value); return *this;}
-    inline WorkerLogDeliveryDescription& WithCloudWatchLogs(CloudWatchLogsLogDeliveryDescription&& value) { SetCloudWatchLogs(std::move(value)); return *this;}
+    template<typename CloudWatchLogsT = CloudWatchLogsLogDeliveryDescription>
+    void SetCloudWatchLogs(CloudWatchLogsT&& value) { m_cloudWatchLogsHasBeenSet = true; m_cloudWatchLogs = std::forward<CloudWatchLogsT>(value); }
+    template<typename CloudWatchLogsT = CloudWatchLogsLogDeliveryDescription>
+    WorkerLogDeliveryDescription& WithCloudWatchLogs(CloudWatchLogsT&& value) { SetCloudWatchLogs(std::forward<CloudWatchLogsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about delivering logs to Amazon Kinesis Data Firehose.</p>
      */
-    inline const FirehoseLogDeliveryDescription& GetFirehose() const{ return m_firehose; }
+    inline const FirehoseLogDeliveryDescription& GetFirehose() const { return m_firehose; }
     inline bool FirehoseHasBeenSet() const { return m_firehoseHasBeenSet; }
-    inline void SetFirehose(const FirehoseLogDeliveryDescription& value) { m_firehoseHasBeenSet = true; m_firehose = value; }
-    inline void SetFirehose(FirehoseLogDeliveryDescription&& value) { m_firehoseHasBeenSet = true; m_firehose = std::move(value); }
-    inline WorkerLogDeliveryDescription& WithFirehose(const FirehoseLogDeliveryDescription& value) { SetFirehose(value); return *this;}
-    inline WorkerLogDeliveryDescription& WithFirehose(FirehoseLogDeliveryDescription&& value) { SetFirehose(std::move(value)); return *this;}
+    template<typename FirehoseT = FirehoseLogDeliveryDescription>
+    void SetFirehose(FirehoseT&& value) { m_firehoseHasBeenSet = true; m_firehose = std::forward<FirehoseT>(value); }
+    template<typename FirehoseT = FirehoseLogDeliveryDescription>
+    WorkerLogDeliveryDescription& WithFirehose(FirehoseT&& value) { SetFirehose(std::forward<FirehoseT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about delivering logs to Amazon S3.</p>
      */
-    inline const S3LogDeliveryDescription& GetS3() const{ return m_s3; }
+    inline const S3LogDeliveryDescription& GetS3() const { return m_s3; }
     inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
-    inline void SetS3(const S3LogDeliveryDescription& value) { m_s3HasBeenSet = true; m_s3 = value; }
-    inline void SetS3(S3LogDeliveryDescription&& value) { m_s3HasBeenSet = true; m_s3 = std::move(value); }
-    inline WorkerLogDeliveryDescription& WithS3(const S3LogDeliveryDescription& value) { SetS3(value); return *this;}
-    inline WorkerLogDeliveryDescription& WithS3(S3LogDeliveryDescription&& value) { SetS3(std::move(value)); return *this;}
+    template<typename S3T = S3LogDeliveryDescription>
+    void SetS3(S3T&& value) { m_s3HasBeenSet = true; m_s3 = std::forward<S3T>(value); }
+    template<typename S3T = S3LogDeliveryDescription>
+    WorkerLogDeliveryDescription& WithS3(S3T&& value) { SetS3(std::forward<S3T>(value)); return *this;}
     ///@}
   private:
 

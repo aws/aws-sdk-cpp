@@ -18,17 +18,7 @@ namespace drs
 namespace Model
 {
 
-StagingArea::StagingArea() : 
-    m_errorMessageHasBeenSet(false),
-    m_stagingAccountIDHasBeenSet(false),
-    m_stagingSourceServerArnHasBeenSet(false),
-    m_status(ExtensionStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 StagingArea::StagingArea(JsonView jsonValue)
-  : StagingArea()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ StagingArea& StagingArea::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stagingAccountID"))
   {
     m_stagingAccountID = jsonValue.GetString("stagingAccountID");
-
     m_stagingAccountIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stagingSourceServerArn"))
   {
     m_stagingSourceServerArn = jsonValue.GetString("stagingSourceServerArn");
-
     m_stagingSourceServerArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ExtensionStatusMapper::GetExtensionStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

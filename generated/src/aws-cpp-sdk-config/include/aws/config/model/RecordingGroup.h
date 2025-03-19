@@ -60,7 +60,7 @@ namespace Model
   class RecordingGroup
   {
   public:
-    AWS_CONFIGSERVICE_API RecordingGroup();
+    AWS_CONFIGSERVICE_API RecordingGroup() = default;
     AWS_CONFIGSERVICE_API RecordingGroup(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API RecordingGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -82,7 +82,7 @@ namespace Model
      * Coverage by Region Availability</a> to see if a resource type is supported in
      * the Amazon Web Services Region where you set up Config.</p> 
      */
-    inline bool GetAllSupported() const{ return m_allSupported; }
+    inline bool GetAllSupported() const { return m_allSupported; }
     inline bool AllSupportedHasBeenSet() const { return m_allSupportedHasBeenSet; }
     inline void SetAllSupported(bool value) { m_allSupportedHasBeenSet = true; m_allSupported = value; }
     inline RecordingGroup& WithAllSupported(bool value) { SetAllSupported(value); return *this;}
@@ -147,7 +147,7 @@ namespace Model
      * in the <code>resourceTypes</code> field in addition to setting the
      * <code>includeGlobalResourceTypes</code> field to false.</p> 
      */
-    inline bool GetIncludeGlobalResourceTypes() const{ return m_includeGlobalResourceTypes; }
+    inline bool GetIncludeGlobalResourceTypes() const { return m_includeGlobalResourceTypes; }
     inline bool IncludeGlobalResourceTypesHasBeenSet() const { return m_includeGlobalResourceTypesHasBeenSet; }
     inline void SetIncludeGlobalResourceTypes(bool value) { m_includeGlobalResourceTypesHasBeenSet = true; m_includeGlobalResourceTypes = value; }
     inline RecordingGroup& WithIncludeGlobalResourceTypes(bool value) { SetIncludeGlobalResourceTypes(value); return *this;}
@@ -181,14 +181,13 @@ namespace Model
      * type is not supported in the Amazon Web Services Region where you set up
      * Config.</p> 
      */
-    inline const Aws::Vector<ResourceType>& GetResourceTypes() const{ return m_resourceTypes; }
+    inline const Aws::Vector<ResourceType>& GetResourceTypes() const { return m_resourceTypes; }
     inline bool ResourceTypesHasBeenSet() const { return m_resourceTypesHasBeenSet; }
-    inline void SetResourceTypes(const Aws::Vector<ResourceType>& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = value; }
-    inline void SetResourceTypes(Aws::Vector<ResourceType>&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = std::move(value); }
-    inline RecordingGroup& WithResourceTypes(const Aws::Vector<ResourceType>& value) { SetResourceTypes(value); return *this;}
-    inline RecordingGroup& WithResourceTypes(Aws::Vector<ResourceType>&& value) { SetResourceTypes(std::move(value)); return *this;}
-    inline RecordingGroup& AddResourceTypes(const ResourceType& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
-    inline RecordingGroup& AddResourceTypes(ResourceType&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(std::move(value)); return *this; }
+    template<typename ResourceTypesT = Aws::Vector<ResourceType>>
+    void SetResourceTypes(ResourceTypesT&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = std::forward<ResourceTypesT>(value); }
+    template<typename ResourceTypesT = Aws::Vector<ResourceType>>
+    RecordingGroup& WithResourceTypes(ResourceTypesT&& value) { SetResourceTypes(std::forward<ResourceTypesT>(value)); return *this;}
+    inline RecordingGroup& AddResourceTypes(ResourceType value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -199,12 +198,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a>
      * to <code>EXCLUSION_BY_RESOURCE_TYPES</code>.</p> 
      */
-    inline const ExclusionByResourceTypes& GetExclusionByResourceTypes() const{ return m_exclusionByResourceTypes; }
+    inline const ExclusionByResourceTypes& GetExclusionByResourceTypes() const { return m_exclusionByResourceTypes; }
     inline bool ExclusionByResourceTypesHasBeenSet() const { return m_exclusionByResourceTypesHasBeenSet; }
-    inline void SetExclusionByResourceTypes(const ExclusionByResourceTypes& value) { m_exclusionByResourceTypesHasBeenSet = true; m_exclusionByResourceTypes = value; }
-    inline void SetExclusionByResourceTypes(ExclusionByResourceTypes&& value) { m_exclusionByResourceTypesHasBeenSet = true; m_exclusionByResourceTypes = std::move(value); }
-    inline RecordingGroup& WithExclusionByResourceTypes(const ExclusionByResourceTypes& value) { SetExclusionByResourceTypes(value); return *this;}
-    inline RecordingGroup& WithExclusionByResourceTypes(ExclusionByResourceTypes&& value) { SetExclusionByResourceTypes(std::move(value)); return *this;}
+    template<typename ExclusionByResourceTypesT = ExclusionByResourceTypes>
+    void SetExclusionByResourceTypes(ExclusionByResourceTypesT&& value) { m_exclusionByResourceTypesHasBeenSet = true; m_exclusionByResourceTypes = std::forward<ExclusionByResourceTypesT>(value); }
+    template<typename ExclusionByResourceTypesT = ExclusionByResourceTypes>
+    RecordingGroup& WithExclusionByResourceTypes(ExclusionByResourceTypesT&& value) { SetExclusionByResourceTypes(std::forward<ExclusionByResourceTypesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -265,19 +264,19 @@ namespace Model
      * href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-all">Recording
      * Amazon Web Services Resources | Global Resources</a>.</p> 
      */
-    inline const RecordingStrategy& GetRecordingStrategy() const{ return m_recordingStrategy; }
+    inline const RecordingStrategy& GetRecordingStrategy() const { return m_recordingStrategy; }
     inline bool RecordingStrategyHasBeenSet() const { return m_recordingStrategyHasBeenSet; }
-    inline void SetRecordingStrategy(const RecordingStrategy& value) { m_recordingStrategyHasBeenSet = true; m_recordingStrategy = value; }
-    inline void SetRecordingStrategy(RecordingStrategy&& value) { m_recordingStrategyHasBeenSet = true; m_recordingStrategy = std::move(value); }
-    inline RecordingGroup& WithRecordingStrategy(const RecordingStrategy& value) { SetRecordingStrategy(value); return *this;}
-    inline RecordingGroup& WithRecordingStrategy(RecordingStrategy&& value) { SetRecordingStrategy(std::move(value)); return *this;}
+    template<typename RecordingStrategyT = RecordingStrategy>
+    void SetRecordingStrategy(RecordingStrategyT&& value) { m_recordingStrategyHasBeenSet = true; m_recordingStrategy = std::forward<RecordingStrategyT>(value); }
+    template<typename RecordingStrategyT = RecordingStrategy>
+    RecordingGroup& WithRecordingStrategy(RecordingStrategyT&& value) { SetRecordingStrategy(std::forward<RecordingStrategyT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_allSupported;
+    bool m_allSupported{false};
     bool m_allSupportedHasBeenSet = false;
 
-    bool m_includeGlobalResourceTypes;
+    bool m_includeGlobalResourceTypes{false};
     bool m_includeGlobalResourceTypesHasBeenSet = false;
 
     Aws::Vector<ResourceType> m_resourceTypes;

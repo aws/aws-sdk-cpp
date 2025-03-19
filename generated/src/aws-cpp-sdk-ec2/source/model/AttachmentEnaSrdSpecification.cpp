@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-AttachmentEnaSrdSpecification::AttachmentEnaSrdSpecification() : 
-    m_enaSrdEnabled(false),
-    m_enaSrdEnabledHasBeenSet(false),
-    m_enaSrdUdpSpecificationHasBeenSet(false)
-{
-}
-
 AttachmentEnaSrdSpecification::AttachmentEnaSrdSpecification(const XmlNode& xmlNode)
-  : AttachmentEnaSrdSpecification()
 {
   *this = xmlNode;
 }

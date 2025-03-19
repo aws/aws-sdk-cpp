@@ -33,7 +33,7 @@ namespace Model
   class LogGroupConfiguration
   {
   public:
-    AWS_OAM_API LogGroupConfiguration();
+    AWS_OAM_API LogGroupConfiguration() = default;
     AWS_OAM_API LogGroupConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_OAM_API LogGroupConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OAM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -65,14 +65,12 @@ namespace Model
      * <code>filter</code> parameter to delete the filter and share all log groups with
      * the monitoring account.</p> 
      */
-    inline const Aws::String& GetFilter() const{ return m_filter; }
+    inline const Aws::String& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const Aws::String& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(Aws::String&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline void SetFilter(const char* value) { m_filterHasBeenSet = true; m_filter.assign(value); }
-    inline LogGroupConfiguration& WithFilter(const Aws::String& value) { SetFilter(value); return *this;}
-    inline LogGroupConfiguration& WithFilter(Aws::String&& value) { SetFilter(std::move(value)); return *this;}
-    inline LogGroupConfiguration& WithFilter(const char* value) { SetFilter(value); return *this;}
+    template<typename FilterT = Aws::String>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = Aws::String>
+    LogGroupConfiguration& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
   private:
 

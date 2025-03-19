@@ -28,7 +28,7 @@ namespace Model
   class CreateClientVpnRouteResponse
   {
   public:
-    AWS_EC2_API CreateClientVpnRouteResponse();
+    AWS_EC2_API CreateClientVpnRouteResponse() = default;
     AWS_EC2_API CreateClientVpnRouteResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API CreateClientVpnRouteResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>The current state of the route.</p>
      */
-    inline const ClientVpnRouteStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const ClientVpnRouteStatus& value) { m_status = value; }
-    inline void SetStatus(ClientVpnRouteStatus&& value) { m_status = std::move(value); }
-    inline CreateClientVpnRouteResponse& WithStatus(const ClientVpnRouteStatus& value) { SetStatus(value); return *this;}
-    inline CreateClientVpnRouteResponse& WithStatus(ClientVpnRouteStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline const ClientVpnRouteStatus& GetStatus() const { return m_status; }
+    template<typename StatusT = ClientVpnRouteStatus>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = ClientVpnRouteStatus>
+    CreateClientVpnRouteResponse& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CreateClientVpnRouteResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CreateClientVpnRouteResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CreateClientVpnRouteResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     ClientVpnRouteStatus m_status;
+    bool m_statusHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

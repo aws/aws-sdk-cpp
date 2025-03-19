@@ -20,20 +20,7 @@ namespace EC2
 namespace Model
 {
 
-FirewallStatefulRule::FirewallStatefulRule() : 
-    m_ruleGroupArnHasBeenSet(false),
-    m_sourcesHasBeenSet(false),
-    m_destinationsHasBeenSet(false),
-    m_sourcePortsHasBeenSet(false),
-    m_destinationPortsHasBeenSet(false),
-    m_protocolHasBeenSet(false),
-    m_ruleActionHasBeenSet(false),
-    m_directionHasBeenSet(false)
-{
-}
-
 FirewallStatefulRule::FirewallStatefulRule(const XmlNode& xmlNode)
-  : FirewallStatefulRule()
 {
   *this = xmlNode;
 }
@@ -54,6 +41,7 @@ FirewallStatefulRule& FirewallStatefulRule::operator =(const XmlNode& xmlNode)
     if(!sourcesNode.IsNull())
     {
       XmlNode sourcesMember = sourcesNode.FirstChild("item");
+      m_sourcesHasBeenSet = !sourcesMember.IsNull();
       while(!sourcesMember.IsNull())
       {
         m_sources.push_back(sourcesMember.GetText());
@@ -66,6 +54,7 @@ FirewallStatefulRule& FirewallStatefulRule::operator =(const XmlNode& xmlNode)
     if(!destinationsNode.IsNull())
     {
       XmlNode destinationsMember = destinationsNode.FirstChild("item");
+      m_destinationsHasBeenSet = !destinationsMember.IsNull();
       while(!destinationsMember.IsNull())
       {
         m_destinations.push_back(destinationsMember.GetText());
@@ -78,6 +67,7 @@ FirewallStatefulRule& FirewallStatefulRule::operator =(const XmlNode& xmlNode)
     if(!sourcePortsNode.IsNull())
     {
       XmlNode sourcePortsMember = sourcePortsNode.FirstChild("item");
+      m_sourcePortsHasBeenSet = !sourcePortsMember.IsNull();
       while(!sourcePortsMember.IsNull())
       {
         m_sourcePorts.push_back(sourcePortsMember);
@@ -90,6 +80,7 @@ FirewallStatefulRule& FirewallStatefulRule::operator =(const XmlNode& xmlNode)
     if(!destinationPortsNode.IsNull())
     {
       XmlNode destinationPortsMember = destinationPortsNode.FirstChild("item");
+      m_destinationPortsHasBeenSet = !destinationPortsMember.IsNull();
       while(!destinationPortsMember.IsNull())
       {
         m_destinationPorts.push_back(destinationPortsMember);

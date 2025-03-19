@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-Identifier::Identifier() : 
-    m_identityHasBeenSet(false)
-{
-}
-
 Identifier::Identifier(JsonView jsonValue)
-  : Identifier()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Identifier& Identifier::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Identity"))
   {
     m_identity = jsonValue.GetString("Identity");
-
     m_identityHasBeenSet = true;
   }
-
   return *this;
 }
 

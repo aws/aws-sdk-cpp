@@ -35,7 +35,7 @@ namespace Model
   class ConformancePackRuleCompliance
   {
   public:
-    AWS_CONFIGSERVICE_API ConformancePackRuleCompliance();
+    AWS_CONFIGSERVICE_API ConformancePackRuleCompliance() = default;
     AWS_CONFIGSERVICE_API ConformancePackRuleCompliance(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API ConformancePackRuleCompliance& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,26 +45,22 @@ namespace Model
     /**
      * <p>Name of the Config rule.</p>
      */
-    inline const Aws::String& GetConfigRuleName() const{ return m_configRuleName; }
+    inline const Aws::String& GetConfigRuleName() const { return m_configRuleName; }
     inline bool ConfigRuleNameHasBeenSet() const { return m_configRuleNameHasBeenSet; }
-    inline void SetConfigRuleName(const Aws::String& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = value; }
-    inline void SetConfigRuleName(Aws::String&& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = std::move(value); }
-    inline void SetConfigRuleName(const char* value) { m_configRuleNameHasBeenSet = true; m_configRuleName.assign(value); }
-    inline ConformancePackRuleCompliance& WithConfigRuleName(const Aws::String& value) { SetConfigRuleName(value); return *this;}
-    inline ConformancePackRuleCompliance& WithConfigRuleName(Aws::String&& value) { SetConfigRuleName(std::move(value)); return *this;}
-    inline ConformancePackRuleCompliance& WithConfigRuleName(const char* value) { SetConfigRuleName(value); return *this;}
+    template<typename ConfigRuleNameT = Aws::String>
+    void SetConfigRuleName(ConfigRuleNameT&& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = std::forward<ConfigRuleNameT>(value); }
+    template<typename ConfigRuleNameT = Aws::String>
+    ConformancePackRuleCompliance& WithConfigRuleName(ConfigRuleNameT&& value) { SetConfigRuleName(std::forward<ConfigRuleNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Compliance of the Config rule.</p>
      */
-    inline const ConformancePackComplianceType& GetComplianceType() const{ return m_complianceType; }
+    inline ConformancePackComplianceType GetComplianceType() const { return m_complianceType; }
     inline bool ComplianceTypeHasBeenSet() const { return m_complianceTypeHasBeenSet; }
-    inline void SetComplianceType(const ConformancePackComplianceType& value) { m_complianceTypeHasBeenSet = true; m_complianceType = value; }
-    inline void SetComplianceType(ConformancePackComplianceType&& value) { m_complianceTypeHasBeenSet = true; m_complianceType = std::move(value); }
-    inline ConformancePackRuleCompliance& WithComplianceType(const ConformancePackComplianceType& value) { SetComplianceType(value); return *this;}
-    inline ConformancePackRuleCompliance& WithComplianceType(ConformancePackComplianceType&& value) { SetComplianceType(std::move(value)); return *this;}
+    inline void SetComplianceType(ConformancePackComplianceType value) { m_complianceTypeHasBeenSet = true; m_complianceType = value; }
+    inline ConformancePackRuleCompliance& WithComplianceType(ConformancePackComplianceType value) { SetComplianceType(value); return *this;}
     ///@}
 
     ///@{
@@ -73,22 +69,21 @@ namespace Model
      * detect problems while meeting objectives. A control can align with a specific
      * compliance regime or map to internal controls defined by an organization.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetControls() const{ return m_controls; }
+    inline const Aws::Vector<Aws::String>& GetControls() const { return m_controls; }
     inline bool ControlsHasBeenSet() const { return m_controlsHasBeenSet; }
-    inline void SetControls(const Aws::Vector<Aws::String>& value) { m_controlsHasBeenSet = true; m_controls = value; }
-    inline void SetControls(Aws::Vector<Aws::String>&& value) { m_controlsHasBeenSet = true; m_controls = std::move(value); }
-    inline ConformancePackRuleCompliance& WithControls(const Aws::Vector<Aws::String>& value) { SetControls(value); return *this;}
-    inline ConformancePackRuleCompliance& WithControls(Aws::Vector<Aws::String>&& value) { SetControls(std::move(value)); return *this;}
-    inline ConformancePackRuleCompliance& AddControls(const Aws::String& value) { m_controlsHasBeenSet = true; m_controls.push_back(value); return *this; }
-    inline ConformancePackRuleCompliance& AddControls(Aws::String&& value) { m_controlsHasBeenSet = true; m_controls.push_back(std::move(value)); return *this; }
-    inline ConformancePackRuleCompliance& AddControls(const char* value) { m_controlsHasBeenSet = true; m_controls.push_back(value); return *this; }
+    template<typename ControlsT = Aws::Vector<Aws::String>>
+    void SetControls(ControlsT&& value) { m_controlsHasBeenSet = true; m_controls = std::forward<ControlsT>(value); }
+    template<typename ControlsT = Aws::Vector<Aws::String>>
+    ConformancePackRuleCompliance& WithControls(ControlsT&& value) { SetControls(std::forward<ControlsT>(value)); return *this;}
+    template<typename ControlsT = Aws::String>
+    ConformancePackRuleCompliance& AddControls(ControlsT&& value) { m_controlsHasBeenSet = true; m_controls.emplace_back(std::forward<ControlsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_configRuleName;
     bool m_configRuleNameHasBeenSet = false;
 
-    ConformancePackComplianceType m_complianceType;
+    ConformancePackComplianceType m_complianceType{ConformancePackComplianceType::NOT_SET};
     bool m_complianceTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_controls;

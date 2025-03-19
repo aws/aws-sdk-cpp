@@ -31,7 +31,7 @@ namespace Model
   class DocumentTypeListItem
   {
   public:
-    AWS_COMPREHEND_API DocumentTypeListItem();
+    AWS_COMPREHEND_API DocumentTypeListItem() = default;
     AWS_COMPREHEND_API DocumentTypeListItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API DocumentTypeListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>Page number.</p>
      */
-    inline int GetPage() const{ return m_page; }
+    inline int GetPage() const { return m_page; }
     inline bool PageHasBeenSet() const { return m_pageHasBeenSet; }
     inline void SetPage(int value) { m_pageHasBeenSet = true; m_page = value; }
     inline DocumentTypeListItem& WithPage(int value) { SetPage(value); return *this;}
@@ -51,19 +51,17 @@ namespace Model
     /**
      * <p>Document type.</p>
      */
-    inline const DocumentType& GetType() const{ return m_type; }
+    inline DocumentType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const DocumentType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(DocumentType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline DocumentTypeListItem& WithType(const DocumentType& value) { SetType(value); return *this;}
-    inline DocumentTypeListItem& WithType(DocumentType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(DocumentType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline DocumentTypeListItem& WithType(DocumentType value) { SetType(value); return *this;}
     ///@}
   private:
 
-    int m_page;
+    int m_page{0};
     bool m_pageHasBeenSet = false;
 
-    DocumentType m_type;
+    DocumentType m_type{DocumentType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

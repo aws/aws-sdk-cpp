@@ -22,7 +22,7 @@ namespace Model
   class BatchModifyClusterSnapshotsRequest : public RedshiftRequest
   {
   public:
-    AWS_REDSHIFT_API BatchModifyClusterSnapshotsRequest();
+    AWS_REDSHIFT_API BatchModifyClusterSnapshotsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,15 +41,14 @@ namespace Model
     /**
      * <p>A list of snapshot identifiers you want to modify.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSnapshotIdentifierList() const{ return m_snapshotIdentifierList; }
+    inline const Aws::Vector<Aws::String>& GetSnapshotIdentifierList() const { return m_snapshotIdentifierList; }
     inline bool SnapshotIdentifierListHasBeenSet() const { return m_snapshotIdentifierListHasBeenSet; }
-    inline void SetSnapshotIdentifierList(const Aws::Vector<Aws::String>& value) { m_snapshotIdentifierListHasBeenSet = true; m_snapshotIdentifierList = value; }
-    inline void SetSnapshotIdentifierList(Aws::Vector<Aws::String>&& value) { m_snapshotIdentifierListHasBeenSet = true; m_snapshotIdentifierList = std::move(value); }
-    inline BatchModifyClusterSnapshotsRequest& WithSnapshotIdentifierList(const Aws::Vector<Aws::String>& value) { SetSnapshotIdentifierList(value); return *this;}
-    inline BatchModifyClusterSnapshotsRequest& WithSnapshotIdentifierList(Aws::Vector<Aws::String>&& value) { SetSnapshotIdentifierList(std::move(value)); return *this;}
-    inline BatchModifyClusterSnapshotsRequest& AddSnapshotIdentifierList(const Aws::String& value) { m_snapshotIdentifierListHasBeenSet = true; m_snapshotIdentifierList.push_back(value); return *this; }
-    inline BatchModifyClusterSnapshotsRequest& AddSnapshotIdentifierList(Aws::String&& value) { m_snapshotIdentifierListHasBeenSet = true; m_snapshotIdentifierList.push_back(std::move(value)); return *this; }
-    inline BatchModifyClusterSnapshotsRequest& AddSnapshotIdentifierList(const char* value) { m_snapshotIdentifierListHasBeenSet = true; m_snapshotIdentifierList.push_back(value); return *this; }
+    template<typename SnapshotIdentifierListT = Aws::Vector<Aws::String>>
+    void SetSnapshotIdentifierList(SnapshotIdentifierListT&& value) { m_snapshotIdentifierListHasBeenSet = true; m_snapshotIdentifierList = std::forward<SnapshotIdentifierListT>(value); }
+    template<typename SnapshotIdentifierListT = Aws::Vector<Aws::String>>
+    BatchModifyClusterSnapshotsRequest& WithSnapshotIdentifierList(SnapshotIdentifierListT&& value) { SetSnapshotIdentifierList(std::forward<SnapshotIdentifierListT>(value)); return *this;}
+    template<typename SnapshotIdentifierListT = Aws::String>
+    BatchModifyClusterSnapshotsRequest& AddSnapshotIdentifierList(SnapshotIdentifierListT&& value) { m_snapshotIdentifierListHasBeenSet = true; m_snapshotIdentifierList.emplace_back(std::forward<SnapshotIdentifierListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -62,7 +61,7 @@ namespace Model
      * you want to suppress the errors and delete the snapshots, use the force option.
      * </p>
      */
-    inline int GetManualSnapshotRetentionPeriod() const{ return m_manualSnapshotRetentionPeriod; }
+    inline int GetManualSnapshotRetentionPeriod() const { return m_manualSnapshotRetentionPeriod; }
     inline bool ManualSnapshotRetentionPeriodHasBeenSet() const { return m_manualSnapshotRetentionPeriodHasBeenSet; }
     inline void SetManualSnapshotRetentionPeriod(int value) { m_manualSnapshotRetentionPeriodHasBeenSet = true; m_manualSnapshotRetentionPeriod = value; }
     inline BatchModifyClusterSnapshotsRequest& WithManualSnapshotRetentionPeriod(int value) { SetManualSnapshotRetentionPeriod(value); return *this;}
@@ -73,7 +72,7 @@ namespace Model
      * <p>A boolean value indicating whether to override an exception if the retention
      * period has passed. </p>
      */
-    inline bool GetForce() const{ return m_force; }
+    inline bool GetForce() const { return m_force; }
     inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
     inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
     inline BatchModifyClusterSnapshotsRequest& WithForce(bool value) { SetForce(value); return *this;}
@@ -83,10 +82,10 @@ namespace Model
     Aws::Vector<Aws::String> m_snapshotIdentifierList;
     bool m_snapshotIdentifierListHasBeenSet = false;
 
-    int m_manualSnapshotRetentionPeriod;
+    int m_manualSnapshotRetentionPeriod{0};
     bool m_manualSnapshotRetentionPeriodHasBeenSet = false;
 
-    bool m_force;
+    bool m_force{false};
     bool m_forceHasBeenSet = false;
   };
 

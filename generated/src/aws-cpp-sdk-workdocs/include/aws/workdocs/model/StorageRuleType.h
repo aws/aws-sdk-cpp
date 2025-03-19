@@ -31,7 +31,7 @@ namespace Model
   class StorageRuleType
   {
   public:
-    AWS_WORKDOCS_API StorageRuleType();
+    AWS_WORKDOCS_API StorageRuleType() = default;
     AWS_WORKDOCS_API StorageRuleType(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKDOCS_API StorageRuleType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKDOCS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>The amount of storage allocated, in bytes.</p>
      */
-    inline long long GetStorageAllocatedInBytes() const{ return m_storageAllocatedInBytes; }
+    inline long long GetStorageAllocatedInBytes() const { return m_storageAllocatedInBytes; }
     inline bool StorageAllocatedInBytesHasBeenSet() const { return m_storageAllocatedInBytesHasBeenSet; }
     inline void SetStorageAllocatedInBytes(long long value) { m_storageAllocatedInBytesHasBeenSet = true; m_storageAllocatedInBytes = value; }
     inline StorageRuleType& WithStorageAllocatedInBytes(long long value) { SetStorageAllocatedInBytes(value); return *this;}
@@ -51,19 +51,17 @@ namespace Model
     /**
      * <p>The type of storage.</p>
      */
-    inline const StorageType& GetStorageType() const{ return m_storageType; }
+    inline StorageType GetStorageType() const { return m_storageType; }
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
-    inline void SetStorageType(const StorageType& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
-    inline void SetStorageType(StorageType&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
-    inline StorageRuleType& WithStorageType(const StorageType& value) { SetStorageType(value); return *this;}
-    inline StorageRuleType& WithStorageType(StorageType&& value) { SetStorageType(std::move(value)); return *this;}
+    inline void SetStorageType(StorageType value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
+    inline StorageRuleType& WithStorageType(StorageType value) { SetStorageType(value); return *this;}
     ///@}
   private:
 
-    long long m_storageAllocatedInBytes;
+    long long m_storageAllocatedInBytes{0};
     bool m_storageAllocatedInBytesHasBeenSet = false;
 
-    StorageType m_storageType;
+    StorageType m_storageType{StorageType::NOT_SET};
     bool m_storageTypeHasBeenSet = false;
   };
 

@@ -45,7 +45,7 @@ namespace Model
   class DocumentAttributeCondition
   {
   public:
-    AWS_QBUSINESS_API DocumentAttributeCondition();
+    AWS_QBUSINESS_API DocumentAttributeCondition() = default;
     AWS_QBUSINESS_API DocumentAttributeCondition(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API DocumentAttributeCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -59,14 +59,12 @@ namespace Model
      * Business currently doesn't support <code>_document_body</code> as an attribute
      * key used for the condition.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline DocumentAttributeCondition& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline DocumentAttributeCondition& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline DocumentAttributeCondition& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    DocumentAttributeCondition& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,29 +75,27 @@ namespace Model
      * Business currently does not support <code>_document_body</code> as an attribute
      * key used for the condition.</p>
      */
-    inline const DocumentEnrichmentConditionOperator& GetOperator() const{ return m_operator; }
+    inline DocumentEnrichmentConditionOperator GetOperator() const { return m_operator; }
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-    inline void SetOperator(const DocumentEnrichmentConditionOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-    inline void SetOperator(DocumentEnrichmentConditionOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-    inline DocumentAttributeCondition& WithOperator(const DocumentEnrichmentConditionOperator& value) { SetOperator(value); return *this;}
-    inline DocumentAttributeCondition& WithOperator(DocumentEnrichmentConditionOperator&& value) { SetOperator(std::move(value)); return *this;}
+    inline void SetOperator(DocumentEnrichmentConditionOperator value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline DocumentAttributeCondition& WithOperator(DocumentEnrichmentConditionOperator value) { SetOperator(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const DocumentAttributeValue& GetValue() const{ return m_value; }
+    inline const DocumentAttributeValue& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const DocumentAttributeValue& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(DocumentAttributeValue&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline DocumentAttributeCondition& WithValue(const DocumentAttributeValue& value) { SetValue(value); return *this;}
-    inline DocumentAttributeCondition& WithValue(DocumentAttributeValue&& value) { SetValue(std::move(value)); return *this;}
+    template<typename ValueT = DocumentAttributeValue>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = DocumentAttributeValue>
+    DocumentAttributeCondition& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_key;
     bool m_keyHasBeenSet = false;
 
-    DocumentEnrichmentConditionOperator m_operator;
+    DocumentEnrichmentConditionOperator m_operator{DocumentEnrichmentConditionOperator::NOT_SET};
     bool m_operatorHasBeenSet = false;
 
     DocumentAttributeValue m_value;

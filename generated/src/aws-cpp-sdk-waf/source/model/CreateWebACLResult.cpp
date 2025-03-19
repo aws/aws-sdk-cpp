@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateWebACLResult::CreateWebACLResult()
-{
-}
-
 CreateWebACLResult::CreateWebACLResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ CreateWebACLResult& CreateWebACLResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("WebACL"))
   {
     m_webACL = jsonValue.GetObject("WebACL");
-
+    m_webACLHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChangeToken"))
   {
     m_changeToken = jsonValue.GetString("ChangeToken");
-
+    m_changeTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

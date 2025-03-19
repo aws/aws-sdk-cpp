@@ -21,7 +21,7 @@ namespace Model
   class DeprovisionIpamByoasnRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DeprovisionIpamByoasnRequest();
+    AWS_EC2_API DeprovisionIpamByoasnRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,7 +43,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DeprovisionIpamByoasnRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -53,32 +53,28 @@ namespace Model
     /**
      * <p>The IPAM ID.</p>
      */
-    inline const Aws::String& GetIpamId() const{ return m_ipamId; }
+    inline const Aws::String& GetIpamId() const { return m_ipamId; }
     inline bool IpamIdHasBeenSet() const { return m_ipamIdHasBeenSet; }
-    inline void SetIpamId(const Aws::String& value) { m_ipamIdHasBeenSet = true; m_ipamId = value; }
-    inline void SetIpamId(Aws::String&& value) { m_ipamIdHasBeenSet = true; m_ipamId = std::move(value); }
-    inline void SetIpamId(const char* value) { m_ipamIdHasBeenSet = true; m_ipamId.assign(value); }
-    inline DeprovisionIpamByoasnRequest& WithIpamId(const Aws::String& value) { SetIpamId(value); return *this;}
-    inline DeprovisionIpamByoasnRequest& WithIpamId(Aws::String&& value) { SetIpamId(std::move(value)); return *this;}
-    inline DeprovisionIpamByoasnRequest& WithIpamId(const char* value) { SetIpamId(value); return *this;}
+    template<typename IpamIdT = Aws::String>
+    void SetIpamId(IpamIdT&& value) { m_ipamIdHasBeenSet = true; m_ipamId = std::forward<IpamIdT>(value); }
+    template<typename IpamIdT = Aws::String>
+    DeprovisionIpamByoasnRequest& WithIpamId(IpamIdT&& value) { SetIpamId(std::forward<IpamIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An ASN.</p>
      */
-    inline const Aws::String& GetAsn() const{ return m_asn; }
+    inline const Aws::String& GetAsn() const { return m_asn; }
     inline bool AsnHasBeenSet() const { return m_asnHasBeenSet; }
-    inline void SetAsn(const Aws::String& value) { m_asnHasBeenSet = true; m_asn = value; }
-    inline void SetAsn(Aws::String&& value) { m_asnHasBeenSet = true; m_asn = std::move(value); }
-    inline void SetAsn(const char* value) { m_asnHasBeenSet = true; m_asn.assign(value); }
-    inline DeprovisionIpamByoasnRequest& WithAsn(const Aws::String& value) { SetAsn(value); return *this;}
-    inline DeprovisionIpamByoasnRequest& WithAsn(Aws::String&& value) { SetAsn(std::move(value)); return *this;}
-    inline DeprovisionIpamByoasnRequest& WithAsn(const char* value) { SetAsn(value); return *this;}
+    template<typename AsnT = Aws::String>
+    void SetAsn(AsnT&& value) { m_asnHasBeenSet = true; m_asn = std::forward<AsnT>(value); }
+    template<typename AsnT = Aws::String>
+    DeprovisionIpamByoasnRequest& WithAsn(AsnT&& value) { SetAsn(std::forward<AsnT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_ipamId;

@@ -12,11 +12,6 @@ using namespace Aws::ConnectCampaigns::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteInstanceOnboardingJobRequest::DeleteInstanceOnboardingJobRequest() : 
-    m_connectInstanceIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteInstanceOnboardingJobRequest::SerializePayload() const
 {
   return {};

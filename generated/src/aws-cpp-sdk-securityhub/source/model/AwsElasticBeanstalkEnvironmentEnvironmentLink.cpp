@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsElasticBeanstalkEnvironmentEnvironmentLink::AwsElasticBeanstalkEnvironmentEnvironmentLink() : 
-    m_environmentNameHasBeenSet(false),
-    m_linkNameHasBeenSet(false)
-{
-}
-
 AwsElasticBeanstalkEnvironmentEnvironmentLink::AwsElasticBeanstalkEnvironmentEnvironmentLink(JsonView jsonValue)
-  : AwsElasticBeanstalkEnvironmentEnvironmentLink()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsElasticBeanstalkEnvironmentEnvironmentLink& AwsElasticBeanstalkEnvironmentEnv
   if(jsonValue.ValueExists("EnvironmentName"))
   {
     m_environmentName = jsonValue.GetString("EnvironmentName");
-
     m_environmentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LinkName"))
   {
     m_linkName = jsonValue.GetString("LinkName");
-
     m_linkNameHasBeenSet = true;
   }
-
   return *this;
 }
 

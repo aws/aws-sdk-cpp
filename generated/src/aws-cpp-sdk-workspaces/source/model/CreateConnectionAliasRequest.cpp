@@ -12,12 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateConnectionAliasRequest::CreateConnectionAliasRequest() : 
-    m_connectionStringHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateConnectionAliasRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -28,7 +28,7 @@ namespace Model
   class DeleteGatewayRouteResult
   {
   public:
-    AWS_APPMESH_API DeleteGatewayRouteResult();
+    AWS_APPMESH_API DeleteGatewayRouteResult() = default;
     AWS_APPMESH_API DeleteGatewayRouteResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPMESH_API DeleteGatewayRouteResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The gateway route that was deleted.</p>
      */
-    inline const GatewayRouteData& GetGatewayRoute() const{ return m_gatewayRoute; }
-    inline void SetGatewayRoute(const GatewayRouteData& value) { m_gatewayRoute = value; }
-    inline void SetGatewayRoute(GatewayRouteData&& value) { m_gatewayRoute = std::move(value); }
-    inline DeleteGatewayRouteResult& WithGatewayRoute(const GatewayRouteData& value) { SetGatewayRoute(value); return *this;}
-    inline DeleteGatewayRouteResult& WithGatewayRoute(GatewayRouteData&& value) { SetGatewayRoute(std::move(value)); return *this;}
+    inline const GatewayRouteData& GetGatewayRoute() const { return m_gatewayRoute; }
+    template<typename GatewayRouteT = GatewayRouteData>
+    void SetGatewayRoute(GatewayRouteT&& value) { m_gatewayRouteHasBeenSet = true; m_gatewayRoute = std::forward<GatewayRouteT>(value); }
+    template<typename GatewayRouteT = GatewayRouteData>
+    DeleteGatewayRouteResult& WithGatewayRoute(GatewayRouteT&& value) { SetGatewayRoute(std::forward<GatewayRouteT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteGatewayRouteResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteGatewayRouteResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteGatewayRouteResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteGatewayRouteResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     GatewayRouteData m_gatewayRoute;
+    bool m_gatewayRouteHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

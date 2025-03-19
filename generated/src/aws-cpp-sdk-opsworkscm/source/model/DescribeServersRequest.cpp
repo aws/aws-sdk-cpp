@@ -12,14 +12,6 @@ using namespace Aws::OpsWorksCM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeServersRequest::DescribeServersRequest() : 
-    m_serverNameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeServersRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -32,7 +32,7 @@ namespace Model
   class LicenseServerSettings
   {
   public:
-    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API LicenseServerSettings();
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API LicenseServerSettings() = default;
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API LicenseServerSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API LicenseServerSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,31 +43,29 @@ namespace Model
      * <p>The <code>ServerSettings</code> resource contains the settings for your
      * server.</p>
      */
-    inline const ServerSettings& GetServerSettings() const{ return m_serverSettings; }
+    inline const ServerSettings& GetServerSettings() const { return m_serverSettings; }
     inline bool ServerSettingsHasBeenSet() const { return m_serverSettingsHasBeenSet; }
-    inline void SetServerSettings(const ServerSettings& value) { m_serverSettingsHasBeenSet = true; m_serverSettings = value; }
-    inline void SetServerSettings(ServerSettings&& value) { m_serverSettingsHasBeenSet = true; m_serverSettings = std::move(value); }
-    inline LicenseServerSettings& WithServerSettings(const ServerSettings& value) { SetServerSettings(value); return *this;}
-    inline LicenseServerSettings& WithServerSettings(ServerSettings&& value) { SetServerSettings(std::move(value)); return *this;}
+    template<typename ServerSettingsT = ServerSettings>
+    void SetServerSettings(ServerSettingsT&& value) { m_serverSettingsHasBeenSet = true; m_serverSettings = std::forward<ServerSettingsT>(value); }
+    template<typename ServerSettingsT = ServerSettings>
+    LicenseServerSettings& WithServerSettings(ServerSettingsT&& value) { SetServerSettings(std::forward<ServerSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of license server.</p>
      */
-    inline const ServerType& GetServerType() const{ return m_serverType; }
+    inline ServerType GetServerType() const { return m_serverType; }
     inline bool ServerTypeHasBeenSet() const { return m_serverTypeHasBeenSet; }
-    inline void SetServerType(const ServerType& value) { m_serverTypeHasBeenSet = true; m_serverType = value; }
-    inline void SetServerType(ServerType&& value) { m_serverTypeHasBeenSet = true; m_serverType = std::move(value); }
-    inline LicenseServerSettings& WithServerType(const ServerType& value) { SetServerType(value); return *this;}
-    inline LicenseServerSettings& WithServerType(ServerType&& value) { SetServerType(std::move(value)); return *this;}
+    inline void SetServerType(ServerType value) { m_serverTypeHasBeenSet = true; m_serverType = value; }
+    inline LicenseServerSettings& WithServerType(ServerType value) { SetServerType(value); return *this;}
     ///@}
   private:
 
     ServerSettings m_serverSettings;
     bool m_serverSettingsHasBeenSet = false;
 
-    ServerType m_serverType;
+    ServerType m_serverType{ServerType::NOT_SET};
     bool m_serverTypeHasBeenSet = false;
   };
 

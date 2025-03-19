@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListArchiveRulesRequest::ListArchiveRulesRequest() : 
-    m_analyzerNameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListArchiveRulesRequest::SerializePayload() const
 {
   return {};

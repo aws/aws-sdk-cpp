@@ -29,7 +29,7 @@ namespace Model
   class GetAssociatedPackageGroupResult
   {
   public:
-    AWS_CODEARTIFACT_API GetAssociatedPackageGroupResult();
+    AWS_CODEARTIFACT_API GetAssociatedPackageGroupResult() = default;
     AWS_CODEARTIFACT_API GetAssociatedPackageGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODEARTIFACT_API GetAssociatedPackageGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,11 +38,11 @@ namespace Model
     /**
      * <p>The package group that is associated with the requested package.</p>
      */
-    inline const PackageGroupDescription& GetPackageGroup() const{ return m_packageGroup; }
-    inline void SetPackageGroup(const PackageGroupDescription& value) { m_packageGroup = value; }
-    inline void SetPackageGroup(PackageGroupDescription&& value) { m_packageGroup = std::move(value); }
-    inline GetAssociatedPackageGroupResult& WithPackageGroup(const PackageGroupDescription& value) { SetPackageGroup(value); return *this;}
-    inline GetAssociatedPackageGroupResult& WithPackageGroup(PackageGroupDescription&& value) { SetPackageGroup(std::move(value)); return *this;}
+    inline const PackageGroupDescription& GetPackageGroup() const { return m_packageGroup; }
+    template<typename PackageGroupT = PackageGroupDescription>
+    void SetPackageGroup(PackageGroupT&& value) { m_packageGroupHasBeenSet = true; m_packageGroup = std::forward<PackageGroupT>(value); }
+    template<typename PackageGroupT = PackageGroupDescription>
+    GetAssociatedPackageGroupResult& WithPackageGroup(PackageGroupT&& value) { SetPackageGroup(std::forward<PackageGroupT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,30 +51,29 @@ namespace Model
      * group. A strong match is also known as an exact match, and a weak match is known
      * as a relative match.</p>
      */
-    inline const PackageGroupAssociationType& GetAssociationType() const{ return m_associationType; }
-    inline void SetAssociationType(const PackageGroupAssociationType& value) { m_associationType = value; }
-    inline void SetAssociationType(PackageGroupAssociationType&& value) { m_associationType = std::move(value); }
-    inline GetAssociatedPackageGroupResult& WithAssociationType(const PackageGroupAssociationType& value) { SetAssociationType(value); return *this;}
-    inline GetAssociatedPackageGroupResult& WithAssociationType(PackageGroupAssociationType&& value) { SetAssociationType(std::move(value)); return *this;}
+    inline PackageGroupAssociationType GetAssociationType() const { return m_associationType; }
+    inline void SetAssociationType(PackageGroupAssociationType value) { m_associationTypeHasBeenSet = true; m_associationType = value; }
+    inline GetAssociatedPackageGroupResult& WithAssociationType(PackageGroupAssociationType value) { SetAssociationType(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetAssociatedPackageGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetAssociatedPackageGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetAssociatedPackageGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetAssociatedPackageGroupResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     PackageGroupDescription m_packageGroup;
+    bool m_packageGroupHasBeenSet = false;
 
-    PackageGroupAssociationType m_associationType;
+    PackageGroupAssociationType m_associationType{PackageGroupAssociationType::NOT_SET};
+    bool m_associationTypeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

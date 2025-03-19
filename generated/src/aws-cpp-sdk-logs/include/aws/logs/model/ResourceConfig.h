@@ -32,7 +32,7 @@ namespace Model
   class ResourceConfig
   {
   public:
-    AWS_CLOUDWATCHLOGS_API ResourceConfig();
+    AWS_CLOUDWATCHLOGS_API ResourceConfig() = default;
     AWS_CLOUDWATCHLOGS_API ResourceConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API ResourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>This structure contains configuration details about an integration between
      * CloudWatch Logs and OpenSearch Service.</p>
      */
-    inline const OpenSearchResourceConfig& GetOpenSearchResourceConfig() const{ return m_openSearchResourceConfig; }
+    inline const OpenSearchResourceConfig& GetOpenSearchResourceConfig() const { return m_openSearchResourceConfig; }
     inline bool OpenSearchResourceConfigHasBeenSet() const { return m_openSearchResourceConfigHasBeenSet; }
-    inline void SetOpenSearchResourceConfig(const OpenSearchResourceConfig& value) { m_openSearchResourceConfigHasBeenSet = true; m_openSearchResourceConfig = value; }
-    inline void SetOpenSearchResourceConfig(OpenSearchResourceConfig&& value) { m_openSearchResourceConfigHasBeenSet = true; m_openSearchResourceConfig = std::move(value); }
-    inline ResourceConfig& WithOpenSearchResourceConfig(const OpenSearchResourceConfig& value) { SetOpenSearchResourceConfig(value); return *this;}
-    inline ResourceConfig& WithOpenSearchResourceConfig(OpenSearchResourceConfig&& value) { SetOpenSearchResourceConfig(std::move(value)); return *this;}
+    template<typename OpenSearchResourceConfigT = OpenSearchResourceConfig>
+    void SetOpenSearchResourceConfig(OpenSearchResourceConfigT&& value) { m_openSearchResourceConfigHasBeenSet = true; m_openSearchResourceConfig = std::forward<OpenSearchResourceConfigT>(value); }
+    template<typename OpenSearchResourceConfigT = OpenSearchResourceConfig>
+    ResourceConfig& WithOpenSearchResourceConfig(OpenSearchResourceConfigT&& value) { SetOpenSearchResourceConfig(std::forward<OpenSearchResourceConfigT>(value)); return *this;}
     ///@}
   private:
 

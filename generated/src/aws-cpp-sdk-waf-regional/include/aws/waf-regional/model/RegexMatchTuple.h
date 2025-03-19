@@ -50,7 +50,7 @@ namespace Model
   class RegexMatchTuple
   {
   public:
-    AWS_WAFREGIONAL_API RegexMatchTuple();
+    AWS_WAFREGIONAL_API RegexMatchTuple() = default;
     AWS_WAFREGIONAL_API RegexMatchTuple(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFREGIONAL_API RegexMatchTuple& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFREGIONAL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -61,12 +61,12 @@ namespace Model
      * <p>Specifies where in a web request to look for the
      * <code>RegexPatternSet</code>.</p>
      */
-    inline const FieldToMatch& GetFieldToMatch() const{ return m_fieldToMatch; }
+    inline const FieldToMatch& GetFieldToMatch() const { return m_fieldToMatch; }
     inline bool FieldToMatchHasBeenSet() const { return m_fieldToMatchHasBeenSet; }
-    inline void SetFieldToMatch(const FieldToMatch& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = value; }
-    inline void SetFieldToMatch(FieldToMatch&& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = std::move(value); }
-    inline RegexMatchTuple& WithFieldToMatch(const FieldToMatch& value) { SetFieldToMatch(value); return *this;}
-    inline RegexMatchTuple& WithFieldToMatch(FieldToMatch&& value) { SetFieldToMatch(std::move(value)); return *this;}
+    template<typename FieldToMatchT = FieldToMatch>
+    void SetFieldToMatch(FieldToMatchT&& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = std::forward<FieldToMatchT>(value); }
+    template<typename FieldToMatchT = FieldToMatch>
+    RegexMatchTuple& WithFieldToMatch(FieldToMatchT&& value) { SetFieldToMatch(std::forward<FieldToMatchT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,12 +105,10 @@ namespace Model
      * option to decode a URL-encoded value.</p> <p> <b>NONE</b> </p> <p>Specify
      * <code>NONE</code> if you don't want to perform any text transformations.</p>
      */
-    inline const TextTransformation& GetTextTransformation() const{ return m_textTransformation; }
+    inline TextTransformation GetTextTransformation() const { return m_textTransformation; }
     inline bool TextTransformationHasBeenSet() const { return m_textTransformationHasBeenSet; }
-    inline void SetTextTransformation(const TextTransformation& value) { m_textTransformationHasBeenSet = true; m_textTransformation = value; }
-    inline void SetTextTransformation(TextTransformation&& value) { m_textTransformationHasBeenSet = true; m_textTransformation = std::move(value); }
-    inline RegexMatchTuple& WithTextTransformation(const TextTransformation& value) { SetTextTransformation(value); return *this;}
-    inline RegexMatchTuple& WithTextTransformation(TextTransformation&& value) { SetTextTransformation(std::move(value)); return *this;}
+    inline void SetTextTransformation(TextTransformation value) { m_textTransformationHasBeenSet = true; m_textTransformation = value; }
+    inline RegexMatchTuple& WithTextTransformation(TextTransformation value) { SetTextTransformation(value); return *this;}
     ///@}
 
     ///@{
@@ -125,21 +123,19 @@ namespace Model
      * <a>DeleteRegexPatternSet</a>).</p> <p> <code>RegexPatternSetId</code> is
      * returned by <a>CreateRegexPatternSet</a> and by <a>ListRegexPatternSets</a>.</p>
      */
-    inline const Aws::String& GetRegexPatternSetId() const{ return m_regexPatternSetId; }
+    inline const Aws::String& GetRegexPatternSetId() const { return m_regexPatternSetId; }
     inline bool RegexPatternSetIdHasBeenSet() const { return m_regexPatternSetIdHasBeenSet; }
-    inline void SetRegexPatternSetId(const Aws::String& value) { m_regexPatternSetIdHasBeenSet = true; m_regexPatternSetId = value; }
-    inline void SetRegexPatternSetId(Aws::String&& value) { m_regexPatternSetIdHasBeenSet = true; m_regexPatternSetId = std::move(value); }
-    inline void SetRegexPatternSetId(const char* value) { m_regexPatternSetIdHasBeenSet = true; m_regexPatternSetId.assign(value); }
-    inline RegexMatchTuple& WithRegexPatternSetId(const Aws::String& value) { SetRegexPatternSetId(value); return *this;}
-    inline RegexMatchTuple& WithRegexPatternSetId(Aws::String&& value) { SetRegexPatternSetId(std::move(value)); return *this;}
-    inline RegexMatchTuple& WithRegexPatternSetId(const char* value) { SetRegexPatternSetId(value); return *this;}
+    template<typename RegexPatternSetIdT = Aws::String>
+    void SetRegexPatternSetId(RegexPatternSetIdT&& value) { m_regexPatternSetIdHasBeenSet = true; m_regexPatternSetId = std::forward<RegexPatternSetIdT>(value); }
+    template<typename RegexPatternSetIdT = Aws::String>
+    RegexMatchTuple& WithRegexPatternSetId(RegexPatternSetIdT&& value) { SetRegexPatternSetId(std::forward<RegexPatternSetIdT>(value)); return *this;}
     ///@}
   private:
 
     FieldToMatch m_fieldToMatch;
     bool m_fieldToMatchHasBeenSet = false;
 
-    TextTransformation m_textTransformation;
+    TextTransformation m_textTransformation{TextTransformation::NOT_SET};
     bool m_textTransformationHasBeenSet = false;
 
     Aws::String m_regexPatternSetId;

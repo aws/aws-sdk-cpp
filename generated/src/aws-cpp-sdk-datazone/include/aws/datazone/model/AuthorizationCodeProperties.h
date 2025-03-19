@@ -32,7 +32,7 @@ namespace Model
   class AuthorizationCodeProperties
   {
   public:
-    AWS_DATAZONE_API AuthorizationCodeProperties();
+    AWS_DATAZONE_API AuthorizationCodeProperties() = default;
     AWS_DATAZONE_API AuthorizationCodeProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API AuthorizationCodeProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The authorization code of a connection.</p>
      */
-    inline const Aws::String& GetAuthorizationCode() const{ return m_authorizationCode; }
+    inline const Aws::String& GetAuthorizationCode() const { return m_authorizationCode; }
     inline bool AuthorizationCodeHasBeenSet() const { return m_authorizationCodeHasBeenSet; }
-    inline void SetAuthorizationCode(const Aws::String& value) { m_authorizationCodeHasBeenSet = true; m_authorizationCode = value; }
-    inline void SetAuthorizationCode(Aws::String&& value) { m_authorizationCodeHasBeenSet = true; m_authorizationCode = std::move(value); }
-    inline void SetAuthorizationCode(const char* value) { m_authorizationCodeHasBeenSet = true; m_authorizationCode.assign(value); }
-    inline AuthorizationCodeProperties& WithAuthorizationCode(const Aws::String& value) { SetAuthorizationCode(value); return *this;}
-    inline AuthorizationCodeProperties& WithAuthorizationCode(Aws::String&& value) { SetAuthorizationCode(std::move(value)); return *this;}
-    inline AuthorizationCodeProperties& WithAuthorizationCode(const char* value) { SetAuthorizationCode(value); return *this;}
+    template<typename AuthorizationCodeT = Aws::String>
+    void SetAuthorizationCode(AuthorizationCodeT&& value) { m_authorizationCodeHasBeenSet = true; m_authorizationCode = std::forward<AuthorizationCodeT>(value); }
+    template<typename AuthorizationCodeT = Aws::String>
+    AuthorizationCodeProperties& WithAuthorizationCode(AuthorizationCodeT&& value) { SetAuthorizationCode(std::forward<AuthorizationCodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The redirect URI of a connection.</p>
      */
-    inline const Aws::String& GetRedirectUri() const{ return m_redirectUri; }
+    inline const Aws::String& GetRedirectUri() const { return m_redirectUri; }
     inline bool RedirectUriHasBeenSet() const { return m_redirectUriHasBeenSet; }
-    inline void SetRedirectUri(const Aws::String& value) { m_redirectUriHasBeenSet = true; m_redirectUri = value; }
-    inline void SetRedirectUri(Aws::String&& value) { m_redirectUriHasBeenSet = true; m_redirectUri = std::move(value); }
-    inline void SetRedirectUri(const char* value) { m_redirectUriHasBeenSet = true; m_redirectUri.assign(value); }
-    inline AuthorizationCodeProperties& WithRedirectUri(const Aws::String& value) { SetRedirectUri(value); return *this;}
-    inline AuthorizationCodeProperties& WithRedirectUri(Aws::String&& value) { SetRedirectUri(std::move(value)); return *this;}
-    inline AuthorizationCodeProperties& WithRedirectUri(const char* value) { SetRedirectUri(value); return *this;}
+    template<typename RedirectUriT = Aws::String>
+    void SetRedirectUri(RedirectUriT&& value) { m_redirectUriHasBeenSet = true; m_redirectUri = std::forward<RedirectUriT>(value); }
+    template<typename RedirectUriT = Aws::String>
+    AuthorizationCodeProperties& WithRedirectUri(RedirectUriT&& value) { SetRedirectUri(std::forward<RedirectUriT>(value)); return *this;}
     ///@}
   private:
 

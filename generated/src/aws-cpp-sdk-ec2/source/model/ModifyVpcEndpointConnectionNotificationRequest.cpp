@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ModifyVpcEndpointConnectionNotificationRequest::ModifyVpcEndpointConnectionNotificationRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_connectionNotificationIdHasBeenSet(false),
-    m_connectionNotificationArnHasBeenSet(false),
-    m_connectionEventsHasBeenSet(false)
-{
-}
-
 Aws::String ModifyVpcEndpointConnectionNotificationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -12,13 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutDataSetRefreshPropertiesRequest::PutDataSetRefreshPropertiesRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_dataSetIdHasBeenSet(false),
-    m_dataSetRefreshPropertiesHasBeenSet(false)
-{
-}
-
 Aws::String PutDataSetRefreshPropertiesRequest::SerializePayload() const
 {
   JsonValue payload;

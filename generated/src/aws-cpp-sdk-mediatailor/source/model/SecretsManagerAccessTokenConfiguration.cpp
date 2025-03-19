@@ -18,15 +18,7 @@ namespace MediaTailor
 namespace Model
 {
 
-SecretsManagerAccessTokenConfiguration::SecretsManagerAccessTokenConfiguration() : 
-    m_headerNameHasBeenSet(false),
-    m_secretArnHasBeenSet(false),
-    m_secretStringKeyHasBeenSet(false)
-{
-}
-
 SecretsManagerAccessTokenConfiguration::SecretsManagerAccessTokenConfiguration(JsonView jsonValue)
-  : SecretsManagerAccessTokenConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ SecretsManagerAccessTokenConfiguration& SecretsManagerAccessTokenConfiguration::
   if(jsonValue.ValueExists("HeaderName"))
   {
     m_headerName = jsonValue.GetString("HeaderName");
-
     m_headerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretArn"))
   {
     m_secretArn = jsonValue.GetString("SecretArn");
-
     m_secretArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretStringKey"))
   {
     m_secretStringKey = jsonValue.GetString("SecretStringKey");
-
     m_secretStringKeyHasBeenSet = true;
   }
-
   return *this;
 }
 

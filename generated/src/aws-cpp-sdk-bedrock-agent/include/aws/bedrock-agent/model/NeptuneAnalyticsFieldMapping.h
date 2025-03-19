@@ -32,7 +32,7 @@ namespace Model
   class NeptuneAnalyticsFieldMapping
   {
   public:
-    AWS_BEDROCKAGENT_API NeptuneAnalyticsFieldMapping();
+    AWS_BEDROCKAGENT_API NeptuneAnalyticsFieldMapping() = default;
     AWS_BEDROCKAGENT_API NeptuneAnalyticsFieldMapping(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API NeptuneAnalyticsFieldMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The name of the field in which Amazon Bedrock stores metadata about the
      * vector store.</p>
      */
-    inline const Aws::String& GetMetadataField() const{ return m_metadataField; }
+    inline const Aws::String& GetMetadataField() const { return m_metadataField; }
     inline bool MetadataFieldHasBeenSet() const { return m_metadataFieldHasBeenSet; }
-    inline void SetMetadataField(const Aws::String& value) { m_metadataFieldHasBeenSet = true; m_metadataField = value; }
-    inline void SetMetadataField(Aws::String&& value) { m_metadataFieldHasBeenSet = true; m_metadataField = std::move(value); }
-    inline void SetMetadataField(const char* value) { m_metadataFieldHasBeenSet = true; m_metadataField.assign(value); }
-    inline NeptuneAnalyticsFieldMapping& WithMetadataField(const Aws::String& value) { SetMetadataField(value); return *this;}
-    inline NeptuneAnalyticsFieldMapping& WithMetadataField(Aws::String&& value) { SetMetadataField(std::move(value)); return *this;}
-    inline NeptuneAnalyticsFieldMapping& WithMetadataField(const char* value) { SetMetadataField(value); return *this;}
+    template<typename MetadataFieldT = Aws::String>
+    void SetMetadataField(MetadataFieldT&& value) { m_metadataFieldHasBeenSet = true; m_metadataField = std::forward<MetadataFieldT>(value); }
+    template<typename MetadataFieldT = Aws::String>
+    NeptuneAnalyticsFieldMapping& WithMetadataField(MetadataFieldT&& value) { SetMetadataField(std::forward<MetadataFieldT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The name of the field in which Amazon Bedrock stores the raw text from your
      * data. The text is split according to the chunking strategy you choose.</p>
      */
-    inline const Aws::String& GetTextField() const{ return m_textField; }
+    inline const Aws::String& GetTextField() const { return m_textField; }
     inline bool TextFieldHasBeenSet() const { return m_textFieldHasBeenSet; }
-    inline void SetTextField(const Aws::String& value) { m_textFieldHasBeenSet = true; m_textField = value; }
-    inline void SetTextField(Aws::String&& value) { m_textFieldHasBeenSet = true; m_textField = std::move(value); }
-    inline void SetTextField(const char* value) { m_textFieldHasBeenSet = true; m_textField.assign(value); }
-    inline NeptuneAnalyticsFieldMapping& WithTextField(const Aws::String& value) { SetTextField(value); return *this;}
-    inline NeptuneAnalyticsFieldMapping& WithTextField(Aws::String&& value) { SetTextField(std::move(value)); return *this;}
-    inline NeptuneAnalyticsFieldMapping& WithTextField(const char* value) { SetTextField(value); return *this;}
+    template<typename TextFieldT = Aws::String>
+    void SetTextField(TextFieldT&& value) { m_textFieldHasBeenSet = true; m_textField = std::forward<TextFieldT>(value); }
+    template<typename TextFieldT = Aws::String>
+    NeptuneAnalyticsFieldMapping& WithTextField(TextFieldT&& value) { SetTextField(std::forward<TextFieldT>(value)); return *this;}
     ///@}
   private:
 

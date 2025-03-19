@@ -37,7 +37,7 @@ namespace Model
   class X12Details
   {
   public:
-    AWS_B2BI_API X12Details();
+    AWS_B2BI_API X12Details() = default;
     AWS_B2BI_API X12Details(Aws::Utils::Json::JsonView jsonValue);
     AWS_B2BI_API X12Details& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_B2BI_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,31 +49,27 @@ namespace Model
      * set. Transaction sets are maintained by the X12 Accredited Standards
      * Committee.</p>
      */
-    inline const X12TransactionSet& GetTransactionSet() const{ return m_transactionSet; }
+    inline X12TransactionSet GetTransactionSet() const { return m_transactionSet; }
     inline bool TransactionSetHasBeenSet() const { return m_transactionSetHasBeenSet; }
-    inline void SetTransactionSet(const X12TransactionSet& value) { m_transactionSetHasBeenSet = true; m_transactionSet = value; }
-    inline void SetTransactionSet(X12TransactionSet&& value) { m_transactionSetHasBeenSet = true; m_transactionSet = std::move(value); }
-    inline X12Details& WithTransactionSet(const X12TransactionSet& value) { SetTransactionSet(value); return *this;}
-    inline X12Details& WithTransactionSet(X12TransactionSet&& value) { SetTransactionSet(std::move(value)); return *this;}
+    inline void SetTransactionSet(X12TransactionSet value) { m_transactionSetHasBeenSet = true; m_transactionSet = value; }
+    inline X12Details& WithTransactionSet(X12TransactionSet value) { SetTransactionSet(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Returns the version to use for the specified X12 transaction set.</p>
      */
-    inline const X12Version& GetVersion() const{ return m_version; }
+    inline X12Version GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const X12Version& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(X12Version&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline X12Details& WithVersion(const X12Version& value) { SetVersion(value); return *this;}
-    inline X12Details& WithVersion(X12Version&& value) { SetVersion(std::move(value)); return *this;}
+    inline void SetVersion(X12Version value) { m_versionHasBeenSet = true; m_version = value; }
+    inline X12Details& WithVersion(X12Version value) { SetVersion(value); return *this;}
     ///@}
   private:
 
-    X12TransactionSet m_transactionSet;
+    X12TransactionSet m_transactionSet{X12TransactionSet::NOT_SET};
     bool m_transactionSetHasBeenSet = false;
 
-    X12Version m_version;
+    X12Version m_version{X12Version::NOT_SET};
     bool m_versionHasBeenSet = false;
   };
 

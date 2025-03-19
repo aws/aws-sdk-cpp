@@ -18,13 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-TextInputEvent::TextInputEvent() : 
-    m_userMessageHasBeenSet(false)
-{
-}
-
 TextInputEvent::TextInputEvent(JsonView jsonValue)
-  : TextInputEvent()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TextInputEvent& TextInputEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("userMessage"))
   {
     m_userMessage = jsonValue.GetString("userMessage");
-
     m_userMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

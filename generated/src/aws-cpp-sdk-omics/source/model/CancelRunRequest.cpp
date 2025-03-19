@@ -12,11 +12,6 @@ using namespace Aws::Omics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelRunRequest::CancelRunRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String CancelRunRequest::SerializePayload() const
 {
   return {};

@@ -18,14 +18,7 @@ namespace CleanRoomsML
 namespace Model
 {
 
-ProtectedQueryInputParameters::ProtectedQueryInputParameters() : 
-    m_sqlParametersHasBeenSet(false),
-    m_computeConfigurationHasBeenSet(false)
-{
-}
-
 ProtectedQueryInputParameters::ProtectedQueryInputParameters(JsonView jsonValue)
-  : ProtectedQueryInputParameters()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ProtectedQueryInputParameters& ProtectedQueryInputParameters::operator =(JsonVie
   if(jsonValue.ValueExists("sqlParameters"))
   {
     m_sqlParameters = jsonValue.GetObject("sqlParameters");
-
     m_sqlParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("computeConfiguration"))
   {
     m_computeConfiguration = jsonValue.GetObject("computeConfiguration");
-
     m_computeConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

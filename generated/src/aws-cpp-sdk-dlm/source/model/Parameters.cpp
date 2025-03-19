@@ -18,17 +18,7 @@ namespace DLM
 namespace Model
 {
 
-Parameters::Parameters() : 
-    m_excludeBootVolume(false),
-    m_excludeBootVolumeHasBeenSet(false),
-    m_noReboot(false),
-    m_noRebootHasBeenSet(false),
-    m_excludeDataVolumeTagsHasBeenSet(false)
-{
-}
-
 Parameters::Parameters(JsonView jsonValue)
-  : Parameters()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ Parameters& Parameters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ExcludeBootVolume"))
   {
     m_excludeBootVolume = jsonValue.GetBool("ExcludeBootVolume");
-
     m_excludeBootVolumeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NoReboot"))
   {
     m_noReboot = jsonValue.GetBool("NoReboot");
-
     m_noRebootHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExcludeDataVolumeTags"))
   {
     Aws::Utils::Array<JsonView> excludeDataVolumeTagsJsonList = jsonValue.GetArray("ExcludeDataVolumeTags");
@@ -58,7 +44,6 @@ Parameters& Parameters::operator =(JsonView jsonValue)
     }
     m_excludeDataVolumeTagsHasBeenSet = true;
   }
-
   return *this;
 }
 

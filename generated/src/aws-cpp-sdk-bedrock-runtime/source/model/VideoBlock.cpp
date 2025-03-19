@@ -18,15 +18,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-VideoBlock::VideoBlock() : 
-    m_format(VideoFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_sourceHasBeenSet(false)
-{
-}
-
 VideoBlock::VideoBlock(JsonView jsonValue)
-  : VideoBlock()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ VideoBlock& VideoBlock::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("format"))
   {
     m_format = VideoFormatMapper::GetVideoFormatForName(jsonValue.GetString("format"));
-
     m_formatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("source"))
   {
     m_source = jsonValue.GetObject("source");
-
     m_sourceHasBeenSet = true;
   }
-
   return *this;
 }
 

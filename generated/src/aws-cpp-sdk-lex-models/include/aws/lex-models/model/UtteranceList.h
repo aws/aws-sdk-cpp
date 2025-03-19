@@ -35,7 +35,7 @@ namespace Model
   class UtteranceList
   {
   public:
-    AWS_LEXMODELBUILDINGSERVICE_API UtteranceList();
+    AWS_LEXMODELBUILDINGSERVICE_API UtteranceList() = default;
     AWS_LEXMODELBUILDINGSERVICE_API UtteranceList(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELBUILDINGSERVICE_API UtteranceList& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELBUILDINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The version of the bot that processed the list.</p>
      */
-    inline const Aws::String& GetBotVersion() const{ return m_botVersion; }
+    inline const Aws::String& GetBotVersion() const { return m_botVersion; }
     inline bool BotVersionHasBeenSet() const { return m_botVersionHasBeenSet; }
-    inline void SetBotVersion(const Aws::String& value) { m_botVersionHasBeenSet = true; m_botVersion = value; }
-    inline void SetBotVersion(Aws::String&& value) { m_botVersionHasBeenSet = true; m_botVersion = std::move(value); }
-    inline void SetBotVersion(const char* value) { m_botVersionHasBeenSet = true; m_botVersion.assign(value); }
-    inline UtteranceList& WithBotVersion(const Aws::String& value) { SetBotVersion(value); return *this;}
-    inline UtteranceList& WithBotVersion(Aws::String&& value) { SetBotVersion(std::move(value)); return *this;}
-    inline UtteranceList& WithBotVersion(const char* value) { SetBotVersion(value); return *this;}
+    template<typename BotVersionT = Aws::String>
+    void SetBotVersion(BotVersionT&& value) { m_botVersionHasBeenSet = true; m_botVersion = std::forward<BotVersionT>(value); }
+    template<typename BotVersionT = Aws::String>
+    UtteranceList& WithBotVersion(BotVersionT&& value) { SetBotVersion(std::forward<BotVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,14 @@ namespace Model
      * utterances that have been made to a bot. The maximum number of object is
      * 100.</p>
      */
-    inline const Aws::Vector<UtteranceData>& GetUtterances() const{ return m_utterances; }
+    inline const Aws::Vector<UtteranceData>& GetUtterances() const { return m_utterances; }
     inline bool UtterancesHasBeenSet() const { return m_utterancesHasBeenSet; }
-    inline void SetUtterances(const Aws::Vector<UtteranceData>& value) { m_utterancesHasBeenSet = true; m_utterances = value; }
-    inline void SetUtterances(Aws::Vector<UtteranceData>&& value) { m_utterancesHasBeenSet = true; m_utterances = std::move(value); }
-    inline UtteranceList& WithUtterances(const Aws::Vector<UtteranceData>& value) { SetUtterances(value); return *this;}
-    inline UtteranceList& WithUtterances(Aws::Vector<UtteranceData>&& value) { SetUtterances(std::move(value)); return *this;}
-    inline UtteranceList& AddUtterances(const UtteranceData& value) { m_utterancesHasBeenSet = true; m_utterances.push_back(value); return *this; }
-    inline UtteranceList& AddUtterances(UtteranceData&& value) { m_utterancesHasBeenSet = true; m_utterances.push_back(std::move(value)); return *this; }
+    template<typename UtterancesT = Aws::Vector<UtteranceData>>
+    void SetUtterances(UtterancesT&& value) { m_utterancesHasBeenSet = true; m_utterances = std::forward<UtterancesT>(value); }
+    template<typename UtterancesT = Aws::Vector<UtteranceData>>
+    UtteranceList& WithUtterances(UtterancesT&& value) { SetUtterances(std::forward<UtterancesT>(value)); return *this;}
+    template<typename UtterancesT = UtteranceData>
+    UtteranceList& AddUtterances(UtterancesT&& value) { m_utterancesHasBeenSet = true; m_utterances.emplace_back(std::forward<UtterancesT>(value)); return *this; }
     ///@}
   private:
 

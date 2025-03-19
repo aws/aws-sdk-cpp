@@ -18,24 +18,7 @@ namespace AutoScalingPlans
 namespace Model
 {
 
-TargetTrackingConfiguration::TargetTrackingConfiguration() : 
-    m_predefinedScalingMetricSpecificationHasBeenSet(false),
-    m_customizedScalingMetricSpecificationHasBeenSet(false),
-    m_targetValue(0.0),
-    m_targetValueHasBeenSet(false),
-    m_disableScaleIn(false),
-    m_disableScaleInHasBeenSet(false),
-    m_scaleOutCooldown(0),
-    m_scaleOutCooldownHasBeenSet(false),
-    m_scaleInCooldown(0),
-    m_scaleInCooldownHasBeenSet(false),
-    m_estimatedInstanceWarmup(0),
-    m_estimatedInstanceWarmupHasBeenSet(false)
-{
-}
-
 TargetTrackingConfiguration::TargetTrackingConfiguration(JsonView jsonValue)
-  : TargetTrackingConfiguration()
 {
   *this = jsonValue;
 }
@@ -45,52 +28,38 @@ TargetTrackingConfiguration& TargetTrackingConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("PredefinedScalingMetricSpecification"))
   {
     m_predefinedScalingMetricSpecification = jsonValue.GetObject("PredefinedScalingMetricSpecification");
-
     m_predefinedScalingMetricSpecificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomizedScalingMetricSpecification"))
   {
     m_customizedScalingMetricSpecification = jsonValue.GetObject("CustomizedScalingMetricSpecification");
-
     m_customizedScalingMetricSpecificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetValue"))
   {
     m_targetValue = jsonValue.GetDouble("TargetValue");
-
     m_targetValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisableScaleIn"))
   {
     m_disableScaleIn = jsonValue.GetBool("DisableScaleIn");
-
     m_disableScaleInHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScaleOutCooldown"))
   {
     m_scaleOutCooldown = jsonValue.GetInteger("ScaleOutCooldown");
-
     m_scaleOutCooldownHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScaleInCooldown"))
   {
     m_scaleInCooldown = jsonValue.GetInteger("ScaleInCooldown");
-
     m_scaleInCooldownHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EstimatedInstanceWarmup"))
   {
     m_estimatedInstanceWarmup = jsonValue.GetInteger("EstimatedInstanceWarmup");
-
     m_estimatedInstanceWarmupHasBeenSet = true;
   }
-
   return *this;
 }
 

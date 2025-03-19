@@ -18,21 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-ProjectDescription::ProjectDescription() : 
-    m_projectArnHasBeenSet(false),
-    m_creationTimestampHasBeenSet(false),
-    m_status(ProjectStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_datasetsHasBeenSet(false),
-    m_feature(CustomizationFeature::NOT_SET),
-    m_featureHasBeenSet(false),
-    m_autoUpdate(ProjectAutoUpdate::NOT_SET),
-    m_autoUpdateHasBeenSet(false)
-{
-}
-
 ProjectDescription::ProjectDescription(JsonView jsonValue)
-  : ProjectDescription()
 {
   *this = jsonValue;
 }
@@ -42,24 +28,18 @@ ProjectDescription& ProjectDescription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ProjectArn"))
   {
     m_projectArn = jsonValue.GetString("ProjectArn");
-
     m_projectArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTimestamp"))
   {
     m_creationTimestamp = jsonValue.GetDouble("CreationTimestamp");
-
     m_creationTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ProjectStatusMapper::GetProjectStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Datasets"))
   {
     Aws::Utils::Array<JsonView> datasetsJsonList = jsonValue.GetArray("Datasets");
@@ -69,21 +49,16 @@ ProjectDescription& ProjectDescription::operator =(JsonView jsonValue)
     }
     m_datasetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Feature"))
   {
     m_feature = CustomizationFeatureMapper::GetCustomizationFeatureForName(jsonValue.GetString("Feature"));
-
     m_featureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoUpdate"))
   {
     m_autoUpdate = ProjectAutoUpdateMapper::GetProjectAutoUpdateForName(jsonValue.GetString("AutoUpdate"));
-
     m_autoUpdateHasBeenSet = true;
   }
-
   return *this;
 }
 

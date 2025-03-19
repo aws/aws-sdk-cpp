@@ -31,7 +31,7 @@ namespace Model
   class EnvironmentConfigurationParameter
   {
   public:
-    AWS_DATAZONE_API EnvironmentConfigurationParameter();
+    AWS_DATAZONE_API EnvironmentConfigurationParameter() = default;
     AWS_DATAZONE_API EnvironmentConfigurationParameter(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API EnvironmentConfigurationParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>Specifies whether the environment parameter is editable.</p>
      */
-    inline bool GetIsEditable() const{ return m_isEditable; }
+    inline bool GetIsEditable() const { return m_isEditable; }
     inline bool IsEditableHasBeenSet() const { return m_isEditableHasBeenSet; }
     inline void SetIsEditable(bool value) { m_isEditableHasBeenSet = true; m_isEditable = value; }
     inline EnvironmentConfigurationParameter& WithIsEditable(bool value) { SetIsEditable(value); return *this;}
@@ -51,32 +51,28 @@ namespace Model
     /**
      * <p>The name of the environment configuration parameter.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline EnvironmentConfigurationParameter& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline EnvironmentConfigurationParameter& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline EnvironmentConfigurationParameter& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    EnvironmentConfigurationParameter& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of the environment configuration parameter.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline EnvironmentConfigurationParameter& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline EnvironmentConfigurationParameter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline EnvironmentConfigurationParameter& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    EnvironmentConfigurationParameter& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_isEditable;
+    bool m_isEditable{false};
     bool m_isEditableHasBeenSet = false;
 
     Aws::String m_name;

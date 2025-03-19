@@ -18,15 +18,7 @@ namespace Pipes
 namespace Model
 {
 
-EcsResourceRequirement::EcsResourceRequirement() : 
-    m_type(EcsResourceRequirementType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 EcsResourceRequirement::EcsResourceRequirement(JsonView jsonValue)
-  : EcsResourceRequirement()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ EcsResourceRequirement& EcsResourceRequirement::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = EcsResourceRequirementTypeMapper::GetEcsResourceRequirementTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

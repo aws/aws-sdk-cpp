@@ -18,15 +18,7 @@ namespace LexRuntimeV2
 namespace Model
 {
 
-PlaybackCompletionEvent::PlaybackCompletionEvent() : 
-    m_eventIdHasBeenSet(false),
-    m_clientTimestampMillis(0),
-    m_clientTimestampMillisHasBeenSet(false)
-{
-}
-
 PlaybackCompletionEvent::PlaybackCompletionEvent(JsonView jsonValue)
-  : PlaybackCompletionEvent()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ PlaybackCompletionEvent& PlaybackCompletionEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("eventId"))
   {
     m_eventId = jsonValue.GetString("eventId");
-
     m_eventIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientTimestampMillis"))
   {
     m_clientTimestampMillis = jsonValue.GetInt64("clientTimestampMillis");
-
     m_clientTimestampMillisHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -30,7 +30,7 @@ namespace Model
   class QueryRequest : public KendraRequest
   {
   public:
-    AWS_KENDRA_API QueryRequest();
+    AWS_KENDRA_API QueryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,14 +47,12 @@ namespace Model
     /**
      * <p>The identifier of the index for the search.</p>
      */
-    inline const Aws::String& GetIndexId() const{ return m_indexId; }
+    inline const Aws::String& GetIndexId() const { return m_indexId; }
     inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
-    inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
-    inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
-    inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
-    inline QueryRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
-    inline QueryRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
-    inline QueryRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
+    template<typename IndexIdT = Aws::String>
+    void SetIndexId(IndexIdT&& value) { m_indexIdHasBeenSet = true; m_indexId = std::forward<IndexIdT>(value); }
+    template<typename IndexIdT = Aws::String>
+    QueryRequest& WithIndexId(IndexIdT&& value) { SetIndexId(std::forward<IndexIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,14 +65,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/kendra/latest/dg/searching-example.html#searching-index-query-syntax">Searching
      * with advanced query syntax</a> in the Amazon Kendra Developer Guide. </p>
      */
-    inline const Aws::String& GetQueryText() const{ return m_queryText; }
+    inline const Aws::String& GetQueryText() const { return m_queryText; }
     inline bool QueryTextHasBeenSet() const { return m_queryTextHasBeenSet; }
-    inline void SetQueryText(const Aws::String& value) { m_queryTextHasBeenSet = true; m_queryText = value; }
-    inline void SetQueryText(Aws::String&& value) { m_queryTextHasBeenSet = true; m_queryText = std::move(value); }
-    inline void SetQueryText(const char* value) { m_queryTextHasBeenSet = true; m_queryText.assign(value); }
-    inline QueryRequest& WithQueryText(const Aws::String& value) { SetQueryText(value); return *this;}
-    inline QueryRequest& WithQueryText(Aws::String&& value) { SetQueryText(std::move(value)); return *this;}
-    inline QueryRequest& WithQueryText(const char* value) { SetQueryText(value); return *this;}
+    template<typename QueryTextT = Aws::String>
+    void SetQueryText(QueryTextT&& value) { m_queryTextHasBeenSet = true; m_queryText = std::forward<QueryTextT>(value); }
+    template<typename QueryTextT = Aws::String>
+    QueryRequest& WithQueryText(QueryTextT&& value) { SetQueryText(std::forward<QueryTextT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,12 +85,12 @@ namespace Model
      * users using <code>_email_id</code> or include public documents
      * (<code>_email_id=null</code>).</p> 
      */
-    inline const AttributeFilter& GetAttributeFilter() const{ return m_attributeFilter; }
+    inline const AttributeFilter& GetAttributeFilter() const { return m_attributeFilter; }
     inline bool AttributeFilterHasBeenSet() const { return m_attributeFilterHasBeenSet; }
-    inline void SetAttributeFilter(const AttributeFilter& value) { m_attributeFilterHasBeenSet = true; m_attributeFilter = value; }
-    inline void SetAttributeFilter(AttributeFilter&& value) { m_attributeFilterHasBeenSet = true; m_attributeFilter = std::move(value); }
-    inline QueryRequest& WithAttributeFilter(const AttributeFilter& value) { SetAttributeFilter(value); return *this;}
-    inline QueryRequest& WithAttributeFilter(AttributeFilter&& value) { SetAttributeFilter(std::move(value)); return *this;}
+    template<typename AttributeFilterT = AttributeFilter>
+    void SetAttributeFilter(AttributeFilterT&& value) { m_attributeFilterHasBeenSet = true; m_attributeFilter = std::forward<AttributeFilterT>(value); }
+    template<typename AttributeFilterT = AttributeFilter>
+    QueryRequest& WithAttributeFilter(AttributeFilterT&& value) { SetAttributeFilter(std::forward<AttributeFilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,14 +99,14 @@ namespace Model
      * returns a count for each field key specified. This helps your users narrow their
      * search.</p>
      */
-    inline const Aws::Vector<Facet>& GetFacets() const{ return m_facets; }
+    inline const Aws::Vector<Facet>& GetFacets() const { return m_facets; }
     inline bool FacetsHasBeenSet() const { return m_facetsHasBeenSet; }
-    inline void SetFacets(const Aws::Vector<Facet>& value) { m_facetsHasBeenSet = true; m_facets = value; }
-    inline void SetFacets(Aws::Vector<Facet>&& value) { m_facetsHasBeenSet = true; m_facets = std::move(value); }
-    inline QueryRequest& WithFacets(const Aws::Vector<Facet>& value) { SetFacets(value); return *this;}
-    inline QueryRequest& WithFacets(Aws::Vector<Facet>&& value) { SetFacets(std::move(value)); return *this;}
-    inline QueryRequest& AddFacets(const Facet& value) { m_facetsHasBeenSet = true; m_facets.push_back(value); return *this; }
-    inline QueryRequest& AddFacets(Facet&& value) { m_facetsHasBeenSet = true; m_facets.push_back(std::move(value)); return *this; }
+    template<typename FacetsT = Aws::Vector<Facet>>
+    void SetFacets(FacetsT&& value) { m_facetsHasBeenSet = true; m_facets = std::forward<FacetsT>(value); }
+    template<typename FacetsT = Aws::Vector<Facet>>
+    QueryRequest& WithFacets(FacetsT&& value) { SetFacets(std::forward<FacetsT>(value)); return *this;}
+    template<typename FacetsT = Facet>
+    QueryRequest& AddFacets(FacetsT&& value) { m_facetsHasBeenSet = true; m_facets.emplace_back(std::forward<FacetsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -119,15 +115,14 @@ namespace Model
      * limit the response to include certain document fields. By default, all document
      * attributes are included in the response.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRequestedDocumentAttributes() const{ return m_requestedDocumentAttributes; }
+    inline const Aws::Vector<Aws::String>& GetRequestedDocumentAttributes() const { return m_requestedDocumentAttributes; }
     inline bool RequestedDocumentAttributesHasBeenSet() const { return m_requestedDocumentAttributesHasBeenSet; }
-    inline void SetRequestedDocumentAttributes(const Aws::Vector<Aws::String>& value) { m_requestedDocumentAttributesHasBeenSet = true; m_requestedDocumentAttributes = value; }
-    inline void SetRequestedDocumentAttributes(Aws::Vector<Aws::String>&& value) { m_requestedDocumentAttributesHasBeenSet = true; m_requestedDocumentAttributes = std::move(value); }
-    inline QueryRequest& WithRequestedDocumentAttributes(const Aws::Vector<Aws::String>& value) { SetRequestedDocumentAttributes(value); return *this;}
-    inline QueryRequest& WithRequestedDocumentAttributes(Aws::Vector<Aws::String>&& value) { SetRequestedDocumentAttributes(std::move(value)); return *this;}
-    inline QueryRequest& AddRequestedDocumentAttributes(const Aws::String& value) { m_requestedDocumentAttributesHasBeenSet = true; m_requestedDocumentAttributes.push_back(value); return *this; }
-    inline QueryRequest& AddRequestedDocumentAttributes(Aws::String&& value) { m_requestedDocumentAttributesHasBeenSet = true; m_requestedDocumentAttributes.push_back(std::move(value)); return *this; }
-    inline QueryRequest& AddRequestedDocumentAttributes(const char* value) { m_requestedDocumentAttributesHasBeenSet = true; m_requestedDocumentAttributes.push_back(value); return *this; }
+    template<typename RequestedDocumentAttributesT = Aws::Vector<Aws::String>>
+    void SetRequestedDocumentAttributes(RequestedDocumentAttributesT&& value) { m_requestedDocumentAttributesHasBeenSet = true; m_requestedDocumentAttributes = std::forward<RequestedDocumentAttributesT>(value); }
+    template<typename RequestedDocumentAttributesT = Aws::Vector<Aws::String>>
+    QueryRequest& WithRequestedDocumentAttributes(RequestedDocumentAttributesT&& value) { SetRequestedDocumentAttributes(std::forward<RequestedDocumentAttributesT>(value)); return *this;}
+    template<typename RequestedDocumentAttributesT = Aws::String>
+    QueryRequest& AddRequestedDocumentAttributes(RequestedDocumentAttributesT&& value) { m_requestedDocumentAttributesHasBeenSet = true; m_requestedDocumentAttributes.emplace_back(std::forward<RequestedDocumentAttributesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -135,12 +130,10 @@ namespace Model
      * <p>Sets the type of query result or response. Only results for the specified
      * type are returned.</p>
      */
-    inline const QueryResultType& GetQueryResultTypeFilter() const{ return m_queryResultTypeFilter; }
+    inline QueryResultType GetQueryResultTypeFilter() const { return m_queryResultTypeFilter; }
     inline bool QueryResultTypeFilterHasBeenSet() const { return m_queryResultTypeFilterHasBeenSet; }
-    inline void SetQueryResultTypeFilter(const QueryResultType& value) { m_queryResultTypeFilterHasBeenSet = true; m_queryResultTypeFilter = value; }
-    inline void SetQueryResultTypeFilter(QueryResultType&& value) { m_queryResultTypeFilterHasBeenSet = true; m_queryResultTypeFilter = std::move(value); }
-    inline QueryRequest& WithQueryResultTypeFilter(const QueryResultType& value) { SetQueryResultTypeFilter(value); return *this;}
-    inline QueryRequest& WithQueryResultTypeFilter(QueryResultType&& value) { SetQueryResultTypeFilter(std::move(value)); return *this;}
+    inline void SetQueryResultTypeFilter(QueryResultType value) { m_queryResultTypeFilterHasBeenSet = true; m_queryResultTypeFilter = value; }
+    inline QueryRequest& WithQueryResultTypeFilter(QueryResultType value) { SetQueryResultTypeFilter(value); return *this;}
     ///@}
 
     ///@{
@@ -153,14 +146,14 @@ namespace Model
      * you use this API to override only some of these fields, then for the fields you
      * did not override, the importance is set to 1.</p>
      */
-    inline const Aws::Vector<DocumentRelevanceConfiguration>& GetDocumentRelevanceOverrideConfigurations() const{ return m_documentRelevanceOverrideConfigurations; }
+    inline const Aws::Vector<DocumentRelevanceConfiguration>& GetDocumentRelevanceOverrideConfigurations() const { return m_documentRelevanceOverrideConfigurations; }
     inline bool DocumentRelevanceOverrideConfigurationsHasBeenSet() const { return m_documentRelevanceOverrideConfigurationsHasBeenSet; }
-    inline void SetDocumentRelevanceOverrideConfigurations(const Aws::Vector<DocumentRelevanceConfiguration>& value) { m_documentRelevanceOverrideConfigurationsHasBeenSet = true; m_documentRelevanceOverrideConfigurations = value; }
-    inline void SetDocumentRelevanceOverrideConfigurations(Aws::Vector<DocumentRelevanceConfiguration>&& value) { m_documentRelevanceOverrideConfigurationsHasBeenSet = true; m_documentRelevanceOverrideConfigurations = std::move(value); }
-    inline QueryRequest& WithDocumentRelevanceOverrideConfigurations(const Aws::Vector<DocumentRelevanceConfiguration>& value) { SetDocumentRelevanceOverrideConfigurations(value); return *this;}
-    inline QueryRequest& WithDocumentRelevanceOverrideConfigurations(Aws::Vector<DocumentRelevanceConfiguration>&& value) { SetDocumentRelevanceOverrideConfigurations(std::move(value)); return *this;}
-    inline QueryRequest& AddDocumentRelevanceOverrideConfigurations(const DocumentRelevanceConfiguration& value) { m_documentRelevanceOverrideConfigurationsHasBeenSet = true; m_documentRelevanceOverrideConfigurations.push_back(value); return *this; }
-    inline QueryRequest& AddDocumentRelevanceOverrideConfigurations(DocumentRelevanceConfiguration&& value) { m_documentRelevanceOverrideConfigurationsHasBeenSet = true; m_documentRelevanceOverrideConfigurations.push_back(std::move(value)); return *this; }
+    template<typename DocumentRelevanceOverrideConfigurationsT = Aws::Vector<DocumentRelevanceConfiguration>>
+    void SetDocumentRelevanceOverrideConfigurations(DocumentRelevanceOverrideConfigurationsT&& value) { m_documentRelevanceOverrideConfigurationsHasBeenSet = true; m_documentRelevanceOverrideConfigurations = std::forward<DocumentRelevanceOverrideConfigurationsT>(value); }
+    template<typename DocumentRelevanceOverrideConfigurationsT = Aws::Vector<DocumentRelevanceConfiguration>>
+    QueryRequest& WithDocumentRelevanceOverrideConfigurations(DocumentRelevanceOverrideConfigurationsT&& value) { SetDocumentRelevanceOverrideConfigurations(std::forward<DocumentRelevanceOverrideConfigurationsT>(value)); return *this;}
+    template<typename DocumentRelevanceOverrideConfigurationsT = DocumentRelevanceConfiguration>
+    QueryRequest& AddDocumentRelevanceOverrideConfigurations(DocumentRelevanceOverrideConfigurationsT&& value) { m_documentRelevanceOverrideConfigurationsHasBeenSet = true; m_documentRelevanceOverrideConfigurations.emplace_back(std::forward<DocumentRelevanceOverrideConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -169,7 +162,7 @@ namespace Model
      * parameter. By default, Amazon Kendra returns the first page of results. Use this
      * parameter to get result pages after the first one.</p>
      */
-    inline int GetPageNumber() const{ return m_pageNumber; }
+    inline int GetPageNumber() const { return m_pageNumber; }
     inline bool PageNumberHasBeenSet() const { return m_pageNumberHasBeenSet; }
     inline void SetPageNumber(int value) { m_pageNumberHasBeenSet = true; m_pageNumber = value; }
     inline QueryRequest& WithPageNumber(int value) { SetPageNumber(value); return *this;}
@@ -181,7 +174,7 @@ namespace Model
      * default page size is 10. The maximum number of results returned is 100. If you
      * ask for more than 100 results, only 100 are returned.</p>
      */
-    inline int GetPageSize() const{ return m_pageSize; }
+    inline int GetPageSize() const { return m_pageSize; }
     inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
     inline void SetPageSize(int value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
     inline QueryRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
@@ -196,12 +189,12 @@ namespace Model
      * <p>If you don't provide sorting configuration, the results are sorted by the
      * relevance that Amazon Kendra determines for the result.</p>
      */
-    inline const SortingConfiguration& GetSortingConfiguration() const{ return m_sortingConfiguration; }
+    inline const SortingConfiguration& GetSortingConfiguration() const { return m_sortingConfiguration; }
     inline bool SortingConfigurationHasBeenSet() const { return m_sortingConfigurationHasBeenSet; }
-    inline void SetSortingConfiguration(const SortingConfiguration& value) { m_sortingConfigurationHasBeenSet = true; m_sortingConfiguration = value; }
-    inline void SetSortingConfiguration(SortingConfiguration&& value) { m_sortingConfigurationHasBeenSet = true; m_sortingConfiguration = std::move(value); }
-    inline QueryRequest& WithSortingConfiguration(const SortingConfiguration& value) { SetSortingConfiguration(value); return *this;}
-    inline QueryRequest& WithSortingConfiguration(SortingConfiguration&& value) { SetSortingConfiguration(std::move(value)); return *this;}
+    template<typename SortingConfigurationT = SortingConfiguration>
+    void SetSortingConfiguration(SortingConfigurationT&& value) { m_sortingConfigurationHasBeenSet = true; m_sortingConfiguration = std::forward<SortingConfigurationT>(value); }
+    template<typename SortingConfigurationT = SortingConfiguration>
+    QueryRequest& WithSortingConfiguration(SortingConfigurationT&& value) { SetSortingConfiguration(std::forward<SortingConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -214,26 +207,26 @@ namespace Model
      * Amazon Kendra determines for the result. In the case of ties in sorting the
      * results, the results are sorted by relevance. </p>
      */
-    inline const Aws::Vector<SortingConfiguration>& GetSortingConfigurations() const{ return m_sortingConfigurations; }
+    inline const Aws::Vector<SortingConfiguration>& GetSortingConfigurations() const { return m_sortingConfigurations; }
     inline bool SortingConfigurationsHasBeenSet() const { return m_sortingConfigurationsHasBeenSet; }
-    inline void SetSortingConfigurations(const Aws::Vector<SortingConfiguration>& value) { m_sortingConfigurationsHasBeenSet = true; m_sortingConfigurations = value; }
-    inline void SetSortingConfigurations(Aws::Vector<SortingConfiguration>&& value) { m_sortingConfigurationsHasBeenSet = true; m_sortingConfigurations = std::move(value); }
-    inline QueryRequest& WithSortingConfigurations(const Aws::Vector<SortingConfiguration>& value) { SetSortingConfigurations(value); return *this;}
-    inline QueryRequest& WithSortingConfigurations(Aws::Vector<SortingConfiguration>&& value) { SetSortingConfigurations(std::move(value)); return *this;}
-    inline QueryRequest& AddSortingConfigurations(const SortingConfiguration& value) { m_sortingConfigurationsHasBeenSet = true; m_sortingConfigurations.push_back(value); return *this; }
-    inline QueryRequest& AddSortingConfigurations(SortingConfiguration&& value) { m_sortingConfigurationsHasBeenSet = true; m_sortingConfigurations.push_back(std::move(value)); return *this; }
+    template<typename SortingConfigurationsT = Aws::Vector<SortingConfiguration>>
+    void SetSortingConfigurations(SortingConfigurationsT&& value) { m_sortingConfigurationsHasBeenSet = true; m_sortingConfigurations = std::forward<SortingConfigurationsT>(value); }
+    template<typename SortingConfigurationsT = Aws::Vector<SortingConfiguration>>
+    QueryRequest& WithSortingConfigurations(SortingConfigurationsT&& value) { SetSortingConfigurations(std::forward<SortingConfigurationsT>(value)); return *this;}
+    template<typename SortingConfigurationsT = SortingConfiguration>
+    QueryRequest& AddSortingConfigurations(SortingConfigurationsT&& value) { m_sortingConfigurationsHasBeenSet = true; m_sortingConfigurations.emplace_back(std::forward<SortingConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The user context token or user and group information.</p>
      */
-    inline const UserContext& GetUserContext() const{ return m_userContext; }
+    inline const UserContext& GetUserContext() const { return m_userContext; }
     inline bool UserContextHasBeenSet() const { return m_userContextHasBeenSet; }
-    inline void SetUserContext(const UserContext& value) { m_userContextHasBeenSet = true; m_userContext = value; }
-    inline void SetUserContext(UserContext&& value) { m_userContextHasBeenSet = true; m_userContext = std::move(value); }
-    inline QueryRequest& WithUserContext(const UserContext& value) { SetUserContext(value); return *this;}
-    inline QueryRequest& WithUserContext(UserContext&& value) { SetUserContext(std::move(value)); return *this;}
+    template<typename UserContextT = UserContext>
+    void SetUserContext(UserContextT&& value) { m_userContextHasBeenSet = true; m_userContext = std::forward<UserContextT>(value); }
+    template<typename UserContextT = UserContext>
+    QueryRequest& WithUserContext(UserContextT&& value) { SetUserContext(std::forward<UserContextT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -243,26 +236,24 @@ namespace Model
      * information, such as the user's email address, as the
      * <code>VisitorId</code>.</p>
      */
-    inline const Aws::String& GetVisitorId() const{ return m_visitorId; }
+    inline const Aws::String& GetVisitorId() const { return m_visitorId; }
     inline bool VisitorIdHasBeenSet() const { return m_visitorIdHasBeenSet; }
-    inline void SetVisitorId(const Aws::String& value) { m_visitorIdHasBeenSet = true; m_visitorId = value; }
-    inline void SetVisitorId(Aws::String&& value) { m_visitorIdHasBeenSet = true; m_visitorId = std::move(value); }
-    inline void SetVisitorId(const char* value) { m_visitorIdHasBeenSet = true; m_visitorId.assign(value); }
-    inline QueryRequest& WithVisitorId(const Aws::String& value) { SetVisitorId(value); return *this;}
-    inline QueryRequest& WithVisitorId(Aws::String&& value) { SetVisitorId(std::move(value)); return *this;}
-    inline QueryRequest& WithVisitorId(const char* value) { SetVisitorId(value); return *this;}
+    template<typename VisitorIdT = Aws::String>
+    void SetVisitorId(VisitorIdT&& value) { m_visitorIdHasBeenSet = true; m_visitorId = std::forward<VisitorIdT>(value); }
+    template<typename VisitorIdT = Aws::String>
+    QueryRequest& WithVisitorId(VisitorIdT&& value) { SetVisitorId(std::forward<VisitorIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Enables suggested spell corrections for queries.</p>
      */
-    inline const SpellCorrectionConfiguration& GetSpellCorrectionConfiguration() const{ return m_spellCorrectionConfiguration; }
+    inline const SpellCorrectionConfiguration& GetSpellCorrectionConfiguration() const { return m_spellCorrectionConfiguration; }
     inline bool SpellCorrectionConfigurationHasBeenSet() const { return m_spellCorrectionConfigurationHasBeenSet; }
-    inline void SetSpellCorrectionConfiguration(const SpellCorrectionConfiguration& value) { m_spellCorrectionConfigurationHasBeenSet = true; m_spellCorrectionConfiguration = value; }
-    inline void SetSpellCorrectionConfiguration(SpellCorrectionConfiguration&& value) { m_spellCorrectionConfigurationHasBeenSet = true; m_spellCorrectionConfiguration = std::move(value); }
-    inline QueryRequest& WithSpellCorrectionConfiguration(const SpellCorrectionConfiguration& value) { SetSpellCorrectionConfiguration(value); return *this;}
-    inline QueryRequest& WithSpellCorrectionConfiguration(SpellCorrectionConfiguration&& value) { SetSpellCorrectionConfiguration(std::move(value)); return *this;}
+    template<typename SpellCorrectionConfigurationT = SpellCorrectionConfiguration>
+    void SetSpellCorrectionConfiguration(SpellCorrectionConfigurationT&& value) { m_spellCorrectionConfigurationHasBeenSet = true; m_spellCorrectionConfiguration = std::forward<SpellCorrectionConfigurationT>(value); }
+    template<typename SpellCorrectionConfigurationT = SpellCorrectionConfiguration>
+    QueryRequest& WithSpellCorrectionConfiguration(SpellCorrectionConfigurationT&& value) { SetSpellCorrectionConfiguration(std::forward<SpellCorrectionConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -271,12 +262,12 @@ namespace Model
      * attribute value, and how to display them (collapsed or expanded) under a
      * designated primary document for each group.</p>
      */
-    inline const CollapseConfiguration& GetCollapseConfiguration() const{ return m_collapseConfiguration; }
+    inline const CollapseConfiguration& GetCollapseConfiguration() const { return m_collapseConfiguration; }
     inline bool CollapseConfigurationHasBeenSet() const { return m_collapseConfigurationHasBeenSet; }
-    inline void SetCollapseConfiguration(const CollapseConfiguration& value) { m_collapseConfigurationHasBeenSet = true; m_collapseConfiguration = value; }
-    inline void SetCollapseConfiguration(CollapseConfiguration&& value) { m_collapseConfigurationHasBeenSet = true; m_collapseConfiguration = std::move(value); }
-    inline QueryRequest& WithCollapseConfiguration(const CollapseConfiguration& value) { SetCollapseConfiguration(value); return *this;}
-    inline QueryRequest& WithCollapseConfiguration(CollapseConfiguration&& value) { SetCollapseConfiguration(std::move(value)); return *this;}
+    template<typename CollapseConfigurationT = CollapseConfiguration>
+    void SetCollapseConfiguration(CollapseConfigurationT&& value) { m_collapseConfigurationHasBeenSet = true; m_collapseConfiguration = std::forward<CollapseConfigurationT>(value); }
+    template<typename CollapseConfigurationT = CollapseConfiguration>
+    QueryRequest& WithCollapseConfiguration(CollapseConfigurationT&& value) { SetCollapseConfiguration(std::forward<CollapseConfigurationT>(value)); return *this;}
     ///@}
   private:
 
@@ -295,16 +286,16 @@ namespace Model
     Aws::Vector<Aws::String> m_requestedDocumentAttributes;
     bool m_requestedDocumentAttributesHasBeenSet = false;
 
-    QueryResultType m_queryResultTypeFilter;
+    QueryResultType m_queryResultTypeFilter{QueryResultType::NOT_SET};
     bool m_queryResultTypeFilterHasBeenSet = false;
 
     Aws::Vector<DocumentRelevanceConfiguration> m_documentRelevanceOverrideConfigurations;
     bool m_documentRelevanceOverrideConfigurationsHasBeenSet = false;
 
-    int m_pageNumber;
+    int m_pageNumber{0};
     bool m_pageNumberHasBeenSet = false;
 
-    int m_pageSize;
+    int m_pageSize{0};
     bool m_pageSizeHasBeenSet = false;
 
     SortingConfiguration m_sortingConfiguration;

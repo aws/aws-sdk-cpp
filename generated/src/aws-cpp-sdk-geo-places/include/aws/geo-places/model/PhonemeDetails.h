@@ -33,7 +33,7 @@ namespace Model
   class PhonemeDetails
   {
   public:
-    AWS_GEOPLACES_API PhonemeDetails();
+    AWS_GEOPLACES_API PhonemeDetails() = default;
     AWS_GEOPLACES_API PhonemeDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOPLACES_API PhonemeDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOPLACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,26 +44,26 @@ namespace Model
      * <p>List of <code>PhonemeTranscription</code>. See
      * <code>PhonemeTranscription</code> for fields.</p>
      */
-    inline const Aws::Vector<PhonemeTranscription>& GetTitle() const{ return m_title; }
+    inline const Aws::Vector<PhonemeTranscription>& GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    inline void SetTitle(const Aws::Vector<PhonemeTranscription>& value) { m_titleHasBeenSet = true; m_title = value; }
-    inline void SetTitle(Aws::Vector<PhonemeTranscription>&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-    inline PhonemeDetails& WithTitle(const Aws::Vector<PhonemeTranscription>& value) { SetTitle(value); return *this;}
-    inline PhonemeDetails& WithTitle(Aws::Vector<PhonemeTranscription>&& value) { SetTitle(std::move(value)); return *this;}
-    inline PhonemeDetails& AddTitle(const PhonemeTranscription& value) { m_titleHasBeenSet = true; m_title.push_back(value); return *this; }
-    inline PhonemeDetails& AddTitle(PhonemeTranscription&& value) { m_titleHasBeenSet = true; m_title.push_back(std::move(value)); return *this; }
+    template<typename TitleT = Aws::Vector<PhonemeTranscription>>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::Vector<PhonemeTranscription>>
+    PhonemeDetails& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
+    template<typename TitleT = PhonemeTranscription>
+    PhonemeDetails& AddTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title.emplace_back(std::forward<TitleT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>How to pronounce the address.</p>
      */
-    inline const AddressComponentPhonemes& GetAddress() const{ return m_address; }
+    inline const AddressComponentPhonemes& GetAddress() const { return m_address; }
     inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
-    inline void SetAddress(const AddressComponentPhonemes& value) { m_addressHasBeenSet = true; m_address = value; }
-    inline void SetAddress(AddressComponentPhonemes&& value) { m_addressHasBeenSet = true; m_address = std::move(value); }
-    inline PhonemeDetails& WithAddress(const AddressComponentPhonemes& value) { SetAddress(value); return *this;}
-    inline PhonemeDetails& WithAddress(AddressComponentPhonemes&& value) { SetAddress(std::move(value)); return *this;}
+    template<typename AddressT = AddressComponentPhonemes>
+    void SetAddress(AddressT&& value) { m_addressHasBeenSet = true; m_address = std::forward<AddressT>(value); }
+    template<typename AddressT = AddressComponentPhonemes>
+    PhonemeDetails& WithAddress(AddressT&& value) { SetAddress(std::forward<AddressT>(value)); return *this;}
     ///@}
   private:
 

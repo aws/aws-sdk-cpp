@@ -18,16 +18,7 @@ namespace KinesisVideo
 namespace Model
 {
 
-EdgeConfig::EdgeConfig() : 
-    m_hubDeviceArnHasBeenSet(false),
-    m_recorderConfigHasBeenSet(false),
-    m_uploaderConfigHasBeenSet(false),
-    m_deletionConfigHasBeenSet(false)
-{
-}
-
 EdgeConfig::EdgeConfig(JsonView jsonValue)
-  : EdgeConfig()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ EdgeConfig& EdgeConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("HubDeviceArn"))
   {
     m_hubDeviceArn = jsonValue.GetString("HubDeviceArn");
-
     m_hubDeviceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecorderConfig"))
   {
     m_recorderConfig = jsonValue.GetObject("RecorderConfig");
-
     m_recorderConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UploaderConfig"))
   {
     m_uploaderConfig = jsonValue.GetObject("UploaderConfig");
-
     m_uploaderConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeletionConfig"))
   {
     m_deletionConfig = jsonValue.GetObject("DeletionConfig");
-
     m_deletionConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

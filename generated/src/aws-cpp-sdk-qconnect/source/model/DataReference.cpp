@@ -18,14 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-DataReference::DataReference() : 
-    m_contentReferenceHasBeenSet(false),
-    m_generativeReferenceHasBeenSet(false)
-{
-}
-
 DataReference::DataReference(JsonView jsonValue)
-  : DataReference()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DataReference& DataReference::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("contentReference"))
   {
     m_contentReference = jsonValue.GetObject("contentReference");
-
     m_contentReferenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("generativeReference"))
   {
     m_generativeReference = jsonValue.GetObject("generativeReference");
-
     m_generativeReferenceHasBeenSet = true;
   }
-
   return *this;
 }
 

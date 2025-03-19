@@ -18,16 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-LaunchPermissionConfiguration::LaunchPermissionConfiguration() : 
-    m_userIdsHasBeenSet(false),
-    m_userGroupsHasBeenSet(false),
-    m_organizationArnsHasBeenSet(false),
-    m_organizationalUnitArnsHasBeenSet(false)
-{
-}
-
 LaunchPermissionConfiguration::LaunchPermissionConfiguration(JsonView jsonValue)
-  : LaunchPermissionConfiguration()
 {
   *this = jsonValue;
 }
@@ -43,7 +34,6 @@ LaunchPermissionConfiguration& LaunchPermissionConfiguration::operator =(JsonVie
     }
     m_userIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userGroups"))
   {
     Aws::Utils::Array<JsonView> userGroupsJsonList = jsonValue.GetArray("userGroups");
@@ -53,7 +43,6 @@ LaunchPermissionConfiguration& LaunchPermissionConfiguration::operator =(JsonVie
     }
     m_userGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("organizationArns"))
   {
     Aws::Utils::Array<JsonView> organizationArnsJsonList = jsonValue.GetArray("organizationArns");
@@ -63,7 +52,6 @@ LaunchPermissionConfiguration& LaunchPermissionConfiguration::operator =(JsonVie
     }
     m_organizationArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("organizationalUnitArns"))
   {
     Aws::Utils::Array<JsonView> organizationalUnitArnsJsonList = jsonValue.GetArray("organizationalUnitArns");
@@ -73,7 +61,6 @@ LaunchPermissionConfiguration& LaunchPermissionConfiguration::operator =(JsonVie
     }
     m_organizationalUnitArnsHasBeenSet = true;
   }
-
   return *this;
 }
 

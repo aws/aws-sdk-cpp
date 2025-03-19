@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateOTAUpdateResult::CreateOTAUpdateResult() : 
-    m_otaUpdateStatus(OTAUpdateStatus::NOT_SET)
-{
-}
-
 CreateOTAUpdateResult::CreateOTAUpdateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateOTAUpdateResult()
 {
   *this = result;
 }
@@ -34,39 +28,35 @@ CreateOTAUpdateResult& CreateOTAUpdateResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("otaUpdateId"))
   {
     m_otaUpdateId = jsonValue.GetString("otaUpdateId");
-
+    m_otaUpdateIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsIotJobId"))
   {
     m_awsIotJobId = jsonValue.GetString("awsIotJobId");
-
+    m_awsIotJobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("otaUpdateArn"))
   {
     m_otaUpdateArn = jsonValue.GetString("otaUpdateArn");
-
+    m_otaUpdateArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsIotJobArn"))
   {
     m_awsIotJobArn = jsonValue.GetString("awsIotJobArn");
-
+    m_awsIotJobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("otaUpdateStatus"))
   {
     m_otaUpdateStatus = OTAUpdateStatusMapper::GetOTAUpdateStatusForName(jsonValue.GetString("otaUpdateStatus"));
-
+    m_otaUpdateStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

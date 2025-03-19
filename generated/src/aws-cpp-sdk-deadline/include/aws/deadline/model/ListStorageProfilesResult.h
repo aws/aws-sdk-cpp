@@ -29,7 +29,7 @@ namespace Model
   class ListStorageProfilesResult
   {
   public:
-    AWS_DEADLINE_API ListStorageProfilesResult();
+    AWS_DEADLINE_API ListStorageProfilesResult() = default;
     AWS_DEADLINE_API ListStorageProfilesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DEADLINE_API ListStorageProfilesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The storage profiles.</p>
      */
-    inline const Aws::Vector<StorageProfileSummary>& GetStorageProfiles() const{ return m_storageProfiles; }
-    inline void SetStorageProfiles(const Aws::Vector<StorageProfileSummary>& value) { m_storageProfiles = value; }
-    inline void SetStorageProfiles(Aws::Vector<StorageProfileSummary>&& value) { m_storageProfiles = std::move(value); }
-    inline ListStorageProfilesResult& WithStorageProfiles(const Aws::Vector<StorageProfileSummary>& value) { SetStorageProfiles(value); return *this;}
-    inline ListStorageProfilesResult& WithStorageProfiles(Aws::Vector<StorageProfileSummary>&& value) { SetStorageProfiles(std::move(value)); return *this;}
-    inline ListStorageProfilesResult& AddStorageProfiles(const StorageProfileSummary& value) { m_storageProfiles.push_back(value); return *this; }
-    inline ListStorageProfilesResult& AddStorageProfiles(StorageProfileSummary&& value) { m_storageProfiles.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<StorageProfileSummary>& GetStorageProfiles() const { return m_storageProfiles; }
+    template<typename StorageProfilesT = Aws::Vector<StorageProfileSummary>>
+    void SetStorageProfiles(StorageProfilesT&& value) { m_storageProfilesHasBeenSet = true; m_storageProfiles = std::forward<StorageProfilesT>(value); }
+    template<typename StorageProfilesT = Aws::Vector<StorageProfileSummary>>
+    ListStorageProfilesResult& WithStorageProfiles(StorageProfilesT&& value) { SetStorageProfiles(std::forward<StorageProfilesT>(value)); return *this;}
+    template<typename StorageProfilesT = StorageProfileSummary>
+    ListStorageProfilesResult& AddStorageProfiles(StorageProfilesT&& value) { m_storageProfilesHasBeenSet = true; m_storageProfiles.emplace_back(std::forward<StorageProfilesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -57,32 +57,31 @@ namespace Model
      * expires after 24 hours. If you provide a token that isn't valid, then you
      * receive an HTTP 400 <code>ValidationException</code> error.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListStorageProfilesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListStorageProfilesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListStorageProfilesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListStorageProfilesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListStorageProfilesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListStorageProfilesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListStorageProfilesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListStorageProfilesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<StorageProfileSummary> m_storageProfiles;
+    bool m_storageProfilesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

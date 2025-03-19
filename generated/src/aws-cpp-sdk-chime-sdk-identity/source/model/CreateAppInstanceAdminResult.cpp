@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateAppInstanceAdminResult::CreateAppInstanceAdminResult()
-{
-}
-
 CreateAppInstanceAdminResult::CreateAppInstanceAdminResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ CreateAppInstanceAdminResult& CreateAppInstanceAdminResult::operator =(const Aws
   if(jsonValue.ValueExists("AppInstanceAdmin"))
   {
     m_appInstanceAdmin = jsonValue.GetObject("AppInstanceAdmin");
-
+    m_appInstanceAdminHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AppInstanceArn"))
   {
     m_appInstanceArn = jsonValue.GetString("AppInstanceArn");
-
+    m_appInstanceArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

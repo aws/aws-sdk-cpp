@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutCodeBindingResult::PutCodeBindingResult() : 
-    m_status(CodeGenerationStatus::NOT_SET)
-{
-}
-
 PutCodeBindingResult::PutCodeBindingResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : PutCodeBindingResult()
 {
   *this = result;
 }
@@ -34,33 +28,30 @@ PutCodeBindingResult& PutCodeBindingResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetString("CreationDate");
-
+    m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModified"))
   {
     m_lastModified = jsonValue.GetString("LastModified");
-
+    m_lastModifiedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SchemaVersion"))
   {
     m_schemaVersion = jsonValue.GetString("SchemaVersion");
-
+    m_schemaVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = CodeGenerationStatusMapper::GetCodeGenerationStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

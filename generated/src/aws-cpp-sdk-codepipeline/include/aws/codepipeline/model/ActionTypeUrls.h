@@ -33,7 +33,7 @@ namespace Model
   class ActionTypeUrls
   {
   public:
-    AWS_CODEPIPELINE_API ActionTypeUrls();
+    AWS_CODEPIPELINE_API ActionTypeUrls() = default;
     AWS_CODEPIPELINE_API ActionTypeUrls(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API ActionTypeUrls& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The URL returned to the CodePipeline console that contains a link to the page
      * where customers can configure the external action.</p>
      */
-    inline const Aws::String& GetConfigurationUrl() const{ return m_configurationUrl; }
+    inline const Aws::String& GetConfigurationUrl() const { return m_configurationUrl; }
     inline bool ConfigurationUrlHasBeenSet() const { return m_configurationUrlHasBeenSet; }
-    inline void SetConfigurationUrl(const Aws::String& value) { m_configurationUrlHasBeenSet = true; m_configurationUrl = value; }
-    inline void SetConfigurationUrl(Aws::String&& value) { m_configurationUrlHasBeenSet = true; m_configurationUrl = std::move(value); }
-    inline void SetConfigurationUrl(const char* value) { m_configurationUrlHasBeenSet = true; m_configurationUrl.assign(value); }
-    inline ActionTypeUrls& WithConfigurationUrl(const Aws::String& value) { SetConfigurationUrl(value); return *this;}
-    inline ActionTypeUrls& WithConfigurationUrl(Aws::String&& value) { SetConfigurationUrl(std::move(value)); return *this;}
-    inline ActionTypeUrls& WithConfigurationUrl(const char* value) { SetConfigurationUrl(value); return *this;}
+    template<typename ConfigurationUrlT = Aws::String>
+    void SetConfigurationUrl(ConfigurationUrlT&& value) { m_configurationUrlHasBeenSet = true; m_configurationUrl = std::forward<ConfigurationUrlT>(value); }
+    template<typename ConfigurationUrlT = Aws::String>
+    ActionTypeUrls& WithConfigurationUrl(ConfigurationUrlT&& value) { SetConfigurationUrl(std::forward<ConfigurationUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * resources of the external system, such as a status page. This link is provided
      * as part of the action display in the pipeline.</p>
      */
-    inline const Aws::String& GetEntityUrlTemplate() const{ return m_entityUrlTemplate; }
+    inline const Aws::String& GetEntityUrlTemplate() const { return m_entityUrlTemplate; }
     inline bool EntityUrlTemplateHasBeenSet() const { return m_entityUrlTemplateHasBeenSet; }
-    inline void SetEntityUrlTemplate(const Aws::String& value) { m_entityUrlTemplateHasBeenSet = true; m_entityUrlTemplate = value; }
-    inline void SetEntityUrlTemplate(Aws::String&& value) { m_entityUrlTemplateHasBeenSet = true; m_entityUrlTemplate = std::move(value); }
-    inline void SetEntityUrlTemplate(const char* value) { m_entityUrlTemplateHasBeenSet = true; m_entityUrlTemplate.assign(value); }
-    inline ActionTypeUrls& WithEntityUrlTemplate(const Aws::String& value) { SetEntityUrlTemplate(value); return *this;}
-    inline ActionTypeUrls& WithEntityUrlTemplate(Aws::String&& value) { SetEntityUrlTemplate(std::move(value)); return *this;}
-    inline ActionTypeUrls& WithEntityUrlTemplate(const char* value) { SetEntityUrlTemplate(value); return *this;}
+    template<typename EntityUrlTemplateT = Aws::String>
+    void SetEntityUrlTemplate(EntityUrlTemplateT&& value) { m_entityUrlTemplateHasBeenSet = true; m_entityUrlTemplate = std::forward<EntityUrlTemplateT>(value); }
+    template<typename EntityUrlTemplateT = Aws::String>
+    ActionTypeUrls& WithEntityUrlTemplate(EntityUrlTemplateT&& value) { SetEntityUrlTemplate(std::forward<EntityUrlTemplateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,14 +72,12 @@ namespace Model
      * for a CodeDeploy action, this link is shown on the pipeline view page in the
      * CodePipeline console, and it links to a CodeDeploy status page.</p>
      */
-    inline const Aws::String& GetExecutionUrlTemplate() const{ return m_executionUrlTemplate; }
+    inline const Aws::String& GetExecutionUrlTemplate() const { return m_executionUrlTemplate; }
     inline bool ExecutionUrlTemplateHasBeenSet() const { return m_executionUrlTemplateHasBeenSet; }
-    inline void SetExecutionUrlTemplate(const Aws::String& value) { m_executionUrlTemplateHasBeenSet = true; m_executionUrlTemplate = value; }
-    inline void SetExecutionUrlTemplate(Aws::String&& value) { m_executionUrlTemplateHasBeenSet = true; m_executionUrlTemplate = std::move(value); }
-    inline void SetExecutionUrlTemplate(const char* value) { m_executionUrlTemplateHasBeenSet = true; m_executionUrlTemplate.assign(value); }
-    inline ActionTypeUrls& WithExecutionUrlTemplate(const Aws::String& value) { SetExecutionUrlTemplate(value); return *this;}
-    inline ActionTypeUrls& WithExecutionUrlTemplate(Aws::String&& value) { SetExecutionUrlTemplate(std::move(value)); return *this;}
-    inline ActionTypeUrls& WithExecutionUrlTemplate(const char* value) { SetExecutionUrlTemplate(value); return *this;}
+    template<typename ExecutionUrlTemplateT = Aws::String>
+    void SetExecutionUrlTemplate(ExecutionUrlTemplateT&& value) { m_executionUrlTemplateHasBeenSet = true; m_executionUrlTemplate = std::forward<ExecutionUrlTemplateT>(value); }
+    template<typename ExecutionUrlTemplateT = Aws::String>
+    ActionTypeUrls& WithExecutionUrlTemplate(ExecutionUrlTemplateT&& value) { SetExecutionUrlTemplate(std::forward<ExecutionUrlTemplateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,14 +86,12 @@ namespace Model
      * where customers can update or change the configuration of the external
      * action.</p>
      */
-    inline const Aws::String& GetRevisionUrlTemplate() const{ return m_revisionUrlTemplate; }
+    inline const Aws::String& GetRevisionUrlTemplate() const { return m_revisionUrlTemplate; }
     inline bool RevisionUrlTemplateHasBeenSet() const { return m_revisionUrlTemplateHasBeenSet; }
-    inline void SetRevisionUrlTemplate(const Aws::String& value) { m_revisionUrlTemplateHasBeenSet = true; m_revisionUrlTemplate = value; }
-    inline void SetRevisionUrlTemplate(Aws::String&& value) { m_revisionUrlTemplateHasBeenSet = true; m_revisionUrlTemplate = std::move(value); }
-    inline void SetRevisionUrlTemplate(const char* value) { m_revisionUrlTemplateHasBeenSet = true; m_revisionUrlTemplate.assign(value); }
-    inline ActionTypeUrls& WithRevisionUrlTemplate(const Aws::String& value) { SetRevisionUrlTemplate(value); return *this;}
-    inline ActionTypeUrls& WithRevisionUrlTemplate(Aws::String&& value) { SetRevisionUrlTemplate(std::move(value)); return *this;}
-    inline ActionTypeUrls& WithRevisionUrlTemplate(const char* value) { SetRevisionUrlTemplate(value); return *this;}
+    template<typename RevisionUrlTemplateT = Aws::String>
+    void SetRevisionUrlTemplate(RevisionUrlTemplateT&& value) { m_revisionUrlTemplateHasBeenSet = true; m_revisionUrlTemplate = std::forward<RevisionUrlTemplateT>(value); }
+    template<typename RevisionUrlTemplateT = Aws::String>
+    ActionTypeUrls& WithRevisionUrlTemplate(RevisionUrlTemplateT&& value) { SetRevisionUrlTemplate(std::forward<RevisionUrlTemplateT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,12 +12,6 @@ using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-MoveReplicationTaskRequest::MoveReplicationTaskRequest() : 
-    m_replicationTaskArnHasBeenSet(false),
-    m_targetReplicationInstanceArnHasBeenSet(false)
-{
-}
-
 Aws::String MoveReplicationTaskRequest::SerializePayload() const
 {
   JsonValue payload;

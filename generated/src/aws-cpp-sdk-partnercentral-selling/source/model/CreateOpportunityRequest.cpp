@@ -12,27 +12,6 @@ using namespace Aws::PartnerCentralSelling::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateOpportunityRequest::CreateOpportunityRequest() : 
-    m_catalogHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_customerHasBeenSet(false),
-    m_lifeCycleHasBeenSet(false),
-    m_marketingHasBeenSet(false),
-    m_nationalSecurity(NationalSecurity::NOT_SET),
-    m_nationalSecurityHasBeenSet(false),
-    m_opportunityTeamHasBeenSet(false),
-    m_opportunityType(OpportunityType::NOT_SET),
-    m_opportunityTypeHasBeenSet(false),
-    m_origin(OpportunityOrigin::NOT_SET),
-    m_originHasBeenSet(false),
-    m_partnerOpportunityIdentifierHasBeenSet(false),
-    m_primaryNeedsFromAwsHasBeenSet(false),
-    m_projectHasBeenSet(false),
-    m_softwareRevenueHasBeenSet(false)
-{
-}
-
 Aws::String CreateOpportunityRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,27 +18,7 @@ namespace NeptuneGraph
 namespace Model
 {
 
-GraphSummary::GraphSummary() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_status(GraphStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_provisionedMemory(0),
-    m_provisionedMemoryHasBeenSet(false),
-    m_publicConnectivity(false),
-    m_publicConnectivityHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_replicaCount(0),
-    m_replicaCountHasBeenSet(false),
-    m_kmsKeyIdentifierHasBeenSet(false),
-    m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false)
-{
-}
-
 GraphSummary::GraphSummary(JsonView jsonValue)
-  : GraphSummary()
 {
   *this = jsonValue;
 }
@@ -48,73 +28,53 @@ GraphSummary& GraphSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = GraphStatusMapper::GetGraphStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("provisionedMemory"))
   {
     m_provisionedMemory = jsonValue.GetInteger("provisionedMemory");
-
     m_provisionedMemoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("publicConnectivity"))
   {
     m_publicConnectivity = jsonValue.GetBool("publicConnectivity");
-
     m_publicConnectivityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endpoint"))
   {
     m_endpoint = jsonValue.GetString("endpoint");
-
     m_endpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("replicaCount"))
   {
     m_replicaCount = jsonValue.GetInteger("replicaCount");
-
     m_replicaCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsKeyIdentifier"))
   {
     m_kmsKeyIdentifier = jsonValue.GetString("kmsKeyIdentifier");
-
     m_kmsKeyIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deletionProtection"))
   {
     m_deletionProtection = jsonValue.GetBool("deletionProtection");
-
     m_deletionProtectionHasBeenSet = true;
   }
-
   return *this;
 }
 

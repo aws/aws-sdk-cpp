@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ReferenceLineCustomLabelConfiguration::ReferenceLineCustomLabelConfiguration() : 
-    m_customLabelHasBeenSet(false)
-{
-}
-
 ReferenceLineCustomLabelConfiguration::ReferenceLineCustomLabelConfiguration(JsonView jsonValue)
-  : ReferenceLineCustomLabelConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ReferenceLineCustomLabelConfiguration& ReferenceLineCustomLabelConfiguration::op
   if(jsonValue.ValueExists("CustomLabel"))
   {
     m_customLabel = jsonValue.GetString("CustomLabel");
-
     m_customLabelHasBeenSet = true;
   }
-
   return *this;
 }
 

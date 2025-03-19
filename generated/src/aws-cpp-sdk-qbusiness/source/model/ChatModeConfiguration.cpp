@@ -18,13 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-ChatModeConfiguration::ChatModeConfiguration() : 
-    m_pluginConfigurationHasBeenSet(false)
-{
-}
-
 ChatModeConfiguration::ChatModeConfiguration(JsonView jsonValue)
-  : ChatModeConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ChatModeConfiguration& ChatModeConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("pluginConfiguration"))
   {
     m_pluginConfiguration = jsonValue.GetObject("pluginConfiguration");
-
     m_pluginConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

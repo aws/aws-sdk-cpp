@@ -18,40 +18,7 @@ namespace XRay
 namespace Model
 {
 
-TraceSummary::TraceSummary() : 
-    m_idHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_duration(0.0),
-    m_durationHasBeenSet(false),
-    m_responseTime(0.0),
-    m_responseTimeHasBeenSet(false),
-    m_hasFault(false),
-    m_hasFaultHasBeenSet(false),
-    m_hasError(false),
-    m_hasErrorHasBeenSet(false),
-    m_hasThrottle(false),
-    m_hasThrottleHasBeenSet(false),
-    m_isPartial(false),
-    m_isPartialHasBeenSet(false),
-    m_httpHasBeenSet(false),
-    m_annotationsHasBeenSet(false),
-    m_usersHasBeenSet(false),
-    m_serviceIdsHasBeenSet(false),
-    m_resourceARNsHasBeenSet(false),
-    m_instanceIdsHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false),
-    m_entryPointHasBeenSet(false),
-    m_faultRootCausesHasBeenSet(false),
-    m_errorRootCausesHasBeenSet(false),
-    m_responseTimeRootCausesHasBeenSet(false),
-    m_revision(0),
-    m_revisionHasBeenSet(false),
-    m_matchedEventTimeHasBeenSet(false)
-{
-}
-
 TraceSummary::TraceSummary(JsonView jsonValue)
-  : TraceSummary()
 {
   *this = jsonValue;
 }
@@ -61,66 +28,48 @@ TraceSummary& TraceSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Duration"))
   {
     m_duration = jsonValue.GetDouble("Duration");
-
     m_durationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResponseTime"))
   {
     m_responseTime = jsonValue.GetDouble("ResponseTime");
-
     m_responseTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HasFault"))
   {
     m_hasFault = jsonValue.GetBool("HasFault");
-
     m_hasFaultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HasError"))
   {
     m_hasError = jsonValue.GetBool("HasError");
-
     m_hasErrorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HasThrottle"))
   {
     m_hasThrottle = jsonValue.GetBool("HasThrottle");
-
     m_hasThrottleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsPartial"))
   {
     m_isPartial = jsonValue.GetBool("IsPartial");
-
     m_isPartialHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Http"))
   {
     m_http = jsonValue.GetObject("Http");
-
     m_httpHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Annotations"))
   {
     Aws::Map<Aws::String, JsonView> annotationsJsonMap = jsonValue.GetObject("Annotations").GetAllObjects();
@@ -137,7 +86,6 @@ TraceSummary& TraceSummary::operator =(JsonView jsonValue)
     }
     m_annotationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Users"))
   {
     Aws::Utils::Array<JsonView> usersJsonList = jsonValue.GetArray("Users");
@@ -147,7 +95,6 @@ TraceSummary& TraceSummary::operator =(JsonView jsonValue)
     }
     m_usersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceIds"))
   {
     Aws::Utils::Array<JsonView> serviceIdsJsonList = jsonValue.GetArray("ServiceIds");
@@ -157,7 +104,6 @@ TraceSummary& TraceSummary::operator =(JsonView jsonValue)
     }
     m_serviceIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceARNs"))
   {
     Aws::Utils::Array<JsonView> resourceARNsJsonList = jsonValue.GetArray("ResourceARNs");
@@ -167,7 +113,6 @@ TraceSummary& TraceSummary::operator =(JsonView jsonValue)
     }
     m_resourceARNsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceIds"))
   {
     Aws::Utils::Array<JsonView> instanceIdsJsonList = jsonValue.GetArray("InstanceIds");
@@ -177,7 +122,6 @@ TraceSummary& TraceSummary::operator =(JsonView jsonValue)
     }
     m_instanceIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailabilityZones"))
   {
     Aws::Utils::Array<JsonView> availabilityZonesJsonList = jsonValue.GetArray("AvailabilityZones");
@@ -187,14 +131,11 @@ TraceSummary& TraceSummary::operator =(JsonView jsonValue)
     }
     m_availabilityZonesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EntryPoint"))
   {
     m_entryPoint = jsonValue.GetObject("EntryPoint");
-
     m_entryPointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FaultRootCauses"))
   {
     Aws::Utils::Array<JsonView> faultRootCausesJsonList = jsonValue.GetArray("FaultRootCauses");
@@ -204,7 +145,6 @@ TraceSummary& TraceSummary::operator =(JsonView jsonValue)
     }
     m_faultRootCausesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorRootCauses"))
   {
     Aws::Utils::Array<JsonView> errorRootCausesJsonList = jsonValue.GetArray("ErrorRootCauses");
@@ -214,7 +154,6 @@ TraceSummary& TraceSummary::operator =(JsonView jsonValue)
     }
     m_errorRootCausesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResponseTimeRootCauses"))
   {
     Aws::Utils::Array<JsonView> responseTimeRootCausesJsonList = jsonValue.GetArray("ResponseTimeRootCauses");
@@ -224,21 +163,16 @@ TraceSummary& TraceSummary::operator =(JsonView jsonValue)
     }
     m_responseTimeRootCausesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Revision"))
   {
     m_revision = jsonValue.GetInteger("Revision");
-
     m_revisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MatchedEventTime"))
   {
     m_matchedEventTime = jsonValue.GetDouble("MatchedEventTime");
-
     m_matchedEventTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -29,7 +29,7 @@ namespace Model
   class ListConnectionsResult
   {
   public:
-    AWS_APPRUNNER_API ListConnectionsResult();
+    AWS_APPRUNNER_API ListConnectionsResult() = default;
     AWS_APPRUNNER_API ListConnectionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPRUNNER_API ListConnectionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,13 @@ namespace Model
      * request, the request returns up to <code>MaxResults</code> records for each
      * call.</p>
      */
-    inline const Aws::Vector<ConnectionSummary>& GetConnectionSummaryList() const{ return m_connectionSummaryList; }
-    inline void SetConnectionSummaryList(const Aws::Vector<ConnectionSummary>& value) { m_connectionSummaryList = value; }
-    inline void SetConnectionSummaryList(Aws::Vector<ConnectionSummary>&& value) { m_connectionSummaryList = std::move(value); }
-    inline ListConnectionsResult& WithConnectionSummaryList(const Aws::Vector<ConnectionSummary>& value) { SetConnectionSummaryList(value); return *this;}
-    inline ListConnectionsResult& WithConnectionSummaryList(Aws::Vector<ConnectionSummary>&& value) { SetConnectionSummaryList(std::move(value)); return *this;}
-    inline ListConnectionsResult& AddConnectionSummaryList(const ConnectionSummary& value) { m_connectionSummaryList.push_back(value); return *this; }
-    inline ListConnectionsResult& AddConnectionSummaryList(ConnectionSummary&& value) { m_connectionSummaryList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ConnectionSummary>& GetConnectionSummaryList() const { return m_connectionSummaryList; }
+    template<typename ConnectionSummaryListT = Aws::Vector<ConnectionSummary>>
+    void SetConnectionSummaryList(ConnectionSummaryListT&& value) { m_connectionSummaryListHasBeenSet = true; m_connectionSummaryList = std::forward<ConnectionSummaryListT>(value); }
+    template<typename ConnectionSummaryListT = Aws::Vector<ConnectionSummary>>
+    ListConnectionsResult& WithConnectionSummaryList(ConnectionSummaryListT&& value) { SetConnectionSummaryList(std::forward<ConnectionSummaryListT>(value)); return *this;}
+    template<typename ConnectionSummaryListT = ConnectionSummary>
+    ListConnectionsResult& AddConnectionSummaryList(ConnectionSummaryListT&& value) { m_connectionSummaryListHasBeenSet = true; m_connectionSummaryList.emplace_back(std::forward<ConnectionSummaryListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,32 +54,31 @@ namespace Model
      * <p>The token that you can pass in a subsequent request to get the next result
      * page. Returned in a paginated request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListConnectionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListConnectionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListConnectionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListConnectionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListConnectionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListConnectionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListConnectionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListConnectionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ConnectionSummary> m_connectionSummaryList;
+    bool m_connectionSummaryListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

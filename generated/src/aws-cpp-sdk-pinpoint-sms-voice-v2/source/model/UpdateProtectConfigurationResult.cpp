@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateProtectConfigurationResult::UpdateProtectConfigurationResult() : 
-    m_accountDefault(false),
-    m_deletionProtectionEnabled(false)
-{
-}
-
 UpdateProtectConfigurationResult::UpdateProtectConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateProtectConfigurationResult()
 {
   *this = result;
 }
@@ -35,39 +28,35 @@ UpdateProtectConfigurationResult& UpdateProtectConfigurationResult::operator =(c
   if(jsonValue.ValueExists("ProtectConfigurationArn"))
   {
     m_protectConfigurationArn = jsonValue.GetString("ProtectConfigurationArn");
-
+    m_protectConfigurationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProtectConfigurationId"))
   {
     m_protectConfigurationId = jsonValue.GetString("ProtectConfigurationId");
-
+    m_protectConfigurationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
-
+    m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountDefault"))
   {
     m_accountDefault = jsonValue.GetBool("AccountDefault");
-
+    m_accountDefaultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeletionProtectionEnabled"))
   {
     m_deletionProtectionEnabled = jsonValue.GetBool("DeletionProtectionEnabled");
-
+    m_deletionProtectionEnabledHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

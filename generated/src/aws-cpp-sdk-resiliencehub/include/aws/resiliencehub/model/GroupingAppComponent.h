@@ -32,7 +32,7 @@ namespace Model
   class GroupingAppComponent
   {
   public:
-    AWS_RESILIENCEHUB_API GroupingAppComponent();
+    AWS_RESILIENCEHUB_API GroupingAppComponent() = default;
     AWS_RESILIENCEHUB_API GroupingAppComponent(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API GroupingAppComponent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,42 +42,36 @@ namespace Model
     /**
      * <p>Indicates the identifier of an AppComponent.</p>
      */
-    inline const Aws::String& GetAppComponentId() const{ return m_appComponentId; }
+    inline const Aws::String& GetAppComponentId() const { return m_appComponentId; }
     inline bool AppComponentIdHasBeenSet() const { return m_appComponentIdHasBeenSet; }
-    inline void SetAppComponentId(const Aws::String& value) { m_appComponentIdHasBeenSet = true; m_appComponentId = value; }
-    inline void SetAppComponentId(Aws::String&& value) { m_appComponentIdHasBeenSet = true; m_appComponentId = std::move(value); }
-    inline void SetAppComponentId(const char* value) { m_appComponentIdHasBeenSet = true; m_appComponentId.assign(value); }
-    inline GroupingAppComponent& WithAppComponentId(const Aws::String& value) { SetAppComponentId(value); return *this;}
-    inline GroupingAppComponent& WithAppComponentId(Aws::String&& value) { SetAppComponentId(std::move(value)); return *this;}
-    inline GroupingAppComponent& WithAppComponentId(const char* value) { SetAppComponentId(value); return *this;}
+    template<typename AppComponentIdT = Aws::String>
+    void SetAppComponentId(AppComponentIdT&& value) { m_appComponentIdHasBeenSet = true; m_appComponentId = std::forward<AppComponentIdT>(value); }
+    template<typename AppComponentIdT = Aws::String>
+    GroupingAppComponent& WithAppComponentId(AppComponentIdT&& value) { SetAppComponentId(std::forward<AppComponentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates the name of an AppComponent.</p>
      */
-    inline const Aws::String& GetAppComponentName() const{ return m_appComponentName; }
+    inline const Aws::String& GetAppComponentName() const { return m_appComponentName; }
     inline bool AppComponentNameHasBeenSet() const { return m_appComponentNameHasBeenSet; }
-    inline void SetAppComponentName(const Aws::String& value) { m_appComponentNameHasBeenSet = true; m_appComponentName = value; }
-    inline void SetAppComponentName(Aws::String&& value) { m_appComponentNameHasBeenSet = true; m_appComponentName = std::move(value); }
-    inline void SetAppComponentName(const char* value) { m_appComponentNameHasBeenSet = true; m_appComponentName.assign(value); }
-    inline GroupingAppComponent& WithAppComponentName(const Aws::String& value) { SetAppComponentName(value); return *this;}
-    inline GroupingAppComponent& WithAppComponentName(Aws::String&& value) { SetAppComponentName(std::move(value)); return *this;}
-    inline GroupingAppComponent& WithAppComponentName(const char* value) { SetAppComponentName(value); return *this;}
+    template<typename AppComponentNameT = Aws::String>
+    void SetAppComponentName(AppComponentNameT&& value) { m_appComponentNameHasBeenSet = true; m_appComponentName = std::forward<AppComponentNameT>(value); }
+    template<typename AppComponentNameT = Aws::String>
+    GroupingAppComponent& WithAppComponentName(AppComponentNameT&& value) { SetAppComponentName(std::forward<AppComponentNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates the type of an AppComponent.</p>
      */
-    inline const Aws::String& GetAppComponentType() const{ return m_appComponentType; }
+    inline const Aws::String& GetAppComponentType() const { return m_appComponentType; }
     inline bool AppComponentTypeHasBeenSet() const { return m_appComponentTypeHasBeenSet; }
-    inline void SetAppComponentType(const Aws::String& value) { m_appComponentTypeHasBeenSet = true; m_appComponentType = value; }
-    inline void SetAppComponentType(Aws::String&& value) { m_appComponentTypeHasBeenSet = true; m_appComponentType = std::move(value); }
-    inline void SetAppComponentType(const char* value) { m_appComponentTypeHasBeenSet = true; m_appComponentType.assign(value); }
-    inline GroupingAppComponent& WithAppComponentType(const Aws::String& value) { SetAppComponentType(value); return *this;}
-    inline GroupingAppComponent& WithAppComponentType(Aws::String&& value) { SetAppComponentType(std::move(value)); return *this;}
-    inline GroupingAppComponent& WithAppComponentType(const char* value) { SetAppComponentType(value); return *this;}
+    template<typename AppComponentTypeT = Aws::String>
+    void SetAppComponentType(AppComponentTypeT&& value) { m_appComponentTypeHasBeenSet = true; m_appComponentType = std::forward<AppComponentTypeT>(value); }
+    template<typename AppComponentTypeT = Aws::String>
+    GroupingAppComponent& WithAppComponentType(AppComponentTypeT&& value) { SetAppComponentType(std::forward<AppComponentTypeT>(value)); return *this;}
     ///@}
   private:
 

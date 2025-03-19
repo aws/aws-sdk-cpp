@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-BoxPlotFieldWells::BoxPlotFieldWells() : 
-    m_boxPlotAggregatedFieldWellsHasBeenSet(false)
-{
-}
-
 BoxPlotFieldWells::BoxPlotFieldWells(JsonView jsonValue)
-  : BoxPlotFieldWells()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ BoxPlotFieldWells& BoxPlotFieldWells::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BoxPlotAggregatedFieldWells"))
   {
     m_boxPlotAggregatedFieldWells = jsonValue.GetObject("BoxPlotAggregatedFieldWells");
-
     m_boxPlotAggregatedFieldWellsHasBeenSet = true;
   }
-
   return *this;
 }
 

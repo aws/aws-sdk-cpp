@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ProductionVariantCoreDumpConfig::ProductionVariantCoreDumpConfig() : 
-    m_destinationS3UriHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
-{
-}
-
 ProductionVariantCoreDumpConfig::ProductionVariantCoreDumpConfig(JsonView jsonValue)
-  : ProductionVariantCoreDumpConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ProductionVariantCoreDumpConfig& ProductionVariantCoreDumpConfig::operator =(Jso
   if(jsonValue.ValueExists("DestinationS3Uri"))
   {
     m_destinationS3Uri = jsonValue.GetString("DestinationS3Uri");
-
     m_destinationS3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   return *this;
 }
 

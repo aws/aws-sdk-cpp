@@ -21,7 +21,7 @@ namespace Model
   class GetSinkPolicyRequest : public OAMRequest
   {
   public:
-    AWS_OAM_API GetSinkPolicyRequest();
+    AWS_OAM_API GetSinkPolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The ARN of the sink to retrieve the policy of.</p>
      */
-    inline const Aws::String& GetSinkIdentifier() const{ return m_sinkIdentifier; }
+    inline const Aws::String& GetSinkIdentifier() const { return m_sinkIdentifier; }
     inline bool SinkIdentifierHasBeenSet() const { return m_sinkIdentifierHasBeenSet; }
-    inline void SetSinkIdentifier(const Aws::String& value) { m_sinkIdentifierHasBeenSet = true; m_sinkIdentifier = value; }
-    inline void SetSinkIdentifier(Aws::String&& value) { m_sinkIdentifierHasBeenSet = true; m_sinkIdentifier = std::move(value); }
-    inline void SetSinkIdentifier(const char* value) { m_sinkIdentifierHasBeenSet = true; m_sinkIdentifier.assign(value); }
-    inline GetSinkPolicyRequest& WithSinkIdentifier(const Aws::String& value) { SetSinkIdentifier(value); return *this;}
-    inline GetSinkPolicyRequest& WithSinkIdentifier(Aws::String&& value) { SetSinkIdentifier(std::move(value)); return *this;}
-    inline GetSinkPolicyRequest& WithSinkIdentifier(const char* value) { SetSinkIdentifier(value); return *this;}
+    template<typename SinkIdentifierT = Aws::String>
+    void SetSinkIdentifier(SinkIdentifierT&& value) { m_sinkIdentifierHasBeenSet = true; m_sinkIdentifier = std::forward<SinkIdentifierT>(value); }
+    template<typename SinkIdentifierT = Aws::String>
+    GetSinkPolicyRequest& WithSinkIdentifier(SinkIdentifierT&& value) { SetSinkIdentifier(std::forward<SinkIdentifierT>(value)); return *this;}
     ///@}
   private:
 

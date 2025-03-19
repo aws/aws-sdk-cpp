@@ -18,16 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-BaiduChannelRequest::BaiduChannelRequest() : 
-    m_apiKeyHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_secretKeyHasBeenSet(false)
-{
-}
-
 BaiduChannelRequest::BaiduChannelRequest(JsonView jsonValue)
-  : BaiduChannelRequest()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ BaiduChannelRequest& BaiduChannelRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ApiKey"))
   {
     m_apiKey = jsonValue.GetString("ApiKey");
-
     m_apiKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretKey"))
   {
     m_secretKey = jsonValue.GetString("SecretKey");
-
     m_secretKeyHasBeenSet = true;
   }
-
   return *this;
 }
 

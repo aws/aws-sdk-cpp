@@ -18,20 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-GuardrailContentFilterConfig::GuardrailContentFilterConfig() : 
-    m_type(GuardrailContentFilterType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_inputStrength(GuardrailFilterStrength::NOT_SET),
-    m_inputStrengthHasBeenSet(false),
-    m_outputStrength(GuardrailFilterStrength::NOT_SET),
-    m_outputStrengthHasBeenSet(false),
-    m_inputModalitiesHasBeenSet(false),
-    m_outputModalitiesHasBeenSet(false)
-{
-}
-
 GuardrailContentFilterConfig::GuardrailContentFilterConfig(JsonView jsonValue)
-  : GuardrailContentFilterConfig()
 {
   *this = jsonValue;
 }
@@ -41,24 +28,18 @@ GuardrailContentFilterConfig& GuardrailContentFilterConfig::operator =(JsonView 
   if(jsonValue.ValueExists("type"))
   {
     m_type = GuardrailContentFilterTypeMapper::GetGuardrailContentFilterTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputStrength"))
   {
     m_inputStrength = GuardrailFilterStrengthMapper::GetGuardrailFilterStrengthForName(jsonValue.GetString("inputStrength"));
-
     m_inputStrengthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputStrength"))
   {
     m_outputStrength = GuardrailFilterStrengthMapper::GetGuardrailFilterStrengthForName(jsonValue.GetString("outputStrength"));
-
     m_outputStrengthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputModalities"))
   {
     Aws::Utils::Array<JsonView> inputModalitiesJsonList = jsonValue.GetArray("inputModalities");
@@ -68,7 +49,6 @@ GuardrailContentFilterConfig& GuardrailContentFilterConfig::operator =(JsonView 
     }
     m_inputModalitiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputModalities"))
   {
     Aws::Utils::Array<JsonView> outputModalitiesJsonList = jsonValue.GetArray("outputModalities");
@@ -78,7 +58,6 @@ GuardrailContentFilterConfig& GuardrailContentFilterConfig::operator =(JsonView 
     }
     m_outputModalitiesHasBeenSet = true;
   }
-
   return *this;
 }
 

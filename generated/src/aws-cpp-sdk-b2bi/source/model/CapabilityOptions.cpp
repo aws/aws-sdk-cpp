@@ -18,13 +18,7 @@ namespace B2BI
 namespace Model
 {
 
-CapabilityOptions::CapabilityOptions() : 
-    m_outboundEdiHasBeenSet(false)
-{
-}
-
 CapabilityOptions::CapabilityOptions(JsonView jsonValue)
-  : CapabilityOptions()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CapabilityOptions& CapabilityOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("outboundEdi"))
   {
     m_outboundEdi = jsonValue.GetObject("outboundEdi");
-
     m_outboundEdiHasBeenSet = true;
   }
-
   return *this;
 }
 

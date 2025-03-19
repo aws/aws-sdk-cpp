@@ -12,12 +12,6 @@ using namespace Aws::BedrockAgentRuntime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GenerateQueryRequest::GenerateQueryRequest() : 
-    m_queryGenerationInputHasBeenSet(false),
-    m_transformationConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String GenerateQueryRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -33,7 +33,7 @@ namespace Model
   class StateMachineVersionListItem
   {
   public:
-    AWS_SFN_API StateMachineVersionListItem();
+    AWS_SFN_API StateMachineVersionListItem() = default;
     AWS_SFN_API StateMachineVersionListItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_SFN_API StateMachineVersionListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,33 +45,31 @@ namespace Model
      * version ARN is a combination of state machine ARN and the version number
      * separated by a colon (:). For example, <code>stateMachineARN:1</code>.</p>
      */
-    inline const Aws::String& GetStateMachineVersionArn() const{ return m_stateMachineVersionArn; }
+    inline const Aws::String& GetStateMachineVersionArn() const { return m_stateMachineVersionArn; }
     inline bool StateMachineVersionArnHasBeenSet() const { return m_stateMachineVersionArnHasBeenSet; }
-    inline void SetStateMachineVersionArn(const Aws::String& value) { m_stateMachineVersionArnHasBeenSet = true; m_stateMachineVersionArn = value; }
-    inline void SetStateMachineVersionArn(Aws::String&& value) { m_stateMachineVersionArnHasBeenSet = true; m_stateMachineVersionArn = std::move(value); }
-    inline void SetStateMachineVersionArn(const char* value) { m_stateMachineVersionArnHasBeenSet = true; m_stateMachineVersionArn.assign(value); }
-    inline StateMachineVersionListItem& WithStateMachineVersionArn(const Aws::String& value) { SetStateMachineVersionArn(value); return *this;}
-    inline StateMachineVersionListItem& WithStateMachineVersionArn(Aws::String&& value) { SetStateMachineVersionArn(std::move(value)); return *this;}
-    inline StateMachineVersionListItem& WithStateMachineVersionArn(const char* value) { SetStateMachineVersionArn(value); return *this;}
+    template<typename StateMachineVersionArnT = Aws::String>
+    void SetStateMachineVersionArn(StateMachineVersionArnT&& value) { m_stateMachineVersionArnHasBeenSet = true; m_stateMachineVersionArn = std::forward<StateMachineVersionArnT>(value); }
+    template<typename StateMachineVersionArnT = Aws::String>
+    StateMachineVersionListItem& WithStateMachineVersionArn(StateMachineVersionArnT&& value) { SetStateMachineVersionArn(std::forward<StateMachineVersionArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The creation date of a state machine version.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
+    inline const Aws::Utils::DateTime& GetCreationDate() const { return m_creationDate; }
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
-    inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
-    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
-    inline StateMachineVersionListItem& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
-    inline StateMachineVersionListItem& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    void SetCreationDate(CreationDateT&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::forward<CreationDateT>(value); }
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    StateMachineVersionListItem& WithCreationDate(CreationDateT&& value) { SetCreationDate(std::forward<CreationDateT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_stateMachineVersionArn;
     bool m_stateMachineVersionArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDate;
+    Aws::Utils::DateTime m_creationDate{};
     bool m_creationDateHasBeenSet = false;
   };
 

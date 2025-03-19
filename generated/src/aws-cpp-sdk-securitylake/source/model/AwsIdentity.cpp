@@ -18,14 +18,7 @@ namespace SecurityLake
 namespace Model
 {
 
-AwsIdentity::AwsIdentity() : 
-    m_externalIdHasBeenSet(false),
-    m_principalHasBeenSet(false)
-{
-}
-
 AwsIdentity::AwsIdentity(JsonView jsonValue)
-  : AwsIdentity()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsIdentity& AwsIdentity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("externalId"))
   {
     m_externalId = jsonValue.GetString("externalId");
-
     m_externalIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("principal"))
   {
     m_principal = jsonValue.GetString("principal");
-
     m_principalHasBeenSet = true;
   }
-
   return *this;
 }
 

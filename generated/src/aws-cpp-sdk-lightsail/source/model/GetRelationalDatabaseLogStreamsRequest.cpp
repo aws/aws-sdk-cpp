@@ -12,11 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRelationalDatabaseLogStreamsRequest::GetRelationalDatabaseLogStreamsRequest() : 
-    m_relationalDatabaseNameHasBeenSet(false)
-{
-}
-
 Aws::String GetRelationalDatabaseLogStreamsRequest::SerializePayload() const
 {
   JsonValue payload;

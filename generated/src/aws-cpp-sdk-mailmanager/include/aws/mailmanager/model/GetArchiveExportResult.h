@@ -37,7 +37,7 @@ namespace Model
   class GetArchiveExportResult
   {
   public:
-    AWS_MAILMANAGER_API GetArchiveExportResult();
+    AWS_MAILMANAGER_API GetArchiveExportResult() = default;
     AWS_MAILMANAGER_API GetArchiveExportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MAILMANAGER_API GetArchiveExportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -46,54 +46,52 @@ namespace Model
     /**
      * <p>The identifier of the archive the email export was performed from.</p>
      */
-    inline const Aws::String& GetArchiveId() const{ return m_archiveId; }
-    inline void SetArchiveId(const Aws::String& value) { m_archiveId = value; }
-    inline void SetArchiveId(Aws::String&& value) { m_archiveId = std::move(value); }
-    inline void SetArchiveId(const char* value) { m_archiveId.assign(value); }
-    inline GetArchiveExportResult& WithArchiveId(const Aws::String& value) { SetArchiveId(value); return *this;}
-    inline GetArchiveExportResult& WithArchiveId(Aws::String&& value) { SetArchiveId(std::move(value)); return *this;}
-    inline GetArchiveExportResult& WithArchiveId(const char* value) { SetArchiveId(value); return *this;}
+    inline const Aws::String& GetArchiveId() const { return m_archiveId; }
+    template<typename ArchiveIdT = Aws::String>
+    void SetArchiveId(ArchiveIdT&& value) { m_archiveIdHasBeenSet = true; m_archiveId = std::forward<ArchiveIdT>(value); }
+    template<typename ArchiveIdT = Aws::String>
+    GetArchiveExportResult& WithArchiveId(ArchiveIdT&& value) { SetArchiveId(std::forward<ArchiveIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Where the exported emails are being delivered.</p>
      */
-    inline const ExportDestinationConfiguration& GetExportDestinationConfiguration() const{ return m_exportDestinationConfiguration; }
-    inline void SetExportDestinationConfiguration(const ExportDestinationConfiguration& value) { m_exportDestinationConfiguration = value; }
-    inline void SetExportDestinationConfiguration(ExportDestinationConfiguration&& value) { m_exportDestinationConfiguration = std::move(value); }
-    inline GetArchiveExportResult& WithExportDestinationConfiguration(const ExportDestinationConfiguration& value) { SetExportDestinationConfiguration(value); return *this;}
-    inline GetArchiveExportResult& WithExportDestinationConfiguration(ExportDestinationConfiguration&& value) { SetExportDestinationConfiguration(std::move(value)); return *this;}
+    inline const ExportDestinationConfiguration& GetExportDestinationConfiguration() const { return m_exportDestinationConfiguration; }
+    template<typename ExportDestinationConfigurationT = ExportDestinationConfiguration>
+    void SetExportDestinationConfiguration(ExportDestinationConfigurationT&& value) { m_exportDestinationConfigurationHasBeenSet = true; m_exportDestinationConfiguration = std::forward<ExportDestinationConfigurationT>(value); }
+    template<typename ExportDestinationConfigurationT = ExportDestinationConfiguration>
+    GetArchiveExportResult& WithExportDestinationConfiguration(ExportDestinationConfigurationT&& value) { SetExportDestinationConfiguration(std::forward<ExportDestinationConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The criteria used to filter emails included in the export.</p>
      */
-    inline const ArchiveFilters& GetFilters() const{ return m_filters; }
-    inline void SetFilters(const ArchiveFilters& value) { m_filters = value; }
-    inline void SetFilters(ArchiveFilters&& value) { m_filters = std::move(value); }
-    inline GetArchiveExportResult& WithFilters(const ArchiveFilters& value) { SetFilters(value); return *this;}
-    inline GetArchiveExportResult& WithFilters(ArchiveFilters&& value) { SetFilters(std::move(value)); return *this;}
+    inline const ArchiveFilters& GetFilters() const { return m_filters; }
+    template<typename FiltersT = ArchiveFilters>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = ArchiveFilters>
+    GetArchiveExportResult& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The start of the timestamp range the exported emails cover.</p>
      */
-    inline const Aws::Utils::DateTime& GetFromTimestamp() const{ return m_fromTimestamp; }
-    inline void SetFromTimestamp(const Aws::Utils::DateTime& value) { m_fromTimestamp = value; }
-    inline void SetFromTimestamp(Aws::Utils::DateTime&& value) { m_fromTimestamp = std::move(value); }
-    inline GetArchiveExportResult& WithFromTimestamp(const Aws::Utils::DateTime& value) { SetFromTimestamp(value); return *this;}
-    inline GetArchiveExportResult& WithFromTimestamp(Aws::Utils::DateTime&& value) { SetFromTimestamp(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetFromTimestamp() const { return m_fromTimestamp; }
+    template<typename FromTimestampT = Aws::Utils::DateTime>
+    void SetFromTimestamp(FromTimestampT&& value) { m_fromTimestampHasBeenSet = true; m_fromTimestamp = std::forward<FromTimestampT>(value); }
+    template<typename FromTimestampT = Aws::Utils::DateTime>
+    GetArchiveExportResult& WithFromTimestamp(FromTimestampT&& value) { SetFromTimestamp(std::forward<FromTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of email items included in the export.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
-    inline void SetMaxResults(int value) { m_maxResults = value; }
+    inline int GetMaxResults() const { return m_maxResults; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetArchiveExportResult& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
 
@@ -101,51 +99,57 @@ namespace Model
     /**
      * <p>The current status of the export job.</p>
      */
-    inline const ExportStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const ExportStatus& value) { m_status = value; }
-    inline void SetStatus(ExportStatus&& value) { m_status = std::move(value); }
-    inline GetArchiveExportResult& WithStatus(const ExportStatus& value) { SetStatus(value); return *this;}
-    inline GetArchiveExportResult& WithStatus(ExportStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline const ExportStatus& GetStatus() const { return m_status; }
+    template<typename StatusT = ExportStatus>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = ExportStatus>
+    GetArchiveExportResult& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The end of the date range the exported emails cover.</p>
      */
-    inline const Aws::Utils::DateTime& GetToTimestamp() const{ return m_toTimestamp; }
-    inline void SetToTimestamp(const Aws::Utils::DateTime& value) { m_toTimestamp = value; }
-    inline void SetToTimestamp(Aws::Utils::DateTime&& value) { m_toTimestamp = std::move(value); }
-    inline GetArchiveExportResult& WithToTimestamp(const Aws::Utils::DateTime& value) { SetToTimestamp(value); return *this;}
-    inline GetArchiveExportResult& WithToTimestamp(Aws::Utils::DateTime&& value) { SetToTimestamp(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetToTimestamp() const { return m_toTimestamp; }
+    template<typename ToTimestampT = Aws::Utils::DateTime>
+    void SetToTimestamp(ToTimestampT&& value) { m_toTimestampHasBeenSet = true; m_toTimestamp = std::forward<ToTimestampT>(value); }
+    template<typename ToTimestampT = Aws::Utils::DateTime>
+    GetArchiveExportResult& WithToTimestamp(ToTimestampT&& value) { SetToTimestamp(std::forward<ToTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetArchiveExportResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetArchiveExportResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetArchiveExportResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetArchiveExportResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_archiveId;
+    bool m_archiveIdHasBeenSet = false;
 
     ExportDestinationConfiguration m_exportDestinationConfiguration;
+    bool m_exportDestinationConfigurationHasBeenSet = false;
 
     ArchiveFilters m_filters;
+    bool m_filtersHasBeenSet = false;
 
-    Aws::Utils::DateTime m_fromTimestamp;
+    Aws::Utils::DateTime m_fromTimestamp{};
+    bool m_fromTimestampHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
+    bool m_maxResultsHasBeenSet = false;
 
     ExportStatus m_status;
+    bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_toTimestamp;
+    Aws::Utils::DateTime m_toTimestamp{};
+    bool m_toTimestampHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

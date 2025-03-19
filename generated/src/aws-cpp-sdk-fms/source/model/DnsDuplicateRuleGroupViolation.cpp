@@ -18,14 +18,7 @@ namespace FMS
 namespace Model
 {
 
-DnsDuplicateRuleGroupViolation::DnsDuplicateRuleGroupViolation() : 
-    m_violationTargetHasBeenSet(false),
-    m_violationTargetDescriptionHasBeenSet(false)
-{
-}
-
 DnsDuplicateRuleGroupViolation::DnsDuplicateRuleGroupViolation(JsonView jsonValue)
-  : DnsDuplicateRuleGroupViolation()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DnsDuplicateRuleGroupViolation& DnsDuplicateRuleGroupViolation::operator =(JsonV
   if(jsonValue.ValueExists("ViolationTarget"))
   {
     m_violationTarget = jsonValue.GetString("ViolationTarget");
-
     m_violationTargetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ViolationTargetDescription"))
   {
     m_violationTargetDescription = jsonValue.GetString("ViolationTargetDescription");
-
     m_violationTargetDescriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

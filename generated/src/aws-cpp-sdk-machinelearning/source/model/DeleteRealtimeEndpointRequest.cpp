@@ -12,11 +12,6 @@ using namespace Aws::MachineLearning::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteRealtimeEndpointRequest::DeleteRealtimeEndpointRequest() : 
-    m_mLModelIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRealtimeEndpointRequest::SerializePayload() const
 {
   JsonValue payload;

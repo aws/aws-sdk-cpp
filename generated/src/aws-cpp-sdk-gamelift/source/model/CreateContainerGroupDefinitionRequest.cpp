@@ -12,23 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateContainerGroupDefinitionRequest::CreateContainerGroupDefinitionRequest() : 
-    m_nameHasBeenSet(false),
-    m_containerGroupType(ContainerGroupType::NOT_SET),
-    m_containerGroupTypeHasBeenSet(false),
-    m_totalMemoryLimitMebibytes(0),
-    m_totalMemoryLimitMebibytesHasBeenSet(false),
-    m_totalVcpuLimit(0.0),
-    m_totalVcpuLimitHasBeenSet(false),
-    m_gameServerContainerDefinitionHasBeenSet(false),
-    m_supportContainerDefinitionsHasBeenSet(false),
-    m_operatingSystem(ContainerOperatingSystem::NOT_SET),
-    m_operatingSystemHasBeenSet(false),
-    m_versionDescriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateContainerGroupDefinitionRequest::SerializePayload() const
 {
   JsonValue payload;

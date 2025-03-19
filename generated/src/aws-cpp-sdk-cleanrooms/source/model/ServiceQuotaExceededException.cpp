@@ -18,16 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-ServiceQuotaExceededException::ServiceQuotaExceededException() : 
-    m_messageHasBeenSet(false),
-    m_quotaNameHasBeenSet(false),
-    m_quotaValue(0.0),
-    m_quotaValueHasBeenSet(false)
-{
-}
-
 ServiceQuotaExceededException::ServiceQuotaExceededException(JsonView jsonValue)
-  : ServiceQuotaExceededException()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ServiceQuotaExceededException& ServiceQuotaExceededException::operator =(JsonVie
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("quotaName"))
   {
     m_quotaName = jsonValue.GetString("quotaName");
-
     m_quotaNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("quotaValue"))
   {
     m_quotaValue = jsonValue.GetDouble("quotaValue");
-
     m_quotaValueHasBeenSet = true;
   }
-
   return *this;
 }
 

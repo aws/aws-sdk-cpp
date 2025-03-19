@@ -18,17 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-OAuth2Defaults::OAuth2Defaults() : 
-    m_oauthScopesHasBeenSet(false),
-    m_tokenUrlsHasBeenSet(false),
-    m_authCodeUrlsHasBeenSet(false),
-    m_oauth2GrantTypesSupportedHasBeenSet(false),
-    m_oauth2CustomPropertiesHasBeenSet(false)
-{
-}
-
 OAuth2Defaults::OAuth2Defaults(JsonView jsonValue)
-  : OAuth2Defaults()
 {
   *this = jsonValue;
 }
@@ -44,7 +34,6 @@ OAuth2Defaults& OAuth2Defaults::operator =(JsonView jsonValue)
     }
     m_oauthScopesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tokenUrls"))
   {
     Aws::Utils::Array<JsonView> tokenUrlsJsonList = jsonValue.GetArray("tokenUrls");
@@ -54,7 +43,6 @@ OAuth2Defaults& OAuth2Defaults::operator =(JsonView jsonValue)
     }
     m_tokenUrlsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authCodeUrls"))
   {
     Aws::Utils::Array<JsonView> authCodeUrlsJsonList = jsonValue.GetArray("authCodeUrls");
@@ -64,7 +52,6 @@ OAuth2Defaults& OAuth2Defaults::operator =(JsonView jsonValue)
     }
     m_authCodeUrlsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("oauth2GrantTypesSupported"))
   {
     Aws::Utils::Array<JsonView> oauth2GrantTypesSupportedJsonList = jsonValue.GetArray("oauth2GrantTypesSupported");
@@ -74,7 +61,6 @@ OAuth2Defaults& OAuth2Defaults::operator =(JsonView jsonValue)
     }
     m_oauth2GrantTypesSupportedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("oauth2CustomProperties"))
   {
     Aws::Utils::Array<JsonView> oauth2CustomPropertiesJsonList = jsonValue.GetArray("oauth2CustomProperties");
@@ -84,7 +70,6 @@ OAuth2Defaults& OAuth2Defaults::operator =(JsonView jsonValue)
     }
     m_oauth2CustomPropertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

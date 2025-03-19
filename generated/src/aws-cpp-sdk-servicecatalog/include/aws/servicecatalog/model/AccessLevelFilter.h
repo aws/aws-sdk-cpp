@@ -32,7 +32,7 @@ namespace Model
   class AccessLevelFilter
   {
   public:
-    AWS_SERVICECATALOG_API AccessLevelFilter();
+    AWS_SERVICECATALOG_API AccessLevelFilter() = default;
     AWS_SERVICECATALOG_API AccessLevelFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICECATALOG_API AccessLevelFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
      * based on the federated role of the specified user.</p> </li> <li> <p>
      * <code>User</code> - Filter results based on the specified user.</p> </li> </ul>
      */
-    inline const AccessLevelFilterKey& GetKey() const{ return m_key; }
+    inline AccessLevelFilterKey GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const AccessLevelFilterKey& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(AccessLevelFilterKey&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline AccessLevelFilter& WithKey(const AccessLevelFilterKey& value) { SetKey(value); return *this;}
-    inline AccessLevelFilter& WithKey(AccessLevelFilterKey&& value) { SetKey(std::move(value)); return *this;}
+    inline void SetKey(AccessLevelFilterKey value) { m_keyHasBeenSet = true; m_key = value; }
+    inline AccessLevelFilter& WithKey(AccessLevelFilterKey value) { SetKey(value); return *this;}
     ///@}
 
     ///@{
@@ -58,18 +56,16 @@ namespace Model
      * <p>The user to which the access level applies. The only supported value is
      * <code>self</code>.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline AccessLevelFilter& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline AccessLevelFilter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline AccessLevelFilter& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    AccessLevelFilter& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
-    AccessLevelFilterKey m_key;
+    AccessLevelFilterKey m_key{AccessLevelFilterKey::NOT_SET};
     bool m_keyHasBeenSet = false;
 
     Aws::String m_value;

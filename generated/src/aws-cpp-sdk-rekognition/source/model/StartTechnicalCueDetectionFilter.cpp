@@ -18,15 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-StartTechnicalCueDetectionFilter::StartTechnicalCueDetectionFilter() : 
-    m_minSegmentConfidence(0.0),
-    m_minSegmentConfidenceHasBeenSet(false),
-    m_blackFrameHasBeenSet(false)
-{
-}
-
 StartTechnicalCueDetectionFilter::StartTechnicalCueDetectionFilter(JsonView jsonValue)
-  : StartTechnicalCueDetectionFilter()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ StartTechnicalCueDetectionFilter& StartTechnicalCueDetectionFilter::operator =(J
   if(jsonValue.ValueExists("MinSegmentConfidence"))
   {
     m_minSegmentConfidence = jsonValue.GetDouble("MinSegmentConfidence");
-
     m_minSegmentConfidenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BlackFrame"))
   {
     m_blackFrame = jsonValue.GetObject("BlackFrame");
-
     m_blackFrameHasBeenSet = true;
   }
-
   return *this;
 }
 

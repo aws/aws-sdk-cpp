@@ -18,14 +18,7 @@ namespace WorkMail
 namespace Model
 {
 
-IdentityCenterConfiguration::IdentityCenterConfiguration() : 
-    m_instanceArnHasBeenSet(false),
-    m_applicationArnHasBeenSet(false)
-{
-}
-
 IdentityCenterConfiguration::IdentityCenterConfiguration(JsonView jsonValue)
-  : IdentityCenterConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ IdentityCenterConfiguration& IdentityCenterConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("InstanceArn"))
   {
     m_instanceArn = jsonValue.GetString("InstanceArn");
-
     m_instanceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationArn"))
   {
     m_applicationArn = jsonValue.GetString("ApplicationArn");
-
     m_applicationArnHasBeenSet = true;
   }
-
   return *this;
 }
 

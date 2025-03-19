@@ -30,7 +30,7 @@ namespace Model
   class ListHoursOfOperationOverridesResult
   {
   public:
-    AWS_CONNECT_API ListHoursOfOperationOverridesResult();
+    AWS_CONNECT_API ListHoursOfOperationOverridesResult() = default;
     AWS_CONNECT_API ListHoursOfOperationOverridesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECT_API ListHoursOfOperationOverridesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,73 +40,72 @@ namespace Model
      * <p>The token for the next set of results. Use the value returned in the previous
      * response in the next request to retrieve the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListHoursOfOperationOverridesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListHoursOfOperationOverridesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListHoursOfOperationOverridesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListHoursOfOperationOverridesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the hours of operation override.</p>
      */
-    inline const Aws::Vector<HoursOfOperationOverride>& GetHoursOfOperationOverrideList() const{ return m_hoursOfOperationOverrideList; }
-    inline void SetHoursOfOperationOverrideList(const Aws::Vector<HoursOfOperationOverride>& value) { m_hoursOfOperationOverrideList = value; }
-    inline void SetHoursOfOperationOverrideList(Aws::Vector<HoursOfOperationOverride>&& value) { m_hoursOfOperationOverrideList = std::move(value); }
-    inline ListHoursOfOperationOverridesResult& WithHoursOfOperationOverrideList(const Aws::Vector<HoursOfOperationOverride>& value) { SetHoursOfOperationOverrideList(value); return *this;}
-    inline ListHoursOfOperationOverridesResult& WithHoursOfOperationOverrideList(Aws::Vector<HoursOfOperationOverride>&& value) { SetHoursOfOperationOverrideList(std::move(value)); return *this;}
-    inline ListHoursOfOperationOverridesResult& AddHoursOfOperationOverrideList(const HoursOfOperationOverride& value) { m_hoursOfOperationOverrideList.push_back(value); return *this; }
-    inline ListHoursOfOperationOverridesResult& AddHoursOfOperationOverrideList(HoursOfOperationOverride&& value) { m_hoursOfOperationOverrideList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<HoursOfOperationOverride>& GetHoursOfOperationOverrideList() const { return m_hoursOfOperationOverrideList; }
+    template<typename HoursOfOperationOverrideListT = Aws::Vector<HoursOfOperationOverride>>
+    void SetHoursOfOperationOverrideList(HoursOfOperationOverrideListT&& value) { m_hoursOfOperationOverrideListHasBeenSet = true; m_hoursOfOperationOverrideList = std::forward<HoursOfOperationOverrideListT>(value); }
+    template<typename HoursOfOperationOverrideListT = Aws::Vector<HoursOfOperationOverride>>
+    ListHoursOfOperationOverridesResult& WithHoursOfOperationOverrideList(HoursOfOperationOverrideListT&& value) { SetHoursOfOperationOverrideList(std::forward<HoursOfOperationOverrideListT>(value)); return *this;}
+    template<typename HoursOfOperationOverrideListT = HoursOfOperationOverride>
+    ListHoursOfOperationOverridesResult& AddHoursOfOperationOverrideList(HoursOfOperationOverrideListT&& value) { m_hoursOfOperationOverrideListHasBeenSet = true; m_hoursOfOperationOverrideList.emplace_back(std::forward<HoursOfOperationOverrideListT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The AWS Region where this resource was last modified.</p>
      */
-    inline const Aws::String& GetLastModifiedRegion() const{ return m_lastModifiedRegion; }
-    inline void SetLastModifiedRegion(const Aws::String& value) { m_lastModifiedRegion = value; }
-    inline void SetLastModifiedRegion(Aws::String&& value) { m_lastModifiedRegion = std::move(value); }
-    inline void SetLastModifiedRegion(const char* value) { m_lastModifiedRegion.assign(value); }
-    inline ListHoursOfOperationOverridesResult& WithLastModifiedRegion(const Aws::String& value) { SetLastModifiedRegion(value); return *this;}
-    inline ListHoursOfOperationOverridesResult& WithLastModifiedRegion(Aws::String&& value) { SetLastModifiedRegion(std::move(value)); return *this;}
-    inline ListHoursOfOperationOverridesResult& WithLastModifiedRegion(const char* value) { SetLastModifiedRegion(value); return *this;}
+    inline const Aws::String& GetLastModifiedRegion() const { return m_lastModifiedRegion; }
+    template<typename LastModifiedRegionT = Aws::String>
+    void SetLastModifiedRegion(LastModifiedRegionT&& value) { m_lastModifiedRegionHasBeenSet = true; m_lastModifiedRegion = std::forward<LastModifiedRegionT>(value); }
+    template<typename LastModifiedRegionT = Aws::String>
+    ListHoursOfOperationOverridesResult& WithLastModifiedRegion(LastModifiedRegionT&& value) { SetLastModifiedRegion(std::forward<LastModifiedRegionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp when this resource was last modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
-    inline ListHoursOfOperationOverridesResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline ListHoursOfOperationOverridesResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    ListHoursOfOperationOverridesResult& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListHoursOfOperationOverridesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListHoursOfOperationOverridesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListHoursOfOperationOverridesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListHoursOfOperationOverridesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<HoursOfOperationOverride> m_hoursOfOperationOverrideList;
+    bool m_hoursOfOperationOverrideListHasBeenSet = false;
 
     Aws::String m_lastModifiedRegion;
+    bool m_lastModifiedRegionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

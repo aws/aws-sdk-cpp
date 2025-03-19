@@ -31,7 +31,7 @@ namespace Model
   class BatchGetCalculatedAttributeForProfileResult
   {
   public:
-    AWS_CUSTOMERPROFILES_API BatchGetCalculatedAttributeForProfileResult();
+    AWS_CUSTOMERPROFILES_API BatchGetCalculatedAttributeForProfileResult() = default;
     AWS_CUSTOMERPROFILES_API BatchGetCalculatedAttributeForProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CUSTOMERPROFILES_API BatchGetCalculatedAttributeForProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,26 +41,26 @@ namespace Model
      * <p>List of errors for calculated attribute values that could not be
      * retrieved.</p>
      */
-    inline const Aws::Vector<BatchGetCalculatedAttributeForProfileError>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<BatchGetCalculatedAttributeForProfileError>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<BatchGetCalculatedAttributeForProfileError>&& value) { m_errors = std::move(value); }
-    inline BatchGetCalculatedAttributeForProfileResult& WithErrors(const Aws::Vector<BatchGetCalculatedAttributeForProfileError>& value) { SetErrors(value); return *this;}
-    inline BatchGetCalculatedAttributeForProfileResult& WithErrors(Aws::Vector<BatchGetCalculatedAttributeForProfileError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline BatchGetCalculatedAttributeForProfileResult& AddErrors(const BatchGetCalculatedAttributeForProfileError& value) { m_errors.push_back(value); return *this; }
-    inline BatchGetCalculatedAttributeForProfileResult& AddErrors(BatchGetCalculatedAttributeForProfileError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchGetCalculatedAttributeForProfileError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<BatchGetCalculatedAttributeForProfileError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<BatchGetCalculatedAttributeForProfileError>>
+    BatchGetCalculatedAttributeForProfileResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = BatchGetCalculatedAttributeForProfileError>
+    BatchGetCalculatedAttributeForProfileResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>List of calculated attribute values retrieved.</p>
      */
-    inline const Aws::Vector<CalculatedAttributeValue>& GetCalculatedAttributeValues() const{ return m_calculatedAttributeValues; }
-    inline void SetCalculatedAttributeValues(const Aws::Vector<CalculatedAttributeValue>& value) { m_calculatedAttributeValues = value; }
-    inline void SetCalculatedAttributeValues(Aws::Vector<CalculatedAttributeValue>&& value) { m_calculatedAttributeValues = std::move(value); }
-    inline BatchGetCalculatedAttributeForProfileResult& WithCalculatedAttributeValues(const Aws::Vector<CalculatedAttributeValue>& value) { SetCalculatedAttributeValues(value); return *this;}
-    inline BatchGetCalculatedAttributeForProfileResult& WithCalculatedAttributeValues(Aws::Vector<CalculatedAttributeValue>&& value) { SetCalculatedAttributeValues(std::move(value)); return *this;}
-    inline BatchGetCalculatedAttributeForProfileResult& AddCalculatedAttributeValues(const CalculatedAttributeValue& value) { m_calculatedAttributeValues.push_back(value); return *this; }
-    inline BatchGetCalculatedAttributeForProfileResult& AddCalculatedAttributeValues(CalculatedAttributeValue&& value) { m_calculatedAttributeValues.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CalculatedAttributeValue>& GetCalculatedAttributeValues() const { return m_calculatedAttributeValues; }
+    template<typename CalculatedAttributeValuesT = Aws::Vector<CalculatedAttributeValue>>
+    void SetCalculatedAttributeValues(CalculatedAttributeValuesT&& value) { m_calculatedAttributeValuesHasBeenSet = true; m_calculatedAttributeValues = std::forward<CalculatedAttributeValuesT>(value); }
+    template<typename CalculatedAttributeValuesT = Aws::Vector<CalculatedAttributeValue>>
+    BatchGetCalculatedAttributeForProfileResult& WithCalculatedAttributeValues(CalculatedAttributeValuesT&& value) { SetCalculatedAttributeValues(std::forward<CalculatedAttributeValuesT>(value)); return *this;}
+    template<typename CalculatedAttributeValuesT = CalculatedAttributeValue>
+    BatchGetCalculatedAttributeForProfileResult& AddCalculatedAttributeValues(CalculatedAttributeValuesT&& value) { m_calculatedAttributeValuesHasBeenSet = true; m_calculatedAttributeValues.emplace_back(std::forward<CalculatedAttributeValuesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -68,32 +68,34 @@ namespace Model
      * <p>Overrides the condition block within the original calculated attribute
      * definition.</p>
      */
-    inline const ConditionOverrides& GetConditionOverrides() const{ return m_conditionOverrides; }
-    inline void SetConditionOverrides(const ConditionOverrides& value) { m_conditionOverrides = value; }
-    inline void SetConditionOverrides(ConditionOverrides&& value) { m_conditionOverrides = std::move(value); }
-    inline BatchGetCalculatedAttributeForProfileResult& WithConditionOverrides(const ConditionOverrides& value) { SetConditionOverrides(value); return *this;}
-    inline BatchGetCalculatedAttributeForProfileResult& WithConditionOverrides(ConditionOverrides&& value) { SetConditionOverrides(std::move(value)); return *this;}
+    inline const ConditionOverrides& GetConditionOverrides() const { return m_conditionOverrides; }
+    template<typename ConditionOverridesT = ConditionOverrides>
+    void SetConditionOverrides(ConditionOverridesT&& value) { m_conditionOverridesHasBeenSet = true; m_conditionOverrides = std::forward<ConditionOverridesT>(value); }
+    template<typename ConditionOverridesT = ConditionOverrides>
+    BatchGetCalculatedAttributeForProfileResult& WithConditionOverrides(ConditionOverridesT&& value) { SetConditionOverrides(std::forward<ConditionOverridesT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchGetCalculatedAttributeForProfileResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchGetCalculatedAttributeForProfileResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchGetCalculatedAttributeForProfileResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchGetCalculatedAttributeForProfileResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<BatchGetCalculatedAttributeForProfileError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::Vector<CalculatedAttributeValue> m_calculatedAttributeValues;
+    bool m_calculatedAttributeValuesHasBeenSet = false;
 
     ConditionOverrides m_conditionOverrides;
+    bool m_conditionOverridesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

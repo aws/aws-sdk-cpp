@@ -33,7 +33,7 @@ namespace Model
   class S3Destination
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API S3Destination();
+    AWS_COMPUTEOPTIMIZER_API S3Destination() = default;
     AWS_COMPUTEOPTIMIZER_API S3Destination(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API S3Destination& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The name of the Amazon S3 bucket used as the destination of an export
      * file.</p>
      */
-    inline const Aws::String& GetBucket() const{ return m_bucket; }
+    inline const Aws::String& GetBucket() const { return m_bucket; }
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
-    inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
-    inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
-    inline S3Destination& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
-    inline S3Destination& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
-    inline S3Destination& WithBucket(const char* value) { SetBucket(value); return *this;}
+    template<typename BucketT = Aws::String>
+    void SetBucket(BucketT&& value) { m_bucketHasBeenSet = true; m_bucket = std::forward<BucketT>(value); }
+    template<typename BucketT = Aws::String>
+    S3Destination& WithBucket(BucketT&& value) { SetBucket(std::forward<BucketT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>The Amazon S3 bucket key of an export file.</p> <p>The key uniquely
      * identifies the object, or export file, in the S3 bucket.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline S3Destination& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline S3Destination& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline S3Destination& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    S3Destination& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +70,12 @@ namespace Model
      * <p>The Amazon S3 bucket key of a metadata file.</p> <p>The key uniquely
      * identifies the object, or metadata file, in the S3 bucket.</p>
      */
-    inline const Aws::String& GetMetadataKey() const{ return m_metadataKey; }
+    inline const Aws::String& GetMetadataKey() const { return m_metadataKey; }
     inline bool MetadataKeyHasBeenSet() const { return m_metadataKeyHasBeenSet; }
-    inline void SetMetadataKey(const Aws::String& value) { m_metadataKeyHasBeenSet = true; m_metadataKey = value; }
-    inline void SetMetadataKey(Aws::String&& value) { m_metadataKeyHasBeenSet = true; m_metadataKey = std::move(value); }
-    inline void SetMetadataKey(const char* value) { m_metadataKeyHasBeenSet = true; m_metadataKey.assign(value); }
-    inline S3Destination& WithMetadataKey(const Aws::String& value) { SetMetadataKey(value); return *this;}
-    inline S3Destination& WithMetadataKey(Aws::String&& value) { SetMetadataKey(std::move(value)); return *this;}
-    inline S3Destination& WithMetadataKey(const char* value) { SetMetadataKey(value); return *this;}
+    template<typename MetadataKeyT = Aws::String>
+    void SetMetadataKey(MetadataKeyT&& value) { m_metadataKeyHasBeenSet = true; m_metadataKey = std::forward<MetadataKeyT>(value); }
+    template<typename MetadataKeyT = Aws::String>
+    S3Destination& WithMetadataKey(MetadataKeyT&& value) { SetMetadataKey(std::forward<MetadataKeyT>(value)); return *this;}
     ///@}
   private:
 

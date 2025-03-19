@@ -34,7 +34,7 @@ namespace Model
   class AppflowIntegration
   {
   public:
-    AWS_CUSTOMERPROFILES_API AppflowIntegration();
+    AWS_CUSTOMERPROFILES_API AppflowIntegration() = default;
     AWS_CUSTOMERPROFILES_API AppflowIntegration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API AppflowIntegration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,26 +42,26 @@ namespace Model
 
     ///@{
     
-    inline const FlowDefinition& GetFlowDefinition() const{ return m_flowDefinition; }
+    inline const FlowDefinition& GetFlowDefinition() const { return m_flowDefinition; }
     inline bool FlowDefinitionHasBeenSet() const { return m_flowDefinitionHasBeenSet; }
-    inline void SetFlowDefinition(const FlowDefinition& value) { m_flowDefinitionHasBeenSet = true; m_flowDefinition = value; }
-    inline void SetFlowDefinition(FlowDefinition&& value) { m_flowDefinitionHasBeenSet = true; m_flowDefinition = std::move(value); }
-    inline AppflowIntegration& WithFlowDefinition(const FlowDefinition& value) { SetFlowDefinition(value); return *this;}
-    inline AppflowIntegration& WithFlowDefinition(FlowDefinition&& value) { SetFlowDefinition(std::move(value)); return *this;}
+    template<typename FlowDefinitionT = FlowDefinition>
+    void SetFlowDefinition(FlowDefinitionT&& value) { m_flowDefinitionHasBeenSet = true; m_flowDefinition = std::forward<FlowDefinitionT>(value); }
+    template<typename FlowDefinitionT = FlowDefinition>
+    AppflowIntegration& WithFlowDefinition(FlowDefinitionT&& value) { SetFlowDefinition(std::forward<FlowDefinitionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Batches in workflow of type <code>APPFLOW_INTEGRATION</code>.</p>
      */
-    inline const Aws::Vector<Batch>& GetBatches() const{ return m_batches; }
+    inline const Aws::Vector<Batch>& GetBatches() const { return m_batches; }
     inline bool BatchesHasBeenSet() const { return m_batchesHasBeenSet; }
-    inline void SetBatches(const Aws::Vector<Batch>& value) { m_batchesHasBeenSet = true; m_batches = value; }
-    inline void SetBatches(Aws::Vector<Batch>&& value) { m_batchesHasBeenSet = true; m_batches = std::move(value); }
-    inline AppflowIntegration& WithBatches(const Aws::Vector<Batch>& value) { SetBatches(value); return *this;}
-    inline AppflowIntegration& WithBatches(Aws::Vector<Batch>&& value) { SetBatches(std::move(value)); return *this;}
-    inline AppflowIntegration& AddBatches(const Batch& value) { m_batchesHasBeenSet = true; m_batches.push_back(value); return *this; }
-    inline AppflowIntegration& AddBatches(Batch&& value) { m_batchesHasBeenSet = true; m_batches.push_back(std::move(value)); return *this; }
+    template<typename BatchesT = Aws::Vector<Batch>>
+    void SetBatches(BatchesT&& value) { m_batchesHasBeenSet = true; m_batches = std::forward<BatchesT>(value); }
+    template<typename BatchesT = Aws::Vector<Batch>>
+    AppflowIntegration& WithBatches(BatchesT&& value) { SetBatches(std::forward<BatchesT>(value)); return *this;}
+    template<typename BatchesT = Batch>
+    AppflowIntegration& AddBatches(BatchesT&& value) { m_batchesHasBeenSet = true; m_batches.emplace_back(std::forward<BatchesT>(value)); return *this; }
     ///@}
   private:
 

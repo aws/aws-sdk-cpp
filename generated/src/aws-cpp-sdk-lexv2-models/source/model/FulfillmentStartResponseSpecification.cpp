@@ -18,17 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-FulfillmentStartResponseSpecification::FulfillmentStartResponseSpecification() : 
-    m_delayInSeconds(0),
-    m_delayInSecondsHasBeenSet(false),
-    m_messageGroupsHasBeenSet(false),
-    m_allowInterrupt(false),
-    m_allowInterruptHasBeenSet(false)
-{
-}
-
 FulfillmentStartResponseSpecification::FulfillmentStartResponseSpecification(JsonView jsonValue)
-  : FulfillmentStartResponseSpecification()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ FulfillmentStartResponseSpecification& FulfillmentStartResponseSpecification::op
   if(jsonValue.ValueExists("delayInSeconds"))
   {
     m_delayInSeconds = jsonValue.GetInteger("delayInSeconds");
-
     m_delayInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("messageGroups"))
   {
     Aws::Utils::Array<JsonView> messageGroupsJsonList = jsonValue.GetArray("messageGroups");
@@ -51,14 +39,11 @@ FulfillmentStartResponseSpecification& FulfillmentStartResponseSpecification::op
     }
     m_messageGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allowInterrupt"))
   {
     m_allowInterrupt = jsonValue.GetBool("allowInterrupt");
-
     m_allowInterruptHasBeenSet = true;
   }
-
   return *this;
 }
 

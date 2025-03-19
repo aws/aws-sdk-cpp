@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteVpcIngressConnectionResult::DeleteVpcIngressConnectionResult()
-{
-}
-
 DeleteVpcIngressConnectionResult::DeleteVpcIngressConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DeleteVpcIngressConnectionResult& DeleteVpcIngressConnectionResult::operator =(c
   if(jsonValue.ValueExists("VpcIngressConnection"))
   {
     m_vpcIngressConnection = jsonValue.GetObject("VpcIngressConnection");
-
+    m_vpcIngressConnectionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

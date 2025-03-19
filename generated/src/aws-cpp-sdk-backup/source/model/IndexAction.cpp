@@ -18,13 +18,7 @@ namespace Backup
 namespace Model
 {
 
-IndexAction::IndexAction() : 
-    m_resourceTypesHasBeenSet(false)
-{
-}
-
 IndexAction::IndexAction(JsonView jsonValue)
-  : IndexAction()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ IndexAction& IndexAction::operator =(JsonView jsonValue)
     }
     m_resourceTypesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,14 +20,7 @@ namespace RDS
 namespace Model
 {
 
-RecommendedActionUpdate::RecommendedActionUpdate() : 
-    m_actionIdHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 RecommendedActionUpdate::RecommendedActionUpdate(const XmlNode& xmlNode)
-  : RecommendedActionUpdate()
 {
   *this = xmlNode;
 }

@@ -18,10 +18,6 @@ namespace LakeFormation
 namespace Model
 {
 
-AllRowsWildcard::AllRowsWildcard()
-{
-}
-
 AllRowsWildcard::AllRowsWildcard(JsonView jsonValue)
 {
   *this = jsonValue;

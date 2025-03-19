@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteInferenceComponentRequest::DeleteInferenceComponentRequest() : 
-    m_inferenceComponentNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteInferenceComponentRequest::SerializePayload() const
 {
   JsonValue payload;

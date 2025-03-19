@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-AssociateBrowserSettingsRequest::AssociateBrowserSettingsRequest() : 
-    m_browserSettingsArnHasBeenSet(false),
-    m_portalArnHasBeenSet(false)
-{
-}
-
 Aws::String AssociateBrowserSettingsRequest::SerializePayload() const
 {
   return {};

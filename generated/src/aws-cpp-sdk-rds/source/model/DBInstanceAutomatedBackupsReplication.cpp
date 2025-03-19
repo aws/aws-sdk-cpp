@@ -20,13 +20,7 @@ namespace RDS
 namespace Model
 {
 
-DBInstanceAutomatedBackupsReplication::DBInstanceAutomatedBackupsReplication() : 
-    m_dBInstanceAutomatedBackupsArnHasBeenSet(false)
-{
-}
-
 DBInstanceAutomatedBackupsReplication::DBInstanceAutomatedBackupsReplication(const XmlNode& xmlNode)
-  : DBInstanceAutomatedBackupsReplication()
 {
   *this = xmlNode;
 }

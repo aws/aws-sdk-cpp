@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchGetDocumentStatusResult::BatchGetDocumentStatusResult()
-{
-}
-
 BatchGetDocumentStatusResult::BatchGetDocumentStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ BatchGetDocumentStatusResult& BatchGetDocumentStatusResult::operator =(const Aws
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
     }
+    m_errorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentStatusList"))
   {
     Aws::Utils::Array<JsonView> documentStatusListJsonList = jsonValue.GetArray("DocumentStatusList");
@@ -45,14 +41,15 @@ BatchGetDocumentStatusResult& BatchGetDocumentStatusResult::operator =(const Aws
     {
       m_documentStatusList.push_back(documentStatusListJsonList[documentStatusListIndex].AsObject());
     }
+    m_documentStatusListHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

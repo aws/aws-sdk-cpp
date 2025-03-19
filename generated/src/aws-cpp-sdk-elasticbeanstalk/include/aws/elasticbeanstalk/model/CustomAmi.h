@@ -31,7 +31,7 @@ namespace Model
   class CustomAmi
   {
   public:
-    AWS_ELASTICBEANSTALK_API CustomAmi();
+    AWS_ELASTICBEANSTALK_API CustomAmi() = default;
     AWS_ELASTICBEANSTALK_API CustomAmi(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICBEANSTALK_API CustomAmi& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The type of virtualization used to create the custom AMI.</p>
      */
-    inline const Aws::String& GetVirtualizationType() const{ return m_virtualizationType; }
+    inline const Aws::String& GetVirtualizationType() const { return m_virtualizationType; }
     inline bool VirtualizationTypeHasBeenSet() const { return m_virtualizationTypeHasBeenSet; }
-    inline void SetVirtualizationType(const Aws::String& value) { m_virtualizationTypeHasBeenSet = true; m_virtualizationType = value; }
-    inline void SetVirtualizationType(Aws::String&& value) { m_virtualizationTypeHasBeenSet = true; m_virtualizationType = std::move(value); }
-    inline void SetVirtualizationType(const char* value) { m_virtualizationTypeHasBeenSet = true; m_virtualizationType.assign(value); }
-    inline CustomAmi& WithVirtualizationType(const Aws::String& value) { SetVirtualizationType(value); return *this;}
-    inline CustomAmi& WithVirtualizationType(Aws::String&& value) { SetVirtualizationType(std::move(value)); return *this;}
-    inline CustomAmi& WithVirtualizationType(const char* value) { SetVirtualizationType(value); return *this;}
+    template<typename VirtualizationTypeT = Aws::String>
+    void SetVirtualizationType(VirtualizationTypeT&& value) { m_virtualizationTypeHasBeenSet = true; m_virtualizationType = std::forward<VirtualizationTypeT>(value); }
+    template<typename VirtualizationTypeT = Aws::String>
+    CustomAmi& WithVirtualizationType(VirtualizationTypeT&& value) { SetVirtualizationType(std::forward<VirtualizationTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>THe ID of the image used to create the custom AMI.</p>
      */
-    inline const Aws::String& GetImageId() const{ return m_imageId; }
+    inline const Aws::String& GetImageId() const { return m_imageId; }
     inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
-    inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
-    inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
-    inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
-    inline CustomAmi& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
-    inline CustomAmi& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
-    inline CustomAmi& WithImageId(const char* value) { SetImageId(value); return *this;}
+    template<typename ImageIdT = Aws::String>
+    void SetImageId(ImageIdT&& value) { m_imageIdHasBeenSet = true; m_imageId = std::forward<ImageIdT>(value); }
+    template<typename ImageIdT = Aws::String>
+    CustomAmi& WithImageId(ImageIdT&& value) { SetImageId(std::forward<ImageIdT>(value)); return *this;}
     ///@}
   private:
 

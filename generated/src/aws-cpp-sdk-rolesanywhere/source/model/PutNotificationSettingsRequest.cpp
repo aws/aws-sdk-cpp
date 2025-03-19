@@ -12,12 +12,6 @@ using namespace Aws::RolesAnywhere::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutNotificationSettingsRequest::PutNotificationSettingsRequest() : 
-    m_notificationSettingsHasBeenSet(false),
-    m_trustAnchorIdHasBeenSet(false)
-{
-}
-
 Aws::String PutNotificationSettingsRequest::SerializePayload() const
 {
   JsonValue payload;

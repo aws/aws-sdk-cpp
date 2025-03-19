@@ -18,16 +18,7 @@ namespace drs
 namespace Model
 {
 
-NetworkInterface::NetworkInterface() : 
-    m_ipsHasBeenSet(false),
-    m_isPrimary(false),
-    m_isPrimaryHasBeenSet(false),
-    m_macAddressHasBeenSet(false)
-{
-}
-
 NetworkInterface::NetworkInterface(JsonView jsonValue)
-  : NetworkInterface()
 {
   *this = jsonValue;
 }
@@ -43,21 +34,16 @@ NetworkInterface& NetworkInterface::operator =(JsonView jsonValue)
     }
     m_ipsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isPrimary"))
   {
     m_isPrimary = jsonValue.GetBool("isPrimary");
-
     m_isPrimaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("macAddress"))
   {
     m_macAddress = jsonValue.GetString("macAddress");
-
     m_macAddressHasBeenSet = true;
   }
-
   return *this;
 }
 

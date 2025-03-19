@@ -12,12 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteLogStreamRequest::DeleteLogStreamRequest() : 
-    m_logGroupNameHasBeenSet(false),
-    m_logStreamNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteLogStreamRequest::SerializePayload() const
 {
   JsonValue payload;

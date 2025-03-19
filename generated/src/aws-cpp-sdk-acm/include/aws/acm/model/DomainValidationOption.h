@@ -33,7 +33,7 @@ namespace Model
   class DomainValidationOption
   {
   public:
-    AWS_ACM_API DomainValidationOption();
+    AWS_ACM_API DomainValidationOption() = default;
     AWS_ACM_API DomainValidationOption(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACM_API DomainValidationOption& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>A fully qualified domain name (FQDN) in the certificate request.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline DomainValidationOption& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline DomainValidationOption& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline DomainValidationOption& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    DomainValidationOption& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,14 +64,12 @@ namespace Model
      * <li> <p>postmaster@example.com</p> </li> <li> <p>webmaster@example.com</p> </li>
      * </ul>
      */
-    inline const Aws::String& GetValidationDomain() const{ return m_validationDomain; }
+    inline const Aws::String& GetValidationDomain() const { return m_validationDomain; }
     inline bool ValidationDomainHasBeenSet() const { return m_validationDomainHasBeenSet; }
-    inline void SetValidationDomain(const Aws::String& value) { m_validationDomainHasBeenSet = true; m_validationDomain = value; }
-    inline void SetValidationDomain(Aws::String&& value) { m_validationDomainHasBeenSet = true; m_validationDomain = std::move(value); }
-    inline void SetValidationDomain(const char* value) { m_validationDomainHasBeenSet = true; m_validationDomain.assign(value); }
-    inline DomainValidationOption& WithValidationDomain(const Aws::String& value) { SetValidationDomain(value); return *this;}
-    inline DomainValidationOption& WithValidationDomain(Aws::String&& value) { SetValidationDomain(std::move(value)); return *this;}
-    inline DomainValidationOption& WithValidationDomain(const char* value) { SetValidationDomain(value); return *this;}
+    template<typename ValidationDomainT = Aws::String>
+    void SetValidationDomain(ValidationDomainT&& value) { m_validationDomainHasBeenSet = true; m_validationDomain = std::forward<ValidationDomainT>(value); }
+    template<typename ValidationDomainT = Aws::String>
+    DomainValidationOption& WithValidationDomain(ValidationDomainT&& value) { SetValidationDomain(std::forward<ValidationDomainT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,20 +18,7 @@ namespace MWAA
 namespace Model
 {
 
-StatisticSet::StatisticSet() : 
-    m_sampleCount(0),
-    m_sampleCountHasBeenSet(false),
-    m_sum(0.0),
-    m_sumHasBeenSet(false),
-    m_minimum(0.0),
-    m_minimumHasBeenSet(false),
-    m_maximum(0.0),
-    m_maximumHasBeenSet(false)
-{
-}
-
 StatisticSet::StatisticSet(JsonView jsonValue)
-  : StatisticSet()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ StatisticSet& StatisticSet::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SampleCount"))
   {
     m_sampleCount = jsonValue.GetInteger("SampleCount");
-
     m_sampleCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Sum"))
   {
     m_sum = jsonValue.GetDouble("Sum");
-
     m_sumHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Minimum"))
   {
     m_minimum = jsonValue.GetDouble("Minimum");
-
     m_minimumHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Maximum"))
   {
     m_maximum = jsonValue.GetDouble("Maximum");
-
     m_maximumHasBeenSet = true;
   }
-
   return *this;
 }
 

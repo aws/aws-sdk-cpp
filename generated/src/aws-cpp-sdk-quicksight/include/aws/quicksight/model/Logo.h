@@ -32,7 +32,7 @@ namespace Model
   class Logo
   {
   public:
-    AWS_QUICKSIGHT_API Logo();
+    AWS_QUICKSIGHT_API Logo() = default;
     AWS_QUICKSIGHT_API Logo(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Logo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,26 +42,24 @@ namespace Model
     /**
      * <p>The alt text for the logo.</p>
      */
-    inline const Aws::String& GetAltText() const{ return m_altText; }
+    inline const Aws::String& GetAltText() const { return m_altText; }
     inline bool AltTextHasBeenSet() const { return m_altTextHasBeenSet; }
-    inline void SetAltText(const Aws::String& value) { m_altTextHasBeenSet = true; m_altText = value; }
-    inline void SetAltText(Aws::String&& value) { m_altTextHasBeenSet = true; m_altText = std::move(value); }
-    inline void SetAltText(const char* value) { m_altTextHasBeenSet = true; m_altText.assign(value); }
-    inline Logo& WithAltText(const Aws::String& value) { SetAltText(value); return *this;}
-    inline Logo& WithAltText(Aws::String&& value) { SetAltText(std::move(value)); return *this;}
-    inline Logo& WithAltText(const char* value) { SetAltText(value); return *this;}
+    template<typename AltTextT = Aws::String>
+    void SetAltText(AltTextT&& value) { m_altTextHasBeenSet = true; m_altText = std::forward<AltTextT>(value); }
+    template<typename AltTextT = Aws::String>
+    Logo& WithAltText(AltTextT&& value) { SetAltText(std::forward<AltTextT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A set of configured logos.</p>
      */
-    inline const LogoSet& GetLogoSet() const{ return m_logoSet; }
+    inline const LogoSet& GetLogoSet() const { return m_logoSet; }
     inline bool LogoSetHasBeenSet() const { return m_logoSetHasBeenSet; }
-    inline void SetLogoSet(const LogoSet& value) { m_logoSetHasBeenSet = true; m_logoSet = value; }
-    inline void SetLogoSet(LogoSet&& value) { m_logoSetHasBeenSet = true; m_logoSet = std::move(value); }
-    inline Logo& WithLogoSet(const LogoSet& value) { SetLogoSet(value); return *this;}
-    inline Logo& WithLogoSet(LogoSet&& value) { SetLogoSet(std::move(value)); return *this;}
+    template<typename LogoSetT = LogoSet>
+    void SetLogoSet(LogoSetT&& value) { m_logoSetHasBeenSet = true; m_logoSet = std::forward<LogoSetT>(value); }
+    template<typename LogoSetT = LogoSet>
+    Logo& WithLogoSet(LogoSetT&& value) { SetLogoSet(std::forward<LogoSetT>(value)); return *this;}
     ///@}
   private:
 

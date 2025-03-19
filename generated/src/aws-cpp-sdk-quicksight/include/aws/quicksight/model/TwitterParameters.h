@@ -31,7 +31,7 @@ namespace Model
   class TwitterParameters
   {
   public:
-    AWS_QUICKSIGHT_API TwitterParameters();
+    AWS_QUICKSIGHT_API TwitterParameters() = default;
     AWS_QUICKSIGHT_API TwitterParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API TwitterParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,21 +41,19 @@ namespace Model
     /**
      * <p>Twitter query string.</p>
      */
-    inline const Aws::String& GetQuery() const{ return m_query; }
+    inline const Aws::String& GetQuery() const { return m_query; }
     inline bool QueryHasBeenSet() const { return m_queryHasBeenSet; }
-    inline void SetQuery(const Aws::String& value) { m_queryHasBeenSet = true; m_query = value; }
-    inline void SetQuery(Aws::String&& value) { m_queryHasBeenSet = true; m_query = std::move(value); }
-    inline void SetQuery(const char* value) { m_queryHasBeenSet = true; m_query.assign(value); }
-    inline TwitterParameters& WithQuery(const Aws::String& value) { SetQuery(value); return *this;}
-    inline TwitterParameters& WithQuery(Aws::String&& value) { SetQuery(std::move(value)); return *this;}
-    inline TwitterParameters& WithQuery(const char* value) { SetQuery(value); return *this;}
+    template<typename QueryT = Aws::String>
+    void SetQuery(QueryT&& value) { m_queryHasBeenSet = true; m_query = std::forward<QueryT>(value); }
+    template<typename QueryT = Aws::String>
+    TwitterParameters& WithQuery(QueryT&& value) { SetQuery(std::forward<QueryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Maximum number of rows to query Twitter.</p>
      */
-    inline int GetMaxRows() const{ return m_maxRows; }
+    inline int GetMaxRows() const { return m_maxRows; }
     inline bool MaxRowsHasBeenSet() const { return m_maxRowsHasBeenSet; }
     inline void SetMaxRows(int value) { m_maxRowsHasBeenSet = true; m_maxRows = value; }
     inline TwitterParameters& WithMaxRows(int value) { SetMaxRows(value); return *this;}
@@ -65,7 +63,7 @@ namespace Model
     Aws::String m_query;
     bool m_queryHasBeenSet = false;
 
-    int m_maxRows;
+    int m_maxRows{0};
     bool m_maxRowsHasBeenSet = false;
   };
 

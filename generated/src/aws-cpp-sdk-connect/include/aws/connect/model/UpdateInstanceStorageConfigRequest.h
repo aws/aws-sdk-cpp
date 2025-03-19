@@ -28,7 +28,7 @@ namespace Model
   class UpdateInstanceStorageConfigRequest : public ConnectRequest
   {
   public:
-    AWS_CONNECT_API UpdateInstanceStorageConfigRequest();
+    AWS_CONNECT_API UpdateInstanceStorageConfigRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,14 +47,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline UpdateInstanceStorageConfigRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline UpdateInstanceStorageConfigRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline UpdateInstanceStorageConfigRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    UpdateInstanceStorageConfigRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,36 +60,32 @@ namespace Model
      * <p>The existing association identifier that uniquely identifies the resource
      * type and storage config for the given instance ID.</p>
      */
-    inline const Aws::String& GetAssociationId() const{ return m_associationId; }
+    inline const Aws::String& GetAssociationId() const { return m_associationId; }
     inline bool AssociationIdHasBeenSet() const { return m_associationIdHasBeenSet; }
-    inline void SetAssociationId(const Aws::String& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
-    inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = std::move(value); }
-    inline void SetAssociationId(const char* value) { m_associationIdHasBeenSet = true; m_associationId.assign(value); }
-    inline UpdateInstanceStorageConfigRequest& WithAssociationId(const Aws::String& value) { SetAssociationId(value); return *this;}
-    inline UpdateInstanceStorageConfigRequest& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
-    inline UpdateInstanceStorageConfigRequest& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
+    template<typename AssociationIdT = Aws::String>
+    void SetAssociationId(AssociationIdT&& value) { m_associationIdHasBeenSet = true; m_associationId = std::forward<AssociationIdT>(value); }
+    template<typename AssociationIdT = Aws::String>
+    UpdateInstanceStorageConfigRequest& WithAssociationId(AssociationIdT&& value) { SetAssociationId(std::forward<AssociationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A valid resource type.</p>
      */
-    inline const InstanceStorageResourceType& GetResourceType() const{ return m_resourceType; }
+    inline InstanceStorageResourceType GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const InstanceStorageResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(InstanceStorageResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline UpdateInstanceStorageConfigRequest& WithResourceType(const InstanceStorageResourceType& value) { SetResourceType(value); return *this;}
-    inline UpdateInstanceStorageConfigRequest& WithResourceType(InstanceStorageResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    inline void SetResourceType(InstanceStorageResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline UpdateInstanceStorageConfigRequest& WithResourceType(InstanceStorageResourceType value) { SetResourceType(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const InstanceStorageConfig& GetStorageConfig() const{ return m_storageConfig; }
+    inline const InstanceStorageConfig& GetStorageConfig() const { return m_storageConfig; }
     inline bool StorageConfigHasBeenSet() const { return m_storageConfigHasBeenSet; }
-    inline void SetStorageConfig(const InstanceStorageConfig& value) { m_storageConfigHasBeenSet = true; m_storageConfig = value; }
-    inline void SetStorageConfig(InstanceStorageConfig&& value) { m_storageConfigHasBeenSet = true; m_storageConfig = std::move(value); }
-    inline UpdateInstanceStorageConfigRequest& WithStorageConfig(const InstanceStorageConfig& value) { SetStorageConfig(value); return *this;}
-    inline UpdateInstanceStorageConfigRequest& WithStorageConfig(InstanceStorageConfig&& value) { SetStorageConfig(std::move(value)); return *this;}
+    template<typename StorageConfigT = InstanceStorageConfig>
+    void SetStorageConfig(StorageConfigT&& value) { m_storageConfigHasBeenSet = true; m_storageConfig = std::forward<StorageConfigT>(value); }
+    template<typename StorageConfigT = InstanceStorageConfig>
+    UpdateInstanceStorageConfigRequest& WithStorageConfig(StorageConfigT&& value) { SetStorageConfig(std::forward<StorageConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,14 +96,12 @@ namespace Model
      * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
      * retries safe with idempotent APIs</a>.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline UpdateInstanceStorageConfigRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline UpdateInstanceStorageConfigRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline UpdateInstanceStorageConfigRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    UpdateInstanceStorageConfigRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -119,7 +111,7 @@ namespace Model
     Aws::String m_associationId;
     bool m_associationIdHasBeenSet = false;
 
-    InstanceStorageResourceType m_resourceType;
+    InstanceStorageResourceType m_resourceType{InstanceStorageResourceType::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
 
     InstanceStorageConfig m_storageConfig;

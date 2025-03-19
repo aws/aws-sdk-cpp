@@ -18,10 +18,6 @@ namespace BedrockAgent
 namespace Model
 {
 
-OutputFlowNodeConfiguration::OutputFlowNodeConfiguration()
-{
-}
-
 OutputFlowNodeConfiguration::OutputFlowNodeConfiguration(JsonView jsonValue)
 {
   *this = jsonValue;

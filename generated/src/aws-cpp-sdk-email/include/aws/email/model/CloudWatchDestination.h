@@ -38,7 +38,7 @@ namespace Model
   class CloudWatchDestination
   {
   public:
-    AWS_SES_API CloudWatchDestination();
+    AWS_SES_API CloudWatchDestination() = default;
     AWS_SES_API CloudWatchDestination(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_SES_API CloudWatchDestination& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -51,14 +51,14 @@ namespace Model
      * <p>A list of dimensions upon which to categorize your emails when you publish
      * email sending events to Amazon CloudWatch.</p>
      */
-    inline const Aws::Vector<CloudWatchDimensionConfiguration>& GetDimensionConfigurations() const{ return m_dimensionConfigurations; }
+    inline const Aws::Vector<CloudWatchDimensionConfiguration>& GetDimensionConfigurations() const { return m_dimensionConfigurations; }
     inline bool DimensionConfigurationsHasBeenSet() const { return m_dimensionConfigurationsHasBeenSet; }
-    inline void SetDimensionConfigurations(const Aws::Vector<CloudWatchDimensionConfiguration>& value) { m_dimensionConfigurationsHasBeenSet = true; m_dimensionConfigurations = value; }
-    inline void SetDimensionConfigurations(Aws::Vector<CloudWatchDimensionConfiguration>&& value) { m_dimensionConfigurationsHasBeenSet = true; m_dimensionConfigurations = std::move(value); }
-    inline CloudWatchDestination& WithDimensionConfigurations(const Aws::Vector<CloudWatchDimensionConfiguration>& value) { SetDimensionConfigurations(value); return *this;}
-    inline CloudWatchDestination& WithDimensionConfigurations(Aws::Vector<CloudWatchDimensionConfiguration>&& value) { SetDimensionConfigurations(std::move(value)); return *this;}
-    inline CloudWatchDestination& AddDimensionConfigurations(const CloudWatchDimensionConfiguration& value) { m_dimensionConfigurationsHasBeenSet = true; m_dimensionConfigurations.push_back(value); return *this; }
-    inline CloudWatchDestination& AddDimensionConfigurations(CloudWatchDimensionConfiguration&& value) { m_dimensionConfigurationsHasBeenSet = true; m_dimensionConfigurations.push_back(std::move(value)); return *this; }
+    template<typename DimensionConfigurationsT = Aws::Vector<CloudWatchDimensionConfiguration>>
+    void SetDimensionConfigurations(DimensionConfigurationsT&& value) { m_dimensionConfigurationsHasBeenSet = true; m_dimensionConfigurations = std::forward<DimensionConfigurationsT>(value); }
+    template<typename DimensionConfigurationsT = Aws::Vector<CloudWatchDimensionConfiguration>>
+    CloudWatchDestination& WithDimensionConfigurations(DimensionConfigurationsT&& value) { SetDimensionConfigurations(std::forward<DimensionConfigurationsT>(value)); return *this;}
+    template<typename DimensionConfigurationsT = CloudWatchDimensionConfiguration>
+    CloudWatchDestination& AddDimensionConfigurations(DimensionConfigurationsT&& value) { m_dimensionConfigurationsHasBeenSet = true; m_dimensionConfigurations.emplace_back(std::forward<DimensionConfigurationsT>(value)); return *this; }
     ///@}
   private:
 

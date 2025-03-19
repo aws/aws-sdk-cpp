@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchDisableStandardsResult::BatchDisableStandardsResult()
-{
-}
-
 BatchDisableStandardsResult::BatchDisableStandardsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ BatchDisableStandardsResult& BatchDisableStandardsResult::operator =(const Aws::
     {
       m_standardsSubscriptions.push_back(standardsSubscriptionsJsonList[standardsSubscriptionsIndex].AsObject());
     }
+    m_standardsSubscriptionsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

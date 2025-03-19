@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ModifyVerifiedAccessEndpointRdsOptions::ModifyVerifiedAccessEndpointRdsOptions() : 
-    m_subnetIdsHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_rdsEndpointHasBeenSet(false)
-{
-}
-
 ModifyVerifiedAccessEndpointRdsOptions::ModifyVerifiedAccessEndpointRdsOptions(const XmlNode& xmlNode)
-  : ModifyVerifiedAccessEndpointRdsOptions()
 {
   *this = xmlNode;
 }
@@ -44,6 +35,7 @@ ModifyVerifiedAccessEndpointRdsOptions& ModifyVerifiedAccessEndpointRdsOptions::
     if(!subnetIdsNode.IsNull())
     {
       XmlNode subnetIdsMember = subnetIdsNode.FirstChild("item");
+      m_subnetIdsHasBeenSet = !subnetIdsMember.IsNull();
       while(!subnetIdsMember.IsNull())
       {
         m_subnetIds.push_back(subnetIdsMember.GetText());

@@ -31,7 +31,7 @@ namespace Model
   class Bucket
   {
   public:
-    AWS_CLOUDSEARCHDOMAIN_API Bucket();
+    AWS_CLOUDSEARCHDOMAIN_API Bucket() = default;
     AWS_CLOUDSEARCHDOMAIN_API Bucket(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDSEARCHDOMAIN_API Bucket& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDSEARCHDOMAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The facet value being counted.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline Bucket& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline Bucket& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline Bucket& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    Bucket& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,7 +54,7 @@ namespace Model
      * <p>The number of hits that contain the facet value in the specified facet
      * field.</p>
      */
-    inline long long GetCount() const{ return m_count; }
+    inline long long GetCount() const { return m_count; }
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
     inline void SetCount(long long value) { m_countHasBeenSet = true; m_count = value; }
     inline Bucket& WithCount(long long value) { SetCount(value); return *this;}
@@ -66,7 +64,7 @@ namespace Model
     Aws::String m_value;
     bool m_valueHasBeenSet = false;
 
-    long long m_count;
+    long long m_count{0};
     bool m_countHasBeenSet = false;
   };
 

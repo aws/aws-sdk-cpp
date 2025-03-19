@@ -32,7 +32,7 @@ namespace Model
   class TimeSeriesFeedback
   {
   public:
-    AWS_LOOKOUTMETRICS_API TimeSeriesFeedback();
+    AWS_LOOKOUTMETRICS_API TimeSeriesFeedback() = default;
     AWS_LOOKOUTMETRICS_API TimeSeriesFeedback(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTMETRICS_API TimeSeriesFeedback& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,21 +42,19 @@ namespace Model
     /**
      * <p>The ID of the metric.</p>
      */
-    inline const Aws::String& GetTimeSeriesId() const{ return m_timeSeriesId; }
+    inline const Aws::String& GetTimeSeriesId() const { return m_timeSeriesId; }
     inline bool TimeSeriesIdHasBeenSet() const { return m_timeSeriesIdHasBeenSet; }
-    inline void SetTimeSeriesId(const Aws::String& value) { m_timeSeriesIdHasBeenSet = true; m_timeSeriesId = value; }
-    inline void SetTimeSeriesId(Aws::String&& value) { m_timeSeriesIdHasBeenSet = true; m_timeSeriesId = std::move(value); }
-    inline void SetTimeSeriesId(const char* value) { m_timeSeriesIdHasBeenSet = true; m_timeSeriesId.assign(value); }
-    inline TimeSeriesFeedback& WithTimeSeriesId(const Aws::String& value) { SetTimeSeriesId(value); return *this;}
-    inline TimeSeriesFeedback& WithTimeSeriesId(Aws::String&& value) { SetTimeSeriesId(std::move(value)); return *this;}
-    inline TimeSeriesFeedback& WithTimeSeriesId(const char* value) { SetTimeSeriesId(value); return *this;}
+    template<typename TimeSeriesIdT = Aws::String>
+    void SetTimeSeriesId(TimeSeriesIdT&& value) { m_timeSeriesIdHasBeenSet = true; m_timeSeriesId = std::forward<TimeSeriesIdT>(value); }
+    template<typename TimeSeriesIdT = Aws::String>
+    TimeSeriesFeedback& WithTimeSeriesId(TimeSeriesIdT&& value) { SetTimeSeriesId(std::forward<TimeSeriesIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Feedback on whether the metric is a legitimate anomaly.</p>
      */
-    inline bool GetIsAnomaly() const{ return m_isAnomaly; }
+    inline bool GetIsAnomaly() const { return m_isAnomaly; }
     inline bool IsAnomalyHasBeenSet() const { return m_isAnomalyHasBeenSet; }
     inline void SetIsAnomaly(bool value) { m_isAnomalyHasBeenSet = true; m_isAnomaly = value; }
     inline TimeSeriesFeedback& WithIsAnomaly(bool value) { SetIsAnomaly(value); return *this;}
@@ -66,7 +64,7 @@ namespace Model
     Aws::String m_timeSeriesId;
     bool m_timeSeriesIdHasBeenSet = false;
 
-    bool m_isAnomaly;
+    bool m_isAnomaly{false};
     bool m_isAnomalyHasBeenSet = false;
   };
 

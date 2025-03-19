@@ -25,7 +25,7 @@ namespace Model
   class GetUsageTotalsRequest : public Macie2Request
   {
   public:
-    AWS_MACIE2_API GetUsageTotalsRequest();
+    AWS_MACIE2_API GetUsageTotalsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * the preceding 30 days. If you don't specify a value for this parameter, Amazon
      * Macie provides aggregated usage data for the preceding 30 days.</p>
      */
-    inline const Aws::String& GetTimeRange() const{ return m_timeRange; }
+    inline const Aws::String& GetTimeRange() const { return m_timeRange; }
     inline bool TimeRangeHasBeenSet() const { return m_timeRangeHasBeenSet; }
-    inline void SetTimeRange(const Aws::String& value) { m_timeRangeHasBeenSet = true; m_timeRange = value; }
-    inline void SetTimeRange(Aws::String&& value) { m_timeRangeHasBeenSet = true; m_timeRange = std::move(value); }
-    inline void SetTimeRange(const char* value) { m_timeRangeHasBeenSet = true; m_timeRange.assign(value); }
-    inline GetUsageTotalsRequest& WithTimeRange(const Aws::String& value) { SetTimeRange(value); return *this;}
-    inline GetUsageTotalsRequest& WithTimeRange(Aws::String&& value) { SetTimeRange(std::move(value)); return *this;}
-    inline GetUsageTotalsRequest& WithTimeRange(const char* value) { SetTimeRange(value); return *this;}
+    template<typename TimeRangeT = Aws::String>
+    void SetTimeRange(TimeRangeT&& value) { m_timeRangeHasBeenSet = true; m_timeRange = std::forward<TimeRangeT>(value); }
+    template<typename TimeRangeT = Aws::String>
+    GetUsageTotalsRequest& WithTimeRange(TimeRangeT&& value) { SetTimeRange(std::forward<TimeRangeT>(value)); return *this;}
     ///@}
   private:
 

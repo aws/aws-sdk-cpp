@@ -18,13 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-CustomOrchestrationTraceEvent::CustomOrchestrationTraceEvent() : 
-    m_textHasBeenSet(false)
-{
-}
-
 CustomOrchestrationTraceEvent::CustomOrchestrationTraceEvent(JsonView jsonValue)
-  : CustomOrchestrationTraceEvent()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CustomOrchestrationTraceEvent& CustomOrchestrationTraceEvent::operator =(JsonVie
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetString("text");
-
     m_textHasBeenSet = true;
   }
-
   return *this;
 }
 

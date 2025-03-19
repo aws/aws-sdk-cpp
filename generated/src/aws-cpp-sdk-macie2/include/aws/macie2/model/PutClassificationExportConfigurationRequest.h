@@ -21,7 +21,7 @@ namespace Model
   class PutClassificationExportConfigurationRequest : public Macie2Request
   {
   public:
-    AWS_MACIE2_API PutClassificationExportConfigurationRequest();
+    AWS_MACIE2_API PutClassificationExportConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,12 +37,12 @@ namespace Model
      * <p>The location to store data classification results in, and the encryption
      * settings to use when storing results in that location.</p>
      */
-    inline const ClassificationExportConfiguration& GetConfiguration() const{ return m_configuration; }
+    inline const ClassificationExportConfiguration& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const ClassificationExportConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(ClassificationExportConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline PutClassificationExportConfigurationRequest& WithConfiguration(const ClassificationExportConfiguration& value) { SetConfiguration(value); return *this;}
-    inline PutClassificationExportConfigurationRequest& WithConfiguration(ClassificationExportConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    template<typename ConfigurationT = ClassificationExportConfiguration>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = ClassificationExportConfiguration>
+    PutClassificationExportConfigurationRequest& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
   private:
 

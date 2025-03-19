@@ -33,7 +33,7 @@ namespace Model
   class BatchPutGeofenceError
   {
   public:
-    AWS_LOCATIONSERVICE_API BatchPutGeofenceError();
+    AWS_LOCATIONSERVICE_API BatchPutGeofenceError() = default;
     AWS_LOCATIONSERVICE_API BatchPutGeofenceError(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API BatchPutGeofenceError& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,24 @@ namespace Model
     /**
      * <p>The geofence associated with the error message.</p>
      */
-    inline const Aws::String& GetGeofenceId() const{ return m_geofenceId; }
+    inline const Aws::String& GetGeofenceId() const { return m_geofenceId; }
     inline bool GeofenceIdHasBeenSet() const { return m_geofenceIdHasBeenSet; }
-    inline void SetGeofenceId(const Aws::String& value) { m_geofenceIdHasBeenSet = true; m_geofenceId = value; }
-    inline void SetGeofenceId(Aws::String&& value) { m_geofenceIdHasBeenSet = true; m_geofenceId = std::move(value); }
-    inline void SetGeofenceId(const char* value) { m_geofenceIdHasBeenSet = true; m_geofenceId.assign(value); }
-    inline BatchPutGeofenceError& WithGeofenceId(const Aws::String& value) { SetGeofenceId(value); return *this;}
-    inline BatchPutGeofenceError& WithGeofenceId(Aws::String&& value) { SetGeofenceId(std::move(value)); return *this;}
-    inline BatchPutGeofenceError& WithGeofenceId(const char* value) { SetGeofenceId(value); return *this;}
+    template<typename GeofenceIdT = Aws::String>
+    void SetGeofenceId(GeofenceIdT&& value) { m_geofenceIdHasBeenSet = true; m_geofenceId = std::forward<GeofenceIdT>(value); }
+    template<typename GeofenceIdT = Aws::String>
+    BatchPutGeofenceError& WithGeofenceId(GeofenceIdT&& value) { SetGeofenceId(std::forward<GeofenceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains details associated to the batch error.</p>
      */
-    inline const BatchItemError& GetError() const{ return m_error; }
+    inline const BatchItemError& GetError() const { return m_error; }
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-    inline void SetError(const BatchItemError& value) { m_errorHasBeenSet = true; m_error = value; }
-    inline void SetError(BatchItemError&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-    inline BatchPutGeofenceError& WithError(const BatchItemError& value) { SetError(value); return *this;}
-    inline BatchPutGeofenceError& WithError(BatchItemError&& value) { SetError(std::move(value)); return *this;}
+    template<typename ErrorT = BatchItemError>
+    void SetError(ErrorT&& value) { m_errorHasBeenSet = true; m_error = std::forward<ErrorT>(value); }
+    template<typename ErrorT = BatchItemError>
+    BatchPutGeofenceError& WithError(ErrorT&& value) { SetError(std::forward<ErrorT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,43 +18,7 @@ namespace RedshiftServerless
 namespace Model
 {
 
-Snapshot::Snapshot() : 
-    m_accountsWithProvisionedRestoreAccessHasBeenSet(false),
-    m_accountsWithRestoreAccessHasBeenSet(false),
-    m_actualIncrementalBackupSizeInMegaBytes(0.0),
-    m_actualIncrementalBackupSizeInMegaBytesHasBeenSet(false),
-    m_adminPasswordSecretArnHasBeenSet(false),
-    m_adminPasswordSecretKmsKeyIdHasBeenSet(false),
-    m_adminUsernameHasBeenSet(false),
-    m_backupProgressInMegaBytes(0.0),
-    m_backupProgressInMegaBytesHasBeenSet(false),
-    m_currentBackupRateInMegaBytesPerSecond(0.0),
-    m_currentBackupRateInMegaBytesPerSecondHasBeenSet(false),
-    m_elapsedTimeInSeconds(0),
-    m_elapsedTimeInSecondsHasBeenSet(false),
-    m_estimatedSecondsToCompletion(0),
-    m_estimatedSecondsToCompletionHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_namespaceArnHasBeenSet(false),
-    m_namespaceNameHasBeenSet(false),
-    m_ownerAccountHasBeenSet(false),
-    m_snapshotArnHasBeenSet(false),
-    m_snapshotCreateTimeHasBeenSet(false),
-    m_snapshotNameHasBeenSet(false),
-    m_snapshotRemainingDays(0),
-    m_snapshotRemainingDaysHasBeenSet(false),
-    m_snapshotRetentionPeriod(0),
-    m_snapshotRetentionPeriodHasBeenSet(false),
-    m_snapshotRetentionStartTimeHasBeenSet(false),
-    m_status(SnapshotStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_totalBackupSizeInMegaBytes(0.0),
-    m_totalBackupSizeInMegaBytesHasBeenSet(false)
-{
-}
-
 Snapshot::Snapshot(JsonView jsonValue)
-  : Snapshot()
 {
   *this = jsonValue;
 }
@@ -70,7 +34,6 @@ Snapshot& Snapshot::operator =(JsonView jsonValue)
     }
     m_accountsWithProvisionedRestoreAccessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accountsWithRestoreAccess"))
   {
     Aws::Utils::Array<JsonView> accountsWithRestoreAccessJsonList = jsonValue.GetArray("accountsWithRestoreAccess");
@@ -80,147 +43,106 @@ Snapshot& Snapshot::operator =(JsonView jsonValue)
     }
     m_accountsWithRestoreAccessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actualIncrementalBackupSizeInMegaBytes"))
   {
     m_actualIncrementalBackupSizeInMegaBytes = jsonValue.GetDouble("actualIncrementalBackupSizeInMegaBytes");
-
     m_actualIncrementalBackupSizeInMegaBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("adminPasswordSecretArn"))
   {
     m_adminPasswordSecretArn = jsonValue.GetString("adminPasswordSecretArn");
-
     m_adminPasswordSecretArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("adminPasswordSecretKmsKeyId"))
   {
     m_adminPasswordSecretKmsKeyId = jsonValue.GetString("adminPasswordSecretKmsKeyId");
-
     m_adminPasswordSecretKmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("adminUsername"))
   {
     m_adminUsername = jsonValue.GetString("adminUsername");
-
     m_adminUsernameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("backupProgressInMegaBytes"))
   {
     m_backupProgressInMegaBytes = jsonValue.GetDouble("backupProgressInMegaBytes");
-
     m_backupProgressInMegaBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("currentBackupRateInMegaBytesPerSecond"))
   {
     m_currentBackupRateInMegaBytesPerSecond = jsonValue.GetDouble("currentBackupRateInMegaBytesPerSecond");
-
     m_currentBackupRateInMegaBytesPerSecondHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("elapsedTimeInSeconds"))
   {
     m_elapsedTimeInSeconds = jsonValue.GetInt64("elapsedTimeInSeconds");
-
     m_elapsedTimeInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("estimatedSecondsToCompletion"))
   {
     m_estimatedSecondsToCompletion = jsonValue.GetInt64("estimatedSecondsToCompletion");
-
     m_estimatedSecondsToCompletionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("namespaceArn"))
   {
     m_namespaceArn = jsonValue.GetString("namespaceArn");
-
     m_namespaceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("namespaceName"))
   {
     m_namespaceName = jsonValue.GetString("namespaceName");
-
     m_namespaceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ownerAccount"))
   {
     m_ownerAccount = jsonValue.GetString("ownerAccount");
-
     m_ownerAccountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("snapshotArn"))
   {
     m_snapshotArn = jsonValue.GetString("snapshotArn");
-
     m_snapshotArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("snapshotCreateTime"))
   {
     m_snapshotCreateTime = jsonValue.GetString("snapshotCreateTime");
-
     m_snapshotCreateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("snapshotName"))
   {
     m_snapshotName = jsonValue.GetString("snapshotName");
-
     m_snapshotNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("snapshotRemainingDays"))
   {
     m_snapshotRemainingDays = jsonValue.GetInteger("snapshotRemainingDays");
-
     m_snapshotRemainingDaysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("snapshotRetentionPeriod"))
   {
     m_snapshotRetentionPeriod = jsonValue.GetInteger("snapshotRetentionPeriod");
-
     m_snapshotRetentionPeriodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("snapshotRetentionStartTime"))
   {
     m_snapshotRetentionStartTime = jsonValue.GetString("snapshotRetentionStartTime");
-
     m_snapshotRetentionStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = SnapshotStatusMapper::GetSnapshotStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalBackupSizeInMegaBytes"))
   {
     m_totalBackupSizeInMegaBytes = jsonValue.GetDouble("totalBackupSizeInMegaBytes");
-
     m_totalBackupSizeInMegaBytesHasBeenSet = true;
   }
-
   return *this;
 }
 

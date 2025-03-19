@@ -18,15 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-CustomSMSLambdaVersionConfigType::CustomSMSLambdaVersionConfigType() : 
-    m_lambdaVersion(CustomSMSSenderLambdaVersionType::NOT_SET),
-    m_lambdaVersionHasBeenSet(false),
-    m_lambdaArnHasBeenSet(false)
-{
-}
-
 CustomSMSLambdaVersionConfigType::CustomSMSLambdaVersionConfigType(JsonView jsonValue)
-  : CustomSMSLambdaVersionConfigType()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ CustomSMSLambdaVersionConfigType& CustomSMSLambdaVersionConfigType::operator =(J
   if(jsonValue.ValueExists("LambdaVersion"))
   {
     m_lambdaVersion = CustomSMSSenderLambdaVersionTypeMapper::GetCustomSMSSenderLambdaVersionTypeForName(jsonValue.GetString("LambdaVersion"));
-
     m_lambdaVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LambdaArn"))
   {
     m_lambdaArn = jsonValue.GetString("LambdaArn");
-
     m_lambdaArnHasBeenSet = true;
   }
-
   return *this;
 }
 

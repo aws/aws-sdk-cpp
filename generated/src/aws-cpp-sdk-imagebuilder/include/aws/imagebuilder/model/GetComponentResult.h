@@ -28,7 +28,7 @@ namespace Model
   class GetComponentResult
   {
   public:
-    AWS_IMAGEBUILDER_API GetComponentResult();
+    AWS_IMAGEBUILDER_API GetComponentResult() = default;
     AWS_IMAGEBUILDER_API GetComponentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IMAGEBUILDER_API GetComponentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,30 +37,30 @@ namespace Model
     /**
      * <p>The request ID that uniquely identifies this request.</p>
      */
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetComponentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetComponentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetComponentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetComponentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The component object specified in the request.</p>
      */
-    inline const Component& GetComponent() const{ return m_component; }
-    inline void SetComponent(const Component& value) { m_component = value; }
-    inline void SetComponent(Component&& value) { m_component = std::move(value); }
-    inline GetComponentResult& WithComponent(const Component& value) { SetComponent(value); return *this;}
-    inline GetComponentResult& WithComponent(Component&& value) { SetComponent(std::move(value)); return *this;}
+    inline const Component& GetComponent() const { return m_component; }
+    template<typename ComponentT = Component>
+    void SetComponent(ComponentT&& value) { m_componentHasBeenSet = true; m_component = std::forward<ComponentT>(value); }
+    template<typename ComponentT = Component>
+    GetComponentResult& WithComponent(ComponentT&& value) { SetComponent(std::forward<ComponentT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
 
     Component m_component;
+    bool m_componentHasBeenSet = false;
   };
 
 } // namespace Model

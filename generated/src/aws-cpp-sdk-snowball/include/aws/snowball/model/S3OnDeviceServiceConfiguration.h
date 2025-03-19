@@ -32,7 +32,7 @@ namespace Model
   class S3OnDeviceServiceConfiguration
   {
   public:
-    AWS_SNOWBALL_API S3OnDeviceServiceConfiguration();
+    AWS_SNOWBALL_API S3OnDeviceServiceConfiguration() = default;
     AWS_SNOWBALL_API S3OnDeviceServiceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_SNOWBALL_API S3OnDeviceServiceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,7 +46,7 @@ namespace Model
      * fail. If more than one configuration has the same storage limit as specified,
      * the other input need to be provided.</p>
      */
-    inline double GetStorageLimit() const{ return m_storageLimit; }
+    inline double GetStorageLimit() const { return m_storageLimit; }
     inline bool StorageLimitHasBeenSet() const { return m_storageLimitHasBeenSet; }
     inline void SetStorageLimit(double value) { m_storageLimitHasBeenSet = true; m_storageLimit = value; }
     inline S3OnDeviceServiceConfiguration& WithStorageLimit(double value) { SetStorageLimit(value); return *this;}
@@ -56,12 +56,10 @@ namespace Model
     /**
      * <p>Storage unit. Currently the only supported unit is TB.</p>
      */
-    inline const StorageUnit& GetStorageUnit() const{ return m_storageUnit; }
+    inline StorageUnit GetStorageUnit() const { return m_storageUnit; }
     inline bool StorageUnitHasBeenSet() const { return m_storageUnitHasBeenSet; }
-    inline void SetStorageUnit(const StorageUnit& value) { m_storageUnitHasBeenSet = true; m_storageUnit = value; }
-    inline void SetStorageUnit(StorageUnit&& value) { m_storageUnitHasBeenSet = true; m_storageUnit = std::move(value); }
-    inline S3OnDeviceServiceConfiguration& WithStorageUnit(const StorageUnit& value) { SetStorageUnit(value); return *this;}
-    inline S3OnDeviceServiceConfiguration& WithStorageUnit(StorageUnit&& value) { SetStorageUnit(std::move(value)); return *this;}
+    inline void SetStorageUnit(StorageUnit value) { m_storageUnitHasBeenSet = true; m_storageUnit = value; }
+    inline S3OnDeviceServiceConfiguration& WithStorageUnit(StorageUnit value) { SetStorageUnit(value); return *this;}
     ///@}
 
     ///@{
@@ -70,7 +68,7 @@ namespace Model
      * Amazon S3 compatible storage on Snow family devices. If specified, the other
      * input can be omitted.</p>
      */
-    inline int GetServiceSize() const{ return m_serviceSize; }
+    inline int GetServiceSize() const { return m_serviceSize; }
     inline bool ServiceSizeHasBeenSet() const { return m_serviceSizeHasBeenSet; }
     inline void SetServiceSize(int value) { m_serviceSizeHasBeenSet = true; m_serviceSize = value; }
     inline S3OnDeviceServiceConfiguration& WithServiceSize(int value) { SetServiceSize(value); return *this;}
@@ -84,23 +82,23 @@ namespace Model
      * than one Amazon S3 compatible storage on Snow family devices service
      * configuration.</p>
      */
-    inline int GetFaultTolerance() const{ return m_faultTolerance; }
+    inline int GetFaultTolerance() const { return m_faultTolerance; }
     inline bool FaultToleranceHasBeenSet() const { return m_faultToleranceHasBeenSet; }
     inline void SetFaultTolerance(int value) { m_faultToleranceHasBeenSet = true; m_faultTolerance = value; }
     inline S3OnDeviceServiceConfiguration& WithFaultTolerance(int value) { SetFaultTolerance(value); return *this;}
     ///@}
   private:
 
-    double m_storageLimit;
+    double m_storageLimit{0.0};
     bool m_storageLimitHasBeenSet = false;
 
-    StorageUnit m_storageUnit;
+    StorageUnit m_storageUnit{StorageUnit::NOT_SET};
     bool m_storageUnitHasBeenSet = false;
 
-    int m_serviceSize;
+    int m_serviceSize{0};
     bool m_serviceSizeHasBeenSet = false;
 
-    int m_faultTolerance;
+    int m_faultTolerance{0};
     bool m_faultToleranceHasBeenSet = false;
   };
 

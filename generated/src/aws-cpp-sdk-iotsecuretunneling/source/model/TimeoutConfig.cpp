@@ -18,14 +18,7 @@ namespace IoTSecureTunneling
 namespace Model
 {
 
-TimeoutConfig::TimeoutConfig() : 
-    m_maxLifetimeTimeoutMinutes(0),
-    m_maxLifetimeTimeoutMinutesHasBeenSet(false)
-{
-}
-
 TimeoutConfig::TimeoutConfig(JsonView jsonValue)
-  : TimeoutConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ TimeoutConfig& TimeoutConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("maxLifetimeTimeoutMinutes"))
   {
     m_maxLifetimeTimeoutMinutes = jsonValue.GetInteger("maxLifetimeTimeoutMinutes");
-
     m_maxLifetimeTimeoutMinutesHasBeenSet = true;
   }
-
   return *this;
 }
 

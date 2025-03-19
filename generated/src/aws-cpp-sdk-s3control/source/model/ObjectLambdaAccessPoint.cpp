@@ -20,15 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-ObjectLambdaAccessPoint::ObjectLambdaAccessPoint() : 
-    m_nameHasBeenSet(false),
-    m_objectLambdaAccessPointArnHasBeenSet(false),
-    m_aliasHasBeenSet(false)
-{
-}
-
 ObjectLambdaAccessPoint::ObjectLambdaAccessPoint(const XmlNode& xmlNode)
-  : ObjectLambdaAccessPoint()
 {
   *this = xmlNode;
 }

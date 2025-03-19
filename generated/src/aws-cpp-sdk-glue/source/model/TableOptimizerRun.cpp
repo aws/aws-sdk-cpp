@@ -18,20 +18,7 @@ namespace Glue
 namespace Model
 {
 
-TableOptimizerRun::TableOptimizerRun() : 
-    m_eventType(TableOptimizerEventType::NOT_SET),
-    m_eventTypeHasBeenSet(false),
-    m_startTimestampHasBeenSet(false),
-    m_endTimestampHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_compactionMetricsHasBeenSet(false),
-    m_retentionMetricsHasBeenSet(false),
-    m_orphanFileDeletionMetricsHasBeenSet(false)
-{
-}
-
 TableOptimizerRun::TableOptimizerRun(JsonView jsonValue)
-  : TableOptimizerRun()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ TableOptimizerRun& TableOptimizerRun::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("eventType"))
   {
     m_eventType = TableOptimizerEventTypeMapper::GetTableOptimizerEventTypeForName(jsonValue.GetString("eventType"));
-
     m_eventTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTimestamp"))
   {
     m_startTimestamp = jsonValue.GetDouble("startTimestamp");
-
     m_startTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTimestamp"))
   {
     m_endTimestamp = jsonValue.GetDouble("endTimestamp");
-
     m_endTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("error"))
   {
     m_error = jsonValue.GetString("error");
-
     m_errorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("compactionMetrics"))
   {
     m_compactionMetrics = jsonValue.GetObject("compactionMetrics");
-
     m_compactionMetricsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("retentionMetrics"))
   {
     m_retentionMetrics = jsonValue.GetObject("retentionMetrics");
-
     m_retentionMetricsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("orphanFileDeletionMetrics"))
   {
     m_orphanFileDeletionMetrics = jsonValue.GetObject("orphanFileDeletionMetrics");
-
     m_orphanFileDeletionMetricsHasBeenSet = true;
   }
-
   return *this;
 }
 

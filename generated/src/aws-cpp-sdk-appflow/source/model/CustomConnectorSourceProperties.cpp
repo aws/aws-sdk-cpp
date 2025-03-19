@@ -18,15 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-CustomConnectorSourceProperties::CustomConnectorSourceProperties() : 
-    m_entityNameHasBeenSet(false),
-    m_customPropertiesHasBeenSet(false),
-    m_dataTransferApiHasBeenSet(false)
-{
-}
-
 CustomConnectorSourceProperties::CustomConnectorSourceProperties(JsonView jsonValue)
-  : CustomConnectorSourceProperties()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ CustomConnectorSourceProperties& CustomConnectorSourceProperties::operator =(Jso
   if(jsonValue.ValueExists("entityName"))
   {
     m_entityName = jsonValue.GetString("entityName");
-
     m_entityNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customProperties"))
   {
     Aws::Map<Aws::String, JsonView> customPropertiesJsonMap = jsonValue.GetObject("customProperties").GetAllObjects();
@@ -49,14 +39,11 @@ CustomConnectorSourceProperties& CustomConnectorSourceProperties::operator =(Jso
     }
     m_customPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataTransferApi"))
   {
     m_dataTransferApi = jsonValue.GetObject("dataTransferApi");
-
     m_dataTransferApiHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-EvaluationInferenceConfig::EvaluationInferenceConfig() : 
-    m_modelsHasBeenSet(false),
-    m_ragConfigsHasBeenSet(false)
-{
-}
-
 EvaluationInferenceConfig::EvaluationInferenceConfig(JsonView jsonValue)
-  : EvaluationInferenceConfig()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ EvaluationInferenceConfig& EvaluationInferenceConfig::operator =(JsonView jsonVa
     }
     m_modelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ragConfigs"))
   {
     Aws::Utils::Array<JsonView> ragConfigsJsonList = jsonValue.GetArray("ragConfigs");
@@ -51,7 +43,6 @@ EvaluationInferenceConfig& EvaluationInferenceConfig::operator =(JsonView jsonVa
     }
     m_ragConfigsHasBeenSet = true;
   }
-
   return *this;
 }
 

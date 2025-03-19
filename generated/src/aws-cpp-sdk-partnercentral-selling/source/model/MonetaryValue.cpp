@@ -18,15 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-MonetaryValue::MonetaryValue() : 
-    m_amountHasBeenSet(false),
-    m_currencyCode(CurrencyCode::NOT_SET),
-    m_currencyCodeHasBeenSet(false)
-{
-}
-
 MonetaryValue::MonetaryValue(JsonView jsonValue)
-  : MonetaryValue()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ MonetaryValue& MonetaryValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Amount"))
   {
     m_amount = jsonValue.GetString("Amount");
-
     m_amountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrencyCode"))
   {
     m_currencyCode = CurrencyCodeMapper::GetCurrencyCodeForName(jsonValue.GetString("CurrencyCode"));
-
     m_currencyCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

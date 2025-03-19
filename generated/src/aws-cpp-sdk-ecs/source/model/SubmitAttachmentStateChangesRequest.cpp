@@ -12,12 +12,6 @@ using namespace Aws::ECS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SubmitAttachmentStateChangesRequest::SubmitAttachmentStateChangesRequest() : 
-    m_clusterHasBeenSet(false),
-    m_attachmentsHasBeenSet(false)
-{
-}
-
 Aws::String SubmitAttachmentStateChangesRequest::SerializePayload() const
 {
   JsonValue payload;

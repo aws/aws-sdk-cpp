@@ -12,12 +12,6 @@ using namespace Aws::ECR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteLifecyclePolicyRequest::DeleteLifecyclePolicyRequest() : 
-    m_registryIdHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteLifecyclePolicyRequest::SerializePayload() const
 {
   JsonValue payload;

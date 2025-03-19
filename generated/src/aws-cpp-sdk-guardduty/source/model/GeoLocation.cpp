@@ -18,16 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-GeoLocation::GeoLocation() : 
-    m_lat(0.0),
-    m_latHasBeenSet(false),
-    m_lon(0.0),
-    m_lonHasBeenSet(false)
-{
-}
-
 GeoLocation::GeoLocation(JsonView jsonValue)
-  : GeoLocation()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ GeoLocation& GeoLocation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("lat"))
   {
     m_lat = jsonValue.GetDouble("lat");
-
     m_latHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lon"))
   {
     m_lon = jsonValue.GetDouble("lon");
-
     m_lonHasBeenSet = true;
   }
-
   return *this;
 }
 

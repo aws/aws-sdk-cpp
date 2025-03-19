@@ -12,12 +12,6 @@ using namespace Aws::AmplifyBackend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteTokenRequest::DeleteTokenRequest() : 
-    m_appIdHasBeenSet(false),
-    m_sessionIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTokenRequest::SerializePayload() const
 {
   return {};

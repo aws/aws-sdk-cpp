@@ -37,7 +37,7 @@ namespace Model
   class Alarms
   {
   public:
-    AWS_IOTSITEWISE_API Alarms();
+    AWS_IOTSITEWISE_API Alarms() = default;
     AWS_IOTSITEWISE_API Alarms(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Alarms& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,12 @@ namespace Model
      * of the IAM role that allows the alarm to perform actions and access Amazon Web
      * Services resources and services, such as IoT Events.</p>
      */
-    inline const Aws::String& GetAlarmRoleArn() const{ return m_alarmRoleArn; }
+    inline const Aws::String& GetAlarmRoleArn() const { return m_alarmRoleArn; }
     inline bool AlarmRoleArnHasBeenSet() const { return m_alarmRoleArnHasBeenSet; }
-    inline void SetAlarmRoleArn(const Aws::String& value) { m_alarmRoleArnHasBeenSet = true; m_alarmRoleArn = value; }
-    inline void SetAlarmRoleArn(Aws::String&& value) { m_alarmRoleArnHasBeenSet = true; m_alarmRoleArn = std::move(value); }
-    inline void SetAlarmRoleArn(const char* value) { m_alarmRoleArnHasBeenSet = true; m_alarmRoleArn.assign(value); }
-    inline Alarms& WithAlarmRoleArn(const Aws::String& value) { SetAlarmRoleArn(value); return *this;}
-    inline Alarms& WithAlarmRoleArn(Aws::String&& value) { SetAlarmRoleArn(std::move(value)); return *this;}
-    inline Alarms& WithAlarmRoleArn(const char* value) { SetAlarmRoleArn(value); return *this;}
+    template<typename AlarmRoleArnT = Aws::String>
+    void SetAlarmRoleArn(AlarmRoleArnT&& value) { m_alarmRoleArnHasBeenSet = true; m_alarmRoleArn = std::forward<AlarmRoleArnT>(value); }
+    template<typename AlarmRoleArnT = Aws::String>
+    Alarms& WithAlarmRoleArn(AlarmRoleArnT&& value) { SetAlarmRoleArn(std::forward<AlarmRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +67,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">Managing
      * alarm notifications</a> in the <i>IoT Events Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetNotificationLambdaArn() const{ return m_notificationLambdaArn; }
+    inline const Aws::String& GetNotificationLambdaArn() const { return m_notificationLambdaArn; }
     inline bool NotificationLambdaArnHasBeenSet() const { return m_notificationLambdaArnHasBeenSet; }
-    inline void SetNotificationLambdaArn(const Aws::String& value) { m_notificationLambdaArnHasBeenSet = true; m_notificationLambdaArn = value; }
-    inline void SetNotificationLambdaArn(Aws::String&& value) { m_notificationLambdaArnHasBeenSet = true; m_notificationLambdaArn = std::move(value); }
-    inline void SetNotificationLambdaArn(const char* value) { m_notificationLambdaArnHasBeenSet = true; m_notificationLambdaArn.assign(value); }
-    inline Alarms& WithNotificationLambdaArn(const Aws::String& value) { SetNotificationLambdaArn(value); return *this;}
-    inline Alarms& WithNotificationLambdaArn(Aws::String&& value) { SetNotificationLambdaArn(std::move(value)); return *this;}
-    inline Alarms& WithNotificationLambdaArn(const char* value) { SetNotificationLambdaArn(value); return *this;}
+    template<typename NotificationLambdaArnT = Aws::String>
+    void SetNotificationLambdaArn(NotificationLambdaArnT&& value) { m_notificationLambdaArnHasBeenSet = true; m_notificationLambdaArn = std::forward<NotificationLambdaArnT>(value); }
+    template<typename NotificationLambdaArnT = Aws::String>
+    Alarms& WithNotificationLambdaArn(NotificationLambdaArnT&& value) { SetNotificationLambdaArn(std::forward<NotificationLambdaArnT>(value)); return *this;}
     ///@}
   private:
 

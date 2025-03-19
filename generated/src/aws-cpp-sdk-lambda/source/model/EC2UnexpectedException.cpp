@@ -18,15 +18,7 @@ namespace Lambda
 namespace Model
 {
 
-EC2UnexpectedException::EC2UnexpectedException() : 
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_eC2ErrorCodeHasBeenSet(false)
-{
-}
-
 EC2UnexpectedException::EC2UnexpectedException(JsonView jsonValue)
-  : EC2UnexpectedException()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ EC2UnexpectedException& EC2UnexpectedException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EC2ErrorCode"))
   {
     m_eC2ErrorCode = jsonValue.GetString("EC2ErrorCode");
-
     m_eC2ErrorCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

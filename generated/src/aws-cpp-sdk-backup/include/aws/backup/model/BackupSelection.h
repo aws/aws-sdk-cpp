@@ -39,7 +39,7 @@ namespace Model
   class BackupSelection
   {
   public:
-    AWS_BACKUP_API BackupSelection();
+    AWS_BACKUP_API BackupSelection() = default;
     AWS_BACKUP_API BackupSelection(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUP_API BackupSelection& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,12 @@ namespace Model
      * <p>The display name of a resource selection document. Must contain 1 to 50
      * alphanumeric or '-_.' characters.</p>
      */
-    inline const Aws::String& GetSelectionName() const{ return m_selectionName; }
+    inline const Aws::String& GetSelectionName() const { return m_selectionName; }
     inline bool SelectionNameHasBeenSet() const { return m_selectionNameHasBeenSet; }
-    inline void SetSelectionName(const Aws::String& value) { m_selectionNameHasBeenSet = true; m_selectionName = value; }
-    inline void SetSelectionName(Aws::String&& value) { m_selectionNameHasBeenSet = true; m_selectionName = std::move(value); }
-    inline void SetSelectionName(const char* value) { m_selectionNameHasBeenSet = true; m_selectionName.assign(value); }
-    inline BackupSelection& WithSelectionName(const Aws::String& value) { SetSelectionName(value); return *this;}
-    inline BackupSelection& WithSelectionName(Aws::String&& value) { SetSelectionName(std::move(value)); return *this;}
-    inline BackupSelection& WithSelectionName(const char* value) { SetSelectionName(value); return *this;}
+    template<typename SelectionNameT = Aws::String>
+    void SetSelectionName(SelectionNameT&& value) { m_selectionNameHasBeenSet = true; m_selectionName = std::forward<SelectionNameT>(value); }
+    template<typename SelectionNameT = Aws::String>
+    BackupSelection& WithSelectionName(SelectionNameT&& value) { SetSelectionName(std::forward<SelectionNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,14 +64,12 @@ namespace Model
      * target resource; for example,
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
-    inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
+    inline const Aws::String& GetIamRoleArn() const { return m_iamRoleArn; }
     inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
-    inline void SetIamRoleArn(const Aws::String& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = value; }
-    inline void SetIamRoleArn(Aws::String&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::move(value); }
-    inline void SetIamRoleArn(const char* value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn.assign(value); }
-    inline BackupSelection& WithIamRoleArn(const Aws::String& value) { SetIamRoleArn(value); return *this;}
-    inline BackupSelection& WithIamRoleArn(Aws::String&& value) { SetIamRoleArn(std::move(value)); return *this;}
-    inline BackupSelection& WithIamRoleArn(const char* value) { SetIamRoleArn(value); return *this;}
+    template<typename IamRoleArnT = Aws::String>
+    void SetIamRoleArn(IamRoleArnT&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::forward<IamRoleArnT>(value); }
+    template<typename IamRoleArnT = Aws::String>
+    BackupSelection& WithIamRoleArn(IamRoleArnT&& value) { SetIamRoleArn(std::forward<IamRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,15 +82,14 @@ namespace Model
      * <p>If you specify multiple ARNs, the resources much match any of the ARNs (OR
      * logic).</p>
      */
-    inline const Aws::Vector<Aws::String>& GetResources() const{ return m_resources; }
+    inline const Aws::Vector<Aws::String>& GetResources() const { return m_resources; }
     inline bool ResourcesHasBeenSet() const { return m_resourcesHasBeenSet; }
-    inline void SetResources(const Aws::Vector<Aws::String>& value) { m_resourcesHasBeenSet = true; m_resources = value; }
-    inline void SetResources(Aws::Vector<Aws::String>&& value) { m_resourcesHasBeenSet = true; m_resources = std::move(value); }
-    inline BackupSelection& WithResources(const Aws::Vector<Aws::String>& value) { SetResources(value); return *this;}
-    inline BackupSelection& WithResources(Aws::Vector<Aws::String>&& value) { SetResources(std::move(value)); return *this;}
-    inline BackupSelection& AddResources(const Aws::String& value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
-    inline BackupSelection& AddResources(Aws::String&& value) { m_resourcesHasBeenSet = true; m_resources.push_back(std::move(value)); return *this; }
-    inline BackupSelection& AddResources(const char* value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
+    template<typename ResourcesT = Aws::Vector<Aws::String>>
+    void SetResources(ResourcesT&& value) { m_resourcesHasBeenSet = true; m_resources = std::forward<ResourcesT>(value); }
+    template<typename ResourcesT = Aws::Vector<Aws::String>>
+    BackupSelection& WithResources(ResourcesT&& value) { SetResources(std::forward<ResourcesT>(value)); return *this;}
+    template<typename ResourcesT = Aws::String>
+    BackupSelection& AddResources(ResourcesT&& value) { m_resourcesHasBeenSet = true; m_resources.emplace_back(std::forward<ResourcesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -106,14 +101,14 @@ namespace Model
      * specify multiple conditions, the resources much match any of the conditions (OR
      * logic).</p>
      */
-    inline const Aws::Vector<Condition>& GetListOfTags() const{ return m_listOfTags; }
+    inline const Aws::Vector<Condition>& GetListOfTags() const { return m_listOfTags; }
     inline bool ListOfTagsHasBeenSet() const { return m_listOfTagsHasBeenSet; }
-    inline void SetListOfTags(const Aws::Vector<Condition>& value) { m_listOfTagsHasBeenSet = true; m_listOfTags = value; }
-    inline void SetListOfTags(Aws::Vector<Condition>&& value) { m_listOfTagsHasBeenSet = true; m_listOfTags = std::move(value); }
-    inline BackupSelection& WithListOfTags(const Aws::Vector<Condition>& value) { SetListOfTags(value); return *this;}
-    inline BackupSelection& WithListOfTags(Aws::Vector<Condition>&& value) { SetListOfTags(std::move(value)); return *this;}
-    inline BackupSelection& AddListOfTags(const Condition& value) { m_listOfTagsHasBeenSet = true; m_listOfTags.push_back(value); return *this; }
-    inline BackupSelection& AddListOfTags(Condition&& value) { m_listOfTagsHasBeenSet = true; m_listOfTags.push_back(std::move(value)); return *this; }
+    template<typename ListOfTagsT = Aws::Vector<Condition>>
+    void SetListOfTags(ListOfTagsT&& value) { m_listOfTagsHasBeenSet = true; m_listOfTags = std::forward<ListOfTagsT>(value); }
+    template<typename ListOfTagsT = Aws::Vector<Condition>>
+    BackupSelection& WithListOfTags(ListOfTagsT&& value) { SetListOfTags(std::forward<ListOfTagsT>(value)); return *this;}
+    template<typename ListOfTagsT = Condition>
+    BackupSelection& AddListOfTags(ListOfTagsT&& value) { m_listOfTagsHasBeenSet = true; m_listOfTags.emplace_back(std::forward<ListOfTagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -124,15 +119,14 @@ namespace Model
      * consider a different resource selection strategy, such as assigning only one or
      * a few resource types or refining your resource selection using tags.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetNotResources() const{ return m_notResources; }
+    inline const Aws::Vector<Aws::String>& GetNotResources() const { return m_notResources; }
     inline bool NotResourcesHasBeenSet() const { return m_notResourcesHasBeenSet; }
-    inline void SetNotResources(const Aws::Vector<Aws::String>& value) { m_notResourcesHasBeenSet = true; m_notResources = value; }
-    inline void SetNotResources(Aws::Vector<Aws::String>&& value) { m_notResourcesHasBeenSet = true; m_notResources = std::move(value); }
-    inline BackupSelection& WithNotResources(const Aws::Vector<Aws::String>& value) { SetNotResources(value); return *this;}
-    inline BackupSelection& WithNotResources(Aws::Vector<Aws::String>&& value) { SetNotResources(std::move(value)); return *this;}
-    inline BackupSelection& AddNotResources(const Aws::String& value) { m_notResourcesHasBeenSet = true; m_notResources.push_back(value); return *this; }
-    inline BackupSelection& AddNotResources(Aws::String&& value) { m_notResourcesHasBeenSet = true; m_notResources.push_back(std::move(value)); return *this; }
-    inline BackupSelection& AddNotResources(const char* value) { m_notResourcesHasBeenSet = true; m_notResources.push_back(value); return *this; }
+    template<typename NotResourcesT = Aws::Vector<Aws::String>>
+    void SetNotResources(NotResourcesT&& value) { m_notResourcesHasBeenSet = true; m_notResources = std::forward<NotResourcesT>(value); }
+    template<typename NotResourcesT = Aws::Vector<Aws::String>>
+    BackupSelection& WithNotResources(NotResourcesT&& value) { SetNotResources(std::forward<NotResourcesT>(value)); return *this;}
+    template<typename NotResourcesT = Aws::String>
+    BackupSelection& AddNotResources(NotResourcesT&& value) { m_notResourcesHasBeenSet = true; m_notResources.emplace_back(std::forward<NotResourcesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -146,12 +140,12 @@ namespace Model
      * you specify multiple conditions, the resources much match all conditions (AND
      * logic).</p>
      */
-    inline const Conditions& GetConditions() const{ return m_conditions; }
+    inline const Conditions& GetConditions() const { return m_conditions; }
     inline bool ConditionsHasBeenSet() const { return m_conditionsHasBeenSet; }
-    inline void SetConditions(const Conditions& value) { m_conditionsHasBeenSet = true; m_conditions = value; }
-    inline void SetConditions(Conditions&& value) { m_conditionsHasBeenSet = true; m_conditions = std::move(value); }
-    inline BackupSelection& WithConditions(const Conditions& value) { SetConditions(value); return *this;}
-    inline BackupSelection& WithConditions(Conditions&& value) { SetConditions(std::move(value)); return *this;}
+    template<typename ConditionsT = Conditions>
+    void SetConditions(ConditionsT&& value) { m_conditionsHasBeenSet = true; m_conditions = std::forward<ConditionsT>(value); }
+    template<typename ConditionsT = Conditions>
+    BackupSelection& WithConditions(ConditionsT&& value) { SetConditions(std::forward<ConditionsT>(value)); return *this;}
     ///@}
   private:
 

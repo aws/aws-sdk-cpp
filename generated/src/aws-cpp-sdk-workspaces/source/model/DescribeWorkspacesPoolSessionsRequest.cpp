@@ -12,15 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeWorkspacesPoolSessionsRequest::DescribeWorkspacesPoolSessionsRequest() : 
-    m_poolIdHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeWorkspacesPoolSessionsRequest::SerializePayload() const
 {
   JsonValue payload;

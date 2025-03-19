@@ -31,7 +31,7 @@ namespace Model
   class BucketCountByEffectivePermission
   {
   public:
-    AWS_MACIE2_API BucketCountByEffectivePermission();
+    AWS_MACIE2_API BucketCountByEffectivePermission() = default;
     AWS_MACIE2_API BucketCountByEffectivePermission(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API BucketCountByEffectivePermission& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
      * <p>The total number of buckets that allow the general public to have read or
      * write access to the bucket.</p>
      */
-    inline long long GetPubliclyAccessible() const{ return m_publiclyAccessible; }
+    inline long long GetPubliclyAccessible() const { return m_publiclyAccessible; }
     inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
     inline void SetPubliclyAccessible(long long value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
     inline BucketCountByEffectivePermission& WithPubliclyAccessible(long long value) { SetPubliclyAccessible(value); return *this;}
@@ -53,7 +53,7 @@ namespace Model
      * <p>The total number of buckets that allow the general public to have read access
      * to the bucket.</p>
      */
-    inline long long GetPubliclyReadable() const{ return m_publiclyReadable; }
+    inline long long GetPubliclyReadable() const { return m_publiclyReadable; }
     inline bool PubliclyReadableHasBeenSet() const { return m_publiclyReadableHasBeenSet; }
     inline void SetPubliclyReadable(long long value) { m_publiclyReadableHasBeenSet = true; m_publiclyReadable = value; }
     inline BucketCountByEffectivePermission& WithPubliclyReadable(long long value) { SetPubliclyReadable(value); return *this;}
@@ -64,7 +64,7 @@ namespace Model
      * <p>The total number of buckets that allow the general public to have write
      * access to the bucket.</p>
      */
-    inline long long GetPubliclyWritable() const{ return m_publiclyWritable; }
+    inline long long GetPubliclyWritable() const { return m_publiclyWritable; }
     inline bool PubliclyWritableHasBeenSet() const { return m_publiclyWritableHasBeenSet; }
     inline void SetPubliclyWritable(long long value) { m_publiclyWritableHasBeenSet = true; m_publiclyWritable = value; }
     inline BucketCountByEffectivePermission& WithPubliclyWritable(long long value) { SetPubliclyWritable(value); return *this;}
@@ -77,23 +77,23 @@ namespace Model
      * prevented Macie from retrieving the requisite data. Macie can't determine
      * whether the buckets are publicly accessible.</p>
      */
-    inline long long GetUnknown() const{ return m_unknown; }
+    inline long long GetUnknown() const { return m_unknown; }
     inline bool UnknownHasBeenSet() const { return m_unknownHasBeenSet; }
     inline void SetUnknown(long long value) { m_unknownHasBeenSet = true; m_unknown = value; }
     inline BucketCountByEffectivePermission& WithUnknown(long long value) { SetUnknown(value); return *this;}
     ///@}
   private:
 
-    long long m_publiclyAccessible;
+    long long m_publiclyAccessible{0};
     bool m_publiclyAccessibleHasBeenSet = false;
 
-    long long m_publiclyReadable;
+    long long m_publiclyReadable{0};
     bool m_publiclyReadableHasBeenSet = false;
 
-    long long m_publiclyWritable;
+    long long m_publiclyWritable{0};
     bool m_publiclyWritableHasBeenSet = false;
 
-    long long m_unknown;
+    long long m_unknown{0};
     bool m_unknownHasBeenSet = false;
   };
 

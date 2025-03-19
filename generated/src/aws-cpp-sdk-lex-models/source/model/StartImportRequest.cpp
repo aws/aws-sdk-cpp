@@ -13,16 +13,6 @@ using namespace Aws::LexModelBuildingService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartImportRequest::StartImportRequest() : 
-    m_payloadHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_mergeStrategy(MergeStrategy::NOT_SET),
-    m_mergeStrategyHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String StartImportRequest::SerializePayload() const
 {
   JsonValue payload;

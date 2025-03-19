@@ -34,7 +34,7 @@ namespace Model
   class CreateProfilingGroupResult
   {
   public:
-    AWS_CODEGURUPROFILER_API CreateProfilingGroupResult();
+    AWS_CODEGURUPROFILER_API CreateProfilingGroupResult() = default;
     AWS_CODEGURUPROFILER_API CreateProfilingGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODEGURUPROFILER_API CreateProfilingGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -46,28 +46,28 @@ namespace Model
      * <code>ProfilingGroupDescription</code> </a> object that contains information
      * about the created profiling group. </p>
      */
-    inline const ProfilingGroupDescription& GetProfilingGroup() const{ return m_profilingGroup; }
-    inline void SetProfilingGroup(const ProfilingGroupDescription& value) { m_profilingGroup = value; }
-    inline void SetProfilingGroup(ProfilingGroupDescription&& value) { m_profilingGroup = std::move(value); }
-    inline CreateProfilingGroupResult& WithProfilingGroup(const ProfilingGroupDescription& value) { SetProfilingGroup(value); return *this;}
-    inline CreateProfilingGroupResult& WithProfilingGroup(ProfilingGroupDescription&& value) { SetProfilingGroup(std::move(value)); return *this;}
+    inline const ProfilingGroupDescription& GetProfilingGroup() const { return m_profilingGroup; }
+    template<typename ProfilingGroupT = ProfilingGroupDescription>
+    void SetProfilingGroup(ProfilingGroupT&& value) { m_profilingGroupHasBeenSet = true; m_profilingGroup = std::forward<ProfilingGroupT>(value); }
+    template<typename ProfilingGroupT = ProfilingGroupDescription>
+    CreateProfilingGroupResult& WithProfilingGroup(ProfilingGroupT&& value) { SetProfilingGroup(std::forward<ProfilingGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateProfilingGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateProfilingGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateProfilingGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateProfilingGroupResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ProfilingGroupDescription m_profilingGroup;
+    bool m_profilingGroupHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

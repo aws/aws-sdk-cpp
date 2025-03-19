@@ -18,18 +18,7 @@ namespace Glue
 namespace Model
 {
 
-MappingEntry::MappingEntry() : 
-    m_sourceTableHasBeenSet(false),
-    m_sourcePathHasBeenSet(false),
-    m_sourceTypeHasBeenSet(false),
-    m_targetTableHasBeenSet(false),
-    m_targetPathHasBeenSet(false),
-    m_targetTypeHasBeenSet(false)
-{
-}
-
 MappingEntry::MappingEntry(JsonView jsonValue)
-  : MappingEntry()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ MappingEntry& MappingEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SourceTable"))
   {
     m_sourceTable = jsonValue.GetString("SourceTable");
-
     m_sourceTableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourcePath"))
   {
     m_sourcePath = jsonValue.GetString("SourcePath");
-
     m_sourcePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceType"))
   {
     m_sourceType = jsonValue.GetString("SourceType");
-
     m_sourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetTable"))
   {
     m_targetTable = jsonValue.GetString("TargetTable");
-
     m_targetTableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetPath"))
   {
     m_targetPath = jsonValue.GetString("TargetPath");
-
     m_targetPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetType"))
   {
     m_targetType = jsonValue.GetString("TargetType");
-
     m_targetTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

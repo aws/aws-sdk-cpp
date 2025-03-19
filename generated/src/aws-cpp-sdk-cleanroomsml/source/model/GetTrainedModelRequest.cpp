@@ -12,12 +12,6 @@ using namespace Aws::CleanRoomsML::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTrainedModelRequest::GetTrainedModelRequest() : 
-    m_trainedModelArnHasBeenSet(false),
-    m_membershipIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String GetTrainedModelRequest::SerializePayload() const
 {
   return {};

@@ -10,17 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateNetworkInterfacePermissionRequest::CreateNetworkInterfacePermissionRequest() : 
-    m_networkInterfaceIdHasBeenSet(false),
-    m_awsAccountIdHasBeenSet(false),
-    m_awsServiceHasBeenSet(false),
-    m_permission(InterfacePermissionType::NOT_SET),
-    m_permissionHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String CreateNetworkInterfacePermissionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

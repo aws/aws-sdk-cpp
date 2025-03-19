@@ -33,7 +33,7 @@ namespace Model
   class ResponseHeadersPolicyStrictTransportSecurity
   {
   public:
-    AWS_CLOUDFRONT_API ResponseHeadersPolicyStrictTransportSecurity();
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyStrictTransportSecurity() = default;
     AWS_CLOUDFRONT_API ResponseHeadersPolicyStrictTransportSecurity(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API ResponseHeadersPolicyStrictTransportSecurity& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,7 +46,7 @@ namespace Model
      * <code>Strict-Transport-Security</code> HTTP response header received from the
      * origin with the one specified in this response headers policy.</p>
      */
-    inline bool GetOverride() const{ return m_override; }
+    inline bool GetOverride() const { return m_override; }
     inline bool OverrideHasBeenSet() const { return m_overrideHasBeenSet; }
     inline void SetOverride(bool value) { m_overrideHasBeenSet = true; m_override = value; }
     inline ResponseHeadersPolicyStrictTransportSecurity& WithOverride(bool value) { SetOverride(value); return *this;}
@@ -58,7 +58,7 @@ namespace Model
      * <code>includeSubDomains</code> directive in the
      * <code>Strict-Transport-Security</code> HTTP response header.</p>
      */
-    inline bool GetIncludeSubdomains() const{ return m_includeSubdomains; }
+    inline bool GetIncludeSubdomains() const { return m_includeSubdomains; }
     inline bool IncludeSubdomainsHasBeenSet() const { return m_includeSubdomainsHasBeenSet; }
     inline void SetIncludeSubdomains(bool value) { m_includeSubdomainsHasBeenSet = true; m_includeSubdomains = value; }
     inline ResponseHeadersPolicyStrictTransportSecurity& WithIncludeSubdomains(bool value) { SetIncludeSubdomains(value); return *this;}
@@ -70,7 +70,7 @@ namespace Model
      * <code>preload</code> directive in the <code>Strict-Transport-Security</code>
      * HTTP response header.</p>
      */
-    inline bool GetPreload() const{ return m_preload; }
+    inline bool GetPreload() const { return m_preload; }
     inline bool PreloadHasBeenSet() const { return m_preloadHasBeenSet; }
     inline void SetPreload(bool value) { m_preloadHasBeenSet = true; m_preload = value; }
     inline ResponseHeadersPolicyStrictTransportSecurity& WithPreload(bool value) { SetPreload(value); return *this;}
@@ -82,23 +82,23 @@ namespace Model
      * directive in the <code>Strict-Transport-Security</code> HTTP response
      * header.</p>
      */
-    inline int GetAccessControlMaxAgeSec() const{ return m_accessControlMaxAgeSec; }
+    inline int GetAccessControlMaxAgeSec() const { return m_accessControlMaxAgeSec; }
     inline bool AccessControlMaxAgeSecHasBeenSet() const { return m_accessControlMaxAgeSecHasBeenSet; }
     inline void SetAccessControlMaxAgeSec(int value) { m_accessControlMaxAgeSecHasBeenSet = true; m_accessControlMaxAgeSec = value; }
     inline ResponseHeadersPolicyStrictTransportSecurity& WithAccessControlMaxAgeSec(int value) { SetAccessControlMaxAgeSec(value); return *this;}
     ///@}
   private:
 
-    bool m_override;
+    bool m_override{false};
     bool m_overrideHasBeenSet = false;
 
-    bool m_includeSubdomains;
+    bool m_includeSubdomains{false};
     bool m_includeSubdomainsHasBeenSet = false;
 
-    bool m_preload;
+    bool m_preload{false};
     bool m_preloadHasBeenSet = false;
 
-    int m_accessControlMaxAgeSec;
+    int m_accessControlMaxAgeSec{0};
     bool m_accessControlMaxAgeSecHasBeenSet = false;
   };
 

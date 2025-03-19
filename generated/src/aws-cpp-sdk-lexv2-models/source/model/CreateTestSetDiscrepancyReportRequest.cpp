@@ -12,12 +12,6 @@ using namespace Aws::LexModelsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateTestSetDiscrepancyReportRequest::CreateTestSetDiscrepancyReportRequest() : 
-    m_testSetIdHasBeenSet(false),
-    m_targetHasBeenSet(false)
-{
-}
-
 Aws::String CreateTestSetDiscrepancyReportRequest::SerializePayload() const
 {
   JsonValue payload;

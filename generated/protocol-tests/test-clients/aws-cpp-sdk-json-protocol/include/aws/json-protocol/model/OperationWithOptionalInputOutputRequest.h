@@ -21,7 +21,7 @@ namespace Model
   class OperationWithOptionalInputOutputRequest : public JsonProtocolRequest
   {
   public:
-    AWS_JSONPROTOCOL_API OperationWithOptionalInputOutputRequest();
+    AWS_JSONPROTOCOL_API OperationWithOptionalInputOutputRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline OperationWithOptionalInputOutputRequest& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline OperationWithOptionalInputOutputRequest& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline OperationWithOptionalInputOutputRequest& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    OperationWithOptionalInputOutputRequest& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 

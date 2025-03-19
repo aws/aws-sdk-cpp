@@ -23,7 +23,7 @@ namespace Model
   class UpdateLicenseSpecificationsForResourceRequest : public LicenseManagerRequest
   {
   public:
-    AWS_LICENSEMANAGER_API UpdateLicenseSpecificationsForResourceRequest();
+    AWS_LICENSEMANAGER_API UpdateLicenseSpecificationsForResourceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,42 +40,40 @@ namespace Model
     /**
      * <p>Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>
      */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-    inline UpdateLicenseSpecificationsForResourceRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-    inline UpdateLicenseSpecificationsForResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-    inline UpdateLicenseSpecificationsForResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    UpdateLicenseSpecificationsForResourceRequest& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>ARNs of the license configurations to add.</p>
      */
-    inline const Aws::Vector<LicenseSpecification>& GetAddLicenseSpecifications() const{ return m_addLicenseSpecifications; }
+    inline const Aws::Vector<LicenseSpecification>& GetAddLicenseSpecifications() const { return m_addLicenseSpecifications; }
     inline bool AddLicenseSpecificationsHasBeenSet() const { return m_addLicenseSpecificationsHasBeenSet; }
-    inline void SetAddLicenseSpecifications(const Aws::Vector<LicenseSpecification>& value) { m_addLicenseSpecificationsHasBeenSet = true; m_addLicenseSpecifications = value; }
-    inline void SetAddLicenseSpecifications(Aws::Vector<LicenseSpecification>&& value) { m_addLicenseSpecificationsHasBeenSet = true; m_addLicenseSpecifications = std::move(value); }
-    inline UpdateLicenseSpecificationsForResourceRequest& WithAddLicenseSpecifications(const Aws::Vector<LicenseSpecification>& value) { SetAddLicenseSpecifications(value); return *this;}
-    inline UpdateLicenseSpecificationsForResourceRequest& WithAddLicenseSpecifications(Aws::Vector<LicenseSpecification>&& value) { SetAddLicenseSpecifications(std::move(value)); return *this;}
-    inline UpdateLicenseSpecificationsForResourceRequest& AddAddLicenseSpecifications(const LicenseSpecification& value) { m_addLicenseSpecificationsHasBeenSet = true; m_addLicenseSpecifications.push_back(value); return *this; }
-    inline UpdateLicenseSpecificationsForResourceRequest& AddAddLicenseSpecifications(LicenseSpecification&& value) { m_addLicenseSpecificationsHasBeenSet = true; m_addLicenseSpecifications.push_back(std::move(value)); return *this; }
+    template<typename AddLicenseSpecificationsT = Aws::Vector<LicenseSpecification>>
+    void SetAddLicenseSpecifications(AddLicenseSpecificationsT&& value) { m_addLicenseSpecificationsHasBeenSet = true; m_addLicenseSpecifications = std::forward<AddLicenseSpecificationsT>(value); }
+    template<typename AddLicenseSpecificationsT = Aws::Vector<LicenseSpecification>>
+    UpdateLicenseSpecificationsForResourceRequest& WithAddLicenseSpecifications(AddLicenseSpecificationsT&& value) { SetAddLicenseSpecifications(std::forward<AddLicenseSpecificationsT>(value)); return *this;}
+    template<typename AddLicenseSpecificationsT = LicenseSpecification>
+    UpdateLicenseSpecificationsForResourceRequest& AddAddLicenseSpecifications(AddLicenseSpecificationsT&& value) { m_addLicenseSpecificationsHasBeenSet = true; m_addLicenseSpecifications.emplace_back(std::forward<AddLicenseSpecificationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>ARNs of the license configurations to remove.</p>
      */
-    inline const Aws::Vector<LicenseSpecification>& GetRemoveLicenseSpecifications() const{ return m_removeLicenseSpecifications; }
+    inline const Aws::Vector<LicenseSpecification>& GetRemoveLicenseSpecifications() const { return m_removeLicenseSpecifications; }
     inline bool RemoveLicenseSpecificationsHasBeenSet() const { return m_removeLicenseSpecificationsHasBeenSet; }
-    inline void SetRemoveLicenseSpecifications(const Aws::Vector<LicenseSpecification>& value) { m_removeLicenseSpecificationsHasBeenSet = true; m_removeLicenseSpecifications = value; }
-    inline void SetRemoveLicenseSpecifications(Aws::Vector<LicenseSpecification>&& value) { m_removeLicenseSpecificationsHasBeenSet = true; m_removeLicenseSpecifications = std::move(value); }
-    inline UpdateLicenseSpecificationsForResourceRequest& WithRemoveLicenseSpecifications(const Aws::Vector<LicenseSpecification>& value) { SetRemoveLicenseSpecifications(value); return *this;}
-    inline UpdateLicenseSpecificationsForResourceRequest& WithRemoveLicenseSpecifications(Aws::Vector<LicenseSpecification>&& value) { SetRemoveLicenseSpecifications(std::move(value)); return *this;}
-    inline UpdateLicenseSpecificationsForResourceRequest& AddRemoveLicenseSpecifications(const LicenseSpecification& value) { m_removeLicenseSpecificationsHasBeenSet = true; m_removeLicenseSpecifications.push_back(value); return *this; }
-    inline UpdateLicenseSpecificationsForResourceRequest& AddRemoveLicenseSpecifications(LicenseSpecification&& value) { m_removeLicenseSpecificationsHasBeenSet = true; m_removeLicenseSpecifications.push_back(std::move(value)); return *this; }
+    template<typename RemoveLicenseSpecificationsT = Aws::Vector<LicenseSpecification>>
+    void SetRemoveLicenseSpecifications(RemoveLicenseSpecificationsT&& value) { m_removeLicenseSpecificationsHasBeenSet = true; m_removeLicenseSpecifications = std::forward<RemoveLicenseSpecificationsT>(value); }
+    template<typename RemoveLicenseSpecificationsT = Aws::Vector<LicenseSpecification>>
+    UpdateLicenseSpecificationsForResourceRequest& WithRemoveLicenseSpecifications(RemoveLicenseSpecificationsT&& value) { SetRemoveLicenseSpecifications(std::forward<RemoveLicenseSpecificationsT>(value)); return *this;}
+    template<typename RemoveLicenseSpecificationsT = LicenseSpecification>
+    UpdateLicenseSpecificationsForResourceRequest& AddRemoveLicenseSpecifications(RemoveLicenseSpecificationsT&& value) { m_removeLicenseSpecificationsHasBeenSet = true; m_removeLicenseSpecifications.emplace_back(std::forward<RemoveLicenseSpecificationsT>(value)); return *this; }
     ///@}
   private:
 

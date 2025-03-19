@@ -28,7 +28,7 @@ namespace Model
   class UpdateReportPlanResult
   {
   public:
-    AWS_BACKUP_API UpdateReportPlanResult();
+    AWS_BACKUP_API UpdateReportPlanResult() = default;
     AWS_BACKUP_API UpdateReportPlanResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BACKUP_API UpdateReportPlanResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,13 +37,11 @@ namespace Model
     /**
      * <p>The unique name of the report plan.</p>
      */
-    inline const Aws::String& GetReportPlanName() const{ return m_reportPlanName; }
-    inline void SetReportPlanName(const Aws::String& value) { m_reportPlanName = value; }
-    inline void SetReportPlanName(Aws::String&& value) { m_reportPlanName = std::move(value); }
-    inline void SetReportPlanName(const char* value) { m_reportPlanName.assign(value); }
-    inline UpdateReportPlanResult& WithReportPlanName(const Aws::String& value) { SetReportPlanName(value); return *this;}
-    inline UpdateReportPlanResult& WithReportPlanName(Aws::String&& value) { SetReportPlanName(std::move(value)); return *this;}
-    inline UpdateReportPlanResult& WithReportPlanName(const char* value) { SetReportPlanName(value); return *this;}
+    inline const Aws::String& GetReportPlanName() const { return m_reportPlanName; }
+    template<typename ReportPlanNameT = Aws::String>
+    void SetReportPlanName(ReportPlanNameT&& value) { m_reportPlanNameHasBeenSet = true; m_reportPlanName = std::forward<ReportPlanNameT>(value); }
+    template<typename ReportPlanNameT = Aws::String>
+    UpdateReportPlanResult& WithReportPlanName(ReportPlanNameT&& value) { SetReportPlanName(std::forward<ReportPlanNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,13 +49,11 @@ namespace Model
      * <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format
      * of the ARN depends on the resource type.</p>
      */
-    inline const Aws::String& GetReportPlanArn() const{ return m_reportPlanArn; }
-    inline void SetReportPlanArn(const Aws::String& value) { m_reportPlanArn = value; }
-    inline void SetReportPlanArn(Aws::String&& value) { m_reportPlanArn = std::move(value); }
-    inline void SetReportPlanArn(const char* value) { m_reportPlanArn.assign(value); }
-    inline UpdateReportPlanResult& WithReportPlanArn(const Aws::String& value) { SetReportPlanArn(value); return *this;}
-    inline UpdateReportPlanResult& WithReportPlanArn(Aws::String&& value) { SetReportPlanArn(std::move(value)); return *this;}
-    inline UpdateReportPlanResult& WithReportPlanArn(const char* value) { SetReportPlanArn(value); return *this;}
+    inline const Aws::String& GetReportPlanArn() const { return m_reportPlanArn; }
+    template<typename ReportPlanArnT = Aws::String>
+    void SetReportPlanArn(ReportPlanArnT&& value) { m_reportPlanArnHasBeenSet = true; m_reportPlanArn = std::forward<ReportPlanArnT>(value); }
+    template<typename ReportPlanArnT = Aws::String>
+    UpdateReportPlanResult& WithReportPlanArn(ReportPlanArnT&& value) { SetReportPlanArn(std::forward<ReportPlanArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,32 +63,34 @@ namespace Model
      * accurate to milliseconds. For example, the value 1516925490.087 represents
      * Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline UpdateReportPlanResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline UpdateReportPlanResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    UpdateReportPlanResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateReportPlanResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateReportPlanResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateReportPlanResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateReportPlanResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_reportPlanName;
+    bool m_reportPlanNameHasBeenSet = false;
 
     Aws::String m_reportPlanArn;
+    bool m_reportPlanArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

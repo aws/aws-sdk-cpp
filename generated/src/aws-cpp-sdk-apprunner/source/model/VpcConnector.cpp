@@ -18,22 +18,7 @@ namespace AppRunner
 namespace Model
 {
 
-VpcConnector::VpcConnector() : 
-    m_vpcConnectorNameHasBeenSet(false),
-    m_vpcConnectorArnHasBeenSet(false),
-    m_vpcConnectorRevision(0),
-    m_vpcConnectorRevisionHasBeenSet(false),
-    m_subnetsHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_status(VpcConnectorStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_deletedAtHasBeenSet(false)
-{
-}
-
 VpcConnector::VpcConnector(JsonView jsonValue)
-  : VpcConnector()
 {
   *this = jsonValue;
 }
@@ -43,24 +28,18 @@ VpcConnector& VpcConnector::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VpcConnectorName"))
   {
     m_vpcConnectorName = jsonValue.GetString("VpcConnectorName");
-
     m_vpcConnectorNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcConnectorArn"))
   {
     m_vpcConnectorArn = jsonValue.GetString("VpcConnectorArn");
-
     m_vpcConnectorArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcConnectorRevision"))
   {
     m_vpcConnectorRevision = jsonValue.GetInteger("VpcConnectorRevision");
-
     m_vpcConnectorRevisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Subnets"))
   {
     Aws::Utils::Array<JsonView> subnetsJsonList = jsonValue.GetArray("Subnets");
@@ -70,7 +49,6 @@ VpcConnector& VpcConnector::operator =(JsonView jsonValue)
     }
     m_subnetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityGroups"))
   {
     Aws::Utils::Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("SecurityGroups");
@@ -80,28 +58,21 @@ VpcConnector& VpcConnector::operator =(JsonView jsonValue)
     }
     m_securityGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = VpcConnectorStatusMapper::GetVpcConnectorStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeletedAt"))
   {
     m_deletedAt = jsonValue.GetDouble("DeletedAt");
-
     m_deletedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

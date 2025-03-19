@@ -12,14 +12,6 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListNotebookSessionsRequest::ListNotebookSessionsRequest() : 
-    m_notebookIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListNotebookSessionsRequest::SerializePayload() const
 {
   JsonValue payload;

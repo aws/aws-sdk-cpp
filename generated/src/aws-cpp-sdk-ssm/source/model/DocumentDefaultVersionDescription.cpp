@@ -18,15 +18,7 @@ namespace SSM
 namespace Model
 {
 
-DocumentDefaultVersionDescription::DocumentDefaultVersionDescription() : 
-    m_nameHasBeenSet(false),
-    m_defaultVersionHasBeenSet(false),
-    m_defaultVersionNameHasBeenSet(false)
-{
-}
-
 DocumentDefaultVersionDescription::DocumentDefaultVersionDescription(JsonView jsonValue)
-  : DocumentDefaultVersionDescription()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DocumentDefaultVersionDescription& DocumentDefaultVersionDescription::operator =
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultVersion"))
   {
     m_defaultVersion = jsonValue.GetString("DefaultVersion");
-
     m_defaultVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultVersionName"))
   {
     m_defaultVersionName = jsonValue.GetString("DefaultVersionName");
-
     m_defaultVersionNameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -36,7 +36,7 @@ namespace Model
   class TargetTrackingConfiguration
   {
   public:
-    AWS_GAMELIFT_API TargetTrackingConfiguration();
+    AWS_GAMELIFT_API TargetTrackingConfiguration() = default;
     AWS_GAMELIFT_API TargetTrackingConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API TargetTrackingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,14 @@ namespace Model
      * <p>Desired value to use with a game server group target-based scaling policy.
      * </p>
      */
-    inline double GetTargetValue() const{ return m_targetValue; }
+    inline double GetTargetValue() const { return m_targetValue; }
     inline bool TargetValueHasBeenSet() const { return m_targetValueHasBeenSet; }
     inline void SetTargetValue(double value) { m_targetValueHasBeenSet = true; m_targetValue = value; }
     inline TargetTrackingConfiguration& WithTargetValue(double value) { SetTargetValue(value); return *this;}
     ///@}
   private:
 
-    double m_targetValue;
+    double m_targetValue{0.0};
     bool m_targetValueHasBeenSet = false;
   };
 

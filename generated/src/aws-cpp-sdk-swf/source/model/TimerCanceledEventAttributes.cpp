@@ -18,17 +18,7 @@ namespace SWF
 namespace Model
 {
 
-TimerCanceledEventAttributes::TimerCanceledEventAttributes() : 
-    m_timerIdHasBeenSet(false),
-    m_startedEventId(0),
-    m_startedEventIdHasBeenSet(false),
-    m_decisionTaskCompletedEventId(0),
-    m_decisionTaskCompletedEventIdHasBeenSet(false)
-{
-}
-
 TimerCanceledEventAttributes::TimerCanceledEventAttributes(JsonView jsonValue)
-  : TimerCanceledEventAttributes()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ TimerCanceledEventAttributes& TimerCanceledEventAttributes::operator =(JsonView 
   if(jsonValue.ValueExists("timerId"))
   {
     m_timerId = jsonValue.GetString("timerId");
-
     m_timerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startedEventId"))
   {
     m_startedEventId = jsonValue.GetInt64("startedEventId");
-
     m_startedEventIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("decisionTaskCompletedEventId"))
   {
     m_decisionTaskCompletedEventId = jsonValue.GetInt64("decisionTaskCompletedEventId");
-
     m_decisionTaskCompletedEventIdHasBeenSet = true;
   }
-
   return *this;
 }
 

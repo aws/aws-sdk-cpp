@@ -35,7 +35,7 @@ namespace Model
   class ItemFilters
   {
   public:
-    AWS_BACKUPSEARCH_API ItemFilters();
+    AWS_BACKUPSEARCH_API ItemFilters() = default;
     AWS_BACKUPSEARCH_API ItemFilters(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUPSEARCH_API ItemFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUPSEARCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,14 @@ namespace Model
      * <p>This array can contain CreationTimes, ETags, ObjectKeys, Sizes, or VersionIds
      * objects.</p>
      */
-    inline const Aws::Vector<S3ItemFilter>& GetS3ItemFilters() const{ return m_s3ItemFilters; }
+    inline const Aws::Vector<S3ItemFilter>& GetS3ItemFilters() const { return m_s3ItemFilters; }
     inline bool S3ItemFiltersHasBeenSet() const { return m_s3ItemFiltersHasBeenSet; }
-    inline void SetS3ItemFilters(const Aws::Vector<S3ItemFilter>& value) { m_s3ItemFiltersHasBeenSet = true; m_s3ItemFilters = value; }
-    inline void SetS3ItemFilters(Aws::Vector<S3ItemFilter>&& value) { m_s3ItemFiltersHasBeenSet = true; m_s3ItemFilters = std::move(value); }
-    inline ItemFilters& WithS3ItemFilters(const Aws::Vector<S3ItemFilter>& value) { SetS3ItemFilters(value); return *this;}
-    inline ItemFilters& WithS3ItemFilters(Aws::Vector<S3ItemFilter>&& value) { SetS3ItemFilters(std::move(value)); return *this;}
-    inline ItemFilters& AddS3ItemFilters(const S3ItemFilter& value) { m_s3ItemFiltersHasBeenSet = true; m_s3ItemFilters.push_back(value); return *this; }
-    inline ItemFilters& AddS3ItemFilters(S3ItemFilter&& value) { m_s3ItemFiltersHasBeenSet = true; m_s3ItemFilters.push_back(std::move(value)); return *this; }
+    template<typename S3ItemFiltersT = Aws::Vector<S3ItemFilter>>
+    void SetS3ItemFilters(S3ItemFiltersT&& value) { m_s3ItemFiltersHasBeenSet = true; m_s3ItemFilters = std::forward<S3ItemFiltersT>(value); }
+    template<typename S3ItemFiltersT = Aws::Vector<S3ItemFilter>>
+    ItemFilters& WithS3ItemFilters(S3ItemFiltersT&& value) { SetS3ItemFilters(std::forward<S3ItemFiltersT>(value)); return *this;}
+    template<typename S3ItemFiltersT = S3ItemFilter>
+    ItemFilters& AddS3ItemFilters(S3ItemFiltersT&& value) { m_s3ItemFiltersHasBeenSet = true; m_s3ItemFilters.emplace_back(std::forward<S3ItemFiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -61,14 +61,14 @@ namespace Model
      * <p>This array can contain CreationTimes, FilePaths, LastModificationTimes, or
      * Sizes objects.</p>
      */
-    inline const Aws::Vector<EBSItemFilter>& GetEBSItemFilters() const{ return m_eBSItemFilters; }
+    inline const Aws::Vector<EBSItemFilter>& GetEBSItemFilters() const { return m_eBSItemFilters; }
     inline bool EBSItemFiltersHasBeenSet() const { return m_eBSItemFiltersHasBeenSet; }
-    inline void SetEBSItemFilters(const Aws::Vector<EBSItemFilter>& value) { m_eBSItemFiltersHasBeenSet = true; m_eBSItemFilters = value; }
-    inline void SetEBSItemFilters(Aws::Vector<EBSItemFilter>&& value) { m_eBSItemFiltersHasBeenSet = true; m_eBSItemFilters = std::move(value); }
-    inline ItemFilters& WithEBSItemFilters(const Aws::Vector<EBSItemFilter>& value) { SetEBSItemFilters(value); return *this;}
-    inline ItemFilters& WithEBSItemFilters(Aws::Vector<EBSItemFilter>&& value) { SetEBSItemFilters(std::move(value)); return *this;}
-    inline ItemFilters& AddEBSItemFilters(const EBSItemFilter& value) { m_eBSItemFiltersHasBeenSet = true; m_eBSItemFilters.push_back(value); return *this; }
-    inline ItemFilters& AddEBSItemFilters(EBSItemFilter&& value) { m_eBSItemFiltersHasBeenSet = true; m_eBSItemFilters.push_back(std::move(value)); return *this; }
+    template<typename EBSItemFiltersT = Aws::Vector<EBSItemFilter>>
+    void SetEBSItemFilters(EBSItemFiltersT&& value) { m_eBSItemFiltersHasBeenSet = true; m_eBSItemFilters = std::forward<EBSItemFiltersT>(value); }
+    template<typename EBSItemFiltersT = Aws::Vector<EBSItemFilter>>
+    ItemFilters& WithEBSItemFilters(EBSItemFiltersT&& value) { SetEBSItemFilters(std::forward<EBSItemFiltersT>(value)); return *this;}
+    template<typename EBSItemFiltersT = EBSItemFilter>
+    ItemFilters& AddEBSItemFilters(EBSItemFiltersT&& value) { m_eBSItemFiltersHasBeenSet = true; m_eBSItemFilters.emplace_back(std::forward<EBSItemFiltersT>(value)); return *this; }
     ///@}
   private:
 

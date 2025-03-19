@@ -13,25 +13,6 @@ using namespace Aws::ChimeSDKMessaging::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SendChannelMessageRequest::SendChannelMessageRequest() : 
-    m_channelArnHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_type(ChannelMessageType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_persistence(ChannelMessagePersistenceType::NOT_SET),
-    m_persistenceHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_chimeBearerHasBeenSet(false),
-    m_pushNotificationHasBeenSet(false),
-    m_messageAttributesHasBeenSet(false),
-    m_subChannelIdHasBeenSet(false),
-    m_contentTypeHasBeenSet(false),
-    m_targetHasBeenSet(false)
-{
-}
-
 Aws::String SendChannelMessageRequest::SerializePayload() const
 {
   JsonValue payload;

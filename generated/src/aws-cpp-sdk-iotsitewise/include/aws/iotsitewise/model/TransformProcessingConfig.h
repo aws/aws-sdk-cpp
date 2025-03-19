@@ -35,7 +35,7 @@ namespace Model
   class TransformProcessingConfig
   {
   public:
-    AWS_IOTSITEWISE_API TransformProcessingConfig();
+    AWS_IOTSITEWISE_API TransformProcessingConfig() = default;
     AWS_IOTSITEWISE_API TransformProcessingConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API TransformProcessingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,26 +45,24 @@ namespace Model
     /**
      * <p>The compute location for the given transform property. </p>
      */
-    inline const ComputeLocation& GetComputeLocation() const{ return m_computeLocation; }
+    inline ComputeLocation GetComputeLocation() const { return m_computeLocation; }
     inline bool ComputeLocationHasBeenSet() const { return m_computeLocationHasBeenSet; }
-    inline void SetComputeLocation(const ComputeLocation& value) { m_computeLocationHasBeenSet = true; m_computeLocation = value; }
-    inline void SetComputeLocation(ComputeLocation&& value) { m_computeLocationHasBeenSet = true; m_computeLocation = std::move(value); }
-    inline TransformProcessingConfig& WithComputeLocation(const ComputeLocation& value) { SetComputeLocation(value); return *this;}
-    inline TransformProcessingConfig& WithComputeLocation(ComputeLocation&& value) { SetComputeLocation(std::move(value)); return *this;}
+    inline void SetComputeLocation(ComputeLocation value) { m_computeLocationHasBeenSet = true; m_computeLocation = value; }
+    inline TransformProcessingConfig& WithComputeLocation(ComputeLocation value) { SetComputeLocation(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const ForwardingConfig& GetForwardingConfig() const{ return m_forwardingConfig; }
+    inline const ForwardingConfig& GetForwardingConfig() const { return m_forwardingConfig; }
     inline bool ForwardingConfigHasBeenSet() const { return m_forwardingConfigHasBeenSet; }
-    inline void SetForwardingConfig(const ForwardingConfig& value) { m_forwardingConfigHasBeenSet = true; m_forwardingConfig = value; }
-    inline void SetForwardingConfig(ForwardingConfig&& value) { m_forwardingConfigHasBeenSet = true; m_forwardingConfig = std::move(value); }
-    inline TransformProcessingConfig& WithForwardingConfig(const ForwardingConfig& value) { SetForwardingConfig(value); return *this;}
-    inline TransformProcessingConfig& WithForwardingConfig(ForwardingConfig&& value) { SetForwardingConfig(std::move(value)); return *this;}
+    template<typename ForwardingConfigT = ForwardingConfig>
+    void SetForwardingConfig(ForwardingConfigT&& value) { m_forwardingConfigHasBeenSet = true; m_forwardingConfig = std::forward<ForwardingConfigT>(value); }
+    template<typename ForwardingConfigT = ForwardingConfig>
+    TransformProcessingConfig& WithForwardingConfig(ForwardingConfigT&& value) { SetForwardingConfig(std::forward<ForwardingConfigT>(value)); return *this;}
     ///@}
   private:
 
-    ComputeLocation m_computeLocation;
+    ComputeLocation m_computeLocation{ComputeLocation::NOT_SET};
     bool m_computeLocationHasBeenSet = false;
 
     ForwardingConfig m_forwardingConfig;

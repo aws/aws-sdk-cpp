@@ -18,13 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-Regex::Regex() : 
-    m_regexStringHasBeenSet(false)
-{
-}
-
 Regex::Regex(JsonView jsonValue)
-  : Regex()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Regex& Regex::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RegexString"))
   {
     m_regexString = jsonValue.GetString("RegexString");
-
     m_regexStringHasBeenSet = true;
   }
-
   return *this;
 }
 

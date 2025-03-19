@@ -33,7 +33,7 @@ namespace Model
   class QueryString
   {
   public:
-    AWS_WAFV2_API QueryString();
+    AWS_WAFV2_API QueryString() = default;
     AWS_WAFV2_API QueryString(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API QueryString& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;

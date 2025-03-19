@@ -18,14 +18,7 @@ namespace MTurk
 namespace Model
 {
 
-WorkerBlock::WorkerBlock() : 
-    m_workerIdHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 WorkerBlock::WorkerBlock(JsonView jsonValue)
-  : WorkerBlock()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ WorkerBlock& WorkerBlock::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("WorkerId"))
   {
     m_workerId = jsonValue.GetString("WorkerId");
-
     m_workerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Reason"))
   {
     m_reason = jsonValue.GetString("Reason");
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

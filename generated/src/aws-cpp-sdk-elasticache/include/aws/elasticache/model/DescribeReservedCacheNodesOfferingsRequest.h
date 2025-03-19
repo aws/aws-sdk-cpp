@@ -25,7 +25,7 @@ namespace Model
   class DescribeReservedCacheNodesOfferingsRequest : public ElastiCacheRequest
   {
   public:
-    AWS_ELASTICACHE_API DescribeReservedCacheNodesOfferingsRequest();
+    AWS_ELASTICACHE_API DescribeReservedCacheNodesOfferingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
      * available offering that matches the specified reservation identifier.</p>
      * <p>Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code> </p>
      */
-    inline const Aws::String& GetReservedCacheNodesOfferingId() const{ return m_reservedCacheNodesOfferingId; }
+    inline const Aws::String& GetReservedCacheNodesOfferingId() const { return m_reservedCacheNodesOfferingId; }
     inline bool ReservedCacheNodesOfferingIdHasBeenSet() const { return m_reservedCacheNodesOfferingIdHasBeenSet; }
-    inline void SetReservedCacheNodesOfferingId(const Aws::String& value) { m_reservedCacheNodesOfferingIdHasBeenSet = true; m_reservedCacheNodesOfferingId = value; }
-    inline void SetReservedCacheNodesOfferingId(Aws::String&& value) { m_reservedCacheNodesOfferingIdHasBeenSet = true; m_reservedCacheNodesOfferingId = std::move(value); }
-    inline void SetReservedCacheNodesOfferingId(const char* value) { m_reservedCacheNodesOfferingIdHasBeenSet = true; m_reservedCacheNodesOfferingId.assign(value); }
-    inline DescribeReservedCacheNodesOfferingsRequest& WithReservedCacheNodesOfferingId(const Aws::String& value) { SetReservedCacheNodesOfferingId(value); return *this;}
-    inline DescribeReservedCacheNodesOfferingsRequest& WithReservedCacheNodesOfferingId(Aws::String&& value) { SetReservedCacheNodesOfferingId(std::move(value)); return *this;}
-    inline DescribeReservedCacheNodesOfferingsRequest& WithReservedCacheNodesOfferingId(const char* value) { SetReservedCacheNodesOfferingId(value); return *this;}
+    template<typename ReservedCacheNodesOfferingIdT = Aws::String>
+    void SetReservedCacheNodesOfferingId(ReservedCacheNodesOfferingIdT&& value) { m_reservedCacheNodesOfferingIdHasBeenSet = true; m_reservedCacheNodesOfferingId = std::forward<ReservedCacheNodesOfferingIdT>(value); }
+    template<typename ReservedCacheNodesOfferingIdT = Aws::String>
+    DescribeReservedCacheNodesOfferingsRequest& WithReservedCacheNodesOfferingId(ReservedCacheNodesOfferingIdT&& value) { SetReservedCacheNodesOfferingId(std::forward<ReservedCacheNodesOfferingIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -132,14 +130,12 @@ namespace Model
      * and <code>appendfsync</code> are not supported on Valkey, or on Redis OSS
      * version 2.8.22 and later.</p> </li> </ul>
      */
-    inline const Aws::String& GetCacheNodeType() const{ return m_cacheNodeType; }
+    inline const Aws::String& GetCacheNodeType() const { return m_cacheNodeType; }
     inline bool CacheNodeTypeHasBeenSet() const { return m_cacheNodeTypeHasBeenSet; }
-    inline void SetCacheNodeType(const Aws::String& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = value; }
-    inline void SetCacheNodeType(Aws::String&& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = std::move(value); }
-    inline void SetCacheNodeType(const char* value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType.assign(value); }
-    inline DescribeReservedCacheNodesOfferingsRequest& WithCacheNodeType(const Aws::String& value) { SetCacheNodeType(value); return *this;}
-    inline DescribeReservedCacheNodesOfferingsRequest& WithCacheNodeType(Aws::String&& value) { SetCacheNodeType(std::move(value)); return *this;}
-    inline DescribeReservedCacheNodesOfferingsRequest& WithCacheNodeType(const char* value) { SetCacheNodeType(value); return *this;}
+    template<typename CacheNodeTypeT = Aws::String>
+    void SetCacheNodeType(CacheNodeTypeT&& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = std::forward<CacheNodeTypeT>(value); }
+    template<typename CacheNodeTypeT = Aws::String>
+    DescribeReservedCacheNodesOfferingsRequest& WithCacheNodeType(CacheNodeTypeT&& value) { SetCacheNodeType(std::forward<CacheNodeTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -148,14 +144,12 @@ namespace Model
      * show only reservations for a given duration.</p> <p>Valid Values: <code>1 | 3 |
      * 31536000 | 94608000</code> </p>
      */
-    inline const Aws::String& GetDuration() const{ return m_duration; }
+    inline const Aws::String& GetDuration() const { return m_duration; }
     inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
-    inline void SetDuration(const Aws::String& value) { m_durationHasBeenSet = true; m_duration = value; }
-    inline void SetDuration(Aws::String&& value) { m_durationHasBeenSet = true; m_duration = std::move(value); }
-    inline void SetDuration(const char* value) { m_durationHasBeenSet = true; m_duration.assign(value); }
-    inline DescribeReservedCacheNodesOfferingsRequest& WithDuration(const Aws::String& value) { SetDuration(value); return *this;}
-    inline DescribeReservedCacheNodesOfferingsRequest& WithDuration(Aws::String&& value) { SetDuration(std::move(value)); return *this;}
-    inline DescribeReservedCacheNodesOfferingsRequest& WithDuration(const char* value) { SetDuration(value); return *this;}
+    template<typename DurationT = Aws::String>
+    void SetDuration(DurationT&& value) { m_durationHasBeenSet = true; m_duration = std::forward<DurationT>(value); }
+    template<typename DurationT = Aws::String>
+    DescribeReservedCacheNodesOfferingsRequest& WithDuration(DurationT&& value) { SetDuration(std::forward<DurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -163,14 +157,12 @@ namespace Model
      * <p>The product description filter value. Use this parameter to show only the
      * available offerings matching the specified product description.</p>
      */
-    inline const Aws::String& GetProductDescription() const{ return m_productDescription; }
+    inline const Aws::String& GetProductDescription() const { return m_productDescription; }
     inline bool ProductDescriptionHasBeenSet() const { return m_productDescriptionHasBeenSet; }
-    inline void SetProductDescription(const Aws::String& value) { m_productDescriptionHasBeenSet = true; m_productDescription = value; }
-    inline void SetProductDescription(Aws::String&& value) { m_productDescriptionHasBeenSet = true; m_productDescription = std::move(value); }
-    inline void SetProductDescription(const char* value) { m_productDescriptionHasBeenSet = true; m_productDescription.assign(value); }
-    inline DescribeReservedCacheNodesOfferingsRequest& WithProductDescription(const Aws::String& value) { SetProductDescription(value); return *this;}
-    inline DescribeReservedCacheNodesOfferingsRequest& WithProductDescription(Aws::String&& value) { SetProductDescription(std::move(value)); return *this;}
-    inline DescribeReservedCacheNodesOfferingsRequest& WithProductDescription(const char* value) { SetProductDescription(value); return *this;}
+    template<typename ProductDescriptionT = Aws::String>
+    void SetProductDescription(ProductDescriptionT&& value) { m_productDescriptionHasBeenSet = true; m_productDescription = std::forward<ProductDescriptionT>(value); }
+    template<typename ProductDescriptionT = Aws::String>
+    DescribeReservedCacheNodesOfferingsRequest& WithProductDescription(ProductDescriptionT&& value) { SetProductDescription(std::forward<ProductDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -180,14 +172,12 @@ namespace Model
      * <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization" |"All
      * Upfront"|"Partial Upfront"| "No Upfront"</code> </p>
      */
-    inline const Aws::String& GetOfferingType() const{ return m_offeringType; }
+    inline const Aws::String& GetOfferingType() const { return m_offeringType; }
     inline bool OfferingTypeHasBeenSet() const { return m_offeringTypeHasBeenSet; }
-    inline void SetOfferingType(const Aws::String& value) { m_offeringTypeHasBeenSet = true; m_offeringType = value; }
-    inline void SetOfferingType(Aws::String&& value) { m_offeringTypeHasBeenSet = true; m_offeringType = std::move(value); }
-    inline void SetOfferingType(const char* value) { m_offeringTypeHasBeenSet = true; m_offeringType.assign(value); }
-    inline DescribeReservedCacheNodesOfferingsRequest& WithOfferingType(const Aws::String& value) { SetOfferingType(value); return *this;}
-    inline DescribeReservedCacheNodesOfferingsRequest& WithOfferingType(Aws::String&& value) { SetOfferingType(std::move(value)); return *this;}
-    inline DescribeReservedCacheNodesOfferingsRequest& WithOfferingType(const char* value) { SetOfferingType(value); return *this;}
+    template<typename OfferingTypeT = Aws::String>
+    void SetOfferingType(OfferingTypeT&& value) { m_offeringTypeHasBeenSet = true; m_offeringType = std::forward<OfferingTypeT>(value); }
+    template<typename OfferingTypeT = Aws::String>
+    DescribeReservedCacheNodesOfferingsRequest& WithOfferingType(OfferingTypeT&& value) { SetOfferingType(std::forward<OfferingTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -197,7 +187,7 @@ namespace Model
      * the response so that the remaining results can be retrieved.</p> <p>Default:
      * 100</p> <p>Constraints: minimum 20; maximum 100.</p>
      */
-    inline int GetMaxRecords() const{ return m_maxRecords; }
+    inline int GetMaxRecords() const { return m_maxRecords; }
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
     inline DescribeReservedCacheNodesOfferingsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
@@ -210,14 +200,12 @@ namespace Model
      * response includes only records beyond the marker, up to the value specified by
      * <code>MaxRecords</code>.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline DescribeReservedCacheNodesOfferingsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeReservedCacheNodesOfferingsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeReservedCacheNodesOfferingsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeReservedCacheNodesOfferingsRequest& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
   private:
 
@@ -236,7 +224,7 @@ namespace Model
     Aws::String m_offeringType;
     bool m_offeringTypeHasBeenSet = false;
 
-    int m_maxRecords;
+    int m_maxRecords{0};
     bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_marker;

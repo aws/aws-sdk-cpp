@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetIdentityNotificationAttributesResult::GetIdentityNotificationAttributesResult()
-{
-}
-
 GetIdentityNotificationAttributesResult::GetIdentityNotificationAttributesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -43,6 +39,7 @@ GetIdentityNotificationAttributesResult& GetIdentityNotificationAttributesResult
     if(!notificationAttributesNode.IsNull())
     {
       XmlNode notificationAttributesEntry = notificationAttributesNode.FirstChild("entry");
+      m_notificationAttributesHasBeenSet = !notificationAttributesEntry.IsNull();
       while(!notificationAttributesEntry.IsNull())
       {
         XmlNode keyNode = notificationAttributesEntry.FirstChild("key");
@@ -52,12 +49,14 @@ GetIdentityNotificationAttributesResult& GetIdentityNotificationAttributesResult
         notificationAttributesEntry = notificationAttributesEntry.NextNode("entry");
       }
 
+      m_notificationAttributesHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::SES::Model::GetIdentityNotificationAttributesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

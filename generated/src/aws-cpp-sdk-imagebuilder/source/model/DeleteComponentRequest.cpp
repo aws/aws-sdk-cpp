@@ -15,11 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteComponentRequest::DeleteComponentRequest() : 
-    m_componentBuildVersionArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteComponentRequest::SerializePayload() const
 {
   return {};

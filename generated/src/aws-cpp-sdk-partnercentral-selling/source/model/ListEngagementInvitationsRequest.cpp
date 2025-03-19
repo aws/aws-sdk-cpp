@@ -12,21 +12,6 @@ using namespace Aws::PartnerCentralSelling::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListEngagementInvitationsRequest::ListEngagementInvitationsRequest() : 
-    m_catalogHasBeenSet(false),
-    m_engagementIdentifierHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_participantType(ParticipantType::NOT_SET),
-    m_participantTypeHasBeenSet(false),
-    m_payloadTypeHasBeenSet(false),
-    m_senderAwsAccountIdHasBeenSet(false),
-    m_sortHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 Aws::String ListEngagementInvitationsRequest::SerializePayload() const
 {
   JsonValue payload;

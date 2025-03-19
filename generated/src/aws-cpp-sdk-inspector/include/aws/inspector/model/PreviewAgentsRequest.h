@@ -21,7 +21,7 @@ namespace Model
   class PreviewAgentsRequest : public InspectorRequest
   {
   public:
-    AWS_INSPECTOR_API PreviewAgentsRequest();
+    AWS_INSPECTOR_API PreviewAgentsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The ARN of the assessment target whose agents you want to preview.</p>
      */
-    inline const Aws::String& GetPreviewAgentsArn() const{ return m_previewAgentsArn; }
+    inline const Aws::String& GetPreviewAgentsArn() const { return m_previewAgentsArn; }
     inline bool PreviewAgentsArnHasBeenSet() const { return m_previewAgentsArnHasBeenSet; }
-    inline void SetPreviewAgentsArn(const Aws::String& value) { m_previewAgentsArnHasBeenSet = true; m_previewAgentsArn = value; }
-    inline void SetPreviewAgentsArn(Aws::String&& value) { m_previewAgentsArnHasBeenSet = true; m_previewAgentsArn = std::move(value); }
-    inline void SetPreviewAgentsArn(const char* value) { m_previewAgentsArnHasBeenSet = true; m_previewAgentsArn.assign(value); }
-    inline PreviewAgentsRequest& WithPreviewAgentsArn(const Aws::String& value) { SetPreviewAgentsArn(value); return *this;}
-    inline PreviewAgentsRequest& WithPreviewAgentsArn(Aws::String&& value) { SetPreviewAgentsArn(std::move(value)); return *this;}
-    inline PreviewAgentsRequest& WithPreviewAgentsArn(const char* value) { SetPreviewAgentsArn(value); return *this;}
+    template<typename PreviewAgentsArnT = Aws::String>
+    void SetPreviewAgentsArn(PreviewAgentsArnT&& value) { m_previewAgentsArnHasBeenSet = true; m_previewAgentsArn = std::forward<PreviewAgentsArnT>(value); }
+    template<typename PreviewAgentsArnT = Aws::String>
+    PreviewAgentsRequest& WithPreviewAgentsArn(PreviewAgentsArnT&& value) { SetPreviewAgentsArn(std::forward<PreviewAgentsArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * value of <b>NextToken</b> from the previous response to continue listing
      * data.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline PreviewAgentsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline PreviewAgentsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline PreviewAgentsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    PreviewAgentsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,7 +67,7 @@ namespace Model
      * <p>You can use this parameter to indicate the maximum number of items you want
      * in the response. The default value is 10. The maximum value is 500.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline PreviewAgentsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -84,7 +80,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

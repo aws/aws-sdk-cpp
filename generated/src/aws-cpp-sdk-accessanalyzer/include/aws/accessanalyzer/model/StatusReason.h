@@ -35,7 +35,7 @@ namespace Model
   class StatusReason
   {
   public:
-    AWS_ACCESSANALYZER_API StatusReason();
+    AWS_ACCESSANALYZER_API StatusReason() = default;
     AWS_ACCESSANALYZER_API StatusReason(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API StatusReason& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,16 +45,14 @@ namespace Model
     /**
      * <p>The reason code for the current status of the analyzer.</p>
      */
-    inline const ReasonCode& GetCode() const{ return m_code; }
+    inline ReasonCode GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const ReasonCode& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(ReasonCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline StatusReason& WithCode(const ReasonCode& value) { SetCode(value); return *this;}
-    inline StatusReason& WithCode(ReasonCode&& value) { SetCode(std::move(value)); return *this;}
+    inline void SetCode(ReasonCode value) { m_codeHasBeenSet = true; m_code = value; }
+    inline StatusReason& WithCode(ReasonCode value) { SetCode(value); return *this;}
     ///@}
   private:
 
-    ReasonCode m_code;
+    ReasonCode m_code{ReasonCode::NOT_SET};
     bool m_codeHasBeenSet = false;
   };
 

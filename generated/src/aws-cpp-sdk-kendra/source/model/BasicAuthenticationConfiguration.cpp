@@ -18,16 +18,7 @@ namespace kendra
 namespace Model
 {
 
-BasicAuthenticationConfiguration::BasicAuthenticationConfiguration() : 
-    m_hostHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_credentialsHasBeenSet(false)
-{
-}
-
 BasicAuthenticationConfiguration::BasicAuthenticationConfiguration(JsonView jsonValue)
-  : BasicAuthenticationConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ BasicAuthenticationConfiguration& BasicAuthenticationConfiguration::operator =(J
   if(jsonValue.ValueExists("Host"))
   {
     m_host = jsonValue.GetString("Host");
-
     m_hostHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Port"))
   {
     m_port = jsonValue.GetInteger("Port");
-
     m_portHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Credentials"))
   {
     m_credentials = jsonValue.GetString("Credentials");
-
     m_credentialsHasBeenSet = true;
   }
-
   return *this;
 }
 

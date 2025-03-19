@@ -51,7 +51,7 @@ namespace Model
   class KinesisVideoStreamConfiguration
   {
   public:
-    AWS_CHIMESDKMEDIAPIPELINES_API KinesisVideoStreamConfiguration();
+    AWS_CHIMESDKMEDIAPIPELINES_API KinesisVideoStreamConfiguration() = default;
     AWS_CHIMESDKMEDIAPIPELINES_API KinesisVideoStreamConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API KinesisVideoStreamConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -61,21 +61,19 @@ namespace Model
     /**
      * <p>The Amazon Web Services Region of the video stream.</p>
      */
-    inline const Aws::String& GetRegion() const{ return m_region; }
+    inline const Aws::String& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-    inline KinesisVideoStreamConfiguration& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-    inline KinesisVideoStreamConfiguration& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-    inline KinesisVideoStreamConfiguration& WithRegion(const char* value) { SetRegion(value); return *this;}
+    template<typename RegionT = Aws::String>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::String>
+    KinesisVideoStreamConfiguration& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The amount of time that data is retained.</p>
      */
-    inline int GetDataRetentionInHours() const{ return m_dataRetentionInHours; }
+    inline int GetDataRetentionInHours() const { return m_dataRetentionInHours; }
     inline bool DataRetentionInHoursHasBeenSet() const { return m_dataRetentionInHoursHasBeenSet; }
     inline void SetDataRetentionInHours(int value) { m_dataRetentionInHoursHasBeenSet = true; m_dataRetentionInHours = value; }
     inline KinesisVideoStreamConfiguration& WithDataRetentionInHours(int value) { SetDataRetentionInHours(value); return *this;}
@@ -85,7 +83,7 @@ namespace Model
     Aws::String m_region;
     bool m_regionHasBeenSet = false;
 
-    int m_dataRetentionInHours;
+    int m_dataRetentionInHours{0};
     bool m_dataRetentionInHoursHasBeenSet = false;
   };
 

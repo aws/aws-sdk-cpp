@@ -18,20 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-BucketCountByEncryptionType::BucketCountByEncryptionType() : 
-    m_kmsManaged(0),
-    m_kmsManagedHasBeenSet(false),
-    m_s3Managed(0),
-    m_s3ManagedHasBeenSet(false),
-    m_unencrypted(0),
-    m_unencryptedHasBeenSet(false),
-    m_unknown(0),
-    m_unknownHasBeenSet(false)
-{
-}
-
 BucketCountByEncryptionType::BucketCountByEncryptionType(JsonView jsonValue)
-  : BucketCountByEncryptionType()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ BucketCountByEncryptionType& BucketCountByEncryptionType::operator =(JsonView js
   if(jsonValue.ValueExists("kmsManaged"))
   {
     m_kmsManaged = jsonValue.GetInt64("kmsManaged");
-
     m_kmsManagedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3Managed"))
   {
     m_s3Managed = jsonValue.GetInt64("s3Managed");
-
     m_s3ManagedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unencrypted"))
   {
     m_unencrypted = jsonValue.GetInt64("unencrypted");
-
     m_unencryptedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unknown"))
   {
     m_unknown = jsonValue.GetInt64("unknown");
-
     m_unknownHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,17 +18,7 @@ namespace drs
 namespace Model
 {
 
-RecoverySnapshot::RecoverySnapshot() : 
-    m_ebsSnapshotsHasBeenSet(false),
-    m_expectedTimestampHasBeenSet(false),
-    m_snapshotIDHasBeenSet(false),
-    m_sourceServerIDHasBeenSet(false),
-    m_timestampHasBeenSet(false)
-{
-}
-
 RecoverySnapshot::RecoverySnapshot(JsonView jsonValue)
-  : RecoverySnapshot()
 {
   *this = jsonValue;
 }
@@ -44,35 +34,26 @@ RecoverySnapshot& RecoverySnapshot::operator =(JsonView jsonValue)
     }
     m_ebsSnapshotsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expectedTimestamp"))
   {
     m_expectedTimestamp = jsonValue.GetString("expectedTimestamp");
-
     m_expectedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("snapshotID"))
   {
     m_snapshotID = jsonValue.GetString("snapshotID");
-
     m_snapshotIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceServerID"))
   {
     m_sourceServerID = jsonValue.GetString("sourceServerID");
-
     m_sourceServerIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timestamp"))
   {
     m_timestamp = jsonValue.GetString("timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   return *this;
 }
 

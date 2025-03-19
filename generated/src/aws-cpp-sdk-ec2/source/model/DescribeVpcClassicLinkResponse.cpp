@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeVpcClassicLinkResponse::DescribeVpcClassicLinkResponse()
-{
-}
-
 DescribeVpcClassicLinkResponse::DescribeVpcClassicLinkResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ DescribeVpcClassicLinkResponse& DescribeVpcClassicLinkResponse::operator =(const
     if(!vpcsNode.IsNull())
     {
       XmlNode vpcsMember = vpcsNode.FirstChild("item");
+      m_vpcsHasBeenSet = !vpcsMember.IsNull();
       while(!vpcsMember.IsNull())
       {
         m_vpcs.push_back(vpcsMember);
         vpcsMember = vpcsMember.NextNode("item");
       }
 
+      m_vpcsHasBeenSet = true;
     }
   }
 
@@ -56,6 +54,7 @@ DescribeVpcClassicLinkResponse& DescribeVpcClassicLinkResponse::operator =(const
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeVpcClassicLinkResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

@@ -18,14 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-LogDeliveryConfigurationType::LogDeliveryConfigurationType() : 
-    m_userPoolIdHasBeenSet(false),
-    m_logConfigurationsHasBeenSet(false)
-{
-}
-
 LogDeliveryConfigurationType::LogDeliveryConfigurationType(JsonView jsonValue)
-  : LogDeliveryConfigurationType()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ LogDeliveryConfigurationType& LogDeliveryConfigurationType::operator =(JsonView 
   if(jsonValue.ValueExists("UserPoolId"))
   {
     m_userPoolId = jsonValue.GetString("UserPoolId");
-
     m_userPoolIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogConfigurations"))
   {
     Aws::Utils::Array<JsonView> logConfigurationsJsonList = jsonValue.GetArray("LogConfigurations");
@@ -48,7 +39,6 @@ LogDeliveryConfigurationType& LogDeliveryConfigurationType::operator =(JsonView 
     }
     m_logConfigurationsHasBeenSet = true;
   }
-
   return *this;
 }
 

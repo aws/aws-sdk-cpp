@@ -18,23 +18,7 @@ namespace Detective
 namespace Model
 {
 
-InvestigationDetail::InvestigationDetail() : 
-    m_investigationIdHasBeenSet(false),
-    m_severity(Severity::NOT_SET),
-    m_severityHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_state(State::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_entityArnHasBeenSet(false),
-    m_entityType(EntityType::NOT_SET),
-    m_entityTypeHasBeenSet(false)
-{
-}
-
 InvestigationDetail::InvestigationDetail(JsonView jsonValue)
-  : InvestigationDetail()
 {
   *this = jsonValue;
 }
@@ -44,52 +28,38 @@ InvestigationDetail& InvestigationDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InvestigationId"))
   {
     m_investigationId = jsonValue.GetString("InvestigationId");
-
     m_investigationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Severity"))
   {
     m_severity = SeverityMapper::GetSeverityForName(jsonValue.GetString("Severity"));
-
     m_severityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = StateMapper::GetStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetString("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EntityArn"))
   {
     m_entityArn = jsonValue.GetString("EntityArn");
-
     m_entityArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EntityType"))
   {
     m_entityType = EntityTypeMapper::GetEntityTypeForName(jsonValue.GetString("EntityType"));
-
     m_entityTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

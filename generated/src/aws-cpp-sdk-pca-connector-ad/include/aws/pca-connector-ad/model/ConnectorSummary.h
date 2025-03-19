@@ -36,7 +36,7 @@ namespace Model
   class ConnectorSummary
   {
   public:
-    AWS_PCACONNECTORAD_API ConnectorSummary();
+    AWS_PCACONNECTORAD_API ConnectorSummary() = default;
     AWS_PCACONNECTORAD_API ConnectorSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_PCACONNECTORAD_API ConnectorSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PCACONNECTORAD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,28 +47,24 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) that was returned when you called <a
      * href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline ConnectorSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline ConnectorSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline ConnectorSummary& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    ConnectorSummary& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the certificate authority being used.</p>
      */
-    inline const Aws::String& GetCertificateAuthorityArn() const{ return m_certificateAuthorityArn; }
+    inline const Aws::String& GetCertificateAuthorityArn() const { return m_certificateAuthorityArn; }
     inline bool CertificateAuthorityArnHasBeenSet() const { return m_certificateAuthorityArnHasBeenSet; }
-    inline void SetCertificateAuthorityArn(const Aws::String& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = value; }
-    inline void SetCertificateAuthorityArn(Aws::String&& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = std::move(value); }
-    inline void SetCertificateAuthorityArn(const char* value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn.assign(value); }
-    inline ConnectorSummary& WithCertificateAuthorityArn(const Aws::String& value) { SetCertificateAuthorityArn(value); return *this;}
-    inline ConnectorSummary& WithCertificateAuthorityArn(Aws::String&& value) { SetCertificateAuthorityArn(std::move(value)); return *this;}
-    inline ConnectorSummary& WithCertificateAuthorityArn(const char* value) { SetCertificateAuthorityArn(value); return *this;}
+    template<typename CertificateAuthorityArnT = Aws::String>
+    void SetCertificateAuthorityArn(CertificateAuthorityArnT&& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = std::forward<CertificateAuthorityArnT>(value); }
+    template<typename CertificateAuthorityArnT = Aws::String>
+    ConnectorSummary& WithCertificateAuthorityArn(CertificateAuthorityArnT&& value) { SetCertificateAuthorityArn(std::forward<CertificateAuthorityArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,40 +72,36 @@ namespace Model
      * <p>Certificate enrollment endpoint for Active Directory domain-joined objects to
      * request certificates.</p>
      */
-    inline const Aws::String& GetCertificateEnrollmentPolicyServerEndpoint() const{ return m_certificateEnrollmentPolicyServerEndpoint; }
+    inline const Aws::String& GetCertificateEnrollmentPolicyServerEndpoint() const { return m_certificateEnrollmentPolicyServerEndpoint; }
     inline bool CertificateEnrollmentPolicyServerEndpointHasBeenSet() const { return m_certificateEnrollmentPolicyServerEndpointHasBeenSet; }
-    inline void SetCertificateEnrollmentPolicyServerEndpoint(const Aws::String& value) { m_certificateEnrollmentPolicyServerEndpointHasBeenSet = true; m_certificateEnrollmentPolicyServerEndpoint = value; }
-    inline void SetCertificateEnrollmentPolicyServerEndpoint(Aws::String&& value) { m_certificateEnrollmentPolicyServerEndpointHasBeenSet = true; m_certificateEnrollmentPolicyServerEndpoint = std::move(value); }
-    inline void SetCertificateEnrollmentPolicyServerEndpoint(const char* value) { m_certificateEnrollmentPolicyServerEndpointHasBeenSet = true; m_certificateEnrollmentPolicyServerEndpoint.assign(value); }
-    inline ConnectorSummary& WithCertificateEnrollmentPolicyServerEndpoint(const Aws::String& value) { SetCertificateEnrollmentPolicyServerEndpoint(value); return *this;}
-    inline ConnectorSummary& WithCertificateEnrollmentPolicyServerEndpoint(Aws::String&& value) { SetCertificateEnrollmentPolicyServerEndpoint(std::move(value)); return *this;}
-    inline ConnectorSummary& WithCertificateEnrollmentPolicyServerEndpoint(const char* value) { SetCertificateEnrollmentPolicyServerEndpoint(value); return *this;}
+    template<typename CertificateEnrollmentPolicyServerEndpointT = Aws::String>
+    void SetCertificateEnrollmentPolicyServerEndpoint(CertificateEnrollmentPolicyServerEndpointT&& value) { m_certificateEnrollmentPolicyServerEndpointHasBeenSet = true; m_certificateEnrollmentPolicyServerEndpoint = std::forward<CertificateEnrollmentPolicyServerEndpointT>(value); }
+    template<typename CertificateEnrollmentPolicyServerEndpointT = Aws::String>
+    ConnectorSummary& WithCertificateEnrollmentPolicyServerEndpoint(CertificateEnrollmentPolicyServerEndpointT&& value) { SetCertificateEnrollmentPolicyServerEndpoint(std::forward<CertificateEnrollmentPolicyServerEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the connector was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline ConnectorSummary& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline ConnectorSummary& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    ConnectorSummary& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the Active Directory.</p>
      */
-    inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
+    inline const Aws::String& GetDirectoryId() const { return m_directoryId; }
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
-    inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
-    inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
-    inline ConnectorSummary& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
-    inline ConnectorSummary& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
-    inline ConnectorSummary& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+    template<typename DirectoryIdT = Aws::String>
+    void SetDirectoryId(DirectoryIdT&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::forward<DirectoryIdT>(value); }
+    template<typename DirectoryIdT = Aws::String>
+    ConnectorSummary& WithDirectoryId(DirectoryIdT&& value) { SetDirectoryId(std::forward<DirectoryIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -117,12 +109,10 @@ namespace Model
      * <p>Status of the connector. Status can be creating, active, deleting, or
      * failed.</p>
      */
-    inline const ConnectorStatus& GetStatus() const{ return m_status; }
+    inline ConnectorStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ConnectorStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ConnectorStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ConnectorSummary& WithStatus(const ConnectorStatus& value) { SetStatus(value); return *this;}
-    inline ConnectorSummary& WithStatus(ConnectorStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ConnectorStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ConnectorSummary& WithStatus(ConnectorStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -130,36 +120,34 @@ namespace Model
      * <p>Additional information about the connector status if the status is
      * failed.</p>
      */
-    inline const ConnectorStatusReason& GetStatusReason() const{ return m_statusReason; }
+    inline ConnectorStatusReason GetStatusReason() const { return m_statusReason; }
     inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
-    inline void SetStatusReason(const ConnectorStatusReason& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
-    inline void SetStatusReason(ConnectorStatusReason&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
-    inline ConnectorSummary& WithStatusReason(const ConnectorStatusReason& value) { SetStatusReason(value); return *this;}
-    inline ConnectorSummary& WithStatusReason(ConnectorStatusReason&& value) { SetStatusReason(std::move(value)); return *this;}
+    inline void SetStatusReason(ConnectorStatusReason value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
+    inline ConnectorSummary& WithStatusReason(ConnectorStatusReason value) { SetStatusReason(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the connector was updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-    inline ConnectorSummary& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-    inline ConnectorSummary& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    ConnectorSummary& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information of the VPC and security group(s) used with the connector.</p>
      */
-    inline const VpcInformation& GetVpcInformation() const{ return m_vpcInformation; }
+    inline const VpcInformation& GetVpcInformation() const { return m_vpcInformation; }
     inline bool VpcInformationHasBeenSet() const { return m_vpcInformationHasBeenSet; }
-    inline void SetVpcInformation(const VpcInformation& value) { m_vpcInformationHasBeenSet = true; m_vpcInformation = value; }
-    inline void SetVpcInformation(VpcInformation&& value) { m_vpcInformationHasBeenSet = true; m_vpcInformation = std::move(value); }
-    inline ConnectorSummary& WithVpcInformation(const VpcInformation& value) { SetVpcInformation(value); return *this;}
-    inline ConnectorSummary& WithVpcInformation(VpcInformation&& value) { SetVpcInformation(std::move(value)); return *this;}
+    template<typename VpcInformationT = VpcInformation>
+    void SetVpcInformation(VpcInformationT&& value) { m_vpcInformationHasBeenSet = true; m_vpcInformation = std::forward<VpcInformationT>(value); }
+    template<typename VpcInformationT = VpcInformation>
+    ConnectorSummary& WithVpcInformation(VpcInformationT&& value) { SetVpcInformation(std::forward<VpcInformationT>(value)); return *this;}
     ///@}
   private:
 
@@ -172,19 +160,19 @@ namespace Model
     Aws::String m_certificateEnrollmentPolicyServerEndpoint;
     bool m_certificateEnrollmentPolicyServerEndpointHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
     Aws::String m_directoryId;
     bool m_directoryIdHasBeenSet = false;
 
-    ConnectorStatus m_status;
+    ConnectorStatus m_status{ConnectorStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    ConnectorStatusReason m_statusReason;
+    ConnectorStatusReason m_statusReason{ConnectorStatusReason::NOT_SET};
     bool m_statusReasonHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
+    Aws::Utils::DateTime m_updatedAt{};
     bool m_updatedAtHasBeenSet = false;
 
     VpcInformation m_vpcInformation;

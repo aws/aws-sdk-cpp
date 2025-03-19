@@ -36,7 +36,7 @@ namespace Model
   class AdBreak
   {
   public:
-    AWS_MEDIATAILOR_API AdBreak();
+    AWS_MEDIATAILOR_API AdBreak() = default;
     AWS_MEDIATAILOR_API AdBreak(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API AdBreak& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,10 @@ namespace Model
      * <p>The SCTE-35 ad insertion type. Accepted value: <code>SPLICE_INSERT</code>,
      * <code>TIME_SIGNAL</code>.</p>
      */
-    inline const MessageType& GetMessageType() const{ return m_messageType; }
+    inline MessageType GetMessageType() const { return m_messageType; }
     inline bool MessageTypeHasBeenSet() const { return m_messageTypeHasBeenSet; }
-    inline void SetMessageType(const MessageType& value) { m_messageTypeHasBeenSet = true; m_messageType = value; }
-    inline void SetMessageType(MessageType&& value) { m_messageTypeHasBeenSet = true; m_messageType = std::move(value); }
-    inline AdBreak& WithMessageType(const MessageType& value) { SetMessageType(value); return *this;}
-    inline AdBreak& WithMessageType(MessageType&& value) { SetMessageType(std::move(value)); return *this;}
+    inline void SetMessageType(MessageType value) { m_messageTypeHasBeenSet = true; m_messageType = value; }
+    inline AdBreak& WithMessageType(MessageType value) { SetMessageType(value); return *this;}
     ///@}
 
     ///@{
@@ -61,7 +59,7 @@ namespace Model
      * starts. This value must fall within 100ms of a segment boundary, otherwise the
      * ad break will be skipped.</p>
      */
-    inline long long GetOffsetMillis() const{ return m_offsetMillis; }
+    inline long long GetOffsetMillis() const { return m_offsetMillis; }
     inline bool OffsetMillisHasBeenSet() const { return m_offsetMillisHasBeenSet; }
     inline void SetOffsetMillis(long long value) { m_offsetMillisHasBeenSet = true; m_offsetMillis = value; }
     inline AdBreak& WithOffsetMillis(long long value) { SetOffsetMillis(value); return *this;}
@@ -71,12 +69,12 @@ namespace Model
     /**
      * <p>Ad break slate configuration.</p>
      */
-    inline const SlateSource& GetSlate() const{ return m_slate; }
+    inline const SlateSource& GetSlate() const { return m_slate; }
     inline bool SlateHasBeenSet() const { return m_slateHasBeenSet; }
-    inline void SetSlate(const SlateSource& value) { m_slateHasBeenSet = true; m_slate = value; }
-    inline void SetSlate(SlateSource&& value) { m_slateHasBeenSet = true; m_slate = std::move(value); }
-    inline AdBreak& WithSlate(const SlateSource& value) { SetSlate(value); return *this;}
-    inline AdBreak& WithSlate(SlateSource&& value) { SetSlate(std::move(value)); return *this;}
+    template<typename SlateT = SlateSource>
+    void SetSlate(SlateT&& value) { m_slateHasBeenSet = true; m_slate = std::forward<SlateT>(value); }
+    template<typename SlateT = SlateSource>
+    AdBreak& WithSlate(SlateT&& value) { SetSlate(std::forward<SlateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,12 +83,12 @@ namespace Model
      * the ad. For information about using <code>splice_insert()</code>, see the
      * SCTE-35 specficiaiton, section 9.7.3.1.</p>
      */
-    inline const SpliceInsertMessage& GetSpliceInsertMessage() const{ return m_spliceInsertMessage; }
+    inline const SpliceInsertMessage& GetSpliceInsertMessage() const { return m_spliceInsertMessage; }
     inline bool SpliceInsertMessageHasBeenSet() const { return m_spliceInsertMessageHasBeenSet; }
-    inline void SetSpliceInsertMessage(const SpliceInsertMessage& value) { m_spliceInsertMessageHasBeenSet = true; m_spliceInsertMessage = value; }
-    inline void SetSpliceInsertMessage(SpliceInsertMessage&& value) { m_spliceInsertMessageHasBeenSet = true; m_spliceInsertMessage = std::move(value); }
-    inline AdBreak& WithSpliceInsertMessage(const SpliceInsertMessage& value) { SetSpliceInsertMessage(value); return *this;}
-    inline AdBreak& WithSpliceInsertMessage(SpliceInsertMessage&& value) { SetSpliceInsertMessage(std::move(value)); return *this;}
+    template<typename SpliceInsertMessageT = SpliceInsertMessage>
+    void SetSpliceInsertMessage(SpliceInsertMessageT&& value) { m_spliceInsertMessageHasBeenSet = true; m_spliceInsertMessage = std::forward<SpliceInsertMessageT>(value); }
+    template<typename SpliceInsertMessageT = SpliceInsertMessage>
+    AdBreak& WithSpliceInsertMessage(SpliceInsertMessageT&& value) { SetSpliceInsertMessage(std::forward<SpliceInsertMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,12 +99,12 @@ namespace Model
      * break. This message provides basic metadata about the ad break.</p> <p>See
      * section 9.7.4 of the 2022 SCTE-35 specification for more information.</p>
      */
-    inline const TimeSignalMessage& GetTimeSignalMessage() const{ return m_timeSignalMessage; }
+    inline const TimeSignalMessage& GetTimeSignalMessage() const { return m_timeSignalMessage; }
     inline bool TimeSignalMessageHasBeenSet() const { return m_timeSignalMessageHasBeenSet; }
-    inline void SetTimeSignalMessage(const TimeSignalMessage& value) { m_timeSignalMessageHasBeenSet = true; m_timeSignalMessage = value; }
-    inline void SetTimeSignalMessage(TimeSignalMessage&& value) { m_timeSignalMessageHasBeenSet = true; m_timeSignalMessage = std::move(value); }
-    inline AdBreak& WithTimeSignalMessage(const TimeSignalMessage& value) { SetTimeSignalMessage(value); return *this;}
-    inline AdBreak& WithTimeSignalMessage(TimeSignalMessage&& value) { SetTimeSignalMessage(std::move(value)); return *this;}
+    template<typename TimeSignalMessageT = TimeSignalMessage>
+    void SetTimeSignalMessage(TimeSignalMessageT&& value) { m_timeSignalMessageHasBeenSet = true; m_timeSignalMessage = std::forward<TimeSignalMessageT>(value); }
+    template<typename TimeSignalMessageT = TimeSignalMessage>
+    AdBreak& WithTimeSignalMessage(TimeSignalMessageT&& value) { SetTimeSignalMessage(std::forward<TimeSignalMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,21 +112,21 @@ namespace Model
      * <p>Defines a list of key/value pairs that MediaTailor generates within the
      * <code>EXT-X-ASSET</code>tag for <code>SCTE35_ENHANCED</code> output.</p>
      */
-    inline const Aws::Vector<KeyValuePair>& GetAdBreakMetadata() const{ return m_adBreakMetadata; }
+    inline const Aws::Vector<KeyValuePair>& GetAdBreakMetadata() const { return m_adBreakMetadata; }
     inline bool AdBreakMetadataHasBeenSet() const { return m_adBreakMetadataHasBeenSet; }
-    inline void SetAdBreakMetadata(const Aws::Vector<KeyValuePair>& value) { m_adBreakMetadataHasBeenSet = true; m_adBreakMetadata = value; }
-    inline void SetAdBreakMetadata(Aws::Vector<KeyValuePair>&& value) { m_adBreakMetadataHasBeenSet = true; m_adBreakMetadata = std::move(value); }
-    inline AdBreak& WithAdBreakMetadata(const Aws::Vector<KeyValuePair>& value) { SetAdBreakMetadata(value); return *this;}
-    inline AdBreak& WithAdBreakMetadata(Aws::Vector<KeyValuePair>&& value) { SetAdBreakMetadata(std::move(value)); return *this;}
-    inline AdBreak& AddAdBreakMetadata(const KeyValuePair& value) { m_adBreakMetadataHasBeenSet = true; m_adBreakMetadata.push_back(value); return *this; }
-    inline AdBreak& AddAdBreakMetadata(KeyValuePair&& value) { m_adBreakMetadataHasBeenSet = true; m_adBreakMetadata.push_back(std::move(value)); return *this; }
+    template<typename AdBreakMetadataT = Aws::Vector<KeyValuePair>>
+    void SetAdBreakMetadata(AdBreakMetadataT&& value) { m_adBreakMetadataHasBeenSet = true; m_adBreakMetadata = std::forward<AdBreakMetadataT>(value); }
+    template<typename AdBreakMetadataT = Aws::Vector<KeyValuePair>>
+    AdBreak& WithAdBreakMetadata(AdBreakMetadataT&& value) { SetAdBreakMetadata(std::forward<AdBreakMetadataT>(value)); return *this;}
+    template<typename AdBreakMetadataT = KeyValuePair>
+    AdBreak& AddAdBreakMetadata(AdBreakMetadataT&& value) { m_adBreakMetadataHasBeenSet = true; m_adBreakMetadata.emplace_back(std::forward<AdBreakMetadataT>(value)); return *this; }
     ///@}
   private:
 
-    MessageType m_messageType;
+    MessageType m_messageType{MessageType::NOT_SET};
     bool m_messageTypeHasBeenSet = false;
 
-    long long m_offsetMillis;
+    long long m_offsetMillis{0};
     bool m_offsetMillisHasBeenSet = false;
 
     SlateSource m_slate;

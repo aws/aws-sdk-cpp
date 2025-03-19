@@ -43,7 +43,7 @@ namespace Model
   class S3AccessPointConfiguration
   {
   public:
-    AWS_ACCESSANALYZER_API S3AccessPointConfiguration();
+    AWS_ACCESSANALYZER_API S3AccessPointConfiguration() = default;
     AWS_ACCESSANALYZER_API S3AccessPointConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API S3AccessPointConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,14 +53,12 @@ namespace Model
     /**
      * <p>The access point or multi-region access point policy.</p>
      */
-    inline const Aws::String& GetAccessPointPolicy() const{ return m_accessPointPolicy; }
+    inline const Aws::String& GetAccessPointPolicy() const { return m_accessPointPolicy; }
     inline bool AccessPointPolicyHasBeenSet() const { return m_accessPointPolicyHasBeenSet; }
-    inline void SetAccessPointPolicy(const Aws::String& value) { m_accessPointPolicyHasBeenSet = true; m_accessPointPolicy = value; }
-    inline void SetAccessPointPolicy(Aws::String&& value) { m_accessPointPolicyHasBeenSet = true; m_accessPointPolicy = std::move(value); }
-    inline void SetAccessPointPolicy(const char* value) { m_accessPointPolicyHasBeenSet = true; m_accessPointPolicy.assign(value); }
-    inline S3AccessPointConfiguration& WithAccessPointPolicy(const Aws::String& value) { SetAccessPointPolicy(value); return *this;}
-    inline S3AccessPointConfiguration& WithAccessPointPolicy(Aws::String&& value) { SetAccessPointPolicy(std::move(value)); return *this;}
-    inline S3AccessPointConfiguration& WithAccessPointPolicy(const char* value) { SetAccessPointPolicy(value); return *this;}
+    template<typename AccessPointPolicyT = Aws::String>
+    void SetAccessPointPolicy(AccessPointPolicyT&& value) { m_accessPointPolicyHasBeenSet = true; m_accessPointPolicy = std::forward<AccessPointPolicyT>(value); }
+    template<typename AccessPointPolicyT = Aws::String>
+    S3AccessPointConfiguration& WithAccessPointPolicy(AccessPointPolicyT&& value) { SetAccessPointPolicy(std::forward<AccessPointPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,12 +66,12 @@ namespace Model
      * <p>The proposed <code>S3PublicAccessBlock</code> configuration to apply to this
      * Amazon S3 access point or multi-region access point.</p>
      */
-    inline const S3PublicAccessBlockConfiguration& GetPublicAccessBlock() const{ return m_publicAccessBlock; }
+    inline const S3PublicAccessBlockConfiguration& GetPublicAccessBlock() const { return m_publicAccessBlock; }
     inline bool PublicAccessBlockHasBeenSet() const { return m_publicAccessBlockHasBeenSet; }
-    inline void SetPublicAccessBlock(const S3PublicAccessBlockConfiguration& value) { m_publicAccessBlockHasBeenSet = true; m_publicAccessBlock = value; }
-    inline void SetPublicAccessBlock(S3PublicAccessBlockConfiguration&& value) { m_publicAccessBlockHasBeenSet = true; m_publicAccessBlock = std::move(value); }
-    inline S3AccessPointConfiguration& WithPublicAccessBlock(const S3PublicAccessBlockConfiguration& value) { SetPublicAccessBlock(value); return *this;}
-    inline S3AccessPointConfiguration& WithPublicAccessBlock(S3PublicAccessBlockConfiguration&& value) { SetPublicAccessBlock(std::move(value)); return *this;}
+    template<typename PublicAccessBlockT = S3PublicAccessBlockConfiguration>
+    void SetPublicAccessBlock(PublicAccessBlockT&& value) { m_publicAccessBlockHasBeenSet = true; m_publicAccessBlock = std::forward<PublicAccessBlockT>(value); }
+    template<typename PublicAccessBlockT = S3PublicAccessBlockConfiguration>
+    S3AccessPointConfiguration& WithPublicAccessBlock(PublicAccessBlockT&& value) { SetPublicAccessBlock(std::forward<PublicAccessBlockT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,12 +83,12 @@ namespace Model
      * network origin. If the access preview is for an existing resource and neither is
      * specified, the access preview uses the exiting network origin.</p>
      */
-    inline const NetworkOriginConfiguration& GetNetworkOrigin() const{ return m_networkOrigin; }
+    inline const NetworkOriginConfiguration& GetNetworkOrigin() const { return m_networkOrigin; }
     inline bool NetworkOriginHasBeenSet() const { return m_networkOriginHasBeenSet; }
-    inline void SetNetworkOrigin(const NetworkOriginConfiguration& value) { m_networkOriginHasBeenSet = true; m_networkOrigin = value; }
-    inline void SetNetworkOrigin(NetworkOriginConfiguration&& value) { m_networkOriginHasBeenSet = true; m_networkOrigin = std::move(value); }
-    inline S3AccessPointConfiguration& WithNetworkOrigin(const NetworkOriginConfiguration& value) { SetNetworkOrigin(value); return *this;}
-    inline S3AccessPointConfiguration& WithNetworkOrigin(NetworkOriginConfiguration&& value) { SetNetworkOrigin(std::move(value)); return *this;}
+    template<typename NetworkOriginT = NetworkOriginConfiguration>
+    void SetNetworkOrigin(NetworkOriginT&& value) { m_networkOriginHasBeenSet = true; m_networkOrigin = std::forward<NetworkOriginT>(value); }
+    template<typename NetworkOriginT = NetworkOriginConfiguration>
+    S3AccessPointConfiguration& WithNetworkOrigin(NetworkOriginT&& value) { SetNetworkOrigin(std::forward<NetworkOriginT>(value)); return *this;}
     ///@}
   private:
 

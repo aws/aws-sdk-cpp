@@ -18,15 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-DocumentClassificationConfig::DocumentClassificationConfig() : 
-    m_mode(DocumentClassifierMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_labelsHasBeenSet(false)
-{
-}
-
 DocumentClassificationConfig::DocumentClassificationConfig(JsonView jsonValue)
-  : DocumentClassificationConfig()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ DocumentClassificationConfig& DocumentClassificationConfig::operator =(JsonView 
   if(jsonValue.ValueExists("Mode"))
   {
     m_mode = DocumentClassifierModeMapper::GetDocumentClassifierModeForName(jsonValue.GetString("Mode"));
-
     m_modeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Labels"))
   {
     Aws::Utils::Array<JsonView> labelsJsonList = jsonValue.GetArray("Labels");
@@ -49,7 +39,6 @@ DocumentClassificationConfig& DocumentClassificationConfig::operator =(JsonView 
     }
     m_labelsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace Glacier
 namespace Model
 {
 
-Grant::Grant() : 
-    m_granteeHasBeenSet(false),
-    m_permission(Permission::NOT_SET),
-    m_permissionHasBeenSet(false)
-{
-}
-
 Grant::Grant(JsonView jsonValue)
-  : Grant()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Grant& Grant::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Grantee"))
   {
     m_grantee = jsonValue.GetObject("Grantee");
-
     m_granteeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Permission"))
   {
     m_permission = PermissionMapper::GetPermissionForName(jsonValue.GetString("Permission"));
-
     m_permissionHasBeenSet = true;
   }
-
   return *this;
 }
 

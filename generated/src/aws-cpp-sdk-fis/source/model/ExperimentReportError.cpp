@@ -18,13 +18,7 @@ namespace FIS
 namespace Model
 {
 
-ExperimentReportError::ExperimentReportError() : 
-    m_codeHasBeenSet(false)
-{
-}
-
 ExperimentReportError::ExperimentReportError(JsonView jsonValue)
-  : ExperimentReportError()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ExperimentReportError& ExperimentReportError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("code"))
   {
     m_code = jsonValue.GetString("code");
-
     m_codeHasBeenSet = true;
   }
-
   return *this;
 }
 

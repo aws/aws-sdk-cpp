@@ -18,13 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-ValidationData::ValidationData() : 
-    m_assetsHasBeenSet(false)
-{
-}
-
 ValidationData::ValidationData(JsonView jsonValue)
-  : ValidationData()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ValidationData& ValidationData::operator =(JsonView jsonValue)
     }
     m_assetsHasBeenSet = true;
   }
-
   return *this;
 }
 

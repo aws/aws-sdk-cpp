@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsCloudFrontDistributionOriginS3OriginConfig::AwsCloudFrontDistributionOriginS3OriginConfig() : 
-    m_originAccessIdentityHasBeenSet(false)
-{
-}
-
 AwsCloudFrontDistributionOriginS3OriginConfig::AwsCloudFrontDistributionOriginS3OriginConfig(JsonView jsonValue)
-  : AwsCloudFrontDistributionOriginS3OriginConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AwsCloudFrontDistributionOriginS3OriginConfig& AwsCloudFrontDistributionOriginS3
   if(jsonValue.ValueExists("OriginAccessIdentity"))
   {
     m_originAccessIdentity = jsonValue.GetString("OriginAccessIdentity");
-
     m_originAccessIdentityHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class ConditionalFormattingIconSet
   {
   public:
-    AWS_QUICKSIGHT_API ConditionalFormattingIconSet();
+    AWS_QUICKSIGHT_API ConditionalFormattingIconSet() = default;
     AWS_QUICKSIGHT_API ConditionalFormattingIconSet(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API ConditionalFormattingIconSet& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,33 +43,29 @@ namespace Model
      * <p>The expression that determines the formatting configuration for the icon
      * set.</p>
      */
-    inline const Aws::String& GetExpression() const{ return m_expression; }
+    inline const Aws::String& GetExpression() const { return m_expression; }
     inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
-    inline void SetExpression(const Aws::String& value) { m_expressionHasBeenSet = true; m_expression = value; }
-    inline void SetExpression(Aws::String&& value) { m_expressionHasBeenSet = true; m_expression = std::move(value); }
-    inline void SetExpression(const char* value) { m_expressionHasBeenSet = true; m_expression.assign(value); }
-    inline ConditionalFormattingIconSet& WithExpression(const Aws::String& value) { SetExpression(value); return *this;}
-    inline ConditionalFormattingIconSet& WithExpression(Aws::String&& value) { SetExpression(std::move(value)); return *this;}
-    inline ConditionalFormattingIconSet& WithExpression(const char* value) { SetExpression(value); return *this;}
+    template<typename ExpressionT = Aws::String>
+    void SetExpression(ExpressionT&& value) { m_expressionHasBeenSet = true; m_expression = std::forward<ExpressionT>(value); }
+    template<typename ExpressionT = Aws::String>
+    ConditionalFormattingIconSet& WithExpression(ExpressionT&& value) { SetExpression(std::forward<ExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Determines the icon set type.</p>
      */
-    inline const ConditionalFormattingIconSetType& GetIconSetType() const{ return m_iconSetType; }
+    inline ConditionalFormattingIconSetType GetIconSetType() const { return m_iconSetType; }
     inline bool IconSetTypeHasBeenSet() const { return m_iconSetTypeHasBeenSet; }
-    inline void SetIconSetType(const ConditionalFormattingIconSetType& value) { m_iconSetTypeHasBeenSet = true; m_iconSetType = value; }
-    inline void SetIconSetType(ConditionalFormattingIconSetType&& value) { m_iconSetTypeHasBeenSet = true; m_iconSetType = std::move(value); }
-    inline ConditionalFormattingIconSet& WithIconSetType(const ConditionalFormattingIconSetType& value) { SetIconSetType(value); return *this;}
-    inline ConditionalFormattingIconSet& WithIconSetType(ConditionalFormattingIconSetType&& value) { SetIconSetType(std::move(value)); return *this;}
+    inline void SetIconSetType(ConditionalFormattingIconSetType value) { m_iconSetTypeHasBeenSet = true; m_iconSetType = value; }
+    inline ConditionalFormattingIconSet& WithIconSetType(ConditionalFormattingIconSetType value) { SetIconSetType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_expression;
     bool m_expressionHasBeenSet = false;
 
-    ConditionalFormattingIconSetType m_iconSetType;
+    ConditionalFormattingIconSetType m_iconSetType{ConditionalFormattingIconSetType::NOT_SET};
     bool m_iconSetTypeHasBeenSet = false;
   };
 

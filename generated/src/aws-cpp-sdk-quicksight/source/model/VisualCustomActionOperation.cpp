@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-VisualCustomActionOperation::VisualCustomActionOperation() : 
-    m_filterOperationHasBeenSet(false),
-    m_navigationOperationHasBeenSet(false),
-    m_uRLOperationHasBeenSet(false),
-    m_setParametersOperationHasBeenSet(false)
-{
-}
-
 VisualCustomActionOperation::VisualCustomActionOperation(JsonView jsonValue)
-  : VisualCustomActionOperation()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ VisualCustomActionOperation& VisualCustomActionOperation::operator =(JsonView js
   if(jsonValue.ValueExists("FilterOperation"))
   {
     m_filterOperation = jsonValue.GetObject("FilterOperation");
-
     m_filterOperationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NavigationOperation"))
   {
     m_navigationOperation = jsonValue.GetObject("NavigationOperation");
-
     m_navigationOperationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("URLOperation"))
   {
     m_uRLOperation = jsonValue.GetObject("URLOperation");
-
     m_uRLOperationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SetParametersOperation"))
   {
     m_setParametersOperation = jsonValue.GetObject("SetParametersOperation");
-
     m_setParametersOperationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,15 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-ServerSideEncryptionByDefault::ServerSideEncryptionByDefault() : 
-    m_sSEAlgorithm(ServerSideEncryption::NOT_SET),
-    m_sSEAlgorithmHasBeenSet(false),
-    m_kMSMasterKeyIDHasBeenSet(false)
-{
-}
-
 ServerSideEncryptionByDefault::ServerSideEncryptionByDefault(const XmlNode& xmlNode)
-  : ServerSideEncryptionByDefault()
 {
   *this = xmlNode;
 }
@@ -42,7 +34,7 @@ ServerSideEncryptionByDefault& ServerSideEncryptionByDefault::operator =(const X
     XmlNode sSEAlgorithmNode = resultNode.FirstChild("SSEAlgorithm");
     if(!sSEAlgorithmNode.IsNull())
     {
-      m_sSEAlgorithm = ServerSideEncryptionMapper::GetServerSideEncryptionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sSEAlgorithmNode.GetText()).c_str()).c_str());
+      m_sSEAlgorithm = ServerSideEncryptionMapper::GetServerSideEncryptionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sSEAlgorithmNode.GetText()).c_str()));
       m_sSEAlgorithmHasBeenSet = true;
     }
     XmlNode kMSMasterKeyIDNode = resultNode.FirstChild("KMSMasterKeyID");

@@ -18,14 +18,7 @@ namespace SSM
 namespace Model
 {
 
-ResourcePolicyInvalidParameterException::ResourcePolicyInvalidParameterException() : 
-    m_parameterNamesHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 ResourcePolicyInvalidParameterException::ResourcePolicyInvalidParameterException(JsonView jsonValue)
-  : ResourcePolicyInvalidParameterException()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ ResourcePolicyInvalidParameterException& ResourcePolicyInvalidParameterException
     }
     m_parameterNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

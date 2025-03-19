@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-QAResult::QAResult() : 
-    m_resultType(QAResultType::NOT_SET),
-    m_resultTypeHasBeenSet(false),
-    m_dashboardVisualHasBeenSet(false),
-    m_generatedAnswerHasBeenSet(false)
-{
-}
-
 QAResult::QAResult(JsonView jsonValue)
-  : QAResult()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ QAResult& QAResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ResultType"))
   {
     m_resultType = QAResultTypeMapper::GetQAResultTypeForName(jsonValue.GetString("ResultType"));
-
     m_resultTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DashboardVisual"))
   {
     m_dashboardVisual = jsonValue.GetObject("DashboardVisual");
-
     m_dashboardVisualHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GeneratedAnswer"))
   {
     m_generatedAnswer = jsonValue.GetObject("GeneratedAnswer");
-
     m_generatedAnswerHasBeenSet = true;
   }
-
   return *this;
 }
 

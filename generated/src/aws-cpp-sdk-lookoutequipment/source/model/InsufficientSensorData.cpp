@@ -18,14 +18,7 @@ namespace LookoutEquipment
 namespace Model
 {
 
-InsufficientSensorData::InsufficientSensorData() : 
-    m_missingCompleteSensorDataHasBeenSet(false),
-    m_sensorsWithShortDateRangeHasBeenSet(false)
-{
-}
-
 InsufficientSensorData::InsufficientSensorData(JsonView jsonValue)
-  : InsufficientSensorData()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ InsufficientSensorData& InsufficientSensorData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MissingCompleteSensorData"))
   {
     m_missingCompleteSensorData = jsonValue.GetObject("MissingCompleteSensorData");
-
     m_missingCompleteSensorDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SensorsWithShortDateRange"))
   {
     m_sensorsWithShortDateRange = jsonValue.GetObject("SensorsWithShortDateRange");
-
     m_sensorsWithShortDateRangeHasBeenSet = true;
   }
-
   return *this;
 }
 

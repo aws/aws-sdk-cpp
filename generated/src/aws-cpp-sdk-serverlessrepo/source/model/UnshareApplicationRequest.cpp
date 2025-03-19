@@ -12,12 +12,6 @@ using namespace Aws::ServerlessApplicationRepository::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UnshareApplicationRequest::UnshareApplicationRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_organizationIdHasBeenSet(false)
-{
-}
-
 Aws::String UnshareApplicationRequest::SerializePayload() const
 {
   JsonValue payload;

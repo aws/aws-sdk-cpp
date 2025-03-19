@@ -32,7 +32,7 @@ namespace Model
   class RecipeVersionErrorDetail
   {
   public:
-    AWS_GLUEDATABREW_API RecipeVersionErrorDetail();
+    AWS_GLUEDATABREW_API RecipeVersionErrorDetail() = default;
     AWS_GLUEDATABREW_API RecipeVersionErrorDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUEDATABREW_API RecipeVersionErrorDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,42 +42,36 @@ namespace Model
     /**
      * <p>The HTTP status code for the error.</p>
      */
-    inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
+    inline const Aws::String& GetErrorCode() const { return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-    inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-    inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
-    inline RecipeVersionErrorDetail& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
-    inline RecipeVersionErrorDetail& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
-    inline RecipeVersionErrorDetail& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+    template<typename ErrorCodeT = Aws::String>
+    void SetErrorCode(ErrorCodeT&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::forward<ErrorCodeT>(value); }
+    template<typename ErrorCodeT = Aws::String>
+    RecipeVersionErrorDetail& WithErrorCode(ErrorCodeT&& value) { SetErrorCode(std::forward<ErrorCodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The text of the error message.</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline RecipeVersionErrorDetail& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline RecipeVersionErrorDetail& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline RecipeVersionErrorDetail& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    RecipeVersionErrorDetail& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier for the recipe version associated with this error.</p>
      */
-    inline const Aws::String& GetRecipeVersion() const{ return m_recipeVersion; }
+    inline const Aws::String& GetRecipeVersion() const { return m_recipeVersion; }
     inline bool RecipeVersionHasBeenSet() const { return m_recipeVersionHasBeenSet; }
-    inline void SetRecipeVersion(const Aws::String& value) { m_recipeVersionHasBeenSet = true; m_recipeVersion = value; }
-    inline void SetRecipeVersion(Aws::String&& value) { m_recipeVersionHasBeenSet = true; m_recipeVersion = std::move(value); }
-    inline void SetRecipeVersion(const char* value) { m_recipeVersionHasBeenSet = true; m_recipeVersion.assign(value); }
-    inline RecipeVersionErrorDetail& WithRecipeVersion(const Aws::String& value) { SetRecipeVersion(value); return *this;}
-    inline RecipeVersionErrorDetail& WithRecipeVersion(Aws::String&& value) { SetRecipeVersion(std::move(value)); return *this;}
-    inline RecipeVersionErrorDetail& WithRecipeVersion(const char* value) { SetRecipeVersion(value); return *this;}
+    template<typename RecipeVersionT = Aws::String>
+    void SetRecipeVersion(RecipeVersionT&& value) { m_recipeVersionHasBeenSet = true; m_recipeVersion = std::forward<RecipeVersionT>(value); }
+    template<typename RecipeVersionT = Aws::String>
+    RecipeVersionErrorDetail& WithRecipeVersion(RecipeVersionT&& value) { SetRecipeVersion(std::forward<RecipeVersionT>(value)); return *this;}
     ///@}
   private:
 

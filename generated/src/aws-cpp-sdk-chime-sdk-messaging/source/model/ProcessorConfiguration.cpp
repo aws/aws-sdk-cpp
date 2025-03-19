@@ -18,13 +18,7 @@ namespace ChimeSDKMessaging
 namespace Model
 {
 
-ProcessorConfiguration::ProcessorConfiguration() : 
-    m_lambdaHasBeenSet(false)
-{
-}
-
 ProcessorConfiguration::ProcessorConfiguration(JsonView jsonValue)
-  : ProcessorConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ProcessorConfiguration& ProcessorConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Lambda"))
   {
     m_lambda = jsonValue.GetObject("Lambda");
-
     m_lambdaHasBeenSet = true;
   }
-
   return *this;
 }
 

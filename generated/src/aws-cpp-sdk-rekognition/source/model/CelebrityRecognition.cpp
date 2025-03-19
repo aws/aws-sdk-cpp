@@ -18,15 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-CelebrityRecognition::CelebrityRecognition() : 
-    m_timestamp(0),
-    m_timestampHasBeenSet(false),
-    m_celebrityHasBeenSet(false)
-{
-}
-
 CelebrityRecognition::CelebrityRecognition(JsonView jsonValue)
-  : CelebrityRecognition()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ CelebrityRecognition& CelebrityRecognition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Timestamp"))
   {
     m_timestamp = jsonValue.GetInt64("Timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Celebrity"))
   {
     m_celebrity = jsonValue.GetObject("Celebrity");
-
     m_celebrityHasBeenSet = true;
   }
-
   return *this;
 }
 

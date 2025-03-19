@@ -18,13 +18,7 @@ namespace Greengrass
 namespace Model
 {
 
-FunctionDefaultConfig::FunctionDefaultConfig() : 
-    m_executionHasBeenSet(false)
-{
-}
-
 FunctionDefaultConfig::FunctionDefaultConfig(JsonView jsonValue)
-  : FunctionDefaultConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ FunctionDefaultConfig& FunctionDefaultConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Execution"))
   {
     m_execution = jsonValue.GetObject("Execution");
-
     m_executionHasBeenSet = true;
   }
-
   return *this;
 }
 

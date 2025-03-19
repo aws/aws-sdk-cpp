@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSessionEmbedUrlResult::GetSessionEmbedUrlResult() : 
-    m_status(0)
-{
-}
-
 GetSessionEmbedUrlResult::GetSessionEmbedUrlResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetSessionEmbedUrlResult()
 {
   *this = result;
 }
@@ -34,19 +28,19 @@ GetSessionEmbedUrlResult& GetSessionEmbedUrlResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("EmbedUrl"))
   {
     m_embedUrl = jsonValue.GetString("EmbedUrl");
-
+    m_embedUrlHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

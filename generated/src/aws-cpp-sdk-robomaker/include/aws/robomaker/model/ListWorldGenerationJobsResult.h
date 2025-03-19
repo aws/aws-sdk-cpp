@@ -29,7 +29,7 @@ namespace Model
   class ListWorldGenerationJobsResult
   {
   public:
-    AWS_ROBOMAKER_API ListWorldGenerationJobsResult();
+    AWS_ROBOMAKER_API ListWorldGenerationJobsResult() = default;
     AWS_ROBOMAKER_API ListWorldGenerationJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROBOMAKER_API ListWorldGenerationJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Summary information for world generator jobs.</p>
      */
-    inline const Aws::Vector<WorldGenerationJobSummary>& GetWorldGenerationJobSummaries() const{ return m_worldGenerationJobSummaries; }
-    inline void SetWorldGenerationJobSummaries(const Aws::Vector<WorldGenerationJobSummary>& value) { m_worldGenerationJobSummaries = value; }
-    inline void SetWorldGenerationJobSummaries(Aws::Vector<WorldGenerationJobSummary>&& value) { m_worldGenerationJobSummaries = std::move(value); }
-    inline ListWorldGenerationJobsResult& WithWorldGenerationJobSummaries(const Aws::Vector<WorldGenerationJobSummary>& value) { SetWorldGenerationJobSummaries(value); return *this;}
-    inline ListWorldGenerationJobsResult& WithWorldGenerationJobSummaries(Aws::Vector<WorldGenerationJobSummary>&& value) { SetWorldGenerationJobSummaries(std::move(value)); return *this;}
-    inline ListWorldGenerationJobsResult& AddWorldGenerationJobSummaries(const WorldGenerationJobSummary& value) { m_worldGenerationJobSummaries.push_back(value); return *this; }
-    inline ListWorldGenerationJobsResult& AddWorldGenerationJobSummaries(WorldGenerationJobSummary&& value) { m_worldGenerationJobSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<WorldGenerationJobSummary>& GetWorldGenerationJobSummaries() const { return m_worldGenerationJobSummaries; }
+    template<typename WorldGenerationJobSummariesT = Aws::Vector<WorldGenerationJobSummary>>
+    void SetWorldGenerationJobSummaries(WorldGenerationJobSummariesT&& value) { m_worldGenerationJobSummariesHasBeenSet = true; m_worldGenerationJobSummaries = std::forward<WorldGenerationJobSummariesT>(value); }
+    template<typename WorldGenerationJobSummariesT = Aws::Vector<WorldGenerationJobSummary>>
+    ListWorldGenerationJobsResult& WithWorldGenerationJobSummaries(WorldGenerationJobSummariesT&& value) { SetWorldGenerationJobSummaries(std::forward<WorldGenerationJobSummariesT>(value)); return *this;}
+    template<typename WorldGenerationJobSummariesT = WorldGenerationJobSummary>
+    ListWorldGenerationJobsResult& AddWorldGenerationJobSummaries(WorldGenerationJobSummariesT&& value) { m_worldGenerationJobSummariesHasBeenSet = true; m_worldGenerationJobSummaries.emplace_back(std::forward<WorldGenerationJobSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -56,32 +56,31 @@ namespace Model
      * request object's <code>nextToken</code> parameter. If there are no remaining
      * results, the previous response object's NextToken parameter is set to null. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListWorldGenerationJobsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListWorldGenerationJobsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListWorldGenerationJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListWorldGenerationJobsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListWorldGenerationJobsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListWorldGenerationJobsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListWorldGenerationJobsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListWorldGenerationJobsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<WorldGenerationJobSummary> m_worldGenerationJobSummaries;
+    bool m_worldGenerationJobSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

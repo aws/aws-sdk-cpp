@@ -33,7 +33,7 @@ namespace Model
   class DatastorePartitions
   {
   public:
-    AWS_IOTANALYTICS_API DatastorePartitions();
+    AWS_IOTANALYTICS_API DatastorePartitions() = default;
     AWS_IOTANALYTICS_API DatastorePartitions(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API DatastorePartitions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p> A list of partition dimensions in a data store. </p>
      */
-    inline const Aws::Vector<DatastorePartition>& GetPartitions() const{ return m_partitions; }
+    inline const Aws::Vector<DatastorePartition>& GetPartitions() const { return m_partitions; }
     inline bool PartitionsHasBeenSet() const { return m_partitionsHasBeenSet; }
-    inline void SetPartitions(const Aws::Vector<DatastorePartition>& value) { m_partitionsHasBeenSet = true; m_partitions = value; }
-    inline void SetPartitions(Aws::Vector<DatastorePartition>&& value) { m_partitionsHasBeenSet = true; m_partitions = std::move(value); }
-    inline DatastorePartitions& WithPartitions(const Aws::Vector<DatastorePartition>& value) { SetPartitions(value); return *this;}
-    inline DatastorePartitions& WithPartitions(Aws::Vector<DatastorePartition>&& value) { SetPartitions(std::move(value)); return *this;}
-    inline DatastorePartitions& AddPartitions(const DatastorePartition& value) { m_partitionsHasBeenSet = true; m_partitions.push_back(value); return *this; }
-    inline DatastorePartitions& AddPartitions(DatastorePartition&& value) { m_partitionsHasBeenSet = true; m_partitions.push_back(std::move(value)); return *this; }
+    template<typename PartitionsT = Aws::Vector<DatastorePartition>>
+    void SetPartitions(PartitionsT&& value) { m_partitionsHasBeenSet = true; m_partitions = std::forward<PartitionsT>(value); }
+    template<typename PartitionsT = Aws::Vector<DatastorePartition>>
+    DatastorePartitions& WithPartitions(PartitionsT&& value) { SetPartitions(std::forward<PartitionsT>(value)); return *this;}
+    template<typename PartitionsT = DatastorePartition>
+    DatastorePartitions& AddPartitions(PartitionsT&& value) { m_partitionsHasBeenSet = true; m_partitions.emplace_back(std::forward<PartitionsT>(value)); return *this; }
     ///@}
   private:
 

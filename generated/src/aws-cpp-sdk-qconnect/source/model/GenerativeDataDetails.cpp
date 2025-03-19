@@ -18,15 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-GenerativeDataDetails::GenerativeDataDetails() : 
-    m_completionHasBeenSet(false),
-    m_rankingDataHasBeenSet(false),
-    m_referencesHasBeenSet(false)
-{
-}
-
 GenerativeDataDetails::GenerativeDataDetails(JsonView jsonValue)
-  : GenerativeDataDetails()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ GenerativeDataDetails& GenerativeDataDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("completion"))
   {
     m_completion = jsonValue.GetString("completion");
-
     m_completionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rankingData"))
   {
     m_rankingData = jsonValue.GetObject("rankingData");
-
     m_rankingDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("references"))
   {
     Aws::Utils::Array<JsonView> referencesJsonList = jsonValue.GetArray("references");
@@ -56,7 +44,6 @@ GenerativeDataDetails& GenerativeDataDetails::operator =(JsonView jsonValue)
     }
     m_referencesHasBeenSet = true;
   }
-
   return *this;
 }
 

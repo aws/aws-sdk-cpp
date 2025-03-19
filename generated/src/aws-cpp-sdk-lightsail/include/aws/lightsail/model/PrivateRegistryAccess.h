@@ -37,7 +37,7 @@ namespace Model
   class PrivateRegistryAccess
   {
   public:
-    AWS_LIGHTSAIL_API PrivateRegistryAccess();
+    AWS_LIGHTSAIL_API PrivateRegistryAccess() = default;
     AWS_LIGHTSAIL_API PrivateRegistryAccess(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API PrivateRegistryAccess& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,12 +50,12 @@ namespace Model
      * repositories. If the role is activated, the Amazon Resource Name (ARN) of the
      * role is also listed.</p>
      */
-    inline const ContainerServiceECRImagePullerRole& GetEcrImagePullerRole() const{ return m_ecrImagePullerRole; }
+    inline const ContainerServiceECRImagePullerRole& GetEcrImagePullerRole() const { return m_ecrImagePullerRole; }
     inline bool EcrImagePullerRoleHasBeenSet() const { return m_ecrImagePullerRoleHasBeenSet; }
-    inline void SetEcrImagePullerRole(const ContainerServiceECRImagePullerRole& value) { m_ecrImagePullerRoleHasBeenSet = true; m_ecrImagePullerRole = value; }
-    inline void SetEcrImagePullerRole(ContainerServiceECRImagePullerRole&& value) { m_ecrImagePullerRoleHasBeenSet = true; m_ecrImagePullerRole = std::move(value); }
-    inline PrivateRegistryAccess& WithEcrImagePullerRole(const ContainerServiceECRImagePullerRole& value) { SetEcrImagePullerRole(value); return *this;}
-    inline PrivateRegistryAccess& WithEcrImagePullerRole(ContainerServiceECRImagePullerRole&& value) { SetEcrImagePullerRole(std::move(value)); return *this;}
+    template<typename EcrImagePullerRoleT = ContainerServiceECRImagePullerRole>
+    void SetEcrImagePullerRole(EcrImagePullerRoleT&& value) { m_ecrImagePullerRoleHasBeenSet = true; m_ecrImagePullerRole = std::forward<EcrImagePullerRoleT>(value); }
+    template<typename EcrImagePullerRoleT = ContainerServiceECRImagePullerRole>
+    PrivateRegistryAccess& WithEcrImagePullerRole(EcrImagePullerRoleT&& value) { SetEcrImagePullerRole(std::forward<EcrImagePullerRoleT>(value)); return *this;}
     ///@}
   private:
 

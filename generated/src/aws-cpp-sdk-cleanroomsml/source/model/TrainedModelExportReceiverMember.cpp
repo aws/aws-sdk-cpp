@@ -18,13 +18,7 @@ namespace CleanRoomsML
 namespace Model
 {
 
-TrainedModelExportReceiverMember::TrainedModelExportReceiverMember() : 
-    m_accountIdHasBeenSet(false)
-{
-}
-
 TrainedModelExportReceiverMember::TrainedModelExportReceiverMember(JsonView jsonValue)
-  : TrainedModelExportReceiverMember()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TrainedModelExportReceiverMember& TrainedModelExportReceiverMember::operator =(J
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,13 +20,7 @@ namespace ElasticLoadBalancing
 namespace Model
 {
 
-Instance::Instance() : 
-    m_instanceIdHasBeenSet(false)
-{
-}
-
 Instance::Instance(const XmlNode& xmlNode)
-  : Instance()
 {
   *this = xmlNode;
 }

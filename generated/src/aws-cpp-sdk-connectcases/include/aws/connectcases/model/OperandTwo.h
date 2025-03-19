@@ -36,7 +36,7 @@ namespace Model
   class OperandTwo
   {
   public:
-    AWS_CONNECTCASES_API OperandTwo();
+    AWS_CONNECTCASES_API OperandTwo() = default;
     AWS_CONNECTCASES_API OperandTwo(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API OperandTwo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,7 +46,7 @@ namespace Model
     /**
      * <p>Boolean value type.</p>
      */
-    inline bool GetBooleanValue() const{ return m_booleanValue; }
+    inline bool GetBooleanValue() const { return m_booleanValue; }
     inline bool BooleanValueHasBeenSet() const { return m_booleanValueHasBeenSet; }
     inline void SetBooleanValue(bool value) { m_booleanValueHasBeenSet = true; m_booleanValue = value; }
     inline OperandTwo& WithBooleanValue(bool value) { SetBooleanValue(value); return *this;}
@@ -56,7 +56,7 @@ namespace Model
     /**
      * <p>Double value type.</p>
      */
-    inline double GetDoubleValue() const{ return m_doubleValue; }
+    inline double GetDoubleValue() const { return m_doubleValue; }
     inline bool DoubleValueHasBeenSet() const { return m_doubleValueHasBeenSet; }
     inline void SetDoubleValue(double value) { m_doubleValueHasBeenSet = true; m_doubleValue = value; }
     inline OperandTwo& WithDoubleValue(double value) { SetDoubleValue(value); return *this;}
@@ -66,33 +66,31 @@ namespace Model
     /**
      * <p>Empty value type.</p>
      */
-    inline const EmptyOperandValue& GetEmptyValue() const{ return m_emptyValue; }
+    inline const EmptyOperandValue& GetEmptyValue() const { return m_emptyValue; }
     inline bool EmptyValueHasBeenSet() const { return m_emptyValueHasBeenSet; }
-    inline void SetEmptyValue(const EmptyOperandValue& value) { m_emptyValueHasBeenSet = true; m_emptyValue = value; }
-    inline void SetEmptyValue(EmptyOperandValue&& value) { m_emptyValueHasBeenSet = true; m_emptyValue = std::move(value); }
-    inline OperandTwo& WithEmptyValue(const EmptyOperandValue& value) { SetEmptyValue(value); return *this;}
-    inline OperandTwo& WithEmptyValue(EmptyOperandValue&& value) { SetEmptyValue(std::move(value)); return *this;}
+    template<typename EmptyValueT = EmptyOperandValue>
+    void SetEmptyValue(EmptyValueT&& value) { m_emptyValueHasBeenSet = true; m_emptyValue = std::forward<EmptyValueT>(value); }
+    template<typename EmptyValueT = EmptyOperandValue>
+    OperandTwo& WithEmptyValue(EmptyValueT&& value) { SetEmptyValue(std::forward<EmptyValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>String value type.</p>
      */
-    inline const Aws::String& GetStringValue() const{ return m_stringValue; }
+    inline const Aws::String& GetStringValue() const { return m_stringValue; }
     inline bool StringValueHasBeenSet() const { return m_stringValueHasBeenSet; }
-    inline void SetStringValue(const Aws::String& value) { m_stringValueHasBeenSet = true; m_stringValue = value; }
-    inline void SetStringValue(Aws::String&& value) { m_stringValueHasBeenSet = true; m_stringValue = std::move(value); }
-    inline void SetStringValue(const char* value) { m_stringValueHasBeenSet = true; m_stringValue.assign(value); }
-    inline OperandTwo& WithStringValue(const Aws::String& value) { SetStringValue(value); return *this;}
-    inline OperandTwo& WithStringValue(Aws::String&& value) { SetStringValue(std::move(value)); return *this;}
-    inline OperandTwo& WithStringValue(const char* value) { SetStringValue(value); return *this;}
+    template<typename StringValueT = Aws::String>
+    void SetStringValue(StringValueT&& value) { m_stringValueHasBeenSet = true; m_stringValue = std::forward<StringValueT>(value); }
+    template<typename StringValueT = Aws::String>
+    OperandTwo& WithStringValue(StringValueT&& value) { SetStringValue(std::forward<StringValueT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_booleanValue;
+    bool m_booleanValue{false};
     bool m_booleanValueHasBeenSet = false;
 
-    double m_doubleValue;
+    double m_doubleValue{0.0};
     bool m_doubleValueHasBeenSet = false;
 
     EmptyOperandValue m_emptyValue;

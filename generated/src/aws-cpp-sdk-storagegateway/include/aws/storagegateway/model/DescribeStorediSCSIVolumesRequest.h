@@ -26,7 +26,7 @@ namespace Model
   class DescribeStorediSCSIVolumesRequest : public StorageGatewayRequest
   {
   public:
-    AWS_STORAGEGATEWAY_API DescribeStorediSCSIVolumesRequest();
+    AWS_STORAGEGATEWAY_API DescribeStorediSCSIVolumesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,15 +45,14 @@ namespace Model
      * (ARN) of a stored volume. All of the specified stored volumes must be from the
      * same gateway. Use <a>ListVolumes</a> to get volume ARNs for a gateway.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetVolumeARNs() const{ return m_volumeARNs; }
+    inline const Aws::Vector<Aws::String>& GetVolumeARNs() const { return m_volumeARNs; }
     inline bool VolumeARNsHasBeenSet() const { return m_volumeARNsHasBeenSet; }
-    inline void SetVolumeARNs(const Aws::Vector<Aws::String>& value) { m_volumeARNsHasBeenSet = true; m_volumeARNs = value; }
-    inline void SetVolumeARNs(Aws::Vector<Aws::String>&& value) { m_volumeARNsHasBeenSet = true; m_volumeARNs = std::move(value); }
-    inline DescribeStorediSCSIVolumesRequest& WithVolumeARNs(const Aws::Vector<Aws::String>& value) { SetVolumeARNs(value); return *this;}
-    inline DescribeStorediSCSIVolumesRequest& WithVolumeARNs(Aws::Vector<Aws::String>&& value) { SetVolumeARNs(std::move(value)); return *this;}
-    inline DescribeStorediSCSIVolumesRequest& AddVolumeARNs(const Aws::String& value) { m_volumeARNsHasBeenSet = true; m_volumeARNs.push_back(value); return *this; }
-    inline DescribeStorediSCSIVolumesRequest& AddVolumeARNs(Aws::String&& value) { m_volumeARNsHasBeenSet = true; m_volumeARNs.push_back(std::move(value)); return *this; }
-    inline DescribeStorediSCSIVolumesRequest& AddVolumeARNs(const char* value) { m_volumeARNsHasBeenSet = true; m_volumeARNs.push_back(value); return *this; }
+    template<typename VolumeARNsT = Aws::Vector<Aws::String>>
+    void SetVolumeARNs(VolumeARNsT&& value) { m_volumeARNsHasBeenSet = true; m_volumeARNs = std::forward<VolumeARNsT>(value); }
+    template<typename VolumeARNsT = Aws::Vector<Aws::String>>
+    DescribeStorediSCSIVolumesRequest& WithVolumeARNs(VolumeARNsT&& value) { SetVolumeARNs(std::forward<VolumeARNsT>(value)); return *this;}
+    template<typename VolumeARNsT = Aws::String>
+    DescribeStorediSCSIVolumesRequest& AddVolumeARNs(VolumeARNsT&& value) { m_volumeARNsHasBeenSet = true; m_volumeARNs.emplace_back(std::forward<VolumeARNsT>(value)); return *this; }
     ///@}
   private:
 

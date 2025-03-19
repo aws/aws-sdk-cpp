@@ -31,7 +31,7 @@ namespace Model
   class AwsEc2VolumeAttachment
   {
   public:
-    AWS_SECURITYHUB_API AwsEc2VolumeAttachment();
+    AWS_SECURITYHUB_API AwsEc2VolumeAttachment() = default;
     AWS_SECURITYHUB_API AwsEc2VolumeAttachment(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEc2VolumeAttachment& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,21 +41,19 @@ namespace Model
     /**
      * <p>The datetime when the attachment initiated.</p>
      */
-    inline const Aws::String& GetAttachTime() const{ return m_attachTime; }
+    inline const Aws::String& GetAttachTime() const { return m_attachTime; }
     inline bool AttachTimeHasBeenSet() const { return m_attachTimeHasBeenSet; }
-    inline void SetAttachTime(const Aws::String& value) { m_attachTimeHasBeenSet = true; m_attachTime = value; }
-    inline void SetAttachTime(Aws::String&& value) { m_attachTimeHasBeenSet = true; m_attachTime = std::move(value); }
-    inline void SetAttachTime(const char* value) { m_attachTimeHasBeenSet = true; m_attachTime.assign(value); }
-    inline AwsEc2VolumeAttachment& WithAttachTime(const Aws::String& value) { SetAttachTime(value); return *this;}
-    inline AwsEc2VolumeAttachment& WithAttachTime(Aws::String&& value) { SetAttachTime(std::move(value)); return *this;}
-    inline AwsEc2VolumeAttachment& WithAttachTime(const char* value) { SetAttachTime(value); return *this;}
+    template<typename AttachTimeT = Aws::String>
+    void SetAttachTime(AttachTimeT&& value) { m_attachTimeHasBeenSet = true; m_attachTime = std::forward<AttachTimeT>(value); }
+    template<typename AttachTimeT = Aws::String>
+    AwsEc2VolumeAttachment& WithAttachTime(AttachTimeT&& value) { SetAttachTime(std::forward<AttachTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Whether the EBS volume is deleted when the EC2 instance is terminated.</p>
      */
-    inline bool GetDeleteOnTermination() const{ return m_deleteOnTermination; }
+    inline bool GetDeleteOnTermination() const { return m_deleteOnTermination; }
     inline bool DeleteOnTerminationHasBeenSet() const { return m_deleteOnTerminationHasBeenSet; }
     inline void SetDeleteOnTermination(bool value) { m_deleteOnTerminationHasBeenSet = true; m_deleteOnTermination = value; }
     inline AwsEc2VolumeAttachment& WithDeleteOnTermination(bool value) { SetDeleteOnTermination(value); return *this;}
@@ -65,14 +63,12 @@ namespace Model
     /**
      * <p>The identifier of the EC2 instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline AwsEc2VolumeAttachment& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline AwsEc2VolumeAttachment& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline AwsEc2VolumeAttachment& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    AwsEc2VolumeAttachment& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,21 +78,19 @@ namespace Model
      * </li> <li> <p> <code>busy</code> </p> </li> <li> <p> <code>detaching</code> </p>
      * </li> <li> <p> <code>detached</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline AwsEc2VolumeAttachment& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline AwsEc2VolumeAttachment& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline AwsEc2VolumeAttachment& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    AwsEc2VolumeAttachment& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_attachTime;
     bool m_attachTimeHasBeenSet = false;
 
-    bool m_deleteOnTermination;
+    bool m_deleteOnTermination{false};
     bool m_deleteOnTerminationHasBeenSet = false;
 
     Aws::String m_instanceId;

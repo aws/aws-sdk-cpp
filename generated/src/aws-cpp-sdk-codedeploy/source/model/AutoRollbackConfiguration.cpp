@@ -18,15 +18,7 @@ namespace CodeDeploy
 namespace Model
 {
 
-AutoRollbackConfiguration::AutoRollbackConfiguration() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_eventsHasBeenSet(false)
-{
-}
-
 AutoRollbackConfiguration::AutoRollbackConfiguration(JsonView jsonValue)
-  : AutoRollbackConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ AutoRollbackConfiguration& AutoRollbackConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("events"))
   {
     Aws::Utils::Array<JsonView> eventsJsonList = jsonValue.GetArray("events");
@@ -49,7 +39,6 @@ AutoRollbackConfiguration& AutoRollbackConfiguration::operator =(JsonView jsonVa
     }
     m_eventsHasBeenSet = true;
   }
-
   return *this;
 }
 

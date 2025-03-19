@@ -18,15 +18,7 @@ namespace Batch
 namespace Model
 {
 
-AttemptEcsTaskDetails::AttemptEcsTaskDetails() : 
-    m_containerInstanceArnHasBeenSet(false),
-    m_taskArnHasBeenSet(false),
-    m_containersHasBeenSet(false)
-{
-}
-
 AttemptEcsTaskDetails::AttemptEcsTaskDetails(JsonView jsonValue)
-  : AttemptEcsTaskDetails()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AttemptEcsTaskDetails& AttemptEcsTaskDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("containerInstanceArn"))
   {
     m_containerInstanceArn = jsonValue.GetString("containerInstanceArn");
-
     m_containerInstanceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskArn"))
   {
     m_taskArn = jsonValue.GetString("taskArn");
-
     m_taskArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("containers"))
   {
     Aws::Utils::Array<JsonView> containersJsonList = jsonValue.GetArray("containers");
@@ -56,7 +44,6 @@ AttemptEcsTaskDetails& AttemptEcsTaskDetails::operator =(JsonView jsonValue)
     }
     m_containersHasBeenSet = true;
   }
-
   return *this;
 }
 

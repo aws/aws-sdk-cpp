@@ -12,17 +12,6 @@ using namespace Aws::ObservabilityAdmin::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListResourceTelemetryRequest::ListResourceTelemetryRequest() : 
-    m_resourceIdentifierPrefixHasBeenSet(false),
-    m_resourceTypesHasBeenSet(false),
-    m_telemetryConfigurationStateHasBeenSet(false),
-    m_resourceTagsHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListResourceTelemetryRequest::SerializePayload() const
 {
   JsonValue payload;

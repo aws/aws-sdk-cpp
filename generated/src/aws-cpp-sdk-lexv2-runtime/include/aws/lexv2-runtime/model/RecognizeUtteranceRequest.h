@@ -22,7 +22,7 @@ namespace Model
   class RecognizeUtteranceRequest : public StreamingLexRuntimeV2Request
   {
   public:
-    AWS_LEXRUNTIMEV2_API RecognizeUtteranceRequest();
+    AWS_LEXRUNTIMEV2_API RecognizeUtteranceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,56 +39,48 @@ namespace Model
     /**
      * <p>The identifier of the bot that should receive the request.</p>
      */
-    inline const Aws::String& GetBotId() const{ return m_botId; }
+    inline const Aws::String& GetBotId() const { return m_botId; }
     inline bool BotIdHasBeenSet() const { return m_botIdHasBeenSet; }
-    inline void SetBotId(const Aws::String& value) { m_botIdHasBeenSet = true; m_botId = value; }
-    inline void SetBotId(Aws::String&& value) { m_botIdHasBeenSet = true; m_botId = std::move(value); }
-    inline void SetBotId(const char* value) { m_botIdHasBeenSet = true; m_botId.assign(value); }
-    inline RecognizeUtteranceRequest& WithBotId(const Aws::String& value) { SetBotId(value); return *this;}
-    inline RecognizeUtteranceRequest& WithBotId(Aws::String&& value) { SetBotId(std::move(value)); return *this;}
-    inline RecognizeUtteranceRequest& WithBotId(const char* value) { SetBotId(value); return *this;}
+    template<typename BotIdT = Aws::String>
+    void SetBotId(BotIdT&& value) { m_botIdHasBeenSet = true; m_botId = std::forward<BotIdT>(value); }
+    template<typename BotIdT = Aws::String>
+    RecognizeUtteranceRequest& WithBotId(BotIdT&& value) { SetBotId(std::forward<BotIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The alias identifier in use for the bot that should receive the request.</p>
      */
-    inline const Aws::String& GetBotAliasId() const{ return m_botAliasId; }
+    inline const Aws::String& GetBotAliasId() const { return m_botAliasId; }
     inline bool BotAliasIdHasBeenSet() const { return m_botAliasIdHasBeenSet; }
-    inline void SetBotAliasId(const Aws::String& value) { m_botAliasIdHasBeenSet = true; m_botAliasId = value; }
-    inline void SetBotAliasId(Aws::String&& value) { m_botAliasIdHasBeenSet = true; m_botAliasId = std::move(value); }
-    inline void SetBotAliasId(const char* value) { m_botAliasIdHasBeenSet = true; m_botAliasId.assign(value); }
-    inline RecognizeUtteranceRequest& WithBotAliasId(const Aws::String& value) { SetBotAliasId(value); return *this;}
-    inline RecognizeUtteranceRequest& WithBotAliasId(Aws::String&& value) { SetBotAliasId(std::move(value)); return *this;}
-    inline RecognizeUtteranceRequest& WithBotAliasId(const char* value) { SetBotAliasId(value); return *this;}
+    template<typename BotAliasIdT = Aws::String>
+    void SetBotAliasId(BotAliasIdT&& value) { m_botAliasIdHasBeenSet = true; m_botAliasId = std::forward<BotAliasIdT>(value); }
+    template<typename BotAliasIdT = Aws::String>
+    RecognizeUtteranceRequest& WithBotAliasId(BotAliasIdT&& value) { SetBotAliasId(std::forward<BotAliasIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The locale where the session is in use.</p>
      */
-    inline const Aws::String& GetLocaleId() const{ return m_localeId; }
+    inline const Aws::String& GetLocaleId() const { return m_localeId; }
     inline bool LocaleIdHasBeenSet() const { return m_localeIdHasBeenSet; }
-    inline void SetLocaleId(const Aws::String& value) { m_localeIdHasBeenSet = true; m_localeId = value; }
-    inline void SetLocaleId(Aws::String&& value) { m_localeIdHasBeenSet = true; m_localeId = std::move(value); }
-    inline void SetLocaleId(const char* value) { m_localeIdHasBeenSet = true; m_localeId.assign(value); }
-    inline RecognizeUtteranceRequest& WithLocaleId(const Aws::String& value) { SetLocaleId(value); return *this;}
-    inline RecognizeUtteranceRequest& WithLocaleId(Aws::String&& value) { SetLocaleId(std::move(value)); return *this;}
-    inline RecognizeUtteranceRequest& WithLocaleId(const char* value) { SetLocaleId(value); return *this;}
+    template<typename LocaleIdT = Aws::String>
+    void SetLocaleId(LocaleIdT&& value) { m_localeIdHasBeenSet = true; m_localeId = std::forward<LocaleIdT>(value); }
+    template<typename LocaleIdT = Aws::String>
+    RecognizeUtteranceRequest& WithLocaleId(LocaleIdT&& value) { SetLocaleId(std::forward<LocaleIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the session in use.</p>
      */
-    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
     inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-    inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
-    inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
-    inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
-    inline RecognizeUtteranceRequest& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-    inline RecognizeUtteranceRequest& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-    inline RecognizeUtteranceRequest& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    RecognizeUtteranceRequest& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,14 +91,12 @@ namespace Model
      * the user.</p> <p>The <code>sessionState</code> field must be compressed using
      * gzip and then base64 encoded before sending to Amazon Lex V2.</p>
      */
-    inline const Aws::String& GetSessionState() const{ return m_sessionState; }
+    inline const Aws::String& GetSessionState() const { return m_sessionState; }
     inline bool SessionStateHasBeenSet() const { return m_sessionStateHasBeenSet; }
-    inline void SetSessionState(const Aws::String& value) { m_sessionStateHasBeenSet = true; m_sessionState = value; }
-    inline void SetSessionState(Aws::String&& value) { m_sessionStateHasBeenSet = true; m_sessionState = std::move(value); }
-    inline void SetSessionState(const char* value) { m_sessionStateHasBeenSet = true; m_sessionState.assign(value); }
-    inline RecognizeUtteranceRequest& WithSessionState(const Aws::String& value) { SetSessionState(value); return *this;}
-    inline RecognizeUtteranceRequest& WithSessionState(Aws::String&& value) { SetSessionState(std::move(value)); return *this;}
-    inline RecognizeUtteranceRequest& WithSessionState(const char* value) { SetSessionState(value); return *this;}
+    template<typename SessionStateT = Aws::String>
+    void SetSessionState(SessionStateT&& value) { m_sessionStateHasBeenSet = true; m_sessionState = std::forward<SessionStateT>(value); }
+    template<typename SessionStateT = Aws::String>
+    RecognizeUtteranceRequest& WithSessionState(SessionStateT&& value) { SetSessionState(std::forward<SessionStateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -118,14 +108,12 @@ namespace Model
      * compressed using gzip and then base64 encoded before sending to Amazon Lex
      * V2.</p>
      */
-    inline const Aws::String& GetRequestAttributes() const{ return m_requestAttributes; }
+    inline const Aws::String& GetRequestAttributes() const { return m_requestAttributes; }
     inline bool RequestAttributesHasBeenSet() const { return m_requestAttributesHasBeenSet; }
-    inline void SetRequestAttributes(const Aws::String& value) { m_requestAttributesHasBeenSet = true; m_requestAttributes = value; }
-    inline void SetRequestAttributes(Aws::String&& value) { m_requestAttributesHasBeenSet = true; m_requestAttributes = std::move(value); }
-    inline void SetRequestAttributes(const char* value) { m_requestAttributesHasBeenSet = true; m_requestAttributes.assign(value); }
-    inline RecognizeUtteranceRequest& WithRequestAttributes(const Aws::String& value) { SetRequestAttributes(value); return *this;}
-    inline RecognizeUtteranceRequest& WithRequestAttributes(Aws::String&& value) { SetRequestAttributes(std::move(value)); return *this;}
-    inline RecognizeUtteranceRequest& WithRequestAttributes(const char* value) { SetRequestAttributes(value); return *this;}
+    template<typename RequestAttributesT = Aws::String>
+    void SetRequestAttributes(RequestAttributesT&& value) { m_requestAttributesHasBeenSet = true; m_requestAttributes = std::forward<RequestAttributesT>(value); }
+    template<typename RequestAttributesT = Aws::String>
+    RecognizeUtteranceRequest& WithRequestAttributes(RequestAttributesT&& value) { SetRequestAttributes(std::forward<RequestAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -141,14 +129,12 @@ namespace Model
      * </li> </ul> </li> <li> <p>Text format</p> <ul> <li> <p>text/plain;
      * charset=utf-8</p> </li> </ul> </li> </ul>
      */
-    inline const Aws::String& GetRequestContentType() const{ return m_requestContentType; }
+    inline const Aws::String& GetRequestContentType() const { return m_requestContentType; }
     inline bool RequestContentTypeHasBeenSet() const { return m_requestContentTypeHasBeenSet; }
-    inline void SetRequestContentType(const Aws::String& value) { m_requestContentTypeHasBeenSet = true; m_requestContentType = value; }
-    inline void SetRequestContentType(Aws::String&& value) { m_requestContentTypeHasBeenSet = true; m_requestContentType = std::move(value); }
-    inline void SetRequestContentType(const char* value) { m_requestContentTypeHasBeenSet = true; m_requestContentType.assign(value); }
-    inline RecognizeUtteranceRequest& WithRequestContentType(const Aws::String& value) { SetRequestContentType(value); return *this;}
-    inline RecognizeUtteranceRequest& WithRequestContentType(Aws::String&& value) { SetRequestContentType(std::move(value)); return *this;}
-    inline RecognizeUtteranceRequest& WithRequestContentType(const char* value) { SetRequestContentType(value); return *this;}
+    template<typename RequestContentTypeT = Aws::String>
+    void SetRequestContentType(RequestContentTypeT&& value) { m_requestContentTypeHasBeenSet = true; m_requestContentType = std::forward<RequestContentTypeT>(value); }
+    template<typename RequestContentTypeT = Aws::String>
+    RecognizeUtteranceRequest& WithRequestContentType(RequestContentTypeT&& value) { SetRequestContentType(std::forward<RequestContentTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -168,14 +154,12 @@ namespace Model
      * KHz)</p> </li> <li> <p>audio/ * (defaults to mpeg)</p> </li> <li> <p>text/plain;
      * charset=utf-8</p> </li> </ul> </li> </ul>
      */
-    inline const Aws::String& GetResponseContentType() const{ return m_responseContentType; }
+    inline const Aws::String& GetResponseContentType() const { return m_responseContentType; }
     inline bool ResponseContentTypeHasBeenSet() const { return m_responseContentTypeHasBeenSet; }
-    inline void SetResponseContentType(const Aws::String& value) { m_responseContentTypeHasBeenSet = true; m_responseContentType = value; }
-    inline void SetResponseContentType(Aws::String&& value) { m_responseContentTypeHasBeenSet = true; m_responseContentType = std::move(value); }
-    inline void SetResponseContentType(const char* value) { m_responseContentTypeHasBeenSet = true; m_responseContentType.assign(value); }
-    inline RecognizeUtteranceRequest& WithResponseContentType(const Aws::String& value) { SetResponseContentType(value); return *this;}
-    inline RecognizeUtteranceRequest& WithResponseContentType(Aws::String&& value) { SetResponseContentType(std::move(value)); return *this;}
-    inline RecognizeUtteranceRequest& WithResponseContentType(const char* value) { SetResponseContentType(value); return *this;}
+    template<typename ResponseContentTypeT = Aws::String>
+    void SetResponseContentType(ResponseContentTypeT&& value) { m_responseContentTypeHasBeenSet = true; m_responseContentType = std::forward<ResponseContentTypeT>(value); }
+    template<typename ResponseContentTypeT = Aws::String>
+    RecognizeUtteranceRequest& WithResponseContentType(ResponseContentTypeT&& value) { SetResponseContentType(std::forward<ResponseContentTypeT>(value)); return *this;}
     ///@}
   private:
 

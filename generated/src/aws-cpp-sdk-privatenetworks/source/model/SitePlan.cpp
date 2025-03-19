@@ -18,14 +18,7 @@ namespace PrivateNetworks
 namespace Model
 {
 
-SitePlan::SitePlan() : 
-    m_optionsHasBeenSet(false),
-    m_resourceDefinitionsHasBeenSet(false)
-{
-}
-
 SitePlan::SitePlan(JsonView jsonValue)
-  : SitePlan()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ SitePlan& SitePlan::operator =(JsonView jsonValue)
     }
     m_optionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceDefinitions"))
   {
     Aws::Utils::Array<JsonView> resourceDefinitionsJsonList = jsonValue.GetArray("resourceDefinitions");
@@ -51,7 +43,6 @@ SitePlan& SitePlan::operator =(JsonView jsonValue)
     }
     m_resourceDefinitionsHasBeenSet = true;
   }
-
   return *this;
 }
 

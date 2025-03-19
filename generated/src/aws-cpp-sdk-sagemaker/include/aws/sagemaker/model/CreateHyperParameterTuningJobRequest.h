@@ -27,7 +27,7 @@ namespace Model
   class CreateHyperParameterTuningJobRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API CreateHyperParameterTuningJobRequest();
+    AWS_SAGEMAKER_API CreateHyperParameterTuningJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,14 +48,12 @@ namespace Model
      * have 1 to 32 characters. Valid characters are a-z, A-Z, 0-9, and : + = @ _ % -
      * (hyphen). The name is not case sensitive.</p>
      */
-    inline const Aws::String& GetHyperParameterTuningJobName() const{ return m_hyperParameterTuningJobName; }
+    inline const Aws::String& GetHyperParameterTuningJobName() const { return m_hyperParameterTuningJobName; }
     inline bool HyperParameterTuningJobNameHasBeenSet() const { return m_hyperParameterTuningJobNameHasBeenSet; }
-    inline void SetHyperParameterTuningJobName(const Aws::String& value) { m_hyperParameterTuningJobNameHasBeenSet = true; m_hyperParameterTuningJobName = value; }
-    inline void SetHyperParameterTuningJobName(Aws::String&& value) { m_hyperParameterTuningJobNameHasBeenSet = true; m_hyperParameterTuningJobName = std::move(value); }
-    inline void SetHyperParameterTuningJobName(const char* value) { m_hyperParameterTuningJobNameHasBeenSet = true; m_hyperParameterTuningJobName.assign(value); }
-    inline CreateHyperParameterTuningJobRequest& WithHyperParameterTuningJobName(const Aws::String& value) { SetHyperParameterTuningJobName(value); return *this;}
-    inline CreateHyperParameterTuningJobRequest& WithHyperParameterTuningJobName(Aws::String&& value) { SetHyperParameterTuningJobName(std::move(value)); return *this;}
-    inline CreateHyperParameterTuningJobRequest& WithHyperParameterTuningJobName(const char* value) { SetHyperParameterTuningJobName(value); return *this;}
+    template<typename HyperParameterTuningJobNameT = Aws::String>
+    void SetHyperParameterTuningJobName(HyperParameterTuningJobNameT&& value) { m_hyperParameterTuningJobNameHasBeenSet = true; m_hyperParameterTuningJobName = std::forward<HyperParameterTuningJobNameT>(value); }
+    template<typename HyperParameterTuningJobNameT = Aws::String>
+    CreateHyperParameterTuningJobRequest& WithHyperParameterTuningJobName(HyperParameterTuningJobNameT&& value) { SetHyperParameterTuningJobName(std::forward<HyperParameterTuningJobNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,12 +66,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
      * Hyperparameter Tuning Works</a>.</p>
      */
-    inline const HyperParameterTuningJobConfig& GetHyperParameterTuningJobConfig() const{ return m_hyperParameterTuningJobConfig; }
+    inline const HyperParameterTuningJobConfig& GetHyperParameterTuningJobConfig() const { return m_hyperParameterTuningJobConfig; }
     inline bool HyperParameterTuningJobConfigHasBeenSet() const { return m_hyperParameterTuningJobConfigHasBeenSet; }
-    inline void SetHyperParameterTuningJobConfig(const HyperParameterTuningJobConfig& value) { m_hyperParameterTuningJobConfigHasBeenSet = true; m_hyperParameterTuningJobConfig = value; }
-    inline void SetHyperParameterTuningJobConfig(HyperParameterTuningJobConfig&& value) { m_hyperParameterTuningJobConfigHasBeenSet = true; m_hyperParameterTuningJobConfig = std::move(value); }
-    inline CreateHyperParameterTuningJobRequest& WithHyperParameterTuningJobConfig(const HyperParameterTuningJobConfig& value) { SetHyperParameterTuningJobConfig(value); return *this;}
-    inline CreateHyperParameterTuningJobRequest& WithHyperParameterTuningJobConfig(HyperParameterTuningJobConfig&& value) { SetHyperParameterTuningJobConfig(std::move(value)); return *this;}
+    template<typename HyperParameterTuningJobConfigT = HyperParameterTuningJobConfig>
+    void SetHyperParameterTuningJobConfig(HyperParameterTuningJobConfigT&& value) { m_hyperParameterTuningJobConfigHasBeenSet = true; m_hyperParameterTuningJobConfig = std::forward<HyperParameterTuningJobConfigT>(value); }
+    template<typename HyperParameterTuningJobConfigT = HyperParameterTuningJobConfig>
+    CreateHyperParameterTuningJobRequest& WithHyperParameterTuningJobConfig(HyperParameterTuningJobConfigT&& value) { SetHyperParameterTuningJobConfig(std::forward<HyperParameterTuningJobConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,12 +82,12 @@ namespace Model
      * static hyperparameters, input data configuration, output data configuration,
      * resource configuration, and stopping condition.</p>
      */
-    inline const HyperParameterTrainingJobDefinition& GetTrainingJobDefinition() const{ return m_trainingJobDefinition; }
+    inline const HyperParameterTrainingJobDefinition& GetTrainingJobDefinition() const { return m_trainingJobDefinition; }
     inline bool TrainingJobDefinitionHasBeenSet() const { return m_trainingJobDefinitionHasBeenSet; }
-    inline void SetTrainingJobDefinition(const HyperParameterTrainingJobDefinition& value) { m_trainingJobDefinitionHasBeenSet = true; m_trainingJobDefinition = value; }
-    inline void SetTrainingJobDefinition(HyperParameterTrainingJobDefinition&& value) { m_trainingJobDefinitionHasBeenSet = true; m_trainingJobDefinition = std::move(value); }
-    inline CreateHyperParameterTuningJobRequest& WithTrainingJobDefinition(const HyperParameterTrainingJobDefinition& value) { SetTrainingJobDefinition(value); return *this;}
-    inline CreateHyperParameterTuningJobRequest& WithTrainingJobDefinition(HyperParameterTrainingJobDefinition&& value) { SetTrainingJobDefinition(std::move(value)); return *this;}
+    template<typename TrainingJobDefinitionT = HyperParameterTrainingJobDefinition>
+    void SetTrainingJobDefinition(TrainingJobDefinitionT&& value) { m_trainingJobDefinitionHasBeenSet = true; m_trainingJobDefinition = std::forward<TrainingJobDefinitionT>(value); }
+    template<typename TrainingJobDefinitionT = HyperParameterTrainingJobDefinition>
+    CreateHyperParameterTuningJobRequest& WithTrainingJobDefinition(TrainingJobDefinitionT&& value) { SetTrainingJobDefinition(std::forward<TrainingJobDefinitionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,14 +96,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>
      * objects launched for this tuning job.</p>
      */
-    inline const Aws::Vector<HyperParameterTrainingJobDefinition>& GetTrainingJobDefinitions() const{ return m_trainingJobDefinitions; }
+    inline const Aws::Vector<HyperParameterTrainingJobDefinition>& GetTrainingJobDefinitions() const { return m_trainingJobDefinitions; }
     inline bool TrainingJobDefinitionsHasBeenSet() const { return m_trainingJobDefinitionsHasBeenSet; }
-    inline void SetTrainingJobDefinitions(const Aws::Vector<HyperParameterTrainingJobDefinition>& value) { m_trainingJobDefinitionsHasBeenSet = true; m_trainingJobDefinitions = value; }
-    inline void SetTrainingJobDefinitions(Aws::Vector<HyperParameterTrainingJobDefinition>&& value) { m_trainingJobDefinitionsHasBeenSet = true; m_trainingJobDefinitions = std::move(value); }
-    inline CreateHyperParameterTuningJobRequest& WithTrainingJobDefinitions(const Aws::Vector<HyperParameterTrainingJobDefinition>& value) { SetTrainingJobDefinitions(value); return *this;}
-    inline CreateHyperParameterTuningJobRequest& WithTrainingJobDefinitions(Aws::Vector<HyperParameterTrainingJobDefinition>&& value) { SetTrainingJobDefinitions(std::move(value)); return *this;}
-    inline CreateHyperParameterTuningJobRequest& AddTrainingJobDefinitions(const HyperParameterTrainingJobDefinition& value) { m_trainingJobDefinitionsHasBeenSet = true; m_trainingJobDefinitions.push_back(value); return *this; }
-    inline CreateHyperParameterTuningJobRequest& AddTrainingJobDefinitions(HyperParameterTrainingJobDefinition&& value) { m_trainingJobDefinitionsHasBeenSet = true; m_trainingJobDefinitions.push_back(std::move(value)); return *this; }
+    template<typename TrainingJobDefinitionsT = Aws::Vector<HyperParameterTrainingJobDefinition>>
+    void SetTrainingJobDefinitions(TrainingJobDefinitionsT&& value) { m_trainingJobDefinitionsHasBeenSet = true; m_trainingJobDefinitions = std::forward<TrainingJobDefinitionsT>(value); }
+    template<typename TrainingJobDefinitionsT = Aws::Vector<HyperParameterTrainingJobDefinition>>
+    CreateHyperParameterTuningJobRequest& WithTrainingJobDefinitions(TrainingJobDefinitionsT&& value) { SetTrainingJobDefinitions(std::forward<TrainingJobDefinitionsT>(value)); return *this;}
+    template<typename TrainingJobDefinitionsT = HyperParameterTrainingJobDefinition>
+    CreateHyperParameterTuningJobRequest& AddTrainingJobDefinitions(TrainingJobDefinitionsT&& value) { m_trainingJobDefinitionsHasBeenSet = true; m_trainingJobDefinitions.emplace_back(std::forward<TrainingJobDefinitionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -124,12 +122,12 @@ namespace Model
      * hyperparameter tuning jobs and the new hyperparameter tuning jobs count against
      * the limit of training jobs for the tuning job.</p> 
      */
-    inline const HyperParameterTuningJobWarmStartConfig& GetWarmStartConfig() const{ return m_warmStartConfig; }
+    inline const HyperParameterTuningJobWarmStartConfig& GetWarmStartConfig() const { return m_warmStartConfig; }
     inline bool WarmStartConfigHasBeenSet() const { return m_warmStartConfigHasBeenSet; }
-    inline void SetWarmStartConfig(const HyperParameterTuningJobWarmStartConfig& value) { m_warmStartConfigHasBeenSet = true; m_warmStartConfig = value; }
-    inline void SetWarmStartConfig(HyperParameterTuningJobWarmStartConfig&& value) { m_warmStartConfigHasBeenSet = true; m_warmStartConfig = std::move(value); }
-    inline CreateHyperParameterTuningJobRequest& WithWarmStartConfig(const HyperParameterTuningJobWarmStartConfig& value) { SetWarmStartConfig(value); return *this;}
-    inline CreateHyperParameterTuningJobRequest& WithWarmStartConfig(HyperParameterTuningJobWarmStartConfig&& value) { SetWarmStartConfig(std::move(value)); return *this;}
+    template<typename WarmStartConfigT = HyperParameterTuningJobWarmStartConfig>
+    void SetWarmStartConfig(WarmStartConfigT&& value) { m_warmStartConfigHasBeenSet = true; m_warmStartConfig = std::forward<WarmStartConfigT>(value); }
+    template<typename WarmStartConfigT = HyperParameterTuningJobWarmStartConfig>
+    CreateHyperParameterTuningJobRequest& WithWarmStartConfig(WarmStartConfigT&& value) { SetWarmStartConfig(std::forward<WarmStartConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -141,14 +139,14 @@ namespace Model
      * Amazon Web Services Resources</a>.</p> <p>Tags that you specify for the tuning
      * job are also added to all training jobs that the tuning job launches.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateHyperParameterTuningJobRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateHyperParameterTuningJobRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateHyperParameterTuningJobRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateHyperParameterTuningJobRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateHyperParameterTuningJobRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateHyperParameterTuningJobRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -175,12 +173,12 @@ namespace Model
      * A flag to indicate that Automatic model tuning (AMT) has detected model
      * convergence.</p> </li> </ul>
      */
-    inline const Autotune& GetAutotune() const{ return m_autotune; }
+    inline const Autotune& GetAutotune() const { return m_autotune; }
     inline bool AutotuneHasBeenSet() const { return m_autotuneHasBeenSet; }
-    inline void SetAutotune(const Autotune& value) { m_autotuneHasBeenSet = true; m_autotune = value; }
-    inline void SetAutotune(Autotune&& value) { m_autotuneHasBeenSet = true; m_autotune = std::move(value); }
-    inline CreateHyperParameterTuningJobRequest& WithAutotune(const Autotune& value) { SetAutotune(value); return *this;}
-    inline CreateHyperParameterTuningJobRequest& WithAutotune(Autotune&& value) { SetAutotune(std::move(value)); return *this;}
+    template<typename AutotuneT = Autotune>
+    void SetAutotune(AutotuneT&& value) { m_autotuneHasBeenSet = true; m_autotune = std::forward<AutotuneT>(value); }
+    template<typename AutotuneT = Autotune>
+    CreateHyperParameterTuningJobRequest& WithAutotune(AutotuneT&& value) { SetAutotune(std::forward<AutotuneT>(value)); return *this;}
     ///@}
   private:
 

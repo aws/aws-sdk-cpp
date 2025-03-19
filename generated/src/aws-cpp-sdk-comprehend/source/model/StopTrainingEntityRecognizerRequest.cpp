@@ -12,11 +12,6 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopTrainingEntityRecognizerRequest::StopTrainingEntityRecognizerRequest() : 
-    m_entityRecognizerArnHasBeenSet(false)
-{
-}
-
 Aws::String StopTrainingEntityRecognizerRequest::SerializePayload() const
 {
   JsonValue payload;

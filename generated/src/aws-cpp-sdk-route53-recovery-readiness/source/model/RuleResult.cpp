@@ -18,17 +18,7 @@ namespace Route53RecoveryReadiness
 namespace Model
 {
 
-RuleResult::RuleResult() : 
-    m_lastCheckedTimestampHasBeenSet(false),
-    m_messagesHasBeenSet(false),
-    m_readiness(Readiness::NOT_SET),
-    m_readinessHasBeenSet(false),
-    m_ruleIdHasBeenSet(false)
-{
-}
-
 RuleResult::RuleResult(JsonView jsonValue)
-  : RuleResult()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ RuleResult& RuleResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("lastCheckedTimestamp"))
   {
     m_lastCheckedTimestamp = jsonValue.GetString("lastCheckedTimestamp");
-
     m_lastCheckedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("messages"))
   {
     Aws::Utils::Array<JsonView> messagesJsonList = jsonValue.GetArray("messages");
@@ -51,21 +39,16 @@ RuleResult& RuleResult::operator =(JsonView jsonValue)
     }
     m_messagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("readiness"))
   {
     m_readiness = ReadinessMapper::GetReadinessForName(jsonValue.GetString("readiness"));
-
     m_readinessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ruleId"))
   {
     m_ruleId = jsonValue.GetString("ruleId");
-
     m_ruleIdHasBeenSet = true;
   }
-
   return *this;
 }
 

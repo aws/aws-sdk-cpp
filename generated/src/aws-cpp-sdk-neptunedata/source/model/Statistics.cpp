@@ -18,20 +18,7 @@ namespace neptunedata
 namespace Model
 {
 
-Statistics::Statistics() : 
-    m_autoCompute(false),
-    m_autoComputeHasBeenSet(false),
-    m_active(false),
-    m_activeHasBeenSet(false),
-    m_statisticsIdHasBeenSet(false),
-    m_dateHasBeenSet(false),
-    m_noteHasBeenSet(false),
-    m_signatureInfoHasBeenSet(false)
-{
-}
-
 Statistics::Statistics(JsonView jsonValue)
-  : Statistics()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ Statistics& Statistics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("autoCompute"))
   {
     m_autoCompute = jsonValue.GetBool("autoCompute");
-
     m_autoComputeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("active"))
   {
     m_active = jsonValue.GetBool("active");
-
     m_activeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statisticsId"))
   {
     m_statisticsId = jsonValue.GetString("statisticsId");
-
     m_statisticsIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("date"))
   {
     m_date = jsonValue.GetString("date");
-
     m_dateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("note"))
   {
     m_note = jsonValue.GetString("note");
-
     m_noteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("signatureInfo"))
   {
     m_signatureInfo = jsonValue.GetObject("signatureInfo");
-
     m_signatureInfoHasBeenSet = true;
   }
-
   return *this;
 }
 

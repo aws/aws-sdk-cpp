@@ -29,7 +29,7 @@ namespace Model
   class ListGlobalTablesResult
   {
   public:
-    AWS_DYNAMODB_API ListGlobalTablesResult();
+    AWS_DYNAMODB_API ListGlobalTablesResult() = default;
     AWS_DYNAMODB_API ListGlobalTablesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DYNAMODB_API ListGlobalTablesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>List of global table names.</p>
      */
-    inline const Aws::Vector<GlobalTable>& GetGlobalTables() const{ return m_globalTables; }
-    inline void SetGlobalTables(const Aws::Vector<GlobalTable>& value) { m_globalTables = value; }
-    inline void SetGlobalTables(Aws::Vector<GlobalTable>&& value) { m_globalTables = std::move(value); }
-    inline ListGlobalTablesResult& WithGlobalTables(const Aws::Vector<GlobalTable>& value) { SetGlobalTables(value); return *this;}
-    inline ListGlobalTablesResult& WithGlobalTables(Aws::Vector<GlobalTable>&& value) { SetGlobalTables(std::move(value)); return *this;}
-    inline ListGlobalTablesResult& AddGlobalTables(const GlobalTable& value) { m_globalTables.push_back(value); return *this; }
-    inline ListGlobalTablesResult& AddGlobalTables(GlobalTable&& value) { m_globalTables.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<GlobalTable>& GetGlobalTables() const { return m_globalTables; }
+    template<typename GlobalTablesT = Aws::Vector<GlobalTable>>
+    void SetGlobalTables(GlobalTablesT&& value) { m_globalTablesHasBeenSet = true; m_globalTables = std::forward<GlobalTablesT>(value); }
+    template<typename GlobalTablesT = Aws::Vector<GlobalTable>>
+    ListGlobalTablesResult& WithGlobalTables(GlobalTablesT&& value) { SetGlobalTables(std::forward<GlobalTablesT>(value)); return *this;}
+    template<typename GlobalTablesT = GlobalTable>
+    ListGlobalTablesResult& AddGlobalTables(GlobalTablesT&& value) { m_globalTablesHasBeenSet = true; m_globalTables.emplace_back(std::forward<GlobalTablesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Last evaluated global table name.</p>
      */
-    inline const Aws::String& GetLastEvaluatedGlobalTableName() const{ return m_lastEvaluatedGlobalTableName; }
-    inline void SetLastEvaluatedGlobalTableName(const Aws::String& value) { m_lastEvaluatedGlobalTableName = value; }
-    inline void SetLastEvaluatedGlobalTableName(Aws::String&& value) { m_lastEvaluatedGlobalTableName = std::move(value); }
-    inline void SetLastEvaluatedGlobalTableName(const char* value) { m_lastEvaluatedGlobalTableName.assign(value); }
-    inline ListGlobalTablesResult& WithLastEvaluatedGlobalTableName(const Aws::String& value) { SetLastEvaluatedGlobalTableName(value); return *this;}
-    inline ListGlobalTablesResult& WithLastEvaluatedGlobalTableName(Aws::String&& value) { SetLastEvaluatedGlobalTableName(std::move(value)); return *this;}
-    inline ListGlobalTablesResult& WithLastEvaluatedGlobalTableName(const char* value) { SetLastEvaluatedGlobalTableName(value); return *this;}
+    inline const Aws::String& GetLastEvaluatedGlobalTableName() const { return m_lastEvaluatedGlobalTableName; }
+    template<typename LastEvaluatedGlobalTableNameT = Aws::String>
+    void SetLastEvaluatedGlobalTableName(LastEvaluatedGlobalTableNameT&& value) { m_lastEvaluatedGlobalTableNameHasBeenSet = true; m_lastEvaluatedGlobalTableName = std::forward<LastEvaluatedGlobalTableNameT>(value); }
+    template<typename LastEvaluatedGlobalTableNameT = Aws::String>
+    ListGlobalTablesResult& WithLastEvaluatedGlobalTableName(LastEvaluatedGlobalTableNameT&& value) { SetLastEvaluatedGlobalTableName(std::forward<LastEvaluatedGlobalTableNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListGlobalTablesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListGlobalTablesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListGlobalTablesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListGlobalTablesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<GlobalTable> m_globalTables;
+    bool m_globalTablesHasBeenSet = false;
 
     Aws::String m_lastEvaluatedGlobalTableName;
+    bool m_lastEvaluatedGlobalTableNameHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,21 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-DistributionList::DistributionList() : 
-    m_markerHasBeenSet(false),
-    m_nextMarkerHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false),
-    m_isTruncated(false),
-    m_isTruncatedHasBeenSet(false),
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_itemsHasBeenSet(false)
-{
-}
-
 DistributionList::DistributionList(const XmlNode& xmlNode)
-  : DistributionList()
 {
   *this = xmlNode;
 }
@@ -79,6 +65,7 @@ DistributionList& DistributionList::operator =(const XmlNode& xmlNode)
     if(!itemsNode.IsNull())
     {
       XmlNode itemsMember = itemsNode.FirstChild("DistributionSummary");
+      m_itemsHasBeenSet = !itemsMember.IsNull();
       while(!itemsMember.IsNull())
       {
         m_items.push_back(itemsMember);

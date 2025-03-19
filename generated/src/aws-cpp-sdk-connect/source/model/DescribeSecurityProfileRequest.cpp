@@ -12,12 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeSecurityProfileRequest::DescribeSecurityProfileRequest() : 
-    m_securityProfileIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeSecurityProfileRequest::SerializePayload() const
 {
   return {};

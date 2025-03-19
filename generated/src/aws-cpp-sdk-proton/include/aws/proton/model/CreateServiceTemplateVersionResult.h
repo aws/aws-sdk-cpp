@@ -28,7 +28,7 @@ namespace Model
   class CreateServiceTemplateVersionResult
   {
   public:
-    AWS_PROTON_API CreateServiceTemplateVersionResult();
+    AWS_PROTON_API CreateServiceTemplateVersionResult() = default;
     AWS_PROTON_API CreateServiceTemplateVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PROTON_API CreateServiceTemplateVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>The service template version summary of detail data that's returned by
      * Proton.</p>
      */
-    inline const ServiceTemplateVersion& GetServiceTemplateVersion() const{ return m_serviceTemplateVersion; }
-    inline void SetServiceTemplateVersion(const ServiceTemplateVersion& value) { m_serviceTemplateVersion = value; }
-    inline void SetServiceTemplateVersion(ServiceTemplateVersion&& value) { m_serviceTemplateVersion = std::move(value); }
-    inline CreateServiceTemplateVersionResult& WithServiceTemplateVersion(const ServiceTemplateVersion& value) { SetServiceTemplateVersion(value); return *this;}
-    inline CreateServiceTemplateVersionResult& WithServiceTemplateVersion(ServiceTemplateVersion&& value) { SetServiceTemplateVersion(std::move(value)); return *this;}
+    inline const ServiceTemplateVersion& GetServiceTemplateVersion() const { return m_serviceTemplateVersion; }
+    template<typename ServiceTemplateVersionT = ServiceTemplateVersion>
+    void SetServiceTemplateVersion(ServiceTemplateVersionT&& value) { m_serviceTemplateVersionHasBeenSet = true; m_serviceTemplateVersion = std::forward<ServiceTemplateVersionT>(value); }
+    template<typename ServiceTemplateVersionT = ServiceTemplateVersion>
+    CreateServiceTemplateVersionResult& WithServiceTemplateVersion(ServiceTemplateVersionT&& value) { SetServiceTemplateVersion(std::forward<ServiceTemplateVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateServiceTemplateVersionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateServiceTemplateVersionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateServiceTemplateVersionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateServiceTemplateVersionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ServiceTemplateVersion m_serviceTemplateVersion;
+    bool m_serviceTemplateVersionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

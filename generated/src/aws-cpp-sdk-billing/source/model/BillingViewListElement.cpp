@@ -18,18 +18,7 @@ namespace Billing
 namespace Model
 {
 
-BillingViewListElement::BillingViewListElement() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_ownerAccountIdHasBeenSet(false),
-    m_billingViewType(BillingViewType::NOT_SET),
-    m_billingViewTypeHasBeenSet(false)
-{
-}
-
 BillingViewListElement::BillingViewListElement(JsonView jsonValue)
-  : BillingViewListElement()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ BillingViewListElement& BillingViewListElement::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ownerAccountId"))
   {
     m_ownerAccountId = jsonValue.GetString("ownerAccountId");
-
     m_ownerAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("billingViewType"))
   {
     m_billingViewType = BillingViewTypeMapper::GetBillingViewTypeForName(jsonValue.GetString("billingViewType"));
-
     m_billingViewTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

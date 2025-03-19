@@ -27,7 +27,7 @@ namespace Model
   class GetTokenResult
   {
   public:
-    AWS_AMPLIFYBACKEND_API GetTokenResult();
+    AWS_AMPLIFYBACKEND_API GetTokenResult() = default;
     AWS_AMPLIFYBACKEND_API GetTokenResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_AMPLIFYBACKEND_API GetTokenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,75 +36,70 @@ namespace Model
     /**
      * <p>The app ID.</p>
      */
-    inline const Aws::String& GetAppId() const{ return m_appId; }
-    inline void SetAppId(const Aws::String& value) { m_appId = value; }
-    inline void SetAppId(Aws::String&& value) { m_appId = std::move(value); }
-    inline void SetAppId(const char* value) { m_appId.assign(value); }
-    inline GetTokenResult& WithAppId(const Aws::String& value) { SetAppId(value); return *this;}
-    inline GetTokenResult& WithAppId(Aws::String&& value) { SetAppId(std::move(value)); return *this;}
-    inline GetTokenResult& WithAppId(const char* value) { SetAppId(value); return *this;}
+    inline const Aws::String& GetAppId() const { return m_appId; }
+    template<typename AppIdT = Aws::String>
+    void SetAppId(AppIdT&& value) { m_appIdHasBeenSet = true; m_appId = std::forward<AppIdT>(value); }
+    template<typename AppIdT = Aws::String>
+    GetTokenResult& WithAppId(AppIdT&& value) { SetAppId(std::forward<AppIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The one-time challenge code for authenticating into the Amplify Admin UI.</p>
      */
-    inline const Aws::String& GetChallengeCode() const{ return m_challengeCode; }
-    inline void SetChallengeCode(const Aws::String& value) { m_challengeCode = value; }
-    inline void SetChallengeCode(Aws::String&& value) { m_challengeCode = std::move(value); }
-    inline void SetChallengeCode(const char* value) { m_challengeCode.assign(value); }
-    inline GetTokenResult& WithChallengeCode(const Aws::String& value) { SetChallengeCode(value); return *this;}
-    inline GetTokenResult& WithChallengeCode(Aws::String&& value) { SetChallengeCode(std::move(value)); return *this;}
-    inline GetTokenResult& WithChallengeCode(const char* value) { SetChallengeCode(value); return *this;}
+    inline const Aws::String& GetChallengeCode() const { return m_challengeCode; }
+    template<typename ChallengeCodeT = Aws::String>
+    void SetChallengeCode(ChallengeCodeT&& value) { m_challengeCodeHasBeenSet = true; m_challengeCode = std::forward<ChallengeCodeT>(value); }
+    template<typename ChallengeCodeT = Aws::String>
+    GetTokenResult& WithChallengeCode(ChallengeCodeT&& value) { SetChallengeCode(std::forward<ChallengeCodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique ID provided when creating a new challenge token.</p>
      */
-    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
-    inline void SetSessionId(const Aws::String& value) { m_sessionId = value; }
-    inline void SetSessionId(Aws::String&& value) { m_sessionId = std::move(value); }
-    inline void SetSessionId(const char* value) { m_sessionId.assign(value); }
-    inline GetTokenResult& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-    inline GetTokenResult& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-    inline GetTokenResult& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    GetTokenResult& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The expiry time for the one-time generated token code.</p>
      */
-    inline const Aws::String& GetTtl() const{ return m_ttl; }
-    inline void SetTtl(const Aws::String& value) { m_ttl = value; }
-    inline void SetTtl(Aws::String&& value) { m_ttl = std::move(value); }
-    inline void SetTtl(const char* value) { m_ttl.assign(value); }
-    inline GetTokenResult& WithTtl(const Aws::String& value) { SetTtl(value); return *this;}
-    inline GetTokenResult& WithTtl(Aws::String&& value) { SetTtl(std::move(value)); return *this;}
-    inline GetTokenResult& WithTtl(const char* value) { SetTtl(value); return *this;}
+    inline const Aws::String& GetTtl() const { return m_ttl; }
+    template<typename TtlT = Aws::String>
+    void SetTtl(TtlT&& value) { m_ttlHasBeenSet = true; m_ttl = std::forward<TtlT>(value); }
+    template<typename TtlT = Aws::String>
+    GetTokenResult& WithTtl(TtlT&& value) { SetTtl(std::forward<TtlT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetTokenResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetTokenResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetTokenResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetTokenResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_appId;
+    bool m_appIdHasBeenSet = false;
 
     Aws::String m_challengeCode;
+    bool m_challengeCodeHasBeenSet = false;
 
     Aws::String m_sessionId;
+    bool m_sessionIdHasBeenSet = false;
 
     Aws::String m_ttl;
+    bool m_ttlHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

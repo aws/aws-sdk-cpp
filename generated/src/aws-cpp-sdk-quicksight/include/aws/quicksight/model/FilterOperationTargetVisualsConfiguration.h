@@ -33,7 +33,7 @@ namespace Model
   class FilterOperationTargetVisualsConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API FilterOperationTargetVisualsConfiguration();
+    AWS_QUICKSIGHT_API FilterOperationTargetVisualsConfiguration() = default;
     AWS_QUICKSIGHT_API FilterOperationTargetVisualsConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API FilterOperationTargetVisualsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p>The configuration of the same-sheet target visuals that you want to be
      * filtered.</p>
      */
-    inline const SameSheetTargetVisualConfiguration& GetSameSheetTargetVisualConfiguration() const{ return m_sameSheetTargetVisualConfiguration; }
+    inline const SameSheetTargetVisualConfiguration& GetSameSheetTargetVisualConfiguration() const { return m_sameSheetTargetVisualConfiguration; }
     inline bool SameSheetTargetVisualConfigurationHasBeenSet() const { return m_sameSheetTargetVisualConfigurationHasBeenSet; }
-    inline void SetSameSheetTargetVisualConfiguration(const SameSheetTargetVisualConfiguration& value) { m_sameSheetTargetVisualConfigurationHasBeenSet = true; m_sameSheetTargetVisualConfiguration = value; }
-    inline void SetSameSheetTargetVisualConfiguration(SameSheetTargetVisualConfiguration&& value) { m_sameSheetTargetVisualConfigurationHasBeenSet = true; m_sameSheetTargetVisualConfiguration = std::move(value); }
-    inline FilterOperationTargetVisualsConfiguration& WithSameSheetTargetVisualConfiguration(const SameSheetTargetVisualConfiguration& value) { SetSameSheetTargetVisualConfiguration(value); return *this;}
-    inline FilterOperationTargetVisualsConfiguration& WithSameSheetTargetVisualConfiguration(SameSheetTargetVisualConfiguration&& value) { SetSameSheetTargetVisualConfiguration(std::move(value)); return *this;}
+    template<typename SameSheetTargetVisualConfigurationT = SameSheetTargetVisualConfiguration>
+    void SetSameSheetTargetVisualConfiguration(SameSheetTargetVisualConfigurationT&& value) { m_sameSheetTargetVisualConfigurationHasBeenSet = true; m_sameSheetTargetVisualConfiguration = std::forward<SameSheetTargetVisualConfigurationT>(value); }
+    template<typename SameSheetTargetVisualConfigurationT = SameSheetTargetVisualConfiguration>
+    FilterOperationTargetVisualsConfiguration& WithSameSheetTargetVisualConfiguration(SameSheetTargetVisualConfigurationT&& value) { SetSameSheetTargetVisualConfiguration(std::forward<SameSheetTargetVisualConfigurationT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,13 +18,7 @@ namespace Personalize
 namespace Model
 {
 
-BatchInferenceJobInput::BatchInferenceJobInput() : 
-    m_s3DataSourceHasBeenSet(false)
-{
-}
-
 BatchInferenceJobInput::BatchInferenceJobInput(JsonView jsonValue)
-  : BatchInferenceJobInput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ BatchInferenceJobInput& BatchInferenceJobInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3DataSource"))
   {
     m_s3DataSource = jsonValue.GetObject("s3DataSource");
-
     m_s3DataSourceHasBeenSet = true;
   }
-
   return *this;
 }
 

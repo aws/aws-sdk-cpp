@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DataSourceErrorInfo::DataSourceErrorInfo() : 
-    m_type(DataSourceErrorInfoType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 DataSourceErrorInfo::DataSourceErrorInfo(JsonView jsonValue)
-  : DataSourceErrorInfo()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DataSourceErrorInfo& DataSourceErrorInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = DataSourceErrorInfoTypeMapper::GetDataSourceErrorInfoTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,13 +12,6 @@ using namespace Aws::NetworkManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteCoreNetworkPolicyVersionRequest::DeleteCoreNetworkPolicyVersionRequest() : 
-    m_coreNetworkIdHasBeenSet(false),
-    m_policyVersionId(0),
-    m_policyVersionIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCoreNetworkPolicyVersionRequest::SerializePayload() const
 {
   return {};

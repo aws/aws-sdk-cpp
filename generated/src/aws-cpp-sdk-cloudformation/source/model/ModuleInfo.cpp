@@ -20,14 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-ModuleInfo::ModuleInfo() : 
-    m_typeHierarchyHasBeenSet(false),
-    m_logicalIdHierarchyHasBeenSet(false)
-{
-}
-
 ModuleInfo::ModuleInfo(const XmlNode& xmlNode)
-  : ModuleInfo()
 {
   *this = xmlNode;
 }

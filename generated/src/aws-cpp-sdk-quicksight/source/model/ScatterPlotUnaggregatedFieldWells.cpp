@@ -18,17 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ScatterPlotUnaggregatedFieldWells::ScatterPlotUnaggregatedFieldWells() : 
-    m_xAxisHasBeenSet(false),
-    m_yAxisHasBeenSet(false),
-    m_sizeHasBeenSet(false),
-    m_categoryHasBeenSet(false),
-    m_labelHasBeenSet(false)
-{
-}
-
 ScatterPlotUnaggregatedFieldWells::ScatterPlotUnaggregatedFieldWells(JsonView jsonValue)
-  : ScatterPlotUnaggregatedFieldWells()
 {
   *this = jsonValue;
 }
@@ -44,7 +34,6 @@ ScatterPlotUnaggregatedFieldWells& ScatterPlotUnaggregatedFieldWells::operator =
     }
     m_xAxisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("YAxis"))
   {
     Aws::Utils::Array<JsonView> yAxisJsonList = jsonValue.GetArray("YAxis");
@@ -54,7 +43,6 @@ ScatterPlotUnaggregatedFieldWells& ScatterPlotUnaggregatedFieldWells::operator =
     }
     m_yAxisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Size"))
   {
     Aws::Utils::Array<JsonView> sizeJsonList = jsonValue.GetArray("Size");
@@ -64,7 +52,6 @@ ScatterPlotUnaggregatedFieldWells& ScatterPlotUnaggregatedFieldWells::operator =
     }
     m_sizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Category"))
   {
     Aws::Utils::Array<JsonView> categoryJsonList = jsonValue.GetArray("Category");
@@ -74,7 +61,6 @@ ScatterPlotUnaggregatedFieldWells& ScatterPlotUnaggregatedFieldWells::operator =
     }
     m_categoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Label"))
   {
     Aws::Utils::Array<JsonView> labelJsonList = jsonValue.GetArray("Label");
@@ -84,7 +70,6 @@ ScatterPlotUnaggregatedFieldWells& ScatterPlotUnaggregatedFieldWells::operator =
     }
     m_labelHasBeenSet = true;
   }
-
   return *this;
 }
 

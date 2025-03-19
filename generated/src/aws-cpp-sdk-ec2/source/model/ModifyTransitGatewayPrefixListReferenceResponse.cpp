@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ModifyTransitGatewayPrefixListReferenceResponse::ModifyTransitGatewayPrefixListReferenceResponse()
-{
-}
-
 ModifyTransitGatewayPrefixListReferenceResponse::ModifyTransitGatewayPrefixListReferenceResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ ModifyTransitGatewayPrefixListReferenceResponse& ModifyTransitGatewayPrefixListR
     if(!transitGatewayPrefixListReferenceNode.IsNull())
     {
       m_transitGatewayPrefixListReference = transitGatewayPrefixListReferenceNode;
+      m_transitGatewayPrefixListReferenceHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ ModifyTransitGatewayPrefixListReferenceResponse& ModifyTransitGatewayPrefixListR
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::ModifyTransitGatewayPrefixListReferenceResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

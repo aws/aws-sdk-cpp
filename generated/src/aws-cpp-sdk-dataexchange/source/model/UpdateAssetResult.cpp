@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateAssetResult::UpdateAssetResult() : 
-    m_assetType(AssetType::NOT_SET)
-{
-}
-
 UpdateAssetResult::UpdateAssetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateAssetResult()
 {
   *this = result;
 }
@@ -34,69 +28,60 @@ UpdateAssetResult& UpdateAssetResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssetDetails"))
   {
     m_assetDetails = jsonValue.GetObject("AssetDetails");
-
+    m_assetDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssetType"))
   {
     m_assetType = AssetTypeMapper::GetAssetTypeForName(jsonValue.GetString("AssetType"));
-
+    m_assetTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetString("CreatedAt");
-
+    m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSetId"))
   {
     m_dataSetId = jsonValue.GetString("DataSetId");
-
+    m_dataSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RevisionId"))
   {
     m_revisionId = jsonValue.GetString("RevisionId");
-
+    m_revisionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceId"))
   {
     m_sourceId = jsonValue.GetString("SourceId");
-
+    m_sourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetString("UpdatedAt");
-
+    m_updatedAtHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsRdsDbOptionGroupMembership::AwsRdsDbOptionGroupMembership() : 
-    m_optionGroupNameHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 AwsRdsDbOptionGroupMembership::AwsRdsDbOptionGroupMembership(JsonView jsonValue)
-  : AwsRdsDbOptionGroupMembership()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsRdsDbOptionGroupMembership& AwsRdsDbOptionGroupMembership::operator =(JsonVie
   if(jsonValue.ValueExists("OptionGroupName"))
   {
     m_optionGroupName = jsonValue.GetString("OptionGroupName");
-
     m_optionGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

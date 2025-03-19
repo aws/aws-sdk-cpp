@@ -37,7 +37,7 @@ namespace Model
   class DirectConnectGatewayAssociation
   {
   public:
-    AWS_DIRECTCONNECT_API DirectConnectGatewayAssociation();
+    AWS_DIRECTCONNECT_API DirectConnectGatewayAssociation() = default;
     AWS_DIRECTCONNECT_API DirectConnectGatewayAssociation(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTCONNECT_API DirectConnectGatewayAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
     /**
      * <p>The ID of the Direct Connect gateway.</p>
      */
-    inline const Aws::String& GetDirectConnectGatewayId() const{ return m_directConnectGatewayId; }
+    inline const Aws::String& GetDirectConnectGatewayId() const { return m_directConnectGatewayId; }
     inline bool DirectConnectGatewayIdHasBeenSet() const { return m_directConnectGatewayIdHasBeenSet; }
-    inline void SetDirectConnectGatewayId(const Aws::String& value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId = value; }
-    inline void SetDirectConnectGatewayId(Aws::String&& value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId = std::move(value); }
-    inline void SetDirectConnectGatewayId(const char* value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId.assign(value); }
-    inline DirectConnectGatewayAssociation& WithDirectConnectGatewayId(const Aws::String& value) { SetDirectConnectGatewayId(value); return *this;}
-    inline DirectConnectGatewayAssociation& WithDirectConnectGatewayId(Aws::String&& value) { SetDirectConnectGatewayId(std::move(value)); return *this;}
-    inline DirectConnectGatewayAssociation& WithDirectConnectGatewayId(const char* value) { SetDirectConnectGatewayId(value); return *this;}
+    template<typename DirectConnectGatewayIdT = Aws::String>
+    void SetDirectConnectGatewayId(DirectConnectGatewayIdT&& value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId = std::forward<DirectConnectGatewayIdT>(value); }
+    template<typename DirectConnectGatewayIdT = Aws::String>
+    DirectConnectGatewayAssociation& WithDirectConnectGatewayId(DirectConnectGatewayIdT&& value) { SetDirectConnectGatewayId(std::forward<DirectConnectGatewayIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
      * <p>The ID of the Amazon Web Services account that owns the associated
      * gateway.</p>
      */
-    inline const Aws::String& GetDirectConnectGatewayOwnerAccount() const{ return m_directConnectGatewayOwnerAccount; }
+    inline const Aws::String& GetDirectConnectGatewayOwnerAccount() const { return m_directConnectGatewayOwnerAccount; }
     inline bool DirectConnectGatewayOwnerAccountHasBeenSet() const { return m_directConnectGatewayOwnerAccountHasBeenSet; }
-    inline void SetDirectConnectGatewayOwnerAccount(const Aws::String& value) { m_directConnectGatewayOwnerAccountHasBeenSet = true; m_directConnectGatewayOwnerAccount = value; }
-    inline void SetDirectConnectGatewayOwnerAccount(Aws::String&& value) { m_directConnectGatewayOwnerAccountHasBeenSet = true; m_directConnectGatewayOwnerAccount = std::move(value); }
-    inline void SetDirectConnectGatewayOwnerAccount(const char* value) { m_directConnectGatewayOwnerAccountHasBeenSet = true; m_directConnectGatewayOwnerAccount.assign(value); }
-    inline DirectConnectGatewayAssociation& WithDirectConnectGatewayOwnerAccount(const Aws::String& value) { SetDirectConnectGatewayOwnerAccount(value); return *this;}
-    inline DirectConnectGatewayAssociation& WithDirectConnectGatewayOwnerAccount(Aws::String&& value) { SetDirectConnectGatewayOwnerAccount(std::move(value)); return *this;}
-    inline DirectConnectGatewayAssociation& WithDirectConnectGatewayOwnerAccount(const char* value) { SetDirectConnectGatewayOwnerAccount(value); return *this;}
+    template<typename DirectConnectGatewayOwnerAccountT = Aws::String>
+    void SetDirectConnectGatewayOwnerAccount(DirectConnectGatewayOwnerAccountT&& value) { m_directConnectGatewayOwnerAccountHasBeenSet = true; m_directConnectGatewayOwnerAccount = std::forward<DirectConnectGatewayOwnerAccountT>(value); }
+    template<typename DirectConnectGatewayOwnerAccountT = Aws::String>
+    DirectConnectGatewayAssociation& WithDirectConnectGatewayOwnerAccount(DirectConnectGatewayOwnerAccountT&& value) { SetDirectConnectGatewayOwnerAccount(std::forward<DirectConnectGatewayOwnerAccountT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,66 +84,60 @@ namespace Model
      * gateway or transit gateway are currently being updated. This could be new CIDR
      * blocks added or current CIDR blocks removed.</p> </li> </ul>
      */
-    inline const DirectConnectGatewayAssociationState& GetAssociationState() const{ return m_associationState; }
+    inline DirectConnectGatewayAssociationState GetAssociationState() const { return m_associationState; }
     inline bool AssociationStateHasBeenSet() const { return m_associationStateHasBeenSet; }
-    inline void SetAssociationState(const DirectConnectGatewayAssociationState& value) { m_associationStateHasBeenSet = true; m_associationState = value; }
-    inline void SetAssociationState(DirectConnectGatewayAssociationState&& value) { m_associationStateHasBeenSet = true; m_associationState = std::move(value); }
-    inline DirectConnectGatewayAssociation& WithAssociationState(const DirectConnectGatewayAssociationState& value) { SetAssociationState(value); return *this;}
-    inline DirectConnectGatewayAssociation& WithAssociationState(DirectConnectGatewayAssociationState&& value) { SetAssociationState(std::move(value)); return *this;}
+    inline void SetAssociationState(DirectConnectGatewayAssociationState value) { m_associationStateHasBeenSet = true; m_associationState = value; }
+    inline DirectConnectGatewayAssociation& WithAssociationState(DirectConnectGatewayAssociationState value) { SetAssociationState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The error message if the state of an object failed to advance.</p>
      */
-    inline const Aws::String& GetStateChangeError() const{ return m_stateChangeError; }
+    inline const Aws::String& GetStateChangeError() const { return m_stateChangeError; }
     inline bool StateChangeErrorHasBeenSet() const { return m_stateChangeErrorHasBeenSet; }
-    inline void SetStateChangeError(const Aws::String& value) { m_stateChangeErrorHasBeenSet = true; m_stateChangeError = value; }
-    inline void SetStateChangeError(Aws::String&& value) { m_stateChangeErrorHasBeenSet = true; m_stateChangeError = std::move(value); }
-    inline void SetStateChangeError(const char* value) { m_stateChangeErrorHasBeenSet = true; m_stateChangeError.assign(value); }
-    inline DirectConnectGatewayAssociation& WithStateChangeError(const Aws::String& value) { SetStateChangeError(value); return *this;}
-    inline DirectConnectGatewayAssociation& WithStateChangeError(Aws::String&& value) { SetStateChangeError(std::move(value)); return *this;}
-    inline DirectConnectGatewayAssociation& WithStateChangeError(const char* value) { SetStateChangeError(value); return *this;}
+    template<typename StateChangeErrorT = Aws::String>
+    void SetStateChangeError(StateChangeErrorT&& value) { m_stateChangeErrorHasBeenSet = true; m_stateChangeError = std::forward<StateChangeErrorT>(value); }
+    template<typename StateChangeErrorT = Aws::String>
+    DirectConnectGatewayAssociation& WithStateChangeError(StateChangeErrorT&& value) { SetStateChangeError(std::forward<StateChangeErrorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the associated gateway.</p>
      */
-    inline const AssociatedGateway& GetAssociatedGateway() const{ return m_associatedGateway; }
+    inline const AssociatedGateway& GetAssociatedGateway() const { return m_associatedGateway; }
     inline bool AssociatedGatewayHasBeenSet() const { return m_associatedGatewayHasBeenSet; }
-    inline void SetAssociatedGateway(const AssociatedGateway& value) { m_associatedGatewayHasBeenSet = true; m_associatedGateway = value; }
-    inline void SetAssociatedGateway(AssociatedGateway&& value) { m_associatedGatewayHasBeenSet = true; m_associatedGateway = std::move(value); }
-    inline DirectConnectGatewayAssociation& WithAssociatedGateway(const AssociatedGateway& value) { SetAssociatedGateway(value); return *this;}
-    inline DirectConnectGatewayAssociation& WithAssociatedGateway(AssociatedGateway&& value) { SetAssociatedGateway(std::move(value)); return *this;}
+    template<typename AssociatedGatewayT = AssociatedGateway>
+    void SetAssociatedGateway(AssociatedGatewayT&& value) { m_associatedGatewayHasBeenSet = true; m_associatedGateway = std::forward<AssociatedGatewayT>(value); }
+    template<typename AssociatedGatewayT = AssociatedGateway>
+    DirectConnectGatewayAssociation& WithAssociatedGateway(AssociatedGatewayT&& value) { SetAssociatedGateway(std::forward<AssociatedGatewayT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Direct Connect gateway association.</p>
      */
-    inline const Aws::String& GetAssociationId() const{ return m_associationId; }
+    inline const Aws::String& GetAssociationId() const { return m_associationId; }
     inline bool AssociationIdHasBeenSet() const { return m_associationIdHasBeenSet; }
-    inline void SetAssociationId(const Aws::String& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
-    inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = std::move(value); }
-    inline void SetAssociationId(const char* value) { m_associationIdHasBeenSet = true; m_associationId.assign(value); }
-    inline DirectConnectGatewayAssociation& WithAssociationId(const Aws::String& value) { SetAssociationId(value); return *this;}
-    inline DirectConnectGatewayAssociation& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
-    inline DirectConnectGatewayAssociation& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
+    template<typename AssociationIdT = Aws::String>
+    void SetAssociationId(AssociationIdT&& value) { m_associationIdHasBeenSet = true; m_associationId = std::forward<AssociationIdT>(value); }
+    template<typename AssociationIdT = Aws::String>
+    DirectConnectGatewayAssociation& WithAssociationId(AssociationIdT&& value) { SetAssociationId(std::forward<AssociationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway.</p>
      */
-    inline const Aws::Vector<RouteFilterPrefix>& GetAllowedPrefixesToDirectConnectGateway() const{ return m_allowedPrefixesToDirectConnectGateway; }
+    inline const Aws::Vector<RouteFilterPrefix>& GetAllowedPrefixesToDirectConnectGateway() const { return m_allowedPrefixesToDirectConnectGateway; }
     inline bool AllowedPrefixesToDirectConnectGatewayHasBeenSet() const { return m_allowedPrefixesToDirectConnectGatewayHasBeenSet; }
-    inline void SetAllowedPrefixesToDirectConnectGateway(const Aws::Vector<RouteFilterPrefix>& value) { m_allowedPrefixesToDirectConnectGatewayHasBeenSet = true; m_allowedPrefixesToDirectConnectGateway = value; }
-    inline void SetAllowedPrefixesToDirectConnectGateway(Aws::Vector<RouteFilterPrefix>&& value) { m_allowedPrefixesToDirectConnectGatewayHasBeenSet = true; m_allowedPrefixesToDirectConnectGateway = std::move(value); }
-    inline DirectConnectGatewayAssociation& WithAllowedPrefixesToDirectConnectGateway(const Aws::Vector<RouteFilterPrefix>& value) { SetAllowedPrefixesToDirectConnectGateway(value); return *this;}
-    inline DirectConnectGatewayAssociation& WithAllowedPrefixesToDirectConnectGateway(Aws::Vector<RouteFilterPrefix>&& value) { SetAllowedPrefixesToDirectConnectGateway(std::move(value)); return *this;}
-    inline DirectConnectGatewayAssociation& AddAllowedPrefixesToDirectConnectGateway(const RouteFilterPrefix& value) { m_allowedPrefixesToDirectConnectGatewayHasBeenSet = true; m_allowedPrefixesToDirectConnectGateway.push_back(value); return *this; }
-    inline DirectConnectGatewayAssociation& AddAllowedPrefixesToDirectConnectGateway(RouteFilterPrefix&& value) { m_allowedPrefixesToDirectConnectGatewayHasBeenSet = true; m_allowedPrefixesToDirectConnectGateway.push_back(std::move(value)); return *this; }
+    template<typename AllowedPrefixesToDirectConnectGatewayT = Aws::Vector<RouteFilterPrefix>>
+    void SetAllowedPrefixesToDirectConnectGateway(AllowedPrefixesToDirectConnectGatewayT&& value) { m_allowedPrefixesToDirectConnectGatewayHasBeenSet = true; m_allowedPrefixesToDirectConnectGateway = std::forward<AllowedPrefixesToDirectConnectGatewayT>(value); }
+    template<typename AllowedPrefixesToDirectConnectGatewayT = Aws::Vector<RouteFilterPrefix>>
+    DirectConnectGatewayAssociation& WithAllowedPrefixesToDirectConnectGateway(AllowedPrefixesToDirectConnectGatewayT&& value) { SetAllowedPrefixesToDirectConnectGateway(std::forward<AllowedPrefixesToDirectConnectGatewayT>(value)); return *this;}
+    template<typename AllowedPrefixesToDirectConnectGatewayT = RouteFilterPrefix>
+    DirectConnectGatewayAssociation& AddAllowedPrefixesToDirectConnectGateway(AllowedPrefixesToDirectConnectGatewayT&& value) { m_allowedPrefixesToDirectConnectGatewayHasBeenSet = true; m_allowedPrefixesToDirectConnectGateway.emplace_back(std::forward<AllowedPrefixesToDirectConnectGatewayT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -155,12 +145,12 @@ namespace Model
      * <p>The ID of the Cloud WAN core network associated with the Direct Connect
      * attachment.</p>
      */
-    inline const AssociatedCoreNetwork& GetAssociatedCoreNetwork() const{ return m_associatedCoreNetwork; }
+    inline const AssociatedCoreNetwork& GetAssociatedCoreNetwork() const { return m_associatedCoreNetwork; }
     inline bool AssociatedCoreNetworkHasBeenSet() const { return m_associatedCoreNetworkHasBeenSet; }
-    inline void SetAssociatedCoreNetwork(const AssociatedCoreNetwork& value) { m_associatedCoreNetworkHasBeenSet = true; m_associatedCoreNetwork = value; }
-    inline void SetAssociatedCoreNetwork(AssociatedCoreNetwork&& value) { m_associatedCoreNetworkHasBeenSet = true; m_associatedCoreNetwork = std::move(value); }
-    inline DirectConnectGatewayAssociation& WithAssociatedCoreNetwork(const AssociatedCoreNetwork& value) { SetAssociatedCoreNetwork(value); return *this;}
-    inline DirectConnectGatewayAssociation& WithAssociatedCoreNetwork(AssociatedCoreNetwork&& value) { SetAssociatedCoreNetwork(std::move(value)); return *this;}
+    template<typename AssociatedCoreNetworkT = AssociatedCoreNetwork>
+    void SetAssociatedCoreNetwork(AssociatedCoreNetworkT&& value) { m_associatedCoreNetworkHasBeenSet = true; m_associatedCoreNetwork = std::forward<AssociatedCoreNetworkT>(value); }
+    template<typename AssociatedCoreNetworkT = AssociatedCoreNetwork>
+    DirectConnectGatewayAssociation& WithAssociatedCoreNetwork(AssociatedCoreNetworkT&& value) { SetAssociatedCoreNetwork(std::forward<AssociatedCoreNetworkT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -168,14 +158,12 @@ namespace Model
      * <p>The ID of the virtual private gateway. Applies only to private virtual
      * interfaces.</p>
      */
-    inline const Aws::String& GetVirtualGatewayId() const{ return m_virtualGatewayId; }
+    inline const Aws::String& GetVirtualGatewayId() const { return m_virtualGatewayId; }
     inline bool VirtualGatewayIdHasBeenSet() const { return m_virtualGatewayIdHasBeenSet; }
-    inline void SetVirtualGatewayId(const Aws::String& value) { m_virtualGatewayIdHasBeenSet = true; m_virtualGatewayId = value; }
-    inline void SetVirtualGatewayId(Aws::String&& value) { m_virtualGatewayIdHasBeenSet = true; m_virtualGatewayId = std::move(value); }
-    inline void SetVirtualGatewayId(const char* value) { m_virtualGatewayIdHasBeenSet = true; m_virtualGatewayId.assign(value); }
-    inline DirectConnectGatewayAssociation& WithVirtualGatewayId(const Aws::String& value) { SetVirtualGatewayId(value); return *this;}
-    inline DirectConnectGatewayAssociation& WithVirtualGatewayId(Aws::String&& value) { SetVirtualGatewayId(std::move(value)); return *this;}
-    inline DirectConnectGatewayAssociation& WithVirtualGatewayId(const char* value) { SetVirtualGatewayId(value); return *this;}
+    template<typename VirtualGatewayIdT = Aws::String>
+    void SetVirtualGatewayId(VirtualGatewayIdT&& value) { m_virtualGatewayIdHasBeenSet = true; m_virtualGatewayId = std::forward<VirtualGatewayIdT>(value); }
+    template<typename VirtualGatewayIdT = Aws::String>
+    DirectConnectGatewayAssociation& WithVirtualGatewayId(VirtualGatewayIdT&& value) { SetVirtualGatewayId(std::forward<VirtualGatewayIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -183,14 +171,12 @@ namespace Model
      * <p>The Amazon Web Services Region where the virtual private gateway is
      * located.</p>
      */
-    inline const Aws::String& GetVirtualGatewayRegion() const{ return m_virtualGatewayRegion; }
+    inline const Aws::String& GetVirtualGatewayRegion() const { return m_virtualGatewayRegion; }
     inline bool VirtualGatewayRegionHasBeenSet() const { return m_virtualGatewayRegionHasBeenSet; }
-    inline void SetVirtualGatewayRegion(const Aws::String& value) { m_virtualGatewayRegionHasBeenSet = true; m_virtualGatewayRegion = value; }
-    inline void SetVirtualGatewayRegion(Aws::String&& value) { m_virtualGatewayRegionHasBeenSet = true; m_virtualGatewayRegion = std::move(value); }
-    inline void SetVirtualGatewayRegion(const char* value) { m_virtualGatewayRegionHasBeenSet = true; m_virtualGatewayRegion.assign(value); }
-    inline DirectConnectGatewayAssociation& WithVirtualGatewayRegion(const Aws::String& value) { SetVirtualGatewayRegion(value); return *this;}
-    inline DirectConnectGatewayAssociation& WithVirtualGatewayRegion(Aws::String&& value) { SetVirtualGatewayRegion(std::move(value)); return *this;}
-    inline DirectConnectGatewayAssociation& WithVirtualGatewayRegion(const char* value) { SetVirtualGatewayRegion(value); return *this;}
+    template<typename VirtualGatewayRegionT = Aws::String>
+    void SetVirtualGatewayRegion(VirtualGatewayRegionT&& value) { m_virtualGatewayRegionHasBeenSet = true; m_virtualGatewayRegion = std::forward<VirtualGatewayRegionT>(value); }
+    template<typename VirtualGatewayRegionT = Aws::String>
+    DirectConnectGatewayAssociation& WithVirtualGatewayRegion(VirtualGatewayRegionT&& value) { SetVirtualGatewayRegion(std::forward<VirtualGatewayRegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -198,14 +184,12 @@ namespace Model
      * <p>The ID of the Amazon Web Services account that owns the virtual private
      * gateway.</p>
      */
-    inline const Aws::String& GetVirtualGatewayOwnerAccount() const{ return m_virtualGatewayOwnerAccount; }
+    inline const Aws::String& GetVirtualGatewayOwnerAccount() const { return m_virtualGatewayOwnerAccount; }
     inline bool VirtualGatewayOwnerAccountHasBeenSet() const { return m_virtualGatewayOwnerAccountHasBeenSet; }
-    inline void SetVirtualGatewayOwnerAccount(const Aws::String& value) { m_virtualGatewayOwnerAccountHasBeenSet = true; m_virtualGatewayOwnerAccount = value; }
-    inline void SetVirtualGatewayOwnerAccount(Aws::String&& value) { m_virtualGatewayOwnerAccountHasBeenSet = true; m_virtualGatewayOwnerAccount = std::move(value); }
-    inline void SetVirtualGatewayOwnerAccount(const char* value) { m_virtualGatewayOwnerAccountHasBeenSet = true; m_virtualGatewayOwnerAccount.assign(value); }
-    inline DirectConnectGatewayAssociation& WithVirtualGatewayOwnerAccount(const Aws::String& value) { SetVirtualGatewayOwnerAccount(value); return *this;}
-    inline DirectConnectGatewayAssociation& WithVirtualGatewayOwnerAccount(Aws::String&& value) { SetVirtualGatewayOwnerAccount(std::move(value)); return *this;}
-    inline DirectConnectGatewayAssociation& WithVirtualGatewayOwnerAccount(const char* value) { SetVirtualGatewayOwnerAccount(value); return *this;}
+    template<typename VirtualGatewayOwnerAccountT = Aws::String>
+    void SetVirtualGatewayOwnerAccount(VirtualGatewayOwnerAccountT&& value) { m_virtualGatewayOwnerAccountHasBeenSet = true; m_virtualGatewayOwnerAccount = std::forward<VirtualGatewayOwnerAccountT>(value); }
+    template<typename VirtualGatewayOwnerAccountT = Aws::String>
+    DirectConnectGatewayAssociation& WithVirtualGatewayOwnerAccount(VirtualGatewayOwnerAccountT&& value) { SetVirtualGatewayOwnerAccount(std::forward<VirtualGatewayOwnerAccountT>(value)); return *this;}
     ///@}
   private:
 
@@ -215,7 +199,7 @@ namespace Model
     Aws::String m_directConnectGatewayOwnerAccount;
     bool m_directConnectGatewayOwnerAccountHasBeenSet = false;
 
-    DirectConnectGatewayAssociationState m_associationState;
+    DirectConnectGatewayAssociationState m_associationState{DirectConnectGatewayAssociationState::NOT_SET};
     bool m_associationStateHasBeenSet = false;
 
     Aws::String m_stateChangeError;

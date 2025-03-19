@@ -33,7 +33,7 @@ namespace Model
   class CancelBundleTaskResponse
   {
   public:
-    AWS_EC2_API CancelBundleTaskResponse();
+    AWS_EC2_API CancelBundleTaskResponse() = default;
     AWS_EC2_API CancelBundleTaskResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API CancelBundleTaskResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -42,26 +42,28 @@ namespace Model
     /**
      * <p>Information about the bundle task.</p>
      */
-    inline const BundleTask& GetBundleTask() const{ return m_bundleTask; }
-    inline void SetBundleTask(const BundleTask& value) { m_bundleTask = value; }
-    inline void SetBundleTask(BundleTask&& value) { m_bundleTask = std::move(value); }
-    inline CancelBundleTaskResponse& WithBundleTask(const BundleTask& value) { SetBundleTask(value); return *this;}
-    inline CancelBundleTaskResponse& WithBundleTask(BundleTask&& value) { SetBundleTask(std::move(value)); return *this;}
+    inline const BundleTask& GetBundleTask() const { return m_bundleTask; }
+    template<typename BundleTaskT = BundleTask>
+    void SetBundleTask(BundleTaskT&& value) { m_bundleTaskHasBeenSet = true; m_bundleTask = std::forward<BundleTaskT>(value); }
+    template<typename BundleTaskT = BundleTask>
+    CancelBundleTaskResponse& WithBundleTask(BundleTaskT&& value) { SetBundleTask(std::forward<BundleTaskT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CancelBundleTaskResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CancelBundleTaskResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CancelBundleTaskResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     BundleTask m_bundleTask;
+    bool m_bundleTaskHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

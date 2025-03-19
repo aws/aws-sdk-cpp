@@ -18,15 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-ErrorInfo::ErrorInfo() : 
-    m_putFailuresCount(0),
-    m_putFailuresCountHasBeenSet(false),
-    m_executionMessageHasBeenSet(false)
-{
-}
-
 ErrorInfo::ErrorInfo(JsonView jsonValue)
-  : ErrorInfo()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ErrorInfo& ErrorInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("putFailuresCount"))
   {
     m_putFailuresCount = jsonValue.GetInt64("putFailuresCount");
-
     m_putFailuresCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionMessage"))
   {
     m_executionMessage = jsonValue.GetString("executionMessage");
-
     m_executionMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

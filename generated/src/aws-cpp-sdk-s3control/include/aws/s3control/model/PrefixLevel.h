@@ -30,7 +30,7 @@ namespace Model
   class PrefixLevel
   {
   public:
-    AWS_S3CONTROL_API PrefixLevel();
+    AWS_S3CONTROL_API PrefixLevel() = default;
     AWS_S3CONTROL_API PrefixLevel(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API PrefixLevel& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>A container for the prefix-level storage metrics for S3 Storage Lens.</p>
      */
-    inline const PrefixLevelStorageMetrics& GetStorageMetrics() const{ return m_storageMetrics; }
+    inline const PrefixLevelStorageMetrics& GetStorageMetrics() const { return m_storageMetrics; }
     inline bool StorageMetricsHasBeenSet() const { return m_storageMetricsHasBeenSet; }
-    inline void SetStorageMetrics(const PrefixLevelStorageMetrics& value) { m_storageMetricsHasBeenSet = true; m_storageMetrics = value; }
-    inline void SetStorageMetrics(PrefixLevelStorageMetrics&& value) { m_storageMetricsHasBeenSet = true; m_storageMetrics = std::move(value); }
-    inline PrefixLevel& WithStorageMetrics(const PrefixLevelStorageMetrics& value) { SetStorageMetrics(value); return *this;}
-    inline PrefixLevel& WithStorageMetrics(PrefixLevelStorageMetrics&& value) { SetStorageMetrics(std::move(value)); return *this;}
+    template<typename StorageMetricsT = PrefixLevelStorageMetrics>
+    void SetStorageMetrics(StorageMetricsT&& value) { m_storageMetricsHasBeenSet = true; m_storageMetrics = std::forward<StorageMetricsT>(value); }
+    template<typename StorageMetricsT = PrefixLevelStorageMetrics>
+    PrefixLevel& WithStorageMetrics(StorageMetricsT&& value) { SetStorageMetrics(std::forward<StorageMetricsT>(value)); return *this;}
     ///@}
   private:
 

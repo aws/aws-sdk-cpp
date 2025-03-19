@@ -34,7 +34,7 @@ namespace Model
   class UpdateHealthCheckResult
   {
   public:
-    AWS_ROUTE53_API UpdateHealthCheckResult();
+    AWS_ROUTE53_API UpdateHealthCheckResult() = default;
     AWS_ROUTE53_API UpdateHealthCheckResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ROUTE53_API UpdateHealthCheckResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -44,28 +44,28 @@ namespace Model
      * <p>A complex type that contains the response to an
      * <code>UpdateHealthCheck</code> request.</p>
      */
-    inline const HealthCheck& GetHealthCheck() const{ return m_healthCheck; }
-    inline void SetHealthCheck(const HealthCheck& value) { m_healthCheck = value; }
-    inline void SetHealthCheck(HealthCheck&& value) { m_healthCheck = std::move(value); }
-    inline UpdateHealthCheckResult& WithHealthCheck(const HealthCheck& value) { SetHealthCheck(value); return *this;}
-    inline UpdateHealthCheckResult& WithHealthCheck(HealthCheck&& value) { SetHealthCheck(std::move(value)); return *this;}
+    inline const HealthCheck& GetHealthCheck() const { return m_healthCheck; }
+    template<typename HealthCheckT = HealthCheck>
+    void SetHealthCheck(HealthCheckT&& value) { m_healthCheckHasBeenSet = true; m_healthCheck = std::forward<HealthCheckT>(value); }
+    template<typename HealthCheckT = HealthCheck>
+    UpdateHealthCheckResult& WithHealthCheck(HealthCheckT&& value) { SetHealthCheck(std::forward<HealthCheckT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateHealthCheckResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateHealthCheckResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateHealthCheckResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateHealthCheckResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     HealthCheck m_healthCheck;
+    bool m_healthCheckHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

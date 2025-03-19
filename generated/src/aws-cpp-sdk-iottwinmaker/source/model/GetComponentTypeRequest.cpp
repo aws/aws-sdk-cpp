@@ -12,12 +12,6 @@ using namespace Aws::IoTTwinMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetComponentTypeRequest::GetComponentTypeRequest() : 
-    m_workspaceIdHasBeenSet(false),
-    m_componentTypeIdHasBeenSet(false)
-{
-}
-
 Aws::String GetComponentTypeRequest::SerializePayload() const
 {
   return {};

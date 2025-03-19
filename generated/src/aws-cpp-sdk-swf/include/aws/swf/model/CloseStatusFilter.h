@@ -32,7 +32,7 @@ namespace Model
   class CloseStatusFilter
   {
   public:
-    AWS_SWF_API CloseStatusFilter();
+    AWS_SWF_API CloseStatusFilter() = default;
     AWS_SWF_API CloseStatusFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API CloseStatusFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,16 +43,14 @@ namespace Model
      * <p> The close status that must match the close status of an execution for it to
      * meet the criteria of this filter.</p>
      */
-    inline const CloseStatus& GetStatus() const{ return m_status; }
+    inline CloseStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const CloseStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(CloseStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline CloseStatusFilter& WithStatus(const CloseStatus& value) { SetStatus(value); return *this;}
-    inline CloseStatusFilter& WithStatus(CloseStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(CloseStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline CloseStatusFilter& WithStatus(CloseStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    CloseStatus m_status;
+    CloseStatus m_status{CloseStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

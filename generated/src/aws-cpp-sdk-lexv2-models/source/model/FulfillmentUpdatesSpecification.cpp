@@ -18,18 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-FulfillmentUpdatesSpecification::FulfillmentUpdatesSpecification() : 
-    m_active(false),
-    m_activeHasBeenSet(false),
-    m_startResponseHasBeenSet(false),
-    m_updateResponseHasBeenSet(false),
-    m_timeoutInSeconds(0),
-    m_timeoutInSecondsHasBeenSet(false)
-{
-}
-
 FulfillmentUpdatesSpecification::FulfillmentUpdatesSpecification(JsonView jsonValue)
-  : FulfillmentUpdatesSpecification()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ FulfillmentUpdatesSpecification& FulfillmentUpdatesSpecification::operator =(Jso
   if(jsonValue.ValueExists("active"))
   {
     m_active = jsonValue.GetBool("active");
-
     m_activeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startResponse"))
   {
     m_startResponse = jsonValue.GetObject("startResponse");
-
     m_startResponseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateResponse"))
   {
     m_updateResponse = jsonValue.GetObject("updateResponse");
-
     m_updateResponseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timeoutInSeconds"))
   {
     m_timeoutInSeconds = jsonValue.GetInteger("timeoutInSeconds");
-
     m_timeoutInSecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

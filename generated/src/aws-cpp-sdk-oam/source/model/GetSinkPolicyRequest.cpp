@@ -12,11 +12,6 @@ using namespace Aws::OAM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSinkPolicyRequest::GetSinkPolicyRequest() : 
-    m_sinkIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String GetSinkPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

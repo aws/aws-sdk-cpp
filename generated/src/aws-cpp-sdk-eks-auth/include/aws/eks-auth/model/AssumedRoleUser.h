@@ -32,7 +32,7 @@ namespace Model
   class AssumedRoleUser
   {
   public:
-    AWS_EKSAUTH_API AssumedRoleUser();
+    AWS_EKSAUTH_API AssumedRoleUser() = default;
     AWS_EKSAUTH_API AssumedRoleUser(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKSAUTH_API AssumedRoleUser& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKSAUTH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The ARN of the IAM role that the temporary credentials authenticate to.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline AssumedRoleUser& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline AssumedRoleUser& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline AssumedRoleUser& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    AssumedRoleUser& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * this format: <code>eks-<i>clustername</i>-<i>podname</i>-<i>random UUID</i>
      * </code> </p>
      */
-    inline const Aws::String& GetAssumeRoleId() const{ return m_assumeRoleId; }
+    inline const Aws::String& GetAssumeRoleId() const { return m_assumeRoleId; }
     inline bool AssumeRoleIdHasBeenSet() const { return m_assumeRoleIdHasBeenSet; }
-    inline void SetAssumeRoleId(const Aws::String& value) { m_assumeRoleIdHasBeenSet = true; m_assumeRoleId = value; }
-    inline void SetAssumeRoleId(Aws::String&& value) { m_assumeRoleIdHasBeenSet = true; m_assumeRoleId = std::move(value); }
-    inline void SetAssumeRoleId(const char* value) { m_assumeRoleIdHasBeenSet = true; m_assumeRoleId.assign(value); }
-    inline AssumedRoleUser& WithAssumeRoleId(const Aws::String& value) { SetAssumeRoleId(value); return *this;}
-    inline AssumedRoleUser& WithAssumeRoleId(Aws::String&& value) { SetAssumeRoleId(std::move(value)); return *this;}
-    inline AssumedRoleUser& WithAssumeRoleId(const char* value) { SetAssumeRoleId(value); return *this;}
+    template<typename AssumeRoleIdT = Aws::String>
+    void SetAssumeRoleId(AssumeRoleIdT&& value) { m_assumeRoleIdHasBeenSet = true; m_assumeRoleId = std::forward<AssumeRoleIdT>(value); }
+    template<typename AssumeRoleIdT = Aws::String>
+    AssumedRoleUser& WithAssumeRoleId(AssumeRoleIdT&& value) { SetAssumeRoleId(std::forward<AssumeRoleIdT>(value)); return *this;}
     ///@}
   private:
 

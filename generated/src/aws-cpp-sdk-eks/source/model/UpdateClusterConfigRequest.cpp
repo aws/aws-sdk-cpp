@@ -12,21 +12,6 @@ using namespace Aws::EKS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateClusterConfigRequest::UpdateClusterConfigRequest() : 
-    m_nameHasBeenSet(false),
-    m_resourcesVpcConfigHasBeenSet(false),
-    m_loggingHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_accessConfigHasBeenSet(false),
-    m_upgradePolicyHasBeenSet(false),
-    m_zonalShiftConfigHasBeenSet(false),
-    m_computeConfigHasBeenSet(false),
-    m_kubernetesNetworkConfigHasBeenSet(false),
-    m_storageConfigHasBeenSet(false)
-{
-}
-
 Aws::String UpdateClusterConfigRequest::SerializePayload() const
 {
   JsonValue payload;

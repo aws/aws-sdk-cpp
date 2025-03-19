@@ -36,7 +36,7 @@ namespace Model
   class GetMethodResponseResult
   {
   public:
-    AWS_APIGATEWAY_API GetMethodResponseResult();
+    AWS_APIGATEWAY_API GetMethodResponseResult() = default;
     AWS_APIGATEWAY_API GetMethodResponseResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APIGATEWAY_API GetMethodResponseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,13 +45,11 @@ namespace Model
     /**
      * <p>The method response's status code.</p>
      */
-    inline const Aws::String& GetStatusCode() const{ return m_statusCode; }
-    inline void SetStatusCode(const Aws::String& value) { m_statusCode = value; }
-    inline void SetStatusCode(Aws::String&& value) { m_statusCode = std::move(value); }
-    inline void SetStatusCode(const char* value) { m_statusCode.assign(value); }
-    inline GetMethodResponseResult& WithStatusCode(const Aws::String& value) { SetStatusCode(value); return *this;}
-    inline GetMethodResponseResult& WithStatusCode(Aws::String&& value) { SetStatusCode(std::move(value)); return *this;}
-    inline GetMethodResponseResult& WithStatusCode(const char* value) { SetStatusCode(value); return *this;}
+    inline const Aws::String& GetStatusCode() const { return m_statusCode; }
+    template<typename StatusCodeT = Aws::String>
+    void SetStatusCode(StatusCodeT&& value) { m_statusCodeHasBeenSet = true; m_statusCode = std::forward<StatusCodeT>(value); }
+    template<typename StatusCodeT = Aws::String>
+    GetMethodResponseResult& WithStatusCode(StatusCodeT&& value) { SetStatusCode(std::forward<StatusCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +70,14 @@ namespace Model
      * <code>JSON-expression</code> is a valid JSON expression without the
      * <code>$</code> prefix.)</p>
      */
-    inline const Aws::Map<Aws::String, bool>& GetResponseParameters() const{ return m_responseParameters; }
-    inline void SetResponseParameters(const Aws::Map<Aws::String, bool>& value) { m_responseParameters = value; }
-    inline void SetResponseParameters(Aws::Map<Aws::String, bool>&& value) { m_responseParameters = std::move(value); }
-    inline GetMethodResponseResult& WithResponseParameters(const Aws::Map<Aws::String, bool>& value) { SetResponseParameters(value); return *this;}
-    inline GetMethodResponseResult& WithResponseParameters(Aws::Map<Aws::String, bool>&& value) { SetResponseParameters(std::move(value)); return *this;}
-    inline GetMethodResponseResult& AddResponseParameters(const Aws::String& key, bool value) { m_responseParameters.emplace(key, value); return *this; }
-    inline GetMethodResponseResult& AddResponseParameters(Aws::String&& key, bool value) { m_responseParameters.emplace(std::move(key), value); return *this; }
-    inline GetMethodResponseResult& AddResponseParameters(const char* key, bool value) { m_responseParameters.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, bool>& GetResponseParameters() const { return m_responseParameters; }
+    template<typename ResponseParametersT = Aws::Map<Aws::String, bool>>
+    void SetResponseParameters(ResponseParametersT&& value) { m_responseParametersHasBeenSet = true; m_responseParameters = std::forward<ResponseParametersT>(value); }
+    template<typename ResponseParametersT = Aws::Map<Aws::String, bool>>
+    GetMethodResponseResult& WithResponseParameters(ResponseParametersT&& value) { SetResponseParameters(std::forward<ResponseParametersT>(value)); return *this;}
+    inline GetMethodResponseResult& AddResponseParameters(Aws::String key, bool value) {
+      m_responseParametersHasBeenSet = true; m_responseParameters.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
@@ -88,39 +86,38 @@ namespace Model
      * models are represented as a key/value map, with a content-type as the key and a
      * Model name as the value.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetResponseModels() const{ return m_responseModels; }
-    inline void SetResponseModels(const Aws::Map<Aws::String, Aws::String>& value) { m_responseModels = value; }
-    inline void SetResponseModels(Aws::Map<Aws::String, Aws::String>&& value) { m_responseModels = std::move(value); }
-    inline GetMethodResponseResult& WithResponseModels(const Aws::Map<Aws::String, Aws::String>& value) { SetResponseModels(value); return *this;}
-    inline GetMethodResponseResult& WithResponseModels(Aws::Map<Aws::String, Aws::String>&& value) { SetResponseModels(std::move(value)); return *this;}
-    inline GetMethodResponseResult& AddResponseModels(const Aws::String& key, const Aws::String& value) { m_responseModels.emplace(key, value); return *this; }
-    inline GetMethodResponseResult& AddResponseModels(Aws::String&& key, const Aws::String& value) { m_responseModels.emplace(std::move(key), value); return *this; }
-    inline GetMethodResponseResult& AddResponseModels(const Aws::String& key, Aws::String&& value) { m_responseModels.emplace(key, std::move(value)); return *this; }
-    inline GetMethodResponseResult& AddResponseModels(Aws::String&& key, Aws::String&& value) { m_responseModels.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetMethodResponseResult& AddResponseModels(const char* key, Aws::String&& value) { m_responseModels.emplace(key, std::move(value)); return *this; }
-    inline GetMethodResponseResult& AddResponseModels(Aws::String&& key, const char* value) { m_responseModels.emplace(std::move(key), value); return *this; }
-    inline GetMethodResponseResult& AddResponseModels(const char* key, const char* value) { m_responseModels.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetResponseModels() const { return m_responseModels; }
+    template<typename ResponseModelsT = Aws::Map<Aws::String, Aws::String>>
+    void SetResponseModels(ResponseModelsT&& value) { m_responseModelsHasBeenSet = true; m_responseModels = std::forward<ResponseModelsT>(value); }
+    template<typename ResponseModelsT = Aws::Map<Aws::String, Aws::String>>
+    GetMethodResponseResult& WithResponseModels(ResponseModelsT&& value) { SetResponseModels(std::forward<ResponseModelsT>(value)); return *this;}
+    template<typename ResponseModelsKeyT = Aws::String, typename ResponseModelsValueT = Aws::String>
+    GetMethodResponseResult& AddResponseModels(ResponseModelsKeyT&& key, ResponseModelsValueT&& value) {
+      m_responseModelsHasBeenSet = true; m_responseModels.emplace(std::forward<ResponseModelsKeyT>(key), std::forward<ResponseModelsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetMethodResponseResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetMethodResponseResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetMethodResponseResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetMethodResponseResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_statusCode;
+    bool m_statusCodeHasBeenSet = false;
 
     Aws::Map<Aws::String, bool> m_responseParameters;
+    bool m_responseParametersHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_responseModels;
+    bool m_responseModelsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,14 +18,7 @@ namespace OpsWorks
 namespace Model
 {
 
-InstanceIdentity::InstanceIdentity() : 
-    m_documentHasBeenSet(false),
-    m_signatureHasBeenSet(false)
-{
-}
-
 InstanceIdentity::InstanceIdentity(JsonView jsonValue)
-  : InstanceIdentity()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ InstanceIdentity& InstanceIdentity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Document"))
   {
     m_document = jsonValue.GetString("Document");
-
     m_documentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Signature"))
   {
     m_signature = jsonValue.GetString("Signature");
-
     m_signatureHasBeenSet = true;
   }
-
   return *this;
 }
 

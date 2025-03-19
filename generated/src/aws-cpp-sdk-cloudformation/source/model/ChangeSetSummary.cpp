@@ -20,29 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-ChangeSetSummary::ChangeSetSummary() : 
-    m_stackIdHasBeenSet(false),
-    m_stackNameHasBeenSet(false),
-    m_changeSetIdHasBeenSet(false),
-    m_changeSetNameHasBeenSet(false),
-    m_executionStatus(ExecutionStatus::NOT_SET),
-    m_executionStatusHasBeenSet(false),
-    m_status(ChangeSetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_includeNestedStacks(false),
-    m_includeNestedStacksHasBeenSet(false),
-    m_parentChangeSetIdHasBeenSet(false),
-    m_rootChangeSetIdHasBeenSet(false),
-    m_importExistingResources(false),
-    m_importExistingResourcesHasBeenSet(false)
-{
-}
-
 ChangeSetSummary::ChangeSetSummary(const XmlNode& xmlNode)
-  : ChangeSetSummary()
 {
   *this = xmlNode;
 }
@@ -80,13 +58,13 @@ ChangeSetSummary& ChangeSetSummary::operator =(const XmlNode& xmlNode)
     XmlNode executionStatusNode = resultNode.FirstChild("ExecutionStatus");
     if(!executionStatusNode.IsNull())
     {
-      m_executionStatus = ExecutionStatusMapper::GetExecutionStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(executionStatusNode.GetText()).c_str()).c_str());
+      m_executionStatus = ExecutionStatusMapper::GetExecutionStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(executionStatusNode.GetText()).c_str()));
       m_executionStatusHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = ChangeSetStatusMapper::GetChangeSetStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = ChangeSetStatusMapper::GetChangeSetStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
     XmlNode statusReasonNode = resultNode.FirstChild("StatusReason");

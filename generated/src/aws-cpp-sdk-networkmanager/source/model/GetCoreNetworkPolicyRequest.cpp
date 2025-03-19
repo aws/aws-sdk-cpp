@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetCoreNetworkPolicyRequest::GetCoreNetworkPolicyRequest() : 
-    m_coreNetworkIdHasBeenSet(false),
-    m_policyVersionId(0),
-    m_policyVersionIdHasBeenSet(false),
-    m_alias(CoreNetworkPolicyAlias::NOT_SET),
-    m_aliasHasBeenSet(false)
-{
-}
-
 Aws::String GetCoreNetworkPolicyRequest::SerializePayload() const
 {
   return {};

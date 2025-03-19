@@ -33,7 +33,7 @@ namespace Model
   class DASHFragmentSelector
   {
   public:
-    AWS_KINESISVIDEOARCHIVEDMEDIA_API DASHFragmentSelector();
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API DASHFragmentSelector() = default;
     AWS_KINESISVIDEOARCHIVEDMEDIA_API DASHFragmentSelector(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISVIDEOARCHIVEDMEDIA_API DASHFragmentSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISVIDEOARCHIVEDMEDIA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -64,12 +64,10 @@ namespace Model
      * producer timestamps with values now, they are not included in the HLS media
      * playlist.</p> <p>The default is <code>SERVER_TIMESTAMP</code>.</p>
      */
-    inline const DASHFragmentSelectorType& GetFragmentSelectorType() const{ return m_fragmentSelectorType; }
+    inline DASHFragmentSelectorType GetFragmentSelectorType() const { return m_fragmentSelectorType; }
     inline bool FragmentSelectorTypeHasBeenSet() const { return m_fragmentSelectorTypeHasBeenSet; }
-    inline void SetFragmentSelectorType(const DASHFragmentSelectorType& value) { m_fragmentSelectorTypeHasBeenSet = true; m_fragmentSelectorType = value; }
-    inline void SetFragmentSelectorType(DASHFragmentSelectorType&& value) { m_fragmentSelectorTypeHasBeenSet = true; m_fragmentSelectorType = std::move(value); }
-    inline DASHFragmentSelector& WithFragmentSelectorType(const DASHFragmentSelectorType& value) { SetFragmentSelectorType(value); return *this;}
-    inline DASHFragmentSelector& WithFragmentSelectorType(DASHFragmentSelectorType&& value) { SetFragmentSelectorType(std::move(value)); return *this;}
+    inline void SetFragmentSelectorType(DASHFragmentSelectorType value) { m_fragmentSelectorTypeHasBeenSet = true; m_fragmentSelectorType = value; }
+    inline DASHFragmentSelector& WithFragmentSelectorType(DASHFragmentSelectorType value) { SetFragmentSelectorType(value); return *this;}
     ///@}
 
     ///@{
@@ -78,16 +76,16 @@ namespace Model
      * value should not be present if <code>PlaybackType</code> is
      * <code>LIVE</code>.</p>
      */
-    inline const DASHTimestampRange& GetTimestampRange() const{ return m_timestampRange; }
+    inline const DASHTimestampRange& GetTimestampRange() const { return m_timestampRange; }
     inline bool TimestampRangeHasBeenSet() const { return m_timestampRangeHasBeenSet; }
-    inline void SetTimestampRange(const DASHTimestampRange& value) { m_timestampRangeHasBeenSet = true; m_timestampRange = value; }
-    inline void SetTimestampRange(DASHTimestampRange&& value) { m_timestampRangeHasBeenSet = true; m_timestampRange = std::move(value); }
-    inline DASHFragmentSelector& WithTimestampRange(const DASHTimestampRange& value) { SetTimestampRange(value); return *this;}
-    inline DASHFragmentSelector& WithTimestampRange(DASHTimestampRange&& value) { SetTimestampRange(std::move(value)); return *this;}
+    template<typename TimestampRangeT = DASHTimestampRange>
+    void SetTimestampRange(TimestampRangeT&& value) { m_timestampRangeHasBeenSet = true; m_timestampRange = std::forward<TimestampRangeT>(value); }
+    template<typename TimestampRangeT = DASHTimestampRange>
+    DASHFragmentSelector& WithTimestampRange(TimestampRangeT&& value) { SetTimestampRange(std::forward<TimestampRangeT>(value)); return *this;}
     ///@}
   private:
 
-    DASHFragmentSelectorType m_fragmentSelectorType;
+    DASHFragmentSelectorType m_fragmentSelectorType{DASHFragmentSelectorType::NOT_SET};
     bool m_fragmentSelectorTypeHasBeenSet = false;
 
     DASHTimestampRange m_timestampRange;

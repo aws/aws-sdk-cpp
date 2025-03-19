@@ -32,7 +32,7 @@ namespace Model
   class GetSuiteRunResult
   {
   public:
-    AWS_IOTDEVICEADVISOR_API GetSuiteRunResult();
+    AWS_IOTDEVICEADVISOR_API GetSuiteRunResult() = default;
     AWS_IOTDEVICEADVISOR_API GetSuiteRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTDEVICEADVISOR_API GetSuiteRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,175 +41,170 @@ namespace Model
     /**
      * <p>Suite definition ID for the test suite run.</p>
      */
-    inline const Aws::String& GetSuiteDefinitionId() const{ return m_suiteDefinitionId; }
-    inline void SetSuiteDefinitionId(const Aws::String& value) { m_suiteDefinitionId = value; }
-    inline void SetSuiteDefinitionId(Aws::String&& value) { m_suiteDefinitionId = std::move(value); }
-    inline void SetSuiteDefinitionId(const char* value) { m_suiteDefinitionId.assign(value); }
-    inline GetSuiteRunResult& WithSuiteDefinitionId(const Aws::String& value) { SetSuiteDefinitionId(value); return *this;}
-    inline GetSuiteRunResult& WithSuiteDefinitionId(Aws::String&& value) { SetSuiteDefinitionId(std::move(value)); return *this;}
-    inline GetSuiteRunResult& WithSuiteDefinitionId(const char* value) { SetSuiteDefinitionId(value); return *this;}
+    inline const Aws::String& GetSuiteDefinitionId() const { return m_suiteDefinitionId; }
+    template<typename SuiteDefinitionIdT = Aws::String>
+    void SetSuiteDefinitionId(SuiteDefinitionIdT&& value) { m_suiteDefinitionIdHasBeenSet = true; m_suiteDefinitionId = std::forward<SuiteDefinitionIdT>(value); }
+    template<typename SuiteDefinitionIdT = Aws::String>
+    GetSuiteRunResult& WithSuiteDefinitionId(SuiteDefinitionIdT&& value) { SetSuiteDefinitionId(std::forward<SuiteDefinitionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Suite definition version for the test suite run.</p>
      */
-    inline const Aws::String& GetSuiteDefinitionVersion() const{ return m_suiteDefinitionVersion; }
-    inline void SetSuiteDefinitionVersion(const Aws::String& value) { m_suiteDefinitionVersion = value; }
-    inline void SetSuiteDefinitionVersion(Aws::String&& value) { m_suiteDefinitionVersion = std::move(value); }
-    inline void SetSuiteDefinitionVersion(const char* value) { m_suiteDefinitionVersion.assign(value); }
-    inline GetSuiteRunResult& WithSuiteDefinitionVersion(const Aws::String& value) { SetSuiteDefinitionVersion(value); return *this;}
-    inline GetSuiteRunResult& WithSuiteDefinitionVersion(Aws::String&& value) { SetSuiteDefinitionVersion(std::move(value)); return *this;}
-    inline GetSuiteRunResult& WithSuiteDefinitionVersion(const char* value) { SetSuiteDefinitionVersion(value); return *this;}
+    inline const Aws::String& GetSuiteDefinitionVersion() const { return m_suiteDefinitionVersion; }
+    template<typename SuiteDefinitionVersionT = Aws::String>
+    void SetSuiteDefinitionVersion(SuiteDefinitionVersionT&& value) { m_suiteDefinitionVersionHasBeenSet = true; m_suiteDefinitionVersion = std::forward<SuiteDefinitionVersionT>(value); }
+    template<typename SuiteDefinitionVersionT = Aws::String>
+    GetSuiteRunResult& WithSuiteDefinitionVersion(SuiteDefinitionVersionT&& value) { SetSuiteDefinitionVersion(std::forward<SuiteDefinitionVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Suite run ID for the test suite run.</p>
      */
-    inline const Aws::String& GetSuiteRunId() const{ return m_suiteRunId; }
-    inline void SetSuiteRunId(const Aws::String& value) { m_suiteRunId = value; }
-    inline void SetSuiteRunId(Aws::String&& value) { m_suiteRunId = std::move(value); }
-    inline void SetSuiteRunId(const char* value) { m_suiteRunId.assign(value); }
-    inline GetSuiteRunResult& WithSuiteRunId(const Aws::String& value) { SetSuiteRunId(value); return *this;}
-    inline GetSuiteRunResult& WithSuiteRunId(Aws::String&& value) { SetSuiteRunId(std::move(value)); return *this;}
-    inline GetSuiteRunResult& WithSuiteRunId(const char* value) { SetSuiteRunId(value); return *this;}
+    inline const Aws::String& GetSuiteRunId() const { return m_suiteRunId; }
+    template<typename SuiteRunIdT = Aws::String>
+    void SetSuiteRunId(SuiteRunIdT&& value) { m_suiteRunIdHasBeenSet = true; m_suiteRunId = std::forward<SuiteRunIdT>(value); }
+    template<typename SuiteRunIdT = Aws::String>
+    GetSuiteRunResult& WithSuiteRunId(SuiteRunIdT&& value) { SetSuiteRunId(std::forward<SuiteRunIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the suite run.</p>
      */
-    inline const Aws::String& GetSuiteRunArn() const{ return m_suiteRunArn; }
-    inline void SetSuiteRunArn(const Aws::String& value) { m_suiteRunArn = value; }
-    inline void SetSuiteRunArn(Aws::String&& value) { m_suiteRunArn = std::move(value); }
-    inline void SetSuiteRunArn(const char* value) { m_suiteRunArn.assign(value); }
-    inline GetSuiteRunResult& WithSuiteRunArn(const Aws::String& value) { SetSuiteRunArn(value); return *this;}
-    inline GetSuiteRunResult& WithSuiteRunArn(Aws::String&& value) { SetSuiteRunArn(std::move(value)); return *this;}
-    inline GetSuiteRunResult& WithSuiteRunArn(const char* value) { SetSuiteRunArn(value); return *this;}
+    inline const Aws::String& GetSuiteRunArn() const { return m_suiteRunArn; }
+    template<typename SuiteRunArnT = Aws::String>
+    void SetSuiteRunArn(SuiteRunArnT&& value) { m_suiteRunArnHasBeenSet = true; m_suiteRunArn = std::forward<SuiteRunArnT>(value); }
+    template<typename SuiteRunArnT = Aws::String>
+    GetSuiteRunResult& WithSuiteRunArn(SuiteRunArnT&& value) { SetSuiteRunArn(std::forward<SuiteRunArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Suite run configuration for the test suite run.</p>
      */
-    inline const SuiteRunConfiguration& GetSuiteRunConfiguration() const{ return m_suiteRunConfiguration; }
-    inline void SetSuiteRunConfiguration(const SuiteRunConfiguration& value) { m_suiteRunConfiguration = value; }
-    inline void SetSuiteRunConfiguration(SuiteRunConfiguration&& value) { m_suiteRunConfiguration = std::move(value); }
-    inline GetSuiteRunResult& WithSuiteRunConfiguration(const SuiteRunConfiguration& value) { SetSuiteRunConfiguration(value); return *this;}
-    inline GetSuiteRunResult& WithSuiteRunConfiguration(SuiteRunConfiguration&& value) { SetSuiteRunConfiguration(std::move(value)); return *this;}
+    inline const SuiteRunConfiguration& GetSuiteRunConfiguration() const { return m_suiteRunConfiguration; }
+    template<typename SuiteRunConfigurationT = SuiteRunConfiguration>
+    void SetSuiteRunConfiguration(SuiteRunConfigurationT&& value) { m_suiteRunConfigurationHasBeenSet = true; m_suiteRunConfiguration = std::forward<SuiteRunConfigurationT>(value); }
+    template<typename SuiteRunConfigurationT = SuiteRunConfiguration>
+    GetSuiteRunResult& WithSuiteRunConfiguration(SuiteRunConfigurationT&& value) { SetSuiteRunConfiguration(std::forward<SuiteRunConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Test results for the test suite run.</p>
      */
-    inline const TestResult& GetTestResult() const{ return m_testResult; }
-    inline void SetTestResult(const TestResult& value) { m_testResult = value; }
-    inline void SetTestResult(TestResult&& value) { m_testResult = std::move(value); }
-    inline GetSuiteRunResult& WithTestResult(const TestResult& value) { SetTestResult(value); return *this;}
-    inline GetSuiteRunResult& WithTestResult(TestResult&& value) { SetTestResult(std::move(value)); return *this;}
+    inline const TestResult& GetTestResult() const { return m_testResult; }
+    template<typename TestResultT = TestResult>
+    void SetTestResult(TestResultT&& value) { m_testResultHasBeenSet = true; m_testResult = std::forward<TestResultT>(value); }
+    template<typename TestResultT = TestResult>
+    GetSuiteRunResult& WithTestResult(TestResultT&& value) { SetTestResult(std::forward<TestResultT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Date (in Unix epoch time) when the test suite run started.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTime = std::move(value); }
-    inline GetSuiteRunResult& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline GetSuiteRunResult& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    GetSuiteRunResult& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Date (in Unix epoch time) when the test suite run ended.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTime = std::move(value); }
-    inline GetSuiteRunResult& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline GetSuiteRunResult& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    GetSuiteRunResult& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Status for the test suite run.</p>
      */
-    inline const SuiteRunStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const SuiteRunStatus& value) { m_status = value; }
-    inline void SetStatus(SuiteRunStatus&& value) { m_status = std::move(value); }
-    inline GetSuiteRunResult& WithStatus(const SuiteRunStatus& value) { SetStatus(value); return *this;}
-    inline GetSuiteRunResult& WithStatus(SuiteRunStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline SuiteRunStatus GetStatus() const { return m_status; }
+    inline void SetStatus(SuiteRunStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetSuiteRunResult& WithStatus(SuiteRunStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Error reason for any test suite run failure.</p>
      */
-    inline const Aws::String& GetErrorReason() const{ return m_errorReason; }
-    inline void SetErrorReason(const Aws::String& value) { m_errorReason = value; }
-    inline void SetErrorReason(Aws::String&& value) { m_errorReason = std::move(value); }
-    inline void SetErrorReason(const char* value) { m_errorReason.assign(value); }
-    inline GetSuiteRunResult& WithErrorReason(const Aws::String& value) { SetErrorReason(value); return *this;}
-    inline GetSuiteRunResult& WithErrorReason(Aws::String&& value) { SetErrorReason(std::move(value)); return *this;}
-    inline GetSuiteRunResult& WithErrorReason(const char* value) { SetErrorReason(value); return *this;}
+    inline const Aws::String& GetErrorReason() const { return m_errorReason; }
+    template<typename ErrorReasonT = Aws::String>
+    void SetErrorReason(ErrorReasonT&& value) { m_errorReasonHasBeenSet = true; m_errorReason = std::forward<ErrorReasonT>(value); }
+    template<typename ErrorReasonT = Aws::String>
+    GetSuiteRunResult& WithErrorReason(ErrorReasonT&& value) { SetErrorReason(std::forward<ErrorReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags attached to the suite run.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline GetSuiteRunResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline GetSuiteRunResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline GetSuiteRunResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline GetSuiteRunResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetSuiteRunResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetSuiteRunResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetSuiteRunResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetSuiteRunResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetSuiteRunResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    GetSuiteRunResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    GetSuiteRunResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetSuiteRunResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetSuiteRunResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetSuiteRunResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetSuiteRunResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_suiteDefinitionId;
+    bool m_suiteDefinitionIdHasBeenSet = false;
 
     Aws::String m_suiteDefinitionVersion;
+    bool m_suiteDefinitionVersionHasBeenSet = false;
 
     Aws::String m_suiteRunId;
+    bool m_suiteRunIdHasBeenSet = false;
 
     Aws::String m_suiteRunArn;
+    bool m_suiteRunArnHasBeenSet = false;
 
     SuiteRunConfiguration m_suiteRunConfiguration;
+    bool m_suiteRunConfigurationHasBeenSet = false;
 
     TestResult m_testResult;
+    bool m_testResultHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
+    bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
+    bool m_endTimeHasBeenSet = false;
 
-    SuiteRunStatus m_status;
+    SuiteRunStatus m_status{SuiteRunStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_errorReason;
+    bool m_errorReasonHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-Ipv4PrefixSpecificationResponse::Ipv4PrefixSpecificationResponse() : 
-    m_ipv4PrefixHasBeenSet(false)
-{
-}
-
 Ipv4PrefixSpecificationResponse::Ipv4PrefixSpecificationResponse(const XmlNode& xmlNode)
-  : Ipv4PrefixSpecificationResponse()
 {
   *this = xmlNode;
 }

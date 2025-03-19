@@ -33,7 +33,7 @@ namespace Model
   class ConnectionProperties
   {
   public:
-    AWS_OPENSEARCHSERVICE_API ConnectionProperties();
+    AWS_OPENSEARCHSERVICE_API ConnectionProperties() = default;
     AWS_OPENSEARCHSERVICE_API ConnectionProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API ConnectionProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,26 +45,24 @@ namespace Model
      * <p>The endpoint of the remote domain. Applicable for VPC_ENDPOINT connection
      * mode.</p>
      */
-    inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
+    inline const Aws::String& GetEndpoint() const { return m_endpoint; }
     inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
-    inline void SetEndpoint(const Aws::String& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
-    inline void SetEndpoint(Aws::String&& value) { m_endpointHasBeenSet = true; m_endpoint = std::move(value); }
-    inline void SetEndpoint(const char* value) { m_endpointHasBeenSet = true; m_endpoint.assign(value); }
-    inline ConnectionProperties& WithEndpoint(const Aws::String& value) { SetEndpoint(value); return *this;}
-    inline ConnectionProperties& WithEndpoint(Aws::String&& value) { SetEndpoint(std::move(value)); return *this;}
-    inline ConnectionProperties& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
+    template<typename EndpointT = Aws::String>
+    void SetEndpoint(EndpointT&& value) { m_endpointHasBeenSet = true; m_endpoint = std::forward<EndpointT>(value); }
+    template<typename EndpointT = Aws::String>
+    ConnectionProperties& WithEndpoint(EndpointT&& value) { SetEndpoint(std::forward<EndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The connection properties for cross cluster search.</p>
      */
-    inline const CrossClusterSearchConnectionProperties& GetCrossClusterSearch() const{ return m_crossClusterSearch; }
+    inline const CrossClusterSearchConnectionProperties& GetCrossClusterSearch() const { return m_crossClusterSearch; }
     inline bool CrossClusterSearchHasBeenSet() const { return m_crossClusterSearchHasBeenSet; }
-    inline void SetCrossClusterSearch(const CrossClusterSearchConnectionProperties& value) { m_crossClusterSearchHasBeenSet = true; m_crossClusterSearch = value; }
-    inline void SetCrossClusterSearch(CrossClusterSearchConnectionProperties&& value) { m_crossClusterSearchHasBeenSet = true; m_crossClusterSearch = std::move(value); }
-    inline ConnectionProperties& WithCrossClusterSearch(const CrossClusterSearchConnectionProperties& value) { SetCrossClusterSearch(value); return *this;}
-    inline ConnectionProperties& WithCrossClusterSearch(CrossClusterSearchConnectionProperties&& value) { SetCrossClusterSearch(std::move(value)); return *this;}
+    template<typename CrossClusterSearchT = CrossClusterSearchConnectionProperties>
+    void SetCrossClusterSearch(CrossClusterSearchT&& value) { m_crossClusterSearchHasBeenSet = true; m_crossClusterSearch = std::forward<CrossClusterSearchT>(value); }
+    template<typename CrossClusterSearchT = CrossClusterSearchConnectionProperties>
+    ConnectionProperties& WithCrossClusterSearch(CrossClusterSearchT&& value) { SetCrossClusterSearch(std::forward<CrossClusterSearchT>(value)); return *this;}
     ///@}
   private:
 

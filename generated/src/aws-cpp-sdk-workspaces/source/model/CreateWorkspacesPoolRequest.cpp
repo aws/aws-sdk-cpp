@@ -12,18 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateWorkspacesPoolRequest::CreateWorkspacesPoolRequest() : 
-    m_poolNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_bundleIdHasBeenSet(false),
-    m_directoryIdHasBeenSet(false),
-    m_capacityHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_applicationSettingsHasBeenSet(false),
-    m_timeoutSettingsHasBeenSet(false)
-{
-}
-
 Aws::String CreateWorkspacesPoolRequest::SerializePayload() const
 {
   JsonValue payload;

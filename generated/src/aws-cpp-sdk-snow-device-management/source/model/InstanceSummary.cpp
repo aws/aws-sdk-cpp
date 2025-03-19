@@ -18,14 +18,7 @@ namespace SnowDeviceManagement
 namespace Model
 {
 
-InstanceSummary::InstanceSummary() : 
-    m_instanceHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false)
-{
-}
-
 InstanceSummary::InstanceSummary(JsonView jsonValue)
-  : InstanceSummary()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ InstanceSummary& InstanceSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("instance"))
   {
     m_instance = jsonValue.GetObject("instance");
-
     m_instanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetDouble("lastUpdatedAt");
-
     m_lastUpdatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

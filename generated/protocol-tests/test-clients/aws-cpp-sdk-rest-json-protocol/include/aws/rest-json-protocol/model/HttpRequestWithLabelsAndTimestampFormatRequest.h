@@ -21,7 +21,7 @@ namespace Model
   class HttpRequestWithLabelsAndTimestampFormatRequest : public RestJsonProtocolRequest
   {
   public:
-    AWS_RESTJSONPROTOCOL_API HttpRequestWithLabelsAndTimestampFormatRequest();
+    AWS_RESTJSONPROTOCOL_API HttpRequestWithLabelsAndTimestampFormatRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,94 +34,94 @@ namespace Model
 
     ///@{
     
-    inline const Aws::Utils::DateTime& GetMemberEpochSeconds() const{ return m_memberEpochSeconds; }
+    inline const Aws::Utils::DateTime& GetMemberEpochSeconds() const { return m_memberEpochSeconds; }
     inline bool MemberEpochSecondsHasBeenSet() const { return m_memberEpochSecondsHasBeenSet; }
-    inline void SetMemberEpochSeconds(const Aws::Utils::DateTime& value) { m_memberEpochSecondsHasBeenSet = true; m_memberEpochSeconds = value; }
-    inline void SetMemberEpochSeconds(Aws::Utils::DateTime&& value) { m_memberEpochSecondsHasBeenSet = true; m_memberEpochSeconds = std::move(value); }
-    inline HttpRequestWithLabelsAndTimestampFormatRequest& WithMemberEpochSeconds(const Aws::Utils::DateTime& value) { SetMemberEpochSeconds(value); return *this;}
-    inline HttpRequestWithLabelsAndTimestampFormatRequest& WithMemberEpochSeconds(Aws::Utils::DateTime&& value) { SetMemberEpochSeconds(std::move(value)); return *this;}
+    template<typename MemberEpochSecondsT = Aws::Utils::DateTime>
+    void SetMemberEpochSeconds(MemberEpochSecondsT&& value) { m_memberEpochSecondsHasBeenSet = true; m_memberEpochSeconds = std::forward<MemberEpochSecondsT>(value); }
+    template<typename MemberEpochSecondsT = Aws::Utils::DateTime>
+    HttpRequestWithLabelsAndTimestampFormatRequest& WithMemberEpochSeconds(MemberEpochSecondsT&& value) { SetMemberEpochSeconds(std::forward<MemberEpochSecondsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Utils::DateTime& GetMemberHttpDate() const{ return m_memberHttpDate; }
+    inline const Aws::Utils::DateTime& GetMemberHttpDate() const { return m_memberHttpDate; }
     inline bool MemberHttpDateHasBeenSet() const { return m_memberHttpDateHasBeenSet; }
-    inline void SetMemberHttpDate(const Aws::Utils::DateTime& value) { m_memberHttpDateHasBeenSet = true; m_memberHttpDate = value; }
-    inline void SetMemberHttpDate(Aws::Utils::DateTime&& value) { m_memberHttpDateHasBeenSet = true; m_memberHttpDate = std::move(value); }
-    inline HttpRequestWithLabelsAndTimestampFormatRequest& WithMemberHttpDate(const Aws::Utils::DateTime& value) { SetMemberHttpDate(value); return *this;}
-    inline HttpRequestWithLabelsAndTimestampFormatRequest& WithMemberHttpDate(Aws::Utils::DateTime&& value) { SetMemberHttpDate(std::move(value)); return *this;}
+    template<typename MemberHttpDateT = Aws::Utils::DateTime>
+    void SetMemberHttpDate(MemberHttpDateT&& value) { m_memberHttpDateHasBeenSet = true; m_memberHttpDate = std::forward<MemberHttpDateT>(value); }
+    template<typename MemberHttpDateT = Aws::Utils::DateTime>
+    HttpRequestWithLabelsAndTimestampFormatRequest& WithMemberHttpDate(MemberHttpDateT&& value) { SetMemberHttpDate(std::forward<MemberHttpDateT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Utils::DateTime& GetMemberDateTime() const{ return m_memberDateTime; }
+    inline const Aws::Utils::DateTime& GetMemberDateTime() const { return m_memberDateTime; }
     inline bool MemberDateTimeHasBeenSet() const { return m_memberDateTimeHasBeenSet; }
-    inline void SetMemberDateTime(const Aws::Utils::DateTime& value) { m_memberDateTimeHasBeenSet = true; m_memberDateTime = value; }
-    inline void SetMemberDateTime(Aws::Utils::DateTime&& value) { m_memberDateTimeHasBeenSet = true; m_memberDateTime = std::move(value); }
-    inline HttpRequestWithLabelsAndTimestampFormatRequest& WithMemberDateTime(const Aws::Utils::DateTime& value) { SetMemberDateTime(value); return *this;}
-    inline HttpRequestWithLabelsAndTimestampFormatRequest& WithMemberDateTime(Aws::Utils::DateTime&& value) { SetMemberDateTime(std::move(value)); return *this;}
+    template<typename MemberDateTimeT = Aws::Utils::DateTime>
+    void SetMemberDateTime(MemberDateTimeT&& value) { m_memberDateTimeHasBeenSet = true; m_memberDateTime = std::forward<MemberDateTimeT>(value); }
+    template<typename MemberDateTimeT = Aws::Utils::DateTime>
+    HttpRequestWithLabelsAndTimestampFormatRequest& WithMemberDateTime(MemberDateTimeT&& value) { SetMemberDateTime(std::forward<MemberDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Utils::DateTime& GetDefaultFormat() const{ return m_defaultFormat; }
+    inline const Aws::Utils::DateTime& GetDefaultFormat() const { return m_defaultFormat; }
     inline bool DefaultFormatHasBeenSet() const { return m_defaultFormatHasBeenSet; }
-    inline void SetDefaultFormat(const Aws::Utils::DateTime& value) { m_defaultFormatHasBeenSet = true; m_defaultFormat = value; }
-    inline void SetDefaultFormat(Aws::Utils::DateTime&& value) { m_defaultFormatHasBeenSet = true; m_defaultFormat = std::move(value); }
-    inline HttpRequestWithLabelsAndTimestampFormatRequest& WithDefaultFormat(const Aws::Utils::DateTime& value) { SetDefaultFormat(value); return *this;}
-    inline HttpRequestWithLabelsAndTimestampFormatRequest& WithDefaultFormat(Aws::Utils::DateTime&& value) { SetDefaultFormat(std::move(value)); return *this;}
+    template<typename DefaultFormatT = Aws::Utils::DateTime>
+    void SetDefaultFormat(DefaultFormatT&& value) { m_defaultFormatHasBeenSet = true; m_defaultFormat = std::forward<DefaultFormatT>(value); }
+    template<typename DefaultFormatT = Aws::Utils::DateTime>
+    HttpRequestWithLabelsAndTimestampFormatRequest& WithDefaultFormat(DefaultFormatT&& value) { SetDefaultFormat(std::forward<DefaultFormatT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Utils::DateTime& GetTargetEpochSeconds() const{ return m_targetEpochSeconds; }
+    inline const Aws::Utils::DateTime& GetTargetEpochSeconds() const { return m_targetEpochSeconds; }
     inline bool TargetEpochSecondsHasBeenSet() const { return m_targetEpochSecondsHasBeenSet; }
-    inline void SetTargetEpochSeconds(const Aws::Utils::DateTime& value) { m_targetEpochSecondsHasBeenSet = true; m_targetEpochSeconds = value; }
-    inline void SetTargetEpochSeconds(Aws::Utils::DateTime&& value) { m_targetEpochSecondsHasBeenSet = true; m_targetEpochSeconds = std::move(value); }
-    inline HttpRequestWithLabelsAndTimestampFormatRequest& WithTargetEpochSeconds(const Aws::Utils::DateTime& value) { SetTargetEpochSeconds(value); return *this;}
-    inline HttpRequestWithLabelsAndTimestampFormatRequest& WithTargetEpochSeconds(Aws::Utils::DateTime&& value) { SetTargetEpochSeconds(std::move(value)); return *this;}
+    template<typename TargetEpochSecondsT = Aws::Utils::DateTime>
+    void SetTargetEpochSeconds(TargetEpochSecondsT&& value) { m_targetEpochSecondsHasBeenSet = true; m_targetEpochSeconds = std::forward<TargetEpochSecondsT>(value); }
+    template<typename TargetEpochSecondsT = Aws::Utils::DateTime>
+    HttpRequestWithLabelsAndTimestampFormatRequest& WithTargetEpochSeconds(TargetEpochSecondsT&& value) { SetTargetEpochSeconds(std::forward<TargetEpochSecondsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Utils::DateTime& GetTargetHttpDate() const{ return m_targetHttpDate; }
+    inline const Aws::Utils::DateTime& GetTargetHttpDate() const { return m_targetHttpDate; }
     inline bool TargetHttpDateHasBeenSet() const { return m_targetHttpDateHasBeenSet; }
-    inline void SetTargetHttpDate(const Aws::Utils::DateTime& value) { m_targetHttpDateHasBeenSet = true; m_targetHttpDate = value; }
-    inline void SetTargetHttpDate(Aws::Utils::DateTime&& value) { m_targetHttpDateHasBeenSet = true; m_targetHttpDate = std::move(value); }
-    inline HttpRequestWithLabelsAndTimestampFormatRequest& WithTargetHttpDate(const Aws::Utils::DateTime& value) { SetTargetHttpDate(value); return *this;}
-    inline HttpRequestWithLabelsAndTimestampFormatRequest& WithTargetHttpDate(Aws::Utils::DateTime&& value) { SetTargetHttpDate(std::move(value)); return *this;}
+    template<typename TargetHttpDateT = Aws::Utils::DateTime>
+    void SetTargetHttpDate(TargetHttpDateT&& value) { m_targetHttpDateHasBeenSet = true; m_targetHttpDate = std::forward<TargetHttpDateT>(value); }
+    template<typename TargetHttpDateT = Aws::Utils::DateTime>
+    HttpRequestWithLabelsAndTimestampFormatRequest& WithTargetHttpDate(TargetHttpDateT&& value) { SetTargetHttpDate(std::forward<TargetHttpDateT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Utils::DateTime& GetTargetDateTime() const{ return m_targetDateTime; }
+    inline const Aws::Utils::DateTime& GetTargetDateTime() const { return m_targetDateTime; }
     inline bool TargetDateTimeHasBeenSet() const { return m_targetDateTimeHasBeenSet; }
-    inline void SetTargetDateTime(const Aws::Utils::DateTime& value) { m_targetDateTimeHasBeenSet = true; m_targetDateTime = value; }
-    inline void SetTargetDateTime(Aws::Utils::DateTime&& value) { m_targetDateTimeHasBeenSet = true; m_targetDateTime = std::move(value); }
-    inline HttpRequestWithLabelsAndTimestampFormatRequest& WithTargetDateTime(const Aws::Utils::DateTime& value) { SetTargetDateTime(value); return *this;}
-    inline HttpRequestWithLabelsAndTimestampFormatRequest& WithTargetDateTime(Aws::Utils::DateTime&& value) { SetTargetDateTime(std::move(value)); return *this;}
+    template<typename TargetDateTimeT = Aws::Utils::DateTime>
+    void SetTargetDateTime(TargetDateTimeT&& value) { m_targetDateTimeHasBeenSet = true; m_targetDateTime = std::forward<TargetDateTimeT>(value); }
+    template<typename TargetDateTimeT = Aws::Utils::DateTime>
+    HttpRequestWithLabelsAndTimestampFormatRequest& WithTargetDateTime(TargetDateTimeT&& value) { SetTargetDateTime(std::forward<TargetDateTimeT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_memberEpochSeconds;
+    Aws::Utils::DateTime m_memberEpochSeconds{};
     bool m_memberEpochSecondsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_memberHttpDate;
+    Aws::Utils::DateTime m_memberHttpDate{};
     bool m_memberHttpDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_memberDateTime;
+    Aws::Utils::DateTime m_memberDateTime{};
     bool m_memberDateTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_defaultFormat;
+    Aws::Utils::DateTime m_defaultFormat{};
     bool m_defaultFormatHasBeenSet = false;
 
-    Aws::Utils::DateTime m_targetEpochSeconds;
+    Aws::Utils::DateTime m_targetEpochSeconds{};
     bool m_targetEpochSecondsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_targetHttpDate;
+    Aws::Utils::DateTime m_targetHttpDate{};
     bool m_targetHttpDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_targetDateTime;
+    Aws::Utils::DateTime m_targetDateTime{};
     bool m_targetDateTimeHasBeenSet = false;
   };
 

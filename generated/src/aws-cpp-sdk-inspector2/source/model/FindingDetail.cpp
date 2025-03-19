@@ -18,24 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-FindingDetail::FindingDetail() : 
-    m_cisaDataHasBeenSet(false),
-    m_cwesHasBeenSet(false),
-    m_epssScore(0.0),
-    m_epssScoreHasBeenSet(false),
-    m_evidencesHasBeenSet(false),
-    m_exploitObservedHasBeenSet(false),
-    m_findingArnHasBeenSet(false),
-    m_referenceUrlsHasBeenSet(false),
-    m_riskScore(0),
-    m_riskScoreHasBeenSet(false),
-    m_toolsHasBeenSet(false),
-    m_ttpsHasBeenSet(false)
-{
-}
-
 FindingDetail::FindingDetail(JsonView jsonValue)
-  : FindingDetail()
 {
   *this = jsonValue;
 }
@@ -45,10 +28,8 @@ FindingDetail& FindingDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("cisaData"))
   {
     m_cisaData = jsonValue.GetObject("cisaData");
-
     m_cisaDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cwes"))
   {
     Aws::Utils::Array<JsonView> cwesJsonList = jsonValue.GetArray("cwes");
@@ -58,14 +39,11 @@ FindingDetail& FindingDetail::operator =(JsonView jsonValue)
     }
     m_cwesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("epssScore"))
   {
     m_epssScore = jsonValue.GetDouble("epssScore");
-
     m_epssScoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("evidences"))
   {
     Aws::Utils::Array<JsonView> evidencesJsonList = jsonValue.GetArray("evidences");
@@ -75,21 +53,16 @@ FindingDetail& FindingDetail::operator =(JsonView jsonValue)
     }
     m_evidencesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("exploitObserved"))
   {
     m_exploitObserved = jsonValue.GetObject("exploitObserved");
-
     m_exploitObservedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("findingArn"))
   {
     m_findingArn = jsonValue.GetString("findingArn");
-
     m_findingArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("referenceUrls"))
   {
     Aws::Utils::Array<JsonView> referenceUrlsJsonList = jsonValue.GetArray("referenceUrls");
@@ -99,14 +72,11 @@ FindingDetail& FindingDetail::operator =(JsonView jsonValue)
     }
     m_referenceUrlsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("riskScore"))
   {
     m_riskScore = jsonValue.GetInteger("riskScore");
-
     m_riskScoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tools"))
   {
     Aws::Utils::Array<JsonView> toolsJsonList = jsonValue.GetArray("tools");
@@ -116,7 +86,6 @@ FindingDetail& FindingDetail::operator =(JsonView jsonValue)
     }
     m_toolsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ttps"))
   {
     Aws::Utils::Array<JsonView> ttpsJsonList = jsonValue.GetArray("ttps");
@@ -126,7 +95,6 @@ FindingDetail& FindingDetail::operator =(JsonView jsonValue)
     }
     m_ttpsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,18 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-Connection::Connection() : 
-    m_replicationInstanceArnHasBeenSet(false),
-    m_endpointArnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_lastFailureMessageHasBeenSet(false),
-    m_endpointIdentifierHasBeenSet(false),
-    m_replicationInstanceIdentifierHasBeenSet(false)
-{
-}
-
 Connection::Connection(JsonView jsonValue)
-  : Connection()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ Connection& Connection::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ReplicationInstanceArn"))
   {
     m_replicationInstanceArn = jsonValue.GetString("ReplicationInstanceArn");
-
     m_replicationInstanceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointArn"))
   {
     m_endpointArn = jsonValue.GetString("EndpointArn");
-
     m_endpointArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastFailureMessage"))
   {
     m_lastFailureMessage = jsonValue.GetString("LastFailureMessage");
-
     m_lastFailureMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointIdentifier"))
   {
     m_endpointIdentifier = jsonValue.GetString("EndpointIdentifier");
-
     m_endpointIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicationInstanceIdentifier"))
   {
     m_replicationInstanceIdentifier = jsonValue.GetString("ReplicationInstanceIdentifier");
-
     m_replicationInstanceIdentifierHasBeenSet = true;
   }
-
   return *this;
 }
 

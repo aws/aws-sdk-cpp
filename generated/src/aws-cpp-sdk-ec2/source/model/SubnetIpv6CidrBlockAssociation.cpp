@@ -20,19 +20,7 @@ namespace EC2
 namespace Model
 {
 
-SubnetIpv6CidrBlockAssociation::SubnetIpv6CidrBlockAssociation() : 
-    m_associationIdHasBeenSet(false),
-    m_ipv6CidrBlockHasBeenSet(false),
-    m_ipv6CidrBlockStateHasBeenSet(false),
-    m_ipv6AddressAttribute(Ipv6AddressAttribute::NOT_SET),
-    m_ipv6AddressAttributeHasBeenSet(false),
-    m_ipSource(IpSource::NOT_SET),
-    m_ipSourceHasBeenSet(false)
-{
-}
-
 SubnetIpv6CidrBlockAssociation::SubnetIpv6CidrBlockAssociation(const XmlNode& xmlNode)
-  : SubnetIpv6CidrBlockAssociation()
 {
   *this = xmlNode;
 }
@@ -64,13 +52,13 @@ SubnetIpv6CidrBlockAssociation& SubnetIpv6CidrBlockAssociation::operator =(const
     XmlNode ipv6AddressAttributeNode = resultNode.FirstChild("ipv6AddressAttribute");
     if(!ipv6AddressAttributeNode.IsNull())
     {
-      m_ipv6AddressAttribute = Ipv6AddressAttributeMapper::GetIpv6AddressAttributeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipv6AddressAttributeNode.GetText()).c_str()).c_str());
+      m_ipv6AddressAttribute = Ipv6AddressAttributeMapper::GetIpv6AddressAttributeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipv6AddressAttributeNode.GetText()).c_str()));
       m_ipv6AddressAttributeHasBeenSet = true;
     }
     XmlNode ipSourceNode = resultNode.FirstChild("ipSource");
     if(!ipSourceNode.IsNull())
     {
-      m_ipSource = IpSourceMapper::GetIpSourceForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipSourceNode.GetText()).c_str()).c_str());
+      m_ipSource = IpSourceMapper::GetIpSourceForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipSourceNode.GetText()).c_str()));
       m_ipSourceHasBeenSet = true;
     }
   }

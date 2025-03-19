@@ -18,18 +18,7 @@ namespace EMR
 namespace Model
 {
 
-StepExecutionStatusDetail::StepExecutionStatusDetail() : 
-    m_state(StepExecutionState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_startDateTimeHasBeenSet(false),
-    m_endDateTimeHasBeenSet(false),
-    m_lastStateChangeReasonHasBeenSet(false)
-{
-}
-
 StepExecutionStatusDetail::StepExecutionStatusDetail(JsonView jsonValue)
-  : StepExecutionStatusDetail()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ StepExecutionStatusDetail& StepExecutionStatusDetail::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("State"))
   {
     m_state = StepExecutionStateMapper::GetStepExecutionStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("CreationDateTime");
-
     m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartDateTime"))
   {
     m_startDateTime = jsonValue.GetDouble("StartDateTime");
-
     m_startDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndDateTime"))
   {
     m_endDateTime = jsonValue.GetDouble("EndDateTime");
-
     m_endDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastStateChangeReason"))
   {
     m_lastStateChangeReason = jsonValue.GetString("LastStateChangeReason");
-
     m_lastStateChangeReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

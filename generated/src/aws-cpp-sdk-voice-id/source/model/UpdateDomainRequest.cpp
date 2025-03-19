@@ -12,14 +12,6 @@ using namespace Aws::VoiceID::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDomainRequest::UpdateDomainRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_serverSideEncryptionConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDomainRequest::SerializePayload() const
 {
   JsonValue payload;

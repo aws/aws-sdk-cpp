@@ -18,13 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-RetrievalResultWebLocation::RetrievalResultWebLocation() : 
-    m_urlHasBeenSet(false)
-{
-}
-
 RetrievalResultWebLocation::RetrievalResultWebLocation(JsonView jsonValue)
-  : RetrievalResultWebLocation()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RetrievalResultWebLocation& RetrievalResultWebLocation::operator =(JsonView json
   if(jsonValue.ValueExists("url"))
   {
     m_url = jsonValue.GetString("url");
-
     m_urlHasBeenSet = true;
   }
-
   return *this;
 }
 

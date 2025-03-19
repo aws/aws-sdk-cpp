@@ -32,7 +32,7 @@ namespace Model
   class SimulationSoftwareSuite
   {
   public:
-    AWS_ROBOMAKER_API SimulationSoftwareSuite();
+    AWS_ROBOMAKER_API SimulationSoftwareSuite() = default;
     AWS_ROBOMAKER_API SimulationSoftwareSuite(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROBOMAKER_API SimulationSoftwareSuite& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
      * <p>The name of the simulation software suite. <code>SimulationRuntime</code> is
      * the only supported value.</p>
      */
-    inline const SimulationSoftwareSuiteType& GetName() const{ return m_name; }
+    inline SimulationSoftwareSuiteType GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const SimulationSoftwareSuiteType& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(SimulationSoftwareSuiteType&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline SimulationSoftwareSuite& WithName(const SimulationSoftwareSuiteType& value) { SetName(value); return *this;}
-    inline SimulationSoftwareSuite& WithName(SimulationSoftwareSuiteType&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(SimulationSoftwareSuiteType value) { m_nameHasBeenSet = true; m_name = value; }
+    inline SimulationSoftwareSuite& WithName(SimulationSoftwareSuiteType value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -56,18 +54,16 @@ namespace Model
      * <p>The version of the simulation software suite. Not applicable for
      * <code>SimulationRuntime</code>.</p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
+    inline const Aws::String& GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-    inline SimulationSoftwareSuite& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline SimulationSoftwareSuite& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline SimulationSoftwareSuite& WithVersion(const char* value) { SetVersion(value); return *this;}
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    SimulationSoftwareSuite& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
   private:
 
-    SimulationSoftwareSuiteType m_name;
+    SimulationSoftwareSuiteType m_name{SimulationSoftwareSuiteType::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::String m_version;

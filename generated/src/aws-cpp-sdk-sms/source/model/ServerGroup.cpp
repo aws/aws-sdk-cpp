@@ -18,15 +18,7 @@ namespace SMS
 namespace Model
 {
 
-ServerGroup::ServerGroup() : 
-    m_serverGroupIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_serverListHasBeenSet(false)
-{
-}
-
 ServerGroup::ServerGroup(JsonView jsonValue)
-  : ServerGroup()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ServerGroup& ServerGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("serverGroupId"))
   {
     m_serverGroupId = jsonValue.GetString("serverGroupId");
-
     m_serverGroupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serverList"))
   {
     Aws::Utils::Array<JsonView> serverListJsonList = jsonValue.GetArray("serverList");
@@ -56,7 +44,6 @@ ServerGroup& ServerGroup::operator =(JsonView jsonValue)
     }
     m_serverListHasBeenSet = true;
   }
-
   return *this;
 }
 

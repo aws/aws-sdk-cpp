@@ -35,7 +35,7 @@ namespace Model
   class DataDestinationConfig
   {
   public:
-    AWS_IOTFLEETWISE_API DataDestinationConfig();
+    AWS_IOTFLEETWISE_API DataDestinationConfig() = default;
     AWS_IOTFLEETWISE_API DataDestinationConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API DataDestinationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,24 +46,24 @@ namespace Model
      * <p>The Amazon S3 bucket where the Amazon Web Services IoT FleetWise campaign
      * sends data.</p>
      */
-    inline const S3Config& GetS3Config() const{ return m_s3Config; }
+    inline const S3Config& GetS3Config() const { return m_s3Config; }
     inline bool S3ConfigHasBeenSet() const { return m_s3ConfigHasBeenSet; }
-    inline void SetS3Config(const S3Config& value) { m_s3ConfigHasBeenSet = true; m_s3Config = value; }
-    inline void SetS3Config(S3Config&& value) { m_s3ConfigHasBeenSet = true; m_s3Config = std::move(value); }
-    inline DataDestinationConfig& WithS3Config(const S3Config& value) { SetS3Config(value); return *this;}
-    inline DataDestinationConfig& WithS3Config(S3Config&& value) { SetS3Config(std::move(value)); return *this;}
+    template<typename S3ConfigT = S3Config>
+    void SetS3Config(S3ConfigT&& value) { m_s3ConfigHasBeenSet = true; m_s3Config = std::forward<S3ConfigT>(value); }
+    template<typename S3ConfigT = S3Config>
+    DataDestinationConfig& WithS3Config(S3ConfigT&& value) { SetS3Config(std::forward<S3ConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Timestream table where the campaign sends data.</p>
      */
-    inline const TimestreamConfig& GetTimestreamConfig() const{ return m_timestreamConfig; }
+    inline const TimestreamConfig& GetTimestreamConfig() const { return m_timestreamConfig; }
     inline bool TimestreamConfigHasBeenSet() const { return m_timestreamConfigHasBeenSet; }
-    inline void SetTimestreamConfig(const TimestreamConfig& value) { m_timestreamConfigHasBeenSet = true; m_timestreamConfig = value; }
-    inline void SetTimestreamConfig(TimestreamConfig&& value) { m_timestreamConfigHasBeenSet = true; m_timestreamConfig = std::move(value); }
-    inline DataDestinationConfig& WithTimestreamConfig(const TimestreamConfig& value) { SetTimestreamConfig(value); return *this;}
-    inline DataDestinationConfig& WithTimestreamConfig(TimestreamConfig&& value) { SetTimestreamConfig(std::move(value)); return *this;}
+    template<typename TimestreamConfigT = TimestreamConfig>
+    void SetTimestreamConfig(TimestreamConfigT&& value) { m_timestreamConfigHasBeenSet = true; m_timestreamConfig = std::forward<TimestreamConfigT>(value); }
+    template<typename TimestreamConfigT = TimestreamConfig>
+    DataDestinationConfig& WithTimestreamConfig(TimestreamConfigT&& value) { SetTimestreamConfig(std::forward<TimestreamConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,12 +75,12 @@ namespace Model
      * Web Services Region and feature availability</a> in the <i>Amazon Web Services
      * IoT FleetWise Developer Guide</i>.</p> 
      */
-    inline const MqttTopicConfig& GetMqttTopicConfig() const{ return m_mqttTopicConfig; }
+    inline const MqttTopicConfig& GetMqttTopicConfig() const { return m_mqttTopicConfig; }
     inline bool MqttTopicConfigHasBeenSet() const { return m_mqttTopicConfigHasBeenSet; }
-    inline void SetMqttTopicConfig(const MqttTopicConfig& value) { m_mqttTopicConfigHasBeenSet = true; m_mqttTopicConfig = value; }
-    inline void SetMqttTopicConfig(MqttTopicConfig&& value) { m_mqttTopicConfigHasBeenSet = true; m_mqttTopicConfig = std::move(value); }
-    inline DataDestinationConfig& WithMqttTopicConfig(const MqttTopicConfig& value) { SetMqttTopicConfig(value); return *this;}
-    inline DataDestinationConfig& WithMqttTopicConfig(MqttTopicConfig&& value) { SetMqttTopicConfig(std::move(value)); return *this;}
+    template<typename MqttTopicConfigT = MqttTopicConfig>
+    void SetMqttTopicConfig(MqttTopicConfigT&& value) { m_mqttTopicConfigHasBeenSet = true; m_mqttTopicConfig = std::forward<MqttTopicConfigT>(value); }
+    template<typename MqttTopicConfigT = MqttTopicConfig>
+    DataDestinationConfig& WithMqttTopicConfig(MqttTopicConfigT&& value) { SetMqttTopicConfig(std::forward<MqttTopicConfigT>(value)); return *this;}
     ///@}
   private:
 

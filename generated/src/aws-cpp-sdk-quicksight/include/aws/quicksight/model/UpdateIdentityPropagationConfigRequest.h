@@ -23,7 +23,7 @@ namespace Model
   class UpdateIdentityPropagationConfigRequest : public QuickSightRequest
   {
   public:
-    AWS_QUICKSIGHT_API UpdateIdentityPropagationConfigRequest();
+    AWS_QUICKSIGHT_API UpdateIdentityPropagationConfigRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The ID of the Amazon Web Services account that contains the identity
      * propagation configuration that you want to update.</p>
      */
-    inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
+    inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-    inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
-    inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
-    inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
-    inline UpdateIdentityPropagationConfigRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
-    inline UpdateIdentityPropagationConfigRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
-    inline UpdateIdentityPropagationConfigRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+    template<typename AwsAccountIdT = Aws::String>
+    void SetAwsAccountId(AwsAccountIdT&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::forward<AwsAccountIdT>(value); }
+    template<typename AwsAccountIdT = Aws::String>
+    UpdateIdentityPropagationConfigRequest& WithAwsAccountId(AwsAccountIdT&& value) { SetAwsAccountId(std::forward<AwsAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,12 +52,10 @@ namespace Model
      * <p>The name of the Amazon Web Services service that contains the authorized
      * targets that you want to add or update.</p>
      */
-    inline const ServiceType& GetService() const{ return m_service; }
+    inline ServiceType GetService() const { return m_service; }
     inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }
-    inline void SetService(const ServiceType& value) { m_serviceHasBeenSet = true; m_service = value; }
-    inline void SetService(ServiceType&& value) { m_serviceHasBeenSet = true; m_service = std::move(value); }
-    inline UpdateIdentityPropagationConfigRequest& WithService(const ServiceType& value) { SetService(value); return *this;}
-    inline UpdateIdentityPropagationConfigRequest& WithService(ServiceType&& value) { SetService(std::move(value)); return *this;}
+    inline void SetService(ServiceType value) { m_serviceHasBeenSet = true; m_service = value; }
+    inline UpdateIdentityPropagationConfigRequest& WithService(ServiceType value) { SetService(value); return *this;}
     ///@}
 
     ///@{
@@ -67,22 +63,21 @@ namespace Model
      * <p>Specifies a list of application ARNs that represent the authorized targets
      * for a service.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAuthorizedTargets() const{ return m_authorizedTargets; }
+    inline const Aws::Vector<Aws::String>& GetAuthorizedTargets() const { return m_authorizedTargets; }
     inline bool AuthorizedTargetsHasBeenSet() const { return m_authorizedTargetsHasBeenSet; }
-    inline void SetAuthorizedTargets(const Aws::Vector<Aws::String>& value) { m_authorizedTargetsHasBeenSet = true; m_authorizedTargets = value; }
-    inline void SetAuthorizedTargets(Aws::Vector<Aws::String>&& value) { m_authorizedTargetsHasBeenSet = true; m_authorizedTargets = std::move(value); }
-    inline UpdateIdentityPropagationConfigRequest& WithAuthorizedTargets(const Aws::Vector<Aws::String>& value) { SetAuthorizedTargets(value); return *this;}
-    inline UpdateIdentityPropagationConfigRequest& WithAuthorizedTargets(Aws::Vector<Aws::String>&& value) { SetAuthorizedTargets(std::move(value)); return *this;}
-    inline UpdateIdentityPropagationConfigRequest& AddAuthorizedTargets(const Aws::String& value) { m_authorizedTargetsHasBeenSet = true; m_authorizedTargets.push_back(value); return *this; }
-    inline UpdateIdentityPropagationConfigRequest& AddAuthorizedTargets(Aws::String&& value) { m_authorizedTargetsHasBeenSet = true; m_authorizedTargets.push_back(std::move(value)); return *this; }
-    inline UpdateIdentityPropagationConfigRequest& AddAuthorizedTargets(const char* value) { m_authorizedTargetsHasBeenSet = true; m_authorizedTargets.push_back(value); return *this; }
+    template<typename AuthorizedTargetsT = Aws::Vector<Aws::String>>
+    void SetAuthorizedTargets(AuthorizedTargetsT&& value) { m_authorizedTargetsHasBeenSet = true; m_authorizedTargets = std::forward<AuthorizedTargetsT>(value); }
+    template<typename AuthorizedTargetsT = Aws::Vector<Aws::String>>
+    UpdateIdentityPropagationConfigRequest& WithAuthorizedTargets(AuthorizedTargetsT&& value) { SetAuthorizedTargets(std::forward<AuthorizedTargetsT>(value)); return *this;}
+    template<typename AuthorizedTargetsT = Aws::String>
+    UpdateIdentityPropagationConfigRequest& AddAuthorizedTargets(AuthorizedTargetsT&& value) { m_authorizedTargetsHasBeenSet = true; m_authorizedTargets.emplace_back(std::forward<AuthorizedTargetsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_awsAccountId;
     bool m_awsAccountIdHasBeenSet = false;
 
-    ServiceType m_service;
+    ServiceType m_service{ServiceType::NOT_SET};
     bool m_serviceHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_authorizedTargets;

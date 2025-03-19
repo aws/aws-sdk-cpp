@@ -12,18 +12,6 @@ using namespace Aws::XRay::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetInsightSummariesRequest::GetInsightSummariesRequest() : 
-    m_statesHasBeenSet(false),
-    m_groupARNHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetInsightSummariesRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,14 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-CitationEvent::CitationEvent() : 
-    m_generatedResponsePartHasBeenSet(false),
-    m_retrievedReferencesHasBeenSet(false)
-{
-}
-
 CitationEvent::CitationEvent(JsonView jsonValue)
-  : CitationEvent()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ CitationEvent& CitationEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("generatedResponsePart"))
   {
     m_generatedResponsePart = jsonValue.GetObject("generatedResponsePart");
-
     m_generatedResponsePartHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("retrievedReferences"))
   {
     Aws::Utils::Array<JsonView> retrievedReferencesJsonList = jsonValue.GetArray("retrievedReferences");
@@ -48,7 +39,6 @@ CitationEvent& CitationEvent::operator =(JsonView jsonValue)
     }
     m_retrievedReferencesHasBeenSet = true;
   }
-
   return *this;
 }
 

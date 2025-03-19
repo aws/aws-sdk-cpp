@@ -21,7 +21,7 @@ namespace Model
   class DeleteRegistrationAttachmentRequest : public PinpointSMSVoiceV2Request
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API DeleteRegistrationAttachmentRequest();
+    AWS_PINPOINTSMSVOICEV2_API DeleteRegistrationAttachmentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The unique identifier for the registration attachment.</p>
      */
-    inline const Aws::String& GetRegistrationAttachmentId() const{ return m_registrationAttachmentId; }
+    inline const Aws::String& GetRegistrationAttachmentId() const { return m_registrationAttachmentId; }
     inline bool RegistrationAttachmentIdHasBeenSet() const { return m_registrationAttachmentIdHasBeenSet; }
-    inline void SetRegistrationAttachmentId(const Aws::String& value) { m_registrationAttachmentIdHasBeenSet = true; m_registrationAttachmentId = value; }
-    inline void SetRegistrationAttachmentId(Aws::String&& value) { m_registrationAttachmentIdHasBeenSet = true; m_registrationAttachmentId = std::move(value); }
-    inline void SetRegistrationAttachmentId(const char* value) { m_registrationAttachmentIdHasBeenSet = true; m_registrationAttachmentId.assign(value); }
-    inline DeleteRegistrationAttachmentRequest& WithRegistrationAttachmentId(const Aws::String& value) { SetRegistrationAttachmentId(value); return *this;}
-    inline DeleteRegistrationAttachmentRequest& WithRegistrationAttachmentId(Aws::String&& value) { SetRegistrationAttachmentId(std::move(value)); return *this;}
-    inline DeleteRegistrationAttachmentRequest& WithRegistrationAttachmentId(const char* value) { SetRegistrationAttachmentId(value); return *this;}
+    template<typename RegistrationAttachmentIdT = Aws::String>
+    void SetRegistrationAttachmentId(RegistrationAttachmentIdT&& value) { m_registrationAttachmentIdHasBeenSet = true; m_registrationAttachmentId = std::forward<RegistrationAttachmentIdT>(value); }
+    template<typename RegistrationAttachmentIdT = Aws::String>
+    DeleteRegistrationAttachmentRequest& WithRegistrationAttachmentId(RegistrationAttachmentIdT&& value) { SetRegistrationAttachmentId(std::forward<RegistrationAttachmentIdT>(value)); return *this;}
     ///@}
   private:
 

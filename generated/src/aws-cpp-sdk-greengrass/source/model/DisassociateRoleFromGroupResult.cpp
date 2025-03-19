@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DisassociateRoleFromGroupResult::DisassociateRoleFromGroupResult()
-{
-}
-
 DisassociateRoleFromGroupResult::DisassociateRoleFromGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DisassociateRoleFromGroupResult& DisassociateRoleFromGroupResult::operator =(con
   if(jsonValue.ValueExists("DisassociatedAt"))
   {
     m_disassociatedAt = jsonValue.GetString("DisassociatedAt");
-
+    m_disassociatedAtHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

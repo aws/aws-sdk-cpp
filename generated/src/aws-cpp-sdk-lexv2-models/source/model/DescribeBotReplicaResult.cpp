@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeBotReplicaResult::DescribeBotReplicaResult() : 
-    m_botReplicaStatus(BotReplicaStatus::NOT_SET)
-{
-}
-
 DescribeBotReplicaResult::DescribeBotReplicaResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeBotReplicaResult()
 {
   *this = result;
 }
@@ -34,33 +28,28 @@ DescribeBotReplicaResult& DescribeBotReplicaResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("botId"))
   {
     m_botId = jsonValue.GetString("botId");
-
+    m_botIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("replicaRegion"))
   {
     m_replicaRegion = jsonValue.GetString("replicaRegion");
-
+    m_replicaRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceRegion"))
   {
     m_sourceRegion = jsonValue.GetString("sourceRegion");
-
+    m_sourceRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
-
+    m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("botReplicaStatus"))
   {
     m_botReplicaStatus = BotReplicaStatusMapper::GetBotReplicaStatusForName(jsonValue.GetString("botReplicaStatus"));
-
+    m_botReplicaStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureReasons"))
   {
     Aws::Utils::Array<JsonView> failureReasonsJsonList = jsonValue.GetArray("failureReasons");
@@ -68,14 +57,15 @@ DescribeBotReplicaResult& DescribeBotReplicaResult::operator =(const Aws::Amazon
     {
       m_failureReasons.push_back(failureReasonsJsonList[failureReasonsIndex].AsString());
     }
+    m_failureReasonsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

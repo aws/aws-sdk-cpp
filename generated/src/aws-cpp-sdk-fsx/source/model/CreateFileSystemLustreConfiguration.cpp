@@ -18,37 +18,7 @@ namespace FSx
 namespace Model
 {
 
-CreateFileSystemLustreConfiguration::CreateFileSystemLustreConfiguration() : 
-    m_weeklyMaintenanceStartTimeHasBeenSet(false),
-    m_importPathHasBeenSet(false),
-    m_exportPathHasBeenSet(false),
-    m_importedFileChunkSize(0),
-    m_importedFileChunkSizeHasBeenSet(false),
-    m_deploymentType(LustreDeploymentType::NOT_SET),
-    m_deploymentTypeHasBeenSet(false),
-    m_autoImportPolicy(AutoImportPolicyType::NOT_SET),
-    m_autoImportPolicyHasBeenSet(false),
-    m_perUnitStorageThroughput(0),
-    m_perUnitStorageThroughputHasBeenSet(false),
-    m_dailyAutomaticBackupStartTimeHasBeenSet(false),
-    m_automaticBackupRetentionDays(0),
-    m_automaticBackupRetentionDaysHasBeenSet(false),
-    m_copyTagsToBackups(false),
-    m_copyTagsToBackupsHasBeenSet(false),
-    m_driveCacheType(DriveCacheType::NOT_SET),
-    m_driveCacheTypeHasBeenSet(false),
-    m_dataCompressionType(DataCompressionType::NOT_SET),
-    m_dataCompressionTypeHasBeenSet(false),
-    m_efaEnabled(false),
-    m_efaEnabledHasBeenSet(false),
-    m_logConfigurationHasBeenSet(false),
-    m_rootSquashConfigurationHasBeenSet(false),
-    m_metadataConfigurationHasBeenSet(false)
-{
-}
-
 CreateFileSystemLustreConfiguration::CreateFileSystemLustreConfiguration(JsonView jsonValue)
-  : CreateFileSystemLustreConfiguration()
 {
   *this = jsonValue;
 }
@@ -58,115 +28,83 @@ CreateFileSystemLustreConfiguration& CreateFileSystemLustreConfiguration::operat
   if(jsonValue.ValueExists("WeeklyMaintenanceStartTime"))
   {
     m_weeklyMaintenanceStartTime = jsonValue.GetString("WeeklyMaintenanceStartTime");
-
     m_weeklyMaintenanceStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImportPath"))
   {
     m_importPath = jsonValue.GetString("ImportPath");
-
     m_importPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExportPath"))
   {
     m_exportPath = jsonValue.GetString("ExportPath");
-
     m_exportPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImportedFileChunkSize"))
   {
     m_importedFileChunkSize = jsonValue.GetInteger("ImportedFileChunkSize");
-
     m_importedFileChunkSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeploymentType"))
   {
     m_deploymentType = LustreDeploymentTypeMapper::GetLustreDeploymentTypeForName(jsonValue.GetString("DeploymentType"));
-
     m_deploymentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoImportPolicy"))
   {
     m_autoImportPolicy = AutoImportPolicyTypeMapper::GetAutoImportPolicyTypeForName(jsonValue.GetString("AutoImportPolicy"));
-
     m_autoImportPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PerUnitStorageThroughput"))
   {
     m_perUnitStorageThroughput = jsonValue.GetInteger("PerUnitStorageThroughput");
-
     m_perUnitStorageThroughputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DailyAutomaticBackupStartTime"))
   {
     m_dailyAutomaticBackupStartTime = jsonValue.GetString("DailyAutomaticBackupStartTime");
-
     m_dailyAutomaticBackupStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutomaticBackupRetentionDays"))
   {
     m_automaticBackupRetentionDays = jsonValue.GetInteger("AutomaticBackupRetentionDays");
-
     m_automaticBackupRetentionDaysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CopyTagsToBackups"))
   {
     m_copyTagsToBackups = jsonValue.GetBool("CopyTagsToBackups");
-
     m_copyTagsToBackupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DriveCacheType"))
   {
     m_driveCacheType = DriveCacheTypeMapper::GetDriveCacheTypeForName(jsonValue.GetString("DriveCacheType"));
-
     m_driveCacheTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataCompressionType"))
   {
     m_dataCompressionType = DataCompressionTypeMapper::GetDataCompressionTypeForName(jsonValue.GetString("DataCompressionType"));
-
     m_dataCompressionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EfaEnabled"))
   {
     m_efaEnabled = jsonValue.GetBool("EfaEnabled");
-
     m_efaEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogConfiguration"))
   {
     m_logConfiguration = jsonValue.GetObject("LogConfiguration");
-
     m_logConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RootSquashConfiguration"))
   {
     m_rootSquashConfiguration = jsonValue.GetObject("RootSquashConfiguration");
-
     m_rootSquashConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetadataConfiguration"))
   {
     m_metadataConfiguration = jsonValue.GetObject("MetadataConfiguration");
-
     m_metadataConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

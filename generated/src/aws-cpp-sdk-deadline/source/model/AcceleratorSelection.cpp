@@ -18,15 +18,7 @@ namespace deadline
 namespace Model
 {
 
-AcceleratorSelection::AcceleratorSelection() : 
-    m_name(AcceleratorName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_runtimeHasBeenSet(false)
-{
-}
-
 AcceleratorSelection::AcceleratorSelection(JsonView jsonValue)
-  : AcceleratorSelection()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AcceleratorSelection& AcceleratorSelection::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = AcceleratorNameMapper::GetAcceleratorNameForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runtime"))
   {
     m_runtime = jsonValue.GetString("runtime");
-
     m_runtimeHasBeenSet = true;
   }
-
   return *this;
 }
 

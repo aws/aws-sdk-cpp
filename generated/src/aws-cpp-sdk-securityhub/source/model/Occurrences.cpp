@@ -18,17 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-Occurrences::Occurrences() : 
-    m_lineRangesHasBeenSet(false),
-    m_offsetRangesHasBeenSet(false),
-    m_pagesHasBeenSet(false),
-    m_recordsHasBeenSet(false),
-    m_cellsHasBeenSet(false)
-{
-}
-
 Occurrences::Occurrences(JsonView jsonValue)
-  : Occurrences()
 {
   *this = jsonValue;
 }
@@ -44,7 +34,6 @@ Occurrences& Occurrences::operator =(JsonView jsonValue)
     }
     m_lineRangesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OffsetRanges"))
   {
     Aws::Utils::Array<JsonView> offsetRangesJsonList = jsonValue.GetArray("OffsetRanges");
@@ -54,7 +43,6 @@ Occurrences& Occurrences::operator =(JsonView jsonValue)
     }
     m_offsetRangesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Pages"))
   {
     Aws::Utils::Array<JsonView> pagesJsonList = jsonValue.GetArray("Pages");
@@ -64,7 +52,6 @@ Occurrences& Occurrences::operator =(JsonView jsonValue)
     }
     m_pagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Records"))
   {
     Aws::Utils::Array<JsonView> recordsJsonList = jsonValue.GetArray("Records");
@@ -74,7 +61,6 @@ Occurrences& Occurrences::operator =(JsonView jsonValue)
     }
     m_recordsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Cells"))
   {
     Aws::Utils::Array<JsonView> cellsJsonList = jsonValue.GetArray("Cells");
@@ -84,7 +70,6 @@ Occurrences& Occurrences::operator =(JsonView jsonValue)
     }
     m_cellsHasBeenSet = true;
   }
-
   return *this;
 }
 

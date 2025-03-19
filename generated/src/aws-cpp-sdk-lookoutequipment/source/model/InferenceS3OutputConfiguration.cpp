@@ -18,14 +18,7 @@ namespace LookoutEquipment
 namespace Model
 {
 
-InferenceS3OutputConfiguration::InferenceS3OutputConfiguration() : 
-    m_bucketHasBeenSet(false),
-    m_prefixHasBeenSet(false)
-{
-}
-
 InferenceS3OutputConfiguration::InferenceS3OutputConfiguration(JsonView jsonValue)
-  : InferenceS3OutputConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ InferenceS3OutputConfiguration& InferenceS3OutputConfiguration::operator =(JsonV
   if(jsonValue.ValueExists("Bucket"))
   {
     m_bucket = jsonValue.GetString("Bucket");
-
     m_bucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Prefix"))
   {
     m_prefix = jsonValue.GetString("Prefix");
-
     m_prefixHasBeenSet = true;
   }
-
   return *this;
 }
 

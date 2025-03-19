@@ -18,22 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-Folder::Folder() : 
-    m_folderIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_folderType(FolderType::NOT_SET),
-    m_folderTypeHasBeenSet(false),
-    m_folderPathHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_sharingModel(SharingModel::NOT_SET),
-    m_sharingModelHasBeenSet(false)
-{
-}
-
 Folder::Folder(JsonView jsonValue)
-  : Folder()
 {
   *this = jsonValue;
 }
@@ -43,31 +28,23 @@ Folder& Folder::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FolderId"))
   {
     m_folderId = jsonValue.GetString("FolderId");
-
     m_folderIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FolderType"))
   {
     m_folderType = FolderTypeMapper::GetFolderTypeForName(jsonValue.GetString("FolderType"));
-
     m_folderTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FolderPath"))
   {
     Aws::Utils::Array<JsonView> folderPathJsonList = jsonValue.GetArray("FolderPath");
@@ -77,28 +54,21 @@ Folder& Folder::operator =(JsonView jsonValue)
     }
     m_folderPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SharingModel"))
   {
     m_sharingModel = SharingModelMapper::GetSharingModelForName(jsonValue.GetString("SharingModel"));
-
     m_sharingModelHasBeenSet = true;
   }
-
   return *this;
 }
 

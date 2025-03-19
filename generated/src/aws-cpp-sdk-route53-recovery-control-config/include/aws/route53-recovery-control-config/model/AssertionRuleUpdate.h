@@ -33,7 +33,7 @@ namespace Model
   class AssertionRuleUpdate
   {
   public:
-    AWS_ROUTE53RECOVERYCONTROLCONFIG_API AssertionRuleUpdate();
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API AssertionRuleUpdate() = default;
     AWS_ROUTE53RECOVERYCONTROLCONFIG_API AssertionRuleUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53RECOVERYCONTROLCONFIG_API AssertionRuleUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53RECOVERYCONTROLCONFIG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
      * <p>The name of the assertion rule. You can use any non-white space character in
      * the name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AssertionRuleUpdate& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AssertionRuleUpdate& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AssertionRuleUpdate& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    AssertionRuleUpdate& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the assertion rule.</p>
      */
-    inline const Aws::String& GetSafetyRuleArn() const{ return m_safetyRuleArn; }
+    inline const Aws::String& GetSafetyRuleArn() const { return m_safetyRuleArn; }
     inline bool SafetyRuleArnHasBeenSet() const { return m_safetyRuleArnHasBeenSet; }
-    inline void SetSafetyRuleArn(const Aws::String& value) { m_safetyRuleArnHasBeenSet = true; m_safetyRuleArn = value; }
-    inline void SetSafetyRuleArn(Aws::String&& value) { m_safetyRuleArnHasBeenSet = true; m_safetyRuleArn = std::move(value); }
-    inline void SetSafetyRuleArn(const char* value) { m_safetyRuleArnHasBeenSet = true; m_safetyRuleArn.assign(value); }
-    inline AssertionRuleUpdate& WithSafetyRuleArn(const Aws::String& value) { SetSafetyRuleArn(value); return *this;}
-    inline AssertionRuleUpdate& WithSafetyRuleArn(Aws::String&& value) { SetSafetyRuleArn(std::move(value)); return *this;}
-    inline AssertionRuleUpdate& WithSafetyRuleArn(const char* value) { SetSafetyRuleArn(value); return *this;}
+    template<typename SafetyRuleArnT = Aws::String>
+    void SetSafetyRuleArn(SafetyRuleArnT&& value) { m_safetyRuleArnHasBeenSet = true; m_safetyRuleArn = std::forward<SafetyRuleArnT>(value); }
+    template<typename SafetyRuleArnT = Aws::String>
+    AssertionRuleUpdate& WithSafetyRuleArn(SafetyRuleArnT&& value) { SetSafetyRuleArn(std::forward<SafetyRuleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,7 +70,7 @@ namespace Model
      * the target routing controls will fail. This helps prevent "flapping" of state.
      * The wait period is 5000 ms by default, but you can choose a custom value.</p>
      */
-    inline int GetWaitPeriodMs() const{ return m_waitPeriodMs; }
+    inline int GetWaitPeriodMs() const { return m_waitPeriodMs; }
     inline bool WaitPeriodMsHasBeenSet() const { return m_waitPeriodMsHasBeenSet; }
     inline void SetWaitPeriodMs(int value) { m_waitPeriodMsHasBeenSet = true; m_waitPeriodMs = value; }
     inline AssertionRuleUpdate& WithWaitPeriodMs(int value) { SetWaitPeriodMs(value); return *this;}
@@ -87,7 +83,7 @@ namespace Model
     Aws::String m_safetyRuleArn;
     bool m_safetyRuleArnHasBeenSet = false;
 
-    int m_waitPeriodMs;
+    int m_waitPeriodMs{0};
     bool m_waitPeriodMsHasBeenSet = false;
   };
 

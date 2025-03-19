@@ -18,21 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-AccountSettings::AccountSettings() : 
-    m_accountNameHasBeenSet(false),
-    m_edition(Edition::NOT_SET),
-    m_editionHasBeenSet(false),
-    m_defaultNamespaceHasBeenSet(false),
-    m_notificationEmailHasBeenSet(false),
-    m_publicSharingEnabled(false),
-    m_publicSharingEnabledHasBeenSet(false),
-    m_terminationProtectionEnabled(false),
-    m_terminationProtectionEnabledHasBeenSet(false)
-{
-}
-
 AccountSettings::AccountSettings(JsonView jsonValue)
-  : AccountSettings()
 {
   *this = jsonValue;
 }
@@ -42,45 +28,33 @@ AccountSettings& AccountSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AccountName"))
   {
     m_accountName = jsonValue.GetString("AccountName");
-
     m_accountNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Edition"))
   {
     m_edition = EditionMapper::GetEditionForName(jsonValue.GetString("Edition"));
-
     m_editionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultNamespace"))
   {
     m_defaultNamespace = jsonValue.GetString("DefaultNamespace");
-
     m_defaultNamespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotificationEmail"))
   {
     m_notificationEmail = jsonValue.GetString("NotificationEmail");
-
     m_notificationEmailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PublicSharingEnabled"))
   {
     m_publicSharingEnabled = jsonValue.GetBool("PublicSharingEnabled");
-
     m_publicSharingEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TerminationProtectionEnabled"))
   {
     m_terminationProtectionEnabled = jsonValue.GetBool("TerminationProtectionEnabled");
-
     m_terminationProtectionEnabledHasBeenSet = true;
   }
-
   return *this;
 }
 

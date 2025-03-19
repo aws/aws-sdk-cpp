@@ -18,13 +18,7 @@ namespace ChimeSDKMessaging
 namespace Model
 {
 
-ChannelMembershipSummary::ChannelMembershipSummary() : 
-    m_memberHasBeenSet(false)
-{
-}
-
 ChannelMembershipSummary::ChannelMembershipSummary(JsonView jsonValue)
-  : ChannelMembershipSummary()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ChannelMembershipSummary& ChannelMembershipSummary::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Member"))
   {
     m_member = jsonValue.GetObject("Member");
-
     m_memberHasBeenSet = true;
   }
-
   return *this;
 }
 

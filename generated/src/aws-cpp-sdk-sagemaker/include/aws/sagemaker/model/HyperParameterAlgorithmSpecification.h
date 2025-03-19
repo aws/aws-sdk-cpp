@@ -36,7 +36,7 @@ namespace Model
   class HyperParameterAlgorithmSpecification
   {
   public:
-    AWS_SAGEMAKER_API HyperParameterAlgorithmSpecification();
+    AWS_SAGEMAKER_API HyperParameterAlgorithmSpecification() = default;
     AWS_SAGEMAKER_API HyperParameterAlgorithmSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API HyperParameterAlgorithmSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,24 +54,20 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
      * Your Own Algorithms with Amazon SageMaker</a>.</p>
      */
-    inline const Aws::String& GetTrainingImage() const{ return m_trainingImage; }
+    inline const Aws::String& GetTrainingImage() const { return m_trainingImage; }
     inline bool TrainingImageHasBeenSet() const { return m_trainingImageHasBeenSet; }
-    inline void SetTrainingImage(const Aws::String& value) { m_trainingImageHasBeenSet = true; m_trainingImage = value; }
-    inline void SetTrainingImage(Aws::String&& value) { m_trainingImageHasBeenSet = true; m_trainingImage = std::move(value); }
-    inline void SetTrainingImage(const char* value) { m_trainingImageHasBeenSet = true; m_trainingImage.assign(value); }
-    inline HyperParameterAlgorithmSpecification& WithTrainingImage(const Aws::String& value) { SetTrainingImage(value); return *this;}
-    inline HyperParameterAlgorithmSpecification& WithTrainingImage(Aws::String&& value) { SetTrainingImage(std::move(value)); return *this;}
-    inline HyperParameterAlgorithmSpecification& WithTrainingImage(const char* value) { SetTrainingImage(value); return *this;}
+    template<typename TrainingImageT = Aws::String>
+    void SetTrainingImage(TrainingImageT&& value) { m_trainingImageHasBeenSet = true; m_trainingImage = std::forward<TrainingImageT>(value); }
+    template<typename TrainingImageT = Aws::String>
+    HyperParameterAlgorithmSpecification& WithTrainingImage(TrainingImageT&& value) { SetTrainingImage(std::forward<TrainingImageT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const TrainingInputMode& GetTrainingInputMode() const{ return m_trainingInputMode; }
+    inline TrainingInputMode GetTrainingInputMode() const { return m_trainingInputMode; }
     inline bool TrainingInputModeHasBeenSet() const { return m_trainingInputModeHasBeenSet; }
-    inline void SetTrainingInputMode(const TrainingInputMode& value) { m_trainingInputModeHasBeenSet = true; m_trainingInputMode = value; }
-    inline void SetTrainingInputMode(TrainingInputMode&& value) { m_trainingInputModeHasBeenSet = true; m_trainingInputMode = std::move(value); }
-    inline HyperParameterAlgorithmSpecification& WithTrainingInputMode(const TrainingInputMode& value) { SetTrainingInputMode(value); return *this;}
-    inline HyperParameterAlgorithmSpecification& WithTrainingInputMode(TrainingInputMode&& value) { SetTrainingInputMode(std::move(value)); return *this;}
+    inline void SetTrainingInputMode(TrainingInputMode value) { m_trainingInputModeHasBeenSet = true; m_trainingInputMode = value; }
+    inline HyperParameterAlgorithmSpecification& WithTrainingInputMode(TrainingInputMode value) { SetTrainingInputMode(value); return *this;}
     ///@}
 
     ///@{
@@ -80,14 +76,12 @@ namespace Model
      * If you specify a value for this parameter, do not specify a value for
      * <code>TrainingImage</code>.</p>
      */
-    inline const Aws::String& GetAlgorithmName() const{ return m_algorithmName; }
+    inline const Aws::String& GetAlgorithmName() const { return m_algorithmName; }
     inline bool AlgorithmNameHasBeenSet() const { return m_algorithmNameHasBeenSet; }
-    inline void SetAlgorithmName(const Aws::String& value) { m_algorithmNameHasBeenSet = true; m_algorithmName = value; }
-    inline void SetAlgorithmName(Aws::String&& value) { m_algorithmNameHasBeenSet = true; m_algorithmName = std::move(value); }
-    inline void SetAlgorithmName(const char* value) { m_algorithmNameHasBeenSet = true; m_algorithmName.assign(value); }
-    inline HyperParameterAlgorithmSpecification& WithAlgorithmName(const Aws::String& value) { SetAlgorithmName(value); return *this;}
-    inline HyperParameterAlgorithmSpecification& WithAlgorithmName(Aws::String&& value) { SetAlgorithmName(std::move(value)); return *this;}
-    inline HyperParameterAlgorithmSpecification& WithAlgorithmName(const char* value) { SetAlgorithmName(value); return *this;}
+    template<typename AlgorithmNameT = Aws::String>
+    void SetAlgorithmName(AlgorithmNameT&& value) { m_algorithmNameHasBeenSet = true; m_algorithmName = std::forward<AlgorithmNameT>(value); }
+    template<typename AlgorithmNameT = Aws::String>
+    HyperParameterAlgorithmSpecification& WithAlgorithmName(AlgorithmNameT&& value) { SetAlgorithmName(std::forward<AlgorithmNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,21 +90,21 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MetricDefinition.html">MetricDefinition</a>
      * objects that specify the metrics that the algorithm emits.</p>
      */
-    inline const Aws::Vector<MetricDefinition>& GetMetricDefinitions() const{ return m_metricDefinitions; }
+    inline const Aws::Vector<MetricDefinition>& GetMetricDefinitions() const { return m_metricDefinitions; }
     inline bool MetricDefinitionsHasBeenSet() const { return m_metricDefinitionsHasBeenSet; }
-    inline void SetMetricDefinitions(const Aws::Vector<MetricDefinition>& value) { m_metricDefinitionsHasBeenSet = true; m_metricDefinitions = value; }
-    inline void SetMetricDefinitions(Aws::Vector<MetricDefinition>&& value) { m_metricDefinitionsHasBeenSet = true; m_metricDefinitions = std::move(value); }
-    inline HyperParameterAlgorithmSpecification& WithMetricDefinitions(const Aws::Vector<MetricDefinition>& value) { SetMetricDefinitions(value); return *this;}
-    inline HyperParameterAlgorithmSpecification& WithMetricDefinitions(Aws::Vector<MetricDefinition>&& value) { SetMetricDefinitions(std::move(value)); return *this;}
-    inline HyperParameterAlgorithmSpecification& AddMetricDefinitions(const MetricDefinition& value) { m_metricDefinitionsHasBeenSet = true; m_metricDefinitions.push_back(value); return *this; }
-    inline HyperParameterAlgorithmSpecification& AddMetricDefinitions(MetricDefinition&& value) { m_metricDefinitionsHasBeenSet = true; m_metricDefinitions.push_back(std::move(value)); return *this; }
+    template<typename MetricDefinitionsT = Aws::Vector<MetricDefinition>>
+    void SetMetricDefinitions(MetricDefinitionsT&& value) { m_metricDefinitionsHasBeenSet = true; m_metricDefinitions = std::forward<MetricDefinitionsT>(value); }
+    template<typename MetricDefinitionsT = Aws::Vector<MetricDefinition>>
+    HyperParameterAlgorithmSpecification& WithMetricDefinitions(MetricDefinitionsT&& value) { SetMetricDefinitions(std::forward<MetricDefinitionsT>(value)); return *this;}
+    template<typename MetricDefinitionsT = MetricDefinition>
+    HyperParameterAlgorithmSpecification& AddMetricDefinitions(MetricDefinitionsT&& value) { m_metricDefinitionsHasBeenSet = true; m_metricDefinitions.emplace_back(std::forward<MetricDefinitionsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_trainingImage;
     bool m_trainingImageHasBeenSet = false;
 
-    TrainingInputMode m_trainingInputMode;
+    TrainingInputMode m_trainingInputMode{TrainingInputMode::NOT_SET};
     bool m_trainingInputModeHasBeenSet = false;
 
     Aws::String m_algorithmName;

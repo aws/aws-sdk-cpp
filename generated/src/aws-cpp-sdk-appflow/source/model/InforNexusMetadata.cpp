@@ -18,10 +18,6 @@ namespace Appflow
 namespace Model
 {
 
-InforNexusMetadata::InforNexusMetadata()
-{
-}
-
 InforNexusMetadata::InforNexusMetadata(JsonView jsonValue)
 {
   *this = jsonValue;

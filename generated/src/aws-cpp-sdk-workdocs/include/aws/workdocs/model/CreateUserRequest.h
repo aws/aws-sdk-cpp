@@ -22,7 +22,7 @@ namespace Model
   class CreateUserRequest : public WorkDocsRequest
   {
   public:
-    AWS_WORKDOCS_API CreateUserRequest();
+    AWS_WORKDOCS_API CreateUserRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,110 +39,96 @@ namespace Model
     /**
      * <p>The ID of the organization.</p>
      */
-    inline const Aws::String& GetOrganizationId() const{ return m_organizationId; }
+    inline const Aws::String& GetOrganizationId() const { return m_organizationId; }
     inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
-    inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
-    inline void SetOrganizationId(Aws::String&& value) { m_organizationIdHasBeenSet = true; m_organizationId = std::move(value); }
-    inline void SetOrganizationId(const char* value) { m_organizationIdHasBeenSet = true; m_organizationId.assign(value); }
-    inline CreateUserRequest& WithOrganizationId(const Aws::String& value) { SetOrganizationId(value); return *this;}
-    inline CreateUserRequest& WithOrganizationId(Aws::String&& value) { SetOrganizationId(std::move(value)); return *this;}
-    inline CreateUserRequest& WithOrganizationId(const char* value) { SetOrganizationId(value); return *this;}
+    template<typename OrganizationIdT = Aws::String>
+    void SetOrganizationId(OrganizationIdT&& value) { m_organizationIdHasBeenSet = true; m_organizationId = std::forward<OrganizationIdT>(value); }
+    template<typename OrganizationIdT = Aws::String>
+    CreateUserRequest& WithOrganizationId(OrganizationIdT&& value) { SetOrganizationId(std::forward<OrganizationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The login name of the user.</p>
      */
-    inline const Aws::String& GetUsername() const{ return m_username; }
+    inline const Aws::String& GetUsername() const { return m_username; }
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
-    inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
-    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
-    inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
-    inline CreateUserRequest& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
-    inline CreateUserRequest& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
-    inline CreateUserRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
+    template<typename UsernameT = Aws::String>
+    void SetUsername(UsernameT&& value) { m_usernameHasBeenSet = true; m_username = std::forward<UsernameT>(value); }
+    template<typename UsernameT = Aws::String>
+    CreateUserRequest& WithUsername(UsernameT&& value) { SetUsername(std::forward<UsernameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The email address of the user.</p>
      */
-    inline const Aws::String& GetEmailAddress() const{ return m_emailAddress; }
+    inline const Aws::String& GetEmailAddress() const { return m_emailAddress; }
     inline bool EmailAddressHasBeenSet() const { return m_emailAddressHasBeenSet; }
-    inline void SetEmailAddress(const Aws::String& value) { m_emailAddressHasBeenSet = true; m_emailAddress = value; }
-    inline void SetEmailAddress(Aws::String&& value) { m_emailAddressHasBeenSet = true; m_emailAddress = std::move(value); }
-    inline void SetEmailAddress(const char* value) { m_emailAddressHasBeenSet = true; m_emailAddress.assign(value); }
-    inline CreateUserRequest& WithEmailAddress(const Aws::String& value) { SetEmailAddress(value); return *this;}
-    inline CreateUserRequest& WithEmailAddress(Aws::String&& value) { SetEmailAddress(std::move(value)); return *this;}
-    inline CreateUserRequest& WithEmailAddress(const char* value) { SetEmailAddress(value); return *this;}
+    template<typename EmailAddressT = Aws::String>
+    void SetEmailAddress(EmailAddressT&& value) { m_emailAddressHasBeenSet = true; m_emailAddress = std::forward<EmailAddressT>(value); }
+    template<typename EmailAddressT = Aws::String>
+    CreateUserRequest& WithEmailAddress(EmailAddressT&& value) { SetEmailAddress(std::forward<EmailAddressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The given name of the user.</p>
      */
-    inline const Aws::String& GetGivenName() const{ return m_givenName; }
+    inline const Aws::String& GetGivenName() const { return m_givenName; }
     inline bool GivenNameHasBeenSet() const { return m_givenNameHasBeenSet; }
-    inline void SetGivenName(const Aws::String& value) { m_givenNameHasBeenSet = true; m_givenName = value; }
-    inline void SetGivenName(Aws::String&& value) { m_givenNameHasBeenSet = true; m_givenName = std::move(value); }
-    inline void SetGivenName(const char* value) { m_givenNameHasBeenSet = true; m_givenName.assign(value); }
-    inline CreateUserRequest& WithGivenName(const Aws::String& value) { SetGivenName(value); return *this;}
-    inline CreateUserRequest& WithGivenName(Aws::String&& value) { SetGivenName(std::move(value)); return *this;}
-    inline CreateUserRequest& WithGivenName(const char* value) { SetGivenName(value); return *this;}
+    template<typename GivenNameT = Aws::String>
+    void SetGivenName(GivenNameT&& value) { m_givenNameHasBeenSet = true; m_givenName = std::forward<GivenNameT>(value); }
+    template<typename GivenNameT = Aws::String>
+    CreateUserRequest& WithGivenName(GivenNameT&& value) { SetGivenName(std::forward<GivenNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The surname of the user.</p>
      */
-    inline const Aws::String& GetSurname() const{ return m_surname; }
+    inline const Aws::String& GetSurname() const { return m_surname; }
     inline bool SurnameHasBeenSet() const { return m_surnameHasBeenSet; }
-    inline void SetSurname(const Aws::String& value) { m_surnameHasBeenSet = true; m_surname = value; }
-    inline void SetSurname(Aws::String&& value) { m_surnameHasBeenSet = true; m_surname = std::move(value); }
-    inline void SetSurname(const char* value) { m_surnameHasBeenSet = true; m_surname.assign(value); }
-    inline CreateUserRequest& WithSurname(const Aws::String& value) { SetSurname(value); return *this;}
-    inline CreateUserRequest& WithSurname(Aws::String&& value) { SetSurname(std::move(value)); return *this;}
-    inline CreateUserRequest& WithSurname(const char* value) { SetSurname(value); return *this;}
+    template<typename SurnameT = Aws::String>
+    void SetSurname(SurnameT&& value) { m_surnameHasBeenSet = true; m_surname = std::forward<SurnameT>(value); }
+    template<typename SurnameT = Aws::String>
+    CreateUserRequest& WithSurname(SurnameT&& value) { SetSurname(std::forward<SurnameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The password of the user.</p>
      */
-    inline const Aws::String& GetPassword() const{ return m_password; }
+    inline const Aws::String& GetPassword() const { return m_password; }
     inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
-    inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
-    inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = std::move(value); }
-    inline void SetPassword(const char* value) { m_passwordHasBeenSet = true; m_password.assign(value); }
-    inline CreateUserRequest& WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
-    inline CreateUserRequest& WithPassword(Aws::String&& value) { SetPassword(std::move(value)); return *this;}
-    inline CreateUserRequest& WithPassword(const char* value) { SetPassword(value); return *this;}
+    template<typename PasswordT = Aws::String>
+    void SetPassword(PasswordT&& value) { m_passwordHasBeenSet = true; m_password = std::forward<PasswordT>(value); }
+    template<typename PasswordT = Aws::String>
+    CreateUserRequest& WithPassword(PasswordT&& value) { SetPassword(std::forward<PasswordT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time zone ID of the user.</p>
      */
-    inline const Aws::String& GetTimeZoneId() const{ return m_timeZoneId; }
+    inline const Aws::String& GetTimeZoneId() const { return m_timeZoneId; }
     inline bool TimeZoneIdHasBeenSet() const { return m_timeZoneIdHasBeenSet; }
-    inline void SetTimeZoneId(const Aws::String& value) { m_timeZoneIdHasBeenSet = true; m_timeZoneId = value; }
-    inline void SetTimeZoneId(Aws::String&& value) { m_timeZoneIdHasBeenSet = true; m_timeZoneId = std::move(value); }
-    inline void SetTimeZoneId(const char* value) { m_timeZoneIdHasBeenSet = true; m_timeZoneId.assign(value); }
-    inline CreateUserRequest& WithTimeZoneId(const Aws::String& value) { SetTimeZoneId(value); return *this;}
-    inline CreateUserRequest& WithTimeZoneId(Aws::String&& value) { SetTimeZoneId(std::move(value)); return *this;}
-    inline CreateUserRequest& WithTimeZoneId(const char* value) { SetTimeZoneId(value); return *this;}
+    template<typename TimeZoneIdT = Aws::String>
+    void SetTimeZoneId(TimeZoneIdT&& value) { m_timeZoneIdHasBeenSet = true; m_timeZoneId = std::forward<TimeZoneIdT>(value); }
+    template<typename TimeZoneIdT = Aws::String>
+    CreateUserRequest& WithTimeZoneId(TimeZoneIdT&& value) { SetTimeZoneId(std::forward<TimeZoneIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The amount of storage for the user.</p>
      */
-    inline const StorageRuleType& GetStorageRule() const{ return m_storageRule; }
+    inline const StorageRuleType& GetStorageRule() const { return m_storageRule; }
     inline bool StorageRuleHasBeenSet() const { return m_storageRuleHasBeenSet; }
-    inline void SetStorageRule(const StorageRuleType& value) { m_storageRuleHasBeenSet = true; m_storageRule = value; }
-    inline void SetStorageRule(StorageRuleType&& value) { m_storageRuleHasBeenSet = true; m_storageRule = std::move(value); }
-    inline CreateUserRequest& WithStorageRule(const StorageRuleType& value) { SetStorageRule(value); return *this;}
-    inline CreateUserRequest& WithStorageRule(StorageRuleType&& value) { SetStorageRule(std::move(value)); return *this;}
+    template<typename StorageRuleT = StorageRuleType>
+    void SetStorageRule(StorageRuleT&& value) { m_storageRuleHasBeenSet = true; m_storageRule = std::forward<StorageRuleT>(value); }
+    template<typename StorageRuleT = StorageRuleType>
+    CreateUserRequest& WithStorageRule(StorageRuleT&& value) { SetStorageRule(std::forward<StorageRuleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -150,14 +136,12 @@ namespace Model
      * <p>Amazon WorkDocs authentication token. Not required when using Amazon Web
      * Services administrator credentials to access the API.</p>
      */
-    inline const Aws::String& GetAuthenticationToken() const{ return m_authenticationToken; }
+    inline const Aws::String& GetAuthenticationToken() const { return m_authenticationToken; }
     inline bool AuthenticationTokenHasBeenSet() const { return m_authenticationTokenHasBeenSet; }
-    inline void SetAuthenticationToken(const Aws::String& value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken = value; }
-    inline void SetAuthenticationToken(Aws::String&& value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken = std::move(value); }
-    inline void SetAuthenticationToken(const char* value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken.assign(value); }
-    inline CreateUserRequest& WithAuthenticationToken(const Aws::String& value) { SetAuthenticationToken(value); return *this;}
-    inline CreateUserRequest& WithAuthenticationToken(Aws::String&& value) { SetAuthenticationToken(std::move(value)); return *this;}
-    inline CreateUserRequest& WithAuthenticationToken(const char* value) { SetAuthenticationToken(value); return *this;}
+    template<typename AuthenticationTokenT = Aws::String>
+    void SetAuthenticationToken(AuthenticationTokenT&& value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken = std::forward<AuthenticationTokenT>(value); }
+    template<typename AuthenticationTokenT = Aws::String>
+    CreateUserRequest& WithAuthenticationToken(AuthenticationTokenT&& value) { SetAuthenticationToken(std::forward<AuthenticationTokenT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,15 +18,7 @@ namespace LicenseManager
 namespace Model
 {
 
-ProductInformationFilter::ProductInformationFilter() : 
-    m_productInformationFilterNameHasBeenSet(false),
-    m_productInformationFilterValueHasBeenSet(false),
-    m_productInformationFilterComparatorHasBeenSet(false)
-{
-}
-
 ProductInformationFilter::ProductInformationFilter(JsonView jsonValue)
-  : ProductInformationFilter()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ ProductInformationFilter& ProductInformationFilter::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("ProductInformationFilterName"))
   {
     m_productInformationFilterName = jsonValue.GetString("ProductInformationFilterName");
-
     m_productInformationFilterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProductInformationFilterValue"))
   {
     Aws::Utils::Array<JsonView> productInformationFilterValueJsonList = jsonValue.GetArray("ProductInformationFilterValue");
@@ -49,14 +39,11 @@ ProductInformationFilter& ProductInformationFilter::operator =(JsonView jsonValu
     }
     m_productInformationFilterValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProductInformationFilterComparator"))
   {
     m_productInformationFilterComparator = jsonValue.GetString("ProductInformationFilterComparator");
-
     m_productInformationFilterComparatorHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,13 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-QueryStringConditionConfig::QueryStringConditionConfig() : 
-    m_valuesHasBeenSet(false)
-{
-}
-
 QueryStringConditionConfig::QueryStringConditionConfig(const XmlNode& xmlNode)
-  : QueryStringConditionConfig()
 {
   *this = xmlNode;
 }
@@ -41,6 +35,7 @@ QueryStringConditionConfig& QueryStringConditionConfig::operator =(const XmlNode
     if(!valuesNode.IsNull())
     {
       XmlNode valuesMember = valuesNode.FirstChild("member");
+      m_valuesHasBeenSet = !valuesMember.IsNull();
       while(!valuesMember.IsNull())
       {
         m_values.push_back(valuesMember);

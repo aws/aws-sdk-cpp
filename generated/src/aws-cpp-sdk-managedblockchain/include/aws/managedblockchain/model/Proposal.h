@@ -36,7 +36,7 @@ namespace Model
   class Proposal
   {
   public:
-    AWS_MANAGEDBLOCKCHAIN_API Proposal();
+    AWS_MANAGEDBLOCKCHAIN_API Proposal() = default;
     AWS_MANAGEDBLOCKCHAIN_API Proposal(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAIN_API Proposal& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,42 +46,36 @@ namespace Model
     /**
      * <p>The unique identifier of the proposal.</p>
      */
-    inline const Aws::String& GetProposalId() const{ return m_proposalId; }
+    inline const Aws::String& GetProposalId() const { return m_proposalId; }
     inline bool ProposalIdHasBeenSet() const { return m_proposalIdHasBeenSet; }
-    inline void SetProposalId(const Aws::String& value) { m_proposalIdHasBeenSet = true; m_proposalId = value; }
-    inline void SetProposalId(Aws::String&& value) { m_proposalIdHasBeenSet = true; m_proposalId = std::move(value); }
-    inline void SetProposalId(const char* value) { m_proposalIdHasBeenSet = true; m_proposalId.assign(value); }
-    inline Proposal& WithProposalId(const Aws::String& value) { SetProposalId(value); return *this;}
-    inline Proposal& WithProposalId(Aws::String&& value) { SetProposalId(std::move(value)); return *this;}
-    inline Proposal& WithProposalId(const char* value) { SetProposalId(value); return *this;}
+    template<typename ProposalIdT = Aws::String>
+    void SetProposalId(ProposalIdT&& value) { m_proposalIdHasBeenSet = true; m_proposalId = std::forward<ProposalIdT>(value); }
+    template<typename ProposalIdT = Aws::String>
+    Proposal& WithProposalId(ProposalIdT&& value) { SetProposalId(std::forward<ProposalIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the network for which the proposal is made.</p>
      */
-    inline const Aws::String& GetNetworkId() const{ return m_networkId; }
+    inline const Aws::String& GetNetworkId() const { return m_networkId; }
     inline bool NetworkIdHasBeenSet() const { return m_networkIdHasBeenSet; }
-    inline void SetNetworkId(const Aws::String& value) { m_networkIdHasBeenSet = true; m_networkId = value; }
-    inline void SetNetworkId(Aws::String&& value) { m_networkIdHasBeenSet = true; m_networkId = std::move(value); }
-    inline void SetNetworkId(const char* value) { m_networkIdHasBeenSet = true; m_networkId.assign(value); }
-    inline Proposal& WithNetworkId(const Aws::String& value) { SetNetworkId(value); return *this;}
-    inline Proposal& WithNetworkId(Aws::String&& value) { SetNetworkId(std::move(value)); return *this;}
-    inline Proposal& WithNetworkId(const char* value) { SetNetworkId(value); return *this;}
+    template<typename NetworkIdT = Aws::String>
+    void SetNetworkId(NetworkIdT&& value) { m_networkIdHasBeenSet = true; m_networkId = std::forward<NetworkIdT>(value); }
+    template<typename NetworkIdT = Aws::String>
+    Proposal& WithNetworkId(NetworkIdT&& value) { SetNetworkId(std::forward<NetworkIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the proposal.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline Proposal& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline Proposal& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline Proposal& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    Proposal& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,40 +83,36 @@ namespace Model
      * <p>The actions to perform on the network if the proposal is
      * <code>APPROVED</code>.</p>
      */
-    inline const ProposalActions& GetActions() const{ return m_actions; }
+    inline const ProposalActions& GetActions() const { return m_actions; }
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
-    inline void SetActions(const ProposalActions& value) { m_actionsHasBeenSet = true; m_actions = value; }
-    inline void SetActions(ProposalActions&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
-    inline Proposal& WithActions(const ProposalActions& value) { SetActions(value); return *this;}
-    inline Proposal& WithActions(ProposalActions&& value) { SetActions(std::move(value)); return *this;}
+    template<typename ActionsT = ProposalActions>
+    void SetActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions = std::forward<ActionsT>(value); }
+    template<typename ActionsT = ProposalActions>
+    Proposal& WithActions(ActionsT&& value) { SetActions(std::forward<ActionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the member that created the proposal.</p>
      */
-    inline const Aws::String& GetProposedByMemberId() const{ return m_proposedByMemberId; }
+    inline const Aws::String& GetProposedByMemberId() const { return m_proposedByMemberId; }
     inline bool ProposedByMemberIdHasBeenSet() const { return m_proposedByMemberIdHasBeenSet; }
-    inline void SetProposedByMemberId(const Aws::String& value) { m_proposedByMemberIdHasBeenSet = true; m_proposedByMemberId = value; }
-    inline void SetProposedByMemberId(Aws::String&& value) { m_proposedByMemberIdHasBeenSet = true; m_proposedByMemberId = std::move(value); }
-    inline void SetProposedByMemberId(const char* value) { m_proposedByMemberIdHasBeenSet = true; m_proposedByMemberId.assign(value); }
-    inline Proposal& WithProposedByMemberId(const Aws::String& value) { SetProposedByMemberId(value); return *this;}
-    inline Proposal& WithProposedByMemberId(Aws::String&& value) { SetProposedByMemberId(std::move(value)); return *this;}
-    inline Proposal& WithProposedByMemberId(const char* value) { SetProposedByMemberId(value); return *this;}
+    template<typename ProposedByMemberIdT = Aws::String>
+    void SetProposedByMemberId(ProposedByMemberIdT&& value) { m_proposedByMemberIdHasBeenSet = true; m_proposedByMemberId = std::forward<ProposedByMemberIdT>(value); }
+    template<typename ProposedByMemberIdT = Aws::String>
+    Proposal& WithProposedByMemberId(ProposedByMemberIdT&& value) { SetProposedByMemberId(std::forward<ProposedByMemberIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the member that created the proposal.</p>
      */
-    inline const Aws::String& GetProposedByMemberName() const{ return m_proposedByMemberName; }
+    inline const Aws::String& GetProposedByMemberName() const { return m_proposedByMemberName; }
     inline bool ProposedByMemberNameHasBeenSet() const { return m_proposedByMemberNameHasBeenSet; }
-    inline void SetProposedByMemberName(const Aws::String& value) { m_proposedByMemberNameHasBeenSet = true; m_proposedByMemberName = value; }
-    inline void SetProposedByMemberName(Aws::String&& value) { m_proposedByMemberNameHasBeenSet = true; m_proposedByMemberName = std::move(value); }
-    inline void SetProposedByMemberName(const char* value) { m_proposedByMemberNameHasBeenSet = true; m_proposedByMemberName.assign(value); }
-    inline Proposal& WithProposedByMemberName(const Aws::String& value) { SetProposedByMemberName(value); return *this;}
-    inline Proposal& WithProposedByMemberName(Aws::String&& value) { SetProposedByMemberName(std::move(value)); return *this;}
-    inline Proposal& WithProposedByMemberName(const char* value) { SetProposedByMemberName(value); return *this;}
+    template<typename ProposedByMemberNameT = Aws::String>
+    void SetProposedByMemberName(ProposedByMemberNameT&& value) { m_proposedByMemberNameHasBeenSet = true; m_proposedByMemberName = std::forward<ProposedByMemberNameT>(value); }
+    template<typename ProposedByMemberNameT = Aws::String>
+    Proposal& WithProposedByMemberName(ProposedByMemberNameT&& value) { SetProposedByMemberName(std::forward<ProposedByMemberNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -145,24 +135,22 @@ namespace Model
      * if only one ProposalAction fails and other actions are successful.</p> </li>
      * </ul>
      */
-    inline const ProposalStatus& GetStatus() const{ return m_status; }
+    inline ProposalStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ProposalStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ProposalStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline Proposal& WithStatus(const ProposalStatus& value) { SetStatus(value); return *this;}
-    inline Proposal& WithStatus(ProposalStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ProposalStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline Proposal& WithStatus(ProposalStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The date and time that the proposal was created. </p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
+    inline const Aws::Utils::DateTime& GetCreationDate() const { return m_creationDate; }
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
-    inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
-    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
-    inline Proposal& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
-    inline Proposal& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    void SetCreationDate(CreationDateT&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::forward<CreationDateT>(value); }
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    Proposal& WithCreationDate(CreationDateT&& value) { SetCreationDate(std::forward<CreationDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -174,12 +162,12 @@ namespace Model
      * voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code>
      * aren't carried out. </p>
      */
-    inline const Aws::Utils::DateTime& GetExpirationDate() const{ return m_expirationDate; }
+    inline const Aws::Utils::DateTime& GetExpirationDate() const { return m_expirationDate; }
     inline bool ExpirationDateHasBeenSet() const { return m_expirationDateHasBeenSet; }
-    inline void SetExpirationDate(const Aws::Utils::DateTime& value) { m_expirationDateHasBeenSet = true; m_expirationDate = value; }
-    inline void SetExpirationDate(Aws::Utils::DateTime&& value) { m_expirationDateHasBeenSet = true; m_expirationDate = std::move(value); }
-    inline Proposal& WithExpirationDate(const Aws::Utils::DateTime& value) { SetExpirationDate(value); return *this;}
-    inline Proposal& WithExpirationDate(Aws::Utils::DateTime&& value) { SetExpirationDate(std::move(value)); return *this;}
+    template<typename ExpirationDateT = Aws::Utils::DateTime>
+    void SetExpirationDate(ExpirationDateT&& value) { m_expirationDateHasBeenSet = true; m_expirationDate = std::forward<ExpirationDateT>(value); }
+    template<typename ExpirationDateT = Aws::Utils::DateTime>
+    Proposal& WithExpirationDate(ExpirationDateT&& value) { SetExpirationDate(std::forward<ExpirationDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -187,7 +175,7 @@ namespace Model
      * <p> The current total of <code>YES</code> votes cast on the proposal by members.
      * </p>
      */
-    inline int GetYesVoteCount() const{ return m_yesVoteCount; }
+    inline int GetYesVoteCount() const { return m_yesVoteCount; }
     inline bool YesVoteCountHasBeenSet() const { return m_yesVoteCountHasBeenSet; }
     inline void SetYesVoteCount(int value) { m_yesVoteCountHasBeenSet = true; m_yesVoteCount = value; }
     inline Proposal& WithYesVoteCount(int value) { SetYesVoteCount(value); return *this;}
@@ -198,7 +186,7 @@ namespace Model
      * <p> The current total of <code>NO</code> votes cast on the proposal by members.
      * </p>
      */
-    inline int GetNoVoteCount() const{ return m_noVoteCount; }
+    inline int GetNoVoteCount() const { return m_noVoteCount; }
     inline bool NoVoteCountHasBeenSet() const { return m_noVoteCountHasBeenSet; }
     inline void SetNoVoteCount(int value) { m_noVoteCountHasBeenSet = true; m_noVoteCount = value; }
     inline Proposal& WithNoVoteCount(int value) { SetNoVoteCount(value); return *this;}
@@ -210,7 +198,7 @@ namespace Model
      * other words, the number of members minus the sum of <code>YES</code> votes and
      * <code>NO</code> votes. </p>
      */
-    inline int GetOutstandingVoteCount() const{ return m_outstandingVoteCount; }
+    inline int GetOutstandingVoteCount() const { return m_outstandingVoteCount; }
     inline bool OutstandingVoteCountHasBeenSet() const { return m_outstandingVoteCountHasBeenSet; }
     inline void SetOutstandingVoteCount(int value) { m_outstandingVoteCountHasBeenSet = true; m_outstandingVoteCount = value; }
     inline Proposal& WithOutstandingVoteCount(int value) { SetOutstandingVoteCount(value); return *this;}
@@ -227,19 +215,16 @@ namespace Model
      * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
      * Guide</i>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline Proposal& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline Proposal& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline Proposal& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline Proposal& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline Proposal& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline Proposal& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline Proposal& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline Proposal& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline Proposal& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    Proposal& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    Proposal& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -250,14 +235,12 @@ namespace Model
      * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
      * Reference</i>.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline Proposal& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline Proposal& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline Proposal& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    Proposal& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
   private:
 
@@ -279,22 +262,22 @@ namespace Model
     Aws::String m_proposedByMemberName;
     bool m_proposedByMemberNameHasBeenSet = false;
 
-    ProposalStatus m_status;
+    ProposalStatus m_status{ProposalStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDate;
+    Aws::Utils::DateTime m_creationDate{};
     bool m_creationDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_expirationDate;
+    Aws::Utils::DateTime m_expirationDate{};
     bool m_expirationDateHasBeenSet = false;
 
-    int m_yesVoteCount;
+    int m_yesVoteCount{0};
     bool m_yesVoteCountHasBeenSet = false;
 
-    int m_noVoteCount;
+    int m_noVoteCount{0};
     bool m_noVoteCountHasBeenSet = false;
 
-    int m_outstandingVoteCount;
+    int m_outstandingVoteCount{0};
     bool m_outstandingVoteCountHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;

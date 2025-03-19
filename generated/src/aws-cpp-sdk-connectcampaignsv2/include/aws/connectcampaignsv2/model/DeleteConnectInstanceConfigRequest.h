@@ -30,7 +30,7 @@ namespace Model
   class DeleteConnectInstanceConfigRequest : public ConnectCampaignsV2Request
   {
   public:
-    AWS_CONNECTCAMPAIGNSV2_API DeleteConnectInstanceConfigRequest();
+    AWS_CONNECTCAMPAIGNSV2_API DeleteConnectInstanceConfigRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,31 +45,27 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetConnectInstanceId() const{ return m_connectInstanceId; }
+    inline const Aws::String& GetConnectInstanceId() const { return m_connectInstanceId; }
     inline bool ConnectInstanceIdHasBeenSet() const { return m_connectInstanceIdHasBeenSet; }
-    inline void SetConnectInstanceId(const Aws::String& value) { m_connectInstanceIdHasBeenSet = true; m_connectInstanceId = value; }
-    inline void SetConnectInstanceId(Aws::String&& value) { m_connectInstanceIdHasBeenSet = true; m_connectInstanceId = std::move(value); }
-    inline void SetConnectInstanceId(const char* value) { m_connectInstanceIdHasBeenSet = true; m_connectInstanceId.assign(value); }
-    inline DeleteConnectInstanceConfigRequest& WithConnectInstanceId(const Aws::String& value) { SetConnectInstanceId(value); return *this;}
-    inline DeleteConnectInstanceConfigRequest& WithConnectInstanceId(Aws::String&& value) { SetConnectInstanceId(std::move(value)); return *this;}
-    inline DeleteConnectInstanceConfigRequest& WithConnectInstanceId(const char* value) { SetConnectInstanceId(value); return *this;}
+    template<typename ConnectInstanceIdT = Aws::String>
+    void SetConnectInstanceId(ConnectInstanceIdT&& value) { m_connectInstanceIdHasBeenSet = true; m_connectInstanceId = std::forward<ConnectInstanceIdT>(value); }
+    template<typename ConnectInstanceIdT = Aws::String>
+    DeleteConnectInstanceConfigRequest& WithConnectInstanceId(ConnectInstanceIdT&& value) { SetConnectInstanceId(std::forward<ConnectInstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const CampaignDeletionPolicy& GetCampaignDeletionPolicy() const{ return m_campaignDeletionPolicy; }
+    inline CampaignDeletionPolicy GetCampaignDeletionPolicy() const { return m_campaignDeletionPolicy; }
     inline bool CampaignDeletionPolicyHasBeenSet() const { return m_campaignDeletionPolicyHasBeenSet; }
-    inline void SetCampaignDeletionPolicy(const CampaignDeletionPolicy& value) { m_campaignDeletionPolicyHasBeenSet = true; m_campaignDeletionPolicy = value; }
-    inline void SetCampaignDeletionPolicy(CampaignDeletionPolicy&& value) { m_campaignDeletionPolicyHasBeenSet = true; m_campaignDeletionPolicy = std::move(value); }
-    inline DeleteConnectInstanceConfigRequest& WithCampaignDeletionPolicy(const CampaignDeletionPolicy& value) { SetCampaignDeletionPolicy(value); return *this;}
-    inline DeleteConnectInstanceConfigRequest& WithCampaignDeletionPolicy(CampaignDeletionPolicy&& value) { SetCampaignDeletionPolicy(std::move(value)); return *this;}
+    inline void SetCampaignDeletionPolicy(CampaignDeletionPolicy value) { m_campaignDeletionPolicyHasBeenSet = true; m_campaignDeletionPolicy = value; }
+    inline DeleteConnectInstanceConfigRequest& WithCampaignDeletionPolicy(CampaignDeletionPolicy value) { SetCampaignDeletionPolicy(value); return *this;}
     ///@}
   private:
 
     Aws::String m_connectInstanceId;
     bool m_connectInstanceIdHasBeenSet = false;
 
-    CampaignDeletionPolicy m_campaignDeletionPolicy;
+    CampaignDeletionPolicy m_campaignDeletionPolicy{CampaignDeletionPolicy::NOT_SET};
     bool m_campaignDeletionPolicyHasBeenSet = false;
   };
 

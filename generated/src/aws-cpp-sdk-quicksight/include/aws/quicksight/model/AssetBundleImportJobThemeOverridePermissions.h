@@ -34,7 +34,7 @@ namespace Model
   class AssetBundleImportJobThemeOverridePermissions
   {
   public:
-    AWS_QUICKSIGHT_API AssetBundleImportJobThemeOverridePermissions();
+    AWS_QUICKSIGHT_API AssetBundleImportJobThemeOverridePermissions() = default;
     AWS_QUICKSIGHT_API AssetBundleImportJobThemeOverridePermissions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API AssetBundleImportJobThemeOverridePermissions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,27 +45,26 @@ namespace Model
      * <p>A list of theme IDs that you want to apply overrides to. You can use
      * <code>*</code> to override all themes in this asset bundle.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetThemeIds() const{ return m_themeIds; }
+    inline const Aws::Vector<Aws::String>& GetThemeIds() const { return m_themeIds; }
     inline bool ThemeIdsHasBeenSet() const { return m_themeIdsHasBeenSet; }
-    inline void SetThemeIds(const Aws::Vector<Aws::String>& value) { m_themeIdsHasBeenSet = true; m_themeIds = value; }
-    inline void SetThemeIds(Aws::Vector<Aws::String>&& value) { m_themeIdsHasBeenSet = true; m_themeIds = std::move(value); }
-    inline AssetBundleImportJobThemeOverridePermissions& WithThemeIds(const Aws::Vector<Aws::String>& value) { SetThemeIds(value); return *this;}
-    inline AssetBundleImportJobThemeOverridePermissions& WithThemeIds(Aws::Vector<Aws::String>&& value) { SetThemeIds(std::move(value)); return *this;}
-    inline AssetBundleImportJobThemeOverridePermissions& AddThemeIds(const Aws::String& value) { m_themeIdsHasBeenSet = true; m_themeIds.push_back(value); return *this; }
-    inline AssetBundleImportJobThemeOverridePermissions& AddThemeIds(Aws::String&& value) { m_themeIdsHasBeenSet = true; m_themeIds.push_back(std::move(value)); return *this; }
-    inline AssetBundleImportJobThemeOverridePermissions& AddThemeIds(const char* value) { m_themeIdsHasBeenSet = true; m_themeIds.push_back(value); return *this; }
+    template<typename ThemeIdsT = Aws::Vector<Aws::String>>
+    void SetThemeIds(ThemeIdsT&& value) { m_themeIdsHasBeenSet = true; m_themeIds = std::forward<ThemeIdsT>(value); }
+    template<typename ThemeIdsT = Aws::Vector<Aws::String>>
+    AssetBundleImportJobThemeOverridePermissions& WithThemeIds(ThemeIdsT&& value) { SetThemeIds(std::forward<ThemeIdsT>(value)); return *this;}
+    template<typename ThemeIdsT = Aws::String>
+    AssetBundleImportJobThemeOverridePermissions& AddThemeIds(ThemeIdsT&& value) { m_themeIdsHasBeenSet = true; m_themeIds.emplace_back(std::forward<ThemeIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of permissions for the themes that you want to apply overrides to.</p>
      */
-    inline const AssetBundleResourcePermissions& GetPermissions() const{ return m_permissions; }
+    inline const AssetBundleResourcePermissions& GetPermissions() const { return m_permissions; }
     inline bool PermissionsHasBeenSet() const { return m_permissionsHasBeenSet; }
-    inline void SetPermissions(const AssetBundleResourcePermissions& value) { m_permissionsHasBeenSet = true; m_permissions = value; }
-    inline void SetPermissions(AssetBundleResourcePermissions&& value) { m_permissionsHasBeenSet = true; m_permissions = std::move(value); }
-    inline AssetBundleImportJobThemeOverridePermissions& WithPermissions(const AssetBundleResourcePermissions& value) { SetPermissions(value); return *this;}
-    inline AssetBundleImportJobThemeOverridePermissions& WithPermissions(AssetBundleResourcePermissions&& value) { SetPermissions(std::move(value)); return *this;}
+    template<typename PermissionsT = AssetBundleResourcePermissions>
+    void SetPermissions(PermissionsT&& value) { m_permissionsHasBeenSet = true; m_permissions = std::forward<PermissionsT>(value); }
+    template<typename PermissionsT = AssetBundleResourcePermissions>
+    AssetBundleImportJobThemeOverridePermissions& WithPermissions(PermissionsT&& value) { SetPermissions(std::forward<PermissionsT>(value)); return *this;}
     ///@}
   private:
 

@@ -15,17 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-PutFunctionEventInvokeConfigRequest::PutFunctionEventInvokeConfigRequest() : 
-    m_functionNameHasBeenSet(false),
-    m_qualifierHasBeenSet(false),
-    m_maximumRetryAttempts(0),
-    m_maximumRetryAttemptsHasBeenSet(false),
-    m_maximumEventAgeInSeconds(0),
-    m_maximumEventAgeInSecondsHasBeenSet(false),
-    m_destinationConfigHasBeenSet(false)
-{
-}
-
 Aws::String PutFunctionEventInvokeConfigRequest::SerializePayload() const
 {
   JsonValue payload;

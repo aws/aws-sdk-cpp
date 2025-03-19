@@ -12,13 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDeployablePatchSnapshotForInstanceRequest::GetDeployablePatchSnapshotForInstanceRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false),
-    m_baselineOverrideHasBeenSet(false)
-{
-}
-
 Aws::String GetDeployablePatchSnapshotForInstanceRequest::SerializePayload() const
 {
   JsonValue payload;

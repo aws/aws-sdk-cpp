@@ -18,16 +18,7 @@ namespace ElasticTranscoder
 namespace Model
 {
 
-AudioCodecOptions::AudioCodecOptions() : 
-    m_profileHasBeenSet(false),
-    m_bitDepthHasBeenSet(false),
-    m_bitOrderHasBeenSet(false),
-    m_signedHasBeenSet(false)
-{
-}
-
 AudioCodecOptions::AudioCodecOptions(JsonView jsonValue)
-  : AudioCodecOptions()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ AudioCodecOptions& AudioCodecOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Profile"))
   {
     m_profile = jsonValue.GetString("Profile");
-
     m_profileHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BitDepth"))
   {
     m_bitDepth = jsonValue.GetString("BitDepth");
-
     m_bitDepthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BitOrder"))
   {
     m_bitOrder = jsonValue.GetString("BitOrder");
-
     m_bitOrderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Signed"))
   {
     m_signed = jsonValue.GetString("Signed");
-
     m_signedHasBeenSet = true;
   }
-
   return *this;
 }
 

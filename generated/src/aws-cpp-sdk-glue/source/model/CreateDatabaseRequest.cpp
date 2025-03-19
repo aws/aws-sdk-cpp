@@ -12,13 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDatabaseRequest::CreateDatabaseRequest() : 
-    m_catalogIdHasBeenSet(false),
-    m_databaseInputHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateDatabaseRequest::SerializePayload() const
 {
   JsonValue payload;

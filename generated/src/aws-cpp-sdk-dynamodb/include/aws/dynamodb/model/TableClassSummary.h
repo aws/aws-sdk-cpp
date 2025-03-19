@@ -32,7 +32,7 @@ namespace Model
   class TableClassSummary
   {
   public:
-    AWS_DYNAMODB_API TableClassSummary();
+    AWS_DYNAMODB_API TableClassSummary() = default;
     AWS_DYNAMODB_API TableClassSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API TableClassSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,31 +43,29 @@ namespace Model
      * <p>The table class of the specified table. Valid values are
      * <code>STANDARD</code> and <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
      */
-    inline const TableClass& GetTableClass() const{ return m_tableClass; }
+    inline TableClass GetTableClass() const { return m_tableClass; }
     inline bool TableClassHasBeenSet() const { return m_tableClassHasBeenSet; }
-    inline void SetTableClass(const TableClass& value) { m_tableClassHasBeenSet = true; m_tableClass = value; }
-    inline void SetTableClass(TableClass&& value) { m_tableClassHasBeenSet = true; m_tableClass = std::move(value); }
-    inline TableClassSummary& WithTableClass(const TableClass& value) { SetTableClass(value); return *this;}
-    inline TableClassSummary& WithTableClass(TableClass&& value) { SetTableClass(std::move(value)); return *this;}
+    inline void SetTableClass(TableClass value) { m_tableClassHasBeenSet = true; m_tableClass = value; }
+    inline TableClassSummary& WithTableClass(TableClass value) { SetTableClass(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time at which the table class was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdateDateTime() const{ return m_lastUpdateDateTime; }
+    inline const Aws::Utils::DateTime& GetLastUpdateDateTime() const { return m_lastUpdateDateTime; }
     inline bool LastUpdateDateTimeHasBeenSet() const { return m_lastUpdateDateTimeHasBeenSet; }
-    inline void SetLastUpdateDateTime(const Aws::Utils::DateTime& value) { m_lastUpdateDateTimeHasBeenSet = true; m_lastUpdateDateTime = value; }
-    inline void SetLastUpdateDateTime(Aws::Utils::DateTime&& value) { m_lastUpdateDateTimeHasBeenSet = true; m_lastUpdateDateTime = std::move(value); }
-    inline TableClassSummary& WithLastUpdateDateTime(const Aws::Utils::DateTime& value) { SetLastUpdateDateTime(value); return *this;}
-    inline TableClassSummary& WithLastUpdateDateTime(Aws::Utils::DateTime&& value) { SetLastUpdateDateTime(std::move(value)); return *this;}
+    template<typename LastUpdateDateTimeT = Aws::Utils::DateTime>
+    void SetLastUpdateDateTime(LastUpdateDateTimeT&& value) { m_lastUpdateDateTimeHasBeenSet = true; m_lastUpdateDateTime = std::forward<LastUpdateDateTimeT>(value); }
+    template<typename LastUpdateDateTimeT = Aws::Utils::DateTime>
+    TableClassSummary& WithLastUpdateDateTime(LastUpdateDateTimeT&& value) { SetLastUpdateDateTime(std::forward<LastUpdateDateTimeT>(value)); return *this;}
     ///@}
   private:
 
-    TableClass m_tableClass;
+    TableClass m_tableClass{TableClass::NOT_SET};
     bool m_tableClassHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdateDateTime;
+    Aws::Utils::DateTime m_lastUpdateDateTime{};
     bool m_lastUpdateDateTimeHasBeenSet = false;
   };
 

@@ -12,37 +12,6 @@ using namespace Aws::Lambda::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateEventSourceMappingRequest::UpdateEventSourceMappingRequest() : 
-    m_uUIDHasBeenSet(false),
-    m_functionNameHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_batchSize(0),
-    m_batchSizeHasBeenSet(false),
-    m_filterCriteriaHasBeenSet(false),
-    m_maximumBatchingWindowInSeconds(0),
-    m_maximumBatchingWindowInSecondsHasBeenSet(false),
-    m_destinationConfigHasBeenSet(false),
-    m_maximumRecordAgeInSeconds(0),
-    m_maximumRecordAgeInSecondsHasBeenSet(false),
-    m_bisectBatchOnFunctionError(false),
-    m_bisectBatchOnFunctionErrorHasBeenSet(false),
-    m_maximumRetryAttempts(0),
-    m_maximumRetryAttemptsHasBeenSet(false),
-    m_parallelizationFactor(0),
-    m_parallelizationFactorHasBeenSet(false),
-    m_sourceAccessConfigurationsHasBeenSet(false),
-    m_tumblingWindowInSeconds(0),
-    m_tumblingWindowInSecondsHasBeenSet(false),
-    m_functionResponseTypesHasBeenSet(false),
-    m_scalingConfigHasBeenSet(false),
-    m_documentDBEventSourceConfigHasBeenSet(false),
-    m_kMSKeyArnHasBeenSet(false),
-    m_metricsConfigHasBeenSet(false),
-    m_provisionedPollerConfigHasBeenSet(false)
-{
-}
-
 Aws::String UpdateEventSourceMappingRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,13 +18,7 @@ namespace mgn
 namespace Model
 {
 
-SourceServerActionsRequestFilters::SourceServerActionsRequestFilters() : 
-    m_actionIDsHasBeenSet(false)
-{
-}
-
 SourceServerActionsRequestFilters::SourceServerActionsRequestFilters(JsonView jsonValue)
-  : SourceServerActionsRequestFilters()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ SourceServerActionsRequestFilters& SourceServerActionsRequestFilters::operator =
     }
     m_actionIDsHasBeenSet = true;
   }
-
   return *this;
 }
 

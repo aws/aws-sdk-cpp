@@ -18,14 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-AIGuardrailSensitiveInformationPolicyConfig::AIGuardrailSensitiveInformationPolicyConfig() : 
-    m_piiEntitiesConfigHasBeenSet(false),
-    m_regexesConfigHasBeenSet(false)
-{
-}
-
 AIGuardrailSensitiveInformationPolicyConfig::AIGuardrailSensitiveInformationPolicyConfig(JsonView jsonValue)
-  : AIGuardrailSensitiveInformationPolicyConfig()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ AIGuardrailSensitiveInformationPolicyConfig& AIGuardrailSensitiveInformationPoli
     }
     m_piiEntitiesConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("regexesConfig"))
   {
     Aws::Utils::Array<JsonView> regexesConfigJsonList = jsonValue.GetArray("regexesConfig");
@@ -51,7 +43,6 @@ AIGuardrailSensitiveInformationPolicyConfig& AIGuardrailSensitiveInformationPoli
     }
     m_regexesConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::DataSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAgentRequest::DeleteAgentRequest() : 
-    m_agentArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAgentRequest::SerializePayload() const
 {
   JsonValue payload;

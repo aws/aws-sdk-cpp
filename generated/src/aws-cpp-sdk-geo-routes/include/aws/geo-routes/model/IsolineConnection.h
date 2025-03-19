@@ -33,7 +33,7 @@ namespace Model
   class IsolineConnection
   {
   public:
-    AWS_GEOROUTES_API IsolineConnection();
+    AWS_GEOROUTES_API IsolineConnection() = default;
     AWS_GEOROUTES_API IsolineConnection(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API IsolineConnection& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * <p>Index of the polygon corresponding to the "from" component of the connection.
      * The polygon is available from <code>Isoline[].Geometries</code>.</p>
      */
-    inline int GetFromPolygonIndex() const{ return m_fromPolygonIndex; }
+    inline int GetFromPolygonIndex() const { return m_fromPolygonIndex; }
     inline bool FromPolygonIndexHasBeenSet() const { return m_fromPolygonIndexHasBeenSet; }
     inline void SetFromPolygonIndex(int value) { m_fromPolygonIndexHasBeenSet = true; m_fromPolygonIndex = value; }
     inline IsolineConnection& WithFromPolygonIndex(int value) { SetFromPolygonIndex(value); return *this;}
@@ -54,12 +54,12 @@ namespace Model
     /**
      * <p>The isoline geometry.</p>
      */
-    inline const IsolineConnectionGeometry& GetGeometry() const{ return m_geometry; }
+    inline const IsolineConnectionGeometry& GetGeometry() const { return m_geometry; }
     inline bool GeometryHasBeenSet() const { return m_geometryHasBeenSet; }
-    inline void SetGeometry(const IsolineConnectionGeometry& value) { m_geometryHasBeenSet = true; m_geometry = value; }
-    inline void SetGeometry(IsolineConnectionGeometry&& value) { m_geometryHasBeenSet = true; m_geometry = std::move(value); }
-    inline IsolineConnection& WithGeometry(const IsolineConnectionGeometry& value) { SetGeometry(value); return *this;}
-    inline IsolineConnection& WithGeometry(IsolineConnectionGeometry&& value) { SetGeometry(std::move(value)); return *this;}
+    template<typename GeometryT = IsolineConnectionGeometry>
+    void SetGeometry(GeometryT&& value) { m_geometryHasBeenSet = true; m_geometry = std::forward<GeometryT>(value); }
+    template<typename GeometryT = IsolineConnectionGeometry>
+    IsolineConnection& WithGeometry(GeometryT&& value) { SetGeometry(std::forward<GeometryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,20 +67,20 @@ namespace Model
      * <p>Index of the polygon corresponding to the "to" component of the connection.
      * The polygon is available from <code>Isoline[].Geometries</code>.</p>
      */
-    inline int GetToPolygonIndex() const{ return m_toPolygonIndex; }
+    inline int GetToPolygonIndex() const { return m_toPolygonIndex; }
     inline bool ToPolygonIndexHasBeenSet() const { return m_toPolygonIndexHasBeenSet; }
     inline void SetToPolygonIndex(int value) { m_toPolygonIndexHasBeenSet = true; m_toPolygonIndex = value; }
     inline IsolineConnection& WithToPolygonIndex(int value) { SetToPolygonIndex(value); return *this;}
     ///@}
   private:
 
-    int m_fromPolygonIndex;
+    int m_fromPolygonIndex{0};
     bool m_fromPolygonIndexHasBeenSet = false;
 
     IsolineConnectionGeometry m_geometry;
     bool m_geometryHasBeenSet = false;
 
-    int m_toPolygonIndex;
+    int m_toPolygonIndex{0};
     bool m_toPolygonIndexHasBeenSet = false;
   };
 

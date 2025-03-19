@@ -12,13 +12,6 @@ using namespace Aws::OpsWorksCM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateServerEngineAttributesRequest::UpdateServerEngineAttributesRequest() : 
-    m_serverNameHasBeenSet(false),
-    m_attributeNameHasBeenSet(false),
-    m_attributeValueHasBeenSet(false)
-{
-}
-
 Aws::String UpdateServerEngineAttributesRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -34,7 +34,7 @@ namespace Model
   class InferenceInputConfiguration
   {
   public:
-    AWS_LOOKOUTEQUIPMENT_API InferenceInputConfiguration();
+    AWS_LOOKOUTEQUIPMENT_API InferenceInputConfiguration() = default;
     AWS_LOOKOUTEQUIPMENT_API InferenceInputConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTEQUIPMENT_API InferenceInputConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * <p> Specifies configuration information for the input data for the inference,
      * including Amazon S3 location of input data.</p>
      */
-    inline const InferenceS3InputConfiguration& GetS3InputConfiguration() const{ return m_s3InputConfiguration; }
+    inline const InferenceS3InputConfiguration& GetS3InputConfiguration() const { return m_s3InputConfiguration; }
     inline bool S3InputConfigurationHasBeenSet() const { return m_s3InputConfigurationHasBeenSet; }
-    inline void SetS3InputConfiguration(const InferenceS3InputConfiguration& value) { m_s3InputConfigurationHasBeenSet = true; m_s3InputConfiguration = value; }
-    inline void SetS3InputConfiguration(InferenceS3InputConfiguration&& value) { m_s3InputConfigurationHasBeenSet = true; m_s3InputConfiguration = std::move(value); }
-    inline InferenceInputConfiguration& WithS3InputConfiguration(const InferenceS3InputConfiguration& value) { SetS3InputConfiguration(value); return *this;}
-    inline InferenceInputConfiguration& WithS3InputConfiguration(InferenceS3InputConfiguration&& value) { SetS3InputConfiguration(std::move(value)); return *this;}
+    template<typename S3InputConfigurationT = InferenceS3InputConfiguration>
+    void SetS3InputConfiguration(S3InputConfigurationT&& value) { m_s3InputConfigurationHasBeenSet = true; m_s3InputConfiguration = std::forward<S3InputConfigurationT>(value); }
+    template<typename S3InputConfigurationT = InferenceS3InputConfiguration>
+    InferenceInputConfiguration& WithS3InputConfiguration(S3InputConfigurationT&& value) { SetS3InputConfiguration(std::forward<S3InputConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +58,12 @@ namespace Model
      * <p>Indicates the difference between your time zone and Coordinated Universal
      * Time (UTC).</p>
      */
-    inline const Aws::String& GetInputTimeZoneOffset() const{ return m_inputTimeZoneOffset; }
+    inline const Aws::String& GetInputTimeZoneOffset() const { return m_inputTimeZoneOffset; }
     inline bool InputTimeZoneOffsetHasBeenSet() const { return m_inputTimeZoneOffsetHasBeenSet; }
-    inline void SetInputTimeZoneOffset(const Aws::String& value) { m_inputTimeZoneOffsetHasBeenSet = true; m_inputTimeZoneOffset = value; }
-    inline void SetInputTimeZoneOffset(Aws::String&& value) { m_inputTimeZoneOffsetHasBeenSet = true; m_inputTimeZoneOffset = std::move(value); }
-    inline void SetInputTimeZoneOffset(const char* value) { m_inputTimeZoneOffsetHasBeenSet = true; m_inputTimeZoneOffset.assign(value); }
-    inline InferenceInputConfiguration& WithInputTimeZoneOffset(const Aws::String& value) { SetInputTimeZoneOffset(value); return *this;}
-    inline InferenceInputConfiguration& WithInputTimeZoneOffset(Aws::String&& value) { SetInputTimeZoneOffset(std::move(value)); return *this;}
-    inline InferenceInputConfiguration& WithInputTimeZoneOffset(const char* value) { SetInputTimeZoneOffset(value); return *this;}
+    template<typename InputTimeZoneOffsetT = Aws::String>
+    void SetInputTimeZoneOffset(InputTimeZoneOffsetT&& value) { m_inputTimeZoneOffsetHasBeenSet = true; m_inputTimeZoneOffset = std::forward<InputTimeZoneOffsetT>(value); }
+    template<typename InputTimeZoneOffsetT = Aws::String>
+    InferenceInputConfiguration& WithInputTimeZoneOffset(InputTimeZoneOffsetT&& value) { SetInputTimeZoneOffset(std::forward<InputTimeZoneOffsetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,12 +71,12 @@ namespace Model
      * <p>Specifies configuration information for the input data for the inference,
      * including timestamp format and delimiter. </p>
      */
-    inline const InferenceInputNameConfiguration& GetInferenceInputNameConfiguration() const{ return m_inferenceInputNameConfiguration; }
+    inline const InferenceInputNameConfiguration& GetInferenceInputNameConfiguration() const { return m_inferenceInputNameConfiguration; }
     inline bool InferenceInputNameConfigurationHasBeenSet() const { return m_inferenceInputNameConfigurationHasBeenSet; }
-    inline void SetInferenceInputNameConfiguration(const InferenceInputNameConfiguration& value) { m_inferenceInputNameConfigurationHasBeenSet = true; m_inferenceInputNameConfiguration = value; }
-    inline void SetInferenceInputNameConfiguration(InferenceInputNameConfiguration&& value) { m_inferenceInputNameConfigurationHasBeenSet = true; m_inferenceInputNameConfiguration = std::move(value); }
-    inline InferenceInputConfiguration& WithInferenceInputNameConfiguration(const InferenceInputNameConfiguration& value) { SetInferenceInputNameConfiguration(value); return *this;}
-    inline InferenceInputConfiguration& WithInferenceInputNameConfiguration(InferenceInputNameConfiguration&& value) { SetInferenceInputNameConfiguration(std::move(value)); return *this;}
+    template<typename InferenceInputNameConfigurationT = InferenceInputNameConfiguration>
+    void SetInferenceInputNameConfiguration(InferenceInputNameConfigurationT&& value) { m_inferenceInputNameConfigurationHasBeenSet = true; m_inferenceInputNameConfiguration = std::forward<InferenceInputNameConfigurationT>(value); }
+    template<typename InferenceInputNameConfigurationT = InferenceInputNameConfiguration>
+    InferenceInputConfiguration& WithInferenceInputNameConfiguration(InferenceInputNameConfigurationT&& value) { SetInferenceInputNameConfiguration(std::forward<InferenceInputNameConfigurationT>(value)); return *this;}
     ///@}
   private:
 

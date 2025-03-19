@@ -31,7 +31,7 @@ namespace Model
   class AttributeKey
   {
   public:
-    AWS_CLOUDDIRECTORY_API AttributeKey();
+    AWS_CLOUDDIRECTORY_API AttributeKey() = default;
     AWS_CLOUDDIRECTORY_API AttributeKey(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API AttributeKey& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,42 +42,36 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the schema that contains the facet and
      * attribute.</p>
      */
-    inline const Aws::String& GetSchemaArn() const{ return m_schemaArn; }
+    inline const Aws::String& GetSchemaArn() const { return m_schemaArn; }
     inline bool SchemaArnHasBeenSet() const { return m_schemaArnHasBeenSet; }
-    inline void SetSchemaArn(const Aws::String& value) { m_schemaArnHasBeenSet = true; m_schemaArn = value; }
-    inline void SetSchemaArn(Aws::String&& value) { m_schemaArnHasBeenSet = true; m_schemaArn = std::move(value); }
-    inline void SetSchemaArn(const char* value) { m_schemaArnHasBeenSet = true; m_schemaArn.assign(value); }
-    inline AttributeKey& WithSchemaArn(const Aws::String& value) { SetSchemaArn(value); return *this;}
-    inline AttributeKey& WithSchemaArn(Aws::String&& value) { SetSchemaArn(std::move(value)); return *this;}
-    inline AttributeKey& WithSchemaArn(const char* value) { SetSchemaArn(value); return *this;}
+    template<typename SchemaArnT = Aws::String>
+    void SetSchemaArn(SchemaArnT&& value) { m_schemaArnHasBeenSet = true; m_schemaArn = std::forward<SchemaArnT>(value); }
+    template<typename SchemaArnT = Aws::String>
+    AttributeKey& WithSchemaArn(SchemaArnT&& value) { SetSchemaArn(std::forward<SchemaArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the facet that the attribute exists within.</p>
      */
-    inline const Aws::String& GetFacetName() const{ return m_facetName; }
+    inline const Aws::String& GetFacetName() const { return m_facetName; }
     inline bool FacetNameHasBeenSet() const { return m_facetNameHasBeenSet; }
-    inline void SetFacetName(const Aws::String& value) { m_facetNameHasBeenSet = true; m_facetName = value; }
-    inline void SetFacetName(Aws::String&& value) { m_facetNameHasBeenSet = true; m_facetName = std::move(value); }
-    inline void SetFacetName(const char* value) { m_facetNameHasBeenSet = true; m_facetName.assign(value); }
-    inline AttributeKey& WithFacetName(const Aws::String& value) { SetFacetName(value); return *this;}
-    inline AttributeKey& WithFacetName(Aws::String&& value) { SetFacetName(std::move(value)); return *this;}
-    inline AttributeKey& WithFacetName(const char* value) { SetFacetName(value); return *this;}
+    template<typename FacetNameT = Aws::String>
+    void SetFacetName(FacetNameT&& value) { m_facetNameHasBeenSet = true; m_facetName = std::forward<FacetNameT>(value); }
+    template<typename FacetNameT = Aws::String>
+    AttributeKey& WithFacetName(FacetNameT&& value) { SetFacetName(std::forward<FacetNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the attribute.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AttributeKey& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AttributeKey& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AttributeKey& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    AttributeKey& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 

@@ -34,7 +34,7 @@ namespace Model
   class StopJobResult
   {
   public:
-    AWS_AMPLIFY_API StopJobResult();
+    AWS_AMPLIFY_API StopJobResult() = default;
     AWS_AMPLIFY_API StopJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_AMPLIFY_API StopJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,28 +43,28 @@ namespace Model
     /**
      * <p> The summary for the job. </p>
      */
-    inline const JobSummary& GetJobSummary() const{ return m_jobSummary; }
-    inline void SetJobSummary(const JobSummary& value) { m_jobSummary = value; }
-    inline void SetJobSummary(JobSummary&& value) { m_jobSummary = std::move(value); }
-    inline StopJobResult& WithJobSummary(const JobSummary& value) { SetJobSummary(value); return *this;}
-    inline StopJobResult& WithJobSummary(JobSummary&& value) { SetJobSummary(std::move(value)); return *this;}
+    inline const JobSummary& GetJobSummary() const { return m_jobSummary; }
+    template<typename JobSummaryT = JobSummary>
+    void SetJobSummary(JobSummaryT&& value) { m_jobSummaryHasBeenSet = true; m_jobSummary = std::forward<JobSummaryT>(value); }
+    template<typename JobSummaryT = JobSummary>
+    StopJobResult& WithJobSummary(JobSummaryT&& value) { SetJobSummary(std::forward<JobSummaryT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StopJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StopJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StopJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StopJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     JobSummary m_jobSummary;
+    bool m_jobSummaryHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,7 +33,7 @@ namespace Model
   class ContainerServiceRegistryLogin
   {
   public:
-    AWS_LIGHTSAIL_API ContainerServiceRegistryLogin();
+    AWS_LIGHTSAIL_API ContainerServiceRegistryLogin() = default;
     AWS_LIGHTSAIL_API ContainerServiceRegistryLogin(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API ContainerServiceRegistryLogin& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The container service registry username to use to push container images to
      * the container image registry of a Lightsail account.</p>
      */
-    inline const Aws::String& GetUsername() const{ return m_username; }
+    inline const Aws::String& GetUsername() const { return m_username; }
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
-    inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
-    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
-    inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
-    inline ContainerServiceRegistryLogin& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
-    inline ContainerServiceRegistryLogin& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
-    inline ContainerServiceRegistryLogin& WithUsername(const char* value) { SetUsername(value); return *this;}
+    template<typename UsernameT = Aws::String>
+    void SetUsername(UsernameT&& value) { m_usernameHasBeenSet = true; m_username = std::forward<UsernameT>(value); }
+    template<typename UsernameT = Aws::String>
+    ContainerServiceRegistryLogin& WithUsername(UsernameT&& value) { SetUsername(std::forward<UsernameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>The container service registry password to use to push container images to
      * the container image registry of a Lightsail account</p>
      */
-    inline const Aws::String& GetPassword() const{ return m_password; }
+    inline const Aws::String& GetPassword() const { return m_password; }
     inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
-    inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
-    inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = std::move(value); }
-    inline void SetPassword(const char* value) { m_passwordHasBeenSet = true; m_password.assign(value); }
-    inline ContainerServiceRegistryLogin& WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
-    inline ContainerServiceRegistryLogin& WithPassword(Aws::String&& value) { SetPassword(std::move(value)); return *this;}
-    inline ContainerServiceRegistryLogin& WithPassword(const char* value) { SetPassword(value); return *this;}
+    template<typename PasswordT = Aws::String>
+    void SetPassword(PasswordT&& value) { m_passwordHasBeenSet = true; m_password = std::forward<PasswordT>(value); }
+    template<typename PasswordT = Aws::String>
+    ContainerServiceRegistryLogin& WithPassword(PasswordT&& value) { SetPassword(std::forward<PasswordT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,12 +72,12 @@ namespace Model
      * which point you will need to create a new set of log in credentials using the
      * <code>CreateContainerServiceRegistryLogin</code> action.</p>
      */
-    inline const Aws::Utils::DateTime& GetExpiresAt() const{ return m_expiresAt; }
+    inline const Aws::Utils::DateTime& GetExpiresAt() const { return m_expiresAt; }
     inline bool ExpiresAtHasBeenSet() const { return m_expiresAtHasBeenSet; }
-    inline void SetExpiresAt(const Aws::Utils::DateTime& value) { m_expiresAtHasBeenSet = true; m_expiresAt = value; }
-    inline void SetExpiresAt(Aws::Utils::DateTime&& value) { m_expiresAtHasBeenSet = true; m_expiresAt = std::move(value); }
-    inline ContainerServiceRegistryLogin& WithExpiresAt(const Aws::Utils::DateTime& value) { SetExpiresAt(value); return *this;}
-    inline ContainerServiceRegistryLogin& WithExpiresAt(Aws::Utils::DateTime&& value) { SetExpiresAt(std::move(value)); return *this;}
+    template<typename ExpiresAtT = Aws::Utils::DateTime>
+    void SetExpiresAt(ExpiresAtT&& value) { m_expiresAtHasBeenSet = true; m_expiresAt = std::forward<ExpiresAtT>(value); }
+    template<typename ExpiresAtT = Aws::Utils::DateTime>
+    ContainerServiceRegistryLogin& WithExpiresAt(ExpiresAtT&& value) { SetExpiresAt(std::forward<ExpiresAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,14 +85,12 @@ namespace Model
      * <p>The address to use to push container images to the container image registry
      * of a Lightsail account.</p>
      */
-    inline const Aws::String& GetRegistry() const{ return m_registry; }
+    inline const Aws::String& GetRegistry() const { return m_registry; }
     inline bool RegistryHasBeenSet() const { return m_registryHasBeenSet; }
-    inline void SetRegistry(const Aws::String& value) { m_registryHasBeenSet = true; m_registry = value; }
-    inline void SetRegistry(Aws::String&& value) { m_registryHasBeenSet = true; m_registry = std::move(value); }
-    inline void SetRegistry(const char* value) { m_registryHasBeenSet = true; m_registry.assign(value); }
-    inline ContainerServiceRegistryLogin& WithRegistry(const Aws::String& value) { SetRegistry(value); return *this;}
-    inline ContainerServiceRegistryLogin& WithRegistry(Aws::String&& value) { SetRegistry(std::move(value)); return *this;}
-    inline ContainerServiceRegistryLogin& WithRegistry(const char* value) { SetRegistry(value); return *this;}
+    template<typename RegistryT = Aws::String>
+    void SetRegistry(RegistryT&& value) { m_registryHasBeenSet = true; m_registry = std::forward<RegistryT>(value); }
+    template<typename RegistryT = Aws::String>
+    ContainerServiceRegistryLogin& WithRegistry(RegistryT&& value) { SetRegistry(std::forward<RegistryT>(value)); return *this;}
     ///@}
   private:
 
@@ -106,7 +100,7 @@ namespace Model
     Aws::String m_password;
     bool m_passwordHasBeenSet = false;
 
-    Aws::Utils::DateTime m_expiresAt;
+    Aws::Utils::DateTime m_expiresAt{};
     bool m_expiresAtHasBeenSet = false;
 
     Aws::String m_registry;

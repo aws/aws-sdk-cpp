@@ -35,7 +35,7 @@ namespace Model
   class OpsItemRelatedItemsFilter
   {
   public:
-    AWS_SSM_API OpsItemRelatedItemsFilter();
+    AWS_SSM_API OpsItemRelatedItemsFilter() = default;
     AWS_SSM_API OpsItemRelatedItemsFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API OpsItemRelatedItemsFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,27 +47,24 @@ namespace Model
      * <code>ResourceUri</code>, <code>ResourceType</code>, or
      * <code>AssociationId</code>.</p>
      */
-    inline const OpsItemRelatedItemsFilterKey& GetKey() const{ return m_key; }
+    inline OpsItemRelatedItemsFilterKey GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const OpsItemRelatedItemsFilterKey& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(OpsItemRelatedItemsFilterKey&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline OpsItemRelatedItemsFilter& WithKey(const OpsItemRelatedItemsFilterKey& value) { SetKey(value); return *this;}
-    inline OpsItemRelatedItemsFilter& WithKey(OpsItemRelatedItemsFilterKey&& value) { SetKey(std::move(value)); return *this;}
+    inline void SetKey(OpsItemRelatedItemsFilterKey value) { m_keyHasBeenSet = true; m_key = value; }
+    inline OpsItemRelatedItemsFilter& WithKey(OpsItemRelatedItemsFilterKey value) { SetKey(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The values for the filter.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline OpsItemRelatedItemsFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline OpsItemRelatedItemsFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline OpsItemRelatedItemsFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline OpsItemRelatedItemsFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline OpsItemRelatedItemsFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    OpsItemRelatedItemsFilter& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    OpsItemRelatedItemsFilter& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -75,22 +72,20 @@ namespace Model
      * <p>The operator used by the filter call. The only supported operator is
      * <code>EQUAL</code>.</p>
      */
-    inline const OpsItemRelatedItemsFilterOperator& GetOperator() const{ return m_operator; }
+    inline OpsItemRelatedItemsFilterOperator GetOperator() const { return m_operator; }
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-    inline void SetOperator(const OpsItemRelatedItemsFilterOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-    inline void SetOperator(OpsItemRelatedItemsFilterOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-    inline OpsItemRelatedItemsFilter& WithOperator(const OpsItemRelatedItemsFilterOperator& value) { SetOperator(value); return *this;}
-    inline OpsItemRelatedItemsFilter& WithOperator(OpsItemRelatedItemsFilterOperator&& value) { SetOperator(std::move(value)); return *this;}
+    inline void SetOperator(OpsItemRelatedItemsFilterOperator value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline OpsItemRelatedItemsFilter& WithOperator(OpsItemRelatedItemsFilterOperator value) { SetOperator(value); return *this;}
     ///@}
   private:
 
-    OpsItemRelatedItemsFilterKey m_key;
+    OpsItemRelatedItemsFilterKey m_key{OpsItemRelatedItemsFilterKey::NOT_SET};
     bool m_keyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
     bool m_valuesHasBeenSet = false;
 
-    OpsItemRelatedItemsFilterOperator m_operator;
+    OpsItemRelatedItemsFilterOperator m_operator{OpsItemRelatedItemsFilterOperator::NOT_SET};
     bool m_operatorHasBeenSet = false;
   };
 

@@ -33,7 +33,7 @@ namespace Model
   class UpdateThemeData
   {
   public:
-    AWS_AMPLIFYUIBUILDER_API UpdateThemeData();
+    AWS_AMPLIFYUIBUILDER_API UpdateThemeData() = default;
     AWS_AMPLIFYUIBUILDER_API UpdateThemeData(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API UpdateThemeData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,56 +43,52 @@ namespace Model
     /**
      * <p>The unique ID of the theme to update.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline UpdateThemeData& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline UpdateThemeData& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline UpdateThemeData& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    UpdateThemeData& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the theme to update.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateThemeData& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateThemeData& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateThemeData& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateThemeData& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of key-value pairs that define the theme's properties.</p>
      */
-    inline const Aws::Vector<ThemeValues>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<ThemeValues>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<ThemeValues>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<ThemeValues>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline UpdateThemeData& WithValues(const Aws::Vector<ThemeValues>& value) { SetValues(value); return *this;}
-    inline UpdateThemeData& WithValues(Aws::Vector<ThemeValues>&& value) { SetValues(std::move(value)); return *this;}
-    inline UpdateThemeData& AddValues(const ThemeValues& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline UpdateThemeData& AddValues(ThemeValues&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
+    template<typename ValuesT = Aws::Vector<ThemeValues>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<ThemeValues>>
+    UpdateThemeData& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = ThemeValues>
+    UpdateThemeData& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Describes the properties that can be overriden to customize the theme.</p>
      */
-    inline const Aws::Vector<ThemeValues>& GetOverrides() const{ return m_overrides; }
+    inline const Aws::Vector<ThemeValues>& GetOverrides() const { return m_overrides; }
     inline bool OverridesHasBeenSet() const { return m_overridesHasBeenSet; }
-    inline void SetOverrides(const Aws::Vector<ThemeValues>& value) { m_overridesHasBeenSet = true; m_overrides = value; }
-    inline void SetOverrides(Aws::Vector<ThemeValues>&& value) { m_overridesHasBeenSet = true; m_overrides = std::move(value); }
-    inline UpdateThemeData& WithOverrides(const Aws::Vector<ThemeValues>& value) { SetOverrides(value); return *this;}
-    inline UpdateThemeData& WithOverrides(Aws::Vector<ThemeValues>&& value) { SetOverrides(std::move(value)); return *this;}
-    inline UpdateThemeData& AddOverrides(const ThemeValues& value) { m_overridesHasBeenSet = true; m_overrides.push_back(value); return *this; }
-    inline UpdateThemeData& AddOverrides(ThemeValues&& value) { m_overridesHasBeenSet = true; m_overrides.push_back(std::move(value)); return *this; }
+    template<typename OverridesT = Aws::Vector<ThemeValues>>
+    void SetOverrides(OverridesT&& value) { m_overridesHasBeenSet = true; m_overrides = std::forward<OverridesT>(value); }
+    template<typename OverridesT = Aws::Vector<ThemeValues>>
+    UpdateThemeData& WithOverrides(OverridesT&& value) { SetOverrides(std::forward<OverridesT>(value)); return *this;}
+    template<typename OverridesT = ThemeValues>
+    UpdateThemeData& AddOverrides(OverridesT&& value) { m_overridesHasBeenSet = true; m_overrides.emplace_back(std::forward<OverridesT>(value)); return *this; }
     ///@}
   private:
 

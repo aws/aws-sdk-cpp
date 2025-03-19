@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ExecuteCommandResult::ExecuteCommandResult() : 
-    m_interactive(false)
-{
-}
-
 ExecuteCommandResult::ExecuteCommandResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ExecuteCommandResult()
 {
   *this = result;
 }
@@ -34,45 +28,40 @@ ExecuteCommandResult& ExecuteCommandResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("clusterArn"))
   {
     m_clusterArn = jsonValue.GetString("clusterArn");
-
+    m_clusterArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("containerArn"))
   {
     m_containerArn = jsonValue.GetString("containerArn");
-
+    m_containerArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("containerName"))
   {
     m_containerName = jsonValue.GetString("containerName");
-
+    m_containerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("interactive"))
   {
     m_interactive = jsonValue.GetBool("interactive");
-
+    m_interactiveHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("session"))
   {
     m_session = jsonValue.GetObject("session");
-
+    m_sessionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskArn"))
   {
     m_taskArn = jsonValue.GetString("taskArn");
-
+    m_taskArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

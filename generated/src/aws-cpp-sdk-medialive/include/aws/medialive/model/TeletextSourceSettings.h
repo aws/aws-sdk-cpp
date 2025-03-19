@@ -32,7 +32,7 @@ namespace Model
   class TeletextSourceSettings
   {
   public:
-    AWS_MEDIALIVE_API TeletextSourceSettings();
+    AWS_MEDIALIVE_API TeletextSourceSettings() = default;
     AWS_MEDIALIVE_API TeletextSourceSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API TeletextSourceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * Optionally defines a region where TTML style captions will be displayed
      */
-    inline const CaptionRectangle& GetOutputRectangle() const{ return m_outputRectangle; }
+    inline const CaptionRectangle& GetOutputRectangle() const { return m_outputRectangle; }
     inline bool OutputRectangleHasBeenSet() const { return m_outputRectangleHasBeenSet; }
-    inline void SetOutputRectangle(const CaptionRectangle& value) { m_outputRectangleHasBeenSet = true; m_outputRectangle = value; }
-    inline void SetOutputRectangle(CaptionRectangle&& value) { m_outputRectangleHasBeenSet = true; m_outputRectangle = std::move(value); }
-    inline TeletextSourceSettings& WithOutputRectangle(const CaptionRectangle& value) { SetOutputRectangle(value); return *this;}
-    inline TeletextSourceSettings& WithOutputRectangle(CaptionRectangle&& value) { SetOutputRectangle(std::move(value)); return *this;}
+    template<typename OutputRectangleT = CaptionRectangle>
+    void SetOutputRectangle(OutputRectangleT&& value) { m_outputRectangleHasBeenSet = true; m_outputRectangle = std::forward<OutputRectangleT>(value); }
+    template<typename OutputRectangleT = CaptionRectangle>
+    TeletextSourceSettings& WithOutputRectangle(OutputRectangleT&& value) { SetOutputRectangle(std::forward<OutputRectangleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +56,12 @@ namespace Model
      * captions. Range of 0x100 (256) to 0x8FF (2303). Unused for passthrough. Should
      * be specified as a hexadecimal string with no "0x" prefix.
      */
-    inline const Aws::String& GetPageNumber() const{ return m_pageNumber; }
+    inline const Aws::String& GetPageNumber() const { return m_pageNumber; }
     inline bool PageNumberHasBeenSet() const { return m_pageNumberHasBeenSet; }
-    inline void SetPageNumber(const Aws::String& value) { m_pageNumberHasBeenSet = true; m_pageNumber = value; }
-    inline void SetPageNumber(Aws::String&& value) { m_pageNumberHasBeenSet = true; m_pageNumber = std::move(value); }
-    inline void SetPageNumber(const char* value) { m_pageNumberHasBeenSet = true; m_pageNumber.assign(value); }
-    inline TeletextSourceSettings& WithPageNumber(const Aws::String& value) { SetPageNumber(value); return *this;}
-    inline TeletextSourceSettings& WithPageNumber(Aws::String&& value) { SetPageNumber(std::move(value)); return *this;}
-    inline TeletextSourceSettings& WithPageNumber(const char* value) { SetPageNumber(value); return *this;}
+    template<typename PageNumberT = Aws::String>
+    void SetPageNumber(PageNumberT&& value) { m_pageNumberHasBeenSet = true; m_pageNumber = std::forward<PageNumberT>(value); }
+    template<typename PageNumberT = Aws::String>
+    TeletextSourceSettings& WithPageNumber(PageNumberT&& value) { SetPageNumber(std::forward<PageNumberT>(value)); return *this;}
     ///@}
   private:
 

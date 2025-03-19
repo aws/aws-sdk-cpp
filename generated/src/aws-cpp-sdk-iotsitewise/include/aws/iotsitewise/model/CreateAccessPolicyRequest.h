@@ -26,7 +26,7 @@ namespace Model
   class CreateAccessPolicyRequest : public IoTSiteWiseRequest
   {
   public:
-    AWS_IOTSITEWISE_API CreateAccessPolicyRequest();
+    AWS_IOTSITEWISE_API CreateAccessPolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,12 +42,12 @@ namespace Model
      * <p>The identity for this access policy. Choose an IAM Identity Center user, an
      * IAM Identity Center group, or an IAM user.</p>
      */
-    inline const Identity& GetAccessPolicyIdentity() const{ return m_accessPolicyIdentity; }
+    inline const Identity& GetAccessPolicyIdentity() const { return m_accessPolicyIdentity; }
     inline bool AccessPolicyIdentityHasBeenSet() const { return m_accessPolicyIdentityHasBeenSet; }
-    inline void SetAccessPolicyIdentity(const Identity& value) { m_accessPolicyIdentityHasBeenSet = true; m_accessPolicyIdentity = value; }
-    inline void SetAccessPolicyIdentity(Identity&& value) { m_accessPolicyIdentityHasBeenSet = true; m_accessPolicyIdentity = std::move(value); }
-    inline CreateAccessPolicyRequest& WithAccessPolicyIdentity(const Identity& value) { SetAccessPolicyIdentity(value); return *this;}
-    inline CreateAccessPolicyRequest& WithAccessPolicyIdentity(Identity&& value) { SetAccessPolicyIdentity(std::move(value)); return *this;}
+    template<typename AccessPolicyIdentityT = Identity>
+    void SetAccessPolicyIdentity(AccessPolicyIdentityT&& value) { m_accessPolicyIdentityHasBeenSet = true; m_accessPolicyIdentity = std::forward<AccessPolicyIdentityT>(value); }
+    template<typename AccessPolicyIdentityT = Identity>
+    CreateAccessPolicyRequest& WithAccessPolicyIdentity(AccessPolicyIdentityT&& value) { SetAccessPolicyIdentity(std::forward<AccessPolicyIdentityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,12 +55,12 @@ namespace Model
      * <p>The IoT SiteWise Monitor resource for this access policy. Choose either a
      * portal or a project.</p>
      */
-    inline const Resource& GetAccessPolicyResource() const{ return m_accessPolicyResource; }
+    inline const Resource& GetAccessPolicyResource() const { return m_accessPolicyResource; }
     inline bool AccessPolicyResourceHasBeenSet() const { return m_accessPolicyResourceHasBeenSet; }
-    inline void SetAccessPolicyResource(const Resource& value) { m_accessPolicyResourceHasBeenSet = true; m_accessPolicyResource = value; }
-    inline void SetAccessPolicyResource(Resource&& value) { m_accessPolicyResourceHasBeenSet = true; m_accessPolicyResource = std::move(value); }
-    inline CreateAccessPolicyRequest& WithAccessPolicyResource(const Resource& value) { SetAccessPolicyResource(value); return *this;}
-    inline CreateAccessPolicyRequest& WithAccessPolicyResource(Resource&& value) { SetAccessPolicyResource(std::move(value)); return *this;}
+    template<typename AccessPolicyResourceT = Resource>
+    void SetAccessPolicyResource(AccessPolicyResourceT&& value) { m_accessPolicyResourceHasBeenSet = true; m_accessPolicyResource = std::forward<AccessPolicyResourceT>(value); }
+    template<typename AccessPolicyResourceT = Resource>
+    CreateAccessPolicyRequest& WithAccessPolicyResource(AccessPolicyResourceT&& value) { SetAccessPolicyResource(std::forward<AccessPolicyResourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,12 +68,10 @@ namespace Model
      * <p>The permission level for this access policy. Note that a project
      * <code>ADMINISTRATOR</code> is also known as a project owner.</p>
      */
-    inline const Permission& GetAccessPolicyPermission() const{ return m_accessPolicyPermission; }
+    inline Permission GetAccessPolicyPermission() const { return m_accessPolicyPermission; }
     inline bool AccessPolicyPermissionHasBeenSet() const { return m_accessPolicyPermissionHasBeenSet; }
-    inline void SetAccessPolicyPermission(const Permission& value) { m_accessPolicyPermissionHasBeenSet = true; m_accessPolicyPermission = value; }
-    inline void SetAccessPolicyPermission(Permission&& value) { m_accessPolicyPermissionHasBeenSet = true; m_accessPolicyPermission = std::move(value); }
-    inline CreateAccessPolicyRequest& WithAccessPolicyPermission(const Permission& value) { SetAccessPolicyPermission(value); return *this;}
-    inline CreateAccessPolicyRequest& WithAccessPolicyPermission(Permission&& value) { SetAccessPolicyPermission(std::move(value)); return *this;}
+    inline void SetAccessPolicyPermission(Permission value) { m_accessPolicyPermissionHasBeenSet = true; m_accessPolicyPermission = value; }
+    inline CreateAccessPolicyRequest& WithAccessPolicyPermission(Permission value) { SetAccessPolicyPermission(value); return *this;}
     ///@}
 
     ///@{
@@ -82,14 +80,12 @@ namespace Model
      * idempotency of the request. Don't reuse this client token if a new idempotent
      * request is required.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateAccessPolicyRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateAccessPolicyRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateAccessPolicyRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateAccessPolicyRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,19 +95,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
      * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateAccessPolicyRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateAccessPolicyRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateAccessPolicyRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateAccessPolicyRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateAccessPolicyRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateAccessPolicyRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateAccessPolicyRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateAccessPolicyRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateAccessPolicyRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateAccessPolicyRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateAccessPolicyRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 
@@ -121,7 +114,7 @@ namespace Model
     Resource m_accessPolicyResource;
     bool m_accessPolicyResourceHasBeenSet = false;
 
-    Permission m_accessPolicyPermission;
+    Permission m_accessPolicyPermission{Permission::NOT_SET};
     bool m_accessPolicyPermissionHasBeenSet = false;
 
     Aws::String m_clientToken;

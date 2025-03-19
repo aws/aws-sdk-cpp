@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CancelSpotFleetRequestsResponse::CancelSpotFleetRequestsResponse()
-{
-}
-
 CancelSpotFleetRequestsResponse::CancelSpotFleetRequestsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ CancelSpotFleetRequestsResponse& CancelSpotFleetRequestsResponse::operator =(con
     if(!successfulFleetRequestsNode.IsNull())
     {
       XmlNode successfulFleetRequestsMember = successfulFleetRequestsNode.FirstChild("item");
+      m_successfulFleetRequestsHasBeenSet = !successfulFleetRequestsMember.IsNull();
       while(!successfulFleetRequestsMember.IsNull())
       {
         m_successfulFleetRequests.push_back(successfulFleetRequestsMember);
         successfulFleetRequestsMember = successfulFleetRequestsMember.NextNode("item");
       }
 
+      m_successfulFleetRequestsHasBeenSet = true;
     }
     XmlNode unsuccessfulFleetRequestsNode = resultNode.FirstChild("unsuccessfulFleetRequestSet");
     if(!unsuccessfulFleetRequestsNode.IsNull())
     {
       XmlNode unsuccessfulFleetRequestsMember = unsuccessfulFleetRequestsNode.FirstChild("item");
+      m_unsuccessfulFleetRequestsHasBeenSet = !unsuccessfulFleetRequestsMember.IsNull();
       while(!unsuccessfulFleetRequestsMember.IsNull())
       {
         m_unsuccessfulFleetRequests.push_back(unsuccessfulFleetRequestsMember);
         unsuccessfulFleetRequestsMember = unsuccessfulFleetRequestsMember.NextNode("item");
       }
 
+      m_unsuccessfulFleetRequestsHasBeenSet = true;
     }
   }
 
@@ -67,6 +67,7 @@ CancelSpotFleetRequestsResponse& CancelSpotFleetRequestsResponse::operator =(con
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::CancelSpotFleetRequestsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

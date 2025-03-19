@@ -18,13 +18,7 @@ namespace ConnectCases
 namespace Model
 {
 
-CaseRuleDetails::CaseRuleDetails() : 
-    m_requiredHasBeenSet(false)
-{
-}
-
 CaseRuleDetails::CaseRuleDetails(JsonView jsonValue)
-  : CaseRuleDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CaseRuleDetails& CaseRuleDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("required"))
   {
     m_required = jsonValue.GetObject("required");
-
     m_requiredHasBeenSet = true;
   }
-
   return *this;
 }
 

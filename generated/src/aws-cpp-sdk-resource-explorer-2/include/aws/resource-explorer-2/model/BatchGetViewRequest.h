@@ -22,7 +22,7 @@ namespace Model
   class BatchGetViewRequest : public ResourceExplorer2Request
   {
   public:
-    AWS_RESOURCEEXPLORER2_API BatchGetViewRequest();
+    AWS_RESOURCEEXPLORER2_API BatchGetViewRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,15 +39,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * resource names (ARNs)</a> that identify the views you want details for.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetViewArns() const{ return m_viewArns; }
+    inline const Aws::Vector<Aws::String>& GetViewArns() const { return m_viewArns; }
     inline bool ViewArnsHasBeenSet() const { return m_viewArnsHasBeenSet; }
-    inline void SetViewArns(const Aws::Vector<Aws::String>& value) { m_viewArnsHasBeenSet = true; m_viewArns = value; }
-    inline void SetViewArns(Aws::Vector<Aws::String>&& value) { m_viewArnsHasBeenSet = true; m_viewArns = std::move(value); }
-    inline BatchGetViewRequest& WithViewArns(const Aws::Vector<Aws::String>& value) { SetViewArns(value); return *this;}
-    inline BatchGetViewRequest& WithViewArns(Aws::Vector<Aws::String>&& value) { SetViewArns(std::move(value)); return *this;}
-    inline BatchGetViewRequest& AddViewArns(const Aws::String& value) { m_viewArnsHasBeenSet = true; m_viewArns.push_back(value); return *this; }
-    inline BatchGetViewRequest& AddViewArns(Aws::String&& value) { m_viewArnsHasBeenSet = true; m_viewArns.push_back(std::move(value)); return *this; }
-    inline BatchGetViewRequest& AddViewArns(const char* value) { m_viewArnsHasBeenSet = true; m_viewArns.push_back(value); return *this; }
+    template<typename ViewArnsT = Aws::Vector<Aws::String>>
+    void SetViewArns(ViewArnsT&& value) { m_viewArnsHasBeenSet = true; m_viewArns = std::forward<ViewArnsT>(value); }
+    template<typename ViewArnsT = Aws::Vector<Aws::String>>
+    BatchGetViewRequest& WithViewArns(ViewArnsT&& value) { SetViewArns(std::forward<ViewArnsT>(value)); return *this;}
+    template<typename ViewArnsT = Aws::String>
+    BatchGetViewRequest& AddViewArns(ViewArnsT&& value) { m_viewArnsHasBeenSet = true; m_viewArns.emplace_back(std::forward<ViewArnsT>(value)); return *this; }
     ///@}
   private:
 

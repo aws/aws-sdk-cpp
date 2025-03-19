@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListCommonControlsRequest::ListCommonControlsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_commonControlFilterHasBeenSet(false)
-{
-}
-
 Aws::String ListCommonControlsRequest::SerializePayload() const
 {
   JsonValue payload;

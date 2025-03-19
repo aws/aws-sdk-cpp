@@ -26,7 +26,7 @@ namespace Model
   class RetrieveAndGenerateStreamRequest : public BedrockAgentRuntimeRequest
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API RetrieveAndGenerateStreamRequest();
+    AWS_BEDROCKAGENTRUNTIME_API RetrieveAndGenerateStreamRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -62,12 +62,12 @@ namespace Model
     /**
      * <p>Contains the query to be made to the knowledge base.</p>
      */
-    inline const RetrieveAndGenerateInput& GetInput() const{ return m_input; }
+    inline const RetrieveAndGenerateInput& GetInput() const { return m_input; }
     inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
-    inline void SetInput(const RetrieveAndGenerateInput& value) { m_inputHasBeenSet = true; m_input = value; }
-    inline void SetInput(RetrieveAndGenerateInput&& value) { m_inputHasBeenSet = true; m_input = std::move(value); }
-    inline RetrieveAndGenerateStreamRequest& WithInput(const RetrieveAndGenerateInput& value) { SetInput(value); return *this;}
-    inline RetrieveAndGenerateStreamRequest& WithInput(RetrieveAndGenerateInput&& value) { SetInput(std::move(value)); return *this;}
+    template<typename InputT = RetrieveAndGenerateInput>
+    void SetInput(InputT&& value) { m_inputHasBeenSet = true; m_input = std::forward<InputT>(value); }
+    template<typename InputT = RetrieveAndGenerateInput>
+    RetrieveAndGenerateStreamRequest& WithInput(InputT&& value) { SetInput(std::forward<InputT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,24 +77,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
      * configurations</a>.</p>
      */
-    inline const RetrieveAndGenerateConfiguration& GetRetrieveAndGenerateConfiguration() const{ return m_retrieveAndGenerateConfiguration; }
+    inline const RetrieveAndGenerateConfiguration& GetRetrieveAndGenerateConfiguration() const { return m_retrieveAndGenerateConfiguration; }
     inline bool RetrieveAndGenerateConfigurationHasBeenSet() const { return m_retrieveAndGenerateConfigurationHasBeenSet; }
-    inline void SetRetrieveAndGenerateConfiguration(const RetrieveAndGenerateConfiguration& value) { m_retrieveAndGenerateConfigurationHasBeenSet = true; m_retrieveAndGenerateConfiguration = value; }
-    inline void SetRetrieveAndGenerateConfiguration(RetrieveAndGenerateConfiguration&& value) { m_retrieveAndGenerateConfigurationHasBeenSet = true; m_retrieveAndGenerateConfiguration = std::move(value); }
-    inline RetrieveAndGenerateStreamRequest& WithRetrieveAndGenerateConfiguration(const RetrieveAndGenerateConfiguration& value) { SetRetrieveAndGenerateConfiguration(value); return *this;}
-    inline RetrieveAndGenerateStreamRequest& WithRetrieveAndGenerateConfiguration(RetrieveAndGenerateConfiguration&& value) { SetRetrieveAndGenerateConfiguration(std::move(value)); return *this;}
+    template<typename RetrieveAndGenerateConfigurationT = RetrieveAndGenerateConfiguration>
+    void SetRetrieveAndGenerateConfiguration(RetrieveAndGenerateConfigurationT&& value) { m_retrieveAndGenerateConfigurationHasBeenSet = true; m_retrieveAndGenerateConfiguration = std::forward<RetrieveAndGenerateConfigurationT>(value); }
+    template<typename RetrieveAndGenerateConfigurationT = RetrieveAndGenerateConfiguration>
+    RetrieveAndGenerateStreamRequest& WithRetrieveAndGenerateConfiguration(RetrieveAndGenerateConfigurationT&& value) { SetRetrieveAndGenerateConfiguration(std::forward<RetrieveAndGenerateConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains details about the session with the knowledge base.</p>
      */
-    inline const RetrieveAndGenerateSessionConfiguration& GetSessionConfiguration() const{ return m_sessionConfiguration; }
+    inline const RetrieveAndGenerateSessionConfiguration& GetSessionConfiguration() const { return m_sessionConfiguration; }
     inline bool SessionConfigurationHasBeenSet() const { return m_sessionConfigurationHasBeenSet; }
-    inline void SetSessionConfiguration(const RetrieveAndGenerateSessionConfiguration& value) { m_sessionConfigurationHasBeenSet = true; m_sessionConfiguration = value; }
-    inline void SetSessionConfiguration(RetrieveAndGenerateSessionConfiguration&& value) { m_sessionConfigurationHasBeenSet = true; m_sessionConfiguration = std::move(value); }
-    inline RetrieveAndGenerateStreamRequest& WithSessionConfiguration(const RetrieveAndGenerateSessionConfiguration& value) { SetSessionConfiguration(value); return *this;}
-    inline RetrieveAndGenerateStreamRequest& WithSessionConfiguration(RetrieveAndGenerateSessionConfiguration&& value) { SetSessionConfiguration(std::move(value)); return *this;}
+    template<typename SessionConfigurationT = RetrieveAndGenerateSessionConfiguration>
+    void SetSessionConfiguration(SessionConfigurationT&& value) { m_sessionConfigurationHasBeenSet = true; m_sessionConfiguration = std::forward<SessionConfigurationT>(value); }
+    template<typename SessionConfigurationT = RetrieveAndGenerateSessionConfiguration>
+    RetrieveAndGenerateStreamRequest& WithSessionConfiguration(SessionConfigurationT&& value) { SetSessionConfiguration(std::forward<SessionConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,14 +106,12 @@ namespace Model
      * knowledge from previous interactions. You can't explicitly set the
      * <code>sessionId</code> yourself.</p>
      */
-    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
     inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-    inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
-    inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
-    inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
-    inline RetrieveAndGenerateStreamRequest& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-    inline RetrieveAndGenerateStreamRequest& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-    inline RetrieveAndGenerateStreamRequest& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    RetrieveAndGenerateStreamRequest& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -129,7 +127,7 @@ namespace Model
     Aws::String m_sessionId;
     bool m_sessionIdHasBeenSet = false;
     RetrieveAndGenerateStreamHandler m_handler;
-    Aws::Utils::Event::EventStreamDecoder m_decoder;
+    Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
 
   };
 

@@ -12,26 +12,6 @@ using namespace Aws::QBusiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateApplicationRequest::CreateApplicationRequest() : 
-    m_displayNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_identityType(IdentityType::NOT_SET),
-    m_identityTypeHasBeenSet(false),
-    m_iamIdentityProviderArnHasBeenSet(false),
-    m_identityCenterInstanceArnHasBeenSet(false),
-    m_clientIdsForOIDCHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_attachmentsConfigurationHasBeenSet(false),
-    m_qAppsConfigurationHasBeenSet(false),
-    m_personalizationConfigurationHasBeenSet(false),
-    m_quickSightConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String CreateApplicationRequest::SerializePayload() const
 {
   JsonValue payload;

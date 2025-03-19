@@ -34,7 +34,7 @@ namespace Model
   class ChannelSummary
   {
   public:
-    AWS_IOTANALYTICS_API ChannelSummary();
+    AWS_IOTANALYTICS_API ChannelSummary() = default;
     AWS_IOTANALYTICS_API ChannelSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API ChannelSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,62 +44,58 @@ namespace Model
     /**
      * <p>The name of the channel.</p>
      */
-    inline const Aws::String& GetChannelName() const{ return m_channelName; }
+    inline const Aws::String& GetChannelName() const { return m_channelName; }
     inline bool ChannelNameHasBeenSet() const { return m_channelNameHasBeenSet; }
-    inline void SetChannelName(const Aws::String& value) { m_channelNameHasBeenSet = true; m_channelName = value; }
-    inline void SetChannelName(Aws::String&& value) { m_channelNameHasBeenSet = true; m_channelName = std::move(value); }
-    inline void SetChannelName(const char* value) { m_channelNameHasBeenSet = true; m_channelName.assign(value); }
-    inline ChannelSummary& WithChannelName(const Aws::String& value) { SetChannelName(value); return *this;}
-    inline ChannelSummary& WithChannelName(Aws::String&& value) { SetChannelName(std::move(value)); return *this;}
-    inline ChannelSummary& WithChannelName(const char* value) { SetChannelName(value); return *this;}
+    template<typename ChannelNameT = Aws::String>
+    void SetChannelName(ChannelNameT&& value) { m_channelNameHasBeenSet = true; m_channelName = std::forward<ChannelNameT>(value); }
+    template<typename ChannelNameT = Aws::String>
+    ChannelSummary& WithChannelName(ChannelNameT&& value) { SetChannelName(std::forward<ChannelNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Where channel data is stored.</p>
      */
-    inline const ChannelStorageSummary& GetChannelStorage() const{ return m_channelStorage; }
+    inline const ChannelStorageSummary& GetChannelStorage() const { return m_channelStorage; }
     inline bool ChannelStorageHasBeenSet() const { return m_channelStorageHasBeenSet; }
-    inline void SetChannelStorage(const ChannelStorageSummary& value) { m_channelStorageHasBeenSet = true; m_channelStorage = value; }
-    inline void SetChannelStorage(ChannelStorageSummary&& value) { m_channelStorageHasBeenSet = true; m_channelStorage = std::move(value); }
-    inline ChannelSummary& WithChannelStorage(const ChannelStorageSummary& value) { SetChannelStorage(value); return *this;}
-    inline ChannelSummary& WithChannelStorage(ChannelStorageSummary&& value) { SetChannelStorage(std::move(value)); return *this;}
+    template<typename ChannelStorageT = ChannelStorageSummary>
+    void SetChannelStorage(ChannelStorageT&& value) { m_channelStorageHasBeenSet = true; m_channelStorage = std::forward<ChannelStorageT>(value); }
+    template<typename ChannelStorageT = ChannelStorageSummary>
+    ChannelSummary& WithChannelStorage(ChannelStorageT&& value) { SetChannelStorage(std::forward<ChannelStorageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the channel.</p>
      */
-    inline const ChannelStatus& GetStatus() const{ return m_status; }
+    inline ChannelStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ChannelStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ChannelStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ChannelSummary& WithStatus(const ChannelStatus& value) { SetStatus(value); return *this;}
-    inline ChannelSummary& WithStatus(ChannelStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ChannelStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ChannelSummary& WithStatus(ChannelStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>When the channel was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline ChannelSummary& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline ChannelSummary& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    ChannelSummary& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The last time the channel was updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdateTime() const{ return m_lastUpdateTime; }
+    inline const Aws::Utils::DateTime& GetLastUpdateTime() const { return m_lastUpdateTime; }
     inline bool LastUpdateTimeHasBeenSet() const { return m_lastUpdateTimeHasBeenSet; }
-    inline void SetLastUpdateTime(const Aws::Utils::DateTime& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = value; }
-    inline void SetLastUpdateTime(Aws::Utils::DateTime&& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = std::move(value); }
-    inline ChannelSummary& WithLastUpdateTime(const Aws::Utils::DateTime& value) { SetLastUpdateTime(value); return *this;}
-    inline ChannelSummary& WithLastUpdateTime(Aws::Utils::DateTime&& value) { SetLastUpdateTime(std::move(value)); return *this;}
+    template<typename LastUpdateTimeT = Aws::Utils::DateTime>
+    void SetLastUpdateTime(LastUpdateTimeT&& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = std::forward<LastUpdateTimeT>(value); }
+    template<typename LastUpdateTimeT = Aws::Utils::DateTime>
+    ChannelSummary& WithLastUpdateTime(LastUpdateTimeT&& value) { SetLastUpdateTime(std::forward<LastUpdateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,12 +106,12 @@ namespace Model
      * feature only applies to messages that arrived in the data store after October
      * 23, 2020. </p>
      */
-    inline const Aws::Utils::DateTime& GetLastMessageArrivalTime() const{ return m_lastMessageArrivalTime; }
+    inline const Aws::Utils::DateTime& GetLastMessageArrivalTime() const { return m_lastMessageArrivalTime; }
     inline bool LastMessageArrivalTimeHasBeenSet() const { return m_lastMessageArrivalTimeHasBeenSet; }
-    inline void SetLastMessageArrivalTime(const Aws::Utils::DateTime& value) { m_lastMessageArrivalTimeHasBeenSet = true; m_lastMessageArrivalTime = value; }
-    inline void SetLastMessageArrivalTime(Aws::Utils::DateTime&& value) { m_lastMessageArrivalTimeHasBeenSet = true; m_lastMessageArrivalTime = std::move(value); }
-    inline ChannelSummary& WithLastMessageArrivalTime(const Aws::Utils::DateTime& value) { SetLastMessageArrivalTime(value); return *this;}
-    inline ChannelSummary& WithLastMessageArrivalTime(Aws::Utils::DateTime&& value) { SetLastMessageArrivalTime(std::move(value)); return *this;}
+    template<typename LastMessageArrivalTimeT = Aws::Utils::DateTime>
+    void SetLastMessageArrivalTime(LastMessageArrivalTimeT&& value) { m_lastMessageArrivalTimeHasBeenSet = true; m_lastMessageArrivalTime = std::forward<LastMessageArrivalTimeT>(value); }
+    template<typename LastMessageArrivalTimeT = Aws::Utils::DateTime>
+    ChannelSummary& WithLastMessageArrivalTime(LastMessageArrivalTimeT&& value) { SetLastMessageArrivalTime(std::forward<LastMessageArrivalTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -125,16 +121,16 @@ namespace Model
     ChannelStorageSummary m_channelStorage;
     bool m_channelStorageHasBeenSet = false;
 
-    ChannelStatus m_status;
+    ChannelStatus m_status{ChannelStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdateTime;
+    Aws::Utils::DateTime m_lastUpdateTime{};
     bool m_lastUpdateTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastMessageArrivalTime;
+    Aws::Utils::DateTime m_lastMessageArrivalTime{};
     bool m_lastMessageArrivalTimeHasBeenSet = false;
   };
 

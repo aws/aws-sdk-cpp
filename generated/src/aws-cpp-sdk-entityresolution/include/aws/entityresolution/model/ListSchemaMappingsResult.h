@@ -29,7 +29,7 @@ namespace Model
   class ListSchemaMappingsResult
   {
   public:
-    AWS_ENTITYRESOLUTION_API ListSchemaMappingsResult();
+    AWS_ENTITYRESOLUTION_API ListSchemaMappingsResult() = default;
     AWS_ENTITYRESOLUTION_API ListSchemaMappingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ENTITYRESOLUTION_API ListSchemaMappingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,11 @@ namespace Model
     /**
      * <p>The pagination token from the previous API call.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListSchemaMappingsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListSchemaMappingsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListSchemaMappingsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListSchemaMappingsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,32 +51,33 @@ namespace Model
      * the fields <code>SchemaName</code>, <code>SchemaArn</code>,
      * <code>CreatedAt</code>, <code>UpdatedAt</code>.</p>
      */
-    inline const Aws::Vector<SchemaMappingSummary>& GetSchemaList() const{ return m_schemaList; }
-    inline void SetSchemaList(const Aws::Vector<SchemaMappingSummary>& value) { m_schemaList = value; }
-    inline void SetSchemaList(Aws::Vector<SchemaMappingSummary>&& value) { m_schemaList = std::move(value); }
-    inline ListSchemaMappingsResult& WithSchemaList(const Aws::Vector<SchemaMappingSummary>& value) { SetSchemaList(value); return *this;}
-    inline ListSchemaMappingsResult& WithSchemaList(Aws::Vector<SchemaMappingSummary>&& value) { SetSchemaList(std::move(value)); return *this;}
-    inline ListSchemaMappingsResult& AddSchemaList(const SchemaMappingSummary& value) { m_schemaList.push_back(value); return *this; }
-    inline ListSchemaMappingsResult& AddSchemaList(SchemaMappingSummary&& value) { m_schemaList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SchemaMappingSummary>& GetSchemaList() const { return m_schemaList; }
+    template<typename SchemaListT = Aws::Vector<SchemaMappingSummary>>
+    void SetSchemaList(SchemaListT&& value) { m_schemaListHasBeenSet = true; m_schemaList = std::forward<SchemaListT>(value); }
+    template<typename SchemaListT = Aws::Vector<SchemaMappingSummary>>
+    ListSchemaMappingsResult& WithSchemaList(SchemaListT&& value) { SetSchemaList(std::forward<SchemaListT>(value)); return *this;}
+    template<typename SchemaListT = SchemaMappingSummary>
+    ListSchemaMappingsResult& AddSchemaList(SchemaListT&& value) { m_schemaListHasBeenSet = true; m_schemaList.emplace_back(std::forward<SchemaListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListSchemaMappingsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListSchemaMappingsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListSchemaMappingsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListSchemaMappingsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<SchemaMappingSummary> m_schemaList;
+    bool m_schemaListHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

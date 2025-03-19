@@ -20,21 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TrafficMirrorTarget::TrafficMirrorTarget() : 
-    m_trafficMirrorTargetIdHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_networkLoadBalancerArnHasBeenSet(false),
-    m_type(TrafficMirrorTargetType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_gatewayLoadBalancerEndpointIdHasBeenSet(false)
-{
-}
-
 TrafficMirrorTarget::TrafficMirrorTarget(const XmlNode& xmlNode)
-  : TrafficMirrorTarget()
 {
   *this = xmlNode;
 }
@@ -66,7 +52,7 @@ TrafficMirrorTarget& TrafficMirrorTarget::operator =(const XmlNode& xmlNode)
     XmlNode typeNode = resultNode.FirstChild("type");
     if(!typeNode.IsNull())
     {
-      m_type = TrafficMirrorTargetTypeMapper::GetTrafficMirrorTargetTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = TrafficMirrorTargetTypeMapper::GetTrafficMirrorTargetTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
@@ -85,6 +71,7 @@ TrafficMirrorTarget& TrafficMirrorTarget::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

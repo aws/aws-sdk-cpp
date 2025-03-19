@@ -34,7 +34,7 @@ namespace Model
   class CloudWatchLoggingConfiguration
   {
   public:
-    AWS_EMRSERVERLESS_API CloudWatchLoggingConfiguration();
+    AWS_EMRSERVERLESS_API CloudWatchLoggingConfiguration() = default;
     AWS_EMRSERVERLESS_API CloudWatchLoggingConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRSERVERLESS_API CloudWatchLoggingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
     /**
      * <p>Enables CloudWatch logging.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline CloudWatchLoggingConfiguration& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -55,28 +55,24 @@ namespace Model
      * <p>The name of the log group in Amazon CloudWatch Logs where you want to publish
      * your logs.</p>
      */
-    inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
+    inline const Aws::String& GetLogGroupName() const { return m_logGroupName; }
     inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
-    inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
-    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
-    inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
-    inline CloudWatchLoggingConfiguration& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
-    inline CloudWatchLoggingConfiguration& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
-    inline CloudWatchLoggingConfiguration& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
+    template<typename LogGroupNameT = Aws::String>
+    void SetLogGroupName(LogGroupNameT&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::forward<LogGroupNameT>(value); }
+    template<typename LogGroupNameT = Aws::String>
+    CloudWatchLoggingConfiguration& WithLogGroupName(LogGroupNameT&& value) { SetLogGroupName(std::forward<LogGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Prefix for the CloudWatch log stream name.</p>
      */
-    inline const Aws::String& GetLogStreamNamePrefix() const{ return m_logStreamNamePrefix; }
+    inline const Aws::String& GetLogStreamNamePrefix() const { return m_logStreamNamePrefix; }
     inline bool LogStreamNamePrefixHasBeenSet() const { return m_logStreamNamePrefixHasBeenSet; }
-    inline void SetLogStreamNamePrefix(const Aws::String& value) { m_logStreamNamePrefixHasBeenSet = true; m_logStreamNamePrefix = value; }
-    inline void SetLogStreamNamePrefix(Aws::String&& value) { m_logStreamNamePrefixHasBeenSet = true; m_logStreamNamePrefix = std::move(value); }
-    inline void SetLogStreamNamePrefix(const char* value) { m_logStreamNamePrefixHasBeenSet = true; m_logStreamNamePrefix.assign(value); }
-    inline CloudWatchLoggingConfiguration& WithLogStreamNamePrefix(const Aws::String& value) { SetLogStreamNamePrefix(value); return *this;}
-    inline CloudWatchLoggingConfiguration& WithLogStreamNamePrefix(Aws::String&& value) { SetLogStreamNamePrefix(std::move(value)); return *this;}
-    inline CloudWatchLoggingConfiguration& WithLogStreamNamePrefix(const char* value) { SetLogStreamNamePrefix(value); return *this;}
+    template<typename LogStreamNamePrefixT = Aws::String>
+    void SetLogStreamNamePrefix(LogStreamNamePrefixT&& value) { m_logStreamNamePrefixHasBeenSet = true; m_logStreamNamePrefix = std::forward<LogStreamNamePrefixT>(value); }
+    template<typename LogStreamNamePrefixT = Aws::String>
+    CloudWatchLoggingConfiguration& WithLogStreamNamePrefix(LogStreamNamePrefixT&& value) { SetLogStreamNamePrefix(std::forward<LogStreamNamePrefixT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,14 +80,12 @@ namespace Model
      * <p>The Key Management Service (KMS) key ARN to encrypt the logs that you store
      * in CloudWatch Logs.</p>
      */
-    inline const Aws::String& GetEncryptionKeyArn() const{ return m_encryptionKeyArn; }
+    inline const Aws::String& GetEncryptionKeyArn() const { return m_encryptionKeyArn; }
     inline bool EncryptionKeyArnHasBeenSet() const { return m_encryptionKeyArnHasBeenSet; }
-    inline void SetEncryptionKeyArn(const Aws::String& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = value; }
-    inline void SetEncryptionKeyArn(Aws::String&& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = std::move(value); }
-    inline void SetEncryptionKeyArn(const char* value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn.assign(value); }
-    inline CloudWatchLoggingConfiguration& WithEncryptionKeyArn(const Aws::String& value) { SetEncryptionKeyArn(value); return *this;}
-    inline CloudWatchLoggingConfiguration& WithEncryptionKeyArn(Aws::String&& value) { SetEncryptionKeyArn(std::move(value)); return *this;}
-    inline CloudWatchLoggingConfiguration& WithEncryptionKeyArn(const char* value) { SetEncryptionKeyArn(value); return *this;}
+    template<typename EncryptionKeyArnT = Aws::String>
+    void SetEncryptionKeyArn(EncryptionKeyArnT&& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = std::forward<EncryptionKeyArnT>(value); }
+    template<typename EncryptionKeyArnT = Aws::String>
+    CloudWatchLoggingConfiguration& WithEncryptionKeyArn(EncryptionKeyArnT&& value) { SetEncryptionKeyArn(std::forward<EncryptionKeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,22 +102,20 @@ namespace Model
      * <code>HIVE_LOG</code>, <code>TEZ_AM</code>, <code>SYSTEM_LOGS</code> </p> </li>
      * </ul>
      */
-    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetLogTypes() const{ return m_logTypes; }
+    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetLogTypes() const { return m_logTypes; }
     inline bool LogTypesHasBeenSet() const { return m_logTypesHasBeenSet; }
-    inline void SetLogTypes(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_logTypesHasBeenSet = true; m_logTypes = value; }
-    inline void SetLogTypes(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_logTypesHasBeenSet = true; m_logTypes = std::move(value); }
-    inline CloudWatchLoggingConfiguration& WithLogTypes(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetLogTypes(value); return *this;}
-    inline CloudWatchLoggingConfiguration& WithLogTypes(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetLogTypes(std::move(value)); return *this;}
-    inline CloudWatchLoggingConfiguration& AddLogTypes(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_logTypesHasBeenSet = true; m_logTypes.emplace(key, value); return *this; }
-    inline CloudWatchLoggingConfiguration& AddLogTypes(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_logTypesHasBeenSet = true; m_logTypes.emplace(std::move(key), value); return *this; }
-    inline CloudWatchLoggingConfiguration& AddLogTypes(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_logTypesHasBeenSet = true; m_logTypes.emplace(key, std::move(value)); return *this; }
-    inline CloudWatchLoggingConfiguration& AddLogTypes(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_logTypesHasBeenSet = true; m_logTypes.emplace(std::move(key), std::move(value)); return *this; }
-    inline CloudWatchLoggingConfiguration& AddLogTypes(const char* key, Aws::Vector<Aws::String>&& value) { m_logTypesHasBeenSet = true; m_logTypes.emplace(key, std::move(value)); return *this; }
-    inline CloudWatchLoggingConfiguration& AddLogTypes(const char* key, const Aws::Vector<Aws::String>& value) { m_logTypesHasBeenSet = true; m_logTypes.emplace(key, value); return *this; }
+    template<typename LogTypesT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    void SetLogTypes(LogTypesT&& value) { m_logTypesHasBeenSet = true; m_logTypes = std::forward<LogTypesT>(value); }
+    template<typename LogTypesT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    CloudWatchLoggingConfiguration& WithLogTypes(LogTypesT&& value) { SetLogTypes(std::forward<LogTypesT>(value)); return *this;}
+    template<typename LogTypesKeyT = Aws::String, typename LogTypesValueT = Aws::Vector<Aws::String>>
+    CloudWatchLoggingConfiguration& AddLogTypes(LogTypesKeyT&& key, LogTypesValueT&& value) {
+      m_logTypesHasBeenSet = true; m_logTypes.emplace(std::forward<LogTypesKeyT>(key), std::forward<LogTypesValueT>(value)); return *this;
+    }
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
     Aws::String m_logGroupName;

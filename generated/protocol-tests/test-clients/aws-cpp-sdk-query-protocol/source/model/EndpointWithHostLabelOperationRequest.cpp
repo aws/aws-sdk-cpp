@@ -10,11 +10,6 @@
 using namespace Aws::QueryProtocol::Model;
 using namespace Aws::Utils;
 
-EndpointWithHostLabelOperationRequest::EndpointWithHostLabelOperationRequest() : 
-    m_labelHasBeenSet(false)
-{
-}
-
 Aws::String EndpointWithHostLabelOperationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

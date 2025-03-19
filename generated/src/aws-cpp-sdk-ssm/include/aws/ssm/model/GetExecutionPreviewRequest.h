@@ -21,7 +21,7 @@ namespace Model
   class GetExecutionPreviewRequest : public SSMRequest
   {
   public:
-    AWS_SSM_API GetExecutionPreviewRequest();
+    AWS_SSM_API GetExecutionPreviewRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The ID of the existing execution preview.</p>
      */
-    inline const Aws::String& GetExecutionPreviewId() const{ return m_executionPreviewId; }
+    inline const Aws::String& GetExecutionPreviewId() const { return m_executionPreviewId; }
     inline bool ExecutionPreviewIdHasBeenSet() const { return m_executionPreviewIdHasBeenSet; }
-    inline void SetExecutionPreviewId(const Aws::String& value) { m_executionPreviewIdHasBeenSet = true; m_executionPreviewId = value; }
-    inline void SetExecutionPreviewId(Aws::String&& value) { m_executionPreviewIdHasBeenSet = true; m_executionPreviewId = std::move(value); }
-    inline void SetExecutionPreviewId(const char* value) { m_executionPreviewIdHasBeenSet = true; m_executionPreviewId.assign(value); }
-    inline GetExecutionPreviewRequest& WithExecutionPreviewId(const Aws::String& value) { SetExecutionPreviewId(value); return *this;}
-    inline GetExecutionPreviewRequest& WithExecutionPreviewId(Aws::String&& value) { SetExecutionPreviewId(std::move(value)); return *this;}
-    inline GetExecutionPreviewRequest& WithExecutionPreviewId(const char* value) { SetExecutionPreviewId(value); return *this;}
+    template<typename ExecutionPreviewIdT = Aws::String>
+    void SetExecutionPreviewId(ExecutionPreviewIdT&& value) { m_executionPreviewIdHasBeenSet = true; m_executionPreviewId = std::forward<ExecutionPreviewIdT>(value); }
+    template<typename ExecutionPreviewIdT = Aws::String>
+    GetExecutionPreviewRequest& WithExecutionPreviewId(ExecutionPreviewIdT&& value) { SetExecutionPreviewId(std::forward<ExecutionPreviewIdT>(value)); return *this;}
     ///@}
   private:
 

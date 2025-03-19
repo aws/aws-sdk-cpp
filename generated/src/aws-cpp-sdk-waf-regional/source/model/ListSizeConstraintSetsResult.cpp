@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListSizeConstraintSetsResult::ListSizeConstraintSetsResult()
-{
-}
-
 ListSizeConstraintSetsResult::ListSizeConstraintSetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListSizeConstraintSetsResult& ListSizeConstraintSetsResult::operator =(const Aws
   if(jsonValue.ValueExists("NextMarker"))
   {
     m_nextMarker = jsonValue.GetString("NextMarker");
-
+    m_nextMarkerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SizeConstraintSets"))
   {
     Aws::Utils::Array<JsonView> sizeConstraintSetsJsonList = jsonValue.GetArray("SizeConstraintSets");
@@ -42,14 +37,15 @@ ListSizeConstraintSetsResult& ListSizeConstraintSetsResult::operator =(const Aws
     {
       m_sizeConstraintSets.push_back(sizeConstraintSetsJsonList[sizeConstraintSetsIndex].AsObject());
     }
+    m_sizeConstraintSetsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

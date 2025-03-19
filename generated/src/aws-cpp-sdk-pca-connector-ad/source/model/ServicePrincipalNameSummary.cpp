@@ -18,20 +18,7 @@ namespace PcaConnectorAd
 namespace Model
 {
 
-ServicePrincipalNameSummary::ServicePrincipalNameSummary() : 
-    m_connectorArnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_directoryRegistrationArnHasBeenSet(false),
-    m_status(ServicePrincipalNameStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReason(ServicePrincipalNameStatusReason::NOT_SET),
-    m_statusReasonHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 ServicePrincipalNameSummary::ServicePrincipalNameSummary(JsonView jsonValue)
-  : ServicePrincipalNameSummary()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ ServicePrincipalNameSummary& ServicePrincipalNameSummary::operator =(JsonView js
   if(jsonValue.ValueExists("ConnectorArn"))
   {
     m_connectorArn = jsonValue.GetString("ConnectorArn");
-
     m_connectorArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DirectoryRegistrationArn"))
   {
     m_directoryRegistrationArn = jsonValue.GetString("DirectoryRegistrationArn");
-
     m_directoryRegistrationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ServicePrincipalNameStatusMapper::GetServicePrincipalNameStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusReason"))
   {
     m_statusReason = ServicePrincipalNameStatusReasonMapper::GetServicePrincipalNameStatusReasonForName(jsonValue.GetString("StatusReason"));
-
     m_statusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("UpdatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

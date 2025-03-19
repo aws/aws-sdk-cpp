@@ -18,14 +18,7 @@ namespace MediaTailor
 namespace Model
 {
 
-AdConditioningConfiguration::AdConditioningConfiguration() : 
-    m_streamingMediaFileConditioning(StreamingMediaFileConditioning::NOT_SET),
-    m_streamingMediaFileConditioningHasBeenSet(false)
-{
-}
-
 AdConditioningConfiguration::AdConditioningConfiguration(JsonView jsonValue)
-  : AdConditioningConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AdConditioningConfiguration& AdConditioningConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("StreamingMediaFileConditioning"))
   {
     m_streamingMediaFileConditioning = StreamingMediaFileConditioningMapper::GetStreamingMediaFileConditioningForName(jsonValue.GetString("StreamingMediaFileConditioning"));
-
     m_streamingMediaFileConditioningHasBeenSet = true;
   }
-
   return *this;
 }
 

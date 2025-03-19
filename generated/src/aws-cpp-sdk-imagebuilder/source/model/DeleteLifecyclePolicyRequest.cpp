@@ -15,11 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteLifecyclePolicyRequest::DeleteLifecyclePolicyRequest() : 
-    m_lifecyclePolicyArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteLifecyclePolicyRequest::SerializePayload() const
 {
   return {};

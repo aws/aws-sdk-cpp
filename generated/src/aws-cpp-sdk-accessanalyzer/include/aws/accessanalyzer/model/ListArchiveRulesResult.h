@@ -34,7 +34,7 @@ namespace Model
   class ListArchiveRulesResult
   {
   public:
-    AWS_ACCESSANALYZER_API ListArchiveRulesResult();
+    AWS_ACCESSANALYZER_API ListArchiveRulesResult() = default;
     AWS_ACCESSANALYZER_API ListArchiveRulesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ACCESSANALYZER_API ListArchiveRulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,45 +43,44 @@ namespace Model
     /**
      * <p>A list of archive rules created for the specified analyzer.</p>
      */
-    inline const Aws::Vector<ArchiveRuleSummary>& GetArchiveRules() const{ return m_archiveRules; }
-    inline void SetArchiveRules(const Aws::Vector<ArchiveRuleSummary>& value) { m_archiveRules = value; }
-    inline void SetArchiveRules(Aws::Vector<ArchiveRuleSummary>&& value) { m_archiveRules = std::move(value); }
-    inline ListArchiveRulesResult& WithArchiveRules(const Aws::Vector<ArchiveRuleSummary>& value) { SetArchiveRules(value); return *this;}
-    inline ListArchiveRulesResult& WithArchiveRules(Aws::Vector<ArchiveRuleSummary>&& value) { SetArchiveRules(std::move(value)); return *this;}
-    inline ListArchiveRulesResult& AddArchiveRules(const ArchiveRuleSummary& value) { m_archiveRules.push_back(value); return *this; }
-    inline ListArchiveRulesResult& AddArchiveRules(ArchiveRuleSummary&& value) { m_archiveRules.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ArchiveRuleSummary>& GetArchiveRules() const { return m_archiveRules; }
+    template<typename ArchiveRulesT = Aws::Vector<ArchiveRuleSummary>>
+    void SetArchiveRules(ArchiveRulesT&& value) { m_archiveRulesHasBeenSet = true; m_archiveRules = std::forward<ArchiveRulesT>(value); }
+    template<typename ArchiveRulesT = Aws::Vector<ArchiveRuleSummary>>
+    ListArchiveRulesResult& WithArchiveRules(ArchiveRulesT&& value) { SetArchiveRules(std::forward<ArchiveRulesT>(value)); return *this;}
+    template<typename ArchiveRulesT = ArchiveRuleSummary>
+    ListArchiveRulesResult& AddArchiveRules(ArchiveRulesT&& value) { m_archiveRulesHasBeenSet = true; m_archiveRules.emplace_back(std::forward<ArchiveRulesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A token used for pagination of results returned.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListArchiveRulesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListArchiveRulesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListArchiveRulesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListArchiveRulesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListArchiveRulesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListArchiveRulesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListArchiveRulesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListArchiveRulesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ArchiveRuleSummary> m_archiveRules;
+    bool m_archiveRulesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -22,7 +22,7 @@ namespace Model
   class ListPerformanceAnalysisReportsRequest : public PIRequest
   {
   public:
-    AWS_PI_API ListPerformanceAnalysisReportsRequest();
+    AWS_PI_API ListPerformanceAnalysisReportsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,12 +40,10 @@ namespace Model
      * <p>The Amazon Web Services service for which Performance Insights returns
      * metrics. Valid value is <code>RDS</code>.</p>
      */
-    inline const ServiceType& GetServiceType() const{ return m_serviceType; }
+    inline ServiceType GetServiceType() const { return m_serviceType; }
     inline bool ServiceTypeHasBeenSet() const { return m_serviceTypeHasBeenSet; }
-    inline void SetServiceType(const ServiceType& value) { m_serviceTypeHasBeenSet = true; m_serviceType = value; }
-    inline void SetServiceType(ServiceType&& value) { m_serviceTypeHasBeenSet = true; m_serviceType = std::move(value); }
-    inline ListPerformanceAnalysisReportsRequest& WithServiceType(const ServiceType& value) { SetServiceType(value); return *this;}
-    inline ListPerformanceAnalysisReportsRequest& WithServiceType(ServiceType&& value) { SetServiceType(std::move(value)); return *this;}
+    inline void SetServiceType(ServiceType value) { m_serviceTypeHasBeenSet = true; m_serviceType = value; }
+    inline ListPerformanceAnalysisReportsRequest& WithServiceType(ServiceType value) { SetServiceType(value); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * specify its <code>DbiResourceId</code> value. For example, specify
      * <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>.</p>
      */
-    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-    inline ListPerformanceAnalysisReportsRequest& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-    inline ListPerformanceAnalysisReportsRequest& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline ListPerformanceAnalysisReportsRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    ListPerformanceAnalysisReportsRequest& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +70,12 @@ namespace Model
      * parameter is specified, the response includes only records beyond the token, up
      * to the value specified by <code>MaxResults</code>.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListPerformanceAnalysisReportsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListPerformanceAnalysisReportsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListPerformanceAnalysisReportsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListPerformanceAnalysisReportsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,7 +84,7 @@ namespace Model
      * than the specified <code>MaxResults</code> value, a pagination token is included
      * in the response so that the remaining results can be retrieved. </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListPerformanceAnalysisReportsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -100,14 +94,14 @@ namespace Model
     /**
      * <p>Specifies whether or not to include the list of tags in the response.</p>
      */
-    inline bool GetListTags() const{ return m_listTags; }
+    inline bool GetListTags() const { return m_listTags; }
     inline bool ListTagsHasBeenSet() const { return m_listTagsHasBeenSet; }
     inline void SetListTags(bool value) { m_listTagsHasBeenSet = true; m_listTags = value; }
     inline ListPerformanceAnalysisReportsRequest& WithListTags(bool value) { SetListTags(value); return *this;}
     ///@}
   private:
 
-    ServiceType m_serviceType;
+    ServiceType m_serviceType{ServiceType::NOT_SET};
     bool m_serviceTypeHasBeenSet = false;
 
     Aws::String m_identifier;
@@ -116,10 +110,10 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
-    bool m_listTags;
+    bool m_listTags{false};
     bool m_listTagsHasBeenSet = false;
   };
 

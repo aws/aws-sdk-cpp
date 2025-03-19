@@ -12,11 +12,6 @@ using namespace Aws::KinesisVideoWebRTCStorage::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-JoinStorageSessionRequest::JoinStorageSessionRequest() : 
-    m_channelArnHasBeenSet(false)
-{
-}
-
 Aws::String JoinStorageSessionRequest::SerializePayload() const
 {
   JsonValue payload;

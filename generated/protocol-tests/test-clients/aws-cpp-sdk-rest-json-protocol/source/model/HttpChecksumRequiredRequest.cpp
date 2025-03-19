@@ -13,12 +13,6 @@ using namespace Aws::RestJsonProtocol::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-HttpChecksumRequiredRequest::HttpChecksumRequiredRequest() : 
-    m_fooHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 Aws::String HttpChecksumRequiredRequest::SerializePayload() const
 {
   JsonValue payload;

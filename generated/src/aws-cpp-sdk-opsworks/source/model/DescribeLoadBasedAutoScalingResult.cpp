@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeLoadBasedAutoScalingResult::DescribeLoadBasedAutoScalingResult()
-{
-}
-
 DescribeLoadBasedAutoScalingResult::DescribeLoadBasedAutoScalingResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ DescribeLoadBasedAutoScalingResult& DescribeLoadBasedAutoScalingResult::operator
     {
       m_loadBasedAutoScalingConfigurations.push_back(loadBasedAutoScalingConfigurationsJsonList[loadBasedAutoScalingConfigurationsIndex].AsObject());
     }
+    m_loadBasedAutoScalingConfigurationsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

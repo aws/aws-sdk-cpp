@@ -18,19 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AssociationSetDetails::AssociationSetDetails() : 
-    m_associationStateHasBeenSet(false),
-    m_gatewayIdHasBeenSet(false),
-    m_main(false),
-    m_mainHasBeenSet(false),
-    m_routeTableAssociationIdHasBeenSet(false),
-    m_routeTableIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false)
-{
-}
-
 AssociationSetDetails::AssociationSetDetails(JsonView jsonValue)
-  : AssociationSetDetails()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ AssociationSetDetails& AssociationSetDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AssociationState"))
   {
     m_associationState = jsonValue.GetObject("AssociationState");
-
     m_associationStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GatewayId"))
   {
     m_gatewayId = jsonValue.GetString("GatewayId");
-
     m_gatewayIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Main"))
   {
     m_main = jsonValue.GetBool("Main");
-
     m_mainHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RouteTableAssociationId"))
   {
     m_routeTableAssociationId = jsonValue.GetString("RouteTableAssociationId");
-
     m_routeTableAssociationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RouteTableId"))
   {
     m_routeTableId = jsonValue.GetString("RouteTableId");
-
     m_routeTableIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetId"))
   {
     m_subnetId = jsonValue.GetString("SubnetId");
-
     m_subnetIdHasBeenSet = true;
   }
-
   return *this;
 }
 

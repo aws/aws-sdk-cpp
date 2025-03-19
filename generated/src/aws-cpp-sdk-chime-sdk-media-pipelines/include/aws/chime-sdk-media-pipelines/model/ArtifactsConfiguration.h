@@ -34,7 +34,7 @@ namespace Model
   class ArtifactsConfiguration
   {
   public:
-    AWS_CHIMESDKMEDIAPIPELINES_API ArtifactsConfiguration();
+    AWS_CHIMESDKMEDIAPIPELINES_API ArtifactsConfiguration() = default;
     AWS_CHIMESDKMEDIAPIPELINES_API ArtifactsConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API ArtifactsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,48 +44,48 @@ namespace Model
     /**
      * <p>The configuration for the audio artifacts.</p>
      */
-    inline const AudioArtifactsConfiguration& GetAudio() const{ return m_audio; }
+    inline const AudioArtifactsConfiguration& GetAudio() const { return m_audio; }
     inline bool AudioHasBeenSet() const { return m_audioHasBeenSet; }
-    inline void SetAudio(const AudioArtifactsConfiguration& value) { m_audioHasBeenSet = true; m_audio = value; }
-    inline void SetAudio(AudioArtifactsConfiguration&& value) { m_audioHasBeenSet = true; m_audio = std::move(value); }
-    inline ArtifactsConfiguration& WithAudio(const AudioArtifactsConfiguration& value) { SetAudio(value); return *this;}
-    inline ArtifactsConfiguration& WithAudio(AudioArtifactsConfiguration&& value) { SetAudio(std::move(value)); return *this;}
+    template<typename AudioT = AudioArtifactsConfiguration>
+    void SetAudio(AudioT&& value) { m_audioHasBeenSet = true; m_audio = std::forward<AudioT>(value); }
+    template<typename AudioT = AudioArtifactsConfiguration>
+    ArtifactsConfiguration& WithAudio(AudioT&& value) { SetAudio(std::forward<AudioT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration for the video artifacts.</p>
      */
-    inline const VideoArtifactsConfiguration& GetVideo() const{ return m_video; }
+    inline const VideoArtifactsConfiguration& GetVideo() const { return m_video; }
     inline bool VideoHasBeenSet() const { return m_videoHasBeenSet; }
-    inline void SetVideo(const VideoArtifactsConfiguration& value) { m_videoHasBeenSet = true; m_video = value; }
-    inline void SetVideo(VideoArtifactsConfiguration&& value) { m_videoHasBeenSet = true; m_video = std::move(value); }
-    inline ArtifactsConfiguration& WithVideo(const VideoArtifactsConfiguration& value) { SetVideo(value); return *this;}
-    inline ArtifactsConfiguration& WithVideo(VideoArtifactsConfiguration&& value) { SetVideo(std::move(value)); return *this;}
+    template<typename VideoT = VideoArtifactsConfiguration>
+    void SetVideo(VideoT&& value) { m_videoHasBeenSet = true; m_video = std::forward<VideoT>(value); }
+    template<typename VideoT = VideoArtifactsConfiguration>
+    ArtifactsConfiguration& WithVideo(VideoT&& value) { SetVideo(std::forward<VideoT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration for the content artifacts.</p>
      */
-    inline const ContentArtifactsConfiguration& GetContent() const{ return m_content; }
+    inline const ContentArtifactsConfiguration& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const ContentArtifactsConfiguration& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(ContentArtifactsConfiguration&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline ArtifactsConfiguration& WithContent(const ContentArtifactsConfiguration& value) { SetContent(value); return *this;}
-    inline ArtifactsConfiguration& WithContent(ContentArtifactsConfiguration&& value) { SetContent(std::move(value)); return *this;}
+    template<typename ContentT = ContentArtifactsConfiguration>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = ContentArtifactsConfiguration>
+    ArtifactsConfiguration& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Enables video compositing.</p>
      */
-    inline const CompositedVideoArtifactsConfiguration& GetCompositedVideo() const{ return m_compositedVideo; }
+    inline const CompositedVideoArtifactsConfiguration& GetCompositedVideo() const { return m_compositedVideo; }
     inline bool CompositedVideoHasBeenSet() const { return m_compositedVideoHasBeenSet; }
-    inline void SetCompositedVideo(const CompositedVideoArtifactsConfiguration& value) { m_compositedVideoHasBeenSet = true; m_compositedVideo = value; }
-    inline void SetCompositedVideo(CompositedVideoArtifactsConfiguration&& value) { m_compositedVideoHasBeenSet = true; m_compositedVideo = std::move(value); }
-    inline ArtifactsConfiguration& WithCompositedVideo(const CompositedVideoArtifactsConfiguration& value) { SetCompositedVideo(value); return *this;}
-    inline ArtifactsConfiguration& WithCompositedVideo(CompositedVideoArtifactsConfiguration&& value) { SetCompositedVideo(std::move(value)); return *this;}
+    template<typename CompositedVideoT = CompositedVideoArtifactsConfiguration>
+    void SetCompositedVideo(CompositedVideoT&& value) { m_compositedVideoHasBeenSet = true; m_compositedVideo = std::forward<CompositedVideoT>(value); }
+    template<typename CompositedVideoT = CompositedVideoArtifactsConfiguration>
+    ArtifactsConfiguration& WithCompositedVideo(CompositedVideoT&& value) { SetCompositedVideo(std::forward<CompositedVideoT>(value)); return *this;}
     ///@}
   private:
 

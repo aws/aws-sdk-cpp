@@ -12,15 +12,6 @@ using namespace Aws::LocationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreatePlaceIndexRequest::CreatePlaceIndexRequest() : 
-    m_indexNameHasBeenSet(false),
-    m_dataSourceHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_dataSourceConfigurationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreatePlaceIndexRequest::SerializePayload() const
 {
   JsonValue payload;

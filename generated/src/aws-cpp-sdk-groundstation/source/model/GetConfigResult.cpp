@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetConfigResult::GetConfigResult() : 
-    m_configType(ConfigCapabilityType::NOT_SET)
-{
-}
-
 GetConfigResult::GetConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetConfigResult()
 {
   *this = result;
 }
@@ -34,33 +28,28 @@ GetConfigResult& GetConfigResult::operator =(const Aws::AmazonWebServiceResult<J
   if(jsonValue.ValueExists("configArn"))
   {
     m_configArn = jsonValue.GetString("configArn");
-
+    m_configArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configData"))
   {
     m_configData = jsonValue.GetObject("configData");
-
+    m_configDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configId"))
   {
     m_configId = jsonValue.GetString("configId");
-
+    m_configIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configType"))
   {
     m_configType = ConfigCapabilityTypeMapper::GetConfigCapabilityTypeForName(jsonValue.GetString("configType"));
-
+    m_configTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -68,14 +57,15 @@ GetConfigResult& GetConfigResult::operator =(const Aws::AmazonWebServiceResult<J
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

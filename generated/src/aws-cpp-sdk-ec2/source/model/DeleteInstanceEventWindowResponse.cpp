@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteInstanceEventWindowResponse::DeleteInstanceEventWindowResponse()
-{
-}
-
 DeleteInstanceEventWindowResponse::DeleteInstanceEventWindowResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DeleteInstanceEventWindowResponse& DeleteInstanceEventWindowResponse::operator =
     if(!instanceEventWindowStateNode.IsNull())
     {
       m_instanceEventWindowState = instanceEventWindowStateNode;
+      m_instanceEventWindowStateHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ DeleteInstanceEventWindowResponse& DeleteInstanceEventWindowResponse::operator =
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DeleteInstanceEventWindowResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

@@ -18,13 +18,7 @@ namespace IoTEvents
 namespace Model
 {
 
-AlarmNotification::AlarmNotification() : 
-    m_notificationActionsHasBeenSet(false)
-{
-}
-
 AlarmNotification::AlarmNotification(JsonView jsonValue)
-  : AlarmNotification()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ AlarmNotification& AlarmNotification::operator =(JsonView jsonValue)
     }
     m_notificationActionsHasBeenSet = true;
   }
-
   return *this;
 }
 

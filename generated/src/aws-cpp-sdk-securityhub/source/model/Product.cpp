@@ -18,21 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-Product::Product() : 
-    m_productArnHasBeenSet(false),
-    m_productNameHasBeenSet(false),
-    m_companyNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_categoriesHasBeenSet(false),
-    m_integrationTypesHasBeenSet(false),
-    m_marketplaceUrlHasBeenSet(false),
-    m_activationUrlHasBeenSet(false),
-    m_productSubscriptionResourcePolicyHasBeenSet(false)
-{
-}
-
 Product::Product(JsonView jsonValue)
-  : Product()
 {
   *this = jsonValue;
 }
@@ -42,31 +28,23 @@ Product& Product::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ProductArn"))
   {
     m_productArn = jsonValue.GetString("ProductArn");
-
     m_productArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProductName"))
   {
     m_productName = jsonValue.GetString("ProductName");
-
     m_productNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompanyName"))
   {
     m_companyName = jsonValue.GetString("CompanyName");
-
     m_companyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Categories"))
   {
     Aws::Utils::Array<JsonView> categoriesJsonList = jsonValue.GetArray("Categories");
@@ -76,7 +54,6 @@ Product& Product::operator =(JsonView jsonValue)
     }
     m_categoriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IntegrationTypes"))
   {
     Aws::Utils::Array<JsonView> integrationTypesJsonList = jsonValue.GetArray("IntegrationTypes");
@@ -86,28 +63,21 @@ Product& Product::operator =(JsonView jsonValue)
     }
     m_integrationTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MarketplaceUrl"))
   {
     m_marketplaceUrl = jsonValue.GetString("MarketplaceUrl");
-
     m_marketplaceUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActivationUrl"))
   {
     m_activationUrl = jsonValue.GetString("ActivationUrl");
-
     m_activationUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProductSubscriptionResourcePolicy"))
   {
     m_productSubscriptionResourcePolicy = jsonValue.GetString("ProductSubscriptionResourcePolicy");
-
     m_productSubscriptionResourcePolicyHasBeenSet = true;
   }
-
   return *this;
 }
 

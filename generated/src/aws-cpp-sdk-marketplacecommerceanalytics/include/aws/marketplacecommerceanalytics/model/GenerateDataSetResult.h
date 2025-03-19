@@ -33,7 +33,7 @@ namespace Model
   class GenerateDataSetResult
   {
   public:
-    AWS_MARKETPLACECOMMERCEANALYTICS_API GenerateDataSetResult();
+    AWS_MARKETPLACECOMMERCEANALYTICS_API GenerateDataSetResult() = default;
     AWS_MARKETPLACECOMMERCEANALYTICS_API GenerateDataSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MARKETPLACECOMMERCEANALYTICS_API GenerateDataSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,30 +44,28 @@ namespace Model
      * operation. This identifier can be used to correlate a request with notifications
      * from the SNS topic.
      */
-    inline const Aws::String& GetDataSetRequestId() const{ return m_dataSetRequestId; }
-    inline void SetDataSetRequestId(const Aws::String& value) { m_dataSetRequestId = value; }
-    inline void SetDataSetRequestId(Aws::String&& value) { m_dataSetRequestId = std::move(value); }
-    inline void SetDataSetRequestId(const char* value) { m_dataSetRequestId.assign(value); }
-    inline GenerateDataSetResult& WithDataSetRequestId(const Aws::String& value) { SetDataSetRequestId(value); return *this;}
-    inline GenerateDataSetResult& WithDataSetRequestId(Aws::String&& value) { SetDataSetRequestId(std::move(value)); return *this;}
-    inline GenerateDataSetResult& WithDataSetRequestId(const char* value) { SetDataSetRequestId(value); return *this;}
+    inline const Aws::String& GetDataSetRequestId() const { return m_dataSetRequestId; }
+    template<typename DataSetRequestIdT = Aws::String>
+    void SetDataSetRequestId(DataSetRequestIdT&& value) { m_dataSetRequestIdHasBeenSet = true; m_dataSetRequestId = std::forward<DataSetRequestIdT>(value); }
+    template<typename DataSetRequestIdT = Aws::String>
+    GenerateDataSetResult& WithDataSetRequestId(DataSetRequestIdT&& value) { SetDataSetRequestId(std::forward<DataSetRequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GenerateDataSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GenerateDataSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GenerateDataSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GenerateDataSetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_dataSetRequestId;
+    bool m_dataSetRequestIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

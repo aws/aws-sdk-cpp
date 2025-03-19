@@ -34,7 +34,7 @@ namespace Model
   class ModelEndpointDataBlob
   {
   public:
-    AWS_FRAUDDETECTOR_API ModelEndpointDataBlob();
+    AWS_FRAUDDETECTOR_API ModelEndpointDataBlob() = default;
     AWS_FRAUDDETECTOR_API ModelEndpointDataBlob(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API ModelEndpointDataBlob& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,30 +44,28 @@ namespace Model
     /**
      * <p>The byte buffer of the Amazon SageMaker model endpoint input data blob.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetByteBuffer() const{ return m_byteBuffer; }
+    inline const Aws::Utils::ByteBuffer& GetByteBuffer() const { return m_byteBuffer; }
     inline bool ByteBufferHasBeenSet() const { return m_byteBufferHasBeenSet; }
-    inline void SetByteBuffer(const Aws::Utils::ByteBuffer& value) { m_byteBufferHasBeenSet = true; m_byteBuffer = value; }
-    inline void SetByteBuffer(Aws::Utils::ByteBuffer&& value) { m_byteBufferHasBeenSet = true; m_byteBuffer = std::move(value); }
-    inline ModelEndpointDataBlob& WithByteBuffer(const Aws::Utils::ByteBuffer& value) { SetByteBuffer(value); return *this;}
-    inline ModelEndpointDataBlob& WithByteBuffer(Aws::Utils::ByteBuffer&& value) { SetByteBuffer(std::move(value)); return *this;}
+    template<typename ByteBufferT = Aws::Utils::ByteBuffer>
+    void SetByteBuffer(ByteBufferT&& value) { m_byteBufferHasBeenSet = true; m_byteBuffer = std::forward<ByteBufferT>(value); }
+    template<typename ByteBufferT = Aws::Utils::ByteBuffer>
+    ModelEndpointDataBlob& WithByteBuffer(ByteBufferT&& value) { SetByteBuffer(std::forward<ByteBufferT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The content type of the Amazon SageMaker model endpoint input data blob. </p>
      */
-    inline const Aws::String& GetContentType() const{ return m_contentType; }
+    inline const Aws::String& GetContentType() const { return m_contentType; }
     inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
-    inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
-    inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
-    inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
-    inline ModelEndpointDataBlob& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
-    inline ModelEndpointDataBlob& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
-    inline ModelEndpointDataBlob& WithContentType(const char* value) { SetContentType(value); return *this;}
+    template<typename ContentTypeT = Aws::String>
+    void SetContentType(ContentTypeT&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::forward<ContentTypeT>(value); }
+    template<typename ContentTypeT = Aws::String>
+    ModelEndpointDataBlob& WithContentType(ContentTypeT&& value) { SetContentType(std::forward<ContentTypeT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::ByteBuffer m_byteBuffer;
+    Aws::Utils::ByteBuffer m_byteBuffer{};
     bool m_byteBufferHasBeenSet = false;
 
     Aws::String m_contentType;

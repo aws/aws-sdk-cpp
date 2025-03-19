@@ -18,20 +18,7 @@ namespace Glue
 namespace Model
 {
 
-SchemaListItem::SchemaListItem() : 
-    m_registryNameHasBeenSet(false),
-    m_schemaNameHasBeenSet(false),
-    m_schemaArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_schemaStatus(SchemaStatus::NOT_SET),
-    m_schemaStatusHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_updatedTimeHasBeenSet(false)
-{
-}
-
 SchemaListItem::SchemaListItem(JsonView jsonValue)
-  : SchemaListItem()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ SchemaListItem& SchemaListItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RegistryName"))
   {
     m_registryName = jsonValue.GetString("RegistryName");
-
     m_registryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SchemaName"))
   {
     m_schemaName = jsonValue.GetString("SchemaName");
-
     m_schemaNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SchemaArn"))
   {
     m_schemaArn = jsonValue.GetString("SchemaArn");
-
     m_schemaArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SchemaStatus"))
   {
     m_schemaStatus = SchemaStatusMapper::GetSchemaStatusForName(jsonValue.GetString("SchemaStatus"));
-
     m_schemaStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetString("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedTime"))
   {
     m_updatedTime = jsonValue.GetString("UpdatedTime");
-
     m_updatedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

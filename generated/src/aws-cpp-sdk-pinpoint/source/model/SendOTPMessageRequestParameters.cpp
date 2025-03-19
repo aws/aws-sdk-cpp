@@ -18,26 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-SendOTPMessageRequestParameters::SendOTPMessageRequestParameters() : 
-    m_allowedAttempts(0),
-    m_allowedAttemptsHasBeenSet(false),
-    m_brandNameHasBeenSet(false),
-    m_channelHasBeenSet(false),
-    m_codeLength(0),
-    m_codeLengthHasBeenSet(false),
-    m_destinationIdentityHasBeenSet(false),
-    m_entityIdHasBeenSet(false),
-    m_languageHasBeenSet(false),
-    m_originationIdentityHasBeenSet(false),
-    m_referenceIdHasBeenSet(false),
-    m_templateIdHasBeenSet(false),
-    m_validityPeriod(0),
-    m_validityPeriodHasBeenSet(false)
-{
-}
-
 SendOTPMessageRequestParameters::SendOTPMessageRequestParameters(JsonView jsonValue)
-  : SendOTPMessageRequestParameters()
 {
   *this = jsonValue;
 }
@@ -47,80 +28,58 @@ SendOTPMessageRequestParameters& SendOTPMessageRequestParameters::operator =(Jso
   if(jsonValue.ValueExists("AllowedAttempts"))
   {
     m_allowedAttempts = jsonValue.GetInteger("AllowedAttempts");
-
     m_allowedAttemptsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BrandName"))
   {
     m_brandName = jsonValue.GetString("BrandName");
-
     m_brandNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Channel"))
   {
     m_channel = jsonValue.GetString("Channel");
-
     m_channelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CodeLength"))
   {
     m_codeLength = jsonValue.GetInteger("CodeLength");
-
     m_codeLengthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationIdentity"))
   {
     m_destinationIdentity = jsonValue.GetString("DestinationIdentity");
-
     m_destinationIdentityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EntityId"))
   {
     m_entityId = jsonValue.GetString("EntityId");
-
     m_entityIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Language"))
   {
     m_language = jsonValue.GetString("Language");
-
     m_languageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OriginationIdentity"))
   {
     m_originationIdentity = jsonValue.GetString("OriginationIdentity");
-
     m_originationIdentityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReferenceId"))
   {
     m_referenceId = jsonValue.GetString("ReferenceId");
-
     m_referenceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TemplateId"))
   {
     m_templateId = jsonValue.GetString("TemplateId");
-
     m_templateIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValidityPeriod"))
   {
     m_validityPeriod = jsonValue.GetInteger("ValidityPeriod");
-
     m_validityPeriodHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace CloudHSMV2
 namespace Model
 {
 
-BackupRetentionPolicy::BackupRetentionPolicy() : 
-    m_type(BackupRetentionType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 BackupRetentionPolicy::BackupRetentionPolicy(JsonView jsonValue)
-  : BackupRetentionPolicy()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ BackupRetentionPolicy& BackupRetentionPolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = BackupRetentionTypeMapper::GetBackupRetentionTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -10,11 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-DeleteSnapshotRequest::DeleteSnapshotRequest() : 
-    m_snapshotNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSnapshotRequest::SerializePayload() const
 {
   Aws::StringStream ss;

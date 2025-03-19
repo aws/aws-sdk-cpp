@@ -31,7 +31,7 @@ namespace Model
   class EphemeralStorage
   {
   public:
-    AWS_BATCH_API EphemeralStorage();
+    AWS_BATCH_API EphemeralStorage() = default;
     AWS_BATCH_API EphemeralStorage(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API EphemeralStorage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
      * minimum supported value is <code>21</code> GiB and the maximum supported value
      * is <code>200</code> GiB.</p>
      */
-    inline int GetSizeInGiB() const{ return m_sizeInGiB; }
+    inline int GetSizeInGiB() const { return m_sizeInGiB; }
     inline bool SizeInGiBHasBeenSet() const { return m_sizeInGiBHasBeenSet; }
     inline void SetSizeInGiB(int value) { m_sizeInGiBHasBeenSet = true; m_sizeInGiB = value; }
     inline EphemeralStorage& WithSizeInGiB(int value) { SetSizeInGiB(value); return *this;}
     ///@}
   private:
 
-    int m_sizeInGiB;
+    int m_sizeInGiB{0};
     bool m_sizeInGiBHasBeenSet = false;
   };
 

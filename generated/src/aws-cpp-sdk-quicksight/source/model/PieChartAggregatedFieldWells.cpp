@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-PieChartAggregatedFieldWells::PieChartAggregatedFieldWells() : 
-    m_categoryHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_smallMultiplesHasBeenSet(false)
-{
-}
-
 PieChartAggregatedFieldWells::PieChartAggregatedFieldWells(JsonView jsonValue)
-  : PieChartAggregatedFieldWells()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ PieChartAggregatedFieldWells& PieChartAggregatedFieldWells::operator =(JsonView 
     }
     m_categoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -52,7 +43,6 @@ PieChartAggregatedFieldWells& PieChartAggregatedFieldWells::operator =(JsonView 
     }
     m_valuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SmallMultiples"))
   {
     Aws::Utils::Array<JsonView> smallMultiplesJsonList = jsonValue.GetArray("SmallMultiples");
@@ -62,7 +52,6 @@ PieChartAggregatedFieldWells& PieChartAggregatedFieldWells::operator =(JsonView 
     }
     m_smallMultiplesHasBeenSet = true;
   }
-
   return *this;
 }
 

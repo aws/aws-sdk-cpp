@@ -18,14 +18,7 @@ namespace ConnectCases
 namespace Model
 {
 
-EventIncludedData::EventIncludedData() : 
-    m_caseDataHasBeenSet(false),
-    m_relatedItemDataHasBeenSet(false)
-{
-}
-
 EventIncludedData::EventIncludedData(JsonView jsonValue)
-  : EventIncludedData()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EventIncludedData& EventIncludedData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("caseData"))
   {
     m_caseData = jsonValue.GetObject("caseData");
-
     m_caseDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("relatedItemData"))
   {
     m_relatedItemData = jsonValue.GetObject("relatedItemData");
-
     m_relatedItemDataHasBeenSet = true;
   }
-
   return *this;
 }
 

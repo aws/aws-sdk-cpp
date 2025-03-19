@@ -18,21 +18,7 @@ namespace CodeGuruProfiler
 namespace Model
 {
 
-ProfilingGroupDescription::ProfilingGroupDescription() : 
-    m_agentOrchestrationConfigHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_computePlatform(ComputePlatform::NOT_SET),
-    m_computePlatformHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_profilingStatusHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 ProfilingGroupDescription::ProfilingGroupDescription(JsonView jsonValue)
-  : ProfilingGroupDescription()
 {
   *this = jsonValue;
 }
@@ -42,45 +28,33 @@ ProfilingGroupDescription& ProfilingGroupDescription::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("agentOrchestrationConfig"))
   {
     m_agentOrchestrationConfig = jsonValue.GetObject("agentOrchestrationConfig");
-
     m_agentOrchestrationConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("computePlatform"))
   {
     m_computePlatform = ComputePlatformMapper::GetComputePlatformForName(jsonValue.GetString("computePlatform"));
-
     m_computePlatformHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("profilingStatus"))
   {
     m_profilingStatus = jsonValue.GetObject("profilingStatus");
-
     m_profilingStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -90,14 +64,11 @@ ProfilingGroupDescription& ProfilingGroupDescription::operator =(JsonView jsonVa
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

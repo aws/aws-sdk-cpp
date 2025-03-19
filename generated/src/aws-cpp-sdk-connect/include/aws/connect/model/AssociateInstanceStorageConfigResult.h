@@ -27,7 +27,7 @@ namespace Model
   class AssociateInstanceStorageConfigResult
   {
   public:
-    AWS_CONNECT_API AssociateInstanceStorageConfigResult();
+    AWS_CONNECT_API AssociateInstanceStorageConfigResult() = default;
     AWS_CONNECT_API AssociateInstanceStorageConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECT_API AssociateInstanceStorageConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,30 +37,28 @@ namespace Model
      * <p>The existing association identifier that uniquely identifies the resource
      * type and storage config for the given instance ID.</p>
      */
-    inline const Aws::String& GetAssociationId() const{ return m_associationId; }
-    inline void SetAssociationId(const Aws::String& value) { m_associationId = value; }
-    inline void SetAssociationId(Aws::String&& value) { m_associationId = std::move(value); }
-    inline void SetAssociationId(const char* value) { m_associationId.assign(value); }
-    inline AssociateInstanceStorageConfigResult& WithAssociationId(const Aws::String& value) { SetAssociationId(value); return *this;}
-    inline AssociateInstanceStorageConfigResult& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
-    inline AssociateInstanceStorageConfigResult& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
+    inline const Aws::String& GetAssociationId() const { return m_associationId; }
+    template<typename AssociationIdT = Aws::String>
+    void SetAssociationId(AssociationIdT&& value) { m_associationIdHasBeenSet = true; m_associationId = std::forward<AssociationIdT>(value); }
+    template<typename AssociationIdT = Aws::String>
+    AssociateInstanceStorageConfigResult& WithAssociationId(AssociationIdT&& value) { SetAssociationId(std::forward<AssociationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AssociateInstanceStorageConfigResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AssociateInstanceStorageConfigResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AssociateInstanceStorageConfigResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AssociateInstanceStorageConfigResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_associationId;
+    bool m_associationIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

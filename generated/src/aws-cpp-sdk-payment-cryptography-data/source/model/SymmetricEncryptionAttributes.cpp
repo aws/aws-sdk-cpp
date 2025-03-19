@@ -18,17 +18,7 @@ namespace PaymentCryptographyData
 namespace Model
 {
 
-SymmetricEncryptionAttributes::SymmetricEncryptionAttributes() : 
-    m_mode(EncryptionMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_initializationVectorHasBeenSet(false),
-    m_paddingType(PaddingType::NOT_SET),
-    m_paddingTypeHasBeenSet(false)
-{
-}
-
 SymmetricEncryptionAttributes::SymmetricEncryptionAttributes(JsonView jsonValue)
-  : SymmetricEncryptionAttributes()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ SymmetricEncryptionAttributes& SymmetricEncryptionAttributes::operator =(JsonVie
   if(jsonValue.ValueExists("Mode"))
   {
     m_mode = EncryptionModeMapper::GetEncryptionModeForName(jsonValue.GetString("Mode"));
-
     m_modeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InitializationVector"))
   {
     m_initializationVector = jsonValue.GetString("InitializationVector");
-
     m_initializationVectorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PaddingType"))
   {
     m_paddingType = PaddingTypeMapper::GetPaddingTypeForName(jsonValue.GetString("PaddingType"));
-
     m_paddingTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

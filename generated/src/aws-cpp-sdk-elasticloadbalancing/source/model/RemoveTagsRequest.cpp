@@ -10,12 +10,6 @@
 using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils;
 
-RemoveTagsRequest::RemoveTagsRequest() : 
-    m_loadBalancerNamesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String RemoveTagsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

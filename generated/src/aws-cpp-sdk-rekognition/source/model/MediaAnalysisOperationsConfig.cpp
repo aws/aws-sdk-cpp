@@ -18,13 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-MediaAnalysisOperationsConfig::MediaAnalysisOperationsConfig() : 
-    m_detectModerationLabelsHasBeenSet(false)
-{
-}
-
 MediaAnalysisOperationsConfig::MediaAnalysisOperationsConfig(JsonView jsonValue)
-  : MediaAnalysisOperationsConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MediaAnalysisOperationsConfig& MediaAnalysisOperationsConfig::operator =(JsonVie
   if(jsonValue.ValueExists("DetectModerationLabels"))
   {
     m_detectModerationLabels = jsonValue.GetObject("DetectModerationLabels");
-
     m_detectModerationLabelsHasBeenSet = true;
   }
-
   return *this;
 }
 

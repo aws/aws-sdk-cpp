@@ -12,11 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DetachDiskRequest::DetachDiskRequest() : 
-    m_diskNameHasBeenSet(false)
-{
-}
-
 Aws::String DetachDiskRequest::SerializePayload() const
 {
   JsonValue payload;

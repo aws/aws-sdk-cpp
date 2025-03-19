@@ -18,17 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-MessageOutput::MessageOutput() : 
-    m_messageIdHasBeenSet(false),
-    m_participant(Participant::NOT_SET),
-    m_participantHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 MessageOutput::MessageOutput(JsonView jsonValue)
-  : MessageOutput()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ MessageOutput& MessageOutput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("messageId"))
   {
     m_messageId = jsonValue.GetString("messageId");
-
     m_messageIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("participant"))
   {
     m_participant = ParticipantMapper::GetParticipantForName(jsonValue.GetString("participant"));
-
     m_participantHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timestamp"))
   {
     m_timestamp = jsonValue.GetDouble("timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetObject("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

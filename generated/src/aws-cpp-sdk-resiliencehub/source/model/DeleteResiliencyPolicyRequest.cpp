@@ -12,13 +12,6 @@ using namespace Aws::ResilienceHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteResiliencyPolicyRequest::DeleteResiliencyPolicyRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_policyArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteResiliencyPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

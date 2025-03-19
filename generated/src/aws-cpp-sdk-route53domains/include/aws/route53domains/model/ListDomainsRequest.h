@@ -28,7 +28,7 @@ namespace Model
   class ListDomainsRequest : public Route53DomainsRequest
   {
   public:
-    AWS_ROUTE53DOMAINS_API ListDomainsRequest();
+    AWS_ROUTE53DOMAINS_API ListDomainsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,14 +47,14 @@ namespace Model
      * <code>ListDomains</code> request. The filter conditions can include domain name
      * and domain expiration.</p>
      */
-    inline const Aws::Vector<FilterCondition>& GetFilterConditions() const{ return m_filterConditions; }
+    inline const Aws::Vector<FilterCondition>& GetFilterConditions() const { return m_filterConditions; }
     inline bool FilterConditionsHasBeenSet() const { return m_filterConditionsHasBeenSet; }
-    inline void SetFilterConditions(const Aws::Vector<FilterCondition>& value) { m_filterConditionsHasBeenSet = true; m_filterConditions = value; }
-    inline void SetFilterConditions(Aws::Vector<FilterCondition>&& value) { m_filterConditionsHasBeenSet = true; m_filterConditions = std::move(value); }
-    inline ListDomainsRequest& WithFilterConditions(const Aws::Vector<FilterCondition>& value) { SetFilterConditions(value); return *this;}
-    inline ListDomainsRequest& WithFilterConditions(Aws::Vector<FilterCondition>&& value) { SetFilterConditions(std::move(value)); return *this;}
-    inline ListDomainsRequest& AddFilterConditions(const FilterCondition& value) { m_filterConditionsHasBeenSet = true; m_filterConditions.push_back(value); return *this; }
-    inline ListDomainsRequest& AddFilterConditions(FilterCondition&& value) { m_filterConditionsHasBeenSet = true; m_filterConditions.push_back(std::move(value)); return *this; }
+    template<typename FilterConditionsT = Aws::Vector<FilterCondition>>
+    void SetFilterConditions(FilterConditionsT&& value) { m_filterConditionsHasBeenSet = true; m_filterConditions = std::forward<FilterConditionsT>(value); }
+    template<typename FilterConditionsT = Aws::Vector<FilterCondition>>
+    ListDomainsRequest& WithFilterConditions(FilterConditionsT&& value) { SetFilterConditions(std::forward<FilterConditionsT>(value)); return *this;}
+    template<typename FilterConditionsT = FilterCondition>
+    ListDomainsRequest& AddFilterConditions(FilterConditionsT&& value) { m_filterConditionsHasBeenSet = true; m_filterConditions.emplace_back(std::forward<FilterConditionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -62,12 +62,12 @@ namespace Model
      * <p>A complex type that contains information about the requested ordering of
      * domains in the returned list.</p>
      */
-    inline const SortCondition& GetSortCondition() const{ return m_sortCondition; }
+    inline const SortCondition& GetSortCondition() const { return m_sortCondition; }
     inline bool SortConditionHasBeenSet() const { return m_sortConditionHasBeenSet; }
-    inline void SetSortCondition(const SortCondition& value) { m_sortConditionHasBeenSet = true; m_sortCondition = value; }
-    inline void SetSortCondition(SortCondition&& value) { m_sortConditionHasBeenSet = true; m_sortCondition = std::move(value); }
-    inline ListDomainsRequest& WithSortCondition(const SortCondition& value) { SetSortCondition(value); return *this;}
-    inline ListDomainsRequest& WithSortCondition(SortCondition&& value) { SetSortCondition(std::move(value)); return *this;}
+    template<typename SortConditionT = SortCondition>
+    void SetSortCondition(SortConditionT&& value) { m_sortConditionHasBeenSet = true; m_sortCondition = std::forward<SortConditionT>(value); }
+    template<typename SortConditionT = SortCondition>
+    ListDomainsRequest& WithSortCondition(SortConditionT&& value) { SetSortCondition(std::forward<SortConditionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,21 +81,19 @@ namespace Model
      * <code>Marker</code> element.</p> <p>Constraints: The marker must match the value
      * specified in the previous request.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline ListDomainsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline ListDomainsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline ListDomainsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    ListDomainsRequest& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Number of domains to be returned.</p> <p>Default: 20</p>
      */
-    inline int GetMaxItems() const{ return m_maxItems; }
+    inline int GetMaxItems() const { return m_maxItems; }
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
     inline ListDomainsRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
@@ -111,7 +109,7 @@ namespace Model
     Aws::String m_marker;
     bool m_markerHasBeenSet = false;
 
-    int m_maxItems;
+    int m_maxItems{0};
     bool m_maxItemsHasBeenSet = false;
   };
 

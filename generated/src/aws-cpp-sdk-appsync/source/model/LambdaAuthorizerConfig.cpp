@@ -18,16 +18,7 @@ namespace AppSync
 namespace Model
 {
 
-LambdaAuthorizerConfig::LambdaAuthorizerConfig() : 
-    m_authorizerResultTtlInSeconds(0),
-    m_authorizerResultTtlInSecondsHasBeenSet(false),
-    m_authorizerUriHasBeenSet(false),
-    m_identityValidationExpressionHasBeenSet(false)
-{
-}
-
 LambdaAuthorizerConfig::LambdaAuthorizerConfig(JsonView jsonValue)
-  : LambdaAuthorizerConfig()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ LambdaAuthorizerConfig& LambdaAuthorizerConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("authorizerResultTtlInSeconds"))
   {
     m_authorizerResultTtlInSeconds = jsonValue.GetInteger("authorizerResultTtlInSeconds");
-
     m_authorizerResultTtlInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authorizerUri"))
   {
     m_authorizerUri = jsonValue.GetString("authorizerUri");
-
     m_authorizerUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("identityValidationExpression"))
   {
     m_identityValidationExpression = jsonValue.GetString("identityValidationExpression");
-
     m_identityValidationExpressionHasBeenSet = true;
   }
-
   return *this;
 }
 

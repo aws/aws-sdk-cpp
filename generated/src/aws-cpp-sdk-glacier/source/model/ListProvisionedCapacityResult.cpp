@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListProvisionedCapacityResult::ListProvisionedCapacityResult()
-{
-}
-
 ListProvisionedCapacityResult::ListProvisionedCapacityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ ListProvisionedCapacityResult& ListProvisionedCapacityResult::operator =(const A
     {
       m_provisionedCapacityList.push_back(provisionedCapacityListJsonList[provisionedCapacityListIndex].AsObject());
     }
+    m_provisionedCapacityListHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

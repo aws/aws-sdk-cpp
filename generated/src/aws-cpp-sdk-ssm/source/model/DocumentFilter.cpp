@@ -18,15 +18,7 @@ namespace SSM
 namespace Model
 {
 
-DocumentFilter::DocumentFilter() : 
-    m_key(DocumentFilterKey::NOT_SET),
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 DocumentFilter::DocumentFilter(JsonView jsonValue)
-  : DocumentFilter()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DocumentFilter& DocumentFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("key"))
   {
     m_key = DocumentFilterKeyMapper::GetDocumentFilterKeyForName(jsonValue.GetString("key"));
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

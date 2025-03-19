@@ -12,12 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetBlueprintRunRequest::GetBlueprintRunRequest() : 
-    m_blueprintNameHasBeenSet(false),
-    m_runIdHasBeenSet(false)
-{
-}
-
 Aws::String GetBlueprintRunRequest::SerializePayload() const
 {
   JsonValue payload;

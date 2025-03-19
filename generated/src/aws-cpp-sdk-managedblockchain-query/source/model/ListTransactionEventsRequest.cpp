@@ -12,17 +12,6 @@ using namespace Aws::ManagedBlockchainQuery::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListTransactionEventsRequest::ListTransactionEventsRequest() : 
-    m_transactionHashHasBeenSet(false),
-    m_transactionIdHasBeenSet(false),
-    m_network(QueryNetwork::NOT_SET),
-    m_networkHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListTransactionEventsRequest::SerializePayload() const
 {
   JsonValue payload;

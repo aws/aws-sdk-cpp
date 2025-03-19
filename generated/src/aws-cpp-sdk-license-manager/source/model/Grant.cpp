@@ -18,24 +18,7 @@ namespace LicenseManager
 namespace Model
 {
 
-Grant::Grant() : 
-    m_grantArnHasBeenSet(false),
-    m_grantNameHasBeenSet(false),
-    m_parentArnHasBeenSet(false),
-    m_licenseArnHasBeenSet(false),
-    m_granteePrincipalArnHasBeenSet(false),
-    m_homeRegionHasBeenSet(false),
-    m_grantStatus(GrantStatus::NOT_SET),
-    m_grantStatusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_grantedOperationsHasBeenSet(false),
-    m_optionsHasBeenSet(false)
-{
-}
-
 Grant::Grant(JsonView jsonValue)
-  : Grant()
 {
   *this = jsonValue;
 }
@@ -45,66 +28,48 @@ Grant& Grant::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GrantArn"))
   {
     m_grantArn = jsonValue.GetString("GrantArn");
-
     m_grantArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GrantName"))
   {
     m_grantName = jsonValue.GetString("GrantName");
-
     m_grantNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParentArn"))
   {
     m_parentArn = jsonValue.GetString("ParentArn");
-
     m_parentArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LicenseArn"))
   {
     m_licenseArn = jsonValue.GetString("LicenseArn");
-
     m_licenseArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GranteePrincipalArn"))
   {
     m_granteePrincipalArn = jsonValue.GetString("GranteePrincipalArn");
-
     m_granteePrincipalArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HomeRegion"))
   {
     m_homeRegion = jsonValue.GetString("HomeRegion");
-
     m_homeRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GrantStatus"))
   {
     m_grantStatus = GrantStatusMapper::GetGrantStatusForName(jsonValue.GetString("GrantStatus"));
-
     m_grantStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusReason"))
   {
     m_statusReason = jsonValue.GetString("StatusReason");
-
     m_statusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetString("Version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GrantedOperations"))
   {
     Aws::Utils::Array<JsonView> grantedOperationsJsonList = jsonValue.GetArray("GrantedOperations");
@@ -114,14 +79,11 @@ Grant& Grant::operator =(JsonView jsonValue)
     }
     m_grantedOperationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Options"))
   {
     m_options = jsonValue.GetObject("Options");
-
     m_optionsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-ConnectedHomeSettingsForUpdate::ConnectedHomeSettingsForUpdate() : 
-    m_labelsHasBeenSet(false),
-    m_minConfidence(0.0),
-    m_minConfidenceHasBeenSet(false)
-{
-}
-
 ConnectedHomeSettingsForUpdate::ConnectedHomeSettingsForUpdate(JsonView jsonValue)
-  : ConnectedHomeSettingsForUpdate()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ ConnectedHomeSettingsForUpdate& ConnectedHomeSettingsForUpdate::operator =(JsonV
     }
     m_labelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinConfidence"))
   {
     m_minConfidence = jsonValue.GetDouble("MinConfidence");
-
     m_minConfidenceHasBeenSet = true;
   }
-
   return *this;
 }
 

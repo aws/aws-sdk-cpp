@@ -18,13 +18,7 @@ namespace FSx
 namespace Model
 {
 
-LifecycleTransitionReason::LifecycleTransitionReason() : 
-    m_messageHasBeenSet(false)
-{
-}
-
 LifecycleTransitionReason::LifecycleTransitionReason(JsonView jsonValue)
-  : LifecycleTransitionReason()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ LifecycleTransitionReason& LifecycleTransitionReason::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -15,17 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-BatchGetRumMetricDefinitionsRequest::BatchGetRumMetricDefinitionsRequest() : 
-    m_appMonitorNameHasBeenSet(false),
-    m_destination(MetricDestination::NOT_SET),
-    m_destinationHasBeenSet(false),
-    m_destinationArnHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetRumMetricDefinitionsRequest::SerializePayload() const
 {
   return {};

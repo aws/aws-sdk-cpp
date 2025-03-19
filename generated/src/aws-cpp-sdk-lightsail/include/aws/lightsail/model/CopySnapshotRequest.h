@@ -22,7 +22,7 @@ namespace Model
   class CopySnapshotRequest : public LightsailRequest
   {
   public:
-    AWS_LIGHTSAIL_API CopySnapshotRequest();
+    AWS_LIGHTSAIL_API CopySnapshotRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <li> <p>Define this parameter only when copying a manual snapshot as another
      * manual snapshot.</p> </li> </ul>
      */
-    inline const Aws::String& GetSourceSnapshotName() const{ return m_sourceSnapshotName; }
+    inline const Aws::String& GetSourceSnapshotName() const { return m_sourceSnapshotName; }
     inline bool SourceSnapshotNameHasBeenSet() const { return m_sourceSnapshotNameHasBeenSet; }
-    inline void SetSourceSnapshotName(const Aws::String& value) { m_sourceSnapshotNameHasBeenSet = true; m_sourceSnapshotName = value; }
-    inline void SetSourceSnapshotName(Aws::String&& value) { m_sourceSnapshotNameHasBeenSet = true; m_sourceSnapshotName = std::move(value); }
-    inline void SetSourceSnapshotName(const char* value) { m_sourceSnapshotNameHasBeenSet = true; m_sourceSnapshotName.assign(value); }
-    inline CopySnapshotRequest& WithSourceSnapshotName(const Aws::String& value) { SetSourceSnapshotName(value); return *this;}
-    inline CopySnapshotRequest& WithSourceSnapshotName(Aws::String&& value) { SetSourceSnapshotName(std::move(value)); return *this;}
-    inline CopySnapshotRequest& WithSourceSnapshotName(const char* value) { SetSourceSnapshotName(value); return *this;}
+    template<typename SourceSnapshotNameT = Aws::String>
+    void SetSourceSnapshotName(SourceSnapshotNameT&& value) { m_sourceSnapshotNameHasBeenSet = true; m_sourceSnapshotName = std::forward<SourceSnapshotNameT>(value); }
+    template<typename SourceSnapshotNameT = Aws::String>
+    CopySnapshotRequest& WithSourceSnapshotName(SourceSnapshotNameT&& value) { SetSourceSnapshotName(std::forward<SourceSnapshotNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-keeping-automatic-snapshots">Amazon
      * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
-    inline const Aws::String& GetSourceResourceName() const{ return m_sourceResourceName; }
+    inline const Aws::String& GetSourceResourceName() const { return m_sourceResourceName; }
     inline bool SourceResourceNameHasBeenSet() const { return m_sourceResourceNameHasBeenSet; }
-    inline void SetSourceResourceName(const Aws::String& value) { m_sourceResourceNameHasBeenSet = true; m_sourceResourceName = value; }
-    inline void SetSourceResourceName(Aws::String&& value) { m_sourceResourceNameHasBeenSet = true; m_sourceResourceName = std::move(value); }
-    inline void SetSourceResourceName(const char* value) { m_sourceResourceNameHasBeenSet = true; m_sourceResourceName.assign(value); }
-    inline CopySnapshotRequest& WithSourceResourceName(const Aws::String& value) { SetSourceResourceName(value); return *this;}
-    inline CopySnapshotRequest& WithSourceResourceName(Aws::String&& value) { SetSourceResourceName(std::move(value)); return *this;}
-    inline CopySnapshotRequest& WithSourceResourceName(const char* value) { SetSourceResourceName(value); return *this;}
+    template<typename SourceResourceNameT = Aws::String>
+    void SetSourceResourceName(SourceResourceNameT&& value) { m_sourceResourceNameHasBeenSet = true; m_sourceResourceName = std::forward<SourceResourceNameT>(value); }
+    template<typename SourceResourceNameT = Aws::String>
+    CopySnapshotRequest& WithSourceResourceName(SourceResourceNameT&& value) { SetSourceResourceName(std::forward<SourceResourceNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,14 +80,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-keeping-automatic-snapshots">Amazon
      * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
-    inline const Aws::String& GetRestoreDate() const{ return m_restoreDate; }
+    inline const Aws::String& GetRestoreDate() const { return m_restoreDate; }
     inline bool RestoreDateHasBeenSet() const { return m_restoreDateHasBeenSet; }
-    inline void SetRestoreDate(const Aws::String& value) { m_restoreDateHasBeenSet = true; m_restoreDate = value; }
-    inline void SetRestoreDate(Aws::String&& value) { m_restoreDateHasBeenSet = true; m_restoreDate = std::move(value); }
-    inline void SetRestoreDate(const char* value) { m_restoreDateHasBeenSet = true; m_restoreDate.assign(value); }
-    inline CopySnapshotRequest& WithRestoreDate(const Aws::String& value) { SetRestoreDate(value); return *this;}
-    inline CopySnapshotRequest& WithRestoreDate(Aws::String&& value) { SetRestoreDate(std::move(value)); return *this;}
-    inline CopySnapshotRequest& WithRestoreDate(const char* value) { SetRestoreDate(value); return *this;}
+    template<typename RestoreDateT = Aws::String>
+    void SetRestoreDate(RestoreDateT&& value) { m_restoreDateHasBeenSet = true; m_restoreDate = std::forward<RestoreDateT>(value); }
+    template<typename RestoreDateT = Aws::String>
+    CopySnapshotRequest& WithRestoreDate(RestoreDateT&& value) { SetRestoreDate(std::forward<RestoreDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,7 +100,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-keeping-automatic-snapshots">Amazon
      * Lightsail Developer Guide</a>.</p> </li> </ul>
      */
-    inline bool GetUseLatestRestorableAutoSnapshot() const{ return m_useLatestRestorableAutoSnapshot; }
+    inline bool GetUseLatestRestorableAutoSnapshot() const { return m_useLatestRestorableAutoSnapshot; }
     inline bool UseLatestRestorableAutoSnapshotHasBeenSet() const { return m_useLatestRestorableAutoSnapshotHasBeenSet; }
     inline void SetUseLatestRestorableAutoSnapshot(bool value) { m_useLatestRestorableAutoSnapshotHasBeenSet = true; m_useLatestRestorableAutoSnapshot = value; }
     inline CopySnapshotRequest& WithUseLatestRestorableAutoSnapshot(bool value) { SetUseLatestRestorableAutoSnapshot(value); return *this;}
@@ -116,14 +110,12 @@ namespace Model
     /**
      * <p>The name of the new manual snapshot to be created as a copy.</p>
      */
-    inline const Aws::String& GetTargetSnapshotName() const{ return m_targetSnapshotName; }
+    inline const Aws::String& GetTargetSnapshotName() const { return m_targetSnapshotName; }
     inline bool TargetSnapshotNameHasBeenSet() const { return m_targetSnapshotNameHasBeenSet; }
-    inline void SetTargetSnapshotName(const Aws::String& value) { m_targetSnapshotNameHasBeenSet = true; m_targetSnapshotName = value; }
-    inline void SetTargetSnapshotName(Aws::String&& value) { m_targetSnapshotNameHasBeenSet = true; m_targetSnapshotName = std::move(value); }
-    inline void SetTargetSnapshotName(const char* value) { m_targetSnapshotNameHasBeenSet = true; m_targetSnapshotName.assign(value); }
-    inline CopySnapshotRequest& WithTargetSnapshotName(const Aws::String& value) { SetTargetSnapshotName(value); return *this;}
-    inline CopySnapshotRequest& WithTargetSnapshotName(Aws::String&& value) { SetTargetSnapshotName(std::move(value)); return *this;}
-    inline CopySnapshotRequest& WithTargetSnapshotName(const char* value) { SetTargetSnapshotName(value); return *this;}
+    template<typename TargetSnapshotNameT = Aws::String>
+    void SetTargetSnapshotName(TargetSnapshotNameT&& value) { m_targetSnapshotNameHasBeenSet = true; m_targetSnapshotName = std::forward<TargetSnapshotNameT>(value); }
+    template<typename TargetSnapshotNameT = Aws::String>
+    CopySnapshotRequest& WithTargetSnapshotName(TargetSnapshotNameT&& value) { SetTargetSnapshotName(std::forward<TargetSnapshotNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -131,12 +123,10 @@ namespace Model
      * <p>The Amazon Web Services Region where the source manual or automatic snapshot
      * is located.</p>
      */
-    inline const RegionName& GetSourceRegion() const{ return m_sourceRegion; }
+    inline RegionName GetSourceRegion() const { return m_sourceRegion; }
     inline bool SourceRegionHasBeenSet() const { return m_sourceRegionHasBeenSet; }
-    inline void SetSourceRegion(const RegionName& value) { m_sourceRegionHasBeenSet = true; m_sourceRegion = value; }
-    inline void SetSourceRegion(RegionName&& value) { m_sourceRegionHasBeenSet = true; m_sourceRegion = std::move(value); }
-    inline CopySnapshotRequest& WithSourceRegion(const RegionName& value) { SetSourceRegion(value); return *this;}
-    inline CopySnapshotRequest& WithSourceRegion(RegionName&& value) { SetSourceRegion(std::move(value)); return *this;}
+    inline void SetSourceRegion(RegionName value) { m_sourceRegionHasBeenSet = true; m_sourceRegion = value; }
+    inline CopySnapshotRequest& WithSourceRegion(RegionName value) { SetSourceRegion(value); return *this;}
     ///@}
   private:
 
@@ -149,13 +139,13 @@ namespace Model
     Aws::String m_restoreDate;
     bool m_restoreDateHasBeenSet = false;
 
-    bool m_useLatestRestorableAutoSnapshot;
+    bool m_useLatestRestorableAutoSnapshot{false};
     bool m_useLatestRestorableAutoSnapshotHasBeenSet = false;
 
     Aws::String m_targetSnapshotName;
     bool m_targetSnapshotNameHasBeenSet = false;
 
-    RegionName m_sourceRegion;
+    RegionName m_sourceRegion{RegionName::NOT_SET};
     bool m_sourceRegionHasBeenSet = false;
   };
 

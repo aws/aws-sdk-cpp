@@ -22,7 +22,7 @@ namespace Model
   class ListExecutorsRequest : public AthenaRequest
   {
   public:
-    AWS_ATHENA_API ListExecutorsRequest();
+    AWS_ATHENA_API ListExecutorsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The session ID.</p>
      */
-    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
     inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-    inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
-    inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
-    inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
-    inline ListExecutorsRequest& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-    inline ListExecutorsRequest& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-    inline ListExecutorsRequest& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    ListExecutorsRequest& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,19 +58,17 @@ namespace Model
      * running.</p> <p> <code>FAILED</code> - Due to a failure, the executor is no
      * longer running.</p>
      */
-    inline const ExecutorState& GetExecutorStateFilter() const{ return m_executorStateFilter; }
+    inline ExecutorState GetExecutorStateFilter() const { return m_executorStateFilter; }
     inline bool ExecutorStateFilterHasBeenSet() const { return m_executorStateFilterHasBeenSet; }
-    inline void SetExecutorStateFilter(const ExecutorState& value) { m_executorStateFilterHasBeenSet = true; m_executorStateFilter = value; }
-    inline void SetExecutorStateFilter(ExecutorState&& value) { m_executorStateFilterHasBeenSet = true; m_executorStateFilter = std::move(value); }
-    inline ListExecutorsRequest& WithExecutorStateFilter(const ExecutorState& value) { SetExecutorStateFilter(value); return *this;}
-    inline ListExecutorsRequest& WithExecutorStateFilter(ExecutorState&& value) { SetExecutorStateFilter(std::move(value)); return *this;}
+    inline void SetExecutorStateFilter(ExecutorState value) { m_executorStateFilterHasBeenSet = true; m_executorStateFilter = value; }
+    inline ListExecutorsRequest& WithExecutorStateFilter(ExecutorState value) { SetExecutorStateFilter(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of executors to return.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListExecutorsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -85,24 +81,22 @@ namespace Model
      * pass in the <code>NextToken</code> from the response object of the previous page
      * call.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListExecutorsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListExecutorsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListExecutorsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListExecutorsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_sessionId;
     bool m_sessionIdHasBeenSet = false;
 
-    ExecutorState m_executorStateFilter;
+    ExecutorState m_executorStateFilter{ExecutorState::NOT_SET};
     bool m_executorStateFilterHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RemoveSchemaVersionMetadataResult::RemoveSchemaVersionMetadataResult() : 
-    m_latestVersion(false),
-    m_versionNumber(0)
-{
-}
-
 RemoveSchemaVersionMetadataResult::RemoveSchemaVersionMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : RemoveSchemaVersionMetadataResult()
 {
   *this = result;
 }
@@ -35,57 +28,50 @@ RemoveSchemaVersionMetadataResult& RemoveSchemaVersionMetadataResult::operator =
   if(jsonValue.ValueExists("SchemaArn"))
   {
     m_schemaArn = jsonValue.GetString("SchemaArn");
-
+    m_schemaArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SchemaName"))
   {
     m_schemaName = jsonValue.GetString("SchemaName");
-
+    m_schemaNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegistryName"))
   {
     m_registryName = jsonValue.GetString("RegistryName");
-
+    m_registryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LatestVersion"))
   {
     m_latestVersion = jsonValue.GetBool("LatestVersion");
-
+    m_latestVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VersionNumber"))
   {
     m_versionNumber = jsonValue.GetInt64("VersionNumber");
-
+    m_versionNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SchemaVersionId"))
   {
     m_schemaVersionId = jsonValue.GetString("SchemaVersionId");
-
+    m_schemaVersionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetadataKey"))
   {
     m_metadataKey = jsonValue.GetString("MetadataKey");
-
+    m_metadataKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetadataValue"))
   {
     m_metadataValue = jsonValue.GetString("MetadataValue");
-
+    m_metadataValueHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

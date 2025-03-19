@@ -35,7 +35,7 @@ namespace Model
   class CodeSigningConfig
   {
   public:
-    AWS_LAMBDA_API CodeSigningConfig();
+    AWS_LAMBDA_API CodeSigningConfig() = default;
     AWS_LAMBDA_API CodeSigningConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API CodeSigningConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,54 +45,48 @@ namespace Model
     /**
      * <p>Unique identifer for the Code signing configuration.</p>
      */
-    inline const Aws::String& GetCodeSigningConfigId() const{ return m_codeSigningConfigId; }
+    inline const Aws::String& GetCodeSigningConfigId() const { return m_codeSigningConfigId; }
     inline bool CodeSigningConfigIdHasBeenSet() const { return m_codeSigningConfigIdHasBeenSet; }
-    inline void SetCodeSigningConfigId(const Aws::String& value) { m_codeSigningConfigIdHasBeenSet = true; m_codeSigningConfigId = value; }
-    inline void SetCodeSigningConfigId(Aws::String&& value) { m_codeSigningConfigIdHasBeenSet = true; m_codeSigningConfigId = std::move(value); }
-    inline void SetCodeSigningConfigId(const char* value) { m_codeSigningConfigIdHasBeenSet = true; m_codeSigningConfigId.assign(value); }
-    inline CodeSigningConfig& WithCodeSigningConfigId(const Aws::String& value) { SetCodeSigningConfigId(value); return *this;}
-    inline CodeSigningConfig& WithCodeSigningConfigId(Aws::String&& value) { SetCodeSigningConfigId(std::move(value)); return *this;}
-    inline CodeSigningConfig& WithCodeSigningConfigId(const char* value) { SetCodeSigningConfigId(value); return *this;}
+    template<typename CodeSigningConfigIdT = Aws::String>
+    void SetCodeSigningConfigId(CodeSigningConfigIdT&& value) { m_codeSigningConfigIdHasBeenSet = true; m_codeSigningConfigId = std::forward<CodeSigningConfigIdT>(value); }
+    template<typename CodeSigningConfigIdT = Aws::String>
+    CodeSigningConfig& WithCodeSigningConfigId(CodeSigningConfigIdT&& value) { SetCodeSigningConfigId(std::forward<CodeSigningConfigIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Code signing configuration.</p>
      */
-    inline const Aws::String& GetCodeSigningConfigArn() const{ return m_codeSigningConfigArn; }
+    inline const Aws::String& GetCodeSigningConfigArn() const { return m_codeSigningConfigArn; }
     inline bool CodeSigningConfigArnHasBeenSet() const { return m_codeSigningConfigArnHasBeenSet; }
-    inline void SetCodeSigningConfigArn(const Aws::String& value) { m_codeSigningConfigArnHasBeenSet = true; m_codeSigningConfigArn = value; }
-    inline void SetCodeSigningConfigArn(Aws::String&& value) { m_codeSigningConfigArnHasBeenSet = true; m_codeSigningConfigArn = std::move(value); }
-    inline void SetCodeSigningConfigArn(const char* value) { m_codeSigningConfigArnHasBeenSet = true; m_codeSigningConfigArn.assign(value); }
-    inline CodeSigningConfig& WithCodeSigningConfigArn(const Aws::String& value) { SetCodeSigningConfigArn(value); return *this;}
-    inline CodeSigningConfig& WithCodeSigningConfigArn(Aws::String&& value) { SetCodeSigningConfigArn(std::move(value)); return *this;}
-    inline CodeSigningConfig& WithCodeSigningConfigArn(const char* value) { SetCodeSigningConfigArn(value); return *this;}
+    template<typename CodeSigningConfigArnT = Aws::String>
+    void SetCodeSigningConfigArn(CodeSigningConfigArnT&& value) { m_codeSigningConfigArnHasBeenSet = true; m_codeSigningConfigArn = std::forward<CodeSigningConfigArnT>(value); }
+    template<typename CodeSigningConfigArnT = Aws::String>
+    CodeSigningConfig& WithCodeSigningConfigArn(CodeSigningConfigArnT&& value) { SetCodeSigningConfigArn(std::forward<CodeSigningConfigArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Code signing configuration description.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CodeSigningConfig& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CodeSigningConfig& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CodeSigningConfig& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CodeSigningConfig& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>List of allowed publishers.</p>
      */
-    inline const AllowedPublishers& GetAllowedPublishers() const{ return m_allowedPublishers; }
+    inline const AllowedPublishers& GetAllowedPublishers() const { return m_allowedPublishers; }
     inline bool AllowedPublishersHasBeenSet() const { return m_allowedPublishersHasBeenSet; }
-    inline void SetAllowedPublishers(const AllowedPublishers& value) { m_allowedPublishersHasBeenSet = true; m_allowedPublishers = value; }
-    inline void SetAllowedPublishers(AllowedPublishers&& value) { m_allowedPublishersHasBeenSet = true; m_allowedPublishers = std::move(value); }
-    inline CodeSigningConfig& WithAllowedPublishers(const AllowedPublishers& value) { SetAllowedPublishers(value); return *this;}
-    inline CodeSigningConfig& WithAllowedPublishers(AllowedPublishers&& value) { SetAllowedPublishers(std::move(value)); return *this;}
+    template<typename AllowedPublishersT = AllowedPublishers>
+    void SetAllowedPublishers(AllowedPublishersT&& value) { m_allowedPublishersHasBeenSet = true; m_allowedPublishers = std::forward<AllowedPublishersT>(value); }
+    template<typename AllowedPublishersT = AllowedPublishers>
+    CodeSigningConfig& WithAllowedPublishers(AllowedPublishersT&& value) { SetAllowedPublishers(std::forward<AllowedPublishersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,12 +94,12 @@ namespace Model
      * <p>The code signing policy controls the validation failure action for signature
      * mismatch or expiry.</p>
      */
-    inline const CodeSigningPolicies& GetCodeSigningPolicies() const{ return m_codeSigningPolicies; }
+    inline const CodeSigningPolicies& GetCodeSigningPolicies() const { return m_codeSigningPolicies; }
     inline bool CodeSigningPoliciesHasBeenSet() const { return m_codeSigningPoliciesHasBeenSet; }
-    inline void SetCodeSigningPolicies(const CodeSigningPolicies& value) { m_codeSigningPoliciesHasBeenSet = true; m_codeSigningPolicies = value; }
-    inline void SetCodeSigningPolicies(CodeSigningPolicies&& value) { m_codeSigningPoliciesHasBeenSet = true; m_codeSigningPolicies = std::move(value); }
-    inline CodeSigningConfig& WithCodeSigningPolicies(const CodeSigningPolicies& value) { SetCodeSigningPolicies(value); return *this;}
-    inline CodeSigningConfig& WithCodeSigningPolicies(CodeSigningPolicies&& value) { SetCodeSigningPolicies(std::move(value)); return *this;}
+    template<typename CodeSigningPoliciesT = CodeSigningPolicies>
+    void SetCodeSigningPolicies(CodeSigningPoliciesT&& value) { m_codeSigningPoliciesHasBeenSet = true; m_codeSigningPolicies = std::forward<CodeSigningPoliciesT>(value); }
+    template<typename CodeSigningPoliciesT = CodeSigningPolicies>
+    CodeSigningConfig& WithCodeSigningPolicies(CodeSigningPoliciesT&& value) { SetCodeSigningPolicies(std::forward<CodeSigningPoliciesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,14 +107,12 @@ namespace Model
      * <p>The date and time that the Code signing configuration was last modified, in
      * ISO-8601 format (YYYY-MM-DDThh:mm:ss.sTZD). </p>
      */
-    inline const Aws::String& GetLastModified() const{ return m_lastModified; }
+    inline const Aws::String& GetLastModified() const { return m_lastModified; }
     inline bool LastModifiedHasBeenSet() const { return m_lastModifiedHasBeenSet; }
-    inline void SetLastModified(const Aws::String& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
-    inline void SetLastModified(Aws::String&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = std::move(value); }
-    inline void SetLastModified(const char* value) { m_lastModifiedHasBeenSet = true; m_lastModified.assign(value); }
-    inline CodeSigningConfig& WithLastModified(const Aws::String& value) { SetLastModified(value); return *this;}
-    inline CodeSigningConfig& WithLastModified(Aws::String&& value) { SetLastModified(std::move(value)); return *this;}
-    inline CodeSigningConfig& WithLastModified(const char* value) { SetLastModified(value); return *this;}
+    template<typename LastModifiedT = Aws::String>
+    void SetLastModified(LastModifiedT&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = std::forward<LastModifiedT>(value); }
+    template<typename LastModifiedT = Aws::String>
+    CodeSigningConfig& WithLastModified(LastModifiedT&& value) { SetLastModified(std::forward<LastModifiedT>(value)); return *this;}
     ///@}
   private:
 

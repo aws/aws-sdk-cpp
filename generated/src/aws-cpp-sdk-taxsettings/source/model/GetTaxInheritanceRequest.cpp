@@ -12,10 +12,6 @@ using namespace Aws::TaxSettings::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTaxInheritanceRequest::GetTaxInheritanceRequest()
-{
-}
-
 Aws::String GetTaxInheritanceRequest::SerializePayload() const
 {
   return {};

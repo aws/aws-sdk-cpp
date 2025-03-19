@@ -18,15 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-S3Destination::S3Destination() : 
-    m_bucketHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_metadataKeyHasBeenSet(false)
-{
-}
-
 S3Destination::S3Destination(JsonView jsonValue)
-  : S3Destination()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ S3Destination& S3Destination::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bucket"))
   {
     m_bucket = jsonValue.GetString("bucket");
-
     m_bucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metadataKey"))
   {
     m_metadataKey = jsonValue.GetString("metadataKey");
-
     m_metadataKeyHasBeenSet = true;
   }
-
   return *this;
 }
 

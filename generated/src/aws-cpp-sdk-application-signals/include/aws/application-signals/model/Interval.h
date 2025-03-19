@@ -33,7 +33,7 @@ namespace Model
   class Interval
   {
   public:
-    AWS_APPLICATIONSIGNALS_API Interval();
+    AWS_APPLICATIONSIGNALS_API Interval() = default;
     AWS_APPLICATIONSIGNALS_API Interval(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONSIGNALS_API Interval& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONSIGNALS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p>If the interval is a rolling interval, this structure contains the interval
      * specifications.</p>
      */
-    inline const RollingInterval& GetRollingInterval() const{ return m_rollingInterval; }
+    inline const RollingInterval& GetRollingInterval() const { return m_rollingInterval; }
     inline bool RollingIntervalHasBeenSet() const { return m_rollingIntervalHasBeenSet; }
-    inline void SetRollingInterval(const RollingInterval& value) { m_rollingIntervalHasBeenSet = true; m_rollingInterval = value; }
-    inline void SetRollingInterval(RollingInterval&& value) { m_rollingIntervalHasBeenSet = true; m_rollingInterval = std::move(value); }
-    inline Interval& WithRollingInterval(const RollingInterval& value) { SetRollingInterval(value); return *this;}
-    inline Interval& WithRollingInterval(RollingInterval&& value) { SetRollingInterval(std::move(value)); return *this;}
+    template<typename RollingIntervalT = RollingInterval>
+    void SetRollingInterval(RollingIntervalT&& value) { m_rollingIntervalHasBeenSet = true; m_rollingInterval = std::forward<RollingIntervalT>(value); }
+    template<typename RollingIntervalT = RollingInterval>
+    Interval& WithRollingInterval(RollingIntervalT&& value) { SetRollingInterval(std::forward<RollingIntervalT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +57,12 @@ namespace Model
      * <p>If the interval is a calendar interval, this structure contains the interval
      * specifications.</p>
      */
-    inline const CalendarInterval& GetCalendarInterval() const{ return m_calendarInterval; }
+    inline const CalendarInterval& GetCalendarInterval() const { return m_calendarInterval; }
     inline bool CalendarIntervalHasBeenSet() const { return m_calendarIntervalHasBeenSet; }
-    inline void SetCalendarInterval(const CalendarInterval& value) { m_calendarIntervalHasBeenSet = true; m_calendarInterval = value; }
-    inline void SetCalendarInterval(CalendarInterval&& value) { m_calendarIntervalHasBeenSet = true; m_calendarInterval = std::move(value); }
-    inline Interval& WithCalendarInterval(const CalendarInterval& value) { SetCalendarInterval(value); return *this;}
-    inline Interval& WithCalendarInterval(CalendarInterval&& value) { SetCalendarInterval(std::move(value)); return *this;}
+    template<typename CalendarIntervalT = CalendarInterval>
+    void SetCalendarInterval(CalendarIntervalT&& value) { m_calendarIntervalHasBeenSet = true; m_calendarInterval = std::forward<CalendarIntervalT>(value); }
+    template<typename CalendarIntervalT = CalendarInterval>
+    Interval& WithCalendarInterval(CalendarIntervalT&& value) { SetCalendarInterval(std::forward<CalendarIntervalT>(value)); return *this;}
     ///@}
   private:
 

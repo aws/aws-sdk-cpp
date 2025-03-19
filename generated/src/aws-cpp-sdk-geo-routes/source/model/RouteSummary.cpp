@@ -18,17 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteSummary::RouteSummary() : 
-    m_distance(0),
-    m_distanceHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_tollsHasBeenSet(false)
-{
-}
-
 RouteSummary::RouteSummary(JsonView jsonValue)
-  : RouteSummary()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ RouteSummary& RouteSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Distance"))
   {
     m_distance = jsonValue.GetInt64("Distance");
-
     m_distanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Duration"))
   {
     m_duration = jsonValue.GetInt64("Duration");
-
     m_durationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tolls"))
   {
     m_tolls = jsonValue.GetObject("Tolls");
-
     m_tollsHasBeenSet = true;
   }
-
   return *this;
 }
 

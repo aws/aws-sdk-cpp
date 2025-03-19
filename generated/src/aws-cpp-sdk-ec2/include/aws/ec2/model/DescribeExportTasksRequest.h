@@ -23,7 +23,7 @@ namespace Model
   class DescribeExportTasksRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DescribeExportTasksRequest();
+    AWS_EC2_API DescribeExportTasksRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,29 +42,28 @@ namespace Model
     /**
      * <p>the filters for the export tasks.</p>
      */
-    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline DescribeExportTasksRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-    inline DescribeExportTasksRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline DescribeExportTasksRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline DescribeExportTasksRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    DescribeExportTasksRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = Filter>
+    DescribeExportTasksRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The export task IDs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExportTaskIds() const{ return m_exportTaskIds; }
+    inline const Aws::Vector<Aws::String>& GetExportTaskIds() const { return m_exportTaskIds; }
     inline bool ExportTaskIdsHasBeenSet() const { return m_exportTaskIdsHasBeenSet; }
-    inline void SetExportTaskIds(const Aws::Vector<Aws::String>& value) { m_exportTaskIdsHasBeenSet = true; m_exportTaskIds = value; }
-    inline void SetExportTaskIds(Aws::Vector<Aws::String>&& value) { m_exportTaskIdsHasBeenSet = true; m_exportTaskIds = std::move(value); }
-    inline DescribeExportTasksRequest& WithExportTaskIds(const Aws::Vector<Aws::String>& value) { SetExportTaskIds(value); return *this;}
-    inline DescribeExportTasksRequest& WithExportTaskIds(Aws::Vector<Aws::String>&& value) { SetExportTaskIds(std::move(value)); return *this;}
-    inline DescribeExportTasksRequest& AddExportTaskIds(const Aws::String& value) { m_exportTaskIdsHasBeenSet = true; m_exportTaskIds.push_back(value); return *this; }
-    inline DescribeExportTasksRequest& AddExportTaskIds(Aws::String&& value) { m_exportTaskIdsHasBeenSet = true; m_exportTaskIds.push_back(std::move(value)); return *this; }
-    inline DescribeExportTasksRequest& AddExportTaskIds(const char* value) { m_exportTaskIdsHasBeenSet = true; m_exportTaskIds.push_back(value); return *this; }
+    template<typename ExportTaskIdsT = Aws::Vector<Aws::String>>
+    void SetExportTaskIds(ExportTaskIdsT&& value) { m_exportTaskIdsHasBeenSet = true; m_exportTaskIds = std::forward<ExportTaskIdsT>(value); }
+    template<typename ExportTaskIdsT = Aws::Vector<Aws::String>>
+    DescribeExportTasksRequest& WithExportTaskIds(ExportTaskIdsT&& value) { SetExportTaskIds(std::forward<ExportTaskIdsT>(value)); return *this;}
+    template<typename ExportTaskIdsT = Aws::String>
+    DescribeExportTasksRequest& AddExportTaskIds(ExportTaskIdsT&& value) { m_exportTaskIdsHasBeenSet = true; m_exportTaskIds.emplace_back(std::forward<ExportTaskIdsT>(value)); return *this; }
     ///@}
   private:
 

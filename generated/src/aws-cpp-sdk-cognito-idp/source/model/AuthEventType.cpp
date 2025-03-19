@@ -18,22 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-AuthEventType::AuthEventType() : 
-    m_eventIdHasBeenSet(false),
-    m_eventType(EventType::NOT_SET),
-    m_eventTypeHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_eventResponse(EventResponseType::NOT_SET),
-    m_eventResponseHasBeenSet(false),
-    m_eventRiskHasBeenSet(false),
-    m_challengeResponsesHasBeenSet(false),
-    m_eventContextDataHasBeenSet(false),
-    m_eventFeedbackHasBeenSet(false)
-{
-}
-
 AuthEventType::AuthEventType(JsonView jsonValue)
-  : AuthEventType()
 {
   *this = jsonValue;
 }
@@ -43,38 +28,28 @@ AuthEventType& AuthEventType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EventId"))
   {
     m_eventId = jsonValue.GetString("EventId");
-
     m_eventIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventType"))
   {
     m_eventType = EventTypeMapper::GetEventTypeForName(jsonValue.GetString("EventType"));
-
     m_eventTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetDouble("CreationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventResponse"))
   {
     m_eventResponse = EventResponseTypeMapper::GetEventResponseTypeForName(jsonValue.GetString("EventResponse"));
-
     m_eventResponseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventRisk"))
   {
     m_eventRisk = jsonValue.GetObject("EventRisk");
-
     m_eventRiskHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChallengeResponses"))
   {
     Aws::Utils::Array<JsonView> challengeResponsesJsonList = jsonValue.GetArray("ChallengeResponses");
@@ -84,21 +59,16 @@ AuthEventType& AuthEventType::operator =(JsonView jsonValue)
     }
     m_challengeResponsesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventContextData"))
   {
     m_eventContextData = jsonValue.GetObject("EventContextData");
-
     m_eventContextDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventFeedback"))
   {
     m_eventFeedback = jsonValue.GetObject("EventFeedback");
-
     m_eventFeedbackHasBeenSet = true;
   }
-
   return *this;
 }
 

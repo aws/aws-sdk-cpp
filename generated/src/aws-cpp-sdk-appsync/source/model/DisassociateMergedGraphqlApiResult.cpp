@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DisassociateMergedGraphqlApiResult::DisassociateMergedGraphqlApiResult() : 
-    m_sourceApiAssociationStatus(SourceApiAssociationStatus::NOT_SET)
-{
-}
-
 DisassociateMergedGraphqlApiResult::DisassociateMergedGraphqlApiResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DisassociateMergedGraphqlApiResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ DisassociateMergedGraphqlApiResult& DisassociateMergedGraphqlApiResult::operator
   if(jsonValue.ValueExists("sourceApiAssociationStatus"))
   {
     m_sourceApiAssociationStatus = SourceApiAssociationStatusMapper::GetSourceApiAssociationStatusForName(jsonValue.GetString("sourceApiAssociationStatus"));
-
+    m_sourceApiAssociationStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

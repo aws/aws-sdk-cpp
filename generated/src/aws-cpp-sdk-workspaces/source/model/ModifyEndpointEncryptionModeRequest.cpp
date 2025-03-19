@@ -12,13 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ModifyEndpointEncryptionModeRequest::ModifyEndpointEncryptionModeRequest() : 
-    m_directoryIdHasBeenSet(false),
-    m_endpointEncryptionMode(EndpointEncryptionMode::NOT_SET),
-    m_endpointEncryptionModeHasBeenSet(false)
-{
-}
-
 Aws::String ModifyEndpointEncryptionModeRequest::SerializePayload() const
 {
   JsonValue payload;

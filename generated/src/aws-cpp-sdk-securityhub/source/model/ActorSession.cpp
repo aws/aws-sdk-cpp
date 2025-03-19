@@ -18,18 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-ActorSession::ActorSession() : 
-    m_uidHasBeenSet(false),
-    m_mfaStatus(ActorSessionMfaStatus::NOT_SET),
-    m_mfaStatusHasBeenSet(false),
-    m_createdTime(0),
-    m_createdTimeHasBeenSet(false),
-    m_issuerHasBeenSet(false)
-{
-}
-
 ActorSession::ActorSession(JsonView jsonValue)
-  : ActorSession()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ ActorSession& ActorSession::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Uid"))
   {
     m_uid = jsonValue.GetString("Uid");
-
     m_uidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MfaStatus"))
   {
     m_mfaStatus = ActorSessionMfaStatusMapper::GetActorSessionMfaStatusForName(jsonValue.GetString("MfaStatus"));
-
     m_mfaStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetInt64("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Issuer"))
   {
     m_issuer = jsonValue.GetString("Issuer");
-
     m_issuerHasBeenSet = true;
   }
-
   return *this;
 }
 

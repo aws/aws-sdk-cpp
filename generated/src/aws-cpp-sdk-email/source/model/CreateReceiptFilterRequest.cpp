@@ -10,11 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-CreateReceiptFilterRequest::CreateReceiptFilterRequest() : 
-    m_filterHasBeenSet(false)
-{
-}
-
 Aws::String CreateReceiptFilterRequest::SerializePayload() const
 {
   Aws::StringStream ss;

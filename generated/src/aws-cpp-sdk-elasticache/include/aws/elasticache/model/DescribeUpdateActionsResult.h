@@ -30,7 +30,7 @@ namespace Model
   class DescribeUpdateActionsResult
   {
   public:
-    AWS_ELASTICACHE_API DescribeUpdateActionsResult();
+    AWS_ELASTICACHE_API DescribeUpdateActionsResult() = default;
     AWS_ELASTICACHE_API DescribeUpdateActionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ELASTICACHE_API DescribeUpdateActionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -42,43 +42,44 @@ namespace Model
      * response includes only records beyond the marker, up to the value specified by
      * <code>MaxRecords</code>.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
-    inline void SetMarker(const Aws::String& value) { m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_marker.assign(value); }
-    inline DescribeUpdateActionsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeUpdateActionsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeUpdateActionsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    inline const Aws::String& GetMarker() const { return m_marker; }
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeUpdateActionsResult& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Returns a list of update actions</p>
      */
-    inline const Aws::Vector<UpdateAction>& GetUpdateActions() const{ return m_updateActions; }
-    inline void SetUpdateActions(const Aws::Vector<UpdateAction>& value) { m_updateActions = value; }
-    inline void SetUpdateActions(Aws::Vector<UpdateAction>&& value) { m_updateActions = std::move(value); }
-    inline DescribeUpdateActionsResult& WithUpdateActions(const Aws::Vector<UpdateAction>& value) { SetUpdateActions(value); return *this;}
-    inline DescribeUpdateActionsResult& WithUpdateActions(Aws::Vector<UpdateAction>&& value) { SetUpdateActions(std::move(value)); return *this;}
-    inline DescribeUpdateActionsResult& AddUpdateActions(const UpdateAction& value) { m_updateActions.push_back(value); return *this; }
-    inline DescribeUpdateActionsResult& AddUpdateActions(UpdateAction&& value) { m_updateActions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<UpdateAction>& GetUpdateActions() const { return m_updateActions; }
+    template<typename UpdateActionsT = Aws::Vector<UpdateAction>>
+    void SetUpdateActions(UpdateActionsT&& value) { m_updateActionsHasBeenSet = true; m_updateActions = std::forward<UpdateActionsT>(value); }
+    template<typename UpdateActionsT = Aws::Vector<UpdateAction>>
+    DescribeUpdateActionsResult& WithUpdateActions(UpdateActionsT&& value) { SetUpdateActions(std::forward<UpdateActionsT>(value)); return *this;}
+    template<typename UpdateActionsT = UpdateAction>
+    DescribeUpdateActionsResult& AddUpdateActions(UpdateActionsT&& value) { m_updateActionsHasBeenSet = true; m_updateActions.emplace_back(std::forward<UpdateActionsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeUpdateActionsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeUpdateActionsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeUpdateActionsResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_marker;
+    bool m_markerHasBeenSet = false;
 
     Aws::Vector<UpdateAction> m_updateActions;
+    bool m_updateActionsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,7 +31,7 @@ namespace Model
   class Stream
   {
   public:
-    AWS_IOT_API Stream();
+    AWS_IOT_API Stream() = default;
     AWS_IOT_API Stream(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Stream& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,21 +41,19 @@ namespace Model
     /**
      * <p>The stream ID.</p>
      */
-    inline const Aws::String& GetStreamId() const{ return m_streamId; }
+    inline const Aws::String& GetStreamId() const { return m_streamId; }
     inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
-    inline void SetStreamId(const Aws::String& value) { m_streamIdHasBeenSet = true; m_streamId = value; }
-    inline void SetStreamId(Aws::String&& value) { m_streamIdHasBeenSet = true; m_streamId = std::move(value); }
-    inline void SetStreamId(const char* value) { m_streamIdHasBeenSet = true; m_streamId.assign(value); }
-    inline Stream& WithStreamId(const Aws::String& value) { SetStreamId(value); return *this;}
-    inline Stream& WithStreamId(Aws::String&& value) { SetStreamId(std::move(value)); return *this;}
-    inline Stream& WithStreamId(const char* value) { SetStreamId(value); return *this;}
+    template<typename StreamIdT = Aws::String>
+    void SetStreamId(StreamIdT&& value) { m_streamIdHasBeenSet = true; m_streamId = std::forward<StreamIdT>(value); }
+    template<typename StreamIdT = Aws::String>
+    Stream& WithStreamId(StreamIdT&& value) { SetStreamId(std::forward<StreamIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of a file associated with a stream.</p>
      */
-    inline int GetFileId() const{ return m_fileId; }
+    inline int GetFileId() const { return m_fileId; }
     inline bool FileIdHasBeenSet() const { return m_fileIdHasBeenSet; }
     inline void SetFileId(int value) { m_fileIdHasBeenSet = true; m_fileId = value; }
     inline Stream& WithFileId(int value) { SetFileId(value); return *this;}
@@ -65,7 +63,7 @@ namespace Model
     Aws::String m_streamId;
     bool m_streamIdHasBeenSet = false;
 
-    int m_fileId;
+    int m_fileId{0};
     bool m_fileIdHasBeenSet = false;
   };
 

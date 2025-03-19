@@ -29,7 +29,7 @@ namespace Model
   class GetCompatibleKafkaVersionsResult
   {
   public:
-    AWS_KAFKA_API GetCompatibleKafkaVersionsResult();
+    AWS_KAFKA_API GetCompatibleKafkaVersionsResult() = default;
     AWS_KAFKA_API GetCompatibleKafkaVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KAFKA_API GetCompatibleKafkaVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,30 +40,30 @@ namespace Model
             <p>A list of CompatibleKafkaVersion objects.</p>
             
      */
-    inline const Aws::Vector<CompatibleKafkaVersion>& GetCompatibleKafkaVersions() const{ return m_compatibleKafkaVersions; }
-    inline void SetCompatibleKafkaVersions(const Aws::Vector<CompatibleKafkaVersion>& value) { m_compatibleKafkaVersions = value; }
-    inline void SetCompatibleKafkaVersions(Aws::Vector<CompatibleKafkaVersion>&& value) { m_compatibleKafkaVersions = std::move(value); }
-    inline GetCompatibleKafkaVersionsResult& WithCompatibleKafkaVersions(const Aws::Vector<CompatibleKafkaVersion>& value) { SetCompatibleKafkaVersions(value); return *this;}
-    inline GetCompatibleKafkaVersionsResult& WithCompatibleKafkaVersions(Aws::Vector<CompatibleKafkaVersion>&& value) { SetCompatibleKafkaVersions(std::move(value)); return *this;}
-    inline GetCompatibleKafkaVersionsResult& AddCompatibleKafkaVersions(const CompatibleKafkaVersion& value) { m_compatibleKafkaVersions.push_back(value); return *this; }
-    inline GetCompatibleKafkaVersionsResult& AddCompatibleKafkaVersions(CompatibleKafkaVersion&& value) { m_compatibleKafkaVersions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CompatibleKafkaVersion>& GetCompatibleKafkaVersions() const { return m_compatibleKafkaVersions; }
+    template<typename CompatibleKafkaVersionsT = Aws::Vector<CompatibleKafkaVersion>>
+    void SetCompatibleKafkaVersions(CompatibleKafkaVersionsT&& value) { m_compatibleKafkaVersionsHasBeenSet = true; m_compatibleKafkaVersions = std::forward<CompatibleKafkaVersionsT>(value); }
+    template<typename CompatibleKafkaVersionsT = Aws::Vector<CompatibleKafkaVersion>>
+    GetCompatibleKafkaVersionsResult& WithCompatibleKafkaVersions(CompatibleKafkaVersionsT&& value) { SetCompatibleKafkaVersions(std::forward<CompatibleKafkaVersionsT>(value)); return *this;}
+    template<typename CompatibleKafkaVersionsT = CompatibleKafkaVersion>
+    GetCompatibleKafkaVersionsResult& AddCompatibleKafkaVersions(CompatibleKafkaVersionsT&& value) { m_compatibleKafkaVersionsHasBeenSet = true; m_compatibleKafkaVersions.emplace_back(std::forward<CompatibleKafkaVersionsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetCompatibleKafkaVersionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetCompatibleKafkaVersionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetCompatibleKafkaVersionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetCompatibleKafkaVersionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<CompatibleKafkaVersion> m_compatibleKafkaVersions;
+    bool m_compatibleKafkaVersionsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,7 +34,7 @@ namespace Model
   class GroupSearchFilter
   {
   public:
-    AWS_QUICKSIGHT_API GroupSearchFilter();
+    AWS_QUICKSIGHT_API GroupSearchFilter() = default;
     AWS_QUICKSIGHT_API GroupSearchFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API GroupSearchFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,10 @@ namespace Model
      * <code>"Operator": "StartsWith"</code>. Currently, the only supported operator is
      * <code>StartsWith</code>.</p>
      */
-    inline const GroupFilterOperator& GetOperator() const{ return m_operator; }
+    inline GroupFilterOperator GetOperator() const { return m_operator; }
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-    inline void SetOperator(const GroupFilterOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-    inline void SetOperator(GroupFilterOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-    inline GroupSearchFilter& WithOperator(const GroupFilterOperator& value) { SetOperator(value); return *this;}
-    inline GroupSearchFilter& WithOperator(GroupFilterOperator&& value) { SetOperator(std::move(value)); return *this;}
+    inline void SetOperator(GroupFilterOperator value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline GroupSearchFilter& WithOperator(GroupFilterOperator value) { SetOperator(value); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +58,10 @@ namespace Model
      * <code>"Name": "GROUP_NAME"</code>. Currently, the only supported name is
      * <code>GROUP_NAME</code>.</p>
      */
-    inline const GroupFilterAttribute& GetName() const{ return m_name; }
+    inline GroupFilterAttribute GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const GroupFilterAttribute& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(GroupFilterAttribute&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline GroupSearchFilter& WithName(const GroupFilterAttribute& value) { SetName(value); return *this;}
-    inline GroupSearchFilter& WithName(GroupFilterAttribute&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(GroupFilterAttribute value) { m_nameHasBeenSet = true; m_name = value; }
+    inline GroupSearchFilter& WithName(GroupFilterAttribute value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -73,21 +69,19 @@ namespace Model
      * <p>The value of the named item, in this case <code>GROUP_NAME</code>, that you
      * want to use as a filter.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline GroupSearchFilter& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline GroupSearchFilter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline GroupSearchFilter& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    GroupSearchFilter& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
-    GroupFilterOperator m_operator;
+    GroupFilterOperator m_operator{GroupFilterOperator::NOT_SET};
     bool m_operatorHasBeenSet = false;
 
-    GroupFilterAttribute m_name;
+    GroupFilterAttribute m_name{GroupFilterAttribute::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::String m_value;

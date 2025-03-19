@@ -32,7 +32,7 @@ namespace Model
   class AuditLogDestinationConfiguration
   {
   public:
-    AWS_APPFABRIC_API AuditLogDestinationConfiguration();
+    AWS_APPFABRIC_API AuditLogDestinationConfiguration() = default;
     AWS_APPFABRIC_API AuditLogDestinationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFABRIC_API AuditLogDestinationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFABRIC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Contains information about an audit log destination.</p>
      */
-    inline const Destination& GetDestination() const{ return m_destination; }
+    inline const Destination& GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const Destination& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(Destination&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline AuditLogDestinationConfiguration& WithDestination(const Destination& value) { SetDestination(value); return *this;}
-    inline AuditLogDestinationConfiguration& WithDestination(Destination&& value) { SetDestination(std::move(value)); return *this;}
+    template<typename DestinationT = Destination>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = Destination>
+    AuditLogDestinationConfiguration& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,16 +12,6 @@ using namespace Aws::SnowDeviceManagement::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateTaskRequest::CreateTaskRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_commandHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_targetsHasBeenSet(false)
-{
-}
-
 Aws::String CreateTaskRequest::SerializePayload() const
 {
   JsonValue payload;

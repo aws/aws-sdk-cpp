@@ -10,11 +10,6 @@
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-ListPlatformApplicationsRequest::ListPlatformApplicationsRequest() : 
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListPlatformApplicationsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

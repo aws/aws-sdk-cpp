@@ -12,12 +12,6 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetContactRequest::GetContactRequest() : 
-    m_contactListNameHasBeenSet(false),
-    m_emailAddressHasBeenSet(false)
-{
-}
-
 Aws::String GetContactRequest::SerializePayload() const
 {
   return {};

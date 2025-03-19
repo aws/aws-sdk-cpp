@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeSlackChannelConfigurationsResult::DescribeSlackChannelConfigurationsResult()
-{
-}
-
 DescribeSlackChannelConfigurationsResult::DescribeSlackChannelConfigurationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DescribeSlackChannelConfigurationsResult& DescribeSlackChannelConfigurationsResu
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SlackChannelConfigurations"))
   {
     Aws::Utils::Array<JsonView> slackChannelConfigurationsJsonList = jsonValue.GetArray("SlackChannelConfigurations");
@@ -42,14 +37,15 @@ DescribeSlackChannelConfigurationsResult& DescribeSlackChannelConfigurationsResu
     {
       m_slackChannelConfigurations.push_back(slackChannelConfigurationsJsonList[slackChannelConfigurationsIndex].AsObject());
     }
+    m_slackChannelConfigurationsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

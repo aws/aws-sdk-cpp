@@ -18,14 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-ListenerTlsValidationContext::ListenerTlsValidationContext() : 
-    m_subjectAlternativeNamesHasBeenSet(false),
-    m_trustHasBeenSet(false)
-{
-}
-
 ListenerTlsValidationContext::ListenerTlsValidationContext(JsonView jsonValue)
-  : ListenerTlsValidationContext()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ListenerTlsValidationContext& ListenerTlsValidationContext::operator =(JsonView 
   if(jsonValue.ValueExists("subjectAlternativeNames"))
   {
     m_subjectAlternativeNames = jsonValue.GetObject("subjectAlternativeNames");
-
     m_subjectAlternativeNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("trust"))
   {
     m_trust = jsonValue.GetObject("trust");
-
     m_trustHasBeenSet = true;
   }
-
   return *this;
 }
 

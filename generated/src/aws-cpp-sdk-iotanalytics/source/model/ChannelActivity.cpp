@@ -18,15 +18,7 @@ namespace IoTAnalytics
 namespace Model
 {
 
-ChannelActivity::ChannelActivity() : 
-    m_nameHasBeenSet(false),
-    m_channelNameHasBeenSet(false),
-    m_nextHasBeenSet(false)
-{
-}
-
 ChannelActivity::ChannelActivity(JsonView jsonValue)
-  : ChannelActivity()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ChannelActivity& ChannelActivity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("channelName"))
   {
     m_channelName = jsonValue.GetString("channelName");
-
     m_channelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("next"))
   {
     m_next = jsonValue.GetString("next");
-
     m_nextHasBeenSet = true;
   }
-
   return *this;
 }
 

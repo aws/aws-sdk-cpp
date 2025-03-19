@@ -28,7 +28,7 @@ namespace Model
   class ListThreatIntelSetsResult
   {
   public:
-    AWS_GUARDDUTY_API ListThreatIntelSetsResult();
+    AWS_GUARDDUTY_API ListThreatIntelSetsResult() = default;
     AWS_GUARDDUTY_API ListThreatIntelSetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GUARDDUTY_API ListThreatIntelSetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,14 +37,13 @@ namespace Model
     /**
      * <p>The IDs of the ThreatIntelSet resources.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetThreatIntelSetIds() const{ return m_threatIntelSetIds; }
-    inline void SetThreatIntelSetIds(const Aws::Vector<Aws::String>& value) { m_threatIntelSetIds = value; }
-    inline void SetThreatIntelSetIds(Aws::Vector<Aws::String>&& value) { m_threatIntelSetIds = std::move(value); }
-    inline ListThreatIntelSetsResult& WithThreatIntelSetIds(const Aws::Vector<Aws::String>& value) { SetThreatIntelSetIds(value); return *this;}
-    inline ListThreatIntelSetsResult& WithThreatIntelSetIds(Aws::Vector<Aws::String>&& value) { SetThreatIntelSetIds(std::move(value)); return *this;}
-    inline ListThreatIntelSetsResult& AddThreatIntelSetIds(const Aws::String& value) { m_threatIntelSetIds.push_back(value); return *this; }
-    inline ListThreatIntelSetsResult& AddThreatIntelSetIds(Aws::String&& value) { m_threatIntelSetIds.push_back(std::move(value)); return *this; }
-    inline ListThreatIntelSetsResult& AddThreatIntelSetIds(const char* value) { m_threatIntelSetIds.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetThreatIntelSetIds() const { return m_threatIntelSetIds; }
+    template<typename ThreatIntelSetIdsT = Aws::Vector<Aws::String>>
+    void SetThreatIntelSetIds(ThreatIntelSetIdsT&& value) { m_threatIntelSetIdsHasBeenSet = true; m_threatIntelSetIds = std::forward<ThreatIntelSetIdsT>(value); }
+    template<typename ThreatIntelSetIdsT = Aws::Vector<Aws::String>>
+    ListThreatIntelSetsResult& WithThreatIntelSetIds(ThreatIntelSetIdsT&& value) { SetThreatIntelSetIds(std::forward<ThreatIntelSetIdsT>(value)); return *this;}
+    template<typename ThreatIntelSetIdsT = Aws::String>
+    ListThreatIntelSetsResult& AddThreatIntelSetIds(ThreatIntelSetIdsT&& value) { m_threatIntelSetIdsHasBeenSet = true; m_threatIntelSetIds.emplace_back(std::forward<ThreatIntelSetIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +51,31 @@ namespace Model
      * <p>The pagination parameter to be used on the next list operation to retrieve
      * more items.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListThreatIntelSetsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListThreatIntelSetsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListThreatIntelSetsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListThreatIntelSetsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListThreatIntelSetsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListThreatIntelSetsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListThreatIntelSetsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListThreatIntelSetsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_threatIntelSetIds;
+    bool m_threatIntelSetIdsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

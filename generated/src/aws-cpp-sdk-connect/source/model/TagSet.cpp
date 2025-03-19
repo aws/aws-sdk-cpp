@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-TagSet::TagSet() : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 TagSet::TagSet(JsonView jsonValue)
-  : TagSet()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TagSet& TagSet::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

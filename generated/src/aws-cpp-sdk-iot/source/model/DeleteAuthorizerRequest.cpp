@@ -12,11 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAuthorizerRequest::DeleteAuthorizerRequest() : 
-    m_authorizerNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAuthorizerRequest::SerializePayload() const
 {
   return {};

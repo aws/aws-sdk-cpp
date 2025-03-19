@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateSecurityGroupResponse::CreateSecurityGroupResponse()
-{
-}
-
 CreateSecurityGroupResponse::CreateSecurityGroupResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,22 +38,26 @@ CreateSecurityGroupResponse& CreateSecurityGroupResponse::operator =(const Aws::
     if(!groupIdNode.IsNull())
     {
       m_groupId = Aws::Utils::Xml::DecodeEscapedXmlText(groupIdNode.GetText());
+      m_groupIdHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
+      m_tagsHasBeenSet = true;
     }
     XmlNode securityGroupArnNode = resultNode.FirstChild("securityGroupArn");
     if(!securityGroupArnNode.IsNull())
     {
       m_securityGroupArn = Aws::Utils::Xml::DecodeEscapedXmlText(securityGroupArnNode.GetText());
+      m_securityGroupArnHasBeenSet = true;
     }
   }
 
@@ -66,6 +66,7 @@ CreateSecurityGroupResponse& CreateSecurityGroupResponse::operator =(const Aws::
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::CreateSecurityGroupResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

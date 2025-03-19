@@ -18,19 +18,7 @@ namespace Glue
 namespace Model
 {
 
-OAuth2PropertiesInput::OAuth2PropertiesInput() : 
-    m_oAuth2GrantType(OAuth2GrantType::NOT_SET),
-    m_oAuth2GrantTypeHasBeenSet(false),
-    m_oAuth2ClientApplicationHasBeenSet(false),
-    m_tokenUrlHasBeenSet(false),
-    m_tokenUrlParametersMapHasBeenSet(false),
-    m_authorizationCodePropertiesHasBeenSet(false),
-    m_oAuth2CredentialsHasBeenSet(false)
-{
-}
-
 OAuth2PropertiesInput::OAuth2PropertiesInput(JsonView jsonValue)
-  : OAuth2PropertiesInput()
 {
   *this = jsonValue;
 }
@@ -40,24 +28,18 @@ OAuth2PropertiesInput& OAuth2PropertiesInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OAuth2GrantType"))
   {
     m_oAuth2GrantType = OAuth2GrantTypeMapper::GetOAuth2GrantTypeForName(jsonValue.GetString("OAuth2GrantType"));
-
     m_oAuth2GrantTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OAuth2ClientApplication"))
   {
     m_oAuth2ClientApplication = jsonValue.GetObject("OAuth2ClientApplication");
-
     m_oAuth2ClientApplicationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TokenUrl"))
   {
     m_tokenUrl = jsonValue.GetString("TokenUrl");
-
     m_tokenUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TokenUrlParametersMap"))
   {
     Aws::Map<Aws::String, JsonView> tokenUrlParametersMapJsonMap = jsonValue.GetObject("TokenUrlParametersMap").GetAllObjects();
@@ -67,21 +49,16 @@ OAuth2PropertiesInput& OAuth2PropertiesInput::operator =(JsonView jsonValue)
     }
     m_tokenUrlParametersMapHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthorizationCodeProperties"))
   {
     m_authorizationCodeProperties = jsonValue.GetObject("AuthorizationCodeProperties");
-
     m_authorizationCodePropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OAuth2Credentials"))
   {
     m_oAuth2Credentials = jsonValue.GetObject("OAuth2Credentials");
-
     m_oAuth2CredentialsHasBeenSet = true;
   }
-
   return *this;
 }
 

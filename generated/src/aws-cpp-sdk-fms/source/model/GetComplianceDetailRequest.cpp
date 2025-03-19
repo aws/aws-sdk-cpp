@@ -12,12 +12,6 @@ using namespace Aws::FMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetComplianceDetailRequest::GetComplianceDetailRequest() : 
-    m_policyIdHasBeenSet(false),
-    m_memberAccountHasBeenSet(false)
-{
-}
-
 Aws::String GetComplianceDetailRequest::SerializePayload() const
 {
   JsonValue payload;

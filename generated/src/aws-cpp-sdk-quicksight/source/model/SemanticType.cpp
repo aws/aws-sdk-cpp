@@ -18,19 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-SemanticType::SemanticType() : 
-    m_typeNameHasBeenSet(false),
-    m_subTypeNameHasBeenSet(false),
-    m_typeParametersHasBeenSet(false),
-    m_truthyCellValueHasBeenSet(false),
-    m_truthyCellValueSynonymsHasBeenSet(false),
-    m_falseyCellValueHasBeenSet(false),
-    m_falseyCellValueSynonymsHasBeenSet(false)
-{
-}
-
 SemanticType::SemanticType(JsonView jsonValue)
-  : SemanticType()
 {
   *this = jsonValue;
 }
@@ -40,17 +28,13 @@ SemanticType& SemanticType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TypeName"))
   {
     m_typeName = jsonValue.GetString("TypeName");
-
     m_typeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubTypeName"))
   {
     m_subTypeName = jsonValue.GetString("SubTypeName");
-
     m_subTypeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TypeParameters"))
   {
     Aws::Map<Aws::String, JsonView> typeParametersJsonMap = jsonValue.GetObject("TypeParameters").GetAllObjects();
@@ -60,14 +44,11 @@ SemanticType& SemanticType::operator =(JsonView jsonValue)
     }
     m_typeParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TruthyCellValue"))
   {
     m_truthyCellValue = jsonValue.GetString("TruthyCellValue");
-
     m_truthyCellValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TruthyCellValueSynonyms"))
   {
     Aws::Utils::Array<JsonView> truthyCellValueSynonymsJsonList = jsonValue.GetArray("TruthyCellValueSynonyms");
@@ -77,14 +58,11 @@ SemanticType& SemanticType::operator =(JsonView jsonValue)
     }
     m_truthyCellValueSynonymsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FalseyCellValue"))
   {
     m_falseyCellValue = jsonValue.GetString("FalseyCellValue");
-
     m_falseyCellValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FalseyCellValueSynonyms"))
   {
     Aws::Utils::Array<JsonView> falseyCellValueSynonymsJsonList = jsonValue.GetArray("FalseyCellValueSynonyms");
@@ -94,7 +72,6 @@ SemanticType& SemanticType::operator =(JsonView jsonValue)
     }
     m_falseyCellValueSynonymsHasBeenSet = true;
   }
-
   return *this;
 }
 

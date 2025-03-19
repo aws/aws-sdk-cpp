@@ -22,7 +22,7 @@ namespace Model
   class UpdateMediaPipelineKinesisVideoStreamPoolRequest : public ChimeSDKMediaPipelinesRequest
   {
   public:
-    AWS_CHIMESDKMEDIAPIPELINES_API UpdateMediaPipelineKinesisVideoStreamPoolRequest();
+    AWS_CHIMESDKMEDIAPIPELINES_API UpdateMediaPipelineKinesisVideoStreamPoolRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,26 +38,24 @@ namespace Model
      * <p>The unique identifier of the requested resource. Valid values include the
      * name and ARN of the media pipeline Kinesis Video Stream pool.</p>
      */
-    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-    inline UpdateMediaPipelineKinesisVideoStreamPoolRequest& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-    inline UpdateMediaPipelineKinesisVideoStreamPoolRequest& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline UpdateMediaPipelineKinesisVideoStreamPoolRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    UpdateMediaPipelineKinesisVideoStreamPoolRequest& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration settings for the video stream.</p>
      */
-    inline const KinesisVideoStreamConfigurationUpdate& GetStreamConfiguration() const{ return m_streamConfiguration; }
+    inline const KinesisVideoStreamConfigurationUpdate& GetStreamConfiguration() const { return m_streamConfiguration; }
     inline bool StreamConfigurationHasBeenSet() const { return m_streamConfigurationHasBeenSet; }
-    inline void SetStreamConfiguration(const KinesisVideoStreamConfigurationUpdate& value) { m_streamConfigurationHasBeenSet = true; m_streamConfiguration = value; }
-    inline void SetStreamConfiguration(KinesisVideoStreamConfigurationUpdate&& value) { m_streamConfigurationHasBeenSet = true; m_streamConfiguration = std::move(value); }
-    inline UpdateMediaPipelineKinesisVideoStreamPoolRequest& WithStreamConfiguration(const KinesisVideoStreamConfigurationUpdate& value) { SetStreamConfiguration(value); return *this;}
-    inline UpdateMediaPipelineKinesisVideoStreamPoolRequest& WithStreamConfiguration(KinesisVideoStreamConfigurationUpdate&& value) { SetStreamConfiguration(std::move(value)); return *this;}
+    template<typename StreamConfigurationT = KinesisVideoStreamConfigurationUpdate>
+    void SetStreamConfiguration(StreamConfigurationT&& value) { m_streamConfigurationHasBeenSet = true; m_streamConfiguration = std::forward<StreamConfigurationT>(value); }
+    template<typename StreamConfigurationT = KinesisVideoStreamConfigurationUpdate>
+    UpdateMediaPipelineKinesisVideoStreamPoolRequest& WithStreamConfiguration(StreamConfigurationT&& value) { SetStreamConfiguration(std::forward<StreamConfigurationT>(value)); return *this;}
     ///@}
   private:
 

@@ -21,7 +21,7 @@ namespace Model
   class DescribeAppAssessmentRequest : public ResilienceHubRequest
   {
   public:
-    AWS_RESILIENCEHUB_API DescribeAppAssessmentRequest();
+    AWS_RESILIENCEHUB_API DescribeAppAssessmentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
      * Reference</i> guide.</p>
      */
-    inline const Aws::String& GetAssessmentArn() const{ return m_assessmentArn; }
+    inline const Aws::String& GetAssessmentArn() const { return m_assessmentArn; }
     inline bool AssessmentArnHasBeenSet() const { return m_assessmentArnHasBeenSet; }
-    inline void SetAssessmentArn(const Aws::String& value) { m_assessmentArnHasBeenSet = true; m_assessmentArn = value; }
-    inline void SetAssessmentArn(Aws::String&& value) { m_assessmentArnHasBeenSet = true; m_assessmentArn = std::move(value); }
-    inline void SetAssessmentArn(const char* value) { m_assessmentArnHasBeenSet = true; m_assessmentArn.assign(value); }
-    inline DescribeAppAssessmentRequest& WithAssessmentArn(const Aws::String& value) { SetAssessmentArn(value); return *this;}
-    inline DescribeAppAssessmentRequest& WithAssessmentArn(Aws::String&& value) { SetAssessmentArn(std::move(value)); return *this;}
-    inline DescribeAppAssessmentRequest& WithAssessmentArn(const char* value) { SetAssessmentArn(value); return *this;}
+    template<typename AssessmentArnT = Aws::String>
+    void SetAssessmentArn(AssessmentArnT&& value) { m_assessmentArnHasBeenSet = true; m_assessmentArn = std::forward<AssessmentArnT>(value); }
+    template<typename AssessmentArnT = Aws::String>
+    DescribeAppAssessmentRequest& WithAssessmentArn(AssessmentArnT&& value) { SetAssessmentArn(std::forward<AssessmentArnT>(value)); return *this;}
     ///@}
   private:
 

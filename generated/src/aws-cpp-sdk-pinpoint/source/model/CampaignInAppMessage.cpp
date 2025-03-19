@@ -18,17 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-CampaignInAppMessage::CampaignInAppMessage() : 
-    m_bodyHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_customConfigHasBeenSet(false),
-    m_layout(Layout::NOT_SET),
-    m_layoutHasBeenSet(false)
-{
-}
-
 CampaignInAppMessage::CampaignInAppMessage(JsonView jsonValue)
-  : CampaignInAppMessage()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ CampaignInAppMessage& CampaignInAppMessage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Body"))
   {
     m_body = jsonValue.GetString("Body");
-
     m_bodyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Content"))
   {
     Aws::Utils::Array<JsonView> contentJsonList = jsonValue.GetArray("Content");
@@ -51,7 +39,6 @@ CampaignInAppMessage& CampaignInAppMessage::operator =(JsonView jsonValue)
     }
     m_contentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomConfig"))
   {
     Aws::Map<Aws::String, JsonView> customConfigJsonMap = jsonValue.GetObject("CustomConfig").GetAllObjects();
@@ -61,14 +48,11 @@ CampaignInAppMessage& CampaignInAppMessage::operator =(JsonView jsonValue)
     }
     m_customConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Layout"))
   {
     m_layout = LayoutMapper::GetLayoutForName(jsonValue.GetString("Layout"));
-
     m_layoutHasBeenSet = true;
   }
-
   return *this;
 }
 

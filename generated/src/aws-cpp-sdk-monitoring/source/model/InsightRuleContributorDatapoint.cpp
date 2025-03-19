@@ -20,15 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-InsightRuleContributorDatapoint::InsightRuleContributorDatapoint() : 
-    m_timestampHasBeenSet(false),
-    m_approximateValue(0.0),
-    m_approximateValueHasBeenSet(false)
-{
-}
-
 InsightRuleContributorDatapoint::InsightRuleContributorDatapoint(const XmlNode& xmlNode)
-  : InsightRuleContributorDatapoint()
 {
   *this = xmlNode;
 }

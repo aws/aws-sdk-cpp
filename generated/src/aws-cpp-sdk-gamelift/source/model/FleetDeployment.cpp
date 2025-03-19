@@ -18,22 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-FleetDeployment::FleetDeployment() : 
-    m_deploymentIdHasBeenSet(false),
-    m_fleetIdHasBeenSet(false),
-    m_gameServerBinaryArnHasBeenSet(false),
-    m_rollbackGameServerBinaryArnHasBeenSet(false),
-    m_perInstanceBinaryArnHasBeenSet(false),
-    m_rollbackPerInstanceBinaryArnHasBeenSet(false),
-    m_deploymentStatus(DeploymentStatus::NOT_SET),
-    m_deploymentStatusHasBeenSet(false),
-    m_deploymentConfigurationHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
-{
-}
-
 FleetDeployment::FleetDeployment(JsonView jsonValue)
-  : FleetDeployment()
 {
   *this = jsonValue;
 }
@@ -43,66 +28,48 @@ FleetDeployment& FleetDeployment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DeploymentId"))
   {
     m_deploymentId = jsonValue.GetString("DeploymentId");
-
     m_deploymentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FleetId"))
   {
     m_fleetId = jsonValue.GetString("FleetId");
-
     m_fleetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GameServerBinaryArn"))
   {
     m_gameServerBinaryArn = jsonValue.GetString("GameServerBinaryArn");
-
     m_gameServerBinaryArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RollbackGameServerBinaryArn"))
   {
     m_rollbackGameServerBinaryArn = jsonValue.GetString("RollbackGameServerBinaryArn");
-
     m_rollbackGameServerBinaryArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PerInstanceBinaryArn"))
   {
     m_perInstanceBinaryArn = jsonValue.GetString("PerInstanceBinaryArn");
-
     m_perInstanceBinaryArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RollbackPerInstanceBinaryArn"))
   {
     m_rollbackPerInstanceBinaryArn = jsonValue.GetString("RollbackPerInstanceBinaryArn");
-
     m_rollbackPerInstanceBinaryArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeploymentStatus"))
   {
     m_deploymentStatus = DeploymentStatusMapper::GetDeploymentStatusForName(jsonValue.GetString("DeploymentStatus"));
-
     m_deploymentStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeploymentConfiguration"))
   {
     m_deploymentConfiguration = jsonValue.GetObject("DeploymentConfiguration");
-
     m_deploymentConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

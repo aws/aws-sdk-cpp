@@ -18,15 +18,7 @@ namespace RDSDataService
 namespace Model
 {
 
-ResultSetMetadata::ResultSetMetadata() : 
-    m_columnCount(0),
-    m_columnCountHasBeenSet(false),
-    m_columnMetadataHasBeenSet(false)
-{
-}
-
 ResultSetMetadata::ResultSetMetadata(JsonView jsonValue)
-  : ResultSetMetadata()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ ResultSetMetadata& ResultSetMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("columnCount"))
   {
     m_columnCount = jsonValue.GetInt64("columnCount");
-
     m_columnCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("columnMetadata"))
   {
     Aws::Utils::Array<JsonView> columnMetadataJsonList = jsonValue.GetArray("columnMetadata");
@@ -49,7 +39,6 @@ ResultSetMetadata& ResultSetMetadata::operator =(JsonView jsonValue)
     }
     m_columnMetadataHasBeenSet = true;
   }
-
   return *this;
 }
 

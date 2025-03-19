@@ -12,16 +12,6 @@ using namespace Aws::TranscribeService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListMedicalTranscriptionJobsRequest::ListMedicalTranscriptionJobsRequest() : 
-    m_status(TranscriptionJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_jobNameContainsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListMedicalTranscriptionJobsRequest::SerializePayload() const
 {
   JsonValue payload;

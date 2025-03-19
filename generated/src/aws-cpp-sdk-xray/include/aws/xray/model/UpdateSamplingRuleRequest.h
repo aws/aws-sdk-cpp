@@ -21,7 +21,7 @@ namespace Model
   class UpdateSamplingRuleRequest : public XRayRequest
   {
   public:
-    AWS_XRAY_API UpdateSamplingRuleRequest();
+    AWS_XRAY_API UpdateSamplingRuleRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,12 +36,12 @@ namespace Model
     /**
      * <p>The rule and fields to change.</p>
      */
-    inline const SamplingRuleUpdate& GetSamplingRuleUpdate() const{ return m_samplingRuleUpdate; }
+    inline const SamplingRuleUpdate& GetSamplingRuleUpdate() const { return m_samplingRuleUpdate; }
     inline bool SamplingRuleUpdateHasBeenSet() const { return m_samplingRuleUpdateHasBeenSet; }
-    inline void SetSamplingRuleUpdate(const SamplingRuleUpdate& value) { m_samplingRuleUpdateHasBeenSet = true; m_samplingRuleUpdate = value; }
-    inline void SetSamplingRuleUpdate(SamplingRuleUpdate&& value) { m_samplingRuleUpdateHasBeenSet = true; m_samplingRuleUpdate = std::move(value); }
-    inline UpdateSamplingRuleRequest& WithSamplingRuleUpdate(const SamplingRuleUpdate& value) { SetSamplingRuleUpdate(value); return *this;}
-    inline UpdateSamplingRuleRequest& WithSamplingRuleUpdate(SamplingRuleUpdate&& value) { SetSamplingRuleUpdate(std::move(value)); return *this;}
+    template<typename SamplingRuleUpdateT = SamplingRuleUpdate>
+    void SetSamplingRuleUpdate(SamplingRuleUpdateT&& value) { m_samplingRuleUpdateHasBeenSet = true; m_samplingRuleUpdate = std::forward<SamplingRuleUpdateT>(value); }
+    template<typename SamplingRuleUpdateT = SamplingRuleUpdate>
+    UpdateSamplingRuleRequest& WithSamplingRuleUpdate(SamplingRuleUpdateT&& value) { SetSamplingRuleUpdate(std::forward<SamplingRuleUpdateT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,11 +12,6 @@ using namespace Aws::MediaPackage::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeHarvestJobRequest::DescribeHarvestJobRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String DescribeHarvestJobRequest::SerializePayload() const
 {
   return {};

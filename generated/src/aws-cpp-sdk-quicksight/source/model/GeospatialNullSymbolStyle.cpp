@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-GeospatialNullSymbolStyle::GeospatialNullSymbolStyle() : 
-    m_fillColorHasBeenSet(false),
-    m_strokeColorHasBeenSet(false),
-    m_strokeWidth(0.0),
-    m_strokeWidthHasBeenSet(false)
-{
-}
-
 GeospatialNullSymbolStyle::GeospatialNullSymbolStyle(JsonView jsonValue)
-  : GeospatialNullSymbolStyle()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ GeospatialNullSymbolStyle& GeospatialNullSymbolStyle::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("FillColor"))
   {
     m_fillColor = jsonValue.GetString("FillColor");
-
     m_fillColorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StrokeColor"))
   {
     m_strokeColor = jsonValue.GetString("StrokeColor");
-
     m_strokeColorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StrokeWidth"))
   {
     m_strokeWidth = jsonValue.GetDouble("StrokeWidth");
-
     m_strokeWidthHasBeenSet = true;
   }
-
   return *this;
 }
 

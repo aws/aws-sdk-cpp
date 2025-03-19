@@ -21,7 +21,7 @@ namespace Model
   class EvaluateSessionRequest : public VoiceIDRequest
   {
   public:
-    AWS_VOICEID_API EvaluateSessionRequest();
+    AWS_VOICEID_API EvaluateSessionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The identifier of the domain where the session started.</p>
      */
-    inline const Aws::String& GetDomainId() const{ return m_domainId; }
+    inline const Aws::String& GetDomainId() const { return m_domainId; }
     inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
-    inline void SetDomainId(const Aws::String& value) { m_domainIdHasBeenSet = true; m_domainId = value; }
-    inline void SetDomainId(Aws::String&& value) { m_domainIdHasBeenSet = true; m_domainId = std::move(value); }
-    inline void SetDomainId(const char* value) { m_domainIdHasBeenSet = true; m_domainId.assign(value); }
-    inline EvaluateSessionRequest& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
-    inline EvaluateSessionRequest& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
-    inline EvaluateSessionRequest& WithDomainId(const char* value) { SetDomainId(value); return *this;}
+    template<typename DomainIdT = Aws::String>
+    void SetDomainId(DomainIdT&& value) { m_domainIdHasBeenSet = true; m_domainId = std::forward<DomainIdT>(value); }
+    template<typename DomainIdT = Aws::String>
+    EvaluateSessionRequest& WithDomainId(DomainIdT&& value) { SetDomainId(std::forward<DomainIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,14 +51,12 @@ namespace Model
      * <p>The session identifier, or name of the session, that you want to evaluate. In
      * Voice ID integration, this is the Contact-Id.</p>
      */
-    inline const Aws::String& GetSessionNameOrId() const{ return m_sessionNameOrId; }
+    inline const Aws::String& GetSessionNameOrId() const { return m_sessionNameOrId; }
     inline bool SessionNameOrIdHasBeenSet() const { return m_sessionNameOrIdHasBeenSet; }
-    inline void SetSessionNameOrId(const Aws::String& value) { m_sessionNameOrIdHasBeenSet = true; m_sessionNameOrId = value; }
-    inline void SetSessionNameOrId(Aws::String&& value) { m_sessionNameOrIdHasBeenSet = true; m_sessionNameOrId = std::move(value); }
-    inline void SetSessionNameOrId(const char* value) { m_sessionNameOrIdHasBeenSet = true; m_sessionNameOrId.assign(value); }
-    inline EvaluateSessionRequest& WithSessionNameOrId(const Aws::String& value) { SetSessionNameOrId(value); return *this;}
-    inline EvaluateSessionRequest& WithSessionNameOrId(Aws::String&& value) { SetSessionNameOrId(std::move(value)); return *this;}
-    inline EvaluateSessionRequest& WithSessionNameOrId(const char* value) { SetSessionNameOrId(value); return *this;}
+    template<typename SessionNameOrIdT = Aws::String>
+    void SetSessionNameOrId(SessionNameOrIdT&& value) { m_sessionNameOrIdHasBeenSet = true; m_sessionNameOrId = std::forward<SessionNameOrIdT>(value); }
+    template<typename SessionNameOrIdT = Aws::String>
+    EvaluateSessionRequest& WithSessionNameOrId(SessionNameOrIdT&& value) { SetSessionNameOrId(std::forward<SessionNameOrIdT>(value)); return *this;}
     ///@}
   private:
 

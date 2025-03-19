@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsS3BucketWebsiteConfigurationRedirectTo::AwsS3BucketWebsiteConfigurationRedirectTo() : 
-    m_hostnameHasBeenSet(false),
-    m_protocolHasBeenSet(false)
-{
-}
-
 AwsS3BucketWebsiteConfigurationRedirectTo::AwsS3BucketWebsiteConfigurationRedirectTo(JsonView jsonValue)
-  : AwsS3BucketWebsiteConfigurationRedirectTo()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsS3BucketWebsiteConfigurationRedirectTo& AwsS3BucketWebsiteConfigurationRedire
   if(jsonValue.ValueExists("Hostname"))
   {
     m_hostname = jsonValue.GetString("Hostname");
-
     m_hostnameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Protocol"))
   {
     m_protocol = jsonValue.GetString("Protocol");
-
     m_protocolHasBeenSet = true;
   }
-
   return *this;
 }
 

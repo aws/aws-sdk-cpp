@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-SheetVisualScopingConfiguration::SheetVisualScopingConfiguration() : 
-    m_sheetIdHasBeenSet(false),
-    m_scope(FilterVisualScope::NOT_SET),
-    m_scopeHasBeenSet(false),
-    m_visualIdsHasBeenSet(false)
-{
-}
-
 SheetVisualScopingConfiguration::SheetVisualScopingConfiguration(JsonView jsonValue)
-  : SheetVisualScopingConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ SheetVisualScopingConfiguration& SheetVisualScopingConfiguration::operator =(Jso
   if(jsonValue.ValueExists("SheetId"))
   {
     m_sheetId = jsonValue.GetString("SheetId");
-
     m_sheetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Scope"))
   {
     m_scope = FilterVisualScopeMapper::GetFilterVisualScopeForName(jsonValue.GetString("Scope"));
-
     m_scopeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VisualIds"))
   {
     Aws::Utils::Array<JsonView> visualIdsJsonList = jsonValue.GetArray("VisualIds");
@@ -57,7 +44,6 @@ SheetVisualScopingConfiguration& SheetVisualScopingConfiguration::operator =(Jso
     }
     m_visualIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

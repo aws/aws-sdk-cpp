@@ -18,14 +18,7 @@ namespace CleanRoomsML
 namespace Model
 {
 
-StatusDetails::StatusDetails() : 
-    m_statusCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 StatusDetails::StatusDetails(JsonView jsonValue)
-  : StatusDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ StatusDetails& StatusDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("statusCode"))
   {
     m_statusCode = jsonValue.GetString("statusCode");
-
     m_statusCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-ProposedNetworkFunctionGroupChange::ProposedNetworkFunctionGroupChange() : 
-    m_tagsHasBeenSet(false),
-    m_attachmentPolicyRuleNumber(0),
-    m_attachmentPolicyRuleNumberHasBeenSet(false),
-    m_networkFunctionGroupNameHasBeenSet(false)
-{
-}
-
 ProposedNetworkFunctionGroupChange::ProposedNetworkFunctionGroupChange(JsonView jsonValue)
-  : ProposedNetworkFunctionGroupChange()
 {
   *this = jsonValue;
 }
@@ -43,21 +34,16 @@ ProposedNetworkFunctionGroupChange& ProposedNetworkFunctionGroupChange::operator
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttachmentPolicyRuleNumber"))
   {
     m_attachmentPolicyRuleNumber = jsonValue.GetInteger("AttachmentPolicyRuleNumber");
-
     m_attachmentPolicyRuleNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkFunctionGroupName"))
   {
     m_networkFunctionGroupName = jsonValue.GetString("NetworkFunctionGroupName");
-
     m_networkFunctionGroupNameHasBeenSet = true;
   }
-
   return *this;
 }
 

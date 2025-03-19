@@ -33,7 +33,7 @@ namespace Model
   class CollectionConfiguration
   {
   public:
-    AWS_SAGEMAKER_API CollectionConfiguration();
+    AWS_SAGEMAKER_API CollectionConfiguration() = default;
     AWS_SAGEMAKER_API CollectionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API CollectionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The name of the tensor collection. The name must be unique relative to other
      * rule configuration names.</p>
      */
-    inline const Aws::String& GetCollectionName() const{ return m_collectionName; }
+    inline const Aws::String& GetCollectionName() const { return m_collectionName; }
     inline bool CollectionNameHasBeenSet() const { return m_collectionNameHasBeenSet; }
-    inline void SetCollectionName(const Aws::String& value) { m_collectionNameHasBeenSet = true; m_collectionName = value; }
-    inline void SetCollectionName(Aws::String&& value) { m_collectionNameHasBeenSet = true; m_collectionName = std::move(value); }
-    inline void SetCollectionName(const char* value) { m_collectionNameHasBeenSet = true; m_collectionName.assign(value); }
-    inline CollectionConfiguration& WithCollectionName(const Aws::String& value) { SetCollectionName(value); return *this;}
-    inline CollectionConfiguration& WithCollectionName(Aws::String&& value) { SetCollectionName(std::move(value)); return *this;}
-    inline CollectionConfiguration& WithCollectionName(const char* value) { SetCollectionName(value); return *this;}
+    template<typename CollectionNameT = Aws::String>
+    void SetCollectionName(CollectionNameT&& value) { m_collectionNameHasBeenSet = true; m_collectionName = std::forward<CollectionNameT>(value); }
+    template<typename CollectionNameT = Aws::String>
+    CollectionConfiguration& WithCollectionName(CollectionNameT&& value) { SetCollectionName(std::forward<CollectionNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,19 +59,16 @@ namespace Model
      * <code>"reduction_config"</code>, <code>"save_config"</code>,
      * <code>"tensor_names"</code>, and <code>"save_histogram"</code>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetCollectionParameters() const{ return m_collectionParameters; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetCollectionParameters() const { return m_collectionParameters; }
     inline bool CollectionParametersHasBeenSet() const { return m_collectionParametersHasBeenSet; }
-    inline void SetCollectionParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_collectionParametersHasBeenSet = true; m_collectionParameters = value; }
-    inline void SetCollectionParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_collectionParametersHasBeenSet = true; m_collectionParameters = std::move(value); }
-    inline CollectionConfiguration& WithCollectionParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetCollectionParameters(value); return *this;}
-    inline CollectionConfiguration& WithCollectionParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetCollectionParameters(std::move(value)); return *this;}
-    inline CollectionConfiguration& AddCollectionParameters(const Aws::String& key, const Aws::String& value) { m_collectionParametersHasBeenSet = true; m_collectionParameters.emplace(key, value); return *this; }
-    inline CollectionConfiguration& AddCollectionParameters(Aws::String&& key, const Aws::String& value) { m_collectionParametersHasBeenSet = true; m_collectionParameters.emplace(std::move(key), value); return *this; }
-    inline CollectionConfiguration& AddCollectionParameters(const Aws::String& key, Aws::String&& value) { m_collectionParametersHasBeenSet = true; m_collectionParameters.emplace(key, std::move(value)); return *this; }
-    inline CollectionConfiguration& AddCollectionParameters(Aws::String&& key, Aws::String&& value) { m_collectionParametersHasBeenSet = true; m_collectionParameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline CollectionConfiguration& AddCollectionParameters(const char* key, Aws::String&& value) { m_collectionParametersHasBeenSet = true; m_collectionParameters.emplace(key, std::move(value)); return *this; }
-    inline CollectionConfiguration& AddCollectionParameters(Aws::String&& key, const char* value) { m_collectionParametersHasBeenSet = true; m_collectionParameters.emplace(std::move(key), value); return *this; }
-    inline CollectionConfiguration& AddCollectionParameters(const char* key, const char* value) { m_collectionParametersHasBeenSet = true; m_collectionParameters.emplace(key, value); return *this; }
+    template<typename CollectionParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetCollectionParameters(CollectionParametersT&& value) { m_collectionParametersHasBeenSet = true; m_collectionParameters = std::forward<CollectionParametersT>(value); }
+    template<typename CollectionParametersT = Aws::Map<Aws::String, Aws::String>>
+    CollectionConfiguration& WithCollectionParameters(CollectionParametersT&& value) { SetCollectionParameters(std::forward<CollectionParametersT>(value)); return *this;}
+    template<typename CollectionParametersKeyT = Aws::String, typename CollectionParametersValueT = Aws::String>
+    CollectionConfiguration& AddCollectionParameters(CollectionParametersKeyT&& key, CollectionParametersValueT&& value) {
+      m_collectionParametersHasBeenSet = true; m_collectionParameters.emplace(std::forward<CollectionParametersKeyT>(key), std::forward<CollectionParametersValueT>(value)); return *this;
+    }
     ///@}
   private:
 

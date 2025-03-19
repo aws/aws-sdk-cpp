@@ -18,20 +18,7 @@ namespace MWAA
 namespace Model
 {
 
-MetricDatum::MetricDatum() : 
-    m_metricNameHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_dimensionsHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false),
-    m_unit(Unit::NOT_SET),
-    m_unitHasBeenSet(false),
-    m_statisticValuesHasBeenSet(false)
-{
-}
-
 MetricDatum::MetricDatum(JsonView jsonValue)
-  : MetricDatum()
 {
   *this = jsonValue;
 }
@@ -41,17 +28,13 @@ MetricDatum& MetricDatum::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MetricName"))
   {
     m_metricName = jsonValue.GetString("MetricName");
-
     m_metricNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Timestamp"))
   {
     m_timestamp = jsonValue.GetDouble("Timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Dimensions"))
   {
     Aws::Utils::Array<JsonView> dimensionsJsonList = jsonValue.GetArray("Dimensions");
@@ -61,28 +44,21 @@ MetricDatum& MetricDatum::operator =(JsonView jsonValue)
     }
     m_dimensionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetDouble("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Unit"))
   {
     m_unit = UnitMapper::GetUnitForName(jsonValue.GetString("Unit"));
-
     m_unitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatisticValues"))
   {
     m_statisticValues = jsonValue.GetObject("StatisticValues");
-
     m_statisticValuesHasBeenSet = true;
   }
-
   return *this;
 }
 

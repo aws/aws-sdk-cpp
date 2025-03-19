@@ -12,11 +12,6 @@ using namespace Aws::DataExchange::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDataSetRequest::GetDataSetRequest() : 
-    m_dataSetIdHasBeenSet(false)
-{
-}
-
 Aws::String GetDataSetRequest::SerializePayload() const
 {
   return {};

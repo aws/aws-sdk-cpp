@@ -23,7 +23,7 @@ namespace Model
   class DescribeContainerInstancesRequest : public ECSRequest
   {
   public:
-    AWS_ECS_API DescribeContainerInstancesRequest();
+    AWS_ECS_API DescribeContainerInstancesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * or container instances you are describing were launched in any cluster other
      * than the default cluster.</p>
      */
-    inline const Aws::String& GetCluster() const{ return m_cluster; }
+    inline const Aws::String& GetCluster() const { return m_cluster; }
     inline bool ClusterHasBeenSet() const { return m_clusterHasBeenSet; }
-    inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
-    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = std::move(value); }
-    inline void SetCluster(const char* value) { m_clusterHasBeenSet = true; m_cluster.assign(value); }
-    inline DescribeContainerInstancesRequest& WithCluster(const Aws::String& value) { SetCluster(value); return *this;}
-    inline DescribeContainerInstancesRequest& WithCluster(Aws::String&& value) { SetCluster(std::move(value)); return *this;}
-    inline DescribeContainerInstancesRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
+    template<typename ClusterT = Aws::String>
+    void SetCluster(ClusterT&& value) { m_clusterHasBeenSet = true; m_cluster = std::forward<ClusterT>(value); }
+    template<typename ClusterT = Aws::String>
+    DescribeContainerInstancesRequest& WithCluster(ClusterT&& value) { SetCluster(std::forward<ClusterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,15 +57,14 @@ namespace Model
      * <p>A list of up to 100 container instance IDs or full Amazon Resource Name (ARN)
      * entries.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetContainerInstances() const{ return m_containerInstances; }
+    inline const Aws::Vector<Aws::String>& GetContainerInstances() const { return m_containerInstances; }
     inline bool ContainerInstancesHasBeenSet() const { return m_containerInstancesHasBeenSet; }
-    inline void SetContainerInstances(const Aws::Vector<Aws::String>& value) { m_containerInstancesHasBeenSet = true; m_containerInstances = value; }
-    inline void SetContainerInstances(Aws::Vector<Aws::String>&& value) { m_containerInstancesHasBeenSet = true; m_containerInstances = std::move(value); }
-    inline DescribeContainerInstancesRequest& WithContainerInstances(const Aws::Vector<Aws::String>& value) { SetContainerInstances(value); return *this;}
-    inline DescribeContainerInstancesRequest& WithContainerInstances(Aws::Vector<Aws::String>&& value) { SetContainerInstances(std::move(value)); return *this;}
-    inline DescribeContainerInstancesRequest& AddContainerInstances(const Aws::String& value) { m_containerInstancesHasBeenSet = true; m_containerInstances.push_back(value); return *this; }
-    inline DescribeContainerInstancesRequest& AddContainerInstances(Aws::String&& value) { m_containerInstancesHasBeenSet = true; m_containerInstances.push_back(std::move(value)); return *this; }
-    inline DescribeContainerInstancesRequest& AddContainerInstances(const char* value) { m_containerInstancesHasBeenSet = true; m_containerInstances.push_back(value); return *this; }
+    template<typename ContainerInstancesT = Aws::Vector<Aws::String>>
+    void SetContainerInstances(ContainerInstancesT&& value) { m_containerInstancesHasBeenSet = true; m_containerInstances = std::forward<ContainerInstancesT>(value); }
+    template<typename ContainerInstancesT = Aws::Vector<Aws::String>>
+    DescribeContainerInstancesRequest& WithContainerInstances(ContainerInstancesT&& value) { SetContainerInstances(std::forward<ContainerInstancesT>(value)); return *this;}
+    template<typename ContainerInstancesT = Aws::String>
+    DescribeContainerInstancesRequest& AddContainerInstances(ContainerInstancesT&& value) { m_containerInstancesHasBeenSet = true; m_containerInstances.emplace_back(std::forward<ContainerInstancesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -78,14 +75,13 @@ namespace Model
      * instance health is included in the response. If this field is omitted, tags and
      * container instance health status aren't included in the response.</p>
      */
-    inline const Aws::Vector<ContainerInstanceField>& GetInclude() const{ return m_include; }
+    inline const Aws::Vector<ContainerInstanceField>& GetInclude() const { return m_include; }
     inline bool IncludeHasBeenSet() const { return m_includeHasBeenSet; }
-    inline void SetInclude(const Aws::Vector<ContainerInstanceField>& value) { m_includeHasBeenSet = true; m_include = value; }
-    inline void SetInclude(Aws::Vector<ContainerInstanceField>&& value) { m_includeHasBeenSet = true; m_include = std::move(value); }
-    inline DescribeContainerInstancesRequest& WithInclude(const Aws::Vector<ContainerInstanceField>& value) { SetInclude(value); return *this;}
-    inline DescribeContainerInstancesRequest& WithInclude(Aws::Vector<ContainerInstanceField>&& value) { SetInclude(std::move(value)); return *this;}
-    inline DescribeContainerInstancesRequest& AddInclude(const ContainerInstanceField& value) { m_includeHasBeenSet = true; m_include.push_back(value); return *this; }
-    inline DescribeContainerInstancesRequest& AddInclude(ContainerInstanceField&& value) { m_includeHasBeenSet = true; m_include.push_back(std::move(value)); return *this; }
+    template<typename IncludeT = Aws::Vector<ContainerInstanceField>>
+    void SetInclude(IncludeT&& value) { m_includeHasBeenSet = true; m_include = std::forward<IncludeT>(value); }
+    template<typename IncludeT = Aws::Vector<ContainerInstanceField>>
+    DescribeContainerInstancesRequest& WithInclude(IncludeT&& value) { SetInclude(std::forward<IncludeT>(value)); return *this;}
+    inline DescribeContainerInstancesRequest& AddInclude(ContainerInstanceField value) { m_includeHasBeenSet = true; m_include.push_back(value); return *this; }
     ///@}
   private:
 

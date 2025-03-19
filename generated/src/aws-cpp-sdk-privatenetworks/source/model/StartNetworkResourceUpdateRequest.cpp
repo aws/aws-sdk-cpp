@@ -12,16 +12,6 @@ using namespace Aws::PrivateNetworks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartNetworkResourceUpdateRequest::StartNetworkResourceUpdateRequest() : 
-    m_commitmentConfigurationHasBeenSet(false),
-    m_networkResourceArnHasBeenSet(false),
-    m_returnReasonHasBeenSet(false),
-    m_shippingAddressHasBeenSet(false),
-    m_updateType(UpdateType::NOT_SET),
-    m_updateTypeHasBeenSet(false)
-{
-}
-
 Aws::String StartNetworkResourceUpdateRequest::SerializePayload() const
 {
   JsonValue payload;

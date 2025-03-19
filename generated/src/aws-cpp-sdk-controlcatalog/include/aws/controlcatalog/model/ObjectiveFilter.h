@@ -33,7 +33,7 @@ namespace Model
   class ObjectiveFilter
   {
   public:
-    AWS_CONTROLCATALOG_API ObjectiveFilter();
+    AWS_CONTROLCATALOG_API ObjectiveFilter() = default;
     AWS_CONTROLCATALOG_API ObjectiveFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONTROLCATALOG_API ObjectiveFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONTROLCATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,14 @@ namespace Model
      * to specify one domain ARN at a time. Passing multiple ARNs in the
      * <code>ObjectiveFilter</code> isn’t currently supported.</p>
      */
-    inline const Aws::Vector<DomainResourceFilter>& GetDomains() const{ return m_domains; }
+    inline const Aws::Vector<DomainResourceFilter>& GetDomains() const { return m_domains; }
     inline bool DomainsHasBeenSet() const { return m_domainsHasBeenSet; }
-    inline void SetDomains(const Aws::Vector<DomainResourceFilter>& value) { m_domainsHasBeenSet = true; m_domains = value; }
-    inline void SetDomains(Aws::Vector<DomainResourceFilter>&& value) { m_domainsHasBeenSet = true; m_domains = std::move(value); }
-    inline ObjectiveFilter& WithDomains(const Aws::Vector<DomainResourceFilter>& value) { SetDomains(value); return *this;}
-    inline ObjectiveFilter& WithDomains(Aws::Vector<DomainResourceFilter>&& value) { SetDomains(std::move(value)); return *this;}
-    inline ObjectiveFilter& AddDomains(const DomainResourceFilter& value) { m_domainsHasBeenSet = true; m_domains.push_back(value); return *this; }
-    inline ObjectiveFilter& AddDomains(DomainResourceFilter&& value) { m_domainsHasBeenSet = true; m_domains.push_back(std::move(value)); return *this; }
+    template<typename DomainsT = Aws::Vector<DomainResourceFilter>>
+    void SetDomains(DomainsT&& value) { m_domainsHasBeenSet = true; m_domains = std::forward<DomainsT>(value); }
+    template<typename DomainsT = Aws::Vector<DomainResourceFilter>>
+    ObjectiveFilter& WithDomains(DomainsT&& value) { SetDomains(std::forward<DomainsT>(value)); return *this;}
+    template<typename DomainsT = DomainResourceFilter>
+    ObjectiveFilter& AddDomains(DomainsT&& value) { m_domainsHasBeenSet = true; m_domains.emplace_back(std::forward<DomainsT>(value)); return *this; }
     ///@}
   private:
 

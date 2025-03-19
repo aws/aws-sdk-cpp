@@ -25,7 +25,7 @@ namespace Model
   class CreateMediaPipelineKinesisVideoStreamPoolRequest : public ChimeSDKMediaPipelinesRequest
   {
   public:
-    AWS_CHIMESDKMEDIAPIPELINES_API CreateMediaPipelineKinesisVideoStreamPoolRequest();
+    AWS_CHIMESDKMEDIAPIPELINES_API CreateMediaPipelineKinesisVideoStreamPoolRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,54 +40,50 @@ namespace Model
     /**
      * <p>The configuration settings for the stream.</p>
      */
-    inline const KinesisVideoStreamConfiguration& GetStreamConfiguration() const{ return m_streamConfiguration; }
+    inline const KinesisVideoStreamConfiguration& GetStreamConfiguration() const { return m_streamConfiguration; }
     inline bool StreamConfigurationHasBeenSet() const { return m_streamConfigurationHasBeenSet; }
-    inline void SetStreamConfiguration(const KinesisVideoStreamConfiguration& value) { m_streamConfigurationHasBeenSet = true; m_streamConfiguration = value; }
-    inline void SetStreamConfiguration(KinesisVideoStreamConfiguration&& value) { m_streamConfigurationHasBeenSet = true; m_streamConfiguration = std::move(value); }
-    inline CreateMediaPipelineKinesisVideoStreamPoolRequest& WithStreamConfiguration(const KinesisVideoStreamConfiguration& value) { SetStreamConfiguration(value); return *this;}
-    inline CreateMediaPipelineKinesisVideoStreamPoolRequest& WithStreamConfiguration(KinesisVideoStreamConfiguration&& value) { SetStreamConfiguration(std::move(value)); return *this;}
+    template<typename StreamConfigurationT = KinesisVideoStreamConfiguration>
+    void SetStreamConfiguration(StreamConfigurationT&& value) { m_streamConfigurationHasBeenSet = true; m_streamConfiguration = std::forward<StreamConfigurationT>(value); }
+    template<typename StreamConfigurationT = KinesisVideoStreamConfiguration>
+    CreateMediaPipelineKinesisVideoStreamPoolRequest& WithStreamConfiguration(StreamConfigurationT&& value) { SetStreamConfiguration(std::forward<StreamConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the pool.</p>
      */
-    inline const Aws::String& GetPoolName() const{ return m_poolName; }
+    inline const Aws::String& GetPoolName() const { return m_poolName; }
     inline bool PoolNameHasBeenSet() const { return m_poolNameHasBeenSet; }
-    inline void SetPoolName(const Aws::String& value) { m_poolNameHasBeenSet = true; m_poolName = value; }
-    inline void SetPoolName(Aws::String&& value) { m_poolNameHasBeenSet = true; m_poolName = std::move(value); }
-    inline void SetPoolName(const char* value) { m_poolNameHasBeenSet = true; m_poolName.assign(value); }
-    inline CreateMediaPipelineKinesisVideoStreamPoolRequest& WithPoolName(const Aws::String& value) { SetPoolName(value); return *this;}
-    inline CreateMediaPipelineKinesisVideoStreamPoolRequest& WithPoolName(Aws::String&& value) { SetPoolName(std::move(value)); return *this;}
-    inline CreateMediaPipelineKinesisVideoStreamPoolRequest& WithPoolName(const char* value) { SetPoolName(value); return *this;}
+    template<typename PoolNameT = Aws::String>
+    void SetPoolName(PoolNameT&& value) { m_poolNameHasBeenSet = true; m_poolName = std::forward<PoolNameT>(value); }
+    template<typename PoolNameT = Aws::String>
+    CreateMediaPipelineKinesisVideoStreamPoolRequest& WithPoolName(PoolNameT&& value) { SetPoolName(std::forward<PoolNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The token assigned to the client making the request.</p>
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline CreateMediaPipelineKinesisVideoStreamPoolRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline CreateMediaPipelineKinesisVideoStreamPoolRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline CreateMediaPipelineKinesisVideoStreamPoolRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    CreateMediaPipelineKinesisVideoStreamPoolRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags assigned to the stream pool.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateMediaPipelineKinesisVideoStreamPoolRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateMediaPipelineKinesisVideoStreamPoolRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateMediaPipelineKinesisVideoStreamPoolRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateMediaPipelineKinesisVideoStreamPoolRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateMediaPipelineKinesisVideoStreamPoolRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateMediaPipelineKinesisVideoStreamPoolRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

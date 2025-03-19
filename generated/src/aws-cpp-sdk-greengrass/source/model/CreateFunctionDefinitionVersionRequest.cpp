@@ -13,14 +13,6 @@ using namespace Aws::Greengrass::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateFunctionDefinitionVersionRequest::CreateFunctionDefinitionVersionRequest() : 
-    m_amznClientTokenHasBeenSet(false),
-    m_defaultConfigHasBeenSet(false),
-    m_functionDefinitionIdHasBeenSet(false),
-    m_functionsHasBeenSet(false)
-{
-}
-
 Aws::String CreateFunctionDefinitionVersionRequest::SerializePayload() const
 {
   JsonValue payload;

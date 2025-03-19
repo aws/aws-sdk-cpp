@@ -21,7 +21,7 @@ namespace Model
   class EnableImportFindingsForProductRequest : public SecurityHubRequest
   {
   public:
-    AWS_SECURITYHUB_API EnableImportFindingsForProductRequest();
+    AWS_SECURITYHUB_API EnableImportFindingsForProductRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The ARN of the product to enable the integration for.</p>
      */
-    inline const Aws::String& GetProductArn() const{ return m_productArn; }
+    inline const Aws::String& GetProductArn() const { return m_productArn; }
     inline bool ProductArnHasBeenSet() const { return m_productArnHasBeenSet; }
-    inline void SetProductArn(const Aws::String& value) { m_productArnHasBeenSet = true; m_productArn = value; }
-    inline void SetProductArn(Aws::String&& value) { m_productArnHasBeenSet = true; m_productArn = std::move(value); }
-    inline void SetProductArn(const char* value) { m_productArnHasBeenSet = true; m_productArn.assign(value); }
-    inline EnableImportFindingsForProductRequest& WithProductArn(const Aws::String& value) { SetProductArn(value); return *this;}
-    inline EnableImportFindingsForProductRequest& WithProductArn(Aws::String&& value) { SetProductArn(std::move(value)); return *this;}
-    inline EnableImportFindingsForProductRequest& WithProductArn(const char* value) { SetProductArn(value); return *this;}
+    template<typename ProductArnT = Aws::String>
+    void SetProductArn(ProductArnT&& value) { m_productArnHasBeenSet = true; m_productArn = std::forward<ProductArnT>(value); }
+    template<typename ProductArnT = Aws::String>
+    EnableImportFindingsForProductRequest& WithProductArn(ProductArnT&& value) { SetProductArn(std::forward<ProductArnT>(value)); return *this;}
     ///@}
   private:
 

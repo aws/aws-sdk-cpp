@@ -18,22 +18,7 @@ namespace PrivateNetworks
 namespace Model
 {
 
-Position::Position() : 
-    m_elevation(0.0),
-    m_elevationHasBeenSet(false),
-    m_elevationReference(ElevationReference::NOT_SET),
-    m_elevationReferenceHasBeenSet(false),
-    m_elevationUnit(ElevationUnit::NOT_SET),
-    m_elevationUnitHasBeenSet(false),
-    m_latitude(0.0),
-    m_latitudeHasBeenSet(false),
-    m_longitude(0.0),
-    m_longitudeHasBeenSet(false)
-{
-}
-
 Position::Position(JsonView jsonValue)
-  : Position()
 {
   *this = jsonValue;
 }
@@ -43,38 +28,28 @@ Position& Position::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("elevation"))
   {
     m_elevation = jsonValue.GetDouble("elevation");
-
     m_elevationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("elevationReference"))
   {
     m_elevationReference = ElevationReferenceMapper::GetElevationReferenceForName(jsonValue.GetString("elevationReference"));
-
     m_elevationReferenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("elevationUnit"))
   {
     m_elevationUnit = ElevationUnitMapper::GetElevationUnitForName(jsonValue.GetString("elevationUnit"));
-
     m_elevationUnitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("latitude"))
   {
     m_latitude = jsonValue.GetDouble("latitude");
-
     m_latitudeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("longitude"))
   {
     m_longitude = jsonValue.GetDouble("longitude");
-
     m_longitudeHasBeenSet = true;
   }
-
   return *this;
 }
 

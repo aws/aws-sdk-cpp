@@ -33,7 +33,7 @@ namespace Model
   class PredefinedScalingMetricSpecification
   {
   public:
-    AWS_AUTOSCALINGPLANS_API PredefinedScalingMetricSpecification();
+    AWS_AUTOSCALINGPLANS_API PredefinedScalingMetricSpecification() = default;
     AWS_AUTOSCALINGPLANS_API PredefinedScalingMetricSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUTOSCALINGPLANS_API PredefinedScalingMetricSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUTOSCALINGPLANS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
      * <p>The metric type. The <code>ALBRequestCountPerTarget</code> metric type
      * applies only to Auto Scaling groups, Spot Fleet requests, and ECS services.</p>
      */
-    inline const ScalingMetricType& GetPredefinedScalingMetricType() const{ return m_predefinedScalingMetricType; }
+    inline ScalingMetricType GetPredefinedScalingMetricType() const { return m_predefinedScalingMetricType; }
     inline bool PredefinedScalingMetricTypeHasBeenSet() const { return m_predefinedScalingMetricTypeHasBeenSet; }
-    inline void SetPredefinedScalingMetricType(const ScalingMetricType& value) { m_predefinedScalingMetricTypeHasBeenSet = true; m_predefinedScalingMetricType = value; }
-    inline void SetPredefinedScalingMetricType(ScalingMetricType&& value) { m_predefinedScalingMetricTypeHasBeenSet = true; m_predefinedScalingMetricType = std::move(value); }
-    inline PredefinedScalingMetricSpecification& WithPredefinedScalingMetricType(const ScalingMetricType& value) { SetPredefinedScalingMetricType(value); return *this;}
-    inline PredefinedScalingMetricSpecification& WithPredefinedScalingMetricType(ScalingMetricType&& value) { SetPredefinedScalingMetricType(std::move(value)); return *this;}
+    inline void SetPredefinedScalingMetricType(ScalingMetricType value) { m_predefinedScalingMetricTypeHasBeenSet = true; m_predefinedScalingMetricType = value; }
+    inline PredefinedScalingMetricSpecification& WithPredefinedScalingMetricType(ScalingMetricType value) { SetPredefinedScalingMetricType(value); return *this;}
     ///@}
 
     ///@{
@@ -73,18 +71,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a>
      * API operation.</p>
      */
-    inline const Aws::String& GetResourceLabel() const{ return m_resourceLabel; }
+    inline const Aws::String& GetResourceLabel() const { return m_resourceLabel; }
     inline bool ResourceLabelHasBeenSet() const { return m_resourceLabelHasBeenSet; }
-    inline void SetResourceLabel(const Aws::String& value) { m_resourceLabelHasBeenSet = true; m_resourceLabel = value; }
-    inline void SetResourceLabel(Aws::String&& value) { m_resourceLabelHasBeenSet = true; m_resourceLabel = std::move(value); }
-    inline void SetResourceLabel(const char* value) { m_resourceLabelHasBeenSet = true; m_resourceLabel.assign(value); }
-    inline PredefinedScalingMetricSpecification& WithResourceLabel(const Aws::String& value) { SetResourceLabel(value); return *this;}
-    inline PredefinedScalingMetricSpecification& WithResourceLabel(Aws::String&& value) { SetResourceLabel(std::move(value)); return *this;}
-    inline PredefinedScalingMetricSpecification& WithResourceLabel(const char* value) { SetResourceLabel(value); return *this;}
+    template<typename ResourceLabelT = Aws::String>
+    void SetResourceLabel(ResourceLabelT&& value) { m_resourceLabelHasBeenSet = true; m_resourceLabel = std::forward<ResourceLabelT>(value); }
+    template<typename ResourceLabelT = Aws::String>
+    PredefinedScalingMetricSpecification& WithResourceLabel(ResourceLabelT&& value) { SetResourceLabel(std::forward<ResourceLabelT>(value)); return *this;}
     ///@}
   private:
 
-    ScalingMetricType m_predefinedScalingMetricType;
+    ScalingMetricType m_predefinedScalingMetricType{ScalingMetricType::NOT_SET};
     bool m_predefinedScalingMetricTypeHasBeenSet = false;
 
     Aws::String m_resourceLabel;

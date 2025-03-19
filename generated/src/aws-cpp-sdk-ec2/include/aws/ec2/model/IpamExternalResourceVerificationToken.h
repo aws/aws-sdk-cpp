@@ -40,7 +40,7 @@ namespace Model
   class IpamExternalResourceVerificationToken
   {
   public:
-    AWS_EC2_API IpamExternalResourceVerificationToken();
+    AWS_EC2_API IpamExternalResourceVerificationToken() = default;
     AWS_EC2_API IpamExternalResourceVerificationToken(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API IpamExternalResourceVerificationToken& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -52,148 +52,130 @@ namespace Model
     /**
      * <p>The ID of the token.</p>
      */
-    inline const Aws::String& GetIpamExternalResourceVerificationTokenId() const{ return m_ipamExternalResourceVerificationTokenId; }
+    inline const Aws::String& GetIpamExternalResourceVerificationTokenId() const { return m_ipamExternalResourceVerificationTokenId; }
     inline bool IpamExternalResourceVerificationTokenIdHasBeenSet() const { return m_ipamExternalResourceVerificationTokenIdHasBeenSet; }
-    inline void SetIpamExternalResourceVerificationTokenId(const Aws::String& value) { m_ipamExternalResourceVerificationTokenIdHasBeenSet = true; m_ipamExternalResourceVerificationTokenId = value; }
-    inline void SetIpamExternalResourceVerificationTokenId(Aws::String&& value) { m_ipamExternalResourceVerificationTokenIdHasBeenSet = true; m_ipamExternalResourceVerificationTokenId = std::move(value); }
-    inline void SetIpamExternalResourceVerificationTokenId(const char* value) { m_ipamExternalResourceVerificationTokenIdHasBeenSet = true; m_ipamExternalResourceVerificationTokenId.assign(value); }
-    inline IpamExternalResourceVerificationToken& WithIpamExternalResourceVerificationTokenId(const Aws::String& value) { SetIpamExternalResourceVerificationTokenId(value); return *this;}
-    inline IpamExternalResourceVerificationToken& WithIpamExternalResourceVerificationTokenId(Aws::String&& value) { SetIpamExternalResourceVerificationTokenId(std::move(value)); return *this;}
-    inline IpamExternalResourceVerificationToken& WithIpamExternalResourceVerificationTokenId(const char* value) { SetIpamExternalResourceVerificationTokenId(value); return *this;}
+    template<typename IpamExternalResourceVerificationTokenIdT = Aws::String>
+    void SetIpamExternalResourceVerificationTokenId(IpamExternalResourceVerificationTokenIdT&& value) { m_ipamExternalResourceVerificationTokenIdHasBeenSet = true; m_ipamExternalResourceVerificationTokenId = std::forward<IpamExternalResourceVerificationTokenIdT>(value); }
+    template<typename IpamExternalResourceVerificationTokenIdT = Aws::String>
+    IpamExternalResourceVerificationToken& WithIpamExternalResourceVerificationTokenId(IpamExternalResourceVerificationTokenIdT&& value) { SetIpamExternalResourceVerificationTokenId(std::forward<IpamExternalResourceVerificationTokenIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Token ARN.</p>
      */
-    inline const Aws::String& GetIpamExternalResourceVerificationTokenArn() const{ return m_ipamExternalResourceVerificationTokenArn; }
+    inline const Aws::String& GetIpamExternalResourceVerificationTokenArn() const { return m_ipamExternalResourceVerificationTokenArn; }
     inline bool IpamExternalResourceVerificationTokenArnHasBeenSet() const { return m_ipamExternalResourceVerificationTokenArnHasBeenSet; }
-    inline void SetIpamExternalResourceVerificationTokenArn(const Aws::String& value) { m_ipamExternalResourceVerificationTokenArnHasBeenSet = true; m_ipamExternalResourceVerificationTokenArn = value; }
-    inline void SetIpamExternalResourceVerificationTokenArn(Aws::String&& value) { m_ipamExternalResourceVerificationTokenArnHasBeenSet = true; m_ipamExternalResourceVerificationTokenArn = std::move(value); }
-    inline void SetIpamExternalResourceVerificationTokenArn(const char* value) { m_ipamExternalResourceVerificationTokenArnHasBeenSet = true; m_ipamExternalResourceVerificationTokenArn.assign(value); }
-    inline IpamExternalResourceVerificationToken& WithIpamExternalResourceVerificationTokenArn(const Aws::String& value) { SetIpamExternalResourceVerificationTokenArn(value); return *this;}
-    inline IpamExternalResourceVerificationToken& WithIpamExternalResourceVerificationTokenArn(Aws::String&& value) { SetIpamExternalResourceVerificationTokenArn(std::move(value)); return *this;}
-    inline IpamExternalResourceVerificationToken& WithIpamExternalResourceVerificationTokenArn(const char* value) { SetIpamExternalResourceVerificationTokenArn(value); return *this;}
+    template<typename IpamExternalResourceVerificationTokenArnT = Aws::String>
+    void SetIpamExternalResourceVerificationTokenArn(IpamExternalResourceVerificationTokenArnT&& value) { m_ipamExternalResourceVerificationTokenArnHasBeenSet = true; m_ipamExternalResourceVerificationTokenArn = std::forward<IpamExternalResourceVerificationTokenArnT>(value); }
+    template<typename IpamExternalResourceVerificationTokenArnT = Aws::String>
+    IpamExternalResourceVerificationToken& WithIpamExternalResourceVerificationTokenArn(IpamExternalResourceVerificationTokenArnT&& value) { SetIpamExternalResourceVerificationTokenArn(std::forward<IpamExternalResourceVerificationTokenArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the IPAM that created the token.</p>
      */
-    inline const Aws::String& GetIpamId() const{ return m_ipamId; }
+    inline const Aws::String& GetIpamId() const { return m_ipamId; }
     inline bool IpamIdHasBeenSet() const { return m_ipamIdHasBeenSet; }
-    inline void SetIpamId(const Aws::String& value) { m_ipamIdHasBeenSet = true; m_ipamId = value; }
-    inline void SetIpamId(Aws::String&& value) { m_ipamIdHasBeenSet = true; m_ipamId = std::move(value); }
-    inline void SetIpamId(const char* value) { m_ipamIdHasBeenSet = true; m_ipamId.assign(value); }
-    inline IpamExternalResourceVerificationToken& WithIpamId(const Aws::String& value) { SetIpamId(value); return *this;}
-    inline IpamExternalResourceVerificationToken& WithIpamId(Aws::String&& value) { SetIpamId(std::move(value)); return *this;}
-    inline IpamExternalResourceVerificationToken& WithIpamId(const char* value) { SetIpamId(value); return *this;}
+    template<typename IpamIdT = Aws::String>
+    void SetIpamId(IpamIdT&& value) { m_ipamIdHasBeenSet = true; m_ipamId = std::forward<IpamIdT>(value); }
+    template<typename IpamIdT = Aws::String>
+    IpamExternalResourceVerificationToken& WithIpamId(IpamIdT&& value) { SetIpamId(std::forward<IpamIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>ARN of the IPAM that created the token.</p>
      */
-    inline const Aws::String& GetIpamArn() const{ return m_ipamArn; }
+    inline const Aws::String& GetIpamArn() const { return m_ipamArn; }
     inline bool IpamArnHasBeenSet() const { return m_ipamArnHasBeenSet; }
-    inline void SetIpamArn(const Aws::String& value) { m_ipamArnHasBeenSet = true; m_ipamArn = value; }
-    inline void SetIpamArn(Aws::String&& value) { m_ipamArnHasBeenSet = true; m_ipamArn = std::move(value); }
-    inline void SetIpamArn(const char* value) { m_ipamArnHasBeenSet = true; m_ipamArn.assign(value); }
-    inline IpamExternalResourceVerificationToken& WithIpamArn(const Aws::String& value) { SetIpamArn(value); return *this;}
-    inline IpamExternalResourceVerificationToken& WithIpamArn(Aws::String&& value) { SetIpamArn(std::move(value)); return *this;}
-    inline IpamExternalResourceVerificationToken& WithIpamArn(const char* value) { SetIpamArn(value); return *this;}
+    template<typename IpamArnT = Aws::String>
+    void SetIpamArn(IpamArnT&& value) { m_ipamArnHasBeenSet = true; m_ipamArn = std::forward<IpamArnT>(value); }
+    template<typename IpamArnT = Aws::String>
+    IpamExternalResourceVerificationToken& WithIpamArn(IpamArnT&& value) { SetIpamArn(std::forward<IpamArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Region of the IPAM that created the token.</p>
      */
-    inline const Aws::String& GetIpamRegion() const{ return m_ipamRegion; }
+    inline const Aws::String& GetIpamRegion() const { return m_ipamRegion; }
     inline bool IpamRegionHasBeenSet() const { return m_ipamRegionHasBeenSet; }
-    inline void SetIpamRegion(const Aws::String& value) { m_ipamRegionHasBeenSet = true; m_ipamRegion = value; }
-    inline void SetIpamRegion(Aws::String&& value) { m_ipamRegionHasBeenSet = true; m_ipamRegion = std::move(value); }
-    inline void SetIpamRegion(const char* value) { m_ipamRegionHasBeenSet = true; m_ipamRegion.assign(value); }
-    inline IpamExternalResourceVerificationToken& WithIpamRegion(const Aws::String& value) { SetIpamRegion(value); return *this;}
-    inline IpamExternalResourceVerificationToken& WithIpamRegion(Aws::String&& value) { SetIpamRegion(std::move(value)); return *this;}
-    inline IpamExternalResourceVerificationToken& WithIpamRegion(const char* value) { SetIpamRegion(value); return *this;}
+    template<typename IpamRegionT = Aws::String>
+    void SetIpamRegion(IpamRegionT&& value) { m_ipamRegionHasBeenSet = true; m_ipamRegion = std::forward<IpamRegionT>(value); }
+    template<typename IpamRegionT = Aws::String>
+    IpamExternalResourceVerificationToken& WithIpamRegion(IpamRegionT&& value) { SetIpamRegion(std::forward<IpamRegionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Token value.</p>
      */
-    inline const Aws::String& GetTokenValue() const{ return m_tokenValue; }
+    inline const Aws::String& GetTokenValue() const { return m_tokenValue; }
     inline bool TokenValueHasBeenSet() const { return m_tokenValueHasBeenSet; }
-    inline void SetTokenValue(const Aws::String& value) { m_tokenValueHasBeenSet = true; m_tokenValue = value; }
-    inline void SetTokenValue(Aws::String&& value) { m_tokenValueHasBeenSet = true; m_tokenValue = std::move(value); }
-    inline void SetTokenValue(const char* value) { m_tokenValueHasBeenSet = true; m_tokenValue.assign(value); }
-    inline IpamExternalResourceVerificationToken& WithTokenValue(const Aws::String& value) { SetTokenValue(value); return *this;}
-    inline IpamExternalResourceVerificationToken& WithTokenValue(Aws::String&& value) { SetTokenValue(std::move(value)); return *this;}
-    inline IpamExternalResourceVerificationToken& WithTokenValue(const char* value) { SetTokenValue(value); return *this;}
+    template<typename TokenValueT = Aws::String>
+    void SetTokenValue(TokenValueT&& value) { m_tokenValueHasBeenSet = true; m_tokenValue = std::forward<TokenValueT>(value); }
+    template<typename TokenValueT = Aws::String>
+    IpamExternalResourceVerificationToken& WithTokenValue(TokenValueT&& value) { SetTokenValue(std::forward<TokenValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Token name.</p>
      */
-    inline const Aws::String& GetTokenName() const{ return m_tokenName; }
+    inline const Aws::String& GetTokenName() const { return m_tokenName; }
     inline bool TokenNameHasBeenSet() const { return m_tokenNameHasBeenSet; }
-    inline void SetTokenName(const Aws::String& value) { m_tokenNameHasBeenSet = true; m_tokenName = value; }
-    inline void SetTokenName(Aws::String&& value) { m_tokenNameHasBeenSet = true; m_tokenName = std::move(value); }
-    inline void SetTokenName(const char* value) { m_tokenNameHasBeenSet = true; m_tokenName.assign(value); }
-    inline IpamExternalResourceVerificationToken& WithTokenName(const Aws::String& value) { SetTokenName(value); return *this;}
-    inline IpamExternalResourceVerificationToken& WithTokenName(Aws::String&& value) { SetTokenName(std::move(value)); return *this;}
-    inline IpamExternalResourceVerificationToken& WithTokenName(const char* value) { SetTokenName(value); return *this;}
+    template<typename TokenNameT = Aws::String>
+    void SetTokenName(TokenNameT&& value) { m_tokenNameHasBeenSet = true; m_tokenName = std::forward<TokenNameT>(value); }
+    template<typename TokenNameT = Aws::String>
+    IpamExternalResourceVerificationToken& WithTokenName(TokenNameT&& value) { SetTokenName(std::forward<TokenNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Token expiration.</p>
      */
-    inline const Aws::Utils::DateTime& GetNotAfter() const{ return m_notAfter; }
+    inline const Aws::Utils::DateTime& GetNotAfter() const { return m_notAfter; }
     inline bool NotAfterHasBeenSet() const { return m_notAfterHasBeenSet; }
-    inline void SetNotAfter(const Aws::Utils::DateTime& value) { m_notAfterHasBeenSet = true; m_notAfter = value; }
-    inline void SetNotAfter(Aws::Utils::DateTime&& value) { m_notAfterHasBeenSet = true; m_notAfter = std::move(value); }
-    inline IpamExternalResourceVerificationToken& WithNotAfter(const Aws::Utils::DateTime& value) { SetNotAfter(value); return *this;}
-    inline IpamExternalResourceVerificationToken& WithNotAfter(Aws::Utils::DateTime&& value) { SetNotAfter(std::move(value)); return *this;}
+    template<typename NotAfterT = Aws::Utils::DateTime>
+    void SetNotAfter(NotAfterT&& value) { m_notAfterHasBeenSet = true; m_notAfter = std::forward<NotAfterT>(value); }
+    template<typename NotAfterT = Aws::Utils::DateTime>
+    IpamExternalResourceVerificationToken& WithNotAfter(NotAfterT&& value) { SetNotAfter(std::forward<NotAfterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Token status.</p>
      */
-    inline const TokenState& GetStatus() const{ return m_status; }
+    inline TokenState GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const TokenState& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(TokenState&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline IpamExternalResourceVerificationToken& WithStatus(const TokenState& value) { SetStatus(value); return *this;}
-    inline IpamExternalResourceVerificationToken& WithStatus(TokenState&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(TokenState value) { m_statusHasBeenSet = true; m_status = value; }
+    inline IpamExternalResourceVerificationToken& WithStatus(TokenState value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Token tags.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline IpamExternalResourceVerificationToken& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline IpamExternalResourceVerificationToken& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline IpamExternalResourceVerificationToken& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline IpamExternalResourceVerificationToken& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    IpamExternalResourceVerificationToken& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    IpamExternalResourceVerificationToken& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Token state.</p>
      */
-    inline const IpamExternalResourceVerificationTokenState& GetState() const{ return m_state; }
+    inline IpamExternalResourceVerificationTokenState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const IpamExternalResourceVerificationTokenState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(IpamExternalResourceVerificationTokenState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline IpamExternalResourceVerificationToken& WithState(const IpamExternalResourceVerificationTokenState& value) { SetState(value); return *this;}
-    inline IpamExternalResourceVerificationToken& WithState(IpamExternalResourceVerificationTokenState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(IpamExternalResourceVerificationTokenState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline IpamExternalResourceVerificationToken& WithState(IpamExternalResourceVerificationTokenState value) { SetState(value); return *this;}
     ///@}
   private:
 
@@ -218,16 +200,16 @@ namespace Model
     Aws::String m_tokenName;
     bool m_tokenNameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_notAfter;
+    Aws::Utils::DateTime m_notAfter{};
     bool m_notAfterHasBeenSet = false;
 
-    TokenState m_status;
+    TokenState m_status{TokenState::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    IpamExternalResourceVerificationTokenState m_state;
+    IpamExternalResourceVerificationTokenState m_state{IpamExternalResourceVerificationTokenState::NOT_SET};
     bool m_stateHasBeenSet = false;
   };
 

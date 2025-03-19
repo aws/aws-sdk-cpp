@@ -39,7 +39,7 @@ namespace Model
   class AccessEntry
   {
   public:
-    AWS_EKS_API AccessEntry();
+    AWS_EKS_API AccessEntry() = default;
     AWS_EKS_API AccessEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API AccessEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
     /**
      * <p>The name of your cluster.</p>
      */
-    inline const Aws::String& GetClusterName() const{ return m_clusterName; }
+    inline const Aws::String& GetClusterName() const { return m_clusterName; }
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
-    inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
-    inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
-    inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
-    inline AccessEntry& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
-    inline AccessEntry& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
-    inline AccessEntry& WithClusterName(const char* value) { SetClusterName(value); return *this;}
+    template<typename ClusterNameT = Aws::String>
+    void SetClusterName(ClusterNameT&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::forward<ClusterNameT>(value); }
+    template<typename ClusterNameT = Aws::String>
+    AccessEntry& WithClusterName(ClusterNameT&& value) { SetClusterName(std::forward<ClusterNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +71,12 @@ namespace Model
      * see the IAM principal's <code>roleID</code> or <code>userID</code> for an access
      * entry, Amazon EKS stores it with the access entry.</p>
      */
-    inline const Aws::String& GetPrincipalArn() const{ return m_principalArn; }
+    inline const Aws::String& GetPrincipalArn() const { return m_principalArn; }
     inline bool PrincipalArnHasBeenSet() const { return m_principalArnHasBeenSet; }
-    inline void SetPrincipalArn(const Aws::String& value) { m_principalArnHasBeenSet = true; m_principalArn = value; }
-    inline void SetPrincipalArn(Aws::String&& value) { m_principalArnHasBeenSet = true; m_principalArn = std::move(value); }
-    inline void SetPrincipalArn(const char* value) { m_principalArnHasBeenSet = true; m_principalArn.assign(value); }
-    inline AccessEntry& WithPrincipalArn(const Aws::String& value) { SetPrincipalArn(value); return *this;}
-    inline AccessEntry& WithPrincipalArn(Aws::String&& value) { SetPrincipalArn(std::move(value)); return *this;}
-    inline AccessEntry& WithPrincipalArn(const char* value) { SetPrincipalArn(value); return *this;}
+    template<typename PrincipalArnT = Aws::String>
+    void SetPrincipalArn(PrincipalArnT&& value) { m_principalArnHasBeenSet = true; m_principalArn = std::forward<PrincipalArnT>(value); }
+    template<typename PrincipalArnT = Aws::String>
+    AccessEntry& WithPrincipalArn(PrincipalArnT&& value) { SetPrincipalArn(std::forward<PrincipalArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,53 +86,50 @@ namespace Model
      * Kubernetes authorizes the <code>principalARN</code> access to cluster
      * objects.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetKubernetesGroups() const{ return m_kubernetesGroups; }
+    inline const Aws::Vector<Aws::String>& GetKubernetesGroups() const { return m_kubernetesGroups; }
     inline bool KubernetesGroupsHasBeenSet() const { return m_kubernetesGroupsHasBeenSet; }
-    inline void SetKubernetesGroups(const Aws::Vector<Aws::String>& value) { m_kubernetesGroupsHasBeenSet = true; m_kubernetesGroups = value; }
-    inline void SetKubernetesGroups(Aws::Vector<Aws::String>&& value) { m_kubernetesGroupsHasBeenSet = true; m_kubernetesGroups = std::move(value); }
-    inline AccessEntry& WithKubernetesGroups(const Aws::Vector<Aws::String>& value) { SetKubernetesGroups(value); return *this;}
-    inline AccessEntry& WithKubernetesGroups(Aws::Vector<Aws::String>&& value) { SetKubernetesGroups(std::move(value)); return *this;}
-    inline AccessEntry& AddKubernetesGroups(const Aws::String& value) { m_kubernetesGroupsHasBeenSet = true; m_kubernetesGroups.push_back(value); return *this; }
-    inline AccessEntry& AddKubernetesGroups(Aws::String&& value) { m_kubernetesGroupsHasBeenSet = true; m_kubernetesGroups.push_back(std::move(value)); return *this; }
-    inline AccessEntry& AddKubernetesGroups(const char* value) { m_kubernetesGroupsHasBeenSet = true; m_kubernetesGroups.push_back(value); return *this; }
+    template<typename KubernetesGroupsT = Aws::Vector<Aws::String>>
+    void SetKubernetesGroups(KubernetesGroupsT&& value) { m_kubernetesGroupsHasBeenSet = true; m_kubernetesGroups = std::forward<KubernetesGroupsT>(value); }
+    template<typename KubernetesGroupsT = Aws::Vector<Aws::String>>
+    AccessEntry& WithKubernetesGroups(KubernetesGroupsT&& value) { SetKubernetesGroups(std::forward<KubernetesGroupsT>(value)); return *this;}
+    template<typename KubernetesGroupsT = Aws::String>
+    AccessEntry& AddKubernetesGroups(KubernetesGroupsT&& value) { m_kubernetesGroupsHasBeenSet = true; m_kubernetesGroups.emplace_back(std::forward<KubernetesGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the access entry.</p>
      */
-    inline const Aws::String& GetAccessEntryArn() const{ return m_accessEntryArn; }
+    inline const Aws::String& GetAccessEntryArn() const { return m_accessEntryArn; }
     inline bool AccessEntryArnHasBeenSet() const { return m_accessEntryArnHasBeenSet; }
-    inline void SetAccessEntryArn(const Aws::String& value) { m_accessEntryArnHasBeenSet = true; m_accessEntryArn = value; }
-    inline void SetAccessEntryArn(Aws::String&& value) { m_accessEntryArnHasBeenSet = true; m_accessEntryArn = std::move(value); }
-    inline void SetAccessEntryArn(const char* value) { m_accessEntryArnHasBeenSet = true; m_accessEntryArn.assign(value); }
-    inline AccessEntry& WithAccessEntryArn(const Aws::String& value) { SetAccessEntryArn(value); return *this;}
-    inline AccessEntry& WithAccessEntryArn(Aws::String&& value) { SetAccessEntryArn(std::move(value)); return *this;}
-    inline AccessEntry& WithAccessEntryArn(const char* value) { SetAccessEntryArn(value); return *this;}
+    template<typename AccessEntryArnT = Aws::String>
+    void SetAccessEntryArn(AccessEntryArnT&& value) { m_accessEntryArnHasBeenSet = true; m_accessEntryArn = std::forward<AccessEntryArnT>(value); }
+    template<typename AccessEntryArnT = Aws::String>
+    AccessEntry& WithAccessEntryArn(AccessEntryArnT&& value) { SetAccessEntryArn(std::forward<AccessEntryArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Unix epoch timestamp at object creation.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline AccessEntry& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline AccessEntry& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    AccessEntry& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Unix epoch timestamp for the last modification to the object.</p>
      */
-    inline const Aws::Utils::DateTime& GetModifiedAt() const{ return m_modifiedAt; }
+    inline const Aws::Utils::DateTime& GetModifiedAt() const { return m_modifiedAt; }
     inline bool ModifiedAtHasBeenSet() const { return m_modifiedAtHasBeenSet; }
-    inline void SetModifiedAt(const Aws::Utils::DateTime& value) { m_modifiedAtHasBeenSet = true; m_modifiedAt = value; }
-    inline void SetModifiedAt(Aws::Utils::DateTime&& value) { m_modifiedAtHasBeenSet = true; m_modifiedAt = std::move(value); }
-    inline AccessEntry& WithModifiedAt(const Aws::Utils::DateTime& value) { SetModifiedAt(value); return *this;}
-    inline AccessEntry& WithModifiedAt(Aws::Utils::DateTime&& value) { SetModifiedAt(std::move(value)); return *this;}
+    template<typename ModifiedAtT = Aws::Utils::DateTime>
+    void SetModifiedAt(ModifiedAtT&& value) { m_modifiedAtHasBeenSet = true; m_modifiedAt = std::forward<ModifiedAtT>(value); }
+    template<typename ModifiedAtT = Aws::Utils::DateTime>
+    AccessEntry& WithModifiedAt(ModifiedAtT&& value) { SetModifiedAt(std::forward<ModifiedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -145,47 +138,40 @@ namespace Model
      * of a key and an optional value. You define both. Tags don't propagate to any
      * other cluster or Amazon Web Services resources.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline AccessEntry& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline AccessEntry& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline AccessEntry& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline AccessEntry& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline AccessEntry& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline AccessEntry& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline AccessEntry& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline AccessEntry& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline AccessEntry& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    AccessEntry& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    AccessEntry& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The <code>name</code> of a user that can authenticate to your cluster.</p>
      */
-    inline const Aws::String& GetUsername() const{ return m_username; }
+    inline const Aws::String& GetUsername() const { return m_username; }
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
-    inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
-    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
-    inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
-    inline AccessEntry& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
-    inline AccessEntry& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
-    inline AccessEntry& WithUsername(const char* value) { SetUsername(value); return *this;}
+    template<typename UsernameT = Aws::String>
+    void SetUsername(UsernameT&& value) { m_usernameHasBeenSet = true; m_username = std::forward<UsernameT>(value); }
+    template<typename UsernameT = Aws::String>
+    AccessEntry& WithUsername(UsernameT&& value) { SetUsername(std::forward<UsernameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the access entry.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline AccessEntry& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline AccessEntry& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline AccessEntry& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    AccessEntry& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
   private:
 
@@ -201,10 +187,10 @@ namespace Model
     Aws::String m_accessEntryArn;
     bool m_accessEntryArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_modifiedAt;
+    Aws::Utils::DateTime m_modifiedAt{};
     bool m_modifiedAtHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;

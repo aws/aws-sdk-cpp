@@ -33,7 +33,7 @@ namespace Model
   class RetrieveDomainAuthCodeResult
   {
   public:
-    AWS_ROUTE53DOMAINS_API RetrieveDomainAuthCodeResult();
+    AWS_ROUTE53DOMAINS_API RetrieveDomainAuthCodeResult() = default;
     AWS_ROUTE53DOMAINS_API RetrieveDomainAuthCodeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROUTE53DOMAINS_API RetrieveDomainAuthCodeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,30 +42,28 @@ namespace Model
     /**
      * <p>The authorization code for the domain.</p>
      */
-    inline const Aws::String& GetAuthCode() const{ return m_authCode; }
-    inline void SetAuthCode(const Aws::String& value) { m_authCode = value; }
-    inline void SetAuthCode(Aws::String&& value) { m_authCode = std::move(value); }
-    inline void SetAuthCode(const char* value) { m_authCode.assign(value); }
-    inline RetrieveDomainAuthCodeResult& WithAuthCode(const Aws::String& value) { SetAuthCode(value); return *this;}
-    inline RetrieveDomainAuthCodeResult& WithAuthCode(Aws::String&& value) { SetAuthCode(std::move(value)); return *this;}
-    inline RetrieveDomainAuthCodeResult& WithAuthCode(const char* value) { SetAuthCode(value); return *this;}
+    inline const Aws::String& GetAuthCode() const { return m_authCode; }
+    template<typename AuthCodeT = Aws::String>
+    void SetAuthCode(AuthCodeT&& value) { m_authCodeHasBeenSet = true; m_authCode = std::forward<AuthCodeT>(value); }
+    template<typename AuthCodeT = Aws::String>
+    RetrieveDomainAuthCodeResult& WithAuthCode(AuthCodeT&& value) { SetAuthCode(std::forward<AuthCodeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline RetrieveDomainAuthCodeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline RetrieveDomainAuthCodeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline RetrieveDomainAuthCodeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    RetrieveDomainAuthCodeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_authCode;
+    bool m_authCodeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

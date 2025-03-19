@@ -28,35 +28,35 @@ namespace Model
   class GetAppResult
   {
   public:
-    AWS_PINPOINT_API GetAppResult();
+    AWS_PINPOINT_API GetAppResult() = default;
     AWS_PINPOINT_API GetAppResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINT_API GetAppResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const ApplicationResponse& GetApplicationResponse() const{ return m_applicationResponse; }
-    inline void SetApplicationResponse(const ApplicationResponse& value) { m_applicationResponse = value; }
-    inline void SetApplicationResponse(ApplicationResponse&& value) { m_applicationResponse = std::move(value); }
-    inline GetAppResult& WithApplicationResponse(const ApplicationResponse& value) { SetApplicationResponse(value); return *this;}
-    inline GetAppResult& WithApplicationResponse(ApplicationResponse&& value) { SetApplicationResponse(std::move(value)); return *this;}
+    inline const ApplicationResponse& GetApplicationResponse() const { return m_applicationResponse; }
+    template<typename ApplicationResponseT = ApplicationResponse>
+    void SetApplicationResponse(ApplicationResponseT&& value) { m_applicationResponseHasBeenSet = true; m_applicationResponse = std::forward<ApplicationResponseT>(value); }
+    template<typename ApplicationResponseT = ApplicationResponse>
+    GetAppResult& WithApplicationResponse(ApplicationResponseT&& value) { SetApplicationResponse(std::forward<ApplicationResponseT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetAppResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetAppResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetAppResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetAppResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ApplicationResponse m_applicationResponse;
+    bool m_applicationResponseHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

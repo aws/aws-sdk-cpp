@@ -18,25 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-UserTurnResult::UserTurnResult() : 
-    m_inputHasBeenSet(false),
-    m_expectedOutputHasBeenSet(false),
-    m_actualOutputHasBeenSet(false),
-    m_errorDetailsHasBeenSet(false),
-    m_endToEndResult(TestResultMatchStatus::NOT_SET),
-    m_endToEndResultHasBeenSet(false),
-    m_intentMatchResult(TestResultMatchStatus::NOT_SET),
-    m_intentMatchResultHasBeenSet(false),
-    m_slotMatchResult(TestResultMatchStatus::NOT_SET),
-    m_slotMatchResultHasBeenSet(false),
-    m_speechTranscriptionResult(TestResultMatchStatus::NOT_SET),
-    m_speechTranscriptionResultHasBeenSet(false),
-    m_conversationLevelResultHasBeenSet(false)
-{
-}
-
 UserTurnResult::UserTurnResult(JsonView jsonValue)
-  : UserTurnResult()
 {
   *this = jsonValue;
 }
@@ -46,66 +28,48 @@ UserTurnResult& UserTurnResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("input"))
   {
     m_input = jsonValue.GetObject("input");
-
     m_inputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expectedOutput"))
   {
     m_expectedOutput = jsonValue.GetObject("expectedOutput");
-
     m_expectedOutputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actualOutput"))
   {
     m_actualOutput = jsonValue.GetObject("actualOutput");
-
     m_actualOutputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorDetails"))
   {
     m_errorDetails = jsonValue.GetObject("errorDetails");
-
     m_errorDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endToEndResult"))
   {
     m_endToEndResult = TestResultMatchStatusMapper::GetTestResultMatchStatusForName(jsonValue.GetString("endToEndResult"));
-
     m_endToEndResultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("intentMatchResult"))
   {
     m_intentMatchResult = TestResultMatchStatusMapper::GetTestResultMatchStatusForName(jsonValue.GetString("intentMatchResult"));
-
     m_intentMatchResultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("slotMatchResult"))
   {
     m_slotMatchResult = TestResultMatchStatusMapper::GetTestResultMatchStatusForName(jsonValue.GetString("slotMatchResult"));
-
     m_slotMatchResultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("speechTranscriptionResult"))
   {
     m_speechTranscriptionResult = TestResultMatchStatusMapper::GetTestResultMatchStatusForName(jsonValue.GetString("speechTranscriptionResult"));
-
     m_speechTranscriptionResultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("conversationLevelResult"))
   {
     m_conversationLevelResult = jsonValue.GetObject("conversationLevelResult");
-
     m_conversationLevelResultHasBeenSet = true;
   }
-
   return *this;
 }
 

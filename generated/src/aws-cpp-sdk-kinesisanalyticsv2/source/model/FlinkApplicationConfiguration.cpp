@@ -18,15 +18,7 @@ namespace KinesisAnalyticsV2
 namespace Model
 {
 
-FlinkApplicationConfiguration::FlinkApplicationConfiguration() : 
-    m_checkpointConfigurationHasBeenSet(false),
-    m_monitoringConfigurationHasBeenSet(false),
-    m_parallelismConfigurationHasBeenSet(false)
-{
-}
-
 FlinkApplicationConfiguration::FlinkApplicationConfiguration(JsonView jsonValue)
-  : FlinkApplicationConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ FlinkApplicationConfiguration& FlinkApplicationConfiguration::operator =(JsonVie
   if(jsonValue.ValueExists("CheckpointConfiguration"))
   {
     m_checkpointConfiguration = jsonValue.GetObject("CheckpointConfiguration");
-
     m_checkpointConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MonitoringConfiguration"))
   {
     m_monitoringConfiguration = jsonValue.GetObject("MonitoringConfiguration");
-
     m_monitoringConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParallelismConfiguration"))
   {
     m_parallelismConfiguration = jsonValue.GetObject("ParallelismConfiguration");
-
     m_parallelismConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

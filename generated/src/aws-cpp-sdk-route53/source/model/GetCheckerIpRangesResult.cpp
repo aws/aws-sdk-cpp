@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetCheckerIpRangesResult::GetCheckerIpRangesResult()
-{
-}
-
 GetCheckerIpRangesResult::GetCheckerIpRangesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,12 +32,14 @@ GetCheckerIpRangesResult& GetCheckerIpRangesResult::operator =(const Aws::Amazon
     if(!checkerIpRangesNode.IsNull())
     {
       XmlNode checkerIpRangesMember = checkerIpRangesNode.FirstChild("member");
+      m_checkerIpRangesHasBeenSet = !checkerIpRangesMember.IsNull();
       while(!checkerIpRangesMember.IsNull())
       {
         m_checkerIpRanges.push_back(checkerIpRangesMember.GetText());
         checkerIpRangesMember = checkerIpRangesMember.NextNode("member");
       }
 
+      m_checkerIpRangesHasBeenSet = true;
     }
   }
 
@@ -50,6 +48,7 @@ GetCheckerIpRangesResult& GetCheckerIpRangesResult::operator =(const Aws::Amazon
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

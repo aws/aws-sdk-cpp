@@ -12,12 +12,6 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutDedicatedIpInPoolRequest::PutDedicatedIpInPoolRequest() : 
-    m_ipHasBeenSet(false),
-    m_destinationPoolNameHasBeenSet(false)
-{
-}
-
 Aws::String PutDedicatedIpInPoolRequest::SerializePayload() const
 {
   JsonValue payload;

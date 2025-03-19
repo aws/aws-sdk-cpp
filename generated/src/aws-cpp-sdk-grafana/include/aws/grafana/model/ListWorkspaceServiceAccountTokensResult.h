@@ -29,7 +29,7 @@ namespace Model
   class ListWorkspaceServiceAccountTokensResult
   {
   public:
-    AWS_MANAGEDGRAFANA_API ListWorkspaceServiceAccountTokensResult();
+    AWS_MANAGEDGRAFANA_API ListWorkspaceServiceAccountTokensResult() = default;
     AWS_MANAGEDGRAFANA_API ListWorkspaceServiceAccountTokensResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MANAGEDGRAFANA_API ListWorkspaceServiceAccountTokensResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,75 +38,72 @@ namespace Model
     /**
      * <p>The token to use when requesting the next set of service accounts.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListWorkspaceServiceAccountTokensResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListWorkspaceServiceAccountTokensResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListWorkspaceServiceAccountTokensResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListWorkspaceServiceAccountTokensResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the service account where the tokens reside.</p>
      */
-    inline const Aws::String& GetServiceAccountId() const{ return m_serviceAccountId; }
-    inline void SetServiceAccountId(const Aws::String& value) { m_serviceAccountId = value; }
-    inline void SetServiceAccountId(Aws::String&& value) { m_serviceAccountId = std::move(value); }
-    inline void SetServiceAccountId(const char* value) { m_serviceAccountId.assign(value); }
-    inline ListWorkspaceServiceAccountTokensResult& WithServiceAccountId(const Aws::String& value) { SetServiceAccountId(value); return *this;}
-    inline ListWorkspaceServiceAccountTokensResult& WithServiceAccountId(Aws::String&& value) { SetServiceAccountId(std::move(value)); return *this;}
-    inline ListWorkspaceServiceAccountTokensResult& WithServiceAccountId(const char* value) { SetServiceAccountId(value); return *this;}
+    inline const Aws::String& GetServiceAccountId() const { return m_serviceAccountId; }
+    template<typename ServiceAccountIdT = Aws::String>
+    void SetServiceAccountId(ServiceAccountIdT&& value) { m_serviceAccountIdHasBeenSet = true; m_serviceAccountId = std::forward<ServiceAccountIdT>(value); }
+    template<typename ServiceAccountIdT = Aws::String>
+    ListWorkspaceServiceAccountTokensResult& WithServiceAccountId(ServiceAccountIdT&& value) { SetServiceAccountId(std::forward<ServiceAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of structures containing information about the tokens.</p>
      */
-    inline const Aws::Vector<ServiceAccountTokenSummary>& GetServiceAccountTokens() const{ return m_serviceAccountTokens; }
-    inline void SetServiceAccountTokens(const Aws::Vector<ServiceAccountTokenSummary>& value) { m_serviceAccountTokens = value; }
-    inline void SetServiceAccountTokens(Aws::Vector<ServiceAccountTokenSummary>&& value) { m_serviceAccountTokens = std::move(value); }
-    inline ListWorkspaceServiceAccountTokensResult& WithServiceAccountTokens(const Aws::Vector<ServiceAccountTokenSummary>& value) { SetServiceAccountTokens(value); return *this;}
-    inline ListWorkspaceServiceAccountTokensResult& WithServiceAccountTokens(Aws::Vector<ServiceAccountTokenSummary>&& value) { SetServiceAccountTokens(std::move(value)); return *this;}
-    inline ListWorkspaceServiceAccountTokensResult& AddServiceAccountTokens(const ServiceAccountTokenSummary& value) { m_serviceAccountTokens.push_back(value); return *this; }
-    inline ListWorkspaceServiceAccountTokensResult& AddServiceAccountTokens(ServiceAccountTokenSummary&& value) { m_serviceAccountTokens.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ServiceAccountTokenSummary>& GetServiceAccountTokens() const { return m_serviceAccountTokens; }
+    template<typename ServiceAccountTokensT = Aws::Vector<ServiceAccountTokenSummary>>
+    void SetServiceAccountTokens(ServiceAccountTokensT&& value) { m_serviceAccountTokensHasBeenSet = true; m_serviceAccountTokens = std::forward<ServiceAccountTokensT>(value); }
+    template<typename ServiceAccountTokensT = Aws::Vector<ServiceAccountTokenSummary>>
+    ListWorkspaceServiceAccountTokensResult& WithServiceAccountTokens(ServiceAccountTokensT&& value) { SetServiceAccountTokens(std::forward<ServiceAccountTokensT>(value)); return *this;}
+    template<typename ServiceAccountTokensT = ServiceAccountTokenSummary>
+    ListWorkspaceServiceAccountTokensResult& AddServiceAccountTokens(ServiceAccountTokensT&& value) { m_serviceAccountTokensHasBeenSet = true; m_serviceAccountTokens.emplace_back(std::forward<ServiceAccountTokensT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The ID of the workspace where the tokens reside.</p>
      */
-    inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
-    inline void SetWorkspaceId(const Aws::String& value) { m_workspaceId = value; }
-    inline void SetWorkspaceId(Aws::String&& value) { m_workspaceId = std::move(value); }
-    inline void SetWorkspaceId(const char* value) { m_workspaceId.assign(value); }
-    inline ListWorkspaceServiceAccountTokensResult& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
-    inline ListWorkspaceServiceAccountTokensResult& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
-    inline ListWorkspaceServiceAccountTokensResult& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
+    inline const Aws::String& GetWorkspaceId() const { return m_workspaceId; }
+    template<typename WorkspaceIdT = Aws::String>
+    void SetWorkspaceId(WorkspaceIdT&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::forward<WorkspaceIdT>(value); }
+    template<typename WorkspaceIdT = Aws::String>
+    ListWorkspaceServiceAccountTokensResult& WithWorkspaceId(WorkspaceIdT&& value) { SetWorkspaceId(std::forward<WorkspaceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListWorkspaceServiceAccountTokensResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListWorkspaceServiceAccountTokensResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListWorkspaceServiceAccountTokensResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListWorkspaceServiceAccountTokensResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_serviceAccountId;
+    bool m_serviceAccountIdHasBeenSet = false;
 
     Aws::Vector<ServiceAccountTokenSummary> m_serviceAccountTokens;
+    bool m_serviceAccountTokensHasBeenSet = false;
 
     Aws::String m_workspaceId;
+    bool m_workspaceIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

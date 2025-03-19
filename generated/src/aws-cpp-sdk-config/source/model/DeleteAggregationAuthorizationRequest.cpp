@@ -12,12 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAggregationAuthorizationRequest::DeleteAggregationAuthorizationRequest() : 
-    m_authorizedAccountIdHasBeenSet(false),
-    m_authorizedAwsRegionHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAggregationAuthorizationRequest::SerializePayload() const
 {
   JsonValue payload;

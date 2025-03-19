@@ -31,7 +31,7 @@ namespace Model
   class VpnTunnelLogOptionsSpecification
   {
   public:
-    AWS_EC2_API VpnTunnelLogOptionsSpecification();
+    AWS_EC2_API VpnTunnelLogOptionsSpecification() = default;
     AWS_EC2_API VpnTunnelLogOptionsSpecification(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API VpnTunnelLogOptionsSpecification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>Options for sending VPN tunnel logs to CloudWatch.</p>
      */
-    inline const CloudWatchLogOptionsSpecification& GetCloudWatchLogOptions() const{ return m_cloudWatchLogOptions; }
+    inline const CloudWatchLogOptionsSpecification& GetCloudWatchLogOptions() const { return m_cloudWatchLogOptions; }
     inline bool CloudWatchLogOptionsHasBeenSet() const { return m_cloudWatchLogOptionsHasBeenSet; }
-    inline void SetCloudWatchLogOptions(const CloudWatchLogOptionsSpecification& value) { m_cloudWatchLogOptionsHasBeenSet = true; m_cloudWatchLogOptions = value; }
-    inline void SetCloudWatchLogOptions(CloudWatchLogOptionsSpecification&& value) { m_cloudWatchLogOptionsHasBeenSet = true; m_cloudWatchLogOptions = std::move(value); }
-    inline VpnTunnelLogOptionsSpecification& WithCloudWatchLogOptions(const CloudWatchLogOptionsSpecification& value) { SetCloudWatchLogOptions(value); return *this;}
-    inline VpnTunnelLogOptionsSpecification& WithCloudWatchLogOptions(CloudWatchLogOptionsSpecification&& value) { SetCloudWatchLogOptions(std::move(value)); return *this;}
+    template<typename CloudWatchLogOptionsT = CloudWatchLogOptionsSpecification>
+    void SetCloudWatchLogOptions(CloudWatchLogOptionsT&& value) { m_cloudWatchLogOptionsHasBeenSet = true; m_cloudWatchLogOptions = std::forward<CloudWatchLogOptionsT>(value); }
+    template<typename CloudWatchLogOptionsT = CloudWatchLogOptionsSpecification>
+    VpnTunnelLogOptionsSpecification& WithCloudWatchLogOptions(CloudWatchLogOptionsT&& value) { SetCloudWatchLogOptions(std::forward<CloudWatchLogOptionsT>(value)); return *this;}
     ///@}
   private:
 

@@ -33,7 +33,7 @@ namespace Model
   class LineSeriesAxisDisplayOptions
   {
   public:
-    AWS_QUICKSIGHT_API LineSeriesAxisDisplayOptions();
+    AWS_QUICKSIGHT_API LineSeriesAxisDisplayOptions() = default;
     AWS_QUICKSIGHT_API LineSeriesAxisDisplayOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API LineSeriesAxisDisplayOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>The options that determine the presentation of the line series axis.</p>
      */
-    inline const AxisDisplayOptions& GetAxisOptions() const{ return m_axisOptions; }
+    inline const AxisDisplayOptions& GetAxisOptions() const { return m_axisOptions; }
     inline bool AxisOptionsHasBeenSet() const { return m_axisOptionsHasBeenSet; }
-    inline void SetAxisOptions(const AxisDisplayOptions& value) { m_axisOptionsHasBeenSet = true; m_axisOptions = value; }
-    inline void SetAxisOptions(AxisDisplayOptions&& value) { m_axisOptionsHasBeenSet = true; m_axisOptions = std::move(value); }
-    inline LineSeriesAxisDisplayOptions& WithAxisOptions(const AxisDisplayOptions& value) { SetAxisOptions(value); return *this;}
-    inline LineSeriesAxisDisplayOptions& WithAxisOptions(AxisDisplayOptions&& value) { SetAxisOptions(std::move(value)); return *this;}
+    template<typename AxisOptionsT = AxisDisplayOptions>
+    void SetAxisOptions(AxisOptionsT&& value) { m_axisOptionsHasBeenSet = true; m_axisOptions = std::forward<AxisOptionsT>(value); }
+    template<typename AxisOptionsT = AxisDisplayOptions>
+    LineSeriesAxisDisplayOptions& WithAxisOptions(AxisOptionsT&& value) { SetAxisOptions(std::forward<AxisOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +56,14 @@ namespace Model
      * <p>The configuration options that determine how missing data is treated during
      * the rendering of a line chart.</p>
      */
-    inline const Aws::Vector<MissingDataConfiguration>& GetMissingDataConfigurations() const{ return m_missingDataConfigurations; }
+    inline const Aws::Vector<MissingDataConfiguration>& GetMissingDataConfigurations() const { return m_missingDataConfigurations; }
     inline bool MissingDataConfigurationsHasBeenSet() const { return m_missingDataConfigurationsHasBeenSet; }
-    inline void SetMissingDataConfigurations(const Aws::Vector<MissingDataConfiguration>& value) { m_missingDataConfigurationsHasBeenSet = true; m_missingDataConfigurations = value; }
-    inline void SetMissingDataConfigurations(Aws::Vector<MissingDataConfiguration>&& value) { m_missingDataConfigurationsHasBeenSet = true; m_missingDataConfigurations = std::move(value); }
-    inline LineSeriesAxisDisplayOptions& WithMissingDataConfigurations(const Aws::Vector<MissingDataConfiguration>& value) { SetMissingDataConfigurations(value); return *this;}
-    inline LineSeriesAxisDisplayOptions& WithMissingDataConfigurations(Aws::Vector<MissingDataConfiguration>&& value) { SetMissingDataConfigurations(std::move(value)); return *this;}
-    inline LineSeriesAxisDisplayOptions& AddMissingDataConfigurations(const MissingDataConfiguration& value) { m_missingDataConfigurationsHasBeenSet = true; m_missingDataConfigurations.push_back(value); return *this; }
-    inline LineSeriesAxisDisplayOptions& AddMissingDataConfigurations(MissingDataConfiguration&& value) { m_missingDataConfigurationsHasBeenSet = true; m_missingDataConfigurations.push_back(std::move(value)); return *this; }
+    template<typename MissingDataConfigurationsT = Aws::Vector<MissingDataConfiguration>>
+    void SetMissingDataConfigurations(MissingDataConfigurationsT&& value) { m_missingDataConfigurationsHasBeenSet = true; m_missingDataConfigurations = std::forward<MissingDataConfigurationsT>(value); }
+    template<typename MissingDataConfigurationsT = Aws::Vector<MissingDataConfiguration>>
+    LineSeriesAxisDisplayOptions& WithMissingDataConfigurations(MissingDataConfigurationsT&& value) { SetMissingDataConfigurations(std::forward<MissingDataConfigurationsT>(value)); return *this;}
+    template<typename MissingDataConfigurationsT = MissingDataConfiguration>
+    LineSeriesAxisDisplayOptions& AddMissingDataConfigurations(MissingDataConfigurationsT&& value) { m_missingDataConfigurationsHasBeenSet = true; m_missingDataConfigurations.emplace_back(std::forward<MissingDataConfigurationsT>(value)); return *this; }
     ///@}
   private:
 

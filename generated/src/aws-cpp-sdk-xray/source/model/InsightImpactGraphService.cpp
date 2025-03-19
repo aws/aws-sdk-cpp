@@ -18,19 +18,7 @@ namespace XRay
 namespace Model
 {
 
-InsightImpactGraphService::InsightImpactGraphService() : 
-    m_referenceId(0),
-    m_referenceIdHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_namesHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_edgesHasBeenSet(false)
-{
-}
-
 InsightImpactGraphService::InsightImpactGraphService(JsonView jsonValue)
-  : InsightImpactGraphService()
 {
   *this = jsonValue;
 }
@@ -40,24 +28,18 @@ InsightImpactGraphService& InsightImpactGraphService::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("ReferenceId"))
   {
     m_referenceId = jsonValue.GetInteger("ReferenceId");
-
     m_referenceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Names"))
   {
     Aws::Utils::Array<JsonView> namesJsonList = jsonValue.GetArray("Names");
@@ -67,14 +49,11 @@ InsightImpactGraphService& InsightImpactGraphService::operator =(JsonView jsonVa
     }
     m_namesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Edges"))
   {
     Aws::Utils::Array<JsonView> edgesJsonList = jsonValue.GetArray("Edges");
@@ -84,7 +63,6 @@ InsightImpactGraphService& InsightImpactGraphService::operator =(JsonView jsonVa
     }
     m_edgesHasBeenSet = true;
   }
-
   return *this;
 }
 

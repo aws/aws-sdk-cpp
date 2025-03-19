@@ -21,7 +21,7 @@ namespace Model
   class DeleteProbeRequest : public NetworkMonitorRequest
   {
   public:
-    AWS_NETWORKMONITOR_API DeleteProbeRequest();
+    AWS_NETWORKMONITOR_API DeleteProbeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>The name of the monitor to delete. </p>
      */
-    inline const Aws::String& GetMonitorName() const{ return m_monitorName; }
+    inline const Aws::String& GetMonitorName() const { return m_monitorName; }
     inline bool MonitorNameHasBeenSet() const { return m_monitorNameHasBeenSet; }
-    inline void SetMonitorName(const Aws::String& value) { m_monitorNameHasBeenSet = true; m_monitorName = value; }
-    inline void SetMonitorName(Aws::String&& value) { m_monitorNameHasBeenSet = true; m_monitorName = std::move(value); }
-    inline void SetMonitorName(const char* value) { m_monitorNameHasBeenSet = true; m_monitorName.assign(value); }
-    inline DeleteProbeRequest& WithMonitorName(const Aws::String& value) { SetMonitorName(value); return *this;}
-    inline DeleteProbeRequest& WithMonitorName(Aws::String&& value) { SetMonitorName(std::move(value)); return *this;}
-    inline DeleteProbeRequest& WithMonitorName(const char* value) { SetMonitorName(value); return *this;}
+    template<typename MonitorNameT = Aws::String>
+    void SetMonitorName(MonitorNameT&& value) { m_monitorNameHasBeenSet = true; m_monitorName = std::forward<MonitorNameT>(value); }
+    template<typename MonitorNameT = Aws::String>
+    DeleteProbeRequest& WithMonitorName(MonitorNameT&& value) { SetMonitorName(std::forward<MonitorNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the probe to delete. </p>
      */
-    inline const Aws::String& GetProbeId() const{ return m_probeId; }
+    inline const Aws::String& GetProbeId() const { return m_probeId; }
     inline bool ProbeIdHasBeenSet() const { return m_probeIdHasBeenSet; }
-    inline void SetProbeId(const Aws::String& value) { m_probeIdHasBeenSet = true; m_probeId = value; }
-    inline void SetProbeId(Aws::String&& value) { m_probeIdHasBeenSet = true; m_probeId = std::move(value); }
-    inline void SetProbeId(const char* value) { m_probeIdHasBeenSet = true; m_probeId.assign(value); }
-    inline DeleteProbeRequest& WithProbeId(const Aws::String& value) { SetProbeId(value); return *this;}
-    inline DeleteProbeRequest& WithProbeId(Aws::String&& value) { SetProbeId(std::move(value)); return *this;}
-    inline DeleteProbeRequest& WithProbeId(const char* value) { SetProbeId(value); return *this;}
+    template<typename ProbeIdT = Aws::String>
+    void SetProbeId(ProbeIdT&& value) { m_probeIdHasBeenSet = true; m_probeId = std::forward<ProbeIdT>(value); }
+    template<typename ProbeIdT = Aws::String>
+    DeleteProbeRequest& WithProbeId(ProbeIdT&& value) { SetProbeId(std::forward<ProbeIdT>(value)); return *this;}
     ///@}
   private:
 

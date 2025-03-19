@@ -12,14 +12,6 @@ using namespace Aws::EKS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateEncryptionConfigRequest::AssociateEncryptionConfigRequest() : 
-    m_clusterNameHasBeenSet(false),
-    m_encryptionConfigHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
-{
-}
-
 Aws::String AssociateEncryptionConfigRequest::SerializePayload() const
 {
   JsonValue payload;

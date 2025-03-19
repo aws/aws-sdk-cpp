@@ -12,37 +12,6 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateUserPoolRequest::CreateUserPoolRequest() : 
-    m_poolNameHasBeenSet(false),
-    m_policiesHasBeenSet(false),
-    m_deletionProtection(DeletionProtectionType::NOT_SET),
-    m_deletionProtectionHasBeenSet(false),
-    m_lambdaConfigHasBeenSet(false),
-    m_autoVerifiedAttributesHasBeenSet(false),
-    m_aliasAttributesHasBeenSet(false),
-    m_usernameAttributesHasBeenSet(false),
-    m_smsVerificationMessageHasBeenSet(false),
-    m_emailVerificationMessageHasBeenSet(false),
-    m_emailVerificationSubjectHasBeenSet(false),
-    m_verificationMessageTemplateHasBeenSet(false),
-    m_smsAuthenticationMessageHasBeenSet(false),
-    m_mfaConfiguration(UserPoolMfaType::NOT_SET),
-    m_mfaConfigurationHasBeenSet(false),
-    m_userAttributeUpdateSettingsHasBeenSet(false),
-    m_deviceConfigurationHasBeenSet(false),
-    m_emailConfigurationHasBeenSet(false),
-    m_smsConfigurationHasBeenSet(false),
-    m_userPoolTagsHasBeenSet(false),
-    m_adminCreateUserConfigHasBeenSet(false),
-    m_schemaHasBeenSet(false),
-    m_userPoolAddOnsHasBeenSet(false),
-    m_usernameConfigurationHasBeenSet(false),
-    m_accountRecoverySettingHasBeenSet(false),
-    m_userPoolTier(UserPoolTierType::NOT_SET),
-    m_userPoolTierHasBeenSet(false)
-{
-}
-
 Aws::String CreateUserPoolRequest::SerializePayload() const
 {
   JsonValue payload;

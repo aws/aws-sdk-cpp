@@ -12,11 +12,6 @@ using namespace Aws::ACMPCA::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCertificateAuthorityCsrRequest::GetCertificateAuthorityCsrRequest() : 
-    m_certificateAuthorityArnHasBeenSet(false)
-{
-}
-
 Aws::String GetCertificateAuthorityCsrRequest::SerializePayload() const
 {
   JsonValue payload;

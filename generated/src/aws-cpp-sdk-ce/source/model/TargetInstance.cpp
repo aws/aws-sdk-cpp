@@ -18,20 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-TargetInstance::TargetInstance() : 
-    m_estimatedMonthlyCostHasBeenSet(false),
-    m_estimatedMonthlySavingsHasBeenSet(false),
-    m_currencyCodeHasBeenSet(false),
-    m_defaultTargetInstance(false),
-    m_defaultTargetInstanceHasBeenSet(false),
-    m_resourceDetailsHasBeenSet(false),
-    m_expectedResourceUtilizationHasBeenSet(false),
-    m_platformDifferencesHasBeenSet(false)
-{
-}
-
 TargetInstance::TargetInstance(JsonView jsonValue)
-  : TargetInstance()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ TargetInstance& TargetInstance::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EstimatedMonthlyCost"))
   {
     m_estimatedMonthlyCost = jsonValue.GetString("EstimatedMonthlyCost");
-
     m_estimatedMonthlyCostHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EstimatedMonthlySavings"))
   {
     m_estimatedMonthlySavings = jsonValue.GetString("EstimatedMonthlySavings");
-
     m_estimatedMonthlySavingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrencyCode"))
   {
     m_currencyCode = jsonValue.GetString("CurrencyCode");
-
     m_currencyCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultTargetInstance"))
   {
     m_defaultTargetInstance = jsonValue.GetBool("DefaultTargetInstance");
-
     m_defaultTargetInstanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceDetails"))
   {
     m_resourceDetails = jsonValue.GetObject("ResourceDetails");
-
     m_resourceDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpectedResourceUtilization"))
   {
     m_expectedResourceUtilization = jsonValue.GetObject("ExpectedResourceUtilization");
-
     m_expectedResourceUtilizationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PlatformDifferences"))
   {
     Aws::Utils::Array<JsonView> platformDifferencesJsonList = jsonValue.GetArray("PlatformDifferences");
@@ -89,7 +64,6 @@ TargetInstance& TargetInstance::operator =(JsonView jsonValue)
     }
     m_platformDifferencesHasBeenSet = true;
   }
-
   return *this;
 }
 

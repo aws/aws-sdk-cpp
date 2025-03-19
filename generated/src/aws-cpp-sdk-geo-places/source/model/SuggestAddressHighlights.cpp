@@ -18,13 +18,7 @@ namespace GeoPlaces
 namespace Model
 {
 
-SuggestAddressHighlights::SuggestAddressHighlights() : 
-    m_labelHasBeenSet(false)
-{
-}
-
 SuggestAddressHighlights::SuggestAddressHighlights(JsonView jsonValue)
-  : SuggestAddressHighlights()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ SuggestAddressHighlights& SuggestAddressHighlights::operator =(JsonView jsonValu
     }
     m_labelHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -37,7 +37,7 @@ namespace Model
   class DescribeSpotFleetRequestHistoryResponse
   {
   public:
-    AWS_EC2_API DescribeSpotFleetRequestHistoryResponse();
+    AWS_EC2_API DescribeSpotFleetRequestHistoryResponse() = default;
     AWS_EC2_API DescribeSpotFleetRequestHistoryResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DescribeSpotFleetRequestHistoryResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -46,13 +46,13 @@ namespace Model
     /**
      * <p>Information about the events in the history of the Spot Fleet request.</p>
      */
-    inline const Aws::Vector<HistoryRecord>& GetHistoryRecords() const{ return m_historyRecords; }
-    inline void SetHistoryRecords(const Aws::Vector<HistoryRecord>& value) { m_historyRecords = value; }
-    inline void SetHistoryRecords(Aws::Vector<HistoryRecord>&& value) { m_historyRecords = std::move(value); }
-    inline DescribeSpotFleetRequestHistoryResponse& WithHistoryRecords(const Aws::Vector<HistoryRecord>& value) { SetHistoryRecords(value); return *this;}
-    inline DescribeSpotFleetRequestHistoryResponse& WithHistoryRecords(Aws::Vector<HistoryRecord>&& value) { SetHistoryRecords(std::move(value)); return *this;}
-    inline DescribeSpotFleetRequestHistoryResponse& AddHistoryRecords(const HistoryRecord& value) { m_historyRecords.push_back(value); return *this; }
-    inline DescribeSpotFleetRequestHistoryResponse& AddHistoryRecords(HistoryRecord&& value) { m_historyRecords.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<HistoryRecord>& GetHistoryRecords() const { return m_historyRecords; }
+    template<typename HistoryRecordsT = Aws::Vector<HistoryRecord>>
+    void SetHistoryRecords(HistoryRecordsT&& value) { m_historyRecordsHasBeenSet = true; m_historyRecords = std::forward<HistoryRecordsT>(value); }
+    template<typename HistoryRecordsT = Aws::Vector<HistoryRecord>>
+    DescribeSpotFleetRequestHistoryResponse& WithHistoryRecords(HistoryRecordsT&& value) { SetHistoryRecords(std::forward<HistoryRecordsT>(value)); return *this;}
+    template<typename HistoryRecordsT = HistoryRecord>
+    DescribeSpotFleetRequestHistoryResponse& AddHistoryRecords(HistoryRecordsT&& value) { m_historyRecordsHasBeenSet = true; m_historyRecords.emplace_back(std::forward<HistoryRecordsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -62,11 +62,11 @@ namespace Model
      * to this time were retrieved.</p> <p>If <code>nextToken</code> indicates that
      * there are more items, this value is not present.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastEvaluatedTime() const{ return m_lastEvaluatedTime; }
-    inline void SetLastEvaluatedTime(const Aws::Utils::DateTime& value) { m_lastEvaluatedTime = value; }
-    inline void SetLastEvaluatedTime(Aws::Utils::DateTime&& value) { m_lastEvaluatedTime = std::move(value); }
-    inline DescribeSpotFleetRequestHistoryResponse& WithLastEvaluatedTime(const Aws::Utils::DateTime& value) { SetLastEvaluatedTime(value); return *this;}
-    inline DescribeSpotFleetRequestHistoryResponse& WithLastEvaluatedTime(Aws::Utils::DateTime&& value) { SetLastEvaluatedTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastEvaluatedTime() const { return m_lastEvaluatedTime; }
+    template<typename LastEvaluatedTimeT = Aws::Utils::DateTime>
+    void SetLastEvaluatedTime(LastEvaluatedTimeT&& value) { m_lastEvaluatedTimeHasBeenSet = true; m_lastEvaluatedTime = std::forward<LastEvaluatedTimeT>(value); }
+    template<typename LastEvaluatedTimeT = Aws::Utils::DateTime>
+    DescribeSpotFleetRequestHistoryResponse& WithLastEvaluatedTime(LastEvaluatedTimeT&& value) { SetLastEvaluatedTime(std::forward<LastEvaluatedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,26 +74,22 @@ namespace Model
      * <p>The token to include in another request to get the next page of items. This
      * value is <code>null</code> when there are no more items to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeSpotFleetRequestHistoryResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeSpotFleetRequestHistoryResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeSpotFleetRequestHistoryResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeSpotFleetRequestHistoryResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Spot Fleet request.</p>
      */
-    inline const Aws::String& GetSpotFleetRequestId() const{ return m_spotFleetRequestId; }
-    inline void SetSpotFleetRequestId(const Aws::String& value) { m_spotFleetRequestId = value; }
-    inline void SetSpotFleetRequestId(Aws::String&& value) { m_spotFleetRequestId = std::move(value); }
-    inline void SetSpotFleetRequestId(const char* value) { m_spotFleetRequestId.assign(value); }
-    inline DescribeSpotFleetRequestHistoryResponse& WithSpotFleetRequestId(const Aws::String& value) { SetSpotFleetRequestId(value); return *this;}
-    inline DescribeSpotFleetRequestHistoryResponse& WithSpotFleetRequestId(Aws::String&& value) { SetSpotFleetRequestId(std::move(value)); return *this;}
-    inline DescribeSpotFleetRequestHistoryResponse& WithSpotFleetRequestId(const char* value) { SetSpotFleetRequestId(value); return *this;}
+    inline const Aws::String& GetSpotFleetRequestId() const { return m_spotFleetRequestId; }
+    template<typename SpotFleetRequestIdT = Aws::String>
+    void SetSpotFleetRequestId(SpotFleetRequestIdT&& value) { m_spotFleetRequestIdHasBeenSet = true; m_spotFleetRequestId = std::forward<SpotFleetRequestIdT>(value); }
+    template<typename SpotFleetRequestIdT = Aws::String>
+    DescribeSpotFleetRequestHistoryResponse& WithSpotFleetRequestId(SpotFleetRequestIdT&& value) { SetSpotFleetRequestId(std::forward<SpotFleetRequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,34 +97,40 @@ namespace Model
      * <p>The starting date and time for the events, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTime = std::move(value); }
-    inline DescribeSpotFleetRequestHistoryResponse& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline DescribeSpotFleetRequestHistoryResponse& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    DescribeSpotFleetRequestHistoryResponse& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeSpotFleetRequestHistoryResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeSpotFleetRequestHistoryResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeSpotFleetRequestHistoryResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<HistoryRecord> m_historyRecords;
+    bool m_historyRecordsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastEvaluatedTime;
+    Aws::Utils::DateTime m_lastEvaluatedTime{};
+    bool m_lastEvaluatedTimeHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_spotFleetRequestId;
+    bool m_spotFleetRequestIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
+    bool m_startTimeHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

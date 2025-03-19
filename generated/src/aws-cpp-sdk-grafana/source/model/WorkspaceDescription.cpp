@@ -18,42 +18,7 @@ namespace ManagedGrafana
 namespace Model
 {
 
-WorkspaceDescription::WorkspaceDescription() : 
-    m_accountAccessType(AccountAccessType::NOT_SET),
-    m_accountAccessTypeHasBeenSet(false),
-    m_authenticationHasBeenSet(false),
-    m_createdHasBeenSet(false),
-    m_dataSourcesHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_freeTrialConsumed(false),
-    m_freeTrialConsumedHasBeenSet(false),
-    m_freeTrialExpirationHasBeenSet(false),
-    m_grafanaTokenHasBeenSet(false),
-    m_grafanaVersionHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_licenseExpirationHasBeenSet(false),
-    m_licenseType(LicenseType::NOT_SET),
-    m_licenseTypeHasBeenSet(false),
-    m_modifiedHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_networkAccessControlHasBeenSet(false),
-    m_notificationDestinationsHasBeenSet(false),
-    m_organizationRoleNameHasBeenSet(false),
-    m_organizationalUnitsHasBeenSet(false),
-    m_permissionType(PermissionType::NOT_SET),
-    m_permissionTypeHasBeenSet(false),
-    m_stackSetNameHasBeenSet(false),
-    m_status(WorkspaceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_vpcConfigurationHasBeenSet(false),
-    m_workspaceRoleArnHasBeenSet(false)
-{
-}
-
 WorkspaceDescription::WorkspaceDescription(JsonView jsonValue)
-  : WorkspaceDescription()
 {
   *this = jsonValue;
 }
@@ -63,24 +28,18 @@ WorkspaceDescription& WorkspaceDescription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accountAccessType"))
   {
     m_accountAccessType = AccountAccessTypeMapper::GetAccountAccessTypeForName(jsonValue.GetString("accountAccessType"));
-
     m_accountAccessTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authentication"))
   {
     m_authentication = jsonValue.GetObject("authentication");
-
     m_authenticationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("created"))
   {
     m_created = jsonValue.GetDouble("created");
-
     m_createdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataSources"))
   {
     Aws::Utils::Array<JsonView> dataSourcesJsonList = jsonValue.GetArray("dataSources");
@@ -90,91 +49,66 @@ WorkspaceDescription& WorkspaceDescription::operator =(JsonView jsonValue)
     }
     m_dataSourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endpoint"))
   {
     m_endpoint = jsonValue.GetString("endpoint");
-
     m_endpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("freeTrialConsumed"))
   {
     m_freeTrialConsumed = jsonValue.GetBool("freeTrialConsumed");
-
     m_freeTrialConsumedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("freeTrialExpiration"))
   {
     m_freeTrialExpiration = jsonValue.GetDouble("freeTrialExpiration");
-
     m_freeTrialExpirationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("grafanaToken"))
   {
     m_grafanaToken = jsonValue.GetString("grafanaToken");
-
     m_grafanaTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("grafanaVersion"))
   {
     m_grafanaVersion = jsonValue.GetString("grafanaVersion");
-
     m_grafanaVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("licenseExpiration"))
   {
     m_licenseExpiration = jsonValue.GetDouble("licenseExpiration");
-
     m_licenseExpirationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("licenseType"))
   {
     m_licenseType = LicenseTypeMapper::GetLicenseTypeForName(jsonValue.GetString("licenseType"));
-
     m_licenseTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modified"))
   {
     m_modified = jsonValue.GetDouble("modified");
-
     m_modifiedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkAccessControl"))
   {
     m_networkAccessControl = jsonValue.GetObject("networkAccessControl");
-
     m_networkAccessControlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("notificationDestinations"))
   {
     Aws::Utils::Array<JsonView> notificationDestinationsJsonList = jsonValue.GetArray("notificationDestinations");
@@ -184,14 +118,11 @@ WorkspaceDescription& WorkspaceDescription::operator =(JsonView jsonValue)
     }
     m_notificationDestinationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("organizationRoleName"))
   {
     m_organizationRoleName = jsonValue.GetString("organizationRoleName");
-
     m_organizationRoleNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("organizationalUnits"))
   {
     Aws::Utils::Array<JsonView> organizationalUnitsJsonList = jsonValue.GetArray("organizationalUnits");
@@ -201,28 +132,21 @@ WorkspaceDescription& WorkspaceDescription::operator =(JsonView jsonValue)
     }
     m_organizationalUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("permissionType"))
   {
     m_permissionType = PermissionTypeMapper::GetPermissionTypeForName(jsonValue.GetString("permissionType"));
-
     m_permissionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stackSetName"))
   {
     m_stackSetName = jsonValue.GetString("stackSetName");
-
     m_stackSetNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = WorkspaceStatusMapper::GetWorkspaceStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -232,21 +156,16 @@ WorkspaceDescription& WorkspaceDescription::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcConfiguration"))
   {
     m_vpcConfiguration = jsonValue.GetObject("vpcConfiguration");
-
     m_vpcConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workspaceRoleArn"))
   {
     m_workspaceRoleArn = jsonValue.GetString("workspaceRoleArn");
-
     m_workspaceRoleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

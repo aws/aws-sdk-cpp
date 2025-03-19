@@ -18,27 +18,7 @@ namespace XRay
 namespace Model
 {
 
-Service::Service() : 
-    m_referenceId(0),
-    m_referenceIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_namesHasBeenSet(false),
-    m_root(false),
-    m_rootHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_edgesHasBeenSet(false),
-    m_summaryStatisticsHasBeenSet(false),
-    m_durationHistogramHasBeenSet(false),
-    m_responseTimeHistogramHasBeenSet(false)
-{
-}
-
 Service::Service(JsonView jsonValue)
-  : Service()
 {
   *this = jsonValue;
 }
@@ -48,17 +28,13 @@ Service& Service::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ReferenceId"))
   {
     m_referenceId = jsonValue.GetInteger("ReferenceId");
-
     m_referenceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Names"))
   {
     Aws::Utils::Array<JsonView> namesJsonList = jsonValue.GetArray("Names");
@@ -68,49 +44,36 @@ Service& Service::operator =(JsonView jsonValue)
     }
     m_namesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Root"))
   {
     m_root = jsonValue.GetBool("Root");
-
     m_rootHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = jsonValue.GetString("State");
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Edges"))
   {
     Aws::Utils::Array<JsonView> edgesJsonList = jsonValue.GetArray("Edges");
@@ -120,14 +83,11 @@ Service& Service::operator =(JsonView jsonValue)
     }
     m_edgesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SummaryStatistics"))
   {
     m_summaryStatistics = jsonValue.GetObject("SummaryStatistics");
-
     m_summaryStatisticsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DurationHistogram"))
   {
     Aws::Utils::Array<JsonView> durationHistogramJsonList = jsonValue.GetArray("DurationHistogram");
@@ -137,7 +97,6 @@ Service& Service::operator =(JsonView jsonValue)
     }
     m_durationHistogramHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResponseTimeHistogram"))
   {
     Aws::Utils::Array<JsonView> responseTimeHistogramJsonList = jsonValue.GetArray("ResponseTimeHistogram");
@@ -147,7 +106,6 @@ Service& Service::operator =(JsonView jsonValue)
     }
     m_responseTimeHistogramHasBeenSet = true;
   }
-
   return *this;
 }
 

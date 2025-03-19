@@ -18,15 +18,7 @@ namespace Schemas
 namespace Model
 {
 
-RegistrySummary::RegistrySummary() : 
-    m_registryArnHasBeenSet(false),
-    m_registryNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 RegistrySummary::RegistrySummary(JsonView jsonValue)
-  : RegistrySummary()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ RegistrySummary& RegistrySummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RegistryArn"))
   {
     m_registryArn = jsonValue.GetString("RegistryArn");
-
     m_registryArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegistryName"))
   {
     m_registryName = jsonValue.GetString("RegistryName");
-
     m_registryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -56,7 +44,6 @@ RegistrySummary& RegistrySummary::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

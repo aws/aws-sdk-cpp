@@ -45,7 +45,7 @@ namespace Model
   class S3InputFileLocation
   {
   public:
-    AWS_TRANSFER_API S3InputFileLocation();
+    AWS_TRANSFER_API S3InputFileLocation() = default;
     AWS_TRANSFER_API S3InputFileLocation(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API S3InputFileLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,14 +55,12 @@ namespace Model
     /**
      * <p>Specifies the S3 bucket for the customer input file.</p>
      */
-    inline const Aws::String& GetBucket() const{ return m_bucket; }
+    inline const Aws::String& GetBucket() const { return m_bucket; }
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
-    inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
-    inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
-    inline S3InputFileLocation& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
-    inline S3InputFileLocation& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
-    inline S3InputFileLocation& WithBucket(const char* value) { SetBucket(value); return *this;}
+    template<typename BucketT = Aws::String>
+    void SetBucket(BucketT&& value) { m_bucketHasBeenSet = true; m_bucket = std::forward<BucketT>(value); }
+    template<typename BucketT = Aws::String>
+    S3InputFileLocation& WithBucket(BucketT&& value) { SetBucket(std::forward<BucketT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +68,12 @@ namespace Model
      * <p>The name assigned to the file when it was created in Amazon S3. You use the
      * object key to retrieve the object.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline S3InputFileLocation& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline S3InputFileLocation& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline S3InputFileLocation& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    S3InputFileLocation& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
   private:
 

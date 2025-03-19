@@ -20,16 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-FunctionConfig::FunctionConfig() : 
-    m_commentHasBeenSet(false),
-    m_runtime(FunctionRuntime::NOT_SET),
-    m_runtimeHasBeenSet(false),
-    m_keyValueStoreAssociationsHasBeenSet(false)
-{
-}
-
 FunctionConfig::FunctionConfig(const XmlNode& xmlNode)
-  : FunctionConfig()
 {
   *this = xmlNode;
 }
@@ -49,7 +40,7 @@ FunctionConfig& FunctionConfig::operator =(const XmlNode& xmlNode)
     XmlNode runtimeNode = resultNode.FirstChild("Runtime");
     if(!runtimeNode.IsNull())
     {
-      m_runtime = FunctionRuntimeMapper::GetFunctionRuntimeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(runtimeNode.GetText()).c_str()).c_str());
+      m_runtime = FunctionRuntimeMapper::GetFunctionRuntimeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(runtimeNode.GetText()).c_str()));
       m_runtimeHasBeenSet = true;
     }
     XmlNode keyValueStoreAssociationsNode = resultNode.FirstChild("KeyValueStoreAssociations");

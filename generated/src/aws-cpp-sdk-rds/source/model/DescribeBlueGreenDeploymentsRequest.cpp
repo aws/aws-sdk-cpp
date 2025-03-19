@@ -10,15 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-DescribeBlueGreenDeploymentsRequest::DescribeBlueGreenDeploymentsRequest() : 
-    m_blueGreenDeploymentIdentifierHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeBlueGreenDeploymentsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

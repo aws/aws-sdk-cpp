@@ -57,7 +57,7 @@ namespace Model
   class Expression
   {
   public:
-    AWS_FREETIER_API Expression();
+    AWS_FREETIER_API Expression() = default;
     AWS_FREETIER_API Expression(Aws::Utils::Json::JsonView jsonValue);
     AWS_FREETIER_API Expression& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FREETIER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -68,26 +68,26 @@ namespace Model
      * <p>Return results that match all <code>Expressions</code> that you specified in
      * the array.</p>
      */
-    inline const Aws::Vector<Expression>& GetAnd() const{ return m_and; }
+    inline const Aws::Vector<Expression>& GetAnd() const { return m_and; }
     inline bool AndHasBeenSet() const { return m_andHasBeenSet; }
-    inline void SetAnd(const Aws::Vector<Expression>& value) { m_andHasBeenSet = true; m_and = value; }
-    inline void SetAnd(Aws::Vector<Expression>&& value) { m_andHasBeenSet = true; m_and = std::move(value); }
-    inline Expression& WithAnd(const Aws::Vector<Expression>& value) { SetAnd(value); return *this;}
-    inline Expression& WithAnd(Aws::Vector<Expression>&& value) { SetAnd(std::move(value)); return *this;}
-    inline Expression& AddAnd(const Expression& value) { m_andHasBeenSet = true; m_and.push_back(value); return *this; }
-    inline Expression& AddAnd(Expression&& value) { m_andHasBeenSet = true; m_and.push_back(std::move(value)); return *this; }
+    template<typename AndT = Aws::Vector<Expression>>
+    void SetAnd(AndT&& value) { m_andHasBeenSet = true; m_and = std::forward<AndT>(value); }
+    template<typename AndT = Aws::Vector<Expression>>
+    Expression& WithAnd(AndT&& value) { SetAnd(std::forward<AndT>(value)); return *this;}
+    template<typename AndT = Expression>
+    Expression& AddAnd(AndT&& value) { m_andHasBeenSet = true; m_and.emplace_back(std::forward<AndT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The specific dimension, values, and match type to filter objects with.</p>
      */
-    inline const DimensionValues& GetDimensions() const{ return m_dimensions; }
+    inline const DimensionValues& GetDimensions() const { return m_dimensions; }
     inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
-    inline void SetDimensions(const DimensionValues& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
-    inline void SetDimensions(DimensionValues&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::move(value); }
-    inline Expression& WithDimensions(const DimensionValues& value) { SetDimensions(value); return *this;}
-    inline Expression& WithDimensions(DimensionValues&& value) { SetDimensions(std::move(value)); return *this;}
+    template<typename DimensionsT = DimensionValues>
+    void SetDimensions(DimensionsT&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::forward<DimensionsT>(value); }
+    template<typename DimensionsT = DimensionValues>
+    Expression& WithDimensions(DimensionsT&& value) { SetDimensions(std::forward<DimensionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,12 +95,17 @@ namespace Model
      * <p>Return results that don’t match the <code>Expression</code> that you
      * specified.</p>
      */
-    AWS_FREETIER_API const Expression& GetNot() const;
-    AWS_FREETIER_API bool NotHasBeenSet() const;
-    AWS_FREETIER_API void SetNot(const Expression& value);
-    AWS_FREETIER_API void SetNot(Expression&& value);
-    AWS_FREETIER_API Expression& WithNot(const Expression& value);
-    AWS_FREETIER_API Expression& WithNot(Expression&& value);
+    inline const Expression& GetNot() const{
+      return *m_not;
+    }
+    inline bool NotHasBeenSet() const { return m_notHasBeenSet; }
+    template<typename NotT = Expression>
+    void SetNot(NotT&& value) {
+      m_notHasBeenSet = true; 
+      m_not = Aws::MakeShared<Expression>("Expression", std::forward<NotT>(value));
+    }
+    template<typename NotT = Expression>
+    Expression& WithNot(NotT&& value) { SetNot(std::forward<NotT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,14 +113,14 @@ namespace Model
      * <p>Return results that match any of the <code>Expressions</code> that you
      * specified. in the array.</p>
      */
-    inline const Aws::Vector<Expression>& GetOr() const{ return m_or; }
+    inline const Aws::Vector<Expression>& GetOr() const { return m_or; }
     inline bool OrHasBeenSet() const { return m_orHasBeenSet; }
-    inline void SetOr(const Aws::Vector<Expression>& value) { m_orHasBeenSet = true; m_or = value; }
-    inline void SetOr(Aws::Vector<Expression>&& value) { m_orHasBeenSet = true; m_or = std::move(value); }
-    inline Expression& WithOr(const Aws::Vector<Expression>& value) { SetOr(value); return *this;}
-    inline Expression& WithOr(Aws::Vector<Expression>&& value) { SetOr(std::move(value)); return *this;}
-    inline Expression& AddOr(const Expression& value) { m_orHasBeenSet = true; m_or.push_back(value); return *this; }
-    inline Expression& AddOr(Expression&& value) { m_orHasBeenSet = true; m_or.push_back(std::move(value)); return *this; }
+    template<typename OrT = Aws::Vector<Expression>>
+    void SetOr(OrT&& value) { m_orHasBeenSet = true; m_or = std::forward<OrT>(value); }
+    template<typename OrT = Aws::Vector<Expression>>
+    Expression& WithOr(OrT&& value) { SetOr(std::forward<OrT>(value)); return *this;}
+    template<typename OrT = Expression>
+    Expression& AddOr(OrT&& value) { m_orHasBeenSet = true; m_or.emplace_back(std::forward<OrT>(value)); return *this; }
     ///@}
   private:
 

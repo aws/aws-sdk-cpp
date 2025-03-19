@@ -18,15 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-ProtectedJobReceiverConfiguration::ProtectedJobReceiverConfiguration() : 
-    m_analysisType(ProtectedJobAnalysisType::NOT_SET),
-    m_analysisTypeHasBeenSet(false),
-    m_configurationDetailsHasBeenSet(false)
-{
-}
-
 ProtectedJobReceiverConfiguration::ProtectedJobReceiverConfiguration(JsonView jsonValue)
-  : ProtectedJobReceiverConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ProtectedJobReceiverConfiguration& ProtectedJobReceiverConfiguration::operator =
   if(jsonValue.ValueExists("analysisType"))
   {
     m_analysisType = ProtectedJobAnalysisTypeMapper::GetProtectedJobAnalysisTypeForName(jsonValue.GetString("analysisType"));
-
     m_analysisTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configurationDetails"))
   {
     m_configurationDetails = jsonValue.GetObject("configurationDetails");
-
     m_configurationDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

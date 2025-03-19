@@ -30,7 +30,7 @@ namespace Model
   class GetApplicationComponentDetailsResult
   {
   public:
-    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API GetApplicationComponentDetailsResult();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API GetApplicationComponentDetailsResult() = default;
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API GetApplicationComponentDetailsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API GetApplicationComponentDetailsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,11 +39,11 @@ namespace Model
     /**
      * <p> Detailed information about an application component. </p>
      */
-    inline const ApplicationComponentDetail& GetApplicationComponentDetail() const{ return m_applicationComponentDetail; }
-    inline void SetApplicationComponentDetail(const ApplicationComponentDetail& value) { m_applicationComponentDetail = value; }
-    inline void SetApplicationComponentDetail(ApplicationComponentDetail&& value) { m_applicationComponentDetail = std::move(value); }
-    inline GetApplicationComponentDetailsResult& WithApplicationComponentDetail(const ApplicationComponentDetail& value) { SetApplicationComponentDetail(value); return *this;}
-    inline GetApplicationComponentDetailsResult& WithApplicationComponentDetail(ApplicationComponentDetail&& value) { SetApplicationComponentDetail(std::move(value)); return *this;}
+    inline const ApplicationComponentDetail& GetApplicationComponentDetail() const { return m_applicationComponentDetail; }
+    template<typename ApplicationComponentDetailT = ApplicationComponentDetail>
+    void SetApplicationComponentDetail(ApplicationComponentDetailT&& value) { m_applicationComponentDetailHasBeenSet = true; m_applicationComponentDetail = std::forward<ApplicationComponentDetailT>(value); }
+    template<typename ApplicationComponentDetailT = ApplicationComponentDetail>
+    GetApplicationComponentDetailsResult& WithApplicationComponentDetail(ApplicationComponentDetailT&& value) { SetApplicationComponentDetail(std::forward<ApplicationComponentDetailT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,13 +51,13 @@ namespace Model
      * <p> The associated application group as defined in AWS Application Discovery
      * Service. </p>
      */
-    inline const Aws::Vector<AssociatedApplication>& GetAssociatedApplications() const{ return m_associatedApplications; }
-    inline void SetAssociatedApplications(const Aws::Vector<AssociatedApplication>& value) { m_associatedApplications = value; }
-    inline void SetAssociatedApplications(Aws::Vector<AssociatedApplication>&& value) { m_associatedApplications = std::move(value); }
-    inline GetApplicationComponentDetailsResult& WithAssociatedApplications(const Aws::Vector<AssociatedApplication>& value) { SetAssociatedApplications(value); return *this;}
-    inline GetApplicationComponentDetailsResult& WithAssociatedApplications(Aws::Vector<AssociatedApplication>&& value) { SetAssociatedApplications(std::move(value)); return *this;}
-    inline GetApplicationComponentDetailsResult& AddAssociatedApplications(const AssociatedApplication& value) { m_associatedApplications.push_back(value); return *this; }
-    inline GetApplicationComponentDetailsResult& AddAssociatedApplications(AssociatedApplication&& value) { m_associatedApplications.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AssociatedApplication>& GetAssociatedApplications() const { return m_associatedApplications; }
+    template<typename AssociatedApplicationsT = Aws::Vector<AssociatedApplication>>
+    void SetAssociatedApplications(AssociatedApplicationsT&& value) { m_associatedApplicationsHasBeenSet = true; m_associatedApplications = std::forward<AssociatedApplicationsT>(value); }
+    template<typename AssociatedApplicationsT = Aws::Vector<AssociatedApplication>>
+    GetApplicationComponentDetailsResult& WithAssociatedApplications(AssociatedApplicationsT&& value) { SetAssociatedApplications(std::forward<AssociatedApplicationsT>(value)); return *this;}
+    template<typename AssociatedApplicationsT = AssociatedApplication>
+    GetApplicationComponentDetailsResult& AddAssociatedApplications(AssociatedApplicationsT&& value) { m_associatedApplicationsHasBeenSet = true; m_associatedApplications.emplace_back(std::forward<AssociatedApplicationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -65,14 +65,13 @@ namespace Model
      * <p> A list of the IDs of the servers on which the application component is
      * running. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetAssociatedServerIds() const{ return m_associatedServerIds; }
-    inline void SetAssociatedServerIds(const Aws::Vector<Aws::String>& value) { m_associatedServerIds = value; }
-    inline void SetAssociatedServerIds(Aws::Vector<Aws::String>&& value) { m_associatedServerIds = std::move(value); }
-    inline GetApplicationComponentDetailsResult& WithAssociatedServerIds(const Aws::Vector<Aws::String>& value) { SetAssociatedServerIds(value); return *this;}
-    inline GetApplicationComponentDetailsResult& WithAssociatedServerIds(Aws::Vector<Aws::String>&& value) { SetAssociatedServerIds(std::move(value)); return *this;}
-    inline GetApplicationComponentDetailsResult& AddAssociatedServerIds(const Aws::String& value) { m_associatedServerIds.push_back(value); return *this; }
-    inline GetApplicationComponentDetailsResult& AddAssociatedServerIds(Aws::String&& value) { m_associatedServerIds.push_back(std::move(value)); return *this; }
-    inline GetApplicationComponentDetailsResult& AddAssociatedServerIds(const char* value) { m_associatedServerIds.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetAssociatedServerIds() const { return m_associatedServerIds; }
+    template<typename AssociatedServerIdsT = Aws::Vector<Aws::String>>
+    void SetAssociatedServerIds(AssociatedServerIdsT&& value) { m_associatedServerIdsHasBeenSet = true; m_associatedServerIds = std::forward<AssociatedServerIdsT>(value); }
+    template<typename AssociatedServerIdsT = Aws::Vector<Aws::String>>
+    GetApplicationComponentDetailsResult& WithAssociatedServerIds(AssociatedServerIdsT&& value) { SetAssociatedServerIds(std::forward<AssociatedServerIdsT>(value)); return *this;}
+    template<typename AssociatedServerIdsT = Aws::String>
+    GetApplicationComponentDetailsResult& AddAssociatedServerIds(AssociatedServerIdsT&& value) { m_associatedServerIdsHasBeenSet = true; m_associatedServerIds.emplace_back(std::forward<AssociatedServerIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -80,32 +79,35 @@ namespace Model
      * <p> Set to true if the application component belongs to more than one
      * application group. </p>
      */
-    inline bool GetMoreApplicationResource() const{ return m_moreApplicationResource; }
-    inline void SetMoreApplicationResource(bool value) { m_moreApplicationResource = value; }
+    inline bool GetMoreApplicationResource() const { return m_moreApplicationResource; }
+    inline void SetMoreApplicationResource(bool value) { m_moreApplicationResourceHasBeenSet = true; m_moreApplicationResource = value; }
     inline GetApplicationComponentDetailsResult& WithMoreApplicationResource(bool value) { SetMoreApplicationResource(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetApplicationComponentDetailsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetApplicationComponentDetailsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetApplicationComponentDetailsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetApplicationComponentDetailsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ApplicationComponentDetail m_applicationComponentDetail;
+    bool m_applicationComponentDetailHasBeenSet = false;
 
     Aws::Vector<AssociatedApplication> m_associatedApplications;
+    bool m_associatedApplicationsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_associatedServerIds;
+    bool m_associatedServerIdsHasBeenSet = false;
 
-    bool m_moreApplicationResource;
+    bool m_moreApplicationResource{false};
+    bool m_moreApplicationResourceHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

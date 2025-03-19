@@ -18,19 +18,7 @@ namespace kendra
 namespace Model
 {
 
-DatabaseConfiguration::DatabaseConfiguration() : 
-    m_databaseEngineType(DatabaseEngineType::NOT_SET),
-    m_databaseEngineTypeHasBeenSet(false),
-    m_connectionConfigurationHasBeenSet(false),
-    m_vpcConfigurationHasBeenSet(false),
-    m_columnConfigurationHasBeenSet(false),
-    m_aclConfigurationHasBeenSet(false),
-    m_sqlConfigurationHasBeenSet(false)
-{
-}
-
 DatabaseConfiguration::DatabaseConfiguration(JsonView jsonValue)
-  : DatabaseConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ DatabaseConfiguration& DatabaseConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DatabaseEngineType"))
   {
     m_databaseEngineType = DatabaseEngineTypeMapper::GetDatabaseEngineTypeForName(jsonValue.GetString("DatabaseEngineType"));
-
     m_databaseEngineTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionConfiguration"))
   {
     m_connectionConfiguration = jsonValue.GetObject("ConnectionConfiguration");
-
     m_connectionConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcConfiguration"))
   {
     m_vpcConfiguration = jsonValue.GetObject("VpcConfiguration");
-
     m_vpcConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColumnConfiguration"))
   {
     m_columnConfiguration = jsonValue.GetObject("ColumnConfiguration");
-
     m_columnConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AclConfiguration"))
   {
     m_aclConfiguration = jsonValue.GetObject("AclConfiguration");
-
     m_aclConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SqlConfiguration"))
   {
     m_sqlConfiguration = jsonValue.GetObject("SqlConfiguration");
-
     m_sqlConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

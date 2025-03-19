@@ -18,23 +18,7 @@ namespace Transfer
 namespace Model
 {
 
-DescribedSecurityPolicy::DescribedSecurityPolicy() : 
-    m_fips(false),
-    m_fipsHasBeenSet(false),
-    m_securityPolicyNameHasBeenSet(false),
-    m_sshCiphersHasBeenSet(false),
-    m_sshKexsHasBeenSet(false),
-    m_sshMacsHasBeenSet(false),
-    m_tlsCiphersHasBeenSet(false),
-    m_sshHostKeyAlgorithmsHasBeenSet(false),
-    m_type(SecurityPolicyResourceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_protocolsHasBeenSet(false)
-{
-}
-
 DescribedSecurityPolicy::DescribedSecurityPolicy(JsonView jsonValue)
-  : DescribedSecurityPolicy()
 {
   *this = jsonValue;
 }
@@ -44,17 +28,13 @@ DescribedSecurityPolicy& DescribedSecurityPolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Fips"))
   {
     m_fips = jsonValue.GetBool("Fips");
-
     m_fipsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityPolicyName"))
   {
     m_securityPolicyName = jsonValue.GetString("SecurityPolicyName");
-
     m_securityPolicyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SshCiphers"))
   {
     Aws::Utils::Array<JsonView> sshCiphersJsonList = jsonValue.GetArray("SshCiphers");
@@ -64,7 +44,6 @@ DescribedSecurityPolicy& DescribedSecurityPolicy::operator =(JsonView jsonValue)
     }
     m_sshCiphersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SshKexs"))
   {
     Aws::Utils::Array<JsonView> sshKexsJsonList = jsonValue.GetArray("SshKexs");
@@ -74,7 +53,6 @@ DescribedSecurityPolicy& DescribedSecurityPolicy::operator =(JsonView jsonValue)
     }
     m_sshKexsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SshMacs"))
   {
     Aws::Utils::Array<JsonView> sshMacsJsonList = jsonValue.GetArray("SshMacs");
@@ -84,7 +62,6 @@ DescribedSecurityPolicy& DescribedSecurityPolicy::operator =(JsonView jsonValue)
     }
     m_sshMacsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TlsCiphers"))
   {
     Aws::Utils::Array<JsonView> tlsCiphersJsonList = jsonValue.GetArray("TlsCiphers");
@@ -94,7 +71,6 @@ DescribedSecurityPolicy& DescribedSecurityPolicy::operator =(JsonView jsonValue)
     }
     m_tlsCiphersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SshHostKeyAlgorithms"))
   {
     Aws::Utils::Array<JsonView> sshHostKeyAlgorithmsJsonList = jsonValue.GetArray("SshHostKeyAlgorithms");
@@ -104,14 +80,11 @@ DescribedSecurityPolicy& DescribedSecurityPolicy::operator =(JsonView jsonValue)
     }
     m_sshHostKeyAlgorithmsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = SecurityPolicyResourceTypeMapper::GetSecurityPolicyResourceTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Protocols"))
   {
     Aws::Utils::Array<JsonView> protocolsJsonList = jsonValue.GetArray("Protocols");
@@ -121,7 +94,6 @@ DescribedSecurityPolicy& DescribedSecurityPolicy::operator =(JsonView jsonValue)
     }
     m_protocolsHasBeenSet = true;
   }
-
   return *this;
 }
 

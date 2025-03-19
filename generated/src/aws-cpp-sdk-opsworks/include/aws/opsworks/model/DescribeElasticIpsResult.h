@@ -35,7 +35,7 @@ namespace Model
   class DescribeElasticIpsResult
   {
   public:
-    AWS_OPSWORKS_API DescribeElasticIpsResult();
+    AWS_OPSWORKS_API DescribeElasticIpsResult() = default;
     AWS_OPSWORKS_API DescribeElasticIpsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OPSWORKS_API DescribeElasticIpsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,30 +45,30 @@ namespace Model
      * <p>An <code>ElasticIps</code> object that describes the specified Elastic IP
      * addresses.</p>
      */
-    inline const Aws::Vector<ElasticIp>& GetElasticIps() const{ return m_elasticIps; }
-    inline void SetElasticIps(const Aws::Vector<ElasticIp>& value) { m_elasticIps = value; }
-    inline void SetElasticIps(Aws::Vector<ElasticIp>&& value) { m_elasticIps = std::move(value); }
-    inline DescribeElasticIpsResult& WithElasticIps(const Aws::Vector<ElasticIp>& value) { SetElasticIps(value); return *this;}
-    inline DescribeElasticIpsResult& WithElasticIps(Aws::Vector<ElasticIp>&& value) { SetElasticIps(std::move(value)); return *this;}
-    inline DescribeElasticIpsResult& AddElasticIps(const ElasticIp& value) { m_elasticIps.push_back(value); return *this; }
-    inline DescribeElasticIpsResult& AddElasticIps(ElasticIp&& value) { m_elasticIps.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ElasticIp>& GetElasticIps() const { return m_elasticIps; }
+    template<typename ElasticIpsT = Aws::Vector<ElasticIp>>
+    void SetElasticIps(ElasticIpsT&& value) { m_elasticIpsHasBeenSet = true; m_elasticIps = std::forward<ElasticIpsT>(value); }
+    template<typename ElasticIpsT = Aws::Vector<ElasticIp>>
+    DescribeElasticIpsResult& WithElasticIps(ElasticIpsT&& value) { SetElasticIps(std::forward<ElasticIpsT>(value)); return *this;}
+    template<typename ElasticIpsT = ElasticIp>
+    DescribeElasticIpsResult& AddElasticIps(ElasticIpsT&& value) { m_elasticIpsHasBeenSet = true; m_elasticIps.emplace_back(std::forward<ElasticIpsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeElasticIpsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeElasticIpsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeElasticIpsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeElasticIpsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ElasticIp> m_elasticIps;
+    bool m_elasticIpsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,20 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-SidewalkDeviceMetadata::SidewalkDeviceMetadata() : 
-    m_rssi(0),
-    m_rssiHasBeenSet(false),
-    m_batteryLevel(BatteryLevel::NOT_SET),
-    m_batteryLevelHasBeenSet(false),
-    m_event(Event::NOT_SET),
-    m_eventHasBeenSet(false),
-    m_deviceState(DeviceState::NOT_SET),
-    m_deviceStateHasBeenSet(false)
-{
-}
-
 SidewalkDeviceMetadata::SidewalkDeviceMetadata(JsonView jsonValue)
-  : SidewalkDeviceMetadata()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ SidewalkDeviceMetadata& SidewalkDeviceMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Rssi"))
   {
     m_rssi = jsonValue.GetInteger("Rssi");
-
     m_rssiHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BatteryLevel"))
   {
     m_batteryLevel = BatteryLevelMapper::GetBatteryLevelForName(jsonValue.GetString("BatteryLevel"));
-
     m_batteryLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Event"))
   {
     m_event = EventMapper::GetEventForName(jsonValue.GetString("Event"));
-
     m_eventHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeviceState"))
   {
     m_deviceState = DeviceStateMapper::GetDeviceStateForName(jsonValue.GetString("DeviceState"));
-
     m_deviceStateHasBeenSet = true;
   }
-
   return *this;
 }
 

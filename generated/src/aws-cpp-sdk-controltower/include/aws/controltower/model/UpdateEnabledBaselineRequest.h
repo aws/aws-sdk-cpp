@@ -23,7 +23,7 @@ namespace Model
   class UpdateEnabledBaselineRequest : public ControlTowerRequest
   {
   public:
-    AWS_CONTROLTOWER_API UpdateEnabledBaselineRequest();
+    AWS_CONTROLTOWER_API UpdateEnabledBaselineRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,42 +39,38 @@ namespace Model
      * <p>Specifies the new <code>Baseline</code> version, to which the
      * <code>EnabledBaseline</code> should be updated.</p>
      */
-    inline const Aws::String& GetBaselineVersion() const{ return m_baselineVersion; }
+    inline const Aws::String& GetBaselineVersion() const { return m_baselineVersion; }
     inline bool BaselineVersionHasBeenSet() const { return m_baselineVersionHasBeenSet; }
-    inline void SetBaselineVersion(const Aws::String& value) { m_baselineVersionHasBeenSet = true; m_baselineVersion = value; }
-    inline void SetBaselineVersion(Aws::String&& value) { m_baselineVersionHasBeenSet = true; m_baselineVersion = std::move(value); }
-    inline void SetBaselineVersion(const char* value) { m_baselineVersionHasBeenSet = true; m_baselineVersion.assign(value); }
-    inline UpdateEnabledBaselineRequest& WithBaselineVersion(const Aws::String& value) { SetBaselineVersion(value); return *this;}
-    inline UpdateEnabledBaselineRequest& WithBaselineVersion(Aws::String&& value) { SetBaselineVersion(std::move(value)); return *this;}
-    inline UpdateEnabledBaselineRequest& WithBaselineVersion(const char* value) { SetBaselineVersion(value); return *this;}
+    template<typename BaselineVersionT = Aws::String>
+    void SetBaselineVersion(BaselineVersionT&& value) { m_baselineVersionHasBeenSet = true; m_baselineVersion = std::forward<BaselineVersionT>(value); }
+    template<typename BaselineVersionT = Aws::String>
+    UpdateEnabledBaselineRequest& WithBaselineVersion(BaselineVersionT&& value) { SetBaselineVersion(std::forward<BaselineVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the <code>EnabledBaseline</code> resource to be updated.</p>
      */
-    inline const Aws::String& GetEnabledBaselineIdentifier() const{ return m_enabledBaselineIdentifier; }
+    inline const Aws::String& GetEnabledBaselineIdentifier() const { return m_enabledBaselineIdentifier; }
     inline bool EnabledBaselineIdentifierHasBeenSet() const { return m_enabledBaselineIdentifierHasBeenSet; }
-    inline void SetEnabledBaselineIdentifier(const Aws::String& value) { m_enabledBaselineIdentifierHasBeenSet = true; m_enabledBaselineIdentifier = value; }
-    inline void SetEnabledBaselineIdentifier(Aws::String&& value) { m_enabledBaselineIdentifierHasBeenSet = true; m_enabledBaselineIdentifier = std::move(value); }
-    inline void SetEnabledBaselineIdentifier(const char* value) { m_enabledBaselineIdentifierHasBeenSet = true; m_enabledBaselineIdentifier.assign(value); }
-    inline UpdateEnabledBaselineRequest& WithEnabledBaselineIdentifier(const Aws::String& value) { SetEnabledBaselineIdentifier(value); return *this;}
-    inline UpdateEnabledBaselineRequest& WithEnabledBaselineIdentifier(Aws::String&& value) { SetEnabledBaselineIdentifier(std::move(value)); return *this;}
-    inline UpdateEnabledBaselineRequest& WithEnabledBaselineIdentifier(const char* value) { SetEnabledBaselineIdentifier(value); return *this;}
+    template<typename EnabledBaselineIdentifierT = Aws::String>
+    void SetEnabledBaselineIdentifier(EnabledBaselineIdentifierT&& value) { m_enabledBaselineIdentifierHasBeenSet = true; m_enabledBaselineIdentifier = std::forward<EnabledBaselineIdentifierT>(value); }
+    template<typename EnabledBaselineIdentifierT = Aws::String>
+    UpdateEnabledBaselineRequest& WithEnabledBaselineIdentifier(EnabledBaselineIdentifierT&& value) { SetEnabledBaselineIdentifier(std::forward<EnabledBaselineIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Parameters to apply when making an update.</p>
      */
-    inline const Aws::Vector<EnabledBaselineParameter>& GetParameters() const{ return m_parameters; }
+    inline const Aws::Vector<EnabledBaselineParameter>& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const Aws::Vector<EnabledBaselineParameter>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(Aws::Vector<EnabledBaselineParameter>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline UpdateEnabledBaselineRequest& WithParameters(const Aws::Vector<EnabledBaselineParameter>& value) { SetParameters(value); return *this;}
-    inline UpdateEnabledBaselineRequest& WithParameters(Aws::Vector<EnabledBaselineParameter>&& value) { SetParameters(std::move(value)); return *this;}
-    inline UpdateEnabledBaselineRequest& AddParameters(const EnabledBaselineParameter& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
-    inline UpdateEnabledBaselineRequest& AddParameters(EnabledBaselineParameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
+    template<typename ParametersT = Aws::Vector<EnabledBaselineParameter>>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::Vector<EnabledBaselineParameter>>
+    UpdateEnabledBaselineRequest& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
+    template<typename ParametersT = EnabledBaselineParameter>
+    UpdateEnabledBaselineRequest& AddParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters.emplace_back(std::forward<ParametersT>(value)); return *this; }
     ///@}
   private:
 

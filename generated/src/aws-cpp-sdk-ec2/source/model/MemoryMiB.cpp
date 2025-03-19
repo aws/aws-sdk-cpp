@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-MemoryMiB::MemoryMiB() : 
-    m_min(0),
-    m_minHasBeenSet(false),
-    m_max(0),
-    m_maxHasBeenSet(false)
-{
-}
-
 MemoryMiB::MemoryMiB(const XmlNode& xmlNode)
-  : MemoryMiB()
 {
   *this = xmlNode;
 }

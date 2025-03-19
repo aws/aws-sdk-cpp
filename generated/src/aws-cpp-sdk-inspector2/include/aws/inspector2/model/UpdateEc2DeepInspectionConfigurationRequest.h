@@ -22,7 +22,7 @@ namespace Model
   class UpdateEc2DeepInspectionConfigurationRequest : public Inspector2Request
   {
   public:
-    AWS_INSPECTOR2_API UpdateEc2DeepInspectionConfigurationRequest();
+    AWS_INSPECTOR2_API UpdateEc2DeepInspectionConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,7 +41,7 @@ namespace Model
      * administrator for the organization can deactivate a member account using <a
      * href="https://docs.aws.amazon.com/inspector/v2/APIReference/API_BatchUpdateMemberEc2DeepInspectionStatus.html">BatchUpdateMemberEc2DeepInspectionStatus</a>.</p>
      */
-    inline bool GetActivateDeepInspection() const{ return m_activateDeepInspection; }
+    inline bool GetActivateDeepInspection() const { return m_activateDeepInspection; }
     inline bool ActivateDeepInspectionHasBeenSet() const { return m_activateDeepInspectionHasBeenSet; }
     inline void SetActivateDeepInspection(bool value) { m_activateDeepInspectionHasBeenSet = true; m_activateDeepInspection = value; }
     inline UpdateEc2DeepInspectionConfigurationRequest& WithActivateDeepInspection(bool value) { SetActivateDeepInspection(value); return *this;}
@@ -52,19 +52,18 @@ namespace Model
      * <p>The Amazon Inspector deep inspection custom paths you are adding for your
      * account.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPackagePaths() const{ return m_packagePaths; }
+    inline const Aws::Vector<Aws::String>& GetPackagePaths() const { return m_packagePaths; }
     inline bool PackagePathsHasBeenSet() const { return m_packagePathsHasBeenSet; }
-    inline void SetPackagePaths(const Aws::Vector<Aws::String>& value) { m_packagePathsHasBeenSet = true; m_packagePaths = value; }
-    inline void SetPackagePaths(Aws::Vector<Aws::String>&& value) { m_packagePathsHasBeenSet = true; m_packagePaths = std::move(value); }
-    inline UpdateEc2DeepInspectionConfigurationRequest& WithPackagePaths(const Aws::Vector<Aws::String>& value) { SetPackagePaths(value); return *this;}
-    inline UpdateEc2DeepInspectionConfigurationRequest& WithPackagePaths(Aws::Vector<Aws::String>&& value) { SetPackagePaths(std::move(value)); return *this;}
-    inline UpdateEc2DeepInspectionConfigurationRequest& AddPackagePaths(const Aws::String& value) { m_packagePathsHasBeenSet = true; m_packagePaths.push_back(value); return *this; }
-    inline UpdateEc2DeepInspectionConfigurationRequest& AddPackagePaths(Aws::String&& value) { m_packagePathsHasBeenSet = true; m_packagePaths.push_back(std::move(value)); return *this; }
-    inline UpdateEc2DeepInspectionConfigurationRequest& AddPackagePaths(const char* value) { m_packagePathsHasBeenSet = true; m_packagePaths.push_back(value); return *this; }
+    template<typename PackagePathsT = Aws::Vector<Aws::String>>
+    void SetPackagePaths(PackagePathsT&& value) { m_packagePathsHasBeenSet = true; m_packagePaths = std::forward<PackagePathsT>(value); }
+    template<typename PackagePathsT = Aws::Vector<Aws::String>>
+    UpdateEc2DeepInspectionConfigurationRequest& WithPackagePaths(PackagePathsT&& value) { SetPackagePaths(std::forward<PackagePathsT>(value)); return *this;}
+    template<typename PackagePathsT = Aws::String>
+    UpdateEc2DeepInspectionConfigurationRequest& AddPackagePaths(PackagePathsT&& value) { m_packagePathsHasBeenSet = true; m_packagePaths.emplace_back(std::forward<PackagePathsT>(value)); return *this; }
     ///@}
   private:
 
-    bool m_activateDeepInspection;
+    bool m_activateDeepInspection{false};
     bool m_activateDeepInspectionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_packagePaths;

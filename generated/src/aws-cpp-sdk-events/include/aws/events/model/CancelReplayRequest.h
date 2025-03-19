@@ -21,7 +21,7 @@ namespace Model
   class CancelReplayRequest : public CloudWatchEventsRequest
   {
   public:
-    AWS_CLOUDWATCHEVENTS_API CancelReplayRequest();
+    AWS_CLOUDWATCHEVENTS_API CancelReplayRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the replay to cancel.</p>
      */
-    inline const Aws::String& GetReplayName() const{ return m_replayName; }
+    inline const Aws::String& GetReplayName() const { return m_replayName; }
     inline bool ReplayNameHasBeenSet() const { return m_replayNameHasBeenSet; }
-    inline void SetReplayName(const Aws::String& value) { m_replayNameHasBeenSet = true; m_replayName = value; }
-    inline void SetReplayName(Aws::String&& value) { m_replayNameHasBeenSet = true; m_replayName = std::move(value); }
-    inline void SetReplayName(const char* value) { m_replayNameHasBeenSet = true; m_replayName.assign(value); }
-    inline CancelReplayRequest& WithReplayName(const Aws::String& value) { SetReplayName(value); return *this;}
-    inline CancelReplayRequest& WithReplayName(Aws::String&& value) { SetReplayName(std::move(value)); return *this;}
-    inline CancelReplayRequest& WithReplayName(const char* value) { SetReplayName(value); return *this;}
+    template<typename ReplayNameT = Aws::String>
+    void SetReplayName(ReplayNameT&& value) { m_replayNameHasBeenSet = true; m_replayName = std::forward<ReplayNameT>(value); }
+    template<typename ReplayNameT = Aws::String>
+    CancelReplayRequest& WithReplayName(ReplayNameT&& value) { SetReplayName(std::forward<ReplayNameT>(value)); return *this;}
     ///@}
   private:
 

@@ -28,7 +28,7 @@ namespace Model
   class CloneStackRequest : public OpsWorksRequest
   {
   public:
-    AWS_OPSWORKS_API CloneStackRequest();
+    AWS_OPSWORKS_API CloneStackRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,28 +45,24 @@ namespace Model
     /**
      * <p>The source stack ID.</p>
      */
-    inline const Aws::String& GetSourceStackId() const{ return m_sourceStackId; }
+    inline const Aws::String& GetSourceStackId() const { return m_sourceStackId; }
     inline bool SourceStackIdHasBeenSet() const { return m_sourceStackIdHasBeenSet; }
-    inline void SetSourceStackId(const Aws::String& value) { m_sourceStackIdHasBeenSet = true; m_sourceStackId = value; }
-    inline void SetSourceStackId(Aws::String&& value) { m_sourceStackIdHasBeenSet = true; m_sourceStackId = std::move(value); }
-    inline void SetSourceStackId(const char* value) { m_sourceStackIdHasBeenSet = true; m_sourceStackId.assign(value); }
-    inline CloneStackRequest& WithSourceStackId(const Aws::String& value) { SetSourceStackId(value); return *this;}
-    inline CloneStackRequest& WithSourceStackId(Aws::String&& value) { SetSourceStackId(std::move(value)); return *this;}
-    inline CloneStackRequest& WithSourceStackId(const char* value) { SetSourceStackId(value); return *this;}
+    template<typename SourceStackIdT = Aws::String>
+    void SetSourceStackId(SourceStackIdT&& value) { m_sourceStackIdHasBeenSet = true; m_sourceStackId = std::forward<SourceStackIdT>(value); }
+    template<typename SourceStackIdT = Aws::String>
+    CloneStackRequest& WithSourceStackId(SourceStackIdT&& value) { SetSourceStackId(std::forward<SourceStackIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The cloned stack name. Stack names can be a maximum of 64 characters.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CloneStackRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CloneStackRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CloneStackRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CloneStackRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +73,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
-    inline const Aws::String& GetRegion() const{ return m_region; }
+    inline const Aws::String& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-    inline CloneStackRequest& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-    inline CloneStackRequest& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-    inline CloneStackRequest& WithRegion(const char* value) { SetRegion(value); return *this;}
+    template<typename RegionT = Aws::String>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::String>
+    CloneStackRequest& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,14 +104,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a>. </p>
      */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+    inline const Aws::String& GetVpcId() const { return m_vpcId; }
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
-    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
-    inline CloneStackRequest& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-    inline CloneStackRequest& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-    inline CloneStackRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+    template<typename VpcIdT = Aws::String>
+    void SetVpcId(VpcIdT&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::forward<VpcIdT>(value); }
+    template<typename VpcIdT = Aws::String>
+    CloneStackRequest& WithVpcId(VpcIdT&& value) { SetVpcId(std::forward<VpcIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -125,18 +117,15 @@ namespace Model
      * <p>A list of stack attributes and values as key/value pairs to be added to the
      * cloned stack.</p>
      */
-    inline const Aws::Map<StackAttributesKeys, Aws::String>& GetAttributes() const{ return m_attributes; }
+    inline const Aws::Map<StackAttributesKeys, Aws::String>& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const Aws::Map<StackAttributesKeys, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(Aws::Map<StackAttributesKeys, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline CloneStackRequest& WithAttributes(const Aws::Map<StackAttributesKeys, Aws::String>& value) { SetAttributes(value); return *this;}
-    inline CloneStackRequest& WithAttributes(Aws::Map<StackAttributesKeys, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline CloneStackRequest& AddAttributes(const StackAttributesKeys& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
-    inline CloneStackRequest& AddAttributes(StackAttributesKeys&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
-    inline CloneStackRequest& AddAttributes(const StackAttributesKeys& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
-    inline CloneStackRequest& AddAttributes(StackAttributesKeys&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline CloneStackRequest& AddAttributes(StackAttributesKeys&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
-    inline CloneStackRequest& AddAttributes(const StackAttributesKeys& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
+    template<typename AttributesT = Aws::Map<StackAttributesKeys, Aws::String>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Map<StackAttributesKeys, Aws::String>>
+    CloneStackRequest& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    inline CloneStackRequest& AddAttributes(StackAttributesKeys key, Aws::String value) {
+      m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
@@ -153,14 +142,12 @@ namespace Model
      * source stack's service role ARN, if you prefer, but you must do so
      * explicitly.</p> 
      */
-    inline const Aws::String& GetServiceRoleArn() const{ return m_serviceRoleArn; }
+    inline const Aws::String& GetServiceRoleArn() const { return m_serviceRoleArn; }
     inline bool ServiceRoleArnHasBeenSet() const { return m_serviceRoleArnHasBeenSet; }
-    inline void SetServiceRoleArn(const Aws::String& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
-    inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = std::move(value); }
-    inline void SetServiceRoleArn(const char* value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn.assign(value); }
-    inline CloneStackRequest& WithServiceRoleArn(const Aws::String& value) { SetServiceRoleArn(value); return *this;}
-    inline CloneStackRequest& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(std::move(value)); return *this;}
-    inline CloneStackRequest& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
+    template<typename ServiceRoleArnT = Aws::String>
+    void SetServiceRoleArn(ServiceRoleArnT&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = std::forward<ServiceRoleArnT>(value); }
+    template<typename ServiceRoleArnT = Aws::String>
+    CloneStackRequest& WithServiceRoleArn(ServiceRoleArnT&& value) { SetServiceRoleArn(std::forward<ServiceRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -171,14 +158,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
-    inline const Aws::String& GetDefaultInstanceProfileArn() const{ return m_defaultInstanceProfileArn; }
+    inline const Aws::String& GetDefaultInstanceProfileArn() const { return m_defaultInstanceProfileArn; }
     inline bool DefaultInstanceProfileArnHasBeenSet() const { return m_defaultInstanceProfileArnHasBeenSet; }
-    inline void SetDefaultInstanceProfileArn(const Aws::String& value) { m_defaultInstanceProfileArnHasBeenSet = true; m_defaultInstanceProfileArn = value; }
-    inline void SetDefaultInstanceProfileArn(Aws::String&& value) { m_defaultInstanceProfileArnHasBeenSet = true; m_defaultInstanceProfileArn = std::move(value); }
-    inline void SetDefaultInstanceProfileArn(const char* value) { m_defaultInstanceProfileArnHasBeenSet = true; m_defaultInstanceProfileArn.assign(value); }
-    inline CloneStackRequest& WithDefaultInstanceProfileArn(const Aws::String& value) { SetDefaultInstanceProfileArn(value); return *this;}
-    inline CloneStackRequest& WithDefaultInstanceProfileArn(Aws::String&& value) { SetDefaultInstanceProfileArn(std::move(value)); return *this;}
-    inline CloneStackRequest& WithDefaultInstanceProfileArn(const char* value) { SetDefaultInstanceProfileArn(value); return *this;}
+    template<typename DefaultInstanceProfileArnT = Aws::String>
+    void SetDefaultInstanceProfileArn(DefaultInstanceProfileArnT&& value) { m_defaultInstanceProfileArnHasBeenSet = true; m_defaultInstanceProfileArn = std::forward<DefaultInstanceProfileArnT>(value); }
+    template<typename DefaultInstanceProfileArnT = Aws::String>
+    CloneStackRequest& WithDefaultInstanceProfileArn(DefaultInstanceProfileArnT&& value) { SetDefaultInstanceProfileArn(std::forward<DefaultInstanceProfileArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -208,14 +193,12 @@ namespace Model
      * operating system for the cloned stack, but you cannot change from Linux to
      * Windows or Windows to Linux.</p> 
      */
-    inline const Aws::String& GetDefaultOs() const{ return m_defaultOs; }
+    inline const Aws::String& GetDefaultOs() const { return m_defaultOs; }
     inline bool DefaultOsHasBeenSet() const { return m_defaultOsHasBeenSet; }
-    inline void SetDefaultOs(const Aws::String& value) { m_defaultOsHasBeenSet = true; m_defaultOs = value; }
-    inline void SetDefaultOs(Aws::String&& value) { m_defaultOsHasBeenSet = true; m_defaultOs = std::move(value); }
-    inline void SetDefaultOs(const char* value) { m_defaultOsHasBeenSet = true; m_defaultOs.assign(value); }
-    inline CloneStackRequest& WithDefaultOs(const Aws::String& value) { SetDefaultOs(value); return *this;}
-    inline CloneStackRequest& WithDefaultOs(Aws::String&& value) { SetDefaultOs(std::move(value)); return *this;}
-    inline CloneStackRequest& WithDefaultOs(const char* value) { SetDefaultOs(value); return *this;}
+    template<typename DefaultOsT = Aws::String>
+    void SetDefaultOs(DefaultOsT&& value) { m_defaultOsHasBeenSet = true; m_defaultOs = std::forward<DefaultOsT>(value); }
+    template<typename DefaultOsT = Aws::String>
+    CloneStackRequest& WithDefaultOs(DefaultOsT&& value) { SetDefaultOs(std::forward<DefaultOsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -236,14 +219,12 @@ namespace Model
      * <code>GetHostNameSuggestion</code>, which returns a host name based on the
      * current theme.</p>
      */
-    inline const Aws::String& GetHostnameTheme() const{ return m_hostnameTheme; }
+    inline const Aws::String& GetHostnameTheme() const { return m_hostnameTheme; }
     inline bool HostnameThemeHasBeenSet() const { return m_hostnameThemeHasBeenSet; }
-    inline void SetHostnameTheme(const Aws::String& value) { m_hostnameThemeHasBeenSet = true; m_hostnameTheme = value; }
-    inline void SetHostnameTheme(Aws::String&& value) { m_hostnameThemeHasBeenSet = true; m_hostnameTheme = std::move(value); }
-    inline void SetHostnameTheme(const char* value) { m_hostnameThemeHasBeenSet = true; m_hostnameTheme.assign(value); }
-    inline CloneStackRequest& WithHostnameTheme(const Aws::String& value) { SetHostnameTheme(value); return *this;}
-    inline CloneStackRequest& WithHostnameTheme(Aws::String&& value) { SetHostnameTheme(std::move(value)); return *this;}
-    inline CloneStackRequest& WithHostnameTheme(const char* value) { SetHostnameTheme(value); return *this;}
+    template<typename HostnameThemeT = Aws::String>
+    void SetHostnameTheme(HostnameThemeT&& value) { m_hostnameThemeHasBeenSet = true; m_hostnameTheme = std::forward<HostnameThemeT>(value); }
+    template<typename HostnameThemeT = Aws::String>
+    CloneStackRequest& WithHostnameTheme(HostnameThemeT&& value) { SetHostnameTheme(std::forward<HostnameThemeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -255,14 +236,12 @@ namespace Model
      * subnet must be in the same zone. For more information, see the
      * <code>VpcId</code> parameter description. </p>
      */
-    inline const Aws::String& GetDefaultAvailabilityZone() const{ return m_defaultAvailabilityZone; }
+    inline const Aws::String& GetDefaultAvailabilityZone() const { return m_defaultAvailabilityZone; }
     inline bool DefaultAvailabilityZoneHasBeenSet() const { return m_defaultAvailabilityZoneHasBeenSet; }
-    inline void SetDefaultAvailabilityZone(const Aws::String& value) { m_defaultAvailabilityZoneHasBeenSet = true; m_defaultAvailabilityZone = value; }
-    inline void SetDefaultAvailabilityZone(Aws::String&& value) { m_defaultAvailabilityZoneHasBeenSet = true; m_defaultAvailabilityZone = std::move(value); }
-    inline void SetDefaultAvailabilityZone(const char* value) { m_defaultAvailabilityZoneHasBeenSet = true; m_defaultAvailabilityZone.assign(value); }
-    inline CloneStackRequest& WithDefaultAvailabilityZone(const Aws::String& value) { SetDefaultAvailabilityZone(value); return *this;}
-    inline CloneStackRequest& WithDefaultAvailabilityZone(Aws::String&& value) { SetDefaultAvailabilityZone(std::move(value)); return *this;}
-    inline CloneStackRequest& WithDefaultAvailabilityZone(const char* value) { SetDefaultAvailabilityZone(value); return *this;}
+    template<typename DefaultAvailabilityZoneT = Aws::String>
+    void SetDefaultAvailabilityZone(DefaultAvailabilityZoneT&& value) { m_defaultAvailabilityZoneHasBeenSet = true; m_defaultAvailabilityZone = std::forward<DefaultAvailabilityZoneT>(value); }
+    template<typename DefaultAvailabilityZoneT = Aws::String>
+    CloneStackRequest& WithDefaultAvailabilityZone(DefaultAvailabilityZoneT&& value) { SetDefaultAvailabilityZone(std::forward<DefaultAvailabilityZoneT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -274,14 +253,12 @@ namespace Model
      * be in that zone. For information on default values and when this parameter is
      * required, see the <code>VpcId</code> parameter description. </p>
      */
-    inline const Aws::String& GetDefaultSubnetId() const{ return m_defaultSubnetId; }
+    inline const Aws::String& GetDefaultSubnetId() const { return m_defaultSubnetId; }
     inline bool DefaultSubnetIdHasBeenSet() const { return m_defaultSubnetIdHasBeenSet; }
-    inline void SetDefaultSubnetId(const Aws::String& value) { m_defaultSubnetIdHasBeenSet = true; m_defaultSubnetId = value; }
-    inline void SetDefaultSubnetId(Aws::String&& value) { m_defaultSubnetIdHasBeenSet = true; m_defaultSubnetId = std::move(value); }
-    inline void SetDefaultSubnetId(const char* value) { m_defaultSubnetIdHasBeenSet = true; m_defaultSubnetId.assign(value); }
-    inline CloneStackRequest& WithDefaultSubnetId(const Aws::String& value) { SetDefaultSubnetId(value); return *this;}
-    inline CloneStackRequest& WithDefaultSubnetId(Aws::String&& value) { SetDefaultSubnetId(std::move(value)); return *this;}
-    inline CloneStackRequest& WithDefaultSubnetId(const char* value) { SetDefaultSubnetId(value); return *this;}
+    template<typename DefaultSubnetIdT = Aws::String>
+    void SetDefaultSubnetId(DefaultSubnetIdT&& value) { m_defaultSubnetIdHasBeenSet = true; m_defaultSubnetId = std::forward<DefaultSubnetIdT>(value); }
+    template<typename DefaultSubnetIdT = Aws::String>
+    CloneStackRequest& WithDefaultSubnetId(DefaultSubnetIdT&& value) { SetDefaultSubnetId(std::forward<DefaultSubnetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -293,14 +270,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a> </p>
      */
-    inline const Aws::String& GetCustomJson() const{ return m_customJson; }
+    inline const Aws::String& GetCustomJson() const { return m_customJson; }
     inline bool CustomJsonHasBeenSet() const { return m_customJsonHasBeenSet; }
-    inline void SetCustomJson(const Aws::String& value) { m_customJsonHasBeenSet = true; m_customJson = value; }
-    inline void SetCustomJson(Aws::String&& value) { m_customJsonHasBeenSet = true; m_customJson = std::move(value); }
-    inline void SetCustomJson(const char* value) { m_customJsonHasBeenSet = true; m_customJson.assign(value); }
-    inline CloneStackRequest& WithCustomJson(const Aws::String& value) { SetCustomJson(value); return *this;}
-    inline CloneStackRequest& WithCustomJson(Aws::String&& value) { SetCustomJson(std::move(value)); return *this;}
-    inline CloneStackRequest& WithCustomJson(const char* value) { SetCustomJson(value); return *this;}
+    template<typename CustomJsonT = Aws::String>
+    void SetCustomJson(CustomJsonT&& value) { m_customJsonHasBeenSet = true; m_customJson = std::forward<CustomJsonT>(value); }
+    template<typename CustomJsonT = Aws::String>
+    CloneStackRequest& WithCustomJson(CustomJsonT&& value) { SetCustomJson(std::forward<CustomJsonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -310,12 +285,12 @@ namespace Model
      * Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is
      * currently 12.</p>
      */
-    inline const StackConfigurationManager& GetConfigurationManager() const{ return m_configurationManager; }
+    inline const StackConfigurationManager& GetConfigurationManager() const { return m_configurationManager; }
     inline bool ConfigurationManagerHasBeenSet() const { return m_configurationManagerHasBeenSet; }
-    inline void SetConfigurationManager(const StackConfigurationManager& value) { m_configurationManagerHasBeenSet = true; m_configurationManager = value; }
-    inline void SetConfigurationManager(StackConfigurationManager&& value) { m_configurationManagerHasBeenSet = true; m_configurationManager = std::move(value); }
-    inline CloneStackRequest& WithConfigurationManager(const StackConfigurationManager& value) { SetConfigurationManager(value); return *this;}
-    inline CloneStackRequest& WithConfigurationManager(StackConfigurationManager&& value) { SetConfigurationManager(std::move(value)); return *this;}
+    template<typename ConfigurationManagerT = StackConfigurationManager>
+    void SetConfigurationManager(ConfigurationManagerT&& value) { m_configurationManagerHasBeenSet = true; m_configurationManager = std::forward<ConfigurationManagerT>(value); }
+    template<typename ConfigurationManagerT = StackConfigurationManager>
+    CloneStackRequest& WithConfigurationManager(ConfigurationManagerT&& value) { SetConfigurationManager(std::forward<ConfigurationManagerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -326,19 +301,19 @@ namespace Model
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
      * a New Stack</a>.</p>
      */
-    inline const ChefConfiguration& GetChefConfiguration() const{ return m_chefConfiguration; }
+    inline const ChefConfiguration& GetChefConfiguration() const { return m_chefConfiguration; }
     inline bool ChefConfigurationHasBeenSet() const { return m_chefConfigurationHasBeenSet; }
-    inline void SetChefConfiguration(const ChefConfiguration& value) { m_chefConfigurationHasBeenSet = true; m_chefConfiguration = value; }
-    inline void SetChefConfiguration(ChefConfiguration&& value) { m_chefConfigurationHasBeenSet = true; m_chefConfiguration = std::move(value); }
-    inline CloneStackRequest& WithChefConfiguration(const ChefConfiguration& value) { SetChefConfiguration(value); return *this;}
-    inline CloneStackRequest& WithChefConfiguration(ChefConfiguration&& value) { SetChefConfiguration(std::move(value)); return *this;}
+    template<typename ChefConfigurationT = ChefConfiguration>
+    void SetChefConfiguration(ChefConfigurationT&& value) { m_chefConfigurationHasBeenSet = true; m_chefConfiguration = std::forward<ChefConfigurationT>(value); }
+    template<typename ChefConfigurationT = ChefConfiguration>
+    CloneStackRequest& WithChefConfiguration(ChefConfigurationT&& value) { SetChefConfiguration(std::forward<ChefConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Whether to use custom cookbooks.</p>
      */
-    inline bool GetUseCustomCookbooks() const{ return m_useCustomCookbooks; }
+    inline bool GetUseCustomCookbooks() const { return m_useCustomCookbooks; }
     inline bool UseCustomCookbooksHasBeenSet() const { return m_useCustomCookbooksHasBeenSet; }
     inline void SetUseCustomCookbooks(bool value) { m_useCustomCookbooksHasBeenSet = true; m_useCustomCookbooks = value; }
     inline CloneStackRequest& WithUseCustomCookbooks(bool value) { SetUseCustomCookbooks(value); return *this;}
@@ -364,7 +339,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
      * a New Stack</a>.</p>
      */
-    inline bool GetUseOpsworksSecurityGroups() const{ return m_useOpsworksSecurityGroups; }
+    inline bool GetUseOpsworksSecurityGroups() const { return m_useOpsworksSecurityGroups; }
     inline bool UseOpsworksSecurityGroupsHasBeenSet() const { return m_useOpsworksSecurityGroupsHasBeenSet; }
     inline void SetUseOpsworksSecurityGroups(bool value) { m_useOpsworksSecurityGroupsHasBeenSet = true; m_useOpsworksSecurityGroups = value; }
     inline CloneStackRequest& WithUseOpsworksSecurityGroups(bool value) { SetUseOpsworksSecurityGroups(value); return *this;}
@@ -379,12 +354,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks
      * and Recipes</a>.</p>
      */
-    inline const Source& GetCustomCookbooksSource() const{ return m_customCookbooksSource; }
+    inline const Source& GetCustomCookbooksSource() const { return m_customCookbooksSource; }
     inline bool CustomCookbooksSourceHasBeenSet() const { return m_customCookbooksSourceHasBeenSet; }
-    inline void SetCustomCookbooksSource(const Source& value) { m_customCookbooksSourceHasBeenSet = true; m_customCookbooksSource = value; }
-    inline void SetCustomCookbooksSource(Source&& value) { m_customCookbooksSourceHasBeenSet = true; m_customCookbooksSource = std::move(value); }
-    inline CloneStackRequest& WithCustomCookbooksSource(const Source& value) { SetCustomCookbooksSource(value); return *this;}
-    inline CloneStackRequest& WithCustomCookbooksSource(Source&& value) { SetCustomCookbooksSource(std::move(value)); return *this;}
+    template<typename CustomCookbooksSourceT = Source>
+    void SetCustomCookbooksSource(CustomCookbooksSourceT&& value) { m_customCookbooksSourceHasBeenSet = true; m_customCookbooksSource = std::forward<CustomCookbooksSourceT>(value); }
+    template<typename CustomCookbooksSourceT = Source>
+    CloneStackRequest& WithCustomCookbooksSource(CustomCookbooksSourceT&& value) { SetCustomCookbooksSource(std::forward<CustomCookbooksSourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -401,21 +376,19 @@ namespace Model
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
      * create an instance</a>. </p>
      */
-    inline const Aws::String& GetDefaultSshKeyName() const{ return m_defaultSshKeyName; }
+    inline const Aws::String& GetDefaultSshKeyName() const { return m_defaultSshKeyName; }
     inline bool DefaultSshKeyNameHasBeenSet() const { return m_defaultSshKeyNameHasBeenSet; }
-    inline void SetDefaultSshKeyName(const Aws::String& value) { m_defaultSshKeyNameHasBeenSet = true; m_defaultSshKeyName = value; }
-    inline void SetDefaultSshKeyName(Aws::String&& value) { m_defaultSshKeyNameHasBeenSet = true; m_defaultSshKeyName = std::move(value); }
-    inline void SetDefaultSshKeyName(const char* value) { m_defaultSshKeyNameHasBeenSet = true; m_defaultSshKeyName.assign(value); }
-    inline CloneStackRequest& WithDefaultSshKeyName(const Aws::String& value) { SetDefaultSshKeyName(value); return *this;}
-    inline CloneStackRequest& WithDefaultSshKeyName(Aws::String&& value) { SetDefaultSshKeyName(std::move(value)); return *this;}
-    inline CloneStackRequest& WithDefaultSshKeyName(const char* value) { SetDefaultSshKeyName(value); return *this;}
+    template<typename DefaultSshKeyNameT = Aws::String>
+    void SetDefaultSshKeyName(DefaultSshKeyNameT&& value) { m_defaultSshKeyNameHasBeenSet = true; m_defaultSshKeyName = std::forward<DefaultSshKeyNameT>(value); }
+    template<typename DefaultSshKeyNameT = Aws::String>
+    CloneStackRequest& WithDefaultSshKeyName(DefaultSshKeyNameT&& value) { SetDefaultSshKeyName(std::forward<DefaultSshKeyNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Whether to clone the source stack's permissions.</p>
      */
-    inline bool GetClonePermissions() const{ return m_clonePermissions; }
+    inline bool GetClonePermissions() const { return m_clonePermissions; }
     inline bool ClonePermissionsHasBeenSet() const { return m_clonePermissionsHasBeenSet; }
     inline void SetClonePermissions(bool value) { m_clonePermissionsHasBeenSet = true; m_clonePermissions = value; }
     inline CloneStackRequest& WithClonePermissions(bool value) { SetClonePermissions(value); return *this;}
@@ -425,15 +398,14 @@ namespace Model
     /**
      * <p>A list of source stack app IDs to be included in the cloned stack.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCloneAppIds() const{ return m_cloneAppIds; }
+    inline const Aws::Vector<Aws::String>& GetCloneAppIds() const { return m_cloneAppIds; }
     inline bool CloneAppIdsHasBeenSet() const { return m_cloneAppIdsHasBeenSet; }
-    inline void SetCloneAppIds(const Aws::Vector<Aws::String>& value) { m_cloneAppIdsHasBeenSet = true; m_cloneAppIds = value; }
-    inline void SetCloneAppIds(Aws::Vector<Aws::String>&& value) { m_cloneAppIdsHasBeenSet = true; m_cloneAppIds = std::move(value); }
-    inline CloneStackRequest& WithCloneAppIds(const Aws::Vector<Aws::String>& value) { SetCloneAppIds(value); return *this;}
-    inline CloneStackRequest& WithCloneAppIds(Aws::Vector<Aws::String>&& value) { SetCloneAppIds(std::move(value)); return *this;}
-    inline CloneStackRequest& AddCloneAppIds(const Aws::String& value) { m_cloneAppIdsHasBeenSet = true; m_cloneAppIds.push_back(value); return *this; }
-    inline CloneStackRequest& AddCloneAppIds(Aws::String&& value) { m_cloneAppIdsHasBeenSet = true; m_cloneAppIds.push_back(std::move(value)); return *this; }
-    inline CloneStackRequest& AddCloneAppIds(const char* value) { m_cloneAppIdsHasBeenSet = true; m_cloneAppIds.push_back(value); return *this; }
+    template<typename CloneAppIdsT = Aws::Vector<Aws::String>>
+    void SetCloneAppIds(CloneAppIdsT&& value) { m_cloneAppIdsHasBeenSet = true; m_cloneAppIds = std::forward<CloneAppIdsT>(value); }
+    template<typename CloneAppIdsT = Aws::Vector<Aws::String>>
+    CloneStackRequest& WithCloneAppIds(CloneAppIdsT&& value) { SetCloneAppIds(std::forward<CloneAppIdsT>(value)); return *this;}
+    template<typename CloneAppIdsT = Aws::String>
+    CloneStackRequest& AddCloneAppIds(CloneAppIdsT&& value) { m_cloneAppIdsHasBeenSet = true; m_cloneAppIds.emplace_back(std::forward<CloneAppIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -444,12 +416,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      * for the Root Device</a>.</p>
      */
-    inline const RootDeviceType& GetDefaultRootDeviceType() const{ return m_defaultRootDeviceType; }
+    inline RootDeviceType GetDefaultRootDeviceType() const { return m_defaultRootDeviceType; }
     inline bool DefaultRootDeviceTypeHasBeenSet() const { return m_defaultRootDeviceTypeHasBeenSet; }
-    inline void SetDefaultRootDeviceType(const RootDeviceType& value) { m_defaultRootDeviceTypeHasBeenSet = true; m_defaultRootDeviceType = value; }
-    inline void SetDefaultRootDeviceType(RootDeviceType&& value) { m_defaultRootDeviceTypeHasBeenSet = true; m_defaultRootDeviceType = std::move(value); }
-    inline CloneStackRequest& WithDefaultRootDeviceType(const RootDeviceType& value) { SetDefaultRootDeviceType(value); return *this;}
-    inline CloneStackRequest& WithDefaultRootDeviceType(RootDeviceType&& value) { SetDefaultRootDeviceType(std::move(value)); return *this;}
+    inline void SetDefaultRootDeviceType(RootDeviceType value) { m_defaultRootDeviceTypeHasBeenSet = true; m_defaultRootDeviceType = value; }
+    inline CloneStackRequest& WithDefaultRootDeviceType(RootDeviceType value) { SetDefaultRootDeviceType(value); return *this;}
     ///@}
 
     ///@{
@@ -468,14 +438,12 @@ namespace Model
      * 12.2.</p>  <p>You can also specify an agent version when you create or
      * update an instance, which overrides the stack's default setting.</p> 
      */
-    inline const Aws::String& GetAgentVersion() const{ return m_agentVersion; }
+    inline const Aws::String& GetAgentVersion() const { return m_agentVersion; }
     inline bool AgentVersionHasBeenSet() const { return m_agentVersionHasBeenSet; }
-    inline void SetAgentVersion(const Aws::String& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
-    inline void SetAgentVersion(Aws::String&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = std::move(value); }
-    inline void SetAgentVersion(const char* value) { m_agentVersionHasBeenSet = true; m_agentVersion.assign(value); }
-    inline CloneStackRequest& WithAgentVersion(const Aws::String& value) { SetAgentVersion(value); return *this;}
-    inline CloneStackRequest& WithAgentVersion(Aws::String&& value) { SetAgentVersion(std::move(value)); return *this;}
-    inline CloneStackRequest& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
+    template<typename AgentVersionT = Aws::String>
+    void SetAgentVersion(AgentVersionT&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = std::forward<AgentVersionT>(value); }
+    template<typename AgentVersionT = Aws::String>
+    CloneStackRequest& WithAgentVersion(AgentVersionT&& value) { SetAgentVersion(std::forward<AgentVersionT>(value)); return *this;}
     ///@}
   private:
 
@@ -521,10 +489,10 @@ namespace Model
     ChefConfiguration m_chefConfiguration;
     bool m_chefConfigurationHasBeenSet = false;
 
-    bool m_useCustomCookbooks;
+    bool m_useCustomCookbooks{false};
     bool m_useCustomCookbooksHasBeenSet = false;
 
-    bool m_useOpsworksSecurityGroups;
+    bool m_useOpsworksSecurityGroups{false};
     bool m_useOpsworksSecurityGroupsHasBeenSet = false;
 
     Source m_customCookbooksSource;
@@ -533,13 +501,13 @@ namespace Model
     Aws::String m_defaultSshKeyName;
     bool m_defaultSshKeyNameHasBeenSet = false;
 
-    bool m_clonePermissions;
+    bool m_clonePermissions{false};
     bool m_clonePermissionsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_cloneAppIds;
     bool m_cloneAppIdsHasBeenSet = false;
 
-    RootDeviceType m_defaultRootDeviceType;
+    RootDeviceType m_defaultRootDeviceType{RootDeviceType::NOT_SET};
     bool m_defaultRootDeviceTypeHasBeenSet = false;
 
     Aws::String m_agentVersion;

@@ -18,20 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-DatasetStats::DatasetStats() : 
-    m_labeledEntries(0),
-    m_labeledEntriesHasBeenSet(false),
-    m_totalEntries(0),
-    m_totalEntriesHasBeenSet(false),
-    m_totalLabels(0),
-    m_totalLabelsHasBeenSet(false),
-    m_errorEntries(0),
-    m_errorEntriesHasBeenSet(false)
-{
-}
-
 DatasetStats::DatasetStats(JsonView jsonValue)
-  : DatasetStats()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ DatasetStats& DatasetStats::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LabeledEntries"))
   {
     m_labeledEntries = jsonValue.GetInteger("LabeledEntries");
-
     m_labeledEntriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalEntries"))
   {
     m_totalEntries = jsonValue.GetInteger("TotalEntries");
-
     m_totalEntriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalLabels"))
   {
     m_totalLabels = jsonValue.GetInteger("TotalLabels");
-
     m_totalLabelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorEntries"))
   {
     m_errorEntries = jsonValue.GetInteger("ErrorEntries");
-
     m_errorEntriesHasBeenSet = true;
   }
-
   return *this;
 }
 

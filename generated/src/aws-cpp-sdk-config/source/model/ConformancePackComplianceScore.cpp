@@ -18,15 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-ConformancePackComplianceScore::ConformancePackComplianceScore() : 
-    m_scoreHasBeenSet(false),
-    m_conformancePackNameHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
-{
-}
-
 ConformancePackComplianceScore::ConformancePackComplianceScore(JsonView jsonValue)
-  : ConformancePackComplianceScore()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ConformancePackComplianceScore& ConformancePackComplianceScore::operator =(JsonV
   if(jsonValue.ValueExists("Score"))
   {
     m_score = jsonValue.GetString("Score");
-
     m_scoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConformancePackName"))
   {
     m_conformancePackName = jsonValue.GetString("ConformancePackName");
-
     m_conformancePackNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

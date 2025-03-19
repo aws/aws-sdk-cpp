@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteConnectPeerResult::DeleteConnectPeerResult()
-{
-}
-
 DeleteConnectPeerResult::DeleteConnectPeerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DeleteConnectPeerResult& DeleteConnectPeerResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("ConnectPeer"))
   {
     m_connectPeer = jsonValue.GetObject("ConnectPeer");
-
+    m_connectPeerHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -23,7 +23,7 @@ namespace Model
   class StartQueryRequest : public CloudWatchLogsRequest
   {
   public:
-    AWS_CLOUDWATCHLOGS_API StartQueryRequest();
+    AWS_CLOUDWATCHLOGS_API StartQueryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,12 +44,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData_Languages.html">Supported
      * query languages</a>.</p>
      */
-    inline const QueryLanguage& GetQueryLanguage() const{ return m_queryLanguage; }
+    inline QueryLanguage GetQueryLanguage() const { return m_queryLanguage; }
     inline bool QueryLanguageHasBeenSet() const { return m_queryLanguageHasBeenSet; }
-    inline void SetQueryLanguage(const QueryLanguage& value) { m_queryLanguageHasBeenSet = true; m_queryLanguage = value; }
-    inline void SetQueryLanguage(QueryLanguage&& value) { m_queryLanguageHasBeenSet = true; m_queryLanguage = std::move(value); }
-    inline StartQueryRequest& WithQueryLanguage(const QueryLanguage& value) { SetQueryLanguage(value); return *this;}
-    inline StartQueryRequest& WithQueryLanguage(QueryLanguage&& value) { SetQueryLanguage(std::move(value)); return *this;}
+    inline void SetQueryLanguage(QueryLanguage value) { m_queryLanguageHasBeenSet = true; m_queryLanguage = value; }
+    inline StartQueryRequest& WithQueryLanguage(QueryLanguage value) { SetQueryLanguage(value); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * Service SQL query language, where you specify the log group names inside the
      * <code>querystring</code> instead of here.</p> 
      */
-    inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
+    inline const Aws::String& GetLogGroupName() const { return m_logGroupName; }
     inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
-    inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
-    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
-    inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
-    inline StartQueryRequest& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
-    inline StartQueryRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
-    inline StartQueryRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
+    template<typename LogGroupNameT = Aws::String>
+    void SetLogGroupName(LogGroupNameT&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::forward<LogGroupNameT>(value); }
+    template<typename LogGroupNameT = Aws::String>
+    StartQueryRequest& WithLogGroupName(LogGroupNameT&& value) { SetLogGroupName(std::forward<LogGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,15 +77,14 @@ namespace Model
      * the log group names inside the <code>querystring</code> instead of here.</p>
      * 
      */
-    inline const Aws::Vector<Aws::String>& GetLogGroupNames() const{ return m_logGroupNames; }
+    inline const Aws::Vector<Aws::String>& GetLogGroupNames() const { return m_logGroupNames; }
     inline bool LogGroupNamesHasBeenSet() const { return m_logGroupNamesHasBeenSet; }
-    inline void SetLogGroupNames(const Aws::Vector<Aws::String>& value) { m_logGroupNamesHasBeenSet = true; m_logGroupNames = value; }
-    inline void SetLogGroupNames(Aws::Vector<Aws::String>&& value) { m_logGroupNamesHasBeenSet = true; m_logGroupNames = std::move(value); }
-    inline StartQueryRequest& WithLogGroupNames(const Aws::Vector<Aws::String>& value) { SetLogGroupNames(value); return *this;}
-    inline StartQueryRequest& WithLogGroupNames(Aws::Vector<Aws::String>&& value) { SetLogGroupNames(std::move(value)); return *this;}
-    inline StartQueryRequest& AddLogGroupNames(const Aws::String& value) { m_logGroupNamesHasBeenSet = true; m_logGroupNames.push_back(value); return *this; }
-    inline StartQueryRequest& AddLogGroupNames(Aws::String&& value) { m_logGroupNamesHasBeenSet = true; m_logGroupNames.push_back(std::move(value)); return *this; }
-    inline StartQueryRequest& AddLogGroupNames(const char* value) { m_logGroupNamesHasBeenSet = true; m_logGroupNames.push_back(value); return *this; }
+    template<typename LogGroupNamesT = Aws::Vector<Aws::String>>
+    void SetLogGroupNames(LogGroupNamesT&& value) { m_logGroupNamesHasBeenSet = true; m_logGroupNames = std::forward<LogGroupNamesT>(value); }
+    template<typename LogGroupNamesT = Aws::Vector<Aws::String>>
+    StartQueryRequest& WithLogGroupNames(LogGroupNamesT&& value) { SetLogGroupNames(std::forward<LogGroupNamesT>(value)); return *this;}
+    template<typename LogGroupNamesT = Aws::String>
+    StartQueryRequest& AddLogGroupNames(LogGroupNamesT&& value) { m_logGroupNamesHasBeenSet = true; m_logGroupNames.emplace_back(std::forward<LogGroupNamesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -106,15 +101,14 @@ namespace Model
      * is queries using the OpenSearch Service SQL query language, where you specify
      * the log group names inside the <code>querystring</code> instead of here. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetLogGroupIdentifiers() const{ return m_logGroupIdentifiers; }
+    inline const Aws::Vector<Aws::String>& GetLogGroupIdentifiers() const { return m_logGroupIdentifiers; }
     inline bool LogGroupIdentifiersHasBeenSet() const { return m_logGroupIdentifiersHasBeenSet; }
-    inline void SetLogGroupIdentifiers(const Aws::Vector<Aws::String>& value) { m_logGroupIdentifiersHasBeenSet = true; m_logGroupIdentifiers = value; }
-    inline void SetLogGroupIdentifiers(Aws::Vector<Aws::String>&& value) { m_logGroupIdentifiersHasBeenSet = true; m_logGroupIdentifiers = std::move(value); }
-    inline StartQueryRequest& WithLogGroupIdentifiers(const Aws::Vector<Aws::String>& value) { SetLogGroupIdentifiers(value); return *this;}
-    inline StartQueryRequest& WithLogGroupIdentifiers(Aws::Vector<Aws::String>&& value) { SetLogGroupIdentifiers(std::move(value)); return *this;}
-    inline StartQueryRequest& AddLogGroupIdentifiers(const Aws::String& value) { m_logGroupIdentifiersHasBeenSet = true; m_logGroupIdentifiers.push_back(value); return *this; }
-    inline StartQueryRequest& AddLogGroupIdentifiers(Aws::String&& value) { m_logGroupIdentifiersHasBeenSet = true; m_logGroupIdentifiers.push_back(std::move(value)); return *this; }
-    inline StartQueryRequest& AddLogGroupIdentifiers(const char* value) { m_logGroupIdentifiersHasBeenSet = true; m_logGroupIdentifiers.push_back(value); return *this; }
+    template<typename LogGroupIdentifiersT = Aws::Vector<Aws::String>>
+    void SetLogGroupIdentifiers(LogGroupIdentifiersT&& value) { m_logGroupIdentifiersHasBeenSet = true; m_logGroupIdentifiers = std::forward<LogGroupIdentifiersT>(value); }
+    template<typename LogGroupIdentifiersT = Aws::Vector<Aws::String>>
+    StartQueryRequest& WithLogGroupIdentifiers(LogGroupIdentifiersT&& value) { SetLogGroupIdentifiers(std::forward<LogGroupIdentifiersT>(value)); return *this;}
+    template<typename LogGroupIdentifiersT = Aws::String>
+    StartQueryRequest& AddLogGroupIdentifiers(LogGroupIdentifiersT&& value) { m_logGroupIdentifiersHasBeenSet = true; m_logGroupIdentifiers.emplace_back(std::forward<LogGroupIdentifiersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -123,7 +117,7 @@ namespace Model
      * specified start time is included in the query. Specified as epoch time, the
      * number of seconds since <code>January 1, 1970, 00:00:00 UTC</code>.</p>
      */
-    inline long long GetStartTime() const{ return m_startTime; }
+    inline long long GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
     inline void SetStartTime(long long value) { m_startTimeHasBeenSet = true; m_startTime = value; }
     inline StartQueryRequest& WithStartTime(long long value) { SetStartTime(value); return *this;}
@@ -135,7 +129,7 @@ namespace Model
      * end time is included in the query. Specified as epoch time, the number of
      * seconds since <code>January 1, 1970, 00:00:00 UTC</code>.</p>
      */
-    inline long long GetEndTime() const{ return m_endTime; }
+    inline long long GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
     inline void SetEndTime(long long value) { m_endTimeHasBeenSet = true; m_endTime = value; }
     inline StartQueryRequest& WithEndTime(long long value) { SetEndTime(value); return *this;}
@@ -147,14 +141,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch
      * Logs Insights Query Syntax</a>.</p>
      */
-    inline const Aws::String& GetQueryString() const{ return m_queryString; }
+    inline const Aws::String& GetQueryString() const { return m_queryString; }
     inline bool QueryStringHasBeenSet() const { return m_queryStringHasBeenSet; }
-    inline void SetQueryString(const Aws::String& value) { m_queryStringHasBeenSet = true; m_queryString = value; }
-    inline void SetQueryString(Aws::String&& value) { m_queryStringHasBeenSet = true; m_queryString = std::move(value); }
-    inline void SetQueryString(const char* value) { m_queryStringHasBeenSet = true; m_queryString.assign(value); }
-    inline StartQueryRequest& WithQueryString(const Aws::String& value) { SetQueryString(value); return *this;}
-    inline StartQueryRequest& WithQueryString(Aws::String&& value) { SetQueryString(std::move(value)); return *this;}
-    inline StartQueryRequest& WithQueryString(const char* value) { SetQueryString(value); return *this;}
+    template<typename QueryStringT = Aws::String>
+    void SetQueryString(QueryStringT&& value) { m_queryStringHasBeenSet = true; m_queryString = std::forward<QueryStringT>(value); }
+    template<typename QueryStringT = Aws::String>
+    StartQueryRequest& WithQueryString(QueryStringT&& value) { SetQueryString(std::forward<QueryStringT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -163,14 +155,14 @@ namespace Model
      * uses the <code>fields</code> command, only the specified fields and their values
      * are returned. The default is 10,000.</p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline StartQueryRequest& WithLimit(int value) { SetLimit(value); return *this;}
     ///@}
   private:
 
-    QueryLanguage m_queryLanguage;
+    QueryLanguage m_queryLanguage{QueryLanguage::NOT_SET};
     bool m_queryLanguageHasBeenSet = false;
 
     Aws::String m_logGroupName;
@@ -182,16 +174,16 @@ namespace Model
     Aws::Vector<Aws::String> m_logGroupIdentifiers;
     bool m_logGroupIdentifiersHasBeenSet = false;
 
-    long long m_startTime;
+    long long m_startTime{0};
     bool m_startTimeHasBeenSet = false;
 
-    long long m_endTime;
+    long long m_endTime{0};
     bool m_endTimeHasBeenSet = false;
 
     Aws::String m_queryString;
     bool m_queryStringHasBeenSet = false;
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
   };
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DetectDocumentTextResult::DetectDocumentTextResult()
-{
-}
-
 DetectDocumentTextResult::DetectDocumentTextResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DetectDocumentTextResult& DetectDocumentTextResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("DocumentMetadata"))
   {
     m_documentMetadata = jsonValue.GetObject("DocumentMetadata");
-
+    m_documentMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Blocks"))
   {
     Aws::Utils::Array<JsonView> blocksJsonList = jsonValue.GetArray("Blocks");
@@ -42,20 +37,20 @@ DetectDocumentTextResult& DetectDocumentTextResult::operator =(const Aws::Amazon
     {
       m_blocks.push_back(blocksJsonList[blocksIndex].AsObject());
     }
+    m_blocksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DetectDocumentTextModelVersion"))
   {
     m_detectDocumentTextModelVersion = jsonValue.GetString("DetectDocumentTextModelVersion");
-
+    m_detectDocumentTextModelVersionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

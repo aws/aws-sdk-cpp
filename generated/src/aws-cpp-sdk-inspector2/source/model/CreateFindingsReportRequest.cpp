@@ -12,14 +12,6 @@ using namespace Aws::Inspector2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateFindingsReportRequest::CreateFindingsReportRequest() : 
-    m_filterCriteriaHasBeenSet(false),
-    m_reportFormat(ReportFormat::NOT_SET),
-    m_reportFormatHasBeenSet(false),
-    m_s3DestinationHasBeenSet(false)
-{
-}
-
 Aws::String CreateFindingsReportRequest::SerializePayload() const
 {
   JsonValue payload;

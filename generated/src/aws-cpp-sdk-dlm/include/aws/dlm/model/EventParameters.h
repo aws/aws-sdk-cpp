@@ -34,7 +34,7 @@ namespace Model
   class EventParameters
   {
   public:
-    AWS_DLM_API EventParameters();
+    AWS_DLM_API EventParameters() = default;
     AWS_DLM_API EventParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_DLM_API EventParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DLM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
     /**
      * <p>The type of event. Currently, only snapshot sharing events are supported.</p>
      */
-    inline const EventTypeValues& GetEventType() const{ return m_eventType; }
+    inline EventTypeValues GetEventType() const { return m_eventType; }
     inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
-    inline void SetEventType(const EventTypeValues& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
-    inline void SetEventType(EventTypeValues&& value) { m_eventTypeHasBeenSet = true; m_eventType = std::move(value); }
-    inline EventParameters& WithEventType(const EventTypeValues& value) { SetEventType(value); return *this;}
-    inline EventParameters& WithEventType(EventTypeValues&& value) { SetEventType(std::move(value)); return *this;}
+    inline void SetEventType(EventTypeValues value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
+    inline EventParameters& WithEventType(EventTypeValues value) { SetEventType(value); return *this;}
     ///@}
 
     ///@{
@@ -58,15 +56,14 @@ namespace Model
      * sharing snapshots with your account. The policy only runs if one of the
      * specified Amazon Web Services accounts shares a snapshot with your account.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSnapshotOwner() const{ return m_snapshotOwner; }
+    inline const Aws::Vector<Aws::String>& GetSnapshotOwner() const { return m_snapshotOwner; }
     inline bool SnapshotOwnerHasBeenSet() const { return m_snapshotOwnerHasBeenSet; }
-    inline void SetSnapshotOwner(const Aws::Vector<Aws::String>& value) { m_snapshotOwnerHasBeenSet = true; m_snapshotOwner = value; }
-    inline void SetSnapshotOwner(Aws::Vector<Aws::String>&& value) { m_snapshotOwnerHasBeenSet = true; m_snapshotOwner = std::move(value); }
-    inline EventParameters& WithSnapshotOwner(const Aws::Vector<Aws::String>& value) { SetSnapshotOwner(value); return *this;}
-    inline EventParameters& WithSnapshotOwner(Aws::Vector<Aws::String>&& value) { SetSnapshotOwner(std::move(value)); return *this;}
-    inline EventParameters& AddSnapshotOwner(const Aws::String& value) { m_snapshotOwnerHasBeenSet = true; m_snapshotOwner.push_back(value); return *this; }
-    inline EventParameters& AddSnapshotOwner(Aws::String&& value) { m_snapshotOwnerHasBeenSet = true; m_snapshotOwner.push_back(std::move(value)); return *this; }
-    inline EventParameters& AddSnapshotOwner(const char* value) { m_snapshotOwnerHasBeenSet = true; m_snapshotOwner.push_back(value); return *this; }
+    template<typename SnapshotOwnerT = Aws::Vector<Aws::String>>
+    void SetSnapshotOwner(SnapshotOwnerT&& value) { m_snapshotOwnerHasBeenSet = true; m_snapshotOwner = std::forward<SnapshotOwnerT>(value); }
+    template<typename SnapshotOwnerT = Aws::Vector<Aws::String>>
+    EventParameters& WithSnapshotOwner(SnapshotOwnerT&& value) { SetSnapshotOwner(std::forward<SnapshotOwnerT>(value)); return *this;}
+    template<typename SnapshotOwnerT = Aws::String>
+    EventParameters& AddSnapshotOwner(SnapshotOwnerT&& value) { m_snapshotOwnerHasBeenSet = true; m_snapshotOwner.emplace_back(std::forward<SnapshotOwnerT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -79,18 +76,16 @@ namespace Model
      * snapshots created by policy <code>policy-1234567890abcdef0</code> are shared
      * with your account.</p>
      */
-    inline const Aws::String& GetDescriptionRegex() const{ return m_descriptionRegex; }
+    inline const Aws::String& GetDescriptionRegex() const { return m_descriptionRegex; }
     inline bool DescriptionRegexHasBeenSet() const { return m_descriptionRegexHasBeenSet; }
-    inline void SetDescriptionRegex(const Aws::String& value) { m_descriptionRegexHasBeenSet = true; m_descriptionRegex = value; }
-    inline void SetDescriptionRegex(Aws::String&& value) { m_descriptionRegexHasBeenSet = true; m_descriptionRegex = std::move(value); }
-    inline void SetDescriptionRegex(const char* value) { m_descriptionRegexHasBeenSet = true; m_descriptionRegex.assign(value); }
-    inline EventParameters& WithDescriptionRegex(const Aws::String& value) { SetDescriptionRegex(value); return *this;}
-    inline EventParameters& WithDescriptionRegex(Aws::String&& value) { SetDescriptionRegex(std::move(value)); return *this;}
-    inline EventParameters& WithDescriptionRegex(const char* value) { SetDescriptionRegex(value); return *this;}
+    template<typename DescriptionRegexT = Aws::String>
+    void SetDescriptionRegex(DescriptionRegexT&& value) { m_descriptionRegexHasBeenSet = true; m_descriptionRegex = std::forward<DescriptionRegexT>(value); }
+    template<typename DescriptionRegexT = Aws::String>
+    EventParameters& WithDescriptionRegex(DescriptionRegexT&& value) { SetDescriptionRegex(std::forward<DescriptionRegexT>(value)); return *this;}
     ///@}
   private:
 
-    EventTypeValues m_eventType;
+    EventTypeValues m_eventType{EventTypeValues::NOT_SET};
     bool m_eventTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_snapshotOwner;

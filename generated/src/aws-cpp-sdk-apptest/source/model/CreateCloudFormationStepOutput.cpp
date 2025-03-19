@@ -18,14 +18,7 @@ namespace AppTest
 namespace Model
 {
 
-CreateCloudFormationStepOutput::CreateCloudFormationStepOutput() : 
-    m_stackIdHasBeenSet(false),
-    m_exportsHasBeenSet(false)
-{
-}
-
 CreateCloudFormationStepOutput::CreateCloudFormationStepOutput(JsonView jsonValue)
-  : CreateCloudFormationStepOutput()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ CreateCloudFormationStepOutput& CreateCloudFormationStepOutput::operator =(JsonV
   if(jsonValue.ValueExists("stackId"))
   {
     m_stackId = jsonValue.GetString("stackId");
-
     m_stackIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("exports"))
   {
     Aws::Map<Aws::String, JsonView> exportsJsonMap = jsonValue.GetObject("exports").GetAllObjects();
@@ -48,7 +39,6 @@ CreateCloudFormationStepOutput& CreateCloudFormationStepOutput::operator =(JsonV
     }
     m_exportsHasBeenSet = true;
   }
-
   return *this;
 }
 

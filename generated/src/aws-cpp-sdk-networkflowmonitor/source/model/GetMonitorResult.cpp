@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetMonitorResult::GetMonitorResult() : 
-    m_monitorStatus(MonitorStatus::NOT_SET)
-{
-}
-
 GetMonitorResult::GetMonitorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetMonitorResult()
 {
   *this = result;
 }
@@ -34,21 +28,18 @@ GetMonitorResult& GetMonitorResult::operator =(const Aws::AmazonWebServiceResult
   if(jsonValue.ValueExists("monitorArn"))
   {
     m_monitorArn = jsonValue.GetString("monitorArn");
-
+    m_monitorArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("monitorName"))
   {
     m_monitorName = jsonValue.GetString("monitorName");
-
+    m_monitorNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("monitorStatus"))
   {
     m_monitorStatus = MonitorStatusMapper::GetMonitorStatusForName(jsonValue.GetString("monitorStatus"));
-
+    m_monitorStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("localResources"))
   {
     Aws::Utils::Array<JsonView> localResourcesJsonList = jsonValue.GetArray("localResources");
@@ -56,8 +47,8 @@ GetMonitorResult& GetMonitorResult::operator =(const Aws::AmazonWebServiceResult
     {
       m_localResources.push_back(localResourcesJsonList[localResourcesIndex].AsObject());
     }
+    m_localResourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("remoteResources"))
   {
     Aws::Utils::Array<JsonView> remoteResourcesJsonList = jsonValue.GetArray("remoteResources");
@@ -65,20 +56,18 @@ GetMonitorResult& GetMonitorResult::operator =(const Aws::AmazonWebServiceResult
     {
       m_remoteResources.push_back(remoteResourcesJsonList[remoteResourcesIndex].AsObject());
     }
+    m_remoteResourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
+    m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modifiedAt"))
   {
     m_modifiedAt = jsonValue.GetDouble("modifiedAt");
-
+    m_modifiedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -86,14 +75,15 @@ GetMonitorResult& GetMonitorResult::operator =(const Aws::AmazonWebServiceResult
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

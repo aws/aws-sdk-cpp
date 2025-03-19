@@ -24,7 +24,7 @@ namespace Model
   class CancelReplicationTaskAssessmentRunRequest : public DatabaseMigrationServiceRequest
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API CancelReplicationTaskAssessmentRunRequest();
+    AWS_DATABASEMIGRATIONSERVICE_API CancelReplicationTaskAssessmentRunRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * <p>Amazon Resource Name (ARN) of the premigration assessment run to be
      * canceled.</p>
      */
-    inline const Aws::String& GetReplicationTaskAssessmentRunArn() const{ return m_replicationTaskAssessmentRunArn; }
+    inline const Aws::String& GetReplicationTaskAssessmentRunArn() const { return m_replicationTaskAssessmentRunArn; }
     inline bool ReplicationTaskAssessmentRunArnHasBeenSet() const { return m_replicationTaskAssessmentRunArnHasBeenSet; }
-    inline void SetReplicationTaskAssessmentRunArn(const Aws::String& value) { m_replicationTaskAssessmentRunArnHasBeenSet = true; m_replicationTaskAssessmentRunArn = value; }
-    inline void SetReplicationTaskAssessmentRunArn(Aws::String&& value) { m_replicationTaskAssessmentRunArnHasBeenSet = true; m_replicationTaskAssessmentRunArn = std::move(value); }
-    inline void SetReplicationTaskAssessmentRunArn(const char* value) { m_replicationTaskAssessmentRunArnHasBeenSet = true; m_replicationTaskAssessmentRunArn.assign(value); }
-    inline CancelReplicationTaskAssessmentRunRequest& WithReplicationTaskAssessmentRunArn(const Aws::String& value) { SetReplicationTaskAssessmentRunArn(value); return *this;}
-    inline CancelReplicationTaskAssessmentRunRequest& WithReplicationTaskAssessmentRunArn(Aws::String&& value) { SetReplicationTaskAssessmentRunArn(std::move(value)); return *this;}
-    inline CancelReplicationTaskAssessmentRunRequest& WithReplicationTaskAssessmentRunArn(const char* value) { SetReplicationTaskAssessmentRunArn(value); return *this;}
+    template<typename ReplicationTaskAssessmentRunArnT = Aws::String>
+    void SetReplicationTaskAssessmentRunArn(ReplicationTaskAssessmentRunArnT&& value) { m_replicationTaskAssessmentRunArnHasBeenSet = true; m_replicationTaskAssessmentRunArn = std::forward<ReplicationTaskAssessmentRunArnT>(value); }
+    template<typename ReplicationTaskAssessmentRunArnT = Aws::String>
+    CancelReplicationTaskAssessmentRunRequest& WithReplicationTaskAssessmentRunArn(ReplicationTaskAssessmentRunArnT&& value) { SetReplicationTaskAssessmentRunArn(std::forward<ReplicationTaskAssessmentRunArnT>(value)); return *this;}
     ///@}
   private:
 

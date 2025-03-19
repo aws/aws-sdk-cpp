@@ -36,7 +36,7 @@ namespace Model
   class RedshiftParameters
   {
   public:
-    AWS_QUICKSIGHT_API RedshiftParameters();
+    AWS_QUICKSIGHT_API RedshiftParameters() = default;
     AWS_QUICKSIGHT_API RedshiftParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API RedshiftParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,21 +46,19 @@ namespace Model
     /**
      * <p>Host. This field can be blank if <code>ClusterId</code> is provided.</p>
      */
-    inline const Aws::String& GetHost() const{ return m_host; }
+    inline const Aws::String& GetHost() const { return m_host; }
     inline bool HostHasBeenSet() const { return m_hostHasBeenSet; }
-    inline void SetHost(const Aws::String& value) { m_hostHasBeenSet = true; m_host = value; }
-    inline void SetHost(Aws::String&& value) { m_hostHasBeenSet = true; m_host = std::move(value); }
-    inline void SetHost(const char* value) { m_hostHasBeenSet = true; m_host.assign(value); }
-    inline RedshiftParameters& WithHost(const Aws::String& value) { SetHost(value); return *this;}
-    inline RedshiftParameters& WithHost(Aws::String&& value) { SetHost(std::move(value)); return *this;}
-    inline RedshiftParameters& WithHost(const char* value) { SetHost(value); return *this;}
+    template<typename HostT = Aws::String>
+    void SetHost(HostT&& value) { m_hostHasBeenSet = true; m_host = std::forward<HostT>(value); }
+    template<typename HostT = Aws::String>
+    RedshiftParameters& WithHost(HostT&& value) { SetHost(std::forward<HostT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Port. This field can be blank if the <code>ClusterId</code> is provided.</p>
      */
-    inline int GetPort() const{ return m_port; }
+    inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline RedshiftParameters& WithPort(int value) { SetPort(value); return *this;}
@@ -70,14 +68,12 @@ namespace Model
     /**
      * <p>Database.</p>
      */
-    inline const Aws::String& GetDatabase() const{ return m_database; }
+    inline const Aws::String& GetDatabase() const { return m_database; }
     inline bool DatabaseHasBeenSet() const { return m_databaseHasBeenSet; }
-    inline void SetDatabase(const Aws::String& value) { m_databaseHasBeenSet = true; m_database = value; }
-    inline void SetDatabase(Aws::String&& value) { m_databaseHasBeenSet = true; m_database = std::move(value); }
-    inline void SetDatabase(const char* value) { m_databaseHasBeenSet = true; m_database.assign(value); }
-    inline RedshiftParameters& WithDatabase(const Aws::String& value) { SetDatabase(value); return *this;}
-    inline RedshiftParameters& WithDatabase(Aws::String&& value) { SetDatabase(std::move(value)); return *this;}
-    inline RedshiftParameters& WithDatabase(const char* value) { SetDatabase(value); return *this;}
+    template<typename DatabaseT = Aws::String>
+    void SetDatabase(DatabaseT&& value) { m_databaseHasBeenSet = true; m_database = std::forward<DatabaseT>(value); }
+    template<typename DatabaseT = Aws::String>
+    RedshiftParameters& WithDatabase(DatabaseT&& value) { SetDatabase(std::forward<DatabaseT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,14 +81,12 @@ namespace Model
      * <p>Cluster ID. This field can be blank if the <code>Host</code> and
      * <code>Port</code> are provided.</p>
      */
-    inline const Aws::String& GetClusterId() const{ return m_clusterId; }
+    inline const Aws::String& GetClusterId() const { return m_clusterId; }
     inline bool ClusterIdHasBeenSet() const { return m_clusterIdHasBeenSet; }
-    inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
-    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::move(value); }
-    inline void SetClusterId(const char* value) { m_clusterIdHasBeenSet = true; m_clusterId.assign(value); }
-    inline RedshiftParameters& WithClusterId(const Aws::String& value) { SetClusterId(value); return *this;}
-    inline RedshiftParameters& WithClusterId(Aws::String&& value) { SetClusterId(std::move(value)); return *this;}
-    inline RedshiftParameters& WithClusterId(const char* value) { SetClusterId(value); return *this;}
+    template<typename ClusterIdT = Aws::String>
+    void SetClusterId(ClusterIdT&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::forward<ClusterIdT>(value); }
+    template<typename ClusterIdT = Aws::String>
+    RedshiftParameters& WithClusterId(ClusterIdT&& value) { SetClusterId(std::forward<ClusterIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,12 +95,12 @@ namespace Model
      * access to your cluster. This parameter can be used instead of <a
      * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html">DataSourceCredentials</a>.</p>
      */
-    inline const RedshiftIAMParameters& GetIAMParameters() const{ return m_iAMParameters; }
+    inline const RedshiftIAMParameters& GetIAMParameters() const { return m_iAMParameters; }
     inline bool IAMParametersHasBeenSet() const { return m_iAMParametersHasBeenSet; }
-    inline void SetIAMParameters(const RedshiftIAMParameters& value) { m_iAMParametersHasBeenSet = true; m_iAMParameters = value; }
-    inline void SetIAMParameters(RedshiftIAMParameters&& value) { m_iAMParametersHasBeenSet = true; m_iAMParameters = std::move(value); }
-    inline RedshiftParameters& WithIAMParameters(const RedshiftIAMParameters& value) { SetIAMParameters(value); return *this;}
-    inline RedshiftParameters& WithIAMParameters(RedshiftIAMParameters&& value) { SetIAMParameters(std::move(value)); return *this;}
+    template<typename IAMParametersT = RedshiftIAMParameters>
+    void SetIAMParameters(IAMParametersT&& value) { m_iAMParametersHasBeenSet = true; m_iAMParameters = std::forward<IAMParametersT>(value); }
+    template<typename IAMParametersT = RedshiftIAMParameters>
+    RedshiftParameters& WithIAMParameters(IAMParametersT&& value) { SetIAMParameters(std::forward<IAMParametersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,19 +110,19 @@ namespace Model
      * be specified if your Amazon QuickSight account is configured with IAM Identity
      * Center.</p>
      */
-    inline const IdentityCenterConfiguration& GetIdentityCenterConfiguration() const{ return m_identityCenterConfiguration; }
+    inline const IdentityCenterConfiguration& GetIdentityCenterConfiguration() const { return m_identityCenterConfiguration; }
     inline bool IdentityCenterConfigurationHasBeenSet() const { return m_identityCenterConfigurationHasBeenSet; }
-    inline void SetIdentityCenterConfiguration(const IdentityCenterConfiguration& value) { m_identityCenterConfigurationHasBeenSet = true; m_identityCenterConfiguration = value; }
-    inline void SetIdentityCenterConfiguration(IdentityCenterConfiguration&& value) { m_identityCenterConfigurationHasBeenSet = true; m_identityCenterConfiguration = std::move(value); }
-    inline RedshiftParameters& WithIdentityCenterConfiguration(const IdentityCenterConfiguration& value) { SetIdentityCenterConfiguration(value); return *this;}
-    inline RedshiftParameters& WithIdentityCenterConfiguration(IdentityCenterConfiguration&& value) { SetIdentityCenterConfiguration(std::move(value)); return *this;}
+    template<typename IdentityCenterConfigurationT = IdentityCenterConfiguration>
+    void SetIdentityCenterConfiguration(IdentityCenterConfigurationT&& value) { m_identityCenterConfigurationHasBeenSet = true; m_identityCenterConfiguration = std::forward<IdentityCenterConfigurationT>(value); }
+    template<typename IdentityCenterConfigurationT = IdentityCenterConfiguration>
+    RedshiftParameters& WithIdentityCenterConfiguration(IdentityCenterConfigurationT&& value) { SetIdentityCenterConfiguration(std::forward<IdentityCenterConfigurationT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_host;
     bool m_hostHasBeenSet = false;
 
-    int m_port;
+    int m_port{0};
     bool m_portHasBeenSet = false;
 
     Aws::String m_database;

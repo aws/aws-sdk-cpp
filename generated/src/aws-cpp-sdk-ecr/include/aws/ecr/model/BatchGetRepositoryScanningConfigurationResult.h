@@ -30,7 +30,7 @@ namespace Model
   class BatchGetRepositoryScanningConfigurationResult
   {
   public:
-    AWS_ECR_API BatchGetRepositoryScanningConfigurationResult();
+    AWS_ECR_API BatchGetRepositoryScanningConfigurationResult() = default;
     AWS_ECR_API BatchGetRepositoryScanningConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ECR_API BatchGetRepositoryScanningConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,46 @@ namespace Model
     /**
      * <p>The scanning configuration for the requested repositories.</p>
      */
-    inline const Aws::Vector<RepositoryScanningConfiguration>& GetScanningConfigurations() const{ return m_scanningConfigurations; }
-    inline void SetScanningConfigurations(const Aws::Vector<RepositoryScanningConfiguration>& value) { m_scanningConfigurations = value; }
-    inline void SetScanningConfigurations(Aws::Vector<RepositoryScanningConfiguration>&& value) { m_scanningConfigurations = std::move(value); }
-    inline BatchGetRepositoryScanningConfigurationResult& WithScanningConfigurations(const Aws::Vector<RepositoryScanningConfiguration>& value) { SetScanningConfigurations(value); return *this;}
-    inline BatchGetRepositoryScanningConfigurationResult& WithScanningConfigurations(Aws::Vector<RepositoryScanningConfiguration>&& value) { SetScanningConfigurations(std::move(value)); return *this;}
-    inline BatchGetRepositoryScanningConfigurationResult& AddScanningConfigurations(const RepositoryScanningConfiguration& value) { m_scanningConfigurations.push_back(value); return *this; }
-    inline BatchGetRepositoryScanningConfigurationResult& AddScanningConfigurations(RepositoryScanningConfiguration&& value) { m_scanningConfigurations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RepositoryScanningConfiguration>& GetScanningConfigurations() const { return m_scanningConfigurations; }
+    template<typename ScanningConfigurationsT = Aws::Vector<RepositoryScanningConfiguration>>
+    void SetScanningConfigurations(ScanningConfigurationsT&& value) { m_scanningConfigurationsHasBeenSet = true; m_scanningConfigurations = std::forward<ScanningConfigurationsT>(value); }
+    template<typename ScanningConfigurationsT = Aws::Vector<RepositoryScanningConfiguration>>
+    BatchGetRepositoryScanningConfigurationResult& WithScanningConfigurations(ScanningConfigurationsT&& value) { SetScanningConfigurations(std::forward<ScanningConfigurationsT>(value)); return *this;}
+    template<typename ScanningConfigurationsT = RepositoryScanningConfiguration>
+    BatchGetRepositoryScanningConfigurationResult& AddScanningConfigurations(ScanningConfigurationsT&& value) { m_scanningConfigurationsHasBeenSet = true; m_scanningConfigurations.emplace_back(std::forward<ScanningConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Any failures associated with the call.</p>
      */
-    inline const Aws::Vector<RepositoryScanningConfigurationFailure>& GetFailures() const{ return m_failures; }
-    inline void SetFailures(const Aws::Vector<RepositoryScanningConfigurationFailure>& value) { m_failures = value; }
-    inline void SetFailures(Aws::Vector<RepositoryScanningConfigurationFailure>&& value) { m_failures = std::move(value); }
-    inline BatchGetRepositoryScanningConfigurationResult& WithFailures(const Aws::Vector<RepositoryScanningConfigurationFailure>& value) { SetFailures(value); return *this;}
-    inline BatchGetRepositoryScanningConfigurationResult& WithFailures(Aws::Vector<RepositoryScanningConfigurationFailure>&& value) { SetFailures(std::move(value)); return *this;}
-    inline BatchGetRepositoryScanningConfigurationResult& AddFailures(const RepositoryScanningConfigurationFailure& value) { m_failures.push_back(value); return *this; }
-    inline BatchGetRepositoryScanningConfigurationResult& AddFailures(RepositoryScanningConfigurationFailure&& value) { m_failures.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RepositoryScanningConfigurationFailure>& GetFailures() const { return m_failures; }
+    template<typename FailuresT = Aws::Vector<RepositoryScanningConfigurationFailure>>
+    void SetFailures(FailuresT&& value) { m_failuresHasBeenSet = true; m_failures = std::forward<FailuresT>(value); }
+    template<typename FailuresT = Aws::Vector<RepositoryScanningConfigurationFailure>>
+    BatchGetRepositoryScanningConfigurationResult& WithFailures(FailuresT&& value) { SetFailures(std::forward<FailuresT>(value)); return *this;}
+    template<typename FailuresT = RepositoryScanningConfigurationFailure>
+    BatchGetRepositoryScanningConfigurationResult& AddFailures(FailuresT&& value) { m_failuresHasBeenSet = true; m_failures.emplace_back(std::forward<FailuresT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchGetRepositoryScanningConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchGetRepositoryScanningConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchGetRepositoryScanningConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchGetRepositoryScanningConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<RepositoryScanningConfiguration> m_scanningConfigurations;
+    bool m_scanningConfigurationsHasBeenSet = false;
 
     Aws::Vector<RepositoryScanningConfigurationFailure> m_failures;
+    bool m_failuresHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

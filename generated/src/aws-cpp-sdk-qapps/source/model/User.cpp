@@ -18,13 +18,7 @@ namespace QApps
 namespace Model
 {
 
-User::User() : 
-    m_userIdHasBeenSet(false)
-{
-}
-
 User::User(JsonView jsonValue)
-  : User()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ User& User::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("userId"))
   {
     m_userId = jsonValue.GetString("userId");
-
     m_userIdHasBeenSet = true;
   }
-
   return *this;
 }
 

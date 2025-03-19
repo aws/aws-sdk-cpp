@@ -18,16 +18,7 @@ namespace DataSync
 namespace Model
 {
 
-S3ManifestConfig::S3ManifestConfig() : 
-    m_manifestObjectPathHasBeenSet(false),
-    m_bucketAccessRoleArnHasBeenSet(false),
-    m_s3BucketArnHasBeenSet(false),
-    m_manifestObjectVersionIdHasBeenSet(false)
-{
-}
-
 S3ManifestConfig::S3ManifestConfig(JsonView jsonValue)
-  : S3ManifestConfig()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ S3ManifestConfig& S3ManifestConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ManifestObjectPath"))
   {
     m_manifestObjectPath = jsonValue.GetString("ManifestObjectPath");
-
     m_manifestObjectPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BucketAccessRoleArn"))
   {
     m_bucketAccessRoleArn = jsonValue.GetString("BucketAccessRoleArn");
-
     m_bucketAccessRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3BucketArn"))
   {
     m_s3BucketArn = jsonValue.GetString("S3BucketArn");
-
     m_s3BucketArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ManifestObjectVersionId"))
   {
     m_manifestObjectVersionId = jsonValue.GetString("ManifestObjectVersionId");
-
     m_manifestObjectVersionIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class DocumentAttributeValue
   {
   public:
-    AWS_QAPPS_API DocumentAttributeValue();
+    AWS_QAPPS_API DocumentAttributeValue() = default;
     AWS_QAPPS_API DocumentAttributeValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_QAPPS_API DocumentAttributeValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QAPPS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,36 +44,33 @@ namespace Model
     /**
      * <p>A string.</p>
      */
-    inline const Aws::String& GetStringValue() const{ return m_stringValue; }
+    inline const Aws::String& GetStringValue() const { return m_stringValue; }
     inline bool StringValueHasBeenSet() const { return m_stringValueHasBeenSet; }
-    inline void SetStringValue(const Aws::String& value) { m_stringValueHasBeenSet = true; m_stringValue = value; }
-    inline void SetStringValue(Aws::String&& value) { m_stringValueHasBeenSet = true; m_stringValue = std::move(value); }
-    inline void SetStringValue(const char* value) { m_stringValueHasBeenSet = true; m_stringValue.assign(value); }
-    inline DocumentAttributeValue& WithStringValue(const Aws::String& value) { SetStringValue(value); return *this;}
-    inline DocumentAttributeValue& WithStringValue(Aws::String&& value) { SetStringValue(std::move(value)); return *this;}
-    inline DocumentAttributeValue& WithStringValue(const char* value) { SetStringValue(value); return *this;}
+    template<typename StringValueT = Aws::String>
+    void SetStringValue(StringValueT&& value) { m_stringValueHasBeenSet = true; m_stringValue = std::forward<StringValueT>(value); }
+    template<typename StringValueT = Aws::String>
+    DocumentAttributeValue& WithStringValue(StringValueT&& value) { SetStringValue(std::forward<StringValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of strings.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetStringListValue() const{ return m_stringListValue; }
+    inline const Aws::Vector<Aws::String>& GetStringListValue() const { return m_stringListValue; }
     inline bool StringListValueHasBeenSet() const { return m_stringListValueHasBeenSet; }
-    inline void SetStringListValue(const Aws::Vector<Aws::String>& value) { m_stringListValueHasBeenSet = true; m_stringListValue = value; }
-    inline void SetStringListValue(Aws::Vector<Aws::String>&& value) { m_stringListValueHasBeenSet = true; m_stringListValue = std::move(value); }
-    inline DocumentAttributeValue& WithStringListValue(const Aws::Vector<Aws::String>& value) { SetStringListValue(value); return *this;}
-    inline DocumentAttributeValue& WithStringListValue(Aws::Vector<Aws::String>&& value) { SetStringListValue(std::move(value)); return *this;}
-    inline DocumentAttributeValue& AddStringListValue(const Aws::String& value) { m_stringListValueHasBeenSet = true; m_stringListValue.push_back(value); return *this; }
-    inline DocumentAttributeValue& AddStringListValue(Aws::String&& value) { m_stringListValueHasBeenSet = true; m_stringListValue.push_back(std::move(value)); return *this; }
-    inline DocumentAttributeValue& AddStringListValue(const char* value) { m_stringListValueHasBeenSet = true; m_stringListValue.push_back(value); return *this; }
+    template<typename StringListValueT = Aws::Vector<Aws::String>>
+    void SetStringListValue(StringListValueT&& value) { m_stringListValueHasBeenSet = true; m_stringListValue = std::forward<StringListValueT>(value); }
+    template<typename StringListValueT = Aws::Vector<Aws::String>>
+    DocumentAttributeValue& WithStringListValue(StringListValueT&& value) { SetStringListValue(std::forward<StringListValueT>(value)); return *this;}
+    template<typename StringListValueT = Aws::String>
+    DocumentAttributeValue& AddStringListValue(StringListValueT&& value) { m_stringListValueHasBeenSet = true; m_stringListValue.emplace_back(std::forward<StringListValueT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A long integer value. </p>
      */
-    inline long long GetLongValue() const{ return m_longValue; }
+    inline long long GetLongValue() const { return m_longValue; }
     inline bool LongValueHasBeenSet() const { return m_longValueHasBeenSet; }
     inline void SetLongValue(long long value) { m_longValueHasBeenSet = true; m_longValue = value; }
     inline DocumentAttributeValue& WithLongValue(long long value) { SetLongValue(value); return *this;}
@@ -86,12 +83,12 @@ namespace Model
      * 2012-03-25T12:30:10+01:00 is the ISO 8601 date-time format for March 25th 2012
      * at 12:30PM (plus 10 seconds) in Central European Time. </p>
      */
-    inline const Aws::Utils::DateTime& GetDateValue() const{ return m_dateValue; }
+    inline const Aws::Utils::DateTime& GetDateValue() const { return m_dateValue; }
     inline bool DateValueHasBeenSet() const { return m_dateValueHasBeenSet; }
-    inline void SetDateValue(const Aws::Utils::DateTime& value) { m_dateValueHasBeenSet = true; m_dateValue = value; }
-    inline void SetDateValue(Aws::Utils::DateTime&& value) { m_dateValueHasBeenSet = true; m_dateValue = std::move(value); }
-    inline DocumentAttributeValue& WithDateValue(const Aws::Utils::DateTime& value) { SetDateValue(value); return *this;}
-    inline DocumentAttributeValue& WithDateValue(Aws::Utils::DateTime&& value) { SetDateValue(std::move(value)); return *this;}
+    template<typename DateValueT = Aws::Utils::DateTime>
+    void SetDateValue(DateValueT&& value) { m_dateValueHasBeenSet = true; m_dateValue = std::forward<DateValueT>(value); }
+    template<typename DateValueT = Aws::Utils::DateTime>
+    DocumentAttributeValue& WithDateValue(DateValueT&& value) { SetDateValue(std::forward<DateValueT>(value)); return *this;}
     ///@}
   private:
 
@@ -101,10 +98,10 @@ namespace Model
     Aws::Vector<Aws::String> m_stringListValue;
     bool m_stringListValueHasBeenSet = false;
 
-    long long m_longValue;
+    long long m_longValue{0};
     bool m_longValueHasBeenSet = false;
 
-    Aws::Utils::DateTime m_dateValue;
+    Aws::Utils::DateTime m_dateValue{};
     bool m_dateValueHasBeenSet = false;
   };
 

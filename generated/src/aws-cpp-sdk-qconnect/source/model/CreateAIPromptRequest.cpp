@@ -12,26 +12,6 @@ using namespace Aws::QConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAIPromptRequest::CreateAIPromptRequest() : 
-    m_apiFormat(AIPromptAPIFormat::NOT_SET),
-    m_apiFormatHasBeenSet(false),
-    m_assistantIdHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_descriptionHasBeenSet(false),
-    m_modelIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_templateConfigurationHasBeenSet(false),
-    m_templateType(AIPromptTemplateType::NOT_SET),
-    m_templateTypeHasBeenSet(false),
-    m_type(AIPromptType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_visibilityStatus(VisibilityStatus::NOT_SET),
-    m_visibilityStatusHasBeenSet(false)
-{
-}
-
 Aws::String CreateAIPromptRequest::SerializePayload() const
 {
   JsonValue payload;

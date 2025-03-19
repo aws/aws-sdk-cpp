@@ -12,19 +12,6 @@ using namespace Aws::TranscribeService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartMedicalScribeJobRequest::StartMedicalScribeJobRequest() : 
-    m_medicalScribeJobNameHasBeenSet(false),
-    m_mediaHasBeenSet(false),
-    m_outputBucketNameHasBeenSet(false),
-    m_outputEncryptionKMSKeyIdHasBeenSet(false),
-    m_kMSEncryptionContextHasBeenSet(false),
-    m_dataAccessRoleArnHasBeenSet(false),
-    m_settingsHasBeenSet(false),
-    m_channelDefinitionsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String StartMedicalScribeJobRequest::SerializePayload() const
 {
   JsonValue payload;

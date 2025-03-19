@@ -36,7 +36,7 @@ namespace Model
   class RemoveIpamOperatingRegion
   {
   public:
-    AWS_EC2_API RemoveIpamOperatingRegion();
+    AWS_EC2_API RemoveIpamOperatingRegion() = default;
     AWS_EC2_API RemoveIpamOperatingRegion(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API RemoveIpamOperatingRegion& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,14 +48,12 @@ namespace Model
     /**
      * <p>The name of the operating Region you want to remove.</p>
      */
-    inline const Aws::String& GetRegionName() const{ return m_regionName; }
+    inline const Aws::String& GetRegionName() const { return m_regionName; }
     inline bool RegionNameHasBeenSet() const { return m_regionNameHasBeenSet; }
-    inline void SetRegionName(const Aws::String& value) { m_regionNameHasBeenSet = true; m_regionName = value; }
-    inline void SetRegionName(Aws::String&& value) { m_regionNameHasBeenSet = true; m_regionName = std::move(value); }
-    inline void SetRegionName(const char* value) { m_regionNameHasBeenSet = true; m_regionName.assign(value); }
-    inline RemoveIpamOperatingRegion& WithRegionName(const Aws::String& value) { SetRegionName(value); return *this;}
-    inline RemoveIpamOperatingRegion& WithRegionName(Aws::String&& value) { SetRegionName(std::move(value)); return *this;}
-    inline RemoveIpamOperatingRegion& WithRegionName(const char* value) { SetRegionName(value); return *this;}
+    template<typename RegionNameT = Aws::String>
+    void SetRegionName(RegionNameT&& value) { m_regionNameHasBeenSet = true; m_regionName = std::forward<RegionNameT>(value); }
+    template<typename RegionNameT = Aws::String>
+    RemoveIpamOperatingRegion& WithRegionName(RegionNameT&& value) { SetRegionName(std::forward<RegionNameT>(value)); return *this;}
     ///@}
   private:
 

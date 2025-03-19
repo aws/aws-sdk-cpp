@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteThemeResult::DeleteThemeResult() : 
-    m_status(0)
-{
-}
-
 DeleteThemeResult::DeleteThemeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteThemeResult()
 {
   *this = result;
 }
@@ -34,25 +28,24 @@ DeleteThemeResult& DeleteThemeResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ThemeId"))
   {
     m_themeId = jsonValue.GetString("ThemeId");
-
+    m_themeIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

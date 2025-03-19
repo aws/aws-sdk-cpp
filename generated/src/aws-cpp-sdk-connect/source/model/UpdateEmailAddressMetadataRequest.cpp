@@ -12,15 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateEmailAddressMetadataRequest::UpdateEmailAddressMetadataRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_emailAddressIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
-{
-}
-
 Aws::String UpdateEmailAddressMetadataRequest::SerializePayload() const
 {
   JsonValue payload;

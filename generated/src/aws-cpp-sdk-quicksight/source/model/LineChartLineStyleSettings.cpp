@@ -18,19 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-LineChartLineStyleSettings::LineChartLineStyleSettings() : 
-    m_lineVisibility(Visibility::NOT_SET),
-    m_lineVisibilityHasBeenSet(false),
-    m_lineInterpolation(LineInterpolation::NOT_SET),
-    m_lineInterpolationHasBeenSet(false),
-    m_lineStyle(LineChartLineStyle::NOT_SET),
-    m_lineStyleHasBeenSet(false),
-    m_lineWidthHasBeenSet(false)
-{
-}
-
 LineChartLineStyleSettings::LineChartLineStyleSettings(JsonView jsonValue)
-  : LineChartLineStyleSettings()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ LineChartLineStyleSettings& LineChartLineStyleSettings::operator =(JsonView json
   if(jsonValue.ValueExists("LineVisibility"))
   {
     m_lineVisibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("LineVisibility"));
-
     m_lineVisibilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LineInterpolation"))
   {
     m_lineInterpolation = LineInterpolationMapper::GetLineInterpolationForName(jsonValue.GetString("LineInterpolation"));
-
     m_lineInterpolationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LineStyle"))
   {
     m_lineStyle = LineChartLineStyleMapper::GetLineChartLineStyleForName(jsonValue.GetString("LineStyle"));
-
     m_lineStyleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LineWidth"))
   {
     m_lineWidth = jsonValue.GetString("LineWidth");
-
     m_lineWidthHasBeenSet = true;
   }
-
   return *this;
 }
 

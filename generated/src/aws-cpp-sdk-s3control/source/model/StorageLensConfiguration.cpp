@@ -20,21 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-StorageLensConfiguration::StorageLensConfiguration() : 
-    m_idHasBeenSet(false),
-    m_accountLevelHasBeenSet(false),
-    m_includeHasBeenSet(false),
-    m_excludeHasBeenSet(false),
-    m_dataExportHasBeenSet(false),
-    m_isEnabled(false),
-    m_isEnabledHasBeenSet(false),
-    m_awsOrgHasBeenSet(false),
-    m_storageLensArnHasBeenSet(false)
-{
-}
-
 StorageLensConfiguration::StorageLensConfiguration(const XmlNode& xmlNode)
-  : StorageLensConfiguration()
 {
   *this = xmlNode;
 }

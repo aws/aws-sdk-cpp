@@ -18,14 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-ResourcesAffected::ResourcesAffected() : 
-    m_s3BucketHasBeenSet(false),
-    m_s3ObjectHasBeenSet(false)
-{
-}
-
 ResourcesAffected::ResourcesAffected(JsonView jsonValue)
-  : ResourcesAffected()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ResourcesAffected& ResourcesAffected::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3Bucket"))
   {
     m_s3Bucket = jsonValue.GetObject("s3Bucket");
-
     m_s3BucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3Object"))
   {
     m_s3Object = jsonValue.GetObject("s3Object");
-
     m_s3ObjectHasBeenSet = true;
   }
-
   return *this;
 }
 

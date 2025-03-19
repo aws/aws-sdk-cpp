@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VerifiedAccessLogKinesisDataFirehoseDestination::VerifiedAccessLogKinesisDataFirehoseDestination() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_deliveryStatusHasBeenSet(false),
-    m_deliveryStreamHasBeenSet(false)
-{
-}
-
 VerifiedAccessLogKinesisDataFirehoseDestination::VerifiedAccessLogKinesisDataFirehoseDestination(const XmlNode& xmlNode)
-  : VerifiedAccessLogKinesisDataFirehoseDestination()
 {
   *this = xmlNode;
 }

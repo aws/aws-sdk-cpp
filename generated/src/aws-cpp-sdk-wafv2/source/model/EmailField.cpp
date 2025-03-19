@@ -18,13 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-EmailField::EmailField() : 
-    m_identifierHasBeenSet(false)
-{
-}
-
 EmailField::EmailField(JsonView jsonValue)
-  : EmailField()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EmailField& EmailField::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Identifier"))
   {
     m_identifier = jsonValue.GetString("Identifier");
-
     m_identifierHasBeenSet = true;
   }
-
   return *this;
 }
 

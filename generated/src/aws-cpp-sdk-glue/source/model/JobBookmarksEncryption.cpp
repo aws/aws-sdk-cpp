@@ -18,15 +18,7 @@ namespace Glue
 namespace Model
 {
 
-JobBookmarksEncryption::JobBookmarksEncryption() : 
-    m_jobBookmarksEncryptionMode(JobBookmarksEncryptionMode::NOT_SET),
-    m_jobBookmarksEncryptionModeHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false)
-{
-}
-
 JobBookmarksEncryption::JobBookmarksEncryption(JsonView jsonValue)
-  : JobBookmarksEncryption()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ JobBookmarksEncryption& JobBookmarksEncryption::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("JobBookmarksEncryptionMode"))
   {
     m_jobBookmarksEncryptionMode = JobBookmarksEncryptionModeMapper::GetJobBookmarksEncryptionModeForName(jsonValue.GetString("JobBookmarksEncryptionMode"));
-
     m_jobBookmarksEncryptionModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyArn"))
   {
     m_kmsKeyArn = jsonValue.GetString("KmsKeyArn");
-
     m_kmsKeyArnHasBeenSet = true;
   }
-
   return *this;
 }
 

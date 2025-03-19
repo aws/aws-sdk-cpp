@@ -33,7 +33,7 @@ namespace Model
   class CapacityReservationTarget
   {
   public:
-    AWS_AUTOSCALING_API CapacityReservationTarget();
+    AWS_AUTOSCALING_API CapacityReservationTarget() = default;
     AWS_AUTOSCALING_API CapacityReservationTarget(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_AUTOSCALING_API CapacityReservationTarget& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,15 +45,14 @@ namespace Model
     /**
      * <p> The Capacity Reservation IDs to launch instances into. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetCapacityReservationIds() const{ return m_capacityReservationIds; }
+    inline const Aws::Vector<Aws::String>& GetCapacityReservationIds() const { return m_capacityReservationIds; }
     inline bool CapacityReservationIdsHasBeenSet() const { return m_capacityReservationIdsHasBeenSet; }
-    inline void SetCapacityReservationIds(const Aws::Vector<Aws::String>& value) { m_capacityReservationIdsHasBeenSet = true; m_capacityReservationIds = value; }
-    inline void SetCapacityReservationIds(Aws::Vector<Aws::String>&& value) { m_capacityReservationIdsHasBeenSet = true; m_capacityReservationIds = std::move(value); }
-    inline CapacityReservationTarget& WithCapacityReservationIds(const Aws::Vector<Aws::String>& value) { SetCapacityReservationIds(value); return *this;}
-    inline CapacityReservationTarget& WithCapacityReservationIds(Aws::Vector<Aws::String>&& value) { SetCapacityReservationIds(std::move(value)); return *this;}
-    inline CapacityReservationTarget& AddCapacityReservationIds(const Aws::String& value) { m_capacityReservationIdsHasBeenSet = true; m_capacityReservationIds.push_back(value); return *this; }
-    inline CapacityReservationTarget& AddCapacityReservationIds(Aws::String&& value) { m_capacityReservationIdsHasBeenSet = true; m_capacityReservationIds.push_back(std::move(value)); return *this; }
-    inline CapacityReservationTarget& AddCapacityReservationIds(const char* value) { m_capacityReservationIdsHasBeenSet = true; m_capacityReservationIds.push_back(value); return *this; }
+    template<typename CapacityReservationIdsT = Aws::Vector<Aws::String>>
+    void SetCapacityReservationIds(CapacityReservationIdsT&& value) { m_capacityReservationIdsHasBeenSet = true; m_capacityReservationIds = std::forward<CapacityReservationIdsT>(value); }
+    template<typename CapacityReservationIdsT = Aws::Vector<Aws::String>>
+    CapacityReservationTarget& WithCapacityReservationIds(CapacityReservationIdsT&& value) { SetCapacityReservationIds(std::forward<CapacityReservationIdsT>(value)); return *this;}
+    template<typename CapacityReservationIdsT = Aws::String>
+    CapacityReservationTarget& AddCapacityReservationIds(CapacityReservationIdsT&& value) { m_capacityReservationIdsHasBeenSet = true; m_capacityReservationIds.emplace_back(std::forward<CapacityReservationIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -61,15 +60,14 @@ namespace Model
      * <p> The resource group ARNs of the Capacity Reservation to launch instances
      * into. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetCapacityReservationResourceGroupArns() const{ return m_capacityReservationResourceGroupArns; }
+    inline const Aws::Vector<Aws::String>& GetCapacityReservationResourceGroupArns() const { return m_capacityReservationResourceGroupArns; }
     inline bool CapacityReservationResourceGroupArnsHasBeenSet() const { return m_capacityReservationResourceGroupArnsHasBeenSet; }
-    inline void SetCapacityReservationResourceGroupArns(const Aws::Vector<Aws::String>& value) { m_capacityReservationResourceGroupArnsHasBeenSet = true; m_capacityReservationResourceGroupArns = value; }
-    inline void SetCapacityReservationResourceGroupArns(Aws::Vector<Aws::String>&& value) { m_capacityReservationResourceGroupArnsHasBeenSet = true; m_capacityReservationResourceGroupArns = std::move(value); }
-    inline CapacityReservationTarget& WithCapacityReservationResourceGroupArns(const Aws::Vector<Aws::String>& value) { SetCapacityReservationResourceGroupArns(value); return *this;}
-    inline CapacityReservationTarget& WithCapacityReservationResourceGroupArns(Aws::Vector<Aws::String>&& value) { SetCapacityReservationResourceGroupArns(std::move(value)); return *this;}
-    inline CapacityReservationTarget& AddCapacityReservationResourceGroupArns(const Aws::String& value) { m_capacityReservationResourceGroupArnsHasBeenSet = true; m_capacityReservationResourceGroupArns.push_back(value); return *this; }
-    inline CapacityReservationTarget& AddCapacityReservationResourceGroupArns(Aws::String&& value) { m_capacityReservationResourceGroupArnsHasBeenSet = true; m_capacityReservationResourceGroupArns.push_back(std::move(value)); return *this; }
-    inline CapacityReservationTarget& AddCapacityReservationResourceGroupArns(const char* value) { m_capacityReservationResourceGroupArnsHasBeenSet = true; m_capacityReservationResourceGroupArns.push_back(value); return *this; }
+    template<typename CapacityReservationResourceGroupArnsT = Aws::Vector<Aws::String>>
+    void SetCapacityReservationResourceGroupArns(CapacityReservationResourceGroupArnsT&& value) { m_capacityReservationResourceGroupArnsHasBeenSet = true; m_capacityReservationResourceGroupArns = std::forward<CapacityReservationResourceGroupArnsT>(value); }
+    template<typename CapacityReservationResourceGroupArnsT = Aws::Vector<Aws::String>>
+    CapacityReservationTarget& WithCapacityReservationResourceGroupArns(CapacityReservationResourceGroupArnsT&& value) { SetCapacityReservationResourceGroupArns(std::forward<CapacityReservationResourceGroupArnsT>(value)); return *this;}
+    template<typename CapacityReservationResourceGroupArnsT = Aws::String>
+    CapacityReservationTarget& AddCapacityReservationResourceGroupArns(CapacityReservationResourceGroupArnsT&& value) { m_capacityReservationResourceGroupArnsHasBeenSet = true; m_capacityReservationResourceGroupArns.emplace_back(std::forward<CapacityReservationResourceGroupArnsT>(value)); return *this; }
     ///@}
   private:
 

@@ -18,21 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-LoRaWANPublicGatewayMetadata::LoRaWANPublicGatewayMetadata() : 
-    m_providerNetIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_rssi(0.0),
-    m_rssiHasBeenSet(false),
-    m_snr(0.0),
-    m_snrHasBeenSet(false),
-    m_rfRegionHasBeenSet(false),
-    m_dlAllowed(false),
-    m_dlAllowedHasBeenSet(false)
-{
-}
-
 LoRaWANPublicGatewayMetadata::LoRaWANPublicGatewayMetadata(JsonView jsonValue)
-  : LoRaWANPublicGatewayMetadata()
 {
   *this = jsonValue;
 }
@@ -42,45 +28,33 @@ LoRaWANPublicGatewayMetadata& LoRaWANPublicGatewayMetadata::operator =(JsonView 
   if(jsonValue.ValueExists("ProviderNetId"))
   {
     m_providerNetId = jsonValue.GetString("ProviderNetId");
-
     m_providerNetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Rssi"))
   {
     m_rssi = jsonValue.GetDouble("Rssi");
-
     m_rssiHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Snr"))
   {
     m_snr = jsonValue.GetDouble("Snr");
-
     m_snrHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RfRegion"))
   {
     m_rfRegion = jsonValue.GetString("RfRegion");
-
     m_rfRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DlAllowed"))
   {
     m_dlAllowed = jsonValue.GetBool("DlAllowed");
-
     m_dlAllowedHasBeenSet = true;
   }
-
   return *this;
 }
 

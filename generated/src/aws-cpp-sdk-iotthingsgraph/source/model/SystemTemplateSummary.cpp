@@ -18,17 +18,7 @@ namespace IoTThingsGraph
 namespace Model
 {
 
-SystemTemplateSummary::SystemTemplateSummary() : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_revisionNumber(0),
-    m_revisionNumberHasBeenSet(false),
-    m_createdAtHasBeenSet(false)
-{
-}
-
 SystemTemplateSummary::SystemTemplateSummary(JsonView jsonValue)
-  : SystemTemplateSummary()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ SystemTemplateSummary& SystemTemplateSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("revisionNumber"))
   {
     m_revisionNumber = jsonValue.GetInt64("revisionNumber");
-
     m_revisionNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   return *this;
 }
 

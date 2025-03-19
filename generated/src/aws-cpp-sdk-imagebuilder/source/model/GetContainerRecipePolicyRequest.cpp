@@ -15,11 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetContainerRecipePolicyRequest::GetContainerRecipePolicyRequest() : 
-    m_containerRecipeArnHasBeenSet(false)
-{
-}
-
 Aws::String GetContainerRecipePolicyRequest::SerializePayload() const
 {
   return {};

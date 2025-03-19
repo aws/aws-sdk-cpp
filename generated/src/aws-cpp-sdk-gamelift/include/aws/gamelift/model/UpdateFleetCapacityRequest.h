@@ -21,7 +21,7 @@ namespace Model
   class UpdateFleetCapacityRequest : public GameLiftRequest
   {
   public:
-    AWS_GAMELIFT_API UpdateFleetCapacityRequest();
+    AWS_GAMELIFT_API UpdateFleetCapacityRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>A unique identifier for the fleet to update capacity settings for. You can
      * use either the fleet ID or ARN value.</p>
      */
-    inline const Aws::String& GetFleetId() const{ return m_fleetId; }
+    inline const Aws::String& GetFleetId() const { return m_fleetId; }
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
-    inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
-    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
-    inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
-    inline UpdateFleetCapacityRequest& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
-    inline UpdateFleetCapacityRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
-    inline UpdateFleetCapacityRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+    template<typename FleetIdT = Aws::String>
+    void SetFleetId(FleetIdT&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::forward<FleetIdT>(value); }
+    template<typename FleetIdT = Aws::String>
+    UpdateFleetCapacityRequest& WithFleetId(FleetIdT&& value) { SetFleetId(std::forward<FleetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,7 +54,7 @@ namespace Model
      * limits. Changes in desired instance value can take up to 1 minute to be
      * reflected when viewing the fleet's capacity settings.</p>
      */
-    inline int GetDesiredInstances() const{ return m_desiredInstances; }
+    inline int GetDesiredInstances() const { return m_desiredInstances; }
     inline bool DesiredInstancesHasBeenSet() const { return m_desiredInstancesHasBeenSet; }
     inline void SetDesiredInstances(int value) { m_desiredInstancesHasBeenSet = true; m_desiredInstances = value; }
     inline UpdateFleetCapacityRequest& WithDesiredInstances(int value) { SetDesiredInstances(value); return *this;}
@@ -67,7 +65,7 @@ namespace Model
      * <p>The minimum number of instances that are allowed in the specified fleet
      * location. If this parameter is not set, the default is 0.</p>
      */
-    inline int GetMinSize() const{ return m_minSize; }
+    inline int GetMinSize() const { return m_minSize; }
     inline bool MinSizeHasBeenSet() const { return m_minSizeHasBeenSet; }
     inline void SetMinSize(int value) { m_minSizeHasBeenSet = true; m_minSize = value; }
     inline UpdateFleetCapacityRequest& WithMinSize(int value) { SetMinSize(value); return *this;}
@@ -78,7 +76,7 @@ namespace Model
      * <p>The maximum number of instances that are allowed in the specified fleet
      * location. If this parameter is not set, the default is 1.</p>
      */
-    inline int GetMaxSize() const{ return m_maxSize; }
+    inline int GetMaxSize() const { return m_maxSize; }
     inline bool MaxSizeHasBeenSet() const { return m_maxSizeHasBeenSet; }
     inline void SetMaxSize(int value) { m_maxSizeHasBeenSet = true; m_maxSize = value; }
     inline UpdateFleetCapacityRequest& WithMaxSize(int value) { SetMaxSize(value); return *this;}
@@ -89,27 +87,25 @@ namespace Model
      * <p>The name of a remote location to update fleet capacity settings for, in the
      * form of an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
      */
-    inline const Aws::String& GetLocation() const{ return m_location; }
+    inline const Aws::String& GetLocation() const { return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-    inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
-    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-    inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
-    inline UpdateFleetCapacityRequest& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-    inline UpdateFleetCapacityRequest& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-    inline UpdateFleetCapacityRequest& WithLocation(const char* value) { SetLocation(value); return *this;}
+    template<typename LocationT = Aws::String>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Aws::String>
+    UpdateFleetCapacityRequest& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_fleetId;
     bool m_fleetIdHasBeenSet = false;
 
-    int m_desiredInstances;
+    int m_desiredInstances{0};
     bool m_desiredInstancesHasBeenSet = false;
 
-    int m_minSize;
+    int m_minSize{0};
     bool m_minSizeHasBeenSet = false;
 
-    int m_maxSize;
+    int m_maxSize{0};
     bool m_maxSizeHasBeenSet = false;
 
     Aws::String m_location;

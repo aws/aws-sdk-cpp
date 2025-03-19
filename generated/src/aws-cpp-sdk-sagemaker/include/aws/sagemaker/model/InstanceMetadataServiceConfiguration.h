@@ -32,7 +32,7 @@ namespace Model
   class InstanceMetadataServiceConfiguration
   {
   public:
-    AWS_SAGEMAKER_API InstanceMetadataServiceConfiguration();
+    AWS_SAGEMAKER_API InstanceMetadataServiceConfiguration() = default;
     AWS_SAGEMAKER_API InstanceMetadataServiceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API InstanceMetadataServiceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * supported. If passed as part of <code>UpdateNotebookInstance</code>, there is no
      * default.</p>
      */
-    inline const Aws::String& GetMinimumInstanceMetadataServiceVersion() const{ return m_minimumInstanceMetadataServiceVersion; }
+    inline const Aws::String& GetMinimumInstanceMetadataServiceVersion() const { return m_minimumInstanceMetadataServiceVersion; }
     inline bool MinimumInstanceMetadataServiceVersionHasBeenSet() const { return m_minimumInstanceMetadataServiceVersionHasBeenSet; }
-    inline void SetMinimumInstanceMetadataServiceVersion(const Aws::String& value) { m_minimumInstanceMetadataServiceVersionHasBeenSet = true; m_minimumInstanceMetadataServiceVersion = value; }
-    inline void SetMinimumInstanceMetadataServiceVersion(Aws::String&& value) { m_minimumInstanceMetadataServiceVersionHasBeenSet = true; m_minimumInstanceMetadataServiceVersion = std::move(value); }
-    inline void SetMinimumInstanceMetadataServiceVersion(const char* value) { m_minimumInstanceMetadataServiceVersionHasBeenSet = true; m_minimumInstanceMetadataServiceVersion.assign(value); }
-    inline InstanceMetadataServiceConfiguration& WithMinimumInstanceMetadataServiceVersion(const Aws::String& value) { SetMinimumInstanceMetadataServiceVersion(value); return *this;}
-    inline InstanceMetadataServiceConfiguration& WithMinimumInstanceMetadataServiceVersion(Aws::String&& value) { SetMinimumInstanceMetadataServiceVersion(std::move(value)); return *this;}
-    inline InstanceMetadataServiceConfiguration& WithMinimumInstanceMetadataServiceVersion(const char* value) { SetMinimumInstanceMetadataServiceVersion(value); return *this;}
+    template<typename MinimumInstanceMetadataServiceVersionT = Aws::String>
+    void SetMinimumInstanceMetadataServiceVersion(MinimumInstanceMetadataServiceVersionT&& value) { m_minimumInstanceMetadataServiceVersionHasBeenSet = true; m_minimumInstanceMetadataServiceVersion = std::forward<MinimumInstanceMetadataServiceVersionT>(value); }
+    template<typename MinimumInstanceMetadataServiceVersionT = Aws::String>
+    InstanceMetadataServiceConfiguration& WithMinimumInstanceMetadataServiceVersion(MinimumInstanceMetadataServiceVersionT&& value) { SetMinimumInstanceMetadataServiceVersion(std::forward<MinimumInstanceMetadataServiceVersionT>(value)); return *this;}
     ///@}
   private:
 

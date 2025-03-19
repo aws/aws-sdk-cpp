@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-SearchableSegmentAttributesCriteria::SearchableSegmentAttributesCriteria() : 
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 SearchableSegmentAttributesCriteria::SearchableSegmentAttributesCriteria(JsonView jsonValue)
-  : SearchableSegmentAttributesCriteria()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SearchableSegmentAttributesCriteria& SearchableSegmentAttributesCriteria::operat
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -48,7 +39,6 @@ SearchableSegmentAttributesCriteria& SearchableSegmentAttributesCriteria::operat
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

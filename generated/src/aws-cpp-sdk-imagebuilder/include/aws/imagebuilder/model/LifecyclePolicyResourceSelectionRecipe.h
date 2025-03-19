@@ -32,7 +32,7 @@ namespace Model
   class LifecyclePolicyResourceSelectionRecipe
   {
   public:
-    AWS_IMAGEBUILDER_API LifecyclePolicyResourceSelectionRecipe();
+    AWS_IMAGEBUILDER_API LifecyclePolicyResourceSelectionRecipe() = default;
     AWS_IMAGEBUILDER_API LifecyclePolicyResourceSelectionRecipe(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API LifecyclePolicyResourceSelectionRecipe& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The name of an Image Builder recipe that the lifecycle policy uses for
      * resource selection.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline LifecyclePolicyResourceSelectionRecipe& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline LifecyclePolicyResourceSelectionRecipe& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline LifecyclePolicyResourceSelectionRecipe& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    LifecyclePolicyResourceSelectionRecipe& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The version of the Image Builder recipe specified by the <code>name</code>
      * field.</p>
      */
-    inline const Aws::String& GetSemanticVersion() const{ return m_semanticVersion; }
+    inline const Aws::String& GetSemanticVersion() const { return m_semanticVersion; }
     inline bool SemanticVersionHasBeenSet() const { return m_semanticVersionHasBeenSet; }
-    inline void SetSemanticVersion(const Aws::String& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = value; }
-    inline void SetSemanticVersion(Aws::String&& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = std::move(value); }
-    inline void SetSemanticVersion(const char* value) { m_semanticVersionHasBeenSet = true; m_semanticVersion.assign(value); }
-    inline LifecyclePolicyResourceSelectionRecipe& WithSemanticVersion(const Aws::String& value) { SetSemanticVersion(value); return *this;}
-    inline LifecyclePolicyResourceSelectionRecipe& WithSemanticVersion(Aws::String&& value) { SetSemanticVersion(std::move(value)); return *this;}
-    inline LifecyclePolicyResourceSelectionRecipe& WithSemanticVersion(const char* value) { SetSemanticVersion(value); return *this;}
+    template<typename SemanticVersionT = Aws::String>
+    void SetSemanticVersion(SemanticVersionT&& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = std::forward<SemanticVersionT>(value); }
+    template<typename SemanticVersionT = Aws::String>
+    LifecyclePolicyResourceSelectionRecipe& WithSemanticVersion(SemanticVersionT&& value) { SetSemanticVersion(std::forward<SemanticVersionT>(value)); return *this;}
     ///@}
   private:
 

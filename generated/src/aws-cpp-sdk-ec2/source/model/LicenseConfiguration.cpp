@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-LicenseConfiguration::LicenseConfiguration() : 
-    m_licenseConfigurationArnHasBeenSet(false)
-{
-}
-
 LicenseConfiguration::LicenseConfiguration(const XmlNode& xmlNode)
-  : LicenseConfiguration()
 {
   *this = xmlNode;
 }

@@ -20,13 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-LoadBalancer::LoadBalancer() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 LoadBalancer::LoadBalancer(const XmlNode& xmlNode)
-  : LoadBalancer()
 {
   *this = xmlNode;
 }

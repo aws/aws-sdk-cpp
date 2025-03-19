@@ -18,17 +18,7 @@ namespace WorkDocs
 namespace Model
 {
 
-SharePrincipal::SharePrincipal() : 
-    m_idHasBeenSet(false),
-    m_type(PrincipalType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_role(RoleType::NOT_SET),
-    m_roleHasBeenSet(false)
-{
-}
-
 SharePrincipal::SharePrincipal(JsonView jsonValue)
-  : SharePrincipal()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ SharePrincipal& SharePrincipal::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = PrincipalTypeMapper::GetPrincipalTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Role"))
   {
     m_role = RoleTypeMapper::GetRoleTypeForName(jsonValue.GetString("Role"));
-
     m_roleHasBeenSet = true;
   }
-
   return *this;
 }
 

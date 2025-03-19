@@ -24,7 +24,7 @@ namespace Model
   class CreatePushNotificationRegistrationRequest : public ConnectRequest
   {
   public:
-    AWS_CONNECT_API CreatePushNotificationRegistrationRequest();
+    AWS_CONNECT_API CreatePushNotificationRegistrationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline CreatePushNotificationRegistrationRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline CreatePushNotificationRegistrationRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline CreatePushNotificationRegistrationRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    CreatePushNotificationRegistrationRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,66 +57,58 @@ namespace Model
      * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
      * retries safe with idempotent APIs</a>.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreatePushNotificationRegistrationRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreatePushNotificationRegistrationRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreatePushNotificationRegistrationRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreatePushNotificationRegistrationRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Pinpoint application.</p>
      */
-    inline const Aws::String& GetPinpointAppArn() const{ return m_pinpointAppArn; }
+    inline const Aws::String& GetPinpointAppArn() const { return m_pinpointAppArn; }
     inline bool PinpointAppArnHasBeenSet() const { return m_pinpointAppArnHasBeenSet; }
-    inline void SetPinpointAppArn(const Aws::String& value) { m_pinpointAppArnHasBeenSet = true; m_pinpointAppArn = value; }
-    inline void SetPinpointAppArn(Aws::String&& value) { m_pinpointAppArnHasBeenSet = true; m_pinpointAppArn = std::move(value); }
-    inline void SetPinpointAppArn(const char* value) { m_pinpointAppArnHasBeenSet = true; m_pinpointAppArn.assign(value); }
-    inline CreatePushNotificationRegistrationRequest& WithPinpointAppArn(const Aws::String& value) { SetPinpointAppArn(value); return *this;}
-    inline CreatePushNotificationRegistrationRequest& WithPinpointAppArn(Aws::String&& value) { SetPinpointAppArn(std::move(value)); return *this;}
-    inline CreatePushNotificationRegistrationRequest& WithPinpointAppArn(const char* value) { SetPinpointAppArn(value); return *this;}
+    template<typename PinpointAppArnT = Aws::String>
+    void SetPinpointAppArn(PinpointAppArnT&& value) { m_pinpointAppArnHasBeenSet = true; m_pinpointAppArn = std::forward<PinpointAppArnT>(value); }
+    template<typename PinpointAppArnT = Aws::String>
+    CreatePushNotificationRegistrationRequest& WithPinpointAppArn(PinpointAppArnT&& value) { SetPinpointAppArn(std::forward<PinpointAppArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The push notification token issued by the Apple or Google gateways.</p>
      */
-    inline const Aws::String& GetDeviceToken() const{ return m_deviceToken; }
+    inline const Aws::String& GetDeviceToken() const { return m_deviceToken; }
     inline bool DeviceTokenHasBeenSet() const { return m_deviceTokenHasBeenSet; }
-    inline void SetDeviceToken(const Aws::String& value) { m_deviceTokenHasBeenSet = true; m_deviceToken = value; }
-    inline void SetDeviceToken(Aws::String&& value) { m_deviceTokenHasBeenSet = true; m_deviceToken = std::move(value); }
-    inline void SetDeviceToken(const char* value) { m_deviceTokenHasBeenSet = true; m_deviceToken.assign(value); }
-    inline CreatePushNotificationRegistrationRequest& WithDeviceToken(const Aws::String& value) { SetDeviceToken(value); return *this;}
-    inline CreatePushNotificationRegistrationRequest& WithDeviceToken(Aws::String&& value) { SetDeviceToken(std::move(value)); return *this;}
-    inline CreatePushNotificationRegistrationRequest& WithDeviceToken(const char* value) { SetDeviceToken(value); return *this;}
+    template<typename DeviceTokenT = Aws::String>
+    void SetDeviceToken(DeviceTokenT&& value) { m_deviceTokenHasBeenSet = true; m_deviceToken = std::forward<DeviceTokenT>(value); }
+    template<typename DeviceTokenT = Aws::String>
+    CreatePushNotificationRegistrationRequest& WithDeviceToken(DeviceTokenT&& value) { SetDeviceToken(std::forward<DeviceTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The device type to use when sending the message.</p>
      */
-    inline const DeviceType& GetDeviceType() const{ return m_deviceType; }
+    inline DeviceType GetDeviceType() const { return m_deviceType; }
     inline bool DeviceTypeHasBeenSet() const { return m_deviceTypeHasBeenSet; }
-    inline void SetDeviceType(const DeviceType& value) { m_deviceTypeHasBeenSet = true; m_deviceType = value; }
-    inline void SetDeviceType(DeviceType&& value) { m_deviceTypeHasBeenSet = true; m_deviceType = std::move(value); }
-    inline CreatePushNotificationRegistrationRequest& WithDeviceType(const DeviceType& value) { SetDeviceType(value); return *this;}
-    inline CreatePushNotificationRegistrationRequest& WithDeviceType(DeviceType&& value) { SetDeviceType(std::move(value)); return *this;}
+    inline void SetDeviceType(DeviceType value) { m_deviceTypeHasBeenSet = true; m_deviceType = value; }
+    inline CreatePushNotificationRegistrationRequest& WithDeviceType(DeviceType value) { SetDeviceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The contact configuration for push notification registration.</p>
      */
-    inline const ContactConfiguration& GetContactConfiguration() const{ return m_contactConfiguration; }
+    inline const ContactConfiguration& GetContactConfiguration() const { return m_contactConfiguration; }
     inline bool ContactConfigurationHasBeenSet() const { return m_contactConfigurationHasBeenSet; }
-    inline void SetContactConfiguration(const ContactConfiguration& value) { m_contactConfigurationHasBeenSet = true; m_contactConfiguration = value; }
-    inline void SetContactConfiguration(ContactConfiguration&& value) { m_contactConfigurationHasBeenSet = true; m_contactConfiguration = std::move(value); }
-    inline CreatePushNotificationRegistrationRequest& WithContactConfiguration(const ContactConfiguration& value) { SetContactConfiguration(value); return *this;}
-    inline CreatePushNotificationRegistrationRequest& WithContactConfiguration(ContactConfiguration&& value) { SetContactConfiguration(std::move(value)); return *this;}
+    template<typename ContactConfigurationT = ContactConfiguration>
+    void SetContactConfiguration(ContactConfigurationT&& value) { m_contactConfigurationHasBeenSet = true; m_contactConfiguration = std::forward<ContactConfigurationT>(value); }
+    template<typename ContactConfigurationT = ContactConfiguration>
+    CreatePushNotificationRegistrationRequest& WithContactConfiguration(ContactConfigurationT&& value) { SetContactConfiguration(std::forward<ContactConfigurationT>(value)); return *this;}
     ///@}
   private:
 
@@ -134,7 +124,7 @@ namespace Model
     Aws::String m_deviceToken;
     bool m_deviceTokenHasBeenSet = false;
 
-    DeviceType m_deviceType;
+    DeviceType m_deviceType{DeviceType::NOT_SET};
     bool m_deviceTypeHasBeenSet = false;
 
     ContactConfiguration m_contactConfiguration;

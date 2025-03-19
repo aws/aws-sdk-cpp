@@ -18,13 +18,7 @@ namespace DLM
 namespace Model
 {
 
-ArchiveRule::ArchiveRule() : 
-    m_retainRuleHasBeenSet(false)
-{
-}
-
 ArchiveRule::ArchiveRule(JsonView jsonValue)
-  : ArchiveRule()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ArchiveRule& ArchiveRule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RetainRule"))
   {
     m_retainRule = jsonValue.GetObject("RetainRule");
-
     m_retainRuleHasBeenSet = true;
   }
-
   return *this;
 }
 

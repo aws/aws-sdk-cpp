@@ -18,18 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-InboundConnection::InboundConnection() : 
-    m_localDomainInfoHasBeenSet(false),
-    m_remoteDomainInfoHasBeenSet(false),
-    m_connectionIdHasBeenSet(false),
-    m_connectionStatusHasBeenSet(false),
-    m_connectionMode(ConnectionMode::NOT_SET),
-    m_connectionModeHasBeenSet(false)
-{
-}
-
 InboundConnection::InboundConnection(JsonView jsonValue)
-  : InboundConnection()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ InboundConnection& InboundConnection::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LocalDomainInfo"))
   {
     m_localDomainInfo = jsonValue.GetObject("LocalDomainInfo");
-
     m_localDomainInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RemoteDomainInfo"))
   {
     m_remoteDomainInfo = jsonValue.GetObject("RemoteDomainInfo");
-
     m_remoteDomainInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionId"))
   {
     m_connectionId = jsonValue.GetString("ConnectionId");
-
     m_connectionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionStatus"))
   {
     m_connectionStatus = jsonValue.GetObject("ConnectionStatus");
-
     m_connectionStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionMode"))
   {
     m_connectionMode = ConnectionModeMapper::GetConnectionModeForName(jsonValue.GetString("ConnectionMode"));
-
     m_connectionModeHasBeenSet = true;
   }
-
   return *this;
 }
 

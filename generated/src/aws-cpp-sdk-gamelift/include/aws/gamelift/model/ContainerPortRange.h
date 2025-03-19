@@ -34,7 +34,7 @@ namespace Model
   class ContainerPortRange
   {
   public:
-    AWS_GAMELIFT_API ContainerPortRange();
+    AWS_GAMELIFT_API ContainerPortRange() = default;
     AWS_GAMELIFT_API ContainerPortRange(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API ContainerPortRange& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
     /**
      * <p>A starting value for the range of allowed port numbers.</p>
      */
-    inline int GetFromPort() const{ return m_fromPort; }
+    inline int GetFromPort() const { return m_fromPort; }
     inline bool FromPortHasBeenSet() const { return m_fromPortHasBeenSet; }
     inline void SetFromPort(int value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
     inline ContainerPortRange& WithFromPort(int value) { SetFromPort(value); return *this;}
@@ -56,7 +56,7 @@ namespace Model
      * end-inclusive. This value must be equal to or greater than
      * <code>FromPort</code>.</p>
      */
-    inline int GetToPort() const{ return m_toPort; }
+    inline int GetToPort() const { return m_toPort; }
     inline bool ToPortHasBeenSet() const { return m_toPortHasBeenSet; }
     inline void SetToPort(int value) { m_toPortHasBeenSet = true; m_toPort = value; }
     inline ContainerPortRange& WithToPort(int value) { SetToPort(value); return *this;}
@@ -66,22 +66,20 @@ namespace Model
     /**
      * <p>The network protocol that these ports support. </p>
      */
-    inline const IpProtocol& GetProtocol() const{ return m_protocol; }
+    inline IpProtocol GetProtocol() const { return m_protocol; }
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-    inline void SetProtocol(const IpProtocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
-    inline void SetProtocol(IpProtocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
-    inline ContainerPortRange& WithProtocol(const IpProtocol& value) { SetProtocol(value); return *this;}
-    inline ContainerPortRange& WithProtocol(IpProtocol&& value) { SetProtocol(std::move(value)); return *this;}
+    inline void SetProtocol(IpProtocol value) { m_protocolHasBeenSet = true; m_protocol = value; }
+    inline ContainerPortRange& WithProtocol(IpProtocol value) { SetProtocol(value); return *this;}
     ///@}
   private:
 
-    int m_fromPort;
+    int m_fromPort{0};
     bool m_fromPortHasBeenSet = false;
 
-    int m_toPort;
+    int m_toPort{0};
     bool m_toPortHasBeenSet = false;
 
-    IpProtocol m_protocol;
+    IpProtocol m_protocol{IpProtocol::NOT_SET};
     bool m_protocolHasBeenSet = false;
   };
 

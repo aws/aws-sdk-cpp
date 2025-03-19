@@ -33,7 +33,7 @@ namespace Model
   class ColumnError
   {
   public:
-    AWS_GLUE_API ColumnError();
+    AWS_GLUE_API ColumnError() = default;
     AWS_GLUE_API ColumnError(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API ColumnError& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,24 @@ namespace Model
     /**
      * <p>The name of the column that failed.</p>
      */
-    inline const Aws::String& GetColumnName() const{ return m_columnName; }
+    inline const Aws::String& GetColumnName() const { return m_columnName; }
     inline bool ColumnNameHasBeenSet() const { return m_columnNameHasBeenSet; }
-    inline void SetColumnName(const Aws::String& value) { m_columnNameHasBeenSet = true; m_columnName = value; }
-    inline void SetColumnName(Aws::String&& value) { m_columnNameHasBeenSet = true; m_columnName = std::move(value); }
-    inline void SetColumnName(const char* value) { m_columnNameHasBeenSet = true; m_columnName.assign(value); }
-    inline ColumnError& WithColumnName(const Aws::String& value) { SetColumnName(value); return *this;}
-    inline ColumnError& WithColumnName(Aws::String&& value) { SetColumnName(std::move(value)); return *this;}
-    inline ColumnError& WithColumnName(const char* value) { SetColumnName(value); return *this;}
+    template<typename ColumnNameT = Aws::String>
+    void SetColumnName(ColumnNameT&& value) { m_columnNameHasBeenSet = true; m_columnName = std::forward<ColumnNameT>(value); }
+    template<typename ColumnNameT = Aws::String>
+    ColumnError& WithColumnName(ColumnNameT&& value) { SetColumnName(std::forward<ColumnNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An error message with the reason for the failure of an operation.</p>
      */
-    inline const ErrorDetail& GetError() const{ return m_error; }
+    inline const ErrorDetail& GetError() const { return m_error; }
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-    inline void SetError(const ErrorDetail& value) { m_errorHasBeenSet = true; m_error = value; }
-    inline void SetError(ErrorDetail&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-    inline ColumnError& WithError(const ErrorDetail& value) { SetError(value); return *this;}
-    inline ColumnError& WithError(ErrorDetail&& value) { SetError(std::move(value)); return *this;}
+    template<typename ErrorT = ErrorDetail>
+    void SetError(ErrorT&& value) { m_errorHasBeenSet = true; m_error = std::forward<ErrorT>(value); }
+    template<typename ErrorT = ErrorDetail>
+    ColumnError& WithError(ErrorT&& value) { SetError(std::forward<ErrorT>(value)); return *this;}
     ///@}
   private:
 

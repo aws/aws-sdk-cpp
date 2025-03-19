@@ -12,14 +12,6 @@ using namespace Aws::TaxSettings::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutTaxExemptionRequest::PutTaxExemptionRequest() : 
-    m_accountIdsHasBeenSet(false),
-    m_authorityHasBeenSet(false),
-    m_exemptionCertificateHasBeenSet(false),
-    m_exemptionTypeHasBeenSet(false)
-{
-}
-
 Aws::String PutTaxExemptionRequest::SerializePayload() const
 {
   JsonValue payload;

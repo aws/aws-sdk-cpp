@@ -12,14 +12,6 @@ using namespace Aws::KinesisAnalyticsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListApplicationVersionsRequest::ListApplicationVersionsRequest() : 
-    m_applicationNameHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListApplicationVersionsRequest::SerializePayload() const
 {
   JsonValue payload;

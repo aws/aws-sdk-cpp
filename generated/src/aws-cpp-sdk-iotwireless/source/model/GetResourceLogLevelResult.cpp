@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetResourceLogLevelResult::GetResourceLogLevelResult() : 
-    m_logLevel(LogLevel::NOT_SET)
-{
-}
-
 GetResourceLogLevelResult::GetResourceLogLevelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetResourceLogLevelResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ GetResourceLogLevelResult& GetResourceLogLevelResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("LogLevel"))
   {
     m_logLevel = LogLevelMapper::GetLogLevelForName(jsonValue.GetString("LogLevel"));
-
+    m_logLevelHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

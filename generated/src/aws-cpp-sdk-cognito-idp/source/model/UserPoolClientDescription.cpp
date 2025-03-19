@@ -18,15 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-UserPoolClientDescription::UserPoolClientDescription() : 
-    m_clientIdHasBeenSet(false),
-    m_userPoolIdHasBeenSet(false),
-    m_clientNameHasBeenSet(false)
-{
-}
-
 UserPoolClientDescription::UserPoolClientDescription(JsonView jsonValue)
-  : UserPoolClientDescription()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ UserPoolClientDescription& UserPoolClientDescription::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("ClientId"))
   {
     m_clientId = jsonValue.GetString("ClientId");
-
     m_clientIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserPoolId"))
   {
     m_userPoolId = jsonValue.GetString("UserPoolId");
-
     m_userPoolIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClientName"))
   {
     m_clientName = jsonValue.GetString("ClientName");
-
     m_clientNameHasBeenSet = true;
   }
-
   return *this;
 }
 

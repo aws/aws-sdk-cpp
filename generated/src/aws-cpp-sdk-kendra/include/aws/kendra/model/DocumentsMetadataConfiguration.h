@@ -34,7 +34,7 @@ namespace Model
   class DocumentsMetadataConfiguration
   {
   public:
-    AWS_KENDRA_API DocumentsMetadataConfiguration();
+    AWS_KENDRA_API DocumentsMetadataConfiguration() = default;
     AWS_KENDRA_API DocumentsMetadataConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API DocumentsMetadataConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * Services S3 bucket. The S3 bucket might contain multiple metadata files. Use
      * <code>S3Prefix</code> to include only the desired metadata files.</p>
      */
-    inline const Aws::String& GetS3Prefix() const{ return m_s3Prefix; }
+    inline const Aws::String& GetS3Prefix() const { return m_s3Prefix; }
     inline bool S3PrefixHasBeenSet() const { return m_s3PrefixHasBeenSet; }
-    inline void SetS3Prefix(const Aws::String& value) { m_s3PrefixHasBeenSet = true; m_s3Prefix = value; }
-    inline void SetS3Prefix(Aws::String&& value) { m_s3PrefixHasBeenSet = true; m_s3Prefix = std::move(value); }
-    inline void SetS3Prefix(const char* value) { m_s3PrefixHasBeenSet = true; m_s3Prefix.assign(value); }
-    inline DocumentsMetadataConfiguration& WithS3Prefix(const Aws::String& value) { SetS3Prefix(value); return *this;}
-    inline DocumentsMetadataConfiguration& WithS3Prefix(Aws::String&& value) { SetS3Prefix(std::move(value)); return *this;}
-    inline DocumentsMetadataConfiguration& WithS3Prefix(const char* value) { SetS3Prefix(value); return *this;}
+    template<typename S3PrefixT = Aws::String>
+    void SetS3Prefix(S3PrefixT&& value) { m_s3PrefixHasBeenSet = true; m_s3Prefix = std::forward<S3PrefixT>(value); }
+    template<typename S3PrefixT = Aws::String>
+    DocumentsMetadataConfiguration& WithS3Prefix(S3PrefixT&& value) { SetS3Prefix(std::forward<S3PrefixT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,21 +18,7 @@ namespace Lambda
 namespace Model
 {
 
-FunctionUrlConfig::FunctionUrlConfig() : 
-    m_functionUrlHasBeenSet(false),
-    m_functionArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_corsHasBeenSet(false),
-    m_authType(FunctionUrlAuthType::NOT_SET),
-    m_authTypeHasBeenSet(false),
-    m_invokeMode(InvokeMode::NOT_SET),
-    m_invokeModeHasBeenSet(false)
-{
-}
-
 FunctionUrlConfig::FunctionUrlConfig(JsonView jsonValue)
-  : FunctionUrlConfig()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ FunctionUrlConfig& FunctionUrlConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FunctionUrl"))
   {
     m_functionUrl = jsonValue.GetString("FunctionUrl");
-
     m_functionUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FunctionArn"))
   {
     m_functionArn = jsonValue.GetString("FunctionArn");
-
     m_functionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetString("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetString("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Cors"))
   {
     m_cors = jsonValue.GetObject("Cors");
-
     m_corsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthType"))
   {
     m_authType = FunctionUrlAuthTypeMapper::GetFunctionUrlAuthTypeForName(jsonValue.GetString("AuthType"));
-
     m_authTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InvokeMode"))
   {
     m_invokeMode = InvokeModeMapper::GetInvokeModeForName(jsonValue.GetString("InvokeMode"));
-
     m_invokeModeHasBeenSet = true;
   }
-
   return *this;
 }
 

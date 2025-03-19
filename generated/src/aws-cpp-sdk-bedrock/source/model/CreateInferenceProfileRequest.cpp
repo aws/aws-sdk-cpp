@@ -12,16 +12,6 @@ using namespace Aws::Bedrock::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateInferenceProfileRequest::CreateInferenceProfileRequest() : 
-    m_inferenceProfileNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_modelSourceHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateInferenceProfileRequest::SerializePayload() const
 {
   JsonValue payload;

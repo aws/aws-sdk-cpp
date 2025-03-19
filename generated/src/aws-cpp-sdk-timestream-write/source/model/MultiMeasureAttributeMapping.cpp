@@ -18,16 +18,7 @@ namespace TimestreamWrite
 namespace Model
 {
 
-MultiMeasureAttributeMapping::MultiMeasureAttributeMapping() : 
-    m_sourceColumnHasBeenSet(false),
-    m_targetMultiMeasureAttributeNameHasBeenSet(false),
-    m_measureValueType(ScalarMeasureValueType::NOT_SET),
-    m_measureValueTypeHasBeenSet(false)
-{
-}
-
 MultiMeasureAttributeMapping::MultiMeasureAttributeMapping(JsonView jsonValue)
-  : MultiMeasureAttributeMapping()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ MultiMeasureAttributeMapping& MultiMeasureAttributeMapping::operator =(JsonView 
   if(jsonValue.ValueExists("SourceColumn"))
   {
     m_sourceColumn = jsonValue.GetString("SourceColumn");
-
     m_sourceColumnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetMultiMeasureAttributeName"))
   {
     m_targetMultiMeasureAttributeName = jsonValue.GetString("TargetMultiMeasureAttributeName");
-
     m_targetMultiMeasureAttributeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MeasureValueType"))
   {
     m_measureValueType = ScalarMeasureValueTypeMapper::GetScalarMeasureValueTypeForName(jsonValue.GetString("MeasureValueType"));
-
     m_measureValueTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

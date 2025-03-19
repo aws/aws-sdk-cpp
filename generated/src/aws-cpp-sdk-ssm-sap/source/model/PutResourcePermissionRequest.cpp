@@ -12,14 +12,6 @@ using namespace Aws::SsmSap::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutResourcePermissionRequest::PutResourcePermissionRequest() : 
-    m_actionType(PermissionActionType::NOT_SET),
-    m_actionTypeHasBeenSet(false),
-    m_sourceResourceArnHasBeenSet(false),
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 Aws::String PutResourcePermissionRequest::SerializePayload() const
 {
   JsonValue payload;

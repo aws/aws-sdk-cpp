@@ -18,14 +18,7 @@ namespace AppStream
 namespace Model
 {
 
-DomainJoinInfo::DomainJoinInfo() : 
-    m_directoryNameHasBeenSet(false),
-    m_organizationalUnitDistinguishedNameHasBeenSet(false)
-{
-}
-
 DomainJoinInfo::DomainJoinInfo(JsonView jsonValue)
-  : DomainJoinInfo()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DomainJoinInfo& DomainJoinInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DirectoryName"))
   {
     m_directoryName = jsonValue.GetString("DirectoryName");
-
     m_directoryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrganizationalUnitDistinguishedName"))
   {
     m_organizationalUnitDistinguishedName = jsonValue.GetString("OrganizationalUnitDistinguishedName");
-
     m_organizationalUnitDistinguishedNameHasBeenSet = true;
   }
-
   return *this;
 }
 

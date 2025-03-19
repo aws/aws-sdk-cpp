@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-WisdomInfo::WisdomInfo() : 
-    m_sessionArnHasBeenSet(false)
-{
-}
-
 WisdomInfo::WisdomInfo(JsonView jsonValue)
-  : WisdomInfo()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ WisdomInfo& WisdomInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SessionArn"))
   {
     m_sessionArn = jsonValue.GetString("SessionArn");
-
     m_sessionArnHasBeenSet = true;
   }
-
   return *this;
 }
 

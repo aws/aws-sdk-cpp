@@ -18,13 +18,7 @@ namespace IoT
 namespace Model
 {
 
-SecurityProfileTarget::SecurityProfileTarget() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 SecurityProfileTarget::SecurityProfileTarget(JsonView jsonValue)
-  : SecurityProfileTarget()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SecurityProfileTarget& SecurityProfileTarget::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace MigrationHubStrategyRecommendations
 namespace Model
 {
 
-AnalysisStatusUnion::AnalysisStatusUnion() : 
-    m_runtimeAnalysisStatus(RuntimeAnalysisStatus::NOT_SET),
-    m_runtimeAnalysisStatusHasBeenSet(false),
-    m_srcCodeOrDbAnalysisStatus(SrcCodeOrDbAnalysisStatus::NOT_SET),
-    m_srcCodeOrDbAnalysisStatusHasBeenSet(false)
-{
-}
-
 AnalysisStatusUnion::AnalysisStatusUnion(JsonView jsonValue)
-  : AnalysisStatusUnion()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ AnalysisStatusUnion& AnalysisStatusUnion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("runtimeAnalysisStatus"))
   {
     m_runtimeAnalysisStatus = RuntimeAnalysisStatusMapper::GetRuntimeAnalysisStatusForName(jsonValue.GetString("runtimeAnalysisStatus"));
-
     m_runtimeAnalysisStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("srcCodeOrDbAnalysisStatus"))
   {
     m_srcCodeOrDbAnalysisStatus = SrcCodeOrDbAnalysisStatusMapper::GetSrcCodeOrDbAnalysisStatusForName(jsonValue.GetString("srcCodeOrDbAnalysisStatus"));
-
     m_srcCodeOrDbAnalysisStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

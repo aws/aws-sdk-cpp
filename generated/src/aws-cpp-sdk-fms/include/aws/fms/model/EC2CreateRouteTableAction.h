@@ -33,7 +33,7 @@ namespace Model
   class EC2CreateRouteTableAction
   {
   public:
-    AWS_FMS_API EC2CreateRouteTableAction();
+    AWS_FMS_API EC2CreateRouteTableAction() = default;
     AWS_FMS_API EC2CreateRouteTableAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API EC2CreateRouteTableAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,24 @@ namespace Model
     /**
      * <p>A description of the CreateRouteTable action.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline EC2CreateRouteTableAction& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline EC2CreateRouteTableAction& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline EC2CreateRouteTableAction& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    EC2CreateRouteTableAction& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the ID of a VPC.</p>
      */
-    inline const ActionTarget& GetVpcId() const{ return m_vpcId; }
+    inline const ActionTarget& GetVpcId() const { return m_vpcId; }
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
-    inline void SetVpcId(const ActionTarget& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-    inline void SetVpcId(ActionTarget&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-    inline EC2CreateRouteTableAction& WithVpcId(const ActionTarget& value) { SetVpcId(value); return *this;}
-    inline EC2CreateRouteTableAction& WithVpcId(ActionTarget&& value) { SetVpcId(std::move(value)); return *this;}
+    template<typename VpcIdT = ActionTarget>
+    void SetVpcId(VpcIdT&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::forward<VpcIdT>(value); }
+    template<typename VpcIdT = ActionTarget>
+    EC2CreateRouteTableAction& WithVpcId(VpcIdT&& value) { SetVpcId(std::forward<VpcIdT>(value)); return *this;}
     ///@}
   private:
 

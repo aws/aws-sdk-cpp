@@ -18,13 +18,7 @@ namespace TimestreamQuery
 namespace Model
 {
 
-SnsConfiguration::SnsConfiguration() : 
-    m_topicArnHasBeenSet(false)
-{
-}
-
 SnsConfiguration::SnsConfiguration(JsonView jsonValue)
-  : SnsConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SnsConfiguration& SnsConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TopicArn"))
   {
     m_topicArn = jsonValue.GetString("TopicArn");
-
     m_topicArnHasBeenSet = true;
   }
-
   return *this;
 }
 

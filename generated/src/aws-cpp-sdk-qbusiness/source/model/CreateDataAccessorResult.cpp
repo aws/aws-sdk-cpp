@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateDataAccessorResult::CreateDataAccessorResult()
-{
-}
-
 CreateDataAccessorResult::CreateDataAccessorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ CreateDataAccessorResult& CreateDataAccessorResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("dataAccessorId"))
   {
     m_dataAccessorId = jsonValue.GetString("dataAccessorId");
-
+    m_dataAccessorIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("idcApplicationArn"))
   {
     m_idcApplicationArn = jsonValue.GetString("idcApplicationArn");
-
+    m_idcApplicationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataAccessorArn"))
   {
     m_dataAccessorArn = jsonValue.GetString("dataAccessorArn");
-
+    m_dataAccessorArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,15 +18,7 @@ namespace Organizations
 namespace Model
 {
 
-Parent::Parent() : 
-    m_idHasBeenSet(false),
-    m_type(ParentType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 Parent::Parent(JsonView jsonValue)
-  : Parent()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Parent& Parent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ParentTypeMapper::GetParentTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

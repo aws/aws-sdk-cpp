@@ -13,13 +13,6 @@ using namespace Aws::ConnectParticipant::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAuthenticationUrlRequest::GetAuthenticationUrlRequest() : 
-    m_sessionIdHasBeenSet(false),
-    m_redirectUriHasBeenSet(false),
-    m_connectionTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetAuthenticationUrlRequest::SerializePayload() const
 {
   JsonValue payload;

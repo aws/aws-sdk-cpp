@@ -18,14 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-AggregatorFilters::AggregatorFilters() : 
-    m_resourceTypeHasBeenSet(false),
-    m_servicePrincipalHasBeenSet(false)
-{
-}
-
 AggregatorFilters::AggregatorFilters(JsonView jsonValue)
-  : AggregatorFilters()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AggregatorFilters& AggregatorFilters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = jsonValue.GetObject("ResourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServicePrincipal"))
   {
     m_servicePrincipal = jsonValue.GetObject("ServicePrincipal");
-
     m_servicePrincipalHasBeenSet = true;
   }
-
   return *this;
 }
 

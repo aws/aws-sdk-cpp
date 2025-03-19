@@ -31,7 +31,7 @@ namespace Model
   class Monitoring
   {
   public:
-    AWS_EC2_API Monitoring();
+    AWS_EC2_API Monitoring() = default;
     AWS_EC2_API Monitoring(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API Monitoring& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,16 +44,14 @@ namespace Model
      * <p>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring
      * is enabled.</p>
      */
-    inline const MonitoringState& GetState() const{ return m_state; }
+    inline MonitoringState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const MonitoringState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(MonitoringState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline Monitoring& WithState(const MonitoringState& value) { SetState(value); return *this;}
-    inline Monitoring& WithState(MonitoringState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(MonitoringState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline Monitoring& WithState(MonitoringState value) { SetState(value); return *this;}
     ///@}
   private:
 
-    MonitoringState m_state;
+    MonitoringState m_state{MonitoringState::NOT_SET};
     bool m_stateHasBeenSet = false;
   };
 

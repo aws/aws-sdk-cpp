@@ -12,19 +12,6 @@ using namespace Aws::Route53Resolver::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListFirewallRuleGroupAssociationsRequest::ListFirewallRuleGroupAssociationsRequest() : 
-    m_firewallRuleGroupIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_status(FirewallRuleGroupAssociationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListFirewallRuleGroupAssociationsRequest::SerializePayload() const
 {
   JsonValue payload;

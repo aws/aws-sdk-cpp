@@ -21,7 +21,7 @@ namespace Model
   class DescribeSeverityLevelsRequest : public SupportRequest
   {
   public:
-    AWS_SUPPORT_API DescribeSeverityLevelsRequest();
+    AWS_SUPPORT_API DescribeSeverityLevelsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the
      * <code>language</code> parameter if you want support in that language.</p>
      */
-    inline const Aws::String& GetLanguage() const{ return m_language; }
+    inline const Aws::String& GetLanguage() const { return m_language; }
     inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
-    inline void SetLanguage(const Aws::String& value) { m_languageHasBeenSet = true; m_language = value; }
-    inline void SetLanguage(Aws::String&& value) { m_languageHasBeenSet = true; m_language = std::move(value); }
-    inline void SetLanguage(const char* value) { m_languageHasBeenSet = true; m_language.assign(value); }
-    inline DescribeSeverityLevelsRequest& WithLanguage(const Aws::String& value) { SetLanguage(value); return *this;}
-    inline DescribeSeverityLevelsRequest& WithLanguage(Aws::String&& value) { SetLanguage(std::move(value)); return *this;}
-    inline DescribeSeverityLevelsRequest& WithLanguage(const char* value) { SetLanguage(value); return *this;}
+    template<typename LanguageT = Aws::String>
+    void SetLanguage(LanguageT&& value) { m_languageHasBeenSet = true; m_language = std::forward<LanguageT>(value); }
+    template<typename LanguageT = Aws::String>
+    DescribeSeverityLevelsRequest& WithLanguage(LanguageT&& value) { SetLanguage(std::forward<LanguageT>(value)); return *this;}
     ///@}
   private:
 

@@ -33,7 +33,7 @@ namespace Model
   class ListedGateway
   {
   public:
-    AWS_MEDIACONNECT_API ListedGateway();
+    AWS_MEDIACONNECT_API ListedGateway() = default;
     AWS_MEDIACONNECT_API ListedGateway(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API ListedGateway& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,45 +43,39 @@ namespace Model
     /**
      * The Amazon Resource Name (ARN) of the gateway.
      */
-    inline const Aws::String& GetGatewayArn() const{ return m_gatewayArn; }
+    inline const Aws::String& GetGatewayArn() const { return m_gatewayArn; }
     inline bool GatewayArnHasBeenSet() const { return m_gatewayArnHasBeenSet; }
-    inline void SetGatewayArn(const Aws::String& value) { m_gatewayArnHasBeenSet = true; m_gatewayArn = value; }
-    inline void SetGatewayArn(Aws::String&& value) { m_gatewayArnHasBeenSet = true; m_gatewayArn = std::move(value); }
-    inline void SetGatewayArn(const char* value) { m_gatewayArnHasBeenSet = true; m_gatewayArn.assign(value); }
-    inline ListedGateway& WithGatewayArn(const Aws::String& value) { SetGatewayArn(value); return *this;}
-    inline ListedGateway& WithGatewayArn(Aws::String&& value) { SetGatewayArn(std::move(value)); return *this;}
-    inline ListedGateway& WithGatewayArn(const char* value) { SetGatewayArn(value); return *this;}
+    template<typename GatewayArnT = Aws::String>
+    void SetGatewayArn(GatewayArnT&& value) { m_gatewayArnHasBeenSet = true; m_gatewayArn = std::forward<GatewayArnT>(value); }
+    template<typename GatewayArnT = Aws::String>
+    ListedGateway& WithGatewayArn(GatewayArnT&& value) { SetGatewayArn(std::forward<GatewayArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const GatewayState& GetGatewayState() const{ return m_gatewayState; }
+    inline GatewayState GetGatewayState() const { return m_gatewayState; }
     inline bool GatewayStateHasBeenSet() const { return m_gatewayStateHasBeenSet; }
-    inline void SetGatewayState(const GatewayState& value) { m_gatewayStateHasBeenSet = true; m_gatewayState = value; }
-    inline void SetGatewayState(GatewayState&& value) { m_gatewayStateHasBeenSet = true; m_gatewayState = std::move(value); }
-    inline ListedGateway& WithGatewayState(const GatewayState& value) { SetGatewayState(value); return *this;}
-    inline ListedGateway& WithGatewayState(GatewayState&& value) { SetGatewayState(std::move(value)); return *this;}
+    inline void SetGatewayState(GatewayState value) { m_gatewayStateHasBeenSet = true; m_gatewayState = value; }
+    inline ListedGateway& WithGatewayState(GatewayState value) { SetGatewayState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * The name of the gateway.
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ListedGateway& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ListedGateway& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ListedGateway& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ListedGateway& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_gatewayArn;
     bool m_gatewayArnHasBeenSet = false;
 
-    GatewayState m_gatewayState;
+    GatewayState m_gatewayState{GatewayState::NOT_SET};
     bool m_gatewayStateHasBeenSet = false;
 
     Aws::String m_name;

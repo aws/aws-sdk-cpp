@@ -12,13 +12,6 @@ using namespace Aws::Chime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreatePhoneNumberOrderRequest::CreatePhoneNumberOrderRequest() : 
-    m_productType(PhoneNumberProductType::NOT_SET),
-    m_productTypeHasBeenSet(false),
-    m_e164PhoneNumbersHasBeenSet(false)
-{
-}
-
 Aws::String CreatePhoneNumberOrderRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,14 +18,7 @@ namespace Greengrass
 namespace Model
 {
 
-InternalServerErrorException::InternalServerErrorException() : 
-    m_errorDetailsHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 InternalServerErrorException::InternalServerErrorException(JsonView jsonValue)
-  : InternalServerErrorException()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ InternalServerErrorException& InternalServerErrorException::operator =(JsonView 
     }
     m_errorDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

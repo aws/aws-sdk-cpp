@@ -19,16 +19,7 @@ namespace IoT
 namespace Model
 {
 
-CommandExecutionResult::CommandExecutionResult() : 
-    m_sHasBeenSet(false),
-    m_b(false),
-    m_bHasBeenSet(false),
-    m_bINHasBeenSet(false)
-{
-}
-
 CommandExecutionResult::CommandExecutionResult(JsonView jsonValue)
-  : CommandExecutionResult()
 {
   *this = jsonValue;
 }
@@ -38,23 +29,18 @@ CommandExecutionResult& CommandExecutionResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S"))
   {
     m_s = jsonValue.GetString("S");
-
     m_sHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("B"))
   {
     m_b = jsonValue.GetBool("B");
-
     m_bHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BIN"))
   {
     m_bIN = HashingUtils::Base64Decode(jsonValue.GetString("BIN"));
     m_bINHasBeenSet = true;
   }
-
   return *this;
 }
 

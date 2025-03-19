@@ -12,12 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteBandwidthRateLimitRequest::DeleteBandwidthRateLimitRequest() : 
-    m_gatewayARNHasBeenSet(false),
-    m_bandwidthTypeHasBeenSet(false)
-{
-}
-
 Aws::String DeleteBandwidthRateLimitRequest::SerializePayload() const
 {
   JsonValue payload;

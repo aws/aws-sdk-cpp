@@ -32,7 +32,7 @@ namespace Model
   class KubernetesPermissionCheckedDetails
   {
   public:
-    AWS_GUARDDUTY_API KubernetesPermissionCheckedDetails();
+    AWS_GUARDDUTY_API KubernetesPermissionCheckedDetails() = default;
     AWS_GUARDDUTY_API KubernetesPermissionCheckedDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API KubernetesPermissionCheckedDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * whether or not you have the permission to call the <code>CreatePod</code> API,
      * the verb component will be <code>Create</code>.</p>
      */
-    inline const Aws::String& GetVerb() const{ return m_verb; }
+    inline const Aws::String& GetVerb() const { return m_verb; }
     inline bool VerbHasBeenSet() const { return m_verbHasBeenSet; }
-    inline void SetVerb(const Aws::String& value) { m_verbHasBeenSet = true; m_verb = value; }
-    inline void SetVerb(Aws::String&& value) { m_verbHasBeenSet = true; m_verb = std::move(value); }
-    inline void SetVerb(const char* value) { m_verbHasBeenSet = true; m_verb.assign(value); }
-    inline KubernetesPermissionCheckedDetails& WithVerb(const Aws::String& value) { SetVerb(value); return *this;}
-    inline KubernetesPermissionCheckedDetails& WithVerb(Aws::String&& value) { SetVerb(std::move(value)); return *this;}
-    inline KubernetesPermissionCheckedDetails& WithVerb(const char* value) { SetVerb(value); return *this;}
+    template<typename VerbT = Aws::String>
+    void SetVerb(VerbT&& value) { m_verbHasBeenSet = true; m_verb = std::forward<VerbT>(value); }
+    template<typename VerbT = Aws::String>
+    KubernetesPermissionCheckedDetails& WithVerb(VerbT&& value) { SetVerb(std::forward<VerbT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,28 +57,24 @@ namespace Model
      * <p>The Kubernetes resource with which your Kubernetes API call will
      * interact.</p>
      */
-    inline const Aws::String& GetResource() const{ return m_resource; }
+    inline const Aws::String& GetResource() const { return m_resource; }
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
-    inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
-    inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
-    inline void SetResource(const char* value) { m_resourceHasBeenSet = true; m_resource.assign(value); }
-    inline KubernetesPermissionCheckedDetails& WithResource(const Aws::String& value) { SetResource(value); return *this;}
-    inline KubernetesPermissionCheckedDetails& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
-    inline KubernetesPermissionCheckedDetails& WithResource(const char* value) { SetResource(value); return *this;}
+    template<typename ResourceT = Aws::String>
+    void SetResource(ResourceT&& value) { m_resourceHasBeenSet = true; m_resource = std::forward<ResourceT>(value); }
+    template<typename ResourceT = Aws::String>
+    KubernetesPermissionCheckedDetails& WithResource(ResourceT&& value) { SetResource(std::forward<ResourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The namespace where the Kubernetes API action will take place.</p>
      */
-    inline const Aws::String& GetNamespace() const{ return m_namespace; }
+    inline const Aws::String& GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
-    inline KubernetesPermissionCheckedDetails& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-    inline KubernetesPermissionCheckedDetails& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-    inline KubernetesPermissionCheckedDetails& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+    template<typename NamespaceT = Aws::String>
+    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
+    template<typename NamespaceT = Aws::String>
+    KubernetesPermissionCheckedDetails& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,7 +82,7 @@ namespace Model
      * <p>Information whether the user has the permission to call the Kubernetes
      * API.</p>
      */
-    inline bool GetAllowed() const{ return m_allowed; }
+    inline bool GetAllowed() const { return m_allowed; }
     inline bool AllowedHasBeenSet() const { return m_allowedHasBeenSet; }
     inline void SetAllowed(bool value) { m_allowedHasBeenSet = true; m_allowed = value; }
     inline KubernetesPermissionCheckedDetails& WithAllowed(bool value) { SetAllowed(value); return *this;}
@@ -104,7 +98,7 @@ namespace Model
     Aws::String m_namespace;
     bool m_namespaceHasBeenSet = false;
 
-    bool m_allowed;
+    bool m_allowed{false};
     bool m_allowedHasBeenSet = false;
   };
 

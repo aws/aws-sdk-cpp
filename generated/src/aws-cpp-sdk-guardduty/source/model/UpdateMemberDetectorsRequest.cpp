@@ -12,13 +12,6 @@ using namespace Aws::GuardDuty::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateMemberDetectorsRequest::UpdateMemberDetectorsRequest() : 
-    m_detectorIdHasBeenSet(false),
-    m_accountIdsHasBeenSet(false),
-    m_featuresHasBeenSet(false)
-{
-}
-
 Aws::String UpdateMemberDetectorsRequest::SerializePayload() const
 {
   JsonValue payload;

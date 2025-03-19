@@ -28,7 +28,7 @@ namespace Model
   class DescribeProblemObservationsResult
   {
   public:
-    AWS_APPLICATIONINSIGHTS_API DescribeProblemObservationsResult();
+    AWS_APPLICATIONINSIGHTS_API DescribeProblemObservationsResult() = default;
     AWS_APPLICATIONINSIGHTS_API DescribeProblemObservationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPLICATIONINSIGHTS_API DescribeProblemObservationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Observations related to the problem.</p>
      */
-    inline const RelatedObservations& GetRelatedObservations() const{ return m_relatedObservations; }
-    inline void SetRelatedObservations(const RelatedObservations& value) { m_relatedObservations = value; }
-    inline void SetRelatedObservations(RelatedObservations&& value) { m_relatedObservations = std::move(value); }
-    inline DescribeProblemObservationsResult& WithRelatedObservations(const RelatedObservations& value) { SetRelatedObservations(value); return *this;}
-    inline DescribeProblemObservationsResult& WithRelatedObservations(RelatedObservations&& value) { SetRelatedObservations(std::move(value)); return *this;}
+    inline const RelatedObservations& GetRelatedObservations() const { return m_relatedObservations; }
+    template<typename RelatedObservationsT = RelatedObservations>
+    void SetRelatedObservations(RelatedObservationsT&& value) { m_relatedObservationsHasBeenSet = true; m_relatedObservations = std::forward<RelatedObservationsT>(value); }
+    template<typename RelatedObservationsT = RelatedObservations>
+    DescribeProblemObservationsResult& WithRelatedObservations(RelatedObservationsT&& value) { SetRelatedObservations(std::forward<RelatedObservationsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeProblemObservationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeProblemObservationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeProblemObservationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeProblemObservationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     RelatedObservations m_relatedObservations;
+    bool m_relatedObservationsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

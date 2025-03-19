@@ -12,11 +12,6 @@ using namespace Aws::MigrationHubOrchestrator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteTemplateRequest::DeleteTemplateRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTemplateRequest::SerializePayload() const
 {
   return {};

@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-TerminateClientVpnConnectionsRequest::TerminateClientVpnConnectionsRequest() : 
-    m_clientVpnEndpointIdHasBeenSet(false),
-    m_connectionIdHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String TerminateClientVpnConnectionsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

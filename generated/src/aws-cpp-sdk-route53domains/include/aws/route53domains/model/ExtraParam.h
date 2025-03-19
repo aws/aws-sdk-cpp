@@ -32,7 +32,7 @@ namespace Model
   class ExtraParam
   {
   public:
-    AWS_ROUTE53DOMAINS_API ExtraParam();
+    AWS_ROUTE53DOMAINS_API ExtraParam() = default;
     AWS_ROUTE53DOMAINS_API ExtraParam(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53DOMAINS_API ExtraParam& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53DOMAINS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -194,30 +194,26 @@ namespace Model
      * <code>UK_COMPANY_NUMBER</code> </p> </li> </ul> </dd> </dl> <p>In addition, many
      * TLDs require a <code>VAT_NUMBER</code>.</p>
      */
-    inline const ExtraParamName& GetName() const{ return m_name; }
+    inline ExtraParamName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const ExtraParamName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(ExtraParamName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline ExtraParam& WithName(const ExtraParamName& value) { SetName(value); return *this;}
-    inline ExtraParam& WithName(ExtraParamName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(ExtraParamName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline ExtraParam& WithName(ExtraParamName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value that corresponds with the name of an extra parameter.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline ExtraParam& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline ExtraParam& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline ExtraParam& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    ExtraParam& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
-    ExtraParamName m_name;
+    ExtraParamName m_name{ExtraParamName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::String m_value;

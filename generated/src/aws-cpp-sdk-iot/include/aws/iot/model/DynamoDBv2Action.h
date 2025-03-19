@@ -34,7 +34,7 @@ namespace Model
   class DynamoDBv2Action
   {
   public:
-    AWS_IOT_API DynamoDBv2Action();
+    AWS_IOT_API DynamoDBv2Action() = default;
     AWS_IOT_API DynamoDBv2Action(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API DynamoDBv2Action& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The ARN of the IAM role that grants access to the DynamoDB table.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline DynamoDBv2Action& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline DynamoDBv2Action& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline DynamoDBv2Action& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    DynamoDBv2Action& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,12 +60,12 @@ namespace Model
      * message payload will be written to a separate column in the DynamoDB
      * database.</p>
      */
-    inline const PutItemInput& GetPutItem() const{ return m_putItem; }
+    inline const PutItemInput& GetPutItem() const { return m_putItem; }
     inline bool PutItemHasBeenSet() const { return m_putItemHasBeenSet; }
-    inline void SetPutItem(const PutItemInput& value) { m_putItemHasBeenSet = true; m_putItem = value; }
-    inline void SetPutItem(PutItemInput&& value) { m_putItemHasBeenSet = true; m_putItem = std::move(value); }
-    inline DynamoDBv2Action& WithPutItem(const PutItemInput& value) { SetPutItem(value); return *this;}
-    inline DynamoDBv2Action& WithPutItem(PutItemInput&& value) { SetPutItem(std::move(value)); return *this;}
+    template<typename PutItemT = PutItemInput>
+    void SetPutItem(PutItemT&& value) { m_putItemHasBeenSet = true; m_putItem = std::forward<PutItemT>(value); }
+    template<typename PutItemT = PutItemInput>
+    DynamoDBv2Action& WithPutItem(PutItemT&& value) { SetPutItem(std::forward<PutItemT>(value)); return *this;}
     ///@}
   private:
 

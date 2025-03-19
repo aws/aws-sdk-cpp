@@ -12,16 +12,6 @@ using namespace Aws::SSMQuickSetup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateConfigurationDefinitionRequest::UpdateConfigurationDefinitionRequest() : 
-    m_idHasBeenSet(false),
-    m_localDeploymentAdministrationRoleArnHasBeenSet(false),
-    m_localDeploymentExecutionRoleNameHasBeenSet(false),
-    m_managerArnHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_typeVersionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateConfigurationDefinitionRequest::SerializePayload() const
 {
   JsonValue payload;

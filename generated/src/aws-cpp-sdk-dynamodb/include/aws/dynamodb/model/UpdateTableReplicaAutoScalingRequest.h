@@ -25,7 +25,7 @@ namespace Model
   class UpdateTableReplicaAutoScalingRequest : public DynamoDBRequest
   {
   public:
-    AWS_DYNAMODB_API UpdateTableReplicaAutoScalingRequest();
+    AWS_DYNAMODB_API UpdateTableReplicaAutoScalingRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,14 +47,14 @@ namespace Model
      * <p>Represents the auto scaling settings of the global secondary indexes of the
      * replica to be updated.</p>
      */
-    inline const Aws::Vector<GlobalSecondaryIndexAutoScalingUpdate>& GetGlobalSecondaryIndexUpdates() const{ return m_globalSecondaryIndexUpdates; }
+    inline const Aws::Vector<GlobalSecondaryIndexAutoScalingUpdate>& GetGlobalSecondaryIndexUpdates() const { return m_globalSecondaryIndexUpdates; }
     inline bool GlobalSecondaryIndexUpdatesHasBeenSet() const { return m_globalSecondaryIndexUpdatesHasBeenSet; }
-    inline void SetGlobalSecondaryIndexUpdates(const Aws::Vector<GlobalSecondaryIndexAutoScalingUpdate>& value) { m_globalSecondaryIndexUpdatesHasBeenSet = true; m_globalSecondaryIndexUpdates = value; }
-    inline void SetGlobalSecondaryIndexUpdates(Aws::Vector<GlobalSecondaryIndexAutoScalingUpdate>&& value) { m_globalSecondaryIndexUpdatesHasBeenSet = true; m_globalSecondaryIndexUpdates = std::move(value); }
-    inline UpdateTableReplicaAutoScalingRequest& WithGlobalSecondaryIndexUpdates(const Aws::Vector<GlobalSecondaryIndexAutoScalingUpdate>& value) { SetGlobalSecondaryIndexUpdates(value); return *this;}
-    inline UpdateTableReplicaAutoScalingRequest& WithGlobalSecondaryIndexUpdates(Aws::Vector<GlobalSecondaryIndexAutoScalingUpdate>&& value) { SetGlobalSecondaryIndexUpdates(std::move(value)); return *this;}
-    inline UpdateTableReplicaAutoScalingRequest& AddGlobalSecondaryIndexUpdates(const GlobalSecondaryIndexAutoScalingUpdate& value) { m_globalSecondaryIndexUpdatesHasBeenSet = true; m_globalSecondaryIndexUpdates.push_back(value); return *this; }
-    inline UpdateTableReplicaAutoScalingRequest& AddGlobalSecondaryIndexUpdates(GlobalSecondaryIndexAutoScalingUpdate&& value) { m_globalSecondaryIndexUpdatesHasBeenSet = true; m_globalSecondaryIndexUpdates.push_back(std::move(value)); return *this; }
+    template<typename GlobalSecondaryIndexUpdatesT = Aws::Vector<GlobalSecondaryIndexAutoScalingUpdate>>
+    void SetGlobalSecondaryIndexUpdates(GlobalSecondaryIndexUpdatesT&& value) { m_globalSecondaryIndexUpdatesHasBeenSet = true; m_globalSecondaryIndexUpdates = std::forward<GlobalSecondaryIndexUpdatesT>(value); }
+    template<typename GlobalSecondaryIndexUpdatesT = Aws::Vector<GlobalSecondaryIndexAutoScalingUpdate>>
+    UpdateTableReplicaAutoScalingRequest& WithGlobalSecondaryIndexUpdates(GlobalSecondaryIndexUpdatesT&& value) { SetGlobalSecondaryIndexUpdates(std::forward<GlobalSecondaryIndexUpdatesT>(value)); return *this;}
+    template<typename GlobalSecondaryIndexUpdatesT = GlobalSecondaryIndexAutoScalingUpdate>
+    UpdateTableReplicaAutoScalingRequest& AddGlobalSecondaryIndexUpdates(GlobalSecondaryIndexUpdatesT&& value) { m_globalSecondaryIndexUpdatesHasBeenSet = true; m_globalSecondaryIndexUpdates.emplace_back(std::forward<GlobalSecondaryIndexUpdatesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -62,24 +62,22 @@ namespace Model
      * <p>The name of the global table to be updated. You can also provide the Amazon
      * Resource Name (ARN) of the table in this parameter.</p>
      */
-    inline const Aws::String& GetTableName() const{ return m_tableName; }
+    inline const Aws::String& GetTableName() const { return m_tableName; }
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
-    inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
-    inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
-    inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
-    inline UpdateTableReplicaAutoScalingRequest& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-    inline UpdateTableReplicaAutoScalingRequest& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-    inline UpdateTableReplicaAutoScalingRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
+    template<typename TableNameT = Aws::String>
+    void SetTableName(TableNameT&& value) { m_tableNameHasBeenSet = true; m_tableName = std::forward<TableNameT>(value); }
+    template<typename TableNameT = Aws::String>
+    UpdateTableReplicaAutoScalingRequest& WithTableName(TableNameT&& value) { SetTableName(std::forward<TableNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const AutoScalingSettingsUpdate& GetProvisionedWriteCapacityAutoScalingUpdate() const{ return m_provisionedWriteCapacityAutoScalingUpdate; }
+    inline const AutoScalingSettingsUpdate& GetProvisionedWriteCapacityAutoScalingUpdate() const { return m_provisionedWriteCapacityAutoScalingUpdate; }
     inline bool ProvisionedWriteCapacityAutoScalingUpdateHasBeenSet() const { return m_provisionedWriteCapacityAutoScalingUpdateHasBeenSet; }
-    inline void SetProvisionedWriteCapacityAutoScalingUpdate(const AutoScalingSettingsUpdate& value) { m_provisionedWriteCapacityAutoScalingUpdateHasBeenSet = true; m_provisionedWriteCapacityAutoScalingUpdate = value; }
-    inline void SetProvisionedWriteCapacityAutoScalingUpdate(AutoScalingSettingsUpdate&& value) { m_provisionedWriteCapacityAutoScalingUpdateHasBeenSet = true; m_provisionedWriteCapacityAutoScalingUpdate = std::move(value); }
-    inline UpdateTableReplicaAutoScalingRequest& WithProvisionedWriteCapacityAutoScalingUpdate(const AutoScalingSettingsUpdate& value) { SetProvisionedWriteCapacityAutoScalingUpdate(value); return *this;}
-    inline UpdateTableReplicaAutoScalingRequest& WithProvisionedWriteCapacityAutoScalingUpdate(AutoScalingSettingsUpdate&& value) { SetProvisionedWriteCapacityAutoScalingUpdate(std::move(value)); return *this;}
+    template<typename ProvisionedWriteCapacityAutoScalingUpdateT = AutoScalingSettingsUpdate>
+    void SetProvisionedWriteCapacityAutoScalingUpdate(ProvisionedWriteCapacityAutoScalingUpdateT&& value) { m_provisionedWriteCapacityAutoScalingUpdateHasBeenSet = true; m_provisionedWriteCapacityAutoScalingUpdate = std::forward<ProvisionedWriteCapacityAutoScalingUpdateT>(value); }
+    template<typename ProvisionedWriteCapacityAutoScalingUpdateT = AutoScalingSettingsUpdate>
+    UpdateTableReplicaAutoScalingRequest& WithProvisionedWriteCapacityAutoScalingUpdate(ProvisionedWriteCapacityAutoScalingUpdateT&& value) { SetProvisionedWriteCapacityAutoScalingUpdate(std::forward<ProvisionedWriteCapacityAutoScalingUpdateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,14 +85,14 @@ namespace Model
      * <p>Represents the auto scaling settings of replicas of the table that will be
      * modified.</p>
      */
-    inline const Aws::Vector<ReplicaAutoScalingUpdate>& GetReplicaUpdates() const{ return m_replicaUpdates; }
+    inline const Aws::Vector<ReplicaAutoScalingUpdate>& GetReplicaUpdates() const { return m_replicaUpdates; }
     inline bool ReplicaUpdatesHasBeenSet() const { return m_replicaUpdatesHasBeenSet; }
-    inline void SetReplicaUpdates(const Aws::Vector<ReplicaAutoScalingUpdate>& value) { m_replicaUpdatesHasBeenSet = true; m_replicaUpdates = value; }
-    inline void SetReplicaUpdates(Aws::Vector<ReplicaAutoScalingUpdate>&& value) { m_replicaUpdatesHasBeenSet = true; m_replicaUpdates = std::move(value); }
-    inline UpdateTableReplicaAutoScalingRequest& WithReplicaUpdates(const Aws::Vector<ReplicaAutoScalingUpdate>& value) { SetReplicaUpdates(value); return *this;}
-    inline UpdateTableReplicaAutoScalingRequest& WithReplicaUpdates(Aws::Vector<ReplicaAutoScalingUpdate>&& value) { SetReplicaUpdates(std::move(value)); return *this;}
-    inline UpdateTableReplicaAutoScalingRequest& AddReplicaUpdates(const ReplicaAutoScalingUpdate& value) { m_replicaUpdatesHasBeenSet = true; m_replicaUpdates.push_back(value); return *this; }
-    inline UpdateTableReplicaAutoScalingRequest& AddReplicaUpdates(ReplicaAutoScalingUpdate&& value) { m_replicaUpdatesHasBeenSet = true; m_replicaUpdates.push_back(std::move(value)); return *this; }
+    template<typename ReplicaUpdatesT = Aws::Vector<ReplicaAutoScalingUpdate>>
+    void SetReplicaUpdates(ReplicaUpdatesT&& value) { m_replicaUpdatesHasBeenSet = true; m_replicaUpdates = std::forward<ReplicaUpdatesT>(value); }
+    template<typename ReplicaUpdatesT = Aws::Vector<ReplicaAutoScalingUpdate>>
+    UpdateTableReplicaAutoScalingRequest& WithReplicaUpdates(ReplicaUpdatesT&& value) { SetReplicaUpdates(std::forward<ReplicaUpdatesT>(value)); return *this;}
+    template<typename ReplicaUpdatesT = ReplicaAutoScalingUpdate>
+    UpdateTableReplicaAutoScalingRequest& AddReplicaUpdates(ReplicaUpdatesT&& value) { m_replicaUpdatesHasBeenSet = true; m_replicaUpdates.emplace_back(std::forward<ReplicaUpdatesT>(value)); return *this; }
     ///@}
   private:
 

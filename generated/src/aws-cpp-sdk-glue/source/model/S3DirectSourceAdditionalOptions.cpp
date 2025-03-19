@@ -18,19 +18,7 @@ namespace Glue
 namespace Model
 {
 
-S3DirectSourceAdditionalOptions::S3DirectSourceAdditionalOptions() : 
-    m_boundedSize(0),
-    m_boundedSizeHasBeenSet(false),
-    m_boundedFiles(0),
-    m_boundedFilesHasBeenSet(false),
-    m_enableSamplePath(false),
-    m_enableSamplePathHasBeenSet(false),
-    m_samplePathHasBeenSet(false)
-{
-}
-
 S3DirectSourceAdditionalOptions::S3DirectSourceAdditionalOptions(JsonView jsonValue)
-  : S3DirectSourceAdditionalOptions()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ S3DirectSourceAdditionalOptions& S3DirectSourceAdditionalOptions::operator =(Jso
   if(jsonValue.ValueExists("BoundedSize"))
   {
     m_boundedSize = jsonValue.GetInt64("BoundedSize");
-
     m_boundedSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BoundedFiles"))
   {
     m_boundedFiles = jsonValue.GetInt64("BoundedFiles");
-
     m_boundedFilesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnableSamplePath"))
   {
     m_enableSamplePath = jsonValue.GetBool("EnableSamplePath");
-
     m_enableSamplePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SamplePath"))
   {
     m_samplePath = jsonValue.GetString("SamplePath");
-
     m_samplePathHasBeenSet = true;
   }
-
   return *this;
 }
 

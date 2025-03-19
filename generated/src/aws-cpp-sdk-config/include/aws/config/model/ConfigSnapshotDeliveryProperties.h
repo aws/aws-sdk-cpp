@@ -59,7 +59,7 @@ namespace Model
   class ConfigSnapshotDeliveryProperties
   {
   public:
-    AWS_CONFIGSERVICE_API ConfigSnapshotDeliveryProperties();
+    AWS_CONFIGSERVICE_API ConfigSnapshotDeliveryProperties() = default;
     AWS_CONFIGSERVICE_API ConfigSnapshotDeliveryProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API ConfigSnapshotDeliveryProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -69,16 +69,14 @@ namespace Model
     /**
      * <p>The frequency with which Config delivers configuration snapshots.</p>
      */
-    inline const MaximumExecutionFrequency& GetDeliveryFrequency() const{ return m_deliveryFrequency; }
+    inline MaximumExecutionFrequency GetDeliveryFrequency() const { return m_deliveryFrequency; }
     inline bool DeliveryFrequencyHasBeenSet() const { return m_deliveryFrequencyHasBeenSet; }
-    inline void SetDeliveryFrequency(const MaximumExecutionFrequency& value) { m_deliveryFrequencyHasBeenSet = true; m_deliveryFrequency = value; }
-    inline void SetDeliveryFrequency(MaximumExecutionFrequency&& value) { m_deliveryFrequencyHasBeenSet = true; m_deliveryFrequency = std::move(value); }
-    inline ConfigSnapshotDeliveryProperties& WithDeliveryFrequency(const MaximumExecutionFrequency& value) { SetDeliveryFrequency(value); return *this;}
-    inline ConfigSnapshotDeliveryProperties& WithDeliveryFrequency(MaximumExecutionFrequency&& value) { SetDeliveryFrequency(std::move(value)); return *this;}
+    inline void SetDeliveryFrequency(MaximumExecutionFrequency value) { m_deliveryFrequencyHasBeenSet = true; m_deliveryFrequency = value; }
+    inline ConfigSnapshotDeliveryProperties& WithDeliveryFrequency(MaximumExecutionFrequency value) { SetDeliveryFrequency(value); return *this;}
     ///@}
   private:
 
-    MaximumExecutionFrequency m_deliveryFrequency;
+    MaximumExecutionFrequency m_deliveryFrequency{MaximumExecutionFrequency::NOT_SET};
     bool m_deliveryFrequencyHasBeenSet = false;
   };
 

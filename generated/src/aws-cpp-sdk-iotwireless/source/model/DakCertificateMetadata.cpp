@@ -18,19 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-DakCertificateMetadata::DakCertificateMetadata() : 
-    m_certificateIdHasBeenSet(false),
-    m_maxAllowedSignature(0),
-    m_maxAllowedSignatureHasBeenSet(false),
-    m_factorySupport(false),
-    m_factorySupportHasBeenSet(false),
-    m_apIdHasBeenSet(false),
-    m_deviceTypeIdHasBeenSet(false)
-{
-}
-
 DakCertificateMetadata::DakCertificateMetadata(JsonView jsonValue)
-  : DakCertificateMetadata()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ DakCertificateMetadata& DakCertificateMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CertificateId"))
   {
     m_certificateId = jsonValue.GetString("CertificateId");
-
     m_certificateIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxAllowedSignature"))
   {
     m_maxAllowedSignature = jsonValue.GetInteger("MaxAllowedSignature");
-
     m_maxAllowedSignatureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FactorySupport"))
   {
     m_factorySupport = jsonValue.GetBool("FactorySupport");
-
     m_factorySupportHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApId"))
   {
     m_apId = jsonValue.GetString("ApId");
-
     m_apIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeviceTypeId"))
   {
     m_deviceTypeId = jsonValue.GetString("DeviceTypeId");
-
     m_deviceTypeIdHasBeenSet = true;
   }
-
   return *this;
 }
 

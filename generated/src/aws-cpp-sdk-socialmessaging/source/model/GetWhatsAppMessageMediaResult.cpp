@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetWhatsAppMessageMediaResult::GetWhatsAppMessageMediaResult() : 
-    m_fileSize(0)
-{
-}
-
 GetWhatsAppMessageMediaResult::GetWhatsAppMessageMediaResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetWhatsAppMessageMediaResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ GetWhatsAppMessageMediaResult& GetWhatsAppMessageMediaResult::operator =(const A
   if(jsonValue.ValueExists("mimeType"))
   {
     m_mimeType = jsonValue.GetString("mimeType");
-
+    m_mimeTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fileSize"))
   {
     m_fileSize = jsonValue.GetInt64("fileSize");
-
+    m_fileSizeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,13 +18,7 @@ namespace Support
 namespace Model
 {
 
-TrustedAdvisorCategorySpecificSummary::TrustedAdvisorCategorySpecificSummary() : 
-    m_costOptimizingHasBeenSet(false)
-{
-}
-
 TrustedAdvisorCategorySpecificSummary::TrustedAdvisorCategorySpecificSummary(JsonView jsonValue)
-  : TrustedAdvisorCategorySpecificSummary()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TrustedAdvisorCategorySpecificSummary& TrustedAdvisorCategorySpecificSummary::op
   if(jsonValue.ValueExists("costOptimizing"))
   {
     m_costOptimizing = jsonValue.GetObject("costOptimizing");
-
     m_costOptimizingHasBeenSet = true;
   }
-
   return *this;
 }
 

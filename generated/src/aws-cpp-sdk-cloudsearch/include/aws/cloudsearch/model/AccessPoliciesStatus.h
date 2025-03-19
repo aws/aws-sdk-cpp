@@ -33,7 +33,7 @@ namespace Model
   class AccessPoliciesStatus
   {
   public:
-    AWS_CLOUDSEARCH_API AccessPoliciesStatus();
+    AWS_CLOUDSEARCH_API AccessPoliciesStatus() = default;
     AWS_CLOUDSEARCH_API AccessPoliciesStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDSEARCH_API AccessPoliciesStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,24 +43,22 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetOptions() const{ return m_options; }
+    inline const Aws::String& GetOptions() const { return m_options; }
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-    inline void SetOptions(const Aws::String& value) { m_optionsHasBeenSet = true; m_options = value; }
-    inline void SetOptions(Aws::String&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-    inline void SetOptions(const char* value) { m_optionsHasBeenSet = true; m_options.assign(value); }
-    inline AccessPoliciesStatus& WithOptions(const Aws::String& value) { SetOptions(value); return *this;}
-    inline AccessPoliciesStatus& WithOptions(Aws::String&& value) { SetOptions(std::move(value)); return *this;}
-    inline AccessPoliciesStatus& WithOptions(const char* value) { SetOptions(value); return *this;}
+    template<typename OptionsT = Aws::String>
+    void SetOptions(OptionsT&& value) { m_optionsHasBeenSet = true; m_options = std::forward<OptionsT>(value); }
+    template<typename OptionsT = Aws::String>
+    AccessPoliciesStatus& WithOptions(OptionsT&& value) { SetOptions(std::forward<OptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const OptionStatus& GetStatus() const{ return m_status; }
+    inline const OptionStatus& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const OptionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(OptionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline AccessPoliciesStatus& WithStatus(const OptionStatus& value) { SetStatus(value); return *this;}
-    inline AccessPoliciesStatus& WithStatus(OptionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    template<typename StatusT = OptionStatus>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = OptionStatus>
+    AccessPoliciesStatus& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
   private:
 

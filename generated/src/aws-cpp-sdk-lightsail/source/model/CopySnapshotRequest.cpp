@@ -12,18 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CopySnapshotRequest::CopySnapshotRequest() : 
-    m_sourceSnapshotNameHasBeenSet(false),
-    m_sourceResourceNameHasBeenSet(false),
-    m_restoreDateHasBeenSet(false),
-    m_useLatestRestorableAutoSnapshot(false),
-    m_useLatestRestorableAutoSnapshotHasBeenSet(false),
-    m_targetSnapshotNameHasBeenSet(false),
-    m_sourceRegion(RegionName::NOT_SET),
-    m_sourceRegionHasBeenSet(false)
-{
-}
-
 Aws::String CopySnapshotRequest::SerializePayload() const
 {
   JsonValue payload;

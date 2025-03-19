@@ -18,15 +18,7 @@ namespace SMS
 namespace Model
 {
 
-UserDataValidationParameters::UserDataValidationParameters() : 
-    m_sourceHasBeenSet(false),
-    m_scriptType(ScriptType::NOT_SET),
-    m_scriptTypeHasBeenSet(false)
-{
-}
-
 UserDataValidationParameters::UserDataValidationParameters(JsonView jsonValue)
-  : UserDataValidationParameters()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ UserDataValidationParameters& UserDataValidationParameters::operator =(JsonView 
   if(jsonValue.ValueExists("source"))
   {
     m_source = jsonValue.GetObject("source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scriptType"))
   {
     m_scriptType = ScriptTypeMapper::GetScriptTypeForName(jsonValue.GetString("scriptType"));
-
     m_scriptTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

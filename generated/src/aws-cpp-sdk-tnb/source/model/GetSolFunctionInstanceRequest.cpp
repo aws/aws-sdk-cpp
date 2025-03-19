@@ -12,11 +12,6 @@ using namespace Aws::tnb::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSolFunctionInstanceRequest::GetSolFunctionInstanceRequest() : 
-    m_vnfInstanceIdHasBeenSet(false)
-{
-}
-
 Aws::String GetSolFunctionInstanceRequest::SerializePayload() const
 {
   return {};

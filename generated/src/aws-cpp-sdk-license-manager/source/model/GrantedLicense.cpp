@@ -18,28 +18,7 @@ namespace LicenseManager
 namespace Model
 {
 
-GrantedLicense::GrantedLicense() : 
-    m_licenseArnHasBeenSet(false),
-    m_licenseNameHasBeenSet(false),
-    m_productNameHasBeenSet(false),
-    m_productSKUHasBeenSet(false),
-    m_issuerHasBeenSet(false),
-    m_homeRegionHasBeenSet(false),
-    m_status(LicenseStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_validityHasBeenSet(false),
-    m_beneficiaryHasBeenSet(false),
-    m_entitlementsHasBeenSet(false),
-    m_consumptionConfigurationHasBeenSet(false),
-    m_licenseMetadataHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_receivedMetadataHasBeenSet(false)
-{
-}
-
 GrantedLicense::GrantedLicense(JsonView jsonValue)
-  : GrantedLicense()
 {
   *this = jsonValue;
 }
@@ -49,66 +28,48 @@ GrantedLicense& GrantedLicense::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LicenseArn"))
   {
     m_licenseArn = jsonValue.GetString("LicenseArn");
-
     m_licenseArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LicenseName"))
   {
     m_licenseName = jsonValue.GetString("LicenseName");
-
     m_licenseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProductName"))
   {
     m_productName = jsonValue.GetString("ProductName");
-
     m_productNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProductSKU"))
   {
     m_productSKU = jsonValue.GetString("ProductSKU");
-
     m_productSKUHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Issuer"))
   {
     m_issuer = jsonValue.GetObject("Issuer");
-
     m_issuerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HomeRegion"))
   {
     m_homeRegion = jsonValue.GetString("HomeRegion");
-
     m_homeRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = LicenseStatusMapper::GetLicenseStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Validity"))
   {
     m_validity = jsonValue.GetObject("Validity");
-
     m_validityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Beneficiary"))
   {
     m_beneficiary = jsonValue.GetString("Beneficiary");
-
     m_beneficiaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Entitlements"))
   {
     Aws::Utils::Array<JsonView> entitlementsJsonList = jsonValue.GetArray("Entitlements");
@@ -118,14 +79,11 @@ GrantedLicense& GrantedLicense::operator =(JsonView jsonValue)
     }
     m_entitlementsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConsumptionConfiguration"))
   {
     m_consumptionConfiguration = jsonValue.GetObject("ConsumptionConfiguration");
-
     m_consumptionConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LicenseMetadata"))
   {
     Aws::Utils::Array<JsonView> licenseMetadataJsonList = jsonValue.GetArray("LicenseMetadata");
@@ -135,28 +93,21 @@ GrantedLicense& GrantedLicense::operator =(JsonView jsonValue)
     }
     m_licenseMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateTime"))
   {
     m_createTime = jsonValue.GetString("CreateTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetString("Version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReceivedMetadata"))
   {
     m_receivedMetadata = jsonValue.GetObject("ReceivedMetadata");
-
     m_receivedMetadataHasBeenSet = true;
   }
-
   return *this;
 }
 

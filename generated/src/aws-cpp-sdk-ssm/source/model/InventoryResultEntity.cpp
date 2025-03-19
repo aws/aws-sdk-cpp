@@ -18,14 +18,7 @@ namespace SSM
 namespace Model
 {
 
-InventoryResultEntity::InventoryResultEntity() : 
-    m_idHasBeenSet(false),
-    m_dataHasBeenSet(false)
-{
-}
-
 InventoryResultEntity::InventoryResultEntity(JsonView jsonValue)
-  : InventoryResultEntity()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ InventoryResultEntity& InventoryResultEntity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Data"))
   {
     Aws::Map<Aws::String, JsonView> dataJsonMap = jsonValue.GetObject("Data").GetAllObjects();
@@ -48,7 +39,6 @@ InventoryResultEntity& InventoryResultEntity::operator =(JsonView jsonValue)
     }
     m_dataHasBeenSet = true;
   }
-
   return *this;
 }
 

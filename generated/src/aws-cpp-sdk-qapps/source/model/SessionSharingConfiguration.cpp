@@ -18,18 +18,7 @@ namespace QApps
 namespace Model
 {
 
-SessionSharingConfiguration::SessionSharingConfiguration() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_acceptResponses(false),
-    m_acceptResponsesHasBeenSet(false),
-    m_revealCards(false),
-    m_revealCardsHasBeenSet(false)
-{
-}
-
 SessionSharingConfiguration::SessionSharingConfiguration(JsonView jsonValue)
-  : SessionSharingConfiguration()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ SessionSharingConfiguration& SessionSharingConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("acceptResponses"))
   {
     m_acceptResponses = jsonValue.GetBool("acceptResponses");
-
     m_acceptResponsesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("revealCards"))
   {
     m_revealCards = jsonValue.GetBool("revealCards");
-
     m_revealCardsHasBeenSet = true;
   }
-
   return *this;
 }
 

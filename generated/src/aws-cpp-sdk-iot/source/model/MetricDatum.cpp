@@ -18,14 +18,7 @@ namespace IoT
 namespace Model
 {
 
-MetricDatum::MetricDatum() : 
-    m_timestampHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 MetricDatum::MetricDatum(JsonView jsonValue)
-  : MetricDatum()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ MetricDatum& MetricDatum::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("timestamp"))
   {
     m_timestamp = jsonValue.GetDouble("timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetObject("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

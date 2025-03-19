@@ -18,17 +18,7 @@ namespace Route53Domains
 namespace Model
 {
 
-DnssecSigningAttributes::DnssecSigningAttributes() : 
-    m_algorithm(0),
-    m_algorithmHasBeenSet(false),
-    m_flags(0),
-    m_flagsHasBeenSet(false),
-    m_publicKeyHasBeenSet(false)
-{
-}
-
 DnssecSigningAttributes::DnssecSigningAttributes(JsonView jsonValue)
-  : DnssecSigningAttributes()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ DnssecSigningAttributes& DnssecSigningAttributes::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Algorithm"))
   {
     m_algorithm = jsonValue.GetInteger("Algorithm");
-
     m_algorithmHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Flags"))
   {
     m_flags = jsonValue.GetInteger("Flags");
-
     m_flagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PublicKey"))
   {
     m_publicKey = jsonValue.GetString("PublicKey");
-
     m_publicKeyHasBeenSet = true;
   }
-
   return *this;
 }
 

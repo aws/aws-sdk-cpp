@@ -28,7 +28,7 @@ namespace Model
   class GetPendingMaintenanceActionResult
   {
   public:
-    AWS_DOCDBELASTIC_API GetPendingMaintenanceActionResult();
+    AWS_DOCDBELASTIC_API GetPendingMaintenanceActionResult() = default;
     AWS_DOCDBELASTIC_API GetPendingMaintenanceActionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DOCDBELASTIC_API GetPendingMaintenanceActionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Provides information about a pending maintenance action for a resource.</p>
      */
-    inline const ResourcePendingMaintenanceAction& GetResourcePendingMaintenanceAction() const{ return m_resourcePendingMaintenanceAction; }
-    inline void SetResourcePendingMaintenanceAction(const ResourcePendingMaintenanceAction& value) { m_resourcePendingMaintenanceAction = value; }
-    inline void SetResourcePendingMaintenanceAction(ResourcePendingMaintenanceAction&& value) { m_resourcePendingMaintenanceAction = std::move(value); }
-    inline GetPendingMaintenanceActionResult& WithResourcePendingMaintenanceAction(const ResourcePendingMaintenanceAction& value) { SetResourcePendingMaintenanceAction(value); return *this;}
-    inline GetPendingMaintenanceActionResult& WithResourcePendingMaintenanceAction(ResourcePendingMaintenanceAction&& value) { SetResourcePendingMaintenanceAction(std::move(value)); return *this;}
+    inline const ResourcePendingMaintenanceAction& GetResourcePendingMaintenanceAction() const { return m_resourcePendingMaintenanceAction; }
+    template<typename ResourcePendingMaintenanceActionT = ResourcePendingMaintenanceAction>
+    void SetResourcePendingMaintenanceAction(ResourcePendingMaintenanceActionT&& value) { m_resourcePendingMaintenanceActionHasBeenSet = true; m_resourcePendingMaintenanceAction = std::forward<ResourcePendingMaintenanceActionT>(value); }
+    template<typename ResourcePendingMaintenanceActionT = ResourcePendingMaintenanceAction>
+    GetPendingMaintenanceActionResult& WithResourcePendingMaintenanceAction(ResourcePendingMaintenanceActionT&& value) { SetResourcePendingMaintenanceAction(std::forward<ResourcePendingMaintenanceActionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetPendingMaintenanceActionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetPendingMaintenanceActionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetPendingMaintenanceActionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetPendingMaintenanceActionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ResourcePendingMaintenanceAction m_resourcePendingMaintenanceAction;
+    bool m_resourcePendingMaintenanceActionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

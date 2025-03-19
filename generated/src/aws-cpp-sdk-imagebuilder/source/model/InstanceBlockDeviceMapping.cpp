@@ -18,16 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-InstanceBlockDeviceMapping::InstanceBlockDeviceMapping() : 
-    m_deviceNameHasBeenSet(false),
-    m_ebsHasBeenSet(false),
-    m_virtualNameHasBeenSet(false),
-    m_noDeviceHasBeenSet(false)
-{
-}
-
 InstanceBlockDeviceMapping::InstanceBlockDeviceMapping(JsonView jsonValue)
-  : InstanceBlockDeviceMapping()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ InstanceBlockDeviceMapping& InstanceBlockDeviceMapping::operator =(JsonView json
   if(jsonValue.ValueExists("deviceName"))
   {
     m_deviceName = jsonValue.GetString("deviceName");
-
     m_deviceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ebs"))
   {
     m_ebs = jsonValue.GetObject("ebs");
-
     m_ebsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("virtualName"))
   {
     m_virtualName = jsonValue.GetString("virtualName");
-
     m_virtualNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("noDevice"))
   {
     m_noDevice = jsonValue.GetString("noDevice");
-
     m_noDeviceHasBeenSet = true;
   }
-
   return *this;
 }
 

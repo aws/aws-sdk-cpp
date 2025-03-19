@@ -41,7 +41,7 @@ namespace Model
   class DataProviderSettings
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API DataProviderSettings();
+    AWS_DATABASEMIGRATIONSERVICE_API DataProviderSettings() = default;
     AWS_DATABASEMIGRATIONSERVICE_API DataProviderSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API DataProviderSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,110 +49,110 @@ namespace Model
 
     ///@{
     
-    inline const RedshiftDataProviderSettings& GetRedshiftSettings() const{ return m_redshiftSettings; }
+    inline const RedshiftDataProviderSettings& GetRedshiftSettings() const { return m_redshiftSettings; }
     inline bool RedshiftSettingsHasBeenSet() const { return m_redshiftSettingsHasBeenSet; }
-    inline void SetRedshiftSettings(const RedshiftDataProviderSettings& value) { m_redshiftSettingsHasBeenSet = true; m_redshiftSettings = value; }
-    inline void SetRedshiftSettings(RedshiftDataProviderSettings&& value) { m_redshiftSettingsHasBeenSet = true; m_redshiftSettings = std::move(value); }
-    inline DataProviderSettings& WithRedshiftSettings(const RedshiftDataProviderSettings& value) { SetRedshiftSettings(value); return *this;}
-    inline DataProviderSettings& WithRedshiftSettings(RedshiftDataProviderSettings&& value) { SetRedshiftSettings(std::move(value)); return *this;}
+    template<typename RedshiftSettingsT = RedshiftDataProviderSettings>
+    void SetRedshiftSettings(RedshiftSettingsT&& value) { m_redshiftSettingsHasBeenSet = true; m_redshiftSettings = std::forward<RedshiftSettingsT>(value); }
+    template<typename RedshiftSettingsT = RedshiftDataProviderSettings>
+    DataProviderSettings& WithRedshiftSettings(RedshiftSettingsT&& value) { SetRedshiftSettings(std::forward<RedshiftSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const PostgreSqlDataProviderSettings& GetPostgreSqlSettings() const{ return m_postgreSqlSettings; }
+    inline const PostgreSqlDataProviderSettings& GetPostgreSqlSettings() const { return m_postgreSqlSettings; }
     inline bool PostgreSqlSettingsHasBeenSet() const { return m_postgreSqlSettingsHasBeenSet; }
-    inline void SetPostgreSqlSettings(const PostgreSqlDataProviderSettings& value) { m_postgreSqlSettingsHasBeenSet = true; m_postgreSqlSettings = value; }
-    inline void SetPostgreSqlSettings(PostgreSqlDataProviderSettings&& value) { m_postgreSqlSettingsHasBeenSet = true; m_postgreSqlSettings = std::move(value); }
-    inline DataProviderSettings& WithPostgreSqlSettings(const PostgreSqlDataProviderSettings& value) { SetPostgreSqlSettings(value); return *this;}
-    inline DataProviderSettings& WithPostgreSqlSettings(PostgreSqlDataProviderSettings&& value) { SetPostgreSqlSettings(std::move(value)); return *this;}
+    template<typename PostgreSqlSettingsT = PostgreSqlDataProviderSettings>
+    void SetPostgreSqlSettings(PostgreSqlSettingsT&& value) { m_postgreSqlSettingsHasBeenSet = true; m_postgreSqlSettings = std::forward<PostgreSqlSettingsT>(value); }
+    template<typename PostgreSqlSettingsT = PostgreSqlDataProviderSettings>
+    DataProviderSettings& WithPostgreSqlSettings(PostgreSqlSettingsT&& value) { SetPostgreSqlSettings(std::forward<PostgreSqlSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const MySqlDataProviderSettings& GetMySqlSettings() const{ return m_mySqlSettings; }
+    inline const MySqlDataProviderSettings& GetMySqlSettings() const { return m_mySqlSettings; }
     inline bool MySqlSettingsHasBeenSet() const { return m_mySqlSettingsHasBeenSet; }
-    inline void SetMySqlSettings(const MySqlDataProviderSettings& value) { m_mySqlSettingsHasBeenSet = true; m_mySqlSettings = value; }
-    inline void SetMySqlSettings(MySqlDataProviderSettings&& value) { m_mySqlSettingsHasBeenSet = true; m_mySqlSettings = std::move(value); }
-    inline DataProviderSettings& WithMySqlSettings(const MySqlDataProviderSettings& value) { SetMySqlSettings(value); return *this;}
-    inline DataProviderSettings& WithMySqlSettings(MySqlDataProviderSettings&& value) { SetMySqlSettings(std::move(value)); return *this;}
+    template<typename MySqlSettingsT = MySqlDataProviderSettings>
+    void SetMySqlSettings(MySqlSettingsT&& value) { m_mySqlSettingsHasBeenSet = true; m_mySqlSettings = std::forward<MySqlSettingsT>(value); }
+    template<typename MySqlSettingsT = MySqlDataProviderSettings>
+    DataProviderSettings& WithMySqlSettings(MySqlSettingsT&& value) { SetMySqlSettings(std::forward<MySqlSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const OracleDataProviderSettings& GetOracleSettings() const{ return m_oracleSettings; }
+    inline const OracleDataProviderSettings& GetOracleSettings() const { return m_oracleSettings; }
     inline bool OracleSettingsHasBeenSet() const { return m_oracleSettingsHasBeenSet; }
-    inline void SetOracleSettings(const OracleDataProviderSettings& value) { m_oracleSettingsHasBeenSet = true; m_oracleSettings = value; }
-    inline void SetOracleSettings(OracleDataProviderSettings&& value) { m_oracleSettingsHasBeenSet = true; m_oracleSettings = std::move(value); }
-    inline DataProviderSettings& WithOracleSettings(const OracleDataProviderSettings& value) { SetOracleSettings(value); return *this;}
-    inline DataProviderSettings& WithOracleSettings(OracleDataProviderSettings&& value) { SetOracleSettings(std::move(value)); return *this;}
+    template<typename OracleSettingsT = OracleDataProviderSettings>
+    void SetOracleSettings(OracleSettingsT&& value) { m_oracleSettingsHasBeenSet = true; m_oracleSettings = std::forward<OracleSettingsT>(value); }
+    template<typename OracleSettingsT = OracleDataProviderSettings>
+    DataProviderSettings& WithOracleSettings(OracleSettingsT&& value) { SetOracleSettings(std::forward<OracleSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const MicrosoftSqlServerDataProviderSettings& GetMicrosoftSqlServerSettings() const{ return m_microsoftSqlServerSettings; }
+    inline const MicrosoftSqlServerDataProviderSettings& GetMicrosoftSqlServerSettings() const { return m_microsoftSqlServerSettings; }
     inline bool MicrosoftSqlServerSettingsHasBeenSet() const { return m_microsoftSqlServerSettingsHasBeenSet; }
-    inline void SetMicrosoftSqlServerSettings(const MicrosoftSqlServerDataProviderSettings& value) { m_microsoftSqlServerSettingsHasBeenSet = true; m_microsoftSqlServerSettings = value; }
-    inline void SetMicrosoftSqlServerSettings(MicrosoftSqlServerDataProviderSettings&& value) { m_microsoftSqlServerSettingsHasBeenSet = true; m_microsoftSqlServerSettings = std::move(value); }
-    inline DataProviderSettings& WithMicrosoftSqlServerSettings(const MicrosoftSqlServerDataProviderSettings& value) { SetMicrosoftSqlServerSettings(value); return *this;}
-    inline DataProviderSettings& WithMicrosoftSqlServerSettings(MicrosoftSqlServerDataProviderSettings&& value) { SetMicrosoftSqlServerSettings(std::move(value)); return *this;}
+    template<typename MicrosoftSqlServerSettingsT = MicrosoftSqlServerDataProviderSettings>
+    void SetMicrosoftSqlServerSettings(MicrosoftSqlServerSettingsT&& value) { m_microsoftSqlServerSettingsHasBeenSet = true; m_microsoftSqlServerSettings = std::forward<MicrosoftSqlServerSettingsT>(value); }
+    template<typename MicrosoftSqlServerSettingsT = MicrosoftSqlServerDataProviderSettings>
+    DataProviderSettings& WithMicrosoftSqlServerSettings(MicrosoftSqlServerSettingsT&& value) { SetMicrosoftSqlServerSettings(std::forward<MicrosoftSqlServerSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const DocDbDataProviderSettings& GetDocDbSettings() const{ return m_docDbSettings; }
+    inline const DocDbDataProviderSettings& GetDocDbSettings() const { return m_docDbSettings; }
     inline bool DocDbSettingsHasBeenSet() const { return m_docDbSettingsHasBeenSet; }
-    inline void SetDocDbSettings(const DocDbDataProviderSettings& value) { m_docDbSettingsHasBeenSet = true; m_docDbSettings = value; }
-    inline void SetDocDbSettings(DocDbDataProviderSettings&& value) { m_docDbSettingsHasBeenSet = true; m_docDbSettings = std::move(value); }
-    inline DataProviderSettings& WithDocDbSettings(const DocDbDataProviderSettings& value) { SetDocDbSettings(value); return *this;}
-    inline DataProviderSettings& WithDocDbSettings(DocDbDataProviderSettings&& value) { SetDocDbSettings(std::move(value)); return *this;}
+    template<typename DocDbSettingsT = DocDbDataProviderSettings>
+    void SetDocDbSettings(DocDbSettingsT&& value) { m_docDbSettingsHasBeenSet = true; m_docDbSettings = std::forward<DocDbSettingsT>(value); }
+    template<typename DocDbSettingsT = DocDbDataProviderSettings>
+    DataProviderSettings& WithDocDbSettings(DocDbSettingsT&& value) { SetDocDbSettings(std::forward<DocDbSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Provides information that defines a MariaDB data provider.</p>
      */
-    inline const MariaDbDataProviderSettings& GetMariaDbSettings() const{ return m_mariaDbSettings; }
+    inline const MariaDbDataProviderSettings& GetMariaDbSettings() const { return m_mariaDbSettings; }
     inline bool MariaDbSettingsHasBeenSet() const { return m_mariaDbSettingsHasBeenSet; }
-    inline void SetMariaDbSettings(const MariaDbDataProviderSettings& value) { m_mariaDbSettingsHasBeenSet = true; m_mariaDbSettings = value; }
-    inline void SetMariaDbSettings(MariaDbDataProviderSettings&& value) { m_mariaDbSettingsHasBeenSet = true; m_mariaDbSettings = std::move(value); }
-    inline DataProviderSettings& WithMariaDbSettings(const MariaDbDataProviderSettings& value) { SetMariaDbSettings(value); return *this;}
-    inline DataProviderSettings& WithMariaDbSettings(MariaDbDataProviderSettings&& value) { SetMariaDbSettings(std::move(value)); return *this;}
+    template<typename MariaDbSettingsT = MariaDbDataProviderSettings>
+    void SetMariaDbSettings(MariaDbSettingsT&& value) { m_mariaDbSettingsHasBeenSet = true; m_mariaDbSettings = std::forward<MariaDbSettingsT>(value); }
+    template<typename MariaDbSettingsT = MariaDbDataProviderSettings>
+    DataProviderSettings& WithMariaDbSettings(MariaDbSettingsT&& value) { SetMariaDbSettings(std::forward<MariaDbSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Provides information that defines an IBM DB2 LUW data provider.</p>
      */
-    inline const IbmDb2LuwDataProviderSettings& GetIbmDb2LuwSettings() const{ return m_ibmDb2LuwSettings; }
+    inline const IbmDb2LuwDataProviderSettings& GetIbmDb2LuwSettings() const { return m_ibmDb2LuwSettings; }
     inline bool IbmDb2LuwSettingsHasBeenSet() const { return m_ibmDb2LuwSettingsHasBeenSet; }
-    inline void SetIbmDb2LuwSettings(const IbmDb2LuwDataProviderSettings& value) { m_ibmDb2LuwSettingsHasBeenSet = true; m_ibmDb2LuwSettings = value; }
-    inline void SetIbmDb2LuwSettings(IbmDb2LuwDataProviderSettings&& value) { m_ibmDb2LuwSettingsHasBeenSet = true; m_ibmDb2LuwSettings = std::move(value); }
-    inline DataProviderSettings& WithIbmDb2LuwSettings(const IbmDb2LuwDataProviderSettings& value) { SetIbmDb2LuwSettings(value); return *this;}
-    inline DataProviderSettings& WithIbmDb2LuwSettings(IbmDb2LuwDataProviderSettings&& value) { SetIbmDb2LuwSettings(std::move(value)); return *this;}
+    template<typename IbmDb2LuwSettingsT = IbmDb2LuwDataProviderSettings>
+    void SetIbmDb2LuwSettings(IbmDb2LuwSettingsT&& value) { m_ibmDb2LuwSettingsHasBeenSet = true; m_ibmDb2LuwSettings = std::forward<IbmDb2LuwSettingsT>(value); }
+    template<typename IbmDb2LuwSettingsT = IbmDb2LuwDataProviderSettings>
+    DataProviderSettings& WithIbmDb2LuwSettings(IbmDb2LuwSettingsT&& value) { SetIbmDb2LuwSettings(std::forward<IbmDb2LuwSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Provides information that defines an IBM DB2 for z/OS data provider.</p>
      */
-    inline const IbmDb2zOsDataProviderSettings& GetIbmDb2zOsSettings() const{ return m_ibmDb2zOsSettings; }
+    inline const IbmDb2zOsDataProviderSettings& GetIbmDb2zOsSettings() const { return m_ibmDb2zOsSettings; }
     inline bool IbmDb2zOsSettingsHasBeenSet() const { return m_ibmDb2zOsSettingsHasBeenSet; }
-    inline void SetIbmDb2zOsSettings(const IbmDb2zOsDataProviderSettings& value) { m_ibmDb2zOsSettingsHasBeenSet = true; m_ibmDb2zOsSettings = value; }
-    inline void SetIbmDb2zOsSettings(IbmDb2zOsDataProviderSettings&& value) { m_ibmDb2zOsSettingsHasBeenSet = true; m_ibmDb2zOsSettings = std::move(value); }
-    inline DataProviderSettings& WithIbmDb2zOsSettings(const IbmDb2zOsDataProviderSettings& value) { SetIbmDb2zOsSettings(value); return *this;}
-    inline DataProviderSettings& WithIbmDb2zOsSettings(IbmDb2zOsDataProviderSettings&& value) { SetIbmDb2zOsSettings(std::move(value)); return *this;}
+    template<typename IbmDb2zOsSettingsT = IbmDb2zOsDataProviderSettings>
+    void SetIbmDb2zOsSettings(IbmDb2zOsSettingsT&& value) { m_ibmDb2zOsSettingsHasBeenSet = true; m_ibmDb2zOsSettings = std::forward<IbmDb2zOsSettingsT>(value); }
+    template<typename IbmDb2zOsSettingsT = IbmDb2zOsDataProviderSettings>
+    DataProviderSettings& WithIbmDb2zOsSettings(IbmDb2zOsSettingsT&& value) { SetIbmDb2zOsSettings(std::forward<IbmDb2zOsSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Provides information that defines a MongoDB data provider.</p>
      */
-    inline const MongoDbDataProviderSettings& GetMongoDbSettings() const{ return m_mongoDbSettings; }
+    inline const MongoDbDataProviderSettings& GetMongoDbSettings() const { return m_mongoDbSettings; }
     inline bool MongoDbSettingsHasBeenSet() const { return m_mongoDbSettingsHasBeenSet; }
-    inline void SetMongoDbSettings(const MongoDbDataProviderSettings& value) { m_mongoDbSettingsHasBeenSet = true; m_mongoDbSettings = value; }
-    inline void SetMongoDbSettings(MongoDbDataProviderSettings&& value) { m_mongoDbSettingsHasBeenSet = true; m_mongoDbSettings = std::move(value); }
-    inline DataProviderSettings& WithMongoDbSettings(const MongoDbDataProviderSettings& value) { SetMongoDbSettings(value); return *this;}
-    inline DataProviderSettings& WithMongoDbSettings(MongoDbDataProviderSettings&& value) { SetMongoDbSettings(std::move(value)); return *this;}
+    template<typename MongoDbSettingsT = MongoDbDataProviderSettings>
+    void SetMongoDbSettings(MongoDbSettingsT&& value) { m_mongoDbSettingsHasBeenSet = true; m_mongoDbSettings = std::forward<MongoDbSettingsT>(value); }
+    template<typename MongoDbSettingsT = MongoDbDataProviderSettings>
+    DataProviderSettings& WithMongoDbSettings(MongoDbSettingsT&& value) { SetMongoDbSettings(std::forward<MongoDbSettingsT>(value)); return *this;}
     ///@}
   private:
 

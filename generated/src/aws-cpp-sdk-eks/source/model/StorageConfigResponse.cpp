@@ -18,13 +18,7 @@ namespace EKS
 namespace Model
 {
 
-StorageConfigResponse::StorageConfigResponse() : 
-    m_blockStorageHasBeenSet(false)
-{
-}
-
 StorageConfigResponse::StorageConfigResponse(JsonView jsonValue)
-  : StorageConfigResponse()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ StorageConfigResponse& StorageConfigResponse::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("blockStorage"))
   {
     m_blockStorage = jsonValue.GetObject("blockStorage");
-
     m_blockStorageHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetFaceLivenessSessionResultsResult::GetFaceLivenessSessionResultsResult() : 
-    m_status(LivenessSessionStatus::NOT_SET),
-    m_confidence(0.0)
-{
-}
-
 GetFaceLivenessSessionResultsResult::GetFaceLivenessSessionResultsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetFaceLivenessSessionResultsResult()
 {
   *this = result;
 }
@@ -35,27 +28,23 @@ GetFaceLivenessSessionResultsResult& GetFaceLivenessSessionResultsResult::operat
   if(jsonValue.ValueExists("SessionId"))
   {
     m_sessionId = jsonValue.GetString("SessionId");
-
+    m_sessionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = LivenessSessionStatusMapper::GetLivenessSessionStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Confidence"))
   {
     m_confidence = jsonValue.GetDouble("Confidence");
-
+    m_confidenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReferenceImage"))
   {
     m_referenceImage = jsonValue.GetObject("ReferenceImage");
-
+    m_referenceImageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuditImages"))
   {
     Aws::Utils::Array<JsonView> auditImagesJsonList = jsonValue.GetArray("AuditImages");
@@ -63,14 +52,15 @@ GetFaceLivenessSessionResultsResult& GetFaceLivenessSessionResultsResult::operat
     {
       m_auditImages.push_back(auditImagesJsonList[auditImagesIndex].AsObject());
     }
+    m_auditImagesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

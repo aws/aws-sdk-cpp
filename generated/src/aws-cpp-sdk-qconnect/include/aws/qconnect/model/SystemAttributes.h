@@ -33,7 +33,7 @@ namespace Model
   class SystemAttributes
   {
   public:
-    AWS_QCONNECT_API SystemAttributes();
+    AWS_QCONNECT_API SystemAttributes() = default;
     AWS_QCONNECT_API SystemAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API SystemAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,38 +43,36 @@ namespace Model
     /**
      * <p>The CustomerEndpoint attribute.</p>
      */
-    inline const SystemEndpointAttributes& GetCustomerEndpoint() const{ return m_customerEndpoint; }
+    inline const SystemEndpointAttributes& GetCustomerEndpoint() const { return m_customerEndpoint; }
     inline bool CustomerEndpointHasBeenSet() const { return m_customerEndpointHasBeenSet; }
-    inline void SetCustomerEndpoint(const SystemEndpointAttributes& value) { m_customerEndpointHasBeenSet = true; m_customerEndpoint = value; }
-    inline void SetCustomerEndpoint(SystemEndpointAttributes&& value) { m_customerEndpointHasBeenSet = true; m_customerEndpoint = std::move(value); }
-    inline SystemAttributes& WithCustomerEndpoint(const SystemEndpointAttributes& value) { SetCustomerEndpoint(value); return *this;}
-    inline SystemAttributes& WithCustomerEndpoint(SystemEndpointAttributes&& value) { SetCustomerEndpoint(std::move(value)); return *this;}
+    template<typename CustomerEndpointT = SystemEndpointAttributes>
+    void SetCustomerEndpoint(CustomerEndpointT&& value) { m_customerEndpointHasBeenSet = true; m_customerEndpoint = std::forward<CustomerEndpointT>(value); }
+    template<typename CustomerEndpointT = SystemEndpointAttributes>
+    SystemAttributes& WithCustomerEndpoint(CustomerEndpointT&& value) { SetCustomerEndpoint(std::forward<CustomerEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the task.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline SystemAttributes& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline SystemAttributes& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline SystemAttributes& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    SystemAttributes& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The SystemEndpoint attribute.</p>
      */
-    inline const SystemEndpointAttributes& GetSystemEndpoint() const{ return m_systemEndpoint; }
+    inline const SystemEndpointAttributes& GetSystemEndpoint() const { return m_systemEndpoint; }
     inline bool SystemEndpointHasBeenSet() const { return m_systemEndpointHasBeenSet; }
-    inline void SetSystemEndpoint(const SystemEndpointAttributes& value) { m_systemEndpointHasBeenSet = true; m_systemEndpoint = value; }
-    inline void SetSystemEndpoint(SystemEndpointAttributes&& value) { m_systemEndpointHasBeenSet = true; m_systemEndpoint = std::move(value); }
-    inline SystemAttributes& WithSystemEndpoint(const SystemEndpointAttributes& value) { SetSystemEndpoint(value); return *this;}
-    inline SystemAttributes& WithSystemEndpoint(SystemEndpointAttributes&& value) { SetSystemEndpoint(std::move(value)); return *this;}
+    template<typename SystemEndpointT = SystemEndpointAttributes>
+    void SetSystemEndpoint(SystemEndpointT&& value) { m_systemEndpointHasBeenSet = true; m_systemEndpoint = std::forward<SystemEndpointT>(value); }
+    template<typename SystemEndpointT = SystemEndpointAttributes>
+    SystemAttributes& WithSystemEndpoint(SystemEndpointT&& value) { SetSystemEndpoint(std::forward<SystemEndpointT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,17 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEcsServiceLoadBalancersDetails::AwsEcsServiceLoadBalancersDetails() : 
-    m_containerNameHasBeenSet(false),
-    m_containerPort(0),
-    m_containerPortHasBeenSet(false),
-    m_loadBalancerNameHasBeenSet(false),
-    m_targetGroupArnHasBeenSet(false)
-{
-}
-
 AwsEcsServiceLoadBalancersDetails::AwsEcsServiceLoadBalancersDetails(JsonView jsonValue)
-  : AwsEcsServiceLoadBalancersDetails()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ AwsEcsServiceLoadBalancersDetails& AwsEcsServiceLoadBalancersDetails::operator =
   if(jsonValue.ValueExists("ContainerName"))
   {
     m_containerName = jsonValue.GetString("ContainerName");
-
     m_containerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContainerPort"))
   {
     m_containerPort = jsonValue.GetInteger("ContainerPort");
-
     m_containerPortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LoadBalancerName"))
   {
     m_loadBalancerName = jsonValue.GetString("LoadBalancerName");
-
     m_loadBalancerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetGroupArn"))
   {
     m_targetGroupArn = jsonValue.GetString("TargetGroupArn");
-
     m_targetGroupArnHasBeenSet = true;
   }
-
   return *this;
 }
 

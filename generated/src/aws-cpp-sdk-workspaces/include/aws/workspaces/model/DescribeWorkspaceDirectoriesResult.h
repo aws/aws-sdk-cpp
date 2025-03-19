@@ -29,7 +29,7 @@ namespace Model
   class DescribeWorkspaceDirectoriesResult
   {
   public:
-    AWS_WORKSPACES_API DescribeWorkspaceDirectoriesResult();
+    AWS_WORKSPACES_API DescribeWorkspaceDirectoriesResult() = default;
     AWS_WORKSPACES_API DescribeWorkspaceDirectoriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WORKSPACES_API DescribeWorkspaceDirectoriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Information about the directories.</p>
      */
-    inline const Aws::Vector<WorkspaceDirectory>& GetDirectories() const{ return m_directories; }
-    inline void SetDirectories(const Aws::Vector<WorkspaceDirectory>& value) { m_directories = value; }
-    inline void SetDirectories(Aws::Vector<WorkspaceDirectory>&& value) { m_directories = std::move(value); }
-    inline DescribeWorkspaceDirectoriesResult& WithDirectories(const Aws::Vector<WorkspaceDirectory>& value) { SetDirectories(value); return *this;}
-    inline DescribeWorkspaceDirectoriesResult& WithDirectories(Aws::Vector<WorkspaceDirectory>&& value) { SetDirectories(std::move(value)); return *this;}
-    inline DescribeWorkspaceDirectoriesResult& AddDirectories(const WorkspaceDirectory& value) { m_directories.push_back(value); return *this; }
-    inline DescribeWorkspaceDirectoriesResult& AddDirectories(WorkspaceDirectory&& value) { m_directories.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<WorkspaceDirectory>& GetDirectories() const { return m_directories; }
+    template<typename DirectoriesT = Aws::Vector<WorkspaceDirectory>>
+    void SetDirectories(DirectoriesT&& value) { m_directoriesHasBeenSet = true; m_directories = std::forward<DirectoriesT>(value); }
+    template<typename DirectoriesT = Aws::Vector<WorkspaceDirectory>>
+    DescribeWorkspaceDirectoriesResult& WithDirectories(DirectoriesT&& value) { SetDirectories(std::forward<DirectoriesT>(value)); return *this;}
+    template<typename DirectoriesT = WorkspaceDirectory>
+    DescribeWorkspaceDirectoriesResult& AddDirectories(DirectoriesT&& value) { m_directoriesHasBeenSet = true; m_directories.emplace_back(std::forward<DirectoriesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is null
      * when there are no more results to return. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeWorkspaceDirectoriesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeWorkspaceDirectoriesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeWorkspaceDirectoriesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeWorkspaceDirectoriesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeWorkspaceDirectoriesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeWorkspaceDirectoriesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeWorkspaceDirectoriesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeWorkspaceDirectoriesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<WorkspaceDirectory> m_directories;
+    bool m_directoriesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

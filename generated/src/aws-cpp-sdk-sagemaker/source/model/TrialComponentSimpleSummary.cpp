@@ -18,17 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-TrialComponentSimpleSummary::TrialComponentSimpleSummary() : 
-    m_trialComponentNameHasBeenSet(false),
-    m_trialComponentArnHasBeenSet(false),
-    m_trialComponentSourceHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_createdByHasBeenSet(false)
-{
-}
-
 TrialComponentSimpleSummary::TrialComponentSimpleSummary(JsonView jsonValue)
-  : TrialComponentSimpleSummary()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ TrialComponentSimpleSummary& TrialComponentSimpleSummary::operator =(JsonView js
   if(jsonValue.ValueExists("TrialComponentName"))
   {
     m_trialComponentName = jsonValue.GetString("TrialComponentName");
-
     m_trialComponentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrialComponentArn"))
   {
     m_trialComponentArn = jsonValue.GetString("TrialComponentArn");
-
     m_trialComponentArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrialComponentSource"))
   {
     m_trialComponentSource = jsonValue.GetObject("TrialComponentSource");
-
     m_trialComponentSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedBy"))
   {
     m_createdBy = jsonValue.GetObject("CreatedBy");
-
     m_createdByHasBeenSet = true;
   }
-
   return *this;
 }
 

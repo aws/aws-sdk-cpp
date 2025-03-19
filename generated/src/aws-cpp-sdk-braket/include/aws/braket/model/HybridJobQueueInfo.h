@@ -33,7 +33,7 @@ namespace Model
   class HybridJobQueueInfo
   {
   public:
-    AWS_BRAKET_API HybridJobQueueInfo();
+    AWS_BRAKET_API HybridJobQueueInfo() = default;
     AWS_BRAKET_API HybridJobQueueInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_BRAKET_API HybridJobQueueInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BRAKET_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,40 +45,34 @@ namespace Model
      * the job is complete and no longer in the queue, the message field contains that
      * information.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline HybridJobQueueInfo& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline HybridJobQueueInfo& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline HybridJobQueueInfo& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    HybridJobQueueInfo& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Current position of the job in the jobs queue.</p>
      */
-    inline const Aws::String& GetPosition() const{ return m_position; }
+    inline const Aws::String& GetPosition() const { return m_position; }
     inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
-    inline void SetPosition(const Aws::String& value) { m_positionHasBeenSet = true; m_position = value; }
-    inline void SetPosition(Aws::String&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
-    inline void SetPosition(const char* value) { m_positionHasBeenSet = true; m_position.assign(value); }
-    inline HybridJobQueueInfo& WithPosition(const Aws::String& value) { SetPosition(value); return *this;}
-    inline HybridJobQueueInfo& WithPosition(Aws::String&& value) { SetPosition(std::move(value)); return *this;}
-    inline HybridJobQueueInfo& WithPosition(const char* value) { SetPosition(value); return *this;}
+    template<typename PositionT = Aws::String>
+    void SetPosition(PositionT&& value) { m_positionHasBeenSet = true; m_position = std::forward<PositionT>(value); }
+    template<typename PositionT = Aws::String>
+    HybridJobQueueInfo& WithPosition(PositionT&& value) { SetPosition(std::forward<PositionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the queue.</p>
      */
-    inline const QueueName& GetQueue() const{ return m_queue; }
+    inline QueueName GetQueue() const { return m_queue; }
     inline bool QueueHasBeenSet() const { return m_queueHasBeenSet; }
-    inline void SetQueue(const QueueName& value) { m_queueHasBeenSet = true; m_queue = value; }
-    inline void SetQueue(QueueName&& value) { m_queueHasBeenSet = true; m_queue = std::move(value); }
-    inline HybridJobQueueInfo& WithQueue(const QueueName& value) { SetQueue(value); return *this;}
-    inline HybridJobQueueInfo& WithQueue(QueueName&& value) { SetQueue(std::move(value)); return *this;}
+    inline void SetQueue(QueueName value) { m_queueHasBeenSet = true; m_queue = value; }
+    inline HybridJobQueueInfo& WithQueue(QueueName value) { SetQueue(value); return *this;}
     ///@}
   private:
 
@@ -88,7 +82,7 @@ namespace Model
     Aws::String m_position;
     bool m_positionHasBeenSet = false;
 
-    QueueName m_queue;
+    QueueName m_queue{QueueName::NOT_SET};
     bool m_queueHasBeenSet = false;
   };
 

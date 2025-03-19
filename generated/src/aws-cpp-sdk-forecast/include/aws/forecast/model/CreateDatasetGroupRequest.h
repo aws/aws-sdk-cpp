@@ -24,7 +24,7 @@ namespace Model
   class CreateDatasetGroupRequest : public ForecastServiceRequest
   {
   public:
-    AWS_FORECASTSERVICE_API CreateDatasetGroupRequest();
+    AWS_FORECASTSERVICE_API CreateDatasetGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>A name for the dataset group.</p>
      */
-    inline const Aws::String& GetDatasetGroupName() const{ return m_datasetGroupName; }
+    inline const Aws::String& GetDatasetGroupName() const { return m_datasetGroupName; }
     inline bool DatasetGroupNameHasBeenSet() const { return m_datasetGroupNameHasBeenSet; }
-    inline void SetDatasetGroupName(const Aws::String& value) { m_datasetGroupNameHasBeenSet = true; m_datasetGroupName = value; }
-    inline void SetDatasetGroupName(Aws::String&& value) { m_datasetGroupNameHasBeenSet = true; m_datasetGroupName = std::move(value); }
-    inline void SetDatasetGroupName(const char* value) { m_datasetGroupNameHasBeenSet = true; m_datasetGroupName.assign(value); }
-    inline CreateDatasetGroupRequest& WithDatasetGroupName(const Aws::String& value) { SetDatasetGroupName(value); return *this;}
-    inline CreateDatasetGroupRequest& WithDatasetGroupName(Aws::String&& value) { SetDatasetGroupName(std::move(value)); return *this;}
-    inline CreateDatasetGroupRequest& WithDatasetGroupName(const char* value) { SetDatasetGroupName(value); return *this;}
+    template<typename DatasetGroupNameT = Aws::String>
+    void SetDatasetGroupName(DatasetGroupNameT&& value) { m_datasetGroupNameHasBeenSet = true; m_datasetGroupName = std::forward<DatasetGroupNameT>(value); }
+    template<typename DatasetGroupNameT = Aws::String>
+    CreateDatasetGroupRequest& WithDatasetGroupName(DatasetGroupNameT&& value) { SetDatasetGroupName(std::forward<DatasetGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,12 +65,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html">Dataset
      * groups</a>.</p>
      */
-    inline const Domain& GetDomain() const{ return m_domain; }
+    inline Domain GetDomain() const { return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-    inline void SetDomain(const Domain& value) { m_domainHasBeenSet = true; m_domain = value; }
-    inline void SetDomain(Domain&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-    inline CreateDatasetGroupRequest& WithDomain(const Domain& value) { SetDomain(value); return *this;}
-    inline CreateDatasetGroupRequest& WithDomain(Domain&& value) { SetDomain(std::move(value)); return *this;}
+    inline void SetDomain(Domain value) { m_domainHasBeenSet = true; m_domain = value; }
+    inline CreateDatasetGroupRequest& WithDomain(Domain value) { SetDomain(value); return *this;}
     ///@}
 
     ///@{
@@ -80,15 +76,14 @@ namespace Model
      * <p>An array of Amazon Resource Names (ARNs) of the datasets that you want to
      * include in the dataset group.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDatasetArns() const{ return m_datasetArns; }
+    inline const Aws::Vector<Aws::String>& GetDatasetArns() const { return m_datasetArns; }
     inline bool DatasetArnsHasBeenSet() const { return m_datasetArnsHasBeenSet; }
-    inline void SetDatasetArns(const Aws::Vector<Aws::String>& value) { m_datasetArnsHasBeenSet = true; m_datasetArns = value; }
-    inline void SetDatasetArns(Aws::Vector<Aws::String>&& value) { m_datasetArnsHasBeenSet = true; m_datasetArns = std::move(value); }
-    inline CreateDatasetGroupRequest& WithDatasetArns(const Aws::Vector<Aws::String>& value) { SetDatasetArns(value); return *this;}
-    inline CreateDatasetGroupRequest& WithDatasetArns(Aws::Vector<Aws::String>&& value) { SetDatasetArns(std::move(value)); return *this;}
-    inline CreateDatasetGroupRequest& AddDatasetArns(const Aws::String& value) { m_datasetArnsHasBeenSet = true; m_datasetArns.push_back(value); return *this; }
-    inline CreateDatasetGroupRequest& AddDatasetArns(Aws::String&& value) { m_datasetArnsHasBeenSet = true; m_datasetArns.push_back(std::move(value)); return *this; }
-    inline CreateDatasetGroupRequest& AddDatasetArns(const char* value) { m_datasetArnsHasBeenSet = true; m_datasetArns.push_back(value); return *this; }
+    template<typename DatasetArnsT = Aws::Vector<Aws::String>>
+    void SetDatasetArns(DatasetArnsT&& value) { m_datasetArnsHasBeenSet = true; m_datasetArns = std::forward<DatasetArnsT>(value); }
+    template<typename DatasetArnsT = Aws::Vector<Aws::String>>
+    CreateDatasetGroupRequest& WithDatasetArns(DatasetArnsT&& value) { SetDatasetArns(std::forward<DatasetArnsT>(value)); return *this;}
+    template<typename DatasetArnsT = Aws::String>
+    CreateDatasetGroupRequest& AddDatasetArns(DatasetArnsT&& value) { m_datasetArnsHasBeenSet = true; m_datasetArns.emplace_back(std::forward<DatasetArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -113,21 +108,21 @@ namespace Model
      * tags. Tags with only the key prefix of <code>aws</code> do not count against
      * your tags per resource limit.</p> </li> </ul>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateDatasetGroupRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateDatasetGroupRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateDatasetGroupRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateDatasetGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateDatasetGroupRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateDatasetGroupRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_datasetGroupName;
     bool m_datasetGroupNameHasBeenSet = false;
 
-    Domain m_domain;
+    Domain m_domain{Domain::NOT_SET};
     bool m_domainHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_datasetArns;

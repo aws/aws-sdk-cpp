@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TransitGatewayPolicyRuleMetaData::TransitGatewayPolicyRuleMetaData() : 
-    m_metaDataKeyHasBeenSet(false),
-    m_metaDataValueHasBeenSet(false)
-{
-}
-
 TransitGatewayPolicyRuleMetaData::TransitGatewayPolicyRuleMetaData(const XmlNode& xmlNode)
-  : TransitGatewayPolicyRuleMetaData()
 {
   *this = xmlNode;
 }

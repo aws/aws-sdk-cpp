@@ -12,13 +12,6 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeElasticIpsRequest::DescribeElasticIpsRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_stackIdHasBeenSet(false),
-    m_ipsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeElasticIpsRequest::SerializePayload() const
 {
   JsonValue payload;

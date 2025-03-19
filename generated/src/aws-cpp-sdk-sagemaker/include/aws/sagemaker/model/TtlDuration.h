@@ -35,7 +35,7 @@ namespace Model
   class TtlDuration
   {
   public:
-    AWS_SAGEMAKER_API TtlDuration();
+    AWS_SAGEMAKER_API TtlDuration() = default;
     AWS_SAGEMAKER_API TtlDuration(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API TtlDuration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,29 +45,27 @@ namespace Model
     /**
      * <p> <code>TtlDuration</code> time unit.</p>
      */
-    inline const TtlDurationUnit& GetUnit() const{ return m_unit; }
+    inline TtlDurationUnit GetUnit() const { return m_unit; }
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-    inline void SetUnit(const TtlDurationUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
-    inline void SetUnit(TtlDurationUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-    inline TtlDuration& WithUnit(const TtlDurationUnit& value) { SetUnit(value); return *this;}
-    inline TtlDuration& WithUnit(TtlDurationUnit&& value) { SetUnit(std::move(value)); return *this;}
+    inline void SetUnit(TtlDurationUnit value) { m_unitHasBeenSet = true; m_unit = value; }
+    inline TtlDuration& WithUnit(TtlDurationUnit value) { SetUnit(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> <code>TtlDuration</code> time value.</p>
      */
-    inline int GetValue() const{ return m_value; }
+    inline int GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(int value) { m_valueHasBeenSet = true; m_value = value; }
     inline TtlDuration& WithValue(int value) { SetValue(value); return *this;}
     ///@}
   private:
 
-    TtlDurationUnit m_unit;
+    TtlDurationUnit m_unit{TtlDurationUnit::NOT_SET};
     bool m_unitHasBeenSet = false;
 
-    int m_value;
+    int m_value{0};
     bool m_valueHasBeenSet = false;
   };
 

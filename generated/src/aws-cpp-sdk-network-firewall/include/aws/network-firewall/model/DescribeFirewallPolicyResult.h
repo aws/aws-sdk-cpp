@@ -29,7 +29,7 @@ namespace Model
   class DescribeFirewallPolicyResult
   {
   public:
-    AWS_NETWORKFIREWALL_API DescribeFirewallPolicyResult();
+    AWS_NETWORKFIREWALL_API DescribeFirewallPolicyResult() = default;
     AWS_NETWORKFIREWALL_API DescribeFirewallPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NETWORKFIREWALL_API DescribeFirewallPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -46,13 +46,11 @@ namespace Model
      * current token. Reapply your changes as needed, then try the operation again
      * using the new token. </p>
      */
-    inline const Aws::String& GetUpdateToken() const{ return m_updateToken; }
-    inline void SetUpdateToken(const Aws::String& value) { m_updateToken = value; }
-    inline void SetUpdateToken(Aws::String&& value) { m_updateToken = std::move(value); }
-    inline void SetUpdateToken(const char* value) { m_updateToken.assign(value); }
-    inline DescribeFirewallPolicyResult& WithUpdateToken(const Aws::String& value) { SetUpdateToken(value); return *this;}
-    inline DescribeFirewallPolicyResult& WithUpdateToken(Aws::String&& value) { SetUpdateToken(std::move(value)); return *this;}
-    inline DescribeFirewallPolicyResult& WithUpdateToken(const char* value) { SetUpdateToken(value); return *this;}
+    inline const Aws::String& GetUpdateToken() const { return m_updateToken; }
+    template<typename UpdateTokenT = Aws::String>
+    void SetUpdateToken(UpdateTokenT&& value) { m_updateTokenHasBeenSet = true; m_updateToken = std::forward<UpdateTokenT>(value); }
+    template<typename UpdateTokenT = Aws::String>
+    DescribeFirewallPolicyResult& WithUpdateToken(UpdateTokenT&& value) { SetUpdateToken(std::forward<UpdateTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,43 +59,45 @@ namespace Model
      * <a>FirewallPolicy</a>, define the policy. You can retrieve all objects for a
      * firewall policy by calling <a>DescribeFirewallPolicy</a>. </p>
      */
-    inline const FirewallPolicyResponse& GetFirewallPolicyResponse() const{ return m_firewallPolicyResponse; }
-    inline void SetFirewallPolicyResponse(const FirewallPolicyResponse& value) { m_firewallPolicyResponse = value; }
-    inline void SetFirewallPolicyResponse(FirewallPolicyResponse&& value) { m_firewallPolicyResponse = std::move(value); }
-    inline DescribeFirewallPolicyResult& WithFirewallPolicyResponse(const FirewallPolicyResponse& value) { SetFirewallPolicyResponse(value); return *this;}
-    inline DescribeFirewallPolicyResult& WithFirewallPolicyResponse(FirewallPolicyResponse&& value) { SetFirewallPolicyResponse(std::move(value)); return *this;}
+    inline const FirewallPolicyResponse& GetFirewallPolicyResponse() const { return m_firewallPolicyResponse; }
+    template<typename FirewallPolicyResponseT = FirewallPolicyResponse>
+    void SetFirewallPolicyResponse(FirewallPolicyResponseT&& value) { m_firewallPolicyResponseHasBeenSet = true; m_firewallPolicyResponse = std::forward<FirewallPolicyResponseT>(value); }
+    template<typename FirewallPolicyResponseT = FirewallPolicyResponse>
+    DescribeFirewallPolicyResult& WithFirewallPolicyResponse(FirewallPolicyResponseT&& value) { SetFirewallPolicyResponse(std::forward<FirewallPolicyResponseT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The policy for the specified firewall policy. </p>
      */
-    inline const FirewallPolicy& GetFirewallPolicy() const{ return m_firewallPolicy; }
-    inline void SetFirewallPolicy(const FirewallPolicy& value) { m_firewallPolicy = value; }
-    inline void SetFirewallPolicy(FirewallPolicy&& value) { m_firewallPolicy = std::move(value); }
-    inline DescribeFirewallPolicyResult& WithFirewallPolicy(const FirewallPolicy& value) { SetFirewallPolicy(value); return *this;}
-    inline DescribeFirewallPolicyResult& WithFirewallPolicy(FirewallPolicy&& value) { SetFirewallPolicy(std::move(value)); return *this;}
+    inline const FirewallPolicy& GetFirewallPolicy() const { return m_firewallPolicy; }
+    template<typename FirewallPolicyT = FirewallPolicy>
+    void SetFirewallPolicy(FirewallPolicyT&& value) { m_firewallPolicyHasBeenSet = true; m_firewallPolicy = std::forward<FirewallPolicyT>(value); }
+    template<typename FirewallPolicyT = FirewallPolicy>
+    DescribeFirewallPolicyResult& WithFirewallPolicy(FirewallPolicyT&& value) { SetFirewallPolicy(std::forward<FirewallPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeFirewallPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeFirewallPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeFirewallPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeFirewallPolicyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_updateToken;
+    bool m_updateTokenHasBeenSet = false;
 
     FirewallPolicyResponse m_firewallPolicyResponse;
+    bool m_firewallPolicyResponseHasBeenSet = false;
 
     FirewallPolicy m_firewallPolicy;
+    bool m_firewallPolicyHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,18 +18,7 @@ namespace DocDBElastic
 namespace Model
 {
 
-PendingMaintenanceActionDetails::PendingMaintenanceActionDetails() : 
-    m_actionHasBeenSet(false),
-    m_autoAppliedAfterDateHasBeenSet(false),
-    m_currentApplyDateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_forcedApplyDateHasBeenSet(false),
-    m_optInStatusHasBeenSet(false)
-{
-}
-
 PendingMaintenanceActionDetails::PendingMaintenanceActionDetails(JsonView jsonValue)
-  : PendingMaintenanceActionDetails()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ PendingMaintenanceActionDetails& PendingMaintenanceActionDetails::operator =(Jso
   if(jsonValue.ValueExists("action"))
   {
     m_action = jsonValue.GetString("action");
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("autoAppliedAfterDate"))
   {
     m_autoAppliedAfterDate = jsonValue.GetString("autoAppliedAfterDate");
-
     m_autoAppliedAfterDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("currentApplyDate"))
   {
     m_currentApplyDate = jsonValue.GetString("currentApplyDate");
-
     m_currentApplyDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("forcedApplyDate"))
   {
     m_forcedApplyDate = jsonValue.GetString("forcedApplyDate");
-
     m_forcedApplyDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("optInStatus"))
   {
     m_optInStatus = jsonValue.GetString("optInStatus");
-
     m_optInStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

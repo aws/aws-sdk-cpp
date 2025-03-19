@@ -18,19 +18,7 @@ namespace Omics
 namespace Model
 {
 
-FileInformation::FileInformation() : 
-    m_totalParts(0),
-    m_totalPartsHasBeenSet(false),
-    m_partSize(0),
-    m_partSizeHasBeenSet(false),
-    m_contentLength(0),
-    m_contentLengthHasBeenSet(false),
-    m_s3AccessHasBeenSet(false)
-{
-}
-
 FileInformation::FileInformation(JsonView jsonValue)
-  : FileInformation()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ FileInformation& FileInformation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("totalParts"))
   {
     m_totalParts = jsonValue.GetInteger("totalParts");
-
     m_totalPartsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("partSize"))
   {
     m_partSize = jsonValue.GetInt64("partSize");
-
     m_partSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("contentLength"))
   {
     m_contentLength = jsonValue.GetInt64("contentLength");
-
     m_contentLengthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3Access"))
   {
     m_s3Access = jsonValue.GetObject("s3Access");
-
     m_s3AccessHasBeenSet = true;
   }
-
   return *this;
 }
 

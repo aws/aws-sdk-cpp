@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-RealTimeContactAnalysisTranscriptItemRedaction::RealTimeContactAnalysisTranscriptItemRedaction() : 
-    m_characterOffsetsHasBeenSet(false)
-{
-}
-
 RealTimeContactAnalysisTranscriptItemRedaction::RealTimeContactAnalysisTranscriptItemRedaction(JsonView jsonValue)
-  : RealTimeContactAnalysisTranscriptItemRedaction()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ RealTimeContactAnalysisTranscriptItemRedaction& RealTimeContactAnalysisTranscrip
     }
     m_characterOffsetsHasBeenSet = true;
   }
-
   return *this;
 }
 

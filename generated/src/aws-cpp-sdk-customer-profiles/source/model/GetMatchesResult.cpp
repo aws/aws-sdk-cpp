@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetMatchesResult::GetMatchesResult() : 
-    m_potentialMatches(0)
-{
-}
-
 GetMatchesResult::GetMatchesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetMatchesResult()
 {
   *this = result;
 }
@@ -34,21 +28,18 @@ GetMatchesResult& GetMatchesResult::operator =(const Aws::AmazonWebServiceResult
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MatchGenerationDate"))
   {
     m_matchGenerationDate = jsonValue.GetDouble("MatchGenerationDate");
-
+    m_matchGenerationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PotentialMatches"))
   {
     m_potentialMatches = jsonValue.GetInteger("PotentialMatches");
-
+    m_potentialMatchesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Matches"))
   {
     Aws::Utils::Array<JsonView> matchesJsonList = jsonValue.GetArray("Matches");
@@ -56,14 +47,15 @@ GetMatchesResult& GetMatchesResult::operator =(const Aws::AmazonWebServiceResult
     {
       m_matches.push_back(matchesJsonList[matchesIndex].AsObject());
     }
+    m_matchesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

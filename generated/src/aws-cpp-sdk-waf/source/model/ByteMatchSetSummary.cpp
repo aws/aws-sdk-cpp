@@ -18,14 +18,7 @@ namespace WAF
 namespace Model
 {
 
-ByteMatchSetSummary::ByteMatchSetSummary() : 
-    m_byteMatchSetIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 ByteMatchSetSummary::ByteMatchSetSummary(JsonView jsonValue)
-  : ByteMatchSetSummary()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ByteMatchSetSummary& ByteMatchSetSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ByteMatchSetId"))
   {
     m_byteMatchSetId = jsonValue.GetString("ByteMatchSetId");
-
     m_byteMatchSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

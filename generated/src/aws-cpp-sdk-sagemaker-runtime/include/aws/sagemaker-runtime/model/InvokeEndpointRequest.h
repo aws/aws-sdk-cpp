@@ -22,7 +22,7 @@ namespace Model
   class InvokeEndpointRequest : public StreamingSageMakerRuntimeRequest
   {
   public:
-    AWS_SAGEMAKERRUNTIME_API InvokeEndpointRequest();
+    AWS_SAGEMAKERRUNTIME_API InvokeEndpointRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
      * API.</p>
      */
-    inline const Aws::String& GetEndpointName() const{ return m_endpointName; }
+    inline const Aws::String& GetEndpointName() const { return m_endpointName; }
     inline bool EndpointNameHasBeenSet() const { return m_endpointNameHasBeenSet; }
-    inline void SetEndpointName(const Aws::String& value) { m_endpointNameHasBeenSet = true; m_endpointName = value; }
-    inline void SetEndpointName(Aws::String&& value) { m_endpointNameHasBeenSet = true; m_endpointName = std::move(value); }
-    inline void SetEndpointName(const char* value) { m_endpointNameHasBeenSet = true; m_endpointName.assign(value); }
-    inline InvokeEndpointRequest& WithEndpointName(const Aws::String& value) { SetEndpointName(value); return *this;}
-    inline InvokeEndpointRequest& WithEndpointName(Aws::String&& value) { SetEndpointName(std::move(value)); return *this;}
-    inline InvokeEndpointRequest& WithEndpointName(const char* value) { SetEndpointName(value); return *this;}
+    template<typename EndpointNameT = Aws::String>
+    void SetEndpointName(EndpointNameT&& value) { m_endpointNameHasBeenSet = true; m_endpointName = std::forward<EndpointNameT>(value); }
+    template<typename EndpointNameT = Aws::String>
+    InvokeEndpointRequest& WithEndpointName(EndpointNameT&& value) { SetEndpointName(std::forward<EndpointNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The desired MIME type of the inference response from the model container.</p>
      */
-    inline const Aws::String& GetAccept() const{ return m_accept; }
+    inline const Aws::String& GetAccept() const { return m_accept; }
     inline bool AcceptHasBeenSet() const { return m_acceptHasBeenSet; }
-    inline void SetAccept(const Aws::String& value) { m_acceptHasBeenSet = true; m_accept = value; }
-    inline void SetAccept(Aws::String&& value) { m_acceptHasBeenSet = true; m_accept = std::move(value); }
-    inline void SetAccept(const char* value) { m_acceptHasBeenSet = true; m_accept.assign(value); }
-    inline InvokeEndpointRequest& WithAccept(const Aws::String& value) { SetAccept(value); return *this;}
-    inline InvokeEndpointRequest& WithAccept(Aws::String&& value) { SetAccept(std::move(value)); return *this;}
-    inline InvokeEndpointRequest& WithAccept(const char* value) { SetAccept(value); return *this;}
+    template<typename AcceptT = Aws::String>
+    void SetAccept(AcceptT&& value) { m_acceptHasBeenSet = true; m_accept = std::forward<AcceptT>(value); }
+    template<typename AcceptT = Aws::String>
+    InvokeEndpointRequest& WithAccept(AcceptT&& value) { SetAccept(std::forward<AcceptT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,28 +78,24 @@ namespace Model
      * currently supported in the Amazon Web Services SDKs but not in the Amazon
      * SageMaker Python SDK. </p>
      */
-    inline const Aws::String& GetCustomAttributes() const{ return m_customAttributes; }
+    inline const Aws::String& GetCustomAttributes() const { return m_customAttributes; }
     inline bool CustomAttributesHasBeenSet() const { return m_customAttributesHasBeenSet; }
-    inline void SetCustomAttributes(const Aws::String& value) { m_customAttributesHasBeenSet = true; m_customAttributes = value; }
-    inline void SetCustomAttributes(Aws::String&& value) { m_customAttributesHasBeenSet = true; m_customAttributes = std::move(value); }
-    inline void SetCustomAttributes(const char* value) { m_customAttributesHasBeenSet = true; m_customAttributes.assign(value); }
-    inline InvokeEndpointRequest& WithCustomAttributes(const Aws::String& value) { SetCustomAttributes(value); return *this;}
-    inline InvokeEndpointRequest& WithCustomAttributes(Aws::String&& value) { SetCustomAttributes(std::move(value)); return *this;}
-    inline InvokeEndpointRequest& WithCustomAttributes(const char* value) { SetCustomAttributes(value); return *this;}
+    template<typename CustomAttributesT = Aws::String>
+    void SetCustomAttributes(CustomAttributesT&& value) { m_customAttributesHasBeenSet = true; m_customAttributes = std::forward<CustomAttributesT>(value); }
+    template<typename CustomAttributesT = Aws::String>
+    InvokeEndpointRequest& WithCustomAttributes(CustomAttributesT&& value) { SetCustomAttributes(std::forward<CustomAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The model to request for inference when invoking a multi-model endpoint.</p>
      */
-    inline const Aws::String& GetTargetModel() const{ return m_targetModel; }
+    inline const Aws::String& GetTargetModel() const { return m_targetModel; }
     inline bool TargetModelHasBeenSet() const { return m_targetModelHasBeenSet; }
-    inline void SetTargetModel(const Aws::String& value) { m_targetModelHasBeenSet = true; m_targetModel = value; }
-    inline void SetTargetModel(Aws::String&& value) { m_targetModelHasBeenSet = true; m_targetModel = std::move(value); }
-    inline void SetTargetModel(const char* value) { m_targetModelHasBeenSet = true; m_targetModel.assign(value); }
-    inline InvokeEndpointRequest& WithTargetModel(const Aws::String& value) { SetTargetModel(value); return *this;}
-    inline InvokeEndpointRequest& WithTargetModel(Aws::String&& value) { SetTargetModel(std::move(value)); return *this;}
-    inline InvokeEndpointRequest& WithTargetModel(const char* value) { SetTargetModel(value); return *this;}
+    template<typename TargetModelT = Aws::String>
+    void SetTargetModel(TargetModelT&& value) { m_targetModelHasBeenSet = true; m_targetModel = std::forward<TargetModelT>(value); }
+    template<typename TargetModelT = Aws::String>
+    InvokeEndpointRequest& WithTargetModel(TargetModelT&& value) { SetTargetModel(std::forward<TargetModelT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,14 +108,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-ab-testing.html">Test
      * models in production</a> </p>
      */
-    inline const Aws::String& GetTargetVariant() const{ return m_targetVariant; }
+    inline const Aws::String& GetTargetVariant() const { return m_targetVariant; }
     inline bool TargetVariantHasBeenSet() const { return m_targetVariantHasBeenSet; }
-    inline void SetTargetVariant(const Aws::String& value) { m_targetVariantHasBeenSet = true; m_targetVariant = value; }
-    inline void SetTargetVariant(Aws::String&& value) { m_targetVariantHasBeenSet = true; m_targetVariant = std::move(value); }
-    inline void SetTargetVariant(const char* value) { m_targetVariantHasBeenSet = true; m_targetVariant.assign(value); }
-    inline InvokeEndpointRequest& WithTargetVariant(const Aws::String& value) { SetTargetVariant(value); return *this;}
-    inline InvokeEndpointRequest& WithTargetVariant(Aws::String&& value) { SetTargetVariant(std::move(value)); return *this;}
-    inline InvokeEndpointRequest& WithTargetVariant(const char* value) { SetTargetVariant(value); return *this;}
+    template<typename TargetVariantT = Aws::String>
+    void SetTargetVariant(TargetVariantT&& value) { m_targetVariantHasBeenSet = true; m_targetVariant = std::forward<TargetVariantT>(value); }
+    template<typename TargetVariantT = Aws::String>
+    InvokeEndpointRequest& WithTargetVariant(TargetVariantT&& value) { SetTargetVariant(std::forward<TargetVariantT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -132,14 +122,12 @@ namespace Model
      * invocation, this parameter specifies the host name of the container to
      * invoke.</p>
      */
-    inline const Aws::String& GetTargetContainerHostname() const{ return m_targetContainerHostname; }
+    inline const Aws::String& GetTargetContainerHostname() const { return m_targetContainerHostname; }
     inline bool TargetContainerHostnameHasBeenSet() const { return m_targetContainerHostnameHasBeenSet; }
-    inline void SetTargetContainerHostname(const Aws::String& value) { m_targetContainerHostnameHasBeenSet = true; m_targetContainerHostname = value; }
-    inline void SetTargetContainerHostname(Aws::String&& value) { m_targetContainerHostnameHasBeenSet = true; m_targetContainerHostname = std::move(value); }
-    inline void SetTargetContainerHostname(const char* value) { m_targetContainerHostnameHasBeenSet = true; m_targetContainerHostname.assign(value); }
-    inline InvokeEndpointRequest& WithTargetContainerHostname(const Aws::String& value) { SetTargetContainerHostname(value); return *this;}
-    inline InvokeEndpointRequest& WithTargetContainerHostname(Aws::String&& value) { SetTargetContainerHostname(std::move(value)); return *this;}
-    inline InvokeEndpointRequest& WithTargetContainerHostname(const char* value) { SetTargetContainerHostname(value); return *this;}
+    template<typename TargetContainerHostnameT = Aws::String>
+    void SetTargetContainerHostname(TargetContainerHostnameT&& value) { m_targetContainerHostnameHasBeenSet = true; m_targetContainerHostname = std::forward<TargetContainerHostnameT>(value); }
+    template<typename TargetContainerHostnameT = Aws::String>
+    InvokeEndpointRequest& WithTargetContainerHostname(TargetContainerHostnameT&& value) { SetTargetContainerHostname(std::forward<TargetContainerHostnameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -149,14 +137,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture
      * Data</a>.</p>
      */
-    inline const Aws::String& GetInferenceId() const{ return m_inferenceId; }
+    inline const Aws::String& GetInferenceId() const { return m_inferenceId; }
     inline bool InferenceIdHasBeenSet() const { return m_inferenceIdHasBeenSet; }
-    inline void SetInferenceId(const Aws::String& value) { m_inferenceIdHasBeenSet = true; m_inferenceId = value; }
-    inline void SetInferenceId(Aws::String&& value) { m_inferenceIdHasBeenSet = true; m_inferenceId = std::move(value); }
-    inline void SetInferenceId(const char* value) { m_inferenceIdHasBeenSet = true; m_inferenceId.assign(value); }
-    inline InvokeEndpointRequest& WithInferenceId(const Aws::String& value) { SetInferenceId(value); return *this;}
-    inline InvokeEndpointRequest& WithInferenceId(Aws::String&& value) { SetInferenceId(std::move(value)); return *this;}
-    inline InvokeEndpointRequest& WithInferenceId(const char* value) { SetInferenceId(value); return *this;}
+    template<typename InferenceIdT = Aws::String>
+    void SetInferenceId(InferenceIdT&& value) { m_inferenceIdHasBeenSet = true; m_inferenceId = std::forward<InferenceIdT>(value); }
+    template<typename InferenceIdT = Aws::String>
+    InvokeEndpointRequest& WithInferenceId(InferenceIdT&& value) { SetInferenceId(std::forward<InferenceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -167,14 +153,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html#clarify-online-explainability-create-endpoint-enable">EnableExplanations</a>
      * section in the developer guide for more information. </p>
      */
-    inline const Aws::String& GetEnableExplanations() const{ return m_enableExplanations; }
+    inline const Aws::String& GetEnableExplanations() const { return m_enableExplanations; }
     inline bool EnableExplanationsHasBeenSet() const { return m_enableExplanationsHasBeenSet; }
-    inline void SetEnableExplanations(const Aws::String& value) { m_enableExplanationsHasBeenSet = true; m_enableExplanations = value; }
-    inline void SetEnableExplanations(Aws::String&& value) { m_enableExplanationsHasBeenSet = true; m_enableExplanations = std::move(value); }
-    inline void SetEnableExplanations(const char* value) { m_enableExplanationsHasBeenSet = true; m_enableExplanations.assign(value); }
-    inline InvokeEndpointRequest& WithEnableExplanations(const Aws::String& value) { SetEnableExplanations(value); return *this;}
-    inline InvokeEndpointRequest& WithEnableExplanations(Aws::String&& value) { SetEnableExplanations(std::move(value)); return *this;}
-    inline InvokeEndpointRequest& WithEnableExplanations(const char* value) { SetEnableExplanations(value); return *this;}
+    template<typename EnableExplanationsT = Aws::String>
+    void SetEnableExplanations(EnableExplanationsT&& value) { m_enableExplanationsHasBeenSet = true; m_enableExplanations = std::forward<EnableExplanationsT>(value); }
+    template<typename EnableExplanationsT = Aws::String>
+    InvokeEndpointRequest& WithEnableExplanations(EnableExplanationsT&& value) { SetEnableExplanations(std::forward<EnableExplanationsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -182,14 +166,12 @@ namespace Model
      * <p>If the endpoint hosts one or more inference components, this parameter
      * specifies the name of inference component to invoke.</p>
      */
-    inline const Aws::String& GetInferenceComponentName() const{ return m_inferenceComponentName; }
+    inline const Aws::String& GetInferenceComponentName() const { return m_inferenceComponentName; }
     inline bool InferenceComponentNameHasBeenSet() const { return m_inferenceComponentNameHasBeenSet; }
-    inline void SetInferenceComponentName(const Aws::String& value) { m_inferenceComponentNameHasBeenSet = true; m_inferenceComponentName = value; }
-    inline void SetInferenceComponentName(Aws::String&& value) { m_inferenceComponentNameHasBeenSet = true; m_inferenceComponentName = std::move(value); }
-    inline void SetInferenceComponentName(const char* value) { m_inferenceComponentNameHasBeenSet = true; m_inferenceComponentName.assign(value); }
-    inline InvokeEndpointRequest& WithInferenceComponentName(const Aws::String& value) { SetInferenceComponentName(value); return *this;}
-    inline InvokeEndpointRequest& WithInferenceComponentName(Aws::String&& value) { SetInferenceComponentName(std::move(value)); return *this;}
-    inline InvokeEndpointRequest& WithInferenceComponentName(const char* value) { SetInferenceComponentName(value); return *this;}
+    template<typename InferenceComponentNameT = Aws::String>
+    void SetInferenceComponentName(InferenceComponentNameT&& value) { m_inferenceComponentNameHasBeenSet = true; m_inferenceComponentName = std::forward<InferenceComponentNameT>(value); }
+    template<typename InferenceComponentNameT = Aws::String>
+    InvokeEndpointRequest& WithInferenceComponentName(InferenceComponentNameT&& value) { SetInferenceComponentName(std::forward<InferenceComponentNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -206,14 +188,12 @@ namespace Model
      * request where you specify that session ID, SageMaker routes the request to the
      * same instance that supports the session.</p>
      */
-    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
     inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-    inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
-    inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
-    inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
-    inline InvokeEndpointRequest& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-    inline InvokeEndpointRequest& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-    inline InvokeEndpointRequest& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    InvokeEndpointRequest& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
     ///@}
   private:
 

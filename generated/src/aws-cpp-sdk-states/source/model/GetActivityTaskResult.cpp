@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetActivityTaskResult::GetActivityTaskResult()
-{
-}
-
 GetActivityTaskResult::GetActivityTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ GetActivityTaskResult& GetActivityTaskResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("taskToken"))
   {
     m_taskToken = jsonValue.GetString("taskToken");
-
+    m_taskTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("input"))
   {
     m_input = jsonValue.GetString("input");
-
+    m_inputHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

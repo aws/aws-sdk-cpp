@@ -20,19 +20,7 @@ namespace Route53
 namespace Model
 {
 
-HostedZone::HostedZone() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_callerReferenceHasBeenSet(false),
-    m_configHasBeenSet(false),
-    m_resourceRecordSetCount(0),
-    m_resourceRecordSetCountHasBeenSet(false),
-    m_linkedServiceHasBeenSet(false)
-{
-}
-
 HostedZone::HostedZone(const XmlNode& xmlNode)
-  : HostedZone()
 {
   *this = xmlNode;
 }

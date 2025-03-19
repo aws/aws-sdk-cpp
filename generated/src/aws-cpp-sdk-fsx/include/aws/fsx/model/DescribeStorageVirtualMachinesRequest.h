@@ -23,7 +23,7 @@ namespace Model
   class DescribeStorageVirtualMachinesRequest : public FSxRequest
   {
   public:
-    AWS_FSX_API DescribeStorageVirtualMachinesRequest();
+    AWS_FSX_API DescribeStorageVirtualMachinesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,34 +40,33 @@ namespace Model
     /**
      * <p>Enter the ID of one or more SVMs that you want to view.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetStorageVirtualMachineIds() const{ return m_storageVirtualMachineIds; }
+    inline const Aws::Vector<Aws::String>& GetStorageVirtualMachineIds() const { return m_storageVirtualMachineIds; }
     inline bool StorageVirtualMachineIdsHasBeenSet() const { return m_storageVirtualMachineIdsHasBeenSet; }
-    inline void SetStorageVirtualMachineIds(const Aws::Vector<Aws::String>& value) { m_storageVirtualMachineIdsHasBeenSet = true; m_storageVirtualMachineIds = value; }
-    inline void SetStorageVirtualMachineIds(Aws::Vector<Aws::String>&& value) { m_storageVirtualMachineIdsHasBeenSet = true; m_storageVirtualMachineIds = std::move(value); }
-    inline DescribeStorageVirtualMachinesRequest& WithStorageVirtualMachineIds(const Aws::Vector<Aws::String>& value) { SetStorageVirtualMachineIds(value); return *this;}
-    inline DescribeStorageVirtualMachinesRequest& WithStorageVirtualMachineIds(Aws::Vector<Aws::String>&& value) { SetStorageVirtualMachineIds(std::move(value)); return *this;}
-    inline DescribeStorageVirtualMachinesRequest& AddStorageVirtualMachineIds(const Aws::String& value) { m_storageVirtualMachineIdsHasBeenSet = true; m_storageVirtualMachineIds.push_back(value); return *this; }
-    inline DescribeStorageVirtualMachinesRequest& AddStorageVirtualMachineIds(Aws::String&& value) { m_storageVirtualMachineIdsHasBeenSet = true; m_storageVirtualMachineIds.push_back(std::move(value)); return *this; }
-    inline DescribeStorageVirtualMachinesRequest& AddStorageVirtualMachineIds(const char* value) { m_storageVirtualMachineIdsHasBeenSet = true; m_storageVirtualMachineIds.push_back(value); return *this; }
+    template<typename StorageVirtualMachineIdsT = Aws::Vector<Aws::String>>
+    void SetStorageVirtualMachineIds(StorageVirtualMachineIdsT&& value) { m_storageVirtualMachineIdsHasBeenSet = true; m_storageVirtualMachineIds = std::forward<StorageVirtualMachineIdsT>(value); }
+    template<typename StorageVirtualMachineIdsT = Aws::Vector<Aws::String>>
+    DescribeStorageVirtualMachinesRequest& WithStorageVirtualMachineIds(StorageVirtualMachineIdsT&& value) { SetStorageVirtualMachineIds(std::forward<StorageVirtualMachineIdsT>(value)); return *this;}
+    template<typename StorageVirtualMachineIdsT = Aws::String>
+    DescribeStorageVirtualMachinesRequest& AddStorageVirtualMachineIds(StorageVirtualMachineIdsT&& value) { m_storageVirtualMachineIdsHasBeenSet = true; m_storageVirtualMachineIds.emplace_back(std::forward<StorageVirtualMachineIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Enter a filter name:value pair to view a select set of SVMs.</p>
      */
-    inline const Aws::Vector<StorageVirtualMachineFilter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<StorageVirtualMachineFilter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<StorageVirtualMachineFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<StorageVirtualMachineFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline DescribeStorageVirtualMachinesRequest& WithFilters(const Aws::Vector<StorageVirtualMachineFilter>& value) { SetFilters(value); return *this;}
-    inline DescribeStorageVirtualMachinesRequest& WithFilters(Aws::Vector<StorageVirtualMachineFilter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline DescribeStorageVirtualMachinesRequest& AddFilters(const StorageVirtualMachineFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline DescribeStorageVirtualMachinesRequest& AddFilters(StorageVirtualMachineFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<StorageVirtualMachineFilter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<StorageVirtualMachineFilter>>
+    DescribeStorageVirtualMachinesRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = StorageVirtualMachineFilter>
+    DescribeStorageVirtualMachinesRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeStorageVirtualMachinesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -75,14 +74,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeStorageVirtualMachinesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeStorageVirtualMachinesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeStorageVirtualMachinesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeStorageVirtualMachinesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -92,7 +89,7 @@ namespace Model
     Aws::Vector<StorageVirtualMachineFilter> m_filters;
     bool m_filtersHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

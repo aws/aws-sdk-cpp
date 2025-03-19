@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateDataIntegrationAssociationResult::CreateDataIntegrationAssociationResult()
-{
-}
-
 CreateDataIntegrationAssociationResult::CreateDataIntegrationAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ CreateDataIntegrationAssociationResult& CreateDataIntegrationAssociationResult::
   if(jsonValue.ValueExists("DataIntegrationAssociationId"))
   {
     m_dataIntegrationAssociationId = jsonValue.GetString("DataIntegrationAssociationId");
-
+    m_dataIntegrationAssociationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataIntegrationArn"))
   {
     m_dataIntegrationArn = jsonValue.GetString("DataIntegrationArn");
-
+    m_dataIntegrationArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

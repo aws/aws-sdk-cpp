@@ -12,14 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutVerificationStateOnViolationRequest::PutVerificationStateOnViolationRequest() : 
-    m_violationIdHasBeenSet(false),
-    m_verificationState(VerificationState::NOT_SET),
-    m_verificationStateHasBeenSet(false),
-    m_verificationStateDescriptionHasBeenSet(false)
-{
-}
-
 Aws::String PutVerificationStateOnViolationRequest::SerializePayload() const
 {
   JsonValue payload;

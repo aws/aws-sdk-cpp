@@ -12,16 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeWorkspaceDirectoriesRequest::DescribeWorkspaceDirectoriesRequest() : 
-    m_directoryIdsHasBeenSet(false),
-    m_workspaceDirectoryNamesHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_filtersHasBeenSet(false)
-{
-}
-
 Aws::String DescribeWorkspaceDirectoriesRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,18 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-ReplicaAutoScalingDescription::ReplicaAutoScalingDescription() : 
-    m_regionNameHasBeenSet(false),
-    m_globalSecondaryIndexesHasBeenSet(false),
-    m_replicaProvisionedReadCapacityAutoScalingSettingsHasBeenSet(false),
-    m_replicaProvisionedWriteCapacityAutoScalingSettingsHasBeenSet(false),
-    m_replicaStatus(ReplicaStatus::NOT_SET),
-    m_replicaStatusHasBeenSet(false)
-{
-}
-
 ReplicaAutoScalingDescription::ReplicaAutoScalingDescription(JsonView jsonValue)
-  : ReplicaAutoScalingDescription()
 {
   *this = jsonValue;
 }
@@ -39,10 +28,8 @@ ReplicaAutoScalingDescription& ReplicaAutoScalingDescription::operator =(JsonVie
   if(jsonValue.ValueExists("RegionName"))
   {
     m_regionName = jsonValue.GetString("RegionName");
-
     m_regionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GlobalSecondaryIndexes"))
   {
     Aws::Utils::Array<JsonView> globalSecondaryIndexesJsonList = jsonValue.GetArray("GlobalSecondaryIndexes");
@@ -52,28 +39,21 @@ ReplicaAutoScalingDescription& ReplicaAutoScalingDescription::operator =(JsonVie
     }
     m_globalSecondaryIndexesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicaProvisionedReadCapacityAutoScalingSettings"))
   {
     m_replicaProvisionedReadCapacityAutoScalingSettings = jsonValue.GetObject("ReplicaProvisionedReadCapacityAutoScalingSettings");
-
     m_replicaProvisionedReadCapacityAutoScalingSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicaProvisionedWriteCapacityAutoScalingSettings"))
   {
     m_replicaProvisionedWriteCapacityAutoScalingSettings = jsonValue.GetObject("ReplicaProvisionedWriteCapacityAutoScalingSettings");
-
     m_replicaProvisionedWriteCapacityAutoScalingSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicaStatus"))
   {
     m_replicaStatus = ReplicaStatusMapper::GetReplicaStatusForName(jsonValue.GetString("ReplicaStatus"));
-
     m_replicaStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

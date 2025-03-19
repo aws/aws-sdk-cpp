@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetPipelineStateResult::GetPipelineStateResult() : 
-    m_pipelineVersion(0)
-{
-}
-
 GetPipelineStateResult::GetPipelineStateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetPipelineStateResult()
 {
   *this = result;
 }
@@ -34,15 +28,13 @@ GetPipelineStateResult& GetPipelineStateResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("pipelineName"))
   {
     m_pipelineName = jsonValue.GetString("pipelineName");
-
+    m_pipelineNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pipelineVersion"))
   {
     m_pipelineVersion = jsonValue.GetInteger("pipelineVersion");
-
+    m_pipelineVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stageStates"))
   {
     Aws::Utils::Array<JsonView> stageStatesJsonList = jsonValue.GetArray("stageStates");
@@ -50,26 +42,25 @@ GetPipelineStateResult& GetPipelineStateResult::operator =(const Aws::AmazonWebS
     {
       m_stageStates.push_back(stageStatesJsonList[stageStatesIndex].AsObject());
     }
+    m_stageStatesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("created"))
   {
     m_created = jsonValue.GetDouble("created");
-
+    m_createdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updated"))
   {
     m_updated = jsonValue.GetDouble("updated");
-
+    m_updatedHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,25 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-LineageObject::LineageObject() : 
-    m_startTimeHasBeenSet(false),
-    m_namespacePid(0),
-    m_namespacePidHasBeenSet(false),
-    m_userId(0),
-    m_userIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_pid(0),
-    m_pidHasBeenSet(false),
-    m_uuidHasBeenSet(false),
-    m_executablePathHasBeenSet(false),
-    m_euid(0),
-    m_euidHasBeenSet(false),
-    m_parentUuidHasBeenSet(false)
-{
-}
-
 LineageObject::LineageObject(JsonView jsonValue)
-  : LineageObject()
 {
   *this = jsonValue;
 }
@@ -46,66 +28,48 @@ LineageObject& LineageObject::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetDouble("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("namespacePid"))
   {
     m_namespacePid = jsonValue.GetInteger("namespacePid");
-
     m_namespacePidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userId"))
   {
     m_userId = jsonValue.GetInteger("userId");
-
     m_userIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pid"))
   {
     m_pid = jsonValue.GetInteger("pid");
-
     m_pidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("uuid"))
   {
     m_uuid = jsonValue.GetString("uuid");
-
     m_uuidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executablePath"))
   {
     m_executablePath = jsonValue.GetString("executablePath");
-
     m_executablePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("euid"))
   {
     m_euid = jsonValue.GetInteger("euid");
-
     m_euidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parentUuid"))
   {
     m_parentUuid = jsonValue.GetString("parentUuid");
-
     m_parentUuidHasBeenSet = true;
   }
-
   return *this;
 }
 

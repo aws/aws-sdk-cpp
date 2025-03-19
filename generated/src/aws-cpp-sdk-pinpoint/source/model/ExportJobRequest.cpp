@@ -18,17 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-ExportJobRequest::ExportJobRequest() : 
-    m_roleArnHasBeenSet(false),
-    m_s3UrlPrefixHasBeenSet(false),
-    m_segmentIdHasBeenSet(false),
-    m_segmentVersion(0),
-    m_segmentVersionHasBeenSet(false)
-{
-}
-
 ExportJobRequest::ExportJobRequest(JsonView jsonValue)
-  : ExportJobRequest()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ExportJobRequest& ExportJobRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3UrlPrefix"))
   {
     m_s3UrlPrefix = jsonValue.GetString("S3UrlPrefix");
-
     m_s3UrlPrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SegmentId"))
   {
     m_segmentId = jsonValue.GetString("SegmentId");
-
     m_segmentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SegmentVersion"))
   {
     m_segmentVersion = jsonValue.GetInteger("SegmentVersion");
-
     m_segmentVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

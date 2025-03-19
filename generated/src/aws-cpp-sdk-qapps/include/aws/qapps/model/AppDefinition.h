@@ -34,7 +34,7 @@ namespace Model
   class AppDefinition
   {
   public:
-    AWS_QAPPS_API AppDefinition();
+    AWS_QAPPS_API AppDefinition() = default;
     AWS_QAPPS_API AppDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_QAPPS_API AppDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QAPPS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The version of the app definition schema or specification.</p>
      */
-    inline const Aws::String& GetAppDefinitionVersion() const{ return m_appDefinitionVersion; }
+    inline const Aws::String& GetAppDefinitionVersion() const { return m_appDefinitionVersion; }
     inline bool AppDefinitionVersionHasBeenSet() const { return m_appDefinitionVersionHasBeenSet; }
-    inline void SetAppDefinitionVersion(const Aws::String& value) { m_appDefinitionVersionHasBeenSet = true; m_appDefinitionVersion = value; }
-    inline void SetAppDefinitionVersion(Aws::String&& value) { m_appDefinitionVersionHasBeenSet = true; m_appDefinitionVersion = std::move(value); }
-    inline void SetAppDefinitionVersion(const char* value) { m_appDefinitionVersionHasBeenSet = true; m_appDefinitionVersion.assign(value); }
-    inline AppDefinition& WithAppDefinitionVersion(const Aws::String& value) { SetAppDefinitionVersion(value); return *this;}
-    inline AppDefinition& WithAppDefinitionVersion(Aws::String&& value) { SetAppDefinitionVersion(std::move(value)); return *this;}
-    inline AppDefinition& WithAppDefinitionVersion(const char* value) { SetAppDefinitionVersion(value); return *this;}
+    template<typename AppDefinitionVersionT = Aws::String>
+    void SetAppDefinitionVersion(AppDefinitionVersionT&& value) { m_appDefinitionVersionHasBeenSet = true; m_appDefinitionVersion = std::forward<AppDefinitionVersionT>(value); }
+    template<typename AppDefinitionVersionT = Aws::String>
+    AppDefinition& WithAppDefinitionVersion(AppDefinitionVersionT&& value) { SetAppDefinitionVersion(std::forward<AppDefinitionVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,14 @@ namespace Model
      * <p>The cards that make up the Q App, such as text input, file upload, or query
      * cards.</p>
      */
-    inline const Aws::Vector<Card>& GetCards() const{ return m_cards; }
+    inline const Aws::Vector<Card>& GetCards() const { return m_cards; }
     inline bool CardsHasBeenSet() const { return m_cardsHasBeenSet; }
-    inline void SetCards(const Aws::Vector<Card>& value) { m_cardsHasBeenSet = true; m_cards = value; }
-    inline void SetCards(Aws::Vector<Card>&& value) { m_cardsHasBeenSet = true; m_cards = std::move(value); }
-    inline AppDefinition& WithCards(const Aws::Vector<Card>& value) { SetCards(value); return *this;}
-    inline AppDefinition& WithCards(Aws::Vector<Card>&& value) { SetCards(std::move(value)); return *this;}
-    inline AppDefinition& AddCards(const Card& value) { m_cardsHasBeenSet = true; m_cards.push_back(value); return *this; }
-    inline AppDefinition& AddCards(Card&& value) { m_cardsHasBeenSet = true; m_cards.push_back(std::move(value)); return *this; }
+    template<typename CardsT = Aws::Vector<Card>>
+    void SetCards(CardsT&& value) { m_cardsHasBeenSet = true; m_cards = std::forward<CardsT>(value); }
+    template<typename CardsT = Aws::Vector<Card>>
+    AppDefinition& WithCards(CardsT&& value) { SetCards(std::forward<CardsT>(value)); return *this;}
+    template<typename CardsT = Card>
+    AppDefinition& AddCards(CardsT&& value) { m_cardsHasBeenSet = true; m_cards.emplace_back(std::forward<CardsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -74,7 +72,7 @@ namespace Model
      * <p>A flag indicating whether the Q App's definition can be edited by the
      * user.</p>
      */
-    inline bool GetCanEdit() const{ return m_canEdit; }
+    inline bool GetCanEdit() const { return m_canEdit; }
     inline bool CanEditHasBeenSet() const { return m_canEditHasBeenSet; }
     inline void SetCanEdit(bool value) { m_canEditHasBeenSet = true; m_canEdit = value; }
     inline AppDefinition& WithCanEdit(bool value) { SetCanEdit(value); return *this;}
@@ -87,7 +85,7 @@ namespace Model
     Aws::Vector<Card> m_cards;
     bool m_cardsHasBeenSet = false;
 
-    bool m_canEdit;
+    bool m_canEdit{false};
     bool m_canEditHasBeenSet = false;
   };
 

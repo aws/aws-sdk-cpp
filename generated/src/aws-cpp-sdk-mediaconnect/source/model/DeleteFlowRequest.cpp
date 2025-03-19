@@ -12,11 +12,6 @@ using namespace Aws::MediaConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteFlowRequest::DeleteFlowRequest() : 
-    m_flowArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteFlowRequest::SerializePayload() const
 {
   return {};

@@ -10,14 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-DeactivateTypeRequest::DeactivateTypeRequest() : 
-    m_typeNameHasBeenSet(false),
-    m_type(ThirdPartyType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String DeactivateTypeRequest::SerializePayload() const
 {
   Aws::StringStream ss;

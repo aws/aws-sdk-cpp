@@ -18,20 +18,7 @@ namespace VoiceID
 namespace Model
 {
 
-FraudDetectionResult::FraudDetectionResult() : 
-    m_audioAggregationEndedAtHasBeenSet(false),
-    m_audioAggregationStartedAtHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_decision(FraudDetectionDecision::NOT_SET),
-    m_decisionHasBeenSet(false),
-    m_fraudDetectionResultIdHasBeenSet(false),
-    m_reasonsHasBeenSet(false),
-    m_riskDetailsHasBeenSet(false)
-{
-}
-
 FraudDetectionResult::FraudDetectionResult(JsonView jsonValue)
-  : FraudDetectionResult()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ FraudDetectionResult& FraudDetectionResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AudioAggregationEndedAt"))
   {
     m_audioAggregationEndedAt = jsonValue.GetDouble("AudioAggregationEndedAt");
-
     m_audioAggregationEndedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AudioAggregationStartedAt"))
   {
     m_audioAggregationStartedAt = jsonValue.GetDouble("AudioAggregationStartedAt");
-
     m_audioAggregationStartedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Configuration"))
   {
     m_configuration = jsonValue.GetObject("Configuration");
-
     m_configurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Decision"))
   {
     m_decision = FraudDetectionDecisionMapper::GetFraudDetectionDecisionForName(jsonValue.GetString("Decision"));
-
     m_decisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FraudDetectionResultId"))
   {
     m_fraudDetectionResultId = jsonValue.GetString("FraudDetectionResultId");
-
     m_fraudDetectionResultIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Reasons"))
   {
     Aws::Utils::Array<JsonView> reasonsJsonList = jsonValue.GetArray("Reasons");
@@ -82,14 +59,11 @@ FraudDetectionResult& FraudDetectionResult::operator =(JsonView jsonValue)
     }
     m_reasonsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RiskDetails"))
   {
     m_riskDetails = jsonValue.GetObject("RiskDetails");
-
     m_riskDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

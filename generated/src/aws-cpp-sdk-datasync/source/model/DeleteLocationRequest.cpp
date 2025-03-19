@@ -12,11 +12,6 @@ using namespace Aws::DataSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteLocationRequest::DeleteLocationRequest() : 
-    m_locationArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteLocationRequest::SerializePayload() const
 {
   JsonValue payload;

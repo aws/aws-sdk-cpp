@@ -18,14 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-CreateS3BucketResource::CreateS3BucketResource() : 
-    m_bucketNameHasBeenSet(false),
-    m_objectPrefixesHasBeenSet(false)
-{
-}
-
 CreateS3BucketResource::CreateS3BucketResource(JsonView jsonValue)
-  : CreateS3BucketResource()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ CreateS3BucketResource& CreateS3BucketResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bucketName"))
   {
     m_bucketName = jsonValue.GetString("bucketName");
-
     m_bucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("objectPrefixes"))
   {
     Aws::Utils::Array<JsonView> objectPrefixesJsonList = jsonValue.GetArray("objectPrefixes");
@@ -48,7 +39,6 @@ CreateS3BucketResource& CreateS3BucketResource::operator =(JsonView jsonValue)
     }
     m_objectPrefixesHasBeenSet = true;
   }
-
   return *this;
 }
 

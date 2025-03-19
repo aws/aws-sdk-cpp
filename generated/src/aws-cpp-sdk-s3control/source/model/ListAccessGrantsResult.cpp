@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListAccessGrantsResult::ListAccessGrantsResult()
-{
-}
-
 ListAccessGrantsResult::ListAccessGrantsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,17 +32,20 @@ ListAccessGrantsResult& ListAccessGrantsResult::operator =(const Aws::AmazonWebS
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
     XmlNode accessGrantsListNode = resultNode.FirstChild("AccessGrantsList");
     if(!accessGrantsListNode.IsNull())
     {
       XmlNode accessGrantsListMember = accessGrantsListNode.FirstChild("AccessGrant");
+      m_accessGrantsListHasBeenSet = !accessGrantsListMember.IsNull();
       while(!accessGrantsListMember.IsNull())
       {
         m_accessGrantsList.push_back(accessGrantsListMember);
         accessGrantsListMember = accessGrantsListMember.NextNode("AccessGrant");
       }
 
+      m_accessGrantsListHasBeenSet = true;
     }
   }
 
@@ -55,12 +54,14 @@ ListAccessGrantsResult& ListAccessGrantsResult::operator =(const Aws::AmazonWebS
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   const auto& hostIdIter = headers.find("x-amz-id-2");
   if(hostIdIter != headers.end())
   {
     m_hostId = hostIdIter->second;
+    m_hostIdHasBeenSet = true;
   }
 
   return *this;

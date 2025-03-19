@@ -32,7 +32,7 @@ namespace Model
   class AgentQualityMetrics
   {
   public:
-    AWS_CONNECT_API AgentQualityMetrics();
+    AWS_CONNECT_API AgentQualityMetrics() = default;
     AWS_CONNECT_API AgentQualityMetrics(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API AgentQualityMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Information about the audio quality of the Agent</p>
      */
-    inline const AudioQualityMetricsInfo& GetAudio() const{ return m_audio; }
+    inline const AudioQualityMetricsInfo& GetAudio() const { return m_audio; }
     inline bool AudioHasBeenSet() const { return m_audioHasBeenSet; }
-    inline void SetAudio(const AudioQualityMetricsInfo& value) { m_audioHasBeenSet = true; m_audio = value; }
-    inline void SetAudio(AudioQualityMetricsInfo&& value) { m_audioHasBeenSet = true; m_audio = std::move(value); }
-    inline AgentQualityMetrics& WithAudio(const AudioQualityMetricsInfo& value) { SetAudio(value); return *this;}
-    inline AgentQualityMetrics& WithAudio(AudioQualityMetricsInfo&& value) { SetAudio(std::move(value)); return *this;}
+    template<typename AudioT = AudioQualityMetricsInfo>
+    void SetAudio(AudioT&& value) { m_audioHasBeenSet = true; m_audio = std::forward<AudioT>(value); }
+    template<typename AudioT = AudioQualityMetricsInfo>
+    AgentQualityMetrics& WithAudio(AudioT&& value) { SetAudio(std::forward<AudioT>(value)); return *this;}
     ///@}
   private:
 

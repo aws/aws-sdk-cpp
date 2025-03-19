@@ -33,7 +33,7 @@ namespace Model
   class KnowledgeBaseAssociationConfigurationData
   {
   public:
-    AWS_QCONNECT_API KnowledgeBaseAssociationConfigurationData();
+    AWS_QCONNECT_API KnowledgeBaseAssociationConfigurationData() = default;
     AWS_QCONNECT_API KnowledgeBaseAssociationConfigurationData(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API KnowledgeBaseAssociationConfigurationData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,19 +41,19 @@ namespace Model
 
     ///@{
     
-    inline const TagFilter& GetContentTagFilter() const{ return m_contentTagFilter; }
+    inline const TagFilter& GetContentTagFilter() const { return m_contentTagFilter; }
     inline bool ContentTagFilterHasBeenSet() const { return m_contentTagFilterHasBeenSet; }
-    inline void SetContentTagFilter(const TagFilter& value) { m_contentTagFilterHasBeenSet = true; m_contentTagFilter = value; }
-    inline void SetContentTagFilter(TagFilter&& value) { m_contentTagFilterHasBeenSet = true; m_contentTagFilter = std::move(value); }
-    inline KnowledgeBaseAssociationConfigurationData& WithContentTagFilter(const TagFilter& value) { SetContentTagFilter(value); return *this;}
-    inline KnowledgeBaseAssociationConfigurationData& WithContentTagFilter(TagFilter&& value) { SetContentTagFilter(std::move(value)); return *this;}
+    template<typename ContentTagFilterT = TagFilter>
+    void SetContentTagFilter(ContentTagFilterT&& value) { m_contentTagFilterHasBeenSet = true; m_contentTagFilter = std::forward<ContentTagFilterT>(value); }
+    template<typename ContentTagFilterT = TagFilter>
+    KnowledgeBaseAssociationConfigurationData& WithContentTagFilter(ContentTagFilterT&& value) { SetContentTagFilter(std::forward<ContentTagFilterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return per page.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline KnowledgeBaseAssociationConfigurationData& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -65,22 +65,20 @@ namespace Model
      * values can be <code>SEMANTIC</code> which uses vector embeddings or
      * <code>HYBRID</code> which use vector embeddings and raw text</p>
      */
-    inline const KnowledgeBaseSearchType& GetOverrideKnowledgeBaseSearchType() const{ return m_overrideKnowledgeBaseSearchType; }
+    inline KnowledgeBaseSearchType GetOverrideKnowledgeBaseSearchType() const { return m_overrideKnowledgeBaseSearchType; }
     inline bool OverrideKnowledgeBaseSearchTypeHasBeenSet() const { return m_overrideKnowledgeBaseSearchTypeHasBeenSet; }
-    inline void SetOverrideKnowledgeBaseSearchType(const KnowledgeBaseSearchType& value) { m_overrideKnowledgeBaseSearchTypeHasBeenSet = true; m_overrideKnowledgeBaseSearchType = value; }
-    inline void SetOverrideKnowledgeBaseSearchType(KnowledgeBaseSearchType&& value) { m_overrideKnowledgeBaseSearchTypeHasBeenSet = true; m_overrideKnowledgeBaseSearchType = std::move(value); }
-    inline KnowledgeBaseAssociationConfigurationData& WithOverrideKnowledgeBaseSearchType(const KnowledgeBaseSearchType& value) { SetOverrideKnowledgeBaseSearchType(value); return *this;}
-    inline KnowledgeBaseAssociationConfigurationData& WithOverrideKnowledgeBaseSearchType(KnowledgeBaseSearchType&& value) { SetOverrideKnowledgeBaseSearchType(std::move(value)); return *this;}
+    inline void SetOverrideKnowledgeBaseSearchType(KnowledgeBaseSearchType value) { m_overrideKnowledgeBaseSearchTypeHasBeenSet = true; m_overrideKnowledgeBaseSearchType = value; }
+    inline KnowledgeBaseAssociationConfigurationData& WithOverrideKnowledgeBaseSearchType(KnowledgeBaseSearchType value) { SetOverrideKnowledgeBaseSearchType(value); return *this;}
     ///@}
   private:
 
     TagFilter m_contentTagFilter;
     bool m_contentTagFilterHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
-    KnowledgeBaseSearchType m_overrideKnowledgeBaseSearchType;
+    KnowledgeBaseSearchType m_overrideKnowledgeBaseSearchType{KnowledgeBaseSearchType::NOT_SET};
     bool m_overrideKnowledgeBaseSearchTypeHasBeenSet = false;
   };
 

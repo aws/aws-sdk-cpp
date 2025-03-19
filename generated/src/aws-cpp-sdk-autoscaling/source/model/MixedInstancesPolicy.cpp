@@ -20,14 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-MixedInstancesPolicy::MixedInstancesPolicy() : 
-    m_launchTemplateHasBeenSet(false),
-    m_instancesDistributionHasBeenSet(false)
-{
-}
-
 MixedInstancesPolicy::MixedInstancesPolicy(const XmlNode& xmlNode)
-  : MixedInstancesPolicy()
 {
   *this = xmlNode;
 }

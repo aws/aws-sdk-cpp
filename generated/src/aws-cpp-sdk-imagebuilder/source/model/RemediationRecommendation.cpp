@@ -18,14 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-RemediationRecommendation::RemediationRecommendation() : 
-    m_textHasBeenSet(false),
-    m_urlHasBeenSet(false)
-{
-}
-
 RemediationRecommendation::RemediationRecommendation(JsonView jsonValue)
-  : RemediationRecommendation()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RemediationRecommendation& RemediationRecommendation::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetString("text");
-
     m_textHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("url"))
   {
     m_url = jsonValue.GetString("url");
-
     m_urlHasBeenSet = true;
   }
-
   return *this;
 }
 

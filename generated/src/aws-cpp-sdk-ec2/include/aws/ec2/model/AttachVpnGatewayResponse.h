@@ -33,7 +33,7 @@ namespace Model
   class AttachVpnGatewayResponse
   {
   public:
-    AWS_EC2_API AttachVpnGatewayResponse();
+    AWS_EC2_API AttachVpnGatewayResponse() = default;
     AWS_EC2_API AttachVpnGatewayResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API AttachVpnGatewayResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -42,26 +42,28 @@ namespace Model
     /**
      * <p>Information about the attachment.</p>
      */
-    inline const VpcAttachment& GetVpcAttachment() const{ return m_vpcAttachment; }
-    inline void SetVpcAttachment(const VpcAttachment& value) { m_vpcAttachment = value; }
-    inline void SetVpcAttachment(VpcAttachment&& value) { m_vpcAttachment = std::move(value); }
-    inline AttachVpnGatewayResponse& WithVpcAttachment(const VpcAttachment& value) { SetVpcAttachment(value); return *this;}
-    inline AttachVpnGatewayResponse& WithVpcAttachment(VpcAttachment&& value) { SetVpcAttachment(std::move(value)); return *this;}
+    inline const VpcAttachment& GetVpcAttachment() const { return m_vpcAttachment; }
+    template<typename VpcAttachmentT = VpcAttachment>
+    void SetVpcAttachment(VpcAttachmentT&& value) { m_vpcAttachmentHasBeenSet = true; m_vpcAttachment = std::forward<VpcAttachmentT>(value); }
+    template<typename VpcAttachmentT = VpcAttachment>
+    AttachVpnGatewayResponse& WithVpcAttachment(VpcAttachmentT&& value) { SetVpcAttachment(std::forward<VpcAttachmentT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline AttachVpnGatewayResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline AttachVpnGatewayResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    AttachVpnGatewayResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     VpcAttachment m_vpcAttachment;
+    bool m_vpcAttachmentHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

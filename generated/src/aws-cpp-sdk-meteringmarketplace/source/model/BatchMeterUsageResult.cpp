@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchMeterUsageResult::BatchMeterUsageResult()
-{
-}
-
 BatchMeterUsageResult::BatchMeterUsageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ BatchMeterUsageResult& BatchMeterUsageResult::operator =(const Aws::AmazonWebSer
     {
       m_results.push_back(resultsJsonList[resultsIndex].AsObject());
     }
+    m_resultsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UnprocessedRecords"))
   {
     Aws::Utils::Array<JsonView> unprocessedRecordsJsonList = jsonValue.GetArray("UnprocessedRecords");
@@ -45,14 +41,15 @@ BatchMeterUsageResult& BatchMeterUsageResult::operator =(const Aws::AmazonWebSer
     {
       m_unprocessedRecords.push_back(unprocessedRecordsJsonList[unprocessedRecordsIndex].AsObject());
     }
+    m_unprocessedRecordsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -22,7 +22,7 @@ namespace Model
   class BatchEnableStandardsRequest : public SecurityHubRequest
   {
   public:
-    AWS_SECURITYHUB_API BatchEnableStandardsRequest();
+    AWS_SECURITYHUB_API BatchEnableStandardsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,14 @@ namespace Model
     /**
      * <p>The list of standards checks to enable.</p>
      */
-    inline const Aws::Vector<StandardsSubscriptionRequest>& GetStandardsSubscriptionRequests() const{ return m_standardsSubscriptionRequests; }
+    inline const Aws::Vector<StandardsSubscriptionRequest>& GetStandardsSubscriptionRequests() const { return m_standardsSubscriptionRequests; }
     inline bool StandardsSubscriptionRequestsHasBeenSet() const { return m_standardsSubscriptionRequestsHasBeenSet; }
-    inline void SetStandardsSubscriptionRequests(const Aws::Vector<StandardsSubscriptionRequest>& value) { m_standardsSubscriptionRequestsHasBeenSet = true; m_standardsSubscriptionRequests = value; }
-    inline void SetStandardsSubscriptionRequests(Aws::Vector<StandardsSubscriptionRequest>&& value) { m_standardsSubscriptionRequestsHasBeenSet = true; m_standardsSubscriptionRequests = std::move(value); }
-    inline BatchEnableStandardsRequest& WithStandardsSubscriptionRequests(const Aws::Vector<StandardsSubscriptionRequest>& value) { SetStandardsSubscriptionRequests(value); return *this;}
-    inline BatchEnableStandardsRequest& WithStandardsSubscriptionRequests(Aws::Vector<StandardsSubscriptionRequest>&& value) { SetStandardsSubscriptionRequests(std::move(value)); return *this;}
-    inline BatchEnableStandardsRequest& AddStandardsSubscriptionRequests(const StandardsSubscriptionRequest& value) { m_standardsSubscriptionRequestsHasBeenSet = true; m_standardsSubscriptionRequests.push_back(value); return *this; }
-    inline BatchEnableStandardsRequest& AddStandardsSubscriptionRequests(StandardsSubscriptionRequest&& value) { m_standardsSubscriptionRequestsHasBeenSet = true; m_standardsSubscriptionRequests.push_back(std::move(value)); return *this; }
+    template<typename StandardsSubscriptionRequestsT = Aws::Vector<StandardsSubscriptionRequest>>
+    void SetStandardsSubscriptionRequests(StandardsSubscriptionRequestsT&& value) { m_standardsSubscriptionRequestsHasBeenSet = true; m_standardsSubscriptionRequests = std::forward<StandardsSubscriptionRequestsT>(value); }
+    template<typename StandardsSubscriptionRequestsT = Aws::Vector<StandardsSubscriptionRequest>>
+    BatchEnableStandardsRequest& WithStandardsSubscriptionRequests(StandardsSubscriptionRequestsT&& value) { SetStandardsSubscriptionRequests(std::forward<StandardsSubscriptionRequestsT>(value)); return *this;}
+    template<typename StandardsSubscriptionRequestsT = StandardsSubscriptionRequest>
+    BatchEnableStandardsRequest& AddStandardsSubscriptionRequests(StandardsSubscriptionRequestsT&& value) { m_standardsSubscriptionRequestsHasBeenSet = true; m_standardsSubscriptionRequests.emplace_back(std::forward<StandardsSubscriptionRequestsT>(value)); return *this; }
     ///@}
   private:
 

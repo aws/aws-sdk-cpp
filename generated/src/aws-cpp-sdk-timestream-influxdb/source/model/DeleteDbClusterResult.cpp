@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteDbClusterResult::DeleteDbClusterResult() : 
-    m_dbClusterStatus(ClusterStatus::NOT_SET)
-{
-}
-
 DeleteDbClusterResult::DeleteDbClusterResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteDbClusterResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ DeleteDbClusterResult& DeleteDbClusterResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("dbClusterStatus"))
   {
     m_dbClusterStatus = ClusterStatusMapper::GetClusterStatusForName(jsonValue.GetString("dbClusterStatus"));
-
+    m_dbClusterStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

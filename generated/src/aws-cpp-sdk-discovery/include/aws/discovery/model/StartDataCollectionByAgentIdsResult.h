@@ -29,7 +29,7 @@ namespace Model
   class StartDataCollectionByAgentIdsResult
   {
   public:
-    AWS_APPLICATIONDISCOVERYSERVICE_API StartDataCollectionByAgentIdsResult();
+    AWS_APPLICATIONDISCOVERYSERVICE_API StartDataCollectionByAgentIdsResult() = default;
     AWS_APPLICATIONDISCOVERYSERVICE_API StartDataCollectionByAgentIdsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPLICATIONDISCOVERYSERVICE_API StartDataCollectionByAgentIdsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,30 +40,30 @@ namespace Model
      * Information includes the agent ID, a description of the operation performed, and
      * whether the agent configuration was updated.</p>
      */
-    inline const Aws::Vector<AgentConfigurationStatus>& GetAgentsConfigurationStatus() const{ return m_agentsConfigurationStatus; }
-    inline void SetAgentsConfigurationStatus(const Aws::Vector<AgentConfigurationStatus>& value) { m_agentsConfigurationStatus = value; }
-    inline void SetAgentsConfigurationStatus(Aws::Vector<AgentConfigurationStatus>&& value) { m_agentsConfigurationStatus = std::move(value); }
-    inline StartDataCollectionByAgentIdsResult& WithAgentsConfigurationStatus(const Aws::Vector<AgentConfigurationStatus>& value) { SetAgentsConfigurationStatus(value); return *this;}
-    inline StartDataCollectionByAgentIdsResult& WithAgentsConfigurationStatus(Aws::Vector<AgentConfigurationStatus>&& value) { SetAgentsConfigurationStatus(std::move(value)); return *this;}
-    inline StartDataCollectionByAgentIdsResult& AddAgentsConfigurationStatus(const AgentConfigurationStatus& value) { m_agentsConfigurationStatus.push_back(value); return *this; }
-    inline StartDataCollectionByAgentIdsResult& AddAgentsConfigurationStatus(AgentConfigurationStatus&& value) { m_agentsConfigurationStatus.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AgentConfigurationStatus>& GetAgentsConfigurationStatus() const { return m_agentsConfigurationStatus; }
+    template<typename AgentsConfigurationStatusT = Aws::Vector<AgentConfigurationStatus>>
+    void SetAgentsConfigurationStatus(AgentsConfigurationStatusT&& value) { m_agentsConfigurationStatusHasBeenSet = true; m_agentsConfigurationStatus = std::forward<AgentsConfigurationStatusT>(value); }
+    template<typename AgentsConfigurationStatusT = Aws::Vector<AgentConfigurationStatus>>
+    StartDataCollectionByAgentIdsResult& WithAgentsConfigurationStatus(AgentsConfigurationStatusT&& value) { SetAgentsConfigurationStatus(std::forward<AgentsConfigurationStatusT>(value)); return *this;}
+    template<typename AgentsConfigurationStatusT = AgentConfigurationStatus>
+    StartDataCollectionByAgentIdsResult& AddAgentsConfigurationStatus(AgentsConfigurationStatusT&& value) { m_agentsConfigurationStatusHasBeenSet = true; m_agentsConfigurationStatus.emplace_back(std::forward<AgentsConfigurationStatusT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartDataCollectionByAgentIdsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartDataCollectionByAgentIdsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartDataCollectionByAgentIdsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartDataCollectionByAgentIdsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AgentConfigurationStatus> m_agentsConfigurationStatus;
+    bool m_agentsConfigurationStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

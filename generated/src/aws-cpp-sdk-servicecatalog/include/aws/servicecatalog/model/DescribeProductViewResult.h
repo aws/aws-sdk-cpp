@@ -30,7 +30,7 @@ namespace Model
   class DescribeProductViewResult
   {
   public:
-    AWS_SERVICECATALOG_API DescribeProductViewResult();
+    AWS_SERVICECATALOG_API DescribeProductViewResult() = default;
     AWS_SERVICECATALOG_API DescribeProductViewResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SERVICECATALOG_API DescribeProductViewResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,43 +39,44 @@ namespace Model
     /**
      * <p>Summary information about the product.</p>
      */
-    inline const ProductViewSummary& GetProductViewSummary() const{ return m_productViewSummary; }
-    inline void SetProductViewSummary(const ProductViewSummary& value) { m_productViewSummary = value; }
-    inline void SetProductViewSummary(ProductViewSummary&& value) { m_productViewSummary = std::move(value); }
-    inline DescribeProductViewResult& WithProductViewSummary(const ProductViewSummary& value) { SetProductViewSummary(value); return *this;}
-    inline DescribeProductViewResult& WithProductViewSummary(ProductViewSummary&& value) { SetProductViewSummary(std::move(value)); return *this;}
+    inline const ProductViewSummary& GetProductViewSummary() const { return m_productViewSummary; }
+    template<typename ProductViewSummaryT = ProductViewSummary>
+    void SetProductViewSummary(ProductViewSummaryT&& value) { m_productViewSummaryHasBeenSet = true; m_productViewSummary = std::forward<ProductViewSummaryT>(value); }
+    template<typename ProductViewSummaryT = ProductViewSummary>
+    DescribeProductViewResult& WithProductViewSummary(ProductViewSummaryT&& value) { SetProductViewSummary(std::forward<ProductViewSummaryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the provisioning artifacts for the product.</p>
      */
-    inline const Aws::Vector<ProvisioningArtifact>& GetProvisioningArtifacts() const{ return m_provisioningArtifacts; }
-    inline void SetProvisioningArtifacts(const Aws::Vector<ProvisioningArtifact>& value) { m_provisioningArtifacts = value; }
-    inline void SetProvisioningArtifacts(Aws::Vector<ProvisioningArtifact>&& value) { m_provisioningArtifacts = std::move(value); }
-    inline DescribeProductViewResult& WithProvisioningArtifacts(const Aws::Vector<ProvisioningArtifact>& value) { SetProvisioningArtifacts(value); return *this;}
-    inline DescribeProductViewResult& WithProvisioningArtifacts(Aws::Vector<ProvisioningArtifact>&& value) { SetProvisioningArtifacts(std::move(value)); return *this;}
-    inline DescribeProductViewResult& AddProvisioningArtifacts(const ProvisioningArtifact& value) { m_provisioningArtifacts.push_back(value); return *this; }
-    inline DescribeProductViewResult& AddProvisioningArtifacts(ProvisioningArtifact&& value) { m_provisioningArtifacts.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ProvisioningArtifact>& GetProvisioningArtifacts() const { return m_provisioningArtifacts; }
+    template<typename ProvisioningArtifactsT = Aws::Vector<ProvisioningArtifact>>
+    void SetProvisioningArtifacts(ProvisioningArtifactsT&& value) { m_provisioningArtifactsHasBeenSet = true; m_provisioningArtifacts = std::forward<ProvisioningArtifactsT>(value); }
+    template<typename ProvisioningArtifactsT = Aws::Vector<ProvisioningArtifact>>
+    DescribeProductViewResult& WithProvisioningArtifacts(ProvisioningArtifactsT&& value) { SetProvisioningArtifacts(std::forward<ProvisioningArtifactsT>(value)); return *this;}
+    template<typename ProvisioningArtifactsT = ProvisioningArtifact>
+    DescribeProductViewResult& AddProvisioningArtifacts(ProvisioningArtifactsT&& value) { m_provisioningArtifactsHasBeenSet = true; m_provisioningArtifacts.emplace_back(std::forward<ProvisioningArtifactsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeProductViewResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeProductViewResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeProductViewResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeProductViewResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ProductViewSummary m_productViewSummary;
+    bool m_productViewSummaryHasBeenSet = false;
 
     Aws::Vector<ProvisioningArtifact> m_provisioningArtifacts;
+    bool m_provisioningArtifactsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

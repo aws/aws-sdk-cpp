@@ -18,15 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-RevisionDestinationEntry::RevisionDestinationEntry() : 
-    m_bucketHasBeenSet(false),
-    m_keyPatternHasBeenSet(false),
-    m_revisionIdHasBeenSet(false)
-{
-}
-
 RevisionDestinationEntry::RevisionDestinationEntry(JsonView jsonValue)
-  : RevisionDestinationEntry()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ RevisionDestinationEntry& RevisionDestinationEntry::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Bucket"))
   {
     m_bucket = jsonValue.GetString("Bucket");
-
     m_bucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyPattern"))
   {
     m_keyPattern = jsonValue.GetString("KeyPattern");
-
     m_keyPatternHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RevisionId"))
   {
     m_revisionId = jsonValue.GetString("RevisionId");
-
     m_revisionIdHasBeenSet = true;
   }
-
   return *this;
 }
 

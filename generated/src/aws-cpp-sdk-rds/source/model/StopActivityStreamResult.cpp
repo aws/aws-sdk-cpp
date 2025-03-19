@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StopActivityStreamResult::StopActivityStreamResult() : 
-    m_status(ActivityStreamStatus::NOT_SET)
-{
-}
-
 StopActivityStreamResult::StopActivityStreamResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : StopActivityStreamResult()
 {
   *this = result;
 }
@@ -44,22 +38,26 @@ StopActivityStreamResult& StopActivityStreamResult::operator =(const Aws::Amazon
     if(!kmsKeyIdNode.IsNull())
     {
       m_kmsKeyId = Aws::Utils::Xml::DecodeEscapedXmlText(kmsKeyIdNode.GetText());
+      m_kmsKeyIdHasBeenSet = true;
     }
     XmlNode kinesisStreamNameNode = resultNode.FirstChild("KinesisStreamName");
     if(!kinesisStreamNameNode.IsNull())
     {
       m_kinesisStreamName = Aws::Utils::Xml::DecodeEscapedXmlText(kinesisStreamNameNode.GetText());
+      m_kinesisStreamNameHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = ActivityStreamStatusMapper::GetActivityStreamStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = ActivityStreamStatusMapper::GetActivityStreamStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
+      m_statusHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::StopActivityStreamResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

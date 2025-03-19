@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetFindingsReportAccountSummaryResult::GetFindingsReportAccountSummaryResult()
-{
-}
-
 GetFindingsReportAccountSummaryResult::GetFindingsReportAccountSummaryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ GetFindingsReportAccountSummaryResult& GetFindingsReportAccountSummaryResult::op
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reportSummaries"))
   {
     Aws::Utils::Array<JsonView> reportSummariesJsonList = jsonValue.GetArray("reportSummaries");
@@ -42,14 +37,15 @@ GetFindingsReportAccountSummaryResult& GetFindingsReportAccountSummaryResult::op
     {
       m_reportSummaries.push_back(reportSummariesJsonList[reportSummariesIndex].AsObject());
     }
+    m_reportSummariesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -12,15 +12,6 @@ using namespace Aws::AmplifyBackend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateBackendJobRequest::UpdateBackendJobRequest() : 
-    m_appIdHasBeenSet(false),
-    m_backendEnvironmentNameHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_operationHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 Aws::String UpdateBackendJobRequest::SerializePayload() const
 {
   JsonValue payload;

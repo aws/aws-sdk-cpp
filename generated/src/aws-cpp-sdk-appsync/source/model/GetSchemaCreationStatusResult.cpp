@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSchemaCreationStatusResult::GetSchemaCreationStatusResult() : 
-    m_status(SchemaStatus::NOT_SET)
-{
-}
-
 GetSchemaCreationStatusResult::GetSchemaCreationStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetSchemaCreationStatusResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ GetSchemaCreationStatusResult& GetSchemaCreationStatusResult::operator =(const A
   if(jsonValue.ValueExists("status"))
   {
     m_status = SchemaStatusMapper::GetSchemaStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("details"))
   {
     m_details = jsonValue.GetString("details");
-
+    m_detailsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ConverseResult::ConverseResult() : 
-    m_stopReason(StopReason::NOT_SET)
-{
-}
-
 ConverseResult::ConverseResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ConverseResult()
 {
   *this = result;
 }
@@ -34,51 +28,45 @@ ConverseResult& ConverseResult::operator =(const Aws::AmazonWebServiceResult<Jso
   if(jsonValue.ValueExists("output"))
   {
     m_output = jsonValue.GetObject("output");
-
+    m_outputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stopReason"))
   {
     m_stopReason = StopReasonMapper::GetStopReasonForName(jsonValue.GetString("stopReason"));
-
+    m_stopReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("usage"))
   {
     m_usage = jsonValue.GetObject("usage");
-
+    m_usageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metrics"))
   {
     m_metrics = jsonValue.GetObject("metrics");
-
+    m_metricsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("additionalModelResponseFields"))
   {
     m_additionalModelResponseFields = jsonValue.GetObject("additionalModelResponseFields");
-
+    m_additionalModelResponseFieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("trace"))
   {
     m_trace = jsonValue.GetObject("trace");
-
+    m_traceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("performanceConfig"))
   {
     m_performanceConfig = jsonValue.GetObject("performanceConfig");
-
+    m_performanceConfigHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

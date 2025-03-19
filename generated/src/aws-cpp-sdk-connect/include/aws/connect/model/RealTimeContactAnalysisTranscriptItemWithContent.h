@@ -36,7 +36,7 @@ namespace Model
   class RealTimeContactAnalysisTranscriptItemWithContent
   {
   public:
-    AWS_CONNECT_API RealTimeContactAnalysisTranscriptItemWithContent();
+    AWS_CONNECT_API RealTimeContactAnalysisTranscriptItemWithContent() = default;
     AWS_CONNECT_API RealTimeContactAnalysisTranscriptItemWithContent(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API RealTimeContactAnalysisTranscriptItemWithContent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * <p>Part of the transcript content that contains identified issue. Can be
      * redacted</p>
      */
-    inline const Aws::String& GetContent() const{ return m_content; }
+    inline const Aws::String& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
-    inline RealTimeContactAnalysisTranscriptItemWithContent& WithContent(const Aws::String& value) { SetContent(value); return *this;}
-    inline RealTimeContactAnalysisTranscriptItemWithContent& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
-    inline RealTimeContactAnalysisTranscriptItemWithContent& WithContent(const char* value) { SetContent(value); return *this;}
+    template<typename ContentT = Aws::String>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = Aws::String>
+    RealTimeContactAnalysisTranscriptItemWithContent& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,24 +60,22 @@ namespace Model
      * <p>Transcript identifier. Matches the identifier from one of the
      * TranscriptSegments.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline RealTimeContactAnalysisTranscriptItemWithContent& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline RealTimeContactAnalysisTranscriptItemWithContent& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline RealTimeContactAnalysisTranscriptItemWithContent& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    RealTimeContactAnalysisTranscriptItemWithContent& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const RealTimeContactAnalysisCharacterInterval& GetCharacterOffsets() const{ return m_characterOffsets; }
+    inline const RealTimeContactAnalysisCharacterInterval& GetCharacterOffsets() const { return m_characterOffsets; }
     inline bool CharacterOffsetsHasBeenSet() const { return m_characterOffsetsHasBeenSet; }
-    inline void SetCharacterOffsets(const RealTimeContactAnalysisCharacterInterval& value) { m_characterOffsetsHasBeenSet = true; m_characterOffsets = value; }
-    inline void SetCharacterOffsets(RealTimeContactAnalysisCharacterInterval&& value) { m_characterOffsetsHasBeenSet = true; m_characterOffsets = std::move(value); }
-    inline RealTimeContactAnalysisTranscriptItemWithContent& WithCharacterOffsets(const RealTimeContactAnalysisCharacterInterval& value) { SetCharacterOffsets(value); return *this;}
-    inline RealTimeContactAnalysisTranscriptItemWithContent& WithCharacterOffsets(RealTimeContactAnalysisCharacterInterval&& value) { SetCharacterOffsets(std::move(value)); return *this;}
+    template<typename CharacterOffsetsT = RealTimeContactAnalysisCharacterInterval>
+    void SetCharacterOffsets(CharacterOffsetsT&& value) { m_characterOffsetsHasBeenSet = true; m_characterOffsets = std::forward<CharacterOffsetsT>(value); }
+    template<typename CharacterOffsetsT = RealTimeContactAnalysisCharacterInterval>
+    RealTimeContactAnalysisTranscriptItemWithContent& WithCharacterOffsets(CharacterOffsetsT&& value) { SetCharacterOffsets(std::forward<CharacterOffsetsT>(value)); return *this;}
     ///@}
   private:
 

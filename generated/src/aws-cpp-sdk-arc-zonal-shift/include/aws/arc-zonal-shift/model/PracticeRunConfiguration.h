@@ -43,7 +43,7 @@ namespace Model
   class PracticeRunConfiguration
   {
   public:
-    AWS_ARCZONALSHIFT_API PracticeRunConfiguration();
+    AWS_ARCZONALSHIFT_API PracticeRunConfiguration() = default;
     AWS_ARCZONALSHIFT_API PracticeRunConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_ARCZONALSHIFT_API PracticeRunConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ARCZONALSHIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,15 +55,14 @@ namespace Model
      * does not start practice runs for a resource.</p> <p>Specify blocked dates, in
      * UTC, in the format <code>YYYY-MM-DD</code>, separated by spaces. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetBlockedDates() const{ return m_blockedDates; }
+    inline const Aws::Vector<Aws::String>& GetBlockedDates() const { return m_blockedDates; }
     inline bool BlockedDatesHasBeenSet() const { return m_blockedDatesHasBeenSet; }
-    inline void SetBlockedDates(const Aws::Vector<Aws::String>& value) { m_blockedDatesHasBeenSet = true; m_blockedDates = value; }
-    inline void SetBlockedDates(Aws::Vector<Aws::String>&& value) { m_blockedDatesHasBeenSet = true; m_blockedDates = std::move(value); }
-    inline PracticeRunConfiguration& WithBlockedDates(const Aws::Vector<Aws::String>& value) { SetBlockedDates(value); return *this;}
-    inline PracticeRunConfiguration& WithBlockedDates(Aws::Vector<Aws::String>&& value) { SetBlockedDates(std::move(value)); return *this;}
-    inline PracticeRunConfiguration& AddBlockedDates(const Aws::String& value) { m_blockedDatesHasBeenSet = true; m_blockedDates.push_back(value); return *this; }
-    inline PracticeRunConfiguration& AddBlockedDates(Aws::String&& value) { m_blockedDatesHasBeenSet = true; m_blockedDates.push_back(std::move(value)); return *this; }
-    inline PracticeRunConfiguration& AddBlockedDates(const char* value) { m_blockedDatesHasBeenSet = true; m_blockedDates.push_back(value); return *this; }
+    template<typename BlockedDatesT = Aws::Vector<Aws::String>>
+    void SetBlockedDates(BlockedDatesT&& value) { m_blockedDatesHasBeenSet = true; m_blockedDates = std::forward<BlockedDatesT>(value); }
+    template<typename BlockedDatesT = Aws::Vector<Aws::String>>
+    PracticeRunConfiguration& WithBlockedDates(BlockedDatesT&& value) { SetBlockedDates(std::forward<BlockedDatesT>(value)); return *this;}
+    template<typename BlockedDatesT = Aws::String>
+    PracticeRunConfiguration& AddBlockedDates(BlockedDatesT&& value) { m_blockedDatesHasBeenSet = true; m_blockedDates.emplace_back(std::forward<BlockedDatesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -73,15 +72,14 @@ namespace Model
      * windows in UTC, using the format <code>DAY:HH:MM-DAY:HH:MM</code>, separated by
      * spaces. For example, <code>MON:18:30-MON:19:30 TUE:18:30-TUE:19:30</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetBlockedWindows() const{ return m_blockedWindows; }
+    inline const Aws::Vector<Aws::String>& GetBlockedWindows() const { return m_blockedWindows; }
     inline bool BlockedWindowsHasBeenSet() const { return m_blockedWindowsHasBeenSet; }
-    inline void SetBlockedWindows(const Aws::Vector<Aws::String>& value) { m_blockedWindowsHasBeenSet = true; m_blockedWindows = value; }
-    inline void SetBlockedWindows(Aws::Vector<Aws::String>&& value) { m_blockedWindowsHasBeenSet = true; m_blockedWindows = std::move(value); }
-    inline PracticeRunConfiguration& WithBlockedWindows(const Aws::Vector<Aws::String>& value) { SetBlockedWindows(value); return *this;}
-    inline PracticeRunConfiguration& WithBlockedWindows(Aws::Vector<Aws::String>&& value) { SetBlockedWindows(std::move(value)); return *this;}
-    inline PracticeRunConfiguration& AddBlockedWindows(const Aws::String& value) { m_blockedWindowsHasBeenSet = true; m_blockedWindows.push_back(value); return *this; }
-    inline PracticeRunConfiguration& AddBlockedWindows(Aws::String&& value) { m_blockedWindowsHasBeenSet = true; m_blockedWindows.push_back(std::move(value)); return *this; }
-    inline PracticeRunConfiguration& AddBlockedWindows(const char* value) { m_blockedWindowsHasBeenSet = true; m_blockedWindows.push_back(value); return *this; }
+    template<typename BlockedWindowsT = Aws::Vector<Aws::String>>
+    void SetBlockedWindows(BlockedWindowsT&& value) { m_blockedWindowsHasBeenSet = true; m_blockedWindows = std::forward<BlockedWindowsT>(value); }
+    template<typename BlockedWindowsT = Aws::Vector<Aws::String>>
+    PracticeRunConfiguration& WithBlockedWindows(BlockedWindowsT&& value) { SetBlockedWindows(std::forward<BlockedWindowsT>(value)); return *this;}
+    template<typename BlockedWindowsT = Aws::String>
+    PracticeRunConfiguration& AddBlockedWindows(BlockedWindowsT&& value) { m_blockedWindowsHasBeenSet = true; m_blockedWindows.emplace_back(std::forward<BlockedWindowsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -90,14 +88,14 @@ namespace Model
      * specify that blocks practice runs when the alarm is in an <code>ALARM</code>
      * state.</p>
      */
-    inline const Aws::Vector<ControlCondition>& GetBlockingAlarms() const{ return m_blockingAlarms; }
+    inline const Aws::Vector<ControlCondition>& GetBlockingAlarms() const { return m_blockingAlarms; }
     inline bool BlockingAlarmsHasBeenSet() const { return m_blockingAlarmsHasBeenSet; }
-    inline void SetBlockingAlarms(const Aws::Vector<ControlCondition>& value) { m_blockingAlarmsHasBeenSet = true; m_blockingAlarms = value; }
-    inline void SetBlockingAlarms(Aws::Vector<ControlCondition>&& value) { m_blockingAlarmsHasBeenSet = true; m_blockingAlarms = std::move(value); }
-    inline PracticeRunConfiguration& WithBlockingAlarms(const Aws::Vector<ControlCondition>& value) { SetBlockingAlarms(value); return *this;}
-    inline PracticeRunConfiguration& WithBlockingAlarms(Aws::Vector<ControlCondition>&& value) { SetBlockingAlarms(std::move(value)); return *this;}
-    inline PracticeRunConfiguration& AddBlockingAlarms(const ControlCondition& value) { m_blockingAlarmsHasBeenSet = true; m_blockingAlarms.push_back(value); return *this; }
-    inline PracticeRunConfiguration& AddBlockingAlarms(ControlCondition&& value) { m_blockingAlarmsHasBeenSet = true; m_blockingAlarms.push_back(std::move(value)); return *this; }
+    template<typename BlockingAlarmsT = Aws::Vector<ControlCondition>>
+    void SetBlockingAlarms(BlockingAlarmsT&& value) { m_blockingAlarmsHasBeenSet = true; m_blockingAlarms = std::forward<BlockingAlarmsT>(value); }
+    template<typename BlockingAlarmsT = Aws::Vector<ControlCondition>>
+    PracticeRunConfiguration& WithBlockingAlarms(BlockingAlarmsT&& value) { SetBlockingAlarms(std::forward<BlockingAlarmsT>(value)); return *this;}
+    template<typename BlockingAlarmsT = ControlCondition>
+    PracticeRunConfiguration& AddBlockingAlarms(BlockingAlarmsT&& value) { m_blockingAlarmsHasBeenSet = true; m_blockingAlarms.emplace_back(std::forward<BlockingAlarmsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -105,14 +103,14 @@ namespace Model
      * <p>The <i>outcome alarm</i> for practice runs is an alarm that you specify that
      * ends a practice run when the alarm is in an <code>ALARM</code> state.</p>
      */
-    inline const Aws::Vector<ControlCondition>& GetOutcomeAlarms() const{ return m_outcomeAlarms; }
+    inline const Aws::Vector<ControlCondition>& GetOutcomeAlarms() const { return m_outcomeAlarms; }
     inline bool OutcomeAlarmsHasBeenSet() const { return m_outcomeAlarmsHasBeenSet; }
-    inline void SetOutcomeAlarms(const Aws::Vector<ControlCondition>& value) { m_outcomeAlarmsHasBeenSet = true; m_outcomeAlarms = value; }
-    inline void SetOutcomeAlarms(Aws::Vector<ControlCondition>&& value) { m_outcomeAlarmsHasBeenSet = true; m_outcomeAlarms = std::move(value); }
-    inline PracticeRunConfiguration& WithOutcomeAlarms(const Aws::Vector<ControlCondition>& value) { SetOutcomeAlarms(value); return *this;}
-    inline PracticeRunConfiguration& WithOutcomeAlarms(Aws::Vector<ControlCondition>&& value) { SetOutcomeAlarms(std::move(value)); return *this;}
-    inline PracticeRunConfiguration& AddOutcomeAlarms(const ControlCondition& value) { m_outcomeAlarmsHasBeenSet = true; m_outcomeAlarms.push_back(value); return *this; }
-    inline PracticeRunConfiguration& AddOutcomeAlarms(ControlCondition&& value) { m_outcomeAlarmsHasBeenSet = true; m_outcomeAlarms.push_back(std::move(value)); return *this; }
+    template<typename OutcomeAlarmsT = Aws::Vector<ControlCondition>>
+    void SetOutcomeAlarms(OutcomeAlarmsT&& value) { m_outcomeAlarmsHasBeenSet = true; m_outcomeAlarms = std::forward<OutcomeAlarmsT>(value); }
+    template<typename OutcomeAlarmsT = Aws::Vector<ControlCondition>>
+    PracticeRunConfiguration& WithOutcomeAlarms(OutcomeAlarmsT&& value) { SetOutcomeAlarms(std::forward<OutcomeAlarmsT>(value)); return *this;}
+    template<typename OutcomeAlarmsT = ControlCondition>
+    PracticeRunConfiguration& AddOutcomeAlarms(OutcomeAlarmsT&& value) { m_outcomeAlarmsHasBeenSet = true; m_outcomeAlarms.emplace_back(std::forward<OutcomeAlarmsT>(value)); return *this; }
     ///@}
   private:
 

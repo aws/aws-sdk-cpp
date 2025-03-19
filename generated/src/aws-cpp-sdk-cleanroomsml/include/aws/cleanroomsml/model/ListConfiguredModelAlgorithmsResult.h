@@ -29,7 +29,7 @@ namespace Model
   class ListConfiguredModelAlgorithmsResult
   {
   public:
-    AWS_CLEANROOMSML_API ListConfiguredModelAlgorithmsResult();
+    AWS_CLEANROOMSML_API ListConfiguredModelAlgorithmsResult() = default;
     AWS_CLEANROOMSML_API ListConfiguredModelAlgorithmsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLEANROOMSML_API ListConfiguredModelAlgorithmsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>The token value used to access the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListConfiguredModelAlgorithmsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListConfiguredModelAlgorithmsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListConfiguredModelAlgorithmsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListConfiguredModelAlgorithmsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of configured model algorithms.</p>
      */
-    inline const Aws::Vector<ConfiguredModelAlgorithmSummary>& GetConfiguredModelAlgorithms() const{ return m_configuredModelAlgorithms; }
-    inline void SetConfiguredModelAlgorithms(const Aws::Vector<ConfiguredModelAlgorithmSummary>& value) { m_configuredModelAlgorithms = value; }
-    inline void SetConfiguredModelAlgorithms(Aws::Vector<ConfiguredModelAlgorithmSummary>&& value) { m_configuredModelAlgorithms = std::move(value); }
-    inline ListConfiguredModelAlgorithmsResult& WithConfiguredModelAlgorithms(const Aws::Vector<ConfiguredModelAlgorithmSummary>& value) { SetConfiguredModelAlgorithms(value); return *this;}
-    inline ListConfiguredModelAlgorithmsResult& WithConfiguredModelAlgorithms(Aws::Vector<ConfiguredModelAlgorithmSummary>&& value) { SetConfiguredModelAlgorithms(std::move(value)); return *this;}
-    inline ListConfiguredModelAlgorithmsResult& AddConfiguredModelAlgorithms(const ConfiguredModelAlgorithmSummary& value) { m_configuredModelAlgorithms.push_back(value); return *this; }
-    inline ListConfiguredModelAlgorithmsResult& AddConfiguredModelAlgorithms(ConfiguredModelAlgorithmSummary&& value) { m_configuredModelAlgorithms.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ConfiguredModelAlgorithmSummary>& GetConfiguredModelAlgorithms() const { return m_configuredModelAlgorithms; }
+    template<typename ConfiguredModelAlgorithmsT = Aws::Vector<ConfiguredModelAlgorithmSummary>>
+    void SetConfiguredModelAlgorithms(ConfiguredModelAlgorithmsT&& value) { m_configuredModelAlgorithmsHasBeenSet = true; m_configuredModelAlgorithms = std::forward<ConfiguredModelAlgorithmsT>(value); }
+    template<typename ConfiguredModelAlgorithmsT = Aws::Vector<ConfiguredModelAlgorithmSummary>>
+    ListConfiguredModelAlgorithmsResult& WithConfiguredModelAlgorithms(ConfiguredModelAlgorithmsT&& value) { SetConfiguredModelAlgorithms(std::forward<ConfiguredModelAlgorithmsT>(value)); return *this;}
+    template<typename ConfiguredModelAlgorithmsT = ConfiguredModelAlgorithmSummary>
+    ListConfiguredModelAlgorithmsResult& AddConfiguredModelAlgorithms(ConfiguredModelAlgorithmsT&& value) { m_configuredModelAlgorithmsHasBeenSet = true; m_configuredModelAlgorithms.emplace_back(std::forward<ConfiguredModelAlgorithmsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListConfiguredModelAlgorithmsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListConfiguredModelAlgorithmsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListConfiguredModelAlgorithmsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListConfiguredModelAlgorithmsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<ConfiguredModelAlgorithmSummary> m_configuredModelAlgorithms;
+    bool m_configuredModelAlgorithmsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

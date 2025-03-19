@@ -33,7 +33,7 @@ namespace Model
   class RepositoryBranchInput
   {
   public:
-    AWS_PROTON_API RepositoryBranchInput();
+    AWS_PROTON_API RepositoryBranchInput() = default;
     AWS_PROTON_API RepositoryBranchInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_PROTON_API RepositoryBranchInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PROTON_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,40 +43,34 @@ namespace Model
     /**
      * <p>The repository branch.</p>
      */
-    inline const Aws::String& GetBranch() const{ return m_branch; }
+    inline const Aws::String& GetBranch() const { return m_branch; }
     inline bool BranchHasBeenSet() const { return m_branchHasBeenSet; }
-    inline void SetBranch(const Aws::String& value) { m_branchHasBeenSet = true; m_branch = value; }
-    inline void SetBranch(Aws::String&& value) { m_branchHasBeenSet = true; m_branch = std::move(value); }
-    inline void SetBranch(const char* value) { m_branchHasBeenSet = true; m_branch.assign(value); }
-    inline RepositoryBranchInput& WithBranch(const Aws::String& value) { SetBranch(value); return *this;}
-    inline RepositoryBranchInput& WithBranch(Aws::String&& value) { SetBranch(std::move(value)); return *this;}
-    inline RepositoryBranchInput& WithBranch(const char* value) { SetBranch(value); return *this;}
+    template<typename BranchT = Aws::String>
+    void SetBranch(BranchT&& value) { m_branchHasBeenSet = true; m_branch = std::forward<BranchT>(value); }
+    template<typename BranchT = Aws::String>
+    RepositoryBranchInput& WithBranch(BranchT&& value) { SetBranch(std::forward<BranchT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The repository name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline RepositoryBranchInput& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline RepositoryBranchInput& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline RepositoryBranchInput& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    RepositoryBranchInput& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The repository provider.</p>
      */
-    inline const RepositoryProvider& GetProvider() const{ return m_provider; }
+    inline RepositoryProvider GetProvider() const { return m_provider; }
     inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }
-    inline void SetProvider(const RepositoryProvider& value) { m_providerHasBeenSet = true; m_provider = value; }
-    inline void SetProvider(RepositoryProvider&& value) { m_providerHasBeenSet = true; m_provider = std::move(value); }
-    inline RepositoryBranchInput& WithProvider(const RepositoryProvider& value) { SetProvider(value); return *this;}
-    inline RepositoryBranchInput& WithProvider(RepositoryProvider&& value) { SetProvider(std::move(value)); return *this;}
+    inline void SetProvider(RepositoryProvider value) { m_providerHasBeenSet = true; m_provider = value; }
+    inline RepositoryBranchInput& WithProvider(RepositoryProvider value) { SetProvider(value); return *this;}
     ///@}
   private:
 
@@ -86,7 +80,7 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    RepositoryProvider m_provider;
+    RepositoryProvider m_provider{RepositoryProvider::NOT_SET};
     bool m_providerHasBeenSet = false;
   };
 

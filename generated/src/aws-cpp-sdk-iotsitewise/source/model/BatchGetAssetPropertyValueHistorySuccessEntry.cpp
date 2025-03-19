@@ -18,14 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-BatchGetAssetPropertyValueHistorySuccessEntry::BatchGetAssetPropertyValueHistorySuccessEntry() : 
-    m_entryIdHasBeenSet(false),
-    m_assetPropertyValueHistoryHasBeenSet(false)
-{
-}
-
 BatchGetAssetPropertyValueHistorySuccessEntry::BatchGetAssetPropertyValueHistorySuccessEntry(JsonView jsonValue)
-  : BatchGetAssetPropertyValueHistorySuccessEntry()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ BatchGetAssetPropertyValueHistorySuccessEntry& BatchGetAssetPropertyValueHistory
   if(jsonValue.ValueExists("entryId"))
   {
     m_entryId = jsonValue.GetString("entryId");
-
     m_entryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assetPropertyValueHistory"))
   {
     Aws::Utils::Array<JsonView> assetPropertyValueHistoryJsonList = jsonValue.GetArray("assetPropertyValueHistory");
@@ -48,7 +39,6 @@ BatchGetAssetPropertyValueHistorySuccessEntry& BatchGetAssetPropertyValueHistory
     }
     m_assetPropertyValueHistoryHasBeenSet = true;
   }
-
   return *this;
 }
 

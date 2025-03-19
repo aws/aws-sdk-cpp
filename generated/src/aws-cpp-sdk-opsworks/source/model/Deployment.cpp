@@ -18,25 +18,7 @@ namespace OpsWorks
 namespace Model
 {
 
-Deployment::Deployment() : 
-    m_deploymentIdHasBeenSet(false),
-    m_stackIdHasBeenSet(false),
-    m_appIdHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_completedAtHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_iamUserArnHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_commandHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_customJsonHasBeenSet(false),
-    m_instanceIdsHasBeenSet(false)
-{
-}
-
 Deployment::Deployment(JsonView jsonValue)
-  : Deployment()
 {
   *this = jsonValue;
 }
@@ -46,80 +28,58 @@ Deployment& Deployment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DeploymentId"))
   {
     m_deploymentId = jsonValue.GetString("DeploymentId");
-
     m_deploymentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StackId"))
   {
     m_stackId = jsonValue.GetString("StackId");
-
     m_stackIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AppId"))
   {
     m_appId = jsonValue.GetString("AppId");
-
     m_appIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetString("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompletedAt"))
   {
     m_completedAt = jsonValue.GetString("CompletedAt");
-
     m_completedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Duration"))
   {
     m_duration = jsonValue.GetInteger("Duration");
-
     m_durationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IamUserArn"))
   {
     m_iamUserArn = jsonValue.GetString("IamUserArn");
-
     m_iamUserArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Comment"))
   {
     m_comment = jsonValue.GetString("Comment");
-
     m_commentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Command"))
   {
     m_command = jsonValue.GetObject("Command");
-
     m_commandHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomJson"))
   {
     m_customJson = jsonValue.GetString("CustomJson");
-
     m_customJsonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceIds"))
   {
     Aws::Utils::Array<JsonView> instanceIdsJsonList = jsonValue.GetArray("InstanceIds");
@@ -129,7 +89,6 @@ Deployment& Deployment::operator =(JsonView jsonValue)
     }
     m_instanceIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

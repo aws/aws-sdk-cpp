@@ -12,14 +12,6 @@ using namespace Aws::Macie2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateInvitationsRequest::CreateInvitationsRequest() : 
-    m_accountIdsHasBeenSet(false),
-    m_disableEmailNotification(false),
-    m_disableEmailNotificationHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 Aws::String CreateInvitationsRequest::SerializePayload() const
 {
   JsonValue payload;

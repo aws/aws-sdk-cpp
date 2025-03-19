@@ -18,15 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-ResourceKey::ResourceKey() : 
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false)
-{
-}
-
 ResourceKey::ResourceKey(JsonView jsonValue)
-  : ResourceKey()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ResourceKey& ResourceKey::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("resourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceId"))
   {
     m_resourceId = jsonValue.GetString("resourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

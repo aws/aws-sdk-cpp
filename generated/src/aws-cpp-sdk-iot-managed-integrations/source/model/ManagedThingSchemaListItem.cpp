@@ -18,15 +18,7 @@ namespace IoTManagedIntegrations
 namespace Model
 {
 
-ManagedThingSchemaListItem::ManagedThingSchemaListItem() : 
-    m_endpointIdHasBeenSet(false),
-    m_capabilityIdHasBeenSet(false),
-    m_schemaHasBeenSet(false)
-{
-}
-
 ManagedThingSchemaListItem::ManagedThingSchemaListItem(JsonView jsonValue)
-  : ManagedThingSchemaListItem()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ManagedThingSchemaListItem& ManagedThingSchemaListItem::operator =(JsonView json
   if(jsonValue.ValueExists("EndpointId"))
   {
     m_endpointId = jsonValue.GetString("EndpointId");
-
     m_endpointIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CapabilityId"))
   {
     m_capabilityId = jsonValue.GetString("CapabilityId");
-
     m_capabilityIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Schema"))
   {
     m_schema = jsonValue.GetObject("Schema");
-
     m_schemaHasBeenSet = true;
   }
-
   return *this;
 }
 

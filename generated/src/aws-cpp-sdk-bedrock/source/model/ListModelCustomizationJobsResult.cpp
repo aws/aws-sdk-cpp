@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListModelCustomizationJobsResult::ListModelCustomizationJobsResult()
-{
-}
-
 ListModelCustomizationJobsResult::ListModelCustomizationJobsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListModelCustomizationJobsResult& ListModelCustomizationJobsResult::operator =(c
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modelCustomizationJobSummaries"))
   {
     Aws::Utils::Array<JsonView> modelCustomizationJobSummariesJsonList = jsonValue.GetArray("modelCustomizationJobSummaries");
@@ -42,14 +37,15 @@ ListModelCustomizationJobsResult& ListModelCustomizationJobsResult::operator =(c
     {
       m_modelCustomizationJobSummaries.push_back(modelCustomizationJobSummariesJsonList[modelCustomizationJobSummariesIndex].AsObject());
     }
+    m_modelCustomizationJobSummariesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

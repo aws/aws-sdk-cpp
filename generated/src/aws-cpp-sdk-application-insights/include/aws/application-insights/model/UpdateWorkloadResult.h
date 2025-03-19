@@ -28,7 +28,7 @@ namespace Model
   class UpdateWorkloadResult
   {
   public:
-    AWS_APPLICATIONINSIGHTS_API UpdateWorkloadResult();
+    AWS_APPLICATIONINSIGHTS_API UpdateWorkloadResult() = default;
     AWS_APPLICATIONINSIGHTS_API UpdateWorkloadResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPLICATIONINSIGHTS_API UpdateWorkloadResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,13 +37,11 @@ namespace Model
     /**
      * <p>The ID of the workload.</p>
      */
-    inline const Aws::String& GetWorkloadId() const{ return m_workloadId; }
-    inline void SetWorkloadId(const Aws::String& value) { m_workloadId = value; }
-    inline void SetWorkloadId(Aws::String&& value) { m_workloadId = std::move(value); }
-    inline void SetWorkloadId(const char* value) { m_workloadId.assign(value); }
-    inline UpdateWorkloadResult& WithWorkloadId(const Aws::String& value) { SetWorkloadId(value); return *this;}
-    inline UpdateWorkloadResult& WithWorkloadId(Aws::String&& value) { SetWorkloadId(std::move(value)); return *this;}
-    inline UpdateWorkloadResult& WithWorkloadId(const char* value) { SetWorkloadId(value); return *this;}
+    inline const Aws::String& GetWorkloadId() const { return m_workloadId; }
+    template<typename WorkloadIdT = Aws::String>
+    void SetWorkloadId(WorkloadIdT&& value) { m_workloadIdHasBeenSet = true; m_workloadId = std::forward<WorkloadIdT>(value); }
+    template<typename WorkloadIdT = Aws::String>
+    UpdateWorkloadResult& WithWorkloadId(WorkloadIdT&& value) { SetWorkloadId(std::forward<WorkloadIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,30 +49,31 @@ namespace Model
      * <p>The configuration settings of the workload. The value is the escaped JSON of
      * the configuration.</p>
      */
-    inline const WorkloadConfiguration& GetWorkloadConfiguration() const{ return m_workloadConfiguration; }
-    inline void SetWorkloadConfiguration(const WorkloadConfiguration& value) { m_workloadConfiguration = value; }
-    inline void SetWorkloadConfiguration(WorkloadConfiguration&& value) { m_workloadConfiguration = std::move(value); }
-    inline UpdateWorkloadResult& WithWorkloadConfiguration(const WorkloadConfiguration& value) { SetWorkloadConfiguration(value); return *this;}
-    inline UpdateWorkloadResult& WithWorkloadConfiguration(WorkloadConfiguration&& value) { SetWorkloadConfiguration(std::move(value)); return *this;}
+    inline const WorkloadConfiguration& GetWorkloadConfiguration() const { return m_workloadConfiguration; }
+    template<typename WorkloadConfigurationT = WorkloadConfiguration>
+    void SetWorkloadConfiguration(WorkloadConfigurationT&& value) { m_workloadConfigurationHasBeenSet = true; m_workloadConfiguration = std::forward<WorkloadConfigurationT>(value); }
+    template<typename WorkloadConfigurationT = WorkloadConfiguration>
+    UpdateWorkloadResult& WithWorkloadConfiguration(WorkloadConfigurationT&& value) { SetWorkloadConfiguration(std::forward<WorkloadConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateWorkloadResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateWorkloadResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateWorkloadResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateWorkloadResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_workloadId;
+    bool m_workloadIdHasBeenSet = false;
 
     WorkloadConfiguration m_workloadConfiguration;
+    bool m_workloadConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

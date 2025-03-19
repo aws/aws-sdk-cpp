@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SearchEmailAddressesResult::SearchEmailAddressesResult() : 
-    m_approximateTotalCount(0)
-{
-}
-
 SearchEmailAddressesResult::SearchEmailAddressesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : SearchEmailAddressesResult()
 {
   *this = result;
 }
@@ -34,9 +28,8 @@ SearchEmailAddressesResult& SearchEmailAddressesResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EmailAddresses"))
   {
     Aws::Utils::Array<JsonView> emailAddressesJsonList = jsonValue.GetArray("EmailAddresses");
@@ -44,20 +37,20 @@ SearchEmailAddressesResult& SearchEmailAddressesResult::operator =(const Aws::Am
     {
       m_emailAddresses.push_back(emailAddressesJsonList[emailAddressesIndex].AsObject());
     }
+    m_emailAddressesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApproximateTotalCount"))
   {
     m_approximateTotalCount = jsonValue.GetInt64("ApproximateTotalCount");
-
+    m_approximateTotalCountHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

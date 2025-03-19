@@ -37,7 +37,7 @@ namespace Model
   class ControlPlaneTagFilter
   {
   public:
-    AWS_CONNECT_API ControlPlaneTagFilter();
+    AWS_CONNECT_API ControlPlaneTagFilter() = default;
     AWS_CONNECT_API ControlPlaneTagFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API ControlPlaneTagFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,14 @@ namespace Model
      * <p>A list of conditions which would be applied together with an <code>OR</code>
      * condition. </p>
      */
-    inline const Aws::Vector<Aws::Vector<TagCondition>>& GetOrConditions() const{ return m_orConditions; }
+    inline const Aws::Vector<Aws::Vector<TagCondition>>& GetOrConditions() const { return m_orConditions; }
     inline bool OrConditionsHasBeenSet() const { return m_orConditionsHasBeenSet; }
-    inline void SetOrConditions(const Aws::Vector<Aws::Vector<TagCondition>>& value) { m_orConditionsHasBeenSet = true; m_orConditions = value; }
-    inline void SetOrConditions(Aws::Vector<Aws::Vector<TagCondition>>&& value) { m_orConditionsHasBeenSet = true; m_orConditions = std::move(value); }
-    inline ControlPlaneTagFilter& WithOrConditions(const Aws::Vector<Aws::Vector<TagCondition>>& value) { SetOrConditions(value); return *this;}
-    inline ControlPlaneTagFilter& WithOrConditions(Aws::Vector<Aws::Vector<TagCondition>>&& value) { SetOrConditions(std::move(value)); return *this;}
-    inline ControlPlaneTagFilter& AddOrConditions(const Aws::Vector<TagCondition>& value) { m_orConditionsHasBeenSet = true; m_orConditions.push_back(value); return *this; }
-    inline ControlPlaneTagFilter& AddOrConditions(Aws::Vector<TagCondition>&& value) { m_orConditionsHasBeenSet = true; m_orConditions.push_back(std::move(value)); return *this; }
+    template<typename OrConditionsT = Aws::Vector<Aws::Vector<TagCondition>>>
+    void SetOrConditions(OrConditionsT&& value) { m_orConditionsHasBeenSet = true; m_orConditions = std::forward<OrConditionsT>(value); }
+    template<typename OrConditionsT = Aws::Vector<Aws::Vector<TagCondition>>>
+    ControlPlaneTagFilter& WithOrConditions(OrConditionsT&& value) { SetOrConditions(std::forward<OrConditionsT>(value)); return *this;}
+    template<typename OrConditionsT = Aws::Vector<TagCondition>>
+    ControlPlaneTagFilter& AddOrConditions(OrConditionsT&& value) { m_orConditionsHasBeenSet = true; m_orConditions.emplace_back(std::forward<OrConditionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -63,26 +63,26 @@ namespace Model
      * <p>A list of conditions which would be applied together with an <code>AND</code>
      * condition.</p>
      */
-    inline const Aws::Vector<TagCondition>& GetAndConditions() const{ return m_andConditions; }
+    inline const Aws::Vector<TagCondition>& GetAndConditions() const { return m_andConditions; }
     inline bool AndConditionsHasBeenSet() const { return m_andConditionsHasBeenSet; }
-    inline void SetAndConditions(const Aws::Vector<TagCondition>& value) { m_andConditionsHasBeenSet = true; m_andConditions = value; }
-    inline void SetAndConditions(Aws::Vector<TagCondition>&& value) { m_andConditionsHasBeenSet = true; m_andConditions = std::move(value); }
-    inline ControlPlaneTagFilter& WithAndConditions(const Aws::Vector<TagCondition>& value) { SetAndConditions(value); return *this;}
-    inline ControlPlaneTagFilter& WithAndConditions(Aws::Vector<TagCondition>&& value) { SetAndConditions(std::move(value)); return *this;}
-    inline ControlPlaneTagFilter& AddAndConditions(const TagCondition& value) { m_andConditionsHasBeenSet = true; m_andConditions.push_back(value); return *this; }
-    inline ControlPlaneTagFilter& AddAndConditions(TagCondition&& value) { m_andConditionsHasBeenSet = true; m_andConditions.push_back(std::move(value)); return *this; }
+    template<typename AndConditionsT = Aws::Vector<TagCondition>>
+    void SetAndConditions(AndConditionsT&& value) { m_andConditionsHasBeenSet = true; m_andConditions = std::forward<AndConditionsT>(value); }
+    template<typename AndConditionsT = Aws::Vector<TagCondition>>
+    ControlPlaneTagFilter& WithAndConditions(AndConditionsT&& value) { SetAndConditions(std::forward<AndConditionsT>(value)); return *this;}
+    template<typename AndConditionsT = TagCondition>
+    ControlPlaneTagFilter& AddAndConditions(AndConditionsT&& value) { m_andConditionsHasBeenSet = true; m_andConditions.emplace_back(std::forward<AndConditionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A leaf node condition which can be used to specify a tag condition. </p>
      */
-    inline const TagCondition& GetTagCondition() const{ return m_tagCondition; }
+    inline const TagCondition& GetTagCondition() const { return m_tagCondition; }
     inline bool TagConditionHasBeenSet() const { return m_tagConditionHasBeenSet; }
-    inline void SetTagCondition(const TagCondition& value) { m_tagConditionHasBeenSet = true; m_tagCondition = value; }
-    inline void SetTagCondition(TagCondition&& value) { m_tagConditionHasBeenSet = true; m_tagCondition = std::move(value); }
-    inline ControlPlaneTagFilter& WithTagCondition(const TagCondition& value) { SetTagCondition(value); return *this;}
-    inline ControlPlaneTagFilter& WithTagCondition(TagCondition&& value) { SetTagCondition(std::move(value)); return *this;}
+    template<typename TagConditionT = TagCondition>
+    void SetTagCondition(TagConditionT&& value) { m_tagConditionHasBeenSet = true; m_tagCondition = std::forward<TagConditionT>(value); }
+    template<typename TagConditionT = TagCondition>
+    ControlPlaneTagFilter& WithTagCondition(TagConditionT&& value) { SetTagCondition(std::forward<TagConditionT>(value)); return *this;}
     ///@}
   private:
 

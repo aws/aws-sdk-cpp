@@ -40,7 +40,7 @@ namespace Model
   class EntityItem
   {
   public:
-    AWS_VERIFIEDPERMISSIONS_API EntityItem();
+    AWS_VERIFIEDPERMISSIONS_API EntityItem() = default;
     AWS_VERIFIEDPERMISSIONS_API EntityItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_VERIFIEDPERMISSIONS_API EntityItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VERIFIEDPERMISSIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,30 +50,28 @@ namespace Model
     /**
      * <p>The identifier of the entity.</p>
      */
-    inline const EntityIdentifier& GetIdentifier() const{ return m_identifier; }
+    inline const EntityIdentifier& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const EntityIdentifier& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(EntityIdentifier&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline EntityItem& WithIdentifier(const EntityIdentifier& value) { SetIdentifier(value); return *this;}
-    inline EntityItem& WithIdentifier(EntityIdentifier&& value) { SetIdentifier(std::move(value)); return *this;}
+    template<typename IdentifierT = EntityIdentifier>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = EntityIdentifier>
+    EntityItem& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of attributes for the entity.</p>
      */
-    inline const Aws::Map<Aws::String, AttributeValue>& GetAttributes() const{ return m_attributes; }
+    inline const Aws::Map<Aws::String, AttributeValue>& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const Aws::Map<Aws::String, AttributeValue>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(Aws::Map<Aws::String, AttributeValue>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline EntityItem& WithAttributes(const Aws::Map<Aws::String, AttributeValue>& value) { SetAttributes(value); return *this;}
-    inline EntityItem& WithAttributes(Aws::Map<Aws::String, AttributeValue>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline EntityItem& AddAttributes(const Aws::String& key, const AttributeValue& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
-    inline EntityItem& AddAttributes(Aws::String&& key, const AttributeValue& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
-    inline EntityItem& AddAttributes(const Aws::String& key, AttributeValue&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
-    inline EntityItem& AddAttributes(Aws::String&& key, AttributeValue&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline EntityItem& AddAttributes(const char* key, AttributeValue&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
-    inline EntityItem& AddAttributes(const char* key, const AttributeValue& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
+    template<typename AttributesT = Aws::Map<Aws::String, AttributeValue>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Map<Aws::String, AttributeValue>>
+    EntityItem& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    template<typename AttributesKeyT = Aws::String, typename AttributesValueT = AttributeValue>
+    EntityItem& AddAttributes(AttributesKeyT&& key, AttributesValueT&& value) {
+      m_attributesHasBeenSet = true; m_attributes.emplace(std::forward<AttributesKeyT>(key), std::forward<AttributesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -86,14 +84,14 @@ namespace Model
      * groups, for a total of 100: one entity, 91 entity parents, and eight parents of
      * parents. </p>
      */
-    inline const Aws::Vector<EntityIdentifier>& GetParents() const{ return m_parents; }
+    inline const Aws::Vector<EntityIdentifier>& GetParents() const { return m_parents; }
     inline bool ParentsHasBeenSet() const { return m_parentsHasBeenSet; }
-    inline void SetParents(const Aws::Vector<EntityIdentifier>& value) { m_parentsHasBeenSet = true; m_parents = value; }
-    inline void SetParents(Aws::Vector<EntityIdentifier>&& value) { m_parentsHasBeenSet = true; m_parents = std::move(value); }
-    inline EntityItem& WithParents(const Aws::Vector<EntityIdentifier>& value) { SetParents(value); return *this;}
-    inline EntityItem& WithParents(Aws::Vector<EntityIdentifier>&& value) { SetParents(std::move(value)); return *this;}
-    inline EntityItem& AddParents(const EntityIdentifier& value) { m_parentsHasBeenSet = true; m_parents.push_back(value); return *this; }
-    inline EntityItem& AddParents(EntityIdentifier&& value) { m_parentsHasBeenSet = true; m_parents.push_back(std::move(value)); return *this; }
+    template<typename ParentsT = Aws::Vector<EntityIdentifier>>
+    void SetParents(ParentsT&& value) { m_parentsHasBeenSet = true; m_parents = std::forward<ParentsT>(value); }
+    template<typename ParentsT = Aws::Vector<EntityIdentifier>>
+    EntityItem& WithParents(ParentsT&& value) { SetParents(std::forward<ParentsT>(value)); return *this;}
+    template<typename ParentsT = EntityIdentifier>
+    EntityItem& AddParents(ParentsT&& value) { m_parentsHasBeenSet = true; m_parents.emplace_back(std::forward<ParentsT>(value)); return *this; }
     ///@}
   private:
 

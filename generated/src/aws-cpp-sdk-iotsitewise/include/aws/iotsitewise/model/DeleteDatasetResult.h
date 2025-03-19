@@ -28,7 +28,7 @@ namespace Model
   class DeleteDatasetResult
   {
   public:
-    AWS_IOTSITEWISE_API DeleteDatasetResult();
+    AWS_IOTSITEWISE_API DeleteDatasetResult() = default;
     AWS_IOTSITEWISE_API DeleteDatasetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTSITEWISE_API DeleteDatasetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,28 +39,28 @@ namespace Model
      * State is <code>DELETING</code> after a successfull call to this API, and any
      * associated error message.</p>
      */
-    inline const DatasetStatus& GetDatasetStatus() const{ return m_datasetStatus; }
-    inline void SetDatasetStatus(const DatasetStatus& value) { m_datasetStatus = value; }
-    inline void SetDatasetStatus(DatasetStatus&& value) { m_datasetStatus = std::move(value); }
-    inline DeleteDatasetResult& WithDatasetStatus(const DatasetStatus& value) { SetDatasetStatus(value); return *this;}
-    inline DeleteDatasetResult& WithDatasetStatus(DatasetStatus&& value) { SetDatasetStatus(std::move(value)); return *this;}
+    inline const DatasetStatus& GetDatasetStatus() const { return m_datasetStatus; }
+    template<typename DatasetStatusT = DatasetStatus>
+    void SetDatasetStatus(DatasetStatusT&& value) { m_datasetStatusHasBeenSet = true; m_datasetStatus = std::forward<DatasetStatusT>(value); }
+    template<typename DatasetStatusT = DatasetStatus>
+    DeleteDatasetResult& WithDatasetStatus(DatasetStatusT&& value) { SetDatasetStatus(std::forward<DatasetStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteDatasetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteDatasetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteDatasetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteDatasetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DatasetStatus m_datasetStatus;
+    bool m_datasetStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

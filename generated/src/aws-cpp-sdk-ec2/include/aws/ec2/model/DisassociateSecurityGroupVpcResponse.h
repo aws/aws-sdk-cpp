@@ -28,7 +28,7 @@ namespace Model
   class DisassociateSecurityGroupVpcResponse
   {
   public:
-    AWS_EC2_API DisassociateSecurityGroupVpcResponse();
+    AWS_EC2_API DisassociateSecurityGroupVpcResponse() = default;
     AWS_EC2_API DisassociateSecurityGroupVpcResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DisassociateSecurityGroupVpcResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,26 @@ namespace Model
     /**
      * <p>The state of the disassociation.</p>
      */
-    inline const SecurityGroupVpcAssociationState& GetState() const{ return m_state; }
-    inline void SetState(const SecurityGroupVpcAssociationState& value) { m_state = value; }
-    inline void SetState(SecurityGroupVpcAssociationState&& value) { m_state = std::move(value); }
-    inline DisassociateSecurityGroupVpcResponse& WithState(const SecurityGroupVpcAssociationState& value) { SetState(value); return *this;}
-    inline DisassociateSecurityGroupVpcResponse& WithState(SecurityGroupVpcAssociationState&& value) { SetState(std::move(value)); return *this;}
+    inline SecurityGroupVpcAssociationState GetState() const { return m_state; }
+    inline void SetState(SecurityGroupVpcAssociationState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline DisassociateSecurityGroupVpcResponse& WithState(SecurityGroupVpcAssociationState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DisassociateSecurityGroupVpcResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DisassociateSecurityGroupVpcResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DisassociateSecurityGroupVpcResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
-    SecurityGroupVpcAssociationState m_state;
+    SecurityGroupVpcAssociationState m_state{SecurityGroupVpcAssociationState::NOT_SET};
+    bool m_stateHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

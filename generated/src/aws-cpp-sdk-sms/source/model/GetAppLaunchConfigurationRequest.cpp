@@ -12,11 +12,6 @@ using namespace Aws::SMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAppLaunchConfigurationRequest::GetAppLaunchConfigurationRequest() : 
-    m_appIdHasBeenSet(false)
-{
-}
-
 Aws::String GetAppLaunchConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,11 +12,6 @@ using namespace Aws::MediaStoreData::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteObjectRequest::DeleteObjectRequest() : 
-    m_pathHasBeenSet(false)
-{
-}
-
 Aws::String DeleteObjectRequest::SerializePayload() const
 {
   return {};

@@ -12,12 +12,6 @@ using namespace Aws::ElasticsearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateVpcEndpointRequest::UpdateVpcEndpointRequest() : 
-    m_vpcEndpointIdHasBeenSet(false),
-    m_vpcOptionsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateVpcEndpointRequest::SerializePayload() const
 {
   JsonValue payload;

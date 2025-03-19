@@ -29,7 +29,7 @@ namespace Model
   class DeleteImageSetResult
   {
   public:
-    AWS_MEDICALIMAGING_API DeleteImageSetResult();
+    AWS_MEDICALIMAGING_API DeleteImageSetResult() = default;
     AWS_MEDICALIMAGING_API DeleteImageSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDICALIMAGING_API DeleteImageSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,71 +38,66 @@ namespace Model
     /**
      * <p>The data store identifier.</p>
      */
-    inline const Aws::String& GetDatastoreId() const{ return m_datastoreId; }
-    inline void SetDatastoreId(const Aws::String& value) { m_datastoreId = value; }
-    inline void SetDatastoreId(Aws::String&& value) { m_datastoreId = std::move(value); }
-    inline void SetDatastoreId(const char* value) { m_datastoreId.assign(value); }
-    inline DeleteImageSetResult& WithDatastoreId(const Aws::String& value) { SetDatastoreId(value); return *this;}
-    inline DeleteImageSetResult& WithDatastoreId(Aws::String&& value) { SetDatastoreId(std::move(value)); return *this;}
-    inline DeleteImageSetResult& WithDatastoreId(const char* value) { SetDatastoreId(value); return *this;}
+    inline const Aws::String& GetDatastoreId() const { return m_datastoreId; }
+    template<typename DatastoreIdT = Aws::String>
+    void SetDatastoreId(DatastoreIdT&& value) { m_datastoreIdHasBeenSet = true; m_datastoreId = std::forward<DatastoreIdT>(value); }
+    template<typename DatastoreIdT = Aws::String>
+    DeleteImageSetResult& WithDatastoreId(DatastoreIdT&& value) { SetDatastoreId(std::forward<DatastoreIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The image set identifier.</p>
      */
-    inline const Aws::String& GetImageSetId() const{ return m_imageSetId; }
-    inline void SetImageSetId(const Aws::String& value) { m_imageSetId = value; }
-    inline void SetImageSetId(Aws::String&& value) { m_imageSetId = std::move(value); }
-    inline void SetImageSetId(const char* value) { m_imageSetId.assign(value); }
-    inline DeleteImageSetResult& WithImageSetId(const Aws::String& value) { SetImageSetId(value); return *this;}
-    inline DeleteImageSetResult& WithImageSetId(Aws::String&& value) { SetImageSetId(std::move(value)); return *this;}
-    inline DeleteImageSetResult& WithImageSetId(const char* value) { SetImageSetId(value); return *this;}
+    inline const Aws::String& GetImageSetId() const { return m_imageSetId; }
+    template<typename ImageSetIdT = Aws::String>
+    void SetImageSetId(ImageSetIdT&& value) { m_imageSetIdHasBeenSet = true; m_imageSetId = std::forward<ImageSetIdT>(value); }
+    template<typename ImageSetIdT = Aws::String>
+    DeleteImageSetResult& WithImageSetId(ImageSetIdT&& value) { SetImageSetId(std::forward<ImageSetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The image set state.</p>
      */
-    inline const ImageSetState& GetImageSetState() const{ return m_imageSetState; }
-    inline void SetImageSetState(const ImageSetState& value) { m_imageSetState = value; }
-    inline void SetImageSetState(ImageSetState&& value) { m_imageSetState = std::move(value); }
-    inline DeleteImageSetResult& WithImageSetState(const ImageSetState& value) { SetImageSetState(value); return *this;}
-    inline DeleteImageSetResult& WithImageSetState(ImageSetState&& value) { SetImageSetState(std::move(value)); return *this;}
+    inline ImageSetState GetImageSetState() const { return m_imageSetState; }
+    inline void SetImageSetState(ImageSetState value) { m_imageSetStateHasBeenSet = true; m_imageSetState = value; }
+    inline DeleteImageSetResult& WithImageSetState(ImageSetState value) { SetImageSetState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The image set workflow status.</p>
      */
-    inline const ImageSetWorkflowStatus& GetImageSetWorkflowStatus() const{ return m_imageSetWorkflowStatus; }
-    inline void SetImageSetWorkflowStatus(const ImageSetWorkflowStatus& value) { m_imageSetWorkflowStatus = value; }
-    inline void SetImageSetWorkflowStatus(ImageSetWorkflowStatus&& value) { m_imageSetWorkflowStatus = std::move(value); }
-    inline DeleteImageSetResult& WithImageSetWorkflowStatus(const ImageSetWorkflowStatus& value) { SetImageSetWorkflowStatus(value); return *this;}
-    inline DeleteImageSetResult& WithImageSetWorkflowStatus(ImageSetWorkflowStatus&& value) { SetImageSetWorkflowStatus(std::move(value)); return *this;}
+    inline ImageSetWorkflowStatus GetImageSetWorkflowStatus() const { return m_imageSetWorkflowStatus; }
+    inline void SetImageSetWorkflowStatus(ImageSetWorkflowStatus value) { m_imageSetWorkflowStatusHasBeenSet = true; m_imageSetWorkflowStatus = value; }
+    inline DeleteImageSetResult& WithImageSetWorkflowStatus(ImageSetWorkflowStatus value) { SetImageSetWorkflowStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteImageSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteImageSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteImageSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteImageSetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_datastoreId;
+    bool m_datastoreIdHasBeenSet = false;
 
     Aws::String m_imageSetId;
+    bool m_imageSetIdHasBeenSet = false;
 
-    ImageSetState m_imageSetState;
+    ImageSetState m_imageSetState{ImageSetState::NOT_SET};
+    bool m_imageSetStateHasBeenSet = false;
 
-    ImageSetWorkflowStatus m_imageSetWorkflowStatus;
+    ImageSetWorkflowStatus m_imageSetWorkflowStatus{ImageSetWorkflowStatus::NOT_SET};
+    bool m_imageSetWorkflowStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,7 +33,7 @@ namespace Model
   class AttributeKeyAndValue
   {
   public:
-    AWS_CLOUDDIRECTORY_API AttributeKeyAndValue();
+    AWS_CLOUDDIRECTORY_API AttributeKeyAndValue() = default;
     AWS_CLOUDDIRECTORY_API AttributeKeyAndValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API AttributeKeyAndValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>The key of the attribute.</p>
      */
-    inline const AttributeKey& GetKey() const{ return m_key; }
+    inline const AttributeKey& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const AttributeKey& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(AttributeKey&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline AttributeKeyAndValue& WithKey(const AttributeKey& value) { SetKey(value); return *this;}
-    inline AttributeKeyAndValue& WithKey(AttributeKey&& value) { SetKey(std::move(value)); return *this;}
+    template<typename KeyT = AttributeKey>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = AttributeKey>
+    AttributeKeyAndValue& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of the attribute.</p>
      */
-    inline const TypedAttributeValue& GetValue() const{ return m_value; }
+    inline const TypedAttributeValue& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const TypedAttributeValue& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(TypedAttributeValue&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline AttributeKeyAndValue& WithValue(const TypedAttributeValue& value) { SetValue(value); return *this;}
-    inline AttributeKeyAndValue& WithValue(TypedAttributeValue&& value) { SetValue(std::move(value)); return *this;}
+    template<typename ValueT = TypedAttributeValue>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = TypedAttributeValue>
+    AttributeKeyAndValue& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 

@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-DhcpConfiguration::DhcpConfiguration() : 
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 DhcpConfiguration::DhcpConfiguration(const XmlNode& xmlNode)
-  : DhcpConfiguration()
 {
   *this = xmlNode;
 }
@@ -48,6 +41,7 @@ DhcpConfiguration& DhcpConfiguration::operator =(const XmlNode& xmlNode)
     if(!valuesNode.IsNull())
     {
       XmlNode valuesMember = valuesNode.FirstChild("item");
+      m_valuesHasBeenSet = !valuesMember.IsNull();
       while(!valuesMember.IsNull())
       {
         m_values.push_back(valuesMember);

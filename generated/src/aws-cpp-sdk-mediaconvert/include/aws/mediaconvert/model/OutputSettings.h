@@ -31,7 +31,7 @@ namespace Model
   class OutputSettings
   {
   public:
-    AWS_MEDIACONVERT_API OutputSettings();
+    AWS_MEDIACONVERT_API OutputSettings() = default;
     AWS_MEDIACONVERT_API OutputSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API OutputSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * Settings for HLS output groups
      */
-    inline const HlsSettings& GetHlsSettings() const{ return m_hlsSettings; }
+    inline const HlsSettings& GetHlsSettings() const { return m_hlsSettings; }
     inline bool HlsSettingsHasBeenSet() const { return m_hlsSettingsHasBeenSet; }
-    inline void SetHlsSettings(const HlsSettings& value) { m_hlsSettingsHasBeenSet = true; m_hlsSettings = value; }
-    inline void SetHlsSettings(HlsSettings&& value) { m_hlsSettingsHasBeenSet = true; m_hlsSettings = std::move(value); }
-    inline OutputSettings& WithHlsSettings(const HlsSettings& value) { SetHlsSettings(value); return *this;}
-    inline OutputSettings& WithHlsSettings(HlsSettings&& value) { SetHlsSettings(std::move(value)); return *this;}
+    template<typename HlsSettingsT = HlsSettings>
+    void SetHlsSettings(HlsSettingsT&& value) { m_hlsSettingsHasBeenSet = true; m_hlsSettings = std::forward<HlsSettingsT>(value); }
+    template<typename HlsSettingsT = HlsSettings>
+    OutputSettings& WithHlsSettings(HlsSettingsT&& value) { SetHlsSettings(std::forward<HlsSettingsT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,14 +12,6 @@ using namespace Aws::tnb::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSolNetworkInstanceRequest::CreateSolNetworkInstanceRequest() : 
-    m_nsDescriptionHasBeenSet(false),
-    m_nsNameHasBeenSet(false),
-    m_nsdInfoIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateSolNetworkInstanceRequest::SerializePayload() const
 {
   JsonValue payload;

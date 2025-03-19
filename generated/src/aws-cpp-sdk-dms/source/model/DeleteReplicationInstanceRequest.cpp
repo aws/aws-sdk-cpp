@@ -12,11 +12,6 @@ using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteReplicationInstanceRequest::DeleteReplicationInstanceRequest() : 
-    m_replicationInstanceArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteReplicationInstanceRequest::SerializePayload() const
 {
   JsonValue payload;

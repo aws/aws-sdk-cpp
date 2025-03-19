@@ -29,7 +29,7 @@ namespace Model
   class ListGroupCertificateAuthoritiesResult
   {
   public:
-    AWS_GREENGRASS_API ListGroupCertificateAuthoritiesResult();
+    AWS_GREENGRASS_API ListGroupCertificateAuthoritiesResult() = default;
     AWS_GREENGRASS_API ListGroupCertificateAuthoritiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GREENGRASS_API ListGroupCertificateAuthoritiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * A list of certificate authorities associated with the group.
      */
-    inline const Aws::Vector<GroupCertificateAuthorityProperties>& GetGroupCertificateAuthorities() const{ return m_groupCertificateAuthorities; }
-    inline void SetGroupCertificateAuthorities(const Aws::Vector<GroupCertificateAuthorityProperties>& value) { m_groupCertificateAuthorities = value; }
-    inline void SetGroupCertificateAuthorities(Aws::Vector<GroupCertificateAuthorityProperties>&& value) { m_groupCertificateAuthorities = std::move(value); }
-    inline ListGroupCertificateAuthoritiesResult& WithGroupCertificateAuthorities(const Aws::Vector<GroupCertificateAuthorityProperties>& value) { SetGroupCertificateAuthorities(value); return *this;}
-    inline ListGroupCertificateAuthoritiesResult& WithGroupCertificateAuthorities(Aws::Vector<GroupCertificateAuthorityProperties>&& value) { SetGroupCertificateAuthorities(std::move(value)); return *this;}
-    inline ListGroupCertificateAuthoritiesResult& AddGroupCertificateAuthorities(const GroupCertificateAuthorityProperties& value) { m_groupCertificateAuthorities.push_back(value); return *this; }
-    inline ListGroupCertificateAuthoritiesResult& AddGroupCertificateAuthorities(GroupCertificateAuthorityProperties&& value) { m_groupCertificateAuthorities.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<GroupCertificateAuthorityProperties>& GetGroupCertificateAuthorities() const { return m_groupCertificateAuthorities; }
+    template<typename GroupCertificateAuthoritiesT = Aws::Vector<GroupCertificateAuthorityProperties>>
+    void SetGroupCertificateAuthorities(GroupCertificateAuthoritiesT&& value) { m_groupCertificateAuthoritiesHasBeenSet = true; m_groupCertificateAuthorities = std::forward<GroupCertificateAuthoritiesT>(value); }
+    template<typename GroupCertificateAuthoritiesT = Aws::Vector<GroupCertificateAuthorityProperties>>
+    ListGroupCertificateAuthoritiesResult& WithGroupCertificateAuthorities(GroupCertificateAuthoritiesT&& value) { SetGroupCertificateAuthorities(std::forward<GroupCertificateAuthoritiesT>(value)); return *this;}
+    template<typename GroupCertificateAuthoritiesT = GroupCertificateAuthorityProperties>
+    ListGroupCertificateAuthoritiesResult& AddGroupCertificateAuthorities(GroupCertificateAuthoritiesT&& value) { m_groupCertificateAuthoritiesHasBeenSet = true; m_groupCertificateAuthorities.emplace_back(std::forward<GroupCertificateAuthoritiesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListGroupCertificateAuthoritiesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListGroupCertificateAuthoritiesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListGroupCertificateAuthoritiesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListGroupCertificateAuthoritiesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<GroupCertificateAuthorityProperties> m_groupCertificateAuthorities;
+    bool m_groupCertificateAuthoritiesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

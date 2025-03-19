@@ -12,17 +12,6 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PostCommentForComparedCommitRequest::PostCommentForComparedCommitRequest() : 
-    m_repositoryNameHasBeenSet(false),
-    m_beforeCommitIdHasBeenSet(false),
-    m_afterCommitIdHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
-{
-}
-
 Aws::String PostCommentForComparedCommitRequest::SerializePayload() const
 {
   JsonValue payload;

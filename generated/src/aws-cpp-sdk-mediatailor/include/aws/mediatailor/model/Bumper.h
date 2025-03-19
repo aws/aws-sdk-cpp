@@ -35,7 +35,7 @@ namespace Model
   class Bumper
   {
   public:
-    AWS_MEDIATAILOR_API Bumper();
+    AWS_MEDIATAILOR_API Bumper() = default;
     AWS_MEDIATAILOR_API Bumper(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API Bumper& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,24 @@ namespace Model
     /**
      * <p>The URL for the end bumper asset.</p>
      */
-    inline const Aws::String& GetEndUrl() const{ return m_endUrl; }
+    inline const Aws::String& GetEndUrl() const { return m_endUrl; }
     inline bool EndUrlHasBeenSet() const { return m_endUrlHasBeenSet; }
-    inline void SetEndUrl(const Aws::String& value) { m_endUrlHasBeenSet = true; m_endUrl = value; }
-    inline void SetEndUrl(Aws::String&& value) { m_endUrlHasBeenSet = true; m_endUrl = std::move(value); }
-    inline void SetEndUrl(const char* value) { m_endUrlHasBeenSet = true; m_endUrl.assign(value); }
-    inline Bumper& WithEndUrl(const Aws::String& value) { SetEndUrl(value); return *this;}
-    inline Bumper& WithEndUrl(Aws::String&& value) { SetEndUrl(std::move(value)); return *this;}
-    inline Bumper& WithEndUrl(const char* value) { SetEndUrl(value); return *this;}
+    template<typename EndUrlT = Aws::String>
+    void SetEndUrl(EndUrlT&& value) { m_endUrlHasBeenSet = true; m_endUrl = std::forward<EndUrlT>(value); }
+    template<typename EndUrlT = Aws::String>
+    Bumper& WithEndUrl(EndUrlT&& value) { SetEndUrl(std::forward<EndUrlT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The URL for the start bumper asset.</p>
      */
-    inline const Aws::String& GetStartUrl() const{ return m_startUrl; }
+    inline const Aws::String& GetStartUrl() const { return m_startUrl; }
     inline bool StartUrlHasBeenSet() const { return m_startUrlHasBeenSet; }
-    inline void SetStartUrl(const Aws::String& value) { m_startUrlHasBeenSet = true; m_startUrl = value; }
-    inline void SetStartUrl(Aws::String&& value) { m_startUrlHasBeenSet = true; m_startUrl = std::move(value); }
-    inline void SetStartUrl(const char* value) { m_startUrlHasBeenSet = true; m_startUrl.assign(value); }
-    inline Bumper& WithStartUrl(const Aws::String& value) { SetStartUrl(value); return *this;}
-    inline Bumper& WithStartUrl(Aws::String&& value) { SetStartUrl(std::move(value)); return *this;}
-    inline Bumper& WithStartUrl(const char* value) { SetStartUrl(value); return *this;}
+    template<typename StartUrlT = Aws::String>
+    void SetStartUrl(StartUrlT&& value) { m_startUrlHasBeenSet = true; m_startUrl = std::forward<StartUrlT>(value); }
+    template<typename StartUrlT = Aws::String>
+    Bumper& WithStartUrl(StartUrlT&& value) { SetStartUrl(std::forward<StartUrlT>(value)); return *this;}
     ///@}
   private:
 

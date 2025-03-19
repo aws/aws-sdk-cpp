@@ -12,16 +12,6 @@ using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDeploymentConfigRequest::CreateDeploymentConfigRequest() : 
-    m_deploymentConfigNameHasBeenSet(false),
-    m_minimumHealthyHostsHasBeenSet(false),
-    m_trafficRoutingConfigHasBeenSet(false),
-    m_computePlatform(ComputePlatform::NOT_SET),
-    m_computePlatformHasBeenSet(false),
-    m_zonalConfigHasBeenSet(false)
-{
-}
-
 Aws::String CreateDeploymentConfigRequest::SerializePayload() const
 {
   JsonValue payload;

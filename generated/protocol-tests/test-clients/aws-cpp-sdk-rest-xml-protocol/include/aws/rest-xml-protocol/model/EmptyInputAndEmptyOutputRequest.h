@@ -19,7 +19,7 @@ namespace Model
   class EmptyInputAndEmptyOutputRequest : public RestXmlProtocolRequest
   {
   public:
-    AWS_RESTXMLPROTOCOL_API EmptyInputAndEmptyOutputRequest();
+    AWS_RESTXMLPROTOCOL_API EmptyInputAndEmptyOutputRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

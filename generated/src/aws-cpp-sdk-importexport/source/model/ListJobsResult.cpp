@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListJobsResult::ListJobsResult() : 
-    m_isTruncated(false)
-{
-}
-
 ListJobsResult::ListJobsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : ListJobsResult()
 {
   *this = result;
 }
@@ -44,23 +38,27 @@ ListJobsResult& ListJobsResult::operator =(const Aws::AmazonWebServiceResult<Xml
     if(!jobsNode.IsNull())
     {
       XmlNode jobsMember = jobsNode.FirstChild("member");
+      m_jobsHasBeenSet = !jobsMember.IsNull();
       while(!jobsMember.IsNull())
       {
         m_jobs.push_back(jobsMember);
         jobsMember = jobsMember.NextNode("member");
       }
 
+      m_jobsHasBeenSet = true;
     }
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
     if(!isTruncatedNode.IsNull())
     {
       m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isTruncatedNode.GetText()).c_str()).c_str());
+      m_isTruncatedHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ImportExport::Model::ListJobsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

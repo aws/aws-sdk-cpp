@@ -19,7 +19,7 @@ namespace Model
   class DisableMacieRequest : public Macie2Request
   {
   public:
-    AWS_MACIE2_API DisableMacieRequest();
+    AWS_MACIE2_API DisableMacieRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

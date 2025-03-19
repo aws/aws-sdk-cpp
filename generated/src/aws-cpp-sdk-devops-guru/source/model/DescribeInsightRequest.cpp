@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeInsightRequest::DescribeInsightRequest() : 
-    m_idHasBeenSet(false),
-    m_accountIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeInsightRequest::SerializePayload() const
 {
   return {};

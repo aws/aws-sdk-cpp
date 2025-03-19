@@ -12,11 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetContainerImagesRequest::GetContainerImagesRequest() : 
-    m_serviceNameHasBeenSet(false)
-{
-}
-
 Aws::String GetContainerImagesRequest::SerializePayload() const
 {
   JsonValue payload;

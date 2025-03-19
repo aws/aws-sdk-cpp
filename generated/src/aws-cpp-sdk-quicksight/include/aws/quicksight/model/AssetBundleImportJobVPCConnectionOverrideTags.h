@@ -34,7 +34,7 @@ namespace Model
   class AssetBundleImportJobVPCConnectionOverrideTags
   {
   public:
-    AWS_QUICKSIGHT_API AssetBundleImportJobVPCConnectionOverrideTags();
+    AWS_QUICKSIGHT_API AssetBundleImportJobVPCConnectionOverrideTags() = default;
     AWS_QUICKSIGHT_API AssetBundleImportJobVPCConnectionOverrideTags(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API AssetBundleImportJobVPCConnectionOverrideTags& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,15 +45,14 @@ namespace Model
      * <p>A list of VPC connection IDs that you want to apply overrides to. You can use
      * <code>*</code> to override all VPC connections in this asset bundle.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetVPCConnectionIds() const{ return m_vPCConnectionIds; }
+    inline const Aws::Vector<Aws::String>& GetVPCConnectionIds() const { return m_vPCConnectionIds; }
     inline bool VPCConnectionIdsHasBeenSet() const { return m_vPCConnectionIdsHasBeenSet; }
-    inline void SetVPCConnectionIds(const Aws::Vector<Aws::String>& value) { m_vPCConnectionIdsHasBeenSet = true; m_vPCConnectionIds = value; }
-    inline void SetVPCConnectionIds(Aws::Vector<Aws::String>&& value) { m_vPCConnectionIdsHasBeenSet = true; m_vPCConnectionIds = std::move(value); }
-    inline AssetBundleImportJobVPCConnectionOverrideTags& WithVPCConnectionIds(const Aws::Vector<Aws::String>& value) { SetVPCConnectionIds(value); return *this;}
-    inline AssetBundleImportJobVPCConnectionOverrideTags& WithVPCConnectionIds(Aws::Vector<Aws::String>&& value) { SetVPCConnectionIds(std::move(value)); return *this;}
-    inline AssetBundleImportJobVPCConnectionOverrideTags& AddVPCConnectionIds(const Aws::String& value) { m_vPCConnectionIdsHasBeenSet = true; m_vPCConnectionIds.push_back(value); return *this; }
-    inline AssetBundleImportJobVPCConnectionOverrideTags& AddVPCConnectionIds(Aws::String&& value) { m_vPCConnectionIdsHasBeenSet = true; m_vPCConnectionIds.push_back(std::move(value)); return *this; }
-    inline AssetBundleImportJobVPCConnectionOverrideTags& AddVPCConnectionIds(const char* value) { m_vPCConnectionIdsHasBeenSet = true; m_vPCConnectionIds.push_back(value); return *this; }
+    template<typename VPCConnectionIdsT = Aws::Vector<Aws::String>>
+    void SetVPCConnectionIds(VPCConnectionIdsT&& value) { m_vPCConnectionIdsHasBeenSet = true; m_vPCConnectionIds = std::forward<VPCConnectionIdsT>(value); }
+    template<typename VPCConnectionIdsT = Aws::Vector<Aws::String>>
+    AssetBundleImportJobVPCConnectionOverrideTags& WithVPCConnectionIds(VPCConnectionIdsT&& value) { SetVPCConnectionIds(std::forward<VPCConnectionIdsT>(value)); return *this;}
+    template<typename VPCConnectionIdsT = Aws::String>
+    AssetBundleImportJobVPCConnectionOverrideTags& AddVPCConnectionIds(VPCConnectionIdsT&& value) { m_vPCConnectionIdsHasBeenSet = true; m_vPCConnectionIds.emplace_back(std::forward<VPCConnectionIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -61,14 +60,14 @@ namespace Model
      * <p>A list of tags for the VPC connections that you want to apply overrides
      * to.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline AssetBundleImportJobVPCConnectionOverrideTags& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline AssetBundleImportJobVPCConnectionOverrideTags& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline AssetBundleImportJobVPCConnectionOverrideTags& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline AssetBundleImportJobVPCConnectionOverrideTags& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    AssetBundleImportJobVPCConnectionOverrideTags& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    AssetBundleImportJobVPCConnectionOverrideTags& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

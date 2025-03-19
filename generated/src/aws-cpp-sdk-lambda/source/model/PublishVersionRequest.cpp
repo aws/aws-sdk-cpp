@@ -12,14 +12,6 @@ using namespace Aws::Lambda::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PublishVersionRequest::PublishVersionRequest() : 
-    m_functionNameHasBeenSet(false),
-    m_codeSha256HasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_revisionIdHasBeenSet(false)
-{
-}
-
 Aws::String PublishVersionRequest::SerializePayload() const
 {
   JsonValue payload;

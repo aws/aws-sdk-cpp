@@ -36,7 +36,7 @@ namespace Model
   class ResourceServerScopeType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API ResourceServerScopeType();
+    AWS_COGNITOIDENTITYPROVIDER_API ResourceServerScopeType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API ResourceServerScopeType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API ResourceServerScopeType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,28 +50,24 @@ namespace Model
      * <code>exampleResourceServer</code>, you request and receive the scope
      * <code>exampleResourceServer/exampleScope</code>.</p>
      */
-    inline const Aws::String& GetScopeName() const{ return m_scopeName; }
+    inline const Aws::String& GetScopeName() const { return m_scopeName; }
     inline bool ScopeNameHasBeenSet() const { return m_scopeNameHasBeenSet; }
-    inline void SetScopeName(const Aws::String& value) { m_scopeNameHasBeenSet = true; m_scopeName = value; }
-    inline void SetScopeName(Aws::String&& value) { m_scopeNameHasBeenSet = true; m_scopeName = std::move(value); }
-    inline void SetScopeName(const char* value) { m_scopeNameHasBeenSet = true; m_scopeName.assign(value); }
-    inline ResourceServerScopeType& WithScopeName(const Aws::String& value) { SetScopeName(value); return *this;}
-    inline ResourceServerScopeType& WithScopeName(Aws::String&& value) { SetScopeName(std::move(value)); return *this;}
-    inline ResourceServerScopeType& WithScopeName(const char* value) { SetScopeName(value); return *this;}
+    template<typename ScopeNameT = Aws::String>
+    void SetScopeName(ScopeNameT&& value) { m_scopeNameHasBeenSet = true; m_scopeName = std::forward<ScopeNameT>(value); }
+    template<typename ScopeNameT = Aws::String>
+    ResourceServerScopeType& WithScopeName(ScopeNameT&& value) { SetScopeName(std::forward<ScopeNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A friendly description of a custom scope.</p>
      */
-    inline const Aws::String& GetScopeDescription() const{ return m_scopeDescription; }
+    inline const Aws::String& GetScopeDescription() const { return m_scopeDescription; }
     inline bool ScopeDescriptionHasBeenSet() const { return m_scopeDescriptionHasBeenSet; }
-    inline void SetScopeDescription(const Aws::String& value) { m_scopeDescriptionHasBeenSet = true; m_scopeDescription = value; }
-    inline void SetScopeDescription(Aws::String&& value) { m_scopeDescriptionHasBeenSet = true; m_scopeDescription = std::move(value); }
-    inline void SetScopeDescription(const char* value) { m_scopeDescriptionHasBeenSet = true; m_scopeDescription.assign(value); }
-    inline ResourceServerScopeType& WithScopeDescription(const Aws::String& value) { SetScopeDescription(value); return *this;}
-    inline ResourceServerScopeType& WithScopeDescription(Aws::String&& value) { SetScopeDescription(std::move(value)); return *this;}
-    inline ResourceServerScopeType& WithScopeDescription(const char* value) { SetScopeDescription(value); return *this;}
+    template<typename ScopeDescriptionT = Aws::String>
+    void SetScopeDescription(ScopeDescriptionT&& value) { m_scopeDescriptionHasBeenSet = true; m_scopeDescription = std::forward<ScopeDescriptionT>(value); }
+    template<typename ScopeDescriptionT = Aws::String>
+    ResourceServerScopeType& WithScopeDescription(ScopeDescriptionT&& value) { SetScopeDescription(std::forward<ScopeDescriptionT>(value)); return *this;}
     ///@}
   private:
 

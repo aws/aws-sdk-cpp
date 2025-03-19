@@ -34,7 +34,7 @@ namespace Model
   class OrganizationFeatureStatistics
   {
   public:
-    AWS_GUARDDUTY_API OrganizationFeatureStatistics();
+    AWS_GUARDDUTY_API OrganizationFeatureStatistics() = default;
     AWS_GUARDDUTY_API OrganizationFeatureStatistics(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API OrganizationFeatureStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,19 +44,17 @@ namespace Model
     /**
      * <p>Name of the feature.</p>
      */
-    inline const OrgFeature& GetName() const{ return m_name; }
+    inline OrgFeature GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const OrgFeature& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(OrgFeature&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline OrganizationFeatureStatistics& WithName(const OrgFeature& value) { SetName(value); return *this;}
-    inline OrganizationFeatureStatistics& WithName(OrgFeature&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(OrgFeature value) { m_nameHasBeenSet = true; m_name = value; }
+    inline OrganizationFeatureStatistics& WithName(OrgFeature value) { SetName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Total number of accounts that have enabled a specific feature.</p>
      */
-    inline int GetEnabledAccountsCount() const{ return m_enabledAccountsCount; }
+    inline int GetEnabledAccountsCount() const { return m_enabledAccountsCount; }
     inline bool EnabledAccountsCountHasBeenSet() const { return m_enabledAccountsCountHasBeenSet; }
     inline void SetEnabledAccountsCount(int value) { m_enabledAccountsCountHasBeenSet = true; m_enabledAccountsCount = value; }
     inline OrganizationFeatureStatistics& WithEnabledAccountsCount(int value) { SetEnabledAccountsCount(value); return *this;}
@@ -66,21 +64,21 @@ namespace Model
     /**
      * <p>Name of the additional configuration.</p>
      */
-    inline const Aws::Vector<OrganizationFeatureStatisticsAdditionalConfiguration>& GetAdditionalConfiguration() const{ return m_additionalConfiguration; }
+    inline const Aws::Vector<OrganizationFeatureStatisticsAdditionalConfiguration>& GetAdditionalConfiguration() const { return m_additionalConfiguration; }
     inline bool AdditionalConfigurationHasBeenSet() const { return m_additionalConfigurationHasBeenSet; }
-    inline void SetAdditionalConfiguration(const Aws::Vector<OrganizationFeatureStatisticsAdditionalConfiguration>& value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration = value; }
-    inline void SetAdditionalConfiguration(Aws::Vector<OrganizationFeatureStatisticsAdditionalConfiguration>&& value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration = std::move(value); }
-    inline OrganizationFeatureStatistics& WithAdditionalConfiguration(const Aws::Vector<OrganizationFeatureStatisticsAdditionalConfiguration>& value) { SetAdditionalConfiguration(value); return *this;}
-    inline OrganizationFeatureStatistics& WithAdditionalConfiguration(Aws::Vector<OrganizationFeatureStatisticsAdditionalConfiguration>&& value) { SetAdditionalConfiguration(std::move(value)); return *this;}
-    inline OrganizationFeatureStatistics& AddAdditionalConfiguration(const OrganizationFeatureStatisticsAdditionalConfiguration& value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration.push_back(value); return *this; }
-    inline OrganizationFeatureStatistics& AddAdditionalConfiguration(OrganizationFeatureStatisticsAdditionalConfiguration&& value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration.push_back(std::move(value)); return *this; }
+    template<typename AdditionalConfigurationT = Aws::Vector<OrganizationFeatureStatisticsAdditionalConfiguration>>
+    void SetAdditionalConfiguration(AdditionalConfigurationT&& value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration = std::forward<AdditionalConfigurationT>(value); }
+    template<typename AdditionalConfigurationT = Aws::Vector<OrganizationFeatureStatisticsAdditionalConfiguration>>
+    OrganizationFeatureStatistics& WithAdditionalConfiguration(AdditionalConfigurationT&& value) { SetAdditionalConfiguration(std::forward<AdditionalConfigurationT>(value)); return *this;}
+    template<typename AdditionalConfigurationT = OrganizationFeatureStatisticsAdditionalConfiguration>
+    OrganizationFeatureStatistics& AddAdditionalConfiguration(AdditionalConfigurationT&& value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration.emplace_back(std::forward<AdditionalConfigurationT>(value)); return *this; }
     ///@}
   private:
 
-    OrgFeature m_name;
+    OrgFeature m_name{OrgFeature::NOT_SET};
     bool m_nameHasBeenSet = false;
 
-    int m_enabledAccountsCount;
+    int m_enabledAccountsCount{0};
     bool m_enabledAccountsCountHasBeenSet = false;
 
     Aws::Vector<OrganizationFeatureStatisticsAdditionalConfiguration> m_additionalConfiguration;

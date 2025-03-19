@@ -18,33 +18,7 @@ namespace MediaPackage
 namespace Model
 {
 
-HlsPackage::HlsPackage() : 
-    m_adMarkers(AdMarkers::NOT_SET),
-    m_adMarkersHasBeenSet(false),
-    m_adTriggersHasBeenSet(false),
-    m_adsOnDeliveryRestrictions(AdsOnDeliveryRestrictions::NOT_SET),
-    m_adsOnDeliveryRestrictionsHasBeenSet(false),
-    m_encryptionHasBeenSet(false),
-    m_includeDvbSubtitles(false),
-    m_includeDvbSubtitlesHasBeenSet(false),
-    m_includeIframeOnlyStream(false),
-    m_includeIframeOnlyStreamHasBeenSet(false),
-    m_playlistType(PlaylistType::NOT_SET),
-    m_playlistTypeHasBeenSet(false),
-    m_playlistWindowSeconds(0),
-    m_playlistWindowSecondsHasBeenSet(false),
-    m_programDateTimeIntervalSeconds(0),
-    m_programDateTimeIntervalSecondsHasBeenSet(false),
-    m_segmentDurationSeconds(0),
-    m_segmentDurationSecondsHasBeenSet(false),
-    m_streamSelectionHasBeenSet(false),
-    m_useAudioRenditionGroup(false),
-    m_useAudioRenditionGroupHasBeenSet(false)
-{
-}
-
 HlsPackage::HlsPackage(JsonView jsonValue)
-  : HlsPackage()
 {
   *this = jsonValue;
 }
@@ -54,10 +28,8 @@ HlsPackage& HlsPackage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("adMarkers"))
   {
     m_adMarkers = AdMarkersMapper::GetAdMarkersForName(jsonValue.GetString("adMarkers"));
-
     m_adMarkersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("adTriggers"))
   {
     Aws::Utils::Array<JsonView> adTriggersJsonList = jsonValue.GetArray("adTriggers");
@@ -67,77 +39,56 @@ HlsPackage& HlsPackage::operator =(JsonView jsonValue)
     }
     m_adTriggersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("adsOnDeliveryRestrictions"))
   {
     m_adsOnDeliveryRestrictions = AdsOnDeliveryRestrictionsMapper::GetAdsOnDeliveryRestrictionsForName(jsonValue.GetString("adsOnDeliveryRestrictions"));
-
     m_adsOnDeliveryRestrictionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encryption"))
   {
     m_encryption = jsonValue.GetObject("encryption");
-
     m_encryptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("includeDvbSubtitles"))
   {
     m_includeDvbSubtitles = jsonValue.GetBool("includeDvbSubtitles");
-
     m_includeDvbSubtitlesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("includeIframeOnlyStream"))
   {
     m_includeIframeOnlyStream = jsonValue.GetBool("includeIframeOnlyStream");
-
     m_includeIframeOnlyStreamHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("playlistType"))
   {
     m_playlistType = PlaylistTypeMapper::GetPlaylistTypeForName(jsonValue.GetString("playlistType"));
-
     m_playlistTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("playlistWindowSeconds"))
   {
     m_playlistWindowSeconds = jsonValue.GetInteger("playlistWindowSeconds");
-
     m_playlistWindowSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("programDateTimeIntervalSeconds"))
   {
     m_programDateTimeIntervalSeconds = jsonValue.GetInteger("programDateTimeIntervalSeconds");
-
     m_programDateTimeIntervalSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("segmentDurationSeconds"))
   {
     m_segmentDurationSeconds = jsonValue.GetInteger("segmentDurationSeconds");
-
     m_segmentDurationSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("streamSelection"))
   {
     m_streamSelection = jsonValue.GetObject("streamSelection");
-
     m_streamSelectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("useAudioRenditionGroup"))
   {
     m_useAudioRenditionGroup = jsonValue.GetBool("useAudioRenditionGroup");
-
     m_useAudioRenditionGroupHasBeenSet = true;
   }
-
   return *this;
 }
 

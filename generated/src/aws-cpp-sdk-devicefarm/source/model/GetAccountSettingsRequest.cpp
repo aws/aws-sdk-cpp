@@ -12,10 +12,6 @@ using namespace Aws::DeviceFarm::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAccountSettingsRequest::GetAccountSettingsRequest()
-{
-}
-
 Aws::String GetAccountSettingsRequest::SerializePayload() const
 {
   return "{}";

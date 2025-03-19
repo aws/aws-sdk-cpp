@@ -35,7 +35,7 @@ namespace Model
   class UpdateClusterResult
   {
   public:
-    AWS_DSQL_API UpdateClusterResult();
+    AWS_DSQL_API UpdateClusterResult() = default;
     AWS_DSQL_API UpdateClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DSQL_API UpdateClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,56 +44,50 @@ namespace Model
     /**
      * <p>The ID of the cluster to update.</p>
      */
-    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
-    inline void SetIdentifier(const Aws::String& value) { m_identifier = value; }
-    inline void SetIdentifier(Aws::String&& value) { m_identifier = std::move(value); }
-    inline void SetIdentifier(const char* value) { m_identifier.assign(value); }
-    inline UpdateClusterResult& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-    inline UpdateClusterResult& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline UpdateClusterResult& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    UpdateClusterResult& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the updated cluster.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline UpdateClusterResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline UpdateClusterResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline UpdateClusterResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    UpdateClusterResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the updated cluster.</p>
      */
-    inline const ClusterStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const ClusterStatus& value) { m_status = value; }
-    inline void SetStatus(ClusterStatus&& value) { m_status = std::move(value); }
-    inline UpdateClusterResult& WithStatus(const ClusterStatus& value) { SetStatus(value); return *this;}
-    inline UpdateClusterResult& WithStatus(ClusterStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline ClusterStatus GetStatus() const { return m_status; }
+    inline void SetStatus(ClusterStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline UpdateClusterResult& WithStatus(ClusterStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time of when the cluster was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline UpdateClusterResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline UpdateClusterResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    UpdateClusterResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Whether deletion protection is enabled for the updated cluster.</p>
      */
-    inline bool GetDeletionProtectionEnabled() const{ return m_deletionProtectionEnabled; }
-    inline void SetDeletionProtectionEnabled(bool value) { m_deletionProtectionEnabled = value; }
+    inline bool GetDeletionProtectionEnabled() const { return m_deletionProtectionEnabled; }
+    inline void SetDeletionProtectionEnabled(bool value) { m_deletionProtectionEnabledHasBeenSet = true; m_deletionProtectionEnabled = value; }
     inline UpdateClusterResult& WithDeletionProtectionEnabled(bool value) { SetDeletionProtectionEnabled(value); return *this;}
     ///@}
 
@@ -101,13 +95,11 @@ namespace Model
     /**
      * <p>The Region that receives all data you write to linked clusters.</p>
      */
-    inline const Aws::String& GetWitnessRegion() const{ return m_witnessRegion; }
-    inline void SetWitnessRegion(const Aws::String& value) { m_witnessRegion = value; }
-    inline void SetWitnessRegion(Aws::String&& value) { m_witnessRegion = std::move(value); }
-    inline void SetWitnessRegion(const char* value) { m_witnessRegion.assign(value); }
-    inline UpdateClusterResult& WithWitnessRegion(const Aws::String& value) { SetWitnessRegion(value); return *this;}
-    inline UpdateClusterResult& WithWitnessRegion(Aws::String&& value) { SetWitnessRegion(std::move(value)); return *this;}
-    inline UpdateClusterResult& WithWitnessRegion(const char* value) { SetWitnessRegion(value); return *this;}
+    inline const Aws::String& GetWitnessRegion() const { return m_witnessRegion; }
+    template<typename WitnessRegionT = Aws::String>
+    void SetWitnessRegion(WitnessRegionT&& value) { m_witnessRegionHasBeenSet = true; m_witnessRegion = std::forward<WitnessRegionT>(value); }
+    template<typename WitnessRegionT = Aws::String>
+    UpdateClusterResult& WithWitnessRegion(WitnessRegionT&& value) { SetWitnessRegion(std::forward<WitnessRegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,43 +107,48 @@ namespace Model
      * <p>The ARNs of the clusters linked to the updated cluster. Applicable only for
      * multi-Region clusters.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetLinkedClusterArns() const{ return m_linkedClusterArns; }
-    inline void SetLinkedClusterArns(const Aws::Vector<Aws::String>& value) { m_linkedClusterArns = value; }
-    inline void SetLinkedClusterArns(Aws::Vector<Aws::String>&& value) { m_linkedClusterArns = std::move(value); }
-    inline UpdateClusterResult& WithLinkedClusterArns(const Aws::Vector<Aws::String>& value) { SetLinkedClusterArns(value); return *this;}
-    inline UpdateClusterResult& WithLinkedClusterArns(Aws::Vector<Aws::String>&& value) { SetLinkedClusterArns(std::move(value)); return *this;}
-    inline UpdateClusterResult& AddLinkedClusterArns(const Aws::String& value) { m_linkedClusterArns.push_back(value); return *this; }
-    inline UpdateClusterResult& AddLinkedClusterArns(Aws::String&& value) { m_linkedClusterArns.push_back(std::move(value)); return *this; }
-    inline UpdateClusterResult& AddLinkedClusterArns(const char* value) { m_linkedClusterArns.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetLinkedClusterArns() const { return m_linkedClusterArns; }
+    template<typename LinkedClusterArnsT = Aws::Vector<Aws::String>>
+    void SetLinkedClusterArns(LinkedClusterArnsT&& value) { m_linkedClusterArnsHasBeenSet = true; m_linkedClusterArns = std::forward<LinkedClusterArnsT>(value); }
+    template<typename LinkedClusterArnsT = Aws::Vector<Aws::String>>
+    UpdateClusterResult& WithLinkedClusterArns(LinkedClusterArnsT&& value) { SetLinkedClusterArns(std::forward<LinkedClusterArnsT>(value)); return *this;}
+    template<typename LinkedClusterArnsT = Aws::String>
+    UpdateClusterResult& AddLinkedClusterArns(LinkedClusterArnsT&& value) { m_linkedClusterArnsHasBeenSet = true; m_linkedClusterArns.emplace_back(std::forward<LinkedClusterArnsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateClusterResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateClusterResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateClusterResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateClusterResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_identifier;
+    bool m_identifierHasBeenSet = false;
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
-    ClusterStatus m_status;
+    ClusterStatus m_status{ClusterStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
-    bool m_deletionProtectionEnabled;
+    bool m_deletionProtectionEnabled{false};
+    bool m_deletionProtectionEnabledHasBeenSet = false;
 
     Aws::String m_witnessRegion;
+    bool m_witnessRegionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_linkedClusterArns;
+    bool m_linkedClusterArnsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

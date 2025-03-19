@@ -20,17 +20,7 @@ namespace Route53
 namespace Model
 {
 
-CidrCollection::CidrCollection() : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false)
-{
-}
-
 CidrCollection::CidrCollection(const XmlNode& xmlNode)
-  : CidrCollection()
 {
   *this = xmlNode;
 }

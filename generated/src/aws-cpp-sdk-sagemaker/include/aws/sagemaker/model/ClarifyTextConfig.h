@@ -35,7 +35,7 @@ namespace Model
   class ClarifyTextConfig
   {
   public:
-    AWS_SAGEMAKER_API ClarifyTextConfig();
+    AWS_SAGEMAKER_API ClarifyTextConfig() = default;
     AWS_SAGEMAKER_API ClarifyTextConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ClarifyTextConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,10 @@ namespace Model
      * language. </p>  <p>For a mix of multiple languages, use code
      * <code>'xx'</code>.</p> 
      */
-    inline const ClarifyTextLanguage& GetLanguage() const{ return m_language; }
+    inline ClarifyTextLanguage GetLanguage() const { return m_language; }
     inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
-    inline void SetLanguage(const ClarifyTextLanguage& value) { m_languageHasBeenSet = true; m_language = value; }
-    inline void SetLanguage(ClarifyTextLanguage&& value) { m_languageHasBeenSet = true; m_language = std::move(value); }
-    inline ClarifyTextConfig& WithLanguage(const ClarifyTextLanguage& value) { SetLanguage(value); return *this;}
-    inline ClarifyTextConfig& WithLanguage(ClarifyTextLanguage&& value) { SetLanguage(std::move(value)); return *this;}
+    inline void SetLanguage(ClarifyTextLanguage value) { m_languageHasBeenSet = true; m_language = value; }
+    inline ClarifyTextConfig& WithLanguage(ClarifyTextLanguage value) { SetLanguage(value); return *this;}
     ///@}
 
     ///@{
@@ -64,19 +62,17 @@ namespace Model
      * the text is treated as a feature. SHAP values are computed for each
      * unit/feature.</p>
      */
-    inline const ClarifyTextGranularity& GetGranularity() const{ return m_granularity; }
+    inline ClarifyTextGranularity GetGranularity() const { return m_granularity; }
     inline bool GranularityHasBeenSet() const { return m_granularityHasBeenSet; }
-    inline void SetGranularity(const ClarifyTextGranularity& value) { m_granularityHasBeenSet = true; m_granularity = value; }
-    inline void SetGranularity(ClarifyTextGranularity&& value) { m_granularityHasBeenSet = true; m_granularity = std::move(value); }
-    inline ClarifyTextConfig& WithGranularity(const ClarifyTextGranularity& value) { SetGranularity(value); return *this;}
-    inline ClarifyTextConfig& WithGranularity(ClarifyTextGranularity&& value) { SetGranularity(std::move(value)); return *this;}
+    inline void SetGranularity(ClarifyTextGranularity value) { m_granularityHasBeenSet = true; m_granularity = value; }
+    inline ClarifyTextConfig& WithGranularity(ClarifyTextGranularity value) { SetGranularity(value); return *this;}
     ///@}
   private:
 
-    ClarifyTextLanguage m_language;
+    ClarifyTextLanguage m_language{ClarifyTextLanguage::NOT_SET};
     bool m_languageHasBeenSet = false;
 
-    ClarifyTextGranularity m_granularity;
+    ClarifyTextGranularity m_granularity{ClarifyTextGranularity::NOT_SET};
     bool m_granularityHasBeenSet = false;
   };
 

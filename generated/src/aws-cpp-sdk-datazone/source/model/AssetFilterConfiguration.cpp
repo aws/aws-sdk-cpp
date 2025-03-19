@@ -18,14 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-AssetFilterConfiguration::AssetFilterConfiguration() : 
-    m_columnConfigurationHasBeenSet(false),
-    m_rowConfigurationHasBeenSet(false)
-{
-}
-
 AssetFilterConfiguration::AssetFilterConfiguration(JsonView jsonValue)
-  : AssetFilterConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AssetFilterConfiguration& AssetFilterConfiguration::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("columnConfiguration"))
   {
     m_columnConfiguration = jsonValue.GetObject("columnConfiguration");
-
     m_columnConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rowConfiguration"))
   {
     m_rowConfiguration = jsonValue.GetObject("rowConfiguration");
-
     m_rowConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

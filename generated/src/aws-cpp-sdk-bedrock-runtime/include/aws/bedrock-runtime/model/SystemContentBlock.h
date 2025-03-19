@@ -32,7 +32,7 @@ namespace Model
   class SystemContentBlock
   {
   public:
-    AWS_BEDROCKRUNTIME_API SystemContentBlock();
+    AWS_BEDROCKRUNTIME_API SystemContentBlock() = default;
     AWS_BEDROCKRUNTIME_API SystemContentBlock(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API SystemContentBlock& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>A system prompt for the model. </p>
      */
-    inline const Aws::String& GetText() const{ return m_text; }
+    inline const Aws::String& GetText() const { return m_text; }
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-    inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-    inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-    inline SystemContentBlock& WithText(const Aws::String& value) { SetText(value); return *this;}
-    inline SystemContentBlock& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-    inline SystemContentBlock& WithText(const char* value) { SetText(value); return *this;}
+    template<typename TextT = Aws::String>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = Aws::String>
+    SystemContentBlock& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +59,12 @@ namespace Model
      * API operations. </p> <p>For more information, see <i>Use a guardrail with the
      * Converse API</i> in the <i>Amazon Bedrock User Guide</i>.</p>
      */
-    inline const GuardrailConverseContentBlock& GetGuardContent() const{ return m_guardContent; }
+    inline const GuardrailConverseContentBlock& GetGuardContent() const { return m_guardContent; }
     inline bool GuardContentHasBeenSet() const { return m_guardContentHasBeenSet; }
-    inline void SetGuardContent(const GuardrailConverseContentBlock& value) { m_guardContentHasBeenSet = true; m_guardContent = value; }
-    inline void SetGuardContent(GuardrailConverseContentBlock&& value) { m_guardContentHasBeenSet = true; m_guardContent = std::move(value); }
-    inline SystemContentBlock& WithGuardContent(const GuardrailConverseContentBlock& value) { SetGuardContent(value); return *this;}
-    inline SystemContentBlock& WithGuardContent(GuardrailConverseContentBlock&& value) { SetGuardContent(std::move(value)); return *this;}
+    template<typename GuardContentT = GuardrailConverseContentBlock>
+    void SetGuardContent(GuardContentT&& value) { m_guardContentHasBeenSet = true; m_guardContent = std::forward<GuardContentT>(value); }
+    template<typename GuardContentT = GuardrailConverseContentBlock>
+    SystemContentBlock& WithGuardContent(GuardContentT&& value) { SetGuardContent(std::forward<GuardContentT>(value)); return *this;}
     ///@}
   private:
 

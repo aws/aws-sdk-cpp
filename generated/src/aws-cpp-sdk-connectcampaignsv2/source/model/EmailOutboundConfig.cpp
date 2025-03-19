@@ -18,15 +18,7 @@ namespace ConnectCampaignsV2
 namespace Model
 {
 
-EmailOutboundConfig::EmailOutboundConfig() : 
-    m_connectSourceEmailAddressHasBeenSet(false),
-    m_sourceEmailAddressDisplayNameHasBeenSet(false),
-    m_wisdomTemplateArnHasBeenSet(false)
-{
-}
-
 EmailOutboundConfig::EmailOutboundConfig(JsonView jsonValue)
-  : EmailOutboundConfig()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ EmailOutboundConfig& EmailOutboundConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("connectSourceEmailAddress"))
   {
     m_connectSourceEmailAddress = jsonValue.GetString("connectSourceEmailAddress");
-
     m_connectSourceEmailAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceEmailAddressDisplayName"))
   {
     m_sourceEmailAddressDisplayName = jsonValue.GetString("sourceEmailAddressDisplayName");
-
     m_sourceEmailAddressDisplayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("wisdomTemplateArn"))
   {
     m_wisdomTemplateArn = jsonValue.GetString("wisdomTemplateArn");
-
     m_wisdomTemplateArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace IoTManagedIntegrations
 namespace Model
 {
 
-NotificationConfigurationSummary::NotificationConfigurationSummary() : 
-    m_eventType(EventType::NOT_SET),
-    m_eventTypeHasBeenSet(false),
-    m_destinationNameHasBeenSet(false)
-{
-}
-
 NotificationConfigurationSummary::NotificationConfigurationSummary(JsonView jsonValue)
-  : NotificationConfigurationSummary()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ NotificationConfigurationSummary& NotificationConfigurationSummary::operator =(J
   if(jsonValue.ValueExists("EventType"))
   {
     m_eventType = EventTypeMapper::GetEventTypeForName(jsonValue.GetString("EventType"));
-
     m_eventTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationName"))
   {
     m_destinationName = jsonValue.GetString("DestinationName");
-
     m_destinationNameHasBeenSet = true;
   }
-
   return *this;
 }
 

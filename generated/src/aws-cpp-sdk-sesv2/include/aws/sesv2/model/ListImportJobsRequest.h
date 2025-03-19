@@ -27,7 +27,7 @@ namespace Model
   class ListImportJobsRequest : public SESV2Request
   {
   public:
-    AWS_SESV2_API ListImportJobsRequest();
+    AWS_SESV2_API ListImportJobsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,12 +43,10 @@ namespace Model
      * <p>The destination of the import job, which can be used to list import jobs that
      * have a certain <code>ImportDestinationType</code>.</p>
      */
-    inline const ImportDestinationType& GetImportDestinationType() const{ return m_importDestinationType; }
+    inline ImportDestinationType GetImportDestinationType() const { return m_importDestinationType; }
     inline bool ImportDestinationTypeHasBeenSet() const { return m_importDestinationTypeHasBeenSet; }
-    inline void SetImportDestinationType(const ImportDestinationType& value) { m_importDestinationTypeHasBeenSet = true; m_importDestinationType = value; }
-    inline void SetImportDestinationType(ImportDestinationType&& value) { m_importDestinationTypeHasBeenSet = true; m_importDestinationType = std::move(value); }
-    inline ListImportJobsRequest& WithImportDestinationType(const ImportDestinationType& value) { SetImportDestinationType(value); return *this;}
-    inline ListImportJobsRequest& WithImportDestinationType(ImportDestinationType&& value) { SetImportDestinationType(std::move(value)); return *this;}
+    inline void SetImportDestinationType(ImportDestinationType value) { m_importDestinationTypeHasBeenSet = true; m_importDestinationType = value; }
+    inline ListImportJobsRequest& WithImportDestinationType(ImportDestinationType value) { SetImportDestinationType(value); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <code>ListImportJobs</code> with the same parameters to retrieve the next page
      * of import jobs.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListImportJobsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListImportJobsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListImportJobsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListImportJobsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,20 +72,20 @@ namespace Model
      * <code>NextToken</code> value in subsequent requests to retrieve additional
      * addresses.</p>
      */
-    inline int GetPageSize() const{ return m_pageSize; }
+    inline int GetPageSize() const { return m_pageSize; }
     inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
     inline void SetPageSize(int value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
     inline ListImportJobsRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
     ///@}
   private:
 
-    ImportDestinationType m_importDestinationType;
+    ImportDestinationType m_importDestinationType{ImportDestinationType::NOT_SET};
     bool m_importDestinationTypeHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_pageSize;
+    int m_pageSize{0};
     bool m_pageSizeHasBeenSet = false;
   };
 

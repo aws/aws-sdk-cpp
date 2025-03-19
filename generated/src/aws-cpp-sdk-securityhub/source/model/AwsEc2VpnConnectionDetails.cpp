@@ -18,23 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2VpnConnectionDetails::AwsEc2VpnConnectionDetails() : 
-    m_vpnConnectionIdHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_customerGatewayIdHasBeenSet(false),
-    m_customerGatewayConfigurationHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_vpnGatewayIdHasBeenSet(false),
-    m_categoryHasBeenSet(false),
-    m_vgwTelemetryHasBeenSet(false),
-    m_optionsHasBeenSet(false),
-    m_routesHasBeenSet(false),
-    m_transitGatewayIdHasBeenSet(false)
-{
-}
-
 AwsEc2VpnConnectionDetails::AwsEc2VpnConnectionDetails(JsonView jsonValue)
-  : AwsEc2VpnConnectionDetails()
 {
   *this = jsonValue;
 }
@@ -44,52 +28,38 @@ AwsEc2VpnConnectionDetails& AwsEc2VpnConnectionDetails::operator =(JsonView json
   if(jsonValue.ValueExists("VpnConnectionId"))
   {
     m_vpnConnectionId = jsonValue.GetString("VpnConnectionId");
-
     m_vpnConnectionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = jsonValue.GetString("State");
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomerGatewayId"))
   {
     m_customerGatewayId = jsonValue.GetString("CustomerGatewayId");
-
     m_customerGatewayIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomerGatewayConfiguration"))
   {
     m_customerGatewayConfiguration = jsonValue.GetString("CustomerGatewayConfiguration");
-
     m_customerGatewayConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpnGatewayId"))
   {
     m_vpnGatewayId = jsonValue.GetString("VpnGatewayId");
-
     m_vpnGatewayIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Category"))
   {
     m_category = jsonValue.GetString("Category");
-
     m_categoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VgwTelemetry"))
   {
     Aws::Utils::Array<JsonView> vgwTelemetryJsonList = jsonValue.GetArray("VgwTelemetry");
@@ -99,14 +69,11 @@ AwsEc2VpnConnectionDetails& AwsEc2VpnConnectionDetails::operator =(JsonView json
     }
     m_vgwTelemetryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Options"))
   {
     m_options = jsonValue.GetObject("Options");
-
     m_optionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Routes"))
   {
     Aws::Utils::Array<JsonView> routesJsonList = jsonValue.GetArray("Routes");
@@ -116,14 +83,11 @@ AwsEc2VpnConnectionDetails& AwsEc2VpnConnectionDetails::operator =(JsonView json
     }
     m_routesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TransitGatewayId"))
   {
     m_transitGatewayId = jsonValue.GetString("TransitGatewayId");
-
     m_transitGatewayIdHasBeenSet = true;
   }
-
   return *this;
 }
 

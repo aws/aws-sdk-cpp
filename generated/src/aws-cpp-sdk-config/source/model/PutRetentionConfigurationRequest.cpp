@@ -12,12 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutRetentionConfigurationRequest::PutRetentionConfigurationRequest() : 
-    m_retentionPeriodInDays(0),
-    m_retentionPeriodInDaysHasBeenSet(false)
-{
-}
-
 Aws::String PutRetentionConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

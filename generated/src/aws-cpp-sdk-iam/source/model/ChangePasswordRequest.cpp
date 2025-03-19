@@ -10,12 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-ChangePasswordRequest::ChangePasswordRequest() : 
-    m_oldPasswordHasBeenSet(false),
-    m_newPasswordHasBeenSet(false)
-{
-}
-
 Aws::String ChangePasswordRequest::SerializePayload() const
 {
   Aws::StringStream ss;

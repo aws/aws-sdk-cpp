@@ -32,7 +32,7 @@ namespace Model
   class Backend
   {
   public:
-    AWS_APPMESH_API Backend();
+    AWS_APPMESH_API Backend() = default;
     AWS_APPMESH_API Backend(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Backend& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Specifies a virtual service to use as a backend. </p>
      */
-    inline const VirtualServiceBackend& GetVirtualService() const{ return m_virtualService; }
+    inline const VirtualServiceBackend& GetVirtualService() const { return m_virtualService; }
     inline bool VirtualServiceHasBeenSet() const { return m_virtualServiceHasBeenSet; }
-    inline void SetVirtualService(const VirtualServiceBackend& value) { m_virtualServiceHasBeenSet = true; m_virtualService = value; }
-    inline void SetVirtualService(VirtualServiceBackend&& value) { m_virtualServiceHasBeenSet = true; m_virtualService = std::move(value); }
-    inline Backend& WithVirtualService(const VirtualServiceBackend& value) { SetVirtualService(value); return *this;}
-    inline Backend& WithVirtualService(VirtualServiceBackend&& value) { SetVirtualService(std::move(value)); return *this;}
+    template<typename VirtualServiceT = VirtualServiceBackend>
+    void SetVirtualService(VirtualServiceT&& value) { m_virtualServiceHasBeenSet = true; m_virtualService = std::forward<VirtualServiceT>(value); }
+    template<typename VirtualServiceT = VirtualServiceBackend>
+    Backend& WithVirtualService(VirtualServiceT&& value) { SetVirtualService(std::forward<VirtualServiceT>(value)); return *this;}
     ///@}
   private:
 

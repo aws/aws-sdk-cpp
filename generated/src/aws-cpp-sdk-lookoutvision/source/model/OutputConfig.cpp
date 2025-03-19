@@ -18,13 +18,7 @@ namespace LookoutforVision
 namespace Model
 {
 
-OutputConfig::OutputConfig() : 
-    m_s3LocationHasBeenSet(false)
-{
-}
-
 OutputConfig::OutputConfig(JsonView jsonValue)
-  : OutputConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ OutputConfig& OutputConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3Location"))
   {
     m_s3Location = jsonValue.GetObject("S3Location");
-
     m_s3LocationHasBeenSet = true;
   }
-
   return *this;
 }
 

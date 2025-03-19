@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchGetConfigurationPolicyAssociationsResult::BatchGetConfigurationPolicyAssociationsResult()
-{
-}
-
 BatchGetConfigurationPolicyAssociationsResult::BatchGetConfigurationPolicyAssociationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ BatchGetConfigurationPolicyAssociationsResult& BatchGetConfigurationPolicyAssoci
     {
       m_configurationPolicyAssociations.push_back(configurationPolicyAssociationsJsonList[configurationPolicyAssociationsIndex].AsObject());
     }
+    m_configurationPolicyAssociationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UnprocessedConfigurationPolicyAssociations"))
   {
     Aws::Utils::Array<JsonView> unprocessedConfigurationPolicyAssociationsJsonList = jsonValue.GetArray("UnprocessedConfigurationPolicyAssociations");
@@ -45,14 +41,15 @@ BatchGetConfigurationPolicyAssociationsResult& BatchGetConfigurationPolicyAssoci
     {
       m_unprocessedConfigurationPolicyAssociations.push_back(unprocessedConfigurationPolicyAssociationsJsonList[unprocessedConfigurationPolicyAssociationsIndex].AsObject());
     }
+    m_unprocessedConfigurationPolicyAssociationsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

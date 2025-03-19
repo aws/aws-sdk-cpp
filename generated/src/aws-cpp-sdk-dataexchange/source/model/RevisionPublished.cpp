@@ -18,13 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-RevisionPublished::RevisionPublished() : 
-    m_dataSetIdHasBeenSet(false)
-{
-}
-
 RevisionPublished::RevisionPublished(JsonView jsonValue)
-  : RevisionPublished()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RevisionPublished& RevisionPublished::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DataSetId"))
   {
     m_dataSetId = jsonValue.GetString("DataSetId");
-
     m_dataSetIdHasBeenSet = true;
   }
-
   return *this;
 }
 

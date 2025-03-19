@@ -18,13 +18,7 @@ namespace ServiceDiscovery
 namespace Model
 {
 
-PublicDnsNamespaceProperties::PublicDnsNamespaceProperties() : 
-    m_dnsPropertiesHasBeenSet(false)
-{
-}
-
 PublicDnsNamespaceProperties::PublicDnsNamespaceProperties(JsonView jsonValue)
-  : PublicDnsNamespaceProperties()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PublicDnsNamespaceProperties& PublicDnsNamespaceProperties::operator =(JsonView 
   if(jsonValue.ValueExists("DnsProperties"))
   {
     m_dnsProperties = jsonValue.GetObject("DnsProperties");
-
     m_dnsPropertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

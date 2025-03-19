@@ -50,7 +50,7 @@ namespace Model
   class IPSet
   {
   public:
-    AWS_WAFREGIONAL_API IPSet();
+    AWS_WAFREGIONAL_API IPSet() = default;
     AWS_WAFREGIONAL_API IPSet(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFREGIONAL_API IPSet& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFREGIONAL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -66,14 +66,12 @@ namespace Model
      * AWS WAF (see <a>DeleteIPSet</a>).</p> <p> <code>IPSetId</code> is returned by
      * <a>CreateIPSet</a> and by <a>ListIPSets</a>.</p>
      */
-    inline const Aws::String& GetIPSetId() const{ return m_iPSetId; }
+    inline const Aws::String& GetIPSetId() const { return m_iPSetId; }
     inline bool IPSetIdHasBeenSet() const { return m_iPSetIdHasBeenSet; }
-    inline void SetIPSetId(const Aws::String& value) { m_iPSetIdHasBeenSet = true; m_iPSetId = value; }
-    inline void SetIPSetId(Aws::String&& value) { m_iPSetIdHasBeenSet = true; m_iPSetId = std::move(value); }
-    inline void SetIPSetId(const char* value) { m_iPSetIdHasBeenSet = true; m_iPSetId.assign(value); }
-    inline IPSet& WithIPSetId(const Aws::String& value) { SetIPSetId(value); return *this;}
-    inline IPSet& WithIPSetId(Aws::String&& value) { SetIPSetId(std::move(value)); return *this;}
-    inline IPSet& WithIPSetId(const char* value) { SetIPSetId(value); return *this;}
+    template<typename IPSetIdT = Aws::String>
+    void SetIPSetId(IPSetIdT&& value) { m_iPSetIdHasBeenSet = true; m_iPSetId = std::forward<IPSetIdT>(value); }
+    template<typename IPSetIdT = Aws::String>
+    IPSet& WithIPSetId(IPSetIdT&& value) { SetIPSetId(std::forward<IPSetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,14 +79,12 @@ namespace Model
      * <p>A friendly name or description of the <a>IPSet</a>. You can't change the name
      * of an <code>IPSet</code> after you create it.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline IPSet& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline IPSet& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline IPSet& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    IPSet& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,14 +95,14 @@ namespace Model
      * did not use an HTTP proxy or a load balancer to send the request, this is the
      * value of the c-ip field in the CloudFront access logs.</p>
      */
-    inline const Aws::Vector<IPSetDescriptor>& GetIPSetDescriptors() const{ return m_iPSetDescriptors; }
+    inline const Aws::Vector<IPSetDescriptor>& GetIPSetDescriptors() const { return m_iPSetDescriptors; }
     inline bool IPSetDescriptorsHasBeenSet() const { return m_iPSetDescriptorsHasBeenSet; }
-    inline void SetIPSetDescriptors(const Aws::Vector<IPSetDescriptor>& value) { m_iPSetDescriptorsHasBeenSet = true; m_iPSetDescriptors = value; }
-    inline void SetIPSetDescriptors(Aws::Vector<IPSetDescriptor>&& value) { m_iPSetDescriptorsHasBeenSet = true; m_iPSetDescriptors = std::move(value); }
-    inline IPSet& WithIPSetDescriptors(const Aws::Vector<IPSetDescriptor>& value) { SetIPSetDescriptors(value); return *this;}
-    inline IPSet& WithIPSetDescriptors(Aws::Vector<IPSetDescriptor>&& value) { SetIPSetDescriptors(std::move(value)); return *this;}
-    inline IPSet& AddIPSetDescriptors(const IPSetDescriptor& value) { m_iPSetDescriptorsHasBeenSet = true; m_iPSetDescriptors.push_back(value); return *this; }
-    inline IPSet& AddIPSetDescriptors(IPSetDescriptor&& value) { m_iPSetDescriptorsHasBeenSet = true; m_iPSetDescriptors.push_back(std::move(value)); return *this; }
+    template<typename IPSetDescriptorsT = Aws::Vector<IPSetDescriptor>>
+    void SetIPSetDescriptors(IPSetDescriptorsT&& value) { m_iPSetDescriptorsHasBeenSet = true; m_iPSetDescriptors = std::forward<IPSetDescriptorsT>(value); }
+    template<typename IPSetDescriptorsT = Aws::Vector<IPSetDescriptor>>
+    IPSet& WithIPSetDescriptors(IPSetDescriptorsT&& value) { SetIPSetDescriptors(std::forward<IPSetDescriptorsT>(value)); return *this;}
+    template<typename IPSetDescriptorsT = IPSetDescriptor>
+    IPSet& AddIPSetDescriptors(IPSetDescriptorsT&& value) { m_iPSetDescriptorsHasBeenSet = true; m_iPSetDescriptors.emplace_back(std::forward<IPSetDescriptorsT>(value)); return *this; }
     ///@}
   private:
 

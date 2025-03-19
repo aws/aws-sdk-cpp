@@ -34,7 +34,7 @@ namespace Model
   class SlotValueSelectionSetting
   {
   public:
-    AWS_LEXMODELSV2_API SlotValueSelectionSetting();
+    AWS_LEXMODELSV2_API SlotValueSelectionSetting() = default;
     AWS_LEXMODELSV2_API SlotValueSelectionSetting(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API SlotValueSelectionSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,24 +52,22 @@ namespace Model
      * <code>valueSelectionStrategy</code>, the default is
      * <code>ORIGINAL_VALUE</code>.</p>
      */
-    inline const SlotValueResolutionStrategy& GetResolutionStrategy() const{ return m_resolutionStrategy; }
+    inline SlotValueResolutionStrategy GetResolutionStrategy() const { return m_resolutionStrategy; }
     inline bool ResolutionStrategyHasBeenSet() const { return m_resolutionStrategyHasBeenSet; }
-    inline void SetResolutionStrategy(const SlotValueResolutionStrategy& value) { m_resolutionStrategyHasBeenSet = true; m_resolutionStrategy = value; }
-    inline void SetResolutionStrategy(SlotValueResolutionStrategy&& value) { m_resolutionStrategyHasBeenSet = true; m_resolutionStrategy = std::move(value); }
-    inline SlotValueSelectionSetting& WithResolutionStrategy(const SlotValueResolutionStrategy& value) { SetResolutionStrategy(value); return *this;}
-    inline SlotValueSelectionSetting& WithResolutionStrategy(SlotValueResolutionStrategy&& value) { SetResolutionStrategy(std::move(value)); return *this;}
+    inline void SetResolutionStrategy(SlotValueResolutionStrategy value) { m_resolutionStrategyHasBeenSet = true; m_resolutionStrategy = value; }
+    inline SlotValueSelectionSetting& WithResolutionStrategy(SlotValueResolutionStrategy value) { SetResolutionStrategy(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A regular expression used to validate the value of a slot.</p>
      */
-    inline const SlotValueRegexFilter& GetRegexFilter() const{ return m_regexFilter; }
+    inline const SlotValueRegexFilter& GetRegexFilter() const { return m_regexFilter; }
     inline bool RegexFilterHasBeenSet() const { return m_regexFilterHasBeenSet; }
-    inline void SetRegexFilter(const SlotValueRegexFilter& value) { m_regexFilterHasBeenSet = true; m_regexFilter = value; }
-    inline void SetRegexFilter(SlotValueRegexFilter&& value) { m_regexFilterHasBeenSet = true; m_regexFilter = std::move(value); }
-    inline SlotValueSelectionSetting& WithRegexFilter(const SlotValueRegexFilter& value) { SetRegexFilter(value); return *this;}
-    inline SlotValueSelectionSetting& WithRegexFilter(SlotValueRegexFilter&& value) { SetRegexFilter(std::move(value)); return *this;}
+    template<typename RegexFilterT = SlotValueRegexFilter>
+    void SetRegexFilter(RegexFilterT&& value) { m_regexFilterHasBeenSet = true; m_regexFilter = std::forward<RegexFilterT>(value); }
+    template<typename RegexFilterT = SlotValueRegexFilter>
+    SlotValueSelectionSetting& WithRegexFilter(RegexFilterT&& value) { SetRegexFilter(std::forward<RegexFilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,16 +76,16 @@ namespace Model
      * You can use this to enable using slot values as a custom vocabulary for
      * recognizing user utterances.</p>
      */
-    inline const AdvancedRecognitionSetting& GetAdvancedRecognitionSetting() const{ return m_advancedRecognitionSetting; }
+    inline const AdvancedRecognitionSetting& GetAdvancedRecognitionSetting() const { return m_advancedRecognitionSetting; }
     inline bool AdvancedRecognitionSettingHasBeenSet() const { return m_advancedRecognitionSettingHasBeenSet; }
-    inline void SetAdvancedRecognitionSetting(const AdvancedRecognitionSetting& value) { m_advancedRecognitionSettingHasBeenSet = true; m_advancedRecognitionSetting = value; }
-    inline void SetAdvancedRecognitionSetting(AdvancedRecognitionSetting&& value) { m_advancedRecognitionSettingHasBeenSet = true; m_advancedRecognitionSetting = std::move(value); }
-    inline SlotValueSelectionSetting& WithAdvancedRecognitionSetting(const AdvancedRecognitionSetting& value) { SetAdvancedRecognitionSetting(value); return *this;}
-    inline SlotValueSelectionSetting& WithAdvancedRecognitionSetting(AdvancedRecognitionSetting&& value) { SetAdvancedRecognitionSetting(std::move(value)); return *this;}
+    template<typename AdvancedRecognitionSettingT = AdvancedRecognitionSetting>
+    void SetAdvancedRecognitionSetting(AdvancedRecognitionSettingT&& value) { m_advancedRecognitionSettingHasBeenSet = true; m_advancedRecognitionSetting = std::forward<AdvancedRecognitionSettingT>(value); }
+    template<typename AdvancedRecognitionSettingT = AdvancedRecognitionSetting>
+    SlotValueSelectionSetting& WithAdvancedRecognitionSetting(AdvancedRecognitionSettingT&& value) { SetAdvancedRecognitionSetting(std::forward<AdvancedRecognitionSettingT>(value)); return *this;}
     ///@}
   private:
 
-    SlotValueResolutionStrategy m_resolutionStrategy;
+    SlotValueResolutionStrategy m_resolutionStrategy{SlotValueResolutionStrategy::NOT_SET};
     bool m_resolutionStrategyHasBeenSet = false;
 
     SlotValueRegexFilter m_regexFilter;

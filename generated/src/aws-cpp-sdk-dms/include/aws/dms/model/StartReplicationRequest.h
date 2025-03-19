@@ -25,7 +25,7 @@ namespace Model
   class StartReplicationRequest : public DatabaseMigrationServiceRequest
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API StartReplicationRequest();
+    AWS_DATABASEMIGRATIONSERVICE_API StartReplicationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p>The Amazon Resource Name of the replication for which to start
      * replication.</p>
      */
-    inline const Aws::String& GetReplicationConfigArn() const{ return m_replicationConfigArn; }
+    inline const Aws::String& GetReplicationConfigArn() const { return m_replicationConfigArn; }
     inline bool ReplicationConfigArnHasBeenSet() const { return m_replicationConfigArnHasBeenSet; }
-    inline void SetReplicationConfigArn(const Aws::String& value) { m_replicationConfigArnHasBeenSet = true; m_replicationConfigArn = value; }
-    inline void SetReplicationConfigArn(Aws::String&& value) { m_replicationConfigArnHasBeenSet = true; m_replicationConfigArn = std::move(value); }
-    inline void SetReplicationConfigArn(const char* value) { m_replicationConfigArnHasBeenSet = true; m_replicationConfigArn.assign(value); }
-    inline StartReplicationRequest& WithReplicationConfigArn(const Aws::String& value) { SetReplicationConfigArn(value); return *this;}
-    inline StartReplicationRequest& WithReplicationConfigArn(Aws::String&& value) { SetReplicationConfigArn(std::move(value)); return *this;}
-    inline StartReplicationRequest& WithReplicationConfigArn(const char* value) { SetReplicationConfigArn(value); return *this;}
+    template<typename ReplicationConfigArnT = Aws::String>
+    void SetReplicationConfigArn(ReplicationConfigArnT&& value) { m_replicationConfigArnHasBeenSet = true; m_replicationConfigArn = std::forward<ReplicationConfigArnT>(value); }
+    template<typename ReplicationConfigArnT = Aws::String>
+    StartReplicationRequest& WithReplicationConfigArn(ReplicationConfigArnT&& value) { SetReplicationConfigArn(std::forward<ReplicationConfigArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +67,12 @@ namespace Model
      * <code>resume-processing</code>, to replicate the changes from the last stop
      * position.</p>
      */
-    inline const Aws::String& GetStartReplicationType() const{ return m_startReplicationType; }
+    inline const Aws::String& GetStartReplicationType() const { return m_startReplicationType; }
     inline bool StartReplicationTypeHasBeenSet() const { return m_startReplicationTypeHasBeenSet; }
-    inline void SetStartReplicationType(const Aws::String& value) { m_startReplicationTypeHasBeenSet = true; m_startReplicationType = value; }
-    inline void SetStartReplicationType(Aws::String&& value) { m_startReplicationTypeHasBeenSet = true; m_startReplicationType = std::move(value); }
-    inline void SetStartReplicationType(const char* value) { m_startReplicationTypeHasBeenSet = true; m_startReplicationType.assign(value); }
-    inline StartReplicationRequest& WithStartReplicationType(const Aws::String& value) { SetStartReplicationType(value); return *this;}
-    inline StartReplicationRequest& WithStartReplicationType(Aws::String&& value) { SetStartReplicationType(std::move(value)); return *this;}
-    inline StartReplicationRequest& WithStartReplicationType(const char* value) { SetStartReplicationType(value); return *this;}
+    template<typename StartReplicationTypeT = Aws::String>
+    void SetStartReplicationType(StartReplicationTypeT&& value) { m_startReplicationTypeHasBeenSet = true; m_startReplicationType = std::forward<StartReplicationTypeT>(value); }
+    template<typename StartReplicationTypeT = Aws::String>
+    StartReplicationRequest& WithStartReplicationType(StartReplicationTypeT&& value) { SetStartReplicationType(std::forward<StartReplicationTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,14 +101,12 @@ namespace Model
      * This can help you evaluate the issue that is preventing the replication from
      * running successfully.</p> </li> </ul>
      */
-    inline const Aws::String& GetPremigrationAssessmentSettings() const{ return m_premigrationAssessmentSettings; }
+    inline const Aws::String& GetPremigrationAssessmentSettings() const { return m_premigrationAssessmentSettings; }
     inline bool PremigrationAssessmentSettingsHasBeenSet() const { return m_premigrationAssessmentSettingsHasBeenSet; }
-    inline void SetPremigrationAssessmentSettings(const Aws::String& value) { m_premigrationAssessmentSettingsHasBeenSet = true; m_premigrationAssessmentSettings = value; }
-    inline void SetPremigrationAssessmentSettings(Aws::String&& value) { m_premigrationAssessmentSettingsHasBeenSet = true; m_premigrationAssessmentSettings = std::move(value); }
-    inline void SetPremigrationAssessmentSettings(const char* value) { m_premigrationAssessmentSettingsHasBeenSet = true; m_premigrationAssessmentSettings.assign(value); }
-    inline StartReplicationRequest& WithPremigrationAssessmentSettings(const Aws::String& value) { SetPremigrationAssessmentSettings(value); return *this;}
-    inline StartReplicationRequest& WithPremigrationAssessmentSettings(Aws::String&& value) { SetPremigrationAssessmentSettings(std::move(value)); return *this;}
-    inline StartReplicationRequest& WithPremigrationAssessmentSettings(const char* value) { SetPremigrationAssessmentSettings(value); return *this;}
+    template<typename PremigrationAssessmentSettingsT = Aws::String>
+    void SetPremigrationAssessmentSettings(PremigrationAssessmentSettingsT&& value) { m_premigrationAssessmentSettingsHasBeenSet = true; m_premigrationAssessmentSettings = std::forward<PremigrationAssessmentSettingsT>(value); }
+    template<typename PremigrationAssessmentSettingsT = Aws::String>
+    StartReplicationRequest& WithPremigrationAssessmentSettings(PremigrationAssessmentSettingsT&& value) { SetPremigrationAssessmentSettings(std::forward<PremigrationAssessmentSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -122,12 +116,12 @@ namespace Model
      * when you want a CDC operation to start. Specifying both values results in an
      * error.</p>
      */
-    inline const Aws::Utils::DateTime& GetCdcStartTime() const{ return m_cdcStartTime; }
+    inline const Aws::Utils::DateTime& GetCdcStartTime() const { return m_cdcStartTime; }
     inline bool CdcStartTimeHasBeenSet() const { return m_cdcStartTimeHasBeenSet; }
-    inline void SetCdcStartTime(const Aws::Utils::DateTime& value) { m_cdcStartTimeHasBeenSet = true; m_cdcStartTime = value; }
-    inline void SetCdcStartTime(Aws::Utils::DateTime&& value) { m_cdcStartTimeHasBeenSet = true; m_cdcStartTime = std::move(value); }
-    inline StartReplicationRequest& WithCdcStartTime(const Aws::Utils::DateTime& value) { SetCdcStartTime(value); return *this;}
-    inline StartReplicationRequest& WithCdcStartTime(Aws::Utils::DateTime&& value) { SetCdcStartTime(std::move(value)); return *this;}
+    template<typename CdcStartTimeT = Aws::Utils::DateTime>
+    void SetCdcStartTime(CdcStartTimeT&& value) { m_cdcStartTimeHasBeenSet = true; m_cdcStartTime = std::forward<CdcStartTimeT>(value); }
+    template<typename CdcStartTimeT = Aws::Utils::DateTime>
+    StartReplicationRequest& WithCdcStartTime(CdcStartTimeT&& value) { SetCdcStartTime(std::forward<CdcStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -137,14 +131,12 @@ namespace Model
      * when you want a CDC operation to start. Specifying both values results in an
      * error.</p> <p>The value can be in date, checkpoint, or LSN/SCN format.</p>
      */
-    inline const Aws::String& GetCdcStartPosition() const{ return m_cdcStartPosition; }
+    inline const Aws::String& GetCdcStartPosition() const { return m_cdcStartPosition; }
     inline bool CdcStartPositionHasBeenSet() const { return m_cdcStartPositionHasBeenSet; }
-    inline void SetCdcStartPosition(const Aws::String& value) { m_cdcStartPositionHasBeenSet = true; m_cdcStartPosition = value; }
-    inline void SetCdcStartPosition(Aws::String&& value) { m_cdcStartPositionHasBeenSet = true; m_cdcStartPosition = std::move(value); }
-    inline void SetCdcStartPosition(const char* value) { m_cdcStartPositionHasBeenSet = true; m_cdcStartPosition.assign(value); }
-    inline StartReplicationRequest& WithCdcStartPosition(const Aws::String& value) { SetCdcStartPosition(value); return *this;}
-    inline StartReplicationRequest& WithCdcStartPosition(Aws::String&& value) { SetCdcStartPosition(std::move(value)); return *this;}
-    inline StartReplicationRequest& WithCdcStartPosition(const char* value) { SetCdcStartPosition(value); return *this;}
+    template<typename CdcStartPositionT = Aws::String>
+    void SetCdcStartPosition(CdcStartPositionT&& value) { m_cdcStartPositionHasBeenSet = true; m_cdcStartPosition = std::forward<CdcStartPositionT>(value); }
+    template<typename CdcStartPositionT = Aws::String>
+    StartReplicationRequest& WithCdcStartPosition(CdcStartPositionT&& value) { SetCdcStartPosition(std::forward<CdcStartPositionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -152,14 +144,12 @@ namespace Model
      * <p>Indicates when you want a change data capture (CDC) operation to stop. The
      * value can be either server time or commit time.</p>
      */
-    inline const Aws::String& GetCdcStopPosition() const{ return m_cdcStopPosition; }
+    inline const Aws::String& GetCdcStopPosition() const { return m_cdcStopPosition; }
     inline bool CdcStopPositionHasBeenSet() const { return m_cdcStopPositionHasBeenSet; }
-    inline void SetCdcStopPosition(const Aws::String& value) { m_cdcStopPositionHasBeenSet = true; m_cdcStopPosition = value; }
-    inline void SetCdcStopPosition(Aws::String&& value) { m_cdcStopPositionHasBeenSet = true; m_cdcStopPosition = std::move(value); }
-    inline void SetCdcStopPosition(const char* value) { m_cdcStopPositionHasBeenSet = true; m_cdcStopPosition.assign(value); }
-    inline StartReplicationRequest& WithCdcStopPosition(const Aws::String& value) { SetCdcStopPosition(value); return *this;}
-    inline StartReplicationRequest& WithCdcStopPosition(Aws::String&& value) { SetCdcStopPosition(std::move(value)); return *this;}
-    inline StartReplicationRequest& WithCdcStopPosition(const char* value) { SetCdcStopPosition(value); return *this;}
+    template<typename CdcStopPositionT = Aws::String>
+    void SetCdcStopPosition(CdcStopPositionT&& value) { m_cdcStopPositionHasBeenSet = true; m_cdcStopPosition = std::forward<CdcStopPositionT>(value); }
+    template<typename CdcStopPositionT = Aws::String>
+    StartReplicationRequest& WithCdcStopPosition(CdcStopPositionT&& value) { SetCdcStopPosition(std::forward<CdcStopPositionT>(value)); return *this;}
     ///@}
   private:
 
@@ -172,7 +162,7 @@ namespace Model
     Aws::String m_premigrationAssessmentSettings;
     bool m_premigrationAssessmentSettingsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_cdcStartTime;
+    Aws::Utils::DateTime m_cdcStartTime{};
     bool m_cdcStartTimeHasBeenSet = false;
 
     Aws::String m_cdcStartPosition;

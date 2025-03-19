@@ -18,14 +18,7 @@ namespace Athena
 namespace Model
 {
 
-QueryExecutionContext::QueryExecutionContext() : 
-    m_databaseHasBeenSet(false),
-    m_catalogHasBeenSet(false)
-{
-}
-
 QueryExecutionContext::QueryExecutionContext(JsonView jsonValue)
-  : QueryExecutionContext()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ QueryExecutionContext& QueryExecutionContext::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Database"))
   {
     m_database = jsonValue.GetString("Database");
-
     m_databaseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Catalog"))
   {
     m_catalog = jsonValue.GetString("Catalog");
-
     m_catalogHasBeenSet = true;
   }
-
   return *this;
 }
 

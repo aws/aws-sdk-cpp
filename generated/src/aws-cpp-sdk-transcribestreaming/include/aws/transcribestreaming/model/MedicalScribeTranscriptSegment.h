@@ -34,7 +34,7 @@ namespace Model
   class MedicalScribeTranscriptSegment
   {
   public:
-    AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalScribeTranscriptSegment();
+    AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalScribeTranscriptSegment() = default;
     AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalScribeTranscriptSegment(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalScribeTranscriptSegment& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,21 +44,19 @@ namespace Model
     /**
      * <p>The identifier of the segment.</p>
      */
-    inline const Aws::String& GetSegmentId() const{ return m_segmentId; }
+    inline const Aws::String& GetSegmentId() const { return m_segmentId; }
     inline bool SegmentIdHasBeenSet() const { return m_segmentIdHasBeenSet; }
-    inline void SetSegmentId(const Aws::String& value) { m_segmentIdHasBeenSet = true; m_segmentId = value; }
-    inline void SetSegmentId(Aws::String&& value) { m_segmentIdHasBeenSet = true; m_segmentId = std::move(value); }
-    inline void SetSegmentId(const char* value) { m_segmentIdHasBeenSet = true; m_segmentId.assign(value); }
-    inline MedicalScribeTranscriptSegment& WithSegmentId(const Aws::String& value) { SetSegmentId(value); return *this;}
-    inline MedicalScribeTranscriptSegment& WithSegmentId(Aws::String&& value) { SetSegmentId(std::move(value)); return *this;}
-    inline MedicalScribeTranscriptSegment& WithSegmentId(const char* value) { SetSegmentId(value); return *this;}
+    template<typename SegmentIdT = Aws::String>
+    void SetSegmentId(SegmentIdT&& value) { m_segmentIdHasBeenSet = true; m_segmentId = std::forward<SegmentIdT>(value); }
+    template<typename SegmentIdT = Aws::String>
+    MedicalScribeTranscriptSegment& WithSegmentId(SegmentIdT&& value) { SetSegmentId(std::forward<SegmentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The start time, in milliseconds, of the segment.</p>
      */
-    inline double GetBeginAudioTime() const{ return m_beginAudioTime; }
+    inline double GetBeginAudioTime() const { return m_beginAudioTime; }
     inline bool BeginAudioTimeHasBeenSet() const { return m_beginAudioTimeHasBeenSet; }
     inline void SetBeginAudioTime(double value) { m_beginAudioTimeHasBeenSet = true; m_beginAudioTime = value; }
     inline MedicalScribeTranscriptSegment& WithBeginAudioTime(double value) { SetBeginAudioTime(value); return *this;}
@@ -68,7 +66,7 @@ namespace Model
     /**
      * <p>The end time, in milliseconds, of the segment.</p>
      */
-    inline double GetEndAudioTime() const{ return m_endAudioTime; }
+    inline double GetEndAudioTime() const { return m_endAudioTime; }
     inline bool EndAudioTimeHasBeenSet() const { return m_endAudioTimeHasBeenSet; }
     inline void SetEndAudioTime(double value) { m_endAudioTimeHasBeenSet = true; m_endAudioTime = value; }
     inline MedicalScribeTranscriptSegment& WithEndAudioTime(double value) { SetEndAudioTime(value); return *this;}
@@ -78,28 +76,26 @@ namespace Model
     /**
      * <p>Contains transcribed text of the segment.</p>
      */
-    inline const Aws::String& GetContent() const{ return m_content; }
+    inline const Aws::String& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
-    inline MedicalScribeTranscriptSegment& WithContent(const Aws::String& value) { SetContent(value); return *this;}
-    inline MedicalScribeTranscriptSegment& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
-    inline MedicalScribeTranscriptSegment& WithContent(const char* value) { SetContent(value); return *this;}
+    template<typename ContentT = Aws::String>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = Aws::String>
+    MedicalScribeTranscriptSegment& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains words, phrases, or punctuation marks in your segment.</p>
      */
-    inline const Aws::Vector<MedicalScribeTranscriptItem>& GetItems() const{ return m_items; }
+    inline const Aws::Vector<MedicalScribeTranscriptItem>& GetItems() const { return m_items; }
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-    inline void SetItems(const Aws::Vector<MedicalScribeTranscriptItem>& value) { m_itemsHasBeenSet = true; m_items = value; }
-    inline void SetItems(Aws::Vector<MedicalScribeTranscriptItem>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
-    inline MedicalScribeTranscriptSegment& WithItems(const Aws::Vector<MedicalScribeTranscriptItem>& value) { SetItems(value); return *this;}
-    inline MedicalScribeTranscriptSegment& WithItems(Aws::Vector<MedicalScribeTranscriptItem>&& value) { SetItems(std::move(value)); return *this;}
-    inline MedicalScribeTranscriptSegment& AddItems(const MedicalScribeTranscriptItem& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
-    inline MedicalScribeTranscriptSegment& AddItems(MedicalScribeTranscriptItem&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
+    template<typename ItemsT = Aws::Vector<MedicalScribeTranscriptItem>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<MedicalScribeTranscriptItem>>
+    MedicalScribeTranscriptSegment& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = MedicalScribeTranscriptItem>
+    MedicalScribeTranscriptSegment& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -108,7 +104,7 @@ namespace Model
      * <code>true</code>, the segment is not complete. If <code>IsPartial</code> is
      * <code>false</code>, the segment is complete. </p>
      */
-    inline bool GetIsPartial() const{ return m_isPartial; }
+    inline bool GetIsPartial() const { return m_isPartial; }
     inline bool IsPartialHasBeenSet() const { return m_isPartialHasBeenSet; }
     inline void SetIsPartial(bool value) { m_isPartialHasBeenSet = true; m_isPartial = value; }
     inline MedicalScribeTranscriptSegment& WithIsPartial(bool value) { SetIsPartial(value); return *this;}
@@ -122,24 +118,22 @@ namespace Model
      * <code>MedicalScribeConfigurationEvent</code>, then this field will not be
      * included. </p>
      */
-    inline const Aws::String& GetChannelId() const{ return m_channelId; }
+    inline const Aws::String& GetChannelId() const { return m_channelId; }
     inline bool ChannelIdHasBeenSet() const { return m_channelIdHasBeenSet; }
-    inline void SetChannelId(const Aws::String& value) { m_channelIdHasBeenSet = true; m_channelId = value; }
-    inline void SetChannelId(Aws::String&& value) { m_channelIdHasBeenSet = true; m_channelId = std::move(value); }
-    inline void SetChannelId(const char* value) { m_channelIdHasBeenSet = true; m_channelId.assign(value); }
-    inline MedicalScribeTranscriptSegment& WithChannelId(const Aws::String& value) { SetChannelId(value); return *this;}
-    inline MedicalScribeTranscriptSegment& WithChannelId(Aws::String&& value) { SetChannelId(std::move(value)); return *this;}
-    inline MedicalScribeTranscriptSegment& WithChannelId(const char* value) { SetChannelId(value); return *this;}
+    template<typename ChannelIdT = Aws::String>
+    void SetChannelId(ChannelIdT&& value) { m_channelIdHasBeenSet = true; m_channelId = std::forward<ChannelIdT>(value); }
+    template<typename ChannelIdT = Aws::String>
+    MedicalScribeTranscriptSegment& WithChannelId(ChannelIdT&& value) { SetChannelId(std::forward<ChannelIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_segmentId;
     bool m_segmentIdHasBeenSet = false;
 
-    double m_beginAudioTime;
+    double m_beginAudioTime{0.0};
     bool m_beginAudioTimeHasBeenSet = false;
 
-    double m_endAudioTime;
+    double m_endAudioTime{0.0};
     bool m_endAudioTimeHasBeenSet = false;
 
     Aws::String m_content;
@@ -148,7 +142,7 @@ namespace Model
     Aws::Vector<MedicalScribeTranscriptItem> m_items;
     bool m_itemsHasBeenSet = false;
 
-    bool m_isPartial;
+    bool m_isPartial{false};
     bool m_isPartialHasBeenSet = false;
 
     Aws::String m_channelId;

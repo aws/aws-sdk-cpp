@@ -12,15 +12,6 @@ using namespace Aws::LocationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListDevicePositionsRequest::ListDevicePositionsRequest() : 
-    m_trackerNameHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_filterGeometryHasBeenSet(false)
-{
-}
-
 Aws::String ListDevicePositionsRequest::SerializePayload() const
 {
   JsonValue payload;

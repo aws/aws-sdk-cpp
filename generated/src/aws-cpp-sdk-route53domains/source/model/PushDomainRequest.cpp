@@ -12,12 +12,6 @@ using namespace Aws::Route53Domains::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PushDomainRequest::PushDomainRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_targetHasBeenSet(false)
-{
-}
-
 Aws::String PushDomainRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,16 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-ChatPromptTemplateConfiguration::ChatPromptTemplateConfiguration() : 
-    m_inputVariablesHasBeenSet(false),
-    m_messagesHasBeenSet(false),
-    m_systemHasBeenSet(false),
-    m_toolConfigurationHasBeenSet(false)
-{
-}
-
 ChatPromptTemplateConfiguration::ChatPromptTemplateConfiguration(JsonView jsonValue)
-  : ChatPromptTemplateConfiguration()
 {
   *this = jsonValue;
 }
@@ -43,7 +34,6 @@ ChatPromptTemplateConfiguration& ChatPromptTemplateConfiguration::operator =(Jso
     }
     m_inputVariablesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("messages"))
   {
     Aws::Utils::Array<JsonView> messagesJsonList = jsonValue.GetArray("messages");
@@ -53,7 +43,6 @@ ChatPromptTemplateConfiguration& ChatPromptTemplateConfiguration::operator =(Jso
     }
     m_messagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("system"))
   {
     Aws::Utils::Array<JsonView> systemJsonList = jsonValue.GetArray("system");
@@ -63,14 +52,11 @@ ChatPromptTemplateConfiguration& ChatPromptTemplateConfiguration::operator =(Jso
     }
     m_systemHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("toolConfiguration"))
   {
     m_toolConfiguration = jsonValue.GetObject("toolConfiguration");
-
     m_toolConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

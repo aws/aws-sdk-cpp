@@ -18,24 +18,7 @@ namespace AmplifyUIBuilder
 namespace Model
 {
 
-ReactStartCodegenJobData::ReactStartCodegenJobData() : 
-    m_module(JSModule::NOT_SET),
-    m_moduleHasBeenSet(false),
-    m_target(JSTarget::NOT_SET),
-    m_targetHasBeenSet(false),
-    m_script(JSScript::NOT_SET),
-    m_scriptHasBeenSet(false),
-    m_renderTypeDeclarations(false),
-    m_renderTypeDeclarationsHasBeenSet(false),
-    m_inlineSourceMap(false),
-    m_inlineSourceMapHasBeenSet(false),
-    m_apiConfigurationHasBeenSet(false),
-    m_dependenciesHasBeenSet(false)
-{
-}
-
 ReactStartCodegenJobData::ReactStartCodegenJobData(JsonView jsonValue)
-  : ReactStartCodegenJobData()
 {
   *this = jsonValue;
 }
@@ -45,45 +28,33 @@ ReactStartCodegenJobData& ReactStartCodegenJobData::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("module"))
   {
     m_module = JSModuleMapper::GetJSModuleForName(jsonValue.GetString("module"));
-
     m_moduleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("target"))
   {
     m_target = JSTargetMapper::GetJSTargetForName(jsonValue.GetString("target"));
-
     m_targetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("script"))
   {
     m_script = JSScriptMapper::GetJSScriptForName(jsonValue.GetString("script"));
-
     m_scriptHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("renderTypeDeclarations"))
   {
     m_renderTypeDeclarations = jsonValue.GetBool("renderTypeDeclarations");
-
     m_renderTypeDeclarationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inlineSourceMap"))
   {
     m_inlineSourceMap = jsonValue.GetBool("inlineSourceMap");
-
     m_inlineSourceMapHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("apiConfiguration"))
   {
     m_apiConfiguration = jsonValue.GetObject("apiConfiguration");
-
     m_apiConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dependencies"))
   {
     Aws::Map<Aws::String, JsonView> dependenciesJsonMap = jsonValue.GetObject("dependencies").GetAllObjects();
@@ -93,7 +64,6 @@ ReactStartCodegenJobData& ReactStartCodegenJobData::operator =(JsonView jsonValu
     }
     m_dependenciesHasBeenSet = true;
   }
-
   return *this;
 }
 

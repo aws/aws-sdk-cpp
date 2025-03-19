@@ -29,7 +29,7 @@ namespace Model
   class PutProjectEventsResult
   {
   public:
-    AWS_CLOUDWATCHEVIDENTLY_API PutProjectEventsResult();
+    AWS_CLOUDWATCHEVIDENTLY_API PutProjectEventsResult() = default;
     AWS_CLOUDWATCHEVIDENTLY_API PutProjectEventsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDWATCHEVIDENTLY_API PutProjectEventsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>A structure that contains Evidently's response to the sent events, including
      * an event ID and error codes, if any.</p>
      */
-    inline const Aws::Vector<PutProjectEventsResultEntry>& GetEventResults() const{ return m_eventResults; }
-    inline void SetEventResults(const Aws::Vector<PutProjectEventsResultEntry>& value) { m_eventResults = value; }
-    inline void SetEventResults(Aws::Vector<PutProjectEventsResultEntry>&& value) { m_eventResults = std::move(value); }
-    inline PutProjectEventsResult& WithEventResults(const Aws::Vector<PutProjectEventsResultEntry>& value) { SetEventResults(value); return *this;}
-    inline PutProjectEventsResult& WithEventResults(Aws::Vector<PutProjectEventsResultEntry>&& value) { SetEventResults(std::move(value)); return *this;}
-    inline PutProjectEventsResult& AddEventResults(const PutProjectEventsResultEntry& value) { m_eventResults.push_back(value); return *this; }
-    inline PutProjectEventsResult& AddEventResults(PutProjectEventsResultEntry&& value) { m_eventResults.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<PutProjectEventsResultEntry>& GetEventResults() const { return m_eventResults; }
+    template<typename EventResultsT = Aws::Vector<PutProjectEventsResultEntry>>
+    void SetEventResults(EventResultsT&& value) { m_eventResultsHasBeenSet = true; m_eventResults = std::forward<EventResultsT>(value); }
+    template<typename EventResultsT = Aws::Vector<PutProjectEventsResultEntry>>
+    PutProjectEventsResult& WithEventResults(EventResultsT&& value) { SetEventResults(std::forward<EventResultsT>(value)); return *this;}
+    template<typename EventResultsT = PutProjectEventsResultEntry>
+    PutProjectEventsResult& AddEventResults(EventResultsT&& value) { m_eventResultsHasBeenSet = true; m_eventResults.emplace_back(std::forward<EventResultsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,28 +53,29 @@ namespace Model
      * <p>The number of events in the operation that could not be used by
      * Evidently.</p>
      */
-    inline int GetFailedEventCount() const{ return m_failedEventCount; }
-    inline void SetFailedEventCount(int value) { m_failedEventCount = value; }
+    inline int GetFailedEventCount() const { return m_failedEventCount; }
+    inline void SetFailedEventCount(int value) { m_failedEventCountHasBeenSet = true; m_failedEventCount = value; }
     inline PutProjectEventsResult& WithFailedEventCount(int value) { SetFailedEventCount(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutProjectEventsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutProjectEventsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutProjectEventsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutProjectEventsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<PutProjectEventsResultEntry> m_eventResults;
+    bool m_eventResultsHasBeenSet = false;
 
-    int m_failedEventCount;
+    int m_failedEventCount{0};
+    bool m_failedEventCountHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

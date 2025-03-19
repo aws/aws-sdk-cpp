@@ -35,7 +35,7 @@ namespace Model
   class ProjectCache
   {
   public:
-    AWS_CODEBUILD_API ProjectCache();
+    AWS_CODEBUILD_API ProjectCache() = default;
     AWS_CODEBUILD_API ProjectCache(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API ProjectCache& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,12 +50,10 @@ namespace Model
      * locally on a build host that is only available to that build host.</p> </li>
      * </ul>
      */
-    inline const CacheType& GetType() const{ return m_type; }
+    inline CacheType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const CacheType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(CacheType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ProjectCache& WithType(const CacheType& value) { SetType(value); return *this;}
-    inline ProjectCache& WithType(CacheType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(CacheType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ProjectCache& WithType(CacheType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * <code>NO_CACHE</code> or <code>LOCAL</code>: This value is ignored.</p> </li>
      * <li> <p> <code>S3</code>: This is the S3 bucket name/prefix.</p> </li> </ul>
      */
-    inline const Aws::String& GetLocation() const{ return m_location; }
+    inline const Aws::String& GetLocation() const { return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-    inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
-    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-    inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
-    inline ProjectCache& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-    inline ProjectCache& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-    inline ProjectCache& WithLocation(const char* value) { SetLocation(value); return *this;}
+    template<typename LocationT = Aws::String>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Aws::String>
+    ProjectCache& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,18 +98,17 @@ namespace Model
      * Cached items are overridden if a source item has the same name. Directories are
      * specified using cache paths in the buildspec file. </p> </li> </ul> </dd> </dl>
      */
-    inline const Aws::Vector<CacheMode>& GetModes() const{ return m_modes; }
+    inline const Aws::Vector<CacheMode>& GetModes() const { return m_modes; }
     inline bool ModesHasBeenSet() const { return m_modesHasBeenSet; }
-    inline void SetModes(const Aws::Vector<CacheMode>& value) { m_modesHasBeenSet = true; m_modes = value; }
-    inline void SetModes(Aws::Vector<CacheMode>&& value) { m_modesHasBeenSet = true; m_modes = std::move(value); }
-    inline ProjectCache& WithModes(const Aws::Vector<CacheMode>& value) { SetModes(value); return *this;}
-    inline ProjectCache& WithModes(Aws::Vector<CacheMode>&& value) { SetModes(std::move(value)); return *this;}
-    inline ProjectCache& AddModes(const CacheMode& value) { m_modesHasBeenSet = true; m_modes.push_back(value); return *this; }
-    inline ProjectCache& AddModes(CacheMode&& value) { m_modesHasBeenSet = true; m_modes.push_back(std::move(value)); return *this; }
+    template<typename ModesT = Aws::Vector<CacheMode>>
+    void SetModes(ModesT&& value) { m_modesHasBeenSet = true; m_modes = std::forward<ModesT>(value); }
+    template<typename ModesT = Aws::Vector<CacheMode>>
+    ProjectCache& WithModes(ModesT&& value) { SetModes(std::forward<ModesT>(value)); return *this;}
+    inline ProjectCache& AddModes(CacheMode value) { m_modesHasBeenSet = true; m_modes.push_back(value); return *this; }
     ///@}
   private:
 
-    CacheType m_type;
+    CacheType m_type{CacheType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_location;

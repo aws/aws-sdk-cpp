@@ -34,7 +34,7 @@ namespace Model
   class RoadSnapNotice
   {
   public:
-    AWS_GEOROUTES_API RoadSnapNotice();
+    AWS_GEOROUTES_API RoadSnapNotice() = default;
     AWS_GEOROUTES_API RoadSnapNotice(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RoadSnapNotice& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,43 +44,39 @@ namespace Model
     /**
      * <p>Code corresponding to the issue.</p>
      */
-    inline const RoadSnapNoticeCode& GetCode() const{ return m_code; }
+    inline RoadSnapNoticeCode GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const RoadSnapNoticeCode& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(RoadSnapNoticeCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline RoadSnapNotice& WithCode(const RoadSnapNoticeCode& value) { SetCode(value); return *this;}
-    inline RoadSnapNotice& WithCode(RoadSnapNoticeCode&& value) { SetCode(std::move(value)); return *this;}
+    inline void SetCode(RoadSnapNoticeCode value) { m_codeHasBeenSet = true; m_code = value; }
+    inline RoadSnapNotice& WithCode(RoadSnapNoticeCode value) { SetCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The notice title.</p>
      */
-    inline const Aws::String& GetTitle() const{ return m_title; }
+    inline const Aws::String& GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-    inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
-    inline RoadSnapNotice& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-    inline RoadSnapNotice& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-    inline RoadSnapNotice& WithTitle(const char* value) { SetTitle(value); return *this;}
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    RoadSnapNotice& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>TracePoint indices for which the provided notice code corresponds to.</p>
      */
-    inline const Aws::Vector<int>& GetTracePointIndexes() const{ return m_tracePointIndexes; }
+    inline const Aws::Vector<int>& GetTracePointIndexes() const { return m_tracePointIndexes; }
     inline bool TracePointIndexesHasBeenSet() const { return m_tracePointIndexesHasBeenSet; }
-    inline void SetTracePointIndexes(const Aws::Vector<int>& value) { m_tracePointIndexesHasBeenSet = true; m_tracePointIndexes = value; }
-    inline void SetTracePointIndexes(Aws::Vector<int>&& value) { m_tracePointIndexesHasBeenSet = true; m_tracePointIndexes = std::move(value); }
-    inline RoadSnapNotice& WithTracePointIndexes(const Aws::Vector<int>& value) { SetTracePointIndexes(value); return *this;}
-    inline RoadSnapNotice& WithTracePointIndexes(Aws::Vector<int>&& value) { SetTracePointIndexes(std::move(value)); return *this;}
+    template<typename TracePointIndexesT = Aws::Vector<int>>
+    void SetTracePointIndexes(TracePointIndexesT&& value) { m_tracePointIndexesHasBeenSet = true; m_tracePointIndexes = std::forward<TracePointIndexesT>(value); }
+    template<typename TracePointIndexesT = Aws::Vector<int>>
+    RoadSnapNotice& WithTracePointIndexes(TracePointIndexesT&& value) { SetTracePointIndexes(std::forward<TracePointIndexesT>(value)); return *this;}
     inline RoadSnapNotice& AddTracePointIndexes(int value) { m_tracePointIndexesHasBeenSet = true; m_tracePointIndexes.push_back(value); return *this; }
     ///@}
   private:
 
-    RoadSnapNoticeCode m_code;
+    RoadSnapNoticeCode m_code{RoadSnapNoticeCode::NOT_SET};
     bool m_codeHasBeenSet = false;
 
     Aws::String m_title;

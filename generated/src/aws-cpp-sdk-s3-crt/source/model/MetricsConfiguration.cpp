@@ -20,14 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-MetricsConfiguration::MetricsConfiguration() : 
-    m_idHasBeenSet(false),
-    m_filterHasBeenSet(false)
-{
-}
-
 MetricsConfiguration::MetricsConfiguration(const XmlNode& xmlNode)
-  : MetricsConfiguration()
 {
   *this = xmlNode;
 }

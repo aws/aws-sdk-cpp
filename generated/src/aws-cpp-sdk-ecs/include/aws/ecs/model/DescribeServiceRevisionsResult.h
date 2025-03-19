@@ -30,7 +30,7 @@ namespace Model
   class DescribeServiceRevisionsResult
   {
   public:
-    AWS_ECS_API DescribeServiceRevisionsResult();
+    AWS_ECS_API DescribeServiceRevisionsResult() = default;
     AWS_ECS_API DescribeServiceRevisionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ECS_API DescribeServiceRevisionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,46 @@ namespace Model
     /**
      * <p>The list of service revisions described.</p>
      */
-    inline const Aws::Vector<ServiceRevision>& GetServiceRevisions() const{ return m_serviceRevisions; }
-    inline void SetServiceRevisions(const Aws::Vector<ServiceRevision>& value) { m_serviceRevisions = value; }
-    inline void SetServiceRevisions(Aws::Vector<ServiceRevision>&& value) { m_serviceRevisions = std::move(value); }
-    inline DescribeServiceRevisionsResult& WithServiceRevisions(const Aws::Vector<ServiceRevision>& value) { SetServiceRevisions(value); return *this;}
-    inline DescribeServiceRevisionsResult& WithServiceRevisions(Aws::Vector<ServiceRevision>&& value) { SetServiceRevisions(std::move(value)); return *this;}
-    inline DescribeServiceRevisionsResult& AddServiceRevisions(const ServiceRevision& value) { m_serviceRevisions.push_back(value); return *this; }
-    inline DescribeServiceRevisionsResult& AddServiceRevisions(ServiceRevision&& value) { m_serviceRevisions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ServiceRevision>& GetServiceRevisions() const { return m_serviceRevisions; }
+    template<typename ServiceRevisionsT = Aws::Vector<ServiceRevision>>
+    void SetServiceRevisions(ServiceRevisionsT&& value) { m_serviceRevisionsHasBeenSet = true; m_serviceRevisions = std::forward<ServiceRevisionsT>(value); }
+    template<typename ServiceRevisionsT = Aws::Vector<ServiceRevision>>
+    DescribeServiceRevisionsResult& WithServiceRevisions(ServiceRevisionsT&& value) { SetServiceRevisions(std::forward<ServiceRevisionsT>(value)); return *this;}
+    template<typename ServiceRevisionsT = ServiceRevision>
+    DescribeServiceRevisionsResult& AddServiceRevisions(ServiceRevisionsT&& value) { m_serviceRevisionsHasBeenSet = true; m_serviceRevisions.emplace_back(std::forward<ServiceRevisionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Any failures associated with the call.</p>
      */
-    inline const Aws::Vector<Failure>& GetFailures() const{ return m_failures; }
-    inline void SetFailures(const Aws::Vector<Failure>& value) { m_failures = value; }
-    inline void SetFailures(Aws::Vector<Failure>&& value) { m_failures = std::move(value); }
-    inline DescribeServiceRevisionsResult& WithFailures(const Aws::Vector<Failure>& value) { SetFailures(value); return *this;}
-    inline DescribeServiceRevisionsResult& WithFailures(Aws::Vector<Failure>&& value) { SetFailures(std::move(value)); return *this;}
-    inline DescribeServiceRevisionsResult& AddFailures(const Failure& value) { m_failures.push_back(value); return *this; }
-    inline DescribeServiceRevisionsResult& AddFailures(Failure&& value) { m_failures.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Failure>& GetFailures() const { return m_failures; }
+    template<typename FailuresT = Aws::Vector<Failure>>
+    void SetFailures(FailuresT&& value) { m_failuresHasBeenSet = true; m_failures = std::forward<FailuresT>(value); }
+    template<typename FailuresT = Aws::Vector<Failure>>
+    DescribeServiceRevisionsResult& WithFailures(FailuresT&& value) { SetFailures(std::forward<FailuresT>(value)); return *this;}
+    template<typename FailuresT = Failure>
+    DescribeServiceRevisionsResult& AddFailures(FailuresT&& value) { m_failuresHasBeenSet = true; m_failures.emplace_back(std::forward<FailuresT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeServiceRevisionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeServiceRevisionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeServiceRevisionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeServiceRevisionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ServiceRevision> m_serviceRevisions;
+    bool m_serviceRevisionsHasBeenSet = false;
 
     Aws::Vector<Failure> m_failures;
+    bool m_failuresHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

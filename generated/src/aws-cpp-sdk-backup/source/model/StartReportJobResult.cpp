@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartReportJobResult::StartReportJobResult()
-{
-}
-
 StartReportJobResult::StartReportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ StartReportJobResult& StartReportJobResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("ReportJobId"))
   {
     m_reportJobId = jsonValue.GetString("ReportJobId");
-
+    m_reportJobIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

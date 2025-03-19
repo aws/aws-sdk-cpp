@@ -18,16 +18,7 @@ namespace EMR
 namespace Model
 {
 
-Application::Application() : 
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_argsHasBeenSet(false),
-    m_additionalInfoHasBeenSet(false)
-{
-}
-
 Application::Application(JsonView jsonValue)
-  : Application()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ Application& Application::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetString("Version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Args"))
   {
     Aws::Utils::Array<JsonView> argsJsonList = jsonValue.GetArray("Args");
@@ -57,7 +44,6 @@ Application& Application::operator =(JsonView jsonValue)
     }
     m_argsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdditionalInfo"))
   {
     Aws::Map<Aws::String, JsonView> additionalInfoJsonMap = jsonValue.GetObject("AdditionalInfo").GetAllObjects();
@@ -67,7 +53,6 @@ Application& Application::operator =(JsonView jsonValue)
     }
     m_additionalInfoHasBeenSet = true;
   }
-
   return *this;
 }
 

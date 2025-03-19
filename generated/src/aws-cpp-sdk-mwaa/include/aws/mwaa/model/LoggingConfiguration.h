@@ -32,7 +32,7 @@ namespace Model
   class LoggingConfiguration
   {
   public:
-    AWS_MWAA_API LoggingConfiguration();
+    AWS_MWAA_API LoggingConfiguration() = default;
     AWS_MWAA_API LoggingConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_MWAA_API LoggingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MWAA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>The Airflow DAG processing logs published to CloudWatch Logs and the log
      * level.</p>
      */
-    inline const ModuleLoggingConfiguration& GetDagProcessingLogs() const{ return m_dagProcessingLogs; }
+    inline const ModuleLoggingConfiguration& GetDagProcessingLogs() const { return m_dagProcessingLogs; }
     inline bool DagProcessingLogsHasBeenSet() const { return m_dagProcessingLogsHasBeenSet; }
-    inline void SetDagProcessingLogs(const ModuleLoggingConfiguration& value) { m_dagProcessingLogsHasBeenSet = true; m_dagProcessingLogs = value; }
-    inline void SetDagProcessingLogs(ModuleLoggingConfiguration&& value) { m_dagProcessingLogsHasBeenSet = true; m_dagProcessingLogs = std::move(value); }
-    inline LoggingConfiguration& WithDagProcessingLogs(const ModuleLoggingConfiguration& value) { SetDagProcessingLogs(value); return *this;}
-    inline LoggingConfiguration& WithDagProcessingLogs(ModuleLoggingConfiguration&& value) { SetDagProcessingLogs(std::move(value)); return *this;}
+    template<typename DagProcessingLogsT = ModuleLoggingConfiguration>
+    void SetDagProcessingLogs(DagProcessingLogsT&& value) { m_dagProcessingLogsHasBeenSet = true; m_dagProcessingLogs = std::forward<DagProcessingLogsT>(value); }
+    template<typename DagProcessingLogsT = ModuleLoggingConfiguration>
+    LoggingConfiguration& WithDagProcessingLogs(DagProcessingLogsT&& value) { SetDagProcessingLogs(std::forward<DagProcessingLogsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,12 +56,12 @@ namespace Model
      * <p>The Airflow scheduler logs published to CloudWatch Logs and the log
      * level.</p>
      */
-    inline const ModuleLoggingConfiguration& GetSchedulerLogs() const{ return m_schedulerLogs; }
+    inline const ModuleLoggingConfiguration& GetSchedulerLogs() const { return m_schedulerLogs; }
     inline bool SchedulerLogsHasBeenSet() const { return m_schedulerLogsHasBeenSet; }
-    inline void SetSchedulerLogs(const ModuleLoggingConfiguration& value) { m_schedulerLogsHasBeenSet = true; m_schedulerLogs = value; }
-    inline void SetSchedulerLogs(ModuleLoggingConfiguration&& value) { m_schedulerLogsHasBeenSet = true; m_schedulerLogs = std::move(value); }
-    inline LoggingConfiguration& WithSchedulerLogs(const ModuleLoggingConfiguration& value) { SetSchedulerLogs(value); return *this;}
-    inline LoggingConfiguration& WithSchedulerLogs(ModuleLoggingConfiguration&& value) { SetSchedulerLogs(std::move(value)); return *this;}
+    template<typename SchedulerLogsT = ModuleLoggingConfiguration>
+    void SetSchedulerLogs(SchedulerLogsT&& value) { m_schedulerLogsHasBeenSet = true; m_schedulerLogs = std::forward<SchedulerLogsT>(value); }
+    template<typename SchedulerLogsT = ModuleLoggingConfiguration>
+    LoggingConfiguration& WithSchedulerLogs(SchedulerLogsT&& value) { SetSchedulerLogs(std::forward<SchedulerLogsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,36 +69,36 @@ namespace Model
      * <p>The Airflow web server logs published to CloudWatch Logs and the log
      * level.</p>
      */
-    inline const ModuleLoggingConfiguration& GetWebserverLogs() const{ return m_webserverLogs; }
+    inline const ModuleLoggingConfiguration& GetWebserverLogs() const { return m_webserverLogs; }
     inline bool WebserverLogsHasBeenSet() const { return m_webserverLogsHasBeenSet; }
-    inline void SetWebserverLogs(const ModuleLoggingConfiguration& value) { m_webserverLogsHasBeenSet = true; m_webserverLogs = value; }
-    inline void SetWebserverLogs(ModuleLoggingConfiguration&& value) { m_webserverLogsHasBeenSet = true; m_webserverLogs = std::move(value); }
-    inline LoggingConfiguration& WithWebserverLogs(const ModuleLoggingConfiguration& value) { SetWebserverLogs(value); return *this;}
-    inline LoggingConfiguration& WithWebserverLogs(ModuleLoggingConfiguration&& value) { SetWebserverLogs(std::move(value)); return *this;}
+    template<typename WebserverLogsT = ModuleLoggingConfiguration>
+    void SetWebserverLogs(WebserverLogsT&& value) { m_webserverLogsHasBeenSet = true; m_webserverLogs = std::forward<WebserverLogsT>(value); }
+    template<typename WebserverLogsT = ModuleLoggingConfiguration>
+    LoggingConfiguration& WithWebserverLogs(WebserverLogsT&& value) { SetWebserverLogs(std::forward<WebserverLogsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Airflow worker logs published to CloudWatch Logs and the log level.</p>
      */
-    inline const ModuleLoggingConfiguration& GetWorkerLogs() const{ return m_workerLogs; }
+    inline const ModuleLoggingConfiguration& GetWorkerLogs() const { return m_workerLogs; }
     inline bool WorkerLogsHasBeenSet() const { return m_workerLogsHasBeenSet; }
-    inline void SetWorkerLogs(const ModuleLoggingConfiguration& value) { m_workerLogsHasBeenSet = true; m_workerLogs = value; }
-    inline void SetWorkerLogs(ModuleLoggingConfiguration&& value) { m_workerLogsHasBeenSet = true; m_workerLogs = std::move(value); }
-    inline LoggingConfiguration& WithWorkerLogs(const ModuleLoggingConfiguration& value) { SetWorkerLogs(value); return *this;}
-    inline LoggingConfiguration& WithWorkerLogs(ModuleLoggingConfiguration&& value) { SetWorkerLogs(std::move(value)); return *this;}
+    template<typename WorkerLogsT = ModuleLoggingConfiguration>
+    void SetWorkerLogs(WorkerLogsT&& value) { m_workerLogsHasBeenSet = true; m_workerLogs = std::forward<WorkerLogsT>(value); }
+    template<typename WorkerLogsT = ModuleLoggingConfiguration>
+    LoggingConfiguration& WithWorkerLogs(WorkerLogsT&& value) { SetWorkerLogs(std::forward<WorkerLogsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Airflow task logs published to CloudWatch Logs and the log level.</p>
      */
-    inline const ModuleLoggingConfiguration& GetTaskLogs() const{ return m_taskLogs; }
+    inline const ModuleLoggingConfiguration& GetTaskLogs() const { return m_taskLogs; }
     inline bool TaskLogsHasBeenSet() const { return m_taskLogsHasBeenSet; }
-    inline void SetTaskLogs(const ModuleLoggingConfiguration& value) { m_taskLogsHasBeenSet = true; m_taskLogs = value; }
-    inline void SetTaskLogs(ModuleLoggingConfiguration&& value) { m_taskLogsHasBeenSet = true; m_taskLogs = std::move(value); }
-    inline LoggingConfiguration& WithTaskLogs(const ModuleLoggingConfiguration& value) { SetTaskLogs(value); return *this;}
-    inline LoggingConfiguration& WithTaskLogs(ModuleLoggingConfiguration&& value) { SetTaskLogs(std::move(value)); return *this;}
+    template<typename TaskLogsT = ModuleLoggingConfiguration>
+    void SetTaskLogs(TaskLogsT&& value) { m_taskLogsHasBeenSet = true; m_taskLogs = std::forward<TaskLogsT>(value); }
+    template<typename TaskLogsT = ModuleLoggingConfiguration>
+    LoggingConfiguration& WithTaskLogs(TaskLogsT&& value) { SetTaskLogs(std::forward<TaskLogsT>(value)); return *this;}
     ///@}
   private:
 

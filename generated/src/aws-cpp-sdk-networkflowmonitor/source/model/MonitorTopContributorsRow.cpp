@@ -18,40 +18,7 @@ namespace NetworkFlowMonitor
 namespace Model
 {
 
-MonitorTopContributorsRow::MonitorTopContributorsRow() : 
-    m_localIpHasBeenSet(false),
-    m_snatIpHasBeenSet(false),
-    m_localInstanceIdHasBeenSet(false),
-    m_localVpcIdHasBeenSet(false),
-    m_localRegionHasBeenSet(false),
-    m_localAzHasBeenSet(false),
-    m_localSubnetIdHasBeenSet(false),
-    m_targetPort(0),
-    m_targetPortHasBeenSet(false),
-    m_destinationCategory(DestinationCategory::NOT_SET),
-    m_destinationCategoryHasBeenSet(false),
-    m_remoteVpcIdHasBeenSet(false),
-    m_remoteRegionHasBeenSet(false),
-    m_remoteAzHasBeenSet(false),
-    m_remoteSubnetIdHasBeenSet(false),
-    m_remoteInstanceIdHasBeenSet(false),
-    m_remoteIpHasBeenSet(false),
-    m_dnatIpHasBeenSet(false),
-    m_value(0),
-    m_valueHasBeenSet(false),
-    m_traversedConstructsHasBeenSet(false),
-    m_kubernetesMetadataHasBeenSet(false),
-    m_localInstanceArnHasBeenSet(false),
-    m_localSubnetArnHasBeenSet(false),
-    m_localVpcArnHasBeenSet(false),
-    m_remoteInstanceArnHasBeenSet(false),
-    m_remoteSubnetArnHasBeenSet(false),
-    m_remoteVpcArnHasBeenSet(false)
-{
-}
-
 MonitorTopContributorsRow::MonitorTopContributorsRow(JsonView jsonValue)
-  : MonitorTopContributorsRow()
 {
   *this = jsonValue;
 }
@@ -61,122 +28,88 @@ MonitorTopContributorsRow& MonitorTopContributorsRow::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("localIp"))
   {
     m_localIp = jsonValue.GetString("localIp");
-
     m_localIpHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("snatIp"))
   {
     m_snatIp = jsonValue.GetString("snatIp");
-
     m_snatIpHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("localInstanceId"))
   {
     m_localInstanceId = jsonValue.GetString("localInstanceId");
-
     m_localInstanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("localVpcId"))
   {
     m_localVpcId = jsonValue.GetString("localVpcId");
-
     m_localVpcIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("localRegion"))
   {
     m_localRegion = jsonValue.GetString("localRegion");
-
     m_localRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("localAz"))
   {
     m_localAz = jsonValue.GetString("localAz");
-
     m_localAzHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("localSubnetId"))
   {
     m_localSubnetId = jsonValue.GetString("localSubnetId");
-
     m_localSubnetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetPort"))
   {
     m_targetPort = jsonValue.GetInteger("targetPort");
-
     m_targetPortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destinationCategory"))
   {
     m_destinationCategory = DestinationCategoryMapper::GetDestinationCategoryForName(jsonValue.GetString("destinationCategory"));
-
     m_destinationCategoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("remoteVpcId"))
   {
     m_remoteVpcId = jsonValue.GetString("remoteVpcId");
-
     m_remoteVpcIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("remoteRegion"))
   {
     m_remoteRegion = jsonValue.GetString("remoteRegion");
-
     m_remoteRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("remoteAz"))
   {
     m_remoteAz = jsonValue.GetString("remoteAz");
-
     m_remoteAzHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("remoteSubnetId"))
   {
     m_remoteSubnetId = jsonValue.GetString("remoteSubnetId");
-
     m_remoteSubnetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("remoteInstanceId"))
   {
     m_remoteInstanceId = jsonValue.GetString("remoteInstanceId");
-
     m_remoteInstanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("remoteIp"))
   {
     m_remoteIp = jsonValue.GetString("remoteIp");
-
     m_remoteIpHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dnatIp"))
   {
     m_dnatIp = jsonValue.GetString("dnatIp");
-
     m_dnatIpHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetInt64("value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("traversedConstructs"))
   {
     Aws::Utils::Array<JsonView> traversedConstructsJsonList = jsonValue.GetArray("traversedConstructs");
@@ -186,56 +119,41 @@ MonitorTopContributorsRow& MonitorTopContributorsRow::operator =(JsonView jsonVa
     }
     m_traversedConstructsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kubernetesMetadata"))
   {
     m_kubernetesMetadata = jsonValue.GetObject("kubernetesMetadata");
-
     m_kubernetesMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("localInstanceArn"))
   {
     m_localInstanceArn = jsonValue.GetString("localInstanceArn");
-
     m_localInstanceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("localSubnetArn"))
   {
     m_localSubnetArn = jsonValue.GetString("localSubnetArn");
-
     m_localSubnetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("localVpcArn"))
   {
     m_localVpcArn = jsonValue.GetString("localVpcArn");
-
     m_localVpcArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("remoteInstanceArn"))
   {
     m_remoteInstanceArn = jsonValue.GetString("remoteInstanceArn");
-
     m_remoteInstanceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("remoteSubnetArn"))
   {
     m_remoteSubnetArn = jsonValue.GetString("remoteSubnetArn");
-
     m_remoteSubnetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("remoteVpcArn"))
   {
     m_remoteVpcArn = jsonValue.GetString("remoteVpcArn");
-
     m_remoteVpcArnHasBeenSet = true;
   }
-
   return *this;
 }
 

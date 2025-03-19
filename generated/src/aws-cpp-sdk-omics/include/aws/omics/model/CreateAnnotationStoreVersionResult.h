@@ -30,7 +30,7 @@ namespace Model
   class CreateAnnotationStoreVersionResult
   {
   public:
-    AWS_OMICS_API CreateAnnotationStoreVersionResult();
+    AWS_OMICS_API CreateAnnotationStoreVersionResult() = default;
     AWS_OMICS_API CreateAnnotationStoreVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OMICS_API CreateAnnotationStoreVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,11 @@ namespace Model
     /**
      * <p> A generated ID for the annotation store </p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline CreateAnnotationStoreVersionResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline CreateAnnotationStoreVersionResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline CreateAnnotationStoreVersionResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    CreateAnnotationStoreVersionResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,13 +51,11 @@ namespace Model
      * <p> The name given to an annotation store version to distinguish it from other
      * versions. </p>
      */
-    inline const Aws::String& GetVersionName() const{ return m_versionName; }
-    inline void SetVersionName(const Aws::String& value) { m_versionName = value; }
-    inline void SetVersionName(Aws::String&& value) { m_versionName = std::move(value); }
-    inline void SetVersionName(const char* value) { m_versionName.assign(value); }
-    inline CreateAnnotationStoreVersionResult& WithVersionName(const Aws::String& value) { SetVersionName(value); return *this;}
-    inline CreateAnnotationStoreVersionResult& WithVersionName(Aws::String&& value) { SetVersionName(std::move(value)); return *this;}
-    inline CreateAnnotationStoreVersionResult& WithVersionName(const char* value) { SetVersionName(value); return *this;}
+    inline const Aws::String& GetVersionName() const { return m_versionName; }
+    template<typename VersionNameT = Aws::String>
+    void SetVersionName(VersionNameT&& value) { m_versionNameHasBeenSet = true; m_versionName = std::forward<VersionNameT>(value); }
+    template<typename VersionNameT = Aws::String>
+    CreateAnnotationStoreVersionResult& WithVersionName(VersionNameT&& value) { SetVersionName(std::forward<VersionNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,24 +63,22 @@ namespace Model
      * <p> The ID for the annotation store from which new versions are being created.
      * </p>
      */
-    inline const Aws::String& GetStoreId() const{ return m_storeId; }
-    inline void SetStoreId(const Aws::String& value) { m_storeId = value; }
-    inline void SetStoreId(Aws::String&& value) { m_storeId = std::move(value); }
-    inline void SetStoreId(const char* value) { m_storeId.assign(value); }
-    inline CreateAnnotationStoreVersionResult& WithStoreId(const Aws::String& value) { SetStoreId(value); return *this;}
-    inline CreateAnnotationStoreVersionResult& WithStoreId(Aws::String&& value) { SetStoreId(std::move(value)); return *this;}
-    inline CreateAnnotationStoreVersionResult& WithStoreId(const char* value) { SetStoreId(value); return *this;}
+    inline const Aws::String& GetStoreId() const { return m_storeId; }
+    template<typename StoreIdT = Aws::String>
+    void SetStoreId(StoreIdT&& value) { m_storeIdHasBeenSet = true; m_storeId = std::forward<StoreIdT>(value); }
+    template<typename StoreIdT = Aws::String>
+    CreateAnnotationStoreVersionResult& WithStoreId(StoreIdT&& value) { SetStoreId(std::forward<StoreIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The options for an annotation store version. </p>
      */
-    inline const VersionOptions& GetVersionOptions() const{ return m_versionOptions; }
-    inline void SetVersionOptions(const VersionOptions& value) { m_versionOptions = value; }
-    inline void SetVersionOptions(VersionOptions&& value) { m_versionOptions = std::move(value); }
-    inline CreateAnnotationStoreVersionResult& WithVersionOptions(const VersionOptions& value) { SetVersionOptions(value); return *this;}
-    inline CreateAnnotationStoreVersionResult& WithVersionOptions(VersionOptions&& value) { SetVersionOptions(std::move(value)); return *this;}
+    inline const VersionOptions& GetVersionOptions() const { return m_versionOptions; }
+    template<typename VersionOptionsT = VersionOptions>
+    void SetVersionOptions(VersionOptionsT&& value) { m_versionOptionsHasBeenSet = true; m_versionOptions = std::forward<VersionOptionsT>(value); }
+    template<typename VersionOptionsT = VersionOptions>
+    CreateAnnotationStoreVersionResult& WithVersionOptions(VersionOptionsT&& value) { SetVersionOptions(std::forward<VersionOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,64 +86,66 @@ namespace Model
      * <p> The name given to an annotation store version to distinguish it from other
      * versions. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline CreateAnnotationStoreVersionResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateAnnotationStoreVersionResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateAnnotationStoreVersionResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateAnnotationStoreVersionResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The status of a annotation store version. </p>
      */
-    inline const VersionStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const VersionStatus& value) { m_status = value; }
-    inline void SetStatus(VersionStatus&& value) { m_status = std::move(value); }
-    inline CreateAnnotationStoreVersionResult& WithStatus(const VersionStatus& value) { SetStatus(value); return *this;}
-    inline CreateAnnotationStoreVersionResult& WithStatus(VersionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline VersionStatus GetStatus() const { return m_status; }
+    inline void SetStatus(VersionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline CreateAnnotationStoreVersionResult& WithStatus(VersionStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The time stamp for the creation of an annotation store version. </p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline CreateAnnotationStoreVersionResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline CreateAnnotationStoreVersionResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    CreateAnnotationStoreVersionResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateAnnotationStoreVersionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateAnnotationStoreVersionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateAnnotationStoreVersionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateAnnotationStoreVersionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_versionName;
+    bool m_versionNameHasBeenSet = false;
 
     Aws::String m_storeId;
+    bool m_storeIdHasBeenSet = false;
 
     VersionOptions m_versionOptions;
+    bool m_versionOptionsHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
-    VersionStatus m_status;
+    VersionStatus m_status{VersionStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

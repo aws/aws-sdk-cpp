@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeProjectResult::DescribeProjectResult() : 
-    m_projectStatus(ProjectStatus::NOT_SET)
-{
-}
-
 DescribeProjectResult::DescribeProjectResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeProjectResult()
 {
   *this = result;
 }
@@ -34,75 +28,65 @@ DescribeProjectResult& DescribeProjectResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("ProjectArn"))
   {
     m_projectArn = jsonValue.GetString("ProjectArn");
-
+    m_projectArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProjectName"))
   {
     m_projectName = jsonValue.GetString("ProjectName");
-
+    m_projectNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProjectId"))
   {
     m_projectId = jsonValue.GetString("ProjectId");
-
+    m_projectIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProjectDescription"))
   {
     m_projectDescription = jsonValue.GetString("ProjectDescription");
-
+    m_projectDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceCatalogProvisioningDetails"))
   {
     m_serviceCatalogProvisioningDetails = jsonValue.GetObject("ServiceCatalogProvisioningDetails");
-
+    m_serviceCatalogProvisioningDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceCatalogProvisionedProductDetails"))
   {
     m_serviceCatalogProvisionedProductDetails = jsonValue.GetObject("ServiceCatalogProvisionedProductDetails");
-
+    m_serviceCatalogProvisionedProductDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProjectStatus"))
   {
     m_projectStatus = ProjectStatusMapper::GetProjectStatusForName(jsonValue.GetString("ProjectStatus"));
-
+    m_projectStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedBy"))
   {
     m_createdBy = jsonValue.GetObject("CreatedBy");
-
+    m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
+    m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedBy"))
   {
     m_lastModifiedBy = jsonValue.GetObject("LastModifiedBy");
-
+    m_lastModifiedByHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

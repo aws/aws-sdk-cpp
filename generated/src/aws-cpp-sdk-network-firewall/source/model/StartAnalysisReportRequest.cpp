@@ -12,14 +12,6 @@ using namespace Aws::NetworkFirewall::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartAnalysisReportRequest::StartAnalysisReportRequest() : 
-    m_firewallNameHasBeenSet(false),
-    m_firewallArnHasBeenSet(false),
-    m_analysisType(EnabledAnalysisType::NOT_SET),
-    m_analysisTypeHasBeenSet(false)
-{
-}
-
 Aws::String StartAnalysisReportRequest::SerializePayload() const
 {
   JsonValue payload;

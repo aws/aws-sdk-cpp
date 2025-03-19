@@ -25,7 +25,7 @@ namespace Model
   class UpdateUserPoolDomainRequest : public CognitoIdentityProviderRequest
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API UpdateUserPoolDomainRequest();
+    AWS_COGNITOIDENTITYPROVIDER_API UpdateUserPoolDomainRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * the fully-qualified domain name, for example <code>auth.example.com</code>. For
      * prefix domains, this is the prefix alone, such as <code>myprefix</code>.</p>
      */
-    inline const Aws::String& GetDomain() const{ return m_domain; }
+    inline const Aws::String& GetDomain() const { return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
-    inline UpdateUserPoolDomainRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
-    inline UpdateUserPoolDomainRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
-    inline UpdateUserPoolDomainRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+    template<typename DomainT = Aws::String>
+    void SetDomain(DomainT&& value) { m_domainHasBeenSet = true; m_domain = std::forward<DomainT>(value); }
+    template<typename DomainT = Aws::String>
+    UpdateUserPoolDomainRequest& WithDomain(DomainT&& value) { SetDomain(std::forward<DomainT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>The ID of the user pool that is associated with the domain you're
      * updating.</p>
      */
-    inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
+    inline const Aws::String& GetUserPoolId() const { return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
-    inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
-    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
-    inline void SetUserPoolId(const char* value) { m_userPoolIdHasBeenSet = true; m_userPoolId.assign(value); }
-    inline UpdateUserPoolDomainRequest& WithUserPoolId(const Aws::String& value) { SetUserPoolId(value); return *this;}
-    inline UpdateUserPoolDomainRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
-    inline UpdateUserPoolDomainRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+    template<typename UserPoolIdT = Aws::String>
+    void SetUserPoolId(UserPoolIdT&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::forward<UserPoolIdT>(value); }
+    template<typename UserPoolIdT = Aws::String>
+    UpdateUserPoolDomainRequest& WithUserPoolId(UserPoolIdT&& value) { SetUserPoolId(std::forward<UserPoolIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,7 +73,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html">Managed
      * login</a>.</p>
      */
-    inline int GetManagedLoginVersion() const{ return m_managedLoginVersion; }
+    inline int GetManagedLoginVersion() const { return m_managedLoginVersion; }
     inline bool ManagedLoginVersionHasBeenSet() const { return m_managedLoginVersionHasBeenSet; }
     inline void SetManagedLoginVersion(int value) { m_managedLoginVersionHasBeenSet = true; m_managedLoginVersion = value; }
     inline UpdateUserPoolDomainRequest& WithManagedLoginVersion(int value) { SetManagedLoginVersion(value); return *this;}
@@ -94,12 +90,12 @@ namespace Model
      * to stop working due to a mismatch in RP ID. To keep the prefix domain passkey
      * integration working, you can explicitly set RP ID to the prefix domain.</p>
      */
-    inline const CustomDomainConfigType& GetCustomDomainConfig() const{ return m_customDomainConfig; }
+    inline const CustomDomainConfigType& GetCustomDomainConfig() const { return m_customDomainConfig; }
     inline bool CustomDomainConfigHasBeenSet() const { return m_customDomainConfigHasBeenSet; }
-    inline void SetCustomDomainConfig(const CustomDomainConfigType& value) { m_customDomainConfigHasBeenSet = true; m_customDomainConfig = value; }
-    inline void SetCustomDomainConfig(CustomDomainConfigType&& value) { m_customDomainConfigHasBeenSet = true; m_customDomainConfig = std::move(value); }
-    inline UpdateUserPoolDomainRequest& WithCustomDomainConfig(const CustomDomainConfigType& value) { SetCustomDomainConfig(value); return *this;}
-    inline UpdateUserPoolDomainRequest& WithCustomDomainConfig(CustomDomainConfigType&& value) { SetCustomDomainConfig(std::move(value)); return *this;}
+    template<typename CustomDomainConfigT = CustomDomainConfigType>
+    void SetCustomDomainConfig(CustomDomainConfigT&& value) { m_customDomainConfigHasBeenSet = true; m_customDomainConfig = std::forward<CustomDomainConfigT>(value); }
+    template<typename CustomDomainConfigT = CustomDomainConfigType>
+    UpdateUserPoolDomainRequest& WithCustomDomainConfig(CustomDomainConfigT&& value) { SetCustomDomainConfig(std::forward<CustomDomainConfigT>(value)); return *this;}
     ///@}
   private:
 
@@ -109,7 +105,7 @@ namespace Model
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet = false;
 
-    int m_managedLoginVersion;
+    int m_managedLoginVersion{0};
     bool m_managedLoginVersionHasBeenSet = false;
 
     CustomDomainConfigType m_customDomainConfig;

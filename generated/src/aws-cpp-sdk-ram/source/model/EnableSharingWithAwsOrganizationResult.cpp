@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-EnableSharingWithAwsOrganizationResult::EnableSharingWithAwsOrganizationResult() : 
-    m_returnValue(false)
-{
-}
-
 EnableSharingWithAwsOrganizationResult::EnableSharingWithAwsOrganizationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : EnableSharingWithAwsOrganizationResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ EnableSharingWithAwsOrganizationResult& EnableSharingWithAwsOrganizationResult::
   if(jsonValue.ValueExists("returnValue"))
   {
     m_returnValue = jsonValue.GetBool("returnValue");
-
+    m_returnValueHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-RejectCapacityReservationBillingOwnershipRequest::RejectCapacityReservationBillingOwnershipRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_capacityReservationIdHasBeenSet(false)
-{
-}
-
 Aws::String RejectCapacityReservationBillingOwnershipRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -18,17 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-SourceFlowConfig::SourceFlowConfig() : 
-    m_connectorProfileNameHasBeenSet(false),
-    m_connectorType(SourceConnectorType::NOT_SET),
-    m_connectorTypeHasBeenSet(false),
-    m_incrementalPullConfigHasBeenSet(false),
-    m_sourceConnectorPropertiesHasBeenSet(false)
-{
-}
-
 SourceFlowConfig::SourceFlowConfig(JsonView jsonValue)
-  : SourceFlowConfig()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ SourceFlowConfig& SourceFlowConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ConnectorProfileName"))
   {
     m_connectorProfileName = jsonValue.GetString("ConnectorProfileName");
-
     m_connectorProfileNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectorType"))
   {
     m_connectorType = SourceConnectorTypeMapper::GetSourceConnectorTypeForName(jsonValue.GetString("ConnectorType"));
-
     m_connectorTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IncrementalPullConfig"))
   {
     m_incrementalPullConfig = jsonValue.GetObject("IncrementalPullConfig");
-
     m_incrementalPullConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceConnectorProperties"))
   {
     m_sourceConnectorProperties = jsonValue.GetObject("SourceConnectorProperties");
-
     m_sourceConnectorPropertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

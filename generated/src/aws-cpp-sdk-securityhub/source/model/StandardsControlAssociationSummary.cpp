@@ -18,22 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-StandardsControlAssociationSummary::StandardsControlAssociationSummary() : 
-    m_standardsArnHasBeenSet(false),
-    m_securityControlIdHasBeenSet(false),
-    m_securityControlArnHasBeenSet(false),
-    m_associationStatus(AssociationStatus::NOT_SET),
-    m_associationStatusHasBeenSet(false),
-    m_relatedRequirementsHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_updatedReasonHasBeenSet(false),
-    m_standardsControlTitleHasBeenSet(false),
-    m_standardsControlDescriptionHasBeenSet(false)
-{
-}
-
 StandardsControlAssociationSummary::StandardsControlAssociationSummary(JsonView jsonValue)
-  : StandardsControlAssociationSummary()
 {
   *this = jsonValue;
 }
@@ -43,31 +28,23 @@ StandardsControlAssociationSummary& StandardsControlAssociationSummary::operator
   if(jsonValue.ValueExists("StandardsArn"))
   {
     m_standardsArn = jsonValue.GetString("StandardsArn");
-
     m_standardsArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityControlId"))
   {
     m_securityControlId = jsonValue.GetString("SecurityControlId");
-
     m_securityControlIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityControlArn"))
   {
     m_securityControlArn = jsonValue.GetString("SecurityControlArn");
-
     m_securityControlArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssociationStatus"))
   {
     m_associationStatus = AssociationStatusMapper::GetAssociationStatusForName(jsonValue.GetString("AssociationStatus"));
-
     m_associationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RelatedRequirements"))
   {
     Aws::Utils::Array<JsonView> relatedRequirementsJsonList = jsonValue.GetArray("RelatedRequirements");
@@ -77,35 +54,26 @@ StandardsControlAssociationSummary& StandardsControlAssociationSummary::operator
     }
     m_relatedRequirementsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetString("UpdatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedReason"))
   {
     m_updatedReason = jsonValue.GetString("UpdatedReason");
-
     m_updatedReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StandardsControlTitle"))
   {
     m_standardsControlTitle = jsonValue.GetString("StandardsControlTitle");
-
     m_standardsControlTitleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StandardsControlDescription"))
   {
     m_standardsControlDescription = jsonValue.GetString("StandardsControlDescription");
-
     m_standardsControlDescriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

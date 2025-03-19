@@ -30,7 +30,7 @@ namespace Model
   class JobStoppingCondition
   {
   public:
-    AWS_BRAKET_API JobStoppingCondition();
+    AWS_BRAKET_API JobStoppingCondition() = default;
     AWS_BRAKET_API JobStoppingCondition(Aws::Utils::Json::JsonView jsonValue);
     AWS_BRAKET_API JobStoppingCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BRAKET_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,14 @@ namespace Model
      * <p>The maximum length of time, in seconds, that an Amazon Braket job can
      * run.</p>
      */
-    inline int GetMaxRuntimeInSeconds() const{ return m_maxRuntimeInSeconds; }
+    inline int GetMaxRuntimeInSeconds() const { return m_maxRuntimeInSeconds; }
     inline bool MaxRuntimeInSecondsHasBeenSet() const { return m_maxRuntimeInSecondsHasBeenSet; }
     inline void SetMaxRuntimeInSeconds(int value) { m_maxRuntimeInSecondsHasBeenSet = true; m_maxRuntimeInSeconds = value; }
     inline JobStoppingCondition& WithMaxRuntimeInSeconds(int value) { SetMaxRuntimeInSeconds(value); return *this;}
     ///@}
   private:
 
-    int m_maxRuntimeInSeconds;
+    int m_maxRuntimeInSeconds{0};
     bool m_maxRuntimeInSecondsHasBeenSet = false;
   };
 

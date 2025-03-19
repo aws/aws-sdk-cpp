@@ -18,18 +18,7 @@ namespace SMS
 namespace Model
 {
 
-ServerValidationConfiguration::ServerValidationConfiguration() : 
-    m_serverHasBeenSet(false),
-    m_validationIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_serverValidationStrategy(ServerValidationStrategy::NOT_SET),
-    m_serverValidationStrategyHasBeenSet(false),
-    m_userDataValidationParametersHasBeenSet(false)
-{
-}
-
 ServerValidationConfiguration::ServerValidationConfiguration(JsonView jsonValue)
-  : ServerValidationConfiguration()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ ServerValidationConfiguration& ServerValidationConfiguration::operator =(JsonVie
   if(jsonValue.ValueExists("server"))
   {
     m_server = jsonValue.GetObject("server");
-
     m_serverHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("validationId"))
   {
     m_validationId = jsonValue.GetString("validationId");
-
     m_validationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serverValidationStrategy"))
   {
     m_serverValidationStrategy = ServerValidationStrategyMapper::GetServerValidationStrategyForName(jsonValue.GetString("serverValidationStrategy"));
-
     m_serverValidationStrategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userDataValidationParameters"))
   {
     m_userDataValidationParameters = jsonValue.GetObject("userDataValidationParameters");
-
     m_userDataValidationParametersHasBeenSet = true;
   }
-
   return *this;
 }
 

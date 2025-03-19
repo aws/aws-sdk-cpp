@@ -12,12 +12,6 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateRepositoryNameRequest::UpdateRepositoryNameRequest() : 
-    m_oldNameHasBeenSet(false),
-    m_newNameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateRepositoryNameRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,11 +12,6 @@ using namespace Aws::Personalize::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteMetricAttributionRequest::DeleteMetricAttributionRequest() : 
-    m_metricAttributionArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteMetricAttributionRequest::SerializePayload() const
 {
   JsonValue payload;

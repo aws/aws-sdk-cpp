@@ -18,14 +18,7 @@ namespace Batch
 namespace Model
 {
 
-EksContainerResourceRequirements::EksContainerResourceRequirements() : 
-    m_limitsHasBeenSet(false),
-    m_requestsHasBeenSet(false)
-{
-}
-
 EksContainerResourceRequirements::EksContainerResourceRequirements(JsonView jsonValue)
-  : EksContainerResourceRequirements()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ EksContainerResourceRequirements& EksContainerResourceRequirements::operator =(J
     }
     m_limitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("requests"))
   {
     Aws::Map<Aws::String, JsonView> requestsJsonMap = jsonValue.GetObject("requests").GetAllObjects();
@@ -51,7 +43,6 @@ EksContainerResourceRequirements& EksContainerResourceRequirements::operator =(J
     }
     m_requestsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -36,7 +36,7 @@ namespace Model
   class StackResourceSummary
   {
   public:
-    AWS_CLOUDFORMATION_API StackResourceSummary();
+    AWS_CLOUDFORMATION_API StackResourceSummary() = default;
     AWS_CLOUDFORMATION_API StackResourceSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFORMATION_API StackResourceSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,14 +48,12 @@ namespace Model
     /**
      * <p>The logical name of the resource specified in the template.</p>
      */
-    inline const Aws::String& GetLogicalResourceId() const{ return m_logicalResourceId; }
+    inline const Aws::String& GetLogicalResourceId() const { return m_logicalResourceId; }
     inline bool LogicalResourceIdHasBeenSet() const { return m_logicalResourceIdHasBeenSet; }
-    inline void SetLogicalResourceId(const Aws::String& value) { m_logicalResourceIdHasBeenSet = true; m_logicalResourceId = value; }
-    inline void SetLogicalResourceId(Aws::String&& value) { m_logicalResourceIdHasBeenSet = true; m_logicalResourceId = std::move(value); }
-    inline void SetLogicalResourceId(const char* value) { m_logicalResourceIdHasBeenSet = true; m_logicalResourceId.assign(value); }
-    inline StackResourceSummary& WithLogicalResourceId(const Aws::String& value) { SetLogicalResourceId(value); return *this;}
-    inline StackResourceSummary& WithLogicalResourceId(Aws::String&& value) { SetLogicalResourceId(std::move(value)); return *this;}
-    inline StackResourceSummary& WithLogicalResourceId(const char* value) { SetLogicalResourceId(value); return *this;}
+    template<typename LogicalResourceIdT = Aws::String>
+    void SetLogicalResourceId(LogicalResourceIdT&& value) { m_logicalResourceIdHasBeenSet = true; m_logicalResourceId = std::forward<LogicalResourceIdT>(value); }
+    template<typename LogicalResourceIdT = Aws::String>
+    StackResourceSummary& WithLogicalResourceId(LogicalResourceIdT&& value) { SetLogicalResourceId(std::forward<LogicalResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * <p>The name or unique identifier that corresponds to a physical instance ID of
      * the resource.</p>
      */
-    inline const Aws::String& GetPhysicalResourceId() const{ return m_physicalResourceId; }
+    inline const Aws::String& GetPhysicalResourceId() const { return m_physicalResourceId; }
     inline bool PhysicalResourceIdHasBeenSet() const { return m_physicalResourceIdHasBeenSet; }
-    inline void SetPhysicalResourceId(const Aws::String& value) { m_physicalResourceIdHasBeenSet = true; m_physicalResourceId = value; }
-    inline void SetPhysicalResourceId(Aws::String&& value) { m_physicalResourceIdHasBeenSet = true; m_physicalResourceId = std::move(value); }
-    inline void SetPhysicalResourceId(const char* value) { m_physicalResourceIdHasBeenSet = true; m_physicalResourceId.assign(value); }
-    inline StackResourceSummary& WithPhysicalResourceId(const Aws::String& value) { SetPhysicalResourceId(value); return *this;}
-    inline StackResourceSummary& WithPhysicalResourceId(Aws::String&& value) { SetPhysicalResourceId(std::move(value)); return *this;}
-    inline StackResourceSummary& WithPhysicalResourceId(const char* value) { SetPhysicalResourceId(value); return *this;}
+    template<typename PhysicalResourceIdT = Aws::String>
+    void SetPhysicalResourceId(PhysicalResourceIdT&& value) { m_physicalResourceIdHasBeenSet = true; m_physicalResourceId = std::forward<PhysicalResourceIdT>(value); }
+    template<typename PhysicalResourceIdT = Aws::String>
+    StackResourceSummary& WithPhysicalResourceId(PhysicalResourceIdT&& value) { SetPhysicalResourceId(std::forward<PhysicalResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,52 +76,46 @@ namespace Model
      * Web Services resource and property types reference</a> in the <i>CloudFormation
      * User Guide</i>.)</p>
      */
-    inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+    inline const Aws::String& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
-    inline StackResourceSummary& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-    inline StackResourceSummary& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-    inline StackResourceSummary& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+    template<typename ResourceTypeT = Aws::String>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = Aws::String>
+    StackResourceSummary& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Time the status was updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedTimestamp() const{ return m_lastUpdatedTimestamp; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedTimestamp() const { return m_lastUpdatedTimestamp; }
     inline bool LastUpdatedTimestampHasBeenSet() const { return m_lastUpdatedTimestampHasBeenSet; }
-    inline void SetLastUpdatedTimestamp(const Aws::Utils::DateTime& value) { m_lastUpdatedTimestampHasBeenSet = true; m_lastUpdatedTimestamp = value; }
-    inline void SetLastUpdatedTimestamp(Aws::Utils::DateTime&& value) { m_lastUpdatedTimestampHasBeenSet = true; m_lastUpdatedTimestamp = std::move(value); }
-    inline StackResourceSummary& WithLastUpdatedTimestamp(const Aws::Utils::DateTime& value) { SetLastUpdatedTimestamp(value); return *this;}
-    inline StackResourceSummary& WithLastUpdatedTimestamp(Aws::Utils::DateTime&& value) { SetLastUpdatedTimestamp(std::move(value)); return *this;}
+    template<typename LastUpdatedTimestampT = Aws::Utils::DateTime>
+    void SetLastUpdatedTimestamp(LastUpdatedTimestampT&& value) { m_lastUpdatedTimestampHasBeenSet = true; m_lastUpdatedTimestamp = std::forward<LastUpdatedTimestampT>(value); }
+    template<typename LastUpdatedTimestampT = Aws::Utils::DateTime>
+    StackResourceSummary& WithLastUpdatedTimestamp(LastUpdatedTimestampT&& value) { SetLastUpdatedTimestamp(std::forward<LastUpdatedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Current status of the resource.</p>
      */
-    inline const ResourceStatus& GetResourceStatus() const{ return m_resourceStatus; }
+    inline ResourceStatus GetResourceStatus() const { return m_resourceStatus; }
     inline bool ResourceStatusHasBeenSet() const { return m_resourceStatusHasBeenSet; }
-    inline void SetResourceStatus(const ResourceStatus& value) { m_resourceStatusHasBeenSet = true; m_resourceStatus = value; }
-    inline void SetResourceStatus(ResourceStatus&& value) { m_resourceStatusHasBeenSet = true; m_resourceStatus = std::move(value); }
-    inline StackResourceSummary& WithResourceStatus(const ResourceStatus& value) { SetResourceStatus(value); return *this;}
-    inline StackResourceSummary& WithResourceStatus(ResourceStatus&& value) { SetResourceStatus(std::move(value)); return *this;}
+    inline void SetResourceStatus(ResourceStatus value) { m_resourceStatusHasBeenSet = true; m_resourceStatus = value; }
+    inline StackResourceSummary& WithResourceStatus(ResourceStatus value) { SetResourceStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Success/failure message associated with the resource.</p>
      */
-    inline const Aws::String& GetResourceStatusReason() const{ return m_resourceStatusReason; }
+    inline const Aws::String& GetResourceStatusReason() const { return m_resourceStatusReason; }
     inline bool ResourceStatusReasonHasBeenSet() const { return m_resourceStatusReasonHasBeenSet; }
-    inline void SetResourceStatusReason(const Aws::String& value) { m_resourceStatusReasonHasBeenSet = true; m_resourceStatusReason = value; }
-    inline void SetResourceStatusReason(Aws::String&& value) { m_resourceStatusReasonHasBeenSet = true; m_resourceStatusReason = std::move(value); }
-    inline void SetResourceStatusReason(const char* value) { m_resourceStatusReasonHasBeenSet = true; m_resourceStatusReason.assign(value); }
-    inline StackResourceSummary& WithResourceStatusReason(const Aws::String& value) { SetResourceStatusReason(value); return *this;}
-    inline StackResourceSummary& WithResourceStatusReason(Aws::String&& value) { SetResourceStatusReason(std::move(value)); return *this;}
-    inline StackResourceSummary& WithResourceStatusReason(const char* value) { SetResourceStatusReason(value); return *this;}
+    template<typename ResourceStatusReasonT = Aws::String>
+    void SetResourceStatusReason(ResourceStatusReasonT&& value) { m_resourceStatusReasonHasBeenSet = true; m_resourceStatusReason = std::forward<ResourceStatusReasonT>(value); }
+    template<typename ResourceStatusReasonT = Aws::String>
+    StackResourceSummary& WithResourceStatusReason(ResourceStatusReasonT&& value) { SetResourceStatusReason(std::forward<ResourceStatusReasonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -138,12 +128,12 @@ namespace Model
      * unmanaged configuration changes to stacks and resources with drift
      * detection</a>.</p>
      */
-    inline const StackResourceDriftInformationSummary& GetDriftInformation() const{ return m_driftInformation; }
+    inline const StackResourceDriftInformationSummary& GetDriftInformation() const { return m_driftInformation; }
     inline bool DriftInformationHasBeenSet() const { return m_driftInformationHasBeenSet; }
-    inline void SetDriftInformation(const StackResourceDriftInformationSummary& value) { m_driftInformationHasBeenSet = true; m_driftInformation = value; }
-    inline void SetDriftInformation(StackResourceDriftInformationSummary&& value) { m_driftInformationHasBeenSet = true; m_driftInformation = std::move(value); }
-    inline StackResourceSummary& WithDriftInformation(const StackResourceDriftInformationSummary& value) { SetDriftInformation(value); return *this;}
-    inline StackResourceSummary& WithDriftInformation(StackResourceDriftInformationSummary&& value) { SetDriftInformation(std::move(value)); return *this;}
+    template<typename DriftInformationT = StackResourceDriftInformationSummary>
+    void SetDriftInformation(DriftInformationT&& value) { m_driftInformationHasBeenSet = true; m_driftInformation = std::forward<DriftInformationT>(value); }
+    template<typename DriftInformationT = StackResourceDriftInformationSummary>
+    StackResourceSummary& WithDriftInformation(DriftInformationT&& value) { SetDriftInformation(std::forward<DriftInformationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -151,12 +141,12 @@ namespace Model
      * <p>Contains information about the module from which the resource was created, if
      * the resource was created from a module included in the stack template.</p>
      */
-    inline const ModuleInfo& GetModuleInfo() const{ return m_moduleInfo; }
+    inline const ModuleInfo& GetModuleInfo() const { return m_moduleInfo; }
     inline bool ModuleInfoHasBeenSet() const { return m_moduleInfoHasBeenSet; }
-    inline void SetModuleInfo(const ModuleInfo& value) { m_moduleInfoHasBeenSet = true; m_moduleInfo = value; }
-    inline void SetModuleInfo(ModuleInfo&& value) { m_moduleInfoHasBeenSet = true; m_moduleInfo = std::move(value); }
-    inline StackResourceSummary& WithModuleInfo(const ModuleInfo& value) { SetModuleInfo(value); return *this;}
-    inline StackResourceSummary& WithModuleInfo(ModuleInfo&& value) { SetModuleInfo(std::move(value)); return *this;}
+    template<typename ModuleInfoT = ModuleInfo>
+    void SetModuleInfo(ModuleInfoT&& value) { m_moduleInfoHasBeenSet = true; m_moduleInfo = std::forward<ModuleInfoT>(value); }
+    template<typename ModuleInfoT = ModuleInfo>
+    StackResourceSummary& WithModuleInfo(ModuleInfoT&& value) { SetModuleInfo(std::forward<ModuleInfoT>(value)); return *this;}
     ///@}
   private:
 
@@ -169,10 +159,10 @@ namespace Model
     Aws::String m_resourceType;
     bool m_resourceTypeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedTimestamp;
+    Aws::Utils::DateTime m_lastUpdatedTimestamp{};
     bool m_lastUpdatedTimestampHasBeenSet = false;
 
-    ResourceStatus m_resourceStatus;
+    ResourceStatus m_resourceStatus{ResourceStatus::NOT_SET};
     bool m_resourceStatusHasBeenSet = false;
 
     Aws::String m_resourceStatusReason;

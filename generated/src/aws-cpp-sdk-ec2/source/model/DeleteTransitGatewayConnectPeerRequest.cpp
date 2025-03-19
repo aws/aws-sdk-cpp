@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeleteTransitGatewayConnectPeerRequest::DeleteTransitGatewayConnectPeerRequest() : 
-    m_transitGatewayConnectPeerIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTransitGatewayConnectPeerRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -12,20 +12,6 @@ using namespace Aws::MigrationHubRefactorSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateRouteRequest::CreateRouteRequest() : 
-    m_applicationIdentifierHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_defaultRouteHasBeenSet(false),
-    m_environmentIdentifierHasBeenSet(false),
-    m_routeType(RouteType::NOT_SET),
-    m_routeTypeHasBeenSet(false),
-    m_serviceIdentifierHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_uriPathRouteHasBeenSet(false)
-{
-}
-
 Aws::String CreateRouteRequest::SerializePayload() const
 {
   JsonValue payload;

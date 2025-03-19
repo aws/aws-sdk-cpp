@@ -18,28 +18,7 @@ namespace CodeBuild
 namespace Model
 {
 
-CodeCoverage::CodeCoverage() : 
-    m_idHasBeenSet(false),
-    m_reportARNHasBeenSet(false),
-    m_filePathHasBeenSet(false),
-    m_lineCoveragePercentage(0.0),
-    m_lineCoveragePercentageHasBeenSet(false),
-    m_linesCovered(0),
-    m_linesCoveredHasBeenSet(false),
-    m_linesMissed(0),
-    m_linesMissedHasBeenSet(false),
-    m_branchCoveragePercentage(0.0),
-    m_branchCoveragePercentageHasBeenSet(false),
-    m_branchesCovered(0),
-    m_branchesCoveredHasBeenSet(false),
-    m_branchesMissed(0),
-    m_branchesMissedHasBeenSet(false),
-    m_expiredHasBeenSet(false)
-{
-}
-
 CodeCoverage::CodeCoverage(JsonView jsonValue)
-  : CodeCoverage()
 {
   *this = jsonValue;
 }
@@ -49,73 +28,53 @@ CodeCoverage& CodeCoverage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reportARN"))
   {
     m_reportARN = jsonValue.GetString("reportARN");
-
     m_reportARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("filePath"))
   {
     m_filePath = jsonValue.GetString("filePath");
-
     m_filePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lineCoveragePercentage"))
   {
     m_lineCoveragePercentage = jsonValue.GetDouble("lineCoveragePercentage");
-
     m_lineCoveragePercentageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("linesCovered"))
   {
     m_linesCovered = jsonValue.GetInteger("linesCovered");
-
     m_linesCoveredHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("linesMissed"))
   {
     m_linesMissed = jsonValue.GetInteger("linesMissed");
-
     m_linesMissedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("branchCoveragePercentage"))
   {
     m_branchCoveragePercentage = jsonValue.GetDouble("branchCoveragePercentage");
-
     m_branchCoveragePercentageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("branchesCovered"))
   {
     m_branchesCovered = jsonValue.GetInteger("branchesCovered");
-
     m_branchesCoveredHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("branchesMissed"))
   {
     m_branchesMissed = jsonValue.GetInteger("branchesMissed");
-
     m_branchesMissedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expired"))
   {
     m_expired = jsonValue.GetDouble("expired");
-
     m_expiredHasBeenSet = true;
   }
-
   return *this;
 }
 

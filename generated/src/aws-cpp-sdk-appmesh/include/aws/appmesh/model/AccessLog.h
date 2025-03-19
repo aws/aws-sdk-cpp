@@ -32,7 +32,7 @@ namespace Model
   class AccessLog
   {
   public:
-    AWS_APPMESH_API AccessLog();
+    AWS_APPMESH_API AccessLog() = default;
     AWS_APPMESH_API AccessLog(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API AccessLog& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The file object to send virtual node access logs to.</p>
      */
-    inline const FileAccessLog& GetFile() const{ return m_file; }
+    inline const FileAccessLog& GetFile() const { return m_file; }
     inline bool FileHasBeenSet() const { return m_fileHasBeenSet; }
-    inline void SetFile(const FileAccessLog& value) { m_fileHasBeenSet = true; m_file = value; }
-    inline void SetFile(FileAccessLog&& value) { m_fileHasBeenSet = true; m_file = std::move(value); }
-    inline AccessLog& WithFile(const FileAccessLog& value) { SetFile(value); return *this;}
-    inline AccessLog& WithFile(FileAccessLog&& value) { SetFile(std::move(value)); return *this;}
+    template<typename FileT = FileAccessLog>
+    void SetFile(FileT&& value) { m_fileHasBeenSet = true; m_file = std::forward<FileT>(value); }
+    template<typename FileT = FileAccessLog>
+    AccessLog& WithFile(FileT&& value) { SetFile(std::forward<FileT>(value)); return *this;}
     ///@}
   private:
 

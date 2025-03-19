@@ -20,14 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-CacheNodeTypeSpecificValue::CacheNodeTypeSpecificValue() : 
-    m_cacheNodeTypeHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 CacheNodeTypeSpecificValue::CacheNodeTypeSpecificValue(const XmlNode& xmlNode)
-  : CacheNodeTypeSpecificValue()
 {
   *this = xmlNode;
 }

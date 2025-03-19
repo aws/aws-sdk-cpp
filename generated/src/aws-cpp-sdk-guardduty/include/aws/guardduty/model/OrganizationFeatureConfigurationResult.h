@@ -35,7 +35,7 @@ namespace Model
   class OrganizationFeatureConfigurationResult
   {
   public:
-    AWS_GUARDDUTY_API OrganizationFeatureConfigurationResult();
+    AWS_GUARDDUTY_API OrganizationFeatureConfigurationResult() = default;
     AWS_GUARDDUTY_API OrganizationFeatureConfigurationResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API OrganizationFeatureConfigurationResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,10 @@ namespace Model
      * <p>The name of the feature that is configured for the member accounts within the
      * organization.</p>
      */
-    inline const OrgFeature& GetName() const{ return m_name; }
+    inline OrgFeature GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const OrgFeature& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(OrgFeature&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline OrganizationFeatureConfigurationResult& WithName(const OrgFeature& value) { SetName(value); return *this;}
-    inline OrganizationFeatureConfigurationResult& WithName(OrgFeature&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(OrgFeature value) { m_nameHasBeenSet = true; m_name = value; }
+    inline OrganizationFeatureConfigurationResult& WithName(OrgFeature value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -67,12 +65,10 @@ namespace Model
      * enabled for any account in the organization. In this case, each account will be
      * managed individually by the administrator.</p> </li> </ul>
      */
-    inline const OrgFeatureStatus& GetAutoEnable() const{ return m_autoEnable; }
+    inline OrgFeatureStatus GetAutoEnable() const { return m_autoEnable; }
     inline bool AutoEnableHasBeenSet() const { return m_autoEnableHasBeenSet; }
-    inline void SetAutoEnable(const OrgFeatureStatus& value) { m_autoEnableHasBeenSet = true; m_autoEnable = value; }
-    inline void SetAutoEnable(OrgFeatureStatus&& value) { m_autoEnableHasBeenSet = true; m_autoEnable = std::move(value); }
-    inline OrganizationFeatureConfigurationResult& WithAutoEnable(const OrgFeatureStatus& value) { SetAutoEnable(value); return *this;}
-    inline OrganizationFeatureConfigurationResult& WithAutoEnable(OrgFeatureStatus&& value) { SetAutoEnable(std::move(value)); return *this;}
+    inline void SetAutoEnable(OrgFeatureStatus value) { m_autoEnableHasBeenSet = true; m_autoEnable = value; }
+    inline OrganizationFeatureConfigurationResult& WithAutoEnable(OrgFeatureStatus value) { SetAutoEnable(value); return *this;}
     ///@}
 
     ///@{
@@ -80,21 +76,21 @@ namespace Model
      * <p>The additional configuration that is configured for the member accounts
      * within the organization.</p>
      */
-    inline const Aws::Vector<OrganizationAdditionalConfigurationResult>& GetAdditionalConfiguration() const{ return m_additionalConfiguration; }
+    inline const Aws::Vector<OrganizationAdditionalConfigurationResult>& GetAdditionalConfiguration() const { return m_additionalConfiguration; }
     inline bool AdditionalConfigurationHasBeenSet() const { return m_additionalConfigurationHasBeenSet; }
-    inline void SetAdditionalConfiguration(const Aws::Vector<OrganizationAdditionalConfigurationResult>& value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration = value; }
-    inline void SetAdditionalConfiguration(Aws::Vector<OrganizationAdditionalConfigurationResult>&& value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration = std::move(value); }
-    inline OrganizationFeatureConfigurationResult& WithAdditionalConfiguration(const Aws::Vector<OrganizationAdditionalConfigurationResult>& value) { SetAdditionalConfiguration(value); return *this;}
-    inline OrganizationFeatureConfigurationResult& WithAdditionalConfiguration(Aws::Vector<OrganizationAdditionalConfigurationResult>&& value) { SetAdditionalConfiguration(std::move(value)); return *this;}
-    inline OrganizationFeatureConfigurationResult& AddAdditionalConfiguration(const OrganizationAdditionalConfigurationResult& value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration.push_back(value); return *this; }
-    inline OrganizationFeatureConfigurationResult& AddAdditionalConfiguration(OrganizationAdditionalConfigurationResult&& value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration.push_back(std::move(value)); return *this; }
+    template<typename AdditionalConfigurationT = Aws::Vector<OrganizationAdditionalConfigurationResult>>
+    void SetAdditionalConfiguration(AdditionalConfigurationT&& value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration = std::forward<AdditionalConfigurationT>(value); }
+    template<typename AdditionalConfigurationT = Aws::Vector<OrganizationAdditionalConfigurationResult>>
+    OrganizationFeatureConfigurationResult& WithAdditionalConfiguration(AdditionalConfigurationT&& value) { SetAdditionalConfiguration(std::forward<AdditionalConfigurationT>(value)); return *this;}
+    template<typename AdditionalConfigurationT = OrganizationAdditionalConfigurationResult>
+    OrganizationFeatureConfigurationResult& AddAdditionalConfiguration(AdditionalConfigurationT&& value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration.emplace_back(std::forward<AdditionalConfigurationT>(value)); return *this; }
     ///@}
   private:
 
-    OrgFeature m_name;
+    OrgFeature m_name{OrgFeature::NOT_SET};
     bool m_nameHasBeenSet = false;
 
-    OrgFeatureStatus m_autoEnable;
+    OrgFeatureStatus m_autoEnable{OrgFeatureStatus::NOT_SET};
     bool m_autoEnableHasBeenSet = false;
 
     Aws::Vector<OrganizationAdditionalConfigurationResult> m_additionalConfiguration;

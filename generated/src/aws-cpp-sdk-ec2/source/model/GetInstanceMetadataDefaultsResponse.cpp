@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetInstanceMetadataDefaultsResponse::GetInstanceMetadataDefaultsResponse()
-{
-}
-
 GetInstanceMetadataDefaultsResponse::GetInstanceMetadataDefaultsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ GetInstanceMetadataDefaultsResponse& GetInstanceMetadataDefaultsResponse::operat
     if(!accountLevelNode.IsNull())
     {
       m_accountLevel = accountLevelNode;
+      m_accountLevelHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ GetInstanceMetadataDefaultsResponse& GetInstanceMetadataDefaultsResponse::operat
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::GetInstanceMetadataDefaultsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

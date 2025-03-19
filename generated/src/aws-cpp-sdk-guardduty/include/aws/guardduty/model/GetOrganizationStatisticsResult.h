@@ -28,7 +28,7 @@ namespace Model
   class GetOrganizationStatisticsResult
   {
   public:
-    AWS_GUARDDUTY_API GetOrganizationStatisticsResult();
+    AWS_GUARDDUTY_API GetOrganizationStatisticsResult() = default;
     AWS_GUARDDUTY_API GetOrganizationStatisticsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GUARDDUTY_API GetOrganizationStatisticsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the statistics report for your organization.</p>
      */
-    inline const OrganizationDetails& GetOrganizationDetails() const{ return m_organizationDetails; }
-    inline void SetOrganizationDetails(const OrganizationDetails& value) { m_organizationDetails = value; }
-    inline void SetOrganizationDetails(OrganizationDetails&& value) { m_organizationDetails = std::move(value); }
-    inline GetOrganizationStatisticsResult& WithOrganizationDetails(const OrganizationDetails& value) { SetOrganizationDetails(value); return *this;}
-    inline GetOrganizationStatisticsResult& WithOrganizationDetails(OrganizationDetails&& value) { SetOrganizationDetails(std::move(value)); return *this;}
+    inline const OrganizationDetails& GetOrganizationDetails() const { return m_organizationDetails; }
+    template<typename OrganizationDetailsT = OrganizationDetails>
+    void SetOrganizationDetails(OrganizationDetailsT&& value) { m_organizationDetailsHasBeenSet = true; m_organizationDetails = std::forward<OrganizationDetailsT>(value); }
+    template<typename OrganizationDetailsT = OrganizationDetails>
+    GetOrganizationStatisticsResult& WithOrganizationDetails(OrganizationDetailsT&& value) { SetOrganizationDetails(std::forward<OrganizationDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetOrganizationStatisticsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetOrganizationStatisticsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetOrganizationStatisticsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetOrganizationStatisticsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     OrganizationDetails m_organizationDetails;
+    bool m_organizationDetailsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

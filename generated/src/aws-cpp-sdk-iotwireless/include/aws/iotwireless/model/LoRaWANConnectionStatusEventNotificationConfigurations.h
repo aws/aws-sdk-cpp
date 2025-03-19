@@ -32,7 +32,7 @@ namespace Model
   class LoRaWANConnectionStatusEventNotificationConfigurations
   {
   public:
-    AWS_IOTWIRELESS_API LoRaWANConnectionStatusEventNotificationConfigurations();
+    AWS_IOTWIRELESS_API LoRaWANConnectionStatusEventNotificationConfigurations() = default;
     AWS_IOTWIRELESS_API LoRaWANConnectionStatusEventNotificationConfigurations(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API LoRaWANConnectionStatusEventNotificationConfigurations& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,16 +43,14 @@ namespace Model
      * <p>Denotes whether the gateway EUI connection status event topic is enabled or
      * disabled.</p>
      */
-    inline const EventNotificationTopicStatus& GetGatewayEuiEventTopic() const{ return m_gatewayEuiEventTopic; }
+    inline EventNotificationTopicStatus GetGatewayEuiEventTopic() const { return m_gatewayEuiEventTopic; }
     inline bool GatewayEuiEventTopicHasBeenSet() const { return m_gatewayEuiEventTopicHasBeenSet; }
-    inline void SetGatewayEuiEventTopic(const EventNotificationTopicStatus& value) { m_gatewayEuiEventTopicHasBeenSet = true; m_gatewayEuiEventTopic = value; }
-    inline void SetGatewayEuiEventTopic(EventNotificationTopicStatus&& value) { m_gatewayEuiEventTopicHasBeenSet = true; m_gatewayEuiEventTopic = std::move(value); }
-    inline LoRaWANConnectionStatusEventNotificationConfigurations& WithGatewayEuiEventTopic(const EventNotificationTopicStatus& value) { SetGatewayEuiEventTopic(value); return *this;}
-    inline LoRaWANConnectionStatusEventNotificationConfigurations& WithGatewayEuiEventTopic(EventNotificationTopicStatus&& value) { SetGatewayEuiEventTopic(std::move(value)); return *this;}
+    inline void SetGatewayEuiEventTopic(EventNotificationTopicStatus value) { m_gatewayEuiEventTopicHasBeenSet = true; m_gatewayEuiEventTopic = value; }
+    inline LoRaWANConnectionStatusEventNotificationConfigurations& WithGatewayEuiEventTopic(EventNotificationTopicStatus value) { SetGatewayEuiEventTopic(value); return *this;}
     ///@}
   private:
 
-    EventNotificationTopicStatus m_gatewayEuiEventTopic;
+    EventNotificationTopicStatus m_gatewayEuiEventTopic{EventNotificationTopicStatus::NOT_SET};
     bool m_gatewayEuiEventTopicHasBeenSet = false;
   };
 

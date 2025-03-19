@@ -23,7 +23,7 @@ namespace Model
   class CreatePhoneNumberOrderRequest : public ChimeRequest
   {
   public:
-    AWS_CHIME_API CreatePhoneNumberOrderRequest();
+    AWS_CHIME_API CreatePhoneNumberOrderRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,31 +38,28 @@ namespace Model
     /**
      * <p>The phone number product type.</p>
      */
-    inline const PhoneNumberProductType& GetProductType() const{ return m_productType; }
+    inline PhoneNumberProductType GetProductType() const { return m_productType; }
     inline bool ProductTypeHasBeenSet() const { return m_productTypeHasBeenSet; }
-    inline void SetProductType(const PhoneNumberProductType& value) { m_productTypeHasBeenSet = true; m_productType = value; }
-    inline void SetProductType(PhoneNumberProductType&& value) { m_productTypeHasBeenSet = true; m_productType = std::move(value); }
-    inline CreatePhoneNumberOrderRequest& WithProductType(const PhoneNumberProductType& value) { SetProductType(value); return *this;}
-    inline CreatePhoneNumberOrderRequest& WithProductType(PhoneNumberProductType&& value) { SetProductType(std::move(value)); return *this;}
+    inline void SetProductType(PhoneNumberProductType value) { m_productTypeHasBeenSet = true; m_productType = value; }
+    inline CreatePhoneNumberOrderRequest& WithProductType(PhoneNumberProductType value) { SetProductType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>List of phone numbers, in E.164 format.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetE164PhoneNumbers() const{ return m_e164PhoneNumbers; }
+    inline const Aws::Vector<Aws::String>& GetE164PhoneNumbers() const { return m_e164PhoneNumbers; }
     inline bool E164PhoneNumbersHasBeenSet() const { return m_e164PhoneNumbersHasBeenSet; }
-    inline void SetE164PhoneNumbers(const Aws::Vector<Aws::String>& value) { m_e164PhoneNumbersHasBeenSet = true; m_e164PhoneNumbers = value; }
-    inline void SetE164PhoneNumbers(Aws::Vector<Aws::String>&& value) { m_e164PhoneNumbersHasBeenSet = true; m_e164PhoneNumbers = std::move(value); }
-    inline CreatePhoneNumberOrderRequest& WithE164PhoneNumbers(const Aws::Vector<Aws::String>& value) { SetE164PhoneNumbers(value); return *this;}
-    inline CreatePhoneNumberOrderRequest& WithE164PhoneNumbers(Aws::Vector<Aws::String>&& value) { SetE164PhoneNumbers(std::move(value)); return *this;}
-    inline CreatePhoneNumberOrderRequest& AddE164PhoneNumbers(const Aws::String& value) { m_e164PhoneNumbersHasBeenSet = true; m_e164PhoneNumbers.push_back(value); return *this; }
-    inline CreatePhoneNumberOrderRequest& AddE164PhoneNumbers(Aws::String&& value) { m_e164PhoneNumbersHasBeenSet = true; m_e164PhoneNumbers.push_back(std::move(value)); return *this; }
-    inline CreatePhoneNumberOrderRequest& AddE164PhoneNumbers(const char* value) { m_e164PhoneNumbersHasBeenSet = true; m_e164PhoneNumbers.push_back(value); return *this; }
+    template<typename E164PhoneNumbersT = Aws::Vector<Aws::String>>
+    void SetE164PhoneNumbers(E164PhoneNumbersT&& value) { m_e164PhoneNumbersHasBeenSet = true; m_e164PhoneNumbers = std::forward<E164PhoneNumbersT>(value); }
+    template<typename E164PhoneNumbersT = Aws::Vector<Aws::String>>
+    CreatePhoneNumberOrderRequest& WithE164PhoneNumbers(E164PhoneNumbersT&& value) { SetE164PhoneNumbers(std::forward<E164PhoneNumbersT>(value)); return *this;}
+    template<typename E164PhoneNumbersT = Aws::String>
+    CreatePhoneNumberOrderRequest& AddE164PhoneNumbers(E164PhoneNumbersT&& value) { m_e164PhoneNumbersHasBeenSet = true; m_e164PhoneNumbers.emplace_back(std::forward<E164PhoneNumbersT>(value)); return *this; }
     ///@}
   private:
 
-    PhoneNumberProductType m_productType;
+    PhoneNumberProductType m_productType{PhoneNumberProductType::NOT_SET};
     bool m_productTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_e164PhoneNumbers;

@@ -25,7 +25,7 @@ namespace Model
   class DisableOrganizationAdminAccountRequest : public Macie2Request
   {
   public:
-    AWS_MACIE2_API DisableOrganizationAdminAccountRequest();
+    AWS_MACIE2_API DisableOrganizationAdminAccountRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p>The Amazon Web Services account ID of the delegated Amazon Macie
      * administrator account.</p>
      */
-    inline const Aws::String& GetAdminAccountId() const{ return m_adminAccountId; }
+    inline const Aws::String& GetAdminAccountId() const { return m_adminAccountId; }
     inline bool AdminAccountIdHasBeenSet() const { return m_adminAccountIdHasBeenSet; }
-    inline void SetAdminAccountId(const Aws::String& value) { m_adminAccountIdHasBeenSet = true; m_adminAccountId = value; }
-    inline void SetAdminAccountId(Aws::String&& value) { m_adminAccountIdHasBeenSet = true; m_adminAccountId = std::move(value); }
-    inline void SetAdminAccountId(const char* value) { m_adminAccountIdHasBeenSet = true; m_adminAccountId.assign(value); }
-    inline DisableOrganizationAdminAccountRequest& WithAdminAccountId(const Aws::String& value) { SetAdminAccountId(value); return *this;}
-    inline DisableOrganizationAdminAccountRequest& WithAdminAccountId(Aws::String&& value) { SetAdminAccountId(std::move(value)); return *this;}
-    inline DisableOrganizationAdminAccountRequest& WithAdminAccountId(const char* value) { SetAdminAccountId(value); return *this;}
+    template<typename AdminAccountIdT = Aws::String>
+    void SetAdminAccountId(AdminAccountIdT&& value) { m_adminAccountIdHasBeenSet = true; m_adminAccountId = std::forward<AdminAccountIdT>(value); }
+    template<typename AdminAccountIdT = Aws::String>
+    DisableOrganizationAdminAccountRequest& WithAdminAccountId(AdminAccountIdT&& value) { SetAdminAccountId(std::forward<AdminAccountIdT>(value)); return *this;}
     ///@}
   private:
 

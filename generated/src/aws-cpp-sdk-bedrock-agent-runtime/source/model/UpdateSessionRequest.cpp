@@ -12,12 +12,6 @@ using namespace Aws::BedrockAgentRuntime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSessionRequest::UpdateSessionRequest() : 
-    m_sessionIdentifierHasBeenSet(false),
-    m_sessionMetadataHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSessionRequest::SerializePayload() const
 {
   JsonValue payload;

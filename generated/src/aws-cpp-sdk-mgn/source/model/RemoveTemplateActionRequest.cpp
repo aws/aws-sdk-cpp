@@ -12,12 +12,6 @@ using namespace Aws::mgn::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RemoveTemplateActionRequest::RemoveTemplateActionRequest() : 
-    m_actionIDHasBeenSet(false),
-    m_launchConfigurationTemplateIDHasBeenSet(false)
-{
-}
-
 Aws::String RemoveTemplateActionRequest::SerializePayload() const
 {
   JsonValue payload;

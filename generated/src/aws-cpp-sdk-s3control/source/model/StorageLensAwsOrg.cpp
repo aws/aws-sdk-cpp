@@ -20,13 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-StorageLensAwsOrg::StorageLensAwsOrg() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 StorageLensAwsOrg::StorageLensAwsOrg(const XmlNode& xmlNode)
-  : StorageLensAwsOrg()
 {
   *this = xmlNode;
 }

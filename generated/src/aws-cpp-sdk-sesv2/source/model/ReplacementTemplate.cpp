@@ -18,13 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-ReplacementTemplate::ReplacementTemplate() : 
-    m_replacementTemplateDataHasBeenSet(false)
-{
-}
-
 ReplacementTemplate::ReplacementTemplate(JsonView jsonValue)
-  : ReplacementTemplate()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ReplacementTemplate& ReplacementTemplate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ReplacementTemplateData"))
   {
     m_replacementTemplateData = jsonValue.GetString("ReplacementTemplateData");
-
     m_replacementTemplateDataHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class Byoasn
   {
   public:
-    AWS_EC2_API Byoasn();
+    AWS_EC2_API Byoasn() = default;
     AWS_EC2_API Byoasn(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API Byoasn& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,54 +45,46 @@ namespace Model
     /**
      * <p>A public 2-byte or 4-byte ASN.</p>
      */
-    inline const Aws::String& GetAsn() const{ return m_asn; }
+    inline const Aws::String& GetAsn() const { return m_asn; }
     inline bool AsnHasBeenSet() const { return m_asnHasBeenSet; }
-    inline void SetAsn(const Aws::String& value) { m_asnHasBeenSet = true; m_asn = value; }
-    inline void SetAsn(Aws::String&& value) { m_asnHasBeenSet = true; m_asn = std::move(value); }
-    inline void SetAsn(const char* value) { m_asnHasBeenSet = true; m_asn.assign(value); }
-    inline Byoasn& WithAsn(const Aws::String& value) { SetAsn(value); return *this;}
-    inline Byoasn& WithAsn(Aws::String&& value) { SetAsn(std::move(value)); return *this;}
-    inline Byoasn& WithAsn(const char* value) { SetAsn(value); return *this;}
+    template<typename AsnT = Aws::String>
+    void SetAsn(AsnT&& value) { m_asnHasBeenSet = true; m_asn = std::forward<AsnT>(value); }
+    template<typename AsnT = Aws::String>
+    Byoasn& WithAsn(AsnT&& value) { SetAsn(std::forward<AsnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An IPAM ID.</p>
      */
-    inline const Aws::String& GetIpamId() const{ return m_ipamId; }
+    inline const Aws::String& GetIpamId() const { return m_ipamId; }
     inline bool IpamIdHasBeenSet() const { return m_ipamIdHasBeenSet; }
-    inline void SetIpamId(const Aws::String& value) { m_ipamIdHasBeenSet = true; m_ipamId = value; }
-    inline void SetIpamId(Aws::String&& value) { m_ipamIdHasBeenSet = true; m_ipamId = std::move(value); }
-    inline void SetIpamId(const char* value) { m_ipamIdHasBeenSet = true; m_ipamId.assign(value); }
-    inline Byoasn& WithIpamId(const Aws::String& value) { SetIpamId(value); return *this;}
-    inline Byoasn& WithIpamId(Aws::String&& value) { SetIpamId(std::move(value)); return *this;}
-    inline Byoasn& WithIpamId(const char* value) { SetIpamId(value); return *this;}
+    template<typename IpamIdT = Aws::String>
+    void SetIpamId(IpamIdT&& value) { m_ipamIdHasBeenSet = true; m_ipamId = std::forward<IpamIdT>(value); }
+    template<typename IpamIdT = Aws::String>
+    Byoasn& WithIpamId(IpamIdT&& value) { SetIpamId(std::forward<IpamIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status message.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-    inline Byoasn& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline Byoasn& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline Byoasn& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    Byoasn& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The provisioning state of the BYOASN.</p>
      */
-    inline const AsnState& GetState() const{ return m_state; }
+    inline AsnState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const AsnState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(AsnState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline Byoasn& WithState(const AsnState& value) { SetState(value); return *this;}
-    inline Byoasn& WithState(AsnState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(AsnState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline Byoasn& WithState(AsnState value) { SetState(value); return *this;}
     ///@}
   private:
 
@@ -105,7 +97,7 @@ namespace Model
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet = false;
 
-    AsnState m_state;
+    AsnState m_state{AsnState::NOT_SET};
     bool m_stateHasBeenSet = false;
   };
 

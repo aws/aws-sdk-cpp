@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-GetConsoleScreenshotRequest::GetConsoleScreenshotRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_wakeUp(false),
-    m_wakeUpHasBeenSet(false)
-{
-}
-
 Aws::String GetConsoleScreenshotRequest::SerializePayload() const
 {
   Aws::StringStream ss;

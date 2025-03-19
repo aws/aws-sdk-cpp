@@ -35,7 +35,7 @@ namespace Model
   class DescribeLocationNfsResult
   {
   public:
-    AWS_DATASYNC_API DescribeLocationNfsResult();
+    AWS_DATASYNC_API DescribeLocationNfsResult() = default;
     AWS_DATASYNC_API DescribeLocationNfsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATASYNC_API DescribeLocationNfsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,82 +44,82 @@ namespace Model
     /**
      * <p>The ARN of the NFS location.</p>
      */
-    inline const Aws::String& GetLocationArn() const{ return m_locationArn; }
-    inline void SetLocationArn(const Aws::String& value) { m_locationArn = value; }
-    inline void SetLocationArn(Aws::String&& value) { m_locationArn = std::move(value); }
-    inline void SetLocationArn(const char* value) { m_locationArn.assign(value); }
-    inline DescribeLocationNfsResult& WithLocationArn(const Aws::String& value) { SetLocationArn(value); return *this;}
-    inline DescribeLocationNfsResult& WithLocationArn(Aws::String&& value) { SetLocationArn(std::move(value)); return *this;}
-    inline DescribeLocationNfsResult& WithLocationArn(const char* value) { SetLocationArn(value); return *this;}
+    inline const Aws::String& GetLocationArn() const { return m_locationArn; }
+    template<typename LocationArnT = Aws::String>
+    void SetLocationArn(LocationArnT&& value) { m_locationArnHasBeenSet = true; m_locationArn = std::forward<LocationArnT>(value); }
+    template<typename LocationArnT = Aws::String>
+    DescribeLocationNfsResult& WithLocationArn(LocationArnT&& value) { SetLocationArn(std::forward<LocationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The URI of the NFS location.</p>
      */
-    inline const Aws::String& GetLocationUri() const{ return m_locationUri; }
-    inline void SetLocationUri(const Aws::String& value) { m_locationUri = value; }
-    inline void SetLocationUri(Aws::String&& value) { m_locationUri = std::move(value); }
-    inline void SetLocationUri(const char* value) { m_locationUri.assign(value); }
-    inline DescribeLocationNfsResult& WithLocationUri(const Aws::String& value) { SetLocationUri(value); return *this;}
-    inline DescribeLocationNfsResult& WithLocationUri(Aws::String&& value) { SetLocationUri(std::move(value)); return *this;}
-    inline DescribeLocationNfsResult& WithLocationUri(const char* value) { SetLocationUri(value); return *this;}
+    inline const Aws::String& GetLocationUri() const { return m_locationUri; }
+    template<typename LocationUriT = Aws::String>
+    void SetLocationUri(LocationUriT&& value) { m_locationUriHasBeenSet = true; m_locationUri = std::forward<LocationUriT>(value); }
+    template<typename LocationUriT = Aws::String>
+    DescribeLocationNfsResult& WithLocationUri(LocationUriT&& value) { SetLocationUri(std::forward<LocationUriT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const OnPremConfig& GetOnPremConfig() const{ return m_onPremConfig; }
-    inline void SetOnPremConfig(const OnPremConfig& value) { m_onPremConfig = value; }
-    inline void SetOnPremConfig(OnPremConfig&& value) { m_onPremConfig = std::move(value); }
-    inline DescribeLocationNfsResult& WithOnPremConfig(const OnPremConfig& value) { SetOnPremConfig(value); return *this;}
-    inline DescribeLocationNfsResult& WithOnPremConfig(OnPremConfig&& value) { SetOnPremConfig(std::move(value)); return *this;}
+    inline const OnPremConfig& GetOnPremConfig() const { return m_onPremConfig; }
+    template<typename OnPremConfigT = OnPremConfig>
+    void SetOnPremConfig(OnPremConfigT&& value) { m_onPremConfigHasBeenSet = true; m_onPremConfig = std::forward<OnPremConfigT>(value); }
+    template<typename OnPremConfigT = OnPremConfig>
+    DescribeLocationNfsResult& WithOnPremConfig(OnPremConfigT&& value) { SetOnPremConfig(std::forward<OnPremConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The mount options that DataSync uses to mount your NFS file server.</p>
      */
-    inline const NfsMountOptions& GetMountOptions() const{ return m_mountOptions; }
-    inline void SetMountOptions(const NfsMountOptions& value) { m_mountOptions = value; }
-    inline void SetMountOptions(NfsMountOptions&& value) { m_mountOptions = std::move(value); }
-    inline DescribeLocationNfsResult& WithMountOptions(const NfsMountOptions& value) { SetMountOptions(value); return *this;}
-    inline DescribeLocationNfsResult& WithMountOptions(NfsMountOptions&& value) { SetMountOptions(std::move(value)); return *this;}
+    inline const NfsMountOptions& GetMountOptions() const { return m_mountOptions; }
+    template<typename MountOptionsT = NfsMountOptions>
+    void SetMountOptions(MountOptionsT&& value) { m_mountOptionsHasBeenSet = true; m_mountOptions = std::forward<MountOptionsT>(value); }
+    template<typename MountOptionsT = NfsMountOptions>
+    DescribeLocationNfsResult& WithMountOptions(MountOptionsT&& value) { SetMountOptions(std::forward<MountOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time when the NFS location was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline DescribeLocationNfsResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline DescribeLocationNfsResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    DescribeLocationNfsResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeLocationNfsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeLocationNfsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeLocationNfsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeLocationNfsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_locationArn;
+    bool m_locationArnHasBeenSet = false;
 
     Aws::String m_locationUri;
+    bool m_locationUriHasBeenSet = false;
 
     OnPremConfig m_onPremConfig;
+    bool m_onPremConfigHasBeenSet = false;
 
     NfsMountOptions m_mountOptions;
+    bool m_mountOptionsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

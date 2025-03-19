@@ -18,17 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsNetworkFirewallFirewallPolicyDetails::AwsNetworkFirewallFirewallPolicyDetails() : 
-    m_firewallPolicyHasBeenSet(false),
-    m_firewallPolicyArnHasBeenSet(false),
-    m_firewallPolicyIdHasBeenSet(false),
-    m_firewallPolicyNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 AwsNetworkFirewallFirewallPolicyDetails::AwsNetworkFirewallFirewallPolicyDetails(JsonView jsonValue)
-  : AwsNetworkFirewallFirewallPolicyDetails()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ AwsNetworkFirewallFirewallPolicyDetails& AwsNetworkFirewallFirewallPolicyDetails
   if(jsonValue.ValueExists("FirewallPolicy"))
   {
     m_firewallPolicy = jsonValue.GetObject("FirewallPolicy");
-
     m_firewallPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FirewallPolicyArn"))
   {
     m_firewallPolicyArn = jsonValue.GetString("FirewallPolicyArn");
-
     m_firewallPolicyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FirewallPolicyId"))
   {
     m_firewallPolicyId = jsonValue.GetString("FirewallPolicyId");
-
     m_firewallPolicyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FirewallPolicyName"))
   {
     m_firewallPolicyName = jsonValue.GetString("FirewallPolicyName");
-
     m_firewallPolicyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

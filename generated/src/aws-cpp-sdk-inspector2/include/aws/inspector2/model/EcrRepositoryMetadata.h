@@ -33,7 +33,7 @@ namespace Model
   class EcrRepositoryMetadata
   {
   public:
-    AWS_INSPECTOR2_API EcrRepositoryMetadata();
+    AWS_INSPECTOR2_API EcrRepositoryMetadata() = default;
     AWS_INSPECTOR2_API EcrRepositoryMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API EcrRepositoryMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,33 +43,29 @@ namespace Model
     /**
      * <p>The name of the Amazon ECR repository.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline EcrRepositoryMetadata& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline EcrRepositoryMetadata& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline EcrRepositoryMetadata& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    EcrRepositoryMetadata& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The frequency of scans.</p>
      */
-    inline const EcrScanFrequency& GetScanFrequency() const{ return m_scanFrequency; }
+    inline EcrScanFrequency GetScanFrequency() const { return m_scanFrequency; }
     inline bool ScanFrequencyHasBeenSet() const { return m_scanFrequencyHasBeenSet; }
-    inline void SetScanFrequency(const EcrScanFrequency& value) { m_scanFrequencyHasBeenSet = true; m_scanFrequency = value; }
-    inline void SetScanFrequency(EcrScanFrequency&& value) { m_scanFrequencyHasBeenSet = true; m_scanFrequency = std::move(value); }
-    inline EcrRepositoryMetadata& WithScanFrequency(const EcrScanFrequency& value) { SetScanFrequency(value); return *this;}
-    inline EcrRepositoryMetadata& WithScanFrequency(EcrScanFrequency&& value) { SetScanFrequency(std::move(value)); return *this;}
+    inline void SetScanFrequency(EcrScanFrequency value) { m_scanFrequencyHasBeenSet = true; m_scanFrequency = value; }
+    inline EcrRepositoryMetadata& WithScanFrequency(EcrScanFrequency value) { SetScanFrequency(value); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    EcrScanFrequency m_scanFrequency;
+    EcrScanFrequency m_scanFrequency{EcrScanFrequency::NOT_SET};
     bool m_scanFrequencyHasBeenSet = false;
   };
 

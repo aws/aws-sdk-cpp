@@ -18,16 +18,7 @@ namespace SSOOIDC
 namespace Model
 {
 
-InvalidRequestRegionException::InvalidRequestRegionException() : 
-    m_errorHasBeenSet(false),
-    m_error_descriptionHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_regionHasBeenSet(false)
-{
-}
-
 InvalidRequestRegionException::InvalidRequestRegionException(JsonView jsonValue)
-  : InvalidRequestRegionException()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ InvalidRequestRegionException& InvalidRequestRegionException::operator =(JsonVie
   if(jsonValue.ValueExists("error"))
   {
     m_error = jsonValue.GetString("error");
-
     m_errorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("error_description"))
   {
     m_error_description = jsonValue.GetString("error_description");
-
     m_error_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endpoint"))
   {
     m_endpoint = jsonValue.GetString("endpoint");
-
     m_endpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("region"))
   {
     m_region = jsonValue.GetString("region");
-
     m_regionHasBeenSet = true;
   }
-
   return *this;
 }
 

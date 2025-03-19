@@ -35,7 +35,7 @@ namespace Model
   class ExecutionTimeFilter
   {
   public:
-    AWS_SWF_API ExecutionTimeFilter();
+    AWS_SWF_API ExecutionTimeFilter() = default;
     AWS_SWF_API ExecutionTimeFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API ExecutionTimeFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,31 +45,31 @@ namespace Model
     /**
      * <p>Specifies the oldest start or close date and time to return.</p>
      */
-    inline const Aws::Utils::DateTime& GetOldestDate() const{ return m_oldestDate; }
+    inline const Aws::Utils::DateTime& GetOldestDate() const { return m_oldestDate; }
     inline bool OldestDateHasBeenSet() const { return m_oldestDateHasBeenSet; }
-    inline void SetOldestDate(const Aws::Utils::DateTime& value) { m_oldestDateHasBeenSet = true; m_oldestDate = value; }
-    inline void SetOldestDate(Aws::Utils::DateTime&& value) { m_oldestDateHasBeenSet = true; m_oldestDate = std::move(value); }
-    inline ExecutionTimeFilter& WithOldestDate(const Aws::Utils::DateTime& value) { SetOldestDate(value); return *this;}
-    inline ExecutionTimeFilter& WithOldestDate(Aws::Utils::DateTime&& value) { SetOldestDate(std::move(value)); return *this;}
+    template<typename OldestDateT = Aws::Utils::DateTime>
+    void SetOldestDate(OldestDateT&& value) { m_oldestDateHasBeenSet = true; m_oldestDate = std::forward<OldestDateT>(value); }
+    template<typename OldestDateT = Aws::Utils::DateTime>
+    ExecutionTimeFilter& WithOldestDate(OldestDateT&& value) { SetOldestDate(std::forward<OldestDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the latest start or close date and time to return.</p>
      */
-    inline const Aws::Utils::DateTime& GetLatestDate() const{ return m_latestDate; }
+    inline const Aws::Utils::DateTime& GetLatestDate() const { return m_latestDate; }
     inline bool LatestDateHasBeenSet() const { return m_latestDateHasBeenSet; }
-    inline void SetLatestDate(const Aws::Utils::DateTime& value) { m_latestDateHasBeenSet = true; m_latestDate = value; }
-    inline void SetLatestDate(Aws::Utils::DateTime&& value) { m_latestDateHasBeenSet = true; m_latestDate = std::move(value); }
-    inline ExecutionTimeFilter& WithLatestDate(const Aws::Utils::DateTime& value) { SetLatestDate(value); return *this;}
-    inline ExecutionTimeFilter& WithLatestDate(Aws::Utils::DateTime&& value) { SetLatestDate(std::move(value)); return *this;}
+    template<typename LatestDateT = Aws::Utils::DateTime>
+    void SetLatestDate(LatestDateT&& value) { m_latestDateHasBeenSet = true; m_latestDate = std::forward<LatestDateT>(value); }
+    template<typename LatestDateT = Aws::Utils::DateTime>
+    ExecutionTimeFilter& WithLatestDate(LatestDateT&& value) { SetLatestDate(std::forward<LatestDateT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_oldestDate;
+    Aws::Utils::DateTime m_oldestDate{};
     bool m_oldestDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_latestDate;
+    Aws::Utils::DateTime m_latestDate{};
     bool m_latestDateHasBeenSet = false;
   };
 

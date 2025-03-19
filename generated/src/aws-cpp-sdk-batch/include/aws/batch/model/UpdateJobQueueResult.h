@@ -27,7 +27,7 @@ namespace Model
   class UpdateJobQueueResult
   {
   public:
-    AWS_BATCH_API UpdateJobQueueResult();
+    AWS_BATCH_API UpdateJobQueueResult() = default;
     AWS_BATCH_API UpdateJobQueueResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BATCH_API UpdateJobQueueResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,45 +36,42 @@ namespace Model
     /**
      * <p>The name of the job queue.</p>
      */
-    inline const Aws::String& GetJobQueueName() const{ return m_jobQueueName; }
-    inline void SetJobQueueName(const Aws::String& value) { m_jobQueueName = value; }
-    inline void SetJobQueueName(Aws::String&& value) { m_jobQueueName = std::move(value); }
-    inline void SetJobQueueName(const char* value) { m_jobQueueName.assign(value); }
-    inline UpdateJobQueueResult& WithJobQueueName(const Aws::String& value) { SetJobQueueName(value); return *this;}
-    inline UpdateJobQueueResult& WithJobQueueName(Aws::String&& value) { SetJobQueueName(std::move(value)); return *this;}
-    inline UpdateJobQueueResult& WithJobQueueName(const char* value) { SetJobQueueName(value); return *this;}
+    inline const Aws::String& GetJobQueueName() const { return m_jobQueueName; }
+    template<typename JobQueueNameT = Aws::String>
+    void SetJobQueueName(JobQueueNameT&& value) { m_jobQueueNameHasBeenSet = true; m_jobQueueName = std::forward<JobQueueNameT>(value); }
+    template<typename JobQueueNameT = Aws::String>
+    UpdateJobQueueResult& WithJobQueueName(JobQueueNameT&& value) { SetJobQueueName(std::forward<JobQueueNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the job queue.</p>
      */
-    inline const Aws::String& GetJobQueueArn() const{ return m_jobQueueArn; }
-    inline void SetJobQueueArn(const Aws::String& value) { m_jobQueueArn = value; }
-    inline void SetJobQueueArn(Aws::String&& value) { m_jobQueueArn = std::move(value); }
-    inline void SetJobQueueArn(const char* value) { m_jobQueueArn.assign(value); }
-    inline UpdateJobQueueResult& WithJobQueueArn(const Aws::String& value) { SetJobQueueArn(value); return *this;}
-    inline UpdateJobQueueResult& WithJobQueueArn(Aws::String&& value) { SetJobQueueArn(std::move(value)); return *this;}
-    inline UpdateJobQueueResult& WithJobQueueArn(const char* value) { SetJobQueueArn(value); return *this;}
+    inline const Aws::String& GetJobQueueArn() const { return m_jobQueueArn; }
+    template<typename JobQueueArnT = Aws::String>
+    void SetJobQueueArn(JobQueueArnT&& value) { m_jobQueueArnHasBeenSet = true; m_jobQueueArn = std::forward<JobQueueArnT>(value); }
+    template<typename JobQueueArnT = Aws::String>
+    UpdateJobQueueResult& WithJobQueueArn(JobQueueArnT&& value) { SetJobQueueArn(std::forward<JobQueueArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateJobQueueResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateJobQueueResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateJobQueueResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateJobQueueResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_jobQueueName;
+    bool m_jobQueueNameHasBeenSet = false;
 
     Aws::String m_jobQueueArn;
+    bool m_jobQueueArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

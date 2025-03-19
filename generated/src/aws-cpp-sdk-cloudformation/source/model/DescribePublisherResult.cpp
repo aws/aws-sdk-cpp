@@ -17,14 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribePublisherResult::DescribePublisherResult() : 
-    m_publisherStatus(PublisherStatus::NOT_SET),
-    m_identityProvider(IdentityProvider::NOT_SET)
-{
-}
-
 DescribePublisherResult::DescribePublisherResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : DescribePublisherResult()
 {
   *this = result;
 }
@@ -45,27 +38,32 @@ DescribePublisherResult& DescribePublisherResult::operator =(const Aws::AmazonWe
     if(!publisherIdNode.IsNull())
     {
       m_publisherId = Aws::Utils::Xml::DecodeEscapedXmlText(publisherIdNode.GetText());
+      m_publisherIdHasBeenSet = true;
     }
     XmlNode publisherStatusNode = resultNode.FirstChild("PublisherStatus");
     if(!publisherStatusNode.IsNull())
     {
-      m_publisherStatus = PublisherStatusMapper::GetPublisherStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(publisherStatusNode.GetText()).c_str()).c_str());
+      m_publisherStatus = PublisherStatusMapper::GetPublisherStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(publisherStatusNode.GetText()).c_str()));
+      m_publisherStatusHasBeenSet = true;
     }
     XmlNode identityProviderNode = resultNode.FirstChild("IdentityProvider");
     if(!identityProviderNode.IsNull())
     {
-      m_identityProvider = IdentityProviderMapper::GetIdentityProviderForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(identityProviderNode.GetText()).c_str()).c_str());
+      m_identityProvider = IdentityProviderMapper::GetIdentityProviderForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(identityProviderNode.GetText()).c_str()));
+      m_identityProviderHasBeenSet = true;
     }
     XmlNode publisherProfileNode = resultNode.FirstChild("PublisherProfile");
     if(!publisherProfileNode.IsNull())
     {
       m_publisherProfile = Aws::Utils::Xml::DecodeEscapedXmlText(publisherProfileNode.GetText());
+      m_publisherProfileHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::CloudFormation::Model::DescribePublisherResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

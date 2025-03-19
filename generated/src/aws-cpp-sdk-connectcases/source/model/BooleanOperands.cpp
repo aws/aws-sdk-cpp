@@ -18,16 +18,7 @@ namespace ConnectCases
 namespace Model
 {
 
-BooleanOperands::BooleanOperands() : 
-    m_operandOneHasBeenSet(false),
-    m_operandTwoHasBeenSet(false),
-    m_result(false),
-    m_resultHasBeenSet(false)
-{
-}
-
 BooleanOperands::BooleanOperands(JsonView jsonValue)
-  : BooleanOperands()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ BooleanOperands& BooleanOperands::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("operandOne"))
   {
     m_operandOne = jsonValue.GetObject("operandOne");
-
     m_operandOneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operandTwo"))
   {
     m_operandTwo = jsonValue.GetObject("operandTwo");
-
     m_operandTwoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("result"))
   {
     m_result = jsonValue.GetBool("result");
-
     m_resultHasBeenSet = true;
   }
-
   return *this;
 }
 

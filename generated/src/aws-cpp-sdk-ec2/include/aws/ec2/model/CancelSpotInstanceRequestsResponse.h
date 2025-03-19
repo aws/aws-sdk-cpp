@@ -35,7 +35,7 @@ namespace Model
   class CancelSpotInstanceRequestsResponse
   {
   public:
-    AWS_EC2_API CancelSpotInstanceRequestsResponse();
+    AWS_EC2_API CancelSpotInstanceRequestsResponse() = default;
     AWS_EC2_API CancelSpotInstanceRequestsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API CancelSpotInstanceRequestsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -44,28 +44,30 @@ namespace Model
     /**
      * <p>The Spot Instance requests.</p>
      */
-    inline const Aws::Vector<CancelledSpotInstanceRequest>& GetCancelledSpotInstanceRequests() const{ return m_cancelledSpotInstanceRequests; }
-    inline void SetCancelledSpotInstanceRequests(const Aws::Vector<CancelledSpotInstanceRequest>& value) { m_cancelledSpotInstanceRequests = value; }
-    inline void SetCancelledSpotInstanceRequests(Aws::Vector<CancelledSpotInstanceRequest>&& value) { m_cancelledSpotInstanceRequests = std::move(value); }
-    inline CancelSpotInstanceRequestsResponse& WithCancelledSpotInstanceRequests(const Aws::Vector<CancelledSpotInstanceRequest>& value) { SetCancelledSpotInstanceRequests(value); return *this;}
-    inline CancelSpotInstanceRequestsResponse& WithCancelledSpotInstanceRequests(Aws::Vector<CancelledSpotInstanceRequest>&& value) { SetCancelledSpotInstanceRequests(std::move(value)); return *this;}
-    inline CancelSpotInstanceRequestsResponse& AddCancelledSpotInstanceRequests(const CancelledSpotInstanceRequest& value) { m_cancelledSpotInstanceRequests.push_back(value); return *this; }
-    inline CancelSpotInstanceRequestsResponse& AddCancelledSpotInstanceRequests(CancelledSpotInstanceRequest&& value) { m_cancelledSpotInstanceRequests.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CancelledSpotInstanceRequest>& GetCancelledSpotInstanceRequests() const { return m_cancelledSpotInstanceRequests; }
+    template<typename CancelledSpotInstanceRequestsT = Aws::Vector<CancelledSpotInstanceRequest>>
+    void SetCancelledSpotInstanceRequests(CancelledSpotInstanceRequestsT&& value) { m_cancelledSpotInstanceRequestsHasBeenSet = true; m_cancelledSpotInstanceRequests = std::forward<CancelledSpotInstanceRequestsT>(value); }
+    template<typename CancelledSpotInstanceRequestsT = Aws::Vector<CancelledSpotInstanceRequest>>
+    CancelSpotInstanceRequestsResponse& WithCancelledSpotInstanceRequests(CancelledSpotInstanceRequestsT&& value) { SetCancelledSpotInstanceRequests(std::forward<CancelledSpotInstanceRequestsT>(value)); return *this;}
+    template<typename CancelledSpotInstanceRequestsT = CancelledSpotInstanceRequest>
+    CancelSpotInstanceRequestsResponse& AddCancelledSpotInstanceRequests(CancelledSpotInstanceRequestsT&& value) { m_cancelledSpotInstanceRequestsHasBeenSet = true; m_cancelledSpotInstanceRequests.emplace_back(std::forward<CancelledSpotInstanceRequestsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CancelSpotInstanceRequestsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CancelSpotInstanceRequestsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CancelSpotInstanceRequestsResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<CancelledSpotInstanceRequest> m_cancelledSpotInstanceRequests;
+    bool m_cancelledSpotInstanceRequestsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

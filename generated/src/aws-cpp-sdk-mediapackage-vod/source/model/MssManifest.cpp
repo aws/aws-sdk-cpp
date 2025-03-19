@@ -18,14 +18,7 @@ namespace MediaPackageVod
 namespace Model
 {
 
-MssManifest::MssManifest() : 
-    m_manifestNameHasBeenSet(false),
-    m_streamSelectionHasBeenSet(false)
-{
-}
-
 MssManifest::MssManifest(JsonView jsonValue)
-  : MssManifest()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ MssManifest& MssManifest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("manifestName"))
   {
     m_manifestName = jsonValue.GetString("manifestName");
-
     m_manifestNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("streamSelection"))
   {
     m_streamSelection = jsonValue.GetObject("streamSelection");
-
     m_streamSelectionHasBeenSet = true;
   }
-
   return *this;
 }
 

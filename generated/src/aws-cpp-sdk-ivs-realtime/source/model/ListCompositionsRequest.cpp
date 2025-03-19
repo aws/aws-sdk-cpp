@@ -12,15 +12,6 @@ using namespace Aws::ivsrealtime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListCompositionsRequest::ListCompositionsRequest() : 
-    m_filterByStageArnHasBeenSet(false),
-    m_filterByEncoderConfigurationArnHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListCompositionsRequest::SerializePayload() const
 {
   JsonValue payload;

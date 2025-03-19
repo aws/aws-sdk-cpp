@@ -10,12 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-UpdateOpenIDConnectProviderThumbprintRequest::UpdateOpenIDConnectProviderThumbprintRequest() : 
-    m_openIDConnectProviderArnHasBeenSet(false),
-    m_thumbprintListHasBeenSet(false)
-{
-}
-
 Aws::String UpdateOpenIDConnectProviderThumbprintRequest::SerializePayload() const
 {
   Aws::StringStream ss;

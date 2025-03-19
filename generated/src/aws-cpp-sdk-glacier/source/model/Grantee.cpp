@@ -18,18 +18,7 @@ namespace Glacier
 namespace Model
 {
 
-Grantee::Grantee() : 
-    m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_uRIHasBeenSet(false),
-    m_iDHasBeenSet(false),
-    m_emailAddressHasBeenSet(false)
-{
-}
-
 Grantee::Grantee(JsonView jsonValue)
-  : Grantee()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ Grantee& Grantee::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = TypeMapper::GetTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayName"))
   {
     m_displayName = jsonValue.GetString("DisplayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("URI"))
   {
     m_uRI = jsonValue.GetString("URI");
-
     m_uRIHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ID"))
   {
     m_iD = jsonValue.GetString("ID");
-
     m_iDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EmailAddress"))
   {
     m_emailAddress = jsonValue.GetString("EmailAddress");
-
     m_emailAddressHasBeenSet = true;
   }
-
   return *this;
 }
 

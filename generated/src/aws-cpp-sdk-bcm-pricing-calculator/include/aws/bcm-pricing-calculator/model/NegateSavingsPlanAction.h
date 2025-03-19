@@ -33,7 +33,7 @@ namespace Model
   class NegateSavingsPlanAction
   {
   public:
-    AWS_BCMPRICINGCALCULATOR_API NegateSavingsPlanAction();
+    AWS_BCMPRICINGCALCULATOR_API NegateSavingsPlanAction() = default;
     AWS_BCMPRICINGCALCULATOR_API NegateSavingsPlanAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMPRICINGCALCULATOR_API NegateSavingsPlanAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMPRICINGCALCULATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p> The ID of the Savings Plan to remove. </p>
      */
-    inline const Aws::String& GetSavingsPlanId() const{ return m_savingsPlanId; }
+    inline const Aws::String& GetSavingsPlanId() const { return m_savingsPlanId; }
     inline bool SavingsPlanIdHasBeenSet() const { return m_savingsPlanIdHasBeenSet; }
-    inline void SetSavingsPlanId(const Aws::String& value) { m_savingsPlanIdHasBeenSet = true; m_savingsPlanId = value; }
-    inline void SetSavingsPlanId(Aws::String&& value) { m_savingsPlanIdHasBeenSet = true; m_savingsPlanId = std::move(value); }
-    inline void SetSavingsPlanId(const char* value) { m_savingsPlanIdHasBeenSet = true; m_savingsPlanId.assign(value); }
-    inline NegateSavingsPlanAction& WithSavingsPlanId(const Aws::String& value) { SetSavingsPlanId(value); return *this;}
-    inline NegateSavingsPlanAction& WithSavingsPlanId(Aws::String&& value) { SetSavingsPlanId(std::move(value)); return *this;}
-    inline NegateSavingsPlanAction& WithSavingsPlanId(const char* value) { SetSavingsPlanId(value); return *this;}
+    template<typename SavingsPlanIdT = Aws::String>
+    void SetSavingsPlanId(SavingsPlanIdT&& value) { m_savingsPlanIdHasBeenSet = true; m_savingsPlanId = std::forward<SavingsPlanIdT>(value); }
+    template<typename SavingsPlanIdT = Aws::String>
+    NegateSavingsPlanAction& WithSavingsPlanId(SavingsPlanIdT&& value) { SetSavingsPlanId(std::forward<SavingsPlanIdT>(value)); return *this;}
     ///@}
   private:
 

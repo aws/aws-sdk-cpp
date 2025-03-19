@@ -18,16 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-InvocationLogsConfig::InvocationLogsConfig() : 
-    m_usePromptResponse(false),
-    m_usePromptResponseHasBeenSet(false),
-    m_invocationLogSourceHasBeenSet(false),
-    m_requestMetadataFiltersHasBeenSet(false)
-{
-}
-
 InvocationLogsConfig::InvocationLogsConfig(JsonView jsonValue)
-  : InvocationLogsConfig()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ InvocationLogsConfig& InvocationLogsConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("usePromptResponse"))
   {
     m_usePromptResponse = jsonValue.GetBool("usePromptResponse");
-
     m_usePromptResponseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("invocationLogSource"))
   {
     m_invocationLogSource = jsonValue.GetObject("invocationLogSource");
-
     m_invocationLogSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("requestMetadataFilters"))
   {
     m_requestMetadataFilters = jsonValue.GetObject("requestMetadataFilters");
-
     m_requestMetadataFiltersHasBeenSet = true;
   }
-
   return *this;
 }
 

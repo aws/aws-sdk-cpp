@@ -18,19 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-ExternalAccessFindingsStatistics::ExternalAccessFindingsStatistics() : 
-    m_resourceTypeStatisticsHasBeenSet(false),
-    m_totalActiveFindings(0),
-    m_totalActiveFindingsHasBeenSet(false),
-    m_totalArchivedFindings(0),
-    m_totalArchivedFindingsHasBeenSet(false),
-    m_totalResolvedFindings(0),
-    m_totalResolvedFindingsHasBeenSet(false)
-{
-}
-
 ExternalAccessFindingsStatistics::ExternalAccessFindingsStatistics(JsonView jsonValue)
-  : ExternalAccessFindingsStatistics()
 {
   *this = jsonValue;
 }
@@ -46,28 +34,21 @@ ExternalAccessFindingsStatistics& ExternalAccessFindingsStatistics::operator =(J
     }
     m_resourceTypeStatisticsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalActiveFindings"))
   {
     m_totalActiveFindings = jsonValue.GetInteger("totalActiveFindings");
-
     m_totalActiveFindingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalArchivedFindings"))
   {
     m_totalArchivedFindings = jsonValue.GetInteger("totalArchivedFindings");
-
     m_totalArchivedFindingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalResolvedFindings"))
   {
     m_totalResolvedFindings = jsonValue.GetInteger("totalResolvedFindings");
-
     m_totalResolvedFindingsHasBeenSet = true;
   }
-
   return *this;
 }
 

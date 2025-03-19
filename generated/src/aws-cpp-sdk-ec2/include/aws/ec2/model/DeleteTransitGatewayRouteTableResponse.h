@@ -28,7 +28,7 @@ namespace Model
   class DeleteTransitGatewayRouteTableResponse
   {
   public:
-    AWS_EC2_API DeleteTransitGatewayRouteTableResponse();
+    AWS_EC2_API DeleteTransitGatewayRouteTableResponse() = default;
     AWS_EC2_API DeleteTransitGatewayRouteTableResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DeleteTransitGatewayRouteTableResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>Information about the deleted transit gateway route table.</p>
      */
-    inline const TransitGatewayRouteTable& GetTransitGatewayRouteTable() const{ return m_transitGatewayRouteTable; }
-    inline void SetTransitGatewayRouteTable(const TransitGatewayRouteTable& value) { m_transitGatewayRouteTable = value; }
-    inline void SetTransitGatewayRouteTable(TransitGatewayRouteTable&& value) { m_transitGatewayRouteTable = std::move(value); }
-    inline DeleteTransitGatewayRouteTableResponse& WithTransitGatewayRouteTable(const TransitGatewayRouteTable& value) { SetTransitGatewayRouteTable(value); return *this;}
-    inline DeleteTransitGatewayRouteTableResponse& WithTransitGatewayRouteTable(TransitGatewayRouteTable&& value) { SetTransitGatewayRouteTable(std::move(value)); return *this;}
+    inline const TransitGatewayRouteTable& GetTransitGatewayRouteTable() const { return m_transitGatewayRouteTable; }
+    template<typename TransitGatewayRouteTableT = TransitGatewayRouteTable>
+    void SetTransitGatewayRouteTable(TransitGatewayRouteTableT&& value) { m_transitGatewayRouteTableHasBeenSet = true; m_transitGatewayRouteTable = std::forward<TransitGatewayRouteTableT>(value); }
+    template<typename TransitGatewayRouteTableT = TransitGatewayRouteTable>
+    DeleteTransitGatewayRouteTableResponse& WithTransitGatewayRouteTable(TransitGatewayRouteTableT&& value) { SetTransitGatewayRouteTable(std::forward<TransitGatewayRouteTableT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DeleteTransitGatewayRouteTableResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DeleteTransitGatewayRouteTableResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DeleteTransitGatewayRouteTableResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     TransitGatewayRouteTable m_transitGatewayRouteTable;
+    bool m_transitGatewayRouteTableHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

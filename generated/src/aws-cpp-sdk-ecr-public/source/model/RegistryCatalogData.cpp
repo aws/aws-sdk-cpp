@@ -18,13 +18,7 @@ namespace ECRPublic
 namespace Model
 {
 
-RegistryCatalogData::RegistryCatalogData() : 
-    m_displayNameHasBeenSet(false)
-{
-}
-
 RegistryCatalogData::RegistryCatalogData(JsonView jsonValue)
-  : RegistryCatalogData()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RegistryCatalogData& RegistryCatalogData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("displayName"))
   {
     m_displayName = jsonValue.GetString("displayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   return *this;
 }
 

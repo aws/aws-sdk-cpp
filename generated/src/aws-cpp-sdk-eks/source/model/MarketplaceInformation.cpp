@@ -18,14 +18,7 @@ namespace EKS
 namespace Model
 {
 
-MarketplaceInformation::MarketplaceInformation() : 
-    m_productIdHasBeenSet(false),
-    m_productUrlHasBeenSet(false)
-{
-}
-
 MarketplaceInformation::MarketplaceInformation(JsonView jsonValue)
-  : MarketplaceInformation()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ MarketplaceInformation& MarketplaceInformation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("productId"))
   {
     m_productId = jsonValue.GetString("productId");
-
     m_productIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("productUrl"))
   {
     m_productUrl = jsonValue.GetString("productUrl");
-
     m_productUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

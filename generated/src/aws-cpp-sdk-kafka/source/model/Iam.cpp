@@ -18,14 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-Iam::Iam() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 Iam::Iam(JsonView jsonValue)
-  : Iam()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ Iam& Iam::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,13 +12,6 @@ using namespace Aws::GlueDataBrew::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartProjectSessionRequest::StartProjectSessionRequest() : 
-    m_nameHasBeenSet(false),
-    m_assumeControl(false),
-    m_assumeControlHasBeenSet(false)
-{
-}
-
 Aws::String StartProjectSessionRequest::SerializePayload() const
 {
   JsonValue payload;

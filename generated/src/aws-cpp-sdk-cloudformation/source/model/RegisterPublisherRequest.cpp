@@ -10,13 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-RegisterPublisherRequest::RegisterPublisherRequest() : 
-    m_acceptTermsAndConditions(false),
-    m_acceptTermsAndConditionsHasBeenSet(false),
-    m_connectionArnHasBeenSet(false)
-{
-}
-
 Aws::String RegisterPublisherRequest::SerializePayload() const
 {
   Aws::StringStream ss;

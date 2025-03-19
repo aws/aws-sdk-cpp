@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSatelliteResult::GetSatelliteResult() : 
-    m_noradSatelliteID(0)
-{
-}
-
 GetSatelliteResult::GetSatelliteResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetSatelliteResult()
 {
   *this = result;
 }
@@ -34,9 +28,8 @@ GetSatelliteResult& GetSatelliteResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("currentEphemeris"))
   {
     m_currentEphemeris = jsonValue.GetObject("currentEphemeris");
-
+    m_currentEphemerisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("groundStations"))
   {
     Aws::Utils::Array<JsonView> groundStationsJsonList = jsonValue.GetArray("groundStations");
@@ -44,32 +37,30 @@ GetSatelliteResult& GetSatelliteResult::operator =(const Aws::AmazonWebServiceRe
     {
       m_groundStations.push_back(groundStationsJsonList[groundStationsIndex].AsString());
     }
+    m_groundStationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("noradSatelliteID"))
   {
     m_noradSatelliteID = jsonValue.GetInteger("noradSatelliteID");
-
+    m_noradSatelliteIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("satelliteArn"))
   {
     m_satelliteArn = jsonValue.GetString("satelliteArn");
-
+    m_satelliteArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("satelliteId"))
   {
     m_satelliteId = jsonValue.GetString("satelliteId");
-
+    m_satelliteIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

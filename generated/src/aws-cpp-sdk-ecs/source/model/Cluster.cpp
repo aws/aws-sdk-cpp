@@ -18,32 +18,7 @@ namespace ECS
 namespace Model
 {
 
-Cluster::Cluster() : 
-    m_clusterArnHasBeenSet(false),
-    m_clusterNameHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_registeredContainerInstancesCount(0),
-    m_registeredContainerInstancesCountHasBeenSet(false),
-    m_runningTasksCount(0),
-    m_runningTasksCountHasBeenSet(false),
-    m_pendingTasksCount(0),
-    m_pendingTasksCountHasBeenSet(false),
-    m_activeServicesCount(0),
-    m_activeServicesCountHasBeenSet(false),
-    m_statisticsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_settingsHasBeenSet(false),
-    m_capacityProvidersHasBeenSet(false),
-    m_defaultCapacityProviderStrategyHasBeenSet(false),
-    m_attachmentsHasBeenSet(false),
-    m_attachmentsStatusHasBeenSet(false),
-    m_serviceConnectDefaultsHasBeenSet(false)
-{
-}
-
 Cluster::Cluster(JsonView jsonValue)
-  : Cluster()
 {
   *this = jsonValue;
 }
@@ -53,59 +28,43 @@ Cluster& Cluster::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("clusterArn"))
   {
     m_clusterArn = jsonValue.GetString("clusterArn");
-
     m_clusterArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clusterName"))
   {
     m_clusterName = jsonValue.GetString("clusterName");
-
     m_clusterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configuration"))
   {
     m_configuration = jsonValue.GetObject("configuration");
-
     m_configurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("registeredContainerInstancesCount"))
   {
     m_registeredContainerInstancesCount = jsonValue.GetInteger("registeredContainerInstancesCount");
-
     m_registeredContainerInstancesCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runningTasksCount"))
   {
     m_runningTasksCount = jsonValue.GetInteger("runningTasksCount");
-
     m_runningTasksCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pendingTasksCount"))
   {
     m_pendingTasksCount = jsonValue.GetInteger("pendingTasksCount");
-
     m_pendingTasksCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("activeServicesCount"))
   {
     m_activeServicesCount = jsonValue.GetInteger("activeServicesCount");
-
     m_activeServicesCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statistics"))
   {
     Aws::Utils::Array<JsonView> statisticsJsonList = jsonValue.GetArray("statistics");
@@ -115,7 +74,6 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     }
     m_statisticsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -125,7 +83,6 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("settings"))
   {
     Aws::Utils::Array<JsonView> settingsJsonList = jsonValue.GetArray("settings");
@@ -135,7 +92,6 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     }
     m_settingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("capacityProviders"))
   {
     Aws::Utils::Array<JsonView> capacityProvidersJsonList = jsonValue.GetArray("capacityProviders");
@@ -145,7 +101,6 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     }
     m_capacityProvidersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultCapacityProviderStrategy"))
   {
     Aws::Utils::Array<JsonView> defaultCapacityProviderStrategyJsonList = jsonValue.GetArray("defaultCapacityProviderStrategy");
@@ -155,7 +110,6 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     }
     m_defaultCapacityProviderStrategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attachments"))
   {
     Aws::Utils::Array<JsonView> attachmentsJsonList = jsonValue.GetArray("attachments");
@@ -165,21 +119,16 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     }
     m_attachmentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attachmentsStatus"))
   {
     m_attachmentsStatus = jsonValue.GetString("attachmentsStatus");
-
     m_attachmentsStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceConnectDefaults"))
   {
     m_serviceConnectDefaults = jsonValue.GetObject("serviceConnectDefaults");
-
     m_serviceConnectDefaultsHasBeenSet = true;
   }
-
   return *this;
 }
 

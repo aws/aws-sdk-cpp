@@ -44,7 +44,7 @@ namespace Model
   class AdvancedOptionsStatus
   {
   public:
-    AWS_ELASTICSEARCHSERVICE_API AdvancedOptionsStatus();
+    AWS_ELASTICSEARCHSERVICE_API AdvancedOptionsStatus() = default;
     AWS_ELASTICSEARCHSERVICE_API AdvancedOptionsStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICSEARCHSERVICE_API AdvancedOptionsStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,19 +55,16 @@ namespace Model
      * <p> Specifies the status of advanced options for the specified Elasticsearch
      * domain.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetOptions() const{ return m_options; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetOptions() const { return m_options; }
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-    inline void SetOptions(const Aws::Map<Aws::String, Aws::String>& value) { m_optionsHasBeenSet = true; m_options = value; }
-    inline void SetOptions(Aws::Map<Aws::String, Aws::String>&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-    inline AdvancedOptionsStatus& WithOptions(const Aws::Map<Aws::String, Aws::String>& value) { SetOptions(value); return *this;}
-    inline AdvancedOptionsStatus& WithOptions(Aws::Map<Aws::String, Aws::String>&& value) { SetOptions(std::move(value)); return *this;}
-    inline AdvancedOptionsStatus& AddOptions(const Aws::String& key, const Aws::String& value) { m_optionsHasBeenSet = true; m_options.emplace(key, value); return *this; }
-    inline AdvancedOptionsStatus& AddOptions(Aws::String&& key, const Aws::String& value) { m_optionsHasBeenSet = true; m_options.emplace(std::move(key), value); return *this; }
-    inline AdvancedOptionsStatus& AddOptions(const Aws::String& key, Aws::String&& value) { m_optionsHasBeenSet = true; m_options.emplace(key, std::move(value)); return *this; }
-    inline AdvancedOptionsStatus& AddOptions(Aws::String&& key, Aws::String&& value) { m_optionsHasBeenSet = true; m_options.emplace(std::move(key), std::move(value)); return *this; }
-    inline AdvancedOptionsStatus& AddOptions(const char* key, Aws::String&& value) { m_optionsHasBeenSet = true; m_options.emplace(key, std::move(value)); return *this; }
-    inline AdvancedOptionsStatus& AddOptions(Aws::String&& key, const char* value) { m_optionsHasBeenSet = true; m_options.emplace(std::move(key), value); return *this; }
-    inline AdvancedOptionsStatus& AddOptions(const char* key, const char* value) { m_optionsHasBeenSet = true; m_options.emplace(key, value); return *this; }
+    template<typename OptionsT = Aws::Map<Aws::String, Aws::String>>
+    void SetOptions(OptionsT&& value) { m_optionsHasBeenSet = true; m_options = std::forward<OptionsT>(value); }
+    template<typename OptionsT = Aws::Map<Aws::String, Aws::String>>
+    AdvancedOptionsStatus& WithOptions(OptionsT&& value) { SetOptions(std::forward<OptionsT>(value)); return *this;}
+    template<typename OptionsKeyT = Aws::String, typename OptionsValueT = Aws::String>
+    AdvancedOptionsStatus& AddOptions(OptionsKeyT&& key, OptionsValueT&& value) {
+      m_optionsHasBeenSet = true; m_options.emplace(std::forward<OptionsKeyT>(key), std::forward<OptionsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -75,12 +72,12 @@ namespace Model
      * <p> Specifies the status of <code>OptionStatus</code> for advanced options for
      * the specified Elasticsearch domain.</p>
      */
-    inline const OptionStatus& GetStatus() const{ return m_status; }
+    inline const OptionStatus& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const OptionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(OptionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline AdvancedOptionsStatus& WithStatus(const OptionStatus& value) { SetStatus(value); return *this;}
-    inline AdvancedOptionsStatus& WithStatus(OptionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    template<typename StatusT = OptionStatus>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = OptionStatus>
+    AdvancedOptionsStatus& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
   private:
 

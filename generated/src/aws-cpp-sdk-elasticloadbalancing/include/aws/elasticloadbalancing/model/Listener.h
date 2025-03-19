@@ -35,7 +35,7 @@ namespace Model
   class Listener
   {
   public:
-    AWS_ELASTICLOADBALANCING_API Listener();
+    AWS_ELASTICLOADBALANCING_API Listener() = default;
     AWS_ELASTICLOADBALANCING_API Listener(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICLOADBALANCING_API Listener& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,14 +48,12 @@ namespace Model
      * <p>The load balancer transport protocol to use for routing: HTTP, HTTPS, TCP, or
      * SSL.</p>
      */
-    inline const Aws::String& GetProtocol() const{ return m_protocol; }
+    inline const Aws::String& GetProtocol() const { return m_protocol; }
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-    inline void SetProtocol(const Aws::String& value) { m_protocolHasBeenSet = true; m_protocol = value; }
-    inline void SetProtocol(Aws::String&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
-    inline void SetProtocol(const char* value) { m_protocolHasBeenSet = true; m_protocol.assign(value); }
-    inline Listener& WithProtocol(const Aws::String& value) { SetProtocol(value); return *this;}
-    inline Listener& WithProtocol(Aws::String&& value) { SetProtocol(std::move(value)); return *this;}
-    inline Listener& WithProtocol(const char* value) { SetProtocol(value); return *this;}
+    template<typename ProtocolT = Aws::String>
+    void SetProtocol(ProtocolT&& value) { m_protocolHasBeenSet = true; m_protocol = std::forward<ProtocolT>(value); }
+    template<typename ProtocolT = Aws::String>
+    Listener& WithProtocol(ProtocolT&& value) { SetProtocol(std::forward<ProtocolT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,7 +62,7 @@ namespace Model
      * any port from the range 1-65535. On EC2-Classic, you can specify any port from
      * the following list: 25, 80, 443, 465, 587, 1024-65535.</p>
      */
-    inline int GetLoadBalancerPort() const{ return m_loadBalancerPort; }
+    inline int GetLoadBalancerPort() const { return m_loadBalancerPort; }
     inline bool LoadBalancerPortHasBeenSet() const { return m_loadBalancerPortHasBeenSet; }
     inline void SetLoadBalancerPort(int value) { m_loadBalancerPortHasBeenSet = true; m_loadBalancerPort = value; }
     inline Listener& WithLoadBalancerPort(int value) { SetLoadBalancerPort(value); return *this;}
@@ -82,21 +80,19 @@ namespace Model
      * <code>InstanceProtocol</code> is HTTP or TCP, the listener's
      * <code>InstanceProtocol</code> must be HTTP or TCP.</p>
      */
-    inline const Aws::String& GetInstanceProtocol() const{ return m_instanceProtocol; }
+    inline const Aws::String& GetInstanceProtocol() const { return m_instanceProtocol; }
     inline bool InstanceProtocolHasBeenSet() const { return m_instanceProtocolHasBeenSet; }
-    inline void SetInstanceProtocol(const Aws::String& value) { m_instanceProtocolHasBeenSet = true; m_instanceProtocol = value; }
-    inline void SetInstanceProtocol(Aws::String&& value) { m_instanceProtocolHasBeenSet = true; m_instanceProtocol = std::move(value); }
-    inline void SetInstanceProtocol(const char* value) { m_instanceProtocolHasBeenSet = true; m_instanceProtocol.assign(value); }
-    inline Listener& WithInstanceProtocol(const Aws::String& value) { SetInstanceProtocol(value); return *this;}
-    inline Listener& WithInstanceProtocol(Aws::String&& value) { SetInstanceProtocol(std::move(value)); return *this;}
-    inline Listener& WithInstanceProtocol(const char* value) { SetInstanceProtocol(value); return *this;}
+    template<typename InstanceProtocolT = Aws::String>
+    void SetInstanceProtocol(InstanceProtocolT&& value) { m_instanceProtocolHasBeenSet = true; m_instanceProtocol = std::forward<InstanceProtocolT>(value); }
+    template<typename InstanceProtocolT = Aws::String>
+    Listener& WithInstanceProtocol(InstanceProtocolT&& value) { SetInstanceProtocol(std::forward<InstanceProtocolT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The port on which the instance is listening.</p>
      */
-    inline int GetInstancePort() const{ return m_instancePort; }
+    inline int GetInstancePort() const { return m_instancePort; }
     inline bool InstancePortHasBeenSet() const { return m_instancePortHasBeenSet; }
     inline void SetInstancePort(int value) { m_instancePortHasBeenSet = true; m_instancePort = value; }
     inline Listener& WithInstancePort(int value) { SetInstancePort(value); return *this;}
@@ -106,27 +102,25 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the server certificate.</p>
      */
-    inline const Aws::String& GetSSLCertificateId() const{ return m_sSLCertificateId; }
+    inline const Aws::String& GetSSLCertificateId() const { return m_sSLCertificateId; }
     inline bool SSLCertificateIdHasBeenSet() const { return m_sSLCertificateIdHasBeenSet; }
-    inline void SetSSLCertificateId(const Aws::String& value) { m_sSLCertificateIdHasBeenSet = true; m_sSLCertificateId = value; }
-    inline void SetSSLCertificateId(Aws::String&& value) { m_sSLCertificateIdHasBeenSet = true; m_sSLCertificateId = std::move(value); }
-    inline void SetSSLCertificateId(const char* value) { m_sSLCertificateIdHasBeenSet = true; m_sSLCertificateId.assign(value); }
-    inline Listener& WithSSLCertificateId(const Aws::String& value) { SetSSLCertificateId(value); return *this;}
-    inline Listener& WithSSLCertificateId(Aws::String&& value) { SetSSLCertificateId(std::move(value)); return *this;}
-    inline Listener& WithSSLCertificateId(const char* value) { SetSSLCertificateId(value); return *this;}
+    template<typename SSLCertificateIdT = Aws::String>
+    void SetSSLCertificateId(SSLCertificateIdT&& value) { m_sSLCertificateIdHasBeenSet = true; m_sSLCertificateId = std::forward<SSLCertificateIdT>(value); }
+    template<typename SSLCertificateIdT = Aws::String>
+    Listener& WithSSLCertificateId(SSLCertificateIdT&& value) { SetSSLCertificateId(std::forward<SSLCertificateIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_protocol;
     bool m_protocolHasBeenSet = false;
 
-    int m_loadBalancerPort;
+    int m_loadBalancerPort{0};
     bool m_loadBalancerPortHasBeenSet = false;
 
     Aws::String m_instanceProtocol;
     bool m_instanceProtocolHasBeenSet = false;
 
-    int m_instancePort;
+    int m_instancePort{0};
     bool m_instancePortHasBeenSet = false;
 
     Aws::String m_sSLCertificateId;

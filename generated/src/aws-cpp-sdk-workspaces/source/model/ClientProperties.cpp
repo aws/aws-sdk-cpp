@@ -18,16 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-ClientProperties::ClientProperties() : 
-    m_reconnectEnabled(ReconnectEnum::NOT_SET),
-    m_reconnectEnabledHasBeenSet(false),
-    m_logUploadEnabled(LogUploadEnum::NOT_SET),
-    m_logUploadEnabledHasBeenSet(false)
-{
-}
-
 ClientProperties::ClientProperties(JsonView jsonValue)
-  : ClientProperties()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ClientProperties& ClientProperties::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ReconnectEnabled"))
   {
     m_reconnectEnabled = ReconnectEnumMapper::GetReconnectEnumForName(jsonValue.GetString("ReconnectEnabled"));
-
     m_reconnectEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogUploadEnabled"))
   {
     m_logUploadEnabled = LogUploadEnumMapper::GetLogUploadEnumForName(jsonValue.GetString("LogUploadEnabled"));
-
     m_logUploadEnabledHasBeenSet = true;
   }
-
   return *this;
 }
 

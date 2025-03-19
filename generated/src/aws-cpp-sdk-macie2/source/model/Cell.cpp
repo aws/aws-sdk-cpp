@@ -18,18 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-Cell::Cell() : 
-    m_cellReferenceHasBeenSet(false),
-    m_column(0),
-    m_columnHasBeenSet(false),
-    m_columnNameHasBeenSet(false),
-    m_row(0),
-    m_rowHasBeenSet(false)
-{
-}
-
 Cell::Cell(JsonView jsonValue)
-  : Cell()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ Cell& Cell::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("cellReference"))
   {
     m_cellReference = jsonValue.GetString("cellReference");
-
     m_cellReferenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("column"))
   {
     m_column = jsonValue.GetInt64("column");
-
     m_columnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("columnName"))
   {
     m_columnName = jsonValue.GetString("columnName");
-
     m_columnNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("row"))
   {
     m_row = jsonValue.GetInt64("row");
-
     m_rowHasBeenSet = true;
   }
-
   return *this;
 }
 

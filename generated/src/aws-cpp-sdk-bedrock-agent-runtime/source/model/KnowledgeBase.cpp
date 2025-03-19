@@ -18,15 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-KnowledgeBase::KnowledgeBase() : 
-    m_descriptionHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_retrievalConfigurationHasBeenSet(false)
-{
-}
-
 KnowledgeBase::KnowledgeBase(JsonView jsonValue)
-  : KnowledgeBase()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ KnowledgeBase& KnowledgeBase::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("knowledgeBaseId"))
   {
     m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
-
     m_knowledgeBaseIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("retrievalConfiguration"))
   {
     m_retrievalConfiguration = jsonValue.GetObject("retrievalConfiguration");
-
     m_retrievalConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

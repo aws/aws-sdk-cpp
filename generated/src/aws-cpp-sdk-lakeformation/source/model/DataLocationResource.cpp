@@ -18,14 +18,7 @@ namespace LakeFormation
 namespace Model
 {
 
-DataLocationResource::DataLocationResource() : 
-    m_catalogIdHasBeenSet(false),
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 DataLocationResource::DataLocationResource(JsonView jsonValue)
-  : DataLocationResource()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DataLocationResource& DataLocationResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CatalogId"))
   {
     m_catalogId = jsonValue.GetString("CatalogId");
-
     m_catalogIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceArn"))
   {
     m_resourceArn = jsonValue.GetString("ResourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   return *this;
 }
 

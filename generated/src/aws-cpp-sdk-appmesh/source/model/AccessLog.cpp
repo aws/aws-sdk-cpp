@@ -18,13 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-AccessLog::AccessLog() : 
-    m_fileHasBeenSet(false)
-{
-}
-
 AccessLog::AccessLog(JsonView jsonValue)
-  : AccessLog()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AccessLog& AccessLog::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("file"))
   {
     m_file = jsonValue.GetObject("file");
-
     m_fileHasBeenSet = true;
   }
-
   return *this;
 }
 

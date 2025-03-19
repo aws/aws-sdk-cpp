@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeManagedJobTemplateRequest::DescribeManagedJobTemplateRequest() : 
-    m_templateNameHasBeenSet(false),
-    m_templateVersionHasBeenSet(false)
-{
-}
-
 Aws::String DescribeManagedJobTemplateRequest::SerializePayload() const
 {
   return {};

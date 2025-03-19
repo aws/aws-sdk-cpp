@@ -20,16 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-NoncurrentVersionTransition::NoncurrentVersionTransition() : 
-    m_noncurrentDays(0),
-    m_noncurrentDaysHasBeenSet(false),
-    m_storageClass(TransitionStorageClass::NOT_SET),
-    m_storageClassHasBeenSet(false)
-{
-}
-
 NoncurrentVersionTransition::NoncurrentVersionTransition(const XmlNode& xmlNode)
-  : NoncurrentVersionTransition()
 {
   *this = xmlNode;
 }
@@ -49,7 +40,7 @@ NoncurrentVersionTransition& NoncurrentVersionTransition::operator =(const XmlNo
     XmlNode storageClassNode = resultNode.FirstChild("StorageClass");
     if(!storageClassNode.IsNull())
     {
-      m_storageClass = TransitionStorageClassMapper::GetTransitionStorageClassForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageClassNode.GetText()).c_str()).c_str());
+      m_storageClass = TransitionStorageClassMapper::GetTransitionStorageClassForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageClassNode.GetText()).c_str()));
       m_storageClassHasBeenSet = true;
     }
   }

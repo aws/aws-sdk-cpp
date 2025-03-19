@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-AvailableCapacity::AvailableCapacity() : 
-    m_availableInstanceCapacityHasBeenSet(false),
-    m_availableVCpus(0),
-    m_availableVCpusHasBeenSet(false)
-{
-}
-
 AvailableCapacity::AvailableCapacity(const XmlNode& xmlNode)
-  : AvailableCapacity()
 {
   *this = xmlNode;
 }
@@ -43,6 +35,7 @@ AvailableCapacity& AvailableCapacity::operator =(const XmlNode& xmlNode)
     if(!availableInstanceCapacityNode.IsNull())
     {
       XmlNode availableInstanceCapacityMember = availableInstanceCapacityNode.FirstChild("item");
+      m_availableInstanceCapacityHasBeenSet = !availableInstanceCapacityMember.IsNull();
       while(!availableInstanceCapacityMember.IsNull())
       {
         m_availableInstanceCapacity.push_back(availableInstanceCapacityMember);

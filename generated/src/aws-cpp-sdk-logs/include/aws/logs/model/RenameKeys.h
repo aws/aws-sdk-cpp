@@ -36,7 +36,7 @@ namespace Model
   class RenameKeys
   {
   public:
-    AWS_CLOUDWATCHLOGS_API RenameKeys();
+    AWS_CLOUDWATCHLOGS_API RenameKeys() = default;
     AWS_CLOUDWATCHLOGS_API RenameKeys(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API RenameKeys& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,14 @@ namespace Model
      * <p>An array of <code>RenameKeyEntry</code> objects, where each object contains
      * the information about a single key to rename. </p>
      */
-    inline const Aws::Vector<RenameKeyEntry>& GetEntries() const{ return m_entries; }
+    inline const Aws::Vector<RenameKeyEntry>& GetEntries() const { return m_entries; }
     inline bool EntriesHasBeenSet() const { return m_entriesHasBeenSet; }
-    inline void SetEntries(const Aws::Vector<RenameKeyEntry>& value) { m_entriesHasBeenSet = true; m_entries = value; }
-    inline void SetEntries(Aws::Vector<RenameKeyEntry>&& value) { m_entriesHasBeenSet = true; m_entries = std::move(value); }
-    inline RenameKeys& WithEntries(const Aws::Vector<RenameKeyEntry>& value) { SetEntries(value); return *this;}
-    inline RenameKeys& WithEntries(Aws::Vector<RenameKeyEntry>&& value) { SetEntries(std::move(value)); return *this;}
-    inline RenameKeys& AddEntries(const RenameKeyEntry& value) { m_entriesHasBeenSet = true; m_entries.push_back(value); return *this; }
-    inline RenameKeys& AddEntries(RenameKeyEntry&& value) { m_entriesHasBeenSet = true; m_entries.push_back(std::move(value)); return *this; }
+    template<typename EntriesT = Aws::Vector<RenameKeyEntry>>
+    void SetEntries(EntriesT&& value) { m_entriesHasBeenSet = true; m_entries = std::forward<EntriesT>(value); }
+    template<typename EntriesT = Aws::Vector<RenameKeyEntry>>
+    RenameKeys& WithEntries(EntriesT&& value) { SetEntries(std::forward<EntriesT>(value)); return *this;}
+    template<typename EntriesT = RenameKeyEntry>
+    RenameKeys& AddEntries(EntriesT&& value) { m_entriesHasBeenSet = true; m_entries.emplace_back(std::forward<EntriesT>(value)); return *this; }
     ///@}
   private:
 

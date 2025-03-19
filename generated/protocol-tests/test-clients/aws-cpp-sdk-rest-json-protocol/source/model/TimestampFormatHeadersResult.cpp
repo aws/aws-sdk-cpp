@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-TimestampFormatHeadersResult::TimestampFormatHeadersResult()
-{
-}
-
 TimestampFormatHeadersResult::TimestampFormatHeadersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -39,6 +35,7 @@ TimestampFormatHeadersResult& TimestampFormatHeadersResult::operator =(const Aws
     {
       AWS_LOGSTREAM_WARN("RestJsonProtocol::TimestampFormatHeadersResult", "Failed to parse memberEpochSeconds header as an $CppViewHelper.computeTimestampFormatInHeader($memberEntry.value.shape) timestamp: " << memberEpochSecondsIter->second.c_str());
     }
+    m_memberEpochSecondsHasBeenSet = true;
   }
 
   const auto& memberHttpDateIter = headers.find("x-memberhttpdate");
@@ -49,6 +46,7 @@ TimestampFormatHeadersResult& TimestampFormatHeadersResult::operator =(const Aws
     {
       AWS_LOGSTREAM_WARN("RestJsonProtocol::TimestampFormatHeadersResult", "Failed to parse memberHttpDate header as an RFC822 timestamp: " << memberHttpDateIter->second.c_str());
     }
+    m_memberHttpDateHasBeenSet = true;
   }
 
   const auto& memberDateTimeIter = headers.find("x-memberdatetime");
@@ -59,6 +57,7 @@ TimestampFormatHeadersResult& TimestampFormatHeadersResult::operator =(const Aws
     {
       AWS_LOGSTREAM_WARN("RestJsonProtocol::TimestampFormatHeadersResult", "Failed to parse memberDateTime header as an ISO_8601 timestamp: " << memberDateTimeIter->second.c_str());
     }
+    m_memberDateTimeHasBeenSet = true;
   }
 
   const auto& defaultFormatIter = headers.find("x-defaultformat");
@@ -69,6 +68,7 @@ TimestampFormatHeadersResult& TimestampFormatHeadersResult::operator =(const Aws
     {
       AWS_LOGSTREAM_WARN("RestJsonProtocol::TimestampFormatHeadersResult", "Failed to parse defaultFormat header as an RFC822 timestamp: " << defaultFormatIter->second.c_str());
     }
+    m_defaultFormatHasBeenSet = true;
   }
 
   const auto& targetEpochSecondsIter = headers.find("x-targetepochseconds");
@@ -79,6 +79,7 @@ TimestampFormatHeadersResult& TimestampFormatHeadersResult::operator =(const Aws
     {
       AWS_LOGSTREAM_WARN("RestJsonProtocol::TimestampFormatHeadersResult", "Failed to parse targetEpochSeconds header as an $CppViewHelper.computeTimestampFormatInHeader($memberEntry.value.shape) timestamp: " << targetEpochSecondsIter->second.c_str());
     }
+    m_targetEpochSecondsHasBeenSet = true;
   }
 
   const auto& targetHttpDateIter = headers.find("x-targethttpdate");
@@ -89,6 +90,7 @@ TimestampFormatHeadersResult& TimestampFormatHeadersResult::operator =(const Aws
     {
       AWS_LOGSTREAM_WARN("RestJsonProtocol::TimestampFormatHeadersResult", "Failed to parse targetHttpDate header as an RFC822 timestamp: " << targetHttpDateIter->second.c_str());
     }
+    m_targetHttpDateHasBeenSet = true;
   }
 
   const auto& targetDateTimeIter = headers.find("x-targetdatetime");
@@ -99,12 +101,14 @@ TimestampFormatHeadersResult& TimestampFormatHeadersResult::operator =(const Aws
     {
       AWS_LOGSTREAM_WARN("RestJsonProtocol::TimestampFormatHeadersResult", "Failed to parse targetDateTime header as an ISO_8601 timestamp: " << targetDateTimeIter->second.c_str());
     }
+    m_targetDateTimeHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

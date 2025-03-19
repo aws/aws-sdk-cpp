@@ -28,7 +28,7 @@ namespace Model
   class CreateChallengeResult
   {
   public:
-    AWS_PCACONNECTORSCEP_API CreateChallengeResult();
+    AWS_PCACONNECTORSCEP_API CreateChallengeResult() = default;
     AWS_PCACONNECTORSCEP_API CreateChallengeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PCACONNECTORSCEP_API CreateChallengeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Returns the challenge details for the specified connector.</p>
      */
-    inline const Challenge& GetChallenge() const{ return m_challenge; }
-    inline void SetChallenge(const Challenge& value) { m_challenge = value; }
-    inline void SetChallenge(Challenge&& value) { m_challenge = std::move(value); }
-    inline CreateChallengeResult& WithChallenge(const Challenge& value) { SetChallenge(value); return *this;}
-    inline CreateChallengeResult& WithChallenge(Challenge&& value) { SetChallenge(std::move(value)); return *this;}
+    inline const Challenge& GetChallenge() const { return m_challenge; }
+    template<typename ChallengeT = Challenge>
+    void SetChallenge(ChallengeT&& value) { m_challengeHasBeenSet = true; m_challenge = std::forward<ChallengeT>(value); }
+    template<typename ChallengeT = Challenge>
+    CreateChallengeResult& WithChallenge(ChallengeT&& value) { SetChallenge(std::forward<ChallengeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateChallengeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateChallengeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateChallengeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateChallengeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Challenge m_challenge;
+    bool m_challengeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

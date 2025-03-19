@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateQualificationTypeResult::UpdateQualificationTypeResult()
-{
-}
-
 UpdateQualificationTypeResult::UpdateQualificationTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ UpdateQualificationTypeResult& UpdateQualificationTypeResult::operator =(const A
   if(jsonValue.ValueExists("QualificationType"))
   {
     m_qualificationType = jsonValue.GetObject("QualificationType");
-
+    m_qualificationTypeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

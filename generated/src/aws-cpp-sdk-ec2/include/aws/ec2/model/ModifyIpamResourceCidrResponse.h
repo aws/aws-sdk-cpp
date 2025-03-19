@@ -28,7 +28,7 @@ namespace Model
   class ModifyIpamResourceCidrResponse
   {
   public:
-    AWS_EC2_API ModifyIpamResourceCidrResponse();
+    AWS_EC2_API ModifyIpamResourceCidrResponse() = default;
     AWS_EC2_API ModifyIpamResourceCidrResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API ModifyIpamResourceCidrResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>The CIDR of the resource.</p>
      */
-    inline const IpamResourceCidr& GetIpamResourceCidr() const{ return m_ipamResourceCidr; }
-    inline void SetIpamResourceCidr(const IpamResourceCidr& value) { m_ipamResourceCidr = value; }
-    inline void SetIpamResourceCidr(IpamResourceCidr&& value) { m_ipamResourceCidr = std::move(value); }
-    inline ModifyIpamResourceCidrResponse& WithIpamResourceCidr(const IpamResourceCidr& value) { SetIpamResourceCidr(value); return *this;}
-    inline ModifyIpamResourceCidrResponse& WithIpamResourceCidr(IpamResourceCidr&& value) { SetIpamResourceCidr(std::move(value)); return *this;}
+    inline const IpamResourceCidr& GetIpamResourceCidr() const { return m_ipamResourceCidr; }
+    template<typename IpamResourceCidrT = IpamResourceCidr>
+    void SetIpamResourceCidr(IpamResourceCidrT&& value) { m_ipamResourceCidrHasBeenSet = true; m_ipamResourceCidr = std::forward<IpamResourceCidrT>(value); }
+    template<typename IpamResourceCidrT = IpamResourceCidr>
+    ModifyIpamResourceCidrResponse& WithIpamResourceCidr(IpamResourceCidrT&& value) { SetIpamResourceCidr(std::forward<IpamResourceCidrT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ModifyIpamResourceCidrResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ModifyIpamResourceCidrResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ModifyIpamResourceCidrResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     IpamResourceCidr m_ipamResourceCidr;
+    bool m_ipamResourceCidrHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

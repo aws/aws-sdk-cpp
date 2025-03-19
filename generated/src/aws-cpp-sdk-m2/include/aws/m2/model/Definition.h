@@ -32,7 +32,7 @@ namespace Model
   class Definition
   {
   public:
-    AWS_MAINFRAMEMODERNIZATION_API Definition();
+    AWS_MAINFRAMEMODERNIZATION_API Definition() = default;
     AWS_MAINFRAMEMODERNIZATION_API Definition(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAINFRAMEMODERNIZATION_API Definition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
      * contains the resource configuration/definitions that identify an
      * application.</p>
      */
-    inline const Aws::String& GetContent() const{ return m_content; }
+    inline const Aws::String& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
-    inline Definition& WithContent(const Aws::String& value) { SetContent(value); return *this;}
-    inline Definition& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
-    inline Definition& WithContent(const char* value) { SetContent(value); return *this;}
+    template<typename ContentT = Aws::String>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = Aws::String>
+    Definition& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The S3 bucket that contains the application definition.</p>
      */
-    inline const Aws::String& GetS3Location() const{ return m_s3Location; }
+    inline const Aws::String& GetS3Location() const { return m_s3Location; }
     inline bool S3LocationHasBeenSet() const { return m_s3LocationHasBeenSet; }
-    inline void SetS3Location(const Aws::String& value) { m_s3LocationHasBeenSet = true; m_s3Location = value; }
-    inline void SetS3Location(Aws::String&& value) { m_s3LocationHasBeenSet = true; m_s3Location = std::move(value); }
-    inline void SetS3Location(const char* value) { m_s3LocationHasBeenSet = true; m_s3Location.assign(value); }
-    inline Definition& WithS3Location(const Aws::String& value) { SetS3Location(value); return *this;}
-    inline Definition& WithS3Location(Aws::String&& value) { SetS3Location(std::move(value)); return *this;}
-    inline Definition& WithS3Location(const char* value) { SetS3Location(value); return *this;}
+    template<typename S3LocationT = Aws::String>
+    void SetS3Location(S3LocationT&& value) { m_s3LocationHasBeenSet = true; m_s3Location = std::forward<S3LocationT>(value); }
+    template<typename S3LocationT = Aws::String>
+    Definition& WithS3Location(S3LocationT&& value) { SetS3Location(std::forward<S3LocationT>(value)); return *this;}
     ///@}
   private:
 

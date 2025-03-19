@@ -28,7 +28,7 @@ namespace Model
   class DisassociateIpamResourceDiscoveryResponse
   {
   public:
-    AWS_EC2_API DisassociateIpamResourceDiscoveryResponse();
+    AWS_EC2_API DisassociateIpamResourceDiscoveryResponse() = default;
     AWS_EC2_API DisassociateIpamResourceDiscoveryResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DisassociateIpamResourceDiscoveryResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>A resource discovery association.</p>
      */
-    inline const IpamResourceDiscoveryAssociation& GetIpamResourceDiscoveryAssociation() const{ return m_ipamResourceDiscoveryAssociation; }
-    inline void SetIpamResourceDiscoveryAssociation(const IpamResourceDiscoveryAssociation& value) { m_ipamResourceDiscoveryAssociation = value; }
-    inline void SetIpamResourceDiscoveryAssociation(IpamResourceDiscoveryAssociation&& value) { m_ipamResourceDiscoveryAssociation = std::move(value); }
-    inline DisassociateIpamResourceDiscoveryResponse& WithIpamResourceDiscoveryAssociation(const IpamResourceDiscoveryAssociation& value) { SetIpamResourceDiscoveryAssociation(value); return *this;}
-    inline DisassociateIpamResourceDiscoveryResponse& WithIpamResourceDiscoveryAssociation(IpamResourceDiscoveryAssociation&& value) { SetIpamResourceDiscoveryAssociation(std::move(value)); return *this;}
+    inline const IpamResourceDiscoveryAssociation& GetIpamResourceDiscoveryAssociation() const { return m_ipamResourceDiscoveryAssociation; }
+    template<typename IpamResourceDiscoveryAssociationT = IpamResourceDiscoveryAssociation>
+    void SetIpamResourceDiscoveryAssociation(IpamResourceDiscoveryAssociationT&& value) { m_ipamResourceDiscoveryAssociationHasBeenSet = true; m_ipamResourceDiscoveryAssociation = std::forward<IpamResourceDiscoveryAssociationT>(value); }
+    template<typename IpamResourceDiscoveryAssociationT = IpamResourceDiscoveryAssociation>
+    DisassociateIpamResourceDiscoveryResponse& WithIpamResourceDiscoveryAssociation(IpamResourceDiscoveryAssociationT&& value) { SetIpamResourceDiscoveryAssociation(std::forward<IpamResourceDiscoveryAssociationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DisassociateIpamResourceDiscoveryResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DisassociateIpamResourceDiscoveryResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DisassociateIpamResourceDiscoveryResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     IpamResourceDiscoveryAssociation m_ipamResourceDiscoveryAssociation;
+    bool m_ipamResourceDiscoveryAssociationHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

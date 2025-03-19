@@ -20,16 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-ResponseHeadersPolicyReferrerPolicy::ResponseHeadersPolicyReferrerPolicy() : 
-    m_override(false),
-    m_overrideHasBeenSet(false),
-    m_referrerPolicy(ReferrerPolicyList::NOT_SET),
-    m_referrerPolicyHasBeenSet(false)
-{
-}
-
 ResponseHeadersPolicyReferrerPolicy::ResponseHeadersPolicyReferrerPolicy(const XmlNode& xmlNode)
-  : ResponseHeadersPolicyReferrerPolicy()
 {
   *this = xmlNode;
 }
@@ -49,7 +40,7 @@ ResponseHeadersPolicyReferrerPolicy& ResponseHeadersPolicyReferrerPolicy::operat
     XmlNode referrerPolicyNode = resultNode.FirstChild("ReferrerPolicy");
     if(!referrerPolicyNode.IsNull())
     {
-      m_referrerPolicy = ReferrerPolicyListMapper::GetReferrerPolicyListForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(referrerPolicyNode.GetText()).c_str()).c_str());
+      m_referrerPolicy = ReferrerPolicyListMapper::GetReferrerPolicyListForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(referrerPolicyNode.GetText()).c_str()));
       m_referrerPolicyHasBeenSet = true;
     }
   }

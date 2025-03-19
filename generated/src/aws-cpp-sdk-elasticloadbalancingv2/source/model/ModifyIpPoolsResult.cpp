@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ModifyIpPoolsResult::ModifyIpPoolsResult()
-{
-}
-
 ModifyIpPoolsResult::ModifyIpPoolsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ ModifyIpPoolsResult& ModifyIpPoolsResult::operator =(const Aws::AmazonWebService
     if(!ipamPoolsNode.IsNull())
     {
       m_ipamPools = ipamPoolsNode;
+      m_ipamPoolsHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElasticLoadBalancingv2::Model::ModifyIpPoolsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

@@ -40,7 +40,7 @@ namespace Model
   class AlarmAction
   {
   public:
-    AWS_IOTEVENTS_API AlarmAction();
+    AWS_IOTEVENTS_API AlarmAction() = default;
     AWS_IOTEVENTS_API AlarmAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API AlarmAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,92 +48,92 @@ namespace Model
 
     ///@{
     
-    inline const SNSTopicPublishAction& GetSns() const{ return m_sns; }
+    inline const SNSTopicPublishAction& GetSns() const { return m_sns; }
     inline bool SnsHasBeenSet() const { return m_snsHasBeenSet; }
-    inline void SetSns(const SNSTopicPublishAction& value) { m_snsHasBeenSet = true; m_sns = value; }
-    inline void SetSns(SNSTopicPublishAction&& value) { m_snsHasBeenSet = true; m_sns = std::move(value); }
-    inline AlarmAction& WithSns(const SNSTopicPublishAction& value) { SetSns(value); return *this;}
-    inline AlarmAction& WithSns(SNSTopicPublishAction&& value) { SetSns(std::move(value)); return *this;}
+    template<typename SnsT = SNSTopicPublishAction>
+    void SetSns(SnsT&& value) { m_snsHasBeenSet = true; m_sns = std::forward<SnsT>(value); }
+    template<typename SnsT = SNSTopicPublishAction>
+    AlarmAction& WithSns(SnsT&& value) { SetSns(std::forward<SnsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const IotTopicPublishAction& GetIotTopicPublish() const{ return m_iotTopicPublish; }
+    inline const IotTopicPublishAction& GetIotTopicPublish() const { return m_iotTopicPublish; }
     inline bool IotTopicPublishHasBeenSet() const { return m_iotTopicPublishHasBeenSet; }
-    inline void SetIotTopicPublish(const IotTopicPublishAction& value) { m_iotTopicPublishHasBeenSet = true; m_iotTopicPublish = value; }
-    inline void SetIotTopicPublish(IotTopicPublishAction&& value) { m_iotTopicPublishHasBeenSet = true; m_iotTopicPublish = std::move(value); }
-    inline AlarmAction& WithIotTopicPublish(const IotTopicPublishAction& value) { SetIotTopicPublish(value); return *this;}
-    inline AlarmAction& WithIotTopicPublish(IotTopicPublishAction&& value) { SetIotTopicPublish(std::move(value)); return *this;}
+    template<typename IotTopicPublishT = IotTopicPublishAction>
+    void SetIotTopicPublish(IotTopicPublishT&& value) { m_iotTopicPublishHasBeenSet = true; m_iotTopicPublish = std::forward<IotTopicPublishT>(value); }
+    template<typename IotTopicPublishT = IotTopicPublishAction>
+    AlarmAction& WithIotTopicPublish(IotTopicPublishT&& value) { SetIotTopicPublish(std::forward<IotTopicPublishT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const LambdaAction& GetLambda() const{ return m_lambda; }
+    inline const LambdaAction& GetLambda() const { return m_lambda; }
     inline bool LambdaHasBeenSet() const { return m_lambdaHasBeenSet; }
-    inline void SetLambda(const LambdaAction& value) { m_lambdaHasBeenSet = true; m_lambda = value; }
-    inline void SetLambda(LambdaAction&& value) { m_lambdaHasBeenSet = true; m_lambda = std::move(value); }
-    inline AlarmAction& WithLambda(const LambdaAction& value) { SetLambda(value); return *this;}
-    inline AlarmAction& WithLambda(LambdaAction&& value) { SetLambda(std::move(value)); return *this;}
+    template<typename LambdaT = LambdaAction>
+    void SetLambda(LambdaT&& value) { m_lambdaHasBeenSet = true; m_lambda = std::forward<LambdaT>(value); }
+    template<typename LambdaT = LambdaAction>
+    AlarmAction& WithLambda(LambdaT&& value) { SetLambda(std::forward<LambdaT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const IotEventsAction& GetIotEvents() const{ return m_iotEvents; }
+    inline const IotEventsAction& GetIotEvents() const { return m_iotEvents; }
     inline bool IotEventsHasBeenSet() const { return m_iotEventsHasBeenSet; }
-    inline void SetIotEvents(const IotEventsAction& value) { m_iotEventsHasBeenSet = true; m_iotEvents = value; }
-    inline void SetIotEvents(IotEventsAction&& value) { m_iotEventsHasBeenSet = true; m_iotEvents = std::move(value); }
-    inline AlarmAction& WithIotEvents(const IotEventsAction& value) { SetIotEvents(value); return *this;}
-    inline AlarmAction& WithIotEvents(IotEventsAction&& value) { SetIotEvents(std::move(value)); return *this;}
+    template<typename IotEventsT = IotEventsAction>
+    void SetIotEvents(IotEventsT&& value) { m_iotEventsHasBeenSet = true; m_iotEvents = std::forward<IotEventsT>(value); }
+    template<typename IotEventsT = IotEventsAction>
+    AlarmAction& WithIotEvents(IotEventsT&& value) { SetIotEvents(std::forward<IotEventsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const SqsAction& GetSqs() const{ return m_sqs; }
+    inline const SqsAction& GetSqs() const { return m_sqs; }
     inline bool SqsHasBeenSet() const { return m_sqsHasBeenSet; }
-    inline void SetSqs(const SqsAction& value) { m_sqsHasBeenSet = true; m_sqs = value; }
-    inline void SetSqs(SqsAction&& value) { m_sqsHasBeenSet = true; m_sqs = std::move(value); }
-    inline AlarmAction& WithSqs(const SqsAction& value) { SetSqs(value); return *this;}
-    inline AlarmAction& WithSqs(SqsAction&& value) { SetSqs(std::move(value)); return *this;}
+    template<typename SqsT = SqsAction>
+    void SetSqs(SqsT&& value) { m_sqsHasBeenSet = true; m_sqs = std::forward<SqsT>(value); }
+    template<typename SqsT = SqsAction>
+    AlarmAction& WithSqs(SqsT&& value) { SetSqs(std::forward<SqsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const FirehoseAction& GetFirehose() const{ return m_firehose; }
+    inline const FirehoseAction& GetFirehose() const { return m_firehose; }
     inline bool FirehoseHasBeenSet() const { return m_firehoseHasBeenSet; }
-    inline void SetFirehose(const FirehoseAction& value) { m_firehoseHasBeenSet = true; m_firehose = value; }
-    inline void SetFirehose(FirehoseAction&& value) { m_firehoseHasBeenSet = true; m_firehose = std::move(value); }
-    inline AlarmAction& WithFirehose(const FirehoseAction& value) { SetFirehose(value); return *this;}
-    inline AlarmAction& WithFirehose(FirehoseAction&& value) { SetFirehose(std::move(value)); return *this;}
+    template<typename FirehoseT = FirehoseAction>
+    void SetFirehose(FirehoseT&& value) { m_firehoseHasBeenSet = true; m_firehose = std::forward<FirehoseT>(value); }
+    template<typename FirehoseT = FirehoseAction>
+    AlarmAction& WithFirehose(FirehoseT&& value) { SetFirehose(std::forward<FirehoseT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const DynamoDBAction& GetDynamoDB() const{ return m_dynamoDB; }
+    inline const DynamoDBAction& GetDynamoDB() const { return m_dynamoDB; }
     inline bool DynamoDBHasBeenSet() const { return m_dynamoDBHasBeenSet; }
-    inline void SetDynamoDB(const DynamoDBAction& value) { m_dynamoDBHasBeenSet = true; m_dynamoDB = value; }
-    inline void SetDynamoDB(DynamoDBAction&& value) { m_dynamoDBHasBeenSet = true; m_dynamoDB = std::move(value); }
-    inline AlarmAction& WithDynamoDB(const DynamoDBAction& value) { SetDynamoDB(value); return *this;}
-    inline AlarmAction& WithDynamoDB(DynamoDBAction&& value) { SetDynamoDB(std::move(value)); return *this;}
+    template<typename DynamoDBT = DynamoDBAction>
+    void SetDynamoDB(DynamoDBT&& value) { m_dynamoDBHasBeenSet = true; m_dynamoDB = std::forward<DynamoDBT>(value); }
+    template<typename DynamoDBT = DynamoDBAction>
+    AlarmAction& WithDynamoDB(DynamoDBT&& value) { SetDynamoDB(std::forward<DynamoDBT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const DynamoDBv2Action& GetDynamoDBv2() const{ return m_dynamoDBv2; }
+    inline const DynamoDBv2Action& GetDynamoDBv2() const { return m_dynamoDBv2; }
     inline bool DynamoDBv2HasBeenSet() const { return m_dynamoDBv2HasBeenSet; }
-    inline void SetDynamoDBv2(const DynamoDBv2Action& value) { m_dynamoDBv2HasBeenSet = true; m_dynamoDBv2 = value; }
-    inline void SetDynamoDBv2(DynamoDBv2Action&& value) { m_dynamoDBv2HasBeenSet = true; m_dynamoDBv2 = std::move(value); }
-    inline AlarmAction& WithDynamoDBv2(const DynamoDBv2Action& value) { SetDynamoDBv2(value); return *this;}
-    inline AlarmAction& WithDynamoDBv2(DynamoDBv2Action&& value) { SetDynamoDBv2(std::move(value)); return *this;}
+    template<typename DynamoDBv2T = DynamoDBv2Action>
+    void SetDynamoDBv2(DynamoDBv2T&& value) { m_dynamoDBv2HasBeenSet = true; m_dynamoDBv2 = std::forward<DynamoDBv2T>(value); }
+    template<typename DynamoDBv2T = DynamoDBv2Action>
+    AlarmAction& WithDynamoDBv2(DynamoDBv2T&& value) { SetDynamoDBv2(std::forward<DynamoDBv2T>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const IotSiteWiseAction& GetIotSiteWise() const{ return m_iotSiteWise; }
+    inline const IotSiteWiseAction& GetIotSiteWise() const { return m_iotSiteWise; }
     inline bool IotSiteWiseHasBeenSet() const { return m_iotSiteWiseHasBeenSet; }
-    inline void SetIotSiteWise(const IotSiteWiseAction& value) { m_iotSiteWiseHasBeenSet = true; m_iotSiteWise = value; }
-    inline void SetIotSiteWise(IotSiteWiseAction&& value) { m_iotSiteWiseHasBeenSet = true; m_iotSiteWise = std::move(value); }
-    inline AlarmAction& WithIotSiteWise(const IotSiteWiseAction& value) { SetIotSiteWise(value); return *this;}
-    inline AlarmAction& WithIotSiteWise(IotSiteWiseAction&& value) { SetIotSiteWise(std::move(value)); return *this;}
+    template<typename IotSiteWiseT = IotSiteWiseAction>
+    void SetIotSiteWise(IotSiteWiseT&& value) { m_iotSiteWiseHasBeenSet = true; m_iotSiteWise = std::forward<IotSiteWiseT>(value); }
+    template<typename IotSiteWiseT = IotSiteWiseAction>
+    AlarmAction& WithIotSiteWise(IotSiteWiseT&& value) { SetIotSiteWise(std::forward<IotSiteWiseT>(value)); return *this;}
     ///@}
   private:
 

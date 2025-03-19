@@ -32,7 +32,7 @@ namespace Model
   class DocumentSuggesterOptions
   {
   public:
-    AWS_CLOUDSEARCH_API DocumentSuggesterOptions();
+    AWS_CLOUDSEARCH_API DocumentSuggesterOptions() = default;
     AWS_CLOUDSEARCH_API DocumentSuggesterOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDSEARCH_API DocumentSuggesterOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The name of the index field you want to use for suggestions. </p>
      */
-    inline const Aws::String& GetSourceField() const{ return m_sourceField; }
+    inline const Aws::String& GetSourceField() const { return m_sourceField; }
     inline bool SourceFieldHasBeenSet() const { return m_sourceFieldHasBeenSet; }
-    inline void SetSourceField(const Aws::String& value) { m_sourceFieldHasBeenSet = true; m_sourceField = value; }
-    inline void SetSourceField(Aws::String&& value) { m_sourceFieldHasBeenSet = true; m_sourceField = std::move(value); }
-    inline void SetSourceField(const char* value) { m_sourceFieldHasBeenSet = true; m_sourceField.assign(value); }
-    inline DocumentSuggesterOptions& WithSourceField(const Aws::String& value) { SetSourceField(value); return *this;}
-    inline DocumentSuggesterOptions& WithSourceField(Aws::String&& value) { SetSourceField(std::move(value)); return *this;}
-    inline DocumentSuggesterOptions& WithSourceField(const char* value) { SetSourceField(value); return *this;}
+    template<typename SourceFieldT = Aws::String>
+    void SetSourceField(SourceFieldT&& value) { m_sourceFieldHasBeenSet = true; m_sourceField = std::forward<SourceFieldT>(value); }
+    template<typename SourceFieldT = Aws::String>
+    DocumentSuggesterOptions& WithSourceField(SourceFieldT&& value) { SetSourceField(std::forward<SourceFieldT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,12 +60,10 @@ namespace Model
      * differ from the specified string by no more than one character. With high,
      * suggestions can differ by up to two characters. The default is none. </p>
      */
-    inline const SuggesterFuzzyMatching& GetFuzzyMatching() const{ return m_fuzzyMatching; }
+    inline SuggesterFuzzyMatching GetFuzzyMatching() const { return m_fuzzyMatching; }
     inline bool FuzzyMatchingHasBeenSet() const { return m_fuzzyMatchingHasBeenSet; }
-    inline void SetFuzzyMatching(const SuggesterFuzzyMatching& value) { m_fuzzyMatchingHasBeenSet = true; m_fuzzyMatching = value; }
-    inline void SetFuzzyMatching(SuggesterFuzzyMatching&& value) { m_fuzzyMatchingHasBeenSet = true; m_fuzzyMatching = std::move(value); }
-    inline DocumentSuggesterOptions& WithFuzzyMatching(const SuggesterFuzzyMatching& value) { SetFuzzyMatching(value); return *this;}
-    inline DocumentSuggesterOptions& WithFuzzyMatching(SuggesterFuzzyMatching&& value) { SetFuzzyMatching(std::move(value)); return *this;}
+    inline void SetFuzzyMatching(SuggesterFuzzyMatching value) { m_fuzzyMatchingHasBeenSet = true; m_fuzzyMatching = value; }
+    inline DocumentSuggesterOptions& WithFuzzyMatching(SuggesterFuzzyMatching value) { SetFuzzyMatching(value); return *this;}
     ///@}
 
     ///@{
@@ -80,21 +76,19 @@ namespace Model
      * the name of the field or expression. If no expression is configured for the
      * suggester, the suggestions are sorted with the closest matches listed first.</p>
      */
-    inline const Aws::String& GetSortExpression() const{ return m_sortExpression; }
+    inline const Aws::String& GetSortExpression() const { return m_sortExpression; }
     inline bool SortExpressionHasBeenSet() const { return m_sortExpressionHasBeenSet; }
-    inline void SetSortExpression(const Aws::String& value) { m_sortExpressionHasBeenSet = true; m_sortExpression = value; }
-    inline void SetSortExpression(Aws::String&& value) { m_sortExpressionHasBeenSet = true; m_sortExpression = std::move(value); }
-    inline void SetSortExpression(const char* value) { m_sortExpressionHasBeenSet = true; m_sortExpression.assign(value); }
-    inline DocumentSuggesterOptions& WithSortExpression(const Aws::String& value) { SetSortExpression(value); return *this;}
-    inline DocumentSuggesterOptions& WithSortExpression(Aws::String&& value) { SetSortExpression(std::move(value)); return *this;}
-    inline DocumentSuggesterOptions& WithSortExpression(const char* value) { SetSortExpression(value); return *this;}
+    template<typename SortExpressionT = Aws::String>
+    void SetSortExpression(SortExpressionT&& value) { m_sortExpressionHasBeenSet = true; m_sortExpression = std::forward<SortExpressionT>(value); }
+    template<typename SortExpressionT = Aws::String>
+    DocumentSuggesterOptions& WithSortExpression(SortExpressionT&& value) { SetSortExpression(std::forward<SortExpressionT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_sourceField;
     bool m_sourceFieldHasBeenSet = false;
 
-    SuggesterFuzzyMatching m_fuzzyMatching;
+    SuggesterFuzzyMatching m_fuzzyMatching{SuggesterFuzzyMatching::NOT_SET};
     bool m_fuzzyMatchingHasBeenSet = false;
 
     Aws::String m_sortExpression;

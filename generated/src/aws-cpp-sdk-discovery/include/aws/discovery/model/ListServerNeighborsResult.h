@@ -29,7 +29,7 @@ namespace Model
   class ListServerNeighborsResult
   {
   public:
-    AWS_APPLICATIONDISCOVERYSERVICE_API ListServerNeighborsResult();
+    AWS_APPLICATIONDISCOVERYSERVICE_API ListServerNeighborsResult() = default;
     AWS_APPLICATIONDISCOVERYSERVICE_API ListServerNeighborsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPLICATIONDISCOVERYSERVICE_API ListServerNeighborsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>List of distinct servers that are one hop away from the given server.</p>
      */
-    inline const Aws::Vector<NeighborConnectionDetail>& GetNeighbors() const{ return m_neighbors; }
-    inline void SetNeighbors(const Aws::Vector<NeighborConnectionDetail>& value) { m_neighbors = value; }
-    inline void SetNeighbors(Aws::Vector<NeighborConnectionDetail>&& value) { m_neighbors = std::move(value); }
-    inline ListServerNeighborsResult& WithNeighbors(const Aws::Vector<NeighborConnectionDetail>& value) { SetNeighbors(value); return *this;}
-    inline ListServerNeighborsResult& WithNeighbors(Aws::Vector<NeighborConnectionDetail>&& value) { SetNeighbors(std::move(value)); return *this;}
-    inline ListServerNeighborsResult& AddNeighbors(const NeighborConnectionDetail& value) { m_neighbors.push_back(value); return *this; }
-    inline ListServerNeighborsResult& AddNeighbors(NeighborConnectionDetail&& value) { m_neighbors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<NeighborConnectionDetail>& GetNeighbors() const { return m_neighbors; }
+    template<typename NeighborsT = Aws::Vector<NeighborConnectionDetail>>
+    void SetNeighbors(NeighborsT&& value) { m_neighborsHasBeenSet = true; m_neighbors = std::forward<NeighborsT>(value); }
+    template<typename NeighborsT = Aws::Vector<NeighborConnectionDetail>>
+    ListServerNeighborsResult& WithNeighbors(NeighborsT&& value) { SetNeighbors(std::forward<NeighborsT>(value)); return *this;}
+    template<typename NeighborsT = NeighborConnectionDetail>
+    ListServerNeighborsResult& AddNeighbors(NeighborsT&& value) { m_neighborsHasBeenSet = true; m_neighbors.emplace_back(std::forward<NeighborsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,43 +55,43 @@ namespace Model
      * 10 results along with this token. Use this token in the next query to retrieve
      * the next set of 10.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListServerNeighborsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListServerNeighborsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListServerNeighborsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListServerNeighborsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Count of distinct servers that are one hop away from the given server.</p>
      */
-    inline long long GetKnownDependencyCount() const{ return m_knownDependencyCount; }
-    inline void SetKnownDependencyCount(long long value) { m_knownDependencyCount = value; }
+    inline long long GetKnownDependencyCount() const { return m_knownDependencyCount; }
+    inline void SetKnownDependencyCount(long long value) { m_knownDependencyCountHasBeenSet = true; m_knownDependencyCount = value; }
     inline ListServerNeighborsResult& WithKnownDependencyCount(long long value) { SetKnownDependencyCount(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListServerNeighborsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListServerNeighborsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListServerNeighborsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListServerNeighborsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<NeighborConnectionDetail> m_neighbors;
+    bool m_neighborsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
-    long long m_knownDependencyCount;
+    long long m_knownDependencyCount{0};
+    bool m_knownDependencyCountHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

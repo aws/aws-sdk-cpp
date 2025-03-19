@@ -12,10 +12,6 @@ using namespace Aws::IoTWireless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ResetAllResourceLogLevelsRequest::ResetAllResourceLogLevelsRequest()
-{
-}
-
 Aws::String ResetAllResourceLogLevelsRequest::SerializePayload() const
 {
   return {};

@@ -28,7 +28,7 @@ namespace Model
   class GetAccessPolicyResult
   {
   public:
-    AWS_OPENSEARCHSERVERLESS_API GetAccessPolicyResult();
+    AWS_OPENSEARCHSERVERLESS_API GetAccessPolicyResult() = default;
     AWS_OPENSEARCHSERVERLESS_API GetAccessPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OPENSEARCHSERVERLESS_API GetAccessPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Details about the requested access policy.</p>
      */
-    inline const AccessPolicyDetail& GetAccessPolicyDetail() const{ return m_accessPolicyDetail; }
-    inline void SetAccessPolicyDetail(const AccessPolicyDetail& value) { m_accessPolicyDetail = value; }
-    inline void SetAccessPolicyDetail(AccessPolicyDetail&& value) { m_accessPolicyDetail = std::move(value); }
-    inline GetAccessPolicyResult& WithAccessPolicyDetail(const AccessPolicyDetail& value) { SetAccessPolicyDetail(value); return *this;}
-    inline GetAccessPolicyResult& WithAccessPolicyDetail(AccessPolicyDetail&& value) { SetAccessPolicyDetail(std::move(value)); return *this;}
+    inline const AccessPolicyDetail& GetAccessPolicyDetail() const { return m_accessPolicyDetail; }
+    template<typename AccessPolicyDetailT = AccessPolicyDetail>
+    void SetAccessPolicyDetail(AccessPolicyDetailT&& value) { m_accessPolicyDetailHasBeenSet = true; m_accessPolicyDetail = std::forward<AccessPolicyDetailT>(value); }
+    template<typename AccessPolicyDetailT = AccessPolicyDetail>
+    GetAccessPolicyResult& WithAccessPolicyDetail(AccessPolicyDetailT&& value) { SetAccessPolicyDetail(std::forward<AccessPolicyDetailT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetAccessPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetAccessPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetAccessPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetAccessPolicyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AccessPolicyDetail m_accessPolicyDetail;
+    bool m_accessPolicyDetailHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

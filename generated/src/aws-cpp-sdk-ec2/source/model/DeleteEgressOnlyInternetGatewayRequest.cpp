@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeleteEgressOnlyInternetGatewayRequest::DeleteEgressOnlyInternetGatewayRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_egressOnlyInternetGatewayIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteEgressOnlyInternetGatewayRequest::SerializePayload() const
 {
   Aws::StringStream ss;

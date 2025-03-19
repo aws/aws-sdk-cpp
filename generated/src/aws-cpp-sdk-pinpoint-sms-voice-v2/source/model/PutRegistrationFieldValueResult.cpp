@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutRegistrationFieldValueResult::PutRegistrationFieldValueResult() : 
-    m_versionNumber(0)
-{
-}
-
 PutRegistrationFieldValueResult::PutRegistrationFieldValueResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : PutRegistrationFieldValueResult()
 {
   *this = result;
 }
@@ -34,27 +28,23 @@ PutRegistrationFieldValueResult& PutRegistrationFieldValueResult::operator =(con
   if(jsonValue.ValueExists("RegistrationArn"))
   {
     m_registrationArn = jsonValue.GetString("RegistrationArn");
-
+    m_registrationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegistrationId"))
   {
     m_registrationId = jsonValue.GetString("RegistrationId");
-
+    m_registrationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VersionNumber"))
   {
     m_versionNumber = jsonValue.GetInt64("VersionNumber");
-
+    m_versionNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FieldPath"))
   {
     m_fieldPath = jsonValue.GetString("FieldPath");
-
+    m_fieldPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SelectChoices"))
   {
     Aws::Utils::Array<JsonView> selectChoicesJsonList = jsonValue.GetArray("SelectChoices");
@@ -62,26 +52,25 @@ PutRegistrationFieldValueResult& PutRegistrationFieldValueResult::operator =(con
     {
       m_selectChoices.push_back(selectChoicesJsonList[selectChoicesIndex].AsString());
     }
+    m_selectChoicesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TextValue"))
   {
     m_textValue = jsonValue.GetString("TextValue");
-
+    m_textValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegistrationAttachmentId"))
   {
     m_registrationAttachmentId = jsonValue.GetString("RegistrationAttachmentId");
-
+    m_registrationAttachmentIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

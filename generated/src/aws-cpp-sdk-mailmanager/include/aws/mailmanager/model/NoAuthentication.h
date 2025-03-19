@@ -30,7 +30,7 @@ namespace Model
   class NoAuthentication
   {
   public:
-    AWS_MAILMANAGER_API NoAuthentication();
+    AWS_MAILMANAGER_API NoAuthentication() = default;
     AWS_MAILMANAGER_API NoAuthentication(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API NoAuthentication& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;

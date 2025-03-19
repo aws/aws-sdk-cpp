@@ -12,11 +12,6 @@ using namespace Aws::MigrationHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeApplicationStateRequest::DescribeApplicationStateRequest() : 
-    m_applicationIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeApplicationStateRequest::SerializePayload() const
 {
   JsonValue payload;

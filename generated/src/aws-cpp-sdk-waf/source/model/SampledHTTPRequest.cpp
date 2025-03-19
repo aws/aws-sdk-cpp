@@ -18,18 +18,7 @@ namespace WAF
 namespace Model
 {
 
-SampledHTTPRequest::SampledHTTPRequest() : 
-    m_requestHasBeenSet(false),
-    m_weight(0),
-    m_weightHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_actionHasBeenSet(false),
-    m_ruleWithinRuleGroupHasBeenSet(false)
-{
-}
-
 SampledHTTPRequest::SampledHTTPRequest(JsonView jsonValue)
-  : SampledHTTPRequest()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ SampledHTTPRequest& SampledHTTPRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Request"))
   {
     m_request = jsonValue.GetObject("Request");
-
     m_requestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Weight"))
   {
     m_weight = jsonValue.GetInt64("Weight");
-
     m_weightHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Timestamp"))
   {
     m_timestamp = jsonValue.GetDouble("Timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Action"))
   {
     m_action = jsonValue.GetString("Action");
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleWithinRuleGroup"))
   {
     m_ruleWithinRuleGroup = jsonValue.GetString("RuleWithinRuleGroup");
-
     m_ruleWithinRuleGroupHasBeenSet = true;
   }
-
   return *this;
 }
 

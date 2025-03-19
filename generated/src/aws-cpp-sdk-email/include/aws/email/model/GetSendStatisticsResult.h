@@ -36,7 +36,7 @@ namespace Model
   class GetSendStatisticsResult
   {
   public:
-    AWS_SES_API GetSendStatisticsResult();
+    AWS_SES_API GetSendStatisticsResult() = default;
     AWS_SES_API GetSendStatisticsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_SES_API GetSendStatisticsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -45,28 +45,30 @@ namespace Model
     /**
      * <p>A list of data points, each of which represents 15 minutes of activity.</p>
      */
-    inline const Aws::Vector<SendDataPoint>& GetSendDataPoints() const{ return m_sendDataPoints; }
-    inline void SetSendDataPoints(const Aws::Vector<SendDataPoint>& value) { m_sendDataPoints = value; }
-    inline void SetSendDataPoints(Aws::Vector<SendDataPoint>&& value) { m_sendDataPoints = std::move(value); }
-    inline GetSendStatisticsResult& WithSendDataPoints(const Aws::Vector<SendDataPoint>& value) { SetSendDataPoints(value); return *this;}
-    inline GetSendStatisticsResult& WithSendDataPoints(Aws::Vector<SendDataPoint>&& value) { SetSendDataPoints(std::move(value)); return *this;}
-    inline GetSendStatisticsResult& AddSendDataPoints(const SendDataPoint& value) { m_sendDataPoints.push_back(value); return *this; }
-    inline GetSendStatisticsResult& AddSendDataPoints(SendDataPoint&& value) { m_sendDataPoints.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SendDataPoint>& GetSendDataPoints() const { return m_sendDataPoints; }
+    template<typename SendDataPointsT = Aws::Vector<SendDataPoint>>
+    void SetSendDataPoints(SendDataPointsT&& value) { m_sendDataPointsHasBeenSet = true; m_sendDataPoints = std::forward<SendDataPointsT>(value); }
+    template<typename SendDataPointsT = Aws::Vector<SendDataPoint>>
+    GetSendStatisticsResult& WithSendDataPoints(SendDataPointsT&& value) { SetSendDataPoints(std::forward<SendDataPointsT>(value)); return *this;}
+    template<typename SendDataPointsT = SendDataPoint>
+    GetSendStatisticsResult& AddSendDataPoints(SendDataPointsT&& value) { m_sendDataPointsHasBeenSet = true; m_sendDataPoints.emplace_back(std::forward<SendDataPointsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline GetSendStatisticsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline GetSendStatisticsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    GetSendStatisticsResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<SendDataPoint> m_sendDataPoints;
+    bool m_sendDataPointsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

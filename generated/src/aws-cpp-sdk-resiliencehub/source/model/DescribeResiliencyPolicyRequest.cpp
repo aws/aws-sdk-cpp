@@ -12,11 +12,6 @@ using namespace Aws::ResilienceHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeResiliencyPolicyRequest::DescribeResiliencyPolicyRequest() : 
-    m_policyArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeResiliencyPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

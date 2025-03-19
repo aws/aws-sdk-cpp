@@ -18,18 +18,7 @@ namespace SsmSap
 namespace Model
 {
 
-OperationEvent::OperationEvent() : 
-    m_descriptionHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_status(OperationEventStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_timestampHasBeenSet(false)
-{
-}
-
 OperationEvent::OperationEvent(JsonView jsonValue)
-  : OperationEvent()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ OperationEvent& OperationEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Resource"))
   {
     m_resource = jsonValue.GetObject("Resource");
-
     m_resourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = OperationEventStatusMapper::GetOperationEventStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Timestamp"))
   {
     m_timestamp = jsonValue.GetDouble("Timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   return *this;
 }
 

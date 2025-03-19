@@ -34,7 +34,7 @@ namespace Model
   class RealtimeEndpointInfo
   {
   public:
-    AWS_MACHINELEARNING_API RealtimeEndpointInfo();
+    AWS_MACHINELEARNING_API RealtimeEndpointInfo() = default;
     AWS_MACHINELEARNING_API RealtimeEndpointInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACHINELEARNING_API RealtimeEndpointInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACHINELEARNING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
      * <p> The maximum processing rate for the real-time endpoint for
      * <code>MLModel</code>, measured in incoming requests per second.</p>
      */
-    inline int GetPeakRequestsPerSecond() const{ return m_peakRequestsPerSecond; }
+    inline int GetPeakRequestsPerSecond() const { return m_peakRequestsPerSecond; }
     inline bool PeakRequestsPerSecondHasBeenSet() const { return m_peakRequestsPerSecondHasBeenSet; }
     inline void SetPeakRequestsPerSecond(int value) { m_peakRequestsPerSecondHasBeenSet = true; m_peakRequestsPerSecond = value; }
     inline RealtimeEndpointInfo& WithPeakRequestsPerSecond(int value) { SetPeakRequestsPerSecond(value); return *this;}
@@ -56,12 +56,12 @@ namespace Model
      * <p>The time that the request to create the real-time endpoint for the
      * <code>MLModel</code> was received. The time is expressed in epoch time.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline RealtimeEndpointInfo& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline RealtimeEndpointInfo& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    RealtimeEndpointInfo& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +70,12 @@ namespace Model
      * <code>MLModel</code>.</p> <p> <b>Note:</b> The application must wait until the
      * real-time endpoint is ready before using this URI.</p>
      */
-    inline const Aws::String& GetEndpointUrl() const{ return m_endpointUrl; }
+    inline const Aws::String& GetEndpointUrl() const { return m_endpointUrl; }
     inline bool EndpointUrlHasBeenSet() const { return m_endpointUrlHasBeenSet; }
-    inline void SetEndpointUrl(const Aws::String& value) { m_endpointUrlHasBeenSet = true; m_endpointUrl = value; }
-    inline void SetEndpointUrl(Aws::String&& value) { m_endpointUrlHasBeenSet = true; m_endpointUrl = std::move(value); }
-    inline void SetEndpointUrl(const char* value) { m_endpointUrlHasBeenSet = true; m_endpointUrl.assign(value); }
-    inline RealtimeEndpointInfo& WithEndpointUrl(const Aws::String& value) { SetEndpointUrl(value); return *this;}
-    inline RealtimeEndpointInfo& WithEndpointUrl(Aws::String&& value) { SetEndpointUrl(std::move(value)); return *this;}
-    inline RealtimeEndpointInfo& WithEndpointUrl(const char* value) { SetEndpointUrl(value); return *this;}
+    template<typename EndpointUrlT = Aws::String>
+    void SetEndpointUrl(EndpointUrlT&& value) { m_endpointUrlHasBeenSet = true; m_endpointUrl = std::forward<EndpointUrlT>(value); }
+    template<typename EndpointUrlT = Aws::String>
+    RealtimeEndpointInfo& WithEndpointUrl(EndpointUrlT&& value) { SetEndpointUrl(std::forward<EndpointUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,25 +87,23 @@ namespace Model
      * predictions.</p> </li> <li> <p> <code>UPDATING</code> - Updating/creating the
      * endpoint. </p> </li> </ul>
      */
-    inline const RealtimeEndpointStatus& GetEndpointStatus() const{ return m_endpointStatus; }
+    inline RealtimeEndpointStatus GetEndpointStatus() const { return m_endpointStatus; }
     inline bool EndpointStatusHasBeenSet() const { return m_endpointStatusHasBeenSet; }
-    inline void SetEndpointStatus(const RealtimeEndpointStatus& value) { m_endpointStatusHasBeenSet = true; m_endpointStatus = value; }
-    inline void SetEndpointStatus(RealtimeEndpointStatus&& value) { m_endpointStatusHasBeenSet = true; m_endpointStatus = std::move(value); }
-    inline RealtimeEndpointInfo& WithEndpointStatus(const RealtimeEndpointStatus& value) { SetEndpointStatus(value); return *this;}
-    inline RealtimeEndpointInfo& WithEndpointStatus(RealtimeEndpointStatus&& value) { SetEndpointStatus(std::move(value)); return *this;}
+    inline void SetEndpointStatus(RealtimeEndpointStatus value) { m_endpointStatusHasBeenSet = true; m_endpointStatus = value; }
+    inline RealtimeEndpointInfo& WithEndpointStatus(RealtimeEndpointStatus value) { SetEndpointStatus(value); return *this;}
     ///@}
   private:
 
-    int m_peakRequestsPerSecond;
+    int m_peakRequestsPerSecond{0};
     bool m_peakRequestsPerSecondHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
     Aws::String m_endpointUrl;
     bool m_endpointUrlHasBeenSet = false;
 
-    RealtimeEndpointStatus m_endpointStatus;
+    RealtimeEndpointStatus m_endpointStatus{RealtimeEndpointStatus::NOT_SET};
     bool m_endpointStatusHasBeenSet = false;
   };
 

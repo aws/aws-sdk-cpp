@@ -18,13 +18,7 @@ namespace TimestreamQuery
 namespace Model
 {
 
-TargetConfiguration::TargetConfiguration() : 
-    m_timestreamConfigurationHasBeenSet(false)
-{
-}
-
 TargetConfiguration::TargetConfiguration(JsonView jsonValue)
-  : TargetConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TargetConfiguration& TargetConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TimestreamConfiguration"))
   {
     m_timestreamConfiguration = jsonValue.GetObject("TimestreamConfiguration");
-
     m_timestreamConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

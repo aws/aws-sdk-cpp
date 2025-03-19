@@ -29,7 +29,7 @@ namespace Model
   class GetCrawlerMetricsResult
   {
   public:
-    AWS_GLUE_API GetCrawlerMetricsResult();
+    AWS_GLUE_API GetCrawlerMetricsResult() = default;
     AWS_GLUE_API GetCrawlerMetricsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUE_API GetCrawlerMetricsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list of metrics for the specified crawler.</p>
      */
-    inline const Aws::Vector<CrawlerMetrics>& GetCrawlerMetricsList() const{ return m_crawlerMetricsList; }
-    inline void SetCrawlerMetricsList(const Aws::Vector<CrawlerMetrics>& value) { m_crawlerMetricsList = value; }
-    inline void SetCrawlerMetricsList(Aws::Vector<CrawlerMetrics>&& value) { m_crawlerMetricsList = std::move(value); }
-    inline GetCrawlerMetricsResult& WithCrawlerMetricsList(const Aws::Vector<CrawlerMetrics>& value) { SetCrawlerMetricsList(value); return *this;}
-    inline GetCrawlerMetricsResult& WithCrawlerMetricsList(Aws::Vector<CrawlerMetrics>&& value) { SetCrawlerMetricsList(std::move(value)); return *this;}
-    inline GetCrawlerMetricsResult& AddCrawlerMetricsList(const CrawlerMetrics& value) { m_crawlerMetricsList.push_back(value); return *this; }
-    inline GetCrawlerMetricsResult& AddCrawlerMetricsList(CrawlerMetrics&& value) { m_crawlerMetricsList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CrawlerMetrics>& GetCrawlerMetricsList() const { return m_crawlerMetricsList; }
+    template<typename CrawlerMetricsListT = Aws::Vector<CrawlerMetrics>>
+    void SetCrawlerMetricsList(CrawlerMetricsListT&& value) { m_crawlerMetricsListHasBeenSet = true; m_crawlerMetricsList = std::forward<CrawlerMetricsListT>(value); }
+    template<typename CrawlerMetricsListT = Aws::Vector<CrawlerMetrics>>
+    GetCrawlerMetricsResult& WithCrawlerMetricsList(CrawlerMetricsListT&& value) { SetCrawlerMetricsList(std::forward<CrawlerMetricsListT>(value)); return *this;}
+    template<typename CrawlerMetricsListT = CrawlerMetrics>
+    GetCrawlerMetricsResult& AddCrawlerMetricsList(CrawlerMetricsListT&& value) { m_crawlerMetricsListHasBeenSet = true; m_crawlerMetricsList.emplace_back(std::forward<CrawlerMetricsListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>A continuation token, if the returned list does not contain the last metric
      * available.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetCrawlerMetricsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetCrawlerMetricsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetCrawlerMetricsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetCrawlerMetricsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetCrawlerMetricsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetCrawlerMetricsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetCrawlerMetricsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetCrawlerMetricsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<CrawlerMetrics> m_crawlerMetricsList;
+    bool m_crawlerMetricsListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -36,7 +36,7 @@ namespace Model
   class AwsWafRegionalRateBasedRuleDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsWafRegionalRateBasedRuleDetails();
+    AWS_SECURITYHUB_API AwsWafRegionalRateBasedRuleDetails() = default;
     AWS_SECURITYHUB_API AwsWafRegionalRateBasedRuleDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsWafRegionalRateBasedRuleDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,28 +46,24 @@ namespace Model
     /**
      * <p>The name of the metrics for the rate-based rule.</p>
      */
-    inline const Aws::String& GetMetricName() const{ return m_metricName; }
+    inline const Aws::String& GetMetricName() const { return m_metricName; }
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
-    inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
-    inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
-    inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
-    inline AwsWafRegionalRateBasedRuleDetails& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
-    inline AwsWafRegionalRateBasedRuleDetails& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
-    inline AwsWafRegionalRateBasedRuleDetails& WithMetricName(const char* value) { SetMetricName(value); return *this;}
+    template<typename MetricNameT = Aws::String>
+    void SetMetricName(MetricNameT&& value) { m_metricNameHasBeenSet = true; m_metricName = std::forward<MetricNameT>(value); }
+    template<typename MetricNameT = Aws::String>
+    AwsWafRegionalRateBasedRuleDetails& WithMetricName(MetricNameT&& value) { SetMetricName(std::forward<MetricNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the rate-based rule.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AwsWafRegionalRateBasedRuleDetails& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AwsWafRegionalRateBasedRuleDetails& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AwsWafRegionalRateBasedRuleDetails& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    AwsWafRegionalRateBasedRuleDetails& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +71,12 @@ namespace Model
      * <p>The field that WAF uses to determine whether requests are likely arriving
      * from single source and are subject to rate monitoring.</p>
      */
-    inline const Aws::String& GetRateKey() const{ return m_rateKey; }
+    inline const Aws::String& GetRateKey() const { return m_rateKey; }
     inline bool RateKeyHasBeenSet() const { return m_rateKeyHasBeenSet; }
-    inline void SetRateKey(const Aws::String& value) { m_rateKeyHasBeenSet = true; m_rateKey = value; }
-    inline void SetRateKey(Aws::String&& value) { m_rateKeyHasBeenSet = true; m_rateKey = std::move(value); }
-    inline void SetRateKey(const char* value) { m_rateKeyHasBeenSet = true; m_rateKey.assign(value); }
-    inline AwsWafRegionalRateBasedRuleDetails& WithRateKey(const Aws::String& value) { SetRateKey(value); return *this;}
-    inline AwsWafRegionalRateBasedRuleDetails& WithRateKey(Aws::String&& value) { SetRateKey(std::move(value)); return *this;}
-    inline AwsWafRegionalRateBasedRuleDetails& WithRateKey(const char* value) { SetRateKey(value); return *this;}
+    template<typename RateKeyT = Aws::String>
+    void SetRateKey(RateKeyT&& value) { m_rateKeyHasBeenSet = true; m_rateKey = std::forward<RateKeyT>(value); }
+    template<typename RateKeyT = Aws::String>
+    AwsWafRegionalRateBasedRuleDetails& WithRateKey(RateKeyT&& value) { SetRateKey(std::forward<RateKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,7 +87,7 @@ namespace Model
      * predicates specified in the rule are met, WAF triggers the action for the
      * rule.</p>
      */
-    inline long long GetRateLimit() const{ return m_rateLimit; }
+    inline long long GetRateLimit() const { return m_rateLimit; }
     inline bool RateLimitHasBeenSet() const { return m_rateLimitHasBeenSet; }
     inline void SetRateLimit(long long value) { m_rateLimitHasBeenSet = true; m_rateLimit = value; }
     inline AwsWafRegionalRateBasedRuleDetails& WithRateLimit(long long value) { SetRateLimit(value); return *this;}
@@ -103,28 +97,26 @@ namespace Model
     /**
      * <p>The unique identifier for the rate-based rule.</p>
      */
-    inline const Aws::String& GetRuleId() const{ return m_ruleId; }
+    inline const Aws::String& GetRuleId() const { return m_ruleId; }
     inline bool RuleIdHasBeenSet() const { return m_ruleIdHasBeenSet; }
-    inline void SetRuleId(const Aws::String& value) { m_ruleIdHasBeenSet = true; m_ruleId = value; }
-    inline void SetRuleId(Aws::String&& value) { m_ruleIdHasBeenSet = true; m_ruleId = std::move(value); }
-    inline void SetRuleId(const char* value) { m_ruleIdHasBeenSet = true; m_ruleId.assign(value); }
-    inline AwsWafRegionalRateBasedRuleDetails& WithRuleId(const Aws::String& value) { SetRuleId(value); return *this;}
-    inline AwsWafRegionalRateBasedRuleDetails& WithRuleId(Aws::String&& value) { SetRuleId(std::move(value)); return *this;}
-    inline AwsWafRegionalRateBasedRuleDetails& WithRuleId(const char* value) { SetRuleId(value); return *this;}
+    template<typename RuleIdT = Aws::String>
+    void SetRuleId(RuleIdT&& value) { m_ruleIdHasBeenSet = true; m_ruleId = std::forward<RuleIdT>(value); }
+    template<typename RuleIdT = Aws::String>
+    AwsWafRegionalRateBasedRuleDetails& WithRuleId(RuleIdT&& value) { SetRuleId(std::forward<RuleIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The predicates to include in the rate-based rule.</p>
      */
-    inline const Aws::Vector<AwsWafRegionalRateBasedRuleMatchPredicate>& GetMatchPredicates() const{ return m_matchPredicates; }
+    inline const Aws::Vector<AwsWafRegionalRateBasedRuleMatchPredicate>& GetMatchPredicates() const { return m_matchPredicates; }
     inline bool MatchPredicatesHasBeenSet() const { return m_matchPredicatesHasBeenSet; }
-    inline void SetMatchPredicates(const Aws::Vector<AwsWafRegionalRateBasedRuleMatchPredicate>& value) { m_matchPredicatesHasBeenSet = true; m_matchPredicates = value; }
-    inline void SetMatchPredicates(Aws::Vector<AwsWafRegionalRateBasedRuleMatchPredicate>&& value) { m_matchPredicatesHasBeenSet = true; m_matchPredicates = std::move(value); }
-    inline AwsWafRegionalRateBasedRuleDetails& WithMatchPredicates(const Aws::Vector<AwsWafRegionalRateBasedRuleMatchPredicate>& value) { SetMatchPredicates(value); return *this;}
-    inline AwsWafRegionalRateBasedRuleDetails& WithMatchPredicates(Aws::Vector<AwsWafRegionalRateBasedRuleMatchPredicate>&& value) { SetMatchPredicates(std::move(value)); return *this;}
-    inline AwsWafRegionalRateBasedRuleDetails& AddMatchPredicates(const AwsWafRegionalRateBasedRuleMatchPredicate& value) { m_matchPredicatesHasBeenSet = true; m_matchPredicates.push_back(value); return *this; }
-    inline AwsWafRegionalRateBasedRuleDetails& AddMatchPredicates(AwsWafRegionalRateBasedRuleMatchPredicate&& value) { m_matchPredicatesHasBeenSet = true; m_matchPredicates.push_back(std::move(value)); return *this; }
+    template<typename MatchPredicatesT = Aws::Vector<AwsWafRegionalRateBasedRuleMatchPredicate>>
+    void SetMatchPredicates(MatchPredicatesT&& value) { m_matchPredicatesHasBeenSet = true; m_matchPredicates = std::forward<MatchPredicatesT>(value); }
+    template<typename MatchPredicatesT = Aws::Vector<AwsWafRegionalRateBasedRuleMatchPredicate>>
+    AwsWafRegionalRateBasedRuleDetails& WithMatchPredicates(MatchPredicatesT&& value) { SetMatchPredicates(std::forward<MatchPredicatesT>(value)); return *this;}
+    template<typename MatchPredicatesT = AwsWafRegionalRateBasedRuleMatchPredicate>
+    AwsWafRegionalRateBasedRuleDetails& AddMatchPredicates(MatchPredicatesT&& value) { m_matchPredicatesHasBeenSet = true; m_matchPredicates.emplace_back(std::forward<MatchPredicatesT>(value)); return *this; }
     ///@}
   private:
 
@@ -137,7 +129,7 @@ namespace Model
     Aws::String m_rateKey;
     bool m_rateKeyHasBeenSet = false;
 
-    long long m_rateLimit;
+    long long m_rateLimit{0};
     bool m_rateLimitHasBeenSet = false;
 
     Aws::String m_ruleId;

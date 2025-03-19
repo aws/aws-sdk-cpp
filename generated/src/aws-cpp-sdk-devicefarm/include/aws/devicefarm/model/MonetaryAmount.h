@@ -32,7 +32,7 @@ namespace Model
   class MonetaryAmount
   {
   public:
-    AWS_DEVICEFARM_API MonetaryAmount();
+    AWS_DEVICEFARM_API MonetaryAmount() = default;
     AWS_DEVICEFARM_API MonetaryAmount(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVICEFARM_API MonetaryAmount& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>The numerical amount of an offering or transaction.</p>
      */
-    inline double GetAmount() const{ return m_amount; }
+    inline double GetAmount() const { return m_amount; }
     inline bool AmountHasBeenSet() const { return m_amountHasBeenSet; }
     inline void SetAmount(double value) { m_amountHasBeenSet = true; m_amount = value; }
     inline MonetaryAmount& WithAmount(double value) { SetAmount(value); return *this;}
@@ -53,19 +53,17 @@ namespace Model
      * <p>The currency code of a monetary amount. For example, <code>USD</code> means
      * U.S. dollars.</p>
      */
-    inline const CurrencyCode& GetCurrencyCode() const{ return m_currencyCode; }
+    inline CurrencyCode GetCurrencyCode() const { return m_currencyCode; }
     inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
-    inline void SetCurrencyCode(const CurrencyCode& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
-    inline void SetCurrencyCode(CurrencyCode&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = std::move(value); }
-    inline MonetaryAmount& WithCurrencyCode(const CurrencyCode& value) { SetCurrencyCode(value); return *this;}
-    inline MonetaryAmount& WithCurrencyCode(CurrencyCode&& value) { SetCurrencyCode(std::move(value)); return *this;}
+    inline void SetCurrencyCode(CurrencyCode value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
+    inline MonetaryAmount& WithCurrencyCode(CurrencyCode value) { SetCurrencyCode(value); return *this;}
     ///@}
   private:
 
-    double m_amount;
+    double m_amount{0.0};
     bool m_amountHasBeenSet = false;
 
-    CurrencyCode m_currencyCode;
+    CurrencyCode m_currencyCode{CurrencyCode::NOT_SET};
     bool m_currencyCodeHasBeenSet = false;
   };
 

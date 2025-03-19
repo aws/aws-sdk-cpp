@@ -18,18 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-TimeoutSettings::TimeoutSettings() : 
-    m_disconnectTimeoutInSeconds(0),
-    m_disconnectTimeoutInSecondsHasBeenSet(false),
-    m_idleDisconnectTimeoutInSeconds(0),
-    m_idleDisconnectTimeoutInSecondsHasBeenSet(false),
-    m_maxUserDurationInSeconds(0),
-    m_maxUserDurationInSecondsHasBeenSet(false)
-{
-}
-
 TimeoutSettings::TimeoutSettings(JsonView jsonValue)
-  : TimeoutSettings()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ TimeoutSettings& TimeoutSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DisconnectTimeoutInSeconds"))
   {
     m_disconnectTimeoutInSeconds = jsonValue.GetInteger("DisconnectTimeoutInSeconds");
-
     m_disconnectTimeoutInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdleDisconnectTimeoutInSeconds"))
   {
     m_idleDisconnectTimeoutInSeconds = jsonValue.GetInteger("IdleDisconnectTimeoutInSeconds");
-
     m_idleDisconnectTimeoutInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxUserDurationInSeconds"))
   {
     m_maxUserDurationInSeconds = jsonValue.GetInteger("MaxUserDurationInSeconds");
-
     m_maxUserDurationInSecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

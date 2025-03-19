@@ -18,19 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TemplateSummary::TemplateSummary() : 
-    m_arnHasBeenSet(false),
-    m_templateIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_latestVersionNumber(0),
-    m_latestVersionNumberHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
-{
-}
-
 TemplateSummary::TemplateSummary(JsonView jsonValue)
-  : TemplateSummary()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ TemplateSummary& TemplateSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TemplateId"))
   {
     m_templateId = jsonValue.GetString("TemplateId");
-
     m_templateIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LatestVersionNumber"))
   {
     m_latestVersionNumber = jsonValue.GetInt64("LatestVersionNumber");
-
     m_latestVersionNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

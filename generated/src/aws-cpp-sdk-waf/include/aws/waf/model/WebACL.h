@@ -51,7 +51,7 @@ namespace Model
   class WebACL
   {
   public:
-    AWS_WAF_API WebACL();
+    AWS_WAF_API WebACL() = default;
     AWS_WAF_API WebACL(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAF_API WebACL& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -65,14 +65,12 @@ namespace Model
      * from AWS WAF (see <a>DeleteWebACL</a>).</p> <p> <code>WebACLId</code> is
      * returned by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.</p>
      */
-    inline const Aws::String& GetWebACLId() const{ return m_webACLId; }
+    inline const Aws::String& GetWebACLId() const { return m_webACLId; }
     inline bool WebACLIdHasBeenSet() const { return m_webACLIdHasBeenSet; }
-    inline void SetWebACLId(const Aws::String& value) { m_webACLIdHasBeenSet = true; m_webACLId = value; }
-    inline void SetWebACLId(Aws::String&& value) { m_webACLIdHasBeenSet = true; m_webACLId = std::move(value); }
-    inline void SetWebACLId(const char* value) { m_webACLIdHasBeenSet = true; m_webACLId.assign(value); }
-    inline WebACL& WithWebACLId(const Aws::String& value) { SetWebACLId(value); return *this;}
-    inline WebACL& WithWebACLId(Aws::String&& value) { SetWebACLId(std::move(value)); return *this;}
-    inline WebACL& WithWebACLId(const char* value) { SetWebACLId(value); return *this;}
+    template<typename WebACLIdT = Aws::String>
+    void SetWebACLId(WebACLIdT&& value) { m_webACLIdHasBeenSet = true; m_webACLId = std::forward<WebACLIdT>(value); }
+    template<typename WebACLIdT = Aws::String>
+    WebACL& WithWebACLId(WebACLIdT&& value) { SetWebACLId(std::forward<WebACLIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,14 +78,12 @@ namespace Model
      * <p>A friendly name or description of the <code>WebACL</code>. You can't change
      * the name of a <code>WebACL</code> after you create it.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline WebACL& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline WebACL& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline WebACL& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    WebACL& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,14 +94,12 @@ namespace Model
      * reserved for AWS WAF, including "All" and "Default_Action." You can't change
      * <code>MetricName</code> after you create the <code>WebACL</code>.</p>
      */
-    inline const Aws::String& GetMetricName() const{ return m_metricName; }
+    inline const Aws::String& GetMetricName() const { return m_metricName; }
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
-    inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
-    inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
-    inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
-    inline WebACL& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
-    inline WebACL& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
-    inline WebACL& WithMetricName(const char* value) { SetMetricName(value); return *this;}
+    template<typename MetricNameT = Aws::String>
+    void SetMetricName(MetricNameT&& value) { m_metricNameHasBeenSet = true; m_metricName = std::forward<MetricNameT>(value); }
+    template<typename MetricNameT = Aws::String>
+    WebACL& WithMetricName(MetricNameT&& value) { SetMetricName(std::forward<MetricNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,12 +108,12 @@ namespace Model
      * <code>WebACL</code> match. The action is specified by the <a>WafAction</a>
      * object.</p>
      */
-    inline const WafAction& GetDefaultAction() const{ return m_defaultAction; }
+    inline const WafAction& GetDefaultAction() const { return m_defaultAction; }
     inline bool DefaultActionHasBeenSet() const { return m_defaultActionHasBeenSet; }
-    inline void SetDefaultAction(const WafAction& value) { m_defaultActionHasBeenSet = true; m_defaultAction = value; }
-    inline void SetDefaultAction(WafAction&& value) { m_defaultActionHasBeenSet = true; m_defaultAction = std::move(value); }
-    inline WebACL& WithDefaultAction(const WafAction& value) { SetDefaultAction(value); return *this;}
-    inline WebACL& WithDefaultAction(WafAction&& value) { SetDefaultAction(std::move(value)); return *this;}
+    template<typename DefaultActionT = WafAction>
+    void SetDefaultAction(DefaultActionT&& value) { m_defaultActionHasBeenSet = true; m_defaultAction = std::forward<DefaultActionT>(value); }
+    template<typename DefaultActionT = WafAction>
+    WebACL& WithDefaultAction(DefaultActionT&& value) { SetDefaultAction(std::forward<DefaultActionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,28 +122,26 @@ namespace Model
      * <code>WebACL</code>, the priority of the <code>Rule</code>, and the ID of the
      * <code>Rule</code>.</p>
      */
-    inline const Aws::Vector<ActivatedRule>& GetRules() const{ return m_rules; }
+    inline const Aws::Vector<ActivatedRule>& GetRules() const { return m_rules; }
     inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
-    inline void SetRules(const Aws::Vector<ActivatedRule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
-    inline void SetRules(Aws::Vector<ActivatedRule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
-    inline WebACL& WithRules(const Aws::Vector<ActivatedRule>& value) { SetRules(value); return *this;}
-    inline WebACL& WithRules(Aws::Vector<ActivatedRule>&& value) { SetRules(std::move(value)); return *this;}
-    inline WebACL& AddRules(const ActivatedRule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
-    inline WebACL& AddRules(ActivatedRule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
+    template<typename RulesT = Aws::Vector<ActivatedRule>>
+    void SetRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules = std::forward<RulesT>(value); }
+    template<typename RulesT = Aws::Vector<ActivatedRule>>
+    WebACL& WithRules(RulesT&& value) { SetRules(std::forward<RulesT>(value)); return *this;}
+    template<typename RulesT = ActivatedRule>
+    WebACL& AddRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules.emplace_back(std::forward<RulesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Tha Amazon Resource Name (ARN) of the web ACL.</p>
      */
-    inline const Aws::String& GetWebACLArn() const{ return m_webACLArn; }
+    inline const Aws::String& GetWebACLArn() const { return m_webACLArn; }
     inline bool WebACLArnHasBeenSet() const { return m_webACLArnHasBeenSet; }
-    inline void SetWebACLArn(const Aws::String& value) { m_webACLArnHasBeenSet = true; m_webACLArn = value; }
-    inline void SetWebACLArn(Aws::String&& value) { m_webACLArnHasBeenSet = true; m_webACLArn = std::move(value); }
-    inline void SetWebACLArn(const char* value) { m_webACLArnHasBeenSet = true; m_webACLArn.assign(value); }
-    inline WebACL& WithWebACLArn(const Aws::String& value) { SetWebACLArn(value); return *this;}
-    inline WebACL& WithWebACLArn(Aws::String&& value) { SetWebACLArn(std::move(value)); return *this;}
-    inline WebACL& WithWebACLArn(const char* value) { SetWebACLArn(value); return *this;}
+    template<typename WebACLArnT = Aws::String>
+    void SetWebACLArn(WebACLArnT&& value) { m_webACLArnHasBeenSet = true; m_webACLArn = std::forward<WebACLArnT>(value); }
+    template<typename WebACLArnT = Aws::String>
+    WebACL& WithWebACLArn(WebACLArnT&& value) { SetWebACLArn(std::forward<WebACLArnT>(value)); return *this;}
     ///@}
   private:
 

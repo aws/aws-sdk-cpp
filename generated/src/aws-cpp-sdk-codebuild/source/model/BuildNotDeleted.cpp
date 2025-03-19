@@ -18,14 +18,7 @@ namespace CodeBuild
 namespace Model
 {
 
-BuildNotDeleted::BuildNotDeleted() : 
-    m_idHasBeenSet(false),
-    m_statusCodeHasBeenSet(false)
-{
-}
-
 BuildNotDeleted::BuildNotDeleted(JsonView jsonValue)
-  : BuildNotDeleted()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BuildNotDeleted& BuildNotDeleted::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusCode"))
   {
     m_statusCode = jsonValue.GetString("statusCode");
-
     m_statusCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

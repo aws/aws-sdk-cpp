@@ -12,12 +12,6 @@ using namespace Aws::Personalize::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDatasetRequest::UpdateDatasetRequest() : 
-    m_datasetArnHasBeenSet(false),
-    m_schemaArnHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDatasetRequest::SerializePayload() const
 {
   JsonValue payload;

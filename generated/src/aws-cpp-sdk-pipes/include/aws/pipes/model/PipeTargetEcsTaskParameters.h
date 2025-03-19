@@ -41,7 +41,7 @@ namespace Model
   class PipeTargetEcsTaskParameters
   {
   public:
-    AWS_PIPES_API PipeTargetEcsTaskParameters();
+    AWS_PIPES_API PipeTargetEcsTaskParameters() = default;
     AWS_PIPES_API PipeTargetEcsTaskParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API PipeTargetEcsTaskParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,14 +52,12 @@ namespace Model
      * <p>The ARN of the task definition to use if the event target is an Amazon ECS
      * task. </p>
      */
-    inline const Aws::String& GetTaskDefinitionArn() const{ return m_taskDefinitionArn; }
+    inline const Aws::String& GetTaskDefinitionArn() const { return m_taskDefinitionArn; }
     inline bool TaskDefinitionArnHasBeenSet() const { return m_taskDefinitionArnHasBeenSet; }
-    inline void SetTaskDefinitionArn(const Aws::String& value) { m_taskDefinitionArnHasBeenSet = true; m_taskDefinitionArn = value; }
-    inline void SetTaskDefinitionArn(Aws::String&& value) { m_taskDefinitionArnHasBeenSet = true; m_taskDefinitionArn = std::move(value); }
-    inline void SetTaskDefinitionArn(const char* value) { m_taskDefinitionArnHasBeenSet = true; m_taskDefinitionArn.assign(value); }
-    inline PipeTargetEcsTaskParameters& WithTaskDefinitionArn(const Aws::String& value) { SetTaskDefinitionArn(value); return *this;}
-    inline PipeTargetEcsTaskParameters& WithTaskDefinitionArn(Aws::String&& value) { SetTaskDefinitionArn(std::move(value)); return *this;}
-    inline PipeTargetEcsTaskParameters& WithTaskDefinitionArn(const char* value) { SetTaskDefinitionArn(value); return *this;}
+    template<typename TaskDefinitionArnT = Aws::String>
+    void SetTaskDefinitionArn(TaskDefinitionArnT&& value) { m_taskDefinitionArnHasBeenSet = true; m_taskDefinitionArn = std::forward<TaskDefinitionArnT>(value); }
+    template<typename TaskDefinitionArnT = Aws::String>
+    PipeTargetEcsTaskParameters& WithTaskDefinitionArn(TaskDefinitionArnT&& value) { SetTaskDefinitionArn(std::forward<TaskDefinitionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,7 +65,7 @@ namespace Model
      * <p>The number of tasks to create based on <code>TaskDefinition</code>. The
      * default is 1.</p>
      */
-    inline int GetTaskCount() const{ return m_taskCount; }
+    inline int GetTaskCount() const { return m_taskCount; }
     inline bool TaskCountHasBeenSet() const { return m_taskCountHasBeenSet; }
     inline void SetTaskCount(int value) { m_taskCountHasBeenSet = true; m_taskCount = value; }
     inline PipeTargetEcsTaskParameters& WithTaskCount(int value) { SetTaskCount(value); return *this;}
@@ -83,12 +81,10 @@ namespace Model
      * on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
-    inline const LaunchType& GetLaunchType() const{ return m_launchType; }
+    inline LaunchType GetLaunchType() const { return m_launchType; }
     inline bool LaunchTypeHasBeenSet() const { return m_launchTypeHasBeenSet; }
-    inline void SetLaunchType(const LaunchType& value) { m_launchTypeHasBeenSet = true; m_launchType = value; }
-    inline void SetLaunchType(LaunchType&& value) { m_launchTypeHasBeenSet = true; m_launchType = std::move(value); }
-    inline PipeTargetEcsTaskParameters& WithLaunchType(const LaunchType& value) { SetLaunchType(value); return *this;}
-    inline PipeTargetEcsTaskParameters& WithLaunchType(LaunchType&& value) { SetLaunchType(std::move(value)); return *this;}
+    inline void SetLaunchType(LaunchType value) { m_launchTypeHasBeenSet = true; m_launchType = value; }
+    inline PipeTargetEcsTaskParameters& WithLaunchType(LaunchType value) { SetLaunchType(value); return *this;}
     ///@}
 
     ///@{
@@ -101,12 +97,12 @@ namespace Model
      * specify <code>NetworkConfiguration</code> when the target ECS task does not use
      * the <code>awsvpc</code> network mode, the task fails.</p>
      */
-    inline const NetworkConfiguration& GetNetworkConfiguration() const{ return m_networkConfiguration; }
+    inline const NetworkConfiguration& GetNetworkConfiguration() const { return m_networkConfiguration; }
     inline bool NetworkConfigurationHasBeenSet() const { return m_networkConfigurationHasBeenSet; }
-    inline void SetNetworkConfiguration(const NetworkConfiguration& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = value; }
-    inline void SetNetworkConfiguration(NetworkConfiguration&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::move(value); }
-    inline PipeTargetEcsTaskParameters& WithNetworkConfiguration(const NetworkConfiguration& value) { SetNetworkConfiguration(value); return *this;}
-    inline PipeTargetEcsTaskParameters& WithNetworkConfiguration(NetworkConfiguration&& value) { SetNetworkConfiguration(std::move(value)); return *this;}
+    template<typename NetworkConfigurationT = NetworkConfiguration>
+    void SetNetworkConfiguration(NetworkConfigurationT&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::forward<NetworkConfigurationT>(value); }
+    template<typename NetworkConfigurationT = NetworkConfiguration>
+    PipeTargetEcsTaskParameters& WithNetworkConfiguration(NetworkConfigurationT&& value) { SetNetworkConfiguration(std::forward<NetworkConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -119,14 +115,12 @@ namespace Model
      * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
-    inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
+    inline const Aws::String& GetPlatformVersion() const { return m_platformVersion; }
     inline bool PlatformVersionHasBeenSet() const { return m_platformVersionHasBeenSet; }
-    inline void SetPlatformVersion(const Aws::String& value) { m_platformVersionHasBeenSet = true; m_platformVersion = value; }
-    inline void SetPlatformVersion(Aws::String&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::move(value); }
-    inline void SetPlatformVersion(const char* value) { m_platformVersionHasBeenSet = true; m_platformVersion.assign(value); }
-    inline PipeTargetEcsTaskParameters& WithPlatformVersion(const Aws::String& value) { SetPlatformVersion(value); return *this;}
-    inline PipeTargetEcsTaskParameters& WithPlatformVersion(Aws::String&& value) { SetPlatformVersion(std::move(value)); return *this;}
-    inline PipeTargetEcsTaskParameters& WithPlatformVersion(const char* value) { SetPlatformVersion(value); return *this;}
+    template<typename PlatformVersionT = Aws::String>
+    void SetPlatformVersion(PlatformVersionT&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::forward<PlatformVersionT>(value); }
+    template<typename PlatformVersionT = Aws::String>
+    PipeTargetEcsTaskParameters& WithPlatformVersion(PlatformVersionT&& value) { SetPlatformVersion(std::forward<PlatformVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,14 +128,12 @@ namespace Model
      * <p>Specifies an Amazon ECS task group for the task. The maximum length is 255
      * characters.</p>
      */
-    inline const Aws::String& GetGroup() const{ return m_group; }
+    inline const Aws::String& GetGroup() const { return m_group; }
     inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
-    inline void SetGroup(const Aws::String& value) { m_groupHasBeenSet = true; m_group = value; }
-    inline void SetGroup(Aws::String&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
-    inline void SetGroup(const char* value) { m_groupHasBeenSet = true; m_group.assign(value); }
-    inline PipeTargetEcsTaskParameters& WithGroup(const Aws::String& value) { SetGroup(value); return *this;}
-    inline PipeTargetEcsTaskParameters& WithGroup(Aws::String&& value) { SetGroup(std::move(value)); return *this;}
-    inline PipeTargetEcsTaskParameters& WithGroup(const char* value) { SetGroup(value); return *this;}
+    template<typename GroupT = Aws::String>
+    void SetGroup(GroupT&& value) { m_groupHasBeenSet = true; m_group = std::forward<GroupT>(value); }
+    template<typename GroupT = Aws::String>
+    PipeTargetEcsTaskParameters& WithGroup(GroupT&& value) { SetGroup(std::forward<GroupT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -152,14 +144,14 @@ namespace Model
      * launchType is specified, the <code>defaultCapacityProviderStrategy</code> for
      * the cluster is used. </p>
      */
-    inline const Aws::Vector<CapacityProviderStrategyItem>& GetCapacityProviderStrategy() const{ return m_capacityProviderStrategy; }
+    inline const Aws::Vector<CapacityProviderStrategyItem>& GetCapacityProviderStrategy() const { return m_capacityProviderStrategy; }
     inline bool CapacityProviderStrategyHasBeenSet() const { return m_capacityProviderStrategyHasBeenSet; }
-    inline void SetCapacityProviderStrategy(const Aws::Vector<CapacityProviderStrategyItem>& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy = value; }
-    inline void SetCapacityProviderStrategy(Aws::Vector<CapacityProviderStrategyItem>&& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy = std::move(value); }
-    inline PipeTargetEcsTaskParameters& WithCapacityProviderStrategy(const Aws::Vector<CapacityProviderStrategyItem>& value) { SetCapacityProviderStrategy(value); return *this;}
-    inline PipeTargetEcsTaskParameters& WithCapacityProviderStrategy(Aws::Vector<CapacityProviderStrategyItem>&& value) { SetCapacityProviderStrategy(std::move(value)); return *this;}
-    inline PipeTargetEcsTaskParameters& AddCapacityProviderStrategy(const CapacityProviderStrategyItem& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy.push_back(value); return *this; }
-    inline PipeTargetEcsTaskParameters& AddCapacityProviderStrategy(CapacityProviderStrategyItem&& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy.push_back(std::move(value)); return *this; }
+    template<typename CapacityProviderStrategyT = Aws::Vector<CapacityProviderStrategyItem>>
+    void SetCapacityProviderStrategy(CapacityProviderStrategyT&& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy = std::forward<CapacityProviderStrategyT>(value); }
+    template<typename CapacityProviderStrategyT = Aws::Vector<CapacityProviderStrategyItem>>
+    PipeTargetEcsTaskParameters& WithCapacityProviderStrategy(CapacityProviderStrategyT&& value) { SetCapacityProviderStrategy(std::forward<CapacityProviderStrategyT>(value)); return *this;}
+    template<typename CapacityProviderStrategyT = CapacityProviderStrategyItem>
+    PipeTargetEcsTaskParameters& AddCapacityProviderStrategy(CapacityProviderStrategyT&& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy.emplace_back(std::forward<CapacityProviderStrategyT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -170,7 +162,7 @@ namespace Model
      * Your Amazon ECS Resources</a> in the Amazon Elastic Container Service Developer
      * Guide. </p>
      */
-    inline bool GetEnableECSManagedTags() const{ return m_enableECSManagedTags; }
+    inline bool GetEnableECSManagedTags() const { return m_enableECSManagedTags; }
     inline bool EnableECSManagedTagsHasBeenSet() const { return m_enableECSManagedTagsHasBeenSet; }
     inline void SetEnableECSManagedTags(bool value) { m_enableECSManagedTagsHasBeenSet = true; m_enableECSManagedTags = value; }
     inline PipeTargetEcsTaskParameters& WithEnableECSManagedTags(bool value) { SetEnableECSManagedTags(value); return *this;}
@@ -182,7 +174,7 @@ namespace Model
      * in this task. If true, this enables execute command functionality on all
      * containers in the task.</p>
      */
-    inline bool GetEnableExecuteCommand() const{ return m_enableExecuteCommand; }
+    inline bool GetEnableExecuteCommand() const { return m_enableExecuteCommand; }
     inline bool EnableExecuteCommandHasBeenSet() const { return m_enableExecuteCommandHasBeenSet; }
     inline void SetEnableExecuteCommand(bool value) { m_enableExecuteCommandHasBeenSet = true; m_enableExecuteCommand = value; }
     inline PipeTargetEcsTaskParameters& WithEnableExecuteCommand(bool value) { SetEnableExecuteCommand(value); return *this;}
@@ -194,14 +186,14 @@ namespace Model
      * up to 10 constraints per task (including constraints in the task definition and
      * those specified at runtime).</p>
      */
-    inline const Aws::Vector<PlacementConstraint>& GetPlacementConstraints() const{ return m_placementConstraints; }
+    inline const Aws::Vector<PlacementConstraint>& GetPlacementConstraints() const { return m_placementConstraints; }
     inline bool PlacementConstraintsHasBeenSet() const { return m_placementConstraintsHasBeenSet; }
-    inline void SetPlacementConstraints(const Aws::Vector<PlacementConstraint>& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints = value; }
-    inline void SetPlacementConstraints(Aws::Vector<PlacementConstraint>&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints = std::move(value); }
-    inline PipeTargetEcsTaskParameters& WithPlacementConstraints(const Aws::Vector<PlacementConstraint>& value) { SetPlacementConstraints(value); return *this;}
-    inline PipeTargetEcsTaskParameters& WithPlacementConstraints(Aws::Vector<PlacementConstraint>&& value) { SetPlacementConstraints(std::move(value)); return *this;}
-    inline PipeTargetEcsTaskParameters& AddPlacementConstraints(const PlacementConstraint& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints.push_back(value); return *this; }
-    inline PipeTargetEcsTaskParameters& AddPlacementConstraints(PlacementConstraint&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints.push_back(std::move(value)); return *this; }
+    template<typename PlacementConstraintsT = Aws::Vector<PlacementConstraint>>
+    void SetPlacementConstraints(PlacementConstraintsT&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints = std::forward<PlacementConstraintsT>(value); }
+    template<typename PlacementConstraintsT = Aws::Vector<PlacementConstraint>>
+    PipeTargetEcsTaskParameters& WithPlacementConstraints(PlacementConstraintsT&& value) { SetPlacementConstraints(std::forward<PlacementConstraintsT>(value)); return *this;}
+    template<typename PlacementConstraintsT = PlacementConstraint>
+    PipeTargetEcsTaskParameters& AddPlacementConstraints(PlacementConstraintsT&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints.emplace_back(std::forward<PlacementConstraintsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -209,14 +201,14 @@ namespace Model
      * <p>The placement strategy objects to use for the task. You can specify a maximum
      * of five strategy rules per task. </p>
      */
-    inline const Aws::Vector<PlacementStrategy>& GetPlacementStrategy() const{ return m_placementStrategy; }
+    inline const Aws::Vector<PlacementStrategy>& GetPlacementStrategy() const { return m_placementStrategy; }
     inline bool PlacementStrategyHasBeenSet() const { return m_placementStrategyHasBeenSet; }
-    inline void SetPlacementStrategy(const Aws::Vector<PlacementStrategy>& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy = value; }
-    inline void SetPlacementStrategy(Aws::Vector<PlacementStrategy>&& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy = std::move(value); }
-    inline PipeTargetEcsTaskParameters& WithPlacementStrategy(const Aws::Vector<PlacementStrategy>& value) { SetPlacementStrategy(value); return *this;}
-    inline PipeTargetEcsTaskParameters& WithPlacementStrategy(Aws::Vector<PlacementStrategy>&& value) { SetPlacementStrategy(std::move(value)); return *this;}
-    inline PipeTargetEcsTaskParameters& AddPlacementStrategy(const PlacementStrategy& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy.push_back(value); return *this; }
-    inline PipeTargetEcsTaskParameters& AddPlacementStrategy(PlacementStrategy&& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy.push_back(std::move(value)); return *this; }
+    template<typename PlacementStrategyT = Aws::Vector<PlacementStrategy>>
+    void SetPlacementStrategy(PlacementStrategyT&& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy = std::forward<PlacementStrategyT>(value); }
+    template<typename PlacementStrategyT = Aws::Vector<PlacementStrategy>>
+    PipeTargetEcsTaskParameters& WithPlacementStrategy(PlacementStrategyT&& value) { SetPlacementStrategy(std::forward<PlacementStrategyT>(value)); return *this;}
+    template<typename PlacementStrategyT = PlacementStrategy>
+    PipeTargetEcsTaskParameters& AddPlacementStrategy(PlacementStrategyT&& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy.emplace_back(std::forward<PlacementStrategyT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -226,38 +218,34 @@ namespace Model
      * propagated to the task during task creation. To add tags to a task after task
      * creation, use the <code>TagResource</code> API action. </p>
      */
-    inline const PropagateTags& GetPropagateTags() const{ return m_propagateTags; }
+    inline PropagateTags GetPropagateTags() const { return m_propagateTags; }
     inline bool PropagateTagsHasBeenSet() const { return m_propagateTagsHasBeenSet; }
-    inline void SetPropagateTags(const PropagateTags& value) { m_propagateTagsHasBeenSet = true; m_propagateTags = value; }
-    inline void SetPropagateTags(PropagateTags&& value) { m_propagateTagsHasBeenSet = true; m_propagateTags = std::move(value); }
-    inline PipeTargetEcsTaskParameters& WithPropagateTags(const PropagateTags& value) { SetPropagateTags(value); return *this;}
-    inline PipeTargetEcsTaskParameters& WithPropagateTags(PropagateTags&& value) { SetPropagateTags(std::move(value)); return *this;}
+    inline void SetPropagateTags(PropagateTags value) { m_propagateTagsHasBeenSet = true; m_propagateTags = value; }
+    inline PipeTargetEcsTaskParameters& WithPropagateTags(PropagateTags value) { SetPropagateTags(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The reference ID to use for the task.</p>
      */
-    inline const Aws::String& GetReferenceId() const{ return m_referenceId; }
+    inline const Aws::String& GetReferenceId() const { return m_referenceId; }
     inline bool ReferenceIdHasBeenSet() const { return m_referenceIdHasBeenSet; }
-    inline void SetReferenceId(const Aws::String& value) { m_referenceIdHasBeenSet = true; m_referenceId = value; }
-    inline void SetReferenceId(Aws::String&& value) { m_referenceIdHasBeenSet = true; m_referenceId = std::move(value); }
-    inline void SetReferenceId(const char* value) { m_referenceIdHasBeenSet = true; m_referenceId.assign(value); }
-    inline PipeTargetEcsTaskParameters& WithReferenceId(const Aws::String& value) { SetReferenceId(value); return *this;}
-    inline PipeTargetEcsTaskParameters& WithReferenceId(Aws::String&& value) { SetReferenceId(std::move(value)); return *this;}
-    inline PipeTargetEcsTaskParameters& WithReferenceId(const char* value) { SetReferenceId(value); return *this;}
+    template<typename ReferenceIdT = Aws::String>
+    void SetReferenceId(ReferenceIdT&& value) { m_referenceIdHasBeenSet = true; m_referenceId = std::forward<ReferenceIdT>(value); }
+    template<typename ReferenceIdT = Aws::String>
+    PipeTargetEcsTaskParameters& WithReferenceId(ReferenceIdT&& value) { SetReferenceId(std::forward<ReferenceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The overrides that are associated with a task.</p>
      */
-    inline const EcsTaskOverride& GetOverrides() const{ return m_overrides; }
+    inline const EcsTaskOverride& GetOverrides() const { return m_overrides; }
     inline bool OverridesHasBeenSet() const { return m_overridesHasBeenSet; }
-    inline void SetOverrides(const EcsTaskOverride& value) { m_overridesHasBeenSet = true; m_overrides = value; }
-    inline void SetOverrides(EcsTaskOverride&& value) { m_overridesHasBeenSet = true; m_overrides = std::move(value); }
-    inline PipeTargetEcsTaskParameters& WithOverrides(const EcsTaskOverride& value) { SetOverrides(value); return *this;}
-    inline PipeTargetEcsTaskParameters& WithOverrides(EcsTaskOverride&& value) { SetOverrides(std::move(value)); return *this;}
+    template<typename OverridesT = EcsTaskOverride>
+    void SetOverrides(OverridesT&& value) { m_overridesHasBeenSet = true; m_overrides = std::forward<OverridesT>(value); }
+    template<typename OverridesT = EcsTaskOverride>
+    PipeTargetEcsTaskParameters& WithOverrides(OverridesT&& value) { SetOverrides(std::forward<OverridesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -268,24 +256,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html#ECS-RunTask-request-tags">RunTask</a>
      * in the Amazon ECS API Reference.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline PipeTargetEcsTaskParameters& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline PipeTargetEcsTaskParameters& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline PipeTargetEcsTaskParameters& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline PipeTargetEcsTaskParameters& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    PipeTargetEcsTaskParameters& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    PipeTargetEcsTaskParameters& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_taskDefinitionArn;
     bool m_taskDefinitionArnHasBeenSet = false;
 
-    int m_taskCount;
+    int m_taskCount{0};
     bool m_taskCountHasBeenSet = false;
 
-    LaunchType m_launchType;
+    LaunchType m_launchType{LaunchType::NOT_SET};
     bool m_launchTypeHasBeenSet = false;
 
     NetworkConfiguration m_networkConfiguration;
@@ -300,10 +288,10 @@ namespace Model
     Aws::Vector<CapacityProviderStrategyItem> m_capacityProviderStrategy;
     bool m_capacityProviderStrategyHasBeenSet = false;
 
-    bool m_enableECSManagedTags;
+    bool m_enableECSManagedTags{false};
     bool m_enableECSManagedTagsHasBeenSet = false;
 
-    bool m_enableExecuteCommand;
+    bool m_enableExecuteCommand{false};
     bool m_enableExecuteCommandHasBeenSet = false;
 
     Aws::Vector<PlacementConstraint> m_placementConstraints;
@@ -312,7 +300,7 @@ namespace Model
     Aws::Vector<PlacementStrategy> m_placementStrategy;
     bool m_placementStrategyHasBeenSet = false;
 
-    PropagateTags m_propagateTags;
+    PropagateTags m_propagateTags{PropagateTags::NOT_SET};
     bool m_propagateTagsHasBeenSet = false;
 
     Aws::String m_referenceId;

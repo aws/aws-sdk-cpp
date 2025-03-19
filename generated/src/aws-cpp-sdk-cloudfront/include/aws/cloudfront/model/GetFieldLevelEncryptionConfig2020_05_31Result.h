@@ -28,7 +28,7 @@ namespace Model
   class GetFieldLevelEncryptionConfig2020_05_31Result
   {
   public:
-    AWS_CLOUDFRONT_API GetFieldLevelEncryptionConfig2020_05_31Result();
+    AWS_CLOUDFRONT_API GetFieldLevelEncryptionConfig2020_05_31Result() = default;
     AWS_CLOUDFRONT_API GetFieldLevelEncryptionConfig2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDFRONT_API GetFieldLevelEncryptionConfig2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,11 +37,11 @@ namespace Model
     /**
      * <p>Return the field-level encryption configuration information.</p>
      */
-    inline const FieldLevelEncryptionConfig& GetFieldLevelEncryptionConfig() const{ return m_fieldLevelEncryptionConfig; }
-    inline void SetFieldLevelEncryptionConfig(const FieldLevelEncryptionConfig& value) { m_fieldLevelEncryptionConfig = value; }
-    inline void SetFieldLevelEncryptionConfig(FieldLevelEncryptionConfig&& value) { m_fieldLevelEncryptionConfig = std::move(value); }
-    inline GetFieldLevelEncryptionConfig2020_05_31Result& WithFieldLevelEncryptionConfig(const FieldLevelEncryptionConfig& value) { SetFieldLevelEncryptionConfig(value); return *this;}
-    inline GetFieldLevelEncryptionConfig2020_05_31Result& WithFieldLevelEncryptionConfig(FieldLevelEncryptionConfig&& value) { SetFieldLevelEncryptionConfig(std::move(value)); return *this;}
+    inline const FieldLevelEncryptionConfig& GetFieldLevelEncryptionConfig() const { return m_fieldLevelEncryptionConfig; }
+    template<typename FieldLevelEncryptionConfigT = FieldLevelEncryptionConfig>
+    void SetFieldLevelEncryptionConfig(FieldLevelEncryptionConfigT&& value) { m_fieldLevelEncryptionConfigHasBeenSet = true; m_fieldLevelEncryptionConfig = std::forward<FieldLevelEncryptionConfigT>(value); }
+    template<typename FieldLevelEncryptionConfigT = FieldLevelEncryptionConfig>
+    GetFieldLevelEncryptionConfig2020_05_31Result& WithFieldLevelEncryptionConfig(FieldLevelEncryptionConfigT&& value) { SetFieldLevelEncryptionConfig(std::forward<FieldLevelEncryptionConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -49,32 +49,31 @@ namespace Model
      * <p>The current version of the field level encryption configuration. For example:
      * <code>E2QWRUHAPOMQZL</code>.</p>
      */
-    inline const Aws::String& GetETag() const{ return m_eTag; }
-    inline void SetETag(const Aws::String& value) { m_eTag = value; }
-    inline void SetETag(Aws::String&& value) { m_eTag = std::move(value); }
-    inline void SetETag(const char* value) { m_eTag.assign(value); }
-    inline GetFieldLevelEncryptionConfig2020_05_31Result& WithETag(const Aws::String& value) { SetETag(value); return *this;}
-    inline GetFieldLevelEncryptionConfig2020_05_31Result& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
-    inline GetFieldLevelEncryptionConfig2020_05_31Result& WithETag(const char* value) { SetETag(value); return *this;}
+    inline const Aws::String& GetETag() const { return m_eTag; }
+    template<typename ETagT = Aws::String>
+    void SetETag(ETagT&& value) { m_eTagHasBeenSet = true; m_eTag = std::forward<ETagT>(value); }
+    template<typename ETagT = Aws::String>
+    GetFieldLevelEncryptionConfig2020_05_31Result& WithETag(ETagT&& value) { SetETag(std::forward<ETagT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetFieldLevelEncryptionConfig2020_05_31Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetFieldLevelEncryptionConfig2020_05_31Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetFieldLevelEncryptionConfig2020_05_31Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetFieldLevelEncryptionConfig2020_05_31Result& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     FieldLevelEncryptionConfig m_fieldLevelEncryptionConfig;
+    bool m_fieldLevelEncryptionConfigHasBeenSet = false;
 
     Aws::String m_eTag;
+    bool m_eTagHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

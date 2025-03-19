@@ -12,23 +12,6 @@ using namespace Aws::SecurityHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchUpdateFindingsRequest::BatchUpdateFindingsRequest() : 
-    m_findingIdentifiersHasBeenSet(false),
-    m_noteHasBeenSet(false),
-    m_severityHasBeenSet(false),
-    m_verificationState(VerificationState::NOT_SET),
-    m_verificationStateHasBeenSet(false),
-    m_confidence(0),
-    m_confidenceHasBeenSet(false),
-    m_criticality(0),
-    m_criticalityHasBeenSet(false),
-    m_typesHasBeenSet(false),
-    m_userDefinedFieldsHasBeenSet(false),
-    m_workflowHasBeenSet(false),
-    m_relatedFindingsHasBeenSet(false)
-{
-}
-
 Aws::String BatchUpdateFindingsRequest::SerializePayload() const
 {
   JsonValue payload;

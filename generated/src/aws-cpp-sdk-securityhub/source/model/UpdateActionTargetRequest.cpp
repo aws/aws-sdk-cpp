@@ -12,13 +12,6 @@ using namespace Aws::SecurityHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateActionTargetRequest::UpdateActionTargetRequest() : 
-    m_actionTargetArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateActionTargetRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,16 +18,7 @@ namespace FMS
 namespace Model
 {
 
-AdminScope::AdminScope() : 
-    m_accountScopeHasBeenSet(false),
-    m_organizationalUnitScopeHasBeenSet(false),
-    m_regionScopeHasBeenSet(false),
-    m_policyTypeScopeHasBeenSet(false)
-{
-}
-
 AdminScope::AdminScope(JsonView jsonValue)
-  : AdminScope()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ AdminScope& AdminScope::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AccountScope"))
   {
     m_accountScope = jsonValue.GetObject("AccountScope");
-
     m_accountScopeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrganizationalUnitScope"))
   {
     m_organizationalUnitScope = jsonValue.GetObject("OrganizationalUnitScope");
-
     m_organizationalUnitScopeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegionScope"))
   {
     m_regionScope = jsonValue.GetObject("RegionScope");
-
     m_regionScopeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolicyTypeScope"))
   {
     m_policyTypeScope = jsonValue.GetObject("PolicyTypeScope");
-
     m_policyTypeScopeHasBeenSet = true;
   }
-
   return *this;
 }
 

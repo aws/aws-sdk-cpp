@@ -28,7 +28,7 @@ namespace Model
   class GetMedicalTranscriptionJobResult
   {
   public:
-    AWS_TRANSCRIBESERVICE_API GetMedicalTranscriptionJobResult();
+    AWS_TRANSCRIBESERVICE_API GetMedicalTranscriptionJobResult() = default;
     AWS_TRANSCRIBESERVICE_API GetMedicalTranscriptionJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TRANSCRIBESERVICE_API GetMedicalTranscriptionJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>Provides detailed information about the specified medical transcription job,
      * including job status and, if applicable, failure reason.</p>
      */
-    inline const MedicalTranscriptionJob& GetMedicalTranscriptionJob() const{ return m_medicalTranscriptionJob; }
-    inline void SetMedicalTranscriptionJob(const MedicalTranscriptionJob& value) { m_medicalTranscriptionJob = value; }
-    inline void SetMedicalTranscriptionJob(MedicalTranscriptionJob&& value) { m_medicalTranscriptionJob = std::move(value); }
-    inline GetMedicalTranscriptionJobResult& WithMedicalTranscriptionJob(const MedicalTranscriptionJob& value) { SetMedicalTranscriptionJob(value); return *this;}
-    inline GetMedicalTranscriptionJobResult& WithMedicalTranscriptionJob(MedicalTranscriptionJob&& value) { SetMedicalTranscriptionJob(std::move(value)); return *this;}
+    inline const MedicalTranscriptionJob& GetMedicalTranscriptionJob() const { return m_medicalTranscriptionJob; }
+    template<typename MedicalTranscriptionJobT = MedicalTranscriptionJob>
+    void SetMedicalTranscriptionJob(MedicalTranscriptionJobT&& value) { m_medicalTranscriptionJobHasBeenSet = true; m_medicalTranscriptionJob = std::forward<MedicalTranscriptionJobT>(value); }
+    template<typename MedicalTranscriptionJobT = MedicalTranscriptionJob>
+    GetMedicalTranscriptionJobResult& WithMedicalTranscriptionJob(MedicalTranscriptionJobT&& value) { SetMedicalTranscriptionJob(std::forward<MedicalTranscriptionJobT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetMedicalTranscriptionJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetMedicalTranscriptionJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetMedicalTranscriptionJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetMedicalTranscriptionJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     MedicalTranscriptionJob m_medicalTranscriptionJob;
+    bool m_medicalTranscriptionJobHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

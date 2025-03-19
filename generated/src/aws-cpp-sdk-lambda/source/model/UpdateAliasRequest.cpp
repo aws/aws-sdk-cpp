@@ -12,16 +12,6 @@ using namespace Aws::Lambda::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAliasRequest::UpdateAliasRequest() : 
-    m_functionNameHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_functionVersionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_routingConfigHasBeenSet(false),
-    m_revisionIdHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAliasRequest::SerializePayload() const
 {
   JsonValue payload;

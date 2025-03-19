@@ -39,7 +39,7 @@ namespace Model
   class GeneratedResponsePart
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API GeneratedResponsePart();
+    AWS_BEDROCKAGENTRUNTIME_API GeneratedResponsePart() = default;
     AWS_BEDROCKAGENTRUNTIME_API GeneratedResponsePart(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API GeneratedResponsePart& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,12 +50,12 @@ namespace Model
      * <p>Contains metadata about a textual part of the generated response that is
      * accompanied by a citation.</p>
      */
-    inline const TextResponsePart& GetTextResponsePart() const{ return m_textResponsePart; }
+    inline const TextResponsePart& GetTextResponsePart() const { return m_textResponsePart; }
     inline bool TextResponsePartHasBeenSet() const { return m_textResponsePartHasBeenSet; }
-    inline void SetTextResponsePart(const TextResponsePart& value) { m_textResponsePartHasBeenSet = true; m_textResponsePart = value; }
-    inline void SetTextResponsePart(TextResponsePart&& value) { m_textResponsePartHasBeenSet = true; m_textResponsePart = std::move(value); }
-    inline GeneratedResponsePart& WithTextResponsePart(const TextResponsePart& value) { SetTextResponsePart(value); return *this;}
-    inline GeneratedResponsePart& WithTextResponsePart(TextResponsePart&& value) { SetTextResponsePart(std::move(value)); return *this;}
+    template<typename TextResponsePartT = TextResponsePart>
+    void SetTextResponsePart(TextResponsePartT&& value) { m_textResponsePartHasBeenSet = true; m_textResponsePart = std::forward<TextResponsePartT>(value); }
+    template<typename TextResponsePartT = TextResponsePart>
+    GeneratedResponsePart& WithTextResponsePart(TextResponsePartT&& value) { SetTextResponsePart(std::forward<TextResponsePartT>(value)); return *this;}
     ///@}
   private:
 

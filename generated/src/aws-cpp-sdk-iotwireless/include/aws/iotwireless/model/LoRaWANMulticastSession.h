@@ -32,7 +32,7 @@ namespace Model
   class LoRaWANMulticastSession
   {
   public:
-    AWS_IOTWIRELESS_API LoRaWANMulticastSession();
+    AWS_IOTWIRELESS_API LoRaWANMulticastSession() = default;
     AWS_IOTWIRELESS_API LoRaWANMulticastSession(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API LoRaWANMulticastSession& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     
-    inline int GetDlDr() const{ return m_dlDr; }
+    inline int GetDlDr() const { return m_dlDr; }
     inline bool DlDrHasBeenSet() const { return m_dlDrHasBeenSet; }
     inline void SetDlDr(int value) { m_dlDrHasBeenSet = true; m_dlDr = value; }
     inline LoRaWANMulticastSession& WithDlDr(int value) { SetDlDr(value); return *this;}
@@ -48,7 +48,7 @@ namespace Model
 
     ///@{
     
-    inline int GetDlFreq() const{ return m_dlFreq; }
+    inline int GetDlFreq() const { return m_dlFreq; }
     inline bool DlFreqHasBeenSet() const { return m_dlFreqHasBeenSet; }
     inline void SetDlFreq(int value) { m_dlFreqHasBeenSet = true; m_dlFreq = value; }
     inline LoRaWANMulticastSession& WithDlFreq(int value) { SetDlFreq(value); return *this;}
@@ -56,17 +56,17 @@ namespace Model
 
     ///@{
     
-    inline const Aws::Utils::DateTime& GetSessionStartTime() const{ return m_sessionStartTime; }
+    inline const Aws::Utils::DateTime& GetSessionStartTime() const { return m_sessionStartTime; }
     inline bool SessionStartTimeHasBeenSet() const { return m_sessionStartTimeHasBeenSet; }
-    inline void SetSessionStartTime(const Aws::Utils::DateTime& value) { m_sessionStartTimeHasBeenSet = true; m_sessionStartTime = value; }
-    inline void SetSessionStartTime(Aws::Utils::DateTime&& value) { m_sessionStartTimeHasBeenSet = true; m_sessionStartTime = std::move(value); }
-    inline LoRaWANMulticastSession& WithSessionStartTime(const Aws::Utils::DateTime& value) { SetSessionStartTime(value); return *this;}
-    inline LoRaWANMulticastSession& WithSessionStartTime(Aws::Utils::DateTime&& value) { SetSessionStartTime(std::move(value)); return *this;}
+    template<typename SessionStartTimeT = Aws::Utils::DateTime>
+    void SetSessionStartTime(SessionStartTimeT&& value) { m_sessionStartTimeHasBeenSet = true; m_sessionStartTime = std::forward<SessionStartTimeT>(value); }
+    template<typename SessionStartTimeT = Aws::Utils::DateTime>
+    LoRaWANMulticastSession& WithSessionStartTime(SessionStartTimeT&& value) { SetSessionStartTime(std::forward<SessionStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline int GetSessionTimeout() const{ return m_sessionTimeout; }
+    inline int GetSessionTimeout() const { return m_sessionTimeout; }
     inline bool SessionTimeoutHasBeenSet() const { return m_sessionTimeoutHasBeenSet; }
     inline void SetSessionTimeout(int value) { m_sessionTimeoutHasBeenSet = true; m_sessionTimeout = value; }
     inline LoRaWANMulticastSession& WithSessionTimeout(int value) { SetSessionTimeout(value); return *this;}
@@ -76,26 +76,26 @@ namespace Model
     /**
      * <p>The PingSlotPeriod value.</p>
      */
-    inline int GetPingSlotPeriod() const{ return m_pingSlotPeriod; }
+    inline int GetPingSlotPeriod() const { return m_pingSlotPeriod; }
     inline bool PingSlotPeriodHasBeenSet() const { return m_pingSlotPeriodHasBeenSet; }
     inline void SetPingSlotPeriod(int value) { m_pingSlotPeriodHasBeenSet = true; m_pingSlotPeriod = value; }
     inline LoRaWANMulticastSession& WithPingSlotPeriod(int value) { SetPingSlotPeriod(value); return *this;}
     ///@}
   private:
 
-    int m_dlDr;
+    int m_dlDr{0};
     bool m_dlDrHasBeenSet = false;
 
-    int m_dlFreq;
+    int m_dlFreq{0};
     bool m_dlFreqHasBeenSet = false;
 
-    Aws::Utils::DateTime m_sessionStartTime;
+    Aws::Utils::DateTime m_sessionStartTime{};
     bool m_sessionStartTimeHasBeenSet = false;
 
-    int m_sessionTimeout;
+    int m_sessionTimeout{0};
     bool m_sessionTimeoutHasBeenSet = false;
 
-    int m_pingSlotPeriod;
+    int m_pingSlotPeriod{0};
     bool m_pingSlotPeriodHasBeenSet = false;
   };
 

@@ -18,13 +18,7 @@ namespace AugmentedAIRuntime
 namespace Model
 {
 
-HumanLoopInput::HumanLoopInput() : 
-    m_inputContentHasBeenSet(false)
-{
-}
-
 HumanLoopInput::HumanLoopInput(JsonView jsonValue)
-  : HumanLoopInput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ HumanLoopInput& HumanLoopInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InputContent"))
   {
     m_inputContent = jsonValue.GetString("InputContent");
-
     m_inputContentHasBeenSet = true;
   }
-
   return *this;
 }
 

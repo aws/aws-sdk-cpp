@@ -22,7 +22,7 @@ namespace Model
   class UpdateAutomatedDiscoveryConfigurationRequest : public Macie2Request
   {
   public:
-    AWS_MACIE2_API UpdateAutomatedDiscoveryConfigurationRequest();
+    AWS_MACIE2_API UpdateAutomatedDiscoveryConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,12 +45,10 @@ namespace Model
      * disable it for each account by using the BatchUpdateAutomatedDiscoveryAccounts
      * operation.</p>
      */
-    inline const AutoEnableMode& GetAutoEnableOrganizationMembers() const{ return m_autoEnableOrganizationMembers; }
+    inline AutoEnableMode GetAutoEnableOrganizationMembers() const { return m_autoEnableOrganizationMembers; }
     inline bool AutoEnableOrganizationMembersHasBeenSet() const { return m_autoEnableOrganizationMembersHasBeenSet; }
-    inline void SetAutoEnableOrganizationMembers(const AutoEnableMode& value) { m_autoEnableOrganizationMembersHasBeenSet = true; m_autoEnableOrganizationMembers = value; }
-    inline void SetAutoEnableOrganizationMembers(AutoEnableMode&& value) { m_autoEnableOrganizationMembersHasBeenSet = true; m_autoEnableOrganizationMembers = std::move(value); }
-    inline UpdateAutomatedDiscoveryConfigurationRequest& WithAutoEnableOrganizationMembers(const AutoEnableMode& value) { SetAutoEnableOrganizationMembers(value); return *this;}
-    inline UpdateAutomatedDiscoveryConfigurationRequest& WithAutoEnableOrganizationMembers(AutoEnableMode&& value) { SetAutoEnableOrganizationMembers(std::move(value)); return *this;}
+    inline void SetAutoEnableOrganizationMembers(AutoEnableMode value) { m_autoEnableOrganizationMembersHasBeenSet = true; m_autoEnableOrganizationMembers = value; }
+    inline UpdateAutomatedDiscoveryConfigurationRequest& WithAutoEnableOrganizationMembers(AutoEnableMode value) { SetAutoEnableOrganizationMembers(value); return *this;}
     ///@}
 
     ///@{
@@ -62,19 +60,17 @@ namespace Model
      * account, you also disable automated sensitive data discovery for all member
      * accounts in the organization.</p>
      */
-    inline const AutomatedDiscoveryStatus& GetStatus() const{ return m_status; }
+    inline AutomatedDiscoveryStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const AutomatedDiscoveryStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(AutomatedDiscoveryStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline UpdateAutomatedDiscoveryConfigurationRequest& WithStatus(const AutomatedDiscoveryStatus& value) { SetStatus(value); return *this;}
-    inline UpdateAutomatedDiscoveryConfigurationRequest& WithStatus(AutomatedDiscoveryStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(AutomatedDiscoveryStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline UpdateAutomatedDiscoveryConfigurationRequest& WithStatus(AutomatedDiscoveryStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    AutoEnableMode m_autoEnableOrganizationMembers;
+    AutoEnableMode m_autoEnableOrganizationMembers{AutoEnableMode::NOT_SET};
     bool m_autoEnableOrganizationMembersHasBeenSet = false;
 
-    AutomatedDiscoveryStatus m_status;
+    AutomatedDiscoveryStatus m_status{AutomatedDiscoveryStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

@@ -18,14 +18,7 @@ namespace ChimeSDKMeetings
 namespace Model
 {
 
-AudioFeatures::AudioFeatures() : 
-    m_echoReduction(MeetingFeatureStatus::NOT_SET),
-    m_echoReductionHasBeenSet(false)
-{
-}
-
 AudioFeatures::AudioFeatures(JsonView jsonValue)
-  : AudioFeatures()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AudioFeatures& AudioFeatures::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EchoReduction"))
   {
     m_echoReduction = MeetingFeatureStatusMapper::GetMeetingFeatureStatusForName(jsonValue.GetString("EchoReduction"));
-
     m_echoReductionHasBeenSet = true;
   }
-
   return *this;
 }
 

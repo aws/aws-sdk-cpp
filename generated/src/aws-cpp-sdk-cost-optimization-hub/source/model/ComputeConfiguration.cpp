@@ -18,18 +18,7 @@ namespace CostOptimizationHub
 namespace Model
 {
 
-ComputeConfiguration::ComputeConfiguration() : 
-    m_vCpu(0.0),
-    m_vCpuHasBeenSet(false),
-    m_memorySizeInMB(0),
-    m_memorySizeInMBHasBeenSet(false),
-    m_architectureHasBeenSet(false),
-    m_platformHasBeenSet(false)
-{
-}
-
 ComputeConfiguration::ComputeConfiguration(JsonView jsonValue)
-  : ComputeConfiguration()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ ComputeConfiguration& ComputeConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("vCpu"))
   {
     m_vCpu = jsonValue.GetDouble("vCpu");
-
     m_vCpuHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("memorySizeInMB"))
   {
     m_memorySizeInMB = jsonValue.GetInteger("memorySizeInMB");
-
     m_memorySizeInMBHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("architecture"))
   {
     m_architecture = jsonValue.GetString("architecture");
-
     m_architectureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("platform"))
   {
     m_platform = jsonValue.GetString("platform");
-
     m_platformHasBeenSet = true;
   }
-
   return *this;
 }
 

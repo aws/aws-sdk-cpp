@@ -33,7 +33,7 @@ namespace Model
   class TestRenderEmailTemplateResult
   {
   public:
-    AWS_SESV2_API TestRenderEmailTemplateResult();
+    AWS_SESV2_API TestRenderEmailTemplateResult() = default;
     AWS_SESV2_API TestRenderEmailTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SESV2_API TestRenderEmailTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,30 +44,28 @@ namespace Model
      * <code>TemplateData</code> parameter to the template specified in the
      * TemplateName parameter.</p>
      */
-    inline const Aws::String& GetRenderedTemplate() const{ return m_renderedTemplate; }
-    inline void SetRenderedTemplate(const Aws::String& value) { m_renderedTemplate = value; }
-    inline void SetRenderedTemplate(Aws::String&& value) { m_renderedTemplate = std::move(value); }
-    inline void SetRenderedTemplate(const char* value) { m_renderedTemplate.assign(value); }
-    inline TestRenderEmailTemplateResult& WithRenderedTemplate(const Aws::String& value) { SetRenderedTemplate(value); return *this;}
-    inline TestRenderEmailTemplateResult& WithRenderedTemplate(Aws::String&& value) { SetRenderedTemplate(std::move(value)); return *this;}
-    inline TestRenderEmailTemplateResult& WithRenderedTemplate(const char* value) { SetRenderedTemplate(value); return *this;}
+    inline const Aws::String& GetRenderedTemplate() const { return m_renderedTemplate; }
+    template<typename RenderedTemplateT = Aws::String>
+    void SetRenderedTemplate(RenderedTemplateT&& value) { m_renderedTemplateHasBeenSet = true; m_renderedTemplate = std::forward<RenderedTemplateT>(value); }
+    template<typename RenderedTemplateT = Aws::String>
+    TestRenderEmailTemplateResult& WithRenderedTemplate(RenderedTemplateT&& value) { SetRenderedTemplate(std::forward<RenderedTemplateT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline TestRenderEmailTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline TestRenderEmailTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline TestRenderEmailTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    TestRenderEmailTemplateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_renderedTemplate;
+    bool m_renderedTemplateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

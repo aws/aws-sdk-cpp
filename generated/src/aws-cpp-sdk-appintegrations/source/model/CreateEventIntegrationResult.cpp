@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateEventIntegrationResult::CreateEventIntegrationResult()
-{
-}
-
 CreateEventIntegrationResult::CreateEventIntegrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateEventIntegrationResult& CreateEventIntegrationResult::operator =(const Aws
   if(jsonValue.ValueExists("EventIntegrationArn"))
   {
     m_eventIntegrationArn = jsonValue.GetString("EventIntegrationArn");
-
+    m_eventIntegrationArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

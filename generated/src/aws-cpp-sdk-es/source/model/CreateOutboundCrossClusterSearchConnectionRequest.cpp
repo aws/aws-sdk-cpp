@@ -12,13 +12,6 @@ using namespace Aws::ElasticsearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateOutboundCrossClusterSearchConnectionRequest::CreateOutboundCrossClusterSearchConnectionRequest() : 
-    m_sourceDomainInfoHasBeenSet(false),
-    m_destinationDomainInfoHasBeenSet(false),
-    m_connectionAliasHasBeenSet(false)
-{
-}
-
 Aws::String CreateOutboundCrossClusterSearchConnectionRequest::SerializePayload() const
 {
   JsonValue payload;

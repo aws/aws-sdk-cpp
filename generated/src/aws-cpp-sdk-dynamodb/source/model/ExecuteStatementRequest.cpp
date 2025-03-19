@@ -12,21 +12,6 @@ using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ExecuteStatementRequest::ExecuteStatementRequest() : 
-    m_statementHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_consistentRead(false),
-    m_consistentReadHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_returnConsumedCapacity(ReturnConsumedCapacity::NOT_SET),
-    m_returnConsumedCapacityHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_returnValuesOnConditionCheckFailure(ReturnValuesOnConditionCheckFailure::NOT_SET),
-    m_returnValuesOnConditionCheckFailureHasBeenSet(false)
-{
-}
-
 Aws::String ExecuteStatementRequest::SerializePayload() const
 {
   JsonValue payload;

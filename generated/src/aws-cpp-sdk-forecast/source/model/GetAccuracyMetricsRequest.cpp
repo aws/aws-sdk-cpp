@@ -12,11 +12,6 @@ using namespace Aws::ForecastService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAccuracyMetricsRequest::GetAccuracyMetricsRequest() : 
-    m_predictorArnHasBeenSet(false)
-{
-}
-
 Aws::String GetAccuracyMetricsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -34,7 +34,7 @@ namespace Model
   class TargetHealth
   {
   public:
-    AWS_ELASTICLOADBALANCINGV2_API TargetHealth();
+    AWS_ELASTICLOADBALANCINGV2_API TargetHealth() = default;
     AWS_ELASTICLOADBALANCINGV2_API TargetHealth(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICLOADBALANCINGV2_API TargetHealth& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,12 +46,10 @@ namespace Model
     /**
      * <p>The state of the target.</p>
      */
-    inline const TargetHealthStateEnum& GetState() const{ return m_state; }
+    inline TargetHealthStateEnum GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const TargetHealthStateEnum& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(TargetHealthStateEnum&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline TargetHealth& WithState(const TargetHealthStateEnum& value) { SetState(value); return *this;}
-    inline TargetHealth& WithState(TargetHealthStateEnum&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(TargetHealthStateEnum value) { m_stateHasBeenSet = true; m_state = value; }
+    inline TargetHealth& WithState(TargetHealthStateEnum value) { SetState(value); return *this;}
     ///@}
 
     ///@{
@@ -92,12 +90,10 @@ namespace Model
      * <code>Elb.InternalError</code> - Target health is unavailable due to an internal
      * error. Applies only to Network Load Balancers.</p> </li> </ul>
      */
-    inline const TargetHealthReasonEnum& GetReason() const{ return m_reason; }
+    inline TargetHealthReasonEnum GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const TargetHealthReasonEnum& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(TargetHealthReasonEnum&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline TargetHealth& WithReason(const TargetHealthReasonEnum& value) { SetReason(value); return *this;}
-    inline TargetHealth& WithReason(TargetHealthReasonEnum&& value) { SetReason(std::move(value)); return *this;}
+    inline void SetReason(TargetHealthReasonEnum value) { m_reasonHasBeenSet = true; m_reason = value; }
+    inline TargetHealth& WithReason(TargetHealthReasonEnum value) { SetReason(value); return *this;}
     ///@}
 
     ///@{
@@ -105,21 +101,19 @@ namespace Model
      * <p>A description of the target health that provides additional details. If the
      * state is <code>healthy</code>, a description is not provided.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline TargetHealth& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline TargetHealth& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline TargetHealth& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    TargetHealth& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
   private:
 
-    TargetHealthStateEnum m_state;
+    TargetHealthStateEnum m_state{TargetHealthStateEnum::NOT_SET};
     bool m_stateHasBeenSet = false;
 
-    TargetHealthReasonEnum m_reason;
+    TargetHealthReasonEnum m_reason{TargetHealthReasonEnum::NOT_SET};
     bool m_reasonHasBeenSet = false;
 
     Aws::String m_description;

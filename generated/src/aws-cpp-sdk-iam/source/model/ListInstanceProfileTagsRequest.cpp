@@ -10,14 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-ListInstanceProfileTagsRequest::ListInstanceProfileTagsRequest() : 
-    m_instanceProfileNameHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false)
-{
-}
-
 Aws::String ListInstanceProfileTagsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

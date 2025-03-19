@@ -22,7 +22,7 @@ namespace Model
   class BatchGetIncidentFindingsRequest : public SSMIncidentsRequest
   {
   public:
-    AWS_SSMINCIDENTS_API BatchGetIncidentFindingsRequest();
+    AWS_SSMINCIDENTS_API BatchGetIncidentFindingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,15 +37,14 @@ namespace Model
     /**
      * <p>A list of IDs of findings for which you want to view details.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetFindingIds() const{ return m_findingIds; }
+    inline const Aws::Vector<Aws::String>& GetFindingIds() const { return m_findingIds; }
     inline bool FindingIdsHasBeenSet() const { return m_findingIdsHasBeenSet; }
-    inline void SetFindingIds(const Aws::Vector<Aws::String>& value) { m_findingIdsHasBeenSet = true; m_findingIds = value; }
-    inline void SetFindingIds(Aws::Vector<Aws::String>&& value) { m_findingIdsHasBeenSet = true; m_findingIds = std::move(value); }
-    inline BatchGetIncidentFindingsRequest& WithFindingIds(const Aws::Vector<Aws::String>& value) { SetFindingIds(value); return *this;}
-    inline BatchGetIncidentFindingsRequest& WithFindingIds(Aws::Vector<Aws::String>&& value) { SetFindingIds(std::move(value)); return *this;}
-    inline BatchGetIncidentFindingsRequest& AddFindingIds(const Aws::String& value) { m_findingIdsHasBeenSet = true; m_findingIds.push_back(value); return *this; }
-    inline BatchGetIncidentFindingsRequest& AddFindingIds(Aws::String&& value) { m_findingIdsHasBeenSet = true; m_findingIds.push_back(std::move(value)); return *this; }
-    inline BatchGetIncidentFindingsRequest& AddFindingIds(const char* value) { m_findingIdsHasBeenSet = true; m_findingIds.push_back(value); return *this; }
+    template<typename FindingIdsT = Aws::Vector<Aws::String>>
+    void SetFindingIds(FindingIdsT&& value) { m_findingIdsHasBeenSet = true; m_findingIds = std::forward<FindingIdsT>(value); }
+    template<typename FindingIdsT = Aws::Vector<Aws::String>>
+    BatchGetIncidentFindingsRequest& WithFindingIds(FindingIdsT&& value) { SetFindingIds(std::forward<FindingIdsT>(value)); return *this;}
+    template<typename FindingIdsT = Aws::String>
+    BatchGetIncidentFindingsRequest& AddFindingIds(FindingIdsT&& value) { m_findingIdsHasBeenSet = true; m_findingIds.emplace_back(std::forward<FindingIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,14 +52,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the incident for which you want to view
      * finding details.</p>
      */
-    inline const Aws::String& GetIncidentRecordArn() const{ return m_incidentRecordArn; }
+    inline const Aws::String& GetIncidentRecordArn() const { return m_incidentRecordArn; }
     inline bool IncidentRecordArnHasBeenSet() const { return m_incidentRecordArnHasBeenSet; }
-    inline void SetIncidentRecordArn(const Aws::String& value) { m_incidentRecordArnHasBeenSet = true; m_incidentRecordArn = value; }
-    inline void SetIncidentRecordArn(Aws::String&& value) { m_incidentRecordArnHasBeenSet = true; m_incidentRecordArn = std::move(value); }
-    inline void SetIncidentRecordArn(const char* value) { m_incidentRecordArnHasBeenSet = true; m_incidentRecordArn.assign(value); }
-    inline BatchGetIncidentFindingsRequest& WithIncidentRecordArn(const Aws::String& value) { SetIncidentRecordArn(value); return *this;}
-    inline BatchGetIncidentFindingsRequest& WithIncidentRecordArn(Aws::String&& value) { SetIncidentRecordArn(std::move(value)); return *this;}
-    inline BatchGetIncidentFindingsRequest& WithIncidentRecordArn(const char* value) { SetIncidentRecordArn(value); return *this;}
+    template<typename IncidentRecordArnT = Aws::String>
+    void SetIncidentRecordArn(IncidentRecordArnT&& value) { m_incidentRecordArnHasBeenSet = true; m_incidentRecordArn = std::forward<IncidentRecordArnT>(value); }
+    template<typename IncidentRecordArnT = Aws::String>
+    BatchGetIncidentFindingsRequest& WithIncidentRecordArn(IncidentRecordArnT&& value) { SetIncidentRecordArn(std::forward<IncidentRecordArnT>(value)); return *this;}
     ///@}
   private:
 

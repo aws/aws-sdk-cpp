@@ -12,16 +12,6 @@ using namespace Aws::RoboMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateWorldGenerationJobRequest::CreateWorldGenerationJobRequest() : 
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_templateHasBeenSet(false),
-    m_worldCountHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_worldTagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateWorldGenerationJobRequest::SerializePayload() const
 {
   JsonValue payload;

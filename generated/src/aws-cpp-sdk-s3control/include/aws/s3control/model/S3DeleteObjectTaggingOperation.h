@@ -31,7 +31,7 @@ namespace Model
   class S3DeleteObjectTaggingOperation
   {
   public:
-    AWS_S3CONTROL_API S3DeleteObjectTaggingOperation();
+    AWS_S3CONTROL_API S3DeleteObjectTaggingOperation() = default;
     AWS_S3CONTROL_API S3DeleteObjectTaggingOperation(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API S3DeleteObjectTaggingOperation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 

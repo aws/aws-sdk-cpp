@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeProvisionedProductResult::DescribeProvisionedProductResult()
-{
-}
-
 DescribeProvisionedProductResult::DescribeProvisionedProductResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DescribeProvisionedProductResult& DescribeProvisionedProductResult::operator =(c
   if(jsonValue.ValueExists("ProvisionedProductDetail"))
   {
     m_provisionedProductDetail = jsonValue.GetObject("ProvisionedProductDetail");
-
+    m_provisionedProductDetailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CloudWatchDashboards"))
   {
     Aws::Utils::Array<JsonView> cloudWatchDashboardsJsonList = jsonValue.GetArray("CloudWatchDashboards");
@@ -42,14 +37,15 @@ DescribeProvisionedProductResult& DescribeProvisionedProductResult::operator =(c
     {
       m_cloudWatchDashboards.push_back(cloudWatchDashboardsJsonList[cloudWatchDashboardsIndex].AsObject());
     }
+    m_cloudWatchDashboardsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

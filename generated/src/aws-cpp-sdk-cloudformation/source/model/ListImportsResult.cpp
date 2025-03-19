@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListImportsResult::ListImportsResult()
-{
-}
-
 ListImportsResult::ListImportsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ ListImportsResult& ListImportsResult::operator =(const Aws::AmazonWebServiceResu
     if(!importsNode.IsNull())
     {
       XmlNode importsMember = importsNode.FirstChild("member");
+      m_importsHasBeenSet = !importsMember.IsNull();
       while(!importsMember.IsNull())
       {
         m_imports.push_back(importsMember.GetText());
         importsMember = importsMember.NextNode("member");
       }
 
+      m_importsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::CloudFormation::Model::ListImportsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

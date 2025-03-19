@@ -34,7 +34,7 @@ namespace Model
   class PutApprovalResultResult
   {
   public:
-    AWS_CODEPIPELINE_API PutApprovalResultResult();
+    AWS_CODEPIPELINE_API PutApprovalResultResult() = default;
     AWS_CODEPIPELINE_API PutApprovalResultResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODEPIPELINE_API PutApprovalResultResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,28 +43,28 @@ namespace Model
     /**
      * <p>The timestamp showing when the approval or rejection was submitted.</p>
      */
-    inline const Aws::Utils::DateTime& GetApprovedAt() const{ return m_approvedAt; }
-    inline void SetApprovedAt(const Aws::Utils::DateTime& value) { m_approvedAt = value; }
-    inline void SetApprovedAt(Aws::Utils::DateTime&& value) { m_approvedAt = std::move(value); }
-    inline PutApprovalResultResult& WithApprovedAt(const Aws::Utils::DateTime& value) { SetApprovedAt(value); return *this;}
-    inline PutApprovalResultResult& WithApprovedAt(Aws::Utils::DateTime&& value) { SetApprovedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetApprovedAt() const { return m_approvedAt; }
+    template<typename ApprovedAtT = Aws::Utils::DateTime>
+    void SetApprovedAt(ApprovedAtT&& value) { m_approvedAtHasBeenSet = true; m_approvedAt = std::forward<ApprovedAtT>(value); }
+    template<typename ApprovedAtT = Aws::Utils::DateTime>
+    PutApprovalResultResult& WithApprovedAt(ApprovedAtT&& value) { SetApprovedAt(std::forward<ApprovedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutApprovalResultResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutApprovalResultResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutApprovalResultResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutApprovalResultResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_approvedAt;
+    Aws::Utils::DateTime m_approvedAt{};
+    bool m_approvedAtHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateExtensionResult::CreateExtensionResult() : 
-    m_versionNumber(0)
-{
-}
-
 CreateExtensionResult::CreateExtensionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateExtensionResult()
 {
   *this = result;
 }
@@ -34,33 +28,28 @@ CreateExtensionResult& CreateExtensionResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VersionNumber"))
   {
     m_versionNumber = jsonValue.GetInteger("VersionNumber");
-
+    m_versionNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Actions"))
   {
     Aws::Map<Aws::String, JsonView> actionsJsonMap = jsonValue.GetObject("Actions").GetAllObjects();
@@ -75,8 +64,8 @@ CreateExtensionResult& CreateExtensionResult::operator =(const Aws::AmazonWebSer
       }
       m_actions[ActionPointMapper::GetActionPointForName(actionsItem.first)] = std::move(actionListList);
     }
+    m_actionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
@@ -84,14 +73,15 @@ CreateExtensionResult& CreateExtensionResult::operator =(const Aws::AmazonWebSer
     {
       m_parameters[parametersItem.first] = parametersItem.second.AsObject();
     }
+    m_parametersHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

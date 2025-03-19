@@ -29,7 +29,7 @@ namespace Model
   class ListVocabularyFiltersResult
   {
   public:
-    AWS_TRANSCRIBESERVICE_API ListVocabularyFiltersResult();
+    AWS_TRANSCRIBESERVICE_API ListVocabularyFiltersResult() = default;
     AWS_TRANSCRIBESERVICE_API ListVocabularyFiltersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TRANSCRIBESERVICE_API ListVocabularyFiltersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,13 +42,11 @@ namespace Model
      * then run your request again including <code>NextToken</code> with the value of
      * the copied string. Repeat as needed to view all your results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListVocabularyFiltersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListVocabularyFiltersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListVocabularyFiltersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListVocabularyFiltersResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,32 +54,33 @@ namespace Model
      * <p>Provides information about the custom vocabulary filters that match the
      * criteria specified in your request.</p>
      */
-    inline const Aws::Vector<VocabularyFilterInfo>& GetVocabularyFilters() const{ return m_vocabularyFilters; }
-    inline void SetVocabularyFilters(const Aws::Vector<VocabularyFilterInfo>& value) { m_vocabularyFilters = value; }
-    inline void SetVocabularyFilters(Aws::Vector<VocabularyFilterInfo>&& value) { m_vocabularyFilters = std::move(value); }
-    inline ListVocabularyFiltersResult& WithVocabularyFilters(const Aws::Vector<VocabularyFilterInfo>& value) { SetVocabularyFilters(value); return *this;}
-    inline ListVocabularyFiltersResult& WithVocabularyFilters(Aws::Vector<VocabularyFilterInfo>&& value) { SetVocabularyFilters(std::move(value)); return *this;}
-    inline ListVocabularyFiltersResult& AddVocabularyFilters(const VocabularyFilterInfo& value) { m_vocabularyFilters.push_back(value); return *this; }
-    inline ListVocabularyFiltersResult& AddVocabularyFilters(VocabularyFilterInfo&& value) { m_vocabularyFilters.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<VocabularyFilterInfo>& GetVocabularyFilters() const { return m_vocabularyFilters; }
+    template<typename VocabularyFiltersT = Aws::Vector<VocabularyFilterInfo>>
+    void SetVocabularyFilters(VocabularyFiltersT&& value) { m_vocabularyFiltersHasBeenSet = true; m_vocabularyFilters = std::forward<VocabularyFiltersT>(value); }
+    template<typename VocabularyFiltersT = Aws::Vector<VocabularyFilterInfo>>
+    ListVocabularyFiltersResult& WithVocabularyFilters(VocabularyFiltersT&& value) { SetVocabularyFilters(std::forward<VocabularyFiltersT>(value)); return *this;}
+    template<typename VocabularyFiltersT = VocabularyFilterInfo>
+    ListVocabularyFiltersResult& AddVocabularyFilters(VocabularyFiltersT&& value) { m_vocabularyFiltersHasBeenSet = true; m_vocabularyFilters.emplace_back(std::forward<VocabularyFiltersT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListVocabularyFiltersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListVocabularyFiltersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListVocabularyFiltersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListVocabularyFiltersResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<VocabularyFilterInfo> m_vocabularyFilters;
+    bool m_vocabularyFiltersHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

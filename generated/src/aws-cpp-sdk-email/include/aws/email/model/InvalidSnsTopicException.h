@@ -35,7 +35,7 @@ namespace Model
   class InvalidSnsTopicException
   {
   public:
-    AWS_SES_API InvalidSnsTopicException();
+    AWS_SES_API InvalidSnsTopicException() = default;
     AWS_SES_API InvalidSnsTopicException(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_SES_API InvalidSnsTopicException& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,14 +47,12 @@ namespace Model
     /**
      * <p>Indicates that the topic does not exist.</p>
      */
-    inline const Aws::String& GetTopic() const{ return m_topic; }
+    inline const Aws::String& GetTopic() const { return m_topic; }
     inline bool TopicHasBeenSet() const { return m_topicHasBeenSet; }
-    inline void SetTopic(const Aws::String& value) { m_topicHasBeenSet = true; m_topic = value; }
-    inline void SetTopic(Aws::String&& value) { m_topicHasBeenSet = true; m_topic = std::move(value); }
-    inline void SetTopic(const char* value) { m_topicHasBeenSet = true; m_topic.assign(value); }
-    inline InvalidSnsTopicException& WithTopic(const Aws::String& value) { SetTopic(value); return *this;}
-    inline InvalidSnsTopicException& WithTopic(Aws::String&& value) { SetTopic(std::move(value)); return *this;}
-    inline InvalidSnsTopicException& WithTopic(const char* value) { SetTopic(value); return *this;}
+    template<typename TopicT = Aws::String>
+    void SetTopic(TopicT&& value) { m_topicHasBeenSet = true; m_topic = std::forward<TopicT>(value); }
+    template<typename TopicT = Aws::String>
+    InvalidSnsTopicException& WithTopic(TopicT&& value) { SetTopic(std::forward<TopicT>(value)); return *this;}
     ///@}
   private:
 

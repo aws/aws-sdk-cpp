@@ -30,7 +30,7 @@ namespace Model
   class CommentFilter
   {
   public:
-    AWS_CONNECTCASES_API CommentFilter();
+    AWS_CONNECTCASES_API CommentFilter() = default;
     AWS_CONNECTCASES_API CommentFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API CommentFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;

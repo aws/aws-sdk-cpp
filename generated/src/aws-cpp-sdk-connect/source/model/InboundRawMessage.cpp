@@ -18,16 +18,7 @@ namespace Connect
 namespace Model
 {
 
-InboundRawMessage::InboundRawMessage() : 
-    m_subjectHasBeenSet(false),
-    m_bodyHasBeenSet(false),
-    m_contentTypeHasBeenSet(false),
-    m_headersHasBeenSet(false)
-{
-}
-
 InboundRawMessage::InboundRawMessage(JsonView jsonValue)
-  : InboundRawMessage()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ InboundRawMessage& InboundRawMessage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Subject"))
   {
     m_subject = jsonValue.GetString("Subject");
-
     m_subjectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Body"))
   {
     m_body = jsonValue.GetString("Body");
-
     m_bodyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContentType"))
   {
     m_contentType = jsonValue.GetString("ContentType");
-
     m_contentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Headers"))
   {
     Aws::Map<Aws::String, JsonView> headersJsonMap = jsonValue.GetObject("Headers").GetAllObjects();
@@ -64,7 +49,6 @@ InboundRawMessage& InboundRawMessage::operator =(JsonView jsonValue)
     }
     m_headersHasBeenSet = true;
   }
-
   return *this;
 }
 

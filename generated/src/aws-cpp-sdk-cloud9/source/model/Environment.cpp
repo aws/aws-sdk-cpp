@@ -18,24 +18,7 @@ namespace Cloud9
 namespace Model
 {
 
-Environment::Environment() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_type(EnvironmentType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_connectionType(ConnectionType::NOT_SET),
-    m_connectionTypeHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_ownerArnHasBeenSet(false),
-    m_lifecycleHasBeenSet(false),
-    m_managedCredentialsStatus(ManagedCredentialsStatus::NOT_SET),
-    m_managedCredentialsStatusHasBeenSet(false)
-{
-}
-
 Environment::Environment(JsonView jsonValue)
-  : Environment()
 {
   *this = jsonValue;
 }
@@ -45,66 +28,48 @@ Environment& Environment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = EnvironmentTypeMapper::GetEnvironmentTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectionType"))
   {
     m_connectionType = ConnectionTypeMapper::GetConnectionTypeForName(jsonValue.GetString("connectionType"));
-
     m_connectionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ownerArn"))
   {
     m_ownerArn = jsonValue.GetString("ownerArn");
-
     m_ownerArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lifecycle"))
   {
     m_lifecycle = jsonValue.GetObject("lifecycle");
-
     m_lifecycleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("managedCredentialsStatus"))
   {
     m_managedCredentialsStatus = ManagedCredentialsStatusMapper::GetManagedCredentialsStatusForName(jsonValue.GetString("managedCredentialsStatus"));
-
     m_managedCredentialsStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

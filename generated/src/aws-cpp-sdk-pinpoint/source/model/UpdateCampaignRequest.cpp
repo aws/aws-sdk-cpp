@@ -12,13 +12,6 @@ using namespace Aws::Pinpoint::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateCampaignRequest::UpdateCampaignRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_campaignIdHasBeenSet(false),
-    m_writeCampaignRequestHasBeenSet(false)
-{
-}
-
 Aws::String UpdateCampaignRequest::SerializePayload() const
 {
   JsonValue payload;

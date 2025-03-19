@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-VpcInfoCidrBlockSetDetails::VpcInfoCidrBlockSetDetails() : 
-    m_cidrBlockHasBeenSet(false)
-{
-}
-
 VpcInfoCidrBlockSetDetails::VpcInfoCidrBlockSetDetails(JsonView jsonValue)
-  : VpcInfoCidrBlockSetDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ VpcInfoCidrBlockSetDetails& VpcInfoCidrBlockSetDetails::operator =(JsonView json
   if(jsonValue.ValueExists("CidrBlock"))
   {
     m_cidrBlock = jsonValue.GetString("CidrBlock");
-
     m_cidrBlockHasBeenSet = true;
   }
-
   return *this;
 }
 

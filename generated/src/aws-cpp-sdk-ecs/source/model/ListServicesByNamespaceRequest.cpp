@@ -12,14 +12,6 @@ using namespace Aws::ECS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListServicesByNamespaceRequest::ListServicesByNamespaceRequest() : 
-    m_namespaceHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListServicesByNamespaceRequest::SerializePayload() const
 {
   JsonValue payload;

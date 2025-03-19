@@ -22,7 +22,7 @@ namespace Model
   class RegisterDBProxyTargetsRequest : public RDSRequest
   {
   public:
-    AWS_RDS_API RegisterDBProxyTargetsRequest();
+    AWS_RDS_API RegisterDBProxyTargetsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,58 +42,52 @@ namespace Model
      * <p>The identifier of the <code>DBProxy</code> that is associated with the
      * <code>DBProxyTargetGroup</code>.</p>
      */
-    inline const Aws::String& GetDBProxyName() const{ return m_dBProxyName; }
+    inline const Aws::String& GetDBProxyName() const { return m_dBProxyName; }
     inline bool DBProxyNameHasBeenSet() const { return m_dBProxyNameHasBeenSet; }
-    inline void SetDBProxyName(const Aws::String& value) { m_dBProxyNameHasBeenSet = true; m_dBProxyName = value; }
-    inline void SetDBProxyName(Aws::String&& value) { m_dBProxyNameHasBeenSet = true; m_dBProxyName = std::move(value); }
-    inline void SetDBProxyName(const char* value) { m_dBProxyNameHasBeenSet = true; m_dBProxyName.assign(value); }
-    inline RegisterDBProxyTargetsRequest& WithDBProxyName(const Aws::String& value) { SetDBProxyName(value); return *this;}
-    inline RegisterDBProxyTargetsRequest& WithDBProxyName(Aws::String&& value) { SetDBProxyName(std::move(value)); return *this;}
-    inline RegisterDBProxyTargetsRequest& WithDBProxyName(const char* value) { SetDBProxyName(value); return *this;}
+    template<typename DBProxyNameT = Aws::String>
+    void SetDBProxyName(DBProxyNameT&& value) { m_dBProxyNameHasBeenSet = true; m_dBProxyName = std::forward<DBProxyNameT>(value); }
+    template<typename DBProxyNameT = Aws::String>
+    RegisterDBProxyTargetsRequest& WithDBProxyName(DBProxyNameT&& value) { SetDBProxyName(std::forward<DBProxyNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the <code>DBProxyTargetGroup</code>.</p>
      */
-    inline const Aws::String& GetTargetGroupName() const{ return m_targetGroupName; }
+    inline const Aws::String& GetTargetGroupName() const { return m_targetGroupName; }
     inline bool TargetGroupNameHasBeenSet() const { return m_targetGroupNameHasBeenSet; }
-    inline void SetTargetGroupName(const Aws::String& value) { m_targetGroupNameHasBeenSet = true; m_targetGroupName = value; }
-    inline void SetTargetGroupName(Aws::String&& value) { m_targetGroupNameHasBeenSet = true; m_targetGroupName = std::move(value); }
-    inline void SetTargetGroupName(const char* value) { m_targetGroupNameHasBeenSet = true; m_targetGroupName.assign(value); }
-    inline RegisterDBProxyTargetsRequest& WithTargetGroupName(const Aws::String& value) { SetTargetGroupName(value); return *this;}
-    inline RegisterDBProxyTargetsRequest& WithTargetGroupName(Aws::String&& value) { SetTargetGroupName(std::move(value)); return *this;}
-    inline RegisterDBProxyTargetsRequest& WithTargetGroupName(const char* value) { SetTargetGroupName(value); return *this;}
+    template<typename TargetGroupNameT = Aws::String>
+    void SetTargetGroupName(TargetGroupNameT&& value) { m_targetGroupNameHasBeenSet = true; m_targetGroupName = std::forward<TargetGroupNameT>(value); }
+    template<typename TargetGroupNameT = Aws::String>
+    RegisterDBProxyTargetsRequest& WithTargetGroupName(TargetGroupNameT&& value) { SetTargetGroupName(std::forward<TargetGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>One or more DB instance identifiers.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDBInstanceIdentifiers() const{ return m_dBInstanceIdentifiers; }
+    inline const Aws::Vector<Aws::String>& GetDBInstanceIdentifiers() const { return m_dBInstanceIdentifiers; }
     inline bool DBInstanceIdentifiersHasBeenSet() const { return m_dBInstanceIdentifiersHasBeenSet; }
-    inline void SetDBInstanceIdentifiers(const Aws::Vector<Aws::String>& value) { m_dBInstanceIdentifiersHasBeenSet = true; m_dBInstanceIdentifiers = value; }
-    inline void SetDBInstanceIdentifiers(Aws::Vector<Aws::String>&& value) { m_dBInstanceIdentifiersHasBeenSet = true; m_dBInstanceIdentifiers = std::move(value); }
-    inline RegisterDBProxyTargetsRequest& WithDBInstanceIdentifiers(const Aws::Vector<Aws::String>& value) { SetDBInstanceIdentifiers(value); return *this;}
-    inline RegisterDBProxyTargetsRequest& WithDBInstanceIdentifiers(Aws::Vector<Aws::String>&& value) { SetDBInstanceIdentifiers(std::move(value)); return *this;}
-    inline RegisterDBProxyTargetsRequest& AddDBInstanceIdentifiers(const Aws::String& value) { m_dBInstanceIdentifiersHasBeenSet = true; m_dBInstanceIdentifiers.push_back(value); return *this; }
-    inline RegisterDBProxyTargetsRequest& AddDBInstanceIdentifiers(Aws::String&& value) { m_dBInstanceIdentifiersHasBeenSet = true; m_dBInstanceIdentifiers.push_back(std::move(value)); return *this; }
-    inline RegisterDBProxyTargetsRequest& AddDBInstanceIdentifiers(const char* value) { m_dBInstanceIdentifiersHasBeenSet = true; m_dBInstanceIdentifiers.push_back(value); return *this; }
+    template<typename DBInstanceIdentifiersT = Aws::Vector<Aws::String>>
+    void SetDBInstanceIdentifiers(DBInstanceIdentifiersT&& value) { m_dBInstanceIdentifiersHasBeenSet = true; m_dBInstanceIdentifiers = std::forward<DBInstanceIdentifiersT>(value); }
+    template<typename DBInstanceIdentifiersT = Aws::Vector<Aws::String>>
+    RegisterDBProxyTargetsRequest& WithDBInstanceIdentifiers(DBInstanceIdentifiersT&& value) { SetDBInstanceIdentifiers(std::forward<DBInstanceIdentifiersT>(value)); return *this;}
+    template<typename DBInstanceIdentifiersT = Aws::String>
+    RegisterDBProxyTargetsRequest& AddDBInstanceIdentifiers(DBInstanceIdentifiersT&& value) { m_dBInstanceIdentifiersHasBeenSet = true; m_dBInstanceIdentifiers.emplace_back(std::forward<DBInstanceIdentifiersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>One or more DB cluster identifiers.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDBClusterIdentifiers() const{ return m_dBClusterIdentifiers; }
+    inline const Aws::Vector<Aws::String>& GetDBClusterIdentifiers() const { return m_dBClusterIdentifiers; }
     inline bool DBClusterIdentifiersHasBeenSet() const { return m_dBClusterIdentifiersHasBeenSet; }
-    inline void SetDBClusterIdentifiers(const Aws::Vector<Aws::String>& value) { m_dBClusterIdentifiersHasBeenSet = true; m_dBClusterIdentifiers = value; }
-    inline void SetDBClusterIdentifiers(Aws::Vector<Aws::String>&& value) { m_dBClusterIdentifiersHasBeenSet = true; m_dBClusterIdentifiers = std::move(value); }
-    inline RegisterDBProxyTargetsRequest& WithDBClusterIdentifiers(const Aws::Vector<Aws::String>& value) { SetDBClusterIdentifiers(value); return *this;}
-    inline RegisterDBProxyTargetsRequest& WithDBClusterIdentifiers(Aws::Vector<Aws::String>&& value) { SetDBClusterIdentifiers(std::move(value)); return *this;}
-    inline RegisterDBProxyTargetsRequest& AddDBClusterIdentifiers(const Aws::String& value) { m_dBClusterIdentifiersHasBeenSet = true; m_dBClusterIdentifiers.push_back(value); return *this; }
-    inline RegisterDBProxyTargetsRequest& AddDBClusterIdentifiers(Aws::String&& value) { m_dBClusterIdentifiersHasBeenSet = true; m_dBClusterIdentifiers.push_back(std::move(value)); return *this; }
-    inline RegisterDBProxyTargetsRequest& AddDBClusterIdentifiers(const char* value) { m_dBClusterIdentifiersHasBeenSet = true; m_dBClusterIdentifiers.push_back(value); return *this; }
+    template<typename DBClusterIdentifiersT = Aws::Vector<Aws::String>>
+    void SetDBClusterIdentifiers(DBClusterIdentifiersT&& value) { m_dBClusterIdentifiersHasBeenSet = true; m_dBClusterIdentifiers = std::forward<DBClusterIdentifiersT>(value); }
+    template<typename DBClusterIdentifiersT = Aws::Vector<Aws::String>>
+    RegisterDBProxyTargetsRequest& WithDBClusterIdentifiers(DBClusterIdentifiersT&& value) { SetDBClusterIdentifiers(std::forward<DBClusterIdentifiersT>(value)); return *this;}
+    template<typename DBClusterIdentifiersT = Aws::String>
+    RegisterDBProxyTargetsRequest& AddDBClusterIdentifiers(DBClusterIdentifiersT&& value) { m_dBClusterIdentifiersHasBeenSet = true; m_dBClusterIdentifiers.emplace_back(std::forward<DBClusterIdentifiersT>(value)); return *this; }
     ///@}
   private:
 

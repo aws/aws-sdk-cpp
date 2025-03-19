@@ -37,7 +37,7 @@ namespace Model
   class AdminInitiateAuthResult
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API AdminInitiateAuthResult();
+    AWS_COGNITOIDENTITYPROVIDER_API AdminInitiateAuthResult() = default;
     AWS_COGNITOIDENTITYPROVIDER_API AdminInitiateAuthResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COGNITOIDENTITYPROVIDER_API AdminInitiateAuthResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -112,11 +112,9 @@ namespace Model
      * <code>InitiateAuth</code> or <code>AdminInitiateAuth</code> request. </p> </li>
      * </ul>
      */
-    inline const ChallengeNameType& GetChallengeName() const{ return m_challengeName; }
-    inline void SetChallengeName(const ChallengeNameType& value) { m_challengeName = value; }
-    inline void SetChallengeName(ChallengeNameType&& value) { m_challengeName = std::move(value); }
-    inline AdminInitiateAuthResult& WithChallengeName(const ChallengeNameType& value) { SetChallengeName(value); return *this;}
-    inline AdminInitiateAuthResult& WithChallengeName(ChallengeNameType&& value) { SetChallengeName(std::move(value)); return *this;}
+    inline ChallengeNameType GetChallengeName() const { return m_challengeName; }
+    inline void SetChallengeName(ChallengeNameType value) { m_challengeNameHasBeenSet = true; m_challengeName = value; }
+    inline AdminInitiateAuthResult& WithChallengeName(ChallengeNameType value) { SetChallengeName(value); return *this;}
     ///@}
 
     ///@{
@@ -127,13 +125,11 @@ namespace Model
      * session ID and the parameters of the next challenge. Pass this session ID in the
      * <code>Session</code> parameter of <code>AdminRespondToAuthChallenge</code>.</p>
      */
-    inline const Aws::String& GetSession() const{ return m_session; }
-    inline void SetSession(const Aws::String& value) { m_session = value; }
-    inline void SetSession(Aws::String&& value) { m_session = std::move(value); }
-    inline void SetSession(const char* value) { m_session.assign(value); }
-    inline AdminInitiateAuthResult& WithSession(const Aws::String& value) { SetSession(value); return *this;}
-    inline AdminInitiateAuthResult& WithSession(Aws::String&& value) { SetSession(std::move(value)); return *this;}
-    inline AdminInitiateAuthResult& WithSession(const char* value) { SetSession(value); return *this;}
+    inline const Aws::String& GetSession() const { return m_session; }
+    template<typename SessionT = Aws::String>
+    void SetSession(SessionT&& value) { m_sessionHasBeenSet = true; m_session = std::forward<SessionT>(value); }
+    template<typename SessionT = Aws::String>
+    AdminInitiateAuthResult& WithSession(SessionT&& value) { SetSession(std::forward<SessionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -151,18 +147,15 @@ namespace Model
      * username and not an alias in the <code>ChallengeResponses</code> of your
      * challenge response.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetChallengeParameters() const{ return m_challengeParameters; }
-    inline void SetChallengeParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_challengeParameters = value; }
-    inline void SetChallengeParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_challengeParameters = std::move(value); }
-    inline AdminInitiateAuthResult& WithChallengeParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetChallengeParameters(value); return *this;}
-    inline AdminInitiateAuthResult& WithChallengeParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetChallengeParameters(std::move(value)); return *this;}
-    inline AdminInitiateAuthResult& AddChallengeParameters(const Aws::String& key, const Aws::String& value) { m_challengeParameters.emplace(key, value); return *this; }
-    inline AdminInitiateAuthResult& AddChallengeParameters(Aws::String&& key, const Aws::String& value) { m_challengeParameters.emplace(std::move(key), value); return *this; }
-    inline AdminInitiateAuthResult& AddChallengeParameters(const Aws::String& key, Aws::String&& value) { m_challengeParameters.emplace(key, std::move(value)); return *this; }
-    inline AdminInitiateAuthResult& AddChallengeParameters(Aws::String&& key, Aws::String&& value) { m_challengeParameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline AdminInitiateAuthResult& AddChallengeParameters(const char* key, Aws::String&& value) { m_challengeParameters.emplace(key, std::move(value)); return *this; }
-    inline AdminInitiateAuthResult& AddChallengeParameters(Aws::String&& key, const char* value) { m_challengeParameters.emplace(std::move(key), value); return *this; }
-    inline AdminInitiateAuthResult& AddChallengeParameters(const char* key, const char* value) { m_challengeParameters.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetChallengeParameters() const { return m_challengeParameters; }
+    template<typename ChallengeParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetChallengeParameters(ChallengeParametersT&& value) { m_challengeParametersHasBeenSet = true; m_challengeParameters = std::forward<ChallengeParametersT>(value); }
+    template<typename ChallengeParametersT = Aws::Map<Aws::String, Aws::String>>
+    AdminInitiateAuthResult& WithChallengeParameters(ChallengeParametersT&& value) { SetChallengeParameters(std::forward<ChallengeParametersT>(value)); return *this;}
+    template<typename ChallengeParametersKeyT = Aws::String, typename ChallengeParametersValueT = Aws::String>
+    AdminInitiateAuthResult& AddChallengeParameters(ChallengeParametersKeyT&& key, ChallengeParametersValueT&& value) {
+      m_challengeParametersHasBeenSet = true; m_challengeParameters.emplace(std::forward<ChallengeParametersKeyT>(key), std::forward<ChallengeParametersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -173,11 +166,11 @@ namespace Model
      * <code>ChallengeParameters</code>, and <code>Session</code> so that your user can
      * answer the challenge.</p>
      */
-    inline const AuthenticationResultType& GetAuthenticationResult() const{ return m_authenticationResult; }
-    inline void SetAuthenticationResult(const AuthenticationResultType& value) { m_authenticationResult = value; }
-    inline void SetAuthenticationResult(AuthenticationResultType&& value) { m_authenticationResult = std::move(value); }
-    inline AdminInitiateAuthResult& WithAuthenticationResult(const AuthenticationResultType& value) { SetAuthenticationResult(value); return *this;}
-    inline AdminInitiateAuthResult& WithAuthenticationResult(AuthenticationResultType&& value) { SetAuthenticationResult(std::move(value)); return *this;}
+    inline const AuthenticationResultType& GetAuthenticationResult() const { return m_authenticationResult; }
+    template<typename AuthenticationResultT = AuthenticationResultType>
+    void SetAuthenticationResult(AuthenticationResultT&& value) { m_authenticationResultHasBeenSet = true; m_authenticationResult = std::forward<AuthenticationResultT>(value); }
+    template<typename AuthenticationResultT = AuthenticationResultType>
+    AdminInitiateAuthResult& WithAuthenticationResult(AuthenticationResultT&& value) { SetAuthenticationResult(std::forward<AuthenticationResultT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -189,38 +182,41 @@ namespace Model
      * authentication, a one-time password from an SMS message, and a traditional
      * password.</p>
      */
-    inline const Aws::Vector<ChallengeNameType>& GetAvailableChallenges() const{ return m_availableChallenges; }
-    inline void SetAvailableChallenges(const Aws::Vector<ChallengeNameType>& value) { m_availableChallenges = value; }
-    inline void SetAvailableChallenges(Aws::Vector<ChallengeNameType>&& value) { m_availableChallenges = std::move(value); }
-    inline AdminInitiateAuthResult& WithAvailableChallenges(const Aws::Vector<ChallengeNameType>& value) { SetAvailableChallenges(value); return *this;}
-    inline AdminInitiateAuthResult& WithAvailableChallenges(Aws::Vector<ChallengeNameType>&& value) { SetAvailableChallenges(std::move(value)); return *this;}
-    inline AdminInitiateAuthResult& AddAvailableChallenges(const ChallengeNameType& value) { m_availableChallenges.push_back(value); return *this; }
-    inline AdminInitiateAuthResult& AddAvailableChallenges(ChallengeNameType&& value) { m_availableChallenges.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ChallengeNameType>& GetAvailableChallenges() const { return m_availableChallenges; }
+    template<typename AvailableChallengesT = Aws::Vector<ChallengeNameType>>
+    void SetAvailableChallenges(AvailableChallengesT&& value) { m_availableChallengesHasBeenSet = true; m_availableChallenges = std::forward<AvailableChallengesT>(value); }
+    template<typename AvailableChallengesT = Aws::Vector<ChallengeNameType>>
+    AdminInitiateAuthResult& WithAvailableChallenges(AvailableChallengesT&& value) { SetAvailableChallenges(std::forward<AvailableChallengesT>(value)); return *this;}
+    inline AdminInitiateAuthResult& AddAvailableChallenges(ChallengeNameType value) { m_availableChallengesHasBeenSet = true; m_availableChallenges.push_back(value); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AdminInitiateAuthResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AdminInitiateAuthResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AdminInitiateAuthResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AdminInitiateAuthResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    ChallengeNameType m_challengeName;
+    ChallengeNameType m_challengeName{ChallengeNameType::NOT_SET};
+    bool m_challengeNameHasBeenSet = false;
 
     Aws::String m_session;
+    bool m_sessionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_challengeParameters;
+    bool m_challengeParametersHasBeenSet = false;
 
     AuthenticationResultType m_authenticationResult;
+    bool m_authenticationResultHasBeenSet = false;
 
     Aws::Vector<ChallengeNameType> m_availableChallenges;
+    bool m_availableChallengesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

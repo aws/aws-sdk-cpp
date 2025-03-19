@@ -33,7 +33,7 @@ namespace Model
   class AwsEventsEndpointRoutingConfigFailoverConfigDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsEventsEndpointRoutingConfigFailoverConfigDetails();
+    AWS_SECURITYHUB_API AwsEventsEndpointRoutingConfigFailoverConfigDetails() = default;
     AWS_SECURITYHUB_API AwsEventsEndpointRoutingConfigFailoverConfigDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEventsEndpointRoutingConfigFailoverConfigDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p> The main Region of the endpoint.</p>
      */
-    inline const AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails& GetPrimary() const{ return m_primary; }
+    inline const AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails& GetPrimary() const { return m_primary; }
     inline bool PrimaryHasBeenSet() const { return m_primaryHasBeenSet; }
-    inline void SetPrimary(const AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails& value) { m_primaryHasBeenSet = true; m_primary = value; }
-    inline void SetPrimary(AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails&& value) { m_primaryHasBeenSet = true; m_primary = std::move(value); }
-    inline AwsEventsEndpointRoutingConfigFailoverConfigDetails& WithPrimary(const AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails& value) { SetPrimary(value); return *this;}
-    inline AwsEventsEndpointRoutingConfigFailoverConfigDetails& WithPrimary(AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails&& value) { SetPrimary(std::move(value)); return *this;}
+    template<typename PrimaryT = AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails>
+    void SetPrimary(PrimaryT&& value) { m_primaryHasBeenSet = true; m_primary = std::forward<PrimaryT>(value); }
+    template<typename PrimaryT = AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails>
+    AwsEventsEndpointRoutingConfigFailoverConfigDetails& WithPrimary(PrimaryT&& value) { SetPrimary(std::forward<PrimaryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,12 +56,12 @@ namespace Model
      * <p> The Region that events are routed to when failover is triggered or event
      * replication is enabled.</p>
      */
-    inline const AwsEventsEndpointRoutingConfigFailoverConfigSecondaryDetails& GetSecondary() const{ return m_secondary; }
+    inline const AwsEventsEndpointRoutingConfigFailoverConfigSecondaryDetails& GetSecondary() const { return m_secondary; }
     inline bool SecondaryHasBeenSet() const { return m_secondaryHasBeenSet; }
-    inline void SetSecondary(const AwsEventsEndpointRoutingConfigFailoverConfigSecondaryDetails& value) { m_secondaryHasBeenSet = true; m_secondary = value; }
-    inline void SetSecondary(AwsEventsEndpointRoutingConfigFailoverConfigSecondaryDetails&& value) { m_secondaryHasBeenSet = true; m_secondary = std::move(value); }
-    inline AwsEventsEndpointRoutingConfigFailoverConfigDetails& WithSecondary(const AwsEventsEndpointRoutingConfigFailoverConfigSecondaryDetails& value) { SetSecondary(value); return *this;}
-    inline AwsEventsEndpointRoutingConfigFailoverConfigDetails& WithSecondary(AwsEventsEndpointRoutingConfigFailoverConfigSecondaryDetails&& value) { SetSecondary(std::move(value)); return *this;}
+    template<typename SecondaryT = AwsEventsEndpointRoutingConfigFailoverConfigSecondaryDetails>
+    void SetSecondary(SecondaryT&& value) { m_secondaryHasBeenSet = true; m_secondary = std::forward<SecondaryT>(value); }
+    template<typename SecondaryT = AwsEventsEndpointRoutingConfigFailoverConfigSecondaryDetails>
+    AwsEventsEndpointRoutingConfigFailoverConfigDetails& WithSecondary(SecondaryT&& value) { SetSecondary(std::forward<SecondaryT>(value)); return *this;}
     ///@}
   private:
 

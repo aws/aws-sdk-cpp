@@ -45,7 +45,7 @@ namespace Model
   class FlowNodeConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API FlowNodeConfiguration();
+    AWS_BEDROCKAGENT_API FlowNodeConfiguration() = default;
     AWS_BEDROCKAGENT_API FlowNodeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API FlowNodeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,12 +56,12 @@ namespace Model
      * <p>Contains configurations for an agent node in your flow. Invokes an alias of
      * an agent and returns the response.</p>
      */
-    inline const AgentFlowNodeConfiguration& GetAgent() const{ return m_agent; }
+    inline const AgentFlowNodeConfiguration& GetAgent() const { return m_agent; }
     inline bool AgentHasBeenSet() const { return m_agentHasBeenSet; }
-    inline void SetAgent(const AgentFlowNodeConfiguration& value) { m_agentHasBeenSet = true; m_agent = value; }
-    inline void SetAgent(AgentFlowNodeConfiguration&& value) { m_agentHasBeenSet = true; m_agent = std::move(value); }
-    inline FlowNodeConfiguration& WithAgent(const AgentFlowNodeConfiguration& value) { SetAgent(value); return *this;}
-    inline FlowNodeConfiguration& WithAgent(AgentFlowNodeConfiguration&& value) { SetAgent(std::move(value)); return *this;}
+    template<typename AgentT = AgentFlowNodeConfiguration>
+    void SetAgent(AgentT&& value) { m_agentHasBeenSet = true; m_agent = std::forward<AgentT>(value); }
+    template<typename AgentT = AgentFlowNodeConfiguration>
+    FlowNodeConfiguration& WithAgent(AgentT&& value) { SetAgent(std::forward<AgentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,12 +69,12 @@ namespace Model
      * <p>Contains configurations for a collector node in your flow. Collects an
      * iteration of inputs and consolidates them into an array of outputs.</p>
      */
-    inline const CollectorFlowNodeConfiguration& GetCollector() const{ return m_collector; }
+    inline const CollectorFlowNodeConfiguration& GetCollector() const { return m_collector; }
     inline bool CollectorHasBeenSet() const { return m_collectorHasBeenSet; }
-    inline void SetCollector(const CollectorFlowNodeConfiguration& value) { m_collectorHasBeenSet = true; m_collector = value; }
-    inline void SetCollector(CollectorFlowNodeConfiguration&& value) { m_collectorHasBeenSet = true; m_collector = std::move(value); }
-    inline FlowNodeConfiguration& WithCollector(const CollectorFlowNodeConfiguration& value) { SetCollector(value); return *this;}
-    inline FlowNodeConfiguration& WithCollector(CollectorFlowNodeConfiguration&& value) { SetCollector(std::move(value)); return *this;}
+    template<typename CollectorT = CollectorFlowNodeConfiguration>
+    void SetCollector(CollectorT&& value) { m_collectorHasBeenSet = true; m_collector = std::forward<CollectorT>(value); }
+    template<typename CollectorT = CollectorFlowNodeConfiguration>
+    FlowNodeConfiguration& WithCollector(CollectorT&& value) { SetCollector(std::forward<CollectorT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,12 +82,12 @@ namespace Model
      * <p>Contains configurations for a Condition node in your flow. Defines conditions
      * that lead to different branches of the flow.</p>
      */
-    inline const ConditionFlowNodeConfiguration& GetCondition() const{ return m_condition; }
+    inline const ConditionFlowNodeConfiguration& GetCondition() const { return m_condition; }
     inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
-    inline void SetCondition(const ConditionFlowNodeConfiguration& value) { m_conditionHasBeenSet = true; m_condition = value; }
-    inline void SetCondition(ConditionFlowNodeConfiguration&& value) { m_conditionHasBeenSet = true; m_condition = std::move(value); }
-    inline FlowNodeConfiguration& WithCondition(const ConditionFlowNodeConfiguration& value) { SetCondition(value); return *this;}
-    inline FlowNodeConfiguration& WithCondition(ConditionFlowNodeConfiguration&& value) { SetCondition(std::move(value)); return *this;}
+    template<typename ConditionT = ConditionFlowNodeConfiguration>
+    void SetCondition(ConditionT&& value) { m_conditionHasBeenSet = true; m_condition = std::forward<ConditionT>(value); }
+    template<typename ConditionT = ConditionFlowNodeConfiguration>
+    FlowNodeConfiguration& WithCondition(ConditionT&& value) { SetCondition(std::forward<ConditionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,12 +95,12 @@ namespace Model
      * <p>Contains configurations for an input flow node in your flow. The first node
      * in the flow. <code>inputs</code> can't be specified for this node.</p>
      */
-    inline const InputFlowNodeConfiguration& GetInput() const{ return m_input; }
+    inline const InputFlowNodeConfiguration& GetInput() const { return m_input; }
     inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
-    inline void SetInput(const InputFlowNodeConfiguration& value) { m_inputHasBeenSet = true; m_input = value; }
-    inline void SetInput(InputFlowNodeConfiguration&& value) { m_inputHasBeenSet = true; m_input = std::move(value); }
-    inline FlowNodeConfiguration& WithInput(const InputFlowNodeConfiguration& value) { SetInput(value); return *this;}
-    inline FlowNodeConfiguration& WithInput(InputFlowNodeConfiguration&& value) { SetInput(std::move(value)); return *this;}
+    template<typename InputT = InputFlowNodeConfiguration>
+    void SetInput(InputT&& value) { m_inputHasBeenSet = true; m_input = std::forward<InputT>(value); }
+    template<typename InputT = InputFlowNodeConfiguration>
+    FlowNodeConfiguration& WithInput(InputT&& value) { SetInput(std::forward<InputT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,12 +112,12 @@ namespace Model
      * for each member of the array. To return only one response, you can include a
      * collector node downstream from the iterator node.</p>
      */
-    inline const IteratorFlowNodeConfiguration& GetIterator() const{ return m_iterator; }
+    inline const IteratorFlowNodeConfiguration& GetIterator() const { return m_iterator; }
     inline bool IteratorHasBeenSet() const { return m_iteratorHasBeenSet; }
-    inline void SetIterator(const IteratorFlowNodeConfiguration& value) { m_iteratorHasBeenSet = true; m_iterator = value; }
-    inline void SetIterator(IteratorFlowNodeConfiguration&& value) { m_iteratorHasBeenSet = true; m_iterator = std::move(value); }
-    inline FlowNodeConfiguration& WithIterator(const IteratorFlowNodeConfiguration& value) { SetIterator(value); return *this;}
-    inline FlowNodeConfiguration& WithIterator(IteratorFlowNodeConfiguration&& value) { SetIterator(std::move(value)); return *this;}
+    template<typename IteratorT = IteratorFlowNodeConfiguration>
+    void SetIterator(IteratorT&& value) { m_iteratorHasBeenSet = true; m_iterator = std::forward<IteratorT>(value); }
+    template<typename IteratorT = IteratorFlowNodeConfiguration>
+    FlowNodeConfiguration& WithIterator(IteratorT&& value) { SetIterator(std::forward<IteratorT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -125,12 +125,12 @@ namespace Model
      * <p>Contains configurations for a knowledge base node in your flow. Queries a
      * knowledge base and returns the retrieved results or generated response.</p>
      */
-    inline const KnowledgeBaseFlowNodeConfiguration& GetKnowledgeBase() const{ return m_knowledgeBase; }
+    inline const KnowledgeBaseFlowNodeConfiguration& GetKnowledgeBase() const { return m_knowledgeBase; }
     inline bool KnowledgeBaseHasBeenSet() const { return m_knowledgeBaseHasBeenSet; }
-    inline void SetKnowledgeBase(const KnowledgeBaseFlowNodeConfiguration& value) { m_knowledgeBaseHasBeenSet = true; m_knowledgeBase = value; }
-    inline void SetKnowledgeBase(KnowledgeBaseFlowNodeConfiguration&& value) { m_knowledgeBaseHasBeenSet = true; m_knowledgeBase = std::move(value); }
-    inline FlowNodeConfiguration& WithKnowledgeBase(const KnowledgeBaseFlowNodeConfiguration& value) { SetKnowledgeBase(value); return *this;}
-    inline FlowNodeConfiguration& WithKnowledgeBase(KnowledgeBaseFlowNodeConfiguration&& value) { SetKnowledgeBase(std::move(value)); return *this;}
+    template<typename KnowledgeBaseT = KnowledgeBaseFlowNodeConfiguration>
+    void SetKnowledgeBase(KnowledgeBaseT&& value) { m_knowledgeBaseHasBeenSet = true; m_knowledgeBase = std::forward<KnowledgeBaseT>(value); }
+    template<typename KnowledgeBaseT = KnowledgeBaseFlowNodeConfiguration>
+    FlowNodeConfiguration& WithKnowledgeBase(KnowledgeBaseT&& value) { SetKnowledgeBase(std::forward<KnowledgeBaseT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -138,12 +138,12 @@ namespace Model
      * <p>Contains configurations for a Lambda function node in your flow. Invokes an
      * Lambda function.</p>
      */
-    inline const LambdaFunctionFlowNodeConfiguration& GetLambdaFunction() const{ return m_lambdaFunction; }
+    inline const LambdaFunctionFlowNodeConfiguration& GetLambdaFunction() const { return m_lambdaFunction; }
     inline bool LambdaFunctionHasBeenSet() const { return m_lambdaFunctionHasBeenSet; }
-    inline void SetLambdaFunction(const LambdaFunctionFlowNodeConfiguration& value) { m_lambdaFunctionHasBeenSet = true; m_lambdaFunction = value; }
-    inline void SetLambdaFunction(LambdaFunctionFlowNodeConfiguration&& value) { m_lambdaFunctionHasBeenSet = true; m_lambdaFunction = std::move(value); }
-    inline FlowNodeConfiguration& WithLambdaFunction(const LambdaFunctionFlowNodeConfiguration& value) { SetLambdaFunction(value); return *this;}
-    inline FlowNodeConfiguration& WithLambdaFunction(LambdaFunctionFlowNodeConfiguration&& value) { SetLambdaFunction(std::move(value)); return *this;}
+    template<typename LambdaFunctionT = LambdaFunctionFlowNodeConfiguration>
+    void SetLambdaFunction(LambdaFunctionT&& value) { m_lambdaFunctionHasBeenSet = true; m_lambdaFunction = std::forward<LambdaFunctionT>(value); }
+    template<typename LambdaFunctionT = LambdaFunctionFlowNodeConfiguration>
+    FlowNodeConfiguration& WithLambdaFunction(LambdaFunctionT&& value) { SetLambdaFunction(std::forward<LambdaFunctionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -151,12 +151,12 @@ namespace Model
      * <p>Contains configurations for a Lex node in your flow. Invokes an Amazon Lex
      * bot to identify the intent of the input and return the intent as the output.</p>
      */
-    inline const LexFlowNodeConfiguration& GetLex() const{ return m_lex; }
+    inline const LexFlowNodeConfiguration& GetLex() const { return m_lex; }
     inline bool LexHasBeenSet() const { return m_lexHasBeenSet; }
-    inline void SetLex(const LexFlowNodeConfiguration& value) { m_lexHasBeenSet = true; m_lex = value; }
-    inline void SetLex(LexFlowNodeConfiguration&& value) { m_lexHasBeenSet = true; m_lex = std::move(value); }
-    inline FlowNodeConfiguration& WithLex(const LexFlowNodeConfiguration& value) { SetLex(value); return *this;}
-    inline FlowNodeConfiguration& WithLex(LexFlowNodeConfiguration&& value) { SetLex(std::move(value)); return *this;}
+    template<typename LexT = LexFlowNodeConfiguration>
+    void SetLex(LexT&& value) { m_lexHasBeenSet = true; m_lex = std::forward<LexT>(value); }
+    template<typename LexT = LexFlowNodeConfiguration>
+    FlowNodeConfiguration& WithLex(LexT&& value) { SetLex(std::forward<LexT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -164,12 +164,12 @@ namespace Model
      * <p>Contains configurations for an output flow node in your flow. The last node
      * in the flow. <code>outputs</code> can't be specified for this node.</p>
      */
-    inline const OutputFlowNodeConfiguration& GetOutput() const{ return m_output; }
+    inline const OutputFlowNodeConfiguration& GetOutput() const { return m_output; }
     inline bool OutputHasBeenSet() const { return m_outputHasBeenSet; }
-    inline void SetOutput(const OutputFlowNodeConfiguration& value) { m_outputHasBeenSet = true; m_output = value; }
-    inline void SetOutput(OutputFlowNodeConfiguration&& value) { m_outputHasBeenSet = true; m_output = std::move(value); }
-    inline FlowNodeConfiguration& WithOutput(const OutputFlowNodeConfiguration& value) { SetOutput(value); return *this;}
-    inline FlowNodeConfiguration& WithOutput(OutputFlowNodeConfiguration&& value) { SetOutput(std::move(value)); return *this;}
+    template<typename OutputT = OutputFlowNodeConfiguration>
+    void SetOutput(OutputT&& value) { m_outputHasBeenSet = true; m_output = std::forward<OutputT>(value); }
+    template<typename OutputT = OutputFlowNodeConfiguration>
+    FlowNodeConfiguration& WithOutput(OutputT&& value) { SetOutput(std::forward<OutputT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -178,12 +178,12 @@ namespace Model
      * generates the model response as the output. You can use a prompt from Prompt
      * management or you can configure one in this node.</p>
      */
-    inline const PromptFlowNodeConfiguration& GetPrompt() const{ return m_prompt; }
+    inline const PromptFlowNodeConfiguration& GetPrompt() const { return m_prompt; }
     inline bool PromptHasBeenSet() const { return m_promptHasBeenSet; }
-    inline void SetPrompt(const PromptFlowNodeConfiguration& value) { m_promptHasBeenSet = true; m_prompt = value; }
-    inline void SetPrompt(PromptFlowNodeConfiguration&& value) { m_promptHasBeenSet = true; m_prompt = std::move(value); }
-    inline FlowNodeConfiguration& WithPrompt(const PromptFlowNodeConfiguration& value) { SetPrompt(value); return *this;}
-    inline FlowNodeConfiguration& WithPrompt(PromptFlowNodeConfiguration&& value) { SetPrompt(std::move(value)); return *this;}
+    template<typename PromptT = PromptFlowNodeConfiguration>
+    void SetPrompt(PromptT&& value) { m_promptHasBeenSet = true; m_prompt = std::forward<PromptT>(value); }
+    template<typename PromptT = PromptFlowNodeConfiguration>
+    FlowNodeConfiguration& WithPrompt(PromptT&& value) { SetPrompt(std::forward<PromptT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -191,12 +191,12 @@ namespace Model
      * <p>Contains configurations for a Retrieval node in your flow. Retrieves data
      * from an Amazon S3 location and returns it as the output.</p>
      */
-    inline const RetrievalFlowNodeConfiguration& GetRetrieval() const{ return m_retrieval; }
+    inline const RetrievalFlowNodeConfiguration& GetRetrieval() const { return m_retrieval; }
     inline bool RetrievalHasBeenSet() const { return m_retrievalHasBeenSet; }
-    inline void SetRetrieval(const RetrievalFlowNodeConfiguration& value) { m_retrievalHasBeenSet = true; m_retrieval = value; }
-    inline void SetRetrieval(RetrievalFlowNodeConfiguration&& value) { m_retrievalHasBeenSet = true; m_retrieval = std::move(value); }
-    inline FlowNodeConfiguration& WithRetrieval(const RetrievalFlowNodeConfiguration& value) { SetRetrieval(value); return *this;}
-    inline FlowNodeConfiguration& WithRetrieval(RetrievalFlowNodeConfiguration&& value) { SetRetrieval(std::move(value)); return *this;}
+    template<typename RetrievalT = RetrievalFlowNodeConfiguration>
+    void SetRetrieval(RetrievalT&& value) { m_retrievalHasBeenSet = true; m_retrieval = std::forward<RetrievalT>(value); }
+    template<typename RetrievalT = RetrievalFlowNodeConfiguration>
+    FlowNodeConfiguration& WithRetrieval(RetrievalT&& value) { SetRetrieval(std::forward<RetrievalT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -204,12 +204,12 @@ namespace Model
      * <p>Contains configurations for a Storage node in your flow. Stores an input in
      * an Amazon S3 location.</p>
      */
-    inline const StorageFlowNodeConfiguration& GetStorage() const{ return m_storage; }
+    inline const StorageFlowNodeConfiguration& GetStorage() const { return m_storage; }
     inline bool StorageHasBeenSet() const { return m_storageHasBeenSet; }
-    inline void SetStorage(const StorageFlowNodeConfiguration& value) { m_storageHasBeenSet = true; m_storage = value; }
-    inline void SetStorage(StorageFlowNodeConfiguration&& value) { m_storageHasBeenSet = true; m_storage = std::move(value); }
-    inline FlowNodeConfiguration& WithStorage(const StorageFlowNodeConfiguration& value) { SetStorage(value); return *this;}
-    inline FlowNodeConfiguration& WithStorage(StorageFlowNodeConfiguration&& value) { SetStorage(std::move(value)); return *this;}
+    template<typename StorageT = StorageFlowNodeConfiguration>
+    void SetStorage(StorageT&& value) { m_storageHasBeenSet = true; m_storage = std::forward<StorageT>(value); }
+    template<typename StorageT = StorageFlowNodeConfiguration>
+    FlowNodeConfiguration& WithStorage(StorageT&& value) { SetStorage(std::forward<StorageT>(value)); return *this;}
     ///@}
   private:
 

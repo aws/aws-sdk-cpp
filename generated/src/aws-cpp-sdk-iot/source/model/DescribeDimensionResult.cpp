@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeDimensionResult::DescribeDimensionResult() : 
-    m_type(DimensionType::NOT_SET)
-{
-}
-
 DescribeDimensionResult::DescribeDimensionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeDimensionResult()
 {
   *this = result;
 }
@@ -34,21 +28,18 @@ DescribeDimensionResult& DescribeDimensionResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = DimensionTypeMapper::GetDimensionTypeForName(jsonValue.GetString("type"));
-
+    m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stringValues"))
   {
     Aws::Utils::Array<JsonView> stringValuesJsonList = jsonValue.GetArray("stringValues");
@@ -56,26 +47,25 @@ DescribeDimensionResult& DescribeDimensionResult::operator =(const Aws::AmazonWe
     {
       m_stringValues.push_back(stringValuesJsonList[stringValuesIndex].AsString());
     }
+    m_stringValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDate"))
   {
     m_creationDate = jsonValue.GetDouble("creationDate");
-
+    m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetDouble("lastModifiedDate");
-
+    m_lastModifiedDateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

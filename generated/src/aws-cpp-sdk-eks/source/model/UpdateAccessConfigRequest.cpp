@@ -18,14 +18,7 @@ namespace EKS
 namespace Model
 {
 
-UpdateAccessConfigRequest::UpdateAccessConfigRequest() : 
-    m_authenticationMode(AuthenticationMode::NOT_SET),
-    m_authenticationModeHasBeenSet(false)
-{
-}
-
 UpdateAccessConfigRequest::UpdateAccessConfigRequest(JsonView jsonValue)
-  : UpdateAccessConfigRequest()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ UpdateAccessConfigRequest& UpdateAccessConfigRequest::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("authenticationMode"))
   {
     m_authenticationMode = AuthenticationModeMapper::GetAuthenticationModeForName(jsonValue.GetString("authenticationMode"));
-
     m_authenticationModeHasBeenSet = true;
   }
-
   return *this;
 }
 

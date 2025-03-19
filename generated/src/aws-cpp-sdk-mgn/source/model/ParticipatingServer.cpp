@@ -18,17 +18,7 @@ namespace mgn
 namespace Model
 {
 
-ParticipatingServer::ParticipatingServer() : 
-    m_launchStatus(LaunchStatus::NOT_SET),
-    m_launchStatusHasBeenSet(false),
-    m_launchedEc2InstanceIDHasBeenSet(false),
-    m_postLaunchActionsStatusHasBeenSet(false),
-    m_sourceServerIDHasBeenSet(false)
-{
-}
-
 ParticipatingServer::ParticipatingServer(JsonView jsonValue)
-  : ParticipatingServer()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ParticipatingServer& ParticipatingServer::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("launchStatus"))
   {
     m_launchStatus = LaunchStatusMapper::GetLaunchStatusForName(jsonValue.GetString("launchStatus"));
-
     m_launchStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("launchedEc2InstanceID"))
   {
     m_launchedEc2InstanceID = jsonValue.GetString("launchedEc2InstanceID");
-
     m_launchedEc2InstanceIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("postLaunchActionsStatus"))
   {
     m_postLaunchActionsStatus = jsonValue.GetObject("postLaunchActionsStatus");
-
     m_postLaunchActionsStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceServerID"))
   {
     m_sourceServerID = jsonValue.GetString("sourceServerID");
-
     m_sourceServerIDHasBeenSet = true;
   }
-
   return *this;
 }
 

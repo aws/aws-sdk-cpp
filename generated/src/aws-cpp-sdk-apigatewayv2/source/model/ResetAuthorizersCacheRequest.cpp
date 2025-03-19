@@ -12,12 +12,6 @@ using namespace Aws::ApiGatewayV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ResetAuthorizersCacheRequest::ResetAuthorizersCacheRequest() : 
-    m_apiIdHasBeenSet(false),
-    m_stageNameHasBeenSet(false)
-{
-}
-
 Aws::String ResetAuthorizersCacheRequest::SerializePayload() const
 {
   return {};

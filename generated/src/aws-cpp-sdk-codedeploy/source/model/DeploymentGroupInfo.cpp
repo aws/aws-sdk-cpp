@@ -18,38 +18,7 @@ namespace CodeDeploy
 namespace Model
 {
 
-DeploymentGroupInfo::DeploymentGroupInfo() : 
-    m_applicationNameHasBeenSet(false),
-    m_deploymentGroupIdHasBeenSet(false),
-    m_deploymentGroupNameHasBeenSet(false),
-    m_deploymentConfigNameHasBeenSet(false),
-    m_ec2TagFiltersHasBeenSet(false),
-    m_onPremisesInstanceTagFiltersHasBeenSet(false),
-    m_autoScalingGroupsHasBeenSet(false),
-    m_serviceRoleArnHasBeenSet(false),
-    m_targetRevisionHasBeenSet(false),
-    m_triggerConfigurationsHasBeenSet(false),
-    m_alarmConfigurationHasBeenSet(false),
-    m_autoRollbackConfigurationHasBeenSet(false),
-    m_deploymentStyleHasBeenSet(false),
-    m_outdatedInstancesStrategy(OutdatedInstancesStrategy::NOT_SET),
-    m_outdatedInstancesStrategyHasBeenSet(false),
-    m_blueGreenDeploymentConfigurationHasBeenSet(false),
-    m_loadBalancerInfoHasBeenSet(false),
-    m_lastSuccessfulDeploymentHasBeenSet(false),
-    m_lastAttemptedDeploymentHasBeenSet(false),
-    m_ec2TagSetHasBeenSet(false),
-    m_onPremisesTagSetHasBeenSet(false),
-    m_computePlatform(ComputePlatform::NOT_SET),
-    m_computePlatformHasBeenSet(false),
-    m_ecsServicesHasBeenSet(false),
-    m_terminationHookEnabled(false),
-    m_terminationHookEnabledHasBeenSet(false)
-{
-}
-
 DeploymentGroupInfo::DeploymentGroupInfo(JsonView jsonValue)
-  : DeploymentGroupInfo()
 {
   *this = jsonValue;
 }
@@ -59,31 +28,23 @@ DeploymentGroupInfo& DeploymentGroupInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("applicationName"))
   {
     m_applicationName = jsonValue.GetString("applicationName");
-
     m_applicationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deploymentGroupId"))
   {
     m_deploymentGroupId = jsonValue.GetString("deploymentGroupId");
-
     m_deploymentGroupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deploymentGroupName"))
   {
     m_deploymentGroupName = jsonValue.GetString("deploymentGroupName");
-
     m_deploymentGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deploymentConfigName"))
   {
     m_deploymentConfigName = jsonValue.GetString("deploymentConfigName");
-
     m_deploymentConfigNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ec2TagFilters"))
   {
     Aws::Utils::Array<JsonView> ec2TagFiltersJsonList = jsonValue.GetArray("ec2TagFilters");
@@ -93,7 +54,6 @@ DeploymentGroupInfo& DeploymentGroupInfo::operator =(JsonView jsonValue)
     }
     m_ec2TagFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("onPremisesInstanceTagFilters"))
   {
     Aws::Utils::Array<JsonView> onPremisesInstanceTagFiltersJsonList = jsonValue.GetArray("onPremisesInstanceTagFilters");
@@ -103,7 +63,6 @@ DeploymentGroupInfo& DeploymentGroupInfo::operator =(JsonView jsonValue)
     }
     m_onPremisesInstanceTagFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("autoScalingGroups"))
   {
     Aws::Utils::Array<JsonView> autoScalingGroupsJsonList = jsonValue.GetArray("autoScalingGroups");
@@ -113,21 +72,16 @@ DeploymentGroupInfo& DeploymentGroupInfo::operator =(JsonView jsonValue)
     }
     m_autoScalingGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceRoleArn"))
   {
     m_serviceRoleArn = jsonValue.GetString("serviceRoleArn");
-
     m_serviceRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetRevision"))
   {
     m_targetRevision = jsonValue.GetObject("targetRevision");
-
     m_targetRevisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("triggerConfigurations"))
   {
     Aws::Utils::Array<JsonView> triggerConfigurationsJsonList = jsonValue.GetArray("triggerConfigurations");
@@ -137,84 +91,61 @@ DeploymentGroupInfo& DeploymentGroupInfo::operator =(JsonView jsonValue)
     }
     m_triggerConfigurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("alarmConfiguration"))
   {
     m_alarmConfiguration = jsonValue.GetObject("alarmConfiguration");
-
     m_alarmConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("autoRollbackConfiguration"))
   {
     m_autoRollbackConfiguration = jsonValue.GetObject("autoRollbackConfiguration");
-
     m_autoRollbackConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deploymentStyle"))
   {
     m_deploymentStyle = jsonValue.GetObject("deploymentStyle");
-
     m_deploymentStyleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outdatedInstancesStrategy"))
   {
     m_outdatedInstancesStrategy = OutdatedInstancesStrategyMapper::GetOutdatedInstancesStrategyForName(jsonValue.GetString("outdatedInstancesStrategy"));
-
     m_outdatedInstancesStrategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("blueGreenDeploymentConfiguration"))
   {
     m_blueGreenDeploymentConfiguration = jsonValue.GetObject("blueGreenDeploymentConfiguration");
-
     m_blueGreenDeploymentConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("loadBalancerInfo"))
   {
     m_loadBalancerInfo = jsonValue.GetObject("loadBalancerInfo");
-
     m_loadBalancerInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastSuccessfulDeployment"))
   {
     m_lastSuccessfulDeployment = jsonValue.GetObject("lastSuccessfulDeployment");
-
     m_lastSuccessfulDeploymentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastAttemptedDeployment"))
   {
     m_lastAttemptedDeployment = jsonValue.GetObject("lastAttemptedDeployment");
-
     m_lastAttemptedDeploymentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ec2TagSet"))
   {
     m_ec2TagSet = jsonValue.GetObject("ec2TagSet");
-
     m_ec2TagSetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("onPremisesTagSet"))
   {
     m_onPremisesTagSet = jsonValue.GetObject("onPremisesTagSet");
-
     m_onPremisesTagSetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("computePlatform"))
   {
     m_computePlatform = ComputePlatformMapper::GetComputePlatformForName(jsonValue.GetString("computePlatform"));
-
     m_computePlatformHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ecsServices"))
   {
     Aws::Utils::Array<JsonView> ecsServicesJsonList = jsonValue.GetArray("ecsServices");
@@ -224,14 +155,11 @@ DeploymentGroupInfo& DeploymentGroupInfo::operator =(JsonView jsonValue)
     }
     m_ecsServicesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("terminationHookEnabled"))
   {
     m_terminationHookEnabled = jsonValue.GetBool("terminationHookEnabled");
-
     m_terminationHookEnabledHasBeenSet = true;
   }
-
   return *this;
 }
 

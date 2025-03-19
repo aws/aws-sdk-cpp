@@ -18,15 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-InputSourceRequest::InputSourceRequest() : 
-    m_passwordParamHasBeenSet(false),
-    m_urlHasBeenSet(false),
-    m_usernameHasBeenSet(false)
-{
-}
-
 InputSourceRequest::InputSourceRequest(JsonView jsonValue)
-  : InputSourceRequest()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ InputSourceRequest& InputSourceRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("passwordParam"))
   {
     m_passwordParam = jsonValue.GetString("passwordParam");
-
     m_passwordParamHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("url"))
   {
     m_url = jsonValue.GetString("url");
-
     m_urlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("username"))
   {
     m_username = jsonValue.GetString("username");
-
     m_usernameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-FrameCaptureS3Settings::FrameCaptureS3Settings() : 
-    m_cannedAcl(S3CannedAcl::NOT_SET),
-    m_cannedAclHasBeenSet(false)
-{
-}
-
 FrameCaptureS3Settings::FrameCaptureS3Settings(JsonView jsonValue)
-  : FrameCaptureS3Settings()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ FrameCaptureS3Settings& FrameCaptureS3Settings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("cannedAcl"))
   {
     m_cannedAcl = S3CannedAclMapper::GetS3CannedAclForName(jsonValue.GetString("cannedAcl"));
-
     m_cannedAclHasBeenSet = true;
   }
-
   return *this;
 }
 

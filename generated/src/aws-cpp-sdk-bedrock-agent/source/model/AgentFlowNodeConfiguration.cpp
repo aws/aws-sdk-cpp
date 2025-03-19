@@ -18,13 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-AgentFlowNodeConfiguration::AgentFlowNodeConfiguration() : 
-    m_agentAliasArnHasBeenSet(false)
-{
-}
-
 AgentFlowNodeConfiguration::AgentFlowNodeConfiguration(JsonView jsonValue)
-  : AgentFlowNodeConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AgentFlowNodeConfiguration& AgentFlowNodeConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("agentAliasArn"))
   {
     m_agentAliasArn = jsonValue.GetString("agentAliasArn");
-
     m_agentAliasArnHasBeenSet = true;
   }
-
   return *this;
 }
 

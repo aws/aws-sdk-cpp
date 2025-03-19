@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-NamedEntityDefinitionMetric::NamedEntityDefinitionMetric() : 
-    m_aggregation(NamedEntityAggType::NOT_SET),
-    m_aggregationHasBeenSet(false),
-    m_aggregationFunctionParametersHasBeenSet(false)
-{
-}
-
 NamedEntityDefinitionMetric::NamedEntityDefinitionMetric(JsonView jsonValue)
-  : NamedEntityDefinitionMetric()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ NamedEntityDefinitionMetric& NamedEntityDefinitionMetric::operator =(JsonView js
   if(jsonValue.ValueExists("Aggregation"))
   {
     m_aggregation = NamedEntityAggTypeMapper::GetNamedEntityAggTypeForName(jsonValue.GetString("Aggregation"));
-
     m_aggregationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AggregationFunctionParameters"))
   {
     Aws::Map<Aws::String, JsonView> aggregationFunctionParametersJsonMap = jsonValue.GetObject("AggregationFunctionParameters").GetAllObjects();
@@ -49,7 +39,6 @@ NamedEntityDefinitionMetric& NamedEntityDefinitionMetric::operator =(JsonView js
     }
     m_aggregationFunctionParametersHasBeenSet = true;
   }
-
   return *this;
 }
 

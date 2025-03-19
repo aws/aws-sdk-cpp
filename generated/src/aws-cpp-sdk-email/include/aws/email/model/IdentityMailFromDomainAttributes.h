@@ -34,7 +34,7 @@ namespace Model
   class IdentityMailFromDomainAttributes
   {
   public:
-    AWS_SES_API IdentityMailFromDomainAttributes();
+    AWS_SES_API IdentityMailFromDomainAttributes() = default;
     AWS_SES_API IdentityMailFromDomainAttributes(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_SES_API IdentityMailFromDomainAttributes& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The custom MAIL FROM domain that the identity is configured to use.</p>
      */
-    inline const Aws::String& GetMailFromDomain() const{ return m_mailFromDomain; }
+    inline const Aws::String& GetMailFromDomain() const { return m_mailFromDomain; }
     inline bool MailFromDomainHasBeenSet() const { return m_mailFromDomainHasBeenSet; }
-    inline void SetMailFromDomain(const Aws::String& value) { m_mailFromDomainHasBeenSet = true; m_mailFromDomain = value; }
-    inline void SetMailFromDomain(Aws::String&& value) { m_mailFromDomainHasBeenSet = true; m_mailFromDomain = std::move(value); }
-    inline void SetMailFromDomain(const char* value) { m_mailFromDomainHasBeenSet = true; m_mailFromDomain.assign(value); }
-    inline IdentityMailFromDomainAttributes& WithMailFromDomain(const Aws::String& value) { SetMailFromDomain(value); return *this;}
-    inline IdentityMailFromDomainAttributes& WithMailFromDomain(Aws::String&& value) { SetMailFromDomain(std::move(value)); return *this;}
-    inline IdentityMailFromDomainAttributes& WithMailFromDomain(const char* value) { SetMailFromDomain(value); return *this;}
+    template<typename MailFromDomainT = Aws::String>
+    void SetMailFromDomain(MailFromDomainT&& value) { m_mailFromDomainHasBeenSet = true; m_mailFromDomain = std::forward<MailFromDomainT>(value); }
+    template<typename MailFromDomainT = Aws::String>
+    IdentityMailFromDomainAttributes& WithMailFromDomain(MailFromDomainT&& value) { SetMailFromDomain(std::forward<MailFromDomainT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,12 +62,10 @@ namespace Model
      * the verified identity sends an email. All other states indicate that Amazon SES
      * takes the action described by <code>BehaviorOnMXFailure</code>.</p>
      */
-    inline const CustomMailFromStatus& GetMailFromDomainStatus() const{ return m_mailFromDomainStatus; }
+    inline CustomMailFromStatus GetMailFromDomainStatus() const { return m_mailFromDomainStatus; }
     inline bool MailFromDomainStatusHasBeenSet() const { return m_mailFromDomainStatusHasBeenSet; }
-    inline void SetMailFromDomainStatus(const CustomMailFromStatus& value) { m_mailFromDomainStatusHasBeenSet = true; m_mailFromDomainStatus = value; }
-    inline void SetMailFromDomainStatus(CustomMailFromStatus&& value) { m_mailFromDomainStatusHasBeenSet = true; m_mailFromDomainStatus = std::move(value); }
-    inline IdentityMailFromDomainAttributes& WithMailFromDomainStatus(const CustomMailFromStatus& value) { SetMailFromDomainStatus(value); return *this;}
-    inline IdentityMailFromDomainAttributes& WithMailFromDomainStatus(CustomMailFromStatus&& value) { SetMailFromDomainStatus(std::move(value)); return *this;}
+    inline void SetMailFromDomainStatus(CustomMailFromStatus value) { m_mailFromDomainStatusHasBeenSet = true; m_mailFromDomainStatus = value; }
+    inline IdentityMailFromDomainAttributes& WithMailFromDomainStatus(CustomMailFromStatus value) { SetMailFromDomainStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -84,22 +80,20 @@ namespace Model
      * this behavior are <code>Pending</code>, <code>Failed</code>, and
      * <code>TemporaryFailure</code>.</p>
      */
-    inline const BehaviorOnMXFailure& GetBehaviorOnMXFailure() const{ return m_behaviorOnMXFailure; }
+    inline BehaviorOnMXFailure GetBehaviorOnMXFailure() const { return m_behaviorOnMXFailure; }
     inline bool BehaviorOnMXFailureHasBeenSet() const { return m_behaviorOnMXFailureHasBeenSet; }
-    inline void SetBehaviorOnMXFailure(const BehaviorOnMXFailure& value) { m_behaviorOnMXFailureHasBeenSet = true; m_behaviorOnMXFailure = value; }
-    inline void SetBehaviorOnMXFailure(BehaviorOnMXFailure&& value) { m_behaviorOnMXFailureHasBeenSet = true; m_behaviorOnMXFailure = std::move(value); }
-    inline IdentityMailFromDomainAttributes& WithBehaviorOnMXFailure(const BehaviorOnMXFailure& value) { SetBehaviorOnMXFailure(value); return *this;}
-    inline IdentityMailFromDomainAttributes& WithBehaviorOnMXFailure(BehaviorOnMXFailure&& value) { SetBehaviorOnMXFailure(std::move(value)); return *this;}
+    inline void SetBehaviorOnMXFailure(BehaviorOnMXFailure value) { m_behaviorOnMXFailureHasBeenSet = true; m_behaviorOnMXFailure = value; }
+    inline IdentityMailFromDomainAttributes& WithBehaviorOnMXFailure(BehaviorOnMXFailure value) { SetBehaviorOnMXFailure(value); return *this;}
     ///@}
   private:
 
     Aws::String m_mailFromDomain;
     bool m_mailFromDomainHasBeenSet = false;
 
-    CustomMailFromStatus m_mailFromDomainStatus;
+    CustomMailFromStatus m_mailFromDomainStatus{CustomMailFromStatus::NOT_SET};
     bool m_mailFromDomainStatusHasBeenSet = false;
 
-    BehaviorOnMXFailure m_behaviorOnMXFailure;
+    BehaviorOnMXFailure m_behaviorOnMXFailure{BehaviorOnMXFailure::NOT_SET};
     bool m_behaviorOnMXFailureHasBeenSet = false;
   };
 

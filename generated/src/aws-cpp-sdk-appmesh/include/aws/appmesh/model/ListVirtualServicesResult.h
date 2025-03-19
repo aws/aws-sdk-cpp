@@ -34,7 +34,7 @@ namespace Model
   class ListVirtualServicesResult
   {
   public:
-    AWS_APPMESH_API ListVirtualServicesResult();
+    AWS_APPMESH_API ListVirtualServicesResult() = default;
     AWS_APPMESH_API ListVirtualServicesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPMESH_API ListVirtualServicesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -47,45 +47,44 @@ namespace Model
      * this value to retrieve the next page of results. This value is <code>null</code>
      * when there are no more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListVirtualServicesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListVirtualServicesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListVirtualServicesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListVirtualServicesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of existing virtual services for the specified service mesh.</p>
      */
-    inline const Aws::Vector<VirtualServiceRef>& GetVirtualServices() const{ return m_virtualServices; }
-    inline void SetVirtualServices(const Aws::Vector<VirtualServiceRef>& value) { m_virtualServices = value; }
-    inline void SetVirtualServices(Aws::Vector<VirtualServiceRef>&& value) { m_virtualServices = std::move(value); }
-    inline ListVirtualServicesResult& WithVirtualServices(const Aws::Vector<VirtualServiceRef>& value) { SetVirtualServices(value); return *this;}
-    inline ListVirtualServicesResult& WithVirtualServices(Aws::Vector<VirtualServiceRef>&& value) { SetVirtualServices(std::move(value)); return *this;}
-    inline ListVirtualServicesResult& AddVirtualServices(const VirtualServiceRef& value) { m_virtualServices.push_back(value); return *this; }
-    inline ListVirtualServicesResult& AddVirtualServices(VirtualServiceRef&& value) { m_virtualServices.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<VirtualServiceRef>& GetVirtualServices() const { return m_virtualServices; }
+    template<typename VirtualServicesT = Aws::Vector<VirtualServiceRef>>
+    void SetVirtualServices(VirtualServicesT&& value) { m_virtualServicesHasBeenSet = true; m_virtualServices = std::forward<VirtualServicesT>(value); }
+    template<typename VirtualServicesT = Aws::Vector<VirtualServiceRef>>
+    ListVirtualServicesResult& WithVirtualServices(VirtualServicesT&& value) { SetVirtualServices(std::forward<VirtualServicesT>(value)); return *this;}
+    template<typename VirtualServicesT = VirtualServiceRef>
+    ListVirtualServicesResult& AddVirtualServices(VirtualServicesT&& value) { m_virtualServicesHasBeenSet = true; m_virtualServices.emplace_back(std::forward<VirtualServicesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListVirtualServicesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListVirtualServicesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListVirtualServicesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListVirtualServicesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<VirtualServiceRef> m_virtualServices;
+    bool m_virtualServicesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AllocateHostsResponse::AllocateHostsResponse()
-{
-}
-
 AllocateHostsResponse::AllocateHostsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ AllocateHostsResponse& AllocateHostsResponse::operator =(const Aws::AmazonWebSer
     if(!hostIdsNode.IsNull())
     {
       XmlNode hostIdsMember = hostIdsNode.FirstChild("item");
+      m_hostIdsHasBeenSet = !hostIdsMember.IsNull();
       while(!hostIdsMember.IsNull())
       {
         m_hostIds.push_back(hostIdsMember.GetText());
         hostIdsMember = hostIdsMember.NextNode("item");
       }
 
+      m_hostIdsHasBeenSet = true;
     }
   }
 
@@ -56,6 +54,7 @@ AllocateHostsResponse& AllocateHostsResponse::operator =(const Aws::AmazonWebSer
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::AllocateHostsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

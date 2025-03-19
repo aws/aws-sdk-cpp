@@ -12,11 +12,6 @@ using namespace Aws::Route53RecoveryReadiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetReadinessCheckRequest::GetReadinessCheckRequest() : 
-    m_readinessCheckNameHasBeenSet(false)
-{
-}
-
 Aws::String GetReadinessCheckRequest::SerializePayload() const
 {
   return {};

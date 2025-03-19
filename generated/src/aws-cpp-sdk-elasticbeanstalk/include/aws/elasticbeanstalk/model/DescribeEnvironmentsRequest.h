@@ -26,7 +26,7 @@ namespace Model
   class DescribeEnvironmentsRequest : public ElasticBeanstalkRequest
   {
   public:
-    AWS_ELASTICBEANSTALK_API DescribeEnvironmentsRequest();
+    AWS_ELASTICBEANSTALK_API DescribeEnvironmentsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
      * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
      * include only those that are associated with this application.</p>
      */
-    inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
+    inline const Aws::String& GetApplicationName() const { return m_applicationName; }
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
-    inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
-    inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
-    inline DescribeEnvironmentsRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
-    inline DescribeEnvironmentsRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
-    inline DescribeEnvironmentsRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+    template<typename ApplicationNameT = Aws::String>
+    void SetApplicationName(ApplicationNameT&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::forward<ApplicationNameT>(value); }
+    template<typename ApplicationNameT = Aws::String>
+    DescribeEnvironmentsRequest& WithApplicationName(ApplicationNameT&& value) { SetApplicationName(std::forward<ApplicationNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
      * include only those that are associated with this application version.</p>
      */
-    inline const Aws::String& GetVersionLabel() const{ return m_versionLabel; }
+    inline const Aws::String& GetVersionLabel() const { return m_versionLabel; }
     inline bool VersionLabelHasBeenSet() const { return m_versionLabelHasBeenSet; }
-    inline void SetVersionLabel(const Aws::String& value) { m_versionLabelHasBeenSet = true; m_versionLabel = value; }
-    inline void SetVersionLabel(Aws::String&& value) { m_versionLabelHasBeenSet = true; m_versionLabel = std::move(value); }
-    inline void SetVersionLabel(const char* value) { m_versionLabelHasBeenSet = true; m_versionLabel.assign(value); }
-    inline DescribeEnvironmentsRequest& WithVersionLabel(const Aws::String& value) { SetVersionLabel(value); return *this;}
-    inline DescribeEnvironmentsRequest& WithVersionLabel(Aws::String&& value) { SetVersionLabel(std::move(value)); return *this;}
-    inline DescribeEnvironmentsRequest& WithVersionLabel(const char* value) { SetVersionLabel(value); return *this;}
+    template<typename VersionLabelT = Aws::String>
+    void SetVersionLabel(VersionLabelT&& value) { m_versionLabelHasBeenSet = true; m_versionLabel = std::forward<VersionLabelT>(value); }
+    template<typename VersionLabelT = Aws::String>
+    DescribeEnvironmentsRequest& WithVersionLabel(VersionLabelT&& value) { SetVersionLabel(std::forward<VersionLabelT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,15 +72,14 @@ namespace Model
      * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
      * include only those that have the specified IDs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetEnvironmentIds() const{ return m_environmentIds; }
+    inline const Aws::Vector<Aws::String>& GetEnvironmentIds() const { return m_environmentIds; }
     inline bool EnvironmentIdsHasBeenSet() const { return m_environmentIdsHasBeenSet; }
-    inline void SetEnvironmentIds(const Aws::Vector<Aws::String>& value) { m_environmentIdsHasBeenSet = true; m_environmentIds = value; }
-    inline void SetEnvironmentIds(Aws::Vector<Aws::String>&& value) { m_environmentIdsHasBeenSet = true; m_environmentIds = std::move(value); }
-    inline DescribeEnvironmentsRequest& WithEnvironmentIds(const Aws::Vector<Aws::String>& value) { SetEnvironmentIds(value); return *this;}
-    inline DescribeEnvironmentsRequest& WithEnvironmentIds(Aws::Vector<Aws::String>&& value) { SetEnvironmentIds(std::move(value)); return *this;}
-    inline DescribeEnvironmentsRequest& AddEnvironmentIds(const Aws::String& value) { m_environmentIdsHasBeenSet = true; m_environmentIds.push_back(value); return *this; }
-    inline DescribeEnvironmentsRequest& AddEnvironmentIds(Aws::String&& value) { m_environmentIdsHasBeenSet = true; m_environmentIds.push_back(std::move(value)); return *this; }
-    inline DescribeEnvironmentsRequest& AddEnvironmentIds(const char* value) { m_environmentIdsHasBeenSet = true; m_environmentIds.push_back(value); return *this; }
+    template<typename EnvironmentIdsT = Aws::Vector<Aws::String>>
+    void SetEnvironmentIds(EnvironmentIdsT&& value) { m_environmentIdsHasBeenSet = true; m_environmentIds = std::forward<EnvironmentIdsT>(value); }
+    template<typename EnvironmentIdsT = Aws::Vector<Aws::String>>
+    DescribeEnvironmentsRequest& WithEnvironmentIds(EnvironmentIdsT&& value) { SetEnvironmentIds(std::forward<EnvironmentIdsT>(value)); return *this;}
+    template<typename EnvironmentIdsT = Aws::String>
+    DescribeEnvironmentsRequest& AddEnvironmentIds(EnvironmentIdsT&& value) { m_environmentIdsHasBeenSet = true; m_environmentIds.emplace_back(std::forward<EnvironmentIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -92,15 +87,14 @@ namespace Model
      * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
      * include only those that have the specified names.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetEnvironmentNames() const{ return m_environmentNames; }
+    inline const Aws::Vector<Aws::String>& GetEnvironmentNames() const { return m_environmentNames; }
     inline bool EnvironmentNamesHasBeenSet() const { return m_environmentNamesHasBeenSet; }
-    inline void SetEnvironmentNames(const Aws::Vector<Aws::String>& value) { m_environmentNamesHasBeenSet = true; m_environmentNames = value; }
-    inline void SetEnvironmentNames(Aws::Vector<Aws::String>&& value) { m_environmentNamesHasBeenSet = true; m_environmentNames = std::move(value); }
-    inline DescribeEnvironmentsRequest& WithEnvironmentNames(const Aws::Vector<Aws::String>& value) { SetEnvironmentNames(value); return *this;}
-    inline DescribeEnvironmentsRequest& WithEnvironmentNames(Aws::Vector<Aws::String>&& value) { SetEnvironmentNames(std::move(value)); return *this;}
-    inline DescribeEnvironmentsRequest& AddEnvironmentNames(const Aws::String& value) { m_environmentNamesHasBeenSet = true; m_environmentNames.push_back(value); return *this; }
-    inline DescribeEnvironmentsRequest& AddEnvironmentNames(Aws::String&& value) { m_environmentNamesHasBeenSet = true; m_environmentNames.push_back(std::move(value)); return *this; }
-    inline DescribeEnvironmentsRequest& AddEnvironmentNames(const char* value) { m_environmentNamesHasBeenSet = true; m_environmentNames.push_back(value); return *this; }
+    template<typename EnvironmentNamesT = Aws::Vector<Aws::String>>
+    void SetEnvironmentNames(EnvironmentNamesT&& value) { m_environmentNamesHasBeenSet = true; m_environmentNames = std::forward<EnvironmentNamesT>(value); }
+    template<typename EnvironmentNamesT = Aws::Vector<Aws::String>>
+    DescribeEnvironmentsRequest& WithEnvironmentNames(EnvironmentNamesT&& value) { SetEnvironmentNames(std::forward<EnvironmentNamesT>(value)); return *this;}
+    template<typename EnvironmentNamesT = Aws::String>
+    DescribeEnvironmentsRequest& AddEnvironmentNames(EnvironmentNamesT&& value) { m_environmentNamesHasBeenSet = true; m_environmentNames.emplace_back(std::forward<EnvironmentNamesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -109,7 +103,7 @@ namespace Model
      * Environments that have been deleted after <code>IncludedDeletedBackTo</code> are
      * displayed.</p> <p> <code>false</code>: Do not include deleted environments.</p>
      */
-    inline bool GetIncludeDeleted() const{ return m_includeDeleted; }
+    inline bool GetIncludeDeleted() const { return m_includeDeleted; }
     inline bool IncludeDeletedHasBeenSet() const { return m_includeDeletedHasBeenSet; }
     inline void SetIncludeDeleted(bool value) { m_includeDeletedHasBeenSet = true; m_includeDeleted = value; }
     inline DescribeEnvironmentsRequest& WithIncludeDeleted(bool value) { SetIncludeDeleted(value); return *this;}
@@ -120,12 +114,12 @@ namespace Model
      * <p> If specified when <code>IncludeDeleted</code> is set to <code>true</code>,
      * then environments deleted after this date are displayed. </p>
      */
-    inline const Aws::Utils::DateTime& GetIncludedDeletedBackTo() const{ return m_includedDeletedBackTo; }
+    inline const Aws::Utils::DateTime& GetIncludedDeletedBackTo() const { return m_includedDeletedBackTo; }
     inline bool IncludedDeletedBackToHasBeenSet() const { return m_includedDeletedBackToHasBeenSet; }
-    inline void SetIncludedDeletedBackTo(const Aws::Utils::DateTime& value) { m_includedDeletedBackToHasBeenSet = true; m_includedDeletedBackTo = value; }
-    inline void SetIncludedDeletedBackTo(Aws::Utils::DateTime&& value) { m_includedDeletedBackToHasBeenSet = true; m_includedDeletedBackTo = std::move(value); }
-    inline DescribeEnvironmentsRequest& WithIncludedDeletedBackTo(const Aws::Utils::DateTime& value) { SetIncludedDeletedBackTo(value); return *this;}
-    inline DescribeEnvironmentsRequest& WithIncludedDeletedBackTo(Aws::Utils::DateTime&& value) { SetIncludedDeletedBackTo(std::move(value)); return *this;}
+    template<typename IncludedDeletedBackToT = Aws::Utils::DateTime>
+    void SetIncludedDeletedBackTo(IncludedDeletedBackToT&& value) { m_includedDeletedBackToHasBeenSet = true; m_includedDeletedBackTo = std::forward<IncludedDeletedBackToT>(value); }
+    template<typename IncludedDeletedBackToT = Aws::Utils::DateTime>
+    DescribeEnvironmentsRequest& WithIncludedDeletedBackTo(IncludedDeletedBackToT&& value) { SetIncludedDeletedBackTo(std::forward<IncludedDeletedBackToT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,7 +128,7 @@ namespace Model
      * in each response.</p> <p>If no <code>MaxRecords</code> is specified, all
      * available environments are retrieved in a single response.</p>
      */
-    inline int GetMaxRecords() const{ return m_maxRecords; }
+    inline int GetMaxRecords() const { return m_maxRecords; }
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
     inline DescribeEnvironmentsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
@@ -147,14 +141,12 @@ namespace Model
      * the ones specified in the initial request.</p> <p>If no <code>NextToken</code>
      * is specified, the first page is retrieved.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeEnvironmentsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeEnvironmentsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeEnvironmentsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeEnvironmentsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -170,13 +162,13 @@ namespace Model
     Aws::Vector<Aws::String> m_environmentNames;
     bool m_environmentNamesHasBeenSet = false;
 
-    bool m_includeDeleted;
+    bool m_includeDeleted{false};
     bool m_includeDeletedHasBeenSet = false;
 
-    Aws::Utils::DateTime m_includedDeletedBackTo;
+    Aws::Utils::DateTime m_includedDeletedBackTo{};
     bool m_includedDeletedBackToHasBeenSet = false;
 
-    int m_maxRecords;
+    int m_maxRecords{0};
     bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_nextToken;

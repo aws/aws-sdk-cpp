@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetComputeAccessResult::GetComputeAccessResult()
-{
-}
-
 GetComputeAccessResult::GetComputeAccessResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,39 +28,33 @@ GetComputeAccessResult& GetComputeAccessResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("FleetId"))
   {
     m_fleetId = jsonValue.GetString("FleetId");
-
+    m_fleetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FleetArn"))
   {
     m_fleetArn = jsonValue.GetString("FleetArn");
-
+    m_fleetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComputeName"))
   {
     m_computeName = jsonValue.GetString("ComputeName");
-
+    m_computeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComputeArn"))
   {
     m_computeArn = jsonValue.GetString("ComputeArn");
-
+    m_computeArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Credentials"))
   {
     m_credentials = jsonValue.GetObject("Credentials");
-
+    m_credentialsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Target"))
   {
     m_target = jsonValue.GetString("Target");
-
+    m_targetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContainerIdentifiers"))
   {
     Aws::Utils::Array<JsonView> containerIdentifiersJsonList = jsonValue.GetArray("ContainerIdentifiers");
@@ -72,14 +62,15 @@ GetComputeAccessResult& GetComputeAccessResult::operator =(const Aws::AmazonWebS
     {
       m_containerIdentifiers.push_back(containerIdentifiersJsonList[containerIdentifiersIndex].AsObject());
     }
+    m_containerIdentifiersHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

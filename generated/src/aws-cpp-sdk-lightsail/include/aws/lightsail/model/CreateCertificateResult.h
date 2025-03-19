@@ -30,7 +30,7 @@ namespace Model
   class CreateCertificateResult
   {
   public:
-    AWS_LIGHTSAIL_API CreateCertificateResult();
+    AWS_LIGHTSAIL_API CreateCertificateResult() = default;
     AWS_LIGHTSAIL_API CreateCertificateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LIGHTSAIL_API CreateCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,11 +39,11 @@ namespace Model
     /**
      * <p>An object that describes the certificate created.</p>
      */
-    inline const CertificateSummary& GetCertificate() const{ return m_certificate; }
-    inline void SetCertificate(const CertificateSummary& value) { m_certificate = value; }
-    inline void SetCertificate(CertificateSummary&& value) { m_certificate = std::move(value); }
-    inline CreateCertificateResult& WithCertificate(const CertificateSummary& value) { SetCertificate(value); return *this;}
-    inline CreateCertificateResult& WithCertificate(CertificateSummary&& value) { SetCertificate(std::move(value)); return *this;}
+    inline const CertificateSummary& GetCertificate() const { return m_certificate; }
+    template<typename CertificateT = CertificateSummary>
+    void SetCertificate(CertificateT&& value) { m_certificateHasBeenSet = true; m_certificate = std::forward<CertificateT>(value); }
+    template<typename CertificateT = CertificateSummary>
+    CreateCertificateResult& WithCertificate(CertificateT&& value) { SetCertificate(std::forward<CertificateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,32 +52,33 @@ namespace Model
      * status of the request, the timestamp of the request, and the resources affected
      * by the request.</p>
      */
-    inline const Aws::Vector<Operation>& GetOperations() const{ return m_operations; }
-    inline void SetOperations(const Aws::Vector<Operation>& value) { m_operations = value; }
-    inline void SetOperations(Aws::Vector<Operation>&& value) { m_operations = std::move(value); }
-    inline CreateCertificateResult& WithOperations(const Aws::Vector<Operation>& value) { SetOperations(value); return *this;}
-    inline CreateCertificateResult& WithOperations(Aws::Vector<Operation>&& value) { SetOperations(std::move(value)); return *this;}
-    inline CreateCertificateResult& AddOperations(const Operation& value) { m_operations.push_back(value); return *this; }
-    inline CreateCertificateResult& AddOperations(Operation&& value) { m_operations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Operation>& GetOperations() const { return m_operations; }
+    template<typename OperationsT = Aws::Vector<Operation>>
+    void SetOperations(OperationsT&& value) { m_operationsHasBeenSet = true; m_operations = std::forward<OperationsT>(value); }
+    template<typename OperationsT = Aws::Vector<Operation>>
+    CreateCertificateResult& WithOperations(OperationsT&& value) { SetOperations(std::forward<OperationsT>(value)); return *this;}
+    template<typename OperationsT = Operation>
+    CreateCertificateResult& AddOperations(OperationsT&& value) { m_operationsHasBeenSet = true; m_operations.emplace_back(std::forward<OperationsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateCertificateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateCertificateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateCertificateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateCertificateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     CertificateSummary m_certificate;
+    bool m_certificateHasBeenSet = false;
 
     Aws::Vector<Operation> m_operations;
+    bool m_operationsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

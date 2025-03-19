@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutDataSetRefreshPropertiesResult::PutDataSetRefreshPropertiesResult() : 
-    m_status(0)
-{
-}
-
 PutDataSetRefreshPropertiesResult::PutDataSetRefreshPropertiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : PutDataSetRefreshPropertiesResult()
 {
   *this = result;
 }
@@ -37,10 +31,11 @@ PutDataSetRefreshPropertiesResult& PutDataSetRefreshPropertiesResult::operator =
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

@@ -18,16 +18,7 @@ namespace Route53RecoveryReadiness
 namespace Model
 {
 
-RecoveryGroupOutput::RecoveryGroupOutput() : 
-    m_cellsHasBeenSet(false),
-    m_recoveryGroupArnHasBeenSet(false),
-    m_recoveryGroupNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 RecoveryGroupOutput::RecoveryGroupOutput(JsonView jsonValue)
-  : RecoveryGroupOutput()
 {
   *this = jsonValue;
 }
@@ -43,21 +34,16 @@ RecoveryGroupOutput& RecoveryGroupOutput::operator =(JsonView jsonValue)
     }
     m_cellsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recoveryGroupArn"))
   {
     m_recoveryGroupArn = jsonValue.GetString("recoveryGroupArn");
-
     m_recoveryGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recoveryGroupName"))
   {
     m_recoveryGroupName = jsonValue.GetString("recoveryGroupName");
-
     m_recoveryGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -67,7 +53,6 @@ RecoveryGroupOutput& RecoveryGroupOutput::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

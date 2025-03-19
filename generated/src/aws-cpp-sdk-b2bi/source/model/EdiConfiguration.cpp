@@ -18,18 +18,7 @@ namespace B2BI
 namespace Model
 {
 
-EdiConfiguration::EdiConfiguration() : 
-    m_capabilityDirection(CapabilityDirection::NOT_SET),
-    m_capabilityDirectionHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_inputLocationHasBeenSet(false),
-    m_outputLocationHasBeenSet(false),
-    m_transformerIdHasBeenSet(false)
-{
-}
-
 EdiConfiguration::EdiConfiguration(JsonView jsonValue)
-  : EdiConfiguration()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ EdiConfiguration& EdiConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("capabilityDirection"))
   {
     m_capabilityDirection = CapabilityDirectionMapper::GetCapabilityDirectionForName(jsonValue.GetString("capabilityDirection"));
-
     m_capabilityDirectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetObject("type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputLocation"))
   {
     m_inputLocation = jsonValue.GetObject("inputLocation");
-
     m_inputLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputLocation"))
   {
     m_outputLocation = jsonValue.GetObject("outputLocation");
-
     m_outputLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("transformerId"))
   {
     m_transformerId = jsonValue.GetString("transformerId");
-
     m_transformerIdHasBeenSet = true;
   }
-
   return *this;
 }
 

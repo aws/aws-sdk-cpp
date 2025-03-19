@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateLensVersionResult::CreateLensVersionResult()
-{
-}
-
 CreateLensVersionResult::CreateLensVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ CreateLensVersionResult& CreateLensVersionResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("LensArn"))
   {
     m_lensArn = jsonValue.GetString("LensArn");
-
+    m_lensArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LensVersion"))
   {
     m_lensVersion = jsonValue.GetString("LensVersion");
-
+    m_lensVersionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

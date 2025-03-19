@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-PrivateDnsNameConfiguration::PrivateDnsNameConfiguration() : 
-    m_state(DnsNameState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 PrivateDnsNameConfiguration::PrivateDnsNameConfiguration(const XmlNode& xmlNode)
-  : PrivateDnsNameConfiguration()
 {
   *this = xmlNode;
 }
@@ -44,7 +34,7 @@ PrivateDnsNameConfiguration& PrivateDnsNameConfiguration::operator =(const XmlNo
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = DnsNameStateMapper::GetDnsNameStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = DnsNameStateMapper::GetDnsNameStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode typeNode = resultNode.FirstChild("type");

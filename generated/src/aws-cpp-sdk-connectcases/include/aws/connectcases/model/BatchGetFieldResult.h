@@ -30,7 +30,7 @@ namespace Model
   class BatchGetFieldResult
   {
   public:
-    AWS_CONNECTCASES_API BatchGetFieldResult();
+    AWS_CONNECTCASES_API BatchGetFieldResult() = default;
     AWS_CONNECTCASES_API BatchGetFieldResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECTCASES_API BatchGetFieldResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,46 @@ namespace Model
     /**
      * <p>A list of field errors. </p>
      */
-    inline const Aws::Vector<FieldError>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<FieldError>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<FieldError>&& value) { m_errors = std::move(value); }
-    inline BatchGetFieldResult& WithErrors(const Aws::Vector<FieldError>& value) { SetErrors(value); return *this;}
-    inline BatchGetFieldResult& WithErrors(Aws::Vector<FieldError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline BatchGetFieldResult& AddErrors(const FieldError& value) { m_errors.push_back(value); return *this; }
-    inline BatchGetFieldResult& AddErrors(FieldError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FieldError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<FieldError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<FieldError>>
+    BatchGetFieldResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = FieldError>
+    BatchGetFieldResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of detailed field information. </p>
      */
-    inline const Aws::Vector<GetFieldResponse>& GetFields() const{ return m_fields; }
-    inline void SetFields(const Aws::Vector<GetFieldResponse>& value) { m_fields = value; }
-    inline void SetFields(Aws::Vector<GetFieldResponse>&& value) { m_fields = std::move(value); }
-    inline BatchGetFieldResult& WithFields(const Aws::Vector<GetFieldResponse>& value) { SetFields(value); return *this;}
-    inline BatchGetFieldResult& WithFields(Aws::Vector<GetFieldResponse>&& value) { SetFields(std::move(value)); return *this;}
-    inline BatchGetFieldResult& AddFields(const GetFieldResponse& value) { m_fields.push_back(value); return *this; }
-    inline BatchGetFieldResult& AddFields(GetFieldResponse&& value) { m_fields.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<GetFieldResponse>& GetFields() const { return m_fields; }
+    template<typename FieldsT = Aws::Vector<GetFieldResponse>>
+    void SetFields(FieldsT&& value) { m_fieldsHasBeenSet = true; m_fields = std::forward<FieldsT>(value); }
+    template<typename FieldsT = Aws::Vector<GetFieldResponse>>
+    BatchGetFieldResult& WithFields(FieldsT&& value) { SetFields(std::forward<FieldsT>(value)); return *this;}
+    template<typename FieldsT = GetFieldResponse>
+    BatchGetFieldResult& AddFields(FieldsT&& value) { m_fieldsHasBeenSet = true; m_fields.emplace_back(std::forward<FieldsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchGetFieldResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchGetFieldResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchGetFieldResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchGetFieldResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<FieldError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::Vector<GetFieldResponse> m_fields;
+    bool m_fieldsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

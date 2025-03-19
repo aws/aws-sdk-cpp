@@ -12,11 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSchemaRequest::GetSchemaRequest() : 
-    m_schemaIdHasBeenSet(false)
-{
-}
-
 Aws::String GetSchemaRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -27,7 +27,7 @@ namespace Model
   class GetTableMetadataLocationResult
   {
   public:
-    AWS_S3TABLES_API GetTableMetadataLocationResult();
+    AWS_S3TABLES_API GetTableMetadataLocationResult() = default;
     AWS_S3TABLES_API GetTableMetadataLocationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_S3TABLES_API GetTableMetadataLocationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,60 +36,56 @@ namespace Model
     /**
      * <p>The version token.</p>
      */
-    inline const Aws::String& GetVersionToken() const{ return m_versionToken; }
-    inline void SetVersionToken(const Aws::String& value) { m_versionToken = value; }
-    inline void SetVersionToken(Aws::String&& value) { m_versionToken = std::move(value); }
-    inline void SetVersionToken(const char* value) { m_versionToken.assign(value); }
-    inline GetTableMetadataLocationResult& WithVersionToken(const Aws::String& value) { SetVersionToken(value); return *this;}
-    inline GetTableMetadataLocationResult& WithVersionToken(Aws::String&& value) { SetVersionToken(std::move(value)); return *this;}
-    inline GetTableMetadataLocationResult& WithVersionToken(const char* value) { SetVersionToken(value); return *this;}
+    inline const Aws::String& GetVersionToken() const { return m_versionToken; }
+    template<typename VersionTokenT = Aws::String>
+    void SetVersionToken(VersionTokenT&& value) { m_versionTokenHasBeenSet = true; m_versionToken = std::forward<VersionTokenT>(value); }
+    template<typename VersionTokenT = Aws::String>
+    GetTableMetadataLocationResult& WithVersionToken(VersionTokenT&& value) { SetVersionToken(std::forward<VersionTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The metadata location.</p>
      */
-    inline const Aws::String& GetMetadataLocation() const{ return m_metadataLocation; }
-    inline void SetMetadataLocation(const Aws::String& value) { m_metadataLocation = value; }
-    inline void SetMetadataLocation(Aws::String&& value) { m_metadataLocation = std::move(value); }
-    inline void SetMetadataLocation(const char* value) { m_metadataLocation.assign(value); }
-    inline GetTableMetadataLocationResult& WithMetadataLocation(const Aws::String& value) { SetMetadataLocation(value); return *this;}
-    inline GetTableMetadataLocationResult& WithMetadataLocation(Aws::String&& value) { SetMetadataLocation(std::move(value)); return *this;}
-    inline GetTableMetadataLocationResult& WithMetadataLocation(const char* value) { SetMetadataLocation(value); return *this;}
+    inline const Aws::String& GetMetadataLocation() const { return m_metadataLocation; }
+    template<typename MetadataLocationT = Aws::String>
+    void SetMetadataLocation(MetadataLocationT&& value) { m_metadataLocationHasBeenSet = true; m_metadataLocation = std::forward<MetadataLocationT>(value); }
+    template<typename MetadataLocationT = Aws::String>
+    GetTableMetadataLocationResult& WithMetadataLocation(MetadataLocationT&& value) { SetMetadataLocation(std::forward<MetadataLocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The warehouse location.</p>
      */
-    inline const Aws::String& GetWarehouseLocation() const{ return m_warehouseLocation; }
-    inline void SetWarehouseLocation(const Aws::String& value) { m_warehouseLocation = value; }
-    inline void SetWarehouseLocation(Aws::String&& value) { m_warehouseLocation = std::move(value); }
-    inline void SetWarehouseLocation(const char* value) { m_warehouseLocation.assign(value); }
-    inline GetTableMetadataLocationResult& WithWarehouseLocation(const Aws::String& value) { SetWarehouseLocation(value); return *this;}
-    inline GetTableMetadataLocationResult& WithWarehouseLocation(Aws::String&& value) { SetWarehouseLocation(std::move(value)); return *this;}
-    inline GetTableMetadataLocationResult& WithWarehouseLocation(const char* value) { SetWarehouseLocation(value); return *this;}
+    inline const Aws::String& GetWarehouseLocation() const { return m_warehouseLocation; }
+    template<typename WarehouseLocationT = Aws::String>
+    void SetWarehouseLocation(WarehouseLocationT&& value) { m_warehouseLocationHasBeenSet = true; m_warehouseLocation = std::forward<WarehouseLocationT>(value); }
+    template<typename WarehouseLocationT = Aws::String>
+    GetTableMetadataLocationResult& WithWarehouseLocation(WarehouseLocationT&& value) { SetWarehouseLocation(std::forward<WarehouseLocationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetTableMetadataLocationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetTableMetadataLocationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetTableMetadataLocationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetTableMetadataLocationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_versionToken;
+    bool m_versionTokenHasBeenSet = false;
 
     Aws::String m_metadataLocation;
+    bool m_metadataLocationHasBeenSet = false;
 
     Aws::String m_warehouseLocation;
+    bool m_warehouseLocationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,17 +12,6 @@ using namespace Aws::KMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ReplicateKeyRequest::ReplicateKeyRequest() : 
-    m_keyIdHasBeenSet(false),
-    m_replicaRegionHasBeenSet(false),
-    m_policyHasBeenSet(false),
-    m_bypassPolicyLockoutSafetyCheck(false),
-    m_bypassPolicyLockoutSafetyCheckHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String ReplicateKeyRequest::SerializePayload() const
 {
   JsonValue payload;

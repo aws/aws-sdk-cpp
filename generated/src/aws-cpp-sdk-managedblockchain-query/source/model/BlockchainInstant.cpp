@@ -18,13 +18,7 @@ namespace ManagedBlockchainQuery
 namespace Model
 {
 
-BlockchainInstant::BlockchainInstant() : 
-    m_timeHasBeenSet(false)
-{
-}
-
 BlockchainInstant::BlockchainInstant(JsonView jsonValue)
-  : BlockchainInstant()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ BlockchainInstant& BlockchainInstant::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("time"))
   {
     m_time = jsonValue.GetDouble("time");
-
     m_timeHasBeenSet = true;
   }
-
   return *this;
 }
 

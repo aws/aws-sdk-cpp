@@ -18,16 +18,7 @@ namespace LexRuntimeV2
 namespace Model
 {
 
-TextInputEvent::TextInputEvent() : 
-    m_textHasBeenSet(false),
-    m_eventIdHasBeenSet(false),
-    m_clientTimestampMillis(0),
-    m_clientTimestampMillisHasBeenSet(false)
-{
-}
-
 TextInputEvent::TextInputEvent(JsonView jsonValue)
-  : TextInputEvent()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ TextInputEvent& TextInputEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetString("text");
-
     m_textHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventId"))
   {
     m_eventId = jsonValue.GetString("eventId");
-
     m_eventIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientTimestampMillis"))
   {
     m_clientTimestampMillis = jsonValue.GetInt64("clientTimestampMillis");
-
     m_clientTimestampMillisHasBeenSet = true;
   }
-
   return *this;
 }
 

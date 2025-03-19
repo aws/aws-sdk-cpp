@@ -29,7 +29,7 @@ namespace Model
   class UpdateListenerResult
   {
   public:
-    AWS_VPCLATTICE_API UpdateListenerResult();
+    AWS_VPCLATTICE_API UpdateListenerResult() = default;
     AWS_VPCLATTICE_API UpdateListenerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_VPCLATTICE_API UpdateListenerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,58 +38,52 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the listener.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline UpdateListenerResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline UpdateListenerResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline UpdateListenerResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    UpdateListenerResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The action for the default rule.</p>
      */
-    inline const RuleAction& GetDefaultAction() const{ return m_defaultAction; }
-    inline void SetDefaultAction(const RuleAction& value) { m_defaultAction = value; }
-    inline void SetDefaultAction(RuleAction&& value) { m_defaultAction = std::move(value); }
-    inline UpdateListenerResult& WithDefaultAction(const RuleAction& value) { SetDefaultAction(value); return *this;}
-    inline UpdateListenerResult& WithDefaultAction(RuleAction&& value) { SetDefaultAction(std::move(value)); return *this;}
+    inline const RuleAction& GetDefaultAction() const { return m_defaultAction; }
+    template<typename DefaultActionT = RuleAction>
+    void SetDefaultAction(DefaultActionT&& value) { m_defaultActionHasBeenSet = true; m_defaultAction = std::forward<DefaultActionT>(value); }
+    template<typename DefaultActionT = RuleAction>
+    UpdateListenerResult& WithDefaultAction(DefaultActionT&& value) { SetDefaultAction(std::forward<DefaultActionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the listener.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline UpdateListenerResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline UpdateListenerResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline UpdateListenerResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    UpdateListenerResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the listener.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline UpdateListenerResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateListenerResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateListenerResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateListenerResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The listener port.</p>
      */
-    inline int GetPort() const{ return m_port; }
-    inline void SetPort(int value) { m_port = value; }
+    inline int GetPort() const { return m_port; }
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline UpdateListenerResult& WithPort(int value) { SetPort(value); return *this;}
     ///@}
 
@@ -97,68 +91,69 @@ namespace Model
     /**
      * <p>The protocol of the listener.</p>
      */
-    inline const ListenerProtocol& GetProtocol() const{ return m_protocol; }
-    inline void SetProtocol(const ListenerProtocol& value) { m_protocol = value; }
-    inline void SetProtocol(ListenerProtocol&& value) { m_protocol = std::move(value); }
-    inline UpdateListenerResult& WithProtocol(const ListenerProtocol& value) { SetProtocol(value); return *this;}
-    inline UpdateListenerResult& WithProtocol(ListenerProtocol&& value) { SetProtocol(std::move(value)); return *this;}
+    inline ListenerProtocol GetProtocol() const { return m_protocol; }
+    inline void SetProtocol(ListenerProtocol value) { m_protocolHasBeenSet = true; m_protocol = value; }
+    inline UpdateListenerResult& WithProtocol(ListenerProtocol value) { SetProtocol(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the service.</p>
      */
-    inline const Aws::String& GetServiceArn() const{ return m_serviceArn; }
-    inline void SetServiceArn(const Aws::String& value) { m_serviceArn = value; }
-    inline void SetServiceArn(Aws::String&& value) { m_serviceArn = std::move(value); }
-    inline void SetServiceArn(const char* value) { m_serviceArn.assign(value); }
-    inline UpdateListenerResult& WithServiceArn(const Aws::String& value) { SetServiceArn(value); return *this;}
-    inline UpdateListenerResult& WithServiceArn(Aws::String&& value) { SetServiceArn(std::move(value)); return *this;}
-    inline UpdateListenerResult& WithServiceArn(const char* value) { SetServiceArn(value); return *this;}
+    inline const Aws::String& GetServiceArn() const { return m_serviceArn; }
+    template<typename ServiceArnT = Aws::String>
+    void SetServiceArn(ServiceArnT&& value) { m_serviceArnHasBeenSet = true; m_serviceArn = std::forward<ServiceArnT>(value); }
+    template<typename ServiceArnT = Aws::String>
+    UpdateListenerResult& WithServiceArn(ServiceArnT&& value) { SetServiceArn(std::forward<ServiceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the service.</p>
      */
-    inline const Aws::String& GetServiceId() const{ return m_serviceId; }
-    inline void SetServiceId(const Aws::String& value) { m_serviceId = value; }
-    inline void SetServiceId(Aws::String&& value) { m_serviceId = std::move(value); }
-    inline void SetServiceId(const char* value) { m_serviceId.assign(value); }
-    inline UpdateListenerResult& WithServiceId(const Aws::String& value) { SetServiceId(value); return *this;}
-    inline UpdateListenerResult& WithServiceId(Aws::String&& value) { SetServiceId(std::move(value)); return *this;}
-    inline UpdateListenerResult& WithServiceId(const char* value) { SetServiceId(value); return *this;}
+    inline const Aws::String& GetServiceId() const { return m_serviceId; }
+    template<typename ServiceIdT = Aws::String>
+    void SetServiceId(ServiceIdT&& value) { m_serviceIdHasBeenSet = true; m_serviceId = std::forward<ServiceIdT>(value); }
+    template<typename ServiceIdT = Aws::String>
+    UpdateListenerResult& WithServiceId(ServiceIdT&& value) { SetServiceId(std::forward<ServiceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateListenerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateListenerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateListenerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateListenerResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     RuleAction m_defaultAction;
+    bool m_defaultActionHasBeenSet = false;
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
-    int m_port;
+    int m_port{0};
+    bool m_portHasBeenSet = false;
 
-    ListenerProtocol m_protocol;
+    ListenerProtocol m_protocol{ListenerProtocol::NOT_SET};
+    bool m_protocolHasBeenSet = false;
 
     Aws::String m_serviceArn;
+    bool m_serviceArnHasBeenSet = false;
 
     Aws::String m_serviceId;
+    bool m_serviceIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

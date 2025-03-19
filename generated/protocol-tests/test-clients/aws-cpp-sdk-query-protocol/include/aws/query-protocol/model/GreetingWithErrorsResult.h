@@ -28,35 +28,35 @@ namespace Model
   class GreetingWithErrorsResult
   {
   public:
-    AWS_QUERYPROTOCOL_API GreetingWithErrorsResult();
+    AWS_QUERYPROTOCOL_API GreetingWithErrorsResult() = default;
     AWS_QUERYPROTOCOL_API GreetingWithErrorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_QUERYPROTOCOL_API GreetingWithErrorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const Aws::String& GetGreeting() const{ return m_greeting; }
-    inline void SetGreeting(const Aws::String& value) { m_greeting = value; }
-    inline void SetGreeting(Aws::String&& value) { m_greeting = std::move(value); }
-    inline void SetGreeting(const char* value) { m_greeting.assign(value); }
-    inline GreetingWithErrorsResult& WithGreeting(const Aws::String& value) { SetGreeting(value); return *this;}
-    inline GreetingWithErrorsResult& WithGreeting(Aws::String&& value) { SetGreeting(std::move(value)); return *this;}
-    inline GreetingWithErrorsResult& WithGreeting(const char* value) { SetGreeting(value); return *this;}
+    inline const Aws::String& GetGreeting() const { return m_greeting; }
+    template<typename GreetingT = Aws::String>
+    void SetGreeting(GreetingT&& value) { m_greetingHasBeenSet = true; m_greeting = std::forward<GreetingT>(value); }
+    template<typename GreetingT = Aws::String>
+    GreetingWithErrorsResult& WithGreeting(GreetingT&& value) { SetGreeting(std::forward<GreetingT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline GreetingWithErrorsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline GreetingWithErrorsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    GreetingWithErrorsResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_greeting;
+    bool m_greetingHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

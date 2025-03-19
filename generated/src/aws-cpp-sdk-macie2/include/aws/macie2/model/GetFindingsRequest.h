@@ -23,7 +23,7 @@ namespace Model
   class GetFindingsRequest : public Macie2Request
   {
   public:
-    AWS_MACIE2_API GetFindingsRequest();
+    AWS_MACIE2_API GetFindingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,27 +39,26 @@ namespace Model
      * <p>An array of strings that lists the unique identifiers for the findings to
      * retrieve. You can specify as many as 50 unique identifiers in this array.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetFindingIds() const{ return m_findingIds; }
+    inline const Aws::Vector<Aws::String>& GetFindingIds() const { return m_findingIds; }
     inline bool FindingIdsHasBeenSet() const { return m_findingIdsHasBeenSet; }
-    inline void SetFindingIds(const Aws::Vector<Aws::String>& value) { m_findingIdsHasBeenSet = true; m_findingIds = value; }
-    inline void SetFindingIds(Aws::Vector<Aws::String>&& value) { m_findingIdsHasBeenSet = true; m_findingIds = std::move(value); }
-    inline GetFindingsRequest& WithFindingIds(const Aws::Vector<Aws::String>& value) { SetFindingIds(value); return *this;}
-    inline GetFindingsRequest& WithFindingIds(Aws::Vector<Aws::String>&& value) { SetFindingIds(std::move(value)); return *this;}
-    inline GetFindingsRequest& AddFindingIds(const Aws::String& value) { m_findingIdsHasBeenSet = true; m_findingIds.push_back(value); return *this; }
-    inline GetFindingsRequest& AddFindingIds(Aws::String&& value) { m_findingIdsHasBeenSet = true; m_findingIds.push_back(std::move(value)); return *this; }
-    inline GetFindingsRequest& AddFindingIds(const char* value) { m_findingIdsHasBeenSet = true; m_findingIds.push_back(value); return *this; }
+    template<typename FindingIdsT = Aws::Vector<Aws::String>>
+    void SetFindingIds(FindingIdsT&& value) { m_findingIdsHasBeenSet = true; m_findingIds = std::forward<FindingIdsT>(value); }
+    template<typename FindingIdsT = Aws::Vector<Aws::String>>
+    GetFindingsRequest& WithFindingIds(FindingIdsT&& value) { SetFindingIds(std::forward<FindingIdsT>(value)); return *this;}
+    template<typename FindingIdsT = Aws::String>
+    GetFindingsRequest& AddFindingIds(FindingIdsT&& value) { m_findingIdsHasBeenSet = true; m_findingIds.emplace_back(std::forward<FindingIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The criteria for sorting the results of the request.</p>
      */
-    inline const SortCriteria& GetSortCriteria() const{ return m_sortCriteria; }
+    inline const SortCriteria& GetSortCriteria() const { return m_sortCriteria; }
     inline bool SortCriteriaHasBeenSet() const { return m_sortCriteriaHasBeenSet; }
-    inline void SetSortCriteria(const SortCriteria& value) { m_sortCriteriaHasBeenSet = true; m_sortCriteria = value; }
-    inline void SetSortCriteria(SortCriteria&& value) { m_sortCriteriaHasBeenSet = true; m_sortCriteria = std::move(value); }
-    inline GetFindingsRequest& WithSortCriteria(const SortCriteria& value) { SetSortCriteria(value); return *this;}
-    inline GetFindingsRequest& WithSortCriteria(SortCriteria&& value) { SetSortCriteria(std::move(value)); return *this;}
+    template<typename SortCriteriaT = SortCriteria>
+    void SetSortCriteria(SortCriteriaT&& value) { m_sortCriteriaHasBeenSet = true; m_sortCriteria = std::forward<SortCriteriaT>(value); }
+    template<typename SortCriteriaT = SortCriteria>
+    GetFindingsRequest& WithSortCriteria(SortCriteriaT&& value) { SetSortCriteria(std::forward<SortCriteriaT>(value)); return *this;}
     ///@}
   private:
 

@@ -24,7 +24,7 @@ namespace Model
   class CreateGovCloudAccountRequest : public OrganizationsRequest
   {
   public:
-    AWS_ORGANIZATIONS_API CreateGovCloudAccountRequest();
+    AWS_ORGANIZATIONS_API CreateGovCloudAccountRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -59,14 +59,12 @@ namespace Model
      * the commercial Region, not from the Amazon Web Services GovCloud (US)
      * Region.</p>
      */
-    inline const Aws::String& GetEmail() const{ return m_email; }
+    inline const Aws::String& GetEmail() const { return m_email; }
     inline bool EmailHasBeenSet() const { return m_emailHasBeenSet; }
-    inline void SetEmail(const Aws::String& value) { m_emailHasBeenSet = true; m_email = value; }
-    inline void SetEmail(Aws::String&& value) { m_emailHasBeenSet = true; m_email = std::move(value); }
-    inline void SetEmail(const char* value) { m_emailHasBeenSet = true; m_email.assign(value); }
-    inline CreateGovCloudAccountRequest& WithEmail(const Aws::String& value) { SetEmail(value); return *this;}
-    inline CreateGovCloudAccountRequest& WithEmail(Aws::String&& value) { SetEmail(std::move(value)); return *this;}
-    inline CreateGovCloudAccountRequest& WithEmail(const char* value) { SetEmail(value); return *this;}
+    template<typename EmailT = Aws::String>
+    void SetEmail(EmailT&& value) { m_emailHasBeenSet = true; m_email = std::forward<EmailT>(value); }
+    template<typename EmailT = Aws::String>
+    CreateGovCloudAccountRequest& WithEmail(EmailT&& value) { SetEmail(std::forward<EmailT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +73,12 @@ namespace Model
      * of only the characters [a-z],[A-Z],[0-9], hyphen (-), or dot (.) You can't
      * separate characters with a dash (–).</p>
      */
-    inline const Aws::String& GetAccountName() const{ return m_accountName; }
+    inline const Aws::String& GetAccountName() const { return m_accountName; }
     inline bool AccountNameHasBeenSet() const { return m_accountNameHasBeenSet; }
-    inline void SetAccountName(const Aws::String& value) { m_accountNameHasBeenSet = true; m_accountName = value; }
-    inline void SetAccountName(Aws::String&& value) { m_accountNameHasBeenSet = true; m_accountName = std::move(value); }
-    inline void SetAccountName(const char* value) { m_accountNameHasBeenSet = true; m_accountName.assign(value); }
-    inline CreateGovCloudAccountRequest& WithAccountName(const Aws::String& value) { SetAccountName(value); return *this;}
-    inline CreateGovCloudAccountRequest& WithAccountName(Aws::String&& value) { SetAccountName(std::move(value)); return *this;}
-    inline CreateGovCloudAccountRequest& WithAccountName(const char* value) { SetAccountName(value); return *this;}
+    template<typename AccountNameT = Aws::String>
+    void SetAccountName(AccountNameT&& value) { m_accountNameHasBeenSet = true; m_accountName = std::forward<AccountNameT>(value); }
+    template<typename AccountNameT = Aws::String>
+    CreateGovCloudAccountRequest& WithAccountName(AccountNameT&& value) { SetAccountName(std::forward<AccountNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,14 +103,12 @@ namespace Model
      * validate this parameter. The pattern can include uppercase letters, lowercase
      * letters, digits with no spaces, and any of the following characters: =,.@-</p>
      */
-    inline const Aws::String& GetRoleName() const{ return m_roleName; }
+    inline const Aws::String& GetRoleName() const { return m_roleName; }
     inline bool RoleNameHasBeenSet() const { return m_roleNameHasBeenSet; }
-    inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
-    inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = std::move(value); }
-    inline void SetRoleName(const char* value) { m_roleNameHasBeenSet = true; m_roleName.assign(value); }
-    inline CreateGovCloudAccountRequest& WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
-    inline CreateGovCloudAccountRequest& WithRoleName(Aws::String&& value) { SetRoleName(std::move(value)); return *this;}
-    inline CreateGovCloudAccountRequest& WithRoleName(const char* value) { SetRoleName(value); return *this;}
+    template<typename RoleNameT = Aws::String>
+    void SetRoleName(RoleNameT&& value) { m_roleNameHasBeenSet = true; m_roleName = std::forward<RoleNameT>(value); }
+    template<typename RoleNameT = Aws::String>
+    CreateGovCloudAccountRequest& WithRoleName(RoleNameT&& value) { SetRoleName(std::forward<RoleNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -130,12 +124,10 @@ namespace Model
      * roles with the required permissions can access billing information for the new
      * account.</p>
      */
-    inline const IAMUserAccessToBilling& GetIamUserAccessToBilling() const{ return m_iamUserAccessToBilling; }
+    inline IAMUserAccessToBilling GetIamUserAccessToBilling() const { return m_iamUserAccessToBilling; }
     inline bool IamUserAccessToBillingHasBeenSet() const { return m_iamUserAccessToBillingHasBeenSet; }
-    inline void SetIamUserAccessToBilling(const IAMUserAccessToBilling& value) { m_iamUserAccessToBillingHasBeenSet = true; m_iamUserAccessToBilling = value; }
-    inline void SetIamUserAccessToBilling(IAMUserAccessToBilling&& value) { m_iamUserAccessToBillingHasBeenSet = true; m_iamUserAccessToBilling = std::move(value); }
-    inline CreateGovCloudAccountRequest& WithIamUserAccessToBilling(const IAMUserAccessToBilling& value) { SetIamUserAccessToBilling(value); return *this;}
-    inline CreateGovCloudAccountRequest& WithIamUserAccessToBilling(IAMUserAccessToBilling&& value) { SetIamUserAccessToBilling(std::move(value)); return *this;}
+    inline void SetIamUserAccessToBilling(IAMUserAccessToBilling value) { m_iamUserAccessToBillingHasBeenSet = true; m_iamUserAccessToBilling = value; }
+    inline CreateGovCloudAccountRequest& WithIamUserAccessToBilling(IAMUserAccessToBilling value) { SetIamUserAccessToBilling(value); return *this;}
     ///@}
 
     ///@{
@@ -154,14 +146,14 @@ namespace Model
      * tags for an account, then the entire request fails and the account is not
      * created.</p> 
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateGovCloudAccountRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateGovCloudAccountRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateGovCloudAccountRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateGovCloudAccountRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateGovCloudAccountRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateGovCloudAccountRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
@@ -174,7 +166,7 @@ namespace Model
     Aws::String m_roleName;
     bool m_roleNameHasBeenSet = false;
 
-    IAMUserAccessToBilling m_iamUserAccessToBilling;
+    IAMUserAccessToBilling m_iamUserAccessToBilling{IAMUserAccessToBilling::NOT_SET};
     bool m_iamUserAccessToBillingHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;

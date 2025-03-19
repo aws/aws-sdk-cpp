@@ -35,7 +35,7 @@ namespace Model
   class TypedAttributeValue
   {
   public:
-    AWS_CLOUDDIRECTORY_API TypedAttributeValue();
+    AWS_CLOUDDIRECTORY_API TypedAttributeValue() = default;
     AWS_CLOUDDIRECTORY_API TypedAttributeValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API TypedAttributeValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,33 +45,31 @@ namespace Model
     /**
      * <p>A string data value.</p>
      */
-    inline const Aws::String& GetStringValue() const{ return m_stringValue; }
+    inline const Aws::String& GetStringValue() const { return m_stringValue; }
     inline bool StringValueHasBeenSet() const { return m_stringValueHasBeenSet; }
-    inline void SetStringValue(const Aws::String& value) { m_stringValueHasBeenSet = true; m_stringValue = value; }
-    inline void SetStringValue(Aws::String&& value) { m_stringValueHasBeenSet = true; m_stringValue = std::move(value); }
-    inline void SetStringValue(const char* value) { m_stringValueHasBeenSet = true; m_stringValue.assign(value); }
-    inline TypedAttributeValue& WithStringValue(const Aws::String& value) { SetStringValue(value); return *this;}
-    inline TypedAttributeValue& WithStringValue(Aws::String&& value) { SetStringValue(std::move(value)); return *this;}
-    inline TypedAttributeValue& WithStringValue(const char* value) { SetStringValue(value); return *this;}
+    template<typename StringValueT = Aws::String>
+    void SetStringValue(StringValueT&& value) { m_stringValueHasBeenSet = true; m_stringValue = std::forward<StringValueT>(value); }
+    template<typename StringValueT = Aws::String>
+    TypedAttributeValue& WithStringValue(StringValueT&& value) { SetStringValue(std::forward<StringValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A binary data value.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetBinaryValue() const{ return m_binaryValue; }
+    inline const Aws::Utils::ByteBuffer& GetBinaryValue() const { return m_binaryValue; }
     inline bool BinaryValueHasBeenSet() const { return m_binaryValueHasBeenSet; }
-    inline void SetBinaryValue(const Aws::Utils::ByteBuffer& value) { m_binaryValueHasBeenSet = true; m_binaryValue = value; }
-    inline void SetBinaryValue(Aws::Utils::ByteBuffer&& value) { m_binaryValueHasBeenSet = true; m_binaryValue = std::move(value); }
-    inline TypedAttributeValue& WithBinaryValue(const Aws::Utils::ByteBuffer& value) { SetBinaryValue(value); return *this;}
-    inline TypedAttributeValue& WithBinaryValue(Aws::Utils::ByteBuffer&& value) { SetBinaryValue(std::move(value)); return *this;}
+    template<typename BinaryValueT = Aws::Utils::ByteBuffer>
+    void SetBinaryValue(BinaryValueT&& value) { m_binaryValueHasBeenSet = true; m_binaryValue = std::forward<BinaryValueT>(value); }
+    template<typename BinaryValueT = Aws::Utils::ByteBuffer>
+    TypedAttributeValue& WithBinaryValue(BinaryValueT&& value) { SetBinaryValue(std::forward<BinaryValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A Boolean data value.</p>
      */
-    inline bool GetBooleanValue() const{ return m_booleanValue; }
+    inline bool GetBooleanValue() const { return m_booleanValue; }
     inline bool BooleanValueHasBeenSet() const { return m_booleanValueHasBeenSet; }
     inline void SetBooleanValue(bool value) { m_booleanValueHasBeenSet = true; m_booleanValue = value; }
     inline TypedAttributeValue& WithBooleanValue(bool value) { SetBooleanValue(value); return *this;}
@@ -81,42 +79,40 @@ namespace Model
     /**
      * <p>A number data value.</p>
      */
-    inline const Aws::String& GetNumberValue() const{ return m_numberValue; }
+    inline const Aws::String& GetNumberValue() const { return m_numberValue; }
     inline bool NumberValueHasBeenSet() const { return m_numberValueHasBeenSet; }
-    inline void SetNumberValue(const Aws::String& value) { m_numberValueHasBeenSet = true; m_numberValue = value; }
-    inline void SetNumberValue(Aws::String&& value) { m_numberValueHasBeenSet = true; m_numberValue = std::move(value); }
-    inline void SetNumberValue(const char* value) { m_numberValueHasBeenSet = true; m_numberValue.assign(value); }
-    inline TypedAttributeValue& WithNumberValue(const Aws::String& value) { SetNumberValue(value); return *this;}
-    inline TypedAttributeValue& WithNumberValue(Aws::String&& value) { SetNumberValue(std::move(value)); return *this;}
-    inline TypedAttributeValue& WithNumberValue(const char* value) { SetNumberValue(value); return *this;}
+    template<typename NumberValueT = Aws::String>
+    void SetNumberValue(NumberValueT&& value) { m_numberValueHasBeenSet = true; m_numberValue = std::forward<NumberValueT>(value); }
+    template<typename NumberValueT = Aws::String>
+    TypedAttributeValue& WithNumberValue(NumberValueT&& value) { SetNumberValue(std::forward<NumberValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A date and time value.</p>
      */
-    inline const Aws::Utils::DateTime& GetDatetimeValue() const{ return m_datetimeValue; }
+    inline const Aws::Utils::DateTime& GetDatetimeValue() const { return m_datetimeValue; }
     inline bool DatetimeValueHasBeenSet() const { return m_datetimeValueHasBeenSet; }
-    inline void SetDatetimeValue(const Aws::Utils::DateTime& value) { m_datetimeValueHasBeenSet = true; m_datetimeValue = value; }
-    inline void SetDatetimeValue(Aws::Utils::DateTime&& value) { m_datetimeValueHasBeenSet = true; m_datetimeValue = std::move(value); }
-    inline TypedAttributeValue& WithDatetimeValue(const Aws::Utils::DateTime& value) { SetDatetimeValue(value); return *this;}
-    inline TypedAttributeValue& WithDatetimeValue(Aws::Utils::DateTime&& value) { SetDatetimeValue(std::move(value)); return *this;}
+    template<typename DatetimeValueT = Aws::Utils::DateTime>
+    void SetDatetimeValue(DatetimeValueT&& value) { m_datetimeValueHasBeenSet = true; m_datetimeValue = std::forward<DatetimeValueT>(value); }
+    template<typename DatetimeValueT = Aws::Utils::DateTime>
+    TypedAttributeValue& WithDatetimeValue(DatetimeValueT&& value) { SetDatetimeValue(std::forward<DatetimeValueT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_stringValue;
     bool m_stringValueHasBeenSet = false;
 
-    Aws::Utils::ByteBuffer m_binaryValue;
+    Aws::Utils::ByteBuffer m_binaryValue{};
     bool m_binaryValueHasBeenSet = false;
 
-    bool m_booleanValue;
+    bool m_booleanValue{false};
     bool m_booleanValueHasBeenSet = false;
 
     Aws::String m_numberValue;
     bool m_numberValueHasBeenSet = false;
 
-    Aws::Utils::DateTime m_datetimeValue;
+    Aws::Utils::DateTime m_datetimeValue{};
     bool m_datetimeValueHasBeenSet = false;
   };
 

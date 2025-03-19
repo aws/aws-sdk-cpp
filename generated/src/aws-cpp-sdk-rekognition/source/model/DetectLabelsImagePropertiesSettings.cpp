@@ -18,14 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-DetectLabelsImagePropertiesSettings::DetectLabelsImagePropertiesSettings() : 
-    m_maxDominantColors(0),
-    m_maxDominantColorsHasBeenSet(false)
-{
-}
-
 DetectLabelsImagePropertiesSettings::DetectLabelsImagePropertiesSettings(JsonView jsonValue)
-  : DetectLabelsImagePropertiesSettings()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ DetectLabelsImagePropertiesSettings& DetectLabelsImagePropertiesSettings::operat
   if(jsonValue.ValueExists("MaxDominantColors"))
   {
     m_maxDominantColors = jsonValue.GetInteger("MaxDominantColors");
-
     m_maxDominantColorsHasBeenSet = true;
   }
-
   return *this;
 }
 

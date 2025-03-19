@@ -38,7 +38,7 @@ namespace Model
   class Policy
   {
   public:
-    AWS_FMS_API Policy();
+    AWS_FMS_API Policy() = default;
     AWS_FMS_API Policy(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API Policy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,28 +48,24 @@ namespace Model
     /**
      * <p>The ID of the Firewall Manager policy.</p>
      */
-    inline const Aws::String& GetPolicyId() const{ return m_policyId; }
+    inline const Aws::String& GetPolicyId() const { return m_policyId; }
     inline bool PolicyIdHasBeenSet() const { return m_policyIdHasBeenSet; }
-    inline void SetPolicyId(const Aws::String& value) { m_policyIdHasBeenSet = true; m_policyId = value; }
-    inline void SetPolicyId(Aws::String&& value) { m_policyIdHasBeenSet = true; m_policyId = std::move(value); }
-    inline void SetPolicyId(const char* value) { m_policyIdHasBeenSet = true; m_policyId.assign(value); }
-    inline Policy& WithPolicyId(const Aws::String& value) { SetPolicyId(value); return *this;}
-    inline Policy& WithPolicyId(Aws::String&& value) { SetPolicyId(std::move(value)); return *this;}
-    inline Policy& WithPolicyId(const char* value) { SetPolicyId(value); return *this;}
+    template<typename PolicyIdT = Aws::String>
+    void SetPolicyId(PolicyIdT&& value) { m_policyIdHasBeenSet = true; m_policyId = std::forward<PolicyIdT>(value); }
+    template<typename PolicyIdT = Aws::String>
+    Policy& WithPolicyId(PolicyIdT&& value) { SetPolicyId(std::forward<PolicyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the Firewall Manager policy.</p>
      */
-    inline const Aws::String& GetPolicyName() const{ return m_policyName; }
+    inline const Aws::String& GetPolicyName() const { return m_policyName; }
     inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
-    inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
-    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
-    inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
-    inline Policy& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
-    inline Policy& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
-    inline Policy& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+    template<typename PolicyNameT = Aws::String>
+    void SetPolicyName(PolicyNameT&& value) { m_policyNameHasBeenSet = true; m_policyName = std::forward<PolicyNameT>(value); }
+    template<typename PolicyNameT = Aws::String>
+    Policy& WithPolicyName(PolicyNameT&& value) { SetPolicyName(std::forward<PolicyNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,14 +76,12 @@ namespace Model
      * version. To get the <code>PolicyUpdateToken</code> of the current policy
      * version, use a <code>GetPolicy</code> request.</p>
      */
-    inline const Aws::String& GetPolicyUpdateToken() const{ return m_policyUpdateToken; }
+    inline const Aws::String& GetPolicyUpdateToken() const { return m_policyUpdateToken; }
     inline bool PolicyUpdateTokenHasBeenSet() const { return m_policyUpdateTokenHasBeenSet; }
-    inline void SetPolicyUpdateToken(const Aws::String& value) { m_policyUpdateTokenHasBeenSet = true; m_policyUpdateToken = value; }
-    inline void SetPolicyUpdateToken(Aws::String&& value) { m_policyUpdateTokenHasBeenSet = true; m_policyUpdateToken = std::move(value); }
-    inline void SetPolicyUpdateToken(const char* value) { m_policyUpdateTokenHasBeenSet = true; m_policyUpdateToken.assign(value); }
-    inline Policy& WithPolicyUpdateToken(const Aws::String& value) { SetPolicyUpdateToken(value); return *this;}
-    inline Policy& WithPolicyUpdateToken(Aws::String&& value) { SetPolicyUpdateToken(std::move(value)); return *this;}
-    inline Policy& WithPolicyUpdateToken(const char* value) { SetPolicyUpdateToken(value); return *this;}
+    template<typename PolicyUpdateTokenT = Aws::String>
+    void SetPolicyUpdateToken(PolicyUpdateTokenT&& value) { m_policyUpdateTokenHasBeenSet = true; m_policyUpdateToken = std::forward<PolicyUpdateTokenT>(value); }
+    template<typename PolicyUpdateTokenT = Aws::String>
+    Policy& WithPolicyUpdateToken(PolicyUpdateTokenT&& value) { SetPolicyUpdateToken(std::forward<PolicyUpdateTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,12 +89,12 @@ namespace Model
      * <p>Details about the security service that is being used to protect the
      * resources.</p>
      */
-    inline const SecurityServicePolicyData& GetSecurityServicePolicyData() const{ return m_securityServicePolicyData; }
+    inline const SecurityServicePolicyData& GetSecurityServicePolicyData() const { return m_securityServicePolicyData; }
     inline bool SecurityServicePolicyDataHasBeenSet() const { return m_securityServicePolicyDataHasBeenSet; }
-    inline void SetSecurityServicePolicyData(const SecurityServicePolicyData& value) { m_securityServicePolicyDataHasBeenSet = true; m_securityServicePolicyData = value; }
-    inline void SetSecurityServicePolicyData(SecurityServicePolicyData&& value) { m_securityServicePolicyDataHasBeenSet = true; m_securityServicePolicyData = std::move(value); }
-    inline Policy& WithSecurityServicePolicyData(const SecurityServicePolicyData& value) { SetSecurityServicePolicyData(value); return *this;}
-    inline Policy& WithSecurityServicePolicyData(SecurityServicePolicyData&& value) { SetSecurityServicePolicyData(std::move(value)); return *this;}
+    template<typename SecurityServicePolicyDataT = SecurityServicePolicyData>
+    void SetSecurityServicePolicyData(SecurityServicePolicyDataT&& value) { m_securityServicePolicyDataHasBeenSet = true; m_securityServicePolicyData = std::forward<SecurityServicePolicyDataT>(value); }
+    template<typename SecurityServicePolicyDataT = SecurityServicePolicyData>
+    Policy& WithSecurityServicePolicyData(SecurityServicePolicyDataT&& value) { SetSecurityServicePolicyData(std::forward<SecurityServicePolicyDataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,14 +122,12 @@ namespace Model
      * <code>AWS::EC2::Instance</code>.</p> </li> <li> <p>DNS Firewall, Network
      * Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.</p> </li> </ul>
      */
-    inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+    inline const Aws::String& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
-    inline Policy& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-    inline Policy& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-    inline Policy& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+    template<typename ResourceTypeT = Aws::String>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = Aws::String>
+    Policy& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -144,29 +136,28 @@ namespace Model
      * multiple resource types. To specify a single resource type, use
      * <code>ResourceType</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetResourceTypeList() const{ return m_resourceTypeList; }
+    inline const Aws::Vector<Aws::String>& GetResourceTypeList() const { return m_resourceTypeList; }
     inline bool ResourceTypeListHasBeenSet() const { return m_resourceTypeListHasBeenSet; }
-    inline void SetResourceTypeList(const Aws::Vector<Aws::String>& value) { m_resourceTypeListHasBeenSet = true; m_resourceTypeList = value; }
-    inline void SetResourceTypeList(Aws::Vector<Aws::String>&& value) { m_resourceTypeListHasBeenSet = true; m_resourceTypeList = std::move(value); }
-    inline Policy& WithResourceTypeList(const Aws::Vector<Aws::String>& value) { SetResourceTypeList(value); return *this;}
-    inline Policy& WithResourceTypeList(Aws::Vector<Aws::String>&& value) { SetResourceTypeList(std::move(value)); return *this;}
-    inline Policy& AddResourceTypeList(const Aws::String& value) { m_resourceTypeListHasBeenSet = true; m_resourceTypeList.push_back(value); return *this; }
-    inline Policy& AddResourceTypeList(Aws::String&& value) { m_resourceTypeListHasBeenSet = true; m_resourceTypeList.push_back(std::move(value)); return *this; }
-    inline Policy& AddResourceTypeList(const char* value) { m_resourceTypeListHasBeenSet = true; m_resourceTypeList.push_back(value); return *this; }
+    template<typename ResourceTypeListT = Aws::Vector<Aws::String>>
+    void SetResourceTypeList(ResourceTypeListT&& value) { m_resourceTypeListHasBeenSet = true; m_resourceTypeList = std::forward<ResourceTypeListT>(value); }
+    template<typename ResourceTypeListT = Aws::Vector<Aws::String>>
+    Policy& WithResourceTypeList(ResourceTypeListT&& value) { SetResourceTypeList(std::forward<ResourceTypeListT>(value)); return *this;}
+    template<typename ResourceTypeListT = Aws::String>
+    Policy& AddResourceTypeList(ResourceTypeListT&& value) { m_resourceTypeListHasBeenSet = true; m_resourceTypeList.emplace_back(std::forward<ResourceTypeListT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>An array of <code>ResourceTag</code> objects.</p>
      */
-    inline const Aws::Vector<ResourceTag>& GetResourceTags() const{ return m_resourceTags; }
+    inline const Aws::Vector<ResourceTag>& GetResourceTags() const { return m_resourceTags; }
     inline bool ResourceTagsHasBeenSet() const { return m_resourceTagsHasBeenSet; }
-    inline void SetResourceTags(const Aws::Vector<ResourceTag>& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = value; }
-    inline void SetResourceTags(Aws::Vector<ResourceTag>&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = std::move(value); }
-    inline Policy& WithResourceTags(const Aws::Vector<ResourceTag>& value) { SetResourceTags(value); return *this;}
-    inline Policy& WithResourceTags(Aws::Vector<ResourceTag>&& value) { SetResourceTags(std::move(value)); return *this;}
-    inline Policy& AddResourceTags(const ResourceTag& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(value); return *this; }
-    inline Policy& AddResourceTags(ResourceTag&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(std::move(value)); return *this; }
+    template<typename ResourceTagsT = Aws::Vector<ResourceTag>>
+    void SetResourceTags(ResourceTagsT&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = std::forward<ResourceTagsT>(value); }
+    template<typename ResourceTagsT = Aws::Vector<ResourceTag>>
+    Policy& WithResourceTags(ResourceTagsT&& value) { SetResourceTags(std::forward<ResourceTagsT>(value)); return *this;}
+    template<typename ResourceTagsT = ResourceTag>
+    Policy& AddResourceTags(ResourceTagsT&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.emplace_back(std::forward<ResourceTagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -176,7 +167,7 @@ namespace Model
      * <code>False</code>, and the <code>ResourceTag</code> array is not null, only
      * resources with the specified tags are in scope of the policy.</p>
      */
-    inline bool GetExcludeResourceTags() const{ return m_excludeResourceTags; }
+    inline bool GetExcludeResourceTags() const { return m_excludeResourceTags; }
     inline bool ExcludeResourceTagsHasBeenSet() const { return m_excludeResourceTagsHasBeenSet; }
     inline void SetExcludeResourceTags(bool value) { m_excludeResourceTagsHasBeenSet = true; m_excludeResourceTags = value; }
     inline Policy& WithExcludeResourceTags(bool value) { SetExcludeResourceTags(value); return *this;}
@@ -186,7 +177,7 @@ namespace Model
     /**
      * <p>Indicates if the policy should be automatically applied to new resources.</p>
      */
-    inline bool GetRemediationEnabled() const{ return m_remediationEnabled; }
+    inline bool GetRemediationEnabled() const { return m_remediationEnabled; }
     inline bool RemediationEnabledHasBeenSet() const { return m_remediationEnabledHasBeenSet; }
     inline void SetRemediationEnabled(bool value) { m_remediationEnabledHasBeenSet = true; m_remediationEnabled = value; }
     inline Policy& WithRemediationEnabled(bool value) { SetRemediationEnabled(value); return *this;}
@@ -203,7 +194,7 @@ namespace Model
      * Firewall Manager managed resources. </p> <p>This option is not available for
      * Shield Advanced or WAF Classic policies.</p>
      */
-    inline bool GetDeleteUnusedFMManagedResources() const{ return m_deleteUnusedFMManagedResources; }
+    inline bool GetDeleteUnusedFMManagedResources() const { return m_deleteUnusedFMManagedResources; }
     inline bool DeleteUnusedFMManagedResourcesHasBeenSet() const { return m_deleteUnusedFMManagedResourcesHasBeenSet; }
     inline void SetDeleteUnusedFMManagedResources(bool value) { m_deleteUnusedFMManagedResourcesHasBeenSet = true; m_deleteUnusedFMManagedResources = value; }
     inline Policy& WithDeleteUnusedFMManagedResources(bool value) { SetDeleteUnusedFMManagedResources(value); return *this;}
@@ -231,16 +222,15 @@ namespace Model
      * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
      * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
      */
-    inline const Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>& GetIncludeMap() const{ return m_includeMap; }
+    inline const Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>& GetIncludeMap() const { return m_includeMap; }
     inline bool IncludeMapHasBeenSet() const { return m_includeMapHasBeenSet; }
-    inline void SetIncludeMap(const Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>& value) { m_includeMapHasBeenSet = true; m_includeMap = value; }
-    inline void SetIncludeMap(Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>&& value) { m_includeMapHasBeenSet = true; m_includeMap = std::move(value); }
-    inline Policy& WithIncludeMap(const Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>& value) { SetIncludeMap(value); return *this;}
-    inline Policy& WithIncludeMap(Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>&& value) { SetIncludeMap(std::move(value)); return *this;}
-    inline Policy& AddIncludeMap(const CustomerPolicyScopeIdType& key, const Aws::Vector<Aws::String>& value) { m_includeMapHasBeenSet = true; m_includeMap.emplace(key, value); return *this; }
-    inline Policy& AddIncludeMap(CustomerPolicyScopeIdType&& key, const Aws::Vector<Aws::String>& value) { m_includeMapHasBeenSet = true; m_includeMap.emplace(std::move(key), value); return *this; }
-    inline Policy& AddIncludeMap(const CustomerPolicyScopeIdType& key, Aws::Vector<Aws::String>&& value) { m_includeMapHasBeenSet = true; m_includeMap.emplace(key, std::move(value)); return *this; }
-    inline Policy& AddIncludeMap(CustomerPolicyScopeIdType&& key, Aws::Vector<Aws::String>&& value) { m_includeMapHasBeenSet = true; m_includeMap.emplace(std::move(key), std::move(value)); return *this; }
+    template<typename IncludeMapT = Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>>
+    void SetIncludeMap(IncludeMapT&& value) { m_includeMapHasBeenSet = true; m_includeMap = std::forward<IncludeMapT>(value); }
+    template<typename IncludeMapT = Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>>
+    Policy& WithIncludeMap(IncludeMapT&& value) { SetIncludeMap(std::forward<IncludeMapT>(value)); return *this;}
+    inline Policy& AddIncludeMap(CustomerPolicyScopeIdType key, Aws::Vector<Aws::String> value) {
+      m_includeMapHasBeenSet = true; m_includeMap.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
@@ -265,45 +255,41 @@ namespace Model
      * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
      * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
      */
-    inline const Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>& GetExcludeMap() const{ return m_excludeMap; }
+    inline const Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>& GetExcludeMap() const { return m_excludeMap; }
     inline bool ExcludeMapHasBeenSet() const { return m_excludeMapHasBeenSet; }
-    inline void SetExcludeMap(const Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>& value) { m_excludeMapHasBeenSet = true; m_excludeMap = value; }
-    inline void SetExcludeMap(Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>&& value) { m_excludeMapHasBeenSet = true; m_excludeMap = std::move(value); }
-    inline Policy& WithExcludeMap(const Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>& value) { SetExcludeMap(value); return *this;}
-    inline Policy& WithExcludeMap(Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>&& value) { SetExcludeMap(std::move(value)); return *this;}
-    inline Policy& AddExcludeMap(const CustomerPolicyScopeIdType& key, const Aws::Vector<Aws::String>& value) { m_excludeMapHasBeenSet = true; m_excludeMap.emplace(key, value); return *this; }
-    inline Policy& AddExcludeMap(CustomerPolicyScopeIdType&& key, const Aws::Vector<Aws::String>& value) { m_excludeMapHasBeenSet = true; m_excludeMap.emplace(std::move(key), value); return *this; }
-    inline Policy& AddExcludeMap(const CustomerPolicyScopeIdType& key, Aws::Vector<Aws::String>&& value) { m_excludeMapHasBeenSet = true; m_excludeMap.emplace(key, std::move(value)); return *this; }
-    inline Policy& AddExcludeMap(CustomerPolicyScopeIdType&& key, Aws::Vector<Aws::String>&& value) { m_excludeMapHasBeenSet = true; m_excludeMap.emplace(std::move(key), std::move(value)); return *this; }
+    template<typename ExcludeMapT = Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>>
+    void SetExcludeMap(ExcludeMapT&& value) { m_excludeMapHasBeenSet = true; m_excludeMap = std::forward<ExcludeMapT>(value); }
+    template<typename ExcludeMapT = Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>>
+    Policy& WithExcludeMap(ExcludeMapT&& value) { SetExcludeMap(std::forward<ExcludeMapT>(value)); return *this;}
+    inline Policy& AddExcludeMap(CustomerPolicyScopeIdType key, Aws::Vector<Aws::String> value) {
+      m_excludeMapHasBeenSet = true; m_excludeMap.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The unique identifiers of the resource sets used by the policy.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetResourceSetIds() const{ return m_resourceSetIds; }
+    inline const Aws::Vector<Aws::String>& GetResourceSetIds() const { return m_resourceSetIds; }
     inline bool ResourceSetIdsHasBeenSet() const { return m_resourceSetIdsHasBeenSet; }
-    inline void SetResourceSetIds(const Aws::Vector<Aws::String>& value) { m_resourceSetIdsHasBeenSet = true; m_resourceSetIds = value; }
-    inline void SetResourceSetIds(Aws::Vector<Aws::String>&& value) { m_resourceSetIdsHasBeenSet = true; m_resourceSetIds = std::move(value); }
-    inline Policy& WithResourceSetIds(const Aws::Vector<Aws::String>& value) { SetResourceSetIds(value); return *this;}
-    inline Policy& WithResourceSetIds(Aws::Vector<Aws::String>&& value) { SetResourceSetIds(std::move(value)); return *this;}
-    inline Policy& AddResourceSetIds(const Aws::String& value) { m_resourceSetIdsHasBeenSet = true; m_resourceSetIds.push_back(value); return *this; }
-    inline Policy& AddResourceSetIds(Aws::String&& value) { m_resourceSetIdsHasBeenSet = true; m_resourceSetIds.push_back(std::move(value)); return *this; }
-    inline Policy& AddResourceSetIds(const char* value) { m_resourceSetIdsHasBeenSet = true; m_resourceSetIds.push_back(value); return *this; }
+    template<typename ResourceSetIdsT = Aws::Vector<Aws::String>>
+    void SetResourceSetIds(ResourceSetIdsT&& value) { m_resourceSetIdsHasBeenSet = true; m_resourceSetIds = std::forward<ResourceSetIdsT>(value); }
+    template<typename ResourceSetIdsT = Aws::Vector<Aws::String>>
+    Policy& WithResourceSetIds(ResourceSetIdsT&& value) { SetResourceSetIds(std::forward<ResourceSetIdsT>(value)); return *this;}
+    template<typename ResourceSetIdsT = Aws::String>
+    Policy& AddResourceSetIds(ResourceSetIdsT&& value) { m_resourceSetIdsHasBeenSet = true; m_resourceSetIds.emplace_back(std::forward<ResourceSetIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Your description of the Firewall Manager policy.</p>
      */
-    inline const Aws::String& GetPolicyDescription() const{ return m_policyDescription; }
+    inline const Aws::String& GetPolicyDescription() const { return m_policyDescription; }
     inline bool PolicyDescriptionHasBeenSet() const { return m_policyDescriptionHasBeenSet; }
-    inline void SetPolicyDescription(const Aws::String& value) { m_policyDescriptionHasBeenSet = true; m_policyDescription = value; }
-    inline void SetPolicyDescription(Aws::String&& value) { m_policyDescriptionHasBeenSet = true; m_policyDescription = std::move(value); }
-    inline void SetPolicyDescription(const char* value) { m_policyDescriptionHasBeenSet = true; m_policyDescription.assign(value); }
-    inline Policy& WithPolicyDescription(const Aws::String& value) { SetPolicyDescription(value); return *this;}
-    inline Policy& WithPolicyDescription(Aws::String&& value) { SetPolicyDescription(std::move(value)); return *this;}
-    inline Policy& WithPolicyDescription(const char* value) { SetPolicyDescription(value); return *this;}
+    template<typename PolicyDescriptionT = Aws::String>
+    void SetPolicyDescription(PolicyDescriptionT&& value) { m_policyDescriptionHasBeenSet = true; m_policyDescription = std::forward<PolicyDescriptionT>(value); }
+    template<typename PolicyDescriptionT = Aws::String>
+    Policy& WithPolicyDescription(PolicyDescriptionT&& value) { SetPolicyDescription(std::forward<PolicyDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -315,12 +301,10 @@ namespace Model
      * Existing policy protections stay in place. Any new resources that come into
      * scope of the policy won't be protected.</p> </li> </ul>
      */
-    inline const CustomerPolicyStatus& GetPolicyStatus() const{ return m_policyStatus; }
+    inline CustomerPolicyStatus GetPolicyStatus() const { return m_policyStatus; }
     inline bool PolicyStatusHasBeenSet() const { return m_policyStatusHasBeenSet; }
-    inline void SetPolicyStatus(const CustomerPolicyStatus& value) { m_policyStatusHasBeenSet = true; m_policyStatus = value; }
-    inline void SetPolicyStatus(CustomerPolicyStatus&& value) { m_policyStatusHasBeenSet = true; m_policyStatus = std::move(value); }
-    inline Policy& WithPolicyStatus(const CustomerPolicyStatus& value) { SetPolicyStatus(value); return *this;}
-    inline Policy& WithPolicyStatus(CustomerPolicyStatus&& value) { SetPolicyStatus(std::move(value)); return *this;}
+    inline void SetPolicyStatus(CustomerPolicyStatus value) { m_policyStatusHasBeenSet = true; m_policyStatus = value; }
+    inline Policy& WithPolicyStatus(CustomerPolicyStatus value) { SetPolicyStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -329,12 +313,10 @@ namespace Model
      * resource must have all tags to be included or excluded, or OR, so that a
      * resource must have at least one tag.</p> <p>Default: <code>AND</code> </p>
      */
-    inline const ResourceTagLogicalOperator& GetResourceTagLogicalOperator() const{ return m_resourceTagLogicalOperator; }
+    inline ResourceTagLogicalOperator GetResourceTagLogicalOperator() const { return m_resourceTagLogicalOperator; }
     inline bool ResourceTagLogicalOperatorHasBeenSet() const { return m_resourceTagLogicalOperatorHasBeenSet; }
-    inline void SetResourceTagLogicalOperator(const ResourceTagLogicalOperator& value) { m_resourceTagLogicalOperatorHasBeenSet = true; m_resourceTagLogicalOperator = value; }
-    inline void SetResourceTagLogicalOperator(ResourceTagLogicalOperator&& value) { m_resourceTagLogicalOperatorHasBeenSet = true; m_resourceTagLogicalOperator = std::move(value); }
-    inline Policy& WithResourceTagLogicalOperator(const ResourceTagLogicalOperator& value) { SetResourceTagLogicalOperator(value); return *this;}
-    inline Policy& WithResourceTagLogicalOperator(ResourceTagLogicalOperator&& value) { SetResourceTagLogicalOperator(std::move(value)); return *this;}
+    inline void SetResourceTagLogicalOperator(ResourceTagLogicalOperator value) { m_resourceTagLogicalOperatorHasBeenSet = true; m_resourceTagLogicalOperator = value; }
+    inline Policy& WithResourceTagLogicalOperator(ResourceTagLogicalOperator value) { SetResourceTagLogicalOperator(value); return *this;}
     ///@}
   private:
 
@@ -359,13 +341,13 @@ namespace Model
     Aws::Vector<ResourceTag> m_resourceTags;
     bool m_resourceTagsHasBeenSet = false;
 
-    bool m_excludeResourceTags;
+    bool m_excludeResourceTags{false};
     bool m_excludeResourceTagsHasBeenSet = false;
 
-    bool m_remediationEnabled;
+    bool m_remediationEnabled{false};
     bool m_remediationEnabledHasBeenSet = false;
 
-    bool m_deleteUnusedFMManagedResources;
+    bool m_deleteUnusedFMManagedResources{false};
     bool m_deleteUnusedFMManagedResourcesHasBeenSet = false;
 
     Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>> m_includeMap;
@@ -380,10 +362,10 @@ namespace Model
     Aws::String m_policyDescription;
     bool m_policyDescriptionHasBeenSet = false;
 
-    CustomerPolicyStatus m_policyStatus;
+    CustomerPolicyStatus m_policyStatus{CustomerPolicyStatus::NOT_SET};
     bool m_policyStatusHasBeenSet = false;
 
-    ResourceTagLogicalOperator m_resourceTagLogicalOperator;
+    ResourceTagLogicalOperator m_resourceTagLogicalOperator{ResourceTagLogicalOperator::NOT_SET};
     bool m_resourceTagLogicalOperatorHasBeenSet = false;
   };
 

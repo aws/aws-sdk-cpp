@@ -12,12 +12,6 @@ using namespace Aws::Lambda::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutFunctionCodeSigningConfigRequest::PutFunctionCodeSigningConfigRequest() : 
-    m_codeSigningConfigArnHasBeenSet(false),
-    m_functionNameHasBeenSet(false)
-{
-}
-
 Aws::String PutFunctionCodeSigningConfigRequest::SerializePayload() const
 {
   JsonValue payload;

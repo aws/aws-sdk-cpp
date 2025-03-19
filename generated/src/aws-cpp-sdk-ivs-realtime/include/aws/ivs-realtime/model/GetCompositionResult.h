@@ -28,7 +28,7 @@ namespace Model
   class GetCompositionResult
   {
   public:
-    AWS_IVSREALTIME_API GetCompositionResult();
+    AWS_IVSREALTIME_API GetCompositionResult() = default;
     AWS_IVSREALTIME_API GetCompositionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IVSREALTIME_API GetCompositionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The Composition that was returned.</p>
      */
-    inline const Composition& GetComposition() const{ return m_composition; }
-    inline void SetComposition(const Composition& value) { m_composition = value; }
-    inline void SetComposition(Composition&& value) { m_composition = std::move(value); }
-    inline GetCompositionResult& WithComposition(const Composition& value) { SetComposition(value); return *this;}
-    inline GetCompositionResult& WithComposition(Composition&& value) { SetComposition(std::move(value)); return *this;}
+    inline const Composition& GetComposition() const { return m_composition; }
+    template<typename CompositionT = Composition>
+    void SetComposition(CompositionT&& value) { m_compositionHasBeenSet = true; m_composition = std::forward<CompositionT>(value); }
+    template<typename CompositionT = Composition>
+    GetCompositionResult& WithComposition(CompositionT&& value) { SetComposition(std::forward<CompositionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetCompositionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetCompositionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetCompositionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetCompositionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Composition m_composition;
+    bool m_compositionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

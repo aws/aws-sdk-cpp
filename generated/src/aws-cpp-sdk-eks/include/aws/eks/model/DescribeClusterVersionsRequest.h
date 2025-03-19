@@ -27,7 +27,7 @@ namespace Model
   class DescribeClusterVersionsRequest : public EKSRequest
   {
   public:
-    AWS_EKS_API DescribeClusterVersionsRequest();
+    AWS_EKS_API DescribeClusterVersionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,21 +44,19 @@ namespace Model
     /**
      * <p>The type of cluster to filter versions by.</p>
      */
-    inline const Aws::String& GetClusterType() const{ return m_clusterType; }
+    inline const Aws::String& GetClusterType() const { return m_clusterType; }
     inline bool ClusterTypeHasBeenSet() const { return m_clusterTypeHasBeenSet; }
-    inline void SetClusterType(const Aws::String& value) { m_clusterTypeHasBeenSet = true; m_clusterType = value; }
-    inline void SetClusterType(Aws::String&& value) { m_clusterTypeHasBeenSet = true; m_clusterType = std::move(value); }
-    inline void SetClusterType(const char* value) { m_clusterTypeHasBeenSet = true; m_clusterType.assign(value); }
-    inline DescribeClusterVersionsRequest& WithClusterType(const Aws::String& value) { SetClusterType(value); return *this;}
-    inline DescribeClusterVersionsRequest& WithClusterType(Aws::String&& value) { SetClusterType(std::move(value)); return *this;}
-    inline DescribeClusterVersionsRequest& WithClusterType(const char* value) { SetClusterType(value); return *this;}
+    template<typename ClusterTypeT = Aws::String>
+    void SetClusterType(ClusterTypeT&& value) { m_clusterTypeHasBeenSet = true; m_clusterType = std::forward<ClusterTypeT>(value); }
+    template<typename ClusterTypeT = Aws::String>
+    DescribeClusterVersionsRequest& WithClusterType(ClusterTypeT&& value) { SetClusterType(std::forward<ClusterTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Maximum number of results to return.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeClusterVersionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -68,21 +66,19 @@ namespace Model
     /**
      * <p>Pagination token for the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeClusterVersionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeClusterVersionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeClusterVersionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeClusterVersionsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Filter to show only default versions.</p>
      */
-    inline bool GetDefaultOnly() const{ return m_defaultOnly; }
+    inline bool GetDefaultOnly() const { return m_defaultOnly; }
     inline bool DefaultOnlyHasBeenSet() const { return m_defaultOnlyHasBeenSet; }
     inline void SetDefaultOnly(bool value) { m_defaultOnlyHasBeenSet = true; m_defaultOnly = value; }
     inline DescribeClusterVersionsRequest& WithDefaultOnly(bool value) { SetDefaultOnly(value); return *this;}
@@ -92,7 +88,7 @@ namespace Model
     /**
      * <p>Include all available versions in the response.</p>
      */
-    inline bool GetIncludeAll() const{ return m_includeAll; }
+    inline bool GetIncludeAll() const { return m_includeAll; }
     inline bool IncludeAllHasBeenSet() const { return m_includeAllHasBeenSet; }
     inline void SetIncludeAll(bool value) { m_includeAllHasBeenSet = true; m_includeAll = value; }
     inline DescribeClusterVersionsRequest& WithIncludeAll(bool value) { SetIncludeAll(value); return *this;}
@@ -102,49 +98,46 @@ namespace Model
     /**
      * <p>List of specific cluster versions to describe.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetClusterVersions() const{ return m_clusterVersions; }
+    inline const Aws::Vector<Aws::String>& GetClusterVersions() const { return m_clusterVersions; }
     inline bool ClusterVersionsHasBeenSet() const { return m_clusterVersionsHasBeenSet; }
-    inline void SetClusterVersions(const Aws::Vector<Aws::String>& value) { m_clusterVersionsHasBeenSet = true; m_clusterVersions = value; }
-    inline void SetClusterVersions(Aws::Vector<Aws::String>&& value) { m_clusterVersionsHasBeenSet = true; m_clusterVersions = std::move(value); }
-    inline DescribeClusterVersionsRequest& WithClusterVersions(const Aws::Vector<Aws::String>& value) { SetClusterVersions(value); return *this;}
-    inline DescribeClusterVersionsRequest& WithClusterVersions(Aws::Vector<Aws::String>&& value) { SetClusterVersions(std::move(value)); return *this;}
-    inline DescribeClusterVersionsRequest& AddClusterVersions(const Aws::String& value) { m_clusterVersionsHasBeenSet = true; m_clusterVersions.push_back(value); return *this; }
-    inline DescribeClusterVersionsRequest& AddClusterVersions(Aws::String&& value) { m_clusterVersionsHasBeenSet = true; m_clusterVersions.push_back(std::move(value)); return *this; }
-    inline DescribeClusterVersionsRequest& AddClusterVersions(const char* value) { m_clusterVersionsHasBeenSet = true; m_clusterVersions.push_back(value); return *this; }
+    template<typename ClusterVersionsT = Aws::Vector<Aws::String>>
+    void SetClusterVersions(ClusterVersionsT&& value) { m_clusterVersionsHasBeenSet = true; m_clusterVersions = std::forward<ClusterVersionsT>(value); }
+    template<typename ClusterVersionsT = Aws::Vector<Aws::String>>
+    DescribeClusterVersionsRequest& WithClusterVersions(ClusterVersionsT&& value) { SetClusterVersions(std::forward<ClusterVersionsT>(value)); return *this;}
+    template<typename ClusterVersionsT = Aws::String>
+    DescribeClusterVersionsRequest& AddClusterVersions(ClusterVersionsT&& value) { m_clusterVersionsHasBeenSet = true; m_clusterVersions.emplace_back(std::forward<ClusterVersionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Filter versions by their current status.</p>
      */
-    inline const VersionStatus& GetVersionStatus() const{ return m_versionStatus; }
+    inline VersionStatus GetVersionStatus() const { return m_versionStatus; }
     inline bool VersionStatusHasBeenSet() const { return m_versionStatusHasBeenSet; }
-    inline void SetVersionStatus(const VersionStatus& value) { m_versionStatusHasBeenSet = true; m_versionStatus = value; }
-    inline void SetVersionStatus(VersionStatus&& value) { m_versionStatusHasBeenSet = true; m_versionStatus = std::move(value); }
-    inline DescribeClusterVersionsRequest& WithVersionStatus(const VersionStatus& value) { SetVersionStatus(value); return *this;}
-    inline DescribeClusterVersionsRequest& WithVersionStatus(VersionStatus&& value) { SetVersionStatus(std::move(value)); return *this;}
+    inline void SetVersionStatus(VersionStatus value) { m_versionStatusHasBeenSet = true; m_versionStatus = value; }
+    inline DescribeClusterVersionsRequest& WithVersionStatus(VersionStatus value) { SetVersionStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_clusterType;
     bool m_clusterTypeHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    bool m_defaultOnly;
+    bool m_defaultOnly{false};
     bool m_defaultOnlyHasBeenSet = false;
 
-    bool m_includeAll;
+    bool m_includeAll{false};
     bool m_includeAllHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_clusterVersions;
     bool m_clusterVersionsHasBeenSet = false;
 
-    VersionStatus m_versionStatus;
+    VersionStatus m_versionStatus{VersionStatus::NOT_SET};
     bool m_versionStatusHasBeenSet = false;
   };
 

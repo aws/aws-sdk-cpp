@@ -18,14 +18,7 @@ namespace DynamoDBStreams
 namespace Model
 {
 
-Identity::Identity() : 
-    m_principalIdHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 Identity::Identity(JsonView jsonValue)
-  : Identity()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Identity& Identity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PrincipalId"))
   {
     m_principalId = jsonValue.GetString("PrincipalId");
-
     m_principalIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

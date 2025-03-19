@@ -28,33 +28,35 @@ namespace Model
   class ModifyDBSnapshotAttributeResult
   {
   public:
-    AWS_RDS_API ModifyDBSnapshotAttributeResult();
+    AWS_RDS_API ModifyDBSnapshotAttributeResult() = default;
     AWS_RDS_API ModifyDBSnapshotAttributeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_RDS_API ModifyDBSnapshotAttributeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const DBSnapshotAttributesResult& GetDBSnapshotAttributesResult() const{ return m_dBSnapshotAttributesResult; }
-    inline void SetDBSnapshotAttributesResult(const DBSnapshotAttributesResult& value) { m_dBSnapshotAttributesResult = value; }
-    inline void SetDBSnapshotAttributesResult(DBSnapshotAttributesResult&& value) { m_dBSnapshotAttributesResult = std::move(value); }
-    inline ModifyDBSnapshotAttributeResult& WithDBSnapshotAttributesResult(const DBSnapshotAttributesResult& value) { SetDBSnapshotAttributesResult(value); return *this;}
-    inline ModifyDBSnapshotAttributeResult& WithDBSnapshotAttributesResult(DBSnapshotAttributesResult&& value) { SetDBSnapshotAttributesResult(std::move(value)); return *this;}
+    inline const DBSnapshotAttributesResult& GetDBSnapshotAttributesResult() const { return m_dBSnapshotAttributesResult; }
+    template<typename DBSnapshotAttributesResultT = DBSnapshotAttributesResult>
+    void SetDBSnapshotAttributesResult(DBSnapshotAttributesResultT&& value) { m_dBSnapshotAttributesResultHasBeenSet = true; m_dBSnapshotAttributesResult = std::forward<DBSnapshotAttributesResultT>(value); }
+    template<typename DBSnapshotAttributesResultT = DBSnapshotAttributesResult>
+    ModifyDBSnapshotAttributeResult& WithDBSnapshotAttributesResult(DBSnapshotAttributesResultT&& value) { SetDBSnapshotAttributesResult(std::forward<DBSnapshotAttributesResultT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ModifyDBSnapshotAttributeResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ModifyDBSnapshotAttributeResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ModifyDBSnapshotAttributeResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     DBSnapshotAttributesResult m_dBSnapshotAttributesResult;
+    bool m_dBSnapshotAttributesResultHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

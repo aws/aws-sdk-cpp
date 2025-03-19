@@ -33,7 +33,7 @@ namespace Model
   class CreateMeshResult
   {
   public:
-    AWS_APPMESH_API CreateMeshResult();
+    AWS_APPMESH_API CreateMeshResult() = default;
     AWS_APPMESH_API CreateMeshResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPMESH_API CreateMeshResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,28 +42,28 @@ namespace Model
     /**
      * <p>The full description of your service mesh following the create call.</p>
      */
-    inline const MeshData& GetMesh() const{ return m_mesh; }
-    inline void SetMesh(const MeshData& value) { m_mesh = value; }
-    inline void SetMesh(MeshData&& value) { m_mesh = std::move(value); }
-    inline CreateMeshResult& WithMesh(const MeshData& value) { SetMesh(value); return *this;}
-    inline CreateMeshResult& WithMesh(MeshData&& value) { SetMesh(std::move(value)); return *this;}
+    inline const MeshData& GetMesh() const { return m_mesh; }
+    template<typename MeshT = MeshData>
+    void SetMesh(MeshT&& value) { m_meshHasBeenSet = true; m_mesh = std::forward<MeshT>(value); }
+    template<typename MeshT = MeshData>
+    CreateMeshResult& WithMesh(MeshT&& value) { SetMesh(std::forward<MeshT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateMeshResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateMeshResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateMeshResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateMeshResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     MeshData m_mesh;
+    bool m_meshHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

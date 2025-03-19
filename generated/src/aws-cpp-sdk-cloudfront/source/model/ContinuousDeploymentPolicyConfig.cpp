@@ -20,16 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-ContinuousDeploymentPolicyConfig::ContinuousDeploymentPolicyConfig() : 
-    m_stagingDistributionDnsNamesHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_trafficConfigHasBeenSet(false)
-{
-}
-
 ContinuousDeploymentPolicyConfig::ContinuousDeploymentPolicyConfig(const XmlNode& xmlNode)
-  : ContinuousDeploymentPolicyConfig()
 {
   *this = xmlNode;
 }

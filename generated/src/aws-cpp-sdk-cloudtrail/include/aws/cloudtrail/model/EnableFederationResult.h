@@ -28,7 +28,7 @@ namespace Model
   class EnableFederationResult
   {
   public:
-    AWS_CLOUDTRAIL_API EnableFederationResult();
+    AWS_CLOUDTRAIL_API EnableFederationResult() = default;
     AWS_CLOUDTRAIL_API EnableFederationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDTRAIL_API EnableFederationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,58 +38,54 @@ namespace Model
      * <p> The ARN of the event data store for which you enabled Lake query federation.
      * </p>
      */
-    inline const Aws::String& GetEventDataStoreArn() const{ return m_eventDataStoreArn; }
-    inline void SetEventDataStoreArn(const Aws::String& value) { m_eventDataStoreArn = value; }
-    inline void SetEventDataStoreArn(Aws::String&& value) { m_eventDataStoreArn = std::move(value); }
-    inline void SetEventDataStoreArn(const char* value) { m_eventDataStoreArn.assign(value); }
-    inline EnableFederationResult& WithEventDataStoreArn(const Aws::String& value) { SetEventDataStoreArn(value); return *this;}
-    inline EnableFederationResult& WithEventDataStoreArn(Aws::String&& value) { SetEventDataStoreArn(std::move(value)); return *this;}
-    inline EnableFederationResult& WithEventDataStoreArn(const char* value) { SetEventDataStoreArn(value); return *this;}
+    inline const Aws::String& GetEventDataStoreArn() const { return m_eventDataStoreArn; }
+    template<typename EventDataStoreArnT = Aws::String>
+    void SetEventDataStoreArn(EventDataStoreArnT&& value) { m_eventDataStoreArnHasBeenSet = true; m_eventDataStoreArn = std::forward<EventDataStoreArnT>(value); }
+    template<typename EventDataStoreArnT = Aws::String>
+    EnableFederationResult& WithEventDataStoreArn(EventDataStoreArnT&& value) { SetEventDataStoreArn(std::forward<EventDataStoreArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The federation status. </p>
      */
-    inline const FederationStatus& GetFederationStatus() const{ return m_federationStatus; }
-    inline void SetFederationStatus(const FederationStatus& value) { m_federationStatus = value; }
-    inline void SetFederationStatus(FederationStatus&& value) { m_federationStatus = std::move(value); }
-    inline EnableFederationResult& WithFederationStatus(const FederationStatus& value) { SetFederationStatus(value); return *this;}
-    inline EnableFederationResult& WithFederationStatus(FederationStatus&& value) { SetFederationStatus(std::move(value)); return *this;}
+    inline FederationStatus GetFederationStatus() const { return m_federationStatus; }
+    inline void SetFederationStatus(FederationStatus value) { m_federationStatusHasBeenSet = true; m_federationStatus = value; }
+    inline EnableFederationResult& WithFederationStatus(FederationStatus value) { SetFederationStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The ARN of the federation role. </p>
      */
-    inline const Aws::String& GetFederationRoleArn() const{ return m_federationRoleArn; }
-    inline void SetFederationRoleArn(const Aws::String& value) { m_federationRoleArn = value; }
-    inline void SetFederationRoleArn(Aws::String&& value) { m_federationRoleArn = std::move(value); }
-    inline void SetFederationRoleArn(const char* value) { m_federationRoleArn.assign(value); }
-    inline EnableFederationResult& WithFederationRoleArn(const Aws::String& value) { SetFederationRoleArn(value); return *this;}
-    inline EnableFederationResult& WithFederationRoleArn(Aws::String&& value) { SetFederationRoleArn(std::move(value)); return *this;}
-    inline EnableFederationResult& WithFederationRoleArn(const char* value) { SetFederationRoleArn(value); return *this;}
+    inline const Aws::String& GetFederationRoleArn() const { return m_federationRoleArn; }
+    template<typename FederationRoleArnT = Aws::String>
+    void SetFederationRoleArn(FederationRoleArnT&& value) { m_federationRoleArnHasBeenSet = true; m_federationRoleArn = std::forward<FederationRoleArnT>(value); }
+    template<typename FederationRoleArnT = Aws::String>
+    EnableFederationResult& WithFederationRoleArn(FederationRoleArnT&& value) { SetFederationRoleArn(std::forward<FederationRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline EnableFederationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline EnableFederationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline EnableFederationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    EnableFederationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_eventDataStoreArn;
+    bool m_eventDataStoreArnHasBeenSet = false;
 
-    FederationStatus m_federationStatus;
+    FederationStatus m_federationStatus{FederationStatus::NOT_SET};
+    bool m_federationStatusHasBeenSet = false;
 
     Aws::String m_federationRoleArn;
+    bool m_federationRoleArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

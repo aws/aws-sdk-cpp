@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListSnapshotBlocksResult::ListSnapshotBlocksResult() : 
-    m_volumeSize(0),
-    m_blockSize(0)
-{
-}
-
 ListSnapshotBlocksResult::ListSnapshotBlocksResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ListSnapshotBlocksResult()
 {
   *this = result;
 }
@@ -39,38 +32,35 @@ ListSnapshotBlocksResult& ListSnapshotBlocksResult::operator =(const Aws::Amazon
     {
       m_blocks.push_back(blocksJsonList[blocksIndex].AsObject());
     }
+    m_blocksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpiryTime"))
   {
     m_expiryTime = jsonValue.GetDouble("ExpiryTime");
-
+    m_expiryTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeSize"))
   {
     m_volumeSize = jsonValue.GetInt64("VolumeSize");
-
+    m_volumeSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BlockSize"))
   {
     m_blockSize = jsonValue.GetInteger("BlockSize");
-
+    m_blockSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

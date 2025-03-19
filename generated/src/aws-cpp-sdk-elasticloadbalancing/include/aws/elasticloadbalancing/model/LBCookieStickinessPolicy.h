@@ -32,7 +32,7 @@ namespace Model
   class LBCookieStickinessPolicy
   {
   public:
-    AWS_ELASTICLOADBALANCING_API LBCookieStickinessPolicy();
+    AWS_ELASTICLOADBALANCING_API LBCookieStickinessPolicy() = default;
     AWS_ELASTICLOADBALANCING_API LBCookieStickinessPolicy(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICLOADBALANCING_API LBCookieStickinessPolicy& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,14 +45,12 @@ namespace Model
      * <p>The name of the policy. This name must be unique within the set of policies
      * for this load balancer.</p>
      */
-    inline const Aws::String& GetPolicyName() const{ return m_policyName; }
+    inline const Aws::String& GetPolicyName() const { return m_policyName; }
     inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
-    inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
-    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
-    inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
-    inline LBCookieStickinessPolicy& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
-    inline LBCookieStickinessPolicy& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
-    inline LBCookieStickinessPolicy& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+    template<typename PolicyNameT = Aws::String>
+    void SetPolicyName(PolicyNameT&& value) { m_policyNameHasBeenSet = true; m_policyName = std::forward<PolicyNameT>(value); }
+    template<typename PolicyNameT = Aws::String>
+    LBCookieStickinessPolicy& WithPolicyName(PolicyNameT&& value) { SetPolicyName(std::forward<PolicyNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,7 +59,7 @@ namespace Model
      * stale. If this parameter is not specified, the stickiness session lasts for the
      * duration of the browser session.</p>
      */
-    inline long long GetCookieExpirationPeriod() const{ return m_cookieExpirationPeriod; }
+    inline long long GetCookieExpirationPeriod() const { return m_cookieExpirationPeriod; }
     inline bool CookieExpirationPeriodHasBeenSet() const { return m_cookieExpirationPeriodHasBeenSet; }
     inline void SetCookieExpirationPeriod(long long value) { m_cookieExpirationPeriodHasBeenSet = true; m_cookieExpirationPeriod = value; }
     inline LBCookieStickinessPolicy& WithCookieExpirationPeriod(long long value) { SetCookieExpirationPeriod(value); return *this;}
@@ -71,7 +69,7 @@ namespace Model
     Aws::String m_policyName;
     bool m_policyNameHasBeenSet = false;
 
-    long long m_cookieExpirationPeriod;
+    long long m_cookieExpirationPeriod{0};
     bool m_cookieExpirationPeriodHasBeenSet = false;
   };
 

@@ -27,7 +27,7 @@ namespace Model
   class CreateTransformJobResult
   {
   public:
-    AWS_SAGEMAKER_API CreateTransformJobResult();
+    AWS_SAGEMAKER_API CreateTransformJobResult() = default;
     AWS_SAGEMAKER_API CreateTransformJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API CreateTransformJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the transform job.</p>
      */
-    inline const Aws::String& GetTransformJobArn() const{ return m_transformJobArn; }
-    inline void SetTransformJobArn(const Aws::String& value) { m_transformJobArn = value; }
-    inline void SetTransformJobArn(Aws::String&& value) { m_transformJobArn = std::move(value); }
-    inline void SetTransformJobArn(const char* value) { m_transformJobArn.assign(value); }
-    inline CreateTransformJobResult& WithTransformJobArn(const Aws::String& value) { SetTransformJobArn(value); return *this;}
-    inline CreateTransformJobResult& WithTransformJobArn(Aws::String&& value) { SetTransformJobArn(std::move(value)); return *this;}
-    inline CreateTransformJobResult& WithTransformJobArn(const char* value) { SetTransformJobArn(value); return *this;}
+    inline const Aws::String& GetTransformJobArn() const { return m_transformJobArn; }
+    template<typename TransformJobArnT = Aws::String>
+    void SetTransformJobArn(TransformJobArnT&& value) { m_transformJobArnHasBeenSet = true; m_transformJobArn = std::forward<TransformJobArnT>(value); }
+    template<typename TransformJobArnT = Aws::String>
+    CreateTransformJobResult& WithTransformJobArn(TransformJobArnT&& value) { SetTransformJobArn(std::forward<TransformJobArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateTransformJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateTransformJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateTransformJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateTransformJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_transformJobArn;
+    bool m_transformJobArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,11 +12,6 @@ using namespace Aws::BedrockDataAutomation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDataAutomationProjectRequest::DeleteDataAutomationProjectRequest() : 
-    m_projectArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDataAutomationProjectRequest::SerializePayload() const
 {
   return {};

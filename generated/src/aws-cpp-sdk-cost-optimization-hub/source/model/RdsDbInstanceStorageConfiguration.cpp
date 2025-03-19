@@ -18,19 +18,7 @@ namespace CostOptimizationHub
 namespace Model
 {
 
-RdsDbInstanceStorageConfiguration::RdsDbInstanceStorageConfiguration() : 
-    m_storageTypeHasBeenSet(false),
-    m_allocatedStorageInGb(0.0),
-    m_allocatedStorageInGbHasBeenSet(false),
-    m_iops(0.0),
-    m_iopsHasBeenSet(false),
-    m_storageThroughput(0.0),
-    m_storageThroughputHasBeenSet(false)
-{
-}
-
 RdsDbInstanceStorageConfiguration::RdsDbInstanceStorageConfiguration(JsonView jsonValue)
-  : RdsDbInstanceStorageConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ RdsDbInstanceStorageConfiguration& RdsDbInstanceStorageConfiguration::operator =
   if(jsonValue.ValueExists("storageType"))
   {
     m_storageType = jsonValue.GetString("storageType");
-
     m_storageTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allocatedStorageInGb"))
   {
     m_allocatedStorageInGb = jsonValue.GetDouble("allocatedStorageInGb");
-
     m_allocatedStorageInGbHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("iops"))
   {
     m_iops = jsonValue.GetDouble("iops");
-
     m_iopsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storageThroughput"))
   {
     m_storageThroughput = jsonValue.GetDouble("storageThroughput");
-
     m_storageThroughputHasBeenSet = true;
   }
-
   return *this;
 }
 

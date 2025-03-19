@@ -18,18 +18,7 @@ namespace AuditManager
 namespace Model
 {
 
-EvidenceFinderEnablement::EvidenceFinderEnablement() : 
-    m_eventDataStoreArnHasBeenSet(false),
-    m_enablementStatus(EvidenceFinderEnablementStatus::NOT_SET),
-    m_enablementStatusHasBeenSet(false),
-    m_backfillStatus(EvidenceFinderBackfillStatus::NOT_SET),
-    m_backfillStatusHasBeenSet(false),
-    m_errorHasBeenSet(false)
-{
-}
-
 EvidenceFinderEnablement::EvidenceFinderEnablement(JsonView jsonValue)
-  : EvidenceFinderEnablement()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ EvidenceFinderEnablement& EvidenceFinderEnablement::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("eventDataStoreArn"))
   {
     m_eventDataStoreArn = jsonValue.GetString("eventDataStoreArn");
-
     m_eventDataStoreArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enablementStatus"))
   {
     m_enablementStatus = EvidenceFinderEnablementStatusMapper::GetEvidenceFinderEnablementStatusForName(jsonValue.GetString("enablementStatus"));
-
     m_enablementStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("backfillStatus"))
   {
     m_backfillStatus = EvidenceFinderBackfillStatusMapper::GetEvidenceFinderBackfillStatusForName(jsonValue.GetString("backfillStatus"));
-
     m_backfillStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("error"))
   {
     m_error = jsonValue.GetString("error");
-
     m_errorHasBeenSet = true;
   }
-
   return *this;
 }
 

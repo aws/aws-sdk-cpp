@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetMacieSessionResult::GetMacieSessionResult() : 
-    m_findingPublishingFrequency(FindingPublishingFrequency::NOT_SET),
-    m_status(MacieStatus::NOT_SET)
-{
-}
-
 GetMacieSessionResult::GetMacieSessionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetMacieSessionResult()
 {
   *this = result;
 }
@@ -35,39 +28,35 @@ GetMacieSessionResult& GetMacieSessionResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
+    m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("findingPublishingFrequency"))
   {
     m_findingPublishingFrequency = FindingPublishingFrequencyMapper::GetFindingPublishingFrequencyForName(jsonValue.GetString("findingPublishingFrequency"));
-
+    m_findingPublishingFrequencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceRole"))
   {
     m_serviceRole = jsonValue.GetString("serviceRole");
-
+    m_serviceRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = MacieStatusMapper::GetMacieStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
-
+    m_updatedAtHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

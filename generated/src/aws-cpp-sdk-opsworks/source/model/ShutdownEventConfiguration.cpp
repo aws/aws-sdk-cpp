@@ -18,16 +18,7 @@ namespace OpsWorks
 namespace Model
 {
 
-ShutdownEventConfiguration::ShutdownEventConfiguration() : 
-    m_executionTimeout(0),
-    m_executionTimeoutHasBeenSet(false),
-    m_delayUntilElbConnectionsDrained(false),
-    m_delayUntilElbConnectionsDrainedHasBeenSet(false)
-{
-}
-
 ShutdownEventConfiguration::ShutdownEventConfiguration(JsonView jsonValue)
-  : ShutdownEventConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ShutdownEventConfiguration& ShutdownEventConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("ExecutionTimeout"))
   {
     m_executionTimeout = jsonValue.GetInteger("ExecutionTimeout");
-
     m_executionTimeoutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DelayUntilElbConnectionsDrained"))
   {
     m_delayUntilElbConnectionsDrained = jsonValue.GetBool("DelayUntilElbConnectionsDrained");
-
     m_delayUntilElbConnectionsDrainedHasBeenSet = true;
   }
-
   return *this;
 }
 

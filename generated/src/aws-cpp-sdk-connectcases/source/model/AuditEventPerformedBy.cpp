@@ -18,14 +18,7 @@ namespace ConnectCases
 namespace Model
 {
 
-AuditEventPerformedBy::AuditEventPerformedBy() : 
-    m_iamPrincipalArnHasBeenSet(false),
-    m_userHasBeenSet(false)
-{
-}
-
 AuditEventPerformedBy::AuditEventPerformedBy(JsonView jsonValue)
-  : AuditEventPerformedBy()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AuditEventPerformedBy& AuditEventPerformedBy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("iamPrincipalArn"))
   {
     m_iamPrincipalArn = jsonValue.GetString("iamPrincipalArn");
-
     m_iamPrincipalArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("user"))
   {
     m_user = jsonValue.GetObject("user");
-
     m_userHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace BedrockDataAutomation
 namespace Model
 {
 
-DocumentStandardGenerativeField::DocumentStandardGenerativeField() : 
-    m_state(State::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 DocumentStandardGenerativeField::DocumentStandardGenerativeField(JsonView jsonValue)
-  : DocumentStandardGenerativeField()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ DocumentStandardGenerativeField& DocumentStandardGenerativeField::operator =(Jso
   if(jsonValue.ValueExists("state"))
   {
     m_state = StateMapper::GetStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

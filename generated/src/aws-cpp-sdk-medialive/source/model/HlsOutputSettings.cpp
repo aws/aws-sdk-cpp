@@ -18,17 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-HlsOutputSettings::HlsOutputSettings() : 
-    m_h265PackagingType(HlsH265PackagingType::NOT_SET),
-    m_h265PackagingTypeHasBeenSet(false),
-    m_hlsSettingsHasBeenSet(false),
-    m_nameModifierHasBeenSet(false),
-    m_segmentModifierHasBeenSet(false)
-{
-}
-
 HlsOutputSettings::HlsOutputSettings(JsonView jsonValue)
-  : HlsOutputSettings()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ HlsOutputSettings& HlsOutputSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("h265PackagingType"))
   {
     m_h265PackagingType = HlsH265PackagingTypeMapper::GetHlsH265PackagingTypeForName(jsonValue.GetString("h265PackagingType"));
-
     m_h265PackagingTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hlsSettings"))
   {
     m_hlsSettings = jsonValue.GetObject("hlsSettings");
-
     m_hlsSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nameModifier"))
   {
     m_nameModifier = jsonValue.GetString("nameModifier");
-
     m_nameModifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("segmentModifier"))
   {
     m_segmentModifier = jsonValue.GetString("segmentModifier");
-
     m_segmentModifierHasBeenSet = true;
   }
-
   return *this;
 }
 

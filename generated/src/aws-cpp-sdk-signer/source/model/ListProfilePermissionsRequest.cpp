@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListProfilePermissionsRequest::ListProfilePermissionsRequest() : 
-    m_profileNameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListProfilePermissionsRequest::SerializePayload() const
 {
   return {};

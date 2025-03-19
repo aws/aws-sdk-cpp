@@ -18,14 +18,7 @@ namespace ConnectCampaignsV2
 namespace Model
 {
 
-PredictiveConfig::PredictiveConfig() : 
-    m_bandwidthAllocation(0.0),
-    m_bandwidthAllocationHasBeenSet(false)
-{
-}
-
 PredictiveConfig::PredictiveConfig(JsonView jsonValue)
-  : PredictiveConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ PredictiveConfig& PredictiveConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bandwidthAllocation"))
   {
     m_bandwidthAllocation = jsonValue.GetDouble("bandwidthAllocation");
-
     m_bandwidthAllocationHasBeenSet = true;
   }
-
   return *this;
 }
 

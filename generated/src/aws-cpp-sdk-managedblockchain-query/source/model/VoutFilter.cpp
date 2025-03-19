@@ -18,14 +18,7 @@ namespace ManagedBlockchainQuery
 namespace Model
 {
 
-VoutFilter::VoutFilter() : 
-    m_voutSpent(false),
-    m_voutSpentHasBeenSet(false)
-{
-}
-
 VoutFilter::VoutFilter(JsonView jsonValue)
-  : VoutFilter()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ VoutFilter& VoutFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("voutSpent"))
   {
     m_voutSpent = jsonValue.GetBool("voutSpent");
-
     m_voutSpentHasBeenSet = true;
   }
-
   return *this;
 }
 

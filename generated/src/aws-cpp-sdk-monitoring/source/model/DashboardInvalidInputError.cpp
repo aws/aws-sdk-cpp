@@ -20,14 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-DashboardInvalidInputError::DashboardInvalidInputError() : 
-    m_messageHasBeenSet(false),
-    m_dashboardValidationMessagesHasBeenSet(false)
-{
-}
-
 DashboardInvalidInputError::DashboardInvalidInputError(const XmlNode& xmlNode)
-  : DashboardInvalidInputError()
 {
   *this = xmlNode;
 }
@@ -48,6 +41,7 @@ DashboardInvalidInputError& DashboardInvalidInputError::operator =(const XmlNode
     if(!dashboardValidationMessagesNode.IsNull())
     {
       XmlNode dashboardValidationMessagesMember = dashboardValidationMessagesNode.FirstChild("member");
+      m_dashboardValidationMessagesHasBeenSet = !dashboardValidationMessagesMember.IsNull();
       while(!dashboardValidationMessagesMember.IsNull())
       {
         m_dashboardValidationMessages.push_back(dashboardValidationMessagesMember);

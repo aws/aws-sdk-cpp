@@ -28,7 +28,7 @@ namespace Model
   class GetAnomalyGroupResult
   {
   public:
-    AWS_LOOKOUTMETRICS_API GetAnomalyGroupResult();
+    AWS_LOOKOUTMETRICS_API GetAnomalyGroupResult() = default;
     AWS_LOOKOUTMETRICS_API GetAnomalyGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOOKOUTMETRICS_API GetAnomalyGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Details about the anomaly group.</p>
      */
-    inline const AnomalyGroup& GetAnomalyGroup() const{ return m_anomalyGroup; }
-    inline void SetAnomalyGroup(const AnomalyGroup& value) { m_anomalyGroup = value; }
-    inline void SetAnomalyGroup(AnomalyGroup&& value) { m_anomalyGroup = std::move(value); }
-    inline GetAnomalyGroupResult& WithAnomalyGroup(const AnomalyGroup& value) { SetAnomalyGroup(value); return *this;}
-    inline GetAnomalyGroupResult& WithAnomalyGroup(AnomalyGroup&& value) { SetAnomalyGroup(std::move(value)); return *this;}
+    inline const AnomalyGroup& GetAnomalyGroup() const { return m_anomalyGroup; }
+    template<typename AnomalyGroupT = AnomalyGroup>
+    void SetAnomalyGroup(AnomalyGroupT&& value) { m_anomalyGroupHasBeenSet = true; m_anomalyGroup = std::forward<AnomalyGroupT>(value); }
+    template<typename AnomalyGroupT = AnomalyGroup>
+    GetAnomalyGroupResult& WithAnomalyGroup(AnomalyGroupT&& value) { SetAnomalyGroup(std::forward<AnomalyGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetAnomalyGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetAnomalyGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetAnomalyGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetAnomalyGroupResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AnomalyGroup m_anomalyGroup;
+    bool m_anomalyGroupHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

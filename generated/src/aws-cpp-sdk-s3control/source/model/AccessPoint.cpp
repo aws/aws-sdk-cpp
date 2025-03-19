@@ -20,20 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-AccessPoint::AccessPoint() : 
-    m_nameHasBeenSet(false),
-    m_networkOrigin(NetworkOrigin::NOT_SET),
-    m_networkOriginHasBeenSet(false),
-    m_vpcConfigurationHasBeenSet(false),
-    m_bucketHasBeenSet(false),
-    m_accessPointArnHasBeenSet(false),
-    m_aliasHasBeenSet(false),
-    m_bucketAccountIdHasBeenSet(false)
-{
-}
-
 AccessPoint::AccessPoint(const XmlNode& xmlNode)
-  : AccessPoint()
 {
   *this = xmlNode;
 }
@@ -53,7 +40,7 @@ AccessPoint& AccessPoint::operator =(const XmlNode& xmlNode)
     XmlNode networkOriginNode = resultNode.FirstChild("NetworkOrigin");
     if(!networkOriginNode.IsNull())
     {
-      m_networkOrigin = NetworkOriginMapper::GetNetworkOriginForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(networkOriginNode.GetText()).c_str()).c_str());
+      m_networkOrigin = NetworkOriginMapper::GetNetworkOriginForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(networkOriginNode.GetText()).c_str()));
       m_networkOriginHasBeenSet = true;
     }
     XmlNode vpcConfigurationNode = resultNode.FirstChild("VpcConfiguration");

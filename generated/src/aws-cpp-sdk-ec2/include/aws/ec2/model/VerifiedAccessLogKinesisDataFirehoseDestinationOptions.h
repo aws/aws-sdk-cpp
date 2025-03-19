@@ -32,7 +32,7 @@ namespace Model
   class VerifiedAccessLogKinesisDataFirehoseDestinationOptions
   {
   public:
-    AWS_EC2_API VerifiedAccessLogKinesisDataFirehoseDestinationOptions();
+    AWS_EC2_API VerifiedAccessLogKinesisDataFirehoseDestinationOptions() = default;
     AWS_EC2_API VerifiedAccessLogKinesisDataFirehoseDestinationOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API VerifiedAccessLogKinesisDataFirehoseDestinationOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,7 +44,7 @@ namespace Model
     /**
      * <p>Indicates whether logging is enabled.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline VerifiedAccessLogKinesisDataFirehoseDestinationOptions& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -54,18 +54,16 @@ namespace Model
     /**
      * <p>The ID of the delivery stream.</p>
      */
-    inline const Aws::String& GetDeliveryStream() const{ return m_deliveryStream; }
+    inline const Aws::String& GetDeliveryStream() const { return m_deliveryStream; }
     inline bool DeliveryStreamHasBeenSet() const { return m_deliveryStreamHasBeenSet; }
-    inline void SetDeliveryStream(const Aws::String& value) { m_deliveryStreamHasBeenSet = true; m_deliveryStream = value; }
-    inline void SetDeliveryStream(Aws::String&& value) { m_deliveryStreamHasBeenSet = true; m_deliveryStream = std::move(value); }
-    inline void SetDeliveryStream(const char* value) { m_deliveryStreamHasBeenSet = true; m_deliveryStream.assign(value); }
-    inline VerifiedAccessLogKinesisDataFirehoseDestinationOptions& WithDeliveryStream(const Aws::String& value) { SetDeliveryStream(value); return *this;}
-    inline VerifiedAccessLogKinesisDataFirehoseDestinationOptions& WithDeliveryStream(Aws::String&& value) { SetDeliveryStream(std::move(value)); return *this;}
-    inline VerifiedAccessLogKinesisDataFirehoseDestinationOptions& WithDeliveryStream(const char* value) { SetDeliveryStream(value); return *this;}
+    template<typename DeliveryStreamT = Aws::String>
+    void SetDeliveryStream(DeliveryStreamT&& value) { m_deliveryStreamHasBeenSet = true; m_deliveryStream = std::forward<DeliveryStreamT>(value); }
+    template<typename DeliveryStreamT = Aws::String>
+    VerifiedAccessLogKinesisDataFirehoseDestinationOptions& WithDeliveryStream(DeliveryStreamT&& value) { SetDeliveryStream(std::forward<DeliveryStreamT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
     Aws::String m_deliveryStream;

@@ -32,7 +32,7 @@ namespace Model
   class MappingRule
   {
   public:
-    AWS_ROLESANYWHERE_API MappingRule();
+    AWS_ROLESANYWHERE_API MappingRule() = default;
     AWS_ROLESANYWHERE_API MappingRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROLESANYWHERE_API MappingRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROLESANYWHERE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>Specifier within a certificate field, such as CN, OU, or UID from the Subject
      * field.</p>
      */
-    inline const Aws::String& GetSpecifier() const{ return m_specifier; }
+    inline const Aws::String& GetSpecifier() const { return m_specifier; }
     inline bool SpecifierHasBeenSet() const { return m_specifierHasBeenSet; }
-    inline void SetSpecifier(const Aws::String& value) { m_specifierHasBeenSet = true; m_specifier = value; }
-    inline void SetSpecifier(Aws::String&& value) { m_specifierHasBeenSet = true; m_specifier = std::move(value); }
-    inline void SetSpecifier(const char* value) { m_specifierHasBeenSet = true; m_specifier.assign(value); }
-    inline MappingRule& WithSpecifier(const Aws::String& value) { SetSpecifier(value); return *this;}
-    inline MappingRule& WithSpecifier(Aws::String&& value) { SetSpecifier(std::move(value)); return *this;}
-    inline MappingRule& WithSpecifier(const char* value) { SetSpecifier(value); return *this;}
+    template<typename SpecifierT = Aws::String>
+    void SetSpecifier(SpecifierT&& value) { m_specifierHasBeenSet = true; m_specifier = std::forward<SpecifierT>(value); }
+    template<typename SpecifierT = Aws::String>
+    MappingRule& WithSpecifier(SpecifierT&& value) { SetSpecifier(std::forward<SpecifierT>(value)); return *this;}
     ///@}
   private:
 

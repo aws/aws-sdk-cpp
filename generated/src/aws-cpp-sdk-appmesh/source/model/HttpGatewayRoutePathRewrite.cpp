@@ -18,13 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-HttpGatewayRoutePathRewrite::HttpGatewayRoutePathRewrite() : 
-    m_exactHasBeenSet(false)
-{
-}
-
 HttpGatewayRoutePathRewrite::HttpGatewayRoutePathRewrite(JsonView jsonValue)
-  : HttpGatewayRoutePathRewrite()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ HttpGatewayRoutePathRewrite& HttpGatewayRoutePathRewrite::operator =(JsonView js
   if(jsonValue.ValueExists("exact"))
   {
     m_exact = jsonValue.GetString("exact");
-
     m_exactHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,13 +20,7 @@ namespace SES
 namespace Model
 {
 
-MissingRenderingAttributeException::MissingRenderingAttributeException() : 
-    m_templateNameHasBeenSet(false)
-{
-}
-
 MissingRenderingAttributeException::MissingRenderingAttributeException(const XmlNode& xmlNode)
-  : MissingRenderingAttributeException()
 {
   *this = xmlNode;
 }

@@ -18,19 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-KPISparklineOptions::KPISparklineOptions() : 
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false),
-    m_type(KPISparklineType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_colorHasBeenSet(false),
-    m_tooltipVisibility(Visibility::NOT_SET),
-    m_tooltipVisibilityHasBeenSet(false)
-{
-}
-
 KPISparklineOptions::KPISparklineOptions(JsonView jsonValue)
-  : KPISparklineOptions()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ KPISparklineOptions& KPISparklineOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Visibility"))
   {
     m_visibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("Visibility"));
-
     m_visibilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = KPISparklineTypeMapper::GetKPISparklineTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Color"))
   {
     m_color = jsonValue.GetString("Color");
-
     m_colorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TooltipVisibility"))
   {
     m_tooltipVisibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("TooltipVisibility"));
-
     m_tooltipVisibilityHasBeenSet = true;
   }
-
   return *this;
 }
 

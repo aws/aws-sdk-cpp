@@ -21,7 +21,7 @@ namespace Model
   class RotateIngestEndpointCredentialsRequest : public MediaPackageRequest
   {
   public:
-    AWS_MEDIAPACKAGE_API RotateIngestEndpointCredentialsRequest();
+    AWS_MEDIAPACKAGE_API RotateIngestEndpointCredentialsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * The ID of the channel the IngestEndpoint is on.
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline RotateIngestEndpointCredentialsRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline RotateIngestEndpointCredentialsRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline RotateIngestEndpointCredentialsRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    RotateIngestEndpointCredentialsRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The id of the IngestEndpoint whose credentials should be rotated
      */
-    inline const Aws::String& GetIngestEndpointId() const{ return m_ingestEndpointId; }
+    inline const Aws::String& GetIngestEndpointId() const { return m_ingestEndpointId; }
     inline bool IngestEndpointIdHasBeenSet() const { return m_ingestEndpointIdHasBeenSet; }
-    inline void SetIngestEndpointId(const Aws::String& value) { m_ingestEndpointIdHasBeenSet = true; m_ingestEndpointId = value; }
-    inline void SetIngestEndpointId(Aws::String&& value) { m_ingestEndpointIdHasBeenSet = true; m_ingestEndpointId = std::move(value); }
-    inline void SetIngestEndpointId(const char* value) { m_ingestEndpointIdHasBeenSet = true; m_ingestEndpointId.assign(value); }
-    inline RotateIngestEndpointCredentialsRequest& WithIngestEndpointId(const Aws::String& value) { SetIngestEndpointId(value); return *this;}
-    inline RotateIngestEndpointCredentialsRequest& WithIngestEndpointId(Aws::String&& value) { SetIngestEndpointId(std::move(value)); return *this;}
-    inline RotateIngestEndpointCredentialsRequest& WithIngestEndpointId(const char* value) { SetIngestEndpointId(value); return *this;}
+    template<typename IngestEndpointIdT = Aws::String>
+    void SetIngestEndpointId(IngestEndpointIdT&& value) { m_ingestEndpointIdHasBeenSet = true; m_ingestEndpointId = std::forward<IngestEndpointIdT>(value); }
+    template<typename IngestEndpointIdT = Aws::String>
+    RotateIngestEndpointCredentialsRequest& WithIngestEndpointId(IngestEndpointIdT&& value) { SetIngestEndpointId(std::forward<IngestEndpointIdT>(value)); return *this;}
     ///@}
   private:
 

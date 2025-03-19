@@ -20,24 +20,7 @@ namespace RDS
 namespace Model
 {
 
-OptionGroup::OptionGroup() : 
-    m_optionGroupNameHasBeenSet(false),
-    m_optionGroupDescriptionHasBeenSet(false),
-    m_engineNameHasBeenSet(false),
-    m_majorEngineVersionHasBeenSet(false),
-    m_optionsHasBeenSet(false),
-    m_allowsVpcAndNonVpcInstanceMemberships(false),
-    m_allowsVpcAndNonVpcInstanceMembershipsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_optionGroupArnHasBeenSet(false),
-    m_sourceOptionGroupHasBeenSet(false),
-    m_sourceAccountIdHasBeenSet(false),
-    m_copyTimestampHasBeenSet(false)
-{
-}
-
 OptionGroup::OptionGroup(const XmlNode& xmlNode)
-  : OptionGroup()
 {
   *this = xmlNode;
 }
@@ -76,6 +59,7 @@ OptionGroup& OptionGroup::operator =(const XmlNode& xmlNode)
     if(!optionsNode.IsNull())
     {
       XmlNode optionsMember = optionsNode.FirstChild("Option");
+      m_optionsHasBeenSet = !optionsMember.IsNull();
       while(!optionsMember.IsNull())
       {
         m_options.push_back(optionsMember);

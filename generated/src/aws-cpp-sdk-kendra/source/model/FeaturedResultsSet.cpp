@@ -18,23 +18,7 @@ namespace kendra
 namespace Model
 {
 
-FeaturedResultsSet::FeaturedResultsSet() : 
-    m_featuredResultsSetIdHasBeenSet(false),
-    m_featuredResultsSetNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(FeaturedResultsSetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_queryTextsHasBeenSet(false),
-    m_featuredDocumentsHasBeenSet(false),
-    m_lastUpdatedTimestamp(0),
-    m_lastUpdatedTimestampHasBeenSet(false),
-    m_creationTimestamp(0),
-    m_creationTimestampHasBeenSet(false)
-{
-}
-
 FeaturedResultsSet::FeaturedResultsSet(JsonView jsonValue)
-  : FeaturedResultsSet()
 {
   *this = jsonValue;
 }
@@ -44,31 +28,23 @@ FeaturedResultsSet& FeaturedResultsSet::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FeaturedResultsSetId"))
   {
     m_featuredResultsSetId = jsonValue.GetString("FeaturedResultsSetId");
-
     m_featuredResultsSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FeaturedResultsSetName"))
   {
     m_featuredResultsSetName = jsonValue.GetString("FeaturedResultsSetName");
-
     m_featuredResultsSetNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = FeaturedResultsSetStatusMapper::GetFeaturedResultsSetStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueryTexts"))
   {
     Aws::Utils::Array<JsonView> queryTextsJsonList = jsonValue.GetArray("QueryTexts");
@@ -78,7 +54,6 @@ FeaturedResultsSet& FeaturedResultsSet::operator =(JsonView jsonValue)
     }
     m_queryTextsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FeaturedDocuments"))
   {
     Aws::Utils::Array<JsonView> featuredDocumentsJsonList = jsonValue.GetArray("FeaturedDocuments");
@@ -88,21 +63,16 @@ FeaturedResultsSet& FeaturedResultsSet::operator =(JsonView jsonValue)
     }
     m_featuredDocumentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTimestamp"))
   {
     m_lastUpdatedTimestamp = jsonValue.GetInt64("LastUpdatedTimestamp");
-
     m_lastUpdatedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTimestamp"))
   {
     m_creationTimestamp = jsonValue.GetInt64("CreationTimestamp");
-
     m_creationTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-FieldToProtect::FieldToProtect() : 
-    m_fieldType(FieldToProtectType::NOT_SET),
-    m_fieldTypeHasBeenSet(false),
-    m_fieldKeysHasBeenSet(false)
-{
-}
-
 FieldToProtect::FieldToProtect(JsonView jsonValue)
-  : FieldToProtect()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ FieldToProtect& FieldToProtect::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FieldType"))
   {
     m_fieldType = FieldToProtectTypeMapper::GetFieldToProtectTypeForName(jsonValue.GetString("FieldType"));
-
     m_fieldTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FieldKeys"))
   {
     Aws::Utils::Array<JsonView> fieldKeysJsonList = jsonValue.GetArray("FieldKeys");
@@ -49,7 +39,6 @@ FieldToProtect& FieldToProtect::operator =(JsonView jsonValue)
     }
     m_fieldKeysHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace LookoutMetrics
 namespace Model
 {
 
-DimensionNameValue::DimensionNameValue() : 
-    m_dimensionNameHasBeenSet(false),
-    m_dimensionValueHasBeenSet(false)
-{
-}
-
 DimensionNameValue::DimensionNameValue(JsonView jsonValue)
-  : DimensionNameValue()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DimensionNameValue& DimensionNameValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DimensionName"))
   {
     m_dimensionName = jsonValue.GetString("DimensionName");
-
     m_dimensionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DimensionValue"))
   {
     m_dimensionValue = jsonValue.GetString("DimensionValue");
-
     m_dimensionValueHasBeenSet = true;
   }
-
   return *this;
 }
 

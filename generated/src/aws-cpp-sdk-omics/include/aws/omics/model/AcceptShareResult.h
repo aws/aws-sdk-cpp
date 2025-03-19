@@ -28,7 +28,7 @@ namespace Model
   class AcceptShareResult
   {
   public:
-    AWS_OMICS_API AcceptShareResult();
+    AWS_OMICS_API AcceptShareResult() = default;
     AWS_OMICS_API AcceptShareResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OMICS_API AcceptShareResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,26 @@ namespace Model
     /**
      * <p>The status of the resource share.</p>
      */
-    inline const ShareStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const ShareStatus& value) { m_status = value; }
-    inline void SetStatus(ShareStatus&& value) { m_status = std::move(value); }
-    inline AcceptShareResult& WithStatus(const ShareStatus& value) { SetStatus(value); return *this;}
-    inline AcceptShareResult& WithStatus(ShareStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline ShareStatus GetStatus() const { return m_status; }
+    inline void SetStatus(ShareStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline AcceptShareResult& WithStatus(ShareStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AcceptShareResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AcceptShareResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AcceptShareResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AcceptShareResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    ShareStatus m_status;
+    ShareStatus m_status{ShareStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

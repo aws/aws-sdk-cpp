@@ -31,7 +31,7 @@ namespace Model
   class LexV2Bot
   {
   public:
-    AWS_CONNECT_API LexV2Bot();
+    AWS_CONNECT_API LexV2Bot() = default;
     AWS_CONNECT_API LexV2Bot(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API LexV2Bot& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Lex V2 bot.</p>
      */
-    inline const Aws::String& GetAliasArn() const{ return m_aliasArn; }
+    inline const Aws::String& GetAliasArn() const { return m_aliasArn; }
     inline bool AliasArnHasBeenSet() const { return m_aliasArnHasBeenSet; }
-    inline void SetAliasArn(const Aws::String& value) { m_aliasArnHasBeenSet = true; m_aliasArn = value; }
-    inline void SetAliasArn(Aws::String&& value) { m_aliasArnHasBeenSet = true; m_aliasArn = std::move(value); }
-    inline void SetAliasArn(const char* value) { m_aliasArnHasBeenSet = true; m_aliasArn.assign(value); }
-    inline LexV2Bot& WithAliasArn(const Aws::String& value) { SetAliasArn(value); return *this;}
-    inline LexV2Bot& WithAliasArn(Aws::String&& value) { SetAliasArn(std::move(value)); return *this;}
-    inline LexV2Bot& WithAliasArn(const char* value) { SetAliasArn(value); return *this;}
+    template<typename AliasArnT = Aws::String>
+    void SetAliasArn(AliasArnT&& value) { m_aliasArnHasBeenSet = true; m_aliasArn = std::forward<AliasArnT>(value); }
+    template<typename AliasArnT = Aws::String>
+    LexV2Bot& WithAliasArn(AliasArnT&& value) { SetAliasArn(std::forward<AliasArnT>(value)); return *this;}
     ///@}
   private:
 

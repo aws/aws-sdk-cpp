@@ -34,7 +34,7 @@ namespace Model
   class RuleGroupSourceStatelessRulesAndCustomActionsDetails
   {
   public:
-    AWS_SECURITYHUB_API RuleGroupSourceStatelessRulesAndCustomActionsDetails();
+    AWS_SECURITYHUB_API RuleGroupSourceStatelessRulesAndCustomActionsDetails() = default;
     AWS_SECURITYHUB_API RuleGroupSourceStatelessRulesAndCustomActionsDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API RuleGroupSourceStatelessRulesAndCustomActionsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,28 @@ namespace Model
     /**
      * <p>Custom actions for the rule group.</p>
      */
-    inline const Aws::Vector<RuleGroupSourceCustomActionsDetails>& GetCustomActions() const{ return m_customActions; }
+    inline const Aws::Vector<RuleGroupSourceCustomActionsDetails>& GetCustomActions() const { return m_customActions; }
     inline bool CustomActionsHasBeenSet() const { return m_customActionsHasBeenSet; }
-    inline void SetCustomActions(const Aws::Vector<RuleGroupSourceCustomActionsDetails>& value) { m_customActionsHasBeenSet = true; m_customActions = value; }
-    inline void SetCustomActions(Aws::Vector<RuleGroupSourceCustomActionsDetails>&& value) { m_customActionsHasBeenSet = true; m_customActions = std::move(value); }
-    inline RuleGroupSourceStatelessRulesAndCustomActionsDetails& WithCustomActions(const Aws::Vector<RuleGroupSourceCustomActionsDetails>& value) { SetCustomActions(value); return *this;}
-    inline RuleGroupSourceStatelessRulesAndCustomActionsDetails& WithCustomActions(Aws::Vector<RuleGroupSourceCustomActionsDetails>&& value) { SetCustomActions(std::move(value)); return *this;}
-    inline RuleGroupSourceStatelessRulesAndCustomActionsDetails& AddCustomActions(const RuleGroupSourceCustomActionsDetails& value) { m_customActionsHasBeenSet = true; m_customActions.push_back(value); return *this; }
-    inline RuleGroupSourceStatelessRulesAndCustomActionsDetails& AddCustomActions(RuleGroupSourceCustomActionsDetails&& value) { m_customActionsHasBeenSet = true; m_customActions.push_back(std::move(value)); return *this; }
+    template<typename CustomActionsT = Aws::Vector<RuleGroupSourceCustomActionsDetails>>
+    void SetCustomActions(CustomActionsT&& value) { m_customActionsHasBeenSet = true; m_customActions = std::forward<CustomActionsT>(value); }
+    template<typename CustomActionsT = Aws::Vector<RuleGroupSourceCustomActionsDetails>>
+    RuleGroupSourceStatelessRulesAndCustomActionsDetails& WithCustomActions(CustomActionsT&& value) { SetCustomActions(std::forward<CustomActionsT>(value)); return *this;}
+    template<typename CustomActionsT = RuleGroupSourceCustomActionsDetails>
+    RuleGroupSourceStatelessRulesAndCustomActionsDetails& AddCustomActions(CustomActionsT&& value) { m_customActionsHasBeenSet = true; m_customActions.emplace_back(std::forward<CustomActionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Stateless rules for the rule group.</p>
      */
-    inline const Aws::Vector<RuleGroupSourceStatelessRulesDetails>& GetStatelessRules() const{ return m_statelessRules; }
+    inline const Aws::Vector<RuleGroupSourceStatelessRulesDetails>& GetStatelessRules() const { return m_statelessRules; }
     inline bool StatelessRulesHasBeenSet() const { return m_statelessRulesHasBeenSet; }
-    inline void SetStatelessRules(const Aws::Vector<RuleGroupSourceStatelessRulesDetails>& value) { m_statelessRulesHasBeenSet = true; m_statelessRules = value; }
-    inline void SetStatelessRules(Aws::Vector<RuleGroupSourceStatelessRulesDetails>&& value) { m_statelessRulesHasBeenSet = true; m_statelessRules = std::move(value); }
-    inline RuleGroupSourceStatelessRulesAndCustomActionsDetails& WithStatelessRules(const Aws::Vector<RuleGroupSourceStatelessRulesDetails>& value) { SetStatelessRules(value); return *this;}
-    inline RuleGroupSourceStatelessRulesAndCustomActionsDetails& WithStatelessRules(Aws::Vector<RuleGroupSourceStatelessRulesDetails>&& value) { SetStatelessRules(std::move(value)); return *this;}
-    inline RuleGroupSourceStatelessRulesAndCustomActionsDetails& AddStatelessRules(const RuleGroupSourceStatelessRulesDetails& value) { m_statelessRulesHasBeenSet = true; m_statelessRules.push_back(value); return *this; }
-    inline RuleGroupSourceStatelessRulesAndCustomActionsDetails& AddStatelessRules(RuleGroupSourceStatelessRulesDetails&& value) { m_statelessRulesHasBeenSet = true; m_statelessRules.push_back(std::move(value)); return *this; }
+    template<typename StatelessRulesT = Aws::Vector<RuleGroupSourceStatelessRulesDetails>>
+    void SetStatelessRules(StatelessRulesT&& value) { m_statelessRulesHasBeenSet = true; m_statelessRules = std::forward<StatelessRulesT>(value); }
+    template<typename StatelessRulesT = Aws::Vector<RuleGroupSourceStatelessRulesDetails>>
+    RuleGroupSourceStatelessRulesAndCustomActionsDetails& WithStatelessRules(StatelessRulesT&& value) { SetStatelessRules(std::forward<StatelessRulesT>(value)); return *this;}
+    template<typename StatelessRulesT = RuleGroupSourceStatelessRulesDetails>
+    RuleGroupSourceStatelessRulesAndCustomActionsDetails& AddStatelessRules(StatelessRulesT&& value) { m_statelessRulesHasBeenSet = true; m_statelessRules.emplace_back(std::forward<StatelessRulesT>(value)); return *this; }
     ///@}
   private:
 

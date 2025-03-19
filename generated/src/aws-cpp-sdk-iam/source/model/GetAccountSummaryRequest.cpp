@@ -10,10 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-GetAccountSummaryRequest::GetAccountSummaryRequest()
-{
-}
-
 Aws::String GetAccountSummaryRequest::SerializePayload() const
 {
   Aws::StringStream ss;

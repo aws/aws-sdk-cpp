@@ -18,13 +18,7 @@ namespace kendra
 namespace Model
 {
 
-AccessControlConfigurationSummary::AccessControlConfigurationSummary() : 
-    m_idHasBeenSet(false)
-{
-}
-
 AccessControlConfigurationSummary::AccessControlConfigurationSummary(JsonView jsonValue)
-  : AccessControlConfigurationSummary()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AccessControlConfigurationSummary& AccessControlConfigurationSummary::operator =
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,22 +18,7 @@ namespace LexRuntimeService
 namespace Model
 {
 
-DialogAction::DialogAction() : 
-    m_type(DialogActionType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_intentNameHasBeenSet(false),
-    m_slotsHasBeenSet(false),
-    m_slotToElicitHasBeenSet(false),
-    m_fulfillmentState(FulfillmentState::NOT_SET),
-    m_fulfillmentStateHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_messageFormat(MessageFormatType::NOT_SET),
-    m_messageFormatHasBeenSet(false)
-{
-}
-
 DialogAction::DialogAction(JsonView jsonValue)
-  : DialogAction()
 {
   *this = jsonValue;
 }
@@ -43,17 +28,13 @@ DialogAction& DialogAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = DialogActionTypeMapper::GetDialogActionTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("intentName"))
   {
     m_intentName = jsonValue.GetString("intentName");
-
     m_intentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("slots"))
   {
     Aws::Map<Aws::String, JsonView> slotsJsonMap = jsonValue.GetObject("slots").GetAllObjects();
@@ -63,35 +44,26 @@ DialogAction& DialogAction::operator =(JsonView jsonValue)
     }
     m_slotsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("slotToElicit"))
   {
     m_slotToElicit = jsonValue.GetString("slotToElicit");
-
     m_slotToElicitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fulfillmentState"))
   {
     m_fulfillmentState = FulfillmentStateMapper::GetFulfillmentStateForName(jsonValue.GetString("fulfillmentState"));
-
     m_fulfillmentStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("messageFormat"))
   {
     m_messageFormat = MessageFormatTypeMapper::GetMessageFormatTypeForName(jsonValue.GetString("messageFormat"));
-
     m_messageFormatHasBeenSet = true;
   }
-
   return *this;
 }
 

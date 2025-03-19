@@ -35,7 +35,7 @@ namespace Model
   class CoverageByTime
   {
   public:
-    AWS_COSTEXPLORER_API CoverageByTime();
+    AWS_COSTEXPLORER_API CoverageByTime() = default;
     AWS_COSTEXPLORER_API CoverageByTime(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API CoverageByTime& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,38 +45,38 @@ namespace Model
     /**
      * <p>The period that this coverage was used over.</p>
      */
-    inline const DateInterval& GetTimePeriod() const{ return m_timePeriod; }
+    inline const DateInterval& GetTimePeriod() const { return m_timePeriod; }
     inline bool TimePeriodHasBeenSet() const { return m_timePeriodHasBeenSet; }
-    inline void SetTimePeriod(const DateInterval& value) { m_timePeriodHasBeenSet = true; m_timePeriod = value; }
-    inline void SetTimePeriod(DateInterval&& value) { m_timePeriodHasBeenSet = true; m_timePeriod = std::move(value); }
-    inline CoverageByTime& WithTimePeriod(const DateInterval& value) { SetTimePeriod(value); return *this;}
-    inline CoverageByTime& WithTimePeriod(DateInterval&& value) { SetTimePeriod(std::move(value)); return *this;}
+    template<typename TimePeriodT = DateInterval>
+    void SetTimePeriod(TimePeriodT&& value) { m_timePeriodHasBeenSet = true; m_timePeriod = std::forward<TimePeriodT>(value); }
+    template<typename TimePeriodT = DateInterval>
+    CoverageByTime& WithTimePeriod(TimePeriodT&& value) { SetTimePeriod(std::forward<TimePeriodT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The groups of instances that the reservation covered.</p>
      */
-    inline const Aws::Vector<ReservationCoverageGroup>& GetGroups() const{ return m_groups; }
+    inline const Aws::Vector<ReservationCoverageGroup>& GetGroups() const { return m_groups; }
     inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }
-    inline void SetGroups(const Aws::Vector<ReservationCoverageGroup>& value) { m_groupsHasBeenSet = true; m_groups = value; }
-    inline void SetGroups(Aws::Vector<ReservationCoverageGroup>&& value) { m_groupsHasBeenSet = true; m_groups = std::move(value); }
-    inline CoverageByTime& WithGroups(const Aws::Vector<ReservationCoverageGroup>& value) { SetGroups(value); return *this;}
-    inline CoverageByTime& WithGroups(Aws::Vector<ReservationCoverageGroup>&& value) { SetGroups(std::move(value)); return *this;}
-    inline CoverageByTime& AddGroups(const ReservationCoverageGroup& value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
-    inline CoverageByTime& AddGroups(ReservationCoverageGroup&& value) { m_groupsHasBeenSet = true; m_groups.push_back(std::move(value)); return *this; }
+    template<typename GroupsT = Aws::Vector<ReservationCoverageGroup>>
+    void SetGroups(GroupsT&& value) { m_groupsHasBeenSet = true; m_groups = std::forward<GroupsT>(value); }
+    template<typename GroupsT = Aws::Vector<ReservationCoverageGroup>>
+    CoverageByTime& WithGroups(GroupsT&& value) { SetGroups(std::forward<GroupsT>(value)); return *this;}
+    template<typename GroupsT = ReservationCoverageGroup>
+    CoverageByTime& AddGroups(GroupsT&& value) { m_groupsHasBeenSet = true; m_groups.emplace_back(std::forward<GroupsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The total reservation coverage, in hours.</p>
      */
-    inline const Coverage& GetTotal() const{ return m_total; }
+    inline const Coverage& GetTotal() const { return m_total; }
     inline bool TotalHasBeenSet() const { return m_totalHasBeenSet; }
-    inline void SetTotal(const Coverage& value) { m_totalHasBeenSet = true; m_total = value; }
-    inline void SetTotal(Coverage&& value) { m_totalHasBeenSet = true; m_total = std::move(value); }
-    inline CoverageByTime& WithTotal(const Coverage& value) { SetTotal(value); return *this;}
-    inline CoverageByTime& WithTotal(Coverage&& value) { SetTotal(std::move(value)); return *this;}
+    template<typename TotalT = Coverage>
+    void SetTotal(TotalT&& value) { m_totalHasBeenSet = true; m_total = std::forward<TotalT>(value); }
+    template<typename TotalT = Coverage>
+    CoverageByTime& WithTotal(TotalT&& value) { SetTotal(std::forward<TotalT>(value)); return *this;}
     ///@}
   private:
 

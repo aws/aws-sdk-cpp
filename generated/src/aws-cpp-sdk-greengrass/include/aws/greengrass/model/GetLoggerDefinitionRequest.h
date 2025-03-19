@@ -21,7 +21,7 @@ namespace Model
   class GetLoggerDefinitionRequest : public GreengrassRequest
   {
   public:
-    AWS_GREENGRASS_API GetLoggerDefinitionRequest();
+    AWS_GREENGRASS_API GetLoggerDefinitionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * The ID of the logger definition.
      */
-    inline const Aws::String& GetLoggerDefinitionId() const{ return m_loggerDefinitionId; }
+    inline const Aws::String& GetLoggerDefinitionId() const { return m_loggerDefinitionId; }
     inline bool LoggerDefinitionIdHasBeenSet() const { return m_loggerDefinitionIdHasBeenSet; }
-    inline void SetLoggerDefinitionId(const Aws::String& value) { m_loggerDefinitionIdHasBeenSet = true; m_loggerDefinitionId = value; }
-    inline void SetLoggerDefinitionId(Aws::String&& value) { m_loggerDefinitionIdHasBeenSet = true; m_loggerDefinitionId = std::move(value); }
-    inline void SetLoggerDefinitionId(const char* value) { m_loggerDefinitionIdHasBeenSet = true; m_loggerDefinitionId.assign(value); }
-    inline GetLoggerDefinitionRequest& WithLoggerDefinitionId(const Aws::String& value) { SetLoggerDefinitionId(value); return *this;}
-    inline GetLoggerDefinitionRequest& WithLoggerDefinitionId(Aws::String&& value) { SetLoggerDefinitionId(std::move(value)); return *this;}
-    inline GetLoggerDefinitionRequest& WithLoggerDefinitionId(const char* value) { SetLoggerDefinitionId(value); return *this;}
+    template<typename LoggerDefinitionIdT = Aws::String>
+    void SetLoggerDefinitionId(LoggerDefinitionIdT&& value) { m_loggerDefinitionIdHasBeenSet = true; m_loggerDefinitionId = std::forward<LoggerDefinitionIdT>(value); }
+    template<typename LoggerDefinitionIdT = Aws::String>
+    GetLoggerDefinitionRequest& WithLoggerDefinitionId(LoggerDefinitionIdT&& value) { SetLoggerDefinitionId(std::forward<LoggerDefinitionIdT>(value)); return *this;}
     ///@}
   private:
 

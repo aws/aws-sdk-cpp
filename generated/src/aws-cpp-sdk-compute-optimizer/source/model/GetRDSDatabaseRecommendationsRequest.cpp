@@ -12,17 +12,6 @@ using namespace Aws::ComputeOptimizer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRDSDatabaseRecommendationsRequest::GetRDSDatabaseRecommendationsRequest() : 
-    m_resourceArnsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_accountIdsHasBeenSet(false),
-    m_recommendationPreferencesHasBeenSet(false)
-{
-}
-
 Aws::String GetRDSDatabaseRecommendationsRequest::SerializePayload() const
 {
   JsonValue payload;

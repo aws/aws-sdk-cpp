@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchCreateRumMetricDefinitionsResult::BatchCreateRumMetricDefinitionsResult()
-{
-}
-
 BatchCreateRumMetricDefinitionsResult::BatchCreateRumMetricDefinitionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ BatchCreateRumMetricDefinitionsResult& BatchCreateRumMetricDefinitionsResult::op
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
     }
+    m_errorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricDefinitions"))
   {
     Aws::Utils::Array<JsonView> metricDefinitionsJsonList = jsonValue.GetArray("MetricDefinitions");
@@ -45,14 +41,15 @@ BatchCreateRumMetricDefinitionsResult& BatchCreateRumMetricDefinitionsResult::op
     {
       m_metricDefinitions.push_back(metricDefinitionsJsonList[metricDefinitionsIndex].AsObject());
     }
+    m_metricDefinitionsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

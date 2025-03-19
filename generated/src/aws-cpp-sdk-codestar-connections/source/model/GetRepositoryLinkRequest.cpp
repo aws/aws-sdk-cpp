@@ -12,11 +12,6 @@ using namespace Aws::CodeStarconnections::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRepositoryLinkRequest::GetRepositoryLinkRequest() : 
-    m_repositoryLinkIdHasBeenSet(false)
-{
-}
-
 Aws::String GetRepositoryLinkRequest::SerializePayload() const
 {
   JsonValue payload;

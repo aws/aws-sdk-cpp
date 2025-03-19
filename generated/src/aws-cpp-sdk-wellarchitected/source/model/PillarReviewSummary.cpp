@@ -18,17 +18,7 @@ namespace WellArchitected
 namespace Model
 {
 
-PillarReviewSummary::PillarReviewSummary() : 
-    m_pillarIdHasBeenSet(false),
-    m_pillarNameHasBeenSet(false),
-    m_notesHasBeenSet(false),
-    m_riskCountsHasBeenSet(false),
-    m_prioritizedRiskCountsHasBeenSet(false)
-{
-}
-
 PillarReviewSummary::PillarReviewSummary(JsonView jsonValue)
-  : PillarReviewSummary()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ PillarReviewSummary& PillarReviewSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PillarId"))
   {
     m_pillarId = jsonValue.GetString("PillarId");
-
     m_pillarIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PillarName"))
   {
     m_pillarName = jsonValue.GetString("PillarName");
-
     m_pillarNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Notes"))
   {
     m_notes = jsonValue.GetString("Notes");
-
     m_notesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RiskCounts"))
   {
     Aws::Map<Aws::String, JsonView> riskCountsJsonMap = jsonValue.GetObject("RiskCounts").GetAllObjects();
@@ -65,7 +49,6 @@ PillarReviewSummary& PillarReviewSummary::operator =(JsonView jsonValue)
     }
     m_riskCountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrioritizedRiskCounts"))
   {
     Aws::Map<Aws::String, JsonView> prioritizedRiskCountsJsonMap = jsonValue.GetObject("PrioritizedRiskCounts").GetAllObjects();
@@ -75,7 +58,6 @@ PillarReviewSummary& PillarReviewSummary::operator =(JsonView jsonValue)
     }
     m_prioritizedRiskCountsHasBeenSet = true;
   }
-
   return *this;
 }
 

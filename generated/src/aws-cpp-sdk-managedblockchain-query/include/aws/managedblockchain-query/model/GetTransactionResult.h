@@ -28,7 +28,7 @@ namespace Model
   class GetTransactionResult
   {
   public:
-    AWS_MANAGEDBLOCKCHAINQUERY_API GetTransactionResult();
+    AWS_MANAGEDBLOCKCHAINQUERY_API GetTransactionResult() = default;
     AWS_MANAGEDBLOCKCHAINQUERY_API GetTransactionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MANAGEDBLOCKCHAINQUERY_API GetTransactionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Contains the details of the transaction.</p>
      */
-    inline const Transaction& GetTransaction() const{ return m_transaction; }
-    inline void SetTransaction(const Transaction& value) { m_transaction = value; }
-    inline void SetTransaction(Transaction&& value) { m_transaction = std::move(value); }
-    inline GetTransactionResult& WithTransaction(const Transaction& value) { SetTransaction(value); return *this;}
-    inline GetTransactionResult& WithTransaction(Transaction&& value) { SetTransaction(std::move(value)); return *this;}
+    inline const Transaction& GetTransaction() const { return m_transaction; }
+    template<typename TransactionT = Transaction>
+    void SetTransaction(TransactionT&& value) { m_transactionHasBeenSet = true; m_transaction = std::forward<TransactionT>(value); }
+    template<typename TransactionT = Transaction>
+    GetTransactionResult& WithTransaction(TransactionT&& value) { SetTransaction(std::forward<TransactionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetTransactionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetTransactionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetTransactionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetTransactionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Transaction m_transaction;
+    bool m_transactionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

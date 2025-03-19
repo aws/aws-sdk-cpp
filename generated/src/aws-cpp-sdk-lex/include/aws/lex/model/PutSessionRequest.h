@@ -26,7 +26,7 @@ namespace Model
   class PutSessionRequest : public LexRuntimeServiceRequest
   {
   public:
-    AWS_LEXRUNTIMESERVICE_API PutSessionRequest();
+    AWS_LEXRUNTIMESERVICE_API PutSessionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The name of the bot that contains the session data.</p>
      */
-    inline const Aws::String& GetBotName() const{ return m_botName; }
+    inline const Aws::String& GetBotName() const { return m_botName; }
     inline bool BotNameHasBeenSet() const { return m_botNameHasBeenSet; }
-    inline void SetBotName(const Aws::String& value) { m_botNameHasBeenSet = true; m_botName = value; }
-    inline void SetBotName(Aws::String&& value) { m_botNameHasBeenSet = true; m_botName = std::move(value); }
-    inline void SetBotName(const char* value) { m_botNameHasBeenSet = true; m_botName.assign(value); }
-    inline PutSessionRequest& WithBotName(const Aws::String& value) { SetBotName(value); return *this;}
-    inline PutSessionRequest& WithBotName(Aws::String&& value) { SetBotName(std::move(value)); return *this;}
-    inline PutSessionRequest& WithBotName(const char* value) { SetBotName(value); return *this;}
+    template<typename BotNameT = Aws::String>
+    void SetBotName(BotNameT&& value) { m_botNameHasBeenSet = true; m_botName = std::forward<BotNameT>(value); }
+    template<typename BotNameT = Aws::String>
+    PutSessionRequest& WithBotName(BotNameT&& value) { SetBotName(std::forward<BotNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The alias in use for the bot that contains the session data.</p>
      */
-    inline const Aws::String& GetBotAlias() const{ return m_botAlias; }
+    inline const Aws::String& GetBotAlias() const { return m_botAlias; }
     inline bool BotAliasHasBeenSet() const { return m_botAliasHasBeenSet; }
-    inline void SetBotAlias(const Aws::String& value) { m_botAliasHasBeenSet = true; m_botAlias = value; }
-    inline void SetBotAlias(Aws::String&& value) { m_botAliasHasBeenSet = true; m_botAlias = std::move(value); }
-    inline void SetBotAlias(const char* value) { m_botAliasHasBeenSet = true; m_botAlias.assign(value); }
-    inline PutSessionRequest& WithBotAlias(const Aws::String& value) { SetBotAlias(value); return *this;}
-    inline PutSessionRequest& WithBotAlias(Aws::String&& value) { SetBotAlias(std::move(value)); return *this;}
-    inline PutSessionRequest& WithBotAlias(const char* value) { SetBotAlias(value); return *this;}
+    template<typename BotAliasT = Aws::String>
+    void SetBotAlias(BotAliasT&& value) { m_botAliasHasBeenSet = true; m_botAlias = std::forward<BotAliasT>(value); }
+    template<typename BotAliasT = Aws::String>
+    PutSessionRequest& WithBotAlias(BotAliasT&& value) { SetBotAlias(std::forward<BotAliasT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +68,12 @@ namespace Model
      * <p>The ID of the client application user. Amazon Lex uses this to identify a
      * user's conversation with your bot. </p>
      */
-    inline const Aws::String& GetUserId() const{ return m_userId; }
+    inline const Aws::String& GetUserId() const { return m_userId; }
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
-    inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
-    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
-    inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
-    inline PutSessionRequest& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
-    inline PutSessionRequest& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
-    inline PutSessionRequest& WithUserId(const char* value) { SetUserId(value); return *this;}
+    template<typename UserIdT = Aws::String>
+    void SetUserId(UserIdT&& value) { m_userIdHasBeenSet = true; m_userId = std::forward<UserIdT>(value); }
+    template<typename UserIdT = Aws::String>
+    PutSessionRequest& WithUserId(UserIdT&& value) { SetUserId(std::forward<UserIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,19 +82,16 @@ namespace Model
      * It contains application information passed between Amazon Lex and a client
      * application.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetSessionAttributes() const{ return m_sessionAttributes; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetSessionAttributes() const { return m_sessionAttributes; }
     inline bool SessionAttributesHasBeenSet() const { return m_sessionAttributesHasBeenSet; }
-    inline void SetSessionAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes = value; }
-    inline void SetSessionAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes = std::move(value); }
-    inline PutSessionRequest& WithSessionAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetSessionAttributes(value); return *this;}
-    inline PutSessionRequest& WithSessionAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetSessionAttributes(std::move(value)); return *this;}
-    inline PutSessionRequest& AddSessionAttributes(const Aws::String& key, const Aws::String& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes.emplace(key, value); return *this; }
-    inline PutSessionRequest& AddSessionAttributes(Aws::String&& key, const Aws::String& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes.emplace(std::move(key), value); return *this; }
-    inline PutSessionRequest& AddSessionAttributes(const Aws::String& key, Aws::String&& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes.emplace(key, std::move(value)); return *this; }
-    inline PutSessionRequest& AddSessionAttributes(Aws::String&& key, Aws::String&& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline PutSessionRequest& AddSessionAttributes(const char* key, Aws::String&& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes.emplace(key, std::move(value)); return *this; }
-    inline PutSessionRequest& AddSessionAttributes(Aws::String&& key, const char* value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes.emplace(std::move(key), value); return *this; }
-    inline PutSessionRequest& AddSessionAttributes(const char* key, const char* value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes.emplace(key, value); return *this; }
+    template<typename SessionAttributesT = Aws::Map<Aws::String, Aws::String>>
+    void SetSessionAttributes(SessionAttributesT&& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes = std::forward<SessionAttributesT>(value); }
+    template<typename SessionAttributesT = Aws::Map<Aws::String, Aws::String>>
+    PutSessionRequest& WithSessionAttributes(SessionAttributesT&& value) { SetSessionAttributes(std::forward<SessionAttributesT>(value)); return *this;}
+    template<typename SessionAttributesKeyT = Aws::String, typename SessionAttributesValueT = Aws::String>
+    PutSessionRequest& AddSessionAttributes(SessionAttributesKeyT&& key, SessionAttributesValueT&& value) {
+      m_sessionAttributesHasBeenSet = true; m_sessionAttributes.emplace(std::forward<SessionAttributesKeyT>(key), std::forward<SessionAttributesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -108,12 +99,12 @@ namespace Model
      * <p>Sets the next action that the bot should take to fulfill the
      * conversation.</p>
      */
-    inline const DialogAction& GetDialogAction() const{ return m_dialogAction; }
+    inline const DialogAction& GetDialogAction() const { return m_dialogAction; }
     inline bool DialogActionHasBeenSet() const { return m_dialogActionHasBeenSet; }
-    inline void SetDialogAction(const DialogAction& value) { m_dialogActionHasBeenSet = true; m_dialogAction = value; }
-    inline void SetDialogAction(DialogAction&& value) { m_dialogActionHasBeenSet = true; m_dialogAction = std::move(value); }
-    inline PutSessionRequest& WithDialogAction(const DialogAction& value) { SetDialogAction(value); return *this;}
-    inline PutSessionRequest& WithDialogAction(DialogAction&& value) { SetDialogAction(std::move(value)); return *this;}
+    template<typename DialogActionT = DialogAction>
+    void SetDialogAction(DialogActionT&& value) { m_dialogActionHasBeenSet = true; m_dialogAction = std::forward<DialogActionT>(value); }
+    template<typename DialogActionT = DialogAction>
+    PutSessionRequest& WithDialogAction(DialogActionT&& value) { SetDialogAction(std::forward<DialogActionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -132,14 +123,14 @@ namespace Model
      * intent in the summary view, the next call to <code>GetSession</code> will only
      * return one intent.</p>
      */
-    inline const Aws::Vector<IntentSummary>& GetRecentIntentSummaryView() const{ return m_recentIntentSummaryView; }
+    inline const Aws::Vector<IntentSummary>& GetRecentIntentSummaryView() const { return m_recentIntentSummaryView; }
     inline bool RecentIntentSummaryViewHasBeenSet() const { return m_recentIntentSummaryViewHasBeenSet; }
-    inline void SetRecentIntentSummaryView(const Aws::Vector<IntentSummary>& value) { m_recentIntentSummaryViewHasBeenSet = true; m_recentIntentSummaryView = value; }
-    inline void SetRecentIntentSummaryView(Aws::Vector<IntentSummary>&& value) { m_recentIntentSummaryViewHasBeenSet = true; m_recentIntentSummaryView = std::move(value); }
-    inline PutSessionRequest& WithRecentIntentSummaryView(const Aws::Vector<IntentSummary>& value) { SetRecentIntentSummaryView(value); return *this;}
-    inline PutSessionRequest& WithRecentIntentSummaryView(Aws::Vector<IntentSummary>&& value) { SetRecentIntentSummaryView(std::move(value)); return *this;}
-    inline PutSessionRequest& AddRecentIntentSummaryView(const IntentSummary& value) { m_recentIntentSummaryViewHasBeenSet = true; m_recentIntentSummaryView.push_back(value); return *this; }
-    inline PutSessionRequest& AddRecentIntentSummaryView(IntentSummary&& value) { m_recentIntentSummaryViewHasBeenSet = true; m_recentIntentSummaryView.push_back(std::move(value)); return *this; }
+    template<typename RecentIntentSummaryViewT = Aws::Vector<IntentSummary>>
+    void SetRecentIntentSummaryView(RecentIntentSummaryViewT&& value) { m_recentIntentSummaryViewHasBeenSet = true; m_recentIntentSummaryView = std::forward<RecentIntentSummaryViewT>(value); }
+    template<typename RecentIntentSummaryViewT = Aws::Vector<IntentSummary>>
+    PutSessionRequest& WithRecentIntentSummaryView(RecentIntentSummaryViewT&& value) { SetRecentIntentSummaryView(std::forward<RecentIntentSummaryViewT>(value)); return *this;}
+    template<typename RecentIntentSummaryViewT = IntentSummary>
+    PutSessionRequest& AddRecentIntentSummaryView(RecentIntentSummaryViewT&& value) { m_recentIntentSummaryViewHasBeenSet = true; m_recentIntentSummaryView.emplace_back(std::forward<RecentIntentSummaryViewT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -159,14 +150,12 @@ namespace Model
      * (defaults to mpeg)</p> </li> <li> <p> <code>text/plain; charset=utf-8</code>
      * </p> </li> </ul> </li> </ul>
      */
-    inline const Aws::String& GetAccept() const{ return m_accept; }
+    inline const Aws::String& GetAccept() const { return m_accept; }
     inline bool AcceptHasBeenSet() const { return m_acceptHasBeenSet; }
-    inline void SetAccept(const Aws::String& value) { m_acceptHasBeenSet = true; m_accept = value; }
-    inline void SetAccept(Aws::String&& value) { m_acceptHasBeenSet = true; m_accept = std::move(value); }
-    inline void SetAccept(const char* value) { m_acceptHasBeenSet = true; m_accept.assign(value); }
-    inline PutSessionRequest& WithAccept(const Aws::String& value) { SetAccept(value); return *this;}
-    inline PutSessionRequest& WithAccept(Aws::String&& value) { SetAccept(std::move(value)); return *this;}
-    inline PutSessionRequest& WithAccept(const char* value) { SetAccept(value); return *this;}
+    template<typename AcceptT = Aws::String>
+    void SetAccept(AcceptT&& value) { m_acceptHasBeenSet = true; m_accept = std::forward<AcceptT>(value); }
+    template<typename AcceptT = Aws::String>
+    PutSessionRequest& WithAccept(AcceptT&& value) { SetAccept(std::forward<AcceptT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -177,14 +166,14 @@ namespace Model
      * of contexts for the session. If you specify an empty list, all contexts for the
      * session are cleared.</p>
      */
-    inline const Aws::Vector<ActiveContext>& GetActiveContexts() const{ return m_activeContexts; }
+    inline const Aws::Vector<ActiveContext>& GetActiveContexts() const { return m_activeContexts; }
     inline bool ActiveContextsHasBeenSet() const { return m_activeContextsHasBeenSet; }
-    inline void SetActiveContexts(const Aws::Vector<ActiveContext>& value) { m_activeContextsHasBeenSet = true; m_activeContexts = value; }
-    inline void SetActiveContexts(Aws::Vector<ActiveContext>&& value) { m_activeContextsHasBeenSet = true; m_activeContexts = std::move(value); }
-    inline PutSessionRequest& WithActiveContexts(const Aws::Vector<ActiveContext>& value) { SetActiveContexts(value); return *this;}
-    inline PutSessionRequest& WithActiveContexts(Aws::Vector<ActiveContext>&& value) { SetActiveContexts(std::move(value)); return *this;}
-    inline PutSessionRequest& AddActiveContexts(const ActiveContext& value) { m_activeContextsHasBeenSet = true; m_activeContexts.push_back(value); return *this; }
-    inline PutSessionRequest& AddActiveContexts(ActiveContext&& value) { m_activeContextsHasBeenSet = true; m_activeContexts.push_back(std::move(value)); return *this; }
+    template<typename ActiveContextsT = Aws::Vector<ActiveContext>>
+    void SetActiveContexts(ActiveContextsT&& value) { m_activeContextsHasBeenSet = true; m_activeContexts = std::forward<ActiveContextsT>(value); }
+    template<typename ActiveContextsT = Aws::Vector<ActiveContext>>
+    PutSessionRequest& WithActiveContexts(ActiveContextsT&& value) { SetActiveContexts(std::forward<ActiveContextsT>(value)); return *this;}
+    template<typename ActiveContextsT = ActiveContext>
+    PutSessionRequest& AddActiveContexts(ActiveContextsT&& value) { m_activeContextsHasBeenSet = true; m_activeContexts.emplace_back(std::forward<ActiveContextsT>(value)); return *this; }
     ///@}
   private:
 

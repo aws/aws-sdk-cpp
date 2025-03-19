@@ -20,13 +20,7 @@ namespace IAM
 namespace Model
 {
 
-OpenIDConnectProviderListEntry::OpenIDConnectProviderListEntry() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 OpenIDConnectProviderListEntry::OpenIDConnectProviderListEntry(const XmlNode& xmlNode)
-  : OpenIDConnectProviderListEntry()
 {
   *this = xmlNode;
 }

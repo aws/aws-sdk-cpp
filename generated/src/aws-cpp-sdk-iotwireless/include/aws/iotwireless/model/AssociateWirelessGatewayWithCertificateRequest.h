@@ -21,7 +21,7 @@ namespace Model
   class AssociateWirelessGatewayWithCertificateRequest : public IoTWirelessRequest
   {
   public:
-    AWS_IOTWIRELESS_API AssociateWirelessGatewayWithCertificateRequest();
+    AWS_IOTWIRELESS_API AssociateWirelessGatewayWithCertificateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>The ID of the resource to update.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline AssociateWirelessGatewayWithCertificateRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline AssociateWirelessGatewayWithCertificateRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline AssociateWirelessGatewayWithCertificateRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    AssociateWirelessGatewayWithCertificateRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the certificate to associate with the wireless gateway.</p>
      */
-    inline const Aws::String& GetIotCertificateId() const{ return m_iotCertificateId; }
+    inline const Aws::String& GetIotCertificateId() const { return m_iotCertificateId; }
     inline bool IotCertificateIdHasBeenSet() const { return m_iotCertificateIdHasBeenSet; }
-    inline void SetIotCertificateId(const Aws::String& value) { m_iotCertificateIdHasBeenSet = true; m_iotCertificateId = value; }
-    inline void SetIotCertificateId(Aws::String&& value) { m_iotCertificateIdHasBeenSet = true; m_iotCertificateId = std::move(value); }
-    inline void SetIotCertificateId(const char* value) { m_iotCertificateIdHasBeenSet = true; m_iotCertificateId.assign(value); }
-    inline AssociateWirelessGatewayWithCertificateRequest& WithIotCertificateId(const Aws::String& value) { SetIotCertificateId(value); return *this;}
-    inline AssociateWirelessGatewayWithCertificateRequest& WithIotCertificateId(Aws::String&& value) { SetIotCertificateId(std::move(value)); return *this;}
-    inline AssociateWirelessGatewayWithCertificateRequest& WithIotCertificateId(const char* value) { SetIotCertificateId(value); return *this;}
+    template<typename IotCertificateIdT = Aws::String>
+    void SetIotCertificateId(IotCertificateIdT&& value) { m_iotCertificateIdHasBeenSet = true; m_iotCertificateId = std::forward<IotCertificateIdT>(value); }
+    template<typename IotCertificateIdT = Aws::String>
+    AssociateWirelessGatewayWithCertificateRequest& WithIotCertificateId(IotCertificateIdT&& value) { SetIotCertificateId(std::forward<IotCertificateIdT>(value)); return *this;}
     ///@}
   private:
 

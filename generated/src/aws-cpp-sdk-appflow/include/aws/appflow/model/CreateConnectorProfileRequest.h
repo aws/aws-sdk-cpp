@@ -25,7 +25,7 @@ namespace Model
   class CreateConnectorProfileRequest : public AppflowRequest
   {
   public:
-    AWS_APPFLOW_API CreateConnectorProfileRequest();
+    AWS_APPFLOW_API CreateConnectorProfileRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <p> The name of the connector profile. The name is unique for each
      * <code>ConnectorProfile</code> in your Amazon Web Services account. </p>
      */
-    inline const Aws::String& GetConnectorProfileName() const{ return m_connectorProfileName; }
+    inline const Aws::String& GetConnectorProfileName() const { return m_connectorProfileName; }
     inline bool ConnectorProfileNameHasBeenSet() const { return m_connectorProfileNameHasBeenSet; }
-    inline void SetConnectorProfileName(const Aws::String& value) { m_connectorProfileNameHasBeenSet = true; m_connectorProfileName = value; }
-    inline void SetConnectorProfileName(Aws::String&& value) { m_connectorProfileNameHasBeenSet = true; m_connectorProfileName = std::move(value); }
-    inline void SetConnectorProfileName(const char* value) { m_connectorProfileNameHasBeenSet = true; m_connectorProfileName.assign(value); }
-    inline CreateConnectorProfileRequest& WithConnectorProfileName(const Aws::String& value) { SetConnectorProfileName(value); return *this;}
-    inline CreateConnectorProfileRequest& WithConnectorProfileName(Aws::String&& value) { SetConnectorProfileName(std::move(value)); return *this;}
-    inline CreateConnectorProfileRequest& WithConnectorProfileName(const char* value) { SetConnectorProfileName(value); return *this;}
+    template<typename ConnectorProfileNameT = Aws::String>
+    void SetConnectorProfileName(ConnectorProfileNameT&& value) { m_connectorProfileNameHasBeenSet = true; m_connectorProfileName = std::forward<ConnectorProfileNameT>(value); }
+    template<typename ConnectorProfileNameT = Aws::String>
+    CreateConnectorProfileRequest& WithConnectorProfileName(ConnectorProfileNameT&& value) { SetConnectorProfileName(std::forward<ConnectorProfileNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,26 +56,22 @@ namespace Model
      * AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses
      * the Amazon AppFlow-managed KMS key. </p>
      */
-    inline const Aws::String& GetKmsArn() const{ return m_kmsArn; }
+    inline const Aws::String& GetKmsArn() const { return m_kmsArn; }
     inline bool KmsArnHasBeenSet() const { return m_kmsArnHasBeenSet; }
-    inline void SetKmsArn(const Aws::String& value) { m_kmsArnHasBeenSet = true; m_kmsArn = value; }
-    inline void SetKmsArn(Aws::String&& value) { m_kmsArnHasBeenSet = true; m_kmsArn = std::move(value); }
-    inline void SetKmsArn(const char* value) { m_kmsArnHasBeenSet = true; m_kmsArn.assign(value); }
-    inline CreateConnectorProfileRequest& WithKmsArn(const Aws::String& value) { SetKmsArn(value); return *this;}
-    inline CreateConnectorProfileRequest& WithKmsArn(Aws::String&& value) { SetKmsArn(std::move(value)); return *this;}
-    inline CreateConnectorProfileRequest& WithKmsArn(const char* value) { SetKmsArn(value); return *this;}
+    template<typename KmsArnT = Aws::String>
+    void SetKmsArn(KmsArnT&& value) { m_kmsArnHasBeenSet = true; m_kmsArn = std::forward<KmsArnT>(value); }
+    template<typename KmsArnT = Aws::String>
+    CreateConnectorProfileRequest& WithKmsArn(KmsArnT&& value) { SetKmsArn(std::forward<KmsArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
      */
-    inline const ConnectorType& GetConnectorType() const{ return m_connectorType; }
+    inline ConnectorType GetConnectorType() const { return m_connectorType; }
     inline bool ConnectorTypeHasBeenSet() const { return m_connectorTypeHasBeenSet; }
-    inline void SetConnectorType(const ConnectorType& value) { m_connectorTypeHasBeenSet = true; m_connectorType = value; }
-    inline void SetConnectorType(ConnectorType&& value) { m_connectorTypeHasBeenSet = true; m_connectorType = std::move(value); }
-    inline CreateConnectorProfileRequest& WithConnectorType(const ConnectorType& value) { SetConnectorType(value); return *this;}
-    inline CreateConnectorProfileRequest& WithConnectorType(ConnectorType&& value) { SetConnectorType(std::move(value)); return *this;}
+    inline void SetConnectorType(ConnectorType value) { m_connectorTypeHasBeenSet = true; m_connectorType = value; }
+    inline CreateConnectorProfileRequest& WithConnectorType(ConnectorType value) { SetConnectorType(value); return *this;}
     ///@}
 
     ///@{
@@ -86,14 +80,12 @@ namespace Model
      * <code>ConnectorRegistration</code> in your Amazon Web Services account. Only
      * needed if calling for CUSTOMCONNECTOR connector type/.</p>
      */
-    inline const Aws::String& GetConnectorLabel() const{ return m_connectorLabel; }
+    inline const Aws::String& GetConnectorLabel() const { return m_connectorLabel; }
     inline bool ConnectorLabelHasBeenSet() const { return m_connectorLabelHasBeenSet; }
-    inline void SetConnectorLabel(const Aws::String& value) { m_connectorLabelHasBeenSet = true; m_connectorLabel = value; }
-    inline void SetConnectorLabel(Aws::String&& value) { m_connectorLabelHasBeenSet = true; m_connectorLabel = std::move(value); }
-    inline void SetConnectorLabel(const char* value) { m_connectorLabelHasBeenSet = true; m_connectorLabel.assign(value); }
-    inline CreateConnectorProfileRequest& WithConnectorLabel(const Aws::String& value) { SetConnectorLabel(value); return *this;}
-    inline CreateConnectorProfileRequest& WithConnectorLabel(Aws::String&& value) { SetConnectorLabel(std::move(value)); return *this;}
-    inline CreateConnectorProfileRequest& WithConnectorLabel(const char* value) { SetConnectorLabel(value); return *this;}
+    template<typename ConnectorLabelT = Aws::String>
+    void SetConnectorLabel(ConnectorLabelT&& value) { m_connectorLabelHasBeenSet = true; m_connectorLabel = std::forward<ConnectorLabelT>(value); }
+    template<typename ConnectorLabelT = Aws::String>
+    CreateConnectorProfileRequest& WithConnectorLabel(ConnectorLabelT&& value) { SetConnectorLabel(std::forward<ConnectorLabelT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,24 +94,22 @@ namespace Model
      * Private flows use Amazon Web Services PrivateLink to route data over Amazon Web
      * Services infrastructure without exposing it to the public internet. </p>
      */
-    inline const ConnectionMode& GetConnectionMode() const{ return m_connectionMode; }
+    inline ConnectionMode GetConnectionMode() const { return m_connectionMode; }
     inline bool ConnectionModeHasBeenSet() const { return m_connectionModeHasBeenSet; }
-    inline void SetConnectionMode(const ConnectionMode& value) { m_connectionModeHasBeenSet = true; m_connectionMode = value; }
-    inline void SetConnectionMode(ConnectionMode&& value) { m_connectionModeHasBeenSet = true; m_connectionMode = std::move(value); }
-    inline CreateConnectorProfileRequest& WithConnectionMode(const ConnectionMode& value) { SetConnectionMode(value); return *this;}
-    inline CreateConnectorProfileRequest& WithConnectionMode(ConnectionMode&& value) { SetConnectionMode(std::move(value)); return *this;}
+    inline void SetConnectionMode(ConnectionMode value) { m_connectionModeHasBeenSet = true; m_connectionMode = value; }
+    inline CreateConnectorProfileRequest& WithConnectionMode(ConnectionMode value) { SetConnectionMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Defines the connector-specific configuration and credentials. </p>
      */
-    inline const ConnectorProfileConfig& GetConnectorProfileConfig() const{ return m_connectorProfileConfig; }
+    inline const ConnectorProfileConfig& GetConnectorProfileConfig() const { return m_connectorProfileConfig; }
     inline bool ConnectorProfileConfigHasBeenSet() const { return m_connectorProfileConfigHasBeenSet; }
-    inline void SetConnectorProfileConfig(const ConnectorProfileConfig& value) { m_connectorProfileConfigHasBeenSet = true; m_connectorProfileConfig = value; }
-    inline void SetConnectorProfileConfig(ConnectorProfileConfig&& value) { m_connectorProfileConfigHasBeenSet = true; m_connectorProfileConfig = std::move(value); }
-    inline CreateConnectorProfileRequest& WithConnectorProfileConfig(const ConnectorProfileConfig& value) { SetConnectorProfileConfig(value); return *this;}
-    inline CreateConnectorProfileRequest& WithConnectorProfileConfig(ConnectorProfileConfig&& value) { SetConnectorProfileConfig(std::move(value)); return *this;}
+    template<typename ConnectorProfileConfigT = ConnectorProfileConfig>
+    void SetConnectorProfileConfig(ConnectorProfileConfigT&& value) { m_connectorProfileConfigHasBeenSet = true; m_connectorProfileConfig = std::forward<ConnectorProfileConfigT>(value); }
+    template<typename ConnectorProfileConfigT = ConnectorProfileConfig>
+    CreateConnectorProfileRequest& WithConnectorProfileConfig(ConnectorProfileConfigT&& value) { SetConnectorProfileConfig(std::forward<ConnectorProfileConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -136,14 +126,12 @@ namespace Model
      * for <code>clientToken</code>, Amazon AppFlow considers it a new call to
      * <code>CreateConnectorProfile</code>. The token is active for 8 hours.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateConnectorProfileRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateConnectorProfileRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateConnectorProfileRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateConnectorProfileRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -153,13 +141,13 @@ namespace Model
     Aws::String m_kmsArn;
     bool m_kmsArnHasBeenSet = false;
 
-    ConnectorType m_connectorType;
+    ConnectorType m_connectorType{ConnectorType::NOT_SET};
     bool m_connectorTypeHasBeenSet = false;
 
     Aws::String m_connectorLabel;
     bool m_connectorLabelHasBeenSet = false;
 
-    ConnectionMode m_connectionMode;
+    ConnectionMode m_connectionMode{ConnectionMode::NOT_SET};
     bool m_connectionModeHasBeenSet = false;
 
     ConnectorProfileConfig m_connectorProfileConfig;

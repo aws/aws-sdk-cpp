@@ -12,11 +12,6 @@ using namespace Aws::IoTManagedIntegrations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDeviceDiscoveryRequest::GetDeviceDiscoveryRequest() : 
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String GetDeviceDiscoveryRequest::SerializePayload() const
 {
   return {};

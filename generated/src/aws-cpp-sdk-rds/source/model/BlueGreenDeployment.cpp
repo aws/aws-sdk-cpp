@@ -20,23 +20,7 @@ namespace RDS
 namespace Model
 {
 
-BlueGreenDeployment::BlueGreenDeployment() : 
-    m_blueGreenDeploymentIdentifierHasBeenSet(false),
-    m_blueGreenDeploymentNameHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_switchoverDetailsHasBeenSet(false),
-    m_tasksHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_statusDetailsHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_deleteTimeHasBeenSet(false),
-    m_tagListHasBeenSet(false)
-{
-}
-
 BlueGreenDeployment::BlueGreenDeployment(const XmlNode& xmlNode)
-  : BlueGreenDeployment()
 {
   *this = xmlNode;
 }
@@ -75,6 +59,7 @@ BlueGreenDeployment& BlueGreenDeployment::operator =(const XmlNode& xmlNode)
     if(!switchoverDetailsNode.IsNull())
     {
       XmlNode switchoverDetailsMember = switchoverDetailsNode.FirstChild("member");
+      m_switchoverDetailsHasBeenSet = !switchoverDetailsMember.IsNull();
       while(!switchoverDetailsMember.IsNull())
       {
         m_switchoverDetails.push_back(switchoverDetailsMember);
@@ -87,6 +72,7 @@ BlueGreenDeployment& BlueGreenDeployment::operator =(const XmlNode& xmlNode)
     if(!tasksNode.IsNull())
     {
       XmlNode tasksMember = tasksNode.FirstChild("member");
+      m_tasksHasBeenSet = !tasksMember.IsNull();
       while(!tasksMember.IsNull())
       {
         m_tasks.push_back(tasksMember);
@@ -123,6 +109,7 @@ BlueGreenDeployment& BlueGreenDeployment::operator =(const XmlNode& xmlNode)
     if(!tagListNode.IsNull())
     {
       XmlNode tagListMember = tagListNode.FirstChild("Tag");
+      m_tagListHasBeenSet = !tagListMember.IsNull();
       while(!tagListMember.IsNull())
       {
         m_tagList.push_back(tagListMember);

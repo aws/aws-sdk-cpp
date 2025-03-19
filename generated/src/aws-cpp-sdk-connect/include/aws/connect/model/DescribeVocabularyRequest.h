@@ -21,7 +21,7 @@ namespace Model
   class DescribeVocabularyRequest : public ConnectRequest
   {
   public:
-    AWS_CONNECT_API DescribeVocabularyRequest();
+    AWS_CONNECT_API DescribeVocabularyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline DescribeVocabularyRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline DescribeVocabularyRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline DescribeVocabularyRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    DescribeVocabularyRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the custom vocabulary.</p>
      */
-    inline const Aws::String& GetVocabularyId() const{ return m_vocabularyId; }
+    inline const Aws::String& GetVocabularyId() const { return m_vocabularyId; }
     inline bool VocabularyIdHasBeenSet() const { return m_vocabularyIdHasBeenSet; }
-    inline void SetVocabularyId(const Aws::String& value) { m_vocabularyIdHasBeenSet = true; m_vocabularyId = value; }
-    inline void SetVocabularyId(Aws::String&& value) { m_vocabularyIdHasBeenSet = true; m_vocabularyId = std::move(value); }
-    inline void SetVocabularyId(const char* value) { m_vocabularyIdHasBeenSet = true; m_vocabularyId.assign(value); }
-    inline DescribeVocabularyRequest& WithVocabularyId(const Aws::String& value) { SetVocabularyId(value); return *this;}
-    inline DescribeVocabularyRequest& WithVocabularyId(Aws::String&& value) { SetVocabularyId(std::move(value)); return *this;}
-    inline DescribeVocabularyRequest& WithVocabularyId(const char* value) { SetVocabularyId(value); return *this;}
+    template<typename VocabularyIdT = Aws::String>
+    void SetVocabularyId(VocabularyIdT&& value) { m_vocabularyIdHasBeenSet = true; m_vocabularyId = std::forward<VocabularyIdT>(value); }
+    template<typename VocabularyIdT = Aws::String>
+    DescribeVocabularyRequest& WithVocabularyId(VocabularyIdT&& value) { SetVocabularyId(std::forward<VocabularyIdT>(value)); return *this;}
     ///@}
   private:
 

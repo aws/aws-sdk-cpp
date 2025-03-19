@@ -29,7 +29,7 @@ namespace Model
   class GetThingConnectivityDataResult
   {
   public:
-    AWS_IOT_API GetThingConnectivityDataResult();
+    AWS_IOT_API GetThingConnectivityDataResult() = default;
     AWS_IOT_API GetThingConnectivityDataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API GetThingConnectivityDataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,21 +38,19 @@ namespace Model
     /**
      * <p>The name of your IoT thing.</p>
      */
-    inline const Aws::String& GetThingName() const{ return m_thingName; }
-    inline void SetThingName(const Aws::String& value) { m_thingName = value; }
-    inline void SetThingName(Aws::String&& value) { m_thingName = std::move(value); }
-    inline void SetThingName(const char* value) { m_thingName.assign(value); }
-    inline GetThingConnectivityDataResult& WithThingName(const Aws::String& value) { SetThingName(value); return *this;}
-    inline GetThingConnectivityDataResult& WithThingName(Aws::String&& value) { SetThingName(std::move(value)); return *this;}
-    inline GetThingConnectivityDataResult& WithThingName(const char* value) { SetThingName(value); return *this;}
+    inline const Aws::String& GetThingName() const { return m_thingName; }
+    template<typename ThingNameT = Aws::String>
+    void SetThingName(ThingNameT&& value) { m_thingNameHasBeenSet = true; m_thingName = std::forward<ThingNameT>(value); }
+    template<typename ThingNameT = Aws::String>
+    GetThingConnectivityDataResult& WithThingName(ThingNameT&& value) { SetThingName(std::forward<ThingNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A Boolean that indicates the connectivity status.</p>
      */
-    inline bool GetConnected() const{ return m_connected; }
-    inline void SetConnected(bool value) { m_connected = value; }
+    inline bool GetConnected() const { return m_connected; }
+    inline void SetConnected(bool value) { m_connectedHasBeenSet = true; m_connected = value; }
     inline GetThingConnectivityDataResult& WithConnected(bool value) { SetConnected(value); return *this;}
     ///@}
 
@@ -60,45 +58,46 @@ namespace Model
     /**
      * <p>The timestamp of when the event occurred.</p>
      */
-    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
-    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestamp = value; }
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestamp = std::move(value); }
-    inline GetThingConnectivityDataResult& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-    inline GetThingConnectivityDataResult& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
+    template<typename TimestampT = Aws::Utils::DateTime>
+    void SetTimestamp(TimestampT&& value) { m_timestampHasBeenSet = true; m_timestamp = std::forward<TimestampT>(value); }
+    template<typename TimestampT = Aws::Utils::DateTime>
+    GetThingConnectivityDataResult& WithTimestamp(TimestampT&& value) { SetTimestamp(std::forward<TimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The reason why the client is disconnecting.</p>
      */
-    inline const DisconnectReasonValue& GetDisconnectReason() const{ return m_disconnectReason; }
-    inline void SetDisconnectReason(const DisconnectReasonValue& value) { m_disconnectReason = value; }
-    inline void SetDisconnectReason(DisconnectReasonValue&& value) { m_disconnectReason = std::move(value); }
-    inline GetThingConnectivityDataResult& WithDisconnectReason(const DisconnectReasonValue& value) { SetDisconnectReason(value); return *this;}
-    inline GetThingConnectivityDataResult& WithDisconnectReason(DisconnectReasonValue&& value) { SetDisconnectReason(std::move(value)); return *this;}
+    inline DisconnectReasonValue GetDisconnectReason() const { return m_disconnectReason; }
+    inline void SetDisconnectReason(DisconnectReasonValue value) { m_disconnectReasonHasBeenSet = true; m_disconnectReason = value; }
+    inline GetThingConnectivityDataResult& WithDisconnectReason(DisconnectReasonValue value) { SetDisconnectReason(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetThingConnectivityDataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetThingConnectivityDataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetThingConnectivityDataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetThingConnectivityDataResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_thingName;
+    bool m_thingNameHasBeenSet = false;
 
-    bool m_connected;
+    bool m_connected{false};
+    bool m_connectedHasBeenSet = false;
 
-    Aws::Utils::DateTime m_timestamp;
+    Aws::Utils::DateTime m_timestamp{};
+    bool m_timestampHasBeenSet = false;
 
-    DisconnectReasonValue m_disconnectReason;
+    DisconnectReasonValue m_disconnectReason{DisconnectReasonValue::NOT_SET};
+    bool m_disconnectReasonHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

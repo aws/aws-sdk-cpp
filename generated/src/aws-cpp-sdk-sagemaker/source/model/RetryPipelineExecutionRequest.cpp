@@ -12,14 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RetryPipelineExecutionRequest::RetryPipelineExecutionRequest() : 
-    m_pipelineExecutionArnHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_parallelismConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String RetryPipelineExecutionRequest::SerializePayload() const
 {
   JsonValue payload;

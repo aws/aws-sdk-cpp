@@ -18,10 +18,6 @@ namespace IoTAnalytics
 namespace Model
 {
 
-ServiceManagedDatastoreS3Storage::ServiceManagedDatastoreS3Storage()
-{
-}
-
 ServiceManagedDatastoreS3Storage::ServiceManagedDatastoreS3Storage(JsonView jsonValue)
 {
   *this = jsonValue;

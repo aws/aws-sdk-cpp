@@ -18,14 +18,7 @@ namespace Amplify
 namespace Model
 {
 
-Artifact::Artifact() : 
-    m_artifactFileNameHasBeenSet(false),
-    m_artifactIdHasBeenSet(false)
-{
-}
-
 Artifact::Artifact(JsonView jsonValue)
-  : Artifact()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Artifact& Artifact::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("artifactFileName"))
   {
     m_artifactFileName = jsonValue.GetString("artifactFileName");
-
     m_artifactFileNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("artifactId"))
   {
     m_artifactId = jsonValue.GetString("artifactId");
-
     m_artifactIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class UsageAmount
   {
   public:
-    AWS_BCMPRICINGCALCULATOR_API UsageAmount();
+    AWS_BCMPRICINGCALCULATOR_API UsageAmount() = default;
     AWS_BCMPRICINGCALCULATOR_API UsageAmount(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMPRICINGCALCULATOR_API UsageAmount& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMPRICINGCALCULATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,29 +42,29 @@ namespace Model
     /**
      * <p> The start hour of the usage period. </p>
      */
-    inline const Aws::Utils::DateTime& GetStartHour() const{ return m_startHour; }
+    inline const Aws::Utils::DateTime& GetStartHour() const { return m_startHour; }
     inline bool StartHourHasBeenSet() const { return m_startHourHasBeenSet; }
-    inline void SetStartHour(const Aws::Utils::DateTime& value) { m_startHourHasBeenSet = true; m_startHour = value; }
-    inline void SetStartHour(Aws::Utils::DateTime&& value) { m_startHourHasBeenSet = true; m_startHour = std::move(value); }
-    inline UsageAmount& WithStartHour(const Aws::Utils::DateTime& value) { SetStartHour(value); return *this;}
-    inline UsageAmount& WithStartHour(Aws::Utils::DateTime&& value) { SetStartHour(std::move(value)); return *this;}
+    template<typename StartHourT = Aws::Utils::DateTime>
+    void SetStartHour(StartHourT&& value) { m_startHourHasBeenSet = true; m_startHour = std::forward<StartHourT>(value); }
+    template<typename StartHourT = Aws::Utils::DateTime>
+    UsageAmount& WithStartHour(StartHourT&& value) { SetStartHour(std::forward<StartHourT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The usage amount for the period. </p>
      */
-    inline double GetAmount() const{ return m_amount; }
+    inline double GetAmount() const { return m_amount; }
     inline bool AmountHasBeenSet() const { return m_amountHasBeenSet; }
     inline void SetAmount(double value) { m_amountHasBeenSet = true; m_amount = value; }
     inline UsageAmount& WithAmount(double value) { SetAmount(value); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_startHour;
+    Aws::Utils::DateTime m_startHour{};
     bool m_startHourHasBeenSet = false;
 
-    double m_amount;
+    double m_amount{0.0};
     bool m_amountHasBeenSet = false;
   };
 

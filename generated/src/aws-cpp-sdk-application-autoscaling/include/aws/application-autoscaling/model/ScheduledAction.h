@@ -35,7 +35,7 @@ namespace Model
   class ScheduledAction
   {
   public:
-    AWS_APPLICATIONAUTOSCALING_API ScheduledAction();
+    AWS_APPLICATIONAUTOSCALING_API ScheduledAction() = default;
     AWS_APPLICATIONAUTOSCALING_API ScheduledAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONAUTOSCALING_API ScheduledAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONAUTOSCALING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,24 @@ namespace Model
     /**
      * <p>The name of the scheduled action.</p>
      */
-    inline const Aws::String& GetScheduledActionName() const{ return m_scheduledActionName; }
+    inline const Aws::String& GetScheduledActionName() const { return m_scheduledActionName; }
     inline bool ScheduledActionNameHasBeenSet() const { return m_scheduledActionNameHasBeenSet; }
-    inline void SetScheduledActionName(const Aws::String& value) { m_scheduledActionNameHasBeenSet = true; m_scheduledActionName = value; }
-    inline void SetScheduledActionName(Aws::String&& value) { m_scheduledActionNameHasBeenSet = true; m_scheduledActionName = std::move(value); }
-    inline void SetScheduledActionName(const char* value) { m_scheduledActionNameHasBeenSet = true; m_scheduledActionName.assign(value); }
-    inline ScheduledAction& WithScheduledActionName(const Aws::String& value) { SetScheduledActionName(value); return *this;}
-    inline ScheduledAction& WithScheduledActionName(Aws::String&& value) { SetScheduledActionName(std::move(value)); return *this;}
-    inline ScheduledAction& WithScheduledActionName(const char* value) { SetScheduledActionName(value); return *this;}
+    template<typename ScheduledActionNameT = Aws::String>
+    void SetScheduledActionName(ScheduledActionNameT&& value) { m_scheduledActionNameHasBeenSet = true; m_scheduledActionName = std::forward<ScheduledActionNameT>(value); }
+    template<typename ScheduledActionNameT = Aws::String>
+    ScheduledAction& WithScheduledActionName(ScheduledActionNameT&& value) { SetScheduledActionName(std::forward<ScheduledActionNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the scheduled action.</p>
      */
-    inline const Aws::String& GetScheduledActionARN() const{ return m_scheduledActionARN; }
+    inline const Aws::String& GetScheduledActionARN() const { return m_scheduledActionARN; }
     inline bool ScheduledActionARNHasBeenSet() const { return m_scheduledActionARNHasBeenSet; }
-    inline void SetScheduledActionARN(const Aws::String& value) { m_scheduledActionARNHasBeenSet = true; m_scheduledActionARN = value; }
-    inline void SetScheduledActionARN(Aws::String&& value) { m_scheduledActionARNHasBeenSet = true; m_scheduledActionARN = std::move(value); }
-    inline void SetScheduledActionARN(const char* value) { m_scheduledActionARNHasBeenSet = true; m_scheduledActionARN.assign(value); }
-    inline ScheduledAction& WithScheduledActionARN(const Aws::String& value) { SetScheduledActionARN(value); return *this;}
-    inline ScheduledAction& WithScheduledActionARN(Aws::String&& value) { SetScheduledActionARN(std::move(value)); return *this;}
-    inline ScheduledAction& WithScheduledActionARN(const char* value) { SetScheduledActionARN(value); return *this;}
+    template<typename ScheduledActionARNT = Aws::String>
+    void SetScheduledActionARN(ScheduledActionARNT&& value) { m_scheduledActionARNHasBeenSet = true; m_scheduledActionARN = std::forward<ScheduledActionARNT>(value); }
+    template<typename ScheduledActionARNT = Aws::String>
+    ScheduledAction& WithScheduledActionARN(ScheduledActionARNT&& value) { SetScheduledActionARN(std::forward<ScheduledActionARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,12 +70,10 @@ namespace Model
      * <p>The namespace of the Amazon Web Services service that provides the resource,
      * or a <code>custom-resource</code>.</p>
      */
-    inline const ServiceNamespace& GetServiceNamespace() const{ return m_serviceNamespace; }
+    inline ServiceNamespace GetServiceNamespace() const { return m_serviceNamespace; }
     inline bool ServiceNamespaceHasBeenSet() const { return m_serviceNamespaceHasBeenSet; }
-    inline void SetServiceNamespace(const ServiceNamespace& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = value; }
-    inline void SetServiceNamespace(ServiceNamespace&& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = std::move(value); }
-    inline ScheduledAction& WithServiceNamespace(const ServiceNamespace& value) { SetServiceNamespace(value); return *this;}
-    inline ScheduledAction& WithServiceNamespace(ServiceNamespace&& value) { SetServiceNamespace(std::move(value)); return *this;}
+    inline void SetServiceNamespace(ServiceNamespace value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = value; }
+    inline ScheduledAction& WithServiceNamespace(ServiceNamespace value) { SetServiceNamespace(value); return *this;}
     ///@}
 
     ///@{
@@ -103,14 +97,12 @@ namespace Model
      * recurring scaling actions using cron expressions</a> in the <i>Application Auto
      * Scaling User Guide</i>.</p>
      */
-    inline const Aws::String& GetSchedule() const{ return m_schedule; }
+    inline const Aws::String& GetSchedule() const { return m_schedule; }
     inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
-    inline void SetSchedule(const Aws::String& value) { m_scheduleHasBeenSet = true; m_schedule = value; }
-    inline void SetSchedule(Aws::String&& value) { m_scheduleHasBeenSet = true; m_schedule = std::move(value); }
-    inline void SetSchedule(const char* value) { m_scheduleHasBeenSet = true; m_schedule.assign(value); }
-    inline ScheduledAction& WithSchedule(const Aws::String& value) { SetSchedule(value); return *this;}
-    inline ScheduledAction& WithSchedule(Aws::String&& value) { SetSchedule(std::move(value)); return *this;}
-    inline ScheduledAction& WithSchedule(const char* value) { SetSchedule(value); return *this;}
+    template<typename ScheduleT = Aws::String>
+    void SetSchedule(ScheduleT&& value) { m_scheduleHasBeenSet = true; m_schedule = std::forward<ScheduleT>(value); }
+    template<typename ScheduleT = Aws::String>
+    ScheduledAction& WithSchedule(ScheduleT&& value) { SetSchedule(std::forward<ScheduleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -118,14 +110,12 @@ namespace Model
      * <p>The time zone used when referring to the date and time of a scheduled action,
      * when the scheduled action uses an at or cron expression.</p>
      */
-    inline const Aws::String& GetTimezone() const{ return m_timezone; }
+    inline const Aws::String& GetTimezone() const { return m_timezone; }
     inline bool TimezoneHasBeenSet() const { return m_timezoneHasBeenSet; }
-    inline void SetTimezone(const Aws::String& value) { m_timezoneHasBeenSet = true; m_timezone = value; }
-    inline void SetTimezone(Aws::String&& value) { m_timezoneHasBeenSet = true; m_timezone = std::move(value); }
-    inline void SetTimezone(const char* value) { m_timezoneHasBeenSet = true; m_timezone.assign(value); }
-    inline ScheduledAction& WithTimezone(const Aws::String& value) { SetTimezone(value); return *this;}
-    inline ScheduledAction& WithTimezone(Aws::String&& value) { SetTimezone(std::move(value)); return *this;}
-    inline ScheduledAction& WithTimezone(const char* value) { SetTimezone(value); return *this;}
+    template<typename TimezoneT = Aws::String>
+    void SetTimezone(TimezoneT&& value) { m_timezoneHasBeenSet = true; m_timezone = std::forward<TimezoneT>(value); }
+    template<typename TimezoneT = Aws::String>
+    ScheduledAction& WithTimezone(TimezoneT&& value) { SetTimezone(std::forward<TimezoneT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -190,14 +180,12 @@ namespace Model
      * unique identifier is the pool ID. Example:
      * <code>workspacespool/wspool-123456</code>.</p> </li> </ul>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline ScheduledAction& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline ScheduledAction& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline ScheduledAction& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    ScheduledAction& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -251,36 +239,34 @@ namespace Model
      * <p> <code>workspaces:workspacespool:DesiredUserSessions</code> - The number of
      * user sessions for the WorkSpaces in the pool.</p> </li> </ul>
      */
-    inline const ScalableDimension& GetScalableDimension() const{ return m_scalableDimension; }
+    inline ScalableDimension GetScalableDimension() const { return m_scalableDimension; }
     inline bool ScalableDimensionHasBeenSet() const { return m_scalableDimensionHasBeenSet; }
-    inline void SetScalableDimension(const ScalableDimension& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = value; }
-    inline void SetScalableDimension(ScalableDimension&& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = std::move(value); }
-    inline ScheduledAction& WithScalableDimension(const ScalableDimension& value) { SetScalableDimension(value); return *this;}
-    inline ScheduledAction& WithScalableDimension(ScalableDimension&& value) { SetScalableDimension(std::move(value)); return *this;}
+    inline void SetScalableDimension(ScalableDimension value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = value; }
+    inline ScheduledAction& WithScalableDimension(ScalableDimension value) { SetScalableDimension(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the action is scheduled to begin, in UTC.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline ScheduledAction& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline ScheduledAction& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    ScheduledAction& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the action is scheduled to end, in UTC.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline ScheduledAction& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline ScheduledAction& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    ScheduledAction& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -291,24 +277,24 @@ namespace Model
      * capacity is above the maximum capacity, Application Auto Scaling scales in to
      * the maximum capacity.</p>
      */
-    inline const ScalableTargetAction& GetScalableTargetAction() const{ return m_scalableTargetAction; }
+    inline const ScalableTargetAction& GetScalableTargetAction() const { return m_scalableTargetAction; }
     inline bool ScalableTargetActionHasBeenSet() const { return m_scalableTargetActionHasBeenSet; }
-    inline void SetScalableTargetAction(const ScalableTargetAction& value) { m_scalableTargetActionHasBeenSet = true; m_scalableTargetAction = value; }
-    inline void SetScalableTargetAction(ScalableTargetAction&& value) { m_scalableTargetActionHasBeenSet = true; m_scalableTargetAction = std::move(value); }
-    inline ScheduledAction& WithScalableTargetAction(const ScalableTargetAction& value) { SetScalableTargetAction(value); return *this;}
-    inline ScheduledAction& WithScalableTargetAction(ScalableTargetAction&& value) { SetScalableTargetAction(std::move(value)); return *this;}
+    template<typename ScalableTargetActionT = ScalableTargetAction>
+    void SetScalableTargetAction(ScalableTargetActionT&& value) { m_scalableTargetActionHasBeenSet = true; m_scalableTargetAction = std::forward<ScalableTargetActionT>(value); }
+    template<typename ScalableTargetActionT = ScalableTargetAction>
+    ScheduledAction& WithScalableTargetAction(ScalableTargetActionT&& value) { SetScalableTargetAction(std::forward<ScalableTargetActionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the scheduled action was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline ScheduledAction& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline ScheduledAction& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    ScheduledAction& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -318,7 +304,7 @@ namespace Model
     Aws::String m_scheduledActionARN;
     bool m_scheduledActionARNHasBeenSet = false;
 
-    ServiceNamespace m_serviceNamespace;
+    ServiceNamespace m_serviceNamespace{ServiceNamespace::NOT_SET};
     bool m_serviceNamespaceHasBeenSet = false;
 
     Aws::String m_schedule;
@@ -330,19 +316,19 @@ namespace Model
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet = false;
 
-    ScalableDimension m_scalableDimension;
+    ScalableDimension m_scalableDimension{ScalableDimension::NOT_SET};
     bool m_scalableDimensionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
 
     ScalableTargetAction m_scalableTargetAction;
     bool m_scalableTargetActionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
   };
 

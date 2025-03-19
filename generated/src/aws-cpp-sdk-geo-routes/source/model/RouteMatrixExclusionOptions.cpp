@@ -18,13 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteMatrixExclusionOptions::RouteMatrixExclusionOptions() : 
-    m_countriesHasBeenSet(false)
-{
-}
-
 RouteMatrixExclusionOptions::RouteMatrixExclusionOptions(JsonView jsonValue)
-  : RouteMatrixExclusionOptions()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ RouteMatrixExclusionOptions& RouteMatrixExclusionOptions::operator =(JsonView js
     }
     m_countriesHasBeenSet = true;
   }
-
   return *this;
 }
 

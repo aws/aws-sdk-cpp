@@ -21,7 +21,7 @@ namespace Model
   class ListResourceScanResourcesRequest : public CloudFormationRequest
   {
   public:
-    AWS_CLOUDFORMATION_API ListResourceScanResourcesRequest();
+    AWS_CLOUDFORMATION_API ListResourceScanResourcesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the resource scan.</p>
      */
-    inline const Aws::String& GetResourceScanId() const{ return m_resourceScanId; }
+    inline const Aws::String& GetResourceScanId() const { return m_resourceScanId; }
     inline bool ResourceScanIdHasBeenSet() const { return m_resourceScanIdHasBeenSet; }
-    inline void SetResourceScanId(const Aws::String& value) { m_resourceScanIdHasBeenSet = true; m_resourceScanId = value; }
-    inline void SetResourceScanId(Aws::String&& value) { m_resourceScanIdHasBeenSet = true; m_resourceScanId = std::move(value); }
-    inline void SetResourceScanId(const char* value) { m_resourceScanIdHasBeenSet = true; m_resourceScanId.assign(value); }
-    inline ListResourceScanResourcesRequest& WithResourceScanId(const Aws::String& value) { SetResourceScanId(value); return *this;}
-    inline ListResourceScanResourcesRequest& WithResourceScanId(Aws::String&& value) { SetResourceScanId(std::move(value)); return *this;}
-    inline ListResourceScanResourcesRequest& WithResourceScanId(const char* value) { SetResourceScanId(value); return *this;}
+    template<typename ResourceScanIdT = Aws::String>
+    void SetResourceScanId(ResourceScanIdT&& value) { m_resourceScanIdHasBeenSet = true; m_resourceScanId = std::forward<ResourceScanIdT>(value); }
+    template<typename ResourceScanIdT = Aws::String>
+    ListResourceScanResourcesRequest& WithResourceScanId(ResourceScanIdT&& value) { SetResourceScanId(std::forward<ResourceScanIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * identifier (or one of them in the case where the resource has multiple
      * identifiers).</p>
      */
-    inline const Aws::String& GetResourceIdentifier() const{ return m_resourceIdentifier; }
+    inline const Aws::String& GetResourceIdentifier() const { return m_resourceIdentifier; }
     inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }
-    inline void SetResourceIdentifier(const Aws::String& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = value; }
-    inline void SetResourceIdentifier(Aws::String&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::move(value); }
-    inline void SetResourceIdentifier(const char* value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier.assign(value); }
-    inline ListResourceScanResourcesRequest& WithResourceIdentifier(const Aws::String& value) { SetResourceIdentifier(value); return *this;}
-    inline ListResourceScanResourcesRequest& WithResourceIdentifier(Aws::String&& value) { SetResourceIdentifier(std::move(value)); return *this;}
-    inline ListResourceScanResourcesRequest& WithResourceIdentifier(const char* value) { SetResourceIdentifier(value); return *this;}
+    template<typename ResourceIdentifierT = Aws::String>
+    void SetResourceIdentifier(ResourceIdentifierT&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::forward<ResourceIdentifierT>(value); }
+    template<typename ResourceIdentifierT = Aws::String>
+    ListResourceScanResourcesRequest& WithResourceIdentifier(ResourceIdentifierT&& value) { SetResourceIdentifier(std::forward<ResourceIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,56 +67,48 @@ namespace Model
      * <p>If specified, the returned resources will be of any of the resource types
      * with the specified prefix.</p>
      */
-    inline const Aws::String& GetResourceTypePrefix() const{ return m_resourceTypePrefix; }
+    inline const Aws::String& GetResourceTypePrefix() const { return m_resourceTypePrefix; }
     inline bool ResourceTypePrefixHasBeenSet() const { return m_resourceTypePrefixHasBeenSet; }
-    inline void SetResourceTypePrefix(const Aws::String& value) { m_resourceTypePrefixHasBeenSet = true; m_resourceTypePrefix = value; }
-    inline void SetResourceTypePrefix(Aws::String&& value) { m_resourceTypePrefixHasBeenSet = true; m_resourceTypePrefix = std::move(value); }
-    inline void SetResourceTypePrefix(const char* value) { m_resourceTypePrefixHasBeenSet = true; m_resourceTypePrefix.assign(value); }
-    inline ListResourceScanResourcesRequest& WithResourceTypePrefix(const Aws::String& value) { SetResourceTypePrefix(value); return *this;}
-    inline ListResourceScanResourcesRequest& WithResourceTypePrefix(Aws::String&& value) { SetResourceTypePrefix(std::move(value)); return *this;}
-    inline ListResourceScanResourcesRequest& WithResourceTypePrefix(const char* value) { SetResourceTypePrefix(value); return *this;}
+    template<typename ResourceTypePrefixT = Aws::String>
+    void SetResourceTypePrefix(ResourceTypePrefixT&& value) { m_resourceTypePrefixHasBeenSet = true; m_resourceTypePrefix = std::forward<ResourceTypePrefixT>(value); }
+    template<typename ResourceTypePrefixT = Aws::String>
+    ListResourceScanResourcesRequest& WithResourceTypePrefix(ResourceTypePrefixT&& value) { SetResourceTypePrefix(std::forward<ResourceTypePrefixT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>If specified, the returned resources will have a matching tag key.</p>
      */
-    inline const Aws::String& GetTagKey() const{ return m_tagKey; }
+    inline const Aws::String& GetTagKey() const { return m_tagKey; }
     inline bool TagKeyHasBeenSet() const { return m_tagKeyHasBeenSet; }
-    inline void SetTagKey(const Aws::String& value) { m_tagKeyHasBeenSet = true; m_tagKey = value; }
-    inline void SetTagKey(Aws::String&& value) { m_tagKeyHasBeenSet = true; m_tagKey = std::move(value); }
-    inline void SetTagKey(const char* value) { m_tagKeyHasBeenSet = true; m_tagKey.assign(value); }
-    inline ListResourceScanResourcesRequest& WithTagKey(const Aws::String& value) { SetTagKey(value); return *this;}
-    inline ListResourceScanResourcesRequest& WithTagKey(Aws::String&& value) { SetTagKey(std::move(value)); return *this;}
-    inline ListResourceScanResourcesRequest& WithTagKey(const char* value) { SetTagKey(value); return *this;}
+    template<typename TagKeyT = Aws::String>
+    void SetTagKey(TagKeyT&& value) { m_tagKeyHasBeenSet = true; m_tagKey = std::forward<TagKeyT>(value); }
+    template<typename TagKeyT = Aws::String>
+    ListResourceScanResourcesRequest& WithTagKey(TagKeyT&& value) { SetTagKey(std::forward<TagKeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>If specified, the returned resources will have a matching tag value.</p>
      */
-    inline const Aws::String& GetTagValue() const{ return m_tagValue; }
+    inline const Aws::String& GetTagValue() const { return m_tagValue; }
     inline bool TagValueHasBeenSet() const { return m_tagValueHasBeenSet; }
-    inline void SetTagValue(const Aws::String& value) { m_tagValueHasBeenSet = true; m_tagValue = value; }
-    inline void SetTagValue(Aws::String&& value) { m_tagValueHasBeenSet = true; m_tagValue = std::move(value); }
-    inline void SetTagValue(const char* value) { m_tagValueHasBeenSet = true; m_tagValue.assign(value); }
-    inline ListResourceScanResourcesRequest& WithTagValue(const Aws::String& value) { SetTagValue(value); return *this;}
-    inline ListResourceScanResourcesRequest& WithTagValue(Aws::String&& value) { SetTagValue(std::move(value)); return *this;}
-    inline ListResourceScanResourcesRequest& WithTagValue(const char* value) { SetTagValue(value); return *this;}
+    template<typename TagValueT = Aws::String>
+    void SetTagValue(TagValueT&& value) { m_tagValueHasBeenSet = true; m_tagValue = std::forward<TagValueT>(value); }
+    template<typename TagValueT = Aws::String>
+    ListResourceScanResourcesRequest& WithTagValue(TagValueT&& value) { SetTagValue(std::forward<TagValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A string that identifies the next page of resource scan results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListResourceScanResourcesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListResourceScanResourcesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListResourceScanResourcesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListResourceScanResourcesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -131,7 +119,7 @@ namespace Model
      * <code>ListResourceScanResources</code> API action will return at most 100
      * results in each response. The maximum value is 100.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListResourceScanResourcesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -156,7 +144,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

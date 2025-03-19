@@ -18,13 +18,7 @@ namespace Glacier
 namespace Model
 {
 
-OutputLocation::OutputLocation() : 
-    m_s3HasBeenSet(false)
-{
-}
-
 OutputLocation::OutputLocation(JsonView jsonValue)
-  : OutputLocation()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ OutputLocation& OutputLocation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3"))
   {
     m_s3 = jsonValue.GetObject("S3");
-
     m_s3HasBeenSet = true;
   }
-
   return *this;
 }
 

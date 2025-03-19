@@ -18,21 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-AutoTuneStatus::AutoTuneStatus() : 
-    m_creationDateHasBeenSet(false),
-    m_updateDateHasBeenSet(false),
-    m_updateVersion(0),
-    m_updateVersionHasBeenSet(false),
-    m_state(AutoTuneState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_pendingDeletion(false),
-    m_pendingDeletionHasBeenSet(false)
-{
-}
-
 AutoTuneStatus::AutoTuneStatus(JsonView jsonValue)
-  : AutoTuneStatus()
 {
   *this = jsonValue;
 }
@@ -42,45 +28,33 @@ AutoTuneStatus& AutoTuneStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetDouble("CreationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdateDate"))
   {
     m_updateDate = jsonValue.GetDouble("UpdateDate");
-
     m_updateDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdateVersion"))
   {
     m_updateVersion = jsonValue.GetInteger("UpdateVersion");
-
     m_updateVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = AutoTuneStateMapper::GetAutoTuneStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PendingDeletion"))
   {
     m_pendingDeletion = jsonValue.GetBool("PendingDeletion");
-
     m_pendingDeletionHasBeenSet = true;
   }
-
   return *this;
 }
 

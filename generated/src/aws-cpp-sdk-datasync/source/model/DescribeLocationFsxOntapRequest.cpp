@@ -12,11 +12,6 @@ using namespace Aws::DataSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeLocationFsxOntapRequest::DescribeLocationFsxOntapRequest() : 
-    m_locationArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeLocationFsxOntapRequest::SerializePayload() const
 {
   JsonValue payload;

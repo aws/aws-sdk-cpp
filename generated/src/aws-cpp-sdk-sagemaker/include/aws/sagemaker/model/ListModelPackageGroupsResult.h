@@ -29,7 +29,7 @@ namespace Model
   class ListModelPackageGroupsResult
   {
   public:
-    AWS_SAGEMAKER_API ListModelPackageGroupsResult();
+    AWS_SAGEMAKER_API ListModelPackageGroupsResult() = default;
     AWS_SAGEMAKER_API ListModelPackageGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API ListModelPackageGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>A list of summaries of the model groups in your Amazon Web Services
      * account.</p>
      */
-    inline const Aws::Vector<ModelPackageGroupSummary>& GetModelPackageGroupSummaryList() const{ return m_modelPackageGroupSummaryList; }
-    inline void SetModelPackageGroupSummaryList(const Aws::Vector<ModelPackageGroupSummary>& value) { m_modelPackageGroupSummaryList = value; }
-    inline void SetModelPackageGroupSummaryList(Aws::Vector<ModelPackageGroupSummary>&& value) { m_modelPackageGroupSummaryList = std::move(value); }
-    inline ListModelPackageGroupsResult& WithModelPackageGroupSummaryList(const Aws::Vector<ModelPackageGroupSummary>& value) { SetModelPackageGroupSummaryList(value); return *this;}
-    inline ListModelPackageGroupsResult& WithModelPackageGroupSummaryList(Aws::Vector<ModelPackageGroupSummary>&& value) { SetModelPackageGroupSummaryList(std::move(value)); return *this;}
-    inline ListModelPackageGroupsResult& AddModelPackageGroupSummaryList(const ModelPackageGroupSummary& value) { m_modelPackageGroupSummaryList.push_back(value); return *this; }
-    inline ListModelPackageGroupsResult& AddModelPackageGroupSummaryList(ModelPackageGroupSummary&& value) { m_modelPackageGroupSummaryList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ModelPackageGroupSummary>& GetModelPackageGroupSummaryList() const { return m_modelPackageGroupSummaryList; }
+    template<typename ModelPackageGroupSummaryListT = Aws::Vector<ModelPackageGroupSummary>>
+    void SetModelPackageGroupSummaryList(ModelPackageGroupSummaryListT&& value) { m_modelPackageGroupSummaryListHasBeenSet = true; m_modelPackageGroupSummaryList = std::forward<ModelPackageGroupSummaryListT>(value); }
+    template<typename ModelPackageGroupSummaryListT = Aws::Vector<ModelPackageGroupSummary>>
+    ListModelPackageGroupsResult& WithModelPackageGroupSummaryList(ModelPackageGroupSummaryListT&& value) { SetModelPackageGroupSummaryList(std::forward<ModelPackageGroupSummaryListT>(value)); return *this;}
+    template<typename ModelPackageGroupSummaryListT = ModelPackageGroupSummary>
+    ListModelPackageGroupsResult& AddModelPackageGroupSummaryList(ModelPackageGroupSummaryListT&& value) { m_modelPackageGroupSummaryListHasBeenSet = true; m_modelPackageGroupSummaryList.emplace_back(std::forward<ModelPackageGroupSummaryListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * <p>If the response is truncated, SageMaker returns this token. To retrieve the
      * next set of model groups, use it in the subsequent request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListModelPackageGroupsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListModelPackageGroupsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListModelPackageGroupsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListModelPackageGroupsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListModelPackageGroupsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListModelPackageGroupsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListModelPackageGroupsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListModelPackageGroupsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ModelPackageGroupSummary> m_modelPackageGroupSummaryList;
+    bool m_modelPackageGroupSummaryListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

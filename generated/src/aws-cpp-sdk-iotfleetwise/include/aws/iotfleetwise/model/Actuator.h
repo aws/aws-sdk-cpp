@@ -37,7 +37,7 @@ namespace Model
   class Actuator
   {
   public:
-    AWS_IOTFLEETWISE_API Actuator();
+    AWS_IOTFLEETWISE_API Actuator() = default;
     AWS_IOTFLEETWISE_API Actuator(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API Actuator& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,76 +48,67 @@ namespace Model
      * <p>The fully qualified name of the actuator. For example, the fully qualified
      * name of an actuator might be <code>Vehicle.Front.Left.Door.Lock</code>.</p>
      */
-    inline const Aws::String& GetFullyQualifiedName() const{ return m_fullyQualifiedName; }
+    inline const Aws::String& GetFullyQualifiedName() const { return m_fullyQualifiedName; }
     inline bool FullyQualifiedNameHasBeenSet() const { return m_fullyQualifiedNameHasBeenSet; }
-    inline void SetFullyQualifiedName(const Aws::String& value) { m_fullyQualifiedNameHasBeenSet = true; m_fullyQualifiedName = value; }
-    inline void SetFullyQualifiedName(Aws::String&& value) { m_fullyQualifiedNameHasBeenSet = true; m_fullyQualifiedName = std::move(value); }
-    inline void SetFullyQualifiedName(const char* value) { m_fullyQualifiedNameHasBeenSet = true; m_fullyQualifiedName.assign(value); }
-    inline Actuator& WithFullyQualifiedName(const Aws::String& value) { SetFullyQualifiedName(value); return *this;}
-    inline Actuator& WithFullyQualifiedName(Aws::String&& value) { SetFullyQualifiedName(std::move(value)); return *this;}
-    inline Actuator& WithFullyQualifiedName(const char* value) { SetFullyQualifiedName(value); return *this;}
+    template<typename FullyQualifiedNameT = Aws::String>
+    void SetFullyQualifiedName(FullyQualifiedNameT&& value) { m_fullyQualifiedNameHasBeenSet = true; m_fullyQualifiedName = std::forward<FullyQualifiedNameT>(value); }
+    template<typename FullyQualifiedNameT = Aws::String>
+    Actuator& WithFullyQualifiedName(FullyQualifiedNameT&& value) { SetFullyQualifiedName(std::forward<FullyQualifiedNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The specified data type of the actuator. </p>
      */
-    inline const NodeDataType& GetDataType() const{ return m_dataType; }
+    inline NodeDataType GetDataType() const { return m_dataType; }
     inline bool DataTypeHasBeenSet() const { return m_dataTypeHasBeenSet; }
-    inline void SetDataType(const NodeDataType& value) { m_dataTypeHasBeenSet = true; m_dataType = value; }
-    inline void SetDataType(NodeDataType&& value) { m_dataTypeHasBeenSet = true; m_dataType = std::move(value); }
-    inline Actuator& WithDataType(const NodeDataType& value) { SetDataType(value); return *this;}
-    inline Actuator& WithDataType(NodeDataType&& value) { SetDataType(std::move(value)); return *this;}
+    inline void SetDataType(NodeDataType value) { m_dataTypeHasBeenSet = true; m_dataType = value; }
+    inline Actuator& WithDataType(NodeDataType value) { SetDataType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A brief description of the actuator.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline Actuator& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline Actuator& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline Actuator& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    Actuator& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The scientific unit for the actuator.</p>
      */
-    inline const Aws::String& GetUnit() const{ return m_unit; }
+    inline const Aws::String& GetUnit() const { return m_unit; }
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-    inline void SetUnit(const Aws::String& value) { m_unitHasBeenSet = true; m_unit = value; }
-    inline void SetUnit(Aws::String&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-    inline void SetUnit(const char* value) { m_unitHasBeenSet = true; m_unit.assign(value); }
-    inline Actuator& WithUnit(const Aws::String& value) { SetUnit(value); return *this;}
-    inline Actuator& WithUnit(Aws::String&& value) { SetUnit(std::move(value)); return *this;}
-    inline Actuator& WithUnit(const char* value) { SetUnit(value); return *this;}
+    template<typename UnitT = Aws::String>
+    void SetUnit(UnitT&& value) { m_unitHasBeenSet = true; m_unit = std::forward<UnitT>(value); }
+    template<typename UnitT = Aws::String>
+    Actuator& WithUnit(UnitT&& value) { SetUnit(std::forward<UnitT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of possible values an actuator can take.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAllowedValues() const{ return m_allowedValues; }
+    inline const Aws::Vector<Aws::String>& GetAllowedValues() const { return m_allowedValues; }
     inline bool AllowedValuesHasBeenSet() const { return m_allowedValuesHasBeenSet; }
-    inline void SetAllowedValues(const Aws::Vector<Aws::String>& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = value; }
-    inline void SetAllowedValues(Aws::Vector<Aws::String>&& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = std::move(value); }
-    inline Actuator& WithAllowedValues(const Aws::Vector<Aws::String>& value) { SetAllowedValues(value); return *this;}
-    inline Actuator& WithAllowedValues(Aws::Vector<Aws::String>&& value) { SetAllowedValues(std::move(value)); return *this;}
-    inline Actuator& AddAllowedValues(const Aws::String& value) { m_allowedValuesHasBeenSet = true; m_allowedValues.push_back(value); return *this; }
-    inline Actuator& AddAllowedValues(Aws::String&& value) { m_allowedValuesHasBeenSet = true; m_allowedValues.push_back(std::move(value)); return *this; }
-    inline Actuator& AddAllowedValues(const char* value) { m_allowedValuesHasBeenSet = true; m_allowedValues.push_back(value); return *this; }
+    template<typename AllowedValuesT = Aws::Vector<Aws::String>>
+    void SetAllowedValues(AllowedValuesT&& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = std::forward<AllowedValuesT>(value); }
+    template<typename AllowedValuesT = Aws::Vector<Aws::String>>
+    Actuator& WithAllowedValues(AllowedValuesT&& value) { SetAllowedValues(std::forward<AllowedValuesT>(value)); return *this;}
+    template<typename AllowedValuesT = Aws::String>
+    Actuator& AddAllowedValues(AllowedValuesT&& value) { m_allowedValuesHasBeenSet = true; m_allowedValues.emplace_back(std::forward<AllowedValuesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The specified possible minimum value of an actuator.</p>
      */
-    inline double GetMin() const{ return m_min; }
+    inline double GetMin() const { return m_min; }
     inline bool MinHasBeenSet() const { return m_minHasBeenSet; }
     inline void SetMin(double value) { m_minHasBeenSet = true; m_min = value; }
     inline Actuator& WithMin(double value) { SetMin(value); return *this;}
@@ -127,7 +118,7 @@ namespace Model
     /**
      * <p>The specified possible maximum value of an actuator.</p>
      */
-    inline double GetMax() const{ return m_max; }
+    inline double GetMax() const { return m_max; }
     inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
     inline void SetMax(double value) { m_maxHasBeenSet = true; m_max = value; }
     inline Actuator& WithMax(double value) { SetMax(value); return *this;}
@@ -138,28 +129,24 @@ namespace Model
      * <p>The deprecation message for the node or the branch that was moved or
      * deleted.</p>
      */
-    inline const Aws::String& GetDeprecationMessage() const{ return m_deprecationMessage; }
+    inline const Aws::String& GetDeprecationMessage() const { return m_deprecationMessage; }
     inline bool DeprecationMessageHasBeenSet() const { return m_deprecationMessageHasBeenSet; }
-    inline void SetDeprecationMessage(const Aws::String& value) { m_deprecationMessageHasBeenSet = true; m_deprecationMessage = value; }
-    inline void SetDeprecationMessage(Aws::String&& value) { m_deprecationMessageHasBeenSet = true; m_deprecationMessage = std::move(value); }
-    inline void SetDeprecationMessage(const char* value) { m_deprecationMessageHasBeenSet = true; m_deprecationMessage.assign(value); }
-    inline Actuator& WithDeprecationMessage(const Aws::String& value) { SetDeprecationMessage(value); return *this;}
-    inline Actuator& WithDeprecationMessage(Aws::String&& value) { SetDeprecationMessage(std::move(value)); return *this;}
-    inline Actuator& WithDeprecationMessage(const char* value) { SetDeprecationMessage(value); return *this;}
+    template<typename DeprecationMessageT = Aws::String>
+    void SetDeprecationMessage(DeprecationMessageT&& value) { m_deprecationMessageHasBeenSet = true; m_deprecationMessage = std::forward<DeprecationMessageT>(value); }
+    template<typename DeprecationMessageT = Aws::String>
+    Actuator& WithDeprecationMessage(DeprecationMessageT&& value) { SetDeprecationMessage(std::forward<DeprecationMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A comment in addition to the description.</p>
      */
-    inline const Aws::String& GetComment() const{ return m_comment; }
+    inline const Aws::String& GetComment() const { return m_comment; }
     inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
-    inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
-    inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
-    inline void SetComment(const char* value) { m_commentHasBeenSet = true; m_comment.assign(value); }
-    inline Actuator& WithComment(const Aws::String& value) { SetComment(value); return *this;}
-    inline Actuator& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
-    inline Actuator& WithComment(const char* value) { SetComment(value); return *this;}
+    template<typename CommentT = Aws::String>
+    void SetComment(CommentT&& value) { m_commentHasBeenSet = true; m_comment = std::forward<CommentT>(value); }
+    template<typename CommentT = Aws::String>
+    Actuator& WithComment(CommentT&& value) { SetComment(std::forward<CommentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -169,21 +156,19 @@ namespace Model
      * the struct fully qualified name of an actuator might be
      * <code>Vehicle.Door.LockStruct</code>.</p>
      */
-    inline const Aws::String& GetStructFullyQualifiedName() const{ return m_structFullyQualifiedName; }
+    inline const Aws::String& GetStructFullyQualifiedName() const { return m_structFullyQualifiedName; }
     inline bool StructFullyQualifiedNameHasBeenSet() const { return m_structFullyQualifiedNameHasBeenSet; }
-    inline void SetStructFullyQualifiedName(const Aws::String& value) { m_structFullyQualifiedNameHasBeenSet = true; m_structFullyQualifiedName = value; }
-    inline void SetStructFullyQualifiedName(Aws::String&& value) { m_structFullyQualifiedNameHasBeenSet = true; m_structFullyQualifiedName = std::move(value); }
-    inline void SetStructFullyQualifiedName(const char* value) { m_structFullyQualifiedNameHasBeenSet = true; m_structFullyQualifiedName.assign(value); }
-    inline Actuator& WithStructFullyQualifiedName(const Aws::String& value) { SetStructFullyQualifiedName(value); return *this;}
-    inline Actuator& WithStructFullyQualifiedName(Aws::String&& value) { SetStructFullyQualifiedName(std::move(value)); return *this;}
-    inline Actuator& WithStructFullyQualifiedName(const char* value) { SetStructFullyQualifiedName(value); return *this;}
+    template<typename StructFullyQualifiedNameT = Aws::String>
+    void SetStructFullyQualifiedName(StructFullyQualifiedNameT&& value) { m_structFullyQualifiedNameHasBeenSet = true; m_structFullyQualifiedName = std::forward<StructFullyQualifiedNameT>(value); }
+    template<typename StructFullyQualifiedNameT = Aws::String>
+    Actuator& WithStructFullyQualifiedName(StructFullyQualifiedNameT&& value) { SetStructFullyQualifiedName(std::forward<StructFullyQualifiedNameT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_fullyQualifiedName;
     bool m_fullyQualifiedNameHasBeenSet = false;
 
-    NodeDataType m_dataType;
+    NodeDataType m_dataType{NodeDataType::NOT_SET};
     bool m_dataTypeHasBeenSet = false;
 
     Aws::String m_description;
@@ -195,10 +180,10 @@ namespace Model
     Aws::Vector<Aws::String> m_allowedValues;
     bool m_allowedValuesHasBeenSet = false;
 
-    double m_min;
+    double m_min{0.0};
     bool m_minHasBeenSet = false;
 
-    double m_max;
+    double m_max{0.0};
     bool m_maxHasBeenSet = false;
 
     Aws::String m_deprecationMessage;

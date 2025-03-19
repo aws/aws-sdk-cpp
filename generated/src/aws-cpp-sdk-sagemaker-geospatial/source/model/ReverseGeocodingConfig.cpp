@@ -18,14 +18,7 @@ namespace SageMakerGeospatial
 namespace Model
 {
 
-ReverseGeocodingConfig::ReverseGeocodingConfig() : 
-    m_xAttributeNameHasBeenSet(false),
-    m_yAttributeNameHasBeenSet(false)
-{
-}
-
 ReverseGeocodingConfig::ReverseGeocodingConfig(JsonView jsonValue)
-  : ReverseGeocodingConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ReverseGeocodingConfig& ReverseGeocodingConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("XAttributeName"))
   {
     m_xAttributeName = jsonValue.GetString("XAttributeName");
-
     m_xAttributeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("YAttributeName"))
   {
     m_yAttributeName = jsonValue.GetString("YAttributeName");
-
     m_yAttributeNameHasBeenSet = true;
   }
-
   return *this;
 }
 

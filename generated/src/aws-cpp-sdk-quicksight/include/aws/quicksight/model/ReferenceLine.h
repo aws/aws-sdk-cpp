@@ -34,7 +34,7 @@ namespace Model
   class ReferenceLine
   {
   public:
-    AWS_QUICKSIGHT_API ReferenceLine();
+    AWS_QUICKSIGHT_API ReferenceLine() = default;
     AWS_QUICKSIGHT_API ReferenceLine(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API ReferenceLine& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,52 +46,50 @@ namespace Model
      * <ul> <li> <p> <code>ENABLE</code> </p> </li> <li> <p> <code>DISABLE</code> </p>
      * </li> </ul>
      */
-    inline const WidgetStatus& GetStatus() const{ return m_status; }
+    inline WidgetStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const WidgetStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(WidgetStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ReferenceLine& WithStatus(const WidgetStatus& value) { SetStatus(value); return *this;}
-    inline ReferenceLine& WithStatus(WidgetStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(WidgetStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ReferenceLine& WithStatus(WidgetStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The data configuration of the reference line.</p>
      */
-    inline const ReferenceLineDataConfiguration& GetDataConfiguration() const{ return m_dataConfiguration; }
+    inline const ReferenceLineDataConfiguration& GetDataConfiguration() const { return m_dataConfiguration; }
     inline bool DataConfigurationHasBeenSet() const { return m_dataConfigurationHasBeenSet; }
-    inline void SetDataConfiguration(const ReferenceLineDataConfiguration& value) { m_dataConfigurationHasBeenSet = true; m_dataConfiguration = value; }
-    inline void SetDataConfiguration(ReferenceLineDataConfiguration&& value) { m_dataConfigurationHasBeenSet = true; m_dataConfiguration = std::move(value); }
-    inline ReferenceLine& WithDataConfiguration(const ReferenceLineDataConfiguration& value) { SetDataConfiguration(value); return *this;}
-    inline ReferenceLine& WithDataConfiguration(ReferenceLineDataConfiguration&& value) { SetDataConfiguration(std::move(value)); return *this;}
+    template<typename DataConfigurationT = ReferenceLineDataConfiguration>
+    void SetDataConfiguration(DataConfigurationT&& value) { m_dataConfigurationHasBeenSet = true; m_dataConfiguration = std::forward<DataConfigurationT>(value); }
+    template<typename DataConfigurationT = ReferenceLineDataConfiguration>
+    ReferenceLine& WithDataConfiguration(DataConfigurationT&& value) { SetDataConfiguration(std::forward<DataConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The style configuration of the reference line.</p>
      */
-    inline const ReferenceLineStyleConfiguration& GetStyleConfiguration() const{ return m_styleConfiguration; }
+    inline const ReferenceLineStyleConfiguration& GetStyleConfiguration() const { return m_styleConfiguration; }
     inline bool StyleConfigurationHasBeenSet() const { return m_styleConfigurationHasBeenSet; }
-    inline void SetStyleConfiguration(const ReferenceLineStyleConfiguration& value) { m_styleConfigurationHasBeenSet = true; m_styleConfiguration = value; }
-    inline void SetStyleConfiguration(ReferenceLineStyleConfiguration&& value) { m_styleConfigurationHasBeenSet = true; m_styleConfiguration = std::move(value); }
-    inline ReferenceLine& WithStyleConfiguration(const ReferenceLineStyleConfiguration& value) { SetStyleConfiguration(value); return *this;}
-    inline ReferenceLine& WithStyleConfiguration(ReferenceLineStyleConfiguration&& value) { SetStyleConfiguration(std::move(value)); return *this;}
+    template<typename StyleConfigurationT = ReferenceLineStyleConfiguration>
+    void SetStyleConfiguration(StyleConfigurationT&& value) { m_styleConfigurationHasBeenSet = true; m_styleConfiguration = std::forward<StyleConfigurationT>(value); }
+    template<typename StyleConfigurationT = ReferenceLineStyleConfiguration>
+    ReferenceLine& WithStyleConfiguration(StyleConfigurationT&& value) { SetStyleConfiguration(std::forward<StyleConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The label configuration of the reference line.</p>
      */
-    inline const ReferenceLineLabelConfiguration& GetLabelConfiguration() const{ return m_labelConfiguration; }
+    inline const ReferenceLineLabelConfiguration& GetLabelConfiguration() const { return m_labelConfiguration; }
     inline bool LabelConfigurationHasBeenSet() const { return m_labelConfigurationHasBeenSet; }
-    inline void SetLabelConfiguration(const ReferenceLineLabelConfiguration& value) { m_labelConfigurationHasBeenSet = true; m_labelConfiguration = value; }
-    inline void SetLabelConfiguration(ReferenceLineLabelConfiguration&& value) { m_labelConfigurationHasBeenSet = true; m_labelConfiguration = std::move(value); }
-    inline ReferenceLine& WithLabelConfiguration(const ReferenceLineLabelConfiguration& value) { SetLabelConfiguration(value); return *this;}
-    inline ReferenceLine& WithLabelConfiguration(ReferenceLineLabelConfiguration&& value) { SetLabelConfiguration(std::move(value)); return *this;}
+    template<typename LabelConfigurationT = ReferenceLineLabelConfiguration>
+    void SetLabelConfiguration(LabelConfigurationT&& value) { m_labelConfigurationHasBeenSet = true; m_labelConfiguration = std::forward<LabelConfigurationT>(value); }
+    template<typename LabelConfigurationT = ReferenceLineLabelConfiguration>
+    ReferenceLine& WithLabelConfiguration(LabelConfigurationT&& value) { SetLabelConfiguration(std::forward<LabelConfigurationT>(value)); return *this;}
     ///@}
   private:
 
-    WidgetStatus m_status;
+    WidgetStatus m_status{WidgetStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     ReferenceLineDataConfiguration m_dataConfiguration;

@@ -18,14 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-FailureTrace::FailureTrace() : 
-    m_failureReasonHasBeenSet(false),
-    m_traceIdHasBeenSet(false)
-{
-}
-
 FailureTrace::FailureTrace(JsonView jsonValue)
-  : FailureTrace()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ FailureTrace& FailureTrace::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("failureReason"))
   {
     m_failureReason = jsonValue.GetString("failureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("traceId"))
   {
     m_traceId = jsonValue.GetString("traceId");
-
     m_traceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

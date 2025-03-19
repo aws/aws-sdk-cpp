@@ -12,15 +12,6 @@ using namespace Aws::EKS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdatePodIdentityAssociationRequest::UpdatePodIdentityAssociationRequest() : 
-    m_clusterNameHasBeenSet(false),
-    m_associationIdHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
-{
-}
-
 Aws::String UpdatePodIdentityAssociationRequest::SerializePayload() const
 {
   JsonValue payload;

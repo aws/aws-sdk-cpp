@@ -12,20 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateUserRequest::CreateUserRequest() : 
-    m_usernameHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_identityInfoHasBeenSet(false),
-    m_phoneConfigHasBeenSet(false),
-    m_directoryUserIdHasBeenSet(false),
-    m_securityProfileIdsHasBeenSet(false),
-    m_routingProfileIdHasBeenSet(false),
-    m_hierarchyGroupIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateUserRequest::SerializePayload() const
 {
   JsonValue payload;

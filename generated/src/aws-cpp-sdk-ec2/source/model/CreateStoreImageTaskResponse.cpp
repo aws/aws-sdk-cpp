@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateStoreImageTaskResponse::CreateStoreImageTaskResponse()
-{
-}
-
 CreateStoreImageTaskResponse::CreateStoreImageTaskResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ CreateStoreImageTaskResponse& CreateStoreImageTaskResponse::operator =(const Aws
     if(!objectKeyNode.IsNull())
     {
       m_objectKey = Aws::Utils::Xml::DecodeEscapedXmlText(objectKeyNode.GetText());
+      m_objectKeyHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ CreateStoreImageTaskResponse& CreateStoreImageTaskResponse::operator =(const Aws
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::CreateStoreImageTaskResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

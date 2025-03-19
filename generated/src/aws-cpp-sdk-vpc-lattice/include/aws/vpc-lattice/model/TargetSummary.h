@@ -32,7 +32,7 @@ namespace Model
   class TargetSummary
   {
   public:
-    AWS_VPCLATTICE_API TargetSummary();
+    AWS_VPCLATTICE_API TargetSummary() = default;
     AWS_VPCLATTICE_API TargetSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_VPCLATTICE_API TargetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VPCLATTICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,21 +46,19 @@ namespace Model
      * Lambda function. If the target type is <code>ALB</code>, this is the ARN of an
      * Application Load Balancer.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline TargetSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline TargetSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline TargetSummary& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    TargetSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The port on which the target is listening.</p>
      */
-    inline int GetPort() const{ return m_port; }
+    inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline TargetSummary& WithPort(int value) { SetPort(value); return *this;}
@@ -70,14 +68,12 @@ namespace Model
     /**
      * <p>The code for why the target status is what it is.</p>
      */
-    inline const Aws::String& GetReasonCode() const{ return m_reasonCode; }
+    inline const Aws::String& GetReasonCode() const { return m_reasonCode; }
     inline bool ReasonCodeHasBeenSet() const { return m_reasonCodeHasBeenSet; }
-    inline void SetReasonCode(const Aws::String& value) { m_reasonCodeHasBeenSet = true; m_reasonCode = value; }
-    inline void SetReasonCode(Aws::String&& value) { m_reasonCodeHasBeenSet = true; m_reasonCode = std::move(value); }
-    inline void SetReasonCode(const char* value) { m_reasonCodeHasBeenSet = true; m_reasonCode.assign(value); }
-    inline TargetSummary& WithReasonCode(const Aws::String& value) { SetReasonCode(value); return *this;}
-    inline TargetSummary& WithReasonCode(Aws::String&& value) { SetReasonCode(std::move(value)); return *this;}
-    inline TargetSummary& WithReasonCode(const char* value) { SetReasonCode(value); return *this;}
+    template<typename ReasonCodeT = Aws::String>
+    void SetReasonCode(ReasonCodeT&& value) { m_reasonCodeHasBeenSet = true; m_reasonCode = std::forward<ReasonCodeT>(value); }
+    template<typename ReasonCodeT = Aws::String>
+    TargetSummary& WithReasonCode(ReasonCodeT&& value) { SetReasonCode(std::forward<ReasonCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,25 +88,23 @@ namespace Model
      * performed.</p> </li> <li> <p> <code>UNUSED</code>: Target group is not used in a
      * service.</p> </li> </ul>
      */
-    inline const TargetStatus& GetStatus() const{ return m_status; }
+    inline TargetStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const TargetStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(TargetStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline TargetSummary& WithStatus(const TargetStatus& value) { SetStatus(value); return *this;}
-    inline TargetSummary& WithStatus(TargetStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(TargetStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline TargetSummary& WithStatus(TargetStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    int m_port;
+    int m_port{0};
     bool m_portHasBeenSet = false;
 
     Aws::String m_reasonCode;
     bool m_reasonCodeHasBeenSet = false;
 
-    TargetStatus m_status;
+    TargetStatus m_status{TargetStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

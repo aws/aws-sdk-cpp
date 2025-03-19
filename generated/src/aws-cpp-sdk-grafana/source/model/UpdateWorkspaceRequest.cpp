@@ -12,29 +12,6 @@ using namespace Aws::ManagedGrafana::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateWorkspaceRequest::UpdateWorkspaceRequest() : 
-    m_accountAccessType(AccountAccessType::NOT_SET),
-    m_accountAccessTypeHasBeenSet(false),
-    m_networkAccessControlHasBeenSet(false),
-    m_organizationRoleNameHasBeenSet(false),
-    m_permissionType(PermissionType::NOT_SET),
-    m_permissionTypeHasBeenSet(false),
-    m_removeNetworkAccessConfiguration(false),
-    m_removeNetworkAccessConfigurationHasBeenSet(false),
-    m_removeVpcConfiguration(false),
-    m_removeVpcConfigurationHasBeenSet(false),
-    m_stackSetNameHasBeenSet(false),
-    m_vpcConfigurationHasBeenSet(false),
-    m_workspaceDataSourcesHasBeenSet(false),
-    m_workspaceDescriptionHasBeenSet(false),
-    m_workspaceIdHasBeenSet(false),
-    m_workspaceNameHasBeenSet(false),
-    m_workspaceNotificationDestinationsHasBeenSet(false),
-    m_workspaceOrganizationalUnitsHasBeenSet(false),
-    m_workspaceRoleArnHasBeenSet(false)
-{
-}
-
 Aws::String UpdateWorkspaceRequest::SerializePayload() const
 {
   JsonValue payload;

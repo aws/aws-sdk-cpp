@@ -33,7 +33,7 @@ namespace Model
   class ActivityTaskTimedOutEventAttributes
   {
   public:
-    AWS_SWF_API ActivityTaskTimedOutEventAttributes();
+    AWS_SWF_API ActivityTaskTimedOutEventAttributes() = default;
     AWS_SWF_API ActivityTaskTimedOutEventAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API ActivityTaskTimedOutEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
     /**
      * <p>The type of the timeout that caused this event.</p>
      */
-    inline const ActivityTaskTimeoutType& GetTimeoutType() const{ return m_timeoutType; }
+    inline ActivityTaskTimeoutType GetTimeoutType() const { return m_timeoutType; }
     inline bool TimeoutTypeHasBeenSet() const { return m_timeoutTypeHasBeenSet; }
-    inline void SetTimeoutType(const ActivityTaskTimeoutType& value) { m_timeoutTypeHasBeenSet = true; m_timeoutType = value; }
-    inline void SetTimeoutType(ActivityTaskTimeoutType&& value) { m_timeoutTypeHasBeenSet = true; m_timeoutType = std::move(value); }
-    inline ActivityTaskTimedOutEventAttributes& WithTimeoutType(const ActivityTaskTimeoutType& value) { SetTimeoutType(value); return *this;}
-    inline ActivityTaskTimedOutEventAttributes& WithTimeoutType(ActivityTaskTimeoutType&& value) { SetTimeoutType(std::move(value)); return *this;}
+    inline void SetTimeoutType(ActivityTaskTimeoutType value) { m_timeoutTypeHasBeenSet = true; m_timeoutType = value; }
+    inline ActivityTaskTimedOutEventAttributes& WithTimeoutType(ActivityTaskTimeoutType value) { SetTimeoutType(value); return *this;}
     ///@}
 
     ///@{
@@ -57,7 +55,7 @@ namespace Model
      * this activity task was scheduled. This information can be useful for diagnosing
      * problems by tracing back the chain of events leading up to this event.</p>
      */
-    inline long long GetScheduledEventId() const{ return m_scheduledEventId; }
+    inline long long GetScheduledEventId() const { return m_scheduledEventId; }
     inline bool ScheduledEventIdHasBeenSet() const { return m_scheduledEventIdHasBeenSet; }
     inline void SetScheduledEventId(long long value) { m_scheduledEventIdHasBeenSet = true; m_scheduledEventId = value; }
     inline ActivityTaskTimedOutEventAttributes& WithScheduledEventId(long long value) { SetScheduledEventId(value); return *this;}
@@ -69,7 +67,7 @@ namespace Model
      * activity task was started. This information can be useful for diagnosing
      * problems by tracing back the chain of events leading up to this event.</p>
      */
-    inline long long GetStartedEventId() const{ return m_startedEventId; }
+    inline long long GetStartedEventId() const { return m_startedEventId; }
     inline bool StartedEventIdHasBeenSet() const { return m_startedEventIdHasBeenSet; }
     inline void SetStartedEventId(long long value) { m_startedEventIdHasBeenSet = true; m_startedEventId = value; }
     inline ActivityTaskTimedOutEventAttributes& WithStartedEventId(long long value) { SetStartedEventId(value); return *this;}
@@ -80,24 +78,22 @@ namespace Model
      * <p>Contains the content of the <code>details</code> parameter for the last call
      * made by the activity to <code>RecordActivityTaskHeartbeat</code>.</p>
      */
-    inline const Aws::String& GetDetails() const{ return m_details; }
+    inline const Aws::String& GetDetails() const { return m_details; }
     inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
-    inline void SetDetails(const Aws::String& value) { m_detailsHasBeenSet = true; m_details = value; }
-    inline void SetDetails(Aws::String&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
-    inline void SetDetails(const char* value) { m_detailsHasBeenSet = true; m_details.assign(value); }
-    inline ActivityTaskTimedOutEventAttributes& WithDetails(const Aws::String& value) { SetDetails(value); return *this;}
-    inline ActivityTaskTimedOutEventAttributes& WithDetails(Aws::String&& value) { SetDetails(std::move(value)); return *this;}
-    inline ActivityTaskTimedOutEventAttributes& WithDetails(const char* value) { SetDetails(value); return *this;}
+    template<typename DetailsT = Aws::String>
+    void SetDetails(DetailsT&& value) { m_detailsHasBeenSet = true; m_details = std::forward<DetailsT>(value); }
+    template<typename DetailsT = Aws::String>
+    ActivityTaskTimedOutEventAttributes& WithDetails(DetailsT&& value) { SetDetails(std::forward<DetailsT>(value)); return *this;}
     ///@}
   private:
 
-    ActivityTaskTimeoutType m_timeoutType;
+    ActivityTaskTimeoutType m_timeoutType{ActivityTaskTimeoutType::NOT_SET};
     bool m_timeoutTypeHasBeenSet = false;
 
-    long long m_scheduledEventId;
+    long long m_scheduledEventId{0};
     bool m_scheduledEventIdHasBeenSet = false;
 
-    long long m_startedEventId;
+    long long m_startedEventId{0};
     bool m_startedEventIdHasBeenSet = false;
 
     Aws::String m_details;

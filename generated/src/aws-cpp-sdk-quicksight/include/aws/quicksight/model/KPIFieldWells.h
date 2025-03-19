@@ -33,7 +33,7 @@ namespace Model
   class KPIFieldWells
   {
   public:
-    AWS_QUICKSIGHT_API KPIFieldWells();
+    AWS_QUICKSIGHT_API KPIFieldWells() = default;
     AWS_QUICKSIGHT_API KPIFieldWells(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API KPIFieldWells& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,42 +43,42 @@ namespace Model
     /**
      * <p>The value field wells of a KPI visual.</p>
      */
-    inline const Aws::Vector<MeasureField>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<MeasureField>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<MeasureField>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<MeasureField>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline KPIFieldWells& WithValues(const Aws::Vector<MeasureField>& value) { SetValues(value); return *this;}
-    inline KPIFieldWells& WithValues(Aws::Vector<MeasureField>&& value) { SetValues(std::move(value)); return *this;}
-    inline KPIFieldWells& AddValues(const MeasureField& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline KPIFieldWells& AddValues(MeasureField&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
+    template<typename ValuesT = Aws::Vector<MeasureField>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<MeasureField>>
+    KPIFieldWells& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = MeasureField>
+    KPIFieldWells& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The target value field wells of a KPI visual.</p>
      */
-    inline const Aws::Vector<MeasureField>& GetTargetValues() const{ return m_targetValues; }
+    inline const Aws::Vector<MeasureField>& GetTargetValues() const { return m_targetValues; }
     inline bool TargetValuesHasBeenSet() const { return m_targetValuesHasBeenSet; }
-    inline void SetTargetValues(const Aws::Vector<MeasureField>& value) { m_targetValuesHasBeenSet = true; m_targetValues = value; }
-    inline void SetTargetValues(Aws::Vector<MeasureField>&& value) { m_targetValuesHasBeenSet = true; m_targetValues = std::move(value); }
-    inline KPIFieldWells& WithTargetValues(const Aws::Vector<MeasureField>& value) { SetTargetValues(value); return *this;}
-    inline KPIFieldWells& WithTargetValues(Aws::Vector<MeasureField>&& value) { SetTargetValues(std::move(value)); return *this;}
-    inline KPIFieldWells& AddTargetValues(const MeasureField& value) { m_targetValuesHasBeenSet = true; m_targetValues.push_back(value); return *this; }
-    inline KPIFieldWells& AddTargetValues(MeasureField&& value) { m_targetValuesHasBeenSet = true; m_targetValues.push_back(std::move(value)); return *this; }
+    template<typename TargetValuesT = Aws::Vector<MeasureField>>
+    void SetTargetValues(TargetValuesT&& value) { m_targetValuesHasBeenSet = true; m_targetValues = std::forward<TargetValuesT>(value); }
+    template<typename TargetValuesT = Aws::Vector<MeasureField>>
+    KPIFieldWells& WithTargetValues(TargetValuesT&& value) { SetTargetValues(std::forward<TargetValuesT>(value)); return *this;}
+    template<typename TargetValuesT = MeasureField>
+    KPIFieldWells& AddTargetValues(TargetValuesT&& value) { m_targetValuesHasBeenSet = true; m_targetValues.emplace_back(std::forward<TargetValuesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The trend group field wells of a KPI visual.</p>
      */
-    inline const Aws::Vector<DimensionField>& GetTrendGroups() const{ return m_trendGroups; }
+    inline const Aws::Vector<DimensionField>& GetTrendGroups() const { return m_trendGroups; }
     inline bool TrendGroupsHasBeenSet() const { return m_trendGroupsHasBeenSet; }
-    inline void SetTrendGroups(const Aws::Vector<DimensionField>& value) { m_trendGroupsHasBeenSet = true; m_trendGroups = value; }
-    inline void SetTrendGroups(Aws::Vector<DimensionField>&& value) { m_trendGroupsHasBeenSet = true; m_trendGroups = std::move(value); }
-    inline KPIFieldWells& WithTrendGroups(const Aws::Vector<DimensionField>& value) { SetTrendGroups(value); return *this;}
-    inline KPIFieldWells& WithTrendGroups(Aws::Vector<DimensionField>&& value) { SetTrendGroups(std::move(value)); return *this;}
-    inline KPIFieldWells& AddTrendGroups(const DimensionField& value) { m_trendGroupsHasBeenSet = true; m_trendGroups.push_back(value); return *this; }
-    inline KPIFieldWells& AddTrendGroups(DimensionField&& value) { m_trendGroupsHasBeenSet = true; m_trendGroups.push_back(std::move(value)); return *this; }
+    template<typename TrendGroupsT = Aws::Vector<DimensionField>>
+    void SetTrendGroups(TrendGroupsT&& value) { m_trendGroupsHasBeenSet = true; m_trendGroups = std::forward<TrendGroupsT>(value); }
+    template<typename TrendGroupsT = Aws::Vector<DimensionField>>
+    KPIFieldWells& WithTrendGroups(TrendGroupsT&& value) { SetTrendGroups(std::forward<TrendGroupsT>(value)); return *this;}
+    template<typename TrendGroupsT = DimensionField>
+    KPIFieldWells& AddTrendGroups(TrendGroupsT&& value) { m_trendGroupsHasBeenSet = true; m_trendGroups.emplace_back(std::forward<TrendGroupsT>(value)); return *this; }
     ///@}
   private:
 

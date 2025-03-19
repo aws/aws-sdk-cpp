@@ -18,15 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-DetectedProfileObjectType::DetectedProfileObjectType() : 
-    m_sourceLastUpdatedTimestampFormatHasBeenSet(false),
-    m_fieldsHasBeenSet(false),
-    m_keysHasBeenSet(false)
-{
-}
-
 DetectedProfileObjectType::DetectedProfileObjectType(JsonView jsonValue)
-  : DetectedProfileObjectType()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ DetectedProfileObjectType& DetectedProfileObjectType::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("SourceLastUpdatedTimestampFormat"))
   {
     m_sourceLastUpdatedTimestampFormat = jsonValue.GetString("SourceLastUpdatedTimestampFormat");
-
     m_sourceLastUpdatedTimestampFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Fields"))
   {
     Aws::Map<Aws::String, JsonView> fieldsJsonMap = jsonValue.GetObject("Fields").GetAllObjects();
@@ -49,7 +39,6 @@ DetectedProfileObjectType& DetectedProfileObjectType::operator =(JsonView jsonVa
     }
     m_fieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Keys"))
   {
     Aws::Map<Aws::String, JsonView> keysJsonMap = jsonValue.GetObject("Keys").GetAllObjects();
@@ -66,7 +55,6 @@ DetectedProfileObjectType& DetectedProfileObjectType::operator =(JsonView jsonVa
     }
     m_keysHasBeenSet = true;
   }
-
   return *this;
 }
 

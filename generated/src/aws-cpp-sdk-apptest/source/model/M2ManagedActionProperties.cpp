@@ -18,15 +18,7 @@ namespace AppTest
 namespace Model
 {
 
-M2ManagedActionProperties::M2ManagedActionProperties() : 
-    m_forceStop(false),
-    m_forceStopHasBeenSet(false),
-    m_importDataSetLocationHasBeenSet(false)
-{
-}
-
 M2ManagedActionProperties::M2ManagedActionProperties(JsonView jsonValue)
-  : M2ManagedActionProperties()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ M2ManagedActionProperties& M2ManagedActionProperties::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("forceStop"))
   {
     m_forceStop = jsonValue.GetBool("forceStop");
-
     m_forceStopHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("importDataSetLocation"))
   {
     m_importDataSetLocation = jsonValue.GetString("importDataSetLocation");
-
     m_importDataSetLocationHasBeenSet = true;
   }
-
   return *this;
 }
 

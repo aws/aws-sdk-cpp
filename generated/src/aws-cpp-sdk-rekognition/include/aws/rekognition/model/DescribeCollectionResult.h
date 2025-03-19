@@ -28,7 +28,7 @@ namespace Model
   class DescribeCollectionResult
   {
   public:
-    AWS_REKOGNITION_API DescribeCollectionResult();
+    AWS_REKOGNITION_API DescribeCollectionResult() = default;
     AWS_REKOGNITION_API DescribeCollectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_REKOGNITION_API DescribeCollectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,8 +38,8 @@ namespace Model
      * <p>The number of faces that are indexed into the collection. To index faces into
      * a collection, use <a>IndexFaces</a>.</p>
      */
-    inline long long GetFaceCount() const{ return m_faceCount; }
-    inline void SetFaceCount(long long value) { m_faceCount = value; }
+    inline long long GetFaceCount() const { return m_faceCount; }
+    inline void SetFaceCount(long long value) { m_faceCountHasBeenSet = true; m_faceCount = value; }
     inline DescribeCollectionResult& WithFaceCount(long long value) { SetFaceCount(value); return *this;}
     ///@}
 
@@ -49,26 +49,22 @@ namespace Model
      * detection.</p> <p>For more information, see Model versioning in the Amazon
      * Rekognition Developer Guide.</p>
      */
-    inline const Aws::String& GetFaceModelVersion() const{ return m_faceModelVersion; }
-    inline void SetFaceModelVersion(const Aws::String& value) { m_faceModelVersion = value; }
-    inline void SetFaceModelVersion(Aws::String&& value) { m_faceModelVersion = std::move(value); }
-    inline void SetFaceModelVersion(const char* value) { m_faceModelVersion.assign(value); }
-    inline DescribeCollectionResult& WithFaceModelVersion(const Aws::String& value) { SetFaceModelVersion(value); return *this;}
-    inline DescribeCollectionResult& WithFaceModelVersion(Aws::String&& value) { SetFaceModelVersion(std::move(value)); return *this;}
-    inline DescribeCollectionResult& WithFaceModelVersion(const char* value) { SetFaceModelVersion(value); return *this;}
+    inline const Aws::String& GetFaceModelVersion() const { return m_faceModelVersion; }
+    template<typename FaceModelVersionT = Aws::String>
+    void SetFaceModelVersion(FaceModelVersionT&& value) { m_faceModelVersionHasBeenSet = true; m_faceModelVersion = std::forward<FaceModelVersionT>(value); }
+    template<typename FaceModelVersionT = Aws::String>
+    DescribeCollectionResult& WithFaceModelVersion(FaceModelVersionT&& value) { SetFaceModelVersion(std::forward<FaceModelVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the collection.</p>
      */
-    inline const Aws::String& GetCollectionARN() const{ return m_collectionARN; }
-    inline void SetCollectionARN(const Aws::String& value) { m_collectionARN = value; }
-    inline void SetCollectionARN(Aws::String&& value) { m_collectionARN = std::move(value); }
-    inline void SetCollectionARN(const char* value) { m_collectionARN.assign(value); }
-    inline DescribeCollectionResult& WithCollectionARN(const Aws::String& value) { SetCollectionARN(value); return *this;}
-    inline DescribeCollectionResult& WithCollectionARN(Aws::String&& value) { SetCollectionARN(std::move(value)); return *this;}
-    inline DescribeCollectionResult& WithCollectionARN(const char* value) { SetCollectionARN(value); return *this;}
+    inline const Aws::String& GetCollectionARN() const { return m_collectionARN; }
+    template<typename CollectionARNT = Aws::String>
+    void SetCollectionARN(CollectionARNT&& value) { m_collectionARNHasBeenSet = true; m_collectionARN = std::forward<CollectionARNT>(value); }
+    template<typename CollectionARNT = Aws::String>
+    DescribeCollectionResult& WithCollectionARN(CollectionARNT&& value) { SetCollectionARN(std::forward<CollectionARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,45 +73,49 @@ namespace Model
      * the collection. The Unix epoch time is 00:00:00 Coordinated Universal Time
      * (UTC), Thursday, 1 January 1970.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTimestamp() const{ return m_creationTimestamp; }
-    inline void SetCreationTimestamp(const Aws::Utils::DateTime& value) { m_creationTimestamp = value; }
-    inline void SetCreationTimestamp(Aws::Utils::DateTime&& value) { m_creationTimestamp = std::move(value); }
-    inline DescribeCollectionResult& WithCreationTimestamp(const Aws::Utils::DateTime& value) { SetCreationTimestamp(value); return *this;}
-    inline DescribeCollectionResult& WithCreationTimestamp(Aws::Utils::DateTime&& value) { SetCreationTimestamp(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTimestamp() const { return m_creationTimestamp; }
+    template<typename CreationTimestampT = Aws::Utils::DateTime>
+    void SetCreationTimestamp(CreationTimestampT&& value) { m_creationTimestampHasBeenSet = true; m_creationTimestamp = std::forward<CreationTimestampT>(value); }
+    template<typename CreationTimestampT = Aws::Utils::DateTime>
+    DescribeCollectionResult& WithCreationTimestamp(CreationTimestampT&& value) { SetCreationTimestamp(std::forward<CreationTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of UserIDs assigned to the specified colleciton.</p>
      */
-    inline long long GetUserCount() const{ return m_userCount; }
-    inline void SetUserCount(long long value) { m_userCount = value; }
+    inline long long GetUserCount() const { return m_userCount; }
+    inline void SetUserCount(long long value) { m_userCountHasBeenSet = true; m_userCount = value; }
     inline DescribeCollectionResult& WithUserCount(long long value) { SetUserCount(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeCollectionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeCollectionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeCollectionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeCollectionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    long long m_faceCount;
+    long long m_faceCount{0};
+    bool m_faceCountHasBeenSet = false;
 
     Aws::String m_faceModelVersion;
+    bool m_faceModelVersionHasBeenSet = false;
 
     Aws::String m_collectionARN;
+    bool m_collectionARNHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTimestamp;
+    Aws::Utils::DateTime m_creationTimestamp{};
+    bool m_creationTimestampHasBeenSet = false;
 
-    long long m_userCount;
+    long long m_userCount{0};
+    bool m_userCountHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

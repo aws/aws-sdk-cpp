@@ -18,14 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-OverrideDomainUnitOwnersPolicyGrantDetail::OverrideDomainUnitOwnersPolicyGrantDetail() : 
-    m_includeChildDomainUnits(false),
-    m_includeChildDomainUnitsHasBeenSet(false)
-{
-}
-
 OverrideDomainUnitOwnersPolicyGrantDetail::OverrideDomainUnitOwnersPolicyGrantDetail(JsonView jsonValue)
-  : OverrideDomainUnitOwnersPolicyGrantDetail()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ OverrideDomainUnitOwnersPolicyGrantDetail& OverrideDomainUnitOwnersPolicyGrantDe
   if(jsonValue.ValueExists("includeChildDomainUnits"))
   {
     m_includeChildDomainUnits = jsonValue.GetBool("includeChildDomainUnits");
-
     m_includeChildDomainUnitsHasBeenSet = true;
   }
-
   return *this;
 }
 

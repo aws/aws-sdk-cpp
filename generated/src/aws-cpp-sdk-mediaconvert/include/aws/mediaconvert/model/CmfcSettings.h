@@ -42,7 +42,7 @@ namespace Model
   class CmfcSettings
   {
   public:
-    AWS_MEDIACONVERT_API CmfcSettings();
+    AWS_MEDIACONVERT_API CmfcSettings() = default;
     AWS_MEDIACONVERT_API CmfcSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API CmfcSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -63,12 +63,10 @@ namespace Model
      * to the end of the file. When you keep the default value, any minor discrepancies
      * between audio and video duration will depend on your output audio codec.
      */
-    inline const CmfcAudioDuration& GetAudioDuration() const{ return m_audioDuration; }
+    inline CmfcAudioDuration GetAudioDuration() const { return m_audioDuration; }
     inline bool AudioDurationHasBeenSet() const { return m_audioDurationHasBeenSet; }
-    inline void SetAudioDuration(const CmfcAudioDuration& value) { m_audioDurationHasBeenSet = true; m_audioDuration = value; }
-    inline void SetAudioDuration(CmfcAudioDuration&& value) { m_audioDurationHasBeenSet = true; m_audioDuration = std::move(value); }
-    inline CmfcSettings& WithAudioDuration(const CmfcAudioDuration& value) { SetAudioDuration(value); return *this;}
-    inline CmfcSettings& WithAudioDuration(CmfcAudioDuration&& value) { SetAudioDuration(std::move(value)); return *this;}
+    inline void SetAudioDuration(CmfcAudioDuration value) { m_audioDurationHasBeenSet = true; m_audioDuration = value; }
+    inline CmfcSettings& WithAudioDuration(CmfcAudioDuration value) { SetAudioDuration(value); return *this;}
     ///@}
 
     ///@{
@@ -83,14 +81,12 @@ namespace Model
      * include the same value that you provide here for that video output's setting
      * Audio rendition sets.
      */
-    inline const Aws::String& GetAudioGroupId() const{ return m_audioGroupId; }
+    inline const Aws::String& GetAudioGroupId() const { return m_audioGroupId; }
     inline bool AudioGroupIdHasBeenSet() const { return m_audioGroupIdHasBeenSet; }
-    inline void SetAudioGroupId(const Aws::String& value) { m_audioGroupIdHasBeenSet = true; m_audioGroupId = value; }
-    inline void SetAudioGroupId(Aws::String&& value) { m_audioGroupIdHasBeenSet = true; m_audioGroupId = std::move(value); }
-    inline void SetAudioGroupId(const char* value) { m_audioGroupIdHasBeenSet = true; m_audioGroupId.assign(value); }
-    inline CmfcSettings& WithAudioGroupId(const Aws::String& value) { SetAudioGroupId(value); return *this;}
-    inline CmfcSettings& WithAudioGroupId(Aws::String&& value) { SetAudioGroupId(std::move(value)); return *this;}
-    inline CmfcSettings& WithAudioGroupId(const char* value) { SetAudioGroupId(value); return *this;}
+    template<typename AudioGroupIdT = Aws::String>
+    void SetAudioGroupId(AudioGroupIdT&& value) { m_audioGroupIdHasBeenSet = true; m_audioGroupId = std::forward<AudioGroupIdT>(value); }
+    template<typename AudioGroupIdT = Aws::String>
+    CmfcSettings& WithAudioGroupId(AudioGroupIdT&& value) { SetAudioGroupId(std::forward<AudioGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,14 +108,12 @@ namespace Model
      * #EXT-X-STREAM-INF:AUDIO="audio_aac_1"... amazing_video_1.m3u8
      * #EXT-X-STREAM-INF:AUDIO="audio_dolby"... amazing_video_1.m3u8
      */
-    inline const Aws::String& GetAudioRenditionSets() const{ return m_audioRenditionSets; }
+    inline const Aws::String& GetAudioRenditionSets() const { return m_audioRenditionSets; }
     inline bool AudioRenditionSetsHasBeenSet() const { return m_audioRenditionSetsHasBeenSet; }
-    inline void SetAudioRenditionSets(const Aws::String& value) { m_audioRenditionSetsHasBeenSet = true; m_audioRenditionSets = value; }
-    inline void SetAudioRenditionSets(Aws::String&& value) { m_audioRenditionSetsHasBeenSet = true; m_audioRenditionSets = std::move(value); }
-    inline void SetAudioRenditionSets(const char* value) { m_audioRenditionSetsHasBeenSet = true; m_audioRenditionSets.assign(value); }
-    inline CmfcSettings& WithAudioRenditionSets(const Aws::String& value) { SetAudioRenditionSets(value); return *this;}
-    inline CmfcSettings& WithAudioRenditionSets(Aws::String&& value) { SetAudioRenditionSets(std::move(value)); return *this;}
-    inline CmfcSettings& WithAudioRenditionSets(const char* value) { SetAudioRenditionSets(value); return *this;}
+    template<typename AudioRenditionSetsT = Aws::String>
+    void SetAudioRenditionSets(AudioRenditionSetsT&& value) { m_audioRenditionSetsHasBeenSet = true; m_audioRenditionSets = std::forward<AudioRenditionSetsT>(value); }
+    template<typename AudioRenditionSetsT = Aws::String>
+    CmfcSettings& WithAudioRenditionSets(AudioRenditionSetsT&& value) { SetAudioRenditionSets(std::forward<AudioRenditionSetsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -143,12 +137,10 @@ namespace Model
      * variant in your output group, you must explicitly choose a value for this
      * setting.
      */
-    inline const CmfcAudioTrackType& GetAudioTrackType() const{ return m_audioTrackType; }
+    inline CmfcAudioTrackType GetAudioTrackType() const { return m_audioTrackType; }
     inline bool AudioTrackTypeHasBeenSet() const { return m_audioTrackTypeHasBeenSet; }
-    inline void SetAudioTrackType(const CmfcAudioTrackType& value) { m_audioTrackTypeHasBeenSet = true; m_audioTrackType = value; }
-    inline void SetAudioTrackType(CmfcAudioTrackType&& value) { m_audioTrackTypeHasBeenSet = true; m_audioTrackType = std::move(value); }
-    inline CmfcSettings& WithAudioTrackType(const CmfcAudioTrackType& value) { SetAudioTrackType(value); return *this;}
-    inline CmfcSettings& WithAudioTrackType(CmfcAudioTrackType&& value) { SetAudioTrackType(std::move(value)); return *this;}
+    inline void SetAudioTrackType(CmfcAudioTrackType value) { m_audioTrackTypeHasBeenSet = true; m_audioTrackType = value; }
+    inline CmfcSettings& WithAudioTrackType(CmfcAudioTrackType value) { SetAudioTrackType(value); return *this;}
     ///@}
 
     ///@{
@@ -160,12 +152,10 @@ namespace Model
      * MediaConvert leaves this parameter out. The DVS flag can help with accessibility
      * on Apple devices. For more information, see the Apple documentation.
      */
-    inline const CmfcDescriptiveVideoServiceFlag& GetDescriptiveVideoServiceFlag() const{ return m_descriptiveVideoServiceFlag; }
+    inline CmfcDescriptiveVideoServiceFlag GetDescriptiveVideoServiceFlag() const { return m_descriptiveVideoServiceFlag; }
     inline bool DescriptiveVideoServiceFlagHasBeenSet() const { return m_descriptiveVideoServiceFlagHasBeenSet; }
-    inline void SetDescriptiveVideoServiceFlag(const CmfcDescriptiveVideoServiceFlag& value) { m_descriptiveVideoServiceFlagHasBeenSet = true; m_descriptiveVideoServiceFlag = value; }
-    inline void SetDescriptiveVideoServiceFlag(CmfcDescriptiveVideoServiceFlag&& value) { m_descriptiveVideoServiceFlagHasBeenSet = true; m_descriptiveVideoServiceFlag = std::move(value); }
-    inline CmfcSettings& WithDescriptiveVideoServiceFlag(const CmfcDescriptiveVideoServiceFlag& value) { SetDescriptiveVideoServiceFlag(value); return *this;}
-    inline CmfcSettings& WithDescriptiveVideoServiceFlag(CmfcDescriptiveVideoServiceFlag&& value) { SetDescriptiveVideoServiceFlag(std::move(value)); return *this;}
+    inline void SetDescriptiveVideoServiceFlag(CmfcDescriptiveVideoServiceFlag value) { m_descriptiveVideoServiceFlagHasBeenSet = true; m_descriptiveVideoServiceFlag = value; }
+    inline CmfcSettings& WithDescriptiveVideoServiceFlag(CmfcDescriptiveVideoServiceFlag value) { SetDescriptiveVideoServiceFlag(value); return *this;}
     ///@}
 
     ///@{
@@ -177,12 +167,10 @@ namespace Model
      * manifest and the regular child manifest to the parent manifest. When you don't
      * need the I-frame only child manifest, keep the default value Exclude.
      */
-    inline const CmfcIFrameOnlyManifest& GetIFrameOnlyManifest() const{ return m_iFrameOnlyManifest; }
+    inline CmfcIFrameOnlyManifest GetIFrameOnlyManifest() const { return m_iFrameOnlyManifest; }
     inline bool IFrameOnlyManifestHasBeenSet() const { return m_iFrameOnlyManifestHasBeenSet; }
-    inline void SetIFrameOnlyManifest(const CmfcIFrameOnlyManifest& value) { m_iFrameOnlyManifestHasBeenSet = true; m_iFrameOnlyManifest = value; }
-    inline void SetIFrameOnlyManifest(CmfcIFrameOnlyManifest&& value) { m_iFrameOnlyManifestHasBeenSet = true; m_iFrameOnlyManifest = std::move(value); }
-    inline CmfcSettings& WithIFrameOnlyManifest(const CmfcIFrameOnlyManifest& value) { SetIFrameOnlyManifest(value); return *this;}
-    inline CmfcSettings& WithIFrameOnlyManifest(CmfcIFrameOnlyManifest&& value) { SetIFrameOnlyManifest(std::move(value)); return *this;}
+    inline void SetIFrameOnlyManifest(CmfcIFrameOnlyManifest value) { m_iFrameOnlyManifestHasBeenSet = true; m_iFrameOnlyManifest = value; }
+    inline CmfcSettings& WithIFrameOnlyManifest(CmfcIFrameOnlyManifest value) { SetIFrameOnlyManifest(value); return *this;}
     ///@}
 
     ///@{
@@ -193,12 +181,10 @@ namespace Model
      * ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or
      * leave blank.
      */
-    inline const CmfcKlvMetadata& GetKlvMetadata() const{ return m_klvMetadata; }
+    inline CmfcKlvMetadata GetKlvMetadata() const { return m_klvMetadata; }
     inline bool KlvMetadataHasBeenSet() const { return m_klvMetadataHasBeenSet; }
-    inline void SetKlvMetadata(const CmfcKlvMetadata& value) { m_klvMetadataHasBeenSet = true; m_klvMetadata = value; }
-    inline void SetKlvMetadata(CmfcKlvMetadata&& value) { m_klvMetadataHasBeenSet = true; m_klvMetadata = std::move(value); }
-    inline CmfcSettings& WithKlvMetadata(const CmfcKlvMetadata& value) { SetKlvMetadata(value); return *this;}
-    inline CmfcSettings& WithKlvMetadata(CmfcKlvMetadata&& value) { SetKlvMetadata(std::move(value)); return *this;}
+    inline void SetKlvMetadata(CmfcKlvMetadata value) { m_klvMetadataHasBeenSet = true; m_klvMetadata = value; }
+    inline CmfcSettings& WithKlvMetadata(CmfcKlvMetadata value) { SetKlvMetadata(value); return *this;}
     ///@}
 
     ///@{
@@ -213,12 +199,10 @@ namespace Model
      * SCTE-35 source to Passthrough, ESAM SCTE-35 to insert, or ID3 metadata to
      * Passthrough.
      */
-    inline const CmfcManifestMetadataSignaling& GetManifestMetadataSignaling() const{ return m_manifestMetadataSignaling; }
+    inline CmfcManifestMetadataSignaling GetManifestMetadataSignaling() const { return m_manifestMetadataSignaling; }
     inline bool ManifestMetadataSignalingHasBeenSet() const { return m_manifestMetadataSignalingHasBeenSet; }
-    inline void SetManifestMetadataSignaling(const CmfcManifestMetadataSignaling& value) { m_manifestMetadataSignalingHasBeenSet = true; m_manifestMetadataSignaling = value; }
-    inline void SetManifestMetadataSignaling(CmfcManifestMetadataSignaling&& value) { m_manifestMetadataSignalingHasBeenSet = true; m_manifestMetadataSignaling = std::move(value); }
-    inline CmfcSettings& WithManifestMetadataSignaling(const CmfcManifestMetadataSignaling& value) { SetManifestMetadataSignaling(value); return *this;}
-    inline CmfcSettings& WithManifestMetadataSignaling(CmfcManifestMetadataSignaling&& value) { SetManifestMetadataSignaling(std::move(value)); return *this;}
+    inline void SetManifestMetadataSignaling(CmfcManifestMetadataSignaling value) { m_manifestMetadataSignalingHasBeenSet = true; m_manifestMetadataSignaling = value; }
+    inline CmfcSettings& WithManifestMetadataSignaling(CmfcManifestMetadataSignaling value) { SetManifestMetadataSignaling(value); return *this;}
     ///@}
 
     ///@{
@@ -227,12 +211,10 @@ namespace Model
      * to put SCTE-35 markers in this output at the insertion points that you specify
      * in an ESAM XML document. Provide the document in the setting SCC XML.
      */
-    inline const CmfcScte35Esam& GetScte35Esam() const{ return m_scte35Esam; }
+    inline CmfcScte35Esam GetScte35Esam() const { return m_scte35Esam; }
     inline bool Scte35EsamHasBeenSet() const { return m_scte35EsamHasBeenSet; }
-    inline void SetScte35Esam(const CmfcScte35Esam& value) { m_scte35EsamHasBeenSet = true; m_scte35Esam = value; }
-    inline void SetScte35Esam(CmfcScte35Esam&& value) { m_scte35EsamHasBeenSet = true; m_scte35Esam = std::move(value); }
-    inline CmfcSettings& WithScte35Esam(const CmfcScte35Esam& value) { SetScte35Esam(value); return *this;}
-    inline CmfcSettings& WithScte35Esam(CmfcScte35Esam&& value) { SetScte35Esam(std::move(value)); return *this;}
+    inline void SetScte35Esam(CmfcScte35Esam value) { m_scte35EsamHasBeenSet = true; m_scte35Esam = value; }
+    inline CmfcSettings& WithScte35Esam(CmfcScte35Esam value) { SetScte35Esam(value); return *this;}
     ///@}
 
     ///@{
@@ -242,12 +224,10 @@ namespace Model
      * appear in this output. Choose None if you don't want those SCTE-35 markers in
      * this output.
      */
-    inline const CmfcScte35Source& GetScte35Source() const{ return m_scte35Source; }
+    inline CmfcScte35Source GetScte35Source() const { return m_scte35Source; }
     inline bool Scte35SourceHasBeenSet() const { return m_scte35SourceHasBeenSet; }
-    inline void SetScte35Source(const CmfcScte35Source& value) { m_scte35SourceHasBeenSet = true; m_scte35Source = value; }
-    inline void SetScte35Source(CmfcScte35Source&& value) { m_scte35SourceHasBeenSet = true; m_scte35Source = std::move(value); }
-    inline CmfcSettings& WithScte35Source(const CmfcScte35Source& value) { SetScte35Source(value); return *this;}
-    inline CmfcSettings& WithScte35Source(CmfcScte35Source&& value) { SetScte35Source(std::move(value)); return *this;}
+    inline void SetScte35Source(CmfcScte35Source value) { m_scte35SourceHasBeenSet = true; m_scte35Source = value; }
+    inline CmfcSettings& WithScte35Source(CmfcScte35Source value) { SetScte35Source(value); return *this;}
     ///@}
 
     ///@{
@@ -257,12 +237,10 @@ namespace Model
      * instance of ID3 metadata in a separate Event Message (eMSG) box. To exclude this
      * ID3 metadata: Set ID3 metadata to None or leave blank.
      */
-    inline const CmfcTimedMetadata& GetTimedMetadata() const{ return m_timedMetadata; }
+    inline CmfcTimedMetadata GetTimedMetadata() const { return m_timedMetadata; }
     inline bool TimedMetadataHasBeenSet() const { return m_timedMetadataHasBeenSet; }
-    inline void SetTimedMetadata(const CmfcTimedMetadata& value) { m_timedMetadataHasBeenSet = true; m_timedMetadata = value; }
-    inline void SetTimedMetadata(CmfcTimedMetadata&& value) { m_timedMetadataHasBeenSet = true; m_timedMetadata = std::move(value); }
-    inline CmfcSettings& WithTimedMetadata(const CmfcTimedMetadata& value) { SetTimedMetadata(value); return *this;}
-    inline CmfcSettings& WithTimedMetadata(CmfcTimedMetadata&& value) { SetTimedMetadata(std::move(value)); return *this;}
+    inline void SetTimedMetadata(CmfcTimedMetadata value) { m_timedMetadataHasBeenSet = true; m_timedMetadata = value; }
+    inline CmfcSettings& WithTimedMetadata(CmfcTimedMetadata value) { SetTimedMetadata(value); return *this;}
     ///@}
 
     ///@{
@@ -275,12 +253,10 @@ Leave blank to use the default value Version 0.
 When you specify Version
      * 1, you must also set ID3 metadata to Passthrough.
      */
-    inline const CmfcTimedMetadataBoxVersion& GetTimedMetadataBoxVersion() const{ return m_timedMetadataBoxVersion; }
+    inline CmfcTimedMetadataBoxVersion GetTimedMetadataBoxVersion() const { return m_timedMetadataBoxVersion; }
     inline bool TimedMetadataBoxVersionHasBeenSet() const { return m_timedMetadataBoxVersionHasBeenSet; }
-    inline void SetTimedMetadataBoxVersion(const CmfcTimedMetadataBoxVersion& value) { m_timedMetadataBoxVersionHasBeenSet = true; m_timedMetadataBoxVersion = value; }
-    inline void SetTimedMetadataBoxVersion(CmfcTimedMetadataBoxVersion&& value) { m_timedMetadataBoxVersionHasBeenSet = true; m_timedMetadataBoxVersion = std::move(value); }
-    inline CmfcSettings& WithTimedMetadataBoxVersion(const CmfcTimedMetadataBoxVersion& value) { SetTimedMetadataBoxVersion(value); return *this;}
-    inline CmfcSettings& WithTimedMetadataBoxVersion(CmfcTimedMetadataBoxVersion&& value) { SetTimedMetadataBoxVersion(std::move(value)); return *this;}
+    inline void SetTimedMetadataBoxVersion(CmfcTimedMetadataBoxVersion value) { m_timedMetadataBoxVersionHasBeenSet = true; m_timedMetadataBoxVersion = value; }
+    inline CmfcSettings& WithTimedMetadataBoxVersion(CmfcTimedMetadataBoxVersion value) { SetTimedMetadataBoxVersion(value); return *this;}
     ///@}
 
     ///@{
@@ -291,14 +267,12 @@ When you specify Version
      * When you specify a value for ID3 metadata scheme ID URI, you must also set ID3
      * metadata to Passthrough.
      */
-    inline const Aws::String& GetTimedMetadataSchemeIdUri() const{ return m_timedMetadataSchemeIdUri; }
+    inline const Aws::String& GetTimedMetadataSchemeIdUri() const { return m_timedMetadataSchemeIdUri; }
     inline bool TimedMetadataSchemeIdUriHasBeenSet() const { return m_timedMetadataSchemeIdUriHasBeenSet; }
-    inline void SetTimedMetadataSchemeIdUri(const Aws::String& value) { m_timedMetadataSchemeIdUriHasBeenSet = true; m_timedMetadataSchemeIdUri = value; }
-    inline void SetTimedMetadataSchemeIdUri(Aws::String&& value) { m_timedMetadataSchemeIdUriHasBeenSet = true; m_timedMetadataSchemeIdUri = std::move(value); }
-    inline void SetTimedMetadataSchemeIdUri(const char* value) { m_timedMetadataSchemeIdUriHasBeenSet = true; m_timedMetadataSchemeIdUri.assign(value); }
-    inline CmfcSettings& WithTimedMetadataSchemeIdUri(const Aws::String& value) { SetTimedMetadataSchemeIdUri(value); return *this;}
-    inline CmfcSettings& WithTimedMetadataSchemeIdUri(Aws::String&& value) { SetTimedMetadataSchemeIdUri(std::move(value)); return *this;}
-    inline CmfcSettings& WithTimedMetadataSchemeIdUri(const char* value) { SetTimedMetadataSchemeIdUri(value); return *this;}
+    template<typename TimedMetadataSchemeIdUriT = Aws::String>
+    void SetTimedMetadataSchemeIdUri(TimedMetadataSchemeIdUriT&& value) { m_timedMetadataSchemeIdUriHasBeenSet = true; m_timedMetadataSchemeIdUri = std::forward<TimedMetadataSchemeIdUriT>(value); }
+    template<typename TimedMetadataSchemeIdUriT = Aws::String>
+    CmfcSettings& WithTimedMetadataSchemeIdUri(TimedMetadataSchemeIdUriT&& value) { SetTimedMetadataSchemeIdUri(std::forward<TimedMetadataSchemeIdUriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -308,18 +282,16 @@ When you specify Version
      * Semantics. When you specify a value for ID3 Metadata Value, you must also set
      * ID3 metadata to Passthrough.
      */
-    inline const Aws::String& GetTimedMetadataValue() const{ return m_timedMetadataValue; }
+    inline const Aws::String& GetTimedMetadataValue() const { return m_timedMetadataValue; }
     inline bool TimedMetadataValueHasBeenSet() const { return m_timedMetadataValueHasBeenSet; }
-    inline void SetTimedMetadataValue(const Aws::String& value) { m_timedMetadataValueHasBeenSet = true; m_timedMetadataValue = value; }
-    inline void SetTimedMetadataValue(Aws::String&& value) { m_timedMetadataValueHasBeenSet = true; m_timedMetadataValue = std::move(value); }
-    inline void SetTimedMetadataValue(const char* value) { m_timedMetadataValueHasBeenSet = true; m_timedMetadataValue.assign(value); }
-    inline CmfcSettings& WithTimedMetadataValue(const Aws::String& value) { SetTimedMetadataValue(value); return *this;}
-    inline CmfcSettings& WithTimedMetadataValue(Aws::String&& value) { SetTimedMetadataValue(std::move(value)); return *this;}
-    inline CmfcSettings& WithTimedMetadataValue(const char* value) { SetTimedMetadataValue(value); return *this;}
+    template<typename TimedMetadataValueT = Aws::String>
+    void SetTimedMetadataValue(TimedMetadataValueT&& value) { m_timedMetadataValueHasBeenSet = true; m_timedMetadataValue = std::forward<TimedMetadataValueT>(value); }
+    template<typename TimedMetadataValueT = Aws::String>
+    CmfcSettings& WithTimedMetadataValue(TimedMetadataValueT&& value) { SetTimedMetadataValue(std::forward<TimedMetadataValueT>(value)); return *this;}
     ///@}
   private:
 
-    CmfcAudioDuration m_audioDuration;
+    CmfcAudioDuration m_audioDuration{CmfcAudioDuration::NOT_SET};
     bool m_audioDurationHasBeenSet = false;
 
     Aws::String m_audioGroupId;
@@ -328,31 +300,31 @@ When you specify Version
     Aws::String m_audioRenditionSets;
     bool m_audioRenditionSetsHasBeenSet = false;
 
-    CmfcAudioTrackType m_audioTrackType;
+    CmfcAudioTrackType m_audioTrackType{CmfcAudioTrackType::NOT_SET};
     bool m_audioTrackTypeHasBeenSet = false;
 
-    CmfcDescriptiveVideoServiceFlag m_descriptiveVideoServiceFlag;
+    CmfcDescriptiveVideoServiceFlag m_descriptiveVideoServiceFlag{CmfcDescriptiveVideoServiceFlag::NOT_SET};
     bool m_descriptiveVideoServiceFlagHasBeenSet = false;
 
-    CmfcIFrameOnlyManifest m_iFrameOnlyManifest;
+    CmfcIFrameOnlyManifest m_iFrameOnlyManifest{CmfcIFrameOnlyManifest::NOT_SET};
     bool m_iFrameOnlyManifestHasBeenSet = false;
 
-    CmfcKlvMetadata m_klvMetadata;
+    CmfcKlvMetadata m_klvMetadata{CmfcKlvMetadata::NOT_SET};
     bool m_klvMetadataHasBeenSet = false;
 
-    CmfcManifestMetadataSignaling m_manifestMetadataSignaling;
+    CmfcManifestMetadataSignaling m_manifestMetadataSignaling{CmfcManifestMetadataSignaling::NOT_SET};
     bool m_manifestMetadataSignalingHasBeenSet = false;
 
-    CmfcScte35Esam m_scte35Esam;
+    CmfcScte35Esam m_scte35Esam{CmfcScte35Esam::NOT_SET};
     bool m_scte35EsamHasBeenSet = false;
 
-    CmfcScte35Source m_scte35Source;
+    CmfcScte35Source m_scte35Source{CmfcScte35Source::NOT_SET};
     bool m_scte35SourceHasBeenSet = false;
 
-    CmfcTimedMetadata m_timedMetadata;
+    CmfcTimedMetadata m_timedMetadata{CmfcTimedMetadata::NOT_SET};
     bool m_timedMetadataHasBeenSet = false;
 
-    CmfcTimedMetadataBoxVersion m_timedMetadataBoxVersion;
+    CmfcTimedMetadataBoxVersion m_timedMetadataBoxVersion{CmfcTimedMetadataBoxVersion::NOT_SET};
     bool m_timedMetadataBoxVersionHasBeenSet = false;
 
     Aws::String m_timedMetadataSchemeIdUri;

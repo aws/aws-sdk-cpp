@@ -18,14 +18,7 @@ namespace LookoutMetrics
 namespace Model
 {
 
-DetectedFileFormatDescriptor::DetectedFileFormatDescriptor() : 
-    m_csvFormatDescriptorHasBeenSet(false),
-    m_jsonFormatDescriptorHasBeenSet(false)
-{
-}
-
 DetectedFileFormatDescriptor::DetectedFileFormatDescriptor(JsonView jsonValue)
-  : DetectedFileFormatDescriptor()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DetectedFileFormatDescriptor& DetectedFileFormatDescriptor::operator =(JsonView 
   if(jsonValue.ValueExists("CsvFormatDescriptor"))
   {
     m_csvFormatDescriptor = jsonValue.GetObject("CsvFormatDescriptor");
-
     m_csvFormatDescriptorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JsonFormatDescriptor"))
   {
     m_jsonFormatDescriptor = jsonValue.GetObject("JsonFormatDescriptor");
-
     m_jsonFormatDescriptorHasBeenSet = true;
   }
-
   return *this;
 }
 

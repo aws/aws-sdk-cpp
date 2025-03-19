@@ -18,14 +18,7 @@ namespace DirectoryService
 namespace Model
 {
 
-UserDoesNotExistException::UserDoesNotExistException() : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 UserDoesNotExistException::UserDoesNotExistException(JsonView jsonValue)
-  : UserDoesNotExistException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ UserDoesNotExistException& UserDoesNotExistException::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestId"))
   {
     m_requestId = jsonValue.GetString("RequestId");
-
     m_requestIdHasBeenSet = true;
   }
-
   return *this;
 }
 

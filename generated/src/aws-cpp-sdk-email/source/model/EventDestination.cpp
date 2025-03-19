@@ -20,19 +20,7 @@ namespace SES
 namespace Model
 {
 
-EventDestination::EventDestination() : 
-    m_nameHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_matchingEventTypesHasBeenSet(false),
-    m_kinesisFirehoseDestinationHasBeenSet(false),
-    m_cloudWatchDestinationHasBeenSet(false),
-    m_sNSDestinationHasBeenSet(false)
-{
-}
-
 EventDestination::EventDestination(const XmlNode& xmlNode)
-  : EventDestination()
 {
   *this = xmlNode;
 }
@@ -59,6 +47,7 @@ EventDestination& EventDestination::operator =(const XmlNode& xmlNode)
     if(!matchingEventTypesNode.IsNull())
     {
       XmlNode matchingEventTypesMember = matchingEventTypesNode.FirstChild("member");
+      m_matchingEventTypesHasBeenSet = !matchingEventTypesMember.IsNull();
       while(!matchingEventTypesMember.IsNull())
       {
         m_matchingEventTypes.push_back(EventTypeMapper::GetEventTypeForName(StringUtils::Trim(matchingEventTypesMember.GetText().c_str())));

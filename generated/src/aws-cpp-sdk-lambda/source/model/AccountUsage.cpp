@@ -18,16 +18,7 @@ namespace Lambda
 namespace Model
 {
 
-AccountUsage::AccountUsage() : 
-    m_totalCodeSize(0),
-    m_totalCodeSizeHasBeenSet(false),
-    m_functionCount(0),
-    m_functionCountHasBeenSet(false)
-{
-}
-
 AccountUsage::AccountUsage(JsonView jsonValue)
-  : AccountUsage()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ AccountUsage& AccountUsage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TotalCodeSize"))
   {
     m_totalCodeSize = jsonValue.GetInt64("TotalCodeSize");
-
     m_totalCodeSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FunctionCount"))
   {
     m_functionCount = jsonValue.GetInt64("FunctionCount");
-
     m_functionCountHasBeenSet = true;
   }
-
   return *this;
 }
 

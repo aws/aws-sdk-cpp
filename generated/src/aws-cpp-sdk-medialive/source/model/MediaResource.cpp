@@ -18,15 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-MediaResource::MediaResource() : 
-    m_destinationsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_sourcesHasBeenSet(false)
-{
-}
-
 MediaResource::MediaResource(JsonView jsonValue)
-  : MediaResource()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ MediaResource& MediaResource::operator =(JsonView jsonValue)
     }
     m_destinationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sources"))
   {
     Aws::Utils::Array<JsonView> sourcesJsonList = jsonValue.GetArray("sources");
@@ -59,7 +48,6 @@ MediaResource& MediaResource::operator =(JsonView jsonValue)
     }
     m_sourcesHasBeenSet = true;
   }
-
   return *this;
 }
 

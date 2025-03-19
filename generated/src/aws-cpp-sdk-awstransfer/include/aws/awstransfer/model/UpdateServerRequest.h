@@ -29,7 +29,7 @@ namespace Model
   class UpdateServerRequest : public TransferRequest
   {
   public:
-    AWS_TRANSFER_API UpdateServerRequest();
+    AWS_TRANSFER_API UpdateServerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -65,14 +65,12 @@ namespace Model
      * certificate with FQDN or IP address specified and information about the
      * issuer.</p> 
      */
-    inline const Aws::String& GetCertificate() const{ return m_certificate; }
+    inline const Aws::String& GetCertificate() const { return m_certificate; }
     inline bool CertificateHasBeenSet() const { return m_certificateHasBeenSet; }
-    inline void SetCertificate(const Aws::String& value) { m_certificateHasBeenSet = true; m_certificate = value; }
-    inline void SetCertificate(Aws::String&& value) { m_certificateHasBeenSet = true; m_certificate = std::move(value); }
-    inline void SetCertificate(const char* value) { m_certificateHasBeenSet = true; m_certificate.assign(value); }
-    inline UpdateServerRequest& WithCertificate(const Aws::String& value) { SetCertificate(value); return *this;}
-    inline UpdateServerRequest& WithCertificate(Aws::String&& value) { SetCertificate(std::move(value)); return *this;}
-    inline UpdateServerRequest& WithCertificate(const char* value) { SetCertificate(value); return *this;}
+    template<typename CertificateT = Aws::String>
+    void SetCertificate(CertificateT&& value) { m_certificateHasBeenSet = true; m_certificate = std::forward<CertificateT>(value); }
+    template<typename CertificateT = Aws::String>
+    UpdateServerRequest& WithCertificate(CertificateT&& value) { SetCertificate(std::forward<CertificateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,12 +93,12 @@ namespace Model
      * <code>As2Transports</code> indicates the transport method for the AS2 messages.
      * Currently, only HTTP is supported.</p> </li> </ul>
      */
-    inline const ProtocolDetails& GetProtocolDetails() const{ return m_protocolDetails; }
+    inline const ProtocolDetails& GetProtocolDetails() const { return m_protocolDetails; }
     inline bool ProtocolDetailsHasBeenSet() const { return m_protocolDetailsHasBeenSet; }
-    inline void SetProtocolDetails(const ProtocolDetails& value) { m_protocolDetailsHasBeenSet = true; m_protocolDetails = value; }
-    inline void SetProtocolDetails(ProtocolDetails&& value) { m_protocolDetailsHasBeenSet = true; m_protocolDetails = std::move(value); }
-    inline UpdateServerRequest& WithProtocolDetails(const ProtocolDetails& value) { SetProtocolDetails(value); return *this;}
-    inline UpdateServerRequest& WithProtocolDetails(ProtocolDetails&& value) { SetProtocolDetails(std::move(value)); return *this;}
+    template<typename ProtocolDetailsT = ProtocolDetails>
+    void SetProtocolDetails(ProtocolDetailsT&& value) { m_protocolDetailsHasBeenSet = true; m_protocolDetails = std::forward<ProtocolDetailsT>(value); }
+    template<typename ProtocolDetailsT = ProtocolDetails>
+    UpdateServerRequest& WithProtocolDetails(ProtocolDetailsT&& value) { SetProtocolDetails(std::forward<ProtocolDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,12 +110,12 @@ namespace Model
      * Your VPC's default security groups are automatically assigned to your
      * endpoint.</p>
      */
-    inline const EndpointDetails& GetEndpointDetails() const{ return m_endpointDetails; }
+    inline const EndpointDetails& GetEndpointDetails() const { return m_endpointDetails; }
     inline bool EndpointDetailsHasBeenSet() const { return m_endpointDetailsHasBeenSet; }
-    inline void SetEndpointDetails(const EndpointDetails& value) { m_endpointDetailsHasBeenSet = true; m_endpointDetails = value; }
-    inline void SetEndpointDetails(EndpointDetails&& value) { m_endpointDetailsHasBeenSet = true; m_endpointDetails = std::move(value); }
-    inline UpdateServerRequest& WithEndpointDetails(const EndpointDetails& value) { SetEndpointDetails(value); return *this;}
-    inline UpdateServerRequest& WithEndpointDetails(EndpointDetails&& value) { SetEndpointDetails(std::move(value)); return *this;}
+    template<typename EndpointDetailsT = EndpointDetails>
+    void SetEndpointDetails(EndpointDetailsT&& value) { m_endpointDetailsHasBeenSet = true; m_endpointDetails = std::forward<EndpointDetailsT>(value); }
+    template<typename EndpointDetailsT = EndpointDetails>
+    UpdateServerRequest& WithEndpointDetails(EndpointDetailsT&& value) { SetEndpointDetails(std::forward<EndpointDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -142,12 +140,10 @@ namespace Model
      * client's public IP address. This is not possible with <code>EndpointType</code>
      * set to <code>VPC_ENDPOINT</code>.</p> 
      */
-    inline const EndpointType& GetEndpointType() const{ return m_endpointType; }
+    inline EndpointType GetEndpointType() const { return m_endpointType; }
     inline bool EndpointTypeHasBeenSet() const { return m_endpointTypeHasBeenSet; }
-    inline void SetEndpointType(const EndpointType& value) { m_endpointTypeHasBeenSet = true; m_endpointType = value; }
-    inline void SetEndpointType(EndpointType&& value) { m_endpointTypeHasBeenSet = true; m_endpointType = std::move(value); }
-    inline UpdateServerRequest& WithEndpointType(const EndpointType& value) { SetEndpointType(value); return *this;}
-    inline UpdateServerRequest& WithEndpointType(EndpointType&& value) { SetEndpointType(std::move(value)); return *this;}
+    inline void SetEndpointType(EndpointType value) { m_endpointTypeHasBeenSet = true; m_endpointType = value; }
+    inline UpdateServerRequest& WithEndpointType(EndpointType value) { SetEndpointType(value); return *this;}
     ///@}
 
     ///@{
@@ -172,14 +168,12 @@ namespace Model
      * host keys for your SFTP-enabled server</a> in the <i>Transfer Family User
      * Guide</i>.</p>
      */
-    inline const Aws::String& GetHostKey() const{ return m_hostKey; }
+    inline const Aws::String& GetHostKey() const { return m_hostKey; }
     inline bool HostKeyHasBeenSet() const { return m_hostKeyHasBeenSet; }
-    inline void SetHostKey(const Aws::String& value) { m_hostKeyHasBeenSet = true; m_hostKey = value; }
-    inline void SetHostKey(Aws::String&& value) { m_hostKeyHasBeenSet = true; m_hostKey = std::move(value); }
-    inline void SetHostKey(const char* value) { m_hostKeyHasBeenSet = true; m_hostKey.assign(value); }
-    inline UpdateServerRequest& WithHostKey(const Aws::String& value) { SetHostKey(value); return *this;}
-    inline UpdateServerRequest& WithHostKey(Aws::String&& value) { SetHostKey(std::move(value)); return *this;}
-    inline UpdateServerRequest& WithHostKey(const char* value) { SetHostKey(value); return *this;}
+    template<typename HostKeyT = Aws::String>
+    void SetHostKey(HostKeyT&& value) { m_hostKeyHasBeenSet = true; m_hostKey = std::forward<HostKeyT>(value); }
+    template<typename HostKeyT = Aws::String>
+    UpdateServerRequest& WithHostKey(HostKeyT&& value) { SetHostKey(std::forward<HostKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -187,12 +181,12 @@ namespace Model
      * <p>An array containing all of the information required to call a customer's
      * authentication API method.</p>
      */
-    inline const IdentityProviderDetails& GetIdentityProviderDetails() const{ return m_identityProviderDetails; }
+    inline const IdentityProviderDetails& GetIdentityProviderDetails() const { return m_identityProviderDetails; }
     inline bool IdentityProviderDetailsHasBeenSet() const { return m_identityProviderDetailsHasBeenSet; }
-    inline void SetIdentityProviderDetails(const IdentityProviderDetails& value) { m_identityProviderDetailsHasBeenSet = true; m_identityProviderDetails = value; }
-    inline void SetIdentityProviderDetails(IdentityProviderDetails&& value) { m_identityProviderDetailsHasBeenSet = true; m_identityProviderDetails = std::move(value); }
-    inline UpdateServerRequest& WithIdentityProviderDetails(const IdentityProviderDetails& value) { SetIdentityProviderDetails(value); return *this;}
-    inline UpdateServerRequest& WithIdentityProviderDetails(IdentityProviderDetails&& value) { SetIdentityProviderDetails(std::move(value)); return *this;}
+    template<typename IdentityProviderDetailsT = IdentityProviderDetails>
+    void SetIdentityProviderDetails(IdentityProviderDetailsT&& value) { m_identityProviderDetailsHasBeenSet = true; m_identityProviderDetails = std::forward<IdentityProviderDetailsT>(value); }
+    template<typename IdentityProviderDetailsT = IdentityProviderDetails>
+    UpdateServerRequest& WithIdentityProviderDetails(IdentityProviderDetailsT&& value) { SetIdentityProviderDetails(std::forward<IdentityProviderDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -202,14 +196,12 @@ namespace Model
      * Amazon EFSevents. When set, you can view user activity in your CloudWatch
      * logs.</p>
      */
-    inline const Aws::String& GetLoggingRole() const{ return m_loggingRole; }
+    inline const Aws::String& GetLoggingRole() const { return m_loggingRole; }
     inline bool LoggingRoleHasBeenSet() const { return m_loggingRoleHasBeenSet; }
-    inline void SetLoggingRole(const Aws::String& value) { m_loggingRoleHasBeenSet = true; m_loggingRole = value; }
-    inline void SetLoggingRole(Aws::String&& value) { m_loggingRoleHasBeenSet = true; m_loggingRole = std::move(value); }
-    inline void SetLoggingRole(const char* value) { m_loggingRoleHasBeenSet = true; m_loggingRole.assign(value); }
-    inline UpdateServerRequest& WithLoggingRole(const Aws::String& value) { SetLoggingRole(value); return *this;}
-    inline UpdateServerRequest& WithLoggingRole(Aws::String&& value) { SetLoggingRole(std::move(value)); return *this;}
-    inline UpdateServerRequest& WithLoggingRole(const char* value) { SetLoggingRole(value); return *this;}
+    template<typename LoggingRoleT = Aws::String>
+    void SetLoggingRole(LoggingRoleT&& value) { m_loggingRoleHasBeenSet = true; m_loggingRole = std::forward<LoggingRoleT>(value); }
+    template<typename LoggingRoleT = Aws::String>
+    UpdateServerRequest& WithLoggingRole(LoggingRoleT&& value) { SetLoggingRole(std::forward<LoggingRoleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -218,14 +210,12 @@ namespace Model
      * displayed after the user authenticates.</p>  <p>The SFTP protocol does not
      * support post-authentication display banners.</p> 
      */
-    inline const Aws::String& GetPostAuthenticationLoginBanner() const{ return m_postAuthenticationLoginBanner; }
+    inline const Aws::String& GetPostAuthenticationLoginBanner() const { return m_postAuthenticationLoginBanner; }
     inline bool PostAuthenticationLoginBannerHasBeenSet() const { return m_postAuthenticationLoginBannerHasBeenSet; }
-    inline void SetPostAuthenticationLoginBanner(const Aws::String& value) { m_postAuthenticationLoginBannerHasBeenSet = true; m_postAuthenticationLoginBanner = value; }
-    inline void SetPostAuthenticationLoginBanner(Aws::String&& value) { m_postAuthenticationLoginBannerHasBeenSet = true; m_postAuthenticationLoginBanner = std::move(value); }
-    inline void SetPostAuthenticationLoginBanner(const char* value) { m_postAuthenticationLoginBannerHasBeenSet = true; m_postAuthenticationLoginBanner.assign(value); }
-    inline UpdateServerRequest& WithPostAuthenticationLoginBanner(const Aws::String& value) { SetPostAuthenticationLoginBanner(value); return *this;}
-    inline UpdateServerRequest& WithPostAuthenticationLoginBanner(Aws::String&& value) { SetPostAuthenticationLoginBanner(std::move(value)); return *this;}
-    inline UpdateServerRequest& WithPostAuthenticationLoginBanner(const char* value) { SetPostAuthenticationLoginBanner(value); return *this;}
+    template<typename PostAuthenticationLoginBannerT = Aws::String>
+    void SetPostAuthenticationLoginBanner(PostAuthenticationLoginBannerT&& value) { m_postAuthenticationLoginBannerHasBeenSet = true; m_postAuthenticationLoginBanner = std::forward<PostAuthenticationLoginBannerT>(value); }
+    template<typename PostAuthenticationLoginBannerT = Aws::String>
+    UpdateServerRequest& WithPostAuthenticationLoginBanner(PostAuthenticationLoginBannerT&& value) { SetPostAuthenticationLoginBanner(std::forward<PostAuthenticationLoginBannerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -238,14 +228,12 @@ namespace Model
      * activities on this system monitored and recorded by system personnel.</code>
      * </p>
      */
-    inline const Aws::String& GetPreAuthenticationLoginBanner() const{ return m_preAuthenticationLoginBanner; }
+    inline const Aws::String& GetPreAuthenticationLoginBanner() const { return m_preAuthenticationLoginBanner; }
     inline bool PreAuthenticationLoginBannerHasBeenSet() const { return m_preAuthenticationLoginBannerHasBeenSet; }
-    inline void SetPreAuthenticationLoginBanner(const Aws::String& value) { m_preAuthenticationLoginBannerHasBeenSet = true; m_preAuthenticationLoginBanner = value; }
-    inline void SetPreAuthenticationLoginBanner(Aws::String&& value) { m_preAuthenticationLoginBannerHasBeenSet = true; m_preAuthenticationLoginBanner = std::move(value); }
-    inline void SetPreAuthenticationLoginBanner(const char* value) { m_preAuthenticationLoginBannerHasBeenSet = true; m_preAuthenticationLoginBanner.assign(value); }
-    inline UpdateServerRequest& WithPreAuthenticationLoginBanner(const Aws::String& value) { SetPreAuthenticationLoginBanner(value); return *this;}
-    inline UpdateServerRequest& WithPreAuthenticationLoginBanner(Aws::String&& value) { SetPreAuthenticationLoginBanner(std::move(value)); return *this;}
-    inline UpdateServerRequest& WithPreAuthenticationLoginBanner(const char* value) { SetPreAuthenticationLoginBanner(value); return *this;}
+    template<typename PreAuthenticationLoginBannerT = Aws::String>
+    void SetPreAuthenticationLoginBanner(PreAuthenticationLoginBannerT&& value) { m_preAuthenticationLoginBannerHasBeenSet = true; m_preAuthenticationLoginBanner = std::forward<PreAuthenticationLoginBannerT>(value); }
+    template<typename PreAuthenticationLoginBannerT = Aws::String>
+    UpdateServerRequest& WithPreAuthenticationLoginBanner(PreAuthenticationLoginBannerT&& value) { SetPreAuthenticationLoginBanner(std::forward<PreAuthenticationLoginBannerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -276,28 +264,25 @@ namespace Model
      * <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>,
      * and domain must be Amazon S3.</p> </li> </ul> 
      */
-    inline const Aws::Vector<Protocol>& GetProtocols() const{ return m_protocols; }
+    inline const Aws::Vector<Protocol>& GetProtocols() const { return m_protocols; }
     inline bool ProtocolsHasBeenSet() const { return m_protocolsHasBeenSet; }
-    inline void SetProtocols(const Aws::Vector<Protocol>& value) { m_protocolsHasBeenSet = true; m_protocols = value; }
-    inline void SetProtocols(Aws::Vector<Protocol>&& value) { m_protocolsHasBeenSet = true; m_protocols = std::move(value); }
-    inline UpdateServerRequest& WithProtocols(const Aws::Vector<Protocol>& value) { SetProtocols(value); return *this;}
-    inline UpdateServerRequest& WithProtocols(Aws::Vector<Protocol>&& value) { SetProtocols(std::move(value)); return *this;}
-    inline UpdateServerRequest& AddProtocols(const Protocol& value) { m_protocolsHasBeenSet = true; m_protocols.push_back(value); return *this; }
-    inline UpdateServerRequest& AddProtocols(Protocol&& value) { m_protocolsHasBeenSet = true; m_protocols.push_back(std::move(value)); return *this; }
+    template<typename ProtocolsT = Aws::Vector<Protocol>>
+    void SetProtocols(ProtocolsT&& value) { m_protocolsHasBeenSet = true; m_protocols = std::forward<ProtocolsT>(value); }
+    template<typename ProtocolsT = Aws::Vector<Protocol>>
+    UpdateServerRequest& WithProtocols(ProtocolsT&& value) { SetProtocols(std::forward<ProtocolsT>(value)); return *this;}
+    inline UpdateServerRequest& AddProtocols(Protocol value) { m_protocolsHasBeenSet = true; m_protocols.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Specifies the name of the security policy for the server.</p>
      */
-    inline const Aws::String& GetSecurityPolicyName() const{ return m_securityPolicyName; }
+    inline const Aws::String& GetSecurityPolicyName() const { return m_securityPolicyName; }
     inline bool SecurityPolicyNameHasBeenSet() const { return m_securityPolicyNameHasBeenSet; }
-    inline void SetSecurityPolicyName(const Aws::String& value) { m_securityPolicyNameHasBeenSet = true; m_securityPolicyName = value; }
-    inline void SetSecurityPolicyName(Aws::String&& value) { m_securityPolicyNameHasBeenSet = true; m_securityPolicyName = std::move(value); }
-    inline void SetSecurityPolicyName(const char* value) { m_securityPolicyNameHasBeenSet = true; m_securityPolicyName.assign(value); }
-    inline UpdateServerRequest& WithSecurityPolicyName(const Aws::String& value) { SetSecurityPolicyName(value); return *this;}
-    inline UpdateServerRequest& WithSecurityPolicyName(Aws::String&& value) { SetSecurityPolicyName(std::move(value)); return *this;}
-    inline UpdateServerRequest& WithSecurityPolicyName(const char* value) { SetSecurityPolicyName(value); return *this;}
+    template<typename SecurityPolicyNameT = Aws::String>
+    void SetSecurityPolicyName(SecurityPolicyNameT&& value) { m_securityPolicyNameHasBeenSet = true; m_securityPolicyName = std::forward<SecurityPolicyNameT>(value); }
+    template<typename SecurityPolicyNameT = Aws::String>
+    UpdateServerRequest& WithSecurityPolicyName(SecurityPolicyNameT&& value) { SetSecurityPolicyName(std::forward<SecurityPolicyNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -305,14 +290,12 @@ namespace Model
      * <p>A system-assigned unique identifier for a server instance that the Transfer
      * Family user is assigned to.</p>
      */
-    inline const Aws::String& GetServerId() const{ return m_serverId; }
+    inline const Aws::String& GetServerId() const { return m_serverId; }
     inline bool ServerIdHasBeenSet() const { return m_serverIdHasBeenSet; }
-    inline void SetServerId(const Aws::String& value) { m_serverIdHasBeenSet = true; m_serverId = value; }
-    inline void SetServerId(Aws::String&& value) { m_serverIdHasBeenSet = true; m_serverId = std::move(value); }
-    inline void SetServerId(const char* value) { m_serverIdHasBeenSet = true; m_serverId.assign(value); }
-    inline UpdateServerRequest& WithServerId(const Aws::String& value) { SetServerId(value); return *this;}
-    inline UpdateServerRequest& WithServerId(Aws::String&& value) { SetServerId(std::move(value)); return *this;}
-    inline UpdateServerRequest& WithServerId(const char* value) { SetServerId(value); return *this;}
+    template<typename ServerIdT = Aws::String>
+    void SetServerId(ServerIdT&& value) { m_serverIdHasBeenSet = true; m_serverId = std::forward<ServerIdT>(value); }
+    template<typename ServerIdT = Aws::String>
+    UpdateServerRequest& WithServerId(ServerIdT&& value) { SetServerId(std::forward<ServerIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -327,12 +310,12 @@ namespace Model
      * following example.</p> <p> <code>aws transfer update-server --server-id
      * s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
      */
-    inline const WorkflowDetails& GetWorkflowDetails() const{ return m_workflowDetails; }
+    inline const WorkflowDetails& GetWorkflowDetails() const { return m_workflowDetails; }
     inline bool WorkflowDetailsHasBeenSet() const { return m_workflowDetailsHasBeenSet; }
-    inline void SetWorkflowDetails(const WorkflowDetails& value) { m_workflowDetailsHasBeenSet = true; m_workflowDetails = value; }
-    inline void SetWorkflowDetails(WorkflowDetails&& value) { m_workflowDetailsHasBeenSet = true; m_workflowDetails = std::move(value); }
-    inline UpdateServerRequest& WithWorkflowDetails(const WorkflowDetails& value) { SetWorkflowDetails(value); return *this;}
-    inline UpdateServerRequest& WithWorkflowDetails(WorkflowDetails&& value) { SetWorkflowDetails(std::move(value)); return *this;}
+    template<typename WorkflowDetailsT = WorkflowDetails>
+    void SetWorkflowDetails(WorkflowDetailsT&& value) { m_workflowDetailsHasBeenSet = true; m_workflowDetails = std::forward<WorkflowDetailsT>(value); }
+    template<typename WorkflowDetailsT = WorkflowDetails>
+    UpdateServerRequest& WithWorkflowDetails(WorkflowDetailsT&& value) { SetWorkflowDetails(std::forward<WorkflowDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -349,15 +332,14 @@ namespace Model
      * <code>update-server --server-id s-1234567890abcdef0
      * --structured-log-destinations</code> </p>
      */
-    inline const Aws::Vector<Aws::String>& GetStructuredLogDestinations() const{ return m_structuredLogDestinations; }
+    inline const Aws::Vector<Aws::String>& GetStructuredLogDestinations() const { return m_structuredLogDestinations; }
     inline bool StructuredLogDestinationsHasBeenSet() const { return m_structuredLogDestinationsHasBeenSet; }
-    inline void SetStructuredLogDestinations(const Aws::Vector<Aws::String>& value) { m_structuredLogDestinationsHasBeenSet = true; m_structuredLogDestinations = value; }
-    inline void SetStructuredLogDestinations(Aws::Vector<Aws::String>&& value) { m_structuredLogDestinationsHasBeenSet = true; m_structuredLogDestinations = std::move(value); }
-    inline UpdateServerRequest& WithStructuredLogDestinations(const Aws::Vector<Aws::String>& value) { SetStructuredLogDestinations(value); return *this;}
-    inline UpdateServerRequest& WithStructuredLogDestinations(Aws::Vector<Aws::String>&& value) { SetStructuredLogDestinations(std::move(value)); return *this;}
-    inline UpdateServerRequest& AddStructuredLogDestinations(const Aws::String& value) { m_structuredLogDestinationsHasBeenSet = true; m_structuredLogDestinations.push_back(value); return *this; }
-    inline UpdateServerRequest& AddStructuredLogDestinations(Aws::String&& value) { m_structuredLogDestinationsHasBeenSet = true; m_structuredLogDestinations.push_back(std::move(value)); return *this; }
-    inline UpdateServerRequest& AddStructuredLogDestinations(const char* value) { m_structuredLogDestinationsHasBeenSet = true; m_structuredLogDestinations.push_back(value); return *this; }
+    template<typename StructuredLogDestinationsT = Aws::Vector<Aws::String>>
+    void SetStructuredLogDestinations(StructuredLogDestinationsT&& value) { m_structuredLogDestinationsHasBeenSet = true; m_structuredLogDestinations = std::forward<StructuredLogDestinationsT>(value); }
+    template<typename StructuredLogDestinationsT = Aws::Vector<Aws::String>>
+    UpdateServerRequest& WithStructuredLogDestinations(StructuredLogDestinationsT&& value) { SetStructuredLogDestinations(std::forward<StructuredLogDestinationsT>(value)); return *this;}
+    template<typename StructuredLogDestinationsT = Aws::String>
+    UpdateServerRequest& AddStructuredLogDestinations(StructuredLogDestinationsT&& value) { m_structuredLogDestinationsHasBeenSet = true; m_structuredLogDestinations.emplace_back(std::forward<StructuredLogDestinationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -369,12 +351,12 @@ namespace Model
      * <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you
      * want a mapping to have a file target.</p>
      */
-    inline const S3StorageOptions& GetS3StorageOptions() const{ return m_s3StorageOptions; }
+    inline const S3StorageOptions& GetS3StorageOptions() const { return m_s3StorageOptions; }
     inline bool S3StorageOptionsHasBeenSet() const { return m_s3StorageOptionsHasBeenSet; }
-    inline void SetS3StorageOptions(const S3StorageOptions& value) { m_s3StorageOptionsHasBeenSet = true; m_s3StorageOptions = value; }
-    inline void SetS3StorageOptions(S3StorageOptions&& value) { m_s3StorageOptionsHasBeenSet = true; m_s3StorageOptions = std::move(value); }
-    inline UpdateServerRequest& WithS3StorageOptions(const S3StorageOptions& value) { SetS3StorageOptions(value); return *this;}
-    inline UpdateServerRequest& WithS3StorageOptions(S3StorageOptions&& value) { SetS3StorageOptions(std::move(value)); return *this;}
+    template<typename S3StorageOptionsT = S3StorageOptions>
+    void SetS3StorageOptions(S3StorageOptionsT&& value) { m_s3StorageOptionsHasBeenSet = true; m_s3StorageOptions = std::forward<S3StorageOptionsT>(value); }
+    template<typename S3StorageOptionsT = S3StorageOptions>
+    UpdateServerRequest& WithS3StorageOptions(S3StorageOptionsT&& value) { SetS3StorageOptions(std::forward<S3StorageOptionsT>(value)); return *this;}
     ///@}
   private:
 
@@ -387,7 +369,7 @@ namespace Model
     EndpointDetails m_endpointDetails;
     bool m_endpointDetailsHasBeenSet = false;
 
-    EndpointType m_endpointType;
+    EndpointType m_endpointType{EndpointType::NOT_SET};
     bool m_endpointTypeHasBeenSet = false;
 
     Aws::String m_hostKey;

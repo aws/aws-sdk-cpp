@@ -24,7 +24,7 @@ namespace Model
   class DeleteAgentRequest : public DataSyncRequest
   {
   public:
-    AWS_DATASYNC_API DeleteAgentRequest();
+    AWS_DATASYNC_API DeleteAgentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <code>ListAgents</code> operation to return a list of agents for your account
      * and Amazon Web Services Region.</p>
      */
-    inline const Aws::String& GetAgentArn() const{ return m_agentArn; }
+    inline const Aws::String& GetAgentArn() const { return m_agentArn; }
     inline bool AgentArnHasBeenSet() const { return m_agentArnHasBeenSet; }
-    inline void SetAgentArn(const Aws::String& value) { m_agentArnHasBeenSet = true; m_agentArn = value; }
-    inline void SetAgentArn(Aws::String&& value) { m_agentArnHasBeenSet = true; m_agentArn = std::move(value); }
-    inline void SetAgentArn(const char* value) { m_agentArnHasBeenSet = true; m_agentArn.assign(value); }
-    inline DeleteAgentRequest& WithAgentArn(const Aws::String& value) { SetAgentArn(value); return *this;}
-    inline DeleteAgentRequest& WithAgentArn(Aws::String&& value) { SetAgentArn(std::move(value)); return *this;}
-    inline DeleteAgentRequest& WithAgentArn(const char* value) { SetAgentArn(value); return *this;}
+    template<typename AgentArnT = Aws::String>
+    void SetAgentArn(AgentArnT&& value) { m_agentArnHasBeenSet = true; m_agentArn = std::forward<AgentArnT>(value); }
+    template<typename AgentArnT = Aws::String>
+    DeleteAgentRequest& WithAgentArn(AgentArnT&& value) { SetAgentArn(std::forward<AgentArnT>(value)); return *this;}
     ///@}
   private:
 

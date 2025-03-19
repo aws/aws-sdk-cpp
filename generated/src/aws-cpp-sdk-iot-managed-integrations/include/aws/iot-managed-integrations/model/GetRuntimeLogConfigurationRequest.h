@@ -21,7 +21,7 @@ namespace Model
   class GetRuntimeLogConfigurationRequest : public IoTManagedIntegrationsRequest
   {
   public:
-    AWS_IOTMANAGEDINTEGRATIONS_API GetRuntimeLogConfigurationRequest();
+    AWS_IOTMANAGEDINTEGRATIONS_API GetRuntimeLogConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The id for a managed thing.</p>
      */
-    inline const Aws::String& GetManagedThingId() const{ return m_managedThingId; }
+    inline const Aws::String& GetManagedThingId() const { return m_managedThingId; }
     inline bool ManagedThingIdHasBeenSet() const { return m_managedThingIdHasBeenSet; }
-    inline void SetManagedThingId(const Aws::String& value) { m_managedThingIdHasBeenSet = true; m_managedThingId = value; }
-    inline void SetManagedThingId(Aws::String&& value) { m_managedThingIdHasBeenSet = true; m_managedThingId = std::move(value); }
-    inline void SetManagedThingId(const char* value) { m_managedThingIdHasBeenSet = true; m_managedThingId.assign(value); }
-    inline GetRuntimeLogConfigurationRequest& WithManagedThingId(const Aws::String& value) { SetManagedThingId(value); return *this;}
-    inline GetRuntimeLogConfigurationRequest& WithManagedThingId(Aws::String&& value) { SetManagedThingId(std::move(value)); return *this;}
-    inline GetRuntimeLogConfigurationRequest& WithManagedThingId(const char* value) { SetManagedThingId(value); return *this;}
+    template<typename ManagedThingIdT = Aws::String>
+    void SetManagedThingId(ManagedThingIdT&& value) { m_managedThingIdHasBeenSet = true; m_managedThingId = std::forward<ManagedThingIdT>(value); }
+    template<typename ManagedThingIdT = Aws::String>
+    GetRuntimeLogConfigurationRequest& WithManagedThingId(ManagedThingIdT&& value) { SetManagedThingId(std::forward<ManagedThingIdT>(value)); return *this;}
     ///@}
   private:
 

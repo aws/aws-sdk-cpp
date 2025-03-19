@@ -35,7 +35,7 @@ namespace Model
   class WorkloadDeploymentPatternData
   {
   public:
-    AWS_LAUNCHWIZARD_API WorkloadDeploymentPatternData();
+    AWS_LAUNCHWIZARD_API WorkloadDeploymentPatternData() = default;
     AWS_LAUNCHWIZARD_API WorkloadDeploymentPatternData(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAUNCHWIZARD_API WorkloadDeploymentPatternData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAUNCHWIZARD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,42 +45,36 @@ namespace Model
     /**
      * <p>The name of the deployment pattern.</p>
      */
-    inline const Aws::String& GetDeploymentPatternName() const{ return m_deploymentPatternName; }
+    inline const Aws::String& GetDeploymentPatternName() const { return m_deploymentPatternName; }
     inline bool DeploymentPatternNameHasBeenSet() const { return m_deploymentPatternNameHasBeenSet; }
-    inline void SetDeploymentPatternName(const Aws::String& value) { m_deploymentPatternNameHasBeenSet = true; m_deploymentPatternName = value; }
-    inline void SetDeploymentPatternName(Aws::String&& value) { m_deploymentPatternNameHasBeenSet = true; m_deploymentPatternName = std::move(value); }
-    inline void SetDeploymentPatternName(const char* value) { m_deploymentPatternNameHasBeenSet = true; m_deploymentPatternName.assign(value); }
-    inline WorkloadDeploymentPatternData& WithDeploymentPatternName(const Aws::String& value) { SetDeploymentPatternName(value); return *this;}
-    inline WorkloadDeploymentPatternData& WithDeploymentPatternName(Aws::String&& value) { SetDeploymentPatternName(std::move(value)); return *this;}
-    inline WorkloadDeploymentPatternData& WithDeploymentPatternName(const char* value) { SetDeploymentPatternName(value); return *this;}
+    template<typename DeploymentPatternNameT = Aws::String>
+    void SetDeploymentPatternName(DeploymentPatternNameT&& value) { m_deploymentPatternNameHasBeenSet = true; m_deploymentPatternName = std::forward<DeploymentPatternNameT>(value); }
+    template<typename DeploymentPatternNameT = Aws::String>
+    WorkloadDeploymentPatternData& WithDeploymentPatternName(DeploymentPatternNameT&& value) { SetDeploymentPatternName(std::forward<DeploymentPatternNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the deployment pattern.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline WorkloadDeploymentPatternData& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline WorkloadDeploymentPatternData& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline WorkloadDeploymentPatternData& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    WorkloadDeploymentPatternData& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The display name of the deployment pattern.</p>
      */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline const Aws::String& GetDisplayName() const { return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-    inline WorkloadDeploymentPatternData& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline WorkloadDeploymentPatternData& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline WorkloadDeploymentPatternData& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    template<typename DisplayNameT = Aws::String>
+    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
+    template<typename DisplayNameT = Aws::String>
+    WorkloadDeploymentPatternData& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,68 +89,60 @@ namespace Model
      * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_GetWorkloadDeploymentPattern.html">
      * <code>GetWorkloadDeploymentPattern</code> </a> operation.</p>
      */
-    inline const Aws::Vector<DeploymentSpecificationsField>& GetSpecifications() const{ return m_specifications; }
+    inline const Aws::Vector<DeploymentSpecificationsField>& GetSpecifications() const { return m_specifications; }
     inline bool SpecificationsHasBeenSet() const { return m_specificationsHasBeenSet; }
-    inline void SetSpecifications(const Aws::Vector<DeploymentSpecificationsField>& value) { m_specificationsHasBeenSet = true; m_specifications = value; }
-    inline void SetSpecifications(Aws::Vector<DeploymentSpecificationsField>&& value) { m_specificationsHasBeenSet = true; m_specifications = std::move(value); }
-    inline WorkloadDeploymentPatternData& WithSpecifications(const Aws::Vector<DeploymentSpecificationsField>& value) { SetSpecifications(value); return *this;}
-    inline WorkloadDeploymentPatternData& WithSpecifications(Aws::Vector<DeploymentSpecificationsField>&& value) { SetSpecifications(std::move(value)); return *this;}
-    inline WorkloadDeploymentPatternData& AddSpecifications(const DeploymentSpecificationsField& value) { m_specificationsHasBeenSet = true; m_specifications.push_back(value); return *this; }
-    inline WorkloadDeploymentPatternData& AddSpecifications(DeploymentSpecificationsField&& value) { m_specificationsHasBeenSet = true; m_specifications.push_back(std::move(value)); return *this; }
+    template<typename SpecificationsT = Aws::Vector<DeploymentSpecificationsField>>
+    void SetSpecifications(SpecificationsT&& value) { m_specificationsHasBeenSet = true; m_specifications = std::forward<SpecificationsT>(value); }
+    template<typename SpecificationsT = Aws::Vector<DeploymentSpecificationsField>>
+    WorkloadDeploymentPatternData& WithSpecifications(SpecificationsT&& value) { SetSpecifications(std::forward<SpecificationsT>(value)); return *this;}
+    template<typename SpecificationsT = DeploymentSpecificationsField>
+    WorkloadDeploymentPatternData& AddSpecifications(SpecificationsT&& value) { m_specificationsHasBeenSet = true; m_specifications.emplace_back(std::forward<SpecificationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The status of the deployment pattern.</p>
      */
-    inline const WorkloadDeploymentPatternStatus& GetStatus() const{ return m_status; }
+    inline WorkloadDeploymentPatternStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const WorkloadDeploymentPatternStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(WorkloadDeploymentPatternStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline WorkloadDeploymentPatternData& WithStatus(const WorkloadDeploymentPatternStatus& value) { SetStatus(value); return *this;}
-    inline WorkloadDeploymentPatternData& WithStatus(WorkloadDeploymentPatternStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(WorkloadDeploymentPatternStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline WorkloadDeploymentPatternData& WithStatus(WorkloadDeploymentPatternStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status message of the deployment pattern.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-    inline WorkloadDeploymentPatternData& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline WorkloadDeploymentPatternData& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline WorkloadDeploymentPatternData& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    WorkloadDeploymentPatternData& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The workload name of the deployment pattern.</p>
      */
-    inline const Aws::String& GetWorkloadName() const{ return m_workloadName; }
+    inline const Aws::String& GetWorkloadName() const { return m_workloadName; }
     inline bool WorkloadNameHasBeenSet() const { return m_workloadNameHasBeenSet; }
-    inline void SetWorkloadName(const Aws::String& value) { m_workloadNameHasBeenSet = true; m_workloadName = value; }
-    inline void SetWorkloadName(Aws::String&& value) { m_workloadNameHasBeenSet = true; m_workloadName = std::move(value); }
-    inline void SetWorkloadName(const char* value) { m_workloadNameHasBeenSet = true; m_workloadName.assign(value); }
-    inline WorkloadDeploymentPatternData& WithWorkloadName(const Aws::String& value) { SetWorkloadName(value); return *this;}
-    inline WorkloadDeploymentPatternData& WithWorkloadName(Aws::String&& value) { SetWorkloadName(std::move(value)); return *this;}
-    inline WorkloadDeploymentPatternData& WithWorkloadName(const char* value) { SetWorkloadName(value); return *this;}
+    template<typename WorkloadNameT = Aws::String>
+    void SetWorkloadName(WorkloadNameT&& value) { m_workloadNameHasBeenSet = true; m_workloadName = std::forward<WorkloadNameT>(value); }
+    template<typename WorkloadNameT = Aws::String>
+    WorkloadDeploymentPatternData& WithWorkloadName(WorkloadNameT&& value) { SetWorkloadName(std::forward<WorkloadNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The workload version name of the deployment pattern.</p>
      */
-    inline const Aws::String& GetWorkloadVersionName() const{ return m_workloadVersionName; }
+    inline const Aws::String& GetWorkloadVersionName() const { return m_workloadVersionName; }
     inline bool WorkloadVersionNameHasBeenSet() const { return m_workloadVersionNameHasBeenSet; }
-    inline void SetWorkloadVersionName(const Aws::String& value) { m_workloadVersionNameHasBeenSet = true; m_workloadVersionName = value; }
-    inline void SetWorkloadVersionName(Aws::String&& value) { m_workloadVersionNameHasBeenSet = true; m_workloadVersionName = std::move(value); }
-    inline void SetWorkloadVersionName(const char* value) { m_workloadVersionNameHasBeenSet = true; m_workloadVersionName.assign(value); }
-    inline WorkloadDeploymentPatternData& WithWorkloadVersionName(const Aws::String& value) { SetWorkloadVersionName(value); return *this;}
-    inline WorkloadDeploymentPatternData& WithWorkloadVersionName(Aws::String&& value) { SetWorkloadVersionName(std::move(value)); return *this;}
-    inline WorkloadDeploymentPatternData& WithWorkloadVersionName(const char* value) { SetWorkloadVersionName(value); return *this;}
+    template<typename WorkloadVersionNameT = Aws::String>
+    void SetWorkloadVersionName(WorkloadVersionNameT&& value) { m_workloadVersionNameHasBeenSet = true; m_workloadVersionName = std::forward<WorkloadVersionNameT>(value); }
+    template<typename WorkloadVersionNameT = Aws::String>
+    WorkloadDeploymentPatternData& WithWorkloadVersionName(WorkloadVersionNameT&& value) { SetWorkloadVersionName(std::forward<WorkloadVersionNameT>(value)); return *this;}
     ///@}
   private:
 
@@ -172,7 +158,7 @@ namespace Model
     Aws::Vector<DeploymentSpecificationsField> m_specifications;
     bool m_specificationsHasBeenSet = false;
 
-    WorkloadDeploymentPatternStatus m_status;
+    WorkloadDeploymentPatternStatus m_status{WorkloadDeploymentPatternStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;

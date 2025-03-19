@@ -12,13 +12,6 @@ using namespace Aws::LakeFormation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RemoveLFTagsFromResourceRequest::RemoveLFTagsFromResourceRequest() : 
-    m_catalogIdHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_lFTagsHasBeenSet(false)
-{
-}
-
 Aws::String RemoveLFTagsFromResourceRequest::SerializePayload() const
 {
   JsonValue payload;

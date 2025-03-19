@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SnapToRoadsResult::SnapToRoadsResult() : 
-    m_snappedGeometryFormat(GeometryFormat::NOT_SET)
-{
-}
-
 SnapToRoadsResult::SnapToRoadsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : SnapToRoadsResult()
 {
   *this = result;
 }
@@ -38,20 +32,18 @@ SnapToRoadsResult& SnapToRoadsResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_notices.push_back(noticesJsonList[noticesIndex].AsObject());
     }
+    m_noticesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnappedGeometry"))
   {
     m_snappedGeometry = jsonValue.GetObject("SnappedGeometry");
-
+    m_snappedGeometryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnappedGeometryFormat"))
   {
     m_snappedGeometryFormat = GeometryFormatMapper::GetGeometryFormatForName(jsonValue.GetString("SnappedGeometryFormat"));
-
+    m_snappedGeometryFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnappedTracePoints"))
   {
     Aws::Utils::Array<JsonView> snappedTracePointsJsonList = jsonValue.GetArray("SnappedTracePoints");
@@ -59,20 +51,22 @@ SnapToRoadsResult& SnapToRoadsResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_snappedTracePoints.push_back(snappedTracePointsJsonList[snappedTracePointsIndex].AsObject());
     }
+    m_snappedTracePointsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& pricingBucketIter = headers.find("x-amz-geo-pricing-bucket");
   if(pricingBucketIter != headers.end())
   {
     m_pricingBucket = pricingBucketIter->second;
+    m_pricingBucketHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

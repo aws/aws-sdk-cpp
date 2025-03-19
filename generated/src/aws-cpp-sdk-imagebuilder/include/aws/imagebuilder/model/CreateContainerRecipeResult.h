@@ -27,7 +27,7 @@ namespace Model
   class CreateContainerRecipeResult
   {
   public:
-    AWS_IMAGEBUILDER_API CreateContainerRecipeResult();
+    AWS_IMAGEBUILDER_API CreateContainerRecipeResult() = default;
     AWS_IMAGEBUILDER_API CreateContainerRecipeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IMAGEBUILDER_API CreateContainerRecipeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,26 +36,22 @@ namespace Model
     /**
      * <p>The request ID that uniquely identifies this request.</p>
      */
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateContainerRecipeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateContainerRecipeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateContainerRecipeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateContainerRecipeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The client token that uniquely identifies the request.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-    inline void SetClientToken(const Aws::String& value) { m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientToken.assign(value); }
-    inline CreateContainerRecipeResult& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateContainerRecipeResult& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateContainerRecipeResult& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateContainerRecipeResult& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,21 +59,22 @@ namespace Model
      * <p>Returns the Amazon Resource Name (ARN) of the container recipe that the
      * request created.</p>
      */
-    inline const Aws::String& GetContainerRecipeArn() const{ return m_containerRecipeArn; }
-    inline void SetContainerRecipeArn(const Aws::String& value) { m_containerRecipeArn = value; }
-    inline void SetContainerRecipeArn(Aws::String&& value) { m_containerRecipeArn = std::move(value); }
-    inline void SetContainerRecipeArn(const char* value) { m_containerRecipeArn.assign(value); }
-    inline CreateContainerRecipeResult& WithContainerRecipeArn(const Aws::String& value) { SetContainerRecipeArn(value); return *this;}
-    inline CreateContainerRecipeResult& WithContainerRecipeArn(Aws::String&& value) { SetContainerRecipeArn(std::move(value)); return *this;}
-    inline CreateContainerRecipeResult& WithContainerRecipeArn(const char* value) { SetContainerRecipeArn(value); return *this;}
+    inline const Aws::String& GetContainerRecipeArn() const { return m_containerRecipeArn; }
+    template<typename ContainerRecipeArnT = Aws::String>
+    void SetContainerRecipeArn(ContainerRecipeArnT&& value) { m_containerRecipeArnHasBeenSet = true; m_containerRecipeArn = std::forward<ContainerRecipeArnT>(value); }
+    template<typename ContainerRecipeArnT = Aws::String>
+    CreateContainerRecipeResult& WithContainerRecipeArn(ContainerRecipeArnT&& value) { SetContainerRecipeArn(std::forward<ContainerRecipeArnT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
 
     Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_containerRecipeArn;
+    bool m_containerRecipeArnHasBeenSet = false;
   };
 
 } // namespace Model

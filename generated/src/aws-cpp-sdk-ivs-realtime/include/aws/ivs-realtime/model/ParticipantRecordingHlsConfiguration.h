@@ -30,7 +30,7 @@ namespace Model
   class ParticipantRecordingHlsConfiguration
   {
   public:
-    AWS_IVSREALTIME_API ParticipantRecordingHlsConfiguration();
+    AWS_IVSREALTIME_API ParticipantRecordingHlsConfiguration() = default;
     AWS_IVSREALTIME_API ParticipantRecordingHlsConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVSREALTIME_API ParticipantRecordingHlsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVSREALTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
      * stage participant. Segments may have durations longer than the specified value
      * when needed to ensure each segment begins with a keyframe. Default: 6.</p>
      */
-    inline int GetTargetSegmentDurationSeconds() const{ return m_targetSegmentDurationSeconds; }
+    inline int GetTargetSegmentDurationSeconds() const { return m_targetSegmentDurationSeconds; }
     inline bool TargetSegmentDurationSecondsHasBeenSet() const { return m_targetSegmentDurationSecondsHasBeenSet; }
     inline void SetTargetSegmentDurationSeconds(int value) { m_targetSegmentDurationSecondsHasBeenSet = true; m_targetSegmentDurationSeconds = value; }
     inline ParticipantRecordingHlsConfiguration& WithTargetSegmentDurationSeconds(int value) { SetTargetSegmentDurationSeconds(value); return *this;}
     ///@}
   private:
 
-    int m_targetSegmentDurationSeconds;
+    int m_targetSegmentDurationSeconds{0};
     bool m_targetSegmentDurationSecondsHasBeenSet = false;
   };
 

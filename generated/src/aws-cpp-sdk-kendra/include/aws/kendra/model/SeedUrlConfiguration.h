@@ -38,7 +38,7 @@ namespace Model
   class SeedUrlConfiguration
   {
   public:
-    AWS_KENDRA_API SeedUrlConfiguration();
+    AWS_KENDRA_API SeedUrlConfiguration() = default;
     AWS_KENDRA_API SeedUrlConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API SeedUrlConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,15 +49,14 @@ namespace Model
      * <p>The list of seed or starting point URLs of the websites you want to
      * crawl.</p> <p>The list can include a maximum of 100 seed URLs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSeedUrls() const{ return m_seedUrls; }
+    inline const Aws::Vector<Aws::String>& GetSeedUrls() const { return m_seedUrls; }
     inline bool SeedUrlsHasBeenSet() const { return m_seedUrlsHasBeenSet; }
-    inline void SetSeedUrls(const Aws::Vector<Aws::String>& value) { m_seedUrlsHasBeenSet = true; m_seedUrls = value; }
-    inline void SetSeedUrls(Aws::Vector<Aws::String>&& value) { m_seedUrlsHasBeenSet = true; m_seedUrls = std::move(value); }
-    inline SeedUrlConfiguration& WithSeedUrls(const Aws::Vector<Aws::String>& value) { SetSeedUrls(value); return *this;}
-    inline SeedUrlConfiguration& WithSeedUrls(Aws::Vector<Aws::String>&& value) { SetSeedUrls(std::move(value)); return *this;}
-    inline SeedUrlConfiguration& AddSeedUrls(const Aws::String& value) { m_seedUrlsHasBeenSet = true; m_seedUrls.push_back(value); return *this; }
-    inline SeedUrlConfiguration& AddSeedUrls(Aws::String&& value) { m_seedUrlsHasBeenSet = true; m_seedUrls.push_back(std::move(value)); return *this; }
-    inline SeedUrlConfiguration& AddSeedUrls(const char* value) { m_seedUrlsHasBeenSet = true; m_seedUrls.push_back(value); return *this; }
+    template<typename SeedUrlsT = Aws::Vector<Aws::String>>
+    void SetSeedUrls(SeedUrlsT&& value) { m_seedUrlsHasBeenSet = true; m_seedUrls = std::forward<SeedUrlsT>(value); }
+    template<typename SeedUrlsT = Aws::Vector<Aws::String>>
+    SeedUrlConfiguration& WithSeedUrls(SeedUrlsT&& value) { SetSeedUrls(std::forward<SeedUrlsT>(value)); return *this;}
+    template<typename SeedUrlsT = Aws::String>
+    SeedUrlConfiguration& AddSeedUrls(SeedUrlsT&& value) { m_seedUrlsHasBeenSet = true; m_seedUrls.emplace_back(std::forward<SeedUrlsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -72,19 +71,17 @@ namespace Model
      * domains that the web pages link to.</p> </li> </ul> <p>The default mode is set
      * to <code>HOST_ONLY</code>.</p>
      */
-    inline const WebCrawlerMode& GetWebCrawlerMode() const{ return m_webCrawlerMode; }
+    inline WebCrawlerMode GetWebCrawlerMode() const { return m_webCrawlerMode; }
     inline bool WebCrawlerModeHasBeenSet() const { return m_webCrawlerModeHasBeenSet; }
-    inline void SetWebCrawlerMode(const WebCrawlerMode& value) { m_webCrawlerModeHasBeenSet = true; m_webCrawlerMode = value; }
-    inline void SetWebCrawlerMode(WebCrawlerMode&& value) { m_webCrawlerModeHasBeenSet = true; m_webCrawlerMode = std::move(value); }
-    inline SeedUrlConfiguration& WithWebCrawlerMode(const WebCrawlerMode& value) { SetWebCrawlerMode(value); return *this;}
-    inline SeedUrlConfiguration& WithWebCrawlerMode(WebCrawlerMode&& value) { SetWebCrawlerMode(std::move(value)); return *this;}
+    inline void SetWebCrawlerMode(WebCrawlerMode value) { m_webCrawlerModeHasBeenSet = true; m_webCrawlerMode = value; }
+    inline SeedUrlConfiguration& WithWebCrawlerMode(WebCrawlerMode value) { SetWebCrawlerMode(value); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_seedUrls;
     bool m_seedUrlsHasBeenSet = false;
 
-    WebCrawlerMode m_webCrawlerMode;
+    WebCrawlerMode m_webCrawlerMode{WebCrawlerMode::NOT_SET};
     bool m_webCrawlerModeHasBeenSet = false;
   };
 

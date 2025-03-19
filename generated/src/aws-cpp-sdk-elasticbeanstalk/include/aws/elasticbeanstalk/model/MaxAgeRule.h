@@ -30,7 +30,7 @@ namespace Model
   class MaxAgeRule
   {
   public:
-    AWS_ELASTICBEANSTALK_API MaxAgeRule();
+    AWS_ELASTICBEANSTALK_API MaxAgeRule() = default;
     AWS_ELASTICBEANSTALK_API MaxAgeRule(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICBEANSTALK_API MaxAgeRule& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,7 +43,7 @@ namespace Model
      * <p>Specify <code>true</code> to apply the rule, or <code>false</code> to disable
      * it.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline MaxAgeRule& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -53,7 +53,7 @@ namespace Model
     /**
      * <p>Specify the number of days to retain an application versions.</p>
      */
-    inline int GetMaxAgeInDays() const{ return m_maxAgeInDays; }
+    inline int GetMaxAgeInDays() const { return m_maxAgeInDays; }
     inline bool MaxAgeInDaysHasBeenSet() const { return m_maxAgeInDaysHasBeenSet; }
     inline void SetMaxAgeInDays(int value) { m_maxAgeInDaysHasBeenSet = true; m_maxAgeInDays = value; }
     inline MaxAgeRule& WithMaxAgeInDays(int value) { SetMaxAgeInDays(value); return *this;}
@@ -64,20 +64,20 @@ namespace Model
      * <p>Set to <code>true</code> to delete a version's source bundle from Amazon S3
      * when Elastic Beanstalk deletes the application version.</p>
      */
-    inline bool GetDeleteSourceFromS3() const{ return m_deleteSourceFromS3; }
+    inline bool GetDeleteSourceFromS3() const { return m_deleteSourceFromS3; }
     inline bool DeleteSourceFromS3HasBeenSet() const { return m_deleteSourceFromS3HasBeenSet; }
     inline void SetDeleteSourceFromS3(bool value) { m_deleteSourceFromS3HasBeenSet = true; m_deleteSourceFromS3 = value; }
     inline MaxAgeRule& WithDeleteSourceFromS3(bool value) { SetDeleteSourceFromS3(value); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
-    int m_maxAgeInDays;
+    int m_maxAgeInDays{0};
     bool m_maxAgeInDaysHasBeenSet = false;
 
-    bool m_deleteSourceFromS3;
+    bool m_deleteSourceFromS3{false};
     bool m_deleteSourceFromS3HasBeenSet = false;
   };
 

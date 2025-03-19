@@ -12,11 +12,6 @@ using namespace Aws::ECR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutReplicationConfigurationRequest::PutReplicationConfigurationRequest() : 
-    m_replicationConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String PutReplicationConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,13 +18,7 @@ namespace ECS
 namespace Model
 {
 
-ConflictException::ConflictException() : 
-    m_resourceIdsHasBeenSet(false)
-{
-}
-
 ConflictException::ConflictException(JsonView jsonValue)
-  : ConflictException()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ConflictException& ConflictException::operator =(JsonView jsonValue)
     }
     m_resourceIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class LockedSnapshotsInfo
   {
   public:
-    AWS_EC2_API LockedSnapshotsInfo();
+    AWS_EC2_API LockedSnapshotsInfo() = default;
     AWS_EC2_API LockedSnapshotsInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API LockedSnapshotsInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,28 +45,24 @@ namespace Model
     /**
      * <p>The account ID of the Amazon Web Services account that owns the snapshot.</p>
      */
-    inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
+    inline const Aws::String& GetOwnerId() const { return m_ownerId; }
     inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
-    inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
-    inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
-    inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
-    inline LockedSnapshotsInfo& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
-    inline LockedSnapshotsInfo& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
-    inline LockedSnapshotsInfo& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
+    template<typename OwnerIdT = Aws::String>
+    void SetOwnerId(OwnerIdT&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::forward<OwnerIdT>(value); }
+    template<typename OwnerIdT = Aws::String>
+    LockedSnapshotsInfo& WithOwnerId(OwnerIdT&& value) { SetOwnerId(std::forward<OwnerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the snapshot.</p>
      */
-    inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
+    inline const Aws::String& GetSnapshotId() const { return m_snapshotId; }
     inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
-    inline void SetSnapshotId(const Aws::String& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
-    inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
-    inline void SetSnapshotId(const char* value) { m_snapshotIdHasBeenSet = true; m_snapshotId.assign(value); }
-    inline LockedSnapshotsInfo& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
-    inline LockedSnapshotsInfo& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
-    inline LockedSnapshotsInfo& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
+    template<typename SnapshotIdT = Aws::String>
+    void SetSnapshotId(SnapshotIdT&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::forward<SnapshotIdT>(value); }
+    template<typename SnapshotIdT = Aws::String>
+    LockedSnapshotsInfo& WithSnapshotId(SnapshotIdT&& value) { SetSnapshotId(std::forward<SnapshotIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,19 +81,17 @@ namespace Model
      * was locked in compliance or governance mode but the lock duration has expired.
      * The snapshot is not locked and can be deleted.</p> </li> </ul>
      */
-    inline const LockState& GetLockState() const{ return m_lockState; }
+    inline LockState GetLockState() const { return m_lockState; }
     inline bool LockStateHasBeenSet() const { return m_lockStateHasBeenSet; }
-    inline void SetLockState(const LockState& value) { m_lockStateHasBeenSet = true; m_lockState = value; }
-    inline void SetLockState(LockState&& value) { m_lockStateHasBeenSet = true; m_lockState = std::move(value); }
-    inline LockedSnapshotsInfo& WithLockState(const LockState& value) { SetLockState(value); return *this;}
-    inline LockedSnapshotsInfo& WithLockState(LockState&& value) { SetLockState(std::move(value)); return *this;}
+    inline void SetLockState(LockState value) { m_lockStateHasBeenSet = true; m_lockState = value; }
+    inline LockedSnapshotsInfo& WithLockState(LockState value) { SetLockState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The period of time for which the snapshot is locked, in days.</p>
      */
-    inline int GetLockDuration() const{ return m_lockDuration; }
+    inline int GetLockDuration() const { return m_lockDuration; }
     inline bool LockDurationHasBeenSet() const { return m_lockDurationHasBeenSet; }
     inline void SetLockDuration(int value) { m_lockDurationHasBeenSet = true; m_lockDuration = value; }
     inline LockedSnapshotsInfo& WithLockDuration(int value) { SetLockDuration(value); return *this;}
@@ -107,7 +101,7 @@ namespace Model
     /**
      * <p>The compliance mode cooling-off period, in hours.</p>
      */
-    inline int GetCoolOffPeriod() const{ return m_coolOffPeriod; }
+    inline int GetCoolOffPeriod() const { return m_coolOffPeriod; }
     inline bool CoolOffPeriodHasBeenSet() const { return m_coolOffPeriodHasBeenSet; }
     inline void SetCoolOffPeriod(int value) { m_coolOffPeriodHasBeenSet = true; m_coolOffPeriod = value; }
     inline LockedSnapshotsInfo& WithCoolOffPeriod(int value) { SetCoolOffPeriod(value); return *this;}
@@ -118,12 +112,12 @@ namespace Model
      * <p>The date and time at which the compliance mode cooling-off period expires, in
      * the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>).</p>
      */
-    inline const Aws::Utils::DateTime& GetCoolOffPeriodExpiresOn() const{ return m_coolOffPeriodExpiresOn; }
+    inline const Aws::Utils::DateTime& GetCoolOffPeriodExpiresOn() const { return m_coolOffPeriodExpiresOn; }
     inline bool CoolOffPeriodExpiresOnHasBeenSet() const { return m_coolOffPeriodExpiresOnHasBeenSet; }
-    inline void SetCoolOffPeriodExpiresOn(const Aws::Utils::DateTime& value) { m_coolOffPeriodExpiresOnHasBeenSet = true; m_coolOffPeriodExpiresOn = value; }
-    inline void SetCoolOffPeriodExpiresOn(Aws::Utils::DateTime&& value) { m_coolOffPeriodExpiresOnHasBeenSet = true; m_coolOffPeriodExpiresOn = std::move(value); }
-    inline LockedSnapshotsInfo& WithCoolOffPeriodExpiresOn(const Aws::Utils::DateTime& value) { SetCoolOffPeriodExpiresOn(value); return *this;}
-    inline LockedSnapshotsInfo& WithCoolOffPeriodExpiresOn(Aws::Utils::DateTime&& value) { SetCoolOffPeriodExpiresOn(std::move(value)); return *this;}
+    template<typename CoolOffPeriodExpiresOnT = Aws::Utils::DateTime>
+    void SetCoolOffPeriodExpiresOn(CoolOffPeriodExpiresOnT&& value) { m_coolOffPeriodExpiresOnHasBeenSet = true; m_coolOffPeriodExpiresOn = std::forward<CoolOffPeriodExpiresOnT>(value); }
+    template<typename CoolOffPeriodExpiresOnT = Aws::Utils::DateTime>
+    LockedSnapshotsInfo& WithCoolOffPeriodExpiresOn(CoolOffPeriodExpiresOnT&& value) { SetCoolOffPeriodExpiresOn(std::forward<CoolOffPeriodExpiresOnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -131,12 +125,12 @@ namespace Model
      * <p>The date and time at which the snapshot was locked, in the UTC time zone
      * (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>).</p>
      */
-    inline const Aws::Utils::DateTime& GetLockCreatedOn() const{ return m_lockCreatedOn; }
+    inline const Aws::Utils::DateTime& GetLockCreatedOn() const { return m_lockCreatedOn; }
     inline bool LockCreatedOnHasBeenSet() const { return m_lockCreatedOnHasBeenSet; }
-    inline void SetLockCreatedOn(const Aws::Utils::DateTime& value) { m_lockCreatedOnHasBeenSet = true; m_lockCreatedOn = value; }
-    inline void SetLockCreatedOn(Aws::Utils::DateTime&& value) { m_lockCreatedOnHasBeenSet = true; m_lockCreatedOn = std::move(value); }
-    inline LockedSnapshotsInfo& WithLockCreatedOn(const Aws::Utils::DateTime& value) { SetLockCreatedOn(value); return *this;}
-    inline LockedSnapshotsInfo& WithLockCreatedOn(Aws::Utils::DateTime&& value) { SetLockCreatedOn(std::move(value)); return *this;}
+    template<typename LockCreatedOnT = Aws::Utils::DateTime>
+    void SetLockCreatedOn(LockCreatedOnT&& value) { m_lockCreatedOnHasBeenSet = true; m_lockCreatedOn = std::forward<LockCreatedOnT>(value); }
+    template<typename LockCreatedOnT = Aws::Utils::DateTime>
+    LockedSnapshotsInfo& WithLockCreatedOn(LockCreatedOnT&& value) { SetLockCreatedOn(std::forward<LockCreatedOnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -146,12 +140,12 @@ namespace Model
      * in the <code>pending</code> state, the lock duration starts only once the
      * snapshot enters the <code>completed</code> state.</p>
      */
-    inline const Aws::Utils::DateTime& GetLockDurationStartTime() const{ return m_lockDurationStartTime; }
+    inline const Aws::Utils::DateTime& GetLockDurationStartTime() const { return m_lockDurationStartTime; }
     inline bool LockDurationStartTimeHasBeenSet() const { return m_lockDurationStartTimeHasBeenSet; }
-    inline void SetLockDurationStartTime(const Aws::Utils::DateTime& value) { m_lockDurationStartTimeHasBeenSet = true; m_lockDurationStartTime = value; }
-    inline void SetLockDurationStartTime(Aws::Utils::DateTime&& value) { m_lockDurationStartTimeHasBeenSet = true; m_lockDurationStartTime = std::move(value); }
-    inline LockedSnapshotsInfo& WithLockDurationStartTime(const Aws::Utils::DateTime& value) { SetLockDurationStartTime(value); return *this;}
-    inline LockedSnapshotsInfo& WithLockDurationStartTime(Aws::Utils::DateTime&& value) { SetLockDurationStartTime(std::move(value)); return *this;}
+    template<typename LockDurationStartTimeT = Aws::Utils::DateTime>
+    void SetLockDurationStartTime(LockDurationStartTimeT&& value) { m_lockDurationStartTimeHasBeenSet = true; m_lockDurationStartTime = std::forward<LockDurationStartTimeT>(value); }
+    template<typename LockDurationStartTimeT = Aws::Utils::DateTime>
+    LockedSnapshotsInfo& WithLockDurationStartTime(LockDurationStartTimeT&& value) { SetLockDurationStartTime(std::forward<LockDurationStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -159,12 +153,12 @@ namespace Model
      * <p>The date and time at which the lock will expire, in the UTC time zone
      * (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>).</p>
      */
-    inline const Aws::Utils::DateTime& GetLockExpiresOn() const{ return m_lockExpiresOn; }
+    inline const Aws::Utils::DateTime& GetLockExpiresOn() const { return m_lockExpiresOn; }
     inline bool LockExpiresOnHasBeenSet() const { return m_lockExpiresOnHasBeenSet; }
-    inline void SetLockExpiresOn(const Aws::Utils::DateTime& value) { m_lockExpiresOnHasBeenSet = true; m_lockExpiresOn = value; }
-    inline void SetLockExpiresOn(Aws::Utils::DateTime&& value) { m_lockExpiresOnHasBeenSet = true; m_lockExpiresOn = std::move(value); }
-    inline LockedSnapshotsInfo& WithLockExpiresOn(const Aws::Utils::DateTime& value) { SetLockExpiresOn(value); return *this;}
-    inline LockedSnapshotsInfo& WithLockExpiresOn(Aws::Utils::DateTime&& value) { SetLockExpiresOn(std::move(value)); return *this;}
+    template<typename LockExpiresOnT = Aws::Utils::DateTime>
+    void SetLockExpiresOn(LockExpiresOnT&& value) { m_lockExpiresOnHasBeenSet = true; m_lockExpiresOn = std::forward<LockExpiresOnT>(value); }
+    template<typename LockExpiresOnT = Aws::Utils::DateTime>
+    LockedSnapshotsInfo& WithLockExpiresOn(LockExpiresOnT&& value) { SetLockExpiresOn(std::forward<LockExpiresOnT>(value)); return *this;}
     ///@}
   private:
 
@@ -174,25 +168,25 @@ namespace Model
     Aws::String m_snapshotId;
     bool m_snapshotIdHasBeenSet = false;
 
-    LockState m_lockState;
+    LockState m_lockState{LockState::NOT_SET};
     bool m_lockStateHasBeenSet = false;
 
-    int m_lockDuration;
+    int m_lockDuration{0};
     bool m_lockDurationHasBeenSet = false;
 
-    int m_coolOffPeriod;
+    int m_coolOffPeriod{0};
     bool m_coolOffPeriodHasBeenSet = false;
 
-    Aws::Utils::DateTime m_coolOffPeriodExpiresOn;
+    Aws::Utils::DateTime m_coolOffPeriodExpiresOn{};
     bool m_coolOffPeriodExpiresOnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lockCreatedOn;
+    Aws::Utils::DateTime m_lockCreatedOn{};
     bool m_lockCreatedOnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lockDurationStartTime;
+    Aws::Utils::DateTime m_lockDurationStartTime{};
     bool m_lockDurationStartTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lockExpiresOn;
+    Aws::Utils::DateTime m_lockExpiresOn{};
     bool m_lockExpiresOnHasBeenSet = false;
   };
 

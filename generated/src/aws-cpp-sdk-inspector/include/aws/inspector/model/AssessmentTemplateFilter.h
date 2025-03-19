@@ -34,7 +34,7 @@ namespace Model
   class AssessmentTemplateFilter
   {
   public:
-    AWS_INSPECTOR_API AssessmentTemplateFilter();
+    AWS_INSPECTOR_API AssessmentTemplateFilter() = default;
     AWS_INSPECTOR_API AssessmentTemplateFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR_API AssessmentTemplateFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * the <b>assessmentTemplateName</b> property of the <a>AssessmentTemplate</a> data
      * type.</p>
      */
-    inline const Aws::String& GetNamePattern() const{ return m_namePattern; }
+    inline const Aws::String& GetNamePattern() const { return m_namePattern; }
     inline bool NamePatternHasBeenSet() const { return m_namePatternHasBeenSet; }
-    inline void SetNamePattern(const Aws::String& value) { m_namePatternHasBeenSet = true; m_namePattern = value; }
-    inline void SetNamePattern(Aws::String&& value) { m_namePatternHasBeenSet = true; m_namePattern = std::move(value); }
-    inline void SetNamePattern(const char* value) { m_namePatternHasBeenSet = true; m_namePattern.assign(value); }
-    inline AssessmentTemplateFilter& WithNamePattern(const Aws::String& value) { SetNamePattern(value); return *this;}
-    inline AssessmentTemplateFilter& WithNamePattern(Aws::String&& value) { SetNamePattern(std::move(value)); return *this;}
-    inline AssessmentTemplateFilter& WithNamePattern(const char* value) { SetNamePattern(value); return *this;}
+    template<typename NamePatternT = Aws::String>
+    void SetNamePattern(NamePatternT&& value) { m_namePatternHasBeenSet = true; m_namePattern = std::forward<NamePatternT>(value); }
+    template<typename NamePatternT = Aws::String>
+    AssessmentTemplateFilter& WithNamePattern(NamePatternT&& value) { SetNamePattern(std::forward<NamePatternT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,12 +62,12 @@ namespace Model
      * maximum values of the <b>durationInSeconds</b> property of the
      * <a>AssessmentTemplate</a> data type.</p>
      */
-    inline const DurationRange& GetDurationRange() const{ return m_durationRange; }
+    inline const DurationRange& GetDurationRange() const { return m_durationRange; }
     inline bool DurationRangeHasBeenSet() const { return m_durationRangeHasBeenSet; }
-    inline void SetDurationRange(const DurationRange& value) { m_durationRangeHasBeenSet = true; m_durationRange = value; }
-    inline void SetDurationRange(DurationRange&& value) { m_durationRangeHasBeenSet = true; m_durationRange = std::move(value); }
-    inline AssessmentTemplateFilter& WithDurationRange(const DurationRange& value) { SetDurationRange(value); return *this;}
-    inline AssessmentTemplateFilter& WithDurationRange(DurationRange&& value) { SetDurationRange(std::move(value)); return *this;}
+    template<typename DurationRangeT = DurationRange>
+    void SetDurationRange(DurationRangeT&& value) { m_durationRangeHasBeenSet = true; m_durationRange = std::forward<DurationRangeT>(value); }
+    template<typename DurationRangeT = DurationRange>
+    AssessmentTemplateFilter& WithDurationRange(DurationRangeT&& value) { SetDurationRange(std::forward<DurationRangeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,15 +76,14 @@ namespace Model
      * type property must be contained in the list of values of the
      * <b>rulesPackageArns</b> property of the <a>AssessmentTemplate</a> data type.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRulesPackageArns() const{ return m_rulesPackageArns; }
+    inline const Aws::Vector<Aws::String>& GetRulesPackageArns() const { return m_rulesPackageArns; }
     inline bool RulesPackageArnsHasBeenSet() const { return m_rulesPackageArnsHasBeenSet; }
-    inline void SetRulesPackageArns(const Aws::Vector<Aws::String>& value) { m_rulesPackageArnsHasBeenSet = true; m_rulesPackageArns = value; }
-    inline void SetRulesPackageArns(Aws::Vector<Aws::String>&& value) { m_rulesPackageArnsHasBeenSet = true; m_rulesPackageArns = std::move(value); }
-    inline AssessmentTemplateFilter& WithRulesPackageArns(const Aws::Vector<Aws::String>& value) { SetRulesPackageArns(value); return *this;}
-    inline AssessmentTemplateFilter& WithRulesPackageArns(Aws::Vector<Aws::String>&& value) { SetRulesPackageArns(std::move(value)); return *this;}
-    inline AssessmentTemplateFilter& AddRulesPackageArns(const Aws::String& value) { m_rulesPackageArnsHasBeenSet = true; m_rulesPackageArns.push_back(value); return *this; }
-    inline AssessmentTemplateFilter& AddRulesPackageArns(Aws::String&& value) { m_rulesPackageArnsHasBeenSet = true; m_rulesPackageArns.push_back(std::move(value)); return *this; }
-    inline AssessmentTemplateFilter& AddRulesPackageArns(const char* value) { m_rulesPackageArnsHasBeenSet = true; m_rulesPackageArns.push_back(value); return *this; }
+    template<typename RulesPackageArnsT = Aws::Vector<Aws::String>>
+    void SetRulesPackageArns(RulesPackageArnsT&& value) { m_rulesPackageArnsHasBeenSet = true; m_rulesPackageArns = std::forward<RulesPackageArnsT>(value); }
+    template<typename RulesPackageArnsT = Aws::Vector<Aws::String>>
+    AssessmentTemplateFilter& WithRulesPackageArns(RulesPackageArnsT&& value) { SetRulesPackageArns(std::forward<RulesPackageArnsT>(value)); return *this;}
+    template<typename RulesPackageArnsT = Aws::String>
+    AssessmentTemplateFilter& AddRulesPackageArns(RulesPackageArnsT&& value) { m_rulesPackageArnsHasBeenSet = true; m_rulesPackageArns.emplace_back(std::forward<RulesPackageArnsT>(value)); return *this; }
     ///@}
   private:
 

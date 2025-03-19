@@ -18,16 +18,7 @@ namespace ForecastService
 namespace Model
 {
 
-Filter::Filter() : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_condition(FilterConditionString::NOT_SET),
-    m_conditionHasBeenSet(false)
-{
-}
-
 Filter::Filter(JsonView jsonValue)
-  : Filter()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ Filter& Filter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Condition"))
   {
     m_condition = FilterConditionStringMapper::GetFilterConditionStringForName(jsonValue.GetString("Condition"));
-
     m_conditionHasBeenSet = true;
   }
-
   return *this;
 }
 

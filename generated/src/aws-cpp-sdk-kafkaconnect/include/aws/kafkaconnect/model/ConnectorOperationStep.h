@@ -33,7 +33,7 @@ namespace Model
   class ConnectorOperationStep
   {
   public:
-    AWS_KAFKACONNECT_API ConnectorOperationStep();
+    AWS_KAFKACONNECT_API ConnectorOperationStep() = default;
     AWS_KAFKACONNECT_API ConnectorOperationStep(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKACONNECT_API ConnectorOperationStep& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,31 +43,27 @@ namespace Model
     /**
      * <p>The step type of the operation.</p>
      */
-    inline const ConnectorOperationStepType& GetStepType() const{ return m_stepType; }
+    inline ConnectorOperationStepType GetStepType() const { return m_stepType; }
     inline bool StepTypeHasBeenSet() const { return m_stepTypeHasBeenSet; }
-    inline void SetStepType(const ConnectorOperationStepType& value) { m_stepTypeHasBeenSet = true; m_stepType = value; }
-    inline void SetStepType(ConnectorOperationStepType&& value) { m_stepTypeHasBeenSet = true; m_stepType = std::move(value); }
-    inline ConnectorOperationStep& WithStepType(const ConnectorOperationStepType& value) { SetStepType(value); return *this;}
-    inline ConnectorOperationStep& WithStepType(ConnectorOperationStepType&& value) { SetStepType(std::move(value)); return *this;}
+    inline void SetStepType(ConnectorOperationStepType value) { m_stepTypeHasBeenSet = true; m_stepType = value; }
+    inline ConnectorOperationStep& WithStepType(ConnectorOperationStepType value) { SetStepType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The step state of the operation.</p>
      */
-    inline const ConnectorOperationStepState& GetStepState() const{ return m_stepState; }
+    inline ConnectorOperationStepState GetStepState() const { return m_stepState; }
     inline bool StepStateHasBeenSet() const { return m_stepStateHasBeenSet; }
-    inline void SetStepState(const ConnectorOperationStepState& value) { m_stepStateHasBeenSet = true; m_stepState = value; }
-    inline void SetStepState(ConnectorOperationStepState&& value) { m_stepStateHasBeenSet = true; m_stepState = std::move(value); }
-    inline ConnectorOperationStep& WithStepState(const ConnectorOperationStepState& value) { SetStepState(value); return *this;}
-    inline ConnectorOperationStep& WithStepState(ConnectorOperationStepState&& value) { SetStepState(std::move(value)); return *this;}
+    inline void SetStepState(ConnectorOperationStepState value) { m_stepStateHasBeenSet = true; m_stepState = value; }
+    inline ConnectorOperationStep& WithStepState(ConnectorOperationStepState value) { SetStepState(value); return *this;}
     ///@}
   private:
 
-    ConnectorOperationStepType m_stepType;
+    ConnectorOperationStepType m_stepType{ConnectorOperationStepType::NOT_SET};
     bool m_stepTypeHasBeenSet = false;
 
-    ConnectorOperationStepState m_stepState;
+    ConnectorOperationStepState m_stepState{ConnectorOperationStepState::NOT_SET};
     bool m_stepStateHasBeenSet = false;
   };
 

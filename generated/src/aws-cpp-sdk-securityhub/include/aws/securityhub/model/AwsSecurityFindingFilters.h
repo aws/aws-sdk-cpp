@@ -39,7 +39,7 @@ namespace Model
   class AwsSecurityFindingFilters
   {
   public:
-    AWS_SECURITYHUB_API AwsSecurityFindingFilters();
+    AWS_SECURITYHUB_API AwsSecurityFindingFilters() = default;
     AWS_SECURITYHUB_API AwsSecurityFindingFilters(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsSecurityFindingFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,42 +51,42 @@ namespace Model
      * company (security findings provider) after this provider's product (solution
      * that generates findings) is registered with Security Hub.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetProductArn() const{ return m_productArn; }
+    inline const Aws::Vector<StringFilter>& GetProductArn() const { return m_productArn; }
     inline bool ProductArnHasBeenSet() const { return m_productArnHasBeenSet; }
-    inline void SetProductArn(const Aws::Vector<StringFilter>& value) { m_productArnHasBeenSet = true; m_productArn = value; }
-    inline void SetProductArn(Aws::Vector<StringFilter>&& value) { m_productArnHasBeenSet = true; m_productArn = std::move(value); }
-    inline AwsSecurityFindingFilters& WithProductArn(const Aws::Vector<StringFilter>& value) { SetProductArn(value); return *this;}
-    inline AwsSecurityFindingFilters& WithProductArn(Aws::Vector<StringFilter>&& value) { SetProductArn(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddProductArn(const StringFilter& value) { m_productArnHasBeenSet = true; m_productArn.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddProductArn(StringFilter&& value) { m_productArnHasBeenSet = true; m_productArn.push_back(std::move(value)); return *this; }
+    template<typename ProductArnT = Aws::Vector<StringFilter>>
+    void SetProductArn(ProductArnT&& value) { m_productArnHasBeenSet = true; m_productArn = std::forward<ProductArnT>(value); }
+    template<typename ProductArnT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithProductArn(ProductArnT&& value) { SetProductArn(std::forward<ProductArnT>(value)); return *this;}
+    template<typename ProductArnT = StringFilter>
+    AwsSecurityFindingFilters& AddProductArn(ProductArnT&& value) { m_productArnHasBeenSet = true; m_productArn.emplace_back(std::forward<ProductArnT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services account ID in which a finding is generated.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetAwsAccountId() const{ return m_awsAccountId; }
+    inline const Aws::Vector<StringFilter>& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-    inline void SetAwsAccountId(const Aws::Vector<StringFilter>& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
-    inline void SetAwsAccountId(Aws::Vector<StringFilter>&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
-    inline AwsSecurityFindingFilters& WithAwsAccountId(const Aws::Vector<StringFilter>& value) { SetAwsAccountId(value); return *this;}
-    inline AwsSecurityFindingFilters& WithAwsAccountId(Aws::Vector<StringFilter>&& value) { SetAwsAccountId(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddAwsAccountId(const StringFilter& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddAwsAccountId(StringFilter&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.push_back(std::move(value)); return *this; }
+    template<typename AwsAccountIdT = Aws::Vector<StringFilter>>
+    void SetAwsAccountId(AwsAccountIdT&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::forward<AwsAccountIdT>(value); }
+    template<typename AwsAccountIdT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithAwsAccountId(AwsAccountIdT&& value) { SetAwsAccountId(std::forward<AwsAccountIdT>(value)); return *this;}
+    template<typename AwsAccountIdT = StringFilter>
+    AwsSecurityFindingFilters& AddAwsAccountId(AwsAccountIdT&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.emplace_back(std::forward<AwsAccountIdT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The security findings provider-specific identifier for a finding.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetId() const{ return m_id; }
+    inline const Aws::Vector<StringFilter>& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::Vector<StringFilter>& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::Vector<StringFilter>&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline AwsSecurityFindingFilters& WithId(const Aws::Vector<StringFilter>& value) { SetId(value); return *this;}
-    inline AwsSecurityFindingFilters& WithId(Aws::Vector<StringFilter>&& value) { SetId(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddId(const StringFilter& value) { m_idHasBeenSet = true; m_id.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddId(StringFilter&& value) { m_idHasBeenSet = true; m_id.push_back(std::move(value)); return *this; }
+    template<typename IdT = Aws::Vector<StringFilter>>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
+    template<typename IdT = StringFilter>
+    AwsSecurityFindingFilters& AddId(IdT&& value) { m_idHasBeenSet = true; m_id.emplace_back(std::forward<IdT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -95,28 +95,28 @@ namespace Model
      * that generated a finding. In various security findings providers' solutions,
      * this generator can be called a rule, a check, a detector, a plugin, etc.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetGeneratorId() const{ return m_generatorId; }
+    inline const Aws::Vector<StringFilter>& GetGeneratorId() const { return m_generatorId; }
     inline bool GeneratorIdHasBeenSet() const { return m_generatorIdHasBeenSet; }
-    inline void SetGeneratorId(const Aws::Vector<StringFilter>& value) { m_generatorIdHasBeenSet = true; m_generatorId = value; }
-    inline void SetGeneratorId(Aws::Vector<StringFilter>&& value) { m_generatorIdHasBeenSet = true; m_generatorId = std::move(value); }
-    inline AwsSecurityFindingFilters& WithGeneratorId(const Aws::Vector<StringFilter>& value) { SetGeneratorId(value); return *this;}
-    inline AwsSecurityFindingFilters& WithGeneratorId(Aws::Vector<StringFilter>&& value) { SetGeneratorId(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddGeneratorId(const StringFilter& value) { m_generatorIdHasBeenSet = true; m_generatorId.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddGeneratorId(StringFilter&& value) { m_generatorIdHasBeenSet = true; m_generatorId.push_back(std::move(value)); return *this; }
+    template<typename GeneratorIdT = Aws::Vector<StringFilter>>
+    void SetGeneratorId(GeneratorIdT&& value) { m_generatorIdHasBeenSet = true; m_generatorId = std::forward<GeneratorIdT>(value); }
+    template<typename GeneratorIdT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithGeneratorId(GeneratorIdT&& value) { SetGeneratorId(std::forward<GeneratorIdT>(value)); return *this;}
+    template<typename GeneratorIdT = StringFilter>
+    AwsSecurityFindingFilters& AddGeneratorId(GeneratorIdT&& value) { m_generatorIdHasBeenSet = true; m_generatorId.emplace_back(std::forward<GeneratorIdT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The Region from which the finding was generated.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetRegion() const{ return m_region; }
+    inline const Aws::Vector<StringFilter>& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const Aws::Vector<StringFilter>& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(Aws::Vector<StringFilter>&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline AwsSecurityFindingFilters& WithRegion(const Aws::Vector<StringFilter>& value) { SetRegion(value); return *this;}
-    inline AwsSecurityFindingFilters& WithRegion(Aws::Vector<StringFilter>&& value) { SetRegion(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddRegion(const StringFilter& value) { m_regionHasBeenSet = true; m_region.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddRegion(StringFilter&& value) { m_regionHasBeenSet = true; m_region.push_back(std::move(value)); return *this; }
+    template<typename RegionT = Aws::Vector<StringFilter>>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
+    template<typename RegionT = StringFilter>
+    AwsSecurityFindingFilters& AddRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region.emplace_back(std::forward<RegionT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -124,14 +124,14 @@ namespace Model
      * <p>A finding type in the format of <code>namespace/category/classifier</code>
      * that classifies a finding.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetType() const{ return m_type; }
+    inline const Aws::Vector<StringFilter>& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::Vector<StringFilter>& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::Vector<StringFilter>&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline AwsSecurityFindingFilters& WithType(const Aws::Vector<StringFilter>& value) { SetType(value); return *this;}
-    inline AwsSecurityFindingFilters& WithType(Aws::Vector<StringFilter>&& value) { SetType(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddType(const StringFilter& value) { m_typeHasBeenSet = true; m_type.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddType(StringFilter&& value) { m_typeHasBeenSet = true; m_type.push_back(std::move(value)); return *this; }
+    template<typename TypeT = Aws::Vector<StringFilter>>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
+    template<typename TypeT = StringFilter>
+    AwsSecurityFindingFilters& AddType(TypeT&& value) { m_typeHasBeenSet = true; m_type.emplace_back(std::forward<TypeT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -142,14 +142,14 @@ namespace Model
      * Hub, see <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
      */
-    inline const Aws::Vector<DateFilter>& GetFirstObservedAt() const{ return m_firstObservedAt; }
+    inline const Aws::Vector<DateFilter>& GetFirstObservedAt() const { return m_firstObservedAt; }
     inline bool FirstObservedAtHasBeenSet() const { return m_firstObservedAtHasBeenSet; }
-    inline void SetFirstObservedAt(const Aws::Vector<DateFilter>& value) { m_firstObservedAtHasBeenSet = true; m_firstObservedAt = value; }
-    inline void SetFirstObservedAt(Aws::Vector<DateFilter>&& value) { m_firstObservedAtHasBeenSet = true; m_firstObservedAt = std::move(value); }
-    inline AwsSecurityFindingFilters& WithFirstObservedAt(const Aws::Vector<DateFilter>& value) { SetFirstObservedAt(value); return *this;}
-    inline AwsSecurityFindingFilters& WithFirstObservedAt(Aws::Vector<DateFilter>&& value) { SetFirstObservedAt(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddFirstObservedAt(const DateFilter& value) { m_firstObservedAtHasBeenSet = true; m_firstObservedAt.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddFirstObservedAt(DateFilter&& value) { m_firstObservedAtHasBeenSet = true; m_firstObservedAt.push_back(std::move(value)); return *this; }
+    template<typename FirstObservedAtT = Aws::Vector<DateFilter>>
+    void SetFirstObservedAt(FirstObservedAtT&& value) { m_firstObservedAtHasBeenSet = true; m_firstObservedAt = std::forward<FirstObservedAtT>(value); }
+    template<typename FirstObservedAtT = Aws::Vector<DateFilter>>
+    AwsSecurityFindingFilters& WithFirstObservedAt(FirstObservedAtT&& value) { SetFirstObservedAt(std::forward<FirstObservedAtT>(value)); return *this;}
+    template<typename FirstObservedAtT = DateFilter>
+    AwsSecurityFindingFilters& AddFirstObservedAt(FirstObservedAtT&& value) { m_firstObservedAtHasBeenSet = true; m_firstObservedAt.emplace_back(std::forward<FirstObservedAtT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -160,14 +160,14 @@ namespace Model
      * Security Hub, see <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
      */
-    inline const Aws::Vector<DateFilter>& GetLastObservedAt() const{ return m_lastObservedAt; }
+    inline const Aws::Vector<DateFilter>& GetLastObservedAt() const { return m_lastObservedAt; }
     inline bool LastObservedAtHasBeenSet() const { return m_lastObservedAtHasBeenSet; }
-    inline void SetLastObservedAt(const Aws::Vector<DateFilter>& value) { m_lastObservedAtHasBeenSet = true; m_lastObservedAt = value; }
-    inline void SetLastObservedAt(Aws::Vector<DateFilter>&& value) { m_lastObservedAtHasBeenSet = true; m_lastObservedAt = std::move(value); }
-    inline AwsSecurityFindingFilters& WithLastObservedAt(const Aws::Vector<DateFilter>& value) { SetLastObservedAt(value); return *this;}
-    inline AwsSecurityFindingFilters& WithLastObservedAt(Aws::Vector<DateFilter>&& value) { SetLastObservedAt(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddLastObservedAt(const DateFilter& value) { m_lastObservedAtHasBeenSet = true; m_lastObservedAt.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddLastObservedAt(DateFilter&& value) { m_lastObservedAtHasBeenSet = true; m_lastObservedAt.push_back(std::move(value)); return *this; }
+    template<typename LastObservedAtT = Aws::Vector<DateFilter>>
+    void SetLastObservedAt(LastObservedAtT&& value) { m_lastObservedAtHasBeenSet = true; m_lastObservedAt = std::forward<LastObservedAtT>(value); }
+    template<typename LastObservedAtT = Aws::Vector<DateFilter>>
+    AwsSecurityFindingFilters& WithLastObservedAt(LastObservedAtT&& value) { SetLastObservedAt(std::forward<LastObservedAtT>(value)); return *this;}
+    template<typename LastObservedAtT = DateFilter>
+    AwsSecurityFindingFilters& AddLastObservedAt(LastObservedAtT&& value) { m_lastObservedAtHasBeenSet = true; m_lastObservedAt.emplace_back(std::forward<LastObservedAtT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -177,14 +177,14 @@ namespace Model
      * about the validation and formatting of timestamp fields in Security Hub, see <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
      */
-    inline const Aws::Vector<DateFilter>& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Vector<DateFilter>& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Vector<DateFilter>& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Vector<DateFilter>&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline AwsSecurityFindingFilters& WithCreatedAt(const Aws::Vector<DateFilter>& value) { SetCreatedAt(value); return *this;}
-    inline AwsSecurityFindingFilters& WithCreatedAt(Aws::Vector<DateFilter>&& value) { SetCreatedAt(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddCreatedAt(const DateFilter& value) { m_createdAtHasBeenSet = true; m_createdAt.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddCreatedAt(DateFilter&& value) { m_createdAtHasBeenSet = true; m_createdAt.push_back(std::move(value)); return *this; }
+    template<typename CreatedAtT = Aws::Vector<DateFilter>>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Vector<DateFilter>>
+    AwsSecurityFindingFilters& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
+    template<typename CreatedAtT = DateFilter>
+    AwsSecurityFindingFilters& AddCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt.emplace_back(std::forward<CreatedAtT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -194,28 +194,28 @@ namespace Model
      * formatting of timestamp fields in Security Hub, see <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
      */
-    inline const Aws::Vector<DateFilter>& GetUpdatedAt() const{ return m_updatedAt; }
+    inline const Aws::Vector<DateFilter>& GetUpdatedAt() const { return m_updatedAt; }
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-    inline void SetUpdatedAt(const Aws::Vector<DateFilter>& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Vector<DateFilter>&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-    inline AwsSecurityFindingFilters& WithUpdatedAt(const Aws::Vector<DateFilter>& value) { SetUpdatedAt(value); return *this;}
-    inline AwsSecurityFindingFilters& WithUpdatedAt(Aws::Vector<DateFilter>&& value) { SetUpdatedAt(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddUpdatedAt(const DateFilter& value) { m_updatedAtHasBeenSet = true; m_updatedAt.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddUpdatedAt(DateFilter&& value) { m_updatedAtHasBeenSet = true; m_updatedAt.push_back(std::move(value)); return *this; }
+    template<typename UpdatedAtT = Aws::Vector<DateFilter>>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Vector<DateFilter>>
+    AwsSecurityFindingFilters& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
+    template<typename UpdatedAtT = DateFilter>
+    AwsSecurityFindingFilters& AddUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt.emplace_back(std::forward<UpdatedAtT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The label of a finding's severity.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetSeverityLabel() const{ return m_severityLabel; }
+    inline const Aws::Vector<StringFilter>& GetSeverityLabel() const { return m_severityLabel; }
     inline bool SeverityLabelHasBeenSet() const { return m_severityLabelHasBeenSet; }
-    inline void SetSeverityLabel(const Aws::Vector<StringFilter>& value) { m_severityLabelHasBeenSet = true; m_severityLabel = value; }
-    inline void SetSeverityLabel(Aws::Vector<StringFilter>&& value) { m_severityLabelHasBeenSet = true; m_severityLabel = std::move(value); }
-    inline AwsSecurityFindingFilters& WithSeverityLabel(const Aws::Vector<StringFilter>& value) { SetSeverityLabel(value); return *this;}
-    inline AwsSecurityFindingFilters& WithSeverityLabel(Aws::Vector<StringFilter>&& value) { SetSeverityLabel(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddSeverityLabel(const StringFilter& value) { m_severityLabelHasBeenSet = true; m_severityLabel.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddSeverityLabel(StringFilter&& value) { m_severityLabelHasBeenSet = true; m_severityLabel.push_back(std::move(value)); return *this; }
+    template<typename SeverityLabelT = Aws::Vector<StringFilter>>
+    void SetSeverityLabel(SeverityLabelT&& value) { m_severityLabelHasBeenSet = true; m_severityLabel = std::forward<SeverityLabelT>(value); }
+    template<typename SeverityLabelT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithSeverityLabel(SeverityLabelT&& value) { SetSeverityLabel(std::forward<SeverityLabelT>(value)); return *this;}
+    template<typename SeverityLabelT = StringFilter>
+    AwsSecurityFindingFilters& AddSeverityLabel(SeverityLabelT&& value) { m_severityLabelHasBeenSet = true; m_severityLabel.emplace_back(std::forward<SeverityLabelT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -225,14 +225,14 @@ namespace Model
      * identify.</p> <p>Confidence is scored on a 0-100 basis using a ratio scale,
      * where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
      */
-    inline const Aws::Vector<NumberFilter>& GetConfidence() const{ return m_confidence; }
+    inline const Aws::Vector<NumberFilter>& GetConfidence() const { return m_confidence; }
     inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
-    inline void SetConfidence(const Aws::Vector<NumberFilter>& value) { m_confidenceHasBeenSet = true; m_confidence = value; }
-    inline void SetConfidence(Aws::Vector<NumberFilter>&& value) { m_confidenceHasBeenSet = true; m_confidence = std::move(value); }
-    inline AwsSecurityFindingFilters& WithConfidence(const Aws::Vector<NumberFilter>& value) { SetConfidence(value); return *this;}
-    inline AwsSecurityFindingFilters& WithConfidence(Aws::Vector<NumberFilter>&& value) { SetConfidence(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddConfidence(const NumberFilter& value) { m_confidenceHasBeenSet = true; m_confidence.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddConfidence(NumberFilter&& value) { m_confidenceHasBeenSet = true; m_confidence.push_back(std::move(value)); return *this; }
+    template<typename ConfidenceT = Aws::Vector<NumberFilter>>
+    void SetConfidence(ConfidenceT&& value) { m_confidenceHasBeenSet = true; m_confidence = std::forward<ConfidenceT>(value); }
+    template<typename ConfidenceT = Aws::Vector<NumberFilter>>
+    AwsSecurityFindingFilters& WithConfidence(ConfidenceT&& value) { SetConfidence(std::forward<ConfidenceT>(value)); return *this;}
+    template<typename ConfidenceT = NumberFilter>
+    AwsSecurityFindingFilters& AddConfidence(ConfidenceT&& value) { m_confidenceHasBeenSet = true; m_confidence.emplace_back(std::forward<ConfidenceT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -241,56 +241,56 @@ namespace Model
      * finding.</p> <p>A score of 0 means that the underlying resources have no
      * criticality, and a score of 100 is reserved for the most critical resources.</p>
      */
-    inline const Aws::Vector<NumberFilter>& GetCriticality() const{ return m_criticality; }
+    inline const Aws::Vector<NumberFilter>& GetCriticality() const { return m_criticality; }
     inline bool CriticalityHasBeenSet() const { return m_criticalityHasBeenSet; }
-    inline void SetCriticality(const Aws::Vector<NumberFilter>& value) { m_criticalityHasBeenSet = true; m_criticality = value; }
-    inline void SetCriticality(Aws::Vector<NumberFilter>&& value) { m_criticalityHasBeenSet = true; m_criticality = std::move(value); }
-    inline AwsSecurityFindingFilters& WithCriticality(const Aws::Vector<NumberFilter>& value) { SetCriticality(value); return *this;}
-    inline AwsSecurityFindingFilters& WithCriticality(Aws::Vector<NumberFilter>&& value) { SetCriticality(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddCriticality(const NumberFilter& value) { m_criticalityHasBeenSet = true; m_criticality.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddCriticality(NumberFilter&& value) { m_criticalityHasBeenSet = true; m_criticality.push_back(std::move(value)); return *this; }
+    template<typename CriticalityT = Aws::Vector<NumberFilter>>
+    void SetCriticality(CriticalityT&& value) { m_criticalityHasBeenSet = true; m_criticality = std::forward<CriticalityT>(value); }
+    template<typename CriticalityT = Aws::Vector<NumberFilter>>
+    AwsSecurityFindingFilters& WithCriticality(CriticalityT&& value) { SetCriticality(std::forward<CriticalityT>(value)); return *this;}
+    template<typename CriticalityT = NumberFilter>
+    AwsSecurityFindingFilters& AddCriticality(CriticalityT&& value) { m_criticalityHasBeenSet = true; m_criticality.emplace_back(std::forward<CriticalityT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A finding's title.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetTitle() const{ return m_title; }
+    inline const Aws::Vector<StringFilter>& GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    inline void SetTitle(const Aws::Vector<StringFilter>& value) { m_titleHasBeenSet = true; m_title = value; }
-    inline void SetTitle(Aws::Vector<StringFilter>&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-    inline AwsSecurityFindingFilters& WithTitle(const Aws::Vector<StringFilter>& value) { SetTitle(value); return *this;}
-    inline AwsSecurityFindingFilters& WithTitle(Aws::Vector<StringFilter>&& value) { SetTitle(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddTitle(const StringFilter& value) { m_titleHasBeenSet = true; m_title.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddTitle(StringFilter&& value) { m_titleHasBeenSet = true; m_title.push_back(std::move(value)); return *this; }
+    template<typename TitleT = Aws::Vector<StringFilter>>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
+    template<typename TitleT = StringFilter>
+    AwsSecurityFindingFilters& AddTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title.emplace_back(std::forward<TitleT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A finding's description.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetDescription() const{ return m_description; }
+    inline const Aws::Vector<StringFilter>& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::Vector<StringFilter>& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::Vector<StringFilter>&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline AwsSecurityFindingFilters& WithDescription(const Aws::Vector<StringFilter>& value) { SetDescription(value); return *this;}
-    inline AwsSecurityFindingFilters& WithDescription(Aws::Vector<StringFilter>&& value) { SetDescription(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddDescription(const StringFilter& value) { m_descriptionHasBeenSet = true; m_description.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddDescription(StringFilter&& value) { m_descriptionHasBeenSet = true; m_description.push_back(std::move(value)); return *this; }
+    template<typename DescriptionT = Aws::Vector<StringFilter>>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
+    template<typename DescriptionT = StringFilter>
+    AwsSecurityFindingFilters& AddDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description.emplace_back(std::forward<DescriptionT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The recommendation of what to do about the issue described in a finding.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetRecommendationText() const{ return m_recommendationText; }
+    inline const Aws::Vector<StringFilter>& GetRecommendationText() const { return m_recommendationText; }
     inline bool RecommendationTextHasBeenSet() const { return m_recommendationTextHasBeenSet; }
-    inline void SetRecommendationText(const Aws::Vector<StringFilter>& value) { m_recommendationTextHasBeenSet = true; m_recommendationText = value; }
-    inline void SetRecommendationText(Aws::Vector<StringFilter>&& value) { m_recommendationTextHasBeenSet = true; m_recommendationText = std::move(value); }
-    inline AwsSecurityFindingFilters& WithRecommendationText(const Aws::Vector<StringFilter>& value) { SetRecommendationText(value); return *this;}
-    inline AwsSecurityFindingFilters& WithRecommendationText(Aws::Vector<StringFilter>&& value) { SetRecommendationText(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddRecommendationText(const StringFilter& value) { m_recommendationTextHasBeenSet = true; m_recommendationText.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddRecommendationText(StringFilter&& value) { m_recommendationTextHasBeenSet = true; m_recommendationText.push_back(std::move(value)); return *this; }
+    template<typename RecommendationTextT = Aws::Vector<StringFilter>>
+    void SetRecommendationText(RecommendationTextT&& value) { m_recommendationTextHasBeenSet = true; m_recommendationText = std::forward<RecommendationTextT>(value); }
+    template<typename RecommendationTextT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithRecommendationText(RecommendationTextT&& value) { SetRecommendationText(std::forward<RecommendationTextT>(value)); return *this;}
+    template<typename RecommendationTextT = StringFilter>
+    AwsSecurityFindingFilters& AddRecommendationText(RecommendationTextT&& value) { m_recommendationTextHasBeenSet = true; m_recommendationText.emplace_back(std::forward<RecommendationTextT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -298,14 +298,14 @@ namespace Model
      * <p>A URL that links to a page about the current finding in the security findings
      * provider's solution.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetSourceUrl() const{ return m_sourceUrl; }
+    inline const Aws::Vector<StringFilter>& GetSourceUrl() const { return m_sourceUrl; }
     inline bool SourceUrlHasBeenSet() const { return m_sourceUrlHasBeenSet; }
-    inline void SetSourceUrl(const Aws::Vector<StringFilter>& value) { m_sourceUrlHasBeenSet = true; m_sourceUrl = value; }
-    inline void SetSourceUrl(Aws::Vector<StringFilter>&& value) { m_sourceUrlHasBeenSet = true; m_sourceUrl = std::move(value); }
-    inline AwsSecurityFindingFilters& WithSourceUrl(const Aws::Vector<StringFilter>& value) { SetSourceUrl(value); return *this;}
-    inline AwsSecurityFindingFilters& WithSourceUrl(Aws::Vector<StringFilter>&& value) { SetSourceUrl(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddSourceUrl(const StringFilter& value) { m_sourceUrlHasBeenSet = true; m_sourceUrl.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddSourceUrl(StringFilter&& value) { m_sourceUrlHasBeenSet = true; m_sourceUrl.push_back(std::move(value)); return *this; }
+    template<typename SourceUrlT = Aws::Vector<StringFilter>>
+    void SetSourceUrl(SourceUrlT&& value) { m_sourceUrlHasBeenSet = true; m_sourceUrl = std::forward<SourceUrlT>(value); }
+    template<typename SourceUrlT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithSourceUrl(SourceUrlT&& value) { SetSourceUrl(std::forward<SourceUrlT>(value)); return *this;}
+    template<typename SourceUrlT = StringFilter>
+    AwsSecurityFindingFilters& AddSourceUrl(SourceUrlT&& value) { m_sourceUrlHasBeenSet = true; m_sourceUrl.emplace_back(std::forward<SourceUrlT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -314,28 +314,28 @@ namespace Model
      * solution-specific details that aren't part of the defined
      * <code>AwsSecurityFinding</code> format.</p>
      */
-    inline const Aws::Vector<MapFilter>& GetProductFields() const{ return m_productFields; }
+    inline const Aws::Vector<MapFilter>& GetProductFields() const { return m_productFields; }
     inline bool ProductFieldsHasBeenSet() const { return m_productFieldsHasBeenSet; }
-    inline void SetProductFields(const Aws::Vector<MapFilter>& value) { m_productFieldsHasBeenSet = true; m_productFields = value; }
-    inline void SetProductFields(Aws::Vector<MapFilter>&& value) { m_productFieldsHasBeenSet = true; m_productFields = std::move(value); }
-    inline AwsSecurityFindingFilters& WithProductFields(const Aws::Vector<MapFilter>& value) { SetProductFields(value); return *this;}
-    inline AwsSecurityFindingFilters& WithProductFields(Aws::Vector<MapFilter>&& value) { SetProductFields(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddProductFields(const MapFilter& value) { m_productFieldsHasBeenSet = true; m_productFields.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddProductFields(MapFilter&& value) { m_productFieldsHasBeenSet = true; m_productFields.push_back(std::move(value)); return *this; }
+    template<typename ProductFieldsT = Aws::Vector<MapFilter>>
+    void SetProductFields(ProductFieldsT&& value) { m_productFieldsHasBeenSet = true; m_productFields = std::forward<ProductFieldsT>(value); }
+    template<typename ProductFieldsT = Aws::Vector<MapFilter>>
+    AwsSecurityFindingFilters& WithProductFields(ProductFieldsT&& value) { SetProductFields(std::forward<ProductFieldsT>(value)); return *this;}
+    template<typename ProductFieldsT = MapFilter>
+    AwsSecurityFindingFilters& AddProductFields(ProductFieldsT&& value) { m_productFieldsHasBeenSet = true; m_productFields.emplace_back(std::forward<ProductFieldsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The name of the solution (product) that generates findings.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetProductName() const{ return m_productName; }
+    inline const Aws::Vector<StringFilter>& GetProductName() const { return m_productName; }
     inline bool ProductNameHasBeenSet() const { return m_productNameHasBeenSet; }
-    inline void SetProductName(const Aws::Vector<StringFilter>& value) { m_productNameHasBeenSet = true; m_productName = value; }
-    inline void SetProductName(Aws::Vector<StringFilter>&& value) { m_productNameHasBeenSet = true; m_productName = std::move(value); }
-    inline AwsSecurityFindingFilters& WithProductName(const Aws::Vector<StringFilter>& value) { SetProductName(value); return *this;}
-    inline AwsSecurityFindingFilters& WithProductName(Aws::Vector<StringFilter>&& value) { SetProductName(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddProductName(const StringFilter& value) { m_productNameHasBeenSet = true; m_productName.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddProductName(StringFilter&& value) { m_productNameHasBeenSet = true; m_productName.push_back(std::move(value)); return *this; }
+    template<typename ProductNameT = Aws::Vector<StringFilter>>
+    void SetProductName(ProductNameT&& value) { m_productNameHasBeenSet = true; m_productName = std::forward<ProductNameT>(value); }
+    template<typename ProductNameT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithProductName(ProductNameT&& value) { SetProductName(std::forward<ProductNameT>(value)); return *this;}
+    template<typename ProductNameT = StringFilter>
+    AwsSecurityFindingFilters& AddProductName(ProductNameT&& value) { m_productNameHasBeenSet = true; m_productName.emplace_back(std::forward<ProductNameT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -343,14 +343,14 @@ namespace Model
      * <p>The name of the findings provider (company) that owns the solution (product)
      * that generates findings.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetCompanyName() const{ return m_companyName; }
+    inline const Aws::Vector<StringFilter>& GetCompanyName() const { return m_companyName; }
     inline bool CompanyNameHasBeenSet() const { return m_companyNameHasBeenSet; }
-    inline void SetCompanyName(const Aws::Vector<StringFilter>& value) { m_companyNameHasBeenSet = true; m_companyName = value; }
-    inline void SetCompanyName(Aws::Vector<StringFilter>&& value) { m_companyNameHasBeenSet = true; m_companyName = std::move(value); }
-    inline AwsSecurityFindingFilters& WithCompanyName(const Aws::Vector<StringFilter>& value) { SetCompanyName(value); return *this;}
-    inline AwsSecurityFindingFilters& WithCompanyName(Aws::Vector<StringFilter>&& value) { SetCompanyName(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddCompanyName(const StringFilter& value) { m_companyNameHasBeenSet = true; m_companyName.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddCompanyName(StringFilter&& value) { m_companyNameHasBeenSet = true; m_companyName.push_back(std::move(value)); return *this; }
+    template<typename CompanyNameT = Aws::Vector<StringFilter>>
+    void SetCompanyName(CompanyNameT&& value) { m_companyNameHasBeenSet = true; m_companyName = std::forward<CompanyNameT>(value); }
+    template<typename CompanyNameT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithCompanyName(CompanyNameT&& value) { SetCompanyName(std::forward<CompanyNameT>(value)); return *this;}
+    template<typename CompanyNameT = StringFilter>
+    AwsSecurityFindingFilters& AddCompanyName(CompanyNameT&& value) { m_companyNameHasBeenSet = true; m_companyName.emplace_back(std::forward<CompanyNameT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -358,154 +358,154 @@ namespace Model
      * <p>A list of name/value string pairs associated with the finding. These are
      * custom, user-defined fields added to a finding. </p>
      */
-    inline const Aws::Vector<MapFilter>& GetUserDefinedFields() const{ return m_userDefinedFields; }
+    inline const Aws::Vector<MapFilter>& GetUserDefinedFields() const { return m_userDefinedFields; }
     inline bool UserDefinedFieldsHasBeenSet() const { return m_userDefinedFieldsHasBeenSet; }
-    inline void SetUserDefinedFields(const Aws::Vector<MapFilter>& value) { m_userDefinedFieldsHasBeenSet = true; m_userDefinedFields = value; }
-    inline void SetUserDefinedFields(Aws::Vector<MapFilter>&& value) { m_userDefinedFieldsHasBeenSet = true; m_userDefinedFields = std::move(value); }
-    inline AwsSecurityFindingFilters& WithUserDefinedFields(const Aws::Vector<MapFilter>& value) { SetUserDefinedFields(value); return *this;}
-    inline AwsSecurityFindingFilters& WithUserDefinedFields(Aws::Vector<MapFilter>&& value) { SetUserDefinedFields(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddUserDefinedFields(const MapFilter& value) { m_userDefinedFieldsHasBeenSet = true; m_userDefinedFields.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddUserDefinedFields(MapFilter&& value) { m_userDefinedFieldsHasBeenSet = true; m_userDefinedFields.push_back(std::move(value)); return *this; }
+    template<typename UserDefinedFieldsT = Aws::Vector<MapFilter>>
+    void SetUserDefinedFields(UserDefinedFieldsT&& value) { m_userDefinedFieldsHasBeenSet = true; m_userDefinedFields = std::forward<UserDefinedFieldsT>(value); }
+    template<typename UserDefinedFieldsT = Aws::Vector<MapFilter>>
+    AwsSecurityFindingFilters& WithUserDefinedFields(UserDefinedFieldsT&& value) { SetUserDefinedFields(std::forward<UserDefinedFieldsT>(value)); return *this;}
+    template<typename UserDefinedFieldsT = MapFilter>
+    AwsSecurityFindingFilters& AddUserDefinedFields(UserDefinedFieldsT&& value) { m_userDefinedFieldsHasBeenSet = true; m_userDefinedFields.emplace_back(std::forward<UserDefinedFieldsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The name of the malware that was observed.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetMalwareName() const{ return m_malwareName; }
+    inline const Aws::Vector<StringFilter>& GetMalwareName() const { return m_malwareName; }
     inline bool MalwareNameHasBeenSet() const { return m_malwareNameHasBeenSet; }
-    inline void SetMalwareName(const Aws::Vector<StringFilter>& value) { m_malwareNameHasBeenSet = true; m_malwareName = value; }
-    inline void SetMalwareName(Aws::Vector<StringFilter>&& value) { m_malwareNameHasBeenSet = true; m_malwareName = std::move(value); }
-    inline AwsSecurityFindingFilters& WithMalwareName(const Aws::Vector<StringFilter>& value) { SetMalwareName(value); return *this;}
-    inline AwsSecurityFindingFilters& WithMalwareName(Aws::Vector<StringFilter>&& value) { SetMalwareName(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddMalwareName(const StringFilter& value) { m_malwareNameHasBeenSet = true; m_malwareName.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddMalwareName(StringFilter&& value) { m_malwareNameHasBeenSet = true; m_malwareName.push_back(std::move(value)); return *this; }
+    template<typename MalwareNameT = Aws::Vector<StringFilter>>
+    void SetMalwareName(MalwareNameT&& value) { m_malwareNameHasBeenSet = true; m_malwareName = std::forward<MalwareNameT>(value); }
+    template<typename MalwareNameT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithMalwareName(MalwareNameT&& value) { SetMalwareName(std::forward<MalwareNameT>(value)); return *this;}
+    template<typename MalwareNameT = StringFilter>
+    AwsSecurityFindingFilters& AddMalwareName(MalwareNameT&& value) { m_malwareNameHasBeenSet = true; m_malwareName.emplace_back(std::forward<MalwareNameT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The type of the malware that was observed.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetMalwareType() const{ return m_malwareType; }
+    inline const Aws::Vector<StringFilter>& GetMalwareType() const { return m_malwareType; }
     inline bool MalwareTypeHasBeenSet() const { return m_malwareTypeHasBeenSet; }
-    inline void SetMalwareType(const Aws::Vector<StringFilter>& value) { m_malwareTypeHasBeenSet = true; m_malwareType = value; }
-    inline void SetMalwareType(Aws::Vector<StringFilter>&& value) { m_malwareTypeHasBeenSet = true; m_malwareType = std::move(value); }
-    inline AwsSecurityFindingFilters& WithMalwareType(const Aws::Vector<StringFilter>& value) { SetMalwareType(value); return *this;}
-    inline AwsSecurityFindingFilters& WithMalwareType(Aws::Vector<StringFilter>&& value) { SetMalwareType(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddMalwareType(const StringFilter& value) { m_malwareTypeHasBeenSet = true; m_malwareType.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddMalwareType(StringFilter&& value) { m_malwareTypeHasBeenSet = true; m_malwareType.push_back(std::move(value)); return *this; }
+    template<typename MalwareTypeT = Aws::Vector<StringFilter>>
+    void SetMalwareType(MalwareTypeT&& value) { m_malwareTypeHasBeenSet = true; m_malwareType = std::forward<MalwareTypeT>(value); }
+    template<typename MalwareTypeT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithMalwareType(MalwareTypeT&& value) { SetMalwareType(std::forward<MalwareTypeT>(value)); return *this;}
+    template<typename MalwareTypeT = StringFilter>
+    AwsSecurityFindingFilters& AddMalwareType(MalwareTypeT&& value) { m_malwareTypeHasBeenSet = true; m_malwareType.emplace_back(std::forward<MalwareTypeT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The filesystem path of the malware that was observed.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetMalwarePath() const{ return m_malwarePath; }
+    inline const Aws::Vector<StringFilter>& GetMalwarePath() const { return m_malwarePath; }
     inline bool MalwarePathHasBeenSet() const { return m_malwarePathHasBeenSet; }
-    inline void SetMalwarePath(const Aws::Vector<StringFilter>& value) { m_malwarePathHasBeenSet = true; m_malwarePath = value; }
-    inline void SetMalwarePath(Aws::Vector<StringFilter>&& value) { m_malwarePathHasBeenSet = true; m_malwarePath = std::move(value); }
-    inline AwsSecurityFindingFilters& WithMalwarePath(const Aws::Vector<StringFilter>& value) { SetMalwarePath(value); return *this;}
-    inline AwsSecurityFindingFilters& WithMalwarePath(Aws::Vector<StringFilter>&& value) { SetMalwarePath(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddMalwarePath(const StringFilter& value) { m_malwarePathHasBeenSet = true; m_malwarePath.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddMalwarePath(StringFilter&& value) { m_malwarePathHasBeenSet = true; m_malwarePath.push_back(std::move(value)); return *this; }
+    template<typename MalwarePathT = Aws::Vector<StringFilter>>
+    void SetMalwarePath(MalwarePathT&& value) { m_malwarePathHasBeenSet = true; m_malwarePath = std::forward<MalwarePathT>(value); }
+    template<typename MalwarePathT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithMalwarePath(MalwarePathT&& value) { SetMalwarePath(std::forward<MalwarePathT>(value)); return *this;}
+    template<typename MalwarePathT = StringFilter>
+    AwsSecurityFindingFilters& AddMalwarePath(MalwarePathT&& value) { m_malwarePathHasBeenSet = true; m_malwarePath.emplace_back(std::forward<MalwarePathT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The state of the malware that was observed.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetMalwareState() const{ return m_malwareState; }
+    inline const Aws::Vector<StringFilter>& GetMalwareState() const { return m_malwareState; }
     inline bool MalwareStateHasBeenSet() const { return m_malwareStateHasBeenSet; }
-    inline void SetMalwareState(const Aws::Vector<StringFilter>& value) { m_malwareStateHasBeenSet = true; m_malwareState = value; }
-    inline void SetMalwareState(Aws::Vector<StringFilter>&& value) { m_malwareStateHasBeenSet = true; m_malwareState = std::move(value); }
-    inline AwsSecurityFindingFilters& WithMalwareState(const Aws::Vector<StringFilter>& value) { SetMalwareState(value); return *this;}
-    inline AwsSecurityFindingFilters& WithMalwareState(Aws::Vector<StringFilter>&& value) { SetMalwareState(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddMalwareState(const StringFilter& value) { m_malwareStateHasBeenSet = true; m_malwareState.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddMalwareState(StringFilter&& value) { m_malwareStateHasBeenSet = true; m_malwareState.push_back(std::move(value)); return *this; }
+    template<typename MalwareStateT = Aws::Vector<StringFilter>>
+    void SetMalwareState(MalwareStateT&& value) { m_malwareStateHasBeenSet = true; m_malwareState = std::forward<MalwareStateT>(value); }
+    template<typename MalwareStateT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithMalwareState(MalwareStateT&& value) { SetMalwareState(std::forward<MalwareStateT>(value)); return *this;}
+    template<typename MalwareStateT = StringFilter>
+    AwsSecurityFindingFilters& AddMalwareState(MalwareStateT&& value) { m_malwareStateHasBeenSet = true; m_malwareState.emplace_back(std::forward<MalwareStateT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Indicates the direction of network traffic associated with a finding.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetNetworkDirection() const{ return m_networkDirection; }
+    inline const Aws::Vector<StringFilter>& GetNetworkDirection() const { return m_networkDirection; }
     inline bool NetworkDirectionHasBeenSet() const { return m_networkDirectionHasBeenSet; }
-    inline void SetNetworkDirection(const Aws::Vector<StringFilter>& value) { m_networkDirectionHasBeenSet = true; m_networkDirection = value; }
-    inline void SetNetworkDirection(Aws::Vector<StringFilter>&& value) { m_networkDirectionHasBeenSet = true; m_networkDirection = std::move(value); }
-    inline AwsSecurityFindingFilters& WithNetworkDirection(const Aws::Vector<StringFilter>& value) { SetNetworkDirection(value); return *this;}
-    inline AwsSecurityFindingFilters& WithNetworkDirection(Aws::Vector<StringFilter>&& value) { SetNetworkDirection(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddNetworkDirection(const StringFilter& value) { m_networkDirectionHasBeenSet = true; m_networkDirection.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddNetworkDirection(StringFilter&& value) { m_networkDirectionHasBeenSet = true; m_networkDirection.push_back(std::move(value)); return *this; }
+    template<typename NetworkDirectionT = Aws::Vector<StringFilter>>
+    void SetNetworkDirection(NetworkDirectionT&& value) { m_networkDirectionHasBeenSet = true; m_networkDirection = std::forward<NetworkDirectionT>(value); }
+    template<typename NetworkDirectionT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithNetworkDirection(NetworkDirectionT&& value) { SetNetworkDirection(std::forward<NetworkDirectionT>(value)); return *this;}
+    template<typename NetworkDirectionT = StringFilter>
+    AwsSecurityFindingFilters& AddNetworkDirection(NetworkDirectionT&& value) { m_networkDirectionHasBeenSet = true; m_networkDirection.emplace_back(std::forward<NetworkDirectionT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The protocol of network-related information about a finding.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetNetworkProtocol() const{ return m_networkProtocol; }
+    inline const Aws::Vector<StringFilter>& GetNetworkProtocol() const { return m_networkProtocol; }
     inline bool NetworkProtocolHasBeenSet() const { return m_networkProtocolHasBeenSet; }
-    inline void SetNetworkProtocol(const Aws::Vector<StringFilter>& value) { m_networkProtocolHasBeenSet = true; m_networkProtocol = value; }
-    inline void SetNetworkProtocol(Aws::Vector<StringFilter>&& value) { m_networkProtocolHasBeenSet = true; m_networkProtocol = std::move(value); }
-    inline AwsSecurityFindingFilters& WithNetworkProtocol(const Aws::Vector<StringFilter>& value) { SetNetworkProtocol(value); return *this;}
-    inline AwsSecurityFindingFilters& WithNetworkProtocol(Aws::Vector<StringFilter>&& value) { SetNetworkProtocol(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddNetworkProtocol(const StringFilter& value) { m_networkProtocolHasBeenSet = true; m_networkProtocol.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddNetworkProtocol(StringFilter&& value) { m_networkProtocolHasBeenSet = true; m_networkProtocol.push_back(std::move(value)); return *this; }
+    template<typename NetworkProtocolT = Aws::Vector<StringFilter>>
+    void SetNetworkProtocol(NetworkProtocolT&& value) { m_networkProtocolHasBeenSet = true; m_networkProtocol = std::forward<NetworkProtocolT>(value); }
+    template<typename NetworkProtocolT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithNetworkProtocol(NetworkProtocolT&& value) { SetNetworkProtocol(std::forward<NetworkProtocolT>(value)); return *this;}
+    template<typename NetworkProtocolT = StringFilter>
+    AwsSecurityFindingFilters& AddNetworkProtocol(NetworkProtocolT&& value) { m_networkProtocolHasBeenSet = true; m_networkProtocol.emplace_back(std::forward<NetworkProtocolT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The source IPv4 address of network-related information about a finding.</p>
      */
-    inline const Aws::Vector<IpFilter>& GetNetworkSourceIpV4() const{ return m_networkSourceIpV4; }
+    inline const Aws::Vector<IpFilter>& GetNetworkSourceIpV4() const { return m_networkSourceIpV4; }
     inline bool NetworkSourceIpV4HasBeenSet() const { return m_networkSourceIpV4HasBeenSet; }
-    inline void SetNetworkSourceIpV4(const Aws::Vector<IpFilter>& value) { m_networkSourceIpV4HasBeenSet = true; m_networkSourceIpV4 = value; }
-    inline void SetNetworkSourceIpV4(Aws::Vector<IpFilter>&& value) { m_networkSourceIpV4HasBeenSet = true; m_networkSourceIpV4 = std::move(value); }
-    inline AwsSecurityFindingFilters& WithNetworkSourceIpV4(const Aws::Vector<IpFilter>& value) { SetNetworkSourceIpV4(value); return *this;}
-    inline AwsSecurityFindingFilters& WithNetworkSourceIpV4(Aws::Vector<IpFilter>&& value) { SetNetworkSourceIpV4(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddNetworkSourceIpV4(const IpFilter& value) { m_networkSourceIpV4HasBeenSet = true; m_networkSourceIpV4.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddNetworkSourceIpV4(IpFilter&& value) { m_networkSourceIpV4HasBeenSet = true; m_networkSourceIpV4.push_back(std::move(value)); return *this; }
+    template<typename NetworkSourceIpV4T = Aws::Vector<IpFilter>>
+    void SetNetworkSourceIpV4(NetworkSourceIpV4T&& value) { m_networkSourceIpV4HasBeenSet = true; m_networkSourceIpV4 = std::forward<NetworkSourceIpV4T>(value); }
+    template<typename NetworkSourceIpV4T = Aws::Vector<IpFilter>>
+    AwsSecurityFindingFilters& WithNetworkSourceIpV4(NetworkSourceIpV4T&& value) { SetNetworkSourceIpV4(std::forward<NetworkSourceIpV4T>(value)); return *this;}
+    template<typename NetworkSourceIpV4T = IpFilter>
+    AwsSecurityFindingFilters& AddNetworkSourceIpV4(NetworkSourceIpV4T&& value) { m_networkSourceIpV4HasBeenSet = true; m_networkSourceIpV4.emplace_back(std::forward<NetworkSourceIpV4T>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The source IPv6 address of network-related information about a finding.</p>
      */
-    inline const Aws::Vector<IpFilter>& GetNetworkSourceIpV6() const{ return m_networkSourceIpV6; }
+    inline const Aws::Vector<IpFilter>& GetNetworkSourceIpV6() const { return m_networkSourceIpV6; }
     inline bool NetworkSourceIpV6HasBeenSet() const { return m_networkSourceIpV6HasBeenSet; }
-    inline void SetNetworkSourceIpV6(const Aws::Vector<IpFilter>& value) { m_networkSourceIpV6HasBeenSet = true; m_networkSourceIpV6 = value; }
-    inline void SetNetworkSourceIpV6(Aws::Vector<IpFilter>&& value) { m_networkSourceIpV6HasBeenSet = true; m_networkSourceIpV6 = std::move(value); }
-    inline AwsSecurityFindingFilters& WithNetworkSourceIpV6(const Aws::Vector<IpFilter>& value) { SetNetworkSourceIpV6(value); return *this;}
-    inline AwsSecurityFindingFilters& WithNetworkSourceIpV6(Aws::Vector<IpFilter>&& value) { SetNetworkSourceIpV6(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddNetworkSourceIpV6(const IpFilter& value) { m_networkSourceIpV6HasBeenSet = true; m_networkSourceIpV6.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddNetworkSourceIpV6(IpFilter&& value) { m_networkSourceIpV6HasBeenSet = true; m_networkSourceIpV6.push_back(std::move(value)); return *this; }
+    template<typename NetworkSourceIpV6T = Aws::Vector<IpFilter>>
+    void SetNetworkSourceIpV6(NetworkSourceIpV6T&& value) { m_networkSourceIpV6HasBeenSet = true; m_networkSourceIpV6 = std::forward<NetworkSourceIpV6T>(value); }
+    template<typename NetworkSourceIpV6T = Aws::Vector<IpFilter>>
+    AwsSecurityFindingFilters& WithNetworkSourceIpV6(NetworkSourceIpV6T&& value) { SetNetworkSourceIpV6(std::forward<NetworkSourceIpV6T>(value)); return *this;}
+    template<typename NetworkSourceIpV6T = IpFilter>
+    AwsSecurityFindingFilters& AddNetworkSourceIpV6(NetworkSourceIpV6T&& value) { m_networkSourceIpV6HasBeenSet = true; m_networkSourceIpV6.emplace_back(std::forward<NetworkSourceIpV6T>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The source port of network-related information about a finding.</p>
      */
-    inline const Aws::Vector<NumberFilter>& GetNetworkSourcePort() const{ return m_networkSourcePort; }
+    inline const Aws::Vector<NumberFilter>& GetNetworkSourcePort() const { return m_networkSourcePort; }
     inline bool NetworkSourcePortHasBeenSet() const { return m_networkSourcePortHasBeenSet; }
-    inline void SetNetworkSourcePort(const Aws::Vector<NumberFilter>& value) { m_networkSourcePortHasBeenSet = true; m_networkSourcePort = value; }
-    inline void SetNetworkSourcePort(Aws::Vector<NumberFilter>&& value) { m_networkSourcePortHasBeenSet = true; m_networkSourcePort = std::move(value); }
-    inline AwsSecurityFindingFilters& WithNetworkSourcePort(const Aws::Vector<NumberFilter>& value) { SetNetworkSourcePort(value); return *this;}
-    inline AwsSecurityFindingFilters& WithNetworkSourcePort(Aws::Vector<NumberFilter>&& value) { SetNetworkSourcePort(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddNetworkSourcePort(const NumberFilter& value) { m_networkSourcePortHasBeenSet = true; m_networkSourcePort.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddNetworkSourcePort(NumberFilter&& value) { m_networkSourcePortHasBeenSet = true; m_networkSourcePort.push_back(std::move(value)); return *this; }
+    template<typename NetworkSourcePortT = Aws::Vector<NumberFilter>>
+    void SetNetworkSourcePort(NetworkSourcePortT&& value) { m_networkSourcePortHasBeenSet = true; m_networkSourcePort = std::forward<NetworkSourcePortT>(value); }
+    template<typename NetworkSourcePortT = Aws::Vector<NumberFilter>>
+    AwsSecurityFindingFilters& WithNetworkSourcePort(NetworkSourcePortT&& value) { SetNetworkSourcePort(std::forward<NetworkSourcePortT>(value)); return *this;}
+    template<typename NetworkSourcePortT = NumberFilter>
+    AwsSecurityFindingFilters& AddNetworkSourcePort(NetworkSourcePortT&& value) { m_networkSourcePortHasBeenSet = true; m_networkSourcePort.emplace_back(std::forward<NetworkSourcePortT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The source domain of network-related information about a finding.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetNetworkSourceDomain() const{ return m_networkSourceDomain; }
+    inline const Aws::Vector<StringFilter>& GetNetworkSourceDomain() const { return m_networkSourceDomain; }
     inline bool NetworkSourceDomainHasBeenSet() const { return m_networkSourceDomainHasBeenSet; }
-    inline void SetNetworkSourceDomain(const Aws::Vector<StringFilter>& value) { m_networkSourceDomainHasBeenSet = true; m_networkSourceDomain = value; }
-    inline void SetNetworkSourceDomain(Aws::Vector<StringFilter>&& value) { m_networkSourceDomainHasBeenSet = true; m_networkSourceDomain = std::move(value); }
-    inline AwsSecurityFindingFilters& WithNetworkSourceDomain(const Aws::Vector<StringFilter>& value) { SetNetworkSourceDomain(value); return *this;}
-    inline AwsSecurityFindingFilters& WithNetworkSourceDomain(Aws::Vector<StringFilter>&& value) { SetNetworkSourceDomain(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddNetworkSourceDomain(const StringFilter& value) { m_networkSourceDomainHasBeenSet = true; m_networkSourceDomain.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddNetworkSourceDomain(StringFilter&& value) { m_networkSourceDomainHasBeenSet = true; m_networkSourceDomain.push_back(std::move(value)); return *this; }
+    template<typename NetworkSourceDomainT = Aws::Vector<StringFilter>>
+    void SetNetworkSourceDomain(NetworkSourceDomainT&& value) { m_networkSourceDomainHasBeenSet = true; m_networkSourceDomain = std::forward<NetworkSourceDomainT>(value); }
+    template<typename NetworkSourceDomainT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithNetworkSourceDomain(NetworkSourceDomainT&& value) { SetNetworkSourceDomain(std::forward<NetworkSourceDomainT>(value)); return *this;}
+    template<typename NetworkSourceDomainT = StringFilter>
+    AwsSecurityFindingFilters& AddNetworkSourceDomain(NetworkSourceDomainT&& value) { m_networkSourceDomainHasBeenSet = true; m_networkSourceDomain.emplace_back(std::forward<NetworkSourceDomainT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -513,14 +513,14 @@ namespace Model
      * <p>The source media access control (MAC) address of network-related information
      * about a finding.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetNetworkSourceMac() const{ return m_networkSourceMac; }
+    inline const Aws::Vector<StringFilter>& GetNetworkSourceMac() const { return m_networkSourceMac; }
     inline bool NetworkSourceMacHasBeenSet() const { return m_networkSourceMacHasBeenSet; }
-    inline void SetNetworkSourceMac(const Aws::Vector<StringFilter>& value) { m_networkSourceMacHasBeenSet = true; m_networkSourceMac = value; }
-    inline void SetNetworkSourceMac(Aws::Vector<StringFilter>&& value) { m_networkSourceMacHasBeenSet = true; m_networkSourceMac = std::move(value); }
-    inline AwsSecurityFindingFilters& WithNetworkSourceMac(const Aws::Vector<StringFilter>& value) { SetNetworkSourceMac(value); return *this;}
-    inline AwsSecurityFindingFilters& WithNetworkSourceMac(Aws::Vector<StringFilter>&& value) { SetNetworkSourceMac(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddNetworkSourceMac(const StringFilter& value) { m_networkSourceMacHasBeenSet = true; m_networkSourceMac.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddNetworkSourceMac(StringFilter&& value) { m_networkSourceMacHasBeenSet = true; m_networkSourceMac.push_back(std::move(value)); return *this; }
+    template<typename NetworkSourceMacT = Aws::Vector<StringFilter>>
+    void SetNetworkSourceMac(NetworkSourceMacT&& value) { m_networkSourceMacHasBeenSet = true; m_networkSourceMac = std::forward<NetworkSourceMacT>(value); }
+    template<typename NetworkSourceMacT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithNetworkSourceMac(NetworkSourceMacT&& value) { SetNetworkSourceMac(std::forward<NetworkSourceMacT>(value)); return *this;}
+    template<typename NetworkSourceMacT = StringFilter>
+    AwsSecurityFindingFilters& AddNetworkSourceMac(NetworkSourceMacT&& value) { m_networkSourceMacHasBeenSet = true; m_networkSourceMac.emplace_back(std::forward<NetworkSourceMacT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -528,14 +528,14 @@ namespace Model
      * <p>The destination IPv4 address of network-related information about a
      * finding.</p>
      */
-    inline const Aws::Vector<IpFilter>& GetNetworkDestinationIpV4() const{ return m_networkDestinationIpV4; }
+    inline const Aws::Vector<IpFilter>& GetNetworkDestinationIpV4() const { return m_networkDestinationIpV4; }
     inline bool NetworkDestinationIpV4HasBeenSet() const { return m_networkDestinationIpV4HasBeenSet; }
-    inline void SetNetworkDestinationIpV4(const Aws::Vector<IpFilter>& value) { m_networkDestinationIpV4HasBeenSet = true; m_networkDestinationIpV4 = value; }
-    inline void SetNetworkDestinationIpV4(Aws::Vector<IpFilter>&& value) { m_networkDestinationIpV4HasBeenSet = true; m_networkDestinationIpV4 = std::move(value); }
-    inline AwsSecurityFindingFilters& WithNetworkDestinationIpV4(const Aws::Vector<IpFilter>& value) { SetNetworkDestinationIpV4(value); return *this;}
-    inline AwsSecurityFindingFilters& WithNetworkDestinationIpV4(Aws::Vector<IpFilter>&& value) { SetNetworkDestinationIpV4(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddNetworkDestinationIpV4(const IpFilter& value) { m_networkDestinationIpV4HasBeenSet = true; m_networkDestinationIpV4.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddNetworkDestinationIpV4(IpFilter&& value) { m_networkDestinationIpV4HasBeenSet = true; m_networkDestinationIpV4.push_back(std::move(value)); return *this; }
+    template<typename NetworkDestinationIpV4T = Aws::Vector<IpFilter>>
+    void SetNetworkDestinationIpV4(NetworkDestinationIpV4T&& value) { m_networkDestinationIpV4HasBeenSet = true; m_networkDestinationIpV4 = std::forward<NetworkDestinationIpV4T>(value); }
+    template<typename NetworkDestinationIpV4T = Aws::Vector<IpFilter>>
+    AwsSecurityFindingFilters& WithNetworkDestinationIpV4(NetworkDestinationIpV4T&& value) { SetNetworkDestinationIpV4(std::forward<NetworkDestinationIpV4T>(value)); return *this;}
+    template<typename NetworkDestinationIpV4T = IpFilter>
+    AwsSecurityFindingFilters& AddNetworkDestinationIpV4(NetworkDestinationIpV4T&& value) { m_networkDestinationIpV4HasBeenSet = true; m_networkDestinationIpV4.emplace_back(std::forward<NetworkDestinationIpV4T>(value)); return *this; }
     ///@}
 
     ///@{
@@ -543,84 +543,84 @@ namespace Model
      * <p>The destination IPv6 address of network-related information about a
      * finding.</p>
      */
-    inline const Aws::Vector<IpFilter>& GetNetworkDestinationIpV6() const{ return m_networkDestinationIpV6; }
+    inline const Aws::Vector<IpFilter>& GetNetworkDestinationIpV6() const { return m_networkDestinationIpV6; }
     inline bool NetworkDestinationIpV6HasBeenSet() const { return m_networkDestinationIpV6HasBeenSet; }
-    inline void SetNetworkDestinationIpV6(const Aws::Vector<IpFilter>& value) { m_networkDestinationIpV6HasBeenSet = true; m_networkDestinationIpV6 = value; }
-    inline void SetNetworkDestinationIpV6(Aws::Vector<IpFilter>&& value) { m_networkDestinationIpV6HasBeenSet = true; m_networkDestinationIpV6 = std::move(value); }
-    inline AwsSecurityFindingFilters& WithNetworkDestinationIpV6(const Aws::Vector<IpFilter>& value) { SetNetworkDestinationIpV6(value); return *this;}
-    inline AwsSecurityFindingFilters& WithNetworkDestinationIpV6(Aws::Vector<IpFilter>&& value) { SetNetworkDestinationIpV6(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddNetworkDestinationIpV6(const IpFilter& value) { m_networkDestinationIpV6HasBeenSet = true; m_networkDestinationIpV6.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddNetworkDestinationIpV6(IpFilter&& value) { m_networkDestinationIpV6HasBeenSet = true; m_networkDestinationIpV6.push_back(std::move(value)); return *this; }
+    template<typename NetworkDestinationIpV6T = Aws::Vector<IpFilter>>
+    void SetNetworkDestinationIpV6(NetworkDestinationIpV6T&& value) { m_networkDestinationIpV6HasBeenSet = true; m_networkDestinationIpV6 = std::forward<NetworkDestinationIpV6T>(value); }
+    template<typename NetworkDestinationIpV6T = Aws::Vector<IpFilter>>
+    AwsSecurityFindingFilters& WithNetworkDestinationIpV6(NetworkDestinationIpV6T&& value) { SetNetworkDestinationIpV6(std::forward<NetworkDestinationIpV6T>(value)); return *this;}
+    template<typename NetworkDestinationIpV6T = IpFilter>
+    AwsSecurityFindingFilters& AddNetworkDestinationIpV6(NetworkDestinationIpV6T&& value) { m_networkDestinationIpV6HasBeenSet = true; m_networkDestinationIpV6.emplace_back(std::forward<NetworkDestinationIpV6T>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The destination port of network-related information about a finding.</p>
      */
-    inline const Aws::Vector<NumberFilter>& GetNetworkDestinationPort() const{ return m_networkDestinationPort; }
+    inline const Aws::Vector<NumberFilter>& GetNetworkDestinationPort() const { return m_networkDestinationPort; }
     inline bool NetworkDestinationPortHasBeenSet() const { return m_networkDestinationPortHasBeenSet; }
-    inline void SetNetworkDestinationPort(const Aws::Vector<NumberFilter>& value) { m_networkDestinationPortHasBeenSet = true; m_networkDestinationPort = value; }
-    inline void SetNetworkDestinationPort(Aws::Vector<NumberFilter>&& value) { m_networkDestinationPortHasBeenSet = true; m_networkDestinationPort = std::move(value); }
-    inline AwsSecurityFindingFilters& WithNetworkDestinationPort(const Aws::Vector<NumberFilter>& value) { SetNetworkDestinationPort(value); return *this;}
-    inline AwsSecurityFindingFilters& WithNetworkDestinationPort(Aws::Vector<NumberFilter>&& value) { SetNetworkDestinationPort(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddNetworkDestinationPort(const NumberFilter& value) { m_networkDestinationPortHasBeenSet = true; m_networkDestinationPort.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddNetworkDestinationPort(NumberFilter&& value) { m_networkDestinationPortHasBeenSet = true; m_networkDestinationPort.push_back(std::move(value)); return *this; }
+    template<typename NetworkDestinationPortT = Aws::Vector<NumberFilter>>
+    void SetNetworkDestinationPort(NetworkDestinationPortT&& value) { m_networkDestinationPortHasBeenSet = true; m_networkDestinationPort = std::forward<NetworkDestinationPortT>(value); }
+    template<typename NetworkDestinationPortT = Aws::Vector<NumberFilter>>
+    AwsSecurityFindingFilters& WithNetworkDestinationPort(NetworkDestinationPortT&& value) { SetNetworkDestinationPort(std::forward<NetworkDestinationPortT>(value)); return *this;}
+    template<typename NetworkDestinationPortT = NumberFilter>
+    AwsSecurityFindingFilters& AddNetworkDestinationPort(NetworkDestinationPortT&& value) { m_networkDestinationPortHasBeenSet = true; m_networkDestinationPort.emplace_back(std::forward<NetworkDestinationPortT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The destination domain of network-related information about a finding.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetNetworkDestinationDomain() const{ return m_networkDestinationDomain; }
+    inline const Aws::Vector<StringFilter>& GetNetworkDestinationDomain() const { return m_networkDestinationDomain; }
     inline bool NetworkDestinationDomainHasBeenSet() const { return m_networkDestinationDomainHasBeenSet; }
-    inline void SetNetworkDestinationDomain(const Aws::Vector<StringFilter>& value) { m_networkDestinationDomainHasBeenSet = true; m_networkDestinationDomain = value; }
-    inline void SetNetworkDestinationDomain(Aws::Vector<StringFilter>&& value) { m_networkDestinationDomainHasBeenSet = true; m_networkDestinationDomain = std::move(value); }
-    inline AwsSecurityFindingFilters& WithNetworkDestinationDomain(const Aws::Vector<StringFilter>& value) { SetNetworkDestinationDomain(value); return *this;}
-    inline AwsSecurityFindingFilters& WithNetworkDestinationDomain(Aws::Vector<StringFilter>&& value) { SetNetworkDestinationDomain(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddNetworkDestinationDomain(const StringFilter& value) { m_networkDestinationDomainHasBeenSet = true; m_networkDestinationDomain.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddNetworkDestinationDomain(StringFilter&& value) { m_networkDestinationDomainHasBeenSet = true; m_networkDestinationDomain.push_back(std::move(value)); return *this; }
+    template<typename NetworkDestinationDomainT = Aws::Vector<StringFilter>>
+    void SetNetworkDestinationDomain(NetworkDestinationDomainT&& value) { m_networkDestinationDomainHasBeenSet = true; m_networkDestinationDomain = std::forward<NetworkDestinationDomainT>(value); }
+    template<typename NetworkDestinationDomainT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithNetworkDestinationDomain(NetworkDestinationDomainT&& value) { SetNetworkDestinationDomain(std::forward<NetworkDestinationDomainT>(value)); return *this;}
+    template<typename NetworkDestinationDomainT = StringFilter>
+    AwsSecurityFindingFilters& AddNetworkDestinationDomain(NetworkDestinationDomainT&& value) { m_networkDestinationDomainHasBeenSet = true; m_networkDestinationDomain.emplace_back(std::forward<NetworkDestinationDomainT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The name of the process.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetProcessName() const{ return m_processName; }
+    inline const Aws::Vector<StringFilter>& GetProcessName() const { return m_processName; }
     inline bool ProcessNameHasBeenSet() const { return m_processNameHasBeenSet; }
-    inline void SetProcessName(const Aws::Vector<StringFilter>& value) { m_processNameHasBeenSet = true; m_processName = value; }
-    inline void SetProcessName(Aws::Vector<StringFilter>&& value) { m_processNameHasBeenSet = true; m_processName = std::move(value); }
-    inline AwsSecurityFindingFilters& WithProcessName(const Aws::Vector<StringFilter>& value) { SetProcessName(value); return *this;}
-    inline AwsSecurityFindingFilters& WithProcessName(Aws::Vector<StringFilter>&& value) { SetProcessName(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddProcessName(const StringFilter& value) { m_processNameHasBeenSet = true; m_processName.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddProcessName(StringFilter&& value) { m_processNameHasBeenSet = true; m_processName.push_back(std::move(value)); return *this; }
+    template<typename ProcessNameT = Aws::Vector<StringFilter>>
+    void SetProcessName(ProcessNameT&& value) { m_processNameHasBeenSet = true; m_processName = std::forward<ProcessNameT>(value); }
+    template<typename ProcessNameT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithProcessName(ProcessNameT&& value) { SetProcessName(std::forward<ProcessNameT>(value)); return *this;}
+    template<typename ProcessNameT = StringFilter>
+    AwsSecurityFindingFilters& AddProcessName(ProcessNameT&& value) { m_processNameHasBeenSet = true; m_processName.emplace_back(std::forward<ProcessNameT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The path to the process executable.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetProcessPath() const{ return m_processPath; }
+    inline const Aws::Vector<StringFilter>& GetProcessPath() const { return m_processPath; }
     inline bool ProcessPathHasBeenSet() const { return m_processPathHasBeenSet; }
-    inline void SetProcessPath(const Aws::Vector<StringFilter>& value) { m_processPathHasBeenSet = true; m_processPath = value; }
-    inline void SetProcessPath(Aws::Vector<StringFilter>&& value) { m_processPathHasBeenSet = true; m_processPath = std::move(value); }
-    inline AwsSecurityFindingFilters& WithProcessPath(const Aws::Vector<StringFilter>& value) { SetProcessPath(value); return *this;}
-    inline AwsSecurityFindingFilters& WithProcessPath(Aws::Vector<StringFilter>&& value) { SetProcessPath(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddProcessPath(const StringFilter& value) { m_processPathHasBeenSet = true; m_processPath.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddProcessPath(StringFilter&& value) { m_processPathHasBeenSet = true; m_processPath.push_back(std::move(value)); return *this; }
+    template<typename ProcessPathT = Aws::Vector<StringFilter>>
+    void SetProcessPath(ProcessPathT&& value) { m_processPathHasBeenSet = true; m_processPath = std::forward<ProcessPathT>(value); }
+    template<typename ProcessPathT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithProcessPath(ProcessPathT&& value) { SetProcessPath(std::forward<ProcessPathT>(value)); return *this;}
+    template<typename ProcessPathT = StringFilter>
+    AwsSecurityFindingFilters& AddProcessPath(ProcessPathT&& value) { m_processPathHasBeenSet = true; m_processPath.emplace_back(std::forward<ProcessPathT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The process ID.</p>
      */
-    inline const Aws::Vector<NumberFilter>& GetProcessPid() const{ return m_processPid; }
+    inline const Aws::Vector<NumberFilter>& GetProcessPid() const { return m_processPid; }
     inline bool ProcessPidHasBeenSet() const { return m_processPidHasBeenSet; }
-    inline void SetProcessPid(const Aws::Vector<NumberFilter>& value) { m_processPidHasBeenSet = true; m_processPid = value; }
-    inline void SetProcessPid(Aws::Vector<NumberFilter>&& value) { m_processPidHasBeenSet = true; m_processPid = std::move(value); }
-    inline AwsSecurityFindingFilters& WithProcessPid(const Aws::Vector<NumberFilter>& value) { SetProcessPid(value); return *this;}
-    inline AwsSecurityFindingFilters& WithProcessPid(Aws::Vector<NumberFilter>&& value) { SetProcessPid(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddProcessPid(const NumberFilter& value) { m_processPidHasBeenSet = true; m_processPid.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddProcessPid(NumberFilter&& value) { m_processPidHasBeenSet = true; m_processPid.push_back(std::move(value)); return *this; }
+    template<typename ProcessPidT = Aws::Vector<NumberFilter>>
+    void SetProcessPid(ProcessPidT&& value) { m_processPidHasBeenSet = true; m_processPid = std::forward<ProcessPidT>(value); }
+    template<typename ProcessPidT = Aws::Vector<NumberFilter>>
+    AwsSecurityFindingFilters& WithProcessPid(ProcessPidT&& value) { SetProcessPid(std::forward<ProcessPidT>(value)); return *this;}
+    template<typename ProcessPidT = NumberFilter>
+    AwsSecurityFindingFilters& AddProcessPid(ProcessPidT&& value) { m_processPidHasBeenSet = true; m_processPid.emplace_back(std::forward<ProcessPidT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -628,14 +628,14 @@ namespace Model
      * <p>The parent process ID. This field accepts positive integers between
      * <code>O</code> and <code>2147483647</code>.</p>
      */
-    inline const Aws::Vector<NumberFilter>& GetProcessParentPid() const{ return m_processParentPid; }
+    inline const Aws::Vector<NumberFilter>& GetProcessParentPid() const { return m_processParentPid; }
     inline bool ProcessParentPidHasBeenSet() const { return m_processParentPidHasBeenSet; }
-    inline void SetProcessParentPid(const Aws::Vector<NumberFilter>& value) { m_processParentPidHasBeenSet = true; m_processParentPid = value; }
-    inline void SetProcessParentPid(Aws::Vector<NumberFilter>&& value) { m_processParentPidHasBeenSet = true; m_processParentPid = std::move(value); }
-    inline AwsSecurityFindingFilters& WithProcessParentPid(const Aws::Vector<NumberFilter>& value) { SetProcessParentPid(value); return *this;}
-    inline AwsSecurityFindingFilters& WithProcessParentPid(Aws::Vector<NumberFilter>&& value) { SetProcessParentPid(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddProcessParentPid(const NumberFilter& value) { m_processParentPidHasBeenSet = true; m_processParentPid.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddProcessParentPid(NumberFilter&& value) { m_processParentPidHasBeenSet = true; m_processParentPid.push_back(std::move(value)); return *this; }
+    template<typename ProcessParentPidT = Aws::Vector<NumberFilter>>
+    void SetProcessParentPid(ProcessParentPidT&& value) { m_processParentPidHasBeenSet = true; m_processParentPid = std::forward<ProcessParentPidT>(value); }
+    template<typename ProcessParentPidT = Aws::Vector<NumberFilter>>
+    AwsSecurityFindingFilters& WithProcessParentPid(ProcessParentPidT&& value) { SetProcessParentPid(std::forward<ProcessParentPidT>(value)); return *this;}
+    template<typename ProcessParentPidT = NumberFilter>
+    AwsSecurityFindingFilters& AddProcessParentPid(ProcessParentPidT&& value) { m_processParentPidHasBeenSet = true; m_processParentPid.emplace_back(std::forward<ProcessParentPidT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -645,14 +645,14 @@ namespace Model
      * Hub, see <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
      */
-    inline const Aws::Vector<DateFilter>& GetProcessLaunchedAt() const{ return m_processLaunchedAt; }
+    inline const Aws::Vector<DateFilter>& GetProcessLaunchedAt() const { return m_processLaunchedAt; }
     inline bool ProcessLaunchedAtHasBeenSet() const { return m_processLaunchedAtHasBeenSet; }
-    inline void SetProcessLaunchedAt(const Aws::Vector<DateFilter>& value) { m_processLaunchedAtHasBeenSet = true; m_processLaunchedAt = value; }
-    inline void SetProcessLaunchedAt(Aws::Vector<DateFilter>&& value) { m_processLaunchedAtHasBeenSet = true; m_processLaunchedAt = std::move(value); }
-    inline AwsSecurityFindingFilters& WithProcessLaunchedAt(const Aws::Vector<DateFilter>& value) { SetProcessLaunchedAt(value); return *this;}
-    inline AwsSecurityFindingFilters& WithProcessLaunchedAt(Aws::Vector<DateFilter>&& value) { SetProcessLaunchedAt(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddProcessLaunchedAt(const DateFilter& value) { m_processLaunchedAtHasBeenSet = true; m_processLaunchedAt.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddProcessLaunchedAt(DateFilter&& value) { m_processLaunchedAtHasBeenSet = true; m_processLaunchedAt.push_back(std::move(value)); return *this; }
+    template<typename ProcessLaunchedAtT = Aws::Vector<DateFilter>>
+    void SetProcessLaunchedAt(ProcessLaunchedAtT&& value) { m_processLaunchedAtHasBeenSet = true; m_processLaunchedAt = std::forward<ProcessLaunchedAtT>(value); }
+    template<typename ProcessLaunchedAtT = Aws::Vector<DateFilter>>
+    AwsSecurityFindingFilters& WithProcessLaunchedAt(ProcessLaunchedAtT&& value) { SetProcessLaunchedAt(std::forward<ProcessLaunchedAtT>(value)); return *this;}
+    template<typename ProcessLaunchedAtT = DateFilter>
+    AwsSecurityFindingFilters& AddProcessLaunchedAt(ProcessLaunchedAtT&& value) { m_processLaunchedAtHasBeenSet = true; m_processLaunchedAt.emplace_back(std::forward<ProcessLaunchedAtT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -662,56 +662,56 @@ namespace Model
      * Hub, see <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
      */
-    inline const Aws::Vector<DateFilter>& GetProcessTerminatedAt() const{ return m_processTerminatedAt; }
+    inline const Aws::Vector<DateFilter>& GetProcessTerminatedAt() const { return m_processTerminatedAt; }
     inline bool ProcessTerminatedAtHasBeenSet() const { return m_processTerminatedAtHasBeenSet; }
-    inline void SetProcessTerminatedAt(const Aws::Vector<DateFilter>& value) { m_processTerminatedAtHasBeenSet = true; m_processTerminatedAt = value; }
-    inline void SetProcessTerminatedAt(Aws::Vector<DateFilter>&& value) { m_processTerminatedAtHasBeenSet = true; m_processTerminatedAt = std::move(value); }
-    inline AwsSecurityFindingFilters& WithProcessTerminatedAt(const Aws::Vector<DateFilter>& value) { SetProcessTerminatedAt(value); return *this;}
-    inline AwsSecurityFindingFilters& WithProcessTerminatedAt(Aws::Vector<DateFilter>&& value) { SetProcessTerminatedAt(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddProcessTerminatedAt(const DateFilter& value) { m_processTerminatedAtHasBeenSet = true; m_processTerminatedAt.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddProcessTerminatedAt(DateFilter&& value) { m_processTerminatedAtHasBeenSet = true; m_processTerminatedAt.push_back(std::move(value)); return *this; }
+    template<typename ProcessTerminatedAtT = Aws::Vector<DateFilter>>
+    void SetProcessTerminatedAt(ProcessTerminatedAtT&& value) { m_processTerminatedAtHasBeenSet = true; m_processTerminatedAt = std::forward<ProcessTerminatedAtT>(value); }
+    template<typename ProcessTerminatedAtT = Aws::Vector<DateFilter>>
+    AwsSecurityFindingFilters& WithProcessTerminatedAt(ProcessTerminatedAtT&& value) { SetProcessTerminatedAt(std::forward<ProcessTerminatedAtT>(value)); return *this;}
+    template<typename ProcessTerminatedAtT = DateFilter>
+    AwsSecurityFindingFilters& AddProcessTerminatedAt(ProcessTerminatedAtT&& value) { m_processTerminatedAtHasBeenSet = true; m_processTerminatedAt.emplace_back(std::forward<ProcessTerminatedAtT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The type of a threat intelligence indicator.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetThreatIntelIndicatorType() const{ return m_threatIntelIndicatorType; }
+    inline const Aws::Vector<StringFilter>& GetThreatIntelIndicatorType() const { return m_threatIntelIndicatorType; }
     inline bool ThreatIntelIndicatorTypeHasBeenSet() const { return m_threatIntelIndicatorTypeHasBeenSet; }
-    inline void SetThreatIntelIndicatorType(const Aws::Vector<StringFilter>& value) { m_threatIntelIndicatorTypeHasBeenSet = true; m_threatIntelIndicatorType = value; }
-    inline void SetThreatIntelIndicatorType(Aws::Vector<StringFilter>&& value) { m_threatIntelIndicatorTypeHasBeenSet = true; m_threatIntelIndicatorType = std::move(value); }
-    inline AwsSecurityFindingFilters& WithThreatIntelIndicatorType(const Aws::Vector<StringFilter>& value) { SetThreatIntelIndicatorType(value); return *this;}
-    inline AwsSecurityFindingFilters& WithThreatIntelIndicatorType(Aws::Vector<StringFilter>&& value) { SetThreatIntelIndicatorType(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddThreatIntelIndicatorType(const StringFilter& value) { m_threatIntelIndicatorTypeHasBeenSet = true; m_threatIntelIndicatorType.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddThreatIntelIndicatorType(StringFilter&& value) { m_threatIntelIndicatorTypeHasBeenSet = true; m_threatIntelIndicatorType.push_back(std::move(value)); return *this; }
+    template<typename ThreatIntelIndicatorTypeT = Aws::Vector<StringFilter>>
+    void SetThreatIntelIndicatorType(ThreatIntelIndicatorTypeT&& value) { m_threatIntelIndicatorTypeHasBeenSet = true; m_threatIntelIndicatorType = std::forward<ThreatIntelIndicatorTypeT>(value); }
+    template<typename ThreatIntelIndicatorTypeT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithThreatIntelIndicatorType(ThreatIntelIndicatorTypeT&& value) { SetThreatIntelIndicatorType(std::forward<ThreatIntelIndicatorTypeT>(value)); return *this;}
+    template<typename ThreatIntelIndicatorTypeT = StringFilter>
+    AwsSecurityFindingFilters& AddThreatIntelIndicatorType(ThreatIntelIndicatorTypeT&& value) { m_threatIntelIndicatorTypeHasBeenSet = true; m_threatIntelIndicatorType.emplace_back(std::forward<ThreatIntelIndicatorTypeT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The value of a threat intelligence indicator.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetThreatIntelIndicatorValue() const{ return m_threatIntelIndicatorValue; }
+    inline const Aws::Vector<StringFilter>& GetThreatIntelIndicatorValue() const { return m_threatIntelIndicatorValue; }
     inline bool ThreatIntelIndicatorValueHasBeenSet() const { return m_threatIntelIndicatorValueHasBeenSet; }
-    inline void SetThreatIntelIndicatorValue(const Aws::Vector<StringFilter>& value) { m_threatIntelIndicatorValueHasBeenSet = true; m_threatIntelIndicatorValue = value; }
-    inline void SetThreatIntelIndicatorValue(Aws::Vector<StringFilter>&& value) { m_threatIntelIndicatorValueHasBeenSet = true; m_threatIntelIndicatorValue = std::move(value); }
-    inline AwsSecurityFindingFilters& WithThreatIntelIndicatorValue(const Aws::Vector<StringFilter>& value) { SetThreatIntelIndicatorValue(value); return *this;}
-    inline AwsSecurityFindingFilters& WithThreatIntelIndicatorValue(Aws::Vector<StringFilter>&& value) { SetThreatIntelIndicatorValue(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddThreatIntelIndicatorValue(const StringFilter& value) { m_threatIntelIndicatorValueHasBeenSet = true; m_threatIntelIndicatorValue.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddThreatIntelIndicatorValue(StringFilter&& value) { m_threatIntelIndicatorValueHasBeenSet = true; m_threatIntelIndicatorValue.push_back(std::move(value)); return *this; }
+    template<typename ThreatIntelIndicatorValueT = Aws::Vector<StringFilter>>
+    void SetThreatIntelIndicatorValue(ThreatIntelIndicatorValueT&& value) { m_threatIntelIndicatorValueHasBeenSet = true; m_threatIntelIndicatorValue = std::forward<ThreatIntelIndicatorValueT>(value); }
+    template<typename ThreatIntelIndicatorValueT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithThreatIntelIndicatorValue(ThreatIntelIndicatorValueT&& value) { SetThreatIntelIndicatorValue(std::forward<ThreatIntelIndicatorValueT>(value)); return *this;}
+    template<typename ThreatIntelIndicatorValueT = StringFilter>
+    AwsSecurityFindingFilters& AddThreatIntelIndicatorValue(ThreatIntelIndicatorValueT&& value) { m_threatIntelIndicatorValueHasBeenSet = true; m_threatIntelIndicatorValue.emplace_back(std::forward<ThreatIntelIndicatorValueT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The category of a threat intelligence indicator.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetThreatIntelIndicatorCategory() const{ return m_threatIntelIndicatorCategory; }
+    inline const Aws::Vector<StringFilter>& GetThreatIntelIndicatorCategory() const { return m_threatIntelIndicatorCategory; }
     inline bool ThreatIntelIndicatorCategoryHasBeenSet() const { return m_threatIntelIndicatorCategoryHasBeenSet; }
-    inline void SetThreatIntelIndicatorCategory(const Aws::Vector<StringFilter>& value) { m_threatIntelIndicatorCategoryHasBeenSet = true; m_threatIntelIndicatorCategory = value; }
-    inline void SetThreatIntelIndicatorCategory(Aws::Vector<StringFilter>&& value) { m_threatIntelIndicatorCategoryHasBeenSet = true; m_threatIntelIndicatorCategory = std::move(value); }
-    inline AwsSecurityFindingFilters& WithThreatIntelIndicatorCategory(const Aws::Vector<StringFilter>& value) { SetThreatIntelIndicatorCategory(value); return *this;}
-    inline AwsSecurityFindingFilters& WithThreatIntelIndicatorCategory(Aws::Vector<StringFilter>&& value) { SetThreatIntelIndicatorCategory(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddThreatIntelIndicatorCategory(const StringFilter& value) { m_threatIntelIndicatorCategoryHasBeenSet = true; m_threatIntelIndicatorCategory.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddThreatIntelIndicatorCategory(StringFilter&& value) { m_threatIntelIndicatorCategoryHasBeenSet = true; m_threatIntelIndicatorCategory.push_back(std::move(value)); return *this; }
+    template<typename ThreatIntelIndicatorCategoryT = Aws::Vector<StringFilter>>
+    void SetThreatIntelIndicatorCategory(ThreatIntelIndicatorCategoryT&& value) { m_threatIntelIndicatorCategoryHasBeenSet = true; m_threatIntelIndicatorCategory = std::forward<ThreatIntelIndicatorCategoryT>(value); }
+    template<typename ThreatIntelIndicatorCategoryT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithThreatIntelIndicatorCategory(ThreatIntelIndicatorCategoryT&& value) { SetThreatIntelIndicatorCategory(std::forward<ThreatIntelIndicatorCategoryT>(value)); return *this;}
+    template<typename ThreatIntelIndicatorCategoryT = StringFilter>
+    AwsSecurityFindingFilters& AddThreatIntelIndicatorCategory(ThreatIntelIndicatorCategoryT&& value) { m_threatIntelIndicatorCategoryHasBeenSet = true; m_threatIntelIndicatorCategory.emplace_back(std::forward<ThreatIntelIndicatorCategoryT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -721,70 +721,70 @@ namespace Model
      * timestamp fields in Security Hub, see <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
      */
-    inline const Aws::Vector<DateFilter>& GetThreatIntelIndicatorLastObservedAt() const{ return m_threatIntelIndicatorLastObservedAt; }
+    inline const Aws::Vector<DateFilter>& GetThreatIntelIndicatorLastObservedAt() const { return m_threatIntelIndicatorLastObservedAt; }
     inline bool ThreatIntelIndicatorLastObservedAtHasBeenSet() const { return m_threatIntelIndicatorLastObservedAtHasBeenSet; }
-    inline void SetThreatIntelIndicatorLastObservedAt(const Aws::Vector<DateFilter>& value) { m_threatIntelIndicatorLastObservedAtHasBeenSet = true; m_threatIntelIndicatorLastObservedAt = value; }
-    inline void SetThreatIntelIndicatorLastObservedAt(Aws::Vector<DateFilter>&& value) { m_threatIntelIndicatorLastObservedAtHasBeenSet = true; m_threatIntelIndicatorLastObservedAt = std::move(value); }
-    inline AwsSecurityFindingFilters& WithThreatIntelIndicatorLastObservedAt(const Aws::Vector<DateFilter>& value) { SetThreatIntelIndicatorLastObservedAt(value); return *this;}
-    inline AwsSecurityFindingFilters& WithThreatIntelIndicatorLastObservedAt(Aws::Vector<DateFilter>&& value) { SetThreatIntelIndicatorLastObservedAt(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddThreatIntelIndicatorLastObservedAt(const DateFilter& value) { m_threatIntelIndicatorLastObservedAtHasBeenSet = true; m_threatIntelIndicatorLastObservedAt.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddThreatIntelIndicatorLastObservedAt(DateFilter&& value) { m_threatIntelIndicatorLastObservedAtHasBeenSet = true; m_threatIntelIndicatorLastObservedAt.push_back(std::move(value)); return *this; }
+    template<typename ThreatIntelIndicatorLastObservedAtT = Aws::Vector<DateFilter>>
+    void SetThreatIntelIndicatorLastObservedAt(ThreatIntelIndicatorLastObservedAtT&& value) { m_threatIntelIndicatorLastObservedAtHasBeenSet = true; m_threatIntelIndicatorLastObservedAt = std::forward<ThreatIntelIndicatorLastObservedAtT>(value); }
+    template<typename ThreatIntelIndicatorLastObservedAtT = Aws::Vector<DateFilter>>
+    AwsSecurityFindingFilters& WithThreatIntelIndicatorLastObservedAt(ThreatIntelIndicatorLastObservedAtT&& value) { SetThreatIntelIndicatorLastObservedAt(std::forward<ThreatIntelIndicatorLastObservedAtT>(value)); return *this;}
+    template<typename ThreatIntelIndicatorLastObservedAtT = DateFilter>
+    AwsSecurityFindingFilters& AddThreatIntelIndicatorLastObservedAt(ThreatIntelIndicatorLastObservedAtT&& value) { m_threatIntelIndicatorLastObservedAtHasBeenSet = true; m_threatIntelIndicatorLastObservedAt.emplace_back(std::forward<ThreatIntelIndicatorLastObservedAtT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The source of the threat intelligence.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetThreatIntelIndicatorSource() const{ return m_threatIntelIndicatorSource; }
+    inline const Aws::Vector<StringFilter>& GetThreatIntelIndicatorSource() const { return m_threatIntelIndicatorSource; }
     inline bool ThreatIntelIndicatorSourceHasBeenSet() const { return m_threatIntelIndicatorSourceHasBeenSet; }
-    inline void SetThreatIntelIndicatorSource(const Aws::Vector<StringFilter>& value) { m_threatIntelIndicatorSourceHasBeenSet = true; m_threatIntelIndicatorSource = value; }
-    inline void SetThreatIntelIndicatorSource(Aws::Vector<StringFilter>&& value) { m_threatIntelIndicatorSourceHasBeenSet = true; m_threatIntelIndicatorSource = std::move(value); }
-    inline AwsSecurityFindingFilters& WithThreatIntelIndicatorSource(const Aws::Vector<StringFilter>& value) { SetThreatIntelIndicatorSource(value); return *this;}
-    inline AwsSecurityFindingFilters& WithThreatIntelIndicatorSource(Aws::Vector<StringFilter>&& value) { SetThreatIntelIndicatorSource(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddThreatIntelIndicatorSource(const StringFilter& value) { m_threatIntelIndicatorSourceHasBeenSet = true; m_threatIntelIndicatorSource.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddThreatIntelIndicatorSource(StringFilter&& value) { m_threatIntelIndicatorSourceHasBeenSet = true; m_threatIntelIndicatorSource.push_back(std::move(value)); return *this; }
+    template<typename ThreatIntelIndicatorSourceT = Aws::Vector<StringFilter>>
+    void SetThreatIntelIndicatorSource(ThreatIntelIndicatorSourceT&& value) { m_threatIntelIndicatorSourceHasBeenSet = true; m_threatIntelIndicatorSource = std::forward<ThreatIntelIndicatorSourceT>(value); }
+    template<typename ThreatIntelIndicatorSourceT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithThreatIntelIndicatorSource(ThreatIntelIndicatorSourceT&& value) { SetThreatIntelIndicatorSource(std::forward<ThreatIntelIndicatorSourceT>(value)); return *this;}
+    template<typename ThreatIntelIndicatorSourceT = StringFilter>
+    AwsSecurityFindingFilters& AddThreatIntelIndicatorSource(ThreatIntelIndicatorSourceT&& value) { m_threatIntelIndicatorSourceHasBeenSet = true; m_threatIntelIndicatorSource.emplace_back(std::forward<ThreatIntelIndicatorSourceT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The URL for more details from the source of the threat intelligence.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetThreatIntelIndicatorSourceUrl() const{ return m_threatIntelIndicatorSourceUrl; }
+    inline const Aws::Vector<StringFilter>& GetThreatIntelIndicatorSourceUrl() const { return m_threatIntelIndicatorSourceUrl; }
     inline bool ThreatIntelIndicatorSourceUrlHasBeenSet() const { return m_threatIntelIndicatorSourceUrlHasBeenSet; }
-    inline void SetThreatIntelIndicatorSourceUrl(const Aws::Vector<StringFilter>& value) { m_threatIntelIndicatorSourceUrlHasBeenSet = true; m_threatIntelIndicatorSourceUrl = value; }
-    inline void SetThreatIntelIndicatorSourceUrl(Aws::Vector<StringFilter>&& value) { m_threatIntelIndicatorSourceUrlHasBeenSet = true; m_threatIntelIndicatorSourceUrl = std::move(value); }
-    inline AwsSecurityFindingFilters& WithThreatIntelIndicatorSourceUrl(const Aws::Vector<StringFilter>& value) { SetThreatIntelIndicatorSourceUrl(value); return *this;}
-    inline AwsSecurityFindingFilters& WithThreatIntelIndicatorSourceUrl(Aws::Vector<StringFilter>&& value) { SetThreatIntelIndicatorSourceUrl(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddThreatIntelIndicatorSourceUrl(const StringFilter& value) { m_threatIntelIndicatorSourceUrlHasBeenSet = true; m_threatIntelIndicatorSourceUrl.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddThreatIntelIndicatorSourceUrl(StringFilter&& value) { m_threatIntelIndicatorSourceUrlHasBeenSet = true; m_threatIntelIndicatorSourceUrl.push_back(std::move(value)); return *this; }
+    template<typename ThreatIntelIndicatorSourceUrlT = Aws::Vector<StringFilter>>
+    void SetThreatIntelIndicatorSourceUrl(ThreatIntelIndicatorSourceUrlT&& value) { m_threatIntelIndicatorSourceUrlHasBeenSet = true; m_threatIntelIndicatorSourceUrl = std::forward<ThreatIntelIndicatorSourceUrlT>(value); }
+    template<typename ThreatIntelIndicatorSourceUrlT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithThreatIntelIndicatorSourceUrl(ThreatIntelIndicatorSourceUrlT&& value) { SetThreatIntelIndicatorSourceUrl(std::forward<ThreatIntelIndicatorSourceUrlT>(value)); return *this;}
+    template<typename ThreatIntelIndicatorSourceUrlT = StringFilter>
+    AwsSecurityFindingFilters& AddThreatIntelIndicatorSourceUrl(ThreatIntelIndicatorSourceUrlT&& value) { m_threatIntelIndicatorSourceUrlHasBeenSet = true; m_threatIntelIndicatorSourceUrl.emplace_back(std::forward<ThreatIntelIndicatorSourceUrlT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Specifies the type of the resource that details are provided for.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetResourceType() const{ return m_resourceType; }
+    inline const Aws::Vector<StringFilter>& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const Aws::Vector<StringFilter>& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(Aws::Vector<StringFilter>&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline AwsSecurityFindingFilters& WithResourceType(const Aws::Vector<StringFilter>& value) { SetResourceType(value); return *this;}
-    inline AwsSecurityFindingFilters& WithResourceType(Aws::Vector<StringFilter>&& value) { SetResourceType(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddResourceType(const StringFilter& value) { m_resourceTypeHasBeenSet = true; m_resourceType.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddResourceType(StringFilter&& value) { m_resourceTypeHasBeenSet = true; m_resourceType.push_back(std::move(value)); return *this; }
+    template<typename ResourceTypeT = Aws::Vector<StringFilter>>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
+    template<typename ResourceTypeT = StringFilter>
+    AwsSecurityFindingFilters& AddResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType.emplace_back(std::forward<ResourceTypeT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The canonical identifier for the given resource type.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::Vector<StringFilter>& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::Vector<StringFilter>& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::Vector<StringFilter>&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline AwsSecurityFindingFilters& WithResourceId(const Aws::Vector<StringFilter>& value) { SetResourceId(value); return *this;}
-    inline AwsSecurityFindingFilters& WithResourceId(Aws::Vector<StringFilter>&& value) { SetResourceId(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddResourceId(const StringFilter& value) { m_resourceIdHasBeenSet = true; m_resourceId.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddResourceId(StringFilter&& value) { m_resourceIdHasBeenSet = true; m_resourceId.push_back(std::move(value)); return *this; }
+    template<typename ResourceIdT = Aws::Vector<StringFilter>>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
+    template<typename ResourceIdT = StringFilter>
+    AwsSecurityFindingFilters& AddResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId.emplace_back(std::forward<ResourceIdT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -792,14 +792,14 @@ namespace Model
      * <p>The canonical Amazon Web Services partition name that the Region is assigned
      * to.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetResourcePartition() const{ return m_resourcePartition; }
+    inline const Aws::Vector<StringFilter>& GetResourcePartition() const { return m_resourcePartition; }
     inline bool ResourcePartitionHasBeenSet() const { return m_resourcePartitionHasBeenSet; }
-    inline void SetResourcePartition(const Aws::Vector<StringFilter>& value) { m_resourcePartitionHasBeenSet = true; m_resourcePartition = value; }
-    inline void SetResourcePartition(Aws::Vector<StringFilter>&& value) { m_resourcePartitionHasBeenSet = true; m_resourcePartition = std::move(value); }
-    inline AwsSecurityFindingFilters& WithResourcePartition(const Aws::Vector<StringFilter>& value) { SetResourcePartition(value); return *this;}
-    inline AwsSecurityFindingFilters& WithResourcePartition(Aws::Vector<StringFilter>&& value) { SetResourcePartition(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddResourcePartition(const StringFilter& value) { m_resourcePartitionHasBeenSet = true; m_resourcePartition.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddResourcePartition(StringFilter&& value) { m_resourcePartitionHasBeenSet = true; m_resourcePartition.push_back(std::move(value)); return *this; }
+    template<typename ResourcePartitionT = Aws::Vector<StringFilter>>
+    void SetResourcePartition(ResourcePartitionT&& value) { m_resourcePartitionHasBeenSet = true; m_resourcePartition = std::forward<ResourcePartitionT>(value); }
+    template<typename ResourcePartitionT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithResourcePartition(ResourcePartitionT&& value) { SetResourcePartition(std::forward<ResourcePartitionT>(value)); return *this;}
+    template<typename ResourcePartitionT = StringFilter>
+    AwsSecurityFindingFilters& AddResourcePartition(ResourcePartitionT&& value) { m_resourcePartitionHasBeenSet = true; m_resourcePartition.emplace_back(std::forward<ResourcePartitionT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -807,14 +807,14 @@ namespace Model
      * <p>The canonical Amazon Web Services external Region name where this resource is
      * located.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetResourceRegion() const{ return m_resourceRegion; }
+    inline const Aws::Vector<StringFilter>& GetResourceRegion() const { return m_resourceRegion; }
     inline bool ResourceRegionHasBeenSet() const { return m_resourceRegionHasBeenSet; }
-    inline void SetResourceRegion(const Aws::Vector<StringFilter>& value) { m_resourceRegionHasBeenSet = true; m_resourceRegion = value; }
-    inline void SetResourceRegion(Aws::Vector<StringFilter>&& value) { m_resourceRegionHasBeenSet = true; m_resourceRegion = std::move(value); }
-    inline AwsSecurityFindingFilters& WithResourceRegion(const Aws::Vector<StringFilter>& value) { SetResourceRegion(value); return *this;}
-    inline AwsSecurityFindingFilters& WithResourceRegion(Aws::Vector<StringFilter>&& value) { SetResourceRegion(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddResourceRegion(const StringFilter& value) { m_resourceRegionHasBeenSet = true; m_resourceRegion.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddResourceRegion(StringFilter&& value) { m_resourceRegionHasBeenSet = true; m_resourceRegion.push_back(std::move(value)); return *this; }
+    template<typename ResourceRegionT = Aws::Vector<StringFilter>>
+    void SetResourceRegion(ResourceRegionT&& value) { m_resourceRegionHasBeenSet = true; m_resourceRegion = std::forward<ResourceRegionT>(value); }
+    template<typename ResourceRegionT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithResourceRegion(ResourceRegionT&& value) { SetResourceRegion(std::forward<ResourceRegionT>(value)); return *this;}
+    template<typename ResourceRegionT = StringFilter>
+    AwsSecurityFindingFilters& AddResourceRegion(ResourceRegionT&& value) { m_resourceRegionHasBeenSet = true; m_resourceRegion.emplace_back(std::forward<ResourceRegionT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -822,266 +822,266 @@ namespace Model
      * <p>A list of Amazon Web Services tags associated with a resource at the time the
      * finding was processed.</p>
      */
-    inline const Aws::Vector<MapFilter>& GetResourceTags() const{ return m_resourceTags; }
+    inline const Aws::Vector<MapFilter>& GetResourceTags() const { return m_resourceTags; }
     inline bool ResourceTagsHasBeenSet() const { return m_resourceTagsHasBeenSet; }
-    inline void SetResourceTags(const Aws::Vector<MapFilter>& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = value; }
-    inline void SetResourceTags(Aws::Vector<MapFilter>&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = std::move(value); }
-    inline AwsSecurityFindingFilters& WithResourceTags(const Aws::Vector<MapFilter>& value) { SetResourceTags(value); return *this;}
-    inline AwsSecurityFindingFilters& WithResourceTags(Aws::Vector<MapFilter>&& value) { SetResourceTags(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddResourceTags(const MapFilter& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddResourceTags(MapFilter&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(std::move(value)); return *this; }
+    template<typename ResourceTagsT = Aws::Vector<MapFilter>>
+    void SetResourceTags(ResourceTagsT&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = std::forward<ResourceTagsT>(value); }
+    template<typename ResourceTagsT = Aws::Vector<MapFilter>>
+    AwsSecurityFindingFilters& WithResourceTags(ResourceTagsT&& value) { SetResourceTags(std::forward<ResourceTagsT>(value)); return *this;}
+    template<typename ResourceTagsT = MapFilter>
+    AwsSecurityFindingFilters& AddResourceTags(ResourceTagsT&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.emplace_back(std::forward<ResourceTagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The instance type of the instance.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetResourceAwsEc2InstanceType() const{ return m_resourceAwsEc2InstanceType; }
+    inline const Aws::Vector<StringFilter>& GetResourceAwsEc2InstanceType() const { return m_resourceAwsEc2InstanceType; }
     inline bool ResourceAwsEc2InstanceTypeHasBeenSet() const { return m_resourceAwsEc2InstanceTypeHasBeenSet; }
-    inline void SetResourceAwsEc2InstanceType(const Aws::Vector<StringFilter>& value) { m_resourceAwsEc2InstanceTypeHasBeenSet = true; m_resourceAwsEc2InstanceType = value; }
-    inline void SetResourceAwsEc2InstanceType(Aws::Vector<StringFilter>&& value) { m_resourceAwsEc2InstanceTypeHasBeenSet = true; m_resourceAwsEc2InstanceType = std::move(value); }
-    inline AwsSecurityFindingFilters& WithResourceAwsEc2InstanceType(const Aws::Vector<StringFilter>& value) { SetResourceAwsEc2InstanceType(value); return *this;}
-    inline AwsSecurityFindingFilters& WithResourceAwsEc2InstanceType(Aws::Vector<StringFilter>&& value) { SetResourceAwsEc2InstanceType(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddResourceAwsEc2InstanceType(const StringFilter& value) { m_resourceAwsEc2InstanceTypeHasBeenSet = true; m_resourceAwsEc2InstanceType.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddResourceAwsEc2InstanceType(StringFilter&& value) { m_resourceAwsEc2InstanceTypeHasBeenSet = true; m_resourceAwsEc2InstanceType.push_back(std::move(value)); return *this; }
+    template<typename ResourceAwsEc2InstanceTypeT = Aws::Vector<StringFilter>>
+    void SetResourceAwsEc2InstanceType(ResourceAwsEc2InstanceTypeT&& value) { m_resourceAwsEc2InstanceTypeHasBeenSet = true; m_resourceAwsEc2InstanceType = std::forward<ResourceAwsEc2InstanceTypeT>(value); }
+    template<typename ResourceAwsEc2InstanceTypeT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithResourceAwsEc2InstanceType(ResourceAwsEc2InstanceTypeT&& value) { SetResourceAwsEc2InstanceType(std::forward<ResourceAwsEc2InstanceTypeT>(value)); return *this;}
+    template<typename ResourceAwsEc2InstanceTypeT = StringFilter>
+    AwsSecurityFindingFilters& AddResourceAwsEc2InstanceType(ResourceAwsEc2InstanceTypeT&& value) { m_resourceAwsEc2InstanceTypeHasBeenSet = true; m_resourceAwsEc2InstanceType.emplace_back(std::forward<ResourceAwsEc2InstanceTypeT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Machine Image (AMI) ID of the instance.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetResourceAwsEc2InstanceImageId() const{ return m_resourceAwsEc2InstanceImageId; }
+    inline const Aws::Vector<StringFilter>& GetResourceAwsEc2InstanceImageId() const { return m_resourceAwsEc2InstanceImageId; }
     inline bool ResourceAwsEc2InstanceImageIdHasBeenSet() const { return m_resourceAwsEc2InstanceImageIdHasBeenSet; }
-    inline void SetResourceAwsEc2InstanceImageId(const Aws::Vector<StringFilter>& value) { m_resourceAwsEc2InstanceImageIdHasBeenSet = true; m_resourceAwsEc2InstanceImageId = value; }
-    inline void SetResourceAwsEc2InstanceImageId(Aws::Vector<StringFilter>&& value) { m_resourceAwsEc2InstanceImageIdHasBeenSet = true; m_resourceAwsEc2InstanceImageId = std::move(value); }
-    inline AwsSecurityFindingFilters& WithResourceAwsEc2InstanceImageId(const Aws::Vector<StringFilter>& value) { SetResourceAwsEc2InstanceImageId(value); return *this;}
-    inline AwsSecurityFindingFilters& WithResourceAwsEc2InstanceImageId(Aws::Vector<StringFilter>&& value) { SetResourceAwsEc2InstanceImageId(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddResourceAwsEc2InstanceImageId(const StringFilter& value) { m_resourceAwsEc2InstanceImageIdHasBeenSet = true; m_resourceAwsEc2InstanceImageId.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddResourceAwsEc2InstanceImageId(StringFilter&& value) { m_resourceAwsEc2InstanceImageIdHasBeenSet = true; m_resourceAwsEc2InstanceImageId.push_back(std::move(value)); return *this; }
+    template<typename ResourceAwsEc2InstanceImageIdT = Aws::Vector<StringFilter>>
+    void SetResourceAwsEc2InstanceImageId(ResourceAwsEc2InstanceImageIdT&& value) { m_resourceAwsEc2InstanceImageIdHasBeenSet = true; m_resourceAwsEc2InstanceImageId = std::forward<ResourceAwsEc2InstanceImageIdT>(value); }
+    template<typename ResourceAwsEc2InstanceImageIdT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithResourceAwsEc2InstanceImageId(ResourceAwsEc2InstanceImageIdT&& value) { SetResourceAwsEc2InstanceImageId(std::forward<ResourceAwsEc2InstanceImageIdT>(value)); return *this;}
+    template<typename ResourceAwsEc2InstanceImageIdT = StringFilter>
+    AwsSecurityFindingFilters& AddResourceAwsEc2InstanceImageId(ResourceAwsEc2InstanceImageIdT&& value) { m_resourceAwsEc2InstanceImageIdHasBeenSet = true; m_resourceAwsEc2InstanceImageId.emplace_back(std::forward<ResourceAwsEc2InstanceImageIdT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The IPv4 addresses associated with the instance.</p>
      */
-    inline const Aws::Vector<IpFilter>& GetResourceAwsEc2InstanceIpV4Addresses() const{ return m_resourceAwsEc2InstanceIpV4Addresses; }
+    inline const Aws::Vector<IpFilter>& GetResourceAwsEc2InstanceIpV4Addresses() const { return m_resourceAwsEc2InstanceIpV4Addresses; }
     inline bool ResourceAwsEc2InstanceIpV4AddressesHasBeenSet() const { return m_resourceAwsEc2InstanceIpV4AddressesHasBeenSet; }
-    inline void SetResourceAwsEc2InstanceIpV4Addresses(const Aws::Vector<IpFilter>& value) { m_resourceAwsEc2InstanceIpV4AddressesHasBeenSet = true; m_resourceAwsEc2InstanceIpV4Addresses = value; }
-    inline void SetResourceAwsEc2InstanceIpV4Addresses(Aws::Vector<IpFilter>&& value) { m_resourceAwsEc2InstanceIpV4AddressesHasBeenSet = true; m_resourceAwsEc2InstanceIpV4Addresses = std::move(value); }
-    inline AwsSecurityFindingFilters& WithResourceAwsEc2InstanceIpV4Addresses(const Aws::Vector<IpFilter>& value) { SetResourceAwsEc2InstanceIpV4Addresses(value); return *this;}
-    inline AwsSecurityFindingFilters& WithResourceAwsEc2InstanceIpV4Addresses(Aws::Vector<IpFilter>&& value) { SetResourceAwsEc2InstanceIpV4Addresses(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddResourceAwsEc2InstanceIpV4Addresses(const IpFilter& value) { m_resourceAwsEc2InstanceIpV4AddressesHasBeenSet = true; m_resourceAwsEc2InstanceIpV4Addresses.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddResourceAwsEc2InstanceIpV4Addresses(IpFilter&& value) { m_resourceAwsEc2InstanceIpV4AddressesHasBeenSet = true; m_resourceAwsEc2InstanceIpV4Addresses.push_back(std::move(value)); return *this; }
+    template<typename ResourceAwsEc2InstanceIpV4AddressesT = Aws::Vector<IpFilter>>
+    void SetResourceAwsEc2InstanceIpV4Addresses(ResourceAwsEc2InstanceIpV4AddressesT&& value) { m_resourceAwsEc2InstanceIpV4AddressesHasBeenSet = true; m_resourceAwsEc2InstanceIpV4Addresses = std::forward<ResourceAwsEc2InstanceIpV4AddressesT>(value); }
+    template<typename ResourceAwsEc2InstanceIpV4AddressesT = Aws::Vector<IpFilter>>
+    AwsSecurityFindingFilters& WithResourceAwsEc2InstanceIpV4Addresses(ResourceAwsEc2InstanceIpV4AddressesT&& value) { SetResourceAwsEc2InstanceIpV4Addresses(std::forward<ResourceAwsEc2InstanceIpV4AddressesT>(value)); return *this;}
+    template<typename ResourceAwsEc2InstanceIpV4AddressesT = IpFilter>
+    AwsSecurityFindingFilters& AddResourceAwsEc2InstanceIpV4Addresses(ResourceAwsEc2InstanceIpV4AddressesT&& value) { m_resourceAwsEc2InstanceIpV4AddressesHasBeenSet = true; m_resourceAwsEc2InstanceIpV4Addresses.emplace_back(std::forward<ResourceAwsEc2InstanceIpV4AddressesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The IPv6 addresses associated with the instance.</p>
      */
-    inline const Aws::Vector<IpFilter>& GetResourceAwsEc2InstanceIpV6Addresses() const{ return m_resourceAwsEc2InstanceIpV6Addresses; }
+    inline const Aws::Vector<IpFilter>& GetResourceAwsEc2InstanceIpV6Addresses() const { return m_resourceAwsEc2InstanceIpV6Addresses; }
     inline bool ResourceAwsEc2InstanceIpV6AddressesHasBeenSet() const { return m_resourceAwsEc2InstanceIpV6AddressesHasBeenSet; }
-    inline void SetResourceAwsEc2InstanceIpV6Addresses(const Aws::Vector<IpFilter>& value) { m_resourceAwsEc2InstanceIpV6AddressesHasBeenSet = true; m_resourceAwsEc2InstanceIpV6Addresses = value; }
-    inline void SetResourceAwsEc2InstanceIpV6Addresses(Aws::Vector<IpFilter>&& value) { m_resourceAwsEc2InstanceIpV6AddressesHasBeenSet = true; m_resourceAwsEc2InstanceIpV6Addresses = std::move(value); }
-    inline AwsSecurityFindingFilters& WithResourceAwsEc2InstanceIpV6Addresses(const Aws::Vector<IpFilter>& value) { SetResourceAwsEc2InstanceIpV6Addresses(value); return *this;}
-    inline AwsSecurityFindingFilters& WithResourceAwsEc2InstanceIpV6Addresses(Aws::Vector<IpFilter>&& value) { SetResourceAwsEc2InstanceIpV6Addresses(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddResourceAwsEc2InstanceIpV6Addresses(const IpFilter& value) { m_resourceAwsEc2InstanceIpV6AddressesHasBeenSet = true; m_resourceAwsEc2InstanceIpV6Addresses.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddResourceAwsEc2InstanceIpV6Addresses(IpFilter&& value) { m_resourceAwsEc2InstanceIpV6AddressesHasBeenSet = true; m_resourceAwsEc2InstanceIpV6Addresses.push_back(std::move(value)); return *this; }
+    template<typename ResourceAwsEc2InstanceIpV6AddressesT = Aws::Vector<IpFilter>>
+    void SetResourceAwsEc2InstanceIpV6Addresses(ResourceAwsEc2InstanceIpV6AddressesT&& value) { m_resourceAwsEc2InstanceIpV6AddressesHasBeenSet = true; m_resourceAwsEc2InstanceIpV6Addresses = std::forward<ResourceAwsEc2InstanceIpV6AddressesT>(value); }
+    template<typename ResourceAwsEc2InstanceIpV6AddressesT = Aws::Vector<IpFilter>>
+    AwsSecurityFindingFilters& WithResourceAwsEc2InstanceIpV6Addresses(ResourceAwsEc2InstanceIpV6AddressesT&& value) { SetResourceAwsEc2InstanceIpV6Addresses(std::forward<ResourceAwsEc2InstanceIpV6AddressesT>(value)); return *this;}
+    template<typename ResourceAwsEc2InstanceIpV6AddressesT = IpFilter>
+    AwsSecurityFindingFilters& AddResourceAwsEc2InstanceIpV6Addresses(ResourceAwsEc2InstanceIpV6AddressesT&& value) { m_resourceAwsEc2InstanceIpV6AddressesHasBeenSet = true; m_resourceAwsEc2InstanceIpV6Addresses.emplace_back(std::forward<ResourceAwsEc2InstanceIpV6AddressesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The key name associated with the instance.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetResourceAwsEc2InstanceKeyName() const{ return m_resourceAwsEc2InstanceKeyName; }
+    inline const Aws::Vector<StringFilter>& GetResourceAwsEc2InstanceKeyName() const { return m_resourceAwsEc2InstanceKeyName; }
     inline bool ResourceAwsEc2InstanceKeyNameHasBeenSet() const { return m_resourceAwsEc2InstanceKeyNameHasBeenSet; }
-    inline void SetResourceAwsEc2InstanceKeyName(const Aws::Vector<StringFilter>& value) { m_resourceAwsEc2InstanceKeyNameHasBeenSet = true; m_resourceAwsEc2InstanceKeyName = value; }
-    inline void SetResourceAwsEc2InstanceKeyName(Aws::Vector<StringFilter>&& value) { m_resourceAwsEc2InstanceKeyNameHasBeenSet = true; m_resourceAwsEc2InstanceKeyName = std::move(value); }
-    inline AwsSecurityFindingFilters& WithResourceAwsEc2InstanceKeyName(const Aws::Vector<StringFilter>& value) { SetResourceAwsEc2InstanceKeyName(value); return *this;}
-    inline AwsSecurityFindingFilters& WithResourceAwsEc2InstanceKeyName(Aws::Vector<StringFilter>&& value) { SetResourceAwsEc2InstanceKeyName(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddResourceAwsEc2InstanceKeyName(const StringFilter& value) { m_resourceAwsEc2InstanceKeyNameHasBeenSet = true; m_resourceAwsEc2InstanceKeyName.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddResourceAwsEc2InstanceKeyName(StringFilter&& value) { m_resourceAwsEc2InstanceKeyNameHasBeenSet = true; m_resourceAwsEc2InstanceKeyName.push_back(std::move(value)); return *this; }
+    template<typename ResourceAwsEc2InstanceKeyNameT = Aws::Vector<StringFilter>>
+    void SetResourceAwsEc2InstanceKeyName(ResourceAwsEc2InstanceKeyNameT&& value) { m_resourceAwsEc2InstanceKeyNameHasBeenSet = true; m_resourceAwsEc2InstanceKeyName = std::forward<ResourceAwsEc2InstanceKeyNameT>(value); }
+    template<typename ResourceAwsEc2InstanceKeyNameT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithResourceAwsEc2InstanceKeyName(ResourceAwsEc2InstanceKeyNameT&& value) { SetResourceAwsEc2InstanceKeyName(std::forward<ResourceAwsEc2InstanceKeyNameT>(value)); return *this;}
+    template<typename ResourceAwsEc2InstanceKeyNameT = StringFilter>
+    AwsSecurityFindingFilters& AddResourceAwsEc2InstanceKeyName(ResourceAwsEc2InstanceKeyNameT&& value) { m_resourceAwsEc2InstanceKeyNameHasBeenSet = true; m_resourceAwsEc2InstanceKeyName.emplace_back(std::forward<ResourceAwsEc2InstanceKeyNameT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The IAM profile ARN of the instance.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetResourceAwsEc2InstanceIamInstanceProfileArn() const{ return m_resourceAwsEc2InstanceIamInstanceProfileArn; }
+    inline const Aws::Vector<StringFilter>& GetResourceAwsEc2InstanceIamInstanceProfileArn() const { return m_resourceAwsEc2InstanceIamInstanceProfileArn; }
     inline bool ResourceAwsEc2InstanceIamInstanceProfileArnHasBeenSet() const { return m_resourceAwsEc2InstanceIamInstanceProfileArnHasBeenSet; }
-    inline void SetResourceAwsEc2InstanceIamInstanceProfileArn(const Aws::Vector<StringFilter>& value) { m_resourceAwsEc2InstanceIamInstanceProfileArnHasBeenSet = true; m_resourceAwsEc2InstanceIamInstanceProfileArn = value; }
-    inline void SetResourceAwsEc2InstanceIamInstanceProfileArn(Aws::Vector<StringFilter>&& value) { m_resourceAwsEc2InstanceIamInstanceProfileArnHasBeenSet = true; m_resourceAwsEc2InstanceIamInstanceProfileArn = std::move(value); }
-    inline AwsSecurityFindingFilters& WithResourceAwsEc2InstanceIamInstanceProfileArn(const Aws::Vector<StringFilter>& value) { SetResourceAwsEc2InstanceIamInstanceProfileArn(value); return *this;}
-    inline AwsSecurityFindingFilters& WithResourceAwsEc2InstanceIamInstanceProfileArn(Aws::Vector<StringFilter>&& value) { SetResourceAwsEc2InstanceIamInstanceProfileArn(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddResourceAwsEc2InstanceIamInstanceProfileArn(const StringFilter& value) { m_resourceAwsEc2InstanceIamInstanceProfileArnHasBeenSet = true; m_resourceAwsEc2InstanceIamInstanceProfileArn.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddResourceAwsEc2InstanceIamInstanceProfileArn(StringFilter&& value) { m_resourceAwsEc2InstanceIamInstanceProfileArnHasBeenSet = true; m_resourceAwsEc2InstanceIamInstanceProfileArn.push_back(std::move(value)); return *this; }
+    template<typename ResourceAwsEc2InstanceIamInstanceProfileArnT = Aws::Vector<StringFilter>>
+    void SetResourceAwsEc2InstanceIamInstanceProfileArn(ResourceAwsEc2InstanceIamInstanceProfileArnT&& value) { m_resourceAwsEc2InstanceIamInstanceProfileArnHasBeenSet = true; m_resourceAwsEc2InstanceIamInstanceProfileArn = std::forward<ResourceAwsEc2InstanceIamInstanceProfileArnT>(value); }
+    template<typename ResourceAwsEc2InstanceIamInstanceProfileArnT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithResourceAwsEc2InstanceIamInstanceProfileArn(ResourceAwsEc2InstanceIamInstanceProfileArnT&& value) { SetResourceAwsEc2InstanceIamInstanceProfileArn(std::forward<ResourceAwsEc2InstanceIamInstanceProfileArnT>(value)); return *this;}
+    template<typename ResourceAwsEc2InstanceIamInstanceProfileArnT = StringFilter>
+    AwsSecurityFindingFilters& AddResourceAwsEc2InstanceIamInstanceProfileArn(ResourceAwsEc2InstanceIamInstanceProfileArnT&& value) { m_resourceAwsEc2InstanceIamInstanceProfileArnHasBeenSet = true; m_resourceAwsEc2InstanceIamInstanceProfileArn.emplace_back(std::forward<ResourceAwsEc2InstanceIamInstanceProfileArnT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the VPC that the instance was launched in.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetResourceAwsEc2InstanceVpcId() const{ return m_resourceAwsEc2InstanceVpcId; }
+    inline const Aws::Vector<StringFilter>& GetResourceAwsEc2InstanceVpcId() const { return m_resourceAwsEc2InstanceVpcId; }
     inline bool ResourceAwsEc2InstanceVpcIdHasBeenSet() const { return m_resourceAwsEc2InstanceVpcIdHasBeenSet; }
-    inline void SetResourceAwsEc2InstanceVpcId(const Aws::Vector<StringFilter>& value) { m_resourceAwsEc2InstanceVpcIdHasBeenSet = true; m_resourceAwsEc2InstanceVpcId = value; }
-    inline void SetResourceAwsEc2InstanceVpcId(Aws::Vector<StringFilter>&& value) { m_resourceAwsEc2InstanceVpcIdHasBeenSet = true; m_resourceAwsEc2InstanceVpcId = std::move(value); }
-    inline AwsSecurityFindingFilters& WithResourceAwsEc2InstanceVpcId(const Aws::Vector<StringFilter>& value) { SetResourceAwsEc2InstanceVpcId(value); return *this;}
-    inline AwsSecurityFindingFilters& WithResourceAwsEc2InstanceVpcId(Aws::Vector<StringFilter>&& value) { SetResourceAwsEc2InstanceVpcId(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddResourceAwsEc2InstanceVpcId(const StringFilter& value) { m_resourceAwsEc2InstanceVpcIdHasBeenSet = true; m_resourceAwsEc2InstanceVpcId.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddResourceAwsEc2InstanceVpcId(StringFilter&& value) { m_resourceAwsEc2InstanceVpcIdHasBeenSet = true; m_resourceAwsEc2InstanceVpcId.push_back(std::move(value)); return *this; }
+    template<typename ResourceAwsEc2InstanceVpcIdT = Aws::Vector<StringFilter>>
+    void SetResourceAwsEc2InstanceVpcId(ResourceAwsEc2InstanceVpcIdT&& value) { m_resourceAwsEc2InstanceVpcIdHasBeenSet = true; m_resourceAwsEc2InstanceVpcId = std::forward<ResourceAwsEc2InstanceVpcIdT>(value); }
+    template<typename ResourceAwsEc2InstanceVpcIdT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithResourceAwsEc2InstanceVpcId(ResourceAwsEc2InstanceVpcIdT&& value) { SetResourceAwsEc2InstanceVpcId(std::forward<ResourceAwsEc2InstanceVpcIdT>(value)); return *this;}
+    template<typename ResourceAwsEc2InstanceVpcIdT = StringFilter>
+    AwsSecurityFindingFilters& AddResourceAwsEc2InstanceVpcId(ResourceAwsEc2InstanceVpcIdT&& value) { m_resourceAwsEc2InstanceVpcIdHasBeenSet = true; m_resourceAwsEc2InstanceVpcId.emplace_back(std::forward<ResourceAwsEc2InstanceVpcIdT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the subnet that the instance was launched in.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetResourceAwsEc2InstanceSubnetId() const{ return m_resourceAwsEc2InstanceSubnetId; }
+    inline const Aws::Vector<StringFilter>& GetResourceAwsEc2InstanceSubnetId() const { return m_resourceAwsEc2InstanceSubnetId; }
     inline bool ResourceAwsEc2InstanceSubnetIdHasBeenSet() const { return m_resourceAwsEc2InstanceSubnetIdHasBeenSet; }
-    inline void SetResourceAwsEc2InstanceSubnetId(const Aws::Vector<StringFilter>& value) { m_resourceAwsEc2InstanceSubnetIdHasBeenSet = true; m_resourceAwsEc2InstanceSubnetId = value; }
-    inline void SetResourceAwsEc2InstanceSubnetId(Aws::Vector<StringFilter>&& value) { m_resourceAwsEc2InstanceSubnetIdHasBeenSet = true; m_resourceAwsEc2InstanceSubnetId = std::move(value); }
-    inline AwsSecurityFindingFilters& WithResourceAwsEc2InstanceSubnetId(const Aws::Vector<StringFilter>& value) { SetResourceAwsEc2InstanceSubnetId(value); return *this;}
-    inline AwsSecurityFindingFilters& WithResourceAwsEc2InstanceSubnetId(Aws::Vector<StringFilter>&& value) { SetResourceAwsEc2InstanceSubnetId(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddResourceAwsEc2InstanceSubnetId(const StringFilter& value) { m_resourceAwsEc2InstanceSubnetIdHasBeenSet = true; m_resourceAwsEc2InstanceSubnetId.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddResourceAwsEc2InstanceSubnetId(StringFilter&& value) { m_resourceAwsEc2InstanceSubnetIdHasBeenSet = true; m_resourceAwsEc2InstanceSubnetId.push_back(std::move(value)); return *this; }
+    template<typename ResourceAwsEc2InstanceSubnetIdT = Aws::Vector<StringFilter>>
+    void SetResourceAwsEc2InstanceSubnetId(ResourceAwsEc2InstanceSubnetIdT&& value) { m_resourceAwsEc2InstanceSubnetIdHasBeenSet = true; m_resourceAwsEc2InstanceSubnetId = std::forward<ResourceAwsEc2InstanceSubnetIdT>(value); }
+    template<typename ResourceAwsEc2InstanceSubnetIdT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithResourceAwsEc2InstanceSubnetId(ResourceAwsEc2InstanceSubnetIdT&& value) { SetResourceAwsEc2InstanceSubnetId(std::forward<ResourceAwsEc2InstanceSubnetIdT>(value)); return *this;}
+    template<typename ResourceAwsEc2InstanceSubnetIdT = StringFilter>
+    AwsSecurityFindingFilters& AddResourceAwsEc2InstanceSubnetId(ResourceAwsEc2InstanceSubnetIdT&& value) { m_resourceAwsEc2InstanceSubnetIdHasBeenSet = true; m_resourceAwsEc2InstanceSubnetId.emplace_back(std::forward<ResourceAwsEc2InstanceSubnetIdT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The date and time the instance was launched.</p>
      */
-    inline const Aws::Vector<DateFilter>& GetResourceAwsEc2InstanceLaunchedAt() const{ return m_resourceAwsEc2InstanceLaunchedAt; }
+    inline const Aws::Vector<DateFilter>& GetResourceAwsEc2InstanceLaunchedAt() const { return m_resourceAwsEc2InstanceLaunchedAt; }
     inline bool ResourceAwsEc2InstanceLaunchedAtHasBeenSet() const { return m_resourceAwsEc2InstanceLaunchedAtHasBeenSet; }
-    inline void SetResourceAwsEc2InstanceLaunchedAt(const Aws::Vector<DateFilter>& value) { m_resourceAwsEc2InstanceLaunchedAtHasBeenSet = true; m_resourceAwsEc2InstanceLaunchedAt = value; }
-    inline void SetResourceAwsEc2InstanceLaunchedAt(Aws::Vector<DateFilter>&& value) { m_resourceAwsEc2InstanceLaunchedAtHasBeenSet = true; m_resourceAwsEc2InstanceLaunchedAt = std::move(value); }
-    inline AwsSecurityFindingFilters& WithResourceAwsEc2InstanceLaunchedAt(const Aws::Vector<DateFilter>& value) { SetResourceAwsEc2InstanceLaunchedAt(value); return *this;}
-    inline AwsSecurityFindingFilters& WithResourceAwsEc2InstanceLaunchedAt(Aws::Vector<DateFilter>&& value) { SetResourceAwsEc2InstanceLaunchedAt(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddResourceAwsEc2InstanceLaunchedAt(const DateFilter& value) { m_resourceAwsEc2InstanceLaunchedAtHasBeenSet = true; m_resourceAwsEc2InstanceLaunchedAt.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddResourceAwsEc2InstanceLaunchedAt(DateFilter&& value) { m_resourceAwsEc2InstanceLaunchedAtHasBeenSet = true; m_resourceAwsEc2InstanceLaunchedAt.push_back(std::move(value)); return *this; }
+    template<typename ResourceAwsEc2InstanceLaunchedAtT = Aws::Vector<DateFilter>>
+    void SetResourceAwsEc2InstanceLaunchedAt(ResourceAwsEc2InstanceLaunchedAtT&& value) { m_resourceAwsEc2InstanceLaunchedAtHasBeenSet = true; m_resourceAwsEc2InstanceLaunchedAt = std::forward<ResourceAwsEc2InstanceLaunchedAtT>(value); }
+    template<typename ResourceAwsEc2InstanceLaunchedAtT = Aws::Vector<DateFilter>>
+    AwsSecurityFindingFilters& WithResourceAwsEc2InstanceLaunchedAt(ResourceAwsEc2InstanceLaunchedAtT&& value) { SetResourceAwsEc2InstanceLaunchedAt(std::forward<ResourceAwsEc2InstanceLaunchedAtT>(value)); return *this;}
+    template<typename ResourceAwsEc2InstanceLaunchedAtT = DateFilter>
+    AwsSecurityFindingFilters& AddResourceAwsEc2InstanceLaunchedAt(ResourceAwsEc2InstanceLaunchedAtT&& value) { m_resourceAwsEc2InstanceLaunchedAtHasBeenSet = true; m_resourceAwsEc2InstanceLaunchedAt.emplace_back(std::forward<ResourceAwsEc2InstanceLaunchedAtT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The canonical user ID of the owner of the S3 bucket.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetResourceAwsS3BucketOwnerId() const{ return m_resourceAwsS3BucketOwnerId; }
+    inline const Aws::Vector<StringFilter>& GetResourceAwsS3BucketOwnerId() const { return m_resourceAwsS3BucketOwnerId; }
     inline bool ResourceAwsS3BucketOwnerIdHasBeenSet() const { return m_resourceAwsS3BucketOwnerIdHasBeenSet; }
-    inline void SetResourceAwsS3BucketOwnerId(const Aws::Vector<StringFilter>& value) { m_resourceAwsS3BucketOwnerIdHasBeenSet = true; m_resourceAwsS3BucketOwnerId = value; }
-    inline void SetResourceAwsS3BucketOwnerId(Aws::Vector<StringFilter>&& value) { m_resourceAwsS3BucketOwnerIdHasBeenSet = true; m_resourceAwsS3BucketOwnerId = std::move(value); }
-    inline AwsSecurityFindingFilters& WithResourceAwsS3BucketOwnerId(const Aws::Vector<StringFilter>& value) { SetResourceAwsS3BucketOwnerId(value); return *this;}
-    inline AwsSecurityFindingFilters& WithResourceAwsS3BucketOwnerId(Aws::Vector<StringFilter>&& value) { SetResourceAwsS3BucketOwnerId(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddResourceAwsS3BucketOwnerId(const StringFilter& value) { m_resourceAwsS3BucketOwnerIdHasBeenSet = true; m_resourceAwsS3BucketOwnerId.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddResourceAwsS3BucketOwnerId(StringFilter&& value) { m_resourceAwsS3BucketOwnerIdHasBeenSet = true; m_resourceAwsS3BucketOwnerId.push_back(std::move(value)); return *this; }
+    template<typename ResourceAwsS3BucketOwnerIdT = Aws::Vector<StringFilter>>
+    void SetResourceAwsS3BucketOwnerId(ResourceAwsS3BucketOwnerIdT&& value) { m_resourceAwsS3BucketOwnerIdHasBeenSet = true; m_resourceAwsS3BucketOwnerId = std::forward<ResourceAwsS3BucketOwnerIdT>(value); }
+    template<typename ResourceAwsS3BucketOwnerIdT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithResourceAwsS3BucketOwnerId(ResourceAwsS3BucketOwnerIdT&& value) { SetResourceAwsS3BucketOwnerId(std::forward<ResourceAwsS3BucketOwnerIdT>(value)); return *this;}
+    template<typename ResourceAwsS3BucketOwnerIdT = StringFilter>
+    AwsSecurityFindingFilters& AddResourceAwsS3BucketOwnerId(ResourceAwsS3BucketOwnerIdT&& value) { m_resourceAwsS3BucketOwnerIdHasBeenSet = true; m_resourceAwsS3BucketOwnerId.emplace_back(std::forward<ResourceAwsS3BucketOwnerIdT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The display name of the owner of the S3 bucket.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetResourceAwsS3BucketOwnerName() const{ return m_resourceAwsS3BucketOwnerName; }
+    inline const Aws::Vector<StringFilter>& GetResourceAwsS3BucketOwnerName() const { return m_resourceAwsS3BucketOwnerName; }
     inline bool ResourceAwsS3BucketOwnerNameHasBeenSet() const { return m_resourceAwsS3BucketOwnerNameHasBeenSet; }
-    inline void SetResourceAwsS3BucketOwnerName(const Aws::Vector<StringFilter>& value) { m_resourceAwsS3BucketOwnerNameHasBeenSet = true; m_resourceAwsS3BucketOwnerName = value; }
-    inline void SetResourceAwsS3BucketOwnerName(Aws::Vector<StringFilter>&& value) { m_resourceAwsS3BucketOwnerNameHasBeenSet = true; m_resourceAwsS3BucketOwnerName = std::move(value); }
-    inline AwsSecurityFindingFilters& WithResourceAwsS3BucketOwnerName(const Aws::Vector<StringFilter>& value) { SetResourceAwsS3BucketOwnerName(value); return *this;}
-    inline AwsSecurityFindingFilters& WithResourceAwsS3BucketOwnerName(Aws::Vector<StringFilter>&& value) { SetResourceAwsS3BucketOwnerName(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddResourceAwsS3BucketOwnerName(const StringFilter& value) { m_resourceAwsS3BucketOwnerNameHasBeenSet = true; m_resourceAwsS3BucketOwnerName.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddResourceAwsS3BucketOwnerName(StringFilter&& value) { m_resourceAwsS3BucketOwnerNameHasBeenSet = true; m_resourceAwsS3BucketOwnerName.push_back(std::move(value)); return *this; }
+    template<typename ResourceAwsS3BucketOwnerNameT = Aws::Vector<StringFilter>>
+    void SetResourceAwsS3BucketOwnerName(ResourceAwsS3BucketOwnerNameT&& value) { m_resourceAwsS3BucketOwnerNameHasBeenSet = true; m_resourceAwsS3BucketOwnerName = std::forward<ResourceAwsS3BucketOwnerNameT>(value); }
+    template<typename ResourceAwsS3BucketOwnerNameT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithResourceAwsS3BucketOwnerName(ResourceAwsS3BucketOwnerNameT&& value) { SetResourceAwsS3BucketOwnerName(std::forward<ResourceAwsS3BucketOwnerNameT>(value)); return *this;}
+    template<typename ResourceAwsS3BucketOwnerNameT = StringFilter>
+    AwsSecurityFindingFilters& AddResourceAwsS3BucketOwnerName(ResourceAwsS3BucketOwnerNameT&& value) { m_resourceAwsS3BucketOwnerNameHasBeenSet = true; m_resourceAwsS3BucketOwnerName.emplace_back(std::forward<ResourceAwsS3BucketOwnerNameT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The name of the principal that is associated with an IAM access key.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetResourceAwsIamAccessKeyPrincipalName() const{ return m_resourceAwsIamAccessKeyPrincipalName; }
+    inline const Aws::Vector<StringFilter>& GetResourceAwsIamAccessKeyPrincipalName() const { return m_resourceAwsIamAccessKeyPrincipalName; }
     inline bool ResourceAwsIamAccessKeyPrincipalNameHasBeenSet() const { return m_resourceAwsIamAccessKeyPrincipalNameHasBeenSet; }
-    inline void SetResourceAwsIamAccessKeyPrincipalName(const Aws::Vector<StringFilter>& value) { m_resourceAwsIamAccessKeyPrincipalNameHasBeenSet = true; m_resourceAwsIamAccessKeyPrincipalName = value; }
-    inline void SetResourceAwsIamAccessKeyPrincipalName(Aws::Vector<StringFilter>&& value) { m_resourceAwsIamAccessKeyPrincipalNameHasBeenSet = true; m_resourceAwsIamAccessKeyPrincipalName = std::move(value); }
-    inline AwsSecurityFindingFilters& WithResourceAwsIamAccessKeyPrincipalName(const Aws::Vector<StringFilter>& value) { SetResourceAwsIamAccessKeyPrincipalName(value); return *this;}
-    inline AwsSecurityFindingFilters& WithResourceAwsIamAccessKeyPrincipalName(Aws::Vector<StringFilter>&& value) { SetResourceAwsIamAccessKeyPrincipalName(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddResourceAwsIamAccessKeyPrincipalName(const StringFilter& value) { m_resourceAwsIamAccessKeyPrincipalNameHasBeenSet = true; m_resourceAwsIamAccessKeyPrincipalName.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddResourceAwsIamAccessKeyPrincipalName(StringFilter&& value) { m_resourceAwsIamAccessKeyPrincipalNameHasBeenSet = true; m_resourceAwsIamAccessKeyPrincipalName.push_back(std::move(value)); return *this; }
+    template<typename ResourceAwsIamAccessKeyPrincipalNameT = Aws::Vector<StringFilter>>
+    void SetResourceAwsIamAccessKeyPrincipalName(ResourceAwsIamAccessKeyPrincipalNameT&& value) { m_resourceAwsIamAccessKeyPrincipalNameHasBeenSet = true; m_resourceAwsIamAccessKeyPrincipalName = std::forward<ResourceAwsIamAccessKeyPrincipalNameT>(value); }
+    template<typename ResourceAwsIamAccessKeyPrincipalNameT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithResourceAwsIamAccessKeyPrincipalName(ResourceAwsIamAccessKeyPrincipalNameT&& value) { SetResourceAwsIamAccessKeyPrincipalName(std::forward<ResourceAwsIamAccessKeyPrincipalNameT>(value)); return *this;}
+    template<typename ResourceAwsIamAccessKeyPrincipalNameT = StringFilter>
+    AwsSecurityFindingFilters& AddResourceAwsIamAccessKeyPrincipalName(ResourceAwsIamAccessKeyPrincipalNameT&& value) { m_resourceAwsIamAccessKeyPrincipalNameHasBeenSet = true; m_resourceAwsIamAccessKeyPrincipalName.emplace_back(std::forward<ResourceAwsIamAccessKeyPrincipalNameT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The status of the IAM access key related to a finding.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetResourceAwsIamAccessKeyStatus() const{ return m_resourceAwsIamAccessKeyStatus; }
+    inline const Aws::Vector<StringFilter>& GetResourceAwsIamAccessKeyStatus() const { return m_resourceAwsIamAccessKeyStatus; }
     inline bool ResourceAwsIamAccessKeyStatusHasBeenSet() const { return m_resourceAwsIamAccessKeyStatusHasBeenSet; }
-    inline void SetResourceAwsIamAccessKeyStatus(const Aws::Vector<StringFilter>& value) { m_resourceAwsIamAccessKeyStatusHasBeenSet = true; m_resourceAwsIamAccessKeyStatus = value; }
-    inline void SetResourceAwsIamAccessKeyStatus(Aws::Vector<StringFilter>&& value) { m_resourceAwsIamAccessKeyStatusHasBeenSet = true; m_resourceAwsIamAccessKeyStatus = std::move(value); }
-    inline AwsSecurityFindingFilters& WithResourceAwsIamAccessKeyStatus(const Aws::Vector<StringFilter>& value) { SetResourceAwsIamAccessKeyStatus(value); return *this;}
-    inline AwsSecurityFindingFilters& WithResourceAwsIamAccessKeyStatus(Aws::Vector<StringFilter>&& value) { SetResourceAwsIamAccessKeyStatus(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddResourceAwsIamAccessKeyStatus(const StringFilter& value) { m_resourceAwsIamAccessKeyStatusHasBeenSet = true; m_resourceAwsIamAccessKeyStatus.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddResourceAwsIamAccessKeyStatus(StringFilter&& value) { m_resourceAwsIamAccessKeyStatusHasBeenSet = true; m_resourceAwsIamAccessKeyStatus.push_back(std::move(value)); return *this; }
+    template<typename ResourceAwsIamAccessKeyStatusT = Aws::Vector<StringFilter>>
+    void SetResourceAwsIamAccessKeyStatus(ResourceAwsIamAccessKeyStatusT&& value) { m_resourceAwsIamAccessKeyStatusHasBeenSet = true; m_resourceAwsIamAccessKeyStatus = std::forward<ResourceAwsIamAccessKeyStatusT>(value); }
+    template<typename ResourceAwsIamAccessKeyStatusT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithResourceAwsIamAccessKeyStatus(ResourceAwsIamAccessKeyStatusT&& value) { SetResourceAwsIamAccessKeyStatus(std::forward<ResourceAwsIamAccessKeyStatusT>(value)); return *this;}
+    template<typename ResourceAwsIamAccessKeyStatusT = StringFilter>
+    AwsSecurityFindingFilters& AddResourceAwsIamAccessKeyStatus(ResourceAwsIamAccessKeyStatusT&& value) { m_resourceAwsIamAccessKeyStatusHasBeenSet = true; m_resourceAwsIamAccessKeyStatus.emplace_back(std::forward<ResourceAwsIamAccessKeyStatusT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The creation date/time of the IAM access key related to a finding.</p>
      */
-    inline const Aws::Vector<DateFilter>& GetResourceAwsIamAccessKeyCreatedAt() const{ return m_resourceAwsIamAccessKeyCreatedAt; }
+    inline const Aws::Vector<DateFilter>& GetResourceAwsIamAccessKeyCreatedAt() const { return m_resourceAwsIamAccessKeyCreatedAt; }
     inline bool ResourceAwsIamAccessKeyCreatedAtHasBeenSet() const { return m_resourceAwsIamAccessKeyCreatedAtHasBeenSet; }
-    inline void SetResourceAwsIamAccessKeyCreatedAt(const Aws::Vector<DateFilter>& value) { m_resourceAwsIamAccessKeyCreatedAtHasBeenSet = true; m_resourceAwsIamAccessKeyCreatedAt = value; }
-    inline void SetResourceAwsIamAccessKeyCreatedAt(Aws::Vector<DateFilter>&& value) { m_resourceAwsIamAccessKeyCreatedAtHasBeenSet = true; m_resourceAwsIamAccessKeyCreatedAt = std::move(value); }
-    inline AwsSecurityFindingFilters& WithResourceAwsIamAccessKeyCreatedAt(const Aws::Vector<DateFilter>& value) { SetResourceAwsIamAccessKeyCreatedAt(value); return *this;}
-    inline AwsSecurityFindingFilters& WithResourceAwsIamAccessKeyCreatedAt(Aws::Vector<DateFilter>&& value) { SetResourceAwsIamAccessKeyCreatedAt(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddResourceAwsIamAccessKeyCreatedAt(const DateFilter& value) { m_resourceAwsIamAccessKeyCreatedAtHasBeenSet = true; m_resourceAwsIamAccessKeyCreatedAt.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddResourceAwsIamAccessKeyCreatedAt(DateFilter&& value) { m_resourceAwsIamAccessKeyCreatedAtHasBeenSet = true; m_resourceAwsIamAccessKeyCreatedAt.push_back(std::move(value)); return *this; }
+    template<typename ResourceAwsIamAccessKeyCreatedAtT = Aws::Vector<DateFilter>>
+    void SetResourceAwsIamAccessKeyCreatedAt(ResourceAwsIamAccessKeyCreatedAtT&& value) { m_resourceAwsIamAccessKeyCreatedAtHasBeenSet = true; m_resourceAwsIamAccessKeyCreatedAt = std::forward<ResourceAwsIamAccessKeyCreatedAtT>(value); }
+    template<typename ResourceAwsIamAccessKeyCreatedAtT = Aws::Vector<DateFilter>>
+    AwsSecurityFindingFilters& WithResourceAwsIamAccessKeyCreatedAt(ResourceAwsIamAccessKeyCreatedAtT&& value) { SetResourceAwsIamAccessKeyCreatedAt(std::forward<ResourceAwsIamAccessKeyCreatedAtT>(value)); return *this;}
+    template<typename ResourceAwsIamAccessKeyCreatedAtT = DateFilter>
+    AwsSecurityFindingFilters& AddResourceAwsIamAccessKeyCreatedAt(ResourceAwsIamAccessKeyCreatedAtT&& value) { m_resourceAwsIamAccessKeyCreatedAtHasBeenSet = true; m_resourceAwsIamAccessKeyCreatedAt.emplace_back(std::forward<ResourceAwsIamAccessKeyCreatedAtT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The name of an IAM user.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetResourceAwsIamUserUserName() const{ return m_resourceAwsIamUserUserName; }
+    inline const Aws::Vector<StringFilter>& GetResourceAwsIamUserUserName() const { return m_resourceAwsIamUserUserName; }
     inline bool ResourceAwsIamUserUserNameHasBeenSet() const { return m_resourceAwsIamUserUserNameHasBeenSet; }
-    inline void SetResourceAwsIamUserUserName(const Aws::Vector<StringFilter>& value) { m_resourceAwsIamUserUserNameHasBeenSet = true; m_resourceAwsIamUserUserName = value; }
-    inline void SetResourceAwsIamUserUserName(Aws::Vector<StringFilter>&& value) { m_resourceAwsIamUserUserNameHasBeenSet = true; m_resourceAwsIamUserUserName = std::move(value); }
-    inline AwsSecurityFindingFilters& WithResourceAwsIamUserUserName(const Aws::Vector<StringFilter>& value) { SetResourceAwsIamUserUserName(value); return *this;}
-    inline AwsSecurityFindingFilters& WithResourceAwsIamUserUserName(Aws::Vector<StringFilter>&& value) { SetResourceAwsIamUserUserName(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddResourceAwsIamUserUserName(const StringFilter& value) { m_resourceAwsIamUserUserNameHasBeenSet = true; m_resourceAwsIamUserUserName.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddResourceAwsIamUserUserName(StringFilter&& value) { m_resourceAwsIamUserUserNameHasBeenSet = true; m_resourceAwsIamUserUserName.push_back(std::move(value)); return *this; }
+    template<typename ResourceAwsIamUserUserNameT = Aws::Vector<StringFilter>>
+    void SetResourceAwsIamUserUserName(ResourceAwsIamUserUserNameT&& value) { m_resourceAwsIamUserUserNameHasBeenSet = true; m_resourceAwsIamUserUserName = std::forward<ResourceAwsIamUserUserNameT>(value); }
+    template<typename ResourceAwsIamUserUserNameT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithResourceAwsIamUserUserName(ResourceAwsIamUserUserNameT&& value) { SetResourceAwsIamUserUserName(std::forward<ResourceAwsIamUserUserNameT>(value)); return *this;}
+    template<typename ResourceAwsIamUserUserNameT = StringFilter>
+    AwsSecurityFindingFilters& AddResourceAwsIamUserUserName(ResourceAwsIamUserUserNameT&& value) { m_resourceAwsIamUserUserNameHasBeenSet = true; m_resourceAwsIamUserUserName.emplace_back(std::forward<ResourceAwsIamUserUserNameT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The name of the container related to a finding.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetResourceContainerName() const{ return m_resourceContainerName; }
+    inline const Aws::Vector<StringFilter>& GetResourceContainerName() const { return m_resourceContainerName; }
     inline bool ResourceContainerNameHasBeenSet() const { return m_resourceContainerNameHasBeenSet; }
-    inline void SetResourceContainerName(const Aws::Vector<StringFilter>& value) { m_resourceContainerNameHasBeenSet = true; m_resourceContainerName = value; }
-    inline void SetResourceContainerName(Aws::Vector<StringFilter>&& value) { m_resourceContainerNameHasBeenSet = true; m_resourceContainerName = std::move(value); }
-    inline AwsSecurityFindingFilters& WithResourceContainerName(const Aws::Vector<StringFilter>& value) { SetResourceContainerName(value); return *this;}
-    inline AwsSecurityFindingFilters& WithResourceContainerName(Aws::Vector<StringFilter>&& value) { SetResourceContainerName(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddResourceContainerName(const StringFilter& value) { m_resourceContainerNameHasBeenSet = true; m_resourceContainerName.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddResourceContainerName(StringFilter&& value) { m_resourceContainerNameHasBeenSet = true; m_resourceContainerName.push_back(std::move(value)); return *this; }
+    template<typename ResourceContainerNameT = Aws::Vector<StringFilter>>
+    void SetResourceContainerName(ResourceContainerNameT&& value) { m_resourceContainerNameHasBeenSet = true; m_resourceContainerName = std::forward<ResourceContainerNameT>(value); }
+    template<typename ResourceContainerNameT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithResourceContainerName(ResourceContainerNameT&& value) { SetResourceContainerName(std::forward<ResourceContainerNameT>(value)); return *this;}
+    template<typename ResourceContainerNameT = StringFilter>
+    AwsSecurityFindingFilters& AddResourceContainerName(ResourceContainerNameT&& value) { m_resourceContainerNameHasBeenSet = true; m_resourceContainerName.emplace_back(std::forward<ResourceContainerNameT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the image related to a finding.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetResourceContainerImageId() const{ return m_resourceContainerImageId; }
+    inline const Aws::Vector<StringFilter>& GetResourceContainerImageId() const { return m_resourceContainerImageId; }
     inline bool ResourceContainerImageIdHasBeenSet() const { return m_resourceContainerImageIdHasBeenSet; }
-    inline void SetResourceContainerImageId(const Aws::Vector<StringFilter>& value) { m_resourceContainerImageIdHasBeenSet = true; m_resourceContainerImageId = value; }
-    inline void SetResourceContainerImageId(Aws::Vector<StringFilter>&& value) { m_resourceContainerImageIdHasBeenSet = true; m_resourceContainerImageId = std::move(value); }
-    inline AwsSecurityFindingFilters& WithResourceContainerImageId(const Aws::Vector<StringFilter>& value) { SetResourceContainerImageId(value); return *this;}
-    inline AwsSecurityFindingFilters& WithResourceContainerImageId(Aws::Vector<StringFilter>&& value) { SetResourceContainerImageId(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddResourceContainerImageId(const StringFilter& value) { m_resourceContainerImageIdHasBeenSet = true; m_resourceContainerImageId.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddResourceContainerImageId(StringFilter&& value) { m_resourceContainerImageIdHasBeenSet = true; m_resourceContainerImageId.push_back(std::move(value)); return *this; }
+    template<typename ResourceContainerImageIdT = Aws::Vector<StringFilter>>
+    void SetResourceContainerImageId(ResourceContainerImageIdT&& value) { m_resourceContainerImageIdHasBeenSet = true; m_resourceContainerImageId = std::forward<ResourceContainerImageIdT>(value); }
+    template<typename ResourceContainerImageIdT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithResourceContainerImageId(ResourceContainerImageIdT&& value) { SetResourceContainerImageId(std::forward<ResourceContainerImageIdT>(value)); return *this;}
+    template<typename ResourceContainerImageIdT = StringFilter>
+    AwsSecurityFindingFilters& AddResourceContainerImageId(ResourceContainerImageIdT&& value) { m_resourceContainerImageIdHasBeenSet = true; m_resourceContainerImageId.emplace_back(std::forward<ResourceContainerImageIdT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The name of the image related to a finding.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetResourceContainerImageName() const{ return m_resourceContainerImageName; }
+    inline const Aws::Vector<StringFilter>& GetResourceContainerImageName() const { return m_resourceContainerImageName; }
     inline bool ResourceContainerImageNameHasBeenSet() const { return m_resourceContainerImageNameHasBeenSet; }
-    inline void SetResourceContainerImageName(const Aws::Vector<StringFilter>& value) { m_resourceContainerImageNameHasBeenSet = true; m_resourceContainerImageName = value; }
-    inline void SetResourceContainerImageName(Aws::Vector<StringFilter>&& value) { m_resourceContainerImageNameHasBeenSet = true; m_resourceContainerImageName = std::move(value); }
-    inline AwsSecurityFindingFilters& WithResourceContainerImageName(const Aws::Vector<StringFilter>& value) { SetResourceContainerImageName(value); return *this;}
-    inline AwsSecurityFindingFilters& WithResourceContainerImageName(Aws::Vector<StringFilter>&& value) { SetResourceContainerImageName(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddResourceContainerImageName(const StringFilter& value) { m_resourceContainerImageNameHasBeenSet = true; m_resourceContainerImageName.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddResourceContainerImageName(StringFilter&& value) { m_resourceContainerImageNameHasBeenSet = true; m_resourceContainerImageName.push_back(std::move(value)); return *this; }
+    template<typename ResourceContainerImageNameT = Aws::Vector<StringFilter>>
+    void SetResourceContainerImageName(ResourceContainerImageNameT&& value) { m_resourceContainerImageNameHasBeenSet = true; m_resourceContainerImageName = std::forward<ResourceContainerImageNameT>(value); }
+    template<typename ResourceContainerImageNameT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithResourceContainerImageName(ResourceContainerImageNameT&& value) { SetResourceContainerImageName(std::forward<ResourceContainerImageNameT>(value)); return *this;}
+    template<typename ResourceContainerImageNameT = StringFilter>
+    AwsSecurityFindingFilters& AddResourceContainerImageName(ResourceContainerImageNameT&& value) { m_resourceContainerImageNameHasBeenSet = true; m_resourceContainerImageName.emplace_back(std::forward<ResourceContainerImageNameT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -1091,14 +1091,14 @@ namespace Model
      * Hub, see <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
      */
-    inline const Aws::Vector<DateFilter>& GetResourceContainerLaunchedAt() const{ return m_resourceContainerLaunchedAt; }
+    inline const Aws::Vector<DateFilter>& GetResourceContainerLaunchedAt() const { return m_resourceContainerLaunchedAt; }
     inline bool ResourceContainerLaunchedAtHasBeenSet() const { return m_resourceContainerLaunchedAtHasBeenSet; }
-    inline void SetResourceContainerLaunchedAt(const Aws::Vector<DateFilter>& value) { m_resourceContainerLaunchedAtHasBeenSet = true; m_resourceContainerLaunchedAt = value; }
-    inline void SetResourceContainerLaunchedAt(Aws::Vector<DateFilter>&& value) { m_resourceContainerLaunchedAtHasBeenSet = true; m_resourceContainerLaunchedAt = std::move(value); }
-    inline AwsSecurityFindingFilters& WithResourceContainerLaunchedAt(const Aws::Vector<DateFilter>& value) { SetResourceContainerLaunchedAt(value); return *this;}
-    inline AwsSecurityFindingFilters& WithResourceContainerLaunchedAt(Aws::Vector<DateFilter>&& value) { SetResourceContainerLaunchedAt(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddResourceContainerLaunchedAt(const DateFilter& value) { m_resourceContainerLaunchedAtHasBeenSet = true; m_resourceContainerLaunchedAt.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddResourceContainerLaunchedAt(DateFilter&& value) { m_resourceContainerLaunchedAtHasBeenSet = true; m_resourceContainerLaunchedAt.push_back(std::move(value)); return *this; }
+    template<typename ResourceContainerLaunchedAtT = Aws::Vector<DateFilter>>
+    void SetResourceContainerLaunchedAt(ResourceContainerLaunchedAtT&& value) { m_resourceContainerLaunchedAtHasBeenSet = true; m_resourceContainerLaunchedAt = std::forward<ResourceContainerLaunchedAtT>(value); }
+    template<typename ResourceContainerLaunchedAtT = Aws::Vector<DateFilter>>
+    AwsSecurityFindingFilters& WithResourceContainerLaunchedAt(ResourceContainerLaunchedAtT&& value) { SetResourceContainerLaunchedAt(std::forward<ResourceContainerLaunchedAtT>(value)); return *this;}
+    template<typename ResourceContainerLaunchedAtT = DateFilter>
+    AwsSecurityFindingFilters& AddResourceContainerLaunchedAt(ResourceContainerLaunchedAtT&& value) { m_resourceContainerLaunchedAtHasBeenSet = true; m_resourceContainerLaunchedAt.emplace_back(std::forward<ResourceContainerLaunchedAtT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -1106,14 +1106,14 @@ namespace Model
      * <p>The details of a resource that doesn't have a specific subfield for the
      * resource type defined.</p>
      */
-    inline const Aws::Vector<MapFilter>& GetResourceDetailsOther() const{ return m_resourceDetailsOther; }
+    inline const Aws::Vector<MapFilter>& GetResourceDetailsOther() const { return m_resourceDetailsOther; }
     inline bool ResourceDetailsOtherHasBeenSet() const { return m_resourceDetailsOtherHasBeenSet; }
-    inline void SetResourceDetailsOther(const Aws::Vector<MapFilter>& value) { m_resourceDetailsOtherHasBeenSet = true; m_resourceDetailsOther = value; }
-    inline void SetResourceDetailsOther(Aws::Vector<MapFilter>&& value) { m_resourceDetailsOtherHasBeenSet = true; m_resourceDetailsOther = std::move(value); }
-    inline AwsSecurityFindingFilters& WithResourceDetailsOther(const Aws::Vector<MapFilter>& value) { SetResourceDetailsOther(value); return *this;}
-    inline AwsSecurityFindingFilters& WithResourceDetailsOther(Aws::Vector<MapFilter>&& value) { SetResourceDetailsOther(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddResourceDetailsOther(const MapFilter& value) { m_resourceDetailsOtherHasBeenSet = true; m_resourceDetailsOther.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddResourceDetailsOther(MapFilter&& value) { m_resourceDetailsOtherHasBeenSet = true; m_resourceDetailsOther.push_back(std::move(value)); return *this; }
+    template<typename ResourceDetailsOtherT = Aws::Vector<MapFilter>>
+    void SetResourceDetailsOther(ResourceDetailsOtherT&& value) { m_resourceDetailsOtherHasBeenSet = true; m_resourceDetailsOther = std::forward<ResourceDetailsOtherT>(value); }
+    template<typename ResourceDetailsOtherT = Aws::Vector<MapFilter>>
+    AwsSecurityFindingFilters& WithResourceDetailsOther(ResourceDetailsOtherT&& value) { SetResourceDetailsOther(std::forward<ResourceDetailsOtherT>(value)); return *this;}
+    template<typename ResourceDetailsOtherT = MapFilter>
+    AwsSecurityFindingFilters& AddResourceDetailsOther(ResourceDetailsOtherT&& value) { m_resourceDetailsOtherHasBeenSet = true; m_resourceDetailsOther.emplace_back(std::forward<ResourceDetailsOtherT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -1122,28 +1122,28 @@ namespace Model
      * a specific rule in a supported standard, such as CIS Amazon Web Services
      * Foundations. Contains security standard-related finding details.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetComplianceStatus() const{ return m_complianceStatus; }
+    inline const Aws::Vector<StringFilter>& GetComplianceStatus() const { return m_complianceStatus; }
     inline bool ComplianceStatusHasBeenSet() const { return m_complianceStatusHasBeenSet; }
-    inline void SetComplianceStatus(const Aws::Vector<StringFilter>& value) { m_complianceStatusHasBeenSet = true; m_complianceStatus = value; }
-    inline void SetComplianceStatus(Aws::Vector<StringFilter>&& value) { m_complianceStatusHasBeenSet = true; m_complianceStatus = std::move(value); }
-    inline AwsSecurityFindingFilters& WithComplianceStatus(const Aws::Vector<StringFilter>& value) { SetComplianceStatus(value); return *this;}
-    inline AwsSecurityFindingFilters& WithComplianceStatus(Aws::Vector<StringFilter>&& value) { SetComplianceStatus(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddComplianceStatus(const StringFilter& value) { m_complianceStatusHasBeenSet = true; m_complianceStatus.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddComplianceStatus(StringFilter&& value) { m_complianceStatusHasBeenSet = true; m_complianceStatus.push_back(std::move(value)); return *this; }
+    template<typename ComplianceStatusT = Aws::Vector<StringFilter>>
+    void SetComplianceStatus(ComplianceStatusT&& value) { m_complianceStatusHasBeenSet = true; m_complianceStatus = std::forward<ComplianceStatusT>(value); }
+    template<typename ComplianceStatusT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithComplianceStatus(ComplianceStatusT&& value) { SetComplianceStatus(std::forward<ComplianceStatusT>(value)); return *this;}
+    template<typename ComplianceStatusT = StringFilter>
+    AwsSecurityFindingFilters& AddComplianceStatus(ComplianceStatusT&& value) { m_complianceStatusHasBeenSet = true; m_complianceStatus.emplace_back(std::forward<ComplianceStatusT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The veracity of a finding.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetVerificationState() const{ return m_verificationState; }
+    inline const Aws::Vector<StringFilter>& GetVerificationState() const { return m_verificationState; }
     inline bool VerificationStateHasBeenSet() const { return m_verificationStateHasBeenSet; }
-    inline void SetVerificationState(const Aws::Vector<StringFilter>& value) { m_verificationStateHasBeenSet = true; m_verificationState = value; }
-    inline void SetVerificationState(Aws::Vector<StringFilter>&& value) { m_verificationStateHasBeenSet = true; m_verificationState = std::move(value); }
-    inline AwsSecurityFindingFilters& WithVerificationState(const Aws::Vector<StringFilter>& value) { SetVerificationState(value); return *this;}
-    inline AwsSecurityFindingFilters& WithVerificationState(Aws::Vector<StringFilter>&& value) { SetVerificationState(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddVerificationState(const StringFilter& value) { m_verificationStateHasBeenSet = true; m_verificationState.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddVerificationState(StringFilter&& value) { m_verificationStateHasBeenSet = true; m_verificationState.push_back(std::move(value)); return *this; }
+    template<typename VerificationStateT = Aws::Vector<StringFilter>>
+    void SetVerificationState(VerificationStateT&& value) { m_verificationStateHasBeenSet = true; m_verificationState = std::forward<VerificationStateT>(value); }
+    template<typename VerificationStateT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithVerificationState(VerificationStateT&& value) { SetVerificationState(std::forward<VerificationStateT>(value)); return *this;}
+    template<typename VerificationStateT = StringFilter>
+    AwsSecurityFindingFilters& AddVerificationState(VerificationStateT&& value) { m_verificationStateHasBeenSet = true; m_verificationState.emplace_back(std::forward<VerificationStateT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -1152,14 +1152,14 @@ namespace Model
      * To search for a finding based on its workflow status, use
      * <code>WorkflowStatus</code>.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetWorkflowState() const{ return m_workflowState; }
+    inline const Aws::Vector<StringFilter>& GetWorkflowState() const { return m_workflowState; }
     inline bool WorkflowStateHasBeenSet() const { return m_workflowStateHasBeenSet; }
-    inline void SetWorkflowState(const Aws::Vector<StringFilter>& value) { m_workflowStateHasBeenSet = true; m_workflowState = value; }
-    inline void SetWorkflowState(Aws::Vector<StringFilter>&& value) { m_workflowStateHasBeenSet = true; m_workflowState = std::move(value); }
-    inline AwsSecurityFindingFilters& WithWorkflowState(const Aws::Vector<StringFilter>& value) { SetWorkflowState(value); return *this;}
-    inline AwsSecurityFindingFilters& WithWorkflowState(Aws::Vector<StringFilter>&& value) { SetWorkflowState(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddWorkflowState(const StringFilter& value) { m_workflowStateHasBeenSet = true; m_workflowState.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddWorkflowState(StringFilter&& value) { m_workflowStateHasBeenSet = true; m_workflowState.push_back(std::move(value)); return *this; }
+    template<typename WorkflowStateT = Aws::Vector<StringFilter>>
+    void SetWorkflowState(WorkflowStateT&& value) { m_workflowStateHasBeenSet = true; m_workflowState = std::forward<WorkflowStateT>(value); }
+    template<typename WorkflowStateT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithWorkflowState(WorkflowStateT&& value) { SetWorkflowState(std::forward<WorkflowStateT>(value)); return *this;}
+    template<typename WorkflowStateT = StringFilter>
+    AwsSecurityFindingFilters& AddWorkflowState(WorkflowStateT&& value) { m_workflowStateHasBeenSet = true; m_workflowState.emplace_back(std::forward<WorkflowStateT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -1196,98 +1196,98 @@ namespace Model
      * <code>Compliance.Status</code> is <code>PASSED</code>, then Security Hub
      * automatically sets the workflow status to <code>RESOLVED</code>.</p> </li> </ul>
      */
-    inline const Aws::Vector<StringFilter>& GetWorkflowStatus() const{ return m_workflowStatus; }
+    inline const Aws::Vector<StringFilter>& GetWorkflowStatus() const { return m_workflowStatus; }
     inline bool WorkflowStatusHasBeenSet() const { return m_workflowStatusHasBeenSet; }
-    inline void SetWorkflowStatus(const Aws::Vector<StringFilter>& value) { m_workflowStatusHasBeenSet = true; m_workflowStatus = value; }
-    inline void SetWorkflowStatus(Aws::Vector<StringFilter>&& value) { m_workflowStatusHasBeenSet = true; m_workflowStatus = std::move(value); }
-    inline AwsSecurityFindingFilters& WithWorkflowStatus(const Aws::Vector<StringFilter>& value) { SetWorkflowStatus(value); return *this;}
-    inline AwsSecurityFindingFilters& WithWorkflowStatus(Aws::Vector<StringFilter>&& value) { SetWorkflowStatus(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddWorkflowStatus(const StringFilter& value) { m_workflowStatusHasBeenSet = true; m_workflowStatus.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddWorkflowStatus(StringFilter&& value) { m_workflowStatusHasBeenSet = true; m_workflowStatus.push_back(std::move(value)); return *this; }
+    template<typename WorkflowStatusT = Aws::Vector<StringFilter>>
+    void SetWorkflowStatus(WorkflowStatusT&& value) { m_workflowStatusHasBeenSet = true; m_workflowStatus = std::forward<WorkflowStatusT>(value); }
+    template<typename WorkflowStatusT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithWorkflowStatus(WorkflowStatusT&& value) { SetWorkflowStatus(std::forward<WorkflowStatusT>(value)); return *this;}
+    template<typename WorkflowStatusT = StringFilter>
+    AwsSecurityFindingFilters& AddWorkflowStatus(WorkflowStatusT&& value) { m_workflowStatusHasBeenSet = true; m_workflowStatus.emplace_back(std::forward<WorkflowStatusT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The updated record state for the finding.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetRecordState() const{ return m_recordState; }
+    inline const Aws::Vector<StringFilter>& GetRecordState() const { return m_recordState; }
     inline bool RecordStateHasBeenSet() const { return m_recordStateHasBeenSet; }
-    inline void SetRecordState(const Aws::Vector<StringFilter>& value) { m_recordStateHasBeenSet = true; m_recordState = value; }
-    inline void SetRecordState(Aws::Vector<StringFilter>&& value) { m_recordStateHasBeenSet = true; m_recordState = std::move(value); }
-    inline AwsSecurityFindingFilters& WithRecordState(const Aws::Vector<StringFilter>& value) { SetRecordState(value); return *this;}
-    inline AwsSecurityFindingFilters& WithRecordState(Aws::Vector<StringFilter>&& value) { SetRecordState(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddRecordState(const StringFilter& value) { m_recordStateHasBeenSet = true; m_recordState.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddRecordState(StringFilter&& value) { m_recordStateHasBeenSet = true; m_recordState.push_back(std::move(value)); return *this; }
+    template<typename RecordStateT = Aws::Vector<StringFilter>>
+    void SetRecordState(RecordStateT&& value) { m_recordStateHasBeenSet = true; m_recordState = std::forward<RecordStateT>(value); }
+    template<typename RecordStateT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithRecordState(RecordStateT&& value) { SetRecordState(std::forward<RecordStateT>(value)); return *this;}
+    template<typename RecordStateT = StringFilter>
+    AwsSecurityFindingFilters& AddRecordState(RecordStateT&& value) { m_recordStateHasBeenSet = true; m_recordState.emplace_back(std::forward<RecordStateT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the solution that generated a related finding.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetRelatedFindingsProductArn() const{ return m_relatedFindingsProductArn; }
+    inline const Aws::Vector<StringFilter>& GetRelatedFindingsProductArn() const { return m_relatedFindingsProductArn; }
     inline bool RelatedFindingsProductArnHasBeenSet() const { return m_relatedFindingsProductArnHasBeenSet; }
-    inline void SetRelatedFindingsProductArn(const Aws::Vector<StringFilter>& value) { m_relatedFindingsProductArnHasBeenSet = true; m_relatedFindingsProductArn = value; }
-    inline void SetRelatedFindingsProductArn(Aws::Vector<StringFilter>&& value) { m_relatedFindingsProductArnHasBeenSet = true; m_relatedFindingsProductArn = std::move(value); }
-    inline AwsSecurityFindingFilters& WithRelatedFindingsProductArn(const Aws::Vector<StringFilter>& value) { SetRelatedFindingsProductArn(value); return *this;}
-    inline AwsSecurityFindingFilters& WithRelatedFindingsProductArn(Aws::Vector<StringFilter>&& value) { SetRelatedFindingsProductArn(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddRelatedFindingsProductArn(const StringFilter& value) { m_relatedFindingsProductArnHasBeenSet = true; m_relatedFindingsProductArn.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddRelatedFindingsProductArn(StringFilter&& value) { m_relatedFindingsProductArnHasBeenSet = true; m_relatedFindingsProductArn.push_back(std::move(value)); return *this; }
+    template<typename RelatedFindingsProductArnT = Aws::Vector<StringFilter>>
+    void SetRelatedFindingsProductArn(RelatedFindingsProductArnT&& value) { m_relatedFindingsProductArnHasBeenSet = true; m_relatedFindingsProductArn = std::forward<RelatedFindingsProductArnT>(value); }
+    template<typename RelatedFindingsProductArnT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithRelatedFindingsProductArn(RelatedFindingsProductArnT&& value) { SetRelatedFindingsProductArn(std::forward<RelatedFindingsProductArnT>(value)); return *this;}
+    template<typename RelatedFindingsProductArnT = StringFilter>
+    AwsSecurityFindingFilters& AddRelatedFindingsProductArn(RelatedFindingsProductArnT&& value) { m_relatedFindingsProductArnHasBeenSet = true; m_relatedFindingsProductArn.emplace_back(std::forward<RelatedFindingsProductArnT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The solution-generated identifier for a related finding.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetRelatedFindingsId() const{ return m_relatedFindingsId; }
+    inline const Aws::Vector<StringFilter>& GetRelatedFindingsId() const { return m_relatedFindingsId; }
     inline bool RelatedFindingsIdHasBeenSet() const { return m_relatedFindingsIdHasBeenSet; }
-    inline void SetRelatedFindingsId(const Aws::Vector<StringFilter>& value) { m_relatedFindingsIdHasBeenSet = true; m_relatedFindingsId = value; }
-    inline void SetRelatedFindingsId(Aws::Vector<StringFilter>&& value) { m_relatedFindingsIdHasBeenSet = true; m_relatedFindingsId = std::move(value); }
-    inline AwsSecurityFindingFilters& WithRelatedFindingsId(const Aws::Vector<StringFilter>& value) { SetRelatedFindingsId(value); return *this;}
-    inline AwsSecurityFindingFilters& WithRelatedFindingsId(Aws::Vector<StringFilter>&& value) { SetRelatedFindingsId(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddRelatedFindingsId(const StringFilter& value) { m_relatedFindingsIdHasBeenSet = true; m_relatedFindingsId.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddRelatedFindingsId(StringFilter&& value) { m_relatedFindingsIdHasBeenSet = true; m_relatedFindingsId.push_back(std::move(value)); return *this; }
+    template<typename RelatedFindingsIdT = Aws::Vector<StringFilter>>
+    void SetRelatedFindingsId(RelatedFindingsIdT&& value) { m_relatedFindingsIdHasBeenSet = true; m_relatedFindingsId = std::forward<RelatedFindingsIdT>(value); }
+    template<typename RelatedFindingsIdT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithRelatedFindingsId(RelatedFindingsIdT&& value) { SetRelatedFindingsId(std::forward<RelatedFindingsIdT>(value)); return *this;}
+    template<typename RelatedFindingsIdT = StringFilter>
+    AwsSecurityFindingFilters& AddRelatedFindingsId(RelatedFindingsIdT&& value) { m_relatedFindingsIdHasBeenSet = true; m_relatedFindingsId.emplace_back(std::forward<RelatedFindingsIdT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The text of a note.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetNoteText() const{ return m_noteText; }
+    inline const Aws::Vector<StringFilter>& GetNoteText() const { return m_noteText; }
     inline bool NoteTextHasBeenSet() const { return m_noteTextHasBeenSet; }
-    inline void SetNoteText(const Aws::Vector<StringFilter>& value) { m_noteTextHasBeenSet = true; m_noteText = value; }
-    inline void SetNoteText(Aws::Vector<StringFilter>&& value) { m_noteTextHasBeenSet = true; m_noteText = std::move(value); }
-    inline AwsSecurityFindingFilters& WithNoteText(const Aws::Vector<StringFilter>& value) { SetNoteText(value); return *this;}
-    inline AwsSecurityFindingFilters& WithNoteText(Aws::Vector<StringFilter>&& value) { SetNoteText(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddNoteText(const StringFilter& value) { m_noteTextHasBeenSet = true; m_noteText.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddNoteText(StringFilter&& value) { m_noteTextHasBeenSet = true; m_noteText.push_back(std::move(value)); return *this; }
+    template<typename NoteTextT = Aws::Vector<StringFilter>>
+    void SetNoteText(NoteTextT&& value) { m_noteTextHasBeenSet = true; m_noteText = std::forward<NoteTextT>(value); }
+    template<typename NoteTextT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithNoteText(NoteTextT&& value) { SetNoteText(std::forward<NoteTextT>(value)); return *this;}
+    template<typename NoteTextT = StringFilter>
+    AwsSecurityFindingFilters& AddNoteText(NoteTextT&& value) { m_noteTextHasBeenSet = true; m_noteText.emplace_back(std::forward<NoteTextT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The timestamp of when the note was updated.</p>
      */
-    inline const Aws::Vector<DateFilter>& GetNoteUpdatedAt() const{ return m_noteUpdatedAt; }
+    inline const Aws::Vector<DateFilter>& GetNoteUpdatedAt() const { return m_noteUpdatedAt; }
     inline bool NoteUpdatedAtHasBeenSet() const { return m_noteUpdatedAtHasBeenSet; }
-    inline void SetNoteUpdatedAt(const Aws::Vector<DateFilter>& value) { m_noteUpdatedAtHasBeenSet = true; m_noteUpdatedAt = value; }
-    inline void SetNoteUpdatedAt(Aws::Vector<DateFilter>&& value) { m_noteUpdatedAtHasBeenSet = true; m_noteUpdatedAt = std::move(value); }
-    inline AwsSecurityFindingFilters& WithNoteUpdatedAt(const Aws::Vector<DateFilter>& value) { SetNoteUpdatedAt(value); return *this;}
-    inline AwsSecurityFindingFilters& WithNoteUpdatedAt(Aws::Vector<DateFilter>&& value) { SetNoteUpdatedAt(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddNoteUpdatedAt(const DateFilter& value) { m_noteUpdatedAtHasBeenSet = true; m_noteUpdatedAt.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddNoteUpdatedAt(DateFilter&& value) { m_noteUpdatedAtHasBeenSet = true; m_noteUpdatedAt.push_back(std::move(value)); return *this; }
+    template<typename NoteUpdatedAtT = Aws::Vector<DateFilter>>
+    void SetNoteUpdatedAt(NoteUpdatedAtT&& value) { m_noteUpdatedAtHasBeenSet = true; m_noteUpdatedAt = std::forward<NoteUpdatedAtT>(value); }
+    template<typename NoteUpdatedAtT = Aws::Vector<DateFilter>>
+    AwsSecurityFindingFilters& WithNoteUpdatedAt(NoteUpdatedAtT&& value) { SetNoteUpdatedAt(std::forward<NoteUpdatedAtT>(value)); return *this;}
+    template<typename NoteUpdatedAtT = DateFilter>
+    AwsSecurityFindingFilters& AddNoteUpdatedAt(NoteUpdatedAtT&& value) { m_noteUpdatedAtHasBeenSet = true; m_noteUpdatedAt.emplace_back(std::forward<NoteUpdatedAtT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The principal that created a note.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetNoteUpdatedBy() const{ return m_noteUpdatedBy; }
+    inline const Aws::Vector<StringFilter>& GetNoteUpdatedBy() const { return m_noteUpdatedBy; }
     inline bool NoteUpdatedByHasBeenSet() const { return m_noteUpdatedByHasBeenSet; }
-    inline void SetNoteUpdatedBy(const Aws::Vector<StringFilter>& value) { m_noteUpdatedByHasBeenSet = true; m_noteUpdatedBy = value; }
-    inline void SetNoteUpdatedBy(Aws::Vector<StringFilter>&& value) { m_noteUpdatedByHasBeenSet = true; m_noteUpdatedBy = std::move(value); }
-    inline AwsSecurityFindingFilters& WithNoteUpdatedBy(const Aws::Vector<StringFilter>& value) { SetNoteUpdatedBy(value); return *this;}
-    inline AwsSecurityFindingFilters& WithNoteUpdatedBy(Aws::Vector<StringFilter>&& value) { SetNoteUpdatedBy(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddNoteUpdatedBy(const StringFilter& value) { m_noteUpdatedByHasBeenSet = true; m_noteUpdatedBy.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddNoteUpdatedBy(StringFilter&& value) { m_noteUpdatedByHasBeenSet = true; m_noteUpdatedBy.push_back(std::move(value)); return *this; }
+    template<typename NoteUpdatedByT = Aws::Vector<StringFilter>>
+    void SetNoteUpdatedBy(NoteUpdatedByT&& value) { m_noteUpdatedByHasBeenSet = true; m_noteUpdatedBy = std::forward<NoteUpdatedByT>(value); }
+    template<typename NoteUpdatedByT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithNoteUpdatedBy(NoteUpdatedByT&& value) { SetNoteUpdatedBy(std::forward<NoteUpdatedByT>(value)); return *this;}
+    template<typename NoteUpdatedByT = StringFilter>
+    AwsSecurityFindingFilters& AddNoteUpdatedBy(NoteUpdatedByT&& value) { m_noteUpdatedByHasBeenSet = true; m_noteUpdatedBy.emplace_back(std::forward<NoteUpdatedByT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -1298,14 +1298,14 @@ namespace Model
      * using a ratio scale, where 0 means zero percent confidence and 100 means 100
      * percent confidence.</p>
      */
-    inline const Aws::Vector<NumberFilter>& GetFindingProviderFieldsConfidence() const{ return m_findingProviderFieldsConfidence; }
+    inline const Aws::Vector<NumberFilter>& GetFindingProviderFieldsConfidence() const { return m_findingProviderFieldsConfidence; }
     inline bool FindingProviderFieldsConfidenceHasBeenSet() const { return m_findingProviderFieldsConfidenceHasBeenSet; }
-    inline void SetFindingProviderFieldsConfidence(const Aws::Vector<NumberFilter>& value) { m_findingProviderFieldsConfidenceHasBeenSet = true; m_findingProviderFieldsConfidence = value; }
-    inline void SetFindingProviderFieldsConfidence(Aws::Vector<NumberFilter>&& value) { m_findingProviderFieldsConfidenceHasBeenSet = true; m_findingProviderFieldsConfidence = std::move(value); }
-    inline AwsSecurityFindingFilters& WithFindingProviderFieldsConfidence(const Aws::Vector<NumberFilter>& value) { SetFindingProviderFieldsConfidence(value); return *this;}
-    inline AwsSecurityFindingFilters& WithFindingProviderFieldsConfidence(Aws::Vector<NumberFilter>&& value) { SetFindingProviderFieldsConfidence(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddFindingProviderFieldsConfidence(const NumberFilter& value) { m_findingProviderFieldsConfidenceHasBeenSet = true; m_findingProviderFieldsConfidence.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddFindingProviderFieldsConfidence(NumberFilter&& value) { m_findingProviderFieldsConfidenceHasBeenSet = true; m_findingProviderFieldsConfidence.push_back(std::move(value)); return *this; }
+    template<typename FindingProviderFieldsConfidenceT = Aws::Vector<NumberFilter>>
+    void SetFindingProviderFieldsConfidence(FindingProviderFieldsConfidenceT&& value) { m_findingProviderFieldsConfidenceHasBeenSet = true; m_findingProviderFieldsConfidence = std::forward<FindingProviderFieldsConfidenceT>(value); }
+    template<typename FindingProviderFieldsConfidenceT = Aws::Vector<NumberFilter>>
+    AwsSecurityFindingFilters& WithFindingProviderFieldsConfidence(FindingProviderFieldsConfidenceT&& value) { SetFindingProviderFieldsConfidence(std::forward<FindingProviderFieldsConfidenceT>(value)); return *this;}
+    template<typename FindingProviderFieldsConfidenceT = NumberFilter>
+    AwsSecurityFindingFilters& AddFindingProviderFieldsConfidence(FindingProviderFieldsConfidenceT&& value) { m_findingProviderFieldsConfidenceHasBeenSet = true; m_findingProviderFieldsConfidence.emplace_back(std::forward<FindingProviderFieldsConfidenceT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -1315,14 +1315,14 @@ namespace Model
      * underlying resources have no criticality, and a score of 100 is reserved for the
      * most critical resources. </p>
      */
-    inline const Aws::Vector<NumberFilter>& GetFindingProviderFieldsCriticality() const{ return m_findingProviderFieldsCriticality; }
+    inline const Aws::Vector<NumberFilter>& GetFindingProviderFieldsCriticality() const { return m_findingProviderFieldsCriticality; }
     inline bool FindingProviderFieldsCriticalityHasBeenSet() const { return m_findingProviderFieldsCriticalityHasBeenSet; }
-    inline void SetFindingProviderFieldsCriticality(const Aws::Vector<NumberFilter>& value) { m_findingProviderFieldsCriticalityHasBeenSet = true; m_findingProviderFieldsCriticality = value; }
-    inline void SetFindingProviderFieldsCriticality(Aws::Vector<NumberFilter>&& value) { m_findingProviderFieldsCriticalityHasBeenSet = true; m_findingProviderFieldsCriticality = std::move(value); }
-    inline AwsSecurityFindingFilters& WithFindingProviderFieldsCriticality(const Aws::Vector<NumberFilter>& value) { SetFindingProviderFieldsCriticality(value); return *this;}
-    inline AwsSecurityFindingFilters& WithFindingProviderFieldsCriticality(Aws::Vector<NumberFilter>&& value) { SetFindingProviderFieldsCriticality(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddFindingProviderFieldsCriticality(const NumberFilter& value) { m_findingProviderFieldsCriticalityHasBeenSet = true; m_findingProviderFieldsCriticality.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddFindingProviderFieldsCriticality(NumberFilter&& value) { m_findingProviderFieldsCriticalityHasBeenSet = true; m_findingProviderFieldsCriticality.push_back(std::move(value)); return *this; }
+    template<typename FindingProviderFieldsCriticalityT = Aws::Vector<NumberFilter>>
+    void SetFindingProviderFieldsCriticality(FindingProviderFieldsCriticalityT&& value) { m_findingProviderFieldsCriticalityHasBeenSet = true; m_findingProviderFieldsCriticality = std::forward<FindingProviderFieldsCriticalityT>(value); }
+    template<typename FindingProviderFieldsCriticalityT = Aws::Vector<NumberFilter>>
+    AwsSecurityFindingFilters& WithFindingProviderFieldsCriticality(FindingProviderFieldsCriticalityT&& value) { SetFindingProviderFieldsCriticality(std::forward<FindingProviderFieldsCriticalityT>(value)); return *this;}
+    template<typename FindingProviderFieldsCriticalityT = NumberFilter>
+    AwsSecurityFindingFilters& AddFindingProviderFieldsCriticality(FindingProviderFieldsCriticalityT&& value) { m_findingProviderFieldsCriticalityHasBeenSet = true; m_findingProviderFieldsCriticality.emplace_back(std::forward<FindingProviderFieldsCriticalityT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -1330,14 +1330,14 @@ namespace Model
      * <p>The finding identifier of a related finding that is identified by the finding
      * provider.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetFindingProviderFieldsRelatedFindingsId() const{ return m_findingProviderFieldsRelatedFindingsId; }
+    inline const Aws::Vector<StringFilter>& GetFindingProviderFieldsRelatedFindingsId() const { return m_findingProviderFieldsRelatedFindingsId; }
     inline bool FindingProviderFieldsRelatedFindingsIdHasBeenSet() const { return m_findingProviderFieldsRelatedFindingsIdHasBeenSet; }
-    inline void SetFindingProviderFieldsRelatedFindingsId(const Aws::Vector<StringFilter>& value) { m_findingProviderFieldsRelatedFindingsIdHasBeenSet = true; m_findingProviderFieldsRelatedFindingsId = value; }
-    inline void SetFindingProviderFieldsRelatedFindingsId(Aws::Vector<StringFilter>&& value) { m_findingProviderFieldsRelatedFindingsIdHasBeenSet = true; m_findingProviderFieldsRelatedFindingsId = std::move(value); }
-    inline AwsSecurityFindingFilters& WithFindingProviderFieldsRelatedFindingsId(const Aws::Vector<StringFilter>& value) { SetFindingProviderFieldsRelatedFindingsId(value); return *this;}
-    inline AwsSecurityFindingFilters& WithFindingProviderFieldsRelatedFindingsId(Aws::Vector<StringFilter>&& value) { SetFindingProviderFieldsRelatedFindingsId(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddFindingProviderFieldsRelatedFindingsId(const StringFilter& value) { m_findingProviderFieldsRelatedFindingsIdHasBeenSet = true; m_findingProviderFieldsRelatedFindingsId.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddFindingProviderFieldsRelatedFindingsId(StringFilter&& value) { m_findingProviderFieldsRelatedFindingsIdHasBeenSet = true; m_findingProviderFieldsRelatedFindingsId.push_back(std::move(value)); return *this; }
+    template<typename FindingProviderFieldsRelatedFindingsIdT = Aws::Vector<StringFilter>>
+    void SetFindingProviderFieldsRelatedFindingsId(FindingProviderFieldsRelatedFindingsIdT&& value) { m_findingProviderFieldsRelatedFindingsIdHasBeenSet = true; m_findingProviderFieldsRelatedFindingsId = std::forward<FindingProviderFieldsRelatedFindingsIdT>(value); }
+    template<typename FindingProviderFieldsRelatedFindingsIdT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithFindingProviderFieldsRelatedFindingsId(FindingProviderFieldsRelatedFindingsIdT&& value) { SetFindingProviderFieldsRelatedFindingsId(std::forward<FindingProviderFieldsRelatedFindingsIdT>(value)); return *this;}
+    template<typename FindingProviderFieldsRelatedFindingsIdT = StringFilter>
+    AwsSecurityFindingFilters& AddFindingProviderFieldsRelatedFindingsId(FindingProviderFieldsRelatedFindingsIdT&& value) { m_findingProviderFieldsRelatedFindingsIdHasBeenSet = true; m_findingProviderFieldsRelatedFindingsId.emplace_back(std::forward<FindingProviderFieldsRelatedFindingsIdT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -1345,42 +1345,42 @@ namespace Model
      * <p>The ARN of the solution that generated a related finding that is identified
      * by the finding provider.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetFindingProviderFieldsRelatedFindingsProductArn() const{ return m_findingProviderFieldsRelatedFindingsProductArn; }
+    inline const Aws::Vector<StringFilter>& GetFindingProviderFieldsRelatedFindingsProductArn() const { return m_findingProviderFieldsRelatedFindingsProductArn; }
     inline bool FindingProviderFieldsRelatedFindingsProductArnHasBeenSet() const { return m_findingProviderFieldsRelatedFindingsProductArnHasBeenSet; }
-    inline void SetFindingProviderFieldsRelatedFindingsProductArn(const Aws::Vector<StringFilter>& value) { m_findingProviderFieldsRelatedFindingsProductArnHasBeenSet = true; m_findingProviderFieldsRelatedFindingsProductArn = value; }
-    inline void SetFindingProviderFieldsRelatedFindingsProductArn(Aws::Vector<StringFilter>&& value) { m_findingProviderFieldsRelatedFindingsProductArnHasBeenSet = true; m_findingProviderFieldsRelatedFindingsProductArn = std::move(value); }
-    inline AwsSecurityFindingFilters& WithFindingProviderFieldsRelatedFindingsProductArn(const Aws::Vector<StringFilter>& value) { SetFindingProviderFieldsRelatedFindingsProductArn(value); return *this;}
-    inline AwsSecurityFindingFilters& WithFindingProviderFieldsRelatedFindingsProductArn(Aws::Vector<StringFilter>&& value) { SetFindingProviderFieldsRelatedFindingsProductArn(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddFindingProviderFieldsRelatedFindingsProductArn(const StringFilter& value) { m_findingProviderFieldsRelatedFindingsProductArnHasBeenSet = true; m_findingProviderFieldsRelatedFindingsProductArn.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddFindingProviderFieldsRelatedFindingsProductArn(StringFilter&& value) { m_findingProviderFieldsRelatedFindingsProductArnHasBeenSet = true; m_findingProviderFieldsRelatedFindingsProductArn.push_back(std::move(value)); return *this; }
+    template<typename FindingProviderFieldsRelatedFindingsProductArnT = Aws::Vector<StringFilter>>
+    void SetFindingProviderFieldsRelatedFindingsProductArn(FindingProviderFieldsRelatedFindingsProductArnT&& value) { m_findingProviderFieldsRelatedFindingsProductArnHasBeenSet = true; m_findingProviderFieldsRelatedFindingsProductArn = std::forward<FindingProviderFieldsRelatedFindingsProductArnT>(value); }
+    template<typename FindingProviderFieldsRelatedFindingsProductArnT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithFindingProviderFieldsRelatedFindingsProductArn(FindingProviderFieldsRelatedFindingsProductArnT&& value) { SetFindingProviderFieldsRelatedFindingsProductArn(std::forward<FindingProviderFieldsRelatedFindingsProductArnT>(value)); return *this;}
+    template<typename FindingProviderFieldsRelatedFindingsProductArnT = StringFilter>
+    AwsSecurityFindingFilters& AddFindingProviderFieldsRelatedFindingsProductArn(FindingProviderFieldsRelatedFindingsProductArnT&& value) { m_findingProviderFieldsRelatedFindingsProductArnHasBeenSet = true; m_findingProviderFieldsRelatedFindingsProductArn.emplace_back(std::forward<FindingProviderFieldsRelatedFindingsProductArnT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The finding provider value for the severity label.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetFindingProviderFieldsSeverityLabel() const{ return m_findingProviderFieldsSeverityLabel; }
+    inline const Aws::Vector<StringFilter>& GetFindingProviderFieldsSeverityLabel() const { return m_findingProviderFieldsSeverityLabel; }
     inline bool FindingProviderFieldsSeverityLabelHasBeenSet() const { return m_findingProviderFieldsSeverityLabelHasBeenSet; }
-    inline void SetFindingProviderFieldsSeverityLabel(const Aws::Vector<StringFilter>& value) { m_findingProviderFieldsSeverityLabelHasBeenSet = true; m_findingProviderFieldsSeverityLabel = value; }
-    inline void SetFindingProviderFieldsSeverityLabel(Aws::Vector<StringFilter>&& value) { m_findingProviderFieldsSeverityLabelHasBeenSet = true; m_findingProviderFieldsSeverityLabel = std::move(value); }
-    inline AwsSecurityFindingFilters& WithFindingProviderFieldsSeverityLabel(const Aws::Vector<StringFilter>& value) { SetFindingProviderFieldsSeverityLabel(value); return *this;}
-    inline AwsSecurityFindingFilters& WithFindingProviderFieldsSeverityLabel(Aws::Vector<StringFilter>&& value) { SetFindingProviderFieldsSeverityLabel(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddFindingProviderFieldsSeverityLabel(const StringFilter& value) { m_findingProviderFieldsSeverityLabelHasBeenSet = true; m_findingProviderFieldsSeverityLabel.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddFindingProviderFieldsSeverityLabel(StringFilter&& value) { m_findingProviderFieldsSeverityLabelHasBeenSet = true; m_findingProviderFieldsSeverityLabel.push_back(std::move(value)); return *this; }
+    template<typename FindingProviderFieldsSeverityLabelT = Aws::Vector<StringFilter>>
+    void SetFindingProviderFieldsSeverityLabel(FindingProviderFieldsSeverityLabelT&& value) { m_findingProviderFieldsSeverityLabelHasBeenSet = true; m_findingProviderFieldsSeverityLabel = std::forward<FindingProviderFieldsSeverityLabelT>(value); }
+    template<typename FindingProviderFieldsSeverityLabelT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithFindingProviderFieldsSeverityLabel(FindingProviderFieldsSeverityLabelT&& value) { SetFindingProviderFieldsSeverityLabel(std::forward<FindingProviderFieldsSeverityLabelT>(value)); return *this;}
+    template<typename FindingProviderFieldsSeverityLabelT = StringFilter>
+    AwsSecurityFindingFilters& AddFindingProviderFieldsSeverityLabel(FindingProviderFieldsSeverityLabelT&& value) { m_findingProviderFieldsSeverityLabelHasBeenSet = true; m_findingProviderFieldsSeverityLabel.emplace_back(std::forward<FindingProviderFieldsSeverityLabelT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The finding provider's original value for the severity.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetFindingProviderFieldsSeverityOriginal() const{ return m_findingProviderFieldsSeverityOriginal; }
+    inline const Aws::Vector<StringFilter>& GetFindingProviderFieldsSeverityOriginal() const { return m_findingProviderFieldsSeverityOriginal; }
     inline bool FindingProviderFieldsSeverityOriginalHasBeenSet() const { return m_findingProviderFieldsSeverityOriginalHasBeenSet; }
-    inline void SetFindingProviderFieldsSeverityOriginal(const Aws::Vector<StringFilter>& value) { m_findingProviderFieldsSeverityOriginalHasBeenSet = true; m_findingProviderFieldsSeverityOriginal = value; }
-    inline void SetFindingProviderFieldsSeverityOriginal(Aws::Vector<StringFilter>&& value) { m_findingProviderFieldsSeverityOriginalHasBeenSet = true; m_findingProviderFieldsSeverityOriginal = std::move(value); }
-    inline AwsSecurityFindingFilters& WithFindingProviderFieldsSeverityOriginal(const Aws::Vector<StringFilter>& value) { SetFindingProviderFieldsSeverityOriginal(value); return *this;}
-    inline AwsSecurityFindingFilters& WithFindingProviderFieldsSeverityOriginal(Aws::Vector<StringFilter>&& value) { SetFindingProviderFieldsSeverityOriginal(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddFindingProviderFieldsSeverityOriginal(const StringFilter& value) { m_findingProviderFieldsSeverityOriginalHasBeenSet = true; m_findingProviderFieldsSeverityOriginal.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddFindingProviderFieldsSeverityOriginal(StringFilter&& value) { m_findingProviderFieldsSeverityOriginalHasBeenSet = true; m_findingProviderFieldsSeverityOriginal.push_back(std::move(value)); return *this; }
+    template<typename FindingProviderFieldsSeverityOriginalT = Aws::Vector<StringFilter>>
+    void SetFindingProviderFieldsSeverityOriginal(FindingProviderFieldsSeverityOriginalT&& value) { m_findingProviderFieldsSeverityOriginalHasBeenSet = true; m_findingProviderFieldsSeverityOriginal = std::forward<FindingProviderFieldsSeverityOriginalT>(value); }
+    template<typename FindingProviderFieldsSeverityOriginalT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithFindingProviderFieldsSeverityOriginal(FindingProviderFieldsSeverityOriginalT&& value) { SetFindingProviderFieldsSeverityOriginal(std::forward<FindingProviderFieldsSeverityOriginalT>(value)); return *this;}
+    template<typename FindingProviderFieldsSeverityOriginalT = StringFilter>
+    AwsSecurityFindingFilters& AddFindingProviderFieldsSeverityOriginal(FindingProviderFieldsSeverityOriginalT&& value) { m_findingProviderFieldsSeverityOriginalHasBeenSet = true; m_findingProviderFieldsSeverityOriginal.emplace_back(std::forward<FindingProviderFieldsSeverityOriginalT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -1390,14 +1390,14 @@ namespace Model
      * finding.</p> <p>Valid namespace values are: Software and Configuration Checks |
      * TTPs | Effects | Unusual Behaviors | Sensitive Data Identifications</p>
      */
-    inline const Aws::Vector<StringFilter>& GetFindingProviderFieldsTypes() const{ return m_findingProviderFieldsTypes; }
+    inline const Aws::Vector<StringFilter>& GetFindingProviderFieldsTypes() const { return m_findingProviderFieldsTypes; }
     inline bool FindingProviderFieldsTypesHasBeenSet() const { return m_findingProviderFieldsTypesHasBeenSet; }
-    inline void SetFindingProviderFieldsTypes(const Aws::Vector<StringFilter>& value) { m_findingProviderFieldsTypesHasBeenSet = true; m_findingProviderFieldsTypes = value; }
-    inline void SetFindingProviderFieldsTypes(Aws::Vector<StringFilter>&& value) { m_findingProviderFieldsTypesHasBeenSet = true; m_findingProviderFieldsTypes = std::move(value); }
-    inline AwsSecurityFindingFilters& WithFindingProviderFieldsTypes(const Aws::Vector<StringFilter>& value) { SetFindingProviderFieldsTypes(value); return *this;}
-    inline AwsSecurityFindingFilters& WithFindingProviderFieldsTypes(Aws::Vector<StringFilter>&& value) { SetFindingProviderFieldsTypes(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddFindingProviderFieldsTypes(const StringFilter& value) { m_findingProviderFieldsTypesHasBeenSet = true; m_findingProviderFieldsTypes.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddFindingProviderFieldsTypes(StringFilter&& value) { m_findingProviderFieldsTypesHasBeenSet = true; m_findingProviderFieldsTypes.push_back(std::move(value)); return *this; }
+    template<typename FindingProviderFieldsTypesT = Aws::Vector<StringFilter>>
+    void SetFindingProviderFieldsTypes(FindingProviderFieldsTypesT&& value) { m_findingProviderFieldsTypesHasBeenSet = true; m_findingProviderFieldsTypes = std::forward<FindingProviderFieldsTypesT>(value); }
+    template<typename FindingProviderFieldsTypesT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithFindingProviderFieldsTypes(FindingProviderFieldsTypesT&& value) { SetFindingProviderFieldsTypes(std::forward<FindingProviderFieldsTypesT>(value)); return *this;}
+    template<typename FindingProviderFieldsTypesT = StringFilter>
+    AwsSecurityFindingFilters& AddFindingProviderFieldsTypes(FindingProviderFieldsTypesT&& value) { m_findingProviderFieldsTypesHasBeenSet = true; m_findingProviderFieldsTypes.emplace_back(std::forward<FindingProviderFieldsTypesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -1405,14 +1405,14 @@ namespace Model
      * <p>Indicates whether or not sample findings are included in the filter
      * results.</p>
      */
-    inline const Aws::Vector<BooleanFilter>& GetSample() const{ return m_sample; }
+    inline const Aws::Vector<BooleanFilter>& GetSample() const { return m_sample; }
     inline bool SampleHasBeenSet() const { return m_sampleHasBeenSet; }
-    inline void SetSample(const Aws::Vector<BooleanFilter>& value) { m_sampleHasBeenSet = true; m_sample = value; }
-    inline void SetSample(Aws::Vector<BooleanFilter>&& value) { m_sampleHasBeenSet = true; m_sample = std::move(value); }
-    inline AwsSecurityFindingFilters& WithSample(const Aws::Vector<BooleanFilter>& value) { SetSample(value); return *this;}
-    inline AwsSecurityFindingFilters& WithSample(Aws::Vector<BooleanFilter>&& value) { SetSample(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddSample(const BooleanFilter& value) { m_sampleHasBeenSet = true; m_sample.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddSample(BooleanFilter&& value) { m_sampleHasBeenSet = true; m_sample.push_back(std::move(value)); return *this; }
+    template<typename SampleT = Aws::Vector<BooleanFilter>>
+    void SetSample(SampleT&& value) { m_sampleHasBeenSet = true; m_sample = std::forward<SampleT>(value); }
+    template<typename SampleT = Aws::Vector<BooleanFilter>>
+    AwsSecurityFindingFilters& WithSample(SampleT&& value) { SetSample(std::forward<SampleT>(value)); return *this;}
+    template<typename SampleT = BooleanFilter>
+    AwsSecurityFindingFilters& AddSample(SampleT&& value) { m_sampleHasBeenSet = true; m_sample.emplace_back(std::forward<SampleT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -1421,14 +1421,14 @@ namespace Model
      * typically consist of an Amazon Web Services service and a number, such as
      * APIGateway.5. </p>
      */
-    inline const Aws::Vector<StringFilter>& GetComplianceSecurityControlId() const{ return m_complianceSecurityControlId; }
+    inline const Aws::Vector<StringFilter>& GetComplianceSecurityControlId() const { return m_complianceSecurityControlId; }
     inline bool ComplianceSecurityControlIdHasBeenSet() const { return m_complianceSecurityControlIdHasBeenSet; }
-    inline void SetComplianceSecurityControlId(const Aws::Vector<StringFilter>& value) { m_complianceSecurityControlIdHasBeenSet = true; m_complianceSecurityControlId = value; }
-    inline void SetComplianceSecurityControlId(Aws::Vector<StringFilter>&& value) { m_complianceSecurityControlIdHasBeenSet = true; m_complianceSecurityControlId = std::move(value); }
-    inline AwsSecurityFindingFilters& WithComplianceSecurityControlId(const Aws::Vector<StringFilter>& value) { SetComplianceSecurityControlId(value); return *this;}
-    inline AwsSecurityFindingFilters& WithComplianceSecurityControlId(Aws::Vector<StringFilter>&& value) { SetComplianceSecurityControlId(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddComplianceSecurityControlId(const StringFilter& value) { m_complianceSecurityControlIdHasBeenSet = true; m_complianceSecurityControlId.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddComplianceSecurityControlId(StringFilter&& value) { m_complianceSecurityControlIdHasBeenSet = true; m_complianceSecurityControlId.push_back(std::move(value)); return *this; }
+    template<typename ComplianceSecurityControlIdT = Aws::Vector<StringFilter>>
+    void SetComplianceSecurityControlId(ComplianceSecurityControlIdT&& value) { m_complianceSecurityControlIdHasBeenSet = true; m_complianceSecurityControlId = std::forward<ComplianceSecurityControlIdT>(value); }
+    template<typename ComplianceSecurityControlIdT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithComplianceSecurityControlId(ComplianceSecurityControlIdT&& value) { SetComplianceSecurityControlId(std::forward<ComplianceSecurityControlIdT>(value)); return *this;}
+    template<typename ComplianceSecurityControlIdT = StringFilter>
+    AwsSecurityFindingFilters& AddComplianceSecurityControlId(ComplianceSecurityControlIdT&& value) { m_complianceSecurityControlIdHasBeenSet = true; m_complianceSecurityControlId.emplace_back(std::forward<ComplianceSecurityControlIdT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -1439,14 +1439,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a>
      * API response. </p>
      */
-    inline const Aws::Vector<StringFilter>& GetComplianceAssociatedStandardsId() const{ return m_complianceAssociatedStandardsId; }
+    inline const Aws::Vector<StringFilter>& GetComplianceAssociatedStandardsId() const { return m_complianceAssociatedStandardsId; }
     inline bool ComplianceAssociatedStandardsIdHasBeenSet() const { return m_complianceAssociatedStandardsIdHasBeenSet; }
-    inline void SetComplianceAssociatedStandardsId(const Aws::Vector<StringFilter>& value) { m_complianceAssociatedStandardsIdHasBeenSet = true; m_complianceAssociatedStandardsId = value; }
-    inline void SetComplianceAssociatedStandardsId(Aws::Vector<StringFilter>&& value) { m_complianceAssociatedStandardsIdHasBeenSet = true; m_complianceAssociatedStandardsId = std::move(value); }
-    inline AwsSecurityFindingFilters& WithComplianceAssociatedStandardsId(const Aws::Vector<StringFilter>& value) { SetComplianceAssociatedStandardsId(value); return *this;}
-    inline AwsSecurityFindingFilters& WithComplianceAssociatedStandardsId(Aws::Vector<StringFilter>&& value) { SetComplianceAssociatedStandardsId(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddComplianceAssociatedStandardsId(const StringFilter& value) { m_complianceAssociatedStandardsIdHasBeenSet = true; m_complianceAssociatedStandardsId.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddComplianceAssociatedStandardsId(StringFilter&& value) { m_complianceAssociatedStandardsIdHasBeenSet = true; m_complianceAssociatedStandardsId.push_back(std::move(value)); return *this; }
+    template<typename ComplianceAssociatedStandardsIdT = Aws::Vector<StringFilter>>
+    void SetComplianceAssociatedStandardsId(ComplianceAssociatedStandardsIdT&& value) { m_complianceAssociatedStandardsIdHasBeenSet = true; m_complianceAssociatedStandardsId = std::forward<ComplianceAssociatedStandardsIdT>(value); }
+    template<typename ComplianceAssociatedStandardsIdT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithComplianceAssociatedStandardsId(ComplianceAssociatedStandardsIdT&& value) { SetComplianceAssociatedStandardsId(std::forward<ComplianceAssociatedStandardsIdT>(value)); return *this;}
+    template<typename ComplianceAssociatedStandardsIdT = StringFilter>
+    AwsSecurityFindingFilters& AddComplianceAssociatedStandardsId(ComplianceAssociatedStandardsIdT&& value) { m_complianceAssociatedStandardsIdHasBeenSet = true; m_complianceAssociatedStandardsId.emplace_back(std::forward<ComplianceAssociatedStandardsIdT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -1455,14 +1455,14 @@ namespace Model
      * exploit. You can filter findings by this field only if you use Security Hub and
      * Amazon Inspector. </p>
      */
-    inline const Aws::Vector<StringFilter>& GetVulnerabilitiesExploitAvailable() const{ return m_vulnerabilitiesExploitAvailable; }
+    inline const Aws::Vector<StringFilter>& GetVulnerabilitiesExploitAvailable() const { return m_vulnerabilitiesExploitAvailable; }
     inline bool VulnerabilitiesExploitAvailableHasBeenSet() const { return m_vulnerabilitiesExploitAvailableHasBeenSet; }
-    inline void SetVulnerabilitiesExploitAvailable(const Aws::Vector<StringFilter>& value) { m_vulnerabilitiesExploitAvailableHasBeenSet = true; m_vulnerabilitiesExploitAvailable = value; }
-    inline void SetVulnerabilitiesExploitAvailable(Aws::Vector<StringFilter>&& value) { m_vulnerabilitiesExploitAvailableHasBeenSet = true; m_vulnerabilitiesExploitAvailable = std::move(value); }
-    inline AwsSecurityFindingFilters& WithVulnerabilitiesExploitAvailable(const Aws::Vector<StringFilter>& value) { SetVulnerabilitiesExploitAvailable(value); return *this;}
-    inline AwsSecurityFindingFilters& WithVulnerabilitiesExploitAvailable(Aws::Vector<StringFilter>&& value) { SetVulnerabilitiesExploitAvailable(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddVulnerabilitiesExploitAvailable(const StringFilter& value) { m_vulnerabilitiesExploitAvailableHasBeenSet = true; m_vulnerabilitiesExploitAvailable.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddVulnerabilitiesExploitAvailable(StringFilter&& value) { m_vulnerabilitiesExploitAvailableHasBeenSet = true; m_vulnerabilitiesExploitAvailable.push_back(std::move(value)); return *this; }
+    template<typename VulnerabilitiesExploitAvailableT = Aws::Vector<StringFilter>>
+    void SetVulnerabilitiesExploitAvailable(VulnerabilitiesExploitAvailableT&& value) { m_vulnerabilitiesExploitAvailableHasBeenSet = true; m_vulnerabilitiesExploitAvailable = std::forward<VulnerabilitiesExploitAvailableT>(value); }
+    template<typename VulnerabilitiesExploitAvailableT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithVulnerabilitiesExploitAvailable(VulnerabilitiesExploitAvailableT&& value) { SetVulnerabilitiesExploitAvailable(std::forward<VulnerabilitiesExploitAvailableT>(value)); return *this;}
+    template<typename VulnerabilitiesExploitAvailableT = StringFilter>
+    AwsSecurityFindingFilters& AddVulnerabilitiesExploitAvailable(VulnerabilitiesExploitAvailableT&& value) { m_vulnerabilitiesExploitAvailableHasBeenSet = true; m_vulnerabilitiesExploitAvailable.emplace_back(std::forward<VulnerabilitiesExploitAvailableT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -1471,42 +1471,42 @@ namespace Model
      * affected software packages. You can filter findings by this field only if you
      * use Security Hub and Amazon Inspector. </p>
      */
-    inline const Aws::Vector<StringFilter>& GetVulnerabilitiesFixAvailable() const{ return m_vulnerabilitiesFixAvailable; }
+    inline const Aws::Vector<StringFilter>& GetVulnerabilitiesFixAvailable() const { return m_vulnerabilitiesFixAvailable; }
     inline bool VulnerabilitiesFixAvailableHasBeenSet() const { return m_vulnerabilitiesFixAvailableHasBeenSet; }
-    inline void SetVulnerabilitiesFixAvailable(const Aws::Vector<StringFilter>& value) { m_vulnerabilitiesFixAvailableHasBeenSet = true; m_vulnerabilitiesFixAvailable = value; }
-    inline void SetVulnerabilitiesFixAvailable(Aws::Vector<StringFilter>&& value) { m_vulnerabilitiesFixAvailableHasBeenSet = true; m_vulnerabilitiesFixAvailable = std::move(value); }
-    inline AwsSecurityFindingFilters& WithVulnerabilitiesFixAvailable(const Aws::Vector<StringFilter>& value) { SetVulnerabilitiesFixAvailable(value); return *this;}
-    inline AwsSecurityFindingFilters& WithVulnerabilitiesFixAvailable(Aws::Vector<StringFilter>&& value) { SetVulnerabilitiesFixAvailable(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddVulnerabilitiesFixAvailable(const StringFilter& value) { m_vulnerabilitiesFixAvailableHasBeenSet = true; m_vulnerabilitiesFixAvailable.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddVulnerabilitiesFixAvailable(StringFilter&& value) { m_vulnerabilitiesFixAvailableHasBeenSet = true; m_vulnerabilitiesFixAvailable.push_back(std::move(value)); return *this; }
+    template<typename VulnerabilitiesFixAvailableT = Aws::Vector<StringFilter>>
+    void SetVulnerabilitiesFixAvailable(VulnerabilitiesFixAvailableT&& value) { m_vulnerabilitiesFixAvailableHasBeenSet = true; m_vulnerabilitiesFixAvailable = std::forward<VulnerabilitiesFixAvailableT>(value); }
+    template<typename VulnerabilitiesFixAvailableT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithVulnerabilitiesFixAvailable(VulnerabilitiesFixAvailableT&& value) { SetVulnerabilitiesFixAvailable(std::forward<VulnerabilitiesFixAvailableT>(value)); return *this;}
+    template<typename VulnerabilitiesFixAvailableT = StringFilter>
+    AwsSecurityFindingFilters& AddVulnerabilitiesFixAvailable(VulnerabilitiesFixAvailableT&& value) { m_vulnerabilitiesFixAvailableHasBeenSet = true; m_vulnerabilitiesFixAvailable.emplace_back(std::forward<VulnerabilitiesFixAvailableT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> The name of a security control parameter. </p>
      */
-    inline const Aws::Vector<StringFilter>& GetComplianceSecurityControlParametersName() const{ return m_complianceSecurityControlParametersName; }
+    inline const Aws::Vector<StringFilter>& GetComplianceSecurityControlParametersName() const { return m_complianceSecurityControlParametersName; }
     inline bool ComplianceSecurityControlParametersNameHasBeenSet() const { return m_complianceSecurityControlParametersNameHasBeenSet; }
-    inline void SetComplianceSecurityControlParametersName(const Aws::Vector<StringFilter>& value) { m_complianceSecurityControlParametersNameHasBeenSet = true; m_complianceSecurityControlParametersName = value; }
-    inline void SetComplianceSecurityControlParametersName(Aws::Vector<StringFilter>&& value) { m_complianceSecurityControlParametersNameHasBeenSet = true; m_complianceSecurityControlParametersName = std::move(value); }
-    inline AwsSecurityFindingFilters& WithComplianceSecurityControlParametersName(const Aws::Vector<StringFilter>& value) { SetComplianceSecurityControlParametersName(value); return *this;}
-    inline AwsSecurityFindingFilters& WithComplianceSecurityControlParametersName(Aws::Vector<StringFilter>&& value) { SetComplianceSecurityControlParametersName(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddComplianceSecurityControlParametersName(const StringFilter& value) { m_complianceSecurityControlParametersNameHasBeenSet = true; m_complianceSecurityControlParametersName.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddComplianceSecurityControlParametersName(StringFilter&& value) { m_complianceSecurityControlParametersNameHasBeenSet = true; m_complianceSecurityControlParametersName.push_back(std::move(value)); return *this; }
+    template<typename ComplianceSecurityControlParametersNameT = Aws::Vector<StringFilter>>
+    void SetComplianceSecurityControlParametersName(ComplianceSecurityControlParametersNameT&& value) { m_complianceSecurityControlParametersNameHasBeenSet = true; m_complianceSecurityControlParametersName = std::forward<ComplianceSecurityControlParametersNameT>(value); }
+    template<typename ComplianceSecurityControlParametersNameT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithComplianceSecurityControlParametersName(ComplianceSecurityControlParametersNameT&& value) { SetComplianceSecurityControlParametersName(std::forward<ComplianceSecurityControlParametersNameT>(value)); return *this;}
+    template<typename ComplianceSecurityControlParametersNameT = StringFilter>
+    AwsSecurityFindingFilters& AddComplianceSecurityControlParametersName(ComplianceSecurityControlParametersNameT&& value) { m_complianceSecurityControlParametersNameHasBeenSet = true; m_complianceSecurityControlParametersName.emplace_back(std::forward<ComplianceSecurityControlParametersNameT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> The current value of a security control parameter. </p>
      */
-    inline const Aws::Vector<StringFilter>& GetComplianceSecurityControlParametersValue() const{ return m_complianceSecurityControlParametersValue; }
+    inline const Aws::Vector<StringFilter>& GetComplianceSecurityControlParametersValue() const { return m_complianceSecurityControlParametersValue; }
     inline bool ComplianceSecurityControlParametersValueHasBeenSet() const { return m_complianceSecurityControlParametersValueHasBeenSet; }
-    inline void SetComplianceSecurityControlParametersValue(const Aws::Vector<StringFilter>& value) { m_complianceSecurityControlParametersValueHasBeenSet = true; m_complianceSecurityControlParametersValue = value; }
-    inline void SetComplianceSecurityControlParametersValue(Aws::Vector<StringFilter>&& value) { m_complianceSecurityControlParametersValueHasBeenSet = true; m_complianceSecurityControlParametersValue = std::move(value); }
-    inline AwsSecurityFindingFilters& WithComplianceSecurityControlParametersValue(const Aws::Vector<StringFilter>& value) { SetComplianceSecurityControlParametersValue(value); return *this;}
-    inline AwsSecurityFindingFilters& WithComplianceSecurityControlParametersValue(Aws::Vector<StringFilter>&& value) { SetComplianceSecurityControlParametersValue(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddComplianceSecurityControlParametersValue(const StringFilter& value) { m_complianceSecurityControlParametersValueHasBeenSet = true; m_complianceSecurityControlParametersValue.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddComplianceSecurityControlParametersValue(StringFilter&& value) { m_complianceSecurityControlParametersValueHasBeenSet = true; m_complianceSecurityControlParametersValue.push_back(std::move(value)); return *this; }
+    template<typename ComplianceSecurityControlParametersValueT = Aws::Vector<StringFilter>>
+    void SetComplianceSecurityControlParametersValue(ComplianceSecurityControlParametersValueT&& value) { m_complianceSecurityControlParametersValueHasBeenSet = true; m_complianceSecurityControlParametersValue = std::forward<ComplianceSecurityControlParametersValueT>(value); }
+    template<typename ComplianceSecurityControlParametersValueT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithComplianceSecurityControlParametersValue(ComplianceSecurityControlParametersValueT&& value) { SetComplianceSecurityControlParametersValue(std::forward<ComplianceSecurityControlParametersValueT>(value)); return *this;}
+    template<typename ComplianceSecurityControlParametersValueT = StringFilter>
+    AwsSecurityFindingFilters& AddComplianceSecurityControlParametersValue(ComplianceSecurityControlParametersValueT&& value) { m_complianceSecurityControlParametersValueHasBeenSet = true; m_complianceSecurityControlParametersValue.emplace_back(std::forward<ComplianceSecurityControlParametersValueT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -1514,42 +1514,42 @@ namespace Model
      * <p>The name of the Amazon Web Services account in which a finding is
      * generated.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetAwsAccountName() const{ return m_awsAccountName; }
+    inline const Aws::Vector<StringFilter>& GetAwsAccountName() const { return m_awsAccountName; }
     inline bool AwsAccountNameHasBeenSet() const { return m_awsAccountNameHasBeenSet; }
-    inline void SetAwsAccountName(const Aws::Vector<StringFilter>& value) { m_awsAccountNameHasBeenSet = true; m_awsAccountName = value; }
-    inline void SetAwsAccountName(Aws::Vector<StringFilter>&& value) { m_awsAccountNameHasBeenSet = true; m_awsAccountName = std::move(value); }
-    inline AwsSecurityFindingFilters& WithAwsAccountName(const Aws::Vector<StringFilter>& value) { SetAwsAccountName(value); return *this;}
-    inline AwsSecurityFindingFilters& WithAwsAccountName(Aws::Vector<StringFilter>&& value) { SetAwsAccountName(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddAwsAccountName(const StringFilter& value) { m_awsAccountNameHasBeenSet = true; m_awsAccountName.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddAwsAccountName(StringFilter&& value) { m_awsAccountNameHasBeenSet = true; m_awsAccountName.push_back(std::move(value)); return *this; }
+    template<typename AwsAccountNameT = Aws::Vector<StringFilter>>
+    void SetAwsAccountName(AwsAccountNameT&& value) { m_awsAccountNameHasBeenSet = true; m_awsAccountName = std::forward<AwsAccountNameT>(value); }
+    template<typename AwsAccountNameT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithAwsAccountName(AwsAccountNameT&& value) { SetAwsAccountName(std::forward<AwsAccountNameT>(value)); return *this;}
+    template<typename AwsAccountNameT = StringFilter>
+    AwsSecurityFindingFilters& AddAwsAccountName(AwsAccountNameT&& value) { m_awsAccountNameHasBeenSet = true; m_awsAccountName.emplace_back(std::forward<AwsAccountNameT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> The name of the application that is related to a finding. </p>
      */
-    inline const Aws::Vector<StringFilter>& GetResourceApplicationName() const{ return m_resourceApplicationName; }
+    inline const Aws::Vector<StringFilter>& GetResourceApplicationName() const { return m_resourceApplicationName; }
     inline bool ResourceApplicationNameHasBeenSet() const { return m_resourceApplicationNameHasBeenSet; }
-    inline void SetResourceApplicationName(const Aws::Vector<StringFilter>& value) { m_resourceApplicationNameHasBeenSet = true; m_resourceApplicationName = value; }
-    inline void SetResourceApplicationName(Aws::Vector<StringFilter>&& value) { m_resourceApplicationNameHasBeenSet = true; m_resourceApplicationName = std::move(value); }
-    inline AwsSecurityFindingFilters& WithResourceApplicationName(const Aws::Vector<StringFilter>& value) { SetResourceApplicationName(value); return *this;}
-    inline AwsSecurityFindingFilters& WithResourceApplicationName(Aws::Vector<StringFilter>&& value) { SetResourceApplicationName(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddResourceApplicationName(const StringFilter& value) { m_resourceApplicationNameHasBeenSet = true; m_resourceApplicationName.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddResourceApplicationName(StringFilter&& value) { m_resourceApplicationNameHasBeenSet = true; m_resourceApplicationName.push_back(std::move(value)); return *this; }
+    template<typename ResourceApplicationNameT = Aws::Vector<StringFilter>>
+    void SetResourceApplicationName(ResourceApplicationNameT&& value) { m_resourceApplicationNameHasBeenSet = true; m_resourceApplicationName = std::forward<ResourceApplicationNameT>(value); }
+    template<typename ResourceApplicationNameT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithResourceApplicationName(ResourceApplicationNameT&& value) { SetResourceApplicationName(std::forward<ResourceApplicationNameT>(value)); return *this;}
+    template<typename ResourceApplicationNameT = StringFilter>
+    AwsSecurityFindingFilters& AddResourceApplicationName(ResourceApplicationNameT&& value) { m_resourceApplicationNameHasBeenSet = true; m_resourceApplicationName.emplace_back(std::forward<ResourceApplicationNameT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> The ARN of the application that is related to a finding. </p>
      */
-    inline const Aws::Vector<StringFilter>& GetResourceApplicationArn() const{ return m_resourceApplicationArn; }
+    inline const Aws::Vector<StringFilter>& GetResourceApplicationArn() const { return m_resourceApplicationArn; }
     inline bool ResourceApplicationArnHasBeenSet() const { return m_resourceApplicationArnHasBeenSet; }
-    inline void SetResourceApplicationArn(const Aws::Vector<StringFilter>& value) { m_resourceApplicationArnHasBeenSet = true; m_resourceApplicationArn = value; }
-    inline void SetResourceApplicationArn(Aws::Vector<StringFilter>&& value) { m_resourceApplicationArnHasBeenSet = true; m_resourceApplicationArn = std::move(value); }
-    inline AwsSecurityFindingFilters& WithResourceApplicationArn(const Aws::Vector<StringFilter>& value) { SetResourceApplicationArn(value); return *this;}
-    inline AwsSecurityFindingFilters& WithResourceApplicationArn(Aws::Vector<StringFilter>&& value) { SetResourceApplicationArn(std::move(value)); return *this;}
-    inline AwsSecurityFindingFilters& AddResourceApplicationArn(const StringFilter& value) { m_resourceApplicationArnHasBeenSet = true; m_resourceApplicationArn.push_back(value); return *this; }
-    inline AwsSecurityFindingFilters& AddResourceApplicationArn(StringFilter&& value) { m_resourceApplicationArnHasBeenSet = true; m_resourceApplicationArn.push_back(std::move(value)); return *this; }
+    template<typename ResourceApplicationArnT = Aws::Vector<StringFilter>>
+    void SetResourceApplicationArn(ResourceApplicationArnT&& value) { m_resourceApplicationArnHasBeenSet = true; m_resourceApplicationArn = std::forward<ResourceApplicationArnT>(value); }
+    template<typename ResourceApplicationArnT = Aws::Vector<StringFilter>>
+    AwsSecurityFindingFilters& WithResourceApplicationArn(ResourceApplicationArnT&& value) { SetResourceApplicationArn(std::forward<ResourceApplicationArnT>(value)); return *this;}
+    template<typename ResourceApplicationArnT = StringFilter>
+    AwsSecurityFindingFilters& AddResourceApplicationArn(ResourceApplicationArnT&& value) { m_resourceApplicationArnHasBeenSet = true; m_resourceApplicationArn.emplace_back(std::forward<ResourceApplicationArnT>(value)); return *this; }
     ///@}
   private:
 

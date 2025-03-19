@@ -12,27 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateTransformJobRequest::CreateTransformJobRequest() : 
-    m_transformJobNameHasBeenSet(false),
-    m_modelNameHasBeenSet(false),
-    m_maxConcurrentTransforms(0),
-    m_maxConcurrentTransformsHasBeenSet(false),
-    m_modelClientConfigHasBeenSet(false),
-    m_maxPayloadInMB(0),
-    m_maxPayloadInMBHasBeenSet(false),
-    m_batchStrategy(BatchStrategy::NOT_SET),
-    m_batchStrategyHasBeenSet(false),
-    m_environmentHasBeenSet(false),
-    m_transformInputHasBeenSet(false),
-    m_transformOutputHasBeenSet(false),
-    m_dataCaptureConfigHasBeenSet(false),
-    m_transformResourcesHasBeenSet(false),
-    m_dataProcessingHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_experimentConfigHasBeenSet(false)
-{
-}
-
 Aws::String CreateTransformJobRequest::SerializePayload() const
 {
   JsonValue payload;

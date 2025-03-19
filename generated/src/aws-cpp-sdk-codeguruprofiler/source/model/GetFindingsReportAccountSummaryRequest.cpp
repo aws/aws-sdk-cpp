@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetFindingsReportAccountSummaryRequest::GetFindingsReportAccountSummaryRequest() : 
-    m_dailyReportsOnly(false),
-    m_dailyReportsOnlyHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetFindingsReportAccountSummaryRequest::SerializePayload() const
 {
   return {};

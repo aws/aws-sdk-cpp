@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateLocalGatewayRouteTableVpcAssociationRequest::CreateLocalGatewayRouteTableVpcAssociationRequest() : 
-    m_localGatewayRouteTableIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String CreateLocalGatewayRouteTableVpcAssociationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

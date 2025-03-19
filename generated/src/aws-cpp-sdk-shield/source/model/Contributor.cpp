@@ -18,15 +18,7 @@ namespace Shield
 namespace Model
 {
 
-Contributor::Contributor() : 
-    m_nameHasBeenSet(false),
-    m_value(0),
-    m_valueHasBeenSet(false)
-{
-}
-
 Contributor::Contributor(JsonView jsonValue)
-  : Contributor()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Contributor& Contributor::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetInt64("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

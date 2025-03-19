@@ -18,16 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-EntityLabel::EntityLabel() : 
-    m_name(PiiEntityType::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_score(0.0),
-    m_scoreHasBeenSet(false)
-{
-}
-
 EntityLabel::EntityLabel(JsonView jsonValue)
-  : EntityLabel()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ EntityLabel& EntityLabel::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = PiiEntityTypeMapper::GetPiiEntityTypeForName(jsonValue.GetString("Name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Score"))
   {
     m_score = jsonValue.GetDouble("Score");
-
     m_scoreHasBeenSet = true;
   }
-
   return *this;
 }
 

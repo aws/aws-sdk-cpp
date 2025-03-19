@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeWorkloadResult::DescribeWorkloadResult()
-{
-}
-
 DescribeWorkloadResult::DescribeWorkloadResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ DescribeWorkloadResult& DescribeWorkloadResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("WorkloadId"))
   {
     m_workloadId = jsonValue.GetString("WorkloadId");
-
+    m_workloadIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkloadRemarks"))
   {
     m_workloadRemarks = jsonValue.GetString("WorkloadRemarks");
-
+    m_workloadRemarksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkloadConfiguration"))
   {
     m_workloadConfiguration = jsonValue.GetObject("WorkloadConfiguration");
-
+    m_workloadConfigurationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

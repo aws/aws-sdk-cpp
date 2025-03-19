@@ -18,16 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-AppflowIntegrationWorkflowAttributes::AppflowIntegrationWorkflowAttributes() : 
-    m_sourceConnectorType(SourceConnectorType::NOT_SET),
-    m_sourceConnectorTypeHasBeenSet(false),
-    m_connectorProfileNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 AppflowIntegrationWorkflowAttributes::AppflowIntegrationWorkflowAttributes(JsonView jsonValue)
-  : AppflowIntegrationWorkflowAttributes()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ AppflowIntegrationWorkflowAttributes& AppflowIntegrationWorkflowAttributes::oper
   if(jsonValue.ValueExists("SourceConnectorType"))
   {
     m_sourceConnectorType = SourceConnectorTypeMapper::GetSourceConnectorTypeForName(jsonValue.GetString("SourceConnectorType"));
-
     m_sourceConnectorTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectorProfileName"))
   {
     m_connectorProfileName = jsonValue.GetString("ConnectorProfileName");
-
     m_connectorProfileNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

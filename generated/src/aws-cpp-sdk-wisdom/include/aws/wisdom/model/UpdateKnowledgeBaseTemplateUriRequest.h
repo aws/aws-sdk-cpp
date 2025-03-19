@@ -21,7 +21,7 @@ namespace Model
   class UpdateKnowledgeBaseTemplateUriRequest : public ConnectWisdomServiceRequest
   {
   public:
-    AWS_CONNECTWISDOMSERVICE_API UpdateKnowledgeBaseTemplateUriRequest();
+    AWS_CONNECTWISDOMSERVICE_API UpdateKnowledgeBaseTemplateUriRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
      * type knowledge base if you're storing Wisdom Content resource to it. Can be
      * either the ID or the ARN. URLs cannot contain the ARN.</p>
      */
-    inline const Aws::String& GetKnowledgeBaseId() const{ return m_knowledgeBaseId; }
+    inline const Aws::String& GetKnowledgeBaseId() const { return m_knowledgeBaseId; }
     inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
-    inline void SetKnowledgeBaseId(const Aws::String& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = value; }
-    inline void SetKnowledgeBaseId(Aws::String&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::move(value); }
-    inline void SetKnowledgeBaseId(const char* value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId.assign(value); }
-    inline UpdateKnowledgeBaseTemplateUriRequest& WithKnowledgeBaseId(const Aws::String& value) { SetKnowledgeBaseId(value); return *this;}
-    inline UpdateKnowledgeBaseTemplateUriRequest& WithKnowledgeBaseId(Aws::String&& value) { SetKnowledgeBaseId(std::move(value)); return *this;}
-    inline UpdateKnowledgeBaseTemplateUriRequest& WithKnowledgeBaseId(const char* value) { SetKnowledgeBaseId(value); return *this;}
+    template<typename KnowledgeBaseIdT = Aws::String>
+    void SetKnowledgeBaseId(KnowledgeBaseIdT&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::forward<KnowledgeBaseIdT>(value); }
+    template<typename KnowledgeBaseIdT = Aws::String>
+    UpdateKnowledgeBaseTemplateUriRequest& WithKnowledgeBaseId(KnowledgeBaseIdT&& value) { SetKnowledgeBaseId(std::forward<KnowledgeBaseIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The template URI to update.</p>
      */
-    inline const Aws::String& GetTemplateUri() const{ return m_templateUri; }
+    inline const Aws::String& GetTemplateUri() const { return m_templateUri; }
     inline bool TemplateUriHasBeenSet() const { return m_templateUriHasBeenSet; }
-    inline void SetTemplateUri(const Aws::String& value) { m_templateUriHasBeenSet = true; m_templateUri = value; }
-    inline void SetTemplateUri(Aws::String&& value) { m_templateUriHasBeenSet = true; m_templateUri = std::move(value); }
-    inline void SetTemplateUri(const char* value) { m_templateUriHasBeenSet = true; m_templateUri.assign(value); }
-    inline UpdateKnowledgeBaseTemplateUriRequest& WithTemplateUri(const Aws::String& value) { SetTemplateUri(value); return *this;}
-    inline UpdateKnowledgeBaseTemplateUriRequest& WithTemplateUri(Aws::String&& value) { SetTemplateUri(std::move(value)); return *this;}
-    inline UpdateKnowledgeBaseTemplateUriRequest& WithTemplateUri(const char* value) { SetTemplateUri(value); return *this;}
+    template<typename TemplateUriT = Aws::String>
+    void SetTemplateUri(TemplateUriT&& value) { m_templateUriHasBeenSet = true; m_templateUri = std::forward<TemplateUriT>(value); }
+    template<typename TemplateUriT = Aws::String>
+    UpdateKnowledgeBaseTemplateUriRequest& WithTemplateUri(TemplateUriT&& value) { SetTemplateUri(std::forward<TemplateUriT>(value)); return *this;}
     ///@}
   private:
 

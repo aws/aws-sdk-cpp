@@ -29,7 +29,7 @@ namespace Model
   class DescribeProjectsResult
   {
   public:
-    AWS_REKOGNITION_API DescribeProjectsResult();
+    AWS_REKOGNITION_API DescribeProjectsResult() = default;
     AWS_REKOGNITION_API DescribeProjectsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_REKOGNITION_API DescribeProjectsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>A list of project descriptions. The list is sorted by the date and time the
      * projects are created.</p>
      */
-    inline const Aws::Vector<ProjectDescription>& GetProjectDescriptions() const{ return m_projectDescriptions; }
-    inline void SetProjectDescriptions(const Aws::Vector<ProjectDescription>& value) { m_projectDescriptions = value; }
-    inline void SetProjectDescriptions(Aws::Vector<ProjectDescription>&& value) { m_projectDescriptions = std::move(value); }
-    inline DescribeProjectsResult& WithProjectDescriptions(const Aws::Vector<ProjectDescription>& value) { SetProjectDescriptions(value); return *this;}
-    inline DescribeProjectsResult& WithProjectDescriptions(Aws::Vector<ProjectDescription>&& value) { SetProjectDescriptions(std::move(value)); return *this;}
-    inline DescribeProjectsResult& AddProjectDescriptions(const ProjectDescription& value) { m_projectDescriptions.push_back(value); return *this; }
-    inline DescribeProjectsResult& AddProjectDescriptions(ProjectDescription&& value) { m_projectDescriptions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ProjectDescription>& GetProjectDescriptions() const { return m_projectDescriptions; }
+    template<typename ProjectDescriptionsT = Aws::Vector<ProjectDescription>>
+    void SetProjectDescriptions(ProjectDescriptionsT&& value) { m_projectDescriptionsHasBeenSet = true; m_projectDescriptions = std::forward<ProjectDescriptionsT>(value); }
+    template<typename ProjectDescriptionsT = Aws::Vector<ProjectDescription>>
+    DescribeProjectsResult& WithProjectDescriptions(ProjectDescriptionsT&& value) { SetProjectDescriptions(std::forward<ProjectDescriptionsT>(value)); return *this;}
+    template<typename ProjectDescriptionsT = ProjectDescription>
+    DescribeProjectsResult& AddProjectDescriptions(ProjectDescriptionsT&& value) { m_projectDescriptionsHasBeenSet = true; m_projectDescriptions.emplace_back(std::forward<ProjectDescriptionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,32 +54,31 @@ namespace Model
      * retrieve), Amazon Rekognition returns a pagination token in the response. You
      * can use this pagination token to retrieve the next set of results. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeProjectsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeProjectsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeProjectsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeProjectsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeProjectsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeProjectsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeProjectsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeProjectsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ProjectDescription> m_projectDescriptions;
+    bool m_projectDescriptionsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

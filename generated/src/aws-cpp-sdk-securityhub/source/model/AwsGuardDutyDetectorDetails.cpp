@@ -18,17 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsGuardDutyDetectorDetails::AwsGuardDutyDetectorDetails() : 
-    m_dataSourcesHasBeenSet(false),
-    m_featuresHasBeenSet(false),
-    m_findingPublishingFrequencyHasBeenSet(false),
-    m_serviceRoleHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 AwsGuardDutyDetectorDetails::AwsGuardDutyDetectorDetails(JsonView jsonValue)
-  : AwsGuardDutyDetectorDetails()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ AwsGuardDutyDetectorDetails& AwsGuardDutyDetectorDetails::operator =(JsonView js
   if(jsonValue.ValueExists("DataSources"))
   {
     m_dataSources = jsonValue.GetObject("DataSources");
-
     m_dataSourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Features"))
   {
     Aws::Utils::Array<JsonView> featuresJsonList = jsonValue.GetArray("Features");
@@ -51,28 +39,21 @@ AwsGuardDutyDetectorDetails& AwsGuardDutyDetectorDetails::operator =(JsonView js
     }
     m_featuresHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FindingPublishingFrequency"))
   {
     m_findingPublishingFrequency = jsonValue.GetString("FindingPublishingFrequency");
-
     m_findingPublishingFrequencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceRole"))
   {
     m_serviceRole = jsonValue.GetString("ServiceRole");
-
     m_serviceRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

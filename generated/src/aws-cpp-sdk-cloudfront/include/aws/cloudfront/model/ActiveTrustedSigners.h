@@ -33,7 +33,7 @@ namespace Model
   class ActiveTrustedSigners
   {
   public:
-    AWS_CLOUDFRONT_API ActiveTrustedSigners();
+    AWS_CLOUDFRONT_API ActiveTrustedSigners() = default;
     AWS_CLOUDFRONT_API ActiveTrustedSigners(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API ActiveTrustedSigners& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,7 +46,7 @@ namespace Model
      * the list are configured as trusted signers. If not, this field is
      * <code>false</code>.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline ActiveTrustedSigners& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -56,7 +56,7 @@ namespace Model
     /**
      * <p>The number of Amazon Web Services accounts in the list.</p>
      */
-    inline int GetQuantity() const{ return m_quantity; }
+    inline int GetQuantity() const { return m_quantity; }
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
     inline ActiveTrustedSigners& WithQuantity(int value) { SetQuantity(value); return *this;}
@@ -68,21 +68,21 @@ namespace Model
      * CloudFront key pairs in each account that CloudFront can use to verify the
      * signatures of signed URLs and signed cookies.</p>
      */
-    inline const Aws::Vector<Signer>& GetItems() const{ return m_items; }
+    inline const Aws::Vector<Signer>& GetItems() const { return m_items; }
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-    inline void SetItems(const Aws::Vector<Signer>& value) { m_itemsHasBeenSet = true; m_items = value; }
-    inline void SetItems(Aws::Vector<Signer>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
-    inline ActiveTrustedSigners& WithItems(const Aws::Vector<Signer>& value) { SetItems(value); return *this;}
-    inline ActiveTrustedSigners& WithItems(Aws::Vector<Signer>&& value) { SetItems(std::move(value)); return *this;}
-    inline ActiveTrustedSigners& AddItems(const Signer& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
-    inline ActiveTrustedSigners& AddItems(Signer&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
+    template<typename ItemsT = Aws::Vector<Signer>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<Signer>>
+    ActiveTrustedSigners& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = Signer>
+    ActiveTrustedSigners& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
-    int m_quantity;
+    int m_quantity{0};
     bool m_quantityHasBeenSet = false;
 
     Aws::Vector<Signer> m_items;

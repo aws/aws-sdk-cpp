@@ -18,29 +18,7 @@ namespace CloudWatchEvidently
 namespace Model
 {
 
-Feature::Feature() : 
-    m_arnHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_defaultVariationHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_entityOverridesHasBeenSet(false),
-    m_evaluationRulesHasBeenSet(false),
-    m_evaluationStrategy(FeatureEvaluationStrategy::NOT_SET),
-    m_evaluationStrategyHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_projectHasBeenSet(false),
-    m_status(FeatureStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_valueType(VariationValueType::NOT_SET),
-    m_valueTypeHasBeenSet(false),
-    m_variationsHasBeenSet(false)
-{
-}
-
 Feature::Feature(JsonView jsonValue)
-  : Feature()
 {
   *this = jsonValue;
 }
@@ -50,31 +28,23 @@ Feature& Feature::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdTime"))
   {
     m_createdTime = jsonValue.GetDouble("createdTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultVariation"))
   {
     m_defaultVariation = jsonValue.GetString("defaultVariation");
-
     m_defaultVariationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("entityOverrides"))
   {
     Aws::Map<Aws::String, JsonView> entityOverridesJsonMap = jsonValue.GetObject("entityOverrides").GetAllObjects();
@@ -84,7 +54,6 @@ Feature& Feature::operator =(JsonView jsonValue)
     }
     m_entityOverridesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("evaluationRules"))
   {
     Aws::Utils::Array<JsonView> evaluationRulesJsonList = jsonValue.GetArray("evaluationRules");
@@ -94,42 +63,31 @@ Feature& Feature::operator =(JsonView jsonValue)
     }
     m_evaluationRulesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("evaluationStrategy"))
   {
     m_evaluationStrategy = FeatureEvaluationStrategyMapper::GetFeatureEvaluationStrategyForName(jsonValue.GetString("evaluationStrategy"));
-
     m_evaluationStrategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("lastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("project"))
   {
     m_project = jsonValue.GetString("project");
-
     m_projectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = FeatureStatusMapper::GetFeatureStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -139,14 +97,11 @@ Feature& Feature::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("valueType"))
   {
     m_valueType = VariationValueTypeMapper::GetVariationValueTypeForName(jsonValue.GetString("valueType"));
-
     m_valueTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("variations"))
   {
     Aws::Utils::Array<JsonView> variationsJsonList = jsonValue.GetArray("variations");
@@ -156,7 +111,6 @@ Feature& Feature::operator =(JsonView jsonValue)
     }
     m_variationsHasBeenSet = true;
   }
-
   return *this;
 }
 

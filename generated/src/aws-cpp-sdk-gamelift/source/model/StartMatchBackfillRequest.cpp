@@ -12,14 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartMatchBackfillRequest::StartMatchBackfillRequest() : 
-    m_ticketIdHasBeenSet(false),
-    m_configurationNameHasBeenSet(false),
-    m_gameSessionArnHasBeenSet(false),
-    m_playersHasBeenSet(false)
-{
-}
-
 Aws::String StartMatchBackfillRequest::SerializePayload() const
 {
   JsonValue payload;

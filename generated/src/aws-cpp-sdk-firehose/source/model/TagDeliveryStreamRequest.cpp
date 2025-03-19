@@ -12,12 +12,6 @@ using namespace Aws::Firehose::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-TagDeliveryStreamRequest::TagDeliveryStreamRequest() : 
-    m_deliveryStreamNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String TagDeliveryStreamRequest::SerializePayload() const
 {
   JsonValue payload;

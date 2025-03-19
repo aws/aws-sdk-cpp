@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateStackInstancesResult::UpdateStackInstancesResult()
-{
-}
-
 UpdateStackInstancesResult::UpdateStackInstancesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ UpdateStackInstancesResult& UpdateStackInstancesResult::operator =(const Aws::Am
     if(!operationIdNode.IsNull())
     {
       m_operationId = Aws::Utils::Xml::DecodeEscapedXmlText(operationIdNode.GetText());
+      m_operationIdHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::CloudFormation::Model::UpdateStackInstancesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

@@ -10,12 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-ModifyDBParameterGroupRequest::ModifyDBParameterGroupRequest() : 
-    m_dBParameterGroupNameHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 Aws::String ModifyDBParameterGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

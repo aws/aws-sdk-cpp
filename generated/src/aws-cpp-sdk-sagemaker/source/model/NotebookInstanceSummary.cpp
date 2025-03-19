@@ -18,24 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-NotebookInstanceSummary::NotebookInstanceSummary() : 
-    m_notebookInstanceNameHasBeenSet(false),
-    m_notebookInstanceArnHasBeenSet(false),
-    m_notebookInstanceStatus(NotebookInstanceStatus::NOT_SET),
-    m_notebookInstanceStatusHasBeenSet(false),
-    m_urlHasBeenSet(false),
-    m_instanceType(InstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_notebookInstanceLifecycleConfigNameHasBeenSet(false),
-    m_defaultCodeRepositoryHasBeenSet(false),
-    m_additionalCodeRepositoriesHasBeenSet(false)
-{
-}
-
 NotebookInstanceSummary::NotebookInstanceSummary(JsonView jsonValue)
-  : NotebookInstanceSummary()
 {
   *this = jsonValue;
 }
@@ -45,66 +28,48 @@ NotebookInstanceSummary& NotebookInstanceSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("NotebookInstanceName"))
   {
     m_notebookInstanceName = jsonValue.GetString("NotebookInstanceName");
-
     m_notebookInstanceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotebookInstanceArn"))
   {
     m_notebookInstanceArn = jsonValue.GetString("NotebookInstanceArn");
-
     m_notebookInstanceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotebookInstanceStatus"))
   {
     m_notebookInstanceStatus = NotebookInstanceStatusMapper::GetNotebookInstanceStatusForName(jsonValue.GetString("NotebookInstanceStatus"));
-
     m_notebookInstanceStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Url"))
   {
     m_url = jsonValue.GetString("Url");
-
     m_urlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceType"))
   {
     m_instanceType = InstanceTypeMapper::GetInstanceTypeForName(jsonValue.GetString("InstanceType"));
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotebookInstanceLifecycleConfigName"))
   {
     m_notebookInstanceLifecycleConfigName = jsonValue.GetString("NotebookInstanceLifecycleConfigName");
-
     m_notebookInstanceLifecycleConfigNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultCodeRepository"))
   {
     m_defaultCodeRepository = jsonValue.GetString("DefaultCodeRepository");
-
     m_defaultCodeRepositoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdditionalCodeRepositories"))
   {
     Aws::Utils::Array<JsonView> additionalCodeRepositoriesJsonList = jsonValue.GetArray("AdditionalCodeRepositories");
@@ -114,7 +79,6 @@ NotebookInstanceSummary& NotebookInstanceSummary::operator =(JsonView jsonValue)
     }
     m_additionalCodeRepositoriesHasBeenSet = true;
   }
-
   return *this;
 }
 

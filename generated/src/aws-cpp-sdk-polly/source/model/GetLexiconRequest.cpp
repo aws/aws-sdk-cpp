@@ -12,11 +12,6 @@ using namespace Aws::Polly::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetLexiconRequest::GetLexiconRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String GetLexiconRequest::SerializePayload() const
 {
   return {};

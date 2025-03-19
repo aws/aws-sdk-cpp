@@ -12,11 +12,6 @@ using namespace Aws::GlobalAccelerator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeCrossAccountAttachmentRequest::DescribeCrossAccountAttachmentRequest() : 
-    m_attachmentArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeCrossAccountAttachmentRequest::SerializePayload() const
 {
   JsonValue payload;

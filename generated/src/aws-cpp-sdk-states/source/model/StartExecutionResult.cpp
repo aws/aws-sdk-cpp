@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartExecutionResult::StartExecutionResult()
-{
-}
-
 StartExecutionResult::StartExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ StartExecutionResult& StartExecutionResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("executionArn"))
   {
     m_executionArn = jsonValue.GetString("executionArn");
-
+    m_executionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startDate"))
   {
     m_startDate = jsonValue.GetDouble("startDate");
-
+    m_startDateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

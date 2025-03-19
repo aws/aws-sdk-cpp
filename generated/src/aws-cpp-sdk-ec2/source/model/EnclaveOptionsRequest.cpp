@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-EnclaveOptionsRequest::EnclaveOptionsRequest() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 EnclaveOptionsRequest::EnclaveOptionsRequest(const XmlNode& xmlNode)
-  : EnclaveOptionsRequest()
 {
   *this = xmlNode;
 }

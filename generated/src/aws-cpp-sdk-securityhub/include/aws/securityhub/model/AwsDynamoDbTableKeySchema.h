@@ -32,7 +32,7 @@ namespace Model
   class AwsDynamoDbTableKeySchema
   {
   public:
-    AWS_SECURITYHUB_API AwsDynamoDbTableKeySchema();
+    AWS_SECURITYHUB_API AwsDynamoDbTableKeySchema() = default;
     AWS_SECURITYHUB_API AwsDynamoDbTableKeySchema(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsDynamoDbTableKeySchema& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the key schema attribute.</p>
      */
-    inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
+    inline const Aws::String& GetAttributeName() const { return m_attributeName; }
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
-    inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
-    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
-    inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
-    inline AwsDynamoDbTableKeySchema& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
-    inline AwsDynamoDbTableKeySchema& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
-    inline AwsDynamoDbTableKeySchema& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
+    template<typename AttributeNameT = Aws::String>
+    void SetAttributeName(AttributeNameT&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::forward<AttributeNameT>(value); }
+    template<typename AttributeNameT = Aws::String>
+    AwsDynamoDbTableKeySchema& WithAttributeName(AttributeNameT&& value) { SetAttributeName(std::forward<AttributeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>The type of key used for the key schema attribute. Valid values are
      * <code>HASH</code> or <code>RANGE</code>.</p>
      */
-    inline const Aws::String& GetKeyType() const{ return m_keyType; }
+    inline const Aws::String& GetKeyType() const { return m_keyType; }
     inline bool KeyTypeHasBeenSet() const { return m_keyTypeHasBeenSet; }
-    inline void SetKeyType(const Aws::String& value) { m_keyTypeHasBeenSet = true; m_keyType = value; }
-    inline void SetKeyType(Aws::String&& value) { m_keyTypeHasBeenSet = true; m_keyType = std::move(value); }
-    inline void SetKeyType(const char* value) { m_keyTypeHasBeenSet = true; m_keyType.assign(value); }
-    inline AwsDynamoDbTableKeySchema& WithKeyType(const Aws::String& value) { SetKeyType(value); return *this;}
-    inline AwsDynamoDbTableKeySchema& WithKeyType(Aws::String&& value) { SetKeyType(std::move(value)); return *this;}
-    inline AwsDynamoDbTableKeySchema& WithKeyType(const char* value) { SetKeyType(value); return *this;}
+    template<typename KeyTypeT = Aws::String>
+    void SetKeyType(KeyTypeT&& value) { m_keyTypeHasBeenSet = true; m_keyType = std::forward<KeyTypeT>(value); }
+    template<typename KeyTypeT = Aws::String>
+    AwsDynamoDbTableKeySchema& WithKeyType(KeyTypeT&& value) { SetKeyType(std::forward<KeyTypeT>(value)); return *this;}
     ///@}
   private:
 

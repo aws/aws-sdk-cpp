@@ -18,15 +18,7 @@ namespace EMR
 namespace Model
 {
 
-EbsConfiguration::EbsConfiguration() : 
-    m_ebsBlockDeviceConfigsHasBeenSet(false),
-    m_ebsOptimized(false),
-    m_ebsOptimizedHasBeenSet(false)
-{
-}
-
 EbsConfiguration::EbsConfiguration(JsonView jsonValue)
-  : EbsConfiguration()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ EbsConfiguration& EbsConfiguration::operator =(JsonView jsonValue)
     }
     m_ebsBlockDeviceConfigsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EbsOptimized"))
   {
     m_ebsOptimized = jsonValue.GetBool("EbsOptimized");
-
     m_ebsOptimizedHasBeenSet = true;
   }
-
   return *this;
 }
 

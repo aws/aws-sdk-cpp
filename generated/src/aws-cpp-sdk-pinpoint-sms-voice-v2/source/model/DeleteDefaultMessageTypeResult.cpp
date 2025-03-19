@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteDefaultMessageTypeResult::DeleteDefaultMessageTypeResult() : 
-    m_messageType(MessageType::NOT_SET)
-{
-}
-
 DeleteDefaultMessageTypeResult::DeleteDefaultMessageTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteDefaultMessageTypeResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ DeleteDefaultMessageTypeResult& DeleteDefaultMessageTypeResult::operator =(const
   if(jsonValue.ValueExists("ConfigurationSetArn"))
   {
     m_configurationSetArn = jsonValue.GetString("ConfigurationSetArn");
-
+    m_configurationSetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConfigurationSetName"))
   {
     m_configurationSetName = jsonValue.GetString("ConfigurationSetName");
-
+    m_configurationSetNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MessageType"))
   {
     m_messageType = MessageTypeMapper::GetMessageTypeForName(jsonValue.GetString("MessageType"));
-
+    m_messageTypeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

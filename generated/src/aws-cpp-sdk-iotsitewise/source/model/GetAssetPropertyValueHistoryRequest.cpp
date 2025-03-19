@@ -15,21 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetAssetPropertyValueHistoryRequest::GetAssetPropertyValueHistoryRequest() : 
-    m_assetIdHasBeenSet(false),
-    m_propertyIdHasBeenSet(false),
-    m_propertyAliasHasBeenSet(false),
-    m_startDateHasBeenSet(false),
-    m_endDateHasBeenSet(false),
-    m_qualitiesHasBeenSet(false),
-    m_timeOrdering(TimeOrdering::NOT_SET),
-    m_timeOrderingHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String GetAssetPropertyValueHistoryRequest::SerializePayload() const
 {
   return {};

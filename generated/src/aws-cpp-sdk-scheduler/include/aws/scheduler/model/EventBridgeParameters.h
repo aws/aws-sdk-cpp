@@ -33,7 +33,7 @@ namespace Model
   class EventBridgeParameters
   {
   public:
-    AWS_SCHEDULER_API EventBridgeParameters();
+    AWS_SCHEDULER_API EventBridgeParameters() = default;
     AWS_SCHEDULER_API EventBridgeParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_SCHEDULER_API EventBridgeParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SCHEDULER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
      * <p>A free-form string, with a maximum of 128 characters, used to decide what
      * fields to expect in the event detail.</p>
      */
-    inline const Aws::String& GetDetailType() const{ return m_detailType; }
+    inline const Aws::String& GetDetailType() const { return m_detailType; }
     inline bool DetailTypeHasBeenSet() const { return m_detailTypeHasBeenSet; }
-    inline void SetDetailType(const Aws::String& value) { m_detailTypeHasBeenSet = true; m_detailType = value; }
-    inline void SetDetailType(Aws::String&& value) { m_detailTypeHasBeenSet = true; m_detailType = std::move(value); }
-    inline void SetDetailType(const char* value) { m_detailTypeHasBeenSet = true; m_detailType.assign(value); }
-    inline EventBridgeParameters& WithDetailType(const Aws::String& value) { SetDetailType(value); return *this;}
-    inline EventBridgeParameters& WithDetailType(Aws::String&& value) { SetDetailType(std::move(value)); return *this;}
-    inline EventBridgeParameters& WithDetailType(const char* value) { SetDetailType(value); return *this;}
+    template<typename DetailTypeT = Aws::String>
+    void SetDetailType(DetailTypeT&& value) { m_detailTypeHasBeenSet = true; m_detailType = std::forward<DetailTypeT>(value); }
+    template<typename DetailTypeT = Aws::String>
+    EventBridgeParameters& WithDetailType(DetailTypeT&& value) { SetDetailType(std::forward<DetailTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source of the event.</p>
      */
-    inline const Aws::String& GetSource() const{ return m_source; }
+    inline const Aws::String& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
-    inline EventBridgeParameters& WithSource(const Aws::String& value) { SetSource(value); return *this;}
-    inline EventBridgeParameters& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
-    inline EventBridgeParameters& WithSource(const char* value) { SetSource(value); return *this;}
+    template<typename SourceT = Aws::String>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = Aws::String>
+    EventBridgeParameters& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
   private:
 

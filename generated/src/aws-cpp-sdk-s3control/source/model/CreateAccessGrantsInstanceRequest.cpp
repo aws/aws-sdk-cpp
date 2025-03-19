@@ -15,12 +15,6 @@ using namespace Aws::S3Control::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-CreateAccessGrantsInstanceRequest::CreateAccessGrantsInstanceRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_identityCenterArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
 
 Aws::String CreateAccessGrantsInstanceRequest::SerializePayload() const
 {

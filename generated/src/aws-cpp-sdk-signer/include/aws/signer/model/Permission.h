@@ -32,7 +32,7 @@ namespace Model
   class Permission
   {
   public:
-    AWS_SIGNER_API Permission();
+    AWS_SIGNER_API Permission() = default;
     AWS_SIGNER_API Permission(Aws::Utils::Json::JsonView jsonValue);
     AWS_SIGNER_API Permission& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SIGNER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,56 +42,48 @@ namespace Model
     /**
      * <p>An AWS Signer action permitted as part of cross-account permissions.</p>
      */
-    inline const Aws::String& GetAction() const{ return m_action; }
+    inline const Aws::String& GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const Aws::String& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(Aws::String&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline void SetAction(const char* value) { m_actionHasBeenSet = true; m_action.assign(value); }
-    inline Permission& WithAction(const Aws::String& value) { SetAction(value); return *this;}
-    inline Permission& WithAction(Aws::String&& value) { SetAction(std::move(value)); return *this;}
-    inline Permission& WithAction(const char* value) { SetAction(value); return *this;}
+    template<typename ActionT = Aws::String>
+    void SetAction(ActionT&& value) { m_actionHasBeenSet = true; m_action = std::forward<ActionT>(value); }
+    template<typename ActionT = Aws::String>
+    Permission& WithAction(ActionT&& value) { SetAction(std::forward<ActionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The AWS principal that has been granted a cross-account permission.</p>
      */
-    inline const Aws::String& GetPrincipal() const{ return m_principal; }
+    inline const Aws::String& GetPrincipal() const { return m_principal; }
     inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }
-    inline void SetPrincipal(const Aws::String& value) { m_principalHasBeenSet = true; m_principal = value; }
-    inline void SetPrincipal(Aws::String&& value) { m_principalHasBeenSet = true; m_principal = std::move(value); }
-    inline void SetPrincipal(const char* value) { m_principalHasBeenSet = true; m_principal.assign(value); }
-    inline Permission& WithPrincipal(const Aws::String& value) { SetPrincipal(value); return *this;}
-    inline Permission& WithPrincipal(Aws::String&& value) { SetPrincipal(std::move(value)); return *this;}
-    inline Permission& WithPrincipal(const char* value) { SetPrincipal(value); return *this;}
+    template<typename PrincipalT = Aws::String>
+    void SetPrincipal(PrincipalT&& value) { m_principalHasBeenSet = true; m_principal = std::forward<PrincipalT>(value); }
+    template<typename PrincipalT = Aws::String>
+    Permission& WithPrincipal(PrincipalT&& value) { SetPrincipal(std::forward<PrincipalT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier for a cross-account permission statement.</p>
      */
-    inline const Aws::String& GetStatementId() const{ return m_statementId; }
+    inline const Aws::String& GetStatementId() const { return m_statementId; }
     inline bool StatementIdHasBeenSet() const { return m_statementIdHasBeenSet; }
-    inline void SetStatementId(const Aws::String& value) { m_statementIdHasBeenSet = true; m_statementId = value; }
-    inline void SetStatementId(Aws::String&& value) { m_statementIdHasBeenSet = true; m_statementId = std::move(value); }
-    inline void SetStatementId(const char* value) { m_statementIdHasBeenSet = true; m_statementId.assign(value); }
-    inline Permission& WithStatementId(const Aws::String& value) { SetStatementId(value); return *this;}
-    inline Permission& WithStatementId(Aws::String&& value) { SetStatementId(std::move(value)); return *this;}
-    inline Permission& WithStatementId(const char* value) { SetStatementId(value); return *this;}
+    template<typename StatementIdT = Aws::String>
+    void SetStatementId(StatementIdT&& value) { m_statementIdHasBeenSet = true; m_statementId = std::forward<StatementIdT>(value); }
+    template<typename StatementIdT = Aws::String>
+    Permission& WithStatementId(StatementIdT&& value) { SetStatementId(std::forward<StatementIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The signing profile version that a permission applies to.</p>
      */
-    inline const Aws::String& GetProfileVersion() const{ return m_profileVersion; }
+    inline const Aws::String& GetProfileVersion() const { return m_profileVersion; }
     inline bool ProfileVersionHasBeenSet() const { return m_profileVersionHasBeenSet; }
-    inline void SetProfileVersion(const Aws::String& value) { m_profileVersionHasBeenSet = true; m_profileVersion = value; }
-    inline void SetProfileVersion(Aws::String&& value) { m_profileVersionHasBeenSet = true; m_profileVersion = std::move(value); }
-    inline void SetProfileVersion(const char* value) { m_profileVersionHasBeenSet = true; m_profileVersion.assign(value); }
-    inline Permission& WithProfileVersion(const Aws::String& value) { SetProfileVersion(value); return *this;}
-    inline Permission& WithProfileVersion(Aws::String&& value) { SetProfileVersion(std::move(value)); return *this;}
-    inline Permission& WithProfileVersion(const char* value) { SetProfileVersion(value); return *this;}
+    template<typename ProfileVersionT = Aws::String>
+    void SetProfileVersion(ProfileVersionT&& value) { m_profileVersionHasBeenSet = true; m_profileVersion = std::forward<ProfileVersionT>(value); }
+    template<typename ProfileVersionT = Aws::String>
+    Permission& WithProfileVersion(ProfileVersionT&& value) { SetProfileVersion(std::forward<ProfileVersionT>(value)); return *this;}
     ///@}
   private:
 

@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-LoadPermissionRequest::LoadPermissionRequest() : 
-    m_group(PermissionGroup::NOT_SET),
-    m_groupHasBeenSet(false),
-    m_userIdHasBeenSet(false)
-{
-}
-
 LoadPermissionRequest::LoadPermissionRequest(const XmlNode& xmlNode)
-  : LoadPermissionRequest()
 {
   *this = xmlNode;
 }
@@ -42,7 +34,7 @@ LoadPermissionRequest& LoadPermissionRequest::operator =(const XmlNode& xmlNode)
     XmlNode groupNode = resultNode.FirstChild("Group");
     if(!groupNode.IsNull())
     {
-      m_group = PermissionGroupMapper::GetPermissionGroupForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(groupNode.GetText()).c_str()).c_str());
+      m_group = PermissionGroupMapper::GetPermissionGroupForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(groupNode.GetText()).c_str()));
       m_groupHasBeenSet = true;
     }
     XmlNode userIdNode = resultNode.FirstChild("UserId");

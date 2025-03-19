@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteIpamScopeResponse::DeleteIpamScopeResponse()
-{
-}
-
 DeleteIpamScopeResponse::DeleteIpamScopeResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DeleteIpamScopeResponse& DeleteIpamScopeResponse::operator =(const Aws::AmazonWe
     if(!ipamScopeNode.IsNull())
     {
       m_ipamScope = ipamScopeNode;
+      m_ipamScopeHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ DeleteIpamScopeResponse& DeleteIpamScopeResponse::operator =(const Aws::AmazonWe
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DeleteIpamScopeResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

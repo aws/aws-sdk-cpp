@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchDetectDominantLanguageResult::BatchDetectDominantLanguageResult()
-{
-}
-
 BatchDetectDominantLanguageResult::BatchDetectDominantLanguageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ BatchDetectDominantLanguageResult& BatchDetectDominantLanguageResult::operator =
     {
       m_resultList.push_back(resultListJsonList[resultListIndex].AsObject());
     }
+    m_resultListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorList"))
   {
     Aws::Utils::Array<JsonView> errorListJsonList = jsonValue.GetArray("ErrorList");
@@ -45,14 +41,15 @@ BatchDetectDominantLanguageResult& BatchDetectDominantLanguageResult::operator =
     {
       m_errorList.push_back(errorListJsonList[errorListIndex].AsObject());
     }
+    m_errorListHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

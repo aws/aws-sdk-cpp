@@ -10,21 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-SendTemplatedEmailRequest::SendTemplatedEmailRequest() : 
-    m_sourceHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_replyToAddressesHasBeenSet(false),
-    m_returnPathHasBeenSet(false),
-    m_sourceArnHasBeenSet(false),
-    m_returnPathArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_configurationSetNameHasBeenSet(false),
-    m_templateHasBeenSet(false),
-    m_templateArnHasBeenSet(false),
-    m_templateDataHasBeenSet(false)
-{
-}
-
 Aws::String SendTemplatedEmailRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -20,16 +20,7 @@ namespace RDS
 namespace Model
 {
 
-PerformanceIssueDetails::PerformanceIssueDetails() : 
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_metricsHasBeenSet(false),
-    m_analysisHasBeenSet(false)
-{
-}
-
 PerformanceIssueDetails::PerformanceIssueDetails(const XmlNode& xmlNode)
-  : PerformanceIssueDetails()
 {
   *this = xmlNode;
 }
@@ -56,6 +47,7 @@ PerformanceIssueDetails& PerformanceIssueDetails::operator =(const XmlNode& xmlN
     if(!metricsNode.IsNull())
     {
       XmlNode metricsMember = metricsNode.FirstChild("member");
+      m_metricsHasBeenSet = !metricsMember.IsNull();
       while(!metricsMember.IsNull())
       {
         m_metrics.push_back(metricsMember);

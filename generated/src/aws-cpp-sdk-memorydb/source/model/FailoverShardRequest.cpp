@@ -12,12 +12,6 @@ using namespace Aws::MemoryDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-FailoverShardRequest::FailoverShardRequest() : 
-    m_clusterNameHasBeenSet(false),
-    m_shardNameHasBeenSet(false)
-{
-}
-
 Aws::String FailoverShardRequest::SerializePayload() const
 {
   JsonValue payload;

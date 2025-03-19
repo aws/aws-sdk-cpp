@@ -18,22 +18,7 @@ namespace IoT
 namespace Model
 {
 
-AuditMitigationActionExecutionMetadata::AuditMitigationActionExecutionMetadata() : 
-    m_taskIdHasBeenSet(false),
-    m_findingIdHasBeenSet(false),
-    m_actionNameHasBeenSet(false),
-    m_actionIdHasBeenSet(false),
-    m_status(AuditMitigationActionsExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 AuditMitigationActionExecutionMetadata::AuditMitigationActionExecutionMetadata(JsonView jsonValue)
-  : AuditMitigationActionExecutionMetadata()
 {
   *this = jsonValue;
 }
@@ -43,66 +28,48 @@ AuditMitigationActionExecutionMetadata& AuditMitigationActionExecutionMetadata::
   if(jsonValue.ValueExists("taskId"))
   {
     m_taskId = jsonValue.GetString("taskId");
-
     m_taskIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("findingId"))
   {
     m_findingId = jsonValue.GetString("findingId");
-
     m_findingIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actionName"))
   {
     m_actionName = jsonValue.GetString("actionName");
-
     m_actionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actionId"))
   {
     m_actionId = jsonValue.GetString("actionId");
-
     m_actionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = AuditMitigationActionsExecutionStatusMapper::GetAuditMitigationActionsExecutionStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetDouble("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetDouble("endTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorCode"))
   {
     m_errorCode = jsonValue.GetString("errorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

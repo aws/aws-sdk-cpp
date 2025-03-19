@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UnmonitorInstancesResponse::UnmonitorInstancesResponse()
-{
-}
-
 UnmonitorInstancesResponse::UnmonitorInstancesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ UnmonitorInstancesResponse& UnmonitorInstancesResponse::operator =(const Aws::Am
     if(!instanceMonitoringsNode.IsNull())
     {
       XmlNode instanceMonitoringsMember = instanceMonitoringsNode.FirstChild("item");
+      m_instanceMonitoringsHasBeenSet = !instanceMonitoringsMember.IsNull();
       while(!instanceMonitoringsMember.IsNull())
       {
         m_instanceMonitorings.push_back(instanceMonitoringsMember);
         instanceMonitoringsMember = instanceMonitoringsMember.NextNode("item");
       }
 
+      m_instanceMonitoringsHasBeenSet = true;
     }
   }
 
@@ -56,6 +54,7 @@ UnmonitorInstancesResponse& UnmonitorInstancesResponse::operator =(const Aws::Am
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::UnmonitorInstancesResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

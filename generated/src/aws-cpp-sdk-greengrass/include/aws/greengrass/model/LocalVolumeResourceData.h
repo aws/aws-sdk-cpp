@@ -32,7 +32,7 @@ namespace Model
   class LocalVolumeResourceData
   {
   public:
-    AWS_GREENGRASS_API LocalVolumeResourceData();
+    AWS_GREENGRASS_API LocalVolumeResourceData() = default;
     AWS_GREENGRASS_API LocalVolumeResourceData(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASS_API LocalVolumeResourceData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * The absolute local path of the resource inside the Lambda environment.
      */
-    inline const Aws::String& GetDestinationPath() const{ return m_destinationPath; }
+    inline const Aws::String& GetDestinationPath() const { return m_destinationPath; }
     inline bool DestinationPathHasBeenSet() const { return m_destinationPathHasBeenSet; }
-    inline void SetDestinationPath(const Aws::String& value) { m_destinationPathHasBeenSet = true; m_destinationPath = value; }
-    inline void SetDestinationPath(Aws::String&& value) { m_destinationPathHasBeenSet = true; m_destinationPath = std::move(value); }
-    inline void SetDestinationPath(const char* value) { m_destinationPathHasBeenSet = true; m_destinationPath.assign(value); }
-    inline LocalVolumeResourceData& WithDestinationPath(const Aws::String& value) { SetDestinationPath(value); return *this;}
-    inline LocalVolumeResourceData& WithDestinationPath(Aws::String&& value) { SetDestinationPath(std::move(value)); return *this;}
-    inline LocalVolumeResourceData& WithDestinationPath(const char* value) { SetDestinationPath(value); return *this;}
+    template<typename DestinationPathT = Aws::String>
+    void SetDestinationPath(DestinationPathT&& value) { m_destinationPathHasBeenSet = true; m_destinationPath = std::forward<DestinationPathT>(value); }
+    template<typename DestinationPathT = Aws::String>
+    LocalVolumeResourceData& WithDestinationPath(DestinationPathT&& value) { SetDestinationPath(std::forward<DestinationPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +55,12 @@ namespace Model
      * Allows you to configure additional group privileges for the Lambda process. This
      * field is optional.
      */
-    inline const GroupOwnerSetting& GetGroupOwnerSetting() const{ return m_groupOwnerSetting; }
+    inline const GroupOwnerSetting& GetGroupOwnerSetting() const { return m_groupOwnerSetting; }
     inline bool GroupOwnerSettingHasBeenSet() const { return m_groupOwnerSettingHasBeenSet; }
-    inline void SetGroupOwnerSetting(const GroupOwnerSetting& value) { m_groupOwnerSettingHasBeenSet = true; m_groupOwnerSetting = value; }
-    inline void SetGroupOwnerSetting(GroupOwnerSetting&& value) { m_groupOwnerSettingHasBeenSet = true; m_groupOwnerSetting = std::move(value); }
-    inline LocalVolumeResourceData& WithGroupOwnerSetting(const GroupOwnerSetting& value) { SetGroupOwnerSetting(value); return *this;}
-    inline LocalVolumeResourceData& WithGroupOwnerSetting(GroupOwnerSetting&& value) { SetGroupOwnerSetting(std::move(value)); return *this;}
+    template<typename GroupOwnerSettingT = GroupOwnerSetting>
+    void SetGroupOwnerSetting(GroupOwnerSettingT&& value) { m_groupOwnerSettingHasBeenSet = true; m_groupOwnerSetting = std::forward<GroupOwnerSettingT>(value); }
+    template<typename GroupOwnerSettingT = GroupOwnerSetting>
+    LocalVolumeResourceData& WithGroupOwnerSetting(GroupOwnerSettingT&& value) { SetGroupOwnerSetting(std::forward<GroupOwnerSettingT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +68,12 @@ namespace Model
      * The local absolute path of the volume resource on the host. The source path for
      * a volume resource type cannot start with ''/sys''.
      */
-    inline const Aws::String& GetSourcePath() const{ return m_sourcePath; }
+    inline const Aws::String& GetSourcePath() const { return m_sourcePath; }
     inline bool SourcePathHasBeenSet() const { return m_sourcePathHasBeenSet; }
-    inline void SetSourcePath(const Aws::String& value) { m_sourcePathHasBeenSet = true; m_sourcePath = value; }
-    inline void SetSourcePath(Aws::String&& value) { m_sourcePathHasBeenSet = true; m_sourcePath = std::move(value); }
-    inline void SetSourcePath(const char* value) { m_sourcePathHasBeenSet = true; m_sourcePath.assign(value); }
-    inline LocalVolumeResourceData& WithSourcePath(const Aws::String& value) { SetSourcePath(value); return *this;}
-    inline LocalVolumeResourceData& WithSourcePath(Aws::String&& value) { SetSourcePath(std::move(value)); return *this;}
-    inline LocalVolumeResourceData& WithSourcePath(const char* value) { SetSourcePath(value); return *this;}
+    template<typename SourcePathT = Aws::String>
+    void SetSourcePath(SourcePathT&& value) { m_sourcePathHasBeenSet = true; m_sourcePath = std::forward<SourcePathT>(value); }
+    template<typename SourcePathT = Aws::String>
+    LocalVolumeResourceData& WithSourcePath(SourcePathT&& value) { SetSourcePath(std::forward<SourcePathT>(value)); return *this;}
     ///@}
   private:
 

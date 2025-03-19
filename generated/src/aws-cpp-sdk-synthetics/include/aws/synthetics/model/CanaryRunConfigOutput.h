@@ -30,7 +30,7 @@ namespace Model
   class CanaryRunConfigOutput
   {
   public:
-    AWS_SYNTHETICS_API CanaryRunConfigOutput();
+    AWS_SYNTHETICS_API CanaryRunConfigOutput() = default;
     AWS_SYNTHETICS_API CanaryRunConfigOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_SYNTHETICS_API CanaryRunConfigOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SYNTHETICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>How long the canary is allowed to run before it must stop.</p>
      */
-    inline int GetTimeoutInSeconds() const{ return m_timeoutInSeconds; }
+    inline int GetTimeoutInSeconds() const { return m_timeoutInSeconds; }
     inline bool TimeoutInSecondsHasBeenSet() const { return m_timeoutInSecondsHasBeenSet; }
     inline void SetTimeoutInSeconds(int value) { m_timeoutInSecondsHasBeenSet = true; m_timeoutInSeconds = value; }
     inline CanaryRunConfigOutput& WithTimeoutInSeconds(int value) { SetTimeoutInSeconds(value); return *this;}
@@ -51,7 +51,7 @@ namespace Model
      * <p>The maximum amount of memory available to the canary while it is running, in
      * MB. This value must be a multiple of 64.</p>
      */
-    inline int GetMemoryInMB() const{ return m_memoryInMB; }
+    inline int GetMemoryInMB() const { return m_memoryInMB; }
     inline bool MemoryInMBHasBeenSet() const { return m_memoryInMBHasBeenSet; }
     inline void SetMemoryInMB(int value) { m_memoryInMBHasBeenSet = true; m_memoryInMB = value; }
     inline CanaryRunConfigOutput& WithMemoryInMB(int value) { SetMemoryInMB(value); return *this;}
@@ -61,20 +61,20 @@ namespace Model
     /**
      * <p>Displays whether this canary run used active X-Ray tracing. </p>
      */
-    inline bool GetActiveTracing() const{ return m_activeTracing; }
+    inline bool GetActiveTracing() const { return m_activeTracing; }
     inline bool ActiveTracingHasBeenSet() const { return m_activeTracingHasBeenSet; }
     inline void SetActiveTracing(bool value) { m_activeTracingHasBeenSet = true; m_activeTracing = value; }
     inline CanaryRunConfigOutput& WithActiveTracing(bool value) { SetActiveTracing(value); return *this;}
     ///@}
   private:
 
-    int m_timeoutInSeconds;
+    int m_timeoutInSeconds{0};
     bool m_timeoutInSecondsHasBeenSet = false;
 
-    int m_memoryInMB;
+    int m_memoryInMB{0};
     bool m_memoryInMBHasBeenSet = false;
 
-    bool m_activeTracing;
+    bool m_activeTracing{false};
     bool m_activeTracingHasBeenSet = false;
   };
 

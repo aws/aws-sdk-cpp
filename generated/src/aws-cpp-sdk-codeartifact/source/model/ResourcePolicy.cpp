@@ -18,15 +18,7 @@ namespace CodeArtifact
 namespace Model
 {
 
-ResourcePolicy::ResourcePolicy() : 
-    m_resourceArnHasBeenSet(false),
-    m_revisionHasBeenSet(false),
-    m_documentHasBeenSet(false)
-{
-}
-
 ResourcePolicy::ResourcePolicy(JsonView jsonValue)
-  : ResourcePolicy()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ResourcePolicy& ResourcePolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("resourceArn"))
   {
     m_resourceArn = jsonValue.GetString("resourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("revision"))
   {
     m_revision = jsonValue.GetString("revision");
-
     m_revisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("document"))
   {
     m_document = jsonValue.GetString("document");
-
     m_documentHasBeenSet = true;
   }
-
   return *this;
 }
 

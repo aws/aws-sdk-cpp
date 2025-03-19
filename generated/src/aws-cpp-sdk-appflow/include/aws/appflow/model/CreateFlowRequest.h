@@ -29,7 +29,7 @@ namespace Model
   class CreateFlowRequest : public AppflowRequest
   {
   public:
-    AWS_APPFLOW_API CreateFlowRequest();
+    AWS_APPFLOW_API CreateFlowRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,28 +45,24 @@ namespace Model
      * <p> The specified name of the flow. Spaces are not allowed. Use underscores (_)
      * or hyphens (-) only. </p>
      */
-    inline const Aws::String& GetFlowName() const{ return m_flowName; }
+    inline const Aws::String& GetFlowName() const { return m_flowName; }
     inline bool FlowNameHasBeenSet() const { return m_flowNameHasBeenSet; }
-    inline void SetFlowName(const Aws::String& value) { m_flowNameHasBeenSet = true; m_flowName = value; }
-    inline void SetFlowName(Aws::String&& value) { m_flowNameHasBeenSet = true; m_flowName = std::move(value); }
-    inline void SetFlowName(const char* value) { m_flowNameHasBeenSet = true; m_flowName.assign(value); }
-    inline CreateFlowRequest& WithFlowName(const Aws::String& value) { SetFlowName(value); return *this;}
-    inline CreateFlowRequest& WithFlowName(Aws::String&& value) { SetFlowName(std::move(value)); return *this;}
-    inline CreateFlowRequest& WithFlowName(const char* value) { SetFlowName(value); return *this;}
+    template<typename FlowNameT = Aws::String>
+    void SetFlowName(FlowNameT&& value) { m_flowNameHasBeenSet = true; m_flowName = std::forward<FlowNameT>(value); }
+    template<typename FlowNameT = Aws::String>
+    CreateFlowRequest& WithFlowName(FlowNameT&& value) { SetFlowName(std::forward<FlowNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> A description of the flow you want to create. </p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateFlowRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateFlowRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateFlowRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateFlowRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,26 +72,24 @@ namespace Model
      * AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses
      * the Amazon AppFlow-managed KMS key. </p>
      */
-    inline const Aws::String& GetKmsArn() const{ return m_kmsArn; }
+    inline const Aws::String& GetKmsArn() const { return m_kmsArn; }
     inline bool KmsArnHasBeenSet() const { return m_kmsArnHasBeenSet; }
-    inline void SetKmsArn(const Aws::String& value) { m_kmsArnHasBeenSet = true; m_kmsArn = value; }
-    inline void SetKmsArn(Aws::String&& value) { m_kmsArnHasBeenSet = true; m_kmsArn = std::move(value); }
-    inline void SetKmsArn(const char* value) { m_kmsArnHasBeenSet = true; m_kmsArn.assign(value); }
-    inline CreateFlowRequest& WithKmsArn(const Aws::String& value) { SetKmsArn(value); return *this;}
-    inline CreateFlowRequest& WithKmsArn(Aws::String&& value) { SetKmsArn(std::move(value)); return *this;}
-    inline CreateFlowRequest& WithKmsArn(const char* value) { SetKmsArn(value); return *this;}
+    template<typename KmsArnT = Aws::String>
+    void SetKmsArn(KmsArnT&& value) { m_kmsArnHasBeenSet = true; m_kmsArn = std::forward<KmsArnT>(value); }
+    template<typename KmsArnT = Aws::String>
+    CreateFlowRequest& WithKmsArn(KmsArnT&& value) { SetKmsArn(std::forward<KmsArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The trigger settings that determine how and when the flow runs. </p>
      */
-    inline const TriggerConfig& GetTriggerConfig() const{ return m_triggerConfig; }
+    inline const TriggerConfig& GetTriggerConfig() const { return m_triggerConfig; }
     inline bool TriggerConfigHasBeenSet() const { return m_triggerConfigHasBeenSet; }
-    inline void SetTriggerConfig(const TriggerConfig& value) { m_triggerConfigHasBeenSet = true; m_triggerConfig = value; }
-    inline void SetTriggerConfig(TriggerConfig&& value) { m_triggerConfigHasBeenSet = true; m_triggerConfig = std::move(value); }
-    inline CreateFlowRequest& WithTriggerConfig(const TriggerConfig& value) { SetTriggerConfig(value); return *this;}
-    inline CreateFlowRequest& WithTriggerConfig(TriggerConfig&& value) { SetTriggerConfig(std::move(value)); return *this;}
+    template<typename TriggerConfigT = TriggerConfig>
+    void SetTriggerConfig(TriggerConfigT&& value) { m_triggerConfigHasBeenSet = true; m_triggerConfig = std::forward<TriggerConfigT>(value); }
+    template<typename TriggerConfigT = TriggerConfig>
+    CreateFlowRequest& WithTriggerConfig(TriggerConfigT&& value) { SetTriggerConfig(std::forward<TriggerConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,12 +97,12 @@ namespace Model
      * <p> The configuration that controls how Amazon AppFlow retrieves data from the
      * source connector. </p>
      */
-    inline const SourceFlowConfig& GetSourceFlowConfig() const{ return m_sourceFlowConfig; }
+    inline const SourceFlowConfig& GetSourceFlowConfig() const { return m_sourceFlowConfig; }
     inline bool SourceFlowConfigHasBeenSet() const { return m_sourceFlowConfigHasBeenSet; }
-    inline void SetSourceFlowConfig(const SourceFlowConfig& value) { m_sourceFlowConfigHasBeenSet = true; m_sourceFlowConfig = value; }
-    inline void SetSourceFlowConfig(SourceFlowConfig&& value) { m_sourceFlowConfigHasBeenSet = true; m_sourceFlowConfig = std::move(value); }
-    inline CreateFlowRequest& WithSourceFlowConfig(const SourceFlowConfig& value) { SetSourceFlowConfig(value); return *this;}
-    inline CreateFlowRequest& WithSourceFlowConfig(SourceFlowConfig&& value) { SetSourceFlowConfig(std::move(value)); return *this;}
+    template<typename SourceFlowConfigT = SourceFlowConfig>
+    void SetSourceFlowConfig(SourceFlowConfigT&& value) { m_sourceFlowConfigHasBeenSet = true; m_sourceFlowConfig = std::forward<SourceFlowConfigT>(value); }
+    template<typename SourceFlowConfigT = SourceFlowConfig>
+    CreateFlowRequest& WithSourceFlowConfig(SourceFlowConfigT&& value) { SetSourceFlowConfig(std::forward<SourceFlowConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,14 +110,14 @@ namespace Model
      * <p> The configuration that controls how Amazon AppFlow places data in the
      * destination connector. </p>
      */
-    inline const Aws::Vector<DestinationFlowConfig>& GetDestinationFlowConfigList() const{ return m_destinationFlowConfigList; }
+    inline const Aws::Vector<DestinationFlowConfig>& GetDestinationFlowConfigList() const { return m_destinationFlowConfigList; }
     inline bool DestinationFlowConfigListHasBeenSet() const { return m_destinationFlowConfigListHasBeenSet; }
-    inline void SetDestinationFlowConfigList(const Aws::Vector<DestinationFlowConfig>& value) { m_destinationFlowConfigListHasBeenSet = true; m_destinationFlowConfigList = value; }
-    inline void SetDestinationFlowConfigList(Aws::Vector<DestinationFlowConfig>&& value) { m_destinationFlowConfigListHasBeenSet = true; m_destinationFlowConfigList = std::move(value); }
-    inline CreateFlowRequest& WithDestinationFlowConfigList(const Aws::Vector<DestinationFlowConfig>& value) { SetDestinationFlowConfigList(value); return *this;}
-    inline CreateFlowRequest& WithDestinationFlowConfigList(Aws::Vector<DestinationFlowConfig>&& value) { SetDestinationFlowConfigList(std::move(value)); return *this;}
-    inline CreateFlowRequest& AddDestinationFlowConfigList(const DestinationFlowConfig& value) { m_destinationFlowConfigListHasBeenSet = true; m_destinationFlowConfigList.push_back(value); return *this; }
-    inline CreateFlowRequest& AddDestinationFlowConfigList(DestinationFlowConfig&& value) { m_destinationFlowConfigListHasBeenSet = true; m_destinationFlowConfigList.push_back(std::move(value)); return *this; }
+    template<typename DestinationFlowConfigListT = Aws::Vector<DestinationFlowConfig>>
+    void SetDestinationFlowConfigList(DestinationFlowConfigListT&& value) { m_destinationFlowConfigListHasBeenSet = true; m_destinationFlowConfigList = std::forward<DestinationFlowConfigListT>(value); }
+    template<typename DestinationFlowConfigListT = Aws::Vector<DestinationFlowConfig>>
+    CreateFlowRequest& WithDestinationFlowConfigList(DestinationFlowConfigListT&& value) { SetDestinationFlowConfigList(std::forward<DestinationFlowConfigListT>(value)); return *this;}
+    template<typename DestinationFlowConfigListT = DestinationFlowConfig>
+    CreateFlowRequest& AddDestinationFlowConfigList(DestinationFlowConfigListT&& value) { m_destinationFlowConfigListHasBeenSet = true; m_destinationFlowConfigList.emplace_back(std::forward<DestinationFlowConfigListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -131,33 +125,30 @@ namespace Model
      * <p> A list of tasks that Amazon AppFlow performs while transferring the data in
      * the flow run. </p>
      */
-    inline const Aws::Vector<Task>& GetTasks() const{ return m_tasks; }
+    inline const Aws::Vector<Task>& GetTasks() const { return m_tasks; }
     inline bool TasksHasBeenSet() const { return m_tasksHasBeenSet; }
-    inline void SetTasks(const Aws::Vector<Task>& value) { m_tasksHasBeenSet = true; m_tasks = value; }
-    inline void SetTasks(Aws::Vector<Task>&& value) { m_tasksHasBeenSet = true; m_tasks = std::move(value); }
-    inline CreateFlowRequest& WithTasks(const Aws::Vector<Task>& value) { SetTasks(value); return *this;}
-    inline CreateFlowRequest& WithTasks(Aws::Vector<Task>&& value) { SetTasks(std::move(value)); return *this;}
-    inline CreateFlowRequest& AddTasks(const Task& value) { m_tasksHasBeenSet = true; m_tasks.push_back(value); return *this; }
-    inline CreateFlowRequest& AddTasks(Task&& value) { m_tasksHasBeenSet = true; m_tasks.push_back(std::move(value)); return *this; }
+    template<typename TasksT = Aws::Vector<Task>>
+    void SetTasks(TasksT&& value) { m_tasksHasBeenSet = true; m_tasks = std::forward<TasksT>(value); }
+    template<typename TasksT = Aws::Vector<Task>>
+    CreateFlowRequest& WithTasks(TasksT&& value) { SetTasks(std::forward<TasksT>(value)); return *this;}
+    template<typename TasksT = Task>
+    CreateFlowRequest& AddTasks(TasksT&& value) { m_tasksHasBeenSet = true; m_tasks.emplace_back(std::forward<TasksT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> The tags used to organize, track, or control access for your flow. </p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateFlowRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateFlowRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateFlowRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateFlowRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateFlowRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateFlowRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateFlowRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateFlowRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateFlowRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateFlowRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateFlowRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -166,12 +157,12 @@ namespace Model
      * data that's transferred by the associated flow. When Amazon AppFlow catalogs the
      * data from a flow, it stores metadata in a data catalog.</p>
      */
-    inline const MetadataCatalogConfig& GetMetadataCatalogConfig() const{ return m_metadataCatalogConfig; }
+    inline const MetadataCatalogConfig& GetMetadataCatalogConfig() const { return m_metadataCatalogConfig; }
     inline bool MetadataCatalogConfigHasBeenSet() const { return m_metadataCatalogConfigHasBeenSet; }
-    inline void SetMetadataCatalogConfig(const MetadataCatalogConfig& value) { m_metadataCatalogConfigHasBeenSet = true; m_metadataCatalogConfig = value; }
-    inline void SetMetadataCatalogConfig(MetadataCatalogConfig&& value) { m_metadataCatalogConfigHasBeenSet = true; m_metadataCatalogConfig = std::move(value); }
-    inline CreateFlowRequest& WithMetadataCatalogConfig(const MetadataCatalogConfig& value) { SetMetadataCatalogConfig(value); return *this;}
-    inline CreateFlowRequest& WithMetadataCatalogConfig(MetadataCatalogConfig&& value) { SetMetadataCatalogConfig(std::move(value)); return *this;}
+    template<typename MetadataCatalogConfigT = MetadataCatalogConfig>
+    void SetMetadataCatalogConfig(MetadataCatalogConfigT&& value) { m_metadataCatalogConfigHasBeenSet = true; m_metadataCatalogConfig = std::forward<MetadataCatalogConfigT>(value); }
+    template<typename MetadataCatalogConfigT = MetadataCatalogConfig>
+    CreateFlowRequest& WithMetadataCatalogConfig(MetadataCatalogConfigT&& value) { SetMetadataCatalogConfig(std::forward<MetadataCatalogConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -188,14 +179,12 @@ namespace Model
      * for <code>clientToken</code>, Amazon AppFlow considers it a new call to
      * <code>CreateFlow</code>. The token is active for 8 hours.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateFlowRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateFlowRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateFlowRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateFlowRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 

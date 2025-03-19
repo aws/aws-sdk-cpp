@@ -25,7 +25,7 @@ namespace Model
   class DeleteGitHubAccountTokenRequest : public CodeDeployRequest
   {
   public:
-    AWS_CODEDEPLOY_API DeleteGitHubAccountTokenRequest();
+    AWS_CODEDEPLOY_API DeleteGitHubAccountTokenRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the GitHub account connection to delete.</p>
      */
-    inline const Aws::String& GetTokenName() const{ return m_tokenName; }
+    inline const Aws::String& GetTokenName() const { return m_tokenName; }
     inline bool TokenNameHasBeenSet() const { return m_tokenNameHasBeenSet; }
-    inline void SetTokenName(const Aws::String& value) { m_tokenNameHasBeenSet = true; m_tokenName = value; }
-    inline void SetTokenName(Aws::String&& value) { m_tokenNameHasBeenSet = true; m_tokenName = std::move(value); }
-    inline void SetTokenName(const char* value) { m_tokenNameHasBeenSet = true; m_tokenName.assign(value); }
-    inline DeleteGitHubAccountTokenRequest& WithTokenName(const Aws::String& value) { SetTokenName(value); return *this;}
-    inline DeleteGitHubAccountTokenRequest& WithTokenName(Aws::String&& value) { SetTokenName(std::move(value)); return *this;}
-    inline DeleteGitHubAccountTokenRequest& WithTokenName(const char* value) { SetTokenName(value); return *this;}
+    template<typename TokenNameT = Aws::String>
+    void SetTokenName(TokenNameT&& value) { m_tokenNameHasBeenSet = true; m_tokenName = std::forward<TokenNameT>(value); }
+    template<typename TokenNameT = Aws::String>
+    DeleteGitHubAccountTokenRequest& WithTokenName(TokenNameT&& value) { SetTokenName(std::forward<TokenNameT>(value)); return *this;}
     ///@}
   private:
 

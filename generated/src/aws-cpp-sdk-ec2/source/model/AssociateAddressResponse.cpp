@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AssociateAddressResponse::AssociateAddressResponse()
-{
-}
-
 AssociateAddressResponse::AssociateAddressResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ AssociateAddressResponse& AssociateAddressResponse::operator =(const Aws::Amazon
     if(!associationIdNode.IsNull())
     {
       m_associationId = Aws::Utils::Xml::DecodeEscapedXmlText(associationIdNode.GetText());
+      m_associationIdHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ AssociateAddressResponse& AssociateAddressResponse::operator =(const Aws::Amazon
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::AssociateAddressResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

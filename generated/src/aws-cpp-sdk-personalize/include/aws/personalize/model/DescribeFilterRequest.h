@@ -21,7 +21,7 @@ namespace Model
   class DescribeFilterRequest : public PersonalizeRequest
   {
   public:
-    AWS_PERSONALIZE_API DescribeFilterRequest();
+    AWS_PERSONALIZE_API DescribeFilterRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The ARN of the filter to describe.</p>
      */
-    inline const Aws::String& GetFilterArn() const{ return m_filterArn; }
+    inline const Aws::String& GetFilterArn() const { return m_filterArn; }
     inline bool FilterArnHasBeenSet() const { return m_filterArnHasBeenSet; }
-    inline void SetFilterArn(const Aws::String& value) { m_filterArnHasBeenSet = true; m_filterArn = value; }
-    inline void SetFilterArn(Aws::String&& value) { m_filterArnHasBeenSet = true; m_filterArn = std::move(value); }
-    inline void SetFilterArn(const char* value) { m_filterArnHasBeenSet = true; m_filterArn.assign(value); }
-    inline DescribeFilterRequest& WithFilterArn(const Aws::String& value) { SetFilterArn(value); return *this;}
-    inline DescribeFilterRequest& WithFilterArn(Aws::String&& value) { SetFilterArn(std::move(value)); return *this;}
-    inline DescribeFilterRequest& WithFilterArn(const char* value) { SetFilterArn(value); return *this;}
+    template<typename FilterArnT = Aws::String>
+    void SetFilterArn(FilterArnT&& value) { m_filterArnHasBeenSet = true; m_filterArn = std::forward<FilterArnT>(value); }
+    template<typename FilterArnT = Aws::String>
+    DescribeFilterRequest& WithFilterArn(FilterArnT&& value) { SetFilterArn(std::forward<FilterArnT>(value)); return *this;}
     ///@}
   private:
 

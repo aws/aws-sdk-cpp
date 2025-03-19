@@ -35,7 +35,7 @@ namespace Model
   class WorkspaceRequest
   {
   public:
-    AWS_WORKSPACES_API WorkspaceRequest();
+    AWS_WORKSPACES_API WorkspaceRequest() = default;
     AWS_WORKSPACES_API WorkspaceRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API WorkspaceRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * <p>The identifier of the Directory Service directory for the WorkSpace. You can
      * use <a>DescribeWorkspaceDirectories</a> to list the available directories.</p>
      */
-    inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
+    inline const Aws::String& GetDirectoryId() const { return m_directoryId; }
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
-    inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
-    inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
-    inline WorkspaceRequest& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
-    inline WorkspaceRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
-    inline WorkspaceRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+    template<typename DirectoryIdT = Aws::String>
+    void SetDirectoryId(DirectoryIdT&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::forward<DirectoryIdT>(value); }
+    template<typename DirectoryIdT = Aws::String>
+    WorkspaceRequest& WithDirectoryId(DirectoryIdT&& value) { SetDirectoryId(std::forward<DirectoryIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * directory to avoid potential incompatibilities.</p> <p>The reserved keyword,
      * <code>[UNDEFINED]</code>, is used when creating user-decoupled WorkSpaces.</p>
      */
-    inline const Aws::String& GetUserName() const{ return m_userName; }
+    inline const Aws::String& GetUserName() const { return m_userName; }
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
-    inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
-    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
-    inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
-    inline WorkspaceRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
-    inline WorkspaceRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
-    inline WorkspaceRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
+    template<typename UserNameT = Aws::String>
+    void SetUserName(UserNameT&& value) { m_userNameHasBeenSet = true; m_userName = std::forward<UserNameT>(value); }
+    template<typename UserNameT = Aws::String>
+    WorkspaceRequest& WithUserName(UserNameT&& value) { SetUserName(std::forward<UserNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,14 +75,12 @@ namespace Model
      * <p>The identifier of the bundle for the WorkSpace. You can use
      * <a>DescribeWorkspaceBundles</a> to list the available bundles.</p>
      */
-    inline const Aws::String& GetBundleId() const{ return m_bundleId; }
+    inline const Aws::String& GetBundleId() const { return m_bundleId; }
     inline bool BundleIdHasBeenSet() const { return m_bundleIdHasBeenSet; }
-    inline void SetBundleId(const Aws::String& value) { m_bundleIdHasBeenSet = true; m_bundleId = value; }
-    inline void SetBundleId(Aws::String&& value) { m_bundleIdHasBeenSet = true; m_bundleId = std::move(value); }
-    inline void SetBundleId(const char* value) { m_bundleIdHasBeenSet = true; m_bundleId.assign(value); }
-    inline WorkspaceRequest& WithBundleId(const Aws::String& value) { SetBundleId(value); return *this;}
-    inline WorkspaceRequest& WithBundleId(Aws::String&& value) { SetBundleId(std::move(value)); return *this;}
-    inline WorkspaceRequest& WithBundleId(const char* value) { SetBundleId(value); return *this;}
+    template<typename BundleIdT = Aws::String>
+    void SetBundleId(BundleIdT&& value) { m_bundleIdHasBeenSet = true; m_bundleId = std::forward<BundleIdT>(value); }
+    template<typename BundleIdT = Aws::String>
+    WorkspaceRequest& WithBundleId(BundleIdT&& value) { SetBundleId(std::forward<BundleIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,21 +88,19 @@ namespace Model
      * <p>The ARN of the symmetric KMS key used to encrypt data stored on your
      * WorkSpace. Amazon WorkSpaces does not support asymmetric KMS keys.</p>
      */
-    inline const Aws::String& GetVolumeEncryptionKey() const{ return m_volumeEncryptionKey; }
+    inline const Aws::String& GetVolumeEncryptionKey() const { return m_volumeEncryptionKey; }
     inline bool VolumeEncryptionKeyHasBeenSet() const { return m_volumeEncryptionKeyHasBeenSet; }
-    inline void SetVolumeEncryptionKey(const Aws::String& value) { m_volumeEncryptionKeyHasBeenSet = true; m_volumeEncryptionKey = value; }
-    inline void SetVolumeEncryptionKey(Aws::String&& value) { m_volumeEncryptionKeyHasBeenSet = true; m_volumeEncryptionKey = std::move(value); }
-    inline void SetVolumeEncryptionKey(const char* value) { m_volumeEncryptionKeyHasBeenSet = true; m_volumeEncryptionKey.assign(value); }
-    inline WorkspaceRequest& WithVolumeEncryptionKey(const Aws::String& value) { SetVolumeEncryptionKey(value); return *this;}
-    inline WorkspaceRequest& WithVolumeEncryptionKey(Aws::String&& value) { SetVolumeEncryptionKey(std::move(value)); return *this;}
-    inline WorkspaceRequest& WithVolumeEncryptionKey(const char* value) { SetVolumeEncryptionKey(value); return *this;}
+    template<typename VolumeEncryptionKeyT = Aws::String>
+    void SetVolumeEncryptionKey(VolumeEncryptionKeyT&& value) { m_volumeEncryptionKeyHasBeenSet = true; m_volumeEncryptionKey = std::forward<VolumeEncryptionKeyT>(value); }
+    template<typename VolumeEncryptionKeyT = Aws::String>
+    WorkspaceRequest& WithVolumeEncryptionKey(VolumeEncryptionKeyT&& value) { SetVolumeEncryptionKey(std::forward<VolumeEncryptionKeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether the data stored on the user volume is encrypted.</p>
      */
-    inline bool GetUserVolumeEncryptionEnabled() const{ return m_userVolumeEncryptionEnabled; }
+    inline bool GetUserVolumeEncryptionEnabled() const { return m_userVolumeEncryptionEnabled; }
     inline bool UserVolumeEncryptionEnabledHasBeenSet() const { return m_userVolumeEncryptionEnabledHasBeenSet; }
     inline void SetUserVolumeEncryptionEnabled(bool value) { m_userVolumeEncryptionEnabledHasBeenSet = true; m_userVolumeEncryptionEnabled = value; }
     inline WorkspaceRequest& WithUserVolumeEncryptionEnabled(bool value) { SetUserVolumeEncryptionEnabled(value); return *this;}
@@ -118,7 +110,7 @@ namespace Model
     /**
      * <p>Indicates whether the data stored on the root volume is encrypted.</p>
      */
-    inline bool GetRootVolumeEncryptionEnabled() const{ return m_rootVolumeEncryptionEnabled; }
+    inline bool GetRootVolumeEncryptionEnabled() const { return m_rootVolumeEncryptionEnabled; }
     inline bool RootVolumeEncryptionEnabledHasBeenSet() const { return m_rootVolumeEncryptionEnabledHasBeenSet; }
     inline void SetRootVolumeEncryptionEnabled(bool value) { m_rootVolumeEncryptionEnabledHasBeenSet = true; m_rootVolumeEncryptionEnabled = value; }
     inline WorkspaceRequest& WithRootVolumeEncryptionEnabled(bool value) { SetRootVolumeEncryptionEnabled(value); return *this;}
@@ -128,26 +120,26 @@ namespace Model
     /**
      * <p>The WorkSpace properties.</p>
      */
-    inline const WorkspaceProperties& GetWorkspaceProperties() const{ return m_workspaceProperties; }
+    inline const WorkspaceProperties& GetWorkspaceProperties() const { return m_workspaceProperties; }
     inline bool WorkspacePropertiesHasBeenSet() const { return m_workspacePropertiesHasBeenSet; }
-    inline void SetWorkspaceProperties(const WorkspaceProperties& value) { m_workspacePropertiesHasBeenSet = true; m_workspaceProperties = value; }
-    inline void SetWorkspaceProperties(WorkspaceProperties&& value) { m_workspacePropertiesHasBeenSet = true; m_workspaceProperties = std::move(value); }
-    inline WorkspaceRequest& WithWorkspaceProperties(const WorkspaceProperties& value) { SetWorkspaceProperties(value); return *this;}
-    inline WorkspaceRequest& WithWorkspaceProperties(WorkspaceProperties&& value) { SetWorkspaceProperties(std::move(value)); return *this;}
+    template<typename WorkspacePropertiesT = WorkspaceProperties>
+    void SetWorkspaceProperties(WorkspacePropertiesT&& value) { m_workspacePropertiesHasBeenSet = true; m_workspaceProperties = std::forward<WorkspacePropertiesT>(value); }
+    template<typename WorkspacePropertiesT = WorkspaceProperties>
+    WorkspaceRequest& WithWorkspaceProperties(WorkspacePropertiesT&& value) { SetWorkspaceProperties(std::forward<WorkspacePropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags for the WorkSpace.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline WorkspaceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline WorkspaceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline WorkspaceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline WorkspaceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    WorkspaceRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    WorkspaceRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -158,14 +150,12 @@ namespace Model
      * <code>WorkspaceName</code> is not applicable if <code>UserName</code> is
      * specified for user-assigned WorkSpaces.</p> 
      */
-    inline const Aws::String& GetWorkspaceName() const{ return m_workspaceName; }
+    inline const Aws::String& GetWorkspaceName() const { return m_workspaceName; }
     inline bool WorkspaceNameHasBeenSet() const { return m_workspaceNameHasBeenSet; }
-    inline void SetWorkspaceName(const Aws::String& value) { m_workspaceNameHasBeenSet = true; m_workspaceName = value; }
-    inline void SetWorkspaceName(Aws::String&& value) { m_workspaceNameHasBeenSet = true; m_workspaceName = std::move(value); }
-    inline void SetWorkspaceName(const char* value) { m_workspaceNameHasBeenSet = true; m_workspaceName.assign(value); }
-    inline WorkspaceRequest& WithWorkspaceName(const Aws::String& value) { SetWorkspaceName(value); return *this;}
-    inline WorkspaceRequest& WithWorkspaceName(Aws::String&& value) { SetWorkspaceName(std::move(value)); return *this;}
-    inline WorkspaceRequest& WithWorkspaceName(const char* value) { SetWorkspaceName(value); return *this;}
+    template<typename WorkspaceNameT = Aws::String>
+    void SetWorkspaceName(WorkspaceNameT&& value) { m_workspaceNameHasBeenSet = true; m_workspaceName = std::forward<WorkspaceNameT>(value); }
+    template<typename WorkspaceNameT = Aws::String>
+    WorkspaceRequest& WithWorkspaceName(WorkspaceNameT&& value) { SetWorkspaceName(std::forward<WorkspaceNameT>(value)); return *this;}
     ///@}
   private:
 
@@ -181,10 +171,10 @@ namespace Model
     Aws::String m_volumeEncryptionKey;
     bool m_volumeEncryptionKeyHasBeenSet = false;
 
-    bool m_userVolumeEncryptionEnabled;
+    bool m_userVolumeEncryptionEnabled{false};
     bool m_userVolumeEncryptionEnabledHasBeenSet = false;
 
-    bool m_rootVolumeEncryptionEnabled;
+    bool m_rootVolumeEncryptionEnabled{false};
     bool m_rootVolumeEncryptionEnabledHasBeenSet = false;
 
     WorkspaceProperties m_workspaceProperties;

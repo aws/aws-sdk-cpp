@@ -12,11 +12,6 @@ using namespace Aws::Personalize::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeDatasetImportJobRequest::DescribeDatasetImportJobRequest() : 
-    m_datasetImportJobArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDatasetImportJobRequest::SerializePayload() const
 {
   JsonValue payload;

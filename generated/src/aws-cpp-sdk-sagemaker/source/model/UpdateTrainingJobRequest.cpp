@@ -12,15 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateTrainingJobRequest::UpdateTrainingJobRequest() : 
-    m_trainingJobNameHasBeenSet(false),
-    m_profilerConfigHasBeenSet(false),
-    m_profilerRuleConfigurationsHasBeenSet(false),
-    m_resourceConfigHasBeenSet(false),
-    m_remoteDebugConfigHasBeenSet(false)
-{
-}
-
 Aws::String UpdateTrainingJobRequest::SerializePayload() const
 {
   JsonValue payload;

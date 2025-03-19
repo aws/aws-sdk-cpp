@@ -12,17 +12,6 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeUserStackAssociationsRequest::DescribeUserStackAssociationsRequest() : 
-    m_stackNameHasBeenSet(false),
-    m_userNameHasBeenSet(false),
-    m_authenticationType(AuthenticationType::NOT_SET),
-    m_authenticationTypeHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeUserStackAssociationsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -33,7 +33,7 @@ namespace Model
   class RecommendationResourceExclusion
   {
   public:
-    AWS_TRUSTEDADVISOR_API RecommendationResourceExclusion();
+    AWS_TRUSTEDADVISOR_API RecommendationResourceExclusion() = default;
     AWS_TRUSTEDADVISOR_API RecommendationResourceExclusion(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRUSTEDADVISOR_API RecommendationResourceExclusion& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRUSTEDADVISOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,21 +43,19 @@ namespace Model
     /**
      * <p>The ARN of the Recommendation Resource</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline RecommendationResourceExclusion& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline RecommendationResourceExclusion& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline RecommendationResourceExclusion& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    RecommendationResourceExclusion& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The exclusion status</p>
      */
-    inline bool GetIsExcluded() const{ return m_isExcluded; }
+    inline bool GetIsExcluded() const { return m_isExcluded; }
     inline bool IsExcludedHasBeenSet() const { return m_isExcludedHasBeenSet; }
     inline void SetIsExcluded(bool value) { m_isExcludedHasBeenSet = true; m_isExcluded = value; }
     inline RecommendationResourceExclusion& WithIsExcluded(bool value) { SetIsExcluded(value); return *this;}
@@ -67,7 +65,7 @@ namespace Model
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    bool m_isExcluded;
+    bool m_isExcluded{false};
     bool m_isExcludedHasBeenSet = false;
   };
 

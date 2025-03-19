@@ -27,7 +27,7 @@ namespace Model
   class ImportNotebookResult
   {
   public:
-    AWS_ATHENA_API ImportNotebookResult();
+    AWS_ATHENA_API ImportNotebookResult() = default;
     AWS_ATHENA_API ImportNotebookResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ATHENA_API ImportNotebookResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The ID assigned to the imported notebook.</p>
      */
-    inline const Aws::String& GetNotebookId() const{ return m_notebookId; }
-    inline void SetNotebookId(const Aws::String& value) { m_notebookId = value; }
-    inline void SetNotebookId(Aws::String&& value) { m_notebookId = std::move(value); }
-    inline void SetNotebookId(const char* value) { m_notebookId.assign(value); }
-    inline ImportNotebookResult& WithNotebookId(const Aws::String& value) { SetNotebookId(value); return *this;}
-    inline ImportNotebookResult& WithNotebookId(Aws::String&& value) { SetNotebookId(std::move(value)); return *this;}
-    inline ImportNotebookResult& WithNotebookId(const char* value) { SetNotebookId(value); return *this;}
+    inline const Aws::String& GetNotebookId() const { return m_notebookId; }
+    template<typename NotebookIdT = Aws::String>
+    void SetNotebookId(NotebookIdT&& value) { m_notebookIdHasBeenSet = true; m_notebookId = std::forward<NotebookIdT>(value); }
+    template<typename NotebookIdT = Aws::String>
+    ImportNotebookResult& WithNotebookId(NotebookIdT&& value) { SetNotebookId(std::forward<NotebookIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ImportNotebookResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ImportNotebookResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ImportNotebookResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ImportNotebookResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_notebookId;
+    bool m_notebookIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

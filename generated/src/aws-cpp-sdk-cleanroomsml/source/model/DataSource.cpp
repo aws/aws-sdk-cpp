@@ -18,13 +18,7 @@ namespace CleanRoomsML
 namespace Model
 {
 
-DataSource::DataSource() : 
-    m_glueDataSourceHasBeenSet(false)
-{
-}
-
 DataSource::DataSource(JsonView jsonValue)
-  : DataSource()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DataSource& DataSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("glueDataSource"))
   {
     m_glueDataSource = jsonValue.GetObject("glueDataSource");
-
     m_glueDataSourceHasBeenSet = true;
   }
-
   return *this;
 }
 

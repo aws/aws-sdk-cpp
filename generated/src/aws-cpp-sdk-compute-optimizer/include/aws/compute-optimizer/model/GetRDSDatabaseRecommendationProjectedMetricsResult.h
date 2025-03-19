@@ -29,7 +29,7 @@ namespace Model
   class GetRDSDatabaseRecommendationProjectedMetricsResult
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API GetRDSDatabaseRecommendationProjectedMetricsResult();
+    AWS_COMPUTEOPTIMIZER_API GetRDSDatabaseRecommendationProjectedMetricsResult() = default;
     AWS_COMPUTEOPTIMIZER_API GetRDSDatabaseRecommendationProjectedMetricsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COMPUTEOPTIMIZER_API GetRDSDatabaseRecommendationProjectedMetricsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p> An array of objects that describes the projected metrics. </p>
      */
-    inline const Aws::Vector<RDSDatabaseRecommendedOptionProjectedMetric>& GetRecommendedOptionProjectedMetrics() const{ return m_recommendedOptionProjectedMetrics; }
-    inline void SetRecommendedOptionProjectedMetrics(const Aws::Vector<RDSDatabaseRecommendedOptionProjectedMetric>& value) { m_recommendedOptionProjectedMetrics = value; }
-    inline void SetRecommendedOptionProjectedMetrics(Aws::Vector<RDSDatabaseRecommendedOptionProjectedMetric>&& value) { m_recommendedOptionProjectedMetrics = std::move(value); }
-    inline GetRDSDatabaseRecommendationProjectedMetricsResult& WithRecommendedOptionProjectedMetrics(const Aws::Vector<RDSDatabaseRecommendedOptionProjectedMetric>& value) { SetRecommendedOptionProjectedMetrics(value); return *this;}
-    inline GetRDSDatabaseRecommendationProjectedMetricsResult& WithRecommendedOptionProjectedMetrics(Aws::Vector<RDSDatabaseRecommendedOptionProjectedMetric>&& value) { SetRecommendedOptionProjectedMetrics(std::move(value)); return *this;}
-    inline GetRDSDatabaseRecommendationProjectedMetricsResult& AddRecommendedOptionProjectedMetrics(const RDSDatabaseRecommendedOptionProjectedMetric& value) { m_recommendedOptionProjectedMetrics.push_back(value); return *this; }
-    inline GetRDSDatabaseRecommendationProjectedMetricsResult& AddRecommendedOptionProjectedMetrics(RDSDatabaseRecommendedOptionProjectedMetric&& value) { m_recommendedOptionProjectedMetrics.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RDSDatabaseRecommendedOptionProjectedMetric>& GetRecommendedOptionProjectedMetrics() const { return m_recommendedOptionProjectedMetrics; }
+    template<typename RecommendedOptionProjectedMetricsT = Aws::Vector<RDSDatabaseRecommendedOptionProjectedMetric>>
+    void SetRecommendedOptionProjectedMetrics(RecommendedOptionProjectedMetricsT&& value) { m_recommendedOptionProjectedMetricsHasBeenSet = true; m_recommendedOptionProjectedMetrics = std::forward<RecommendedOptionProjectedMetricsT>(value); }
+    template<typename RecommendedOptionProjectedMetricsT = Aws::Vector<RDSDatabaseRecommendedOptionProjectedMetric>>
+    GetRDSDatabaseRecommendationProjectedMetricsResult& WithRecommendedOptionProjectedMetrics(RecommendedOptionProjectedMetricsT&& value) { SetRecommendedOptionProjectedMetrics(std::forward<RecommendedOptionProjectedMetricsT>(value)); return *this;}
+    template<typename RecommendedOptionProjectedMetricsT = RDSDatabaseRecommendedOptionProjectedMetric>
+    GetRDSDatabaseRecommendationProjectedMetricsResult& AddRecommendedOptionProjectedMetrics(RecommendedOptionProjectedMetricsT&& value) { m_recommendedOptionProjectedMetricsHasBeenSet = true; m_recommendedOptionProjectedMetrics.emplace_back(std::forward<RecommendedOptionProjectedMetricsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetRDSDatabaseRecommendationProjectedMetricsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetRDSDatabaseRecommendationProjectedMetricsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetRDSDatabaseRecommendationProjectedMetricsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetRDSDatabaseRecommendationProjectedMetricsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<RDSDatabaseRecommendedOptionProjectedMetric> m_recommendedOptionProjectedMetrics;
+    bool m_recommendedOptionProjectedMetricsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

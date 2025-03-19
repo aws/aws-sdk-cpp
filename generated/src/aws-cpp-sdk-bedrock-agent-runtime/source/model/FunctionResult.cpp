@@ -18,20 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-FunctionResult::FunctionResult() : 
-    m_actionGroupHasBeenSet(false),
-    m_agentIdHasBeenSet(false),
-    m_confirmationState(ConfirmationState::NOT_SET),
-    m_confirmationStateHasBeenSet(false),
-    m_functionHasBeenSet(false),
-    m_responseBodyHasBeenSet(false),
-    m_responseState(ResponseState::NOT_SET),
-    m_responseStateHasBeenSet(false)
-{
-}
-
 FunctionResult::FunctionResult(JsonView jsonValue)
-  : FunctionResult()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ FunctionResult& FunctionResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("actionGroup"))
   {
     m_actionGroup = jsonValue.GetString("actionGroup");
-
     m_actionGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("agentId"))
   {
     m_agentId = jsonValue.GetString("agentId");
-
     m_agentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("confirmationState"))
   {
     m_confirmationState = ConfirmationStateMapper::GetConfirmationStateForName(jsonValue.GetString("confirmationState"));
-
     m_confirmationStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("function"))
   {
     m_function = jsonValue.GetString("function");
-
     m_functionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("responseBody"))
   {
     Aws::Map<Aws::String, JsonView> responseBodyJsonMap = jsonValue.GetObject("responseBody").GetAllObjects();
@@ -75,14 +54,11 @@ FunctionResult& FunctionResult::operator =(JsonView jsonValue)
     }
     m_responseBodyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("responseState"))
   {
     m_responseState = ResponseStateMapper::GetResponseStateForName(jsonValue.GetString("responseState"));
-
     m_responseStateHasBeenSet = true;
   }
-
   return *this;
 }
 

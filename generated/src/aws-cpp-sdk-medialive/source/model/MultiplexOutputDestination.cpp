@@ -18,13 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-MultiplexOutputDestination::MultiplexOutputDestination() : 
-    m_mediaConnectSettingsHasBeenSet(false)
-{
-}
-
 MultiplexOutputDestination::MultiplexOutputDestination(JsonView jsonValue)
-  : MultiplexOutputDestination()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MultiplexOutputDestination& MultiplexOutputDestination::operator =(JsonView json
   if(jsonValue.ValueExists("mediaConnectSettings"))
   {
     m_mediaConnectSettings = jsonValue.GetObject("mediaConnectSettings");
-
     m_mediaConnectSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

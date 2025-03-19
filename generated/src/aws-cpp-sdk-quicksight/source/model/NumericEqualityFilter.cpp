@@ -18,25 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-NumericEqualityFilter::NumericEqualityFilter() : 
-    m_filterIdHasBeenSet(false),
-    m_columnHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false),
-    m_selectAllOptions(NumericFilterSelectAllOptions::NOT_SET),
-    m_selectAllOptionsHasBeenSet(false),
-    m_matchOperator(NumericEqualityMatchOperator::NOT_SET),
-    m_matchOperatorHasBeenSet(false),
-    m_aggregationFunctionHasBeenSet(false),
-    m_parameterNameHasBeenSet(false),
-    m_nullOption(FilterNullOption::NOT_SET),
-    m_nullOptionHasBeenSet(false),
-    m_defaultFilterControlConfigurationHasBeenSet(false)
-{
-}
-
 NumericEqualityFilter::NumericEqualityFilter(JsonView jsonValue)
-  : NumericEqualityFilter()
 {
   *this = jsonValue;
 }
@@ -46,66 +28,48 @@ NumericEqualityFilter& NumericEqualityFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FilterId"))
   {
     m_filterId = jsonValue.GetString("FilterId");
-
     m_filterIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Column"))
   {
     m_column = jsonValue.GetObject("Column");
-
     m_columnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetDouble("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SelectAllOptions"))
   {
     m_selectAllOptions = NumericFilterSelectAllOptionsMapper::GetNumericFilterSelectAllOptionsForName(jsonValue.GetString("SelectAllOptions"));
-
     m_selectAllOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MatchOperator"))
   {
     m_matchOperator = NumericEqualityMatchOperatorMapper::GetNumericEqualityMatchOperatorForName(jsonValue.GetString("MatchOperator"));
-
     m_matchOperatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AggregationFunction"))
   {
     m_aggregationFunction = jsonValue.GetObject("AggregationFunction");
-
     m_aggregationFunctionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParameterName"))
   {
     m_parameterName = jsonValue.GetString("ParameterName");
-
     m_parameterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NullOption"))
   {
     m_nullOption = FilterNullOptionMapper::GetFilterNullOptionForName(jsonValue.GetString("NullOption"));
-
     m_nullOptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultFilterControlConfiguration"))
   {
     m_defaultFilterControlConfiguration = jsonValue.GetObject("DefaultFilterControlConfiguration");
-
     m_defaultFilterControlConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -24,7 +24,7 @@ namespace Model
   class PutSchemaVersionMetadataRequest : public GlueRequest
   {
   public:
-    AWS_GLUE_API PutSchemaVersionMetadataRequest();
+    AWS_GLUE_API PutSchemaVersionMetadataRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,50 +41,48 @@ namespace Model
     /**
      * <p>The unique ID for the schema.</p>
      */
-    inline const SchemaId& GetSchemaId() const{ return m_schemaId; }
+    inline const SchemaId& GetSchemaId() const { return m_schemaId; }
     inline bool SchemaIdHasBeenSet() const { return m_schemaIdHasBeenSet; }
-    inline void SetSchemaId(const SchemaId& value) { m_schemaIdHasBeenSet = true; m_schemaId = value; }
-    inline void SetSchemaId(SchemaId&& value) { m_schemaIdHasBeenSet = true; m_schemaId = std::move(value); }
-    inline PutSchemaVersionMetadataRequest& WithSchemaId(const SchemaId& value) { SetSchemaId(value); return *this;}
-    inline PutSchemaVersionMetadataRequest& WithSchemaId(SchemaId&& value) { SetSchemaId(std::move(value)); return *this;}
+    template<typename SchemaIdT = SchemaId>
+    void SetSchemaId(SchemaIdT&& value) { m_schemaIdHasBeenSet = true; m_schemaId = std::forward<SchemaIdT>(value); }
+    template<typename SchemaIdT = SchemaId>
+    PutSchemaVersionMetadataRequest& WithSchemaId(SchemaIdT&& value) { SetSchemaId(std::forward<SchemaIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version number of the schema.</p>
      */
-    inline const SchemaVersionNumber& GetSchemaVersionNumber() const{ return m_schemaVersionNumber; }
+    inline const SchemaVersionNumber& GetSchemaVersionNumber() const { return m_schemaVersionNumber; }
     inline bool SchemaVersionNumberHasBeenSet() const { return m_schemaVersionNumberHasBeenSet; }
-    inline void SetSchemaVersionNumber(const SchemaVersionNumber& value) { m_schemaVersionNumberHasBeenSet = true; m_schemaVersionNumber = value; }
-    inline void SetSchemaVersionNumber(SchemaVersionNumber&& value) { m_schemaVersionNumberHasBeenSet = true; m_schemaVersionNumber = std::move(value); }
-    inline PutSchemaVersionMetadataRequest& WithSchemaVersionNumber(const SchemaVersionNumber& value) { SetSchemaVersionNumber(value); return *this;}
-    inline PutSchemaVersionMetadataRequest& WithSchemaVersionNumber(SchemaVersionNumber&& value) { SetSchemaVersionNumber(std::move(value)); return *this;}
+    template<typename SchemaVersionNumberT = SchemaVersionNumber>
+    void SetSchemaVersionNumber(SchemaVersionNumberT&& value) { m_schemaVersionNumberHasBeenSet = true; m_schemaVersionNumber = std::forward<SchemaVersionNumberT>(value); }
+    template<typename SchemaVersionNumberT = SchemaVersionNumber>
+    PutSchemaVersionMetadataRequest& WithSchemaVersionNumber(SchemaVersionNumberT&& value) { SetSchemaVersionNumber(std::forward<SchemaVersionNumberT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique version ID of the schema version.</p>
      */
-    inline const Aws::String& GetSchemaVersionId() const{ return m_schemaVersionId; }
+    inline const Aws::String& GetSchemaVersionId() const { return m_schemaVersionId; }
     inline bool SchemaVersionIdHasBeenSet() const { return m_schemaVersionIdHasBeenSet; }
-    inline void SetSchemaVersionId(const Aws::String& value) { m_schemaVersionIdHasBeenSet = true; m_schemaVersionId = value; }
-    inline void SetSchemaVersionId(Aws::String&& value) { m_schemaVersionIdHasBeenSet = true; m_schemaVersionId = std::move(value); }
-    inline void SetSchemaVersionId(const char* value) { m_schemaVersionIdHasBeenSet = true; m_schemaVersionId.assign(value); }
-    inline PutSchemaVersionMetadataRequest& WithSchemaVersionId(const Aws::String& value) { SetSchemaVersionId(value); return *this;}
-    inline PutSchemaVersionMetadataRequest& WithSchemaVersionId(Aws::String&& value) { SetSchemaVersionId(std::move(value)); return *this;}
-    inline PutSchemaVersionMetadataRequest& WithSchemaVersionId(const char* value) { SetSchemaVersionId(value); return *this;}
+    template<typename SchemaVersionIdT = Aws::String>
+    void SetSchemaVersionId(SchemaVersionIdT&& value) { m_schemaVersionIdHasBeenSet = true; m_schemaVersionId = std::forward<SchemaVersionIdT>(value); }
+    template<typename SchemaVersionIdT = Aws::String>
+    PutSchemaVersionMetadataRequest& WithSchemaVersionId(SchemaVersionIdT&& value) { SetSchemaVersionId(std::forward<SchemaVersionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The metadata key's corresponding value.</p>
      */
-    inline const MetadataKeyValuePair& GetMetadataKeyValue() const{ return m_metadataKeyValue; }
+    inline const MetadataKeyValuePair& GetMetadataKeyValue() const { return m_metadataKeyValue; }
     inline bool MetadataKeyValueHasBeenSet() const { return m_metadataKeyValueHasBeenSet; }
-    inline void SetMetadataKeyValue(const MetadataKeyValuePair& value) { m_metadataKeyValueHasBeenSet = true; m_metadataKeyValue = value; }
-    inline void SetMetadataKeyValue(MetadataKeyValuePair&& value) { m_metadataKeyValueHasBeenSet = true; m_metadataKeyValue = std::move(value); }
-    inline PutSchemaVersionMetadataRequest& WithMetadataKeyValue(const MetadataKeyValuePair& value) { SetMetadataKeyValue(value); return *this;}
-    inline PutSchemaVersionMetadataRequest& WithMetadataKeyValue(MetadataKeyValuePair&& value) { SetMetadataKeyValue(std::move(value)); return *this;}
+    template<typename MetadataKeyValueT = MetadataKeyValuePair>
+    void SetMetadataKeyValue(MetadataKeyValueT&& value) { m_metadataKeyValueHasBeenSet = true; m_metadataKeyValue = std::forward<MetadataKeyValueT>(value); }
+    template<typename MetadataKeyValueT = MetadataKeyValuePair>
+    PutSchemaVersionMetadataRequest& WithMetadataKeyValue(MetadataKeyValueT&& value) { SetMetadataKeyValue(std::forward<MetadataKeyValueT>(value)); return *this;}
     ///@}
   private:
 

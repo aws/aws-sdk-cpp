@@ -12,15 +12,6 @@ using namespace Aws::ConnectCases::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateCaseRuleRequest::UpdateCaseRuleRequest() : 
-    m_caseRuleIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ruleHasBeenSet(false)
-{
-}
-
 Aws::String UpdateCaseRuleRequest::SerializePayload() const
 {
   JsonValue payload;

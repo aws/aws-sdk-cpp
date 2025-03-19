@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-RemoveProfilePermissionRequest::RemoveProfilePermissionRequest() : 
-    m_profileNameHasBeenSet(false),
-    m_revisionIdHasBeenSet(false),
-    m_statementIdHasBeenSet(false)
-{
-}
-
 Aws::String RemoveProfilePermissionRequest::SerializePayload() const
 {
   return {};

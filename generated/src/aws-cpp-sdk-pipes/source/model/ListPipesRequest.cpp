@@ -15,20 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListPipesRequest::ListPipesRequest() : 
-    m_namePrefixHasBeenSet(false),
-    m_desiredState(RequestedPipeState::NOT_SET),
-    m_desiredStateHasBeenSet(false),
-    m_currentState(PipeState::NOT_SET),
-    m_currentStateHasBeenSet(false),
-    m_sourcePrefixHasBeenSet(false),
-    m_targetPrefixHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String ListPipesRequest::SerializePayload() const
 {
   return {};

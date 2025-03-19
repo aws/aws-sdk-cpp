@@ -25,7 +25,7 @@ namespace Model
   class ReEncryptRequest : public KMSRequest
   {
   public:
-    AWS_KMS_API ReEncryptRequest();
+    AWS_KMS_API ReEncryptRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Ciphertext of the data to reencrypt.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetCiphertextBlob() const{ return m_ciphertextBlob; }
+    inline const Aws::Utils::ByteBuffer& GetCiphertextBlob() const { return m_ciphertextBlob; }
     inline bool CiphertextBlobHasBeenSet() const { return m_ciphertextBlobHasBeenSet; }
-    inline void SetCiphertextBlob(const Aws::Utils::ByteBuffer& value) { m_ciphertextBlobHasBeenSet = true; m_ciphertextBlob = value; }
-    inline void SetCiphertextBlob(Aws::Utils::ByteBuffer&& value) { m_ciphertextBlobHasBeenSet = true; m_ciphertextBlob = std::move(value); }
-    inline ReEncryptRequest& WithCiphertextBlob(const Aws::Utils::ByteBuffer& value) { SetCiphertextBlob(value); return *this;}
-    inline ReEncryptRequest& WithCiphertextBlob(Aws::Utils::ByteBuffer&& value) { SetCiphertextBlob(std::move(value)); return *this;}
+    template<typename CiphertextBlobT = Aws::Utils::ByteBuffer>
+    void SetCiphertextBlob(CiphertextBlobT&& value) { m_ciphertextBlobHasBeenSet = true; m_ciphertextBlob = std::forward<CiphertextBlobT>(value); }
+    template<typename CiphertextBlobT = Aws::Utils::ByteBuffer>
+    ReEncryptRequest& WithCiphertextBlob(CiphertextBlobT&& value) { SetCiphertextBlob(std::forward<CiphertextBlobT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,19 +64,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * context</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetSourceEncryptionContext() const{ return m_sourceEncryptionContext; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetSourceEncryptionContext() const { return m_sourceEncryptionContext; }
     inline bool SourceEncryptionContextHasBeenSet() const { return m_sourceEncryptionContextHasBeenSet; }
-    inline void SetSourceEncryptionContext(const Aws::Map<Aws::String, Aws::String>& value) { m_sourceEncryptionContextHasBeenSet = true; m_sourceEncryptionContext = value; }
-    inline void SetSourceEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { m_sourceEncryptionContextHasBeenSet = true; m_sourceEncryptionContext = std::move(value); }
-    inline ReEncryptRequest& WithSourceEncryptionContext(const Aws::Map<Aws::String, Aws::String>& value) { SetSourceEncryptionContext(value); return *this;}
-    inline ReEncryptRequest& WithSourceEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { SetSourceEncryptionContext(std::move(value)); return *this;}
-    inline ReEncryptRequest& AddSourceEncryptionContext(const Aws::String& key, const Aws::String& value) { m_sourceEncryptionContextHasBeenSet = true; m_sourceEncryptionContext.emplace(key, value); return *this; }
-    inline ReEncryptRequest& AddSourceEncryptionContext(Aws::String&& key, const Aws::String& value) { m_sourceEncryptionContextHasBeenSet = true; m_sourceEncryptionContext.emplace(std::move(key), value); return *this; }
-    inline ReEncryptRequest& AddSourceEncryptionContext(const Aws::String& key, Aws::String&& value) { m_sourceEncryptionContextHasBeenSet = true; m_sourceEncryptionContext.emplace(key, std::move(value)); return *this; }
-    inline ReEncryptRequest& AddSourceEncryptionContext(Aws::String&& key, Aws::String&& value) { m_sourceEncryptionContextHasBeenSet = true; m_sourceEncryptionContext.emplace(std::move(key), std::move(value)); return *this; }
-    inline ReEncryptRequest& AddSourceEncryptionContext(const char* key, Aws::String&& value) { m_sourceEncryptionContextHasBeenSet = true; m_sourceEncryptionContext.emplace(key, std::move(value)); return *this; }
-    inline ReEncryptRequest& AddSourceEncryptionContext(Aws::String&& key, const char* value) { m_sourceEncryptionContextHasBeenSet = true; m_sourceEncryptionContext.emplace(std::move(key), value); return *this; }
-    inline ReEncryptRequest& AddSourceEncryptionContext(const char* key, const char* value) { m_sourceEncryptionContextHasBeenSet = true; m_sourceEncryptionContext.emplace(key, value); return *this; }
+    template<typename SourceEncryptionContextT = Aws::Map<Aws::String, Aws::String>>
+    void SetSourceEncryptionContext(SourceEncryptionContextT&& value) { m_sourceEncryptionContextHasBeenSet = true; m_sourceEncryptionContext = std::forward<SourceEncryptionContextT>(value); }
+    template<typename SourceEncryptionContextT = Aws::Map<Aws::String, Aws::String>>
+    ReEncryptRequest& WithSourceEncryptionContext(SourceEncryptionContextT&& value) { SetSourceEncryptionContext(std::forward<SourceEncryptionContextT>(value)); return *this;}
+    template<typename SourceEncryptionContextKeyT = Aws::String, typename SourceEncryptionContextValueT = Aws::String>
+    ReEncryptRequest& AddSourceEncryptionContext(SourceEncryptionContextKeyT&& key, SourceEncryptionContextValueT&& value) {
+      m_sourceEncryptionContextHasBeenSet = true; m_sourceEncryptionContext.emplace(std::forward<SourceEncryptionContextKeyT>(key), std::forward<SourceEncryptionContextValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -101,14 +98,12 @@ namespace Model
      * <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use
      * <a>ListAliases</a>.</p>
      */
-    inline const Aws::String& GetSourceKeyId() const{ return m_sourceKeyId; }
+    inline const Aws::String& GetSourceKeyId() const { return m_sourceKeyId; }
     inline bool SourceKeyIdHasBeenSet() const { return m_sourceKeyIdHasBeenSet; }
-    inline void SetSourceKeyId(const Aws::String& value) { m_sourceKeyIdHasBeenSet = true; m_sourceKeyId = value; }
-    inline void SetSourceKeyId(Aws::String&& value) { m_sourceKeyIdHasBeenSet = true; m_sourceKeyId = std::move(value); }
-    inline void SetSourceKeyId(const char* value) { m_sourceKeyIdHasBeenSet = true; m_sourceKeyId.assign(value); }
-    inline ReEncryptRequest& WithSourceKeyId(const Aws::String& value) { SetSourceKeyId(value); return *this;}
-    inline ReEncryptRequest& WithSourceKeyId(Aws::String&& value) { SetSourceKeyId(std::move(value)); return *this;}
-    inline ReEncryptRequest& WithSourceKeyId(const char* value) { SetSourceKeyId(value); return *this;}
+    template<typename SourceKeyIdT = Aws::String>
+    void SetSourceKeyId(SourceKeyIdT&& value) { m_sourceKeyIdHasBeenSet = true; m_sourceKeyId = std::forward<SourceKeyIdT>(value); }
+    template<typename SourceKeyIdT = Aws::String>
+    ReEncryptRequest& WithSourceKeyId(SourceKeyIdT&& value) { SetSourceKeyId(std::forward<SourceKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -129,14 +124,12 @@ namespace Model
      * <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use
      * <a>ListAliases</a>.</p>
      */
-    inline const Aws::String& GetDestinationKeyId() const{ return m_destinationKeyId; }
+    inline const Aws::String& GetDestinationKeyId() const { return m_destinationKeyId; }
     inline bool DestinationKeyIdHasBeenSet() const { return m_destinationKeyIdHasBeenSet; }
-    inline void SetDestinationKeyId(const Aws::String& value) { m_destinationKeyIdHasBeenSet = true; m_destinationKeyId = value; }
-    inline void SetDestinationKeyId(Aws::String&& value) { m_destinationKeyIdHasBeenSet = true; m_destinationKeyId = std::move(value); }
-    inline void SetDestinationKeyId(const char* value) { m_destinationKeyIdHasBeenSet = true; m_destinationKeyId.assign(value); }
-    inline ReEncryptRequest& WithDestinationKeyId(const Aws::String& value) { SetDestinationKeyId(value); return *this;}
-    inline ReEncryptRequest& WithDestinationKeyId(Aws::String&& value) { SetDestinationKeyId(std::move(value)); return *this;}
-    inline ReEncryptRequest& WithDestinationKeyId(const char* value) { SetDestinationKeyId(value); return *this;}
+    template<typename DestinationKeyIdT = Aws::String>
+    void SetDestinationKeyId(DestinationKeyIdT&& value) { m_destinationKeyIdHasBeenSet = true; m_destinationKeyId = std::forward<DestinationKeyIdT>(value); }
+    template<typename DestinationKeyIdT = Aws::String>
+    ReEncryptRequest& WithDestinationKeyId(DestinationKeyIdT&& value) { SetDestinationKeyId(std::forward<DestinationKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -157,19 +150,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * context</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetDestinationEncryptionContext() const{ return m_destinationEncryptionContext; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetDestinationEncryptionContext() const { return m_destinationEncryptionContext; }
     inline bool DestinationEncryptionContextHasBeenSet() const { return m_destinationEncryptionContextHasBeenSet; }
-    inline void SetDestinationEncryptionContext(const Aws::Map<Aws::String, Aws::String>& value) { m_destinationEncryptionContextHasBeenSet = true; m_destinationEncryptionContext = value; }
-    inline void SetDestinationEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { m_destinationEncryptionContextHasBeenSet = true; m_destinationEncryptionContext = std::move(value); }
-    inline ReEncryptRequest& WithDestinationEncryptionContext(const Aws::Map<Aws::String, Aws::String>& value) { SetDestinationEncryptionContext(value); return *this;}
-    inline ReEncryptRequest& WithDestinationEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { SetDestinationEncryptionContext(std::move(value)); return *this;}
-    inline ReEncryptRequest& AddDestinationEncryptionContext(const Aws::String& key, const Aws::String& value) { m_destinationEncryptionContextHasBeenSet = true; m_destinationEncryptionContext.emplace(key, value); return *this; }
-    inline ReEncryptRequest& AddDestinationEncryptionContext(Aws::String&& key, const Aws::String& value) { m_destinationEncryptionContextHasBeenSet = true; m_destinationEncryptionContext.emplace(std::move(key), value); return *this; }
-    inline ReEncryptRequest& AddDestinationEncryptionContext(const Aws::String& key, Aws::String&& value) { m_destinationEncryptionContextHasBeenSet = true; m_destinationEncryptionContext.emplace(key, std::move(value)); return *this; }
-    inline ReEncryptRequest& AddDestinationEncryptionContext(Aws::String&& key, Aws::String&& value) { m_destinationEncryptionContextHasBeenSet = true; m_destinationEncryptionContext.emplace(std::move(key), std::move(value)); return *this; }
-    inline ReEncryptRequest& AddDestinationEncryptionContext(const char* key, Aws::String&& value) { m_destinationEncryptionContextHasBeenSet = true; m_destinationEncryptionContext.emplace(key, std::move(value)); return *this; }
-    inline ReEncryptRequest& AddDestinationEncryptionContext(Aws::String&& key, const char* value) { m_destinationEncryptionContextHasBeenSet = true; m_destinationEncryptionContext.emplace(std::move(key), value); return *this; }
-    inline ReEncryptRequest& AddDestinationEncryptionContext(const char* key, const char* value) { m_destinationEncryptionContextHasBeenSet = true; m_destinationEncryptionContext.emplace(key, value); return *this; }
+    template<typename DestinationEncryptionContextT = Aws::Map<Aws::String, Aws::String>>
+    void SetDestinationEncryptionContext(DestinationEncryptionContextT&& value) { m_destinationEncryptionContextHasBeenSet = true; m_destinationEncryptionContext = std::forward<DestinationEncryptionContextT>(value); }
+    template<typename DestinationEncryptionContextT = Aws::Map<Aws::String, Aws::String>>
+    ReEncryptRequest& WithDestinationEncryptionContext(DestinationEncryptionContextT&& value) { SetDestinationEncryptionContext(std::forward<DestinationEncryptionContextT>(value)); return *this;}
+    template<typename DestinationEncryptionContextKeyT = Aws::String, typename DestinationEncryptionContextValueT = Aws::String>
+    ReEncryptRequest& AddDestinationEncryptionContext(DestinationEncryptionContextKeyT&& key, DestinationEncryptionContextValueT&& value) {
+      m_destinationEncryptionContextHasBeenSet = true; m_destinationEncryptionContext.emplace(std::forward<DestinationEncryptionContextKeyT>(key), std::forward<DestinationEncryptionContextValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -182,12 +172,10 @@ namespace Model
      * fails.</p> <p>This parameter is required only when the ciphertext was encrypted
      * under an asymmetric KMS key.</p>
      */
-    inline const EncryptionAlgorithmSpec& GetSourceEncryptionAlgorithm() const{ return m_sourceEncryptionAlgorithm; }
+    inline EncryptionAlgorithmSpec GetSourceEncryptionAlgorithm() const { return m_sourceEncryptionAlgorithm; }
     inline bool SourceEncryptionAlgorithmHasBeenSet() const { return m_sourceEncryptionAlgorithmHasBeenSet; }
-    inline void SetSourceEncryptionAlgorithm(const EncryptionAlgorithmSpec& value) { m_sourceEncryptionAlgorithmHasBeenSet = true; m_sourceEncryptionAlgorithm = value; }
-    inline void SetSourceEncryptionAlgorithm(EncryptionAlgorithmSpec&& value) { m_sourceEncryptionAlgorithmHasBeenSet = true; m_sourceEncryptionAlgorithm = std::move(value); }
-    inline ReEncryptRequest& WithSourceEncryptionAlgorithm(const EncryptionAlgorithmSpec& value) { SetSourceEncryptionAlgorithm(value); return *this;}
-    inline ReEncryptRequest& WithSourceEncryptionAlgorithm(EncryptionAlgorithmSpec&& value) { SetSourceEncryptionAlgorithm(std::move(value)); return *this;}
+    inline void SetSourceEncryptionAlgorithm(EncryptionAlgorithmSpec value) { m_sourceEncryptionAlgorithmHasBeenSet = true; m_sourceEncryptionAlgorithm = value; }
+    inline ReEncryptRequest& WithSourceEncryptionAlgorithm(EncryptionAlgorithmSpec value) { SetSourceEncryptionAlgorithm(value); return *this;}
     ///@}
 
     ///@{
@@ -198,12 +186,10 @@ namespace Model
      * <p>This parameter is required only when the destination KMS key is an asymmetric
      * KMS key.</p>
      */
-    inline const EncryptionAlgorithmSpec& GetDestinationEncryptionAlgorithm() const{ return m_destinationEncryptionAlgorithm; }
+    inline EncryptionAlgorithmSpec GetDestinationEncryptionAlgorithm() const { return m_destinationEncryptionAlgorithm; }
     inline bool DestinationEncryptionAlgorithmHasBeenSet() const { return m_destinationEncryptionAlgorithmHasBeenSet; }
-    inline void SetDestinationEncryptionAlgorithm(const EncryptionAlgorithmSpec& value) { m_destinationEncryptionAlgorithmHasBeenSet = true; m_destinationEncryptionAlgorithm = value; }
-    inline void SetDestinationEncryptionAlgorithm(EncryptionAlgorithmSpec&& value) { m_destinationEncryptionAlgorithmHasBeenSet = true; m_destinationEncryptionAlgorithm = std::move(value); }
-    inline ReEncryptRequest& WithDestinationEncryptionAlgorithm(const EncryptionAlgorithmSpec& value) { SetDestinationEncryptionAlgorithm(value); return *this;}
-    inline ReEncryptRequest& WithDestinationEncryptionAlgorithm(EncryptionAlgorithmSpec&& value) { SetDestinationEncryptionAlgorithm(std::move(value)); return *this;}
+    inline void SetDestinationEncryptionAlgorithm(EncryptionAlgorithmSpec value) { m_destinationEncryptionAlgorithmHasBeenSet = true; m_destinationEncryptionAlgorithm = value; }
+    inline ReEncryptRequest& WithDestinationEncryptionAlgorithm(EncryptionAlgorithmSpec value) { SetDestinationEncryptionAlgorithm(value); return *this;}
     ///@}
 
     ///@{
@@ -216,15 +202,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using
      * a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetGrantTokens() const{ return m_grantTokens; }
+    inline const Aws::Vector<Aws::String>& GetGrantTokens() const { return m_grantTokens; }
     inline bool GrantTokensHasBeenSet() const { return m_grantTokensHasBeenSet; }
-    inline void SetGrantTokens(const Aws::Vector<Aws::String>& value) { m_grantTokensHasBeenSet = true; m_grantTokens = value; }
-    inline void SetGrantTokens(Aws::Vector<Aws::String>&& value) { m_grantTokensHasBeenSet = true; m_grantTokens = std::move(value); }
-    inline ReEncryptRequest& WithGrantTokens(const Aws::Vector<Aws::String>& value) { SetGrantTokens(value); return *this;}
-    inline ReEncryptRequest& WithGrantTokens(Aws::Vector<Aws::String>&& value) { SetGrantTokens(std::move(value)); return *this;}
-    inline ReEncryptRequest& AddGrantTokens(const Aws::String& value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(value); return *this; }
-    inline ReEncryptRequest& AddGrantTokens(Aws::String&& value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(std::move(value)); return *this; }
-    inline ReEncryptRequest& AddGrantTokens(const char* value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(value); return *this; }
+    template<typename GrantTokensT = Aws::Vector<Aws::String>>
+    void SetGrantTokens(GrantTokensT&& value) { m_grantTokensHasBeenSet = true; m_grantTokens = std::forward<GrantTokensT>(value); }
+    template<typename GrantTokensT = Aws::Vector<Aws::String>>
+    ReEncryptRequest& WithGrantTokens(GrantTokensT&& value) { SetGrantTokens(std::forward<GrantTokensT>(value)); return *this;}
+    template<typename GrantTokensT = Aws::String>
+    ReEncryptRequest& AddGrantTokens(GrantTokensT&& value) { m_grantTokensHasBeenSet = true; m_grantTokens.emplace_back(std::forward<GrantTokensT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -234,14 +219,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing
      * your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline ReEncryptRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
     ///@}
   private:
 
-    Aws::Utils::ByteBuffer m_ciphertextBlob;
+    Aws::Utils::ByteBuffer m_ciphertextBlob{};
     bool m_ciphertextBlobHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_sourceEncryptionContext;
@@ -256,16 +241,16 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_destinationEncryptionContext;
     bool m_destinationEncryptionContextHasBeenSet = false;
 
-    EncryptionAlgorithmSpec m_sourceEncryptionAlgorithm;
+    EncryptionAlgorithmSpec m_sourceEncryptionAlgorithm{EncryptionAlgorithmSpec::NOT_SET};
     bool m_sourceEncryptionAlgorithmHasBeenSet = false;
 
-    EncryptionAlgorithmSpec m_destinationEncryptionAlgorithm;
+    EncryptionAlgorithmSpec m_destinationEncryptionAlgorithm{EncryptionAlgorithmSpec::NOT_SET};
     bool m_destinationEncryptionAlgorithmHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_grantTokens;
     bool m_grantTokensHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

@@ -23,7 +23,7 @@ namespace Model
   class BatchDeleteAttributesRequest : public SimpleDBRequest
   {
   public:
-    AWS_SIMPLEDB_API BatchDeleteAttributesRequest();
+    AWS_SIMPLEDB_API BatchDeleteAttributesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,26 @@ namespace Model
     /**
      * The name of the domain in which the attributes are being deleted.
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline BatchDeleteAttributesRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline BatchDeleteAttributesRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline BatchDeleteAttributesRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    BatchDeleteAttributesRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * A list of items on which to perform the operation.
      */
-    inline const Aws::Vector<DeletableItem>& GetItems() const{ return m_items; }
+    inline const Aws::Vector<DeletableItem>& GetItems() const { return m_items; }
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-    inline void SetItems(const Aws::Vector<DeletableItem>& value) { m_itemsHasBeenSet = true; m_items = value; }
-    inline void SetItems(Aws::Vector<DeletableItem>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
-    inline BatchDeleteAttributesRequest& WithItems(const Aws::Vector<DeletableItem>& value) { SetItems(value); return *this;}
-    inline BatchDeleteAttributesRequest& WithItems(Aws::Vector<DeletableItem>&& value) { SetItems(std::move(value)); return *this;}
-    inline BatchDeleteAttributesRequest& AddItems(const DeletableItem& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
-    inline BatchDeleteAttributesRequest& AddItems(DeletableItem&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
+    template<typename ItemsT = Aws::Vector<DeletableItem>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<DeletableItem>>
+    BatchDeleteAttributesRequest& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = DeletableItem>
+    BatchDeleteAttributesRequest& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
   private:
 

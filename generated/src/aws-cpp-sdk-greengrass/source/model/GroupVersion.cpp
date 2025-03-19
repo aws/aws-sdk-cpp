@@ -18,19 +18,7 @@ namespace Greengrass
 namespace Model
 {
 
-GroupVersion::GroupVersion() : 
-    m_connectorDefinitionVersionArnHasBeenSet(false),
-    m_coreDefinitionVersionArnHasBeenSet(false),
-    m_deviceDefinitionVersionArnHasBeenSet(false),
-    m_functionDefinitionVersionArnHasBeenSet(false),
-    m_loggerDefinitionVersionArnHasBeenSet(false),
-    m_resourceDefinitionVersionArnHasBeenSet(false),
-    m_subscriptionDefinitionVersionArnHasBeenSet(false)
-{
-}
-
 GroupVersion::GroupVersion(JsonView jsonValue)
-  : GroupVersion()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ GroupVersion& GroupVersion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ConnectorDefinitionVersionArn"))
   {
     m_connectorDefinitionVersionArn = jsonValue.GetString("ConnectorDefinitionVersionArn");
-
     m_connectorDefinitionVersionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CoreDefinitionVersionArn"))
   {
     m_coreDefinitionVersionArn = jsonValue.GetString("CoreDefinitionVersionArn");
-
     m_coreDefinitionVersionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeviceDefinitionVersionArn"))
   {
     m_deviceDefinitionVersionArn = jsonValue.GetString("DeviceDefinitionVersionArn");
-
     m_deviceDefinitionVersionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FunctionDefinitionVersionArn"))
   {
     m_functionDefinitionVersionArn = jsonValue.GetString("FunctionDefinitionVersionArn");
-
     m_functionDefinitionVersionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LoggerDefinitionVersionArn"))
   {
     m_loggerDefinitionVersionArn = jsonValue.GetString("LoggerDefinitionVersionArn");
-
     m_loggerDefinitionVersionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceDefinitionVersionArn"))
   {
     m_resourceDefinitionVersionArn = jsonValue.GetString("ResourceDefinitionVersionArn");
-
     m_resourceDefinitionVersionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubscriptionDefinitionVersionArn"))
   {
     m_subscriptionDefinitionVersionArn = jsonValue.GetString("SubscriptionDefinitionVersionArn");
-
     m_subscriptionDefinitionVersionArnHasBeenSet = true;
   }
-
   return *this;
 }
 

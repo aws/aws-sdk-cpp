@@ -12,11 +12,6 @@ using namespace Aws::Backup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeFrameworkRequest::DescribeFrameworkRequest() : 
-    m_frameworkNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeFrameworkRequest::SerializePayload() const
 {
   return {};

@@ -12,17 +12,6 @@ using namespace Aws::FMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetProtectionStatusRequest::GetProtectionStatusRequest() : 
-    m_policyIdHasBeenSet(false),
-    m_memberAccountIdHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String GetProtectionStatusRequest::SerializePayload() const
 {
   JsonValue payload;

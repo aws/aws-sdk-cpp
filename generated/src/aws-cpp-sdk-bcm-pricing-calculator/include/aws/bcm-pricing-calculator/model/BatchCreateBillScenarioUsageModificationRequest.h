@@ -24,7 +24,7 @@ namespace Model
   class BatchCreateBillScenarioUsageModificationRequest : public BCMPricingCalculatorRequest
   {
   public:
-    AWS_BCMPRICINGCALCULATOR_API BatchCreateBillScenarioUsageModificationRequest();
+    AWS_BCMPRICINGCALCULATOR_API BatchCreateBillScenarioUsageModificationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,26 @@ namespace Model
      * <p> The ID of the Bill Scenario for which you want to create the modeled usage.
      * </p>
      */
-    inline const Aws::String& GetBillScenarioId() const{ return m_billScenarioId; }
+    inline const Aws::String& GetBillScenarioId() const { return m_billScenarioId; }
     inline bool BillScenarioIdHasBeenSet() const { return m_billScenarioIdHasBeenSet; }
-    inline void SetBillScenarioId(const Aws::String& value) { m_billScenarioIdHasBeenSet = true; m_billScenarioId = value; }
-    inline void SetBillScenarioId(Aws::String&& value) { m_billScenarioIdHasBeenSet = true; m_billScenarioId = std::move(value); }
-    inline void SetBillScenarioId(const char* value) { m_billScenarioIdHasBeenSet = true; m_billScenarioId.assign(value); }
-    inline BatchCreateBillScenarioUsageModificationRequest& WithBillScenarioId(const Aws::String& value) { SetBillScenarioId(value); return *this;}
-    inline BatchCreateBillScenarioUsageModificationRequest& WithBillScenarioId(Aws::String&& value) { SetBillScenarioId(std::move(value)); return *this;}
-    inline BatchCreateBillScenarioUsageModificationRequest& WithBillScenarioId(const char* value) { SetBillScenarioId(value); return *this;}
+    template<typename BillScenarioIdT = Aws::String>
+    void SetBillScenarioId(BillScenarioIdT&& value) { m_billScenarioIdHasBeenSet = true; m_billScenarioId = std::forward<BillScenarioIdT>(value); }
+    template<typename BillScenarioIdT = Aws::String>
+    BatchCreateBillScenarioUsageModificationRequest& WithBillScenarioId(BillScenarioIdT&& value) { SetBillScenarioId(std::forward<BillScenarioIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> List of usage that you want to model in the Bill Scenario. </p>
      */
-    inline const Aws::Vector<BatchCreateBillScenarioUsageModificationEntry>& GetUsageModifications() const{ return m_usageModifications; }
+    inline const Aws::Vector<BatchCreateBillScenarioUsageModificationEntry>& GetUsageModifications() const { return m_usageModifications; }
     inline bool UsageModificationsHasBeenSet() const { return m_usageModificationsHasBeenSet; }
-    inline void SetUsageModifications(const Aws::Vector<BatchCreateBillScenarioUsageModificationEntry>& value) { m_usageModificationsHasBeenSet = true; m_usageModifications = value; }
-    inline void SetUsageModifications(Aws::Vector<BatchCreateBillScenarioUsageModificationEntry>&& value) { m_usageModificationsHasBeenSet = true; m_usageModifications = std::move(value); }
-    inline BatchCreateBillScenarioUsageModificationRequest& WithUsageModifications(const Aws::Vector<BatchCreateBillScenarioUsageModificationEntry>& value) { SetUsageModifications(value); return *this;}
-    inline BatchCreateBillScenarioUsageModificationRequest& WithUsageModifications(Aws::Vector<BatchCreateBillScenarioUsageModificationEntry>&& value) { SetUsageModifications(std::move(value)); return *this;}
-    inline BatchCreateBillScenarioUsageModificationRequest& AddUsageModifications(const BatchCreateBillScenarioUsageModificationEntry& value) { m_usageModificationsHasBeenSet = true; m_usageModifications.push_back(value); return *this; }
-    inline BatchCreateBillScenarioUsageModificationRequest& AddUsageModifications(BatchCreateBillScenarioUsageModificationEntry&& value) { m_usageModificationsHasBeenSet = true; m_usageModifications.push_back(std::move(value)); return *this; }
+    template<typename UsageModificationsT = Aws::Vector<BatchCreateBillScenarioUsageModificationEntry>>
+    void SetUsageModifications(UsageModificationsT&& value) { m_usageModificationsHasBeenSet = true; m_usageModifications = std::forward<UsageModificationsT>(value); }
+    template<typename UsageModificationsT = Aws::Vector<BatchCreateBillScenarioUsageModificationEntry>>
+    BatchCreateBillScenarioUsageModificationRequest& WithUsageModifications(UsageModificationsT&& value) { SetUsageModifications(std::forward<UsageModificationsT>(value)); return *this;}
+    template<typename UsageModificationsT = BatchCreateBillScenarioUsageModificationEntry>
+    BatchCreateBillScenarioUsageModificationRequest& AddUsageModifications(UsageModificationsT&& value) { m_usageModificationsHasBeenSet = true; m_usageModifications.emplace_back(std::forward<UsageModificationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -71,14 +69,12 @@ namespace Model
      * <p> A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request. </p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline BatchCreateBillScenarioUsageModificationRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline BatchCreateBillScenarioUsageModificationRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline BatchCreateBillScenarioUsageModificationRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    BatchCreateBillScenarioUsageModificationRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,25 +18,7 @@ namespace OpsWorks
 namespace Model
 {
 
-AutoScalingThresholds::AutoScalingThresholds() : 
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_thresholdsWaitTime(0),
-    m_thresholdsWaitTimeHasBeenSet(false),
-    m_ignoreMetricsTime(0),
-    m_ignoreMetricsTimeHasBeenSet(false),
-    m_cpuThreshold(0.0),
-    m_cpuThresholdHasBeenSet(false),
-    m_memoryThreshold(0.0),
-    m_memoryThresholdHasBeenSet(false),
-    m_loadThreshold(0.0),
-    m_loadThresholdHasBeenSet(false),
-    m_alarmsHasBeenSet(false)
-{
-}
-
 AutoScalingThresholds::AutoScalingThresholds(JsonView jsonValue)
-  : AutoScalingThresholds()
 {
   *this = jsonValue;
 }
@@ -46,45 +28,33 @@ AutoScalingThresholds& AutoScalingThresholds::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InstanceCount"))
   {
     m_instanceCount = jsonValue.GetInteger("InstanceCount");
-
     m_instanceCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ThresholdsWaitTime"))
   {
     m_thresholdsWaitTime = jsonValue.GetInteger("ThresholdsWaitTime");
-
     m_thresholdsWaitTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IgnoreMetricsTime"))
   {
     m_ignoreMetricsTime = jsonValue.GetInteger("IgnoreMetricsTime");
-
     m_ignoreMetricsTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CpuThreshold"))
   {
     m_cpuThreshold = jsonValue.GetDouble("CpuThreshold");
-
     m_cpuThresholdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MemoryThreshold"))
   {
     m_memoryThreshold = jsonValue.GetDouble("MemoryThreshold");
-
     m_memoryThresholdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LoadThreshold"))
   {
     m_loadThreshold = jsonValue.GetDouble("LoadThreshold");
-
     m_loadThresholdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Alarms"))
   {
     Aws::Utils::Array<JsonView> alarmsJsonList = jsonValue.GetArray("Alarms");
@@ -94,7 +64,6 @@ AutoScalingThresholds& AutoScalingThresholds::operator =(JsonView jsonValue)
     }
     m_alarmsHasBeenSet = true;
   }
-
   return *this;
 }
 

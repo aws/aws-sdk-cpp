@@ -12,16 +12,6 @@ using namespace Aws::LakeFormation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RevokePermissionsRequest::RevokePermissionsRequest() : 
-    m_catalogIdHasBeenSet(false),
-    m_principalHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_permissionsHasBeenSet(false),
-    m_conditionHasBeenSet(false),
-    m_permissionsWithGrantOptionHasBeenSet(false)
-{
-}
-
 Aws::String RevokePermissionsRequest::SerializePayload() const
 {
   JsonValue payload;

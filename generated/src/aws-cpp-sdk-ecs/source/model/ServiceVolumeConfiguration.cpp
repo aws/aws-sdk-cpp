@@ -18,14 +18,7 @@ namespace ECS
 namespace Model
 {
 
-ServiceVolumeConfiguration::ServiceVolumeConfiguration() : 
-    m_nameHasBeenSet(false),
-    m_managedEBSVolumeHasBeenSet(false)
-{
-}
-
 ServiceVolumeConfiguration::ServiceVolumeConfiguration(JsonView jsonValue)
-  : ServiceVolumeConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ServiceVolumeConfiguration& ServiceVolumeConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("managedEBSVolume"))
   {
     m_managedEBSVolume = jsonValue.GetObject("managedEBSVolume");
-
     m_managedEBSVolumeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class DeobfuscationConfiguration
   {
   public:
-    AWS_CLOUDWATCHRUM_API DeobfuscationConfiguration();
+    AWS_CLOUDWATCHRUM_API DeobfuscationConfiguration() = default;
     AWS_CLOUDWATCHRUM_API DeobfuscationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHRUM_API DeobfuscationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHRUM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p> A structure that contains the configuration for how an app monitor can
      * unminify JavaScript error stack traces using source maps. </p>
      */
-    inline const JavaScriptSourceMaps& GetJavaScriptSourceMaps() const{ return m_javaScriptSourceMaps; }
+    inline const JavaScriptSourceMaps& GetJavaScriptSourceMaps() const { return m_javaScriptSourceMaps; }
     inline bool JavaScriptSourceMapsHasBeenSet() const { return m_javaScriptSourceMapsHasBeenSet; }
-    inline void SetJavaScriptSourceMaps(const JavaScriptSourceMaps& value) { m_javaScriptSourceMapsHasBeenSet = true; m_javaScriptSourceMaps = value; }
-    inline void SetJavaScriptSourceMaps(JavaScriptSourceMaps&& value) { m_javaScriptSourceMapsHasBeenSet = true; m_javaScriptSourceMaps = std::move(value); }
-    inline DeobfuscationConfiguration& WithJavaScriptSourceMaps(const JavaScriptSourceMaps& value) { SetJavaScriptSourceMaps(value); return *this;}
-    inline DeobfuscationConfiguration& WithJavaScriptSourceMaps(JavaScriptSourceMaps&& value) { SetJavaScriptSourceMaps(std::move(value)); return *this;}
+    template<typename JavaScriptSourceMapsT = JavaScriptSourceMaps>
+    void SetJavaScriptSourceMaps(JavaScriptSourceMapsT&& value) { m_javaScriptSourceMapsHasBeenSet = true; m_javaScriptSourceMaps = std::forward<JavaScriptSourceMapsT>(value); }
+    template<typename JavaScriptSourceMapsT = JavaScriptSourceMaps>
+    DeobfuscationConfiguration& WithJavaScriptSourceMaps(JavaScriptSourceMapsT&& value) { SetJavaScriptSourceMaps(std::forward<JavaScriptSourceMapsT>(value)); return *this;}
     ///@}
   private:
 

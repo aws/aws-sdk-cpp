@@ -32,7 +32,7 @@ namespace Model
   class OptimizationJobModelSource
   {
   public:
-    AWS_SAGEMAKER_API OptimizationJobModelSource();
+    AWS_SAGEMAKER_API OptimizationJobModelSource() = default;
     AWS_SAGEMAKER_API OptimizationJobModelSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API OptimizationJobModelSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>The Amazon S3 location of a source model to optimize with an optimization
      * job.</p>
      */
-    inline const OptimizationJobModelSourceS3& GetS3() const{ return m_s3; }
+    inline const OptimizationJobModelSourceS3& GetS3() const { return m_s3; }
     inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
-    inline void SetS3(const OptimizationJobModelSourceS3& value) { m_s3HasBeenSet = true; m_s3 = value; }
-    inline void SetS3(OptimizationJobModelSourceS3&& value) { m_s3HasBeenSet = true; m_s3 = std::move(value); }
-    inline OptimizationJobModelSource& WithS3(const OptimizationJobModelSourceS3& value) { SetS3(value); return *this;}
-    inline OptimizationJobModelSource& WithS3(OptimizationJobModelSourceS3&& value) { SetS3(std::move(value)); return *this;}
+    template<typename S3T = OptimizationJobModelSourceS3>
+    void SetS3(S3T&& value) { m_s3HasBeenSet = true; m_s3 = std::forward<S3T>(value); }
+    template<typename S3T = OptimizationJobModelSourceS3>
+    OptimizationJobModelSource& WithS3(S3T&& value) { SetS3(std::forward<S3T>(value)); return *this;}
     ///@}
   private:
 

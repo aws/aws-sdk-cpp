@@ -41,7 +41,7 @@ namespace Model
   class Parameters
   {
   public:
-    AWS_DLM_API Parameters();
+    AWS_DLM_API Parameters() = default;
     AWS_DLM_API Parameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_DLM_API Parameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DLM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,7 +55,7 @@ namespace Model
      * attached to targeted instances will be excluded from the multi-volume snapshot
      * sets created by the policy.</p>
      */
-    inline bool GetExcludeBootVolume() const{ return m_excludeBootVolume; }
+    inline bool GetExcludeBootVolume() const { return m_excludeBootVolume; }
     inline bool ExcludeBootVolumeHasBeenSet() const { return m_excludeBootVolumeHasBeenSet; }
     inline void SetExcludeBootVolume(bool value) { m_excludeBootVolumeHasBeenSet = true; m_excludeBootVolume = value; }
     inline Parameters& WithExcludeBootVolume(bool value) { SetExcludeBootVolume(value); return *this;}
@@ -69,7 +69,7 @@ namespace Model
      * indicates that target instances are rebooted when the policy runs. The default
      * is <code>true</code> (instances are not rebooted).</p>
      */
-    inline bool GetNoReboot() const{ return m_noReboot; }
+    inline bool GetNoReboot() const { return m_noReboot; }
     inline bool NoRebootHasBeenSet() const { return m_noRebootHasBeenSet; }
     inline void SetNoReboot(bool value) { m_noRebootHasBeenSet = true; m_noReboot = value; }
     inline Parameters& WithNoReboot(bool value) { SetNoReboot(value); return *this;}
@@ -84,21 +84,21 @@ namespace Model
      * tags that are attached to targeted instances will be excluded from the
      * multi-volume snapshot sets created by the policy.</p>
      */
-    inline const Aws::Vector<Tag>& GetExcludeDataVolumeTags() const{ return m_excludeDataVolumeTags; }
+    inline const Aws::Vector<Tag>& GetExcludeDataVolumeTags() const { return m_excludeDataVolumeTags; }
     inline bool ExcludeDataVolumeTagsHasBeenSet() const { return m_excludeDataVolumeTagsHasBeenSet; }
-    inline void SetExcludeDataVolumeTags(const Aws::Vector<Tag>& value) { m_excludeDataVolumeTagsHasBeenSet = true; m_excludeDataVolumeTags = value; }
-    inline void SetExcludeDataVolumeTags(Aws::Vector<Tag>&& value) { m_excludeDataVolumeTagsHasBeenSet = true; m_excludeDataVolumeTags = std::move(value); }
-    inline Parameters& WithExcludeDataVolumeTags(const Aws::Vector<Tag>& value) { SetExcludeDataVolumeTags(value); return *this;}
-    inline Parameters& WithExcludeDataVolumeTags(Aws::Vector<Tag>&& value) { SetExcludeDataVolumeTags(std::move(value)); return *this;}
-    inline Parameters& AddExcludeDataVolumeTags(const Tag& value) { m_excludeDataVolumeTagsHasBeenSet = true; m_excludeDataVolumeTags.push_back(value); return *this; }
-    inline Parameters& AddExcludeDataVolumeTags(Tag&& value) { m_excludeDataVolumeTagsHasBeenSet = true; m_excludeDataVolumeTags.push_back(std::move(value)); return *this; }
+    template<typename ExcludeDataVolumeTagsT = Aws::Vector<Tag>>
+    void SetExcludeDataVolumeTags(ExcludeDataVolumeTagsT&& value) { m_excludeDataVolumeTagsHasBeenSet = true; m_excludeDataVolumeTags = std::forward<ExcludeDataVolumeTagsT>(value); }
+    template<typename ExcludeDataVolumeTagsT = Aws::Vector<Tag>>
+    Parameters& WithExcludeDataVolumeTags(ExcludeDataVolumeTagsT&& value) { SetExcludeDataVolumeTags(std::forward<ExcludeDataVolumeTagsT>(value)); return *this;}
+    template<typename ExcludeDataVolumeTagsT = Tag>
+    Parameters& AddExcludeDataVolumeTags(ExcludeDataVolumeTagsT&& value) { m_excludeDataVolumeTagsHasBeenSet = true; m_excludeDataVolumeTags.emplace_back(std::forward<ExcludeDataVolumeTagsT>(value)); return *this; }
     ///@}
   private:
 
-    bool m_excludeBootVolume;
+    bool m_excludeBootVolume{false};
     bool m_excludeBootVolumeHasBeenSet = false;
 
-    bool m_noReboot;
+    bool m_noReboot{false};
     bool m_noRebootHasBeenSet = false;
 
     Aws::Vector<Tag> m_excludeDataVolumeTags;

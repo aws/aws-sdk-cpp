@@ -33,7 +33,7 @@ namespace Model
   class CreateCaseActionDefinition
   {
   public:
-    AWS_CONNECT_API CreateCaseActionDefinition();
+    AWS_CONNECT_API CreateCaseActionDefinition() = default;
     AWS_CONNECT_API CreateCaseActionDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API CreateCaseActionDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,26 @@ namespace Model
      * <p>An array of objects with <code>Field ID</code> and <code>Value</code>
      * data.</p>
      */
-    inline const Aws::Vector<FieldValue>& GetFields() const{ return m_fields; }
+    inline const Aws::Vector<FieldValue>& GetFields() const { return m_fields; }
     inline bool FieldsHasBeenSet() const { return m_fieldsHasBeenSet; }
-    inline void SetFields(const Aws::Vector<FieldValue>& value) { m_fieldsHasBeenSet = true; m_fields = value; }
-    inline void SetFields(Aws::Vector<FieldValue>&& value) { m_fieldsHasBeenSet = true; m_fields = std::move(value); }
-    inline CreateCaseActionDefinition& WithFields(const Aws::Vector<FieldValue>& value) { SetFields(value); return *this;}
-    inline CreateCaseActionDefinition& WithFields(Aws::Vector<FieldValue>&& value) { SetFields(std::move(value)); return *this;}
-    inline CreateCaseActionDefinition& AddFields(const FieldValue& value) { m_fieldsHasBeenSet = true; m_fields.push_back(value); return *this; }
-    inline CreateCaseActionDefinition& AddFields(FieldValue&& value) { m_fieldsHasBeenSet = true; m_fields.push_back(std::move(value)); return *this; }
+    template<typename FieldsT = Aws::Vector<FieldValue>>
+    void SetFields(FieldsT&& value) { m_fieldsHasBeenSet = true; m_fields = std::forward<FieldsT>(value); }
+    template<typename FieldsT = Aws::Vector<FieldValue>>
+    CreateCaseActionDefinition& WithFields(FieldsT&& value) { SetFields(std::forward<FieldsT>(value)); return *this;}
+    template<typename FieldsT = FieldValue>
+    CreateCaseActionDefinition& AddFields(FieldsT&& value) { m_fieldsHasBeenSet = true; m_fields.emplace_back(std::forward<FieldsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier of a template.</p>
      */
-    inline const Aws::String& GetTemplateId() const{ return m_templateId; }
+    inline const Aws::String& GetTemplateId() const { return m_templateId; }
     inline bool TemplateIdHasBeenSet() const { return m_templateIdHasBeenSet; }
-    inline void SetTemplateId(const Aws::String& value) { m_templateIdHasBeenSet = true; m_templateId = value; }
-    inline void SetTemplateId(Aws::String&& value) { m_templateIdHasBeenSet = true; m_templateId = std::move(value); }
-    inline void SetTemplateId(const char* value) { m_templateIdHasBeenSet = true; m_templateId.assign(value); }
-    inline CreateCaseActionDefinition& WithTemplateId(const Aws::String& value) { SetTemplateId(value); return *this;}
-    inline CreateCaseActionDefinition& WithTemplateId(Aws::String&& value) { SetTemplateId(std::move(value)); return *this;}
-    inline CreateCaseActionDefinition& WithTemplateId(const char* value) { SetTemplateId(value); return *this;}
+    template<typename TemplateIdT = Aws::String>
+    void SetTemplateId(TemplateIdT&& value) { m_templateIdHasBeenSet = true; m_templateId = std::forward<TemplateIdT>(value); }
+    template<typename TemplateIdT = Aws::String>
+    CreateCaseActionDefinition& WithTemplateId(TemplateIdT&& value) { SetTemplateId(std::forward<TemplateIdT>(value)); return *this;}
     ///@}
   private:
 

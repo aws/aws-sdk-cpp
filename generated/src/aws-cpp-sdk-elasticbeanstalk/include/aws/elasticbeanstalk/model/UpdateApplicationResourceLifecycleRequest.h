@@ -22,7 +22,7 @@ namespace Model
   class UpdateApplicationResourceLifecycleRequest : public ElasticBeanstalkRequest
   {
   public:
-    AWS_ELASTICBEANSTALK_API UpdateApplicationResourceLifecycleRequest();
+    AWS_ELASTICBEANSTALK_API UpdateApplicationResourceLifecycleRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,26 +41,24 @@ namespace Model
     /**
      * <p>The name of the application.</p>
      */
-    inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
+    inline const Aws::String& GetApplicationName() const { return m_applicationName; }
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
-    inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
-    inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
-    inline UpdateApplicationResourceLifecycleRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
-    inline UpdateApplicationResourceLifecycleRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
-    inline UpdateApplicationResourceLifecycleRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+    template<typename ApplicationNameT = Aws::String>
+    void SetApplicationName(ApplicationNameT&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::forward<ApplicationNameT>(value); }
+    template<typename ApplicationNameT = Aws::String>
+    UpdateApplicationResourceLifecycleRequest& WithApplicationName(ApplicationNameT&& value) { SetApplicationName(std::forward<ApplicationNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The lifecycle configuration.</p>
      */
-    inline const ApplicationResourceLifecycleConfig& GetResourceLifecycleConfig() const{ return m_resourceLifecycleConfig; }
+    inline const ApplicationResourceLifecycleConfig& GetResourceLifecycleConfig() const { return m_resourceLifecycleConfig; }
     inline bool ResourceLifecycleConfigHasBeenSet() const { return m_resourceLifecycleConfigHasBeenSet; }
-    inline void SetResourceLifecycleConfig(const ApplicationResourceLifecycleConfig& value) { m_resourceLifecycleConfigHasBeenSet = true; m_resourceLifecycleConfig = value; }
-    inline void SetResourceLifecycleConfig(ApplicationResourceLifecycleConfig&& value) { m_resourceLifecycleConfigHasBeenSet = true; m_resourceLifecycleConfig = std::move(value); }
-    inline UpdateApplicationResourceLifecycleRequest& WithResourceLifecycleConfig(const ApplicationResourceLifecycleConfig& value) { SetResourceLifecycleConfig(value); return *this;}
-    inline UpdateApplicationResourceLifecycleRequest& WithResourceLifecycleConfig(ApplicationResourceLifecycleConfig&& value) { SetResourceLifecycleConfig(std::move(value)); return *this;}
+    template<typename ResourceLifecycleConfigT = ApplicationResourceLifecycleConfig>
+    void SetResourceLifecycleConfig(ResourceLifecycleConfigT&& value) { m_resourceLifecycleConfigHasBeenSet = true; m_resourceLifecycleConfig = std::forward<ResourceLifecycleConfigT>(value); }
+    template<typename ResourceLifecycleConfigT = ApplicationResourceLifecycleConfig>
+    UpdateApplicationResourceLifecycleRequest& WithResourceLifecycleConfig(ResourceLifecycleConfigT&& value) { SetResourceLifecycleConfig(std::forward<ResourceLifecycleConfigT>(value)); return *this;}
     ///@}
   private:
 

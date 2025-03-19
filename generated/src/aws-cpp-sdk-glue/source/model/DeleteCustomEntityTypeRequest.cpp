@@ -12,11 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteCustomEntityTypeRequest::DeleteCustomEntityTypeRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCustomEntityTypeRequest::SerializePayload() const
 {
   JsonValue payload;

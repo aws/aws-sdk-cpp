@@ -32,7 +32,7 @@ namespace Model
   class EsamSignalProcessingNotification
   {
   public:
-    AWS_MEDIACONVERT_API EsamSignalProcessingNotification();
+    AWS_MEDIACONVERT_API EsamSignalProcessingNotification() = default;
     AWS_MEDIACONVERT_API EsamSignalProcessingNotification(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API EsamSignalProcessingNotification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
      * SCTE-35 ESAM. Note that you can either specify an ESAM XML document or enable
      * SCTE-35 passthrough. You can't do both.
      */
-    inline const Aws::String& GetSccXml() const{ return m_sccXml; }
+    inline const Aws::String& GetSccXml() const { return m_sccXml; }
     inline bool SccXmlHasBeenSet() const { return m_sccXmlHasBeenSet; }
-    inline void SetSccXml(const Aws::String& value) { m_sccXmlHasBeenSet = true; m_sccXml = value; }
-    inline void SetSccXml(Aws::String&& value) { m_sccXmlHasBeenSet = true; m_sccXml = std::move(value); }
-    inline void SetSccXml(const char* value) { m_sccXmlHasBeenSet = true; m_sccXml.assign(value); }
-    inline EsamSignalProcessingNotification& WithSccXml(const Aws::String& value) { SetSccXml(value); return *this;}
-    inline EsamSignalProcessingNotification& WithSccXml(Aws::String&& value) { SetSccXml(std::move(value)); return *this;}
-    inline EsamSignalProcessingNotification& WithSccXml(const char* value) { SetSccXml(value); return *this;}
+    template<typename SccXmlT = Aws::String>
+    void SetSccXml(SccXmlT&& value) { m_sccXmlHasBeenSet = true; m_sccXml = std::forward<SccXmlT>(value); }
+    template<typename SccXmlT = Aws::String>
+    EsamSignalProcessingNotification& WithSccXml(SccXmlT&& value) { SetSccXml(std::forward<SccXmlT>(value)); return *this;}
     ///@}
   private:
 

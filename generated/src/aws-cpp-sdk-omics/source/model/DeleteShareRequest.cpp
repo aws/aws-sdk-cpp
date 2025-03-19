@@ -12,11 +12,6 @@ using namespace Aws::Omics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteShareRequest::DeleteShareRequest() : 
-    m_shareIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteShareRequest::SerializePayload() const
 {
   return {};

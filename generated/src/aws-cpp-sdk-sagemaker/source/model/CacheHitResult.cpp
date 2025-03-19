@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-CacheHitResult::CacheHitResult() : 
-    m_sourcePipelineExecutionArnHasBeenSet(false)
-{
-}
-
 CacheHitResult::CacheHitResult(JsonView jsonValue)
-  : CacheHitResult()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CacheHitResult& CacheHitResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SourcePipelineExecutionArn"))
   {
     m_sourcePipelineExecutionArn = jsonValue.GetString("SourcePipelineExecutionArn");
-
     m_sourcePipelineExecutionArnHasBeenSet = true;
   }
-
   return *this;
 }
 

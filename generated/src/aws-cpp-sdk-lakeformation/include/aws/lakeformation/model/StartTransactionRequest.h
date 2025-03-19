@@ -21,7 +21,7 @@ namespace Model
   class StartTransactionRequest : public LakeFormationRequest
   {
   public:
-    AWS_LAKEFORMATION_API StartTransactionRequest();
+    AWS_LAKEFORMATION_API StartTransactionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,16 +38,14 @@ namespace Model
      * Writes made using a read-only transaction ID will be rejected. Read-only
      * transactions do not need to be committed. </p>
      */
-    inline const TransactionType& GetTransactionType() const{ return m_transactionType; }
+    inline TransactionType GetTransactionType() const { return m_transactionType; }
     inline bool TransactionTypeHasBeenSet() const { return m_transactionTypeHasBeenSet; }
-    inline void SetTransactionType(const TransactionType& value) { m_transactionTypeHasBeenSet = true; m_transactionType = value; }
-    inline void SetTransactionType(TransactionType&& value) { m_transactionTypeHasBeenSet = true; m_transactionType = std::move(value); }
-    inline StartTransactionRequest& WithTransactionType(const TransactionType& value) { SetTransactionType(value); return *this;}
-    inline StartTransactionRequest& WithTransactionType(TransactionType&& value) { SetTransactionType(std::move(value)); return *this;}
+    inline void SetTransactionType(TransactionType value) { m_transactionTypeHasBeenSet = true; m_transactionType = value; }
+    inline StartTransactionRequest& WithTransactionType(TransactionType value) { SetTransactionType(value); return *this;}
     ///@}
   private:
 
-    TransactionType m_transactionType;
+    TransactionType m_transactionType{TransactionType::NOT_SET};
     bool m_transactionTypeHasBeenSet = false;
   };
 

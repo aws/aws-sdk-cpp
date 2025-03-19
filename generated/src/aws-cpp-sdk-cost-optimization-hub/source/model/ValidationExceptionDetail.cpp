@@ -18,14 +18,7 @@ namespace CostOptimizationHub
 namespace Model
 {
 
-ValidationExceptionDetail::ValidationExceptionDetail() : 
-    m_fieldNameHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 ValidationExceptionDetail::ValidationExceptionDetail(JsonView jsonValue)
-  : ValidationExceptionDetail()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ValidationExceptionDetail& ValidationExceptionDetail::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("fieldName"))
   {
     m_fieldName = jsonValue.GetString("fieldName");
-
     m_fieldNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

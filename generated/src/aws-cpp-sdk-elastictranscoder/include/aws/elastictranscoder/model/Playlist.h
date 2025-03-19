@@ -39,7 +39,7 @@ namespace Model
   class Playlist
   {
   public:
-    AWS_ELASTICTRANSCODER_API Playlist();
+    AWS_ELASTICTRANSCODER_API Playlist() = default;
     AWS_ELASTICTRANSCODER_API Playlist(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICTRANSCODER_API Playlist& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -58,14 +58,12 @@ namespace Model
      * you include a file extension in <code>Name</code>, the file name will have two
      * extensions.</p> 
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Playlist& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Playlist& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Playlist& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Playlist& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +71,12 @@ namespace Model
      * <p>The format of the output playlist. Valid formats include <code>HLSv3</code>,
      * <code>HLSv4</code>, and <code>Smooth</code>.</p>
      */
-    inline const Aws::String& GetFormat() const{ return m_format; }
+    inline const Aws::String& GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const Aws::String& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(Aws::String&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline void SetFormat(const char* value) { m_formatHasBeenSet = true; m_format.assign(value); }
-    inline Playlist& WithFormat(const Aws::String& value) { SetFormat(value); return *this;}
-    inline Playlist& WithFormat(Aws::String&& value) { SetFormat(std::move(value)); return *this;}
-    inline Playlist& WithFormat(const char* value) { SetFormat(value); return *this;}
+    template<typename FormatT = Aws::String>
+    void SetFormat(FormatT&& value) { m_formatHasBeenSet = true; m_format = std::forward<FormatT>(value); }
+    template<typename FormatT = Aws::String>
+    Playlist& WithFormat(FormatT&& value) { SetFormat(std::forward<FormatT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,15 +109,14 @@ namespace Model
      * <code>Video:FrameRate</code> to <code>Video:KeyframesMaxDist</code> ratio must
      * be the same for all outputs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetOutputKeys() const{ return m_outputKeys; }
+    inline const Aws::Vector<Aws::String>& GetOutputKeys() const { return m_outputKeys; }
     inline bool OutputKeysHasBeenSet() const { return m_outputKeysHasBeenSet; }
-    inline void SetOutputKeys(const Aws::Vector<Aws::String>& value) { m_outputKeysHasBeenSet = true; m_outputKeys = value; }
-    inline void SetOutputKeys(Aws::Vector<Aws::String>&& value) { m_outputKeysHasBeenSet = true; m_outputKeys = std::move(value); }
-    inline Playlist& WithOutputKeys(const Aws::Vector<Aws::String>& value) { SetOutputKeys(value); return *this;}
-    inline Playlist& WithOutputKeys(Aws::Vector<Aws::String>&& value) { SetOutputKeys(std::move(value)); return *this;}
-    inline Playlist& AddOutputKeys(const Aws::String& value) { m_outputKeysHasBeenSet = true; m_outputKeys.push_back(value); return *this; }
-    inline Playlist& AddOutputKeys(Aws::String&& value) { m_outputKeysHasBeenSet = true; m_outputKeys.push_back(std::move(value)); return *this; }
-    inline Playlist& AddOutputKeys(const char* value) { m_outputKeysHasBeenSet = true; m_outputKeys.push_back(value); return *this; }
+    template<typename OutputKeysT = Aws::Vector<Aws::String>>
+    void SetOutputKeys(OutputKeysT&& value) { m_outputKeysHasBeenSet = true; m_outputKeys = std::forward<OutputKeysT>(value); }
+    template<typename OutputKeysT = Aws::Vector<Aws::String>>
+    Playlist& WithOutputKeys(OutputKeysT&& value) { SetOutputKeys(std::forward<OutputKeysT>(value)); return *this;}
+    template<typename OutputKeysT = Aws::String>
+    Playlist& AddOutputKeys(OutputKeysT&& value) { m_outputKeysHasBeenSet = true; m_outputKeys.emplace_back(std::forward<OutputKeysT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -129,12 +124,12 @@ namespace Model
      * <p>The HLS content protection settings, if any, that you want Elastic Transcoder
      * to apply to the output files associated with this playlist.</p>
      */
-    inline const HlsContentProtection& GetHlsContentProtection() const{ return m_hlsContentProtection; }
+    inline const HlsContentProtection& GetHlsContentProtection() const { return m_hlsContentProtection; }
     inline bool HlsContentProtectionHasBeenSet() const { return m_hlsContentProtectionHasBeenSet; }
-    inline void SetHlsContentProtection(const HlsContentProtection& value) { m_hlsContentProtectionHasBeenSet = true; m_hlsContentProtection = value; }
-    inline void SetHlsContentProtection(HlsContentProtection&& value) { m_hlsContentProtectionHasBeenSet = true; m_hlsContentProtection = std::move(value); }
-    inline Playlist& WithHlsContentProtection(const HlsContentProtection& value) { SetHlsContentProtection(value); return *this;}
-    inline Playlist& WithHlsContentProtection(HlsContentProtection&& value) { SetHlsContentProtection(std::move(value)); return *this;}
+    template<typename HlsContentProtectionT = HlsContentProtection>
+    void SetHlsContentProtection(HlsContentProtectionT&& value) { m_hlsContentProtectionHasBeenSet = true; m_hlsContentProtection = std::forward<HlsContentProtectionT>(value); }
+    template<typename HlsContentProtectionT = HlsContentProtection>
+    Playlist& WithHlsContentProtection(HlsContentProtectionT&& value) { SetHlsContentProtection(std::forward<HlsContentProtectionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -142,40 +137,36 @@ namespace Model
      * <p>The DRM settings, if any, that you want Elastic Transcoder to apply to the
      * output files associated with this playlist.</p>
      */
-    inline const PlayReadyDrm& GetPlayReadyDrm() const{ return m_playReadyDrm; }
+    inline const PlayReadyDrm& GetPlayReadyDrm() const { return m_playReadyDrm; }
     inline bool PlayReadyDrmHasBeenSet() const { return m_playReadyDrmHasBeenSet; }
-    inline void SetPlayReadyDrm(const PlayReadyDrm& value) { m_playReadyDrmHasBeenSet = true; m_playReadyDrm = value; }
-    inline void SetPlayReadyDrm(PlayReadyDrm&& value) { m_playReadyDrmHasBeenSet = true; m_playReadyDrm = std::move(value); }
-    inline Playlist& WithPlayReadyDrm(const PlayReadyDrm& value) { SetPlayReadyDrm(value); return *this;}
-    inline Playlist& WithPlayReadyDrm(PlayReadyDrm&& value) { SetPlayReadyDrm(std::move(value)); return *this;}
+    template<typename PlayReadyDrmT = PlayReadyDrm>
+    void SetPlayReadyDrm(PlayReadyDrmT&& value) { m_playReadyDrmHasBeenSet = true; m_playReadyDrm = std::forward<PlayReadyDrmT>(value); }
+    template<typename PlayReadyDrmT = PlayReadyDrm>
+    Playlist& WithPlayReadyDrm(PlayReadyDrmT&& value) { SetPlayReadyDrm(std::forward<PlayReadyDrmT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the job with which the playlist is associated.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline Playlist& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline Playlist& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline Playlist& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    Playlist& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information that further explains the status.</p>
      */
-    inline const Aws::String& GetStatusDetail() const{ return m_statusDetail; }
+    inline const Aws::String& GetStatusDetail() const { return m_statusDetail; }
     inline bool StatusDetailHasBeenSet() const { return m_statusDetailHasBeenSet; }
-    inline void SetStatusDetail(const Aws::String& value) { m_statusDetailHasBeenSet = true; m_statusDetail = value; }
-    inline void SetStatusDetail(Aws::String&& value) { m_statusDetailHasBeenSet = true; m_statusDetail = std::move(value); }
-    inline void SetStatusDetail(const char* value) { m_statusDetailHasBeenSet = true; m_statusDetail.assign(value); }
-    inline Playlist& WithStatusDetail(const Aws::String& value) { SetStatusDetail(value); return *this;}
-    inline Playlist& WithStatusDetail(Aws::String&& value) { SetStatusDetail(std::move(value)); return *this;}
-    inline Playlist& WithStatusDetail(const char* value) { SetStatusDetail(value); return *this;}
+    template<typename StatusDetailT = Aws::String>
+    void SetStatusDetail(StatusDetailT&& value) { m_statusDetailHasBeenSet = true; m_statusDetail = std::forward<StatusDetailT>(value); }
+    template<typename StatusDetailT = Aws::String>
+    Playlist& WithStatusDetail(StatusDetailT&& value) { SetStatusDetail(std::forward<StatusDetailT>(value)); return *this;}
     ///@}
   private:
 

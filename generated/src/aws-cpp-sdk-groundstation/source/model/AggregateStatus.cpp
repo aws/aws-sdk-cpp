@@ -18,15 +18,7 @@ namespace GroundStation
 namespace Model
 {
 
-AggregateStatus::AggregateStatus() : 
-    m_signatureMapHasBeenSet(false),
-    m_status(AgentStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 AggregateStatus::AggregateStatus(JsonView jsonValue)
-  : AggregateStatus()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ AggregateStatus& AggregateStatus::operator =(JsonView jsonValue)
     }
     m_signatureMapHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = AgentStatusMapper::GetAgentStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

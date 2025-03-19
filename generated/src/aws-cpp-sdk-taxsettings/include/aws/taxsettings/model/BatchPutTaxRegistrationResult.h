@@ -30,7 +30,7 @@ namespace Model
   class BatchPutTaxRegistrationResult
   {
   public:
-    AWS_TAXSETTINGS_API BatchPutTaxRegistrationResult();
+    AWS_TAXSETTINGS_API BatchPutTaxRegistrationResult() = default;
     AWS_TAXSETTINGS_API BatchPutTaxRegistrationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TAXSETTINGS_API BatchPutTaxRegistrationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,13 @@ namespace Model
      * <p>List of errors for the accounts the TRN information could not be added or
      * updated to. </p>
      */
-    inline const Aws::Vector<BatchPutTaxRegistrationError>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<BatchPutTaxRegistrationError>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<BatchPutTaxRegistrationError>&& value) { m_errors = std::move(value); }
-    inline BatchPutTaxRegistrationResult& WithErrors(const Aws::Vector<BatchPutTaxRegistrationError>& value) { SetErrors(value); return *this;}
-    inline BatchPutTaxRegistrationResult& WithErrors(Aws::Vector<BatchPutTaxRegistrationError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline BatchPutTaxRegistrationResult& AddErrors(const BatchPutTaxRegistrationError& value) { m_errors.push_back(value); return *this; }
-    inline BatchPutTaxRegistrationResult& AddErrors(BatchPutTaxRegistrationError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchPutTaxRegistrationError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<BatchPutTaxRegistrationError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<BatchPutTaxRegistrationError>>
+    BatchPutTaxRegistrationResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = BatchPutTaxRegistrationError>
+    BatchPutTaxRegistrationResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,30 +55,29 @@ namespace Model
      * validation occurring on the TRN, the status can be <code>Verified</code>,
      * <code>Pending</code> or <code>Rejected</code>. </p>
      */
-    inline const TaxRegistrationStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const TaxRegistrationStatus& value) { m_status = value; }
-    inline void SetStatus(TaxRegistrationStatus&& value) { m_status = std::move(value); }
-    inline BatchPutTaxRegistrationResult& WithStatus(const TaxRegistrationStatus& value) { SetStatus(value); return *this;}
-    inline BatchPutTaxRegistrationResult& WithStatus(TaxRegistrationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline TaxRegistrationStatus GetStatus() const { return m_status; }
+    inline void SetStatus(TaxRegistrationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline BatchPutTaxRegistrationResult& WithStatus(TaxRegistrationStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchPutTaxRegistrationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchPutTaxRegistrationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchPutTaxRegistrationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchPutTaxRegistrationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<BatchPutTaxRegistrationError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
-    TaxRegistrationStatus m_status;
+    TaxRegistrationStatus m_status{TaxRegistrationStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

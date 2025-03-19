@@ -12,14 +12,6 @@ using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ReloadReplicationTablesRequest::ReloadReplicationTablesRequest() : 
-    m_replicationConfigArnHasBeenSet(false),
-    m_tablesToReloadHasBeenSet(false),
-    m_reloadOption(ReloadOptionValue::NOT_SET),
-    m_reloadOptionHasBeenSet(false)
-{
-}
-
 Aws::String ReloadReplicationTablesRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,13 +18,7 @@ namespace LicenseManager
 namespace Model
 {
 
-ReportContext::ReportContext() : 
-    m_licenseConfigurationArnsHasBeenSet(false)
-{
-}
-
 ReportContext::ReportContext(JsonView jsonValue)
-  : ReportContext()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ReportContext& ReportContext::operator =(JsonView jsonValue)
     }
     m_licenseConfigurationArnsHasBeenSet = true;
   }
-
   return *this;
 }
 

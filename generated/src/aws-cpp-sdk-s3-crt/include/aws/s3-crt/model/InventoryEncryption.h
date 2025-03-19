@@ -32,7 +32,7 @@ namespace Model
   class InventoryEncryption
   {
   public:
-    AWS_S3CRT_API InventoryEncryption();
+    AWS_S3CRT_API InventoryEncryption() = default;
     AWS_S3CRT_API InventoryEncryption(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CRT_API InventoryEncryption& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>Specifies the use of SSE-S3 to encrypt delivered inventory reports.</p>
      */
-    inline const SSES3& GetSSES3() const{ return m_sSES3; }
+    inline const SSES3& GetSSES3() const { return m_sSES3; }
     inline bool SSES3HasBeenSet() const { return m_sSES3HasBeenSet; }
-    inline void SetSSES3(const SSES3& value) { m_sSES3HasBeenSet = true; m_sSES3 = value; }
-    inline void SetSSES3(SSES3&& value) { m_sSES3HasBeenSet = true; m_sSES3 = std::move(value); }
-    inline InventoryEncryption& WithSSES3(const SSES3& value) { SetSSES3(value); return *this;}
-    inline InventoryEncryption& WithSSES3(SSES3&& value) { SetSSES3(std::move(value)); return *this;}
+    template<typename SSES3T = SSES3>
+    void SetSSES3(SSES3T&& value) { m_sSES3HasBeenSet = true; m_sSES3 = std::forward<SSES3T>(value); }
+    template<typename SSES3T = SSES3>
+    InventoryEncryption& WithSSES3(SSES3T&& value) { SetSSES3(std::forward<SSES3T>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the use of SSE-KMS to encrypt delivered inventory reports.</p>
      */
-    inline const SSEKMS& GetSSEKMS() const{ return m_sSEKMS; }
+    inline const SSEKMS& GetSSEKMS() const { return m_sSEKMS; }
     inline bool SSEKMSHasBeenSet() const { return m_sSEKMSHasBeenSet; }
-    inline void SetSSEKMS(const SSEKMS& value) { m_sSEKMSHasBeenSet = true; m_sSEKMS = value; }
-    inline void SetSSEKMS(SSEKMS&& value) { m_sSEKMSHasBeenSet = true; m_sSEKMS = std::move(value); }
-    inline InventoryEncryption& WithSSEKMS(const SSEKMS& value) { SetSSEKMS(value); return *this;}
-    inline InventoryEncryption& WithSSEKMS(SSEKMS&& value) { SetSSEKMS(std::move(value)); return *this;}
+    template<typename SSEKMST = SSEKMS>
+    void SetSSEKMS(SSEKMST&& value) { m_sSEKMSHasBeenSet = true; m_sSEKMS = std::forward<SSEKMST>(value); }
+    template<typename SSEKMST = SSEKMS>
+    InventoryEncryption& WithSSEKMS(SSEKMST&& value) { SetSSEKMS(std::forward<SSEKMST>(value)); return *this;}
     ///@}
   private:
 

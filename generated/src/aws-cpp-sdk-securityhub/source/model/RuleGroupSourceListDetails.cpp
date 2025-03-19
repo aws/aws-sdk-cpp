@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-RuleGroupSourceListDetails::RuleGroupSourceListDetails() : 
-    m_generatedRulesTypeHasBeenSet(false),
-    m_targetTypesHasBeenSet(false),
-    m_targetsHasBeenSet(false)
-{
-}
-
 RuleGroupSourceListDetails::RuleGroupSourceListDetails(JsonView jsonValue)
-  : RuleGroupSourceListDetails()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ RuleGroupSourceListDetails& RuleGroupSourceListDetails::operator =(JsonView json
   if(jsonValue.ValueExists("GeneratedRulesType"))
   {
     m_generatedRulesType = jsonValue.GetString("GeneratedRulesType");
-
     m_generatedRulesTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetTypes"))
   {
     Aws::Utils::Array<JsonView> targetTypesJsonList = jsonValue.GetArray("TargetTypes");
@@ -49,7 +39,6 @@ RuleGroupSourceListDetails& RuleGroupSourceListDetails::operator =(JsonView json
     }
     m_targetTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Targets"))
   {
     Aws::Utils::Array<JsonView> targetsJsonList = jsonValue.GetArray("Targets");
@@ -59,7 +48,6 @@ RuleGroupSourceListDetails& RuleGroupSourceListDetails::operator =(JsonView json
     }
     m_targetsHasBeenSet = true;
   }
-
   return *this;
 }
 

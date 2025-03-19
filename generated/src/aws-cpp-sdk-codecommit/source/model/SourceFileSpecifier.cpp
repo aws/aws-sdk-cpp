@@ -18,15 +18,7 @@ namespace CodeCommit
 namespace Model
 {
 
-SourceFileSpecifier::SourceFileSpecifier() : 
-    m_filePathHasBeenSet(false),
-    m_isMove(false),
-    m_isMoveHasBeenSet(false)
-{
-}
-
 SourceFileSpecifier::SourceFileSpecifier(JsonView jsonValue)
-  : SourceFileSpecifier()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SourceFileSpecifier& SourceFileSpecifier::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("filePath"))
   {
     m_filePath = jsonValue.GetString("filePath");
-
     m_filePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isMove"))
   {
     m_isMove = jsonValue.GetBool("isMove");
-
     m_isMoveHasBeenSet = true;
   }
-
   return *this;
 }
 

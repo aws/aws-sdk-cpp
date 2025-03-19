@@ -40,7 +40,7 @@ namespace Model
   class RenewalTerm
   {
   public:
-    AWS_AGREEMENTSERVICE_API RenewalTerm();
+    AWS_AGREEMENTSERVICE_API RenewalTerm() = default;
     AWS_AGREEMENTSERVICE_API RenewalTerm(Aws::Utils::Json::JsonView jsonValue);
     AWS_AGREEMENTSERVICE_API RenewalTerm& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AGREEMENTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,26 +50,24 @@ namespace Model
     /**
      * <p>Additional parameters specified by the acceptor while accepting the term.</p>
      */
-    inline const RenewalTermConfiguration& GetConfiguration() const{ return m_configuration; }
+    inline const RenewalTermConfiguration& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const RenewalTermConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(RenewalTermConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline RenewalTerm& WithConfiguration(const RenewalTermConfiguration& value) { SetConfiguration(value); return *this;}
-    inline RenewalTerm& WithConfiguration(RenewalTermConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    template<typename ConfigurationT = RenewalTermConfiguration>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = RenewalTermConfiguration>
+    RenewalTerm& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Category of the term being updated. </p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline RenewalTerm& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline RenewalTerm& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline RenewalTerm& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    RenewalTerm& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
   private:
 

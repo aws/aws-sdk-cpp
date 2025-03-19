@@ -37,7 +37,7 @@ namespace Model
   class AssessmentReport
   {
   public:
-    AWS_AUDITMANAGER_API AssessmentReport();
+    AWS_AUDITMANAGER_API AssessmentReport() = default;
     AWS_AUDITMANAGER_API AssessmentReport(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUDITMANAGER_API AssessmentReport& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,122 +47,106 @@ namespace Model
     /**
      * <p> The unique identifier for the assessment report. </p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline AssessmentReport& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline AssessmentReport& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline AssessmentReport& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    AssessmentReport& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The name that's given to the assessment report. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AssessmentReport& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AssessmentReport& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AssessmentReport& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    AssessmentReport& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The description of the specified assessment report. </p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline AssessmentReport& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline AssessmentReport& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline AssessmentReport& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    AssessmentReport& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The identifier for the specified Amazon Web Services account. </p>
      */
-    inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
+    inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-    inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
-    inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
-    inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
-    inline AssessmentReport& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
-    inline AssessmentReport& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
-    inline AssessmentReport& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+    template<typename AwsAccountIdT = Aws::String>
+    void SetAwsAccountId(AwsAccountIdT&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::forward<AwsAccountIdT>(value); }
+    template<typename AwsAccountIdT = Aws::String>
+    AssessmentReport& WithAwsAccountId(AwsAccountIdT&& value) { SetAwsAccountId(std::forward<AwsAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The identifier for the specified assessment. </p>
      */
-    inline const Aws::String& GetAssessmentId() const{ return m_assessmentId; }
+    inline const Aws::String& GetAssessmentId() const { return m_assessmentId; }
     inline bool AssessmentIdHasBeenSet() const { return m_assessmentIdHasBeenSet; }
-    inline void SetAssessmentId(const Aws::String& value) { m_assessmentIdHasBeenSet = true; m_assessmentId = value; }
-    inline void SetAssessmentId(Aws::String&& value) { m_assessmentIdHasBeenSet = true; m_assessmentId = std::move(value); }
-    inline void SetAssessmentId(const char* value) { m_assessmentIdHasBeenSet = true; m_assessmentId.assign(value); }
-    inline AssessmentReport& WithAssessmentId(const Aws::String& value) { SetAssessmentId(value); return *this;}
-    inline AssessmentReport& WithAssessmentId(Aws::String&& value) { SetAssessmentId(std::move(value)); return *this;}
-    inline AssessmentReport& WithAssessmentId(const char* value) { SetAssessmentId(value); return *this;}
+    template<typename AssessmentIdT = Aws::String>
+    void SetAssessmentId(AssessmentIdT&& value) { m_assessmentIdHasBeenSet = true; m_assessmentId = std::forward<AssessmentIdT>(value); }
+    template<typename AssessmentIdT = Aws::String>
+    AssessmentReport& WithAssessmentId(AssessmentIdT&& value) { SetAssessmentId(std::forward<AssessmentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The name of the associated assessment. </p>
      */
-    inline const Aws::String& GetAssessmentName() const{ return m_assessmentName; }
+    inline const Aws::String& GetAssessmentName() const { return m_assessmentName; }
     inline bool AssessmentNameHasBeenSet() const { return m_assessmentNameHasBeenSet; }
-    inline void SetAssessmentName(const Aws::String& value) { m_assessmentNameHasBeenSet = true; m_assessmentName = value; }
-    inline void SetAssessmentName(Aws::String&& value) { m_assessmentNameHasBeenSet = true; m_assessmentName = std::move(value); }
-    inline void SetAssessmentName(const char* value) { m_assessmentNameHasBeenSet = true; m_assessmentName.assign(value); }
-    inline AssessmentReport& WithAssessmentName(const Aws::String& value) { SetAssessmentName(value); return *this;}
-    inline AssessmentReport& WithAssessmentName(Aws::String&& value) { SetAssessmentName(std::move(value)); return *this;}
-    inline AssessmentReport& WithAssessmentName(const char* value) { SetAssessmentName(value); return *this;}
+    template<typename AssessmentNameT = Aws::String>
+    void SetAssessmentName(AssessmentNameT&& value) { m_assessmentNameHasBeenSet = true; m_assessmentName = std::forward<AssessmentNameT>(value); }
+    template<typename AssessmentNameT = Aws::String>
+    AssessmentReport& WithAssessmentName(AssessmentNameT&& value) { SetAssessmentName(std::forward<AssessmentNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The name of the user who created the assessment report. </p>
      */
-    inline const Aws::String& GetAuthor() const{ return m_author; }
+    inline const Aws::String& GetAuthor() const { return m_author; }
     inline bool AuthorHasBeenSet() const { return m_authorHasBeenSet; }
-    inline void SetAuthor(const Aws::String& value) { m_authorHasBeenSet = true; m_author = value; }
-    inline void SetAuthor(Aws::String&& value) { m_authorHasBeenSet = true; m_author = std::move(value); }
-    inline void SetAuthor(const char* value) { m_authorHasBeenSet = true; m_author.assign(value); }
-    inline AssessmentReport& WithAuthor(const Aws::String& value) { SetAuthor(value); return *this;}
-    inline AssessmentReport& WithAuthor(Aws::String&& value) { SetAuthor(std::move(value)); return *this;}
-    inline AssessmentReport& WithAuthor(const char* value) { SetAuthor(value); return *this;}
+    template<typename AuthorT = Aws::String>
+    void SetAuthor(AuthorT&& value) { m_authorHasBeenSet = true; m_author = std::forward<AuthorT>(value); }
+    template<typename AuthorT = Aws::String>
+    AssessmentReport& WithAuthor(AuthorT&& value) { SetAuthor(std::forward<AuthorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The current status of the specified assessment report. </p>
      */
-    inline const AssessmentReportStatus& GetStatus() const{ return m_status; }
+    inline AssessmentReportStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const AssessmentReportStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(AssessmentReportStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline AssessmentReport& WithStatus(const AssessmentReportStatus& value) { SetStatus(value); return *this;}
-    inline AssessmentReport& WithStatus(AssessmentReportStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(AssessmentReportStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline AssessmentReport& WithStatus(AssessmentReportStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Specifies when the assessment report was created. </p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline AssessmentReport& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline AssessmentReport& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    AssessmentReport& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -187,10 +171,10 @@ namespace Model
     Aws::String m_author;
     bool m_authorHasBeenSet = false;
 
-    AssessmentReportStatus m_status;
+    AssessmentReportStatus m_status{AssessmentReportStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
   };
 

@@ -22,7 +22,7 @@ namespace Model
   class BatchResetAlarmRequest : public IoTEventsDataRequest
   {
   public:
-    AWS_IOTEVENTSDATA_API BatchResetAlarmRequest();
+    AWS_IOTEVENTSDATA_API BatchResetAlarmRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,14 @@ namespace Model
      * <p>The list of reset action requests. You can specify up to 10 requests per
      * operation.</p>
      */
-    inline const Aws::Vector<ResetAlarmActionRequest>& GetResetActionRequests() const{ return m_resetActionRequests; }
+    inline const Aws::Vector<ResetAlarmActionRequest>& GetResetActionRequests() const { return m_resetActionRequests; }
     inline bool ResetActionRequestsHasBeenSet() const { return m_resetActionRequestsHasBeenSet; }
-    inline void SetResetActionRequests(const Aws::Vector<ResetAlarmActionRequest>& value) { m_resetActionRequestsHasBeenSet = true; m_resetActionRequests = value; }
-    inline void SetResetActionRequests(Aws::Vector<ResetAlarmActionRequest>&& value) { m_resetActionRequestsHasBeenSet = true; m_resetActionRequests = std::move(value); }
-    inline BatchResetAlarmRequest& WithResetActionRequests(const Aws::Vector<ResetAlarmActionRequest>& value) { SetResetActionRequests(value); return *this;}
-    inline BatchResetAlarmRequest& WithResetActionRequests(Aws::Vector<ResetAlarmActionRequest>&& value) { SetResetActionRequests(std::move(value)); return *this;}
-    inline BatchResetAlarmRequest& AddResetActionRequests(const ResetAlarmActionRequest& value) { m_resetActionRequestsHasBeenSet = true; m_resetActionRequests.push_back(value); return *this; }
-    inline BatchResetAlarmRequest& AddResetActionRequests(ResetAlarmActionRequest&& value) { m_resetActionRequestsHasBeenSet = true; m_resetActionRequests.push_back(std::move(value)); return *this; }
+    template<typename ResetActionRequestsT = Aws::Vector<ResetAlarmActionRequest>>
+    void SetResetActionRequests(ResetActionRequestsT&& value) { m_resetActionRequestsHasBeenSet = true; m_resetActionRequests = std::forward<ResetActionRequestsT>(value); }
+    template<typename ResetActionRequestsT = Aws::Vector<ResetAlarmActionRequest>>
+    BatchResetAlarmRequest& WithResetActionRequests(ResetActionRequestsT&& value) { SetResetActionRequests(std::forward<ResetActionRequestsT>(value)); return *this;}
+    template<typename ResetActionRequestsT = ResetAlarmActionRequest>
+    BatchResetAlarmRequest& AddResetActionRequests(ResetActionRequestsT&& value) { m_resetActionRequestsHasBeenSet = true; m_resetActionRequests.emplace_back(std::forward<ResetActionRequestsT>(value)); return *this; }
     ///@}
   private:
 

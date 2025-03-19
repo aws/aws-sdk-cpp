@@ -18,23 +18,7 @@ namespace deadline
 namespace Model
 {
 
-MonitorSummary::MonitorSummary() : 
-    m_monitorIdHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_subdomainHasBeenSet(false),
-    m_urlHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_identityCenterInstanceArnHasBeenSet(false),
-    m_identityCenterApplicationArnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_updatedByHasBeenSet(false)
-{
-}
-
 MonitorSummary::MonitorSummary(JsonView jsonValue)
-  : MonitorSummary()
 {
   *this = jsonValue;
 }
@@ -44,80 +28,58 @@ MonitorSummary& MonitorSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("monitorId"))
   {
     m_monitorId = jsonValue.GetString("monitorId");
-
     m_monitorIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("displayName"))
   {
     m_displayName = jsonValue.GetString("displayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subdomain"))
   {
     m_subdomain = jsonValue.GetString("subdomain");
-
     m_subdomainHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("url"))
   {
     m_url = jsonValue.GetString("url");
-
     m_urlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("identityCenterInstanceArn"))
   {
     m_identityCenterInstanceArn = jsonValue.GetString("identityCenterInstanceArn");
-
     m_identityCenterInstanceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("identityCenterApplicationArn"))
   {
     m_identityCenterApplicationArn = jsonValue.GetString("identityCenterApplicationArn");
-
     m_identityCenterApplicationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdBy"))
   {
     m_createdBy = jsonValue.GetString("createdBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedBy"))
   {
     m_updatedBy = jsonValue.GetString("updatedBy");
-
     m_updatedByHasBeenSet = true;
   }
-
   return *this;
 }
 

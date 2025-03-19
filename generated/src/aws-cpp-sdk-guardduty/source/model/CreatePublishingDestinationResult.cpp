@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreatePublishingDestinationResult::CreatePublishingDestinationResult()
-{
-}
-
 CreatePublishingDestinationResult::CreatePublishingDestinationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreatePublishingDestinationResult& CreatePublishingDestinationResult::operator =
   if(jsonValue.ValueExists("destinationId"))
   {
     m_destinationId = jsonValue.GetString("destinationId");
-
+    m_destinationIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

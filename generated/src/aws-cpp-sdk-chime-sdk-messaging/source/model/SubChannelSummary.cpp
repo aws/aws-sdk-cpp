@@ -18,15 +18,7 @@ namespace ChimeSDKMessaging
 namespace Model
 {
 
-SubChannelSummary::SubChannelSummary() : 
-    m_subChannelIdHasBeenSet(false),
-    m_membershipCount(0),
-    m_membershipCountHasBeenSet(false)
-{
-}
-
 SubChannelSummary::SubChannelSummary(JsonView jsonValue)
-  : SubChannelSummary()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SubChannelSummary& SubChannelSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SubChannelId"))
   {
     m_subChannelId = jsonValue.GetString("SubChannelId");
-
     m_subChannelIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MembershipCount"))
   {
     m_membershipCount = jsonValue.GetInteger("MembershipCount");
-
     m_membershipCountHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace mgn
 namespace Model
 {
 
-DataReplicationInitiationStep::DataReplicationInitiationStep() : 
-    m_name(DataReplicationInitiationStepName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_status(DataReplicationInitiationStepStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 DataReplicationInitiationStep::DataReplicationInitiationStep(JsonView jsonValue)
-  : DataReplicationInitiationStep()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ DataReplicationInitiationStep& DataReplicationInitiationStep::operator =(JsonVie
   if(jsonValue.ValueExists("name"))
   {
     m_name = DataReplicationInitiationStepNameMapper::GetDataReplicationInitiationStepNameForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = DataReplicationInitiationStepStatusMapper::GetDataReplicationInitiationStepStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

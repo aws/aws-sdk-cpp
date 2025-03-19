@@ -18,14 +18,7 @@ namespace kendra
 namespace Model
 {
 
-JsonTokenTypeConfiguration::JsonTokenTypeConfiguration() : 
-    m_userNameAttributeFieldHasBeenSet(false),
-    m_groupAttributeFieldHasBeenSet(false)
-{
-}
-
 JsonTokenTypeConfiguration::JsonTokenTypeConfiguration(JsonView jsonValue)
-  : JsonTokenTypeConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ JsonTokenTypeConfiguration& JsonTokenTypeConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("UserNameAttributeField"))
   {
     m_userNameAttributeField = jsonValue.GetString("UserNameAttributeField");
-
     m_userNameAttributeFieldHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupAttributeField"))
   {
     m_groupAttributeField = jsonValue.GetString("GroupAttributeField");
-
     m_groupAttributeFieldHasBeenSet = true;
   }
-
   return *this;
 }
 

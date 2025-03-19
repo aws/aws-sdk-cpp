@@ -18,14 +18,7 @@ namespace SageMakerGeospatial
 namespace Model
 {
 
-InputConfigOutput::InputConfigOutput() : 
-    m_previousEarthObservationJobArnHasBeenSet(false),
-    m_rasterDataCollectionQueryHasBeenSet(false)
-{
-}
-
 InputConfigOutput::InputConfigOutput(JsonView jsonValue)
-  : InputConfigOutput()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ InputConfigOutput& InputConfigOutput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PreviousEarthObservationJobArn"))
   {
     m_previousEarthObservationJobArn = jsonValue.GetString("PreviousEarthObservationJobArn");
-
     m_previousEarthObservationJobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RasterDataCollectionQuery"))
   {
     m_rasterDataCollectionQuery = jsonValue.GetObject("RasterDataCollectionQuery");
-
     m_rasterDataCollectionQueryHasBeenSet = true;
   }
-
   return *this;
 }
 

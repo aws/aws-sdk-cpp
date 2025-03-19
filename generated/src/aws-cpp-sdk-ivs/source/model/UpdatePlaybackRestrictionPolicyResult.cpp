@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdatePlaybackRestrictionPolicyResult::UpdatePlaybackRestrictionPolicyResult()
-{
-}
-
 UpdatePlaybackRestrictionPolicyResult::UpdatePlaybackRestrictionPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ UpdatePlaybackRestrictionPolicyResult& UpdatePlaybackRestrictionPolicyResult::op
   if(jsonValue.ValueExists("playbackRestrictionPolicy"))
   {
     m_playbackRestrictionPolicy = jsonValue.GetObject("playbackRestrictionPolicy");
-
+    m_playbackRestrictionPolicyHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -12,11 +12,6 @@ using namespace Aws::Snowball::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeAddressRequest::DescribeAddressRequest() : 
-    m_addressIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAddressRequest::SerializePayload() const
 {
   JsonValue payload;

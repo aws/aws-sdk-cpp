@@ -27,7 +27,7 @@ namespace Model
   class RestoreTableResult
   {
   public:
-    AWS_KEYSPACES_API RestoreTableResult();
+    AWS_KEYSPACES_API RestoreTableResult() = default;
     AWS_KEYSPACES_API RestoreTableResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KEYSPACES_API RestoreTableResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the restored table.</p>
      */
-    inline const Aws::String& GetRestoredTableARN() const{ return m_restoredTableARN; }
-    inline void SetRestoredTableARN(const Aws::String& value) { m_restoredTableARN = value; }
-    inline void SetRestoredTableARN(Aws::String&& value) { m_restoredTableARN = std::move(value); }
-    inline void SetRestoredTableARN(const char* value) { m_restoredTableARN.assign(value); }
-    inline RestoreTableResult& WithRestoredTableARN(const Aws::String& value) { SetRestoredTableARN(value); return *this;}
-    inline RestoreTableResult& WithRestoredTableARN(Aws::String&& value) { SetRestoredTableARN(std::move(value)); return *this;}
-    inline RestoreTableResult& WithRestoredTableARN(const char* value) { SetRestoredTableARN(value); return *this;}
+    inline const Aws::String& GetRestoredTableARN() const { return m_restoredTableARN; }
+    template<typename RestoredTableARNT = Aws::String>
+    void SetRestoredTableARN(RestoredTableARNT&& value) { m_restoredTableARNHasBeenSet = true; m_restoredTableARN = std::forward<RestoredTableARNT>(value); }
+    template<typename RestoredTableARNT = Aws::String>
+    RestoreTableResult& WithRestoredTableARN(RestoredTableARNT&& value) { SetRestoredTableARN(std::forward<RestoredTableARNT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline RestoreTableResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline RestoreTableResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline RestoreTableResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    RestoreTableResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_restoredTableARN;
+    bool m_restoredTableARNHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

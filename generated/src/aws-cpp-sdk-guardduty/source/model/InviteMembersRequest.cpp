@@ -12,15 +12,6 @@ using namespace Aws::GuardDuty::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-InviteMembersRequest::InviteMembersRequest() : 
-    m_detectorIdHasBeenSet(false),
-    m_accountIdsHasBeenSet(false),
-    m_disableEmailNotification(false),
-    m_disableEmailNotificationHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 Aws::String InviteMembersRequest::SerializePayload() const
 {
   JsonValue payload;

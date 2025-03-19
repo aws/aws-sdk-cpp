@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-UserQuickConnectConfig::UserQuickConnectConfig() : 
-    m_userIdHasBeenSet(false),
-    m_contactFlowIdHasBeenSet(false)
-{
-}
-
 UserQuickConnectConfig::UserQuickConnectConfig(JsonView jsonValue)
-  : UserQuickConnectConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ UserQuickConnectConfig& UserQuickConnectConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("UserId"))
   {
     m_userId = jsonValue.GetString("UserId");
-
     m_userIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContactFlowId"))
   {
     m_contactFlowId = jsonValue.GetString("ContactFlowId");
-
     m_contactFlowIdHasBeenSet = true;
   }
-
   return *this;
 }
 

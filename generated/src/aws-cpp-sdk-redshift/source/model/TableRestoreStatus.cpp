@@ -20,29 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-TableRestoreStatus::TableRestoreStatus() : 
-    m_tableRestoreRequestIdHasBeenSet(false),
-    m_status(TableRestoreStatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_requestTimeHasBeenSet(false),
-    m_progressInMegaBytes(0),
-    m_progressInMegaBytesHasBeenSet(false),
-    m_totalDataInMegaBytes(0),
-    m_totalDataInMegaBytesHasBeenSet(false),
-    m_clusterIdentifierHasBeenSet(false),
-    m_snapshotIdentifierHasBeenSet(false),
-    m_sourceDatabaseNameHasBeenSet(false),
-    m_sourceSchemaNameHasBeenSet(false),
-    m_sourceTableNameHasBeenSet(false),
-    m_targetDatabaseNameHasBeenSet(false),
-    m_targetSchemaNameHasBeenSet(false),
-    m_newTableNameHasBeenSet(false)
-{
-}
-
 TableRestoreStatus::TableRestoreStatus(const XmlNode& xmlNode)
-  : TableRestoreStatus()
 {
   *this = xmlNode;
 }
@@ -62,7 +40,7 @@ TableRestoreStatus& TableRestoreStatus::operator =(const XmlNode& xmlNode)
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = TableRestoreStatusTypeMapper::GetTableRestoreStatusTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = TableRestoreStatusTypeMapper::GetTableRestoreStatusTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
     XmlNode messageNode = resultNode.FirstChild("Message");

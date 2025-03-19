@@ -31,7 +31,7 @@ namespace Model
   class NoncurrentVersionTransition
   {
   public:
-    AWS_S3CONTROL_API NoncurrentVersionTransition();
+    AWS_S3CONTROL_API NoncurrentVersionTransition() = default;
     AWS_S3CONTROL_API NoncurrentVersionTransition(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API NoncurrentVersionTransition& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,7 +47,7 @@ namespace Model
      * How Amazon S3 Calculates How Long an Object Has Been Noncurrent</a> in the
      * <i>Amazon S3 User Guide</i>.</p>
      */
-    inline int GetNoncurrentDays() const{ return m_noncurrentDays; }
+    inline int GetNoncurrentDays() const { return m_noncurrentDays; }
     inline bool NoncurrentDaysHasBeenSet() const { return m_noncurrentDaysHasBeenSet; }
     inline void SetNoncurrentDays(int value) { m_noncurrentDaysHasBeenSet = true; m_noncurrentDays = value; }
     inline NoncurrentVersionTransition& WithNoncurrentDays(int value) { SetNoncurrentDays(value); return *this;}
@@ -57,19 +57,17 @@ namespace Model
     /**
      * <p>The class of storage used to store the object.</p>
      */
-    inline const TransitionStorageClass& GetStorageClass() const{ return m_storageClass; }
+    inline TransitionStorageClass GetStorageClass() const { return m_storageClass; }
     inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }
-    inline void SetStorageClass(const TransitionStorageClass& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
-    inline void SetStorageClass(TransitionStorageClass&& value) { m_storageClassHasBeenSet = true; m_storageClass = std::move(value); }
-    inline NoncurrentVersionTransition& WithStorageClass(const TransitionStorageClass& value) { SetStorageClass(value); return *this;}
-    inline NoncurrentVersionTransition& WithStorageClass(TransitionStorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
+    inline void SetStorageClass(TransitionStorageClass value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
+    inline NoncurrentVersionTransition& WithStorageClass(TransitionStorageClass value) { SetStorageClass(value); return *this;}
     ///@}
   private:
 
-    int m_noncurrentDays;
+    int m_noncurrentDays{0};
     bool m_noncurrentDaysHasBeenSet = false;
 
-    TransitionStorageClass m_storageClass;
+    TransitionStorageClass m_storageClass{TransitionStorageClass::NOT_SET};
     bool m_storageClassHasBeenSet = false;
   };
 

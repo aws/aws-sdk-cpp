@@ -18,20 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteTollRate::RouteTollRate() : 
-    m_applicableTimesHasBeenSet(false),
-    m_convertedPriceHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_localPriceHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_passHasBeenSet(false),
-    m_paymentMethodsHasBeenSet(false),
-    m_transpondersHasBeenSet(false)
-{
-}
-
 RouteTollRate::RouteTollRate(JsonView jsonValue)
-  : RouteTollRate()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ RouteTollRate& RouteTollRate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ApplicableTimes"))
   {
     m_applicableTimes = jsonValue.GetString("ApplicableTimes");
-
     m_applicableTimesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConvertedPrice"))
   {
     m_convertedPrice = jsonValue.GetObject("ConvertedPrice");
-
     m_convertedPriceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LocalPrice"))
   {
     m_localPrice = jsonValue.GetObject("LocalPrice");
-
     m_localPriceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Pass"))
   {
     m_pass = jsonValue.GetObject("Pass");
-
     m_passHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PaymentMethods"))
   {
     Aws::Utils::Array<JsonView> paymentMethodsJsonList = jsonValue.GetArray("PaymentMethods");
@@ -89,7 +64,6 @@ RouteTollRate& RouteTollRate::operator =(JsonView jsonValue)
     }
     m_paymentMethodsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Transponders"))
   {
     Aws::Utils::Array<JsonView> transpondersJsonList = jsonValue.GetArray("Transponders");
@@ -99,7 +73,6 @@ RouteTollRate& RouteTollRate::operator =(JsonView jsonValue)
     }
     m_transpondersHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class ElasticsearchClusterConfigStatus
   {
   public:
-    AWS_ELASTICSEARCHSERVICE_API ElasticsearchClusterConfigStatus();
+    AWS_ELASTICSEARCHSERVICE_API ElasticsearchClusterConfigStatus() = default;
     AWS_ELASTICSEARCHSERVICE_API ElasticsearchClusterConfigStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICSEARCHSERVICE_API ElasticsearchClusterConfigStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p> Specifies the cluster configuration for the specified Elasticsearch
      * domain.</p>
      */
-    inline const ElasticsearchClusterConfig& GetOptions() const{ return m_options; }
+    inline const ElasticsearchClusterConfig& GetOptions() const { return m_options; }
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-    inline void SetOptions(const ElasticsearchClusterConfig& value) { m_optionsHasBeenSet = true; m_options = value; }
-    inline void SetOptions(ElasticsearchClusterConfig&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-    inline ElasticsearchClusterConfigStatus& WithOptions(const ElasticsearchClusterConfig& value) { SetOptions(value); return *this;}
-    inline ElasticsearchClusterConfigStatus& WithOptions(ElasticsearchClusterConfig&& value) { SetOptions(std::move(value)); return *this;}
+    template<typename OptionsT = ElasticsearchClusterConfig>
+    void SetOptions(OptionsT&& value) { m_optionsHasBeenSet = true; m_options = std::forward<OptionsT>(value); }
+    template<typename OptionsT = ElasticsearchClusterConfig>
+    ElasticsearchClusterConfigStatus& WithOptions(OptionsT&& value) { SetOptions(std::forward<OptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +57,12 @@ namespace Model
      * <p> Specifies the status of the configuration for the specified Elasticsearch
      * domain.</p>
      */
-    inline const OptionStatus& GetStatus() const{ return m_status; }
+    inline const OptionStatus& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const OptionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(OptionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ElasticsearchClusterConfigStatus& WithStatus(const OptionStatus& value) { SetStatus(value); return *this;}
-    inline ElasticsearchClusterConfigStatus& WithStatus(OptionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    template<typename StatusT = OptionStatus>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = OptionStatus>
+    ElasticsearchClusterConfigStatus& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
   private:
 

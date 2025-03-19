@@ -23,7 +23,7 @@ namespace Model
   class LockSnapshotRequest : public EC2Request
   {
   public:
-    AWS_EC2_API LockSnapshotRequest();
+    AWS_EC2_API LockSnapshotRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The ID of the snapshot to lock.</p>
      */
-    inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
+    inline const Aws::String& GetSnapshotId() const { return m_snapshotId; }
     inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
-    inline void SetSnapshotId(const Aws::String& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
-    inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
-    inline void SetSnapshotId(const char* value) { m_snapshotIdHasBeenSet = true; m_snapshotId.assign(value); }
-    inline LockSnapshotRequest& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
-    inline LockSnapshotRequest& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
-    inline LockSnapshotRequest& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
+    template<typename SnapshotIdT = Aws::String>
+    void SetSnapshotId(SnapshotIdT&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::forward<SnapshotIdT>(value); }
+    template<typename SnapshotIdT = Aws::String>
+    LockSnapshotRequest& WithSnapshotId(SnapshotIdT&& value) { SetSnapshotId(std::forward<SnapshotIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,7 +57,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline LockSnapshotRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -84,12 +82,10 @@ namespace Model
      * snapshot in <code>compliance</code> mode, you can optionally specify
      * <b>CoolOffPeriod</b>.</p> </li> </ul>
      */
-    inline const LockMode& GetLockMode() const{ return m_lockMode; }
+    inline LockMode GetLockMode() const { return m_lockMode; }
     inline bool LockModeHasBeenSet() const { return m_lockModeHasBeenSet; }
-    inline void SetLockMode(const LockMode& value) { m_lockModeHasBeenSet = true; m_lockMode = value; }
-    inline void SetLockMode(LockMode&& value) { m_lockModeHasBeenSet = true; m_lockMode = std::move(value); }
-    inline LockSnapshotRequest& WithLockMode(const LockMode& value) { SetLockMode(value); return *this;}
-    inline LockSnapshotRequest& WithLockMode(LockMode&& value) { SetLockMode(std::move(value)); return *this;}
+    inline void SetLockMode(LockMode value) { m_lockModeHasBeenSet = true; m_lockMode = value; }
+    inline LockSnapshotRequest& WithLockMode(LockMode value) { SetLockMode(value); return *this;}
     ///@}
 
     ///@{
@@ -107,7 +103,7 @@ namespace Model
      * specify a cooling-period in a such a request, the request fails.</p> <p>Allowed
      * values: Min 1, max 72.</p>
      */
-    inline int GetCoolOffPeriod() const{ return m_coolOffPeriod; }
+    inline int GetCoolOffPeriod() const { return m_coolOffPeriod; }
     inline bool CoolOffPeriodHasBeenSet() const { return m_coolOffPeriodHasBeenSet; }
     inline void SetCoolOffPeriod(int value) { m_coolOffPeriodHasBeenSet = true; m_coolOffPeriod = value; }
     inline LockSnapshotRequest& WithCoolOffPeriod(int value) { SetCoolOffPeriod(value); return *this;}
@@ -120,7 +116,7 @@ namespace Model
      * either this parameter or <b>ExpirationDate</b>, but not both.</p> <p>Allowed
      * values: Min: 1, max 36500</p>
      */
-    inline int GetLockDuration() const{ return m_lockDuration; }
+    inline int GetLockDuration() const { return m_lockDuration; }
     inline bool LockDurationHasBeenSet() const { return m_lockDurationHasBeenSet; }
     inline void SetLockDuration(int value) { m_lockDurationHasBeenSet = true; m_lockDuration = value; }
     inline LockSnapshotRequest& WithLockDuration(int value) { SetLockDuration(value); return *this;}
@@ -132,31 +128,31 @@ namespace Model
      * the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>).</p> <p>You must
      * specify either this parameter or <b>LockDuration</b>, but not both.</p>
      */
-    inline const Aws::Utils::DateTime& GetExpirationDate() const{ return m_expirationDate; }
+    inline const Aws::Utils::DateTime& GetExpirationDate() const { return m_expirationDate; }
     inline bool ExpirationDateHasBeenSet() const { return m_expirationDateHasBeenSet; }
-    inline void SetExpirationDate(const Aws::Utils::DateTime& value) { m_expirationDateHasBeenSet = true; m_expirationDate = value; }
-    inline void SetExpirationDate(Aws::Utils::DateTime&& value) { m_expirationDateHasBeenSet = true; m_expirationDate = std::move(value); }
-    inline LockSnapshotRequest& WithExpirationDate(const Aws::Utils::DateTime& value) { SetExpirationDate(value); return *this;}
-    inline LockSnapshotRequest& WithExpirationDate(Aws::Utils::DateTime&& value) { SetExpirationDate(std::move(value)); return *this;}
+    template<typename ExpirationDateT = Aws::Utils::DateTime>
+    void SetExpirationDate(ExpirationDateT&& value) { m_expirationDateHasBeenSet = true; m_expirationDate = std::forward<ExpirationDateT>(value); }
+    template<typename ExpirationDateT = Aws::Utils::DateTime>
+    LockSnapshotRequest& WithExpirationDate(ExpirationDateT&& value) { SetExpirationDate(std::forward<ExpirationDateT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_snapshotId;
     bool m_snapshotIdHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
-    LockMode m_lockMode;
+    LockMode m_lockMode{LockMode::NOT_SET};
     bool m_lockModeHasBeenSet = false;
 
-    int m_coolOffPeriod;
+    int m_coolOffPeriod{0};
     bool m_coolOffPeriodHasBeenSet = false;
 
-    int m_lockDuration;
+    int m_lockDuration{0};
     bool m_lockDurationHasBeenSet = false;
 
-    Aws::Utils::DateTime m_expirationDate;
+    Aws::Utils::DateTime m_expirationDate{};
     bool m_expirationDateHasBeenSet = false;
   };
 

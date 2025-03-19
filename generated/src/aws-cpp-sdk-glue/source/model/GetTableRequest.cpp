@@ -12,17 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTableRequest::GetTableRequest() : 
-    m_catalogIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_transactionIdHasBeenSet(false),
-    m_queryAsOfTimeHasBeenSet(false),
-    m_includeStatusDetails(false),
-    m_includeStatusDetailsHasBeenSet(false)
-{
-}
-
 Aws::String GetTableRequest::SerializePayload() const
 {
   JsonValue payload;

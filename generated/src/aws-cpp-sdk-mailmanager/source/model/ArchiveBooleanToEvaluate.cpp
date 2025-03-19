@@ -18,14 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-ArchiveBooleanToEvaluate::ArchiveBooleanToEvaluate() : 
-    m_attribute(ArchiveBooleanEmailAttribute::NOT_SET),
-    m_attributeHasBeenSet(false)
-{
-}
-
 ArchiveBooleanToEvaluate::ArchiveBooleanToEvaluate(JsonView jsonValue)
-  : ArchiveBooleanToEvaluate()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ArchiveBooleanToEvaluate& ArchiveBooleanToEvaluate::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Attribute"))
   {
     m_attribute = ArchiveBooleanEmailAttributeMapper::GetArchiveBooleanEmailAttributeForName(jsonValue.GetString("Attribute"));
-
     m_attributeHasBeenSet = true;
   }
-
   return *this;
 }
 

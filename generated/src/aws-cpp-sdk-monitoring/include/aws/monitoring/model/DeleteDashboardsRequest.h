@@ -22,7 +22,7 @@ namespace Model
   class DeleteDashboardsRequest : public CloudWatchRequest
   {
   public:
-    AWS_CLOUDWATCH_API DeleteDashboardsRequest();
+    AWS_CLOUDWATCH_API DeleteDashboardsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,15 +41,14 @@ namespace Model
     /**
      * <p>The dashboards to be deleted. This parameter is required.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDashboardNames() const{ return m_dashboardNames; }
+    inline const Aws::Vector<Aws::String>& GetDashboardNames() const { return m_dashboardNames; }
     inline bool DashboardNamesHasBeenSet() const { return m_dashboardNamesHasBeenSet; }
-    inline void SetDashboardNames(const Aws::Vector<Aws::String>& value) { m_dashboardNamesHasBeenSet = true; m_dashboardNames = value; }
-    inline void SetDashboardNames(Aws::Vector<Aws::String>&& value) { m_dashboardNamesHasBeenSet = true; m_dashboardNames = std::move(value); }
-    inline DeleteDashboardsRequest& WithDashboardNames(const Aws::Vector<Aws::String>& value) { SetDashboardNames(value); return *this;}
-    inline DeleteDashboardsRequest& WithDashboardNames(Aws::Vector<Aws::String>&& value) { SetDashboardNames(std::move(value)); return *this;}
-    inline DeleteDashboardsRequest& AddDashboardNames(const Aws::String& value) { m_dashboardNamesHasBeenSet = true; m_dashboardNames.push_back(value); return *this; }
-    inline DeleteDashboardsRequest& AddDashboardNames(Aws::String&& value) { m_dashboardNamesHasBeenSet = true; m_dashboardNames.push_back(std::move(value)); return *this; }
-    inline DeleteDashboardsRequest& AddDashboardNames(const char* value) { m_dashboardNamesHasBeenSet = true; m_dashboardNames.push_back(value); return *this; }
+    template<typename DashboardNamesT = Aws::Vector<Aws::String>>
+    void SetDashboardNames(DashboardNamesT&& value) { m_dashboardNamesHasBeenSet = true; m_dashboardNames = std::forward<DashboardNamesT>(value); }
+    template<typename DashboardNamesT = Aws::Vector<Aws::String>>
+    DeleteDashboardsRequest& WithDashboardNames(DashboardNamesT&& value) { SetDashboardNames(std::forward<DashboardNamesT>(value)); return *this;}
+    template<typename DashboardNamesT = Aws::String>
+    DeleteDashboardsRequest& AddDashboardNames(DashboardNamesT&& value) { m_dashboardNamesHasBeenSet = true; m_dashboardNames.emplace_back(std::forward<DashboardNamesT>(value)); return *this; }
     ///@}
   private:
 

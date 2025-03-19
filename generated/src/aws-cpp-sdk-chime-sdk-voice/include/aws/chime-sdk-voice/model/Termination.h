@@ -33,7 +33,7 @@ namespace Model
   class Termination
   {
   public:
-    AWS_CHIMESDKVOICE_API Termination();
+    AWS_CHIMESDKVOICE_API Termination() = default;
     AWS_CHIMESDKVOICE_API Termination(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKVOICE_API Termination& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * <p>The limit on calls per second. Max value based on account service quota.
      * Default value of 1.</p>
      */
-    inline int GetCpsLimit() const{ return m_cpsLimit; }
+    inline int GetCpsLimit() const { return m_cpsLimit; }
     inline bool CpsLimitHasBeenSet() const { return m_cpsLimitHasBeenSet; }
     inline void SetCpsLimit(int value) { m_cpsLimitHasBeenSet = true; m_cpsLimit = value; }
     inline Termination& WithCpsLimit(int value) { SetCpsLimit(value); return *this;}
@@ -54,14 +54,12 @@ namespace Model
     /**
      * <p>The default outbound calling number.</p>
      */
-    inline const Aws::String& GetDefaultPhoneNumber() const{ return m_defaultPhoneNumber; }
+    inline const Aws::String& GetDefaultPhoneNumber() const { return m_defaultPhoneNumber; }
     inline bool DefaultPhoneNumberHasBeenSet() const { return m_defaultPhoneNumberHasBeenSet; }
-    inline void SetDefaultPhoneNumber(const Aws::String& value) { m_defaultPhoneNumberHasBeenSet = true; m_defaultPhoneNumber = value; }
-    inline void SetDefaultPhoneNumber(Aws::String&& value) { m_defaultPhoneNumberHasBeenSet = true; m_defaultPhoneNumber = std::move(value); }
-    inline void SetDefaultPhoneNumber(const char* value) { m_defaultPhoneNumberHasBeenSet = true; m_defaultPhoneNumber.assign(value); }
-    inline Termination& WithDefaultPhoneNumber(const Aws::String& value) { SetDefaultPhoneNumber(value); return *this;}
-    inline Termination& WithDefaultPhoneNumber(Aws::String&& value) { SetDefaultPhoneNumber(std::move(value)); return *this;}
-    inline Termination& WithDefaultPhoneNumber(const char* value) { SetDefaultPhoneNumber(value); return *this;}
+    template<typename DefaultPhoneNumberT = Aws::String>
+    void SetDefaultPhoneNumber(DefaultPhoneNumberT&& value) { m_defaultPhoneNumberHasBeenSet = true; m_defaultPhoneNumber = std::forward<DefaultPhoneNumberT>(value); }
+    template<typename DefaultPhoneNumberT = Aws::String>
+    Termination& WithDefaultPhoneNumber(DefaultPhoneNumberT&& value) { SetDefaultPhoneNumber(std::forward<DefaultPhoneNumberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,44 +67,42 @@ namespace Model
      * <p>The countries to which calls are allowed, in ISO 3166-1 alpha-2 format.
      * Required.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCallingRegions() const{ return m_callingRegions; }
+    inline const Aws::Vector<Aws::String>& GetCallingRegions() const { return m_callingRegions; }
     inline bool CallingRegionsHasBeenSet() const { return m_callingRegionsHasBeenSet; }
-    inline void SetCallingRegions(const Aws::Vector<Aws::String>& value) { m_callingRegionsHasBeenSet = true; m_callingRegions = value; }
-    inline void SetCallingRegions(Aws::Vector<Aws::String>&& value) { m_callingRegionsHasBeenSet = true; m_callingRegions = std::move(value); }
-    inline Termination& WithCallingRegions(const Aws::Vector<Aws::String>& value) { SetCallingRegions(value); return *this;}
-    inline Termination& WithCallingRegions(Aws::Vector<Aws::String>&& value) { SetCallingRegions(std::move(value)); return *this;}
-    inline Termination& AddCallingRegions(const Aws::String& value) { m_callingRegionsHasBeenSet = true; m_callingRegions.push_back(value); return *this; }
-    inline Termination& AddCallingRegions(Aws::String&& value) { m_callingRegionsHasBeenSet = true; m_callingRegions.push_back(std::move(value)); return *this; }
-    inline Termination& AddCallingRegions(const char* value) { m_callingRegionsHasBeenSet = true; m_callingRegions.push_back(value); return *this; }
+    template<typename CallingRegionsT = Aws::Vector<Aws::String>>
+    void SetCallingRegions(CallingRegionsT&& value) { m_callingRegionsHasBeenSet = true; m_callingRegions = std::forward<CallingRegionsT>(value); }
+    template<typename CallingRegionsT = Aws::Vector<Aws::String>>
+    Termination& WithCallingRegions(CallingRegionsT&& value) { SetCallingRegions(std::forward<CallingRegionsT>(value)); return *this;}
+    template<typename CallingRegionsT = Aws::String>
+    Termination& AddCallingRegions(CallingRegionsT&& value) { m_callingRegionsHasBeenSet = true; m_callingRegions.emplace_back(std::forward<CallingRegionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The IP addresses allowed to make calls, in CIDR format.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCidrAllowedList() const{ return m_cidrAllowedList; }
+    inline const Aws::Vector<Aws::String>& GetCidrAllowedList() const { return m_cidrAllowedList; }
     inline bool CidrAllowedListHasBeenSet() const { return m_cidrAllowedListHasBeenSet; }
-    inline void SetCidrAllowedList(const Aws::Vector<Aws::String>& value) { m_cidrAllowedListHasBeenSet = true; m_cidrAllowedList = value; }
-    inline void SetCidrAllowedList(Aws::Vector<Aws::String>&& value) { m_cidrAllowedListHasBeenSet = true; m_cidrAllowedList = std::move(value); }
-    inline Termination& WithCidrAllowedList(const Aws::Vector<Aws::String>& value) { SetCidrAllowedList(value); return *this;}
-    inline Termination& WithCidrAllowedList(Aws::Vector<Aws::String>&& value) { SetCidrAllowedList(std::move(value)); return *this;}
-    inline Termination& AddCidrAllowedList(const Aws::String& value) { m_cidrAllowedListHasBeenSet = true; m_cidrAllowedList.push_back(value); return *this; }
-    inline Termination& AddCidrAllowedList(Aws::String&& value) { m_cidrAllowedListHasBeenSet = true; m_cidrAllowedList.push_back(std::move(value)); return *this; }
-    inline Termination& AddCidrAllowedList(const char* value) { m_cidrAllowedListHasBeenSet = true; m_cidrAllowedList.push_back(value); return *this; }
+    template<typename CidrAllowedListT = Aws::Vector<Aws::String>>
+    void SetCidrAllowedList(CidrAllowedListT&& value) { m_cidrAllowedListHasBeenSet = true; m_cidrAllowedList = std::forward<CidrAllowedListT>(value); }
+    template<typename CidrAllowedListT = Aws::Vector<Aws::String>>
+    Termination& WithCidrAllowedList(CidrAllowedListT&& value) { SetCidrAllowedList(std::forward<CidrAllowedListT>(value)); return *this;}
+    template<typename CidrAllowedListT = Aws::String>
+    Termination& AddCidrAllowedList(CidrAllowedListT&& value) { m_cidrAllowedListHasBeenSet = true; m_cidrAllowedList.emplace_back(std::forward<CidrAllowedListT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>When termination is disabled, outbound calls cannot be made.</p>
      */
-    inline bool GetDisabled() const{ return m_disabled; }
+    inline bool GetDisabled() const { return m_disabled; }
     inline bool DisabledHasBeenSet() const { return m_disabledHasBeenSet; }
     inline void SetDisabled(bool value) { m_disabledHasBeenSet = true; m_disabled = value; }
     inline Termination& WithDisabled(bool value) { SetDisabled(value); return *this;}
     ///@}
   private:
 
-    int m_cpsLimit;
+    int m_cpsLimit{0};
     bool m_cpsLimitHasBeenSet = false;
 
     Aws::String m_defaultPhoneNumber;
@@ -118,7 +114,7 @@ namespace Model
     Aws::Vector<Aws::String> m_cidrAllowedList;
     bool m_cidrAllowedListHasBeenSet = false;
 
-    bool m_disabled;
+    bool m_disabled{false};
     bool m_disabledHasBeenSet = false;
   };
 

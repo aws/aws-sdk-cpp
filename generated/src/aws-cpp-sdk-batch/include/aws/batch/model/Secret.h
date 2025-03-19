@@ -39,7 +39,7 @@ namespace Model
   class Secret
   {
   public:
-    AWS_BATCH_API Secret();
+    AWS_BATCH_API Secret() = default;
     AWS_BATCH_API Secret(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Secret& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
     /**
      * <p>The name of the secret.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Secret& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Secret& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Secret& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Secret& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +67,12 @@ namespace Model
      * the full Amazon Resource Name (ARN) or name of the parameter. If the parameter
      * exists in a different Region, then the full ARN must be specified.</p> 
      */
-    inline const Aws::String& GetValueFrom() const{ return m_valueFrom; }
+    inline const Aws::String& GetValueFrom() const { return m_valueFrom; }
     inline bool ValueFromHasBeenSet() const { return m_valueFromHasBeenSet; }
-    inline void SetValueFrom(const Aws::String& value) { m_valueFromHasBeenSet = true; m_valueFrom = value; }
-    inline void SetValueFrom(Aws::String&& value) { m_valueFromHasBeenSet = true; m_valueFrom = std::move(value); }
-    inline void SetValueFrom(const char* value) { m_valueFromHasBeenSet = true; m_valueFrom.assign(value); }
-    inline Secret& WithValueFrom(const Aws::String& value) { SetValueFrom(value); return *this;}
-    inline Secret& WithValueFrom(Aws::String&& value) { SetValueFrom(std::move(value)); return *this;}
-    inline Secret& WithValueFrom(const char* value) { SetValueFrom(value); return *this;}
+    template<typename ValueFromT = Aws::String>
+    void SetValueFrom(ValueFromT&& value) { m_valueFromHasBeenSet = true; m_valueFrom = std::forward<ValueFromT>(value); }
+    template<typename ValueFromT = Aws::String>
+    Secret& WithValueFrom(ValueFromT&& value) { SetValueFrom(std::forward<ValueFromT>(value)); return *this;}
     ///@}
   private:
 

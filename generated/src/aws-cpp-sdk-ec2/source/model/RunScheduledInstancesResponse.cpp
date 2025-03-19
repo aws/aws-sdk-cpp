@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RunScheduledInstancesResponse::RunScheduledInstancesResponse()
-{
-}
-
 RunScheduledInstancesResponse::RunScheduledInstancesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ RunScheduledInstancesResponse& RunScheduledInstancesResponse::operator =(const A
     if(!instanceIdSetNode.IsNull())
     {
       XmlNode instanceIdSetMember = instanceIdSetNode.FirstChild("item");
+      m_instanceIdSetHasBeenSet = !instanceIdSetMember.IsNull();
       while(!instanceIdSetMember.IsNull())
       {
         m_instanceIdSet.push_back(instanceIdSetMember.GetText());
         instanceIdSetMember = instanceIdSetMember.NextNode("item");
       }
 
+      m_instanceIdSetHasBeenSet = true;
     }
   }
 
@@ -56,6 +54,7 @@ RunScheduledInstancesResponse& RunScheduledInstancesResponse::operator =(const A
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::RunScheduledInstancesResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

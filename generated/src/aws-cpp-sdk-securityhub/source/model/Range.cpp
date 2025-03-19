@@ -18,18 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-Range::Range() : 
-    m_start(0),
-    m_startHasBeenSet(false),
-    m_end(0),
-    m_endHasBeenSet(false),
-    m_startColumn(0),
-    m_startColumnHasBeenSet(false)
-{
-}
-
 Range::Range(JsonView jsonValue)
-  : Range()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ Range& Range::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Start"))
   {
     m_start = jsonValue.GetInt64("Start");
-
     m_startHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("End"))
   {
     m_end = jsonValue.GetInt64("End");
-
     m_endHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartColumn"))
   {
     m_startColumn = jsonValue.GetInt64("StartColumn");
-
     m_startColumnHasBeenSet = true;
   }
-
   return *this;
 }
 

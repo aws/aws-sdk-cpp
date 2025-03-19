@@ -28,7 +28,7 @@ namespace Model
   class GetEventLogConfigurationResult
   {
   public:
-    AWS_IOTMANAGEDINTEGRATIONS_API GetEventLogConfigurationResult();
+    AWS_IOTMANAGEDINTEGRATIONS_API GetEventLogConfigurationResult() = default;
     AWS_IOTMANAGEDINTEGRATIONS_API GetEventLogConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTMANAGEDINTEGRATIONS_API GetEventLogConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,73 +37,68 @@ namespace Model
     /**
      * <p>The identifier of the event log configuration.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline GetEventLogConfigurationResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline GetEventLogConfigurationResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline GetEventLogConfigurationResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    GetEventLogConfigurationResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of resource for the event log configuration.</p>
      */
-    inline const Aws::String& GetResourceType() const{ return m_resourceType; }
-    inline void SetResourceType(const Aws::String& value) { m_resourceType = value; }
-    inline void SetResourceType(Aws::String&& value) { m_resourceType = std::move(value); }
-    inline void SetResourceType(const char* value) { m_resourceType.assign(value); }
-    inline GetEventLogConfigurationResult& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-    inline GetEventLogConfigurationResult& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-    inline GetEventLogConfigurationResult& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+    inline const Aws::String& GetResourceType() const { return m_resourceType; }
+    template<typename ResourceTypeT = Aws::String>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = Aws::String>
+    GetEventLogConfigurationResult& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the resource for the event log configuration.</p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceId.assign(value); }
-    inline GetEventLogConfigurationResult& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline GetEventLogConfigurationResult& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline GetEventLogConfigurationResult& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    GetEventLogConfigurationResult& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The logging level for the event log configuration.</p>
      */
-    inline const LogLevel& GetEventLogLevel() const{ return m_eventLogLevel; }
-    inline void SetEventLogLevel(const LogLevel& value) { m_eventLogLevel = value; }
-    inline void SetEventLogLevel(LogLevel&& value) { m_eventLogLevel = std::move(value); }
-    inline GetEventLogConfigurationResult& WithEventLogLevel(const LogLevel& value) { SetEventLogLevel(value); return *this;}
-    inline GetEventLogConfigurationResult& WithEventLogLevel(LogLevel&& value) { SetEventLogLevel(std::move(value)); return *this;}
+    inline LogLevel GetEventLogLevel() const { return m_eventLogLevel; }
+    inline void SetEventLogLevel(LogLevel value) { m_eventLogLevelHasBeenSet = true; m_eventLogLevel = value; }
+    inline GetEventLogConfigurationResult& WithEventLogLevel(LogLevel value) { SetEventLogLevel(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetEventLogConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetEventLogConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetEventLogConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetEventLogConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_resourceType;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_resourceId;
+    bool m_resourceIdHasBeenSet = false;
 
-    LogLevel m_eventLogLevel;
+    LogLevel m_eventLogLevel{LogLevel::NOT_SET};
+    bool m_eventLogLevelHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

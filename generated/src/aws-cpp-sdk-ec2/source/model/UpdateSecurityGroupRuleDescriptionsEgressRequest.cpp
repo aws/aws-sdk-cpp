@@ -10,16 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-UpdateSecurityGroupRuleDescriptionsEgressRequest::UpdateSecurityGroupRuleDescriptionsEgressRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_groupIdHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_ipPermissionsHasBeenSet(false),
-    m_securityGroupRuleDescriptionsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSecurityGroupRuleDescriptionsEgressRequest::SerializePayload() const
 {
   Aws::StringStream ss;

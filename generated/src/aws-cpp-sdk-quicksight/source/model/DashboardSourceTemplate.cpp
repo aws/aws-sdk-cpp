@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DashboardSourceTemplate::DashboardSourceTemplate() : 
-    m_dataSetReferencesHasBeenSet(false),
-    m_arnHasBeenSet(false)
-{
-}
-
 DashboardSourceTemplate::DashboardSourceTemplate(JsonView jsonValue)
-  : DashboardSourceTemplate()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ DashboardSourceTemplate& DashboardSourceTemplate::operator =(JsonView jsonValue)
     }
     m_dataSetReferencesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,24 +18,7 @@ namespace AutoScalingPlans
 namespace Model
 {
 
-ScalingPlanResource::ScalingPlanResource() : 
-    m_scalingPlanNameHasBeenSet(false),
-    m_scalingPlanVersion(0),
-    m_scalingPlanVersionHasBeenSet(false),
-    m_serviceNamespace(ServiceNamespace::NOT_SET),
-    m_serviceNamespaceHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_scalableDimension(ScalableDimension::NOT_SET),
-    m_scalableDimensionHasBeenSet(false),
-    m_scalingPoliciesHasBeenSet(false),
-    m_scalingStatusCode(ScalingStatusCode::NOT_SET),
-    m_scalingStatusCodeHasBeenSet(false),
-    m_scalingStatusMessageHasBeenSet(false)
-{
-}
-
 ScalingPlanResource::ScalingPlanResource(JsonView jsonValue)
-  : ScalingPlanResource()
 {
   *this = jsonValue;
 }
@@ -45,38 +28,28 @@ ScalingPlanResource& ScalingPlanResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ScalingPlanName"))
   {
     m_scalingPlanName = jsonValue.GetString("ScalingPlanName");
-
     m_scalingPlanNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScalingPlanVersion"))
   {
     m_scalingPlanVersion = jsonValue.GetInt64("ScalingPlanVersion");
-
     m_scalingPlanVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceNamespace"))
   {
     m_serviceNamespace = ServiceNamespaceMapper::GetServiceNamespaceForName(jsonValue.GetString("ServiceNamespace"));
-
     m_serviceNamespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScalableDimension"))
   {
     m_scalableDimension = ScalableDimensionMapper::GetScalableDimensionForName(jsonValue.GetString("ScalableDimension"));
-
     m_scalableDimensionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScalingPolicies"))
   {
     Aws::Utils::Array<JsonView> scalingPoliciesJsonList = jsonValue.GetArray("ScalingPolicies");
@@ -86,21 +59,16 @@ ScalingPlanResource& ScalingPlanResource::operator =(JsonView jsonValue)
     }
     m_scalingPoliciesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScalingStatusCode"))
   {
     m_scalingStatusCode = ScalingStatusCodeMapper::GetScalingStatusCodeForName(jsonValue.GetString("ScalingStatusCode"));
-
     m_scalingStatusCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScalingStatusMessage"))
   {
     m_scalingStatusMessage = jsonValue.GetString("ScalingStatusMessage");
-
     m_scalingStatusMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

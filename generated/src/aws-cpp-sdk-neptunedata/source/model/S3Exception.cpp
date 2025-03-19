@@ -18,15 +18,7 @@ namespace neptunedata
 namespace Model
 {
 
-S3Exception::S3Exception() : 
-    m_detailedMessageHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_codeHasBeenSet(false)
-{
-}
-
 S3Exception::S3Exception(JsonView jsonValue)
-  : S3Exception()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ S3Exception& S3Exception::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("detailedMessage"))
   {
     m_detailedMessage = jsonValue.GetString("detailedMessage");
-
     m_detailedMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("requestId"))
   {
     m_requestId = jsonValue.GetString("requestId");
-
     m_requestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("code"))
   {
     m_code = jsonValue.GetString("code");
-
     m_codeHasBeenSet = true;
   }
-
   return *this;
 }
 

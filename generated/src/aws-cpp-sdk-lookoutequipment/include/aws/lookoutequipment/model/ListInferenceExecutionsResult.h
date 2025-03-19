@@ -29,7 +29,7 @@ namespace Model
   class ListInferenceExecutionsResult
   {
   public:
-    AWS_LOOKOUTEQUIPMENT_API ListInferenceExecutionsResult();
+    AWS_LOOKOUTEQUIPMENT_API ListInferenceExecutionsResult() = default;
     AWS_LOOKOUTEQUIPMENT_API ListInferenceExecutionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOOKOUTEQUIPMENT_API ListInferenceExecutionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,11 @@ namespace Model
      * <p> An opaque pagination token indicating where to continue the listing of
      * inference executions. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListInferenceExecutionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListInferenceExecutionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListInferenceExecutionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListInferenceExecutionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,32 +56,33 @@ namespace Model
      * exist, <code>ListInferenceExecutions</code> returns an empty array in
      * <code>InferenceExecutionSummaries</code>.</p> 
      */
-    inline const Aws::Vector<InferenceExecutionSummary>& GetInferenceExecutionSummaries() const{ return m_inferenceExecutionSummaries; }
-    inline void SetInferenceExecutionSummaries(const Aws::Vector<InferenceExecutionSummary>& value) { m_inferenceExecutionSummaries = value; }
-    inline void SetInferenceExecutionSummaries(Aws::Vector<InferenceExecutionSummary>&& value) { m_inferenceExecutionSummaries = std::move(value); }
-    inline ListInferenceExecutionsResult& WithInferenceExecutionSummaries(const Aws::Vector<InferenceExecutionSummary>& value) { SetInferenceExecutionSummaries(value); return *this;}
-    inline ListInferenceExecutionsResult& WithInferenceExecutionSummaries(Aws::Vector<InferenceExecutionSummary>&& value) { SetInferenceExecutionSummaries(std::move(value)); return *this;}
-    inline ListInferenceExecutionsResult& AddInferenceExecutionSummaries(const InferenceExecutionSummary& value) { m_inferenceExecutionSummaries.push_back(value); return *this; }
-    inline ListInferenceExecutionsResult& AddInferenceExecutionSummaries(InferenceExecutionSummary&& value) { m_inferenceExecutionSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<InferenceExecutionSummary>& GetInferenceExecutionSummaries() const { return m_inferenceExecutionSummaries; }
+    template<typename InferenceExecutionSummariesT = Aws::Vector<InferenceExecutionSummary>>
+    void SetInferenceExecutionSummaries(InferenceExecutionSummariesT&& value) { m_inferenceExecutionSummariesHasBeenSet = true; m_inferenceExecutionSummaries = std::forward<InferenceExecutionSummariesT>(value); }
+    template<typename InferenceExecutionSummariesT = Aws::Vector<InferenceExecutionSummary>>
+    ListInferenceExecutionsResult& WithInferenceExecutionSummaries(InferenceExecutionSummariesT&& value) { SetInferenceExecutionSummaries(std::forward<InferenceExecutionSummariesT>(value)); return *this;}
+    template<typename InferenceExecutionSummariesT = InferenceExecutionSummary>
+    ListInferenceExecutionsResult& AddInferenceExecutionSummaries(InferenceExecutionSummariesT&& value) { m_inferenceExecutionSummariesHasBeenSet = true; m_inferenceExecutionSummaries.emplace_back(std::forward<InferenceExecutionSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListInferenceExecutionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListInferenceExecutionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListInferenceExecutionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListInferenceExecutionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<InferenceExecutionSummary> m_inferenceExecutionSummaries;
+    bool m_inferenceExecutionSummariesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

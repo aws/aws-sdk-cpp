@@ -18,14 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-EbsVolumeDetails::EbsVolumeDetails() : 
-    m_scannedVolumeDetailsHasBeenSet(false),
-    m_skippedVolumeDetailsHasBeenSet(false)
-{
-}
-
 EbsVolumeDetails::EbsVolumeDetails(JsonView jsonValue)
-  : EbsVolumeDetails()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ EbsVolumeDetails& EbsVolumeDetails::operator =(JsonView jsonValue)
     }
     m_scannedVolumeDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("skippedVolumeDetails"))
   {
     Aws::Utils::Array<JsonView> skippedVolumeDetailsJsonList = jsonValue.GetArray("skippedVolumeDetails");
@@ -51,7 +43,6 @@ EbsVolumeDetails& EbsVolumeDetails::operator =(JsonView jsonValue)
     }
     m_skippedVolumeDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

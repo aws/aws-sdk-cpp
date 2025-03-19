@@ -18,17 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-EventsDetectionJobFilter::EventsDetectionJobFilter() : 
-    m_jobNameHasBeenSet(false),
-    m_jobStatus(JobStatus::NOT_SET),
-    m_jobStatusHasBeenSet(false),
-    m_submitTimeBeforeHasBeenSet(false),
-    m_submitTimeAfterHasBeenSet(false)
-{
-}
-
 EventsDetectionJobFilter::EventsDetectionJobFilter(JsonView jsonValue)
-  : EventsDetectionJobFilter()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ EventsDetectionJobFilter& EventsDetectionJobFilter::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("JobName"))
   {
     m_jobName = jsonValue.GetString("JobName");
-
     m_jobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobStatus"))
   {
     m_jobStatus = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("JobStatus"));
-
     m_jobStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubmitTimeBefore"))
   {
     m_submitTimeBefore = jsonValue.GetDouble("SubmitTimeBefore");
-
     m_submitTimeBeforeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubmitTimeAfter"))
   {
     m_submitTimeAfter = jsonValue.GetDouble("SubmitTimeAfter");
-
     m_submitTimeAfterHasBeenSet = true;
   }
-
   return *this;
 }
 

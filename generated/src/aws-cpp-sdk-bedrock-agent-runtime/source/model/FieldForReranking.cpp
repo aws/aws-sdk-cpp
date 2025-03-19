@@ -18,13 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-FieldForReranking::FieldForReranking() : 
-    m_fieldNameHasBeenSet(false)
-{
-}
-
 FieldForReranking::FieldForReranking(JsonView jsonValue)
-  : FieldForReranking()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ FieldForReranking& FieldForReranking::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fieldName"))
   {
     m_fieldName = jsonValue.GetString("fieldName");
-
     m_fieldNameHasBeenSet = true;
   }
-
   return *this;
 }
 

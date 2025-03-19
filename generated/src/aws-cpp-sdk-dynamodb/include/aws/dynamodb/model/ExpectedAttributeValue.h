@@ -51,7 +51,7 @@ namespace Model
   class ExpectedAttributeValue
   {
   public:
-    AWS_DYNAMODB_API ExpectedAttributeValue();
+    AWS_DYNAMODB_API ExpectedAttributeValue() = default;
     AWS_DYNAMODB_API ExpectedAttributeValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API ExpectedAttributeValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -65,12 +65,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data
      * Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline const AttributeValue& GetValue() const{ return m_value; }
+    inline const AttributeValue& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const AttributeValue& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(AttributeValue&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline ExpectedAttributeValue& WithValue(const AttributeValue& value) { SetValue(value); return *this;}
-    inline ExpectedAttributeValue& WithValue(AttributeValue&& value) { SetValue(std::move(value)); return *this;}
+    template<typename ValueT = AttributeValue>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = AttributeValue>
+    ExpectedAttributeValue& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,7 +96,7 @@ namespace Model
      * an attribute to have a value, while also expecting it not to exist.)</p> </li>
      * </ul>
      */
-    inline bool GetExists() const{ return m_exists; }
+    inline bool GetExists() const { return m_exists; }
     inline bool ExistsHasBeenSet() const { return m_existsHasBeenSet; }
     inline void SetExists(bool value) { m_existsHasBeenSet = true; m_exists = value; }
     inline ExpectedAttributeValue& WithExists(bool value) { SetExists(value); return *this;}
@@ -210,12 +210,10 @@ namespace Model
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>
      * </p> </li> </ul>
      */
-    inline const ComparisonOperator& GetComparisonOperator() const{ return m_comparisonOperator; }
+    inline ComparisonOperator GetComparisonOperator() const { return m_comparisonOperator; }
     inline bool ComparisonOperatorHasBeenSet() const { return m_comparisonOperatorHasBeenSet; }
-    inline void SetComparisonOperator(const ComparisonOperator& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
-    inline void SetComparisonOperator(ComparisonOperator&& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = std::move(value); }
-    inline ExpectedAttributeValue& WithComparisonOperator(const ComparisonOperator& value) { SetComparisonOperator(value); return *this;}
-    inline ExpectedAttributeValue& WithComparisonOperator(ComparisonOperator&& value) { SetComparisonOperator(std::move(value)); return *this;}
+    inline void SetComparisonOperator(ComparisonOperator value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
+    inline ExpectedAttributeValue& WithComparisonOperator(ComparisonOperator value) { SetComparisonOperator(value); return *this;}
     ///@}
 
     ///@{
@@ -233,24 +231,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
      * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline const Aws::Vector<AttributeValue>& GetAttributeValueList() const{ return m_attributeValueList; }
+    inline const Aws::Vector<AttributeValue>& GetAttributeValueList() const { return m_attributeValueList; }
     inline bool AttributeValueListHasBeenSet() const { return m_attributeValueListHasBeenSet; }
-    inline void SetAttributeValueList(const Aws::Vector<AttributeValue>& value) { m_attributeValueListHasBeenSet = true; m_attributeValueList = value; }
-    inline void SetAttributeValueList(Aws::Vector<AttributeValue>&& value) { m_attributeValueListHasBeenSet = true; m_attributeValueList = std::move(value); }
-    inline ExpectedAttributeValue& WithAttributeValueList(const Aws::Vector<AttributeValue>& value) { SetAttributeValueList(value); return *this;}
-    inline ExpectedAttributeValue& WithAttributeValueList(Aws::Vector<AttributeValue>&& value) { SetAttributeValueList(std::move(value)); return *this;}
-    inline ExpectedAttributeValue& AddAttributeValueList(const AttributeValue& value) { m_attributeValueListHasBeenSet = true; m_attributeValueList.push_back(value); return *this; }
-    inline ExpectedAttributeValue& AddAttributeValueList(AttributeValue&& value) { m_attributeValueListHasBeenSet = true; m_attributeValueList.push_back(std::move(value)); return *this; }
+    template<typename AttributeValueListT = Aws::Vector<AttributeValue>>
+    void SetAttributeValueList(AttributeValueListT&& value) { m_attributeValueListHasBeenSet = true; m_attributeValueList = std::forward<AttributeValueListT>(value); }
+    template<typename AttributeValueListT = Aws::Vector<AttributeValue>>
+    ExpectedAttributeValue& WithAttributeValueList(AttributeValueListT&& value) { SetAttributeValueList(std::forward<AttributeValueListT>(value)); return *this;}
+    template<typename AttributeValueListT = AttributeValue>
+    ExpectedAttributeValue& AddAttributeValueList(AttributeValueListT&& value) { m_attributeValueListHasBeenSet = true; m_attributeValueList.emplace_back(std::forward<AttributeValueListT>(value)); return *this; }
     ///@}
   private:
 
     AttributeValue m_value;
     bool m_valueHasBeenSet = false;
 
-    bool m_exists;
+    bool m_exists{false};
     bool m_existsHasBeenSet = false;
 
-    ComparisonOperator m_comparisonOperator;
+    ComparisonOperator m_comparisonOperator{ComparisonOperator::NOT_SET};
     bool m_comparisonOperatorHasBeenSet = false;
 
     Aws::Vector<AttributeValue> m_attributeValueList;

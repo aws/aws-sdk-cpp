@@ -32,7 +32,7 @@ namespace Model
   class EvaluationAnswerData
   {
   public:
-    AWS_CONNECT_API EvaluationAnswerData();
+    AWS_CONNECT_API EvaluationAnswerData() = default;
     AWS_CONNECT_API EvaluationAnswerData(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API EvaluationAnswerData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,21 +42,19 @@ namespace Model
     /**
      * <p>The string value for an answer in a contact evaluation.</p>
      */
-    inline const Aws::String& GetStringValue() const{ return m_stringValue; }
+    inline const Aws::String& GetStringValue() const { return m_stringValue; }
     inline bool StringValueHasBeenSet() const { return m_stringValueHasBeenSet; }
-    inline void SetStringValue(const Aws::String& value) { m_stringValueHasBeenSet = true; m_stringValue = value; }
-    inline void SetStringValue(Aws::String&& value) { m_stringValueHasBeenSet = true; m_stringValue = std::move(value); }
-    inline void SetStringValue(const char* value) { m_stringValueHasBeenSet = true; m_stringValue.assign(value); }
-    inline EvaluationAnswerData& WithStringValue(const Aws::String& value) { SetStringValue(value); return *this;}
-    inline EvaluationAnswerData& WithStringValue(Aws::String&& value) { SetStringValue(std::move(value)); return *this;}
-    inline EvaluationAnswerData& WithStringValue(const char* value) { SetStringValue(value); return *this;}
+    template<typename StringValueT = Aws::String>
+    void SetStringValue(StringValueT&& value) { m_stringValueHasBeenSet = true; m_stringValue = std::forward<StringValueT>(value); }
+    template<typename StringValueT = Aws::String>
+    EvaluationAnswerData& WithStringValue(StringValueT&& value) { SetStringValue(std::forward<StringValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The numeric value for an answer in a contact evaluation.</p>
      */
-    inline double GetNumericValue() const{ return m_numericValue; }
+    inline double GetNumericValue() const { return m_numericValue; }
     inline bool NumericValueHasBeenSet() const { return m_numericValueHasBeenSet; }
     inline void SetNumericValue(double value) { m_numericValueHasBeenSet = true; m_numericValue = value; }
     inline EvaluationAnswerData& WithNumericValue(double value) { SetNumericValue(value); return *this;}
@@ -66,7 +64,7 @@ namespace Model
     /**
      * <p>The flag to mark the question as not applicable.</p>
      */
-    inline bool GetNotApplicable() const{ return m_notApplicable; }
+    inline bool GetNotApplicable() const { return m_notApplicable; }
     inline bool NotApplicableHasBeenSet() const { return m_notApplicableHasBeenSet; }
     inline void SetNotApplicable(bool value) { m_notApplicableHasBeenSet = true; m_notApplicable = value; }
     inline EvaluationAnswerData& WithNotApplicable(bool value) { SetNotApplicable(value); return *this;}
@@ -76,10 +74,10 @@ namespace Model
     Aws::String m_stringValue;
     bool m_stringValueHasBeenSet = false;
 
-    double m_numericValue;
+    double m_numericValue{0.0};
     bool m_numericValueHasBeenSet = false;
 
-    bool m_notApplicable;
+    bool m_notApplicable{false};
     bool m_notApplicableHasBeenSet = false;
   };
 

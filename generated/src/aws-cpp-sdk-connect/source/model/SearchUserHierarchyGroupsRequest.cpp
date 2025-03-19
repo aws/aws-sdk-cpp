@@ -12,16 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SearchUserHierarchyGroupsRequest::SearchUserHierarchyGroupsRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_searchFilterHasBeenSet(false),
-    m_searchCriteriaHasBeenSet(false)
-{
-}
-
 Aws::String SearchUserHierarchyGroupsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -15,12 +15,6 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-UpdateKeyValueStore2020_05_31Request::UpdateKeyValueStore2020_05_31Request() : 
-    m_nameHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_ifMatchHasBeenSet(false)
-{
-}
 
 Aws::String UpdateKeyValueStore2020_05_31Request::SerializePayload() const
 {

@@ -21,7 +21,7 @@ namespace Model
   class DeleteClusterSchedulerConfigRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API DeleteClusterSchedulerConfigRequest();
+    AWS_SAGEMAKER_API DeleteClusterSchedulerConfigRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>ID of the cluster policy.</p>
      */
-    inline const Aws::String& GetClusterSchedulerConfigId() const{ return m_clusterSchedulerConfigId; }
+    inline const Aws::String& GetClusterSchedulerConfigId() const { return m_clusterSchedulerConfigId; }
     inline bool ClusterSchedulerConfigIdHasBeenSet() const { return m_clusterSchedulerConfigIdHasBeenSet; }
-    inline void SetClusterSchedulerConfigId(const Aws::String& value) { m_clusterSchedulerConfigIdHasBeenSet = true; m_clusterSchedulerConfigId = value; }
-    inline void SetClusterSchedulerConfigId(Aws::String&& value) { m_clusterSchedulerConfigIdHasBeenSet = true; m_clusterSchedulerConfigId = std::move(value); }
-    inline void SetClusterSchedulerConfigId(const char* value) { m_clusterSchedulerConfigIdHasBeenSet = true; m_clusterSchedulerConfigId.assign(value); }
-    inline DeleteClusterSchedulerConfigRequest& WithClusterSchedulerConfigId(const Aws::String& value) { SetClusterSchedulerConfigId(value); return *this;}
-    inline DeleteClusterSchedulerConfigRequest& WithClusterSchedulerConfigId(Aws::String&& value) { SetClusterSchedulerConfigId(std::move(value)); return *this;}
-    inline DeleteClusterSchedulerConfigRequest& WithClusterSchedulerConfigId(const char* value) { SetClusterSchedulerConfigId(value); return *this;}
+    template<typename ClusterSchedulerConfigIdT = Aws::String>
+    void SetClusterSchedulerConfigId(ClusterSchedulerConfigIdT&& value) { m_clusterSchedulerConfigIdHasBeenSet = true; m_clusterSchedulerConfigId = std::forward<ClusterSchedulerConfigIdT>(value); }
+    template<typename ClusterSchedulerConfigIdT = Aws::String>
+    DeleteClusterSchedulerConfigRequest& WithClusterSchedulerConfigId(ClusterSchedulerConfigIdT&& value) { SetClusterSchedulerConfigId(std::forward<ClusterSchedulerConfigIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -24,7 +24,7 @@ namespace Model
   class ExecuteScheduledQueryRequest : public TimestreamQueryRequest
   {
   public:
-    AWS_TIMESTREAMQUERY_API ExecuteScheduledQueryRequest();
+    AWS_TIMESTREAMQUERY_API ExecuteScheduledQueryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>ARN of the scheduled query.</p>
      */
-    inline const Aws::String& GetScheduledQueryArn() const{ return m_scheduledQueryArn; }
+    inline const Aws::String& GetScheduledQueryArn() const { return m_scheduledQueryArn; }
     inline bool ScheduledQueryArnHasBeenSet() const { return m_scheduledQueryArnHasBeenSet; }
-    inline void SetScheduledQueryArn(const Aws::String& value) { m_scheduledQueryArnHasBeenSet = true; m_scheduledQueryArn = value; }
-    inline void SetScheduledQueryArn(Aws::String&& value) { m_scheduledQueryArnHasBeenSet = true; m_scheduledQueryArn = std::move(value); }
-    inline void SetScheduledQueryArn(const char* value) { m_scheduledQueryArnHasBeenSet = true; m_scheduledQueryArn.assign(value); }
-    inline ExecuteScheduledQueryRequest& WithScheduledQueryArn(const Aws::String& value) { SetScheduledQueryArn(value); return *this;}
-    inline ExecuteScheduledQueryRequest& WithScheduledQueryArn(Aws::String&& value) { SetScheduledQueryArn(std::move(value)); return *this;}
-    inline ExecuteScheduledQueryRequest& WithScheduledQueryArn(const char* value) { SetScheduledQueryArn(value); return *this;}
+    template<typename ScheduledQueryArnT = Aws::String>
+    void SetScheduledQueryArn(ScheduledQueryArnT&& value) { m_scheduledQueryArnHasBeenSet = true; m_scheduledQueryArn = std::forward<ScheduledQueryArnT>(value); }
+    template<typename ScheduledQueryArnT = Aws::String>
+    ExecuteScheduledQueryRequest& WithScheduledQueryArn(ScheduledQueryArnT&& value) { SetScheduledQueryArn(std::forward<ScheduledQueryArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,26 +54,24 @@ namespace Model
      * <p>The timestamp in UTC. Query will be run as if it was invoked at this
      * timestamp. </p>
      */
-    inline const Aws::Utils::DateTime& GetInvocationTime() const{ return m_invocationTime; }
+    inline const Aws::Utils::DateTime& GetInvocationTime() const { return m_invocationTime; }
     inline bool InvocationTimeHasBeenSet() const { return m_invocationTimeHasBeenSet; }
-    inline void SetInvocationTime(const Aws::Utils::DateTime& value) { m_invocationTimeHasBeenSet = true; m_invocationTime = value; }
-    inline void SetInvocationTime(Aws::Utils::DateTime&& value) { m_invocationTimeHasBeenSet = true; m_invocationTime = std::move(value); }
-    inline ExecuteScheduledQueryRequest& WithInvocationTime(const Aws::Utils::DateTime& value) { SetInvocationTime(value); return *this;}
-    inline ExecuteScheduledQueryRequest& WithInvocationTime(Aws::Utils::DateTime&& value) { SetInvocationTime(std::move(value)); return *this;}
+    template<typename InvocationTimeT = Aws::Utils::DateTime>
+    void SetInvocationTime(InvocationTimeT&& value) { m_invocationTimeHasBeenSet = true; m_invocationTime = std::forward<InvocationTimeT>(value); }
+    template<typename InvocationTimeT = Aws::Utils::DateTime>
+    ExecuteScheduledQueryRequest& WithInvocationTime(InvocationTimeT&& value) { SetInvocationTime(std::forward<InvocationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Not used. </p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline ExecuteScheduledQueryRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline ExecuteScheduledQueryRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline ExecuteScheduledQueryRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    ExecuteScheduledQueryRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,19 +81,19 @@ namespace Model
      * the Amazon SNS notification for the query that you executed. You can use
      * <code>QueryInsights</code> to tune your query performance and cost.</p>
      */
-    inline const ScheduledQueryInsights& GetQueryInsights() const{ return m_queryInsights; }
+    inline const ScheduledQueryInsights& GetQueryInsights() const { return m_queryInsights; }
     inline bool QueryInsightsHasBeenSet() const { return m_queryInsightsHasBeenSet; }
-    inline void SetQueryInsights(const ScheduledQueryInsights& value) { m_queryInsightsHasBeenSet = true; m_queryInsights = value; }
-    inline void SetQueryInsights(ScheduledQueryInsights&& value) { m_queryInsightsHasBeenSet = true; m_queryInsights = std::move(value); }
-    inline ExecuteScheduledQueryRequest& WithQueryInsights(const ScheduledQueryInsights& value) { SetQueryInsights(value); return *this;}
-    inline ExecuteScheduledQueryRequest& WithQueryInsights(ScheduledQueryInsights&& value) { SetQueryInsights(std::move(value)); return *this;}
+    template<typename QueryInsightsT = ScheduledQueryInsights>
+    void SetQueryInsights(QueryInsightsT&& value) { m_queryInsightsHasBeenSet = true; m_queryInsights = std::forward<QueryInsightsT>(value); }
+    template<typename QueryInsightsT = ScheduledQueryInsights>
+    ExecuteScheduledQueryRequest& WithQueryInsights(QueryInsightsT&& value) { SetQueryInsights(std::forward<QueryInsightsT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_scheduledQueryArn;
     bool m_scheduledQueryArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_invocationTime;
+    Aws::Utils::DateTime m_invocationTime{};
     bool m_invocationTimeHasBeenSet = false;
 
     Aws::String m_clientToken;

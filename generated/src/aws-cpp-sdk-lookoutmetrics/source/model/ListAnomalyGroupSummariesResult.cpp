@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListAnomalyGroupSummariesResult::ListAnomalyGroupSummariesResult()
-{
-}
-
 ListAnomalyGroupSummariesResult::ListAnomalyGroupSummariesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,26 +32,25 @@ ListAnomalyGroupSummariesResult& ListAnomalyGroupSummariesResult::operator =(con
     {
       m_anomalyGroupSummaryList.push_back(anomalyGroupSummaryListJsonList[anomalyGroupSummaryListIndex].AsObject());
     }
+    m_anomalyGroupSummaryListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AnomalyGroupStatistics"))
   {
     m_anomalyGroupStatistics = jsonValue.GetObject("AnomalyGroupStatistics");
-
+    m_anomalyGroupStatisticsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

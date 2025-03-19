@@ -12,25 +12,6 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchDescribeMergeConflictsRequest::BatchDescribeMergeConflictsRequest() : 
-    m_repositoryNameHasBeenSet(false),
-    m_destinationCommitSpecifierHasBeenSet(false),
-    m_sourceCommitSpecifierHasBeenSet(false),
-    m_mergeOption(MergeOptionTypeEnum::NOT_SET),
-    m_mergeOptionHasBeenSet(false),
-    m_maxMergeHunks(0),
-    m_maxMergeHunksHasBeenSet(false),
-    m_maxConflictFiles(0),
-    m_maxConflictFilesHasBeenSet(false),
-    m_filePathsHasBeenSet(false),
-    m_conflictDetailLevel(ConflictDetailLevelTypeEnum::NOT_SET),
-    m_conflictDetailLevelHasBeenSet(false),
-    m_conflictResolutionStrategy(ConflictResolutionStrategyTypeEnum::NOT_SET),
-    m_conflictResolutionStrategyHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String BatchDescribeMergeConflictsRequest::SerializePayload() const
 {
   JsonValue payload;

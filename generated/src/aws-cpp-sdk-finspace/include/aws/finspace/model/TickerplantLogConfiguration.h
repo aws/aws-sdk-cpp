@@ -36,7 +36,7 @@ namespace Model
   class TickerplantLogConfiguration
   {
   public:
-    AWS_FINSPACE_API TickerplantLogConfiguration();
+    AWS_FINSPACE_API TickerplantLogConfiguration() = default;
     AWS_FINSPACE_API TickerplantLogConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACE_API TickerplantLogConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,15 +46,14 @@ namespace Model
     /**
      * <p> The name of the volumes for tickerplant logs. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetTickerplantLogVolumes() const{ return m_tickerplantLogVolumes; }
+    inline const Aws::Vector<Aws::String>& GetTickerplantLogVolumes() const { return m_tickerplantLogVolumes; }
     inline bool TickerplantLogVolumesHasBeenSet() const { return m_tickerplantLogVolumesHasBeenSet; }
-    inline void SetTickerplantLogVolumes(const Aws::Vector<Aws::String>& value) { m_tickerplantLogVolumesHasBeenSet = true; m_tickerplantLogVolumes = value; }
-    inline void SetTickerplantLogVolumes(Aws::Vector<Aws::String>&& value) { m_tickerplantLogVolumesHasBeenSet = true; m_tickerplantLogVolumes = std::move(value); }
-    inline TickerplantLogConfiguration& WithTickerplantLogVolumes(const Aws::Vector<Aws::String>& value) { SetTickerplantLogVolumes(value); return *this;}
-    inline TickerplantLogConfiguration& WithTickerplantLogVolumes(Aws::Vector<Aws::String>&& value) { SetTickerplantLogVolumes(std::move(value)); return *this;}
-    inline TickerplantLogConfiguration& AddTickerplantLogVolumes(const Aws::String& value) { m_tickerplantLogVolumesHasBeenSet = true; m_tickerplantLogVolumes.push_back(value); return *this; }
-    inline TickerplantLogConfiguration& AddTickerplantLogVolumes(Aws::String&& value) { m_tickerplantLogVolumesHasBeenSet = true; m_tickerplantLogVolumes.push_back(std::move(value)); return *this; }
-    inline TickerplantLogConfiguration& AddTickerplantLogVolumes(const char* value) { m_tickerplantLogVolumesHasBeenSet = true; m_tickerplantLogVolumes.push_back(value); return *this; }
+    template<typename TickerplantLogVolumesT = Aws::Vector<Aws::String>>
+    void SetTickerplantLogVolumes(TickerplantLogVolumesT&& value) { m_tickerplantLogVolumesHasBeenSet = true; m_tickerplantLogVolumes = std::forward<TickerplantLogVolumesT>(value); }
+    template<typename TickerplantLogVolumesT = Aws::Vector<Aws::String>>
+    TickerplantLogConfiguration& WithTickerplantLogVolumes(TickerplantLogVolumesT&& value) { SetTickerplantLogVolumes(std::forward<TickerplantLogVolumesT>(value)); return *this;}
+    template<typename TickerplantLogVolumesT = Aws::String>
+    TickerplantLogConfiguration& AddTickerplantLogVolumes(TickerplantLogVolumesT&& value) { m_tickerplantLogVolumesHasBeenSet = true; m_tickerplantLogVolumes.emplace_back(std::forward<TickerplantLogVolumesT>(value)); return *this; }
     ///@}
   private:
 

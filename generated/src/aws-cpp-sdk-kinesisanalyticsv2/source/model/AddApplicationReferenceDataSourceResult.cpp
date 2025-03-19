@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AddApplicationReferenceDataSourceResult::AddApplicationReferenceDataSourceResult() : 
-    m_applicationVersionId(0)
-{
-}
-
 AddApplicationReferenceDataSourceResult::AddApplicationReferenceDataSourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : AddApplicationReferenceDataSourceResult()
 {
   *this = result;
 }
@@ -34,15 +28,13 @@ AddApplicationReferenceDataSourceResult& AddApplicationReferenceDataSourceResult
   if(jsonValue.ValueExists("ApplicationARN"))
   {
     m_applicationARN = jsonValue.GetString("ApplicationARN");
-
+    m_applicationARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationVersionId"))
   {
     m_applicationVersionId = jsonValue.GetInt64("ApplicationVersionId");
-
+    m_applicationVersionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReferenceDataSourceDescriptions"))
   {
     Aws::Utils::Array<JsonView> referenceDataSourceDescriptionsJsonList = jsonValue.GetArray("ReferenceDataSourceDescriptions");
@@ -50,14 +42,15 @@ AddApplicationReferenceDataSourceResult& AddApplicationReferenceDataSourceResult
     {
       m_referenceDataSourceDescriptions.push_back(referenceDataSourceDescriptionsJsonList[referenceDataSourceDescriptionsIndex].AsObject());
     }
+    m_referenceDataSourceDescriptionsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

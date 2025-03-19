@@ -24,7 +24,7 @@ namespace Model
   class CreateEntitlementRequest : public AppStreamRequest
   {
   public:
-    AWS_APPSTREAM_API CreateEntitlementRequest();
+    AWS_APPSTREAM_API CreateEntitlementRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,68 +41,60 @@ namespace Model
     /**
      * <p>The name of the entitlement.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateEntitlementRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateEntitlementRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateEntitlementRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateEntitlementRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the stack with which the entitlement is associated.</p>
      */
-    inline const Aws::String& GetStackName() const{ return m_stackName; }
+    inline const Aws::String& GetStackName() const { return m_stackName; }
     inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
-    inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
-    inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
-    inline void SetStackName(const char* value) { m_stackNameHasBeenSet = true; m_stackName.assign(value); }
-    inline CreateEntitlementRequest& WithStackName(const Aws::String& value) { SetStackName(value); return *this;}
-    inline CreateEntitlementRequest& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
-    inline CreateEntitlementRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
+    template<typename StackNameT = Aws::String>
+    void SetStackName(StackNameT&& value) { m_stackNameHasBeenSet = true; m_stackName = std::forward<StackNameT>(value); }
+    template<typename StackNameT = Aws::String>
+    CreateEntitlementRequest& WithStackName(StackNameT&& value) { SetStackName(std::forward<StackNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the entitlement.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateEntitlementRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateEntitlementRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateEntitlementRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateEntitlementRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies whether all or selected apps are entitled.</p>
      */
-    inline const AppVisibility& GetAppVisibility() const{ return m_appVisibility; }
+    inline AppVisibility GetAppVisibility() const { return m_appVisibility; }
     inline bool AppVisibilityHasBeenSet() const { return m_appVisibilityHasBeenSet; }
-    inline void SetAppVisibility(const AppVisibility& value) { m_appVisibilityHasBeenSet = true; m_appVisibility = value; }
-    inline void SetAppVisibility(AppVisibility&& value) { m_appVisibilityHasBeenSet = true; m_appVisibility = std::move(value); }
-    inline CreateEntitlementRequest& WithAppVisibility(const AppVisibility& value) { SetAppVisibility(value); return *this;}
-    inline CreateEntitlementRequest& WithAppVisibility(AppVisibility&& value) { SetAppVisibility(std::move(value)); return *this;}
+    inline void SetAppVisibility(AppVisibility value) { m_appVisibilityHasBeenSet = true; m_appVisibility = value; }
+    inline CreateEntitlementRequest& WithAppVisibility(AppVisibility value) { SetAppVisibility(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The attributes of the entitlement.</p>
      */
-    inline const Aws::Vector<EntitlementAttribute>& GetAttributes() const{ return m_attributes; }
+    inline const Aws::Vector<EntitlementAttribute>& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const Aws::Vector<EntitlementAttribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(Aws::Vector<EntitlementAttribute>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline CreateEntitlementRequest& WithAttributes(const Aws::Vector<EntitlementAttribute>& value) { SetAttributes(value); return *this;}
-    inline CreateEntitlementRequest& WithAttributes(Aws::Vector<EntitlementAttribute>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline CreateEntitlementRequest& AddAttributes(const EntitlementAttribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
-    inline CreateEntitlementRequest& AddAttributes(EntitlementAttribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
+    template<typename AttributesT = Aws::Vector<EntitlementAttribute>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Vector<EntitlementAttribute>>
+    CreateEntitlementRequest& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    template<typename AttributesT = EntitlementAttribute>
+    CreateEntitlementRequest& AddAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes.emplace_back(std::forward<AttributesT>(value)); return *this; }
     ///@}
   private:
 
@@ -115,7 +107,7 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    AppVisibility m_appVisibility;
+    AppVisibility m_appVisibility{AppVisibility::NOT_SET};
     bool m_appVisibilityHasBeenSet = false;
 
     Aws::Vector<EntitlementAttribute> m_attributes;

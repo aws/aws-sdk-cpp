@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-GroupMember::GroupMember() : 
-    m_arnHasBeenSet(false),
-    m_memberNameHasBeenSet(false)
-{
-}
-
 GroupMember::GroupMember(JsonView jsonValue)
-  : GroupMember()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ GroupMember& GroupMember::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MemberName"))
   {
     m_memberName = jsonValue.GetString("MemberName");
-
     m_memberNameHasBeenSet = true;
   }
-
   return *this;
 }
 

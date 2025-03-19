@@ -18,17 +18,7 @@ namespace Greengrass
 namespace Model
 {
 
-ResourceDataContainer::ResourceDataContainer() : 
-    m_localDeviceResourceDataHasBeenSet(false),
-    m_localVolumeResourceDataHasBeenSet(false),
-    m_s3MachineLearningModelResourceDataHasBeenSet(false),
-    m_sageMakerMachineLearningModelResourceDataHasBeenSet(false),
-    m_secretsManagerSecretResourceDataHasBeenSet(false)
-{
-}
-
 ResourceDataContainer::ResourceDataContainer(JsonView jsonValue)
-  : ResourceDataContainer()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ ResourceDataContainer& ResourceDataContainer::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LocalDeviceResourceData"))
   {
     m_localDeviceResourceData = jsonValue.GetObject("LocalDeviceResourceData");
-
     m_localDeviceResourceDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LocalVolumeResourceData"))
   {
     m_localVolumeResourceData = jsonValue.GetObject("LocalVolumeResourceData");
-
     m_localVolumeResourceDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3MachineLearningModelResourceData"))
   {
     m_s3MachineLearningModelResourceData = jsonValue.GetObject("S3MachineLearningModelResourceData");
-
     m_s3MachineLearningModelResourceDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SageMakerMachineLearningModelResourceData"))
   {
     m_sageMakerMachineLearningModelResourceData = jsonValue.GetObject("SageMakerMachineLearningModelResourceData");
-
     m_sageMakerMachineLearningModelResourceDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretsManagerSecretResourceData"))
   {
     m_secretsManagerSecretResourceData = jsonValue.GetObject("SecretsManagerSecretResourceData");
-
     m_secretsManagerSecretResourceDataHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -29,7 +29,7 @@ namespace Model
   class ListProvisioningArtifactsResult
   {
   public:
-    AWS_SERVICECATALOG_API ListProvisioningArtifactsResult();
+    AWS_SERVICECATALOG_API ListProvisioningArtifactsResult() = default;
     AWS_SERVICECATALOG_API ListProvisioningArtifactsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SERVICECATALOG_API ListProvisioningArtifactsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Information about the provisioning artifacts.</p>
      */
-    inline const Aws::Vector<ProvisioningArtifactDetail>& GetProvisioningArtifactDetails() const{ return m_provisioningArtifactDetails; }
-    inline void SetProvisioningArtifactDetails(const Aws::Vector<ProvisioningArtifactDetail>& value) { m_provisioningArtifactDetails = value; }
-    inline void SetProvisioningArtifactDetails(Aws::Vector<ProvisioningArtifactDetail>&& value) { m_provisioningArtifactDetails = std::move(value); }
-    inline ListProvisioningArtifactsResult& WithProvisioningArtifactDetails(const Aws::Vector<ProvisioningArtifactDetail>& value) { SetProvisioningArtifactDetails(value); return *this;}
-    inline ListProvisioningArtifactsResult& WithProvisioningArtifactDetails(Aws::Vector<ProvisioningArtifactDetail>&& value) { SetProvisioningArtifactDetails(std::move(value)); return *this;}
-    inline ListProvisioningArtifactsResult& AddProvisioningArtifactDetails(const ProvisioningArtifactDetail& value) { m_provisioningArtifactDetails.push_back(value); return *this; }
-    inline ListProvisioningArtifactsResult& AddProvisioningArtifactDetails(ProvisioningArtifactDetail&& value) { m_provisioningArtifactDetails.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ProvisioningArtifactDetail>& GetProvisioningArtifactDetails() const { return m_provisioningArtifactDetails; }
+    template<typename ProvisioningArtifactDetailsT = Aws::Vector<ProvisioningArtifactDetail>>
+    void SetProvisioningArtifactDetails(ProvisioningArtifactDetailsT&& value) { m_provisioningArtifactDetailsHasBeenSet = true; m_provisioningArtifactDetails = std::forward<ProvisioningArtifactDetailsT>(value); }
+    template<typename ProvisioningArtifactDetailsT = Aws::Vector<ProvisioningArtifactDetail>>
+    ListProvisioningArtifactsResult& WithProvisioningArtifactDetails(ProvisioningArtifactDetailsT&& value) { SetProvisioningArtifactDetails(std::forward<ProvisioningArtifactDetailsT>(value)); return *this;}
+    template<typename ProvisioningArtifactDetailsT = ProvisioningArtifactDetail>
+    ListProvisioningArtifactsResult& AddProvisioningArtifactDetails(ProvisioningArtifactDetailsT&& value) { m_provisioningArtifactDetailsHasBeenSet = true; m_provisioningArtifactDetails.emplace_back(std::forward<ProvisioningArtifactDetailsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The page token to use to retrieve the next set of results. If there are no
      * additional results, this value is null.</p>
      */
-    inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
-    inline void SetNextPageToken(const Aws::String& value) { m_nextPageToken = value; }
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
-    inline void SetNextPageToken(const char* value) { m_nextPageToken.assign(value); }
-    inline ListProvisioningArtifactsResult& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
-    inline ListProvisioningArtifactsResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
-    inline ListProvisioningArtifactsResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
+    inline const Aws::String& GetNextPageToken() const { return m_nextPageToken; }
+    template<typename NextPageTokenT = Aws::String>
+    void SetNextPageToken(NextPageTokenT&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::forward<NextPageTokenT>(value); }
+    template<typename NextPageTokenT = Aws::String>
+    ListProvisioningArtifactsResult& WithNextPageToken(NextPageTokenT&& value) { SetNextPageToken(std::forward<NextPageTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListProvisioningArtifactsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListProvisioningArtifactsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListProvisioningArtifactsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListProvisioningArtifactsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ProvisioningArtifactDetail> m_provisioningArtifactDetails;
+    bool m_provisioningArtifactDetailsHasBeenSet = false;
 
     Aws::String m_nextPageToken;
+    bool m_nextPageTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

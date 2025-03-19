@@ -18,16 +18,7 @@ namespace AutoScalingPlans
 namespace Model
 {
 
-ScalingPolicy::ScalingPolicy() : 
-    m_policyNameHasBeenSet(false),
-    m_policyType(PolicyType::NOT_SET),
-    m_policyTypeHasBeenSet(false),
-    m_targetTrackingConfigurationHasBeenSet(false)
-{
-}
-
 ScalingPolicy::ScalingPolicy(JsonView jsonValue)
-  : ScalingPolicy()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ScalingPolicy& ScalingPolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PolicyName"))
   {
     m_policyName = jsonValue.GetString("PolicyName");
-
     m_policyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolicyType"))
   {
     m_policyType = PolicyTypeMapper::GetPolicyTypeForName(jsonValue.GetString("PolicyType"));
-
     m_policyTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetTrackingConfiguration"))
   {
     m_targetTrackingConfiguration = jsonValue.GetObject("TargetTrackingConfiguration");
-
     m_targetTrackingConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

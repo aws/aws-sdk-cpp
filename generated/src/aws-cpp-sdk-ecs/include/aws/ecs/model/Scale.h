@@ -32,7 +32,7 @@ namespace Model
   class Scale
   {
   public:
-    AWS_ECS_API Scale();
+    AWS_ECS_API Scale() = default;
     AWS_ECS_API Scale(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Scale& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * <code>desiredCount</code>, to scale the task set. Accepted values are numbers
      * between 0 and 100.</p>
      */
-    inline double GetValue() const{ return m_value; }
+    inline double GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
     inline Scale& WithValue(double value) { SetValue(value); return *this;}
@@ -54,19 +54,17 @@ namespace Model
     /**
      * <p>The unit of measure for the scale value.</p>
      */
-    inline const ScaleUnit& GetUnit() const{ return m_unit; }
+    inline ScaleUnit GetUnit() const { return m_unit; }
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-    inline void SetUnit(const ScaleUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
-    inline void SetUnit(ScaleUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-    inline Scale& WithUnit(const ScaleUnit& value) { SetUnit(value); return *this;}
-    inline Scale& WithUnit(ScaleUnit&& value) { SetUnit(std::move(value)); return *this;}
+    inline void SetUnit(ScaleUnit value) { m_unitHasBeenSet = true; m_unit = value; }
+    inline Scale& WithUnit(ScaleUnit value) { SetUnit(value); return *this;}
     ///@}
   private:
 
-    double m_value;
+    double m_value{0.0};
     bool m_valueHasBeenSet = false;
 
-    ScaleUnit m_unit;
+    ScaleUnit m_unit{ScaleUnit::NOT_SET};
     bool m_unitHasBeenSet = false;
   };
 

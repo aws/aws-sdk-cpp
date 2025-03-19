@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartImportTaskResult::StartImportTaskResult()
-{
-}
-
 StartImportTaskResult::StartImportTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ StartImportTaskResult& StartImportTaskResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("task"))
   {
     m_task = jsonValue.GetObject("task");
-
+    m_taskHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

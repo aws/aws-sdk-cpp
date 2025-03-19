@@ -21,7 +21,7 @@ namespace Model
   class GetInferenceProfileRequest : public BedrockRequest
   {
   public:
-    AWS_BEDROCK_API GetInferenceProfileRequest();
+    AWS_BEDROCK_API GetInferenceProfileRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The ID or Amazon Resource Name (ARN) of the inference profile.</p>
      */
-    inline const Aws::String& GetInferenceProfileIdentifier() const{ return m_inferenceProfileIdentifier; }
+    inline const Aws::String& GetInferenceProfileIdentifier() const { return m_inferenceProfileIdentifier; }
     inline bool InferenceProfileIdentifierHasBeenSet() const { return m_inferenceProfileIdentifierHasBeenSet; }
-    inline void SetInferenceProfileIdentifier(const Aws::String& value) { m_inferenceProfileIdentifierHasBeenSet = true; m_inferenceProfileIdentifier = value; }
-    inline void SetInferenceProfileIdentifier(Aws::String&& value) { m_inferenceProfileIdentifierHasBeenSet = true; m_inferenceProfileIdentifier = std::move(value); }
-    inline void SetInferenceProfileIdentifier(const char* value) { m_inferenceProfileIdentifierHasBeenSet = true; m_inferenceProfileIdentifier.assign(value); }
-    inline GetInferenceProfileRequest& WithInferenceProfileIdentifier(const Aws::String& value) { SetInferenceProfileIdentifier(value); return *this;}
-    inline GetInferenceProfileRequest& WithInferenceProfileIdentifier(Aws::String&& value) { SetInferenceProfileIdentifier(std::move(value)); return *this;}
-    inline GetInferenceProfileRequest& WithInferenceProfileIdentifier(const char* value) { SetInferenceProfileIdentifier(value); return *this;}
+    template<typename InferenceProfileIdentifierT = Aws::String>
+    void SetInferenceProfileIdentifier(InferenceProfileIdentifierT&& value) { m_inferenceProfileIdentifierHasBeenSet = true; m_inferenceProfileIdentifier = std::forward<InferenceProfileIdentifierT>(value); }
+    template<typename InferenceProfileIdentifierT = Aws::String>
+    GetInferenceProfileRequest& WithInferenceProfileIdentifier(InferenceProfileIdentifierT&& value) { SetInferenceProfileIdentifier(std::forward<InferenceProfileIdentifierT>(value)); return *this;}
     ///@}
   private:
 

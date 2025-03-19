@@ -18,16 +18,7 @@ namespace Glue
 namespace Model
 {
 
-PropertyPredicate::PropertyPredicate() : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_comparator(Comparator::NOT_SET),
-    m_comparatorHasBeenSet(false)
-{
-}
-
 PropertyPredicate::PropertyPredicate(JsonView jsonValue)
-  : PropertyPredicate()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ PropertyPredicate& PropertyPredicate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Comparator"))
   {
     m_comparator = ComparatorMapper::GetComparatorForName(jsonValue.GetString("Comparator"));
-
     m_comparatorHasBeenSet = true;
   }
-
   return *this;
 }
 

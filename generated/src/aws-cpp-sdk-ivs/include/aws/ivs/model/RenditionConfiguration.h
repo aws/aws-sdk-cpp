@@ -34,7 +34,7 @@ namespace Model
   class RenditionConfiguration
   {
   public:
-    AWS_IVS_API RenditionConfiguration();
+    AWS_IVS_API RenditionConfiguration() = default;
     AWS_IVS_API RenditionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVS_API RenditionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,10 @@ namespace Model
      * <code>CUSTOM</code> is specified, a set of renditions must be specified in the
      * <code>renditions</code> field. Default: <code>ALL</code>.</p>
      */
-    inline const RenditionConfigurationRenditionSelection& GetRenditionSelection() const{ return m_renditionSelection; }
+    inline RenditionConfigurationRenditionSelection GetRenditionSelection() const { return m_renditionSelection; }
     inline bool RenditionSelectionHasBeenSet() const { return m_renditionSelectionHasBeenSet; }
-    inline void SetRenditionSelection(const RenditionConfigurationRenditionSelection& value) { m_renditionSelectionHasBeenSet = true; m_renditionSelection = value; }
-    inline void SetRenditionSelection(RenditionConfigurationRenditionSelection&& value) { m_renditionSelectionHasBeenSet = true; m_renditionSelection = std::move(value); }
-    inline RenditionConfiguration& WithRenditionSelection(const RenditionConfigurationRenditionSelection& value) { SetRenditionSelection(value); return *this;}
-    inline RenditionConfiguration& WithRenditionSelection(RenditionConfigurationRenditionSelection&& value) { SetRenditionSelection(std::move(value)); return *this;}
+    inline void SetRenditionSelection(RenditionConfigurationRenditionSelection value) { m_renditionSelectionHasBeenSet = true; m_renditionSelection = value; }
+    inline RenditionConfiguration& WithRenditionSelection(RenditionConfigurationRenditionSelection value) { SetRenditionSelection(value); return *this;}
     ///@}
 
     ///@{
@@ -65,18 +63,17 @@ namespace Model
      * href="https://docs.aws.amazon.com/ivs/latest/userguide/record-to-s3.html">Auto-Record
      * to Amazon S3</a>.</p>
      */
-    inline const Aws::Vector<RenditionConfigurationRendition>& GetRenditions() const{ return m_renditions; }
+    inline const Aws::Vector<RenditionConfigurationRendition>& GetRenditions() const { return m_renditions; }
     inline bool RenditionsHasBeenSet() const { return m_renditionsHasBeenSet; }
-    inline void SetRenditions(const Aws::Vector<RenditionConfigurationRendition>& value) { m_renditionsHasBeenSet = true; m_renditions = value; }
-    inline void SetRenditions(Aws::Vector<RenditionConfigurationRendition>&& value) { m_renditionsHasBeenSet = true; m_renditions = std::move(value); }
-    inline RenditionConfiguration& WithRenditions(const Aws::Vector<RenditionConfigurationRendition>& value) { SetRenditions(value); return *this;}
-    inline RenditionConfiguration& WithRenditions(Aws::Vector<RenditionConfigurationRendition>&& value) { SetRenditions(std::move(value)); return *this;}
-    inline RenditionConfiguration& AddRenditions(const RenditionConfigurationRendition& value) { m_renditionsHasBeenSet = true; m_renditions.push_back(value); return *this; }
-    inline RenditionConfiguration& AddRenditions(RenditionConfigurationRendition&& value) { m_renditionsHasBeenSet = true; m_renditions.push_back(std::move(value)); return *this; }
+    template<typename RenditionsT = Aws::Vector<RenditionConfigurationRendition>>
+    void SetRenditions(RenditionsT&& value) { m_renditionsHasBeenSet = true; m_renditions = std::forward<RenditionsT>(value); }
+    template<typename RenditionsT = Aws::Vector<RenditionConfigurationRendition>>
+    RenditionConfiguration& WithRenditions(RenditionsT&& value) { SetRenditions(std::forward<RenditionsT>(value)); return *this;}
+    inline RenditionConfiguration& AddRenditions(RenditionConfigurationRendition value) { m_renditionsHasBeenSet = true; m_renditions.push_back(value); return *this; }
     ///@}
   private:
 
-    RenditionConfigurationRenditionSelection m_renditionSelection;
+    RenditionConfigurationRenditionSelection m_renditionSelection{RenditionConfigurationRenditionSelection::NOT_SET};
     bool m_renditionSelectionHasBeenSet = false;
 
     Aws::Vector<RenditionConfigurationRendition> m_renditions;

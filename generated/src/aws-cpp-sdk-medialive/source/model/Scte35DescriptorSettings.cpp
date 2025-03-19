@@ -18,13 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-Scte35DescriptorSettings::Scte35DescriptorSettings() : 
-    m_segmentationDescriptorScte35DescriptorSettingsHasBeenSet(false)
-{
-}
-
 Scte35DescriptorSettings::Scte35DescriptorSettings(JsonView jsonValue)
-  : Scte35DescriptorSettings()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Scte35DescriptorSettings& Scte35DescriptorSettings::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("segmentationDescriptorScte35DescriptorSettings"))
   {
     m_segmentationDescriptorScte35DescriptorSettings = jsonValue.GetObject("segmentationDescriptorScte35DescriptorSettings");
-
     m_segmentationDescriptorScte35DescriptorSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

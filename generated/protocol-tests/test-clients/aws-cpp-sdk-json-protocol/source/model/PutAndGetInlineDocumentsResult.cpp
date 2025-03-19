@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutAndGetInlineDocumentsResult::PutAndGetInlineDocumentsResult()
-{
-}
-
 PutAndGetInlineDocumentsResult::PutAndGetInlineDocumentsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ PutAndGetInlineDocumentsResult& PutAndGetInlineDocumentsResult::operator =(const
   if(jsonValue.ValueExists("inlineDocument"))
   {
     m_inlineDocument = jsonValue.GetObject("inlineDocument");
-
+    m_inlineDocumentHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

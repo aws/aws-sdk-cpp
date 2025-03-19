@@ -18,25 +18,7 @@ namespace AppFabric
 namespace Model
 {
 
-AppAuthorization::AppAuthorization() : 
-    m_appAuthorizationArnHasBeenSet(false),
-    m_appBundleArnHasBeenSet(false),
-    m_appHasBeenSet(false),
-    m_tenantHasBeenSet(false),
-    m_authType(AuthType::NOT_SET),
-    m_authTypeHasBeenSet(false),
-    m_status(AppAuthorizationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_persona(Persona::NOT_SET),
-    m_personaHasBeenSet(false),
-    m_authUrlHasBeenSet(false)
-{
-}
-
 AppAuthorization::AppAuthorization(JsonView jsonValue)
-  : AppAuthorization()
 {
   *this = jsonValue;
 }
@@ -46,73 +28,53 @@ AppAuthorization& AppAuthorization::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("appAuthorizationArn"))
   {
     m_appAuthorizationArn = jsonValue.GetString("appAuthorizationArn");
-
     m_appAuthorizationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("appBundleArn"))
   {
     m_appBundleArn = jsonValue.GetString("appBundleArn");
-
     m_appBundleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("app"))
   {
     m_app = jsonValue.GetString("app");
-
     m_appHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tenant"))
   {
     m_tenant = jsonValue.GetObject("tenant");
-
     m_tenantHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authType"))
   {
     m_authType = AuthTypeMapper::GetAuthTypeForName(jsonValue.GetString("authType"));
-
     m_authTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = AppAuthorizationStatusMapper::GetAppAuthorizationStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("persona"))
   {
     m_persona = PersonaMapper::GetPersonaForName(jsonValue.GetString("persona"));
-
     m_personaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authUrl"))
   {
     m_authUrl = jsonValue.GetString("authUrl");
-
     m_authUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

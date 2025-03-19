@@ -18,39 +18,7 @@ namespace MediaPackage
 namespace Model
 {
 
-DashPackage::DashPackage() : 
-    m_adTriggersHasBeenSet(false),
-    m_adsOnDeliveryRestrictions(AdsOnDeliveryRestrictions::NOT_SET),
-    m_adsOnDeliveryRestrictionsHasBeenSet(false),
-    m_encryptionHasBeenSet(false),
-    m_includeIframeOnlyStream(false),
-    m_includeIframeOnlyStreamHasBeenSet(false),
-    m_manifestLayout(ManifestLayout::NOT_SET),
-    m_manifestLayoutHasBeenSet(false),
-    m_manifestWindowSeconds(0),
-    m_manifestWindowSecondsHasBeenSet(false),
-    m_minBufferTimeSeconds(0),
-    m_minBufferTimeSecondsHasBeenSet(false),
-    m_minUpdatePeriodSeconds(0),
-    m_minUpdatePeriodSecondsHasBeenSet(false),
-    m_periodTriggersHasBeenSet(false),
-    m_profile(Profile::NOT_SET),
-    m_profileHasBeenSet(false),
-    m_segmentDurationSeconds(0),
-    m_segmentDurationSecondsHasBeenSet(false),
-    m_segmentTemplateFormat(SegmentTemplateFormat::NOT_SET),
-    m_segmentTemplateFormatHasBeenSet(false),
-    m_streamSelectionHasBeenSet(false),
-    m_suggestedPresentationDelaySeconds(0),
-    m_suggestedPresentationDelaySecondsHasBeenSet(false),
-    m_utcTiming(UtcTiming::NOT_SET),
-    m_utcTimingHasBeenSet(false),
-    m_utcTimingUriHasBeenSet(false)
-{
-}
-
 DashPackage::DashPackage(JsonView jsonValue)
-  : DashPackage()
 {
   *this = jsonValue;
 }
@@ -66,56 +34,41 @@ DashPackage& DashPackage::operator =(JsonView jsonValue)
     }
     m_adTriggersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("adsOnDeliveryRestrictions"))
   {
     m_adsOnDeliveryRestrictions = AdsOnDeliveryRestrictionsMapper::GetAdsOnDeliveryRestrictionsForName(jsonValue.GetString("adsOnDeliveryRestrictions"));
-
     m_adsOnDeliveryRestrictionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encryption"))
   {
     m_encryption = jsonValue.GetObject("encryption");
-
     m_encryptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("includeIframeOnlyStream"))
   {
     m_includeIframeOnlyStream = jsonValue.GetBool("includeIframeOnlyStream");
-
     m_includeIframeOnlyStreamHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("manifestLayout"))
   {
     m_manifestLayout = ManifestLayoutMapper::GetManifestLayoutForName(jsonValue.GetString("manifestLayout"));
-
     m_manifestLayoutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("manifestWindowSeconds"))
   {
     m_manifestWindowSeconds = jsonValue.GetInteger("manifestWindowSeconds");
-
     m_manifestWindowSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("minBufferTimeSeconds"))
   {
     m_minBufferTimeSeconds = jsonValue.GetInteger("minBufferTimeSeconds");
-
     m_minBufferTimeSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("minUpdatePeriodSeconds"))
   {
     m_minUpdatePeriodSeconds = jsonValue.GetInteger("minUpdatePeriodSeconds");
-
     m_minUpdatePeriodSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("periodTriggers"))
   {
     Aws::Utils::Array<JsonView> periodTriggersJsonList = jsonValue.GetArray("periodTriggers");
@@ -125,56 +78,41 @@ DashPackage& DashPackage::operator =(JsonView jsonValue)
     }
     m_periodTriggersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("profile"))
   {
     m_profile = ProfileMapper::GetProfileForName(jsonValue.GetString("profile"));
-
     m_profileHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("segmentDurationSeconds"))
   {
     m_segmentDurationSeconds = jsonValue.GetInteger("segmentDurationSeconds");
-
     m_segmentDurationSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("segmentTemplateFormat"))
   {
     m_segmentTemplateFormat = SegmentTemplateFormatMapper::GetSegmentTemplateFormatForName(jsonValue.GetString("segmentTemplateFormat"));
-
     m_segmentTemplateFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("streamSelection"))
   {
     m_streamSelection = jsonValue.GetObject("streamSelection");
-
     m_streamSelectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("suggestedPresentationDelaySeconds"))
   {
     m_suggestedPresentationDelaySeconds = jsonValue.GetInteger("suggestedPresentationDelaySeconds");
-
     m_suggestedPresentationDelaySecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("utcTiming"))
   {
     m_utcTiming = UtcTimingMapper::GetUtcTimingForName(jsonValue.GetString("utcTiming"));
-
     m_utcTimingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("utcTimingUri"))
   {
     m_utcTimingUri = jsonValue.GetString("utcTimingUri");
-
     m_utcTimingUriHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace IoTEventsData
 namespace Model
 {
 
-UpdateDetectorRequest::UpdateDetectorRequest() : 
-    m_messageIdHasBeenSet(false),
-    m_detectorModelNameHasBeenSet(false),
-    m_keyValueHasBeenSet(false),
-    m_stateHasBeenSet(false)
-{
-}
-
 UpdateDetectorRequest::UpdateDetectorRequest(JsonView jsonValue)
-  : UpdateDetectorRequest()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ UpdateDetectorRequest& UpdateDetectorRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("messageId"))
   {
     m_messageId = jsonValue.GetString("messageId");
-
     m_messageIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("detectorModelName"))
   {
     m_detectorModelName = jsonValue.GetString("detectorModelName");
-
     m_detectorModelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("keyValue"))
   {
     m_keyValue = jsonValue.GetString("keyValue");
-
     m_keyValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = jsonValue.GetObject("state");
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

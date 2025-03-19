@@ -21,7 +21,7 @@ namespace Model
   class GetParameterRequest : public SSMRequest
   {
   public:
-    AWS_SSM_API GetParameterRequest();
+    AWS_SSM_API GetParameterRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
      * with shared parameters</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline GetParameterRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetParameterRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetParameterRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetParameterRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,7 +59,7 @@ namespace Model
      * <p>Return decrypted values for secure string parameters. This flag is ignored
      * for <code>String</code> and <code>StringList</code> parameter types.</p>
      */
-    inline bool GetWithDecryption() const{ return m_withDecryption; }
+    inline bool GetWithDecryption() const { return m_withDecryption; }
     inline bool WithDecryptionHasBeenSet() const { return m_withDecryptionHasBeenSet; }
     inline void SetWithDecryption(bool value) { m_withDecryptionHasBeenSet = true; m_withDecryption = value; }
     inline GetParameterRequest& WithWithDecryption(bool value) { SetWithDecryption(value); return *this;}
@@ -71,7 +69,7 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    bool m_withDecryption;
+    bool m_withDecryption{false};
     bool m_withDecryptionHasBeenSet = false;
   };
 

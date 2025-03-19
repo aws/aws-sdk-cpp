@@ -18,16 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-Statistics::Statistics() : 
-    m_approximateNumberOfObjectsToProcess(0.0),
-    m_approximateNumberOfObjectsToProcessHasBeenSet(false),
-    m_numberOfRuns(0.0),
-    m_numberOfRunsHasBeenSet(false)
-{
-}
-
 Statistics::Statistics(JsonView jsonValue)
-  : Statistics()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ Statistics& Statistics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("approximateNumberOfObjectsToProcess"))
   {
     m_approximateNumberOfObjectsToProcess = jsonValue.GetDouble("approximateNumberOfObjectsToProcess");
-
     m_approximateNumberOfObjectsToProcessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numberOfRuns"))
   {
     m_numberOfRuns = jsonValue.GetDouble("numberOfRuns");
-
     m_numberOfRunsHasBeenSet = true;
   }
-
   return *this;
 }
 

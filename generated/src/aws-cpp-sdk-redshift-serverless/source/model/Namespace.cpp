@@ -18,26 +18,7 @@ namespace RedshiftServerless
 namespace Model
 {
 
-Namespace::Namespace() : 
-    m_adminPasswordSecretArnHasBeenSet(false),
-    m_adminPasswordSecretKmsKeyIdHasBeenSet(false),
-    m_adminUsernameHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_dbNameHasBeenSet(false),
-    m_defaultIamRoleArnHasBeenSet(false),
-    m_iamRolesHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_logExportsHasBeenSet(false),
-    m_namespaceArnHasBeenSet(false),
-    m_namespaceIdHasBeenSet(false),
-    m_namespaceNameHasBeenSet(false),
-    m_status(NamespaceStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 Namespace::Namespace(JsonView jsonValue)
-  : Namespace()
 {
   *this = jsonValue;
 }
@@ -47,45 +28,33 @@ Namespace& Namespace::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("adminPasswordSecretArn"))
   {
     m_adminPasswordSecretArn = jsonValue.GetString("adminPasswordSecretArn");
-
     m_adminPasswordSecretArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("adminPasswordSecretKmsKeyId"))
   {
     m_adminPasswordSecretKmsKeyId = jsonValue.GetString("adminPasswordSecretKmsKeyId");
-
     m_adminPasswordSecretKmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("adminUsername"))
   {
     m_adminUsername = jsonValue.GetString("adminUsername");
-
     m_adminUsernameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDate"))
   {
     m_creationDate = jsonValue.GetString("creationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dbName"))
   {
     m_dbName = jsonValue.GetString("dbName");
-
     m_dbNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultIamRoleArn"))
   {
     m_defaultIamRoleArn = jsonValue.GetString("defaultIamRoleArn");
-
     m_defaultIamRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("iamRoles"))
   {
     Aws::Utils::Array<JsonView> iamRolesJsonList = jsonValue.GetArray("iamRoles");
@@ -95,14 +64,11 @@ Namespace& Namespace::operator =(JsonView jsonValue)
     }
     m_iamRolesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logExports"))
   {
     Aws::Utils::Array<JsonView> logExportsJsonList = jsonValue.GetArray("logExports");
@@ -112,35 +78,26 @@ Namespace& Namespace::operator =(JsonView jsonValue)
     }
     m_logExportsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("namespaceArn"))
   {
     m_namespaceArn = jsonValue.GetString("namespaceArn");
-
     m_namespaceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("namespaceId"))
   {
     m_namespaceId = jsonValue.GetString("namespaceId");
-
     m_namespaceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("namespaceName"))
   {
     m_namespaceName = jsonValue.GetString("namespaceName");
-
     m_namespaceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = NamespaceStatusMapper::GetNamespaceStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

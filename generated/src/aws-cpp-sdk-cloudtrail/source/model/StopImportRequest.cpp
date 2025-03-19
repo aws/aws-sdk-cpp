@@ -12,11 +12,6 @@ using namespace Aws::CloudTrail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopImportRequest::StopImportRequest() : 
-    m_importIdHasBeenSet(false)
-{
-}
-
 Aws::String StopImportRequest::SerializePayload() const
 {
   JsonValue payload;

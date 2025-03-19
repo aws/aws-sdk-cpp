@@ -12,12 +12,6 @@ using namespace Aws::Detective::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetGraphMemberDatasourcesRequest::BatchGetGraphMemberDatasourcesRequest() : 
-    m_graphArnHasBeenSet(false),
-    m_accountIdsHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetGraphMemberDatasourcesRequest::SerializePayload() const
 {
   JsonValue payload;

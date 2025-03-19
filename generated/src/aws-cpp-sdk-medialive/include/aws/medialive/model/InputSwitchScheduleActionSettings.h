@@ -34,7 +34,7 @@ namespace Model
   class InputSwitchScheduleActionSettings
   {
   public:
-    AWS_MEDIALIVE_API InputSwitchScheduleActionSettings();
+    AWS_MEDIALIVE_API InputSwitchScheduleActionSettings() = default;
     AWS_MEDIALIVE_API InputSwitchScheduleActionSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API InputSwitchScheduleActionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * The name of the input attachment (not the name of the input!) to switch to. The
      * name is specified in the channel configuration.
      */
-    inline const Aws::String& GetInputAttachmentNameReference() const{ return m_inputAttachmentNameReference; }
+    inline const Aws::String& GetInputAttachmentNameReference() const { return m_inputAttachmentNameReference; }
     inline bool InputAttachmentNameReferenceHasBeenSet() const { return m_inputAttachmentNameReferenceHasBeenSet; }
-    inline void SetInputAttachmentNameReference(const Aws::String& value) { m_inputAttachmentNameReferenceHasBeenSet = true; m_inputAttachmentNameReference = value; }
-    inline void SetInputAttachmentNameReference(Aws::String&& value) { m_inputAttachmentNameReferenceHasBeenSet = true; m_inputAttachmentNameReference = std::move(value); }
-    inline void SetInputAttachmentNameReference(const char* value) { m_inputAttachmentNameReferenceHasBeenSet = true; m_inputAttachmentNameReference.assign(value); }
-    inline InputSwitchScheduleActionSettings& WithInputAttachmentNameReference(const Aws::String& value) { SetInputAttachmentNameReference(value); return *this;}
-    inline InputSwitchScheduleActionSettings& WithInputAttachmentNameReference(Aws::String&& value) { SetInputAttachmentNameReference(std::move(value)); return *this;}
-    inline InputSwitchScheduleActionSettings& WithInputAttachmentNameReference(const char* value) { SetInputAttachmentNameReference(value); return *this;}
+    template<typename InputAttachmentNameReferenceT = Aws::String>
+    void SetInputAttachmentNameReference(InputAttachmentNameReferenceT&& value) { m_inputAttachmentNameReferenceHasBeenSet = true; m_inputAttachmentNameReference = std::forward<InputAttachmentNameReferenceT>(value); }
+    template<typename InputAttachmentNameReferenceT = Aws::String>
+    InputSwitchScheduleActionSettings& WithInputAttachmentNameReference(InputAttachmentNameReferenceT&& value) { SetInputAttachmentNameReference(std::forward<InputAttachmentNameReferenceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +58,12 @@ namespace Model
      * Settings to let you create a clip of the file input, in order to set up the
      * input to ingest only a portion of the file.
      */
-    inline const InputClippingSettings& GetInputClippingSettings() const{ return m_inputClippingSettings; }
+    inline const InputClippingSettings& GetInputClippingSettings() const { return m_inputClippingSettings; }
     inline bool InputClippingSettingsHasBeenSet() const { return m_inputClippingSettingsHasBeenSet; }
-    inline void SetInputClippingSettings(const InputClippingSettings& value) { m_inputClippingSettingsHasBeenSet = true; m_inputClippingSettings = value; }
-    inline void SetInputClippingSettings(InputClippingSettings&& value) { m_inputClippingSettingsHasBeenSet = true; m_inputClippingSettings = std::move(value); }
-    inline InputSwitchScheduleActionSettings& WithInputClippingSettings(const InputClippingSettings& value) { SetInputClippingSettings(value); return *this;}
-    inline InputSwitchScheduleActionSettings& WithInputClippingSettings(InputClippingSettings&& value) { SetInputClippingSettings(std::move(value)); return *this;}
+    template<typename InputClippingSettingsT = InputClippingSettings>
+    void SetInputClippingSettings(InputClippingSettingsT&& value) { m_inputClippingSettingsHasBeenSet = true; m_inputClippingSettings = std::forward<InputClippingSettingsT>(value); }
+    template<typename InputClippingSettingsT = InputClippingSettings>
+    InputSwitchScheduleActionSettings& WithInputClippingSettings(InputClippingSettingsT&& value) { SetInputClippingSettings(std::forward<InputClippingSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,15 +73,14 @@ namespace Model
      * switch action, you can provide a different value, in order to connect the input
      * to a different content source.
      */
-    inline const Aws::Vector<Aws::String>& GetUrlPath() const{ return m_urlPath; }
+    inline const Aws::Vector<Aws::String>& GetUrlPath() const { return m_urlPath; }
     inline bool UrlPathHasBeenSet() const { return m_urlPathHasBeenSet; }
-    inline void SetUrlPath(const Aws::Vector<Aws::String>& value) { m_urlPathHasBeenSet = true; m_urlPath = value; }
-    inline void SetUrlPath(Aws::Vector<Aws::String>&& value) { m_urlPathHasBeenSet = true; m_urlPath = std::move(value); }
-    inline InputSwitchScheduleActionSettings& WithUrlPath(const Aws::Vector<Aws::String>& value) { SetUrlPath(value); return *this;}
-    inline InputSwitchScheduleActionSettings& WithUrlPath(Aws::Vector<Aws::String>&& value) { SetUrlPath(std::move(value)); return *this;}
-    inline InputSwitchScheduleActionSettings& AddUrlPath(const Aws::String& value) { m_urlPathHasBeenSet = true; m_urlPath.push_back(value); return *this; }
-    inline InputSwitchScheduleActionSettings& AddUrlPath(Aws::String&& value) { m_urlPathHasBeenSet = true; m_urlPath.push_back(std::move(value)); return *this; }
-    inline InputSwitchScheduleActionSettings& AddUrlPath(const char* value) { m_urlPathHasBeenSet = true; m_urlPath.push_back(value); return *this; }
+    template<typename UrlPathT = Aws::Vector<Aws::String>>
+    void SetUrlPath(UrlPathT&& value) { m_urlPathHasBeenSet = true; m_urlPath = std::forward<UrlPathT>(value); }
+    template<typename UrlPathT = Aws::Vector<Aws::String>>
+    InputSwitchScheduleActionSettings& WithUrlPath(UrlPathT&& value) { SetUrlPath(std::forward<UrlPathT>(value)); return *this;}
+    template<typename UrlPathT = Aws::String>
+    InputSwitchScheduleActionSettings& AddUrlPath(UrlPathT&& value) { m_urlPathHasBeenSet = true; m_urlPath.emplace_back(std::forward<UrlPathT>(value)); return *this; }
     ///@}
   private:
 

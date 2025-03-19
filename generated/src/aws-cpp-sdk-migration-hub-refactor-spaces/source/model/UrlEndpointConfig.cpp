@@ -18,14 +18,7 @@ namespace MigrationHubRefactorSpaces
 namespace Model
 {
 
-UrlEndpointConfig::UrlEndpointConfig() : 
-    m_healthUrlHasBeenSet(false),
-    m_urlHasBeenSet(false)
-{
-}
-
 UrlEndpointConfig::UrlEndpointConfig(JsonView jsonValue)
-  : UrlEndpointConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ UrlEndpointConfig& UrlEndpointConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("HealthUrl"))
   {
     m_healthUrl = jsonValue.GetString("HealthUrl");
-
     m_healthUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Url"))
   {
     m_url = jsonValue.GetString("Url");
-
     m_urlHasBeenSet = true;
   }
-
   return *this;
 }
 

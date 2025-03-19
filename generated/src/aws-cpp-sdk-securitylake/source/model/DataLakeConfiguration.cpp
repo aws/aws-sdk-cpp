@@ -18,16 +18,7 @@ namespace SecurityLake
 namespace Model
 {
 
-DataLakeConfiguration::DataLakeConfiguration() : 
-    m_encryptionConfigurationHasBeenSet(false),
-    m_lifecycleConfigurationHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_replicationConfigurationHasBeenSet(false)
-{
-}
-
 DataLakeConfiguration::DataLakeConfiguration(JsonView jsonValue)
-  : DataLakeConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ DataLakeConfiguration& DataLakeConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("encryptionConfiguration"))
   {
     m_encryptionConfiguration = jsonValue.GetObject("encryptionConfiguration");
-
     m_encryptionConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lifecycleConfiguration"))
   {
     m_lifecycleConfiguration = jsonValue.GetObject("lifecycleConfiguration");
-
     m_lifecycleConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("region"))
   {
     m_region = jsonValue.GetString("region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("replicationConfiguration"))
   {
     m_replicationConfiguration = jsonValue.GetObject("replicationConfiguration");
-
     m_replicationConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

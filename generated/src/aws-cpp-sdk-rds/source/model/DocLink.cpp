@@ -20,14 +20,7 @@ namespace RDS
 namespace Model
 {
 
-DocLink::DocLink() : 
-    m_textHasBeenSet(false),
-    m_urlHasBeenSet(false)
-{
-}
-
 DocLink::DocLink(const XmlNode& xmlNode)
-  : DocLink()
 {
   *this = xmlNode;
 }

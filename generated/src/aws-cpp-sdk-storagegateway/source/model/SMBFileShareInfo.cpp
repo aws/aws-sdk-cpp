@@ -18,50 +18,7 @@ namespace StorageGateway
 namespace Model
 {
 
-SMBFileShareInfo::SMBFileShareInfo() : 
-    m_fileShareARNHasBeenSet(false),
-    m_fileShareIdHasBeenSet(false),
-    m_fileShareStatusHasBeenSet(false),
-    m_gatewayARNHasBeenSet(false),
-    m_encryptionType(EncryptionType::NOT_SET),
-    m_encryptionTypeHasBeenSet(false),
-    m_kMSKeyHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_roleHasBeenSet(false),
-    m_locationARNHasBeenSet(false),
-    m_defaultStorageClassHasBeenSet(false),
-    m_objectACL(ObjectACL::NOT_SET),
-    m_objectACLHasBeenSet(false),
-    m_readOnly(false),
-    m_readOnlyHasBeenSet(false),
-    m_guessMIMETypeEnabled(false),
-    m_guessMIMETypeEnabledHasBeenSet(false),
-    m_requesterPays(false),
-    m_requesterPaysHasBeenSet(false),
-    m_sMBACLEnabled(false),
-    m_sMBACLEnabledHasBeenSet(false),
-    m_accessBasedEnumeration(false),
-    m_accessBasedEnumerationHasBeenSet(false),
-    m_adminUserListHasBeenSet(false),
-    m_validUserListHasBeenSet(false),
-    m_invalidUserListHasBeenSet(false),
-    m_auditDestinationARNHasBeenSet(false),
-    m_authenticationHasBeenSet(false),
-    m_caseSensitivity(CaseSensitivity::NOT_SET),
-    m_caseSensitivityHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_fileShareNameHasBeenSet(false),
-    m_cacheAttributesHasBeenSet(false),
-    m_notificationPolicyHasBeenSet(false),
-    m_vPCEndpointDNSNameHasBeenSet(false),
-    m_bucketRegionHasBeenSet(false),
-    m_oplocksEnabled(false),
-    m_oplocksEnabledHasBeenSet(false)
-{
-}
-
 SMBFileShareInfo::SMBFileShareInfo(JsonView jsonValue)
-  : SMBFileShareInfo()
 {
   *this = jsonValue;
 }
@@ -71,115 +28,83 @@ SMBFileShareInfo& SMBFileShareInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FileShareARN"))
   {
     m_fileShareARN = jsonValue.GetString("FileShareARN");
-
     m_fileShareARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileShareId"))
   {
     m_fileShareId = jsonValue.GetString("FileShareId");
-
     m_fileShareIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileShareStatus"))
   {
     m_fileShareStatus = jsonValue.GetString("FileShareStatus");
-
     m_fileShareStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GatewayARN"))
   {
     m_gatewayARN = jsonValue.GetString("GatewayARN");
-
     m_gatewayARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EncryptionType"))
   {
     m_encryptionType = EncryptionTypeMapper::GetEncryptionTypeForName(jsonValue.GetString("EncryptionType"));
-
     m_encryptionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KMSKey"))
   {
     m_kMSKey = jsonValue.GetString("KMSKey");
-
     m_kMSKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Path"))
   {
     m_path = jsonValue.GetString("Path");
-
     m_pathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Role"))
   {
     m_role = jsonValue.GetString("Role");
-
     m_roleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LocationARN"))
   {
     m_locationARN = jsonValue.GetString("LocationARN");
-
     m_locationARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultStorageClass"))
   {
     m_defaultStorageClass = jsonValue.GetString("DefaultStorageClass");
-
     m_defaultStorageClassHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ObjectACL"))
   {
     m_objectACL = ObjectACLMapper::GetObjectACLForName(jsonValue.GetString("ObjectACL"));
-
     m_objectACLHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReadOnly"))
   {
     m_readOnly = jsonValue.GetBool("ReadOnly");
-
     m_readOnlyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GuessMIMETypeEnabled"))
   {
     m_guessMIMETypeEnabled = jsonValue.GetBool("GuessMIMETypeEnabled");
-
     m_guessMIMETypeEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequesterPays"))
   {
     m_requesterPays = jsonValue.GetBool("RequesterPays");
-
     m_requesterPaysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SMBACLEnabled"))
   {
     m_sMBACLEnabled = jsonValue.GetBool("SMBACLEnabled");
-
     m_sMBACLEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccessBasedEnumeration"))
   {
     m_accessBasedEnumeration = jsonValue.GetBool("AccessBasedEnumeration");
-
     m_accessBasedEnumerationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdminUserList"))
   {
     Aws::Utils::Array<JsonView> adminUserListJsonList = jsonValue.GetArray("AdminUserList");
@@ -189,7 +114,6 @@ SMBFileShareInfo& SMBFileShareInfo::operator =(JsonView jsonValue)
     }
     m_adminUserListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValidUserList"))
   {
     Aws::Utils::Array<JsonView> validUserListJsonList = jsonValue.GetArray("ValidUserList");
@@ -199,7 +123,6 @@ SMBFileShareInfo& SMBFileShareInfo::operator =(JsonView jsonValue)
     }
     m_validUserListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InvalidUserList"))
   {
     Aws::Utils::Array<JsonView> invalidUserListJsonList = jsonValue.GetArray("InvalidUserList");
@@ -209,28 +132,21 @@ SMBFileShareInfo& SMBFileShareInfo::operator =(JsonView jsonValue)
     }
     m_invalidUserListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuditDestinationARN"))
   {
     m_auditDestinationARN = jsonValue.GetString("AuditDestinationARN");
-
     m_auditDestinationARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Authentication"))
   {
     m_authentication = jsonValue.GetString("Authentication");
-
     m_authenticationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CaseSensitivity"))
   {
     m_caseSensitivity = CaseSensitivityMapper::GetCaseSensitivityForName(jsonValue.GetString("CaseSensitivity"));
-
     m_caseSensitivityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -240,49 +156,36 @@ SMBFileShareInfo& SMBFileShareInfo::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileShareName"))
   {
     m_fileShareName = jsonValue.GetString("FileShareName");
-
     m_fileShareNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CacheAttributes"))
   {
     m_cacheAttributes = jsonValue.GetObject("CacheAttributes");
-
     m_cacheAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotificationPolicy"))
   {
     m_notificationPolicy = jsonValue.GetString("NotificationPolicy");
-
     m_notificationPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VPCEndpointDNSName"))
   {
     m_vPCEndpointDNSName = jsonValue.GetString("VPCEndpointDNSName");
-
     m_vPCEndpointDNSNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BucketRegion"))
   {
     m_bucketRegion = jsonValue.GetString("BucketRegion");
-
     m_bucketRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OplocksEnabled"))
   {
     m_oplocksEnabled = jsonValue.GetBool("OplocksEnabled");
-
     m_oplocksEnabledHasBeenSet = true;
   }
-
   return *this;
 }
 

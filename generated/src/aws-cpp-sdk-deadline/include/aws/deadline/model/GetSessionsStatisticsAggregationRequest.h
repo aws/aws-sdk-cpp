@@ -25,7 +25,7 @@ namespace Model
   class GetSessionsStatisticsAggregationRequest : public DeadlineRequest
   {
   public:
-    AWS_DEADLINE_API GetSessionsStatisticsAggregationRequest();
+    AWS_DEADLINE_API GetSessionsStatisticsAggregationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * same as the farm ID used in the call to the
      * <code>StartSessionsStatisticsAggregation</code> operation.</p>
      */
-    inline const Aws::String& GetFarmId() const{ return m_farmId; }
+    inline const Aws::String& GetFarmId() const { return m_farmId; }
     inline bool FarmIdHasBeenSet() const { return m_farmIdHasBeenSet; }
-    inline void SetFarmId(const Aws::String& value) { m_farmIdHasBeenSet = true; m_farmId = value; }
-    inline void SetFarmId(Aws::String&& value) { m_farmIdHasBeenSet = true; m_farmId = std::move(value); }
-    inline void SetFarmId(const char* value) { m_farmIdHasBeenSet = true; m_farmId.assign(value); }
-    inline GetSessionsStatisticsAggregationRequest& WithFarmId(const Aws::String& value) { SetFarmId(value); return *this;}
-    inline GetSessionsStatisticsAggregationRequest& WithFarmId(Aws::String&& value) { SetFarmId(std::move(value)); return *this;}
-    inline GetSessionsStatisticsAggregationRequest& WithFarmId(const char* value) { SetFarmId(value); return *this;}
+    template<typename FarmIdT = Aws::String>
+    void SetFarmId(FarmIdT&& value) { m_farmIdHasBeenSet = true; m_farmId = std::forward<FarmIdT>(value); }
+    template<typename FarmIdT = Aws::String>
+    GetSessionsStatisticsAggregationRequest& WithFarmId(FarmIdT&& value) { SetFarmId(std::forward<FarmIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * <code>StartSessionsStatisticsAggregation</code> operation that identifies the
      * aggregated statistics.</p>
      */
-    inline const Aws::String& GetAggregationId() const{ return m_aggregationId; }
+    inline const Aws::String& GetAggregationId() const { return m_aggregationId; }
     inline bool AggregationIdHasBeenSet() const { return m_aggregationIdHasBeenSet; }
-    inline void SetAggregationId(const Aws::String& value) { m_aggregationIdHasBeenSet = true; m_aggregationId = value; }
-    inline void SetAggregationId(Aws::String&& value) { m_aggregationIdHasBeenSet = true; m_aggregationId = std::move(value); }
-    inline void SetAggregationId(const char* value) { m_aggregationIdHasBeenSet = true; m_aggregationId.assign(value); }
-    inline GetSessionsStatisticsAggregationRequest& WithAggregationId(const Aws::String& value) { SetAggregationId(value); return *this;}
-    inline GetSessionsStatisticsAggregationRequest& WithAggregationId(Aws::String&& value) { SetAggregationId(std::move(value)); return *this;}
-    inline GetSessionsStatisticsAggregationRequest& WithAggregationId(const char* value) { SetAggregationId(value); return *this;}
+    template<typename AggregationIdT = Aws::String>
+    void SetAggregationId(AggregationIdT&& value) { m_aggregationIdHasBeenSet = true; m_aggregationId = std::forward<AggregationIdT>(value); }
+    template<typename AggregationIdT = Aws::String>
+    GetSessionsStatisticsAggregationRequest& WithAggregationId(AggregationIdT&& value) { SetAggregationId(std::forward<AggregationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,7 +71,7 @@ namespace Model
      * <p>The maximum number of results to return. Use this parameter with
      * <code>NextToken</code> to get results as a set of sequential pages.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetSessionsStatisticsAggregationRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -86,14 +82,12 @@ namespace Model
      * <p>The token for the next set of results, or <code>null</code> to start from the
      * beginning.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetSessionsStatisticsAggregationRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetSessionsStatisticsAggregationRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetSessionsStatisticsAggregationRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetSessionsStatisticsAggregationRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -103,7 +97,7 @@ namespace Model
     Aws::String m_aggregationId;
     bool m_aggregationIdHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

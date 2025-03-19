@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchGetSchemaResult::BatchGetSchemaResult()
-{
-}
-
 BatchGetSchemaResult::BatchGetSchemaResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ BatchGetSchemaResult& BatchGetSchemaResult::operator =(const Aws::AmazonWebServi
     {
       m_schemas.push_back(schemasJsonList[schemasIndex].AsObject());
     }
+    m_schemasHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errors"))
   {
     Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
@@ -45,14 +41,15 @@ BatchGetSchemaResult& BatchGetSchemaResult::operator =(const Aws::AmazonWebServi
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
     }
+    m_errorsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

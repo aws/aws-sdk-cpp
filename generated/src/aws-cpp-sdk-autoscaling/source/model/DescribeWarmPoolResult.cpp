@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeWarmPoolResult::DescribeWarmPoolResult()
-{
-}
-
 DescribeWarmPoolResult::DescribeWarmPoolResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,28 +38,33 @@ DescribeWarmPoolResult& DescribeWarmPoolResult::operator =(const Aws::AmazonWebS
     if(!warmPoolConfigurationNode.IsNull())
     {
       m_warmPoolConfiguration = warmPoolConfigurationNode;
+      m_warmPoolConfigurationHasBeenSet = true;
     }
     XmlNode instancesNode = resultNode.FirstChild("Instances");
     if(!instancesNode.IsNull())
     {
       XmlNode instancesMember = instancesNode.FirstChild("member");
+      m_instancesHasBeenSet = !instancesMember.IsNull();
       while(!instancesMember.IsNull())
       {
         m_instances.push_back(instancesMember);
         instancesMember = instancesMember.NextNode("member");
       }
 
+      m_instancesHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::AutoScaling::Model::DescribeWarmPoolResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

@@ -12,11 +12,6 @@ using namespace Aws::PcaConnectorScep::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetChallengeMetadataRequest::GetChallengeMetadataRequest() : 
-    m_challengeArnHasBeenSet(false)
-{
-}
-
 Aws::String GetChallengeMetadataRequest::SerializePayload() const
 {
   return {};

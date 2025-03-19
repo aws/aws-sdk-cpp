@@ -32,7 +32,7 @@ namespace Model
   class InternalServiceFault
   {
   public:
-    AWS_OAM_API InternalServiceFault();
+    AWS_OAM_API InternalServiceFault() = default;
     AWS_OAM_API InternalServiceFault(Aws::Utils::Json::JsonView jsonValue);
     AWS_OAM_API InternalServiceFault& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OAM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,28 +40,24 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline InternalServiceFault& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline InternalServiceFault& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline InternalServiceFault& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    InternalServiceFault& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the exception.</p>
      */
-    inline const Aws::String& GetAmznErrorType() const{ return m_amznErrorType; }
+    inline const Aws::String& GetAmznErrorType() const { return m_amznErrorType; }
     inline bool AmznErrorTypeHasBeenSet() const { return m_amznErrorTypeHasBeenSet; }
-    inline void SetAmznErrorType(const Aws::String& value) { m_amznErrorTypeHasBeenSet = true; m_amznErrorType = value; }
-    inline void SetAmznErrorType(Aws::String&& value) { m_amznErrorTypeHasBeenSet = true; m_amznErrorType = std::move(value); }
-    inline void SetAmznErrorType(const char* value) { m_amznErrorTypeHasBeenSet = true; m_amznErrorType.assign(value); }
-    inline InternalServiceFault& WithAmznErrorType(const Aws::String& value) { SetAmznErrorType(value); return *this;}
-    inline InternalServiceFault& WithAmznErrorType(Aws::String&& value) { SetAmznErrorType(std::move(value)); return *this;}
-    inline InternalServiceFault& WithAmznErrorType(const char* value) { SetAmznErrorType(value); return *this;}
+    template<typename AmznErrorTypeT = Aws::String>
+    void SetAmznErrorType(AmznErrorTypeT&& value) { m_amznErrorTypeHasBeenSet = true; m_amznErrorType = std::forward<AmznErrorTypeT>(value); }
+    template<typename AmznErrorTypeT = Aws::String>
+    InternalServiceFault& WithAmznErrorType(AmznErrorTypeT&& value) { SetAmznErrorType(std::forward<AmznErrorTypeT>(value)); return *this;}
     ///@}
   private:
 

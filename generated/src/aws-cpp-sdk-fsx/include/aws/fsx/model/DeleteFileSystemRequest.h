@@ -29,7 +29,7 @@ namespace Model
   class DeleteFileSystemRequest : public FSxRequest
   {
   public:
-    AWS_FSX_API DeleteFileSystemRequest();
+    AWS_FSX_API DeleteFileSystemRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The ID of the file system that you want to delete.</p>
      */
-    inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
+    inline const Aws::String& GetFileSystemId() const { return m_fileSystemId; }
     inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
-    inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
-    inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::move(value); }
-    inline void SetFileSystemId(const char* value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId.assign(value); }
-    inline DeleteFileSystemRequest& WithFileSystemId(const Aws::String& value) { SetFileSystemId(value); return *this;}
-    inline DeleteFileSystemRequest& WithFileSystemId(Aws::String&& value) { SetFileSystemId(std::move(value)); return *this;}
-    inline DeleteFileSystemRequest& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
+    template<typename FileSystemIdT = Aws::String>
+    void SetFileSystemId(FileSystemIdT&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::forward<FileSystemIdT>(value); }
+    template<typename FileSystemIdT = Aws::String>
+    DeleteFileSystemRequest& WithFileSystemId(FileSystemIdT&& value) { SetFileSystemId(std::forward<FileSystemIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,34 +60,32 @@ namespace Model
      * idempotent deletion. This token is automatically filled on your behalf when
      * using the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline DeleteFileSystemRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline DeleteFileSystemRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline DeleteFileSystemRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    DeleteFileSystemRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const DeleteFileSystemWindowsConfiguration& GetWindowsConfiguration() const{ return m_windowsConfiguration; }
+    inline const DeleteFileSystemWindowsConfiguration& GetWindowsConfiguration() const { return m_windowsConfiguration; }
     inline bool WindowsConfigurationHasBeenSet() const { return m_windowsConfigurationHasBeenSet; }
-    inline void SetWindowsConfiguration(const DeleteFileSystemWindowsConfiguration& value) { m_windowsConfigurationHasBeenSet = true; m_windowsConfiguration = value; }
-    inline void SetWindowsConfiguration(DeleteFileSystemWindowsConfiguration&& value) { m_windowsConfigurationHasBeenSet = true; m_windowsConfiguration = std::move(value); }
-    inline DeleteFileSystemRequest& WithWindowsConfiguration(const DeleteFileSystemWindowsConfiguration& value) { SetWindowsConfiguration(value); return *this;}
-    inline DeleteFileSystemRequest& WithWindowsConfiguration(DeleteFileSystemWindowsConfiguration&& value) { SetWindowsConfiguration(std::move(value)); return *this;}
+    template<typename WindowsConfigurationT = DeleteFileSystemWindowsConfiguration>
+    void SetWindowsConfiguration(WindowsConfigurationT&& value) { m_windowsConfigurationHasBeenSet = true; m_windowsConfiguration = std::forward<WindowsConfigurationT>(value); }
+    template<typename WindowsConfigurationT = DeleteFileSystemWindowsConfiguration>
+    DeleteFileSystemRequest& WithWindowsConfiguration(WindowsConfigurationT&& value) { SetWindowsConfiguration(std::forward<WindowsConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const DeleteFileSystemLustreConfiguration& GetLustreConfiguration() const{ return m_lustreConfiguration; }
+    inline const DeleteFileSystemLustreConfiguration& GetLustreConfiguration() const { return m_lustreConfiguration; }
     inline bool LustreConfigurationHasBeenSet() const { return m_lustreConfigurationHasBeenSet; }
-    inline void SetLustreConfiguration(const DeleteFileSystemLustreConfiguration& value) { m_lustreConfigurationHasBeenSet = true; m_lustreConfiguration = value; }
-    inline void SetLustreConfiguration(DeleteFileSystemLustreConfiguration&& value) { m_lustreConfigurationHasBeenSet = true; m_lustreConfiguration = std::move(value); }
-    inline DeleteFileSystemRequest& WithLustreConfiguration(const DeleteFileSystemLustreConfiguration& value) { SetLustreConfiguration(value); return *this;}
-    inline DeleteFileSystemRequest& WithLustreConfiguration(DeleteFileSystemLustreConfiguration&& value) { SetLustreConfiguration(std::move(value)); return *this;}
+    template<typename LustreConfigurationT = DeleteFileSystemLustreConfiguration>
+    void SetLustreConfiguration(LustreConfigurationT&& value) { m_lustreConfigurationHasBeenSet = true; m_lustreConfiguration = std::forward<LustreConfigurationT>(value); }
+    template<typename LustreConfigurationT = DeleteFileSystemLustreConfiguration>
+    DeleteFileSystemRequest& WithLustreConfiguration(LustreConfigurationT&& value) { SetLustreConfiguration(std::forward<LustreConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,12 +93,12 @@ namespace Model
      * <p>The configuration object for the OpenZFS file system used in the
      * <code>DeleteFileSystem</code> operation.</p>
      */
-    inline const DeleteFileSystemOpenZFSConfiguration& GetOpenZFSConfiguration() const{ return m_openZFSConfiguration; }
+    inline const DeleteFileSystemOpenZFSConfiguration& GetOpenZFSConfiguration() const { return m_openZFSConfiguration; }
     inline bool OpenZFSConfigurationHasBeenSet() const { return m_openZFSConfigurationHasBeenSet; }
-    inline void SetOpenZFSConfiguration(const DeleteFileSystemOpenZFSConfiguration& value) { m_openZFSConfigurationHasBeenSet = true; m_openZFSConfiguration = value; }
-    inline void SetOpenZFSConfiguration(DeleteFileSystemOpenZFSConfiguration&& value) { m_openZFSConfigurationHasBeenSet = true; m_openZFSConfiguration = std::move(value); }
-    inline DeleteFileSystemRequest& WithOpenZFSConfiguration(const DeleteFileSystemOpenZFSConfiguration& value) { SetOpenZFSConfiguration(value); return *this;}
-    inline DeleteFileSystemRequest& WithOpenZFSConfiguration(DeleteFileSystemOpenZFSConfiguration&& value) { SetOpenZFSConfiguration(std::move(value)); return *this;}
+    template<typename OpenZFSConfigurationT = DeleteFileSystemOpenZFSConfiguration>
+    void SetOpenZFSConfiguration(OpenZFSConfigurationT&& value) { m_openZFSConfigurationHasBeenSet = true; m_openZFSConfiguration = std::forward<OpenZFSConfigurationT>(value); }
+    template<typename OpenZFSConfigurationT = DeleteFileSystemOpenZFSConfiguration>
+    DeleteFileSystemRequest& WithOpenZFSConfiguration(OpenZFSConfigurationT&& value) { SetOpenZFSConfiguration(std::forward<OpenZFSConfigurationT>(value)); return *this;}
     ///@}
   private:
 

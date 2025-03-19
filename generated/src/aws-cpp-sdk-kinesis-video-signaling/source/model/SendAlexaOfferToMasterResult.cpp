@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SendAlexaOfferToMasterResult::SendAlexaOfferToMasterResult()
-{
-}
-
 SendAlexaOfferToMasterResult::SendAlexaOfferToMasterResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ SendAlexaOfferToMasterResult& SendAlexaOfferToMasterResult::operator =(const Aws
   if(jsonValue.ValueExists("Answer"))
   {
     m_answer = jsonValue.GetString("Answer");
-
+    m_answerHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

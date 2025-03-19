@@ -19,13 +19,7 @@ namespace IoT
 namespace Model
 {
 
-CodeSigningSignature::CodeSigningSignature() : 
-    m_inlineDocumentHasBeenSet(false)
-{
-}
-
 CodeSigningSignature::CodeSigningSignature(JsonView jsonValue)
-  : CodeSigningSignature()
 {
   *this = jsonValue;
 }
@@ -37,7 +31,6 @@ CodeSigningSignature& CodeSigningSignature::operator =(JsonView jsonValue)
     m_inlineDocument = HashingUtils::Base64Decode(jsonValue.GetString("inlineDocument"));
     m_inlineDocumentHasBeenSet = true;
   }
-
   return *this;
 }
 

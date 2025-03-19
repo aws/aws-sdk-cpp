@@ -32,7 +32,7 @@ namespace Model
   class RestrictedPeriods
   {
   public:
-    AWS_CONNECTCAMPAIGNSV2_API RestrictedPeriods();
+    AWS_CONNECTCAMPAIGNSV2_API RestrictedPeriods() = default;
     AWS_CONNECTCAMPAIGNSV2_API RestrictedPeriods(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API RestrictedPeriods& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
 
     ///@{
     
-    inline const Aws::Vector<RestrictedPeriod>& GetRestrictedPeriodList() const{ return m_restrictedPeriodList; }
+    inline const Aws::Vector<RestrictedPeriod>& GetRestrictedPeriodList() const { return m_restrictedPeriodList; }
     inline bool RestrictedPeriodListHasBeenSet() const { return m_restrictedPeriodListHasBeenSet; }
-    inline void SetRestrictedPeriodList(const Aws::Vector<RestrictedPeriod>& value) { m_restrictedPeriodListHasBeenSet = true; m_restrictedPeriodList = value; }
-    inline void SetRestrictedPeriodList(Aws::Vector<RestrictedPeriod>&& value) { m_restrictedPeriodListHasBeenSet = true; m_restrictedPeriodList = std::move(value); }
-    inline RestrictedPeriods& WithRestrictedPeriodList(const Aws::Vector<RestrictedPeriod>& value) { SetRestrictedPeriodList(value); return *this;}
-    inline RestrictedPeriods& WithRestrictedPeriodList(Aws::Vector<RestrictedPeriod>&& value) { SetRestrictedPeriodList(std::move(value)); return *this;}
-    inline RestrictedPeriods& AddRestrictedPeriodList(const RestrictedPeriod& value) { m_restrictedPeriodListHasBeenSet = true; m_restrictedPeriodList.push_back(value); return *this; }
-    inline RestrictedPeriods& AddRestrictedPeriodList(RestrictedPeriod&& value) { m_restrictedPeriodListHasBeenSet = true; m_restrictedPeriodList.push_back(std::move(value)); return *this; }
+    template<typename RestrictedPeriodListT = Aws::Vector<RestrictedPeriod>>
+    void SetRestrictedPeriodList(RestrictedPeriodListT&& value) { m_restrictedPeriodListHasBeenSet = true; m_restrictedPeriodList = std::forward<RestrictedPeriodListT>(value); }
+    template<typename RestrictedPeriodListT = Aws::Vector<RestrictedPeriod>>
+    RestrictedPeriods& WithRestrictedPeriodList(RestrictedPeriodListT&& value) { SetRestrictedPeriodList(std::forward<RestrictedPeriodListT>(value)); return *this;}
+    template<typename RestrictedPeriodListT = RestrictedPeriod>
+    RestrictedPeriods& AddRestrictedPeriodList(RestrictedPeriodListT&& value) { m_restrictedPeriodListHasBeenSet = true; m_restrictedPeriodList.emplace_back(std::forward<RestrictedPeriodListT>(value)); return *this; }
     ///@}
   private:
 

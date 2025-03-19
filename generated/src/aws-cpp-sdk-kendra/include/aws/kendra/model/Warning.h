@@ -33,7 +33,7 @@ namespace Model
   class Warning
   {
   public:
-    AWS_KENDRA_API Warning();
+    AWS_KENDRA_API Warning() = default;
     AWS_KENDRA_API Warning(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Warning& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,33 +43,29 @@ namespace Model
     /**
      * <p>The message that explains the problem with the query.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline Warning& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline Warning& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline Warning& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    Warning& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The code used to show the type of warning for the query.</p>
      */
-    inline const WarningCode& GetCode() const{ return m_code; }
+    inline WarningCode GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const WarningCode& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(WarningCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline Warning& WithCode(const WarningCode& value) { SetCode(value); return *this;}
-    inline Warning& WithCode(WarningCode&& value) { SetCode(std::move(value)); return *this;}
+    inline void SetCode(WarningCode value) { m_codeHasBeenSet = true; m_code = value; }
+    inline Warning& WithCode(WarningCode value) { SetCode(value); return *this;}
     ///@}
   private:
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
 
-    WarningCode m_code;
+    WarningCode m_code{WarningCode::NOT_SET};
     bool m_codeHasBeenSet = false;
   };
 

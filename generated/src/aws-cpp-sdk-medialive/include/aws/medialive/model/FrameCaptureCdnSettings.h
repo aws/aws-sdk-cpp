@@ -31,7 +31,7 @@ namespace Model
   class FrameCaptureCdnSettings
   {
   public:
-    AWS_MEDIALIVE_API FrameCaptureCdnSettings();
+    AWS_MEDIALIVE_API FrameCaptureCdnSettings() = default;
     AWS_MEDIALIVE_API FrameCaptureCdnSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API FrameCaptureCdnSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,12 +39,12 @@ namespace Model
 
     ///@{
     
-    inline const FrameCaptureS3Settings& GetFrameCaptureS3Settings() const{ return m_frameCaptureS3Settings; }
+    inline const FrameCaptureS3Settings& GetFrameCaptureS3Settings() const { return m_frameCaptureS3Settings; }
     inline bool FrameCaptureS3SettingsHasBeenSet() const { return m_frameCaptureS3SettingsHasBeenSet; }
-    inline void SetFrameCaptureS3Settings(const FrameCaptureS3Settings& value) { m_frameCaptureS3SettingsHasBeenSet = true; m_frameCaptureS3Settings = value; }
-    inline void SetFrameCaptureS3Settings(FrameCaptureS3Settings&& value) { m_frameCaptureS3SettingsHasBeenSet = true; m_frameCaptureS3Settings = std::move(value); }
-    inline FrameCaptureCdnSettings& WithFrameCaptureS3Settings(const FrameCaptureS3Settings& value) { SetFrameCaptureS3Settings(value); return *this;}
-    inline FrameCaptureCdnSettings& WithFrameCaptureS3Settings(FrameCaptureS3Settings&& value) { SetFrameCaptureS3Settings(std::move(value)); return *this;}
+    template<typename FrameCaptureS3SettingsT = FrameCaptureS3Settings>
+    void SetFrameCaptureS3Settings(FrameCaptureS3SettingsT&& value) { m_frameCaptureS3SettingsHasBeenSet = true; m_frameCaptureS3Settings = std::forward<FrameCaptureS3SettingsT>(value); }
+    template<typename FrameCaptureS3SettingsT = FrameCaptureS3Settings>
+    FrameCaptureCdnSettings& WithFrameCaptureS3Settings(FrameCaptureS3SettingsT&& value) { SetFrameCaptureS3Settings(std::forward<FrameCaptureS3SettingsT>(value)); return *this;}
     ///@}
   private:
 

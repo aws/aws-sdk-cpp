@@ -12,11 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ShutdownGatewayRequest::ShutdownGatewayRequest() : 
-    m_gatewayARNHasBeenSet(false)
-{
-}
-
 Aws::String ShutdownGatewayRequest::SerializePayload() const
 {
   JsonValue payload;

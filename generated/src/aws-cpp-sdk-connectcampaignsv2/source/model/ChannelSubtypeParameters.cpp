@@ -18,15 +18,7 @@ namespace ConnectCampaignsV2
 namespace Model
 {
 
-ChannelSubtypeParameters::ChannelSubtypeParameters() : 
-    m_telephonyHasBeenSet(false),
-    m_smsHasBeenSet(false),
-    m_emailHasBeenSet(false)
-{
-}
-
 ChannelSubtypeParameters::ChannelSubtypeParameters(JsonView jsonValue)
-  : ChannelSubtypeParameters()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ChannelSubtypeParameters& ChannelSubtypeParameters::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("telephony"))
   {
     m_telephony = jsonValue.GetObject("telephony");
-
     m_telephonyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sms"))
   {
     m_sms = jsonValue.GetObject("sms");
-
     m_smsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("email"))
   {
     m_email = jsonValue.GetObject("email");
-
     m_emailHasBeenSet = true;
   }
-
   return *this;
 }
 

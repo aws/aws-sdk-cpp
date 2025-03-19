@@ -27,7 +27,7 @@ namespace Model
   class ListJobsRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API ListJobsRequest();
+    AWS_IOT_API ListJobsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,12 +45,10 @@ namespace Model
      * <p>An optional filter that lets you search for jobs that have the specified
      * status.</p>
      */
-    inline const JobStatus& GetStatus() const{ return m_status; }
+    inline JobStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const JobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(JobStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ListJobsRequest& WithStatus(const JobStatus& value) { SetStatus(value); return *this;}
-    inline ListJobsRequest& WithStatus(JobStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(JobStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ListJobsRequest& WithStatus(JobStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -65,19 +63,17 @@ namespace Model
      * continuous jobs, devices that join the group receive the job execution even
      * after the job has been created.</p> 
      */
-    inline const TargetSelection& GetTargetSelection() const{ return m_targetSelection; }
+    inline TargetSelection GetTargetSelection() const { return m_targetSelection; }
     inline bool TargetSelectionHasBeenSet() const { return m_targetSelectionHasBeenSet; }
-    inline void SetTargetSelection(const TargetSelection& value) { m_targetSelectionHasBeenSet = true; m_targetSelection = value; }
-    inline void SetTargetSelection(TargetSelection&& value) { m_targetSelectionHasBeenSet = true; m_targetSelection = std::move(value); }
-    inline ListJobsRequest& WithTargetSelection(const TargetSelection& value) { SetTargetSelection(value); return *this;}
-    inline ListJobsRequest& WithTargetSelection(TargetSelection&& value) { SetTargetSelection(std::move(value)); return *this;}
+    inline void SetTargetSelection(TargetSelection value) { m_targetSelectionHasBeenSet = true; m_targetSelection = value; }
+    inline ListJobsRequest& WithTargetSelection(TargetSelection value) { SetTargetSelection(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return per request.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -87,42 +83,36 @@ namespace Model
     /**
      * <p>The token to retrieve the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListJobsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListJobsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListJobsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListJobsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A filter that limits the returned jobs to those for the specified group.</p>
      */
-    inline const Aws::String& GetThingGroupName() const{ return m_thingGroupName; }
+    inline const Aws::String& GetThingGroupName() const { return m_thingGroupName; }
     inline bool ThingGroupNameHasBeenSet() const { return m_thingGroupNameHasBeenSet; }
-    inline void SetThingGroupName(const Aws::String& value) { m_thingGroupNameHasBeenSet = true; m_thingGroupName = value; }
-    inline void SetThingGroupName(Aws::String&& value) { m_thingGroupNameHasBeenSet = true; m_thingGroupName = std::move(value); }
-    inline void SetThingGroupName(const char* value) { m_thingGroupNameHasBeenSet = true; m_thingGroupName.assign(value); }
-    inline ListJobsRequest& WithThingGroupName(const Aws::String& value) { SetThingGroupName(value); return *this;}
-    inline ListJobsRequest& WithThingGroupName(Aws::String&& value) { SetThingGroupName(std::move(value)); return *this;}
-    inline ListJobsRequest& WithThingGroupName(const char* value) { SetThingGroupName(value); return *this;}
+    template<typename ThingGroupNameT = Aws::String>
+    void SetThingGroupName(ThingGroupNameT&& value) { m_thingGroupNameHasBeenSet = true; m_thingGroupName = std::forward<ThingGroupNameT>(value); }
+    template<typename ThingGroupNameT = Aws::String>
+    ListJobsRequest& WithThingGroupName(ThingGroupNameT&& value) { SetThingGroupName(std::forward<ThingGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A filter that limits the returned jobs to those for the specified group.</p>
      */
-    inline const Aws::String& GetThingGroupId() const{ return m_thingGroupId; }
+    inline const Aws::String& GetThingGroupId() const { return m_thingGroupId; }
     inline bool ThingGroupIdHasBeenSet() const { return m_thingGroupIdHasBeenSet; }
-    inline void SetThingGroupId(const Aws::String& value) { m_thingGroupIdHasBeenSet = true; m_thingGroupId = value; }
-    inline void SetThingGroupId(Aws::String&& value) { m_thingGroupIdHasBeenSet = true; m_thingGroupId = std::move(value); }
-    inline void SetThingGroupId(const char* value) { m_thingGroupIdHasBeenSet = true; m_thingGroupId.assign(value); }
-    inline ListJobsRequest& WithThingGroupId(const Aws::String& value) { SetThingGroupId(value); return *this;}
-    inline ListJobsRequest& WithThingGroupId(Aws::String&& value) { SetThingGroupId(std::move(value)); return *this;}
-    inline ListJobsRequest& WithThingGroupId(const char* value) { SetThingGroupId(value); return *this;}
+    template<typename ThingGroupIdT = Aws::String>
+    void SetThingGroupId(ThingGroupIdT&& value) { m_thingGroupIdHasBeenSet = true; m_thingGroupId = std::forward<ThingGroupIdT>(value); }
+    template<typename ThingGroupIdT = Aws::String>
+    ListJobsRequest& WithThingGroupId(ThingGroupIdT&& value) { SetThingGroupId(std::forward<ThingGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -137,24 +127,22 @@ namespace Model
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting
      * up IoT Greengrass core devices.</a> </p> 
      */
-    inline const Aws::String& GetNamespaceId() const{ return m_namespaceId; }
+    inline const Aws::String& GetNamespaceId() const { return m_namespaceId; }
     inline bool NamespaceIdHasBeenSet() const { return m_namespaceIdHasBeenSet; }
-    inline void SetNamespaceId(const Aws::String& value) { m_namespaceIdHasBeenSet = true; m_namespaceId = value; }
-    inline void SetNamespaceId(Aws::String&& value) { m_namespaceIdHasBeenSet = true; m_namespaceId = std::move(value); }
-    inline void SetNamespaceId(const char* value) { m_namespaceIdHasBeenSet = true; m_namespaceId.assign(value); }
-    inline ListJobsRequest& WithNamespaceId(const Aws::String& value) { SetNamespaceId(value); return *this;}
-    inline ListJobsRequest& WithNamespaceId(Aws::String&& value) { SetNamespaceId(std::move(value)); return *this;}
-    inline ListJobsRequest& WithNamespaceId(const char* value) { SetNamespaceId(value); return *this;}
+    template<typename NamespaceIdT = Aws::String>
+    void SetNamespaceId(NamespaceIdT&& value) { m_namespaceIdHasBeenSet = true; m_namespaceId = std::forward<NamespaceIdT>(value); }
+    template<typename NamespaceIdT = Aws::String>
+    ListJobsRequest& WithNamespaceId(NamespaceIdT&& value) { SetNamespaceId(std::forward<NamespaceIdT>(value)); return *this;}
     ///@}
   private:
 
-    JobStatus m_status;
+    JobStatus m_status{JobStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    TargetSelection m_targetSelection;
+    TargetSelection m_targetSelection{TargetSelection::NOT_SET};
     bool m_targetSelectionHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

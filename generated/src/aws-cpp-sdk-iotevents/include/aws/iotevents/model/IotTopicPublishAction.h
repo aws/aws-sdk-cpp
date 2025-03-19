@@ -33,7 +33,7 @@ namespace Model
   class IotTopicPublishAction
   {
   public:
-    AWS_IOTEVENTS_API IotTopicPublishAction();
+    AWS_IOTEVENTS_API IotTopicPublishAction() = default;
     AWS_IOTEVENTS_API IotTopicPublishAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API IotTopicPublishAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * (<code>$input.&lt;input-name&gt;.&lt;path-to-datum&gt;</code>) as the topic
      * string.</p>
      */
-    inline const Aws::String& GetMqttTopic() const{ return m_mqttTopic; }
+    inline const Aws::String& GetMqttTopic() const { return m_mqttTopic; }
     inline bool MqttTopicHasBeenSet() const { return m_mqttTopicHasBeenSet; }
-    inline void SetMqttTopic(const Aws::String& value) { m_mqttTopicHasBeenSet = true; m_mqttTopic = value; }
-    inline void SetMqttTopic(Aws::String&& value) { m_mqttTopicHasBeenSet = true; m_mqttTopic = std::move(value); }
-    inline void SetMqttTopic(const char* value) { m_mqttTopicHasBeenSet = true; m_mqttTopic.assign(value); }
-    inline IotTopicPublishAction& WithMqttTopic(const Aws::String& value) { SetMqttTopic(value); return *this;}
-    inline IotTopicPublishAction& WithMqttTopic(Aws::String&& value) { SetMqttTopic(std::move(value)); return *this;}
-    inline IotTopicPublishAction& WithMqttTopic(const char* value) { SetMqttTopic(value); return *this;}
+    template<typename MqttTopicT = Aws::String>
+    void SetMqttTopic(MqttTopicT&& value) { m_mqttTopicHasBeenSet = true; m_mqttTopic = std::forward<MqttTopicT>(value); }
+    template<typename MqttTopicT = Aws::String>
+    IotTopicPublishAction& WithMqttTopic(MqttTopicT&& value) { SetMqttTopic(std::forward<MqttTopicT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +59,12 @@ namespace Model
      * <p>You can configure the action payload when you publish a message to an AWS IoT
      * Core topic.</p>
      */
-    inline const Payload& GetPayload() const{ return m_payload; }
+    inline const Payload& GetPayload() const { return m_payload; }
     inline bool PayloadHasBeenSet() const { return m_payloadHasBeenSet; }
-    inline void SetPayload(const Payload& value) { m_payloadHasBeenSet = true; m_payload = value; }
-    inline void SetPayload(Payload&& value) { m_payloadHasBeenSet = true; m_payload = std::move(value); }
-    inline IotTopicPublishAction& WithPayload(const Payload& value) { SetPayload(value); return *this;}
-    inline IotTopicPublishAction& WithPayload(Payload&& value) { SetPayload(std::move(value)); return *this;}
+    template<typename PayloadT = Payload>
+    void SetPayload(PayloadT&& value) { m_payloadHasBeenSet = true; m_payload = std::forward<PayloadT>(value); }
+    template<typename PayloadT = Payload>
+    IotTopicPublishAction& WithPayload(PayloadT&& value) { SetPayload(std::forward<PayloadT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,14 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-AdvancedSecurityAdditionalFlowsType::AdvancedSecurityAdditionalFlowsType() : 
-    m_customAuthMode(AdvancedSecurityEnabledModeType::NOT_SET),
-    m_customAuthModeHasBeenSet(false)
-{
-}
-
 AdvancedSecurityAdditionalFlowsType::AdvancedSecurityAdditionalFlowsType(JsonView jsonValue)
-  : AdvancedSecurityAdditionalFlowsType()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AdvancedSecurityAdditionalFlowsType& AdvancedSecurityAdditionalFlowsType::operat
   if(jsonValue.ValueExists("CustomAuthMode"))
   {
     m_customAuthMode = AdvancedSecurityEnabledModeTypeMapper::GetAdvancedSecurityEnabledModeTypeForName(jsonValue.GetString("CustomAuthMode"));
-
     m_customAuthModeHasBeenSet = true;
   }
-
   return *this;
 }
 

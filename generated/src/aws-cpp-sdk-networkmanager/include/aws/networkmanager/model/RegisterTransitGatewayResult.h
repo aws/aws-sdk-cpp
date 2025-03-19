@@ -28,7 +28,7 @@ namespace Model
   class RegisterTransitGatewayResult
   {
   public:
-    AWS_NETWORKMANAGER_API RegisterTransitGatewayResult();
+    AWS_NETWORKMANAGER_API RegisterTransitGatewayResult() = default;
     AWS_NETWORKMANAGER_API RegisterTransitGatewayResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NETWORKMANAGER_API RegisterTransitGatewayResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the transit gateway registration.</p>
      */
-    inline const TransitGatewayRegistration& GetTransitGatewayRegistration() const{ return m_transitGatewayRegistration; }
-    inline void SetTransitGatewayRegistration(const TransitGatewayRegistration& value) { m_transitGatewayRegistration = value; }
-    inline void SetTransitGatewayRegistration(TransitGatewayRegistration&& value) { m_transitGatewayRegistration = std::move(value); }
-    inline RegisterTransitGatewayResult& WithTransitGatewayRegistration(const TransitGatewayRegistration& value) { SetTransitGatewayRegistration(value); return *this;}
-    inline RegisterTransitGatewayResult& WithTransitGatewayRegistration(TransitGatewayRegistration&& value) { SetTransitGatewayRegistration(std::move(value)); return *this;}
+    inline const TransitGatewayRegistration& GetTransitGatewayRegistration() const { return m_transitGatewayRegistration; }
+    template<typename TransitGatewayRegistrationT = TransitGatewayRegistration>
+    void SetTransitGatewayRegistration(TransitGatewayRegistrationT&& value) { m_transitGatewayRegistrationHasBeenSet = true; m_transitGatewayRegistration = std::forward<TransitGatewayRegistrationT>(value); }
+    template<typename TransitGatewayRegistrationT = TransitGatewayRegistration>
+    RegisterTransitGatewayResult& WithTransitGatewayRegistration(TransitGatewayRegistrationT&& value) { SetTransitGatewayRegistration(std::forward<TransitGatewayRegistrationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline RegisterTransitGatewayResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline RegisterTransitGatewayResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline RegisterTransitGatewayResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    RegisterTransitGatewayResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     TransitGatewayRegistration m_transitGatewayRegistration;
+    bool m_transitGatewayRegistrationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

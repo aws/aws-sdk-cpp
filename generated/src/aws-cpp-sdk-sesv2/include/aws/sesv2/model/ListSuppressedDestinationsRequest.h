@@ -32,7 +32,7 @@ namespace Model
   class ListSuppressedDestinationsRequest : public SESV2Request
   {
   public:
-    AWS_SESV2_API ListSuppressedDestinationsRequest();
+    AWS_SESV2_API ListSuppressedDestinationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -49,14 +49,13 @@ namespace Model
     /**
      * <p>The factors that caused the email address to be added to .</p>
      */
-    inline const Aws::Vector<SuppressionListReason>& GetReasons() const{ return m_reasons; }
+    inline const Aws::Vector<SuppressionListReason>& GetReasons() const { return m_reasons; }
     inline bool ReasonsHasBeenSet() const { return m_reasonsHasBeenSet; }
-    inline void SetReasons(const Aws::Vector<SuppressionListReason>& value) { m_reasonsHasBeenSet = true; m_reasons = value; }
-    inline void SetReasons(Aws::Vector<SuppressionListReason>&& value) { m_reasonsHasBeenSet = true; m_reasons = std::move(value); }
-    inline ListSuppressedDestinationsRequest& WithReasons(const Aws::Vector<SuppressionListReason>& value) { SetReasons(value); return *this;}
-    inline ListSuppressedDestinationsRequest& WithReasons(Aws::Vector<SuppressionListReason>&& value) { SetReasons(std::move(value)); return *this;}
-    inline ListSuppressedDestinationsRequest& AddReasons(const SuppressionListReason& value) { m_reasonsHasBeenSet = true; m_reasons.push_back(value); return *this; }
-    inline ListSuppressedDestinationsRequest& AddReasons(SuppressionListReason&& value) { m_reasonsHasBeenSet = true; m_reasons.push_back(std::move(value)); return *this; }
+    template<typename ReasonsT = Aws::Vector<SuppressionListReason>>
+    void SetReasons(ReasonsT&& value) { m_reasonsHasBeenSet = true; m_reasons = std::forward<ReasonsT>(value); }
+    template<typename ReasonsT = Aws::Vector<SuppressionListReason>>
+    ListSuppressedDestinationsRequest& WithReasons(ReasonsT&& value) { SetReasons(std::forward<ReasonsT>(value)); return *this;}
+    inline ListSuppressedDestinationsRequest& AddReasons(SuppressionListReason value) { m_reasonsHasBeenSet = true; m_reasons.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -64,12 +63,12 @@ namespace Model
      * <p>Used to filter the list of suppressed email destinations so that it only
      * includes addresses that were added to the list after a specific date.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartDate() const{ return m_startDate; }
+    inline const Aws::Utils::DateTime& GetStartDate() const { return m_startDate; }
     inline bool StartDateHasBeenSet() const { return m_startDateHasBeenSet; }
-    inline void SetStartDate(const Aws::Utils::DateTime& value) { m_startDateHasBeenSet = true; m_startDate = value; }
-    inline void SetStartDate(Aws::Utils::DateTime&& value) { m_startDateHasBeenSet = true; m_startDate = std::move(value); }
-    inline ListSuppressedDestinationsRequest& WithStartDate(const Aws::Utils::DateTime& value) { SetStartDate(value); return *this;}
-    inline ListSuppressedDestinationsRequest& WithStartDate(Aws::Utils::DateTime&& value) { SetStartDate(std::move(value)); return *this;}
+    template<typename StartDateT = Aws::Utils::DateTime>
+    void SetStartDate(StartDateT&& value) { m_startDateHasBeenSet = true; m_startDate = std::forward<StartDateT>(value); }
+    template<typename StartDateT = Aws::Utils::DateTime>
+    ListSuppressedDestinationsRequest& WithStartDate(StartDateT&& value) { SetStartDate(std::forward<StartDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,12 +76,12 @@ namespace Model
      * <p>Used to filter the list of suppressed email destinations so that it only
      * includes addresses that were added to the list before a specific date.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndDate() const{ return m_endDate; }
+    inline const Aws::Utils::DateTime& GetEndDate() const { return m_endDate; }
     inline bool EndDateHasBeenSet() const { return m_endDateHasBeenSet; }
-    inline void SetEndDate(const Aws::Utils::DateTime& value) { m_endDateHasBeenSet = true; m_endDate = value; }
-    inline void SetEndDate(Aws::Utils::DateTime&& value) { m_endDateHasBeenSet = true; m_endDate = std::move(value); }
-    inline ListSuppressedDestinationsRequest& WithEndDate(const Aws::Utils::DateTime& value) { SetEndDate(value); return *this;}
-    inline ListSuppressedDestinationsRequest& WithEndDate(Aws::Utils::DateTime&& value) { SetEndDate(std::move(value)); return *this;}
+    template<typename EndDateT = Aws::Utils::DateTime>
+    void SetEndDate(EndDateT&& value) { m_endDateHasBeenSet = true; m_endDate = std::forward<EndDateT>(value); }
+    template<typename EndDateT = Aws::Utils::DateTime>
+    ListSuppressedDestinationsRequest& WithEndDate(EndDateT&& value) { SetEndDate(std::forward<EndDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,14 +90,12 @@ namespace Model
      * <code>ListSuppressedDestinations</code> to indicate the position in the list of
      * suppressed email addresses.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListSuppressedDestinationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListSuppressedDestinationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListSuppressedDestinationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListSuppressedDestinationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,7 +106,7 @@ namespace Model
      * <code>NextToken</code> element, which you can use to obtain additional
      * results.</p>
      */
-    inline int GetPageSize() const{ return m_pageSize; }
+    inline int GetPageSize() const { return m_pageSize; }
     inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
     inline void SetPageSize(int value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
     inline ListSuppressedDestinationsRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
@@ -119,16 +116,16 @@ namespace Model
     Aws::Vector<SuppressionListReason> m_reasons;
     bool m_reasonsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startDate;
+    Aws::Utils::DateTime m_startDate{};
     bool m_startDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endDate;
+    Aws::Utils::DateTime m_endDate{};
     bool m_endDateHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_pageSize;
+    int m_pageSize{0};
     bool m_pageSizeHasBeenSet = false;
   };
 

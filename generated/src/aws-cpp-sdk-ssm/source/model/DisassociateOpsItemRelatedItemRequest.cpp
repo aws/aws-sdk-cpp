@@ -12,12 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateOpsItemRelatedItemRequest::DisassociateOpsItemRelatedItemRequest() : 
-    m_opsItemIdHasBeenSet(false),
-    m_associationIdHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateOpsItemRelatedItemRequest::SerializePayload() const
 {
   JsonValue payload;

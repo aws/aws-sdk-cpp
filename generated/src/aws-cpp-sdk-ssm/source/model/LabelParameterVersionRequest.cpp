@@ -12,14 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-LabelParameterVersionRequest::LabelParameterVersionRequest() : 
-    m_nameHasBeenSet(false),
-    m_parameterVersion(0),
-    m_parameterVersionHasBeenSet(false),
-    m_labelsHasBeenSet(false)
-{
-}
-
 Aws::String LabelParameterVersionRequest::SerializePayload() const
 {
   JsonValue payload;

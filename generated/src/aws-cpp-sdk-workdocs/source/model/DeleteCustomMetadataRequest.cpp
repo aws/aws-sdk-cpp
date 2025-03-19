@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteCustomMetadataRequest::DeleteCustomMetadataRequest() : 
-    m_authenticationTokenHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_versionIdHasBeenSet(false),
-    m_keysHasBeenSet(false),
-    m_deleteAll(false),
-    m_deleteAllHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCustomMetadataRequest::SerializePayload() const
 {
   return {};

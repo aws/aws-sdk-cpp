@@ -20,18 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TransitGatewayConnectPeerConfiguration::TransitGatewayConnectPeerConfiguration() : 
-    m_transitGatewayAddressHasBeenSet(false),
-    m_peerAddressHasBeenSet(false),
-    m_insideCidrBlocksHasBeenSet(false),
-    m_protocol(ProtocolValue::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_bgpConfigurationsHasBeenSet(false)
-{
-}
-
 TransitGatewayConnectPeerConfiguration::TransitGatewayConnectPeerConfiguration(const XmlNode& xmlNode)
-  : TransitGatewayConnectPeerConfiguration()
 {
   *this = xmlNode;
 }
@@ -58,6 +47,7 @@ TransitGatewayConnectPeerConfiguration& TransitGatewayConnectPeerConfiguration::
     if(!insideCidrBlocksNode.IsNull())
     {
       XmlNode insideCidrBlocksMember = insideCidrBlocksNode.FirstChild("item");
+      m_insideCidrBlocksHasBeenSet = !insideCidrBlocksMember.IsNull();
       while(!insideCidrBlocksMember.IsNull())
       {
         m_insideCidrBlocks.push_back(insideCidrBlocksMember.GetText());
@@ -69,13 +59,14 @@ TransitGatewayConnectPeerConfiguration& TransitGatewayConnectPeerConfiguration::
     XmlNode protocolNode = resultNode.FirstChild("protocol");
     if(!protocolNode.IsNull())
     {
-      m_protocol = ProtocolValueMapper::GetProtocolValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText()).c_str()).c_str());
+      m_protocol = ProtocolValueMapper::GetProtocolValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText()).c_str()));
       m_protocolHasBeenSet = true;
     }
     XmlNode bgpConfigurationsNode = resultNode.FirstChild("bgpConfigurations");
     if(!bgpConfigurationsNode.IsNull())
     {
       XmlNode bgpConfigurationsMember = bgpConfigurationsNode.FirstChild("item");
+      m_bgpConfigurationsHasBeenSet = !bgpConfigurationsMember.IsNull();
       while(!bgpConfigurationsMember.IsNull())
       {
         m_bgpConfigurations.push_back(bgpConfigurationsMember);

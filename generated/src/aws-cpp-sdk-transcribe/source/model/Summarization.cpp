@@ -18,14 +18,7 @@ namespace TranscribeService
 namespace Model
 {
 
-Summarization::Summarization() : 
-    m_generateAbstractiveSummary(false),
-    m_generateAbstractiveSummaryHasBeenSet(false)
-{
-}
-
 Summarization::Summarization(JsonView jsonValue)
-  : Summarization()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ Summarization& Summarization::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GenerateAbstractiveSummary"))
   {
     m_generateAbstractiveSummary = jsonValue.GetBool("GenerateAbstractiveSummary");
-
     m_generateAbstractiveSummaryHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -19,15 +19,7 @@ namespace Kinesis
 namespace Model
 {
 
-PutRecordsRequestEntry::PutRecordsRequestEntry() : 
-    m_dataHasBeenSet(false),
-    m_explicitHashKeyHasBeenSet(false),
-    m_partitionKeyHasBeenSet(false)
-{
-}
-
 PutRecordsRequestEntry::PutRecordsRequestEntry(JsonView jsonValue)
-  : PutRecordsRequestEntry()
 {
   *this = jsonValue;
 }
@@ -39,21 +31,16 @@ PutRecordsRequestEntry& PutRecordsRequestEntry::operator =(JsonView jsonValue)
     m_data = HashingUtils::Base64Decode(jsonValue.GetString("Data"));
     m_dataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExplicitHashKey"))
   {
     m_explicitHashKey = jsonValue.GetString("ExplicitHashKey");
-
     m_explicitHashKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PartitionKey"))
   {
     m_partitionKey = jsonValue.GetString("PartitionKey");
-
     m_partitionKeyHasBeenSet = true;
   }
-
   return *this;
 }
 

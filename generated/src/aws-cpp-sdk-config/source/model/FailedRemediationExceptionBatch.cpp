@@ -18,14 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-FailedRemediationExceptionBatch::FailedRemediationExceptionBatch() : 
-    m_failureMessageHasBeenSet(false),
-    m_failedItemsHasBeenSet(false)
-{
-}
-
 FailedRemediationExceptionBatch::FailedRemediationExceptionBatch(JsonView jsonValue)
-  : FailedRemediationExceptionBatch()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ FailedRemediationExceptionBatch& FailedRemediationExceptionBatch::operator =(Jso
   if(jsonValue.ValueExists("FailureMessage"))
   {
     m_failureMessage = jsonValue.GetString("FailureMessage");
-
     m_failureMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailedItems"))
   {
     Aws::Utils::Array<JsonView> failedItemsJsonList = jsonValue.GetArray("FailedItems");
@@ -48,7 +39,6 @@ FailedRemediationExceptionBatch& FailedRemediationExceptionBatch::operator =(Jso
     }
     m_failedItemsHasBeenSet = true;
   }
-
   return *this;
 }
 

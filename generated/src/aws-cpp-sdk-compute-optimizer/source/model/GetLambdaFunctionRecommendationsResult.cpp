@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetLambdaFunctionRecommendationsResult::GetLambdaFunctionRecommendationsResult()
-{
-}
-
 GetLambdaFunctionRecommendationsResult::GetLambdaFunctionRecommendationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ GetLambdaFunctionRecommendationsResult& GetLambdaFunctionRecommendationsResult::
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lambdaFunctionRecommendations"))
   {
     Aws::Utils::Array<JsonView> lambdaFunctionRecommendationsJsonList = jsonValue.GetArray("lambdaFunctionRecommendations");
@@ -42,14 +37,15 @@ GetLambdaFunctionRecommendationsResult& GetLambdaFunctionRecommendationsResult::
     {
       m_lambdaFunctionRecommendations.push_back(lambdaFunctionRecommendationsJsonList[lambdaFunctionRecommendationsIndex].AsObject());
     }
+    m_lambdaFunctionRecommendationsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

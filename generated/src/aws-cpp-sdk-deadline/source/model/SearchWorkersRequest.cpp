@@ -12,18 +12,6 @@ using namespace Aws::deadline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SearchWorkersRequest::SearchWorkersRequest() : 
-    m_farmIdHasBeenSet(false),
-    m_fleetIdsHasBeenSet(false),
-    m_filterExpressionsHasBeenSet(false),
-    m_sortExpressionsHasBeenSet(false),
-    m_itemOffset(0),
-    m_itemOffsetHasBeenSet(false),
-    m_pageSize(0),
-    m_pageSizeHasBeenSet(false)
-{
-}
-
 Aws::String SearchWorkersRequest::SerializePayload() const
 {
   JsonValue payload;

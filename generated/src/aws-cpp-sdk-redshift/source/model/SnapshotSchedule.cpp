@@ -20,20 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-SnapshotSchedule::SnapshotSchedule() : 
-    m_scheduleDefinitionsHasBeenSet(false),
-    m_scheduleIdentifierHasBeenSet(false),
-    m_scheduleDescriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_nextInvocationsHasBeenSet(false),
-    m_associatedClusterCount(0),
-    m_associatedClusterCountHasBeenSet(false),
-    m_associatedClustersHasBeenSet(false)
-{
-}
-
 SnapshotSchedule::SnapshotSchedule(const XmlNode& xmlNode)
-  : SnapshotSchedule()
 {
   *this = xmlNode;
 }
@@ -48,6 +35,7 @@ SnapshotSchedule& SnapshotSchedule::operator =(const XmlNode& xmlNode)
     if(!scheduleDefinitionsNode.IsNull())
     {
       XmlNode scheduleDefinitionsMember = scheduleDefinitionsNode.FirstChild("ScheduleDefinition");
+      m_scheduleDefinitionsHasBeenSet = !scheduleDefinitionsMember.IsNull();
       while(!scheduleDefinitionsMember.IsNull())
       {
         m_scheduleDefinitions.push_back(scheduleDefinitionsMember.GetText());
@@ -72,6 +60,7 @@ SnapshotSchedule& SnapshotSchedule::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("Tag");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
@@ -84,6 +73,7 @@ SnapshotSchedule& SnapshotSchedule::operator =(const XmlNode& xmlNode)
     if(!nextInvocationsNode.IsNull())
     {
       XmlNode nextInvocationsMember = nextInvocationsNode.FirstChild("SnapshotTime");
+      m_nextInvocationsHasBeenSet = !nextInvocationsMember.IsNull();
       while(!nextInvocationsMember.IsNull())
       {
         m_nextInvocations.push_back(DateTime(StringUtils::Trim(nextInvocationsMember.GetText().c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601));
@@ -102,6 +92,7 @@ SnapshotSchedule& SnapshotSchedule::operator =(const XmlNode& xmlNode)
     if(!associatedClustersNode.IsNull())
     {
       XmlNode associatedClustersMember = associatedClustersNode.FirstChild("ClusterAssociatedToSchedule");
+      m_associatedClustersHasBeenSet = !associatedClustersMember.IsNull();
       while(!associatedClustersMember.IsNull())
       {
         m_associatedClusters.push_back(associatedClustersMember);

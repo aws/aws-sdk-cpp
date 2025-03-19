@@ -37,7 +37,7 @@ namespace Model
   class CacheNodeTypeSpecificParameter
   {
   public:
-    AWS_ELASTICACHE_API CacheNodeTypeSpecificParameter();
+    AWS_ELASTICACHE_API CacheNodeTypeSpecificParameter() = default;
     AWS_ELASTICACHE_API CacheNodeTypeSpecificParameter(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICACHE_API CacheNodeTypeSpecificParameter& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -49,70 +49,60 @@ namespace Model
     /**
      * <p>The name of the parameter.</p>
      */
-    inline const Aws::String& GetParameterName() const{ return m_parameterName; }
+    inline const Aws::String& GetParameterName() const { return m_parameterName; }
     inline bool ParameterNameHasBeenSet() const { return m_parameterNameHasBeenSet; }
-    inline void SetParameterName(const Aws::String& value) { m_parameterNameHasBeenSet = true; m_parameterName = value; }
-    inline void SetParameterName(Aws::String&& value) { m_parameterNameHasBeenSet = true; m_parameterName = std::move(value); }
-    inline void SetParameterName(const char* value) { m_parameterNameHasBeenSet = true; m_parameterName.assign(value); }
-    inline CacheNodeTypeSpecificParameter& WithParameterName(const Aws::String& value) { SetParameterName(value); return *this;}
-    inline CacheNodeTypeSpecificParameter& WithParameterName(Aws::String&& value) { SetParameterName(std::move(value)); return *this;}
-    inline CacheNodeTypeSpecificParameter& WithParameterName(const char* value) { SetParameterName(value); return *this;}
+    template<typename ParameterNameT = Aws::String>
+    void SetParameterName(ParameterNameT&& value) { m_parameterNameHasBeenSet = true; m_parameterName = std::forward<ParameterNameT>(value); }
+    template<typename ParameterNameT = Aws::String>
+    CacheNodeTypeSpecificParameter& WithParameterName(ParameterNameT&& value) { SetParameterName(std::forward<ParameterNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the parameter.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CacheNodeTypeSpecificParameter& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CacheNodeTypeSpecificParameter& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CacheNodeTypeSpecificParameter& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CacheNodeTypeSpecificParameter& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source of the parameter value.</p>
      */
-    inline const Aws::String& GetSource() const{ return m_source; }
+    inline const Aws::String& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
-    inline CacheNodeTypeSpecificParameter& WithSource(const Aws::String& value) { SetSource(value); return *this;}
-    inline CacheNodeTypeSpecificParameter& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
-    inline CacheNodeTypeSpecificParameter& WithSource(const char* value) { SetSource(value); return *this;}
+    template<typename SourceT = Aws::String>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = Aws::String>
+    CacheNodeTypeSpecificParameter& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The valid data type for the parameter.</p>
      */
-    inline const Aws::String& GetDataType() const{ return m_dataType; }
+    inline const Aws::String& GetDataType() const { return m_dataType; }
     inline bool DataTypeHasBeenSet() const { return m_dataTypeHasBeenSet; }
-    inline void SetDataType(const Aws::String& value) { m_dataTypeHasBeenSet = true; m_dataType = value; }
-    inline void SetDataType(Aws::String&& value) { m_dataTypeHasBeenSet = true; m_dataType = std::move(value); }
-    inline void SetDataType(const char* value) { m_dataTypeHasBeenSet = true; m_dataType.assign(value); }
-    inline CacheNodeTypeSpecificParameter& WithDataType(const Aws::String& value) { SetDataType(value); return *this;}
-    inline CacheNodeTypeSpecificParameter& WithDataType(Aws::String&& value) { SetDataType(std::move(value)); return *this;}
-    inline CacheNodeTypeSpecificParameter& WithDataType(const char* value) { SetDataType(value); return *this;}
+    template<typename DataTypeT = Aws::String>
+    void SetDataType(DataTypeT&& value) { m_dataTypeHasBeenSet = true; m_dataType = std::forward<DataTypeT>(value); }
+    template<typename DataTypeT = Aws::String>
+    CacheNodeTypeSpecificParameter& WithDataType(DataTypeT&& value) { SetDataType(std::forward<DataTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The valid range of values for the parameter.</p>
      */
-    inline const Aws::String& GetAllowedValues() const{ return m_allowedValues; }
+    inline const Aws::String& GetAllowedValues() const { return m_allowedValues; }
     inline bool AllowedValuesHasBeenSet() const { return m_allowedValuesHasBeenSet; }
-    inline void SetAllowedValues(const Aws::String& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = value; }
-    inline void SetAllowedValues(Aws::String&& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = std::move(value); }
-    inline void SetAllowedValues(const char* value) { m_allowedValuesHasBeenSet = true; m_allowedValues.assign(value); }
-    inline CacheNodeTypeSpecificParameter& WithAllowedValues(const Aws::String& value) { SetAllowedValues(value); return *this;}
-    inline CacheNodeTypeSpecificParameter& WithAllowedValues(Aws::String&& value) { SetAllowedValues(std::move(value)); return *this;}
-    inline CacheNodeTypeSpecificParameter& WithAllowedValues(const char* value) { SetAllowedValues(value); return *this;}
+    template<typename AllowedValuesT = Aws::String>
+    void SetAllowedValues(AllowedValuesT&& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = std::forward<AllowedValuesT>(value); }
+    template<typename AllowedValuesT = Aws::String>
+    CacheNodeTypeSpecificParameter& WithAllowedValues(AllowedValuesT&& value) { SetAllowedValues(std::forward<AllowedValuesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -121,7 +111,7 @@ namespace Model
      * parameter can be modified. Some parameters have security or operational
      * implications that prevent them from being changed.</p>
      */
-    inline bool GetIsModifiable() const{ return m_isModifiable; }
+    inline bool GetIsModifiable() const { return m_isModifiable; }
     inline bool IsModifiableHasBeenSet() const { return m_isModifiableHasBeenSet; }
     inline void SetIsModifiable(bool value) { m_isModifiableHasBeenSet = true; m_isModifiable = value; }
     inline CacheNodeTypeSpecificParameter& WithIsModifiable(bool value) { SetIsModifiable(value); return *this;}
@@ -131,14 +121,12 @@ namespace Model
     /**
      * <p>The earliest cache engine version to which the parameter can apply.</p>
      */
-    inline const Aws::String& GetMinimumEngineVersion() const{ return m_minimumEngineVersion; }
+    inline const Aws::String& GetMinimumEngineVersion() const { return m_minimumEngineVersion; }
     inline bool MinimumEngineVersionHasBeenSet() const { return m_minimumEngineVersionHasBeenSet; }
-    inline void SetMinimumEngineVersion(const Aws::String& value) { m_minimumEngineVersionHasBeenSet = true; m_minimumEngineVersion = value; }
-    inline void SetMinimumEngineVersion(Aws::String&& value) { m_minimumEngineVersionHasBeenSet = true; m_minimumEngineVersion = std::move(value); }
-    inline void SetMinimumEngineVersion(const char* value) { m_minimumEngineVersionHasBeenSet = true; m_minimumEngineVersion.assign(value); }
-    inline CacheNodeTypeSpecificParameter& WithMinimumEngineVersion(const Aws::String& value) { SetMinimumEngineVersion(value); return *this;}
-    inline CacheNodeTypeSpecificParameter& WithMinimumEngineVersion(Aws::String&& value) { SetMinimumEngineVersion(std::move(value)); return *this;}
-    inline CacheNodeTypeSpecificParameter& WithMinimumEngineVersion(const char* value) { SetMinimumEngineVersion(value); return *this;}
+    template<typename MinimumEngineVersionT = Aws::String>
+    void SetMinimumEngineVersion(MinimumEngineVersionT&& value) { m_minimumEngineVersionHasBeenSet = true; m_minimumEngineVersion = std::forward<MinimumEngineVersionT>(value); }
+    template<typename MinimumEngineVersionT = Aws::String>
+    CacheNodeTypeSpecificParameter& WithMinimumEngineVersion(MinimumEngineVersionT&& value) { SetMinimumEngineVersion(std::forward<MinimumEngineVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -146,14 +134,14 @@ namespace Model
      * <p>A list of cache node types and their corresponding values for this
      * parameter.</p>
      */
-    inline const Aws::Vector<CacheNodeTypeSpecificValue>& GetCacheNodeTypeSpecificValues() const{ return m_cacheNodeTypeSpecificValues; }
+    inline const Aws::Vector<CacheNodeTypeSpecificValue>& GetCacheNodeTypeSpecificValues() const { return m_cacheNodeTypeSpecificValues; }
     inline bool CacheNodeTypeSpecificValuesHasBeenSet() const { return m_cacheNodeTypeSpecificValuesHasBeenSet; }
-    inline void SetCacheNodeTypeSpecificValues(const Aws::Vector<CacheNodeTypeSpecificValue>& value) { m_cacheNodeTypeSpecificValuesHasBeenSet = true; m_cacheNodeTypeSpecificValues = value; }
-    inline void SetCacheNodeTypeSpecificValues(Aws::Vector<CacheNodeTypeSpecificValue>&& value) { m_cacheNodeTypeSpecificValuesHasBeenSet = true; m_cacheNodeTypeSpecificValues = std::move(value); }
-    inline CacheNodeTypeSpecificParameter& WithCacheNodeTypeSpecificValues(const Aws::Vector<CacheNodeTypeSpecificValue>& value) { SetCacheNodeTypeSpecificValues(value); return *this;}
-    inline CacheNodeTypeSpecificParameter& WithCacheNodeTypeSpecificValues(Aws::Vector<CacheNodeTypeSpecificValue>&& value) { SetCacheNodeTypeSpecificValues(std::move(value)); return *this;}
-    inline CacheNodeTypeSpecificParameter& AddCacheNodeTypeSpecificValues(const CacheNodeTypeSpecificValue& value) { m_cacheNodeTypeSpecificValuesHasBeenSet = true; m_cacheNodeTypeSpecificValues.push_back(value); return *this; }
-    inline CacheNodeTypeSpecificParameter& AddCacheNodeTypeSpecificValues(CacheNodeTypeSpecificValue&& value) { m_cacheNodeTypeSpecificValuesHasBeenSet = true; m_cacheNodeTypeSpecificValues.push_back(std::move(value)); return *this; }
+    template<typename CacheNodeTypeSpecificValuesT = Aws::Vector<CacheNodeTypeSpecificValue>>
+    void SetCacheNodeTypeSpecificValues(CacheNodeTypeSpecificValuesT&& value) { m_cacheNodeTypeSpecificValuesHasBeenSet = true; m_cacheNodeTypeSpecificValues = std::forward<CacheNodeTypeSpecificValuesT>(value); }
+    template<typename CacheNodeTypeSpecificValuesT = Aws::Vector<CacheNodeTypeSpecificValue>>
+    CacheNodeTypeSpecificParameter& WithCacheNodeTypeSpecificValues(CacheNodeTypeSpecificValuesT&& value) { SetCacheNodeTypeSpecificValues(std::forward<CacheNodeTypeSpecificValuesT>(value)); return *this;}
+    template<typename CacheNodeTypeSpecificValuesT = CacheNodeTypeSpecificValue>
+    CacheNodeTypeSpecificParameter& AddCacheNodeTypeSpecificValues(CacheNodeTypeSpecificValuesT&& value) { m_cacheNodeTypeSpecificValuesHasBeenSet = true; m_cacheNodeTypeSpecificValues.emplace_back(std::forward<CacheNodeTypeSpecificValuesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -164,12 +152,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Clusters.Rebooting.html">Rebooting
      * a Cluster</a>.</p>
      */
-    inline const ChangeType& GetChangeType() const{ return m_changeType; }
+    inline ChangeType GetChangeType() const { return m_changeType; }
     inline bool ChangeTypeHasBeenSet() const { return m_changeTypeHasBeenSet; }
-    inline void SetChangeType(const ChangeType& value) { m_changeTypeHasBeenSet = true; m_changeType = value; }
-    inline void SetChangeType(ChangeType&& value) { m_changeTypeHasBeenSet = true; m_changeType = std::move(value); }
-    inline CacheNodeTypeSpecificParameter& WithChangeType(const ChangeType& value) { SetChangeType(value); return *this;}
-    inline CacheNodeTypeSpecificParameter& WithChangeType(ChangeType&& value) { SetChangeType(std::move(value)); return *this;}
+    inline void SetChangeType(ChangeType value) { m_changeTypeHasBeenSet = true; m_changeType = value; }
+    inline CacheNodeTypeSpecificParameter& WithChangeType(ChangeType value) { SetChangeType(value); return *this;}
     ///@}
   private:
 
@@ -188,7 +174,7 @@ namespace Model
     Aws::String m_allowedValues;
     bool m_allowedValuesHasBeenSet = false;
 
-    bool m_isModifiable;
+    bool m_isModifiable{false};
     bool m_isModifiableHasBeenSet = false;
 
     Aws::String m_minimumEngineVersion;
@@ -197,7 +183,7 @@ namespace Model
     Aws::Vector<CacheNodeTypeSpecificValue> m_cacheNodeTypeSpecificValues;
     bool m_cacheNodeTypeSpecificValuesHasBeenSet = false;
 
-    ChangeType m_changeType;
+    ChangeType m_changeType{ChangeType::NOT_SET};
     bool m_changeTypeHasBeenSet = false;
   };
 

@@ -18,19 +18,7 @@ namespace CodeArtifact
 namespace Model
 {
 
-PackageGroupOriginRestriction::PackageGroupOriginRestriction() : 
-    m_mode(PackageGroupOriginRestrictionMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_effectiveMode(PackageGroupOriginRestrictionMode::NOT_SET),
-    m_effectiveModeHasBeenSet(false),
-    m_inheritedFromHasBeenSet(false),
-    m_repositoriesCount(0),
-    m_repositoriesCountHasBeenSet(false)
-{
-}
-
 PackageGroupOriginRestriction::PackageGroupOriginRestriction(JsonView jsonValue)
-  : PackageGroupOriginRestriction()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ PackageGroupOriginRestriction& PackageGroupOriginRestriction::operator =(JsonVie
   if(jsonValue.ValueExists("mode"))
   {
     m_mode = PackageGroupOriginRestrictionModeMapper::GetPackageGroupOriginRestrictionModeForName(jsonValue.GetString("mode"));
-
     m_modeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("effectiveMode"))
   {
     m_effectiveMode = PackageGroupOriginRestrictionModeMapper::GetPackageGroupOriginRestrictionModeForName(jsonValue.GetString("effectiveMode"));
-
     m_effectiveModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inheritedFrom"))
   {
     m_inheritedFrom = jsonValue.GetObject("inheritedFrom");
-
     m_inheritedFromHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("repositoriesCount"))
   {
     m_repositoriesCount = jsonValue.GetInt64("repositoriesCount");
-
     m_repositoriesCountHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,14 +20,7 @@ namespace Route53
 namespace Model
 {
 
-StatusReport::StatusReport() : 
-    m_statusHasBeenSet(false),
-    m_checkedTimeHasBeenSet(false)
-{
-}
-
 StatusReport::StatusReport(const XmlNode& xmlNode)
-  : StatusReport()
 {
   *this = xmlNode;
 }

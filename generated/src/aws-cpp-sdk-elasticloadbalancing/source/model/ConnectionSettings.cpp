@@ -20,14 +20,7 @@ namespace ElasticLoadBalancing
 namespace Model
 {
 
-ConnectionSettings::ConnectionSettings() : 
-    m_idleTimeout(0),
-    m_idleTimeoutHasBeenSet(false)
-{
-}
-
 ConnectionSettings::ConnectionSettings(const XmlNode& xmlNode)
-  : ConnectionSettings()
 {
   *this = xmlNode;
 }

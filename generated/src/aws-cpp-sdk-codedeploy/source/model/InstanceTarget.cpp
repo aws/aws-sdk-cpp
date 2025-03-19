@@ -18,21 +18,7 @@ namespace CodeDeploy
 namespace Model
 {
 
-InstanceTarget::InstanceTarget() : 
-    m_deploymentIdHasBeenSet(false),
-    m_targetIdHasBeenSet(false),
-    m_targetArnHasBeenSet(false),
-    m_status(TargetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_lifecycleEventsHasBeenSet(false),
-    m_instanceLabel(TargetLabel::NOT_SET),
-    m_instanceLabelHasBeenSet(false)
-{
-}
-
 InstanceTarget::InstanceTarget(JsonView jsonValue)
-  : InstanceTarget()
 {
   *this = jsonValue;
 }
@@ -42,38 +28,28 @@ InstanceTarget& InstanceTarget::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("deploymentId"))
   {
     m_deploymentId = jsonValue.GetString("deploymentId");
-
     m_deploymentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetId"))
   {
     m_targetId = jsonValue.GetString("targetId");
-
     m_targetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetArn"))
   {
     m_targetArn = jsonValue.GetString("targetArn");
-
     m_targetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = TargetStatusMapper::GetTargetStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetDouble("lastUpdatedAt");
-
     m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lifecycleEvents"))
   {
     Aws::Utils::Array<JsonView> lifecycleEventsJsonList = jsonValue.GetArray("lifecycleEvents");
@@ -83,14 +59,11 @@ InstanceTarget& InstanceTarget::operator =(JsonView jsonValue)
     }
     m_lifecycleEventsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceLabel"))
   {
     m_instanceLabel = TargetLabelMapper::GetTargetLabelForName(jsonValue.GetString("instanceLabel"));
-
     m_instanceLabelHasBeenSet = true;
   }
-
   return *this;
 }
 

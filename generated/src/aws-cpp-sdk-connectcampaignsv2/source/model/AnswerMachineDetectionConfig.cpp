@@ -18,16 +18,7 @@ namespace ConnectCampaignsV2
 namespace Model
 {
 
-AnswerMachineDetectionConfig::AnswerMachineDetectionConfig() : 
-    m_enableAnswerMachineDetection(false),
-    m_enableAnswerMachineDetectionHasBeenSet(false),
-    m_awaitAnswerMachinePrompt(false),
-    m_awaitAnswerMachinePromptHasBeenSet(false)
-{
-}
-
 AnswerMachineDetectionConfig::AnswerMachineDetectionConfig(JsonView jsonValue)
-  : AnswerMachineDetectionConfig()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ AnswerMachineDetectionConfig& AnswerMachineDetectionConfig::operator =(JsonView 
   if(jsonValue.ValueExists("enableAnswerMachineDetection"))
   {
     m_enableAnswerMachineDetection = jsonValue.GetBool("enableAnswerMachineDetection");
-
     m_enableAnswerMachineDetectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awaitAnswerMachinePrompt"))
   {
     m_awaitAnswerMachinePrompt = jsonValue.GetBool("awaitAnswerMachinePrompt");
-
     m_awaitAnswerMachinePromptHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-Campaign::Campaign() : 
-    m_campaignIdHasBeenSet(false)
-{
-}
-
 Campaign::Campaign(JsonView jsonValue)
-  : Campaign()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Campaign& Campaign::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CampaignId"))
   {
     m_campaignId = jsonValue.GetString("CampaignId");
-
     m_campaignIdHasBeenSet = true;
   }
-
   return *this;
 }
 

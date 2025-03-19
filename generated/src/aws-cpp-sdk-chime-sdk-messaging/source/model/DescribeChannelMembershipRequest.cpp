@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeChannelMembershipRequest::DescribeChannelMembershipRequest() : 
-    m_channelArnHasBeenSet(false),
-    m_memberArnHasBeenSet(false),
-    m_chimeBearerHasBeenSet(false),
-    m_subChannelIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeChannelMembershipRequest::SerializePayload() const
 {
   return {};

@@ -12,11 +12,6 @@ using namespace Aws::RedshiftDataAPIService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeStatementRequest::DescribeStatementRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String DescribeStatementRequest::SerializePayload() const
 {
   JsonValue payload;

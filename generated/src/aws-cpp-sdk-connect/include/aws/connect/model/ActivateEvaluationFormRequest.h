@@ -21,7 +21,7 @@ namespace Model
   class ActivateEvaluationFormRequest : public ConnectRequest
   {
   public:
-    AWS_CONNECT_API ActivateEvaluationFormRequest();
+    AWS_CONNECT_API ActivateEvaluationFormRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline ActivateEvaluationFormRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline ActivateEvaluationFormRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline ActivateEvaluationFormRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    ActivateEvaluationFormRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier for the evaluation form.</p>
      */
-    inline const Aws::String& GetEvaluationFormId() const{ return m_evaluationFormId; }
+    inline const Aws::String& GetEvaluationFormId() const { return m_evaluationFormId; }
     inline bool EvaluationFormIdHasBeenSet() const { return m_evaluationFormIdHasBeenSet; }
-    inline void SetEvaluationFormId(const Aws::String& value) { m_evaluationFormIdHasBeenSet = true; m_evaluationFormId = value; }
-    inline void SetEvaluationFormId(Aws::String&& value) { m_evaluationFormIdHasBeenSet = true; m_evaluationFormId = std::move(value); }
-    inline void SetEvaluationFormId(const char* value) { m_evaluationFormIdHasBeenSet = true; m_evaluationFormId.assign(value); }
-    inline ActivateEvaluationFormRequest& WithEvaluationFormId(const Aws::String& value) { SetEvaluationFormId(value); return *this;}
-    inline ActivateEvaluationFormRequest& WithEvaluationFormId(Aws::String&& value) { SetEvaluationFormId(std::move(value)); return *this;}
-    inline ActivateEvaluationFormRequest& WithEvaluationFormId(const char* value) { SetEvaluationFormId(value); return *this;}
+    template<typename EvaluationFormIdT = Aws::String>
+    void SetEvaluationFormId(EvaluationFormIdT&& value) { m_evaluationFormIdHasBeenSet = true; m_evaluationFormId = std::forward<EvaluationFormIdT>(value); }
+    template<typename EvaluationFormIdT = Aws::String>
+    ActivateEvaluationFormRequest& WithEvaluationFormId(EvaluationFormIdT&& value) { SetEvaluationFormId(std::forward<EvaluationFormIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,7 +63,7 @@ namespace Model
      * <p>The version of the evaluation form to activate. If the version property is
      * not provided, the latest version of the evaluation form is activated.</p>
      */
-    inline int GetEvaluationFormVersion() const{ return m_evaluationFormVersion; }
+    inline int GetEvaluationFormVersion() const { return m_evaluationFormVersion; }
     inline bool EvaluationFormVersionHasBeenSet() const { return m_evaluationFormVersionHasBeenSet; }
     inline void SetEvaluationFormVersion(int value) { m_evaluationFormVersionHasBeenSet = true; m_evaluationFormVersion = value; }
     inline ActivateEvaluationFormRequest& WithEvaluationFormVersion(int value) { SetEvaluationFormVersion(value); return *this;}
@@ -80,7 +76,7 @@ namespace Model
     Aws::String m_evaluationFormId;
     bool m_evaluationFormIdHasBeenSet = false;
 
-    int m_evaluationFormVersion;
+    int m_evaluationFormVersion{0};
     bool m_evaluationFormVersionHasBeenSet = false;
   };
 

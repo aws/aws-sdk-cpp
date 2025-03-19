@@ -18,21 +18,7 @@ namespace LexRuntimeV2
 namespace Model
 {
 
-ConfigurationEvent::ConfigurationEvent() : 
-    m_requestAttributesHasBeenSet(false),
-    m_responseContentTypeHasBeenSet(false),
-    m_sessionStateHasBeenSet(false),
-    m_welcomeMessagesHasBeenSet(false),
-    m_disablePlayback(false),
-    m_disablePlaybackHasBeenSet(false),
-    m_eventIdHasBeenSet(false),
-    m_clientTimestampMillis(0),
-    m_clientTimestampMillisHasBeenSet(false)
-{
-}
-
 ConfigurationEvent::ConfigurationEvent(JsonView jsonValue)
-  : ConfigurationEvent()
 {
   *this = jsonValue;
 }
@@ -48,21 +34,16 @@ ConfigurationEvent& ConfigurationEvent::operator =(JsonView jsonValue)
     }
     m_requestAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("responseContentType"))
   {
     m_responseContentType = jsonValue.GetString("responseContentType");
-
     m_responseContentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sessionState"))
   {
     m_sessionState = jsonValue.GetObject("sessionState");
-
     m_sessionStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("welcomeMessages"))
   {
     Aws::Utils::Array<JsonView> welcomeMessagesJsonList = jsonValue.GetArray("welcomeMessages");
@@ -72,28 +53,21 @@ ConfigurationEvent& ConfigurationEvent::operator =(JsonView jsonValue)
     }
     m_welcomeMessagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("disablePlayback"))
   {
     m_disablePlayback = jsonValue.GetBool("disablePlayback");
-
     m_disablePlaybackHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventId"))
   {
     m_eventId = jsonValue.GetString("eventId");
-
     m_eventIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientTimestampMillis"))
   {
     m_clientTimestampMillis = jsonValue.GetInt64("clientTimestampMillis");
-
     m_clientTimestampMillisHasBeenSet = true;
   }
-
   return *this;
 }
 

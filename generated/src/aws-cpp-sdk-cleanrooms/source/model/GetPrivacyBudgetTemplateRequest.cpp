@@ -12,12 +12,6 @@ using namespace Aws::CleanRooms::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetPrivacyBudgetTemplateRequest::GetPrivacyBudgetTemplateRequest() : 
-    m_membershipIdentifierHasBeenSet(false),
-    m_privacyBudgetTemplateIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String GetPrivacyBudgetTemplateRequest::SerializePayload() const
 {
   return {};

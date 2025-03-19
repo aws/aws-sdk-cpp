@@ -34,7 +34,7 @@ namespace Model
   class Customer
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API Customer();
+    AWS_PARTNERCENTRALSELLING_API Customer() = default;
     AWS_PARTNERCENTRALSELLING_API Customer(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API Customer& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
     /**
      * <p>An object that contains the customer's account details.</p>
      */
-    inline const Account& GetAccount() const{ return m_account; }
+    inline const Account& GetAccount() const { return m_account; }
     inline bool AccountHasBeenSet() const { return m_accountHasBeenSet; }
-    inline void SetAccount(const Account& value) { m_accountHasBeenSet = true; m_account = value; }
-    inline void SetAccount(Account&& value) { m_accountHasBeenSet = true; m_account = std::move(value); }
-    inline Customer& WithAccount(const Account& value) { SetAccount(value); return *this;}
-    inline Customer& WithAccount(Account&& value) { SetAccount(std::move(value)); return *this;}
+    template<typename AccountT = Account>
+    void SetAccount(AccountT&& value) { m_accountHasBeenSet = true; m_account = std::forward<AccountT>(value); }
+    template<typename AccountT = Account>
+    Customer& WithAccount(AccountT&& value) { SetAccount(std::forward<AccountT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +60,14 @@ namespace Model
      * customer organization. These contacts are key to progressing the
      * opportunity.</p>
      */
-    inline const Aws::Vector<Contact>& GetContacts() const{ return m_contacts; }
+    inline const Aws::Vector<Contact>& GetContacts() const { return m_contacts; }
     inline bool ContactsHasBeenSet() const { return m_contactsHasBeenSet; }
-    inline void SetContacts(const Aws::Vector<Contact>& value) { m_contactsHasBeenSet = true; m_contacts = value; }
-    inline void SetContacts(Aws::Vector<Contact>&& value) { m_contactsHasBeenSet = true; m_contacts = std::move(value); }
-    inline Customer& WithContacts(const Aws::Vector<Contact>& value) { SetContacts(value); return *this;}
-    inline Customer& WithContacts(Aws::Vector<Contact>&& value) { SetContacts(std::move(value)); return *this;}
-    inline Customer& AddContacts(const Contact& value) { m_contactsHasBeenSet = true; m_contacts.push_back(value); return *this; }
-    inline Customer& AddContacts(Contact&& value) { m_contactsHasBeenSet = true; m_contacts.push_back(std::move(value)); return *this; }
+    template<typename ContactsT = Aws::Vector<Contact>>
+    void SetContacts(ContactsT&& value) { m_contactsHasBeenSet = true; m_contacts = std::forward<ContactsT>(value); }
+    template<typename ContactsT = Aws::Vector<Contact>>
+    Customer& WithContacts(ContactsT&& value) { SetContacts(std::forward<ContactsT>(value)); return *this;}
+    template<typename ContactsT = Contact>
+    Customer& AddContacts(ContactsT&& value) { m_contactsHasBeenSet = true; m_contacts.emplace_back(std::forward<ContactsT>(value)); return *this; }
     ///@}
   private:
 

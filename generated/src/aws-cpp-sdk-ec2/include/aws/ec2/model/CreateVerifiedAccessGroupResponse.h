@@ -28,7 +28,7 @@ namespace Model
   class CreateVerifiedAccessGroupResponse
   {
   public:
-    AWS_EC2_API CreateVerifiedAccessGroupResponse();
+    AWS_EC2_API CreateVerifiedAccessGroupResponse() = default;
     AWS_EC2_API CreateVerifiedAccessGroupResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API CreateVerifiedAccessGroupResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>Details about the Verified Access group.</p>
      */
-    inline const VerifiedAccessGroup& GetVerifiedAccessGroup() const{ return m_verifiedAccessGroup; }
-    inline void SetVerifiedAccessGroup(const VerifiedAccessGroup& value) { m_verifiedAccessGroup = value; }
-    inline void SetVerifiedAccessGroup(VerifiedAccessGroup&& value) { m_verifiedAccessGroup = std::move(value); }
-    inline CreateVerifiedAccessGroupResponse& WithVerifiedAccessGroup(const VerifiedAccessGroup& value) { SetVerifiedAccessGroup(value); return *this;}
-    inline CreateVerifiedAccessGroupResponse& WithVerifiedAccessGroup(VerifiedAccessGroup&& value) { SetVerifiedAccessGroup(std::move(value)); return *this;}
+    inline const VerifiedAccessGroup& GetVerifiedAccessGroup() const { return m_verifiedAccessGroup; }
+    template<typename VerifiedAccessGroupT = VerifiedAccessGroup>
+    void SetVerifiedAccessGroup(VerifiedAccessGroupT&& value) { m_verifiedAccessGroupHasBeenSet = true; m_verifiedAccessGroup = std::forward<VerifiedAccessGroupT>(value); }
+    template<typename VerifiedAccessGroupT = VerifiedAccessGroup>
+    CreateVerifiedAccessGroupResponse& WithVerifiedAccessGroup(VerifiedAccessGroupT&& value) { SetVerifiedAccessGroup(std::forward<VerifiedAccessGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CreateVerifiedAccessGroupResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CreateVerifiedAccessGroupResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CreateVerifiedAccessGroupResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     VerifiedAccessGroup m_verifiedAccessGroup;
+    bool m_verifiedAccessGroupHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

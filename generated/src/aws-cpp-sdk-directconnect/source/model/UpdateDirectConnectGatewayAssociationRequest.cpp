@@ -12,13 +12,6 @@ using namespace Aws::DirectConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDirectConnectGatewayAssociationRequest::UpdateDirectConnectGatewayAssociationRequest() : 
-    m_associationIdHasBeenSet(false),
-    m_addAllowedPrefixesToDirectConnectGatewayHasBeenSet(false),
-    m_removeAllowedPrefixesToDirectConnectGatewayHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDirectConnectGatewayAssociationRequest::SerializePayload() const
 {
   JsonValue payload;

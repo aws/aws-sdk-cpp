@@ -53,7 +53,7 @@ namespace Model
   class PipeLogConfigurationParameters
   {
   public:
-    AWS_PIPES_API PipeLogConfigurationParameters();
+    AWS_PIPES_API PipeLogConfigurationParameters() = default;
     AWS_PIPES_API PipeLogConfigurationParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API PipeLogConfigurationParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -63,36 +63,36 @@ namespace Model
     /**
      * <p>The Amazon S3 logging configuration settings for the pipe.</p>
      */
-    inline const S3LogDestinationParameters& GetS3LogDestination() const{ return m_s3LogDestination; }
+    inline const S3LogDestinationParameters& GetS3LogDestination() const { return m_s3LogDestination; }
     inline bool S3LogDestinationHasBeenSet() const { return m_s3LogDestinationHasBeenSet; }
-    inline void SetS3LogDestination(const S3LogDestinationParameters& value) { m_s3LogDestinationHasBeenSet = true; m_s3LogDestination = value; }
-    inline void SetS3LogDestination(S3LogDestinationParameters&& value) { m_s3LogDestinationHasBeenSet = true; m_s3LogDestination = std::move(value); }
-    inline PipeLogConfigurationParameters& WithS3LogDestination(const S3LogDestinationParameters& value) { SetS3LogDestination(value); return *this;}
-    inline PipeLogConfigurationParameters& WithS3LogDestination(S3LogDestinationParameters&& value) { SetS3LogDestination(std::move(value)); return *this;}
+    template<typename S3LogDestinationT = S3LogDestinationParameters>
+    void SetS3LogDestination(S3LogDestinationT&& value) { m_s3LogDestinationHasBeenSet = true; m_s3LogDestination = std::forward<S3LogDestinationT>(value); }
+    template<typename S3LogDestinationT = S3LogDestinationParameters>
+    PipeLogConfigurationParameters& WithS3LogDestination(S3LogDestinationT&& value) { SetS3LogDestination(std::forward<S3LogDestinationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Data Firehose logging configuration settings for the pipe.</p>
      */
-    inline const FirehoseLogDestinationParameters& GetFirehoseLogDestination() const{ return m_firehoseLogDestination; }
+    inline const FirehoseLogDestinationParameters& GetFirehoseLogDestination() const { return m_firehoseLogDestination; }
     inline bool FirehoseLogDestinationHasBeenSet() const { return m_firehoseLogDestinationHasBeenSet; }
-    inline void SetFirehoseLogDestination(const FirehoseLogDestinationParameters& value) { m_firehoseLogDestinationHasBeenSet = true; m_firehoseLogDestination = value; }
-    inline void SetFirehoseLogDestination(FirehoseLogDestinationParameters&& value) { m_firehoseLogDestinationHasBeenSet = true; m_firehoseLogDestination = std::move(value); }
-    inline PipeLogConfigurationParameters& WithFirehoseLogDestination(const FirehoseLogDestinationParameters& value) { SetFirehoseLogDestination(value); return *this;}
-    inline PipeLogConfigurationParameters& WithFirehoseLogDestination(FirehoseLogDestinationParameters&& value) { SetFirehoseLogDestination(std::move(value)); return *this;}
+    template<typename FirehoseLogDestinationT = FirehoseLogDestinationParameters>
+    void SetFirehoseLogDestination(FirehoseLogDestinationT&& value) { m_firehoseLogDestinationHasBeenSet = true; m_firehoseLogDestination = std::forward<FirehoseLogDestinationT>(value); }
+    template<typename FirehoseLogDestinationT = FirehoseLogDestinationParameters>
+    PipeLogConfigurationParameters& WithFirehoseLogDestination(FirehoseLogDestinationT&& value) { SetFirehoseLogDestination(std::forward<FirehoseLogDestinationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon CloudWatch Logs logging configuration settings for the pipe.</p>
      */
-    inline const CloudwatchLogsLogDestinationParameters& GetCloudwatchLogsLogDestination() const{ return m_cloudwatchLogsLogDestination; }
+    inline const CloudwatchLogsLogDestinationParameters& GetCloudwatchLogsLogDestination() const { return m_cloudwatchLogsLogDestination; }
     inline bool CloudwatchLogsLogDestinationHasBeenSet() const { return m_cloudwatchLogsLogDestinationHasBeenSet; }
-    inline void SetCloudwatchLogsLogDestination(const CloudwatchLogsLogDestinationParameters& value) { m_cloudwatchLogsLogDestinationHasBeenSet = true; m_cloudwatchLogsLogDestination = value; }
-    inline void SetCloudwatchLogsLogDestination(CloudwatchLogsLogDestinationParameters&& value) { m_cloudwatchLogsLogDestinationHasBeenSet = true; m_cloudwatchLogsLogDestination = std::move(value); }
-    inline PipeLogConfigurationParameters& WithCloudwatchLogsLogDestination(const CloudwatchLogsLogDestinationParameters& value) { SetCloudwatchLogsLogDestination(value); return *this;}
-    inline PipeLogConfigurationParameters& WithCloudwatchLogsLogDestination(CloudwatchLogsLogDestinationParameters&& value) { SetCloudwatchLogsLogDestination(std::move(value)); return *this;}
+    template<typename CloudwatchLogsLogDestinationT = CloudwatchLogsLogDestinationParameters>
+    void SetCloudwatchLogsLogDestination(CloudwatchLogsLogDestinationT&& value) { m_cloudwatchLogsLogDestinationHasBeenSet = true; m_cloudwatchLogsLogDestination = std::forward<CloudwatchLogsLogDestinationT>(value); }
+    template<typename CloudwatchLogsLogDestinationT = CloudwatchLogsLogDestinationParameters>
+    PipeLogConfigurationParameters& WithCloudwatchLogsLogDestination(CloudwatchLogsLogDestinationT&& value) { SetCloudwatchLogsLogDestination(std::forward<CloudwatchLogsLogDestinationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,12 +102,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-logs.html#eb-pipes-logs-level">Specifying
      * EventBridge Pipes log level</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
-    inline const LogLevel& GetLevel() const{ return m_level; }
+    inline LogLevel GetLevel() const { return m_level; }
     inline bool LevelHasBeenSet() const { return m_levelHasBeenSet; }
-    inline void SetLevel(const LogLevel& value) { m_levelHasBeenSet = true; m_level = value; }
-    inline void SetLevel(LogLevel&& value) { m_levelHasBeenSet = true; m_level = std::move(value); }
-    inline PipeLogConfigurationParameters& WithLevel(const LogLevel& value) { SetLevel(value); return *this;}
-    inline PipeLogConfigurationParameters& WithLevel(LogLevel&& value) { SetLevel(std::move(value)); return *this;}
+    inline void SetLevel(LogLevel value) { m_levelHasBeenSet = true; m_level = value; }
+    inline PipeLogConfigurationParameters& WithLevel(LogLevel value) { SetLevel(value); return *this;}
     ///@}
 
     ///@{
@@ -120,14 +118,13 @@ namespace Model
      * execution data in logs</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      * <p>By default, execution data is not included.</p>
      */
-    inline const Aws::Vector<IncludeExecutionDataOption>& GetIncludeExecutionData() const{ return m_includeExecutionData; }
+    inline const Aws::Vector<IncludeExecutionDataOption>& GetIncludeExecutionData() const { return m_includeExecutionData; }
     inline bool IncludeExecutionDataHasBeenSet() const { return m_includeExecutionDataHasBeenSet; }
-    inline void SetIncludeExecutionData(const Aws::Vector<IncludeExecutionDataOption>& value) { m_includeExecutionDataHasBeenSet = true; m_includeExecutionData = value; }
-    inline void SetIncludeExecutionData(Aws::Vector<IncludeExecutionDataOption>&& value) { m_includeExecutionDataHasBeenSet = true; m_includeExecutionData = std::move(value); }
-    inline PipeLogConfigurationParameters& WithIncludeExecutionData(const Aws::Vector<IncludeExecutionDataOption>& value) { SetIncludeExecutionData(value); return *this;}
-    inline PipeLogConfigurationParameters& WithIncludeExecutionData(Aws::Vector<IncludeExecutionDataOption>&& value) { SetIncludeExecutionData(std::move(value)); return *this;}
-    inline PipeLogConfigurationParameters& AddIncludeExecutionData(const IncludeExecutionDataOption& value) { m_includeExecutionDataHasBeenSet = true; m_includeExecutionData.push_back(value); return *this; }
-    inline PipeLogConfigurationParameters& AddIncludeExecutionData(IncludeExecutionDataOption&& value) { m_includeExecutionDataHasBeenSet = true; m_includeExecutionData.push_back(std::move(value)); return *this; }
+    template<typename IncludeExecutionDataT = Aws::Vector<IncludeExecutionDataOption>>
+    void SetIncludeExecutionData(IncludeExecutionDataT&& value) { m_includeExecutionDataHasBeenSet = true; m_includeExecutionData = std::forward<IncludeExecutionDataT>(value); }
+    template<typename IncludeExecutionDataT = Aws::Vector<IncludeExecutionDataOption>>
+    PipeLogConfigurationParameters& WithIncludeExecutionData(IncludeExecutionDataT&& value) { SetIncludeExecutionData(std::forward<IncludeExecutionDataT>(value)); return *this;}
+    inline PipeLogConfigurationParameters& AddIncludeExecutionData(IncludeExecutionDataOption value) { m_includeExecutionDataHasBeenSet = true; m_includeExecutionData.push_back(value); return *this; }
     ///@}
   private:
 
@@ -140,7 +137,7 @@ namespace Model
     CloudwatchLogsLogDestinationParameters m_cloudwatchLogsLogDestination;
     bool m_cloudwatchLogsLogDestinationHasBeenSet = false;
 
-    LogLevel m_level;
+    LogLevel m_level{LogLevel::NOT_SET};
     bool m_levelHasBeenSet = false;
 
     Aws::Vector<IncludeExecutionDataOption> m_includeExecutionData;

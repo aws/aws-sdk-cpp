@@ -18,23 +18,7 @@ namespace KinesisVideo
 namespace Model
 {
 
-StreamInfo::StreamInfo() : 
-    m_deviceNameHasBeenSet(false),
-    m_streamNameHasBeenSet(false),
-    m_streamARNHasBeenSet(false),
-    m_mediaTypeHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_dataRetentionInHours(0),
-    m_dataRetentionInHoursHasBeenSet(false)
-{
-}
-
 StreamInfo::StreamInfo(JsonView jsonValue)
-  : StreamInfo()
 {
   *this = jsonValue;
 }
@@ -44,66 +28,48 @@ StreamInfo& StreamInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DeviceName"))
   {
     m_deviceName = jsonValue.GetString("DeviceName");
-
     m_deviceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StreamName"))
   {
     m_streamName = jsonValue.GetString("StreamName");
-
     m_streamNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StreamARN"))
   {
     m_streamARN = jsonValue.GetString("StreamARN");
-
     m_streamARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MediaType"))
   {
     m_mediaType = jsonValue.GetString("MediaType");
-
     m_mediaTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetString("Version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataRetentionInHours"))
   {
     m_dataRetentionInHours = jsonValue.GetInteger("DataRetentionInHours");
-
     m_dataRetentionInHoursHasBeenSet = true;
   }
-
   return *this;
 }
 

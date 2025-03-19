@@ -33,7 +33,7 @@ namespace Model
   class Row
   {
   public:
-    AWS_IOTSITEWISE_API Row();
+    AWS_IOTSITEWISE_API Row() = default;
     AWS_IOTSITEWISE_API Row(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Row& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>List of data points in a single row of the result set.</p>
      */
-    inline const Aws::Vector<Datum>& GetData() const{ return m_data; }
+    inline const Aws::Vector<Datum>& GetData() const { return m_data; }
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
-    inline void SetData(const Aws::Vector<Datum>& value) { m_dataHasBeenSet = true; m_data = value; }
-    inline void SetData(Aws::Vector<Datum>&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
-    inline Row& WithData(const Aws::Vector<Datum>& value) { SetData(value); return *this;}
-    inline Row& WithData(Aws::Vector<Datum>&& value) { SetData(std::move(value)); return *this;}
-    inline Row& AddData(const Datum& value) { m_dataHasBeenSet = true; m_data.push_back(value); return *this; }
-    inline Row& AddData(Datum&& value) { m_dataHasBeenSet = true; m_data.push_back(std::move(value)); return *this; }
+    template<typename DataT = Aws::Vector<Datum>>
+    void SetData(DataT&& value) { m_dataHasBeenSet = true; m_data = std::forward<DataT>(value); }
+    template<typename DataT = Aws::Vector<Datum>>
+    Row& WithData(DataT&& value) { SetData(std::forward<DataT>(value)); return *this;}
+    template<typename DataT = Datum>
+    Row& AddData(DataT&& value) { m_dataHasBeenSet = true; m_data.emplace_back(std::forward<DataT>(value)); return *this; }
     ///@}
   private:
 

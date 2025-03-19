@@ -26,7 +26,7 @@ namespace Model
   class ListLocationsRequest : public DataSyncRequest
   {
   public:
-    AWS_DATASYNC_API ListLocationsRequest();
+    AWS_DATASYNC_API ListLocationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p>The maximum number of locations to return.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListLocationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -54,14 +54,12 @@ namespace Model
      * <p>An opaque string that indicates the position at which to begin the next list
      * of locations.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListLocationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListLocationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListLocationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListLocationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,18 +69,18 @@ namespace Model
      * source location, you can use <code>ListLocations</code> with filter name
      * <code>LocationType S3</code> and <code>Operator Equals</code>.</p>
      */
-    inline const Aws::Vector<LocationFilter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<LocationFilter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<LocationFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<LocationFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline ListLocationsRequest& WithFilters(const Aws::Vector<LocationFilter>& value) { SetFilters(value); return *this;}
-    inline ListLocationsRequest& WithFilters(Aws::Vector<LocationFilter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline ListLocationsRequest& AddFilters(const LocationFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline ListLocationsRequest& AddFilters(LocationFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<LocationFilter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<LocationFilter>>
+    ListLocationsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = LocationFilter>
+    ListLocationsRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
   private:
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

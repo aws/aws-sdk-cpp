@@ -33,7 +33,7 @@ namespace Model
   class ParameterTextAreaControl
   {
   public:
-    AWS_QUICKSIGHT_API ParameterTextAreaControl();
+    AWS_QUICKSIGHT_API ParameterTextAreaControl() = default;
     AWS_QUICKSIGHT_API ParameterTextAreaControl(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API ParameterTextAreaControl& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,68 +43,60 @@ namespace Model
     /**
      * <p>The ID of the <code>ParameterTextAreaControl</code>.</p>
      */
-    inline const Aws::String& GetParameterControlId() const{ return m_parameterControlId; }
+    inline const Aws::String& GetParameterControlId() const { return m_parameterControlId; }
     inline bool ParameterControlIdHasBeenSet() const { return m_parameterControlIdHasBeenSet; }
-    inline void SetParameterControlId(const Aws::String& value) { m_parameterControlIdHasBeenSet = true; m_parameterControlId = value; }
-    inline void SetParameterControlId(Aws::String&& value) { m_parameterControlIdHasBeenSet = true; m_parameterControlId = std::move(value); }
-    inline void SetParameterControlId(const char* value) { m_parameterControlIdHasBeenSet = true; m_parameterControlId.assign(value); }
-    inline ParameterTextAreaControl& WithParameterControlId(const Aws::String& value) { SetParameterControlId(value); return *this;}
-    inline ParameterTextAreaControl& WithParameterControlId(Aws::String&& value) { SetParameterControlId(std::move(value)); return *this;}
-    inline ParameterTextAreaControl& WithParameterControlId(const char* value) { SetParameterControlId(value); return *this;}
+    template<typename ParameterControlIdT = Aws::String>
+    void SetParameterControlId(ParameterControlIdT&& value) { m_parameterControlIdHasBeenSet = true; m_parameterControlId = std::forward<ParameterControlIdT>(value); }
+    template<typename ParameterControlIdT = Aws::String>
+    ParameterTextAreaControl& WithParameterControlId(ParameterControlIdT&& value) { SetParameterControlId(std::forward<ParameterControlIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The title of the <code>ParameterTextAreaControl</code>.</p>
      */
-    inline const Aws::String& GetTitle() const{ return m_title; }
+    inline const Aws::String& GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-    inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
-    inline ParameterTextAreaControl& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-    inline ParameterTextAreaControl& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-    inline ParameterTextAreaControl& WithTitle(const char* value) { SetTitle(value); return *this;}
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    ParameterTextAreaControl& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source parameter name of the <code>ParameterTextAreaControl</code>.</p>
      */
-    inline const Aws::String& GetSourceParameterName() const{ return m_sourceParameterName; }
+    inline const Aws::String& GetSourceParameterName() const { return m_sourceParameterName; }
     inline bool SourceParameterNameHasBeenSet() const { return m_sourceParameterNameHasBeenSet; }
-    inline void SetSourceParameterName(const Aws::String& value) { m_sourceParameterNameHasBeenSet = true; m_sourceParameterName = value; }
-    inline void SetSourceParameterName(Aws::String&& value) { m_sourceParameterNameHasBeenSet = true; m_sourceParameterName = std::move(value); }
-    inline void SetSourceParameterName(const char* value) { m_sourceParameterNameHasBeenSet = true; m_sourceParameterName.assign(value); }
-    inline ParameterTextAreaControl& WithSourceParameterName(const Aws::String& value) { SetSourceParameterName(value); return *this;}
-    inline ParameterTextAreaControl& WithSourceParameterName(Aws::String&& value) { SetSourceParameterName(std::move(value)); return *this;}
-    inline ParameterTextAreaControl& WithSourceParameterName(const char* value) { SetSourceParameterName(value); return *this;}
+    template<typename SourceParameterNameT = Aws::String>
+    void SetSourceParameterName(SourceParameterNameT&& value) { m_sourceParameterNameHasBeenSet = true; m_sourceParameterName = std::forward<SourceParameterNameT>(value); }
+    template<typename SourceParameterNameT = Aws::String>
+    ParameterTextAreaControl& WithSourceParameterName(SourceParameterNameT&& value) { SetSourceParameterName(std::forward<SourceParameterNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The delimiter that is used to separate the lines in text.</p>
      */
-    inline const Aws::String& GetDelimiter() const{ return m_delimiter; }
+    inline const Aws::String& GetDelimiter() const { return m_delimiter; }
     inline bool DelimiterHasBeenSet() const { return m_delimiterHasBeenSet; }
-    inline void SetDelimiter(const Aws::String& value) { m_delimiterHasBeenSet = true; m_delimiter = value; }
-    inline void SetDelimiter(Aws::String&& value) { m_delimiterHasBeenSet = true; m_delimiter = std::move(value); }
-    inline void SetDelimiter(const char* value) { m_delimiterHasBeenSet = true; m_delimiter.assign(value); }
-    inline ParameterTextAreaControl& WithDelimiter(const Aws::String& value) { SetDelimiter(value); return *this;}
-    inline ParameterTextAreaControl& WithDelimiter(Aws::String&& value) { SetDelimiter(std::move(value)); return *this;}
-    inline ParameterTextAreaControl& WithDelimiter(const char* value) { SetDelimiter(value); return *this;}
+    template<typename DelimiterT = Aws::String>
+    void SetDelimiter(DelimiterT&& value) { m_delimiterHasBeenSet = true; m_delimiter = std::forward<DelimiterT>(value); }
+    template<typename DelimiterT = Aws::String>
+    ParameterTextAreaControl& WithDelimiter(DelimiterT&& value) { SetDelimiter(std::forward<DelimiterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The display options of a control.</p>
      */
-    inline const TextAreaControlDisplayOptions& GetDisplayOptions() const{ return m_displayOptions; }
+    inline const TextAreaControlDisplayOptions& GetDisplayOptions() const { return m_displayOptions; }
     inline bool DisplayOptionsHasBeenSet() const { return m_displayOptionsHasBeenSet; }
-    inline void SetDisplayOptions(const TextAreaControlDisplayOptions& value) { m_displayOptionsHasBeenSet = true; m_displayOptions = value; }
-    inline void SetDisplayOptions(TextAreaControlDisplayOptions&& value) { m_displayOptionsHasBeenSet = true; m_displayOptions = std::move(value); }
-    inline ParameterTextAreaControl& WithDisplayOptions(const TextAreaControlDisplayOptions& value) { SetDisplayOptions(value); return *this;}
-    inline ParameterTextAreaControl& WithDisplayOptions(TextAreaControlDisplayOptions&& value) { SetDisplayOptions(std::move(value)); return *this;}
+    template<typename DisplayOptionsT = TextAreaControlDisplayOptions>
+    void SetDisplayOptions(DisplayOptionsT&& value) { m_displayOptionsHasBeenSet = true; m_displayOptions = std::forward<DisplayOptionsT>(value); }
+    template<typename DisplayOptionsT = TextAreaControlDisplayOptions>
+    ParameterTextAreaControl& WithDisplayOptions(DisplayOptionsT&& value) { SetDisplayOptions(std::forward<DisplayOptionsT>(value)); return *this;}
     ///@}
   private:
 

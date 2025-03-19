@@ -18,14 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-ColdStorageOptions::ColdStorageOptions() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 ColdStorageOptions::ColdStorageOptions(JsonView jsonValue)
-  : ColdStorageOptions()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ColdStorageOptions& ColdStorageOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   return *this;
 }
 

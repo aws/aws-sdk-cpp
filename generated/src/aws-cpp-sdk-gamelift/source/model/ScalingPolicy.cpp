@@ -18,35 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-ScalingPolicy::ScalingPolicy() : 
-    m_fleetIdHasBeenSet(false),
-    m_fleetArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(ScalingStatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_scalingAdjustment(0),
-    m_scalingAdjustmentHasBeenSet(false),
-    m_scalingAdjustmentType(ScalingAdjustmentType::NOT_SET),
-    m_scalingAdjustmentTypeHasBeenSet(false),
-    m_comparisonOperator(ComparisonOperatorType::NOT_SET),
-    m_comparisonOperatorHasBeenSet(false),
-    m_threshold(0.0),
-    m_thresholdHasBeenSet(false),
-    m_evaluationPeriods(0),
-    m_evaluationPeriodsHasBeenSet(false),
-    m_metricName(MetricName::NOT_SET),
-    m_metricNameHasBeenSet(false),
-    m_policyType(PolicyType::NOT_SET),
-    m_policyTypeHasBeenSet(false),
-    m_targetConfigurationHasBeenSet(false),
-    m_updateStatus(LocationUpdateStatus::NOT_SET),
-    m_updateStatusHasBeenSet(false),
-    m_locationHasBeenSet(false)
-{
-}
-
 ScalingPolicy::ScalingPolicy(JsonView jsonValue)
-  : ScalingPolicy()
 {
   *this = jsonValue;
 }
@@ -56,101 +28,73 @@ ScalingPolicy& ScalingPolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FleetId"))
   {
     m_fleetId = jsonValue.GetString("FleetId");
-
     m_fleetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FleetArn"))
   {
     m_fleetArn = jsonValue.GetString("FleetArn");
-
     m_fleetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ScalingStatusTypeMapper::GetScalingStatusTypeForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScalingAdjustment"))
   {
     m_scalingAdjustment = jsonValue.GetInteger("ScalingAdjustment");
-
     m_scalingAdjustmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScalingAdjustmentType"))
   {
     m_scalingAdjustmentType = ScalingAdjustmentTypeMapper::GetScalingAdjustmentTypeForName(jsonValue.GetString("ScalingAdjustmentType"));
-
     m_scalingAdjustmentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComparisonOperator"))
   {
     m_comparisonOperator = ComparisonOperatorTypeMapper::GetComparisonOperatorTypeForName(jsonValue.GetString("ComparisonOperator"));
-
     m_comparisonOperatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Threshold"))
   {
     m_threshold = jsonValue.GetDouble("Threshold");
-
     m_thresholdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluationPeriods"))
   {
     m_evaluationPeriods = jsonValue.GetInteger("EvaluationPeriods");
-
     m_evaluationPeriodsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricName"))
   {
     m_metricName = MetricNameMapper::GetMetricNameForName(jsonValue.GetString("MetricName"));
-
     m_metricNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolicyType"))
   {
     m_policyType = PolicyTypeMapper::GetPolicyTypeForName(jsonValue.GetString("PolicyType"));
-
     m_policyTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetConfiguration"))
   {
     m_targetConfiguration = jsonValue.GetObject("TargetConfiguration");
-
     m_targetConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdateStatus"))
   {
     m_updateStatus = LocationUpdateStatusMapper::GetLocationUpdateStatusForName(jsonValue.GetString("UpdateStatus"));
-
     m_updateStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Location"))
   {
     m_location = jsonValue.GetString("Location");
-
     m_locationHasBeenSet = true;
   }
-
   return *this;
 }
 

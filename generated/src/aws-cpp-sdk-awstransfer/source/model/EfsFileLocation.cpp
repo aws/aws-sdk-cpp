@@ -18,14 +18,7 @@ namespace Transfer
 namespace Model
 {
 
-EfsFileLocation::EfsFileLocation() : 
-    m_fileSystemIdHasBeenSet(false),
-    m_pathHasBeenSet(false)
-{
-}
-
 EfsFileLocation::EfsFileLocation(JsonView jsonValue)
-  : EfsFileLocation()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EfsFileLocation& EfsFileLocation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FileSystemId"))
   {
     m_fileSystemId = jsonValue.GetString("FileSystemId");
-
     m_fileSystemIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Path"))
   {
     m_path = jsonValue.GetString("Path");
-
     m_pathHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -21,7 +21,7 @@ namespace Model
   class UpdateUploadRequest : public DeviceFarmRequest
   {
   public:
-    AWS_DEVICEFARM_API UpdateUploadRequest();
+    AWS_DEVICEFARM_API UpdateUploadRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the uploaded test spec.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline UpdateUploadRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline UpdateUploadRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline UpdateUploadRequest& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    UpdateUploadRequest& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,28 +52,24 @@ namespace Model
      * slashes (/). The test spec file name must end with the <code>.yaml</code> or
      * <code>.yml</code> file extension.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateUploadRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateUploadRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateUploadRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateUploadRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The upload's content type (for example, <code>application/x-yaml</code>).</p>
      */
-    inline const Aws::String& GetContentType() const{ return m_contentType; }
+    inline const Aws::String& GetContentType() const { return m_contentType; }
     inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
-    inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
-    inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
-    inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
-    inline UpdateUploadRequest& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
-    inline UpdateUploadRequest& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
-    inline UpdateUploadRequest& WithContentType(const char* value) { SetContentType(value); return *this;}
+    template<typename ContentTypeT = Aws::String>
+    void SetContentType(ContentTypeT&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::forward<ContentTypeT>(value); }
+    template<typename ContentTypeT = Aws::String>
+    UpdateUploadRequest& WithContentType(ContentTypeT&& value) { SetContentType(std::forward<ContentTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,7 +77,7 @@ namespace Model
      * <p>Set to true if the YAML file has changed and must be updated. Otherwise, set
      * to false.</p>
      */
-    inline bool GetEditContent() const{ return m_editContent; }
+    inline bool GetEditContent() const { return m_editContent; }
     inline bool EditContentHasBeenSet() const { return m_editContentHasBeenSet; }
     inline void SetEditContent(bool value) { m_editContentHasBeenSet = true; m_editContent = value; }
     inline UpdateUploadRequest& WithEditContent(bool value) { SetEditContent(value); return *this;}
@@ -99,7 +93,7 @@ namespace Model
     Aws::String m_contentType;
     bool m_contentTypeHasBeenSet = false;
 
-    bool m_editContent;
+    bool m_editContent{false};
     bool m_editContentHasBeenSet = false;
   };
 

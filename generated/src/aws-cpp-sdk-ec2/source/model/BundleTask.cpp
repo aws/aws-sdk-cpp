@@ -20,21 +20,7 @@ namespace EC2
 namespace Model
 {
 
-BundleTask::BundleTask() : 
-    m_instanceIdHasBeenSet(false),
-    m_bundleIdHasBeenSet(false),
-    m_state(BundleTaskState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_storageHasBeenSet(false),
-    m_progressHasBeenSet(false),
-    m_bundleTaskErrorHasBeenSet(false)
-{
-}
-
 BundleTask::BundleTask(const XmlNode& xmlNode)
-  : BundleTask()
 {
   *this = xmlNode;
 }
@@ -60,7 +46,7 @@ BundleTask& BundleTask::operator =(const XmlNode& xmlNode)
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = BundleTaskStateMapper::GetBundleTaskStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = BundleTaskStateMapper::GetBundleTaskStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode startTimeNode = resultNode.FirstChild("startTime");

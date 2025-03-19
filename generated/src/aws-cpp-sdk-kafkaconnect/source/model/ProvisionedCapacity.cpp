@@ -18,16 +18,7 @@ namespace KafkaConnect
 namespace Model
 {
 
-ProvisionedCapacity::ProvisionedCapacity() : 
-    m_mcuCount(0),
-    m_mcuCountHasBeenSet(false),
-    m_workerCount(0),
-    m_workerCountHasBeenSet(false)
-{
-}
-
 ProvisionedCapacity::ProvisionedCapacity(JsonView jsonValue)
-  : ProvisionedCapacity()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ProvisionedCapacity& ProvisionedCapacity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("mcuCount"))
   {
     m_mcuCount = jsonValue.GetInteger("mcuCount");
-
     m_mcuCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workerCount"))
   {
     m_workerCount = jsonValue.GetInteger("workerCount");
-
     m_workerCountHasBeenSet = true;
   }
-
   return *this;
 }
 

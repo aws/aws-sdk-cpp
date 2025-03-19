@@ -35,7 +35,7 @@ namespace Model
   class ResourceIdentifierSummary
   {
   public:
-    AWS_CLOUDFORMATION_API ResourceIdentifierSummary();
+    AWS_CLOUDFORMATION_API ResourceIdentifierSummary() = default;
     AWS_CLOUDFORMATION_API ResourceIdentifierSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFORMATION_API ResourceIdentifierSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,14 +48,12 @@ namespace Model
      * <p>The template resource type of the target resources, such as
      * <code>AWS::S3::Bucket</code>.</p>
      */
-    inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+    inline const Aws::String& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
-    inline ResourceIdentifierSummary& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-    inline ResourceIdentifierSummary& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-    inline ResourceIdentifierSummary& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+    template<typename ResourceTypeT = Aws::String>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = Aws::String>
+    ResourceIdentifierSummary& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,15 +61,14 @@ namespace Model
      * <p>The logical IDs of the target resources of the specified
      * <code>ResourceType</code>, as defined in the import template.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetLogicalResourceIds() const{ return m_logicalResourceIds; }
+    inline const Aws::Vector<Aws::String>& GetLogicalResourceIds() const { return m_logicalResourceIds; }
     inline bool LogicalResourceIdsHasBeenSet() const { return m_logicalResourceIdsHasBeenSet; }
-    inline void SetLogicalResourceIds(const Aws::Vector<Aws::String>& value) { m_logicalResourceIdsHasBeenSet = true; m_logicalResourceIds = value; }
-    inline void SetLogicalResourceIds(Aws::Vector<Aws::String>&& value) { m_logicalResourceIdsHasBeenSet = true; m_logicalResourceIds = std::move(value); }
-    inline ResourceIdentifierSummary& WithLogicalResourceIds(const Aws::Vector<Aws::String>& value) { SetLogicalResourceIds(value); return *this;}
-    inline ResourceIdentifierSummary& WithLogicalResourceIds(Aws::Vector<Aws::String>&& value) { SetLogicalResourceIds(std::move(value)); return *this;}
-    inline ResourceIdentifierSummary& AddLogicalResourceIds(const Aws::String& value) { m_logicalResourceIdsHasBeenSet = true; m_logicalResourceIds.push_back(value); return *this; }
-    inline ResourceIdentifierSummary& AddLogicalResourceIds(Aws::String&& value) { m_logicalResourceIdsHasBeenSet = true; m_logicalResourceIds.push_back(std::move(value)); return *this; }
-    inline ResourceIdentifierSummary& AddLogicalResourceIds(const char* value) { m_logicalResourceIdsHasBeenSet = true; m_logicalResourceIds.push_back(value); return *this; }
+    template<typename LogicalResourceIdsT = Aws::Vector<Aws::String>>
+    void SetLogicalResourceIds(LogicalResourceIdsT&& value) { m_logicalResourceIdsHasBeenSet = true; m_logicalResourceIds = std::forward<LogicalResourceIdsT>(value); }
+    template<typename LogicalResourceIdsT = Aws::Vector<Aws::String>>
+    ResourceIdentifierSummary& WithLogicalResourceIds(LogicalResourceIdsT&& value) { SetLogicalResourceIds(std::forward<LogicalResourceIdsT>(value)); return *this;}
+    template<typename LogicalResourceIdsT = Aws::String>
+    ResourceIdentifierSummary& AddLogicalResourceIds(LogicalResourceIdsT&& value) { m_logicalResourceIdsHasBeenSet = true; m_logicalResourceIds.emplace_back(std::forward<LogicalResourceIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -80,15 +77,14 @@ namespace Model
      * target resources. For example, <code>BucketName</code> is a possible identifier
      * property for <code>AWS::S3::Bucket</code> resources.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetResourceIdentifiers() const{ return m_resourceIdentifiers; }
+    inline const Aws::Vector<Aws::String>& GetResourceIdentifiers() const { return m_resourceIdentifiers; }
     inline bool ResourceIdentifiersHasBeenSet() const { return m_resourceIdentifiersHasBeenSet; }
-    inline void SetResourceIdentifiers(const Aws::Vector<Aws::String>& value) { m_resourceIdentifiersHasBeenSet = true; m_resourceIdentifiers = value; }
-    inline void SetResourceIdentifiers(Aws::Vector<Aws::String>&& value) { m_resourceIdentifiersHasBeenSet = true; m_resourceIdentifiers = std::move(value); }
-    inline ResourceIdentifierSummary& WithResourceIdentifiers(const Aws::Vector<Aws::String>& value) { SetResourceIdentifiers(value); return *this;}
-    inline ResourceIdentifierSummary& WithResourceIdentifiers(Aws::Vector<Aws::String>&& value) { SetResourceIdentifiers(std::move(value)); return *this;}
-    inline ResourceIdentifierSummary& AddResourceIdentifiers(const Aws::String& value) { m_resourceIdentifiersHasBeenSet = true; m_resourceIdentifiers.push_back(value); return *this; }
-    inline ResourceIdentifierSummary& AddResourceIdentifiers(Aws::String&& value) { m_resourceIdentifiersHasBeenSet = true; m_resourceIdentifiers.push_back(std::move(value)); return *this; }
-    inline ResourceIdentifierSummary& AddResourceIdentifiers(const char* value) { m_resourceIdentifiersHasBeenSet = true; m_resourceIdentifiers.push_back(value); return *this; }
+    template<typename ResourceIdentifiersT = Aws::Vector<Aws::String>>
+    void SetResourceIdentifiers(ResourceIdentifiersT&& value) { m_resourceIdentifiersHasBeenSet = true; m_resourceIdentifiers = std::forward<ResourceIdentifiersT>(value); }
+    template<typename ResourceIdentifiersT = Aws::Vector<Aws::String>>
+    ResourceIdentifierSummary& WithResourceIdentifiers(ResourceIdentifiersT&& value) { SetResourceIdentifiers(std::forward<ResourceIdentifiersT>(value)); return *this;}
+    template<typename ResourceIdentifiersT = Aws::String>
+    ResourceIdentifierSummary& AddResourceIdentifiers(ResourceIdentifiersT&& value) { m_resourceIdentifiersHasBeenSet = true; m_resourceIdentifiers.emplace_back(std::forward<ResourceIdentifiersT>(value)); return *this; }
     ///@}
   private:
 

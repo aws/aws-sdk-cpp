@@ -18,14 +18,7 @@ namespace IoT1ClickDevicesService
 namespace Model
 {
 
-DeviceEvent::DeviceEvent() : 
-    m_deviceHasBeenSet(false),
-    m_stdEventHasBeenSet(false)
-{
-}
-
 DeviceEvent::DeviceEvent(JsonView jsonValue)
-  : DeviceEvent()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DeviceEvent& DeviceEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("device"))
   {
     m_device = jsonValue.GetObject("device");
-
     m_deviceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stdEvent"))
   {
     m_stdEvent = jsonValue.GetString("stdEvent");
-
     m_stdEventHasBeenSet = true;
   }
-
   return *this;
 }
 

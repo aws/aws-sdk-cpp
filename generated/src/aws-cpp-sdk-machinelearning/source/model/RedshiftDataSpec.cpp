@@ -18,19 +18,7 @@ namespace MachineLearning
 namespace Model
 {
 
-RedshiftDataSpec::RedshiftDataSpec() : 
-    m_databaseInformationHasBeenSet(false),
-    m_selectSqlQueryHasBeenSet(false),
-    m_databaseCredentialsHasBeenSet(false),
-    m_s3StagingLocationHasBeenSet(false),
-    m_dataRearrangementHasBeenSet(false),
-    m_dataSchemaHasBeenSet(false),
-    m_dataSchemaUriHasBeenSet(false)
-{
-}
-
 RedshiftDataSpec::RedshiftDataSpec(JsonView jsonValue)
-  : RedshiftDataSpec()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ RedshiftDataSpec& RedshiftDataSpec::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DatabaseInformation"))
   {
     m_databaseInformation = jsonValue.GetObject("DatabaseInformation");
-
     m_databaseInformationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SelectSqlQuery"))
   {
     m_selectSqlQuery = jsonValue.GetString("SelectSqlQuery");
-
     m_selectSqlQueryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseCredentials"))
   {
     m_databaseCredentials = jsonValue.GetObject("DatabaseCredentials");
-
     m_databaseCredentialsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3StagingLocation"))
   {
     m_s3StagingLocation = jsonValue.GetString("S3StagingLocation");
-
     m_s3StagingLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataRearrangement"))
   {
     m_dataRearrangement = jsonValue.GetString("DataRearrangement");
-
     m_dataRearrangementHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSchema"))
   {
     m_dataSchema = jsonValue.GetString("DataSchema");
-
     m_dataSchemaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSchemaUri"))
   {
     m_dataSchemaUri = jsonValue.GetString("DataSchemaUri");
-
     m_dataSchemaUriHasBeenSet = true;
   }
-
   return *this;
 }
 

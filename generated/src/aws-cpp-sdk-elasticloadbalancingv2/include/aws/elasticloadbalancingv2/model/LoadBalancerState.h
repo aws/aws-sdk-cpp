@@ -33,7 +33,7 @@ namespace Model
   class LoadBalancerState
   {
   public:
-    AWS_ELASTICLOADBALANCINGV2_API LoadBalancerState();
+    AWS_ELASTICLOADBALANCINGV2_API LoadBalancerState() = default;
     AWS_ELASTICLOADBALANCINGV2_API LoadBalancerState(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICLOADBALANCINGV2_API LoadBalancerState& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -50,30 +50,26 @@ namespace Model
      * is<code>active_impaired</code>. If the load balancer could not be set up, its
      * state is <code>failed</code>.</p>
      */
-    inline const LoadBalancerStateEnum& GetCode() const{ return m_code; }
+    inline LoadBalancerStateEnum GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const LoadBalancerStateEnum& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(LoadBalancerStateEnum&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline LoadBalancerState& WithCode(const LoadBalancerStateEnum& value) { SetCode(value); return *this;}
-    inline LoadBalancerState& WithCode(LoadBalancerStateEnum&& value) { SetCode(std::move(value)); return *this;}
+    inline void SetCode(LoadBalancerStateEnum value) { m_codeHasBeenSet = true; m_code = value; }
+    inline LoadBalancerState& WithCode(LoadBalancerStateEnum value) { SetCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the state.</p>
      */
-    inline const Aws::String& GetReason() const{ return m_reason; }
+    inline const Aws::String& GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-    inline LoadBalancerState& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-    inline LoadBalancerState& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-    inline LoadBalancerState& WithReason(const char* value) { SetReason(value); return *this;}
+    template<typename ReasonT = Aws::String>
+    void SetReason(ReasonT&& value) { m_reasonHasBeenSet = true; m_reason = std::forward<ReasonT>(value); }
+    template<typename ReasonT = Aws::String>
+    LoadBalancerState& WithReason(ReasonT&& value) { SetReason(std::forward<ReasonT>(value)); return *this;}
     ///@}
   private:
 
-    LoadBalancerStateEnum m_code;
+    LoadBalancerStateEnum m_code{LoadBalancerStateEnum::NOT_SET};
     bool m_codeHasBeenSet = false;
 
     Aws::String m_reason;

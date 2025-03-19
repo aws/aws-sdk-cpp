@@ -18,14 +18,7 @@ namespace KafkaConnect
 namespace Model
 {
 
-KafkaClusterEncryptionInTransit::KafkaClusterEncryptionInTransit() : 
-    m_encryptionType(KafkaClusterEncryptionInTransitType::NOT_SET),
-    m_encryptionTypeHasBeenSet(false)
-{
-}
-
 KafkaClusterEncryptionInTransit::KafkaClusterEncryptionInTransit(JsonView jsonValue)
-  : KafkaClusterEncryptionInTransit()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ KafkaClusterEncryptionInTransit& KafkaClusterEncryptionInTransit::operator =(Jso
   if(jsonValue.ValueExists("encryptionType"))
   {
     m_encryptionType = KafkaClusterEncryptionInTransitTypeMapper::GetKafkaClusterEncryptionInTransitTypeForName(jsonValue.GetString("encryptionType"));
-
     m_encryptionTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

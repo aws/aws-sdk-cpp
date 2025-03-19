@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsBackupBackupPlanDetails::AwsBackupBackupPlanDetails() : 
-    m_backupPlanHasBeenSet(false),
-    m_backupPlanArnHasBeenSet(false),
-    m_backupPlanIdHasBeenSet(false),
-    m_versionIdHasBeenSet(false)
-{
-}
-
 AwsBackupBackupPlanDetails::AwsBackupBackupPlanDetails(JsonView jsonValue)
-  : AwsBackupBackupPlanDetails()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ AwsBackupBackupPlanDetails& AwsBackupBackupPlanDetails::operator =(JsonView json
   if(jsonValue.ValueExists("BackupPlan"))
   {
     m_backupPlan = jsonValue.GetObject("BackupPlan");
-
     m_backupPlanHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackupPlanArn"))
   {
     m_backupPlanArn = jsonValue.GetString("BackupPlanArn");
-
     m_backupPlanArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackupPlanId"))
   {
     m_backupPlanId = jsonValue.GetString("BackupPlanId");
-
     m_backupPlanIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VersionId"))
   {
     m_versionId = jsonValue.GetString("VersionId");
-
     m_versionIdHasBeenSet = true;
   }
-
   return *this;
 }
 

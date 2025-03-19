@@ -18,14 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-SecurityGroup::SecurityGroup() : 
-    m_groupIdHasBeenSet(false),
-    m_groupNameHasBeenSet(false)
-{
-}
-
 SecurityGroup::SecurityGroup(JsonView jsonValue)
-  : SecurityGroup()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SecurityGroup& SecurityGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("groupId"))
   {
     m_groupId = jsonValue.GetString("groupId");
-
     m_groupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("groupName"))
   {
     m_groupName = jsonValue.GetString("groupName");
-
     m_groupNameHasBeenSet = true;
   }
-
   return *this;
 }
 

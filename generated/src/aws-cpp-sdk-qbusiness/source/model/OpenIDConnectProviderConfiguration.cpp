@@ -18,14 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-OpenIDConnectProviderConfiguration::OpenIDConnectProviderConfiguration() : 
-    m_secretsArnHasBeenSet(false),
-    m_secretsRoleHasBeenSet(false)
-{
-}
-
 OpenIDConnectProviderConfiguration::OpenIDConnectProviderConfiguration(JsonView jsonValue)
-  : OpenIDConnectProviderConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ OpenIDConnectProviderConfiguration& OpenIDConnectProviderConfiguration::operator
   if(jsonValue.ValueExists("secretsArn"))
   {
     m_secretsArn = jsonValue.GetString("secretsArn");
-
     m_secretsArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("secretsRole"))
   {
     m_secretsRole = jsonValue.GetString("secretsRole");
-
     m_secretsRoleHasBeenSet = true;
   }
-
   return *this;
 }
 

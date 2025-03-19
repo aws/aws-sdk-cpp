@@ -33,7 +33,7 @@ namespace Model
   class QueryConstraintRequireOverlap
   {
   public:
-    AWS_CLEANROOMS_API QueryConstraintRequireOverlap();
+    AWS_CLEANROOMS_API QueryConstraintRequireOverlap() = default;
     AWS_CLEANROOMS_API QueryConstraintRequireOverlap(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API QueryConstraintRequireOverlap& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,15 +43,14 @@ namespace Model
     /**
      * <p>The columns that are required to overlap.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetColumns() const{ return m_columns; }
+    inline const Aws::Vector<Aws::String>& GetColumns() const { return m_columns; }
     inline bool ColumnsHasBeenSet() const { return m_columnsHasBeenSet; }
-    inline void SetColumns(const Aws::Vector<Aws::String>& value) { m_columnsHasBeenSet = true; m_columns = value; }
-    inline void SetColumns(Aws::Vector<Aws::String>&& value) { m_columnsHasBeenSet = true; m_columns = std::move(value); }
-    inline QueryConstraintRequireOverlap& WithColumns(const Aws::Vector<Aws::String>& value) { SetColumns(value); return *this;}
-    inline QueryConstraintRequireOverlap& WithColumns(Aws::Vector<Aws::String>&& value) { SetColumns(std::move(value)); return *this;}
-    inline QueryConstraintRequireOverlap& AddColumns(const Aws::String& value) { m_columnsHasBeenSet = true; m_columns.push_back(value); return *this; }
-    inline QueryConstraintRequireOverlap& AddColumns(Aws::String&& value) { m_columnsHasBeenSet = true; m_columns.push_back(std::move(value)); return *this; }
-    inline QueryConstraintRequireOverlap& AddColumns(const char* value) { m_columnsHasBeenSet = true; m_columns.push_back(value); return *this; }
+    template<typename ColumnsT = Aws::Vector<Aws::String>>
+    void SetColumns(ColumnsT&& value) { m_columnsHasBeenSet = true; m_columns = std::forward<ColumnsT>(value); }
+    template<typename ColumnsT = Aws::Vector<Aws::String>>
+    QueryConstraintRequireOverlap& WithColumns(ColumnsT&& value) { SetColumns(std::forward<ColumnsT>(value)); return *this;}
+    template<typename ColumnsT = Aws::String>
+    QueryConstraintRequireOverlap& AddColumns(ColumnsT&& value) { m_columnsHasBeenSet = true; m_columns.emplace_back(std::forward<ColumnsT>(value)); return *this; }
     ///@}
   private:
 

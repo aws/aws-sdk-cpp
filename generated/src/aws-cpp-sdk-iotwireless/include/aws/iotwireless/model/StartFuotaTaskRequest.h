@@ -22,7 +22,7 @@ namespace Model
   class StartFuotaTaskRequest : public IoTWirelessRequest
   {
   public:
-    AWS_IOTWIRELESS_API StartFuotaTaskRequest();
+    AWS_IOTWIRELESS_API StartFuotaTaskRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,24 +35,22 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline StartFuotaTaskRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline StartFuotaTaskRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline StartFuotaTaskRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    StartFuotaTaskRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const LoRaWANStartFuotaTask& GetLoRaWAN() const{ return m_loRaWAN; }
+    inline const LoRaWANStartFuotaTask& GetLoRaWAN() const { return m_loRaWAN; }
     inline bool LoRaWANHasBeenSet() const { return m_loRaWANHasBeenSet; }
-    inline void SetLoRaWAN(const LoRaWANStartFuotaTask& value) { m_loRaWANHasBeenSet = true; m_loRaWAN = value; }
-    inline void SetLoRaWAN(LoRaWANStartFuotaTask&& value) { m_loRaWANHasBeenSet = true; m_loRaWAN = std::move(value); }
-    inline StartFuotaTaskRequest& WithLoRaWAN(const LoRaWANStartFuotaTask& value) { SetLoRaWAN(value); return *this;}
-    inline StartFuotaTaskRequest& WithLoRaWAN(LoRaWANStartFuotaTask&& value) { SetLoRaWAN(std::move(value)); return *this;}
+    template<typename LoRaWANT = LoRaWANStartFuotaTask>
+    void SetLoRaWAN(LoRaWANT&& value) { m_loRaWANHasBeenSet = true; m_loRaWAN = std::forward<LoRaWANT>(value); }
+    template<typename LoRaWANT = LoRaWANStartFuotaTask>
+    StartFuotaTaskRequest& WithLoRaWAN(LoRaWANT&& value) { SetLoRaWAN(std::forward<LoRaWANT>(value)); return *this;}
     ///@}
   private:
 

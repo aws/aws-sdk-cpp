@@ -12,16 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterComputeRequest::RegisterComputeRequest() : 
-    m_fleetIdHasBeenSet(false),
-    m_computeNameHasBeenSet(false),
-    m_certificatePathHasBeenSet(false),
-    m_dnsNameHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_locationHasBeenSet(false)
-{
-}
-
 Aws::String RegisterComputeRequest::SerializePayload() const
 {
   JsonValue payload;

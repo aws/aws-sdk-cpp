@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ConvergenceDetected::ConvergenceDetected() : 
-    m_completeOnConvergence(CompleteOnConvergence::NOT_SET),
-    m_completeOnConvergenceHasBeenSet(false)
-{
-}
-
 ConvergenceDetected::ConvergenceDetected(JsonView jsonValue)
-  : ConvergenceDetected()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ConvergenceDetected& ConvergenceDetected::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CompleteOnConvergence"))
   {
     m_completeOnConvergence = CompleteOnConvergenceMapper::GetCompleteOnConvergenceForName(jsonValue.GetString("CompleteOnConvergence"));
-
     m_completeOnConvergenceHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,12 +12,6 @@ using namespace Aws::Route53Domains::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateTagsForDomainRequest::UpdateTagsForDomainRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_tagsToUpdateHasBeenSet(false)
-{
-}
-
 Aws::String UpdateTagsForDomainRequest::SerializePayload() const
 {
   JsonValue payload;

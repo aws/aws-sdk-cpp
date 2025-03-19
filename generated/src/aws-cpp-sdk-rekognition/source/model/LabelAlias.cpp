@@ -18,13 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-LabelAlias::LabelAlias() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 LabelAlias::LabelAlias(JsonView jsonValue)
-  : LabelAlias()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ LabelAlias& LabelAlias::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

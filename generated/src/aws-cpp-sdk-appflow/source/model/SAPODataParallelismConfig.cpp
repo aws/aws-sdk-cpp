@@ -18,14 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-SAPODataParallelismConfig::SAPODataParallelismConfig() : 
-    m_maxParallelism(0),
-    m_maxParallelismHasBeenSet(false)
-{
-}
-
 SAPODataParallelismConfig::SAPODataParallelismConfig(JsonView jsonValue)
-  : SAPODataParallelismConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SAPODataParallelismConfig& SAPODataParallelismConfig::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("maxParallelism"))
   {
     m_maxParallelism = jsonValue.GetInteger("maxParallelism");
-
     m_maxParallelismHasBeenSet = true;
   }
-
   return *this;
 }
 

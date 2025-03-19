@@ -18,10 +18,6 @@ namespace ConnectCampaignsV2
 namespace Model
 {
 
-AgentlessConfig::AgentlessConfig()
-{
-}
-
 AgentlessConfig::AgentlessConfig(JsonView jsonValue)
 {
   *this = jsonValue;

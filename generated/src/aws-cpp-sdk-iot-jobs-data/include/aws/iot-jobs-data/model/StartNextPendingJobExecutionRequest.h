@@ -22,7 +22,7 @@ namespace Model
   class StartNextPendingJobExecutionRequest : public IoTJobsDataPlaneRequest
   {
   public:
-    AWS_IOTJOBSDATAPLANE_API StartNextPendingJobExecutionRequest();
+    AWS_IOTJOBSDATAPLANE_API StartNextPendingJobExecutionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
     /**
      * <p>The name of the thing associated with the device.</p>
      */
-    inline const Aws::String& GetThingName() const{ return m_thingName; }
+    inline const Aws::String& GetThingName() const { return m_thingName; }
     inline bool ThingNameHasBeenSet() const { return m_thingNameHasBeenSet; }
-    inline void SetThingName(const Aws::String& value) { m_thingNameHasBeenSet = true; m_thingName = value; }
-    inline void SetThingName(Aws::String&& value) { m_thingNameHasBeenSet = true; m_thingName = std::move(value); }
-    inline void SetThingName(const char* value) { m_thingNameHasBeenSet = true; m_thingName.assign(value); }
-    inline StartNextPendingJobExecutionRequest& WithThingName(const Aws::String& value) { SetThingName(value); return *this;}
-    inline StartNextPendingJobExecutionRequest& WithThingName(Aws::String&& value) { SetThingName(std::move(value)); return *this;}
-    inline StartNextPendingJobExecutionRequest& WithThingName(const char* value) { SetThingName(value); return *this;}
+    template<typename ThingNameT = Aws::String>
+    void SetThingName(ThingNameT&& value) { m_thingNameHasBeenSet = true; m_thingName = std::forward<ThingNameT>(value); }
+    template<typename ThingNameT = Aws::String>
+    StartNextPendingJobExecutionRequest& WithThingName(ThingNameT&& value) { SetThingName(std::forward<ThingNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,19 +51,16 @@ namespace Model
      * execution. If not specified, the statusDetails are unchanged.</p> <p>The maximum
      * length of the value in the name/value pair is 1,024 characters.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetStatusDetails() const{ return m_statusDetails; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetStatusDetails() const { return m_statusDetails; }
     inline bool StatusDetailsHasBeenSet() const { return m_statusDetailsHasBeenSet; }
-    inline void SetStatusDetails(const Aws::Map<Aws::String, Aws::String>& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = value; }
-    inline void SetStatusDetails(Aws::Map<Aws::String, Aws::String>&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = std::move(value); }
-    inline StartNextPendingJobExecutionRequest& WithStatusDetails(const Aws::Map<Aws::String, Aws::String>& value) { SetStatusDetails(value); return *this;}
-    inline StartNextPendingJobExecutionRequest& WithStatusDetails(Aws::Map<Aws::String, Aws::String>&& value) { SetStatusDetails(std::move(value)); return *this;}
-    inline StartNextPendingJobExecutionRequest& AddStatusDetails(const Aws::String& key, const Aws::String& value) { m_statusDetailsHasBeenSet = true; m_statusDetails.emplace(key, value); return *this; }
-    inline StartNextPendingJobExecutionRequest& AddStatusDetails(Aws::String&& key, const Aws::String& value) { m_statusDetailsHasBeenSet = true; m_statusDetails.emplace(std::move(key), value); return *this; }
-    inline StartNextPendingJobExecutionRequest& AddStatusDetails(const Aws::String& key, Aws::String&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails.emplace(key, std::move(value)); return *this; }
-    inline StartNextPendingJobExecutionRequest& AddStatusDetails(Aws::String&& key, Aws::String&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails.emplace(std::move(key), std::move(value)); return *this; }
-    inline StartNextPendingJobExecutionRequest& AddStatusDetails(const char* key, Aws::String&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails.emplace(key, std::move(value)); return *this; }
-    inline StartNextPendingJobExecutionRequest& AddStatusDetails(Aws::String&& key, const char* value) { m_statusDetailsHasBeenSet = true; m_statusDetails.emplace(std::move(key), value); return *this; }
-    inline StartNextPendingJobExecutionRequest& AddStatusDetails(const char* key, const char* value) { m_statusDetailsHasBeenSet = true; m_statusDetails.emplace(key, value); return *this; }
+    template<typename StatusDetailsT = Aws::Map<Aws::String, Aws::String>>
+    void SetStatusDetails(StatusDetailsT&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = std::forward<StatusDetailsT>(value); }
+    template<typename StatusDetailsT = Aws::Map<Aws::String, Aws::String>>
+    StartNextPendingJobExecutionRequest& WithStatusDetails(StatusDetailsT&& value) { SetStatusDetails(std::forward<StatusDetailsT>(value)); return *this;}
+    template<typename StatusDetailsKeyT = Aws::String, typename StatusDetailsValueT = Aws::String>
+    StartNextPendingJobExecutionRequest& AddStatusDetails(StatusDetailsKeyT&& key, StatusDetailsValueT&& value) {
+      m_statusDetailsHasBeenSet = true; m_statusDetails.emplace(std::forward<StatusDetailsKeyT>(key), std::forward<StatusDetailsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -81,7 +76,7 @@ namespace Model
      * field <code>timeoutConfig</code>).</p> <p>Valid values for this parameter range
      * from 1 to 10080 (1 minute to 7 days).</p>
      */
-    inline long long GetStepTimeoutInMinutes() const{ return m_stepTimeoutInMinutes; }
+    inline long long GetStepTimeoutInMinutes() const { return m_stepTimeoutInMinutes; }
     inline bool StepTimeoutInMinutesHasBeenSet() const { return m_stepTimeoutInMinutesHasBeenSet; }
     inline void SetStepTimeoutInMinutes(long long value) { m_stepTimeoutInMinutesHasBeenSet = true; m_stepTimeoutInMinutes = value; }
     inline StartNextPendingJobExecutionRequest& WithStepTimeoutInMinutes(long long value) { SetStepTimeoutInMinutes(value); return *this;}
@@ -94,7 +89,7 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_statusDetails;
     bool m_statusDetailsHasBeenSet = false;
 
-    long long m_stepTimeoutInMinutes;
+    long long m_stepTimeoutInMinutes{0};
     bool m_stepTimeoutInMinutesHasBeenSet = false;
   };
 

@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsElasticsearchDomainLogPublishingOptionsLogConfig::AwsElasticsearchDomainLogPublishingOptionsLogConfig() : 
-    m_cloudWatchLogsLogGroupArnHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 AwsElasticsearchDomainLogPublishingOptionsLogConfig::AwsElasticsearchDomainLogPublishingOptionsLogConfig(JsonView jsonValue)
-  : AwsElasticsearchDomainLogPublishingOptionsLogConfig()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AwsElasticsearchDomainLogPublishingOptionsLogConfig& AwsElasticsearchDomainLogPu
   if(jsonValue.ValueExists("CloudWatchLogsLogGroupArn"))
   {
     m_cloudWatchLogsLogGroupArn = jsonValue.GetString("CloudWatchLogsLogGroupArn");
-
     m_cloudWatchLogsLogGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   return *this;
 }
 

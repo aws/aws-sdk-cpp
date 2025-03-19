@@ -28,7 +28,7 @@ namespace Model
   class GetWirelessGatewayFirmwareInformationResult
   {
   public:
-    AWS_IOTWIRELESS_API GetWirelessGatewayFirmwareInformationResult();
+    AWS_IOTWIRELESS_API GetWirelessGatewayFirmwareInformationResult() = default;
     AWS_IOTWIRELESS_API GetWirelessGatewayFirmwareInformationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTWIRELESS_API GetWirelessGatewayFirmwareInformationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the wireless gateway's firmware.</p>
      */
-    inline const LoRaWANGatewayCurrentVersion& GetLoRaWAN() const{ return m_loRaWAN; }
-    inline void SetLoRaWAN(const LoRaWANGatewayCurrentVersion& value) { m_loRaWAN = value; }
-    inline void SetLoRaWAN(LoRaWANGatewayCurrentVersion&& value) { m_loRaWAN = std::move(value); }
-    inline GetWirelessGatewayFirmwareInformationResult& WithLoRaWAN(const LoRaWANGatewayCurrentVersion& value) { SetLoRaWAN(value); return *this;}
-    inline GetWirelessGatewayFirmwareInformationResult& WithLoRaWAN(LoRaWANGatewayCurrentVersion&& value) { SetLoRaWAN(std::move(value)); return *this;}
+    inline const LoRaWANGatewayCurrentVersion& GetLoRaWAN() const { return m_loRaWAN; }
+    template<typename LoRaWANT = LoRaWANGatewayCurrentVersion>
+    void SetLoRaWAN(LoRaWANT&& value) { m_loRaWANHasBeenSet = true; m_loRaWAN = std::forward<LoRaWANT>(value); }
+    template<typename LoRaWANT = LoRaWANGatewayCurrentVersion>
+    GetWirelessGatewayFirmwareInformationResult& WithLoRaWAN(LoRaWANT&& value) { SetLoRaWAN(std::forward<LoRaWANT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetWirelessGatewayFirmwareInformationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetWirelessGatewayFirmwareInformationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetWirelessGatewayFirmwareInformationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetWirelessGatewayFirmwareInformationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     LoRaWANGatewayCurrentVersion m_loRaWAN;
+    bool m_loRaWANHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

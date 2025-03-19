@@ -29,7 +29,7 @@ namespace Model
   class ListThingGroupsResult
   {
   public:
-    AWS_IOT_API ListThingGroupsResult();
+    AWS_IOT_API ListThingGroupsResult() = default;
     AWS_IOT_API ListThingGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API ListThingGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The thing groups.</p>
      */
-    inline const Aws::Vector<GroupNameAndArn>& GetThingGroups() const{ return m_thingGroups; }
-    inline void SetThingGroups(const Aws::Vector<GroupNameAndArn>& value) { m_thingGroups = value; }
-    inline void SetThingGroups(Aws::Vector<GroupNameAndArn>&& value) { m_thingGroups = std::move(value); }
-    inline ListThingGroupsResult& WithThingGroups(const Aws::Vector<GroupNameAndArn>& value) { SetThingGroups(value); return *this;}
-    inline ListThingGroupsResult& WithThingGroups(Aws::Vector<GroupNameAndArn>&& value) { SetThingGroups(std::move(value)); return *this;}
-    inline ListThingGroupsResult& AddThingGroups(const GroupNameAndArn& value) { m_thingGroups.push_back(value); return *this; }
-    inline ListThingGroupsResult& AddThingGroups(GroupNameAndArn&& value) { m_thingGroups.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<GroupNameAndArn>& GetThingGroups() const { return m_thingGroups; }
+    template<typename ThingGroupsT = Aws::Vector<GroupNameAndArn>>
+    void SetThingGroups(ThingGroupsT&& value) { m_thingGroupsHasBeenSet = true; m_thingGroups = std::forward<ThingGroupsT>(value); }
+    template<typename ThingGroupsT = Aws::Vector<GroupNameAndArn>>
+    ListThingGroupsResult& WithThingGroups(ThingGroupsT&& value) { SetThingGroups(std::forward<ThingGroupsT>(value)); return *this;}
+    template<typename ThingGroupsT = GroupNameAndArn>
+    ListThingGroupsResult& AddThingGroups(ThingGroupsT&& value) { m_thingGroupsHasBeenSet = true; m_thingGroups.emplace_back(std::forward<ThingGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The token to use to get the next set of results. Will not be returned if
      * operation has returned all results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListThingGroupsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListThingGroupsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListThingGroupsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListThingGroupsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListThingGroupsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListThingGroupsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListThingGroupsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListThingGroupsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<GroupNameAndArn> m_thingGroups;
+    bool m_thingGroupsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

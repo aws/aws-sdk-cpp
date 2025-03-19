@@ -33,7 +33,7 @@ namespace Model
   class EmrServerlessComputeConfig
   {
   public:
-    AWS_SAGEMAKER_API EmrServerlessComputeConfig();
+    AWS_SAGEMAKER_API EmrServerlessComputeConfig() = default;
     AWS_SAGEMAKER_API EmrServerlessComputeConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API EmrServerlessComputeConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-create-experiment-timeseries-forecasting.html#timeseries-forecasting-api-optional-params">Create
      * an AutoML job for time-series forecasting using the API</a>.</p>
      */
-    inline const Aws::String& GetExecutionRoleARN() const{ return m_executionRoleARN; }
+    inline const Aws::String& GetExecutionRoleARN() const { return m_executionRoleARN; }
     inline bool ExecutionRoleARNHasBeenSet() const { return m_executionRoleARNHasBeenSet; }
-    inline void SetExecutionRoleARN(const Aws::String& value) { m_executionRoleARNHasBeenSet = true; m_executionRoleARN = value; }
-    inline void SetExecutionRoleARN(Aws::String&& value) { m_executionRoleARNHasBeenSet = true; m_executionRoleARN = std::move(value); }
-    inline void SetExecutionRoleARN(const char* value) { m_executionRoleARNHasBeenSet = true; m_executionRoleARN.assign(value); }
-    inline EmrServerlessComputeConfig& WithExecutionRoleARN(const Aws::String& value) { SetExecutionRoleARN(value); return *this;}
-    inline EmrServerlessComputeConfig& WithExecutionRoleARN(Aws::String&& value) { SetExecutionRoleARN(std::move(value)); return *this;}
-    inline EmrServerlessComputeConfig& WithExecutionRoleARN(const char* value) { SetExecutionRoleARN(value); return *this;}
+    template<typename ExecutionRoleARNT = Aws::String>
+    void SetExecutionRoleARN(ExecutionRoleARNT&& value) { m_executionRoleARNHasBeenSet = true; m_executionRoleARN = std::forward<ExecutionRoleARNT>(value); }
+    template<typename ExecutionRoleARNT = Aws::String>
+    EmrServerlessComputeConfig& WithExecutionRoleARN(ExecutionRoleARNT&& value) { SetExecutionRoleARN(std::forward<ExecutionRoleARNT>(value)); return *this;}
     ///@}
   private:
 

@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-XmlAttributesOnPayloadResult::XmlAttributesOnPayloadResult()
-{
-}
-
 XmlAttributesOnPayloadResult::XmlAttributesOnPayloadResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -33,6 +29,7 @@ XmlAttributesOnPayloadResult& XmlAttributesOnPayloadResult::operator =(const Aws
   if(!resultNode.IsNull())
   {
     m_payload = resultNode;
+    m_payloadHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
@@ -40,6 +37,7 @@ XmlAttributesOnPayloadResult& XmlAttributesOnPayloadResult::operator =(const Aws
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

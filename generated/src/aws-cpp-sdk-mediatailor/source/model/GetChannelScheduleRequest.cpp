@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetChannelScheduleRequest::GetChannelScheduleRequest() : 
-    m_channelNameHasBeenSet(false),
-    m_durationMinutesHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_audienceHasBeenSet(false)
-{
-}
-
 Aws::String GetChannelScheduleRequest::SerializePayload() const
 {
   return {};

@@ -41,7 +41,7 @@ namespace Model
   class $typeInfo.className
   {
   public:
-    ${exportMacro} ${typeInfo.className}();
+    ${exportMacro} ${typeInfo.className}() = default;
     ${exportMacro} ${typeInfo.className}(const Aws::AmazonWebServiceResult<${xmlRef}>& result);
     ${exportMacro} ${classNameRef} operator=(const Aws::AmazonWebServiceResult<${xmlRef}>& result);
 

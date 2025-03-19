@@ -18,17 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-VoiceMessage::VoiceMessage() : 
-    m_bodyHasBeenSet(false),
-    m_languageCodeHasBeenSet(false),
-    m_originationNumberHasBeenSet(false),
-    m_substitutionsHasBeenSet(false),
-    m_voiceIdHasBeenSet(false)
-{
-}
-
 VoiceMessage::VoiceMessage(JsonView jsonValue)
-  : VoiceMessage()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ VoiceMessage& VoiceMessage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Body"))
   {
     m_body = jsonValue.GetString("Body");
-
     m_bodyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LanguageCode"))
   {
     m_languageCode = jsonValue.GetString("LanguageCode");
-
     m_languageCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OriginationNumber"))
   {
     m_originationNumber = jsonValue.GetString("OriginationNumber");
-
     m_originationNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Substitutions"))
   {
     Aws::Map<Aws::String, JsonView> substitutionsJsonMap = jsonValue.GetObject("Substitutions").GetAllObjects();
@@ -72,14 +56,11 @@ VoiceMessage& VoiceMessage::operator =(JsonView jsonValue)
     }
     m_substitutionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VoiceId"))
   {
     m_voiceId = jsonValue.GetString("VoiceId");
-
     m_voiceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

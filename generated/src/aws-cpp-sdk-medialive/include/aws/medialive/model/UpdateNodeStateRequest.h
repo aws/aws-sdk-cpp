@@ -25,7 +25,7 @@ namespace Model
   class UpdateNodeStateRequest : public MediaLiveRequest
   {
   public:
-    AWS_MEDIALIVE_API UpdateNodeStateRequest();
+    AWS_MEDIALIVE_API UpdateNodeStateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,24 @@ namespace Model
     /**
      * The ID of the cluster
      */
-    inline const Aws::String& GetClusterId() const{ return m_clusterId; }
+    inline const Aws::String& GetClusterId() const { return m_clusterId; }
     inline bool ClusterIdHasBeenSet() const { return m_clusterIdHasBeenSet; }
-    inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
-    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::move(value); }
-    inline void SetClusterId(const char* value) { m_clusterIdHasBeenSet = true; m_clusterId.assign(value); }
-    inline UpdateNodeStateRequest& WithClusterId(const Aws::String& value) { SetClusterId(value); return *this;}
-    inline UpdateNodeStateRequest& WithClusterId(Aws::String&& value) { SetClusterId(std::move(value)); return *this;}
-    inline UpdateNodeStateRequest& WithClusterId(const char* value) { SetClusterId(value); return *this;}
+    template<typename ClusterIdT = Aws::String>
+    void SetClusterId(ClusterIdT&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::forward<ClusterIdT>(value); }
+    template<typename ClusterIdT = Aws::String>
+    UpdateNodeStateRequest& WithClusterId(ClusterIdT&& value) { SetClusterId(std::forward<ClusterIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The ID of the node.
      */
-    inline const Aws::String& GetNodeId() const{ return m_nodeId; }
+    inline const Aws::String& GetNodeId() const { return m_nodeId; }
     inline bool NodeIdHasBeenSet() const { return m_nodeIdHasBeenSet; }
-    inline void SetNodeId(const Aws::String& value) { m_nodeIdHasBeenSet = true; m_nodeId = value; }
-    inline void SetNodeId(Aws::String&& value) { m_nodeIdHasBeenSet = true; m_nodeId = std::move(value); }
-    inline void SetNodeId(const char* value) { m_nodeIdHasBeenSet = true; m_nodeId.assign(value); }
-    inline UpdateNodeStateRequest& WithNodeId(const Aws::String& value) { SetNodeId(value); return *this;}
-    inline UpdateNodeStateRequest& WithNodeId(Aws::String&& value) { SetNodeId(std::move(value)); return *this;}
-    inline UpdateNodeStateRequest& WithNodeId(const char* value) { SetNodeId(value); return *this;}
+    template<typename NodeIdT = Aws::String>
+    void SetNodeId(NodeIdT&& value) { m_nodeIdHasBeenSet = true; m_nodeId = std::forward<NodeIdT>(value); }
+    template<typename NodeIdT = Aws::String>
+    UpdateNodeStateRequest& WithNodeId(NodeIdT&& value) { SetNodeId(std::forward<NodeIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +68,10 @@ namespace Model
      * to an active node. Set to DRAINING to isolate the Node so that MediaLive
      * Anywhere won't use it.
      */
-    inline const UpdateNodeState& GetState() const{ return m_state; }
+    inline UpdateNodeState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const UpdateNodeState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(UpdateNodeState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline UpdateNodeStateRequest& WithState(const UpdateNodeState& value) { SetState(value); return *this;}
-    inline UpdateNodeStateRequest& WithState(UpdateNodeState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(UpdateNodeState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline UpdateNodeStateRequest& WithState(UpdateNodeState value) { SetState(value); return *this;}
     ///@}
   private:
 
@@ -87,7 +81,7 @@ namespace Model
     Aws::String m_nodeId;
     bool m_nodeIdHasBeenSet = false;
 
-    UpdateNodeState m_state;
+    UpdateNodeState m_state{UpdateNodeState::NOT_SET};
     bool m_stateHasBeenSet = false;
   };
 

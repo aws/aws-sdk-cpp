@@ -18,15 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-VirtualGatewayListenerTlsCertificate::VirtualGatewayListenerTlsCertificate() : 
-    m_acmHasBeenSet(false),
-    m_fileHasBeenSet(false),
-    m_sdsHasBeenSet(false)
-{
-}
-
 VirtualGatewayListenerTlsCertificate::VirtualGatewayListenerTlsCertificate(JsonView jsonValue)
-  : VirtualGatewayListenerTlsCertificate()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ VirtualGatewayListenerTlsCertificate& VirtualGatewayListenerTlsCertificate::oper
   if(jsonValue.ValueExists("acm"))
   {
     m_acm = jsonValue.GetObject("acm");
-
     m_acmHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("file"))
   {
     m_file = jsonValue.GetObject("file");
-
     m_fileHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sds"))
   {
     m_sds = jsonValue.GetObject("sds");
-
     m_sdsHasBeenSet = true;
   }
-
   return *this;
 }
 

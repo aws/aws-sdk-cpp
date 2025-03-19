@@ -18,18 +18,7 @@ namespace LookoutMetrics
 namespace Model
 {
 
-MetricSource::MetricSource() : 
-    m_s3SourceConfigHasBeenSet(false),
-    m_appFlowConfigHasBeenSet(false),
-    m_cloudWatchConfigHasBeenSet(false),
-    m_rDSSourceConfigHasBeenSet(false),
-    m_redshiftSourceConfigHasBeenSet(false),
-    m_athenaSourceConfigHasBeenSet(false)
-{
-}
-
 MetricSource::MetricSource(JsonView jsonValue)
-  : MetricSource()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ MetricSource& MetricSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3SourceConfig"))
   {
     m_s3SourceConfig = jsonValue.GetObject("S3SourceConfig");
-
     m_s3SourceConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AppFlowConfig"))
   {
     m_appFlowConfig = jsonValue.GetObject("AppFlowConfig");
-
     m_appFlowConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CloudWatchConfig"))
   {
     m_cloudWatchConfig = jsonValue.GetObject("CloudWatchConfig");
-
     m_cloudWatchConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RDSSourceConfig"))
   {
     m_rDSSourceConfig = jsonValue.GetObject("RDSSourceConfig");
-
     m_rDSSourceConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RedshiftSourceConfig"))
   {
     m_redshiftSourceConfig = jsonValue.GetObject("RedshiftSourceConfig");
-
     m_redshiftSourceConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AthenaSourceConfig"))
   {
     m_athenaSourceConfig = jsonValue.GetObject("AthenaSourceConfig");
-
     m_athenaSourceConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

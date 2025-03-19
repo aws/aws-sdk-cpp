@@ -21,7 +21,7 @@ namespace Model
   class DeleteRuleRequest : public FraudDetectorRequest
   {
   public:
-    AWS_FRAUDDETECTOR_API DeleteRuleRequest();
+    AWS_FRAUDDETECTOR_API DeleteRuleRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,12 +36,12 @@ namespace Model
 
     ///@{
     
-    inline const Rule& GetRule() const{ return m_rule; }
+    inline const Rule& GetRule() const { return m_rule; }
     inline bool RuleHasBeenSet() const { return m_ruleHasBeenSet; }
-    inline void SetRule(const Rule& value) { m_ruleHasBeenSet = true; m_rule = value; }
-    inline void SetRule(Rule&& value) { m_ruleHasBeenSet = true; m_rule = std::move(value); }
-    inline DeleteRuleRequest& WithRule(const Rule& value) { SetRule(value); return *this;}
-    inline DeleteRuleRequest& WithRule(Rule&& value) { SetRule(std::move(value)); return *this;}
+    template<typename RuleT = Rule>
+    void SetRule(RuleT&& value) { m_ruleHasBeenSet = true; m_rule = std::forward<RuleT>(value); }
+    template<typename RuleT = Rule>
+    DeleteRuleRequest& WithRule(RuleT&& value) { SetRule(std::forward<RuleT>(value)); return *this;}
     ///@}
   private:
 

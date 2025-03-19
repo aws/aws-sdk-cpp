@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeBrandResult::DescribeBrandResult()
-{
-}
-
 DescribeBrandResult::DescribeBrandResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ DescribeBrandResult& DescribeBrandResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("BrandDetail"))
   {
     m_brandDetail = jsonValue.GetObject("BrandDetail");
-
+    m_brandDetailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BrandDefinition"))
   {
     m_brandDefinition = jsonValue.GetObject("BrandDefinition");
-
+    m_brandDefinitionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

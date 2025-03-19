@@ -18,14 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-AnalysisRuleCriteria::AnalysisRuleCriteria() : 
-    m_accountIdsHasBeenSet(false),
-    m_resourceTagsHasBeenSet(false)
-{
-}
-
 AnalysisRuleCriteria::AnalysisRuleCriteria(JsonView jsonValue)
-  : AnalysisRuleCriteria()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ AnalysisRuleCriteria& AnalysisRuleCriteria::operator =(JsonView jsonValue)
     }
     m_accountIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceTags"))
   {
     Aws::Utils::Array<JsonView> resourceTagsJsonList = jsonValue.GetArray("resourceTags");
@@ -57,7 +49,6 @@ AnalysisRuleCriteria& AnalysisRuleCriteria::operator =(JsonView jsonValue)
     }
     m_resourceTagsHasBeenSet = true;
   }
-
   return *this;
 }
 

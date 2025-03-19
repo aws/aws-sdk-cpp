@@ -20,14 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-MetricStreamStatisticsMetric::MetricStreamStatisticsMetric() : 
-    m_namespaceHasBeenSet(false),
-    m_metricNameHasBeenSet(false)
-{
-}
-
 MetricStreamStatisticsMetric::MetricStreamStatisticsMetric(const XmlNode& xmlNode)
-  : MetricStreamStatisticsMetric()
 {
   *this = xmlNode;
 }

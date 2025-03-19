@@ -34,7 +34,7 @@ namespace Model
   class BatchListAttachedIndicesResponse
   {
   public:
-    AWS_CLOUDDIRECTORY_API BatchListAttachedIndicesResponse();
+    AWS_CLOUDDIRECTORY_API BatchListAttachedIndicesResponse() = default;
     AWS_CLOUDDIRECTORY_API BatchListAttachedIndicesResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API BatchListAttachedIndicesResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,26 @@ namespace Model
     /**
      * <p>The indices attached to the specified object.</p>
      */
-    inline const Aws::Vector<IndexAttachment>& GetIndexAttachments() const{ return m_indexAttachments; }
+    inline const Aws::Vector<IndexAttachment>& GetIndexAttachments() const { return m_indexAttachments; }
     inline bool IndexAttachmentsHasBeenSet() const { return m_indexAttachmentsHasBeenSet; }
-    inline void SetIndexAttachments(const Aws::Vector<IndexAttachment>& value) { m_indexAttachmentsHasBeenSet = true; m_indexAttachments = value; }
-    inline void SetIndexAttachments(Aws::Vector<IndexAttachment>&& value) { m_indexAttachmentsHasBeenSet = true; m_indexAttachments = std::move(value); }
-    inline BatchListAttachedIndicesResponse& WithIndexAttachments(const Aws::Vector<IndexAttachment>& value) { SetIndexAttachments(value); return *this;}
-    inline BatchListAttachedIndicesResponse& WithIndexAttachments(Aws::Vector<IndexAttachment>&& value) { SetIndexAttachments(std::move(value)); return *this;}
-    inline BatchListAttachedIndicesResponse& AddIndexAttachments(const IndexAttachment& value) { m_indexAttachmentsHasBeenSet = true; m_indexAttachments.push_back(value); return *this; }
-    inline BatchListAttachedIndicesResponse& AddIndexAttachments(IndexAttachment&& value) { m_indexAttachmentsHasBeenSet = true; m_indexAttachments.push_back(std::move(value)); return *this; }
+    template<typename IndexAttachmentsT = Aws::Vector<IndexAttachment>>
+    void SetIndexAttachments(IndexAttachmentsT&& value) { m_indexAttachmentsHasBeenSet = true; m_indexAttachments = std::forward<IndexAttachmentsT>(value); }
+    template<typename IndexAttachmentsT = Aws::Vector<IndexAttachment>>
+    BatchListAttachedIndicesResponse& WithIndexAttachments(IndexAttachmentsT&& value) { SetIndexAttachments(std::forward<IndexAttachmentsT>(value)); return *this;}
+    template<typename IndexAttachmentsT = IndexAttachment>
+    BatchListAttachedIndicesResponse& AddIndexAttachments(IndexAttachmentsT&& value) { m_indexAttachmentsHasBeenSet = true; m_indexAttachments.emplace_back(std::forward<IndexAttachmentsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The pagination token.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline BatchListAttachedIndicesResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline BatchListAttachedIndicesResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline BatchListAttachedIndicesResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    BatchListAttachedIndicesResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 

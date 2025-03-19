@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateAvailabilityOptionsResult::UpdateAvailabilityOptionsResult()
-{
-}
-
 UpdateAvailabilityOptionsResult::UpdateAvailabilityOptionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ UpdateAvailabilityOptionsResult& UpdateAvailabilityOptionsResult::operator =(con
     if(!availabilityOptionsNode.IsNull())
     {
       m_availabilityOptions = availabilityOptionsNode;
+      m_availabilityOptionsHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::CloudSearch::Model::UpdateAvailabilityOptionsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

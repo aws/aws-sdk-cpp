@@ -33,7 +33,7 @@ namespace Model
   class BatchGetRecordIdentifier
   {
   public:
-    AWS_SAGEMAKERFEATURESTORERUNTIME_API BatchGetRecordIdentifier();
+    AWS_SAGEMAKERFEATURESTORERUNTIME_API BatchGetRecordIdentifier() = default;
     AWS_SAGEMAKERFEATURESTORERUNTIME_API BatchGetRecordIdentifier(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERFEATURESTORERUNTIME_API BatchGetRecordIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERFEATURESTORERUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,29 +44,26 @@ namespace Model
      * <p>The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code>
      * containing the records you are retrieving in a batch.</p>
      */
-    inline const Aws::String& GetFeatureGroupName() const{ return m_featureGroupName; }
+    inline const Aws::String& GetFeatureGroupName() const { return m_featureGroupName; }
     inline bool FeatureGroupNameHasBeenSet() const { return m_featureGroupNameHasBeenSet; }
-    inline void SetFeatureGroupName(const Aws::String& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = value; }
-    inline void SetFeatureGroupName(Aws::String&& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = std::move(value); }
-    inline void SetFeatureGroupName(const char* value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName.assign(value); }
-    inline BatchGetRecordIdentifier& WithFeatureGroupName(const Aws::String& value) { SetFeatureGroupName(value); return *this;}
-    inline BatchGetRecordIdentifier& WithFeatureGroupName(Aws::String&& value) { SetFeatureGroupName(std::move(value)); return *this;}
-    inline BatchGetRecordIdentifier& WithFeatureGroupName(const char* value) { SetFeatureGroupName(value); return *this;}
+    template<typename FeatureGroupNameT = Aws::String>
+    void SetFeatureGroupName(FeatureGroupNameT&& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = std::forward<FeatureGroupNameT>(value); }
+    template<typename FeatureGroupNameT = Aws::String>
+    BatchGetRecordIdentifier& WithFeatureGroupName(FeatureGroupNameT&& value) { SetFeatureGroupName(std::forward<FeatureGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value for a list of record identifiers in string format.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRecordIdentifiersValueAsString() const{ return m_recordIdentifiersValueAsString; }
+    inline const Aws::Vector<Aws::String>& GetRecordIdentifiersValueAsString() const { return m_recordIdentifiersValueAsString; }
     inline bool RecordIdentifiersValueAsStringHasBeenSet() const { return m_recordIdentifiersValueAsStringHasBeenSet; }
-    inline void SetRecordIdentifiersValueAsString(const Aws::Vector<Aws::String>& value) { m_recordIdentifiersValueAsStringHasBeenSet = true; m_recordIdentifiersValueAsString = value; }
-    inline void SetRecordIdentifiersValueAsString(Aws::Vector<Aws::String>&& value) { m_recordIdentifiersValueAsStringHasBeenSet = true; m_recordIdentifiersValueAsString = std::move(value); }
-    inline BatchGetRecordIdentifier& WithRecordIdentifiersValueAsString(const Aws::Vector<Aws::String>& value) { SetRecordIdentifiersValueAsString(value); return *this;}
-    inline BatchGetRecordIdentifier& WithRecordIdentifiersValueAsString(Aws::Vector<Aws::String>&& value) { SetRecordIdentifiersValueAsString(std::move(value)); return *this;}
-    inline BatchGetRecordIdentifier& AddRecordIdentifiersValueAsString(const Aws::String& value) { m_recordIdentifiersValueAsStringHasBeenSet = true; m_recordIdentifiersValueAsString.push_back(value); return *this; }
-    inline BatchGetRecordIdentifier& AddRecordIdentifiersValueAsString(Aws::String&& value) { m_recordIdentifiersValueAsStringHasBeenSet = true; m_recordIdentifiersValueAsString.push_back(std::move(value)); return *this; }
-    inline BatchGetRecordIdentifier& AddRecordIdentifiersValueAsString(const char* value) { m_recordIdentifiersValueAsStringHasBeenSet = true; m_recordIdentifiersValueAsString.push_back(value); return *this; }
+    template<typename RecordIdentifiersValueAsStringT = Aws::Vector<Aws::String>>
+    void SetRecordIdentifiersValueAsString(RecordIdentifiersValueAsStringT&& value) { m_recordIdentifiersValueAsStringHasBeenSet = true; m_recordIdentifiersValueAsString = std::forward<RecordIdentifiersValueAsStringT>(value); }
+    template<typename RecordIdentifiersValueAsStringT = Aws::Vector<Aws::String>>
+    BatchGetRecordIdentifier& WithRecordIdentifiersValueAsString(RecordIdentifiersValueAsStringT&& value) { SetRecordIdentifiersValueAsString(std::forward<RecordIdentifiersValueAsStringT>(value)); return *this;}
+    template<typename RecordIdentifiersValueAsStringT = Aws::String>
+    BatchGetRecordIdentifier& AddRecordIdentifiersValueAsString(RecordIdentifiersValueAsStringT&& value) { m_recordIdentifiersValueAsStringHasBeenSet = true; m_recordIdentifiersValueAsString.emplace_back(std::forward<RecordIdentifiersValueAsStringT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -74,15 +71,14 @@ namespace Model
      * <p>List of names of Features to be retrieved. If not specified, the latest value
      * for all the Features are returned.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetFeatureNames() const{ return m_featureNames; }
+    inline const Aws::Vector<Aws::String>& GetFeatureNames() const { return m_featureNames; }
     inline bool FeatureNamesHasBeenSet() const { return m_featureNamesHasBeenSet; }
-    inline void SetFeatureNames(const Aws::Vector<Aws::String>& value) { m_featureNamesHasBeenSet = true; m_featureNames = value; }
-    inline void SetFeatureNames(Aws::Vector<Aws::String>&& value) { m_featureNamesHasBeenSet = true; m_featureNames = std::move(value); }
-    inline BatchGetRecordIdentifier& WithFeatureNames(const Aws::Vector<Aws::String>& value) { SetFeatureNames(value); return *this;}
-    inline BatchGetRecordIdentifier& WithFeatureNames(Aws::Vector<Aws::String>&& value) { SetFeatureNames(std::move(value)); return *this;}
-    inline BatchGetRecordIdentifier& AddFeatureNames(const Aws::String& value) { m_featureNamesHasBeenSet = true; m_featureNames.push_back(value); return *this; }
-    inline BatchGetRecordIdentifier& AddFeatureNames(Aws::String&& value) { m_featureNamesHasBeenSet = true; m_featureNames.push_back(std::move(value)); return *this; }
-    inline BatchGetRecordIdentifier& AddFeatureNames(const char* value) { m_featureNamesHasBeenSet = true; m_featureNames.push_back(value); return *this; }
+    template<typename FeatureNamesT = Aws::Vector<Aws::String>>
+    void SetFeatureNames(FeatureNamesT&& value) { m_featureNamesHasBeenSet = true; m_featureNames = std::forward<FeatureNamesT>(value); }
+    template<typename FeatureNamesT = Aws::Vector<Aws::String>>
+    BatchGetRecordIdentifier& WithFeatureNames(FeatureNamesT&& value) { SetFeatureNames(std::forward<FeatureNamesT>(value)); return *this;}
+    template<typename FeatureNamesT = Aws::String>
+    BatchGetRecordIdentifier& AddFeatureNames(FeatureNamesT&& value) { m_featureNamesHasBeenSet = true; m_featureNames.emplace_back(std::forward<FeatureNamesT>(value)); return *this; }
     ///@}
   private:
 

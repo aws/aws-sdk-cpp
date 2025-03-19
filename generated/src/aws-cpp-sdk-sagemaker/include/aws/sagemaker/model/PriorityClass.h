@@ -33,7 +33,7 @@ namespace Model
   class PriorityClass
   {
   public:
-    AWS_SAGEMAKER_API PriorityClass();
+    AWS_SAGEMAKER_API PriorityClass() = default;
     AWS_SAGEMAKER_API PriorityClass(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API PriorityClass& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>Name of the priority class.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline PriorityClass& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline PriorityClass& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline PriorityClass& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    PriorityClass& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,7 +57,7 @@ namespace Model
      * where 0 is the default.</p> <p>A weight of 0 is the lowest priority and 100 is
      * the highest. Weight 0 is the default.</p>
      */
-    inline int GetWeight() const{ return m_weight; }
+    inline int GetWeight() const { return m_weight; }
     inline bool WeightHasBeenSet() const { return m_weightHasBeenSet; }
     inline void SetWeight(int value) { m_weightHasBeenSet = true; m_weight = value; }
     inline PriorityClass& WithWeight(int value) { SetWeight(value); return *this;}
@@ -69,7 +67,7 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    int m_weight;
+    int m_weight{0};
     bool m_weightHasBeenSet = false;
   };
 

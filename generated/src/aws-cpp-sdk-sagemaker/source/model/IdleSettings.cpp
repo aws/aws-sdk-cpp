@@ -18,20 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-IdleSettings::IdleSettings() : 
-    m_lifecycleManagement(LifecycleManagement::NOT_SET),
-    m_lifecycleManagementHasBeenSet(false),
-    m_idleTimeoutInMinutes(0),
-    m_idleTimeoutInMinutesHasBeenSet(false),
-    m_minIdleTimeoutInMinutes(0),
-    m_minIdleTimeoutInMinutesHasBeenSet(false),
-    m_maxIdleTimeoutInMinutes(0),
-    m_maxIdleTimeoutInMinutesHasBeenSet(false)
-{
-}
-
 IdleSettings::IdleSettings(JsonView jsonValue)
-  : IdleSettings()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ IdleSettings& IdleSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LifecycleManagement"))
   {
     m_lifecycleManagement = LifecycleManagementMapper::GetLifecycleManagementForName(jsonValue.GetString("LifecycleManagement"));
-
     m_lifecycleManagementHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdleTimeoutInMinutes"))
   {
     m_idleTimeoutInMinutes = jsonValue.GetInteger("IdleTimeoutInMinutes");
-
     m_idleTimeoutInMinutesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinIdleTimeoutInMinutes"))
   {
     m_minIdleTimeoutInMinutes = jsonValue.GetInteger("MinIdleTimeoutInMinutes");
-
     m_minIdleTimeoutInMinutesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxIdleTimeoutInMinutes"))
   {
     m_maxIdleTimeoutInMinutes = jsonValue.GetInteger("MaxIdleTimeoutInMinutes");
-
     m_maxIdleTimeoutInMinutesHasBeenSet = true;
   }
-
   return *this;
 }
 

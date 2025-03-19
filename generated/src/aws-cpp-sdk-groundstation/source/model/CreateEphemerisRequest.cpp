@@ -12,20 +12,6 @@ using namespace Aws::GroundStation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateEphemerisRequest::CreateEphemerisRequest() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_ephemerisHasBeenSet(false),
-    m_expirationTimeHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_satelliteIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateEphemerisRequest::SerializePayload() const
 {
   JsonValue payload;

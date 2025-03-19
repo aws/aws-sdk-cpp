@@ -31,7 +31,7 @@ namespace Model
   class WorkflowDefinition
   {
   public:
-    AWS_CODECATALYST_API WorkflowDefinition();
+    AWS_CODECATALYST_API WorkflowDefinition() = default;
     AWS_CODECATALYST_API WorkflowDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECATALYST_API WorkflowDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECATALYST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
      * <p>The path to the workflow definition file stored in the source repository for
      * the project, including the file name.</p>
      */
-    inline const Aws::String& GetPath() const{ return m_path; }
+    inline const Aws::String& GetPath() const { return m_path; }
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-    inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-    inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-    inline WorkflowDefinition& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-    inline WorkflowDefinition& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-    inline WorkflowDefinition& WithPath(const char* value) { SetPath(value); return *this;}
+    template<typename PathT = Aws::String>
+    void SetPath(PathT&& value) { m_pathHasBeenSet = true; m_path = std::forward<PathT>(value); }
+    template<typename PathT = Aws::String>
+    WorkflowDefinition& WithPath(PathT&& value) { SetPath(std::forward<PathT>(value)); return *this;}
     ///@}
   private:
 

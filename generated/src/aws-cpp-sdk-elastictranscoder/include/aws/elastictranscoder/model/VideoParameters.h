@@ -34,7 +34,7 @@ namespace Model
   class VideoParameters
   {
   public:
-    AWS_ELASTICTRANSCODER_API VideoParameters();
+    AWS_ELASTICTRANSCODER_API VideoParameters() = default;
     AWS_ELASTICTRANSCODER_API VideoParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICTRANSCODER_API VideoParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * <code>gif</code>, and <code>mpeg2</code> when the container type is
      * <code>mpg</code>.</p>
      */
-    inline const Aws::String& GetCodec() const{ return m_codec; }
+    inline const Aws::String& GetCodec() const { return m_codec; }
     inline bool CodecHasBeenSet() const { return m_codecHasBeenSet; }
-    inline void SetCodec(const Aws::String& value) { m_codecHasBeenSet = true; m_codec = value; }
-    inline void SetCodec(Aws::String&& value) { m_codecHasBeenSet = true; m_codec = std::move(value); }
-    inline void SetCodec(const char* value) { m_codecHasBeenSet = true; m_codec.assign(value); }
-    inline VideoParameters& WithCodec(const Aws::String& value) { SetCodec(value); return *this;}
-    inline VideoParameters& WithCodec(Aws::String&& value) { SetCodec(std::move(value)); return *this;}
-    inline VideoParameters& WithCodec(const char* value) { SetCodec(value); return *this;}
+    template<typename CodecT = Aws::String>
+    void SetCodec(CodecT&& value) { m_codecHasBeenSet = true; m_codec = std::forward<CodecT>(value); }
+    template<typename CodecT = Aws::String>
+    VideoParameters& WithCodec(CodecT&& value) { SetCodec(std::forward<CodecT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -150,19 +148,16 @@ namespace Model
      * <code>Infinite</code> and integers between <code>0</code> and <code>100</code>,
      * inclusive.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetCodecOptions() const{ return m_codecOptions; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetCodecOptions() const { return m_codecOptions; }
     inline bool CodecOptionsHasBeenSet() const { return m_codecOptionsHasBeenSet; }
-    inline void SetCodecOptions(const Aws::Map<Aws::String, Aws::String>& value) { m_codecOptionsHasBeenSet = true; m_codecOptions = value; }
-    inline void SetCodecOptions(Aws::Map<Aws::String, Aws::String>&& value) { m_codecOptionsHasBeenSet = true; m_codecOptions = std::move(value); }
-    inline VideoParameters& WithCodecOptions(const Aws::Map<Aws::String, Aws::String>& value) { SetCodecOptions(value); return *this;}
-    inline VideoParameters& WithCodecOptions(Aws::Map<Aws::String, Aws::String>&& value) { SetCodecOptions(std::move(value)); return *this;}
-    inline VideoParameters& AddCodecOptions(const Aws::String& key, const Aws::String& value) { m_codecOptionsHasBeenSet = true; m_codecOptions.emplace(key, value); return *this; }
-    inline VideoParameters& AddCodecOptions(Aws::String&& key, const Aws::String& value) { m_codecOptionsHasBeenSet = true; m_codecOptions.emplace(std::move(key), value); return *this; }
-    inline VideoParameters& AddCodecOptions(const Aws::String& key, Aws::String&& value) { m_codecOptionsHasBeenSet = true; m_codecOptions.emplace(key, std::move(value)); return *this; }
-    inline VideoParameters& AddCodecOptions(Aws::String&& key, Aws::String&& value) { m_codecOptionsHasBeenSet = true; m_codecOptions.emplace(std::move(key), std::move(value)); return *this; }
-    inline VideoParameters& AddCodecOptions(const char* key, Aws::String&& value) { m_codecOptionsHasBeenSet = true; m_codecOptions.emplace(key, std::move(value)); return *this; }
-    inline VideoParameters& AddCodecOptions(Aws::String&& key, const char* value) { m_codecOptionsHasBeenSet = true; m_codecOptions.emplace(std::move(key), value); return *this; }
-    inline VideoParameters& AddCodecOptions(const char* key, const char* value) { m_codecOptionsHasBeenSet = true; m_codecOptions.emplace(key, value); return *this; }
+    template<typename CodecOptionsT = Aws::Map<Aws::String, Aws::String>>
+    void SetCodecOptions(CodecOptionsT&& value) { m_codecOptionsHasBeenSet = true; m_codecOptions = std::forward<CodecOptionsT>(value); }
+    template<typename CodecOptionsT = Aws::Map<Aws::String, Aws::String>>
+    VideoParameters& WithCodecOptions(CodecOptionsT&& value) { SetCodecOptions(std::forward<CodecOptionsT>(value)); return *this;}
+    template<typename CodecOptionsKeyT = Aws::String, typename CodecOptionsValueT = Aws::String>
+    VideoParameters& AddCodecOptions(CodecOptionsKeyT&& key, CodecOptionsValueT&& value) {
+      m_codecOptionsHasBeenSet = true; m_codecOptions.emplace(std::forward<CodecOptionsKeyT>(key), std::forward<CodecOptionsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -185,14 +180,12 @@ namespace Model
      * and having the same values for <code>MaxFrameRate</code> and
      * <code>KeyframesMaxDist</code>.</p>
      */
-    inline const Aws::String& GetKeyframesMaxDist() const{ return m_keyframesMaxDist; }
+    inline const Aws::String& GetKeyframesMaxDist() const { return m_keyframesMaxDist; }
     inline bool KeyframesMaxDistHasBeenSet() const { return m_keyframesMaxDistHasBeenSet; }
-    inline void SetKeyframesMaxDist(const Aws::String& value) { m_keyframesMaxDistHasBeenSet = true; m_keyframesMaxDist = value; }
-    inline void SetKeyframesMaxDist(Aws::String&& value) { m_keyframesMaxDistHasBeenSet = true; m_keyframesMaxDist = std::move(value); }
-    inline void SetKeyframesMaxDist(const char* value) { m_keyframesMaxDistHasBeenSet = true; m_keyframesMaxDist.assign(value); }
-    inline VideoParameters& WithKeyframesMaxDist(const Aws::String& value) { SetKeyframesMaxDist(value); return *this;}
-    inline VideoParameters& WithKeyframesMaxDist(Aws::String&& value) { SetKeyframesMaxDist(std::move(value)); return *this;}
-    inline VideoParameters& WithKeyframesMaxDist(const char* value) { SetKeyframesMaxDist(value); return *this;}
+    template<typename KeyframesMaxDistT = Aws::String>
+    void SetKeyframesMaxDist(KeyframesMaxDistT&& value) { m_keyframesMaxDistHasBeenSet = true; m_keyframesMaxDist = std::forward<KeyframesMaxDistT>(value); }
+    template<typename KeyframesMaxDistT = Aws::String>
+    VideoParameters& WithKeyframesMaxDist(KeyframesMaxDistT&& value) { SetKeyframesMaxDist(std::forward<KeyframesMaxDistT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -207,14 +200,12 @@ namespace Model
      *  <p> <code>FixedGOP</code> must be set to <code>true</code> for
      * <code>fmp4</code> containers.</p> 
      */
-    inline const Aws::String& GetFixedGOP() const{ return m_fixedGOP; }
+    inline const Aws::String& GetFixedGOP() const { return m_fixedGOP; }
     inline bool FixedGOPHasBeenSet() const { return m_fixedGOPHasBeenSet; }
-    inline void SetFixedGOP(const Aws::String& value) { m_fixedGOPHasBeenSet = true; m_fixedGOP = value; }
-    inline void SetFixedGOP(Aws::String&& value) { m_fixedGOPHasBeenSet = true; m_fixedGOP = std::move(value); }
-    inline void SetFixedGOP(const char* value) { m_fixedGOPHasBeenSet = true; m_fixedGOP.assign(value); }
-    inline VideoParameters& WithFixedGOP(const Aws::String& value) { SetFixedGOP(value); return *this;}
-    inline VideoParameters& WithFixedGOP(Aws::String&& value) { SetFixedGOP(std::move(value)); return *this;}
-    inline VideoParameters& WithFixedGOP(const char* value) { SetFixedGOP(value); return *this;}
+    template<typename FixedGOPT = Aws::String>
+    void SetFixedGOP(FixedGOPT&& value) { m_fixedGOPHasBeenSet = true; m_fixedGOP = std::forward<FixedGOPT>(value); }
+    template<typename FixedGOPT = Aws::String>
+    VideoParameters& WithFixedGOP(FixedGOPT&& value) { SetFixedGOP(std::forward<FixedGOPT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -233,14 +224,12 @@ namespace Model
      * <p>3.1 - 14000 : 17500</p> </li> <li> <p>3.2 - 20000 : 25000</p> </li> <li> <p>4
      * - 20000 : 25000</p> </li> <li> <p>4.1 - 50000 : 62500</p> </li> </ul>
      */
-    inline const Aws::String& GetBitRate() const{ return m_bitRate; }
+    inline const Aws::String& GetBitRate() const { return m_bitRate; }
     inline bool BitRateHasBeenSet() const { return m_bitRateHasBeenSet; }
-    inline void SetBitRate(const Aws::String& value) { m_bitRateHasBeenSet = true; m_bitRate = value; }
-    inline void SetBitRate(Aws::String&& value) { m_bitRateHasBeenSet = true; m_bitRate = std::move(value); }
-    inline void SetBitRate(const char* value) { m_bitRateHasBeenSet = true; m_bitRate.assign(value); }
-    inline VideoParameters& WithBitRate(const Aws::String& value) { SetBitRate(value); return *this;}
-    inline VideoParameters& WithBitRate(Aws::String&& value) { SetBitRate(std::move(value)); return *this;}
-    inline VideoParameters& WithBitRate(const char* value) { SetBitRate(value); return *this;}
+    template<typename BitRateT = Aws::String>
+    void SetBitRate(BitRateT&& value) { m_bitRateHasBeenSet = true; m_bitRate = std::forward<BitRateT>(value); }
+    template<typename BitRateT = Aws::String>
+    VideoParameters& WithBitRate(BitRateT&& value) { SetBitRate(std::forward<BitRateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -266,14 +255,12 @@ namespace Model
      * </li> <li> <p>3.1 - 27648000</p> </li> <li> <p>3.2 - 55296000</p> </li> <li>
      * <p>4 - 62914560</p> </li> <li> <p>4.1 - 62914560</p> </li> </ul>
      */
-    inline const Aws::String& GetFrameRate() const{ return m_frameRate; }
+    inline const Aws::String& GetFrameRate() const { return m_frameRate; }
     inline bool FrameRateHasBeenSet() const { return m_frameRateHasBeenSet; }
-    inline void SetFrameRate(const Aws::String& value) { m_frameRateHasBeenSet = true; m_frameRate = value; }
-    inline void SetFrameRate(Aws::String&& value) { m_frameRateHasBeenSet = true; m_frameRate = std::move(value); }
-    inline void SetFrameRate(const char* value) { m_frameRateHasBeenSet = true; m_frameRate.assign(value); }
-    inline VideoParameters& WithFrameRate(const Aws::String& value) { SetFrameRate(value); return *this;}
-    inline VideoParameters& WithFrameRate(Aws::String&& value) { SetFrameRate(std::move(value)); return *this;}
-    inline VideoParameters& WithFrameRate(const char* value) { SetFrameRate(value); return *this;}
+    template<typename FrameRateT = Aws::String>
+    void SetFrameRate(FrameRateT&& value) { m_frameRateHasBeenSet = true; m_frameRate = std::forward<FrameRateT>(value); }
+    template<typename FrameRateT = Aws::String>
+    VideoParameters& WithFrameRate(FrameRateT&& value) { SetFrameRate(std::forward<FrameRateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -286,14 +273,12 @@ namespace Model
      * <code>15</code>, <code>23.97</code>, <code>24</code>, <code>25</code>,
      * <code>29.97</code>, <code>30</code>, <code>60</code>.</p>
      */
-    inline const Aws::String& GetMaxFrameRate() const{ return m_maxFrameRate; }
+    inline const Aws::String& GetMaxFrameRate() const { return m_maxFrameRate; }
     inline bool MaxFrameRateHasBeenSet() const { return m_maxFrameRateHasBeenSet; }
-    inline void SetMaxFrameRate(const Aws::String& value) { m_maxFrameRateHasBeenSet = true; m_maxFrameRate = value; }
-    inline void SetMaxFrameRate(Aws::String&& value) { m_maxFrameRateHasBeenSet = true; m_maxFrameRate = std::move(value); }
-    inline void SetMaxFrameRate(const char* value) { m_maxFrameRateHasBeenSet = true; m_maxFrameRate.assign(value); }
-    inline VideoParameters& WithMaxFrameRate(const Aws::String& value) { SetMaxFrameRate(value); return *this;}
-    inline VideoParameters& WithMaxFrameRate(Aws::String&& value) { SetMaxFrameRate(std::move(value)); return *this;}
-    inline VideoParameters& WithMaxFrameRate(const char* value) { SetMaxFrameRate(value); return *this;}
+    template<typename MaxFrameRateT = Aws::String>
+    void SetMaxFrameRate(MaxFrameRateT&& value) { m_maxFrameRateHasBeenSet = true; m_maxFrameRate = std::forward<MaxFrameRateT>(value); }
+    template<typename MaxFrameRateT = Aws::String>
+    VideoParameters& WithMaxFrameRate(MaxFrameRateT&& value) { SetMaxFrameRate(std::forward<MaxFrameRateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -325,14 +310,12 @@ namespace Model
      * 404720</p> </li> <li> <p>3.1 - 921600</p> </li> <li> <p>3.2 - 1310720</p> </li>
      * <li> <p>4 - 2097152</p> </li> <li> <p>4.1 - 2097152</p> </li> </ul> </li> </ul>
      */
-    inline const Aws::String& GetResolution() const{ return m_resolution; }
+    inline const Aws::String& GetResolution() const { return m_resolution; }
     inline bool ResolutionHasBeenSet() const { return m_resolutionHasBeenSet; }
-    inline void SetResolution(const Aws::String& value) { m_resolutionHasBeenSet = true; m_resolution = value; }
-    inline void SetResolution(Aws::String&& value) { m_resolutionHasBeenSet = true; m_resolution = std::move(value); }
-    inline void SetResolution(const char* value) { m_resolutionHasBeenSet = true; m_resolution.assign(value); }
-    inline VideoParameters& WithResolution(const Aws::String& value) { SetResolution(value); return *this;}
-    inline VideoParameters& WithResolution(Aws::String&& value) { SetResolution(std::move(value)); return *this;}
-    inline VideoParameters& WithResolution(const char* value) { SetResolution(value); return *this;}
+    template<typename ResolutionT = Aws::String>
+    void SetResolution(ResolutionT&& value) { m_resolutionHasBeenSet = true; m_resolution = std::forward<ResolutionT>(value); }
+    template<typename ResolutionT = Aws::String>
+    VideoParameters& WithResolution(ResolutionT&& value) { SetResolution(std::forward<ResolutionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -352,14 +335,12 @@ namespace Model
      * top and bottom) to maintain the aspect ratio of the active region of the
      * video.</p>
      */
-    inline const Aws::String& GetAspectRatio() const{ return m_aspectRatio; }
+    inline const Aws::String& GetAspectRatio() const { return m_aspectRatio; }
     inline bool AspectRatioHasBeenSet() const { return m_aspectRatioHasBeenSet; }
-    inline void SetAspectRatio(const Aws::String& value) { m_aspectRatioHasBeenSet = true; m_aspectRatio = value; }
-    inline void SetAspectRatio(Aws::String&& value) { m_aspectRatioHasBeenSet = true; m_aspectRatio = std::move(value); }
-    inline void SetAspectRatio(const char* value) { m_aspectRatioHasBeenSet = true; m_aspectRatio.assign(value); }
-    inline VideoParameters& WithAspectRatio(const Aws::String& value) { SetAspectRatio(value); return *this;}
-    inline VideoParameters& WithAspectRatio(Aws::String&& value) { SetAspectRatio(std::move(value)); return *this;}
-    inline VideoParameters& WithAspectRatio(const char* value) { SetAspectRatio(value); return *this;}
+    template<typename AspectRatioT = Aws::String>
+    void SetAspectRatio(AspectRatioT&& value) { m_aspectRatioHasBeenSet = true; m_aspectRatio = std::forward<AspectRatioT>(value); }
+    template<typename AspectRatioT = Aws::String>
+    VideoParameters& WithAspectRatio(AspectRatioT&& value) { SetAspectRatio(std::forward<AspectRatioT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -368,14 +349,12 @@ namespace Model
      * <code>auto</code>, Elastic Transcoder uses 1920 (Full HD) as the default value.
      * If you specify a numeric value, enter an even integer between 128 and 4096. </p>
      */
-    inline const Aws::String& GetMaxWidth() const{ return m_maxWidth; }
+    inline const Aws::String& GetMaxWidth() const { return m_maxWidth; }
     inline bool MaxWidthHasBeenSet() const { return m_maxWidthHasBeenSet; }
-    inline void SetMaxWidth(const Aws::String& value) { m_maxWidthHasBeenSet = true; m_maxWidth = value; }
-    inline void SetMaxWidth(Aws::String&& value) { m_maxWidthHasBeenSet = true; m_maxWidth = std::move(value); }
-    inline void SetMaxWidth(const char* value) { m_maxWidthHasBeenSet = true; m_maxWidth.assign(value); }
-    inline VideoParameters& WithMaxWidth(const Aws::String& value) { SetMaxWidth(value); return *this;}
-    inline VideoParameters& WithMaxWidth(Aws::String&& value) { SetMaxWidth(std::move(value)); return *this;}
-    inline VideoParameters& WithMaxWidth(const char* value) { SetMaxWidth(value); return *this;}
+    template<typename MaxWidthT = Aws::String>
+    void SetMaxWidth(MaxWidthT&& value) { m_maxWidthHasBeenSet = true; m_maxWidth = std::forward<MaxWidthT>(value); }
+    template<typename MaxWidthT = Aws::String>
+    VideoParameters& WithMaxWidth(MaxWidthT&& value) { SetMaxWidth(std::forward<MaxWidthT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -384,14 +363,12 @@ namespace Model
      * <code>auto</code>, Elastic Transcoder uses 1080 (Full HD) as the default value.
      * If you specify a numeric value, enter an even integer between 96 and 3072.</p>
      */
-    inline const Aws::String& GetMaxHeight() const{ return m_maxHeight; }
+    inline const Aws::String& GetMaxHeight() const { return m_maxHeight; }
     inline bool MaxHeightHasBeenSet() const { return m_maxHeightHasBeenSet; }
-    inline void SetMaxHeight(const Aws::String& value) { m_maxHeightHasBeenSet = true; m_maxHeight = value; }
-    inline void SetMaxHeight(Aws::String&& value) { m_maxHeightHasBeenSet = true; m_maxHeight = std::move(value); }
-    inline void SetMaxHeight(const char* value) { m_maxHeightHasBeenSet = true; m_maxHeight.assign(value); }
-    inline VideoParameters& WithMaxHeight(const Aws::String& value) { SetMaxHeight(value); return *this;}
-    inline VideoParameters& WithMaxHeight(Aws::String&& value) { SetMaxHeight(std::move(value)); return *this;}
-    inline VideoParameters& WithMaxHeight(const char* value) { SetMaxHeight(value); return *this;}
+    template<typename MaxHeightT = Aws::String>
+    void SetMaxHeight(MaxHeightT&& value) { m_maxHeightHasBeenSet = true; m_maxHeight = std::forward<MaxHeightT>(value); }
+    template<typename MaxHeightT = Aws::String>
+    VideoParameters& WithMaxHeight(MaxHeightT&& value) { SetMaxHeight(std::forward<MaxHeightT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -399,14 +376,12 @@ namespace Model
      * <p>The value that Elastic Transcoder adds to the metadata in the output
      * file.</p>
      */
-    inline const Aws::String& GetDisplayAspectRatio() const{ return m_displayAspectRatio; }
+    inline const Aws::String& GetDisplayAspectRatio() const { return m_displayAspectRatio; }
     inline bool DisplayAspectRatioHasBeenSet() const { return m_displayAspectRatioHasBeenSet; }
-    inline void SetDisplayAspectRatio(const Aws::String& value) { m_displayAspectRatioHasBeenSet = true; m_displayAspectRatio = value; }
-    inline void SetDisplayAspectRatio(Aws::String&& value) { m_displayAspectRatioHasBeenSet = true; m_displayAspectRatio = std::move(value); }
-    inline void SetDisplayAspectRatio(const char* value) { m_displayAspectRatioHasBeenSet = true; m_displayAspectRatio.assign(value); }
-    inline VideoParameters& WithDisplayAspectRatio(const Aws::String& value) { SetDisplayAspectRatio(value); return *this;}
-    inline VideoParameters& WithDisplayAspectRatio(Aws::String&& value) { SetDisplayAspectRatio(std::move(value)); return *this;}
-    inline VideoParameters& WithDisplayAspectRatio(const char* value) { SetDisplayAspectRatio(value); return *this;}
+    template<typename DisplayAspectRatioT = Aws::String>
+    void SetDisplayAspectRatio(DisplayAspectRatioT&& value) { m_displayAspectRatioHasBeenSet = true; m_displayAspectRatio = std::forward<DisplayAspectRatioT>(value); }
+    template<typename DisplayAspectRatioT = Aws::String>
+    VideoParameters& WithDisplayAspectRatio(DisplayAspectRatioT&& value) { SetDisplayAspectRatio(std::forward<DisplayAspectRatioT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -437,14 +412,12 @@ namespace Model
      * below either value. If you specify this option, Elastic Transcoder does not
      * scale the video up.</p> </li> </ul>
      */
-    inline const Aws::String& GetSizingPolicy() const{ return m_sizingPolicy; }
+    inline const Aws::String& GetSizingPolicy() const { return m_sizingPolicy; }
     inline bool SizingPolicyHasBeenSet() const { return m_sizingPolicyHasBeenSet; }
-    inline void SetSizingPolicy(const Aws::String& value) { m_sizingPolicyHasBeenSet = true; m_sizingPolicy = value; }
-    inline void SetSizingPolicy(Aws::String&& value) { m_sizingPolicyHasBeenSet = true; m_sizingPolicy = std::move(value); }
-    inline void SetSizingPolicy(const char* value) { m_sizingPolicyHasBeenSet = true; m_sizingPolicy.assign(value); }
-    inline VideoParameters& WithSizingPolicy(const Aws::String& value) { SetSizingPolicy(value); return *this;}
-    inline VideoParameters& WithSizingPolicy(Aws::String&& value) { SetSizingPolicy(std::move(value)); return *this;}
-    inline VideoParameters& WithSizingPolicy(const char* value) { SetSizingPolicy(value); return *this;}
+    template<typename SizingPolicyT = Aws::String>
+    void SetSizingPolicy(SizingPolicyT&& value) { m_sizingPolicyHasBeenSet = true; m_sizingPolicy = std::forward<SizingPolicyT>(value); }
+    template<typename SizingPolicyT = Aws::String>
+    VideoParameters& WithSizingPolicy(SizingPolicyT&& value) { SetSizingPolicy(std::forward<SizingPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -454,14 +427,12 @@ namespace Model
      * of the output video to make the total size of the output video match the values
      * that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>.</p>
      */
-    inline const Aws::String& GetPaddingPolicy() const{ return m_paddingPolicy; }
+    inline const Aws::String& GetPaddingPolicy() const { return m_paddingPolicy; }
     inline bool PaddingPolicyHasBeenSet() const { return m_paddingPolicyHasBeenSet; }
-    inline void SetPaddingPolicy(const Aws::String& value) { m_paddingPolicyHasBeenSet = true; m_paddingPolicy = value; }
-    inline void SetPaddingPolicy(Aws::String&& value) { m_paddingPolicyHasBeenSet = true; m_paddingPolicy = std::move(value); }
-    inline void SetPaddingPolicy(const char* value) { m_paddingPolicyHasBeenSet = true; m_paddingPolicy.assign(value); }
-    inline VideoParameters& WithPaddingPolicy(const Aws::String& value) { SetPaddingPolicy(value); return *this;}
-    inline VideoParameters& WithPaddingPolicy(Aws::String&& value) { SetPaddingPolicy(std::move(value)); return *this;}
-    inline VideoParameters& WithPaddingPolicy(const char* value) { SetPaddingPolicy(value); return *this;}
+    template<typename PaddingPolicyT = Aws::String>
+    void SetPaddingPolicy(PaddingPolicyT&& value) { m_paddingPolicyHasBeenSet = true; m_paddingPolicy = std::forward<PaddingPolicyT>(value); }
+    template<typename PaddingPolicyT = Aws::String>
+    VideoParameters& WithPaddingPolicy(PaddingPolicyT&& value) { SetPaddingPolicy(std::forward<PaddingPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -478,14 +449,14 @@ namespace Model
      * specify watermark settings in the preset, which allows you to use the same
      * preset for up to four watermarks that have different dimensions.</p>
      */
-    inline const Aws::Vector<PresetWatermark>& GetWatermarks() const{ return m_watermarks; }
+    inline const Aws::Vector<PresetWatermark>& GetWatermarks() const { return m_watermarks; }
     inline bool WatermarksHasBeenSet() const { return m_watermarksHasBeenSet; }
-    inline void SetWatermarks(const Aws::Vector<PresetWatermark>& value) { m_watermarksHasBeenSet = true; m_watermarks = value; }
-    inline void SetWatermarks(Aws::Vector<PresetWatermark>&& value) { m_watermarksHasBeenSet = true; m_watermarks = std::move(value); }
-    inline VideoParameters& WithWatermarks(const Aws::Vector<PresetWatermark>& value) { SetWatermarks(value); return *this;}
-    inline VideoParameters& WithWatermarks(Aws::Vector<PresetWatermark>&& value) { SetWatermarks(std::move(value)); return *this;}
-    inline VideoParameters& AddWatermarks(const PresetWatermark& value) { m_watermarksHasBeenSet = true; m_watermarks.push_back(value); return *this; }
-    inline VideoParameters& AddWatermarks(PresetWatermark&& value) { m_watermarksHasBeenSet = true; m_watermarks.push_back(std::move(value)); return *this; }
+    template<typename WatermarksT = Aws::Vector<PresetWatermark>>
+    void SetWatermarks(WatermarksT&& value) { m_watermarksHasBeenSet = true; m_watermarks = std::forward<WatermarksT>(value); }
+    template<typename WatermarksT = Aws::Vector<PresetWatermark>>
+    VideoParameters& WithWatermarks(WatermarksT&& value) { SetWatermarks(std::forward<WatermarksT>(value)); return *this;}
+    template<typename WatermarksT = PresetWatermark>
+    VideoParameters& AddWatermarks(WatermarksT&& value) { m_watermarksHasBeenSet = true; m_watermarks.emplace_back(std::forward<WatermarksT>(value)); return *this; }
     ///@}
   private:
 

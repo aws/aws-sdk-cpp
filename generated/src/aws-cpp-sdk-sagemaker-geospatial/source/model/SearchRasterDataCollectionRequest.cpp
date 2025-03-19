@@ -12,13 +12,6 @@ using namespace Aws::SageMakerGeospatial::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SearchRasterDataCollectionRequest::SearchRasterDataCollectionRequest() : 
-    m_arnHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_rasterDataCollectionQueryHasBeenSet(false)
-{
-}
-
 Aws::String SearchRasterDataCollectionRequest::SerializePayload() const
 {
   JsonValue payload;

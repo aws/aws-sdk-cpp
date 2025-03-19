@@ -18,15 +18,7 @@ namespace PcaConnectorAd
 namespace Model
 {
 
-KeyUsage::KeyUsage() : 
-    m_critical(false),
-    m_criticalHasBeenSet(false),
-    m_usageFlagsHasBeenSet(false)
-{
-}
-
 KeyUsage::KeyUsage(JsonView jsonValue)
-  : KeyUsage()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ KeyUsage& KeyUsage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Critical"))
   {
     m_critical = jsonValue.GetBool("Critical");
-
     m_criticalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UsageFlags"))
   {
     m_usageFlags = jsonValue.GetObject("UsageFlags");
-
     m_usageFlagsHasBeenSet = true;
   }
-
   return *this;
 }
 

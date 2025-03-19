@@ -18,14 +18,7 @@ namespace Synthetics
 namespace Model
 {
 
-CanaryCodeOutput::CanaryCodeOutput() : 
-    m_sourceLocationArnHasBeenSet(false),
-    m_handlerHasBeenSet(false)
-{
-}
-
 CanaryCodeOutput::CanaryCodeOutput(JsonView jsonValue)
-  : CanaryCodeOutput()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CanaryCodeOutput& CanaryCodeOutput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SourceLocationArn"))
   {
     m_sourceLocationArn = jsonValue.GetString("SourceLocationArn");
-
     m_sourceLocationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Handler"))
   {
     m_handler = jsonValue.GetString("Handler");
-
     m_handlerHasBeenSet = true;
   }
-
   return *this;
 }
 

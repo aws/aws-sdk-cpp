@@ -37,7 +37,7 @@ namespace Model
   class UriFragment
   {
   public:
-    AWS_WAFV2_API UriFragment();
+    AWS_WAFV2_API UriFragment() = default;
     AWS_WAFV2_API UriFragment(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API UriFragment& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -61,16 +61,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-fields-list.html#waf-rule-statement-request-component-json-body">JSON
      * body</a> in the <i>WAF Developer Guide</i>.</p> 
      */
-    inline const FallbackBehavior& GetFallbackBehavior() const{ return m_fallbackBehavior; }
+    inline FallbackBehavior GetFallbackBehavior() const { return m_fallbackBehavior; }
     inline bool FallbackBehaviorHasBeenSet() const { return m_fallbackBehaviorHasBeenSet; }
-    inline void SetFallbackBehavior(const FallbackBehavior& value) { m_fallbackBehaviorHasBeenSet = true; m_fallbackBehavior = value; }
-    inline void SetFallbackBehavior(FallbackBehavior&& value) { m_fallbackBehaviorHasBeenSet = true; m_fallbackBehavior = std::move(value); }
-    inline UriFragment& WithFallbackBehavior(const FallbackBehavior& value) { SetFallbackBehavior(value); return *this;}
-    inline UriFragment& WithFallbackBehavior(FallbackBehavior&& value) { SetFallbackBehavior(std::move(value)); return *this;}
+    inline void SetFallbackBehavior(FallbackBehavior value) { m_fallbackBehaviorHasBeenSet = true; m_fallbackBehavior = value; }
+    inline UriFragment& WithFallbackBehavior(FallbackBehavior value) { SetFallbackBehavior(value); return *this;}
     ///@}
   private:
 
-    FallbackBehavior m_fallbackBehavior;
+    FallbackBehavior m_fallbackBehavior{FallbackBehavior::NOT_SET};
     bool m_fallbackBehaviorHasBeenSet = false;
   };
 

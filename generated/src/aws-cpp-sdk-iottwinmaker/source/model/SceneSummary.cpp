@@ -18,18 +18,7 @@ namespace IoTTwinMaker
 namespace Model
 {
 
-SceneSummary::SceneSummary() : 
-    m_sceneIdHasBeenSet(false),
-    m_contentLocationHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_updateDateTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 SceneSummary::SceneSummary(JsonView jsonValue)
-  : SceneSummary()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ SceneSummary& SceneSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sceneId"))
   {
     m_sceneId = jsonValue.GetString("sceneId");
-
     m_sceneIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("contentLocation"))
   {
     m_contentLocation = jsonValue.GetString("contentLocation");
-
     m_contentLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
-
     m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateDateTime"))
   {
     m_updateDateTime = jsonValue.GetDouble("updateDateTime");
-
     m_updateDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

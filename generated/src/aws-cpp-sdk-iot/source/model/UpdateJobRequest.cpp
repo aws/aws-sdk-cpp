@@ -15,18 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-UpdateJobRequest::UpdateJobRequest() : 
-    m_jobIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_presignedUrlConfigHasBeenSet(false),
-    m_jobExecutionsRolloutConfigHasBeenSet(false),
-    m_abortConfigHasBeenSet(false),
-    m_timeoutConfigHasBeenSet(false),
-    m_namespaceIdHasBeenSet(false),
-    m_jobExecutionsRetryConfigHasBeenSet(false)
-{
-}
-
 Aws::String UpdateJobRequest::SerializePayload() const
 {
   JsonValue payload;

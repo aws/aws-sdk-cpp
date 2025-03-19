@@ -34,7 +34,7 @@ namespace Model
   class TemplateVersionsResponse
   {
   public:
-    AWS_PINPOINT_API TemplateVersionsResponse();
+    AWS_PINPOINT_API TemplateVersionsResponse() = default;
     AWS_PINPOINT_API TemplateVersionsResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API TemplateVersionsResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
     /**
      * <p>An array of responses, one for each version of the message template.</p>
      */
-    inline const Aws::Vector<TemplateVersionResponse>& GetItem() const{ return m_item; }
+    inline const Aws::Vector<TemplateVersionResponse>& GetItem() const { return m_item; }
     inline bool ItemHasBeenSet() const { return m_itemHasBeenSet; }
-    inline void SetItem(const Aws::Vector<TemplateVersionResponse>& value) { m_itemHasBeenSet = true; m_item = value; }
-    inline void SetItem(Aws::Vector<TemplateVersionResponse>&& value) { m_itemHasBeenSet = true; m_item = std::move(value); }
-    inline TemplateVersionsResponse& WithItem(const Aws::Vector<TemplateVersionResponse>& value) { SetItem(value); return *this;}
-    inline TemplateVersionsResponse& WithItem(Aws::Vector<TemplateVersionResponse>&& value) { SetItem(std::move(value)); return *this;}
-    inline TemplateVersionsResponse& AddItem(const TemplateVersionResponse& value) { m_itemHasBeenSet = true; m_item.push_back(value); return *this; }
-    inline TemplateVersionsResponse& AddItem(TemplateVersionResponse&& value) { m_itemHasBeenSet = true; m_item.push_back(std::move(value)); return *this; }
+    template<typename ItemT = Aws::Vector<TemplateVersionResponse>>
+    void SetItem(ItemT&& value) { m_itemHasBeenSet = true; m_item = std::forward<ItemT>(value); }
+    template<typename ItemT = Aws::Vector<TemplateVersionResponse>>
+    TemplateVersionsResponse& WithItem(ItemT&& value) { SetItem(std::forward<ItemT>(value)); return *this;}
+    template<typename ItemT = TemplateVersionResponse>
+    TemplateVersionsResponse& AddItem(ItemT&& value) { m_itemHasBeenSet = true; m_item.emplace_back(std::forward<ItemT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -59,14 +59,12 @@ namespace Model
      * <p>The message that's returned from the API for the request to retrieve
      * information about all the versions of the message template.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline TemplateVersionsResponse& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline TemplateVersionsResponse& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline TemplateVersionsResponse& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    TemplateVersionsResponse& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +72,12 @@ namespace Model
      * <p>The string to use in a subsequent request to get the next page of results in
      * a paginated response. This value is null if there are no additional pages.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline TemplateVersionsResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline TemplateVersionsResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline TemplateVersionsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    TemplateVersionsResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,14 +85,12 @@ namespace Model
      * <p>The unique identifier for the request to retrieve information about all the
      * versions of the message template.</p>
      */
-    inline const Aws::String& GetRequestID() const{ return m_requestID; }
+    inline const Aws::String& GetRequestID() const { return m_requestID; }
     inline bool RequestIDHasBeenSet() const { return m_requestIDHasBeenSet; }
-    inline void SetRequestID(const Aws::String& value) { m_requestIDHasBeenSet = true; m_requestID = value; }
-    inline void SetRequestID(Aws::String&& value) { m_requestIDHasBeenSet = true; m_requestID = std::move(value); }
-    inline void SetRequestID(const char* value) { m_requestIDHasBeenSet = true; m_requestID.assign(value); }
-    inline TemplateVersionsResponse& WithRequestID(const Aws::String& value) { SetRequestID(value); return *this;}
-    inline TemplateVersionsResponse& WithRequestID(Aws::String&& value) { SetRequestID(std::move(value)); return *this;}
-    inline TemplateVersionsResponse& WithRequestID(const char* value) { SetRequestID(value); return *this;}
+    template<typename RequestIDT = Aws::String>
+    void SetRequestID(RequestIDT&& value) { m_requestIDHasBeenSet = true; m_requestID = std::forward<RequestIDT>(value); }
+    template<typename RequestIDT = Aws::String>
+    TemplateVersionsResponse& WithRequestID(RequestIDT&& value) { SetRequestID(std::forward<RequestIDT>(value)); return *this;}
     ///@}
   private:
 

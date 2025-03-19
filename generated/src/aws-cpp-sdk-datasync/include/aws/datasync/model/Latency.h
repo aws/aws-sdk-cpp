@@ -31,7 +31,7 @@ namespace Model
   class Latency
   {
   public:
-    AWS_DATASYNC_API Latency();
+    AWS_DATASYNC_API Latency() = default;
     AWS_DATASYNC_API Latency(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API Latency& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>Peak latency for read operations.</p>
      */
-    inline double GetRead() const{ return m_read; }
+    inline double GetRead() const { return m_read; }
     inline bool ReadHasBeenSet() const { return m_readHasBeenSet; }
     inline void SetRead(double value) { m_readHasBeenSet = true; m_read = value; }
     inline Latency& WithRead(double value) { SetRead(value); return *this;}
@@ -51,7 +51,7 @@ namespace Model
     /**
      * <p>Peak latency for write operations.</p>
      */
-    inline double GetWrite() const{ return m_write; }
+    inline double GetWrite() const { return m_write; }
     inline bool WriteHasBeenSet() const { return m_writeHasBeenSet; }
     inline void SetWrite(double value) { m_writeHasBeenSet = true; m_write = value; }
     inline Latency& WithWrite(double value) { SetWrite(value); return *this;}
@@ -61,20 +61,20 @@ namespace Model
     /**
      * <p>Peak latency for operations unrelated to read and write operations.</p>
      */
-    inline double GetOther() const{ return m_other; }
+    inline double GetOther() const { return m_other; }
     inline bool OtherHasBeenSet() const { return m_otherHasBeenSet; }
     inline void SetOther(double value) { m_otherHasBeenSet = true; m_other = value; }
     inline Latency& WithOther(double value) { SetOther(value); return *this;}
     ///@}
   private:
 
-    double m_read;
+    double m_read{0.0};
     bool m_readHasBeenSet = false;
 
-    double m_write;
+    double m_write{0.0};
     bool m_writeHasBeenSet = false;
 
-    double m_other;
+    double m_other{0.0};
     bool m_otherHasBeenSet = false;
   };
 

@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteReplicationConfigurationRequest::DeleteReplicationConfigurationRequest() : 
-    m_sourceFileSystemIdHasBeenSet(false),
-    m_deletionMode(DeletionMode::NOT_SET),
-    m_deletionModeHasBeenSet(false)
-{
-}
-
 Aws::String DeleteReplicationConfigurationRequest::SerializePayload() const
 {
   return {};

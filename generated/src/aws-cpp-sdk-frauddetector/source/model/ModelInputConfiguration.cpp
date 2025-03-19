@@ -18,19 +18,7 @@ namespace FraudDetector
 namespace Model
 {
 
-ModelInputConfiguration::ModelInputConfiguration() : 
-    m_eventTypeNameHasBeenSet(false),
-    m_format(ModelInputDataFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_useEventVariables(false),
-    m_useEventVariablesHasBeenSet(false),
-    m_jsonInputTemplateHasBeenSet(false),
-    m_csvInputTemplateHasBeenSet(false)
-{
-}
-
 ModelInputConfiguration::ModelInputConfiguration(JsonView jsonValue)
-  : ModelInputConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ ModelInputConfiguration& ModelInputConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("eventTypeName"))
   {
     m_eventTypeName = jsonValue.GetString("eventTypeName");
-
     m_eventTypeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("format"))
   {
     m_format = ModelInputDataFormatMapper::GetModelInputDataFormatForName(jsonValue.GetString("format"));
-
     m_formatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("useEventVariables"))
   {
     m_useEventVariables = jsonValue.GetBool("useEventVariables");
-
     m_useEventVariablesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jsonInputTemplate"))
   {
     m_jsonInputTemplate = jsonValue.GetString("jsonInputTemplate");
-
     m_jsonInputTemplateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("csvInputTemplate"))
   {
     m_csvInputTemplate = jsonValue.GetString("csvInputTemplate");
-
     m_csvInputTemplateHasBeenSet = true;
   }
-
   return *this;
 }
 

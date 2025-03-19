@@ -18,14 +18,7 @@ namespace GlueDataBrew
 namespace Model
 {
 
-EntityDetectorConfiguration::EntityDetectorConfiguration() : 
-    m_entityTypesHasBeenSet(false),
-    m_allowedStatisticsHasBeenSet(false)
-{
-}
-
 EntityDetectorConfiguration::EntityDetectorConfiguration(JsonView jsonValue)
-  : EntityDetectorConfiguration()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ EntityDetectorConfiguration& EntityDetectorConfiguration::operator =(JsonView js
     }
     m_entityTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllowedStatistics"))
   {
     Aws::Utils::Array<JsonView> allowedStatisticsJsonList = jsonValue.GetArray("AllowedStatistics");
@@ -51,7 +43,6 @@ EntityDetectorConfiguration& EntityDetectorConfiguration::operator =(JsonView js
     }
     m_allowedStatisticsHasBeenSet = true;
   }
-
   return *this;
 }
 

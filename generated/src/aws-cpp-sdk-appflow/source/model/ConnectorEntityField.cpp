@@ -18,25 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-ConnectorEntityField::ConnectorEntityField() : 
-    m_identifierHasBeenSet(false),
-    m_parentIdentifierHasBeenSet(false),
-    m_labelHasBeenSet(false),
-    m_isPrimaryKey(false),
-    m_isPrimaryKeyHasBeenSet(false),
-    m_defaultValueHasBeenSet(false),
-    m_isDeprecated(false),
-    m_isDeprecatedHasBeenSet(false),
-    m_supportedFieldTypeDetailsHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_sourcePropertiesHasBeenSet(false),
-    m_destinationPropertiesHasBeenSet(false),
-    m_customPropertiesHasBeenSet(false)
-{
-}
-
 ConnectorEntityField::ConnectorEntityField(JsonView jsonValue)
-  : ConnectorEntityField()
 {
   *this = jsonValue;
 }
@@ -46,73 +28,53 @@ ConnectorEntityField& ConnectorEntityField::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("identifier"))
   {
     m_identifier = jsonValue.GetString("identifier");
-
     m_identifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parentIdentifier"))
   {
     m_parentIdentifier = jsonValue.GetString("parentIdentifier");
-
     m_parentIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("label"))
   {
     m_label = jsonValue.GetString("label");
-
     m_labelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isPrimaryKey"))
   {
     m_isPrimaryKey = jsonValue.GetBool("isPrimaryKey");
-
     m_isPrimaryKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultValue"))
   {
     m_defaultValue = jsonValue.GetString("defaultValue");
-
     m_defaultValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isDeprecated"))
   {
     m_isDeprecated = jsonValue.GetBool("isDeprecated");
-
     m_isDeprecatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("supportedFieldTypeDetails"))
   {
     m_supportedFieldTypeDetails = jsonValue.GetObject("supportedFieldTypeDetails");
-
     m_supportedFieldTypeDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceProperties"))
   {
     m_sourceProperties = jsonValue.GetObject("sourceProperties");
-
     m_sourcePropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destinationProperties"))
   {
     m_destinationProperties = jsonValue.GetObject("destinationProperties");
-
     m_destinationPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customProperties"))
   {
     Aws::Map<Aws::String, JsonView> customPropertiesJsonMap = jsonValue.GetObject("customProperties").GetAllObjects();
@@ -122,7 +84,6 @@ ConnectorEntityField& ConnectorEntityField::operator =(JsonView jsonValue)
     }
     m_customPropertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

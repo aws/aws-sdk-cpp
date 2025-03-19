@@ -12,11 +12,6 @@ using namespace Aws::SecurityLake::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAwsLogSourceRequest::DeleteAwsLogSourceRequest() : 
-    m_sourcesHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAwsLogSourceRequest::SerializePayload() const
 {
   JsonValue payload;

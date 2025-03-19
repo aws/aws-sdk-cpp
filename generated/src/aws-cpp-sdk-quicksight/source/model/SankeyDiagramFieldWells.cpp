@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-SankeyDiagramFieldWells::SankeyDiagramFieldWells() : 
-    m_sankeyDiagramAggregatedFieldWellsHasBeenSet(false)
-{
-}
-
 SankeyDiagramFieldWells::SankeyDiagramFieldWells(JsonView jsonValue)
-  : SankeyDiagramFieldWells()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SankeyDiagramFieldWells& SankeyDiagramFieldWells::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SankeyDiagramAggregatedFieldWells"))
   {
     m_sankeyDiagramAggregatedFieldWells = jsonValue.GetObject("SankeyDiagramAggregatedFieldWells");
-
     m_sankeyDiagramAggregatedFieldWellsHasBeenSet = true;
   }
-
   return *this;
 }
 

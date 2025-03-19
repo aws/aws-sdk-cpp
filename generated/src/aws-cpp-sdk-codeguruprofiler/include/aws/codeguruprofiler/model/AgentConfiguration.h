@@ -36,7 +36,7 @@ namespace Model
   class AgentConfiguration
   {
   public:
-    AWS_CODEGURUPROFILER_API AgentConfiguration();
+    AWS_CODEGURUPROFILER_API AgentConfiguration() = default;
     AWS_CODEGURUPROFILER_API AgentConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUPROFILER_API AgentConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUPROFILER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -59,18 +59,15 @@ namespace Model
      * <code>SamplingIntervalInMilliseconds</code> - The sampling interval in
      * milliseconds that is used to profile samples. </p> </li> </ul>
      */
-    inline const Aws::Map<AgentParameterField, Aws::String>& GetAgentParameters() const{ return m_agentParameters; }
+    inline const Aws::Map<AgentParameterField, Aws::String>& GetAgentParameters() const { return m_agentParameters; }
     inline bool AgentParametersHasBeenSet() const { return m_agentParametersHasBeenSet; }
-    inline void SetAgentParameters(const Aws::Map<AgentParameterField, Aws::String>& value) { m_agentParametersHasBeenSet = true; m_agentParameters = value; }
-    inline void SetAgentParameters(Aws::Map<AgentParameterField, Aws::String>&& value) { m_agentParametersHasBeenSet = true; m_agentParameters = std::move(value); }
-    inline AgentConfiguration& WithAgentParameters(const Aws::Map<AgentParameterField, Aws::String>& value) { SetAgentParameters(value); return *this;}
-    inline AgentConfiguration& WithAgentParameters(Aws::Map<AgentParameterField, Aws::String>&& value) { SetAgentParameters(std::move(value)); return *this;}
-    inline AgentConfiguration& AddAgentParameters(const AgentParameterField& key, const Aws::String& value) { m_agentParametersHasBeenSet = true; m_agentParameters.emplace(key, value); return *this; }
-    inline AgentConfiguration& AddAgentParameters(AgentParameterField&& key, const Aws::String& value) { m_agentParametersHasBeenSet = true; m_agentParameters.emplace(std::move(key), value); return *this; }
-    inline AgentConfiguration& AddAgentParameters(const AgentParameterField& key, Aws::String&& value) { m_agentParametersHasBeenSet = true; m_agentParameters.emplace(key, std::move(value)); return *this; }
-    inline AgentConfiguration& AddAgentParameters(AgentParameterField&& key, Aws::String&& value) { m_agentParametersHasBeenSet = true; m_agentParameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline AgentConfiguration& AddAgentParameters(AgentParameterField&& key, const char* value) { m_agentParametersHasBeenSet = true; m_agentParameters.emplace(std::move(key), value); return *this; }
-    inline AgentConfiguration& AddAgentParameters(const AgentParameterField& key, const char* value) { m_agentParametersHasBeenSet = true; m_agentParameters.emplace(key, value); return *this; }
+    template<typename AgentParametersT = Aws::Map<AgentParameterField, Aws::String>>
+    void SetAgentParameters(AgentParametersT&& value) { m_agentParametersHasBeenSet = true; m_agentParameters = std::forward<AgentParametersT>(value); }
+    template<typename AgentParametersT = Aws::Map<AgentParameterField, Aws::String>>
+    AgentConfiguration& WithAgentParameters(AgentParametersT&& value) { SetAgentParameters(std::forward<AgentParametersT>(value)); return *this;}
+    inline AgentConfiguration& AddAgentParameters(AgentParameterField key, Aws::String value) {
+      m_agentParametersHasBeenSet = true; m_agentParameters.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
@@ -83,7 +80,7 @@ namespace Model
      * <code>ConfigureAgent</code> </a> every 5 minutes to submit the profiled data
      * collected during that period. </p>
      */
-    inline int GetPeriodInSeconds() const{ return m_periodInSeconds; }
+    inline int GetPeriodInSeconds() const { return m_periodInSeconds; }
     inline bool PeriodInSecondsHasBeenSet() const { return m_periodInSecondsHasBeenSet; }
     inline void SetPeriodInSeconds(int value) { m_periodInSecondsHasBeenSet = true; m_periodInSeconds = value; }
     inline AgentConfiguration& WithPeriodInSeconds(int value) { SetPeriodInSeconds(value); return *this;}
@@ -94,7 +91,7 @@ namespace Model
      * <p> A <code>Boolean</code> that specifies whether the profiling agent collects
      * profiling data or not. Set to <code>true</code> to enable profiling. </p>
      */
-    inline bool GetShouldProfile() const{ return m_shouldProfile; }
+    inline bool GetShouldProfile() const { return m_shouldProfile; }
     inline bool ShouldProfileHasBeenSet() const { return m_shouldProfileHasBeenSet; }
     inline void SetShouldProfile(bool value) { m_shouldProfileHasBeenSet = true; m_shouldProfile = value; }
     inline AgentConfiguration& WithShouldProfile(bool value) { SetShouldProfile(value); return *this;}
@@ -104,10 +101,10 @@ namespace Model
     Aws::Map<AgentParameterField, Aws::String> m_agentParameters;
     bool m_agentParametersHasBeenSet = false;
 
-    int m_periodInSeconds;
+    int m_periodInSeconds{0};
     bool m_periodInSecondsHasBeenSet = false;
 
-    bool m_shouldProfile;
+    bool m_shouldProfile{false};
     bool m_shouldProfileHasBeenSet = false;
   };
 

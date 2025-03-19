@@ -12,13 +12,6 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GrantAccessRequest::GrantAccessRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_validForInMinutes(0),
-    m_validForInMinutesHasBeenSet(false)
-{
-}
-
 Aws::String GrantAccessRequest::SerializePayload() const
 {
   JsonValue payload;

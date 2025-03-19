@@ -18,16 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-Severity::Severity() : 
-    m_description(SeverityDescription::NOT_SET),
-    m_descriptionHasBeenSet(false),
-    m_score(0),
-    m_scoreHasBeenSet(false)
-{
-}
-
 Severity::Severity(JsonView jsonValue)
-  : Severity()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ Severity& Severity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("description"))
   {
     m_description = SeverityDescriptionMapper::GetSeverityDescriptionForName(jsonValue.GetString("description"));
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("score"))
   {
     m_score = jsonValue.GetInt64("score");
-
     m_scoreHasBeenSet = true;
   }
-
   return *this;
 }
 

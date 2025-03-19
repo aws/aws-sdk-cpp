@@ -41,7 +41,7 @@ namespace Model
   class RetrievalFilter
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API RetrievalFilter();
+    AWS_BEDROCKAGENTRUNTIME_API RetrievalFilter() = default;
     AWS_BEDROCKAGENTRUNTIME_API RetrievalFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API RetrievalFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,14 +52,14 @@ namespace Model
      * <p>Knowledge base data sources are returned if their metadata attributes fulfill
      * all the filter conditions inside this list.</p>
      */
-    inline const Aws::Vector<RetrievalFilter>& GetAndAll() const{ return m_andAll; }
+    inline const Aws::Vector<RetrievalFilter>& GetAndAll() const { return m_andAll; }
     inline bool AndAllHasBeenSet() const { return m_andAllHasBeenSet; }
-    inline void SetAndAll(const Aws::Vector<RetrievalFilter>& value) { m_andAllHasBeenSet = true; m_andAll = value; }
-    inline void SetAndAll(Aws::Vector<RetrievalFilter>&& value) { m_andAllHasBeenSet = true; m_andAll = std::move(value); }
-    inline RetrievalFilter& WithAndAll(const Aws::Vector<RetrievalFilter>& value) { SetAndAll(value); return *this;}
-    inline RetrievalFilter& WithAndAll(Aws::Vector<RetrievalFilter>&& value) { SetAndAll(std::move(value)); return *this;}
-    inline RetrievalFilter& AddAndAll(const RetrievalFilter& value) { m_andAllHasBeenSet = true; m_andAll.push_back(value); return *this; }
-    inline RetrievalFilter& AddAndAll(RetrievalFilter&& value) { m_andAllHasBeenSet = true; m_andAll.push_back(std::move(value)); return *this; }
+    template<typename AndAllT = Aws::Vector<RetrievalFilter>>
+    void SetAndAll(AndAllT&& value) { m_andAllHasBeenSet = true; m_andAll = std::forward<AndAllT>(value); }
+    template<typename AndAllT = Aws::Vector<RetrievalFilter>>
+    RetrievalFilter& WithAndAll(AndAllT&& value) { SetAndAll(std::forward<AndAllT>(value)); return *this;}
+    template<typename AndAllT = RetrievalFilter>
+    RetrievalFilter& AddAndAll(AndAllT&& value) { m_andAllHasBeenSet = true; m_andAll.emplace_back(std::forward<AndAllT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -71,12 +71,12 @@ namespace Model
      * <code>cat</code>:</p> <p> <code>"equals": { "key": "animal", "value": "cat"
      * }</code> </p>
      */
-    inline const FilterAttribute& GetEquals() const{ return m_equals; }
+    inline const FilterAttribute& GetEquals() const { return m_equals; }
     inline bool EqualsHasBeenSet() const { return m_equalsHasBeenSet; }
-    inline void SetEquals(const FilterAttribute& value) { m_equalsHasBeenSet = true; m_equals = value; }
-    inline void SetEquals(FilterAttribute&& value) { m_equalsHasBeenSet = true; m_equals = std::move(value); }
-    inline RetrievalFilter& WithEquals(const FilterAttribute& value) { SetEquals(value); return *this;}
-    inline RetrievalFilter& WithEquals(FilterAttribute&& value) { SetEquals(std::move(value)); return *this;}
+    template<typename EqualsT = FilterAttribute>
+    void SetEquals(EqualsT&& value) { m_equalsHasBeenSet = true; m_equals = std::forward<EqualsT>(value); }
+    template<typename EqualsT = FilterAttribute>
+    RetrievalFilter& WithEquals(EqualsT&& value) { SetEquals(std::forward<EqualsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,12 +88,12 @@ namespace Model
      * <code>1989</code>:</p> <p> <code>"greaterThan": { "key": "year", "value": 1989
      * }</code> </p>
      */
-    inline const FilterAttribute& GetGreaterThan() const{ return m_greaterThan; }
+    inline const FilterAttribute& GetGreaterThan() const { return m_greaterThan; }
     inline bool GreaterThanHasBeenSet() const { return m_greaterThanHasBeenSet; }
-    inline void SetGreaterThan(const FilterAttribute& value) { m_greaterThanHasBeenSet = true; m_greaterThan = value; }
-    inline void SetGreaterThan(FilterAttribute&& value) { m_greaterThanHasBeenSet = true; m_greaterThan = std::move(value); }
-    inline RetrievalFilter& WithGreaterThan(const FilterAttribute& value) { SetGreaterThan(value); return *this;}
-    inline RetrievalFilter& WithGreaterThan(FilterAttribute&& value) { SetGreaterThan(std::move(value)); return *this;}
+    template<typename GreaterThanT = FilterAttribute>
+    void SetGreaterThan(GreaterThanT&& value) { m_greaterThanHasBeenSet = true; m_greaterThan = std::forward<GreaterThanT>(value); }
+    template<typename GreaterThanT = FilterAttribute>
+    RetrievalFilter& WithGreaterThan(GreaterThanT&& value) { SetGreaterThan(std::forward<GreaterThanT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,12 +105,12 @@ namespace Model
      * than or equal to <code>1989</code>:</p> <p> <code>"greaterThanOrEquals": {
      * "key": "year", "value": 1989 }</code> </p>
      */
-    inline const FilterAttribute& GetGreaterThanOrEquals() const{ return m_greaterThanOrEquals; }
+    inline const FilterAttribute& GetGreaterThanOrEquals() const { return m_greaterThanOrEquals; }
     inline bool GreaterThanOrEqualsHasBeenSet() const { return m_greaterThanOrEqualsHasBeenSet; }
-    inline void SetGreaterThanOrEquals(const FilterAttribute& value) { m_greaterThanOrEqualsHasBeenSet = true; m_greaterThanOrEquals = value; }
-    inline void SetGreaterThanOrEquals(FilterAttribute&& value) { m_greaterThanOrEqualsHasBeenSet = true; m_greaterThanOrEquals = std::move(value); }
-    inline RetrievalFilter& WithGreaterThanOrEquals(const FilterAttribute& value) { SetGreaterThanOrEquals(value); return *this;}
-    inline RetrievalFilter& WithGreaterThanOrEquals(FilterAttribute&& value) { SetGreaterThanOrEquals(std::move(value)); return *this;}
+    template<typename GreaterThanOrEqualsT = FilterAttribute>
+    void SetGreaterThanOrEquals(GreaterThanOrEqualsT&& value) { m_greaterThanOrEqualsHasBeenSet = true; m_greaterThanOrEquals = std::forward<GreaterThanOrEqualsT>(value); }
+    template<typename GreaterThanOrEqualsT = FilterAttribute>
+    RetrievalFilter& WithGreaterThanOrEquals(GreaterThanOrEqualsT&& value) { SetGreaterThanOrEquals(std::forward<GreaterThanOrEqualsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -122,12 +122,12 @@ namespace Model
      * <code>cat</code> or <code>dog</code>:</p> <p> <code>"in": { "key": "animal",
      * "value": ["cat", "dog"] }</code> </p>
      */
-    inline const FilterAttribute& GetIn() const{ return m_in; }
+    inline const FilterAttribute& GetIn() const { return m_in; }
     inline bool InHasBeenSet() const { return m_inHasBeenSet; }
-    inline void SetIn(const FilterAttribute& value) { m_inHasBeenSet = true; m_in = value; }
-    inline void SetIn(FilterAttribute&& value) { m_inHasBeenSet = true; m_in = std::move(value); }
-    inline RetrievalFilter& WithIn(const FilterAttribute& value) { SetIn(value); return *this;}
-    inline RetrievalFilter& WithIn(FilterAttribute&& value) { SetIn(std::move(value)); return *this;}
+    template<typename InT = FilterAttribute>
+    void SetIn(InT&& value) { m_inHasBeenSet = true; m_in = std::forward<InT>(value); }
+    template<typename InT = FilterAttribute>
+    RetrievalFilter& WithIn(InT&& value) { SetIn(std::forward<InT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -139,12 +139,12 @@ namespace Model
      * <code>1989</code>.</p> <p> <code>"lessThan": { "key": "year", "value": 1989
      * }</code> </p>
      */
-    inline const FilterAttribute& GetLessThan() const{ return m_lessThan; }
+    inline const FilterAttribute& GetLessThan() const { return m_lessThan; }
     inline bool LessThanHasBeenSet() const { return m_lessThanHasBeenSet; }
-    inline void SetLessThan(const FilterAttribute& value) { m_lessThanHasBeenSet = true; m_lessThan = value; }
-    inline void SetLessThan(FilterAttribute&& value) { m_lessThanHasBeenSet = true; m_lessThan = std::move(value); }
-    inline RetrievalFilter& WithLessThan(const FilterAttribute& value) { SetLessThan(value); return *this;}
-    inline RetrievalFilter& WithLessThan(FilterAttribute&& value) { SetLessThan(std::move(value)); return *this;}
+    template<typename LessThanT = FilterAttribute>
+    void SetLessThan(LessThanT&& value) { m_lessThanHasBeenSet = true; m_lessThan = std::forward<LessThanT>(value); }
+    template<typename LessThanT = FilterAttribute>
+    RetrievalFilter& WithLessThan(LessThanT&& value) { SetLessThan(std::forward<LessThanT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -156,12 +156,12 @@ namespace Model
      * equal to <code>1989</code>.</p> <p> <code>"lessThanOrEquals": { "key": "year",
      * "value": 1989 }</code> </p>
      */
-    inline const FilterAttribute& GetLessThanOrEquals() const{ return m_lessThanOrEquals; }
+    inline const FilterAttribute& GetLessThanOrEquals() const { return m_lessThanOrEquals; }
     inline bool LessThanOrEqualsHasBeenSet() const { return m_lessThanOrEqualsHasBeenSet; }
-    inline void SetLessThanOrEquals(const FilterAttribute& value) { m_lessThanOrEqualsHasBeenSet = true; m_lessThanOrEquals = value; }
-    inline void SetLessThanOrEquals(FilterAttribute&& value) { m_lessThanOrEqualsHasBeenSet = true; m_lessThanOrEquals = std::move(value); }
-    inline RetrievalFilter& WithLessThanOrEquals(const FilterAttribute& value) { SetLessThanOrEquals(value); return *this;}
-    inline RetrievalFilter& WithLessThanOrEquals(FilterAttribute&& value) { SetLessThanOrEquals(std::move(value)); return *this;}
+    template<typename LessThanOrEqualsT = FilterAttribute>
+    void SetLessThanOrEquals(LessThanOrEqualsT&& value) { m_lessThanOrEqualsHasBeenSet = true; m_lessThanOrEquals = std::forward<LessThanOrEqualsT>(value); }
+    template<typename LessThanOrEqualsT = FilterAttribute>
+    RetrievalFilter& WithLessThanOrEquals(LessThanOrEqualsT&& value) { SetLessThanOrEquals(std::forward<LessThanOrEqualsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -174,12 +174,12 @@ namespace Model
      * "cat"]</code>).</p> <p> <code>"listContains": { "key": "animals", "value": "cat"
      * }</code> </p>
      */
-    inline const FilterAttribute& GetListContains() const{ return m_listContains; }
+    inline const FilterAttribute& GetListContains() const { return m_listContains; }
     inline bool ListContainsHasBeenSet() const { return m_listContainsHasBeenSet; }
-    inline void SetListContains(const FilterAttribute& value) { m_listContainsHasBeenSet = true; m_listContains = value; }
-    inline void SetListContains(FilterAttribute&& value) { m_listContainsHasBeenSet = true; m_listContains = std::move(value); }
-    inline RetrievalFilter& WithListContains(const FilterAttribute& value) { SetListContains(value); return *this;}
-    inline RetrievalFilter& WithListContains(FilterAttribute&& value) { SetListContains(std::move(value)); return *this;}
+    template<typename ListContainsT = FilterAttribute>
+    void SetListContains(ListContainsT&& value) { m_listContainsHasBeenSet = true; m_listContains = std::forward<ListContainsT>(value); }
+    template<typename ListContainsT = FilterAttribute>
+    RetrievalFilter& WithListContains(ListContainsT&& value) { SetListContains(std::forward<ListContainsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -192,12 +192,12 @@ namespace Model
      * value is <code>cat</code>.</p> <p> <code>"notEquals": { "key": "animal",
      * "value": "cat" }</code> </p>
      */
-    inline const FilterAttribute& GetNotEquals() const{ return m_notEquals; }
+    inline const FilterAttribute& GetNotEquals() const { return m_notEquals; }
     inline bool NotEqualsHasBeenSet() const { return m_notEqualsHasBeenSet; }
-    inline void SetNotEquals(const FilterAttribute& value) { m_notEqualsHasBeenSet = true; m_notEquals = value; }
-    inline void SetNotEquals(FilterAttribute&& value) { m_notEqualsHasBeenSet = true; m_notEquals = std::move(value); }
-    inline RetrievalFilter& WithNotEquals(const FilterAttribute& value) { SetNotEquals(value); return *this;}
-    inline RetrievalFilter& WithNotEquals(FilterAttribute&& value) { SetNotEquals(std::move(value)); return *this;}
+    template<typename NotEqualsT = FilterAttribute>
+    void SetNotEquals(NotEqualsT&& value) { m_notEqualsHasBeenSet = true; m_notEquals = std::forward<NotEqualsT>(value); }
+    template<typename NotEqualsT = FilterAttribute>
+    RetrievalFilter& WithNotEquals(NotEqualsT&& value) { SetNotEquals(std::forward<NotEqualsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -209,12 +209,12 @@ namespace Model
      * <code>cat</code> nor <code>dog</code>.</p> <p> <code>"notIn": { "key": "animal",
      * "value": ["cat", "dog"] }</code> </p>
      */
-    inline const FilterAttribute& GetNotIn() const{ return m_notIn; }
+    inline const FilterAttribute& GetNotIn() const { return m_notIn; }
     inline bool NotInHasBeenSet() const { return m_notInHasBeenSet; }
-    inline void SetNotIn(const FilterAttribute& value) { m_notInHasBeenSet = true; m_notIn = value; }
-    inline void SetNotIn(FilterAttribute&& value) { m_notInHasBeenSet = true; m_notIn = std::move(value); }
-    inline RetrievalFilter& WithNotIn(const FilterAttribute& value) { SetNotIn(value); return *this;}
-    inline RetrievalFilter& WithNotIn(FilterAttribute&& value) { SetNotIn(std::move(value)); return *this;}
+    template<typename NotInT = FilterAttribute>
+    void SetNotIn(NotInT&& value) { m_notInHasBeenSet = true; m_notIn = std::forward<NotInT>(value); }
+    template<typename NotInT = FilterAttribute>
+    RetrievalFilter& WithNotIn(NotInT&& value) { SetNotIn(std::forward<NotInT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -222,14 +222,14 @@ namespace Model
      * <p>Knowledge base data sources are returned if their metadata attributes fulfill
      * at least one of the filter conditions inside this list.</p>
      */
-    inline const Aws::Vector<RetrievalFilter>& GetOrAll() const{ return m_orAll; }
+    inline const Aws::Vector<RetrievalFilter>& GetOrAll() const { return m_orAll; }
     inline bool OrAllHasBeenSet() const { return m_orAllHasBeenSet; }
-    inline void SetOrAll(const Aws::Vector<RetrievalFilter>& value) { m_orAllHasBeenSet = true; m_orAll = value; }
-    inline void SetOrAll(Aws::Vector<RetrievalFilter>&& value) { m_orAllHasBeenSet = true; m_orAll = std::move(value); }
-    inline RetrievalFilter& WithOrAll(const Aws::Vector<RetrievalFilter>& value) { SetOrAll(value); return *this;}
-    inline RetrievalFilter& WithOrAll(Aws::Vector<RetrievalFilter>&& value) { SetOrAll(std::move(value)); return *this;}
-    inline RetrievalFilter& AddOrAll(const RetrievalFilter& value) { m_orAllHasBeenSet = true; m_orAll.push_back(value); return *this; }
-    inline RetrievalFilter& AddOrAll(RetrievalFilter&& value) { m_orAllHasBeenSet = true; m_orAll.push_back(std::move(value)); return *this; }
+    template<typename OrAllT = Aws::Vector<RetrievalFilter>>
+    void SetOrAll(OrAllT&& value) { m_orAllHasBeenSet = true; m_orAll = std::forward<OrAllT>(value); }
+    template<typename OrAllT = Aws::Vector<RetrievalFilter>>
+    RetrievalFilter& WithOrAll(OrAllT&& value) { SetOrAll(std::forward<OrAllT>(value)); return *this;}
+    template<typename OrAllT = RetrievalFilter>
+    RetrievalFilter& AddOrAll(OrAllT&& value) { m_orAllHasBeenSet = true; m_orAll.emplace_back(std::forward<OrAllT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -242,12 +242,12 @@ namespace Model
      * <code>ca</code> (for example, <code>cat</code> or <code>camel</code>).</p> <p>
      * <code>"startsWith": { "key": "animal", "value": "ca" }</code> </p>
      */
-    inline const FilterAttribute& GetStartsWith() const{ return m_startsWith; }
+    inline const FilterAttribute& GetStartsWith() const { return m_startsWith; }
     inline bool StartsWithHasBeenSet() const { return m_startsWithHasBeenSet; }
-    inline void SetStartsWith(const FilterAttribute& value) { m_startsWithHasBeenSet = true; m_startsWith = value; }
-    inline void SetStartsWith(FilterAttribute&& value) { m_startsWithHasBeenSet = true; m_startsWith = std::move(value); }
-    inline RetrievalFilter& WithStartsWith(const FilterAttribute& value) { SetStartsWith(value); return *this;}
-    inline RetrievalFilter& WithStartsWith(FilterAttribute&& value) { SetStartsWith(std::move(value)); return *this;}
+    template<typename StartsWithT = FilterAttribute>
+    void SetStartsWith(StartsWithT&& value) { m_startsWithHasBeenSet = true; m_startsWith = std::forward<StartsWithT>(value); }
+    template<typename StartsWithT = FilterAttribute>
+    RetrievalFilter& WithStartsWith(StartsWithT&& value) { SetStartsWith(std::forward<StartsWithT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -265,12 +265,12 @@ namespace Model
      * "cat"]</code>).</p> <p> <code>"stringContains": { "key": "animals", "value":
      * "at" }</code> </p> </li> </ul>
      */
-    inline const FilterAttribute& GetStringContains() const{ return m_stringContains; }
+    inline const FilterAttribute& GetStringContains() const { return m_stringContains; }
     inline bool StringContainsHasBeenSet() const { return m_stringContainsHasBeenSet; }
-    inline void SetStringContains(const FilterAttribute& value) { m_stringContainsHasBeenSet = true; m_stringContains = value; }
-    inline void SetStringContains(FilterAttribute&& value) { m_stringContainsHasBeenSet = true; m_stringContains = std::move(value); }
-    inline RetrievalFilter& WithStringContains(const FilterAttribute& value) { SetStringContains(value); return *this;}
-    inline RetrievalFilter& WithStringContains(FilterAttribute&& value) { SetStringContains(std::move(value)); return *this;}
+    template<typename StringContainsT = FilterAttribute>
+    void SetStringContains(StringContainsT&& value) { m_stringContainsHasBeenSet = true; m_stringContains = std::forward<StringContainsT>(value); }
+    template<typename StringContainsT = FilterAttribute>
+    RetrievalFilter& WithStringContains(StringContainsT&& value) { SetStringContains(std::forward<StringContainsT>(value)); return *this;}
     ///@}
   private:
 

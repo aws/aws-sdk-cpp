@@ -12,11 +12,6 @@ using namespace Aws::PcaConnectorAd::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteTemplateRequest::DeleteTemplateRequest() : 
-    m_templateArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTemplateRequest::SerializePayload() const
 {
   return {};

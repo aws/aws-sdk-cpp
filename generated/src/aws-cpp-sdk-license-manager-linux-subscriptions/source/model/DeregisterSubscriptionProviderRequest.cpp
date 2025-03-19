@@ -12,11 +12,6 @@ using namespace Aws::LicenseManagerLinuxSubscriptions::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeregisterSubscriptionProviderRequest::DeregisterSubscriptionProviderRequest() : 
-    m_subscriptionProviderArnHasBeenSet(false)
-{
-}
-
 Aws::String DeregisterSubscriptionProviderRequest::SerializePayload() const
 {
   JsonValue payload;

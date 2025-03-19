@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteCodeRepositoryRequest::DeleteCodeRepositoryRequest() : 
-    m_codeRepositoryNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCodeRepositoryRequest::SerializePayload() const
 {
   JsonValue payload;

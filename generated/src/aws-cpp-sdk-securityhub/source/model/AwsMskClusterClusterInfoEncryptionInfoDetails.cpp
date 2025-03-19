@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsMskClusterClusterInfoEncryptionInfoDetails::AwsMskClusterClusterInfoEncryptionInfoDetails() : 
-    m_encryptionInTransitHasBeenSet(false),
-    m_encryptionAtRestHasBeenSet(false)
-{
-}
-
 AwsMskClusterClusterInfoEncryptionInfoDetails::AwsMskClusterClusterInfoEncryptionInfoDetails(JsonView jsonValue)
-  : AwsMskClusterClusterInfoEncryptionInfoDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsMskClusterClusterInfoEncryptionInfoDetails& AwsMskClusterClusterInfoEncryptio
   if(jsonValue.ValueExists("EncryptionInTransit"))
   {
     m_encryptionInTransit = jsonValue.GetObject("EncryptionInTransit");
-
     m_encryptionInTransitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EncryptionAtRest"))
   {
     m_encryptionAtRest = jsonValue.GetObject("EncryptionAtRest");
-
     m_encryptionAtRestHasBeenSet = true;
   }
-
   return *this;
 }
 

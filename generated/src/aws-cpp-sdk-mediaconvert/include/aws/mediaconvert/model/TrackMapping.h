@@ -31,7 +31,7 @@ namespace Model
   class TrackMapping
   {
   public:
-    AWS_MEDIACONVERT_API TrackMapping();
+    AWS_MEDIACONVERT_API TrackMapping() = default;
     AWS_MEDIACONVERT_API TrackMapping(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API TrackMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * The indexes of the audio tracks.
      */
-    inline const Aws::Vector<int>& GetAudioTrackIndexes() const{ return m_audioTrackIndexes; }
+    inline const Aws::Vector<int>& GetAudioTrackIndexes() const { return m_audioTrackIndexes; }
     inline bool AudioTrackIndexesHasBeenSet() const { return m_audioTrackIndexesHasBeenSet; }
-    inline void SetAudioTrackIndexes(const Aws::Vector<int>& value) { m_audioTrackIndexesHasBeenSet = true; m_audioTrackIndexes = value; }
-    inline void SetAudioTrackIndexes(Aws::Vector<int>&& value) { m_audioTrackIndexesHasBeenSet = true; m_audioTrackIndexes = std::move(value); }
-    inline TrackMapping& WithAudioTrackIndexes(const Aws::Vector<int>& value) { SetAudioTrackIndexes(value); return *this;}
-    inline TrackMapping& WithAudioTrackIndexes(Aws::Vector<int>&& value) { SetAudioTrackIndexes(std::move(value)); return *this;}
+    template<typename AudioTrackIndexesT = Aws::Vector<int>>
+    void SetAudioTrackIndexes(AudioTrackIndexesT&& value) { m_audioTrackIndexesHasBeenSet = true; m_audioTrackIndexes = std::forward<AudioTrackIndexesT>(value); }
+    template<typename AudioTrackIndexesT = Aws::Vector<int>>
+    TrackMapping& WithAudioTrackIndexes(AudioTrackIndexesT&& value) { SetAudioTrackIndexes(std::forward<AudioTrackIndexesT>(value)); return *this;}
     inline TrackMapping& AddAudioTrackIndexes(int value) { m_audioTrackIndexesHasBeenSet = true; m_audioTrackIndexes.push_back(value); return *this; }
     ///@}
 
@@ -54,12 +54,12 @@ namespace Model
     /**
      * The indexes of the data tracks.
      */
-    inline const Aws::Vector<int>& GetDataTrackIndexes() const{ return m_dataTrackIndexes; }
+    inline const Aws::Vector<int>& GetDataTrackIndexes() const { return m_dataTrackIndexes; }
     inline bool DataTrackIndexesHasBeenSet() const { return m_dataTrackIndexesHasBeenSet; }
-    inline void SetDataTrackIndexes(const Aws::Vector<int>& value) { m_dataTrackIndexesHasBeenSet = true; m_dataTrackIndexes = value; }
-    inline void SetDataTrackIndexes(Aws::Vector<int>&& value) { m_dataTrackIndexesHasBeenSet = true; m_dataTrackIndexes = std::move(value); }
-    inline TrackMapping& WithDataTrackIndexes(const Aws::Vector<int>& value) { SetDataTrackIndexes(value); return *this;}
-    inline TrackMapping& WithDataTrackIndexes(Aws::Vector<int>&& value) { SetDataTrackIndexes(std::move(value)); return *this;}
+    template<typename DataTrackIndexesT = Aws::Vector<int>>
+    void SetDataTrackIndexes(DataTrackIndexesT&& value) { m_dataTrackIndexesHasBeenSet = true; m_dataTrackIndexes = std::forward<DataTrackIndexesT>(value); }
+    template<typename DataTrackIndexesT = Aws::Vector<int>>
+    TrackMapping& WithDataTrackIndexes(DataTrackIndexesT&& value) { SetDataTrackIndexes(std::forward<DataTrackIndexesT>(value)); return *this;}
     inline TrackMapping& AddDataTrackIndexes(int value) { m_dataTrackIndexesHasBeenSet = true; m_dataTrackIndexes.push_back(value); return *this; }
     ///@}
 
@@ -67,12 +67,12 @@ namespace Model
     /**
      * The indexes of the video tracks.
      */
-    inline const Aws::Vector<int>& GetVideoTrackIndexes() const{ return m_videoTrackIndexes; }
+    inline const Aws::Vector<int>& GetVideoTrackIndexes() const { return m_videoTrackIndexes; }
     inline bool VideoTrackIndexesHasBeenSet() const { return m_videoTrackIndexesHasBeenSet; }
-    inline void SetVideoTrackIndexes(const Aws::Vector<int>& value) { m_videoTrackIndexesHasBeenSet = true; m_videoTrackIndexes = value; }
-    inline void SetVideoTrackIndexes(Aws::Vector<int>&& value) { m_videoTrackIndexesHasBeenSet = true; m_videoTrackIndexes = std::move(value); }
-    inline TrackMapping& WithVideoTrackIndexes(const Aws::Vector<int>& value) { SetVideoTrackIndexes(value); return *this;}
-    inline TrackMapping& WithVideoTrackIndexes(Aws::Vector<int>&& value) { SetVideoTrackIndexes(std::move(value)); return *this;}
+    template<typename VideoTrackIndexesT = Aws::Vector<int>>
+    void SetVideoTrackIndexes(VideoTrackIndexesT&& value) { m_videoTrackIndexesHasBeenSet = true; m_videoTrackIndexes = std::forward<VideoTrackIndexesT>(value); }
+    template<typename VideoTrackIndexesT = Aws::Vector<int>>
+    TrackMapping& WithVideoTrackIndexes(VideoTrackIndexesT&& value) { SetVideoTrackIndexes(std::forward<VideoTrackIndexesT>(value)); return *this;}
     inline TrackMapping& AddVideoTrackIndexes(int value) { m_videoTrackIndexesHasBeenSet = true; m_videoTrackIndexes.push_back(value); return *this; }
     ///@}
   private:

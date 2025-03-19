@@ -18,14 +18,7 @@ namespace SFN
 namespace Model
 {
 
-ExecutionTimedOutEventDetails::ExecutionTimedOutEventDetails() : 
-    m_errorHasBeenSet(false),
-    m_causeHasBeenSet(false)
-{
-}
-
 ExecutionTimedOutEventDetails::ExecutionTimedOutEventDetails(JsonView jsonValue)
-  : ExecutionTimedOutEventDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ExecutionTimedOutEventDetails& ExecutionTimedOutEventDetails::operator =(JsonVie
   if(jsonValue.ValueExists("error"))
   {
     m_error = jsonValue.GetString("error");
-
     m_errorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cause"))
   {
     m_cause = jsonValue.GetString("cause");
-
     m_causeHasBeenSet = true;
   }
-
   return *this;
 }
 

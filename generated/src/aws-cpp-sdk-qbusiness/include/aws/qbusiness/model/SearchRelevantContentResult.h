@@ -29,7 +29,7 @@ namespace Model
   class SearchRelevantContentResult
   {
   public:
-    AWS_QBUSINESS_API SearchRelevantContentResult();
+    AWS_QBUSINESS_API SearchRelevantContentResult() = default;
     AWS_QBUSINESS_API SearchRelevantContentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QBUSINESS_API SearchRelevantContentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>The list of relevant content items found.</p>
      */
-    inline const Aws::Vector<RelevantContent>& GetRelevantContent() const{ return m_relevantContent; }
-    inline void SetRelevantContent(const Aws::Vector<RelevantContent>& value) { m_relevantContent = value; }
-    inline void SetRelevantContent(Aws::Vector<RelevantContent>&& value) { m_relevantContent = std::move(value); }
-    inline SearchRelevantContentResult& WithRelevantContent(const Aws::Vector<RelevantContent>& value) { SetRelevantContent(value); return *this;}
-    inline SearchRelevantContentResult& WithRelevantContent(Aws::Vector<RelevantContent>&& value) { SetRelevantContent(std::move(value)); return *this;}
-    inline SearchRelevantContentResult& AddRelevantContent(const RelevantContent& value) { m_relevantContent.push_back(value); return *this; }
-    inline SearchRelevantContentResult& AddRelevantContent(RelevantContent&& value) { m_relevantContent.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RelevantContent>& GetRelevantContent() const { return m_relevantContent; }
+    template<typename RelevantContentT = Aws::Vector<RelevantContent>>
+    void SetRelevantContent(RelevantContentT&& value) { m_relevantContentHasBeenSet = true; m_relevantContent = std::forward<RelevantContentT>(value); }
+    template<typename RelevantContentT = Aws::Vector<RelevantContent>>
+    SearchRelevantContentResult& WithRelevantContent(RelevantContentT&& value) { SetRelevantContent(std::forward<RelevantContentT>(value)); return *this;}
+    template<typename RelevantContentT = RelevantContent>
+    SearchRelevantContentResult& AddRelevantContent(RelevantContentT&& value) { m_relevantContentHasBeenSet = true; m_relevantContent.emplace_back(std::forward<RelevantContentT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The token to use to retrieve the next set of results, if there are any.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline SearchRelevantContentResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline SearchRelevantContentResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline SearchRelevantContentResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    SearchRelevantContentResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline SearchRelevantContentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline SearchRelevantContentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline SearchRelevantContentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    SearchRelevantContentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<RelevantContent> m_relevantContent;
+    bool m_relevantContentHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

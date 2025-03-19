@@ -35,7 +35,7 @@ namespace Model
   class SpotOptions
   {
   public:
-    AWS_EC2_API SpotOptions();
+    AWS_EC2_API SpotOptions() = default;
     AWS_EC2_API SpotOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API SpotOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -84,12 +84,10 @@ namespace Model
      * capacity availability, it might lead to high interruption rates.</p> </dd> </dl>
      * <p>Default: <code>lowest-price</code> </p>
      */
-    inline const SpotAllocationStrategy& GetAllocationStrategy() const{ return m_allocationStrategy; }
+    inline SpotAllocationStrategy GetAllocationStrategy() const { return m_allocationStrategy; }
     inline bool AllocationStrategyHasBeenSet() const { return m_allocationStrategyHasBeenSet; }
-    inline void SetAllocationStrategy(const SpotAllocationStrategy& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = value; }
-    inline void SetAllocationStrategy(SpotAllocationStrategy&& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = std::move(value); }
-    inline SpotOptions& WithAllocationStrategy(const SpotAllocationStrategy& value) { SetAllocationStrategy(value); return *this;}
-    inline SpotOptions& WithAllocationStrategy(SpotAllocationStrategy&& value) { SetAllocationStrategy(std::move(value)); return *this;}
+    inline void SetAllocationStrategy(SpotAllocationStrategy value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = value; }
+    inline SpotOptions& WithAllocationStrategy(SpotAllocationStrategy value) { SetAllocationStrategy(value); return *this;}
     ///@}
 
     ///@{
@@ -97,12 +95,12 @@ namespace Model
      * <p>The strategies for managing your workloads on your Spot Instances that will
      * be interrupted. Currently only the capacity rebalance strategy is available.</p>
      */
-    inline const FleetSpotMaintenanceStrategies& GetMaintenanceStrategies() const{ return m_maintenanceStrategies; }
+    inline const FleetSpotMaintenanceStrategies& GetMaintenanceStrategies() const { return m_maintenanceStrategies; }
     inline bool MaintenanceStrategiesHasBeenSet() const { return m_maintenanceStrategiesHasBeenSet; }
-    inline void SetMaintenanceStrategies(const FleetSpotMaintenanceStrategies& value) { m_maintenanceStrategiesHasBeenSet = true; m_maintenanceStrategies = value; }
-    inline void SetMaintenanceStrategies(FleetSpotMaintenanceStrategies&& value) { m_maintenanceStrategiesHasBeenSet = true; m_maintenanceStrategies = std::move(value); }
-    inline SpotOptions& WithMaintenanceStrategies(const FleetSpotMaintenanceStrategies& value) { SetMaintenanceStrategies(value); return *this;}
-    inline SpotOptions& WithMaintenanceStrategies(FleetSpotMaintenanceStrategies&& value) { SetMaintenanceStrategies(std::move(value)); return *this;}
+    template<typename MaintenanceStrategiesT = FleetSpotMaintenanceStrategies>
+    void SetMaintenanceStrategies(MaintenanceStrategiesT&& value) { m_maintenanceStrategiesHasBeenSet = true; m_maintenanceStrategies = std::forward<MaintenanceStrategiesT>(value); }
+    template<typename MaintenanceStrategiesT = FleetSpotMaintenanceStrategies>
+    SpotOptions& WithMaintenanceStrategies(MaintenanceStrategiesT&& value) { SetMaintenanceStrategies(std::forward<MaintenanceStrategiesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,12 +108,10 @@ namespace Model
      * <p>The behavior when a Spot Instance is interrupted.</p> <p>Default:
      * <code>terminate</code> </p>
      */
-    inline const SpotInstanceInterruptionBehavior& GetInstanceInterruptionBehavior() const{ return m_instanceInterruptionBehavior; }
+    inline SpotInstanceInterruptionBehavior GetInstanceInterruptionBehavior() const { return m_instanceInterruptionBehavior; }
     inline bool InstanceInterruptionBehaviorHasBeenSet() const { return m_instanceInterruptionBehaviorHasBeenSet; }
-    inline void SetInstanceInterruptionBehavior(const SpotInstanceInterruptionBehavior& value) { m_instanceInterruptionBehaviorHasBeenSet = true; m_instanceInterruptionBehavior = value; }
-    inline void SetInstanceInterruptionBehavior(SpotInstanceInterruptionBehavior&& value) { m_instanceInterruptionBehaviorHasBeenSet = true; m_instanceInterruptionBehavior = std::move(value); }
-    inline SpotOptions& WithInstanceInterruptionBehavior(const SpotInstanceInterruptionBehavior& value) { SetInstanceInterruptionBehavior(value); return *this;}
-    inline SpotOptions& WithInstanceInterruptionBehavior(SpotInstanceInterruptionBehavior&& value) { SetInstanceInterruptionBehavior(std::move(value)); return *this;}
+    inline void SetInstanceInterruptionBehavior(SpotInstanceInterruptionBehavior value) { m_instanceInterruptionBehaviorHasBeenSet = true; m_instanceInterruptionBehavior = value; }
+    inline SpotOptions& WithInstanceInterruptionBehavior(SpotInstanceInterruptionBehavior value) { SetInstanceInterruptionBehavior(value); return *this;}
     ///@}
 
     ///@{
@@ -133,7 +129,7 @@ namespace Model
      * capacity, you might receive your full target capacity from fewer than the number
      * of pools that you specified.</p>
      */
-    inline int GetInstancePoolsToUseCount() const{ return m_instancePoolsToUseCount; }
+    inline int GetInstancePoolsToUseCount() const { return m_instancePoolsToUseCount; }
     inline bool InstancePoolsToUseCountHasBeenSet() const { return m_instancePoolsToUseCountHasBeenSet; }
     inline void SetInstancePoolsToUseCount(int value) { m_instancePoolsToUseCountHasBeenSet = true; m_instancePoolsToUseCount = value; }
     inline SpotOptions& WithInstancePoolsToUseCount(int value) { SetInstancePoolsToUseCount(value); return *this;}
@@ -145,7 +141,7 @@ namespace Model
      * Instances in the fleet.</p> <p>Supported only for fleets of type
      * <code>instant</code>.</p>
      */
-    inline bool GetSingleInstanceType() const{ return m_singleInstanceType; }
+    inline bool GetSingleInstanceType() const { return m_singleInstanceType; }
     inline bool SingleInstanceTypeHasBeenSet() const { return m_singleInstanceTypeHasBeenSet; }
     inline void SetSingleInstanceType(bool value) { m_singleInstanceTypeHasBeenSet = true; m_singleInstanceType = value; }
     inline SpotOptions& WithSingleInstanceType(bool value) { SetSingleInstanceType(value); return *this;}
@@ -157,7 +153,7 @@ namespace Model
      * Availability Zone.</p> <p>Supported only for fleets of type
      * <code>instant</code>.</p>
      */
-    inline bool GetSingleAvailabilityZone() const{ return m_singleAvailabilityZone; }
+    inline bool GetSingleAvailabilityZone() const { return m_singleAvailabilityZone; }
     inline bool SingleAvailabilityZoneHasBeenSet() const { return m_singleAvailabilityZoneHasBeenSet; }
     inline void SetSingleAvailabilityZone(bool value) { m_singleAvailabilityZoneHasBeenSet = true; m_singleAvailabilityZone = value; }
     inline SpotOptions& WithSingleAvailabilityZone(bool value) { SetSingleAvailabilityZone(value); return *this;}
@@ -171,7 +167,7 @@ namespace Model
      * <code>instant</code>.</p> <p>At least one of the following must be specified:
      * <code>SingleAvailabilityZone</code> | <code>SingleInstanceType</code> </p>
      */
-    inline int GetMinTargetCapacity() const{ return m_minTargetCapacity; }
+    inline int GetMinTargetCapacity() const { return m_minTargetCapacity; }
     inline bool MinTargetCapacityHasBeenSet() const { return m_minTargetCapacityHasBeenSet; }
     inline void SetMinTargetCapacity(int value) { m_minTargetCapacityHasBeenSet = true; m_minTargetCapacity = value; }
     inline SpotOptions& WithMinTargetCapacity(int value) { SetMinTargetCapacity(value); return *this;}
@@ -193,36 +189,34 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
      * credits can incur charges</a> in the <i>Amazon EC2 User Guide</i>.</p> 
      */
-    inline const Aws::String& GetMaxTotalPrice() const{ return m_maxTotalPrice; }
+    inline const Aws::String& GetMaxTotalPrice() const { return m_maxTotalPrice; }
     inline bool MaxTotalPriceHasBeenSet() const { return m_maxTotalPriceHasBeenSet; }
-    inline void SetMaxTotalPrice(const Aws::String& value) { m_maxTotalPriceHasBeenSet = true; m_maxTotalPrice = value; }
-    inline void SetMaxTotalPrice(Aws::String&& value) { m_maxTotalPriceHasBeenSet = true; m_maxTotalPrice = std::move(value); }
-    inline void SetMaxTotalPrice(const char* value) { m_maxTotalPriceHasBeenSet = true; m_maxTotalPrice.assign(value); }
-    inline SpotOptions& WithMaxTotalPrice(const Aws::String& value) { SetMaxTotalPrice(value); return *this;}
-    inline SpotOptions& WithMaxTotalPrice(Aws::String&& value) { SetMaxTotalPrice(std::move(value)); return *this;}
-    inline SpotOptions& WithMaxTotalPrice(const char* value) { SetMaxTotalPrice(value); return *this;}
+    template<typename MaxTotalPriceT = Aws::String>
+    void SetMaxTotalPrice(MaxTotalPriceT&& value) { m_maxTotalPriceHasBeenSet = true; m_maxTotalPrice = std::forward<MaxTotalPriceT>(value); }
+    template<typename MaxTotalPriceT = Aws::String>
+    SpotOptions& WithMaxTotalPrice(MaxTotalPriceT&& value) { SetMaxTotalPrice(std::forward<MaxTotalPriceT>(value)); return *this;}
     ///@}
   private:
 
-    SpotAllocationStrategy m_allocationStrategy;
+    SpotAllocationStrategy m_allocationStrategy{SpotAllocationStrategy::NOT_SET};
     bool m_allocationStrategyHasBeenSet = false;
 
     FleetSpotMaintenanceStrategies m_maintenanceStrategies;
     bool m_maintenanceStrategiesHasBeenSet = false;
 
-    SpotInstanceInterruptionBehavior m_instanceInterruptionBehavior;
+    SpotInstanceInterruptionBehavior m_instanceInterruptionBehavior{SpotInstanceInterruptionBehavior::NOT_SET};
     bool m_instanceInterruptionBehaviorHasBeenSet = false;
 
-    int m_instancePoolsToUseCount;
+    int m_instancePoolsToUseCount{0};
     bool m_instancePoolsToUseCountHasBeenSet = false;
 
-    bool m_singleInstanceType;
+    bool m_singleInstanceType{false};
     bool m_singleInstanceTypeHasBeenSet = false;
 
-    bool m_singleAvailabilityZone;
+    bool m_singleAvailabilityZone{false};
     bool m_singleAvailabilityZoneHasBeenSet = false;
 
-    int m_minTargetCapacity;
+    int m_minTargetCapacity{0};
     bool m_minTargetCapacityHasBeenSet = false;
 
     Aws::String m_maxTotalPrice;

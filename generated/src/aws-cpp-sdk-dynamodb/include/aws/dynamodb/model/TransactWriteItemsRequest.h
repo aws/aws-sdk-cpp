@@ -26,7 +26,7 @@ namespace Model
   class TransactWriteItemsRequest : public DynamoDBRequest
   {
   public:
-    AWS_DYNAMODB_API TransactWriteItemsRequest();
+    AWS_DYNAMODB_API TransactWriteItemsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,24 +47,22 @@ namespace Model
      * in different tables, but the tables must reside in the same Amazon Web Services
      * account and Region, and no two of them can operate on the same item. </p>
      */
-    inline const Aws::Vector<TransactWriteItem>& GetTransactItems() const{ return m_transactItems; }
+    inline const Aws::Vector<TransactWriteItem>& GetTransactItems() const { return m_transactItems; }
     inline bool TransactItemsHasBeenSet() const { return m_transactItemsHasBeenSet; }
-    inline void SetTransactItems(const Aws::Vector<TransactWriteItem>& value) { m_transactItemsHasBeenSet = true; m_transactItems = value; }
-    inline void SetTransactItems(Aws::Vector<TransactWriteItem>&& value) { m_transactItemsHasBeenSet = true; m_transactItems = std::move(value); }
-    inline TransactWriteItemsRequest& WithTransactItems(const Aws::Vector<TransactWriteItem>& value) { SetTransactItems(value); return *this;}
-    inline TransactWriteItemsRequest& WithTransactItems(Aws::Vector<TransactWriteItem>&& value) { SetTransactItems(std::move(value)); return *this;}
-    inline TransactWriteItemsRequest& AddTransactItems(const TransactWriteItem& value) { m_transactItemsHasBeenSet = true; m_transactItems.push_back(value); return *this; }
-    inline TransactWriteItemsRequest& AddTransactItems(TransactWriteItem&& value) { m_transactItemsHasBeenSet = true; m_transactItems.push_back(std::move(value)); return *this; }
+    template<typename TransactItemsT = Aws::Vector<TransactWriteItem>>
+    void SetTransactItems(TransactItemsT&& value) { m_transactItemsHasBeenSet = true; m_transactItems = std::forward<TransactItemsT>(value); }
+    template<typename TransactItemsT = Aws::Vector<TransactWriteItem>>
+    TransactWriteItemsRequest& WithTransactItems(TransactItemsT&& value) { SetTransactItems(std::forward<TransactItemsT>(value)); return *this;}
+    template<typename TransactItemsT = TransactWriteItem>
+    TransactWriteItemsRequest& AddTransactItems(TransactItemsT&& value) { m_transactItemsHasBeenSet = true; m_transactItems.emplace_back(std::forward<TransactItemsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ReturnConsumedCapacity& GetReturnConsumedCapacity() const{ return m_returnConsumedCapacity; }
+    inline ReturnConsumedCapacity GetReturnConsumedCapacity() const { return m_returnConsumedCapacity; }
     inline bool ReturnConsumedCapacityHasBeenSet() const { return m_returnConsumedCapacityHasBeenSet; }
-    inline void SetReturnConsumedCapacity(const ReturnConsumedCapacity& value) { m_returnConsumedCapacityHasBeenSet = true; m_returnConsumedCapacity = value; }
-    inline void SetReturnConsumedCapacity(ReturnConsumedCapacity&& value) { m_returnConsumedCapacityHasBeenSet = true; m_returnConsumedCapacity = std::move(value); }
-    inline TransactWriteItemsRequest& WithReturnConsumedCapacity(const ReturnConsumedCapacity& value) { SetReturnConsumedCapacity(value); return *this;}
-    inline TransactWriteItemsRequest& WithReturnConsumedCapacity(ReturnConsumedCapacity&& value) { SetReturnConsumedCapacity(std::move(value)); return *this;}
+    inline void SetReturnConsumedCapacity(ReturnConsumedCapacity value) { m_returnConsumedCapacityHasBeenSet = true; m_returnConsumedCapacity = value; }
+    inline TransactWriteItemsRequest& WithReturnConsumedCapacity(ReturnConsumedCapacity value) { SetReturnConsumedCapacity(value); return *this;}
     ///@}
 
     ///@{
@@ -74,12 +72,10 @@ namespace Model
      * any), that were modified during the operation and are returned in the response.
      * If set to <code>NONE</code> (the default), no statistics are returned. </p>
      */
-    inline const ReturnItemCollectionMetrics& GetReturnItemCollectionMetrics() const{ return m_returnItemCollectionMetrics; }
+    inline ReturnItemCollectionMetrics GetReturnItemCollectionMetrics() const { return m_returnItemCollectionMetrics; }
     inline bool ReturnItemCollectionMetricsHasBeenSet() const { return m_returnItemCollectionMetricsHasBeenSet; }
-    inline void SetReturnItemCollectionMetrics(const ReturnItemCollectionMetrics& value) { m_returnItemCollectionMetricsHasBeenSet = true; m_returnItemCollectionMetrics = value; }
-    inline void SetReturnItemCollectionMetrics(ReturnItemCollectionMetrics&& value) { m_returnItemCollectionMetricsHasBeenSet = true; m_returnItemCollectionMetrics = std::move(value); }
-    inline TransactWriteItemsRequest& WithReturnItemCollectionMetrics(const ReturnItemCollectionMetrics& value) { SetReturnItemCollectionMetrics(value); return *this;}
-    inline TransactWriteItemsRequest& WithReturnItemCollectionMetrics(ReturnItemCollectionMetrics&& value) { SetReturnItemCollectionMetrics(std::move(value)); return *this;}
+    inline void SetReturnItemCollectionMetrics(ReturnItemCollectionMetrics value) { m_returnItemCollectionMetricsHasBeenSet = true; m_returnItemCollectionMetrics = value; }
+    inline TransactWriteItemsRequest& WithReturnItemCollectionMetrics(ReturnItemCollectionMetrics value) { SetReturnItemCollectionMetrics(value); return *this;}
     ///@}
 
     ///@{
@@ -101,24 +97,22 @@ namespace Model
      * a change in other parameters within the 10-minute idempotency window, DynamoDB
      * returns an <code>IdempotentParameterMismatch</code> exception.</p>
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline TransactWriteItemsRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline TransactWriteItemsRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline TransactWriteItemsRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    TransactWriteItemsRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<TransactWriteItem> m_transactItems;
     bool m_transactItemsHasBeenSet = false;
 
-    ReturnConsumedCapacity m_returnConsumedCapacity;
+    ReturnConsumedCapacity m_returnConsumedCapacity{ReturnConsumedCapacity::NOT_SET};
     bool m_returnConsumedCapacityHasBeenSet = false;
 
-    ReturnItemCollectionMetrics m_returnItemCollectionMetrics;
+    ReturnItemCollectionMetrics m_returnItemCollectionMetrics{ReturnItemCollectionMetrics::NOT_SET};
     bool m_returnItemCollectionMetricsHasBeenSet = false;
 
     Aws::String m_clientRequestToken;

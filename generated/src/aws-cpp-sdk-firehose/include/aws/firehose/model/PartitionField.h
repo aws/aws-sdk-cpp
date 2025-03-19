@@ -33,7 +33,7 @@ namespace Model
   class PartitionField
   {
   public:
-    AWS_FIREHOSE_API PartitionField();
+    AWS_FIREHOSE_API PartitionField() = default;
     AWS_FIREHOSE_API PartitionField(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API PartitionField& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p> The column name to be configured in partition spec. </p> <p>Amazon Data
      * Firehose is in preview release and is subject to change.</p>
      */
-    inline const Aws::String& GetSourceName() const{ return m_sourceName; }
+    inline const Aws::String& GetSourceName() const { return m_sourceName; }
     inline bool SourceNameHasBeenSet() const { return m_sourceNameHasBeenSet; }
-    inline void SetSourceName(const Aws::String& value) { m_sourceNameHasBeenSet = true; m_sourceName = value; }
-    inline void SetSourceName(Aws::String&& value) { m_sourceNameHasBeenSet = true; m_sourceName = std::move(value); }
-    inline void SetSourceName(const char* value) { m_sourceNameHasBeenSet = true; m_sourceName.assign(value); }
-    inline PartitionField& WithSourceName(const Aws::String& value) { SetSourceName(value); return *this;}
-    inline PartitionField& WithSourceName(Aws::String&& value) { SetSourceName(std::move(value)); return *this;}
-    inline PartitionField& WithSourceName(const char* value) { SetSourceName(value); return *this;}
+    template<typename SourceNameT = Aws::String>
+    void SetSourceName(SourceNameT&& value) { m_sourceNameHasBeenSet = true; m_sourceName = std::forward<SourceNameT>(value); }
+    template<typename SourceNameT = Aws::String>
+    PartitionField& WithSourceName(SourceNameT&& value) { SetSourceName(std::forward<SourceNameT>(value)); return *this;}
     ///@}
   private:
 

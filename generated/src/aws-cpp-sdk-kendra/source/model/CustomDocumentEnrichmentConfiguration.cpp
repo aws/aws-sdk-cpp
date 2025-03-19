@@ -18,16 +18,7 @@ namespace kendra
 namespace Model
 {
 
-CustomDocumentEnrichmentConfiguration::CustomDocumentEnrichmentConfiguration() : 
-    m_inlineConfigurationsHasBeenSet(false),
-    m_preExtractionHookConfigurationHasBeenSet(false),
-    m_postExtractionHookConfigurationHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 CustomDocumentEnrichmentConfiguration::CustomDocumentEnrichmentConfiguration(JsonView jsonValue)
-  : CustomDocumentEnrichmentConfiguration()
 {
   *this = jsonValue;
 }
@@ -43,28 +34,21 @@ CustomDocumentEnrichmentConfiguration& CustomDocumentEnrichmentConfiguration::op
     }
     m_inlineConfigurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreExtractionHookConfiguration"))
   {
     m_preExtractionHookConfiguration = jsonValue.GetObject("PreExtractionHookConfiguration");
-
     m_preExtractionHookConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PostExtractionHookConfiguration"))
   {
     m_postExtractionHookConfiguration = jsonValue.GetObject("PostExtractionHookConfiguration");
-
     m_postExtractionHookConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -26,7 +26,7 @@ namespace Model
   class PutActionRevisionRequest : public CodePipelineRequest
   {
   public:
-    AWS_CODEPIPELINE_API PutActionRevisionRequest();
+    AWS_CODEPIPELINE_API PutActionRevisionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,54 +44,48 @@ namespace Model
      * <p>The name of the pipeline that starts processing the revision to the
      * source.</p>
      */
-    inline const Aws::String& GetPipelineName() const{ return m_pipelineName; }
+    inline const Aws::String& GetPipelineName() const { return m_pipelineName; }
     inline bool PipelineNameHasBeenSet() const { return m_pipelineNameHasBeenSet; }
-    inline void SetPipelineName(const Aws::String& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = value; }
-    inline void SetPipelineName(Aws::String&& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = std::move(value); }
-    inline void SetPipelineName(const char* value) { m_pipelineNameHasBeenSet = true; m_pipelineName.assign(value); }
-    inline PutActionRevisionRequest& WithPipelineName(const Aws::String& value) { SetPipelineName(value); return *this;}
-    inline PutActionRevisionRequest& WithPipelineName(Aws::String&& value) { SetPipelineName(std::move(value)); return *this;}
-    inline PutActionRevisionRequest& WithPipelineName(const char* value) { SetPipelineName(value); return *this;}
+    template<typename PipelineNameT = Aws::String>
+    void SetPipelineName(PipelineNameT&& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = std::forward<PipelineNameT>(value); }
+    template<typename PipelineNameT = Aws::String>
+    PutActionRevisionRequest& WithPipelineName(PipelineNameT&& value) { SetPipelineName(std::forward<PipelineNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the stage that contains the action that acts on the revision.</p>
      */
-    inline const Aws::String& GetStageName() const{ return m_stageName; }
+    inline const Aws::String& GetStageName() const { return m_stageName; }
     inline bool StageNameHasBeenSet() const { return m_stageNameHasBeenSet; }
-    inline void SetStageName(const Aws::String& value) { m_stageNameHasBeenSet = true; m_stageName = value; }
-    inline void SetStageName(Aws::String&& value) { m_stageNameHasBeenSet = true; m_stageName = std::move(value); }
-    inline void SetStageName(const char* value) { m_stageNameHasBeenSet = true; m_stageName.assign(value); }
-    inline PutActionRevisionRequest& WithStageName(const Aws::String& value) { SetStageName(value); return *this;}
-    inline PutActionRevisionRequest& WithStageName(Aws::String&& value) { SetStageName(std::move(value)); return *this;}
-    inline PutActionRevisionRequest& WithStageName(const char* value) { SetStageName(value); return *this;}
+    template<typename StageNameT = Aws::String>
+    void SetStageName(StageNameT&& value) { m_stageNameHasBeenSet = true; m_stageName = std::forward<StageNameT>(value); }
+    template<typename StageNameT = Aws::String>
+    PutActionRevisionRequest& WithStageName(StageNameT&& value) { SetStageName(std::forward<StageNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the action that processes the revision.</p>
      */
-    inline const Aws::String& GetActionName() const{ return m_actionName; }
+    inline const Aws::String& GetActionName() const { return m_actionName; }
     inline bool ActionNameHasBeenSet() const { return m_actionNameHasBeenSet; }
-    inline void SetActionName(const Aws::String& value) { m_actionNameHasBeenSet = true; m_actionName = value; }
-    inline void SetActionName(Aws::String&& value) { m_actionNameHasBeenSet = true; m_actionName = std::move(value); }
-    inline void SetActionName(const char* value) { m_actionNameHasBeenSet = true; m_actionName.assign(value); }
-    inline PutActionRevisionRequest& WithActionName(const Aws::String& value) { SetActionName(value); return *this;}
-    inline PutActionRevisionRequest& WithActionName(Aws::String&& value) { SetActionName(std::move(value)); return *this;}
-    inline PutActionRevisionRequest& WithActionName(const char* value) { SetActionName(value); return *this;}
+    template<typename ActionNameT = Aws::String>
+    void SetActionName(ActionNameT&& value) { m_actionNameHasBeenSet = true; m_actionName = std::forward<ActionNameT>(value); }
+    template<typename ActionNameT = Aws::String>
+    PutActionRevisionRequest& WithActionName(ActionNameT&& value) { SetActionName(std::forward<ActionNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Represents information about the version (or revision) of an action.</p>
      */
-    inline const ActionRevision& GetActionRevision() const{ return m_actionRevision; }
+    inline const ActionRevision& GetActionRevision() const { return m_actionRevision; }
     inline bool ActionRevisionHasBeenSet() const { return m_actionRevisionHasBeenSet; }
-    inline void SetActionRevision(const ActionRevision& value) { m_actionRevisionHasBeenSet = true; m_actionRevision = value; }
-    inline void SetActionRevision(ActionRevision&& value) { m_actionRevisionHasBeenSet = true; m_actionRevision = std::move(value); }
-    inline PutActionRevisionRequest& WithActionRevision(const ActionRevision& value) { SetActionRevision(value); return *this;}
-    inline PutActionRevisionRequest& WithActionRevision(ActionRevision&& value) { SetActionRevision(std::move(value)); return *this;}
+    template<typename ActionRevisionT = ActionRevision>
+    void SetActionRevision(ActionRevisionT&& value) { m_actionRevisionHasBeenSet = true; m_actionRevision = std::forward<ActionRevisionT>(value); }
+    template<typename ActionRevisionT = ActionRevision>
+    PutActionRevisionRequest& WithActionRevision(ActionRevisionT&& value) { SetActionRevision(std::forward<ActionRevisionT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,18 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-EventRiskType::EventRiskType() : 
-    m_riskDecision(RiskDecisionType::NOT_SET),
-    m_riskDecisionHasBeenSet(false),
-    m_riskLevel(RiskLevelType::NOT_SET),
-    m_riskLevelHasBeenSet(false),
-    m_compromisedCredentialsDetected(false),
-    m_compromisedCredentialsDetectedHasBeenSet(false)
-{
-}
-
 EventRiskType::EventRiskType(JsonView jsonValue)
-  : EventRiskType()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ EventRiskType& EventRiskType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RiskDecision"))
   {
     m_riskDecision = RiskDecisionTypeMapper::GetRiskDecisionTypeForName(jsonValue.GetString("RiskDecision"));
-
     m_riskDecisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RiskLevel"))
   {
     m_riskLevel = RiskLevelTypeMapper::GetRiskLevelTypeForName(jsonValue.GetString("RiskLevel"));
-
     m_riskLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompromisedCredentialsDetected"))
   {
     m_compromisedCredentialsDetected = jsonValue.GetBool("CompromisedCredentialsDetected");
-
     m_compromisedCredentialsDetectedHasBeenSet = true;
   }
-
   return *this;
 }
 

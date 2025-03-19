@@ -33,7 +33,7 @@ namespace Model
   class InstanceStatusSummary
   {
   public:
-    AWS_EC2_API InstanceStatusSummary();
+    AWS_EC2_API InstanceStatusSummary() = default;
     AWS_EC2_API InstanceStatusSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API InstanceStatusSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,33 +45,31 @@ namespace Model
     /**
      * <p>The system instance health or application instance health.</p>
      */
-    inline const Aws::Vector<InstanceStatusDetails>& GetDetails() const{ return m_details; }
+    inline const Aws::Vector<InstanceStatusDetails>& GetDetails() const { return m_details; }
     inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
-    inline void SetDetails(const Aws::Vector<InstanceStatusDetails>& value) { m_detailsHasBeenSet = true; m_details = value; }
-    inline void SetDetails(Aws::Vector<InstanceStatusDetails>&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
-    inline InstanceStatusSummary& WithDetails(const Aws::Vector<InstanceStatusDetails>& value) { SetDetails(value); return *this;}
-    inline InstanceStatusSummary& WithDetails(Aws::Vector<InstanceStatusDetails>&& value) { SetDetails(std::move(value)); return *this;}
-    inline InstanceStatusSummary& AddDetails(const InstanceStatusDetails& value) { m_detailsHasBeenSet = true; m_details.push_back(value); return *this; }
-    inline InstanceStatusSummary& AddDetails(InstanceStatusDetails&& value) { m_detailsHasBeenSet = true; m_details.push_back(std::move(value)); return *this; }
+    template<typename DetailsT = Aws::Vector<InstanceStatusDetails>>
+    void SetDetails(DetailsT&& value) { m_detailsHasBeenSet = true; m_details = std::forward<DetailsT>(value); }
+    template<typename DetailsT = Aws::Vector<InstanceStatusDetails>>
+    InstanceStatusSummary& WithDetails(DetailsT&& value) { SetDetails(std::forward<DetailsT>(value)); return *this;}
+    template<typename DetailsT = InstanceStatusDetails>
+    InstanceStatusSummary& AddDetails(DetailsT&& value) { m_detailsHasBeenSet = true; m_details.emplace_back(std::forward<DetailsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The status.</p>
      */
-    inline const SummaryStatus& GetStatus() const{ return m_status; }
+    inline SummaryStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const SummaryStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(SummaryStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline InstanceStatusSummary& WithStatus(const SummaryStatus& value) { SetStatus(value); return *this;}
-    inline InstanceStatusSummary& WithStatus(SummaryStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(SummaryStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline InstanceStatusSummary& WithStatus(SummaryStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
     Aws::Vector<InstanceStatusDetails> m_details;
     bool m_detailsHasBeenSet = false;
 
-    SummaryStatus m_status;
+    SummaryStatus m_status{SummaryStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

@@ -29,7 +29,7 @@ namespace Model
   class Rec709Settings
   {
   public:
-    AWS_MEDIALIVE_API Rec709Settings();
+    AWS_MEDIALIVE_API Rec709Settings() = default;
     AWS_MEDIALIVE_API Rec709Settings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Rec709Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;

@@ -37,7 +37,7 @@ namespace Model
   class AnalyticsUtteranceResult
   {
   public:
-    AWS_LEXMODELSV2_API AnalyticsUtteranceResult();
+    AWS_LEXMODELSV2_API AnalyticsUtteranceResult() = default;
     AWS_LEXMODELSV2_API AnalyticsUtteranceResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API AnalyticsUtteranceResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,14 @@ namespace Model
      * <p>A list of objects containing the criteria you requested for binning results
      * and the values of the bins.</p>
      */
-    inline const Aws::Vector<AnalyticsBinKey>& GetBinKeys() const{ return m_binKeys; }
+    inline const Aws::Vector<AnalyticsBinKey>& GetBinKeys() const { return m_binKeys; }
     inline bool BinKeysHasBeenSet() const { return m_binKeysHasBeenSet; }
-    inline void SetBinKeys(const Aws::Vector<AnalyticsBinKey>& value) { m_binKeysHasBeenSet = true; m_binKeys = value; }
-    inline void SetBinKeys(Aws::Vector<AnalyticsBinKey>&& value) { m_binKeysHasBeenSet = true; m_binKeys = std::move(value); }
-    inline AnalyticsUtteranceResult& WithBinKeys(const Aws::Vector<AnalyticsBinKey>& value) { SetBinKeys(value); return *this;}
-    inline AnalyticsUtteranceResult& WithBinKeys(Aws::Vector<AnalyticsBinKey>&& value) { SetBinKeys(std::move(value)); return *this;}
-    inline AnalyticsUtteranceResult& AddBinKeys(const AnalyticsBinKey& value) { m_binKeysHasBeenSet = true; m_binKeys.push_back(value); return *this; }
-    inline AnalyticsUtteranceResult& AddBinKeys(AnalyticsBinKey&& value) { m_binKeysHasBeenSet = true; m_binKeys.push_back(std::move(value)); return *this; }
+    template<typename BinKeysT = Aws::Vector<AnalyticsBinKey>>
+    void SetBinKeys(BinKeysT&& value) { m_binKeysHasBeenSet = true; m_binKeys = std::forward<BinKeysT>(value); }
+    template<typename BinKeysT = Aws::Vector<AnalyticsBinKey>>
+    AnalyticsUtteranceResult& WithBinKeys(BinKeysT&& value) { SetBinKeys(std::forward<BinKeysT>(value)); return *this;}
+    template<typename BinKeysT = AnalyticsBinKey>
+    AnalyticsUtteranceResult& AddBinKeys(BinKeysT&& value) { m_binKeysHasBeenSet = true; m_binKeys.emplace_back(std::forward<BinKeysT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -63,14 +63,14 @@ namespace Model
      * <p>A list of objects containing the criteria you requested for grouping results
      * and the values of the bins.</p>
      */
-    inline const Aws::Vector<AnalyticsUtteranceGroupByKey>& GetGroupByKeys() const{ return m_groupByKeys; }
+    inline const Aws::Vector<AnalyticsUtteranceGroupByKey>& GetGroupByKeys() const { return m_groupByKeys; }
     inline bool GroupByKeysHasBeenSet() const { return m_groupByKeysHasBeenSet; }
-    inline void SetGroupByKeys(const Aws::Vector<AnalyticsUtteranceGroupByKey>& value) { m_groupByKeysHasBeenSet = true; m_groupByKeys = value; }
-    inline void SetGroupByKeys(Aws::Vector<AnalyticsUtteranceGroupByKey>&& value) { m_groupByKeysHasBeenSet = true; m_groupByKeys = std::move(value); }
-    inline AnalyticsUtteranceResult& WithGroupByKeys(const Aws::Vector<AnalyticsUtteranceGroupByKey>& value) { SetGroupByKeys(value); return *this;}
-    inline AnalyticsUtteranceResult& WithGroupByKeys(Aws::Vector<AnalyticsUtteranceGroupByKey>&& value) { SetGroupByKeys(std::move(value)); return *this;}
-    inline AnalyticsUtteranceResult& AddGroupByKeys(const AnalyticsUtteranceGroupByKey& value) { m_groupByKeysHasBeenSet = true; m_groupByKeys.push_back(value); return *this; }
-    inline AnalyticsUtteranceResult& AddGroupByKeys(AnalyticsUtteranceGroupByKey&& value) { m_groupByKeysHasBeenSet = true; m_groupByKeys.push_back(std::move(value)); return *this; }
+    template<typename GroupByKeysT = Aws::Vector<AnalyticsUtteranceGroupByKey>>
+    void SetGroupByKeys(GroupByKeysT&& value) { m_groupByKeysHasBeenSet = true; m_groupByKeys = std::forward<GroupByKeysT>(value); }
+    template<typename GroupByKeysT = Aws::Vector<AnalyticsUtteranceGroupByKey>>
+    AnalyticsUtteranceResult& WithGroupByKeys(GroupByKeysT&& value) { SetGroupByKeys(std::forward<GroupByKeysT>(value)); return *this;}
+    template<typename GroupByKeysT = AnalyticsUtteranceGroupByKey>
+    AnalyticsUtteranceResult& AddGroupByKeys(GroupByKeysT&& value) { m_groupByKeysHasBeenSet = true; m_groupByKeys.emplace_back(std::forward<GroupByKeysT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -79,14 +79,14 @@ namespace Model
      * statistic for the metric you want to return, and the method by which to organize
      * the results.</p>
      */
-    inline const Aws::Vector<AnalyticsUtteranceMetricResult>& GetMetricsResults() const{ return m_metricsResults; }
+    inline const Aws::Vector<AnalyticsUtteranceMetricResult>& GetMetricsResults() const { return m_metricsResults; }
     inline bool MetricsResultsHasBeenSet() const { return m_metricsResultsHasBeenSet; }
-    inline void SetMetricsResults(const Aws::Vector<AnalyticsUtteranceMetricResult>& value) { m_metricsResultsHasBeenSet = true; m_metricsResults = value; }
-    inline void SetMetricsResults(Aws::Vector<AnalyticsUtteranceMetricResult>&& value) { m_metricsResultsHasBeenSet = true; m_metricsResults = std::move(value); }
-    inline AnalyticsUtteranceResult& WithMetricsResults(const Aws::Vector<AnalyticsUtteranceMetricResult>& value) { SetMetricsResults(value); return *this;}
-    inline AnalyticsUtteranceResult& WithMetricsResults(Aws::Vector<AnalyticsUtteranceMetricResult>&& value) { SetMetricsResults(std::move(value)); return *this;}
-    inline AnalyticsUtteranceResult& AddMetricsResults(const AnalyticsUtteranceMetricResult& value) { m_metricsResultsHasBeenSet = true; m_metricsResults.push_back(value); return *this; }
-    inline AnalyticsUtteranceResult& AddMetricsResults(AnalyticsUtteranceMetricResult&& value) { m_metricsResultsHasBeenSet = true; m_metricsResults.push_back(std::move(value)); return *this; }
+    template<typename MetricsResultsT = Aws::Vector<AnalyticsUtteranceMetricResult>>
+    void SetMetricsResults(MetricsResultsT&& value) { m_metricsResultsHasBeenSet = true; m_metricsResults = std::forward<MetricsResultsT>(value); }
+    template<typename MetricsResultsT = Aws::Vector<AnalyticsUtteranceMetricResult>>
+    AnalyticsUtteranceResult& WithMetricsResults(MetricsResultsT&& value) { SetMetricsResults(std::forward<MetricsResultsT>(value)); return *this;}
+    template<typename MetricsResultsT = AnalyticsUtteranceMetricResult>
+    AnalyticsUtteranceResult& AddMetricsResults(MetricsResultsT&& value) { m_metricsResultsHasBeenSet = true; m_metricsResults.emplace_back(std::forward<MetricsResultsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -94,14 +94,14 @@ namespace Model
      * <p>A list of objects containing information about the last used intent at the
      * time of an utterance.</p>
      */
-    inline const Aws::Vector<AnalyticsUtteranceAttributeResult>& GetAttributeResults() const{ return m_attributeResults; }
+    inline const Aws::Vector<AnalyticsUtteranceAttributeResult>& GetAttributeResults() const { return m_attributeResults; }
     inline bool AttributeResultsHasBeenSet() const { return m_attributeResultsHasBeenSet; }
-    inline void SetAttributeResults(const Aws::Vector<AnalyticsUtteranceAttributeResult>& value) { m_attributeResultsHasBeenSet = true; m_attributeResults = value; }
-    inline void SetAttributeResults(Aws::Vector<AnalyticsUtteranceAttributeResult>&& value) { m_attributeResultsHasBeenSet = true; m_attributeResults = std::move(value); }
-    inline AnalyticsUtteranceResult& WithAttributeResults(const Aws::Vector<AnalyticsUtteranceAttributeResult>& value) { SetAttributeResults(value); return *this;}
-    inline AnalyticsUtteranceResult& WithAttributeResults(Aws::Vector<AnalyticsUtteranceAttributeResult>&& value) { SetAttributeResults(std::move(value)); return *this;}
-    inline AnalyticsUtteranceResult& AddAttributeResults(const AnalyticsUtteranceAttributeResult& value) { m_attributeResultsHasBeenSet = true; m_attributeResults.push_back(value); return *this; }
-    inline AnalyticsUtteranceResult& AddAttributeResults(AnalyticsUtteranceAttributeResult&& value) { m_attributeResultsHasBeenSet = true; m_attributeResults.push_back(std::move(value)); return *this; }
+    template<typename AttributeResultsT = Aws::Vector<AnalyticsUtteranceAttributeResult>>
+    void SetAttributeResults(AttributeResultsT&& value) { m_attributeResultsHasBeenSet = true; m_attributeResults = std::forward<AttributeResultsT>(value); }
+    template<typename AttributeResultsT = Aws::Vector<AnalyticsUtteranceAttributeResult>>
+    AnalyticsUtteranceResult& WithAttributeResults(AttributeResultsT&& value) { SetAttributeResults(std::forward<AttributeResultsT>(value)); return *this;}
+    template<typename AttributeResultsT = AnalyticsUtteranceAttributeResult>
+    AnalyticsUtteranceResult& AddAttributeResults(AttributeResultsT&& value) { m_attributeResultsHasBeenSet = true; m_attributeResults.emplace_back(std::forward<AttributeResultsT>(value)); return *this; }
     ///@}
   private:
 

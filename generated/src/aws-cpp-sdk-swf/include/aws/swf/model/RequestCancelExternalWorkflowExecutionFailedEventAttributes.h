@@ -34,7 +34,7 @@ namespace Model
   class RequestCancelExternalWorkflowExecutionFailedEventAttributes
   {
   public:
-    AWS_SWF_API RequestCancelExternalWorkflowExecutionFailedEventAttributes();
+    AWS_SWF_API RequestCancelExternalWorkflowExecutionFailedEventAttributes() = default;
     AWS_SWF_API RequestCancelExternalWorkflowExecutionFailedEventAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API RequestCancelExternalWorkflowExecutionFailedEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,24 @@ namespace Model
      * <p>The <code>workflowId</code> of the external workflow to which the cancel
      * request was to be delivered.</p>
      */
-    inline const Aws::String& GetWorkflowId() const{ return m_workflowId; }
+    inline const Aws::String& GetWorkflowId() const { return m_workflowId; }
     inline bool WorkflowIdHasBeenSet() const { return m_workflowIdHasBeenSet; }
-    inline void SetWorkflowId(const Aws::String& value) { m_workflowIdHasBeenSet = true; m_workflowId = value; }
-    inline void SetWorkflowId(Aws::String&& value) { m_workflowIdHasBeenSet = true; m_workflowId = std::move(value); }
-    inline void SetWorkflowId(const char* value) { m_workflowIdHasBeenSet = true; m_workflowId.assign(value); }
-    inline RequestCancelExternalWorkflowExecutionFailedEventAttributes& WithWorkflowId(const Aws::String& value) { SetWorkflowId(value); return *this;}
-    inline RequestCancelExternalWorkflowExecutionFailedEventAttributes& WithWorkflowId(Aws::String&& value) { SetWorkflowId(std::move(value)); return *this;}
-    inline RequestCancelExternalWorkflowExecutionFailedEventAttributes& WithWorkflowId(const char* value) { SetWorkflowId(value); return *this;}
+    template<typename WorkflowIdT = Aws::String>
+    void SetWorkflowId(WorkflowIdT&& value) { m_workflowIdHasBeenSet = true; m_workflowId = std::forward<WorkflowIdT>(value); }
+    template<typename WorkflowIdT = Aws::String>
+    RequestCancelExternalWorkflowExecutionFailedEventAttributes& WithWorkflowId(WorkflowIdT&& value) { SetWorkflowId(std::forward<WorkflowIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The <code>runId</code> of the external workflow execution.</p>
      */
-    inline const Aws::String& GetRunId() const{ return m_runId; }
+    inline const Aws::String& GetRunId() const { return m_runId; }
     inline bool RunIdHasBeenSet() const { return m_runIdHasBeenSet; }
-    inline void SetRunId(const Aws::String& value) { m_runIdHasBeenSet = true; m_runId = value; }
-    inline void SetRunId(Aws::String&& value) { m_runIdHasBeenSet = true; m_runId = std::move(value); }
-    inline void SetRunId(const char* value) { m_runIdHasBeenSet = true; m_runId.assign(value); }
-    inline RequestCancelExternalWorkflowExecutionFailedEventAttributes& WithRunId(const Aws::String& value) { SetRunId(value); return *this;}
-    inline RequestCancelExternalWorkflowExecutionFailedEventAttributes& WithRunId(Aws::String&& value) { SetRunId(std::move(value)); return *this;}
-    inline RequestCancelExternalWorkflowExecutionFailedEventAttributes& WithRunId(const char* value) { SetRunId(value); return *this;}
+    template<typename RunIdT = Aws::String>
+    void SetRunId(RunIdT&& value) { m_runIdHasBeenSet = true; m_runId = std::forward<RunIdT>(value); }
+    template<typename RunIdT = Aws::String>
+    RequestCancelExternalWorkflowExecutionFailedEventAttributes& WithRunId(RunIdT&& value) { SetRunId(std::forward<RunIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,12 +75,10 @@ namespace Model
      * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
      * Guide</i>.</p> 
      */
-    inline const RequestCancelExternalWorkflowExecutionFailedCause& GetCause() const{ return m_cause; }
+    inline RequestCancelExternalWorkflowExecutionFailedCause GetCause() const { return m_cause; }
     inline bool CauseHasBeenSet() const { return m_causeHasBeenSet; }
-    inline void SetCause(const RequestCancelExternalWorkflowExecutionFailedCause& value) { m_causeHasBeenSet = true; m_cause = value; }
-    inline void SetCause(RequestCancelExternalWorkflowExecutionFailedCause&& value) { m_causeHasBeenSet = true; m_cause = std::move(value); }
-    inline RequestCancelExternalWorkflowExecutionFailedEventAttributes& WithCause(const RequestCancelExternalWorkflowExecutionFailedCause& value) { SetCause(value); return *this;}
-    inline RequestCancelExternalWorkflowExecutionFailedEventAttributes& WithCause(RequestCancelExternalWorkflowExecutionFailedCause&& value) { SetCause(std::move(value)); return *this;}
+    inline void SetCause(RequestCancelExternalWorkflowExecutionFailedCause value) { m_causeHasBeenSet = true; m_cause = value; }
+    inline RequestCancelExternalWorkflowExecutionFailedEventAttributes& WithCause(RequestCancelExternalWorkflowExecutionFailedCause value) { SetCause(value); return *this;}
     ///@}
 
     ///@{
@@ -95,7 +89,7 @@ namespace Model
      * useful for diagnosing problems by tracing back the chain of events leading up to
      * this event.</p>
      */
-    inline long long GetInitiatedEventId() const{ return m_initiatedEventId; }
+    inline long long GetInitiatedEventId() const { return m_initiatedEventId; }
     inline bool InitiatedEventIdHasBeenSet() const { return m_initiatedEventIdHasBeenSet; }
     inline void SetInitiatedEventId(long long value) { m_initiatedEventIdHasBeenSet = true; m_initiatedEventId = value; }
     inline RequestCancelExternalWorkflowExecutionFailedEventAttributes& WithInitiatedEventId(long long value) { SetInitiatedEventId(value); return *this;}
@@ -109,7 +103,7 @@ namespace Model
      * cancellation request. This information can be useful for diagnosing problems by
      * tracing back the chain of events leading up to this event.</p>
      */
-    inline long long GetDecisionTaskCompletedEventId() const{ return m_decisionTaskCompletedEventId; }
+    inline long long GetDecisionTaskCompletedEventId() const { return m_decisionTaskCompletedEventId; }
     inline bool DecisionTaskCompletedEventIdHasBeenSet() const { return m_decisionTaskCompletedEventIdHasBeenSet; }
     inline void SetDecisionTaskCompletedEventId(long long value) { m_decisionTaskCompletedEventIdHasBeenSet = true; m_decisionTaskCompletedEventId = value; }
     inline RequestCancelExternalWorkflowExecutionFailedEventAttributes& WithDecisionTaskCompletedEventId(long long value) { SetDecisionTaskCompletedEventId(value); return *this;}
@@ -120,14 +114,12 @@ namespace Model
      * <p>The data attached to the event that the decider can use in subsequent
      * workflow tasks. This data isn't sent to the workflow execution.</p>
      */
-    inline const Aws::String& GetControl() const{ return m_control; }
+    inline const Aws::String& GetControl() const { return m_control; }
     inline bool ControlHasBeenSet() const { return m_controlHasBeenSet; }
-    inline void SetControl(const Aws::String& value) { m_controlHasBeenSet = true; m_control = value; }
-    inline void SetControl(Aws::String&& value) { m_controlHasBeenSet = true; m_control = std::move(value); }
-    inline void SetControl(const char* value) { m_controlHasBeenSet = true; m_control.assign(value); }
-    inline RequestCancelExternalWorkflowExecutionFailedEventAttributes& WithControl(const Aws::String& value) { SetControl(value); return *this;}
-    inline RequestCancelExternalWorkflowExecutionFailedEventAttributes& WithControl(Aws::String&& value) { SetControl(std::move(value)); return *this;}
-    inline RequestCancelExternalWorkflowExecutionFailedEventAttributes& WithControl(const char* value) { SetControl(value); return *this;}
+    template<typename ControlT = Aws::String>
+    void SetControl(ControlT&& value) { m_controlHasBeenSet = true; m_control = std::forward<ControlT>(value); }
+    template<typename ControlT = Aws::String>
+    RequestCancelExternalWorkflowExecutionFailedEventAttributes& WithControl(ControlT&& value) { SetControl(std::forward<ControlT>(value)); return *this;}
     ///@}
   private:
 
@@ -137,13 +129,13 @@ namespace Model
     Aws::String m_runId;
     bool m_runIdHasBeenSet = false;
 
-    RequestCancelExternalWorkflowExecutionFailedCause m_cause;
+    RequestCancelExternalWorkflowExecutionFailedCause m_cause{RequestCancelExternalWorkflowExecutionFailedCause::NOT_SET};
     bool m_causeHasBeenSet = false;
 
-    long long m_initiatedEventId;
+    long long m_initiatedEventId{0};
     bool m_initiatedEventIdHasBeenSet = false;
 
-    long long m_decisionTaskCompletedEventId;
+    long long m_decisionTaskCompletedEventId{0};
     bool m_decisionTaskCompletedEventIdHasBeenSet = false;
 
     Aws::String m_control;

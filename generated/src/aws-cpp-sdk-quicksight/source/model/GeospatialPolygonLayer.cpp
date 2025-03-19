@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-GeospatialPolygonLayer::GeospatialPolygonLayer() : 
-    m_styleHasBeenSet(false)
-{
-}
-
 GeospatialPolygonLayer::GeospatialPolygonLayer(JsonView jsonValue)
-  : GeospatialPolygonLayer()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ GeospatialPolygonLayer& GeospatialPolygonLayer::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Style"))
   {
     m_style = jsonValue.GetObject("Style");
-
     m_styleHasBeenSet = true;
   }
-
   return *this;
 }
 

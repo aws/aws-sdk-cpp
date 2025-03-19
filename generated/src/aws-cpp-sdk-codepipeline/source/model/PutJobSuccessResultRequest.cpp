@@ -12,15 +12,6 @@ using namespace Aws::CodePipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutJobSuccessResultRequest::PutJobSuccessResultRequest() : 
-    m_jobIdHasBeenSet(false),
-    m_currentRevisionHasBeenSet(false),
-    m_continuationTokenHasBeenSet(false),
-    m_executionDetailsHasBeenSet(false),
-    m_outputVariablesHasBeenSet(false)
-{
-}
-
 Aws::String PutJobSuccessResultRequest::SerializePayload() const
 {
   JsonValue payload;

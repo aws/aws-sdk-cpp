@@ -18,15 +18,7 @@ namespace neptunedata
 namespace Model
 {
 
-StreamRecordsNotFoundException::StreamRecordsNotFoundException() : 
-    m_detailedMessageHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_codeHasBeenSet(false)
-{
-}
-
 StreamRecordsNotFoundException::StreamRecordsNotFoundException(JsonView jsonValue)
-  : StreamRecordsNotFoundException()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ StreamRecordsNotFoundException& StreamRecordsNotFoundException::operator =(JsonV
   if(jsonValue.ValueExists("detailedMessage"))
   {
     m_detailedMessage = jsonValue.GetString("detailedMessage");
-
     m_detailedMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("requestId"))
   {
     m_requestId = jsonValue.GetString("requestId");
-
     m_requestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("code"))
   {
     m_code = jsonValue.GetString("code");
-
     m_codeHasBeenSet = true;
   }
-
   return *this;
 }
 

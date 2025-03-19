@@ -28,7 +28,7 @@ namespace Model
   class DescribeGlobalTableResult
   {
   public:
-    AWS_DYNAMODB_API DescribeGlobalTableResult();
+    AWS_DYNAMODB_API DescribeGlobalTableResult() = default;
     AWS_DYNAMODB_API DescribeGlobalTableResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DYNAMODB_API DescribeGlobalTableResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Contains the details of the global table.</p>
      */
-    inline const GlobalTableDescription& GetGlobalTableDescription() const{ return m_globalTableDescription; }
-    inline void SetGlobalTableDescription(const GlobalTableDescription& value) { m_globalTableDescription = value; }
-    inline void SetGlobalTableDescription(GlobalTableDescription&& value) { m_globalTableDescription = std::move(value); }
-    inline DescribeGlobalTableResult& WithGlobalTableDescription(const GlobalTableDescription& value) { SetGlobalTableDescription(value); return *this;}
-    inline DescribeGlobalTableResult& WithGlobalTableDescription(GlobalTableDescription&& value) { SetGlobalTableDescription(std::move(value)); return *this;}
+    inline const GlobalTableDescription& GetGlobalTableDescription() const { return m_globalTableDescription; }
+    template<typename GlobalTableDescriptionT = GlobalTableDescription>
+    void SetGlobalTableDescription(GlobalTableDescriptionT&& value) { m_globalTableDescriptionHasBeenSet = true; m_globalTableDescription = std::forward<GlobalTableDescriptionT>(value); }
+    template<typename GlobalTableDescriptionT = GlobalTableDescription>
+    DescribeGlobalTableResult& WithGlobalTableDescription(GlobalTableDescriptionT&& value) { SetGlobalTableDescription(std::forward<GlobalTableDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeGlobalTableResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeGlobalTableResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeGlobalTableResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeGlobalTableResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     GlobalTableDescription m_globalTableDescription;
+    bool m_globalTableDescriptionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

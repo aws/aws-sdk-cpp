@@ -34,7 +34,7 @@ namespace Model
   class Settings
   {
   public:
-    AWS_AMPLIFYBACKEND_API Settings();
+    AWS_AMPLIFYBACKEND_API Settings() = default;
     AWS_AMPLIFYBACKEND_API Settings(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYBACKEND_API Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYBACKEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,25 @@ namespace Model
     /**
      * <p>The supported MFA types.</p>
      */
-    inline const Aws::Vector<MfaTypesElement>& GetMfaTypes() const{ return m_mfaTypes; }
+    inline const Aws::Vector<MfaTypesElement>& GetMfaTypes() const { return m_mfaTypes; }
     inline bool MfaTypesHasBeenSet() const { return m_mfaTypesHasBeenSet; }
-    inline void SetMfaTypes(const Aws::Vector<MfaTypesElement>& value) { m_mfaTypesHasBeenSet = true; m_mfaTypes = value; }
-    inline void SetMfaTypes(Aws::Vector<MfaTypesElement>&& value) { m_mfaTypesHasBeenSet = true; m_mfaTypes = std::move(value); }
-    inline Settings& WithMfaTypes(const Aws::Vector<MfaTypesElement>& value) { SetMfaTypes(value); return *this;}
-    inline Settings& WithMfaTypes(Aws::Vector<MfaTypesElement>&& value) { SetMfaTypes(std::move(value)); return *this;}
-    inline Settings& AddMfaTypes(const MfaTypesElement& value) { m_mfaTypesHasBeenSet = true; m_mfaTypes.push_back(value); return *this; }
-    inline Settings& AddMfaTypes(MfaTypesElement&& value) { m_mfaTypesHasBeenSet = true; m_mfaTypes.push_back(std::move(value)); return *this; }
+    template<typename MfaTypesT = Aws::Vector<MfaTypesElement>>
+    void SetMfaTypes(MfaTypesT&& value) { m_mfaTypesHasBeenSet = true; m_mfaTypes = std::forward<MfaTypesT>(value); }
+    template<typename MfaTypesT = Aws::Vector<MfaTypesElement>>
+    Settings& WithMfaTypes(MfaTypesT&& value) { SetMfaTypes(std::forward<MfaTypesT>(value)); return *this;}
+    inline Settings& AddMfaTypes(MfaTypesElement value) { m_mfaTypesHasBeenSet = true; m_mfaTypes.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The body of the SMS message.</p>
      */
-    inline const Aws::String& GetSmsMessage() const{ return m_smsMessage; }
+    inline const Aws::String& GetSmsMessage() const { return m_smsMessage; }
     inline bool SmsMessageHasBeenSet() const { return m_smsMessageHasBeenSet; }
-    inline void SetSmsMessage(const Aws::String& value) { m_smsMessageHasBeenSet = true; m_smsMessage = value; }
-    inline void SetSmsMessage(Aws::String&& value) { m_smsMessageHasBeenSet = true; m_smsMessage = std::move(value); }
-    inline void SetSmsMessage(const char* value) { m_smsMessageHasBeenSet = true; m_smsMessage.assign(value); }
-    inline Settings& WithSmsMessage(const Aws::String& value) { SetSmsMessage(value); return *this;}
-    inline Settings& WithSmsMessage(Aws::String&& value) { SetSmsMessage(std::move(value)); return *this;}
-    inline Settings& WithSmsMessage(const char* value) { SetSmsMessage(value); return *this;}
+    template<typename SmsMessageT = Aws::String>
+    void SetSmsMessage(SmsMessageT&& value) { m_smsMessageHasBeenSet = true; m_smsMessage = std::forward<SmsMessageT>(value); }
+    template<typename SmsMessageT = Aws::String>
+    Settings& WithSmsMessage(SmsMessageT&& value) { SetSmsMessage(std::forward<SmsMessageT>(value)); return *this;}
     ///@}
   private:
 

@@ -32,7 +32,7 @@ namespace Model
   class ListCustomLineItemVersionsFilter
   {
   public:
-    AWS_BILLINGCONDUCTOR_API ListCustomLineItemVersionsFilter();
+    AWS_BILLINGCONDUCTOR_API ListCustomLineItemVersionsFilter() = default;
     AWS_BILLINGCONDUCTOR_API ListCustomLineItemVersionsFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_BILLINGCONDUCTOR_API ListCustomLineItemVersionsFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>The billing period range in which the custom line item version is
      * applied.</p>
      */
-    inline const ListCustomLineItemVersionsBillingPeriodRangeFilter& GetBillingPeriodRange() const{ return m_billingPeriodRange; }
+    inline const ListCustomLineItemVersionsBillingPeriodRangeFilter& GetBillingPeriodRange() const { return m_billingPeriodRange; }
     inline bool BillingPeriodRangeHasBeenSet() const { return m_billingPeriodRangeHasBeenSet; }
-    inline void SetBillingPeriodRange(const ListCustomLineItemVersionsBillingPeriodRangeFilter& value) { m_billingPeriodRangeHasBeenSet = true; m_billingPeriodRange = value; }
-    inline void SetBillingPeriodRange(ListCustomLineItemVersionsBillingPeriodRangeFilter&& value) { m_billingPeriodRangeHasBeenSet = true; m_billingPeriodRange = std::move(value); }
-    inline ListCustomLineItemVersionsFilter& WithBillingPeriodRange(const ListCustomLineItemVersionsBillingPeriodRangeFilter& value) { SetBillingPeriodRange(value); return *this;}
-    inline ListCustomLineItemVersionsFilter& WithBillingPeriodRange(ListCustomLineItemVersionsBillingPeriodRangeFilter&& value) { SetBillingPeriodRange(std::move(value)); return *this;}
+    template<typename BillingPeriodRangeT = ListCustomLineItemVersionsBillingPeriodRangeFilter>
+    void SetBillingPeriodRange(BillingPeriodRangeT&& value) { m_billingPeriodRangeHasBeenSet = true; m_billingPeriodRange = std::forward<BillingPeriodRangeT>(value); }
+    template<typename BillingPeriodRangeT = ListCustomLineItemVersionsBillingPeriodRangeFilter>
+    ListCustomLineItemVersionsFilter& WithBillingPeriodRange(BillingPeriodRangeT&& value) { SetBillingPeriodRange(std::forward<BillingPeriodRangeT>(value)); return *this;}
     ///@}
   private:
 

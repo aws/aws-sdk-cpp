@@ -32,7 +32,7 @@ namespace Model
   class DataProductListingItemAdditionalAttributes
   {
   public:
-    AWS_DATAZONE_API DataProductListingItemAdditionalAttributes();
+    AWS_DATAZONE_API DataProductListingItemAdditionalAttributes() = default;
     AWS_DATAZONE_API DataProductListingItemAdditionalAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API DataProductListingItemAdditionalAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The metadata forms of the asset of the data product. </p>
      */
-    inline const Aws::String& GetForms() const{ return m_forms; }
+    inline const Aws::String& GetForms() const { return m_forms; }
     inline bool FormsHasBeenSet() const { return m_formsHasBeenSet; }
-    inline void SetForms(const Aws::String& value) { m_formsHasBeenSet = true; m_forms = value; }
-    inline void SetForms(Aws::String&& value) { m_formsHasBeenSet = true; m_forms = std::move(value); }
-    inline void SetForms(const char* value) { m_formsHasBeenSet = true; m_forms.assign(value); }
-    inline DataProductListingItemAdditionalAttributes& WithForms(const Aws::String& value) { SetForms(value); return *this;}
-    inline DataProductListingItemAdditionalAttributes& WithForms(Aws::String&& value) { SetForms(std::move(value)); return *this;}
-    inline DataProductListingItemAdditionalAttributes& WithForms(const char* value) { SetForms(value); return *this;}
+    template<typename FormsT = Aws::String>
+    void SetForms(FormsT&& value) { m_formsHasBeenSet = true; m_forms = std::forward<FormsT>(value); }
+    template<typename FormsT = Aws::String>
+    DataProductListingItemAdditionalAttributes& WithForms(FormsT&& value) { SetForms(std::forward<FormsT>(value)); return *this;}
     ///@}
   private:
 

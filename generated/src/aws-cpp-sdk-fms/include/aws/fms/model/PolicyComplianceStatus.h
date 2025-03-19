@@ -40,7 +40,7 @@ namespace Model
   class PolicyComplianceStatus
   {
   public:
-    AWS_FMS_API PolicyComplianceStatus();
+    AWS_FMS_API PolicyComplianceStatus() = default;
     AWS_FMS_API PolicyComplianceStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API PolicyComplianceStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,70 +50,62 @@ namespace Model
     /**
      * <p>The Amazon Web Services account that created the Firewall Manager policy.</p>
      */
-    inline const Aws::String& GetPolicyOwner() const{ return m_policyOwner; }
+    inline const Aws::String& GetPolicyOwner() const { return m_policyOwner; }
     inline bool PolicyOwnerHasBeenSet() const { return m_policyOwnerHasBeenSet; }
-    inline void SetPolicyOwner(const Aws::String& value) { m_policyOwnerHasBeenSet = true; m_policyOwner = value; }
-    inline void SetPolicyOwner(Aws::String&& value) { m_policyOwnerHasBeenSet = true; m_policyOwner = std::move(value); }
-    inline void SetPolicyOwner(const char* value) { m_policyOwnerHasBeenSet = true; m_policyOwner.assign(value); }
-    inline PolicyComplianceStatus& WithPolicyOwner(const Aws::String& value) { SetPolicyOwner(value); return *this;}
-    inline PolicyComplianceStatus& WithPolicyOwner(Aws::String&& value) { SetPolicyOwner(std::move(value)); return *this;}
-    inline PolicyComplianceStatus& WithPolicyOwner(const char* value) { SetPolicyOwner(value); return *this;}
+    template<typename PolicyOwnerT = Aws::String>
+    void SetPolicyOwner(PolicyOwnerT&& value) { m_policyOwnerHasBeenSet = true; m_policyOwner = std::forward<PolicyOwnerT>(value); }
+    template<typename PolicyOwnerT = Aws::String>
+    PolicyComplianceStatus& WithPolicyOwner(PolicyOwnerT&& value) { SetPolicyOwner(std::forward<PolicyOwnerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Firewall Manager policy.</p>
      */
-    inline const Aws::String& GetPolicyId() const{ return m_policyId; }
+    inline const Aws::String& GetPolicyId() const { return m_policyId; }
     inline bool PolicyIdHasBeenSet() const { return m_policyIdHasBeenSet; }
-    inline void SetPolicyId(const Aws::String& value) { m_policyIdHasBeenSet = true; m_policyId = value; }
-    inline void SetPolicyId(Aws::String&& value) { m_policyIdHasBeenSet = true; m_policyId = std::move(value); }
-    inline void SetPolicyId(const char* value) { m_policyIdHasBeenSet = true; m_policyId.assign(value); }
-    inline PolicyComplianceStatus& WithPolicyId(const Aws::String& value) { SetPolicyId(value); return *this;}
-    inline PolicyComplianceStatus& WithPolicyId(Aws::String&& value) { SetPolicyId(std::move(value)); return *this;}
-    inline PolicyComplianceStatus& WithPolicyId(const char* value) { SetPolicyId(value); return *this;}
+    template<typename PolicyIdT = Aws::String>
+    void SetPolicyId(PolicyIdT&& value) { m_policyIdHasBeenSet = true; m_policyId = std::forward<PolicyIdT>(value); }
+    template<typename PolicyIdT = Aws::String>
+    PolicyComplianceStatus& WithPolicyId(PolicyIdT&& value) { SetPolicyId(std::forward<PolicyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the Firewall Manager policy.</p>
      */
-    inline const Aws::String& GetPolicyName() const{ return m_policyName; }
+    inline const Aws::String& GetPolicyName() const { return m_policyName; }
     inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
-    inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
-    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
-    inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
-    inline PolicyComplianceStatus& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
-    inline PolicyComplianceStatus& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
-    inline PolicyComplianceStatus& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+    template<typename PolicyNameT = Aws::String>
+    void SetPolicyName(PolicyNameT&& value) { m_policyNameHasBeenSet = true; m_policyName = std::forward<PolicyNameT>(value); }
+    template<typename PolicyNameT = Aws::String>
+    PolicyComplianceStatus& WithPolicyName(PolicyNameT&& value) { SetPolicyName(std::forward<PolicyNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The member account ID.</p>
      */
-    inline const Aws::String& GetMemberAccount() const{ return m_memberAccount; }
+    inline const Aws::String& GetMemberAccount() const { return m_memberAccount; }
     inline bool MemberAccountHasBeenSet() const { return m_memberAccountHasBeenSet; }
-    inline void SetMemberAccount(const Aws::String& value) { m_memberAccountHasBeenSet = true; m_memberAccount = value; }
-    inline void SetMemberAccount(Aws::String&& value) { m_memberAccountHasBeenSet = true; m_memberAccount = std::move(value); }
-    inline void SetMemberAccount(const char* value) { m_memberAccountHasBeenSet = true; m_memberAccount.assign(value); }
-    inline PolicyComplianceStatus& WithMemberAccount(const Aws::String& value) { SetMemberAccount(value); return *this;}
-    inline PolicyComplianceStatus& WithMemberAccount(Aws::String&& value) { SetMemberAccount(std::move(value)); return *this;}
-    inline PolicyComplianceStatus& WithMemberAccount(const char* value) { SetMemberAccount(value); return *this;}
+    template<typename MemberAccountT = Aws::String>
+    void SetMemberAccount(MemberAccountT&& value) { m_memberAccountHasBeenSet = true; m_memberAccount = std::forward<MemberAccountT>(value); }
+    template<typename MemberAccountT = Aws::String>
+    PolicyComplianceStatus& WithMemberAccount(MemberAccountT&& value) { SetMemberAccount(std::forward<MemberAccountT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of <code>EvaluationResult</code> objects.</p>
      */
-    inline const Aws::Vector<EvaluationResult>& GetEvaluationResults() const{ return m_evaluationResults; }
+    inline const Aws::Vector<EvaluationResult>& GetEvaluationResults() const { return m_evaluationResults; }
     inline bool EvaluationResultsHasBeenSet() const { return m_evaluationResultsHasBeenSet; }
-    inline void SetEvaluationResults(const Aws::Vector<EvaluationResult>& value) { m_evaluationResultsHasBeenSet = true; m_evaluationResults = value; }
-    inline void SetEvaluationResults(Aws::Vector<EvaluationResult>&& value) { m_evaluationResultsHasBeenSet = true; m_evaluationResults = std::move(value); }
-    inline PolicyComplianceStatus& WithEvaluationResults(const Aws::Vector<EvaluationResult>& value) { SetEvaluationResults(value); return *this;}
-    inline PolicyComplianceStatus& WithEvaluationResults(Aws::Vector<EvaluationResult>&& value) { SetEvaluationResults(std::move(value)); return *this;}
-    inline PolicyComplianceStatus& AddEvaluationResults(const EvaluationResult& value) { m_evaluationResultsHasBeenSet = true; m_evaluationResults.push_back(value); return *this; }
-    inline PolicyComplianceStatus& AddEvaluationResults(EvaluationResult&& value) { m_evaluationResultsHasBeenSet = true; m_evaluationResults.push_back(std::move(value)); return *this; }
+    template<typename EvaluationResultsT = Aws::Vector<EvaluationResult>>
+    void SetEvaluationResults(EvaluationResultsT&& value) { m_evaluationResultsHasBeenSet = true; m_evaluationResults = std::forward<EvaluationResultsT>(value); }
+    template<typename EvaluationResultsT = Aws::Vector<EvaluationResult>>
+    PolicyComplianceStatus& WithEvaluationResults(EvaluationResultsT&& value) { SetEvaluationResults(std::forward<EvaluationResultsT>(value)); return *this;}
+    template<typename EvaluationResultsT = EvaluationResult>
+    PolicyComplianceStatus& AddEvaluationResults(EvaluationResultsT&& value) { m_evaluationResultsHasBeenSet = true; m_evaluationResults.emplace_back(std::forward<EvaluationResultsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -121,12 +113,12 @@ namespace Model
      * <p>Timestamp of the last update to the <code>EvaluationResult</code>
      * objects.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdated() const{ return m_lastUpdated; }
+    inline const Aws::Utils::DateTime& GetLastUpdated() const { return m_lastUpdated; }
     inline bool LastUpdatedHasBeenSet() const { return m_lastUpdatedHasBeenSet; }
-    inline void SetLastUpdated(const Aws::Utils::DateTime& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = value; }
-    inline void SetLastUpdated(Aws::Utils::DateTime&& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = std::move(value); }
-    inline PolicyComplianceStatus& WithLastUpdated(const Aws::Utils::DateTime& value) { SetLastUpdated(value); return *this;}
-    inline PolicyComplianceStatus& WithLastUpdated(Aws::Utils::DateTime&& value) { SetLastUpdated(std::move(value)); return *this;}
+    template<typename LastUpdatedT = Aws::Utils::DateTime>
+    void SetLastUpdated(LastUpdatedT&& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = std::forward<LastUpdatedT>(value); }
+    template<typename LastUpdatedT = Aws::Utils::DateTime>
+    PolicyComplianceStatus& WithLastUpdated(LastUpdatedT&& value) { SetLastUpdated(std::forward<LastUpdatedT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,18 +126,15 @@ namespace Model
      * <p>Details about problems with dependent services, such as WAF or Config, and
      * the error message received that indicates the problem with the service.</p>
      */
-    inline const Aws::Map<DependentServiceName, Aws::String>& GetIssueInfoMap() const{ return m_issueInfoMap; }
+    inline const Aws::Map<DependentServiceName, Aws::String>& GetIssueInfoMap() const { return m_issueInfoMap; }
     inline bool IssueInfoMapHasBeenSet() const { return m_issueInfoMapHasBeenSet; }
-    inline void SetIssueInfoMap(const Aws::Map<DependentServiceName, Aws::String>& value) { m_issueInfoMapHasBeenSet = true; m_issueInfoMap = value; }
-    inline void SetIssueInfoMap(Aws::Map<DependentServiceName, Aws::String>&& value) { m_issueInfoMapHasBeenSet = true; m_issueInfoMap = std::move(value); }
-    inline PolicyComplianceStatus& WithIssueInfoMap(const Aws::Map<DependentServiceName, Aws::String>& value) { SetIssueInfoMap(value); return *this;}
-    inline PolicyComplianceStatus& WithIssueInfoMap(Aws::Map<DependentServiceName, Aws::String>&& value) { SetIssueInfoMap(std::move(value)); return *this;}
-    inline PolicyComplianceStatus& AddIssueInfoMap(const DependentServiceName& key, const Aws::String& value) { m_issueInfoMapHasBeenSet = true; m_issueInfoMap.emplace(key, value); return *this; }
-    inline PolicyComplianceStatus& AddIssueInfoMap(DependentServiceName&& key, const Aws::String& value) { m_issueInfoMapHasBeenSet = true; m_issueInfoMap.emplace(std::move(key), value); return *this; }
-    inline PolicyComplianceStatus& AddIssueInfoMap(const DependentServiceName& key, Aws::String&& value) { m_issueInfoMapHasBeenSet = true; m_issueInfoMap.emplace(key, std::move(value)); return *this; }
-    inline PolicyComplianceStatus& AddIssueInfoMap(DependentServiceName&& key, Aws::String&& value) { m_issueInfoMapHasBeenSet = true; m_issueInfoMap.emplace(std::move(key), std::move(value)); return *this; }
-    inline PolicyComplianceStatus& AddIssueInfoMap(DependentServiceName&& key, const char* value) { m_issueInfoMapHasBeenSet = true; m_issueInfoMap.emplace(std::move(key), value); return *this; }
-    inline PolicyComplianceStatus& AddIssueInfoMap(const DependentServiceName& key, const char* value) { m_issueInfoMapHasBeenSet = true; m_issueInfoMap.emplace(key, value); return *this; }
+    template<typename IssueInfoMapT = Aws::Map<DependentServiceName, Aws::String>>
+    void SetIssueInfoMap(IssueInfoMapT&& value) { m_issueInfoMapHasBeenSet = true; m_issueInfoMap = std::forward<IssueInfoMapT>(value); }
+    template<typename IssueInfoMapT = Aws::Map<DependentServiceName, Aws::String>>
+    PolicyComplianceStatus& WithIssueInfoMap(IssueInfoMapT&& value) { SetIssueInfoMap(std::forward<IssueInfoMapT>(value)); return *this;}
+    inline PolicyComplianceStatus& AddIssueInfoMap(DependentServiceName key, Aws::String value) {
+      m_issueInfoMapHasBeenSet = true; m_issueInfoMap.emplace(key, value); return *this;
+    }
     ///@}
   private:
 
@@ -164,7 +153,7 @@ namespace Model
     Aws::Vector<EvaluationResult> m_evaluationResults;
     bool m_evaluationResultsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdated;
+    Aws::Utils::DateTime m_lastUpdated{};
     bool m_lastUpdatedHasBeenSet = false;
 
     Aws::Map<DependentServiceName, Aws::String> m_issueInfoMap;

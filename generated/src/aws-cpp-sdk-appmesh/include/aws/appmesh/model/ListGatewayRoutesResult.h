@@ -29,7 +29,7 @@ namespace Model
   class ListGatewayRoutesResult
   {
   public:
-    AWS_APPMESH_API ListGatewayRoutesResult();
+    AWS_APPMESH_API ListGatewayRoutesResult() = default;
     AWS_APPMESH_API ListGatewayRoutesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPMESH_API ListGatewayRoutesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>The list of existing gateway routes for the specified service mesh and
      * virtual gateway.</p>
      */
-    inline const Aws::Vector<GatewayRouteRef>& GetGatewayRoutes() const{ return m_gatewayRoutes; }
-    inline void SetGatewayRoutes(const Aws::Vector<GatewayRouteRef>& value) { m_gatewayRoutes = value; }
-    inline void SetGatewayRoutes(Aws::Vector<GatewayRouteRef>&& value) { m_gatewayRoutes = std::move(value); }
-    inline ListGatewayRoutesResult& WithGatewayRoutes(const Aws::Vector<GatewayRouteRef>& value) { SetGatewayRoutes(value); return *this;}
-    inline ListGatewayRoutesResult& WithGatewayRoutes(Aws::Vector<GatewayRouteRef>&& value) { SetGatewayRoutes(std::move(value)); return *this;}
-    inline ListGatewayRoutesResult& AddGatewayRoutes(const GatewayRouteRef& value) { m_gatewayRoutes.push_back(value); return *this; }
-    inline ListGatewayRoutesResult& AddGatewayRoutes(GatewayRouteRef&& value) { m_gatewayRoutes.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<GatewayRouteRef>& GetGatewayRoutes() const { return m_gatewayRoutes; }
+    template<typename GatewayRoutesT = Aws::Vector<GatewayRouteRef>>
+    void SetGatewayRoutes(GatewayRoutesT&& value) { m_gatewayRoutesHasBeenSet = true; m_gatewayRoutes = std::forward<GatewayRoutesT>(value); }
+    template<typename GatewayRoutesT = Aws::Vector<GatewayRouteRef>>
+    ListGatewayRoutesResult& WithGatewayRoutes(GatewayRoutesT&& value) { SetGatewayRoutes(std::forward<GatewayRoutesT>(value)); return *this;}
+    template<typename GatewayRoutesT = GatewayRouteRef>
+    ListGatewayRoutesResult& AddGatewayRoutes(GatewayRoutesT&& value) { m_gatewayRoutesHasBeenSet = true; m_gatewayRoutes.emplace_back(std::forward<GatewayRoutesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -56,32 +56,31 @@ namespace Model
      * this value to retrieve the next page of results. This value is <code>null</code>
      * when there are no more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListGatewayRoutesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListGatewayRoutesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListGatewayRoutesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListGatewayRoutesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListGatewayRoutesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListGatewayRoutesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListGatewayRoutesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListGatewayRoutesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<GatewayRouteRef> m_gatewayRoutes;
+    bool m_gatewayRoutesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

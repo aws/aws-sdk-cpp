@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DataSetSchema::DataSetSchema() : 
-    m_columnSchemaListHasBeenSet(false)
-{
-}
-
 DataSetSchema::DataSetSchema(JsonView jsonValue)
-  : DataSetSchema()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ DataSetSchema& DataSetSchema::operator =(JsonView jsonValue)
     }
     m_columnSchemaListHasBeenSet = true;
   }
-
   return *this;
 }
 

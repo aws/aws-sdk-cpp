@@ -18,18 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-Index::Index() : 
-    m_displayNameHasBeenSet(false),
-    m_indexIdHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_status(IndexStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 Index::Index(JsonView jsonValue)
-  : Index()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ Index& Index::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("displayName"))
   {
     m_displayName = jsonValue.GetString("displayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("indexId"))
   {
     m_indexId = jsonValue.GetString("indexId");
-
     m_indexIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = IndexStatusMapper::GetIndexStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

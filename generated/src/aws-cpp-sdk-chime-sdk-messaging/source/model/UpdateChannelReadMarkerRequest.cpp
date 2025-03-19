@@ -13,12 +13,6 @@ using namespace Aws::ChimeSDKMessaging::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateChannelReadMarkerRequest::UpdateChannelReadMarkerRequest() : 
-    m_channelArnHasBeenSet(false),
-    m_chimeBearerHasBeenSet(false)
-{
-}
-
 Aws::String UpdateChannelReadMarkerRequest::SerializePayload() const
 {
   return {};

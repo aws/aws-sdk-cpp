@@ -34,7 +34,7 @@ namespace Model
   class InvalidNetworkAclEntriesViolation
   {
   public:
-    AWS_FMS_API InvalidNetworkAclEntriesViolation();
+    AWS_FMS_API InvalidNetworkAclEntriesViolation() = default;
     AWS_FMS_API InvalidNetworkAclEntriesViolation(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API InvalidNetworkAclEntriesViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,70 +44,62 @@ namespace Model
     /**
      * <p>The VPC where the violation was found. </p>
      */
-    inline const Aws::String& GetVpc() const{ return m_vpc; }
+    inline const Aws::String& GetVpc() const { return m_vpc; }
     inline bool VpcHasBeenSet() const { return m_vpcHasBeenSet; }
-    inline void SetVpc(const Aws::String& value) { m_vpcHasBeenSet = true; m_vpc = value; }
-    inline void SetVpc(Aws::String&& value) { m_vpcHasBeenSet = true; m_vpc = std::move(value); }
-    inline void SetVpc(const char* value) { m_vpcHasBeenSet = true; m_vpc.assign(value); }
-    inline InvalidNetworkAclEntriesViolation& WithVpc(const Aws::String& value) { SetVpc(value); return *this;}
-    inline InvalidNetworkAclEntriesViolation& WithVpc(Aws::String&& value) { SetVpc(std::move(value)); return *this;}
-    inline InvalidNetworkAclEntriesViolation& WithVpc(const char* value) { SetVpc(value); return *this;}
+    template<typename VpcT = Aws::String>
+    void SetVpc(VpcT&& value) { m_vpcHasBeenSet = true; m_vpc = std::forward<VpcT>(value); }
+    template<typename VpcT = Aws::String>
+    InvalidNetworkAclEntriesViolation& WithVpc(VpcT&& value) { SetVpc(std::forward<VpcT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The subnet that's associated with the network ACL.</p>
      */
-    inline const Aws::String& GetSubnet() const{ return m_subnet; }
+    inline const Aws::String& GetSubnet() const { return m_subnet; }
     inline bool SubnetHasBeenSet() const { return m_subnetHasBeenSet; }
-    inline void SetSubnet(const Aws::String& value) { m_subnetHasBeenSet = true; m_subnet = value; }
-    inline void SetSubnet(Aws::String&& value) { m_subnetHasBeenSet = true; m_subnet = std::move(value); }
-    inline void SetSubnet(const char* value) { m_subnetHasBeenSet = true; m_subnet.assign(value); }
-    inline InvalidNetworkAclEntriesViolation& WithSubnet(const Aws::String& value) { SetSubnet(value); return *this;}
-    inline InvalidNetworkAclEntriesViolation& WithSubnet(Aws::String&& value) { SetSubnet(std::move(value)); return *this;}
-    inline InvalidNetworkAclEntriesViolation& WithSubnet(const char* value) { SetSubnet(value); return *this;}
+    template<typename SubnetT = Aws::String>
+    void SetSubnet(SubnetT&& value) { m_subnetHasBeenSet = true; m_subnet = std::forward<SubnetT>(value); }
+    template<typename SubnetT = Aws::String>
+    InvalidNetworkAclEntriesViolation& WithSubnet(SubnetT&& value) { SetSubnet(std::forward<SubnetT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Availability Zone where the network ACL is in use. </p>
      */
-    inline const Aws::String& GetSubnetAvailabilityZone() const{ return m_subnetAvailabilityZone; }
+    inline const Aws::String& GetSubnetAvailabilityZone() const { return m_subnetAvailabilityZone; }
     inline bool SubnetAvailabilityZoneHasBeenSet() const { return m_subnetAvailabilityZoneHasBeenSet; }
-    inline void SetSubnetAvailabilityZone(const Aws::String& value) { m_subnetAvailabilityZoneHasBeenSet = true; m_subnetAvailabilityZone = value; }
-    inline void SetSubnetAvailabilityZone(Aws::String&& value) { m_subnetAvailabilityZoneHasBeenSet = true; m_subnetAvailabilityZone = std::move(value); }
-    inline void SetSubnetAvailabilityZone(const char* value) { m_subnetAvailabilityZoneHasBeenSet = true; m_subnetAvailabilityZone.assign(value); }
-    inline InvalidNetworkAclEntriesViolation& WithSubnetAvailabilityZone(const Aws::String& value) { SetSubnetAvailabilityZone(value); return *this;}
-    inline InvalidNetworkAclEntriesViolation& WithSubnetAvailabilityZone(Aws::String&& value) { SetSubnetAvailabilityZone(std::move(value)); return *this;}
-    inline InvalidNetworkAclEntriesViolation& WithSubnetAvailabilityZone(const char* value) { SetSubnetAvailabilityZone(value); return *this;}
+    template<typename SubnetAvailabilityZoneT = Aws::String>
+    void SetSubnetAvailabilityZone(SubnetAvailabilityZoneT&& value) { m_subnetAvailabilityZoneHasBeenSet = true; m_subnetAvailabilityZone = std::forward<SubnetAvailabilityZoneT>(value); }
+    template<typename SubnetAvailabilityZoneT = Aws::String>
+    InvalidNetworkAclEntriesViolation& WithSubnetAvailabilityZone(SubnetAvailabilityZoneT&& value) { SetSubnetAvailabilityZone(std::forward<SubnetAvailabilityZoneT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The network ACL containing the entry violations. </p>
      */
-    inline const Aws::String& GetCurrentAssociatedNetworkAcl() const{ return m_currentAssociatedNetworkAcl; }
+    inline const Aws::String& GetCurrentAssociatedNetworkAcl() const { return m_currentAssociatedNetworkAcl; }
     inline bool CurrentAssociatedNetworkAclHasBeenSet() const { return m_currentAssociatedNetworkAclHasBeenSet; }
-    inline void SetCurrentAssociatedNetworkAcl(const Aws::String& value) { m_currentAssociatedNetworkAclHasBeenSet = true; m_currentAssociatedNetworkAcl = value; }
-    inline void SetCurrentAssociatedNetworkAcl(Aws::String&& value) { m_currentAssociatedNetworkAclHasBeenSet = true; m_currentAssociatedNetworkAcl = std::move(value); }
-    inline void SetCurrentAssociatedNetworkAcl(const char* value) { m_currentAssociatedNetworkAclHasBeenSet = true; m_currentAssociatedNetworkAcl.assign(value); }
-    inline InvalidNetworkAclEntriesViolation& WithCurrentAssociatedNetworkAcl(const Aws::String& value) { SetCurrentAssociatedNetworkAcl(value); return *this;}
-    inline InvalidNetworkAclEntriesViolation& WithCurrentAssociatedNetworkAcl(Aws::String&& value) { SetCurrentAssociatedNetworkAcl(std::move(value)); return *this;}
-    inline InvalidNetworkAclEntriesViolation& WithCurrentAssociatedNetworkAcl(const char* value) { SetCurrentAssociatedNetworkAcl(value); return *this;}
+    template<typename CurrentAssociatedNetworkAclT = Aws::String>
+    void SetCurrentAssociatedNetworkAcl(CurrentAssociatedNetworkAclT&& value) { m_currentAssociatedNetworkAclHasBeenSet = true; m_currentAssociatedNetworkAcl = std::forward<CurrentAssociatedNetworkAclT>(value); }
+    template<typename CurrentAssociatedNetworkAclT = Aws::String>
+    InvalidNetworkAclEntriesViolation& WithCurrentAssociatedNetworkAcl(CurrentAssociatedNetworkAclT&& value) { SetCurrentAssociatedNetworkAcl(std::forward<CurrentAssociatedNetworkAclT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Detailed information about the entry violations in the network ACL. </p>
      */
-    inline const Aws::Vector<EntryViolation>& GetEntryViolations() const{ return m_entryViolations; }
+    inline const Aws::Vector<EntryViolation>& GetEntryViolations() const { return m_entryViolations; }
     inline bool EntryViolationsHasBeenSet() const { return m_entryViolationsHasBeenSet; }
-    inline void SetEntryViolations(const Aws::Vector<EntryViolation>& value) { m_entryViolationsHasBeenSet = true; m_entryViolations = value; }
-    inline void SetEntryViolations(Aws::Vector<EntryViolation>&& value) { m_entryViolationsHasBeenSet = true; m_entryViolations = std::move(value); }
-    inline InvalidNetworkAclEntriesViolation& WithEntryViolations(const Aws::Vector<EntryViolation>& value) { SetEntryViolations(value); return *this;}
-    inline InvalidNetworkAclEntriesViolation& WithEntryViolations(Aws::Vector<EntryViolation>&& value) { SetEntryViolations(std::move(value)); return *this;}
-    inline InvalidNetworkAclEntriesViolation& AddEntryViolations(const EntryViolation& value) { m_entryViolationsHasBeenSet = true; m_entryViolations.push_back(value); return *this; }
-    inline InvalidNetworkAclEntriesViolation& AddEntryViolations(EntryViolation&& value) { m_entryViolationsHasBeenSet = true; m_entryViolations.push_back(std::move(value)); return *this; }
+    template<typename EntryViolationsT = Aws::Vector<EntryViolation>>
+    void SetEntryViolations(EntryViolationsT&& value) { m_entryViolationsHasBeenSet = true; m_entryViolations = std::forward<EntryViolationsT>(value); }
+    template<typename EntryViolationsT = Aws::Vector<EntryViolation>>
+    InvalidNetworkAclEntriesViolation& WithEntryViolations(EntryViolationsT&& value) { SetEntryViolations(std::forward<EntryViolationsT>(value)); return *this;}
+    template<typename EntryViolationsT = EntryViolation>
+    InvalidNetworkAclEntriesViolation& AddEntryViolations(EntryViolationsT&& value) { m_entryViolationsHasBeenSet = true; m_entryViolations.emplace_back(std::forward<EntryViolationsT>(value)); return *this; }
     ///@}
   private:
 

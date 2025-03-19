@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetHealthCheckLastFailureReasonResult::GetHealthCheckLastFailureReasonResult()
-{
-}
-
 GetHealthCheckLastFailureReasonResult::GetHealthCheckLastFailureReasonResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,12 +32,14 @@ GetHealthCheckLastFailureReasonResult& GetHealthCheckLastFailureReasonResult::op
     if(!healthCheckObservationsNode.IsNull())
     {
       XmlNode healthCheckObservationsMember = healthCheckObservationsNode.FirstChild("HealthCheckObservation");
+      m_healthCheckObservationsHasBeenSet = !healthCheckObservationsMember.IsNull();
       while(!healthCheckObservationsMember.IsNull())
       {
         m_healthCheckObservations.push_back(healthCheckObservationsMember);
         healthCheckObservationsMember = healthCheckObservationsMember.NextNode("HealthCheckObservation");
       }
 
+      m_healthCheckObservationsHasBeenSet = true;
     }
   }
 
@@ -50,6 +48,7 @@ GetHealthCheckLastFailureReasonResult& GetHealthCheckLastFailureReasonResult::op
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

@@ -39,7 +39,7 @@ namespace Model
   class LegalHold
   {
   public:
-    AWS_BACKUP_API LegalHold();
+    AWS_BACKUP_API LegalHold() = default;
     AWS_BACKUP_API LegalHold(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUP_API LegalHold& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,54 +49,46 @@ namespace Model
     /**
      * <p>The title of a legal hold.</p>
      */
-    inline const Aws::String& GetTitle() const{ return m_title; }
+    inline const Aws::String& GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-    inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
-    inline LegalHold& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-    inline LegalHold& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-    inline LegalHold& WithTitle(const char* value) { SetTitle(value); return *this;}
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    LegalHold& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the legal hold.</p>
      */
-    inline const LegalHoldStatus& GetStatus() const{ return m_status; }
+    inline LegalHoldStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const LegalHoldStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(LegalHoldStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline LegalHold& WithStatus(const LegalHoldStatus& value) { SetStatus(value); return *this;}
-    inline LegalHold& WithStatus(LegalHoldStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(LegalHoldStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline LegalHold& WithStatus(LegalHoldStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of a legal hold.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline LegalHold& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline LegalHold& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline LegalHold& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    LegalHold& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the legal hold.</p>
      */
-    inline const Aws::String& GetLegalHoldId() const{ return m_legalHoldId; }
+    inline const Aws::String& GetLegalHoldId() const { return m_legalHoldId; }
     inline bool LegalHoldIdHasBeenSet() const { return m_legalHoldIdHasBeenSet; }
-    inline void SetLegalHoldId(const Aws::String& value) { m_legalHoldIdHasBeenSet = true; m_legalHoldId = value; }
-    inline void SetLegalHoldId(Aws::String&& value) { m_legalHoldIdHasBeenSet = true; m_legalHoldId = std::move(value); }
-    inline void SetLegalHoldId(const char* value) { m_legalHoldIdHasBeenSet = true; m_legalHoldId.assign(value); }
-    inline LegalHold& WithLegalHoldId(const Aws::String& value) { SetLegalHoldId(value); return *this;}
-    inline LegalHold& WithLegalHoldId(Aws::String&& value) { SetLegalHoldId(std::move(value)); return *this;}
-    inline LegalHold& WithLegalHoldId(const char* value) { SetLegalHoldId(value); return *this;}
+    template<typename LegalHoldIdT = Aws::String>
+    void SetLegalHoldId(LegalHoldIdT&& value) { m_legalHoldIdHasBeenSet = true; m_legalHoldId = std::forward<LegalHoldIdT>(value); }
+    template<typename LegalHoldIdT = Aws::String>
+    LegalHold& WithLegalHoldId(LegalHoldIdT&& value) { SetLegalHoldId(std::forward<LegalHoldIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,45 +96,43 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the legal hold; for example,
      * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
      */
-    inline const Aws::String& GetLegalHoldArn() const{ return m_legalHoldArn; }
+    inline const Aws::String& GetLegalHoldArn() const { return m_legalHoldArn; }
     inline bool LegalHoldArnHasBeenSet() const { return m_legalHoldArnHasBeenSet; }
-    inline void SetLegalHoldArn(const Aws::String& value) { m_legalHoldArnHasBeenSet = true; m_legalHoldArn = value; }
-    inline void SetLegalHoldArn(Aws::String&& value) { m_legalHoldArnHasBeenSet = true; m_legalHoldArn = std::move(value); }
-    inline void SetLegalHoldArn(const char* value) { m_legalHoldArnHasBeenSet = true; m_legalHoldArn.assign(value); }
-    inline LegalHold& WithLegalHoldArn(const Aws::String& value) { SetLegalHoldArn(value); return *this;}
-    inline LegalHold& WithLegalHoldArn(Aws::String&& value) { SetLegalHoldArn(std::move(value)); return *this;}
-    inline LegalHold& WithLegalHoldArn(const char* value) { SetLegalHoldArn(value); return *this;}
+    template<typename LegalHoldArnT = Aws::String>
+    void SetLegalHoldArn(LegalHoldArnT&& value) { m_legalHoldArnHasBeenSet = true; m_legalHoldArn = std::forward<LegalHoldArnT>(value); }
+    template<typename LegalHoldArnT = Aws::String>
+    LegalHold& WithLegalHoldArn(LegalHoldArnT&& value) { SetLegalHoldArn(std::forward<LegalHoldArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time when the legal hold was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
+    inline const Aws::Utils::DateTime& GetCreationDate() const { return m_creationDate; }
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
-    inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
-    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
-    inline LegalHold& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
-    inline LegalHold& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    void SetCreationDate(CreationDateT&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::forward<CreationDateT>(value); }
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    LegalHold& WithCreationDate(CreationDateT&& value) { SetCreationDate(std::forward<CreationDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time when the legal hold was cancelled.</p>
      */
-    inline const Aws::Utils::DateTime& GetCancellationDate() const{ return m_cancellationDate; }
+    inline const Aws::Utils::DateTime& GetCancellationDate() const { return m_cancellationDate; }
     inline bool CancellationDateHasBeenSet() const { return m_cancellationDateHasBeenSet; }
-    inline void SetCancellationDate(const Aws::Utils::DateTime& value) { m_cancellationDateHasBeenSet = true; m_cancellationDate = value; }
-    inline void SetCancellationDate(Aws::Utils::DateTime&& value) { m_cancellationDateHasBeenSet = true; m_cancellationDate = std::move(value); }
-    inline LegalHold& WithCancellationDate(const Aws::Utils::DateTime& value) { SetCancellationDate(value); return *this;}
-    inline LegalHold& WithCancellationDate(Aws::Utils::DateTime&& value) { SetCancellationDate(std::move(value)); return *this;}
+    template<typename CancellationDateT = Aws::Utils::DateTime>
+    void SetCancellationDate(CancellationDateT&& value) { m_cancellationDateHasBeenSet = true; m_cancellationDate = std::forward<CancellationDateT>(value); }
+    template<typename CancellationDateT = Aws::Utils::DateTime>
+    LegalHold& WithCancellationDate(CancellationDateT&& value) { SetCancellationDate(std::forward<CancellationDateT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_title;
     bool m_titleHasBeenSet = false;
 
-    LegalHoldStatus m_status;
+    LegalHoldStatus m_status{LegalHoldStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_description;
@@ -154,10 +144,10 @@ namespace Model
     Aws::String m_legalHoldArn;
     bool m_legalHoldArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDate;
+    Aws::Utils::DateTime m_creationDate{};
     bool m_creationDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_cancellationDate;
+    Aws::Utils::DateTime m_cancellationDate{};
     bool m_cancellationDateHasBeenSet = false;
   };
 

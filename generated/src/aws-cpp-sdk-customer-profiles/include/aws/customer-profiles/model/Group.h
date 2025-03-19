@@ -35,7 +35,7 @@ namespace Model
   class Group
   {
   public:
-    AWS_CUSTOMERPROFILES_API Group();
+    AWS_CUSTOMERPROFILES_API Group() = default;
     AWS_CUSTOMERPROFILES_API Group(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API Group& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,52 +45,48 @@ namespace Model
     /**
      * <p>Defines the attributes to segment on.</p>
      */
-    inline const Aws::Vector<Dimension>& GetDimensions() const{ return m_dimensions; }
+    inline const Aws::Vector<Dimension>& GetDimensions() const { return m_dimensions; }
     inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
-    inline void SetDimensions(const Aws::Vector<Dimension>& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
-    inline void SetDimensions(Aws::Vector<Dimension>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::move(value); }
-    inline Group& WithDimensions(const Aws::Vector<Dimension>& value) { SetDimensions(value); return *this;}
-    inline Group& WithDimensions(Aws::Vector<Dimension>&& value) { SetDimensions(std::move(value)); return *this;}
-    inline Group& AddDimensions(const Dimension& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
-    inline Group& AddDimensions(Dimension&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(std::move(value)); return *this; }
+    template<typename DimensionsT = Aws::Vector<Dimension>>
+    void SetDimensions(DimensionsT&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::forward<DimensionsT>(value); }
+    template<typename DimensionsT = Aws::Vector<Dimension>>
+    Group& WithDimensions(DimensionsT&& value) { SetDimensions(std::forward<DimensionsT>(value)); return *this;}
+    template<typename DimensionsT = Dimension>
+    Group& AddDimensions(DimensionsT&& value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace_back(std::forward<DimensionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Defines the starting source of data.</p>
      */
-    inline const Aws::Vector<SourceSegment>& GetSourceSegments() const{ return m_sourceSegments; }
+    inline const Aws::Vector<SourceSegment>& GetSourceSegments() const { return m_sourceSegments; }
     inline bool SourceSegmentsHasBeenSet() const { return m_sourceSegmentsHasBeenSet; }
-    inline void SetSourceSegments(const Aws::Vector<SourceSegment>& value) { m_sourceSegmentsHasBeenSet = true; m_sourceSegments = value; }
-    inline void SetSourceSegments(Aws::Vector<SourceSegment>&& value) { m_sourceSegmentsHasBeenSet = true; m_sourceSegments = std::move(value); }
-    inline Group& WithSourceSegments(const Aws::Vector<SourceSegment>& value) { SetSourceSegments(value); return *this;}
-    inline Group& WithSourceSegments(Aws::Vector<SourceSegment>&& value) { SetSourceSegments(std::move(value)); return *this;}
-    inline Group& AddSourceSegments(const SourceSegment& value) { m_sourceSegmentsHasBeenSet = true; m_sourceSegments.push_back(value); return *this; }
-    inline Group& AddSourceSegments(SourceSegment&& value) { m_sourceSegmentsHasBeenSet = true; m_sourceSegments.push_back(std::move(value)); return *this; }
+    template<typename SourceSegmentsT = Aws::Vector<SourceSegment>>
+    void SetSourceSegments(SourceSegmentsT&& value) { m_sourceSegmentsHasBeenSet = true; m_sourceSegments = std::forward<SourceSegmentsT>(value); }
+    template<typename SourceSegmentsT = Aws::Vector<SourceSegment>>
+    Group& WithSourceSegments(SourceSegmentsT&& value) { SetSourceSegments(std::forward<SourceSegmentsT>(value)); return *this;}
+    template<typename SourceSegmentsT = SourceSegment>
+    Group& AddSourceSegments(SourceSegmentsT&& value) { m_sourceSegmentsHasBeenSet = true; m_sourceSegments.emplace_back(std::forward<SourceSegmentsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Defines how to interact with the source data.</p>
      */
-    inline const IncludeOptions& GetSourceType() const{ return m_sourceType; }
+    inline IncludeOptions GetSourceType() const { return m_sourceType; }
     inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
-    inline void SetSourceType(const IncludeOptions& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
-    inline void SetSourceType(IncludeOptions&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
-    inline Group& WithSourceType(const IncludeOptions& value) { SetSourceType(value); return *this;}
-    inline Group& WithSourceType(IncludeOptions&& value) { SetSourceType(std::move(value)); return *this;}
+    inline void SetSourceType(IncludeOptions value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
+    inline Group& WithSourceType(IncludeOptions value) { SetSourceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Defines how to interact with the profiles found in the current filtering.</p>
      */
-    inline const IncludeOptions& GetType() const{ return m_type; }
+    inline IncludeOptions GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const IncludeOptions& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(IncludeOptions&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline Group& WithType(const IncludeOptions& value) { SetType(value); return *this;}
-    inline Group& WithType(IncludeOptions&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(IncludeOptions value) { m_typeHasBeenSet = true; m_type = value; }
+    inline Group& WithType(IncludeOptions value) { SetType(value); return *this;}
     ///@}
   private:
 
@@ -100,10 +96,10 @@ namespace Model
     Aws::Vector<SourceSegment> m_sourceSegments;
     bool m_sourceSegmentsHasBeenSet = false;
 
-    IncludeOptions m_sourceType;
+    IncludeOptions m_sourceType{IncludeOptions::NOT_SET};
     bool m_sourceTypeHasBeenSet = false;
 
-    IncludeOptions m_type;
+    IncludeOptions m_type{IncludeOptions::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

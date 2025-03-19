@@ -32,7 +32,7 @@ namespace Model
   class InvokedIntentSample
   {
   public:
-    AWS_LEXMODELSV2_API InvokedIntentSample();
+    AWS_LEXMODELSV2_API InvokedIntentSample() = default;
     AWS_LEXMODELSV2_API InvokedIntentSample(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API InvokedIntentSample& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of an intent that was invoked.</p>
      */
-    inline const Aws::String& GetIntentName() const{ return m_intentName; }
+    inline const Aws::String& GetIntentName() const { return m_intentName; }
     inline bool IntentNameHasBeenSet() const { return m_intentNameHasBeenSet; }
-    inline void SetIntentName(const Aws::String& value) { m_intentNameHasBeenSet = true; m_intentName = value; }
-    inline void SetIntentName(Aws::String&& value) { m_intentNameHasBeenSet = true; m_intentName = std::move(value); }
-    inline void SetIntentName(const char* value) { m_intentNameHasBeenSet = true; m_intentName.assign(value); }
-    inline InvokedIntentSample& WithIntentName(const Aws::String& value) { SetIntentName(value); return *this;}
-    inline InvokedIntentSample& WithIntentName(Aws::String&& value) { SetIntentName(std::move(value)); return *this;}
-    inline InvokedIntentSample& WithIntentName(const char* value) { SetIntentName(value); return *this;}
+    template<typename IntentNameT = Aws::String>
+    void SetIntentName(IntentNameT&& value) { m_intentNameHasBeenSet = true; m_intentName = std::forward<IntentNameT>(value); }
+    template<typename IntentNameT = Aws::String>
+    InvokedIntentSample& WithIntentName(IntentNameT&& value) { SetIntentName(std::forward<IntentNameT>(value)); return *this;}
     ///@}
   private:
 

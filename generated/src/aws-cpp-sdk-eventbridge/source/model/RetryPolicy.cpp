@@ -18,16 +18,7 @@ namespace EventBridge
 namespace Model
 {
 
-RetryPolicy::RetryPolicy() : 
-    m_maximumRetryAttempts(0),
-    m_maximumRetryAttemptsHasBeenSet(false),
-    m_maximumEventAgeInSeconds(0),
-    m_maximumEventAgeInSecondsHasBeenSet(false)
-{
-}
-
 RetryPolicy::RetryPolicy(JsonView jsonValue)
-  : RetryPolicy()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ RetryPolicy& RetryPolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MaximumRetryAttempts"))
   {
     m_maximumRetryAttempts = jsonValue.GetInteger("MaximumRetryAttempts");
-
     m_maximumRetryAttemptsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaximumEventAgeInSeconds"))
   {
     m_maximumEventAgeInSeconds = jsonValue.GetInteger("MaximumEventAgeInSeconds");
-
     m_maximumEventAgeInSecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

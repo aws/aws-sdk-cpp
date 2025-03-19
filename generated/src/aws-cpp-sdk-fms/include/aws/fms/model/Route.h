@@ -33,7 +33,7 @@ namespace Model
   class Route
   {
   public:
-    AWS_FMS_API Route();
+    AWS_FMS_API Route() = default;
     AWS_FMS_API Route(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API Route& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,59 +43,51 @@ namespace Model
     /**
      * <p>The type of destination for the route.</p>
      */
-    inline const DestinationType& GetDestinationType() const{ return m_destinationType; }
+    inline DestinationType GetDestinationType() const { return m_destinationType; }
     inline bool DestinationTypeHasBeenSet() const { return m_destinationTypeHasBeenSet; }
-    inline void SetDestinationType(const DestinationType& value) { m_destinationTypeHasBeenSet = true; m_destinationType = value; }
-    inline void SetDestinationType(DestinationType&& value) { m_destinationTypeHasBeenSet = true; m_destinationType = std::move(value); }
-    inline Route& WithDestinationType(const DestinationType& value) { SetDestinationType(value); return *this;}
-    inline Route& WithDestinationType(DestinationType&& value) { SetDestinationType(std::move(value)); return *this;}
+    inline void SetDestinationType(DestinationType value) { m_destinationTypeHasBeenSet = true; m_destinationType = value; }
+    inline Route& WithDestinationType(DestinationType value) { SetDestinationType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of target for the route.</p>
      */
-    inline const TargetType& GetTargetType() const{ return m_targetType; }
+    inline TargetType GetTargetType() const { return m_targetType; }
     inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
-    inline void SetTargetType(const TargetType& value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
-    inline void SetTargetType(TargetType&& value) { m_targetTypeHasBeenSet = true; m_targetType = std::move(value); }
-    inline Route& WithTargetType(const TargetType& value) { SetTargetType(value); return *this;}
-    inline Route& WithTargetType(TargetType&& value) { SetTargetType(std::move(value)); return *this;}
+    inline void SetTargetType(TargetType value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
+    inline Route& WithTargetType(TargetType value) { SetTargetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The destination of the route.</p>
      */
-    inline const Aws::String& GetDestination() const{ return m_destination; }
+    inline const Aws::String& GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const Aws::String& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline void SetDestination(const char* value) { m_destinationHasBeenSet = true; m_destination.assign(value); }
-    inline Route& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
-    inline Route& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
-    inline Route& WithDestination(const char* value) { SetDestination(value); return *this;}
+    template<typename DestinationT = Aws::String>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = Aws::String>
+    Route& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The route's target.</p>
      */
-    inline const Aws::String& GetTarget() const{ return m_target; }
+    inline const Aws::String& GetTarget() const { return m_target; }
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-    inline void SetTarget(const Aws::String& value) { m_targetHasBeenSet = true; m_target = value; }
-    inline void SetTarget(Aws::String&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-    inline void SetTarget(const char* value) { m_targetHasBeenSet = true; m_target.assign(value); }
-    inline Route& WithTarget(const Aws::String& value) { SetTarget(value); return *this;}
-    inline Route& WithTarget(Aws::String&& value) { SetTarget(std::move(value)); return *this;}
-    inline Route& WithTarget(const char* value) { SetTarget(value); return *this;}
+    template<typename TargetT = Aws::String>
+    void SetTarget(TargetT&& value) { m_targetHasBeenSet = true; m_target = std::forward<TargetT>(value); }
+    template<typename TargetT = Aws::String>
+    Route& WithTarget(TargetT&& value) { SetTarget(std::forward<TargetT>(value)); return *this;}
     ///@}
   private:
 
-    DestinationType m_destinationType;
+    DestinationType m_destinationType{DestinationType::NOT_SET};
     bool m_destinationTypeHasBeenSet = false;
 
-    TargetType m_targetType;
+    TargetType m_targetType{TargetType::NOT_SET};
     bool m_targetTypeHasBeenSet = false;
 
     Aws::String m_destination;

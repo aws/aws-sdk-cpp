@@ -21,7 +21,7 @@ namespace Model
   class GetResourceSnapshotJobRequest : public PartnerCentralSellingRequest
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API GetResourceSnapshotJobRequest();
+    AWS_PARTNERCENTRALSELLING_API GetResourceSnapshotJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * </li> <li> <p> Sandbox: Retrieves the snapshot job from a sandbox environment
      * used for testing or development purposes. </p> </li> </ul>
      */
-    inline const Aws::String& GetCatalog() const{ return m_catalog; }
+    inline const Aws::String& GetCatalog() const { return m_catalog; }
     inline bool CatalogHasBeenSet() const { return m_catalogHasBeenSet; }
-    inline void SetCatalog(const Aws::String& value) { m_catalogHasBeenSet = true; m_catalog = value; }
-    inline void SetCatalog(Aws::String&& value) { m_catalogHasBeenSet = true; m_catalog = std::move(value); }
-    inline void SetCatalog(const char* value) { m_catalogHasBeenSet = true; m_catalog.assign(value); }
-    inline GetResourceSnapshotJobRequest& WithCatalog(const Aws::String& value) { SetCatalog(value); return *this;}
-    inline GetResourceSnapshotJobRequest& WithCatalog(Aws::String&& value) { SetCatalog(std::move(value)); return *this;}
-    inline GetResourceSnapshotJobRequest& WithCatalog(const char* value) { SetCatalog(value); return *this;}
+    template<typename CatalogT = Aws::String>
+    void SetCatalog(CatalogT&& value) { m_catalogHasBeenSet = true; m_catalog = std::forward<CatalogT>(value); }
+    template<typename CatalogT = Aws::String>
+    GetResourceSnapshotJobRequest& WithCatalog(CatalogT&& value) { SetCatalog(std::forward<CatalogT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * <p>The unique identifier of the resource snapshot job to be retrieved. This
      * identifier is crucial for pinpointing the specific job you want to query. </p>
      */
-    inline const Aws::String& GetResourceSnapshotJobIdentifier() const{ return m_resourceSnapshotJobIdentifier; }
+    inline const Aws::String& GetResourceSnapshotJobIdentifier() const { return m_resourceSnapshotJobIdentifier; }
     inline bool ResourceSnapshotJobIdentifierHasBeenSet() const { return m_resourceSnapshotJobIdentifierHasBeenSet; }
-    inline void SetResourceSnapshotJobIdentifier(const Aws::String& value) { m_resourceSnapshotJobIdentifierHasBeenSet = true; m_resourceSnapshotJobIdentifier = value; }
-    inline void SetResourceSnapshotJobIdentifier(Aws::String&& value) { m_resourceSnapshotJobIdentifierHasBeenSet = true; m_resourceSnapshotJobIdentifier = std::move(value); }
-    inline void SetResourceSnapshotJobIdentifier(const char* value) { m_resourceSnapshotJobIdentifierHasBeenSet = true; m_resourceSnapshotJobIdentifier.assign(value); }
-    inline GetResourceSnapshotJobRequest& WithResourceSnapshotJobIdentifier(const Aws::String& value) { SetResourceSnapshotJobIdentifier(value); return *this;}
-    inline GetResourceSnapshotJobRequest& WithResourceSnapshotJobIdentifier(Aws::String&& value) { SetResourceSnapshotJobIdentifier(std::move(value)); return *this;}
-    inline GetResourceSnapshotJobRequest& WithResourceSnapshotJobIdentifier(const char* value) { SetResourceSnapshotJobIdentifier(value); return *this;}
+    template<typename ResourceSnapshotJobIdentifierT = Aws::String>
+    void SetResourceSnapshotJobIdentifier(ResourceSnapshotJobIdentifierT&& value) { m_resourceSnapshotJobIdentifierHasBeenSet = true; m_resourceSnapshotJobIdentifier = std::forward<ResourceSnapshotJobIdentifierT>(value); }
+    template<typename ResourceSnapshotJobIdentifierT = Aws::String>
+    GetResourceSnapshotJobRequest& WithResourceSnapshotJobIdentifier(ResourceSnapshotJobIdentifierT&& value) { SetResourceSnapshotJobIdentifier(std::forward<ResourceSnapshotJobIdentifierT>(value)); return *this;}
     ///@}
   private:
 

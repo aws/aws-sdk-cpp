@@ -18,13 +18,7 @@ namespace AppTest
 namespace Model
 {
 
-DeleteCloudFormationStepInput::DeleteCloudFormationStepInput() : 
-    m_stackIdHasBeenSet(false)
-{
-}
-
 DeleteCloudFormationStepInput::DeleteCloudFormationStepInput(JsonView jsonValue)
-  : DeleteCloudFormationStepInput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DeleteCloudFormationStepInput& DeleteCloudFormationStepInput::operator =(JsonVie
   if(jsonValue.ValueExists("stackId"))
   {
     m_stackId = jsonValue.GetString("stackId");
-
     m_stackIdHasBeenSet = true;
   }
-
   return *this;
 }
 

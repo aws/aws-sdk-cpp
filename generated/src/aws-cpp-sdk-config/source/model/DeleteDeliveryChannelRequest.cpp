@@ -12,11 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDeliveryChannelRequest::DeleteDeliveryChannelRequest() : 
-    m_deliveryChannelNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDeliveryChannelRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -20,16 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-Error::Error() : 
-    m_keyHasBeenSet(false),
-    m_versionIdHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 Error::Error(const XmlNode& xmlNode)
-  : Error()
 {
   *this = xmlNode;
 }

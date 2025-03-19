@@ -18,16 +18,7 @@ namespace Detective
 namespace Model
 {
 
-SortCriteria::SortCriteria() : 
-    m_field(Field::NOT_SET),
-    m_fieldHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
-{
-}
-
 SortCriteria::SortCriteria(JsonView jsonValue)
-  : SortCriteria()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ SortCriteria& SortCriteria::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Field"))
   {
     m_field = FieldMapper::GetFieldForName(jsonValue.GetString("Field"));
-
     m_fieldHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SortOrder"))
   {
     m_sortOrder = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("SortOrder"));
-
     m_sortOrderHasBeenSet = true;
   }
-
   return *this;
 }
 

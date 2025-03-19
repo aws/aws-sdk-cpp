@@ -18,16 +18,7 @@ namespace SSMIncidents
 namespace Model
 {
 
-CodeDeployDeployment::CodeDeployDeployment() : 
-    m_deploymentGroupArnHasBeenSet(false),
-    m_deploymentIdHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
-{
-}
-
 CodeDeployDeployment::CodeDeployDeployment(JsonView jsonValue)
-  : CodeDeployDeployment()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ CodeDeployDeployment& CodeDeployDeployment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("deploymentGroupArn"))
   {
     m_deploymentGroupArn = jsonValue.GetString("deploymentGroupArn");
-
     m_deploymentGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deploymentId"))
   {
     m_deploymentId = jsonValue.GetString("deploymentId");
-
     m_deploymentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetDouble("endTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetDouble("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

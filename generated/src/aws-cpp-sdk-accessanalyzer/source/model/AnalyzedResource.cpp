@@ -18,26 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-AnalyzedResource::AnalyzedResource() : 
-    m_resourceArnHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_analyzedAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_isPublic(false),
-    m_isPublicHasBeenSet(false),
-    m_actionsHasBeenSet(false),
-    m_sharedViaHasBeenSet(false),
-    m_status(FindingStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_resourceOwnerAccountHasBeenSet(false),
-    m_errorHasBeenSet(false)
-{
-}
-
 AnalyzedResource::AnalyzedResource(JsonView jsonValue)
-  : AnalyzedResource()
 {
   *this = jsonValue;
 }
@@ -47,45 +28,33 @@ AnalyzedResource& AnalyzedResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("resourceArn"))
   {
     m_resourceArn = jsonValue.GetString("resourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("resourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("analyzedAt"))
   {
     m_analyzedAt = jsonValue.GetString("analyzedAt");
-
     m_analyzedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isPublic"))
   {
     m_isPublic = jsonValue.GetBool("isPublic");
-
     m_isPublicHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actions"))
   {
     Aws::Utils::Array<JsonView> actionsJsonList = jsonValue.GetArray("actions");
@@ -95,7 +64,6 @@ AnalyzedResource& AnalyzedResource::operator =(JsonView jsonValue)
     }
     m_actionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sharedVia"))
   {
     Aws::Utils::Array<JsonView> sharedViaJsonList = jsonValue.GetArray("sharedVia");
@@ -105,28 +73,21 @@ AnalyzedResource& AnalyzedResource::operator =(JsonView jsonValue)
     }
     m_sharedViaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = FindingStatusMapper::GetFindingStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceOwnerAccount"))
   {
     m_resourceOwnerAccount = jsonValue.GetString("resourceOwnerAccount");
-
     m_resourceOwnerAccountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("error"))
   {
     m_error = jsonValue.GetString("error");
-
     m_errorHasBeenSet = true;
   }
-
   return *this;
 }
 

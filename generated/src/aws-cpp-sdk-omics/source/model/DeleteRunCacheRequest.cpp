@@ -12,11 +12,6 @@ using namespace Aws::Omics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteRunCacheRequest::DeleteRunCacheRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRunCacheRequest::SerializePayload() const
 {
   return {};

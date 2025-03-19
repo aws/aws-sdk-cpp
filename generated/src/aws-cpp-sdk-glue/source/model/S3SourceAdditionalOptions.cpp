@@ -18,16 +18,7 @@ namespace Glue
 namespace Model
 {
 
-S3SourceAdditionalOptions::S3SourceAdditionalOptions() : 
-    m_boundedSize(0),
-    m_boundedSizeHasBeenSet(false),
-    m_boundedFiles(0),
-    m_boundedFilesHasBeenSet(false)
-{
-}
-
 S3SourceAdditionalOptions::S3SourceAdditionalOptions(JsonView jsonValue)
-  : S3SourceAdditionalOptions()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ S3SourceAdditionalOptions& S3SourceAdditionalOptions::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("BoundedSize"))
   {
     m_boundedSize = jsonValue.GetInt64("BoundedSize");
-
     m_boundedSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BoundedFiles"))
   {
     m_boundedFiles = jsonValue.GetInt64("BoundedFiles");
-
     m_boundedFilesHasBeenSet = true;
   }
-
   return *this;
 }
 

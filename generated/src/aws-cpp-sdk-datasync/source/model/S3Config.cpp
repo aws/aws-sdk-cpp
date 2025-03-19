@@ -18,13 +18,7 @@ namespace DataSync
 namespace Model
 {
 
-S3Config::S3Config() : 
-    m_bucketAccessRoleArnHasBeenSet(false)
-{
-}
-
 S3Config::S3Config(JsonView jsonValue)
-  : S3Config()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ S3Config& S3Config::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BucketAccessRoleArn"))
   {
     m_bucketAccessRoleArn = jsonValue.GetString("BucketAccessRoleArn");
-
     m_bucketAccessRoleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

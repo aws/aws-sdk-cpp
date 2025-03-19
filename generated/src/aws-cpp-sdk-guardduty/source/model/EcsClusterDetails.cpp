@@ -18,23 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-EcsClusterDetails::EcsClusterDetails() : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_activeServicesCount(0),
-    m_activeServicesCountHasBeenSet(false),
-    m_registeredContainerInstancesCount(0),
-    m_registeredContainerInstancesCountHasBeenSet(false),
-    m_runningTasksCount(0),
-    m_runningTasksCountHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_taskDetailsHasBeenSet(false)
-{
-}
-
 EcsClusterDetails::EcsClusterDetails(JsonView jsonValue)
-  : EcsClusterDetails()
 {
   *this = jsonValue;
 }
@@ -44,45 +28,33 @@ EcsClusterDetails& EcsClusterDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("activeServicesCount"))
   {
     m_activeServicesCount = jsonValue.GetInteger("activeServicesCount");
-
     m_activeServicesCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("registeredContainerInstancesCount"))
   {
     m_registeredContainerInstancesCount = jsonValue.GetInteger("registeredContainerInstancesCount");
-
     m_registeredContainerInstancesCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runningTasksCount"))
   {
     m_runningTasksCount = jsonValue.GetInteger("runningTasksCount");
-
     m_runningTasksCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -92,14 +64,11 @@ EcsClusterDetails& EcsClusterDetails::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskDetails"))
   {
     m_taskDetails = jsonValue.GetObject("taskDetails");
-
     m_taskDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

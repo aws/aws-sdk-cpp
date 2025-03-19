@@ -18,14 +18,7 @@ namespace IoT
 namespace Model
 {
 
-FleetMetricNameAndArn::FleetMetricNameAndArn() : 
-    m_metricNameHasBeenSet(false),
-    m_metricArnHasBeenSet(false)
-{
-}
-
 FleetMetricNameAndArn::FleetMetricNameAndArn(JsonView jsonValue)
-  : FleetMetricNameAndArn()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ FleetMetricNameAndArn& FleetMetricNameAndArn::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("metricName"))
   {
     m_metricName = jsonValue.GetString("metricName");
-
     m_metricNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metricArn"))
   {
     m_metricArn = jsonValue.GetString("metricArn");
-
     m_metricArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class BaiduChannelResponse
   {
   public:
-    AWS_PINPOINT_API BaiduChannelResponse();
+    AWS_PINPOINT_API BaiduChannelResponse() = default;
     AWS_PINPOINT_API BaiduChannelResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API BaiduChannelResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
      * <p>The unique identifier for the application that the Baidu channel applies
      * to.</p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-    inline BaiduChannelResponse& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline BaiduChannelResponse& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline BaiduChannelResponse& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    BaiduChannelResponse& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time when the Baidu channel was enabled.</p>
      */
-    inline const Aws::String& GetCreationDate() const{ return m_creationDate; }
+    inline const Aws::String& GetCreationDate() const { return m_creationDate; }
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
-    inline void SetCreationDate(const Aws::String& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
-    inline void SetCreationDate(Aws::String&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
-    inline void SetCreationDate(const char* value) { m_creationDateHasBeenSet = true; m_creationDate.assign(value); }
-    inline BaiduChannelResponse& WithCreationDate(const Aws::String& value) { SetCreationDate(value); return *this;}
-    inline BaiduChannelResponse& WithCreationDate(Aws::String&& value) { SetCreationDate(std::move(value)); return *this;}
-    inline BaiduChannelResponse& WithCreationDate(const char* value) { SetCreationDate(value); return *this;}
+    template<typename CreationDateT = Aws::String>
+    void SetCreationDate(CreationDateT&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::forward<CreationDateT>(value); }
+    template<typename CreationDateT = Aws::String>
+    BaiduChannelResponse& WithCreationDate(CreationDateT&& value) { SetCreationDate(std::forward<CreationDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,21 +68,19 @@ namespace Model
      * <p>The API key that you received from the Baidu Cloud Push service to
      * communicate with the service.</p>
      */
-    inline const Aws::String& GetCredential() const{ return m_credential; }
+    inline const Aws::String& GetCredential() const { return m_credential; }
     inline bool CredentialHasBeenSet() const { return m_credentialHasBeenSet; }
-    inline void SetCredential(const Aws::String& value) { m_credentialHasBeenSet = true; m_credential = value; }
-    inline void SetCredential(Aws::String&& value) { m_credentialHasBeenSet = true; m_credential = std::move(value); }
-    inline void SetCredential(const char* value) { m_credentialHasBeenSet = true; m_credential.assign(value); }
-    inline BaiduChannelResponse& WithCredential(const Aws::String& value) { SetCredential(value); return *this;}
-    inline BaiduChannelResponse& WithCredential(Aws::String&& value) { SetCredential(std::move(value)); return *this;}
-    inline BaiduChannelResponse& WithCredential(const char* value) { SetCredential(value); return *this;}
+    template<typename CredentialT = Aws::String>
+    void SetCredential(CredentialT&& value) { m_credentialHasBeenSet = true; m_credential = std::forward<CredentialT>(value); }
+    template<typename CredentialT = Aws::String>
+    BaiduChannelResponse& WithCredential(CredentialT&& value) { SetCredential(std::forward<CredentialT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies whether the Baidu channel is enabled for the application.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline BaiduChannelResponse& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -96,7 +90,7 @@ namespace Model
     /**
      * <p>(Not used) This property is retained only for backward compatibility.</p>
      */
-    inline bool GetHasCredential() const{ return m_hasCredential; }
+    inline bool GetHasCredential() const { return m_hasCredential; }
     inline bool HasCredentialHasBeenSet() const { return m_hasCredentialHasBeenSet; }
     inline void SetHasCredential(bool value) { m_hasCredentialHasBeenSet = true; m_hasCredential = value; }
     inline BaiduChannelResponse& WithHasCredential(bool value) { SetHasCredential(value); return *this;}
@@ -107,21 +101,19 @@ namespace Model
      * <p>(Deprecated) An identifier for the Baidu channel. This property is retained
      * only for backward compatibility.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline BaiduChannelResponse& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline BaiduChannelResponse& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline BaiduChannelResponse& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    BaiduChannelResponse& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies whether the Baidu channel is archived.</p>
      */
-    inline bool GetIsArchived() const{ return m_isArchived; }
+    inline bool GetIsArchived() const { return m_isArchived; }
     inline bool IsArchivedHasBeenSet() const { return m_isArchivedHasBeenSet; }
     inline void SetIsArchived(bool value) { m_isArchivedHasBeenSet = true; m_isArchived = value; }
     inline BaiduChannelResponse& WithIsArchived(bool value) { SetIsArchived(value); return *this;}
@@ -131,28 +123,24 @@ namespace Model
     /**
      * <p>The user who last modified the Baidu channel.</p>
      */
-    inline const Aws::String& GetLastModifiedBy() const{ return m_lastModifiedBy; }
+    inline const Aws::String& GetLastModifiedBy() const { return m_lastModifiedBy; }
     inline bool LastModifiedByHasBeenSet() const { return m_lastModifiedByHasBeenSet; }
-    inline void SetLastModifiedBy(const Aws::String& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = value; }
-    inline void SetLastModifiedBy(Aws::String&& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = std::move(value); }
-    inline void SetLastModifiedBy(const char* value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy.assign(value); }
-    inline BaiduChannelResponse& WithLastModifiedBy(const Aws::String& value) { SetLastModifiedBy(value); return *this;}
-    inline BaiduChannelResponse& WithLastModifiedBy(Aws::String&& value) { SetLastModifiedBy(std::move(value)); return *this;}
-    inline BaiduChannelResponse& WithLastModifiedBy(const char* value) { SetLastModifiedBy(value); return *this;}
+    template<typename LastModifiedByT = Aws::String>
+    void SetLastModifiedBy(LastModifiedByT&& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = std::forward<LastModifiedByT>(value); }
+    template<typename LastModifiedByT = Aws::String>
+    BaiduChannelResponse& WithLastModifiedBy(LastModifiedByT&& value) { SetLastModifiedBy(std::forward<LastModifiedByT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time when the Baidu channel was last modified.</p>
      */
-    inline const Aws::String& GetLastModifiedDate() const{ return m_lastModifiedDate; }
+    inline const Aws::String& GetLastModifiedDate() const { return m_lastModifiedDate; }
     inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
-    inline void SetLastModifiedDate(const Aws::String& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
-    inline void SetLastModifiedDate(Aws::String&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::move(value); }
-    inline void SetLastModifiedDate(const char* value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate.assign(value); }
-    inline BaiduChannelResponse& WithLastModifiedDate(const Aws::String& value) { SetLastModifiedDate(value); return *this;}
-    inline BaiduChannelResponse& WithLastModifiedDate(Aws::String&& value) { SetLastModifiedDate(std::move(value)); return *this;}
-    inline BaiduChannelResponse& WithLastModifiedDate(const char* value) { SetLastModifiedDate(value); return *this;}
+    template<typename LastModifiedDateT = Aws::String>
+    void SetLastModifiedDate(LastModifiedDateT&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::forward<LastModifiedDateT>(value); }
+    template<typename LastModifiedDateT = Aws::String>
+    BaiduChannelResponse& WithLastModifiedDate(LastModifiedDateT&& value) { SetLastModifiedDate(std::forward<LastModifiedDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -160,21 +148,19 @@ namespace Model
      * <p>The type of messaging or notification platform for the channel. For the Baidu
      * channel, this value is BAIDU.</p>
      */
-    inline const Aws::String& GetPlatform() const{ return m_platform; }
+    inline const Aws::String& GetPlatform() const { return m_platform; }
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
-    inline void SetPlatform(const Aws::String& value) { m_platformHasBeenSet = true; m_platform = value; }
-    inline void SetPlatform(Aws::String&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
-    inline void SetPlatform(const char* value) { m_platformHasBeenSet = true; m_platform.assign(value); }
-    inline BaiduChannelResponse& WithPlatform(const Aws::String& value) { SetPlatform(value); return *this;}
-    inline BaiduChannelResponse& WithPlatform(Aws::String&& value) { SetPlatform(std::move(value)); return *this;}
-    inline BaiduChannelResponse& WithPlatform(const char* value) { SetPlatform(value); return *this;}
+    template<typename PlatformT = Aws::String>
+    void SetPlatform(PlatformT&& value) { m_platformHasBeenSet = true; m_platform = std::forward<PlatformT>(value); }
+    template<typename PlatformT = Aws::String>
+    BaiduChannelResponse& WithPlatform(PlatformT&& value) { SetPlatform(std::forward<PlatformT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current version of the Baidu channel.</p>
      */
-    inline int GetVersion() const{ return m_version; }
+    inline int GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
     inline void SetVersion(int value) { m_versionHasBeenSet = true; m_version = value; }
     inline BaiduChannelResponse& WithVersion(int value) { SetVersion(value); return *this;}
@@ -190,16 +176,16 @@ namespace Model
     Aws::String m_credential;
     bool m_credentialHasBeenSet = false;
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
-    bool m_hasCredential;
+    bool m_hasCredential{false};
     bool m_hasCredentialHasBeenSet = false;
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    bool m_isArchived;
+    bool m_isArchived{false};
     bool m_isArchivedHasBeenSet = false;
 
     Aws::String m_lastModifiedBy;
@@ -211,7 +197,7 @@ namespace Model
     Aws::String m_platform;
     bool m_platformHasBeenSet = false;
 
-    int m_version;
+    int m_version{0};
     bool m_versionHasBeenSet = false;
   };
 

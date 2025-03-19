@@ -12,11 +12,6 @@ using namespace Aws::CleanRoomsML::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAudienceModelRequest::DeleteAudienceModelRequest() : 
-    m_audienceModelArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAudienceModelRequest::SerializePayload() const
 {
   return {};

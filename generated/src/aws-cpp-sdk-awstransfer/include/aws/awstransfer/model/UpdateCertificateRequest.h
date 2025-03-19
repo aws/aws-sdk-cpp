@@ -22,7 +22,7 @@ namespace Model
   class UpdateCertificateRequest : public TransferRequest
   {
   public:
-    AWS_TRANSFER_API UpdateCertificateRequest();
+    AWS_TRANSFER_API UpdateCertificateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,62 +39,58 @@ namespace Model
     /**
      * <p>The identifier of the certificate object that you are updating.</p>
      */
-    inline const Aws::String& GetCertificateId() const{ return m_certificateId; }
+    inline const Aws::String& GetCertificateId() const { return m_certificateId; }
     inline bool CertificateIdHasBeenSet() const { return m_certificateIdHasBeenSet; }
-    inline void SetCertificateId(const Aws::String& value) { m_certificateIdHasBeenSet = true; m_certificateId = value; }
-    inline void SetCertificateId(Aws::String&& value) { m_certificateIdHasBeenSet = true; m_certificateId = std::move(value); }
-    inline void SetCertificateId(const char* value) { m_certificateIdHasBeenSet = true; m_certificateId.assign(value); }
-    inline UpdateCertificateRequest& WithCertificateId(const Aws::String& value) { SetCertificateId(value); return *this;}
-    inline UpdateCertificateRequest& WithCertificateId(Aws::String&& value) { SetCertificateId(std::move(value)); return *this;}
-    inline UpdateCertificateRequest& WithCertificateId(const char* value) { SetCertificateId(value); return *this;}
+    template<typename CertificateIdT = Aws::String>
+    void SetCertificateId(CertificateIdT&& value) { m_certificateIdHasBeenSet = true; m_certificateId = std::forward<CertificateIdT>(value); }
+    template<typename CertificateIdT = Aws::String>
+    UpdateCertificateRequest& WithCertificateId(CertificateIdT&& value) { SetCertificateId(std::forward<CertificateIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An optional date that specifies when the certificate becomes active.</p>
      */
-    inline const Aws::Utils::DateTime& GetActiveDate() const{ return m_activeDate; }
+    inline const Aws::Utils::DateTime& GetActiveDate() const { return m_activeDate; }
     inline bool ActiveDateHasBeenSet() const { return m_activeDateHasBeenSet; }
-    inline void SetActiveDate(const Aws::Utils::DateTime& value) { m_activeDateHasBeenSet = true; m_activeDate = value; }
-    inline void SetActiveDate(Aws::Utils::DateTime&& value) { m_activeDateHasBeenSet = true; m_activeDate = std::move(value); }
-    inline UpdateCertificateRequest& WithActiveDate(const Aws::Utils::DateTime& value) { SetActiveDate(value); return *this;}
-    inline UpdateCertificateRequest& WithActiveDate(Aws::Utils::DateTime&& value) { SetActiveDate(std::move(value)); return *this;}
+    template<typename ActiveDateT = Aws::Utils::DateTime>
+    void SetActiveDate(ActiveDateT&& value) { m_activeDateHasBeenSet = true; m_activeDate = std::forward<ActiveDateT>(value); }
+    template<typename ActiveDateT = Aws::Utils::DateTime>
+    UpdateCertificateRequest& WithActiveDate(ActiveDateT&& value) { SetActiveDate(std::forward<ActiveDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An optional date that specifies when the certificate becomes inactive.</p>
      */
-    inline const Aws::Utils::DateTime& GetInactiveDate() const{ return m_inactiveDate; }
+    inline const Aws::Utils::DateTime& GetInactiveDate() const { return m_inactiveDate; }
     inline bool InactiveDateHasBeenSet() const { return m_inactiveDateHasBeenSet; }
-    inline void SetInactiveDate(const Aws::Utils::DateTime& value) { m_inactiveDateHasBeenSet = true; m_inactiveDate = value; }
-    inline void SetInactiveDate(Aws::Utils::DateTime&& value) { m_inactiveDateHasBeenSet = true; m_inactiveDate = std::move(value); }
-    inline UpdateCertificateRequest& WithInactiveDate(const Aws::Utils::DateTime& value) { SetInactiveDate(value); return *this;}
-    inline UpdateCertificateRequest& WithInactiveDate(Aws::Utils::DateTime&& value) { SetInactiveDate(std::move(value)); return *this;}
+    template<typename InactiveDateT = Aws::Utils::DateTime>
+    void SetInactiveDate(InactiveDateT&& value) { m_inactiveDateHasBeenSet = true; m_inactiveDate = std::forward<InactiveDateT>(value); }
+    template<typename InactiveDateT = Aws::Utils::DateTime>
+    UpdateCertificateRequest& WithInactiveDate(InactiveDateT&& value) { SetInactiveDate(std::forward<InactiveDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A short description to help identify the certificate.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateCertificateRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateCertificateRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateCertificateRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateCertificateRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_certificateId;
     bool m_certificateIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_activeDate;
+    Aws::Utils::DateTime m_activeDate{};
     bool m_activeDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_inactiveDate;
+    Aws::Utils::DateTime m_inactiveDate{};
     bool m_inactiveDateHasBeenSet = false;
 
     Aws::String m_description;

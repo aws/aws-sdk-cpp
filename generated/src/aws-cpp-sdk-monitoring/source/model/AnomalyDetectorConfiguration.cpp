@@ -20,14 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-AnomalyDetectorConfiguration::AnomalyDetectorConfiguration() : 
-    m_excludedTimeRangesHasBeenSet(false),
-    m_metricTimezoneHasBeenSet(false)
-{
-}
-
 AnomalyDetectorConfiguration::AnomalyDetectorConfiguration(const XmlNode& xmlNode)
-  : AnomalyDetectorConfiguration()
 {
   *this = xmlNode;
 }
@@ -42,6 +35,7 @@ AnomalyDetectorConfiguration& AnomalyDetectorConfiguration::operator =(const Xml
     if(!excludedTimeRangesNode.IsNull())
     {
       XmlNode excludedTimeRangesMember = excludedTimeRangesNode.FirstChild("member");
+      m_excludedTimeRangesHasBeenSet = !excludedTimeRangesMember.IsNull();
       while(!excludedTimeRangesMember.IsNull())
       {
         m_excludedTimeRanges.push_back(excludedTimeRangesMember);

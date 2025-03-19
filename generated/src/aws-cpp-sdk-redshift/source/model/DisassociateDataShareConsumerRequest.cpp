@@ -10,15 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DisassociateDataShareConsumerRequest::DisassociateDataShareConsumerRequest() : 
-    m_dataShareArnHasBeenSet(false),
-    m_disassociateEntireAccount(false),
-    m_disassociateEntireAccountHasBeenSet(false),
-    m_consumerArnHasBeenSet(false),
-    m_consumerRegionHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateDataShareConsumerRequest::SerializePayload() const
 {
   Aws::StringStream ss;

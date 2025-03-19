@@ -12,13 +12,6 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ResetUserPasswordRequest::ResetUserPasswordRequest() : 
-    m_directoryIdHasBeenSet(false),
-    m_userNameHasBeenSet(false),
-    m_newPasswordHasBeenSet(false)
-{
-}
-
 Aws::String ResetUserPasswordRequest::SerializePayload() const
 {
   JsonValue payload;

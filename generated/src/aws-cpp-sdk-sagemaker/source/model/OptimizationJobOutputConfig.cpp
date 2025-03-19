@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-OptimizationJobOutputConfig::OptimizationJobOutputConfig() : 
-    m_kmsKeyIdHasBeenSet(false),
-    m_s3OutputLocationHasBeenSet(false)
-{
-}
-
 OptimizationJobOutputConfig::OptimizationJobOutputConfig(JsonView jsonValue)
-  : OptimizationJobOutputConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ OptimizationJobOutputConfig& OptimizationJobOutputConfig::operator =(JsonView js
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3OutputLocation"))
   {
     m_s3OutputLocation = jsonValue.GetString("S3OutputLocation");
-
     m_s3OutputLocationHasBeenSet = true;
   }
-
   return *this;
 }
 

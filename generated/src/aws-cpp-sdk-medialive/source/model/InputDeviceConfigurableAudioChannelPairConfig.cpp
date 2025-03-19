@@ -18,16 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-InputDeviceConfigurableAudioChannelPairConfig::InputDeviceConfigurableAudioChannelPairConfig() : 
-    m_id(0),
-    m_idHasBeenSet(false),
-    m_profile(InputDeviceConfigurableAudioChannelPairProfile::NOT_SET),
-    m_profileHasBeenSet(false)
-{
-}
-
 InputDeviceConfigurableAudioChannelPairConfig::InputDeviceConfigurableAudioChannelPairConfig(JsonView jsonValue)
-  : InputDeviceConfigurableAudioChannelPairConfig()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ InputDeviceConfigurableAudioChannelPairConfig& InputDeviceConfigurableAudioChann
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetInteger("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("profile"))
   {
     m_profile = InputDeviceConfigurableAudioChannelPairProfileMapper::GetInputDeviceConfigurableAudioChannelPairProfileForName(jsonValue.GetString("profile"));
-
     m_profileHasBeenSet = true;
   }
-
   return *this;
 }
 

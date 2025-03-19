@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetMailboxDetailsResult::GetMailboxDetailsResult() : 
-    m_mailboxQuota(0),
-    m_mailboxSize(0.0)
-{
-}
-
 GetMailboxDetailsResult::GetMailboxDetailsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetMailboxDetailsResult()
 {
   *this = result;
 }
@@ -35,21 +28,20 @@ GetMailboxDetailsResult& GetMailboxDetailsResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("MailboxQuota"))
   {
     m_mailboxQuota = jsonValue.GetInteger("MailboxQuota");
-
+    m_mailboxQuotaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MailboxSize"))
   {
     m_mailboxSize = jsonValue.GetDouble("MailboxSize");
-
+    m_mailboxSizeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

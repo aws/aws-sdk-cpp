@@ -31,7 +31,7 @@ namespace Model
   class BooleanConfigurationOptions
   {
   public:
-    AWS_SECURITYHUB_API BooleanConfigurationOptions();
+    AWS_SECURITYHUB_API BooleanConfigurationOptions() = default;
     AWS_SECURITYHUB_API BooleanConfigurationOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API BooleanConfigurationOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,14 @@ namespace Model
     /**
      * <p> The Security Hub default value for a boolean parameter. </p>
      */
-    inline bool GetDefaultValue() const{ return m_defaultValue; }
+    inline bool GetDefaultValue() const { return m_defaultValue; }
     inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
     inline void SetDefaultValue(bool value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
     inline BooleanConfigurationOptions& WithDefaultValue(bool value) { SetDefaultValue(value); return *this;}
     ///@}
   private:
 
-    bool m_defaultValue;
+    bool m_defaultValue{false};
     bool m_defaultValueHasBeenSet = false;
   };
 

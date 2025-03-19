@@ -34,7 +34,7 @@ namespace Model
   class TableResource
   {
   public:
-    AWS_LAKEFORMATION_API TableResource();
+    AWS_LAKEFORMATION_API TableResource() = default;
     AWS_LAKEFORMATION_API TableResource(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAKEFORMATION_API TableResource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * <p>The identifier for the Data Catalog. By default, it is the account ID of the
      * caller.</p>
      */
-    inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
+    inline const Aws::String& GetCatalogId() const { return m_catalogId; }
     inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
-    inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
-    inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
-    inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
-    inline TableResource& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
-    inline TableResource& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
-    inline TableResource& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
+    template<typename CatalogIdT = Aws::String>
+    void SetCatalogId(CatalogIdT&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::forward<CatalogIdT>(value); }
+    template<typename CatalogIdT = Aws::String>
+    TableResource& WithCatalogId(CatalogIdT&& value) { SetCatalogId(std::forward<CatalogIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,28 +59,24 @@ namespace Model
      * is a set of associated table definitions organized into a logical group. You can
      * Grant and Revoke database privileges to a principal. </p>
      */
-    inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+    inline const Aws::String& GetDatabaseName() const { return m_databaseName; }
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
-    inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
-    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
-    inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
-    inline TableResource& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
-    inline TableResource& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
-    inline TableResource& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+    template<typename DatabaseNameT = Aws::String>
+    void SetDatabaseName(DatabaseNameT&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::forward<DatabaseNameT>(value); }
+    template<typename DatabaseNameT = Aws::String>
+    TableResource& WithDatabaseName(DatabaseNameT&& value) { SetDatabaseName(std::forward<DatabaseNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the table.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline TableResource& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline TableResource& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline TableResource& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    TableResource& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,12 +85,12 @@ namespace Model
      * one of <code>TableResource$Name</code> or
      * <code>TableResource$TableWildcard</code> is required.</p>
      */
-    inline const TableWildcard& GetTableWildcard() const{ return m_tableWildcard; }
+    inline const TableWildcard& GetTableWildcard() const { return m_tableWildcard; }
     inline bool TableWildcardHasBeenSet() const { return m_tableWildcardHasBeenSet; }
-    inline void SetTableWildcard(const TableWildcard& value) { m_tableWildcardHasBeenSet = true; m_tableWildcard = value; }
-    inline void SetTableWildcard(TableWildcard&& value) { m_tableWildcardHasBeenSet = true; m_tableWildcard = std::move(value); }
-    inline TableResource& WithTableWildcard(const TableWildcard& value) { SetTableWildcard(value); return *this;}
-    inline TableResource& WithTableWildcard(TableWildcard&& value) { SetTableWildcard(std::move(value)); return *this;}
+    template<typename TableWildcardT = TableWildcard>
+    void SetTableWildcard(TableWildcardT&& value) { m_tableWildcardHasBeenSet = true; m_tableWildcard = std::forward<TableWildcardT>(value); }
+    template<typename TableWildcardT = TableWildcard>
+    TableResource& WithTableWildcard(TableWildcardT&& value) { SetTableWildcard(std::forward<TableWildcardT>(value)); return *this;}
     ///@}
   private:
 

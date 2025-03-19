@@ -18,15 +18,7 @@ namespace WAFRegional
 namespace Model
 {
 
-FieldToMatch::FieldToMatch() : 
-    m_type(MatchFieldType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_dataHasBeenSet(false)
-{
-}
-
 FieldToMatch::FieldToMatch(JsonView jsonValue)
-  : FieldToMatch()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ FieldToMatch& FieldToMatch::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = MatchFieldTypeMapper::GetMatchFieldTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Data"))
   {
     m_data = jsonValue.GetString("Data");
-
     m_dataHasBeenSet = true;
   }
-
   return *this;
 }
 

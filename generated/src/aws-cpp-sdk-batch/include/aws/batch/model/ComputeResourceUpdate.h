@@ -41,7 +41,7 @@ namespace Model
   class ComputeResourceUpdate
   {
   public:
-    AWS_BATCH_API ComputeResourceUpdate();
+    AWS_BATCH_API ComputeResourceUpdate() = default;
     AWS_BATCH_API ComputeResourceUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API ComputeResourceUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,7 +54,7 @@ namespace Model
      * isn't applicable to jobs that are running on Fargate resources. Don't specify
      * it.</p> 
      */
-    inline int GetMinvCpus() const{ return m_minvCpus; }
+    inline int GetMinvCpus() const { return m_minvCpus; }
     inline bool MinvCpusHasBeenSet() const { return m_minvCpusHasBeenSet; }
     inline void SetMinvCpus(int value) { m_minvCpusHasBeenSet = true; m_minvCpus = value; }
     inline ComputeResourceUpdate& WithMinvCpus(int value) { SetMinvCpus(value); return *this;}
@@ -71,7 +71,7 @@ namespace Model
      * capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code>
      * by more than a single instance.</p> 
      */
-    inline int GetMaxvCpus() const{ return m_maxvCpus; }
+    inline int GetMaxvCpus() const { return m_maxvCpus; }
     inline bool MaxvCpusHasBeenSet() const { return m_maxvCpusHasBeenSet; }
     inline void SetMaxvCpus(int value) { m_maxvCpusHasBeenSet = true; m_maxvCpus = value; }
     inline ComputeResourceUpdate& WithMaxvCpus(int value) { SetMaxvCpus(value); return *this;}
@@ -93,7 +93,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#error-desired-vcpus-update">Troubleshooting
      * Batch</a> in the <i>Batch User Guide</i>.</p> 
      */
-    inline int GetDesiredvCpus() const{ return m_desiredvCpus; }
+    inline int GetDesiredvCpus() const { return m_desiredvCpus; }
     inline bool DesiredvCpusHasBeenSet() const { return m_desiredvCpusHasBeenSet; }
     inline void SetDesiredvCpus(int value) { m_desiredvCpusHasBeenSet = true; m_desiredvCpus = value; }
     inline ComputeResourceUpdate& WithDesiredvCpus(int value) { SetDesiredvCpus(value); return *this;}
@@ -124,15 +124,14 @@ namespace Model
      * Outposts</a> in the <i>Amazon ECS Developer Guide</i>.</p> <p>Batch on Fargate
      * doesn't currently support Local Zones.</p> 
      */
-    inline const Aws::Vector<Aws::String>& GetSubnets() const{ return m_subnets; }
+    inline const Aws::Vector<Aws::String>& GetSubnets() const { return m_subnets; }
     inline bool SubnetsHasBeenSet() const { return m_subnetsHasBeenSet; }
-    inline void SetSubnets(const Aws::Vector<Aws::String>& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
-    inline void SetSubnets(Aws::Vector<Aws::String>&& value) { m_subnetsHasBeenSet = true; m_subnets = std::move(value); }
-    inline ComputeResourceUpdate& WithSubnets(const Aws::Vector<Aws::String>& value) { SetSubnets(value); return *this;}
-    inline ComputeResourceUpdate& WithSubnets(Aws::Vector<Aws::String>&& value) { SetSubnets(std::move(value)); return *this;}
-    inline ComputeResourceUpdate& AddSubnets(const Aws::String& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
-    inline ComputeResourceUpdate& AddSubnets(Aws::String&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(std::move(value)); return *this; }
-    inline ComputeResourceUpdate& AddSubnets(const char* value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
+    template<typename SubnetsT = Aws::Vector<Aws::String>>
+    void SetSubnets(SubnetsT&& value) { m_subnetsHasBeenSet = true; m_subnets = std::forward<SubnetsT>(value); }
+    template<typename SubnetsT = Aws::Vector<Aws::String>>
+    ComputeResourceUpdate& WithSubnets(SubnetsT&& value) { SetSubnets(std::forward<SubnetsT>(value)); return *this;}
+    template<typename SubnetsT = Aws::String>
+    ComputeResourceUpdate& AddSubnets(SubnetsT&& value) { m_subnetsHasBeenSet = true; m_subnets.emplace_back(std::forward<SubnetsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -149,15 +148,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
      * compute environments</a> in the <i>Batch User Guide</i>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const { return m_securityGroupIds; }
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
-    inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
-    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
-    inline ComputeResourceUpdate& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
-    inline ComputeResourceUpdate& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
-    inline ComputeResourceUpdate& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
-    inline ComputeResourceUpdate& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
-    inline ComputeResourceUpdate& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    void SetSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::forward<SecurityGroupIdsT>(value); }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    ComputeResourceUpdate& WithSecurityGroupIds(SecurityGroupIdsT&& value) { SetSecurityGroupIds(std::forward<SecurityGroupIdsT>(value)); return *this;}
+    template<typename SecurityGroupIdsT = Aws::String>
+    ComputeResourceUpdate& AddSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.emplace_back(std::forward<SecurityGroupIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -196,12 +194,10 @@ namespace Model
      * capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code>
      * by more than a single instance.</p>
      */
-    inline const CRUpdateAllocationStrategy& GetAllocationStrategy() const{ return m_allocationStrategy; }
+    inline CRUpdateAllocationStrategy GetAllocationStrategy() const { return m_allocationStrategy; }
     inline bool AllocationStrategyHasBeenSet() const { return m_allocationStrategyHasBeenSet; }
-    inline void SetAllocationStrategy(const CRUpdateAllocationStrategy& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = value; }
-    inline void SetAllocationStrategy(CRUpdateAllocationStrategy&& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = std::move(value); }
-    inline ComputeResourceUpdate& WithAllocationStrategy(const CRUpdateAllocationStrategy& value) { SetAllocationStrategy(value); return *this;}
-    inline ComputeResourceUpdate& WithAllocationStrategy(CRUpdateAllocationStrategy&& value) { SetAllocationStrategy(std::move(value)); return *this;}
+    inline void SetAllocationStrategy(CRUpdateAllocationStrategy value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = value; }
+    inline ComputeResourceUpdate& WithAllocationStrategy(CRUpdateAllocationStrategy value) { SetAllocationStrategy(value); return *this;}
     ///@}
 
     ///@{
@@ -225,15 +221,14 @@ namespace Model
      * have instance types from those instance families, instance types from the C5,
      * M5, and R5 instance families are used.</p> 
      */
-    inline const Aws::Vector<Aws::String>& GetInstanceTypes() const{ return m_instanceTypes; }
+    inline const Aws::Vector<Aws::String>& GetInstanceTypes() const { return m_instanceTypes; }
     inline bool InstanceTypesHasBeenSet() const { return m_instanceTypesHasBeenSet; }
-    inline void SetInstanceTypes(const Aws::Vector<Aws::String>& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = value; }
-    inline void SetInstanceTypes(Aws::Vector<Aws::String>&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = std::move(value); }
-    inline ComputeResourceUpdate& WithInstanceTypes(const Aws::Vector<Aws::String>& value) { SetInstanceTypes(value); return *this;}
-    inline ComputeResourceUpdate& WithInstanceTypes(Aws::Vector<Aws::String>&& value) { SetInstanceTypes(std::move(value)); return *this;}
-    inline ComputeResourceUpdate& AddInstanceTypes(const Aws::String& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
-    inline ComputeResourceUpdate& AddInstanceTypes(Aws::String&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(std::move(value)); return *this; }
-    inline ComputeResourceUpdate& AddInstanceTypes(const char* value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
+    template<typename InstanceTypesT = Aws::Vector<Aws::String>>
+    void SetInstanceTypes(InstanceTypesT&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = std::forward<InstanceTypesT>(value); }
+    template<typename InstanceTypesT = Aws::Vector<Aws::String>>
+    ComputeResourceUpdate& WithInstanceTypes(InstanceTypesT&& value) { SetInstanceTypes(std::forward<InstanceTypesT>(value)); return *this;}
+    template<typename InstanceTypesT = Aws::String>
+    ComputeResourceUpdate& AddInstanceTypes(InstanceTypesT&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.emplace_back(std::forward<InstanceTypesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -248,14 +243,12 @@ namespace Model
      * parameter isn't applicable to jobs that are running on Fargate resources. Don't
      * specify it.</p> 
      */
-    inline const Aws::String& GetEc2KeyPair() const{ return m_ec2KeyPair; }
+    inline const Aws::String& GetEc2KeyPair() const { return m_ec2KeyPair; }
     inline bool Ec2KeyPairHasBeenSet() const { return m_ec2KeyPairHasBeenSet; }
-    inline void SetEc2KeyPair(const Aws::String& value) { m_ec2KeyPairHasBeenSet = true; m_ec2KeyPair = value; }
-    inline void SetEc2KeyPair(Aws::String&& value) { m_ec2KeyPairHasBeenSet = true; m_ec2KeyPair = std::move(value); }
-    inline void SetEc2KeyPair(const char* value) { m_ec2KeyPairHasBeenSet = true; m_ec2KeyPair.assign(value); }
-    inline ComputeResourceUpdate& WithEc2KeyPair(const Aws::String& value) { SetEc2KeyPair(value); return *this;}
-    inline ComputeResourceUpdate& WithEc2KeyPair(Aws::String&& value) { SetEc2KeyPair(std::move(value)); return *this;}
-    inline ComputeResourceUpdate& WithEc2KeyPair(const char* value) { SetEc2KeyPair(value); return *this;}
+    template<typename Ec2KeyPairT = Aws::String>
+    void SetEc2KeyPair(Ec2KeyPairT&& value) { m_ec2KeyPairHasBeenSet = true; m_ec2KeyPair = std::forward<Ec2KeyPairT>(value); }
+    template<typename Ec2KeyPairT = Aws::String>
+    ComputeResourceUpdate& WithEc2KeyPair(Ec2KeyPairT&& value) { SetEc2KeyPair(std::forward<Ec2KeyPairT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -275,14 +268,12 @@ namespace Model
      * parameter isn't applicable to jobs that are running on Fargate resources. Don't
      * specify it.</p> 
      */
-    inline const Aws::String& GetInstanceRole() const{ return m_instanceRole; }
+    inline const Aws::String& GetInstanceRole() const { return m_instanceRole; }
     inline bool InstanceRoleHasBeenSet() const { return m_instanceRoleHasBeenSet; }
-    inline void SetInstanceRole(const Aws::String& value) { m_instanceRoleHasBeenSet = true; m_instanceRole = value; }
-    inline void SetInstanceRole(Aws::String&& value) { m_instanceRoleHasBeenSet = true; m_instanceRole = std::move(value); }
-    inline void SetInstanceRole(const char* value) { m_instanceRoleHasBeenSet = true; m_instanceRole.assign(value); }
-    inline ComputeResourceUpdate& WithInstanceRole(const Aws::String& value) { SetInstanceRole(value); return *this;}
-    inline ComputeResourceUpdate& WithInstanceRole(Aws::String&& value) { SetInstanceRole(std::move(value)); return *this;}
-    inline ComputeResourceUpdate& WithInstanceRole(const char* value) { SetInstanceRole(value); return *this;}
+    template<typename InstanceRoleT = Aws::String>
+    void SetInstanceRole(InstanceRoleT&& value) { m_instanceRoleHasBeenSet = true; m_instanceRole = std::forward<InstanceRoleT>(value); }
+    template<typename InstanceRoleT = Aws::String>
+    ComputeResourceUpdate& WithInstanceRole(InstanceRoleT&& value) { SetInstanceRole(std::forward<InstanceRoleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -301,19 +292,16 @@ namespace Model
      * parameter isn't applicable to jobs that are running on Fargate resources. Don't
      * specify it.</p> 
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline ComputeResourceUpdate& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline ComputeResourceUpdate& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline ComputeResourceUpdate& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline ComputeResourceUpdate& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline ComputeResourceUpdate& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline ComputeResourceUpdate& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline ComputeResourceUpdate& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline ComputeResourceUpdate& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline ComputeResourceUpdate& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    ComputeResourceUpdate& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    ComputeResourceUpdate& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -333,14 +321,12 @@ namespace Model
      * parameter isn't applicable to jobs that are running on Fargate resources. Don't
      * specify it.</p> 
      */
-    inline const Aws::String& GetPlacementGroup() const{ return m_placementGroup; }
+    inline const Aws::String& GetPlacementGroup() const { return m_placementGroup; }
     inline bool PlacementGroupHasBeenSet() const { return m_placementGroupHasBeenSet; }
-    inline void SetPlacementGroup(const Aws::String& value) { m_placementGroupHasBeenSet = true; m_placementGroup = value; }
-    inline void SetPlacementGroup(Aws::String&& value) { m_placementGroupHasBeenSet = true; m_placementGroup = std::move(value); }
-    inline void SetPlacementGroup(const char* value) { m_placementGroupHasBeenSet = true; m_placementGroup.assign(value); }
-    inline ComputeResourceUpdate& WithPlacementGroup(const Aws::String& value) { SetPlacementGroup(value); return *this;}
-    inline ComputeResourceUpdate& WithPlacementGroup(Aws::String&& value) { SetPlacementGroup(std::move(value)); return *this;}
-    inline ComputeResourceUpdate& WithPlacementGroup(const char* value) { SetPlacementGroup(value); return *this;}
+    template<typename PlacementGroupT = Aws::String>
+    void SetPlacementGroup(PlacementGroupT&& value) { m_placementGroupHasBeenSet = true; m_placementGroup = std::forward<PlacementGroupT>(value); }
+    template<typename PlacementGroupT = Aws::String>
+    ComputeResourceUpdate& WithPlacementGroup(PlacementGroupT&& value) { SetPlacementGroup(std::forward<PlacementGroupT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -358,7 +344,7 @@ namespace Model
      * parameter isn't applicable to jobs that are running on Fargate resources. Don't
      * specify it.</p> 
      */
-    inline int GetBidPercentage() const{ return m_bidPercentage; }
+    inline int GetBidPercentage() const { return m_bidPercentage; }
     inline bool BidPercentageHasBeenSet() const { return m_bidPercentageHasBeenSet; }
     inline void SetBidPercentage(int value) { m_bidPercentageHasBeenSet = true; m_bidPercentage = value; }
     inline ComputeResourceUpdate& WithBidPercentage(int value) { SetBidPercentage(value); return *this;}
@@ -384,12 +370,12 @@ namespace Model
      * parameter isn't applicable to jobs that are running on Fargate resources. Don't
      * specify it.</p> 
      */
-    inline const LaunchTemplateSpecification& GetLaunchTemplate() const{ return m_launchTemplate; }
+    inline const LaunchTemplateSpecification& GetLaunchTemplate() const { return m_launchTemplate; }
     inline bool LaunchTemplateHasBeenSet() const { return m_launchTemplateHasBeenSet; }
-    inline void SetLaunchTemplate(const LaunchTemplateSpecification& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = value; }
-    inline void SetLaunchTemplate(LaunchTemplateSpecification&& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = std::move(value); }
-    inline ComputeResourceUpdate& WithLaunchTemplate(const LaunchTemplateSpecification& value) { SetLaunchTemplate(value); return *this;}
-    inline ComputeResourceUpdate& WithLaunchTemplate(LaunchTemplateSpecification&& value) { SetLaunchTemplate(std::move(value)); return *this;}
+    template<typename LaunchTemplateT = LaunchTemplateSpecification>
+    void SetLaunchTemplate(LaunchTemplateT&& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = std::forward<LaunchTemplateT>(value); }
+    template<typename LaunchTemplateT = LaunchTemplateSpecification>
+    ComputeResourceUpdate& WithLaunchTemplate(LaunchTemplateT&& value) { SetLaunchTemplate(std::forward<LaunchTemplateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -406,14 +392,14 @@ namespace Model
      * two values can be provided.</p>  <p>This parameter isn't applicable to
      * jobs that are running on Fargate resources. Don't specify it.</p> 
      */
-    inline const Aws::Vector<Ec2Configuration>& GetEc2Configuration() const{ return m_ec2Configuration; }
+    inline const Aws::Vector<Ec2Configuration>& GetEc2Configuration() const { return m_ec2Configuration; }
     inline bool Ec2ConfigurationHasBeenSet() const { return m_ec2ConfigurationHasBeenSet; }
-    inline void SetEc2Configuration(const Aws::Vector<Ec2Configuration>& value) { m_ec2ConfigurationHasBeenSet = true; m_ec2Configuration = value; }
-    inline void SetEc2Configuration(Aws::Vector<Ec2Configuration>&& value) { m_ec2ConfigurationHasBeenSet = true; m_ec2Configuration = std::move(value); }
-    inline ComputeResourceUpdate& WithEc2Configuration(const Aws::Vector<Ec2Configuration>& value) { SetEc2Configuration(value); return *this;}
-    inline ComputeResourceUpdate& WithEc2Configuration(Aws::Vector<Ec2Configuration>&& value) { SetEc2Configuration(std::move(value)); return *this;}
-    inline ComputeResourceUpdate& AddEc2Configuration(const Ec2Configuration& value) { m_ec2ConfigurationHasBeenSet = true; m_ec2Configuration.push_back(value); return *this; }
-    inline ComputeResourceUpdate& AddEc2Configuration(Ec2Configuration&& value) { m_ec2ConfigurationHasBeenSet = true; m_ec2Configuration.push_back(std::move(value)); return *this; }
+    template<typename Ec2ConfigurationT = Aws::Vector<Ec2Configuration>>
+    void SetEc2Configuration(Ec2ConfigurationT&& value) { m_ec2ConfigurationHasBeenSet = true; m_ec2Configuration = std::forward<Ec2ConfigurationT>(value); }
+    template<typename Ec2ConfigurationT = Aws::Vector<Ec2Configuration>>
+    ComputeResourceUpdate& WithEc2Configuration(Ec2ConfigurationT&& value) { SetEc2Configuration(std::forward<Ec2ConfigurationT>(value)); return *this;}
+    template<typename Ec2ConfigurationT = Ec2Configuration>
+    ComputeResourceUpdate& AddEc2Configuration(Ec2ConfigurationT&& value) { m_ec2ConfigurationHasBeenSet = true; m_ec2Configuration.emplace_back(std::forward<Ec2ConfigurationT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -433,7 +419,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
      * compute environments</a> in the <i>Batch User Guide</i>.</p>
      */
-    inline bool GetUpdateToLatestImageVersion() const{ return m_updateToLatestImageVersion; }
+    inline bool GetUpdateToLatestImageVersion() const { return m_updateToLatestImageVersion; }
     inline bool UpdateToLatestImageVersionHasBeenSet() const { return m_updateToLatestImageVersionHasBeenSet; }
     inline void SetUpdateToLatestImageVersion(bool value) { m_updateToLatestImageVersionHasBeenSet = true; m_updateToLatestImageVersion = value; }
     inline ComputeResourceUpdate& WithUpdateToLatestImageVersion(bool value) { SetUpdateToLatestImageVersion(value); return *this;}
@@ -454,12 +440,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
      * compute environments</a> in the <i>Batch User Guide</i>.</p>
      */
-    inline const CRType& GetType() const{ return m_type; }
+    inline CRType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const CRType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(CRType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ComputeResourceUpdate& WithType(const CRType& value) { SetType(value); return *this;}
-    inline ComputeResourceUpdate& WithType(CRType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(CRType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ComputeResourceUpdate& WithType(CRType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -483,24 +467,22 @@ namespace Model
      * ECS-optimized Amazon Linux 2 AMI</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> 
      */
-    inline const Aws::String& GetImageId() const{ return m_imageId; }
+    inline const Aws::String& GetImageId() const { return m_imageId; }
     inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
-    inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
-    inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
-    inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
-    inline ComputeResourceUpdate& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
-    inline ComputeResourceUpdate& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
-    inline ComputeResourceUpdate& WithImageId(const char* value) { SetImageId(value); return *this;}
+    template<typename ImageIdT = Aws::String>
+    void SetImageId(ImageIdT&& value) { m_imageIdHasBeenSet = true; m_imageId = std::forward<ImageIdT>(value); }
+    template<typename ImageIdT = Aws::String>
+    ComputeResourceUpdate& WithImageId(ImageIdT&& value) { SetImageId(std::forward<ImageIdT>(value)); return *this;}
     ///@}
   private:
 
-    int m_minvCpus;
+    int m_minvCpus{0};
     bool m_minvCpusHasBeenSet = false;
 
-    int m_maxvCpus;
+    int m_maxvCpus{0};
     bool m_maxvCpusHasBeenSet = false;
 
-    int m_desiredvCpus;
+    int m_desiredvCpus{0};
     bool m_desiredvCpusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnets;
@@ -509,7 +491,7 @@ namespace Model
     Aws::Vector<Aws::String> m_securityGroupIds;
     bool m_securityGroupIdsHasBeenSet = false;
 
-    CRUpdateAllocationStrategy m_allocationStrategy;
+    CRUpdateAllocationStrategy m_allocationStrategy{CRUpdateAllocationStrategy::NOT_SET};
     bool m_allocationStrategyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_instanceTypes;
@@ -527,7 +509,7 @@ namespace Model
     Aws::String m_placementGroup;
     bool m_placementGroupHasBeenSet = false;
 
-    int m_bidPercentage;
+    int m_bidPercentage{0};
     bool m_bidPercentageHasBeenSet = false;
 
     LaunchTemplateSpecification m_launchTemplate;
@@ -536,10 +518,10 @@ namespace Model
     Aws::Vector<Ec2Configuration> m_ec2Configuration;
     bool m_ec2ConfigurationHasBeenSet = false;
 
-    bool m_updateToLatestImageVersion;
+    bool m_updateToLatestImageVersion{false};
     bool m_updateToLatestImageVersionHasBeenSet = false;
 
-    CRType m_type;
+    CRType m_type{CRType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_imageId;

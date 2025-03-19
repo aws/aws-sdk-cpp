@@ -12,15 +12,6 @@ using namespace Aws::CodeGuruProfiler::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutPermissionRequest::PutPermissionRequest() : 
-    m_actionGroup(ActionGroup::NOT_SET),
-    m_actionGroupHasBeenSet(false),
-    m_principalsHasBeenSet(false),
-    m_profilingGroupNameHasBeenSet(false),
-    m_revisionIdHasBeenSet(false)
-{
-}
-
 Aws::String PutPermissionRequest::SerializePayload() const
 {
   JsonValue payload;

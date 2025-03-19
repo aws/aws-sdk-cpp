@@ -12,11 +12,6 @@ using namespace Aws::ManagedBlockchainQuery::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAssetContractRequest::GetAssetContractRequest() : 
-    m_contractIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String GetAssetContractRequest::SerializePayload() const
 {
   JsonValue payload;

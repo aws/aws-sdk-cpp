@@ -34,7 +34,7 @@ namespace Model
   class LambdaContainerParams
   {
   public:
-    AWS_GREENGRASSV2_API LambdaContainerParams();
+    AWS_GREENGRASSV2_API LambdaContainerParams() = default;
     AWS_GREENGRASSV2_API LambdaContainerParams(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASSV2_API LambdaContainerParams& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
      * <p>The memory size of the container, expressed in kilobytes.</p> <p>Default:
      * <code>16384</code> (16 MB)</p>
      */
-    inline int GetMemorySizeInKB() const{ return m_memorySizeInKB; }
+    inline int GetMemorySizeInKB() const { return m_memorySizeInKB; }
     inline bool MemorySizeInKBHasBeenSet() const { return m_memorySizeInKBHasBeenSet; }
     inline void SetMemorySizeInKB(int value) { m_memorySizeInKBHasBeenSet = true; m_memorySizeInKB = value; }
     inline LambdaContainerParams& WithMemorySizeInKB(int value) { SetMemorySizeInKB(value); return *this;}
@@ -56,7 +56,7 @@ namespace Model
      * <p>Whether or not the container can read information from the device's
      * <code>/sys</code> folder.</p> <p>Default: <code>false</code> </p>
      */
-    inline bool GetMountROSysfs() const{ return m_mountROSysfs; }
+    inline bool GetMountROSysfs() const { return m_mountROSysfs; }
     inline bool MountROSysfsHasBeenSet() const { return m_mountROSysfsHasBeenSet; }
     inline void SetMountROSysfs(bool value) { m_mountROSysfsHasBeenSet = true; m_mountROSysfs = value; }
     inline LambdaContainerParams& WithMountROSysfs(bool value) { SetMountROSysfs(value); return *this;}
@@ -66,35 +66,35 @@ namespace Model
     /**
      * <p>The list of volumes that the container can access.</p>
      */
-    inline const Aws::Vector<LambdaVolumeMount>& GetVolumes() const{ return m_volumes; }
+    inline const Aws::Vector<LambdaVolumeMount>& GetVolumes() const { return m_volumes; }
     inline bool VolumesHasBeenSet() const { return m_volumesHasBeenSet; }
-    inline void SetVolumes(const Aws::Vector<LambdaVolumeMount>& value) { m_volumesHasBeenSet = true; m_volumes = value; }
-    inline void SetVolumes(Aws::Vector<LambdaVolumeMount>&& value) { m_volumesHasBeenSet = true; m_volumes = std::move(value); }
-    inline LambdaContainerParams& WithVolumes(const Aws::Vector<LambdaVolumeMount>& value) { SetVolumes(value); return *this;}
-    inline LambdaContainerParams& WithVolumes(Aws::Vector<LambdaVolumeMount>&& value) { SetVolumes(std::move(value)); return *this;}
-    inline LambdaContainerParams& AddVolumes(const LambdaVolumeMount& value) { m_volumesHasBeenSet = true; m_volumes.push_back(value); return *this; }
-    inline LambdaContainerParams& AddVolumes(LambdaVolumeMount&& value) { m_volumesHasBeenSet = true; m_volumes.push_back(std::move(value)); return *this; }
+    template<typename VolumesT = Aws::Vector<LambdaVolumeMount>>
+    void SetVolumes(VolumesT&& value) { m_volumesHasBeenSet = true; m_volumes = std::forward<VolumesT>(value); }
+    template<typename VolumesT = Aws::Vector<LambdaVolumeMount>>
+    LambdaContainerParams& WithVolumes(VolumesT&& value) { SetVolumes(std::forward<VolumesT>(value)); return *this;}
+    template<typename VolumesT = LambdaVolumeMount>
+    LambdaContainerParams& AddVolumes(VolumesT&& value) { m_volumesHasBeenSet = true; m_volumes.emplace_back(std::forward<VolumesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The list of system devices that the container can access.</p>
      */
-    inline const Aws::Vector<LambdaDeviceMount>& GetDevices() const{ return m_devices; }
+    inline const Aws::Vector<LambdaDeviceMount>& GetDevices() const { return m_devices; }
     inline bool DevicesHasBeenSet() const { return m_devicesHasBeenSet; }
-    inline void SetDevices(const Aws::Vector<LambdaDeviceMount>& value) { m_devicesHasBeenSet = true; m_devices = value; }
-    inline void SetDevices(Aws::Vector<LambdaDeviceMount>&& value) { m_devicesHasBeenSet = true; m_devices = std::move(value); }
-    inline LambdaContainerParams& WithDevices(const Aws::Vector<LambdaDeviceMount>& value) { SetDevices(value); return *this;}
-    inline LambdaContainerParams& WithDevices(Aws::Vector<LambdaDeviceMount>&& value) { SetDevices(std::move(value)); return *this;}
-    inline LambdaContainerParams& AddDevices(const LambdaDeviceMount& value) { m_devicesHasBeenSet = true; m_devices.push_back(value); return *this; }
-    inline LambdaContainerParams& AddDevices(LambdaDeviceMount&& value) { m_devicesHasBeenSet = true; m_devices.push_back(std::move(value)); return *this; }
+    template<typename DevicesT = Aws::Vector<LambdaDeviceMount>>
+    void SetDevices(DevicesT&& value) { m_devicesHasBeenSet = true; m_devices = std::forward<DevicesT>(value); }
+    template<typename DevicesT = Aws::Vector<LambdaDeviceMount>>
+    LambdaContainerParams& WithDevices(DevicesT&& value) { SetDevices(std::forward<DevicesT>(value)); return *this;}
+    template<typename DevicesT = LambdaDeviceMount>
+    LambdaContainerParams& AddDevices(DevicesT&& value) { m_devicesHasBeenSet = true; m_devices.emplace_back(std::forward<DevicesT>(value)); return *this; }
     ///@}
   private:
 
-    int m_memorySizeInKB;
+    int m_memorySizeInKB{0};
     bool m_memorySizeInKBHasBeenSet = false;
 
-    bool m_mountROSysfs;
+    bool m_mountROSysfs{false};
     bool m_mountROSysfsHasBeenSet = false;
 
     Aws::Vector<LambdaVolumeMount> m_volumes;

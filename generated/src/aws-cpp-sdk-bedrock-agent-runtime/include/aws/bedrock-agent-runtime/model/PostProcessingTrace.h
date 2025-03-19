@@ -33,7 +33,7 @@ namespace Model
   class PostProcessingTrace
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API PostProcessingTrace();
+    AWS_BEDROCKAGENTRUNTIME_API PostProcessingTrace() = default;
     AWS_BEDROCKAGENTRUNTIME_API PostProcessingTrace(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API PostProcessingTrace& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,24 +49,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptOverrideConfiguration.html">PromptOverrideConfiguration</a>
      * object that was set when the agent was created or updated.</p> </li> </ul>
      */
-    inline const ModelInvocationInput& GetModelInvocationInput() const{ return m_modelInvocationInput; }
+    inline const ModelInvocationInput& GetModelInvocationInput() const { return m_modelInvocationInput; }
     inline bool ModelInvocationInputHasBeenSet() const { return m_modelInvocationInputHasBeenSet; }
-    inline void SetModelInvocationInput(const ModelInvocationInput& value) { m_modelInvocationInputHasBeenSet = true; m_modelInvocationInput = value; }
-    inline void SetModelInvocationInput(ModelInvocationInput&& value) { m_modelInvocationInputHasBeenSet = true; m_modelInvocationInput = std::move(value); }
-    inline PostProcessingTrace& WithModelInvocationInput(const ModelInvocationInput& value) { SetModelInvocationInput(value); return *this;}
-    inline PostProcessingTrace& WithModelInvocationInput(ModelInvocationInput&& value) { SetModelInvocationInput(std::move(value)); return *this;}
+    template<typename ModelInvocationInputT = ModelInvocationInput>
+    void SetModelInvocationInput(ModelInvocationInputT&& value) { m_modelInvocationInputHasBeenSet = true; m_modelInvocationInput = std::forward<ModelInvocationInputT>(value); }
+    template<typename ModelInvocationInputT = ModelInvocationInput>
+    PostProcessingTrace& WithModelInvocationInput(ModelInvocationInputT&& value) { SetModelInvocationInput(std::forward<ModelInvocationInputT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The foundation model output from the post-processing step.</p>
      */
-    inline const PostProcessingModelInvocationOutput& GetModelInvocationOutput() const{ return m_modelInvocationOutput; }
+    inline const PostProcessingModelInvocationOutput& GetModelInvocationOutput() const { return m_modelInvocationOutput; }
     inline bool ModelInvocationOutputHasBeenSet() const { return m_modelInvocationOutputHasBeenSet; }
-    inline void SetModelInvocationOutput(const PostProcessingModelInvocationOutput& value) { m_modelInvocationOutputHasBeenSet = true; m_modelInvocationOutput = value; }
-    inline void SetModelInvocationOutput(PostProcessingModelInvocationOutput&& value) { m_modelInvocationOutputHasBeenSet = true; m_modelInvocationOutput = std::move(value); }
-    inline PostProcessingTrace& WithModelInvocationOutput(const PostProcessingModelInvocationOutput& value) { SetModelInvocationOutput(value); return *this;}
-    inline PostProcessingTrace& WithModelInvocationOutput(PostProcessingModelInvocationOutput&& value) { SetModelInvocationOutput(std::move(value)); return *this;}
+    template<typename ModelInvocationOutputT = PostProcessingModelInvocationOutput>
+    void SetModelInvocationOutput(ModelInvocationOutputT&& value) { m_modelInvocationOutputHasBeenSet = true; m_modelInvocationOutput = std::forward<ModelInvocationOutputT>(value); }
+    template<typename ModelInvocationOutputT = PostProcessingModelInvocationOutput>
+    PostProcessingTrace& WithModelInvocationOutput(ModelInvocationOutputT&& value) { SetModelInvocationOutput(std::forward<ModelInvocationOutputT>(value)); return *this;}
     ///@}
   private:
 

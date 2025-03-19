@@ -18,20 +18,7 @@ namespace KinesisVideo
 namespace Model
 {
 
-ListEdgeAgentConfigurationsEdgeConfig::ListEdgeAgentConfigurationsEdgeConfig() : 
-    m_streamNameHasBeenSet(false),
-    m_streamARNHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_syncStatus(SyncStatus::NOT_SET),
-    m_syncStatusHasBeenSet(false),
-    m_failedStatusDetailsHasBeenSet(false),
-    m_edgeConfigHasBeenSet(false)
-{
-}
-
 ListEdgeAgentConfigurationsEdgeConfig::ListEdgeAgentConfigurationsEdgeConfig(JsonView jsonValue)
-  : ListEdgeAgentConfigurationsEdgeConfig()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ ListEdgeAgentConfigurationsEdgeConfig& ListEdgeAgentConfigurationsEdgeConfig::op
   if(jsonValue.ValueExists("StreamName"))
   {
     m_streamName = jsonValue.GetString("StreamName");
-
     m_streamNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StreamARN"))
   {
     m_streamARN = jsonValue.GetString("StreamARN");
-
     m_streamARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SyncStatus"))
   {
     m_syncStatus = SyncStatusMapper::GetSyncStatusForName(jsonValue.GetString("SyncStatus"));
-
     m_syncStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailedStatusDetails"))
   {
     m_failedStatusDetails = jsonValue.GetString("FailedStatusDetails");
-
     m_failedStatusDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EdgeConfig"))
   {
     m_edgeConfig = jsonValue.GetObject("EdgeConfig");
-
     m_edgeConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

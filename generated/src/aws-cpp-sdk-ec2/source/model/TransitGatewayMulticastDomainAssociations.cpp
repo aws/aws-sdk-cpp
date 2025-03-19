@@ -20,19 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TransitGatewayMulticastDomainAssociations::TransitGatewayMulticastDomainAssociations() : 
-    m_transitGatewayMulticastDomainIdHasBeenSet(false),
-    m_transitGatewayAttachmentIdHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceType(TransitGatewayAttachmentResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceOwnerIdHasBeenSet(false),
-    m_subnetsHasBeenSet(false)
-{
-}
-
 TransitGatewayMulticastDomainAssociations::TransitGatewayMulticastDomainAssociations(const XmlNode& xmlNode)
-  : TransitGatewayMulticastDomainAssociations()
 {
   *this = xmlNode;
 }
@@ -64,7 +52,7 @@ TransitGatewayMulticastDomainAssociations& TransitGatewayMulticastDomainAssociat
     XmlNode resourceTypeNode = resultNode.FirstChild("resourceType");
     if(!resourceTypeNode.IsNull())
     {
-      m_resourceType = TransitGatewayAttachmentResourceTypeMapper::GetTransitGatewayAttachmentResourceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText()).c_str()).c_str());
+      m_resourceType = TransitGatewayAttachmentResourceTypeMapper::GetTransitGatewayAttachmentResourceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText()).c_str()));
       m_resourceTypeHasBeenSet = true;
     }
     XmlNode resourceOwnerIdNode = resultNode.FirstChild("resourceOwnerId");
@@ -77,6 +65,7 @@ TransitGatewayMulticastDomainAssociations& TransitGatewayMulticastDomainAssociat
     if(!subnetsNode.IsNull())
     {
       XmlNode subnetsMember = subnetsNode.FirstChild("item");
+      m_subnetsHasBeenSet = !subnetsMember.IsNull();
       while(!subnetsMember.IsNull())
       {
         m_subnets.push_back(subnetsMember);

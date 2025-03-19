@@ -12,11 +12,6 @@ using namespace Aws::MTurk::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteHITRequest::DeleteHITRequest() : 
-    m_hITIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteHITRequest::SerializePayload() const
 {
   JsonValue payload;

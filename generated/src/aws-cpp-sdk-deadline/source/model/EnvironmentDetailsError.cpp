@@ -18,17 +18,7 @@ namespace deadline
 namespace Model
 {
 
-EnvironmentDetailsError::EnvironmentDetailsError() : 
-    m_jobIdHasBeenSet(false),
-    m_environmentIdHasBeenSet(false),
-    m_code(JobEntityErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 EnvironmentDetailsError::EnvironmentDetailsError(JsonView jsonValue)
-  : EnvironmentDetailsError()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ EnvironmentDetailsError& EnvironmentDetailsError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("jobId"))
   {
     m_jobId = jsonValue.GetString("jobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environmentId"))
   {
     m_environmentId = jsonValue.GetString("environmentId");
-
     m_environmentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("code"))
   {
     m_code = JobEntityErrorCodeMapper::GetJobEntityErrorCodeForName(jsonValue.GetString("code"));
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

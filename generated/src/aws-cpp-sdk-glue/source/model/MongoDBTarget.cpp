@@ -18,16 +18,7 @@ namespace Glue
 namespace Model
 {
 
-MongoDBTarget::MongoDBTarget() : 
-    m_connectionNameHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_scanAll(false),
-    m_scanAllHasBeenSet(false)
-{
-}
-
 MongoDBTarget::MongoDBTarget(JsonView jsonValue)
-  : MongoDBTarget()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ MongoDBTarget& MongoDBTarget::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ConnectionName"))
   {
     m_connectionName = jsonValue.GetString("ConnectionName");
-
     m_connectionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Path"))
   {
     m_path = jsonValue.GetString("Path");
-
     m_pathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScanAll"))
   {
     m_scanAll = jsonValue.GetBool("ScanAll");
-
     m_scanAllHasBeenSet = true;
   }
-
   return *this;
 }
 

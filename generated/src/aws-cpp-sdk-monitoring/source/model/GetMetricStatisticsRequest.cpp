@@ -10,21 +10,6 @@
 using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils;
 
-GetMetricStatisticsRequest::GetMetricStatisticsRequest() : 
-    m_namespaceHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_dimensionsHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_period(0),
-    m_periodHasBeenSet(false),
-    m_statisticsHasBeenSet(false),
-    m_extendedStatisticsHasBeenSet(false),
-    m_unit(StandardUnit::NOT_SET),
-    m_unitHasBeenSet(false)
-{
-}
-
 Aws::String GetMetricStatisticsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

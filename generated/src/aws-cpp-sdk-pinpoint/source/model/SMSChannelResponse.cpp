@@ -18,32 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-SMSChannelResponse::SMSChannelResponse() : 
-    m_applicationIdHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_hasCredential(false),
-    m_hasCredentialHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_isArchived(false),
-    m_isArchivedHasBeenSet(false),
-    m_lastModifiedByHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_platformHasBeenSet(false),
-    m_promotionalMessagesPerSecond(0),
-    m_promotionalMessagesPerSecondHasBeenSet(false),
-    m_senderIdHasBeenSet(false),
-    m_shortCodeHasBeenSet(false),
-    m_transactionalMessagesPerSecond(0),
-    m_transactionalMessagesPerSecondHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false)
-{
-}
-
 SMSChannelResponse::SMSChannelResponse(JsonView jsonValue)
-  : SMSChannelResponse()
 {
   *this = jsonValue;
 }
@@ -53,101 +28,73 @@ SMSChannelResponse& SMSChannelResponse::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ApplicationId"))
   {
     m_applicationId = jsonValue.GetString("ApplicationId");
-
     m_applicationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetString("CreationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HasCredential"))
   {
     m_hasCredential = jsonValue.GetBool("HasCredential");
-
     m_hasCredentialHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsArchived"))
   {
     m_isArchived = jsonValue.GetBool("IsArchived");
-
     m_isArchivedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedBy"))
   {
     m_lastModifiedBy = jsonValue.GetString("LastModifiedBy");
-
     m_lastModifiedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetString("LastModifiedDate");
-
     m_lastModifiedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Platform"))
   {
     m_platform = jsonValue.GetString("Platform");
-
     m_platformHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PromotionalMessagesPerSecond"))
   {
     m_promotionalMessagesPerSecond = jsonValue.GetInteger("PromotionalMessagesPerSecond");
-
     m_promotionalMessagesPerSecondHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SenderId"))
   {
     m_senderId = jsonValue.GetString("SenderId");
-
     m_senderIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ShortCode"))
   {
     m_shortCode = jsonValue.GetString("ShortCode");
-
     m_shortCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TransactionalMessagesPerSecond"))
   {
     m_transactionalMessagesPerSecond = jsonValue.GetInteger("TransactionalMessagesPerSecond");
-
     m_transactionalMessagesPerSecondHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetInteger("Version");
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

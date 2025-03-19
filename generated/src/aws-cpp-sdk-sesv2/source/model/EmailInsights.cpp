@@ -18,15 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-EmailInsights::EmailInsights() : 
-    m_destinationHasBeenSet(false),
-    m_ispHasBeenSet(false),
-    m_eventsHasBeenSet(false)
-{
-}
-
 EmailInsights::EmailInsights(JsonView jsonValue)
-  : EmailInsights()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ EmailInsights& EmailInsights::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Destination"))
   {
     m_destination = jsonValue.GetString("Destination");
-
     m_destinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Isp"))
   {
     m_isp = jsonValue.GetString("Isp");
-
     m_ispHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Events"))
   {
     Aws::Utils::Array<JsonView> eventsJsonList = jsonValue.GetArray("Events");
@@ -56,7 +44,6 @@ EmailInsights& EmailInsights::operator =(JsonView jsonValue)
     }
     m_eventsHasBeenSet = true;
   }
-
   return *this;
 }
 

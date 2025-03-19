@@ -18,16 +18,7 @@ namespace drs
 namespace Model
 {
 
-RecoveryLifeCycle::RecoveryLifeCycle() : 
-    m_apiCallDateTimeHasBeenSet(false),
-    m_jobIDHasBeenSet(false),
-    m_lastRecoveryResult(RecoveryResult::NOT_SET),
-    m_lastRecoveryResultHasBeenSet(false)
-{
-}
-
 RecoveryLifeCycle::RecoveryLifeCycle(JsonView jsonValue)
-  : RecoveryLifeCycle()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ RecoveryLifeCycle& RecoveryLifeCycle::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("apiCallDateTime"))
   {
     m_apiCallDateTime = jsonValue.GetString("apiCallDateTime");
-
     m_apiCallDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobID"))
   {
     m_jobID = jsonValue.GetString("jobID");
-
     m_jobIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastRecoveryResult"))
   {
     m_lastRecoveryResult = RecoveryResultMapper::GetRecoveryResultForName(jsonValue.GetString("lastRecoveryResult"));
-
     m_lastRecoveryResultHasBeenSet = true;
   }
-
   return *this;
 }
 

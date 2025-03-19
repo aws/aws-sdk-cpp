@@ -18,18 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-ActionTypeId::ActionTypeId() : 
-    m_category(ActionCategory::NOT_SET),
-    m_categoryHasBeenSet(false),
-    m_owner(ActionOwner::NOT_SET),
-    m_ownerHasBeenSet(false),
-    m_providerHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 ActionTypeId::ActionTypeId(JsonView jsonValue)
-  : ActionTypeId()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ ActionTypeId& ActionTypeId::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("category"))
   {
     m_category = ActionCategoryMapper::GetActionCategoryForName(jsonValue.GetString("category"));
-
     m_categoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("owner"))
   {
     m_owner = ActionOwnerMapper::GetActionOwnerForName(jsonValue.GetString("owner"));
-
     m_ownerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("provider"))
   {
     m_provider = jsonValue.GetString("provider");
-
     m_providerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

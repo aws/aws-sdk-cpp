@@ -18,13 +18,7 @@ namespace Notifications
 namespace Model
 {
 
-MessageComponentsSummary::MessageComponentsSummary() : 
-    m_headlineHasBeenSet(false)
-{
-}
-
 MessageComponentsSummary::MessageComponentsSummary(JsonView jsonValue)
-  : MessageComponentsSummary()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MessageComponentsSummary& MessageComponentsSummary::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("headline"))
   {
     m_headline = jsonValue.GetString("headline");
-
     m_headlineHasBeenSet = true;
   }
-
   return *this;
 }
 

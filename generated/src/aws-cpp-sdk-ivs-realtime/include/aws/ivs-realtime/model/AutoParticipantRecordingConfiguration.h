@@ -36,7 +36,7 @@ namespace Model
   class AutoParticipantRecordingConfiguration
   {
   public:
-    AWS_IVSREALTIME_API AutoParticipantRecordingConfiguration();
+    AWS_IVSREALTIME_API AutoParticipantRecordingConfiguration() = default;
     AWS_IVSREALTIME_API AutoParticipantRecordingConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVSREALTIME_API AutoParticipantRecordingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVSREALTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,28 +52,25 @@ namespace Model
      * <code>""</code>; other fields in this object will get reset to their defaults
      * when sending <code>""</code>. </p>
      */
-    inline const Aws::String& GetStorageConfigurationArn() const{ return m_storageConfigurationArn; }
+    inline const Aws::String& GetStorageConfigurationArn() const { return m_storageConfigurationArn; }
     inline bool StorageConfigurationArnHasBeenSet() const { return m_storageConfigurationArnHasBeenSet; }
-    inline void SetStorageConfigurationArn(const Aws::String& value) { m_storageConfigurationArnHasBeenSet = true; m_storageConfigurationArn = value; }
-    inline void SetStorageConfigurationArn(Aws::String&& value) { m_storageConfigurationArnHasBeenSet = true; m_storageConfigurationArn = std::move(value); }
-    inline void SetStorageConfigurationArn(const char* value) { m_storageConfigurationArnHasBeenSet = true; m_storageConfigurationArn.assign(value); }
-    inline AutoParticipantRecordingConfiguration& WithStorageConfigurationArn(const Aws::String& value) { SetStorageConfigurationArn(value); return *this;}
-    inline AutoParticipantRecordingConfiguration& WithStorageConfigurationArn(Aws::String&& value) { SetStorageConfigurationArn(std::move(value)); return *this;}
-    inline AutoParticipantRecordingConfiguration& WithStorageConfigurationArn(const char* value) { SetStorageConfigurationArn(value); return *this;}
+    template<typename StorageConfigurationArnT = Aws::String>
+    void SetStorageConfigurationArn(StorageConfigurationArnT&& value) { m_storageConfigurationArnHasBeenSet = true; m_storageConfigurationArn = std::forward<StorageConfigurationArnT>(value); }
+    template<typename StorageConfigurationArnT = Aws::String>
+    AutoParticipantRecordingConfiguration& WithStorageConfigurationArn(StorageConfigurationArnT&& value) { SetStorageConfigurationArn(std::forward<StorageConfigurationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Types of media to be recorded. Default: <code>AUDIO_VIDEO</code>.</p>
      */
-    inline const Aws::Vector<ParticipantRecordingMediaType>& GetMediaTypes() const{ return m_mediaTypes; }
+    inline const Aws::Vector<ParticipantRecordingMediaType>& GetMediaTypes() const { return m_mediaTypes; }
     inline bool MediaTypesHasBeenSet() const { return m_mediaTypesHasBeenSet; }
-    inline void SetMediaTypes(const Aws::Vector<ParticipantRecordingMediaType>& value) { m_mediaTypesHasBeenSet = true; m_mediaTypes = value; }
-    inline void SetMediaTypes(Aws::Vector<ParticipantRecordingMediaType>&& value) { m_mediaTypesHasBeenSet = true; m_mediaTypes = std::move(value); }
-    inline AutoParticipantRecordingConfiguration& WithMediaTypes(const Aws::Vector<ParticipantRecordingMediaType>& value) { SetMediaTypes(value); return *this;}
-    inline AutoParticipantRecordingConfiguration& WithMediaTypes(Aws::Vector<ParticipantRecordingMediaType>&& value) { SetMediaTypes(std::move(value)); return *this;}
-    inline AutoParticipantRecordingConfiguration& AddMediaTypes(const ParticipantRecordingMediaType& value) { m_mediaTypesHasBeenSet = true; m_mediaTypes.push_back(value); return *this; }
-    inline AutoParticipantRecordingConfiguration& AddMediaTypes(ParticipantRecordingMediaType&& value) { m_mediaTypesHasBeenSet = true; m_mediaTypes.push_back(std::move(value)); return *this; }
+    template<typename MediaTypesT = Aws::Vector<ParticipantRecordingMediaType>>
+    void SetMediaTypes(MediaTypesT&& value) { m_mediaTypesHasBeenSet = true; m_mediaTypes = std::forward<MediaTypesT>(value); }
+    template<typename MediaTypesT = Aws::Vector<ParticipantRecordingMediaType>>
+    AutoParticipantRecordingConfiguration& WithMediaTypes(MediaTypesT&& value) { SetMediaTypes(std::forward<MediaTypesT>(value)); return *this;}
+    inline AutoParticipantRecordingConfiguration& AddMediaTypes(ParticipantRecordingMediaType value) { m_mediaTypesHasBeenSet = true; m_mediaTypes.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -82,12 +79,12 @@ namespace Model
      * for individual participant recording and modify the interval at which thumbnails
      * are generated for the live session.</p>
      */
-    inline const ParticipantThumbnailConfiguration& GetThumbnailConfiguration() const{ return m_thumbnailConfiguration; }
+    inline const ParticipantThumbnailConfiguration& GetThumbnailConfiguration() const { return m_thumbnailConfiguration; }
     inline bool ThumbnailConfigurationHasBeenSet() const { return m_thumbnailConfigurationHasBeenSet; }
-    inline void SetThumbnailConfiguration(const ParticipantThumbnailConfiguration& value) { m_thumbnailConfigurationHasBeenSet = true; m_thumbnailConfiguration = value; }
-    inline void SetThumbnailConfiguration(ParticipantThumbnailConfiguration&& value) { m_thumbnailConfigurationHasBeenSet = true; m_thumbnailConfiguration = std::move(value); }
-    inline AutoParticipantRecordingConfiguration& WithThumbnailConfiguration(const ParticipantThumbnailConfiguration& value) { SetThumbnailConfiguration(value); return *this;}
-    inline AutoParticipantRecordingConfiguration& WithThumbnailConfiguration(ParticipantThumbnailConfiguration&& value) { SetThumbnailConfiguration(std::move(value)); return *this;}
+    template<typename ThumbnailConfigurationT = ParticipantThumbnailConfiguration>
+    void SetThumbnailConfiguration(ThumbnailConfigurationT&& value) { m_thumbnailConfigurationHasBeenSet = true; m_thumbnailConfiguration = std::forward<ThumbnailConfigurationT>(value); }
+    template<typename ThumbnailConfigurationT = ParticipantThumbnailConfiguration>
+    AutoParticipantRecordingConfiguration& WithThumbnailConfiguration(ThumbnailConfigurationT&& value) { SetThumbnailConfiguration(std::forward<ThumbnailConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,7 +93,7 @@ namespace Model
      * interval, the multiple recordings will be considered a single recording and
      * merged together.</p> <p>The default value is 0, which disables merging.</p>
      */
-    inline int GetRecordingReconnectWindowSeconds() const{ return m_recordingReconnectWindowSeconds; }
+    inline int GetRecordingReconnectWindowSeconds() const { return m_recordingReconnectWindowSeconds; }
     inline bool RecordingReconnectWindowSecondsHasBeenSet() const { return m_recordingReconnectWindowSecondsHasBeenSet; }
     inline void SetRecordingReconnectWindowSeconds(int value) { m_recordingReconnectWindowSecondsHasBeenSet = true; m_recordingReconnectWindowSeconds = value; }
     inline AutoParticipantRecordingConfiguration& WithRecordingReconnectWindowSeconds(int value) { SetRecordingReconnectWindowSeconds(value); return *this;}
@@ -106,12 +103,12 @@ namespace Model
     /**
      * <p>HLS configuration object for individual participant recording.</p>
      */
-    inline const ParticipantRecordingHlsConfiguration& GetHlsConfiguration() const{ return m_hlsConfiguration; }
+    inline const ParticipantRecordingHlsConfiguration& GetHlsConfiguration() const { return m_hlsConfiguration; }
     inline bool HlsConfigurationHasBeenSet() const { return m_hlsConfigurationHasBeenSet; }
-    inline void SetHlsConfiguration(const ParticipantRecordingHlsConfiguration& value) { m_hlsConfigurationHasBeenSet = true; m_hlsConfiguration = value; }
-    inline void SetHlsConfiguration(ParticipantRecordingHlsConfiguration&& value) { m_hlsConfigurationHasBeenSet = true; m_hlsConfiguration = std::move(value); }
-    inline AutoParticipantRecordingConfiguration& WithHlsConfiguration(const ParticipantRecordingHlsConfiguration& value) { SetHlsConfiguration(value); return *this;}
-    inline AutoParticipantRecordingConfiguration& WithHlsConfiguration(ParticipantRecordingHlsConfiguration&& value) { SetHlsConfiguration(std::move(value)); return *this;}
+    template<typename HlsConfigurationT = ParticipantRecordingHlsConfiguration>
+    void SetHlsConfiguration(HlsConfigurationT&& value) { m_hlsConfigurationHasBeenSet = true; m_hlsConfiguration = std::forward<HlsConfigurationT>(value); }
+    template<typename HlsConfigurationT = ParticipantRecordingHlsConfiguration>
+    AutoParticipantRecordingConfiguration& WithHlsConfiguration(HlsConfigurationT&& value) { SetHlsConfiguration(std::forward<HlsConfigurationT>(value)); return *this;}
     ///@}
   private:
 
@@ -124,7 +121,7 @@ namespace Model
     ParticipantThumbnailConfiguration m_thumbnailConfiguration;
     bool m_thumbnailConfigurationHasBeenSet = false;
 
-    int m_recordingReconnectWindowSeconds;
+    int m_recordingReconnectWindowSeconds{0};
     bool m_recordingReconnectWindowSecondsHasBeenSet = false;
 
     ParticipantRecordingHlsConfiguration m_hlsConfiguration;

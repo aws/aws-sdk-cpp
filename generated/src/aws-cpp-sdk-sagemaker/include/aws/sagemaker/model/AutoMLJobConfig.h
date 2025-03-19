@@ -36,7 +36,7 @@ namespace Model
   class AutoMLJobConfig
   {
   public:
-    AWS_SAGEMAKER_API AutoMLJobConfig();
+    AWS_SAGEMAKER_API AutoMLJobConfig() = default;
     AWS_SAGEMAKER_API AutoMLJobConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API AutoMLJobConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,24 +47,24 @@ namespace Model
      * <p>How long an AutoML job is allowed to run, or how many candidates a job is
      * allowed to generate.</p>
      */
-    inline const AutoMLJobCompletionCriteria& GetCompletionCriteria() const{ return m_completionCriteria; }
+    inline const AutoMLJobCompletionCriteria& GetCompletionCriteria() const { return m_completionCriteria; }
     inline bool CompletionCriteriaHasBeenSet() const { return m_completionCriteriaHasBeenSet; }
-    inline void SetCompletionCriteria(const AutoMLJobCompletionCriteria& value) { m_completionCriteriaHasBeenSet = true; m_completionCriteria = value; }
-    inline void SetCompletionCriteria(AutoMLJobCompletionCriteria&& value) { m_completionCriteriaHasBeenSet = true; m_completionCriteria = std::move(value); }
-    inline AutoMLJobConfig& WithCompletionCriteria(const AutoMLJobCompletionCriteria& value) { SetCompletionCriteria(value); return *this;}
-    inline AutoMLJobConfig& WithCompletionCriteria(AutoMLJobCompletionCriteria&& value) { SetCompletionCriteria(std::move(value)); return *this;}
+    template<typename CompletionCriteriaT = AutoMLJobCompletionCriteria>
+    void SetCompletionCriteria(CompletionCriteriaT&& value) { m_completionCriteriaHasBeenSet = true; m_completionCriteria = std::forward<CompletionCriteriaT>(value); }
+    template<typename CompletionCriteriaT = AutoMLJobCompletionCriteria>
+    AutoMLJobConfig& WithCompletionCriteria(CompletionCriteriaT&& value) { SetCompletionCriteria(std::forward<CompletionCriteriaT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The security configuration for traffic encryption or Amazon VPC settings.</p>
      */
-    inline const AutoMLSecurityConfig& GetSecurityConfig() const{ return m_securityConfig; }
+    inline const AutoMLSecurityConfig& GetSecurityConfig() const { return m_securityConfig; }
     inline bool SecurityConfigHasBeenSet() const { return m_securityConfigHasBeenSet; }
-    inline void SetSecurityConfig(const AutoMLSecurityConfig& value) { m_securityConfigHasBeenSet = true; m_securityConfig = value; }
-    inline void SetSecurityConfig(AutoMLSecurityConfig&& value) { m_securityConfigHasBeenSet = true; m_securityConfig = std::move(value); }
-    inline AutoMLJobConfig& WithSecurityConfig(const AutoMLSecurityConfig& value) { SetSecurityConfig(value); return *this;}
-    inline AutoMLJobConfig& WithSecurityConfig(AutoMLSecurityConfig&& value) { SetSecurityConfig(std::move(value)); return *this;}
+    template<typename SecurityConfigT = AutoMLSecurityConfig>
+    void SetSecurityConfig(SecurityConfigT&& value) { m_securityConfigHasBeenSet = true; m_securityConfig = std::forward<SecurityConfigT>(value); }
+    template<typename SecurityConfigT = AutoMLSecurityConfig>
+    AutoMLJobConfig& WithSecurityConfig(SecurityConfigT&& value) { SetSecurityConfig(std::forward<SecurityConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +72,12 @@ namespace Model
      * <p>The configuration for generating a candidate for an AutoML job (optional).
      * </p>
      */
-    inline const AutoMLCandidateGenerationConfig& GetCandidateGenerationConfig() const{ return m_candidateGenerationConfig; }
+    inline const AutoMLCandidateGenerationConfig& GetCandidateGenerationConfig() const { return m_candidateGenerationConfig; }
     inline bool CandidateGenerationConfigHasBeenSet() const { return m_candidateGenerationConfigHasBeenSet; }
-    inline void SetCandidateGenerationConfig(const AutoMLCandidateGenerationConfig& value) { m_candidateGenerationConfigHasBeenSet = true; m_candidateGenerationConfig = value; }
-    inline void SetCandidateGenerationConfig(AutoMLCandidateGenerationConfig&& value) { m_candidateGenerationConfigHasBeenSet = true; m_candidateGenerationConfig = std::move(value); }
-    inline AutoMLJobConfig& WithCandidateGenerationConfig(const AutoMLCandidateGenerationConfig& value) { SetCandidateGenerationConfig(value); return *this;}
-    inline AutoMLJobConfig& WithCandidateGenerationConfig(AutoMLCandidateGenerationConfig&& value) { SetCandidateGenerationConfig(std::move(value)); return *this;}
+    template<typename CandidateGenerationConfigT = AutoMLCandidateGenerationConfig>
+    void SetCandidateGenerationConfig(CandidateGenerationConfigT&& value) { m_candidateGenerationConfigHasBeenSet = true; m_candidateGenerationConfig = std::forward<CandidateGenerationConfigT>(value); }
+    template<typename CandidateGenerationConfigT = AutoMLCandidateGenerationConfig>
+    AutoMLJobConfig& WithCandidateGenerationConfig(CandidateGenerationConfigT&& value) { SetCandidateGenerationConfig(std::forward<CandidateGenerationConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,12 +85,12 @@ namespace Model
      * <p>The configuration for splitting the input training dataset.</p> <p>Type:
      * AutoMLDataSplitConfig</p>
      */
-    inline const AutoMLDataSplitConfig& GetDataSplitConfig() const{ return m_dataSplitConfig; }
+    inline const AutoMLDataSplitConfig& GetDataSplitConfig() const { return m_dataSplitConfig; }
     inline bool DataSplitConfigHasBeenSet() const { return m_dataSplitConfigHasBeenSet; }
-    inline void SetDataSplitConfig(const AutoMLDataSplitConfig& value) { m_dataSplitConfigHasBeenSet = true; m_dataSplitConfig = value; }
-    inline void SetDataSplitConfig(AutoMLDataSplitConfig&& value) { m_dataSplitConfigHasBeenSet = true; m_dataSplitConfig = std::move(value); }
-    inline AutoMLJobConfig& WithDataSplitConfig(const AutoMLDataSplitConfig& value) { SetDataSplitConfig(value); return *this;}
-    inline AutoMLJobConfig& WithDataSplitConfig(AutoMLDataSplitConfig&& value) { SetDataSplitConfig(std::move(value)); return *this;}
+    template<typename DataSplitConfigT = AutoMLDataSplitConfig>
+    void SetDataSplitConfig(DataSplitConfigT&& value) { m_dataSplitConfigHasBeenSet = true; m_dataSplitConfig = std::forward<DataSplitConfigT>(value); }
+    template<typename DataSplitConfigT = AutoMLDataSplitConfig>
+    AutoMLJobConfig& WithDataSplitConfig(DataSplitConfigT&& value) { SetDataSplitConfig(std::forward<DataSplitConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -118,12 +118,10 @@ namespace Model
      * algorithm support</a> for a list of algorithms supported by
      * <code>HYPERPARAMETER_TUNING</code> mode.</p>
      */
-    inline const AutoMLMode& GetMode() const{ return m_mode; }
+    inline AutoMLMode GetMode() const { return m_mode; }
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-    inline void SetMode(const AutoMLMode& value) { m_modeHasBeenSet = true; m_mode = value; }
-    inline void SetMode(AutoMLMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
-    inline AutoMLJobConfig& WithMode(const AutoMLMode& value) { SetMode(value); return *this;}
-    inline AutoMLJobConfig& WithMode(AutoMLMode&& value) { SetMode(std::move(value)); return *this;}
+    inline void SetMode(AutoMLMode value) { m_modeHasBeenSet = true; m_mode = value; }
+    inline AutoMLJobConfig& WithMode(AutoMLMode value) { SetMode(value); return *this;}
     ///@}
   private:
 
@@ -139,7 +137,7 @@ namespace Model
     AutoMLDataSplitConfig m_dataSplitConfig;
     bool m_dataSplitConfigHasBeenSet = false;
 
-    AutoMLMode m_mode;
+    AutoMLMode m_mode{AutoMLMode::NOT_SET};
     bool m_modeHasBeenSet = false;
   };
 

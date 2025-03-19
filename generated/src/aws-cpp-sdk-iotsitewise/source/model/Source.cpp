@@ -18,14 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-Source::Source() : 
-    m_arnHasBeenSet(false),
-    m_locationHasBeenSet(false)
-{
-}
-
 Source::Source(JsonView jsonValue)
-  : Source()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Source& Source::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("location"))
   {
     m_location = jsonValue.GetObject("location");
-
     m_locationHasBeenSet = true;
   }
-
   return *this;
 }
 

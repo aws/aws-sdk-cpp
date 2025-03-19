@@ -18,14 +18,7 @@ namespace SupplyChain
 namespace Model
 {
 
-DataIntegrationFlowDatasetTargetConfiguration::DataIntegrationFlowDatasetTargetConfiguration() : 
-    m_datasetIdentifierHasBeenSet(false),
-    m_optionsHasBeenSet(false)
-{
-}
-
 DataIntegrationFlowDatasetTargetConfiguration::DataIntegrationFlowDatasetTargetConfiguration(JsonView jsonValue)
-  : DataIntegrationFlowDatasetTargetConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DataIntegrationFlowDatasetTargetConfiguration& DataIntegrationFlowDatasetTargetC
   if(jsonValue.ValueExists("datasetIdentifier"))
   {
     m_datasetIdentifier = jsonValue.GetString("datasetIdentifier");
-
     m_datasetIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("options"))
   {
     m_options = jsonValue.GetObject("options");
-
     m_optionsHasBeenSet = true;
   }
-
   return *this;
 }
 

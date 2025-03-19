@@ -28,7 +28,7 @@ namespace Model
   class GetServiceSettingsResult
   {
   public:
-    AWS_LICENSEMANAGER_API GetServiceSettingsResult();
+    AWS_LICENSEMANAGER_API GetServiceSettingsResult() = default;
     AWS_LICENSEMANAGER_API GetServiceSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LICENSEMANAGER_API GetServiceSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,26 +38,22 @@ namespace Model
      * <p>Regional S3 bucket path for storing reports, license trail event data,
      * discovery data, and so on.</p>
      */
-    inline const Aws::String& GetS3BucketArn() const{ return m_s3BucketArn; }
-    inline void SetS3BucketArn(const Aws::String& value) { m_s3BucketArn = value; }
-    inline void SetS3BucketArn(Aws::String&& value) { m_s3BucketArn = std::move(value); }
-    inline void SetS3BucketArn(const char* value) { m_s3BucketArn.assign(value); }
-    inline GetServiceSettingsResult& WithS3BucketArn(const Aws::String& value) { SetS3BucketArn(value); return *this;}
-    inline GetServiceSettingsResult& WithS3BucketArn(Aws::String&& value) { SetS3BucketArn(std::move(value)); return *this;}
-    inline GetServiceSettingsResult& WithS3BucketArn(const char* value) { SetS3BucketArn(value); return *this;}
+    inline const Aws::String& GetS3BucketArn() const { return m_s3BucketArn; }
+    template<typename S3BucketArnT = Aws::String>
+    void SetS3BucketArn(S3BucketArnT&& value) { m_s3BucketArnHasBeenSet = true; m_s3BucketArn = std::forward<S3BucketArnT>(value); }
+    template<typename S3BucketArnT = Aws::String>
+    GetServiceSettingsResult& WithS3BucketArn(S3BucketArnT&& value) { SetS3BucketArn(std::forward<S3BucketArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>SNS topic configured to receive notifications from License Manager.</p>
      */
-    inline const Aws::String& GetSnsTopicArn() const{ return m_snsTopicArn; }
-    inline void SetSnsTopicArn(const Aws::String& value) { m_snsTopicArn = value; }
-    inline void SetSnsTopicArn(Aws::String&& value) { m_snsTopicArn = std::move(value); }
-    inline void SetSnsTopicArn(const char* value) { m_snsTopicArn.assign(value); }
-    inline GetServiceSettingsResult& WithSnsTopicArn(const Aws::String& value) { SetSnsTopicArn(value); return *this;}
-    inline GetServiceSettingsResult& WithSnsTopicArn(Aws::String&& value) { SetSnsTopicArn(std::move(value)); return *this;}
-    inline GetServiceSettingsResult& WithSnsTopicArn(const char* value) { SetSnsTopicArn(value); return *this;}
+    inline const Aws::String& GetSnsTopicArn() const { return m_snsTopicArn; }
+    template<typename SnsTopicArnT = Aws::String>
+    void SetSnsTopicArn(SnsTopicArnT&& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = std::forward<SnsTopicArnT>(value); }
+    template<typename SnsTopicArnT = Aws::String>
+    GetServiceSettingsResult& WithSnsTopicArn(SnsTopicArnT&& value) { SetSnsTopicArn(std::forward<SnsTopicArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,19 +61,19 @@ namespace Model
      * <p>Indicates whether Organizations is integrated with License Manager for
      * cross-account discovery.</p>
      */
-    inline const OrganizationConfiguration& GetOrganizationConfiguration() const{ return m_organizationConfiguration; }
-    inline void SetOrganizationConfiguration(const OrganizationConfiguration& value) { m_organizationConfiguration = value; }
-    inline void SetOrganizationConfiguration(OrganizationConfiguration&& value) { m_organizationConfiguration = std::move(value); }
-    inline GetServiceSettingsResult& WithOrganizationConfiguration(const OrganizationConfiguration& value) { SetOrganizationConfiguration(value); return *this;}
-    inline GetServiceSettingsResult& WithOrganizationConfiguration(OrganizationConfiguration&& value) { SetOrganizationConfiguration(std::move(value)); return *this;}
+    inline const OrganizationConfiguration& GetOrganizationConfiguration() const { return m_organizationConfiguration; }
+    template<typename OrganizationConfigurationT = OrganizationConfiguration>
+    void SetOrganizationConfiguration(OrganizationConfigurationT&& value) { m_organizationConfigurationHasBeenSet = true; m_organizationConfiguration = std::forward<OrganizationConfigurationT>(value); }
+    template<typename OrganizationConfigurationT = OrganizationConfiguration>
+    GetServiceSettingsResult& WithOrganizationConfiguration(OrganizationConfigurationT&& value) { SetOrganizationConfiguration(std::forward<OrganizationConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether cross-account discovery is enabled.</p>
      */
-    inline bool GetEnableCrossAccountsDiscovery() const{ return m_enableCrossAccountsDiscovery; }
-    inline void SetEnableCrossAccountsDiscovery(bool value) { m_enableCrossAccountsDiscovery = value; }
+    inline bool GetEnableCrossAccountsDiscovery() const { return m_enableCrossAccountsDiscovery; }
+    inline void SetEnableCrossAccountsDiscovery(bool value) { m_enableCrossAccountsDiscoveryHasBeenSet = true; m_enableCrossAccountsDiscovery = value; }
     inline GetServiceSettingsResult& WithEnableCrossAccountsDiscovery(bool value) { SetEnableCrossAccountsDiscovery(value); return *this;}
     ///@}
 
@@ -86,38 +82,40 @@ namespace Model
      * <p>Amazon Resource Name (ARN) of the resource share. The License Manager
      * management account provides member accounts with access to this share.</p>
      */
-    inline const Aws::String& GetLicenseManagerResourceShareArn() const{ return m_licenseManagerResourceShareArn; }
-    inline void SetLicenseManagerResourceShareArn(const Aws::String& value) { m_licenseManagerResourceShareArn = value; }
-    inline void SetLicenseManagerResourceShareArn(Aws::String&& value) { m_licenseManagerResourceShareArn = std::move(value); }
-    inline void SetLicenseManagerResourceShareArn(const char* value) { m_licenseManagerResourceShareArn.assign(value); }
-    inline GetServiceSettingsResult& WithLicenseManagerResourceShareArn(const Aws::String& value) { SetLicenseManagerResourceShareArn(value); return *this;}
-    inline GetServiceSettingsResult& WithLicenseManagerResourceShareArn(Aws::String&& value) { SetLicenseManagerResourceShareArn(std::move(value)); return *this;}
-    inline GetServiceSettingsResult& WithLicenseManagerResourceShareArn(const char* value) { SetLicenseManagerResourceShareArn(value); return *this;}
+    inline const Aws::String& GetLicenseManagerResourceShareArn() const { return m_licenseManagerResourceShareArn; }
+    template<typename LicenseManagerResourceShareArnT = Aws::String>
+    void SetLicenseManagerResourceShareArn(LicenseManagerResourceShareArnT&& value) { m_licenseManagerResourceShareArnHasBeenSet = true; m_licenseManagerResourceShareArn = std::forward<LicenseManagerResourceShareArnT>(value); }
+    template<typename LicenseManagerResourceShareArnT = Aws::String>
+    GetServiceSettingsResult& WithLicenseManagerResourceShareArn(LicenseManagerResourceShareArnT&& value) { SetLicenseManagerResourceShareArn(std::forward<LicenseManagerResourceShareArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetServiceSettingsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetServiceSettingsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetServiceSettingsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetServiceSettingsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_s3BucketArn;
+    bool m_s3BucketArnHasBeenSet = false;
 
     Aws::String m_snsTopicArn;
+    bool m_snsTopicArnHasBeenSet = false;
 
     OrganizationConfiguration m_organizationConfiguration;
+    bool m_organizationConfigurationHasBeenSet = false;
 
-    bool m_enableCrossAccountsDiscovery;
+    bool m_enableCrossAccountsDiscovery{false};
+    bool m_enableCrossAccountsDiscoveryHasBeenSet = false;
 
     Aws::String m_licenseManagerResourceShareArn;
+    bool m_licenseManagerResourceShareArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

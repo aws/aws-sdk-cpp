@@ -36,7 +36,7 @@ namespace Model
   class RedshiftProvisionedAuthConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API RedshiftProvisionedAuthConfiguration();
+    AWS_BEDROCKAGENT_API RedshiftProvisionedAuthConfiguration() = default;
     AWS_BEDROCKAGENT_API RedshiftProvisionedAuthConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API RedshiftProvisionedAuthConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,47 +47,41 @@ namespace Model
      * <p>The database username for authentication to an Amazon Redshift provisioned
      * data warehouse.</p>
      */
-    inline const Aws::String& GetDatabaseUser() const{ return m_databaseUser; }
+    inline const Aws::String& GetDatabaseUser() const { return m_databaseUser; }
     inline bool DatabaseUserHasBeenSet() const { return m_databaseUserHasBeenSet; }
-    inline void SetDatabaseUser(const Aws::String& value) { m_databaseUserHasBeenSet = true; m_databaseUser = value; }
-    inline void SetDatabaseUser(Aws::String&& value) { m_databaseUserHasBeenSet = true; m_databaseUser = std::move(value); }
-    inline void SetDatabaseUser(const char* value) { m_databaseUserHasBeenSet = true; m_databaseUser.assign(value); }
-    inline RedshiftProvisionedAuthConfiguration& WithDatabaseUser(const Aws::String& value) { SetDatabaseUser(value); return *this;}
-    inline RedshiftProvisionedAuthConfiguration& WithDatabaseUser(Aws::String&& value) { SetDatabaseUser(std::move(value)); return *this;}
-    inline RedshiftProvisionedAuthConfiguration& WithDatabaseUser(const char* value) { SetDatabaseUser(value); return *this;}
+    template<typename DatabaseUserT = Aws::String>
+    void SetDatabaseUser(DatabaseUserT&& value) { m_databaseUserHasBeenSet = true; m_databaseUser = std::forward<DatabaseUserT>(value); }
+    template<typename DatabaseUserT = Aws::String>
+    RedshiftProvisionedAuthConfiguration& WithDatabaseUser(DatabaseUserT&& value) { SetDatabaseUser(std::forward<DatabaseUserT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of authentication to use.</p>
      */
-    inline const RedshiftProvisionedAuthType& GetType() const{ return m_type; }
+    inline RedshiftProvisionedAuthType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const RedshiftProvisionedAuthType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(RedshiftProvisionedAuthType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline RedshiftProvisionedAuthConfiguration& WithType(const RedshiftProvisionedAuthType& value) { SetType(value); return *this;}
-    inline RedshiftProvisionedAuthConfiguration& WithType(RedshiftProvisionedAuthType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(RedshiftProvisionedAuthType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline RedshiftProvisionedAuthConfiguration& WithType(RedshiftProvisionedAuthType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of an Secrets Manager secret for authentication.</p>
      */
-    inline const Aws::String& GetUsernamePasswordSecretArn() const{ return m_usernamePasswordSecretArn; }
+    inline const Aws::String& GetUsernamePasswordSecretArn() const { return m_usernamePasswordSecretArn; }
     inline bool UsernamePasswordSecretArnHasBeenSet() const { return m_usernamePasswordSecretArnHasBeenSet; }
-    inline void SetUsernamePasswordSecretArn(const Aws::String& value) { m_usernamePasswordSecretArnHasBeenSet = true; m_usernamePasswordSecretArn = value; }
-    inline void SetUsernamePasswordSecretArn(Aws::String&& value) { m_usernamePasswordSecretArnHasBeenSet = true; m_usernamePasswordSecretArn = std::move(value); }
-    inline void SetUsernamePasswordSecretArn(const char* value) { m_usernamePasswordSecretArnHasBeenSet = true; m_usernamePasswordSecretArn.assign(value); }
-    inline RedshiftProvisionedAuthConfiguration& WithUsernamePasswordSecretArn(const Aws::String& value) { SetUsernamePasswordSecretArn(value); return *this;}
-    inline RedshiftProvisionedAuthConfiguration& WithUsernamePasswordSecretArn(Aws::String&& value) { SetUsernamePasswordSecretArn(std::move(value)); return *this;}
-    inline RedshiftProvisionedAuthConfiguration& WithUsernamePasswordSecretArn(const char* value) { SetUsernamePasswordSecretArn(value); return *this;}
+    template<typename UsernamePasswordSecretArnT = Aws::String>
+    void SetUsernamePasswordSecretArn(UsernamePasswordSecretArnT&& value) { m_usernamePasswordSecretArnHasBeenSet = true; m_usernamePasswordSecretArn = std::forward<UsernamePasswordSecretArnT>(value); }
+    template<typename UsernamePasswordSecretArnT = Aws::String>
+    RedshiftProvisionedAuthConfiguration& WithUsernamePasswordSecretArn(UsernamePasswordSecretArnT&& value) { SetUsernamePasswordSecretArn(std::forward<UsernamePasswordSecretArnT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_databaseUser;
     bool m_databaseUserHasBeenSet = false;
 
-    RedshiftProvisionedAuthType m_type;
+    RedshiftProvisionedAuthType m_type{RedshiftProvisionedAuthType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_usernamePasswordSecretArn;

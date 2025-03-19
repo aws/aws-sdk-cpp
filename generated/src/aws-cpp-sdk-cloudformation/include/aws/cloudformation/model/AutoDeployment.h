@@ -31,7 +31,7 @@ namespace Model
   class AutoDeployment
   {
   public:
-    AWS_CLOUDFORMATION_API AutoDeployment();
+    AWS_CLOUDFORMATION_API AutoDeployment() = default;
     AWS_CLOUDFORMATION_API AutoDeployment(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFORMATION_API AutoDeployment& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,7 +47,7 @@ namespace Model
      * a target organization or OU, StackSets deletes stack instances from the account
      * in the specified Regions.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline AutoDeployment& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -60,17 +60,17 @@ namespace Model
      * resources are deleted. Specify only if <code>Enabled</code> is set to
      * <code>True</code>.</p>
      */
-    inline bool GetRetainStacksOnAccountRemoval() const{ return m_retainStacksOnAccountRemoval; }
+    inline bool GetRetainStacksOnAccountRemoval() const { return m_retainStacksOnAccountRemoval; }
     inline bool RetainStacksOnAccountRemovalHasBeenSet() const { return m_retainStacksOnAccountRemovalHasBeenSet; }
     inline void SetRetainStacksOnAccountRemoval(bool value) { m_retainStacksOnAccountRemovalHasBeenSet = true; m_retainStacksOnAccountRemoval = value; }
     inline AutoDeployment& WithRetainStacksOnAccountRemoval(bool value) { SetRetainStacksOnAccountRemoval(value); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
-    bool m_retainStacksOnAccountRemoval;
+    bool m_retainStacksOnAccountRemoval{false};
     bool m_retainStacksOnAccountRemovalHasBeenSet = false;
   };
 

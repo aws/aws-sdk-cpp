@@ -12,10 +12,6 @@ using namespace Aws::ResourceGroupsTaggingAPI::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeReportCreationRequest::DescribeReportCreationRequest()
-{
-}
-
 Aws::String DescribeReportCreationRequest::SerializePayload() const
 {
   return "{}";

@@ -33,7 +33,7 @@ namespace Model
   class ActivityTypeConfiguration
   {
   public:
-    AWS_SWF_API ActivityTypeConfiguration();
+    AWS_SWF_API ActivityTypeConfiguration() = default;
     AWS_SWF_API ActivityTypeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API ActivityTypeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * duration is specified in seconds, an integer greater than or equal to
      * <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
      */
-    inline const Aws::String& GetDefaultTaskStartToCloseTimeout() const{ return m_defaultTaskStartToCloseTimeout; }
+    inline const Aws::String& GetDefaultTaskStartToCloseTimeout() const { return m_defaultTaskStartToCloseTimeout; }
     inline bool DefaultTaskStartToCloseTimeoutHasBeenSet() const { return m_defaultTaskStartToCloseTimeoutHasBeenSet; }
-    inline void SetDefaultTaskStartToCloseTimeout(const Aws::String& value) { m_defaultTaskStartToCloseTimeoutHasBeenSet = true; m_defaultTaskStartToCloseTimeout = value; }
-    inline void SetDefaultTaskStartToCloseTimeout(Aws::String&& value) { m_defaultTaskStartToCloseTimeoutHasBeenSet = true; m_defaultTaskStartToCloseTimeout = std::move(value); }
-    inline void SetDefaultTaskStartToCloseTimeout(const char* value) { m_defaultTaskStartToCloseTimeoutHasBeenSet = true; m_defaultTaskStartToCloseTimeout.assign(value); }
-    inline ActivityTypeConfiguration& WithDefaultTaskStartToCloseTimeout(const Aws::String& value) { SetDefaultTaskStartToCloseTimeout(value); return *this;}
-    inline ActivityTypeConfiguration& WithDefaultTaskStartToCloseTimeout(Aws::String&& value) { SetDefaultTaskStartToCloseTimeout(std::move(value)); return *this;}
-    inline ActivityTypeConfiguration& WithDefaultTaskStartToCloseTimeout(const char* value) { SetDefaultTaskStartToCloseTimeout(value); return *this;}
+    template<typename DefaultTaskStartToCloseTimeoutT = Aws::String>
+    void SetDefaultTaskStartToCloseTimeout(DefaultTaskStartToCloseTimeoutT&& value) { m_defaultTaskStartToCloseTimeoutHasBeenSet = true; m_defaultTaskStartToCloseTimeout = std::forward<DefaultTaskStartToCloseTimeoutT>(value); }
+    template<typename DefaultTaskStartToCloseTimeoutT = Aws::String>
+    ActivityTypeConfiguration& WithDefaultTaskStartToCloseTimeout(DefaultTaskStartToCloseTimeoutT&& value) { SetDefaultTaskStartToCloseTimeout(std::forward<DefaultTaskStartToCloseTimeoutT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +69,12 @@ namespace Model
      * integer greater than or equal to <code>0</code>. You can use <code>NONE</code>
      * to specify unlimited duration.</p>
      */
-    inline const Aws::String& GetDefaultTaskHeartbeatTimeout() const{ return m_defaultTaskHeartbeatTimeout; }
+    inline const Aws::String& GetDefaultTaskHeartbeatTimeout() const { return m_defaultTaskHeartbeatTimeout; }
     inline bool DefaultTaskHeartbeatTimeoutHasBeenSet() const { return m_defaultTaskHeartbeatTimeoutHasBeenSet; }
-    inline void SetDefaultTaskHeartbeatTimeout(const Aws::String& value) { m_defaultTaskHeartbeatTimeoutHasBeenSet = true; m_defaultTaskHeartbeatTimeout = value; }
-    inline void SetDefaultTaskHeartbeatTimeout(Aws::String&& value) { m_defaultTaskHeartbeatTimeoutHasBeenSet = true; m_defaultTaskHeartbeatTimeout = std::move(value); }
-    inline void SetDefaultTaskHeartbeatTimeout(const char* value) { m_defaultTaskHeartbeatTimeoutHasBeenSet = true; m_defaultTaskHeartbeatTimeout.assign(value); }
-    inline ActivityTypeConfiguration& WithDefaultTaskHeartbeatTimeout(const Aws::String& value) { SetDefaultTaskHeartbeatTimeout(value); return *this;}
-    inline ActivityTypeConfiguration& WithDefaultTaskHeartbeatTimeout(Aws::String&& value) { SetDefaultTaskHeartbeatTimeout(std::move(value)); return *this;}
-    inline ActivityTypeConfiguration& WithDefaultTaskHeartbeatTimeout(const char* value) { SetDefaultTaskHeartbeatTimeout(value); return *this;}
+    template<typename DefaultTaskHeartbeatTimeoutT = Aws::String>
+    void SetDefaultTaskHeartbeatTimeout(DefaultTaskHeartbeatTimeoutT&& value) { m_defaultTaskHeartbeatTimeoutHasBeenSet = true; m_defaultTaskHeartbeatTimeout = std::forward<DefaultTaskHeartbeatTimeoutT>(value); }
+    template<typename DefaultTaskHeartbeatTimeoutT = Aws::String>
+    ActivityTypeConfiguration& WithDefaultTaskHeartbeatTimeout(DefaultTaskHeartbeatTimeoutT&& value) { SetDefaultTaskHeartbeatTimeout(std::forward<DefaultTaskHeartbeatTimeoutT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,12 +85,12 @@ namespace Model
      * default registered task list when scheduling a task through the
      * <code>ScheduleActivityTask</code> <a>Decision</a>.</p>
      */
-    inline const TaskList& GetDefaultTaskList() const{ return m_defaultTaskList; }
+    inline const TaskList& GetDefaultTaskList() const { return m_defaultTaskList; }
     inline bool DefaultTaskListHasBeenSet() const { return m_defaultTaskListHasBeenSet; }
-    inline void SetDefaultTaskList(const TaskList& value) { m_defaultTaskListHasBeenSet = true; m_defaultTaskList = value; }
-    inline void SetDefaultTaskList(TaskList&& value) { m_defaultTaskListHasBeenSet = true; m_defaultTaskList = std::move(value); }
-    inline ActivityTypeConfiguration& WithDefaultTaskList(const TaskList& value) { SetDefaultTaskList(value); return *this;}
-    inline ActivityTypeConfiguration& WithDefaultTaskList(TaskList&& value) { SetDefaultTaskList(std::move(value)); return *this;}
+    template<typename DefaultTaskListT = TaskList>
+    void SetDefaultTaskList(DefaultTaskListT&& value) { m_defaultTaskListHasBeenSet = true; m_defaultTaskList = std::forward<DefaultTaskListT>(value); }
+    template<typename DefaultTaskListT = TaskList>
+    ActivityTypeConfiguration& WithDefaultTaskList(DefaultTaskListT&& value) { SetDefaultTaskList(std::forward<DefaultTaskListT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,14 +105,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetDefaultTaskPriority() const{ return m_defaultTaskPriority; }
+    inline const Aws::String& GetDefaultTaskPriority() const { return m_defaultTaskPriority; }
     inline bool DefaultTaskPriorityHasBeenSet() const { return m_defaultTaskPriorityHasBeenSet; }
-    inline void SetDefaultTaskPriority(const Aws::String& value) { m_defaultTaskPriorityHasBeenSet = true; m_defaultTaskPriority = value; }
-    inline void SetDefaultTaskPriority(Aws::String&& value) { m_defaultTaskPriorityHasBeenSet = true; m_defaultTaskPriority = std::move(value); }
-    inline void SetDefaultTaskPriority(const char* value) { m_defaultTaskPriorityHasBeenSet = true; m_defaultTaskPriority.assign(value); }
-    inline ActivityTypeConfiguration& WithDefaultTaskPriority(const Aws::String& value) { SetDefaultTaskPriority(value); return *this;}
-    inline ActivityTypeConfiguration& WithDefaultTaskPriority(Aws::String&& value) { SetDefaultTaskPriority(std::move(value)); return *this;}
-    inline ActivityTypeConfiguration& WithDefaultTaskPriority(const char* value) { SetDefaultTaskPriority(value); return *this;}
+    template<typename DefaultTaskPriorityT = Aws::String>
+    void SetDefaultTaskPriority(DefaultTaskPriorityT&& value) { m_defaultTaskPriorityHasBeenSet = true; m_defaultTaskPriority = std::forward<DefaultTaskPriorityT>(value); }
+    template<typename DefaultTaskPriorityT = Aws::String>
+    ActivityTypeConfiguration& WithDefaultTaskPriority(DefaultTaskPriorityT&& value) { SetDefaultTaskPriority(std::forward<DefaultTaskPriorityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,14 +122,12 @@ namespace Model
      * specified in seconds, an integer greater than or equal to <code>0</code>. You
      * can use <code>NONE</code> to specify unlimited duration.</p>
      */
-    inline const Aws::String& GetDefaultTaskScheduleToStartTimeout() const{ return m_defaultTaskScheduleToStartTimeout; }
+    inline const Aws::String& GetDefaultTaskScheduleToStartTimeout() const { return m_defaultTaskScheduleToStartTimeout; }
     inline bool DefaultTaskScheduleToStartTimeoutHasBeenSet() const { return m_defaultTaskScheduleToStartTimeoutHasBeenSet; }
-    inline void SetDefaultTaskScheduleToStartTimeout(const Aws::String& value) { m_defaultTaskScheduleToStartTimeoutHasBeenSet = true; m_defaultTaskScheduleToStartTimeout = value; }
-    inline void SetDefaultTaskScheduleToStartTimeout(Aws::String&& value) { m_defaultTaskScheduleToStartTimeoutHasBeenSet = true; m_defaultTaskScheduleToStartTimeout = std::move(value); }
-    inline void SetDefaultTaskScheduleToStartTimeout(const char* value) { m_defaultTaskScheduleToStartTimeoutHasBeenSet = true; m_defaultTaskScheduleToStartTimeout.assign(value); }
-    inline ActivityTypeConfiguration& WithDefaultTaskScheduleToStartTimeout(const Aws::String& value) { SetDefaultTaskScheduleToStartTimeout(value); return *this;}
-    inline ActivityTypeConfiguration& WithDefaultTaskScheduleToStartTimeout(Aws::String&& value) { SetDefaultTaskScheduleToStartTimeout(std::move(value)); return *this;}
-    inline ActivityTypeConfiguration& WithDefaultTaskScheduleToStartTimeout(const char* value) { SetDefaultTaskScheduleToStartTimeout(value); return *this;}
+    template<typename DefaultTaskScheduleToStartTimeoutT = Aws::String>
+    void SetDefaultTaskScheduleToStartTimeout(DefaultTaskScheduleToStartTimeoutT&& value) { m_defaultTaskScheduleToStartTimeoutHasBeenSet = true; m_defaultTaskScheduleToStartTimeout = std::forward<DefaultTaskScheduleToStartTimeoutT>(value); }
+    template<typename DefaultTaskScheduleToStartTimeoutT = Aws::String>
+    ActivityTypeConfiguration& WithDefaultTaskScheduleToStartTimeout(DefaultTaskScheduleToStartTimeoutT&& value) { SetDefaultTaskScheduleToStartTimeout(std::forward<DefaultTaskScheduleToStartTimeoutT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -146,14 +138,12 @@ namespace Model
      * duration is specified in seconds, an integer greater than or equal to
      * <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
      */
-    inline const Aws::String& GetDefaultTaskScheduleToCloseTimeout() const{ return m_defaultTaskScheduleToCloseTimeout; }
+    inline const Aws::String& GetDefaultTaskScheduleToCloseTimeout() const { return m_defaultTaskScheduleToCloseTimeout; }
     inline bool DefaultTaskScheduleToCloseTimeoutHasBeenSet() const { return m_defaultTaskScheduleToCloseTimeoutHasBeenSet; }
-    inline void SetDefaultTaskScheduleToCloseTimeout(const Aws::String& value) { m_defaultTaskScheduleToCloseTimeoutHasBeenSet = true; m_defaultTaskScheduleToCloseTimeout = value; }
-    inline void SetDefaultTaskScheduleToCloseTimeout(Aws::String&& value) { m_defaultTaskScheduleToCloseTimeoutHasBeenSet = true; m_defaultTaskScheduleToCloseTimeout = std::move(value); }
-    inline void SetDefaultTaskScheduleToCloseTimeout(const char* value) { m_defaultTaskScheduleToCloseTimeoutHasBeenSet = true; m_defaultTaskScheduleToCloseTimeout.assign(value); }
-    inline ActivityTypeConfiguration& WithDefaultTaskScheduleToCloseTimeout(const Aws::String& value) { SetDefaultTaskScheduleToCloseTimeout(value); return *this;}
-    inline ActivityTypeConfiguration& WithDefaultTaskScheduleToCloseTimeout(Aws::String&& value) { SetDefaultTaskScheduleToCloseTimeout(std::move(value)); return *this;}
-    inline ActivityTypeConfiguration& WithDefaultTaskScheduleToCloseTimeout(const char* value) { SetDefaultTaskScheduleToCloseTimeout(value); return *this;}
+    template<typename DefaultTaskScheduleToCloseTimeoutT = Aws::String>
+    void SetDefaultTaskScheduleToCloseTimeout(DefaultTaskScheduleToCloseTimeoutT&& value) { m_defaultTaskScheduleToCloseTimeoutHasBeenSet = true; m_defaultTaskScheduleToCloseTimeout = std::forward<DefaultTaskScheduleToCloseTimeoutT>(value); }
+    template<typename DefaultTaskScheduleToCloseTimeoutT = Aws::String>
+    ActivityTypeConfiguration& WithDefaultTaskScheduleToCloseTimeout(DefaultTaskScheduleToCloseTimeoutT&& value) { SetDefaultTaskScheduleToCloseTimeout(std::forward<DefaultTaskScheduleToCloseTimeoutT>(value)); return *this;}
     ///@}
   private:
 

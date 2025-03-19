@@ -23,7 +23,7 @@ namespace Model
   class RegisterWorkflowTypeRequest : public SWFRequest
   {
   public:
-    AWS_SWF_API RegisterWorkflowTypeRequest();
+    AWS_SWF_API RegisterWorkflowTypeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The name of the domain in which to register the workflow type.</p>
      */
-    inline const Aws::String& GetDomain() const{ return m_domain; }
+    inline const Aws::String& GetDomain() const { return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
-    inline RegisterWorkflowTypeRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
-    inline RegisterWorkflowTypeRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
-    inline RegisterWorkflowTypeRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+    template<typename DomainT = Aws::String>
+    void SetDomain(DomainT&& value) { m_domainHasBeenSet = true; m_domain = std::forward<DomainT>(value); }
+    template<typename DomainT = Aws::String>
+    RegisterWorkflowTypeRequest& WithDomain(DomainT&& value) { SetDomain(std::forward<DomainT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string
      * <code>arn</code>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline RegisterWorkflowTypeRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline RegisterWorkflowTypeRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline RegisterWorkflowTypeRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    RegisterWorkflowTypeRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,28 +75,24 @@ namespace Model
      * <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string
      * <code>arn</code>.</p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
+    inline const Aws::String& GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-    inline RegisterWorkflowTypeRequest& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline RegisterWorkflowTypeRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline RegisterWorkflowTypeRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    RegisterWorkflowTypeRequest& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Textual description of the workflow type.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline RegisterWorkflowTypeRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline RegisterWorkflowTypeRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline RegisterWorkflowTypeRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    RegisterWorkflowTypeRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,14 +104,12 @@ namespace Model
      * specified in seconds, an integer greater than or equal to <code>0</code>. You
      * can use <code>NONE</code> to specify unlimited duration.</p>
      */
-    inline const Aws::String& GetDefaultTaskStartToCloseTimeout() const{ return m_defaultTaskStartToCloseTimeout; }
+    inline const Aws::String& GetDefaultTaskStartToCloseTimeout() const { return m_defaultTaskStartToCloseTimeout; }
     inline bool DefaultTaskStartToCloseTimeoutHasBeenSet() const { return m_defaultTaskStartToCloseTimeoutHasBeenSet; }
-    inline void SetDefaultTaskStartToCloseTimeout(const Aws::String& value) { m_defaultTaskStartToCloseTimeoutHasBeenSet = true; m_defaultTaskStartToCloseTimeout = value; }
-    inline void SetDefaultTaskStartToCloseTimeout(Aws::String&& value) { m_defaultTaskStartToCloseTimeoutHasBeenSet = true; m_defaultTaskStartToCloseTimeout = std::move(value); }
-    inline void SetDefaultTaskStartToCloseTimeout(const char* value) { m_defaultTaskStartToCloseTimeoutHasBeenSet = true; m_defaultTaskStartToCloseTimeout.assign(value); }
-    inline RegisterWorkflowTypeRequest& WithDefaultTaskStartToCloseTimeout(const Aws::String& value) { SetDefaultTaskStartToCloseTimeout(value); return *this;}
-    inline RegisterWorkflowTypeRequest& WithDefaultTaskStartToCloseTimeout(Aws::String&& value) { SetDefaultTaskStartToCloseTimeout(std::move(value)); return *this;}
-    inline RegisterWorkflowTypeRequest& WithDefaultTaskStartToCloseTimeout(const char* value) { SetDefaultTaskStartToCloseTimeout(value); return *this;}
+    template<typename DefaultTaskStartToCloseTimeoutT = Aws::String>
+    void SetDefaultTaskStartToCloseTimeout(DefaultTaskStartToCloseTimeoutT&& value) { m_defaultTaskStartToCloseTimeoutHasBeenSet = true; m_defaultTaskStartToCloseTimeout = std::forward<DefaultTaskStartToCloseTimeoutT>(value); }
+    template<typename DefaultTaskStartToCloseTimeoutT = Aws::String>
+    RegisterWorkflowTypeRequest& WithDefaultTaskStartToCloseTimeout(DefaultTaskStartToCloseTimeoutT&& value) { SetDefaultTaskStartToCloseTimeout(std::forward<DefaultTaskStartToCloseTimeoutT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,14 +124,12 @@ namespace Model
      * on the time that a workflow execution can run. Exceeding this limit always
      * causes the workflow execution to time out.</p>
      */
-    inline const Aws::String& GetDefaultExecutionStartToCloseTimeout() const{ return m_defaultExecutionStartToCloseTimeout; }
+    inline const Aws::String& GetDefaultExecutionStartToCloseTimeout() const { return m_defaultExecutionStartToCloseTimeout; }
     inline bool DefaultExecutionStartToCloseTimeoutHasBeenSet() const { return m_defaultExecutionStartToCloseTimeoutHasBeenSet; }
-    inline void SetDefaultExecutionStartToCloseTimeout(const Aws::String& value) { m_defaultExecutionStartToCloseTimeoutHasBeenSet = true; m_defaultExecutionStartToCloseTimeout = value; }
-    inline void SetDefaultExecutionStartToCloseTimeout(Aws::String&& value) { m_defaultExecutionStartToCloseTimeoutHasBeenSet = true; m_defaultExecutionStartToCloseTimeout = std::move(value); }
-    inline void SetDefaultExecutionStartToCloseTimeout(const char* value) { m_defaultExecutionStartToCloseTimeoutHasBeenSet = true; m_defaultExecutionStartToCloseTimeout.assign(value); }
-    inline RegisterWorkflowTypeRequest& WithDefaultExecutionStartToCloseTimeout(const Aws::String& value) { SetDefaultExecutionStartToCloseTimeout(value); return *this;}
-    inline RegisterWorkflowTypeRequest& WithDefaultExecutionStartToCloseTimeout(Aws::String&& value) { SetDefaultExecutionStartToCloseTimeout(std::move(value)); return *this;}
-    inline RegisterWorkflowTypeRequest& WithDefaultExecutionStartToCloseTimeout(const char* value) { SetDefaultExecutionStartToCloseTimeout(value); return *this;}
+    template<typename DefaultExecutionStartToCloseTimeoutT = Aws::String>
+    void SetDefaultExecutionStartToCloseTimeout(DefaultExecutionStartToCloseTimeoutT&& value) { m_defaultExecutionStartToCloseTimeoutHasBeenSet = true; m_defaultExecutionStartToCloseTimeout = std::forward<DefaultExecutionStartToCloseTimeoutT>(value); }
+    template<typename DefaultExecutionStartToCloseTimeoutT = Aws::String>
+    RegisterWorkflowTypeRequest& WithDefaultExecutionStartToCloseTimeout(DefaultExecutionStartToCloseTimeoutT&& value) { SetDefaultExecutionStartToCloseTimeout(std::forward<DefaultExecutionStartToCloseTimeoutT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -152,12 +140,12 @@ namespace Model
      * <a>StartWorkflowExecution</a> Action or <code>StartChildWorkflowExecution</code>
      * <a>Decision</a>.</p>
      */
-    inline const TaskList& GetDefaultTaskList() const{ return m_defaultTaskList; }
+    inline const TaskList& GetDefaultTaskList() const { return m_defaultTaskList; }
     inline bool DefaultTaskListHasBeenSet() const { return m_defaultTaskListHasBeenSet; }
-    inline void SetDefaultTaskList(const TaskList& value) { m_defaultTaskListHasBeenSet = true; m_defaultTaskList = value; }
-    inline void SetDefaultTaskList(TaskList&& value) { m_defaultTaskListHasBeenSet = true; m_defaultTaskList = std::move(value); }
-    inline RegisterWorkflowTypeRequest& WithDefaultTaskList(const TaskList& value) { SetDefaultTaskList(value); return *this;}
-    inline RegisterWorkflowTypeRequest& WithDefaultTaskList(TaskList&& value) { SetDefaultTaskList(std::move(value)); return *this;}
+    template<typename DefaultTaskListT = TaskList>
+    void SetDefaultTaskList(DefaultTaskListT&& value) { m_defaultTaskListHasBeenSet = true; m_defaultTaskList = std::forward<DefaultTaskListT>(value); }
+    template<typename DefaultTaskListT = TaskList>
+    RegisterWorkflowTypeRequest& WithDefaultTaskList(DefaultTaskListT&& value) { SetDefaultTaskList(std::forward<DefaultTaskListT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -170,14 +158,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetDefaultTaskPriority() const{ return m_defaultTaskPriority; }
+    inline const Aws::String& GetDefaultTaskPriority() const { return m_defaultTaskPriority; }
     inline bool DefaultTaskPriorityHasBeenSet() const { return m_defaultTaskPriorityHasBeenSet; }
-    inline void SetDefaultTaskPriority(const Aws::String& value) { m_defaultTaskPriorityHasBeenSet = true; m_defaultTaskPriority = value; }
-    inline void SetDefaultTaskPriority(Aws::String&& value) { m_defaultTaskPriorityHasBeenSet = true; m_defaultTaskPriority = std::move(value); }
-    inline void SetDefaultTaskPriority(const char* value) { m_defaultTaskPriorityHasBeenSet = true; m_defaultTaskPriority.assign(value); }
-    inline RegisterWorkflowTypeRequest& WithDefaultTaskPriority(const Aws::String& value) { SetDefaultTaskPriority(value); return *this;}
-    inline RegisterWorkflowTypeRequest& WithDefaultTaskPriority(Aws::String&& value) { SetDefaultTaskPriority(std::move(value)); return *this;}
-    inline RegisterWorkflowTypeRequest& WithDefaultTaskPriority(const char* value) { SetDefaultTaskPriority(value); return *this;}
+    template<typename DefaultTaskPriorityT = Aws::String>
+    void SetDefaultTaskPriority(DefaultTaskPriorityT&& value) { m_defaultTaskPriorityHasBeenSet = true; m_defaultTaskPriority = std::forward<DefaultTaskPriorityT>(value); }
+    template<typename DefaultTaskPriorityT = Aws::String>
+    RegisterWorkflowTypeRequest& WithDefaultTaskPriority(DefaultTaskPriorityT&& value) { SetDefaultTaskPriority(std::forward<DefaultTaskPriorityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -196,12 +182,10 @@ namespace Model
      * with this event.</p> </li> <li> <p> <code>ABANDON</code> – No action is taken.
      * The child executions continue to run.</p> </li> </ul>
      */
-    inline const ChildPolicy& GetDefaultChildPolicy() const{ return m_defaultChildPolicy; }
+    inline ChildPolicy GetDefaultChildPolicy() const { return m_defaultChildPolicy; }
     inline bool DefaultChildPolicyHasBeenSet() const { return m_defaultChildPolicyHasBeenSet; }
-    inline void SetDefaultChildPolicy(const ChildPolicy& value) { m_defaultChildPolicyHasBeenSet = true; m_defaultChildPolicy = value; }
-    inline void SetDefaultChildPolicy(ChildPolicy&& value) { m_defaultChildPolicyHasBeenSet = true; m_defaultChildPolicy = std::move(value); }
-    inline RegisterWorkflowTypeRequest& WithDefaultChildPolicy(const ChildPolicy& value) { SetDefaultChildPolicy(value); return *this;}
-    inline RegisterWorkflowTypeRequest& WithDefaultChildPolicy(ChildPolicy&& value) { SetDefaultChildPolicy(std::move(value)); return *this;}
+    inline void SetDefaultChildPolicy(ChildPolicy value) { m_defaultChildPolicyHasBeenSet = true; m_defaultChildPolicy = value; }
+    inline RegisterWorkflowTypeRequest& WithDefaultChildPolicy(ChildPolicy value) { SetDefaultChildPolicy(value); return *this;}
     ///@}
 
     ///@{
@@ -213,14 +197,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a>
      * in the <i>Amazon SWF Developer Guide</i>.</p> 
      */
-    inline const Aws::String& GetDefaultLambdaRole() const{ return m_defaultLambdaRole; }
+    inline const Aws::String& GetDefaultLambdaRole() const { return m_defaultLambdaRole; }
     inline bool DefaultLambdaRoleHasBeenSet() const { return m_defaultLambdaRoleHasBeenSet; }
-    inline void SetDefaultLambdaRole(const Aws::String& value) { m_defaultLambdaRoleHasBeenSet = true; m_defaultLambdaRole = value; }
-    inline void SetDefaultLambdaRole(Aws::String&& value) { m_defaultLambdaRoleHasBeenSet = true; m_defaultLambdaRole = std::move(value); }
-    inline void SetDefaultLambdaRole(const char* value) { m_defaultLambdaRoleHasBeenSet = true; m_defaultLambdaRole.assign(value); }
-    inline RegisterWorkflowTypeRequest& WithDefaultLambdaRole(const Aws::String& value) { SetDefaultLambdaRole(value); return *this;}
-    inline RegisterWorkflowTypeRequest& WithDefaultLambdaRole(Aws::String&& value) { SetDefaultLambdaRole(std::move(value)); return *this;}
-    inline RegisterWorkflowTypeRequest& WithDefaultLambdaRole(const char* value) { SetDefaultLambdaRole(value); return *this;}
+    template<typename DefaultLambdaRoleT = Aws::String>
+    void SetDefaultLambdaRole(DefaultLambdaRoleT&& value) { m_defaultLambdaRoleHasBeenSet = true; m_defaultLambdaRole = std::forward<DefaultLambdaRoleT>(value); }
+    template<typename DefaultLambdaRoleT = Aws::String>
+    RegisterWorkflowTypeRequest& WithDefaultLambdaRole(DefaultLambdaRoleT&& value) { SetDefaultLambdaRole(std::forward<DefaultLambdaRoleT>(value)); return *this;}
     ///@}
   private:
 
@@ -248,7 +230,7 @@ namespace Model
     Aws::String m_defaultTaskPriority;
     bool m_defaultTaskPriorityHasBeenSet = false;
 
-    ChildPolicy m_defaultChildPolicy;
+    ChildPolicy m_defaultChildPolicy{ChildPolicy::NOT_SET};
     bool m_defaultChildPolicyHasBeenSet = false;
 
     Aws::String m_defaultLambdaRole;

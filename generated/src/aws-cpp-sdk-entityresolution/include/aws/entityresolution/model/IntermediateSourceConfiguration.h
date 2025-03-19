@@ -32,7 +32,7 @@ namespace Model
   class IntermediateSourceConfiguration
   {
   public:
-    AWS_ENTITYRESOLUTION_API IntermediateSourceConfiguration();
+    AWS_ENTITYRESOLUTION_API IntermediateSourceConfiguration() = default;
     AWS_ENTITYRESOLUTION_API IntermediateSourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_ENTITYRESOLUTION_API IntermediateSourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ENTITYRESOLUTION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The Amazon S3 location (bucket and prefix). For example:
      * <code>s3://provider_bucket/DOC-EXAMPLE-BUCKET</code> </p>
      */
-    inline const Aws::String& GetIntermediateS3Path() const{ return m_intermediateS3Path; }
+    inline const Aws::String& GetIntermediateS3Path() const { return m_intermediateS3Path; }
     inline bool IntermediateS3PathHasBeenSet() const { return m_intermediateS3PathHasBeenSet; }
-    inline void SetIntermediateS3Path(const Aws::String& value) { m_intermediateS3PathHasBeenSet = true; m_intermediateS3Path = value; }
-    inline void SetIntermediateS3Path(Aws::String&& value) { m_intermediateS3PathHasBeenSet = true; m_intermediateS3Path = std::move(value); }
-    inline void SetIntermediateS3Path(const char* value) { m_intermediateS3PathHasBeenSet = true; m_intermediateS3Path.assign(value); }
-    inline IntermediateSourceConfiguration& WithIntermediateS3Path(const Aws::String& value) { SetIntermediateS3Path(value); return *this;}
-    inline IntermediateSourceConfiguration& WithIntermediateS3Path(Aws::String&& value) { SetIntermediateS3Path(std::move(value)); return *this;}
-    inline IntermediateSourceConfiguration& WithIntermediateS3Path(const char* value) { SetIntermediateS3Path(value); return *this;}
+    template<typename IntermediateS3PathT = Aws::String>
+    void SetIntermediateS3Path(IntermediateS3PathT&& value) { m_intermediateS3PathHasBeenSet = true; m_intermediateS3Path = std::forward<IntermediateS3PathT>(value); }
+    template<typename IntermediateS3PathT = Aws::String>
+    IntermediateSourceConfiguration& WithIntermediateS3Path(IntermediateS3PathT&& value) { SetIntermediateS3Path(std::forward<IntermediateS3PathT>(value)); return *this;}
     ///@}
   private:
 

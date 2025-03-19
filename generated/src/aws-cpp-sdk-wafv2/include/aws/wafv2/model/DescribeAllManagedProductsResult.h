@@ -29,7 +29,7 @@ namespace Model
   class DescribeAllManagedProductsResult
   {
   public:
-    AWS_WAFV2_API DescribeAllManagedProductsResult();
+    AWS_WAFV2_API DescribeAllManagedProductsResult() = default;
     AWS_WAFV2_API DescribeAllManagedProductsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WAFV2_API DescribeAllManagedProductsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,30 +39,30 @@ namespace Model
      * <p>High-level information for the Amazon Web Services Managed Rules rule groups
      * and Amazon Web Services Marketplace managed rule groups. </p>
      */
-    inline const Aws::Vector<ManagedProductDescriptor>& GetManagedProducts() const{ return m_managedProducts; }
-    inline void SetManagedProducts(const Aws::Vector<ManagedProductDescriptor>& value) { m_managedProducts = value; }
-    inline void SetManagedProducts(Aws::Vector<ManagedProductDescriptor>&& value) { m_managedProducts = std::move(value); }
-    inline DescribeAllManagedProductsResult& WithManagedProducts(const Aws::Vector<ManagedProductDescriptor>& value) { SetManagedProducts(value); return *this;}
-    inline DescribeAllManagedProductsResult& WithManagedProducts(Aws::Vector<ManagedProductDescriptor>&& value) { SetManagedProducts(std::move(value)); return *this;}
-    inline DescribeAllManagedProductsResult& AddManagedProducts(const ManagedProductDescriptor& value) { m_managedProducts.push_back(value); return *this; }
-    inline DescribeAllManagedProductsResult& AddManagedProducts(ManagedProductDescriptor&& value) { m_managedProducts.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ManagedProductDescriptor>& GetManagedProducts() const { return m_managedProducts; }
+    template<typename ManagedProductsT = Aws::Vector<ManagedProductDescriptor>>
+    void SetManagedProducts(ManagedProductsT&& value) { m_managedProductsHasBeenSet = true; m_managedProducts = std::forward<ManagedProductsT>(value); }
+    template<typename ManagedProductsT = Aws::Vector<ManagedProductDescriptor>>
+    DescribeAllManagedProductsResult& WithManagedProducts(ManagedProductsT&& value) { SetManagedProducts(std::forward<ManagedProductsT>(value)); return *this;}
+    template<typename ManagedProductsT = ManagedProductDescriptor>
+    DescribeAllManagedProductsResult& AddManagedProducts(ManagedProductsT&& value) { m_managedProductsHasBeenSet = true; m_managedProducts.emplace_back(std::forward<ManagedProductsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeAllManagedProductsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeAllManagedProductsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeAllManagedProductsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeAllManagedProductsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ManagedProductDescriptor> m_managedProducts;
+    bool m_managedProductsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

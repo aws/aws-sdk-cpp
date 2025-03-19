@@ -12,15 +12,6 @@ using namespace Aws::KMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetParametersForImportRequest::GetParametersForImportRequest() : 
-    m_keyIdHasBeenSet(false),
-    m_wrappingAlgorithm(AlgorithmSpec::NOT_SET),
-    m_wrappingAlgorithmHasBeenSet(false),
-    m_wrappingKeySpec(WrappingKeySpec::NOT_SET),
-    m_wrappingKeySpecHasBeenSet(false)
-{
-}
-
 Aws::String GetParametersForImportRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,16 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-SeverityLevel::SeverityLevel() : 
-    m_occurrencesThreshold(0),
-    m_occurrencesThresholdHasBeenSet(false),
-    m_severity(DataIdentifierSeverity::NOT_SET),
-    m_severityHasBeenSet(false)
-{
-}
-
 SeverityLevel::SeverityLevel(JsonView jsonValue)
-  : SeverityLevel()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ SeverityLevel& SeverityLevel::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("occurrencesThreshold"))
   {
     m_occurrencesThreshold = jsonValue.GetInt64("occurrencesThreshold");
-
     m_occurrencesThresholdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("severity"))
   {
     m_severity = DataIdentifierSeverityMapper::GetDataIdentifierSeverityForName(jsonValue.GetString("severity"));
-
     m_severityHasBeenSet = true;
   }
-
   return *this;
 }
 

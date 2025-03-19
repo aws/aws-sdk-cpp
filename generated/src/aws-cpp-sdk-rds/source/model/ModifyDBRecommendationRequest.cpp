@@ -10,14 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-ModifyDBRecommendationRequest::ModifyDBRecommendationRequest() : 
-    m_recommendationIdHasBeenSet(false),
-    m_localeHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_recommendedActionUpdatesHasBeenSet(false)
-{
-}
-
 Aws::String ModifyDBRecommendationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSegmentMembershipResult::GetSegmentMembershipResult()
-{
-}
-
 GetSegmentMembershipResult::GetSegmentMembershipResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ GetSegmentMembershipResult& GetSegmentMembershipResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("SegmentDefinitionName"))
   {
     m_segmentDefinitionName = jsonValue.GetString("SegmentDefinitionName");
-
+    m_segmentDefinitionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Profiles"))
   {
     Aws::Utils::Array<JsonView> profilesJsonList = jsonValue.GetArray("Profiles");
@@ -42,8 +37,8 @@ GetSegmentMembershipResult& GetSegmentMembershipResult::operator =(const Aws::Am
     {
       m_profiles.push_back(profilesJsonList[profilesIndex].AsObject());
     }
+    m_profilesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Failures"))
   {
     Aws::Utils::Array<JsonView> failuresJsonList = jsonValue.GetArray("Failures");
@@ -51,14 +46,15 @@ GetSegmentMembershipResult& GetSegmentMembershipResult::operator =(const Aws::Am
     {
       m_failures.push_back(failuresJsonList[failuresIndex].AsObject());
     }
+    m_failuresHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

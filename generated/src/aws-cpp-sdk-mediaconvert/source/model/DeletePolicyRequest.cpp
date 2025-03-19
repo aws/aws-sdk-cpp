@@ -12,10 +12,6 @@ using namespace Aws::MediaConvert::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeletePolicyRequest::DeletePolicyRequest()
-{
-}
-
 Aws::String DeletePolicyRequest::SerializePayload() const
 {
   return {};

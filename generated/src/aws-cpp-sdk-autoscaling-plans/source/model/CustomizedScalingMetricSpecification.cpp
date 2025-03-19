@@ -18,18 +18,7 @@ namespace AutoScalingPlans
 namespace Model
 {
 
-CustomizedScalingMetricSpecification::CustomizedScalingMetricSpecification() : 
-    m_metricNameHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_dimensionsHasBeenSet(false),
-    m_statistic(MetricStatistic::NOT_SET),
-    m_statisticHasBeenSet(false),
-    m_unitHasBeenSet(false)
-{
-}
-
 CustomizedScalingMetricSpecification::CustomizedScalingMetricSpecification(JsonView jsonValue)
-  : CustomizedScalingMetricSpecification()
 {
   *this = jsonValue;
 }
@@ -39,17 +28,13 @@ CustomizedScalingMetricSpecification& CustomizedScalingMetricSpecification::oper
   if(jsonValue.ValueExists("MetricName"))
   {
     m_metricName = jsonValue.GetString("MetricName");
-
     m_metricNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Namespace"))
   {
     m_namespace = jsonValue.GetString("Namespace");
-
     m_namespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Dimensions"))
   {
     Aws::Utils::Array<JsonView> dimensionsJsonList = jsonValue.GetArray("Dimensions");
@@ -59,21 +44,16 @@ CustomizedScalingMetricSpecification& CustomizedScalingMetricSpecification::oper
     }
     m_dimensionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Statistic"))
   {
     m_statistic = MetricStatisticMapper::GetMetricStatisticForName(jsonValue.GetString("Statistic"));
-
     m_statisticHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Unit"))
   {
     m_unit = jsonValue.GetString("Unit");
-
     m_unitHasBeenSet = true;
   }
-
   return *this;
 }
 

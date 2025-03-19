@@ -12,14 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateArtifactRequest::UpdateArtifactRequest() : 
-    m_artifactArnHasBeenSet(false),
-    m_artifactNameHasBeenSet(false),
-    m_propertiesHasBeenSet(false),
-    m_propertiesToRemoveHasBeenSet(false)
-{
-}
-
 Aws::String UpdateArtifactRequest::SerializePayload() const
 {
   JsonValue payload;

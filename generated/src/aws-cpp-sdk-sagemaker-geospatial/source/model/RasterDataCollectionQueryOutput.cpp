@@ -18,17 +18,7 @@ namespace SageMakerGeospatial
 namespace Model
 {
 
-RasterDataCollectionQueryOutput::RasterDataCollectionQueryOutput() : 
-    m_areaOfInterestHasBeenSet(false),
-    m_propertyFiltersHasBeenSet(false),
-    m_rasterDataCollectionArnHasBeenSet(false),
-    m_rasterDataCollectionNameHasBeenSet(false),
-    m_timeRangeFilterHasBeenSet(false)
-{
-}
-
 RasterDataCollectionQueryOutput::RasterDataCollectionQueryOutput(JsonView jsonValue)
-  : RasterDataCollectionQueryOutput()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ RasterDataCollectionQueryOutput& RasterDataCollectionQueryOutput::operator =(Jso
   if(jsonValue.ValueExists("AreaOfInterest"))
   {
     m_areaOfInterest = jsonValue.GetObject("AreaOfInterest");
-
     m_areaOfInterestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PropertyFilters"))
   {
     m_propertyFilters = jsonValue.GetObject("PropertyFilters");
-
     m_propertyFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RasterDataCollectionArn"))
   {
     m_rasterDataCollectionArn = jsonValue.GetString("RasterDataCollectionArn");
-
     m_rasterDataCollectionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RasterDataCollectionName"))
   {
     m_rasterDataCollectionName = jsonValue.GetString("RasterDataCollectionName");
-
     m_rasterDataCollectionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeRangeFilter"))
   {
     m_timeRangeFilter = jsonValue.GetObject("TimeRangeFilter");
-
     m_timeRangeFilterHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -31,7 +31,7 @@ namespace Model
   class ProtectedJobResultConfigurationInput
   {
   public:
-    AWS_CLEANROOMS_API ProtectedJobResultConfigurationInput();
+    AWS_CLEANROOMS_API ProtectedJobResultConfigurationInput() = default;
     AWS_CLEANROOMS_API ProtectedJobResultConfigurationInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API ProtectedJobResultConfigurationInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p> The output configuration for a protected job result.</p>
      */
-    inline const ProtectedJobOutputConfigurationInput& GetOutputConfiguration() const{ return m_outputConfiguration; }
+    inline const ProtectedJobOutputConfigurationInput& GetOutputConfiguration() const { return m_outputConfiguration; }
     inline bool OutputConfigurationHasBeenSet() const { return m_outputConfigurationHasBeenSet; }
-    inline void SetOutputConfiguration(const ProtectedJobOutputConfigurationInput& value) { m_outputConfigurationHasBeenSet = true; m_outputConfiguration = value; }
-    inline void SetOutputConfiguration(ProtectedJobOutputConfigurationInput&& value) { m_outputConfigurationHasBeenSet = true; m_outputConfiguration = std::move(value); }
-    inline ProtectedJobResultConfigurationInput& WithOutputConfiguration(const ProtectedJobOutputConfigurationInput& value) { SetOutputConfiguration(value); return *this;}
-    inline ProtectedJobResultConfigurationInput& WithOutputConfiguration(ProtectedJobOutputConfigurationInput&& value) { SetOutputConfiguration(std::move(value)); return *this;}
+    template<typename OutputConfigurationT = ProtectedJobOutputConfigurationInput>
+    void SetOutputConfiguration(OutputConfigurationT&& value) { m_outputConfigurationHasBeenSet = true; m_outputConfiguration = std::forward<OutputConfigurationT>(value); }
+    template<typename OutputConfigurationT = ProtectedJobOutputConfigurationInput>
+    ProtectedJobResultConfigurationInput& WithOutputConfiguration(OutputConfigurationT&& value) { SetOutputConfiguration(std::forward<OutputConfigurationT>(value)); return *this;}
     ///@}
   private:
 

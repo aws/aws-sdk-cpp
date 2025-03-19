@@ -27,7 +27,7 @@ namespace Model
   class PopulateIdMappingTableResult
   {
   public:
-    AWS_CLEANROOMS_API PopulateIdMappingTableResult();
+    AWS_CLEANROOMS_API PopulateIdMappingTableResult() = default;
     AWS_CLEANROOMS_API PopulateIdMappingTableResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLEANROOMS_API PopulateIdMappingTableResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,30 +37,28 @@ namespace Model
      * <p>The unique identifier of the mapping job that will populate the ID mapping
      * table.</p>
      */
-    inline const Aws::String& GetIdMappingJobId() const{ return m_idMappingJobId; }
-    inline void SetIdMappingJobId(const Aws::String& value) { m_idMappingJobId = value; }
-    inline void SetIdMappingJobId(Aws::String&& value) { m_idMappingJobId = std::move(value); }
-    inline void SetIdMappingJobId(const char* value) { m_idMappingJobId.assign(value); }
-    inline PopulateIdMappingTableResult& WithIdMappingJobId(const Aws::String& value) { SetIdMappingJobId(value); return *this;}
-    inline PopulateIdMappingTableResult& WithIdMappingJobId(Aws::String&& value) { SetIdMappingJobId(std::move(value)); return *this;}
-    inline PopulateIdMappingTableResult& WithIdMappingJobId(const char* value) { SetIdMappingJobId(value); return *this;}
+    inline const Aws::String& GetIdMappingJobId() const { return m_idMappingJobId; }
+    template<typename IdMappingJobIdT = Aws::String>
+    void SetIdMappingJobId(IdMappingJobIdT&& value) { m_idMappingJobIdHasBeenSet = true; m_idMappingJobId = std::forward<IdMappingJobIdT>(value); }
+    template<typename IdMappingJobIdT = Aws::String>
+    PopulateIdMappingTableResult& WithIdMappingJobId(IdMappingJobIdT&& value) { SetIdMappingJobId(std::forward<IdMappingJobIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PopulateIdMappingTableResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PopulateIdMappingTableResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PopulateIdMappingTableResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PopulateIdMappingTableResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_idMappingJobId;
+    bool m_idMappingJobIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

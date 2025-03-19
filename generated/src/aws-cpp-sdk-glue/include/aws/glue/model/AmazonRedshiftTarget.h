@@ -33,7 +33,7 @@ namespace Model
   class AmazonRedshiftTarget
   {
   public:
-    AWS_GLUE_API AmazonRedshiftTarget();
+    AWS_GLUE_API AmazonRedshiftTarget() = default;
     AWS_GLUE_API AmazonRedshiftTarget(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API AmazonRedshiftTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,41 +43,38 @@ namespace Model
     /**
      * <p>The name of the Amazon Redshift target.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AmazonRedshiftTarget& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AmazonRedshiftTarget& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AmazonRedshiftTarget& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    AmazonRedshiftTarget& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the data of the Amazon Redshift target node.</p>
      */
-    inline const AmazonRedshiftNodeData& GetData() const{ return m_data; }
+    inline const AmazonRedshiftNodeData& GetData() const { return m_data; }
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
-    inline void SetData(const AmazonRedshiftNodeData& value) { m_dataHasBeenSet = true; m_data = value; }
-    inline void SetData(AmazonRedshiftNodeData&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
-    inline AmazonRedshiftTarget& WithData(const AmazonRedshiftNodeData& value) { SetData(value); return *this;}
-    inline AmazonRedshiftTarget& WithData(AmazonRedshiftNodeData&& value) { SetData(std::move(value)); return *this;}
+    template<typename DataT = AmazonRedshiftNodeData>
+    void SetData(DataT&& value) { m_dataHasBeenSet = true; m_data = std::forward<DataT>(value); }
+    template<typename DataT = AmazonRedshiftNodeData>
+    AmazonRedshiftTarget& WithData(DataT&& value) { SetData(std::forward<DataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The nodes that are inputs to the data target.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetInputs() const{ return m_inputs; }
+    inline const Aws::Vector<Aws::String>& GetInputs() const { return m_inputs; }
     inline bool InputsHasBeenSet() const { return m_inputsHasBeenSet; }
-    inline void SetInputs(const Aws::Vector<Aws::String>& value) { m_inputsHasBeenSet = true; m_inputs = value; }
-    inline void SetInputs(Aws::Vector<Aws::String>&& value) { m_inputsHasBeenSet = true; m_inputs = std::move(value); }
-    inline AmazonRedshiftTarget& WithInputs(const Aws::Vector<Aws::String>& value) { SetInputs(value); return *this;}
-    inline AmazonRedshiftTarget& WithInputs(Aws::Vector<Aws::String>&& value) { SetInputs(std::move(value)); return *this;}
-    inline AmazonRedshiftTarget& AddInputs(const Aws::String& value) { m_inputsHasBeenSet = true; m_inputs.push_back(value); return *this; }
-    inline AmazonRedshiftTarget& AddInputs(Aws::String&& value) { m_inputsHasBeenSet = true; m_inputs.push_back(std::move(value)); return *this; }
-    inline AmazonRedshiftTarget& AddInputs(const char* value) { m_inputsHasBeenSet = true; m_inputs.push_back(value); return *this; }
+    template<typename InputsT = Aws::Vector<Aws::String>>
+    void SetInputs(InputsT&& value) { m_inputsHasBeenSet = true; m_inputs = std::forward<InputsT>(value); }
+    template<typename InputsT = Aws::Vector<Aws::String>>
+    AmazonRedshiftTarget& WithInputs(InputsT&& value) { SetInputs(std::forward<InputsT>(value)); return *this;}
+    template<typename InputsT = Aws::String>
+    AmazonRedshiftTarget& AddInputs(InputsT&& value) { m_inputsHasBeenSet = true; m_inputs.emplace_back(std::forward<InputsT>(value)); return *this; }
     ///@}
   private:
 

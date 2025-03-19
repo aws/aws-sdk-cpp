@@ -28,7 +28,7 @@ namespace Model
   class GetFacetResult
   {
   public:
-    AWS_CLOUDDIRECTORY_API GetFacetResult();
+    AWS_CLOUDDIRECTORY_API GetFacetResult() = default;
     AWS_CLOUDDIRECTORY_API GetFacetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDDIRECTORY_API GetFacetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The <a>Facet</a> structure that is associated with the facet.</p>
      */
-    inline const Facet& GetFacet() const{ return m_facet; }
-    inline void SetFacet(const Facet& value) { m_facet = value; }
-    inline void SetFacet(Facet&& value) { m_facet = std::move(value); }
-    inline GetFacetResult& WithFacet(const Facet& value) { SetFacet(value); return *this;}
-    inline GetFacetResult& WithFacet(Facet&& value) { SetFacet(std::move(value)); return *this;}
+    inline const Facet& GetFacet() const { return m_facet; }
+    template<typename FacetT = Facet>
+    void SetFacet(FacetT&& value) { m_facetHasBeenSet = true; m_facet = std::forward<FacetT>(value); }
+    template<typename FacetT = Facet>
+    GetFacetResult& WithFacet(FacetT&& value) { SetFacet(std::forward<FacetT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetFacetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetFacetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetFacetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetFacetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Facet m_facet;
+    bool m_facetHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

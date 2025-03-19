@@ -18,15 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-PropertyNotification::PropertyNotification() : 
-    m_topicHasBeenSet(false),
-    m_state(PropertyNotificationState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 PropertyNotification::PropertyNotification(JsonView jsonValue)
-  : PropertyNotification()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ PropertyNotification& PropertyNotification::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("topic"))
   {
     m_topic = jsonValue.GetString("topic");
-
     m_topicHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = PropertyNotificationStateMapper::GetPropertyNotificationStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

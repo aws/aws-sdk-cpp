@@ -10,14 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-ListServerCertificateTagsRequest::ListServerCertificateTagsRequest() : 
-    m_serverCertificateNameHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false)
-{
-}
-
 Aws::String ListServerCertificateTagsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

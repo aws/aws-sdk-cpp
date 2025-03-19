@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsRdsDbDomainMembership::AwsRdsDbDomainMembership() : 
-    m_domainHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_fqdnHasBeenSet(false),
-    m_iamRoleNameHasBeenSet(false)
-{
-}
-
 AwsRdsDbDomainMembership::AwsRdsDbDomainMembership(JsonView jsonValue)
-  : AwsRdsDbDomainMembership()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ AwsRdsDbDomainMembership& AwsRdsDbDomainMembership::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Domain"))
   {
     m_domain = jsonValue.GetString("Domain");
-
     m_domainHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Fqdn"))
   {
     m_fqdn = jsonValue.GetString("Fqdn");
-
     m_fqdnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IamRoleName"))
   {
     m_iamRoleName = jsonValue.GetString("IamRoleName");
-
     m_iamRoleNameHasBeenSet = true;
   }
-
   return *this;
 }
 

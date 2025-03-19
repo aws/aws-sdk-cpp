@@ -12,11 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteNetworkRequest::DeleteNetworkRequest() : 
-    m_networkIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteNetworkRequest::SerializePayload() const
 {
   return {};

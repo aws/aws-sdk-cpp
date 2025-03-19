@@ -18,16 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-ArchiveGroupSettings::ArchiveGroupSettings() : 
-    m_archiveCdnSettingsHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_rolloverInterval(0),
-    m_rolloverIntervalHasBeenSet(false)
-{
-}
-
 ArchiveGroupSettings::ArchiveGroupSettings(JsonView jsonValue)
-  : ArchiveGroupSettings()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ArchiveGroupSettings& ArchiveGroupSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("archiveCdnSettings"))
   {
     m_archiveCdnSettings = jsonValue.GetObject("archiveCdnSettings");
-
     m_archiveCdnSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destination"))
   {
     m_destination = jsonValue.GetObject("destination");
-
     m_destinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rolloverInterval"))
   {
     m_rolloverInterval = jsonValue.GetInteger("rolloverInterval");
-
     m_rolloverIntervalHasBeenSet = true;
   }
-
   return *this;
 }
 

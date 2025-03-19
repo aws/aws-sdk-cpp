@@ -13,12 +13,6 @@ using namespace Aws::WorkDocs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteFolderRequest::DeleteFolderRequest() : 
-    m_authenticationTokenHasBeenSet(false),
-    m_folderIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteFolderRequest::SerializePayload() const
 {
   return {};

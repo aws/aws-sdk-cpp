@@ -20,10 +20,6 @@ namespace QBusiness
 namespace Model
 {
 
-ChatInitialResponse::ChatInitialResponse()
-{
-}
-
 ChatInitialResponse::ChatInitialResponse(JsonView jsonValue)
 {
   *this = jsonValue;

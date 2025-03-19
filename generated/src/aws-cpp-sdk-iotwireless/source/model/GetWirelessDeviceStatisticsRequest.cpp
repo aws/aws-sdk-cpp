@@ -12,11 +12,6 @@ using namespace Aws::IoTWireless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetWirelessDeviceStatisticsRequest::GetWirelessDeviceStatisticsRequest() : 
-    m_wirelessDeviceIdHasBeenSet(false)
-{
-}
-
 Aws::String GetWirelessDeviceStatisticsRequest::SerializePayload() const
 {
   return {};

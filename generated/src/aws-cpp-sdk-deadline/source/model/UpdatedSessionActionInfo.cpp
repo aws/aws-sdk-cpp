@@ -18,22 +18,7 @@ namespace deadline
 namespace Model
 {
 
-UpdatedSessionActionInfo::UpdatedSessionActionInfo() : 
-    m_completedStatus(CompletedStatus::NOT_SET),
-    m_completedStatusHasBeenSet(false),
-    m_processExitCode(0),
-    m_processExitCodeHasBeenSet(false),
-    m_progressMessageHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_endedAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_progressPercent(0.0),
-    m_progressPercentHasBeenSet(false)
-{
-}
-
 UpdatedSessionActionInfo::UpdatedSessionActionInfo(JsonView jsonValue)
-  : UpdatedSessionActionInfo()
 {
   *this = jsonValue;
 }
@@ -43,52 +28,38 @@ UpdatedSessionActionInfo& UpdatedSessionActionInfo::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("completedStatus"))
   {
     m_completedStatus = CompletedStatusMapper::GetCompletedStatusForName(jsonValue.GetString("completedStatus"));
-
     m_completedStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("processExitCode"))
   {
     m_processExitCode = jsonValue.GetInteger("processExitCode");
-
     m_processExitCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("progressMessage"))
   {
     m_progressMessage = jsonValue.GetString("progressMessage");
-
     m_progressMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startedAt"))
   {
     m_startedAt = jsonValue.GetString("startedAt");
-
     m_startedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endedAt"))
   {
     m_endedAt = jsonValue.GetString("endedAt");
-
     m_endedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("progressPercent"))
   {
     m_progressPercent = jsonValue.GetDouble("progressPercent");
-
     m_progressPercentHasBeenSet = true;
   }
-
   return *this;
 }
 

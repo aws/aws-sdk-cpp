@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListWorkloadSharesResult::ListWorkloadSharesResult()
-{
-}
-
 ListWorkloadSharesResult::ListWorkloadSharesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListWorkloadSharesResult& ListWorkloadSharesResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("WorkloadId"))
   {
     m_workloadId = jsonValue.GetString("WorkloadId");
-
+    m_workloadIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkloadShareSummaries"))
   {
     Aws::Utils::Array<JsonView> workloadShareSummariesJsonList = jsonValue.GetArray("WorkloadShareSummaries");
@@ -42,20 +37,20 @@ ListWorkloadSharesResult& ListWorkloadSharesResult::operator =(const Aws::Amazon
     {
       m_workloadShareSummaries.push_back(workloadShareSummariesJsonList[workloadShareSummariesIndex].AsObject());
     }
+    m_workloadShareSummariesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

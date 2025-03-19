@@ -12,14 +12,6 @@ using namespace Aws::NetworkManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateTransitGatewayConnectPeerRequest::AssociateTransitGatewayConnectPeerRequest() : 
-    m_globalNetworkIdHasBeenSet(false),
-    m_transitGatewayConnectPeerArnHasBeenSet(false),
-    m_deviceIdHasBeenSet(false),
-    m_linkIdHasBeenSet(false)
-{
-}
-
 Aws::String AssociateTransitGatewayConnectPeerRequest::SerializePayload() const
 {
   JsonValue payload;

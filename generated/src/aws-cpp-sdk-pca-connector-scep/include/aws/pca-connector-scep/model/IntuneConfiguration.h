@@ -41,7 +41,7 @@ namespace Model
   class IntuneConfiguration
   {
   public:
-    AWS_PCACONNECTORSCEP_API IntuneConfiguration();
+    AWS_PCACONNECTORSCEP_API IntuneConfiguration() = default;
     AWS_PCACONNECTORSCEP_API IntuneConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_PCACONNECTORSCEP_API IntuneConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PCACONNECTORSCEP_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,28 +51,24 @@ namespace Model
     /**
      * <p>The directory (tenant) ID from your Microsoft Entra ID app registration.</p>
      */
-    inline const Aws::String& GetAzureApplicationId() const{ return m_azureApplicationId; }
+    inline const Aws::String& GetAzureApplicationId() const { return m_azureApplicationId; }
     inline bool AzureApplicationIdHasBeenSet() const { return m_azureApplicationIdHasBeenSet; }
-    inline void SetAzureApplicationId(const Aws::String& value) { m_azureApplicationIdHasBeenSet = true; m_azureApplicationId = value; }
-    inline void SetAzureApplicationId(Aws::String&& value) { m_azureApplicationIdHasBeenSet = true; m_azureApplicationId = std::move(value); }
-    inline void SetAzureApplicationId(const char* value) { m_azureApplicationIdHasBeenSet = true; m_azureApplicationId.assign(value); }
-    inline IntuneConfiguration& WithAzureApplicationId(const Aws::String& value) { SetAzureApplicationId(value); return *this;}
-    inline IntuneConfiguration& WithAzureApplicationId(Aws::String&& value) { SetAzureApplicationId(std::move(value)); return *this;}
-    inline IntuneConfiguration& WithAzureApplicationId(const char* value) { SetAzureApplicationId(value); return *this;}
+    template<typename AzureApplicationIdT = Aws::String>
+    void SetAzureApplicationId(AzureApplicationIdT&& value) { m_azureApplicationIdHasBeenSet = true; m_azureApplicationId = std::forward<AzureApplicationIdT>(value); }
+    template<typename AzureApplicationIdT = Aws::String>
+    IntuneConfiguration& WithAzureApplicationId(AzureApplicationIdT&& value) { SetAzureApplicationId(std::forward<AzureApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The primary domain from your Microsoft Entra ID app registration.</p>
      */
-    inline const Aws::String& GetDomain() const{ return m_domain; }
+    inline const Aws::String& GetDomain() const { return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
-    inline IntuneConfiguration& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
-    inline IntuneConfiguration& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
-    inline IntuneConfiguration& WithDomain(const char* value) { SetDomain(value); return *this;}
+    template<typename DomainT = Aws::String>
+    void SetDomain(DomainT&& value) { m_domainHasBeenSet = true; m_domain = std::forward<DomainT>(value); }
+    template<typename DomainT = Aws::String>
+    IntuneConfiguration& WithDomain(DomainT&& value) { SetDomain(std::forward<DomainT>(value)); return *this;}
     ///@}
   private:
 

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CancelDomainConfigChangeResult::CancelDomainConfigChangeResult() : 
-    m_dryRun(false)
-{
-}
-
 CancelDomainConfigChangeResult::CancelDomainConfigChangeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CancelDomainConfigChangeResult()
 {
   *this = result;
 }
@@ -34,9 +28,8 @@ CancelDomainConfigChangeResult& CancelDomainConfigChangeResult::operator =(const
   if(jsonValue.ValueExists("DryRun"))
   {
     m_dryRun = jsonValue.GetBool("DryRun");
-
+    m_dryRunHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CancelledChangeIds"))
   {
     Aws::Utils::Array<JsonView> cancelledChangeIdsJsonList = jsonValue.GetArray("CancelledChangeIds");
@@ -44,8 +37,8 @@ CancelDomainConfigChangeResult& CancelDomainConfigChangeResult::operator =(const
     {
       m_cancelledChangeIds.push_back(cancelledChangeIdsJsonList[cancelledChangeIdsIndex].AsString());
     }
+    m_cancelledChangeIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CancelledChangeProperties"))
   {
     Aws::Utils::Array<JsonView> cancelledChangePropertiesJsonList = jsonValue.GetArray("CancelledChangeProperties");
@@ -53,14 +46,15 @@ CancelDomainConfigChangeResult& CancelDomainConfigChangeResult::operator =(const
     {
       m_cancelledChangeProperties.push_back(cancelledChangePropertiesJsonList[cancelledChangePropertiesIndex].AsObject());
     }
+    m_cancelledChangePropertiesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

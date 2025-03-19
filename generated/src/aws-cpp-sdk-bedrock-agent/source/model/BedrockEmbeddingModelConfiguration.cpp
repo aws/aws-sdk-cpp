@@ -18,16 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-BedrockEmbeddingModelConfiguration::BedrockEmbeddingModelConfiguration() : 
-    m_dimensions(0),
-    m_dimensionsHasBeenSet(false),
-    m_embeddingDataType(EmbeddingDataType::NOT_SET),
-    m_embeddingDataTypeHasBeenSet(false)
-{
-}
-
 BedrockEmbeddingModelConfiguration::BedrockEmbeddingModelConfiguration(JsonView jsonValue)
-  : BedrockEmbeddingModelConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ BedrockEmbeddingModelConfiguration& BedrockEmbeddingModelConfiguration::operator
   if(jsonValue.ValueExists("dimensions"))
   {
     m_dimensions = jsonValue.GetInteger("dimensions");
-
     m_dimensionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("embeddingDataType"))
   {
     m_embeddingDataType = EmbeddingDataTypeMapper::GetEmbeddingDataTypeForName(jsonValue.GetString("embeddingDataType"));
-
     m_embeddingDataTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

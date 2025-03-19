@@ -18,15 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-Cvss2::Cvss2() : 
-    m_baseScore(0.0),
-    m_baseScoreHasBeenSet(false),
-    m_scoringVectorHasBeenSet(false)
-{
-}
-
 Cvss2::Cvss2(JsonView jsonValue)
-  : Cvss2()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Cvss2& Cvss2::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("baseScore"))
   {
     m_baseScore = jsonValue.GetDouble("baseScore");
-
     m_baseScoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scoringVector"))
   {
     m_scoringVector = jsonValue.GetString("scoringVector");
-
     m_scoringVectorHasBeenSet = true;
   }
-
   return *this;
 }
 

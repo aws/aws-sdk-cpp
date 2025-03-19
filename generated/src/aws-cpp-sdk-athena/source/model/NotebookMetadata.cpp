@@ -18,19 +18,7 @@ namespace Athena
 namespace Model
 {
 
-NotebookMetadata::NotebookMetadata() : 
-    m_notebookIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_workGroupHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_type(NotebookType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
-{
-}
-
 NotebookMetadata::NotebookMetadata(JsonView jsonValue)
-  : NotebookMetadata()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ NotebookMetadata& NotebookMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("NotebookId"))
   {
     m_notebookId = jsonValue.GetString("NotebookId");
-
     m_notebookIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkGroup"))
   {
     m_workGroup = jsonValue.GetString("WorkGroup");
-
     m_workGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = NotebookTypeMapper::GetNotebookTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

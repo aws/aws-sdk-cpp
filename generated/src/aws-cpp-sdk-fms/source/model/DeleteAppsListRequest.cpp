@@ -12,11 +12,6 @@ using namespace Aws::FMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAppsListRequest::DeleteAppsListRequest() : 
-    m_listIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAppsListRequest::SerializePayload() const
 {
   JsonValue payload;

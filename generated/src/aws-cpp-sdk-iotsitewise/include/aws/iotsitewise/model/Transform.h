@@ -42,7 +42,7 @@ namespace Model
   class Transform
   {
   public:
-    AWS_IOTSITEWISE_API Transform();
+    AWS_IOTSITEWISE_API Transform() = default;
     AWS_IOTSITEWISE_API Transform(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Transform& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,28 +56,26 @@ namespace Model
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
      * in the <i>IoT SiteWise User Guide</i>.</p>
      */
-    inline const Aws::String& GetExpression() const{ return m_expression; }
+    inline const Aws::String& GetExpression() const { return m_expression; }
     inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
-    inline void SetExpression(const Aws::String& value) { m_expressionHasBeenSet = true; m_expression = value; }
-    inline void SetExpression(Aws::String&& value) { m_expressionHasBeenSet = true; m_expression = std::move(value); }
-    inline void SetExpression(const char* value) { m_expressionHasBeenSet = true; m_expression.assign(value); }
-    inline Transform& WithExpression(const Aws::String& value) { SetExpression(value); return *this;}
-    inline Transform& WithExpression(Aws::String&& value) { SetExpression(std::move(value)); return *this;}
-    inline Transform& WithExpression(const char* value) { SetExpression(value); return *this;}
+    template<typename ExpressionT = Aws::String>
+    void SetExpression(ExpressionT&& value) { m_expressionHasBeenSet = true; m_expression = std::forward<ExpressionT>(value); }
+    template<typename ExpressionT = Aws::String>
+    Transform& WithExpression(ExpressionT&& value) { SetExpression(std::forward<ExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of variables used in the expression.</p>
      */
-    inline const Aws::Vector<ExpressionVariable>& GetVariables() const{ return m_variables; }
+    inline const Aws::Vector<ExpressionVariable>& GetVariables() const { return m_variables; }
     inline bool VariablesHasBeenSet() const { return m_variablesHasBeenSet; }
-    inline void SetVariables(const Aws::Vector<ExpressionVariable>& value) { m_variablesHasBeenSet = true; m_variables = value; }
-    inline void SetVariables(Aws::Vector<ExpressionVariable>&& value) { m_variablesHasBeenSet = true; m_variables = std::move(value); }
-    inline Transform& WithVariables(const Aws::Vector<ExpressionVariable>& value) { SetVariables(value); return *this;}
-    inline Transform& WithVariables(Aws::Vector<ExpressionVariable>&& value) { SetVariables(std::move(value)); return *this;}
-    inline Transform& AddVariables(const ExpressionVariable& value) { m_variablesHasBeenSet = true; m_variables.push_back(value); return *this; }
-    inline Transform& AddVariables(ExpressionVariable&& value) { m_variablesHasBeenSet = true; m_variables.push_back(std::move(value)); return *this; }
+    template<typename VariablesT = Aws::Vector<ExpressionVariable>>
+    void SetVariables(VariablesT&& value) { m_variablesHasBeenSet = true; m_variables = std::forward<VariablesT>(value); }
+    template<typename VariablesT = Aws::Vector<ExpressionVariable>>
+    Transform& WithVariables(VariablesT&& value) { SetVariables(std::forward<VariablesT>(value)); return *this;}
+    template<typename VariablesT = ExpressionVariable>
+    Transform& AddVariables(VariablesT&& value) { m_variablesHasBeenSet = true; m_variables.emplace_back(std::forward<VariablesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -87,12 +85,12 @@ namespace Model
      * Services Cloud. You can also configure transforms to be computed at the edge or
      * in the cloud.</p>
      */
-    inline const TransformProcessingConfig& GetProcessingConfig() const{ return m_processingConfig; }
+    inline const TransformProcessingConfig& GetProcessingConfig() const { return m_processingConfig; }
     inline bool ProcessingConfigHasBeenSet() const { return m_processingConfigHasBeenSet; }
-    inline void SetProcessingConfig(const TransformProcessingConfig& value) { m_processingConfigHasBeenSet = true; m_processingConfig = value; }
-    inline void SetProcessingConfig(TransformProcessingConfig&& value) { m_processingConfigHasBeenSet = true; m_processingConfig = std::move(value); }
-    inline Transform& WithProcessingConfig(const TransformProcessingConfig& value) { SetProcessingConfig(value); return *this;}
-    inline Transform& WithProcessingConfig(TransformProcessingConfig&& value) { SetProcessingConfig(std::move(value)); return *this;}
+    template<typename ProcessingConfigT = TransformProcessingConfig>
+    void SetProcessingConfig(ProcessingConfigT&& value) { m_processingConfigHasBeenSet = true; m_processingConfig = std::forward<ProcessingConfigT>(value); }
+    template<typename ProcessingConfigT = TransformProcessingConfig>
+    Transform& WithProcessingConfig(ProcessingConfigT&& value) { SetProcessingConfig(std::forward<ProcessingConfigT>(value)); return *this;}
     ///@}
   private:
 

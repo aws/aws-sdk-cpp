@@ -18,15 +18,7 @@ namespace Omics
 namespace Model
 {
 
-SequenceStoreS3Access::SequenceStoreS3Access() : 
-    m_s3UriHasBeenSet(false),
-    m_s3AccessPointArnHasBeenSet(false),
-    m_accessLogLocationHasBeenSet(false)
-{
-}
-
 SequenceStoreS3Access::SequenceStoreS3Access(JsonView jsonValue)
-  : SequenceStoreS3Access()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ SequenceStoreS3Access& SequenceStoreS3Access::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3Uri"))
   {
     m_s3Uri = jsonValue.GetString("s3Uri");
-
     m_s3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3AccessPointArn"))
   {
     m_s3AccessPointArn = jsonValue.GetString("s3AccessPointArn");
-
     m_s3AccessPointArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accessLogLocation"))
   {
     m_accessLogLocation = jsonValue.GetString("accessLogLocation");
-
     m_accessLogLocationHasBeenSet = true;
   }
-
   return *this;
 }
 

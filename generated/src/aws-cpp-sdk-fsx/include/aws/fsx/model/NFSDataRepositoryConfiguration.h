@@ -35,7 +35,7 @@ namespace Model
   class NFSDataRepositoryConfiguration
   {
   public:
-    AWS_FSX_API NFSDataRepositoryConfiguration();
+    AWS_FSX_API NFSDataRepositoryConfiguration() = default;
     AWS_FSX_API NFSDataRepositoryConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API NFSDataRepositoryConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,10 @@ namespace Model
      * repository. Currently, the only supported value is <code>NFS3</code>, which
      * indicates that the data repository must support the NFSv3 protocol.</p>
      */
-    inline const NfsVersion& GetVersion() const{ return m_version; }
+    inline NfsVersion GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const NfsVersion& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(NfsVersion&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline NFSDataRepositoryConfiguration& WithVersion(const NfsVersion& value) { SetVersion(value); return *this;}
-    inline NFSDataRepositoryConfiguration& WithVersion(NfsVersion&& value) { SetVersion(std::move(value)); return *this;}
+    inline void SetVersion(NfsVersion value) { m_versionHasBeenSet = true; m_version = value; }
+    inline NFSDataRepositoryConfiguration& WithVersion(NfsVersion value) { SetVersion(value); return *this;}
     ///@}
 
     ///@{
@@ -62,31 +60,30 @@ namespace Model
      * a DNS forwarder or resolver that the customer manages and runs inside the
      * customer VPC, or the IP addresses of the on-premises DNS servers.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDnsIps() const{ return m_dnsIps; }
+    inline const Aws::Vector<Aws::String>& GetDnsIps() const { return m_dnsIps; }
     inline bool DnsIpsHasBeenSet() const { return m_dnsIpsHasBeenSet; }
-    inline void SetDnsIps(const Aws::Vector<Aws::String>& value) { m_dnsIpsHasBeenSet = true; m_dnsIps = value; }
-    inline void SetDnsIps(Aws::Vector<Aws::String>&& value) { m_dnsIpsHasBeenSet = true; m_dnsIps = std::move(value); }
-    inline NFSDataRepositoryConfiguration& WithDnsIps(const Aws::Vector<Aws::String>& value) { SetDnsIps(value); return *this;}
-    inline NFSDataRepositoryConfiguration& WithDnsIps(Aws::Vector<Aws::String>&& value) { SetDnsIps(std::move(value)); return *this;}
-    inline NFSDataRepositoryConfiguration& AddDnsIps(const Aws::String& value) { m_dnsIpsHasBeenSet = true; m_dnsIps.push_back(value); return *this; }
-    inline NFSDataRepositoryConfiguration& AddDnsIps(Aws::String&& value) { m_dnsIpsHasBeenSet = true; m_dnsIps.push_back(std::move(value)); return *this; }
-    inline NFSDataRepositoryConfiguration& AddDnsIps(const char* value) { m_dnsIpsHasBeenSet = true; m_dnsIps.push_back(value); return *this; }
+    template<typename DnsIpsT = Aws::Vector<Aws::String>>
+    void SetDnsIps(DnsIpsT&& value) { m_dnsIpsHasBeenSet = true; m_dnsIps = std::forward<DnsIpsT>(value); }
+    template<typename DnsIpsT = Aws::Vector<Aws::String>>
+    NFSDataRepositoryConfiguration& WithDnsIps(DnsIpsT&& value) { SetDnsIps(std::forward<DnsIpsT>(value)); return *this;}
+    template<typename DnsIpsT = Aws::String>
+    NFSDataRepositoryConfiguration& AddDnsIps(DnsIpsT&& value) { m_dnsIpsHasBeenSet = true; m_dnsIps.emplace_back(std::forward<DnsIpsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>This parameter is not supported for Amazon File Cache.</p>
      */
-    inline const AutoExportPolicy& GetAutoExportPolicy() const{ return m_autoExportPolicy; }
+    inline const AutoExportPolicy& GetAutoExportPolicy() const { return m_autoExportPolicy; }
     inline bool AutoExportPolicyHasBeenSet() const { return m_autoExportPolicyHasBeenSet; }
-    inline void SetAutoExportPolicy(const AutoExportPolicy& value) { m_autoExportPolicyHasBeenSet = true; m_autoExportPolicy = value; }
-    inline void SetAutoExportPolicy(AutoExportPolicy&& value) { m_autoExportPolicyHasBeenSet = true; m_autoExportPolicy = std::move(value); }
-    inline NFSDataRepositoryConfiguration& WithAutoExportPolicy(const AutoExportPolicy& value) { SetAutoExportPolicy(value); return *this;}
-    inline NFSDataRepositoryConfiguration& WithAutoExportPolicy(AutoExportPolicy&& value) { SetAutoExportPolicy(std::move(value)); return *this;}
+    template<typename AutoExportPolicyT = AutoExportPolicy>
+    void SetAutoExportPolicy(AutoExportPolicyT&& value) { m_autoExportPolicyHasBeenSet = true; m_autoExportPolicy = std::forward<AutoExportPolicyT>(value); }
+    template<typename AutoExportPolicyT = AutoExportPolicy>
+    NFSDataRepositoryConfiguration& WithAutoExportPolicy(AutoExportPolicyT&& value) { SetAutoExportPolicy(std::forward<AutoExportPolicyT>(value)); return *this;}
     ///@}
   private:
 
-    NfsVersion m_version;
+    NfsVersion m_version{NfsVersion::NOT_SET};
     bool m_versionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dnsIps;

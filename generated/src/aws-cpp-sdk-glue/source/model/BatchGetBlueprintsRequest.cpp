@@ -12,15 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetBlueprintsRequest::BatchGetBlueprintsRequest() : 
-    m_namesHasBeenSet(false),
-    m_includeBlueprint(false),
-    m_includeBlueprintHasBeenSet(false),
-    m_includeParameterSpec(false),
-    m_includeParameterSpecHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetBlueprintsRequest::SerializePayload() const
 {
   JsonValue payload;

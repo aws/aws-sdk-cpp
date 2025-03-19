@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateIngestionResult::CreateIngestionResult() : 
-    m_ingestionStatus(IngestionStatus::NOT_SET),
-    m_status(0)
-{
-}
-
 CreateIngestionResult::CreateIngestionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateIngestionResult()
 {
   *this = result;
 }
@@ -35,31 +28,29 @@ CreateIngestionResult& CreateIngestionResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IngestionId"))
   {
     m_ingestionId = jsonValue.GetString("IngestionId");
-
+    m_ingestionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IngestionStatus"))
   {
     m_ingestionStatus = IngestionStatusMapper::GetIngestionStatusForName(jsonValue.GetString("IngestionStatus"));
-
+    m_ingestionStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

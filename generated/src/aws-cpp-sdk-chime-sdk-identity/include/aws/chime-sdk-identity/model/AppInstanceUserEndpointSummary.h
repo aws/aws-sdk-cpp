@@ -35,7 +35,7 @@ namespace Model
   class AppInstanceUserEndpointSummary
   {
   public:
-    AWS_CHIMESDKIDENTITY_API AppInstanceUserEndpointSummary();
+    AWS_CHIMESDKIDENTITY_API AppInstanceUserEndpointSummary() = default;
     AWS_CHIMESDKIDENTITY_API AppInstanceUserEndpointSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKIDENTITY_API AppInstanceUserEndpointSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKIDENTITY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,54 +45,46 @@ namespace Model
     /**
      * <p>The ARN of the <code>AppInstanceUser</code>.</p>
      */
-    inline const Aws::String& GetAppInstanceUserArn() const{ return m_appInstanceUserArn; }
+    inline const Aws::String& GetAppInstanceUserArn() const { return m_appInstanceUserArn; }
     inline bool AppInstanceUserArnHasBeenSet() const { return m_appInstanceUserArnHasBeenSet; }
-    inline void SetAppInstanceUserArn(const Aws::String& value) { m_appInstanceUserArnHasBeenSet = true; m_appInstanceUserArn = value; }
-    inline void SetAppInstanceUserArn(Aws::String&& value) { m_appInstanceUserArnHasBeenSet = true; m_appInstanceUserArn = std::move(value); }
-    inline void SetAppInstanceUserArn(const char* value) { m_appInstanceUserArnHasBeenSet = true; m_appInstanceUserArn.assign(value); }
-    inline AppInstanceUserEndpointSummary& WithAppInstanceUserArn(const Aws::String& value) { SetAppInstanceUserArn(value); return *this;}
-    inline AppInstanceUserEndpointSummary& WithAppInstanceUserArn(Aws::String&& value) { SetAppInstanceUserArn(std::move(value)); return *this;}
-    inline AppInstanceUserEndpointSummary& WithAppInstanceUserArn(const char* value) { SetAppInstanceUserArn(value); return *this;}
+    template<typename AppInstanceUserArnT = Aws::String>
+    void SetAppInstanceUserArn(AppInstanceUserArnT&& value) { m_appInstanceUserArnHasBeenSet = true; m_appInstanceUserArn = std::forward<AppInstanceUserArnT>(value); }
+    template<typename AppInstanceUserArnT = Aws::String>
+    AppInstanceUserEndpointSummary& WithAppInstanceUserArn(AppInstanceUserArnT&& value) { SetAppInstanceUserArn(std::forward<AppInstanceUserArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
      */
-    inline const Aws::String& GetEndpointId() const{ return m_endpointId; }
+    inline const Aws::String& GetEndpointId() const { return m_endpointId; }
     inline bool EndpointIdHasBeenSet() const { return m_endpointIdHasBeenSet; }
-    inline void SetEndpointId(const Aws::String& value) { m_endpointIdHasBeenSet = true; m_endpointId = value; }
-    inline void SetEndpointId(Aws::String&& value) { m_endpointIdHasBeenSet = true; m_endpointId = std::move(value); }
-    inline void SetEndpointId(const char* value) { m_endpointIdHasBeenSet = true; m_endpointId.assign(value); }
-    inline AppInstanceUserEndpointSummary& WithEndpointId(const Aws::String& value) { SetEndpointId(value); return *this;}
-    inline AppInstanceUserEndpointSummary& WithEndpointId(Aws::String&& value) { SetEndpointId(std::move(value)); return *this;}
-    inline AppInstanceUserEndpointSummary& WithEndpointId(const char* value) { SetEndpointId(value); return *this;}
+    template<typename EndpointIdT = Aws::String>
+    void SetEndpointId(EndpointIdT&& value) { m_endpointIdHasBeenSet = true; m_endpointId = std::forward<EndpointIdT>(value); }
+    template<typename EndpointIdT = Aws::String>
+    AppInstanceUserEndpointSummary& WithEndpointId(EndpointIdT&& value) { SetEndpointId(std::forward<EndpointIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AppInstanceUserEndpointSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AppInstanceUserEndpointSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AppInstanceUserEndpointSummary& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    AppInstanceUserEndpointSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the <code>AppInstanceUserEndpoint</code>.</p>
      */
-    inline const AppInstanceUserEndpointType& GetType() const{ return m_type; }
+    inline AppInstanceUserEndpointType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const AppInstanceUserEndpointType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(AppInstanceUserEndpointType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline AppInstanceUserEndpointSummary& WithType(const AppInstanceUserEndpointType& value) { SetType(value); return *this;}
-    inline AppInstanceUserEndpointSummary& WithType(AppInstanceUserEndpointType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(AppInstanceUserEndpointType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline AppInstanceUserEndpointSummary& WithType(AppInstanceUserEndpointType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -102,12 +94,10 @@ namespace Model
      * receive all messages. <code>NONE</code> indicates the endpoint will receive no
      * messages.</p>
      */
-    inline const AllowMessages& GetAllowMessages() const{ return m_allowMessages; }
+    inline AllowMessages GetAllowMessages() const { return m_allowMessages; }
     inline bool AllowMessagesHasBeenSet() const { return m_allowMessagesHasBeenSet; }
-    inline void SetAllowMessages(const AllowMessages& value) { m_allowMessagesHasBeenSet = true; m_allowMessages = value; }
-    inline void SetAllowMessages(AllowMessages&& value) { m_allowMessagesHasBeenSet = true; m_allowMessages = std::move(value); }
-    inline AppInstanceUserEndpointSummary& WithAllowMessages(const AllowMessages& value) { SetAllowMessages(value); return *this;}
-    inline AppInstanceUserEndpointSummary& WithAllowMessages(AllowMessages&& value) { SetAllowMessages(std::move(value)); return *this;}
+    inline void SetAllowMessages(AllowMessages value) { m_allowMessagesHasBeenSet = true; m_allowMessages = value; }
+    inline AppInstanceUserEndpointSummary& WithAllowMessages(AllowMessages value) { SetAllowMessages(value); return *this;}
     ///@}
 
     ///@{
@@ -115,12 +105,12 @@ namespace Model
      * <p>A read-only field that represent the state of an
      * <code>AppInstanceUserEndpoint</code>.</p>
      */
-    inline const EndpointState& GetEndpointState() const{ return m_endpointState; }
+    inline const EndpointState& GetEndpointState() const { return m_endpointState; }
     inline bool EndpointStateHasBeenSet() const { return m_endpointStateHasBeenSet; }
-    inline void SetEndpointState(const EndpointState& value) { m_endpointStateHasBeenSet = true; m_endpointState = value; }
-    inline void SetEndpointState(EndpointState&& value) { m_endpointStateHasBeenSet = true; m_endpointState = std::move(value); }
-    inline AppInstanceUserEndpointSummary& WithEndpointState(const EndpointState& value) { SetEndpointState(value); return *this;}
-    inline AppInstanceUserEndpointSummary& WithEndpointState(EndpointState&& value) { SetEndpointState(std::move(value)); return *this;}
+    template<typename EndpointStateT = EndpointState>
+    void SetEndpointState(EndpointStateT&& value) { m_endpointStateHasBeenSet = true; m_endpointState = std::forward<EndpointStateT>(value); }
+    template<typename EndpointStateT = EndpointState>
+    AppInstanceUserEndpointSummary& WithEndpointState(EndpointStateT&& value) { SetEndpointState(std::forward<EndpointStateT>(value)); return *this;}
     ///@}
   private:
 
@@ -133,10 +123,10 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    AppInstanceUserEndpointType m_type;
+    AppInstanceUserEndpointType m_type{AppInstanceUserEndpointType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    AllowMessages m_allowMessages;
+    AllowMessages m_allowMessages{AllowMessages::NOT_SET};
     bool m_allowMessagesHasBeenSet = false;
 
     EndpointState m_endpointState;

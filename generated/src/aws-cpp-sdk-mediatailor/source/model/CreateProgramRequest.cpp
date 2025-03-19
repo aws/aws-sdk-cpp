@@ -12,18 +12,6 @@ using namespace Aws::MediaTailor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateProgramRequest::CreateProgramRequest() : 
-    m_adBreaksHasBeenSet(false),
-    m_channelNameHasBeenSet(false),
-    m_liveSourceNameHasBeenSet(false),
-    m_programNameHasBeenSet(false),
-    m_scheduleConfigurationHasBeenSet(false),
-    m_sourceLocationNameHasBeenSet(false),
-    m_vodSourceNameHasBeenSet(false),
-    m_audienceMediaHasBeenSet(false)
-{
-}
-
 Aws::String CreateProgramRequest::SerializePayload() const
 {
   JsonValue payload;

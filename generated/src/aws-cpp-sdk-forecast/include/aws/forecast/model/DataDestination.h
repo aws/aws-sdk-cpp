@@ -33,7 +33,7 @@ namespace Model
   class DataDestination
   {
   public:
-    AWS_FORECASTSERVICE_API DataDestination();
+    AWS_FORECASTSERVICE_API DataDestination() = default;
     AWS_FORECASTSERVICE_API DataDestination(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API DataDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p>The path to an Amazon Simple Storage Service (Amazon S3) bucket along with
      * the credentials to access the bucket.</p>
      */
-    inline const S3Config& GetS3Config() const{ return m_s3Config; }
+    inline const S3Config& GetS3Config() const { return m_s3Config; }
     inline bool S3ConfigHasBeenSet() const { return m_s3ConfigHasBeenSet; }
-    inline void SetS3Config(const S3Config& value) { m_s3ConfigHasBeenSet = true; m_s3Config = value; }
-    inline void SetS3Config(S3Config&& value) { m_s3ConfigHasBeenSet = true; m_s3Config = std::move(value); }
-    inline DataDestination& WithS3Config(const S3Config& value) { SetS3Config(value); return *this;}
-    inline DataDestination& WithS3Config(S3Config&& value) { SetS3Config(std::move(value)); return *this;}
+    template<typename S3ConfigT = S3Config>
+    void SetS3Config(S3ConfigT&& value) { m_s3ConfigHasBeenSet = true; m_s3Config = std::forward<S3ConfigT>(value); }
+    template<typename S3ConfigT = S3Config>
+    DataDestination& WithS3Config(S3ConfigT&& value) { SetS3Config(std::forward<S3ConfigT>(value)); return *this;}
     ///@}
   private:
 

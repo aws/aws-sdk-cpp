@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetExtensionAssociationResult::GetExtensionAssociationResult() : 
-    m_extensionVersionNumber(0)
-{
-}
-
 GetExtensionAssociationResult::GetExtensionAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetExtensionAssociationResult()
 {
   *this = result;
 }
@@ -34,27 +28,23 @@ GetExtensionAssociationResult& GetExtensionAssociationResult::operator =(const A
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExtensionArn"))
   {
     m_extensionArn = jsonValue.GetString("ExtensionArn");
-
+    m_extensionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceArn"))
   {
     m_resourceArn = jsonValue.GetString("ResourceArn");
-
+    m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
@@ -62,20 +52,20 @@ GetExtensionAssociationResult& GetExtensionAssociationResult::operator =(const A
     {
       m_parameters[parametersItem.first] = parametersItem.second.AsString();
     }
+    m_parametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExtensionVersionNumber"))
   {
     m_extensionVersionNumber = jsonValue.GetInteger("ExtensionVersionNumber");
-
+    m_extensionVersionNumberHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

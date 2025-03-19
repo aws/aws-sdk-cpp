@@ -29,7 +29,7 @@ namespace Model
   class BatchDeleteFeaturedResultsSetResult
   {
   public:
-    AWS_KENDRA_API BatchDeleteFeaturedResultsSetResult();
+    AWS_KENDRA_API BatchDeleteFeaturedResultsSetResult() = default;
     AWS_KENDRA_API BatchDeleteFeaturedResultsSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KENDRA_API BatchDeleteFeaturedResultsSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,30 +39,30 @@ namespace Model
      * <p>The list of errors for the featured results set IDs, explaining why they
      * couldn't be removed from the index.</p>
      */
-    inline const Aws::Vector<BatchDeleteFeaturedResultsSetError>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<BatchDeleteFeaturedResultsSetError>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<BatchDeleteFeaturedResultsSetError>&& value) { m_errors = std::move(value); }
-    inline BatchDeleteFeaturedResultsSetResult& WithErrors(const Aws::Vector<BatchDeleteFeaturedResultsSetError>& value) { SetErrors(value); return *this;}
-    inline BatchDeleteFeaturedResultsSetResult& WithErrors(Aws::Vector<BatchDeleteFeaturedResultsSetError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline BatchDeleteFeaturedResultsSetResult& AddErrors(const BatchDeleteFeaturedResultsSetError& value) { m_errors.push_back(value); return *this; }
-    inline BatchDeleteFeaturedResultsSetResult& AddErrors(BatchDeleteFeaturedResultsSetError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchDeleteFeaturedResultsSetError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<BatchDeleteFeaturedResultsSetError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<BatchDeleteFeaturedResultsSetError>>
+    BatchDeleteFeaturedResultsSetResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = BatchDeleteFeaturedResultsSetError>
+    BatchDeleteFeaturedResultsSetResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchDeleteFeaturedResultsSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchDeleteFeaturedResultsSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchDeleteFeaturedResultsSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchDeleteFeaturedResultsSetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<BatchDeleteFeaturedResultsSetError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-Explainability::Explainability() : 
-    m_reportHasBeenSet(false)
-{
-}
-
 Explainability::Explainability(JsonView jsonValue)
-  : Explainability()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Explainability& Explainability::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Report"))
   {
     m_report = jsonValue.GetObject("Report");
-
     m_reportHasBeenSet = true;
   }
-
   return *this;
 }
 

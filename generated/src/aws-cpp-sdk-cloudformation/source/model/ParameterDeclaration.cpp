@@ -20,19 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-ParameterDeclaration::ParameterDeclaration() : 
-    m_parameterKeyHasBeenSet(false),
-    m_defaultValueHasBeenSet(false),
-    m_parameterTypeHasBeenSet(false),
-    m_noEcho(false),
-    m_noEchoHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_parameterConstraintsHasBeenSet(false)
-{
-}
-
 ParameterDeclaration::ParameterDeclaration(const XmlNode& xmlNode)
-  : ParameterDeclaration()
 {
   *this = xmlNode;
 }

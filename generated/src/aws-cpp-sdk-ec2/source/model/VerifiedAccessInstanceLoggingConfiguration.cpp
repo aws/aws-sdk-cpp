@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VerifiedAccessInstanceLoggingConfiguration::VerifiedAccessInstanceLoggingConfiguration() : 
-    m_verifiedAccessInstanceIdHasBeenSet(false),
-    m_accessLogsHasBeenSet(false)
-{
-}
-
 VerifiedAccessInstanceLoggingConfiguration::VerifiedAccessInstanceLoggingConfiguration(const XmlNode& xmlNode)
-  : VerifiedAccessInstanceLoggingConfiguration()
 {
   *this = xmlNode;
 }

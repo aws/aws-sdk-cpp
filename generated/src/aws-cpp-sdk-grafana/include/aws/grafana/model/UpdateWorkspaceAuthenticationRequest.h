@@ -24,7 +24,7 @@ namespace Model
   class UpdateWorkspaceAuthenticationRequest : public ManagedGrafanaRequest
   {
   public:
-    AWS_MANAGEDGRAFANA_API UpdateWorkspaceAuthenticationRequest();
+    AWS_MANAGEDGRAFANA_API UpdateWorkspaceAuthenticationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User
      * authentication in Amazon Managed Grafana</a>.</p>
      */
-    inline const Aws::Vector<AuthenticationProviderTypes>& GetAuthenticationProviders() const{ return m_authenticationProviders; }
+    inline const Aws::Vector<AuthenticationProviderTypes>& GetAuthenticationProviders() const { return m_authenticationProviders; }
     inline bool AuthenticationProvidersHasBeenSet() const { return m_authenticationProvidersHasBeenSet; }
-    inline void SetAuthenticationProviders(const Aws::Vector<AuthenticationProviderTypes>& value) { m_authenticationProvidersHasBeenSet = true; m_authenticationProviders = value; }
-    inline void SetAuthenticationProviders(Aws::Vector<AuthenticationProviderTypes>&& value) { m_authenticationProvidersHasBeenSet = true; m_authenticationProviders = std::move(value); }
-    inline UpdateWorkspaceAuthenticationRequest& WithAuthenticationProviders(const Aws::Vector<AuthenticationProviderTypes>& value) { SetAuthenticationProviders(value); return *this;}
-    inline UpdateWorkspaceAuthenticationRequest& WithAuthenticationProviders(Aws::Vector<AuthenticationProviderTypes>&& value) { SetAuthenticationProviders(std::move(value)); return *this;}
-    inline UpdateWorkspaceAuthenticationRequest& AddAuthenticationProviders(const AuthenticationProviderTypes& value) { m_authenticationProvidersHasBeenSet = true; m_authenticationProviders.push_back(value); return *this; }
-    inline UpdateWorkspaceAuthenticationRequest& AddAuthenticationProviders(AuthenticationProviderTypes&& value) { m_authenticationProvidersHasBeenSet = true; m_authenticationProviders.push_back(std::move(value)); return *this; }
+    template<typename AuthenticationProvidersT = Aws::Vector<AuthenticationProviderTypes>>
+    void SetAuthenticationProviders(AuthenticationProvidersT&& value) { m_authenticationProvidersHasBeenSet = true; m_authenticationProviders = std::forward<AuthenticationProvidersT>(value); }
+    template<typename AuthenticationProvidersT = Aws::Vector<AuthenticationProviderTypes>>
+    UpdateWorkspaceAuthenticationRequest& WithAuthenticationProviders(AuthenticationProvidersT&& value) { SetAuthenticationProviders(std::forward<AuthenticationProvidersT>(value)); return *this;}
+    inline UpdateWorkspaceAuthenticationRequest& AddAuthenticationProviders(AuthenticationProviderTypes value) { m_authenticationProvidersHasBeenSet = true; m_authenticationProviders.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -60,26 +59,24 @@ namespace Model
      * assertion attribute are to have the <code>Admin</code> and <code>Editor</code>
      * roles in the workspace.</p>
      */
-    inline const SamlConfiguration& GetSamlConfiguration() const{ return m_samlConfiguration; }
+    inline const SamlConfiguration& GetSamlConfiguration() const { return m_samlConfiguration; }
     inline bool SamlConfigurationHasBeenSet() const { return m_samlConfigurationHasBeenSet; }
-    inline void SetSamlConfiguration(const SamlConfiguration& value) { m_samlConfigurationHasBeenSet = true; m_samlConfiguration = value; }
-    inline void SetSamlConfiguration(SamlConfiguration&& value) { m_samlConfigurationHasBeenSet = true; m_samlConfiguration = std::move(value); }
-    inline UpdateWorkspaceAuthenticationRequest& WithSamlConfiguration(const SamlConfiguration& value) { SetSamlConfiguration(value); return *this;}
-    inline UpdateWorkspaceAuthenticationRequest& WithSamlConfiguration(SamlConfiguration&& value) { SetSamlConfiguration(std::move(value)); return *this;}
+    template<typename SamlConfigurationT = SamlConfiguration>
+    void SetSamlConfiguration(SamlConfigurationT&& value) { m_samlConfigurationHasBeenSet = true; m_samlConfiguration = std::forward<SamlConfigurationT>(value); }
+    template<typename SamlConfigurationT = SamlConfiguration>
+    UpdateWorkspaceAuthenticationRequest& WithSamlConfiguration(SamlConfigurationT&& value) { SetSamlConfiguration(std::forward<SamlConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the workspace to update the authentication for.</p>
      */
-    inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
+    inline const Aws::String& GetWorkspaceId() const { return m_workspaceId; }
     inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
-    inline void SetWorkspaceId(const Aws::String& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
-    inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::move(value); }
-    inline void SetWorkspaceId(const char* value) { m_workspaceIdHasBeenSet = true; m_workspaceId.assign(value); }
-    inline UpdateWorkspaceAuthenticationRequest& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
-    inline UpdateWorkspaceAuthenticationRequest& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
-    inline UpdateWorkspaceAuthenticationRequest& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
+    template<typename WorkspaceIdT = Aws::String>
+    void SetWorkspaceId(WorkspaceIdT&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::forward<WorkspaceIdT>(value); }
+    template<typename WorkspaceIdT = Aws::String>
+    UpdateWorkspaceAuthenticationRequest& WithWorkspaceId(WorkspaceIdT&& value) { SetWorkspaceId(std::forward<WorkspaceIdT>(value)); return *this;}
     ///@}
   private:
 

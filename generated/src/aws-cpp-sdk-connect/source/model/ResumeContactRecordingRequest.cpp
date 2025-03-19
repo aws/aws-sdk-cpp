@@ -12,15 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ResumeContactRecordingRequest::ResumeContactRecordingRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_contactIdHasBeenSet(false),
-    m_initialContactIdHasBeenSet(false),
-    m_contactRecordingType(ContactRecordingType::NOT_SET),
-    m_contactRecordingTypeHasBeenSet(false)
-{
-}
-
 Aws::String ResumeContactRecordingRequest::SerializePayload() const
 {
   JsonValue payload;

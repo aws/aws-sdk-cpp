@@ -12,17 +12,6 @@ using namespace Aws::SFN::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateMapRunRequest::UpdateMapRunRequest() : 
-    m_mapRunArnHasBeenSet(false),
-    m_maxConcurrency(0),
-    m_maxConcurrencyHasBeenSet(false),
-    m_toleratedFailurePercentage(0.0),
-    m_toleratedFailurePercentageHasBeenSet(false),
-    m_toleratedFailureCount(0),
-    m_toleratedFailureCountHasBeenSet(false)
-{
-}
-
 Aws::String UpdateMapRunRequest::SerializePayload() const
 {
   JsonValue payload;

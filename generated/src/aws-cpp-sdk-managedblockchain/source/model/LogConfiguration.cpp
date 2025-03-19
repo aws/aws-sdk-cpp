@@ -18,14 +18,7 @@ namespace ManagedBlockchain
 namespace Model
 {
 
-LogConfiguration::LogConfiguration() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 LogConfiguration::LogConfiguration(JsonView jsonValue)
-  : LogConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ LogConfiguration& LogConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   return *this;
 }
 

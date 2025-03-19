@@ -18,22 +18,7 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
-PhoneNumberOrder::PhoneNumberOrder() : 
-    m_phoneNumberOrderIdHasBeenSet(false),
-    m_productType(PhoneNumberProductType::NOT_SET),
-    m_productTypeHasBeenSet(false),
-    m_status(PhoneNumberOrderStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_orderType(PhoneNumberOrderType::NOT_SET),
-    m_orderTypeHasBeenSet(false),
-    m_orderedPhoneNumbersHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_updatedTimestampHasBeenSet(false)
-{
-}
-
 PhoneNumberOrder::PhoneNumberOrder(JsonView jsonValue)
-  : PhoneNumberOrder()
 {
   *this = jsonValue;
 }
@@ -43,31 +28,23 @@ PhoneNumberOrder& PhoneNumberOrder::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PhoneNumberOrderId"))
   {
     m_phoneNumberOrderId = jsonValue.GetString("PhoneNumberOrderId");
-
     m_phoneNumberOrderIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProductType"))
   {
     m_productType = PhoneNumberProductTypeMapper::GetPhoneNumberProductTypeForName(jsonValue.GetString("ProductType"));
-
     m_productTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = PhoneNumberOrderStatusMapper::GetPhoneNumberOrderStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrderType"))
   {
     m_orderType = PhoneNumberOrderTypeMapper::GetPhoneNumberOrderTypeForName(jsonValue.GetString("OrderType"));
-
     m_orderTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrderedPhoneNumbers"))
   {
     Aws::Utils::Array<JsonView> orderedPhoneNumbersJsonList = jsonValue.GetArray("OrderedPhoneNumbers");
@@ -77,21 +54,16 @@ PhoneNumberOrder& PhoneNumberOrder::operator =(JsonView jsonValue)
     }
     m_orderedPhoneNumbersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetString("CreatedTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedTimestamp"))
   {
     m_updatedTimestamp = jsonValue.GetString("UpdatedTimestamp");
-
     m_updatedTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

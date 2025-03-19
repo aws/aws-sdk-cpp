@@ -32,7 +32,7 @@ namespace Model
   class RetrievalFlowNodeS3Configuration
   {
   public:
-    AWS_BEDROCKAGENT_API RetrievalFlowNodeS3Configuration();
+    AWS_BEDROCKAGENT_API RetrievalFlowNodeS3Configuration() = default;
     AWS_BEDROCKAGENT_API RetrievalFlowNodeS3Configuration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API RetrievalFlowNodeS3Configuration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the Amazon S3 bucket from which to retrieve data.</p>
      */
-    inline const Aws::String& GetBucketName() const{ return m_bucketName; }
+    inline const Aws::String& GetBucketName() const { return m_bucketName; }
     inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
-    inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
-    inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::move(value); }
-    inline void SetBucketName(const char* value) { m_bucketNameHasBeenSet = true; m_bucketName.assign(value); }
-    inline RetrievalFlowNodeS3Configuration& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
-    inline RetrievalFlowNodeS3Configuration& WithBucketName(Aws::String&& value) { SetBucketName(std::move(value)); return *this;}
-    inline RetrievalFlowNodeS3Configuration& WithBucketName(const char* value) { SetBucketName(value); return *this;}
+    template<typename BucketNameT = Aws::String>
+    void SetBucketName(BucketNameT&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::forward<BucketNameT>(value); }
+    template<typename BucketNameT = Aws::String>
+    RetrievalFlowNodeS3Configuration& WithBucketName(BucketNameT&& value) { SetBucketName(std::forward<BucketNameT>(value)); return *this;}
     ///@}
   private:
 

@@ -29,7 +29,7 @@ namespace Model
   class ListInputsResult
   {
   public:
-    AWS_IOTEVENTS_API ListInputsResult();
+    AWS_IOTEVENTS_API ListInputsResult() = default;
     AWS_IOTEVENTS_API ListInputsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTEVENTS_API ListInputsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Summary information about the inputs.</p>
      */
-    inline const Aws::Vector<InputSummary>& GetInputSummaries() const{ return m_inputSummaries; }
-    inline void SetInputSummaries(const Aws::Vector<InputSummary>& value) { m_inputSummaries = value; }
-    inline void SetInputSummaries(Aws::Vector<InputSummary>&& value) { m_inputSummaries = std::move(value); }
-    inline ListInputsResult& WithInputSummaries(const Aws::Vector<InputSummary>& value) { SetInputSummaries(value); return *this;}
-    inline ListInputsResult& WithInputSummaries(Aws::Vector<InputSummary>&& value) { SetInputSummaries(std::move(value)); return *this;}
-    inline ListInputsResult& AddInputSummaries(const InputSummary& value) { m_inputSummaries.push_back(value); return *this; }
-    inline ListInputsResult& AddInputSummaries(InputSummary&& value) { m_inputSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<InputSummary>& GetInputSummaries() const { return m_inputSummaries; }
+    template<typename InputSummariesT = Aws::Vector<InputSummary>>
+    void SetInputSummaries(InputSummariesT&& value) { m_inputSummariesHasBeenSet = true; m_inputSummaries = std::forward<InputSummariesT>(value); }
+    template<typename InputSummariesT = Aws::Vector<InputSummary>>
+    ListInputsResult& WithInputSummaries(InputSummariesT&& value) { SetInputSummaries(std::forward<InputSummariesT>(value)); return *this;}
+    template<typename InputSummariesT = InputSummary>
+    ListInputsResult& AddInputSummaries(InputSummariesT&& value) { m_inputSummariesHasBeenSet = true; m_inputSummaries.emplace_back(std::forward<InputSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The token that you can use to return the next set of results, or
      * <code>null</code> if there are no more results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListInputsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListInputsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListInputsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListInputsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListInputsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListInputsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListInputsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListInputsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<InputSummary> m_inputSummaries;
+    bool m_inputSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

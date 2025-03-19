@@ -12,11 +12,6 @@ using namespace Aws::FraudDetector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteBatchImportJobRequest::DeleteBatchImportJobRequest() : 
-    m_jobIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteBatchImportJobRequest::SerializePayload() const
 {
   JsonValue payload;

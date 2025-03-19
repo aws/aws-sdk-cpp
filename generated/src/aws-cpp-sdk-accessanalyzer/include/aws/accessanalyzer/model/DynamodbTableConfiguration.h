@@ -42,7 +42,7 @@ namespace Model
   class DynamodbTableConfiguration
   {
   public:
-    AWS_ACCESSANALYZER_API DynamodbTableConfiguration();
+    AWS_ACCESSANALYZER_API DynamodbTableConfiguration() = default;
     AWS_ACCESSANALYZER_API DynamodbTableConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API DynamodbTableConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,14 +53,12 @@ namespace Model
      * <p>The proposed resource policy defining who can access or manage the DynamoDB
      * table.</p>
      */
-    inline const Aws::String& GetTablePolicy() const{ return m_tablePolicy; }
+    inline const Aws::String& GetTablePolicy() const { return m_tablePolicy; }
     inline bool TablePolicyHasBeenSet() const { return m_tablePolicyHasBeenSet; }
-    inline void SetTablePolicy(const Aws::String& value) { m_tablePolicyHasBeenSet = true; m_tablePolicy = value; }
-    inline void SetTablePolicy(Aws::String&& value) { m_tablePolicyHasBeenSet = true; m_tablePolicy = std::move(value); }
-    inline void SetTablePolicy(const char* value) { m_tablePolicyHasBeenSet = true; m_tablePolicy.assign(value); }
-    inline DynamodbTableConfiguration& WithTablePolicy(const Aws::String& value) { SetTablePolicy(value); return *this;}
-    inline DynamodbTableConfiguration& WithTablePolicy(Aws::String&& value) { SetTablePolicy(std::move(value)); return *this;}
-    inline DynamodbTableConfiguration& WithTablePolicy(const char* value) { SetTablePolicy(value); return *this;}
+    template<typename TablePolicyT = Aws::String>
+    void SetTablePolicy(TablePolicyT&& value) { m_tablePolicyHasBeenSet = true; m_tablePolicy = std::forward<TablePolicyT>(value); }
+    template<typename TablePolicyT = Aws::String>
+    DynamodbTableConfiguration& WithTablePolicy(TablePolicyT&& value) { SetTablePolicy(std::forward<TablePolicyT>(value)); return *this;}
     ///@}
   private:
 

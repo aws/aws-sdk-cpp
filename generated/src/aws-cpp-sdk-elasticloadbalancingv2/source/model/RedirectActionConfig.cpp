@@ -20,19 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-RedirectActionConfig::RedirectActionConfig() : 
-    m_protocolHasBeenSet(false),
-    m_portHasBeenSet(false),
-    m_hostHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_queryHasBeenSet(false),
-    m_statusCode(RedirectActionStatusCodeEnum::NOT_SET),
-    m_statusCodeHasBeenSet(false)
-{
-}
-
 RedirectActionConfig::RedirectActionConfig(const XmlNode& xmlNode)
-  : RedirectActionConfig()
 {
   *this = xmlNode;
 }
@@ -76,7 +64,7 @@ RedirectActionConfig& RedirectActionConfig::operator =(const XmlNode& xmlNode)
     XmlNode statusCodeNode = resultNode.FirstChild("StatusCode");
     if(!statusCodeNode.IsNull())
     {
-      m_statusCode = RedirectActionStatusCodeEnumMapper::GetRedirectActionStatusCodeEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusCodeNode.GetText()).c_str()).c_str());
+      m_statusCode = RedirectActionStatusCodeEnumMapper::GetRedirectActionStatusCodeEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusCodeNode.GetText()).c_str()));
       m_statusCodeHasBeenSet = true;
     }
   }

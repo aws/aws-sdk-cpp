@@ -32,7 +32,7 @@ namespace Model
   class AwsCodeBuildProjectEnvironmentRegistryCredential
   {
   public:
-    AWS_SECURITYHUB_API AwsCodeBuildProjectEnvironmentRegistryCredential();
+    AWS_SECURITYHUB_API AwsCodeBuildProjectEnvironmentRegistryCredential() = default;
     AWS_SECURITYHUB_API AwsCodeBuildProjectEnvironmentRegistryCredential(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsCodeBuildProjectEnvironmentRegistryCredential& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The credential can use the name of the credentials only if they exist in your
      * current Amazon Web Services Region. </p> 
      */
-    inline const Aws::String& GetCredential() const{ return m_credential; }
+    inline const Aws::String& GetCredential() const { return m_credential; }
     inline bool CredentialHasBeenSet() const { return m_credentialHasBeenSet; }
-    inline void SetCredential(const Aws::String& value) { m_credentialHasBeenSet = true; m_credential = value; }
-    inline void SetCredential(Aws::String&& value) { m_credentialHasBeenSet = true; m_credential = std::move(value); }
-    inline void SetCredential(const char* value) { m_credentialHasBeenSet = true; m_credential.assign(value); }
-    inline AwsCodeBuildProjectEnvironmentRegistryCredential& WithCredential(const Aws::String& value) { SetCredential(value); return *this;}
-    inline AwsCodeBuildProjectEnvironmentRegistryCredential& WithCredential(Aws::String&& value) { SetCredential(std::move(value)); return *this;}
-    inline AwsCodeBuildProjectEnvironmentRegistryCredential& WithCredential(const char* value) { SetCredential(value); return *this;}
+    template<typename CredentialT = Aws::String>
+    void SetCredential(CredentialT&& value) { m_credentialHasBeenSet = true; m_credential = std::forward<CredentialT>(value); }
+    template<typename CredentialT = Aws::String>
+    AwsCodeBuildProjectEnvironmentRegistryCredential& WithCredential(CredentialT&& value) { SetCredential(std::forward<CredentialT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * registry.</p> <p>The valid value,<code> SECRETS_MANAGER</code>, is for Secrets
      * Manager.</p>
      */
-    inline const Aws::String& GetCredentialProvider() const{ return m_credentialProvider; }
+    inline const Aws::String& GetCredentialProvider() const { return m_credentialProvider; }
     inline bool CredentialProviderHasBeenSet() const { return m_credentialProviderHasBeenSet; }
-    inline void SetCredentialProvider(const Aws::String& value) { m_credentialProviderHasBeenSet = true; m_credentialProvider = value; }
-    inline void SetCredentialProvider(Aws::String&& value) { m_credentialProviderHasBeenSet = true; m_credentialProvider = std::move(value); }
-    inline void SetCredentialProvider(const char* value) { m_credentialProviderHasBeenSet = true; m_credentialProvider.assign(value); }
-    inline AwsCodeBuildProjectEnvironmentRegistryCredential& WithCredentialProvider(const Aws::String& value) { SetCredentialProvider(value); return *this;}
-    inline AwsCodeBuildProjectEnvironmentRegistryCredential& WithCredentialProvider(Aws::String&& value) { SetCredentialProvider(std::move(value)); return *this;}
-    inline AwsCodeBuildProjectEnvironmentRegistryCredential& WithCredentialProvider(const char* value) { SetCredentialProvider(value); return *this;}
+    template<typename CredentialProviderT = Aws::String>
+    void SetCredentialProvider(CredentialProviderT&& value) { m_credentialProviderHasBeenSet = true; m_credentialProvider = std::forward<CredentialProviderT>(value); }
+    template<typename CredentialProviderT = Aws::String>
+    AwsCodeBuildProjectEnvironmentRegistryCredential& WithCredentialProvider(CredentialProviderT&& value) { SetCredentialProvider(std::forward<CredentialProviderT>(value)); return *this;}
     ///@}
   private:
 

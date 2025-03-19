@@ -18,13 +18,7 @@ namespace ElasticsearchService
 namespace Model
 {
 
-InstanceLimits::InstanceLimits() : 
-    m_instanceCountLimitsHasBeenSet(false)
-{
-}
-
 InstanceLimits::InstanceLimits(JsonView jsonValue)
-  : InstanceLimits()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ InstanceLimits& InstanceLimits::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InstanceCountLimits"))
   {
     m_instanceCountLimits = jsonValue.GetObject("InstanceCountLimits");
-
     m_instanceCountLimitsHasBeenSet = true;
   }
-
   return *this;
 }
 

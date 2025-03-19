@@ -27,7 +27,7 @@ namespace Model
   class SearchRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API SearchRequest();
+    AWS_SAGEMAKER_API SearchRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,12 +44,10 @@ namespace Model
     /**
      * <p>The name of the SageMaker resource to search for.</p>
      */
-    inline const ResourceType& GetResource() const{ return m_resource; }
+    inline ResourceType GetResource() const { return m_resource; }
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
-    inline void SetResource(const ResourceType& value) { m_resourceHasBeenSet = true; m_resource = value; }
-    inline void SetResource(ResourceType&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
-    inline SearchRequest& WithResource(const ResourceType& value) { SetResource(value); return *this;}
-    inline SearchRequest& WithResource(ResourceType&& value) { SetResource(std::move(value)); return *this;}
+    inline void SetResource(ResourceType value) { m_resourceHasBeenSet = true; m_resource = value; }
+    inline SearchRequest& WithResource(ResourceType value) { SetResource(value); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +58,12 @@ namespace Model
      * <code>NestedFilters</code>, and <code>Filters</code> that can be included in a
      * <code>SearchExpression</code> object is 50.</p>
      */
-    inline const SearchExpression& GetSearchExpression() const{ return m_searchExpression; }
+    inline const SearchExpression& GetSearchExpression() const { return m_searchExpression; }
     inline bool SearchExpressionHasBeenSet() const { return m_searchExpressionHasBeenSet; }
-    inline void SetSearchExpression(const SearchExpression& value) { m_searchExpressionHasBeenSet = true; m_searchExpression = value; }
-    inline void SetSearchExpression(SearchExpression&& value) { m_searchExpressionHasBeenSet = true; m_searchExpression = std::move(value); }
-    inline SearchRequest& WithSearchExpression(const SearchExpression& value) { SetSearchExpression(value); return *this;}
-    inline SearchRequest& WithSearchExpression(SearchExpression&& value) { SetSearchExpression(std::move(value)); return *this;}
+    template<typename SearchExpressionT = SearchExpression>
+    void SetSearchExpression(SearchExpressionT&& value) { m_searchExpressionHasBeenSet = true; m_searchExpression = std::forward<SearchExpressionT>(value); }
+    template<typename SearchExpressionT = SearchExpression>
+    SearchRequest& WithSearchExpression(SearchExpressionT&& value) { SetSearchExpression(std::forward<SearchExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +71,12 @@ namespace Model
      * <p>The name of the resource property used to sort the
      * <code>SearchResults</code>. The default is <code>LastModifiedTime</code>.</p>
      */
-    inline const Aws::String& GetSortBy() const{ return m_sortBy; }
+    inline const Aws::String& GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const Aws::String& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(Aws::String&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline void SetSortBy(const char* value) { m_sortByHasBeenSet = true; m_sortBy.assign(value); }
-    inline SearchRequest& WithSortBy(const Aws::String& value) { SetSortBy(value); return *this;}
-    inline SearchRequest& WithSortBy(Aws::String&& value) { SetSortBy(std::move(value)); return *this;}
-    inline SearchRequest& WithSortBy(const char* value) { SetSortBy(value); return *this;}
+    template<typename SortByT = Aws::String>
+    void SetSortBy(SortByT&& value) { m_sortByHasBeenSet = true; m_sortBy = std::forward<SortByT>(value); }
+    template<typename SortByT = Aws::String>
+    SearchRequest& WithSortBy(SortByT&& value) { SetSortBy(std::forward<SortByT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,12 +85,10 @@ namespace Model
      * <code>Ascending</code> or <code>Descending</code>. The default is
      * <code>Descending</code>.</p>
      */
-    inline const SearchSortOrder& GetSortOrder() const{ return m_sortOrder; }
+    inline SearchSortOrder GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const SearchSortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(SearchSortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline SearchRequest& WithSortOrder(const SearchSortOrder& value) { SetSortOrder(value); return *this;}
-    inline SearchRequest& WithSortOrder(SearchSortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(SearchSortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline SearchRequest& WithSortOrder(SearchSortOrder value) { SetSortOrder(value); return *this;}
     ///@}
 
     ///@{
@@ -104,21 +98,19 @@ namespace Model
      * The <code>NextToken</code> can be passed to the next <code>SearchRequest</code>
      * to continue retrieving results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline SearchRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline SearchRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline SearchRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    SearchRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline SearchRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -136,12 +128,10 @@ namespace Model
      * Search discoverable resources</a> in the SageMaker Developer Guide. The maximum
      * number of <code>ResourceCatalog</code>s viewable is 1000. </p>
      */
-    inline const CrossAccountFilterOption& GetCrossAccountFilterOption() const{ return m_crossAccountFilterOption; }
+    inline CrossAccountFilterOption GetCrossAccountFilterOption() const { return m_crossAccountFilterOption; }
     inline bool CrossAccountFilterOptionHasBeenSet() const { return m_crossAccountFilterOptionHasBeenSet; }
-    inline void SetCrossAccountFilterOption(const CrossAccountFilterOption& value) { m_crossAccountFilterOptionHasBeenSet = true; m_crossAccountFilterOption = value; }
-    inline void SetCrossAccountFilterOption(CrossAccountFilterOption&& value) { m_crossAccountFilterOptionHasBeenSet = true; m_crossAccountFilterOption = std::move(value); }
-    inline SearchRequest& WithCrossAccountFilterOption(const CrossAccountFilterOption& value) { SetCrossAccountFilterOption(value); return *this;}
-    inline SearchRequest& WithCrossAccountFilterOption(CrossAccountFilterOption&& value) { SetCrossAccountFilterOption(std::move(value)); return *this;}
+    inline void SetCrossAccountFilterOption(CrossAccountFilterOption value) { m_crossAccountFilterOptionHasBeenSet = true; m_crossAccountFilterOption = value; }
+    inline SearchRequest& WithCrossAccountFilterOption(CrossAccountFilterOption value) { SetCrossAccountFilterOption(value); return *this;}
     ///@}
 
     ///@{
@@ -149,18 +139,18 @@ namespace Model
      * <p> Limits the results of your search request to the resources that you can
      * access. </p>
      */
-    inline const Aws::Vector<VisibilityConditions>& GetVisibilityConditions() const{ return m_visibilityConditions; }
+    inline const Aws::Vector<VisibilityConditions>& GetVisibilityConditions() const { return m_visibilityConditions; }
     inline bool VisibilityConditionsHasBeenSet() const { return m_visibilityConditionsHasBeenSet; }
-    inline void SetVisibilityConditions(const Aws::Vector<VisibilityConditions>& value) { m_visibilityConditionsHasBeenSet = true; m_visibilityConditions = value; }
-    inline void SetVisibilityConditions(Aws::Vector<VisibilityConditions>&& value) { m_visibilityConditionsHasBeenSet = true; m_visibilityConditions = std::move(value); }
-    inline SearchRequest& WithVisibilityConditions(const Aws::Vector<VisibilityConditions>& value) { SetVisibilityConditions(value); return *this;}
-    inline SearchRequest& WithVisibilityConditions(Aws::Vector<VisibilityConditions>&& value) { SetVisibilityConditions(std::move(value)); return *this;}
-    inline SearchRequest& AddVisibilityConditions(const VisibilityConditions& value) { m_visibilityConditionsHasBeenSet = true; m_visibilityConditions.push_back(value); return *this; }
-    inline SearchRequest& AddVisibilityConditions(VisibilityConditions&& value) { m_visibilityConditionsHasBeenSet = true; m_visibilityConditions.push_back(std::move(value)); return *this; }
+    template<typename VisibilityConditionsT = Aws::Vector<VisibilityConditions>>
+    void SetVisibilityConditions(VisibilityConditionsT&& value) { m_visibilityConditionsHasBeenSet = true; m_visibilityConditions = std::forward<VisibilityConditionsT>(value); }
+    template<typename VisibilityConditionsT = Aws::Vector<VisibilityConditions>>
+    SearchRequest& WithVisibilityConditions(VisibilityConditionsT&& value) { SetVisibilityConditions(std::forward<VisibilityConditionsT>(value)); return *this;}
+    template<typename VisibilityConditionsT = VisibilityConditions>
+    SearchRequest& AddVisibilityConditions(VisibilityConditionsT&& value) { m_visibilityConditionsHasBeenSet = true; m_visibilityConditions.emplace_back(std::forward<VisibilityConditionsT>(value)); return *this; }
     ///@}
   private:
 
-    ResourceType m_resource;
+    ResourceType m_resource{ResourceType::NOT_SET};
     bool m_resourceHasBeenSet = false;
 
     SearchExpression m_searchExpression;
@@ -169,16 +159,16 @@ namespace Model
     Aws::String m_sortBy;
     bool m_sortByHasBeenSet = false;
 
-    SearchSortOrder m_sortOrder;
+    SearchSortOrder m_sortOrder{SearchSortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
-    CrossAccountFilterOption m_crossAccountFilterOption;
+    CrossAccountFilterOption m_crossAccountFilterOption{CrossAccountFilterOption::NOT_SET};
     bool m_crossAccountFilterOptionHasBeenSet = false;
 
     Aws::Vector<VisibilityConditions> m_visibilityConditions;

@@ -19,14 +19,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-ImageSource::ImageSource() : 
-    m_bytesHasBeenSet(false),
-    m_s3LocationHasBeenSet(false)
-{
-}
-
 ImageSource::ImageSource(JsonView jsonValue)
-  : ImageSource()
 {
   *this = jsonValue;
 }
@@ -38,14 +31,11 @@ ImageSource& ImageSource::operator =(JsonView jsonValue)
     m_bytes = HashingUtils::Base64Decode(jsonValue.GetString("bytes"));
     m_bytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3Location"))
   {
     m_s3Location = jsonValue.GetObject("s3Location");
-
     m_s3LocationHasBeenSet = true;
   }
-
   return *this;
 }
 

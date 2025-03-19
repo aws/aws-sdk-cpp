@@ -32,7 +32,7 @@ namespace Model
   class ObjectTypeField
   {
   public:
-    AWS_CUSTOMERPROFILES_API ObjectTypeField();
+    AWS_CUSTOMERPROFILES_API ObjectTypeField() = default;
     AWS_CUSTOMERPROFILES_API ObjectTypeField(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API ObjectTypeField& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * is a ProfileObjectType of a Zendesk user and “FirstName” is a field in that
      * ObjectType.</p>
      */
-    inline const Aws::String& GetSource() const{ return m_source; }
+    inline const Aws::String& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
-    inline ObjectTypeField& WithSource(const Aws::String& value) { SetSource(value); return *this;}
-    inline ObjectTypeField& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
-    inline ObjectTypeField& WithSource(const char* value) { SetSource(value); return *this;}
+    template<typename SourceT = Aws::String>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = Aws::String>
+    ObjectTypeField& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>The location of the data in the standard ProfileObject model. For example:
      * _profile.Address.PostalCode.</p>
      */
-    inline const Aws::String& GetTarget() const{ return m_target; }
+    inline const Aws::String& GetTarget() const { return m_target; }
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-    inline void SetTarget(const Aws::String& value) { m_targetHasBeenSet = true; m_target = value; }
-    inline void SetTarget(Aws::String&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-    inline void SetTarget(const char* value) { m_targetHasBeenSet = true; m_target.assign(value); }
-    inline ObjectTypeField& WithTarget(const Aws::String& value) { SetTarget(value); return *this;}
-    inline ObjectTypeField& WithTarget(Aws::String&& value) { SetTarget(std::move(value)); return *this;}
-    inline ObjectTypeField& WithTarget(const char* value) { SetTarget(value); return *this;}
+    template<typename TargetT = Aws::String>
+    void SetTarget(TargetT&& value) { m_targetHasBeenSet = true; m_target = std::forward<TargetT>(value); }
+    template<typename TargetT = Aws::String>
+    ObjectTypeField& WithTarget(TargetT&& value) { SetTarget(std::forward<TargetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,12 +70,10 @@ namespace Model
      * <p>The content type of the field. Used for determining equality when
      * searching.</p>
      */
-    inline const FieldContentType& GetContentType() const{ return m_contentType; }
+    inline FieldContentType GetContentType() const { return m_contentType; }
     inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
-    inline void SetContentType(const FieldContentType& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
-    inline void SetContentType(FieldContentType&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
-    inline ObjectTypeField& WithContentType(const FieldContentType& value) { SetContentType(value); return *this;}
-    inline ObjectTypeField& WithContentType(FieldContentType&& value) { SetContentType(std::move(value)); return *this;}
+    inline void SetContentType(FieldContentType value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
+    inline ObjectTypeField& WithContentType(FieldContentType value) { SetContentType(value); return *this;}
     ///@}
   private:
 
@@ -89,7 +83,7 @@ namespace Model
     Aws::String m_target;
     bool m_targetHasBeenSet = false;
 
-    FieldContentType m_contentType;
+    FieldContentType m_contentType{FieldContentType::NOT_SET};
     bool m_contentTypeHasBeenSet = false;
   };
 

@@ -10,11 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-CancelInstanceRefreshRequest::CancelInstanceRefreshRequest() : 
-    m_autoScalingGroupNameHasBeenSet(false)
-{
-}
-
 Aws::String CancelInstanceRefreshRequest::SerializePayload() const
 {
   Aws::StringStream ss;

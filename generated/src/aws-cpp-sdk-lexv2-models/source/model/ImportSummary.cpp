@@ -18,23 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-ImportSummary::ImportSummary() : 
-    m_importIdHasBeenSet(false),
-    m_importedResourceIdHasBeenSet(false),
-    m_importedResourceNameHasBeenSet(false),
-    m_importStatus(ImportStatus::NOT_SET),
-    m_importStatusHasBeenSet(false),
-    m_mergeStrategy(MergeStrategy::NOT_SET),
-    m_mergeStrategyHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_importedResourceType(ImportResourceType::NOT_SET),
-    m_importedResourceTypeHasBeenSet(false)
-{
-}
-
 ImportSummary::ImportSummary(JsonView jsonValue)
-  : ImportSummary()
 {
   *this = jsonValue;
 }
@@ -44,59 +28,43 @@ ImportSummary& ImportSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("importId"))
   {
     m_importId = jsonValue.GetString("importId");
-
     m_importIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("importedResourceId"))
   {
     m_importedResourceId = jsonValue.GetString("importedResourceId");
-
     m_importedResourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("importedResourceName"))
   {
     m_importedResourceName = jsonValue.GetString("importedResourceName");
-
     m_importedResourceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("importStatus"))
   {
     m_importStatus = ImportStatusMapper::GetImportStatusForName(jsonValue.GetString("importStatus"));
-
     m_importStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mergeStrategy"))
   {
     m_mergeStrategy = MergeStrategyMapper::GetMergeStrategyForName(jsonValue.GetString("mergeStrategy"));
-
     m_mergeStrategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
-
     m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedDateTime"))
   {
     m_lastUpdatedDateTime = jsonValue.GetDouble("lastUpdatedDateTime");
-
     m_lastUpdatedDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("importedResourceType"))
   {
     m_importedResourceType = ImportResourceTypeMapper::GetImportResourceTypeForName(jsonValue.GetString("importedResourceType"));
-
     m_importedResourceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

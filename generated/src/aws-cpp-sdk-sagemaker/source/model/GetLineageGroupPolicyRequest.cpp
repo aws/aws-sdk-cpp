@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetLineageGroupPolicyRequest::GetLineageGroupPolicyRequest() : 
-    m_lineageGroupNameHasBeenSet(false)
-{
-}
-
 Aws::String GetLineageGroupPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

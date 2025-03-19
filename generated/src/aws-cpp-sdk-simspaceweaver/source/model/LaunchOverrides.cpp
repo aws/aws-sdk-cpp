@@ -18,13 +18,7 @@ namespace SimSpaceWeaver
 namespace Model
 {
 
-LaunchOverrides::LaunchOverrides() : 
-    m_launchCommandsHasBeenSet(false)
-{
-}
-
 LaunchOverrides::LaunchOverrides(JsonView jsonValue)
-  : LaunchOverrides()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ LaunchOverrides& LaunchOverrides::operator =(JsonView jsonValue)
     }
     m_launchCommandsHasBeenSet = true;
   }
-
   return *this;
 }
 

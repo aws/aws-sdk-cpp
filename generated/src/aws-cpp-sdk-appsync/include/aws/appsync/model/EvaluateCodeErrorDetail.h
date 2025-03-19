@@ -34,7 +34,7 @@ namespace Model
   class EvaluateCodeErrorDetail
   {
   public:
-    AWS_APPSYNC_API EvaluateCodeErrorDetail();
+    AWS_APPSYNC_API EvaluateCodeErrorDetail() = default;
     AWS_APPSYNC_API EvaluateCodeErrorDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSYNC_API EvaluateCodeErrorDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,26 @@ namespace Model
     /**
      * <p>The error payload.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline EvaluateCodeErrorDetail& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline EvaluateCodeErrorDetail& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline EvaluateCodeErrorDetail& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    EvaluateCodeErrorDetail& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains the list of <code>CodeError</code> objects.</p>
      */
-    inline const Aws::Vector<CodeError>& GetCodeErrors() const{ return m_codeErrors; }
+    inline const Aws::Vector<CodeError>& GetCodeErrors() const { return m_codeErrors; }
     inline bool CodeErrorsHasBeenSet() const { return m_codeErrorsHasBeenSet; }
-    inline void SetCodeErrors(const Aws::Vector<CodeError>& value) { m_codeErrorsHasBeenSet = true; m_codeErrors = value; }
-    inline void SetCodeErrors(Aws::Vector<CodeError>&& value) { m_codeErrorsHasBeenSet = true; m_codeErrors = std::move(value); }
-    inline EvaluateCodeErrorDetail& WithCodeErrors(const Aws::Vector<CodeError>& value) { SetCodeErrors(value); return *this;}
-    inline EvaluateCodeErrorDetail& WithCodeErrors(Aws::Vector<CodeError>&& value) { SetCodeErrors(std::move(value)); return *this;}
-    inline EvaluateCodeErrorDetail& AddCodeErrors(const CodeError& value) { m_codeErrorsHasBeenSet = true; m_codeErrors.push_back(value); return *this; }
-    inline EvaluateCodeErrorDetail& AddCodeErrors(CodeError&& value) { m_codeErrorsHasBeenSet = true; m_codeErrors.push_back(std::move(value)); return *this; }
+    template<typename CodeErrorsT = Aws::Vector<CodeError>>
+    void SetCodeErrors(CodeErrorsT&& value) { m_codeErrorsHasBeenSet = true; m_codeErrors = std::forward<CodeErrorsT>(value); }
+    template<typename CodeErrorsT = Aws::Vector<CodeError>>
+    EvaluateCodeErrorDetail& WithCodeErrors(CodeErrorsT&& value) { SetCodeErrors(std::forward<CodeErrorsT>(value)); return *this;}
+    template<typename CodeErrorsT = CodeError>
+    EvaluateCodeErrorDetail& AddCodeErrors(CodeErrorsT&& value) { m_codeErrorsHasBeenSet = true; m_codeErrors.emplace_back(std::forward<CodeErrorsT>(value)); return *this; }
     ///@}
   private:
 

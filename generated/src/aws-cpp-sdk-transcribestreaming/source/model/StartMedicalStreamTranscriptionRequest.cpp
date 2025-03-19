@@ -14,31 +14,6 @@ using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartMedicalStreamTranscriptionRequest::StartMedicalStreamTranscriptionRequest() : 
-    m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_mediaSampleRateHertz(0),
-    m_mediaSampleRateHertzHasBeenSet(false),
-    m_mediaEncoding(MediaEncoding::NOT_SET),
-    m_mediaEncodingHasBeenSet(false),
-    m_vocabularyNameHasBeenSet(false),
-    m_specialty(Specialty::NOT_SET),
-    m_specialtyHasBeenSet(false),
-    m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_showSpeakerLabel(false),
-    m_showSpeakerLabelHasBeenSet(false),
-    m_sessionIdHasBeenSet(false),
-    m_enableChannelIdentification(false),
-    m_enableChannelIdentificationHasBeenSet(false),
-    m_numberOfChannels(0),
-    m_numberOfChannelsHasBeenSet(false),
-    m_contentIdentificationType(MedicalContentIdentificationType::NOT_SET),
-    m_contentIdentificationTypeHasBeenSet(false),
-    m_handler(), m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
-{
-}
-
 std::shared_ptr<Aws::IOStream> StartMedicalStreamTranscriptionRequest::GetBody() const
 {
     return m_audioStream;

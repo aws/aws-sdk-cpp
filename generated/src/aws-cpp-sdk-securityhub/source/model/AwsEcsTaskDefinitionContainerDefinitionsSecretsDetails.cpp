@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails() : 
-    m_nameHasBeenSet(false),
-    m_valueFromHasBeenSet(false)
-{
-}
-
 AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails(JsonView jsonValue)
-  : AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails& AwsEcsTaskDefinitionCont
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValueFrom"))
   {
     m_valueFrom = jsonValue.GetString("ValueFrom");
-
     m_valueFromHasBeenSet = true;
   }
-
   return *this;
 }
 

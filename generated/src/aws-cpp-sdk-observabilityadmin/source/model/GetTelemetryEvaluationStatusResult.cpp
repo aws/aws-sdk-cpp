@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetTelemetryEvaluationStatusResult::GetTelemetryEvaluationStatusResult() : 
-    m_status(Status::NOT_SET)
-{
-}
-
 GetTelemetryEvaluationStatusResult::GetTelemetryEvaluationStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetTelemetryEvaluationStatusResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ GetTelemetryEvaluationStatusResult& GetTelemetryEvaluationStatusResult::operator
   if(jsonValue.ValueExists("Status"))
   {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = jsonValue.GetString("FailureReason");
-
+    m_failureReasonHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetBucketInventoryConfigurationResult::GetBucketInventoryConfigurationResult()
-{
-}
-
 GetBucketInventoryConfigurationResult::GetBucketInventoryConfigurationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -33,6 +29,7 @@ GetBucketInventoryConfigurationResult& GetBucketInventoryConfigurationResult::op
   if(!resultNode.IsNull())
   {
     m_inventoryConfiguration = resultNode;
+    m_inventoryConfigurationHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
@@ -40,6 +37,7 @@ GetBucketInventoryConfigurationResult& GetBucketInventoryConfigurationResult::op
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

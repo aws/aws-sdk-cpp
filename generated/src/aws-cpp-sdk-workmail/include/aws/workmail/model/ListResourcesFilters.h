@@ -33,7 +33,7 @@ namespace Model
   class ListResourcesFilters
   {
   public:
-    AWS_WORKMAIL_API ListResourcesFilters();
+    AWS_WORKMAIL_API ListResourcesFilters() = default;
     AWS_WORKMAIL_API ListResourcesFilters(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKMAIL_API ListResourcesFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,40 +43,34 @@ namespace Model
     /**
      * <p>Filters only resource that start with the entered name prefix .</p>
      */
-    inline const Aws::String& GetNamePrefix() const{ return m_namePrefix; }
+    inline const Aws::String& GetNamePrefix() const { return m_namePrefix; }
     inline bool NamePrefixHasBeenSet() const { return m_namePrefixHasBeenSet; }
-    inline void SetNamePrefix(const Aws::String& value) { m_namePrefixHasBeenSet = true; m_namePrefix = value; }
-    inline void SetNamePrefix(Aws::String&& value) { m_namePrefixHasBeenSet = true; m_namePrefix = std::move(value); }
-    inline void SetNamePrefix(const char* value) { m_namePrefixHasBeenSet = true; m_namePrefix.assign(value); }
-    inline ListResourcesFilters& WithNamePrefix(const Aws::String& value) { SetNamePrefix(value); return *this;}
-    inline ListResourcesFilters& WithNamePrefix(Aws::String&& value) { SetNamePrefix(std::move(value)); return *this;}
-    inline ListResourcesFilters& WithNamePrefix(const char* value) { SetNamePrefix(value); return *this;}
+    template<typename NamePrefixT = Aws::String>
+    void SetNamePrefix(NamePrefixT&& value) { m_namePrefixHasBeenSet = true; m_namePrefix = std::forward<NamePrefixT>(value); }
+    template<typename NamePrefixT = Aws::String>
+    ListResourcesFilters& WithNamePrefix(NamePrefixT&& value) { SetNamePrefix(std::forward<NamePrefixT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Filters only resource with the provided primary email prefix.</p>
      */
-    inline const Aws::String& GetPrimaryEmailPrefix() const{ return m_primaryEmailPrefix; }
+    inline const Aws::String& GetPrimaryEmailPrefix() const { return m_primaryEmailPrefix; }
     inline bool PrimaryEmailPrefixHasBeenSet() const { return m_primaryEmailPrefixHasBeenSet; }
-    inline void SetPrimaryEmailPrefix(const Aws::String& value) { m_primaryEmailPrefixHasBeenSet = true; m_primaryEmailPrefix = value; }
-    inline void SetPrimaryEmailPrefix(Aws::String&& value) { m_primaryEmailPrefixHasBeenSet = true; m_primaryEmailPrefix = std::move(value); }
-    inline void SetPrimaryEmailPrefix(const char* value) { m_primaryEmailPrefixHasBeenSet = true; m_primaryEmailPrefix.assign(value); }
-    inline ListResourcesFilters& WithPrimaryEmailPrefix(const Aws::String& value) { SetPrimaryEmailPrefix(value); return *this;}
-    inline ListResourcesFilters& WithPrimaryEmailPrefix(Aws::String&& value) { SetPrimaryEmailPrefix(std::move(value)); return *this;}
-    inline ListResourcesFilters& WithPrimaryEmailPrefix(const char* value) { SetPrimaryEmailPrefix(value); return *this;}
+    template<typename PrimaryEmailPrefixT = Aws::String>
+    void SetPrimaryEmailPrefix(PrimaryEmailPrefixT&& value) { m_primaryEmailPrefixHasBeenSet = true; m_primaryEmailPrefix = std::forward<PrimaryEmailPrefixT>(value); }
+    template<typename PrimaryEmailPrefixT = Aws::String>
+    ListResourcesFilters& WithPrimaryEmailPrefix(PrimaryEmailPrefixT&& value) { SetPrimaryEmailPrefix(std::forward<PrimaryEmailPrefixT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Filters only resource with the provided state.</p>
      */
-    inline const EntityState& GetState() const{ return m_state; }
+    inline EntityState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const EntityState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(EntityState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline ListResourcesFilters& WithState(const EntityState& value) { SetState(value); return *this;}
-    inline ListResourcesFilters& WithState(EntityState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(EntityState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline ListResourcesFilters& WithState(EntityState value) { SetState(value); return *this;}
     ///@}
   private:
 
@@ -86,7 +80,7 @@ namespace Model
     Aws::String m_primaryEmailPrefix;
     bool m_primaryEmailPrefixHasBeenSet = false;
 
-    EntityState m_state;
+    EntityState m_state{EntityState::NOT_SET};
     bool m_stateHasBeenSet = false;
   };
 

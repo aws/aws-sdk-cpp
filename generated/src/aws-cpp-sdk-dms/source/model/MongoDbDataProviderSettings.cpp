@@ -18,24 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-MongoDbDataProviderSettings::MongoDbDataProviderSettings() : 
-    m_serverNameHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_sslMode(DmsSslModeValue::NOT_SET),
-    m_sslModeHasBeenSet(false),
-    m_certificateArnHasBeenSet(false),
-    m_authType(AuthTypeValue::NOT_SET),
-    m_authTypeHasBeenSet(false),
-    m_authSourceHasBeenSet(false),
-    m_authMechanism(AuthMechanismValue::NOT_SET),
-    m_authMechanismHasBeenSet(false)
-{
-}
-
 MongoDbDataProviderSettings::MongoDbDataProviderSettings(JsonView jsonValue)
-  : MongoDbDataProviderSettings()
 {
   *this = jsonValue;
 }
@@ -45,59 +28,43 @@ MongoDbDataProviderSettings& MongoDbDataProviderSettings::operator =(JsonView js
   if(jsonValue.ValueExists("ServerName"))
   {
     m_serverName = jsonValue.GetString("ServerName");
-
     m_serverNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Port"))
   {
     m_port = jsonValue.GetInteger("Port");
-
     m_portHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseName"))
   {
     m_databaseName = jsonValue.GetString("DatabaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SslMode"))
   {
     m_sslMode = DmsSslModeValueMapper::GetDmsSslModeValueForName(jsonValue.GetString("SslMode"));
-
     m_sslModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CertificateArn"))
   {
     m_certificateArn = jsonValue.GetString("CertificateArn");
-
     m_certificateArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthType"))
   {
     m_authType = AuthTypeValueMapper::GetAuthTypeValueForName(jsonValue.GetString("AuthType"));
-
     m_authTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthSource"))
   {
     m_authSource = jsonValue.GetString("AuthSource");
-
     m_authSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthMechanism"))
   {
     m_authMechanism = AuthMechanismValueMapper::GetAuthMechanismValueForName(jsonValue.GetString("AuthMechanism"));
-
     m_authMechanismHasBeenSet = true;
   }
-
   return *this;
 }
 

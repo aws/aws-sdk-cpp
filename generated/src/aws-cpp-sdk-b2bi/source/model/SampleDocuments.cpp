@@ -18,14 +18,7 @@ namespace B2BI
 namespace Model
 {
 
-SampleDocuments::SampleDocuments() : 
-    m_bucketNameHasBeenSet(false),
-    m_keysHasBeenSet(false)
-{
-}
-
 SampleDocuments::SampleDocuments(JsonView jsonValue)
-  : SampleDocuments()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SampleDocuments& SampleDocuments::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bucketName"))
   {
     m_bucketName = jsonValue.GetString("bucketName");
-
     m_bucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("keys"))
   {
     Aws::Utils::Array<JsonView> keysJsonList = jsonValue.GetArray("keys");
@@ -48,7 +39,6 @@ SampleDocuments& SampleDocuments::operator =(JsonView jsonValue)
     }
     m_keysHasBeenSet = true;
   }
-
   return *this;
 }
 

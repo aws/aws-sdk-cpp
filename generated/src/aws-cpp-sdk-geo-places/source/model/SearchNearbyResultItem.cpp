@@ -18,33 +18,7 @@ namespace GeoPlaces
 namespace Model
 {
 
-SearchNearbyResultItem::SearchNearbyResultItem() : 
-    m_placeIdHasBeenSet(false),
-    m_placeType(PlaceType::NOT_SET),
-    m_placeTypeHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_addressHasBeenSet(false),
-    m_addressNumberCorrected(false),
-    m_addressNumberCorrectedHasBeenSet(false),
-    m_positionHasBeenSet(false),
-    m_distance(0),
-    m_distanceHasBeenSet(false),
-    m_mapViewHasBeenSet(false),
-    m_categoriesHasBeenSet(false),
-    m_foodTypesHasBeenSet(false),
-    m_businessChainsHasBeenSet(false),
-    m_contactsHasBeenSet(false),
-    m_openingHoursHasBeenSet(false),
-    m_accessPointsHasBeenSet(false),
-    m_accessRestrictionsHasBeenSet(false),
-    m_timeZoneHasBeenSet(false),
-    m_politicalViewHasBeenSet(false),
-    m_phonemesHasBeenSet(false)
-{
-}
-
 SearchNearbyResultItem::SearchNearbyResultItem(JsonView jsonValue)
-  : SearchNearbyResultItem()
 {
   *this = jsonValue;
 }
@@ -54,38 +28,28 @@ SearchNearbyResultItem& SearchNearbyResultItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PlaceId"))
   {
     m_placeId = jsonValue.GetString("PlaceId");
-
     m_placeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PlaceType"))
   {
     m_placeType = PlaceTypeMapper::GetPlaceTypeForName(jsonValue.GetString("PlaceType"));
-
     m_placeTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Title"))
   {
     m_title = jsonValue.GetString("Title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Address"))
   {
     m_address = jsonValue.GetObject("Address");
-
     m_addressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AddressNumberCorrected"))
   {
     m_addressNumberCorrected = jsonValue.GetBool("AddressNumberCorrected");
-
     m_addressNumberCorrectedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Position"))
   {
     Aws::Utils::Array<JsonView> positionJsonList = jsonValue.GetArray("Position");
@@ -95,14 +59,11 @@ SearchNearbyResultItem& SearchNearbyResultItem::operator =(JsonView jsonValue)
     }
     m_positionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Distance"))
   {
     m_distance = jsonValue.GetInt64("Distance");
-
     m_distanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MapView"))
   {
     Aws::Utils::Array<JsonView> mapViewJsonList = jsonValue.GetArray("MapView");
@@ -112,7 +73,6 @@ SearchNearbyResultItem& SearchNearbyResultItem::operator =(JsonView jsonValue)
     }
     m_mapViewHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Categories"))
   {
     Aws::Utils::Array<JsonView> categoriesJsonList = jsonValue.GetArray("Categories");
@@ -122,7 +82,6 @@ SearchNearbyResultItem& SearchNearbyResultItem::operator =(JsonView jsonValue)
     }
     m_categoriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FoodTypes"))
   {
     Aws::Utils::Array<JsonView> foodTypesJsonList = jsonValue.GetArray("FoodTypes");
@@ -132,7 +91,6 @@ SearchNearbyResultItem& SearchNearbyResultItem::operator =(JsonView jsonValue)
     }
     m_foodTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BusinessChains"))
   {
     Aws::Utils::Array<JsonView> businessChainsJsonList = jsonValue.GetArray("BusinessChains");
@@ -142,14 +100,11 @@ SearchNearbyResultItem& SearchNearbyResultItem::operator =(JsonView jsonValue)
     }
     m_businessChainsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Contacts"))
   {
     m_contacts = jsonValue.GetObject("Contacts");
-
     m_contactsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OpeningHours"))
   {
     Aws::Utils::Array<JsonView> openingHoursJsonList = jsonValue.GetArray("OpeningHours");
@@ -159,7 +114,6 @@ SearchNearbyResultItem& SearchNearbyResultItem::operator =(JsonView jsonValue)
     }
     m_openingHoursHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccessPoints"))
   {
     Aws::Utils::Array<JsonView> accessPointsJsonList = jsonValue.GetArray("AccessPoints");
@@ -169,7 +123,6 @@ SearchNearbyResultItem& SearchNearbyResultItem::operator =(JsonView jsonValue)
     }
     m_accessPointsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccessRestrictions"))
   {
     Aws::Utils::Array<JsonView> accessRestrictionsJsonList = jsonValue.GetArray("AccessRestrictions");
@@ -179,28 +132,21 @@ SearchNearbyResultItem& SearchNearbyResultItem::operator =(JsonView jsonValue)
     }
     m_accessRestrictionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeZone"))
   {
     m_timeZone = jsonValue.GetObject("TimeZone");
-
     m_timeZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PoliticalView"))
   {
     m_politicalView = jsonValue.GetString("PoliticalView");
-
     m_politicalViewHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Phonemes"))
   {
     m_phonemes = jsonValue.GetObject("Phonemes");
-
     m_phonemesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -19,20 +19,7 @@ namespace APIGateway
 namespace Model
 {
 
-GatewayResponse::GatewayResponse() : 
-    m_responseType(GatewayResponseType::NOT_SET),
-    m_responseTypeHasBeenSet(false),
-    m_statusCodeHasBeenSet(false),
-    m_responseParametersHasBeenSet(false),
-    m_responseTemplatesHasBeenSet(false),
-    m_defaultResponse(false),
-    m_defaultResponseHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 GatewayResponse::GatewayResponse(JsonView jsonValue)
-  : GatewayResponse()
 {
   *this = jsonValue;
 }
@@ -42,17 +29,13 @@ GatewayResponse& GatewayResponse::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("responseType"))
   {
     m_responseType = GatewayResponseTypeMapper::GetGatewayResponseTypeForName(jsonValue.GetString("responseType"));
-
     m_responseTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusCode"))
   {
     m_statusCode = jsonValue.GetString("statusCode");
-
     m_statusCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("responseParameters"))
   {
     Aws::Map<Aws::String, JsonView> responseParametersJsonMap = jsonValue.GetObject("responseParameters").GetAllObjects();
@@ -62,7 +45,6 @@ GatewayResponse& GatewayResponse::operator =(JsonView jsonValue)
     }
     m_responseParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("responseTemplates"))
   {
     Aws::Map<Aws::String, JsonView> responseTemplatesJsonMap = jsonValue.GetObject("responseTemplates").GetAllObjects();
@@ -72,14 +54,11 @@ GatewayResponse& GatewayResponse::operator =(JsonView jsonValue)
     }
     m_responseTemplatesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultResponse"))
   {
     m_defaultResponse = jsonValue.GetBool("defaultResponse");
-
     m_defaultResponseHasBeenSet = true;
   }
-
   return *this;
 }
 

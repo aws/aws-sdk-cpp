@@ -12,11 +12,6 @@ using namespace Aws::DirectConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDirectConnectGatewayRequest::DeleteDirectConnectGatewayRequest() : 
-    m_directConnectGatewayIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDirectConnectGatewayRequest::SerializePayload() const
 {
   JsonValue payload;

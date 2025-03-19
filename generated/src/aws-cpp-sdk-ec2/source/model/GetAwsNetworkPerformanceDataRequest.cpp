@@ -10,18 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-GetAwsNetworkPerformanceDataRequest::GetAwsNetworkPerformanceDataRequest() : 
-    m_dataQueriesHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String GetAwsNetworkPerformanceDataRequest::SerializePayload() const
 {
   Aws::StringStream ss;

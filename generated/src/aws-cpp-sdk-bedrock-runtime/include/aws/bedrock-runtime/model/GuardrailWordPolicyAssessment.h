@@ -33,7 +33,7 @@ namespace Model
   class GuardrailWordPolicyAssessment
   {
   public:
-    AWS_BEDROCKRUNTIME_API GuardrailWordPolicyAssessment();
+    AWS_BEDROCKRUNTIME_API GuardrailWordPolicyAssessment() = default;
     AWS_BEDROCKRUNTIME_API GuardrailWordPolicyAssessment(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API GuardrailWordPolicyAssessment& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,28 @@ namespace Model
     /**
      * <p>Custom words in the assessment.</p>
      */
-    inline const Aws::Vector<GuardrailCustomWord>& GetCustomWords() const{ return m_customWords; }
+    inline const Aws::Vector<GuardrailCustomWord>& GetCustomWords() const { return m_customWords; }
     inline bool CustomWordsHasBeenSet() const { return m_customWordsHasBeenSet; }
-    inline void SetCustomWords(const Aws::Vector<GuardrailCustomWord>& value) { m_customWordsHasBeenSet = true; m_customWords = value; }
-    inline void SetCustomWords(Aws::Vector<GuardrailCustomWord>&& value) { m_customWordsHasBeenSet = true; m_customWords = std::move(value); }
-    inline GuardrailWordPolicyAssessment& WithCustomWords(const Aws::Vector<GuardrailCustomWord>& value) { SetCustomWords(value); return *this;}
-    inline GuardrailWordPolicyAssessment& WithCustomWords(Aws::Vector<GuardrailCustomWord>&& value) { SetCustomWords(std::move(value)); return *this;}
-    inline GuardrailWordPolicyAssessment& AddCustomWords(const GuardrailCustomWord& value) { m_customWordsHasBeenSet = true; m_customWords.push_back(value); return *this; }
-    inline GuardrailWordPolicyAssessment& AddCustomWords(GuardrailCustomWord&& value) { m_customWordsHasBeenSet = true; m_customWords.push_back(std::move(value)); return *this; }
+    template<typename CustomWordsT = Aws::Vector<GuardrailCustomWord>>
+    void SetCustomWords(CustomWordsT&& value) { m_customWordsHasBeenSet = true; m_customWords = std::forward<CustomWordsT>(value); }
+    template<typename CustomWordsT = Aws::Vector<GuardrailCustomWord>>
+    GuardrailWordPolicyAssessment& WithCustomWords(CustomWordsT&& value) { SetCustomWords(std::forward<CustomWordsT>(value)); return *this;}
+    template<typename CustomWordsT = GuardrailCustomWord>
+    GuardrailWordPolicyAssessment& AddCustomWords(CustomWordsT&& value) { m_customWordsHasBeenSet = true; m_customWords.emplace_back(std::forward<CustomWordsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Managed word lists in the assessment.</p>
      */
-    inline const Aws::Vector<GuardrailManagedWord>& GetManagedWordLists() const{ return m_managedWordLists; }
+    inline const Aws::Vector<GuardrailManagedWord>& GetManagedWordLists() const { return m_managedWordLists; }
     inline bool ManagedWordListsHasBeenSet() const { return m_managedWordListsHasBeenSet; }
-    inline void SetManagedWordLists(const Aws::Vector<GuardrailManagedWord>& value) { m_managedWordListsHasBeenSet = true; m_managedWordLists = value; }
-    inline void SetManagedWordLists(Aws::Vector<GuardrailManagedWord>&& value) { m_managedWordListsHasBeenSet = true; m_managedWordLists = std::move(value); }
-    inline GuardrailWordPolicyAssessment& WithManagedWordLists(const Aws::Vector<GuardrailManagedWord>& value) { SetManagedWordLists(value); return *this;}
-    inline GuardrailWordPolicyAssessment& WithManagedWordLists(Aws::Vector<GuardrailManagedWord>&& value) { SetManagedWordLists(std::move(value)); return *this;}
-    inline GuardrailWordPolicyAssessment& AddManagedWordLists(const GuardrailManagedWord& value) { m_managedWordListsHasBeenSet = true; m_managedWordLists.push_back(value); return *this; }
-    inline GuardrailWordPolicyAssessment& AddManagedWordLists(GuardrailManagedWord&& value) { m_managedWordListsHasBeenSet = true; m_managedWordLists.push_back(std::move(value)); return *this; }
+    template<typename ManagedWordListsT = Aws::Vector<GuardrailManagedWord>>
+    void SetManagedWordLists(ManagedWordListsT&& value) { m_managedWordListsHasBeenSet = true; m_managedWordLists = std::forward<ManagedWordListsT>(value); }
+    template<typename ManagedWordListsT = Aws::Vector<GuardrailManagedWord>>
+    GuardrailWordPolicyAssessment& WithManagedWordLists(ManagedWordListsT&& value) { SetManagedWordLists(std::forward<ManagedWordListsT>(value)); return *this;}
+    template<typename ManagedWordListsT = GuardrailManagedWord>
+    GuardrailWordPolicyAssessment& AddManagedWordLists(ManagedWordListsT&& value) { m_managedWordListsHasBeenSet = true; m_managedWordLists.emplace_back(std::forward<ManagedWordListsT>(value)); return *this; }
     ///@}
   private:
 

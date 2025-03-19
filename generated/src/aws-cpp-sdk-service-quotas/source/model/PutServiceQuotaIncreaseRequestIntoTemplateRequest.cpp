@@ -12,15 +12,6 @@ using namespace Aws::ServiceQuotas::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutServiceQuotaIncreaseRequestIntoTemplateRequest::PutServiceQuotaIncreaseRequestIntoTemplateRequest() : 
-    m_quotaCodeHasBeenSet(false),
-    m_serviceCodeHasBeenSet(false),
-    m_awsRegionHasBeenSet(false),
-    m_desiredValue(0.0),
-    m_desiredValueHasBeenSet(false)
-{
-}
-
 Aws::String PutServiceQuotaIncreaseRequestIntoTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

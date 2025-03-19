@@ -18,15 +18,7 @@ namespace XRay
 namespace Model
 {
 
-IndexingRule::IndexingRule() : 
-    m_nameHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false),
-    m_ruleHasBeenSet(false)
-{
-}
-
 IndexingRule::IndexingRule(JsonView jsonValue)
-  : IndexingRule()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ IndexingRule& IndexingRule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModifiedAt"))
   {
     m_modifiedAt = jsonValue.GetDouble("ModifiedAt");
-
     m_modifiedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Rule"))
   {
     m_rule = jsonValue.GetObject("Rule");
-
     m_ruleHasBeenSet = true;
   }
-
   return *this;
 }
 

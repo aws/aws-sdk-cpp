@@ -18,13 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-Receiver::Receiver() : 
-    m_accountHasBeenSet(false)
-{
-}
-
 Receiver::Receiver(JsonView jsonValue)
-  : Receiver()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Receiver& Receiver::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Account"))
   {
     m_account = jsonValue.GetObject("Account");
-
     m_accountHasBeenSet = true;
   }
-
   return *this;
 }
 

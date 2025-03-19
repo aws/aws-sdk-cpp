@@ -29,7 +29,7 @@ namespace Model
   class CreateWaveResult
   {
   public:
-    AWS_MGN_API CreateWaveResult();
+    AWS_MGN_API CreateWaveResult() = default;
     AWS_MGN_API CreateWaveResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MGN_API CreateWaveResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,47 +38,41 @@ namespace Model
     /**
      * <p>Wave ARN.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline CreateWaveResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline CreateWaveResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline CreateWaveResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    CreateWaveResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Wave creation dateTime.</p>
      */
-    inline const Aws::String& GetCreationDateTime() const{ return m_creationDateTime; }
-    inline void SetCreationDateTime(const Aws::String& value) { m_creationDateTime = value; }
-    inline void SetCreationDateTime(Aws::String&& value) { m_creationDateTime = std::move(value); }
-    inline void SetCreationDateTime(const char* value) { m_creationDateTime.assign(value); }
-    inline CreateWaveResult& WithCreationDateTime(const Aws::String& value) { SetCreationDateTime(value); return *this;}
-    inline CreateWaveResult& WithCreationDateTime(Aws::String&& value) { SetCreationDateTime(std::move(value)); return *this;}
-    inline CreateWaveResult& WithCreationDateTime(const char* value) { SetCreationDateTime(value); return *this;}
+    inline const Aws::String& GetCreationDateTime() const { return m_creationDateTime; }
+    template<typename CreationDateTimeT = Aws::String>
+    void SetCreationDateTime(CreationDateTimeT&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::forward<CreationDateTimeT>(value); }
+    template<typename CreationDateTimeT = Aws::String>
+    CreateWaveResult& WithCreationDateTime(CreationDateTimeT&& value) { SetCreationDateTime(std::forward<CreationDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Wave description.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline CreateWaveResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateWaveResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateWaveResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateWaveResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Wave archival status.</p>
      */
-    inline bool GetIsArchived() const{ return m_isArchived; }
-    inline void SetIsArchived(bool value) { m_isArchived = value; }
+    inline bool GetIsArchived() const { return m_isArchived; }
+    inline void SetIsArchived(bool value) { m_isArchivedHasBeenSet = true; m_isArchived = value; }
     inline CreateWaveResult& WithIsArchived(bool value) { SetIsArchived(value); return *this;}
     ///@}
 
@@ -86,101 +80,100 @@ namespace Model
     /**
      * <p>Wave last modified dateTime.</p>
      */
-    inline const Aws::String& GetLastModifiedDateTime() const{ return m_lastModifiedDateTime; }
-    inline void SetLastModifiedDateTime(const Aws::String& value) { m_lastModifiedDateTime = value; }
-    inline void SetLastModifiedDateTime(Aws::String&& value) { m_lastModifiedDateTime = std::move(value); }
-    inline void SetLastModifiedDateTime(const char* value) { m_lastModifiedDateTime.assign(value); }
-    inline CreateWaveResult& WithLastModifiedDateTime(const Aws::String& value) { SetLastModifiedDateTime(value); return *this;}
-    inline CreateWaveResult& WithLastModifiedDateTime(Aws::String&& value) { SetLastModifiedDateTime(std::move(value)); return *this;}
-    inline CreateWaveResult& WithLastModifiedDateTime(const char* value) { SetLastModifiedDateTime(value); return *this;}
+    inline const Aws::String& GetLastModifiedDateTime() const { return m_lastModifiedDateTime; }
+    template<typename LastModifiedDateTimeT = Aws::String>
+    void SetLastModifiedDateTime(LastModifiedDateTimeT&& value) { m_lastModifiedDateTimeHasBeenSet = true; m_lastModifiedDateTime = std::forward<LastModifiedDateTimeT>(value); }
+    template<typename LastModifiedDateTimeT = Aws::String>
+    CreateWaveResult& WithLastModifiedDateTime(LastModifiedDateTimeT&& value) { SetLastModifiedDateTime(std::forward<LastModifiedDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Wave name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline CreateWaveResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateWaveResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateWaveResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateWaveResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Wave tags.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline CreateWaveResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateWaveResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateWaveResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline CreateWaveResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateWaveResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateWaveResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateWaveResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateWaveResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateWaveResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateWaveResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateWaveResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>Wave aggregated status.</p>
      */
-    inline const WaveAggregatedStatus& GetWaveAggregatedStatus() const{ return m_waveAggregatedStatus; }
-    inline void SetWaveAggregatedStatus(const WaveAggregatedStatus& value) { m_waveAggregatedStatus = value; }
-    inline void SetWaveAggregatedStatus(WaveAggregatedStatus&& value) { m_waveAggregatedStatus = std::move(value); }
-    inline CreateWaveResult& WithWaveAggregatedStatus(const WaveAggregatedStatus& value) { SetWaveAggregatedStatus(value); return *this;}
-    inline CreateWaveResult& WithWaveAggregatedStatus(WaveAggregatedStatus&& value) { SetWaveAggregatedStatus(std::move(value)); return *this;}
+    inline const WaveAggregatedStatus& GetWaveAggregatedStatus() const { return m_waveAggregatedStatus; }
+    template<typename WaveAggregatedStatusT = WaveAggregatedStatus>
+    void SetWaveAggregatedStatus(WaveAggregatedStatusT&& value) { m_waveAggregatedStatusHasBeenSet = true; m_waveAggregatedStatus = std::forward<WaveAggregatedStatusT>(value); }
+    template<typename WaveAggregatedStatusT = WaveAggregatedStatus>
+    CreateWaveResult& WithWaveAggregatedStatus(WaveAggregatedStatusT&& value) { SetWaveAggregatedStatus(std::forward<WaveAggregatedStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Wave ID.</p>
      */
-    inline const Aws::String& GetWaveID() const{ return m_waveID; }
-    inline void SetWaveID(const Aws::String& value) { m_waveID = value; }
-    inline void SetWaveID(Aws::String&& value) { m_waveID = std::move(value); }
-    inline void SetWaveID(const char* value) { m_waveID.assign(value); }
-    inline CreateWaveResult& WithWaveID(const Aws::String& value) { SetWaveID(value); return *this;}
-    inline CreateWaveResult& WithWaveID(Aws::String&& value) { SetWaveID(std::move(value)); return *this;}
-    inline CreateWaveResult& WithWaveID(const char* value) { SetWaveID(value); return *this;}
+    inline const Aws::String& GetWaveID() const { return m_waveID; }
+    template<typename WaveIDT = Aws::String>
+    void SetWaveID(WaveIDT&& value) { m_waveIDHasBeenSet = true; m_waveID = std::forward<WaveIDT>(value); }
+    template<typename WaveIDT = Aws::String>
+    CreateWaveResult& WithWaveID(WaveIDT&& value) { SetWaveID(std::forward<WaveIDT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateWaveResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateWaveResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateWaveResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateWaveResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_creationDateTime;
+    bool m_creationDateTimeHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
-    bool m_isArchived;
+    bool m_isArchived{false};
+    bool m_isArchivedHasBeenSet = false;
 
     Aws::String m_lastModifiedDateTime;
+    bool m_lastModifiedDateTimeHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     WaveAggregatedStatus m_waveAggregatedStatus;
+    bool m_waveAggregatedStatusHasBeenSet = false;
 
     Aws::String m_waveID;
+    bool m_waveIDHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

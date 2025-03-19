@@ -18,13 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-ChannelEgressEndpoint::ChannelEgressEndpoint() : 
-    m_sourceIpHasBeenSet(false)
-{
-}
-
 ChannelEgressEndpoint::ChannelEgressEndpoint(JsonView jsonValue)
-  : ChannelEgressEndpoint()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ChannelEgressEndpoint& ChannelEgressEndpoint::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sourceIp"))
   {
     m_sourceIp = jsonValue.GetString("sourceIp");
-
     m_sourceIpHasBeenSet = true;
   }
-
   return *this;
 }
 

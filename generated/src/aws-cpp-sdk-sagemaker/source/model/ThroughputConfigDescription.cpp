@@ -18,18 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ThroughputConfigDescription::ThroughputConfigDescription() : 
-    m_throughputMode(ThroughputMode::NOT_SET),
-    m_throughputModeHasBeenSet(false),
-    m_provisionedReadCapacityUnits(0),
-    m_provisionedReadCapacityUnitsHasBeenSet(false),
-    m_provisionedWriteCapacityUnits(0),
-    m_provisionedWriteCapacityUnitsHasBeenSet(false)
-{
-}
-
 ThroughputConfigDescription::ThroughputConfigDescription(JsonView jsonValue)
-  : ThroughputConfigDescription()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ ThroughputConfigDescription& ThroughputConfigDescription::operator =(JsonView js
   if(jsonValue.ValueExists("ThroughputMode"))
   {
     m_throughputMode = ThroughputModeMapper::GetThroughputModeForName(jsonValue.GetString("ThroughputMode"));
-
     m_throughputModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisionedReadCapacityUnits"))
   {
     m_provisionedReadCapacityUnits = jsonValue.GetInteger("ProvisionedReadCapacityUnits");
-
     m_provisionedReadCapacityUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisionedWriteCapacityUnits"))
   {
     m_provisionedWriteCapacityUnits = jsonValue.GetInteger("ProvisionedWriteCapacityUnits");
-
     m_provisionedWriteCapacityUnitsHasBeenSet = true;
   }
-
   return *this;
 }
 

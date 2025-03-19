@@ -33,7 +33,7 @@ namespace Model
   class CurrentRevision
   {
   public:
-    AWS_CODEPIPELINE_API CurrentRevision();
+    AWS_CODEPIPELINE_API CurrentRevision() = default;
     AWS_CODEPIPELINE_API CurrentRevision(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API CurrentRevision& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The revision ID of the current version of an artifact.</p>
      */
-    inline const Aws::String& GetRevision() const{ return m_revision; }
+    inline const Aws::String& GetRevision() const { return m_revision; }
     inline bool RevisionHasBeenSet() const { return m_revisionHasBeenSet; }
-    inline void SetRevision(const Aws::String& value) { m_revisionHasBeenSet = true; m_revision = value; }
-    inline void SetRevision(Aws::String&& value) { m_revisionHasBeenSet = true; m_revision = std::move(value); }
-    inline void SetRevision(const char* value) { m_revisionHasBeenSet = true; m_revision.assign(value); }
-    inline CurrentRevision& WithRevision(const Aws::String& value) { SetRevision(value); return *this;}
-    inline CurrentRevision& WithRevision(Aws::String&& value) { SetRevision(std::move(value)); return *this;}
-    inline CurrentRevision& WithRevision(const char* value) { SetRevision(value); return *this;}
+    template<typename RevisionT = Aws::String>
+    void SetRevision(RevisionT&& value) { m_revisionHasBeenSet = true; m_revision = std::forward<RevisionT>(value); }
+    template<typename RevisionT = Aws::String>
+    CurrentRevision& WithRevision(RevisionT&& value) { SetRevision(std::forward<RevisionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The change identifier for the current revision.</p>
      */
-    inline const Aws::String& GetChangeIdentifier() const{ return m_changeIdentifier; }
+    inline const Aws::String& GetChangeIdentifier() const { return m_changeIdentifier; }
     inline bool ChangeIdentifierHasBeenSet() const { return m_changeIdentifierHasBeenSet; }
-    inline void SetChangeIdentifier(const Aws::String& value) { m_changeIdentifierHasBeenSet = true; m_changeIdentifier = value; }
-    inline void SetChangeIdentifier(Aws::String&& value) { m_changeIdentifierHasBeenSet = true; m_changeIdentifier = std::move(value); }
-    inline void SetChangeIdentifier(const char* value) { m_changeIdentifierHasBeenSet = true; m_changeIdentifier.assign(value); }
-    inline CurrentRevision& WithChangeIdentifier(const Aws::String& value) { SetChangeIdentifier(value); return *this;}
-    inline CurrentRevision& WithChangeIdentifier(Aws::String&& value) { SetChangeIdentifier(std::move(value)); return *this;}
-    inline CurrentRevision& WithChangeIdentifier(const char* value) { SetChangeIdentifier(value); return *this;}
+    template<typename ChangeIdentifierT = Aws::String>
+    void SetChangeIdentifier(ChangeIdentifierT&& value) { m_changeIdentifierHasBeenSet = true; m_changeIdentifier = std::forward<ChangeIdentifierT>(value); }
+    template<typename ChangeIdentifierT = Aws::String>
+    CurrentRevision& WithChangeIdentifier(ChangeIdentifierT&& value) { SetChangeIdentifier(std::forward<ChangeIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,26 +68,24 @@ namespace Model
      * <p>The date and time when the most recent revision of the artifact was created,
      * in timestamp format.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreated() const{ return m_created; }
+    inline const Aws::Utils::DateTime& GetCreated() const { return m_created; }
     inline bool CreatedHasBeenSet() const { return m_createdHasBeenSet; }
-    inline void SetCreated(const Aws::Utils::DateTime& value) { m_createdHasBeenSet = true; m_created = value; }
-    inline void SetCreated(Aws::Utils::DateTime&& value) { m_createdHasBeenSet = true; m_created = std::move(value); }
-    inline CurrentRevision& WithCreated(const Aws::Utils::DateTime& value) { SetCreated(value); return *this;}
-    inline CurrentRevision& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(std::move(value)); return *this;}
+    template<typename CreatedT = Aws::Utils::DateTime>
+    void SetCreated(CreatedT&& value) { m_createdHasBeenSet = true; m_created = std::forward<CreatedT>(value); }
+    template<typename CreatedT = Aws::Utils::DateTime>
+    CurrentRevision& WithCreated(CreatedT&& value) { SetCreated(std::forward<CreatedT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The summary of the most recent revision of the artifact.</p>
      */
-    inline const Aws::String& GetRevisionSummary() const{ return m_revisionSummary; }
+    inline const Aws::String& GetRevisionSummary() const { return m_revisionSummary; }
     inline bool RevisionSummaryHasBeenSet() const { return m_revisionSummaryHasBeenSet; }
-    inline void SetRevisionSummary(const Aws::String& value) { m_revisionSummaryHasBeenSet = true; m_revisionSummary = value; }
-    inline void SetRevisionSummary(Aws::String&& value) { m_revisionSummaryHasBeenSet = true; m_revisionSummary = std::move(value); }
-    inline void SetRevisionSummary(const char* value) { m_revisionSummaryHasBeenSet = true; m_revisionSummary.assign(value); }
-    inline CurrentRevision& WithRevisionSummary(const Aws::String& value) { SetRevisionSummary(value); return *this;}
-    inline CurrentRevision& WithRevisionSummary(Aws::String&& value) { SetRevisionSummary(std::move(value)); return *this;}
-    inline CurrentRevision& WithRevisionSummary(const char* value) { SetRevisionSummary(value); return *this;}
+    template<typename RevisionSummaryT = Aws::String>
+    void SetRevisionSummary(RevisionSummaryT&& value) { m_revisionSummaryHasBeenSet = true; m_revisionSummary = std::forward<RevisionSummaryT>(value); }
+    template<typename RevisionSummaryT = Aws::String>
+    CurrentRevision& WithRevisionSummary(RevisionSummaryT&& value) { SetRevisionSummary(std::forward<RevisionSummaryT>(value)); return *this;}
     ///@}
   private:
 
@@ -101,7 +95,7 @@ namespace Model
     Aws::String m_changeIdentifier;
     bool m_changeIdentifierHasBeenSet = false;
 
-    Aws::Utils::DateTime m_created;
+    Aws::Utils::DateTime m_created{};
     bool m_createdHasBeenSet = false;
 
     Aws::String m_revisionSummary;

@@ -18,15 +18,7 @@ namespace GeoPlaces
 namespace Model
 {
 
-ContactDetails::ContactDetails() : 
-    m_labelHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_categoriesHasBeenSet(false)
-{
-}
-
 ContactDetails::ContactDetails(JsonView jsonValue)
-  : ContactDetails()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ContactDetails& ContactDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Label"))
   {
     m_label = jsonValue.GetString("Label");
-
     m_labelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Categories"))
   {
     Aws::Utils::Array<JsonView> categoriesJsonList = jsonValue.GetArray("Categories");
@@ -56,7 +44,6 @@ ContactDetails& ContactDetails::operator =(JsonView jsonValue)
     }
     m_categoriesHasBeenSet = true;
   }
-
   return *this;
 }
 

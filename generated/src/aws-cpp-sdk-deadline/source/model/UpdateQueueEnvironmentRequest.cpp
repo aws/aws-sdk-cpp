@@ -13,20 +13,6 @@ using namespace Aws::deadline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateQueueEnvironmentRequest::UpdateQueueEnvironmentRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_farmIdHasBeenSet(false),
-    m_queueIdHasBeenSet(false),
-    m_queueEnvironmentIdHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_templateType(EnvironmentTemplateType::NOT_SET),
-    m_templateTypeHasBeenSet(false),
-    m_templateHasBeenSet(false)
-{
-}
-
 Aws::String UpdateQueueEnvironmentRequest::SerializePayload() const
 {
   JsonValue payload;

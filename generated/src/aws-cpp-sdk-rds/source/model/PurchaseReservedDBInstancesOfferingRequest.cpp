@@ -10,15 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-PurchaseReservedDBInstancesOfferingRequest::PurchaseReservedDBInstancesOfferingRequest() : 
-    m_reservedDBInstancesOfferingIdHasBeenSet(false),
-    m_reservedDBInstanceIdHasBeenSet(false),
-    m_dBInstanceCount(0),
-    m_dBInstanceCountHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String PurchaseReservedDBInstancesOfferingRequest::SerializePayload() const
 {
   Aws::StringStream ss;

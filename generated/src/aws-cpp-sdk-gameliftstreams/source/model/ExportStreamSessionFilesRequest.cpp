@@ -12,13 +12,6 @@ using namespace Aws::GameLiftStreams::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ExportStreamSessionFilesRequest::ExportStreamSessionFilesRequest() : 
-    m_identifierHasBeenSet(false),
-    m_outputUriHasBeenSet(false),
-    m_streamSessionIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String ExportStreamSessionFilesRequest::SerializePayload() const
 {
   JsonValue payload;

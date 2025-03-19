@@ -21,7 +21,7 @@ namespace Model
   class DescribeBackupRequest : public DynamoDBRequest
   {
   public:
-    AWS_DYNAMODB_API DescribeBackupRequest();
+    AWS_DYNAMODB_API DescribeBackupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) associated with the backup.</p>
      */
-    inline const Aws::String& GetBackupArn() const{ return m_backupArn; }
+    inline const Aws::String& GetBackupArn() const { return m_backupArn; }
     inline bool BackupArnHasBeenSet() const { return m_backupArnHasBeenSet; }
-    inline void SetBackupArn(const Aws::String& value) { m_backupArnHasBeenSet = true; m_backupArn = value; }
-    inline void SetBackupArn(Aws::String&& value) { m_backupArnHasBeenSet = true; m_backupArn = std::move(value); }
-    inline void SetBackupArn(const char* value) { m_backupArnHasBeenSet = true; m_backupArn.assign(value); }
-    inline DescribeBackupRequest& WithBackupArn(const Aws::String& value) { SetBackupArn(value); return *this;}
-    inline DescribeBackupRequest& WithBackupArn(Aws::String&& value) { SetBackupArn(std::move(value)); return *this;}
-    inline DescribeBackupRequest& WithBackupArn(const char* value) { SetBackupArn(value); return *this;}
+    template<typename BackupArnT = Aws::String>
+    void SetBackupArn(BackupArnT&& value) { m_backupArnHasBeenSet = true; m_backupArn = std::forward<BackupArnT>(value); }
+    template<typename BackupArnT = Aws::String>
+    DescribeBackupRequest& WithBackupArn(BackupArnT&& value) { SetBackupArn(std::forward<BackupArnT>(value)); return *this;}
     ///@}
   private:
 

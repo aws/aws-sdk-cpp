@@ -18,15 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-ContainerDependency::ContainerDependency() : 
-    m_containerNameHasBeenSet(false),
-    m_condition(ContainerDependencyCondition::NOT_SET),
-    m_conditionHasBeenSet(false)
-{
-}
-
 ContainerDependency::ContainerDependency(JsonView jsonValue)
-  : ContainerDependency()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ContainerDependency& ContainerDependency::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ContainerName"))
   {
     m_containerName = jsonValue.GetString("ContainerName");
-
     m_containerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Condition"))
   {
     m_condition = ContainerDependencyConditionMapper::GetContainerDependencyConditionForName(jsonValue.GetString("Condition"));
-
     m_conditionHasBeenSet = true;
   }
-
   return *this;
 }
 

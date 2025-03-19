@@ -23,7 +23,7 @@ namespace Model
   class PutAppsListRequest : public FMSRequest
   {
   public:
-    AWS_FMS_API PutAppsListRequest();
+    AWS_FMS_API PutAppsListRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,26 +40,26 @@ namespace Model
     /**
      * <p>The details of the Firewall Manager applications list to be created.</p>
      */
-    inline const AppsListData& GetAppsList() const{ return m_appsList; }
+    inline const AppsListData& GetAppsList() const { return m_appsList; }
     inline bool AppsListHasBeenSet() const { return m_appsListHasBeenSet; }
-    inline void SetAppsList(const AppsListData& value) { m_appsListHasBeenSet = true; m_appsList = value; }
-    inline void SetAppsList(AppsListData&& value) { m_appsListHasBeenSet = true; m_appsList = std::move(value); }
-    inline PutAppsListRequest& WithAppsList(const AppsListData& value) { SetAppsList(value); return *this;}
-    inline PutAppsListRequest& WithAppsList(AppsListData&& value) { SetAppsList(std::move(value)); return *this;}
+    template<typename AppsListT = AppsListData>
+    void SetAppsList(AppsListT&& value) { m_appsListHasBeenSet = true; m_appsList = std::forward<AppsListT>(value); }
+    template<typename AppsListT = AppsListData>
+    PutAppsListRequest& WithAppsList(AppsListT&& value) { SetAppsList(std::forward<AppsListT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags associated with the resource.</p>
      */
-    inline const Aws::Vector<Tag>& GetTagList() const{ return m_tagList; }
+    inline const Aws::Vector<Tag>& GetTagList() const { return m_tagList; }
     inline bool TagListHasBeenSet() const { return m_tagListHasBeenSet; }
-    inline void SetTagList(const Aws::Vector<Tag>& value) { m_tagListHasBeenSet = true; m_tagList = value; }
-    inline void SetTagList(Aws::Vector<Tag>&& value) { m_tagListHasBeenSet = true; m_tagList = std::move(value); }
-    inline PutAppsListRequest& WithTagList(const Aws::Vector<Tag>& value) { SetTagList(value); return *this;}
-    inline PutAppsListRequest& WithTagList(Aws::Vector<Tag>&& value) { SetTagList(std::move(value)); return *this;}
-    inline PutAppsListRequest& AddTagList(const Tag& value) { m_tagListHasBeenSet = true; m_tagList.push_back(value); return *this; }
-    inline PutAppsListRequest& AddTagList(Tag&& value) { m_tagListHasBeenSet = true; m_tagList.push_back(std::move(value)); return *this; }
+    template<typename TagListT = Aws::Vector<Tag>>
+    void SetTagList(TagListT&& value) { m_tagListHasBeenSet = true; m_tagList = std::forward<TagListT>(value); }
+    template<typename TagListT = Aws::Vector<Tag>>
+    PutAppsListRequest& WithTagList(TagListT&& value) { SetTagList(std::forward<TagListT>(value)); return *this;}
+    template<typename TagListT = Tag>
+    PutAppsListRequest& AddTagList(TagListT&& value) { m_tagListHasBeenSet = true; m_tagList.emplace_back(std::forward<TagListT>(value)); return *this; }
     ///@}
   private:
 

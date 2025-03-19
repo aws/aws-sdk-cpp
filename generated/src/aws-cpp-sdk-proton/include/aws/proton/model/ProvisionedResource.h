@@ -32,7 +32,7 @@ namespace Model
   class ProvisionedResource
   {
   public:
-    AWS_PROTON_API ProvisionedResource();
+    AWS_PROTON_API ProvisionedResource() = default;
     AWS_PROTON_API ProvisionedResource(Aws::Utils::Json::JsonView jsonValue);
     AWS_PROTON_API ProvisionedResource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PROTON_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The provisioned resource identifier.</p>
      */
-    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-    inline ProvisionedResource& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-    inline ProvisionedResource& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline ProvisionedResource& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    ProvisionedResource& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The provisioned resource name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ProvisionedResource& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ProvisionedResource& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ProvisionedResource& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ProvisionedResource& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,12 +71,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
      * provisioning</a> in the <i>Proton User Guide</i>.</p>
      */
-    inline const ProvisionedResourceEngine& GetProvisioningEngine() const{ return m_provisioningEngine; }
+    inline ProvisionedResourceEngine GetProvisioningEngine() const { return m_provisioningEngine; }
     inline bool ProvisioningEngineHasBeenSet() const { return m_provisioningEngineHasBeenSet; }
-    inline void SetProvisioningEngine(const ProvisionedResourceEngine& value) { m_provisioningEngineHasBeenSet = true; m_provisioningEngine = value; }
-    inline void SetProvisioningEngine(ProvisionedResourceEngine&& value) { m_provisioningEngineHasBeenSet = true; m_provisioningEngine = std::move(value); }
-    inline ProvisionedResource& WithProvisioningEngine(const ProvisionedResourceEngine& value) { SetProvisioningEngine(value); return *this;}
-    inline ProvisionedResource& WithProvisioningEngine(ProvisionedResourceEngine&& value) { SetProvisioningEngine(std::move(value)); return *this;}
+    inline void SetProvisioningEngine(ProvisionedResourceEngine value) { m_provisioningEngineHasBeenSet = true; m_provisioningEngine = value; }
+    inline ProvisionedResource& WithProvisioningEngine(ProvisionedResourceEngine value) { SetProvisioningEngine(value); return *this;}
     ///@}
   private:
 
@@ -90,7 +84,7 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    ProvisionedResourceEngine m_provisioningEngine;
+    ProvisionedResourceEngine m_provisioningEngine{ProvisionedResourceEngine::NOT_SET};
     bool m_provisioningEngineHasBeenSet = false;
   };
 

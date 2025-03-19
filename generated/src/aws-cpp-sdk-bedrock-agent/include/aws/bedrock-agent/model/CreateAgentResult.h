@@ -28,7 +28,7 @@ namespace Model
   class CreateAgentResult
   {
   public:
-    AWS_BEDROCKAGENT_API CreateAgentResult();
+    AWS_BEDROCKAGENT_API CreateAgentResult() = default;
     AWS_BEDROCKAGENT_API CreateAgentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BEDROCKAGENT_API CreateAgentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Contains details about the agent created.</p>
      */
-    inline const Agent& GetAgent() const{ return m_agent; }
-    inline void SetAgent(const Agent& value) { m_agent = value; }
-    inline void SetAgent(Agent&& value) { m_agent = std::move(value); }
-    inline CreateAgentResult& WithAgent(const Agent& value) { SetAgent(value); return *this;}
-    inline CreateAgentResult& WithAgent(Agent&& value) { SetAgent(std::move(value)); return *this;}
+    inline const Agent& GetAgent() const { return m_agent; }
+    template<typename AgentT = Agent>
+    void SetAgent(AgentT&& value) { m_agentHasBeenSet = true; m_agent = std::forward<AgentT>(value); }
+    template<typename AgentT = Agent>
+    CreateAgentResult& WithAgent(AgentT&& value) { SetAgent(std::forward<AgentT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateAgentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateAgentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateAgentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateAgentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Agent m_agent;
+    bool m_agentHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

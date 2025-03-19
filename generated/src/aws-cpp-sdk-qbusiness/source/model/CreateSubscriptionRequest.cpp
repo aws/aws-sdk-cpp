@@ -12,16 +12,6 @@ using namespace Aws::QBusiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSubscriptionRequest::CreateSubscriptionRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_principalHasBeenSet(false),
-    m_type(SubscriptionType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateSubscriptionRequest::SerializePayload() const
 {
   JsonValue payload;

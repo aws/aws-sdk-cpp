@@ -12,11 +12,6 @@ using namespace Aws::Personalize::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopSolutionVersionCreationRequest::StopSolutionVersionCreationRequest() : 
-    m_solutionVersionArnHasBeenSet(false)
-{
-}
-
 Aws::String StopSolutionVersionCreationRequest::SerializePayload() const
 {
   JsonValue payload;

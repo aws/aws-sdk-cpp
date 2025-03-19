@@ -10,19 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-ModifyScheduledActionRequest::ModifyScheduledActionRequest() : 
-    m_scheduledActionNameHasBeenSet(false),
-    m_targetActionHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_iamRoleHasBeenSet(false),
-    m_scheduledActionDescriptionHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_enable(false),
-    m_enableHasBeenSet(false)
-{
-}
-
 Aws::String ModifyScheduledActionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -22,7 +22,7 @@ namespace Model
   class BatchGetStandardsControlAssociationsRequest : public SecurityHubRequest
   {
   public:
-    AWS_SECURITYHUB_API BatchGetStandardsControlAssociationsRequest();
+    AWS_SECURITYHUB_API BatchGetStandardsControlAssociationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,14 @@ namespace Model
      * status of a control in a specified standard. The security control ID or ARN is
      * the same across standards. </p>
      */
-    inline const Aws::Vector<StandardsControlAssociationId>& GetStandardsControlAssociationIds() const{ return m_standardsControlAssociationIds; }
+    inline const Aws::Vector<StandardsControlAssociationId>& GetStandardsControlAssociationIds() const { return m_standardsControlAssociationIds; }
     inline bool StandardsControlAssociationIdsHasBeenSet() const { return m_standardsControlAssociationIdsHasBeenSet; }
-    inline void SetStandardsControlAssociationIds(const Aws::Vector<StandardsControlAssociationId>& value) { m_standardsControlAssociationIdsHasBeenSet = true; m_standardsControlAssociationIds = value; }
-    inline void SetStandardsControlAssociationIds(Aws::Vector<StandardsControlAssociationId>&& value) { m_standardsControlAssociationIdsHasBeenSet = true; m_standardsControlAssociationIds = std::move(value); }
-    inline BatchGetStandardsControlAssociationsRequest& WithStandardsControlAssociationIds(const Aws::Vector<StandardsControlAssociationId>& value) { SetStandardsControlAssociationIds(value); return *this;}
-    inline BatchGetStandardsControlAssociationsRequest& WithStandardsControlAssociationIds(Aws::Vector<StandardsControlAssociationId>&& value) { SetStandardsControlAssociationIds(std::move(value)); return *this;}
-    inline BatchGetStandardsControlAssociationsRequest& AddStandardsControlAssociationIds(const StandardsControlAssociationId& value) { m_standardsControlAssociationIdsHasBeenSet = true; m_standardsControlAssociationIds.push_back(value); return *this; }
-    inline BatchGetStandardsControlAssociationsRequest& AddStandardsControlAssociationIds(StandardsControlAssociationId&& value) { m_standardsControlAssociationIdsHasBeenSet = true; m_standardsControlAssociationIds.push_back(std::move(value)); return *this; }
+    template<typename StandardsControlAssociationIdsT = Aws::Vector<StandardsControlAssociationId>>
+    void SetStandardsControlAssociationIds(StandardsControlAssociationIdsT&& value) { m_standardsControlAssociationIdsHasBeenSet = true; m_standardsControlAssociationIds = std::forward<StandardsControlAssociationIdsT>(value); }
+    template<typename StandardsControlAssociationIdsT = Aws::Vector<StandardsControlAssociationId>>
+    BatchGetStandardsControlAssociationsRequest& WithStandardsControlAssociationIds(StandardsControlAssociationIdsT&& value) { SetStandardsControlAssociationIds(std::forward<StandardsControlAssociationIdsT>(value)); return *this;}
+    template<typename StandardsControlAssociationIdsT = StandardsControlAssociationId>
+    BatchGetStandardsControlAssociationsRequest& AddStandardsControlAssociationIds(StandardsControlAssociationIdsT&& value) { m_standardsControlAssociationIdsHasBeenSet = true; m_standardsControlAssociationIds.emplace_back(std::forward<StandardsControlAssociationIdsT>(value)); return *this; }
     ///@}
   private:
 

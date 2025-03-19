@@ -18,15 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-DocumentClassifierOutputDataConfig::DocumentClassifierOutputDataConfig() : 
-    m_s3UriHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_flywheelStatsS3PrefixHasBeenSet(false)
-{
-}
-
 DocumentClassifierOutputDataConfig::DocumentClassifierOutputDataConfig(JsonView jsonValue)
-  : DocumentClassifierOutputDataConfig()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DocumentClassifierOutputDataConfig& DocumentClassifierOutputDataConfig::operator
   if(jsonValue.ValueExists("S3Uri"))
   {
     m_s3Uri = jsonValue.GetString("S3Uri");
-
     m_s3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FlywheelStatsS3Prefix"))
   {
     m_flywheelStatsS3Prefix = jsonValue.GetString("FlywheelStatsS3Prefix");
-
     m_flywheelStatsS3PrefixHasBeenSet = true;
   }
-
   return *this;
 }
 

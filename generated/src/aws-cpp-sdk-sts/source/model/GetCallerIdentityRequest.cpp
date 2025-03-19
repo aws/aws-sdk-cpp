@@ -10,10 +10,6 @@
 using namespace Aws::STS::Model;
 using namespace Aws::Utils;
 
-GetCallerIdentityRequest::GetCallerIdentityRequest()
-{
-}
-
 Aws::String GetCallerIdentityRequest::SerializePayload() const
 {
   Aws::StringStream ss;

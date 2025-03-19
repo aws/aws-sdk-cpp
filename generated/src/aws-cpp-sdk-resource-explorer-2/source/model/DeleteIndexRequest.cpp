@@ -12,11 +12,6 @@ using namespace Aws::ResourceExplorer2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteIndexRequest::DeleteIndexRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteIndexRequest::SerializePayload() const
 {
   JsonValue payload;

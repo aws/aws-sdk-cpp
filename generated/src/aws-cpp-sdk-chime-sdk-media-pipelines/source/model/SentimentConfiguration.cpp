@@ -18,17 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-SentimentConfiguration::SentimentConfiguration() : 
-    m_ruleNameHasBeenSet(false),
-    m_sentimentType(SentimentType::NOT_SET),
-    m_sentimentTypeHasBeenSet(false),
-    m_timePeriod(0),
-    m_timePeriodHasBeenSet(false)
-{
-}
-
 SentimentConfiguration::SentimentConfiguration(JsonView jsonValue)
-  : SentimentConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ SentimentConfiguration& SentimentConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RuleName"))
   {
     m_ruleName = jsonValue.GetString("RuleName");
-
     m_ruleNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SentimentType"))
   {
     m_sentimentType = SentimentTypeMapper::GetSentimentTypeForName(jsonValue.GetString("SentimentType"));
-
     m_sentimentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimePeriod"))
   {
     m_timePeriod = jsonValue.GetInteger("TimePeriod");
-
     m_timePeriodHasBeenSet = true;
   }
-
   return *this;
 }
 

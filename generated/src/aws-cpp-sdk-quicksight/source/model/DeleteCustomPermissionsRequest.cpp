@@ -12,12 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteCustomPermissionsRequest::DeleteCustomPermissionsRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_customPermissionsNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCustomPermissionsRequest::SerializePayload() const
 {
   return {};

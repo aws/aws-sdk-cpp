@@ -28,7 +28,7 @@ namespace Model
   class StartNetworkInsightsAccessScopeAnalysisResponse
   {
   public:
-    AWS_EC2_API StartNetworkInsightsAccessScopeAnalysisResponse();
+    AWS_EC2_API StartNetworkInsightsAccessScopeAnalysisResponse() = default;
     AWS_EC2_API StartNetworkInsightsAccessScopeAnalysisResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API StartNetworkInsightsAccessScopeAnalysisResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>The Network Access Scope analysis.</p>
      */
-    inline const NetworkInsightsAccessScopeAnalysis& GetNetworkInsightsAccessScopeAnalysis() const{ return m_networkInsightsAccessScopeAnalysis; }
-    inline void SetNetworkInsightsAccessScopeAnalysis(const NetworkInsightsAccessScopeAnalysis& value) { m_networkInsightsAccessScopeAnalysis = value; }
-    inline void SetNetworkInsightsAccessScopeAnalysis(NetworkInsightsAccessScopeAnalysis&& value) { m_networkInsightsAccessScopeAnalysis = std::move(value); }
-    inline StartNetworkInsightsAccessScopeAnalysisResponse& WithNetworkInsightsAccessScopeAnalysis(const NetworkInsightsAccessScopeAnalysis& value) { SetNetworkInsightsAccessScopeAnalysis(value); return *this;}
-    inline StartNetworkInsightsAccessScopeAnalysisResponse& WithNetworkInsightsAccessScopeAnalysis(NetworkInsightsAccessScopeAnalysis&& value) { SetNetworkInsightsAccessScopeAnalysis(std::move(value)); return *this;}
+    inline const NetworkInsightsAccessScopeAnalysis& GetNetworkInsightsAccessScopeAnalysis() const { return m_networkInsightsAccessScopeAnalysis; }
+    template<typename NetworkInsightsAccessScopeAnalysisT = NetworkInsightsAccessScopeAnalysis>
+    void SetNetworkInsightsAccessScopeAnalysis(NetworkInsightsAccessScopeAnalysisT&& value) { m_networkInsightsAccessScopeAnalysisHasBeenSet = true; m_networkInsightsAccessScopeAnalysis = std::forward<NetworkInsightsAccessScopeAnalysisT>(value); }
+    template<typename NetworkInsightsAccessScopeAnalysisT = NetworkInsightsAccessScopeAnalysis>
+    StartNetworkInsightsAccessScopeAnalysisResponse& WithNetworkInsightsAccessScopeAnalysis(NetworkInsightsAccessScopeAnalysisT&& value) { SetNetworkInsightsAccessScopeAnalysis(std::forward<NetworkInsightsAccessScopeAnalysisT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline StartNetworkInsightsAccessScopeAnalysisResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline StartNetworkInsightsAccessScopeAnalysisResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    StartNetworkInsightsAccessScopeAnalysisResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     NetworkInsightsAccessScopeAnalysis m_networkInsightsAccessScopeAnalysis;
+    bool m_networkInsightsAccessScopeAnalysisHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

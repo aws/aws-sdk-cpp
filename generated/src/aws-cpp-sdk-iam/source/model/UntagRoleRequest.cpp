@@ -10,12 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-UntagRoleRequest::UntagRoleRequest() : 
-    m_roleNameHasBeenSet(false),
-    m_tagKeysHasBeenSet(false)
-{
-}
-
 Aws::String UntagRoleRequest::SerializePayload() const
 {
   Aws::StringStream ss;

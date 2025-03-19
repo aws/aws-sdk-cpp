@@ -34,7 +34,7 @@ namespace Model
   class VpcEndpoint
   {
   public:
-    AWS_ELASTICSEARCHSERVICE_API VpcEndpoint();
+    AWS_ELASTICSEARCHSERVICE_API VpcEndpoint() = default;
     AWS_ELASTICSEARCHSERVICE_API VpcEndpoint(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICSEARCHSERVICE_API VpcEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p>The unique identifier of the endpoint.</p>
      */
-    inline const Aws::String& GetVpcEndpointId() const{ return m_vpcEndpointId; }
+    inline const Aws::String& GetVpcEndpointId() const { return m_vpcEndpointId; }
     inline bool VpcEndpointIdHasBeenSet() const { return m_vpcEndpointIdHasBeenSet; }
-    inline void SetVpcEndpointId(const Aws::String& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = value; }
-    inline void SetVpcEndpointId(Aws::String&& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = std::move(value); }
-    inline void SetVpcEndpointId(const char* value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId.assign(value); }
-    inline VpcEndpoint& WithVpcEndpointId(const Aws::String& value) { SetVpcEndpointId(value); return *this;}
-    inline VpcEndpoint& WithVpcEndpointId(Aws::String&& value) { SetVpcEndpointId(std::move(value)); return *this;}
-    inline VpcEndpoint& WithVpcEndpointId(const char* value) { SetVpcEndpointId(value); return *this;}
+    template<typename VpcEndpointIdT = Aws::String>
+    void SetVpcEndpointId(VpcEndpointIdT&& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = std::forward<VpcEndpointIdT>(value); }
+    template<typename VpcEndpointIdT = Aws::String>
+    VpcEndpoint& WithVpcEndpointId(VpcEndpointIdT&& value) { SetVpcEndpointId(std::forward<VpcEndpointIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The creator of the endpoint.</p>
      */
-    inline const Aws::String& GetVpcEndpointOwner() const{ return m_vpcEndpointOwner; }
+    inline const Aws::String& GetVpcEndpointOwner() const { return m_vpcEndpointOwner; }
     inline bool VpcEndpointOwnerHasBeenSet() const { return m_vpcEndpointOwnerHasBeenSet; }
-    inline void SetVpcEndpointOwner(const Aws::String& value) { m_vpcEndpointOwnerHasBeenSet = true; m_vpcEndpointOwner = value; }
-    inline void SetVpcEndpointOwner(Aws::String&& value) { m_vpcEndpointOwnerHasBeenSet = true; m_vpcEndpointOwner = std::move(value); }
-    inline void SetVpcEndpointOwner(const char* value) { m_vpcEndpointOwnerHasBeenSet = true; m_vpcEndpointOwner.assign(value); }
-    inline VpcEndpoint& WithVpcEndpointOwner(const Aws::String& value) { SetVpcEndpointOwner(value); return *this;}
-    inline VpcEndpoint& WithVpcEndpointOwner(Aws::String&& value) { SetVpcEndpointOwner(std::move(value)); return *this;}
-    inline VpcEndpoint& WithVpcEndpointOwner(const char* value) { SetVpcEndpointOwner(value); return *this;}
+    template<typename VpcEndpointOwnerT = Aws::String>
+    void SetVpcEndpointOwner(VpcEndpointOwnerT&& value) { m_vpcEndpointOwnerHasBeenSet = true; m_vpcEndpointOwner = std::forward<VpcEndpointOwnerT>(value); }
+    template<typename VpcEndpointOwnerT = Aws::String>
+    VpcEndpoint& WithVpcEndpointOwner(VpcEndpointOwnerT&& value) { SetVpcEndpointOwner(std::forward<VpcEndpointOwnerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the domain associated with the
      * endpoint.</p>
      */
-    inline const Aws::String& GetDomainArn() const{ return m_domainArn; }
+    inline const Aws::String& GetDomainArn() const { return m_domainArn; }
     inline bool DomainArnHasBeenSet() const { return m_domainArnHasBeenSet; }
-    inline void SetDomainArn(const Aws::String& value) { m_domainArnHasBeenSet = true; m_domainArn = value; }
-    inline void SetDomainArn(Aws::String&& value) { m_domainArnHasBeenSet = true; m_domainArn = std::move(value); }
-    inline void SetDomainArn(const char* value) { m_domainArnHasBeenSet = true; m_domainArn.assign(value); }
-    inline VpcEndpoint& WithDomainArn(const Aws::String& value) { SetDomainArn(value); return *this;}
-    inline VpcEndpoint& WithDomainArn(Aws::String&& value) { SetDomainArn(std::move(value)); return *this;}
-    inline VpcEndpoint& WithDomainArn(const char* value) { SetDomainArn(value); return *this;}
+    template<typename DomainArnT = Aws::String>
+    void SetDomainArn(DomainArnT&& value) { m_domainArnHasBeenSet = true; m_domainArn = std::forward<DomainArnT>(value); }
+    template<typename DomainArnT = Aws::String>
+    VpcEndpoint& WithDomainArn(DomainArnT&& value) { SetDomainArn(std::forward<DomainArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,38 +82,34 @@ namespace Model
      * <p>Options to specify the subnets and security groups for an Amazon OpenSearch
      * Service VPC endpoint.</p>
      */
-    inline const VPCDerivedInfo& GetVpcOptions() const{ return m_vpcOptions; }
+    inline const VPCDerivedInfo& GetVpcOptions() const { return m_vpcOptions; }
     inline bool VpcOptionsHasBeenSet() const { return m_vpcOptionsHasBeenSet; }
-    inline void SetVpcOptions(const VPCDerivedInfo& value) { m_vpcOptionsHasBeenSet = true; m_vpcOptions = value; }
-    inline void SetVpcOptions(VPCDerivedInfo&& value) { m_vpcOptionsHasBeenSet = true; m_vpcOptions = std::move(value); }
-    inline VpcEndpoint& WithVpcOptions(const VPCDerivedInfo& value) { SetVpcOptions(value); return *this;}
-    inline VpcEndpoint& WithVpcOptions(VPCDerivedInfo&& value) { SetVpcOptions(std::move(value)); return *this;}
+    template<typename VpcOptionsT = VPCDerivedInfo>
+    void SetVpcOptions(VpcOptionsT&& value) { m_vpcOptionsHasBeenSet = true; m_vpcOptions = std::forward<VpcOptionsT>(value); }
+    template<typename VpcOptionsT = VPCDerivedInfo>
+    VpcEndpoint& WithVpcOptions(VpcOptionsT&& value) { SetVpcOptions(std::forward<VpcOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current status of the endpoint.</p>
      */
-    inline const VpcEndpointStatus& GetStatus() const{ return m_status; }
+    inline VpcEndpointStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const VpcEndpointStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(VpcEndpointStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline VpcEndpoint& WithStatus(const VpcEndpointStatus& value) { SetStatus(value); return *this;}
-    inline VpcEndpoint& WithStatus(VpcEndpointStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(VpcEndpointStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline VpcEndpoint& WithStatus(VpcEndpointStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The connection endpoint ID for connecting to the domain.</p>
      */
-    inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
+    inline const Aws::String& GetEndpoint() const { return m_endpoint; }
     inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
-    inline void SetEndpoint(const Aws::String& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
-    inline void SetEndpoint(Aws::String&& value) { m_endpointHasBeenSet = true; m_endpoint = std::move(value); }
-    inline void SetEndpoint(const char* value) { m_endpointHasBeenSet = true; m_endpoint.assign(value); }
-    inline VpcEndpoint& WithEndpoint(const Aws::String& value) { SetEndpoint(value); return *this;}
-    inline VpcEndpoint& WithEndpoint(Aws::String&& value) { SetEndpoint(std::move(value)); return *this;}
-    inline VpcEndpoint& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
+    template<typename EndpointT = Aws::String>
+    void SetEndpoint(EndpointT&& value) { m_endpointHasBeenSet = true; m_endpoint = std::forward<EndpointT>(value); }
+    template<typename EndpointT = Aws::String>
+    VpcEndpoint& WithEndpoint(EndpointT&& value) { SetEndpoint(std::forward<EndpointT>(value)); return *this;}
     ///@}
   private:
 
@@ -135,7 +125,7 @@ namespace Model
     VPCDerivedInfo m_vpcOptions;
     bool m_vpcOptionsHasBeenSet = false;
 
-    VpcEndpointStatus m_status;
+    VpcEndpointStatus m_status{VpcEndpointStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_endpoint;

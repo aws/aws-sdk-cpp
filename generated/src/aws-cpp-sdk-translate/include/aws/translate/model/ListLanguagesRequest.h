@@ -22,7 +22,7 @@ namespace Model
   class ListLanguagesRequest : public TranslateRequest
   {
   public:
-    AWS_TRANSLATE_API ListLanguagesRequest();
+    AWS_TRANSLATE_API ListLanguagesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,12 +40,10 @@ namespace Model
      * <p>The language code for the language to use to display the language names in
      * the response. The language code is <code>en</code> by default. </p>
      */
-    inline const DisplayLanguageCode& GetDisplayLanguageCode() const{ return m_displayLanguageCode; }
+    inline DisplayLanguageCode GetDisplayLanguageCode() const { return m_displayLanguageCode; }
     inline bool DisplayLanguageCodeHasBeenSet() const { return m_displayLanguageCodeHasBeenSet; }
-    inline void SetDisplayLanguageCode(const DisplayLanguageCode& value) { m_displayLanguageCodeHasBeenSet = true; m_displayLanguageCode = value; }
-    inline void SetDisplayLanguageCode(DisplayLanguageCode&& value) { m_displayLanguageCodeHasBeenSet = true; m_displayLanguageCode = std::move(value); }
-    inline ListLanguagesRequest& WithDisplayLanguageCode(const DisplayLanguageCode& value) { SetDisplayLanguageCode(value); return *this;}
-    inline ListLanguagesRequest& WithDisplayLanguageCode(DisplayLanguageCode&& value) { SetDisplayLanguageCode(std::move(value)); return *this;}
+    inline void SetDisplayLanguageCode(DisplayLanguageCode value) { m_displayLanguageCodeHasBeenSet = true; m_displayLanguageCode = value; }
+    inline ListLanguagesRequest& WithDisplayLanguageCode(DisplayLanguageCode value) { SetDisplayLanguageCode(value); return *this;}
     ///@}
 
     ///@{
@@ -53,34 +51,32 @@ namespace Model
      * <p>Include the NextToken value to fetch the next group of supported languages.
      * </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListLanguagesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListLanguagesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListLanguagesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListLanguagesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return in each response.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListLanguagesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
   private:
 
-    DisplayLanguageCode m_displayLanguageCode;
+    DisplayLanguageCode m_displayLanguageCode{DisplayLanguageCode::NOT_SET};
     bool m_displayLanguageCodeHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

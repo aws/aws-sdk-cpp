@@ -31,7 +31,7 @@ namespace Model
   class ActionParameters
   {
   public:
-    AWS_DATAZONE_API ActionParameters();
+    AWS_DATAZONE_API ActionParameters() = default;
     AWS_DATAZONE_API ActionParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API ActionParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The console link specified as part of the environment action.</p>
      */
-    inline const AwsConsoleLinkParameters& GetAwsConsoleLink() const{ return m_awsConsoleLink; }
+    inline const AwsConsoleLinkParameters& GetAwsConsoleLink() const { return m_awsConsoleLink; }
     inline bool AwsConsoleLinkHasBeenSet() const { return m_awsConsoleLinkHasBeenSet; }
-    inline void SetAwsConsoleLink(const AwsConsoleLinkParameters& value) { m_awsConsoleLinkHasBeenSet = true; m_awsConsoleLink = value; }
-    inline void SetAwsConsoleLink(AwsConsoleLinkParameters&& value) { m_awsConsoleLinkHasBeenSet = true; m_awsConsoleLink = std::move(value); }
-    inline ActionParameters& WithAwsConsoleLink(const AwsConsoleLinkParameters& value) { SetAwsConsoleLink(value); return *this;}
-    inline ActionParameters& WithAwsConsoleLink(AwsConsoleLinkParameters&& value) { SetAwsConsoleLink(std::move(value)); return *this;}
+    template<typename AwsConsoleLinkT = AwsConsoleLinkParameters>
+    void SetAwsConsoleLink(AwsConsoleLinkT&& value) { m_awsConsoleLinkHasBeenSet = true; m_awsConsoleLink = std::forward<AwsConsoleLinkT>(value); }
+    template<typename AwsConsoleLinkT = AwsConsoleLinkParameters>
+    ActionParameters& WithAwsConsoleLink(AwsConsoleLinkT&& value) { SetAwsConsoleLink(std::forward<AwsConsoleLinkT>(value)); return *this;}
     ///@}
   private:
 

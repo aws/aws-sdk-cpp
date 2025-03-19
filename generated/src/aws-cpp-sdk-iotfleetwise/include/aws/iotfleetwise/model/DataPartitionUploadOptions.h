@@ -38,7 +38,7 @@ namespace Model
   class DataPartitionUploadOptions
   {
   public:
-    AWS_IOTFLEETWISE_API DataPartitionUploadOptions();
+    AWS_IOTFLEETWISE_API DataPartitionUploadOptions() = default;
     AWS_IOTFLEETWISE_API DataPartitionUploadOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API DataPartitionUploadOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * <p>The logical expression used to recognize what data to collect. For example,
      * <code>$variable.`Vehicle.OutsideAirTemperature` &gt;= 105.0</code>.</p>
      */
-    inline const Aws::String& GetExpression() const{ return m_expression; }
+    inline const Aws::String& GetExpression() const { return m_expression; }
     inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
-    inline void SetExpression(const Aws::String& value) { m_expressionHasBeenSet = true; m_expression = value; }
-    inline void SetExpression(Aws::String&& value) { m_expressionHasBeenSet = true; m_expression = std::move(value); }
-    inline void SetExpression(const char* value) { m_expressionHasBeenSet = true; m_expression.assign(value); }
-    inline DataPartitionUploadOptions& WithExpression(const Aws::String& value) { SetExpression(value); return *this;}
-    inline DataPartitionUploadOptions& WithExpression(Aws::String&& value) { SetExpression(std::move(value)); return *this;}
-    inline DataPartitionUploadOptions& WithExpression(const char* value) { SetExpression(value); return *this;}
+    template<typename ExpressionT = Aws::String>
+    void SetExpression(ExpressionT&& value) { m_expressionHasBeenSet = true; m_expression = std::forward<ExpressionT>(value); }
+    template<typename ExpressionT = Aws::String>
+    DataPartitionUploadOptions& WithExpression(ExpressionT&& value) { SetExpression(std::forward<ExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,7 +62,7 @@ namespace Model
      * <p>The version of the condition language. Defaults to the most recent condition
      * language version.</p>
      */
-    inline int GetConditionLanguageVersion() const{ return m_conditionLanguageVersion; }
+    inline int GetConditionLanguageVersion() const { return m_conditionLanguageVersion; }
     inline bool ConditionLanguageVersionHasBeenSet() const { return m_conditionLanguageVersionHasBeenSet; }
     inline void SetConditionLanguageVersion(int value) { m_conditionLanguageVersionHasBeenSet = true; m_conditionLanguageVersion = value; }
     inline DataPartitionUploadOptions& WithConditionLanguageVersion(int value) { SetConditionLanguageVersion(value); return *this;}
@@ -74,7 +72,7 @@ namespace Model
     Aws::String m_expression;
     bool m_expressionHasBeenSet = false;
 
-    int m_conditionLanguageVersion;
+    int m_conditionLanguageVersion{0};
     bool m_conditionLanguageVersionHasBeenSet = false;
   };
 

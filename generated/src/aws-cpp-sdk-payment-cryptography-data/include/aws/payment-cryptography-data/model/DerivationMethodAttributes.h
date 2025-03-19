@@ -36,7 +36,7 @@ namespace Model
   class DerivationMethodAttributes
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHYDATA_API DerivationMethodAttributes();
+    AWS_PAYMENTCRYPTOGRAPHYDATA_API DerivationMethodAttributes() = default;
     AWS_PAYMENTCRYPTOGRAPHYDATA_API DerivationMethodAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API DerivationMethodAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,12 @@ namespace Model
      * <p>Parameters to derive the confidentiality and integrity keys for a payment
      * card using Emv common derivation method.</p>
      */
-    inline const EmvCommonAttributes& GetEmvCommon() const{ return m_emvCommon; }
+    inline const EmvCommonAttributes& GetEmvCommon() const { return m_emvCommon; }
     inline bool EmvCommonHasBeenSet() const { return m_emvCommonHasBeenSet; }
-    inline void SetEmvCommon(const EmvCommonAttributes& value) { m_emvCommonHasBeenSet = true; m_emvCommon = value; }
-    inline void SetEmvCommon(EmvCommonAttributes&& value) { m_emvCommonHasBeenSet = true; m_emvCommon = std::move(value); }
-    inline DerivationMethodAttributes& WithEmvCommon(const EmvCommonAttributes& value) { SetEmvCommon(value); return *this;}
-    inline DerivationMethodAttributes& WithEmvCommon(EmvCommonAttributes&& value) { SetEmvCommon(std::move(value)); return *this;}
+    template<typename EmvCommonT = EmvCommonAttributes>
+    void SetEmvCommon(EmvCommonT&& value) { m_emvCommonHasBeenSet = true; m_emvCommon = std::forward<EmvCommonT>(value); }
+    template<typename EmvCommonT = EmvCommonAttributes>
+    DerivationMethodAttributes& WithEmvCommon(EmvCommonT&& value) { SetEmvCommon(std::forward<EmvCommonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +60,12 @@ namespace Model
      * <p>Parameters to derive the confidentiality and integrity keys for a payment
      * card using Amex derivation method.</p>
      */
-    inline const AmexAttributes& GetAmex() const{ return m_amex; }
+    inline const AmexAttributes& GetAmex() const { return m_amex; }
     inline bool AmexHasBeenSet() const { return m_amexHasBeenSet; }
-    inline void SetAmex(const AmexAttributes& value) { m_amexHasBeenSet = true; m_amex = value; }
-    inline void SetAmex(AmexAttributes&& value) { m_amexHasBeenSet = true; m_amex = std::move(value); }
-    inline DerivationMethodAttributes& WithAmex(const AmexAttributes& value) { SetAmex(value); return *this;}
-    inline DerivationMethodAttributes& WithAmex(AmexAttributes&& value) { SetAmex(std::move(value)); return *this;}
+    template<typename AmexT = AmexAttributes>
+    void SetAmex(AmexT&& value) { m_amexHasBeenSet = true; m_amex = std::forward<AmexT>(value); }
+    template<typename AmexT = AmexAttributes>
+    DerivationMethodAttributes& WithAmex(AmexT&& value) { SetAmex(std::forward<AmexT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,12 +73,12 @@ namespace Model
      * <p>Parameters to derive the confidentiality and integrity keys for a a payment
      * card using Visa derivation method.</p>
      */
-    inline const VisaAttributes& GetVisa() const{ return m_visa; }
+    inline const VisaAttributes& GetVisa() const { return m_visa; }
     inline bool VisaHasBeenSet() const { return m_visaHasBeenSet; }
-    inline void SetVisa(const VisaAttributes& value) { m_visaHasBeenSet = true; m_visa = value; }
-    inline void SetVisa(VisaAttributes&& value) { m_visaHasBeenSet = true; m_visa = std::move(value); }
-    inline DerivationMethodAttributes& WithVisa(const VisaAttributes& value) { SetVisa(value); return *this;}
-    inline DerivationMethodAttributes& WithVisa(VisaAttributes&& value) { SetVisa(std::move(value)); return *this;}
+    template<typename VisaT = VisaAttributes>
+    void SetVisa(VisaT&& value) { m_visaHasBeenSet = true; m_visa = std::forward<VisaT>(value); }
+    template<typename VisaT = VisaAttributes>
+    DerivationMethodAttributes& WithVisa(VisaT&& value) { SetVisa(std::forward<VisaT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,12 +86,12 @@ namespace Model
      * <p>Parameters to derive the confidentiality and integrity keys for a payment
      * card using Emv2000 derivation method.</p>
      */
-    inline const Emv2000Attributes& GetEmv2000() const{ return m_emv2000; }
+    inline const Emv2000Attributes& GetEmv2000() const { return m_emv2000; }
     inline bool Emv2000HasBeenSet() const { return m_emv2000HasBeenSet; }
-    inline void SetEmv2000(const Emv2000Attributes& value) { m_emv2000HasBeenSet = true; m_emv2000 = value; }
-    inline void SetEmv2000(Emv2000Attributes&& value) { m_emv2000HasBeenSet = true; m_emv2000 = std::move(value); }
-    inline DerivationMethodAttributes& WithEmv2000(const Emv2000Attributes& value) { SetEmv2000(value); return *this;}
-    inline DerivationMethodAttributes& WithEmv2000(Emv2000Attributes&& value) { SetEmv2000(std::move(value)); return *this;}
+    template<typename Emv2000T = Emv2000Attributes>
+    void SetEmv2000(Emv2000T&& value) { m_emv2000HasBeenSet = true; m_emv2000 = std::forward<Emv2000T>(value); }
+    template<typename Emv2000T = Emv2000Attributes>
+    DerivationMethodAttributes& WithEmv2000(Emv2000T&& value) { SetEmv2000(std::forward<Emv2000T>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,12 +99,12 @@ namespace Model
      * <p>Parameters to derive the confidentiality and integrity keys for a payment
      * card using Mastercard derivation method.</p>
      */
-    inline const MasterCardAttributes& GetMastercard() const{ return m_mastercard; }
+    inline const MasterCardAttributes& GetMastercard() const { return m_mastercard; }
     inline bool MastercardHasBeenSet() const { return m_mastercardHasBeenSet; }
-    inline void SetMastercard(const MasterCardAttributes& value) { m_mastercardHasBeenSet = true; m_mastercard = value; }
-    inline void SetMastercard(MasterCardAttributes&& value) { m_mastercardHasBeenSet = true; m_mastercard = std::move(value); }
-    inline DerivationMethodAttributes& WithMastercard(const MasterCardAttributes& value) { SetMastercard(value); return *this;}
-    inline DerivationMethodAttributes& WithMastercard(MasterCardAttributes&& value) { SetMastercard(std::move(value)); return *this;}
+    template<typename MastercardT = MasterCardAttributes>
+    void SetMastercard(MastercardT&& value) { m_mastercardHasBeenSet = true; m_mastercard = std::forward<MastercardT>(value); }
+    template<typename MastercardT = MasterCardAttributes>
+    DerivationMethodAttributes& WithMastercard(MastercardT&& value) { SetMastercard(std::forward<MastercardT>(value)); return *this;}
     ///@}
   private:
 

@@ -32,7 +32,7 @@ namespace Model
   class AnnotationConsolidationConfig
   {
   public:
-    AWS_SAGEMAKER_API AnnotationConsolidationConfig();
+    AWS_SAGEMAKER_API AnnotationConsolidationConfig() = default;
     AWS_SAGEMAKER_API AnnotationConsolidationConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API AnnotationConsolidationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -642,14 +642,12 @@ namespace Model
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
      * </p> </li> </ul>
      */
-    inline const Aws::String& GetAnnotationConsolidationLambdaArn() const{ return m_annotationConsolidationLambdaArn; }
+    inline const Aws::String& GetAnnotationConsolidationLambdaArn() const { return m_annotationConsolidationLambdaArn; }
     inline bool AnnotationConsolidationLambdaArnHasBeenSet() const { return m_annotationConsolidationLambdaArnHasBeenSet; }
-    inline void SetAnnotationConsolidationLambdaArn(const Aws::String& value) { m_annotationConsolidationLambdaArnHasBeenSet = true; m_annotationConsolidationLambdaArn = value; }
-    inline void SetAnnotationConsolidationLambdaArn(Aws::String&& value) { m_annotationConsolidationLambdaArnHasBeenSet = true; m_annotationConsolidationLambdaArn = std::move(value); }
-    inline void SetAnnotationConsolidationLambdaArn(const char* value) { m_annotationConsolidationLambdaArnHasBeenSet = true; m_annotationConsolidationLambdaArn.assign(value); }
-    inline AnnotationConsolidationConfig& WithAnnotationConsolidationLambdaArn(const Aws::String& value) { SetAnnotationConsolidationLambdaArn(value); return *this;}
-    inline AnnotationConsolidationConfig& WithAnnotationConsolidationLambdaArn(Aws::String&& value) { SetAnnotationConsolidationLambdaArn(std::move(value)); return *this;}
-    inline AnnotationConsolidationConfig& WithAnnotationConsolidationLambdaArn(const char* value) { SetAnnotationConsolidationLambdaArn(value); return *this;}
+    template<typename AnnotationConsolidationLambdaArnT = Aws::String>
+    void SetAnnotationConsolidationLambdaArn(AnnotationConsolidationLambdaArnT&& value) { m_annotationConsolidationLambdaArnHasBeenSet = true; m_annotationConsolidationLambdaArn = std::forward<AnnotationConsolidationLambdaArnT>(value); }
+    template<typename AnnotationConsolidationLambdaArnT = Aws::String>
+    AnnotationConsolidationConfig& WithAnnotationConsolidationLambdaArn(AnnotationConsolidationLambdaArnT&& value) { SetAnnotationConsolidationLambdaArn(std::forward<AnnotationConsolidationLambdaArnT>(value)); return *this;}
     ///@}
   private:
 

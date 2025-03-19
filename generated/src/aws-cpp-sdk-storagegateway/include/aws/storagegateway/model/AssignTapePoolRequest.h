@@ -21,7 +21,7 @@ namespace Model
   class AssignTapePoolRequest : public StorageGatewayRequest
   {
   public:
-    AWS_STORAGEGATEWAY_API AssignTapePoolRequest();
+    AWS_STORAGEGATEWAY_API AssignTapePoolRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The unique Amazon Resource Name (ARN) of the virtual tape that you want to
      * add to the tape pool.</p>
      */
-    inline const Aws::String& GetTapeARN() const{ return m_tapeARN; }
+    inline const Aws::String& GetTapeARN() const { return m_tapeARN; }
     inline bool TapeARNHasBeenSet() const { return m_tapeARNHasBeenSet; }
-    inline void SetTapeARN(const Aws::String& value) { m_tapeARNHasBeenSet = true; m_tapeARN = value; }
-    inline void SetTapeARN(Aws::String&& value) { m_tapeARNHasBeenSet = true; m_tapeARN = std::move(value); }
-    inline void SetTapeARN(const char* value) { m_tapeARNHasBeenSet = true; m_tapeARN.assign(value); }
-    inline AssignTapePoolRequest& WithTapeARN(const Aws::String& value) { SetTapeARN(value); return *this;}
-    inline AssignTapePoolRequest& WithTapeARN(Aws::String&& value) { SetTapeARN(std::move(value)); return *this;}
-    inline AssignTapePoolRequest& WithTapeARN(const char* value) { SetTapeARN(value); return *this;}
+    template<typename TapeARNT = Aws::String>
+    void SetTapeARN(TapeARNT&& value) { m_tapeARNHasBeenSet = true; m_tapeARN = std::forward<TapeARNT>(value); }
+    template<typename TapeARNT = Aws::String>
+    AssignTapePoolRequest& WithTapeARN(TapeARNT&& value) { SetTapeARN(std::forward<TapeARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive)
      * that corresponds to the pool.</p>
      */
-    inline const Aws::String& GetPoolId() const{ return m_poolId; }
+    inline const Aws::String& GetPoolId() const { return m_poolId; }
     inline bool PoolIdHasBeenSet() const { return m_poolIdHasBeenSet; }
-    inline void SetPoolId(const Aws::String& value) { m_poolIdHasBeenSet = true; m_poolId = value; }
-    inline void SetPoolId(Aws::String&& value) { m_poolIdHasBeenSet = true; m_poolId = std::move(value); }
-    inline void SetPoolId(const char* value) { m_poolIdHasBeenSet = true; m_poolId.assign(value); }
-    inline AssignTapePoolRequest& WithPoolId(const Aws::String& value) { SetPoolId(value); return *this;}
-    inline AssignTapePoolRequest& WithPoolId(Aws::String&& value) { SetPoolId(std::move(value)); return *this;}
-    inline AssignTapePoolRequest& WithPoolId(const char* value) { SetPoolId(value); return *this;}
+    template<typename PoolIdT = Aws::String>
+    void SetPoolId(PoolIdT&& value) { m_poolIdHasBeenSet = true; m_poolId = std::forward<PoolIdT>(value); }
+    template<typename PoolIdT = Aws::String>
+    AssignTapePoolRequest& WithPoolId(PoolIdT&& value) { SetPoolId(std::forward<PoolIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,7 +73,7 @@ namespace Model
      * from the console.</p> <p>Valid values: <code>TRUE</code> | <code>FALSE</code>
      * </p>
      */
-    inline bool GetBypassGovernanceRetention() const{ return m_bypassGovernanceRetention; }
+    inline bool GetBypassGovernanceRetention() const { return m_bypassGovernanceRetention; }
     inline bool BypassGovernanceRetentionHasBeenSet() const { return m_bypassGovernanceRetentionHasBeenSet; }
     inline void SetBypassGovernanceRetention(bool value) { m_bypassGovernanceRetentionHasBeenSet = true; m_bypassGovernanceRetention = value; }
     inline AssignTapePoolRequest& WithBypassGovernanceRetention(bool value) { SetBypassGovernanceRetention(value); return *this;}
@@ -90,7 +86,7 @@ namespace Model
     Aws::String m_poolId;
     bool m_poolIdHasBeenSet = false;
 
-    bool m_bypassGovernanceRetention;
+    bool m_bypassGovernanceRetention{false};
     bool m_bypassGovernanceRetentionHasBeenSet = false;
   };
 

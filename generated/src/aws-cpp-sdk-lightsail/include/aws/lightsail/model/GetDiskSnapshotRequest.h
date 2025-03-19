@@ -21,7 +21,7 @@ namespace Model
   class GetDiskSnapshotRequest : public LightsailRequest
   {
   public:
-    AWS_LIGHTSAIL_API GetDiskSnapshotRequest();
+    AWS_LIGHTSAIL_API GetDiskSnapshotRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the disk snapshot (<code>my-disk-snapshot</code>).</p>
      */
-    inline const Aws::String& GetDiskSnapshotName() const{ return m_diskSnapshotName; }
+    inline const Aws::String& GetDiskSnapshotName() const { return m_diskSnapshotName; }
     inline bool DiskSnapshotNameHasBeenSet() const { return m_diskSnapshotNameHasBeenSet; }
-    inline void SetDiskSnapshotName(const Aws::String& value) { m_diskSnapshotNameHasBeenSet = true; m_diskSnapshotName = value; }
-    inline void SetDiskSnapshotName(Aws::String&& value) { m_diskSnapshotNameHasBeenSet = true; m_diskSnapshotName = std::move(value); }
-    inline void SetDiskSnapshotName(const char* value) { m_diskSnapshotNameHasBeenSet = true; m_diskSnapshotName.assign(value); }
-    inline GetDiskSnapshotRequest& WithDiskSnapshotName(const Aws::String& value) { SetDiskSnapshotName(value); return *this;}
-    inline GetDiskSnapshotRequest& WithDiskSnapshotName(Aws::String&& value) { SetDiskSnapshotName(std::move(value)); return *this;}
-    inline GetDiskSnapshotRequest& WithDiskSnapshotName(const char* value) { SetDiskSnapshotName(value); return *this;}
+    template<typename DiskSnapshotNameT = Aws::String>
+    void SetDiskSnapshotName(DiskSnapshotNameT&& value) { m_diskSnapshotNameHasBeenSet = true; m_diskSnapshotName = std::forward<DiskSnapshotNameT>(value); }
+    template<typename DiskSnapshotNameT = Aws::String>
+    GetDiskSnapshotRequest& WithDiskSnapshotName(DiskSnapshotNameT&& value) { SetDiskSnapshotName(std::forward<DiskSnapshotNameT>(value)); return *this;}
     ///@}
   private:
 

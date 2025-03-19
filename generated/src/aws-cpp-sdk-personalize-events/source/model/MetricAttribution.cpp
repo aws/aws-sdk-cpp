@@ -18,13 +18,7 @@ namespace PersonalizeEvents
 namespace Model
 {
 
-MetricAttribution::MetricAttribution() : 
-    m_eventAttributionSourceHasBeenSet(false)
-{
-}
-
 MetricAttribution::MetricAttribution(JsonView jsonValue)
-  : MetricAttribution()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MetricAttribution& MetricAttribution::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("eventAttributionSource"))
   {
     m_eventAttributionSource = jsonValue.GetString("eventAttributionSource");
-
     m_eventAttributionSourceHasBeenSet = true;
   }
-
   return *this;
 }
 

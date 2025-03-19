@@ -18,14 +18,7 @@ namespace IoTAnalytics
 namespace Model
 {
 
-IotEventsDestinationConfiguration::IotEventsDestinationConfiguration() : 
-    m_inputNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 IotEventsDestinationConfiguration::IotEventsDestinationConfiguration(JsonView jsonValue)
-  : IotEventsDestinationConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ IotEventsDestinationConfiguration& IotEventsDestinationConfiguration::operator =
   if(jsonValue.ValueExists("inputName"))
   {
     m_inputName = jsonValue.GetString("inputName");
-
     m_inputNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

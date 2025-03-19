@@ -33,7 +33,7 @@ namespace Model
   class AuthorizationData
   {
   public:
-    AWS_ECR_API AuthorizationData();
+    AWS_ECR_API AuthorizationData() = default;
     AWS_ECR_API AuthorizationData(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECR_API AuthorizationData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * <code>user:password</code> for private registry authentication using
      * <code>docker login</code>.</p>
      */
-    inline const Aws::String& GetAuthorizationToken() const{ return m_authorizationToken; }
+    inline const Aws::String& GetAuthorizationToken() const { return m_authorizationToken; }
     inline bool AuthorizationTokenHasBeenSet() const { return m_authorizationTokenHasBeenSet; }
-    inline void SetAuthorizationToken(const Aws::String& value) { m_authorizationTokenHasBeenSet = true; m_authorizationToken = value; }
-    inline void SetAuthorizationToken(Aws::String&& value) { m_authorizationTokenHasBeenSet = true; m_authorizationToken = std::move(value); }
-    inline void SetAuthorizationToken(const char* value) { m_authorizationTokenHasBeenSet = true; m_authorizationToken.assign(value); }
-    inline AuthorizationData& WithAuthorizationToken(const Aws::String& value) { SetAuthorizationToken(value); return *this;}
-    inline AuthorizationData& WithAuthorizationToken(Aws::String&& value) { SetAuthorizationToken(std::move(value)); return *this;}
-    inline AuthorizationData& WithAuthorizationToken(const char* value) { SetAuthorizationToken(value); return *this;}
+    template<typename AuthorizationTokenT = Aws::String>
+    void SetAuthorizationToken(AuthorizationTokenT&& value) { m_authorizationTokenHasBeenSet = true; m_authorizationToken = std::forward<AuthorizationTokenT>(value); }
+    template<typename AuthorizationTokenT = Aws::String>
+    AuthorizationData& WithAuthorizationToken(AuthorizationTokenT&& value) { SetAuthorizationToken(std::forward<AuthorizationTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +59,12 @@ namespace Model
      * <p>The Unix time in seconds and milliseconds when the authorization token
      * expires. Authorization tokens are valid for 12 hours.</p>
      */
-    inline const Aws::Utils::DateTime& GetExpiresAt() const{ return m_expiresAt; }
+    inline const Aws::Utils::DateTime& GetExpiresAt() const { return m_expiresAt; }
     inline bool ExpiresAtHasBeenSet() const { return m_expiresAtHasBeenSet; }
-    inline void SetExpiresAt(const Aws::Utils::DateTime& value) { m_expiresAtHasBeenSet = true; m_expiresAt = value; }
-    inline void SetExpiresAt(Aws::Utils::DateTime&& value) { m_expiresAtHasBeenSet = true; m_expiresAt = std::move(value); }
-    inline AuthorizationData& WithExpiresAt(const Aws::Utils::DateTime& value) { SetExpiresAt(value); return *this;}
-    inline AuthorizationData& WithExpiresAt(Aws::Utils::DateTime&& value) { SetExpiresAt(std::move(value)); return *this;}
+    template<typename ExpiresAtT = Aws::Utils::DateTime>
+    void SetExpiresAt(ExpiresAtT&& value) { m_expiresAtHasBeenSet = true; m_expiresAt = std::forward<ExpiresAtT>(value); }
+    template<typename ExpiresAtT = Aws::Utils::DateTime>
+    AuthorizationData& WithExpiresAt(ExpiresAtT&& value) { SetExpiresAt(std::forward<ExpiresAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,21 +74,19 @@ namespace Model
      * <code>https://aws_account_id.dkr.ecr.region.amazonaws.com</code>. For example,
      * <code>https://012345678910.dkr.ecr.us-east-1.amazonaws.com</code>.. </p>
      */
-    inline const Aws::String& GetProxyEndpoint() const{ return m_proxyEndpoint; }
+    inline const Aws::String& GetProxyEndpoint() const { return m_proxyEndpoint; }
     inline bool ProxyEndpointHasBeenSet() const { return m_proxyEndpointHasBeenSet; }
-    inline void SetProxyEndpoint(const Aws::String& value) { m_proxyEndpointHasBeenSet = true; m_proxyEndpoint = value; }
-    inline void SetProxyEndpoint(Aws::String&& value) { m_proxyEndpointHasBeenSet = true; m_proxyEndpoint = std::move(value); }
-    inline void SetProxyEndpoint(const char* value) { m_proxyEndpointHasBeenSet = true; m_proxyEndpoint.assign(value); }
-    inline AuthorizationData& WithProxyEndpoint(const Aws::String& value) { SetProxyEndpoint(value); return *this;}
-    inline AuthorizationData& WithProxyEndpoint(Aws::String&& value) { SetProxyEndpoint(std::move(value)); return *this;}
-    inline AuthorizationData& WithProxyEndpoint(const char* value) { SetProxyEndpoint(value); return *this;}
+    template<typename ProxyEndpointT = Aws::String>
+    void SetProxyEndpoint(ProxyEndpointT&& value) { m_proxyEndpointHasBeenSet = true; m_proxyEndpoint = std::forward<ProxyEndpointT>(value); }
+    template<typename ProxyEndpointT = Aws::String>
+    AuthorizationData& WithProxyEndpoint(ProxyEndpointT&& value) { SetProxyEndpoint(std::forward<ProxyEndpointT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_authorizationToken;
     bool m_authorizationTokenHasBeenSet = false;
 
-    Aws::Utils::DateTime m_expiresAt;
+    Aws::Utils::DateTime m_expiresAt{};
     bool m_expiresAtHasBeenSet = false;
 
     Aws::String m_proxyEndpoint;

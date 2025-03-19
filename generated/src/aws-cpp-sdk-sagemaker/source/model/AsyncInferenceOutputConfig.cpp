@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-AsyncInferenceOutputConfig::AsyncInferenceOutputConfig() : 
-    m_kmsKeyIdHasBeenSet(false),
-    m_s3OutputPathHasBeenSet(false),
-    m_notificationConfigHasBeenSet(false),
-    m_s3FailurePathHasBeenSet(false)
-{
-}
-
 AsyncInferenceOutputConfig::AsyncInferenceOutputConfig(JsonView jsonValue)
-  : AsyncInferenceOutputConfig()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ AsyncInferenceOutputConfig& AsyncInferenceOutputConfig::operator =(JsonView json
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3OutputPath"))
   {
     m_s3OutputPath = jsonValue.GetString("S3OutputPath");
-
     m_s3OutputPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotificationConfig"))
   {
     m_notificationConfig = jsonValue.GetObject("NotificationConfig");
-
     m_notificationConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3FailurePath"))
   {
     m_s3FailurePath = jsonValue.GetString("S3FailurePath");
-
     m_s3FailurePathHasBeenSet = true;
   }
-
   return *this;
 }
 

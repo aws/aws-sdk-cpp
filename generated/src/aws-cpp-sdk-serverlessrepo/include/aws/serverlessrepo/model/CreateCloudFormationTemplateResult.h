@@ -28,7 +28,7 @@ namespace Model
   class CreateCloudFormationTemplateResult
   {
   public:
-    AWS_SERVERLESSAPPLICATIONREPOSITORY_API CreateCloudFormationTemplateResult();
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API CreateCloudFormationTemplateResult() = default;
     AWS_SERVERLESSAPPLICATIONREPOSITORY_API CreateCloudFormationTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SERVERLESSAPPLICATIONREPOSITORY_API CreateCloudFormationTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,26 +37,22 @@ namespace Model
     /**
      * <p>The application Amazon Resource Name (ARN).</p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationId.assign(value); }
-    inline CreateCloudFormationTemplateResult& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline CreateCloudFormationTemplateResult& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline CreateCloudFormationTemplateResult& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    CreateCloudFormationTemplateResult& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time this resource was created.</p>
      */
-    inline const Aws::String& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::String& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::String&& value) { m_creationTime = std::move(value); }
-    inline void SetCreationTime(const char* value) { m_creationTime.assign(value); }
-    inline CreateCloudFormationTemplateResult& WithCreationTime(const Aws::String& value) { SetCreationTime(value); return *this;}
-    inline CreateCloudFormationTemplateResult& WithCreationTime(Aws::String&& value) { SetCreationTime(std::move(value)); return *this;}
-    inline CreateCloudFormationTemplateResult& WithCreationTime(const char* value) { SetCreationTime(value); return *this;}
+    inline const Aws::String& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::String>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::String>
+    CreateCloudFormationTemplateResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,13 +61,11 @@ namespace Model
  expire 1 hour after
      * creation.</p>
      */
-    inline const Aws::String& GetExpirationTime() const{ return m_expirationTime; }
-    inline void SetExpirationTime(const Aws::String& value) { m_expirationTime = value; }
-    inline void SetExpirationTime(Aws::String&& value) { m_expirationTime = std::move(value); }
-    inline void SetExpirationTime(const char* value) { m_expirationTime.assign(value); }
-    inline CreateCloudFormationTemplateResult& WithExpirationTime(const Aws::String& value) { SetExpirationTime(value); return *this;}
-    inline CreateCloudFormationTemplateResult& WithExpirationTime(Aws::String&& value) { SetExpirationTime(std::move(value)); return *this;}
-    inline CreateCloudFormationTemplateResult& WithExpirationTime(const char* value) { SetExpirationTime(value); return *this;}
+    inline const Aws::String& GetExpirationTime() const { return m_expirationTime; }
+    template<typename ExpirationTimeT = Aws::String>
+    void SetExpirationTime(ExpirationTimeT&& value) { m_expirationTimeHasBeenSet = true; m_expirationTime = std::forward<ExpirationTimeT>(value); }
+    template<typename ExpirationTimeT = Aws::String>
+    CreateCloudFormationTemplateResult& WithExpirationTime(ExpirationTimeT&& value) { SetExpirationTime(std::forward<ExpirationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,13 +75,11 @@ namespace Model
      * href="https://semver.org/">https://semver.org/</a>
  </p>
      */
-    inline const Aws::String& GetSemanticVersion() const{ return m_semanticVersion; }
-    inline void SetSemanticVersion(const Aws::String& value) { m_semanticVersion = value; }
-    inline void SetSemanticVersion(Aws::String&& value) { m_semanticVersion = std::move(value); }
-    inline void SetSemanticVersion(const char* value) { m_semanticVersion.assign(value); }
-    inline CreateCloudFormationTemplateResult& WithSemanticVersion(const Aws::String& value) { SetSemanticVersion(value); return *this;}
-    inline CreateCloudFormationTemplateResult& WithSemanticVersion(Aws::String&& value) { SetSemanticVersion(std::move(value)); return *this;}
-    inline CreateCloudFormationTemplateResult& WithSemanticVersion(const char* value) { SetSemanticVersion(value); return *this;}
+    inline const Aws::String& GetSemanticVersion() const { return m_semanticVersion; }
+    template<typename SemanticVersionT = Aws::String>
+    void SetSemanticVersion(SemanticVersionT&& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = std::forward<SemanticVersionT>(value); }
+    template<typename SemanticVersionT = Aws::String>
+    CreateCloudFormationTemplateResult& WithSemanticVersion(SemanticVersionT&& value) { SetSemanticVersion(std::forward<SemanticVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,11 +88,9 @@ namespace Model
      * ACTIVE | EXPIRED
  </p>
      */
-    inline const Status& GetStatus() const{ return m_status; }
-    inline void SetStatus(const Status& value) { m_status = value; }
-    inline void SetStatus(Status&& value) { m_status = std::move(value); }
-    inline CreateCloudFormationTemplateResult& WithStatus(const Status& value) { SetStatus(value); return *this;}
-    inline CreateCloudFormationTemplateResult& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
+    inline Status GetStatus() const { return m_status; }
+    inline void SetStatus(Status value) { m_statusHasBeenSet = true; m_status = value; }
+    inline CreateCloudFormationTemplateResult& WithStatus(Status value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -108,13 +98,11 @@ namespace Model
      * <p>The UUID returned by CreateCloudFormationTemplate.</p><p>Pattern:
      * [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
      */
-    inline const Aws::String& GetTemplateId() const{ return m_templateId; }
-    inline void SetTemplateId(const Aws::String& value) { m_templateId = value; }
-    inline void SetTemplateId(Aws::String&& value) { m_templateId = std::move(value); }
-    inline void SetTemplateId(const char* value) { m_templateId.assign(value); }
-    inline CreateCloudFormationTemplateResult& WithTemplateId(const Aws::String& value) { SetTemplateId(value); return *this;}
-    inline CreateCloudFormationTemplateResult& WithTemplateId(Aws::String&& value) { SetTemplateId(std::move(value)); return *this;}
-    inline CreateCloudFormationTemplateResult& WithTemplateId(const char* value) { SetTemplateId(value); return *this;}
+    inline const Aws::String& GetTemplateId() const { return m_templateId; }
+    template<typename TemplateIdT = Aws::String>
+    void SetTemplateId(TemplateIdT&& value) { m_templateIdHasBeenSet = true; m_templateId = std::forward<TemplateIdT>(value); }
+    template<typename TemplateIdT = Aws::String>
+    CreateCloudFormationTemplateResult& WithTemplateId(TemplateIdT&& value) { SetTemplateId(std::forward<TemplateIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -123,42 +111,46 @@ namespace Model
  AWS
      * CloudFormation.</p>
      */
-    inline const Aws::String& GetTemplateUrl() const{ return m_templateUrl; }
-    inline void SetTemplateUrl(const Aws::String& value) { m_templateUrl = value; }
-    inline void SetTemplateUrl(Aws::String&& value) { m_templateUrl = std::move(value); }
-    inline void SetTemplateUrl(const char* value) { m_templateUrl.assign(value); }
-    inline CreateCloudFormationTemplateResult& WithTemplateUrl(const Aws::String& value) { SetTemplateUrl(value); return *this;}
-    inline CreateCloudFormationTemplateResult& WithTemplateUrl(Aws::String&& value) { SetTemplateUrl(std::move(value)); return *this;}
-    inline CreateCloudFormationTemplateResult& WithTemplateUrl(const char* value) { SetTemplateUrl(value); return *this;}
+    inline const Aws::String& GetTemplateUrl() const { return m_templateUrl; }
+    template<typename TemplateUrlT = Aws::String>
+    void SetTemplateUrl(TemplateUrlT&& value) { m_templateUrlHasBeenSet = true; m_templateUrl = std::forward<TemplateUrlT>(value); }
+    template<typename TemplateUrlT = Aws::String>
+    CreateCloudFormationTemplateResult& WithTemplateUrl(TemplateUrlT&& value) { SetTemplateUrl(std::forward<TemplateUrlT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateCloudFormationTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateCloudFormationTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateCloudFormationTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateCloudFormationTemplateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_applicationId;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_creationTime;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_expirationTime;
+    bool m_expirationTimeHasBeenSet = false;
 
     Aws::String m_semanticVersion;
+    bool m_semanticVersionHasBeenSet = false;
 
-    Status m_status;
+    Status m_status{Status::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_templateId;
+    bool m_templateIdHasBeenSet = false;
 
     Aws::String m_templateUrl;
+    bool m_templateUrlHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SendChatIntegrationEventResult::SendChatIntegrationEventResult() : 
-    m_newChatCreated(false)
-{
-}
-
 SendChatIntegrationEventResult::SendChatIntegrationEventResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : SendChatIntegrationEventResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ SendChatIntegrationEventResult& SendChatIntegrationEventResult::operator =(const
   if(jsonValue.ValueExists("InitialContactId"))
   {
     m_initialContactId = jsonValue.GetString("InitialContactId");
-
+    m_initialContactIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NewChatCreated"))
   {
     m_newChatCreated = jsonValue.GetBool("NewChatCreated");
-
+    m_newChatCreatedHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

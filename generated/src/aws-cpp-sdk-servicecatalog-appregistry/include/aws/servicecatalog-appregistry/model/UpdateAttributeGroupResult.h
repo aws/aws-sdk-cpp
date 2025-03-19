@@ -28,7 +28,7 @@ namespace Model
   class UpdateAttributeGroupResult
   {
   public:
-    AWS_APPREGISTRY_API UpdateAttributeGroupResult();
+    AWS_APPREGISTRY_API UpdateAttributeGroupResult() = default;
     AWS_APPREGISTRY_API UpdateAttributeGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPREGISTRY_API UpdateAttributeGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The updated information of the attribute group.</p>
      */
-    inline const AttributeGroup& GetAttributeGroup() const{ return m_attributeGroup; }
-    inline void SetAttributeGroup(const AttributeGroup& value) { m_attributeGroup = value; }
-    inline void SetAttributeGroup(AttributeGroup&& value) { m_attributeGroup = std::move(value); }
-    inline UpdateAttributeGroupResult& WithAttributeGroup(const AttributeGroup& value) { SetAttributeGroup(value); return *this;}
-    inline UpdateAttributeGroupResult& WithAttributeGroup(AttributeGroup&& value) { SetAttributeGroup(std::move(value)); return *this;}
+    inline const AttributeGroup& GetAttributeGroup() const { return m_attributeGroup; }
+    template<typename AttributeGroupT = AttributeGroup>
+    void SetAttributeGroup(AttributeGroupT&& value) { m_attributeGroupHasBeenSet = true; m_attributeGroup = std::forward<AttributeGroupT>(value); }
+    template<typename AttributeGroupT = AttributeGroup>
+    UpdateAttributeGroupResult& WithAttributeGroup(AttributeGroupT&& value) { SetAttributeGroup(std::forward<AttributeGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateAttributeGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateAttributeGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateAttributeGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateAttributeGroupResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AttributeGroup m_attributeGroup;
+    bool m_attributeGroupHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

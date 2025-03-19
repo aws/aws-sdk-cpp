@@ -18,57 +18,7 @@ namespace DeviceFarm
 namespace Model
 {
 
-Run::Run() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(TestType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_platform(DevicePlatform::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_createdHasBeenSet(false),
-    m_status(ExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_result(ExecutionResult::NOT_SET),
-    m_resultHasBeenSet(false),
-    m_startedHasBeenSet(false),
-    m_stoppedHasBeenSet(false),
-    m_countersHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_totalJobs(0),
-    m_totalJobsHasBeenSet(false),
-    m_completedJobs(0),
-    m_completedJobsHasBeenSet(false),
-    m_billingMethod(BillingMethod::NOT_SET),
-    m_billingMethodHasBeenSet(false),
-    m_deviceMinutesHasBeenSet(false),
-    m_networkProfileHasBeenSet(false),
-    m_deviceProxyHasBeenSet(false),
-    m_parsingResultUrlHasBeenSet(false),
-    m_resultCode(ExecutionResultCode::NOT_SET),
-    m_resultCodeHasBeenSet(false),
-    m_seed(0),
-    m_seedHasBeenSet(false),
-    m_appUploadHasBeenSet(false),
-    m_eventCount(0),
-    m_eventCountHasBeenSet(false),
-    m_jobTimeoutMinutes(0),
-    m_jobTimeoutMinutesHasBeenSet(false),
-    m_devicePoolArnHasBeenSet(false),
-    m_localeHasBeenSet(false),
-    m_radiosHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_customerArtifactPathsHasBeenSet(false),
-    m_webUrlHasBeenSet(false),
-    m_skipAppResign(false),
-    m_skipAppResignHasBeenSet(false),
-    m_testSpecArnHasBeenSet(false),
-    m_deviceSelectionResultHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
-{
-}
-
 Run::Run(JsonView jsonValue)
-  : Run()
 {
   *this = jsonValue;
 }
@@ -78,234 +28,168 @@ Run& Run::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = TestTypeMapper::GetTestTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("platform"))
   {
     m_platform = DevicePlatformMapper::GetDevicePlatformForName(jsonValue.GetString("platform"));
-
     m_platformHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("created"))
   {
     m_created = jsonValue.GetDouble("created");
-
     m_createdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ExecutionStatusMapper::GetExecutionStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("result"))
   {
     m_result = ExecutionResultMapper::GetExecutionResultForName(jsonValue.GetString("result"));
-
     m_resultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("started"))
   {
     m_started = jsonValue.GetDouble("started");
-
     m_startedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stopped"))
   {
     m_stopped = jsonValue.GetDouble("stopped");
-
     m_stoppedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("counters"))
   {
     m_counters = jsonValue.GetObject("counters");
-
     m_countersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalJobs"))
   {
     m_totalJobs = jsonValue.GetInteger("totalJobs");
-
     m_totalJobsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("completedJobs"))
   {
     m_completedJobs = jsonValue.GetInteger("completedJobs");
-
     m_completedJobsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("billingMethod"))
   {
     m_billingMethod = BillingMethodMapper::GetBillingMethodForName(jsonValue.GetString("billingMethod"));
-
     m_billingMethodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deviceMinutes"))
   {
     m_deviceMinutes = jsonValue.GetObject("deviceMinutes");
-
     m_deviceMinutesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkProfile"))
   {
     m_networkProfile = jsonValue.GetObject("networkProfile");
-
     m_networkProfileHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deviceProxy"))
   {
     m_deviceProxy = jsonValue.GetObject("deviceProxy");
-
     m_deviceProxyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parsingResultUrl"))
   {
     m_parsingResultUrl = jsonValue.GetString("parsingResultUrl");
-
     m_parsingResultUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resultCode"))
   {
     m_resultCode = ExecutionResultCodeMapper::GetExecutionResultCodeForName(jsonValue.GetString("resultCode"));
-
     m_resultCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("seed"))
   {
     m_seed = jsonValue.GetInteger("seed");
-
     m_seedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("appUpload"))
   {
     m_appUpload = jsonValue.GetString("appUpload");
-
     m_appUploadHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventCount"))
   {
     m_eventCount = jsonValue.GetInteger("eventCount");
-
     m_eventCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobTimeoutMinutes"))
   {
     m_jobTimeoutMinutes = jsonValue.GetInteger("jobTimeoutMinutes");
-
     m_jobTimeoutMinutesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("devicePoolArn"))
   {
     m_devicePoolArn = jsonValue.GetString("devicePoolArn");
-
     m_devicePoolArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("locale"))
   {
     m_locale = jsonValue.GetString("locale");
-
     m_localeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("radios"))
   {
     m_radios = jsonValue.GetObject("radios");
-
     m_radiosHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("location"))
   {
     m_location = jsonValue.GetObject("location");
-
     m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customerArtifactPaths"))
   {
     m_customerArtifactPaths = jsonValue.GetObject("customerArtifactPaths");
-
     m_customerArtifactPathsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("webUrl"))
   {
     m_webUrl = jsonValue.GetString("webUrl");
-
     m_webUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("skipAppResign"))
   {
     m_skipAppResign = jsonValue.GetBool("skipAppResign");
-
     m_skipAppResignHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("testSpecArn"))
   {
     m_testSpecArn = jsonValue.GetString("testSpecArn");
-
     m_testSpecArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deviceSelectionResult"))
   {
     m_deviceSelectionResult = jsonValue.GetObject("deviceSelectionResult");
-
     m_deviceSelectionResultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcConfig"))
   {
     m_vpcConfig = jsonValue.GetObject("vpcConfig");
-
     m_vpcConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

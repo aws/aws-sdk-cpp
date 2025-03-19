@@ -26,7 +26,7 @@ namespace Model
   class ProvisionProductRequest : public ServiceCatalogRequest
   {
   public:
-    AWS_SERVICECATALOG_API ProvisionProductRequest();
+    AWS_SERVICECATALOG_API ProvisionProductRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,42 +44,36 @@ namespace Model
      * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
      * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
      */
-    inline const Aws::String& GetAcceptLanguage() const{ return m_acceptLanguage; }
+    inline const Aws::String& GetAcceptLanguage() const { return m_acceptLanguage; }
     inline bool AcceptLanguageHasBeenSet() const { return m_acceptLanguageHasBeenSet; }
-    inline void SetAcceptLanguage(const Aws::String& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
-    inline void SetAcceptLanguage(Aws::String&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = std::move(value); }
-    inline void SetAcceptLanguage(const char* value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage.assign(value); }
-    inline ProvisionProductRequest& WithAcceptLanguage(const Aws::String& value) { SetAcceptLanguage(value); return *this;}
-    inline ProvisionProductRequest& WithAcceptLanguage(Aws::String&& value) { SetAcceptLanguage(std::move(value)); return *this;}
-    inline ProvisionProductRequest& WithAcceptLanguage(const char* value) { SetAcceptLanguage(value); return *this;}
+    template<typename AcceptLanguageT = Aws::String>
+    void SetAcceptLanguage(AcceptLanguageT&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = std::forward<AcceptLanguageT>(value); }
+    template<typename AcceptLanguageT = Aws::String>
+    ProvisionProductRequest& WithAcceptLanguage(AcceptLanguageT&& value) { SetAcceptLanguage(std::forward<AcceptLanguageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The product identifier. You must provide the name or ID, but not both.</p>
      */
-    inline const Aws::String& GetProductId() const{ return m_productId; }
+    inline const Aws::String& GetProductId() const { return m_productId; }
     inline bool ProductIdHasBeenSet() const { return m_productIdHasBeenSet; }
-    inline void SetProductId(const Aws::String& value) { m_productIdHasBeenSet = true; m_productId = value; }
-    inline void SetProductId(Aws::String&& value) { m_productIdHasBeenSet = true; m_productId = std::move(value); }
-    inline void SetProductId(const char* value) { m_productIdHasBeenSet = true; m_productId.assign(value); }
-    inline ProvisionProductRequest& WithProductId(const Aws::String& value) { SetProductId(value); return *this;}
-    inline ProvisionProductRequest& WithProductId(Aws::String&& value) { SetProductId(std::move(value)); return *this;}
-    inline ProvisionProductRequest& WithProductId(const char* value) { SetProductId(value); return *this;}
+    template<typename ProductIdT = Aws::String>
+    void SetProductId(ProductIdT&& value) { m_productIdHasBeenSet = true; m_productId = std::forward<ProductIdT>(value); }
+    template<typename ProductIdT = Aws::String>
+    ProvisionProductRequest& WithProductId(ProductIdT&& value) { SetProductId(std::forward<ProductIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the product. You must provide the name or ID, but not both.</p>
      */
-    inline const Aws::String& GetProductName() const{ return m_productName; }
+    inline const Aws::String& GetProductName() const { return m_productName; }
     inline bool ProductNameHasBeenSet() const { return m_productNameHasBeenSet; }
-    inline void SetProductName(const Aws::String& value) { m_productNameHasBeenSet = true; m_productName = value; }
-    inline void SetProductName(Aws::String&& value) { m_productNameHasBeenSet = true; m_productName = std::move(value); }
-    inline void SetProductName(const char* value) { m_productNameHasBeenSet = true; m_productName.assign(value); }
-    inline ProvisionProductRequest& WithProductName(const Aws::String& value) { SetProductName(value); return *this;}
-    inline ProvisionProductRequest& WithProductName(Aws::String&& value) { SetProductName(std::move(value)); return *this;}
-    inline ProvisionProductRequest& WithProductName(const char* value) { SetProductName(value); return *this;}
+    template<typename ProductNameT = Aws::String>
+    void SetProductName(ProductNameT&& value) { m_productNameHasBeenSet = true; m_productName = std::forward<ProductNameT>(value); }
+    template<typename ProductNameT = Aws::String>
+    ProvisionProductRequest& WithProductName(ProductNameT&& value) { SetProductName(std::forward<ProductNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,14 +81,12 @@ namespace Model
      * <p>The identifier of the provisioning artifact. You must provide the name or ID,
      * but not both.</p>
      */
-    inline const Aws::String& GetProvisioningArtifactId() const{ return m_provisioningArtifactId; }
+    inline const Aws::String& GetProvisioningArtifactId() const { return m_provisioningArtifactId; }
     inline bool ProvisioningArtifactIdHasBeenSet() const { return m_provisioningArtifactIdHasBeenSet; }
-    inline void SetProvisioningArtifactId(const Aws::String& value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId = value; }
-    inline void SetProvisioningArtifactId(Aws::String&& value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId = std::move(value); }
-    inline void SetProvisioningArtifactId(const char* value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId.assign(value); }
-    inline ProvisionProductRequest& WithProvisioningArtifactId(const Aws::String& value) { SetProvisioningArtifactId(value); return *this;}
-    inline ProvisionProductRequest& WithProvisioningArtifactId(Aws::String&& value) { SetProvisioningArtifactId(std::move(value)); return *this;}
-    inline ProvisionProductRequest& WithProvisioningArtifactId(const char* value) { SetProvisioningArtifactId(value); return *this;}
+    template<typename ProvisioningArtifactIdT = Aws::String>
+    void SetProvisioningArtifactId(ProvisioningArtifactIdT&& value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId = std::forward<ProvisioningArtifactIdT>(value); }
+    template<typename ProvisioningArtifactIdT = Aws::String>
+    ProvisionProductRequest& WithProvisioningArtifactId(ProvisioningArtifactIdT&& value) { SetProvisioningArtifactId(std::forward<ProvisioningArtifactIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,14 +94,12 @@ namespace Model
      * <p>The name of the provisioning artifact. You must provide the name or ID, but
      * not both.</p>
      */
-    inline const Aws::String& GetProvisioningArtifactName() const{ return m_provisioningArtifactName; }
+    inline const Aws::String& GetProvisioningArtifactName() const { return m_provisioningArtifactName; }
     inline bool ProvisioningArtifactNameHasBeenSet() const { return m_provisioningArtifactNameHasBeenSet; }
-    inline void SetProvisioningArtifactName(const Aws::String& value) { m_provisioningArtifactNameHasBeenSet = true; m_provisioningArtifactName = value; }
-    inline void SetProvisioningArtifactName(Aws::String&& value) { m_provisioningArtifactNameHasBeenSet = true; m_provisioningArtifactName = std::move(value); }
-    inline void SetProvisioningArtifactName(const char* value) { m_provisioningArtifactNameHasBeenSet = true; m_provisioningArtifactName.assign(value); }
-    inline ProvisionProductRequest& WithProvisioningArtifactName(const Aws::String& value) { SetProvisioningArtifactName(value); return *this;}
-    inline ProvisionProductRequest& WithProvisioningArtifactName(Aws::String&& value) { SetProvisioningArtifactName(std::move(value)); return *this;}
-    inline ProvisionProductRequest& WithProvisioningArtifactName(const char* value) { SetProvisioningArtifactName(value); return *this;}
+    template<typename ProvisioningArtifactNameT = Aws::String>
+    void SetProvisioningArtifactName(ProvisioningArtifactNameT&& value) { m_provisioningArtifactNameHasBeenSet = true; m_provisioningArtifactName = std::forward<ProvisioningArtifactNameT>(value); }
+    template<typename ProvisioningArtifactNameT = Aws::String>
+    ProvisionProductRequest& WithProvisioningArtifactName(ProvisioningArtifactNameT&& value) { SetProvisioningArtifactName(std::forward<ProvisioningArtifactNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -119,28 +109,24 @@ namespace Model
      * paths for a product, use <a>ListLaunchPaths</a>. You must provide the name or
      * ID, but not both.</p>
      */
-    inline const Aws::String& GetPathId() const{ return m_pathId; }
+    inline const Aws::String& GetPathId() const { return m_pathId; }
     inline bool PathIdHasBeenSet() const { return m_pathIdHasBeenSet; }
-    inline void SetPathId(const Aws::String& value) { m_pathIdHasBeenSet = true; m_pathId = value; }
-    inline void SetPathId(Aws::String&& value) { m_pathIdHasBeenSet = true; m_pathId = std::move(value); }
-    inline void SetPathId(const char* value) { m_pathIdHasBeenSet = true; m_pathId.assign(value); }
-    inline ProvisionProductRequest& WithPathId(const Aws::String& value) { SetPathId(value); return *this;}
-    inline ProvisionProductRequest& WithPathId(Aws::String&& value) { SetPathId(std::move(value)); return *this;}
-    inline ProvisionProductRequest& WithPathId(const char* value) { SetPathId(value); return *this;}
+    template<typename PathIdT = Aws::String>
+    void SetPathId(PathIdT&& value) { m_pathIdHasBeenSet = true; m_pathId = std::forward<PathIdT>(value); }
+    template<typename PathIdT = Aws::String>
+    ProvisionProductRequest& WithPathId(PathIdT&& value) { SetPathId(std::forward<PathIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the path. You must provide the name or ID, but not both.</p>
      */
-    inline const Aws::String& GetPathName() const{ return m_pathName; }
+    inline const Aws::String& GetPathName() const { return m_pathName; }
     inline bool PathNameHasBeenSet() const { return m_pathNameHasBeenSet; }
-    inline void SetPathName(const Aws::String& value) { m_pathNameHasBeenSet = true; m_pathName = value; }
-    inline void SetPathName(Aws::String&& value) { m_pathNameHasBeenSet = true; m_pathName = std::move(value); }
-    inline void SetPathName(const char* value) { m_pathNameHasBeenSet = true; m_pathName.assign(value); }
-    inline ProvisionProductRequest& WithPathName(const Aws::String& value) { SetPathName(value); return *this;}
-    inline ProvisionProductRequest& WithPathName(Aws::String&& value) { SetPathName(std::move(value)); return *this;}
-    inline ProvisionProductRequest& WithPathName(const char* value) { SetPathName(value); return *this;}
+    template<typename PathNameT = Aws::String>
+    void SetPathName(PathNameT&& value) { m_pathNameHasBeenSet = true; m_pathName = std::forward<PathNameT>(value); }
+    template<typename PathNameT = Aws::String>
+    ProvisionProductRequest& WithPathName(PathNameT&& value) { SetPathName(std::forward<PathNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -149,14 +135,12 @@ namespace Model
      * for the Amazon Web Services account and cannot be updated after the product is
      * provisioned.</p>
      */
-    inline const Aws::String& GetProvisionedProductName() const{ return m_provisionedProductName; }
+    inline const Aws::String& GetProvisionedProductName() const { return m_provisionedProductName; }
     inline bool ProvisionedProductNameHasBeenSet() const { return m_provisionedProductNameHasBeenSet; }
-    inline void SetProvisionedProductName(const Aws::String& value) { m_provisionedProductNameHasBeenSet = true; m_provisionedProductName = value; }
-    inline void SetProvisionedProductName(Aws::String&& value) { m_provisionedProductNameHasBeenSet = true; m_provisionedProductName = std::move(value); }
-    inline void SetProvisionedProductName(const char* value) { m_provisionedProductNameHasBeenSet = true; m_provisionedProductName.assign(value); }
-    inline ProvisionProductRequest& WithProvisionedProductName(const Aws::String& value) { SetProvisionedProductName(value); return *this;}
-    inline ProvisionProductRequest& WithProvisionedProductName(Aws::String&& value) { SetProvisionedProductName(std::move(value)); return *this;}
-    inline ProvisionProductRequest& WithProvisionedProductName(const char* value) { SetProvisionedProductName(value); return *this;}
+    template<typename ProvisionedProductNameT = Aws::String>
+    void SetProvisionedProductName(ProvisionedProductNameT&& value) { m_provisionedProductNameHasBeenSet = true; m_provisionedProductName = std::forward<ProvisionedProductNameT>(value); }
+    template<typename ProvisionedProductNameT = Aws::String>
+    ProvisionProductRequest& WithProvisionedProductName(ProvisionedProductNameT&& value) { SetProvisionedProductName(std::forward<ProvisionedProductNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -164,14 +148,14 @@ namespace Model
      * <p>Parameters specified by the administrator that are required for provisioning
      * the product.</p>
      */
-    inline const Aws::Vector<ProvisioningParameter>& GetProvisioningParameters() const{ return m_provisioningParameters; }
+    inline const Aws::Vector<ProvisioningParameter>& GetProvisioningParameters() const { return m_provisioningParameters; }
     inline bool ProvisioningParametersHasBeenSet() const { return m_provisioningParametersHasBeenSet; }
-    inline void SetProvisioningParameters(const Aws::Vector<ProvisioningParameter>& value) { m_provisioningParametersHasBeenSet = true; m_provisioningParameters = value; }
-    inline void SetProvisioningParameters(Aws::Vector<ProvisioningParameter>&& value) { m_provisioningParametersHasBeenSet = true; m_provisioningParameters = std::move(value); }
-    inline ProvisionProductRequest& WithProvisioningParameters(const Aws::Vector<ProvisioningParameter>& value) { SetProvisioningParameters(value); return *this;}
-    inline ProvisionProductRequest& WithProvisioningParameters(Aws::Vector<ProvisioningParameter>&& value) { SetProvisioningParameters(std::move(value)); return *this;}
-    inline ProvisionProductRequest& AddProvisioningParameters(const ProvisioningParameter& value) { m_provisioningParametersHasBeenSet = true; m_provisioningParameters.push_back(value); return *this; }
-    inline ProvisionProductRequest& AddProvisioningParameters(ProvisioningParameter&& value) { m_provisioningParametersHasBeenSet = true; m_provisioningParameters.push_back(std::move(value)); return *this; }
+    template<typename ProvisioningParametersT = Aws::Vector<ProvisioningParameter>>
+    void SetProvisioningParameters(ProvisioningParametersT&& value) { m_provisioningParametersHasBeenSet = true; m_provisioningParameters = std::forward<ProvisioningParametersT>(value); }
+    template<typename ProvisioningParametersT = Aws::Vector<ProvisioningParameter>>
+    ProvisionProductRequest& WithProvisioningParameters(ProvisioningParametersT&& value) { SetProvisioningParameters(std::forward<ProvisioningParametersT>(value)); return *this;}
+    template<typename ProvisioningParametersT = ProvisioningParameter>
+    ProvisionProductRequest& AddProvisioningParameters(ProvisioningParametersT&& value) { m_provisioningParametersHasBeenSet = true; m_provisioningParameters.emplace_back(std::forward<ProvisioningParametersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -179,26 +163,26 @@ namespace Model
      * <p>An object that contains information about the provisioning preferences for a
      * stack set.</p>
      */
-    inline const ProvisioningPreferences& GetProvisioningPreferences() const{ return m_provisioningPreferences; }
+    inline const ProvisioningPreferences& GetProvisioningPreferences() const { return m_provisioningPreferences; }
     inline bool ProvisioningPreferencesHasBeenSet() const { return m_provisioningPreferencesHasBeenSet; }
-    inline void SetProvisioningPreferences(const ProvisioningPreferences& value) { m_provisioningPreferencesHasBeenSet = true; m_provisioningPreferences = value; }
-    inline void SetProvisioningPreferences(ProvisioningPreferences&& value) { m_provisioningPreferencesHasBeenSet = true; m_provisioningPreferences = std::move(value); }
-    inline ProvisionProductRequest& WithProvisioningPreferences(const ProvisioningPreferences& value) { SetProvisioningPreferences(value); return *this;}
-    inline ProvisionProductRequest& WithProvisioningPreferences(ProvisioningPreferences&& value) { SetProvisioningPreferences(std::move(value)); return *this;}
+    template<typename ProvisioningPreferencesT = ProvisioningPreferences>
+    void SetProvisioningPreferences(ProvisioningPreferencesT&& value) { m_provisioningPreferencesHasBeenSet = true; m_provisioningPreferences = std::forward<ProvisioningPreferencesT>(value); }
+    template<typename ProvisioningPreferencesT = ProvisioningPreferences>
+    ProvisionProductRequest& WithProvisioningPreferences(ProvisioningPreferencesT&& value) { SetProvisioningPreferences(std::forward<ProvisioningPreferencesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>One or more tags.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline ProvisionProductRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline ProvisionProductRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline ProvisionProductRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline ProvisionProductRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    ProvisionProductRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    ProvisionProductRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -206,29 +190,26 @@ namespace Model
      * <p>Passed to CloudFormation. The SNS topic ARNs to which to publish
      * stack-related events.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetNotificationArns() const{ return m_notificationArns; }
+    inline const Aws::Vector<Aws::String>& GetNotificationArns() const { return m_notificationArns; }
     inline bool NotificationArnsHasBeenSet() const { return m_notificationArnsHasBeenSet; }
-    inline void SetNotificationArns(const Aws::Vector<Aws::String>& value) { m_notificationArnsHasBeenSet = true; m_notificationArns = value; }
-    inline void SetNotificationArns(Aws::Vector<Aws::String>&& value) { m_notificationArnsHasBeenSet = true; m_notificationArns = std::move(value); }
-    inline ProvisionProductRequest& WithNotificationArns(const Aws::Vector<Aws::String>& value) { SetNotificationArns(value); return *this;}
-    inline ProvisionProductRequest& WithNotificationArns(Aws::Vector<Aws::String>&& value) { SetNotificationArns(std::move(value)); return *this;}
-    inline ProvisionProductRequest& AddNotificationArns(const Aws::String& value) { m_notificationArnsHasBeenSet = true; m_notificationArns.push_back(value); return *this; }
-    inline ProvisionProductRequest& AddNotificationArns(Aws::String&& value) { m_notificationArnsHasBeenSet = true; m_notificationArns.push_back(std::move(value)); return *this; }
-    inline ProvisionProductRequest& AddNotificationArns(const char* value) { m_notificationArnsHasBeenSet = true; m_notificationArns.push_back(value); return *this; }
+    template<typename NotificationArnsT = Aws::Vector<Aws::String>>
+    void SetNotificationArns(NotificationArnsT&& value) { m_notificationArnsHasBeenSet = true; m_notificationArns = std::forward<NotificationArnsT>(value); }
+    template<typename NotificationArnsT = Aws::Vector<Aws::String>>
+    ProvisionProductRequest& WithNotificationArns(NotificationArnsT&& value) { SetNotificationArns(std::forward<NotificationArnsT>(value)); return *this;}
+    template<typename NotificationArnsT = Aws::String>
+    ProvisionProductRequest& AddNotificationArns(NotificationArnsT&& value) { m_notificationArnsHasBeenSet = true; m_notificationArns.emplace_back(std::forward<NotificationArnsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>An idempotency token that uniquely identifies the provisioning request.</p>
      */
-    inline const Aws::String& GetProvisionToken() const{ return m_provisionToken; }
+    inline const Aws::String& GetProvisionToken() const { return m_provisionToken; }
     inline bool ProvisionTokenHasBeenSet() const { return m_provisionTokenHasBeenSet; }
-    inline void SetProvisionToken(const Aws::String& value) { m_provisionTokenHasBeenSet = true; m_provisionToken = value; }
-    inline void SetProvisionToken(Aws::String&& value) { m_provisionTokenHasBeenSet = true; m_provisionToken = std::move(value); }
-    inline void SetProvisionToken(const char* value) { m_provisionTokenHasBeenSet = true; m_provisionToken.assign(value); }
-    inline ProvisionProductRequest& WithProvisionToken(const Aws::String& value) { SetProvisionToken(value); return *this;}
-    inline ProvisionProductRequest& WithProvisionToken(Aws::String&& value) { SetProvisionToken(std::move(value)); return *this;}
-    inline ProvisionProductRequest& WithProvisionToken(const char* value) { SetProvisionToken(value); return *this;}
+    template<typename ProvisionTokenT = Aws::String>
+    void SetProvisionToken(ProvisionTokenT&& value) { m_provisionTokenHasBeenSet = true; m_provisionToken = std::forward<ProvisionTokenT>(value); }
+    template<typename ProvisionTokenT = Aws::String>
+    ProvisionProductRequest& WithProvisionToken(ProvisionTokenT&& value) { SetProvisionToken(std::forward<ProvisionTokenT>(value)); return *this;}
     ///@}
   private:
 

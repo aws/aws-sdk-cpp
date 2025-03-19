@@ -37,7 +37,7 @@ namespace Model
   class JobExecutionSettings
   {
   public:
-    AWS_TRANSCRIBESERVICE_API JobExecutionSettings();
+    AWS_TRANSCRIBESERVICE_API JobExecutionSettings() = default;
     AWS_TRANSCRIBESERVICE_API JobExecutionSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API JobExecutionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,7 +54,7 @@ namespace Model
      * error.</p> <p>If you include <code>AllowDeferredExecution</code> in your
      * request, you must also include <code>DataAccessRoleArn</code>.</p>
      */
-    inline bool GetAllowDeferredExecution() const{ return m_allowDeferredExecution; }
+    inline bool GetAllowDeferredExecution() const { return m_allowDeferredExecution; }
     inline bool AllowDeferredExecutionHasBeenSet() const { return m_allowDeferredExecutionHasBeenSet; }
     inline void SetAllowDeferredExecution(bool value) { m_allowDeferredExecutionHasBeenSet = true; m_allowDeferredExecution = value; }
     inline JobExecutionSettings& WithAllowDeferredExecution(bool value) { SetAllowDeferredExecution(value); return *this;}
@@ -72,18 +72,16 @@ namespace Model
      * ARNs</a>.</p> <p>Note that if you include <code>DataAccessRoleArn</code> in your
      * request, you must also include <code>AllowDeferredExecution</code>.</p>
      */
-    inline const Aws::String& GetDataAccessRoleArn() const{ return m_dataAccessRoleArn; }
+    inline const Aws::String& GetDataAccessRoleArn() const { return m_dataAccessRoleArn; }
     inline bool DataAccessRoleArnHasBeenSet() const { return m_dataAccessRoleArnHasBeenSet; }
-    inline void SetDataAccessRoleArn(const Aws::String& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = value; }
-    inline void SetDataAccessRoleArn(Aws::String&& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = std::move(value); }
-    inline void SetDataAccessRoleArn(const char* value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn.assign(value); }
-    inline JobExecutionSettings& WithDataAccessRoleArn(const Aws::String& value) { SetDataAccessRoleArn(value); return *this;}
-    inline JobExecutionSettings& WithDataAccessRoleArn(Aws::String&& value) { SetDataAccessRoleArn(std::move(value)); return *this;}
-    inline JobExecutionSettings& WithDataAccessRoleArn(const char* value) { SetDataAccessRoleArn(value); return *this;}
+    template<typename DataAccessRoleArnT = Aws::String>
+    void SetDataAccessRoleArn(DataAccessRoleArnT&& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = std::forward<DataAccessRoleArnT>(value); }
+    template<typename DataAccessRoleArnT = Aws::String>
+    JobExecutionSettings& WithDataAccessRoleArn(DataAccessRoleArnT&& value) { SetDataAccessRoleArn(std::forward<DataAccessRoleArnT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_allowDeferredExecution;
+    bool m_allowDeferredExecution{false};
     bool m_allowDeferredExecutionHasBeenSet = false;
 
     Aws::String m_dataAccessRoleArn;

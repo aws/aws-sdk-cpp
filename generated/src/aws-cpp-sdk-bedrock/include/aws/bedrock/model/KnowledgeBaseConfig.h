@@ -33,7 +33,7 @@ namespace Model
   class KnowledgeBaseConfig
   {
   public:
-    AWS_BEDROCK_API KnowledgeBaseConfig();
+    AWS_BEDROCK_API KnowledgeBaseConfig() = default;
     AWS_BEDROCK_API KnowledgeBaseConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API KnowledgeBaseConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p>Contains configuration details for retrieving information from a knowledge
      * base.</p>
      */
-    inline const RetrieveConfig& GetRetrieveConfig() const{ return m_retrieveConfig; }
+    inline const RetrieveConfig& GetRetrieveConfig() const { return m_retrieveConfig; }
     inline bool RetrieveConfigHasBeenSet() const { return m_retrieveConfigHasBeenSet; }
-    inline void SetRetrieveConfig(const RetrieveConfig& value) { m_retrieveConfigHasBeenSet = true; m_retrieveConfig = value; }
-    inline void SetRetrieveConfig(RetrieveConfig&& value) { m_retrieveConfigHasBeenSet = true; m_retrieveConfig = std::move(value); }
-    inline KnowledgeBaseConfig& WithRetrieveConfig(const RetrieveConfig& value) { SetRetrieveConfig(value); return *this;}
-    inline KnowledgeBaseConfig& WithRetrieveConfig(RetrieveConfig&& value) { SetRetrieveConfig(std::move(value)); return *this;}
+    template<typename RetrieveConfigT = RetrieveConfig>
+    void SetRetrieveConfig(RetrieveConfigT&& value) { m_retrieveConfigHasBeenSet = true; m_retrieveConfig = std::forward<RetrieveConfigT>(value); }
+    template<typename RetrieveConfigT = RetrieveConfig>
+    KnowledgeBaseConfig& WithRetrieveConfig(RetrieveConfigT&& value) { SetRetrieveConfig(std::forward<RetrieveConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +57,12 @@ namespace Model
      * <p>Contains configuration details for retrieving information from a knowledge
      * base and generating responses.</p>
      */
-    inline const RetrieveAndGenerateConfiguration& GetRetrieveAndGenerateConfig() const{ return m_retrieveAndGenerateConfig; }
+    inline const RetrieveAndGenerateConfiguration& GetRetrieveAndGenerateConfig() const { return m_retrieveAndGenerateConfig; }
     inline bool RetrieveAndGenerateConfigHasBeenSet() const { return m_retrieveAndGenerateConfigHasBeenSet; }
-    inline void SetRetrieveAndGenerateConfig(const RetrieveAndGenerateConfiguration& value) { m_retrieveAndGenerateConfigHasBeenSet = true; m_retrieveAndGenerateConfig = value; }
-    inline void SetRetrieveAndGenerateConfig(RetrieveAndGenerateConfiguration&& value) { m_retrieveAndGenerateConfigHasBeenSet = true; m_retrieveAndGenerateConfig = std::move(value); }
-    inline KnowledgeBaseConfig& WithRetrieveAndGenerateConfig(const RetrieveAndGenerateConfiguration& value) { SetRetrieveAndGenerateConfig(value); return *this;}
-    inline KnowledgeBaseConfig& WithRetrieveAndGenerateConfig(RetrieveAndGenerateConfiguration&& value) { SetRetrieveAndGenerateConfig(std::move(value)); return *this;}
+    template<typename RetrieveAndGenerateConfigT = RetrieveAndGenerateConfiguration>
+    void SetRetrieveAndGenerateConfig(RetrieveAndGenerateConfigT&& value) { m_retrieveAndGenerateConfigHasBeenSet = true; m_retrieveAndGenerateConfig = std::forward<RetrieveAndGenerateConfigT>(value); }
+    template<typename RetrieveAndGenerateConfigT = RetrieveAndGenerateConfiguration>
+    KnowledgeBaseConfig& WithRetrieveAndGenerateConfig(RetrieveAndGenerateConfigT&& value) { SetRetrieveAndGenerateConfig(std::forward<RetrieveAndGenerateConfigT>(value)); return *this;}
     ///@}
   private:
 

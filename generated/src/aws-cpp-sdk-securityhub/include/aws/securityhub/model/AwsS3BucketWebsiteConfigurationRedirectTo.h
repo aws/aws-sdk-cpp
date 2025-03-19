@@ -32,7 +32,7 @@ namespace Model
   class AwsS3BucketWebsiteConfigurationRedirectTo
   {
   public:
-    AWS_SECURITYHUB_API AwsS3BucketWebsiteConfigurationRedirectTo();
+    AWS_SECURITYHUB_API AwsS3BucketWebsiteConfigurationRedirectTo() = default;
     AWS_SECURITYHUB_API AwsS3BucketWebsiteConfigurationRedirectTo(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsS3BucketWebsiteConfigurationRedirectTo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the host to redirect requests to.</p>
      */
-    inline const Aws::String& GetHostname() const{ return m_hostname; }
+    inline const Aws::String& GetHostname() const { return m_hostname; }
     inline bool HostnameHasBeenSet() const { return m_hostnameHasBeenSet; }
-    inline void SetHostname(const Aws::String& value) { m_hostnameHasBeenSet = true; m_hostname = value; }
-    inline void SetHostname(Aws::String&& value) { m_hostnameHasBeenSet = true; m_hostname = std::move(value); }
-    inline void SetHostname(const char* value) { m_hostnameHasBeenSet = true; m_hostname.assign(value); }
-    inline AwsS3BucketWebsiteConfigurationRedirectTo& WithHostname(const Aws::String& value) { SetHostname(value); return *this;}
-    inline AwsS3BucketWebsiteConfigurationRedirectTo& WithHostname(Aws::String&& value) { SetHostname(std::move(value)); return *this;}
-    inline AwsS3BucketWebsiteConfigurationRedirectTo& WithHostname(const char* value) { SetHostname(value); return *this;}
+    template<typename HostnameT = Aws::String>
+    void SetHostname(HostnameT&& value) { m_hostnameHasBeenSet = true; m_hostname = std::forward<HostnameT>(value); }
+    template<typename HostnameT = Aws::String>
+    AwsS3BucketWebsiteConfigurationRedirectTo& WithHostname(HostnameT&& value) { SetHostname(std::forward<HostnameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * the same protocol as the original request. Valid values are <code>http</code> or
      * <code>https</code>.</p>
      */
-    inline const Aws::String& GetProtocol() const{ return m_protocol; }
+    inline const Aws::String& GetProtocol() const { return m_protocol; }
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-    inline void SetProtocol(const Aws::String& value) { m_protocolHasBeenSet = true; m_protocol = value; }
-    inline void SetProtocol(Aws::String&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
-    inline void SetProtocol(const char* value) { m_protocolHasBeenSet = true; m_protocol.assign(value); }
-    inline AwsS3BucketWebsiteConfigurationRedirectTo& WithProtocol(const Aws::String& value) { SetProtocol(value); return *this;}
-    inline AwsS3BucketWebsiteConfigurationRedirectTo& WithProtocol(Aws::String&& value) { SetProtocol(std::move(value)); return *this;}
-    inline AwsS3BucketWebsiteConfigurationRedirectTo& WithProtocol(const char* value) { SetProtocol(value); return *this;}
+    template<typename ProtocolT = Aws::String>
+    void SetProtocol(ProtocolT&& value) { m_protocolHasBeenSet = true; m_protocol = std::forward<ProtocolT>(value); }
+    template<typename ProtocolT = Aws::String>
+    AwsS3BucketWebsiteConfigurationRedirectTo& WithProtocol(ProtocolT&& value) { SetProtocol(std::forward<ProtocolT>(value)); return *this;}
     ///@}
   private:
 

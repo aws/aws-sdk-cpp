@@ -30,7 +30,7 @@ namespace Model
   class AmplitudeConnectorProfileProperties
   {
   public:
-    AWS_APPFLOW_API AmplitudeConnectorProfileProperties();
+    AWS_APPFLOW_API AmplitudeConnectorProfileProperties() = default;
     AWS_APPFLOW_API AmplitudeConnectorProfileProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API AmplitudeConnectorProfileProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;

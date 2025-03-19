@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSuiteRunReportResult::GetSuiteRunReportResult()
-{
-}
-
 GetSuiteRunReportResult::GetSuiteRunReportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetSuiteRunReportResult& GetSuiteRunReportResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("qualificationReportDownloadUrl"))
   {
     m_qualificationReportDownloadUrl = jsonValue.GetString("qualificationReportDownloadUrl");
-
+    m_qualificationReportDownloadUrlHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -33,7 +33,7 @@ namespace Model
   class EvaluationResultIdentifier
   {
   public:
-    AWS_CONFIGSERVICE_API EvaluationResultIdentifier();
+    AWS_CONFIGSERVICE_API EvaluationResultIdentifier() = default;
     AWS_CONFIGSERVICE_API EvaluationResultIdentifier(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API EvaluationResultIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p>Identifies an Config rule used to evaluate an Amazon Web Services resource,
      * and provides the type and ID of the evaluated resource.</p>
      */
-    inline const EvaluationResultQualifier& GetEvaluationResultQualifier() const{ return m_evaluationResultQualifier; }
+    inline const EvaluationResultQualifier& GetEvaluationResultQualifier() const { return m_evaluationResultQualifier; }
     inline bool EvaluationResultQualifierHasBeenSet() const { return m_evaluationResultQualifierHasBeenSet; }
-    inline void SetEvaluationResultQualifier(const EvaluationResultQualifier& value) { m_evaluationResultQualifierHasBeenSet = true; m_evaluationResultQualifier = value; }
-    inline void SetEvaluationResultQualifier(EvaluationResultQualifier&& value) { m_evaluationResultQualifierHasBeenSet = true; m_evaluationResultQualifier = std::move(value); }
-    inline EvaluationResultIdentifier& WithEvaluationResultQualifier(const EvaluationResultQualifier& value) { SetEvaluationResultQualifier(value); return *this;}
-    inline EvaluationResultIdentifier& WithEvaluationResultQualifier(EvaluationResultQualifier&& value) { SetEvaluationResultQualifier(std::move(value)); return *this;}
+    template<typename EvaluationResultQualifierT = EvaluationResultQualifier>
+    void SetEvaluationResultQualifier(EvaluationResultQualifierT&& value) { m_evaluationResultQualifierHasBeenSet = true; m_evaluationResultQualifier = std::forward<EvaluationResultQualifierT>(value); }
+    template<typename EvaluationResultQualifierT = EvaluationResultQualifier>
+    EvaluationResultIdentifier& WithEvaluationResultQualifier(EvaluationResultQualifierT&& value) { SetEvaluationResultQualifier(std::forward<EvaluationResultQualifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,33 +59,31 @@ namespace Model
      * item change notification, or it can indicate when Config delivered the
      * configuration snapshot, depending on which event triggered the evaluation.</p>
      */
-    inline const Aws::Utils::DateTime& GetOrderingTimestamp() const{ return m_orderingTimestamp; }
+    inline const Aws::Utils::DateTime& GetOrderingTimestamp() const { return m_orderingTimestamp; }
     inline bool OrderingTimestampHasBeenSet() const { return m_orderingTimestampHasBeenSet; }
-    inline void SetOrderingTimestamp(const Aws::Utils::DateTime& value) { m_orderingTimestampHasBeenSet = true; m_orderingTimestamp = value; }
-    inline void SetOrderingTimestamp(Aws::Utils::DateTime&& value) { m_orderingTimestampHasBeenSet = true; m_orderingTimestamp = std::move(value); }
-    inline EvaluationResultIdentifier& WithOrderingTimestamp(const Aws::Utils::DateTime& value) { SetOrderingTimestamp(value); return *this;}
-    inline EvaluationResultIdentifier& WithOrderingTimestamp(Aws::Utils::DateTime&& value) { SetOrderingTimestamp(std::move(value)); return *this;}
+    template<typename OrderingTimestampT = Aws::Utils::DateTime>
+    void SetOrderingTimestamp(OrderingTimestampT&& value) { m_orderingTimestampHasBeenSet = true; m_orderingTimestamp = std::forward<OrderingTimestampT>(value); }
+    template<typename OrderingTimestampT = Aws::Utils::DateTime>
+    EvaluationResultIdentifier& WithOrderingTimestamp(OrderingTimestampT&& value) { SetOrderingTimestamp(std::forward<OrderingTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A Unique ID for an evaluation result.</p>
      */
-    inline const Aws::String& GetResourceEvaluationId() const{ return m_resourceEvaluationId; }
+    inline const Aws::String& GetResourceEvaluationId() const { return m_resourceEvaluationId; }
     inline bool ResourceEvaluationIdHasBeenSet() const { return m_resourceEvaluationIdHasBeenSet; }
-    inline void SetResourceEvaluationId(const Aws::String& value) { m_resourceEvaluationIdHasBeenSet = true; m_resourceEvaluationId = value; }
-    inline void SetResourceEvaluationId(Aws::String&& value) { m_resourceEvaluationIdHasBeenSet = true; m_resourceEvaluationId = std::move(value); }
-    inline void SetResourceEvaluationId(const char* value) { m_resourceEvaluationIdHasBeenSet = true; m_resourceEvaluationId.assign(value); }
-    inline EvaluationResultIdentifier& WithResourceEvaluationId(const Aws::String& value) { SetResourceEvaluationId(value); return *this;}
-    inline EvaluationResultIdentifier& WithResourceEvaluationId(Aws::String&& value) { SetResourceEvaluationId(std::move(value)); return *this;}
-    inline EvaluationResultIdentifier& WithResourceEvaluationId(const char* value) { SetResourceEvaluationId(value); return *this;}
+    template<typename ResourceEvaluationIdT = Aws::String>
+    void SetResourceEvaluationId(ResourceEvaluationIdT&& value) { m_resourceEvaluationIdHasBeenSet = true; m_resourceEvaluationId = std::forward<ResourceEvaluationIdT>(value); }
+    template<typename ResourceEvaluationIdT = Aws::String>
+    EvaluationResultIdentifier& WithResourceEvaluationId(ResourceEvaluationIdT&& value) { SetResourceEvaluationId(std::forward<ResourceEvaluationIdT>(value)); return *this;}
     ///@}
   private:
 
     EvaluationResultQualifier m_evaluationResultQualifier;
     bool m_evaluationResultQualifierHasBeenSet = false;
 
-    Aws::Utils::DateTime m_orderingTimestamp;
+    Aws::Utils::DateTime m_orderingTimestamp{};
     bool m_orderingTimestampHasBeenSet = false;
 
     Aws::String m_resourceEvaluationId;

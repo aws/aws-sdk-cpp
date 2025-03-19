@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-AuthorizedTargetsByService::AuthorizedTargetsByService() : 
-    m_service(ServiceType::NOT_SET),
-    m_serviceHasBeenSet(false),
-    m_authorizedTargetsHasBeenSet(false)
-{
-}
-
 AuthorizedTargetsByService::AuthorizedTargetsByService(JsonView jsonValue)
-  : AuthorizedTargetsByService()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ AuthorizedTargetsByService& AuthorizedTargetsByService::operator =(JsonView json
   if(jsonValue.ValueExists("Service"))
   {
     m_service = ServiceTypeMapper::GetServiceTypeForName(jsonValue.GetString("Service"));
-
     m_serviceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthorizedTargets"))
   {
     Aws::Utils::Array<JsonView> authorizedTargetsJsonList = jsonValue.GetArray("AuthorizedTargets");
@@ -49,7 +39,6 @@ AuthorizedTargetsByService& AuthorizedTargetsByService::operator =(JsonView json
     }
     m_authorizedTargetsHasBeenSet = true;
   }
-
   return *this;
 }
 

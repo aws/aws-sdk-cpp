@@ -12,17 +12,6 @@ using namespace Aws::CostExplorer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSavingsPlansUtilizationDetailsRequest::GetSavingsPlansUtilizationDetailsRequest() : 
-    m_timePeriodHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_dataTypeHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_sortByHasBeenSet(false)
-{
-}
-
 Aws::String GetSavingsPlansUtilizationDetailsRequest::SerializePayload() const
 {
   JsonValue payload;

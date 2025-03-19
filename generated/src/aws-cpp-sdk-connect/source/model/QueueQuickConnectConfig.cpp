@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-QueueQuickConnectConfig::QueueQuickConnectConfig() : 
-    m_queueIdHasBeenSet(false),
-    m_contactFlowIdHasBeenSet(false)
-{
-}
-
 QueueQuickConnectConfig::QueueQuickConnectConfig(JsonView jsonValue)
-  : QueueQuickConnectConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ QueueQuickConnectConfig& QueueQuickConnectConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("QueueId"))
   {
     m_queueId = jsonValue.GetString("QueueId");
-
     m_queueIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContactFlowId"))
   {
     m_contactFlowId = jsonValue.GetString("ContactFlowId");
-
     m_contactFlowIdHasBeenSet = true;
   }
-
   return *this;
 }
 

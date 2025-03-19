@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-MoveAddressToVpcResponse::MoveAddressToVpcResponse() : 
-    m_status(Status::NOT_SET)
-{
-}
-
 MoveAddressToVpcResponse::MoveAddressToVpcResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : MoveAddressToVpcResponse()
 {
   *this = result;
 }
@@ -44,11 +38,13 @@ MoveAddressToVpcResponse& MoveAddressToVpcResponse::operator =(const Aws::Amazon
     if(!allocationIdNode.IsNull())
     {
       m_allocationId = Aws::Utils::Xml::DecodeEscapedXmlText(allocationIdNode.GetText());
+      m_allocationIdHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
-      m_status = StatusMapper::GetStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = StatusMapper::GetStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
+      m_statusHasBeenSet = true;
     }
   }
 
@@ -57,6 +53,7 @@ MoveAddressToVpcResponse& MoveAddressToVpcResponse::operator =(const Aws::Amazon
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::MoveAddressToVpcResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

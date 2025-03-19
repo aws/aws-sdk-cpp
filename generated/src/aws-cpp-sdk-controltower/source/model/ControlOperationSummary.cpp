@@ -18,23 +18,7 @@ namespace ControlTower
 namespace Model
 {
 
-ControlOperationSummary::ControlOperationSummary() : 
-    m_controlIdentifierHasBeenSet(false),
-    m_enabledControlIdentifierHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_operationIdentifierHasBeenSet(false),
-    m_operationType(ControlOperationType::NOT_SET),
-    m_operationTypeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_status(ControlOperationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_targetIdentifierHasBeenSet(false)
-{
-}
-
 ControlOperationSummary::ControlOperationSummary(JsonView jsonValue)
-  : ControlOperationSummary()
 {
   *this = jsonValue;
 }
@@ -44,66 +28,48 @@ ControlOperationSummary& ControlOperationSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("controlIdentifier"))
   {
     m_controlIdentifier = jsonValue.GetString("controlIdentifier");
-
     m_controlIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enabledControlIdentifier"))
   {
     m_enabledControlIdentifier = jsonValue.GetString("enabledControlIdentifier");
-
     m_enabledControlIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetString("endTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operationIdentifier"))
   {
     m_operationIdentifier = jsonValue.GetString("operationIdentifier");
-
     m_operationIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operationType"))
   {
     m_operationType = ControlOperationTypeMapper::GetControlOperationTypeForName(jsonValue.GetString("operationType"));
-
     m_operationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetString("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ControlOperationStatusMapper::GetControlOperationStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusMessage"))
   {
     m_statusMessage = jsonValue.GetString("statusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetIdentifier"))
   {
     m_targetIdentifier = jsonValue.GetString("targetIdentifier");
-
     m_targetIdentifierHasBeenSet = true;
   }
-
   return *this;
 }
 

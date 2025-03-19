@@ -18,13 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-RootStorage::RootStorage() : 
-    m_capacityHasBeenSet(false)
-{
-}
-
 RootStorage::RootStorage(JsonView jsonValue)
-  : RootStorage()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RootStorage& RootStorage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Capacity"))
   {
     m_capacity = jsonValue.GetString("Capacity");
-
     m_capacityHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,22 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-OutputGroupSettings::OutputGroupSettings() : 
-    m_archiveGroupSettingsHasBeenSet(false),
-    m_frameCaptureGroupSettingsHasBeenSet(false),
-    m_hlsGroupSettingsHasBeenSet(false),
-    m_mediaPackageGroupSettingsHasBeenSet(false),
-    m_msSmoothGroupSettingsHasBeenSet(false),
-    m_multiplexGroupSettingsHasBeenSet(false),
-    m_rtmpGroupSettingsHasBeenSet(false),
-    m_udpGroupSettingsHasBeenSet(false),
-    m_cmafIngestGroupSettingsHasBeenSet(false),
-    m_srtGroupSettingsHasBeenSet(false)
-{
-}
-
 OutputGroupSettings::OutputGroupSettings(JsonView jsonValue)
-  : OutputGroupSettings()
 {
   *this = jsonValue;
 }
@@ -43,73 +28,53 @@ OutputGroupSettings& OutputGroupSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("archiveGroupSettings"))
   {
     m_archiveGroupSettings = jsonValue.GetObject("archiveGroupSettings");
-
     m_archiveGroupSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("frameCaptureGroupSettings"))
   {
     m_frameCaptureGroupSettings = jsonValue.GetObject("frameCaptureGroupSettings");
-
     m_frameCaptureGroupSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hlsGroupSettings"))
   {
     m_hlsGroupSettings = jsonValue.GetObject("hlsGroupSettings");
-
     m_hlsGroupSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mediaPackageGroupSettings"))
   {
     m_mediaPackageGroupSettings = jsonValue.GetObject("mediaPackageGroupSettings");
-
     m_mediaPackageGroupSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("msSmoothGroupSettings"))
   {
     m_msSmoothGroupSettings = jsonValue.GetObject("msSmoothGroupSettings");
-
     m_msSmoothGroupSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("multiplexGroupSettings"))
   {
     m_multiplexGroupSettings = jsonValue.GetObject("multiplexGroupSettings");
-
     m_multiplexGroupSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rtmpGroupSettings"))
   {
     m_rtmpGroupSettings = jsonValue.GetObject("rtmpGroupSettings");
-
     m_rtmpGroupSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("udpGroupSettings"))
   {
     m_udpGroupSettings = jsonValue.GetObject("udpGroupSettings");
-
     m_udpGroupSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cmafIngestGroupSettings"))
   {
     m_cmafIngestGroupSettings = jsonValue.GetObject("cmafIngestGroupSettings");
-
     m_cmafIngestGroupSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("srtGroupSettings"))
   {
     m_srtGroupSettings = jsonValue.GetObject("srtGroupSettings");
-
     m_srtGroupSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-ContactAnalysis::ContactAnalysis() : 
-    m_transcriptHasBeenSet(false)
-{
-}
-
 ContactAnalysis::ContactAnalysis(JsonView jsonValue)
-  : ContactAnalysis()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ContactAnalysis& ContactAnalysis::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Transcript"))
   {
     m_transcript = jsonValue.GetObject("Transcript");
-
     m_transcriptHasBeenSet = true;
   }
-
   return *this;
 }
 

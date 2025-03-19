@@ -18,15 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-CloudWatchLogs::CloudWatchLogs() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_logGroupHasBeenSet(false)
-{
-}
-
 CloudWatchLogs::CloudWatchLogs(JsonView jsonValue)
-  : CloudWatchLogs()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ CloudWatchLogs& CloudWatchLogs::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logGroup"))
   {
     m_logGroup = jsonValue.GetString("logGroup");
-
     m_logGroupHasBeenSet = true;
   }
-
   return *this;
 }
 

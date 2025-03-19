@@ -34,7 +34,7 @@ namespace Model
   class Event
   {
   public:
-    AWS_IVSREALTIME_API Event();
+    AWS_IVSREALTIME_API Event() = default;
     AWS_IVSREALTIME_API Event(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVSREALTIME_API Event& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVSREALTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
     /**
      * <p>The name of the event.</p>
      */
-    inline const EventName& GetName() const{ return m_name; }
+    inline EventName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const EventName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(EventName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline Event& WithName(const EventName& value) { SetName(value); return *this;}
-    inline Event& WithName(EventName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(EventName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline Event& WithName(EventName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -57,26 +55,24 @@ namespace Model
      * <p>Unique identifier for the participant who triggered the event. This is
      * assigned by IVS.</p>
      */
-    inline const Aws::String& GetParticipantId() const{ return m_participantId; }
+    inline const Aws::String& GetParticipantId() const { return m_participantId; }
     inline bool ParticipantIdHasBeenSet() const { return m_participantIdHasBeenSet; }
-    inline void SetParticipantId(const Aws::String& value) { m_participantIdHasBeenSet = true; m_participantId = value; }
-    inline void SetParticipantId(Aws::String&& value) { m_participantIdHasBeenSet = true; m_participantId = std::move(value); }
-    inline void SetParticipantId(const char* value) { m_participantIdHasBeenSet = true; m_participantId.assign(value); }
-    inline Event& WithParticipantId(const Aws::String& value) { SetParticipantId(value); return *this;}
-    inline Event& WithParticipantId(Aws::String&& value) { SetParticipantId(std::move(value)); return *this;}
-    inline Event& WithParticipantId(const char* value) { SetParticipantId(value); return *this;}
+    template<typename ParticipantIdT = Aws::String>
+    void SetParticipantId(ParticipantIdT&& value) { m_participantIdHasBeenSet = true; m_participantId = std::forward<ParticipantIdT>(value); }
+    template<typename ParticipantIdT = Aws::String>
+    Event& WithParticipantId(ParticipantIdT&& value) { SetParticipantId(std::forward<ParticipantIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>ISO 8601 timestamp (returned as a string) for when the event occurred.</p>
      */
-    inline const Aws::Utils::DateTime& GetEventTime() const{ return m_eventTime; }
+    inline const Aws::Utils::DateTime& GetEventTime() const { return m_eventTime; }
     inline bool EventTimeHasBeenSet() const { return m_eventTimeHasBeenSet; }
-    inline void SetEventTime(const Aws::Utils::DateTime& value) { m_eventTimeHasBeenSet = true; m_eventTime = value; }
-    inline void SetEventTime(Aws::Utils::DateTime&& value) { m_eventTimeHasBeenSet = true; m_eventTime = std::move(value); }
-    inline Event& WithEventTime(const Aws::Utils::DateTime& value) { SetEventTime(value); return *this;}
-    inline Event& WithEventTime(Aws::Utils::DateTime&& value) { SetEventTime(std::move(value)); return *this;}
+    template<typename EventTimeT = Aws::Utils::DateTime>
+    void SetEventTime(EventTimeT&& value) { m_eventTimeHasBeenSet = true; m_eventTime = std::forward<EventTimeT>(value); }
+    template<typename EventTimeT = Aws::Utils::DateTime>
+    Event& WithEventTime(EventTimeT&& value) { SetEventTime(std::forward<EventTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,14 +81,12 @@ namespace Model
      * the publisher. For a publish or join event, this is null. This is assigned by
      * IVS.</p>
      */
-    inline const Aws::String& GetRemoteParticipantId() const{ return m_remoteParticipantId; }
+    inline const Aws::String& GetRemoteParticipantId() const { return m_remoteParticipantId; }
     inline bool RemoteParticipantIdHasBeenSet() const { return m_remoteParticipantIdHasBeenSet; }
-    inline void SetRemoteParticipantId(const Aws::String& value) { m_remoteParticipantIdHasBeenSet = true; m_remoteParticipantId = value; }
-    inline void SetRemoteParticipantId(Aws::String&& value) { m_remoteParticipantIdHasBeenSet = true; m_remoteParticipantId = std::move(value); }
-    inline void SetRemoteParticipantId(const char* value) { m_remoteParticipantIdHasBeenSet = true; m_remoteParticipantId.assign(value); }
-    inline Event& WithRemoteParticipantId(const Aws::String& value) { SetRemoteParticipantId(value); return *this;}
-    inline Event& WithRemoteParticipantId(Aws::String&& value) { SetRemoteParticipantId(std::move(value)); return *this;}
-    inline Event& WithRemoteParticipantId(const char* value) { SetRemoteParticipantId(value); return *this;}
+    template<typename RemoteParticipantIdT = Aws::String>
+    void SetRemoteParticipantId(RemoteParticipantIdT&& value) { m_remoteParticipantIdHasBeenSet = true; m_remoteParticipantId = std::forward<RemoteParticipantIdT>(value); }
+    template<typename RemoteParticipantIdT = Aws::String>
+    Event& WithRemoteParticipantId(RemoteParticipantIdT&& value) { SetRemoteParticipantId(std::forward<RemoteParticipantIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -140,28 +134,26 @@ namespace Model
      * href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/service-quotas.html">
      * Service Quotas</a>.</p> </li> </ul>
      */
-    inline const EventErrorCode& GetErrorCode() const{ return m_errorCode; }
+    inline EventErrorCode GetErrorCode() const { return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    inline void SetErrorCode(const EventErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-    inline void SetErrorCode(EventErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-    inline Event& WithErrorCode(const EventErrorCode& value) { SetErrorCode(value); return *this;}
-    inline Event& WithErrorCode(EventErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
+    inline void SetErrorCode(EventErrorCode value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
+    inline Event& WithErrorCode(EventErrorCode value) { SetErrorCode(value); return *this;}
     ///@}
   private:
 
-    EventName m_name;
+    EventName m_name{EventName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::String m_participantId;
     bool m_participantIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_eventTime;
+    Aws::Utils::DateTime m_eventTime{};
     bool m_eventTimeHasBeenSet = false;
 
     Aws::String m_remoteParticipantId;
     bool m_remoteParticipantIdHasBeenSet = false;
 
-    EventErrorCode m_errorCode;
+    EventErrorCode m_errorCode{EventErrorCode::NOT_SET};
     bool m_errorCodeHasBeenSet = false;
   };
 

@@ -18,17 +18,7 @@ namespace AuditManager
 namespace Model
 {
 
-CreateDelegationRequest::CreateDelegationRequest() : 
-    m_commentHasBeenSet(false),
-    m_controlSetIdHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_roleType(RoleType::NOT_SET),
-    m_roleTypeHasBeenSet(false)
-{
-}
-
 CreateDelegationRequest::CreateDelegationRequest(JsonView jsonValue)
-  : CreateDelegationRequest()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ CreateDelegationRequest& CreateDelegationRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("comment"))
   {
     m_comment = jsonValue.GetString("comment");
-
     m_commentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("controlSetId"))
   {
     m_controlSetId = jsonValue.GetString("controlSetId");
-
     m_controlSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleType"))
   {
     m_roleType = RoleTypeMapper::GetRoleTypeForName(jsonValue.GetString("roleType"));
-
     m_roleTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

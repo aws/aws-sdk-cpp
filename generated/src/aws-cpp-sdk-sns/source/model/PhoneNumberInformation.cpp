@@ -20,19 +20,7 @@ namespace SNS
 namespace Model
 {
 
-PhoneNumberInformation::PhoneNumberInformation() : 
-    m_createdAtHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_iso2CountryCodeHasBeenSet(false),
-    m_routeType(RouteType::NOT_SET),
-    m_routeTypeHasBeenSet(false),
-    m_numberCapabilitiesHasBeenSet(false)
-{
-}
-
 PhoneNumberInformation::PhoneNumberInformation(const XmlNode& xmlNode)
-  : PhoneNumberInformation()
 {
   *this = xmlNode;
 }
@@ -70,13 +58,14 @@ PhoneNumberInformation& PhoneNumberInformation::operator =(const XmlNode& xmlNod
     XmlNode routeTypeNode = resultNode.FirstChild("RouteType");
     if(!routeTypeNode.IsNull())
     {
-      m_routeType = RouteTypeMapper::GetRouteTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(routeTypeNode.GetText()).c_str()).c_str());
+      m_routeType = RouteTypeMapper::GetRouteTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(routeTypeNode.GetText()).c_str()));
       m_routeTypeHasBeenSet = true;
     }
     XmlNode numberCapabilitiesNode = resultNode.FirstChild("NumberCapabilities");
     if(!numberCapabilitiesNode.IsNull())
     {
       XmlNode numberCapabilitiesMember = numberCapabilitiesNode.FirstChild("member");
+      m_numberCapabilitiesHasBeenSet = !numberCapabilitiesMember.IsNull();
       while(!numberCapabilitiesMember.IsNull())
       {
         m_numberCapabilities.push_back(NumberCapabilityMapper::GetNumberCapabilityForName(StringUtils::Trim(numberCapabilitiesMember.GetText().c_str())));

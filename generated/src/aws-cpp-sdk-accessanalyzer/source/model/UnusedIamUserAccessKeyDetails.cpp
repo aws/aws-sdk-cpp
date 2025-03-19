@@ -18,14 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-UnusedIamUserAccessKeyDetails::UnusedIamUserAccessKeyDetails() : 
-    m_accessKeyIdHasBeenSet(false),
-    m_lastAccessedHasBeenSet(false)
-{
-}
-
 UnusedIamUserAccessKeyDetails::UnusedIamUserAccessKeyDetails(JsonView jsonValue)
-  : UnusedIamUserAccessKeyDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ UnusedIamUserAccessKeyDetails& UnusedIamUserAccessKeyDetails::operator =(JsonVie
   if(jsonValue.ValueExists("accessKeyId"))
   {
     m_accessKeyId = jsonValue.GetString("accessKeyId");
-
     m_accessKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastAccessed"))
   {
     m_lastAccessed = jsonValue.GetString("lastAccessed");
-
     m_lastAccessedHasBeenSet = true;
   }
-
   return *this;
 }
 

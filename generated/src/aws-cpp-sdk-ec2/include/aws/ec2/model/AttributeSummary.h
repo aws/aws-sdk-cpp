@@ -34,7 +34,7 @@ namespace Model
   class AttributeSummary
   {
   public:
-    AWS_EC2_API AttributeSummary();
+    AWS_EC2_API AttributeSummary() = default;
     AWS_EC2_API AttributeSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API AttributeSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The name of the attribute.</p>
      */
-    inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
+    inline const Aws::String& GetAttributeName() const { return m_attributeName; }
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
-    inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
-    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
-    inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
-    inline AttributeSummary& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
-    inline AttributeSummary& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
-    inline AttributeSummary& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
+    template<typename AttributeNameT = Aws::String>
+    void SetAttributeName(AttributeNameT&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::forward<AttributeNameT>(value); }
+    template<typename AttributeNameT = Aws::String>
+    AttributeSummary& WithAttributeName(AttributeNameT&& value) { SetAttributeName(std::forward<AttributeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * <p>The configuration value that is most frequently observed for the
      * attribute.</p>
      */
-    inline const Aws::String& GetMostFrequentValue() const{ return m_mostFrequentValue; }
+    inline const Aws::String& GetMostFrequentValue() const { return m_mostFrequentValue; }
     inline bool MostFrequentValueHasBeenSet() const { return m_mostFrequentValueHasBeenSet; }
-    inline void SetMostFrequentValue(const Aws::String& value) { m_mostFrequentValueHasBeenSet = true; m_mostFrequentValue = value; }
-    inline void SetMostFrequentValue(Aws::String&& value) { m_mostFrequentValueHasBeenSet = true; m_mostFrequentValue = std::move(value); }
-    inline void SetMostFrequentValue(const char* value) { m_mostFrequentValueHasBeenSet = true; m_mostFrequentValue.assign(value); }
-    inline AttributeSummary& WithMostFrequentValue(const Aws::String& value) { SetMostFrequentValue(value); return *this;}
-    inline AttributeSummary& WithMostFrequentValue(Aws::String&& value) { SetMostFrequentValue(std::move(value)); return *this;}
-    inline AttributeSummary& WithMostFrequentValue(const char* value) { SetMostFrequentValue(value); return *this;}
+    template<typename MostFrequentValueT = Aws::String>
+    void SetMostFrequentValue(MostFrequentValueT&& value) { m_mostFrequentValueHasBeenSet = true; m_mostFrequentValue = std::forward<MostFrequentValueT>(value); }
+    template<typename MostFrequentValueT = Aws::String>
+    AttributeSummary& WithMostFrequentValue(MostFrequentValueT&& value) { SetMostFrequentValue(std::forward<MostFrequentValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,7 +72,7 @@ namespace Model
      * <p>The number of accounts with the same configuration value for the attribute
      * that is most frequently observed.</p>
      */
-    inline int GetNumberOfMatchedAccounts() const{ return m_numberOfMatchedAccounts; }
+    inline int GetNumberOfMatchedAccounts() const { return m_numberOfMatchedAccounts; }
     inline bool NumberOfMatchedAccountsHasBeenSet() const { return m_numberOfMatchedAccountsHasBeenSet; }
     inline void SetNumberOfMatchedAccounts(int value) { m_numberOfMatchedAccountsHasBeenSet = true; m_numberOfMatchedAccounts = value; }
     inline AttributeSummary& WithNumberOfMatchedAccounts(int value) { SetNumberOfMatchedAccounts(value); return *this;}
@@ -87,7 +83,7 @@ namespace Model
      * <p>The number of accounts with a configuration value different from the most
      * frequently observed value for the attribute.</p>
      */
-    inline int GetNumberOfUnmatchedAccounts() const{ return m_numberOfUnmatchedAccounts; }
+    inline int GetNumberOfUnmatchedAccounts() const { return m_numberOfUnmatchedAccounts; }
     inline bool NumberOfUnmatchedAccountsHasBeenSet() const { return m_numberOfUnmatchedAccountsHasBeenSet; }
     inline void SetNumberOfUnmatchedAccounts(int value) { m_numberOfUnmatchedAccountsHasBeenSet = true; m_numberOfUnmatchedAccounts = value; }
     inline AttributeSummary& WithNumberOfUnmatchedAccounts(int value) { SetNumberOfUnmatchedAccounts(value); return *this;}
@@ -97,14 +93,14 @@ namespace Model
     /**
      * <p>The summary report for each Region for the attribute.</p>
      */
-    inline const Aws::Vector<RegionalSummary>& GetRegionalSummaries() const{ return m_regionalSummaries; }
+    inline const Aws::Vector<RegionalSummary>& GetRegionalSummaries() const { return m_regionalSummaries; }
     inline bool RegionalSummariesHasBeenSet() const { return m_regionalSummariesHasBeenSet; }
-    inline void SetRegionalSummaries(const Aws::Vector<RegionalSummary>& value) { m_regionalSummariesHasBeenSet = true; m_regionalSummaries = value; }
-    inline void SetRegionalSummaries(Aws::Vector<RegionalSummary>&& value) { m_regionalSummariesHasBeenSet = true; m_regionalSummaries = std::move(value); }
-    inline AttributeSummary& WithRegionalSummaries(const Aws::Vector<RegionalSummary>& value) { SetRegionalSummaries(value); return *this;}
-    inline AttributeSummary& WithRegionalSummaries(Aws::Vector<RegionalSummary>&& value) { SetRegionalSummaries(std::move(value)); return *this;}
-    inline AttributeSummary& AddRegionalSummaries(const RegionalSummary& value) { m_regionalSummariesHasBeenSet = true; m_regionalSummaries.push_back(value); return *this; }
-    inline AttributeSummary& AddRegionalSummaries(RegionalSummary&& value) { m_regionalSummariesHasBeenSet = true; m_regionalSummaries.push_back(std::move(value)); return *this; }
+    template<typename RegionalSummariesT = Aws::Vector<RegionalSummary>>
+    void SetRegionalSummaries(RegionalSummariesT&& value) { m_regionalSummariesHasBeenSet = true; m_regionalSummaries = std::forward<RegionalSummariesT>(value); }
+    template<typename RegionalSummariesT = Aws::Vector<RegionalSummary>>
+    AttributeSummary& WithRegionalSummaries(RegionalSummariesT&& value) { SetRegionalSummaries(std::forward<RegionalSummariesT>(value)); return *this;}
+    template<typename RegionalSummariesT = RegionalSummary>
+    AttributeSummary& AddRegionalSummaries(RegionalSummariesT&& value) { m_regionalSummariesHasBeenSet = true; m_regionalSummaries.emplace_back(std::forward<RegionalSummariesT>(value)); return *this; }
     ///@}
   private:
 
@@ -114,10 +110,10 @@ namespace Model
     Aws::String m_mostFrequentValue;
     bool m_mostFrequentValueHasBeenSet = false;
 
-    int m_numberOfMatchedAccounts;
+    int m_numberOfMatchedAccounts{0};
     bool m_numberOfMatchedAccountsHasBeenSet = false;
 
-    int m_numberOfUnmatchedAccounts;
+    int m_numberOfUnmatchedAccounts{0};
     bool m_numberOfUnmatchedAccountsHasBeenSet = false;
 
     Aws::Vector<RegionalSummary> m_regionalSummaries;

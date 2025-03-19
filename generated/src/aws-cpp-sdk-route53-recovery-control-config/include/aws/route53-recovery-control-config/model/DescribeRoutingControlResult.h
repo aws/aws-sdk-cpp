@@ -28,7 +28,7 @@ namespace Model
   class DescribeRoutingControlResult
   {
   public:
-    AWS_ROUTE53RECOVERYCONTROLCONFIG_API DescribeRoutingControlResult();
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API DescribeRoutingControlResult() = default;
     AWS_ROUTE53RECOVERYCONTROLCONFIG_API DescribeRoutingControlResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROUTE53RECOVERYCONTROLCONFIG_API DescribeRoutingControlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the routing control.</p>
      */
-    inline const RoutingControl& GetRoutingControl() const{ return m_routingControl; }
-    inline void SetRoutingControl(const RoutingControl& value) { m_routingControl = value; }
-    inline void SetRoutingControl(RoutingControl&& value) { m_routingControl = std::move(value); }
-    inline DescribeRoutingControlResult& WithRoutingControl(const RoutingControl& value) { SetRoutingControl(value); return *this;}
-    inline DescribeRoutingControlResult& WithRoutingControl(RoutingControl&& value) { SetRoutingControl(std::move(value)); return *this;}
+    inline const RoutingControl& GetRoutingControl() const { return m_routingControl; }
+    template<typename RoutingControlT = RoutingControl>
+    void SetRoutingControl(RoutingControlT&& value) { m_routingControlHasBeenSet = true; m_routingControl = std::forward<RoutingControlT>(value); }
+    template<typename RoutingControlT = RoutingControl>
+    DescribeRoutingControlResult& WithRoutingControl(RoutingControlT&& value) { SetRoutingControl(std::forward<RoutingControlT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeRoutingControlResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeRoutingControlResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeRoutingControlResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeRoutingControlResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     RoutingControl m_routingControl;
+    bool m_routingControlHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,25 +18,7 @@ namespace FinSpaceData
 namespace Model
 {
 
-Dataset::Dataset() : 
-    m_datasetIdHasBeenSet(false),
-    m_datasetArnHasBeenSet(false),
-    m_datasetTitleHasBeenSet(false),
-    m_kind(DatasetKind::NOT_SET),
-    m_kindHasBeenSet(false),
-    m_datasetDescriptionHasBeenSet(false),
-    m_ownerInfoHasBeenSet(false),
-    m_createTime(0),
-    m_createTimeHasBeenSet(false),
-    m_lastModifiedTime(0),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_schemaDefinitionHasBeenSet(false),
-    m_aliasHasBeenSet(false)
-{
-}
-
 Dataset::Dataset(JsonView jsonValue)
-  : Dataset()
 {
   *this = jsonValue;
 }
@@ -46,73 +28,53 @@ Dataset& Dataset::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("datasetId"))
   {
     m_datasetId = jsonValue.GetString("datasetId");
-
     m_datasetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("datasetArn"))
   {
     m_datasetArn = jsonValue.GetString("datasetArn");
-
     m_datasetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("datasetTitle"))
   {
     m_datasetTitle = jsonValue.GetString("datasetTitle");
-
     m_datasetTitleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kind"))
   {
     m_kind = DatasetKindMapper::GetDatasetKindForName(jsonValue.GetString("kind"));
-
     m_kindHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("datasetDescription"))
   {
     m_datasetDescription = jsonValue.GetString("datasetDescription");
-
     m_datasetDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ownerInfo"))
   {
     m_ownerInfo = jsonValue.GetObject("ownerInfo");
-
     m_ownerInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createTime"))
   {
     m_createTime = jsonValue.GetInt64("createTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetInt64("lastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("schemaDefinition"))
   {
     m_schemaDefinition = jsonValue.GetObject("schemaDefinition");
-
     m_schemaDefinitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("alias"))
   {
     m_alias = jsonValue.GetString("alias");
-
     m_aliasHasBeenSet = true;
   }
-
   return *this;
 }
 

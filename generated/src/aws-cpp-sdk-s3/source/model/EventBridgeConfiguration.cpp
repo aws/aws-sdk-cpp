@@ -20,10 +20,6 @@ namespace S3
 namespace Model
 {
 
-EventBridgeConfiguration::EventBridgeConfiguration()
-{
-}
-
 EventBridgeConfiguration::EventBridgeConfiguration(const XmlNode& xmlNode)
 {
   *this = xmlNode;

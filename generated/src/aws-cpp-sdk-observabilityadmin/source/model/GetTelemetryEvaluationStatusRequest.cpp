@@ -12,10 +12,6 @@ using namespace Aws::ObservabilityAdmin::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTelemetryEvaluationStatusRequest::GetTelemetryEvaluationStatusRequest()
-{
-}
-
 Aws::String GetTelemetryEvaluationStatusRequest::SerializePayload() const
 {
   return {};

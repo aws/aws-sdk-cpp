@@ -18,15 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-ErrorDetail::ErrorDetail() : 
-    m_errorMessageHasBeenSet(false),
-    m_errorCode(ErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false)
-{
-}
-
 ErrorDetail::ErrorDetail(JsonView jsonValue)
-  : ErrorDetail()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ErrorDetail& ErrorDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorCode"))
   {
     m_errorCode = ErrorCodeMapper::GetErrorCodeForName(jsonValue.GetString("errorCode"));
-
     m_errorCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

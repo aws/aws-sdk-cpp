@@ -18,14 +18,7 @@ namespace WorkMail
 namespace Model
 {
 
-GroupIdentifier::GroupIdentifier() : 
-    m_groupIdHasBeenSet(false),
-    m_groupNameHasBeenSet(false)
-{
-}
-
 GroupIdentifier::GroupIdentifier(JsonView jsonValue)
-  : GroupIdentifier()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ GroupIdentifier& GroupIdentifier::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GroupId"))
   {
     m_groupId = jsonValue.GetString("GroupId");
-
     m_groupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupName"))
   {
     m_groupName = jsonValue.GetString("GroupName");
-
     m_groupNameHasBeenSet = true;
   }
-
   return *this;
 }
 

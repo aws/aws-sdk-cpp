@@ -18,17 +18,7 @@ namespace CostOptimizationHub
 namespace Model
 {
 
-AccountEnrollmentStatus::AccountEnrollmentStatus() : 
-    m_accountIdHasBeenSet(false),
-    m_status(EnrollmentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_lastUpdatedTimestampHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false)
-{
-}
-
 AccountEnrollmentStatus::AccountEnrollmentStatus(JsonView jsonValue)
-  : AccountEnrollmentStatus()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ AccountEnrollmentStatus& AccountEnrollmentStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = EnrollmentStatusMapper::GetEnrollmentStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedTimestamp"))
   {
     m_lastUpdatedTimestamp = jsonValue.GetDouble("lastUpdatedTimestamp");
-
     m_lastUpdatedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("createdTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

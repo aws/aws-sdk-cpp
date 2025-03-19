@@ -12,13 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateQueueQuickConnectsRequest::DisassociateQueueQuickConnectsRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_queueIdHasBeenSet(false),
-    m_quickConnectIdsHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateQueueQuickConnectsRequest::SerializePayload() const
 {
   JsonValue payload;

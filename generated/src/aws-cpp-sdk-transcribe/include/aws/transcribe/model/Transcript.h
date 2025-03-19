@@ -32,7 +32,7 @@ namespace Model
   class Transcript
   {
   public:
-    AWS_TRANSCRIBESERVICE_API Transcript();
+    AWS_TRANSCRIBESERVICE_API Transcript() = default;
     AWS_TRANSCRIBESERVICE_API Transcript(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API Transcript& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,14 +53,12 @@ namespace Model
      * can get a new temporary URI by running a <code>GetTranscriptionJob</code> or
      * <code>ListTranscriptionJob</code> request.</p> 
      */
-    inline const Aws::String& GetTranscriptFileUri() const{ return m_transcriptFileUri; }
+    inline const Aws::String& GetTranscriptFileUri() const { return m_transcriptFileUri; }
     inline bool TranscriptFileUriHasBeenSet() const { return m_transcriptFileUriHasBeenSet; }
-    inline void SetTranscriptFileUri(const Aws::String& value) { m_transcriptFileUriHasBeenSet = true; m_transcriptFileUri = value; }
-    inline void SetTranscriptFileUri(Aws::String&& value) { m_transcriptFileUriHasBeenSet = true; m_transcriptFileUri = std::move(value); }
-    inline void SetTranscriptFileUri(const char* value) { m_transcriptFileUriHasBeenSet = true; m_transcriptFileUri.assign(value); }
-    inline Transcript& WithTranscriptFileUri(const Aws::String& value) { SetTranscriptFileUri(value); return *this;}
-    inline Transcript& WithTranscriptFileUri(Aws::String&& value) { SetTranscriptFileUri(std::move(value)); return *this;}
-    inline Transcript& WithTranscriptFileUri(const char* value) { SetTranscriptFileUri(value); return *this;}
+    template<typename TranscriptFileUriT = Aws::String>
+    void SetTranscriptFileUri(TranscriptFileUriT&& value) { m_transcriptFileUriHasBeenSet = true; m_transcriptFileUri = std::forward<TranscriptFileUriT>(value); }
+    template<typename TranscriptFileUriT = Aws::String>
+    Transcript& WithTranscriptFileUri(TranscriptFileUriT&& value) { SetTranscriptFileUri(std::forward<TranscriptFileUriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,14 +77,12 @@ namespace Model
      * <code>GetTranscriptionJob</code> or <code>ListTranscriptionJob</code>
      * request.</p> 
      */
-    inline const Aws::String& GetRedactedTranscriptFileUri() const{ return m_redactedTranscriptFileUri; }
+    inline const Aws::String& GetRedactedTranscriptFileUri() const { return m_redactedTranscriptFileUri; }
     inline bool RedactedTranscriptFileUriHasBeenSet() const { return m_redactedTranscriptFileUriHasBeenSet; }
-    inline void SetRedactedTranscriptFileUri(const Aws::String& value) { m_redactedTranscriptFileUriHasBeenSet = true; m_redactedTranscriptFileUri = value; }
-    inline void SetRedactedTranscriptFileUri(Aws::String&& value) { m_redactedTranscriptFileUriHasBeenSet = true; m_redactedTranscriptFileUri = std::move(value); }
-    inline void SetRedactedTranscriptFileUri(const char* value) { m_redactedTranscriptFileUriHasBeenSet = true; m_redactedTranscriptFileUri.assign(value); }
-    inline Transcript& WithRedactedTranscriptFileUri(const Aws::String& value) { SetRedactedTranscriptFileUri(value); return *this;}
-    inline Transcript& WithRedactedTranscriptFileUri(Aws::String&& value) { SetRedactedTranscriptFileUri(std::move(value)); return *this;}
-    inline Transcript& WithRedactedTranscriptFileUri(const char* value) { SetRedactedTranscriptFileUri(value); return *this;}
+    template<typename RedactedTranscriptFileUriT = Aws::String>
+    void SetRedactedTranscriptFileUri(RedactedTranscriptFileUriT&& value) { m_redactedTranscriptFileUriHasBeenSet = true; m_redactedTranscriptFileUri = std::forward<RedactedTranscriptFileUriT>(value); }
+    template<typename RedactedTranscriptFileUriT = Aws::String>
+    Transcript& WithRedactedTranscriptFileUri(RedactedTranscriptFileUriT&& value) { SetRedactedTranscriptFileUri(std::forward<RedactedTranscriptFileUriT>(value)); return *this;}
     ///@}
   private:
 

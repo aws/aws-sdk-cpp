@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-DisableFastSnapshotRestoreErrorItem::DisableFastSnapshotRestoreErrorItem() : 
-    m_snapshotIdHasBeenSet(false),
-    m_fastSnapshotRestoreStateErrorsHasBeenSet(false)
-{
-}
-
 DisableFastSnapshotRestoreErrorItem::DisableFastSnapshotRestoreErrorItem(const XmlNode& xmlNode)
-  : DisableFastSnapshotRestoreErrorItem()
 {
   *this = xmlNode;
 }
@@ -48,6 +41,7 @@ DisableFastSnapshotRestoreErrorItem& DisableFastSnapshotRestoreErrorItem::operat
     if(!fastSnapshotRestoreStateErrorsNode.IsNull())
     {
       XmlNode fastSnapshotRestoreStateErrorsMember = fastSnapshotRestoreStateErrorsNode.FirstChild("item");
+      m_fastSnapshotRestoreStateErrorsHasBeenSet = !fastSnapshotRestoreStateErrorsMember.IsNull();
       while(!fastSnapshotRestoreStateErrorsMember.IsNull())
       {
         m_fastSnapshotRestoreStateErrors.push_back(fastSnapshotRestoreStateErrorsMember);

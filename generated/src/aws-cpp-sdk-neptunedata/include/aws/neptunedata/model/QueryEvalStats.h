@@ -32,7 +32,7 @@ namespace Model
   class QueryEvalStats
   {
   public:
-    AWS_NEPTUNEDATA_API QueryEvalStats();
+    AWS_NEPTUNEDATA_API QueryEvalStats() = default;
     AWS_NEPTUNEDATA_API QueryEvalStats(Aws::Utils::Json::JsonView jsonValue);
     AWS_NEPTUNEDATA_API QueryEvalStats& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NEPTUNEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>Indicates how long the query waited, in milliseconds.</p>
      */
-    inline int GetWaited() const{ return m_waited; }
+    inline int GetWaited() const { return m_waited; }
     inline bool WaitedHasBeenSet() const { return m_waitedHasBeenSet; }
     inline void SetWaited(int value) { m_waitedHasBeenSet = true; m_waited = value; }
     inline QueryEvalStats& WithWaited(int value) { SetWaited(value); return *this;}
@@ -52,7 +52,7 @@ namespace Model
     /**
      * <p>The number of milliseconds the query has been running so far.</p>
      */
-    inline int GetElapsed() const{ return m_elapsed; }
+    inline int GetElapsed() const { return m_elapsed; }
     inline bool ElapsedHasBeenSet() const { return m_elapsedHasBeenSet; }
     inline void SetElapsed(int value) { m_elapsedHasBeenSet = true; m_elapsed = value; }
     inline QueryEvalStats& WithElapsed(int value) { SetElapsed(value); return *this;}
@@ -62,7 +62,7 @@ namespace Model
     /**
      * <p>Set to <code>TRUE</code> if the query was cancelled, or FALSE otherwise.</p>
      */
-    inline bool GetCancelled() const{ return m_cancelled; }
+    inline bool GetCancelled() const { return m_cancelled; }
     inline bool CancelledHasBeenSet() const { return m_cancelledHasBeenSet; }
     inline void SetCancelled(bool value) { m_cancelledHasBeenSet = true; m_cancelled = value; }
     inline QueryEvalStats& WithCancelled(bool value) { SetCancelled(value); return *this;}
@@ -72,22 +72,22 @@ namespace Model
     /**
      * <p>The number of subqueries in this query.</p>
      */
-    inline Aws::Utils::DocumentView GetSubqueries() const{ return m_subqueries; }
+    inline Aws::Utils::DocumentView GetSubqueries() const { return m_subqueries; }
     inline bool SubqueriesHasBeenSet() const { return m_subqueriesHasBeenSet; }
-    inline void SetSubqueries(const Aws::Utils::Document& value) { m_subqueriesHasBeenSet = true; m_subqueries = value; }
-    inline void SetSubqueries(Aws::Utils::Document&& value) { m_subqueriesHasBeenSet = true; m_subqueries = std::move(value); }
-    inline QueryEvalStats& WithSubqueries(const Aws::Utils::Document& value) { SetSubqueries(value); return *this;}
-    inline QueryEvalStats& WithSubqueries(Aws::Utils::Document&& value) { SetSubqueries(std::move(value)); return *this;}
+    template<typename SubqueriesT = Aws::Utils::Document>
+    void SetSubqueries(SubqueriesT&& value) { m_subqueriesHasBeenSet = true; m_subqueries = std::forward<SubqueriesT>(value); }
+    template<typename SubqueriesT = Aws::Utils::Document>
+    QueryEvalStats& WithSubqueries(SubqueriesT&& value) { SetSubqueries(std::forward<SubqueriesT>(value)); return *this;}
     ///@}
   private:
 
-    int m_waited;
+    int m_waited{0};
     bool m_waitedHasBeenSet = false;
 
-    int m_elapsed;
+    int m_elapsed{0};
     bool m_elapsedHasBeenSet = false;
 
-    bool m_cancelled;
+    bool m_cancelled{false};
     bool m_cancelledHasBeenSet = false;
 
     Aws::Utils::Document m_subqueries;

@@ -12,13 +12,6 @@ using namespace Aws::SFN::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopExecutionRequest::StopExecutionRequest() : 
-    m_executionArnHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_causeHasBeenSet(false)
-{
-}
-
 Aws::String StopExecutionRequest::SerializePayload() const
 {
   JsonValue payload;

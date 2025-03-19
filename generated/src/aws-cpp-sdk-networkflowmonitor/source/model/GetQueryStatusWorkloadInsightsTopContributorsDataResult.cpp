@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetQueryStatusWorkloadInsightsTopContributorsDataResult::GetQueryStatusWorkloadInsightsTopContributorsDataResult() : 
-    m_status(QueryStatus::NOT_SET)
-{
-}
-
 GetQueryStatusWorkloadInsightsTopContributorsDataResult::GetQueryStatusWorkloadInsightsTopContributorsDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetQueryStatusWorkloadInsightsTopContributorsDataResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ GetQueryStatusWorkloadInsightsTopContributorsDataResult& GetQueryStatusWorkloadI
   if(jsonValue.ValueExists("status"))
   {
     m_status = QueryStatusMapper::GetQueryStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -12,14 +12,6 @@ using namespace Aws::ChimeSDKIdentity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAppInstanceBotRequest::UpdateAppInstanceBotRequest() : 
-    m_appInstanceBotArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_configurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAppInstanceBotRequest::SerializePayload() const
 {
   JsonValue payload;

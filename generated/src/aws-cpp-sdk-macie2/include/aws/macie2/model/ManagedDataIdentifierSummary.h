@@ -36,7 +36,7 @@ namespace Model
   class ManagedDataIdentifierSummary
   {
   public:
-    AWS_MACIE2_API ManagedDataIdentifierSummary();
+    AWS_MACIE2_API ManagedDataIdentifierSummary() = default;
     AWS_MACIE2_API ManagedDataIdentifierSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API ManagedDataIdentifierSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,12 +51,10 @@ namespace Model
      * health insurance identification numbers, or personally identifiable information,
      * such as passport numbers.</p>
      */
-    inline const SensitiveDataItemCategory& GetCategory() const{ return m_category; }
+    inline SensitiveDataItemCategory GetCategory() const { return m_category; }
     inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
-    inline void SetCategory(const SensitiveDataItemCategory& value) { m_categoryHasBeenSet = true; m_category = value; }
-    inline void SetCategory(SensitiveDataItemCategory&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
-    inline ManagedDataIdentifierSummary& WithCategory(const SensitiveDataItemCategory& value) { SetCategory(value); return *this;}
-    inline ManagedDataIdentifierSummary& WithCategory(SensitiveDataItemCategory&& value) { SetCategory(std::move(value)); return *this;}
+    inline void SetCategory(SensitiveDataItemCategory value) { m_categoryHasBeenSet = true; m_category = value; }
+    inline ManagedDataIdentifierSummary& WithCategory(SensitiveDataItemCategory value) { SetCategory(value); return *this;}
     ///@}
 
     ///@{
@@ -66,18 +64,16 @@ namespace Model
      * For example: OPENSSH_PRIVATE_KEY for OpenSSH private keys, CREDIT_CARD_NUMBER
      * for credit card numbers, or USA_PASSPORT_NUMBER for US passport numbers.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline ManagedDataIdentifierSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline ManagedDataIdentifierSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline ManagedDataIdentifierSummary& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ManagedDataIdentifierSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
   private:
 
-    SensitiveDataItemCategory m_category;
+    SensitiveDataItemCategory m_category{SensitiveDataItemCategory::NOT_SET};
     bool m_categoryHasBeenSet = false;
 
     Aws::String m_id;

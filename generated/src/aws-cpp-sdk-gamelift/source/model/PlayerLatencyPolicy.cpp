@@ -18,16 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-PlayerLatencyPolicy::PlayerLatencyPolicy() : 
-    m_maximumIndividualPlayerLatencyMilliseconds(0),
-    m_maximumIndividualPlayerLatencyMillisecondsHasBeenSet(false),
-    m_policyDurationSeconds(0),
-    m_policyDurationSecondsHasBeenSet(false)
-{
-}
-
 PlayerLatencyPolicy::PlayerLatencyPolicy(JsonView jsonValue)
-  : PlayerLatencyPolicy()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ PlayerLatencyPolicy& PlayerLatencyPolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MaximumIndividualPlayerLatencyMilliseconds"))
   {
     m_maximumIndividualPlayerLatencyMilliseconds = jsonValue.GetInteger("MaximumIndividualPlayerLatencyMilliseconds");
-
     m_maximumIndividualPlayerLatencyMillisecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolicyDurationSeconds"))
   {
     m_policyDurationSeconds = jsonValue.GetInteger("PolicyDurationSeconds");
-
     m_policyDurationSecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

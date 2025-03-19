@@ -28,7 +28,7 @@ namespace Model
   class GetConnectionResult
   {
   public:
-    AWS_GLUE_API GetConnectionResult();
+    AWS_GLUE_API GetConnectionResult() = default;
     AWS_GLUE_API GetConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUE_API GetConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The requested connection definition.</p>
      */
-    inline const Connection& GetConnection() const{ return m_connection; }
-    inline void SetConnection(const Connection& value) { m_connection = value; }
-    inline void SetConnection(Connection&& value) { m_connection = std::move(value); }
-    inline GetConnectionResult& WithConnection(const Connection& value) { SetConnection(value); return *this;}
-    inline GetConnectionResult& WithConnection(Connection&& value) { SetConnection(std::move(value)); return *this;}
+    inline const Connection& GetConnection() const { return m_connection; }
+    template<typename ConnectionT = Connection>
+    void SetConnection(ConnectionT&& value) { m_connectionHasBeenSet = true; m_connection = std::forward<ConnectionT>(value); }
+    template<typename ConnectionT = Connection>
+    GetConnectionResult& WithConnection(ConnectionT&& value) { SetConnection(std::forward<ConnectionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetConnectionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetConnectionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetConnectionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetConnectionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Connection m_connection;
+    bool m_connectionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

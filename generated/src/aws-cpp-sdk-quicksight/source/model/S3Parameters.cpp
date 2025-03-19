@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-S3Parameters::S3Parameters() : 
-    m_manifestFileLocationHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 S3Parameters::S3Parameters(JsonView jsonValue)
-  : S3Parameters()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ S3Parameters& S3Parameters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ManifestFileLocation"))
   {
     m_manifestFileLocation = jsonValue.GetObject("ManifestFileLocation");
-
     m_manifestFileLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

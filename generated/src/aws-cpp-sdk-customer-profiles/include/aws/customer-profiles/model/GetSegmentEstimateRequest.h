@@ -21,7 +21,7 @@ namespace Model
   class GetSegmentEstimateRequest : public CustomerProfilesRequest
   {
   public:
-    AWS_CUSTOMERPROFILES_API GetSegmentEstimateRequest();
+    AWS_CUSTOMERPROFILES_API GetSegmentEstimateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The unique name of the domain.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline GetSegmentEstimateRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline GetSegmentEstimateRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline GetSegmentEstimateRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    GetSegmentEstimateRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,14 +49,12 @@ namespace Model
      * <p>The query Id passed by a previous <code>CreateSegmentEstimate</code>
      * operation.</p>
      */
-    inline const Aws::String& GetEstimateId() const{ return m_estimateId; }
+    inline const Aws::String& GetEstimateId() const { return m_estimateId; }
     inline bool EstimateIdHasBeenSet() const { return m_estimateIdHasBeenSet; }
-    inline void SetEstimateId(const Aws::String& value) { m_estimateIdHasBeenSet = true; m_estimateId = value; }
-    inline void SetEstimateId(Aws::String&& value) { m_estimateIdHasBeenSet = true; m_estimateId = std::move(value); }
-    inline void SetEstimateId(const char* value) { m_estimateIdHasBeenSet = true; m_estimateId.assign(value); }
-    inline GetSegmentEstimateRequest& WithEstimateId(const Aws::String& value) { SetEstimateId(value); return *this;}
-    inline GetSegmentEstimateRequest& WithEstimateId(Aws::String&& value) { SetEstimateId(std::move(value)); return *this;}
-    inline GetSegmentEstimateRequest& WithEstimateId(const char* value) { SetEstimateId(value); return *this;}
+    template<typename EstimateIdT = Aws::String>
+    void SetEstimateId(EstimateIdT&& value) { m_estimateIdHasBeenSet = true; m_estimateId = std::forward<EstimateIdT>(value); }
+    template<typename EstimateIdT = Aws::String>
+    GetSegmentEstimateRequest& WithEstimateId(EstimateIdT&& value) { SetEstimateId(std::forward<EstimateIdT>(value)); return *this;}
     ///@}
   private:
 

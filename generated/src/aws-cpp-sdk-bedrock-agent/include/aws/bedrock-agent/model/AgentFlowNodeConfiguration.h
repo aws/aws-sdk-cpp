@@ -35,7 +35,7 @@ namespace Model
   class AgentFlowNodeConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API AgentFlowNodeConfiguration();
+    AWS_BEDROCKAGENT_API AgentFlowNodeConfiguration() = default;
     AWS_BEDROCKAGENT_API AgentFlowNodeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API AgentFlowNodeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the alias of the agent to invoke.</p>
      */
-    inline const Aws::String& GetAgentAliasArn() const{ return m_agentAliasArn; }
+    inline const Aws::String& GetAgentAliasArn() const { return m_agentAliasArn; }
     inline bool AgentAliasArnHasBeenSet() const { return m_agentAliasArnHasBeenSet; }
-    inline void SetAgentAliasArn(const Aws::String& value) { m_agentAliasArnHasBeenSet = true; m_agentAliasArn = value; }
-    inline void SetAgentAliasArn(Aws::String&& value) { m_agentAliasArnHasBeenSet = true; m_agentAliasArn = std::move(value); }
-    inline void SetAgentAliasArn(const char* value) { m_agentAliasArnHasBeenSet = true; m_agentAliasArn.assign(value); }
-    inline AgentFlowNodeConfiguration& WithAgentAliasArn(const Aws::String& value) { SetAgentAliasArn(value); return *this;}
-    inline AgentFlowNodeConfiguration& WithAgentAliasArn(Aws::String&& value) { SetAgentAliasArn(std::move(value)); return *this;}
-    inline AgentFlowNodeConfiguration& WithAgentAliasArn(const char* value) { SetAgentAliasArn(value); return *this;}
+    template<typename AgentAliasArnT = Aws::String>
+    void SetAgentAliasArn(AgentAliasArnT&& value) { m_agentAliasArnHasBeenSet = true; m_agentAliasArn = std::forward<AgentAliasArnT>(value); }
+    template<typename AgentAliasArnT = Aws::String>
+    AgentFlowNodeConfiguration& WithAgentAliasArn(AgentAliasArnT&& value) { SetAgentAliasArn(std::forward<AgentAliasArnT>(value)); return *this;}
     ///@}
   private:
 

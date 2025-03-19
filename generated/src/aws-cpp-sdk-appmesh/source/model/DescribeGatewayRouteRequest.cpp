@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeGatewayRouteRequest::DescribeGatewayRouteRequest() : 
-    m_gatewayRouteNameHasBeenSet(false),
-    m_meshNameHasBeenSet(false),
-    m_meshOwnerHasBeenSet(false),
-    m_virtualGatewayNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeGatewayRouteRequest::SerializePayload() const
 {
   return {};

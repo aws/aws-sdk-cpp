@@ -36,7 +36,7 @@ namespace Model
   class AutoTuneOptions
   {
   public:
-    AWS_OPENSEARCHSERVICE_API AutoTuneOptions();
+    AWS_OPENSEARCHSERVICE_API AutoTuneOptions() = default;
     AWS_OPENSEARCHSERVICE_API AutoTuneOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API AutoTuneOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,10 @@ namespace Model
     /**
      * <p>Whether Auto-Tune is enabled or disabled.</p>
      */
-    inline const AutoTuneDesiredState& GetDesiredState() const{ return m_desiredState; }
+    inline AutoTuneDesiredState GetDesiredState() const { return m_desiredState; }
     inline bool DesiredStateHasBeenSet() const { return m_desiredStateHasBeenSet; }
-    inline void SetDesiredState(const AutoTuneDesiredState& value) { m_desiredStateHasBeenSet = true; m_desiredState = value; }
-    inline void SetDesiredState(AutoTuneDesiredState&& value) { m_desiredStateHasBeenSet = true; m_desiredState = std::move(value); }
-    inline AutoTuneOptions& WithDesiredState(const AutoTuneDesiredState& value) { SetDesiredState(value); return *this;}
-    inline AutoTuneOptions& WithDesiredState(AutoTuneDesiredState&& value) { SetDesiredState(std::move(value)); return *this;}
+    inline void SetDesiredState(AutoTuneDesiredState value) { m_desiredStateHasBeenSet = true; m_desiredState = value; }
+    inline AutoTuneOptions& WithDesiredState(AutoTuneDesiredState value) { SetDesiredState(value); return *this;}
     ///@}
 
     ///@{
@@ -62,12 +60,10 @@ namespace Model
      * must include a <code>MaintenanceSchedule</code> in the request. Otherwise,
      * OpenSearch Service is unable to perform the rollback.</p>
      */
-    inline const RollbackOnDisable& GetRollbackOnDisable() const{ return m_rollbackOnDisable; }
+    inline RollbackOnDisable GetRollbackOnDisable() const { return m_rollbackOnDisable; }
     inline bool RollbackOnDisableHasBeenSet() const { return m_rollbackOnDisableHasBeenSet; }
-    inline void SetRollbackOnDisable(const RollbackOnDisable& value) { m_rollbackOnDisableHasBeenSet = true; m_rollbackOnDisable = value; }
-    inline void SetRollbackOnDisable(RollbackOnDisable&& value) { m_rollbackOnDisableHasBeenSet = true; m_rollbackOnDisable = std::move(value); }
-    inline AutoTuneOptions& WithRollbackOnDisable(const RollbackOnDisable& value) { SetRollbackOnDisable(value); return *this;}
-    inline AutoTuneOptions& WithRollbackOnDisable(RollbackOnDisable&& value) { SetRollbackOnDisable(std::move(value)); return *this;}
+    inline void SetRollbackOnDisable(RollbackOnDisable value) { m_rollbackOnDisableHasBeenSet = true; m_rollbackOnDisable = value; }
+    inline AutoTuneOptions& WithRollbackOnDisable(RollbackOnDisable value) { SetRollbackOnDisable(value); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +73,14 @@ namespace Model
      * window</a> instead.</p> <p>A list of maintenance schedules during which
      * Auto-Tune can deploy changes.</p>
      */
-    inline const Aws::Vector<AutoTuneMaintenanceSchedule>& GetMaintenanceSchedules() const{ return m_maintenanceSchedules; }
+    inline const Aws::Vector<AutoTuneMaintenanceSchedule>& GetMaintenanceSchedules() const { return m_maintenanceSchedules; }
     inline bool MaintenanceSchedulesHasBeenSet() const { return m_maintenanceSchedulesHasBeenSet; }
-    inline void SetMaintenanceSchedules(const Aws::Vector<AutoTuneMaintenanceSchedule>& value) { m_maintenanceSchedulesHasBeenSet = true; m_maintenanceSchedules = value; }
-    inline void SetMaintenanceSchedules(Aws::Vector<AutoTuneMaintenanceSchedule>&& value) { m_maintenanceSchedulesHasBeenSet = true; m_maintenanceSchedules = std::move(value); }
-    inline AutoTuneOptions& WithMaintenanceSchedules(const Aws::Vector<AutoTuneMaintenanceSchedule>& value) { SetMaintenanceSchedules(value); return *this;}
-    inline AutoTuneOptions& WithMaintenanceSchedules(Aws::Vector<AutoTuneMaintenanceSchedule>&& value) { SetMaintenanceSchedules(std::move(value)); return *this;}
-    inline AutoTuneOptions& AddMaintenanceSchedules(const AutoTuneMaintenanceSchedule& value) { m_maintenanceSchedulesHasBeenSet = true; m_maintenanceSchedules.push_back(value); return *this; }
-    inline AutoTuneOptions& AddMaintenanceSchedules(AutoTuneMaintenanceSchedule&& value) { m_maintenanceSchedulesHasBeenSet = true; m_maintenanceSchedules.push_back(std::move(value)); return *this; }
+    template<typename MaintenanceSchedulesT = Aws::Vector<AutoTuneMaintenanceSchedule>>
+    void SetMaintenanceSchedules(MaintenanceSchedulesT&& value) { m_maintenanceSchedulesHasBeenSet = true; m_maintenanceSchedules = std::forward<MaintenanceSchedulesT>(value); }
+    template<typename MaintenanceSchedulesT = Aws::Vector<AutoTuneMaintenanceSchedule>>
+    AutoTuneOptions& WithMaintenanceSchedules(MaintenanceSchedulesT&& value) { SetMaintenanceSchedules(std::forward<MaintenanceSchedulesT>(value)); return *this;}
+    template<typename MaintenanceSchedulesT = AutoTuneMaintenanceSchedule>
+    AutoTuneOptions& AddMaintenanceSchedules(MaintenanceSchedulesT&& value) { m_maintenanceSchedulesHasBeenSet = true; m_maintenanceSchedules.emplace_back(std::forward<MaintenanceSchedulesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -94,23 +90,23 @@ namespace Model
      * window</a> to deploy configuration changes on the domain rather than a
      * maintenance schedule.</p>
      */
-    inline bool GetUseOffPeakWindow() const{ return m_useOffPeakWindow; }
+    inline bool GetUseOffPeakWindow() const { return m_useOffPeakWindow; }
     inline bool UseOffPeakWindowHasBeenSet() const { return m_useOffPeakWindowHasBeenSet; }
     inline void SetUseOffPeakWindow(bool value) { m_useOffPeakWindowHasBeenSet = true; m_useOffPeakWindow = value; }
     inline AutoTuneOptions& WithUseOffPeakWindow(bool value) { SetUseOffPeakWindow(value); return *this;}
     ///@}
   private:
 
-    AutoTuneDesiredState m_desiredState;
+    AutoTuneDesiredState m_desiredState{AutoTuneDesiredState::NOT_SET};
     bool m_desiredStateHasBeenSet = false;
 
-    RollbackOnDisable m_rollbackOnDisable;
+    RollbackOnDisable m_rollbackOnDisable{RollbackOnDisable::NOT_SET};
     bool m_rollbackOnDisableHasBeenSet = false;
 
     Aws::Vector<AutoTuneMaintenanceSchedule> m_maintenanceSchedules;
     bool m_maintenanceSchedulesHasBeenSet = false;
 
-    bool m_useOffPeakWindow;
+    bool m_useOffPeakWindow{false};
     bool m_useOffPeakWindowHasBeenSet = false;
   };
 

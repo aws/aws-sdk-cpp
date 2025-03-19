@@ -34,7 +34,7 @@ namespace Model
   class LandingZoneDriftStatusSummary
   {
   public:
-    AWS_CONTROLTOWER_API LandingZoneDriftStatusSummary();
+    AWS_CONTROLTOWER_API LandingZoneDriftStatusSummary() = default;
     AWS_CONTROLTOWER_API LandingZoneDriftStatusSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONTROLTOWER_API LandingZoneDriftStatusSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONTROLTOWER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,16 +49,14 @@ namespace Model
      * configuration matches the configuration that Amazon Web Services Control Tower
      * expected. </p> </li> </ul>
      */
-    inline const LandingZoneDriftStatus& GetStatus() const{ return m_status; }
+    inline LandingZoneDriftStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const LandingZoneDriftStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(LandingZoneDriftStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline LandingZoneDriftStatusSummary& WithStatus(const LandingZoneDriftStatus& value) { SetStatus(value); return *this;}
-    inline LandingZoneDriftStatusSummary& WithStatus(LandingZoneDriftStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(LandingZoneDriftStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline LandingZoneDriftStatusSummary& WithStatus(LandingZoneDriftStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    LandingZoneDriftStatus m_status;
+    LandingZoneDriftStatus m_status{LandingZoneDriftStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

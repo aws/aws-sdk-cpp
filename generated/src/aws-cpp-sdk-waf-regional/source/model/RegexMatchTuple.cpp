@@ -18,16 +18,7 @@ namespace WAFRegional
 namespace Model
 {
 
-RegexMatchTuple::RegexMatchTuple() : 
-    m_fieldToMatchHasBeenSet(false),
-    m_textTransformation(TextTransformation::NOT_SET),
-    m_textTransformationHasBeenSet(false),
-    m_regexPatternSetIdHasBeenSet(false)
-{
-}
-
 RegexMatchTuple::RegexMatchTuple(JsonView jsonValue)
-  : RegexMatchTuple()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ RegexMatchTuple& RegexMatchTuple::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FieldToMatch"))
   {
     m_fieldToMatch = jsonValue.GetObject("FieldToMatch");
-
     m_fieldToMatchHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TextTransformation"))
   {
     m_textTransformation = TextTransformationMapper::GetTextTransformationForName(jsonValue.GetString("TextTransformation"));
-
     m_textTransformationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegexPatternSetId"))
   {
     m_regexPatternSetId = jsonValue.GetString("RegexPatternSetId");
-
     m_regexPatternSetIdHasBeenSet = true;
   }
-
   return *this;
 }
 

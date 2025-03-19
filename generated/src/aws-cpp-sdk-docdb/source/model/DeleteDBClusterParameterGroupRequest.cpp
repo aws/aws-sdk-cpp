@@ -10,11 +10,6 @@
 using namespace Aws::DocDB::Model;
 using namespace Aws::Utils;
 
-DeleteDBClusterParameterGroupRequest::DeleteDBClusterParameterGroupRequest() : 
-    m_dBClusterParameterGroupNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDBClusterParameterGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

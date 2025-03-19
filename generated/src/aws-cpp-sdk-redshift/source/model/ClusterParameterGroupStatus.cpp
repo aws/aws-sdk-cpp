@@ -20,15 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-ClusterParameterGroupStatus::ClusterParameterGroupStatus() : 
-    m_parameterGroupNameHasBeenSet(false),
-    m_parameterApplyStatusHasBeenSet(false),
-    m_clusterParameterStatusListHasBeenSet(false)
-{
-}
-
 ClusterParameterGroupStatus::ClusterParameterGroupStatus(const XmlNode& xmlNode)
-  : ClusterParameterGroupStatus()
 {
   *this = xmlNode;
 }
@@ -55,6 +47,7 @@ ClusterParameterGroupStatus& ClusterParameterGroupStatus::operator =(const XmlNo
     if(!clusterParameterStatusListNode.IsNull())
     {
       XmlNode clusterParameterStatusListMember = clusterParameterStatusListNode.FirstChild("member");
+      m_clusterParameterStatusListHasBeenSet = !clusterParameterStatusListMember.IsNull();
       while(!clusterParameterStatusListMember.IsNull())
       {
         m_clusterParameterStatusList.push_back(clusterParameterStatusListMember);

@@ -18,14 +18,7 @@ namespace WorkSpacesThinClient
 namespace Model
 {
 
-Software::Software() : 
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 Software::Software(JsonView jsonValue)
-  : Software()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Software& Software::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class MultiConditionalBranch
   {
   public:
-    AWS_PINPOINT_API MultiConditionalBranch();
+    AWS_PINPOINT_API MultiConditionalBranch() = default;
     AWS_PINPOINT_API MultiConditionalBranch(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API MultiConditionalBranch& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>The condition to evaluate for the activity path.</p>
      */
-    inline const SimpleCondition& GetCondition() const{ return m_condition; }
+    inline const SimpleCondition& GetCondition() const { return m_condition; }
     inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
-    inline void SetCondition(const SimpleCondition& value) { m_conditionHasBeenSet = true; m_condition = value; }
-    inline void SetCondition(SimpleCondition&& value) { m_conditionHasBeenSet = true; m_condition = std::move(value); }
-    inline MultiConditionalBranch& WithCondition(const SimpleCondition& value) { SetCondition(value); return *this;}
-    inline MultiConditionalBranch& WithCondition(SimpleCondition&& value) { SetCondition(std::move(value)); return *this;}
+    template<typename ConditionT = SimpleCondition>
+    void SetCondition(ConditionT&& value) { m_conditionHasBeenSet = true; m_condition = std::forward<ConditionT>(value); }
+    template<typename ConditionT = SimpleCondition>
+    MultiConditionalBranch& WithCondition(ConditionT&& value) { SetCondition(std::forward<ConditionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +56,12 @@ namespace Model
      * <p>The unique identifier for the next activity to perform, after completing the
      * activity for the path.</p>
      */
-    inline const Aws::String& GetNextActivity() const{ return m_nextActivity; }
+    inline const Aws::String& GetNextActivity() const { return m_nextActivity; }
     inline bool NextActivityHasBeenSet() const { return m_nextActivityHasBeenSet; }
-    inline void SetNextActivity(const Aws::String& value) { m_nextActivityHasBeenSet = true; m_nextActivity = value; }
-    inline void SetNextActivity(Aws::String&& value) { m_nextActivityHasBeenSet = true; m_nextActivity = std::move(value); }
-    inline void SetNextActivity(const char* value) { m_nextActivityHasBeenSet = true; m_nextActivity.assign(value); }
-    inline MultiConditionalBranch& WithNextActivity(const Aws::String& value) { SetNextActivity(value); return *this;}
-    inline MultiConditionalBranch& WithNextActivity(Aws::String&& value) { SetNextActivity(std::move(value)); return *this;}
-    inline MultiConditionalBranch& WithNextActivity(const char* value) { SetNextActivity(value); return *this;}
+    template<typename NextActivityT = Aws::String>
+    void SetNextActivity(NextActivityT&& value) { m_nextActivityHasBeenSet = true; m_nextActivity = std::forward<NextActivityT>(value); }
+    template<typename NextActivityT = Aws::String>
+    MultiConditionalBranch& WithNextActivity(NextActivityT&& value) { SetNextActivity(std::forward<NextActivityT>(value)); return *this;}
     ///@}
   private:
 

@@ -29,7 +29,7 @@ namespace Model
   class ListCoverageResult
   {
   public:
-    AWS_GUARDDUTY_API ListCoverageResult();
+    AWS_GUARDDUTY_API ListCoverageResult() = default;
     AWS_GUARDDUTY_API ListCoverageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GUARDDUTY_API ListCoverageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list of resources and their attributes providing cluster details.</p>
      */
-    inline const Aws::Vector<CoverageResource>& GetResources() const{ return m_resources; }
-    inline void SetResources(const Aws::Vector<CoverageResource>& value) { m_resources = value; }
-    inline void SetResources(Aws::Vector<CoverageResource>&& value) { m_resources = std::move(value); }
-    inline ListCoverageResult& WithResources(const Aws::Vector<CoverageResource>& value) { SetResources(value); return *this;}
-    inline ListCoverageResult& WithResources(Aws::Vector<CoverageResource>&& value) { SetResources(std::move(value)); return *this;}
-    inline ListCoverageResult& AddResources(const CoverageResource& value) { m_resources.push_back(value); return *this; }
-    inline ListCoverageResult& AddResources(CoverageResource&& value) { m_resources.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CoverageResource>& GetResources() const { return m_resources; }
+    template<typename ResourcesT = Aws::Vector<CoverageResource>>
+    void SetResources(ResourcesT&& value) { m_resourcesHasBeenSet = true; m_resources = std::forward<ResourcesT>(value); }
+    template<typename ResourcesT = Aws::Vector<CoverageResource>>
+    ListCoverageResult& WithResources(ResourcesT&& value) { SetResources(std::forward<ResourcesT>(value)); return *this;}
+    template<typename ResourcesT = CoverageResource>
+    ListCoverageResult& AddResources(ResourcesT&& value) { m_resourcesHasBeenSet = true; m_resources.emplace_back(std::forward<ResourcesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The pagination parameter to be used on the next list operation to retrieve
      * more items.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListCoverageResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCoverageResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCoverageResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCoverageResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListCoverageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListCoverageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListCoverageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListCoverageResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<CoverageResource> m_resources;
+    bool m_resourcesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

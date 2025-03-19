@@ -33,7 +33,7 @@ namespace Model
   class MLMemberAbilities
   {
   public:
-    AWS_CLEANROOMS_API MLMemberAbilities();
+    AWS_CLEANROOMS_API MLMemberAbilities() = default;
     AWS_CLEANROOMS_API MLMemberAbilities(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API MLMemberAbilities& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,13 @@ namespace Model
     /**
      * <p>The custom ML member abilities for a collaboration member. </p>
      */
-    inline const Aws::Vector<CustomMLMemberAbility>& GetCustomMLMemberAbilities() const{ return m_customMLMemberAbilities; }
+    inline const Aws::Vector<CustomMLMemberAbility>& GetCustomMLMemberAbilities() const { return m_customMLMemberAbilities; }
     inline bool CustomMLMemberAbilitiesHasBeenSet() const { return m_customMLMemberAbilitiesHasBeenSet; }
-    inline void SetCustomMLMemberAbilities(const Aws::Vector<CustomMLMemberAbility>& value) { m_customMLMemberAbilitiesHasBeenSet = true; m_customMLMemberAbilities = value; }
-    inline void SetCustomMLMemberAbilities(Aws::Vector<CustomMLMemberAbility>&& value) { m_customMLMemberAbilitiesHasBeenSet = true; m_customMLMemberAbilities = std::move(value); }
-    inline MLMemberAbilities& WithCustomMLMemberAbilities(const Aws::Vector<CustomMLMemberAbility>& value) { SetCustomMLMemberAbilities(value); return *this;}
-    inline MLMemberAbilities& WithCustomMLMemberAbilities(Aws::Vector<CustomMLMemberAbility>&& value) { SetCustomMLMemberAbilities(std::move(value)); return *this;}
-    inline MLMemberAbilities& AddCustomMLMemberAbilities(const CustomMLMemberAbility& value) { m_customMLMemberAbilitiesHasBeenSet = true; m_customMLMemberAbilities.push_back(value); return *this; }
-    inline MLMemberAbilities& AddCustomMLMemberAbilities(CustomMLMemberAbility&& value) { m_customMLMemberAbilitiesHasBeenSet = true; m_customMLMemberAbilities.push_back(std::move(value)); return *this; }
+    template<typename CustomMLMemberAbilitiesT = Aws::Vector<CustomMLMemberAbility>>
+    void SetCustomMLMemberAbilities(CustomMLMemberAbilitiesT&& value) { m_customMLMemberAbilitiesHasBeenSet = true; m_customMLMemberAbilities = std::forward<CustomMLMemberAbilitiesT>(value); }
+    template<typename CustomMLMemberAbilitiesT = Aws::Vector<CustomMLMemberAbility>>
+    MLMemberAbilities& WithCustomMLMemberAbilities(CustomMLMemberAbilitiesT&& value) { SetCustomMLMemberAbilities(std::forward<CustomMLMemberAbilitiesT>(value)); return *this;}
+    inline MLMemberAbilities& AddCustomMLMemberAbilities(CustomMLMemberAbility value) { m_customMLMemberAbilitiesHasBeenSet = true; m_customMLMemberAbilities.push_back(value); return *this; }
     ///@}
   private:
 

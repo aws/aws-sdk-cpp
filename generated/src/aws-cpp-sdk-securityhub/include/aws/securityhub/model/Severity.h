@@ -38,7 +38,7 @@ namespace Model
   class Severity
   {
   public:
-    AWS_SECURITYHUB_API Severity();
+    AWS_SECURITYHUB_API Severity() = default;
     AWS_SECURITYHUB_API Severity(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Severity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,7 +51,7 @@ namespace Model
      * as defined by the Amazon Web Services service or integrated partner product that
      * generated the finding.</p>
      */
-    inline double GetProduct() const{ return m_product; }
+    inline double GetProduct() const { return m_product; }
     inline bool ProductHasBeenSet() const { return m_productHasBeenSet; }
     inline void SetProduct(double value) { m_productHasBeenSet = true; m_product = value; }
     inline Severity& WithProduct(double value) { SetProduct(value); return *this;}
@@ -72,12 +72,10 @@ namespace Model
      * <li> <p>40–69 - <code>MEDIUM</code> </p> </li> <li> <p>70–89 - <code>HIGH</code>
      * </p> </li> <li> <p>90–100 - <code>CRITICAL</code> </p> </li> </ul>
      */
-    inline const SeverityLabel& GetLabel() const{ return m_label; }
+    inline SeverityLabel GetLabel() const { return m_label; }
     inline bool LabelHasBeenSet() const { return m_labelHasBeenSet; }
-    inline void SetLabel(const SeverityLabel& value) { m_labelHasBeenSet = true; m_label = value; }
-    inline void SetLabel(SeverityLabel&& value) { m_labelHasBeenSet = true; m_label = std::move(value); }
-    inline Severity& WithLabel(const SeverityLabel& value) { SetLabel(value); return *this;}
-    inline Severity& WithLabel(SeverityLabel&& value) { SetLabel(std::move(value)); return *this;}
+    inline void SetLabel(SeverityLabel value) { m_labelHasBeenSet = true; m_label = value; }
+    inline Severity& WithLabel(SeverityLabel value) { SetLabel(value); return *this;}
     ///@}
 
     ///@{
@@ -92,7 +90,7 @@ namespace Model
      * <p> <code>HIGH</code> - 70</p> </li> <li> <p> <code>CRITICAL</code> - 90</p>
      * </li> </ul>
      */
-    inline int GetNormalized() const{ return m_normalized; }
+    inline int GetNormalized() const { return m_normalized; }
     inline bool NormalizedHasBeenSet() const { return m_normalizedHasBeenSet; }
     inline void SetNormalized(int value) { m_normalizedHasBeenSet = true; m_normalized = value; }
     inline Severity& WithNormalized(int value) { SetNormalized(value); return *this;}
@@ -103,24 +101,22 @@ namespace Model
      * <p>The native severity from the finding product that generated the finding.</p>
      * <p>Length Constraints: Minimum length of 1. Maximum length of 64.</p>
      */
-    inline const Aws::String& GetOriginal() const{ return m_original; }
+    inline const Aws::String& GetOriginal() const { return m_original; }
     inline bool OriginalHasBeenSet() const { return m_originalHasBeenSet; }
-    inline void SetOriginal(const Aws::String& value) { m_originalHasBeenSet = true; m_original = value; }
-    inline void SetOriginal(Aws::String&& value) { m_originalHasBeenSet = true; m_original = std::move(value); }
-    inline void SetOriginal(const char* value) { m_originalHasBeenSet = true; m_original.assign(value); }
-    inline Severity& WithOriginal(const Aws::String& value) { SetOriginal(value); return *this;}
-    inline Severity& WithOriginal(Aws::String&& value) { SetOriginal(std::move(value)); return *this;}
-    inline Severity& WithOriginal(const char* value) { SetOriginal(value); return *this;}
+    template<typename OriginalT = Aws::String>
+    void SetOriginal(OriginalT&& value) { m_originalHasBeenSet = true; m_original = std::forward<OriginalT>(value); }
+    template<typename OriginalT = Aws::String>
+    Severity& WithOriginal(OriginalT&& value) { SetOriginal(std::forward<OriginalT>(value)); return *this;}
     ///@}
   private:
 
-    double m_product;
+    double m_product{0.0};
     bool m_productHasBeenSet = false;
 
-    SeverityLabel m_label;
+    SeverityLabel m_label{SeverityLabel::NOT_SET};
     bool m_labelHasBeenSet = false;
 
-    int m_normalized;
+    int m_normalized{0};
     bool m_normalizedHasBeenSet = false;
 
     Aws::String m_original;

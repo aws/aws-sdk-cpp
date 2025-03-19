@@ -18,16 +18,7 @@ namespace Route53Domains
 namespace Model
 {
 
-SortCondition::SortCondition() : 
-    m_name(ListDomainsAttributeName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
-{
-}
-
 SortCondition::SortCondition(JsonView jsonValue)
-  : SortCondition()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ SortCondition& SortCondition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = ListDomainsAttributeNameMapper::GetListDomainsAttributeNameForName(jsonValue.GetString("Name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SortOrder"))
   {
     m_sortOrder = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("SortOrder"));
-
     m_sortOrderHasBeenSet = true;
   }
-
   return *this;
 }
 

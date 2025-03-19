@@ -18,15 +18,7 @@ namespace OSIS
 namespace Model
 {
 
-VpcAttachmentOptions::VpcAttachmentOptions() : 
-    m_attachToVpc(false),
-    m_attachToVpcHasBeenSet(false),
-    m_cidrBlockHasBeenSet(false)
-{
-}
-
 VpcAttachmentOptions::VpcAttachmentOptions(JsonView jsonValue)
-  : VpcAttachmentOptions()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ VpcAttachmentOptions& VpcAttachmentOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AttachToVpc"))
   {
     m_attachToVpc = jsonValue.GetBool("AttachToVpc");
-
     m_attachToVpcHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CidrBlock"))
   {
     m_cidrBlock = jsonValue.GetString("CidrBlock");
-
     m_cidrBlockHasBeenSet = true;
   }
-
   return *this;
 }
 

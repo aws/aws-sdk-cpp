@@ -10,18 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-ListResourceScanResourcesRequest::ListResourceScanResourcesRequest() : 
-    m_resourceScanIdHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false),
-    m_resourceTypePrefixHasBeenSet(false),
-    m_tagKeyHasBeenSet(false),
-    m_tagValueHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListResourceScanResourcesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -18,14 +18,7 @@ namespace MainframeModernization
 namespace Model
 {
 
-PsDetailAttributes::PsDetailAttributes() : 
-    m_encodingHasBeenSet(false),
-    m_formatHasBeenSet(false)
-{
-}
-
 PsDetailAttributes::PsDetailAttributes(JsonView jsonValue)
-  : PsDetailAttributes()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ PsDetailAttributes& PsDetailAttributes::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("encoding"))
   {
     m_encoding = jsonValue.GetString("encoding");
-
     m_encodingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("format"))
   {
     m_format = jsonValue.GetString("format");
-
     m_formatHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class SearchedUser
   {
   public:
-    AWS_REKOGNITION_API SearchedUser();
+    AWS_REKOGNITION_API SearchedUser() = default;
     AWS_REKOGNITION_API SearchedUser(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API SearchedUser& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p> A provided ID for the UserID. Unique within the collection. </p>
      */
-    inline const Aws::String& GetUserId() const{ return m_userId; }
+    inline const Aws::String& GetUserId() const { return m_userId; }
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
-    inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
-    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
-    inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
-    inline SearchedUser& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
-    inline SearchedUser& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
-    inline SearchedUser& WithUserId(const char* value) { SetUserId(value); return *this;}
+    template<typename UserIdT = Aws::String>
+    void SetUserId(UserIdT&& value) { m_userIdHasBeenSet = true; m_userId = std::forward<UserIdT>(value); }
+    template<typename UserIdT = Aws::String>
+    SearchedUser& WithUserId(UserIdT&& value) { SetUserId(std::forward<UserIdT>(value)); return *this;}
     ///@}
   private:
 

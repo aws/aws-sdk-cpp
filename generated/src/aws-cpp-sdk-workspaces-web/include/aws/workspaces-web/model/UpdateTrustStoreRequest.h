@@ -24,7 +24,7 @@ namespace Model
   class UpdateTrustStoreRequest : public WorkSpacesWebRequest
   {
   public:
-    AWS_WORKSPACESWEB_API UpdateTrustStoreRequest();
+    AWS_WORKSPACESWEB_API UpdateTrustStoreRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,29 +39,28 @@ namespace Model
     /**
      * <p>A list of CA certificates to add to the trust store.</p>
      */
-    inline const Aws::Vector<Aws::Utils::ByteBuffer>& GetCertificatesToAdd() const{ return m_certificatesToAdd; }
+    inline const Aws::Vector<Aws::Utils::ByteBuffer>& GetCertificatesToAdd() const { return m_certificatesToAdd; }
     inline bool CertificatesToAddHasBeenSet() const { return m_certificatesToAddHasBeenSet; }
-    inline void SetCertificatesToAdd(const Aws::Vector<Aws::Utils::ByteBuffer>& value) { m_certificatesToAddHasBeenSet = true; m_certificatesToAdd = value; }
-    inline void SetCertificatesToAdd(Aws::Vector<Aws::Utils::ByteBuffer>&& value) { m_certificatesToAddHasBeenSet = true; m_certificatesToAdd = std::move(value); }
-    inline UpdateTrustStoreRequest& WithCertificatesToAdd(const Aws::Vector<Aws::Utils::ByteBuffer>& value) { SetCertificatesToAdd(value); return *this;}
-    inline UpdateTrustStoreRequest& WithCertificatesToAdd(Aws::Vector<Aws::Utils::ByteBuffer>&& value) { SetCertificatesToAdd(std::move(value)); return *this;}
-    inline UpdateTrustStoreRequest& AddCertificatesToAdd(const Aws::Utils::ByteBuffer& value) { m_certificatesToAddHasBeenSet = true; m_certificatesToAdd.push_back(value); return *this; }
-    inline UpdateTrustStoreRequest& AddCertificatesToAdd(Aws::Utils::ByteBuffer&& value) { m_certificatesToAddHasBeenSet = true; m_certificatesToAdd.push_back(std::move(value)); return *this; }
+    template<typename CertificatesToAddT = Aws::Vector<Aws::Utils::ByteBuffer>>
+    void SetCertificatesToAdd(CertificatesToAddT&& value) { m_certificatesToAddHasBeenSet = true; m_certificatesToAdd = std::forward<CertificatesToAddT>(value); }
+    template<typename CertificatesToAddT = Aws::Vector<Aws::Utils::ByteBuffer>>
+    UpdateTrustStoreRequest& WithCertificatesToAdd(CertificatesToAddT&& value) { SetCertificatesToAdd(std::forward<CertificatesToAddT>(value)); return *this;}
+    template<typename CertificatesToAddT = Aws::Utils::ByteBuffer>
+    UpdateTrustStoreRequest& AddCertificatesToAdd(CertificatesToAddT&& value) { m_certificatesToAddHasBeenSet = true; m_certificatesToAdd.emplace_back(std::forward<CertificatesToAddT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of CA certificates to delete from a trust store.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCertificatesToDelete() const{ return m_certificatesToDelete; }
+    inline const Aws::Vector<Aws::String>& GetCertificatesToDelete() const { return m_certificatesToDelete; }
     inline bool CertificatesToDeleteHasBeenSet() const { return m_certificatesToDeleteHasBeenSet; }
-    inline void SetCertificatesToDelete(const Aws::Vector<Aws::String>& value) { m_certificatesToDeleteHasBeenSet = true; m_certificatesToDelete = value; }
-    inline void SetCertificatesToDelete(Aws::Vector<Aws::String>&& value) { m_certificatesToDeleteHasBeenSet = true; m_certificatesToDelete = std::move(value); }
-    inline UpdateTrustStoreRequest& WithCertificatesToDelete(const Aws::Vector<Aws::String>& value) { SetCertificatesToDelete(value); return *this;}
-    inline UpdateTrustStoreRequest& WithCertificatesToDelete(Aws::Vector<Aws::String>&& value) { SetCertificatesToDelete(std::move(value)); return *this;}
-    inline UpdateTrustStoreRequest& AddCertificatesToDelete(const Aws::String& value) { m_certificatesToDeleteHasBeenSet = true; m_certificatesToDelete.push_back(value); return *this; }
-    inline UpdateTrustStoreRequest& AddCertificatesToDelete(Aws::String&& value) { m_certificatesToDeleteHasBeenSet = true; m_certificatesToDelete.push_back(std::move(value)); return *this; }
-    inline UpdateTrustStoreRequest& AddCertificatesToDelete(const char* value) { m_certificatesToDeleteHasBeenSet = true; m_certificatesToDelete.push_back(value); return *this; }
+    template<typename CertificatesToDeleteT = Aws::Vector<Aws::String>>
+    void SetCertificatesToDelete(CertificatesToDeleteT&& value) { m_certificatesToDeleteHasBeenSet = true; m_certificatesToDelete = std::forward<CertificatesToDeleteT>(value); }
+    template<typename CertificatesToDeleteT = Aws::Vector<Aws::String>>
+    UpdateTrustStoreRequest& WithCertificatesToDelete(CertificatesToDeleteT&& value) { SetCertificatesToDelete(std::forward<CertificatesToDeleteT>(value)); return *this;}
+    template<typename CertificatesToDeleteT = Aws::String>
+    UpdateTrustStoreRequest& AddCertificatesToDelete(CertificatesToDeleteT&& value) { m_certificatesToDeleteHasBeenSet = true; m_certificatesToDelete.emplace_back(std::forward<CertificatesToDeleteT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -73,28 +72,24 @@ namespace Model
      * from the original successful request. </p> <p>If you do not specify a client
      * token, one is automatically generated by the Amazon Web Services SDK.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline UpdateTrustStoreRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline UpdateTrustStoreRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline UpdateTrustStoreRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    UpdateTrustStoreRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the trust store.</p>
      */
-    inline const Aws::String& GetTrustStoreArn() const{ return m_trustStoreArn; }
+    inline const Aws::String& GetTrustStoreArn() const { return m_trustStoreArn; }
     inline bool TrustStoreArnHasBeenSet() const { return m_trustStoreArnHasBeenSet; }
-    inline void SetTrustStoreArn(const Aws::String& value) { m_trustStoreArnHasBeenSet = true; m_trustStoreArn = value; }
-    inline void SetTrustStoreArn(Aws::String&& value) { m_trustStoreArnHasBeenSet = true; m_trustStoreArn = std::move(value); }
-    inline void SetTrustStoreArn(const char* value) { m_trustStoreArnHasBeenSet = true; m_trustStoreArn.assign(value); }
-    inline UpdateTrustStoreRequest& WithTrustStoreArn(const Aws::String& value) { SetTrustStoreArn(value); return *this;}
-    inline UpdateTrustStoreRequest& WithTrustStoreArn(Aws::String&& value) { SetTrustStoreArn(std::move(value)); return *this;}
-    inline UpdateTrustStoreRequest& WithTrustStoreArn(const char* value) { SetTrustStoreArn(value); return *this;}
+    template<typename TrustStoreArnT = Aws::String>
+    void SetTrustStoreArn(TrustStoreArnT&& value) { m_trustStoreArnHasBeenSet = true; m_trustStoreArn = std::forward<TrustStoreArnT>(value); }
+    template<typename TrustStoreArnT = Aws::String>
+    UpdateTrustStoreRequest& WithTrustStoreArn(TrustStoreArnT&& value) { SetTrustStoreArn(std::forward<TrustStoreArnT>(value)); return *this;}
     ///@}
   private:
 

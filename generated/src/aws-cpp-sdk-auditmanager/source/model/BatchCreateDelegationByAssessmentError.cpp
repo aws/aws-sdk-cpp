@@ -18,15 +18,7 @@ namespace AuditManager
 namespace Model
 {
 
-BatchCreateDelegationByAssessmentError::BatchCreateDelegationByAssessmentError() : 
-    m_createDelegationRequestHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 BatchCreateDelegationByAssessmentError::BatchCreateDelegationByAssessmentError(JsonView jsonValue)
-  : BatchCreateDelegationByAssessmentError()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ BatchCreateDelegationByAssessmentError& BatchCreateDelegationByAssessmentError::
   if(jsonValue.ValueExists("createDelegationRequest"))
   {
     m_createDelegationRequest = jsonValue.GetObject("createDelegationRequest");
-
     m_createDelegationRequestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorCode"))
   {
     m_errorCode = jsonValue.GetString("errorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

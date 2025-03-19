@@ -31,7 +31,7 @@ namespace Model
   class DescribeExecutionResult
   {
   public:
-    AWS_SFN_API DescribeExecutionResult();
+    AWS_SFN_API DescribeExecutionResult() = default;
     AWS_SFN_API DescribeExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SFN_API DescribeExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,26 +40,22 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
      */
-    inline const Aws::String& GetExecutionArn() const{ return m_executionArn; }
-    inline void SetExecutionArn(const Aws::String& value) { m_executionArn = value; }
-    inline void SetExecutionArn(Aws::String&& value) { m_executionArn = std::move(value); }
-    inline void SetExecutionArn(const char* value) { m_executionArn.assign(value); }
-    inline DescribeExecutionResult& WithExecutionArn(const Aws::String& value) { SetExecutionArn(value); return *this;}
-    inline DescribeExecutionResult& WithExecutionArn(Aws::String&& value) { SetExecutionArn(std::move(value)); return *this;}
-    inline DescribeExecutionResult& WithExecutionArn(const char* value) { SetExecutionArn(value); return *this;}
+    inline const Aws::String& GetExecutionArn() const { return m_executionArn; }
+    template<typename ExecutionArnT = Aws::String>
+    void SetExecutionArn(ExecutionArnT&& value) { m_executionArnHasBeenSet = true; m_executionArn = std::forward<ExecutionArnT>(value); }
+    template<typename ExecutionArnT = Aws::String>
+    DescribeExecutionResult& WithExecutionArn(ExecutionArnT&& value) { SetExecutionArn(std::forward<ExecutionArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the executed stated machine.</p>
      */
-    inline const Aws::String& GetStateMachineArn() const{ return m_stateMachineArn; }
-    inline void SetStateMachineArn(const Aws::String& value) { m_stateMachineArn = value; }
-    inline void SetStateMachineArn(Aws::String&& value) { m_stateMachineArn = std::move(value); }
-    inline void SetStateMachineArn(const char* value) { m_stateMachineArn.assign(value); }
-    inline DescribeExecutionResult& WithStateMachineArn(const Aws::String& value) { SetStateMachineArn(value); return *this;}
-    inline DescribeExecutionResult& WithStateMachineArn(Aws::String&& value) { SetStateMachineArn(std::move(value)); return *this;}
-    inline DescribeExecutionResult& WithStateMachineArn(const char* value) { SetStateMachineArn(value); return *this;}
+    inline const Aws::String& GetStateMachineArn() const { return m_stateMachineArn; }
+    template<typename StateMachineArnT = Aws::String>
+    void SetStateMachineArn(StateMachineArnT&& value) { m_stateMachineArnHasBeenSet = true; m_stateMachineArn = std::forward<StateMachineArnT>(value); }
+    template<typename StateMachineArnT = Aws::String>
+    DescribeExecutionResult& WithStateMachineArn(StateMachineArnT&& value) { SetStateMachineArn(std::forward<StateMachineArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,46 +68,42 @@ namespace Model
      * <code>U+007F-009F</code>)</p> </li> </ul> <p>To enable logging with CloudWatch
      * Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline DescribeExecutionResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DescribeExecutionResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DescribeExecutionResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DescribeExecutionResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current status of the execution.</p>
      */
-    inline const ExecutionStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const ExecutionStatus& value) { m_status = value; }
-    inline void SetStatus(ExecutionStatus&& value) { m_status = std::move(value); }
-    inline DescribeExecutionResult& WithStatus(const ExecutionStatus& value) { SetStatus(value); return *this;}
-    inline DescribeExecutionResult& WithStatus(ExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline ExecutionStatus GetStatus() const { return m_status; }
+    inline void SetStatus(ExecutionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DescribeExecutionResult& WithStatus(ExecutionStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date the execution is started.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartDate() const{ return m_startDate; }
-    inline void SetStartDate(const Aws::Utils::DateTime& value) { m_startDate = value; }
-    inline void SetStartDate(Aws::Utils::DateTime&& value) { m_startDate = std::move(value); }
-    inline DescribeExecutionResult& WithStartDate(const Aws::Utils::DateTime& value) { SetStartDate(value); return *this;}
-    inline DescribeExecutionResult& WithStartDate(Aws::Utils::DateTime&& value) { SetStartDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetStartDate() const { return m_startDate; }
+    template<typename StartDateT = Aws::Utils::DateTime>
+    void SetStartDate(StartDateT&& value) { m_startDateHasBeenSet = true; m_startDate = std::forward<StartDateT>(value); }
+    template<typename StartDateT = Aws::Utils::DateTime>
+    DescribeExecutionResult& WithStartDate(StartDateT&& value) { SetStartDate(std::forward<StartDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>If the execution ended, the date the execution stopped.</p>
      */
-    inline const Aws::Utils::DateTime& GetStopDate() const{ return m_stopDate; }
-    inline void SetStopDate(const Aws::Utils::DateTime& value) { m_stopDate = value; }
-    inline void SetStopDate(Aws::Utils::DateTime&& value) { m_stopDate = std::move(value); }
-    inline DescribeExecutionResult& WithStopDate(const Aws::Utils::DateTime& value) { SetStopDate(value); return *this;}
-    inline DescribeExecutionResult& WithStopDate(Aws::Utils::DateTime&& value) { SetStopDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetStopDate() const { return m_stopDate; }
+    template<typename StopDateT = Aws::Utils::DateTime>
+    void SetStopDate(StopDateT&& value) { m_stopDateHasBeenSet = true; m_stopDate = std::forward<StopDateT>(value); }
+    template<typename StopDateT = Aws::Utils::DateTime>
+    DescribeExecutionResult& WithStopDate(StopDateT&& value) { SetStopDate(std::forward<StopDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,22 +112,20 @@ namespace Model
      * constraints apply to the payload size, and are expressed as bytes in UTF-8
      * encoding.</p>
      */
-    inline const Aws::String& GetInput() const{ return m_input; }
-    inline void SetInput(const Aws::String& value) { m_input = value; }
-    inline void SetInput(Aws::String&& value) { m_input = std::move(value); }
-    inline void SetInput(const char* value) { m_input.assign(value); }
-    inline DescribeExecutionResult& WithInput(const Aws::String& value) { SetInput(value); return *this;}
-    inline DescribeExecutionResult& WithInput(Aws::String&& value) { SetInput(std::move(value)); return *this;}
-    inline DescribeExecutionResult& WithInput(const char* value) { SetInput(value); return *this;}
+    inline const Aws::String& GetInput() const { return m_input; }
+    template<typename InputT = Aws::String>
+    void SetInput(InputT&& value) { m_inputHasBeenSet = true; m_input = std::forward<InputT>(value); }
+    template<typename InputT = Aws::String>
+    DescribeExecutionResult& WithInput(InputT&& value) { SetInput(std::forward<InputT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const CloudWatchEventsExecutionDataDetails& GetInputDetails() const{ return m_inputDetails; }
-    inline void SetInputDetails(const CloudWatchEventsExecutionDataDetails& value) { m_inputDetails = value; }
-    inline void SetInputDetails(CloudWatchEventsExecutionDataDetails&& value) { m_inputDetails = std::move(value); }
-    inline DescribeExecutionResult& WithInputDetails(const CloudWatchEventsExecutionDataDetails& value) { SetInputDetails(value); return *this;}
-    inline DescribeExecutionResult& WithInputDetails(CloudWatchEventsExecutionDataDetails&& value) { SetInputDetails(std::move(value)); return *this;}
+    inline const CloudWatchEventsExecutionDataDetails& GetInputDetails() const { return m_inputDetails; }
+    template<typename InputDetailsT = CloudWatchEventsExecutionDataDetails>
+    void SetInputDetails(InputDetailsT&& value) { m_inputDetailsHasBeenSet = true; m_inputDetails = std::forward<InputDetailsT>(value); }
+    template<typename InputDetailsT = CloudWatchEventsExecutionDataDetails>
+    DescribeExecutionResult& WithInputDetails(InputDetailsT&& value) { SetInputDetails(std::forward<InputDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -145,35 +135,31 @@ namespace Model
      * field is set only if the execution succeeds. If the execution fails, this field
      * is null.</p> 
      */
-    inline const Aws::String& GetOutput() const{ return m_output; }
-    inline void SetOutput(const Aws::String& value) { m_output = value; }
-    inline void SetOutput(Aws::String&& value) { m_output = std::move(value); }
-    inline void SetOutput(const char* value) { m_output.assign(value); }
-    inline DescribeExecutionResult& WithOutput(const Aws::String& value) { SetOutput(value); return *this;}
-    inline DescribeExecutionResult& WithOutput(Aws::String&& value) { SetOutput(std::move(value)); return *this;}
-    inline DescribeExecutionResult& WithOutput(const char* value) { SetOutput(value); return *this;}
+    inline const Aws::String& GetOutput() const { return m_output; }
+    template<typename OutputT = Aws::String>
+    void SetOutput(OutputT&& value) { m_outputHasBeenSet = true; m_output = std::forward<OutputT>(value); }
+    template<typename OutputT = Aws::String>
+    DescribeExecutionResult& WithOutput(OutputT&& value) { SetOutput(std::forward<OutputT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const CloudWatchEventsExecutionDataDetails& GetOutputDetails() const{ return m_outputDetails; }
-    inline void SetOutputDetails(const CloudWatchEventsExecutionDataDetails& value) { m_outputDetails = value; }
-    inline void SetOutputDetails(CloudWatchEventsExecutionDataDetails&& value) { m_outputDetails = std::move(value); }
-    inline DescribeExecutionResult& WithOutputDetails(const CloudWatchEventsExecutionDataDetails& value) { SetOutputDetails(value); return *this;}
-    inline DescribeExecutionResult& WithOutputDetails(CloudWatchEventsExecutionDataDetails&& value) { SetOutputDetails(std::move(value)); return *this;}
+    inline const CloudWatchEventsExecutionDataDetails& GetOutputDetails() const { return m_outputDetails; }
+    template<typename OutputDetailsT = CloudWatchEventsExecutionDataDetails>
+    void SetOutputDetails(OutputDetailsT&& value) { m_outputDetailsHasBeenSet = true; m_outputDetails = std::forward<OutputDetailsT>(value); }
+    template<typename OutputDetailsT = CloudWatchEventsExecutionDataDetails>
+    DescribeExecutionResult& WithOutputDetails(OutputDetailsT&& value) { SetOutputDetails(std::forward<OutputDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The X-Ray trace header that was passed to the execution.</p>
      */
-    inline const Aws::String& GetTraceHeader() const{ return m_traceHeader; }
-    inline void SetTraceHeader(const Aws::String& value) { m_traceHeader = value; }
-    inline void SetTraceHeader(Aws::String&& value) { m_traceHeader = std::move(value); }
-    inline void SetTraceHeader(const char* value) { m_traceHeader.assign(value); }
-    inline DescribeExecutionResult& WithTraceHeader(const Aws::String& value) { SetTraceHeader(value); return *this;}
-    inline DescribeExecutionResult& WithTraceHeader(Aws::String&& value) { SetTraceHeader(std::move(value)); return *this;}
-    inline DescribeExecutionResult& WithTraceHeader(const char* value) { SetTraceHeader(value); return *this;}
+    inline const Aws::String& GetTraceHeader() const { return m_traceHeader; }
+    template<typename TraceHeaderT = Aws::String>
+    void SetTraceHeader(TraceHeaderT&& value) { m_traceHeaderHasBeenSet = true; m_traceHeader = std::forward<TraceHeaderT>(value); }
+    template<typename TraceHeaderT = Aws::String>
+    DescribeExecutionResult& WithTraceHeader(TraceHeaderT&& value) { SetTraceHeader(std::forward<TraceHeaderT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -181,39 +167,33 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that identifies a Map Run, which dispatched
      * this execution.</p>
      */
-    inline const Aws::String& GetMapRunArn() const{ return m_mapRunArn; }
-    inline void SetMapRunArn(const Aws::String& value) { m_mapRunArn = value; }
-    inline void SetMapRunArn(Aws::String&& value) { m_mapRunArn = std::move(value); }
-    inline void SetMapRunArn(const char* value) { m_mapRunArn.assign(value); }
-    inline DescribeExecutionResult& WithMapRunArn(const Aws::String& value) { SetMapRunArn(value); return *this;}
-    inline DescribeExecutionResult& WithMapRunArn(Aws::String&& value) { SetMapRunArn(std::move(value)); return *this;}
-    inline DescribeExecutionResult& WithMapRunArn(const char* value) { SetMapRunArn(value); return *this;}
+    inline const Aws::String& GetMapRunArn() const { return m_mapRunArn; }
+    template<typename MapRunArnT = Aws::String>
+    void SetMapRunArn(MapRunArnT&& value) { m_mapRunArnHasBeenSet = true; m_mapRunArn = std::forward<MapRunArnT>(value); }
+    template<typename MapRunArnT = Aws::String>
+    DescribeExecutionResult& WithMapRunArn(MapRunArnT&& value) { SetMapRunArn(std::forward<MapRunArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The error string if the state machine execution failed.</p>
      */
-    inline const Aws::String& GetError() const{ return m_error; }
-    inline void SetError(const Aws::String& value) { m_error = value; }
-    inline void SetError(Aws::String&& value) { m_error = std::move(value); }
-    inline void SetError(const char* value) { m_error.assign(value); }
-    inline DescribeExecutionResult& WithError(const Aws::String& value) { SetError(value); return *this;}
-    inline DescribeExecutionResult& WithError(Aws::String&& value) { SetError(std::move(value)); return *this;}
-    inline DescribeExecutionResult& WithError(const char* value) { SetError(value); return *this;}
+    inline const Aws::String& GetError() const { return m_error; }
+    template<typename ErrorT = Aws::String>
+    void SetError(ErrorT&& value) { m_errorHasBeenSet = true; m_error = std::forward<ErrorT>(value); }
+    template<typename ErrorT = Aws::String>
+    DescribeExecutionResult& WithError(ErrorT&& value) { SetError(std::forward<ErrorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The cause string if the state machine execution failed.</p>
      */
-    inline const Aws::String& GetCause() const{ return m_cause; }
-    inline void SetCause(const Aws::String& value) { m_cause = value; }
-    inline void SetCause(Aws::String&& value) { m_cause = std::move(value); }
-    inline void SetCause(const char* value) { m_cause.assign(value); }
-    inline DescribeExecutionResult& WithCause(const Aws::String& value) { SetCause(value); return *this;}
-    inline DescribeExecutionResult& WithCause(Aws::String&& value) { SetCause(std::move(value)); return *this;}
-    inline DescribeExecutionResult& WithCause(const char* value) { SetCause(value); return *this;}
+    inline const Aws::String& GetCause() const { return m_cause; }
+    template<typename CauseT = Aws::String>
+    void SetCause(CauseT&& value) { m_causeHasBeenSet = true; m_cause = std::forward<CauseT>(value); }
+    template<typename CauseT = Aws::String>
+    DescribeExecutionResult& WithCause(CauseT&& value) { SetCause(std::forward<CauseT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -225,13 +205,11 @@ namespace Model
      * <code>StartExecution</code> request without specifying a state machine version
      * or alias ARN, Step Functions returns a null value.</p>
      */
-    inline const Aws::String& GetStateMachineVersionArn() const{ return m_stateMachineVersionArn; }
-    inline void SetStateMachineVersionArn(const Aws::String& value) { m_stateMachineVersionArn = value; }
-    inline void SetStateMachineVersionArn(Aws::String&& value) { m_stateMachineVersionArn = std::move(value); }
-    inline void SetStateMachineVersionArn(const char* value) { m_stateMachineVersionArn.assign(value); }
-    inline DescribeExecutionResult& WithStateMachineVersionArn(const Aws::String& value) { SetStateMachineVersionArn(value); return *this;}
-    inline DescribeExecutionResult& WithStateMachineVersionArn(Aws::String&& value) { SetStateMachineVersionArn(std::move(value)); return *this;}
-    inline DescribeExecutionResult& WithStateMachineVersionArn(const char* value) { SetStateMachineVersionArn(value); return *this;}
+    inline const Aws::String& GetStateMachineVersionArn() const { return m_stateMachineVersionArn; }
+    template<typename StateMachineVersionArnT = Aws::String>
+    void SetStateMachineVersionArn(StateMachineVersionArnT&& value) { m_stateMachineVersionArnHasBeenSet = true; m_stateMachineVersionArn = std::forward<StateMachineVersionArnT>(value); }
+    template<typename StateMachineVersionArnT = Aws::String>
+    DescribeExecutionResult& WithStateMachineVersionArn(StateMachineVersionArnT&& value) { SetStateMachineVersionArn(std::forward<StateMachineVersionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -243,13 +221,11 @@ namespace Model
      * <code>StartExecution</code> request with a state machine version ARN, this field
      * will be null.</p>
      */
-    inline const Aws::String& GetStateMachineAliasArn() const{ return m_stateMachineAliasArn; }
-    inline void SetStateMachineAliasArn(const Aws::String& value) { m_stateMachineAliasArn = value; }
-    inline void SetStateMachineAliasArn(Aws::String&& value) { m_stateMachineAliasArn = std::move(value); }
-    inline void SetStateMachineAliasArn(const char* value) { m_stateMachineAliasArn.assign(value); }
-    inline DescribeExecutionResult& WithStateMachineAliasArn(const Aws::String& value) { SetStateMachineAliasArn(value); return *this;}
-    inline DescribeExecutionResult& WithStateMachineAliasArn(Aws::String&& value) { SetStateMachineAliasArn(std::move(value)); return *this;}
-    inline DescribeExecutionResult& WithStateMachineAliasArn(const char* value) { SetStateMachineAliasArn(value); return *this;}
+    inline const Aws::String& GetStateMachineAliasArn() const { return m_stateMachineAliasArn; }
+    template<typename StateMachineAliasArnT = Aws::String>
+    void SetStateMachineAliasArn(StateMachineAliasArnT&& value) { m_stateMachineAliasArnHasBeenSet = true; m_stateMachineAliasArn = std::forward<StateMachineAliasArnT>(value); }
+    template<typename StateMachineAliasArnT = Aws::String>
+    DescribeExecutionResult& WithStateMachineAliasArn(StateMachineAliasArnT&& value) { SetStateMachineAliasArn(std::forward<StateMachineAliasArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -258,8 +234,8 @@ namespace Model
      * redriven an execution, the <code>redriveCount</code> is 0. This count is only
      * updated if you successfully redrive an execution.</p>
      */
-    inline int GetRedriveCount() const{ return m_redriveCount; }
-    inline void SetRedriveCount(int value) { m_redriveCount = value; }
+    inline int GetRedriveCount() const { return m_redriveCount; }
+    inline void SetRedriveCount(int value) { m_redriveCountHasBeenSet = true; m_redriveCount = value; }
     inline DescribeExecutionResult& WithRedriveCount(int value) { SetRedriveCount(value); return *this;}
     ///@}
 
@@ -270,11 +246,11 @@ namespace Model
      * <code>redriveDate</code> is unavailable if you redrive a Map Run that starts
      * child workflow executions of type <code>EXPRESS</code>.</p>
      */
-    inline const Aws::Utils::DateTime& GetRedriveDate() const{ return m_redriveDate; }
-    inline void SetRedriveDate(const Aws::Utils::DateTime& value) { m_redriveDate = value; }
-    inline void SetRedriveDate(Aws::Utils::DateTime&& value) { m_redriveDate = std::move(value); }
-    inline DescribeExecutionResult& WithRedriveDate(const Aws::Utils::DateTime& value) { SetRedriveDate(value); return *this;}
-    inline DescribeExecutionResult& WithRedriveDate(Aws::Utils::DateTime&& value) { SetRedriveDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetRedriveDate() const { return m_redriveDate; }
+    template<typename RedriveDateT = Aws::Utils::DateTime>
+    void SetRedriveDate(RedriveDateT&& value) { m_redriveDateHasBeenSet = true; m_redriveDate = std::forward<RedriveDateT>(value); }
+    template<typename RedriveDateT = Aws::Utils::DateTime>
+    DescribeExecutionResult& WithRedriveDate(RedriveDateT&& value) { SetRedriveDate(std::forward<RedriveDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -295,11 +271,9 @@ namespace Model
      * the Map Run, these workflows are restarted using the <a>StartExecution</a> API
      * action.</p> </li> </ul>
      */
-    inline const ExecutionRedriveStatus& GetRedriveStatus() const{ return m_redriveStatus; }
-    inline void SetRedriveStatus(const ExecutionRedriveStatus& value) { m_redriveStatus = value; }
-    inline void SetRedriveStatus(ExecutionRedriveStatus&& value) { m_redriveStatus = std::move(value); }
-    inline DescribeExecutionResult& WithRedriveStatus(const ExecutionRedriveStatus& value) { SetRedriveStatus(value); return *this;}
-    inline DescribeExecutionResult& WithRedriveStatus(ExecutionRedriveStatus&& value) { SetRedriveStatus(std::move(value)); return *this;}
+    inline ExecutionRedriveStatus GetRedriveStatus() const { return m_redriveStatus; }
+    inline void SetRedriveStatus(ExecutionRedriveStatus value) { m_redriveStatusHasBeenSet = true; m_redriveStatus = value; }
+    inline DescribeExecutionResult& WithRedriveStatus(ExecutionRedriveStatus value) { SetRedriveStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -321,68 +295,85 @@ namespace Model
      * child workflows are not redrivable. This happens when the child workflow
      * executions have completed successfully.</p> </li> </ul>
      */
-    inline const Aws::String& GetRedriveStatusReason() const{ return m_redriveStatusReason; }
-    inline void SetRedriveStatusReason(const Aws::String& value) { m_redriveStatusReason = value; }
-    inline void SetRedriveStatusReason(Aws::String&& value) { m_redriveStatusReason = std::move(value); }
-    inline void SetRedriveStatusReason(const char* value) { m_redriveStatusReason.assign(value); }
-    inline DescribeExecutionResult& WithRedriveStatusReason(const Aws::String& value) { SetRedriveStatusReason(value); return *this;}
-    inline DescribeExecutionResult& WithRedriveStatusReason(Aws::String&& value) { SetRedriveStatusReason(std::move(value)); return *this;}
-    inline DescribeExecutionResult& WithRedriveStatusReason(const char* value) { SetRedriveStatusReason(value); return *this;}
+    inline const Aws::String& GetRedriveStatusReason() const { return m_redriveStatusReason; }
+    template<typename RedriveStatusReasonT = Aws::String>
+    void SetRedriveStatusReason(RedriveStatusReasonT&& value) { m_redriveStatusReasonHasBeenSet = true; m_redriveStatusReason = std::forward<RedriveStatusReasonT>(value); }
+    template<typename RedriveStatusReasonT = Aws::String>
+    DescribeExecutionResult& WithRedriveStatusReason(RedriveStatusReasonT&& value) { SetRedriveStatusReason(std::forward<RedriveStatusReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeExecutionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeExecutionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeExecutionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeExecutionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_executionArn;
+    bool m_executionArnHasBeenSet = false;
 
     Aws::String m_stateMachineArn;
+    bool m_stateMachineArnHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
-    ExecutionStatus m_status;
+    ExecutionStatus m_status{ExecutionStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startDate;
+    Aws::Utils::DateTime m_startDate{};
+    bool m_startDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_stopDate;
+    Aws::Utils::DateTime m_stopDate{};
+    bool m_stopDateHasBeenSet = false;
 
     Aws::String m_input;
+    bool m_inputHasBeenSet = false;
 
     CloudWatchEventsExecutionDataDetails m_inputDetails;
+    bool m_inputDetailsHasBeenSet = false;
 
     Aws::String m_output;
+    bool m_outputHasBeenSet = false;
 
     CloudWatchEventsExecutionDataDetails m_outputDetails;
+    bool m_outputDetailsHasBeenSet = false;
 
     Aws::String m_traceHeader;
+    bool m_traceHeaderHasBeenSet = false;
 
     Aws::String m_mapRunArn;
+    bool m_mapRunArnHasBeenSet = false;
 
     Aws::String m_error;
+    bool m_errorHasBeenSet = false;
 
     Aws::String m_cause;
+    bool m_causeHasBeenSet = false;
 
     Aws::String m_stateMachineVersionArn;
+    bool m_stateMachineVersionArnHasBeenSet = false;
 
     Aws::String m_stateMachineAliasArn;
+    bool m_stateMachineAliasArnHasBeenSet = false;
 
-    int m_redriveCount;
+    int m_redriveCount{0};
+    bool m_redriveCountHasBeenSet = false;
 
-    Aws::Utils::DateTime m_redriveDate;
+    Aws::Utils::DateTime m_redriveDate{};
+    bool m_redriveDateHasBeenSet = false;
 
-    ExecutionRedriveStatus m_redriveStatus;
+    ExecutionRedriveStatus m_redriveStatus{ExecutionRedriveStatus::NOT_SET};
+    bool m_redriveStatusHasBeenSet = false;
 
     Aws::String m_redriveStatusReason;
+    bool m_redriveStatusReasonHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

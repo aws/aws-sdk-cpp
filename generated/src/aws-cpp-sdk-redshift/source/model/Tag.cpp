@@ -20,14 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-Tag::Tag() : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 Tag::Tag(const XmlNode& xmlNode)
-  : Tag()
 {
   *this = xmlNode;
 }

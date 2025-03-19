@@ -18,20 +18,7 @@ namespace GeoPlaces
 namespace Model
 {
 
-GeocodeQueryComponents::GeocodeQueryComponents() : 
-    m_countryHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_subRegionHasBeenSet(false),
-    m_localityHasBeenSet(false),
-    m_districtHasBeenSet(false),
-    m_streetHasBeenSet(false),
-    m_addressNumberHasBeenSet(false),
-    m_postalCodeHasBeenSet(false)
-{
-}
-
 GeocodeQueryComponents::GeocodeQueryComponents(JsonView jsonValue)
-  : GeocodeQueryComponents()
 {
   *this = jsonValue;
 }
@@ -41,59 +28,43 @@ GeocodeQueryComponents& GeocodeQueryComponents::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Country"))
   {
     m_country = jsonValue.GetString("Country");
-
     m_countryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetString("Region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubRegion"))
   {
     m_subRegion = jsonValue.GetString("SubRegion");
-
     m_subRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Locality"))
   {
     m_locality = jsonValue.GetString("Locality");
-
     m_localityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("District"))
   {
     m_district = jsonValue.GetString("District");
-
     m_districtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Street"))
   {
     m_street = jsonValue.GetString("Street");
-
     m_streetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AddressNumber"))
   {
     m_addressNumber = jsonValue.GetString("AddressNumber");
-
     m_addressNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PostalCode"))
   {
     m_postalCode = jsonValue.GetString("PostalCode");
-
     m_postalCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

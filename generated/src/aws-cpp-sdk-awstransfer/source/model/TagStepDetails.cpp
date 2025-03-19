@@ -18,15 +18,7 @@ namespace Transfer
 namespace Model
 {
 
-TagStepDetails::TagStepDetails() : 
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_sourceFileLocationHasBeenSet(false)
-{
-}
-
 TagStepDetails::TagStepDetails(JsonView jsonValue)
-  : TagStepDetails()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ TagStepDetails& TagStepDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -49,14 +39,11 @@ TagStepDetails& TagStepDetails::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceFileLocation"))
   {
     m_sourceFileLocation = jsonValue.GetString("SourceFileLocation");
-
     m_sourceFileLocationHasBeenSet = true;
   }
-
   return *this;
 }
 

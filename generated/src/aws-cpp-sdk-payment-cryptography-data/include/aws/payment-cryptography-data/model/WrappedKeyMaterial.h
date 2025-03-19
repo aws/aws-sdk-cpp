@@ -33,7 +33,7 @@ namespace Model
   class WrappedKeyMaterial
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHYDATA_API WrappedKeyMaterial();
+    AWS_PAYMENTCRYPTOGRAPHYDATA_API WrappedKeyMaterial() = default;
     AWS_PAYMENTCRYPTOGRAPHYDATA_API WrappedKeyMaterial(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API WrappedKeyMaterial& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,24 @@ namespace Model
     /**
      * <p>The TR-31 wrapped key block.</p>
      */
-    inline const Aws::String& GetTr31KeyBlock() const{ return m_tr31KeyBlock; }
+    inline const Aws::String& GetTr31KeyBlock() const { return m_tr31KeyBlock; }
     inline bool Tr31KeyBlockHasBeenSet() const { return m_tr31KeyBlockHasBeenSet; }
-    inline void SetTr31KeyBlock(const Aws::String& value) { m_tr31KeyBlockHasBeenSet = true; m_tr31KeyBlock = value; }
-    inline void SetTr31KeyBlock(Aws::String&& value) { m_tr31KeyBlockHasBeenSet = true; m_tr31KeyBlock = std::move(value); }
-    inline void SetTr31KeyBlock(const char* value) { m_tr31KeyBlockHasBeenSet = true; m_tr31KeyBlock.assign(value); }
-    inline WrappedKeyMaterial& WithTr31KeyBlock(const Aws::String& value) { SetTr31KeyBlock(value); return *this;}
-    inline WrappedKeyMaterial& WithTr31KeyBlock(Aws::String&& value) { SetTr31KeyBlock(std::move(value)); return *this;}
-    inline WrappedKeyMaterial& WithTr31KeyBlock(const char* value) { SetTr31KeyBlock(value); return *this;}
+    template<typename Tr31KeyBlockT = Aws::String>
+    void SetTr31KeyBlock(Tr31KeyBlockT&& value) { m_tr31KeyBlockHasBeenSet = true; m_tr31KeyBlock = std::forward<Tr31KeyBlockT>(value); }
+    template<typename Tr31KeyBlockT = Aws::String>
+    WrappedKeyMaterial& WithTr31KeyBlock(Tr31KeyBlockT&& value) { SetTr31KeyBlock(std::forward<Tr31KeyBlockT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The parameter information for deriving a ECDH shared key.</p>
      */
-    inline const EcdhDerivationAttributes& GetDiffieHellmanSymmetricKey() const{ return m_diffieHellmanSymmetricKey; }
+    inline const EcdhDerivationAttributes& GetDiffieHellmanSymmetricKey() const { return m_diffieHellmanSymmetricKey; }
     inline bool DiffieHellmanSymmetricKeyHasBeenSet() const { return m_diffieHellmanSymmetricKeyHasBeenSet; }
-    inline void SetDiffieHellmanSymmetricKey(const EcdhDerivationAttributes& value) { m_diffieHellmanSymmetricKeyHasBeenSet = true; m_diffieHellmanSymmetricKey = value; }
-    inline void SetDiffieHellmanSymmetricKey(EcdhDerivationAttributes&& value) { m_diffieHellmanSymmetricKeyHasBeenSet = true; m_diffieHellmanSymmetricKey = std::move(value); }
-    inline WrappedKeyMaterial& WithDiffieHellmanSymmetricKey(const EcdhDerivationAttributes& value) { SetDiffieHellmanSymmetricKey(value); return *this;}
-    inline WrappedKeyMaterial& WithDiffieHellmanSymmetricKey(EcdhDerivationAttributes&& value) { SetDiffieHellmanSymmetricKey(std::move(value)); return *this;}
+    template<typename DiffieHellmanSymmetricKeyT = EcdhDerivationAttributes>
+    void SetDiffieHellmanSymmetricKey(DiffieHellmanSymmetricKeyT&& value) { m_diffieHellmanSymmetricKeyHasBeenSet = true; m_diffieHellmanSymmetricKey = std::forward<DiffieHellmanSymmetricKeyT>(value); }
+    template<typename DiffieHellmanSymmetricKeyT = EcdhDerivationAttributes>
+    WrappedKeyMaterial& WithDiffieHellmanSymmetricKey(DiffieHellmanSymmetricKeyT&& value) { SetDiffieHellmanSymmetricKey(std::forward<DiffieHellmanSymmetricKeyT>(value)); return *this;}
     ///@}
   private:
 

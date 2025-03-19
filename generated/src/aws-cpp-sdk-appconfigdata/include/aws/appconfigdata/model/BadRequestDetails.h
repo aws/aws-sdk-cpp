@@ -34,7 +34,7 @@ namespace Model
   class BadRequestDetails
   {
   public:
-    AWS_APPCONFIGDATA_API BadRequestDetails();
+    AWS_APPCONFIGDATA_API BadRequestDetails() = default;
     AWS_APPCONFIGDATA_API BadRequestDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPCONFIGDATA_API BadRequestDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPCONFIGDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,18 +44,16 @@ namespace Model
     /**
      * <p>One or more specified parameters are not valid for the call.</p>
      */
-    inline const Aws::Map<Aws::String, InvalidParameterDetail>& GetInvalidParameters() const{ return m_invalidParameters; }
+    inline const Aws::Map<Aws::String, InvalidParameterDetail>& GetInvalidParameters() const { return m_invalidParameters; }
     inline bool InvalidParametersHasBeenSet() const { return m_invalidParametersHasBeenSet; }
-    inline void SetInvalidParameters(const Aws::Map<Aws::String, InvalidParameterDetail>& value) { m_invalidParametersHasBeenSet = true; m_invalidParameters = value; }
-    inline void SetInvalidParameters(Aws::Map<Aws::String, InvalidParameterDetail>&& value) { m_invalidParametersHasBeenSet = true; m_invalidParameters = std::move(value); }
-    inline BadRequestDetails& WithInvalidParameters(const Aws::Map<Aws::String, InvalidParameterDetail>& value) { SetInvalidParameters(value); return *this;}
-    inline BadRequestDetails& WithInvalidParameters(Aws::Map<Aws::String, InvalidParameterDetail>&& value) { SetInvalidParameters(std::move(value)); return *this;}
-    inline BadRequestDetails& AddInvalidParameters(const Aws::String& key, const InvalidParameterDetail& value) { m_invalidParametersHasBeenSet = true; m_invalidParameters.emplace(key, value); return *this; }
-    inline BadRequestDetails& AddInvalidParameters(Aws::String&& key, const InvalidParameterDetail& value) { m_invalidParametersHasBeenSet = true; m_invalidParameters.emplace(std::move(key), value); return *this; }
-    inline BadRequestDetails& AddInvalidParameters(const Aws::String& key, InvalidParameterDetail&& value) { m_invalidParametersHasBeenSet = true; m_invalidParameters.emplace(key, std::move(value)); return *this; }
-    inline BadRequestDetails& AddInvalidParameters(Aws::String&& key, InvalidParameterDetail&& value) { m_invalidParametersHasBeenSet = true; m_invalidParameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline BadRequestDetails& AddInvalidParameters(const char* key, InvalidParameterDetail&& value) { m_invalidParametersHasBeenSet = true; m_invalidParameters.emplace(key, std::move(value)); return *this; }
-    inline BadRequestDetails& AddInvalidParameters(const char* key, const InvalidParameterDetail& value) { m_invalidParametersHasBeenSet = true; m_invalidParameters.emplace(key, value); return *this; }
+    template<typename InvalidParametersT = Aws::Map<Aws::String, InvalidParameterDetail>>
+    void SetInvalidParameters(InvalidParametersT&& value) { m_invalidParametersHasBeenSet = true; m_invalidParameters = std::forward<InvalidParametersT>(value); }
+    template<typename InvalidParametersT = Aws::Map<Aws::String, InvalidParameterDetail>>
+    BadRequestDetails& WithInvalidParameters(InvalidParametersT&& value) { SetInvalidParameters(std::forward<InvalidParametersT>(value)); return *this;}
+    template<typename InvalidParametersKeyT = Aws::String, typename InvalidParametersValueT = InvalidParameterDetail>
+    BadRequestDetails& AddInvalidParameters(InvalidParametersKeyT&& key, InvalidParametersValueT&& value) {
+      m_invalidParametersHasBeenSet = true; m_invalidParameters.emplace(std::forward<InvalidParametersKeyT>(key), std::forward<InvalidParametersValueT>(value)); return *this;
+    }
     ///@}
   private:
 

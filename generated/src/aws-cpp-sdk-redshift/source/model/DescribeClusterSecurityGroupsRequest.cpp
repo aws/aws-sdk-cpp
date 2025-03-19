@@ -10,16 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DescribeClusterSecurityGroupsRequest::DescribeClusterSecurityGroupsRequest() : 
-    m_clusterSecurityGroupNameHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_tagKeysHasBeenSet(false),
-    m_tagValuesHasBeenSet(false)
-{
-}
-
 Aws::String DescribeClusterSecurityGroupsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -12,18 +12,6 @@ using namespace Aws::SFN::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetExecutionHistoryRequest::GetExecutionHistoryRequest() : 
-    m_executionArnHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_reverseOrder(false),
-    m_reverseOrderHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_includeExecutionData(false),
-    m_includeExecutionDataHasBeenSet(false)
-{
-}
-
 Aws::String GetExecutionHistoryRequest::SerializePayload() const
 {
   JsonValue payload;

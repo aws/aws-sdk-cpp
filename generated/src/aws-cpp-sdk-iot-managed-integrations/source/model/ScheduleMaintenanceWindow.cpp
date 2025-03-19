@@ -18,15 +18,7 @@ namespace IoTManagedIntegrations
 namespace Model
 {
 
-ScheduleMaintenanceWindow::ScheduleMaintenanceWindow() : 
-    m_durationInMinutes(0),
-    m_durationInMinutesHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
-{
-}
-
 ScheduleMaintenanceWindow::ScheduleMaintenanceWindow(JsonView jsonValue)
-  : ScheduleMaintenanceWindow()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ScheduleMaintenanceWindow& ScheduleMaintenanceWindow::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("DurationInMinutes"))
   {
     m_durationInMinutes = jsonValue.GetInteger("DurationInMinutes");
-
     m_durationInMinutesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetString("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

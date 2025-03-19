@@ -21,7 +21,7 @@ namespace Model
   class UpdateGraphRequest : public NeptuneGraphRequest
   {
   public:
-    AWS_NEPTUNEGRAPH_API UpdateGraphRequest();
+    AWS_NEPTUNEGRAPH_API UpdateGraphRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The unique identifier of the Neptune Analytics graph.</p>
      */
-    inline const Aws::String& GetGraphIdentifier() const{ return m_graphIdentifier; }
+    inline const Aws::String& GetGraphIdentifier() const { return m_graphIdentifier; }
     inline bool GraphIdentifierHasBeenSet() const { return m_graphIdentifierHasBeenSet; }
-    inline void SetGraphIdentifier(const Aws::String& value) { m_graphIdentifierHasBeenSet = true; m_graphIdentifier = value; }
-    inline void SetGraphIdentifier(Aws::String&& value) { m_graphIdentifierHasBeenSet = true; m_graphIdentifier = std::move(value); }
-    inline void SetGraphIdentifier(const char* value) { m_graphIdentifierHasBeenSet = true; m_graphIdentifier.assign(value); }
-    inline UpdateGraphRequest& WithGraphIdentifier(const Aws::String& value) { SetGraphIdentifier(value); return *this;}
-    inline UpdateGraphRequest& WithGraphIdentifier(Aws::String&& value) { SetGraphIdentifier(std::move(value)); return *this;}
-    inline UpdateGraphRequest& WithGraphIdentifier(const char* value) { SetGraphIdentifier(value); return *this;}
+    template<typename GraphIdentifierT = Aws::String>
+    void SetGraphIdentifier(GraphIdentifierT&& value) { m_graphIdentifierHasBeenSet = true; m_graphIdentifier = std::forward<GraphIdentifierT>(value); }
+    template<typename GraphIdentifierT = Aws::String>
+    UpdateGraphRequest& WithGraphIdentifier(GraphIdentifierT&& value) { SetGraphIdentifier(std::forward<GraphIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,7 +54,7 @@ namespace Model
      * access to graphs is IAM authenticated. (<code>true</code> to enable, or
      * <code>false</code> to disable.</p>
      */
-    inline bool GetPublicConnectivity() const{ return m_publicConnectivity; }
+    inline bool GetPublicConnectivity() const { return m_publicConnectivity; }
     inline bool PublicConnectivityHasBeenSet() const { return m_publicConnectivityHasBeenSet; }
     inline void SetPublicConnectivity(bool value) { m_publicConnectivityHasBeenSet = true; m_publicConnectivity = value; }
     inline UpdateGraphRequest& WithPublicConnectivity(bool value) { SetPublicConnectivity(value); return *this;}
@@ -67,7 +65,7 @@ namespace Model
      * <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for
      * the graph.</p> <p>Min = 16</p>
      */
-    inline int GetProvisionedMemory() const{ return m_provisionedMemory; }
+    inline int GetProvisionedMemory() const { return m_provisionedMemory; }
     inline bool ProvisionedMemoryHasBeenSet() const { return m_provisionedMemoryHasBeenSet; }
     inline void SetProvisionedMemory(int value) { m_provisionedMemoryHasBeenSet = true; m_provisionedMemory = value; }
     inline UpdateGraphRequest& WithProvisionedMemory(int value) { SetProvisionedMemory(value); return *this;}
@@ -78,7 +76,7 @@ namespace Model
      * <p>A value that indicates whether the graph has deletion protection enabled. The
      * graph can't be deleted when deletion protection is enabled.</p>
      */
-    inline bool GetDeletionProtection() const{ return m_deletionProtection; }
+    inline bool GetDeletionProtection() const { return m_deletionProtection; }
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
     inline UpdateGraphRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
@@ -88,13 +86,13 @@ namespace Model
     Aws::String m_graphIdentifier;
     bool m_graphIdentifierHasBeenSet = false;
 
-    bool m_publicConnectivity;
+    bool m_publicConnectivity{false};
     bool m_publicConnectivityHasBeenSet = false;
 
-    int m_provisionedMemory;
+    int m_provisionedMemory{0};
     bool m_provisionedMemoryHasBeenSet = false;
 
-    bool m_deletionProtection;
+    bool m_deletionProtection{false};
     bool m_deletionProtectionHasBeenSet = false;
   };
 

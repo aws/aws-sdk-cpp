@@ -21,7 +21,7 @@ namespace Model
   class ResetEnabledBaselineRequest : public ControlTowerRequest
   {
   public:
-    AWS_CONTROLTOWER_API ResetEnabledBaselineRequest();
+    AWS_CONTROLTOWER_API ResetEnabledBaselineRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p>Specifies the ID of the <code>EnabledBaseline</code> resource to be
      * re-enabled, in ARN format.</p>
      */
-    inline const Aws::String& GetEnabledBaselineIdentifier() const{ return m_enabledBaselineIdentifier; }
+    inline const Aws::String& GetEnabledBaselineIdentifier() const { return m_enabledBaselineIdentifier; }
     inline bool EnabledBaselineIdentifierHasBeenSet() const { return m_enabledBaselineIdentifierHasBeenSet; }
-    inline void SetEnabledBaselineIdentifier(const Aws::String& value) { m_enabledBaselineIdentifierHasBeenSet = true; m_enabledBaselineIdentifier = value; }
-    inline void SetEnabledBaselineIdentifier(Aws::String&& value) { m_enabledBaselineIdentifierHasBeenSet = true; m_enabledBaselineIdentifier = std::move(value); }
-    inline void SetEnabledBaselineIdentifier(const char* value) { m_enabledBaselineIdentifierHasBeenSet = true; m_enabledBaselineIdentifier.assign(value); }
-    inline ResetEnabledBaselineRequest& WithEnabledBaselineIdentifier(const Aws::String& value) { SetEnabledBaselineIdentifier(value); return *this;}
-    inline ResetEnabledBaselineRequest& WithEnabledBaselineIdentifier(Aws::String&& value) { SetEnabledBaselineIdentifier(std::move(value)); return *this;}
-    inline ResetEnabledBaselineRequest& WithEnabledBaselineIdentifier(const char* value) { SetEnabledBaselineIdentifier(value); return *this;}
+    template<typename EnabledBaselineIdentifierT = Aws::String>
+    void SetEnabledBaselineIdentifier(EnabledBaselineIdentifierT&& value) { m_enabledBaselineIdentifierHasBeenSet = true; m_enabledBaselineIdentifier = std::forward<EnabledBaselineIdentifierT>(value); }
+    template<typename EnabledBaselineIdentifierT = Aws::String>
+    ResetEnabledBaselineRequest& WithEnabledBaselineIdentifier(EnabledBaselineIdentifierT&& value) { SetEnabledBaselineIdentifier(std::forward<EnabledBaselineIdentifierT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,22 +18,7 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
-SipRule::SipRule() : 
-    m_sipRuleIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_disabled(false),
-    m_disabledHasBeenSet(false),
-    m_triggerType(SipRuleTriggerType::NOT_SET),
-    m_triggerTypeHasBeenSet(false),
-    m_triggerValueHasBeenSet(false),
-    m_targetApplicationsHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_updatedTimestampHasBeenSet(false)
-{
-}
-
 SipRule::SipRule(JsonView jsonValue)
-  : SipRule()
 {
   *this = jsonValue;
 }
@@ -43,38 +28,28 @@ SipRule& SipRule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SipRuleId"))
   {
     m_sipRuleId = jsonValue.GetString("SipRuleId");
-
     m_sipRuleIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Disabled"))
   {
     m_disabled = jsonValue.GetBool("Disabled");
-
     m_disabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TriggerType"))
   {
     m_triggerType = SipRuleTriggerTypeMapper::GetSipRuleTriggerTypeForName(jsonValue.GetString("TriggerType"));
-
     m_triggerTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TriggerValue"))
   {
     m_triggerValue = jsonValue.GetString("TriggerValue");
-
     m_triggerValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetApplications"))
   {
     Aws::Utils::Array<JsonView> targetApplicationsJsonList = jsonValue.GetArray("TargetApplications");
@@ -84,21 +59,16 @@ SipRule& SipRule::operator =(JsonView jsonValue)
     }
     m_targetApplicationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetString("CreatedTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedTimestamp"))
   {
     m_updatedTimestamp = jsonValue.GetString("UpdatedTimestamp");
-
     m_updatedTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

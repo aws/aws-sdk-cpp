@@ -18,17 +18,7 @@ namespace EFS
 namespace Model
 {
 
-DestinationToCreate::DestinationToCreate() : 
-    m_regionHasBeenSet(false),
-    m_availabilityZoneNameHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_fileSystemIdHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 DestinationToCreate::DestinationToCreate(JsonView jsonValue)
-  : DestinationToCreate()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ DestinationToCreate& DestinationToCreate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetString("Region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailabilityZoneName"))
   {
     m_availabilityZoneName = jsonValue.GetString("AvailabilityZoneName");
-
     m_availabilityZoneNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileSystemId"))
   {
     m_fileSystemId = jsonValue.GetString("FileSystemId");
-
     m_fileSystemIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

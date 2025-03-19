@@ -32,7 +32,7 @@ namespace Model
   class ObjectTypes
   {
   public:
-    AWS_CODECOMMIT_API ObjectTypes();
+    AWS_CODECOMMIT_API ObjectTypes() = default;
     AWS_CODECOMMIT_API ObjectTypes(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECOMMIT_API ObjectTypes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,46 +42,40 @@ namespace Model
     /**
      * <p>The type of the object in the source branch.</p>
      */
-    inline const ObjectTypeEnum& GetSource() const{ return m_source; }
+    inline ObjectTypeEnum GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const ObjectTypeEnum& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(ObjectTypeEnum&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline ObjectTypes& WithSource(const ObjectTypeEnum& value) { SetSource(value); return *this;}
-    inline ObjectTypes& WithSource(ObjectTypeEnum&& value) { SetSource(std::move(value)); return *this;}
+    inline void SetSource(ObjectTypeEnum value) { m_sourceHasBeenSet = true; m_source = value; }
+    inline ObjectTypes& WithSource(ObjectTypeEnum value) { SetSource(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the object in the destination branch.</p>
      */
-    inline const ObjectTypeEnum& GetDestination() const{ return m_destination; }
+    inline ObjectTypeEnum GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const ObjectTypeEnum& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(ObjectTypeEnum&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline ObjectTypes& WithDestination(const ObjectTypeEnum& value) { SetDestination(value); return *this;}
-    inline ObjectTypes& WithDestination(ObjectTypeEnum&& value) { SetDestination(std::move(value)); return *this;}
+    inline void SetDestination(ObjectTypeEnum value) { m_destinationHasBeenSet = true; m_destination = value; }
+    inline ObjectTypes& WithDestination(ObjectTypeEnum value) { SetDestination(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the object in the base commit of the merge.</p>
      */
-    inline const ObjectTypeEnum& GetBase() const{ return m_base; }
+    inline ObjectTypeEnum GetBase() const { return m_base; }
     inline bool BaseHasBeenSet() const { return m_baseHasBeenSet; }
-    inline void SetBase(const ObjectTypeEnum& value) { m_baseHasBeenSet = true; m_base = value; }
-    inline void SetBase(ObjectTypeEnum&& value) { m_baseHasBeenSet = true; m_base = std::move(value); }
-    inline ObjectTypes& WithBase(const ObjectTypeEnum& value) { SetBase(value); return *this;}
-    inline ObjectTypes& WithBase(ObjectTypeEnum&& value) { SetBase(std::move(value)); return *this;}
+    inline void SetBase(ObjectTypeEnum value) { m_baseHasBeenSet = true; m_base = value; }
+    inline ObjectTypes& WithBase(ObjectTypeEnum value) { SetBase(value); return *this;}
     ///@}
   private:
 
-    ObjectTypeEnum m_source;
+    ObjectTypeEnum m_source{ObjectTypeEnum::NOT_SET};
     bool m_sourceHasBeenSet = false;
 
-    ObjectTypeEnum m_destination;
+    ObjectTypeEnum m_destination{ObjectTypeEnum::NOT_SET};
     bool m_destinationHasBeenSet = false;
 
-    ObjectTypeEnum m_base;
+    ObjectTypeEnum m_base{ObjectTypeEnum::NOT_SET};
     bool m_baseHasBeenSet = false;
   };
 

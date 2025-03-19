@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateMediaLiveConnectorPipelineResult::CreateMediaLiveConnectorPipelineResult()
-{
-}
-
 CreateMediaLiveConnectorPipelineResult::CreateMediaLiveConnectorPipelineResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateMediaLiveConnectorPipelineResult& CreateMediaLiveConnectorPipelineResult::
   if(jsonValue.ValueExists("MediaLiveConnectorPipeline"))
   {
     m_mediaLiveConnectorPipeline = jsonValue.GetObject("MediaLiveConnectorPipeline");
-
+    m_mediaLiveConnectorPipelineHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

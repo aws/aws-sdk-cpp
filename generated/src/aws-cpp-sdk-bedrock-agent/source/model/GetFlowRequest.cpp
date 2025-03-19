@@ -12,11 +12,6 @@ using namespace Aws::BedrockAgent::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetFlowRequest::GetFlowRequest() : 
-    m_flowIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String GetFlowRequest::SerializePayload() const
 {
   return {};

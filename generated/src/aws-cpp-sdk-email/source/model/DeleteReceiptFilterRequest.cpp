@@ -10,11 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-DeleteReceiptFilterRequest::DeleteReceiptFilterRequest() : 
-    m_filterNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteReceiptFilterRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -18,14 +18,7 @@ namespace ElasticsearchService
 namespace Model
 {
 
-SnapshotOptions::SnapshotOptions() : 
-    m_automatedSnapshotStartHour(0),
-    m_automatedSnapshotStartHourHasBeenSet(false)
-{
-}
-
 SnapshotOptions::SnapshotOptions(JsonView jsonValue)
-  : SnapshotOptions()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SnapshotOptions& SnapshotOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AutomatedSnapshotStartHour"))
   {
     m_automatedSnapshotStartHour = jsonValue.GetInteger("AutomatedSnapshotStartHour");
-
     m_automatedSnapshotStartHourHasBeenSet = true;
   }
-
   return *this;
 }
 

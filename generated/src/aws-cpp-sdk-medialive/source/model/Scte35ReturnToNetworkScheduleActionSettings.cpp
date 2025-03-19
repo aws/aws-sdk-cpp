@@ -18,14 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-Scte35ReturnToNetworkScheduleActionSettings::Scte35ReturnToNetworkScheduleActionSettings() : 
-    m_spliceEventId(0),
-    m_spliceEventIdHasBeenSet(false)
-{
-}
-
 Scte35ReturnToNetworkScheduleActionSettings::Scte35ReturnToNetworkScheduleActionSettings(JsonView jsonValue)
-  : Scte35ReturnToNetworkScheduleActionSettings()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ Scte35ReturnToNetworkScheduleActionSettings& Scte35ReturnToNetworkScheduleAction
   if(jsonValue.ValueExists("spliceEventId"))
   {
     m_spliceEventId = jsonValue.GetInt64("spliceEventId");
-
     m_spliceEventIdHasBeenSet = true;
   }
-
   return *this;
 }
 

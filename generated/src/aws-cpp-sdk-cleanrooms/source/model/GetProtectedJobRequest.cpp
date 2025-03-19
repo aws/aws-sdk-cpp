@@ -12,12 +12,6 @@ using namespace Aws::CleanRooms::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetProtectedJobRequest::GetProtectedJobRequest() : 
-    m_membershipIdentifierHasBeenSet(false),
-    m_protectedJobIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String GetProtectedJobRequest::SerializePayload() const
 {
   return {};

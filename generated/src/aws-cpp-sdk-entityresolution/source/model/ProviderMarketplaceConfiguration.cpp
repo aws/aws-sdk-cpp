@@ -18,16 +18,7 @@ namespace EntityResolution
 namespace Model
 {
 
-ProviderMarketplaceConfiguration::ProviderMarketplaceConfiguration() : 
-    m_assetIdHasBeenSet(false),
-    m_dataSetIdHasBeenSet(false),
-    m_listingIdHasBeenSet(false),
-    m_revisionIdHasBeenSet(false)
-{
-}
-
 ProviderMarketplaceConfiguration::ProviderMarketplaceConfiguration(JsonView jsonValue)
-  : ProviderMarketplaceConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ProviderMarketplaceConfiguration& ProviderMarketplaceConfiguration::operator =(J
   if(jsonValue.ValueExists("assetId"))
   {
     m_assetId = jsonValue.GetString("assetId");
-
     m_assetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataSetId"))
   {
     m_dataSetId = jsonValue.GetString("dataSetId");
-
     m_dataSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("listingId"))
   {
     m_listingId = jsonValue.GetString("listingId");
-
     m_listingIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("revisionId"))
   {
     m_revisionId = jsonValue.GetString("revisionId");
-
     m_revisionIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::ConnectWisdomService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAssistantRequest::DeleteAssistantRequest() : 
-    m_assistantIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAssistantRequest::SerializePayload() const
 {
   return {};

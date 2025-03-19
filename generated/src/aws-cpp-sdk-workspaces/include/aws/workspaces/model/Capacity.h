@@ -30,7 +30,7 @@ namespace Model
   class Capacity
   {
   public:
-    AWS_WORKSPACES_API Capacity();
+    AWS_WORKSPACES_API Capacity() = default;
     AWS_WORKSPACES_API Capacity(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API Capacity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
     /**
      * <p>The desired number of user sessions for the WorkSpaces in the pool.</p>
      */
-    inline int GetDesiredUserSessions() const{ return m_desiredUserSessions; }
+    inline int GetDesiredUserSessions() const { return m_desiredUserSessions; }
     inline bool DesiredUserSessionsHasBeenSet() const { return m_desiredUserSessionsHasBeenSet; }
     inline void SetDesiredUserSessions(int value) { m_desiredUserSessionsHasBeenSet = true; m_desiredUserSessions = value; }
     inline Capacity& WithDesiredUserSessions(int value) { SetDesiredUserSessions(value); return *this;}
     ///@}
   private:
 
-    int m_desiredUserSessions;
+    int m_desiredUserSessions{0};
     bool m_desiredUserSessionsHasBeenSet = false;
   };
 

@@ -35,7 +35,7 @@ namespace Model
   class AggregatedProfileTime
   {
   public:
-    AWS_CODEGURUPROFILER_API AggregatedProfileTime();
+    AWS_CODEGURUPROFILER_API AggregatedProfileTime() = default;
     AWS_CODEGURUPROFILER_API AggregatedProfileTime(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUPROFILER_API AggregatedProfileTime& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUPROFILER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,10 @@ namespace Model
      * <ul> <li> <p> <code>P1D</code> — 1 day </p> </li> <li> <p> <code>PT1H</code> — 1
      * hour </p> </li> <li> <p> <code>PT5M</code> — 5 minutes </p> </li> </ul>
      */
-    inline const AggregationPeriod& GetPeriod() const{ return m_period; }
+    inline AggregationPeriod GetPeriod() const { return m_period; }
     inline bool PeriodHasBeenSet() const { return m_periodHasBeenSet; }
-    inline void SetPeriod(const AggregationPeriod& value) { m_periodHasBeenSet = true; m_period = value; }
-    inline void SetPeriod(AggregationPeriod&& value) { m_periodHasBeenSet = true; m_period = std::move(value); }
-    inline AggregatedProfileTime& WithPeriod(const AggregationPeriod& value) { SetPeriod(value); return *this;}
-    inline AggregatedProfileTime& WithPeriod(AggregationPeriod&& value) { SetPeriod(std::move(value)); return *this;}
+    inline void SetPeriod(AggregationPeriod value) { m_periodHasBeenSet = true; m_period = value; }
+    inline AggregatedProfileTime& WithPeriod(AggregationPeriod value) { SetPeriod(value); return *this;}
     ///@}
 
     ///@{
@@ -67,19 +65,19 @@ namespace Model
      * 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM
      * UTC. </p>
      */
-    inline const Aws::Utils::DateTime& GetStart() const{ return m_start; }
+    inline const Aws::Utils::DateTime& GetStart() const { return m_start; }
     inline bool StartHasBeenSet() const { return m_startHasBeenSet; }
-    inline void SetStart(const Aws::Utils::DateTime& value) { m_startHasBeenSet = true; m_start = value; }
-    inline void SetStart(Aws::Utils::DateTime&& value) { m_startHasBeenSet = true; m_start = std::move(value); }
-    inline AggregatedProfileTime& WithStart(const Aws::Utils::DateTime& value) { SetStart(value); return *this;}
-    inline AggregatedProfileTime& WithStart(Aws::Utils::DateTime&& value) { SetStart(std::move(value)); return *this;}
+    template<typename StartT = Aws::Utils::DateTime>
+    void SetStart(StartT&& value) { m_startHasBeenSet = true; m_start = std::forward<StartT>(value); }
+    template<typename StartT = Aws::Utils::DateTime>
+    AggregatedProfileTime& WithStart(StartT&& value) { SetStart(std::forward<StartT>(value)); return *this;}
     ///@}
   private:
 
-    AggregationPeriod m_period;
+    AggregationPeriod m_period{AggregationPeriod::NOT_SET};
     bool m_periodHasBeenSet = false;
 
-    Aws::Utils::DateTime m_start;
+    Aws::Utils::DateTime m_start{};
     bool m_startHasBeenSet = false;
   };
 

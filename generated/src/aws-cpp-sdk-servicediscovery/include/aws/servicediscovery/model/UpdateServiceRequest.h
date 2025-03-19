@@ -22,7 +22,7 @@ namespace Model
   class UpdateServiceRequest : public ServiceDiscoveryRequest
   {
   public:
-    AWS_SERVICEDISCOVERY_API UpdateServiceRequest();
+    AWS_SERVICEDISCOVERY_API UpdateServiceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The ID of the service that you want to update.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline UpdateServiceRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline UpdateServiceRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline UpdateServiceRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    UpdateServiceRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,12 +52,12 @@ namespace Model
      * <p>A complex type that contains the new settings for the service. You can
      * specify a maximum of 30 attributes (key-value pairs).</p>
      */
-    inline const ServiceChange& GetService() const{ return m_service; }
+    inline const ServiceChange& GetService() const { return m_service; }
     inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }
-    inline void SetService(const ServiceChange& value) { m_serviceHasBeenSet = true; m_service = value; }
-    inline void SetService(ServiceChange&& value) { m_serviceHasBeenSet = true; m_service = std::move(value); }
-    inline UpdateServiceRequest& WithService(const ServiceChange& value) { SetService(value); return *this;}
-    inline UpdateServiceRequest& WithService(ServiceChange&& value) { SetService(std::move(value)); return *this;}
+    template<typename ServiceT = ServiceChange>
+    void SetService(ServiceT&& value) { m_serviceHasBeenSet = true; m_service = std::forward<ServiceT>(value); }
+    template<typename ServiceT = ServiceChange>
+    UpdateServiceRequest& WithService(ServiceT&& value) { SetService(std::forward<ServiceT>(value)); return *this;}
     ///@}
   private:
 

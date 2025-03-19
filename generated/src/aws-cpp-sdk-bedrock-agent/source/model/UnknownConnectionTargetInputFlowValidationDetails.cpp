@@ -18,13 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-UnknownConnectionTargetInputFlowValidationDetails::UnknownConnectionTargetInputFlowValidationDetails() : 
-    m_connectionHasBeenSet(false)
-{
-}
-
 UnknownConnectionTargetInputFlowValidationDetails::UnknownConnectionTargetInputFlowValidationDetails(JsonView jsonValue)
-  : UnknownConnectionTargetInputFlowValidationDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ UnknownConnectionTargetInputFlowValidationDetails& UnknownConnectionTargetInputF
   if(jsonValue.ValueExists("connection"))
   {
     m_connection = jsonValue.GetString("connection");
-
     m_connectionHasBeenSet = true;
   }
-
   return *this;
 }
 

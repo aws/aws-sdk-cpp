@@ -20,13 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-ResponseHeadersPolicyRemoveHeader::ResponseHeadersPolicyRemoveHeader() : 
-    m_headerHasBeenSet(false)
-{
-}
-
 ResponseHeadersPolicyRemoveHeader::ResponseHeadersPolicyRemoveHeader(const XmlNode& xmlNode)
-  : ResponseHeadersPolicyRemoveHeader()
 {
   *this = xmlNode;
 }

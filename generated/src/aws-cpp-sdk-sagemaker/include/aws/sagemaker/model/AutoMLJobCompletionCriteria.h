@@ -30,7 +30,7 @@ namespace Model
   class AutoMLJobCompletionCriteria
   {
   public:
-    AWS_SAGEMAKER_API AutoMLJobCompletionCriteria();
+    AWS_SAGEMAKER_API AutoMLJobCompletionCriteria() = default;
     AWS_SAGEMAKER_API AutoMLJobCompletionCriteria(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API AutoMLJobCompletionCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * (LLMs fine-tuning) problem types, the supported value is 1. For tabular problem
      * types, the maximum value is 750.</p>
      */
-    inline int GetMaxCandidates() const{ return m_maxCandidates; }
+    inline int GetMaxCandidates() const { return m_maxCandidates; }
     inline bool MaxCandidatesHasBeenSet() const { return m_maxCandidatesHasBeenSet; }
     inline void SetMaxCandidates(int value) { m_maxCandidatesHasBeenSet = true; m_maxCandidates = value; }
     inline AutoMLJobCompletionCriteria& WithMaxCandidates(int value) { SetMaxCandidates(value); return *this;}
@@ -63,7 +63,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TextClassificationJobConfig.html">TextGenerationJobConfig</a>
      * problem types, the maximum time defaults to 72 hours (259200 seconds).</p>
      */
-    inline int GetMaxRuntimePerTrainingJobInSeconds() const{ return m_maxRuntimePerTrainingJobInSeconds; }
+    inline int GetMaxRuntimePerTrainingJobInSeconds() const { return m_maxRuntimePerTrainingJobInSeconds; }
     inline bool MaxRuntimePerTrainingJobInSecondsHasBeenSet() const { return m_maxRuntimePerTrainingJobInSecondsHasBeenSet; }
     inline void SetMaxRuntimePerTrainingJobInSeconds(int value) { m_maxRuntimePerTrainingJobInSecondsHasBeenSet = true; m_maxRuntimePerTrainingJobInSeconds = value; }
     inline AutoMLJobCompletionCriteria& WithMaxRuntimePerTrainingJobInSeconds(int value) { SetMaxRuntimePerTrainingJobInSeconds(value); return *this;}
@@ -78,20 +78,20 @@ namespace Model
      * steps of the job, such as automatic one-click Autopilot model deployment, are
      * not completed.</p>
      */
-    inline int GetMaxAutoMLJobRuntimeInSeconds() const{ return m_maxAutoMLJobRuntimeInSeconds; }
+    inline int GetMaxAutoMLJobRuntimeInSeconds() const { return m_maxAutoMLJobRuntimeInSeconds; }
     inline bool MaxAutoMLJobRuntimeInSecondsHasBeenSet() const { return m_maxAutoMLJobRuntimeInSecondsHasBeenSet; }
     inline void SetMaxAutoMLJobRuntimeInSeconds(int value) { m_maxAutoMLJobRuntimeInSecondsHasBeenSet = true; m_maxAutoMLJobRuntimeInSeconds = value; }
     inline AutoMLJobCompletionCriteria& WithMaxAutoMLJobRuntimeInSeconds(int value) { SetMaxAutoMLJobRuntimeInSeconds(value); return *this;}
     ///@}
   private:
 
-    int m_maxCandidates;
+    int m_maxCandidates{0};
     bool m_maxCandidatesHasBeenSet = false;
 
-    int m_maxRuntimePerTrainingJobInSeconds;
+    int m_maxRuntimePerTrainingJobInSeconds{0};
     bool m_maxRuntimePerTrainingJobInSecondsHasBeenSet = false;
 
-    int m_maxAutoMLJobRuntimeInSeconds;
+    int m_maxAutoMLJobRuntimeInSeconds{0};
     bool m_maxAutoMLJobRuntimeInSecondsHasBeenSet = false;
   };
 

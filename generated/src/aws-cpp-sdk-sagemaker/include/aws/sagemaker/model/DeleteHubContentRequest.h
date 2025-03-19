@@ -22,7 +22,7 @@ namespace Model
   class DeleteHubContentRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API DeleteHubContentRequest();
+    AWS_SAGEMAKER_API DeleteHubContentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,61 +39,53 @@ namespace Model
     /**
      * <p>The name of the hub that you want to delete content in.</p>
      */
-    inline const Aws::String& GetHubName() const{ return m_hubName; }
+    inline const Aws::String& GetHubName() const { return m_hubName; }
     inline bool HubNameHasBeenSet() const { return m_hubNameHasBeenSet; }
-    inline void SetHubName(const Aws::String& value) { m_hubNameHasBeenSet = true; m_hubName = value; }
-    inline void SetHubName(Aws::String&& value) { m_hubNameHasBeenSet = true; m_hubName = std::move(value); }
-    inline void SetHubName(const char* value) { m_hubNameHasBeenSet = true; m_hubName.assign(value); }
-    inline DeleteHubContentRequest& WithHubName(const Aws::String& value) { SetHubName(value); return *this;}
-    inline DeleteHubContentRequest& WithHubName(Aws::String&& value) { SetHubName(std::move(value)); return *this;}
-    inline DeleteHubContentRequest& WithHubName(const char* value) { SetHubName(value); return *this;}
+    template<typename HubNameT = Aws::String>
+    void SetHubName(HubNameT&& value) { m_hubNameHasBeenSet = true; m_hubName = std::forward<HubNameT>(value); }
+    template<typename HubNameT = Aws::String>
+    DeleteHubContentRequest& WithHubName(HubNameT&& value) { SetHubName(std::forward<HubNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of content that you want to delete from a hub.</p>
      */
-    inline const HubContentType& GetHubContentType() const{ return m_hubContentType; }
+    inline HubContentType GetHubContentType() const { return m_hubContentType; }
     inline bool HubContentTypeHasBeenSet() const { return m_hubContentTypeHasBeenSet; }
-    inline void SetHubContentType(const HubContentType& value) { m_hubContentTypeHasBeenSet = true; m_hubContentType = value; }
-    inline void SetHubContentType(HubContentType&& value) { m_hubContentTypeHasBeenSet = true; m_hubContentType = std::move(value); }
-    inline DeleteHubContentRequest& WithHubContentType(const HubContentType& value) { SetHubContentType(value); return *this;}
-    inline DeleteHubContentRequest& WithHubContentType(HubContentType&& value) { SetHubContentType(std::move(value)); return *this;}
+    inline void SetHubContentType(HubContentType value) { m_hubContentTypeHasBeenSet = true; m_hubContentType = value; }
+    inline DeleteHubContentRequest& WithHubContentType(HubContentType value) { SetHubContentType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the content that you want to delete from a hub.</p>
      */
-    inline const Aws::String& GetHubContentName() const{ return m_hubContentName; }
+    inline const Aws::String& GetHubContentName() const { return m_hubContentName; }
     inline bool HubContentNameHasBeenSet() const { return m_hubContentNameHasBeenSet; }
-    inline void SetHubContentName(const Aws::String& value) { m_hubContentNameHasBeenSet = true; m_hubContentName = value; }
-    inline void SetHubContentName(Aws::String&& value) { m_hubContentNameHasBeenSet = true; m_hubContentName = std::move(value); }
-    inline void SetHubContentName(const char* value) { m_hubContentNameHasBeenSet = true; m_hubContentName.assign(value); }
-    inline DeleteHubContentRequest& WithHubContentName(const Aws::String& value) { SetHubContentName(value); return *this;}
-    inline DeleteHubContentRequest& WithHubContentName(Aws::String&& value) { SetHubContentName(std::move(value)); return *this;}
-    inline DeleteHubContentRequest& WithHubContentName(const char* value) { SetHubContentName(value); return *this;}
+    template<typename HubContentNameT = Aws::String>
+    void SetHubContentName(HubContentNameT&& value) { m_hubContentNameHasBeenSet = true; m_hubContentName = std::forward<HubContentNameT>(value); }
+    template<typename HubContentNameT = Aws::String>
+    DeleteHubContentRequest& WithHubContentName(HubContentNameT&& value) { SetHubContentName(std::forward<HubContentNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the content that you want to delete from a hub.</p>
      */
-    inline const Aws::String& GetHubContentVersion() const{ return m_hubContentVersion; }
+    inline const Aws::String& GetHubContentVersion() const { return m_hubContentVersion; }
     inline bool HubContentVersionHasBeenSet() const { return m_hubContentVersionHasBeenSet; }
-    inline void SetHubContentVersion(const Aws::String& value) { m_hubContentVersionHasBeenSet = true; m_hubContentVersion = value; }
-    inline void SetHubContentVersion(Aws::String&& value) { m_hubContentVersionHasBeenSet = true; m_hubContentVersion = std::move(value); }
-    inline void SetHubContentVersion(const char* value) { m_hubContentVersionHasBeenSet = true; m_hubContentVersion.assign(value); }
-    inline DeleteHubContentRequest& WithHubContentVersion(const Aws::String& value) { SetHubContentVersion(value); return *this;}
-    inline DeleteHubContentRequest& WithHubContentVersion(Aws::String&& value) { SetHubContentVersion(std::move(value)); return *this;}
-    inline DeleteHubContentRequest& WithHubContentVersion(const char* value) { SetHubContentVersion(value); return *this;}
+    template<typename HubContentVersionT = Aws::String>
+    void SetHubContentVersion(HubContentVersionT&& value) { m_hubContentVersionHasBeenSet = true; m_hubContentVersion = std::forward<HubContentVersionT>(value); }
+    template<typename HubContentVersionT = Aws::String>
+    DeleteHubContentRequest& WithHubContentVersion(HubContentVersionT&& value) { SetHubContentVersion(std::forward<HubContentVersionT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_hubName;
     bool m_hubNameHasBeenSet = false;
 
-    HubContentType m_hubContentType;
+    HubContentType m_hubContentType{HubContentType::NOT_SET};
     bool m_hubContentTypeHasBeenSet = false;
 
     Aws::String m_hubContentName;

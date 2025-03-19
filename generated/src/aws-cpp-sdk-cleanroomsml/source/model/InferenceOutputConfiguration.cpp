@@ -18,14 +18,7 @@ namespace CleanRoomsML
 namespace Model
 {
 
-InferenceOutputConfiguration::InferenceOutputConfiguration() : 
-    m_acceptHasBeenSet(false),
-    m_membersHasBeenSet(false)
-{
-}
-
 InferenceOutputConfiguration::InferenceOutputConfiguration(JsonView jsonValue)
-  : InferenceOutputConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ InferenceOutputConfiguration& InferenceOutputConfiguration::operator =(JsonView 
   if(jsonValue.ValueExists("accept"))
   {
     m_accept = jsonValue.GetString("accept");
-
     m_acceptHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("members"))
   {
     Aws::Utils::Array<JsonView> membersJsonList = jsonValue.GetArray("members");
@@ -48,7 +39,6 @@ InferenceOutputConfiguration& InferenceOutputConfiguration::operator =(JsonView 
     }
     m_membersHasBeenSet = true;
   }
-
   return *this;
 }
 

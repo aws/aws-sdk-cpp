@@ -12,21 +12,6 @@ using namespace Aws::QBusiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDataSourceRequest::UpdateDataSourceRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_indexIdHasBeenSet(false),
-    m_dataSourceIdHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_vpcConfigurationHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_syncScheduleHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_documentEnrichmentConfigurationHasBeenSet(false),
-    m_mediaExtractionConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDataSourceRequest::SerializePayload() const
 {
   JsonValue payload;

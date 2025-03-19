@@ -32,7 +32,7 @@ namespace Model
   class ProvisioningHook
   {
   public:
-    AWS_IOT_API ProvisioningHook();
+    AWS_IOT_API ProvisioningHook() = default;
     AWS_IOT_API ProvisioningHook(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API ProvisioningHook& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The payload that was sent to the target function.</p> <p> <i>Note:</i> Only
      * Lambda functions are currently supported.</p>
      */
-    inline const Aws::String& GetPayloadVersion() const{ return m_payloadVersion; }
+    inline const Aws::String& GetPayloadVersion() const { return m_payloadVersion; }
     inline bool PayloadVersionHasBeenSet() const { return m_payloadVersionHasBeenSet; }
-    inline void SetPayloadVersion(const Aws::String& value) { m_payloadVersionHasBeenSet = true; m_payloadVersion = value; }
-    inline void SetPayloadVersion(Aws::String&& value) { m_payloadVersionHasBeenSet = true; m_payloadVersion = std::move(value); }
-    inline void SetPayloadVersion(const char* value) { m_payloadVersionHasBeenSet = true; m_payloadVersion.assign(value); }
-    inline ProvisioningHook& WithPayloadVersion(const Aws::String& value) { SetPayloadVersion(value); return *this;}
-    inline ProvisioningHook& WithPayloadVersion(Aws::String&& value) { SetPayloadVersion(std::move(value)); return *this;}
-    inline ProvisioningHook& WithPayloadVersion(const char* value) { SetPayloadVersion(value); return *this;}
+    template<typename PayloadVersionT = Aws::String>
+    void SetPayloadVersion(PayloadVersionT&& value) { m_payloadVersionHasBeenSet = true; m_payloadVersion = std::forward<PayloadVersionT>(value); }
+    template<typename PayloadVersionT = Aws::String>
+    ProvisioningHook& WithPayloadVersion(PayloadVersionT&& value) { SetPayloadVersion(std::forward<PayloadVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The ARN of the target function.</p> <p> <i>Note:</i> Only Lambda functions
      * are currently supported.</p>
      */
-    inline const Aws::String& GetTargetArn() const{ return m_targetArn; }
+    inline const Aws::String& GetTargetArn() const { return m_targetArn; }
     inline bool TargetArnHasBeenSet() const { return m_targetArnHasBeenSet; }
-    inline void SetTargetArn(const Aws::String& value) { m_targetArnHasBeenSet = true; m_targetArn = value; }
-    inline void SetTargetArn(Aws::String&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::move(value); }
-    inline void SetTargetArn(const char* value) { m_targetArnHasBeenSet = true; m_targetArn.assign(value); }
-    inline ProvisioningHook& WithTargetArn(const Aws::String& value) { SetTargetArn(value); return *this;}
-    inline ProvisioningHook& WithTargetArn(Aws::String&& value) { SetTargetArn(std::move(value)); return *this;}
-    inline ProvisioningHook& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}
+    template<typename TargetArnT = Aws::String>
+    void SetTargetArn(TargetArnT&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::forward<TargetArnT>(value); }
+    template<typename TargetArnT = Aws::String>
+    ProvisioningHook& WithTargetArn(TargetArnT&& value) { SetTargetArn(std::forward<TargetArnT>(value)); return *this;}
     ///@}
   private:
 

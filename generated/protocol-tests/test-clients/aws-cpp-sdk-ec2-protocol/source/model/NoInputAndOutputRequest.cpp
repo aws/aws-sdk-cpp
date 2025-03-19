@@ -10,10 +10,6 @@
 using namespace Aws::EC2Protocol::Model;
 using namespace Aws::Utils;
 
-NoInputAndOutputRequest::NoInputAndOutputRequest()
-{
-}
-
 Aws::String NoInputAndOutputRequest::SerializePayload() const
 {
   Aws::StringStream ss;

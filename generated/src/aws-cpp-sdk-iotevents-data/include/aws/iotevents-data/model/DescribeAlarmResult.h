@@ -28,7 +28,7 @@ namespace Model
   class DescribeAlarmResult
   {
   public:
-    AWS_IOTEVENTSDATA_API DescribeAlarmResult();
+    AWS_IOTEVENTSDATA_API DescribeAlarmResult() = default;
     AWS_IOTEVENTSDATA_API DescribeAlarmResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTEVENTSDATA_API DescribeAlarmResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Contains information about an alarm.</p>
      */
-    inline const Alarm& GetAlarm() const{ return m_alarm; }
-    inline void SetAlarm(const Alarm& value) { m_alarm = value; }
-    inline void SetAlarm(Alarm&& value) { m_alarm = std::move(value); }
-    inline DescribeAlarmResult& WithAlarm(const Alarm& value) { SetAlarm(value); return *this;}
-    inline DescribeAlarmResult& WithAlarm(Alarm&& value) { SetAlarm(std::move(value)); return *this;}
+    inline const Alarm& GetAlarm() const { return m_alarm; }
+    template<typename AlarmT = Alarm>
+    void SetAlarm(AlarmT&& value) { m_alarmHasBeenSet = true; m_alarm = std::forward<AlarmT>(value); }
+    template<typename AlarmT = Alarm>
+    DescribeAlarmResult& WithAlarm(AlarmT&& value) { SetAlarm(std::forward<AlarmT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeAlarmResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeAlarmResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeAlarmResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeAlarmResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Alarm m_alarm;
+    bool m_alarmHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

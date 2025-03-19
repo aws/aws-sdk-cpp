@@ -18,18 +18,7 @@ namespace Chime
 namespace Model
 {
 
-Invite::Invite() : 
-    m_inviteIdHasBeenSet(false),
-    m_status(InviteStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_emailAddressHasBeenSet(false),
-    m_emailStatus(EmailStatus::NOT_SET),
-    m_emailStatusHasBeenSet(false)
-{
-}
-
 Invite::Invite(JsonView jsonValue)
-  : Invite()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ Invite& Invite::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InviteId"))
   {
     m_inviteId = jsonValue.GetString("InviteId");
-
     m_inviteIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = InviteStatusMapper::GetInviteStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EmailAddress"))
   {
     m_emailAddress = jsonValue.GetString("EmailAddress");
-
     m_emailAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EmailStatus"))
   {
     m_emailStatus = EmailStatusMapper::GetEmailStatusForName(jsonValue.GetString("EmailStatus"));
-
     m_emailStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

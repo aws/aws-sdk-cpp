@@ -12,15 +12,6 @@ using namespace Aws::Textract::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AnalyzeDocumentRequest::AnalyzeDocumentRequest() : 
-    m_documentHasBeenSet(false),
-    m_featureTypesHasBeenSet(false),
-    m_humanLoopConfigHasBeenSet(false),
-    m_queriesConfigHasBeenSet(false),
-    m_adaptersConfigHasBeenSet(false)
-{
-}
-
 Aws::String AnalyzeDocumentRequest::SerializePayload() const
 {
   JsonValue payload;

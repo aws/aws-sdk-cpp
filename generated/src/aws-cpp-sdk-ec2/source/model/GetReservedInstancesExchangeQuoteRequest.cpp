@@ -10,14 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-GetReservedInstancesExchangeQuoteRequest::GetReservedInstancesExchangeQuoteRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_reservedInstanceIdsHasBeenSet(false),
-    m_targetConfigurationsHasBeenSet(false)
-{
-}
-
 Aws::String GetReservedInstancesExchangeQuoteRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -18,14 +18,7 @@ namespace Route53Domains
 namespace Model
 {
 
-DomainSuggestion::DomainSuggestion() : 
-    m_domainNameHasBeenSet(false),
-    m_availabilityHasBeenSet(false)
-{
-}
-
 DomainSuggestion::DomainSuggestion(JsonView jsonValue)
-  : DomainSuggestion()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DomainSuggestion& DomainSuggestion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DomainName"))
   {
     m_domainName = jsonValue.GetString("DomainName");
-
     m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Availability"))
   {
     m_availability = jsonValue.GetString("Availability");
-
     m_availabilityHasBeenSet = true;
   }
-
   return *this;
 }
 

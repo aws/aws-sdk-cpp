@@ -12,11 +12,6 @@ using namespace Aws::Personalize::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartRecommenderRequest::StartRecommenderRequest() : 
-    m_recommenderArnHasBeenSet(false)
-{
-}
-
 Aws::String StartRecommenderRequest::SerializePayload() const
 {
   JsonValue payload;

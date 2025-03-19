@@ -18,16 +18,7 @@ namespace signer
 namespace Model
 {
 
-SigningConfigurationOverrides::SigningConfigurationOverrides() : 
-    m_encryptionAlgorithm(EncryptionAlgorithm::NOT_SET),
-    m_encryptionAlgorithmHasBeenSet(false),
-    m_hashAlgorithm(HashAlgorithm::NOT_SET),
-    m_hashAlgorithmHasBeenSet(false)
-{
-}
-
 SigningConfigurationOverrides::SigningConfigurationOverrides(JsonView jsonValue)
-  : SigningConfigurationOverrides()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ SigningConfigurationOverrides& SigningConfigurationOverrides::operator =(JsonVie
   if(jsonValue.ValueExists("encryptionAlgorithm"))
   {
     m_encryptionAlgorithm = EncryptionAlgorithmMapper::GetEncryptionAlgorithmForName(jsonValue.GetString("encryptionAlgorithm"));
-
     m_encryptionAlgorithmHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hashAlgorithm"))
   {
     m_hashAlgorithm = HashAlgorithmMapper::GetHashAlgorithmForName(jsonValue.GetString("hashAlgorithm"));
-
     m_hashAlgorithmHasBeenSet = true;
   }
-
   return *this;
 }
 

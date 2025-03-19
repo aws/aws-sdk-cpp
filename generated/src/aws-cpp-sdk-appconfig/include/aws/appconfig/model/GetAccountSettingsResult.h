@@ -28,7 +28,7 @@ namespace Model
   class GetAccountSettingsResult
   {
   public:
-    AWS_APPCONFIG_API GetAccountSettingsResult();
+    AWS_APPCONFIG_API GetAccountSettingsResult() = default;
     AWS_APPCONFIG_API GetAccountSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPCONFIG_API GetAccountSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,28 +43,28 @@ namespace Model
      * interval. Deletion protection is disabled by default. The default interval for
      * <code>ProtectionPeriodInMinutes</code> is 60.</p>
      */
-    inline const DeletionProtectionSettings& GetDeletionProtection() const{ return m_deletionProtection; }
-    inline void SetDeletionProtection(const DeletionProtectionSettings& value) { m_deletionProtection = value; }
-    inline void SetDeletionProtection(DeletionProtectionSettings&& value) { m_deletionProtection = std::move(value); }
-    inline GetAccountSettingsResult& WithDeletionProtection(const DeletionProtectionSettings& value) { SetDeletionProtection(value); return *this;}
-    inline GetAccountSettingsResult& WithDeletionProtection(DeletionProtectionSettings&& value) { SetDeletionProtection(std::move(value)); return *this;}
+    inline const DeletionProtectionSettings& GetDeletionProtection() const { return m_deletionProtection; }
+    template<typename DeletionProtectionT = DeletionProtectionSettings>
+    void SetDeletionProtection(DeletionProtectionT&& value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = std::forward<DeletionProtectionT>(value); }
+    template<typename DeletionProtectionT = DeletionProtectionSettings>
+    GetAccountSettingsResult& WithDeletionProtection(DeletionProtectionT&& value) { SetDeletionProtection(std::forward<DeletionProtectionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetAccountSettingsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetAccountSettingsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetAccountSettingsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetAccountSettingsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DeletionProtectionSettings m_deletionProtection;
+    bool m_deletionProtectionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

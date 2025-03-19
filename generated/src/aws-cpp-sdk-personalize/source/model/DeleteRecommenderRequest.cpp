@@ -12,11 +12,6 @@ using namespace Aws::Personalize::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteRecommenderRequest::DeleteRecommenderRequest() : 
-    m_recommenderArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRecommenderRequest::SerializePayload() const
 {
   JsonValue payload;

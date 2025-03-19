@@ -29,7 +29,7 @@ namespace Model
   class ListHostKeysResult
   {
   public:
-    AWS_TRANSFER_API ListHostKeysResult();
+    AWS_TRANSFER_API ListHostKeysResult() = default;
     AWS_TRANSFER_API ListHostKeysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TRANSFER_API ListHostKeysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,60 +39,58 @@ namespace Model
      * <p>Returns a token that you can use to call <code>ListHostKeys</code> again and
      * receive additional results, if there are any.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListHostKeysResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListHostKeysResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListHostKeysResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListHostKeysResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Returns the server identifier that contains the listed host keys.</p>
      */
-    inline const Aws::String& GetServerId() const{ return m_serverId; }
-    inline void SetServerId(const Aws::String& value) { m_serverId = value; }
-    inline void SetServerId(Aws::String&& value) { m_serverId = std::move(value); }
-    inline void SetServerId(const char* value) { m_serverId.assign(value); }
-    inline ListHostKeysResult& WithServerId(const Aws::String& value) { SetServerId(value); return *this;}
-    inline ListHostKeysResult& WithServerId(Aws::String&& value) { SetServerId(std::move(value)); return *this;}
-    inline ListHostKeysResult& WithServerId(const char* value) { SetServerId(value); return *this;}
+    inline const Aws::String& GetServerId() const { return m_serverId; }
+    template<typename ServerIdT = Aws::String>
+    void SetServerId(ServerIdT&& value) { m_serverIdHasBeenSet = true; m_serverId = std::forward<ServerIdT>(value); }
+    template<typename ServerIdT = Aws::String>
+    ListHostKeysResult& WithServerId(ServerIdT&& value) { SetServerId(std::forward<ServerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Returns an array, where each item contains the details of a host key.</p>
      */
-    inline const Aws::Vector<ListedHostKey>& GetHostKeys() const{ return m_hostKeys; }
-    inline void SetHostKeys(const Aws::Vector<ListedHostKey>& value) { m_hostKeys = value; }
-    inline void SetHostKeys(Aws::Vector<ListedHostKey>&& value) { m_hostKeys = std::move(value); }
-    inline ListHostKeysResult& WithHostKeys(const Aws::Vector<ListedHostKey>& value) { SetHostKeys(value); return *this;}
-    inline ListHostKeysResult& WithHostKeys(Aws::Vector<ListedHostKey>&& value) { SetHostKeys(std::move(value)); return *this;}
-    inline ListHostKeysResult& AddHostKeys(const ListedHostKey& value) { m_hostKeys.push_back(value); return *this; }
-    inline ListHostKeysResult& AddHostKeys(ListedHostKey&& value) { m_hostKeys.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ListedHostKey>& GetHostKeys() const { return m_hostKeys; }
+    template<typename HostKeysT = Aws::Vector<ListedHostKey>>
+    void SetHostKeys(HostKeysT&& value) { m_hostKeysHasBeenSet = true; m_hostKeys = std::forward<HostKeysT>(value); }
+    template<typename HostKeysT = Aws::Vector<ListedHostKey>>
+    ListHostKeysResult& WithHostKeys(HostKeysT&& value) { SetHostKeys(std::forward<HostKeysT>(value)); return *this;}
+    template<typename HostKeysT = ListedHostKey>
+    ListHostKeysResult& AddHostKeys(HostKeysT&& value) { m_hostKeysHasBeenSet = true; m_hostKeys.emplace_back(std::forward<HostKeysT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListHostKeysResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListHostKeysResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListHostKeysResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListHostKeysResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_serverId;
+    bool m_serverIdHasBeenSet = false;
 
     Aws::Vector<ListedHostKey> m_hostKeys;
+    bool m_hostKeysHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

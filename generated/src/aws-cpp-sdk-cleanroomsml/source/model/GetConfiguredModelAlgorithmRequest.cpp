@@ -12,11 +12,6 @@ using namespace Aws::CleanRoomsML::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetConfiguredModelAlgorithmRequest::GetConfiguredModelAlgorithmRequest() : 
-    m_configuredModelAlgorithmArnHasBeenSet(false)
-{
-}
-
 Aws::String GetConfiguredModelAlgorithmRequest::SerializePayload() const
 {
   return {};

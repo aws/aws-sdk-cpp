@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-UserIdentityInfoLite::UserIdentityInfoLite() : 
-    m_firstNameHasBeenSet(false),
-    m_lastNameHasBeenSet(false)
-{
-}
-
 UserIdentityInfoLite::UserIdentityInfoLite(JsonView jsonValue)
-  : UserIdentityInfoLite()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ UserIdentityInfoLite& UserIdentityInfoLite::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FirstName"))
   {
     m_firstName = jsonValue.GetString("FirstName");
-
     m_firstNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastName"))
   {
     m_lastName = jsonValue.GetString("LastName");
-
     m_lastNameHasBeenSet = true;
   }
-
   return *this;
 }
 

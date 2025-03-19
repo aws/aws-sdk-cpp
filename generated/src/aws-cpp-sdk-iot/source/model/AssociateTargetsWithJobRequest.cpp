@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-AssociateTargetsWithJobRequest::AssociateTargetsWithJobRequest() : 
-    m_targetsHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_namespaceIdHasBeenSet(false)
-{
-}
-
 Aws::String AssociateTargetsWithJobRequest::SerializePayload() const
 {
   JsonValue payload;

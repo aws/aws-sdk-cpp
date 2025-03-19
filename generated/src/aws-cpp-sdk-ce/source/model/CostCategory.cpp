@@ -18,22 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-CostCategory::CostCategory() : 
-    m_costCategoryArnHasBeenSet(false),
-    m_effectiveStartHasBeenSet(false),
-    m_effectiveEndHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ruleVersion(CostCategoryRuleVersion::NOT_SET),
-    m_ruleVersionHasBeenSet(false),
-    m_rulesHasBeenSet(false),
-    m_splitChargeRulesHasBeenSet(false),
-    m_processingStatusHasBeenSet(false),
-    m_defaultValueHasBeenSet(false)
-{
-}
-
 CostCategory::CostCategory(JsonView jsonValue)
-  : CostCategory()
 {
   *this = jsonValue;
 }
@@ -43,38 +28,28 @@ CostCategory& CostCategory::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CostCategoryArn"))
   {
     m_costCategoryArn = jsonValue.GetString("CostCategoryArn");
-
     m_costCategoryArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EffectiveStart"))
   {
     m_effectiveStart = jsonValue.GetString("EffectiveStart");
-
     m_effectiveStartHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EffectiveEnd"))
   {
     m_effectiveEnd = jsonValue.GetString("EffectiveEnd");
-
     m_effectiveEndHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleVersion"))
   {
     m_ruleVersion = CostCategoryRuleVersionMapper::GetCostCategoryRuleVersionForName(jsonValue.GetString("RuleVersion"));
-
     m_ruleVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Rules"))
   {
     Aws::Utils::Array<JsonView> rulesJsonList = jsonValue.GetArray("Rules");
@@ -84,7 +59,6 @@ CostCategory& CostCategory::operator =(JsonView jsonValue)
     }
     m_rulesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SplitChargeRules"))
   {
     Aws::Utils::Array<JsonView> splitChargeRulesJsonList = jsonValue.GetArray("SplitChargeRules");
@@ -94,7 +68,6 @@ CostCategory& CostCategory::operator =(JsonView jsonValue)
     }
     m_splitChargeRulesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProcessingStatus"))
   {
     Aws::Utils::Array<JsonView> processingStatusJsonList = jsonValue.GetArray("ProcessingStatus");
@@ -104,14 +77,11 @@ CostCategory& CostCategory::operator =(JsonView jsonValue)
     }
     m_processingStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultValue"))
   {
     m_defaultValue = jsonValue.GetString("DefaultValue");
-
     m_defaultValueHasBeenSet = true;
   }
-
   return *this;
 }
 

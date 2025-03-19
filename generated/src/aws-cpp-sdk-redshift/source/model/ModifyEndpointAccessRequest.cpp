@@ -10,12 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-ModifyEndpointAccessRequest::ModifyEndpointAccessRequest() : 
-    m_endpointNameHasBeenSet(false),
-    m_vpcSecurityGroupIdsHasBeenSet(false)
-{
-}
-
 Aws::String ModifyEndpointAccessRequest::SerializePayload() const
 {
   Aws::StringStream ss;

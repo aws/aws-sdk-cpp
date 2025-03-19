@@ -29,7 +29,7 @@ namespace Model
   class BatchGetWorkflowsResult
   {
   public:
-    AWS_GLUE_API BatchGetWorkflowsResult();
+    AWS_GLUE_API BatchGetWorkflowsResult() = default;
     AWS_GLUE_API BatchGetWorkflowsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUE_API BatchGetWorkflowsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,46 +38,46 @@ namespace Model
     /**
      * <p>A list of workflow resource metadata.</p>
      */
-    inline const Aws::Vector<Workflow>& GetWorkflows() const{ return m_workflows; }
-    inline void SetWorkflows(const Aws::Vector<Workflow>& value) { m_workflows = value; }
-    inline void SetWorkflows(Aws::Vector<Workflow>&& value) { m_workflows = std::move(value); }
-    inline BatchGetWorkflowsResult& WithWorkflows(const Aws::Vector<Workflow>& value) { SetWorkflows(value); return *this;}
-    inline BatchGetWorkflowsResult& WithWorkflows(Aws::Vector<Workflow>&& value) { SetWorkflows(std::move(value)); return *this;}
-    inline BatchGetWorkflowsResult& AddWorkflows(const Workflow& value) { m_workflows.push_back(value); return *this; }
-    inline BatchGetWorkflowsResult& AddWorkflows(Workflow&& value) { m_workflows.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Workflow>& GetWorkflows() const { return m_workflows; }
+    template<typename WorkflowsT = Aws::Vector<Workflow>>
+    void SetWorkflows(WorkflowsT&& value) { m_workflowsHasBeenSet = true; m_workflows = std::forward<WorkflowsT>(value); }
+    template<typename WorkflowsT = Aws::Vector<Workflow>>
+    BatchGetWorkflowsResult& WithWorkflows(WorkflowsT&& value) { SetWorkflows(std::forward<WorkflowsT>(value)); return *this;}
+    template<typename WorkflowsT = Workflow>
+    BatchGetWorkflowsResult& AddWorkflows(WorkflowsT&& value) { m_workflowsHasBeenSet = true; m_workflows.emplace_back(std::forward<WorkflowsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of names of workflows not found.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetMissingWorkflows() const{ return m_missingWorkflows; }
-    inline void SetMissingWorkflows(const Aws::Vector<Aws::String>& value) { m_missingWorkflows = value; }
-    inline void SetMissingWorkflows(Aws::Vector<Aws::String>&& value) { m_missingWorkflows = std::move(value); }
-    inline BatchGetWorkflowsResult& WithMissingWorkflows(const Aws::Vector<Aws::String>& value) { SetMissingWorkflows(value); return *this;}
-    inline BatchGetWorkflowsResult& WithMissingWorkflows(Aws::Vector<Aws::String>&& value) { SetMissingWorkflows(std::move(value)); return *this;}
-    inline BatchGetWorkflowsResult& AddMissingWorkflows(const Aws::String& value) { m_missingWorkflows.push_back(value); return *this; }
-    inline BatchGetWorkflowsResult& AddMissingWorkflows(Aws::String&& value) { m_missingWorkflows.push_back(std::move(value)); return *this; }
-    inline BatchGetWorkflowsResult& AddMissingWorkflows(const char* value) { m_missingWorkflows.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetMissingWorkflows() const { return m_missingWorkflows; }
+    template<typename MissingWorkflowsT = Aws::Vector<Aws::String>>
+    void SetMissingWorkflows(MissingWorkflowsT&& value) { m_missingWorkflowsHasBeenSet = true; m_missingWorkflows = std::forward<MissingWorkflowsT>(value); }
+    template<typename MissingWorkflowsT = Aws::Vector<Aws::String>>
+    BatchGetWorkflowsResult& WithMissingWorkflows(MissingWorkflowsT&& value) { SetMissingWorkflows(std::forward<MissingWorkflowsT>(value)); return *this;}
+    template<typename MissingWorkflowsT = Aws::String>
+    BatchGetWorkflowsResult& AddMissingWorkflows(MissingWorkflowsT&& value) { m_missingWorkflowsHasBeenSet = true; m_missingWorkflows.emplace_back(std::forward<MissingWorkflowsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchGetWorkflowsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchGetWorkflowsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchGetWorkflowsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchGetWorkflowsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Workflow> m_workflows;
+    bool m_workflowsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_missingWorkflows;
+    bool m_missingWorkflowsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

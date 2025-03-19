@@ -18,18 +18,7 @@ namespace XRay
 namespace Model
 {
 
-Http::Http() : 
-    m_httpURLHasBeenSet(false),
-    m_httpStatus(0),
-    m_httpStatusHasBeenSet(false),
-    m_httpMethodHasBeenSet(false),
-    m_userAgentHasBeenSet(false),
-    m_clientIpHasBeenSet(false)
-{
-}
-
 Http::Http(JsonView jsonValue)
-  : Http()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ Http& Http::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("HttpURL"))
   {
     m_httpURL = jsonValue.GetString("HttpURL");
-
     m_httpURLHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HttpStatus"))
   {
     m_httpStatus = jsonValue.GetInteger("HttpStatus");
-
     m_httpStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HttpMethod"))
   {
     m_httpMethod = jsonValue.GetString("HttpMethod");
-
     m_httpMethodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserAgent"))
   {
     m_userAgent = jsonValue.GetString("UserAgent");
-
     m_userAgentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClientIp"))
   {
     m_clientIp = jsonValue.GetString("ClientIp");
-
     m_clientIpHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,15 +20,7 @@ namespace ElasticLoadBalancing
 namespace Model
 {
 
-PolicyDescription::PolicyDescription() : 
-    m_policyNameHasBeenSet(false),
-    m_policyTypeNameHasBeenSet(false),
-    m_policyAttributeDescriptionsHasBeenSet(false)
-{
-}
-
 PolicyDescription::PolicyDescription(const XmlNode& xmlNode)
-  : PolicyDescription()
 {
   *this = xmlNode;
 }
@@ -55,6 +47,7 @@ PolicyDescription& PolicyDescription::operator =(const XmlNode& xmlNode)
     if(!policyAttributeDescriptionsNode.IsNull())
     {
       XmlNode policyAttributeDescriptionsMember = policyAttributeDescriptionsNode.FirstChild("member");
+      m_policyAttributeDescriptionsHasBeenSet = !policyAttributeDescriptionsMember.IsNull();
       while(!policyAttributeDescriptionsMember.IsNull())
       {
         m_policyAttributeDescriptions.push_back(policyAttributeDescriptionsMember);

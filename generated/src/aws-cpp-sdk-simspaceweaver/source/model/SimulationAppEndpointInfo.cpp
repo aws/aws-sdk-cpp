@@ -18,14 +18,7 @@ namespace SimSpaceWeaver
 namespace Model
 {
 
-SimulationAppEndpointInfo::SimulationAppEndpointInfo() : 
-    m_addressHasBeenSet(false),
-    m_ingressPortMappingsHasBeenSet(false)
-{
-}
-
 SimulationAppEndpointInfo::SimulationAppEndpointInfo(JsonView jsonValue)
-  : SimulationAppEndpointInfo()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SimulationAppEndpointInfo& SimulationAppEndpointInfo::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Address"))
   {
     m_address = jsonValue.GetString("Address");
-
     m_addressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IngressPortMappings"))
   {
     Aws::Utils::Array<JsonView> ingressPortMappingsJsonList = jsonValue.GetArray("IngressPortMappings");
@@ -48,7 +39,6 @@ SimulationAppEndpointInfo& SimulationAppEndpointInfo::operator =(JsonView jsonVa
     }
     m_ingressPortMappingsHasBeenSet = true;
   }
-
   return *this;
 }
 

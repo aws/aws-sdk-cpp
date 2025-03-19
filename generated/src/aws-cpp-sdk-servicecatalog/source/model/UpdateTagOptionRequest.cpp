@@ -12,14 +12,6 @@ using namespace Aws::ServiceCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateTagOptionRequest::UpdateTagOptionRequest() : 
-    m_idHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_active(false),
-    m_activeHasBeenSet(false)
-{
-}
-
 Aws::String UpdateTagOptionRequest::SerializePayload() const
 {
   JsonValue payload;

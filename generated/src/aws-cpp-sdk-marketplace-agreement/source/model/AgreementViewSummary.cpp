@@ -18,22 +18,7 @@ namespace AgreementService
 namespace Model
 {
 
-AgreementViewSummary::AgreementViewSummary() : 
-    m_acceptanceTimeHasBeenSet(false),
-    m_acceptorHasBeenSet(false),
-    m_agreementIdHasBeenSet(false),
-    m_agreementTypeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_proposalSummaryHasBeenSet(false),
-    m_proposerHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_status(AgreementStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 AgreementViewSummary::AgreementViewSummary(JsonView jsonValue)
-  : AgreementViewSummary()
 {
   *this = jsonValue;
 }
@@ -43,66 +28,48 @@ AgreementViewSummary& AgreementViewSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("acceptanceTime"))
   {
     m_acceptanceTime = jsonValue.GetDouble("acceptanceTime");
-
     m_acceptanceTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("acceptor"))
   {
     m_acceptor = jsonValue.GetObject("acceptor");
-
     m_acceptorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("agreementId"))
   {
     m_agreementId = jsonValue.GetString("agreementId");
-
     m_agreementIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("agreementType"))
   {
     m_agreementType = jsonValue.GetString("agreementType");
-
     m_agreementTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetDouble("endTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("proposalSummary"))
   {
     m_proposalSummary = jsonValue.GetObject("proposalSummary");
-
     m_proposalSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("proposer"))
   {
     m_proposer = jsonValue.GetObject("proposer");
-
     m_proposerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetDouble("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = AgreementStatusMapper::GetAgreementStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

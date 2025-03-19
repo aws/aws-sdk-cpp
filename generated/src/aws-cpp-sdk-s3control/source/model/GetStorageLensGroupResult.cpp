@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetStorageLensGroupResult::GetStorageLensGroupResult()
-{
-}
-
 GetStorageLensGroupResult::GetStorageLensGroupResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -33,6 +29,7 @@ GetStorageLensGroupResult& GetStorageLensGroupResult::operator =(const Aws::Amaz
   if(!resultNode.IsNull())
   {
     m_storageLensGroup = resultNode;
+    m_storageLensGroupHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
@@ -40,12 +37,14 @@ GetStorageLensGroupResult& GetStorageLensGroupResult::operator =(const Aws::Amaz
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   const auto& hostIdIter = headers.find("x-amz-id-2");
   if(hostIdIter != headers.end())
   {
     m_hostId = hostIdIter->second;
+    m_hostIdHasBeenSet = true;
   }
 
   return *this;

@@ -12,13 +12,6 @@ using namespace Aws::CloudWatchEvidently::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateProjectDataDeliveryRequest::UpdateProjectDataDeliveryRequest() : 
-    m_cloudWatchLogsHasBeenSet(false),
-    m_projectHasBeenSet(false),
-    m_s3DestinationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateProjectDataDeliveryRequest::SerializePayload() const
 {
   JsonValue payload;

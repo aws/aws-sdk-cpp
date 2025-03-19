@@ -18,18 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-SAPODataDestinationProperties::SAPODataDestinationProperties() : 
-    m_objectPathHasBeenSet(false),
-    m_successResponseHandlingConfigHasBeenSet(false),
-    m_idFieldNamesHasBeenSet(false),
-    m_errorHandlingConfigHasBeenSet(false),
-    m_writeOperationType(WriteOperationType::NOT_SET),
-    m_writeOperationTypeHasBeenSet(false)
-{
-}
-
 SAPODataDestinationProperties::SAPODataDestinationProperties(JsonView jsonValue)
-  : SAPODataDestinationProperties()
 {
   *this = jsonValue;
 }
@@ -39,17 +28,13 @@ SAPODataDestinationProperties& SAPODataDestinationProperties::operator =(JsonVie
   if(jsonValue.ValueExists("objectPath"))
   {
     m_objectPath = jsonValue.GetString("objectPath");
-
     m_objectPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("successResponseHandlingConfig"))
   {
     m_successResponseHandlingConfig = jsonValue.GetObject("successResponseHandlingConfig");
-
     m_successResponseHandlingConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("idFieldNames"))
   {
     Aws::Utils::Array<JsonView> idFieldNamesJsonList = jsonValue.GetArray("idFieldNames");
@@ -59,21 +44,16 @@ SAPODataDestinationProperties& SAPODataDestinationProperties::operator =(JsonVie
     }
     m_idFieldNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorHandlingConfig"))
   {
     m_errorHandlingConfig = jsonValue.GetObject("errorHandlingConfig");
-
     m_errorHandlingConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("writeOperationType"))
   {
     m_writeOperationType = WriteOperationTypeMapper::GetWriteOperationTypeForName(jsonValue.GetString("writeOperationType"));
-
     m_writeOperationTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

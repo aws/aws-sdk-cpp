@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SendMessageResult::SendMessageResult()
-{
-}
-
 SendMessageResult::SendMessageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ SendMessageResult& SendMessageResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("nextMessageToken"))
   {
     m_nextMessageToken = jsonValue.GetString("nextMessageToken");
-
+    m_nextMessageTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("requestMessageId"))
   {
     m_requestMessageId = jsonValue.GetString("requestMessageId");
-
+    m_requestMessageIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

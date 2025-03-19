@@ -18,21 +18,7 @@ namespace PinpointSMSVoiceV2
 namespace Model
 {
 
-RegistrationVersionStatusHistory::RegistrationVersionStatusHistory() : 
-    m_draftTimestampHasBeenSet(false),
-    m_submittedTimestampHasBeenSet(false),
-    m_reviewingTimestampHasBeenSet(false),
-    m_requiresAuthenticationTimestampHasBeenSet(false),
-    m_approvedTimestampHasBeenSet(false),
-    m_discardedTimestampHasBeenSet(false),
-    m_deniedTimestampHasBeenSet(false),
-    m_revokedTimestampHasBeenSet(false),
-    m_archivedTimestampHasBeenSet(false)
-{
-}
-
 RegistrationVersionStatusHistory::RegistrationVersionStatusHistory(JsonView jsonValue)
-  : RegistrationVersionStatusHistory()
 {
   *this = jsonValue;
 }
@@ -42,66 +28,48 @@ RegistrationVersionStatusHistory& RegistrationVersionStatusHistory::operator =(J
   if(jsonValue.ValueExists("DraftTimestamp"))
   {
     m_draftTimestamp = jsonValue.GetDouble("DraftTimestamp");
-
     m_draftTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubmittedTimestamp"))
   {
     m_submittedTimestamp = jsonValue.GetDouble("SubmittedTimestamp");
-
     m_submittedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReviewingTimestamp"))
   {
     m_reviewingTimestamp = jsonValue.GetDouble("ReviewingTimestamp");
-
     m_reviewingTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequiresAuthenticationTimestamp"))
   {
     m_requiresAuthenticationTimestamp = jsonValue.GetDouble("RequiresAuthenticationTimestamp");
-
     m_requiresAuthenticationTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApprovedTimestamp"))
   {
     m_approvedTimestamp = jsonValue.GetDouble("ApprovedTimestamp");
-
     m_approvedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DiscardedTimestamp"))
   {
     m_discardedTimestamp = jsonValue.GetDouble("DiscardedTimestamp");
-
     m_discardedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeniedTimestamp"))
   {
     m_deniedTimestamp = jsonValue.GetDouble("DeniedTimestamp");
-
     m_deniedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RevokedTimestamp"))
   {
     m_revokedTimestamp = jsonValue.GetDouble("RevokedTimestamp");
-
     m_revokedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ArchivedTimestamp"))
   {
     m_archivedTimestamp = jsonValue.GetDouble("ArchivedTimestamp");
-
     m_archivedTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

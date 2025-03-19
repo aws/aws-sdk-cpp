@@ -31,7 +31,7 @@ namespace Model
   class Destination
   {
   public:
-    AWS_PROMETHEUSSERVICE_API Destination();
+    AWS_PROMETHEUSSERVICE_API Destination() = default;
     AWS_PROMETHEUSSERVICE_API Destination(Aws::Utils::Json::JsonView jsonValue);
     AWS_PROMETHEUSSERVICE_API Destination& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PROMETHEUSSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The Amazon Managed Service for Prometheus workspace to send metrics to.</p>
      */
-    inline const AmpConfiguration& GetAmpConfiguration() const{ return m_ampConfiguration; }
+    inline const AmpConfiguration& GetAmpConfiguration() const { return m_ampConfiguration; }
     inline bool AmpConfigurationHasBeenSet() const { return m_ampConfigurationHasBeenSet; }
-    inline void SetAmpConfiguration(const AmpConfiguration& value) { m_ampConfigurationHasBeenSet = true; m_ampConfiguration = value; }
-    inline void SetAmpConfiguration(AmpConfiguration&& value) { m_ampConfigurationHasBeenSet = true; m_ampConfiguration = std::move(value); }
-    inline Destination& WithAmpConfiguration(const AmpConfiguration& value) { SetAmpConfiguration(value); return *this;}
-    inline Destination& WithAmpConfiguration(AmpConfiguration&& value) { SetAmpConfiguration(std::move(value)); return *this;}
+    template<typename AmpConfigurationT = AmpConfiguration>
+    void SetAmpConfiguration(AmpConfigurationT&& value) { m_ampConfigurationHasBeenSet = true; m_ampConfiguration = std::forward<AmpConfigurationT>(value); }
+    template<typename AmpConfigurationT = AmpConfiguration>
+    Destination& WithAmpConfiguration(AmpConfigurationT&& value) { SetAmpConfiguration(std::forward<AmpConfigurationT>(value)); return *this;}
     ///@}
   private:
 

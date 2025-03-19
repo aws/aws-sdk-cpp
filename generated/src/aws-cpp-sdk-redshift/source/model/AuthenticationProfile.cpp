@@ -20,14 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-AuthenticationProfile::AuthenticationProfile() : 
-    m_authenticationProfileNameHasBeenSet(false),
-    m_authenticationProfileContentHasBeenSet(false)
-{
-}
-
 AuthenticationProfile::AuthenticationProfile(const XmlNode& xmlNode)
-  : AuthenticationProfile()
 {
   *this = xmlNode;
 }

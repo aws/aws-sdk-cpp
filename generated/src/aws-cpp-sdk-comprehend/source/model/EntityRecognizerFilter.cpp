@@ -18,17 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-EntityRecognizerFilter::EntityRecognizerFilter() : 
-    m_status(ModelStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_recognizerNameHasBeenSet(false),
-    m_submitTimeBeforeHasBeenSet(false),
-    m_submitTimeAfterHasBeenSet(false)
-{
-}
-
 EntityRecognizerFilter::EntityRecognizerFilter(JsonView jsonValue)
-  : EntityRecognizerFilter()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ EntityRecognizerFilter& EntityRecognizerFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ModelStatusMapper::GetModelStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecognizerName"))
   {
     m_recognizerName = jsonValue.GetString("RecognizerName");
-
     m_recognizerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubmitTimeBefore"))
   {
     m_submitTimeBefore = jsonValue.GetDouble("SubmitTimeBefore");
-
     m_submitTimeBeforeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubmitTimeAfter"))
   {
     m_submitTimeAfter = jsonValue.GetDouble("SubmitTimeAfter");
-
     m_submitTimeAfterHasBeenSet = true;
   }
-
   return *this;
 }
 

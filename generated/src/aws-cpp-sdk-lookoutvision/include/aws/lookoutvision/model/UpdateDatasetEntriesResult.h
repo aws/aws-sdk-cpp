@@ -28,7 +28,7 @@ namespace Model
   class UpdateDatasetEntriesResult
   {
   public:
-    AWS_LOOKOUTFORVISION_API UpdateDatasetEntriesResult();
+    AWS_LOOKOUTFORVISION_API UpdateDatasetEntriesResult() = default;
     AWS_LOOKOUTFORVISION_API UpdateDatasetEntriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOOKOUTFORVISION_API UpdateDatasetEntriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,26 @@ namespace Model
     /**
      * <p>The status of the dataset update.</p>
      */
-    inline const DatasetStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const DatasetStatus& value) { m_status = value; }
-    inline void SetStatus(DatasetStatus&& value) { m_status = std::move(value); }
-    inline UpdateDatasetEntriesResult& WithStatus(const DatasetStatus& value) { SetStatus(value); return *this;}
-    inline UpdateDatasetEntriesResult& WithStatus(DatasetStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline DatasetStatus GetStatus() const { return m_status; }
+    inline void SetStatus(DatasetStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline UpdateDatasetEntriesResult& WithStatus(DatasetStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateDatasetEntriesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateDatasetEntriesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateDatasetEntriesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateDatasetEntriesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    DatasetStatus m_status;
+    DatasetStatus m_status{DatasetStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

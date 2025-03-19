@@ -32,7 +32,7 @@ namespace Model
   class BuildStatusConfig
   {
   public:
-    AWS_CODEBUILD_API BuildStatusConfig();
+    AWS_CODEBUILD_API BuildStatusConfig() = default;
     AWS_CODEBUILD_API BuildStatusConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API BuildStatusConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,12 @@ namespace Model
      * href="https://developer.github.com/v3/repos/statuses/#create-a-commit-status">Create
      * a commit status</a> in the GitHub developer guide.</p> </dd> </dl>
      */
-    inline const Aws::String& GetContext() const{ return m_context; }
+    inline const Aws::String& GetContext() const { return m_context; }
     inline bool ContextHasBeenSet() const { return m_contextHasBeenSet; }
-    inline void SetContext(const Aws::String& value) { m_contextHasBeenSet = true; m_context = value; }
-    inline void SetContext(Aws::String&& value) { m_contextHasBeenSet = true; m_context = std::move(value); }
-    inline void SetContext(const char* value) { m_contextHasBeenSet = true; m_context.assign(value); }
-    inline BuildStatusConfig& WithContext(const Aws::String& value) { SetContext(value); return *this;}
-    inline BuildStatusConfig& WithContext(Aws::String&& value) { SetContext(std::move(value)); return *this;}
-    inline BuildStatusConfig& WithContext(const char* value) { SetContext(value); return *this;}
+    template<typename ContextT = Aws::String>
+    void SetContext(ContextT&& value) { m_contextHasBeenSet = true; m_context = std::forward<ContextT>(value); }
+    template<typename ContextT = Aws::String>
+    BuildStatusConfig& WithContext(ContextT&& value) { SetContext(std::forward<ContextT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +72,12 @@ namespace Model
      * href="https://developer.github.com/v3/repos/statuses/#create-a-commit-status">Create
      * a commit status</a> in the GitHub developer guide.</p> </dd> </dl>
      */
-    inline const Aws::String& GetTargetUrl() const{ return m_targetUrl; }
+    inline const Aws::String& GetTargetUrl() const { return m_targetUrl; }
     inline bool TargetUrlHasBeenSet() const { return m_targetUrlHasBeenSet; }
-    inline void SetTargetUrl(const Aws::String& value) { m_targetUrlHasBeenSet = true; m_targetUrl = value; }
-    inline void SetTargetUrl(Aws::String&& value) { m_targetUrlHasBeenSet = true; m_targetUrl = std::move(value); }
-    inline void SetTargetUrl(const char* value) { m_targetUrlHasBeenSet = true; m_targetUrl.assign(value); }
-    inline BuildStatusConfig& WithTargetUrl(const Aws::String& value) { SetTargetUrl(value); return *this;}
-    inline BuildStatusConfig& WithTargetUrl(Aws::String&& value) { SetTargetUrl(std::move(value)); return *this;}
-    inline BuildStatusConfig& WithTargetUrl(const char* value) { SetTargetUrl(value); return *this;}
+    template<typename TargetUrlT = Aws::String>
+    void SetTargetUrl(TargetUrlT&& value) { m_targetUrlHasBeenSet = true; m_targetUrl = std::forward<TargetUrlT>(value); }
+    template<typename TargetUrlT = Aws::String>
+    BuildStatusConfig& WithTargetUrl(TargetUrlT&& value) { SetTargetUrl(std::forward<TargetUrlT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,18 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-PluginProperties::PluginProperties() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_classNameHasBeenSet(false),
-    m_uncompressedSizeInBytes(0),
-    m_uncompressedSizeInBytesHasBeenSet(false)
-{
-}
-
 PluginProperties::PluginProperties(JsonView jsonValue)
-  : PluginProperties()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ PluginProperties& PluginProperties::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetString("Version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClassName"))
   {
     m_className = jsonValue.GetString("ClassName");
-
     m_classNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UncompressedSizeInBytes"))
   {
     m_uncompressedSizeInBytes = jsonValue.GetInt64("UncompressedSizeInBytes");
-
     m_uncompressedSizeInBytesHasBeenSet = true;
   }
-
   return *this;
 }
 

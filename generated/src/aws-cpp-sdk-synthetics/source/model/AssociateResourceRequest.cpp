@@ -12,12 +12,6 @@ using namespace Aws::Synthetics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateResourceRequest::AssociateResourceRequest() : 
-    m_groupIdentifierHasBeenSet(false),
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 Aws::String AssociateResourceRequest::SerializePayload() const
 {
   JsonValue payload;

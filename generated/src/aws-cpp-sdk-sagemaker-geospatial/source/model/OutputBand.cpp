@@ -18,15 +18,7 @@ namespace SageMakerGeospatial
 namespace Model
 {
 
-OutputBand::OutputBand() : 
-    m_bandNameHasBeenSet(false),
-    m_outputDataType(OutputType::NOT_SET),
-    m_outputDataTypeHasBeenSet(false)
-{
-}
-
 OutputBand::OutputBand(JsonView jsonValue)
-  : OutputBand()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ OutputBand& OutputBand::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BandName"))
   {
     m_bandName = jsonValue.GetString("BandName");
-
     m_bandNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputDataType"))
   {
     m_outputDataType = OutputTypeMapper::GetOutputTypeForName(jsonValue.GetString("OutputDataType"));
-
     m_outputDataTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

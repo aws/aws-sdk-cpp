@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListBillingGroupsRequest::ListBillingGroupsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_namePrefixFilterHasBeenSet(false)
-{
-}
-
 Aws::String ListBillingGroupsRequest::SerializePayload() const
 {
   return {};

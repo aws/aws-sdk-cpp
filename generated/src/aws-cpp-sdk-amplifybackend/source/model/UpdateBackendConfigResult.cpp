@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateBackendConfigResult::UpdateBackendConfigResult()
-{
-}
-
 UpdateBackendConfigResult::UpdateBackendConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,33 +28,30 @@ UpdateBackendConfigResult& UpdateBackendConfigResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("appId"))
   {
     m_appId = jsonValue.GetString("appId");
-
+    m_appIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("backendManagerAppId"))
   {
     m_backendManagerAppId = jsonValue.GetString("backendManagerAppId");
-
+    m_backendManagerAppIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("error"))
   {
     m_error = jsonValue.GetString("error");
-
+    m_errorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("loginAuthConfig"))
   {
     m_loginAuthConfig = jsonValue.GetObject("loginAuthConfig");
-
+    m_loginAuthConfigHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

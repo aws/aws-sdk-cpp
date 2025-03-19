@@ -12,17 +12,6 @@ using namespace Aws::RecycleBin::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateRuleRequest::UpdateRuleRequest() : 
-    m_identifierHasBeenSet(false),
-    m_retentionPeriodHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceTagsHasBeenSet(false),
-    m_excludeResourceTagsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateRuleRequest::SerializePayload() const
 {
   JsonValue payload;

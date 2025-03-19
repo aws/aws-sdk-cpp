@@ -18,17 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-SelfGrantStatusDetail::SelfGrantStatusDetail() : 
-    m_databaseNameHasBeenSet(false),
-    m_failureCauseHasBeenSet(false),
-    m_schemaNameHasBeenSet(false),
-    m_status(SelfGrantStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 SelfGrantStatusDetail::SelfGrantStatusDetail(JsonView jsonValue)
-  : SelfGrantStatusDetail()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ SelfGrantStatusDetail& SelfGrantStatusDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("databaseName"))
   {
     m_databaseName = jsonValue.GetString("databaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureCause"))
   {
     m_failureCause = jsonValue.GetString("failureCause");
-
     m_failureCauseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("schemaName"))
   {
     m_schemaName = jsonValue.GetString("schemaName");
-
     m_schemaNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = SelfGrantStatusMapper::GetSelfGrantStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

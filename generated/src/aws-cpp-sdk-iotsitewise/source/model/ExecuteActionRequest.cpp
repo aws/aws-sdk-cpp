@@ -12,14 +12,6 @@ using namespace Aws::IoTSiteWise::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ExecuteActionRequest::ExecuteActionRequest() : 
-    m_targetResourceHasBeenSet(false),
-    m_actionDefinitionIdHasBeenSet(false),
-    m_actionPayloadHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
-{
-}
-
 Aws::String ExecuteActionRequest::SerializePayload() const
 {
   JsonValue payload;

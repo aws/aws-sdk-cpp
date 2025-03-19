@@ -32,7 +32,7 @@ namespace Model
   class CreateNodegroupRequest : public EKSRequest
   {
   public:
-    AWS_EKS_API CreateNodegroupRequest();
+    AWS_EKS_API CreateNodegroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,28 +47,24 @@ namespace Model
     /**
      * <p>The name of your cluster.</p>
      */
-    inline const Aws::String& GetClusterName() const{ return m_clusterName; }
+    inline const Aws::String& GetClusterName() const { return m_clusterName; }
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
-    inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
-    inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
-    inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
-    inline CreateNodegroupRequest& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
-    inline CreateNodegroupRequest& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
-    inline CreateNodegroupRequest& WithClusterName(const char* value) { SetClusterName(value); return *this;}
+    template<typename ClusterNameT = Aws::String>
+    void SetClusterName(ClusterNameT&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::forward<ClusterNameT>(value); }
+    template<typename ClusterNameT = Aws::String>
+    CreateNodegroupRequest& WithClusterName(ClusterNameT&& value) { SetClusterName(std::forward<ClusterNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique name to give your node group.</p>
      */
-    inline const Aws::String& GetNodegroupName() const{ return m_nodegroupName; }
+    inline const Aws::String& GetNodegroupName() const { return m_nodegroupName; }
     inline bool NodegroupNameHasBeenSet() const { return m_nodegroupNameHasBeenSet; }
-    inline void SetNodegroupName(const Aws::String& value) { m_nodegroupNameHasBeenSet = true; m_nodegroupName = value; }
-    inline void SetNodegroupName(Aws::String&& value) { m_nodegroupNameHasBeenSet = true; m_nodegroupName = std::move(value); }
-    inline void SetNodegroupName(const char* value) { m_nodegroupNameHasBeenSet = true; m_nodegroupName.assign(value); }
-    inline CreateNodegroupRequest& WithNodegroupName(const Aws::String& value) { SetNodegroupName(value); return *this;}
-    inline CreateNodegroupRequest& WithNodegroupName(Aws::String&& value) { SetNodegroupName(std::move(value)); return *this;}
-    inline CreateNodegroupRequest& WithNodegroupName(const char* value) { SetNodegroupName(value); return *this;}
+    template<typename NodegroupNameT = Aws::String>
+    void SetNodegroupName(NodegroupNameT&& value) { m_nodegroupNameHasBeenSet = true; m_nodegroupName = std::forward<NodegroupNameT>(value); }
+    template<typename NodegroupNameT = Aws::String>
+    CreateNodegroupRequest& WithNodegroupName(NodegroupNameT&& value) { SetNodegroupName(std::forward<NodegroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,12 +72,12 @@ namespace Model
      * <p>The scaling configuration details for the Auto Scaling group that is created
      * for your node group.</p>
      */
-    inline const NodegroupScalingConfig& GetScalingConfig() const{ return m_scalingConfig; }
+    inline const NodegroupScalingConfig& GetScalingConfig() const { return m_scalingConfig; }
     inline bool ScalingConfigHasBeenSet() const { return m_scalingConfigHasBeenSet; }
-    inline void SetScalingConfig(const NodegroupScalingConfig& value) { m_scalingConfigHasBeenSet = true; m_scalingConfig = value; }
-    inline void SetScalingConfig(NodegroupScalingConfig&& value) { m_scalingConfigHasBeenSet = true; m_scalingConfig = std::move(value); }
-    inline CreateNodegroupRequest& WithScalingConfig(const NodegroupScalingConfig& value) { SetScalingConfig(value); return *this;}
-    inline CreateNodegroupRequest& WithScalingConfig(NodegroupScalingConfig&& value) { SetScalingConfig(std::move(value)); return *this;}
+    template<typename ScalingConfigT = NodegroupScalingConfig>
+    void SetScalingConfig(ScalingConfigT&& value) { m_scalingConfigHasBeenSet = true; m_scalingConfig = std::forward<ScalingConfigT>(value); }
+    template<typename ScalingConfigT = NodegroupScalingConfig>
+    CreateNodegroupRequest& WithScalingConfig(ScalingConfigT&& value) { SetScalingConfig(std::forward<ScalingConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,7 +90,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing
      * managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
-    inline int GetDiskSize() const{ return m_diskSize; }
+    inline int GetDiskSize() const { return m_diskSize; }
     inline bool DiskSizeHasBeenSet() const { return m_diskSizeHasBeenSet; }
     inline void SetDiskSize(int value) { m_diskSizeHasBeenSet = true; m_diskSize = value; }
     inline CreateNodegroupRequest& WithDiskSize(int value) { SetDiskSize(value); return *this;}
@@ -110,15 +106,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing
      * managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSubnets() const{ return m_subnets; }
+    inline const Aws::Vector<Aws::String>& GetSubnets() const { return m_subnets; }
     inline bool SubnetsHasBeenSet() const { return m_subnetsHasBeenSet; }
-    inline void SetSubnets(const Aws::Vector<Aws::String>& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
-    inline void SetSubnets(Aws::Vector<Aws::String>&& value) { m_subnetsHasBeenSet = true; m_subnets = std::move(value); }
-    inline CreateNodegroupRequest& WithSubnets(const Aws::Vector<Aws::String>& value) { SetSubnets(value); return *this;}
-    inline CreateNodegroupRequest& WithSubnets(Aws::Vector<Aws::String>&& value) { SetSubnets(std::move(value)); return *this;}
-    inline CreateNodegroupRequest& AddSubnets(const Aws::String& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
-    inline CreateNodegroupRequest& AddSubnets(Aws::String&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(std::move(value)); return *this; }
-    inline CreateNodegroupRequest& AddSubnets(const char* value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
+    template<typename SubnetsT = Aws::Vector<Aws::String>>
+    void SetSubnets(SubnetsT&& value) { m_subnetsHasBeenSet = true; m_subnets = std::forward<SubnetsT>(value); }
+    template<typename SubnetsT = Aws::Vector<Aws::String>>
+    CreateNodegroupRequest& WithSubnets(SubnetsT&& value) { SetSubnets(std::forward<SubnetsT>(value)); return *this;}
+    template<typename SubnetsT = Aws::String>
+    CreateNodegroupRequest& AddSubnets(SubnetsT&& value) { m_subnetsHasBeenSet = true; m_subnets.emplace_back(std::forward<SubnetsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -139,15 +134,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing
      * managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetInstanceTypes() const{ return m_instanceTypes; }
+    inline const Aws::Vector<Aws::String>& GetInstanceTypes() const { return m_instanceTypes; }
     inline bool InstanceTypesHasBeenSet() const { return m_instanceTypesHasBeenSet; }
-    inline void SetInstanceTypes(const Aws::Vector<Aws::String>& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = value; }
-    inline void SetInstanceTypes(Aws::Vector<Aws::String>&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = std::move(value); }
-    inline CreateNodegroupRequest& WithInstanceTypes(const Aws::Vector<Aws::String>& value) { SetInstanceTypes(value); return *this;}
-    inline CreateNodegroupRequest& WithInstanceTypes(Aws::Vector<Aws::String>&& value) { SetInstanceTypes(std::move(value)); return *this;}
-    inline CreateNodegroupRequest& AddInstanceTypes(const Aws::String& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
-    inline CreateNodegroupRequest& AddInstanceTypes(Aws::String&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(std::move(value)); return *this; }
-    inline CreateNodegroupRequest& AddInstanceTypes(const char* value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
+    template<typename InstanceTypesT = Aws::Vector<Aws::String>>
+    void SetInstanceTypes(InstanceTypesT&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = std::forward<InstanceTypesT>(value); }
+    template<typename InstanceTypesT = Aws::Vector<Aws::String>>
+    CreateNodegroupRequest& WithInstanceTypes(InstanceTypesT&& value) { SetInstanceTypes(std::forward<InstanceTypesT>(value)); return *this;}
+    template<typename InstanceTypesT = Aws::String>
+    CreateNodegroupRequest& AddInstanceTypes(InstanceTypesT&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.emplace_back(std::forward<InstanceTypesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -162,12 +156,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing
      * managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
-    inline const AMITypes& GetAmiType() const{ return m_amiType; }
+    inline AMITypes GetAmiType() const { return m_amiType; }
     inline bool AmiTypeHasBeenSet() const { return m_amiTypeHasBeenSet; }
-    inline void SetAmiType(const AMITypes& value) { m_amiTypeHasBeenSet = true; m_amiType = value; }
-    inline void SetAmiType(AMITypes&& value) { m_amiTypeHasBeenSet = true; m_amiType = std::move(value); }
-    inline CreateNodegroupRequest& WithAmiType(const AMITypes& value) { SetAmiType(value); return *this;}
-    inline CreateNodegroupRequest& WithAmiType(AMITypes&& value) { SetAmiType(std::move(value)); return *this;}
+    inline void SetAmiType(AMITypes value) { m_amiTypeHasBeenSet = true; m_amiType = value; }
+    inline CreateNodegroupRequest& WithAmiType(AMITypes value) { SetAmiType(value); return *this;}
     ///@}
 
     ///@{
@@ -180,12 +172,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing
      * managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
-    inline const RemoteAccessConfig& GetRemoteAccess() const{ return m_remoteAccess; }
+    inline const RemoteAccessConfig& GetRemoteAccess() const { return m_remoteAccess; }
     inline bool RemoteAccessHasBeenSet() const { return m_remoteAccessHasBeenSet; }
-    inline void SetRemoteAccess(const RemoteAccessConfig& value) { m_remoteAccessHasBeenSet = true; m_remoteAccess = value; }
-    inline void SetRemoteAccess(RemoteAccessConfig&& value) { m_remoteAccessHasBeenSet = true; m_remoteAccess = std::move(value); }
-    inline CreateNodegroupRequest& WithRemoteAccess(const RemoteAccessConfig& value) { SetRemoteAccess(value); return *this;}
-    inline CreateNodegroupRequest& WithRemoteAccess(RemoteAccessConfig&& value) { SetRemoteAccess(std::move(value)); return *this;}
+    template<typename RemoteAccessT = RemoteAccessConfig>
+    void SetRemoteAccess(RemoteAccessT&& value) { m_remoteAccessHasBeenSet = true; m_remoteAccess = std::forward<RemoteAccessT>(value); }
+    template<typename RemoteAccessT = RemoteAccessConfig>
+    CreateNodegroupRequest& WithRemoteAccess(RemoteAccessT&& value) { SetRemoteAccess(std::forward<RemoteAccessT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -205,14 +197,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing
      * managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
-    inline const Aws::String& GetNodeRole() const{ return m_nodeRole; }
+    inline const Aws::String& GetNodeRole() const { return m_nodeRole; }
     inline bool NodeRoleHasBeenSet() const { return m_nodeRoleHasBeenSet; }
-    inline void SetNodeRole(const Aws::String& value) { m_nodeRoleHasBeenSet = true; m_nodeRole = value; }
-    inline void SetNodeRole(Aws::String&& value) { m_nodeRoleHasBeenSet = true; m_nodeRole = std::move(value); }
-    inline void SetNodeRole(const char* value) { m_nodeRoleHasBeenSet = true; m_nodeRole.assign(value); }
-    inline CreateNodegroupRequest& WithNodeRole(const Aws::String& value) { SetNodeRole(value); return *this;}
-    inline CreateNodegroupRequest& WithNodeRole(Aws::String&& value) { SetNodeRole(std::move(value)); return *this;}
-    inline CreateNodegroupRequest& WithNodeRole(const char* value) { SetNodeRole(value); return *this;}
+    template<typename NodeRoleT = Aws::String>
+    void SetNodeRole(NodeRoleT&& value) { m_nodeRoleHasBeenSet = true; m_nodeRole = std::forward<NodeRoleT>(value); }
+    template<typename NodeRoleT = Aws::String>
+    CreateNodegroupRequest& WithNodeRole(NodeRoleT&& value) { SetNodeRole(std::forward<NodeRoleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -220,19 +210,16 @@ namespace Model
      * <p>The Kubernetes <code>labels</code> to apply to the nodes in the node group
      * when they are created.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetLabels() const{ return m_labels; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetLabels() const { return m_labels; }
     inline bool LabelsHasBeenSet() const { return m_labelsHasBeenSet; }
-    inline void SetLabels(const Aws::Map<Aws::String, Aws::String>& value) { m_labelsHasBeenSet = true; m_labels = value; }
-    inline void SetLabels(Aws::Map<Aws::String, Aws::String>&& value) { m_labelsHasBeenSet = true; m_labels = std::move(value); }
-    inline CreateNodegroupRequest& WithLabels(const Aws::Map<Aws::String, Aws::String>& value) { SetLabels(value); return *this;}
-    inline CreateNodegroupRequest& WithLabels(Aws::Map<Aws::String, Aws::String>&& value) { SetLabels(std::move(value)); return *this;}
-    inline CreateNodegroupRequest& AddLabels(const Aws::String& key, const Aws::String& value) { m_labelsHasBeenSet = true; m_labels.emplace(key, value); return *this; }
-    inline CreateNodegroupRequest& AddLabels(Aws::String&& key, const Aws::String& value) { m_labelsHasBeenSet = true; m_labels.emplace(std::move(key), value); return *this; }
-    inline CreateNodegroupRequest& AddLabels(const Aws::String& key, Aws::String&& value) { m_labelsHasBeenSet = true; m_labels.emplace(key, std::move(value)); return *this; }
-    inline CreateNodegroupRequest& AddLabels(Aws::String&& key, Aws::String&& value) { m_labelsHasBeenSet = true; m_labels.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateNodegroupRequest& AddLabels(const char* key, Aws::String&& value) { m_labelsHasBeenSet = true; m_labels.emplace(key, std::move(value)); return *this; }
-    inline CreateNodegroupRequest& AddLabels(Aws::String&& key, const char* value) { m_labelsHasBeenSet = true; m_labels.emplace(std::move(key), value); return *this; }
-    inline CreateNodegroupRequest& AddLabels(const char* key, const char* value) { m_labelsHasBeenSet = true; m_labels.emplace(key, value); return *this; }
+    template<typename LabelsT = Aws::Map<Aws::String, Aws::String>>
+    void SetLabels(LabelsT&& value) { m_labelsHasBeenSet = true; m_labels = std::forward<LabelsT>(value); }
+    template<typename LabelsT = Aws::Map<Aws::String, Aws::String>>
+    CreateNodegroupRequest& WithLabels(LabelsT&& value) { SetLabels(std::forward<LabelsT>(value)); return *this;}
+    template<typename LabelsKeyT = Aws::String, typename LabelsValueT = Aws::String>
+    CreateNodegroupRequest& AddLabels(LabelsKeyT&& key, LabelsValueT&& value) {
+      m_labelsHasBeenSet = true; m_labels.emplace(std::forward<LabelsKeyT>(key), std::forward<LabelsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -242,14 +229,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
      * taints on managed node groups</a>.</p>
      */
-    inline const Aws::Vector<Taint>& GetTaints() const{ return m_taints; }
+    inline const Aws::Vector<Taint>& GetTaints() const { return m_taints; }
     inline bool TaintsHasBeenSet() const { return m_taintsHasBeenSet; }
-    inline void SetTaints(const Aws::Vector<Taint>& value) { m_taintsHasBeenSet = true; m_taints = value; }
-    inline void SetTaints(Aws::Vector<Taint>&& value) { m_taintsHasBeenSet = true; m_taints = std::move(value); }
-    inline CreateNodegroupRequest& WithTaints(const Aws::Vector<Taint>& value) { SetTaints(value); return *this;}
-    inline CreateNodegroupRequest& WithTaints(Aws::Vector<Taint>&& value) { SetTaints(std::move(value)); return *this;}
-    inline CreateNodegroupRequest& AddTaints(const Taint& value) { m_taintsHasBeenSet = true; m_taints.push_back(value); return *this; }
-    inline CreateNodegroupRequest& AddTaints(Taint&& value) { m_taintsHasBeenSet = true; m_taints.push_back(std::move(value)); return *this; }
+    template<typename TaintsT = Aws::Vector<Taint>>
+    void SetTaints(TaintsT&& value) { m_taintsHasBeenSet = true; m_taints = std::forward<TaintsT>(value); }
+    template<typename TaintsT = Aws::Vector<Taint>>
+    CreateNodegroupRequest& WithTaints(TaintsT&& value) { SetTaints(std::forward<TaintsT>(value)); return *this;}
+    template<typename TaintsT = Taint>
+    CreateNodegroupRequest& AddTaints(TaintsT&& value) { m_taintsHasBeenSet = true; m_taints.emplace_back(std::forward<TaintsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -258,19 +245,16 @@ namespace Model
      * of a key and an optional value. You define both. Tags don't propagate to any
      * other cluster or Amazon Web Services resources.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateNodegroupRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateNodegroupRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateNodegroupRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateNodegroupRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateNodegroupRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateNodegroupRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateNodegroupRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateNodegroupRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateNodegroupRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateNodegroupRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateNodegroupRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -278,14 +262,12 @@ namespace Model
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request.</p>
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline CreateNodegroupRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline CreateNodegroupRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline CreateNodegroupRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    CreateNodegroupRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -299,48 +281,46 @@ namespace Model
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing
      * managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
-    inline const LaunchTemplateSpecification& GetLaunchTemplate() const{ return m_launchTemplate; }
+    inline const LaunchTemplateSpecification& GetLaunchTemplate() const { return m_launchTemplate; }
     inline bool LaunchTemplateHasBeenSet() const { return m_launchTemplateHasBeenSet; }
-    inline void SetLaunchTemplate(const LaunchTemplateSpecification& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = value; }
-    inline void SetLaunchTemplate(LaunchTemplateSpecification&& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = std::move(value); }
-    inline CreateNodegroupRequest& WithLaunchTemplate(const LaunchTemplateSpecification& value) { SetLaunchTemplate(value); return *this;}
-    inline CreateNodegroupRequest& WithLaunchTemplate(LaunchTemplateSpecification&& value) { SetLaunchTemplate(std::move(value)); return *this;}
+    template<typename LaunchTemplateT = LaunchTemplateSpecification>
+    void SetLaunchTemplate(LaunchTemplateT&& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = std::forward<LaunchTemplateT>(value); }
+    template<typename LaunchTemplateT = LaunchTemplateSpecification>
+    CreateNodegroupRequest& WithLaunchTemplate(LaunchTemplateT&& value) { SetLaunchTemplate(std::forward<LaunchTemplateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The node group update configuration.</p>
      */
-    inline const NodegroupUpdateConfig& GetUpdateConfig() const{ return m_updateConfig; }
+    inline const NodegroupUpdateConfig& GetUpdateConfig() const { return m_updateConfig; }
     inline bool UpdateConfigHasBeenSet() const { return m_updateConfigHasBeenSet; }
-    inline void SetUpdateConfig(const NodegroupUpdateConfig& value) { m_updateConfigHasBeenSet = true; m_updateConfig = value; }
-    inline void SetUpdateConfig(NodegroupUpdateConfig&& value) { m_updateConfigHasBeenSet = true; m_updateConfig = std::move(value); }
-    inline CreateNodegroupRequest& WithUpdateConfig(const NodegroupUpdateConfig& value) { SetUpdateConfig(value); return *this;}
-    inline CreateNodegroupRequest& WithUpdateConfig(NodegroupUpdateConfig&& value) { SetUpdateConfig(std::move(value)); return *this;}
+    template<typename UpdateConfigT = NodegroupUpdateConfig>
+    void SetUpdateConfig(UpdateConfigT&& value) { m_updateConfigHasBeenSet = true; m_updateConfig = std::forward<UpdateConfigT>(value); }
+    template<typename UpdateConfigT = NodegroupUpdateConfig>
+    CreateNodegroupRequest& WithUpdateConfig(UpdateConfigT&& value) { SetUpdateConfig(std::forward<UpdateConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The node auto repair configuration for the node group.</p>
      */
-    inline const NodeRepairConfig& GetNodeRepairConfig() const{ return m_nodeRepairConfig; }
+    inline const NodeRepairConfig& GetNodeRepairConfig() const { return m_nodeRepairConfig; }
     inline bool NodeRepairConfigHasBeenSet() const { return m_nodeRepairConfigHasBeenSet; }
-    inline void SetNodeRepairConfig(const NodeRepairConfig& value) { m_nodeRepairConfigHasBeenSet = true; m_nodeRepairConfig = value; }
-    inline void SetNodeRepairConfig(NodeRepairConfig&& value) { m_nodeRepairConfigHasBeenSet = true; m_nodeRepairConfig = std::move(value); }
-    inline CreateNodegroupRequest& WithNodeRepairConfig(const NodeRepairConfig& value) { SetNodeRepairConfig(value); return *this;}
-    inline CreateNodegroupRequest& WithNodeRepairConfig(NodeRepairConfig&& value) { SetNodeRepairConfig(std::move(value)); return *this;}
+    template<typename NodeRepairConfigT = NodeRepairConfig>
+    void SetNodeRepairConfig(NodeRepairConfigT&& value) { m_nodeRepairConfigHasBeenSet = true; m_nodeRepairConfig = std::forward<NodeRepairConfigT>(value); }
+    template<typename NodeRepairConfigT = NodeRepairConfig>
+    CreateNodegroupRequest& WithNodeRepairConfig(NodeRepairConfigT&& value) { SetNodeRepairConfig(std::forward<NodeRepairConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The capacity type for your node group.</p>
      */
-    inline const CapacityTypes& GetCapacityType() const{ return m_capacityType; }
+    inline CapacityTypes GetCapacityType() const { return m_capacityType; }
     inline bool CapacityTypeHasBeenSet() const { return m_capacityTypeHasBeenSet; }
-    inline void SetCapacityType(const CapacityTypes& value) { m_capacityTypeHasBeenSet = true; m_capacityType = value; }
-    inline void SetCapacityType(CapacityTypes&& value) { m_capacityTypeHasBeenSet = true; m_capacityType = std::move(value); }
-    inline CreateNodegroupRequest& WithCapacityType(const CapacityTypes& value) { SetCapacityType(value); return *this;}
-    inline CreateNodegroupRequest& WithCapacityType(CapacityTypes&& value) { SetCapacityType(std::move(value)); return *this;}
+    inline void SetCapacityType(CapacityTypes value) { m_capacityTypeHasBeenSet = true; m_capacityType = value; }
+    inline CreateNodegroupRequest& WithCapacityType(CapacityTypes value) { SetCapacityType(value); return *this;}
     ///@}
 
     ///@{
@@ -354,14 +334,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing
      * managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
+    inline const Aws::String& GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-    inline CreateNodegroupRequest& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline CreateNodegroupRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline CreateNodegroupRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    CreateNodegroupRequest& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -382,14 +360,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing
      * managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
-    inline const Aws::String& GetReleaseVersion() const{ return m_releaseVersion; }
+    inline const Aws::String& GetReleaseVersion() const { return m_releaseVersion; }
     inline bool ReleaseVersionHasBeenSet() const { return m_releaseVersionHasBeenSet; }
-    inline void SetReleaseVersion(const Aws::String& value) { m_releaseVersionHasBeenSet = true; m_releaseVersion = value; }
-    inline void SetReleaseVersion(Aws::String&& value) { m_releaseVersionHasBeenSet = true; m_releaseVersion = std::move(value); }
-    inline void SetReleaseVersion(const char* value) { m_releaseVersionHasBeenSet = true; m_releaseVersion.assign(value); }
-    inline CreateNodegroupRequest& WithReleaseVersion(const Aws::String& value) { SetReleaseVersion(value); return *this;}
-    inline CreateNodegroupRequest& WithReleaseVersion(Aws::String&& value) { SetReleaseVersion(std::move(value)); return *this;}
-    inline CreateNodegroupRequest& WithReleaseVersion(const char* value) { SetReleaseVersion(value); return *this;}
+    template<typename ReleaseVersionT = Aws::String>
+    void SetReleaseVersion(ReleaseVersionT&& value) { m_releaseVersionHasBeenSet = true; m_releaseVersion = std::forward<ReleaseVersionT>(value); }
+    template<typename ReleaseVersionT = Aws::String>
+    CreateNodegroupRequest& WithReleaseVersion(ReleaseVersionT&& value) { SetReleaseVersion(std::forward<ReleaseVersionT>(value)); return *this;}
     ///@}
   private:
 
@@ -402,7 +378,7 @@ namespace Model
     NodegroupScalingConfig m_scalingConfig;
     bool m_scalingConfigHasBeenSet = false;
 
-    int m_diskSize;
+    int m_diskSize{0};
     bool m_diskSizeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnets;
@@ -411,7 +387,7 @@ namespace Model
     Aws::Vector<Aws::String> m_instanceTypes;
     bool m_instanceTypesHasBeenSet = false;
 
-    AMITypes m_amiType;
+    AMITypes m_amiType{AMITypes::NOT_SET};
     bool m_amiTypeHasBeenSet = false;
 
     RemoteAccessConfig m_remoteAccess;
@@ -441,7 +417,7 @@ namespace Model
     NodeRepairConfig m_nodeRepairConfig;
     bool m_nodeRepairConfigHasBeenSet = false;
 
-    CapacityTypes m_capacityType;
+    CapacityTypes m_capacityType{CapacityTypes::NOT_SET};
     bool m_capacityTypeHasBeenSet = false;
 
     Aws::String m_version;

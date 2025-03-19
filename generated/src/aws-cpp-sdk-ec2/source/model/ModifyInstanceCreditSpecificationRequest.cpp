@@ -10,14 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ModifyInstanceCreditSpecificationRequest::ModifyInstanceCreditSpecificationRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_instanceCreditSpecificationsHasBeenSet(false)
-{
-}
-
 Aws::String ModifyInstanceCreditSpecificationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

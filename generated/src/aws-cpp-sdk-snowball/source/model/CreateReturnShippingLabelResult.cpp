@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateReturnShippingLabelResult::CreateReturnShippingLabelResult() : 
-    m_status(ShippingLabelStatus::NOT_SET)
-{
-}
-
 CreateReturnShippingLabelResult::CreateReturnShippingLabelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateReturnShippingLabelResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ CreateReturnShippingLabelResult& CreateReturnShippingLabelResult::operator =(con
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ShippingLabelStatusMapper::GetShippingLabelStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

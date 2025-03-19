@@ -18,13 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-StreamProcessingStartSelector::StreamProcessingStartSelector() : 
-    m_kVSStreamStartSelectorHasBeenSet(false)
-{
-}
-
 StreamProcessingStartSelector::StreamProcessingStartSelector(JsonView jsonValue)
-  : StreamProcessingStartSelector()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ StreamProcessingStartSelector& StreamProcessingStartSelector::operator =(JsonVie
   if(jsonValue.ValueExists("KVSStreamStartSelector"))
   {
     m_kVSStreamStartSelector = jsonValue.GetObject("KVSStreamStartSelector");
-
     m_kVSStreamStartSelectorHasBeenSet = true;
   }
-
   return *this;
 }
 

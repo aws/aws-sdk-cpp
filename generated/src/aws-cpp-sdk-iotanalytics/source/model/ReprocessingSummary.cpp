@@ -18,16 +18,7 @@ namespace IoTAnalytics
 namespace Model
 {
 
-ReprocessingSummary::ReprocessingSummary() : 
-    m_idHasBeenSet(false),
-    m_status(ReprocessingStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
-{
-}
-
 ReprocessingSummary::ReprocessingSummary(JsonView jsonValue)
-  : ReprocessingSummary()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ReprocessingSummary& ReprocessingSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ReprocessingStatusMapper::GetReprocessingStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetDouble("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

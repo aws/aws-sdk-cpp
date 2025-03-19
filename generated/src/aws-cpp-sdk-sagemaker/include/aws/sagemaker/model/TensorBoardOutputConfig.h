@@ -32,7 +32,7 @@ namespace Model
   class TensorBoardOutputConfig
   {
   public:
-    AWS_SAGEMAKER_API TensorBoardOutputConfig();
+    AWS_SAGEMAKER_API TensorBoardOutputConfig() = default;
     AWS_SAGEMAKER_API TensorBoardOutputConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API TensorBoardOutputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
      * <p>Path to local storage location for tensorBoard output. Defaults to
      * <code>/opt/ml/output/tensorboard</code>.</p>
      */
-    inline const Aws::String& GetLocalPath() const{ return m_localPath; }
+    inline const Aws::String& GetLocalPath() const { return m_localPath; }
     inline bool LocalPathHasBeenSet() const { return m_localPathHasBeenSet; }
-    inline void SetLocalPath(const Aws::String& value) { m_localPathHasBeenSet = true; m_localPath = value; }
-    inline void SetLocalPath(Aws::String&& value) { m_localPathHasBeenSet = true; m_localPath = std::move(value); }
-    inline void SetLocalPath(const char* value) { m_localPathHasBeenSet = true; m_localPath.assign(value); }
-    inline TensorBoardOutputConfig& WithLocalPath(const Aws::String& value) { SetLocalPath(value); return *this;}
-    inline TensorBoardOutputConfig& WithLocalPath(Aws::String&& value) { SetLocalPath(std::move(value)); return *this;}
-    inline TensorBoardOutputConfig& WithLocalPath(const char* value) { SetLocalPath(value); return *this;}
+    template<typename LocalPathT = Aws::String>
+    void SetLocalPath(LocalPathT&& value) { m_localPathHasBeenSet = true; m_localPath = std::forward<LocalPathT>(value); }
+    template<typename LocalPathT = Aws::String>
+    TensorBoardOutputConfig& WithLocalPath(LocalPathT&& value) { SetLocalPath(std::forward<LocalPathT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Path to Amazon S3 storage location for TensorBoard output.</p>
      */
-    inline const Aws::String& GetS3OutputPath() const{ return m_s3OutputPath; }
+    inline const Aws::String& GetS3OutputPath() const { return m_s3OutputPath; }
     inline bool S3OutputPathHasBeenSet() const { return m_s3OutputPathHasBeenSet; }
-    inline void SetS3OutputPath(const Aws::String& value) { m_s3OutputPathHasBeenSet = true; m_s3OutputPath = value; }
-    inline void SetS3OutputPath(Aws::String&& value) { m_s3OutputPathHasBeenSet = true; m_s3OutputPath = std::move(value); }
-    inline void SetS3OutputPath(const char* value) { m_s3OutputPathHasBeenSet = true; m_s3OutputPath.assign(value); }
-    inline TensorBoardOutputConfig& WithS3OutputPath(const Aws::String& value) { SetS3OutputPath(value); return *this;}
-    inline TensorBoardOutputConfig& WithS3OutputPath(Aws::String&& value) { SetS3OutputPath(std::move(value)); return *this;}
-    inline TensorBoardOutputConfig& WithS3OutputPath(const char* value) { SetS3OutputPath(value); return *this;}
+    template<typename S3OutputPathT = Aws::String>
+    void SetS3OutputPath(S3OutputPathT&& value) { m_s3OutputPathHasBeenSet = true; m_s3OutputPath = std::forward<S3OutputPathT>(value); }
+    template<typename S3OutputPathT = Aws::String>
+    TensorBoardOutputConfig& WithS3OutputPath(S3OutputPathT&& value) { SetS3OutputPath(std::forward<S3OutputPathT>(value)); return *this;}
     ///@}
   private:
 

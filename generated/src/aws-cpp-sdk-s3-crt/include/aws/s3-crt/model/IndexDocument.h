@@ -30,7 +30,7 @@ namespace Model
   class IndexDocument
   {
   public:
-    AWS_S3CRT_API IndexDocument();
+    AWS_S3CRT_API IndexDocument() = default;
     AWS_S3CRT_API IndexDocument(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CRT_API IndexDocument& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -49,14 +49,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
      * XML related object key constraints</a>.</p> 
      */
-    inline const Aws::String& GetSuffix() const{ return m_suffix; }
+    inline const Aws::String& GetSuffix() const { return m_suffix; }
     inline bool SuffixHasBeenSet() const { return m_suffixHasBeenSet; }
-    inline void SetSuffix(const Aws::String& value) { m_suffixHasBeenSet = true; m_suffix = value; }
-    inline void SetSuffix(Aws::String&& value) { m_suffixHasBeenSet = true; m_suffix = std::move(value); }
-    inline void SetSuffix(const char* value) { m_suffixHasBeenSet = true; m_suffix.assign(value); }
-    inline IndexDocument& WithSuffix(const Aws::String& value) { SetSuffix(value); return *this;}
-    inline IndexDocument& WithSuffix(Aws::String&& value) { SetSuffix(std::move(value)); return *this;}
-    inline IndexDocument& WithSuffix(const char* value) { SetSuffix(value); return *this;}
+    template<typename SuffixT = Aws::String>
+    void SetSuffix(SuffixT&& value) { m_suffixHasBeenSet = true; m_suffix = std::forward<SuffixT>(value); }
+    template<typename SuffixT = Aws::String>
+    IndexDocument& WithSuffix(SuffixT&& value) { SetSuffix(std::forward<SuffixT>(value)); return *this;}
     ///@}
   private:
 

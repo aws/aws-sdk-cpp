@@ -33,7 +33,7 @@ namespace Model
   class FreeTrialInfoError
   {
   public:
-    AWS_INSPECTOR2_API FreeTrialInfoError();
+    AWS_INSPECTOR2_API FreeTrialInfoError() = default;
     AWS_INSPECTOR2_API FreeTrialInfoError(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API FreeTrialInfoError& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,47 +43,41 @@ namespace Model
     /**
      * <p>The account associated with the Amazon Inspector free trial information.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline FreeTrialInfoError& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline FreeTrialInfoError& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline FreeTrialInfoError& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    FreeTrialInfoError& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The error code.</p>
      */
-    inline const FreeTrialInfoErrorCode& GetCode() const{ return m_code; }
+    inline FreeTrialInfoErrorCode GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const FreeTrialInfoErrorCode& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(FreeTrialInfoErrorCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline FreeTrialInfoError& WithCode(const FreeTrialInfoErrorCode& value) { SetCode(value); return *this;}
-    inline FreeTrialInfoError& WithCode(FreeTrialInfoErrorCode&& value) { SetCode(std::move(value)); return *this;}
+    inline void SetCode(FreeTrialInfoErrorCode value) { m_codeHasBeenSet = true; m_code = value; }
+    inline FreeTrialInfoError& WithCode(FreeTrialInfoErrorCode value) { SetCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The error message returned.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline FreeTrialInfoError& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline FreeTrialInfoError& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline FreeTrialInfoError& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    FreeTrialInfoError& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet = false;
 
-    FreeTrialInfoErrorCode m_code;
+    FreeTrialInfoErrorCode m_code{FreeTrialInfoErrorCode::NOT_SET};
     bool m_codeHasBeenSet = false;
 
     Aws::String m_message;

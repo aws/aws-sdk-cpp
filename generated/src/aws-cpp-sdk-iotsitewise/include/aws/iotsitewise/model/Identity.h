@@ -39,7 +39,7 @@ namespace Model
   class Identity
   {
   public:
-    AWS_IOTSITEWISE_API Identity();
+    AWS_IOTSITEWISE_API Identity() = default;
     AWS_IOTSITEWISE_API Identity(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Identity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,48 +49,48 @@ namespace Model
     /**
      * <p>An IAM Identity Center user identity.</p>
      */
-    inline const UserIdentity& GetUser() const{ return m_user; }
+    inline const UserIdentity& GetUser() const { return m_user; }
     inline bool UserHasBeenSet() const { return m_userHasBeenSet; }
-    inline void SetUser(const UserIdentity& value) { m_userHasBeenSet = true; m_user = value; }
-    inline void SetUser(UserIdentity&& value) { m_userHasBeenSet = true; m_user = std::move(value); }
-    inline Identity& WithUser(const UserIdentity& value) { SetUser(value); return *this;}
-    inline Identity& WithUser(UserIdentity&& value) { SetUser(std::move(value)); return *this;}
+    template<typename UserT = UserIdentity>
+    void SetUser(UserT&& value) { m_userHasBeenSet = true; m_user = std::forward<UserT>(value); }
+    template<typename UserT = UserIdentity>
+    Identity& WithUser(UserT&& value) { SetUser(std::forward<UserT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An IAM Identity Center group identity.</p>
      */
-    inline const GroupIdentity& GetGroup() const{ return m_group; }
+    inline const GroupIdentity& GetGroup() const { return m_group; }
     inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
-    inline void SetGroup(const GroupIdentity& value) { m_groupHasBeenSet = true; m_group = value; }
-    inline void SetGroup(GroupIdentity&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
-    inline Identity& WithGroup(const GroupIdentity& value) { SetGroup(value); return *this;}
-    inline Identity& WithGroup(GroupIdentity&& value) { SetGroup(std::move(value)); return *this;}
+    template<typename GroupT = GroupIdentity>
+    void SetGroup(GroupT&& value) { m_groupHasBeenSet = true; m_group = std::forward<GroupT>(value); }
+    template<typename GroupT = GroupIdentity>
+    Identity& WithGroup(GroupT&& value) { SetGroup(std::forward<GroupT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An IAM user identity.</p>
      */
-    inline const IAMUserIdentity& GetIamUser() const{ return m_iamUser; }
+    inline const IAMUserIdentity& GetIamUser() const { return m_iamUser; }
     inline bool IamUserHasBeenSet() const { return m_iamUserHasBeenSet; }
-    inline void SetIamUser(const IAMUserIdentity& value) { m_iamUserHasBeenSet = true; m_iamUser = value; }
-    inline void SetIamUser(IAMUserIdentity&& value) { m_iamUserHasBeenSet = true; m_iamUser = std::move(value); }
-    inline Identity& WithIamUser(const IAMUserIdentity& value) { SetIamUser(value); return *this;}
-    inline Identity& WithIamUser(IAMUserIdentity&& value) { SetIamUser(std::move(value)); return *this;}
+    template<typename IamUserT = IAMUserIdentity>
+    void SetIamUser(IamUserT&& value) { m_iamUserHasBeenSet = true; m_iamUser = std::forward<IamUserT>(value); }
+    template<typename IamUserT = IAMUserIdentity>
+    Identity& WithIamUser(IamUserT&& value) { SetIamUser(std::forward<IamUserT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An IAM role identity.</p>
      */
-    inline const IAMRoleIdentity& GetIamRole() const{ return m_iamRole; }
+    inline const IAMRoleIdentity& GetIamRole() const { return m_iamRole; }
     inline bool IamRoleHasBeenSet() const { return m_iamRoleHasBeenSet; }
-    inline void SetIamRole(const IAMRoleIdentity& value) { m_iamRoleHasBeenSet = true; m_iamRole = value; }
-    inline void SetIamRole(IAMRoleIdentity&& value) { m_iamRoleHasBeenSet = true; m_iamRole = std::move(value); }
-    inline Identity& WithIamRole(const IAMRoleIdentity& value) { SetIamRole(value); return *this;}
-    inline Identity& WithIamRole(IAMRoleIdentity&& value) { SetIamRole(std::move(value)); return *this;}
+    template<typename IamRoleT = IAMRoleIdentity>
+    void SetIamRole(IamRoleT&& value) { m_iamRoleHasBeenSet = true; m_iamRole = std::forward<IamRoleT>(value); }
+    template<typename IamRoleT = IAMRoleIdentity>
+    Identity& WithIamRole(IamRoleT&& value) { SetIamRole(std::forward<IamRoleT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,24 +18,7 @@ namespace IoTEvents
 namespace Model
 {
 
-DetectorModelConfiguration::DetectorModelConfiguration() : 
-    m_detectorModelNameHasBeenSet(false),
-    m_detectorModelVersionHasBeenSet(false),
-    m_detectorModelDescriptionHasBeenSet(false),
-    m_detectorModelArnHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false),
-    m_status(DetectorModelVersionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_evaluationMethod(EvaluationMethod::NOT_SET),
-    m_evaluationMethodHasBeenSet(false)
-{
-}
-
 DetectorModelConfiguration::DetectorModelConfiguration(JsonView jsonValue)
-  : DetectorModelConfiguration()
 {
   *this = jsonValue;
 }
@@ -45,73 +28,53 @@ DetectorModelConfiguration& DetectorModelConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("detectorModelName"))
   {
     m_detectorModelName = jsonValue.GetString("detectorModelName");
-
     m_detectorModelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("detectorModelVersion"))
   {
     m_detectorModelVersion = jsonValue.GetString("detectorModelVersion");
-
     m_detectorModelVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("detectorModelDescription"))
   {
     m_detectorModelDescription = jsonValue.GetString("detectorModelDescription");
-
     m_detectorModelDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("detectorModelArn"))
   {
     m_detectorModelArn = jsonValue.GetString("detectorModelArn");
-
     m_detectorModelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetDouble("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdateTime"))
   {
     m_lastUpdateTime = jsonValue.GetDouble("lastUpdateTime");
-
     m_lastUpdateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = DetectorModelVersionStatusMapper::GetDetectorModelVersionStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("evaluationMethod"))
   {
     m_evaluationMethod = EvaluationMethodMapper::GetEvaluationMethodForName(jsonValue.GetString("evaluationMethod"));
-
     m_evaluationMethodHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-RadarChartSeriesSettings::RadarChartSeriesSettings() : 
-    m_areaStyleSettingsHasBeenSet(false)
-{
-}
-
 RadarChartSeriesSettings::RadarChartSeriesSettings(JsonView jsonValue)
-  : RadarChartSeriesSettings()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RadarChartSeriesSettings& RadarChartSeriesSettings::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("AreaStyleSettings"))
   {
     m_areaStyleSettings = jsonValue.GetObject("AreaStyleSettings");
-
     m_areaStyleSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

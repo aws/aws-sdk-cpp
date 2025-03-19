@@ -18,17 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-SpeakerSearchTask::SpeakerSearchTask() : 
-    m_speakerSearchTaskIdHasBeenSet(false),
-    m_speakerSearchTaskStatus(MediaPipelineTaskStatus::NOT_SET),
-    m_speakerSearchTaskStatusHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_updatedTimestampHasBeenSet(false)
-{
-}
-
 SpeakerSearchTask::SpeakerSearchTask(JsonView jsonValue)
-  : SpeakerSearchTask()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ SpeakerSearchTask& SpeakerSearchTask::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SpeakerSearchTaskId"))
   {
     m_speakerSearchTaskId = jsonValue.GetString("SpeakerSearchTaskId");
-
     m_speakerSearchTaskIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SpeakerSearchTaskStatus"))
   {
     m_speakerSearchTaskStatus = MediaPipelineTaskStatusMapper::GetMediaPipelineTaskStatusForName(jsonValue.GetString("SpeakerSearchTaskStatus"));
-
     m_speakerSearchTaskStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetString("CreatedTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedTimestamp"))
   {
     m_updatedTimestamp = jsonValue.GetString("UpdatedTimestamp");
-
     m_updatedTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class FrameCaptureGroupSettings
   {
   public:
-    AWS_MEDIALIVE_API FrameCaptureGroupSettings();
+    AWS_MEDIALIVE_API FrameCaptureGroupSettings() = default;
     AWS_MEDIALIVE_API FrameCaptureGroupSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API FrameCaptureGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,24 +49,24 @@ namespace Model
      * modifier + the counter (5 digits, starting from 00001) + extension (which is
      * always .jpg).  For example, curling-low.00001.jpg
      */
-    inline const OutputLocationRef& GetDestination() const{ return m_destination; }
+    inline const OutputLocationRef& GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const OutputLocationRef& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(OutputLocationRef&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline FrameCaptureGroupSettings& WithDestination(const OutputLocationRef& value) { SetDestination(value); return *this;}
-    inline FrameCaptureGroupSettings& WithDestination(OutputLocationRef&& value) { SetDestination(std::move(value)); return *this;}
+    template<typename DestinationT = OutputLocationRef>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = OutputLocationRef>
+    FrameCaptureGroupSettings& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Parameters that control interactions with the CDN.
      */
-    inline const FrameCaptureCdnSettings& GetFrameCaptureCdnSettings() const{ return m_frameCaptureCdnSettings; }
+    inline const FrameCaptureCdnSettings& GetFrameCaptureCdnSettings() const { return m_frameCaptureCdnSettings; }
     inline bool FrameCaptureCdnSettingsHasBeenSet() const { return m_frameCaptureCdnSettingsHasBeenSet; }
-    inline void SetFrameCaptureCdnSettings(const FrameCaptureCdnSettings& value) { m_frameCaptureCdnSettingsHasBeenSet = true; m_frameCaptureCdnSettings = value; }
-    inline void SetFrameCaptureCdnSettings(FrameCaptureCdnSettings&& value) { m_frameCaptureCdnSettingsHasBeenSet = true; m_frameCaptureCdnSettings = std::move(value); }
-    inline FrameCaptureGroupSettings& WithFrameCaptureCdnSettings(const FrameCaptureCdnSettings& value) { SetFrameCaptureCdnSettings(value); return *this;}
-    inline FrameCaptureGroupSettings& WithFrameCaptureCdnSettings(FrameCaptureCdnSettings&& value) { SetFrameCaptureCdnSettings(std::move(value)); return *this;}
+    template<typename FrameCaptureCdnSettingsT = FrameCaptureCdnSettings>
+    void SetFrameCaptureCdnSettings(FrameCaptureCdnSettingsT&& value) { m_frameCaptureCdnSettingsHasBeenSet = true; m_frameCaptureCdnSettings = std::forward<FrameCaptureCdnSettingsT>(value); }
+    template<typename FrameCaptureCdnSettingsT = FrameCaptureCdnSettings>
+    FrameCaptureGroupSettings& WithFrameCaptureCdnSettings(FrameCaptureCdnSettingsT&& value) { SetFrameCaptureCdnSettings(std::forward<FrameCaptureCdnSettingsT>(value)); return *this;}
     ///@}
   private:
 

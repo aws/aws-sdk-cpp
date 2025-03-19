@@ -18,16 +18,7 @@ namespace IoTManagedIntegrations
 namespace Model
 {
 
-StateCapability::StateCapability() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
-{
-}
-
 StateCapability::StateCapability(JsonView jsonValue)
-  : StateCapability()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ StateCapability& StateCapability::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("properties"))
   {
     m_properties = jsonValue.GetObject("properties");
-
     m_propertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

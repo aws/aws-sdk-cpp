@@ -18,17 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-DatasetSource::DatasetSource() : 
-    m_sourceType(DatasetSourceType::NOT_SET),
-    m_sourceTypeHasBeenSet(false),
-    m_sourceFormat(DatasetSourceFormat::NOT_SET),
-    m_sourceFormatHasBeenSet(false),
-    m_sourceDetailHasBeenSet(false)
-{
-}
-
 DatasetSource::DatasetSource(JsonView jsonValue)
-  : DatasetSource()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ DatasetSource& DatasetSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sourceType"))
   {
     m_sourceType = DatasetSourceTypeMapper::GetDatasetSourceTypeForName(jsonValue.GetString("sourceType"));
-
     m_sourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceFormat"))
   {
     m_sourceFormat = DatasetSourceFormatMapper::GetDatasetSourceFormatForName(jsonValue.GetString("sourceFormat"));
-
     m_sourceFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceDetail"))
   {
     m_sourceDetail = jsonValue.GetObject("sourceDetail");
-
     m_sourceDetailHasBeenSet = true;
   }
-
   return *this;
 }
 

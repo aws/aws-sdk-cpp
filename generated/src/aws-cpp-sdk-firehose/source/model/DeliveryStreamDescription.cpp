@@ -18,27 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-DeliveryStreamDescription::DeliveryStreamDescription() : 
-    m_deliveryStreamNameHasBeenSet(false),
-    m_deliveryStreamARNHasBeenSet(false),
-    m_deliveryStreamStatus(DeliveryStreamStatus::NOT_SET),
-    m_deliveryStreamStatusHasBeenSet(false),
-    m_failureDescriptionHasBeenSet(false),
-    m_deliveryStreamEncryptionConfigurationHasBeenSet(false),
-    m_deliveryStreamType(DeliveryStreamType::NOT_SET),
-    m_deliveryStreamTypeHasBeenSet(false),
-    m_versionIdHasBeenSet(false),
-    m_createTimestampHasBeenSet(false),
-    m_lastUpdateTimestampHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_destinationsHasBeenSet(false),
-    m_hasMoreDestinations(false),
-    m_hasMoreDestinationsHasBeenSet(false)
-{
-}
-
 DeliveryStreamDescription::DeliveryStreamDescription(JsonView jsonValue)
-  : DeliveryStreamDescription()
 {
   *this = jsonValue;
 }
@@ -48,73 +28,53 @@ DeliveryStreamDescription& DeliveryStreamDescription::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("DeliveryStreamName"))
   {
     m_deliveryStreamName = jsonValue.GetString("DeliveryStreamName");
-
     m_deliveryStreamNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeliveryStreamARN"))
   {
     m_deliveryStreamARN = jsonValue.GetString("DeliveryStreamARN");
-
     m_deliveryStreamARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeliveryStreamStatus"))
   {
     m_deliveryStreamStatus = DeliveryStreamStatusMapper::GetDeliveryStreamStatusForName(jsonValue.GetString("DeliveryStreamStatus"));
-
     m_deliveryStreamStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureDescription"))
   {
     m_failureDescription = jsonValue.GetObject("FailureDescription");
-
     m_failureDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeliveryStreamEncryptionConfiguration"))
   {
     m_deliveryStreamEncryptionConfiguration = jsonValue.GetObject("DeliveryStreamEncryptionConfiguration");
-
     m_deliveryStreamEncryptionConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeliveryStreamType"))
   {
     m_deliveryStreamType = DeliveryStreamTypeMapper::GetDeliveryStreamTypeForName(jsonValue.GetString("DeliveryStreamType"));
-
     m_deliveryStreamTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VersionId"))
   {
     m_versionId = jsonValue.GetString("VersionId");
-
     m_versionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateTimestamp"))
   {
     m_createTimestamp = jsonValue.GetDouble("CreateTimestamp");
-
     m_createTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdateTimestamp"))
   {
     m_lastUpdateTimestamp = jsonValue.GetDouble("LastUpdateTimestamp");
-
     m_lastUpdateTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Source"))
   {
     m_source = jsonValue.GetObject("Source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Destinations"))
   {
     Aws::Utils::Array<JsonView> destinationsJsonList = jsonValue.GetArray("Destinations");
@@ -124,14 +84,11 @@ DeliveryStreamDescription& DeliveryStreamDescription::operator =(JsonView jsonVa
     }
     m_destinationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HasMoreDestinations"))
   {
     m_hasMoreDestinations = jsonValue.GetBool("HasMoreDestinations");
-
     m_hasMoreDestinationsHasBeenSet = true;
   }
-
   return *this;
 }
 

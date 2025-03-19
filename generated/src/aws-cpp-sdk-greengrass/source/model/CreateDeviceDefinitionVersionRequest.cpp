@@ -13,13 +13,6 @@ using namespace Aws::Greengrass::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDeviceDefinitionVersionRequest::CreateDeviceDefinitionVersionRequest() : 
-    m_amznClientTokenHasBeenSet(false),
-    m_deviceDefinitionIdHasBeenSet(false),
-    m_devicesHasBeenSet(false)
-{
-}
-
 Aws::String CreateDeviceDefinitionVersionRequest::SerializePayload() const
 {
   JsonValue payload;

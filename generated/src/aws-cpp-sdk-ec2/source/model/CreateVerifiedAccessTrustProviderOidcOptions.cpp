@@ -20,19 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CreateVerifiedAccessTrustProviderOidcOptions::CreateVerifiedAccessTrustProviderOidcOptions() : 
-    m_issuerHasBeenSet(false),
-    m_authorizationEndpointHasBeenSet(false),
-    m_tokenEndpointHasBeenSet(false),
-    m_userInfoEndpointHasBeenSet(false),
-    m_clientIdHasBeenSet(false),
-    m_clientSecretHasBeenSet(false),
-    m_scopeHasBeenSet(false)
-{
-}
-
 CreateVerifiedAccessTrustProviderOidcOptions::CreateVerifiedAccessTrustProviderOidcOptions(const XmlNode& xmlNode)
-  : CreateVerifiedAccessTrustProviderOidcOptions()
 {
   *this = xmlNode;
 }

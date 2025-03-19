@@ -27,7 +27,7 @@ namespace Model
   class ListEntitiesRequest : public MarketplaceCatalogRequest
   {
   public:
-    AWS_MARKETPLACECATALOG_API ListEntitiesRequest();
+    AWS_MARKETPLACECATALOG_API ListEntitiesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
      * </p>
      */
-    inline const Aws::String& GetCatalog() const{ return m_catalog; }
+    inline const Aws::String& GetCatalog() const { return m_catalog; }
     inline bool CatalogHasBeenSet() const { return m_catalogHasBeenSet; }
-    inline void SetCatalog(const Aws::String& value) { m_catalogHasBeenSet = true; m_catalog = value; }
-    inline void SetCatalog(Aws::String&& value) { m_catalogHasBeenSet = true; m_catalog = std::move(value); }
-    inline void SetCatalog(const char* value) { m_catalogHasBeenSet = true; m_catalog.assign(value); }
-    inline ListEntitiesRequest& WithCatalog(const Aws::String& value) { SetCatalog(value); return *this;}
-    inline ListEntitiesRequest& WithCatalog(Aws::String&& value) { SetCatalog(std::move(value)); return *this;}
-    inline ListEntitiesRequest& WithCatalog(const char* value) { SetCatalog(value); return *this;}
+    template<typename CatalogT = Aws::String>
+    void SetCatalog(CatalogT&& value) { m_catalogHasBeenSet = true; m_catalog = std::forward<CatalogT>(value); }
+    template<typename CatalogT = Aws::String>
+    ListEntitiesRequest& WithCatalog(CatalogT&& value) { SetCatalog(std::forward<CatalogT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * <code>Experience</code>, <code>Audience</code>, <code>BrandingSettings</code>,
      * <code>Offer</code>, <code>Seller</code>, <code>ResaleAuthorization</code>.</p>
      */
-    inline const Aws::String& GetEntityType() const{ return m_entityType; }
+    inline const Aws::String& GetEntityType() const { return m_entityType; }
     inline bool EntityTypeHasBeenSet() const { return m_entityTypeHasBeenSet; }
-    inline void SetEntityType(const Aws::String& value) { m_entityTypeHasBeenSet = true; m_entityType = value; }
-    inline void SetEntityType(Aws::String&& value) { m_entityTypeHasBeenSet = true; m_entityType = std::move(value); }
-    inline void SetEntityType(const char* value) { m_entityTypeHasBeenSet = true; m_entityType.assign(value); }
-    inline ListEntitiesRequest& WithEntityType(const Aws::String& value) { SetEntityType(value); return *this;}
-    inline ListEntitiesRequest& WithEntityType(Aws::String&& value) { SetEntityType(std::move(value)); return *this;}
-    inline ListEntitiesRequest& WithEntityType(const char* value) { SetEntityType(value); return *this;}
+    template<typename EntityTypeT = Aws::String>
+    void SetEntityType(EntityTypeT&& value) { m_entityTypeHasBeenSet = true; m_entityType = std::forward<EntityTypeT>(value); }
+    template<typename EntityTypeT = Aws::String>
+    ListEntitiesRequest& WithEntityType(EntityTypeT&& value) { SetEntityType(std::forward<EntityTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,14 +72,14 @@ namespace Model
      * <p>An array of filter objects. Each filter object contains two attributes,
      * <code>filterName</code> and <code>filterValues</code>.</p>
      */
-    inline const Aws::Vector<Filter>& GetFilterList() const{ return m_filterList; }
+    inline const Aws::Vector<Filter>& GetFilterList() const { return m_filterList; }
     inline bool FilterListHasBeenSet() const { return m_filterListHasBeenSet; }
-    inline void SetFilterList(const Aws::Vector<Filter>& value) { m_filterListHasBeenSet = true; m_filterList = value; }
-    inline void SetFilterList(Aws::Vector<Filter>&& value) { m_filterListHasBeenSet = true; m_filterList = std::move(value); }
-    inline ListEntitiesRequest& WithFilterList(const Aws::Vector<Filter>& value) { SetFilterList(value); return *this;}
-    inline ListEntitiesRequest& WithFilterList(Aws::Vector<Filter>&& value) { SetFilterList(std::move(value)); return *this;}
-    inline ListEntitiesRequest& AddFilterList(const Filter& value) { m_filterListHasBeenSet = true; m_filterList.push_back(value); return *this; }
-    inline ListEntitiesRequest& AddFilterList(Filter&& value) { m_filterListHasBeenSet = true; m_filterList.push_back(std::move(value)); return *this; }
+    template<typename FilterListT = Aws::Vector<Filter>>
+    void SetFilterList(FilterListT&& value) { m_filterListHasBeenSet = true; m_filterList = std::forward<FilterListT>(value); }
+    template<typename FilterListT = Aws::Vector<Filter>>
+    ListEntitiesRequest& WithFilterList(FilterListT&& value) { SetFilterList(std::forward<FilterListT>(value)); return *this;}
+    template<typename FilterListT = Filter>
+    ListEntitiesRequest& AddFilterList(FilterListT&& value) { m_filterListHasBeenSet = true; m_filterList.emplace_back(std::forward<FilterListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -91,12 +87,12 @@ namespace Model
      * <p>An object that contains two attributes, <code>SortBy</code> and
      * <code>SortOrder</code>.</p>
      */
-    inline const Sort& GetSort() const{ return m_sort; }
+    inline const Sort& GetSort() const { return m_sort; }
     inline bool SortHasBeenSet() const { return m_sortHasBeenSet; }
-    inline void SetSort(const Sort& value) { m_sortHasBeenSet = true; m_sort = value; }
-    inline void SetSort(Sort&& value) { m_sortHasBeenSet = true; m_sort = std::move(value); }
-    inline ListEntitiesRequest& WithSort(const Sort& value) { SetSort(value); return *this;}
-    inline ListEntitiesRequest& WithSort(Sort&& value) { SetSort(std::move(value)); return *this;}
+    template<typename SortT = Sort>
+    void SetSort(SortT&& value) { m_sortHasBeenSet = true; m_sort = std::forward<SortT>(value); }
+    template<typename SortT = Sort>
+    ListEntitiesRequest& WithSort(SortT&& value) { SetSort(std::forward<SortT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,14 +100,12 @@ namespace Model
      * <p>The value of the next token, if it exists. Null if there are no more
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListEntitiesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListEntitiesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListEntitiesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListEntitiesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -119,7 +113,7 @@ namespace Model
      * <p>Specifies the upper limit of the elements on a single page. If a value isn't
      * provided, the default value is 20.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListEntitiesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -133,12 +127,10 @@ namespace Model
      * Marketplace Catalog API <code>PutResourcePolicy</code> operation can't be
      * discovered through the <code>SHARED</code> parameter.</p>
      */
-    inline const OwnershipType& GetOwnershipType() const{ return m_ownershipType; }
+    inline OwnershipType GetOwnershipType() const { return m_ownershipType; }
     inline bool OwnershipTypeHasBeenSet() const { return m_ownershipTypeHasBeenSet; }
-    inline void SetOwnershipType(const OwnershipType& value) { m_ownershipTypeHasBeenSet = true; m_ownershipType = value; }
-    inline void SetOwnershipType(OwnershipType&& value) { m_ownershipTypeHasBeenSet = true; m_ownershipType = std::move(value); }
-    inline ListEntitiesRequest& WithOwnershipType(const OwnershipType& value) { SetOwnershipType(value); return *this;}
-    inline ListEntitiesRequest& WithOwnershipType(OwnershipType&& value) { SetOwnershipType(std::move(value)); return *this;}
+    inline void SetOwnershipType(OwnershipType value) { m_ownershipTypeHasBeenSet = true; m_ownershipType = value; }
+    inline ListEntitiesRequest& WithOwnershipType(OwnershipType value) { SetOwnershipType(value); return *this;}
     ///@}
 
     ///@{
@@ -147,12 +139,12 @@ namespace Model
      * Each <code>EntityTypeFilter</code> shape will have filters applicable for that
      * <code>EntityType</code> that can be used to search or filter entities.</p>
      */
-    inline const EntityTypeFilters& GetEntityTypeFilters() const{ return m_entityTypeFilters; }
+    inline const EntityTypeFilters& GetEntityTypeFilters() const { return m_entityTypeFilters; }
     inline bool EntityTypeFiltersHasBeenSet() const { return m_entityTypeFiltersHasBeenSet; }
-    inline void SetEntityTypeFilters(const EntityTypeFilters& value) { m_entityTypeFiltersHasBeenSet = true; m_entityTypeFilters = value; }
-    inline void SetEntityTypeFilters(EntityTypeFilters&& value) { m_entityTypeFiltersHasBeenSet = true; m_entityTypeFilters = std::move(value); }
-    inline ListEntitiesRequest& WithEntityTypeFilters(const EntityTypeFilters& value) { SetEntityTypeFilters(value); return *this;}
-    inline ListEntitiesRequest& WithEntityTypeFilters(EntityTypeFilters&& value) { SetEntityTypeFilters(std::move(value)); return *this;}
+    template<typename EntityTypeFiltersT = EntityTypeFilters>
+    void SetEntityTypeFilters(EntityTypeFiltersT&& value) { m_entityTypeFiltersHasBeenSet = true; m_entityTypeFilters = std::forward<EntityTypeFiltersT>(value); }
+    template<typename EntityTypeFiltersT = EntityTypeFilters>
+    ListEntitiesRequest& WithEntityTypeFilters(EntityTypeFiltersT&& value) { SetEntityTypeFilters(std::forward<EntityTypeFiltersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -163,12 +155,12 @@ namespace Model
      * <code>EntityType</code>. This can be used to sort the results of the filter
      * query.</p>
      */
-    inline const EntityTypeSort& GetEntityTypeSort() const{ return m_entityTypeSort; }
+    inline const EntityTypeSort& GetEntityTypeSort() const { return m_entityTypeSort; }
     inline bool EntityTypeSortHasBeenSet() const { return m_entityTypeSortHasBeenSet; }
-    inline void SetEntityTypeSort(const EntityTypeSort& value) { m_entityTypeSortHasBeenSet = true; m_entityTypeSort = value; }
-    inline void SetEntityTypeSort(EntityTypeSort&& value) { m_entityTypeSortHasBeenSet = true; m_entityTypeSort = std::move(value); }
-    inline ListEntitiesRequest& WithEntityTypeSort(const EntityTypeSort& value) { SetEntityTypeSort(value); return *this;}
-    inline ListEntitiesRequest& WithEntityTypeSort(EntityTypeSort&& value) { SetEntityTypeSort(std::move(value)); return *this;}
+    template<typename EntityTypeSortT = EntityTypeSort>
+    void SetEntityTypeSort(EntityTypeSortT&& value) { m_entityTypeSortHasBeenSet = true; m_entityTypeSort = std::forward<EntityTypeSortT>(value); }
+    template<typename EntityTypeSortT = EntityTypeSort>
+    ListEntitiesRequest& WithEntityTypeSort(EntityTypeSortT&& value) { SetEntityTypeSort(std::forward<EntityTypeSortT>(value)); return *this;}
     ///@}
   private:
 
@@ -187,10 +179,10 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
-    OwnershipType m_ownershipType;
+    OwnershipType m_ownershipType{OwnershipType::NOT_SET};
     bool m_ownershipTypeHasBeenSet = false;
 
     EntityTypeFilters m_entityTypeFilters;

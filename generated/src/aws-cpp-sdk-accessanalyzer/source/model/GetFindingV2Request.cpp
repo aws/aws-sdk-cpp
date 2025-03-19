@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetFindingV2Request::GetFindingV2Request() : 
-    m_analyzerArnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetFindingV2Request::SerializePayload() const
 {
   return {};

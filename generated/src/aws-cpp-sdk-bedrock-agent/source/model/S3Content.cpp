@@ -18,13 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-S3Content::S3Content() : 
-    m_s3LocationHasBeenSet(false)
-{
-}
-
 S3Content::S3Content(JsonView jsonValue)
-  : S3Content()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ S3Content& S3Content::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3Location"))
   {
     m_s3Location = jsonValue.GetObject("s3Location");
-
     m_s3LocationHasBeenSet = true;
   }
-
   return *this;
 }
 

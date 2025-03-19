@@ -28,7 +28,7 @@ namespace Model
   class GetContentAssociationResult
   {
   public:
-    AWS_QCONNECT_API GetContentAssociationResult();
+    AWS_QCONNECT_API GetContentAssociationResult() = default;
     AWS_QCONNECT_API GetContentAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QCONNECT_API GetContentAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The association between Amazon Q in Connect content and another resource.</p>
      */
-    inline const ContentAssociationData& GetContentAssociation() const{ return m_contentAssociation; }
-    inline void SetContentAssociation(const ContentAssociationData& value) { m_contentAssociation = value; }
-    inline void SetContentAssociation(ContentAssociationData&& value) { m_contentAssociation = std::move(value); }
-    inline GetContentAssociationResult& WithContentAssociation(const ContentAssociationData& value) { SetContentAssociation(value); return *this;}
-    inline GetContentAssociationResult& WithContentAssociation(ContentAssociationData&& value) { SetContentAssociation(std::move(value)); return *this;}
+    inline const ContentAssociationData& GetContentAssociation() const { return m_contentAssociation; }
+    template<typename ContentAssociationT = ContentAssociationData>
+    void SetContentAssociation(ContentAssociationT&& value) { m_contentAssociationHasBeenSet = true; m_contentAssociation = std::forward<ContentAssociationT>(value); }
+    template<typename ContentAssociationT = ContentAssociationData>
+    GetContentAssociationResult& WithContentAssociation(ContentAssociationT&& value) { SetContentAssociation(std::forward<ContentAssociationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetContentAssociationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetContentAssociationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetContentAssociationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetContentAssociationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ContentAssociationData m_contentAssociation;
+    bool m_contentAssociationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

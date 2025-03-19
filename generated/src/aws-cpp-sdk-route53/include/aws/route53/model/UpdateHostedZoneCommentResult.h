@@ -34,7 +34,7 @@ namespace Model
   class UpdateHostedZoneCommentResult
   {
   public:
-    AWS_ROUTE53_API UpdateHostedZoneCommentResult();
+    AWS_ROUTE53_API UpdateHostedZoneCommentResult() = default;
     AWS_ROUTE53_API UpdateHostedZoneCommentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ROUTE53_API UpdateHostedZoneCommentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -44,28 +44,28 @@ namespace Model
      * <p>A complex type that contains the response to the
      * <code>UpdateHostedZoneComment</code> request.</p>
      */
-    inline const HostedZone& GetHostedZone() const{ return m_hostedZone; }
-    inline void SetHostedZone(const HostedZone& value) { m_hostedZone = value; }
-    inline void SetHostedZone(HostedZone&& value) { m_hostedZone = std::move(value); }
-    inline UpdateHostedZoneCommentResult& WithHostedZone(const HostedZone& value) { SetHostedZone(value); return *this;}
-    inline UpdateHostedZoneCommentResult& WithHostedZone(HostedZone&& value) { SetHostedZone(std::move(value)); return *this;}
+    inline const HostedZone& GetHostedZone() const { return m_hostedZone; }
+    template<typename HostedZoneT = HostedZone>
+    void SetHostedZone(HostedZoneT&& value) { m_hostedZoneHasBeenSet = true; m_hostedZone = std::forward<HostedZoneT>(value); }
+    template<typename HostedZoneT = HostedZone>
+    UpdateHostedZoneCommentResult& WithHostedZone(HostedZoneT&& value) { SetHostedZone(std::forward<HostedZoneT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateHostedZoneCommentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateHostedZoneCommentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateHostedZoneCommentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateHostedZoneCommentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     HostedZone m_hostedZone;
+    bool m_hostedZoneHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

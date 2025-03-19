@@ -33,7 +33,7 @@ namespace Model
   class TrainingImageConfig
   {
   public:
-    AWS_SAGEMAKER_API TrainingImageConfig();
+    AWS_SAGEMAKER_API TrainingImageConfig() = default;
     AWS_SAGEMAKER_API TrainingImageConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API TrainingImageConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
      * your private Docker registry. For access to an image in a private Docker
      * registry, set to <code>Vpc</code>.</p>
      */
-    inline const TrainingRepositoryAccessMode& GetTrainingRepositoryAccessMode() const{ return m_trainingRepositoryAccessMode; }
+    inline TrainingRepositoryAccessMode GetTrainingRepositoryAccessMode() const { return m_trainingRepositoryAccessMode; }
     inline bool TrainingRepositoryAccessModeHasBeenSet() const { return m_trainingRepositoryAccessModeHasBeenSet; }
-    inline void SetTrainingRepositoryAccessMode(const TrainingRepositoryAccessMode& value) { m_trainingRepositoryAccessModeHasBeenSet = true; m_trainingRepositoryAccessMode = value; }
-    inline void SetTrainingRepositoryAccessMode(TrainingRepositoryAccessMode&& value) { m_trainingRepositoryAccessModeHasBeenSet = true; m_trainingRepositoryAccessMode = std::move(value); }
-    inline TrainingImageConfig& WithTrainingRepositoryAccessMode(const TrainingRepositoryAccessMode& value) { SetTrainingRepositoryAccessMode(value); return *this;}
-    inline TrainingImageConfig& WithTrainingRepositoryAccessMode(TrainingRepositoryAccessMode&& value) { SetTrainingRepositoryAccessMode(std::move(value)); return *this;}
+    inline void SetTrainingRepositoryAccessMode(TrainingRepositoryAccessMode value) { m_trainingRepositoryAccessModeHasBeenSet = true; m_trainingRepositoryAccessMode = value; }
+    inline TrainingImageConfig& WithTrainingRepositoryAccessMode(TrainingRepositoryAccessMode value) { SetTrainingRepositoryAccessMode(value); return *this;}
     ///@}
 
     ///@{
@@ -58,16 +56,16 @@ namespace Model
      * <p>An object containing authentication information for a private Docker registry
      * containing your training images.</p>
      */
-    inline const TrainingRepositoryAuthConfig& GetTrainingRepositoryAuthConfig() const{ return m_trainingRepositoryAuthConfig; }
+    inline const TrainingRepositoryAuthConfig& GetTrainingRepositoryAuthConfig() const { return m_trainingRepositoryAuthConfig; }
     inline bool TrainingRepositoryAuthConfigHasBeenSet() const { return m_trainingRepositoryAuthConfigHasBeenSet; }
-    inline void SetTrainingRepositoryAuthConfig(const TrainingRepositoryAuthConfig& value) { m_trainingRepositoryAuthConfigHasBeenSet = true; m_trainingRepositoryAuthConfig = value; }
-    inline void SetTrainingRepositoryAuthConfig(TrainingRepositoryAuthConfig&& value) { m_trainingRepositoryAuthConfigHasBeenSet = true; m_trainingRepositoryAuthConfig = std::move(value); }
-    inline TrainingImageConfig& WithTrainingRepositoryAuthConfig(const TrainingRepositoryAuthConfig& value) { SetTrainingRepositoryAuthConfig(value); return *this;}
-    inline TrainingImageConfig& WithTrainingRepositoryAuthConfig(TrainingRepositoryAuthConfig&& value) { SetTrainingRepositoryAuthConfig(std::move(value)); return *this;}
+    template<typename TrainingRepositoryAuthConfigT = TrainingRepositoryAuthConfig>
+    void SetTrainingRepositoryAuthConfig(TrainingRepositoryAuthConfigT&& value) { m_trainingRepositoryAuthConfigHasBeenSet = true; m_trainingRepositoryAuthConfig = std::forward<TrainingRepositoryAuthConfigT>(value); }
+    template<typename TrainingRepositoryAuthConfigT = TrainingRepositoryAuthConfig>
+    TrainingImageConfig& WithTrainingRepositoryAuthConfig(TrainingRepositoryAuthConfigT&& value) { SetTrainingRepositoryAuthConfig(std::forward<TrainingRepositoryAuthConfigT>(value)); return *this;}
     ///@}
   private:
 
-    TrainingRepositoryAccessMode m_trainingRepositoryAccessMode;
+    TrainingRepositoryAccessMode m_trainingRepositoryAccessMode{TrainingRepositoryAccessMode::NOT_SET};
     bool m_trainingRepositoryAccessModeHasBeenSet = false;
 
     TrainingRepositoryAuthConfig m_trainingRepositoryAuthConfig;

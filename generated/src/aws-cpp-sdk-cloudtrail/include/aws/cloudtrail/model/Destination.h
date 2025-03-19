@@ -33,7 +33,7 @@ namespace Model
   class Destination
   {
   public:
-    AWS_CLOUDTRAIL_API Destination();
+    AWS_CLOUDTRAIL_API Destination() = default;
     AWS_CLOUDTRAIL_API Destination(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDTRAIL_API Destination& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDTRAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
      * for a CloudTrail Lake integration, the value is <code>EVENT_DATA_STORE</code>.
      * For service-linked channels, the value is <code>AWS_SERVICE</code>. </p>
      */
-    inline const DestinationType& GetType() const{ return m_type; }
+    inline DestinationType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const DestinationType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(DestinationType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline Destination& WithType(const DestinationType& value) { SetType(value); return *this;}
-    inline Destination& WithType(DestinationType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(DestinationType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline Destination& WithType(DestinationType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -59,18 +57,16 @@ namespace Model
      * of an event data store that receives events from a channel. For service-linked
      * channels, the location is the name of the Amazon Web Services service.</p>
      */
-    inline const Aws::String& GetLocation() const{ return m_location; }
+    inline const Aws::String& GetLocation() const { return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-    inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
-    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-    inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
-    inline Destination& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-    inline Destination& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-    inline Destination& WithLocation(const char* value) { SetLocation(value); return *this;}
+    template<typename LocationT = Aws::String>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Aws::String>
+    Destination& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
   private:
 
-    DestinationType m_type;
+    DestinationType m_type{DestinationType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_location;

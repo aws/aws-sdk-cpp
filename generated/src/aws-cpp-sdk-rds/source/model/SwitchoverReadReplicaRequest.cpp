@@ -10,11 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-SwitchoverReadReplicaRequest::SwitchoverReadReplicaRequest() : 
-    m_dBInstanceIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String SwitchoverReadReplicaRequest::SerializePayload() const
 {
   Aws::StringStream ss;

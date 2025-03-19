@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteMultiRegionEndpointResult::DeleteMultiRegionEndpointResult() : 
-    m_status(Status::NOT_SET)
-{
-}
-
 DeleteMultiRegionEndpointResult::DeleteMultiRegionEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteMultiRegionEndpointResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ DeleteMultiRegionEndpointResult& DeleteMultiRegionEndpointResult::operator =(con
   if(jsonValue.ValueExists("Status"))
   {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

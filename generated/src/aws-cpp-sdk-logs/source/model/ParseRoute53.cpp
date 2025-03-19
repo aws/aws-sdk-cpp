@@ -18,13 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-ParseRoute53::ParseRoute53() : 
-    m_sourceHasBeenSet(false)
-{
-}
-
 ParseRoute53::ParseRoute53(JsonView jsonValue)
-  : ParseRoute53()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ParseRoute53& ParseRoute53::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("source"))
   {
     m_source = jsonValue.GetString("source");
-
     m_sourceHasBeenSet = true;
   }
-
   return *this;
 }
 

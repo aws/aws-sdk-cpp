@@ -32,7 +32,7 @@ namespace Model
   class AwsElbLbCookieStickinessPolicy
   {
   public:
-    AWS_SECURITYHUB_API AwsElbLbCookieStickinessPolicy();
+    AWS_SECURITYHUB_API AwsElbLbCookieStickinessPolicy() = default;
     AWS_SECURITYHUB_API AwsElbLbCookieStickinessPolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsElbLbCookieStickinessPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * If an expiration period is not specified, the stickiness session lasts for the
      * duration of the browser session.</p>
      */
-    inline long long GetCookieExpirationPeriod() const{ return m_cookieExpirationPeriod; }
+    inline long long GetCookieExpirationPeriod() const { return m_cookieExpirationPeriod; }
     inline bool CookieExpirationPeriodHasBeenSet() const { return m_cookieExpirationPeriodHasBeenSet; }
     inline void SetCookieExpirationPeriod(long long value) { m_cookieExpirationPeriodHasBeenSet = true; m_cookieExpirationPeriod = value; }
     inline AwsElbLbCookieStickinessPolicy& WithCookieExpirationPeriod(long long value) { SetCookieExpirationPeriod(value); return *this;}
@@ -55,18 +55,16 @@ namespace Model
      * <p>The name of the policy. The name must be unique within the set of policies
      * for the load balancer.</p>
      */
-    inline const Aws::String& GetPolicyName() const{ return m_policyName; }
+    inline const Aws::String& GetPolicyName() const { return m_policyName; }
     inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
-    inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
-    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
-    inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
-    inline AwsElbLbCookieStickinessPolicy& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
-    inline AwsElbLbCookieStickinessPolicy& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
-    inline AwsElbLbCookieStickinessPolicy& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+    template<typename PolicyNameT = Aws::String>
+    void SetPolicyName(PolicyNameT&& value) { m_policyNameHasBeenSet = true; m_policyName = std::forward<PolicyNameT>(value); }
+    template<typename PolicyNameT = Aws::String>
+    AwsElbLbCookieStickinessPolicy& WithPolicyName(PolicyNameT&& value) { SetPolicyName(std::forward<PolicyNameT>(value)); return *this;}
     ///@}
   private:
 
-    long long m_cookieExpirationPeriod;
+    long long m_cookieExpirationPeriod{0};
     bool m_cookieExpirationPeriodHasBeenSet = false;
 
     Aws::String m_policyName;

@@ -18,25 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-MatchmakingTicket::MatchmakingTicket() : 
-    m_ticketIdHasBeenSet(false),
-    m_configurationNameHasBeenSet(false),
-    m_configurationArnHasBeenSet(false),
-    m_status(MatchmakingConfigurationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_playersHasBeenSet(false),
-    m_gameSessionConnectionInfoHasBeenSet(false),
-    m_estimatedWaitTime(0),
-    m_estimatedWaitTimeHasBeenSet(false)
-{
-}
-
 MatchmakingTicket::MatchmakingTicket(JsonView jsonValue)
-  : MatchmakingTicket()
 {
   *this = jsonValue;
 }
@@ -46,59 +28,43 @@ MatchmakingTicket& MatchmakingTicket::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TicketId"))
   {
     m_ticketId = jsonValue.GetString("TicketId");
-
     m_ticketIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConfigurationName"))
   {
     m_configurationName = jsonValue.GetString("ConfigurationName");
-
     m_configurationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConfigurationArn"))
   {
     m_configurationArn = jsonValue.GetString("ConfigurationArn");
-
     m_configurationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = MatchmakingConfigurationStatusMapper::GetMatchmakingConfigurationStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusReason"))
   {
     m_statusReason = jsonValue.GetString("StatusReason");
-
     m_statusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Players"))
   {
     Aws::Utils::Array<JsonView> playersJsonList = jsonValue.GetArray("Players");
@@ -108,21 +74,16 @@ MatchmakingTicket& MatchmakingTicket::operator =(JsonView jsonValue)
     }
     m_playersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GameSessionConnectionInfo"))
   {
     m_gameSessionConnectionInfo = jsonValue.GetObject("GameSessionConnectionInfo");
-
     m_gameSessionConnectionInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EstimatedWaitTime"))
   {
     m_estimatedWaitTime = jsonValue.GetInteger("EstimatedWaitTime");
-
     m_estimatedWaitTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

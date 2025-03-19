@@ -20,33 +20,7 @@ namespace EC2
 namespace Model
 {
 
-IpamResourceCidr::IpamResourceCidr() : 
-    m_ipamIdHasBeenSet(false),
-    m_ipamScopeIdHasBeenSet(false),
-    m_ipamPoolIdHasBeenSet(false),
-    m_resourceRegionHasBeenSet(false),
-    m_resourceOwnerIdHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceNameHasBeenSet(false),
-    m_resourceCidrHasBeenSet(false),
-    m_resourceType(IpamResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceTagsHasBeenSet(false),
-    m_ipUsage(0.0),
-    m_ipUsageHasBeenSet(false),
-    m_complianceStatus(IpamComplianceStatus::NOT_SET),
-    m_complianceStatusHasBeenSet(false),
-    m_managementState(IpamManagementState::NOT_SET),
-    m_managementStateHasBeenSet(false),
-    m_overlapStatus(IpamOverlapStatus::NOT_SET),
-    m_overlapStatusHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_availabilityZoneIdHasBeenSet(false)
-{
-}
-
 IpamResourceCidr::IpamResourceCidr(const XmlNode& xmlNode)
-  : IpamResourceCidr()
 {
   *this = xmlNode;
 }
@@ -108,13 +82,14 @@ IpamResourceCidr& IpamResourceCidr::operator =(const XmlNode& xmlNode)
     XmlNode resourceTypeNode = resultNode.FirstChild("resourceType");
     if(!resourceTypeNode.IsNull())
     {
-      m_resourceType = IpamResourceTypeMapper::GetIpamResourceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText()).c_str()).c_str());
+      m_resourceType = IpamResourceTypeMapper::GetIpamResourceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText()).c_str()));
       m_resourceTypeHasBeenSet = true;
     }
     XmlNode resourceTagsNode = resultNode.FirstChild("resourceTagSet");
     if(!resourceTagsNode.IsNull())
     {
       XmlNode resourceTagsMember = resourceTagsNode.FirstChild("item");
+      m_resourceTagsHasBeenSet = !resourceTagsMember.IsNull();
       while(!resourceTagsMember.IsNull())
       {
         m_resourceTags.push_back(resourceTagsMember);
@@ -132,19 +107,19 @@ IpamResourceCidr& IpamResourceCidr::operator =(const XmlNode& xmlNode)
     XmlNode complianceStatusNode = resultNode.FirstChild("complianceStatus");
     if(!complianceStatusNode.IsNull())
     {
-      m_complianceStatus = IpamComplianceStatusMapper::GetIpamComplianceStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(complianceStatusNode.GetText()).c_str()).c_str());
+      m_complianceStatus = IpamComplianceStatusMapper::GetIpamComplianceStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(complianceStatusNode.GetText()).c_str()));
       m_complianceStatusHasBeenSet = true;
     }
     XmlNode managementStateNode = resultNode.FirstChild("managementState");
     if(!managementStateNode.IsNull())
     {
-      m_managementState = IpamManagementStateMapper::GetIpamManagementStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(managementStateNode.GetText()).c_str()).c_str());
+      m_managementState = IpamManagementStateMapper::GetIpamManagementStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(managementStateNode.GetText()).c_str()));
       m_managementStateHasBeenSet = true;
     }
     XmlNode overlapStatusNode = resultNode.FirstChild("overlapStatus");
     if(!overlapStatusNode.IsNull())
     {
-      m_overlapStatus = IpamOverlapStatusMapper::GetIpamOverlapStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(overlapStatusNode.GetText()).c_str()).c_str());
+      m_overlapStatus = IpamOverlapStatusMapper::GetIpamOverlapStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(overlapStatusNode.GetText()).c_str()));
       m_overlapStatusHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("vpcId");

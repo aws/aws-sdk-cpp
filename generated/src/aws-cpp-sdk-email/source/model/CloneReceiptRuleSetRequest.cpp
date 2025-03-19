@@ -10,12 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-CloneReceiptRuleSetRequest::CloneReceiptRuleSetRequest() : 
-    m_ruleSetNameHasBeenSet(false),
-    m_originalRuleSetNameHasBeenSet(false)
-{
-}
-
 Aws::String CloneReceiptRuleSetRequest::SerializePayload() const
 {
   Aws::StringStream ss;

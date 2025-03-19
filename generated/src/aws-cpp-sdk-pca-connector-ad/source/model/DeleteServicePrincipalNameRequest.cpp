@@ -12,12 +12,6 @@ using namespace Aws::PcaConnectorAd::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteServicePrincipalNameRequest::DeleteServicePrincipalNameRequest() : 
-    m_connectorArnHasBeenSet(false),
-    m_directoryRegistrationArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteServicePrincipalNameRequest::SerializePayload() const
 {
   return {};

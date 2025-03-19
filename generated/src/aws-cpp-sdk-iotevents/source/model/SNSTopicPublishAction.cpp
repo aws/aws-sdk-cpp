@@ -18,14 +18,7 @@ namespace IoTEvents
 namespace Model
 {
 
-SNSTopicPublishAction::SNSTopicPublishAction() : 
-    m_targetArnHasBeenSet(false),
-    m_payloadHasBeenSet(false)
-{
-}
-
 SNSTopicPublishAction::SNSTopicPublishAction(JsonView jsonValue)
-  : SNSTopicPublishAction()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SNSTopicPublishAction& SNSTopicPublishAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("targetArn"))
   {
     m_targetArn = jsonValue.GetString("targetArn");
-
     m_targetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("payload"))
   {
     m_payload = jsonValue.GetObject("payload");
-
     m_payloadHasBeenSet = true;
   }
-
   return *this;
 }
 

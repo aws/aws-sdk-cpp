@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsS3BucketLoggingConfiguration::AwsS3BucketLoggingConfiguration() : 
-    m_destinationBucketNameHasBeenSet(false),
-    m_logFilePrefixHasBeenSet(false)
-{
-}
-
 AwsS3BucketLoggingConfiguration::AwsS3BucketLoggingConfiguration(JsonView jsonValue)
-  : AwsS3BucketLoggingConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsS3BucketLoggingConfiguration& AwsS3BucketLoggingConfiguration::operator =(Jso
   if(jsonValue.ValueExists("DestinationBucketName"))
   {
     m_destinationBucketName = jsonValue.GetString("DestinationBucketName");
-
     m_destinationBucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogFilePrefix"))
   {
     m_logFilePrefix = jsonValue.GetString("LogFilePrefix");
-
     m_logFilePrefixHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace ComprehendMedical
 namespace Model
 {
 
-Characters::Characters() : 
-    m_originalTextCharacters(0),
-    m_originalTextCharactersHasBeenSet(false)
-{
-}
-
 Characters::Characters(JsonView jsonValue)
-  : Characters()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ Characters& Characters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OriginalTextCharacters"))
   {
     m_originalTextCharacters = jsonValue.GetInteger("OriginalTextCharacters");
-
     m_originalTextCharactersHasBeenSet = true;
   }
-
   return *this;
 }
 

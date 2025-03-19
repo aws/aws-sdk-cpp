@@ -12,11 +12,6 @@ using namespace Aws::LookoutMetrics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeAlertRequest::DescribeAlertRequest() : 
-    m_alertArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAlertRequest::SerializePayload() const
 {
   JsonValue payload;

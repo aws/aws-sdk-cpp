@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateMediaPipelineKinesisVideoStreamPoolResult::UpdateMediaPipelineKinesisVideoStreamPoolResult()
-{
-}
-
 UpdateMediaPipelineKinesisVideoStreamPoolResult::UpdateMediaPipelineKinesisVideoStreamPoolResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ UpdateMediaPipelineKinesisVideoStreamPoolResult& UpdateMediaPipelineKinesisVideo
   if(jsonValue.ValueExists("KinesisVideoStreamPoolConfiguration"))
   {
     m_kinesisVideoStreamPoolConfiguration = jsonValue.GetObject("KinesisVideoStreamPoolConfiguration");
-
+    m_kinesisVideoStreamPoolConfigurationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

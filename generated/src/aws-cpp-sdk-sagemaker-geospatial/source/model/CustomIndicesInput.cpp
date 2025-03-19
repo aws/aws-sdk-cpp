@@ -18,13 +18,7 @@ namespace SageMakerGeospatial
 namespace Model
 {
 
-CustomIndicesInput::CustomIndicesInput() : 
-    m_operationsHasBeenSet(false)
-{
-}
-
 CustomIndicesInput::CustomIndicesInput(JsonView jsonValue)
-  : CustomIndicesInput()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ CustomIndicesInput& CustomIndicesInput::operator =(JsonView jsonValue)
     }
     m_operationsHasBeenSet = true;
   }
-
   return *this;
 }
 

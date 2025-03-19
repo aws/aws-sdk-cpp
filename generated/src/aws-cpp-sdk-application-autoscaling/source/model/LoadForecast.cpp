@@ -18,15 +18,7 @@ namespace ApplicationAutoScaling
 namespace Model
 {
 
-LoadForecast::LoadForecast() : 
-    m_timestampsHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_metricSpecificationHasBeenSet(false)
-{
-}
-
 LoadForecast::LoadForecast(JsonView jsonValue)
-  : LoadForecast()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ LoadForecast& LoadForecast::operator =(JsonView jsonValue)
     }
     m_timestampsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -52,14 +43,11 @@ LoadForecast& LoadForecast::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricSpecification"))
   {
     m_metricSpecification = jsonValue.GetObject("MetricSpecification");
-
     m_metricSpecificationHasBeenSet = true;
   }
-
   return *this;
 }
 

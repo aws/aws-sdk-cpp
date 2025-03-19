@@ -18,20 +18,7 @@ namespace DynamoDBStreams
 namespace Model
 {
 
-Record::Record() : 
-    m_eventIDHasBeenSet(false),
-    m_eventName(OperationType::NOT_SET),
-    m_eventNameHasBeenSet(false),
-    m_eventVersionHasBeenSet(false),
-    m_eventSourceHasBeenSet(false),
-    m_awsRegionHasBeenSet(false),
-    m_dynamodbHasBeenSet(false),
-    m_userIdentityHasBeenSet(false)
-{
-}
-
 Record::Record(JsonView jsonValue)
-  : Record()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ Record& Record::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("eventID"))
   {
     m_eventID = jsonValue.GetString("eventID");
-
     m_eventIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventName"))
   {
     m_eventName = OperationTypeMapper::GetOperationTypeForName(jsonValue.GetString("eventName"));
-
     m_eventNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventVersion"))
   {
     m_eventVersion = jsonValue.GetString("eventVersion");
-
     m_eventVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventSource"))
   {
     m_eventSource = jsonValue.GetString("eventSource");
-
     m_eventSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsRegion"))
   {
     m_awsRegion = jsonValue.GetString("awsRegion");
-
     m_awsRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dynamodb"))
   {
     m_dynamodb = jsonValue.GetObject("dynamodb");
-
     m_dynamodbHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userIdentity"))
   {
     m_userIdentity = jsonValue.GetObject("userIdentity");
-
     m_userIdentityHasBeenSet = true;
   }
-
   return *this;
 }
 

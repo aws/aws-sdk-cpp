@@ -12,15 +12,6 @@ using namespace Aws::LexModelsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartBotRecommendationRequest::StartBotRecommendationRequest() : 
-    m_botIdHasBeenSet(false),
-    m_botVersionHasBeenSet(false),
-    m_localeIdHasBeenSet(false),
-    m_transcriptSourceSettingHasBeenSet(false),
-    m_encryptionSettingHasBeenSet(false)
-{
-}
-
 Aws::String StartBotRecommendationRequest::SerializePayload() const
 {
   JsonValue payload;

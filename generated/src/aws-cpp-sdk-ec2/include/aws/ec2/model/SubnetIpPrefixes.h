@@ -32,7 +32,7 @@ namespace Model
   class SubnetIpPrefixes
   {
   public:
-    AWS_EC2_API SubnetIpPrefixes();
+    AWS_EC2_API SubnetIpPrefixes() = default;
     AWS_EC2_API SubnetIpPrefixes(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API SubnetIpPrefixes& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,29 +44,26 @@ namespace Model
     /**
      * <p>ID of the subnet.</p>
      */
-    inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
+    inline const Aws::String& GetSubnetId() const { return m_subnetId; }
     inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
-    inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
-    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
-    inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
-    inline SubnetIpPrefixes& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
-    inline SubnetIpPrefixes& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
-    inline SubnetIpPrefixes& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+    template<typename SubnetIdT = Aws::String>
+    void SetSubnetId(SubnetIdT&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::forward<SubnetIdT>(value); }
+    template<typename SubnetIdT = Aws::String>
+    SubnetIpPrefixes& WithSubnetId(SubnetIdT&& value) { SetSubnetId(std::forward<SubnetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Array of SubnetIpPrefixes objects.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetIpPrefixes() const{ return m_ipPrefixes; }
+    inline const Aws::Vector<Aws::String>& GetIpPrefixes() const { return m_ipPrefixes; }
     inline bool IpPrefixesHasBeenSet() const { return m_ipPrefixesHasBeenSet; }
-    inline void SetIpPrefixes(const Aws::Vector<Aws::String>& value) { m_ipPrefixesHasBeenSet = true; m_ipPrefixes = value; }
-    inline void SetIpPrefixes(Aws::Vector<Aws::String>&& value) { m_ipPrefixesHasBeenSet = true; m_ipPrefixes = std::move(value); }
-    inline SubnetIpPrefixes& WithIpPrefixes(const Aws::Vector<Aws::String>& value) { SetIpPrefixes(value); return *this;}
-    inline SubnetIpPrefixes& WithIpPrefixes(Aws::Vector<Aws::String>&& value) { SetIpPrefixes(std::move(value)); return *this;}
-    inline SubnetIpPrefixes& AddIpPrefixes(const Aws::String& value) { m_ipPrefixesHasBeenSet = true; m_ipPrefixes.push_back(value); return *this; }
-    inline SubnetIpPrefixes& AddIpPrefixes(Aws::String&& value) { m_ipPrefixesHasBeenSet = true; m_ipPrefixes.push_back(std::move(value)); return *this; }
-    inline SubnetIpPrefixes& AddIpPrefixes(const char* value) { m_ipPrefixesHasBeenSet = true; m_ipPrefixes.push_back(value); return *this; }
+    template<typename IpPrefixesT = Aws::Vector<Aws::String>>
+    void SetIpPrefixes(IpPrefixesT&& value) { m_ipPrefixesHasBeenSet = true; m_ipPrefixes = std::forward<IpPrefixesT>(value); }
+    template<typename IpPrefixesT = Aws::Vector<Aws::String>>
+    SubnetIpPrefixes& WithIpPrefixes(IpPrefixesT&& value) { SetIpPrefixes(std::forward<IpPrefixesT>(value)); return *this;}
+    template<typename IpPrefixesT = Aws::String>
+    SubnetIpPrefixes& AddIpPrefixes(IpPrefixesT&& value) { m_ipPrefixesHasBeenSet = true; m_ipPrefixes.emplace_back(std::forward<IpPrefixesT>(value)); return *this; }
     ///@}
   private:
 

@@ -12,18 +12,6 @@ using namespace Aws::CloudWatchRUM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAppMonitorRequest::UpdateAppMonitorRequest() : 
-    m_appMonitorConfigurationHasBeenSet(false),
-    m_customEventsHasBeenSet(false),
-    m_cwLogEnabled(false),
-    m_cwLogEnabledHasBeenSet(false),
-    m_deobfuscationConfigurationHasBeenSet(false),
-    m_domainHasBeenSet(false),
-    m_domainListHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAppMonitorRequest::SerializePayload() const
 {
   JsonValue payload;

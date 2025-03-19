@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ApplySecurityGroupsToClientVpnTargetNetworkResponse::ApplySecurityGroupsToClientVpnTargetNetworkResponse()
-{
-}
-
 ApplySecurityGroupsToClientVpnTargetNetworkResponse::ApplySecurityGroupsToClientVpnTargetNetworkResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ ApplySecurityGroupsToClientVpnTargetNetworkResponse& ApplySecurityGroupsToClient
     if(!securityGroupIdsNode.IsNull())
     {
       XmlNode securityGroupIdsMember = securityGroupIdsNode.FirstChild("item");
+      m_securityGroupIdsHasBeenSet = !securityGroupIdsMember.IsNull();
       while(!securityGroupIdsMember.IsNull())
       {
         m_securityGroupIds.push_back(securityGroupIdsMember.GetText());
         securityGroupIdsMember = securityGroupIdsMember.NextNode("item");
       }
 
+      m_securityGroupIdsHasBeenSet = true;
     }
   }
 
@@ -56,6 +54,7 @@ ApplySecurityGroupsToClientVpnTargetNetworkResponse& ApplySecurityGroupsToClient
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::ApplySecurityGroupsToClientVpnTargetNetworkResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

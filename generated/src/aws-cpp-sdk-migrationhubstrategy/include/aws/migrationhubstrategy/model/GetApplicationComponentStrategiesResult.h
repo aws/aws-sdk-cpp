@@ -29,7 +29,7 @@ namespace Model
   class GetApplicationComponentStrategiesResult
   {
   public:
-    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API GetApplicationComponentStrategiesResult();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API GetApplicationComponentStrategiesResult() = default;
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API GetApplicationComponentStrategiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API GetApplicationComponentStrategiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p> A list of application component strategy recommendations. </p>
      */
-    inline const Aws::Vector<ApplicationComponentStrategy>& GetApplicationComponentStrategies() const{ return m_applicationComponentStrategies; }
-    inline void SetApplicationComponentStrategies(const Aws::Vector<ApplicationComponentStrategy>& value) { m_applicationComponentStrategies = value; }
-    inline void SetApplicationComponentStrategies(Aws::Vector<ApplicationComponentStrategy>&& value) { m_applicationComponentStrategies = std::move(value); }
-    inline GetApplicationComponentStrategiesResult& WithApplicationComponentStrategies(const Aws::Vector<ApplicationComponentStrategy>& value) { SetApplicationComponentStrategies(value); return *this;}
-    inline GetApplicationComponentStrategiesResult& WithApplicationComponentStrategies(Aws::Vector<ApplicationComponentStrategy>&& value) { SetApplicationComponentStrategies(std::move(value)); return *this;}
-    inline GetApplicationComponentStrategiesResult& AddApplicationComponentStrategies(const ApplicationComponentStrategy& value) { m_applicationComponentStrategies.push_back(value); return *this; }
-    inline GetApplicationComponentStrategiesResult& AddApplicationComponentStrategies(ApplicationComponentStrategy&& value) { m_applicationComponentStrategies.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ApplicationComponentStrategy>& GetApplicationComponentStrategies() const { return m_applicationComponentStrategies; }
+    template<typename ApplicationComponentStrategiesT = Aws::Vector<ApplicationComponentStrategy>>
+    void SetApplicationComponentStrategies(ApplicationComponentStrategiesT&& value) { m_applicationComponentStrategiesHasBeenSet = true; m_applicationComponentStrategies = std::forward<ApplicationComponentStrategiesT>(value); }
+    template<typename ApplicationComponentStrategiesT = Aws::Vector<ApplicationComponentStrategy>>
+    GetApplicationComponentStrategiesResult& WithApplicationComponentStrategies(ApplicationComponentStrategiesT&& value) { SetApplicationComponentStrategies(std::forward<ApplicationComponentStrategiesT>(value)); return *this;}
+    template<typename ApplicationComponentStrategiesT = ApplicationComponentStrategy>
+    GetApplicationComponentStrategiesResult& AddApplicationComponentStrategies(ApplicationComponentStrategiesT&& value) { m_applicationComponentStrategiesHasBeenSet = true; m_applicationComponentStrategies.emplace_back(std::forward<ApplicationComponentStrategiesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetApplicationComponentStrategiesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetApplicationComponentStrategiesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetApplicationComponentStrategiesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetApplicationComponentStrategiesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ApplicationComponentStrategy> m_applicationComponentStrategies;
+    bool m_applicationComponentStrategiesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

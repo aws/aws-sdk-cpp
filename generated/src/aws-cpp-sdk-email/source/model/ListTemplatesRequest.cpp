@@ -10,13 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-ListTemplatesRequest::ListTemplatesRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false)
-{
-}
-
 Aws::String ListTemplatesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

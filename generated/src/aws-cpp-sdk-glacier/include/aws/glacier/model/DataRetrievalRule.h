@@ -31,7 +31,7 @@ namespace Model
   class DataRetrievalRule
   {
   public:
-    AWS_GLACIER_API DataRetrievalRule();
+    AWS_GLACIER_API DataRetrievalRule() = default;
     AWS_GLACIER_API DataRetrievalRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLACIER_API DataRetrievalRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLACIER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
      * <p>The type of data retrieval policy to set.</p> <p>Valid values:
      * BytesPerHour|FreeTier|None</p>
      */
-    inline const Aws::String& GetStrategy() const{ return m_strategy; }
+    inline const Aws::String& GetStrategy() const { return m_strategy; }
     inline bool StrategyHasBeenSet() const { return m_strategyHasBeenSet; }
-    inline void SetStrategy(const Aws::String& value) { m_strategyHasBeenSet = true; m_strategy = value; }
-    inline void SetStrategy(Aws::String&& value) { m_strategyHasBeenSet = true; m_strategy = std::move(value); }
-    inline void SetStrategy(const char* value) { m_strategyHasBeenSet = true; m_strategy.assign(value); }
-    inline DataRetrievalRule& WithStrategy(const Aws::String& value) { SetStrategy(value); return *this;}
-    inline DataRetrievalRule& WithStrategy(Aws::String&& value) { SetStrategy(std::move(value)); return *this;}
-    inline DataRetrievalRule& WithStrategy(const char* value) { SetStrategy(value); return *this;}
+    template<typename StrategyT = Aws::String>
+    void SetStrategy(StrategyT&& value) { m_strategyHasBeenSet = true; m_strategy = std::forward<StrategyT>(value); }
+    template<typename StrategyT = Aws::String>
+    DataRetrievalRule& WithStrategy(StrategyT&& value) { SetStrategy(std::forward<StrategyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,7 +57,7 @@ namespace Model
      * <code>BytesPerHour</code>. Your PUT operation will be rejected if the Strategy
      * field is not set to <code>BytesPerHour</code> and you set this field.</p>
      */
-    inline long long GetBytesPerHour() const{ return m_bytesPerHour; }
+    inline long long GetBytesPerHour() const { return m_bytesPerHour; }
     inline bool BytesPerHourHasBeenSet() const { return m_bytesPerHourHasBeenSet; }
     inline void SetBytesPerHour(long long value) { m_bytesPerHourHasBeenSet = true; m_bytesPerHour = value; }
     inline DataRetrievalRule& WithBytesPerHour(long long value) { SetBytesPerHour(value); return *this;}
@@ -69,7 +67,7 @@ namespace Model
     Aws::String m_strategy;
     bool m_strategyHasBeenSet = false;
 
-    long long m_bytesPerHour;
+    long long m_bytesPerHour{0};
     bool m_bytesPerHourHasBeenSet = false;
   };
 

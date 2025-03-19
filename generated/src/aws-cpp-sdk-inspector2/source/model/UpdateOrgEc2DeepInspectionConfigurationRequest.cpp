@@ -12,11 +12,6 @@ using namespace Aws::Inspector2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateOrgEc2DeepInspectionConfigurationRequest::UpdateOrgEc2DeepInspectionConfigurationRequest() : 
-    m_orgPackagePathsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateOrgEc2DeepInspectionConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

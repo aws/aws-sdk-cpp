@@ -18,15 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-SourceDetails::SourceDetails() : 
-    m_imageSourceDetailsHasBeenSet(false),
-    m_audioSourceDetailsHasBeenSet(false),
-    m_videoSourceDetailsHasBeenSet(false)
-{
-}
-
 SourceDetails::SourceDetails(JsonView jsonValue)
-  : SourceDetails()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ SourceDetails& SourceDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("imageSourceDetails"))
   {
     m_imageSourceDetails = jsonValue.GetObject("imageSourceDetails");
-
     m_imageSourceDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("audioSourceDetails"))
   {
     m_audioSourceDetails = jsonValue.GetObject("audioSourceDetails");
-
     m_audioSourceDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("videoSourceDetails"))
   {
     m_videoSourceDetails = jsonValue.GetObject("videoSourceDetails");
-
     m_videoSourceDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

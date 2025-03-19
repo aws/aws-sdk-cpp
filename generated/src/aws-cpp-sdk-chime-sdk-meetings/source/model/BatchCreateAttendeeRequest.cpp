@@ -12,12 +12,6 @@ using namespace Aws::ChimeSDKMeetings::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchCreateAttendeeRequest::BatchCreateAttendeeRequest() : 
-    m_meetingIdHasBeenSet(false),
-    m_attendeesHasBeenSet(false)
-{
-}
-
 Aws::String BatchCreateAttendeeRequest::SerializePayload() const
 {
   JsonValue payload;

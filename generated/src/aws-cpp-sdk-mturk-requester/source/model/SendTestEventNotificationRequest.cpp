@@ -12,13 +12,6 @@ using namespace Aws::MTurk::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SendTestEventNotificationRequest::SendTestEventNotificationRequest() : 
-    m_notificationHasBeenSet(false),
-    m_testEventType(EventType::NOT_SET),
-    m_testEventTypeHasBeenSet(false)
-{
-}
-
 Aws::String SendTestEventNotificationRequest::SerializePayload() const
 {
   JsonValue payload;

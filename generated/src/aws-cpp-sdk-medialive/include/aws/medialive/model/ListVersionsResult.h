@@ -34,7 +34,7 @@ namespace Model
   class ListVersionsResult
   {
   public:
-    AWS_MEDIALIVE_API ListVersionsResult();
+    AWS_MEDIALIVE_API ListVersionsResult() = default;
     AWS_MEDIALIVE_API ListVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIALIVE_API ListVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,30 +43,30 @@ namespace Model
     /**
      * List of engine versions that are available for this AWS account.
      */
-    inline const Aws::Vector<ChannelEngineVersionResponse>& GetVersions() const{ return m_versions; }
-    inline void SetVersions(const Aws::Vector<ChannelEngineVersionResponse>& value) { m_versions = value; }
-    inline void SetVersions(Aws::Vector<ChannelEngineVersionResponse>&& value) { m_versions = std::move(value); }
-    inline ListVersionsResult& WithVersions(const Aws::Vector<ChannelEngineVersionResponse>& value) { SetVersions(value); return *this;}
-    inline ListVersionsResult& WithVersions(Aws::Vector<ChannelEngineVersionResponse>&& value) { SetVersions(std::move(value)); return *this;}
-    inline ListVersionsResult& AddVersions(const ChannelEngineVersionResponse& value) { m_versions.push_back(value); return *this; }
-    inline ListVersionsResult& AddVersions(ChannelEngineVersionResponse&& value) { m_versions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ChannelEngineVersionResponse>& GetVersions() const { return m_versions; }
+    template<typename VersionsT = Aws::Vector<ChannelEngineVersionResponse>>
+    void SetVersions(VersionsT&& value) { m_versionsHasBeenSet = true; m_versions = std::forward<VersionsT>(value); }
+    template<typename VersionsT = Aws::Vector<ChannelEngineVersionResponse>>
+    ListVersionsResult& WithVersions(VersionsT&& value) { SetVersions(std::forward<VersionsT>(value)); return *this;}
+    template<typename VersionsT = ChannelEngineVersionResponse>
+    ListVersionsResult& AddVersions(VersionsT&& value) { m_versionsHasBeenSet = true; m_versions.emplace_back(std::forward<VersionsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListVersionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListVersionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListVersionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListVersionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ChannelEngineVersionResponse> m_versions;
+    bool m_versionsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,14 +18,7 @@ namespace MTurk
 namespace Model
 {
 
-ServiceFault::ServiceFault() : 
-    m_messageHasBeenSet(false),
-    m_turkErrorCodeHasBeenSet(false)
-{
-}
-
 ServiceFault::ServiceFault(JsonView jsonValue)
-  : ServiceFault()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ServiceFault& ServiceFault::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TurkErrorCode"))
   {
     m_turkErrorCode = jsonValue.GetString("TurkErrorCode");
-
     m_turkErrorCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

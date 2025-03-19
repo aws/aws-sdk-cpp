@@ -18,13 +18,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-PromptVariableValues::PromptVariableValues() : 
-    m_textHasBeenSet(false)
-{
-}
-
 PromptVariableValues::PromptVariableValues(JsonView jsonValue)
-  : PromptVariableValues()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PromptVariableValues& PromptVariableValues::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetString("text");
-
     m_textHasBeenSet = true;
   }
-
   return *this;
 }
 

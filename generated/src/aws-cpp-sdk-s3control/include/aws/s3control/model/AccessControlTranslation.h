@@ -32,7 +32,7 @@ namespace Model
   class AccessControlTranslation
   {
   public:
-    AWS_S3CONTROL_API AccessControlTranslation();
+    AWS_S3CONTROL_API AccessControlTranslation() = default;
     AWS_S3CONTROL_API AccessControlTranslation(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API AccessControlTranslation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,16 +43,14 @@ namespace Model
     /**
      * <p>Specifies the replica ownership.</p>
      */
-    inline const OwnerOverride& GetOwner() const{ return m_owner; }
+    inline OwnerOverride GetOwner() const { return m_owner; }
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
-    inline void SetOwner(const OwnerOverride& value) { m_ownerHasBeenSet = true; m_owner = value; }
-    inline void SetOwner(OwnerOverride&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
-    inline AccessControlTranslation& WithOwner(const OwnerOverride& value) { SetOwner(value); return *this;}
-    inline AccessControlTranslation& WithOwner(OwnerOverride&& value) { SetOwner(std::move(value)); return *this;}
+    inline void SetOwner(OwnerOverride value) { m_ownerHasBeenSet = true; m_owner = value; }
+    inline AccessControlTranslation& WithOwner(OwnerOverride value) { SetOwner(value); return *this;}
     ///@}
   private:
 
-    OwnerOverride m_owner;
+    OwnerOverride m_owner{OwnerOverride::NOT_SET};
     bool m_ownerHasBeenSet = false;
   };
 

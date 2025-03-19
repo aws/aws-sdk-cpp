@@ -33,7 +33,7 @@ namespace Model
   class InputFormatConfiguration
   {
   public:
-    AWS_FIREHOSE_API InputFormatConfiguration();
+    AWS_FIREHOSE_API InputFormatConfiguration() = default;
     AWS_FIREHOSE_API InputFormatConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API InputFormatConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * JSON SerDe or the OpenX JSON SerDe. If both are non-null, the server rejects the
      * request.</p>
      */
-    inline const Deserializer& GetDeserializer() const{ return m_deserializer; }
+    inline const Deserializer& GetDeserializer() const { return m_deserializer; }
     inline bool DeserializerHasBeenSet() const { return m_deserializerHasBeenSet; }
-    inline void SetDeserializer(const Deserializer& value) { m_deserializerHasBeenSet = true; m_deserializer = value; }
-    inline void SetDeserializer(Deserializer&& value) { m_deserializerHasBeenSet = true; m_deserializer = std::move(value); }
-    inline InputFormatConfiguration& WithDeserializer(const Deserializer& value) { SetDeserializer(value); return *this;}
-    inline InputFormatConfiguration& WithDeserializer(Deserializer&& value) { SetDeserializer(std::move(value)); return *this;}
+    template<typename DeserializerT = Deserializer>
+    void SetDeserializer(DeserializerT&& value) { m_deserializerHasBeenSet = true; m_deserializer = std::forward<DeserializerT>(value); }
+    template<typename DeserializerT = Deserializer>
+    InputFormatConfiguration& WithDeserializer(DeserializerT&& value) { SetDeserializer(std::forward<DeserializerT>(value)); return *this;}
     ///@}
   private:
 

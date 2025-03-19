@@ -18,13 +18,7 @@ namespace DLM
 namespace Model
 {
 
-CrossRegionCopyTarget::CrossRegionCopyTarget() : 
-    m_targetRegionHasBeenSet(false)
-{
-}
-
 CrossRegionCopyTarget::CrossRegionCopyTarget(JsonView jsonValue)
-  : CrossRegionCopyTarget()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CrossRegionCopyTarget& CrossRegionCopyTarget::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TargetRegion"))
   {
     m_targetRegion = jsonValue.GetString("TargetRegion");
-
     m_targetRegionHasBeenSet = true;
   }
-
   return *this;
 }
 

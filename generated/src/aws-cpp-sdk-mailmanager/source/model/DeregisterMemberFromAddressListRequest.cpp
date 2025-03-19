@@ -12,12 +12,6 @@ using namespace Aws::MailManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeregisterMemberFromAddressListRequest::DeregisterMemberFromAddressListRequest() : 
-    m_addressHasBeenSet(false),
-    m_addressListIdHasBeenSet(false)
-{
-}
-
 Aws::String DeregisterMemberFromAddressListRequest::SerializePayload() const
 {
   JsonValue payload;

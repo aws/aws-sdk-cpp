@@ -18,14 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-VirtualGatewayStatus::VirtualGatewayStatus() : 
-    m_status(VirtualGatewayStatusCode::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 VirtualGatewayStatus::VirtualGatewayStatus(JsonView jsonValue)
-  : VirtualGatewayStatus()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ VirtualGatewayStatus& VirtualGatewayStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("status"))
   {
     m_status = VirtualGatewayStatusCodeMapper::GetVirtualGatewayStatusCodeForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

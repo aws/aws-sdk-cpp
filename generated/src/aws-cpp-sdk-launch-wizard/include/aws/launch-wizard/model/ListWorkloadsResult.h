@@ -29,7 +29,7 @@ namespace Model
   class ListWorkloadsResult
   {
   public:
-    AWS_LAUNCHWIZARD_API ListWorkloadsResult();
+    AWS_LAUNCHWIZARD_API ListWorkloadsResult() = default;
     AWS_LAUNCHWIZARD_API ListWorkloadsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LAUNCHWIZARD_API ListWorkloadsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,44 @@ namespace Model
      * <p>The token to include in another request to get the next page of items. This
      * value is <code>null</code> when there are no more items to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListWorkloadsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListWorkloadsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListWorkloadsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListWorkloadsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the workloads.</p>
      */
-    inline const Aws::Vector<WorkloadDataSummary>& GetWorkloads() const{ return m_workloads; }
-    inline void SetWorkloads(const Aws::Vector<WorkloadDataSummary>& value) { m_workloads = value; }
-    inline void SetWorkloads(Aws::Vector<WorkloadDataSummary>&& value) { m_workloads = std::move(value); }
-    inline ListWorkloadsResult& WithWorkloads(const Aws::Vector<WorkloadDataSummary>& value) { SetWorkloads(value); return *this;}
-    inline ListWorkloadsResult& WithWorkloads(Aws::Vector<WorkloadDataSummary>&& value) { SetWorkloads(std::move(value)); return *this;}
-    inline ListWorkloadsResult& AddWorkloads(const WorkloadDataSummary& value) { m_workloads.push_back(value); return *this; }
-    inline ListWorkloadsResult& AddWorkloads(WorkloadDataSummary&& value) { m_workloads.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<WorkloadDataSummary>& GetWorkloads() const { return m_workloads; }
+    template<typename WorkloadsT = Aws::Vector<WorkloadDataSummary>>
+    void SetWorkloads(WorkloadsT&& value) { m_workloadsHasBeenSet = true; m_workloads = std::forward<WorkloadsT>(value); }
+    template<typename WorkloadsT = Aws::Vector<WorkloadDataSummary>>
+    ListWorkloadsResult& WithWorkloads(WorkloadsT&& value) { SetWorkloads(std::forward<WorkloadsT>(value)); return *this;}
+    template<typename WorkloadsT = WorkloadDataSummary>
+    ListWorkloadsResult& AddWorkloads(WorkloadsT&& value) { m_workloadsHasBeenSet = true; m_workloads.emplace_back(std::forward<WorkloadsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListWorkloadsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListWorkloadsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListWorkloadsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListWorkloadsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<WorkloadDataSummary> m_workloads;
+    bool m_workloadsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

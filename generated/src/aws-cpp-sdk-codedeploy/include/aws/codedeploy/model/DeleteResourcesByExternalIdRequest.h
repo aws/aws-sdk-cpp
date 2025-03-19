@@ -21,7 +21,7 @@ namespace Model
   class DeleteResourcesByExternalIdRequest : public CodeDeployRequest
   {
   public:
-    AWS_CODEDEPLOY_API DeleteResourcesByExternalIdRequest();
+    AWS_CODEDEPLOY_API DeleteResourcesByExternalIdRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The unique ID of an external resource (for example, a CloudFormation stack
      * ID) that is linked to one or more CodeDeploy resources.</p>
      */
-    inline const Aws::String& GetExternalId() const{ return m_externalId; }
+    inline const Aws::String& GetExternalId() const { return m_externalId; }
     inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
-    inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
-    inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
-    inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
-    inline DeleteResourcesByExternalIdRequest& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
-    inline DeleteResourcesByExternalIdRequest& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
-    inline DeleteResourcesByExternalIdRequest& WithExternalId(const char* value) { SetExternalId(value); return *this;}
+    template<typename ExternalIdT = Aws::String>
+    void SetExternalId(ExternalIdT&& value) { m_externalIdHasBeenSet = true; m_externalId = std::forward<ExternalIdT>(value); }
+    template<typename ExternalIdT = Aws::String>
+    DeleteResourcesByExternalIdRequest& WithExternalId(ExternalIdT&& value) { SetExternalId(std::forward<ExternalIdT>(value)); return *this;}
     ///@}
   private:
 

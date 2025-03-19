@@ -18,14 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-OutputChannelMapping::OutputChannelMapping() : 
-    m_inputChannelsHasBeenSet(false),
-    m_inputChannelsFineTuneHasBeenSet(false)
-{
-}
-
 OutputChannelMapping::OutputChannelMapping(JsonView jsonValue)
-  : OutputChannelMapping()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ OutputChannelMapping& OutputChannelMapping::operator =(JsonView jsonValue)
     }
     m_inputChannelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputChannelsFineTune"))
   {
     Aws::Utils::Array<JsonView> inputChannelsFineTuneJsonList = jsonValue.GetArray("inputChannelsFineTune");
@@ -51,7 +43,6 @@ OutputChannelMapping& OutputChannelMapping::operator =(JsonView jsonValue)
     }
     m_inputChannelsFineTuneHasBeenSet = true;
   }
-
   return *this;
 }
 

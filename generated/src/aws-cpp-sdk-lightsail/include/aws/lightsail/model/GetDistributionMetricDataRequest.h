@@ -26,7 +26,7 @@ namespace Model
   class GetDistributionMetricDataRequest : public LightsailRequest
   {
   public:
-    AWS_LIGHTSAIL_API GetDistributionMetricDataRequest();
+    AWS_LIGHTSAIL_API GetDistributionMetricDataRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * <code>GetDistributions</code> action to get a list of distribution names that
      * you can specify.</p>
      */
-    inline const Aws::String& GetDistributionName() const{ return m_distributionName; }
+    inline const Aws::String& GetDistributionName() const { return m_distributionName; }
     inline bool DistributionNameHasBeenSet() const { return m_distributionNameHasBeenSet; }
-    inline void SetDistributionName(const Aws::String& value) { m_distributionNameHasBeenSet = true; m_distributionName = value; }
-    inline void SetDistributionName(Aws::String&& value) { m_distributionNameHasBeenSet = true; m_distributionName = std::move(value); }
-    inline void SetDistributionName(const char* value) { m_distributionNameHasBeenSet = true; m_distributionName.assign(value); }
-    inline GetDistributionMetricDataRequest& WithDistributionName(const Aws::String& value) { SetDistributionName(value); return *this;}
-    inline GetDistributionMetricDataRequest& WithDistributionName(Aws::String&& value) { SetDistributionName(std::move(value)); return *this;}
-    inline GetDistributionMetricDataRequest& WithDistributionName(const char* value) { SetDistributionName(value); return *this;}
+    template<typename DistributionNameT = Aws::String>
+    void SetDistributionName(DistributionNameT&& value) { m_distributionNameHasBeenSet = true; m_distributionName = std::forward<DistributionNameT>(value); }
+    template<typename DistributionNameT = Aws::String>
+    GetDistributionMetricDataRequest& WithDistributionName(DistributionNameT&& value) { SetDistributionName(std::forward<DistributionNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,12 +89,10 @@ namespace Model
      * statistic is <code>Average</code>.</p> <p> <code>Unit</code>: The published unit
      * is <code>Percent</code>.</p> </li> </ul>
      */
-    inline const DistributionMetricName& GetMetricName() const{ return m_metricName; }
+    inline DistributionMetricName GetMetricName() const { return m_metricName; }
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
-    inline void SetMetricName(const DistributionMetricName& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
-    inline void SetMetricName(DistributionMetricName&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
-    inline GetDistributionMetricDataRequest& WithMetricName(const DistributionMetricName& value) { SetMetricName(value); return *this;}
-    inline GetDistributionMetricDataRequest& WithMetricName(DistributionMetricName&& value) { SetMetricName(std::move(value)); return *this;}
+    inline void SetMetricName(DistributionMetricName value) { m_metricNameHasBeenSet = true; m_metricName = value; }
+    inline GetDistributionMetricDataRequest& WithMetricName(DistributionMetricName value) { SetMetricName(value); return *this;}
     ///@}
 
     ///@{
@@ -109,12 +105,12 @@ namespace Model
      * human-friendly time to Unix time format using a converter like <a
      * href="https://www.epochconverter.com/">Epoch converter</a>.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline GetDistributionMetricDataRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline GetDistributionMetricDataRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    GetDistributionMetricDataRequest& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -127,12 +123,12 @@ namespace Model
      * human-friendly time to Unix time format using a converter like <a
      * href="https://www.epochconverter.com/">Epoch converter</a>.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline GetDistributionMetricDataRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline GetDistributionMetricDataRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    GetDistributionMetricDataRequest& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -140,7 +136,7 @@ namespace Model
      * <p>The granularity, in seconds, for the metric data points that will be
      * returned.</p>
      */
-    inline int GetPeriod() const{ return m_period; }
+    inline int GetPeriod() const { return m_period; }
     inline bool PeriodHasBeenSet() const { return m_periodHasBeenSet; }
     inline void SetPeriod(int value) { m_periodHasBeenSet = true; m_period = value; }
     inline GetDistributionMetricDataRequest& WithPeriod(int value) { SetPeriod(value); return *this;}
@@ -152,12 +148,10 @@ namespace Model
      * data being requested. For the valid units with each available metric, see the
      * <code>metricName</code> parameter.</p>
      */
-    inline const MetricUnit& GetUnit() const{ return m_unit; }
+    inline MetricUnit GetUnit() const { return m_unit; }
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-    inline void SetUnit(const MetricUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
-    inline void SetUnit(MetricUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-    inline GetDistributionMetricDataRequest& WithUnit(const MetricUnit& value) { SetUnit(value); return *this;}
-    inline GetDistributionMetricDataRequest& WithUnit(MetricUnit&& value) { SetUnit(std::move(value)); return *this;}
+    inline void SetUnit(MetricUnit value) { m_unitHasBeenSet = true; m_unit = value; }
+    inline GetDistributionMetricDataRequest& WithUnit(MetricUnit value) { SetUnit(value); return *this;}
     ///@}
 
     ///@{
@@ -178,33 +172,32 @@ namespace Model
      * count, or number, of data points used for the statistical calculation.</p> </li>
      * </ul>
      */
-    inline const Aws::Vector<MetricStatistic>& GetStatistics() const{ return m_statistics; }
+    inline const Aws::Vector<MetricStatistic>& GetStatistics() const { return m_statistics; }
     inline bool StatisticsHasBeenSet() const { return m_statisticsHasBeenSet; }
-    inline void SetStatistics(const Aws::Vector<MetricStatistic>& value) { m_statisticsHasBeenSet = true; m_statistics = value; }
-    inline void SetStatistics(Aws::Vector<MetricStatistic>&& value) { m_statisticsHasBeenSet = true; m_statistics = std::move(value); }
-    inline GetDistributionMetricDataRequest& WithStatistics(const Aws::Vector<MetricStatistic>& value) { SetStatistics(value); return *this;}
-    inline GetDistributionMetricDataRequest& WithStatistics(Aws::Vector<MetricStatistic>&& value) { SetStatistics(std::move(value)); return *this;}
-    inline GetDistributionMetricDataRequest& AddStatistics(const MetricStatistic& value) { m_statisticsHasBeenSet = true; m_statistics.push_back(value); return *this; }
-    inline GetDistributionMetricDataRequest& AddStatistics(MetricStatistic&& value) { m_statisticsHasBeenSet = true; m_statistics.push_back(std::move(value)); return *this; }
+    template<typename StatisticsT = Aws::Vector<MetricStatistic>>
+    void SetStatistics(StatisticsT&& value) { m_statisticsHasBeenSet = true; m_statistics = std::forward<StatisticsT>(value); }
+    template<typename StatisticsT = Aws::Vector<MetricStatistic>>
+    GetDistributionMetricDataRequest& WithStatistics(StatisticsT&& value) { SetStatistics(std::forward<StatisticsT>(value)); return *this;}
+    inline GetDistributionMetricDataRequest& AddStatistics(MetricStatistic value) { m_statisticsHasBeenSet = true; m_statistics.push_back(value); return *this; }
     ///@}
   private:
 
     Aws::String m_distributionName;
     bool m_distributionNameHasBeenSet = false;
 
-    DistributionMetricName m_metricName;
+    DistributionMetricName m_metricName{DistributionMetricName::NOT_SET};
     bool m_metricNameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
 
-    int m_period;
+    int m_period{0};
     bool m_periodHasBeenSet = false;
 
-    MetricUnit m_unit;
+    MetricUnit m_unit{MetricUnit::NOT_SET};
     bool m_unitHasBeenSet = false;
 
     Aws::Vector<MetricStatistic> m_statistics;

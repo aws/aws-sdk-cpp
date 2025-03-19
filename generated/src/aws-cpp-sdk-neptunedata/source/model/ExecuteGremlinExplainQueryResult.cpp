@@ -16,29 +16,6 @@ using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ExecuteGremlinExplainQueryResult::ExecuteGremlinExplainQueryResult()
-{
-}
-
-ExecuteGremlinExplainQueryResult::ExecuteGremlinExplainQueryResult(ExecuteGremlinExplainQueryResult&& toMove) : 
-    m_output(std::move(toMove.m_output)),
-    m_requestId(std::move(toMove.m_requestId))
-{
-}
-
-ExecuteGremlinExplainQueryResult& ExecuteGremlinExplainQueryResult::operator=(ExecuteGremlinExplainQueryResult&& toMove)
-{
-   if(this == &toMove)
-   {
-      return *this;
-   }
-
-   m_output = std::move(toMove.m_output);
-   m_requestId = std::move(toMove.m_requestId);
-
-   return *this;
-}
-
 ExecuteGremlinExplainQueryResult::ExecuteGremlinExplainQueryResult(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   *this = std::move(result);
@@ -47,12 +24,14 @@ ExecuteGremlinExplainQueryResult::ExecuteGremlinExplainQueryResult(Aws::AmazonWe
 ExecuteGremlinExplainQueryResult& ExecuteGremlinExplainQueryResult::operator =(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   m_output = result.TakeOwnershipOfPayload();
+  m_outputHasBeenSet = true;
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
    return *this;

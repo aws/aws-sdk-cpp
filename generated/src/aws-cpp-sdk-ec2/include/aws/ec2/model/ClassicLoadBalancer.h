@@ -31,7 +31,7 @@ namespace Model
   class ClassicLoadBalancer
   {
   public:
-    AWS_EC2_API ClassicLoadBalancer();
+    AWS_EC2_API ClassicLoadBalancer() = default;
     AWS_EC2_API ClassicLoadBalancer(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API ClassicLoadBalancer& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The name of the load balancer.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ClassicLoadBalancer& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ClassicLoadBalancer& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ClassicLoadBalancer& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ClassicLoadBalancer& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 

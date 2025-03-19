@@ -35,7 +35,7 @@ namespace Model
   class VersioningConfiguration
   {
   public:
-    AWS_S3CRT_API VersioningConfiguration();
+    AWS_S3CRT_API VersioningConfiguration() = default;
     AWS_S3CRT_API VersioningConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CRT_API VersioningConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -49,31 +49,27 @@ namespace Model
      * with MFA delete. If the bucket has never been so configured, this element is not
      * returned.</p>
      */
-    inline const MFADelete& GetMFADelete() const{ return m_mFADelete; }
+    inline MFADelete GetMFADelete() const { return m_mFADelete; }
     inline bool MFADeleteHasBeenSet() const { return m_mFADeleteHasBeenSet; }
-    inline void SetMFADelete(const MFADelete& value) { m_mFADeleteHasBeenSet = true; m_mFADelete = value; }
-    inline void SetMFADelete(MFADelete&& value) { m_mFADeleteHasBeenSet = true; m_mFADelete = std::move(value); }
-    inline VersioningConfiguration& WithMFADelete(const MFADelete& value) { SetMFADelete(value); return *this;}
-    inline VersioningConfiguration& WithMFADelete(MFADelete&& value) { SetMFADelete(std::move(value)); return *this;}
+    inline void SetMFADelete(MFADelete value) { m_mFADeleteHasBeenSet = true; m_mFADelete = value; }
+    inline VersioningConfiguration& WithMFADelete(MFADelete value) { SetMFADelete(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The versioning state of the bucket.</p>
      */
-    inline const BucketVersioningStatus& GetStatus() const{ return m_status; }
+    inline BucketVersioningStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const BucketVersioningStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(BucketVersioningStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline VersioningConfiguration& WithStatus(const BucketVersioningStatus& value) { SetStatus(value); return *this;}
-    inline VersioningConfiguration& WithStatus(BucketVersioningStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(BucketVersioningStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline VersioningConfiguration& WithStatus(BucketVersioningStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    MFADelete m_mFADelete;
+    MFADelete m_mFADelete{MFADelete::NOT_SET};
     bool m_mFADeleteHasBeenSet = false;
 
-    BucketVersioningStatus m_status;
+    BucketVersioningStatus m_status{BucketVersioningStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

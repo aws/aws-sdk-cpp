@@ -18,15 +18,7 @@ namespace Glue
 namespace Model
 {
 
-SortCriterion::SortCriterion() : 
-    m_fieldNameHasBeenSet(false),
-    m_sort(Sort::NOT_SET),
-    m_sortHasBeenSet(false)
-{
-}
-
 SortCriterion::SortCriterion(JsonView jsonValue)
-  : SortCriterion()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SortCriterion& SortCriterion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FieldName"))
   {
     m_fieldName = jsonValue.GetString("FieldName");
-
     m_fieldNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Sort"))
   {
     m_sort = SortMapper::GetSortForName(jsonValue.GetString("Sort"));
-
     m_sortHasBeenSet = true;
   }
-
   return *this;
 }
 

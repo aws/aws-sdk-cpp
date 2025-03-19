@@ -29,7 +29,7 @@ namespace Model
   class RetryPolicy
   {
   public:
-    AWS_EMRSERVERLESS_API RetryPolicy();
+    AWS_EMRSERVERLESS_API RetryPolicy() = default;
     AWS_EMRSERVERLESS_API RetryPolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRSERVERLESS_API RetryPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
      * <p>Maximum number of attempts for the job run. This parameter is only applicable
      * for <code>BATCH</code> mode.</p>
      */
-    inline int GetMaxAttempts() const{ return m_maxAttempts; }
+    inline int GetMaxAttempts() const { return m_maxAttempts; }
     inline bool MaxAttemptsHasBeenSet() const { return m_maxAttemptsHasBeenSet; }
     inline void SetMaxAttempts(int value) { m_maxAttemptsHasBeenSet = true; m_maxAttempts = value; }
     inline RetryPolicy& WithMaxAttempts(int value) { SetMaxAttempts(value); return *this;}
@@ -51,17 +51,17 @@ namespace Model
      * <p>Maximum number of failed attempts per hour. This [arameter is only applicable
      * for <code>STREAMING</code> mode.</p>
      */
-    inline int GetMaxFailedAttemptsPerHour() const{ return m_maxFailedAttemptsPerHour; }
+    inline int GetMaxFailedAttemptsPerHour() const { return m_maxFailedAttemptsPerHour; }
     inline bool MaxFailedAttemptsPerHourHasBeenSet() const { return m_maxFailedAttemptsPerHourHasBeenSet; }
     inline void SetMaxFailedAttemptsPerHour(int value) { m_maxFailedAttemptsPerHourHasBeenSet = true; m_maxFailedAttemptsPerHour = value; }
     inline RetryPolicy& WithMaxFailedAttemptsPerHour(int value) { SetMaxFailedAttemptsPerHour(value); return *this;}
     ///@}
   private:
 
-    int m_maxAttempts;
+    int m_maxAttempts{0};
     bool m_maxAttemptsHasBeenSet = false;
 
-    int m_maxFailedAttemptsPerHour;
+    int m_maxFailedAttemptsPerHour{0};
     bool m_maxFailedAttemptsPerHourHasBeenSet = false;
   };
 

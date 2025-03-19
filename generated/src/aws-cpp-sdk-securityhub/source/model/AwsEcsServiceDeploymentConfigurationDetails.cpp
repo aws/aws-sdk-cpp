@@ -18,17 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEcsServiceDeploymentConfigurationDetails::AwsEcsServiceDeploymentConfigurationDetails() : 
-    m_deploymentCircuitBreakerHasBeenSet(false),
-    m_maximumPercent(0),
-    m_maximumPercentHasBeenSet(false),
-    m_minimumHealthyPercent(0),
-    m_minimumHealthyPercentHasBeenSet(false)
-{
-}
-
 AwsEcsServiceDeploymentConfigurationDetails::AwsEcsServiceDeploymentConfigurationDetails(JsonView jsonValue)
-  : AwsEcsServiceDeploymentConfigurationDetails()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ AwsEcsServiceDeploymentConfigurationDetails& AwsEcsServiceDeploymentConfiguratio
   if(jsonValue.ValueExists("DeploymentCircuitBreaker"))
   {
     m_deploymentCircuitBreaker = jsonValue.GetObject("DeploymentCircuitBreaker");
-
     m_deploymentCircuitBreakerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaximumPercent"))
   {
     m_maximumPercent = jsonValue.GetInteger("MaximumPercent");
-
     m_maximumPercentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinimumHealthyPercent"))
   {
     m_minimumHealthyPercent = jsonValue.GetInteger("MinimumHealthyPercent");
-
     m_minimumHealthyPercentHasBeenSet = true;
   }
-
   return *this;
 }
 

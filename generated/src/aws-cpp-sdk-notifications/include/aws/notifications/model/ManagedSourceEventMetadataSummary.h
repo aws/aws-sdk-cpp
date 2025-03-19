@@ -32,7 +32,7 @@ namespace Model
   class ManagedSourceEventMetadataSummary
   {
   public:
-    AWS_NOTIFICATIONS_API ManagedSourceEventMetadataSummary();
+    AWS_NOTIFICATIONS_API ManagedSourceEventMetadataSummary() = default;
     AWS_NOTIFICATIONS_API ManagedSourceEventMetadataSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_NOTIFICATIONS_API ManagedSourceEventMetadataSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NOTIFICATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The Region where the notification originated.</p>
      */
-    inline const Aws::String& GetEventOriginRegion() const{ return m_eventOriginRegion; }
+    inline const Aws::String& GetEventOriginRegion() const { return m_eventOriginRegion; }
     inline bool EventOriginRegionHasBeenSet() const { return m_eventOriginRegionHasBeenSet; }
-    inline void SetEventOriginRegion(const Aws::String& value) { m_eventOriginRegionHasBeenSet = true; m_eventOriginRegion = value; }
-    inline void SetEventOriginRegion(Aws::String&& value) { m_eventOriginRegionHasBeenSet = true; m_eventOriginRegion = std::move(value); }
-    inline void SetEventOriginRegion(const char* value) { m_eventOriginRegionHasBeenSet = true; m_eventOriginRegion.assign(value); }
-    inline ManagedSourceEventMetadataSummary& WithEventOriginRegion(const Aws::String& value) { SetEventOriginRegion(value); return *this;}
-    inline ManagedSourceEventMetadataSummary& WithEventOriginRegion(Aws::String&& value) { SetEventOriginRegion(std::move(value)); return *this;}
-    inline ManagedSourceEventMetadataSummary& WithEventOriginRegion(const char* value) { SetEventOriginRegion(value); return *this;}
+    template<typename EventOriginRegionT = Aws::String>
+    void SetEventOriginRegion(EventOriginRegionT&& value) { m_eventOriginRegionHasBeenSet = true; m_eventOriginRegion = std::forward<EventOriginRegionT>(value); }
+    template<typename EventOriginRegionT = Aws::String>
+    ManagedSourceEventMetadataSummary& WithEventOriginRegion(EventOriginRegionT&& value) { SetEventOriginRegion(std::forward<EventOriginRegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,28 +60,24 @@ namespace Model
      * delivery from Amazon Web Services services</a> in the <i>Amazon EventBridge User
      * Guide</i>.</p>
      */
-    inline const Aws::String& GetSource() const{ return m_source; }
+    inline const Aws::String& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
-    inline ManagedSourceEventMetadataSummary& WithSource(const Aws::String& value) { SetSource(value); return *this;}
-    inline ManagedSourceEventMetadataSummary& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
-    inline ManagedSourceEventMetadataSummary& WithSource(const char* value) { SetSource(value); return *this;}
+    template<typename SourceT = Aws::String>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = Aws::String>
+    ManagedSourceEventMetadataSummary& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The event Type of the notification.</p>
      */
-    inline const Aws::String& GetEventType() const{ return m_eventType; }
+    inline const Aws::String& GetEventType() const { return m_eventType; }
     inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
-    inline void SetEventType(const Aws::String& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
-    inline void SetEventType(Aws::String&& value) { m_eventTypeHasBeenSet = true; m_eventType = std::move(value); }
-    inline void SetEventType(const char* value) { m_eventTypeHasBeenSet = true; m_eventType.assign(value); }
-    inline ManagedSourceEventMetadataSummary& WithEventType(const Aws::String& value) { SetEventType(value); return *this;}
-    inline ManagedSourceEventMetadataSummary& WithEventType(Aws::String&& value) { SetEventType(std::move(value)); return *this;}
-    inline ManagedSourceEventMetadataSummary& WithEventType(const char* value) { SetEventType(value); return *this;}
+    template<typename EventTypeT = Aws::String>
+    void SetEventType(EventTypeT&& value) { m_eventTypeHasBeenSet = true; m_eventType = std::forward<EventTypeT>(value); }
+    template<typename EventTypeT = Aws::String>
+    ManagedSourceEventMetadataSummary& WithEventType(EventTypeT&& value) { SetEventType(std::forward<EventTypeT>(value)); return *this;}
     ///@}
   private:
 

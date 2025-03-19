@@ -18,16 +18,7 @@ namespace drs
 namespace Model
 {
 
-SourceCloudProperties::SourceCloudProperties() : 
-    m_originAccountIDHasBeenSet(false),
-    m_originAvailabilityZoneHasBeenSet(false),
-    m_originRegionHasBeenSet(false),
-    m_sourceOutpostArnHasBeenSet(false)
-{
-}
-
 SourceCloudProperties::SourceCloudProperties(JsonView jsonValue)
-  : SourceCloudProperties()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ SourceCloudProperties& SourceCloudProperties::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("originAccountID"))
   {
     m_originAccountID = jsonValue.GetString("originAccountID");
-
     m_originAccountIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("originAvailabilityZone"))
   {
     m_originAvailabilityZone = jsonValue.GetString("originAvailabilityZone");
-
     m_originAvailabilityZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("originRegion"))
   {
     m_originRegion = jsonValue.GetString("originRegion");
-
     m_originRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceOutpostArn"))
   {
     m_sourceOutpostArn = jsonValue.GetString("sourceOutpostArn");
-
     m_sourceOutpostArnHasBeenSet = true;
   }
-
   return *this;
 }
 

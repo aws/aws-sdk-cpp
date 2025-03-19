@@ -32,7 +32,7 @@ namespace Model
   class SavingsPlanRateProperty
   {
   public:
-    AWS_SAVINGSPLANS_API SavingsPlanRateProperty();
+    AWS_SAVINGSPLANS_API SavingsPlanRateProperty() = default;
     AWS_SAVINGSPLANS_API SavingsPlanRateProperty(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAVINGSPLANS_API SavingsPlanRateProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAVINGSPLANS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,30 +42,26 @@ namespace Model
     /**
      * <p>The property name.</p>
      */
-    inline const SavingsPlanRatePropertyKey& GetName() const{ return m_name; }
+    inline SavingsPlanRatePropertyKey GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const SavingsPlanRatePropertyKey& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(SavingsPlanRatePropertyKey&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline SavingsPlanRateProperty& WithName(const SavingsPlanRatePropertyKey& value) { SetName(value); return *this;}
-    inline SavingsPlanRateProperty& WithName(SavingsPlanRatePropertyKey&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(SavingsPlanRatePropertyKey value) { m_nameHasBeenSet = true; m_name = value; }
+    inline SavingsPlanRateProperty& WithName(SavingsPlanRatePropertyKey value) { SetName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The property value.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline SavingsPlanRateProperty& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline SavingsPlanRateProperty& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline SavingsPlanRateProperty& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    SavingsPlanRateProperty& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
-    SavingsPlanRatePropertyKey m_name;
+    SavingsPlanRatePropertyKey m_name{SavingsPlanRatePropertyKey::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::String m_value;

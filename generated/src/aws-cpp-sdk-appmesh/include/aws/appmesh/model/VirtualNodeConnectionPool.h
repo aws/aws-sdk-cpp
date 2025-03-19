@@ -38,7 +38,7 @@ namespace Model
   class VirtualNodeConnectionPool
   {
   public:
-    AWS_APPMESH_API VirtualNodeConnectionPool();
+    AWS_APPMESH_API VirtualNodeConnectionPool() = default;
     AWS_APPMESH_API VirtualNodeConnectionPool(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API VirtualNodeConnectionPool& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,48 +48,48 @@ namespace Model
     /**
      * <p>An object that represents a type of connection pool.</p>
      */
-    inline const VirtualNodeGrpcConnectionPool& GetGrpc() const{ return m_grpc; }
+    inline const VirtualNodeGrpcConnectionPool& GetGrpc() const { return m_grpc; }
     inline bool GrpcHasBeenSet() const { return m_grpcHasBeenSet; }
-    inline void SetGrpc(const VirtualNodeGrpcConnectionPool& value) { m_grpcHasBeenSet = true; m_grpc = value; }
-    inline void SetGrpc(VirtualNodeGrpcConnectionPool&& value) { m_grpcHasBeenSet = true; m_grpc = std::move(value); }
-    inline VirtualNodeConnectionPool& WithGrpc(const VirtualNodeGrpcConnectionPool& value) { SetGrpc(value); return *this;}
-    inline VirtualNodeConnectionPool& WithGrpc(VirtualNodeGrpcConnectionPool&& value) { SetGrpc(std::move(value)); return *this;}
+    template<typename GrpcT = VirtualNodeGrpcConnectionPool>
+    void SetGrpc(GrpcT&& value) { m_grpcHasBeenSet = true; m_grpc = std::forward<GrpcT>(value); }
+    template<typename GrpcT = VirtualNodeGrpcConnectionPool>
+    VirtualNodeConnectionPool& WithGrpc(GrpcT&& value) { SetGrpc(std::forward<GrpcT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An object that represents a type of connection pool.</p>
      */
-    inline const VirtualNodeHttpConnectionPool& GetHttp() const{ return m_http; }
+    inline const VirtualNodeHttpConnectionPool& GetHttp() const { return m_http; }
     inline bool HttpHasBeenSet() const { return m_httpHasBeenSet; }
-    inline void SetHttp(const VirtualNodeHttpConnectionPool& value) { m_httpHasBeenSet = true; m_http = value; }
-    inline void SetHttp(VirtualNodeHttpConnectionPool&& value) { m_httpHasBeenSet = true; m_http = std::move(value); }
-    inline VirtualNodeConnectionPool& WithHttp(const VirtualNodeHttpConnectionPool& value) { SetHttp(value); return *this;}
-    inline VirtualNodeConnectionPool& WithHttp(VirtualNodeHttpConnectionPool&& value) { SetHttp(std::move(value)); return *this;}
+    template<typename HttpT = VirtualNodeHttpConnectionPool>
+    void SetHttp(HttpT&& value) { m_httpHasBeenSet = true; m_http = std::forward<HttpT>(value); }
+    template<typename HttpT = VirtualNodeHttpConnectionPool>
+    VirtualNodeConnectionPool& WithHttp(HttpT&& value) { SetHttp(std::forward<HttpT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An object that represents a type of connection pool.</p>
      */
-    inline const VirtualNodeHttp2ConnectionPool& GetHttp2() const{ return m_http2; }
+    inline const VirtualNodeHttp2ConnectionPool& GetHttp2() const { return m_http2; }
     inline bool Http2HasBeenSet() const { return m_http2HasBeenSet; }
-    inline void SetHttp2(const VirtualNodeHttp2ConnectionPool& value) { m_http2HasBeenSet = true; m_http2 = value; }
-    inline void SetHttp2(VirtualNodeHttp2ConnectionPool&& value) { m_http2HasBeenSet = true; m_http2 = std::move(value); }
-    inline VirtualNodeConnectionPool& WithHttp2(const VirtualNodeHttp2ConnectionPool& value) { SetHttp2(value); return *this;}
-    inline VirtualNodeConnectionPool& WithHttp2(VirtualNodeHttp2ConnectionPool&& value) { SetHttp2(std::move(value)); return *this;}
+    template<typename Http2T = VirtualNodeHttp2ConnectionPool>
+    void SetHttp2(Http2T&& value) { m_http2HasBeenSet = true; m_http2 = std::forward<Http2T>(value); }
+    template<typename Http2T = VirtualNodeHttp2ConnectionPool>
+    VirtualNodeConnectionPool& WithHttp2(Http2T&& value) { SetHttp2(std::forward<Http2T>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An object that represents a type of connection pool.</p>
      */
-    inline const VirtualNodeTcpConnectionPool& GetTcp() const{ return m_tcp; }
+    inline const VirtualNodeTcpConnectionPool& GetTcp() const { return m_tcp; }
     inline bool TcpHasBeenSet() const { return m_tcpHasBeenSet; }
-    inline void SetTcp(const VirtualNodeTcpConnectionPool& value) { m_tcpHasBeenSet = true; m_tcp = value; }
-    inline void SetTcp(VirtualNodeTcpConnectionPool&& value) { m_tcpHasBeenSet = true; m_tcp = std::move(value); }
-    inline VirtualNodeConnectionPool& WithTcp(const VirtualNodeTcpConnectionPool& value) { SetTcp(value); return *this;}
-    inline VirtualNodeConnectionPool& WithTcp(VirtualNodeTcpConnectionPool&& value) { SetTcp(std::move(value)); return *this;}
+    template<typename TcpT = VirtualNodeTcpConnectionPool>
+    void SetTcp(TcpT&& value) { m_tcpHasBeenSet = true; m_tcp = std::forward<TcpT>(value); }
+    template<typename TcpT = VirtualNodeTcpConnectionPool>
+    VirtualNodeConnectionPool& WithTcp(TcpT&& value) { SetTcp(std::forward<TcpT>(value)); return *this;}
     ///@}
   private:
 

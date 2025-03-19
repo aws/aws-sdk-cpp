@@ -32,7 +32,7 @@ namespace Model
   class Ebs
   {
   public:
-    AWS_AUTOSCALING_API Ebs();
+    AWS_AUTOSCALING_API Ebs() = default;
     AWS_AUTOSCALING_API Ebs(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_AUTOSCALING_API Ebs& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,14 +45,12 @@ namespace Model
      * <p>The snapshot ID of the volume to use.</p> <p>You must specify either a
      * <code>VolumeSize</code> or a <code>SnapshotId</code>.</p>
      */
-    inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
+    inline const Aws::String& GetSnapshotId() const { return m_snapshotId; }
     inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
-    inline void SetSnapshotId(const Aws::String& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
-    inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
-    inline void SetSnapshotId(const char* value) { m_snapshotIdHasBeenSet = true; m_snapshotId.assign(value); }
-    inline Ebs& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
-    inline Ebs& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
-    inline Ebs& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
+    template<typename SnapshotIdT = Aws::String>
+    void SetSnapshotId(SnapshotIdT&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::forward<SnapshotIdT>(value); }
+    template<typename SnapshotIdT = Aws::String>
+    Ebs& WithSnapshotId(SnapshotIdT&& value) { SetSnapshotId(std::forward<SnapshotIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,7 +64,7 @@ namespace Model
      * <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be
      * equal or greater than the size of the snapshot.</p>
      */
-    inline int GetVolumeSize() const{ return m_volumeSize; }
+    inline int GetVolumeSize() const { return m_volumeSize; }
     inline bool VolumeSizeHasBeenSet() const { return m_volumeSizeHasBeenSet; }
     inline void SetVolumeSize(int value) { m_volumeSizeHasBeenSet = true; m_volumeSize = value; }
     inline Ebs& WithVolumeSize(int value) { SetVolumeSize(value); return *this;}
@@ -80,14 +78,12 @@ namespace Model
      * <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> |
      * <code>sc1</code> | <code>gp3</code> </p>
      */
-    inline const Aws::String& GetVolumeType() const{ return m_volumeType; }
+    inline const Aws::String& GetVolumeType() const { return m_volumeType; }
     inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
-    inline void SetVolumeType(const Aws::String& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
-    inline void SetVolumeType(Aws::String&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
-    inline void SetVolumeType(const char* value) { m_volumeTypeHasBeenSet = true; m_volumeType.assign(value); }
-    inline Ebs& WithVolumeType(const Aws::String& value) { SetVolumeType(value); return *this;}
-    inline Ebs& WithVolumeType(Aws::String&& value) { SetVolumeType(std::move(value)); return *this;}
-    inline Ebs& WithVolumeType(const char* value) { SetVolumeType(value); return *this;}
+    template<typename VolumeTypeT = Aws::String>
+    void SetVolumeType(VolumeTypeT&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::forward<VolumeTypeT>(value); }
+    template<typename VolumeTypeT = Aws::String>
+    Ebs& WithVolumeType(VolumeTypeT&& value) { SetVolumeType(std::forward<VolumeTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,7 +91,7 @@ namespace Model
      * <p>Indicates whether the volume is deleted on instance termination. For Amazon
      * EC2 Auto Scaling, the default value is <code>true</code>.</p>
      */
-    inline bool GetDeleteOnTermination() const{ return m_deleteOnTermination; }
+    inline bool GetDeleteOnTermination() const { return m_deleteOnTermination; }
     inline bool DeleteOnTerminationHasBeenSet() const { return m_deleteOnTerminationHasBeenSet; }
     inline void SetDeleteOnTermination(bool value) { m_deleteOnTerminationHasBeenSet = true; m_deleteOnTermination = value; }
     inline Ebs& WithDeleteOnTermination(bool value) { SetDeleteOnTermination(value); return *this;}
@@ -119,7 +115,7 @@ namespace Model
      * when the volume type is <code>io1</code>. (Not used with <code>standard</code>,
      * <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.) </p>
      */
-    inline int GetIops() const{ return m_iops; }
+    inline int GetIops() const { return m_iops; }
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
     inline Ebs& WithIops(int value) { SetIops(value); return *this;}
@@ -144,7 +140,7 @@ namespace Model
      * Amazon Web Services KMS keys to encrypt Amazon EBS volumes</a> in the <i>Amazon
      * EC2 Auto Scaling User Guide</i>.</p> 
      */
-    inline bool GetEncrypted() const{ return m_encrypted; }
+    inline bool GetEncrypted() const { return m_encrypted; }
     inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
     inline Ebs& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
@@ -154,7 +150,7 @@ namespace Model
     /**
      * <p>The throughput (MiBps) to provision for a <code>gp3</code> volume.</p>
      */
-    inline int GetThroughput() const{ return m_throughput; }
+    inline int GetThroughput() const { return m_throughput; }
     inline bool ThroughputHasBeenSet() const { return m_throughputHasBeenSet; }
     inline void SetThroughput(int value) { m_throughputHasBeenSet = true; m_throughput = value; }
     inline Ebs& WithThroughput(int value) { SetThroughput(value); return *this;}
@@ -164,22 +160,22 @@ namespace Model
     Aws::String m_snapshotId;
     bool m_snapshotIdHasBeenSet = false;
 
-    int m_volumeSize;
+    int m_volumeSize{0};
     bool m_volumeSizeHasBeenSet = false;
 
     Aws::String m_volumeType;
     bool m_volumeTypeHasBeenSet = false;
 
-    bool m_deleteOnTermination;
+    bool m_deleteOnTermination{false};
     bool m_deleteOnTerminationHasBeenSet = false;
 
-    int m_iops;
+    int m_iops{0};
     bool m_iopsHasBeenSet = false;
 
-    bool m_encrypted;
+    bool m_encrypted{false};
     bool m_encryptedHasBeenSet = false;
 
-    int m_throughput;
+    int m_throughput{0};
     bool m_throughputHasBeenSet = false;
   };
 

@@ -34,7 +34,7 @@ namespace Model
   class ImagePullSecret
   {
   public:
-    AWS_BATCH_API ImagePullSecret();
+    AWS_BATCH_API ImagePullSecret() = default;
     AWS_BATCH_API ImagePullSecret(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API ImagePullSecret& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * object is required when <code>EksPodProperties$imagePullSecrets</code> is
      * used.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ImagePullSecret& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ImagePullSecret& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ImagePullSecret& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ImagePullSecret& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 

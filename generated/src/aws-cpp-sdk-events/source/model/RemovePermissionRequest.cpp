@@ -12,14 +12,6 @@ using namespace Aws::CloudWatchEvents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RemovePermissionRequest::RemovePermissionRequest() : 
-    m_statementIdHasBeenSet(false),
-    m_removeAllPermissions(false),
-    m_removeAllPermissionsHasBeenSet(false),
-    m_eventBusNameHasBeenSet(false)
-{
-}
-
 Aws::String RemovePermissionRequest::SerializePayload() const
 {
   JsonValue payload;

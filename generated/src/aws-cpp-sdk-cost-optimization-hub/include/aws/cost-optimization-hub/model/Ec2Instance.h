@@ -33,7 +33,7 @@ namespace Model
   class Ec2Instance
   {
   public:
-    AWS_COSTOPTIMIZATIONHUB_API Ec2Instance();
+    AWS_COSTOPTIMIZATIONHUB_API Ec2Instance() = default;
     AWS_COSTOPTIMIZATIONHUB_API Ec2Instance(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API Ec2Instance& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>The EC2 instance configuration used for recommendations.</p>
      */
-    inline const Ec2InstanceConfiguration& GetConfiguration() const{ return m_configuration; }
+    inline const Ec2InstanceConfiguration& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const Ec2InstanceConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(Ec2InstanceConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline Ec2Instance& WithConfiguration(const Ec2InstanceConfiguration& value) { SetConfiguration(value); return *this;}
-    inline Ec2Instance& WithConfiguration(Ec2InstanceConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    template<typename ConfigurationT = Ec2InstanceConfiguration>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = Ec2InstanceConfiguration>
+    Ec2Instance& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Cost impact of the recommendation.</p>
      */
-    inline const ResourceCostCalculation& GetCostCalculation() const{ return m_costCalculation; }
+    inline const ResourceCostCalculation& GetCostCalculation() const { return m_costCalculation; }
     inline bool CostCalculationHasBeenSet() const { return m_costCalculationHasBeenSet; }
-    inline void SetCostCalculation(const ResourceCostCalculation& value) { m_costCalculationHasBeenSet = true; m_costCalculation = value; }
-    inline void SetCostCalculation(ResourceCostCalculation&& value) { m_costCalculationHasBeenSet = true; m_costCalculation = std::move(value); }
-    inline Ec2Instance& WithCostCalculation(const ResourceCostCalculation& value) { SetCostCalculation(value); return *this;}
-    inline Ec2Instance& WithCostCalculation(ResourceCostCalculation&& value) { SetCostCalculation(std::move(value)); return *this;}
+    template<typename CostCalculationT = ResourceCostCalculation>
+    void SetCostCalculation(CostCalculationT&& value) { m_costCalculationHasBeenSet = true; m_costCalculation = std::forward<CostCalculationT>(value); }
+    template<typename CostCalculationT = ResourceCostCalculation>
+    Ec2Instance& WithCostCalculation(CostCalculationT&& value) { SetCostCalculation(std::forward<CostCalculationT>(value)); return *this;}
     ///@}
   private:
 

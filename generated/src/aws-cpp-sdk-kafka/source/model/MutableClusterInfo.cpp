@@ -18,28 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-MutableClusterInfo::MutableClusterInfo() : 
-    m_brokerEBSVolumeInfoHasBeenSet(false),
-    m_configurationInfoHasBeenSet(false),
-    m_numberOfBrokerNodes(0),
-    m_numberOfBrokerNodesHasBeenSet(false),
-    m_enhancedMonitoring(EnhancedMonitoring::NOT_SET),
-    m_enhancedMonitoringHasBeenSet(false),
-    m_openMonitoringHasBeenSet(false),
-    m_kafkaVersionHasBeenSet(false),
-    m_loggingInfoHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_clientAuthenticationHasBeenSet(false),
-    m_encryptionInfoHasBeenSet(false),
-    m_connectivityInfoHasBeenSet(false),
-    m_storageMode(StorageMode::NOT_SET),
-    m_storageModeHasBeenSet(false),
-    m_brokerCountUpdateInfoHasBeenSet(false)
-{
-}
-
 MutableClusterInfo::MutableClusterInfo(JsonView jsonValue)
-  : MutableClusterInfo()
 {
   *this = jsonValue;
 }
@@ -55,91 +34,66 @@ MutableClusterInfo& MutableClusterInfo::operator =(JsonView jsonValue)
     }
     m_brokerEBSVolumeInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configurationInfo"))
   {
     m_configurationInfo = jsonValue.GetObject("configurationInfo");
-
     m_configurationInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numberOfBrokerNodes"))
   {
     m_numberOfBrokerNodes = jsonValue.GetInteger("numberOfBrokerNodes");
-
     m_numberOfBrokerNodesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enhancedMonitoring"))
   {
     m_enhancedMonitoring = EnhancedMonitoringMapper::GetEnhancedMonitoringForName(jsonValue.GetString("enhancedMonitoring"));
-
     m_enhancedMonitoringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("openMonitoring"))
   {
     m_openMonitoring = jsonValue.GetObject("openMonitoring");
-
     m_openMonitoringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kafkaVersion"))
   {
     m_kafkaVersion = jsonValue.GetString("kafkaVersion");
-
     m_kafkaVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("loggingInfo"))
   {
     m_loggingInfo = jsonValue.GetObject("loggingInfo");
-
     m_loggingInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceType"))
   {
     m_instanceType = jsonValue.GetString("instanceType");
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientAuthentication"))
   {
     m_clientAuthentication = jsonValue.GetObject("clientAuthentication");
-
     m_clientAuthenticationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encryptionInfo"))
   {
     m_encryptionInfo = jsonValue.GetObject("encryptionInfo");
-
     m_encryptionInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectivityInfo"))
   {
     m_connectivityInfo = jsonValue.GetObject("connectivityInfo");
-
     m_connectivityInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storageMode"))
   {
     m_storageMode = StorageModeMapper::GetStorageModeForName(jsonValue.GetString("storageMode"));
-
     m_storageModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("brokerCountUpdateInfo"))
   {
     m_brokerCountUpdateInfo = jsonValue.GetObject("brokerCountUpdateInfo");
-
     m_brokerCountUpdateInfoHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class EcsService
   {
   public:
-    AWS_COSTOPTIMIZATIONHUB_API EcsService();
+    AWS_COSTOPTIMIZATIONHUB_API EcsService() = default;
     AWS_COSTOPTIMIZATIONHUB_API EcsService(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API EcsService& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p>The ECS service configuration used for recommendations.</p>
      */
-    inline const EcsServiceConfiguration& GetConfiguration() const{ return m_configuration; }
+    inline const EcsServiceConfiguration& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const EcsServiceConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(EcsServiceConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline EcsService& WithConfiguration(const EcsServiceConfiguration& value) { SetConfiguration(value); return *this;}
-    inline EcsService& WithConfiguration(EcsServiceConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    template<typename ConfigurationT = EcsServiceConfiguration>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = EcsServiceConfiguration>
+    EcsService& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Cost impact of the recommendation.</p>
      */
-    inline const ResourceCostCalculation& GetCostCalculation() const{ return m_costCalculation; }
+    inline const ResourceCostCalculation& GetCostCalculation() const { return m_costCalculation; }
     inline bool CostCalculationHasBeenSet() const { return m_costCalculationHasBeenSet; }
-    inline void SetCostCalculation(const ResourceCostCalculation& value) { m_costCalculationHasBeenSet = true; m_costCalculation = value; }
-    inline void SetCostCalculation(ResourceCostCalculation&& value) { m_costCalculationHasBeenSet = true; m_costCalculation = std::move(value); }
-    inline EcsService& WithCostCalculation(const ResourceCostCalculation& value) { SetCostCalculation(value); return *this;}
-    inline EcsService& WithCostCalculation(ResourceCostCalculation&& value) { SetCostCalculation(std::move(value)); return *this;}
+    template<typename CostCalculationT = ResourceCostCalculation>
+    void SetCostCalculation(CostCalculationT&& value) { m_costCalculationHasBeenSet = true; m_costCalculation = std::forward<CostCalculationT>(value); }
+    template<typename CostCalculationT = ResourceCostCalculation>
+    EcsService& WithCostCalculation(CostCalculationT&& value) { SetCostCalculation(std::forward<CostCalculationT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,24 +18,7 @@ namespace Support
 namespace Model
 {
 
-CaseDetails::CaseDetails() : 
-    m_caseIdHasBeenSet(false),
-    m_displayIdHasBeenSet(false),
-    m_subjectHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_serviceCodeHasBeenSet(false),
-    m_categoryCodeHasBeenSet(false),
-    m_severityCodeHasBeenSet(false),
-    m_submittedByHasBeenSet(false),
-    m_timeCreatedHasBeenSet(false),
-    m_recentCommunicationsHasBeenSet(false),
-    m_ccEmailAddressesHasBeenSet(false),
-    m_languageHasBeenSet(false)
-{
-}
-
 CaseDetails::CaseDetails(JsonView jsonValue)
-  : CaseDetails()
 {
   *this = jsonValue;
 }
@@ -45,73 +28,53 @@ CaseDetails& CaseDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("caseId"))
   {
     m_caseId = jsonValue.GetString("caseId");
-
     m_caseIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("displayId"))
   {
     m_displayId = jsonValue.GetString("displayId");
-
     m_displayIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subject"))
   {
     m_subject = jsonValue.GetString("subject");
-
     m_subjectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceCode"))
   {
     m_serviceCode = jsonValue.GetString("serviceCode");
-
     m_serviceCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("categoryCode"))
   {
     m_categoryCode = jsonValue.GetString("categoryCode");
-
     m_categoryCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("severityCode"))
   {
     m_severityCode = jsonValue.GetString("severityCode");
-
     m_severityCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("submittedBy"))
   {
     m_submittedBy = jsonValue.GetString("submittedBy");
-
     m_submittedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timeCreated"))
   {
     m_timeCreated = jsonValue.GetString("timeCreated");
-
     m_timeCreatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recentCommunications"))
   {
     m_recentCommunications = jsonValue.GetObject("recentCommunications");
-
     m_recentCommunicationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ccEmailAddresses"))
   {
     Aws::Utils::Array<JsonView> ccEmailAddressesJsonList = jsonValue.GetArray("ccEmailAddresses");
@@ -121,14 +84,11 @@ CaseDetails& CaseDetails::operator =(JsonView jsonValue)
     }
     m_ccEmailAddressesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("language"))
   {
     m_language = jsonValue.GetString("language");
-
     m_languageHasBeenSet = true;
   }
-
   return *this;
 }
 

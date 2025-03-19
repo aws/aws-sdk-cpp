@@ -21,7 +21,7 @@ namespace Model
   class DescribeWhatIfForecastExportRequest : public ForecastServiceRequest
   {
   public:
-    AWS_FORECASTSERVICE_API DescribeWhatIfForecastExportRequest();
+    AWS_FORECASTSERVICE_API DescribeWhatIfForecastExportRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the what-if forecast export that you are
      * interested in.</p>
      */
-    inline const Aws::String& GetWhatIfForecastExportArn() const{ return m_whatIfForecastExportArn; }
+    inline const Aws::String& GetWhatIfForecastExportArn() const { return m_whatIfForecastExportArn; }
     inline bool WhatIfForecastExportArnHasBeenSet() const { return m_whatIfForecastExportArnHasBeenSet; }
-    inline void SetWhatIfForecastExportArn(const Aws::String& value) { m_whatIfForecastExportArnHasBeenSet = true; m_whatIfForecastExportArn = value; }
-    inline void SetWhatIfForecastExportArn(Aws::String&& value) { m_whatIfForecastExportArnHasBeenSet = true; m_whatIfForecastExportArn = std::move(value); }
-    inline void SetWhatIfForecastExportArn(const char* value) { m_whatIfForecastExportArnHasBeenSet = true; m_whatIfForecastExportArn.assign(value); }
-    inline DescribeWhatIfForecastExportRequest& WithWhatIfForecastExportArn(const Aws::String& value) { SetWhatIfForecastExportArn(value); return *this;}
-    inline DescribeWhatIfForecastExportRequest& WithWhatIfForecastExportArn(Aws::String&& value) { SetWhatIfForecastExportArn(std::move(value)); return *this;}
-    inline DescribeWhatIfForecastExportRequest& WithWhatIfForecastExportArn(const char* value) { SetWhatIfForecastExportArn(value); return *this;}
+    template<typename WhatIfForecastExportArnT = Aws::String>
+    void SetWhatIfForecastExportArn(WhatIfForecastExportArnT&& value) { m_whatIfForecastExportArnHasBeenSet = true; m_whatIfForecastExportArn = std::forward<WhatIfForecastExportArnT>(value); }
+    template<typename WhatIfForecastExportArnT = Aws::String>
+    DescribeWhatIfForecastExportRequest& WithWhatIfForecastExportArn(WhatIfForecastExportArnT&& value) { SetWhatIfForecastExportArn(std::forward<WhatIfForecastExportArnT>(value)); return *this;}
     ///@}
   private:
 

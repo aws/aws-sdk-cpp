@@ -21,7 +21,7 @@ namespace Model
   class GetExportTaskRequest : public NeptuneGraphRequest
   {
   public:
-    AWS_NEPTUNEGRAPH_API GetExportTaskRequest();
+    AWS_NEPTUNEGRAPH_API GetExportTaskRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The unique identifier of the export task.</p>
      */
-    inline const Aws::String& GetTaskIdentifier() const{ return m_taskIdentifier; }
+    inline const Aws::String& GetTaskIdentifier() const { return m_taskIdentifier; }
     inline bool TaskIdentifierHasBeenSet() const { return m_taskIdentifierHasBeenSet; }
-    inline void SetTaskIdentifier(const Aws::String& value) { m_taskIdentifierHasBeenSet = true; m_taskIdentifier = value; }
-    inline void SetTaskIdentifier(Aws::String&& value) { m_taskIdentifierHasBeenSet = true; m_taskIdentifier = std::move(value); }
-    inline void SetTaskIdentifier(const char* value) { m_taskIdentifierHasBeenSet = true; m_taskIdentifier.assign(value); }
-    inline GetExportTaskRequest& WithTaskIdentifier(const Aws::String& value) { SetTaskIdentifier(value); return *this;}
-    inline GetExportTaskRequest& WithTaskIdentifier(Aws::String&& value) { SetTaskIdentifier(std::move(value)); return *this;}
-    inline GetExportTaskRequest& WithTaskIdentifier(const char* value) { SetTaskIdentifier(value); return *this;}
+    template<typename TaskIdentifierT = Aws::String>
+    void SetTaskIdentifier(TaskIdentifierT&& value) { m_taskIdentifierHasBeenSet = true; m_taskIdentifier = std::forward<TaskIdentifierT>(value); }
+    template<typename TaskIdentifierT = Aws::String>
+    GetExportTaskRequest& WithTaskIdentifier(TaskIdentifierT&& value) { SetTaskIdentifier(std::forward<TaskIdentifierT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,16 +12,6 @@ using namespace Aws::PersonalizeRuntime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetActionRecommendationsRequest::GetActionRecommendationsRequest() : 
-    m_campaignArnHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_numResults(0),
-    m_numResultsHasBeenSet(false),
-    m_filterArnHasBeenSet(false),
-    m_filterValuesHasBeenSet(false)
-{
-}
-
 Aws::String GetActionRecommendationsRequest::SerializePayload() const
 {
   JsonValue payload;

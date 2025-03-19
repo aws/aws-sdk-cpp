@@ -32,7 +32,7 @@ namespace Model
   class AwsElasticsearchDomainDomainEndpointOptions
   {
   public:
-    AWS_SECURITYHUB_API AwsElasticsearchDomainDomainEndpointOptions();
+    AWS_SECURITYHUB_API AwsElasticsearchDomainDomainEndpointOptions() = default;
     AWS_SECURITYHUB_API AwsElasticsearchDomainDomainEndpointOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsElasticsearchDomainDomainEndpointOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>Whether to require that all traffic to the domain arrive over HTTPS.</p>
      */
-    inline bool GetEnforceHTTPS() const{ return m_enforceHTTPS; }
+    inline bool GetEnforceHTTPS() const { return m_enforceHTTPS; }
     inline bool EnforceHTTPSHasBeenSet() const { return m_enforceHTTPSHasBeenSet; }
     inline void SetEnforceHTTPS(bool value) { m_enforceHTTPSHasBeenSet = true; m_enforceHTTPS = value; }
     inline AwsElasticsearchDomainDomainEndpointOptions& WithEnforceHTTPS(bool value) { SetEnforceHTTPS(value); return *this;}
@@ -56,18 +56,16 @@ namespace Model
      * </li> <li> <p> <code>Policy-Min-TLS-1-2-2019-07</code>, which only supports
      * TLSv1.2</p> </li> </ul>
      */
-    inline const Aws::String& GetTLSSecurityPolicy() const{ return m_tLSSecurityPolicy; }
+    inline const Aws::String& GetTLSSecurityPolicy() const { return m_tLSSecurityPolicy; }
     inline bool TLSSecurityPolicyHasBeenSet() const { return m_tLSSecurityPolicyHasBeenSet; }
-    inline void SetTLSSecurityPolicy(const Aws::String& value) { m_tLSSecurityPolicyHasBeenSet = true; m_tLSSecurityPolicy = value; }
-    inline void SetTLSSecurityPolicy(Aws::String&& value) { m_tLSSecurityPolicyHasBeenSet = true; m_tLSSecurityPolicy = std::move(value); }
-    inline void SetTLSSecurityPolicy(const char* value) { m_tLSSecurityPolicyHasBeenSet = true; m_tLSSecurityPolicy.assign(value); }
-    inline AwsElasticsearchDomainDomainEndpointOptions& WithTLSSecurityPolicy(const Aws::String& value) { SetTLSSecurityPolicy(value); return *this;}
-    inline AwsElasticsearchDomainDomainEndpointOptions& WithTLSSecurityPolicy(Aws::String&& value) { SetTLSSecurityPolicy(std::move(value)); return *this;}
-    inline AwsElasticsearchDomainDomainEndpointOptions& WithTLSSecurityPolicy(const char* value) { SetTLSSecurityPolicy(value); return *this;}
+    template<typename TLSSecurityPolicyT = Aws::String>
+    void SetTLSSecurityPolicy(TLSSecurityPolicyT&& value) { m_tLSSecurityPolicyHasBeenSet = true; m_tLSSecurityPolicy = std::forward<TLSSecurityPolicyT>(value); }
+    template<typename TLSSecurityPolicyT = Aws::String>
+    AwsElasticsearchDomainDomainEndpointOptions& WithTLSSecurityPolicy(TLSSecurityPolicyT&& value) { SetTLSSecurityPolicy(std::forward<TLSSecurityPolicyT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_enforceHTTPS;
+    bool m_enforceHTTPS{false};
     bool m_enforceHTTPSHasBeenSet = false;
 
     Aws::String m_tLSSecurityPolicy;

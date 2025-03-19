@@ -12,13 +12,6 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutConfigurationSetReputationOptionsRequest::PutConfigurationSetReputationOptionsRequest() : 
-    m_configurationSetNameHasBeenSet(false),
-    m_reputationMetricsEnabled(false),
-    m_reputationMetricsEnabledHasBeenSet(false)
-{
-}
-
 Aws::String PutConfigurationSetReputationOptionsRequest::SerializePayload() const
 {
   JsonValue payload;

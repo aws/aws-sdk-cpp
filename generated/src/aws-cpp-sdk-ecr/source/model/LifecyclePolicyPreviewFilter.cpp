@@ -18,14 +18,7 @@ namespace ECR
 namespace Model
 {
 
-LifecyclePolicyPreviewFilter::LifecyclePolicyPreviewFilter() : 
-    m_tagStatus(TagStatus::NOT_SET),
-    m_tagStatusHasBeenSet(false)
-{
-}
-
 LifecyclePolicyPreviewFilter::LifecyclePolicyPreviewFilter(JsonView jsonValue)
-  : LifecyclePolicyPreviewFilter()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ LifecyclePolicyPreviewFilter& LifecyclePolicyPreviewFilter::operator =(JsonView 
   if(jsonValue.ValueExists("tagStatus"))
   {
     m_tagStatus = TagStatusMapper::GetTagStatusForName(jsonValue.GetString("tagStatus"));
-
     m_tagStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

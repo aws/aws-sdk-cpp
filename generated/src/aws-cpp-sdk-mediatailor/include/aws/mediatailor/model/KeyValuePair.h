@@ -33,7 +33,7 @@ namespace Model
   class KeyValuePair
   {
   public:
-    AWS_MEDIATAILOR_API KeyValuePair();
+    AWS_MEDIATAILOR_API KeyValuePair() = default;
     AWS_MEDIATAILOR_API KeyValuePair(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API KeyValuePair& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * <code>EXT-X-ASSET</code>tag. If you specify a key, you must also specify a
      * corresponding value.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline KeyValuePair& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline KeyValuePair& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline KeyValuePair& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    KeyValuePair& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * <code>EXT-X-ASSET</code>tag. If you specify a value, you must also specify a
      * corresponding key.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline KeyValuePair& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline KeyValuePair& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline KeyValuePair& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    KeyValuePair& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 

@@ -26,7 +26,7 @@ namespace Model
   class VpcEncryptionControlExclusions
   {
   public:
-    AWS_EC2_API VpcEncryptionControlExclusions();
+    AWS_EC2_API VpcEncryptionControlExclusions() = default;
     AWS_EC2_API VpcEncryptionControlExclusions(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API VpcEncryptionControlExclusions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -36,52 +36,52 @@ namespace Model
 
     ///@{
     
-    inline const VpcEncryptionControlExclusion& GetInternetGateway() const{ return m_internetGateway; }
+    inline const VpcEncryptionControlExclusion& GetInternetGateway() const { return m_internetGateway; }
     inline bool InternetGatewayHasBeenSet() const { return m_internetGatewayHasBeenSet; }
-    inline void SetInternetGateway(const VpcEncryptionControlExclusion& value) { m_internetGatewayHasBeenSet = true; m_internetGateway = value; }
-    inline void SetInternetGateway(VpcEncryptionControlExclusion&& value) { m_internetGatewayHasBeenSet = true; m_internetGateway = std::move(value); }
-    inline VpcEncryptionControlExclusions& WithInternetGateway(const VpcEncryptionControlExclusion& value) { SetInternetGateway(value); return *this;}
-    inline VpcEncryptionControlExclusions& WithInternetGateway(VpcEncryptionControlExclusion&& value) { SetInternetGateway(std::move(value)); return *this;}
+    template<typename InternetGatewayT = VpcEncryptionControlExclusion>
+    void SetInternetGateway(InternetGatewayT&& value) { m_internetGatewayHasBeenSet = true; m_internetGateway = std::forward<InternetGatewayT>(value); }
+    template<typename InternetGatewayT = VpcEncryptionControlExclusion>
+    VpcEncryptionControlExclusions& WithInternetGateway(InternetGatewayT&& value) { SetInternetGateway(std::forward<InternetGatewayT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const VpcEncryptionControlExclusion& GetEgressOnlyInternetGateway() const{ return m_egressOnlyInternetGateway; }
+    inline const VpcEncryptionControlExclusion& GetEgressOnlyInternetGateway() const { return m_egressOnlyInternetGateway; }
     inline bool EgressOnlyInternetGatewayHasBeenSet() const { return m_egressOnlyInternetGatewayHasBeenSet; }
-    inline void SetEgressOnlyInternetGateway(const VpcEncryptionControlExclusion& value) { m_egressOnlyInternetGatewayHasBeenSet = true; m_egressOnlyInternetGateway = value; }
-    inline void SetEgressOnlyInternetGateway(VpcEncryptionControlExclusion&& value) { m_egressOnlyInternetGatewayHasBeenSet = true; m_egressOnlyInternetGateway = std::move(value); }
-    inline VpcEncryptionControlExclusions& WithEgressOnlyInternetGateway(const VpcEncryptionControlExclusion& value) { SetEgressOnlyInternetGateway(value); return *this;}
-    inline VpcEncryptionControlExclusions& WithEgressOnlyInternetGateway(VpcEncryptionControlExclusion&& value) { SetEgressOnlyInternetGateway(std::move(value)); return *this;}
+    template<typename EgressOnlyInternetGatewayT = VpcEncryptionControlExclusion>
+    void SetEgressOnlyInternetGateway(EgressOnlyInternetGatewayT&& value) { m_egressOnlyInternetGatewayHasBeenSet = true; m_egressOnlyInternetGateway = std::forward<EgressOnlyInternetGatewayT>(value); }
+    template<typename EgressOnlyInternetGatewayT = VpcEncryptionControlExclusion>
+    VpcEncryptionControlExclusions& WithEgressOnlyInternetGateway(EgressOnlyInternetGatewayT&& value) { SetEgressOnlyInternetGateway(std::forward<EgressOnlyInternetGatewayT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const VpcEncryptionControlExclusion& GetNatGateway() const{ return m_natGateway; }
+    inline const VpcEncryptionControlExclusion& GetNatGateway() const { return m_natGateway; }
     inline bool NatGatewayHasBeenSet() const { return m_natGatewayHasBeenSet; }
-    inline void SetNatGateway(const VpcEncryptionControlExclusion& value) { m_natGatewayHasBeenSet = true; m_natGateway = value; }
-    inline void SetNatGateway(VpcEncryptionControlExclusion&& value) { m_natGatewayHasBeenSet = true; m_natGateway = std::move(value); }
-    inline VpcEncryptionControlExclusions& WithNatGateway(const VpcEncryptionControlExclusion& value) { SetNatGateway(value); return *this;}
-    inline VpcEncryptionControlExclusions& WithNatGateway(VpcEncryptionControlExclusion&& value) { SetNatGateway(std::move(value)); return *this;}
+    template<typename NatGatewayT = VpcEncryptionControlExclusion>
+    void SetNatGateway(NatGatewayT&& value) { m_natGatewayHasBeenSet = true; m_natGateway = std::forward<NatGatewayT>(value); }
+    template<typename NatGatewayT = VpcEncryptionControlExclusion>
+    VpcEncryptionControlExclusions& WithNatGateway(NatGatewayT&& value) { SetNatGateway(std::forward<NatGatewayT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const VpcEncryptionControlExclusion& GetVirtualPrivateGateway() const{ return m_virtualPrivateGateway; }
+    inline const VpcEncryptionControlExclusion& GetVirtualPrivateGateway() const { return m_virtualPrivateGateway; }
     inline bool VirtualPrivateGatewayHasBeenSet() const { return m_virtualPrivateGatewayHasBeenSet; }
-    inline void SetVirtualPrivateGateway(const VpcEncryptionControlExclusion& value) { m_virtualPrivateGatewayHasBeenSet = true; m_virtualPrivateGateway = value; }
-    inline void SetVirtualPrivateGateway(VpcEncryptionControlExclusion&& value) { m_virtualPrivateGatewayHasBeenSet = true; m_virtualPrivateGateway = std::move(value); }
-    inline VpcEncryptionControlExclusions& WithVirtualPrivateGateway(const VpcEncryptionControlExclusion& value) { SetVirtualPrivateGateway(value); return *this;}
-    inline VpcEncryptionControlExclusions& WithVirtualPrivateGateway(VpcEncryptionControlExclusion&& value) { SetVirtualPrivateGateway(std::move(value)); return *this;}
+    template<typename VirtualPrivateGatewayT = VpcEncryptionControlExclusion>
+    void SetVirtualPrivateGateway(VirtualPrivateGatewayT&& value) { m_virtualPrivateGatewayHasBeenSet = true; m_virtualPrivateGateway = std::forward<VirtualPrivateGatewayT>(value); }
+    template<typename VirtualPrivateGatewayT = VpcEncryptionControlExclusion>
+    VpcEncryptionControlExclusions& WithVirtualPrivateGateway(VirtualPrivateGatewayT&& value) { SetVirtualPrivateGateway(std::forward<VirtualPrivateGatewayT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const VpcEncryptionControlExclusion& GetVpcPeering() const{ return m_vpcPeering; }
+    inline const VpcEncryptionControlExclusion& GetVpcPeering() const { return m_vpcPeering; }
     inline bool VpcPeeringHasBeenSet() const { return m_vpcPeeringHasBeenSet; }
-    inline void SetVpcPeering(const VpcEncryptionControlExclusion& value) { m_vpcPeeringHasBeenSet = true; m_vpcPeering = value; }
-    inline void SetVpcPeering(VpcEncryptionControlExclusion&& value) { m_vpcPeeringHasBeenSet = true; m_vpcPeering = std::move(value); }
-    inline VpcEncryptionControlExclusions& WithVpcPeering(const VpcEncryptionControlExclusion& value) { SetVpcPeering(value); return *this;}
-    inline VpcEncryptionControlExclusions& WithVpcPeering(VpcEncryptionControlExclusion&& value) { SetVpcPeering(std::move(value)); return *this;}
+    template<typename VpcPeeringT = VpcEncryptionControlExclusion>
+    void SetVpcPeering(VpcPeeringT&& value) { m_vpcPeeringHasBeenSet = true; m_vpcPeering = std::forward<VpcPeeringT>(value); }
+    template<typename VpcPeeringT = VpcEncryptionControlExclusion>
+    VpcEncryptionControlExclusions& WithVpcPeering(VpcPeeringT&& value) { SetVpcPeering(std::forward<VpcPeeringT>(value)); return *this;}
     ///@}
   private:
 

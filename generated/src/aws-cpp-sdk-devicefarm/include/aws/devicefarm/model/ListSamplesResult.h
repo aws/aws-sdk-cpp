@@ -35,7 +35,7 @@ namespace Model
   class ListSamplesResult
   {
   public:
-    AWS_DEVICEFARM_API ListSamplesResult();
+    AWS_DEVICEFARM_API ListSamplesResult() = default;
     AWS_DEVICEFARM_API ListSamplesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DEVICEFARM_API ListSamplesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,13 +44,13 @@ namespace Model
     /**
      * <p>Information about the samples.</p>
      */
-    inline const Aws::Vector<Sample>& GetSamples() const{ return m_samples; }
-    inline void SetSamples(const Aws::Vector<Sample>& value) { m_samples = value; }
-    inline void SetSamples(Aws::Vector<Sample>&& value) { m_samples = std::move(value); }
-    inline ListSamplesResult& WithSamples(const Aws::Vector<Sample>& value) { SetSamples(value); return *this;}
-    inline ListSamplesResult& WithSamples(Aws::Vector<Sample>&& value) { SetSamples(std::move(value)); return *this;}
-    inline ListSamplesResult& AddSamples(const Sample& value) { m_samples.push_back(value); return *this; }
-    inline ListSamplesResult& AddSamples(Sample&& value) { m_samples.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Sample>& GetSamples() const { return m_samples; }
+    template<typename SamplesT = Aws::Vector<Sample>>
+    void SetSamples(SamplesT&& value) { m_samplesHasBeenSet = true; m_samples = std::forward<SamplesT>(value); }
+    template<typename SamplesT = Aws::Vector<Sample>>
+    ListSamplesResult& WithSamples(SamplesT&& value) { SetSamples(std::forward<SamplesT>(value)); return *this;}
+    template<typename SamplesT = Sample>
+    ListSamplesResult& AddSamples(SamplesT&& value) { m_samplesHasBeenSet = true; m_samples.emplace_back(std::forward<SamplesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -59,32 +59,31 @@ namespace Model
      * identifier that is also returned. It can be used in a subsequent call to this
      * operation to return the next set of items in the list.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListSamplesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListSamplesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListSamplesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListSamplesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListSamplesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListSamplesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListSamplesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListSamplesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Sample> m_samples;
+    bool m_samplesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

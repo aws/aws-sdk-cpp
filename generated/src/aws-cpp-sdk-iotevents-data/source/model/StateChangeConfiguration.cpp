@@ -18,14 +18,7 @@ namespace IoTEventsData
 namespace Model
 {
 
-StateChangeConfiguration::StateChangeConfiguration() : 
-    m_triggerType(TriggerType::NOT_SET),
-    m_triggerTypeHasBeenSet(false)
-{
-}
-
 StateChangeConfiguration::StateChangeConfiguration(JsonView jsonValue)
-  : StateChangeConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ StateChangeConfiguration& StateChangeConfiguration::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("triggerType"))
   {
     m_triggerType = TriggerTypeMapper::GetTriggerTypeForName(jsonValue.GetString("triggerType"));
-
     m_triggerTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

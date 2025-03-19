@@ -18,15 +18,7 @@ namespace WAFRegional
 namespace Model
 {
 
-IPSet::IPSet() : 
-    m_iPSetIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_iPSetDescriptorsHasBeenSet(false)
-{
-}
-
 IPSet::IPSet(JsonView jsonValue)
-  : IPSet()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ IPSet& IPSet::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IPSetId"))
   {
     m_iPSetId = jsonValue.GetString("IPSetId");
-
     m_iPSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IPSetDescriptors"))
   {
     Aws::Utils::Array<JsonView> iPSetDescriptorsJsonList = jsonValue.GetArray("IPSetDescriptors");
@@ -56,7 +44,6 @@ IPSet& IPSet::operator =(JsonView jsonValue)
     }
     m_iPSetDescriptorsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -35,7 +35,7 @@ namespace Model
   class LegendOptions
   {
   public:
-    AWS_QUICKSIGHT_API LegendOptions();
+    AWS_QUICKSIGHT_API LegendOptions() = default;
     AWS_QUICKSIGHT_API LegendOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API LegendOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,24 +45,22 @@ namespace Model
     /**
      * <p>Determines whether or not the legend is visible.</p>
      */
-    inline const Visibility& GetVisibility() const{ return m_visibility; }
+    inline Visibility GetVisibility() const { return m_visibility; }
     inline bool VisibilityHasBeenSet() const { return m_visibilityHasBeenSet; }
-    inline void SetVisibility(const Visibility& value) { m_visibilityHasBeenSet = true; m_visibility = value; }
-    inline void SetVisibility(Visibility&& value) { m_visibilityHasBeenSet = true; m_visibility = std::move(value); }
-    inline LegendOptions& WithVisibility(const Visibility& value) { SetVisibility(value); return *this;}
-    inline LegendOptions& WithVisibility(Visibility&& value) { SetVisibility(std::move(value)); return *this;}
+    inline void SetVisibility(Visibility value) { m_visibilityHasBeenSet = true; m_visibility = value; }
+    inline LegendOptions& WithVisibility(Visibility value) { SetVisibility(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The custom title for the legend.</p>
      */
-    inline const LabelOptions& GetTitle() const{ return m_title; }
+    inline const LabelOptions& GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    inline void SetTitle(const LabelOptions& value) { m_titleHasBeenSet = true; m_title = value; }
-    inline void SetTitle(LabelOptions&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-    inline LegendOptions& WithTitle(const LabelOptions& value) { SetTitle(value); return *this;}
-    inline LegendOptions& WithTitle(LabelOptions&& value) { SetTitle(std::move(value)); return *this;}
+    template<typename TitleT = LabelOptions>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = LabelOptions>
+    LegendOptions& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +70,10 @@ namespace Model
      * <li> <p> <code>BOTTOM</code> </p> </li> <li> <p> <code>LEFT</code> </p> </li>
      * </ul>
      */
-    inline const LegendPosition& GetPosition() const{ return m_position; }
+    inline LegendPosition GetPosition() const { return m_position; }
     inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
-    inline void SetPosition(const LegendPosition& value) { m_positionHasBeenSet = true; m_position = value; }
-    inline void SetPosition(LegendPosition&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
-    inline LegendOptions& WithPosition(const LegendPosition& value) { SetPosition(value); return *this;}
-    inline LegendOptions& WithPosition(LegendPosition&& value) { SetPosition(std::move(value)); return *this;}
+    inline void SetPosition(LegendPosition value) { m_positionHasBeenSet = true; m_position = value; }
+    inline LegendOptions& WithPosition(LegendPosition value) { SetPosition(value); return *this;}
     ///@}
 
     ///@{
@@ -85,14 +81,12 @@ namespace Model
      * <p>The width of the legend. If this value is omitted, a default width is used
      * when rendering.</p>
      */
-    inline const Aws::String& GetWidth() const{ return m_width; }
+    inline const Aws::String& GetWidth() const { return m_width; }
     inline bool WidthHasBeenSet() const { return m_widthHasBeenSet; }
-    inline void SetWidth(const Aws::String& value) { m_widthHasBeenSet = true; m_width = value; }
-    inline void SetWidth(Aws::String&& value) { m_widthHasBeenSet = true; m_width = std::move(value); }
-    inline void SetWidth(const char* value) { m_widthHasBeenSet = true; m_width.assign(value); }
-    inline LegendOptions& WithWidth(const Aws::String& value) { SetWidth(value); return *this;}
-    inline LegendOptions& WithWidth(Aws::String&& value) { SetWidth(std::move(value)); return *this;}
-    inline LegendOptions& WithWidth(const char* value) { SetWidth(value); return *this;}
+    template<typename WidthT = Aws::String>
+    void SetWidth(WidthT&& value) { m_widthHasBeenSet = true; m_width = std::forward<WidthT>(value); }
+    template<typename WidthT = Aws::String>
+    LegendOptions& WithWidth(WidthT&& value) { SetWidth(std::forward<WidthT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,34 +94,32 @@ namespace Model
      * <p>The height of the legend. If this value is omitted, a default height is used
      * when rendering.</p>
      */
-    inline const Aws::String& GetHeight() const{ return m_height; }
+    inline const Aws::String& GetHeight() const { return m_height; }
     inline bool HeightHasBeenSet() const { return m_heightHasBeenSet; }
-    inline void SetHeight(const Aws::String& value) { m_heightHasBeenSet = true; m_height = value; }
-    inline void SetHeight(Aws::String&& value) { m_heightHasBeenSet = true; m_height = std::move(value); }
-    inline void SetHeight(const char* value) { m_heightHasBeenSet = true; m_height.assign(value); }
-    inline LegendOptions& WithHeight(const Aws::String& value) { SetHeight(value); return *this;}
-    inline LegendOptions& WithHeight(Aws::String&& value) { SetHeight(std::move(value)); return *this;}
-    inline LegendOptions& WithHeight(const char* value) { SetHeight(value); return *this;}
+    template<typename HeightT = Aws::String>
+    void SetHeight(HeightT&& value) { m_heightHasBeenSet = true; m_height = std::forward<HeightT>(value); }
+    template<typename HeightT = Aws::String>
+    LegendOptions& WithHeight(HeightT&& value) { SetHeight(std::forward<HeightT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const FontConfiguration& GetValueFontConfiguration() const{ return m_valueFontConfiguration; }
+    inline const FontConfiguration& GetValueFontConfiguration() const { return m_valueFontConfiguration; }
     inline bool ValueFontConfigurationHasBeenSet() const { return m_valueFontConfigurationHasBeenSet; }
-    inline void SetValueFontConfiguration(const FontConfiguration& value) { m_valueFontConfigurationHasBeenSet = true; m_valueFontConfiguration = value; }
-    inline void SetValueFontConfiguration(FontConfiguration&& value) { m_valueFontConfigurationHasBeenSet = true; m_valueFontConfiguration = std::move(value); }
-    inline LegendOptions& WithValueFontConfiguration(const FontConfiguration& value) { SetValueFontConfiguration(value); return *this;}
-    inline LegendOptions& WithValueFontConfiguration(FontConfiguration&& value) { SetValueFontConfiguration(std::move(value)); return *this;}
+    template<typename ValueFontConfigurationT = FontConfiguration>
+    void SetValueFontConfiguration(ValueFontConfigurationT&& value) { m_valueFontConfigurationHasBeenSet = true; m_valueFontConfiguration = std::forward<ValueFontConfigurationT>(value); }
+    template<typename ValueFontConfigurationT = FontConfiguration>
+    LegendOptions& WithValueFontConfiguration(ValueFontConfigurationT&& value) { SetValueFontConfiguration(std::forward<ValueFontConfigurationT>(value)); return *this;}
     ///@}
   private:
 
-    Visibility m_visibility;
+    Visibility m_visibility{Visibility::NOT_SET};
     bool m_visibilityHasBeenSet = false;
 
     LabelOptions m_title;
     bool m_titleHasBeenSet = false;
 
-    LegendPosition m_position;
+    LegendPosition m_position{LegendPosition::NOT_SET};
     bool m_positionHasBeenSet = false;
 
     Aws::String m_width;

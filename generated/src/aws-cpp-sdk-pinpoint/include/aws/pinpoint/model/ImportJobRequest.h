@@ -33,7 +33,7 @@ namespace Model
   class ImportJobRequest
   {
   public:
-    AWS_PINPOINT_API ImportJobRequest();
+    AWS_PINPOINT_API ImportJobRequest() = default;
     AWS_PINPOINT_API ImportJobRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API ImportJobRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * <p>Specifies whether to create a segment that contains the endpoints, when the
      * endpoint definitions are imported.</p>
      */
-    inline bool GetDefineSegment() const{ return m_defineSegment; }
+    inline bool GetDefineSegment() const { return m_defineSegment; }
     inline bool DefineSegmentHasBeenSet() const { return m_defineSegmentHasBeenSet; }
     inline void SetDefineSegment(bool value) { m_defineSegmentHasBeenSet = true; m_defineSegment = value; }
     inline ImportJobRequest& WithDefineSegment(bool value) { SetDefineSegment(value); return *this;}
@@ -58,14 +58,12 @@ namespace Model
      * don't recommend use of external IDs for IAM roles that are assumed by Amazon
      * Pinpoint.</p>
      */
-    inline const Aws::String& GetExternalId() const{ return m_externalId; }
+    inline const Aws::String& GetExternalId() const { return m_externalId; }
     inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
-    inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
-    inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
-    inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
-    inline ImportJobRequest& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
-    inline ImportJobRequest& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
-    inline ImportJobRequest& WithExternalId(const char* value) { SetExternalId(value); return *this;}
+    template<typename ExternalIdT = Aws::String>
+    void SetExternalId(ExternalIdT&& value) { m_externalIdHasBeenSet = true; m_externalId = std::forward<ExternalIdT>(value); }
+    template<typename ExternalIdT = Aws::String>
+    ImportJobRequest& WithExternalId(ExternalIdT&& value) { SetExternalId(std::forward<ExternalIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,12 +74,10 @@ namespace Model
      * that use different formats, Amazon Pinpoint imports data only from the files
      * that use the specified format.</p>
      */
-    inline const Format& GetFormat() const{ return m_format; }
+    inline Format GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const Format& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(Format&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline ImportJobRequest& WithFormat(const Format& value) { SetFormat(value); return *this;}
-    inline ImportJobRequest& WithFormat(Format&& value) { SetFormat(std::move(value)); return *this;}
+    inline void SetFormat(Format value) { m_formatHasBeenSet = true; m_format = value; }
+    inline ImportJobRequest& WithFormat(Format value) { SetFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -89,7 +85,7 @@ namespace Model
      * <p>Specifies whether to register the endpoints with Amazon Pinpoint, when the
      * endpoint definitions are imported.</p>
      */
-    inline bool GetRegisterEndpoints() const{ return m_registerEndpoints; }
+    inline bool GetRegisterEndpoints() const { return m_registerEndpoints; }
     inline bool RegisterEndpointsHasBeenSet() const { return m_registerEndpointsHasBeenSet; }
     inline void SetRegisterEndpoints(bool value) { m_registerEndpointsHasBeenSet = true; m_registerEndpoints = value; }
     inline ImportJobRequest& WithRegisterEndpoints(bool value) { SetRegisterEndpoints(value); return *this;}
@@ -101,14 +97,12 @@ namespace Model
      * (IAM) role that authorizes Amazon Pinpoint to access the Amazon S3 location to
      * import endpoint definitions from.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline ImportJobRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline ImportJobRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline ImportJobRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    ImportJobRequest& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -122,14 +116,12 @@ namespace Model
      * The location can end with the key for an individual object or a prefix that
      * qualifies multiple objects.</p>
      */
-    inline const Aws::String& GetS3Url() const{ return m_s3Url; }
+    inline const Aws::String& GetS3Url() const { return m_s3Url; }
     inline bool S3UrlHasBeenSet() const { return m_s3UrlHasBeenSet; }
-    inline void SetS3Url(const Aws::String& value) { m_s3UrlHasBeenSet = true; m_s3Url = value; }
-    inline void SetS3Url(Aws::String&& value) { m_s3UrlHasBeenSet = true; m_s3Url = std::move(value); }
-    inline void SetS3Url(const char* value) { m_s3UrlHasBeenSet = true; m_s3Url.assign(value); }
-    inline ImportJobRequest& WithS3Url(const Aws::String& value) { SetS3Url(value); return *this;}
-    inline ImportJobRequest& WithS3Url(Aws::String&& value) { SetS3Url(std::move(value)); return *this;}
-    inline ImportJobRequest& WithS3Url(const char* value) { SetS3Url(value); return *this;}
+    template<typename S3UrlT = Aws::String>
+    void SetS3Url(S3UrlT&& value) { m_s3UrlHasBeenSet = true; m_s3Url = std::forward<S3UrlT>(value); }
+    template<typename S3UrlT = Aws::String>
+    ImportJobRequest& WithS3Url(S3UrlT&& value) { SetS3Url(std::forward<S3UrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -137,14 +129,12 @@ namespace Model
      * <p>The identifier for the segment to update or add the imported endpoint
      * definitions to, if the import job is meant to update an existing segment.</p>
      */
-    inline const Aws::String& GetSegmentId() const{ return m_segmentId; }
+    inline const Aws::String& GetSegmentId() const { return m_segmentId; }
     inline bool SegmentIdHasBeenSet() const { return m_segmentIdHasBeenSet; }
-    inline void SetSegmentId(const Aws::String& value) { m_segmentIdHasBeenSet = true; m_segmentId = value; }
-    inline void SetSegmentId(Aws::String&& value) { m_segmentIdHasBeenSet = true; m_segmentId = std::move(value); }
-    inline void SetSegmentId(const char* value) { m_segmentIdHasBeenSet = true; m_segmentId.assign(value); }
-    inline ImportJobRequest& WithSegmentId(const Aws::String& value) { SetSegmentId(value); return *this;}
-    inline ImportJobRequest& WithSegmentId(Aws::String&& value) { SetSegmentId(std::move(value)); return *this;}
-    inline ImportJobRequest& WithSegmentId(const char* value) { SetSegmentId(value); return *this;}
+    template<typename SegmentIdT = Aws::String>
+    void SetSegmentId(SegmentIdT&& value) { m_segmentIdHasBeenSet = true; m_segmentId = std::forward<SegmentIdT>(value); }
+    template<typename SegmentIdT = Aws::String>
+    ImportJobRequest& WithSegmentId(SegmentIdT&& value) { SetSegmentId(std::forward<SegmentIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -152,27 +142,25 @@ namespace Model
      * <p>A custom name for the segment that's created by the import job, if the value
      * of the DefineSegment property is true.</p>
      */
-    inline const Aws::String& GetSegmentName() const{ return m_segmentName; }
+    inline const Aws::String& GetSegmentName() const { return m_segmentName; }
     inline bool SegmentNameHasBeenSet() const { return m_segmentNameHasBeenSet; }
-    inline void SetSegmentName(const Aws::String& value) { m_segmentNameHasBeenSet = true; m_segmentName = value; }
-    inline void SetSegmentName(Aws::String&& value) { m_segmentNameHasBeenSet = true; m_segmentName = std::move(value); }
-    inline void SetSegmentName(const char* value) { m_segmentNameHasBeenSet = true; m_segmentName.assign(value); }
-    inline ImportJobRequest& WithSegmentName(const Aws::String& value) { SetSegmentName(value); return *this;}
-    inline ImportJobRequest& WithSegmentName(Aws::String&& value) { SetSegmentName(std::move(value)); return *this;}
-    inline ImportJobRequest& WithSegmentName(const char* value) { SetSegmentName(value); return *this;}
+    template<typename SegmentNameT = Aws::String>
+    void SetSegmentName(SegmentNameT&& value) { m_segmentNameHasBeenSet = true; m_segmentName = std::forward<SegmentNameT>(value); }
+    template<typename SegmentNameT = Aws::String>
+    ImportJobRequest& WithSegmentName(SegmentNameT&& value) { SetSegmentName(std::forward<SegmentNameT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_defineSegment;
+    bool m_defineSegment{false};
     bool m_defineSegmentHasBeenSet = false;
 
     Aws::String m_externalId;
     bool m_externalIdHasBeenSet = false;
 
-    Format m_format;
+    Format m_format{Format::NOT_SET};
     bool m_formatHasBeenSet = false;
 
-    bool m_registerEndpoints;
+    bool m_registerEndpoints{false};
     bool m_registerEndpointsHasBeenSet = false;
 
     Aws::String m_roleArn;

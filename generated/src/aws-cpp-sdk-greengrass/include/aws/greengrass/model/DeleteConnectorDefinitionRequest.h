@@ -21,7 +21,7 @@ namespace Model
   class DeleteConnectorDefinitionRequest : public GreengrassRequest
   {
   public:
-    AWS_GREENGRASS_API DeleteConnectorDefinitionRequest();
+    AWS_GREENGRASS_API DeleteConnectorDefinitionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * The ID of the connector definition.
      */
-    inline const Aws::String& GetConnectorDefinitionId() const{ return m_connectorDefinitionId; }
+    inline const Aws::String& GetConnectorDefinitionId() const { return m_connectorDefinitionId; }
     inline bool ConnectorDefinitionIdHasBeenSet() const { return m_connectorDefinitionIdHasBeenSet; }
-    inline void SetConnectorDefinitionId(const Aws::String& value) { m_connectorDefinitionIdHasBeenSet = true; m_connectorDefinitionId = value; }
-    inline void SetConnectorDefinitionId(Aws::String&& value) { m_connectorDefinitionIdHasBeenSet = true; m_connectorDefinitionId = std::move(value); }
-    inline void SetConnectorDefinitionId(const char* value) { m_connectorDefinitionIdHasBeenSet = true; m_connectorDefinitionId.assign(value); }
-    inline DeleteConnectorDefinitionRequest& WithConnectorDefinitionId(const Aws::String& value) { SetConnectorDefinitionId(value); return *this;}
-    inline DeleteConnectorDefinitionRequest& WithConnectorDefinitionId(Aws::String&& value) { SetConnectorDefinitionId(std::move(value)); return *this;}
-    inline DeleteConnectorDefinitionRequest& WithConnectorDefinitionId(const char* value) { SetConnectorDefinitionId(value); return *this;}
+    template<typename ConnectorDefinitionIdT = Aws::String>
+    void SetConnectorDefinitionId(ConnectorDefinitionIdT&& value) { m_connectorDefinitionIdHasBeenSet = true; m_connectorDefinitionId = std::forward<ConnectorDefinitionIdT>(value); }
+    template<typename ConnectorDefinitionIdT = Aws::String>
+    DeleteConnectorDefinitionRequest& WithConnectorDefinitionId(ConnectorDefinitionIdT&& value) { SetConnectorDefinitionId(std::forward<ConnectorDefinitionIdT>(value)); return *this;}
     ///@}
   private:
 

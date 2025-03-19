@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteEntityRequest::DeleteEntityRequest() : 
-    m_workspaceIdHasBeenSet(false),
-    m_entityIdHasBeenSet(false),
-    m_isRecursive(false),
-    m_isRecursiveHasBeenSet(false)
-{
-}
-
 Aws::String DeleteEntityRequest::SerializePayload() const
 {
   return {};

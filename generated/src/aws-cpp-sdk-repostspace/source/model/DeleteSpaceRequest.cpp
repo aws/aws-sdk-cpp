@@ -12,11 +12,6 @@ using namespace Aws::repostspace::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSpaceRequest::DeleteSpaceRequest() : 
-    m_spaceIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSpaceRequest::SerializePayload() const
 {
   return {};

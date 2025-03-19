@@ -18,14 +18,7 @@ namespace MQ
 namespace Model
 {
 
-ActionRequired::ActionRequired() : 
-    m_actionRequiredCodeHasBeenSet(false),
-    m_actionRequiredInfoHasBeenSet(false)
-{
-}
-
 ActionRequired::ActionRequired(JsonView jsonValue)
-  : ActionRequired()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ActionRequired& ActionRequired::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("actionRequiredCode"))
   {
     m_actionRequiredCode = jsonValue.GetString("actionRequiredCode");
-
     m_actionRequiredCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actionRequiredInfo"))
   {
     m_actionRequiredInfo = jsonValue.GetString("actionRequiredInfo");
-
     m_actionRequiredInfoHasBeenSet = true;
   }
-
   return *this;
 }
 

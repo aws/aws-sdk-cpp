@@ -12,11 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-TerminateWorkspacesPoolSessionRequest::TerminateWorkspacesPoolSessionRequest() : 
-    m_sessionIdHasBeenSet(false)
-{
-}
-
 Aws::String TerminateWorkspacesPoolSessionRequest::SerializePayload() const
 {
   JsonValue payload;

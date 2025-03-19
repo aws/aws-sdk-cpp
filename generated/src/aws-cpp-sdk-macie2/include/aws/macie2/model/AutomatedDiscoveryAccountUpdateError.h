@@ -34,7 +34,7 @@ namespace Model
   class AutomatedDiscoveryAccountUpdateError
   {
   public:
-    AWS_MACIE2_API AutomatedDiscoveryAccountUpdateError();
+    AWS_MACIE2_API AutomatedDiscoveryAccountUpdateError() = default;
     AWS_MACIE2_API AutomatedDiscoveryAccountUpdateError(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API AutomatedDiscoveryAccountUpdateError& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * <p>The Amazon Web Services account ID for the account that the request applied
      * to.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline AutomatedDiscoveryAccountUpdateError& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline AutomatedDiscoveryAccountUpdateError& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline AutomatedDiscoveryAccountUpdateError& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    AutomatedDiscoveryAccountUpdateError& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,19 +61,17 @@ namespace Model
      * ACCOUNT_PAUSED, Macie isn’t enabled for the account in the current Amazon Web
      * Services Region.</p>
      */
-    inline const AutomatedDiscoveryAccountUpdateErrorCode& GetErrorCode() const{ return m_errorCode; }
+    inline AutomatedDiscoveryAccountUpdateErrorCode GetErrorCode() const { return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    inline void SetErrorCode(const AutomatedDiscoveryAccountUpdateErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-    inline void SetErrorCode(AutomatedDiscoveryAccountUpdateErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-    inline AutomatedDiscoveryAccountUpdateError& WithErrorCode(const AutomatedDiscoveryAccountUpdateErrorCode& value) { SetErrorCode(value); return *this;}
-    inline AutomatedDiscoveryAccountUpdateError& WithErrorCode(AutomatedDiscoveryAccountUpdateErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
+    inline void SetErrorCode(AutomatedDiscoveryAccountUpdateErrorCode value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
+    inline AutomatedDiscoveryAccountUpdateError& WithErrorCode(AutomatedDiscoveryAccountUpdateErrorCode value) { SetErrorCode(value); return *this;}
     ///@}
   private:
 
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet = false;
 
-    AutomatedDiscoveryAccountUpdateErrorCode m_errorCode;
+    AutomatedDiscoveryAccountUpdateErrorCode m_errorCode{AutomatedDiscoveryAccountUpdateErrorCode::NOT_SET};
     bool m_errorCodeHasBeenSet = false;
   };
 

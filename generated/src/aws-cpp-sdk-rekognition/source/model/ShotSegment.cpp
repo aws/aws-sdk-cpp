@@ -18,16 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-ShotSegment::ShotSegment() : 
-    m_index(0),
-    m_indexHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false)
-{
-}
-
 ShotSegment::ShotSegment(JsonView jsonValue)
-  : ShotSegment()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ShotSegment& ShotSegment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Index"))
   {
     m_index = jsonValue.GetInt64("Index");
-
     m_indexHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Confidence"))
   {
     m_confidence = jsonValue.GetDouble("Confidence");
-
     m_confidenceHasBeenSet = true;
   }
-
   return *this;
 }
 

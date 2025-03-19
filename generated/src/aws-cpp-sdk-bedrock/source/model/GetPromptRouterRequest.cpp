@@ -12,11 +12,6 @@ using namespace Aws::Bedrock::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetPromptRouterRequest::GetPromptRouterRequest() : 
-    m_promptRouterArnHasBeenSet(false)
-{
-}
-
 Aws::String GetPromptRouterRequest::SerializePayload() const
 {
   return {};

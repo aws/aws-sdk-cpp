@@ -26,7 +26,7 @@ namespace Model
   class GetIntrospectionSchemaRequest : public AppSyncRequest
   {
   public:
-    AWS_APPSYNC_API GetIntrospectionSchemaRequest();
+    AWS_APPSYNC_API GetIntrospectionSchemaRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,26 +43,22 @@ namespace Model
     /**
      * <p>The API ID.</p>
      */
-    inline const Aws::String& GetApiId() const{ return m_apiId; }
+    inline const Aws::String& GetApiId() const { return m_apiId; }
     inline bool ApiIdHasBeenSet() const { return m_apiIdHasBeenSet; }
-    inline void SetApiId(const Aws::String& value) { m_apiIdHasBeenSet = true; m_apiId = value; }
-    inline void SetApiId(Aws::String&& value) { m_apiIdHasBeenSet = true; m_apiId = std::move(value); }
-    inline void SetApiId(const char* value) { m_apiIdHasBeenSet = true; m_apiId.assign(value); }
-    inline GetIntrospectionSchemaRequest& WithApiId(const Aws::String& value) { SetApiId(value); return *this;}
-    inline GetIntrospectionSchemaRequest& WithApiId(Aws::String&& value) { SetApiId(std::move(value)); return *this;}
-    inline GetIntrospectionSchemaRequest& WithApiId(const char* value) { SetApiId(value); return *this;}
+    template<typename ApiIdT = Aws::String>
+    void SetApiId(ApiIdT&& value) { m_apiIdHasBeenSet = true; m_apiId = std::forward<ApiIdT>(value); }
+    template<typename ApiIdT = Aws::String>
+    GetIntrospectionSchemaRequest& WithApiId(ApiIdT&& value) { SetApiId(std::forward<ApiIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The schema format: SDL or JSON.</p>
      */
-    inline const OutputType& GetFormat() const{ return m_format; }
+    inline OutputType GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const OutputType& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(OutputType&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline GetIntrospectionSchemaRequest& WithFormat(const OutputType& value) { SetFormat(value); return *this;}
-    inline GetIntrospectionSchemaRequest& WithFormat(OutputType&& value) { SetFormat(std::move(value)); return *this;}
+    inline void SetFormat(OutputType value) { m_formatHasBeenSet = true; m_format = value; }
+    inline GetIntrospectionSchemaRequest& WithFormat(OutputType value) { SetFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -70,7 +66,7 @@ namespace Model
      * <p>A flag that specifies whether the schema introspection should contain
      * directives.</p>
      */
-    inline bool GetIncludeDirectives() const{ return m_includeDirectives; }
+    inline bool GetIncludeDirectives() const { return m_includeDirectives; }
     inline bool IncludeDirectivesHasBeenSet() const { return m_includeDirectivesHasBeenSet; }
     inline void SetIncludeDirectives(bool value) { m_includeDirectivesHasBeenSet = true; m_includeDirectives = value; }
     inline GetIntrospectionSchemaRequest& WithIncludeDirectives(bool value) { SetIncludeDirectives(value); return *this;}
@@ -80,10 +76,10 @@ namespace Model
     Aws::String m_apiId;
     bool m_apiIdHasBeenSet = false;
 
-    OutputType m_format;
+    OutputType m_format{OutputType::NOT_SET};
     bool m_formatHasBeenSet = false;
 
-    bool m_includeDirectives;
+    bool m_includeDirectives{false};
     bool m_includeDirectivesHasBeenSet = false;
   };
 

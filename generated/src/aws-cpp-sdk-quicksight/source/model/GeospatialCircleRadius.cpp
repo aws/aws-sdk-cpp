@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-GeospatialCircleRadius::GeospatialCircleRadius() : 
-    m_radius(0.0),
-    m_radiusHasBeenSet(false)
-{
-}
-
 GeospatialCircleRadius::GeospatialCircleRadius(JsonView jsonValue)
-  : GeospatialCircleRadius()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ GeospatialCircleRadius& GeospatialCircleRadius::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Radius"))
   {
     m_radius = jsonValue.GetDouble("Radius");
-
     m_radiusHasBeenSet = true;
   }
-
   return *this;
 }
 

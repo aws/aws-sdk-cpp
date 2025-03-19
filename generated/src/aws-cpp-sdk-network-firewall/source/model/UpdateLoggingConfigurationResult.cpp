@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateLoggingConfigurationResult::UpdateLoggingConfigurationResult()
-{
-}
-
 UpdateLoggingConfigurationResult::UpdateLoggingConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ UpdateLoggingConfigurationResult& UpdateLoggingConfigurationResult::operator =(c
   if(jsonValue.ValueExists("FirewallArn"))
   {
     m_firewallArn = jsonValue.GetString("FirewallArn");
-
+    m_firewallArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FirewallName"))
   {
     m_firewallName = jsonValue.GetString("FirewallName");
-
+    m_firewallNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LoggingConfiguration"))
   {
     m_loggingConfiguration = jsonValue.GetObject("LoggingConfiguration");
-
+    m_loggingConfigurationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

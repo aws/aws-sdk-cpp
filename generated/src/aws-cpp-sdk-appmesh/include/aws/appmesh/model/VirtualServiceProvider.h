@@ -33,7 +33,7 @@ namespace Model
   class VirtualServiceProvider
   {
   public:
-    AWS_APPMESH_API VirtualServiceProvider();
+    AWS_APPMESH_API VirtualServiceProvider() = default;
     AWS_APPMESH_API VirtualServiceProvider(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API VirtualServiceProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>The virtual node associated with a virtual service.</p>
      */
-    inline const VirtualNodeServiceProvider& GetVirtualNode() const{ return m_virtualNode; }
+    inline const VirtualNodeServiceProvider& GetVirtualNode() const { return m_virtualNode; }
     inline bool VirtualNodeHasBeenSet() const { return m_virtualNodeHasBeenSet; }
-    inline void SetVirtualNode(const VirtualNodeServiceProvider& value) { m_virtualNodeHasBeenSet = true; m_virtualNode = value; }
-    inline void SetVirtualNode(VirtualNodeServiceProvider&& value) { m_virtualNodeHasBeenSet = true; m_virtualNode = std::move(value); }
-    inline VirtualServiceProvider& WithVirtualNode(const VirtualNodeServiceProvider& value) { SetVirtualNode(value); return *this;}
-    inline VirtualServiceProvider& WithVirtualNode(VirtualNodeServiceProvider&& value) { SetVirtualNode(std::move(value)); return *this;}
+    template<typename VirtualNodeT = VirtualNodeServiceProvider>
+    void SetVirtualNode(VirtualNodeT&& value) { m_virtualNodeHasBeenSet = true; m_virtualNode = std::forward<VirtualNodeT>(value); }
+    template<typename VirtualNodeT = VirtualNodeServiceProvider>
+    VirtualServiceProvider& WithVirtualNode(VirtualNodeT&& value) { SetVirtualNode(std::forward<VirtualNodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The virtual router associated with a virtual service.</p>
      */
-    inline const VirtualRouterServiceProvider& GetVirtualRouter() const{ return m_virtualRouter; }
+    inline const VirtualRouterServiceProvider& GetVirtualRouter() const { return m_virtualRouter; }
     inline bool VirtualRouterHasBeenSet() const { return m_virtualRouterHasBeenSet; }
-    inline void SetVirtualRouter(const VirtualRouterServiceProvider& value) { m_virtualRouterHasBeenSet = true; m_virtualRouter = value; }
-    inline void SetVirtualRouter(VirtualRouterServiceProvider&& value) { m_virtualRouterHasBeenSet = true; m_virtualRouter = std::move(value); }
-    inline VirtualServiceProvider& WithVirtualRouter(const VirtualRouterServiceProvider& value) { SetVirtualRouter(value); return *this;}
-    inline VirtualServiceProvider& WithVirtualRouter(VirtualRouterServiceProvider&& value) { SetVirtualRouter(std::move(value)); return *this;}
+    template<typename VirtualRouterT = VirtualRouterServiceProvider>
+    void SetVirtualRouter(VirtualRouterT&& value) { m_virtualRouterHasBeenSet = true; m_virtualRouter = std::forward<VirtualRouterT>(value); }
+    template<typename VirtualRouterT = VirtualRouterServiceProvider>
+    VirtualServiceProvider& WithVirtualRouter(VirtualRouterT&& value) { SetVirtualRouter(std::forward<VirtualRouterT>(value)); return *this;}
     ///@}
   private:
 

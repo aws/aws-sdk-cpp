@@ -28,7 +28,7 @@ namespace Model
   class ExportQAppSessionDataResult
   {
   public:
-    AWS_QAPPS_API ExportQAppSessionDataResult();
+    AWS_QAPPS_API ExportQAppSessionDataResult() = default;
     AWS_QAPPS_API ExportQAppSessionDataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QAPPS_API ExportQAppSessionDataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,13 +37,11 @@ namespace Model
     /**
      * <p>The link where the exported Q App session data can be downloaded from.</p>
      */
-    inline const Aws::String& GetCsvFileLink() const{ return m_csvFileLink; }
-    inline void SetCsvFileLink(const Aws::String& value) { m_csvFileLink = value; }
-    inline void SetCsvFileLink(Aws::String&& value) { m_csvFileLink = std::move(value); }
-    inline void SetCsvFileLink(const char* value) { m_csvFileLink.assign(value); }
-    inline ExportQAppSessionDataResult& WithCsvFileLink(const Aws::String& value) { SetCsvFileLink(value); return *this;}
-    inline ExportQAppSessionDataResult& WithCsvFileLink(Aws::String&& value) { SetCsvFileLink(std::move(value)); return *this;}
-    inline ExportQAppSessionDataResult& WithCsvFileLink(const char* value) { SetCsvFileLink(value); return *this;}
+    inline const Aws::String& GetCsvFileLink() const { return m_csvFileLink; }
+    template<typename CsvFileLinkT = Aws::String>
+    void SetCsvFileLink(CsvFileLinkT&& value) { m_csvFileLinkHasBeenSet = true; m_csvFileLink = std::forward<CsvFileLinkT>(value); }
+    template<typename CsvFileLinkT = Aws::String>
+    ExportQAppSessionDataResult& WithCsvFileLink(CsvFileLinkT&& value) { SetCsvFileLink(std::forward<CsvFileLinkT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,45 +49,45 @@ namespace Model
      * <p>The date and time when the link for the exported Q App session data
      * expires.</p>
      */
-    inline const Aws::Utils::DateTime& GetExpiresAt() const{ return m_expiresAt; }
-    inline void SetExpiresAt(const Aws::Utils::DateTime& value) { m_expiresAt = value; }
-    inline void SetExpiresAt(Aws::Utils::DateTime&& value) { m_expiresAt = std::move(value); }
-    inline ExportQAppSessionDataResult& WithExpiresAt(const Aws::Utils::DateTime& value) { SetExpiresAt(value); return *this;}
-    inline ExportQAppSessionDataResult& WithExpiresAt(Aws::Utils::DateTime&& value) { SetExpiresAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetExpiresAt() const { return m_expiresAt; }
+    template<typename ExpiresAtT = Aws::Utils::DateTime>
+    void SetExpiresAt(ExpiresAtT&& value) { m_expiresAtHasBeenSet = true; m_expiresAt = std::forward<ExpiresAtT>(value); }
+    template<typename ExpiresAtT = Aws::Utils::DateTime>
+    ExportQAppSessionDataResult& WithExpiresAt(ExpiresAtT&& value) { SetExpiresAt(std::forward<ExpiresAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Q App data collection session.</p>
      */
-    inline const Aws::String& GetSessionArn() const{ return m_sessionArn; }
-    inline void SetSessionArn(const Aws::String& value) { m_sessionArn = value; }
-    inline void SetSessionArn(Aws::String&& value) { m_sessionArn = std::move(value); }
-    inline void SetSessionArn(const char* value) { m_sessionArn.assign(value); }
-    inline ExportQAppSessionDataResult& WithSessionArn(const Aws::String& value) { SetSessionArn(value); return *this;}
-    inline ExportQAppSessionDataResult& WithSessionArn(Aws::String&& value) { SetSessionArn(std::move(value)); return *this;}
-    inline ExportQAppSessionDataResult& WithSessionArn(const char* value) { SetSessionArn(value); return *this;}
+    inline const Aws::String& GetSessionArn() const { return m_sessionArn; }
+    template<typename SessionArnT = Aws::String>
+    void SetSessionArn(SessionArnT&& value) { m_sessionArnHasBeenSet = true; m_sessionArn = std::forward<SessionArnT>(value); }
+    template<typename SessionArnT = Aws::String>
+    ExportQAppSessionDataResult& WithSessionArn(SessionArnT&& value) { SetSessionArn(std::forward<SessionArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ExportQAppSessionDataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ExportQAppSessionDataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ExportQAppSessionDataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ExportQAppSessionDataResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_csvFileLink;
+    bool m_csvFileLinkHasBeenSet = false;
 
-    Aws::Utils::DateTime m_expiresAt;
+    Aws::Utils::DateTime m_expiresAt{};
+    bool m_expiresAtHasBeenSet = false;
 
     Aws::String m_sessionArn;
+    bool m_sessionArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

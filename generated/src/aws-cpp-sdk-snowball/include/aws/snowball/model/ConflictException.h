@@ -33,7 +33,7 @@ namespace Model
   class ConflictException
   {
   public:
-    AWS_SNOWBALL_API ConflictException();
+    AWS_SNOWBALL_API ConflictException() = default;
     AWS_SNOWBALL_API ConflictException(Aws::Utils::Json::JsonView jsonValue);
     AWS_SNOWBALL_API ConflictException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,26 +44,22 @@ namespace Model
      * <p>You get this resource when you call <code>CreateReturnShippingLabel</code>
      * more than once when other requests are not completed. .</p>
      */
-    inline const Aws::String& GetConflictResource() const{ return m_conflictResource; }
+    inline const Aws::String& GetConflictResource() const { return m_conflictResource; }
     inline bool ConflictResourceHasBeenSet() const { return m_conflictResourceHasBeenSet; }
-    inline void SetConflictResource(const Aws::String& value) { m_conflictResourceHasBeenSet = true; m_conflictResource = value; }
-    inline void SetConflictResource(Aws::String&& value) { m_conflictResourceHasBeenSet = true; m_conflictResource = std::move(value); }
-    inline void SetConflictResource(const char* value) { m_conflictResourceHasBeenSet = true; m_conflictResource.assign(value); }
-    inline ConflictException& WithConflictResource(const Aws::String& value) { SetConflictResource(value); return *this;}
-    inline ConflictException& WithConflictResource(Aws::String&& value) { SetConflictResource(std::move(value)); return *this;}
-    inline ConflictException& WithConflictResource(const char* value) { SetConflictResource(value); return *this;}
+    template<typename ConflictResourceT = Aws::String>
+    void SetConflictResource(ConflictResourceT&& value) { m_conflictResourceHasBeenSet = true; m_conflictResource = std::forward<ConflictResourceT>(value); }
+    template<typename ConflictResourceT = Aws::String>
+    ConflictException& WithConflictResource(ConflictResourceT&& value) { SetConflictResource(std::forward<ConflictResourceT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline ConflictException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline ConflictException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline ConflictException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    ConflictException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,14 +18,7 @@ namespace LookoutMetrics
 namespace Model
 {
 
-DimensionFilter::DimensionFilter() : 
-    m_dimensionNameHasBeenSet(false),
-    m_dimensionValueListHasBeenSet(false)
-{
-}
-
 DimensionFilter::DimensionFilter(JsonView jsonValue)
-  : DimensionFilter()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ DimensionFilter& DimensionFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DimensionName"))
   {
     m_dimensionName = jsonValue.GetString("DimensionName");
-
     m_dimensionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DimensionValueList"))
   {
     Aws::Utils::Array<JsonView> dimensionValueListJsonList = jsonValue.GetArray("DimensionValueList");
@@ -48,7 +39,6 @@ DimensionFilter& DimensionFilter::operator =(JsonView jsonValue)
     }
     m_dimensionValueListHasBeenSet = true;
   }
-
   return *this;
 }
 

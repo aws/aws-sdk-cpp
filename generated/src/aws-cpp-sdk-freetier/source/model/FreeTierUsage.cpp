@@ -18,25 +18,7 @@ namespace FreeTier
 namespace Model
 {
 
-FreeTierUsage::FreeTierUsage() : 
-    m_actualUsageAmount(0.0),
-    m_actualUsageAmountHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_forecastedUsageAmount(0.0),
-    m_forecastedUsageAmountHasBeenSet(false),
-    m_freeTierTypeHasBeenSet(false),
-    m_limit(0.0),
-    m_limitHasBeenSet(false),
-    m_operationHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_serviceHasBeenSet(false),
-    m_unitHasBeenSet(false),
-    m_usageTypeHasBeenSet(false)
-{
-}
-
 FreeTierUsage::FreeTierUsage(JsonView jsonValue)
-  : FreeTierUsage()
 {
   *this = jsonValue;
 }
@@ -46,73 +28,53 @@ FreeTierUsage& FreeTierUsage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("actualUsageAmount"))
   {
     m_actualUsageAmount = jsonValue.GetDouble("actualUsageAmount");
-
     m_actualUsageAmountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("forecastedUsageAmount"))
   {
     m_forecastedUsageAmount = jsonValue.GetDouble("forecastedUsageAmount");
-
     m_forecastedUsageAmountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("freeTierType"))
   {
     m_freeTierType = jsonValue.GetString("freeTierType");
-
     m_freeTierTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("limit"))
   {
     m_limit = jsonValue.GetDouble("limit");
-
     m_limitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operation"))
   {
     m_operation = jsonValue.GetString("operation");
-
     m_operationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("region"))
   {
     m_region = jsonValue.GetString("region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("service"))
   {
     m_service = jsonValue.GetString("service");
-
     m_serviceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unit"))
   {
     m_unit = jsonValue.GetString("unit");
-
     m_unitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("usageType"))
   {
     m_usageType = jsonValue.GetString("usageType");
-
     m_usageTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

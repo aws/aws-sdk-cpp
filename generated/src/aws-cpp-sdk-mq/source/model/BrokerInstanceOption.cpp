@@ -18,20 +18,7 @@ namespace MQ
 namespace Model
 {
 
-BrokerInstanceOption::BrokerInstanceOption() : 
-    m_availabilityZonesHasBeenSet(false),
-    m_engineType(EngineType::NOT_SET),
-    m_engineTypeHasBeenSet(false),
-    m_hostInstanceTypeHasBeenSet(false),
-    m_storageType(BrokerStorageType::NOT_SET),
-    m_storageTypeHasBeenSet(false),
-    m_supportedDeploymentModesHasBeenSet(false),
-    m_supportedEngineVersionsHasBeenSet(false)
-{
-}
-
 BrokerInstanceOption::BrokerInstanceOption(JsonView jsonValue)
-  : BrokerInstanceOption()
 {
   *this = jsonValue;
 }
@@ -47,28 +34,21 @@ BrokerInstanceOption& BrokerInstanceOption::operator =(JsonView jsonValue)
     }
     m_availabilityZonesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("engineType"))
   {
     m_engineType = EngineTypeMapper::GetEngineTypeForName(jsonValue.GetString("engineType"));
-
     m_engineTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hostInstanceType"))
   {
     m_hostInstanceType = jsonValue.GetString("hostInstanceType");
-
     m_hostInstanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storageType"))
   {
     m_storageType = BrokerStorageTypeMapper::GetBrokerStorageTypeForName(jsonValue.GetString("storageType"));
-
     m_storageTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("supportedDeploymentModes"))
   {
     Aws::Utils::Array<JsonView> supportedDeploymentModesJsonList = jsonValue.GetArray("supportedDeploymentModes");
@@ -78,7 +58,6 @@ BrokerInstanceOption& BrokerInstanceOption::operator =(JsonView jsonValue)
     }
     m_supportedDeploymentModesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("supportedEngineVersions"))
   {
     Aws::Utils::Array<JsonView> supportedEngineVersionsJsonList = jsonValue.GetArray("supportedEngineVersions");
@@ -88,7 +67,6 @@ BrokerInstanceOption& BrokerInstanceOption::operator =(JsonView jsonValue)
     }
     m_supportedEngineVersionsHasBeenSet = true;
   }
-
   return *this;
 }
 

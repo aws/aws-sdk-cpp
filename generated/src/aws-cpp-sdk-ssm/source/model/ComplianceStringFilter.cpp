@@ -18,16 +18,7 @@ namespace SSM
 namespace Model
 {
 
-ComplianceStringFilter::ComplianceStringFilter() : 
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_type(ComplianceQueryOperatorType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 ComplianceStringFilter::ComplianceStringFilter(JsonView jsonValue)
-  : ComplianceStringFilter()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ ComplianceStringFilter& ComplianceStringFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -50,14 +39,11 @@ ComplianceStringFilter& ComplianceStringFilter::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ComplianceQueryOperatorTypeMapper::GetComplianceQueryOperatorTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

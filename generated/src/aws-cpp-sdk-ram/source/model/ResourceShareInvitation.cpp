@@ -18,21 +18,7 @@ namespace RAM
 namespace Model
 {
 
-ResourceShareInvitation::ResourceShareInvitation() : 
-    m_resourceShareInvitationArnHasBeenSet(false),
-    m_resourceShareNameHasBeenSet(false),
-    m_resourceShareArnHasBeenSet(false),
-    m_senderAccountIdHasBeenSet(false),
-    m_receiverAccountIdHasBeenSet(false),
-    m_invitationTimestampHasBeenSet(false),
-    m_status(ResourceShareInvitationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_receiverArnHasBeenSet(false)
-{
-}
-
 ResourceShareInvitation::ResourceShareInvitation(JsonView jsonValue)
-  : ResourceShareInvitation()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ ResourceShareInvitation& ResourceShareInvitation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("resourceShareInvitationArn"))
   {
     m_resourceShareInvitationArn = jsonValue.GetString("resourceShareInvitationArn");
-
     m_resourceShareInvitationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceShareName"))
   {
     m_resourceShareName = jsonValue.GetString("resourceShareName");
-
     m_resourceShareNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceShareArn"))
   {
     m_resourceShareArn = jsonValue.GetString("resourceShareArn");
-
     m_resourceShareArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("senderAccountId"))
   {
     m_senderAccountId = jsonValue.GetString("senderAccountId");
-
     m_senderAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("receiverAccountId"))
   {
     m_receiverAccountId = jsonValue.GetString("receiverAccountId");
-
     m_receiverAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("invitationTimestamp"))
   {
     m_invitationTimestamp = jsonValue.GetDouble("invitationTimestamp");
-
     m_invitationTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ResourceShareInvitationStatusMapper::GetResourceShareInvitationStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("receiverArn"))
   {
     m_receiverArn = jsonValue.GetString("receiverArn");
-
     m_receiverArnHasBeenSet = true;
   }
-
   return *this;
 }
 

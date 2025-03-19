@@ -29,7 +29,7 @@ namespace Model
   class ListSimulationJobBatchesResult
   {
   public:
-    AWS_ROBOMAKER_API ListSimulationJobBatchesResult();
+    AWS_ROBOMAKER_API ListSimulationJobBatchesResult() = default;
     AWS_ROBOMAKER_API ListSimulationJobBatchesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROBOMAKER_API ListSimulationJobBatchesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list of simulation job batch summaries.</p>
      */
-    inline const Aws::Vector<SimulationJobBatchSummary>& GetSimulationJobBatchSummaries() const{ return m_simulationJobBatchSummaries; }
-    inline void SetSimulationJobBatchSummaries(const Aws::Vector<SimulationJobBatchSummary>& value) { m_simulationJobBatchSummaries = value; }
-    inline void SetSimulationJobBatchSummaries(Aws::Vector<SimulationJobBatchSummary>&& value) { m_simulationJobBatchSummaries = std::move(value); }
-    inline ListSimulationJobBatchesResult& WithSimulationJobBatchSummaries(const Aws::Vector<SimulationJobBatchSummary>& value) { SetSimulationJobBatchSummaries(value); return *this;}
-    inline ListSimulationJobBatchesResult& WithSimulationJobBatchSummaries(Aws::Vector<SimulationJobBatchSummary>&& value) { SetSimulationJobBatchSummaries(std::move(value)); return *this;}
-    inline ListSimulationJobBatchesResult& AddSimulationJobBatchSummaries(const SimulationJobBatchSummary& value) { m_simulationJobBatchSummaries.push_back(value); return *this; }
-    inline ListSimulationJobBatchesResult& AddSimulationJobBatchSummaries(SimulationJobBatchSummary&& value) { m_simulationJobBatchSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SimulationJobBatchSummary>& GetSimulationJobBatchSummaries() const { return m_simulationJobBatchSummaries; }
+    template<typename SimulationJobBatchSummariesT = Aws::Vector<SimulationJobBatchSummary>>
+    void SetSimulationJobBatchSummaries(SimulationJobBatchSummariesT&& value) { m_simulationJobBatchSummariesHasBeenSet = true; m_simulationJobBatchSummaries = std::forward<SimulationJobBatchSummariesT>(value); }
+    template<typename SimulationJobBatchSummariesT = Aws::Vector<SimulationJobBatchSummary>>
+    ListSimulationJobBatchesResult& WithSimulationJobBatchSummaries(SimulationJobBatchSummariesT&& value) { SetSimulationJobBatchSummaries(std::forward<SimulationJobBatchSummariesT>(value)); return *this;}
+    template<typename SimulationJobBatchSummariesT = SimulationJobBatchSummary>
+    ListSimulationJobBatchesResult& AddSimulationJobBatchSummaries(SimulationJobBatchSummariesT&& value) { m_simulationJobBatchSummariesHasBeenSet = true; m_simulationJobBatchSummaries.emplace_back(std::forward<SimulationJobBatchSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -56,32 +56,31 @@ namespace Model
      * object's <code>nextToken</code> parameter. If there are no remaining results,
      * the previous response object's NextToken parameter is set to null. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListSimulationJobBatchesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListSimulationJobBatchesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListSimulationJobBatchesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListSimulationJobBatchesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListSimulationJobBatchesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListSimulationJobBatchesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListSimulationJobBatchesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListSimulationJobBatchesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<SimulationJobBatchSummary> m_simulationJobBatchSummaries;
+    bool m_simulationJobBatchSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

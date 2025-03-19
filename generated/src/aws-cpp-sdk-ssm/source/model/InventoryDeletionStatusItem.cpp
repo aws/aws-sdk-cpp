@@ -18,20 +18,7 @@ namespace SSM
 namespace Model
 {
 
-InventoryDeletionStatusItem::InventoryDeletionStatusItem() : 
-    m_deletionIdHasBeenSet(false),
-    m_typeNameHasBeenSet(false),
-    m_deletionStartTimeHasBeenSet(false),
-    m_lastStatus(InventoryDeletionStatus::NOT_SET),
-    m_lastStatusHasBeenSet(false),
-    m_lastStatusMessageHasBeenSet(false),
-    m_deletionSummaryHasBeenSet(false),
-    m_lastStatusUpdateTimeHasBeenSet(false)
-{
-}
-
 InventoryDeletionStatusItem::InventoryDeletionStatusItem(JsonView jsonValue)
-  : InventoryDeletionStatusItem()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ InventoryDeletionStatusItem& InventoryDeletionStatusItem::operator =(JsonView js
   if(jsonValue.ValueExists("DeletionId"))
   {
     m_deletionId = jsonValue.GetString("DeletionId");
-
     m_deletionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TypeName"))
   {
     m_typeName = jsonValue.GetString("TypeName");
-
     m_typeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeletionStartTime"))
   {
     m_deletionStartTime = jsonValue.GetDouble("DeletionStartTime");
-
     m_deletionStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastStatus"))
   {
     m_lastStatus = InventoryDeletionStatusMapper::GetInventoryDeletionStatusForName(jsonValue.GetString("LastStatus"));
-
     m_lastStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastStatusMessage"))
   {
     m_lastStatusMessage = jsonValue.GetString("LastStatusMessage");
-
     m_lastStatusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeletionSummary"))
   {
     m_deletionSummary = jsonValue.GetObject("DeletionSummary");
-
     m_deletionSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastStatusUpdateTime"))
   {
     m_lastStatusUpdateTime = jsonValue.GetDouble("LastStatusUpdateTime");
-
     m_lastStatusUpdateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

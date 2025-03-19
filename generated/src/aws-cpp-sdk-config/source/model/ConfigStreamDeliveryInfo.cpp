@@ -18,17 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-ConfigStreamDeliveryInfo::ConfigStreamDeliveryInfo() : 
-    m_lastStatus(DeliveryStatus::NOT_SET),
-    m_lastStatusHasBeenSet(false),
-    m_lastErrorCodeHasBeenSet(false),
-    m_lastErrorMessageHasBeenSet(false),
-    m_lastStatusChangeTimeHasBeenSet(false)
-{
-}
-
 ConfigStreamDeliveryInfo::ConfigStreamDeliveryInfo(JsonView jsonValue)
-  : ConfigStreamDeliveryInfo()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ConfigStreamDeliveryInfo& ConfigStreamDeliveryInfo::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("lastStatus"))
   {
     m_lastStatus = DeliveryStatusMapper::GetDeliveryStatusForName(jsonValue.GetString("lastStatus"));
-
     m_lastStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastErrorCode"))
   {
     m_lastErrorCode = jsonValue.GetString("lastErrorCode");
-
     m_lastErrorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastErrorMessage"))
   {
     m_lastErrorMessage = jsonValue.GetString("lastErrorMessage");
-
     m_lastErrorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastStatusChangeTime"))
   {
     m_lastStatusChangeTime = jsonValue.GetDouble("lastStatusChangeTime");
-
     m_lastStatusChangeTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

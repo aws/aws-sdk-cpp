@@ -29,7 +29,7 @@ namespace Model
   class GetAppReplicationConfigurationResult
   {
   public:
-    AWS_SMS_API GetAppReplicationConfigurationResult();
+    AWS_SMS_API GetAppReplicationConfigurationResult() = default;
     AWS_SMS_API GetAppReplicationConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SMS_API GetAppReplicationConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,30 +39,30 @@ namespace Model
      * <p>The replication configurations associated with server groups in this
      * application.</p>
      */
-    inline const Aws::Vector<ServerGroupReplicationConfiguration>& GetServerGroupReplicationConfigurations() const{ return m_serverGroupReplicationConfigurations; }
-    inline void SetServerGroupReplicationConfigurations(const Aws::Vector<ServerGroupReplicationConfiguration>& value) { m_serverGroupReplicationConfigurations = value; }
-    inline void SetServerGroupReplicationConfigurations(Aws::Vector<ServerGroupReplicationConfiguration>&& value) { m_serverGroupReplicationConfigurations = std::move(value); }
-    inline GetAppReplicationConfigurationResult& WithServerGroupReplicationConfigurations(const Aws::Vector<ServerGroupReplicationConfiguration>& value) { SetServerGroupReplicationConfigurations(value); return *this;}
-    inline GetAppReplicationConfigurationResult& WithServerGroupReplicationConfigurations(Aws::Vector<ServerGroupReplicationConfiguration>&& value) { SetServerGroupReplicationConfigurations(std::move(value)); return *this;}
-    inline GetAppReplicationConfigurationResult& AddServerGroupReplicationConfigurations(const ServerGroupReplicationConfiguration& value) { m_serverGroupReplicationConfigurations.push_back(value); return *this; }
-    inline GetAppReplicationConfigurationResult& AddServerGroupReplicationConfigurations(ServerGroupReplicationConfiguration&& value) { m_serverGroupReplicationConfigurations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ServerGroupReplicationConfiguration>& GetServerGroupReplicationConfigurations() const { return m_serverGroupReplicationConfigurations; }
+    template<typename ServerGroupReplicationConfigurationsT = Aws::Vector<ServerGroupReplicationConfiguration>>
+    void SetServerGroupReplicationConfigurations(ServerGroupReplicationConfigurationsT&& value) { m_serverGroupReplicationConfigurationsHasBeenSet = true; m_serverGroupReplicationConfigurations = std::forward<ServerGroupReplicationConfigurationsT>(value); }
+    template<typename ServerGroupReplicationConfigurationsT = Aws::Vector<ServerGroupReplicationConfiguration>>
+    GetAppReplicationConfigurationResult& WithServerGroupReplicationConfigurations(ServerGroupReplicationConfigurationsT&& value) { SetServerGroupReplicationConfigurations(std::forward<ServerGroupReplicationConfigurationsT>(value)); return *this;}
+    template<typename ServerGroupReplicationConfigurationsT = ServerGroupReplicationConfiguration>
+    GetAppReplicationConfigurationResult& AddServerGroupReplicationConfigurations(ServerGroupReplicationConfigurationsT&& value) { m_serverGroupReplicationConfigurationsHasBeenSet = true; m_serverGroupReplicationConfigurations.emplace_back(std::forward<ServerGroupReplicationConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetAppReplicationConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetAppReplicationConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetAppReplicationConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetAppReplicationConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ServerGroupReplicationConfiguration> m_serverGroupReplicationConfigurations;
+    bool m_serverGroupReplicationConfigurationsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,18 +12,6 @@ using namespace Aws::RedshiftServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RestoreFromSnapshotRequest::RestoreFromSnapshotRequest() : 
-    m_adminPasswordSecretKmsKeyIdHasBeenSet(false),
-    m_manageAdminPassword(false),
-    m_manageAdminPasswordHasBeenSet(false),
-    m_namespaceNameHasBeenSet(false),
-    m_ownerAccountHasBeenSet(false),
-    m_snapshotArnHasBeenSet(false),
-    m_snapshotNameHasBeenSet(false),
-    m_workgroupNameHasBeenSet(false)
-{
-}
-
 Aws::String RestoreFromSnapshotRequest::SerializePayload() const
 {
   JsonValue payload;

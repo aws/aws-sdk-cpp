@@ -21,7 +21,7 @@ namespace Model
   class GetControlRequest : public ControlCatalogRequest
   {
   public:
-    AWS_CONTROLCATALOG_API GetControlRequest();
+    AWS_CONTROLCATALOG_API GetControlRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * <code>^arn:(aws(?:[-a-z]*)?):(controlcatalog|controltower):[a-zA-Z0-9-]*::control/[0-9a-zA-Z_\\-]+$</code>
      * </p>
      */
-    inline const Aws::String& GetControlArn() const{ return m_controlArn; }
+    inline const Aws::String& GetControlArn() const { return m_controlArn; }
     inline bool ControlArnHasBeenSet() const { return m_controlArnHasBeenSet; }
-    inline void SetControlArn(const Aws::String& value) { m_controlArnHasBeenSet = true; m_controlArn = value; }
-    inline void SetControlArn(Aws::String&& value) { m_controlArnHasBeenSet = true; m_controlArn = std::move(value); }
-    inline void SetControlArn(const char* value) { m_controlArnHasBeenSet = true; m_controlArn.assign(value); }
-    inline GetControlRequest& WithControlArn(const Aws::String& value) { SetControlArn(value); return *this;}
-    inline GetControlRequest& WithControlArn(Aws::String&& value) { SetControlArn(std::move(value)); return *this;}
-    inline GetControlRequest& WithControlArn(const char* value) { SetControlArn(value); return *this;}
+    template<typename ControlArnT = Aws::String>
+    void SetControlArn(ControlArnT&& value) { m_controlArnHasBeenSet = true; m_controlArn = std::forward<ControlArnT>(value); }
+    template<typename ControlArnT = Aws::String>
+    GetControlRequest& WithControlArn(ControlArnT&& value) { SetControlArn(std::forward<ControlArnT>(value)); return *this;}
     ///@}
   private:
 

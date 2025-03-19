@@ -18,13 +18,7 @@ namespace LocationService
 namespace Model
 {
 
-TrackingFilterGeometry::TrackingFilterGeometry() : 
-    m_polygonHasBeenSet(false)
-{
-}
-
 TrackingFilterGeometry::TrackingFilterGeometry(JsonView jsonValue)
-  : TrackingFilterGeometry()
 {
   *this = jsonValue;
 }
@@ -54,7 +48,6 @@ TrackingFilterGeometry& TrackingFilterGeometry::operator =(JsonView jsonValue)
     }
     m_polygonHasBeenSet = true;
   }
-
   return *this;
 }
 

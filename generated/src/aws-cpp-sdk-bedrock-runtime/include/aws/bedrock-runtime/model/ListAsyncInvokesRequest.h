@@ -29,7 +29,7 @@ namespace Model
   class ListAsyncInvokesRequest : public BedrockRuntimeRequest
   {
   public:
-    AWS_BEDROCKRUNTIME_API ListAsyncInvokesRequest();
+    AWS_BEDROCKRUNTIME_API ListAsyncInvokesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,43 +46,41 @@ namespace Model
     /**
      * <p>Include invocations submitted after this time.</p>
      */
-    inline const Aws::Utils::DateTime& GetSubmitTimeAfter() const{ return m_submitTimeAfter; }
+    inline const Aws::Utils::DateTime& GetSubmitTimeAfter() const { return m_submitTimeAfter; }
     inline bool SubmitTimeAfterHasBeenSet() const { return m_submitTimeAfterHasBeenSet; }
-    inline void SetSubmitTimeAfter(const Aws::Utils::DateTime& value) { m_submitTimeAfterHasBeenSet = true; m_submitTimeAfter = value; }
-    inline void SetSubmitTimeAfter(Aws::Utils::DateTime&& value) { m_submitTimeAfterHasBeenSet = true; m_submitTimeAfter = std::move(value); }
-    inline ListAsyncInvokesRequest& WithSubmitTimeAfter(const Aws::Utils::DateTime& value) { SetSubmitTimeAfter(value); return *this;}
-    inline ListAsyncInvokesRequest& WithSubmitTimeAfter(Aws::Utils::DateTime&& value) { SetSubmitTimeAfter(std::move(value)); return *this;}
+    template<typename SubmitTimeAfterT = Aws::Utils::DateTime>
+    void SetSubmitTimeAfter(SubmitTimeAfterT&& value) { m_submitTimeAfterHasBeenSet = true; m_submitTimeAfter = std::forward<SubmitTimeAfterT>(value); }
+    template<typename SubmitTimeAfterT = Aws::Utils::DateTime>
+    ListAsyncInvokesRequest& WithSubmitTimeAfter(SubmitTimeAfterT&& value) { SetSubmitTimeAfter(std::forward<SubmitTimeAfterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Include invocations submitted before this time.</p>
      */
-    inline const Aws::Utils::DateTime& GetSubmitTimeBefore() const{ return m_submitTimeBefore; }
+    inline const Aws::Utils::DateTime& GetSubmitTimeBefore() const { return m_submitTimeBefore; }
     inline bool SubmitTimeBeforeHasBeenSet() const { return m_submitTimeBeforeHasBeenSet; }
-    inline void SetSubmitTimeBefore(const Aws::Utils::DateTime& value) { m_submitTimeBeforeHasBeenSet = true; m_submitTimeBefore = value; }
-    inline void SetSubmitTimeBefore(Aws::Utils::DateTime&& value) { m_submitTimeBeforeHasBeenSet = true; m_submitTimeBefore = std::move(value); }
-    inline ListAsyncInvokesRequest& WithSubmitTimeBefore(const Aws::Utils::DateTime& value) { SetSubmitTimeBefore(value); return *this;}
-    inline ListAsyncInvokesRequest& WithSubmitTimeBefore(Aws::Utils::DateTime&& value) { SetSubmitTimeBefore(std::move(value)); return *this;}
+    template<typename SubmitTimeBeforeT = Aws::Utils::DateTime>
+    void SetSubmitTimeBefore(SubmitTimeBeforeT&& value) { m_submitTimeBeforeHasBeenSet = true; m_submitTimeBefore = std::forward<SubmitTimeBeforeT>(value); }
+    template<typename SubmitTimeBeforeT = Aws::Utils::DateTime>
+    ListAsyncInvokesRequest& WithSubmitTimeBefore(SubmitTimeBeforeT&& value) { SetSubmitTimeBefore(std::forward<SubmitTimeBeforeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Filter invocations by status.</p>
      */
-    inline const AsyncInvokeStatus& GetStatusEquals() const{ return m_statusEquals; }
+    inline AsyncInvokeStatus GetStatusEquals() const { return m_statusEquals; }
     inline bool StatusEqualsHasBeenSet() const { return m_statusEqualsHasBeenSet; }
-    inline void SetStatusEquals(const AsyncInvokeStatus& value) { m_statusEqualsHasBeenSet = true; m_statusEquals = value; }
-    inline void SetStatusEquals(AsyncInvokeStatus&& value) { m_statusEqualsHasBeenSet = true; m_statusEquals = std::move(value); }
-    inline ListAsyncInvokesRequest& WithStatusEquals(const AsyncInvokeStatus& value) { SetStatusEquals(value); return *this;}
-    inline ListAsyncInvokesRequest& WithStatusEquals(AsyncInvokeStatus&& value) { SetStatusEquals(std::move(value)); return *this;}
+    inline void SetStatusEquals(AsyncInvokeStatus value) { m_statusEqualsHasBeenSet = true; m_statusEquals = value; }
+    inline ListAsyncInvokesRequest& WithStatusEquals(AsyncInvokeStatus value) { SetStatusEquals(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of invocations to return in one page of results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListAsyncInvokesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -93,60 +91,54 @@ namespace Model
      * <p>Specify the pagination token from a previous request to retrieve the next
      * page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListAsyncInvokesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAsyncInvokesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAsyncInvokesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAsyncInvokesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>How to sort the response.</p>
      */
-    inline const SortAsyncInvocationBy& GetSortBy() const{ return m_sortBy; }
+    inline SortAsyncInvocationBy GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const SortAsyncInvocationBy& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(SortAsyncInvocationBy&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline ListAsyncInvokesRequest& WithSortBy(const SortAsyncInvocationBy& value) { SetSortBy(value); return *this;}
-    inline ListAsyncInvokesRequest& WithSortBy(SortAsyncInvocationBy&& value) { SetSortBy(std::move(value)); return *this;}
+    inline void SetSortBy(SortAsyncInvocationBy value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+    inline ListAsyncInvokesRequest& WithSortBy(SortAsyncInvocationBy value) { SetSortBy(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The sorting order for the response.</p>
      */
-    inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
+    inline SortOrder GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline ListAsyncInvokesRequest& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
-    inline ListAsyncInvokesRequest& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline ListAsyncInvokesRequest& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_submitTimeAfter;
+    Aws::Utils::DateTime m_submitTimeAfter{};
     bool m_submitTimeAfterHasBeenSet = false;
 
-    Aws::Utils::DateTime m_submitTimeBefore;
+    Aws::Utils::DateTime m_submitTimeBefore{};
     bool m_submitTimeBeforeHasBeenSet = false;
 
-    AsyncInvokeStatus m_statusEquals;
+    AsyncInvokeStatus m_statusEquals{AsyncInvokeStatus::NOT_SET};
     bool m_statusEqualsHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    SortAsyncInvocationBy m_sortBy;
+    SortAsyncInvocationBy m_sortBy{SortAsyncInvocationBy::NOT_SET};
     bool m_sortByHasBeenSet = false;
 
-    SortOrder m_sortOrder;
+    SortOrder m_sortOrder{SortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
   };
 

@@ -30,7 +30,7 @@ namespace Model
   class GetMetricStatisticsResult
   {
   public:
-    AWS_CLOUDWATCH_API GetMetricStatisticsResult();
+    AWS_CLOUDWATCH_API GetMetricStatisticsResult() = default;
     AWS_CLOUDWATCH_API GetMetricStatisticsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDWATCH_API GetMetricStatisticsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,43 +39,44 @@ namespace Model
     /**
      * <p>A label for the specified metric.</p>
      */
-    inline const Aws::String& GetLabel() const{ return m_label; }
-    inline void SetLabel(const Aws::String& value) { m_label = value; }
-    inline void SetLabel(Aws::String&& value) { m_label = std::move(value); }
-    inline void SetLabel(const char* value) { m_label.assign(value); }
-    inline GetMetricStatisticsResult& WithLabel(const Aws::String& value) { SetLabel(value); return *this;}
-    inline GetMetricStatisticsResult& WithLabel(Aws::String&& value) { SetLabel(std::move(value)); return *this;}
-    inline GetMetricStatisticsResult& WithLabel(const char* value) { SetLabel(value); return *this;}
+    inline const Aws::String& GetLabel() const { return m_label; }
+    template<typename LabelT = Aws::String>
+    void SetLabel(LabelT&& value) { m_labelHasBeenSet = true; m_label = std::forward<LabelT>(value); }
+    template<typename LabelT = Aws::String>
+    GetMetricStatisticsResult& WithLabel(LabelT&& value) { SetLabel(std::forward<LabelT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The data points for the specified metric.</p>
      */
-    inline const Aws::Vector<Datapoint>& GetDatapoints() const{ return m_datapoints; }
-    inline void SetDatapoints(const Aws::Vector<Datapoint>& value) { m_datapoints = value; }
-    inline void SetDatapoints(Aws::Vector<Datapoint>&& value) { m_datapoints = std::move(value); }
-    inline GetMetricStatisticsResult& WithDatapoints(const Aws::Vector<Datapoint>& value) { SetDatapoints(value); return *this;}
-    inline GetMetricStatisticsResult& WithDatapoints(Aws::Vector<Datapoint>&& value) { SetDatapoints(std::move(value)); return *this;}
-    inline GetMetricStatisticsResult& AddDatapoints(const Datapoint& value) { m_datapoints.push_back(value); return *this; }
-    inline GetMetricStatisticsResult& AddDatapoints(Datapoint&& value) { m_datapoints.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Datapoint>& GetDatapoints() const { return m_datapoints; }
+    template<typename DatapointsT = Aws::Vector<Datapoint>>
+    void SetDatapoints(DatapointsT&& value) { m_datapointsHasBeenSet = true; m_datapoints = std::forward<DatapointsT>(value); }
+    template<typename DatapointsT = Aws::Vector<Datapoint>>
+    GetMetricStatisticsResult& WithDatapoints(DatapointsT&& value) { SetDatapoints(std::forward<DatapointsT>(value)); return *this;}
+    template<typename DatapointsT = Datapoint>
+    GetMetricStatisticsResult& AddDatapoints(DatapointsT&& value) { m_datapointsHasBeenSet = true; m_datapoints.emplace_back(std::forward<DatapointsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline GetMetricStatisticsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline GetMetricStatisticsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    GetMetricStatisticsResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_label;
+    bool m_labelHasBeenSet = false;
 
     Aws::Vector<Datapoint> m_datapoints;
+    bool m_datapointsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

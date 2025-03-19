@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DisassociateTrafficDistributionGroupUserRequest::DisassociateTrafficDistributionGroupUserRequest() : 
-    m_trafficDistributionGroupIdHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateTrafficDistributionGroupUserRequest::SerializePayload() const
 {
   return {};

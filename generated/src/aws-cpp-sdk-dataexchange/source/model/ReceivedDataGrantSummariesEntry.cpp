@@ -18,24 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-ReceivedDataGrantSummariesEntry::ReceivedDataGrantSummariesEntry() : 
-    m_nameHasBeenSet(false),
-    m_senderPrincipalHasBeenSet(false),
-    m_receiverPrincipalHasBeenSet(false),
-    m_acceptanceState(DataGrantAcceptanceState::NOT_SET),
-    m_acceptanceStateHasBeenSet(false),
-    m_acceptedAtHasBeenSet(false),
-    m_endsAtHasBeenSet(false),
-    m_dataSetIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 ReceivedDataGrantSummariesEntry::ReceivedDataGrantSummariesEntry(JsonView jsonValue)
-  : ReceivedDataGrantSummariesEntry()
 {
   *this = jsonValue;
 }
@@ -45,80 +28,58 @@ ReceivedDataGrantSummariesEntry& ReceivedDataGrantSummariesEntry::operator =(Jso
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SenderPrincipal"))
   {
     m_senderPrincipal = jsonValue.GetString("SenderPrincipal");
-
     m_senderPrincipalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReceiverPrincipal"))
   {
     m_receiverPrincipal = jsonValue.GetString("ReceiverPrincipal");
-
     m_receiverPrincipalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AcceptanceState"))
   {
     m_acceptanceState = DataGrantAcceptanceStateMapper::GetDataGrantAcceptanceStateForName(jsonValue.GetString("AcceptanceState"));
-
     m_acceptanceStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AcceptedAt"))
   {
     m_acceptedAt = jsonValue.GetString("AcceptedAt");
-
     m_acceptedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndsAt"))
   {
     m_endsAt = jsonValue.GetString("EndsAt");
-
     m_endsAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSetId"))
   {
     m_dataSetId = jsonValue.GetString("DataSetId");
-
     m_dataSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetString("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetString("UpdatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

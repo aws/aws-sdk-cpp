@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-VerifyTrustResult::VerifyTrustResult()
-{
-}
-
 VerifyTrustResult::VerifyTrustResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ VerifyTrustResult& VerifyTrustResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("TrustId"))
   {
     m_trustId = jsonValue.GetString("TrustId");
-
+    m_trustIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

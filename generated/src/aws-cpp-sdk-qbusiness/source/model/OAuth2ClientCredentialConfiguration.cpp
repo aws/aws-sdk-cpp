@@ -18,16 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-OAuth2ClientCredentialConfiguration::OAuth2ClientCredentialConfiguration() : 
-    m_secretArnHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_authorizationUrlHasBeenSet(false),
-    m_tokenUrlHasBeenSet(false)
-{
-}
-
 OAuth2ClientCredentialConfiguration::OAuth2ClientCredentialConfiguration(JsonView jsonValue)
-  : OAuth2ClientCredentialConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ OAuth2ClientCredentialConfiguration& OAuth2ClientCredentialConfiguration::operat
   if(jsonValue.ValueExists("secretArn"))
   {
     m_secretArn = jsonValue.GetString("secretArn");
-
     m_secretArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authorizationUrl"))
   {
     m_authorizationUrl = jsonValue.GetString("authorizationUrl");
-
     m_authorizationUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tokenUrl"))
   {
     m_tokenUrl = jsonValue.GetString("tokenUrl");
-
     m_tokenUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

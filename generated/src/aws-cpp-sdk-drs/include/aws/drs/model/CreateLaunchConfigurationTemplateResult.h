@@ -28,7 +28,7 @@ namespace Model
   class CreateLaunchConfigurationTemplateResult
   {
   public:
-    AWS_DRS_API CreateLaunchConfigurationTemplateResult();
+    AWS_DRS_API CreateLaunchConfigurationTemplateResult() = default;
     AWS_DRS_API CreateLaunchConfigurationTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DRS_API CreateLaunchConfigurationTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Created Launch Configuration Template.</p>
      */
-    inline const LaunchConfigurationTemplate& GetLaunchConfigurationTemplate() const{ return m_launchConfigurationTemplate; }
-    inline void SetLaunchConfigurationTemplate(const LaunchConfigurationTemplate& value) { m_launchConfigurationTemplate = value; }
-    inline void SetLaunchConfigurationTemplate(LaunchConfigurationTemplate&& value) { m_launchConfigurationTemplate = std::move(value); }
-    inline CreateLaunchConfigurationTemplateResult& WithLaunchConfigurationTemplate(const LaunchConfigurationTemplate& value) { SetLaunchConfigurationTemplate(value); return *this;}
-    inline CreateLaunchConfigurationTemplateResult& WithLaunchConfigurationTemplate(LaunchConfigurationTemplate&& value) { SetLaunchConfigurationTemplate(std::move(value)); return *this;}
+    inline const LaunchConfigurationTemplate& GetLaunchConfigurationTemplate() const { return m_launchConfigurationTemplate; }
+    template<typename LaunchConfigurationTemplateT = LaunchConfigurationTemplate>
+    void SetLaunchConfigurationTemplate(LaunchConfigurationTemplateT&& value) { m_launchConfigurationTemplateHasBeenSet = true; m_launchConfigurationTemplate = std::forward<LaunchConfigurationTemplateT>(value); }
+    template<typename LaunchConfigurationTemplateT = LaunchConfigurationTemplate>
+    CreateLaunchConfigurationTemplateResult& WithLaunchConfigurationTemplate(LaunchConfigurationTemplateT&& value) { SetLaunchConfigurationTemplate(std::forward<LaunchConfigurationTemplateT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateLaunchConfigurationTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateLaunchConfigurationTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateLaunchConfigurationTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateLaunchConfigurationTemplateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     LaunchConfigurationTemplate m_launchConfigurationTemplate;
+    bool m_launchConfigurationTemplateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

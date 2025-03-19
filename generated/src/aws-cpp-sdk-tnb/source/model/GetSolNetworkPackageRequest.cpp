@@ -12,11 +12,6 @@ using namespace Aws::tnb::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSolNetworkPackageRequest::GetSolNetworkPackageRequest() : 
-    m_nsdInfoIdHasBeenSet(false)
-{
-}
-
 Aws::String GetSolNetworkPackageRequest::SerializePayload() const
 {
   return {};

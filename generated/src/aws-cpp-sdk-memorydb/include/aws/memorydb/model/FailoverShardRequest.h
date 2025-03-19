@@ -21,7 +21,7 @@ namespace Model
   class FailoverShardRequest : public MemoryDBRequest
   {
   public:
-    AWS_MEMORYDB_API FailoverShardRequest();
+    AWS_MEMORYDB_API FailoverShardRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
     /**
      * <p>The cluster being failed over.</p>
      */
-    inline const Aws::String& GetClusterName() const{ return m_clusterName; }
+    inline const Aws::String& GetClusterName() const { return m_clusterName; }
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
-    inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
-    inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
-    inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
-    inline FailoverShardRequest& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
-    inline FailoverShardRequest& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
-    inline FailoverShardRequest& WithClusterName(const char* value) { SetClusterName(value); return *this;}
+    template<typename ClusterNameT = Aws::String>
+    void SetClusterName(ClusterNameT&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::forward<ClusterNameT>(value); }
+    template<typename ClusterNameT = Aws::String>
+    FailoverShardRequest& WithClusterName(ClusterNameT&& value) { SetClusterName(std::forward<ClusterNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the shard.</p>
      */
-    inline const Aws::String& GetShardName() const{ return m_shardName; }
+    inline const Aws::String& GetShardName() const { return m_shardName; }
     inline bool ShardNameHasBeenSet() const { return m_shardNameHasBeenSet; }
-    inline void SetShardName(const Aws::String& value) { m_shardNameHasBeenSet = true; m_shardName = value; }
-    inline void SetShardName(Aws::String&& value) { m_shardNameHasBeenSet = true; m_shardName = std::move(value); }
-    inline void SetShardName(const char* value) { m_shardNameHasBeenSet = true; m_shardName.assign(value); }
-    inline FailoverShardRequest& WithShardName(const Aws::String& value) { SetShardName(value); return *this;}
-    inline FailoverShardRequest& WithShardName(Aws::String&& value) { SetShardName(std::move(value)); return *this;}
-    inline FailoverShardRequest& WithShardName(const char* value) { SetShardName(value); return *this;}
+    template<typename ShardNameT = Aws::String>
+    void SetShardName(ShardNameT&& value) { m_shardNameHasBeenSet = true; m_shardName = std::forward<ShardNameT>(value); }
+    template<typename ShardNameT = Aws::String>
+    FailoverShardRequest& WithShardName(ShardNameT&& value) { SetShardName(std::forward<ShardNameT>(value)); return *this;}
     ///@}
   private:
 

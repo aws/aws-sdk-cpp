@@ -18,14 +18,7 @@ namespace Omics
 namespace Model
 {
 
-RunLogLocation::RunLogLocation() : 
-    m_engineLogStreamHasBeenSet(false),
-    m_runLogStreamHasBeenSet(false)
-{
-}
-
 RunLogLocation::RunLogLocation(JsonView jsonValue)
-  : RunLogLocation()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RunLogLocation& RunLogLocation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("engineLogStream"))
   {
     m_engineLogStream = jsonValue.GetString("engineLogStream");
-
     m_engineLogStreamHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runLogStream"))
   {
     m_runLogStream = jsonValue.GetString("runLogStream");
-
     m_runLogStreamHasBeenSet = true;
   }
-
   return *this;
 }
 

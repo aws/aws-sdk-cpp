@@ -18,16 +18,7 @@ namespace BackupSearch
 namespace Model
 {
 
-LongCondition::LongCondition() : 
-    m_value(0),
-    m_valueHasBeenSet(false),
-    m_operator(LongConditionOperator::NOT_SET),
-    m_operatorHasBeenSet(false)
-{
-}
-
 LongCondition::LongCondition(JsonView jsonValue)
-  : LongCondition()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ LongCondition& LongCondition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetInt64("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Operator"))
   {
     m_operator = LongConditionOperatorMapper::GetLongConditionOperatorForName(jsonValue.GetString("Operator"));
-
     m_operatorHasBeenSet = true;
   }
-
   return *this;
 }
 

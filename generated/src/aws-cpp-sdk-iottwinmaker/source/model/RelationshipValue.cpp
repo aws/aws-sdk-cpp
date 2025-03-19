@@ -18,14 +18,7 @@ namespace IoTTwinMaker
 namespace Model
 {
 
-RelationshipValue::RelationshipValue() : 
-    m_targetEntityIdHasBeenSet(false),
-    m_targetComponentNameHasBeenSet(false)
-{
-}
-
 RelationshipValue::RelationshipValue(JsonView jsonValue)
-  : RelationshipValue()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RelationshipValue& RelationshipValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("targetEntityId"))
   {
     m_targetEntityId = jsonValue.GetString("targetEntityId");
-
     m_targetEntityIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetComponentName"))
   {
     m_targetComponentName = jsonValue.GetString("targetComponentName");
-
     m_targetComponentNameHasBeenSet = true;
   }
-
   return *this;
 }
 

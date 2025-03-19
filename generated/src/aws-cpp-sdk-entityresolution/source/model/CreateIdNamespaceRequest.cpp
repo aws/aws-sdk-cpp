@@ -12,18 +12,6 @@ using namespace Aws::EntityResolution::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateIdNamespaceRequest::CreateIdNamespaceRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_idMappingWorkflowPropertiesHasBeenSet(false),
-    m_idNamespaceNameHasBeenSet(false),
-    m_inputSourceConfigHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_type(IdNamespaceType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 Aws::String CreateIdNamespaceRequest::SerializePayload() const
 {
   JsonValue payload;

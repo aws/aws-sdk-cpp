@@ -18,16 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-AssetScope::AssetScope() : 
-    m_assetIdHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_filterIdsHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 AssetScope::AssetScope(JsonView jsonValue)
-  : AssetScope()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ AssetScope& AssetScope::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("assetId"))
   {
     m_assetId = jsonValue.GetString("assetId");
-
     m_assetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("filterIds"))
   {
     Aws::Utils::Array<JsonView> filterIdsJsonList = jsonValue.GetArray("filterIds");
@@ -57,14 +44,11 @@ AssetScope& AssetScope::operator =(JsonView jsonValue)
     }
     m_filterIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

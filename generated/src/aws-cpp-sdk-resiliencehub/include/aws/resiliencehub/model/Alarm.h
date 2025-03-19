@@ -32,7 +32,7 @@ namespace Model
   class Alarm
   {
   public:
-    AWS_RESILIENCEHUB_API Alarm();
+    AWS_RESILIENCEHUB_API Alarm() = default;
     AWS_RESILIENCEHUB_API Alarm(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API Alarm& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>Amazon Resource Name (ARN) of the Amazon CloudWatch alarm.</p>
      */
-    inline const Aws::String& GetAlarmArn() const{ return m_alarmArn; }
+    inline const Aws::String& GetAlarmArn() const { return m_alarmArn; }
     inline bool AlarmArnHasBeenSet() const { return m_alarmArnHasBeenSet; }
-    inline void SetAlarmArn(const Aws::String& value) { m_alarmArnHasBeenSet = true; m_alarmArn = value; }
-    inline void SetAlarmArn(Aws::String&& value) { m_alarmArnHasBeenSet = true; m_alarmArn = std::move(value); }
-    inline void SetAlarmArn(const char* value) { m_alarmArnHasBeenSet = true; m_alarmArn.assign(value); }
-    inline Alarm& WithAlarmArn(const Aws::String& value) { SetAlarmArn(value); return *this;}
-    inline Alarm& WithAlarmArn(Aws::String&& value) { SetAlarmArn(std::move(value)); return *this;}
-    inline Alarm& WithAlarmArn(const char* value) { SetAlarmArn(value); return *this;}
+    template<typename AlarmArnT = Aws::String>
+    void SetAlarmArn(AlarmArnT&& value) { m_alarmArnHasBeenSet = true; m_alarmArn = std::forward<AlarmArnT>(value); }
+    template<typename AlarmArnT = Aws::String>
+    Alarm& WithAlarmArn(AlarmArnT&& value) { SetAlarmArn(std::forward<AlarmArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * (<code>AwsResilienceHub</code>), or if you had created the alarm in Amazon
      * CloudWatch (<code>Customer</code>).</p>
      */
-    inline const Aws::String& GetSource() const{ return m_source; }
+    inline const Aws::String& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
-    inline Alarm& WithSource(const Aws::String& value) { SetSource(value); return *this;}
-    inline Alarm& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
-    inline Alarm& WithSource(const char* value) { SetSource(value); return *this;}
+    template<typename SourceT = Aws::String>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = Aws::String>
+    Alarm& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
   private:
 

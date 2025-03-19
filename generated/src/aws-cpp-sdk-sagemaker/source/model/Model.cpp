@@ -18,24 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-Model::Model() : 
-    m_modelNameHasBeenSet(false),
-    m_primaryContainerHasBeenSet(false),
-    m_containersHasBeenSet(false),
-    m_inferenceExecutionConfigHasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_modelArnHasBeenSet(false),
-    m_enableNetworkIsolation(false),
-    m_enableNetworkIsolationHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_deploymentRecommendationHasBeenSet(false)
-{
-}
-
 Model::Model(JsonView jsonValue)
-  : Model()
 {
   *this = jsonValue;
 }
@@ -45,17 +28,13 @@ Model& Model::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ModelName"))
   {
     m_modelName = jsonValue.GetString("ModelName");
-
     m_modelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrimaryContainer"))
   {
     m_primaryContainer = jsonValue.GetObject("PrimaryContainer");
-
     m_primaryContainerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Containers"))
   {
     Aws::Utils::Array<JsonView> containersJsonList = jsonValue.GetArray("Containers");
@@ -65,49 +44,36 @@ Model& Model::operator =(JsonView jsonValue)
     }
     m_containersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InferenceExecutionConfig"))
   {
     m_inferenceExecutionConfig = jsonValue.GetObject("InferenceExecutionConfig");
-
     m_inferenceExecutionConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutionRoleArn"))
   {
     m_executionRoleArn = jsonValue.GetString("ExecutionRoleArn");
-
     m_executionRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcConfig"))
   {
     m_vpcConfig = jsonValue.GetObject("VpcConfig");
-
     m_vpcConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelArn"))
   {
     m_modelArn = jsonValue.GetString("ModelArn");
-
     m_modelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnableNetworkIsolation"))
   {
     m_enableNetworkIsolation = jsonValue.GetBool("EnableNetworkIsolation");
-
     m_enableNetworkIsolationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -117,14 +83,11 @@ Model& Model::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeploymentRecommendation"))
   {
     m_deploymentRecommendation = jsonValue.GetObject("DeploymentRecommendation");
-
     m_deploymentRecommendationHasBeenSet = true;
   }
-
   return *this;
 }
 

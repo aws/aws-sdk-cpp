@@ -10,11 +10,6 @@
 using namespace Aws::ElasticLoadBalancingv2::Model;
 using namespace Aws::Utils;
 
-SetRulePrioritiesRequest::SetRulePrioritiesRequest() : 
-    m_rulePrioritiesHasBeenSet(false)
-{
-}
-
 Aws::String SetRulePrioritiesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

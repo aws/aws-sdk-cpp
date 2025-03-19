@@ -33,7 +33,7 @@ namespace Model
   class SendDataPoint
   {
   public:
-    AWS_SES_API SendDataPoint();
+    AWS_SES_API SendDataPoint() = default;
     AWS_SES_API SendDataPoint(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_SES_API SendDataPoint& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,19 +45,19 @@ namespace Model
     /**
      * <p>Time of the data point.</p>
      */
-    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
+    inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
-    inline SendDataPoint& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-    inline SendDataPoint& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+    template<typename TimestampT = Aws::Utils::DateTime>
+    void SetTimestamp(TimestampT&& value) { m_timestampHasBeenSet = true; m_timestamp = std::forward<TimestampT>(value); }
+    template<typename TimestampT = Aws::Utils::DateTime>
+    SendDataPoint& WithTimestamp(TimestampT&& value) { SetTimestamp(std::forward<TimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Number of emails that have been sent.</p>
      */
-    inline long long GetDeliveryAttempts() const{ return m_deliveryAttempts; }
+    inline long long GetDeliveryAttempts() const { return m_deliveryAttempts; }
     inline bool DeliveryAttemptsHasBeenSet() const { return m_deliveryAttemptsHasBeenSet; }
     inline void SetDeliveryAttempts(long long value) { m_deliveryAttemptsHasBeenSet = true; m_deliveryAttempts = value; }
     inline SendDataPoint& WithDeliveryAttempts(long long value) { SetDeliveryAttempts(value); return *this;}
@@ -67,7 +67,7 @@ namespace Model
     /**
      * <p>Number of emails that have bounced.</p>
      */
-    inline long long GetBounces() const{ return m_bounces; }
+    inline long long GetBounces() const { return m_bounces; }
     inline bool BouncesHasBeenSet() const { return m_bouncesHasBeenSet; }
     inline void SetBounces(long long value) { m_bouncesHasBeenSet = true; m_bounces = value; }
     inline SendDataPoint& WithBounces(long long value) { SetBounces(value); return *this;}
@@ -77,7 +77,7 @@ namespace Model
     /**
      * <p>Number of unwanted emails that were rejected by recipients.</p>
      */
-    inline long long GetComplaints() const{ return m_complaints; }
+    inline long long GetComplaints() const { return m_complaints; }
     inline bool ComplaintsHasBeenSet() const { return m_complaintsHasBeenSet; }
     inline void SetComplaints(long long value) { m_complaintsHasBeenSet = true; m_complaints = value; }
     inline SendDataPoint& WithComplaints(long long value) { SetComplaints(value); return *this;}
@@ -87,26 +87,26 @@ namespace Model
     /**
      * <p>Number of emails rejected by Amazon SES.</p>
      */
-    inline long long GetRejects() const{ return m_rejects; }
+    inline long long GetRejects() const { return m_rejects; }
     inline bool RejectsHasBeenSet() const { return m_rejectsHasBeenSet; }
     inline void SetRejects(long long value) { m_rejectsHasBeenSet = true; m_rejects = value; }
     inline SendDataPoint& WithRejects(long long value) { SetRejects(value); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_timestamp;
+    Aws::Utils::DateTime m_timestamp{};
     bool m_timestampHasBeenSet = false;
 
-    long long m_deliveryAttempts;
+    long long m_deliveryAttempts{0};
     bool m_deliveryAttemptsHasBeenSet = false;
 
-    long long m_bounces;
+    long long m_bounces{0};
     bool m_bouncesHasBeenSet = false;
 
-    long long m_complaints;
+    long long m_complaints{0};
     bool m_complaintsHasBeenSet = false;
 
-    long long m_rejects;
+    long long m_rejects{0};
     bool m_rejectsHasBeenSet = false;
   };
 

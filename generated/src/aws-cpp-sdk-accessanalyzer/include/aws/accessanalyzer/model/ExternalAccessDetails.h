@@ -36,7 +36,7 @@ namespace Model
   class ExternalAccessDetails
   {
   public:
-    AWS_ACCESSANALYZER_API ExternalAccessDetails();
+    AWS_ACCESSANALYZER_API ExternalAccessDetails() = default;
     AWS_ACCESSANALYZER_API ExternalAccessDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API ExternalAccessDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,15 +47,14 @@ namespace Model
      * <p>The action in the analyzed policy statement that an external principal has
      * permission to use.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAction() const{ return m_action; }
+    inline const Aws::Vector<Aws::String>& GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const Aws::Vector<Aws::String>& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(Aws::Vector<Aws::String>&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline ExternalAccessDetails& WithAction(const Aws::Vector<Aws::String>& value) { SetAction(value); return *this;}
-    inline ExternalAccessDetails& WithAction(Aws::Vector<Aws::String>&& value) { SetAction(std::move(value)); return *this;}
-    inline ExternalAccessDetails& AddAction(const Aws::String& value) { m_actionHasBeenSet = true; m_action.push_back(value); return *this; }
-    inline ExternalAccessDetails& AddAction(Aws::String&& value) { m_actionHasBeenSet = true; m_action.push_back(std::move(value)); return *this; }
-    inline ExternalAccessDetails& AddAction(const char* value) { m_actionHasBeenSet = true; m_action.push_back(value); return *this; }
+    template<typename ActionT = Aws::Vector<Aws::String>>
+    void SetAction(ActionT&& value) { m_actionHasBeenSet = true; m_action = std::forward<ActionT>(value); }
+    template<typename ActionT = Aws::Vector<Aws::String>>
+    ExternalAccessDetails& WithAction(ActionT&& value) { SetAction(std::forward<ActionT>(value)); return *this;}
+    template<typename ActionT = Aws::String>
+    ExternalAccessDetails& AddAction(ActionT&& value) { m_actionHasBeenSet = true; m_action.emplace_back(std::forward<ActionT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -63,26 +62,23 @@ namespace Model
      * <p>The condition in the analyzed policy statement that resulted in an external
      * access finding.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetCondition() const{ return m_condition; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetCondition() const { return m_condition; }
     inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
-    inline void SetCondition(const Aws::Map<Aws::String, Aws::String>& value) { m_conditionHasBeenSet = true; m_condition = value; }
-    inline void SetCondition(Aws::Map<Aws::String, Aws::String>&& value) { m_conditionHasBeenSet = true; m_condition = std::move(value); }
-    inline ExternalAccessDetails& WithCondition(const Aws::Map<Aws::String, Aws::String>& value) { SetCondition(value); return *this;}
-    inline ExternalAccessDetails& WithCondition(Aws::Map<Aws::String, Aws::String>&& value) { SetCondition(std::move(value)); return *this;}
-    inline ExternalAccessDetails& AddCondition(const Aws::String& key, const Aws::String& value) { m_conditionHasBeenSet = true; m_condition.emplace(key, value); return *this; }
-    inline ExternalAccessDetails& AddCondition(Aws::String&& key, const Aws::String& value) { m_conditionHasBeenSet = true; m_condition.emplace(std::move(key), value); return *this; }
-    inline ExternalAccessDetails& AddCondition(const Aws::String& key, Aws::String&& value) { m_conditionHasBeenSet = true; m_condition.emplace(key, std::move(value)); return *this; }
-    inline ExternalAccessDetails& AddCondition(Aws::String&& key, Aws::String&& value) { m_conditionHasBeenSet = true; m_condition.emplace(std::move(key), std::move(value)); return *this; }
-    inline ExternalAccessDetails& AddCondition(const char* key, Aws::String&& value) { m_conditionHasBeenSet = true; m_condition.emplace(key, std::move(value)); return *this; }
-    inline ExternalAccessDetails& AddCondition(Aws::String&& key, const char* value) { m_conditionHasBeenSet = true; m_condition.emplace(std::move(key), value); return *this; }
-    inline ExternalAccessDetails& AddCondition(const char* key, const char* value) { m_conditionHasBeenSet = true; m_condition.emplace(key, value); return *this; }
+    template<typename ConditionT = Aws::Map<Aws::String, Aws::String>>
+    void SetCondition(ConditionT&& value) { m_conditionHasBeenSet = true; m_condition = std::forward<ConditionT>(value); }
+    template<typename ConditionT = Aws::Map<Aws::String, Aws::String>>
+    ExternalAccessDetails& WithCondition(ConditionT&& value) { SetCondition(std::forward<ConditionT>(value)); return *this;}
+    template<typename ConditionKeyT = Aws::String, typename ConditionValueT = Aws::String>
+    ExternalAccessDetails& AddCondition(ConditionKeyT&& key, ConditionValueT&& value) {
+      m_conditionHasBeenSet = true; m_condition.emplace(std::forward<ConditionKeyT>(key), std::forward<ConditionValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>Specifies whether the external access finding is public.</p>
      */
-    inline bool GetIsPublic() const{ return m_isPublic; }
+    inline bool GetIsPublic() const { return m_isPublic; }
     inline bool IsPublicHasBeenSet() const { return m_isPublicHasBeenSet; }
     inline void SetIsPublic(bool value) { m_isPublicHasBeenSet = true; m_isPublic = value; }
     inline ExternalAccessDetails& WithIsPublic(bool value) { SetIsPublic(value); return *this;}
@@ -93,19 +89,16 @@ namespace Model
      * <p>The external principal that has access to a resource within the zone of
      * trust.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetPrincipal() const{ return m_principal; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetPrincipal() const { return m_principal; }
     inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }
-    inline void SetPrincipal(const Aws::Map<Aws::String, Aws::String>& value) { m_principalHasBeenSet = true; m_principal = value; }
-    inline void SetPrincipal(Aws::Map<Aws::String, Aws::String>&& value) { m_principalHasBeenSet = true; m_principal = std::move(value); }
-    inline ExternalAccessDetails& WithPrincipal(const Aws::Map<Aws::String, Aws::String>& value) { SetPrincipal(value); return *this;}
-    inline ExternalAccessDetails& WithPrincipal(Aws::Map<Aws::String, Aws::String>&& value) { SetPrincipal(std::move(value)); return *this;}
-    inline ExternalAccessDetails& AddPrincipal(const Aws::String& key, const Aws::String& value) { m_principalHasBeenSet = true; m_principal.emplace(key, value); return *this; }
-    inline ExternalAccessDetails& AddPrincipal(Aws::String&& key, const Aws::String& value) { m_principalHasBeenSet = true; m_principal.emplace(std::move(key), value); return *this; }
-    inline ExternalAccessDetails& AddPrincipal(const Aws::String& key, Aws::String&& value) { m_principalHasBeenSet = true; m_principal.emplace(key, std::move(value)); return *this; }
-    inline ExternalAccessDetails& AddPrincipal(Aws::String&& key, Aws::String&& value) { m_principalHasBeenSet = true; m_principal.emplace(std::move(key), std::move(value)); return *this; }
-    inline ExternalAccessDetails& AddPrincipal(const char* key, Aws::String&& value) { m_principalHasBeenSet = true; m_principal.emplace(key, std::move(value)); return *this; }
-    inline ExternalAccessDetails& AddPrincipal(Aws::String&& key, const char* value) { m_principalHasBeenSet = true; m_principal.emplace(std::move(key), value); return *this; }
-    inline ExternalAccessDetails& AddPrincipal(const char* key, const char* value) { m_principalHasBeenSet = true; m_principal.emplace(key, value); return *this; }
+    template<typename PrincipalT = Aws::Map<Aws::String, Aws::String>>
+    void SetPrincipal(PrincipalT&& value) { m_principalHasBeenSet = true; m_principal = std::forward<PrincipalT>(value); }
+    template<typename PrincipalT = Aws::Map<Aws::String, Aws::String>>
+    ExternalAccessDetails& WithPrincipal(PrincipalT&& value) { SetPrincipal(std::forward<PrincipalT>(value)); return *this;}
+    template<typename PrincipalKeyT = Aws::String, typename PrincipalValueT = Aws::String>
+    ExternalAccessDetails& AddPrincipal(PrincipalKeyT&& key, PrincipalValueT&& value) {
+      m_principalHasBeenSet = true; m_principal.emplace(std::forward<PrincipalKeyT>(key), std::forward<PrincipalValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -114,14 +107,14 @@ namespace Model
      * that generated the finding is granted. It is populated for Amazon S3 bucket
      * findings.</p>
      */
-    inline const Aws::Vector<FindingSource>& GetSources() const{ return m_sources; }
+    inline const Aws::Vector<FindingSource>& GetSources() const { return m_sources; }
     inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }
-    inline void SetSources(const Aws::Vector<FindingSource>& value) { m_sourcesHasBeenSet = true; m_sources = value; }
-    inline void SetSources(Aws::Vector<FindingSource>&& value) { m_sourcesHasBeenSet = true; m_sources = std::move(value); }
-    inline ExternalAccessDetails& WithSources(const Aws::Vector<FindingSource>& value) { SetSources(value); return *this;}
-    inline ExternalAccessDetails& WithSources(Aws::Vector<FindingSource>&& value) { SetSources(std::move(value)); return *this;}
-    inline ExternalAccessDetails& AddSources(const FindingSource& value) { m_sourcesHasBeenSet = true; m_sources.push_back(value); return *this; }
-    inline ExternalAccessDetails& AddSources(FindingSource&& value) { m_sourcesHasBeenSet = true; m_sources.push_back(std::move(value)); return *this; }
+    template<typename SourcesT = Aws::Vector<FindingSource>>
+    void SetSources(SourcesT&& value) { m_sourcesHasBeenSet = true; m_sources = std::forward<SourcesT>(value); }
+    template<typename SourcesT = Aws::Vector<FindingSource>>
+    ExternalAccessDetails& WithSources(SourcesT&& value) { SetSources(std::forward<SourcesT>(value)); return *this;}
+    template<typename SourcesT = FindingSource>
+    ExternalAccessDetails& AddSources(SourcesT&& value) { m_sourcesHasBeenSet = true; m_sources.emplace_back(std::forward<SourcesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -129,12 +122,10 @@ namespace Model
      * <p>The type of restriction applied to the finding by the resource owner with an
      * Organizations resource control policy (RCP).</p>
      */
-    inline const ResourceControlPolicyRestriction& GetResourceControlPolicyRestriction() const{ return m_resourceControlPolicyRestriction; }
+    inline ResourceControlPolicyRestriction GetResourceControlPolicyRestriction() const { return m_resourceControlPolicyRestriction; }
     inline bool ResourceControlPolicyRestrictionHasBeenSet() const { return m_resourceControlPolicyRestrictionHasBeenSet; }
-    inline void SetResourceControlPolicyRestriction(const ResourceControlPolicyRestriction& value) { m_resourceControlPolicyRestrictionHasBeenSet = true; m_resourceControlPolicyRestriction = value; }
-    inline void SetResourceControlPolicyRestriction(ResourceControlPolicyRestriction&& value) { m_resourceControlPolicyRestrictionHasBeenSet = true; m_resourceControlPolicyRestriction = std::move(value); }
-    inline ExternalAccessDetails& WithResourceControlPolicyRestriction(const ResourceControlPolicyRestriction& value) { SetResourceControlPolicyRestriction(value); return *this;}
-    inline ExternalAccessDetails& WithResourceControlPolicyRestriction(ResourceControlPolicyRestriction&& value) { SetResourceControlPolicyRestriction(std::move(value)); return *this;}
+    inline void SetResourceControlPolicyRestriction(ResourceControlPolicyRestriction value) { m_resourceControlPolicyRestrictionHasBeenSet = true; m_resourceControlPolicyRestriction = value; }
+    inline ExternalAccessDetails& WithResourceControlPolicyRestriction(ResourceControlPolicyRestriction value) { SetResourceControlPolicyRestriction(value); return *this;}
     ///@}
   private:
 
@@ -144,7 +135,7 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_condition;
     bool m_conditionHasBeenSet = false;
 
-    bool m_isPublic;
+    bool m_isPublic{false};
     bool m_isPublicHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_principal;
@@ -153,7 +144,7 @@ namespace Model
     Aws::Vector<FindingSource> m_sources;
     bool m_sourcesHasBeenSet = false;
 
-    ResourceControlPolicyRestriction m_resourceControlPolicyRestriction;
+    ResourceControlPolicyRestriction m_resourceControlPolicyRestriction{ResourceControlPolicyRestriction::NOT_SET};
     bool m_resourceControlPolicyRestrictionHasBeenSet = false;
   };
 

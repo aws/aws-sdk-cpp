@@ -18,18 +18,7 @@ namespace ServiceCatalog
 namespace Model
 {
 
-PortfolioDetail::PortfolioDetail() : 
-    m_idHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_providerNameHasBeenSet(false)
-{
-}
-
 PortfolioDetail::PortfolioDetail(JsonView jsonValue)
-  : PortfolioDetail()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ PortfolioDetail& PortfolioDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ARN"))
   {
     m_aRN = jsonValue.GetString("ARN");
-
     m_aRNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayName"))
   {
     m_displayName = jsonValue.GetString("DisplayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProviderName"))
   {
     m_providerName = jsonValue.GetString("ProviderName");
-
     m_providerNameHasBeenSet = true;
   }
-
   return *this;
 }
 

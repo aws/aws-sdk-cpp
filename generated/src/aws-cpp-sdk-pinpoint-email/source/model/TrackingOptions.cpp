@@ -18,13 +18,7 @@ namespace PinpointEmail
 namespace Model
 {
 
-TrackingOptions::TrackingOptions() : 
-    m_customRedirectDomainHasBeenSet(false)
-{
-}
-
 TrackingOptions::TrackingOptions(JsonView jsonValue)
-  : TrackingOptions()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TrackingOptions& TrackingOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CustomRedirectDomain"))
   {
     m_customRedirectDomain = jsonValue.GetString("CustomRedirectDomain");
-
     m_customRedirectDomainHasBeenSet = true;
   }
-
   return *this;
 }
 

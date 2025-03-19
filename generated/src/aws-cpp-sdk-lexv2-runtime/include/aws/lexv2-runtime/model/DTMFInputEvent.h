@@ -34,7 +34,7 @@ namespace Model
   class DTMFInputEvent
   {
   public:
-    AWS_LEXRUNTIMEV2_API DTMFInputEvent();
+    AWS_LEXRUNTIMEV2_API DTMFInputEvent() = default;
     AWS_LEXRUNTIMEV2_API DTMFInputEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXRUNTIMEV2_API DTMFInputEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXRUNTIMEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * <p>The DTMF character that the user pressed. The allowed characters are A - D, 0
      * - 9, # and *.</p>
      */
-    inline const Aws::String& GetInputCharacter() const{ return m_inputCharacter; }
+    inline const Aws::String& GetInputCharacter() const { return m_inputCharacter; }
     inline bool InputCharacterHasBeenSet() const { return m_inputCharacterHasBeenSet; }
-    inline void SetInputCharacter(const Aws::String& value) { m_inputCharacterHasBeenSet = true; m_inputCharacter = value; }
-    inline void SetInputCharacter(Aws::String&& value) { m_inputCharacterHasBeenSet = true; m_inputCharacter = std::move(value); }
-    inline void SetInputCharacter(const char* value) { m_inputCharacterHasBeenSet = true; m_inputCharacter.assign(value); }
-    inline DTMFInputEvent& WithInputCharacter(const Aws::String& value) { SetInputCharacter(value); return *this;}
-    inline DTMFInputEvent& WithInputCharacter(Aws::String&& value) { SetInputCharacter(std::move(value)); return *this;}
-    inline DTMFInputEvent& WithInputCharacter(const char* value) { SetInputCharacter(value); return *this;}
+    template<typename InputCharacterT = Aws::String>
+    void SetInputCharacter(InputCharacterT&& value) { m_inputCharacterHasBeenSet = true; m_inputCharacter = std::forward<InputCharacterT>(value); }
+    template<typename InputCharacterT = Aws::String>
+    DTMFInputEvent& WithInputCharacter(InputCharacterT&& value) { SetInputCharacter(std::forward<InputCharacterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * <p>A unique identifier that your application assigns to the event. You can use
      * this to identify events in logs.</p>
      */
-    inline const Aws::String& GetEventId() const{ return m_eventId; }
+    inline const Aws::String& GetEventId() const { return m_eventId; }
     inline bool EventIdHasBeenSet() const { return m_eventIdHasBeenSet; }
-    inline void SetEventId(const Aws::String& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
-    inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = std::move(value); }
-    inline void SetEventId(const char* value) { m_eventIdHasBeenSet = true; m_eventId.assign(value); }
-    inline DTMFInputEvent& WithEventId(const Aws::String& value) { SetEventId(value); return *this;}
-    inline DTMFInputEvent& WithEventId(Aws::String&& value) { SetEventId(std::move(value)); return *this;}
-    inline DTMFInputEvent& WithEventId(const char* value) { SetEventId(value); return *this;}
+    template<typename EventIdT = Aws::String>
+    void SetEventId(EventIdT&& value) { m_eventIdHasBeenSet = true; m_eventId = std::forward<EventIdT>(value); }
+    template<typename EventIdT = Aws::String>
+    DTMFInputEvent& WithEventId(EventIdT&& value) { SetEventId(std::forward<EventIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,7 +71,7 @@ namespace Model
      * <p>A timestamp set by the client of the date and time that the event was sent to
      * Amazon Lex V2.</p>
      */
-    inline long long GetClientTimestampMillis() const{ return m_clientTimestampMillis; }
+    inline long long GetClientTimestampMillis() const { return m_clientTimestampMillis; }
     inline bool ClientTimestampMillisHasBeenSet() const { return m_clientTimestampMillisHasBeenSet; }
     inline void SetClientTimestampMillis(long long value) { m_clientTimestampMillisHasBeenSet = true; m_clientTimestampMillis = value; }
     inline DTMFInputEvent& WithClientTimestampMillis(long long value) { SetClientTimestampMillis(value); return *this;}
@@ -88,7 +84,7 @@ namespace Model
     Aws::String m_eventId;
     bool m_eventIdHasBeenSet = false;
 
-    long long m_clientTimestampMillis;
+    long long m_clientTimestampMillis{0};
     bool m_clientTimestampMillisHasBeenSet = false;
   };
 

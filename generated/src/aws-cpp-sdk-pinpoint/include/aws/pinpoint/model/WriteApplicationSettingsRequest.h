@@ -35,7 +35,7 @@ namespace Model
   class WriteApplicationSettingsRequest
   {
   public:
-    AWS_PINPOINT_API WriteApplicationSettingsRequest();
+    AWS_PINPOINT_API WriteApplicationSettingsRequest() = default;
     AWS_PINPOINT_API WriteApplicationSettingsRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API WriteApplicationSettingsRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,12 +51,12 @@ namespace Model
      * linkend="apps-application-id-campaigns-campaign-id">Campaign</link>
      * resource.</p>
      */
-    inline const CampaignHook& GetCampaignHook() const{ return m_campaignHook; }
+    inline const CampaignHook& GetCampaignHook() const { return m_campaignHook; }
     inline bool CampaignHookHasBeenSet() const { return m_campaignHookHasBeenSet; }
-    inline void SetCampaignHook(const CampaignHook& value) { m_campaignHookHasBeenSet = true; m_campaignHook = value; }
-    inline void SetCampaignHook(CampaignHook&& value) { m_campaignHookHasBeenSet = true; m_campaignHook = std::move(value); }
-    inline WriteApplicationSettingsRequest& WithCampaignHook(const CampaignHook& value) { SetCampaignHook(value); return *this;}
-    inline WriteApplicationSettingsRequest& WithCampaignHook(CampaignHook&& value) { SetCampaignHook(std::move(value)); return *this;}
+    template<typename CampaignHookT = CampaignHook>
+    void SetCampaignHook(CampaignHookT&& value) { m_campaignHookHasBeenSet = true; m_campaignHook = std::forward<CampaignHookT>(value); }
+    template<typename CampaignHookT = CampaignHook>
+    WriteApplicationSettingsRequest& WithCampaignHook(CampaignHookT&& value) { SetCampaignHook(std::forward<CampaignHookT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,7 +64,7 @@ namespace Model
      * <p>Specifies whether to enable application-related alarms in Amazon
      * CloudWatch.</p>
      */
-    inline bool GetCloudWatchMetricsEnabled() const{ return m_cloudWatchMetricsEnabled; }
+    inline bool GetCloudWatchMetricsEnabled() const { return m_cloudWatchMetricsEnabled; }
     inline bool CloudWatchMetricsEnabledHasBeenSet() const { return m_cloudWatchMetricsEnabledHasBeenSet; }
     inline void SetCloudWatchMetricsEnabled(bool value) { m_cloudWatchMetricsEnabledHasBeenSet = true; m_cloudWatchMetricsEnabled = value; }
     inline WriteApplicationSettingsRequest& WithCloudWatchMetricsEnabled(bool value) { SetCloudWatchMetricsEnabled(value); return *this;}
@@ -72,7 +72,7 @@ namespace Model
 
     ///@{
     
-    inline bool GetEventTaggingEnabled() const{ return m_eventTaggingEnabled; }
+    inline bool GetEventTaggingEnabled() const { return m_eventTaggingEnabled; }
     inline bool EventTaggingEnabledHasBeenSet() const { return m_eventTaggingEnabledHasBeenSet; }
     inline void SetEventTaggingEnabled(bool value) { m_eventTaggingEnabledHasBeenSet = true; m_eventTaggingEnabled = value; }
     inline WriteApplicationSettingsRequest& WithEventTaggingEnabled(bool value) { SetEventTaggingEnabled(value); return *this;}
@@ -87,12 +87,12 @@ namespace Model
      * linkend="apps-application-id-journeys-journey-id">Journey</link> resource,
      * respectively.</p>
      */
-    inline const CampaignLimits& GetLimits() const{ return m_limits; }
+    inline const CampaignLimits& GetLimits() const { return m_limits; }
     inline bool LimitsHasBeenSet() const { return m_limitsHasBeenSet; }
-    inline void SetLimits(const CampaignLimits& value) { m_limitsHasBeenSet = true; m_limits = value; }
-    inline void SetLimits(CampaignLimits&& value) { m_limitsHasBeenSet = true; m_limits = std::move(value); }
-    inline WriteApplicationSettingsRequest& WithLimits(const CampaignLimits& value) { SetLimits(value); return *this;}
-    inline WriteApplicationSettingsRequest& WithLimits(CampaignLimits&& value) { SetLimits(std::move(value)); return *this;}
+    template<typename LimitsT = CampaignLimits>
+    void SetLimits(LimitsT&& value) { m_limitsHasBeenSet = true; m_limits = std::forward<LimitsT>(value); }
+    template<typename LimitsT = CampaignLimits>
+    WriteApplicationSettingsRequest& WithLimits(LimitsT&& value) { SetLimits(std::forward<LimitsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,12 +114,12 @@ namespace Model
      * the <link  linkend="apps-application-id-journeys-journey-id">Journey</link>
      * resource to define a custom quiet time for the campaign or journey.</p>
      */
-    inline const QuietTime& GetQuietTime() const{ return m_quietTime; }
+    inline const QuietTime& GetQuietTime() const { return m_quietTime; }
     inline bool QuietTimeHasBeenSet() const { return m_quietTimeHasBeenSet; }
-    inline void SetQuietTime(const QuietTime& value) { m_quietTimeHasBeenSet = true; m_quietTime = value; }
-    inline void SetQuietTime(QuietTime&& value) { m_quietTimeHasBeenSet = true; m_quietTime = std::move(value); }
-    inline WriteApplicationSettingsRequest& WithQuietTime(const QuietTime& value) { SetQuietTime(value); return *this;}
-    inline WriteApplicationSettingsRequest& WithQuietTime(QuietTime&& value) { SetQuietTime(std::move(value)); return *this;}
+    template<typename QuietTimeT = QuietTime>
+    void SetQuietTime(QuietTimeT&& value) { m_quietTimeHasBeenSet = true; m_quietTime = std::forward<QuietTimeT>(value); }
+    template<typename QuietTimeT = QuietTime>
+    WriteApplicationSettingsRequest& WithQuietTime(QuietTimeT&& value) { SetQuietTime(std::forward<QuietTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,22 +128,22 @@ namespace Model
      * apply to each journey for the application but can be overridden, on a per
      * journey basis, with the JourneyLimits resource.</p>
      */
-    inline const ApplicationSettingsJourneyLimits& GetJourneyLimits() const{ return m_journeyLimits; }
+    inline const ApplicationSettingsJourneyLimits& GetJourneyLimits() const { return m_journeyLimits; }
     inline bool JourneyLimitsHasBeenSet() const { return m_journeyLimitsHasBeenSet; }
-    inline void SetJourneyLimits(const ApplicationSettingsJourneyLimits& value) { m_journeyLimitsHasBeenSet = true; m_journeyLimits = value; }
-    inline void SetJourneyLimits(ApplicationSettingsJourneyLimits&& value) { m_journeyLimitsHasBeenSet = true; m_journeyLimits = std::move(value); }
-    inline WriteApplicationSettingsRequest& WithJourneyLimits(const ApplicationSettingsJourneyLimits& value) { SetJourneyLimits(value); return *this;}
-    inline WriteApplicationSettingsRequest& WithJourneyLimits(ApplicationSettingsJourneyLimits&& value) { SetJourneyLimits(std::move(value)); return *this;}
+    template<typename JourneyLimitsT = ApplicationSettingsJourneyLimits>
+    void SetJourneyLimits(JourneyLimitsT&& value) { m_journeyLimitsHasBeenSet = true; m_journeyLimits = std::forward<JourneyLimitsT>(value); }
+    template<typename JourneyLimitsT = ApplicationSettingsJourneyLimits>
+    WriteApplicationSettingsRequest& WithJourneyLimits(JourneyLimitsT&& value) { SetJourneyLimits(std::forward<JourneyLimitsT>(value)); return *this;}
     ///@}
   private:
 
     CampaignHook m_campaignHook;
     bool m_campaignHookHasBeenSet = false;
 
-    bool m_cloudWatchMetricsEnabled;
+    bool m_cloudWatchMetricsEnabled{false};
     bool m_cloudWatchMetricsEnabledHasBeenSet = false;
 
-    bool m_eventTaggingEnabled;
+    bool m_eventTaggingEnabled{false};
     bool m_eventTaggingEnabledHasBeenSet = false;
 
     CampaignLimits m_limits;

@@ -30,7 +30,7 @@ namespace Model
   class DescribeNetworkInsightsAnalysesResponse
   {
   public:
-    AWS_EC2_API DescribeNetworkInsightsAnalysesResponse();
+    AWS_EC2_API DescribeNetworkInsightsAnalysesResponse() = default;
     AWS_EC2_API DescribeNetworkInsightsAnalysesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DescribeNetworkInsightsAnalysesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,13 +39,13 @@ namespace Model
     /**
      * <p>Information about the network insights analyses.</p>
      */
-    inline const Aws::Vector<NetworkInsightsAnalysis>& GetNetworkInsightsAnalyses() const{ return m_networkInsightsAnalyses; }
-    inline void SetNetworkInsightsAnalyses(const Aws::Vector<NetworkInsightsAnalysis>& value) { m_networkInsightsAnalyses = value; }
-    inline void SetNetworkInsightsAnalyses(Aws::Vector<NetworkInsightsAnalysis>&& value) { m_networkInsightsAnalyses = std::move(value); }
-    inline DescribeNetworkInsightsAnalysesResponse& WithNetworkInsightsAnalyses(const Aws::Vector<NetworkInsightsAnalysis>& value) { SetNetworkInsightsAnalyses(value); return *this;}
-    inline DescribeNetworkInsightsAnalysesResponse& WithNetworkInsightsAnalyses(Aws::Vector<NetworkInsightsAnalysis>&& value) { SetNetworkInsightsAnalyses(std::move(value)); return *this;}
-    inline DescribeNetworkInsightsAnalysesResponse& AddNetworkInsightsAnalyses(const NetworkInsightsAnalysis& value) { m_networkInsightsAnalyses.push_back(value); return *this; }
-    inline DescribeNetworkInsightsAnalysesResponse& AddNetworkInsightsAnalyses(NetworkInsightsAnalysis&& value) { m_networkInsightsAnalyses.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<NetworkInsightsAnalysis>& GetNetworkInsightsAnalyses() const { return m_networkInsightsAnalyses; }
+    template<typename NetworkInsightsAnalysesT = Aws::Vector<NetworkInsightsAnalysis>>
+    void SetNetworkInsightsAnalyses(NetworkInsightsAnalysesT&& value) { m_networkInsightsAnalysesHasBeenSet = true; m_networkInsightsAnalyses = std::forward<NetworkInsightsAnalysesT>(value); }
+    template<typename NetworkInsightsAnalysesT = Aws::Vector<NetworkInsightsAnalysis>>
+    DescribeNetworkInsightsAnalysesResponse& WithNetworkInsightsAnalyses(NetworkInsightsAnalysesT&& value) { SetNetworkInsightsAnalyses(std::forward<NetworkInsightsAnalysesT>(value)); return *this;}
+    template<typename NetworkInsightsAnalysesT = NetworkInsightsAnalysis>
+    DescribeNetworkInsightsAnalysesResponse& AddNetworkInsightsAnalyses(NetworkInsightsAnalysesT&& value) { m_networkInsightsAnalysesHasBeenSet = true; m_networkInsightsAnalyses.emplace_back(std::forward<NetworkInsightsAnalysesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,30 +53,31 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeNetworkInsightsAnalysesResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeNetworkInsightsAnalysesResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeNetworkInsightsAnalysesResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeNetworkInsightsAnalysesResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeNetworkInsightsAnalysesResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeNetworkInsightsAnalysesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeNetworkInsightsAnalysesResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<NetworkInsightsAnalysis> m_networkInsightsAnalyses;
+    bool m_networkInsightsAnalysesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

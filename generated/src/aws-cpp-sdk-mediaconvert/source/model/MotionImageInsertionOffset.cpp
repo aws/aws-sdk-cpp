@@ -18,16 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-MotionImageInsertionOffset::MotionImageInsertionOffset() : 
-    m_imageX(0),
-    m_imageXHasBeenSet(false),
-    m_imageY(0),
-    m_imageYHasBeenSet(false)
-{
-}
-
 MotionImageInsertionOffset::MotionImageInsertionOffset(JsonView jsonValue)
-  : MotionImageInsertionOffset()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ MotionImageInsertionOffset& MotionImageInsertionOffset::operator =(JsonView json
   if(jsonValue.ValueExists("imageX"))
   {
     m_imageX = jsonValue.GetInteger("imageX");
-
     m_imageXHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageY"))
   {
     m_imageY = jsonValue.GetInteger("imageY");
-
     m_imageYHasBeenSet = true;
   }
-
   return *this;
 }
 

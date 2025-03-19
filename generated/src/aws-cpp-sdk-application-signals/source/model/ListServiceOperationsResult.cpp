@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListServiceOperationsResult::ListServiceOperationsResult()
-{
-}
-
 ListServiceOperationsResult::ListServiceOperationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,13 @@ ListServiceOperationsResult& ListServiceOperationsResult::operator =(const Aws::
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
+    m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
+    m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceOperations"))
   {
     Aws::Utils::Array<JsonView> serviceOperationsJsonList = jsonValue.GetArray("ServiceOperations");
@@ -48,20 +42,20 @@ ListServiceOperationsResult& ListServiceOperationsResult::operator =(const Aws::
     {
       m_serviceOperations.push_back(serviceOperationsJsonList[serviceOperationsIndex].AsObject());
     }
+    m_serviceOperationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteRecordRequest::DeleteRecordRequest() : 
-    m_featureGroupNameHasBeenSet(false),
-    m_recordIdentifierValueAsStringHasBeenSet(false),
-    m_eventTimeHasBeenSet(false),
-    m_targetStoresHasBeenSet(false),
-    m_deletionMode(DeletionMode::NOT_SET),
-    m_deletionModeHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRecordRequest::SerializePayload() const
 {
   return {};

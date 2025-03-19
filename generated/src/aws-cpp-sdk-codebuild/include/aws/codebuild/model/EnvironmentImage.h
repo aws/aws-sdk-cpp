@@ -33,7 +33,7 @@ namespace Model
   class EnvironmentImage
   {
   public:
-    AWS_CODEBUILD_API EnvironmentImage();
+    AWS_CODEBUILD_API EnvironmentImage() = default;
     AWS_CODEBUILD_API EnvironmentImage(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API EnvironmentImage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,43 +43,38 @@ namespace Model
     /**
      * <p>The name of the Docker image.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline EnvironmentImage& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline EnvironmentImage& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline EnvironmentImage& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    EnvironmentImage& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the Docker image.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline EnvironmentImage& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline EnvironmentImage& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline EnvironmentImage& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    EnvironmentImage& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of environment image versions.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetVersions() const{ return m_versions; }
+    inline const Aws::Vector<Aws::String>& GetVersions() const { return m_versions; }
     inline bool VersionsHasBeenSet() const { return m_versionsHasBeenSet; }
-    inline void SetVersions(const Aws::Vector<Aws::String>& value) { m_versionsHasBeenSet = true; m_versions = value; }
-    inline void SetVersions(Aws::Vector<Aws::String>&& value) { m_versionsHasBeenSet = true; m_versions = std::move(value); }
-    inline EnvironmentImage& WithVersions(const Aws::Vector<Aws::String>& value) { SetVersions(value); return *this;}
-    inline EnvironmentImage& WithVersions(Aws::Vector<Aws::String>&& value) { SetVersions(std::move(value)); return *this;}
-    inline EnvironmentImage& AddVersions(const Aws::String& value) { m_versionsHasBeenSet = true; m_versions.push_back(value); return *this; }
-    inline EnvironmentImage& AddVersions(Aws::String&& value) { m_versionsHasBeenSet = true; m_versions.push_back(std::move(value)); return *this; }
-    inline EnvironmentImage& AddVersions(const char* value) { m_versionsHasBeenSet = true; m_versions.push_back(value); return *this; }
+    template<typename VersionsT = Aws::Vector<Aws::String>>
+    void SetVersions(VersionsT&& value) { m_versionsHasBeenSet = true; m_versions = std::forward<VersionsT>(value); }
+    template<typename VersionsT = Aws::Vector<Aws::String>>
+    EnvironmentImage& WithVersions(VersionsT&& value) { SetVersions(std::forward<VersionsT>(value)); return *this;}
+    template<typename VersionsT = Aws::String>
+    EnvironmentImage& AddVersions(VersionsT&& value) { m_versionsHasBeenSet = true; m_versions.emplace_back(std::forward<VersionsT>(value)); return *this; }
     ///@}
   private:
 

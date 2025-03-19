@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetTaxRegistrationDocumentResult::GetTaxRegistrationDocumentResult()
-{
-}
-
 GetTaxRegistrationDocumentResult::GetTaxRegistrationDocumentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ GetTaxRegistrationDocumentResult& GetTaxRegistrationDocumentResult::operator =(c
   if(jsonValue.ValueExists("destinationFilePath"))
   {
     m_destinationFilePath = jsonValue.GetString("destinationFilePath");
-
+    m_destinationFilePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("presignedS3Url"))
   {
     m_presignedS3Url = jsonValue.GetString("presignedS3Url");
-
+    m_presignedS3UrlHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

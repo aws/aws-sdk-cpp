@@ -29,7 +29,7 @@ namespace Model
   class CreateDeploymentConfigRequest : public CodeDeployRequest
   {
   public:
-    AWS_CODEDEPLOY_API CreateDeploymentConfigRequest();
+    AWS_CODEDEPLOY_API CreateDeploymentConfigRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The name of the deployment configuration to create.</p>
      */
-    inline const Aws::String& GetDeploymentConfigName() const{ return m_deploymentConfigName; }
+    inline const Aws::String& GetDeploymentConfigName() const { return m_deploymentConfigName; }
     inline bool DeploymentConfigNameHasBeenSet() const { return m_deploymentConfigNameHasBeenSet; }
-    inline void SetDeploymentConfigName(const Aws::String& value) { m_deploymentConfigNameHasBeenSet = true; m_deploymentConfigName = value; }
-    inline void SetDeploymentConfigName(Aws::String&& value) { m_deploymentConfigNameHasBeenSet = true; m_deploymentConfigName = std::move(value); }
-    inline void SetDeploymentConfigName(const char* value) { m_deploymentConfigNameHasBeenSet = true; m_deploymentConfigName.assign(value); }
-    inline CreateDeploymentConfigRequest& WithDeploymentConfigName(const Aws::String& value) { SetDeploymentConfigName(value); return *this;}
-    inline CreateDeploymentConfigRequest& WithDeploymentConfigName(Aws::String&& value) { SetDeploymentConfigName(std::move(value)); return *this;}
-    inline CreateDeploymentConfigRequest& WithDeploymentConfigName(const char* value) { SetDeploymentConfigName(value); return *this;}
+    template<typename DeploymentConfigNameT = Aws::String>
+    void SetDeploymentConfigName(DeploymentConfigNameT&& value) { m_deploymentConfigNameHasBeenSet = true; m_deploymentConfigName = std::forward<DeploymentConfigNameT>(value); }
+    template<typename DeploymentConfigNameT = Aws::String>
+    CreateDeploymentConfigRequest& WithDeploymentConfigName(DeploymentConfigNameT&& value) { SetDeploymentConfigName(std::forward<DeploymentConfigNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,24 +69,24 @@ namespace Model
      * minimum of 95% healthy instance, specify a type of FLEET_PERCENT and a value of
      * 95.</p>
      */
-    inline const MinimumHealthyHosts& GetMinimumHealthyHosts() const{ return m_minimumHealthyHosts; }
+    inline const MinimumHealthyHosts& GetMinimumHealthyHosts() const { return m_minimumHealthyHosts; }
     inline bool MinimumHealthyHostsHasBeenSet() const { return m_minimumHealthyHostsHasBeenSet; }
-    inline void SetMinimumHealthyHosts(const MinimumHealthyHosts& value) { m_minimumHealthyHostsHasBeenSet = true; m_minimumHealthyHosts = value; }
-    inline void SetMinimumHealthyHosts(MinimumHealthyHosts&& value) { m_minimumHealthyHostsHasBeenSet = true; m_minimumHealthyHosts = std::move(value); }
-    inline CreateDeploymentConfigRequest& WithMinimumHealthyHosts(const MinimumHealthyHosts& value) { SetMinimumHealthyHosts(value); return *this;}
-    inline CreateDeploymentConfigRequest& WithMinimumHealthyHosts(MinimumHealthyHosts&& value) { SetMinimumHealthyHosts(std::move(value)); return *this;}
+    template<typename MinimumHealthyHostsT = MinimumHealthyHosts>
+    void SetMinimumHealthyHosts(MinimumHealthyHostsT&& value) { m_minimumHealthyHostsHasBeenSet = true; m_minimumHealthyHosts = std::forward<MinimumHealthyHostsT>(value); }
+    template<typename MinimumHealthyHostsT = MinimumHealthyHosts>
+    CreateDeploymentConfigRequest& WithMinimumHealthyHosts(MinimumHealthyHostsT&& value) { SetMinimumHealthyHosts(std::forward<MinimumHealthyHostsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration that specifies how the deployment traffic is routed.</p>
      */
-    inline const TrafficRoutingConfig& GetTrafficRoutingConfig() const{ return m_trafficRoutingConfig; }
+    inline const TrafficRoutingConfig& GetTrafficRoutingConfig() const { return m_trafficRoutingConfig; }
     inline bool TrafficRoutingConfigHasBeenSet() const { return m_trafficRoutingConfigHasBeenSet; }
-    inline void SetTrafficRoutingConfig(const TrafficRoutingConfig& value) { m_trafficRoutingConfigHasBeenSet = true; m_trafficRoutingConfig = value; }
-    inline void SetTrafficRoutingConfig(TrafficRoutingConfig&& value) { m_trafficRoutingConfigHasBeenSet = true; m_trafficRoutingConfig = std::move(value); }
-    inline CreateDeploymentConfigRequest& WithTrafficRoutingConfig(const TrafficRoutingConfig& value) { SetTrafficRoutingConfig(value); return *this;}
-    inline CreateDeploymentConfigRequest& WithTrafficRoutingConfig(TrafficRoutingConfig&& value) { SetTrafficRoutingConfig(std::move(value)); return *this;}
+    template<typename TrafficRoutingConfigT = TrafficRoutingConfig>
+    void SetTrafficRoutingConfig(TrafficRoutingConfigT&& value) { m_trafficRoutingConfigHasBeenSet = true; m_trafficRoutingConfig = std::forward<TrafficRoutingConfigT>(value); }
+    template<typename TrafficRoutingConfigT = TrafficRoutingConfig>
+    CreateDeploymentConfigRequest& WithTrafficRoutingConfig(TrafficRoutingConfigT&& value) { SetTrafficRoutingConfig(std::forward<TrafficRoutingConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,12 +94,10 @@ namespace Model
      * <p>The destination platform type for the deployment (<code>Lambda</code>,
      * <code>Server</code>, or <code>ECS</code>).</p>
      */
-    inline const ComputePlatform& GetComputePlatform() const{ return m_computePlatform; }
+    inline ComputePlatform GetComputePlatform() const { return m_computePlatform; }
     inline bool ComputePlatformHasBeenSet() const { return m_computePlatformHasBeenSet; }
-    inline void SetComputePlatform(const ComputePlatform& value) { m_computePlatformHasBeenSet = true; m_computePlatform = value; }
-    inline void SetComputePlatform(ComputePlatform&& value) { m_computePlatformHasBeenSet = true; m_computePlatform = std::move(value); }
-    inline CreateDeploymentConfigRequest& WithComputePlatform(const ComputePlatform& value) { SetComputePlatform(value); return *this;}
-    inline CreateDeploymentConfigRequest& WithComputePlatform(ComputePlatform&& value) { SetComputePlatform(std::move(value)); return *this;}
+    inline void SetComputePlatform(ComputePlatform value) { m_computePlatformHasBeenSet = true; m_computePlatform = value; }
+    inline CreateDeploymentConfigRequest& WithComputePlatform(ComputePlatform value) { SetComputePlatform(value); return *this;}
     ///@}
 
     ///@{
@@ -114,12 +110,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations-create.html#zonal-config">zonal
      * configuration</a> in the <i>CodeDeploy User Guide</i>.</p>
      */
-    inline const ZonalConfig& GetZonalConfig() const{ return m_zonalConfig; }
+    inline const ZonalConfig& GetZonalConfig() const { return m_zonalConfig; }
     inline bool ZonalConfigHasBeenSet() const { return m_zonalConfigHasBeenSet; }
-    inline void SetZonalConfig(const ZonalConfig& value) { m_zonalConfigHasBeenSet = true; m_zonalConfig = value; }
-    inline void SetZonalConfig(ZonalConfig&& value) { m_zonalConfigHasBeenSet = true; m_zonalConfig = std::move(value); }
-    inline CreateDeploymentConfigRequest& WithZonalConfig(const ZonalConfig& value) { SetZonalConfig(value); return *this;}
-    inline CreateDeploymentConfigRequest& WithZonalConfig(ZonalConfig&& value) { SetZonalConfig(std::move(value)); return *this;}
+    template<typename ZonalConfigT = ZonalConfig>
+    void SetZonalConfig(ZonalConfigT&& value) { m_zonalConfigHasBeenSet = true; m_zonalConfig = std::forward<ZonalConfigT>(value); }
+    template<typename ZonalConfigT = ZonalConfig>
+    CreateDeploymentConfigRequest& WithZonalConfig(ZonalConfigT&& value) { SetZonalConfig(std::forward<ZonalConfigT>(value)); return *this;}
     ///@}
   private:
 
@@ -132,7 +128,7 @@ namespace Model
     TrafficRoutingConfig m_trafficRoutingConfig;
     bool m_trafficRoutingConfigHasBeenSet = false;
 
-    ComputePlatform m_computePlatform;
+    ComputePlatform m_computePlatform{ComputePlatform::NOT_SET};
     bool m_computePlatformHasBeenSet = false;
 
     ZonalConfig m_zonalConfig;

@@ -36,7 +36,7 @@ namespace Model
   class CompositeComponentUpdateRequest
   {
   public:
-    AWS_IOTTWINMAKER_API CompositeComponentUpdateRequest();
+    AWS_IOTTWINMAKER_API CompositeComponentUpdateRequest() = default;
     AWS_IOTTWINMAKER_API CompositeComponentUpdateRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API CompositeComponentUpdateRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,26 +46,22 @@ namespace Model
     /**
      * <p>The update type of the component update request.</p>
      */
-    inline const ComponentUpdateType& GetUpdateType() const{ return m_updateType; }
+    inline ComponentUpdateType GetUpdateType() const { return m_updateType; }
     inline bool UpdateTypeHasBeenSet() const { return m_updateTypeHasBeenSet; }
-    inline void SetUpdateType(const ComponentUpdateType& value) { m_updateTypeHasBeenSet = true; m_updateType = value; }
-    inline void SetUpdateType(ComponentUpdateType&& value) { m_updateTypeHasBeenSet = true; m_updateType = std::move(value); }
-    inline CompositeComponentUpdateRequest& WithUpdateType(const ComponentUpdateType& value) { SetUpdateType(value); return *this;}
-    inline CompositeComponentUpdateRequest& WithUpdateType(ComponentUpdateType&& value) { SetUpdateType(std::move(value)); return *this;}
+    inline void SetUpdateType(ComponentUpdateType value) { m_updateTypeHasBeenSet = true; m_updateType = value; }
+    inline CompositeComponentUpdateRequest& WithUpdateType(ComponentUpdateType value) { SetUpdateType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the component type.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CompositeComponentUpdateRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CompositeComponentUpdateRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CompositeComponentUpdateRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CompositeComponentUpdateRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,40 +69,36 @@ namespace Model
      * <p>An object that maps strings to the properties to set in the component type
      * update. Each string in the mapping must be unique to this object.</p>
      */
-    inline const Aws::Map<Aws::String, PropertyRequest>& GetPropertyUpdates() const{ return m_propertyUpdates; }
+    inline const Aws::Map<Aws::String, PropertyRequest>& GetPropertyUpdates() const { return m_propertyUpdates; }
     inline bool PropertyUpdatesHasBeenSet() const { return m_propertyUpdatesHasBeenSet; }
-    inline void SetPropertyUpdates(const Aws::Map<Aws::String, PropertyRequest>& value) { m_propertyUpdatesHasBeenSet = true; m_propertyUpdates = value; }
-    inline void SetPropertyUpdates(Aws::Map<Aws::String, PropertyRequest>&& value) { m_propertyUpdatesHasBeenSet = true; m_propertyUpdates = std::move(value); }
-    inline CompositeComponentUpdateRequest& WithPropertyUpdates(const Aws::Map<Aws::String, PropertyRequest>& value) { SetPropertyUpdates(value); return *this;}
-    inline CompositeComponentUpdateRequest& WithPropertyUpdates(Aws::Map<Aws::String, PropertyRequest>&& value) { SetPropertyUpdates(std::move(value)); return *this;}
-    inline CompositeComponentUpdateRequest& AddPropertyUpdates(const Aws::String& key, const PropertyRequest& value) { m_propertyUpdatesHasBeenSet = true; m_propertyUpdates.emplace(key, value); return *this; }
-    inline CompositeComponentUpdateRequest& AddPropertyUpdates(Aws::String&& key, const PropertyRequest& value) { m_propertyUpdatesHasBeenSet = true; m_propertyUpdates.emplace(std::move(key), value); return *this; }
-    inline CompositeComponentUpdateRequest& AddPropertyUpdates(const Aws::String& key, PropertyRequest&& value) { m_propertyUpdatesHasBeenSet = true; m_propertyUpdates.emplace(key, std::move(value)); return *this; }
-    inline CompositeComponentUpdateRequest& AddPropertyUpdates(Aws::String&& key, PropertyRequest&& value) { m_propertyUpdatesHasBeenSet = true; m_propertyUpdates.emplace(std::move(key), std::move(value)); return *this; }
-    inline CompositeComponentUpdateRequest& AddPropertyUpdates(const char* key, PropertyRequest&& value) { m_propertyUpdatesHasBeenSet = true; m_propertyUpdates.emplace(key, std::move(value)); return *this; }
-    inline CompositeComponentUpdateRequest& AddPropertyUpdates(const char* key, const PropertyRequest& value) { m_propertyUpdatesHasBeenSet = true; m_propertyUpdates.emplace(key, value); return *this; }
+    template<typename PropertyUpdatesT = Aws::Map<Aws::String, PropertyRequest>>
+    void SetPropertyUpdates(PropertyUpdatesT&& value) { m_propertyUpdatesHasBeenSet = true; m_propertyUpdates = std::forward<PropertyUpdatesT>(value); }
+    template<typename PropertyUpdatesT = Aws::Map<Aws::String, PropertyRequest>>
+    CompositeComponentUpdateRequest& WithPropertyUpdates(PropertyUpdatesT&& value) { SetPropertyUpdates(std::forward<PropertyUpdatesT>(value)); return *this;}
+    template<typename PropertyUpdatesKeyT = Aws::String, typename PropertyUpdatesValueT = PropertyRequest>
+    CompositeComponentUpdateRequest& AddPropertyUpdates(PropertyUpdatesKeyT&& key, PropertyUpdatesValueT&& value) {
+      m_propertyUpdatesHasBeenSet = true; m_propertyUpdates.emplace(std::forward<PropertyUpdatesKeyT>(key), std::forward<PropertyUpdatesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The property group updates.</p>
      */
-    inline const Aws::Map<Aws::String, ComponentPropertyGroupRequest>& GetPropertyGroupUpdates() const{ return m_propertyGroupUpdates; }
+    inline const Aws::Map<Aws::String, ComponentPropertyGroupRequest>& GetPropertyGroupUpdates() const { return m_propertyGroupUpdates; }
     inline bool PropertyGroupUpdatesHasBeenSet() const { return m_propertyGroupUpdatesHasBeenSet; }
-    inline void SetPropertyGroupUpdates(const Aws::Map<Aws::String, ComponentPropertyGroupRequest>& value) { m_propertyGroupUpdatesHasBeenSet = true; m_propertyGroupUpdates = value; }
-    inline void SetPropertyGroupUpdates(Aws::Map<Aws::String, ComponentPropertyGroupRequest>&& value) { m_propertyGroupUpdatesHasBeenSet = true; m_propertyGroupUpdates = std::move(value); }
-    inline CompositeComponentUpdateRequest& WithPropertyGroupUpdates(const Aws::Map<Aws::String, ComponentPropertyGroupRequest>& value) { SetPropertyGroupUpdates(value); return *this;}
-    inline CompositeComponentUpdateRequest& WithPropertyGroupUpdates(Aws::Map<Aws::String, ComponentPropertyGroupRequest>&& value) { SetPropertyGroupUpdates(std::move(value)); return *this;}
-    inline CompositeComponentUpdateRequest& AddPropertyGroupUpdates(const Aws::String& key, const ComponentPropertyGroupRequest& value) { m_propertyGroupUpdatesHasBeenSet = true; m_propertyGroupUpdates.emplace(key, value); return *this; }
-    inline CompositeComponentUpdateRequest& AddPropertyGroupUpdates(Aws::String&& key, const ComponentPropertyGroupRequest& value) { m_propertyGroupUpdatesHasBeenSet = true; m_propertyGroupUpdates.emplace(std::move(key), value); return *this; }
-    inline CompositeComponentUpdateRequest& AddPropertyGroupUpdates(const Aws::String& key, ComponentPropertyGroupRequest&& value) { m_propertyGroupUpdatesHasBeenSet = true; m_propertyGroupUpdates.emplace(key, std::move(value)); return *this; }
-    inline CompositeComponentUpdateRequest& AddPropertyGroupUpdates(Aws::String&& key, ComponentPropertyGroupRequest&& value) { m_propertyGroupUpdatesHasBeenSet = true; m_propertyGroupUpdates.emplace(std::move(key), std::move(value)); return *this; }
-    inline CompositeComponentUpdateRequest& AddPropertyGroupUpdates(const char* key, ComponentPropertyGroupRequest&& value) { m_propertyGroupUpdatesHasBeenSet = true; m_propertyGroupUpdates.emplace(key, std::move(value)); return *this; }
-    inline CompositeComponentUpdateRequest& AddPropertyGroupUpdates(const char* key, const ComponentPropertyGroupRequest& value) { m_propertyGroupUpdatesHasBeenSet = true; m_propertyGroupUpdates.emplace(key, value); return *this; }
+    template<typename PropertyGroupUpdatesT = Aws::Map<Aws::String, ComponentPropertyGroupRequest>>
+    void SetPropertyGroupUpdates(PropertyGroupUpdatesT&& value) { m_propertyGroupUpdatesHasBeenSet = true; m_propertyGroupUpdates = std::forward<PropertyGroupUpdatesT>(value); }
+    template<typename PropertyGroupUpdatesT = Aws::Map<Aws::String, ComponentPropertyGroupRequest>>
+    CompositeComponentUpdateRequest& WithPropertyGroupUpdates(PropertyGroupUpdatesT&& value) { SetPropertyGroupUpdates(std::forward<PropertyGroupUpdatesT>(value)); return *this;}
+    template<typename PropertyGroupUpdatesKeyT = Aws::String, typename PropertyGroupUpdatesValueT = ComponentPropertyGroupRequest>
+    CompositeComponentUpdateRequest& AddPropertyGroupUpdates(PropertyGroupUpdatesKeyT&& key, PropertyGroupUpdatesValueT&& value) {
+      m_propertyGroupUpdatesHasBeenSet = true; m_propertyGroupUpdates.emplace(std::forward<PropertyGroupUpdatesKeyT>(key), std::forward<PropertyGroupUpdatesValueT>(value)); return *this;
+    }
     ///@}
   private:
 
-    ComponentUpdateType m_updateType;
+    ComponentUpdateType m_updateType{ComponentUpdateType::NOT_SET};
     bool m_updateTypeHasBeenSet = false;
 
     Aws::String m_description;

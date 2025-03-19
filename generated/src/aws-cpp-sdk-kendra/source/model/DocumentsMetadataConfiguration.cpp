@@ -18,13 +18,7 @@ namespace kendra
 namespace Model
 {
 
-DocumentsMetadataConfiguration::DocumentsMetadataConfiguration() : 
-    m_s3PrefixHasBeenSet(false)
-{
-}
-
 DocumentsMetadataConfiguration::DocumentsMetadataConfiguration(JsonView jsonValue)
-  : DocumentsMetadataConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DocumentsMetadataConfiguration& DocumentsMetadataConfiguration::operator =(JsonV
   if(jsonValue.ValueExists("S3Prefix"))
   {
     m_s3Prefix = jsonValue.GetString("S3Prefix");
-
     m_s3PrefixHasBeenSet = true;
   }
-
   return *this;
 }
 

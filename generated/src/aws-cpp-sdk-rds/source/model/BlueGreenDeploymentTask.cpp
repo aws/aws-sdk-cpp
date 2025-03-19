@@ -20,14 +20,7 @@ namespace RDS
 namespace Model
 {
 
-BlueGreenDeploymentTask::BlueGreenDeploymentTask() : 
-    m_nameHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 BlueGreenDeploymentTask::BlueGreenDeploymentTask(const XmlNode& xmlNode)
-  : BlueGreenDeploymentTask()
 {
   *this = xmlNode;
 }

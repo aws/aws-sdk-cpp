@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetCommitResult::GetCommitResult()
-{
-}
-
 GetCommitResult::GetCommitResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetCommitResult& GetCommitResult::operator =(const Aws::AmazonWebServiceResult<J
   if(jsonValue.ValueExists("commit"))
   {
     m_commit = jsonValue.GetObject("commit");
-
+    m_commitHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

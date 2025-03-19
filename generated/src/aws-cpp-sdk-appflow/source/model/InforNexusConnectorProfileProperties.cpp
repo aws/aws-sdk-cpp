@@ -18,13 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-InforNexusConnectorProfileProperties::InforNexusConnectorProfileProperties() : 
-    m_instanceUrlHasBeenSet(false)
-{
-}
-
 InforNexusConnectorProfileProperties::InforNexusConnectorProfileProperties(JsonView jsonValue)
-  : InforNexusConnectorProfileProperties()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ InforNexusConnectorProfileProperties& InforNexusConnectorProfileProperties::oper
   if(jsonValue.ValueExists("instanceUrl"))
   {
     m_instanceUrl = jsonValue.GetString("instanceUrl");
-
     m_instanceUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

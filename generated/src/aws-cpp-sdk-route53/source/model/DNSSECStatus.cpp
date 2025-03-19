@@ -20,14 +20,7 @@ namespace Route53
 namespace Model
 {
 
-DNSSECStatus::DNSSECStatus() : 
-    m_serveSignatureHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
-{
-}
-
 DNSSECStatus::DNSSECStatus(const XmlNode& xmlNode)
-  : DNSSECStatus()
 {
   *this = xmlNode;
 }

@@ -10,16 +10,6 @@
 using namespace Aws::Neptune::Model;
 using namespace Aws::Utils;
 
-DescribeDBClusterEndpointsRequest::DescribeDBClusterEndpointsRequest() : 
-    m_dBClusterIdentifierHasBeenSet(false),
-    m_dBClusterEndpointIdentifierHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDBClusterEndpointsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

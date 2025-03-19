@@ -18,13 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-LoggingInfo::LoggingInfo() : 
-    m_brokerLogsHasBeenSet(false)
-{
-}
-
 LoggingInfo::LoggingInfo(JsonView jsonValue)
-  : LoggingInfo()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ LoggingInfo& LoggingInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("brokerLogs"))
   {
     m_brokerLogs = jsonValue.GetObject("brokerLogs");
-
     m_brokerLogsHasBeenSet = true;
   }
-
   return *this;
 }
 

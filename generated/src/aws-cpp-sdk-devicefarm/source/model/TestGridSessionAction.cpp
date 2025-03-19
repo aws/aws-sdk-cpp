@@ -18,18 +18,7 @@ namespace DeviceFarm
 namespace Model
 {
 
-TestGridSessionAction::TestGridSessionAction() : 
-    m_actionHasBeenSet(false),
-    m_startedHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_statusCodeHasBeenSet(false),
-    m_requestMethodHasBeenSet(false)
-{
-}
-
 TestGridSessionAction::TestGridSessionAction(JsonView jsonValue)
-  : TestGridSessionAction()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ TestGridSessionAction& TestGridSessionAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("action"))
   {
     m_action = jsonValue.GetString("action");
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("started"))
   {
     m_started = jsonValue.GetDouble("started");
-
     m_startedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("duration"))
   {
     m_duration = jsonValue.GetInt64("duration");
-
     m_durationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusCode"))
   {
     m_statusCode = jsonValue.GetString("statusCode");
-
     m_statusCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("requestMethod"))
   {
     m_requestMethod = jsonValue.GetString("requestMethod");
-
     m_requestMethodHasBeenSet = true;
   }
-
   return *this;
 }
 

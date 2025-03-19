@@ -12,11 +12,6 @@ using namespace Aws::CodeStarconnections::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteHostRequest::DeleteHostRequest() : 
-    m_hostArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteHostRequest::SerializePayload() const
 {
   JsonValue payload;

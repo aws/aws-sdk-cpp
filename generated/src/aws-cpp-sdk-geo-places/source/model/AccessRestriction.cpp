@@ -18,15 +18,7 @@ namespace GeoPlaces
 namespace Model
 {
 
-AccessRestriction::AccessRestriction() : 
-    m_restricted(false),
-    m_restrictedHasBeenSet(false),
-    m_categoriesHasBeenSet(false)
-{
-}
-
 AccessRestriction::AccessRestriction(JsonView jsonValue)
-  : AccessRestriction()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ AccessRestriction& AccessRestriction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Restricted"))
   {
     m_restricted = jsonValue.GetBool("Restricted");
-
     m_restrictedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Categories"))
   {
     Aws::Utils::Array<JsonView> categoriesJsonList = jsonValue.GetArray("Categories");
@@ -49,7 +39,6 @@ AccessRestriction& AccessRestriction::operator =(JsonView jsonValue)
     }
     m_categoriesHasBeenSet = true;
   }
-
   return *this;
 }
 

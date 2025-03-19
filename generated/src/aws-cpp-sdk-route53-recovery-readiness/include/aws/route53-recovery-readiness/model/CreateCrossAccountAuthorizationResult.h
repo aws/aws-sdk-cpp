@@ -27,7 +27,7 @@ namespace Model
   class CreateCrossAccountAuthorizationResult
   {
   public:
-    AWS_ROUTE53RECOVERYREADINESS_API CreateCrossAccountAuthorizationResult();
+    AWS_ROUTE53RECOVERYREADINESS_API CreateCrossAccountAuthorizationResult() = default;
     AWS_ROUTE53RECOVERYREADINESS_API CreateCrossAccountAuthorizationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROUTE53RECOVERYREADINESS_API CreateCrossAccountAuthorizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The cross-account authorization.</p>
      */
-    inline const Aws::String& GetCrossAccountAuthorization() const{ return m_crossAccountAuthorization; }
-    inline void SetCrossAccountAuthorization(const Aws::String& value) { m_crossAccountAuthorization = value; }
-    inline void SetCrossAccountAuthorization(Aws::String&& value) { m_crossAccountAuthorization = std::move(value); }
-    inline void SetCrossAccountAuthorization(const char* value) { m_crossAccountAuthorization.assign(value); }
-    inline CreateCrossAccountAuthorizationResult& WithCrossAccountAuthorization(const Aws::String& value) { SetCrossAccountAuthorization(value); return *this;}
-    inline CreateCrossAccountAuthorizationResult& WithCrossAccountAuthorization(Aws::String&& value) { SetCrossAccountAuthorization(std::move(value)); return *this;}
-    inline CreateCrossAccountAuthorizationResult& WithCrossAccountAuthorization(const char* value) { SetCrossAccountAuthorization(value); return *this;}
+    inline const Aws::String& GetCrossAccountAuthorization() const { return m_crossAccountAuthorization; }
+    template<typename CrossAccountAuthorizationT = Aws::String>
+    void SetCrossAccountAuthorization(CrossAccountAuthorizationT&& value) { m_crossAccountAuthorizationHasBeenSet = true; m_crossAccountAuthorization = std::forward<CrossAccountAuthorizationT>(value); }
+    template<typename CrossAccountAuthorizationT = Aws::String>
+    CreateCrossAccountAuthorizationResult& WithCrossAccountAuthorization(CrossAccountAuthorizationT&& value) { SetCrossAccountAuthorization(std::forward<CrossAccountAuthorizationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateCrossAccountAuthorizationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateCrossAccountAuthorizationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateCrossAccountAuthorizationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateCrossAccountAuthorizationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_crossAccountAuthorization;
+    bool m_crossAccountAuthorizationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

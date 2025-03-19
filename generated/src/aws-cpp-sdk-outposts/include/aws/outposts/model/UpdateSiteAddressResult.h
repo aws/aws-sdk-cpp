@@ -29,7 +29,7 @@ namespace Model
   class UpdateSiteAddressResult
   {
   public:
-    AWS_OUTPOSTS_API UpdateSiteAddressResult();
+    AWS_OUTPOSTS_API UpdateSiteAddressResult() = default;
     AWS_OUTPOSTS_API UpdateSiteAddressResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OUTPOSTS_API UpdateSiteAddressResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,41 +38,40 @@ namespace Model
     /**
      * <p> The type of the address. </p>
      */
-    inline const AddressType& GetAddressType() const{ return m_addressType; }
-    inline void SetAddressType(const AddressType& value) { m_addressType = value; }
-    inline void SetAddressType(AddressType&& value) { m_addressType = std::move(value); }
-    inline UpdateSiteAddressResult& WithAddressType(const AddressType& value) { SetAddressType(value); return *this;}
-    inline UpdateSiteAddressResult& WithAddressType(AddressType&& value) { SetAddressType(std::move(value)); return *this;}
+    inline AddressType GetAddressType() const { return m_addressType; }
+    inline void SetAddressType(AddressType value) { m_addressTypeHasBeenSet = true; m_addressType = value; }
+    inline UpdateSiteAddressResult& WithAddressType(AddressType value) { SetAddressType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Information about an address. </p>
      */
-    inline const Address& GetAddress() const{ return m_address; }
-    inline void SetAddress(const Address& value) { m_address = value; }
-    inline void SetAddress(Address&& value) { m_address = std::move(value); }
-    inline UpdateSiteAddressResult& WithAddress(const Address& value) { SetAddress(value); return *this;}
-    inline UpdateSiteAddressResult& WithAddress(Address&& value) { SetAddress(std::move(value)); return *this;}
+    inline const Address& GetAddress() const { return m_address; }
+    template<typename AddressT = Address>
+    void SetAddress(AddressT&& value) { m_addressHasBeenSet = true; m_address = std::forward<AddressT>(value); }
+    template<typename AddressT = Address>
+    UpdateSiteAddressResult& WithAddress(AddressT&& value) { SetAddress(std::forward<AddressT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateSiteAddressResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateSiteAddressResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateSiteAddressResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateSiteAddressResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    AddressType m_addressType;
+    AddressType m_addressType{AddressType::NOT_SET};
+    bool m_addressTypeHasBeenSet = false;
 
     Address m_address;
+    bool m_addressHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

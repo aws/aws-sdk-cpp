@@ -31,7 +31,7 @@ namespace Model
   class OwnershipControlsRule
   {
   public:
-    AWS_S3CRT_API OwnershipControlsRule();
+    AWS_S3CRT_API OwnershipControlsRule() = default;
     AWS_S3CRT_API OwnershipControlsRule(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CRT_API OwnershipControlsRule& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -40,16 +40,14 @@ namespace Model
 
     ///@{
     
-    inline const ObjectOwnership& GetObjectOwnership() const{ return m_objectOwnership; }
+    inline ObjectOwnership GetObjectOwnership() const { return m_objectOwnership; }
     inline bool ObjectOwnershipHasBeenSet() const { return m_objectOwnershipHasBeenSet; }
-    inline void SetObjectOwnership(const ObjectOwnership& value) { m_objectOwnershipHasBeenSet = true; m_objectOwnership = value; }
-    inline void SetObjectOwnership(ObjectOwnership&& value) { m_objectOwnershipHasBeenSet = true; m_objectOwnership = std::move(value); }
-    inline OwnershipControlsRule& WithObjectOwnership(const ObjectOwnership& value) { SetObjectOwnership(value); return *this;}
-    inline OwnershipControlsRule& WithObjectOwnership(ObjectOwnership&& value) { SetObjectOwnership(std::move(value)); return *this;}
+    inline void SetObjectOwnership(ObjectOwnership value) { m_objectOwnershipHasBeenSet = true; m_objectOwnership = value; }
+    inline OwnershipControlsRule& WithObjectOwnership(ObjectOwnership value) { SetObjectOwnership(value); return *this;}
     ///@}
   private:
 
-    ObjectOwnership m_objectOwnership;
+    ObjectOwnership m_objectOwnership{ObjectOwnership::NOT_SET};
     bool m_objectOwnershipHasBeenSet = false;
   };
 

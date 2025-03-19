@@ -18,17 +18,7 @@ namespace Connect
 namespace Model
 {
 
-EvaluationAnswerData::EvaluationAnswerData() : 
-    m_stringValueHasBeenSet(false),
-    m_numericValue(0.0),
-    m_numericValueHasBeenSet(false),
-    m_notApplicable(false),
-    m_notApplicableHasBeenSet(false)
-{
-}
-
 EvaluationAnswerData::EvaluationAnswerData(JsonView jsonValue)
-  : EvaluationAnswerData()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ EvaluationAnswerData& EvaluationAnswerData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StringValue"))
   {
     m_stringValue = jsonValue.GetString("StringValue");
-
     m_stringValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumericValue"))
   {
     m_numericValue = jsonValue.GetDouble("NumericValue");
-
     m_numericValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotApplicable"))
   {
     m_notApplicable = jsonValue.GetBool("NotApplicable");
-
     m_notApplicableHasBeenSet = true;
   }
-
   return *this;
 }
 

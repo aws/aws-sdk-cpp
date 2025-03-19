@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsRdsPendingCloudWatchLogsExports::AwsRdsPendingCloudWatchLogsExports() : 
-    m_logTypesToEnableHasBeenSet(false),
-    m_logTypesToDisableHasBeenSet(false)
-{
-}
-
 AwsRdsPendingCloudWatchLogsExports::AwsRdsPendingCloudWatchLogsExports(JsonView jsonValue)
-  : AwsRdsPendingCloudWatchLogsExports()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ AwsRdsPendingCloudWatchLogsExports& AwsRdsPendingCloudWatchLogsExports::operator
     }
     m_logTypesToEnableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogTypesToDisable"))
   {
     Aws::Utils::Array<JsonView> logTypesToDisableJsonList = jsonValue.GetArray("LogTypesToDisable");
@@ -51,7 +43,6 @@ AwsRdsPendingCloudWatchLogsExports& AwsRdsPendingCloudWatchLogsExports::operator
     }
     m_logTypesToDisableHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -28,7 +28,7 @@ namespace Model
   class GetApplicationAuthenticationMethodResult
   {
   public:
-    AWS_SSOADMIN_API GetApplicationAuthenticationMethodResult();
+    AWS_SSOADMIN_API GetApplicationAuthenticationMethodResult() = default;
     AWS_SSOADMIN_API GetApplicationAuthenticationMethodResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSOADMIN_API GetApplicationAuthenticationMethodResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>A structure that contains details about the requested authentication
      * method.</p>
      */
-    inline const AuthenticationMethod& GetAuthenticationMethod() const{ return m_authenticationMethod; }
-    inline void SetAuthenticationMethod(const AuthenticationMethod& value) { m_authenticationMethod = value; }
-    inline void SetAuthenticationMethod(AuthenticationMethod&& value) { m_authenticationMethod = std::move(value); }
-    inline GetApplicationAuthenticationMethodResult& WithAuthenticationMethod(const AuthenticationMethod& value) { SetAuthenticationMethod(value); return *this;}
-    inline GetApplicationAuthenticationMethodResult& WithAuthenticationMethod(AuthenticationMethod&& value) { SetAuthenticationMethod(std::move(value)); return *this;}
+    inline const AuthenticationMethod& GetAuthenticationMethod() const { return m_authenticationMethod; }
+    template<typename AuthenticationMethodT = AuthenticationMethod>
+    void SetAuthenticationMethod(AuthenticationMethodT&& value) { m_authenticationMethodHasBeenSet = true; m_authenticationMethod = std::forward<AuthenticationMethodT>(value); }
+    template<typename AuthenticationMethodT = AuthenticationMethod>
+    GetApplicationAuthenticationMethodResult& WithAuthenticationMethod(AuthenticationMethodT&& value) { SetAuthenticationMethod(std::forward<AuthenticationMethodT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetApplicationAuthenticationMethodResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetApplicationAuthenticationMethodResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetApplicationAuthenticationMethodResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetApplicationAuthenticationMethodResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AuthenticationMethod m_authenticationMethod;
+    bool m_authenticationMethodHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

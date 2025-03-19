@@ -21,7 +21,7 @@ namespace Model
   class StartCommitmentPurchaseAnalysisRequest : public CostExplorerRequest
   {
   public:
-    AWS_COSTEXPLORER_API StartCommitmentPurchaseAnalysisRequest();
+    AWS_COSTEXPLORER_API StartCommitmentPurchaseAnalysisRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,12 +38,12 @@ namespace Model
     /**
      * <p>The configuration for the commitment purchase analysis.</p>
      */
-    inline const CommitmentPurchaseAnalysisConfiguration& GetCommitmentPurchaseAnalysisConfiguration() const{ return m_commitmentPurchaseAnalysisConfiguration; }
+    inline const CommitmentPurchaseAnalysisConfiguration& GetCommitmentPurchaseAnalysisConfiguration() const { return m_commitmentPurchaseAnalysisConfiguration; }
     inline bool CommitmentPurchaseAnalysisConfigurationHasBeenSet() const { return m_commitmentPurchaseAnalysisConfigurationHasBeenSet; }
-    inline void SetCommitmentPurchaseAnalysisConfiguration(const CommitmentPurchaseAnalysisConfiguration& value) { m_commitmentPurchaseAnalysisConfigurationHasBeenSet = true; m_commitmentPurchaseAnalysisConfiguration = value; }
-    inline void SetCommitmentPurchaseAnalysisConfiguration(CommitmentPurchaseAnalysisConfiguration&& value) { m_commitmentPurchaseAnalysisConfigurationHasBeenSet = true; m_commitmentPurchaseAnalysisConfiguration = std::move(value); }
-    inline StartCommitmentPurchaseAnalysisRequest& WithCommitmentPurchaseAnalysisConfiguration(const CommitmentPurchaseAnalysisConfiguration& value) { SetCommitmentPurchaseAnalysisConfiguration(value); return *this;}
-    inline StartCommitmentPurchaseAnalysisRequest& WithCommitmentPurchaseAnalysisConfiguration(CommitmentPurchaseAnalysisConfiguration&& value) { SetCommitmentPurchaseAnalysisConfiguration(std::move(value)); return *this;}
+    template<typename CommitmentPurchaseAnalysisConfigurationT = CommitmentPurchaseAnalysisConfiguration>
+    void SetCommitmentPurchaseAnalysisConfiguration(CommitmentPurchaseAnalysisConfigurationT&& value) { m_commitmentPurchaseAnalysisConfigurationHasBeenSet = true; m_commitmentPurchaseAnalysisConfiguration = std::forward<CommitmentPurchaseAnalysisConfigurationT>(value); }
+    template<typename CommitmentPurchaseAnalysisConfigurationT = CommitmentPurchaseAnalysisConfiguration>
+    StartCommitmentPurchaseAnalysisRequest& WithCommitmentPurchaseAnalysisConfiguration(CommitmentPurchaseAnalysisConfigurationT&& value) { SetCommitmentPurchaseAnalysisConfiguration(std::forward<CommitmentPurchaseAnalysisConfigurationT>(value)); return *this;}
     ///@}
   private:
 

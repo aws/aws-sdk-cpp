@@ -12,12 +12,6 @@ using namespace Aws::finspace::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetKxScalingGroupRequest::GetKxScalingGroupRequest() : 
-    m_environmentIdHasBeenSet(false),
-    m_scalingGroupNameHasBeenSet(false)
-{
-}
-
 Aws::String GetKxScalingGroupRequest::SerializePayload() const
 {
   return {};

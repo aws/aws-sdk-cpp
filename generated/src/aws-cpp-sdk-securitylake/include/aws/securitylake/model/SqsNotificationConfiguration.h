@@ -30,7 +30,7 @@ namespace Model
   class SqsNotificationConfiguration
   {
   public:
-    AWS_SECURITYLAKE_API SqsNotificationConfiguration();
+    AWS_SECURITYLAKE_API SqsNotificationConfiguration() = default;
     AWS_SECURITYLAKE_API SqsNotificationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYLAKE_API SqsNotificationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYLAKE_API Aws::Utils::Json::JsonValue Jsonize() const;

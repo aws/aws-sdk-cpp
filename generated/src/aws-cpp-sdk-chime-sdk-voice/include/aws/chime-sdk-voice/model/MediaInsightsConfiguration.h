@@ -31,7 +31,7 @@ namespace Model
   class MediaInsightsConfiguration
   {
   public:
-    AWS_CHIMESDKVOICE_API MediaInsightsConfiguration();
+    AWS_CHIMESDKVOICE_API MediaInsightsConfiguration() = default;
     AWS_CHIMESDKVOICE_API MediaInsightsConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKVOICE_API MediaInsightsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>Denotes the configuration as enabled or disabled.</p>
      */
-    inline bool GetDisabled() const{ return m_disabled; }
+    inline bool GetDisabled() const { return m_disabled; }
     inline bool DisabledHasBeenSet() const { return m_disabledHasBeenSet; }
     inline void SetDisabled(bool value) { m_disabledHasBeenSet = true; m_disabled = value; }
     inline MediaInsightsConfiguration& WithDisabled(bool value) { SetDisabled(value); return *this;}
@@ -51,18 +51,16 @@ namespace Model
     /**
      * <p>The configuration's ARN.</p>
      */
-    inline const Aws::String& GetConfigurationArn() const{ return m_configurationArn; }
+    inline const Aws::String& GetConfigurationArn() const { return m_configurationArn; }
     inline bool ConfigurationArnHasBeenSet() const { return m_configurationArnHasBeenSet; }
-    inline void SetConfigurationArn(const Aws::String& value) { m_configurationArnHasBeenSet = true; m_configurationArn = value; }
-    inline void SetConfigurationArn(Aws::String&& value) { m_configurationArnHasBeenSet = true; m_configurationArn = std::move(value); }
-    inline void SetConfigurationArn(const char* value) { m_configurationArnHasBeenSet = true; m_configurationArn.assign(value); }
-    inline MediaInsightsConfiguration& WithConfigurationArn(const Aws::String& value) { SetConfigurationArn(value); return *this;}
-    inline MediaInsightsConfiguration& WithConfigurationArn(Aws::String&& value) { SetConfigurationArn(std::move(value)); return *this;}
-    inline MediaInsightsConfiguration& WithConfigurationArn(const char* value) { SetConfigurationArn(value); return *this;}
+    template<typename ConfigurationArnT = Aws::String>
+    void SetConfigurationArn(ConfigurationArnT&& value) { m_configurationArnHasBeenSet = true; m_configurationArn = std::forward<ConfigurationArnT>(value); }
+    template<typename ConfigurationArnT = Aws::String>
+    MediaInsightsConfiguration& WithConfigurationArn(ConfigurationArnT&& value) { SetConfigurationArn(std::forward<ConfigurationArnT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_disabled;
+    bool m_disabled{false};
     bool m_disabledHasBeenSet = false;
 
     Aws::String m_configurationArn;

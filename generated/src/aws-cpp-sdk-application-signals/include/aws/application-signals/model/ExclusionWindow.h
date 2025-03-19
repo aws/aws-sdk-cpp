@@ -35,7 +35,7 @@ namespace Model
   class ExclusionWindow
   {
   public:
-    AWS_APPLICATIONSIGNALS_API ExclusionWindow();
+    AWS_APPLICATIONSIGNALS_API ExclusionWindow() = default;
     AWS_APPLICATIONSIGNALS_API ExclusionWindow(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONSIGNALS_API ExclusionWindow& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONSIGNALS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
     /**
      * <p>The SLO time window exclusion .</p>
      */
-    inline const Window& GetWindow() const{ return m_window; }
+    inline const Window& GetWindow() const { return m_window; }
     inline bool WindowHasBeenSet() const { return m_windowHasBeenSet; }
-    inline void SetWindow(const Window& value) { m_windowHasBeenSet = true; m_window = value; }
-    inline void SetWindow(Window&& value) { m_windowHasBeenSet = true; m_window = std::move(value); }
-    inline ExclusionWindow& WithWindow(const Window& value) { SetWindow(value); return *this;}
-    inline ExclusionWindow& WithWindow(Window&& value) { SetWindow(std::move(value)); return *this;}
+    template<typename WindowT = Window>
+    void SetWindow(WindowT&& value) { m_windowHasBeenSet = true; m_window = std::forward<WindowT>(value); }
+    template<typename WindowT = Window>
+    ExclusionWindow& WithWindow(WindowT&& value) { SetWindow(std::forward<WindowT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +58,12 @@ namespace Model
      * <p>The start of the SLO time window exclusion. Defaults to current time if not
      * specified.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline ExclusionWindow& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline ExclusionWindow& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    ExclusionWindow& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,12 +71,12 @@ namespace Model
      * <p>The recurrence rule for the SLO time window exclusion. Supports both cron and
      * rate expressions.</p>
      */
-    inline const RecurrenceRule& GetRecurrenceRule() const{ return m_recurrenceRule; }
+    inline const RecurrenceRule& GetRecurrenceRule() const { return m_recurrenceRule; }
     inline bool RecurrenceRuleHasBeenSet() const { return m_recurrenceRuleHasBeenSet; }
-    inline void SetRecurrenceRule(const RecurrenceRule& value) { m_recurrenceRuleHasBeenSet = true; m_recurrenceRule = value; }
-    inline void SetRecurrenceRule(RecurrenceRule&& value) { m_recurrenceRuleHasBeenSet = true; m_recurrenceRule = std::move(value); }
-    inline ExclusionWindow& WithRecurrenceRule(const RecurrenceRule& value) { SetRecurrenceRule(value); return *this;}
-    inline ExclusionWindow& WithRecurrenceRule(RecurrenceRule&& value) { SetRecurrenceRule(std::move(value)); return *this;}
+    template<typename RecurrenceRuleT = RecurrenceRule>
+    void SetRecurrenceRule(RecurrenceRuleT&& value) { m_recurrenceRuleHasBeenSet = true; m_recurrenceRule = std::forward<RecurrenceRuleT>(value); }
+    template<typename RecurrenceRuleT = RecurrenceRule>
+    ExclusionWindow& WithRecurrenceRule(RecurrenceRuleT&& value) { SetRecurrenceRule(std::forward<RecurrenceRuleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,21 +84,19 @@ namespace Model
      * <p>A description explaining why this time period should be excluded from SLO
      * calculations.</p>
      */
-    inline const Aws::String& GetReason() const{ return m_reason; }
+    inline const Aws::String& GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-    inline ExclusionWindow& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-    inline ExclusionWindow& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-    inline ExclusionWindow& WithReason(const char* value) { SetReason(value); return *this;}
+    template<typename ReasonT = Aws::String>
+    void SetReason(ReasonT&& value) { m_reasonHasBeenSet = true; m_reason = std::forward<ReasonT>(value); }
+    template<typename ReasonT = Aws::String>
+    ExclusionWindow& WithReason(ReasonT&& value) { SetReason(std::forward<ReasonT>(value)); return *this;}
     ///@}
   private:
 
     Window m_window;
     bool m_windowHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
     RecurrenceRule m_recurrenceRule;

@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-LabelingJobDataAttributes::LabelingJobDataAttributes() : 
-    m_contentClassifiersHasBeenSet(false)
-{
-}
-
 LabelingJobDataAttributes::LabelingJobDataAttributes(JsonView jsonValue)
-  : LabelingJobDataAttributes()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ LabelingJobDataAttributes& LabelingJobDataAttributes::operator =(JsonView jsonVa
     }
     m_contentClassifiersHasBeenSet = true;
   }
-
   return *this;
 }
 

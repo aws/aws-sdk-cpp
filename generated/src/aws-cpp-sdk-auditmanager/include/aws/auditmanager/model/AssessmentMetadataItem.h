@@ -37,7 +37,7 @@ namespace Model
   class AssessmentMetadataItem
   {
   public:
-    AWS_AUDITMANAGER_API AssessmentMetadataItem();
+    AWS_AUDITMANAGER_API AssessmentMetadataItem() = default;
     AWS_AUDITMANAGER_API AssessmentMetadataItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUDITMANAGER_API AssessmentMetadataItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,28 +47,24 @@ namespace Model
     /**
      * <p> The name of the assessment. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AssessmentMetadataItem& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AssessmentMetadataItem& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AssessmentMetadataItem& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    AssessmentMetadataItem& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The unique identifier for the assessment. </p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline AssessmentMetadataItem& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline AssessmentMetadataItem& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline AssessmentMetadataItem& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    AssessmentMetadataItem& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,78 +72,74 @@ namespace Model
      * <p> The name of the compliance standard that's related to the assessment, such
      * as PCI-DSS. </p>
      */
-    inline const Aws::String& GetComplianceType() const{ return m_complianceType; }
+    inline const Aws::String& GetComplianceType() const { return m_complianceType; }
     inline bool ComplianceTypeHasBeenSet() const { return m_complianceTypeHasBeenSet; }
-    inline void SetComplianceType(const Aws::String& value) { m_complianceTypeHasBeenSet = true; m_complianceType = value; }
-    inline void SetComplianceType(Aws::String&& value) { m_complianceTypeHasBeenSet = true; m_complianceType = std::move(value); }
-    inline void SetComplianceType(const char* value) { m_complianceTypeHasBeenSet = true; m_complianceType.assign(value); }
-    inline AssessmentMetadataItem& WithComplianceType(const Aws::String& value) { SetComplianceType(value); return *this;}
-    inline AssessmentMetadataItem& WithComplianceType(Aws::String&& value) { SetComplianceType(std::move(value)); return *this;}
-    inline AssessmentMetadataItem& WithComplianceType(const char* value) { SetComplianceType(value); return *this;}
+    template<typename ComplianceTypeT = Aws::String>
+    void SetComplianceType(ComplianceTypeT&& value) { m_complianceTypeHasBeenSet = true; m_complianceType = std::forward<ComplianceTypeT>(value); }
+    template<typename ComplianceTypeT = Aws::String>
+    AssessmentMetadataItem& WithComplianceType(ComplianceTypeT&& value) { SetComplianceType(std::forward<ComplianceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The current status of the assessment. </p>
      */
-    inline const AssessmentStatus& GetStatus() const{ return m_status; }
+    inline AssessmentStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const AssessmentStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(AssessmentStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline AssessmentMetadataItem& WithStatus(const AssessmentStatus& value) { SetStatus(value); return *this;}
-    inline AssessmentMetadataItem& WithStatus(AssessmentStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(AssessmentStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline AssessmentMetadataItem& WithStatus(AssessmentStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The roles that are associated with the assessment. </p>
      */
-    inline const Aws::Vector<Role>& GetRoles() const{ return m_roles; }
+    inline const Aws::Vector<Role>& GetRoles() const { return m_roles; }
     inline bool RolesHasBeenSet() const { return m_rolesHasBeenSet; }
-    inline void SetRoles(const Aws::Vector<Role>& value) { m_rolesHasBeenSet = true; m_roles = value; }
-    inline void SetRoles(Aws::Vector<Role>&& value) { m_rolesHasBeenSet = true; m_roles = std::move(value); }
-    inline AssessmentMetadataItem& WithRoles(const Aws::Vector<Role>& value) { SetRoles(value); return *this;}
-    inline AssessmentMetadataItem& WithRoles(Aws::Vector<Role>&& value) { SetRoles(std::move(value)); return *this;}
-    inline AssessmentMetadataItem& AddRoles(const Role& value) { m_rolesHasBeenSet = true; m_roles.push_back(value); return *this; }
-    inline AssessmentMetadataItem& AddRoles(Role&& value) { m_rolesHasBeenSet = true; m_roles.push_back(std::move(value)); return *this; }
+    template<typename RolesT = Aws::Vector<Role>>
+    void SetRoles(RolesT&& value) { m_rolesHasBeenSet = true; m_roles = std::forward<RolesT>(value); }
+    template<typename RolesT = Aws::Vector<Role>>
+    AssessmentMetadataItem& WithRoles(RolesT&& value) { SetRoles(std::forward<RolesT>(value)); return *this;}
+    template<typename RolesT = Role>
+    AssessmentMetadataItem& AddRoles(RolesT&& value) { m_rolesHasBeenSet = true; m_roles.emplace_back(std::forward<RolesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> The delegations that are associated with the assessment. </p>
      */
-    inline const Aws::Vector<Delegation>& GetDelegations() const{ return m_delegations; }
+    inline const Aws::Vector<Delegation>& GetDelegations() const { return m_delegations; }
     inline bool DelegationsHasBeenSet() const { return m_delegationsHasBeenSet; }
-    inline void SetDelegations(const Aws::Vector<Delegation>& value) { m_delegationsHasBeenSet = true; m_delegations = value; }
-    inline void SetDelegations(Aws::Vector<Delegation>&& value) { m_delegationsHasBeenSet = true; m_delegations = std::move(value); }
-    inline AssessmentMetadataItem& WithDelegations(const Aws::Vector<Delegation>& value) { SetDelegations(value); return *this;}
-    inline AssessmentMetadataItem& WithDelegations(Aws::Vector<Delegation>&& value) { SetDelegations(std::move(value)); return *this;}
-    inline AssessmentMetadataItem& AddDelegations(const Delegation& value) { m_delegationsHasBeenSet = true; m_delegations.push_back(value); return *this; }
-    inline AssessmentMetadataItem& AddDelegations(Delegation&& value) { m_delegationsHasBeenSet = true; m_delegations.push_back(std::move(value)); return *this; }
+    template<typename DelegationsT = Aws::Vector<Delegation>>
+    void SetDelegations(DelegationsT&& value) { m_delegationsHasBeenSet = true; m_delegations = std::forward<DelegationsT>(value); }
+    template<typename DelegationsT = Aws::Vector<Delegation>>
+    AssessmentMetadataItem& WithDelegations(DelegationsT&& value) { SetDelegations(std::forward<DelegationsT>(value)); return *this;}
+    template<typename DelegationsT = Delegation>
+    AssessmentMetadataItem& AddDelegations(DelegationsT&& value) { m_delegationsHasBeenSet = true; m_delegations.emplace_back(std::forward<DelegationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> Specifies when the assessment was created. </p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline AssessmentMetadataItem& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline AssessmentMetadataItem& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    AssessmentMetadataItem& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The time of the most recent update. </p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdated() const{ return m_lastUpdated; }
+    inline const Aws::Utils::DateTime& GetLastUpdated() const { return m_lastUpdated; }
     inline bool LastUpdatedHasBeenSet() const { return m_lastUpdatedHasBeenSet; }
-    inline void SetLastUpdated(const Aws::Utils::DateTime& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = value; }
-    inline void SetLastUpdated(Aws::Utils::DateTime&& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = std::move(value); }
-    inline AssessmentMetadataItem& WithLastUpdated(const Aws::Utils::DateTime& value) { SetLastUpdated(value); return *this;}
-    inline AssessmentMetadataItem& WithLastUpdated(Aws::Utils::DateTime&& value) { SetLastUpdated(std::move(value)); return *this;}
+    template<typename LastUpdatedT = Aws::Utils::DateTime>
+    void SetLastUpdated(LastUpdatedT&& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = std::forward<LastUpdatedT>(value); }
+    template<typename LastUpdatedT = Aws::Utils::DateTime>
+    AssessmentMetadataItem& WithLastUpdated(LastUpdatedT&& value) { SetLastUpdated(std::forward<LastUpdatedT>(value)); return *this;}
     ///@}
   private:
 
@@ -160,7 +152,7 @@ namespace Model
     Aws::String m_complianceType;
     bool m_complianceTypeHasBeenSet = false;
 
-    AssessmentStatus m_status;
+    AssessmentStatus m_status{AssessmentStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::Vector<Role> m_roles;
@@ -169,10 +161,10 @@ namespace Model
     Aws::Vector<Delegation> m_delegations;
     bool m_delegationsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdated;
+    Aws::Utils::DateTime m_lastUpdated{};
     bool m_lastUpdatedHasBeenSet = false;
   };
 

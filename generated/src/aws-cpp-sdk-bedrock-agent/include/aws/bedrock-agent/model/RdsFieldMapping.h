@@ -32,7 +32,7 @@ namespace Model
   class RdsFieldMapping
   {
   public:
-    AWS_BEDROCKAGENT_API RdsFieldMapping();
+    AWS_BEDROCKAGENT_API RdsFieldMapping() = default;
     AWS_BEDROCKAGENT_API RdsFieldMapping(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API RdsFieldMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The name of the field in which Amazon Bedrock stores metadata about the
      * vector store.</p>
      */
-    inline const Aws::String& GetMetadataField() const{ return m_metadataField; }
+    inline const Aws::String& GetMetadataField() const { return m_metadataField; }
     inline bool MetadataFieldHasBeenSet() const { return m_metadataFieldHasBeenSet; }
-    inline void SetMetadataField(const Aws::String& value) { m_metadataFieldHasBeenSet = true; m_metadataField = value; }
-    inline void SetMetadataField(Aws::String&& value) { m_metadataFieldHasBeenSet = true; m_metadataField = std::move(value); }
-    inline void SetMetadataField(const char* value) { m_metadataFieldHasBeenSet = true; m_metadataField.assign(value); }
-    inline RdsFieldMapping& WithMetadataField(const Aws::String& value) { SetMetadataField(value); return *this;}
-    inline RdsFieldMapping& WithMetadataField(Aws::String&& value) { SetMetadataField(std::move(value)); return *this;}
-    inline RdsFieldMapping& WithMetadataField(const char* value) { SetMetadataField(value); return *this;}
+    template<typename MetadataFieldT = Aws::String>
+    void SetMetadataField(MetadataFieldT&& value) { m_metadataFieldHasBeenSet = true; m_metadataField = std::forward<MetadataFieldT>(value); }
+    template<typename MetadataFieldT = Aws::String>
+    RdsFieldMapping& WithMetadataField(MetadataFieldT&& value) { SetMetadataField(std::forward<MetadataFieldT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The name of the field in which Amazon Bedrock stores the ID for each
      * entry.</p>
      */
-    inline const Aws::String& GetPrimaryKeyField() const{ return m_primaryKeyField; }
+    inline const Aws::String& GetPrimaryKeyField() const { return m_primaryKeyField; }
     inline bool PrimaryKeyFieldHasBeenSet() const { return m_primaryKeyFieldHasBeenSet; }
-    inline void SetPrimaryKeyField(const Aws::String& value) { m_primaryKeyFieldHasBeenSet = true; m_primaryKeyField = value; }
-    inline void SetPrimaryKeyField(Aws::String&& value) { m_primaryKeyFieldHasBeenSet = true; m_primaryKeyField = std::move(value); }
-    inline void SetPrimaryKeyField(const char* value) { m_primaryKeyFieldHasBeenSet = true; m_primaryKeyField.assign(value); }
-    inline RdsFieldMapping& WithPrimaryKeyField(const Aws::String& value) { SetPrimaryKeyField(value); return *this;}
-    inline RdsFieldMapping& WithPrimaryKeyField(Aws::String&& value) { SetPrimaryKeyField(std::move(value)); return *this;}
-    inline RdsFieldMapping& WithPrimaryKeyField(const char* value) { SetPrimaryKeyField(value); return *this;}
+    template<typename PrimaryKeyFieldT = Aws::String>
+    void SetPrimaryKeyField(PrimaryKeyFieldT&& value) { m_primaryKeyFieldHasBeenSet = true; m_primaryKeyField = std::forward<PrimaryKeyFieldT>(value); }
+    template<typename PrimaryKeyFieldT = Aws::String>
+    RdsFieldMapping& WithPrimaryKeyField(PrimaryKeyFieldT&& value) { SetPrimaryKeyField(std::forward<PrimaryKeyFieldT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,12 @@ namespace Model
      * <p>The name of the field in which Amazon Bedrock stores the raw text from your
      * data. The text is split according to the chunking strategy you choose.</p>
      */
-    inline const Aws::String& GetTextField() const{ return m_textField; }
+    inline const Aws::String& GetTextField() const { return m_textField; }
     inline bool TextFieldHasBeenSet() const { return m_textFieldHasBeenSet; }
-    inline void SetTextField(const Aws::String& value) { m_textFieldHasBeenSet = true; m_textField = value; }
-    inline void SetTextField(Aws::String&& value) { m_textFieldHasBeenSet = true; m_textField = std::move(value); }
-    inline void SetTextField(const char* value) { m_textFieldHasBeenSet = true; m_textField.assign(value); }
-    inline RdsFieldMapping& WithTextField(const Aws::String& value) { SetTextField(value); return *this;}
-    inline RdsFieldMapping& WithTextField(Aws::String&& value) { SetTextField(std::move(value)); return *this;}
-    inline RdsFieldMapping& WithTextField(const char* value) { SetTextField(value); return *this;}
+    template<typename TextFieldT = Aws::String>
+    void SetTextField(TextFieldT&& value) { m_textFieldHasBeenSet = true; m_textField = std::forward<TextFieldT>(value); }
+    template<typename TextFieldT = Aws::String>
+    RdsFieldMapping& WithTextField(TextFieldT&& value) { SetTextField(std::forward<TextFieldT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,14 +82,12 @@ namespace Model
      * <p>The name of the field in which Amazon Bedrock stores the vector embeddings
      * for your data sources.</p>
      */
-    inline const Aws::String& GetVectorField() const{ return m_vectorField; }
+    inline const Aws::String& GetVectorField() const { return m_vectorField; }
     inline bool VectorFieldHasBeenSet() const { return m_vectorFieldHasBeenSet; }
-    inline void SetVectorField(const Aws::String& value) { m_vectorFieldHasBeenSet = true; m_vectorField = value; }
-    inline void SetVectorField(Aws::String&& value) { m_vectorFieldHasBeenSet = true; m_vectorField = std::move(value); }
-    inline void SetVectorField(const char* value) { m_vectorFieldHasBeenSet = true; m_vectorField.assign(value); }
-    inline RdsFieldMapping& WithVectorField(const Aws::String& value) { SetVectorField(value); return *this;}
-    inline RdsFieldMapping& WithVectorField(Aws::String&& value) { SetVectorField(std::move(value)); return *this;}
-    inline RdsFieldMapping& WithVectorField(const char* value) { SetVectorField(value); return *this;}
+    template<typename VectorFieldT = Aws::String>
+    void SetVectorField(VectorFieldT&& value) { m_vectorFieldHasBeenSet = true; m_vectorField = std::forward<VectorFieldT>(value); }
+    template<typename VectorFieldT = Aws::String>
+    RdsFieldMapping& WithVectorField(VectorFieldT&& value) { SetVectorField(std::forward<VectorFieldT>(value)); return *this;}
     ///@}
   private:
 

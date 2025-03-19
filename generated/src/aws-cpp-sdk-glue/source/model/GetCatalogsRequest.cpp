@@ -12,18 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCatalogsRequest::GetCatalogsRequest() : 
-    m_parentCatalogIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_recursive(false),
-    m_recursiveHasBeenSet(false),
-    m_includeRoot(false),
-    m_includeRootHasBeenSet(false)
-{
-}
-
 Aws::String GetCatalogsRequest::SerializePayload() const
 {
   JsonValue payload;

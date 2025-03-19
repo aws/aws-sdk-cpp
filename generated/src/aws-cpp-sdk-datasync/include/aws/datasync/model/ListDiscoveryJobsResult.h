@@ -29,7 +29,7 @@ namespace Model
   class ListDiscoveryJobsResult
   {
   public:
-    AWS_DATASYNC_API ListDiscoveryJobsResult();
+    AWS_DATASYNC_API ListDiscoveryJobsResult() = default;
     AWS_DATASYNC_API ListDiscoveryJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATASYNC_API ListDiscoveryJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The discovery jobs that you've run.</p>
      */
-    inline const Aws::Vector<DiscoveryJobListEntry>& GetDiscoveryJobs() const{ return m_discoveryJobs; }
-    inline void SetDiscoveryJobs(const Aws::Vector<DiscoveryJobListEntry>& value) { m_discoveryJobs = value; }
-    inline void SetDiscoveryJobs(Aws::Vector<DiscoveryJobListEntry>&& value) { m_discoveryJobs = std::move(value); }
-    inline ListDiscoveryJobsResult& WithDiscoveryJobs(const Aws::Vector<DiscoveryJobListEntry>& value) { SetDiscoveryJobs(value); return *this;}
-    inline ListDiscoveryJobsResult& WithDiscoveryJobs(Aws::Vector<DiscoveryJobListEntry>&& value) { SetDiscoveryJobs(std::move(value)); return *this;}
-    inline ListDiscoveryJobsResult& AddDiscoveryJobs(const DiscoveryJobListEntry& value) { m_discoveryJobs.push_back(value); return *this; }
-    inline ListDiscoveryJobsResult& AddDiscoveryJobs(DiscoveryJobListEntry&& value) { m_discoveryJobs.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DiscoveryJobListEntry>& GetDiscoveryJobs() const { return m_discoveryJobs; }
+    template<typename DiscoveryJobsT = Aws::Vector<DiscoveryJobListEntry>>
+    void SetDiscoveryJobs(DiscoveryJobsT&& value) { m_discoveryJobsHasBeenSet = true; m_discoveryJobs = std::forward<DiscoveryJobsT>(value); }
+    template<typename DiscoveryJobsT = Aws::Vector<DiscoveryJobListEntry>>
+    ListDiscoveryJobsResult& WithDiscoveryJobs(DiscoveryJobsT&& value) { SetDiscoveryJobs(std::forward<DiscoveryJobsT>(value)); return *this;}
+    template<typename DiscoveryJobsT = DiscoveryJobListEntry>
+    ListDiscoveryJobsResult& AddDiscoveryJobs(DiscoveryJobsT&& value) { m_discoveryJobsHasBeenSet = true; m_discoveryJobs.emplace_back(std::forward<DiscoveryJobsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The opaque string that indicates the position to begin the next list of
      * results in the response.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListDiscoveryJobsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListDiscoveryJobsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListDiscoveryJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListDiscoveryJobsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListDiscoveryJobsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListDiscoveryJobsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListDiscoveryJobsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListDiscoveryJobsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DiscoveryJobListEntry> m_discoveryJobs;
+    bool m_discoveryJobsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

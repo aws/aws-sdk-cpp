@@ -15,11 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteReplicationSetRequest::DeleteReplicationSetRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteReplicationSetRequest::SerializePayload() const
 {
   return {};

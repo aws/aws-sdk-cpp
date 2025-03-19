@@ -25,7 +25,7 @@ namespace Model
   class CreateNetworkAnalyzerConfigurationRequest : public IoTWirelessRequest
   {
   public:
-    AWS_IOTWIRELESS_API CreateNetworkAnalyzerConfigurationRequest();
+    AWS_IOTWIRELESS_API CreateNetworkAnalyzerConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,24 +38,22 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateNetworkAnalyzerConfigurationRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateNetworkAnalyzerConfigurationRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateNetworkAnalyzerConfigurationRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateNetworkAnalyzerConfigurationRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const TraceContent& GetTraceContent() const{ return m_traceContent; }
+    inline const TraceContent& GetTraceContent() const { return m_traceContent; }
     inline bool TraceContentHasBeenSet() const { return m_traceContentHasBeenSet; }
-    inline void SetTraceContent(const TraceContent& value) { m_traceContentHasBeenSet = true; m_traceContent = value; }
-    inline void SetTraceContent(TraceContent&& value) { m_traceContentHasBeenSet = true; m_traceContent = std::move(value); }
-    inline CreateNetworkAnalyzerConfigurationRequest& WithTraceContent(const TraceContent& value) { SetTraceContent(value); return *this;}
-    inline CreateNetworkAnalyzerConfigurationRequest& WithTraceContent(TraceContent&& value) { SetTraceContent(std::move(value)); return *this;}
+    template<typename TraceContentT = TraceContent>
+    void SetTraceContent(TraceContentT&& value) { m_traceContentHasBeenSet = true; m_traceContent = std::forward<TraceContentT>(value); }
+    template<typename TraceContentT = TraceContent>
+    CreateNetworkAnalyzerConfigurationRequest& WithTraceContent(TraceContentT&& value) { SetTraceContent(std::forward<TraceContentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,15 +62,14 @@ namespace Model
      * Provide the <code>WirelessDeviceId</code> of the resource to add in the input
      * array.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetWirelessDevices() const{ return m_wirelessDevices; }
+    inline const Aws::Vector<Aws::String>& GetWirelessDevices() const { return m_wirelessDevices; }
     inline bool WirelessDevicesHasBeenSet() const { return m_wirelessDevicesHasBeenSet; }
-    inline void SetWirelessDevices(const Aws::Vector<Aws::String>& value) { m_wirelessDevicesHasBeenSet = true; m_wirelessDevices = value; }
-    inline void SetWirelessDevices(Aws::Vector<Aws::String>&& value) { m_wirelessDevicesHasBeenSet = true; m_wirelessDevices = std::move(value); }
-    inline CreateNetworkAnalyzerConfigurationRequest& WithWirelessDevices(const Aws::Vector<Aws::String>& value) { SetWirelessDevices(value); return *this;}
-    inline CreateNetworkAnalyzerConfigurationRequest& WithWirelessDevices(Aws::Vector<Aws::String>&& value) { SetWirelessDevices(std::move(value)); return *this;}
-    inline CreateNetworkAnalyzerConfigurationRequest& AddWirelessDevices(const Aws::String& value) { m_wirelessDevicesHasBeenSet = true; m_wirelessDevices.push_back(value); return *this; }
-    inline CreateNetworkAnalyzerConfigurationRequest& AddWirelessDevices(Aws::String&& value) { m_wirelessDevicesHasBeenSet = true; m_wirelessDevices.push_back(std::move(value)); return *this; }
-    inline CreateNetworkAnalyzerConfigurationRequest& AddWirelessDevices(const char* value) { m_wirelessDevicesHasBeenSet = true; m_wirelessDevices.push_back(value); return *this; }
+    template<typename WirelessDevicesT = Aws::Vector<Aws::String>>
+    void SetWirelessDevices(WirelessDevicesT&& value) { m_wirelessDevicesHasBeenSet = true; m_wirelessDevices = std::forward<WirelessDevicesT>(value); }
+    template<typename WirelessDevicesT = Aws::Vector<Aws::String>>
+    CreateNetworkAnalyzerConfigurationRequest& WithWirelessDevices(WirelessDevicesT&& value) { SetWirelessDevices(std::forward<WirelessDevicesT>(value)); return *this;}
+    template<typename WirelessDevicesT = Aws::String>
+    CreateNetworkAnalyzerConfigurationRequest& AddWirelessDevices(WirelessDevicesT&& value) { m_wirelessDevicesHasBeenSet = true; m_wirelessDevices.emplace_back(std::forward<WirelessDevicesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -81,51 +78,46 @@ namespace Model
      * Provide the <code>WirelessGatewayId</code> of the resource to add in the input
      * array.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetWirelessGateways() const{ return m_wirelessGateways; }
+    inline const Aws::Vector<Aws::String>& GetWirelessGateways() const { return m_wirelessGateways; }
     inline bool WirelessGatewaysHasBeenSet() const { return m_wirelessGatewaysHasBeenSet; }
-    inline void SetWirelessGateways(const Aws::Vector<Aws::String>& value) { m_wirelessGatewaysHasBeenSet = true; m_wirelessGateways = value; }
-    inline void SetWirelessGateways(Aws::Vector<Aws::String>&& value) { m_wirelessGatewaysHasBeenSet = true; m_wirelessGateways = std::move(value); }
-    inline CreateNetworkAnalyzerConfigurationRequest& WithWirelessGateways(const Aws::Vector<Aws::String>& value) { SetWirelessGateways(value); return *this;}
-    inline CreateNetworkAnalyzerConfigurationRequest& WithWirelessGateways(Aws::Vector<Aws::String>&& value) { SetWirelessGateways(std::move(value)); return *this;}
-    inline CreateNetworkAnalyzerConfigurationRequest& AddWirelessGateways(const Aws::String& value) { m_wirelessGatewaysHasBeenSet = true; m_wirelessGateways.push_back(value); return *this; }
-    inline CreateNetworkAnalyzerConfigurationRequest& AddWirelessGateways(Aws::String&& value) { m_wirelessGatewaysHasBeenSet = true; m_wirelessGateways.push_back(std::move(value)); return *this; }
-    inline CreateNetworkAnalyzerConfigurationRequest& AddWirelessGateways(const char* value) { m_wirelessGatewaysHasBeenSet = true; m_wirelessGateways.push_back(value); return *this; }
+    template<typename WirelessGatewaysT = Aws::Vector<Aws::String>>
+    void SetWirelessGateways(WirelessGatewaysT&& value) { m_wirelessGatewaysHasBeenSet = true; m_wirelessGateways = std::forward<WirelessGatewaysT>(value); }
+    template<typename WirelessGatewaysT = Aws::Vector<Aws::String>>
+    CreateNetworkAnalyzerConfigurationRequest& WithWirelessGateways(WirelessGatewaysT&& value) { SetWirelessGateways(std::forward<WirelessGatewaysT>(value)); return *this;}
+    template<typename WirelessGatewaysT = Aws::String>
+    CreateNetworkAnalyzerConfigurationRequest& AddWirelessGateways(WirelessGatewaysT&& value) { m_wirelessGatewaysHasBeenSet = true; m_wirelessGateways.emplace_back(std::forward<WirelessGatewaysT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateNetworkAnalyzerConfigurationRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateNetworkAnalyzerConfigurationRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateNetworkAnalyzerConfigurationRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateNetworkAnalyzerConfigurationRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateNetworkAnalyzerConfigurationRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateNetworkAnalyzerConfigurationRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateNetworkAnalyzerConfigurationRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateNetworkAnalyzerConfigurationRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateNetworkAnalyzerConfigurationRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateNetworkAnalyzerConfigurationRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline CreateNetworkAnalyzerConfigurationRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline CreateNetworkAnalyzerConfigurationRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline CreateNetworkAnalyzerConfigurationRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    CreateNetworkAnalyzerConfigurationRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,15 +126,14 @@ namespace Model
      * Provide the <code>MulticastGroupId</code> of the resource to add in the input
      * array.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetMulticastGroups() const{ return m_multicastGroups; }
+    inline const Aws::Vector<Aws::String>& GetMulticastGroups() const { return m_multicastGroups; }
     inline bool MulticastGroupsHasBeenSet() const { return m_multicastGroupsHasBeenSet; }
-    inline void SetMulticastGroups(const Aws::Vector<Aws::String>& value) { m_multicastGroupsHasBeenSet = true; m_multicastGroups = value; }
-    inline void SetMulticastGroups(Aws::Vector<Aws::String>&& value) { m_multicastGroupsHasBeenSet = true; m_multicastGroups = std::move(value); }
-    inline CreateNetworkAnalyzerConfigurationRequest& WithMulticastGroups(const Aws::Vector<Aws::String>& value) { SetMulticastGroups(value); return *this;}
-    inline CreateNetworkAnalyzerConfigurationRequest& WithMulticastGroups(Aws::Vector<Aws::String>&& value) { SetMulticastGroups(std::move(value)); return *this;}
-    inline CreateNetworkAnalyzerConfigurationRequest& AddMulticastGroups(const Aws::String& value) { m_multicastGroupsHasBeenSet = true; m_multicastGroups.push_back(value); return *this; }
-    inline CreateNetworkAnalyzerConfigurationRequest& AddMulticastGroups(Aws::String&& value) { m_multicastGroupsHasBeenSet = true; m_multicastGroups.push_back(std::move(value)); return *this; }
-    inline CreateNetworkAnalyzerConfigurationRequest& AddMulticastGroups(const char* value) { m_multicastGroupsHasBeenSet = true; m_multicastGroups.push_back(value); return *this; }
+    template<typename MulticastGroupsT = Aws::Vector<Aws::String>>
+    void SetMulticastGroups(MulticastGroupsT&& value) { m_multicastGroupsHasBeenSet = true; m_multicastGroups = std::forward<MulticastGroupsT>(value); }
+    template<typename MulticastGroupsT = Aws::Vector<Aws::String>>
+    CreateNetworkAnalyzerConfigurationRequest& WithMulticastGroups(MulticastGroupsT&& value) { SetMulticastGroups(std::forward<MulticastGroupsT>(value)); return *this;}
+    template<typename MulticastGroupsT = Aws::String>
+    CreateNetworkAnalyzerConfigurationRequest& AddMulticastGroups(MulticastGroupsT&& value) { m_multicastGroupsHasBeenSet = true; m_multicastGroups.emplace_back(std::forward<MulticastGroupsT>(value)); return *this; }
     ///@}
   private:
 

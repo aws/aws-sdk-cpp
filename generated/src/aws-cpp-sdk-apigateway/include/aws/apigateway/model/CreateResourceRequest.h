@@ -25,7 +25,7 @@ namespace Model
   class CreateResourceRequest : public APIGatewayRequest
   {
   public:
-    AWS_APIGATEWAY_API CreateResourceRequest();
+    AWS_APIGATEWAY_API CreateResourceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,42 +40,36 @@ namespace Model
     /**
      * <p>The string identifier of the associated RestApi.</p>
      */
-    inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
+    inline const Aws::String& GetRestApiId() const { return m_restApiId; }
     inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
-    inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
-    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
-    inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
-    inline CreateResourceRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
-    inline CreateResourceRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
-    inline CreateResourceRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+    template<typename RestApiIdT = Aws::String>
+    void SetRestApiId(RestApiIdT&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::forward<RestApiIdT>(value); }
+    template<typename RestApiIdT = Aws::String>
+    CreateResourceRequest& WithRestApiId(RestApiIdT&& value) { SetRestApiId(std::forward<RestApiIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The parent resource's identifier.</p>
      */
-    inline const Aws::String& GetParentId() const{ return m_parentId; }
+    inline const Aws::String& GetParentId() const { return m_parentId; }
     inline bool ParentIdHasBeenSet() const { return m_parentIdHasBeenSet; }
-    inline void SetParentId(const Aws::String& value) { m_parentIdHasBeenSet = true; m_parentId = value; }
-    inline void SetParentId(Aws::String&& value) { m_parentIdHasBeenSet = true; m_parentId = std::move(value); }
-    inline void SetParentId(const char* value) { m_parentIdHasBeenSet = true; m_parentId.assign(value); }
-    inline CreateResourceRequest& WithParentId(const Aws::String& value) { SetParentId(value); return *this;}
-    inline CreateResourceRequest& WithParentId(Aws::String&& value) { SetParentId(std::move(value)); return *this;}
-    inline CreateResourceRequest& WithParentId(const char* value) { SetParentId(value); return *this;}
+    template<typename ParentIdT = Aws::String>
+    void SetParentId(ParentIdT&& value) { m_parentIdHasBeenSet = true; m_parentId = std::forward<ParentIdT>(value); }
+    template<typename ParentIdT = Aws::String>
+    CreateResourceRequest& WithParentId(ParentIdT&& value) { SetParentId(std::forward<ParentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The last path segment for this resource.</p>
      */
-    inline const Aws::String& GetPathPart() const{ return m_pathPart; }
+    inline const Aws::String& GetPathPart() const { return m_pathPart; }
     inline bool PathPartHasBeenSet() const { return m_pathPartHasBeenSet; }
-    inline void SetPathPart(const Aws::String& value) { m_pathPartHasBeenSet = true; m_pathPart = value; }
-    inline void SetPathPart(Aws::String&& value) { m_pathPartHasBeenSet = true; m_pathPart = std::move(value); }
-    inline void SetPathPart(const char* value) { m_pathPartHasBeenSet = true; m_pathPart.assign(value); }
-    inline CreateResourceRequest& WithPathPart(const Aws::String& value) { SetPathPart(value); return *this;}
-    inline CreateResourceRequest& WithPathPart(Aws::String&& value) { SetPathPart(std::move(value)); return *this;}
-    inline CreateResourceRequest& WithPathPart(const char* value) { SetPathPart(value); return *this;}
+    template<typename PathPartT = Aws::String>
+    void SetPathPart(PathPartT&& value) { m_pathPartHasBeenSet = true; m_pathPart = std::forward<PathPartT>(value); }
+    template<typename PathPartT = Aws::String>
+    CreateResourceRequest& WithPathPart(PathPartT&& value) { SetPathPart(std::forward<PathPartT>(value)); return *this;}
     ///@}
   private:
 

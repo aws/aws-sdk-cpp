@@ -18,14 +18,7 @@ namespace GlobalAccelerator
 namespace Model
 {
 
-ByoipCidrEvent::ByoipCidrEvent() : 
-    m_messageHasBeenSet(false),
-    m_timestampHasBeenSet(false)
-{
-}
-
 ByoipCidrEvent::ByoipCidrEvent(JsonView jsonValue)
-  : ByoipCidrEvent()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ByoipCidrEvent& ByoipCidrEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Timestamp"))
   {
     m_timestamp = jsonValue.GetDouble("Timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -10,12 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-UntagSAMLProviderRequest::UntagSAMLProviderRequest() : 
-    m_sAMLProviderArnHasBeenSet(false),
-    m_tagKeysHasBeenSet(false)
-{
-}
-
 Aws::String UntagSAMLProviderRequest::SerializePayload() const
 {
   Aws::StringStream ss;

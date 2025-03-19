@@ -10,11 +10,6 @@
 using namespace Aws::ElasticLoadBalancingv2::Model;
 using namespace Aws::Utils;
 
-DeleteTrustStoreRequest::DeleteTrustStoreRequest() : 
-    m_trustStoreArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTrustStoreRequest::SerializePayload() const
 {
   Aws::StringStream ss;

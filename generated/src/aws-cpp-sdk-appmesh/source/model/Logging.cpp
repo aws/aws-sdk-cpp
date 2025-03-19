@@ -18,13 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-Logging::Logging() : 
-    m_accessLogHasBeenSet(false)
-{
-}
-
 Logging::Logging(JsonView jsonValue)
-  : Logging()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Logging& Logging::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accessLog"))
   {
     m_accessLog = jsonValue.GetObject("accessLog");
-
     m_accessLogHasBeenSet = true;
   }
-
   return *this;
 }
 

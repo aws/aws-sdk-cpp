@@ -33,7 +33,7 @@ namespace Model
   class VerifiedAccessInstanceCustomSubDomain
   {
   public:
-    AWS_EC2_API VerifiedAccessInstanceCustomSubDomain();
+    AWS_EC2_API VerifiedAccessInstanceCustomSubDomain() = default;
     AWS_EC2_API VerifiedAccessInstanceCustomSubDomain(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API VerifiedAccessInstanceCustomSubDomain& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,29 +45,26 @@ namespace Model
     /**
      * <p>The subdomain.</p>
      */
-    inline const Aws::String& GetSubDomain() const{ return m_subDomain; }
+    inline const Aws::String& GetSubDomain() const { return m_subDomain; }
     inline bool SubDomainHasBeenSet() const { return m_subDomainHasBeenSet; }
-    inline void SetSubDomain(const Aws::String& value) { m_subDomainHasBeenSet = true; m_subDomain = value; }
-    inline void SetSubDomain(Aws::String&& value) { m_subDomainHasBeenSet = true; m_subDomain = std::move(value); }
-    inline void SetSubDomain(const char* value) { m_subDomainHasBeenSet = true; m_subDomain.assign(value); }
-    inline VerifiedAccessInstanceCustomSubDomain& WithSubDomain(const Aws::String& value) { SetSubDomain(value); return *this;}
-    inline VerifiedAccessInstanceCustomSubDomain& WithSubDomain(Aws::String&& value) { SetSubDomain(std::move(value)); return *this;}
-    inline VerifiedAccessInstanceCustomSubDomain& WithSubDomain(const char* value) { SetSubDomain(value); return *this;}
+    template<typename SubDomainT = Aws::String>
+    void SetSubDomain(SubDomainT&& value) { m_subDomainHasBeenSet = true; m_subDomain = std::forward<SubDomainT>(value); }
+    template<typename SubDomainT = Aws::String>
+    VerifiedAccessInstanceCustomSubDomain& WithSubDomain(SubDomainT&& value) { SetSubDomain(std::forward<SubDomainT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name servers.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetNameservers() const{ return m_nameservers; }
+    inline const Aws::Vector<Aws::String>& GetNameservers() const { return m_nameservers; }
     inline bool NameserversHasBeenSet() const { return m_nameserversHasBeenSet; }
-    inline void SetNameservers(const Aws::Vector<Aws::String>& value) { m_nameserversHasBeenSet = true; m_nameservers = value; }
-    inline void SetNameservers(Aws::Vector<Aws::String>&& value) { m_nameserversHasBeenSet = true; m_nameservers = std::move(value); }
-    inline VerifiedAccessInstanceCustomSubDomain& WithNameservers(const Aws::Vector<Aws::String>& value) { SetNameservers(value); return *this;}
-    inline VerifiedAccessInstanceCustomSubDomain& WithNameservers(Aws::Vector<Aws::String>&& value) { SetNameservers(std::move(value)); return *this;}
-    inline VerifiedAccessInstanceCustomSubDomain& AddNameservers(const Aws::String& value) { m_nameserversHasBeenSet = true; m_nameservers.push_back(value); return *this; }
-    inline VerifiedAccessInstanceCustomSubDomain& AddNameservers(Aws::String&& value) { m_nameserversHasBeenSet = true; m_nameservers.push_back(std::move(value)); return *this; }
-    inline VerifiedAccessInstanceCustomSubDomain& AddNameservers(const char* value) { m_nameserversHasBeenSet = true; m_nameservers.push_back(value); return *this; }
+    template<typename NameserversT = Aws::Vector<Aws::String>>
+    void SetNameservers(NameserversT&& value) { m_nameserversHasBeenSet = true; m_nameservers = std::forward<NameserversT>(value); }
+    template<typename NameserversT = Aws::Vector<Aws::String>>
+    VerifiedAccessInstanceCustomSubDomain& WithNameservers(NameserversT&& value) { SetNameservers(std::forward<NameserversT>(value)); return *this;}
+    template<typename NameserversT = Aws::String>
+    VerifiedAccessInstanceCustomSubDomain& AddNameservers(NameserversT&& value) { m_nameserversHasBeenSet = true; m_nameservers.emplace_back(std::forward<NameserversT>(value)); return *this; }
     ///@}
   private:
 

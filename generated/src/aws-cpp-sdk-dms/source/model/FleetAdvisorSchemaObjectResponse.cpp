@@ -18,20 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-FleetAdvisorSchemaObjectResponse::FleetAdvisorSchemaObjectResponse() : 
-    m_schemaIdHasBeenSet(false),
-    m_objectTypeHasBeenSet(false),
-    m_numberOfObjects(0),
-    m_numberOfObjectsHasBeenSet(false),
-    m_codeLineCount(0),
-    m_codeLineCountHasBeenSet(false),
-    m_codeSize(0),
-    m_codeSizeHasBeenSet(false)
-{
-}
-
 FleetAdvisorSchemaObjectResponse::FleetAdvisorSchemaObjectResponse(JsonView jsonValue)
-  : FleetAdvisorSchemaObjectResponse()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ FleetAdvisorSchemaObjectResponse& FleetAdvisorSchemaObjectResponse::operator =(J
   if(jsonValue.ValueExists("SchemaId"))
   {
     m_schemaId = jsonValue.GetString("SchemaId");
-
     m_schemaIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ObjectType"))
   {
     m_objectType = jsonValue.GetString("ObjectType");
-
     m_objectTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfObjects"))
   {
     m_numberOfObjects = jsonValue.GetInt64("NumberOfObjects");
-
     m_numberOfObjectsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CodeLineCount"))
   {
     m_codeLineCount = jsonValue.GetInt64("CodeLineCount");
-
     m_codeLineCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CodeSize"))
   {
     m_codeSize = jsonValue.GetInt64("CodeSize");
-
     m_codeSizeHasBeenSet = true;
   }
-
   return *this;
 }
 

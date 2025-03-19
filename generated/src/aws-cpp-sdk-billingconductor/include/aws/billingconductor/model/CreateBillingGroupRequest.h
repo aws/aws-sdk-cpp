@@ -25,7 +25,7 @@ namespace Model
   class CreateBillingGroupRequest : public BillingConductorRequest
   {
   public:
-    AWS_BILLINGCONDUCTOR_API CreateBillingGroupRequest();
+    AWS_BILLINGCONDUCTOR_API CreateBillingGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,28 +43,24 @@ namespace Model
      * <p> The token that is needed to support idempotency. Idempotency isn't currently
      * supported, but will be implemented in a future update. </p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateBillingGroupRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateBillingGroupRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateBillingGroupRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateBillingGroupRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The billing group name. The names must be unique. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateBillingGroupRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateBillingGroupRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateBillingGroupRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateBillingGroupRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +68,12 @@ namespace Model
      * <p> The set of accounts that will be under the billing group. The set of
      * accounts resemble the linked accounts in a consolidated billing family. </p>
      */
-    inline const AccountGrouping& GetAccountGrouping() const{ return m_accountGrouping; }
+    inline const AccountGrouping& GetAccountGrouping() const { return m_accountGrouping; }
     inline bool AccountGroupingHasBeenSet() const { return m_accountGroupingHasBeenSet; }
-    inline void SetAccountGrouping(const AccountGrouping& value) { m_accountGroupingHasBeenSet = true; m_accountGrouping = value; }
-    inline void SetAccountGrouping(AccountGrouping&& value) { m_accountGroupingHasBeenSet = true; m_accountGrouping = std::move(value); }
-    inline CreateBillingGroupRequest& WithAccountGrouping(const AccountGrouping& value) { SetAccountGrouping(value); return *this;}
-    inline CreateBillingGroupRequest& WithAccountGrouping(AccountGrouping&& value) { SetAccountGrouping(std::move(value)); return *this;}
+    template<typename AccountGroupingT = AccountGrouping>
+    void SetAccountGrouping(AccountGroupingT&& value) { m_accountGroupingHasBeenSet = true; m_accountGrouping = std::forward<AccountGroupingT>(value); }
+    template<typename AccountGroupingT = AccountGrouping>
+    CreateBillingGroupRequest& WithAccountGrouping(AccountGroupingT&& value) { SetAccountGrouping(std::forward<AccountGroupingT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,40 +81,36 @@ namespace Model
      * <p> The preferences and settings that will be used to compute the Amazon Web
      * Services charges for a billing group. </p>
      */
-    inline const ComputationPreference& GetComputationPreference() const{ return m_computationPreference; }
+    inline const ComputationPreference& GetComputationPreference() const { return m_computationPreference; }
     inline bool ComputationPreferenceHasBeenSet() const { return m_computationPreferenceHasBeenSet; }
-    inline void SetComputationPreference(const ComputationPreference& value) { m_computationPreferenceHasBeenSet = true; m_computationPreference = value; }
-    inline void SetComputationPreference(ComputationPreference&& value) { m_computationPreferenceHasBeenSet = true; m_computationPreference = std::move(value); }
-    inline CreateBillingGroupRequest& WithComputationPreference(const ComputationPreference& value) { SetComputationPreference(value); return *this;}
-    inline CreateBillingGroupRequest& WithComputationPreference(ComputationPreference&& value) { SetComputationPreference(std::move(value)); return *this;}
+    template<typename ComputationPreferenceT = ComputationPreference>
+    void SetComputationPreference(ComputationPreferenceT&& value) { m_computationPreferenceHasBeenSet = true; m_computationPreference = std::forward<ComputationPreferenceT>(value); }
+    template<typename ComputationPreferenceT = ComputationPreference>
+    CreateBillingGroupRequest& WithComputationPreference(ComputationPreferenceT&& value) { SetComputationPreference(std::forward<ComputationPreferenceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The account ID that serves as the main account in a billing group. </p>
      */
-    inline const Aws::String& GetPrimaryAccountId() const{ return m_primaryAccountId; }
+    inline const Aws::String& GetPrimaryAccountId() const { return m_primaryAccountId; }
     inline bool PrimaryAccountIdHasBeenSet() const { return m_primaryAccountIdHasBeenSet; }
-    inline void SetPrimaryAccountId(const Aws::String& value) { m_primaryAccountIdHasBeenSet = true; m_primaryAccountId = value; }
-    inline void SetPrimaryAccountId(Aws::String&& value) { m_primaryAccountIdHasBeenSet = true; m_primaryAccountId = std::move(value); }
-    inline void SetPrimaryAccountId(const char* value) { m_primaryAccountIdHasBeenSet = true; m_primaryAccountId.assign(value); }
-    inline CreateBillingGroupRequest& WithPrimaryAccountId(const Aws::String& value) { SetPrimaryAccountId(value); return *this;}
-    inline CreateBillingGroupRequest& WithPrimaryAccountId(Aws::String&& value) { SetPrimaryAccountId(std::move(value)); return *this;}
-    inline CreateBillingGroupRequest& WithPrimaryAccountId(const char* value) { SetPrimaryAccountId(value); return *this;}
+    template<typename PrimaryAccountIdT = Aws::String>
+    void SetPrimaryAccountId(PrimaryAccountIdT&& value) { m_primaryAccountIdHasBeenSet = true; m_primaryAccountId = std::forward<PrimaryAccountIdT>(value); }
+    template<typename PrimaryAccountIdT = Aws::String>
+    CreateBillingGroupRequest& WithPrimaryAccountId(PrimaryAccountIdT&& value) { SetPrimaryAccountId(std::forward<PrimaryAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the billing group. </p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateBillingGroupRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateBillingGroupRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateBillingGroupRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateBillingGroupRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -126,19 +118,16 @@ namespace Model
      * <p> A map that contains tag keys and tag values that are attached to a billing
      * group. This feature isn't available during the beta. </p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateBillingGroupRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateBillingGroupRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateBillingGroupRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateBillingGroupRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateBillingGroupRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateBillingGroupRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateBillingGroupRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateBillingGroupRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateBillingGroupRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateBillingGroupRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateBillingGroupRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

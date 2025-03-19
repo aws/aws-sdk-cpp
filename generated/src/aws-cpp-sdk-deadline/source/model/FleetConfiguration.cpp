@@ -18,14 +18,7 @@ namespace deadline
 namespace Model
 {
 
-FleetConfiguration::FleetConfiguration() : 
-    m_customerManagedHasBeenSet(false),
-    m_serviceManagedEc2HasBeenSet(false)
-{
-}
-
 FleetConfiguration::FleetConfiguration(JsonView jsonValue)
-  : FleetConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ FleetConfiguration& FleetConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("customerManaged"))
   {
     m_customerManaged = jsonValue.GetObject("customerManaged");
-
     m_customerManagedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceManagedEc2"))
   {
     m_serviceManagedEc2 = jsonValue.GetObject("serviceManagedEc2");
-
     m_serviceManagedEc2HasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,17 +12,6 @@ using namespace Aws::Outposts::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSiteRequest::CreateSiteRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_notesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_operatingAddressHasBeenSet(false),
-    m_shippingAddressHasBeenSet(false),
-    m_rackPhysicalPropertiesHasBeenSet(false)
-{
-}
-
 Aws::String CreateSiteRequest::SerializePayload() const
 {
   JsonValue payload;

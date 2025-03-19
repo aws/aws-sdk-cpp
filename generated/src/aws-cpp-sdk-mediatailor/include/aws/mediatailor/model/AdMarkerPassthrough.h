@@ -35,7 +35,7 @@ namespace Model
   class AdMarkerPassthrough
   {
   public:
-    AWS_MEDIATAILOR_API AdMarkerPassthrough();
+    AWS_MEDIATAILOR_API AdMarkerPassthrough() = default;
     AWS_MEDIATAILOR_API AdMarkerPassthrough(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API AdMarkerPassthrough& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,14 @@ namespace Model
     /**
      * <p>Enables ad marker passthrough for your configuration.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline AdMarkerPassthrough& WithEnabled(bool value) { SetEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
   };
 

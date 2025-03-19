@@ -35,7 +35,7 @@ namespace Model
   class ThumbnailConfiguration
   {
   public:
-    AWS_IVS_API ThumbnailConfiguration();
+    AWS_IVS_API ThumbnailConfiguration() = default;
     AWS_IVS_API ThumbnailConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVS_API ThumbnailConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
     /**
      * <p>Thumbnail recording mode. Default: <code>INTERVAL</code>.</p>
      */
-    inline const RecordingMode& GetRecordingMode() const{ return m_recordingMode; }
+    inline RecordingMode GetRecordingMode() const { return m_recordingMode; }
     inline bool RecordingModeHasBeenSet() const { return m_recordingModeHasBeenSet; }
-    inline void SetRecordingMode(const RecordingMode& value) { m_recordingModeHasBeenSet = true; m_recordingMode = value; }
-    inline void SetRecordingMode(RecordingMode&& value) { m_recordingModeHasBeenSet = true; m_recordingMode = std::move(value); }
-    inline ThumbnailConfiguration& WithRecordingMode(const RecordingMode& value) { SetRecordingMode(value); return *this;}
-    inline ThumbnailConfiguration& WithRecordingMode(RecordingMode&& value) { SetRecordingMode(std::move(value)); return *this;}
+    inline void SetRecordingMode(RecordingMode value) { m_recordingModeHasBeenSet = true; m_recordingMode = value; }
+    inline ThumbnailConfiguration& WithRecordingMode(RecordingMode value) { SetRecordingMode(value); return *this;}
     ///@}
 
     ///@{
@@ -63,12 +61,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/ivs/latest/userguide/record-to-s3.html">Auto-Record
      * to Amazon S3</a>. Default: Null (source resolution is returned).</p>
      */
-    inline const ThumbnailConfigurationResolution& GetResolution() const{ return m_resolution; }
+    inline ThumbnailConfigurationResolution GetResolution() const { return m_resolution; }
     inline bool ResolutionHasBeenSet() const { return m_resolutionHasBeenSet; }
-    inline void SetResolution(const ThumbnailConfigurationResolution& value) { m_resolutionHasBeenSet = true; m_resolution = value; }
-    inline void SetResolution(ThumbnailConfigurationResolution&& value) { m_resolutionHasBeenSet = true; m_resolution = std::move(value); }
-    inline ThumbnailConfiguration& WithResolution(const ThumbnailConfigurationResolution& value) { SetResolution(value); return *this;}
-    inline ThumbnailConfiguration& WithResolution(ThumbnailConfigurationResolution&& value) { SetResolution(std::move(value)); return *this;}
+    inline void SetResolution(ThumbnailConfigurationResolution value) { m_resolutionHasBeenSet = true; m_resolution = value; }
+    inline ThumbnailConfiguration& WithResolution(ThumbnailConfigurationResolution value) { SetResolution(value); return *this;}
     ///@}
 
     ///@{
@@ -81,14 +77,13 @@ namespace Model
      * <code>SEQUENTIAL</code> and <code>LATEST</code>. Default:
      * <code>SEQUENTIAL</code>.</p>
      */
-    inline const Aws::Vector<ThumbnailConfigurationStorage>& GetStorage() const{ return m_storage; }
+    inline const Aws::Vector<ThumbnailConfigurationStorage>& GetStorage() const { return m_storage; }
     inline bool StorageHasBeenSet() const { return m_storageHasBeenSet; }
-    inline void SetStorage(const Aws::Vector<ThumbnailConfigurationStorage>& value) { m_storageHasBeenSet = true; m_storage = value; }
-    inline void SetStorage(Aws::Vector<ThumbnailConfigurationStorage>&& value) { m_storageHasBeenSet = true; m_storage = std::move(value); }
-    inline ThumbnailConfiguration& WithStorage(const Aws::Vector<ThumbnailConfigurationStorage>& value) { SetStorage(value); return *this;}
-    inline ThumbnailConfiguration& WithStorage(Aws::Vector<ThumbnailConfigurationStorage>&& value) { SetStorage(std::move(value)); return *this;}
-    inline ThumbnailConfiguration& AddStorage(const ThumbnailConfigurationStorage& value) { m_storageHasBeenSet = true; m_storage.push_back(value); return *this; }
-    inline ThumbnailConfiguration& AddStorage(ThumbnailConfigurationStorage&& value) { m_storageHasBeenSet = true; m_storage.push_back(std::move(value)); return *this; }
+    template<typename StorageT = Aws::Vector<ThumbnailConfigurationStorage>>
+    void SetStorage(StorageT&& value) { m_storageHasBeenSet = true; m_storage = std::forward<StorageT>(value); }
+    template<typename StorageT = Aws::Vector<ThumbnailConfigurationStorage>>
+    ThumbnailConfiguration& WithStorage(StorageT&& value) { SetStorage(std::forward<StorageT>(value)); return *this;}
+    inline ThumbnailConfiguration& AddStorage(ThumbnailConfigurationStorage value) { m_storageHasBeenSet = true; m_storage.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -107,23 +102,23 @@ namespace Model
      * <code>IDR/Keyframe</code> to the recommended value in video-encoder
      * settings.</p>
      */
-    inline long long GetTargetIntervalSeconds() const{ return m_targetIntervalSeconds; }
+    inline long long GetTargetIntervalSeconds() const { return m_targetIntervalSeconds; }
     inline bool TargetIntervalSecondsHasBeenSet() const { return m_targetIntervalSecondsHasBeenSet; }
     inline void SetTargetIntervalSeconds(long long value) { m_targetIntervalSecondsHasBeenSet = true; m_targetIntervalSeconds = value; }
     inline ThumbnailConfiguration& WithTargetIntervalSeconds(long long value) { SetTargetIntervalSeconds(value); return *this;}
     ///@}
   private:
 
-    RecordingMode m_recordingMode;
+    RecordingMode m_recordingMode{RecordingMode::NOT_SET};
     bool m_recordingModeHasBeenSet = false;
 
-    ThumbnailConfigurationResolution m_resolution;
+    ThumbnailConfigurationResolution m_resolution{ThumbnailConfigurationResolution::NOT_SET};
     bool m_resolutionHasBeenSet = false;
 
     Aws::Vector<ThumbnailConfigurationStorage> m_storage;
     bool m_storageHasBeenSet = false;
 
-    long long m_targetIntervalSeconds;
+    long long m_targetIntervalSeconds{0};
     bool m_targetIntervalSecondsHasBeenSet = false;
   };
 

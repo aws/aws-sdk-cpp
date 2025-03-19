@@ -18,28 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-AutoScalingGroupRecommendation::AutoScalingGroupRecommendation() : 
-    m_accountIdHasBeenSet(false),
-    m_autoScalingGroupArnHasBeenSet(false),
-    m_autoScalingGroupNameHasBeenSet(false),
-    m_finding(Finding::NOT_SET),
-    m_findingHasBeenSet(false),
-    m_utilizationMetricsHasBeenSet(false),
-    m_lookBackPeriodInDays(0.0),
-    m_lookBackPeriodInDaysHasBeenSet(false),
-    m_currentConfigurationHasBeenSet(false),
-    m_currentInstanceGpuInfoHasBeenSet(false),
-    m_recommendationOptionsHasBeenSet(false),
-    m_lastRefreshTimestampHasBeenSet(false),
-    m_currentPerformanceRisk(CurrentPerformanceRisk::NOT_SET),
-    m_currentPerformanceRiskHasBeenSet(false),
-    m_effectiveRecommendationPreferencesHasBeenSet(false),
-    m_inferredWorkloadTypesHasBeenSet(false)
-{
-}
-
 AutoScalingGroupRecommendation::AutoScalingGroupRecommendation(JsonView jsonValue)
-  : AutoScalingGroupRecommendation()
 {
   *this = jsonValue;
 }
@@ -49,31 +28,23 @@ AutoScalingGroupRecommendation& AutoScalingGroupRecommendation::operator =(JsonV
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("autoScalingGroupArn"))
   {
     m_autoScalingGroupArn = jsonValue.GetString("autoScalingGroupArn");
-
     m_autoScalingGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("autoScalingGroupName"))
   {
     m_autoScalingGroupName = jsonValue.GetString("autoScalingGroupName");
-
     m_autoScalingGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("finding"))
   {
     m_finding = FindingMapper::GetFindingForName(jsonValue.GetString("finding"));
-
     m_findingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("utilizationMetrics"))
   {
     Aws::Utils::Array<JsonView> utilizationMetricsJsonList = jsonValue.GetArray("utilizationMetrics");
@@ -83,28 +54,21 @@ AutoScalingGroupRecommendation& AutoScalingGroupRecommendation::operator =(JsonV
     }
     m_utilizationMetricsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lookBackPeriodInDays"))
   {
     m_lookBackPeriodInDays = jsonValue.GetDouble("lookBackPeriodInDays");
-
     m_lookBackPeriodInDaysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("currentConfiguration"))
   {
     m_currentConfiguration = jsonValue.GetObject("currentConfiguration");
-
     m_currentConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("currentInstanceGpuInfo"))
   {
     m_currentInstanceGpuInfo = jsonValue.GetObject("currentInstanceGpuInfo");
-
     m_currentInstanceGpuInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recommendationOptions"))
   {
     Aws::Utils::Array<JsonView> recommendationOptionsJsonList = jsonValue.GetArray("recommendationOptions");
@@ -114,28 +78,21 @@ AutoScalingGroupRecommendation& AutoScalingGroupRecommendation::operator =(JsonV
     }
     m_recommendationOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastRefreshTimestamp"))
   {
     m_lastRefreshTimestamp = jsonValue.GetDouble("lastRefreshTimestamp");
-
     m_lastRefreshTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("currentPerformanceRisk"))
   {
     m_currentPerformanceRisk = CurrentPerformanceRiskMapper::GetCurrentPerformanceRiskForName(jsonValue.GetString("currentPerformanceRisk"));
-
     m_currentPerformanceRiskHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("effectiveRecommendationPreferences"))
   {
     m_effectiveRecommendationPreferences = jsonValue.GetObject("effectiveRecommendationPreferences");
-
     m_effectiveRecommendationPreferencesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inferredWorkloadTypes"))
   {
     Aws::Utils::Array<JsonView> inferredWorkloadTypesJsonList = jsonValue.GetArray("inferredWorkloadTypes");
@@ -145,7 +102,6 @@ AutoScalingGroupRecommendation& AutoScalingGroupRecommendation::operator =(JsonV
     }
     m_inferredWorkloadTypesHasBeenSet = true;
   }
-
   return *this;
 }
 

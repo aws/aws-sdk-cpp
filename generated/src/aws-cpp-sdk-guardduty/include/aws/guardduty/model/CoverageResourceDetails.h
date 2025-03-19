@@ -35,7 +35,7 @@ namespace Model
   class CoverageResourceDetails
   {
   public:
-    AWS_GUARDDUTY_API CoverageResourceDetails();
+    AWS_GUARDDUTY_API CoverageResourceDetails() = default;
     AWS_GUARDDUTY_API CoverageResourceDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API CoverageResourceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,24 +45,22 @@ namespace Model
     /**
      * <p>EKS cluster details involved in the coverage statistics.</p>
      */
-    inline const CoverageEksClusterDetails& GetEksClusterDetails() const{ return m_eksClusterDetails; }
+    inline const CoverageEksClusterDetails& GetEksClusterDetails() const { return m_eksClusterDetails; }
     inline bool EksClusterDetailsHasBeenSet() const { return m_eksClusterDetailsHasBeenSet; }
-    inline void SetEksClusterDetails(const CoverageEksClusterDetails& value) { m_eksClusterDetailsHasBeenSet = true; m_eksClusterDetails = value; }
-    inline void SetEksClusterDetails(CoverageEksClusterDetails&& value) { m_eksClusterDetailsHasBeenSet = true; m_eksClusterDetails = std::move(value); }
-    inline CoverageResourceDetails& WithEksClusterDetails(const CoverageEksClusterDetails& value) { SetEksClusterDetails(value); return *this;}
-    inline CoverageResourceDetails& WithEksClusterDetails(CoverageEksClusterDetails&& value) { SetEksClusterDetails(std::move(value)); return *this;}
+    template<typename EksClusterDetailsT = CoverageEksClusterDetails>
+    void SetEksClusterDetails(EksClusterDetailsT&& value) { m_eksClusterDetailsHasBeenSet = true; m_eksClusterDetails = std::forward<EksClusterDetailsT>(value); }
+    template<typename EksClusterDetailsT = CoverageEksClusterDetails>
+    CoverageResourceDetails& WithEksClusterDetails(EksClusterDetailsT&& value) { SetEksClusterDetails(std::forward<EksClusterDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of Amazon Web Services resource.</p>
      */
-    inline const ResourceType& GetResourceType() const{ return m_resourceType; }
+    inline ResourceType GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline CoverageResourceDetails& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
-    inline CoverageResourceDetails& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    inline void SetResourceType(ResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline CoverageResourceDetails& WithResourceType(ResourceType value) { SetResourceType(value); return *this;}
     ///@}
 
     ///@{
@@ -70,31 +68,31 @@ namespace Model
      * <p>Information about the Amazon ECS cluster that is assessed for runtime
      * coverage.</p>
      */
-    inline const CoverageEcsClusterDetails& GetEcsClusterDetails() const{ return m_ecsClusterDetails; }
+    inline const CoverageEcsClusterDetails& GetEcsClusterDetails() const { return m_ecsClusterDetails; }
     inline bool EcsClusterDetailsHasBeenSet() const { return m_ecsClusterDetailsHasBeenSet; }
-    inline void SetEcsClusterDetails(const CoverageEcsClusterDetails& value) { m_ecsClusterDetailsHasBeenSet = true; m_ecsClusterDetails = value; }
-    inline void SetEcsClusterDetails(CoverageEcsClusterDetails&& value) { m_ecsClusterDetailsHasBeenSet = true; m_ecsClusterDetails = std::move(value); }
-    inline CoverageResourceDetails& WithEcsClusterDetails(const CoverageEcsClusterDetails& value) { SetEcsClusterDetails(value); return *this;}
-    inline CoverageResourceDetails& WithEcsClusterDetails(CoverageEcsClusterDetails&& value) { SetEcsClusterDetails(std::move(value)); return *this;}
+    template<typename EcsClusterDetailsT = CoverageEcsClusterDetails>
+    void SetEcsClusterDetails(EcsClusterDetailsT&& value) { m_ecsClusterDetailsHasBeenSet = true; m_ecsClusterDetails = std::forward<EcsClusterDetailsT>(value); }
+    template<typename EcsClusterDetailsT = CoverageEcsClusterDetails>
+    CoverageResourceDetails& WithEcsClusterDetails(EcsClusterDetailsT&& value) { SetEcsClusterDetails(std::forward<EcsClusterDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the Amazon EC2 instance assessed for runtime coverage.</p>
      */
-    inline const CoverageEc2InstanceDetails& GetEc2InstanceDetails() const{ return m_ec2InstanceDetails; }
+    inline const CoverageEc2InstanceDetails& GetEc2InstanceDetails() const { return m_ec2InstanceDetails; }
     inline bool Ec2InstanceDetailsHasBeenSet() const { return m_ec2InstanceDetailsHasBeenSet; }
-    inline void SetEc2InstanceDetails(const CoverageEc2InstanceDetails& value) { m_ec2InstanceDetailsHasBeenSet = true; m_ec2InstanceDetails = value; }
-    inline void SetEc2InstanceDetails(CoverageEc2InstanceDetails&& value) { m_ec2InstanceDetailsHasBeenSet = true; m_ec2InstanceDetails = std::move(value); }
-    inline CoverageResourceDetails& WithEc2InstanceDetails(const CoverageEc2InstanceDetails& value) { SetEc2InstanceDetails(value); return *this;}
-    inline CoverageResourceDetails& WithEc2InstanceDetails(CoverageEc2InstanceDetails&& value) { SetEc2InstanceDetails(std::move(value)); return *this;}
+    template<typename Ec2InstanceDetailsT = CoverageEc2InstanceDetails>
+    void SetEc2InstanceDetails(Ec2InstanceDetailsT&& value) { m_ec2InstanceDetailsHasBeenSet = true; m_ec2InstanceDetails = std::forward<Ec2InstanceDetailsT>(value); }
+    template<typename Ec2InstanceDetailsT = CoverageEc2InstanceDetails>
+    CoverageResourceDetails& WithEc2InstanceDetails(Ec2InstanceDetailsT&& value) { SetEc2InstanceDetails(std::forward<Ec2InstanceDetailsT>(value)); return *this;}
     ///@}
   private:
 
     CoverageEksClusterDetails m_eksClusterDetails;
     bool m_eksClusterDetailsHasBeenSet = false;
 
-    ResourceType m_resourceType;
+    ResourceType m_resourceType{ResourceType::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
 
     CoverageEcsClusterDetails m_ecsClusterDetails;

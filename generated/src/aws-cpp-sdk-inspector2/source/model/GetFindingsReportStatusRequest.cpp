@@ -12,11 +12,6 @@ using namespace Aws::Inspector2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetFindingsReportStatusRequest::GetFindingsReportStatusRequest() : 
-    m_reportIdHasBeenSet(false)
-{
-}
-
 Aws::String GetFindingsReportStatusRequest::SerializePayload() const
 {
   JsonValue payload;

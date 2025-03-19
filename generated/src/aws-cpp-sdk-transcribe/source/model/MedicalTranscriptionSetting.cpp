@@ -18,23 +18,7 @@ namespace TranscribeService
 namespace Model
 {
 
-MedicalTranscriptionSetting::MedicalTranscriptionSetting() : 
-    m_showSpeakerLabels(false),
-    m_showSpeakerLabelsHasBeenSet(false),
-    m_maxSpeakerLabels(0),
-    m_maxSpeakerLabelsHasBeenSet(false),
-    m_channelIdentification(false),
-    m_channelIdentificationHasBeenSet(false),
-    m_showAlternatives(false),
-    m_showAlternativesHasBeenSet(false),
-    m_maxAlternatives(0),
-    m_maxAlternativesHasBeenSet(false),
-    m_vocabularyNameHasBeenSet(false)
-{
-}
-
 MedicalTranscriptionSetting::MedicalTranscriptionSetting(JsonView jsonValue)
-  : MedicalTranscriptionSetting()
 {
   *this = jsonValue;
 }
@@ -44,45 +28,33 @@ MedicalTranscriptionSetting& MedicalTranscriptionSetting::operator =(JsonView js
   if(jsonValue.ValueExists("ShowSpeakerLabels"))
   {
     m_showSpeakerLabels = jsonValue.GetBool("ShowSpeakerLabels");
-
     m_showSpeakerLabelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxSpeakerLabels"))
   {
     m_maxSpeakerLabels = jsonValue.GetInteger("MaxSpeakerLabels");
-
     m_maxSpeakerLabelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChannelIdentification"))
   {
     m_channelIdentification = jsonValue.GetBool("ChannelIdentification");
-
     m_channelIdentificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ShowAlternatives"))
   {
     m_showAlternatives = jsonValue.GetBool("ShowAlternatives");
-
     m_showAlternativesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxAlternatives"))
   {
     m_maxAlternatives = jsonValue.GetInteger("MaxAlternatives");
-
     m_maxAlternativesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VocabularyName"))
   {
     m_vocabularyName = jsonValue.GetString("VocabularyName");
-
     m_vocabularyNameHasBeenSet = true;
   }
-
   return *this;
 }
 

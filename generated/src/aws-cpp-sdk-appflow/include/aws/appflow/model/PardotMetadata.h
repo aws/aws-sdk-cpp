@@ -30,7 +30,7 @@ namespace Model
   class PardotMetadata
   {
   public:
-    AWS_APPFLOW_API PardotMetadata();
+    AWS_APPFLOW_API PardotMetadata() = default;
     AWS_APPFLOW_API PardotMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API PardotMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;

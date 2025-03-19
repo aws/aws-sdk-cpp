@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAdapterVersionResult::GetAdapterVersionResult() : 
-    m_status(AdapterVersionStatus::NOT_SET)
-{
-}
-
 GetAdapterVersionResult::GetAdapterVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetAdapterVersionResult()
 {
   *this = result;
 }
@@ -34,21 +28,18 @@ GetAdapterVersionResult& GetAdapterVersionResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("AdapterId"))
   {
     m_adapterId = jsonValue.GetString("AdapterId");
-
+    m_adapterIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdapterVersion"))
   {
     m_adapterVersion = jsonValue.GetString("AdapterVersion");
-
+    m_adapterVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FeatureTypes"))
   {
     Aws::Utils::Array<JsonView> featureTypesJsonList = jsonValue.GetArray("FeatureTypes");
@@ -56,38 +47,33 @@ GetAdapterVersionResult& GetAdapterVersionResult::operator =(const Aws::AmazonWe
     {
       m_featureTypes.push_back(FeatureTypeMapper::GetFeatureTypeForName(featureTypesJsonList[featureTypesIndex].AsString()));
     }
+    m_featureTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = AdapterVersionStatusMapper::GetAdapterVersionStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
+    m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatasetConfig"))
   {
     m_datasetConfig = jsonValue.GetObject("DatasetConfig");
-
+    m_datasetConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KMSKeyId"))
   {
     m_kMSKeyId = jsonValue.GetString("KMSKeyId");
-
+    m_kMSKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputConfig"))
   {
     m_outputConfig = jsonValue.GetObject("OutputConfig");
-
+    m_outputConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluationMetrics"))
   {
     Aws::Utils::Array<JsonView> evaluationMetricsJsonList = jsonValue.GetArray("EvaluationMetrics");
@@ -95,8 +81,8 @@ GetAdapterVersionResult& GetAdapterVersionResult::operator =(const Aws::AmazonWe
     {
       m_evaluationMetrics.push_back(evaluationMetricsJsonList[evaluationMetricsIndex].AsObject());
     }
+    m_evaluationMetricsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -104,14 +90,15 @@ GetAdapterVersionResult& GetAdapterVersionResult::operator =(const Aws::AmazonWe
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

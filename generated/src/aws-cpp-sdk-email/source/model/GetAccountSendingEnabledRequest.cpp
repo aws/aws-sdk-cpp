@@ -10,10 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-GetAccountSendingEnabledRequest::GetAccountSendingEnabledRequest()
-{
-}
-
 Aws::String GetAccountSendingEnabledRequest::SerializePayload() const
 {
   Aws::StringStream ss;

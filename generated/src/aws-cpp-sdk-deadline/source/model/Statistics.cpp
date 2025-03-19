@@ -18,27 +18,7 @@ namespace deadline
 namespace Model
 {
 
-Statistics::Statistics() : 
-    m_queueIdHasBeenSet(false),
-    m_fleetIdHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_usageType(UsageType::NOT_SET),
-    m_usageTypeHasBeenSet(false),
-    m_licenseProductHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_costInUsdHasBeenSet(false),
-    m_runtimeInSecondsHasBeenSet(false),
-    m_aggregationStartTimeHasBeenSet(false),
-    m_aggregationEndTimeHasBeenSet(false)
-{
-}
-
 Statistics::Statistics(JsonView jsonValue)
-  : Statistics()
 {
   *this = jsonValue;
 }
@@ -48,94 +28,68 @@ Statistics& Statistics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("queueId"))
   {
     m_queueId = jsonValue.GetString("queueId");
-
     m_queueIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fleetId"))
   {
     m_fleetId = jsonValue.GetString("fleetId");
-
     m_fleetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobId"))
   {
     m_jobId = jsonValue.GetString("jobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobName"))
   {
     m_jobName = jsonValue.GetString("jobName");
-
     m_jobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userId"))
   {
     m_userId = jsonValue.GetString("userId");
-
     m_userIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("usageType"))
   {
     m_usageType = UsageTypeMapper::GetUsageTypeForName(jsonValue.GetString("usageType"));
-
     m_usageTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("licenseProduct"))
   {
     m_licenseProduct = jsonValue.GetString("licenseProduct");
-
     m_licenseProductHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceType"))
   {
     m_instanceType = jsonValue.GetString("instanceType");
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("count"))
   {
     m_count = jsonValue.GetInteger("count");
-
     m_countHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("costInUsd"))
   {
     m_costInUsd = jsonValue.GetObject("costInUsd");
-
     m_costInUsdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runtimeInSeconds"))
   {
     m_runtimeInSeconds = jsonValue.GetObject("runtimeInSeconds");
-
     m_runtimeInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("aggregationStartTime"))
   {
     m_aggregationStartTime = jsonValue.GetString("aggregationStartTime");
-
     m_aggregationStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("aggregationEndTime"))
   {
     m_aggregationEndTime = jsonValue.GetString("aggregationEndTime");
-
     m_aggregationEndTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

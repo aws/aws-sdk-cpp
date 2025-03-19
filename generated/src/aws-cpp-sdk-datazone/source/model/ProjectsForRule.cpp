@@ -18,15 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-ProjectsForRule::ProjectsForRule() : 
-    m_selectionMode(RuleScopeSelectionMode::NOT_SET),
-    m_selectionModeHasBeenSet(false),
-    m_specificProjectsHasBeenSet(false)
-{
-}
-
 ProjectsForRule::ProjectsForRule(JsonView jsonValue)
-  : ProjectsForRule()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ ProjectsForRule& ProjectsForRule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("selectionMode"))
   {
     m_selectionMode = RuleScopeSelectionModeMapper::GetRuleScopeSelectionModeForName(jsonValue.GetString("selectionMode"));
-
     m_selectionModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("specificProjects"))
   {
     Aws::Utils::Array<JsonView> specificProjectsJsonList = jsonValue.GetArray("specificProjects");
@@ -49,7 +39,6 @@ ProjectsForRule& ProjectsForRule::operator =(JsonView jsonValue)
     }
     m_specificProjectsHasBeenSet = true;
   }
-
   return *this;
 }
 

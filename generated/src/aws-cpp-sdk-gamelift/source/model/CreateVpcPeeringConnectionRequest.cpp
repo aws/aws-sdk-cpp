@@ -12,13 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateVpcPeeringConnectionRequest::CreateVpcPeeringConnectionRequest() : 
-    m_fleetIdHasBeenSet(false),
-    m_peerVpcAwsAccountIdHasBeenSet(false),
-    m_peerVpcIdHasBeenSet(false)
-{
-}
-
 Aws::String CreateVpcPeeringConnectionRequest::SerializePayload() const
 {
   JsonValue payload;

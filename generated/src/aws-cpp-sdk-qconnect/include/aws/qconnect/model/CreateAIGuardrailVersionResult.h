@@ -28,7 +28,7 @@ namespace Model
   class CreateAIGuardrailVersionResult
   {
   public:
-    AWS_QCONNECT_API CreateAIGuardrailVersionResult();
+    AWS_QCONNECT_API CreateAIGuardrailVersionResult() = default;
     AWS_QCONNECT_API CreateAIGuardrailVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QCONNECT_API CreateAIGuardrailVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,39 +37,40 @@ namespace Model
     /**
      * <p>The data of the AI Guardrail version.</p>
      */
-    inline const AIGuardrailData& GetAiGuardrail() const{ return m_aiGuardrail; }
-    inline void SetAiGuardrail(const AIGuardrailData& value) { m_aiGuardrail = value; }
-    inline void SetAiGuardrail(AIGuardrailData&& value) { m_aiGuardrail = std::move(value); }
-    inline CreateAIGuardrailVersionResult& WithAiGuardrail(const AIGuardrailData& value) { SetAiGuardrail(value); return *this;}
-    inline CreateAIGuardrailVersionResult& WithAiGuardrail(AIGuardrailData&& value) { SetAiGuardrail(std::move(value)); return *this;}
+    inline const AIGuardrailData& GetAiGuardrail() const { return m_aiGuardrail; }
+    template<typename AiGuardrailT = AIGuardrailData>
+    void SetAiGuardrail(AiGuardrailT&& value) { m_aiGuardrailHasBeenSet = true; m_aiGuardrail = std::forward<AiGuardrailT>(value); }
+    template<typename AiGuardrailT = AIGuardrailData>
+    CreateAIGuardrailVersionResult& WithAiGuardrail(AiGuardrailT&& value) { SetAiGuardrail(std::forward<AiGuardrailT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version number of the AI Guardrail version.</p>
      */
-    inline long long GetVersionNumber() const{ return m_versionNumber; }
-    inline void SetVersionNumber(long long value) { m_versionNumber = value; }
+    inline long long GetVersionNumber() const { return m_versionNumber; }
+    inline void SetVersionNumber(long long value) { m_versionNumberHasBeenSet = true; m_versionNumber = value; }
     inline CreateAIGuardrailVersionResult& WithVersionNumber(long long value) { SetVersionNumber(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateAIGuardrailVersionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateAIGuardrailVersionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateAIGuardrailVersionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateAIGuardrailVersionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AIGuardrailData m_aiGuardrail;
+    bool m_aiGuardrailHasBeenSet = false;
 
-    long long m_versionNumber;
+    long long m_versionNumber{0};
+    bool m_versionNumberHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

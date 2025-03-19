@@ -18,17 +18,7 @@ namespace Transfer
 namespace Model
 {
 
-PosixProfile::PosixProfile() : 
-    m_uid(0),
-    m_uidHasBeenSet(false),
-    m_gid(0),
-    m_gidHasBeenSet(false),
-    m_secondaryGidsHasBeenSet(false)
-{
-}
-
 PosixProfile::PosixProfile(JsonView jsonValue)
-  : PosixProfile()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ PosixProfile& PosixProfile::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Uid"))
   {
     m_uid = jsonValue.GetInt64("Uid");
-
     m_uidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Gid"))
   {
     m_gid = jsonValue.GetInt64("Gid");
-
     m_gidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecondaryGids"))
   {
     Aws::Utils::Array<JsonView> secondaryGidsJsonList = jsonValue.GetArray("SecondaryGids");
@@ -58,7 +44,6 @@ PosixProfile& PosixProfile::operator =(JsonView jsonValue)
     }
     m_secondaryGidsHasBeenSet = true;
   }
-
   return *this;
 }
 

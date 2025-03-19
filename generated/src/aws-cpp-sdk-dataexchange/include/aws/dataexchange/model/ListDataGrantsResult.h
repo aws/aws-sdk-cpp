@@ -29,7 +29,7 @@ namespace Model
   class ListDataGrantsResult
   {
   public:
-    AWS_DATAEXCHANGE_API ListDataGrantsResult();
+    AWS_DATAEXCHANGE_API ListDataGrantsResult() = default;
     AWS_DATAEXCHANGE_API ListDataGrantsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATAEXCHANGE_API ListDataGrantsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>An object that contains a list of data grant information.</p>
      */
-    inline const Aws::Vector<DataGrantSummaryEntry>& GetDataGrantSummaries() const{ return m_dataGrantSummaries; }
-    inline void SetDataGrantSummaries(const Aws::Vector<DataGrantSummaryEntry>& value) { m_dataGrantSummaries = value; }
-    inline void SetDataGrantSummaries(Aws::Vector<DataGrantSummaryEntry>&& value) { m_dataGrantSummaries = std::move(value); }
-    inline ListDataGrantsResult& WithDataGrantSummaries(const Aws::Vector<DataGrantSummaryEntry>& value) { SetDataGrantSummaries(value); return *this;}
-    inline ListDataGrantsResult& WithDataGrantSummaries(Aws::Vector<DataGrantSummaryEntry>&& value) { SetDataGrantSummaries(std::move(value)); return *this;}
-    inline ListDataGrantsResult& AddDataGrantSummaries(const DataGrantSummaryEntry& value) { m_dataGrantSummaries.push_back(value); return *this; }
-    inline ListDataGrantsResult& AddDataGrantSummaries(DataGrantSummaryEntry&& value) { m_dataGrantSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DataGrantSummaryEntry>& GetDataGrantSummaries() const { return m_dataGrantSummaries; }
+    template<typename DataGrantSummariesT = Aws::Vector<DataGrantSummaryEntry>>
+    void SetDataGrantSummaries(DataGrantSummariesT&& value) { m_dataGrantSummariesHasBeenSet = true; m_dataGrantSummaries = std::forward<DataGrantSummariesT>(value); }
+    template<typename DataGrantSummariesT = Aws::Vector<DataGrantSummaryEntry>>
+    ListDataGrantsResult& WithDataGrantSummaries(DataGrantSummariesT&& value) { SetDataGrantSummaries(std::forward<DataGrantSummariesT>(value)); return *this;}
+    template<typename DataGrantSummariesT = DataGrantSummaryEntry>
+    ListDataGrantsResult& AddDataGrantSummaries(DataGrantSummariesT&& value) { m_dataGrantSummariesHasBeenSet = true; m_dataGrantSummaries.emplace_back(std::forward<DataGrantSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The pagination token used to retrieve the next page of results for this
      * operation.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListDataGrantsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListDataGrantsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListDataGrantsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListDataGrantsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListDataGrantsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListDataGrantsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListDataGrantsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListDataGrantsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DataGrantSummaryEntry> m_dataGrantSummaries;
+    bool m_dataGrantSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

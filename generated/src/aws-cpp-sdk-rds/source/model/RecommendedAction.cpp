@@ -20,21 +20,7 @@ namespace RDS
 namespace Model
 {
 
-RecommendedAction::RecommendedAction() : 
-    m_actionIdHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_operationHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_applyModesHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_issueDetailsHasBeenSet(false),
-    m_contextAttributesHasBeenSet(false)
-{
-}
-
 RecommendedAction::RecommendedAction(const XmlNode& xmlNode)
-  : RecommendedAction()
 {
   *this = xmlNode;
 }
@@ -73,6 +59,7 @@ RecommendedAction& RecommendedAction::operator =(const XmlNode& xmlNode)
     if(!parametersNode.IsNull())
     {
       XmlNode parametersMember = parametersNode.FirstChild("member");
+      m_parametersHasBeenSet = !parametersMember.IsNull();
       while(!parametersMember.IsNull())
       {
         m_parameters.push_back(parametersMember);
@@ -85,6 +72,7 @@ RecommendedAction& RecommendedAction::operator =(const XmlNode& xmlNode)
     if(!applyModesNode.IsNull())
     {
       XmlNode applyModesMember = applyModesNode.FirstChild("member");
+      m_applyModesHasBeenSet = !applyModesMember.IsNull();
       while(!applyModesMember.IsNull())
       {
         m_applyModes.push_back(applyModesMember.GetText());
@@ -109,6 +97,7 @@ RecommendedAction& RecommendedAction::operator =(const XmlNode& xmlNode)
     if(!contextAttributesNode.IsNull())
     {
       XmlNode contextAttributesMember = contextAttributesNode.FirstChild("member");
+      m_contextAttributesHasBeenSet = !contextAttributesMember.IsNull();
       while(!contextAttributesMember.IsNull())
       {
         m_contextAttributes.push_back(contextAttributesMember);

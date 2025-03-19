@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAdjustmentTypesResult::DescribeAdjustmentTypesResult()
-{
-}
-
 DescribeAdjustmentTypesResult::DescribeAdjustmentTypesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,18 +38,21 @@ DescribeAdjustmentTypesResult& DescribeAdjustmentTypesResult::operator =(const A
     if(!adjustmentTypesNode.IsNull())
     {
       XmlNode adjustmentTypesMember = adjustmentTypesNode.FirstChild("member");
+      m_adjustmentTypesHasBeenSet = !adjustmentTypesMember.IsNull();
       while(!adjustmentTypesMember.IsNull())
       {
         m_adjustmentTypes.push_back(adjustmentTypesMember);
         adjustmentTypesMember = adjustmentTypesMember.NextNode("member");
       }
 
+      m_adjustmentTypesHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::AutoScaling::Model::DescribeAdjustmentTypesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

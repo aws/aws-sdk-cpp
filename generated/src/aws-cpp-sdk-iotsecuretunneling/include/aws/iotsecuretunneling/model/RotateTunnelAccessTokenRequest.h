@@ -23,7 +23,7 @@ namespace Model
   class RotateTunnelAccessTokenRequest : public IoTSecureTunnelingRequest
   {
   public:
-    AWS_IOTSECURETUNNELING_API RotateTunnelAccessTokenRequest();
+    AWS_IOTSECURETUNNELING_API RotateTunnelAccessTokenRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The tunnel for which you want to rotate the access tokens.</p>
      */
-    inline const Aws::String& GetTunnelId() const{ return m_tunnelId; }
+    inline const Aws::String& GetTunnelId() const { return m_tunnelId; }
     inline bool TunnelIdHasBeenSet() const { return m_tunnelIdHasBeenSet; }
-    inline void SetTunnelId(const Aws::String& value) { m_tunnelIdHasBeenSet = true; m_tunnelId = value; }
-    inline void SetTunnelId(Aws::String&& value) { m_tunnelIdHasBeenSet = true; m_tunnelId = std::move(value); }
-    inline void SetTunnelId(const char* value) { m_tunnelIdHasBeenSet = true; m_tunnelId.assign(value); }
-    inline RotateTunnelAccessTokenRequest& WithTunnelId(const Aws::String& value) { SetTunnelId(value); return *this;}
-    inline RotateTunnelAccessTokenRequest& WithTunnelId(Aws::String&& value) { SetTunnelId(std::move(value)); return *this;}
-    inline RotateTunnelAccessTokenRequest& WithTunnelId(const char* value) { SetTunnelId(value); return *this;}
+    template<typename TunnelIdT = Aws::String>
+    void SetTunnelId(TunnelIdT&& value) { m_tunnelIdHasBeenSet = true; m_tunnelId = std::forward<TunnelIdT>(value); }
+    template<typename TunnelIdT = Aws::String>
+    RotateTunnelAccessTokenRequest& WithTunnelId(TunnelIdT&& value) { SetTunnelId(std::forward<TunnelIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,29 +53,27 @@ namespace Model
      * <p>The mode of the client that will use the client token, which can be either
      * the source or destination, or both source and destination.</p>
      */
-    inline const ClientMode& GetClientMode() const{ return m_clientMode; }
+    inline ClientMode GetClientMode() const { return m_clientMode; }
     inline bool ClientModeHasBeenSet() const { return m_clientModeHasBeenSet; }
-    inline void SetClientMode(const ClientMode& value) { m_clientModeHasBeenSet = true; m_clientMode = value; }
-    inline void SetClientMode(ClientMode&& value) { m_clientModeHasBeenSet = true; m_clientMode = std::move(value); }
-    inline RotateTunnelAccessTokenRequest& WithClientMode(const ClientMode& value) { SetClientMode(value); return *this;}
-    inline RotateTunnelAccessTokenRequest& WithClientMode(ClientMode&& value) { SetClientMode(std::move(value)); return *this;}
+    inline void SetClientMode(ClientMode value) { m_clientModeHasBeenSet = true; m_clientMode = value; }
+    inline RotateTunnelAccessTokenRequest& WithClientMode(ClientMode value) { SetClientMode(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const DestinationConfig& GetDestinationConfig() const{ return m_destinationConfig; }
+    inline const DestinationConfig& GetDestinationConfig() const { return m_destinationConfig; }
     inline bool DestinationConfigHasBeenSet() const { return m_destinationConfigHasBeenSet; }
-    inline void SetDestinationConfig(const DestinationConfig& value) { m_destinationConfigHasBeenSet = true; m_destinationConfig = value; }
-    inline void SetDestinationConfig(DestinationConfig&& value) { m_destinationConfigHasBeenSet = true; m_destinationConfig = std::move(value); }
-    inline RotateTunnelAccessTokenRequest& WithDestinationConfig(const DestinationConfig& value) { SetDestinationConfig(value); return *this;}
-    inline RotateTunnelAccessTokenRequest& WithDestinationConfig(DestinationConfig&& value) { SetDestinationConfig(std::move(value)); return *this;}
+    template<typename DestinationConfigT = DestinationConfig>
+    void SetDestinationConfig(DestinationConfigT&& value) { m_destinationConfigHasBeenSet = true; m_destinationConfig = std::forward<DestinationConfigT>(value); }
+    template<typename DestinationConfigT = DestinationConfig>
+    RotateTunnelAccessTokenRequest& WithDestinationConfig(DestinationConfigT&& value) { SetDestinationConfig(std::forward<DestinationConfigT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_tunnelId;
     bool m_tunnelIdHasBeenSet = false;
 
-    ClientMode m_clientMode;
+    ClientMode m_clientMode{ClientMode::NOT_SET};
     bool m_clientModeHasBeenSet = false;
 
     DestinationConfig m_destinationConfig;

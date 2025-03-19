@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RegisterTaskWithMaintenanceWindowResult::RegisterTaskWithMaintenanceWindowResult()
-{
-}
-
 RegisterTaskWithMaintenanceWindowResult::RegisterTaskWithMaintenanceWindowResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ RegisterTaskWithMaintenanceWindowResult& RegisterTaskWithMaintenanceWindowResult
   if(jsonValue.ValueExists("WindowTaskId"))
   {
     m_windowTaskId = jsonValue.GetString("WindowTaskId");
-
+    m_windowTaskIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetGuardrailRequest::GetGuardrailRequest() : 
-    m_guardrailIdentifierHasBeenSet(false),
-    m_guardrailVersionHasBeenSet(false)
-{
-}
-
 Aws::String GetGuardrailRequest::SerializePayload() const
 {
   return {};

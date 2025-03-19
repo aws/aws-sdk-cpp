@@ -18,14 +18,7 @@ namespace Lambda
 namespace Model
 {
 
-RuntimeVersionConfig::RuntimeVersionConfig() : 
-    m_runtimeVersionArnHasBeenSet(false),
-    m_errorHasBeenSet(false)
-{
-}
-
 RuntimeVersionConfig::RuntimeVersionConfig(JsonView jsonValue)
-  : RuntimeVersionConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RuntimeVersionConfig& RuntimeVersionConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RuntimeVersionArn"))
   {
     m_runtimeVersionArn = jsonValue.GetString("RuntimeVersionArn");
-
     m_runtimeVersionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Error"))
   {
     m_error = jsonValue.GetObject("Error");
-
     m_errorHasBeenSet = true;
   }
-
   return *this;
 }
 

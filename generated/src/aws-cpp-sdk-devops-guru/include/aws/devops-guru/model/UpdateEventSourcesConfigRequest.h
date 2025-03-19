@@ -21,7 +21,7 @@ namespace Model
   class UpdateEventSourcesConfigRequest : public DevOpsGuruRequest
   {
   public:
-    AWS_DEVOPSGURU_API UpdateEventSourcesConfigRequest();
+    AWS_DEVOPSGURU_API UpdateEventSourcesConfigRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,12 +37,12 @@ namespace Model
      * <p>Configuration information about the integration of DevOps Guru as the
      * Consumer via EventBridge with another AWS Service.</p>
      */
-    inline const EventSourcesConfig& GetEventSources() const{ return m_eventSources; }
+    inline const EventSourcesConfig& GetEventSources() const { return m_eventSources; }
     inline bool EventSourcesHasBeenSet() const { return m_eventSourcesHasBeenSet; }
-    inline void SetEventSources(const EventSourcesConfig& value) { m_eventSourcesHasBeenSet = true; m_eventSources = value; }
-    inline void SetEventSources(EventSourcesConfig&& value) { m_eventSourcesHasBeenSet = true; m_eventSources = std::move(value); }
-    inline UpdateEventSourcesConfigRequest& WithEventSources(const EventSourcesConfig& value) { SetEventSources(value); return *this;}
-    inline UpdateEventSourcesConfigRequest& WithEventSources(EventSourcesConfig&& value) { SetEventSources(std::move(value)); return *this;}
+    template<typename EventSourcesT = EventSourcesConfig>
+    void SetEventSources(EventSourcesT&& value) { m_eventSourcesHasBeenSet = true; m_eventSources = std::forward<EventSourcesT>(value); }
+    template<typename EventSourcesT = EventSourcesConfig>
+    UpdateEventSourcesConfigRequest& WithEventSources(EventSourcesT&& value) { SetEventSources(std::forward<EventSourcesT>(value)); return *this;}
     ///@}
   private:
 

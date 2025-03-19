@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/wafv2/WAFV2_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSAllocator.h>
 #include <utility>
-#include <memory>
 
 namespace Aws
 {
@@ -34,7 +34,7 @@ namespace Model
   class NotStatement
   {
   public:
-    AWS_WAFV2_API NotStatement();
+    AWS_WAFV2_API NotStatement() = default;
     AWS_WAFV2_API NotStatement(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API NotStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,17 @@ namespace Model
     /**
      * <p>The statement to negate. You can use any statement that can be nested.</p>
      */
-    AWS_WAFV2_API const Statement& GetStatement() const;
-    AWS_WAFV2_API bool StatementHasBeenSet() const;
-    AWS_WAFV2_API void SetStatement(const Statement& value);
-    AWS_WAFV2_API void SetStatement(Statement&& value);
-    AWS_WAFV2_API NotStatement& WithStatement(const Statement& value);
-    AWS_WAFV2_API NotStatement& WithStatement(Statement&& value);
+    inline const Statement& GetStatement() const{
+      return *m_statement;
+    }
+    inline bool StatementHasBeenSet() const { return m_statementHasBeenSet; }
+    template<typename StatementT = Statement>
+    void SetStatement(StatementT&& value) {
+      m_statementHasBeenSet = true; 
+      m_statement = Aws::MakeShared<Statement>("NotStatement", std::forward<StatementT>(value));
+    }
+    template<typename StatementT = Statement>
+    NotStatement& WithStatement(StatementT&& value) { SetStatement(std::forward<StatementT>(value)); return *this;}
     ///@}
   private:
 

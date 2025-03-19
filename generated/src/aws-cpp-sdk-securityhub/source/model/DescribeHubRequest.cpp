@@ -15,11 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeHubRequest::DescribeHubRequest() : 
-    m_hubArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeHubRequest::SerializePayload() const
 {
   return {};

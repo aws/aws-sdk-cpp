@@ -18,24 +18,7 @@ namespace signer
 namespace Model
 {
 
-SigningProfile::SigningProfile() : 
-    m_profileNameHasBeenSet(false),
-    m_profileVersionHasBeenSet(false),
-    m_profileVersionArnHasBeenSet(false),
-    m_signingMaterialHasBeenSet(false),
-    m_signatureValidityPeriodHasBeenSet(false),
-    m_platformIdHasBeenSet(false),
-    m_platformDisplayNameHasBeenSet(false),
-    m_signingParametersHasBeenSet(false),
-    m_status(SigningProfileStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 SigningProfile::SigningProfile(JsonView jsonValue)
-  : SigningProfile()
 {
   *this = jsonValue;
 }
@@ -45,52 +28,38 @@ SigningProfile& SigningProfile::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("profileName"))
   {
     m_profileName = jsonValue.GetString("profileName");
-
     m_profileNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("profileVersion"))
   {
     m_profileVersion = jsonValue.GetString("profileVersion");
-
     m_profileVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("profileVersionArn"))
   {
     m_profileVersionArn = jsonValue.GetString("profileVersionArn");
-
     m_profileVersionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("signingMaterial"))
   {
     m_signingMaterial = jsonValue.GetObject("signingMaterial");
-
     m_signingMaterialHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("signatureValidityPeriod"))
   {
     m_signatureValidityPeriod = jsonValue.GetObject("signatureValidityPeriod");
-
     m_signatureValidityPeriodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("platformId"))
   {
     m_platformId = jsonValue.GetString("platformId");
-
     m_platformIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("platformDisplayName"))
   {
     m_platformDisplayName = jsonValue.GetString("platformDisplayName");
-
     m_platformDisplayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("signingParameters"))
   {
     Aws::Map<Aws::String, JsonView> signingParametersJsonMap = jsonValue.GetObject("signingParameters").GetAllObjects();
@@ -100,21 +69,16 @@ SigningProfile& SigningProfile::operator =(JsonView jsonValue)
     }
     m_signingParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = SigningProfileStatusMapper::GetSigningProfileStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -124,7 +88,6 @@ SigningProfile& SigningProfile::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

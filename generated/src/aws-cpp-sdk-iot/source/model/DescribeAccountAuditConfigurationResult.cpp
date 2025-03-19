@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAccountAuditConfigurationResult::DescribeAccountAuditConfigurationResult()
-{
-}
-
 DescribeAccountAuditConfigurationResult::DescribeAccountAuditConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DescribeAccountAuditConfigurationResult& DescribeAccountAuditConfigurationResult
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
+    m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("auditNotificationTargetConfigurations"))
   {
     Aws::Map<Aws::String, JsonView> auditNotificationTargetConfigurationsJsonMap = jsonValue.GetObject("auditNotificationTargetConfigurations").GetAllObjects();
@@ -42,8 +37,8 @@ DescribeAccountAuditConfigurationResult& DescribeAccountAuditConfigurationResult
     {
       m_auditNotificationTargetConfigurations[AuditNotificationTypeMapper::GetAuditNotificationTypeForName(auditNotificationTargetConfigurationsItem.first)] = auditNotificationTargetConfigurationsItem.second.AsObject();
     }
+    m_auditNotificationTargetConfigurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("auditCheckConfigurations"))
   {
     Aws::Map<Aws::String, JsonView> auditCheckConfigurationsJsonMap = jsonValue.GetObject("auditCheckConfigurations").GetAllObjects();
@@ -51,14 +46,15 @@ DescribeAccountAuditConfigurationResult& DescribeAccountAuditConfigurationResult
     {
       m_auditCheckConfigurations[auditCheckConfigurationsItem.first] = auditCheckConfigurationsItem.second.AsObject();
     }
+    m_auditCheckConfigurationsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

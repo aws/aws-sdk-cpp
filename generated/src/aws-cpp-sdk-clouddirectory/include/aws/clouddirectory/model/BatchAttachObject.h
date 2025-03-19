@@ -33,7 +33,7 @@ namespace Model
   class BatchAttachObject
   {
   public:
-    AWS_CLOUDDIRECTORY_API BatchAttachObject();
+    AWS_CLOUDDIRECTORY_API BatchAttachObject() = default;
     AWS_CLOUDDIRECTORY_API BatchAttachObject(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API BatchAttachObject& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,38 +43,36 @@ namespace Model
     /**
      * <p>The parent object reference.</p>
      */
-    inline const ObjectReference& GetParentReference() const{ return m_parentReference; }
+    inline const ObjectReference& GetParentReference() const { return m_parentReference; }
     inline bool ParentReferenceHasBeenSet() const { return m_parentReferenceHasBeenSet; }
-    inline void SetParentReference(const ObjectReference& value) { m_parentReferenceHasBeenSet = true; m_parentReference = value; }
-    inline void SetParentReference(ObjectReference&& value) { m_parentReferenceHasBeenSet = true; m_parentReference = std::move(value); }
-    inline BatchAttachObject& WithParentReference(const ObjectReference& value) { SetParentReference(value); return *this;}
-    inline BatchAttachObject& WithParentReference(ObjectReference&& value) { SetParentReference(std::move(value)); return *this;}
+    template<typename ParentReferenceT = ObjectReference>
+    void SetParentReference(ParentReferenceT&& value) { m_parentReferenceHasBeenSet = true; m_parentReference = std::forward<ParentReferenceT>(value); }
+    template<typename ParentReferenceT = ObjectReference>
+    BatchAttachObject& WithParentReference(ParentReferenceT&& value) { SetParentReference(std::forward<ParentReferenceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The child object reference that is to be attached to the object.</p>
      */
-    inline const ObjectReference& GetChildReference() const{ return m_childReference; }
+    inline const ObjectReference& GetChildReference() const { return m_childReference; }
     inline bool ChildReferenceHasBeenSet() const { return m_childReferenceHasBeenSet; }
-    inline void SetChildReference(const ObjectReference& value) { m_childReferenceHasBeenSet = true; m_childReference = value; }
-    inline void SetChildReference(ObjectReference&& value) { m_childReferenceHasBeenSet = true; m_childReference = std::move(value); }
-    inline BatchAttachObject& WithChildReference(const ObjectReference& value) { SetChildReference(value); return *this;}
-    inline BatchAttachObject& WithChildReference(ObjectReference&& value) { SetChildReference(std::move(value)); return *this;}
+    template<typename ChildReferenceT = ObjectReference>
+    void SetChildReference(ChildReferenceT&& value) { m_childReferenceHasBeenSet = true; m_childReference = std::forward<ChildReferenceT>(value); }
+    template<typename ChildReferenceT = ObjectReference>
+    BatchAttachObject& WithChildReference(ChildReferenceT&& value) { SetChildReference(std::forward<ChildReferenceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the link.</p>
      */
-    inline const Aws::String& GetLinkName() const{ return m_linkName; }
+    inline const Aws::String& GetLinkName() const { return m_linkName; }
     inline bool LinkNameHasBeenSet() const { return m_linkNameHasBeenSet; }
-    inline void SetLinkName(const Aws::String& value) { m_linkNameHasBeenSet = true; m_linkName = value; }
-    inline void SetLinkName(Aws::String&& value) { m_linkNameHasBeenSet = true; m_linkName = std::move(value); }
-    inline void SetLinkName(const char* value) { m_linkNameHasBeenSet = true; m_linkName.assign(value); }
-    inline BatchAttachObject& WithLinkName(const Aws::String& value) { SetLinkName(value); return *this;}
-    inline BatchAttachObject& WithLinkName(Aws::String&& value) { SetLinkName(std::move(value)); return *this;}
-    inline BatchAttachObject& WithLinkName(const char* value) { SetLinkName(value); return *this;}
+    template<typename LinkNameT = Aws::String>
+    void SetLinkName(LinkNameT&& value) { m_linkNameHasBeenSet = true; m_linkName = std::forward<LinkNameT>(value); }
+    template<typename LinkNameT = Aws::String>
+    BatchAttachObject& WithLinkName(LinkNameT&& value) { SetLinkName(std::forward<LinkNameT>(value)); return *this;}
     ///@}
   private:
 

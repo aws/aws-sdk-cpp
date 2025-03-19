@@ -12,11 +12,6 @@ using namespace Aws::CognitoIdentity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeIdentityPoolRequest::DescribeIdentityPoolRequest() : 
-    m_identityPoolIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeIdentityPoolRequest::SerializePayload() const
 {
   JsonValue payload;

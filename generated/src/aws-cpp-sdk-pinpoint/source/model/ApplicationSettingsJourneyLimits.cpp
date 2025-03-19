@@ -18,17 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-ApplicationSettingsJourneyLimits::ApplicationSettingsJourneyLimits() : 
-    m_dailyCap(0),
-    m_dailyCapHasBeenSet(false),
-    m_timeframeCapHasBeenSet(false),
-    m_totalCap(0),
-    m_totalCapHasBeenSet(false)
-{
-}
-
 ApplicationSettingsJourneyLimits::ApplicationSettingsJourneyLimits(JsonView jsonValue)
-  : ApplicationSettingsJourneyLimits()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ ApplicationSettingsJourneyLimits& ApplicationSettingsJourneyLimits::operator =(J
   if(jsonValue.ValueExists("DailyCap"))
   {
     m_dailyCap = jsonValue.GetInteger("DailyCap");
-
     m_dailyCapHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeframeCap"))
   {
     m_timeframeCap = jsonValue.GetObject("TimeframeCap");
-
     m_timeframeCapHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalCap"))
   {
     m_totalCap = jsonValue.GetInteger("TotalCap");
-
     m_totalCapHasBeenSet = true;
   }
-
   return *this;
 }
 

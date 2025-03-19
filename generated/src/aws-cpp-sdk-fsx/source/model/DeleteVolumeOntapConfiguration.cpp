@@ -18,17 +18,7 @@ namespace FSx
 namespace Model
 {
 
-DeleteVolumeOntapConfiguration::DeleteVolumeOntapConfiguration() : 
-    m_skipFinalBackup(false),
-    m_skipFinalBackupHasBeenSet(false),
-    m_finalBackupTagsHasBeenSet(false),
-    m_bypassSnaplockEnterpriseRetention(false),
-    m_bypassSnaplockEnterpriseRetentionHasBeenSet(false)
-{
-}
-
 DeleteVolumeOntapConfiguration::DeleteVolumeOntapConfiguration(JsonView jsonValue)
-  : DeleteVolumeOntapConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ DeleteVolumeOntapConfiguration& DeleteVolumeOntapConfiguration::operator =(JsonV
   if(jsonValue.ValueExists("SkipFinalBackup"))
   {
     m_skipFinalBackup = jsonValue.GetBool("SkipFinalBackup");
-
     m_skipFinalBackupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FinalBackupTags"))
   {
     Aws::Utils::Array<JsonView> finalBackupTagsJsonList = jsonValue.GetArray("FinalBackupTags");
@@ -51,14 +39,11 @@ DeleteVolumeOntapConfiguration& DeleteVolumeOntapConfiguration::operator =(JsonV
     }
     m_finalBackupTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BypassSnaplockEnterpriseRetention"))
   {
     m_bypassSnaplockEnterpriseRetention = jsonValue.GetBool("BypassSnaplockEnterpriseRetention");
-
     m_bypassSnaplockEnterpriseRetentionHasBeenSet = true;
   }
-
   return *this;
 }
 

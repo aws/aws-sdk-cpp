@@ -35,7 +35,7 @@ namespace Model
   class Recipe
   {
   public:
-    AWS_PERSONALIZE_API Recipe();
+    AWS_PERSONALIZE_API Recipe() = default;
     AWS_PERSONALIZE_API Recipe(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZE_API Recipe& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,24 @@ namespace Model
     /**
      * <p>The name of the recipe.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Recipe& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Recipe& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Recipe& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Recipe& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the recipe.</p>
      */
-    inline const Aws::String& GetRecipeArn() const{ return m_recipeArn; }
+    inline const Aws::String& GetRecipeArn() const { return m_recipeArn; }
     inline bool RecipeArnHasBeenSet() const { return m_recipeArnHasBeenSet; }
-    inline void SetRecipeArn(const Aws::String& value) { m_recipeArnHasBeenSet = true; m_recipeArn = value; }
-    inline void SetRecipeArn(Aws::String&& value) { m_recipeArnHasBeenSet = true; m_recipeArn = std::move(value); }
-    inline void SetRecipeArn(const char* value) { m_recipeArnHasBeenSet = true; m_recipeArn.assign(value); }
-    inline Recipe& WithRecipeArn(const Aws::String& value) { SetRecipeArn(value); return *this;}
-    inline Recipe& WithRecipeArn(Aws::String&& value) { SetRecipeArn(std::move(value)); return *this;}
-    inline Recipe& WithRecipeArn(const char* value) { SetRecipeArn(value); return *this;}
+    template<typename RecipeArnT = Aws::String>
+    void SetRecipeArn(RecipeArnT&& value) { m_recipeArnHasBeenSet = true; m_recipeArn = std::forward<RecipeArnT>(value); }
+    template<typename RecipeArnT = Aws::String>
+    Recipe& WithRecipeArn(RecipeArnT&& value) { SetRecipeArn(std::forward<RecipeArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,68 +70,60 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the algorithm that Amazon Personalize uses
      * to train the model.</p>
      */
-    inline const Aws::String& GetAlgorithmArn() const{ return m_algorithmArn; }
+    inline const Aws::String& GetAlgorithmArn() const { return m_algorithmArn; }
     inline bool AlgorithmArnHasBeenSet() const { return m_algorithmArnHasBeenSet; }
-    inline void SetAlgorithmArn(const Aws::String& value) { m_algorithmArnHasBeenSet = true; m_algorithmArn = value; }
-    inline void SetAlgorithmArn(Aws::String&& value) { m_algorithmArnHasBeenSet = true; m_algorithmArn = std::move(value); }
-    inline void SetAlgorithmArn(const char* value) { m_algorithmArnHasBeenSet = true; m_algorithmArn.assign(value); }
-    inline Recipe& WithAlgorithmArn(const Aws::String& value) { SetAlgorithmArn(value); return *this;}
-    inline Recipe& WithAlgorithmArn(Aws::String&& value) { SetAlgorithmArn(std::move(value)); return *this;}
-    inline Recipe& WithAlgorithmArn(const char* value) { SetAlgorithmArn(value); return *this;}
+    template<typename AlgorithmArnT = Aws::String>
+    void SetAlgorithmArn(AlgorithmArnT&& value) { m_algorithmArnHasBeenSet = true; m_algorithmArn = std::forward<AlgorithmArnT>(value); }
+    template<typename AlgorithmArnT = Aws::String>
+    Recipe& WithAlgorithmArn(AlgorithmArnT&& value) { SetAlgorithmArn(std::forward<AlgorithmArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the FeatureTransformation object.</p>
      */
-    inline const Aws::String& GetFeatureTransformationArn() const{ return m_featureTransformationArn; }
+    inline const Aws::String& GetFeatureTransformationArn() const { return m_featureTransformationArn; }
     inline bool FeatureTransformationArnHasBeenSet() const { return m_featureTransformationArnHasBeenSet; }
-    inline void SetFeatureTransformationArn(const Aws::String& value) { m_featureTransformationArnHasBeenSet = true; m_featureTransformationArn = value; }
-    inline void SetFeatureTransformationArn(Aws::String&& value) { m_featureTransformationArnHasBeenSet = true; m_featureTransformationArn = std::move(value); }
-    inline void SetFeatureTransformationArn(const char* value) { m_featureTransformationArnHasBeenSet = true; m_featureTransformationArn.assign(value); }
-    inline Recipe& WithFeatureTransformationArn(const Aws::String& value) { SetFeatureTransformationArn(value); return *this;}
-    inline Recipe& WithFeatureTransformationArn(Aws::String&& value) { SetFeatureTransformationArn(std::move(value)); return *this;}
-    inline Recipe& WithFeatureTransformationArn(const char* value) { SetFeatureTransformationArn(value); return *this;}
+    template<typename FeatureTransformationArnT = Aws::String>
+    void SetFeatureTransformationArn(FeatureTransformationArnT&& value) { m_featureTransformationArnHasBeenSet = true; m_featureTransformationArn = std::forward<FeatureTransformationArnT>(value); }
+    template<typename FeatureTransformationArnT = Aws::String>
+    Recipe& WithFeatureTransformationArn(FeatureTransformationArnT&& value) { SetFeatureTransformationArn(std::forward<FeatureTransformationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the recipe.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline Recipe& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline Recipe& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline Recipe& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    Recipe& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the recipe.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline Recipe& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline Recipe& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline Recipe& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    Recipe& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time (in Unix format) that the recipe was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDateTime() const{ return m_creationDateTime; }
+    inline const Aws::Utils::DateTime& GetCreationDateTime() const { return m_creationDateTime; }
     inline bool CreationDateTimeHasBeenSet() const { return m_creationDateTimeHasBeenSet; }
-    inline void SetCreationDateTime(const Aws::Utils::DateTime& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = value; }
-    inline void SetCreationDateTime(Aws::Utils::DateTime&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::move(value); }
-    inline Recipe& WithCreationDateTime(const Aws::Utils::DateTime& value) { SetCreationDateTime(value); return *this;}
-    inline Recipe& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(std::move(value)); return *this;}
+    template<typename CreationDateTimeT = Aws::Utils::DateTime>
+    void SetCreationDateTime(CreationDateTimeT&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::forward<CreationDateTimeT>(value); }
+    template<typename CreationDateTimeT = Aws::Utils::DateTime>
+    Recipe& WithCreationDateTime(CreationDateTimeT&& value) { SetCreationDateTime(std::forward<CreationDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -143,26 +131,24 @@ namespace Model
      * <p>One of the following values:</p> <ul> <li> <p>PERSONALIZED_RANKING</p> </li>
      * <li> <p>RELATED_ITEMS</p> </li> <li> <p>USER_PERSONALIZATION</p> </li> </ul>
      */
-    inline const Aws::String& GetRecipeType() const{ return m_recipeType; }
+    inline const Aws::String& GetRecipeType() const { return m_recipeType; }
     inline bool RecipeTypeHasBeenSet() const { return m_recipeTypeHasBeenSet; }
-    inline void SetRecipeType(const Aws::String& value) { m_recipeTypeHasBeenSet = true; m_recipeType = value; }
-    inline void SetRecipeType(Aws::String&& value) { m_recipeTypeHasBeenSet = true; m_recipeType = std::move(value); }
-    inline void SetRecipeType(const char* value) { m_recipeTypeHasBeenSet = true; m_recipeType.assign(value); }
-    inline Recipe& WithRecipeType(const Aws::String& value) { SetRecipeType(value); return *this;}
-    inline Recipe& WithRecipeType(Aws::String&& value) { SetRecipeType(std::move(value)); return *this;}
-    inline Recipe& WithRecipeType(const char* value) { SetRecipeType(value); return *this;}
+    template<typename RecipeTypeT = Aws::String>
+    void SetRecipeType(RecipeTypeT&& value) { m_recipeTypeHasBeenSet = true; m_recipeType = std::forward<RecipeTypeT>(value); }
+    template<typename RecipeTypeT = Aws::String>
+    Recipe& WithRecipeType(RecipeTypeT&& value) { SetRecipeType(std::forward<RecipeTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time (in Unix format) that the recipe was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedDateTime() const{ return m_lastUpdatedDateTime; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedDateTime() const { return m_lastUpdatedDateTime; }
     inline bool LastUpdatedDateTimeHasBeenSet() const { return m_lastUpdatedDateTimeHasBeenSet; }
-    inline void SetLastUpdatedDateTime(const Aws::Utils::DateTime& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = value; }
-    inline void SetLastUpdatedDateTime(Aws::Utils::DateTime&& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = std::move(value); }
-    inline Recipe& WithLastUpdatedDateTime(const Aws::Utils::DateTime& value) { SetLastUpdatedDateTime(value); return *this;}
-    inline Recipe& WithLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetLastUpdatedDateTime(std::move(value)); return *this;}
+    template<typename LastUpdatedDateTimeT = Aws::Utils::DateTime>
+    void SetLastUpdatedDateTime(LastUpdatedDateTimeT&& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = std::forward<LastUpdatedDateTimeT>(value); }
+    template<typename LastUpdatedDateTimeT = Aws::Utils::DateTime>
+    Recipe& WithLastUpdatedDateTime(LastUpdatedDateTimeT&& value) { SetLastUpdatedDateTime(std::forward<LastUpdatedDateTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -184,13 +170,13 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDateTime;
+    Aws::Utils::DateTime m_creationDateTime{};
     bool m_creationDateTimeHasBeenSet = false;
 
     Aws::String m_recipeType;
     bool m_recipeTypeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedDateTime;
+    Aws::Utils::DateTime m_lastUpdatedDateTime{};
     bool m_lastUpdatedDateTimeHasBeenSet = false;
   };
 

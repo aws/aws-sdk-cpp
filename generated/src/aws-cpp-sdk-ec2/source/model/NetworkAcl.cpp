@@ -20,20 +20,7 @@ namespace EC2
 namespace Model
 {
 
-NetworkAcl::NetworkAcl() : 
-    m_associationsHasBeenSet(false),
-    m_entriesHasBeenSet(false),
-    m_isDefault(false),
-    m_isDefaultHasBeenSet(false),
-    m_networkAclIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_ownerIdHasBeenSet(false)
-{
-}
-
 NetworkAcl::NetworkAcl(const XmlNode& xmlNode)
-  : NetworkAcl()
 {
   *this = xmlNode;
 }
@@ -48,6 +35,7 @@ NetworkAcl& NetworkAcl::operator =(const XmlNode& xmlNode)
     if(!associationsNode.IsNull())
     {
       XmlNode associationsMember = associationsNode.FirstChild("item");
+      m_associationsHasBeenSet = !associationsMember.IsNull();
       while(!associationsMember.IsNull())
       {
         m_associations.push_back(associationsMember);
@@ -60,6 +48,7 @@ NetworkAcl& NetworkAcl::operator =(const XmlNode& xmlNode)
     if(!entriesNode.IsNull())
     {
       XmlNode entriesMember = entriesNode.FirstChild("item");
+      m_entriesHasBeenSet = !entriesMember.IsNull();
       while(!entriesMember.IsNull())
       {
         m_entries.push_back(entriesMember);
@@ -84,6 +73,7 @@ NetworkAcl& NetworkAcl::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

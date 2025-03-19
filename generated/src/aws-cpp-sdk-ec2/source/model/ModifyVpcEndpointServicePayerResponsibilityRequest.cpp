@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ModifyVpcEndpointServicePayerResponsibilityRequest::ModifyVpcEndpointServicePayerResponsibilityRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_serviceIdHasBeenSet(false),
-    m_payerResponsibility(PayerResponsibility::NOT_SET),
-    m_payerResponsibilityHasBeenSet(false)
-{
-}
-
 Aws::String ModifyVpcEndpointServicePayerResponsibilityRequest::SerializePayload() const
 {
   Aws::StringStream ss;

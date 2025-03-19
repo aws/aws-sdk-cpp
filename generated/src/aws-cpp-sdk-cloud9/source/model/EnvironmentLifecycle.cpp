@@ -18,16 +18,7 @@ namespace Cloud9
 namespace Model
 {
 
-EnvironmentLifecycle::EnvironmentLifecycle() : 
-    m_status(EnvironmentLifecycleStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_reasonHasBeenSet(false),
-    m_failureResourceHasBeenSet(false)
-{
-}
-
 EnvironmentLifecycle::EnvironmentLifecycle(JsonView jsonValue)
-  : EnvironmentLifecycle()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ EnvironmentLifecycle& EnvironmentLifecycle::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("status"))
   {
     m_status = EnvironmentLifecycleStatusMapper::GetEnvironmentLifecycleStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = jsonValue.GetString("reason");
-
     m_reasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureResource"))
   {
     m_failureResource = jsonValue.GetString("failureResource");
-
     m_failureResourceHasBeenSet = true;
   }
-
   return *this;
 }
 

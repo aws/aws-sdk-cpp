@@ -40,7 +40,7 @@ namespace Model
   class Compliance
   {
   public:
-    AWS_SECURITYHUB_API Compliance();
+    AWS_SECURITYHUB_API Compliance() = default;
     AWS_SECURITYHUB_API Compliance(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Compliance& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -60,12 +60,10 @@ namespace Model
      * result was <code>NOT_APPLICABLE</code> for a Security Hub control, Security Hub
      * automatically archives the finding after 3 days.</p> </li> </ul> </li> </ul>
      */
-    inline const ComplianceStatus& GetStatus() const{ return m_status; }
+    inline ComplianceStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ComplianceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ComplianceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline Compliance& WithStatus(const ComplianceStatus& value) { SetStatus(value); return *this;}
-    inline Compliance& WithStatus(ComplianceStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ComplianceStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline Compliance& WithStatus(ComplianceStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -74,15 +72,14 @@ namespace Model
      * related to a control. The check for that control is aligned with these
      * requirements.</p> <p>Array Members: Maximum number of 32 items.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRelatedRequirements() const{ return m_relatedRequirements; }
+    inline const Aws::Vector<Aws::String>& GetRelatedRequirements() const { return m_relatedRequirements; }
     inline bool RelatedRequirementsHasBeenSet() const { return m_relatedRequirementsHasBeenSet; }
-    inline void SetRelatedRequirements(const Aws::Vector<Aws::String>& value) { m_relatedRequirementsHasBeenSet = true; m_relatedRequirements = value; }
-    inline void SetRelatedRequirements(Aws::Vector<Aws::String>&& value) { m_relatedRequirementsHasBeenSet = true; m_relatedRequirements = std::move(value); }
-    inline Compliance& WithRelatedRequirements(const Aws::Vector<Aws::String>& value) { SetRelatedRequirements(value); return *this;}
-    inline Compliance& WithRelatedRequirements(Aws::Vector<Aws::String>&& value) { SetRelatedRequirements(std::move(value)); return *this;}
-    inline Compliance& AddRelatedRequirements(const Aws::String& value) { m_relatedRequirementsHasBeenSet = true; m_relatedRequirements.push_back(value); return *this; }
-    inline Compliance& AddRelatedRequirements(Aws::String&& value) { m_relatedRequirementsHasBeenSet = true; m_relatedRequirements.push_back(std::move(value)); return *this; }
-    inline Compliance& AddRelatedRequirements(const char* value) { m_relatedRequirementsHasBeenSet = true; m_relatedRequirements.push_back(value); return *this; }
+    template<typename RelatedRequirementsT = Aws::Vector<Aws::String>>
+    void SetRelatedRequirements(RelatedRequirementsT&& value) { m_relatedRequirementsHasBeenSet = true; m_relatedRequirements = std::forward<RelatedRequirementsT>(value); }
+    template<typename RelatedRequirementsT = Aws::Vector<Aws::String>>
+    Compliance& WithRelatedRequirements(RelatedRequirementsT&& value) { SetRelatedRequirements(std::forward<RelatedRequirementsT>(value)); return *this;}
+    template<typename RelatedRequirementsT = Aws::String>
+    Compliance& AddRelatedRequirements(RelatedRequirementsT&& value) { m_relatedRequirementsHasBeenSet = true; m_relatedRequirements.emplace_back(std::forward<RelatedRequirementsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -90,14 +87,14 @@ namespace Model
      * <p>Typically used to provide a list of reasons for the value of
      * <code>Status</code>.</p>
      */
-    inline const Aws::Vector<StatusReason>& GetStatusReasons() const{ return m_statusReasons; }
+    inline const Aws::Vector<StatusReason>& GetStatusReasons() const { return m_statusReasons; }
     inline bool StatusReasonsHasBeenSet() const { return m_statusReasonsHasBeenSet; }
-    inline void SetStatusReasons(const Aws::Vector<StatusReason>& value) { m_statusReasonsHasBeenSet = true; m_statusReasons = value; }
-    inline void SetStatusReasons(Aws::Vector<StatusReason>&& value) { m_statusReasonsHasBeenSet = true; m_statusReasons = std::move(value); }
-    inline Compliance& WithStatusReasons(const Aws::Vector<StatusReason>& value) { SetStatusReasons(value); return *this;}
-    inline Compliance& WithStatusReasons(Aws::Vector<StatusReason>&& value) { SetStatusReasons(std::move(value)); return *this;}
-    inline Compliance& AddStatusReasons(const StatusReason& value) { m_statusReasonsHasBeenSet = true; m_statusReasons.push_back(value); return *this; }
-    inline Compliance& AddStatusReasons(StatusReason&& value) { m_statusReasonsHasBeenSet = true; m_statusReasons.push_back(std::move(value)); return *this; }
+    template<typename StatusReasonsT = Aws::Vector<StatusReason>>
+    void SetStatusReasons(StatusReasonsT&& value) { m_statusReasonsHasBeenSet = true; m_statusReasons = std::forward<StatusReasonsT>(value); }
+    template<typename StatusReasonsT = Aws::Vector<StatusReason>>
+    Compliance& WithStatusReasons(StatusReasonsT&& value) { SetStatusReasons(std::forward<StatusReasonsT>(value)); return *this;}
+    template<typename StatusReasonsT = StatusReason>
+    Compliance& AddStatusReasons(StatusReasonsT&& value) { m_statusReasonsHasBeenSet = true; m_statusReasons.emplace_back(std::forward<StatusReasonsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -106,14 +103,12 @@ namespace Model
      * Security Hub controls, this field consists of an Amazon Web Services service and
      * a unique number, such as <code>APIGateway.5</code>. </p>
      */
-    inline const Aws::String& GetSecurityControlId() const{ return m_securityControlId; }
+    inline const Aws::String& GetSecurityControlId() const { return m_securityControlId; }
     inline bool SecurityControlIdHasBeenSet() const { return m_securityControlIdHasBeenSet; }
-    inline void SetSecurityControlId(const Aws::String& value) { m_securityControlIdHasBeenSet = true; m_securityControlId = value; }
-    inline void SetSecurityControlId(Aws::String&& value) { m_securityControlIdHasBeenSet = true; m_securityControlId = std::move(value); }
-    inline void SetSecurityControlId(const char* value) { m_securityControlIdHasBeenSet = true; m_securityControlId.assign(value); }
-    inline Compliance& WithSecurityControlId(const Aws::String& value) { SetSecurityControlId(value); return *this;}
-    inline Compliance& WithSecurityControlId(Aws::String&& value) { SetSecurityControlId(std::move(value)); return *this;}
-    inline Compliance& WithSecurityControlId(const char* value) { SetSecurityControlId(value); return *this;}
+    template<typename SecurityControlIdT = Aws::String>
+    void SetSecurityControlId(SecurityControlIdT&& value) { m_securityControlIdHasBeenSet = true; m_securityControlId = std::forward<SecurityControlIdT>(value); }
+    template<typename SecurityControlIdT = Aws::String>
+    Compliance& WithSecurityControlId(SecurityControlIdT&& value) { SetSecurityControlId(std::forward<SecurityControlIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -121,14 +116,14 @@ namespace Model
      * <p>Typically provides an array of enabled security standards in which a security
      * control is currently enabled. </p>
      */
-    inline const Aws::Vector<AssociatedStandard>& GetAssociatedStandards() const{ return m_associatedStandards; }
+    inline const Aws::Vector<AssociatedStandard>& GetAssociatedStandards() const { return m_associatedStandards; }
     inline bool AssociatedStandardsHasBeenSet() const { return m_associatedStandardsHasBeenSet; }
-    inline void SetAssociatedStandards(const Aws::Vector<AssociatedStandard>& value) { m_associatedStandardsHasBeenSet = true; m_associatedStandards = value; }
-    inline void SetAssociatedStandards(Aws::Vector<AssociatedStandard>&& value) { m_associatedStandardsHasBeenSet = true; m_associatedStandards = std::move(value); }
-    inline Compliance& WithAssociatedStandards(const Aws::Vector<AssociatedStandard>& value) { SetAssociatedStandards(value); return *this;}
-    inline Compliance& WithAssociatedStandards(Aws::Vector<AssociatedStandard>&& value) { SetAssociatedStandards(std::move(value)); return *this;}
-    inline Compliance& AddAssociatedStandards(const AssociatedStandard& value) { m_associatedStandardsHasBeenSet = true; m_associatedStandards.push_back(value); return *this; }
-    inline Compliance& AddAssociatedStandards(AssociatedStandard&& value) { m_associatedStandardsHasBeenSet = true; m_associatedStandards.push_back(std::move(value)); return *this; }
+    template<typename AssociatedStandardsT = Aws::Vector<AssociatedStandard>>
+    void SetAssociatedStandards(AssociatedStandardsT&& value) { m_associatedStandardsHasBeenSet = true; m_associatedStandards = std::forward<AssociatedStandardsT>(value); }
+    template<typename AssociatedStandardsT = Aws::Vector<AssociatedStandard>>
+    Compliance& WithAssociatedStandards(AssociatedStandardsT&& value) { SetAssociatedStandards(std::forward<AssociatedStandardsT>(value)); return *this;}
+    template<typename AssociatedStandardsT = AssociatedStandard>
+    Compliance& AddAssociatedStandards(AssociatedStandardsT&& value) { m_associatedStandardsHasBeenSet = true; m_associatedStandards.emplace_back(std::forward<AssociatedStandardsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -136,18 +131,18 @@ namespace Model
      * <p> Typically an object that includes security control parameter names and
      * values. </p>
      */
-    inline const Aws::Vector<SecurityControlParameter>& GetSecurityControlParameters() const{ return m_securityControlParameters; }
+    inline const Aws::Vector<SecurityControlParameter>& GetSecurityControlParameters() const { return m_securityControlParameters; }
     inline bool SecurityControlParametersHasBeenSet() const { return m_securityControlParametersHasBeenSet; }
-    inline void SetSecurityControlParameters(const Aws::Vector<SecurityControlParameter>& value) { m_securityControlParametersHasBeenSet = true; m_securityControlParameters = value; }
-    inline void SetSecurityControlParameters(Aws::Vector<SecurityControlParameter>&& value) { m_securityControlParametersHasBeenSet = true; m_securityControlParameters = std::move(value); }
-    inline Compliance& WithSecurityControlParameters(const Aws::Vector<SecurityControlParameter>& value) { SetSecurityControlParameters(value); return *this;}
-    inline Compliance& WithSecurityControlParameters(Aws::Vector<SecurityControlParameter>&& value) { SetSecurityControlParameters(std::move(value)); return *this;}
-    inline Compliance& AddSecurityControlParameters(const SecurityControlParameter& value) { m_securityControlParametersHasBeenSet = true; m_securityControlParameters.push_back(value); return *this; }
-    inline Compliance& AddSecurityControlParameters(SecurityControlParameter&& value) { m_securityControlParametersHasBeenSet = true; m_securityControlParameters.push_back(std::move(value)); return *this; }
+    template<typename SecurityControlParametersT = Aws::Vector<SecurityControlParameter>>
+    void SetSecurityControlParameters(SecurityControlParametersT&& value) { m_securityControlParametersHasBeenSet = true; m_securityControlParameters = std::forward<SecurityControlParametersT>(value); }
+    template<typename SecurityControlParametersT = Aws::Vector<SecurityControlParameter>>
+    Compliance& WithSecurityControlParameters(SecurityControlParametersT&& value) { SetSecurityControlParameters(std::forward<SecurityControlParametersT>(value)); return *this;}
+    template<typename SecurityControlParametersT = SecurityControlParameter>
+    Compliance& AddSecurityControlParameters(SecurityControlParametersT&& value) { m_securityControlParametersHasBeenSet = true; m_securityControlParameters.emplace_back(std::forward<SecurityControlParametersT>(value)); return *this; }
     ///@}
   private:
 
-    ComplianceStatus m_status;
+    ComplianceStatus m_status{ComplianceStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_relatedRequirements;

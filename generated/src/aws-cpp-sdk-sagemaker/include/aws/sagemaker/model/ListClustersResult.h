@@ -29,7 +29,7 @@ namespace Model
   class ListClustersResult
   {
   public:
-    AWS_SAGEMAKER_API ListClustersResult();
+    AWS_SAGEMAKER_API ListClustersResult() = default;
     AWS_SAGEMAKER_API ListClustersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API ListClustersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,45 +40,44 @@ namespace Model
      * truncated, the response includes a <code>NextToken</code>. To retrieve the next
      * set of clusters, use the token in the next request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListClustersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListClustersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListClustersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListClustersResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The summaries of listed SageMaker HyperPod clusters.</p>
      */
-    inline const Aws::Vector<ClusterSummary>& GetClusterSummaries() const{ return m_clusterSummaries; }
-    inline void SetClusterSummaries(const Aws::Vector<ClusterSummary>& value) { m_clusterSummaries = value; }
-    inline void SetClusterSummaries(Aws::Vector<ClusterSummary>&& value) { m_clusterSummaries = std::move(value); }
-    inline ListClustersResult& WithClusterSummaries(const Aws::Vector<ClusterSummary>& value) { SetClusterSummaries(value); return *this;}
-    inline ListClustersResult& WithClusterSummaries(Aws::Vector<ClusterSummary>&& value) { SetClusterSummaries(std::move(value)); return *this;}
-    inline ListClustersResult& AddClusterSummaries(const ClusterSummary& value) { m_clusterSummaries.push_back(value); return *this; }
-    inline ListClustersResult& AddClusterSummaries(ClusterSummary&& value) { m_clusterSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ClusterSummary>& GetClusterSummaries() const { return m_clusterSummaries; }
+    template<typename ClusterSummariesT = Aws::Vector<ClusterSummary>>
+    void SetClusterSummaries(ClusterSummariesT&& value) { m_clusterSummariesHasBeenSet = true; m_clusterSummaries = std::forward<ClusterSummariesT>(value); }
+    template<typename ClusterSummariesT = Aws::Vector<ClusterSummary>>
+    ListClustersResult& WithClusterSummaries(ClusterSummariesT&& value) { SetClusterSummaries(std::forward<ClusterSummariesT>(value)); return *this;}
+    template<typename ClusterSummariesT = ClusterSummary>
+    ListClustersResult& AddClusterSummaries(ClusterSummariesT&& value) { m_clusterSummariesHasBeenSet = true; m_clusterSummaries.emplace_back(std::forward<ClusterSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListClustersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListClustersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListClustersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListClustersResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<ClusterSummary> m_clusterSummaries;
+    bool m_clusterSummariesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

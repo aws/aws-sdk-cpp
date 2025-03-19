@@ -18,15 +18,7 @@ namespace QLDB
 namespace Model
 {
 
-S3EncryptionConfiguration::S3EncryptionConfiguration() : 
-    m_objectEncryptionType(S3ObjectEncryptionType::NOT_SET),
-    m_objectEncryptionTypeHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false)
-{
-}
-
 S3EncryptionConfiguration::S3EncryptionConfiguration(JsonView jsonValue)
-  : S3EncryptionConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ S3EncryptionConfiguration& S3EncryptionConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("ObjectEncryptionType"))
   {
     m_objectEncryptionType = S3ObjectEncryptionTypeMapper::GetS3ObjectEncryptionTypeForName(jsonValue.GetString("ObjectEncryptionType"));
-
     m_objectEncryptionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyArn"))
   {
     m_kmsKeyArn = jsonValue.GetString("KmsKeyArn");
-
     m_kmsKeyArnHasBeenSet = true;
   }
-
   return *this;
 }
 

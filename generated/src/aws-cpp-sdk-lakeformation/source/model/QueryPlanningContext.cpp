@@ -18,17 +18,7 @@ namespace LakeFormation
 namespace Model
 {
 
-QueryPlanningContext::QueryPlanningContext() : 
-    m_catalogIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_queryAsOfTimeHasBeenSet(false),
-    m_queryParametersHasBeenSet(false),
-    m_transactionIdHasBeenSet(false)
-{
-}
-
 QueryPlanningContext::QueryPlanningContext(JsonView jsonValue)
-  : QueryPlanningContext()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ QueryPlanningContext& QueryPlanningContext::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CatalogId"))
   {
     m_catalogId = jsonValue.GetString("CatalogId");
-
     m_catalogIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseName"))
   {
     m_databaseName = jsonValue.GetString("DatabaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueryAsOfTime"))
   {
     m_queryAsOfTime = jsonValue.GetDouble("QueryAsOfTime");
-
     m_queryAsOfTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueryParameters"))
   {
     Aws::Map<Aws::String, JsonView> queryParametersJsonMap = jsonValue.GetObject("QueryParameters").GetAllObjects();
@@ -65,14 +49,11 @@ QueryPlanningContext& QueryPlanningContext::operator =(JsonView jsonValue)
     }
     m_queryParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TransactionId"))
   {
     m_transactionId = jsonValue.GetString("TransactionId");
-
     m_transactionIdHasBeenSet = true;
   }
-
   return *this;
 }
 

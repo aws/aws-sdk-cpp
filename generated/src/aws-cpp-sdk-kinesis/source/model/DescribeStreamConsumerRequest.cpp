@@ -12,13 +12,6 @@ using namespace Aws::Kinesis::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeStreamConsumerRequest::DescribeStreamConsumerRequest() : 
-    m_streamARNHasBeenSet(false),
-    m_consumerNameHasBeenSet(false),
-    m_consumerARNHasBeenSet(false)
-{
-}
-
 Aws::String DescribeStreamConsumerRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -27,7 +27,7 @@ namespace Model
   class StartBulkDeploymentResult
   {
   public:
-    AWS_GREENGRASS_API StartBulkDeploymentResult();
+    AWS_GREENGRASS_API StartBulkDeploymentResult() = default;
     AWS_GREENGRASS_API StartBulkDeploymentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GREENGRASS_API StartBulkDeploymentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,45 +36,42 @@ namespace Model
     /**
      * The ARN of the bulk deployment.
      */
-    inline const Aws::String& GetBulkDeploymentArn() const{ return m_bulkDeploymentArn; }
-    inline void SetBulkDeploymentArn(const Aws::String& value) { m_bulkDeploymentArn = value; }
-    inline void SetBulkDeploymentArn(Aws::String&& value) { m_bulkDeploymentArn = std::move(value); }
-    inline void SetBulkDeploymentArn(const char* value) { m_bulkDeploymentArn.assign(value); }
-    inline StartBulkDeploymentResult& WithBulkDeploymentArn(const Aws::String& value) { SetBulkDeploymentArn(value); return *this;}
-    inline StartBulkDeploymentResult& WithBulkDeploymentArn(Aws::String&& value) { SetBulkDeploymentArn(std::move(value)); return *this;}
-    inline StartBulkDeploymentResult& WithBulkDeploymentArn(const char* value) { SetBulkDeploymentArn(value); return *this;}
+    inline const Aws::String& GetBulkDeploymentArn() const { return m_bulkDeploymentArn; }
+    template<typename BulkDeploymentArnT = Aws::String>
+    void SetBulkDeploymentArn(BulkDeploymentArnT&& value) { m_bulkDeploymentArnHasBeenSet = true; m_bulkDeploymentArn = std::forward<BulkDeploymentArnT>(value); }
+    template<typename BulkDeploymentArnT = Aws::String>
+    StartBulkDeploymentResult& WithBulkDeploymentArn(BulkDeploymentArnT&& value) { SetBulkDeploymentArn(std::forward<BulkDeploymentArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The ID of the bulk deployment.
      */
-    inline const Aws::String& GetBulkDeploymentId() const{ return m_bulkDeploymentId; }
-    inline void SetBulkDeploymentId(const Aws::String& value) { m_bulkDeploymentId = value; }
-    inline void SetBulkDeploymentId(Aws::String&& value) { m_bulkDeploymentId = std::move(value); }
-    inline void SetBulkDeploymentId(const char* value) { m_bulkDeploymentId.assign(value); }
-    inline StartBulkDeploymentResult& WithBulkDeploymentId(const Aws::String& value) { SetBulkDeploymentId(value); return *this;}
-    inline StartBulkDeploymentResult& WithBulkDeploymentId(Aws::String&& value) { SetBulkDeploymentId(std::move(value)); return *this;}
-    inline StartBulkDeploymentResult& WithBulkDeploymentId(const char* value) { SetBulkDeploymentId(value); return *this;}
+    inline const Aws::String& GetBulkDeploymentId() const { return m_bulkDeploymentId; }
+    template<typename BulkDeploymentIdT = Aws::String>
+    void SetBulkDeploymentId(BulkDeploymentIdT&& value) { m_bulkDeploymentIdHasBeenSet = true; m_bulkDeploymentId = std::forward<BulkDeploymentIdT>(value); }
+    template<typename BulkDeploymentIdT = Aws::String>
+    StartBulkDeploymentResult& WithBulkDeploymentId(BulkDeploymentIdT&& value) { SetBulkDeploymentId(std::forward<BulkDeploymentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartBulkDeploymentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartBulkDeploymentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartBulkDeploymentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartBulkDeploymentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_bulkDeploymentArn;
+    bool m_bulkDeploymentArnHasBeenSet = false;
 
     Aws::String m_bulkDeploymentId;
+    bool m_bulkDeploymentIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,7 +28,7 @@ namespace Model
   class StopReplicationResult
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API StopReplicationResult();
+    AWS_DATABASEMIGRATIONSERVICE_API StopReplicationResult() = default;
     AWS_DATABASEMIGRATIONSERVICE_API StopReplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATABASEMIGRATIONSERVICE_API StopReplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The replication that DMS stopped.</p>
      */
-    inline const Replication& GetReplication() const{ return m_replication; }
-    inline void SetReplication(const Replication& value) { m_replication = value; }
-    inline void SetReplication(Replication&& value) { m_replication = std::move(value); }
-    inline StopReplicationResult& WithReplication(const Replication& value) { SetReplication(value); return *this;}
-    inline StopReplicationResult& WithReplication(Replication&& value) { SetReplication(std::move(value)); return *this;}
+    inline const Replication& GetReplication() const { return m_replication; }
+    template<typename ReplicationT = Replication>
+    void SetReplication(ReplicationT&& value) { m_replicationHasBeenSet = true; m_replication = std::forward<ReplicationT>(value); }
+    template<typename ReplicationT = Replication>
+    StopReplicationResult& WithReplication(ReplicationT&& value) { SetReplication(std::forward<ReplicationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StopReplicationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StopReplicationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StopReplicationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StopReplicationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Replication m_replication;
+    bool m_replicationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

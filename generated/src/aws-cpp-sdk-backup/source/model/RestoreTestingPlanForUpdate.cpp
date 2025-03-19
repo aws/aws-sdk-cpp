@@ -18,17 +18,7 @@ namespace Backup
 namespace Model
 {
 
-RestoreTestingPlanForUpdate::RestoreTestingPlanForUpdate() : 
-    m_recoveryPointSelectionHasBeenSet(false),
-    m_scheduleExpressionHasBeenSet(false),
-    m_scheduleExpressionTimezoneHasBeenSet(false),
-    m_startWindowHours(0),
-    m_startWindowHoursHasBeenSet(false)
-{
-}
-
 RestoreTestingPlanForUpdate::RestoreTestingPlanForUpdate(JsonView jsonValue)
-  : RestoreTestingPlanForUpdate()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ RestoreTestingPlanForUpdate& RestoreTestingPlanForUpdate::operator =(JsonView js
   if(jsonValue.ValueExists("RecoveryPointSelection"))
   {
     m_recoveryPointSelection = jsonValue.GetObject("RecoveryPointSelection");
-
     m_recoveryPointSelectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScheduleExpression"))
   {
     m_scheduleExpression = jsonValue.GetString("ScheduleExpression");
-
     m_scheduleExpressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScheduleExpressionTimezone"))
   {
     m_scheduleExpressionTimezone = jsonValue.GetString("ScheduleExpressionTimezone");
-
     m_scheduleExpressionTimezoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartWindowHours"))
   {
     m_startWindowHours = jsonValue.GetInteger("StartWindowHours");
-
     m_startWindowHoursHasBeenSet = true;
   }
-
   return *this;
 }
 

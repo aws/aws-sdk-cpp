@@ -18,13 +18,7 @@ namespace LexModelBuildingService
 namespace Model
 {
 
-InputContext::InputContext() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 InputContext::InputContext(JsonView jsonValue)
-  : InputContext()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ InputContext& InputContext::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

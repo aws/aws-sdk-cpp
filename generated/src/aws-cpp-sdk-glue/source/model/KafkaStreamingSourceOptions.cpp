@@ -18,37 +18,7 @@ namespace Glue
 namespace Model
 {
 
-KafkaStreamingSourceOptions::KafkaStreamingSourceOptions() : 
-    m_bootstrapServersHasBeenSet(false),
-    m_securityProtocolHasBeenSet(false),
-    m_connectionNameHasBeenSet(false),
-    m_topicNameHasBeenSet(false),
-    m_assignHasBeenSet(false),
-    m_subscribePatternHasBeenSet(false),
-    m_classificationHasBeenSet(false),
-    m_delimiterHasBeenSet(false),
-    m_startingOffsetsHasBeenSet(false),
-    m_endingOffsetsHasBeenSet(false),
-    m_pollTimeoutMs(0),
-    m_pollTimeoutMsHasBeenSet(false),
-    m_numRetries(0),
-    m_numRetriesHasBeenSet(false),
-    m_retryIntervalMs(0),
-    m_retryIntervalMsHasBeenSet(false),
-    m_maxOffsetsPerTrigger(0),
-    m_maxOffsetsPerTriggerHasBeenSet(false),
-    m_minPartitions(0),
-    m_minPartitionsHasBeenSet(false),
-    m_includeHeaders(false),
-    m_includeHeadersHasBeenSet(false),
-    m_addRecordTimestampHasBeenSet(false),
-    m_emitConsumerLagMetricsHasBeenSet(false),
-    m_startingTimestampHasBeenSet(false)
-{
-}
-
 KafkaStreamingSourceOptions::KafkaStreamingSourceOptions(JsonView jsonValue)
-  : KafkaStreamingSourceOptions()
 {
   *this = jsonValue;
 }
@@ -58,136 +28,98 @@ KafkaStreamingSourceOptions& KafkaStreamingSourceOptions::operator =(JsonView js
   if(jsonValue.ValueExists("BootstrapServers"))
   {
     m_bootstrapServers = jsonValue.GetString("BootstrapServers");
-
     m_bootstrapServersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityProtocol"))
   {
     m_securityProtocol = jsonValue.GetString("SecurityProtocol");
-
     m_securityProtocolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionName"))
   {
     m_connectionName = jsonValue.GetString("ConnectionName");
-
     m_connectionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TopicName"))
   {
     m_topicName = jsonValue.GetString("TopicName");
-
     m_topicNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Assign"))
   {
     m_assign = jsonValue.GetString("Assign");
-
     m_assignHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubscribePattern"))
   {
     m_subscribePattern = jsonValue.GetString("SubscribePattern");
-
     m_subscribePatternHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Classification"))
   {
     m_classification = jsonValue.GetString("Classification");
-
     m_classificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Delimiter"))
   {
     m_delimiter = jsonValue.GetString("Delimiter");
-
     m_delimiterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartingOffsets"))
   {
     m_startingOffsets = jsonValue.GetString("StartingOffsets");
-
     m_startingOffsetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndingOffsets"))
   {
     m_endingOffsets = jsonValue.GetString("EndingOffsets");
-
     m_endingOffsetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PollTimeoutMs"))
   {
     m_pollTimeoutMs = jsonValue.GetInt64("PollTimeoutMs");
-
     m_pollTimeoutMsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumRetries"))
   {
     m_numRetries = jsonValue.GetInteger("NumRetries");
-
     m_numRetriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RetryIntervalMs"))
   {
     m_retryIntervalMs = jsonValue.GetInt64("RetryIntervalMs");
-
     m_retryIntervalMsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxOffsetsPerTrigger"))
   {
     m_maxOffsetsPerTrigger = jsonValue.GetInt64("MaxOffsetsPerTrigger");
-
     m_maxOffsetsPerTriggerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinPartitions"))
   {
     m_minPartitions = jsonValue.GetInteger("MinPartitions");
-
     m_minPartitionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IncludeHeaders"))
   {
     m_includeHeaders = jsonValue.GetBool("IncludeHeaders");
-
     m_includeHeadersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AddRecordTimestamp"))
   {
     m_addRecordTimestamp = jsonValue.GetString("AddRecordTimestamp");
-
     m_addRecordTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EmitConsumerLagMetrics"))
   {
     m_emitConsumerLagMetrics = jsonValue.GetString("EmitConsumerLagMetrics");
-
     m_emitConsumerLagMetricsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartingTimestamp"))
   {
     m_startingTimestamp = jsonValue.GetString("StartingTimestamp");
-
     m_startingTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetComponentRequest::GetComponentRequest() : 
-    m_recipeOutputFormat(RecipeOutputFormat::NOT_SET),
-    m_recipeOutputFormatHasBeenSet(false),
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String GetComponentRequest::SerializePayload() const
 {
   return {};

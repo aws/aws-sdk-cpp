@@ -45,7 +45,7 @@ namespace Model
   class ServiceDeployment
   {
   public:
-    AWS_ECS_API ServiceDeployment();
+    AWS_ECS_API ServiceDeployment() = default;
     AWS_ECS_API ServiceDeployment(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API ServiceDeployment& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,42 +55,36 @@ namespace Model
     /**
      * <p>The ARN of the service deployment.</p>
      */
-    inline const Aws::String& GetServiceDeploymentArn() const{ return m_serviceDeploymentArn; }
+    inline const Aws::String& GetServiceDeploymentArn() const { return m_serviceDeploymentArn; }
     inline bool ServiceDeploymentArnHasBeenSet() const { return m_serviceDeploymentArnHasBeenSet; }
-    inline void SetServiceDeploymentArn(const Aws::String& value) { m_serviceDeploymentArnHasBeenSet = true; m_serviceDeploymentArn = value; }
-    inline void SetServiceDeploymentArn(Aws::String&& value) { m_serviceDeploymentArnHasBeenSet = true; m_serviceDeploymentArn = std::move(value); }
-    inline void SetServiceDeploymentArn(const char* value) { m_serviceDeploymentArnHasBeenSet = true; m_serviceDeploymentArn.assign(value); }
-    inline ServiceDeployment& WithServiceDeploymentArn(const Aws::String& value) { SetServiceDeploymentArn(value); return *this;}
-    inline ServiceDeployment& WithServiceDeploymentArn(Aws::String&& value) { SetServiceDeploymentArn(std::move(value)); return *this;}
-    inline ServiceDeployment& WithServiceDeploymentArn(const char* value) { SetServiceDeploymentArn(value); return *this;}
+    template<typename ServiceDeploymentArnT = Aws::String>
+    void SetServiceDeploymentArn(ServiceDeploymentArnT&& value) { m_serviceDeploymentArnHasBeenSet = true; m_serviceDeploymentArn = std::forward<ServiceDeploymentArnT>(value); }
+    template<typename ServiceDeploymentArnT = Aws::String>
+    ServiceDeployment& WithServiceDeploymentArn(ServiceDeploymentArnT&& value) { SetServiceDeploymentArn(std::forward<ServiceDeploymentArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the service for this service deployment.</p>
      */
-    inline const Aws::String& GetServiceArn() const{ return m_serviceArn; }
+    inline const Aws::String& GetServiceArn() const { return m_serviceArn; }
     inline bool ServiceArnHasBeenSet() const { return m_serviceArnHasBeenSet; }
-    inline void SetServiceArn(const Aws::String& value) { m_serviceArnHasBeenSet = true; m_serviceArn = value; }
-    inline void SetServiceArn(Aws::String&& value) { m_serviceArnHasBeenSet = true; m_serviceArn = std::move(value); }
-    inline void SetServiceArn(const char* value) { m_serviceArnHasBeenSet = true; m_serviceArn.assign(value); }
-    inline ServiceDeployment& WithServiceArn(const Aws::String& value) { SetServiceArn(value); return *this;}
-    inline ServiceDeployment& WithServiceArn(Aws::String&& value) { SetServiceArn(std::move(value)); return *this;}
-    inline ServiceDeployment& WithServiceArn(const char* value) { SetServiceArn(value); return *this;}
+    template<typename ServiceArnT = Aws::String>
+    void SetServiceArn(ServiceArnT&& value) { m_serviceArnHasBeenSet = true; m_serviceArn = std::forward<ServiceArnT>(value); }
+    template<typename ServiceArnT = Aws::String>
+    ServiceDeployment& WithServiceArn(ServiceArnT&& value) { SetServiceArn(std::forward<ServiceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the cluster that hosts the service.</p>
      */
-    inline const Aws::String& GetClusterArn() const{ return m_clusterArn; }
+    inline const Aws::String& GetClusterArn() const { return m_clusterArn; }
     inline bool ClusterArnHasBeenSet() const { return m_clusterArnHasBeenSet; }
-    inline void SetClusterArn(const Aws::String& value) { m_clusterArnHasBeenSet = true; m_clusterArn = value; }
-    inline void SetClusterArn(Aws::String&& value) { m_clusterArnHasBeenSet = true; m_clusterArn = std::move(value); }
-    inline void SetClusterArn(const char* value) { m_clusterArnHasBeenSet = true; m_clusterArn.assign(value); }
-    inline ServiceDeployment& WithClusterArn(const Aws::String& value) { SetClusterArn(value); return *this;}
-    inline ServiceDeployment& WithClusterArn(Aws::String&& value) { SetClusterArn(std::move(value)); return *this;}
-    inline ServiceDeployment& WithClusterArn(const char* value) { SetClusterArn(value); return *this;}
+    template<typename ClusterArnT = Aws::String>
+    void SetClusterArn(ClusterArnT&& value) { m_clusterArnHasBeenSet = true; m_clusterArn = std::forward<ClusterArnT>(value); }
+    template<typename ClusterArnT = Aws::String>
+    ServiceDeployment& WithClusterArn(ClusterArnT&& value) { SetClusterArn(std::forward<ClusterArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,12 +92,12 @@ namespace Model
      * <p>The time the service deployment was created. The format is yyyy-MM-dd
      * HH:mm:ss.SSSSSS.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline ServiceDeployment& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline ServiceDeployment& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    ServiceDeployment& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,12 +105,12 @@ namespace Model
      * <p>The time the service deployment statred. The format is yyyy-MM-dd
      * HH:mm:ss.SSSSSS.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartedAt() const{ return m_startedAt; }
+    inline const Aws::Utils::DateTime& GetStartedAt() const { return m_startedAt; }
     inline bool StartedAtHasBeenSet() const { return m_startedAtHasBeenSet; }
-    inline void SetStartedAt(const Aws::Utils::DateTime& value) { m_startedAtHasBeenSet = true; m_startedAt = value; }
-    inline void SetStartedAt(Aws::Utils::DateTime&& value) { m_startedAtHasBeenSet = true; m_startedAt = std::move(value); }
-    inline ServiceDeployment& WithStartedAt(const Aws::Utils::DateTime& value) { SetStartedAt(value); return *this;}
-    inline ServiceDeployment& WithStartedAt(Aws::Utils::DateTime&& value) { SetStartedAt(std::move(value)); return *this;}
+    template<typename StartedAtT = Aws::Utils::DateTime>
+    void SetStartedAt(StartedAtT&& value) { m_startedAtHasBeenSet = true; m_startedAt = std::forward<StartedAtT>(value); }
+    template<typename StartedAtT = Aws::Utils::DateTime>
+    ServiceDeployment& WithStartedAt(StartedAtT&& value) { SetStartedAt(std::forward<StartedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -124,12 +118,12 @@ namespace Model
      * <p>The time the service deployment finished. The format is yyyy-MM-dd
      * HH:mm:ss.SSSSSS.</p>
      */
-    inline const Aws::Utils::DateTime& GetFinishedAt() const{ return m_finishedAt; }
+    inline const Aws::Utils::DateTime& GetFinishedAt() const { return m_finishedAt; }
     inline bool FinishedAtHasBeenSet() const { return m_finishedAtHasBeenSet; }
-    inline void SetFinishedAt(const Aws::Utils::DateTime& value) { m_finishedAtHasBeenSet = true; m_finishedAt = value; }
-    inline void SetFinishedAt(Aws::Utils::DateTime&& value) { m_finishedAtHasBeenSet = true; m_finishedAt = std::move(value); }
-    inline ServiceDeployment& WithFinishedAt(const Aws::Utils::DateTime& value) { SetFinishedAt(value); return *this;}
-    inline ServiceDeployment& WithFinishedAt(Aws::Utils::DateTime&& value) { SetFinishedAt(std::move(value)); return *this;}
+    template<typename FinishedAtT = Aws::Utils::DateTime>
+    void SetFinishedAt(FinishedAtT&& value) { m_finishedAtHasBeenSet = true; m_finishedAt = std::forward<FinishedAtT>(value); }
+    template<typename FinishedAtT = Aws::Utils::DateTime>
+    ServiceDeployment& WithFinishedAt(FinishedAtT&& value) { SetFinishedAt(std::forward<FinishedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -140,12 +134,12 @@ namespace Model
      * <li> <p>The rollback option is not in use for the failure detection mechanism
      * (the circuit breaker or alarm-based) and the service fails.</p> </li> </ul>
      */
-    inline const Aws::Utils::DateTime& GetStoppedAt() const{ return m_stoppedAt; }
+    inline const Aws::Utils::DateTime& GetStoppedAt() const { return m_stoppedAt; }
     inline bool StoppedAtHasBeenSet() const { return m_stoppedAtHasBeenSet; }
-    inline void SetStoppedAt(const Aws::Utils::DateTime& value) { m_stoppedAtHasBeenSet = true; m_stoppedAt = value; }
-    inline void SetStoppedAt(Aws::Utils::DateTime&& value) { m_stoppedAtHasBeenSet = true; m_stoppedAt = std::move(value); }
-    inline ServiceDeployment& WithStoppedAt(const Aws::Utils::DateTime& value) { SetStoppedAt(value); return *this;}
-    inline ServiceDeployment& WithStoppedAt(Aws::Utils::DateTime&& value) { SetStoppedAt(std::move(value)); return *this;}
+    template<typename StoppedAtT = Aws::Utils::DateTime>
+    void SetStoppedAt(StoppedAtT&& value) { m_stoppedAtHasBeenSet = true; m_stoppedAt = std::forward<StoppedAtT>(value); }
+    template<typename StoppedAtT = Aws::Utils::DateTime>
+    ServiceDeployment& WithStoppedAt(StoppedAtT&& value) { SetStoppedAt(std::forward<StoppedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -153,50 +147,48 @@ namespace Model
      * <p>The time that the service deployment was last updated. The format is
      * yyyy-MM-dd HH:mm:ss.SSSSSS.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-    inline ServiceDeployment& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-    inline ServiceDeployment& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    ServiceDeployment& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The currently deployed workload configuration.</p>
      */
-    inline const Aws::Vector<ServiceRevisionSummary>& GetSourceServiceRevisions() const{ return m_sourceServiceRevisions; }
+    inline const Aws::Vector<ServiceRevisionSummary>& GetSourceServiceRevisions() const { return m_sourceServiceRevisions; }
     inline bool SourceServiceRevisionsHasBeenSet() const { return m_sourceServiceRevisionsHasBeenSet; }
-    inline void SetSourceServiceRevisions(const Aws::Vector<ServiceRevisionSummary>& value) { m_sourceServiceRevisionsHasBeenSet = true; m_sourceServiceRevisions = value; }
-    inline void SetSourceServiceRevisions(Aws::Vector<ServiceRevisionSummary>&& value) { m_sourceServiceRevisionsHasBeenSet = true; m_sourceServiceRevisions = std::move(value); }
-    inline ServiceDeployment& WithSourceServiceRevisions(const Aws::Vector<ServiceRevisionSummary>& value) { SetSourceServiceRevisions(value); return *this;}
-    inline ServiceDeployment& WithSourceServiceRevisions(Aws::Vector<ServiceRevisionSummary>&& value) { SetSourceServiceRevisions(std::move(value)); return *this;}
-    inline ServiceDeployment& AddSourceServiceRevisions(const ServiceRevisionSummary& value) { m_sourceServiceRevisionsHasBeenSet = true; m_sourceServiceRevisions.push_back(value); return *this; }
-    inline ServiceDeployment& AddSourceServiceRevisions(ServiceRevisionSummary&& value) { m_sourceServiceRevisionsHasBeenSet = true; m_sourceServiceRevisions.push_back(std::move(value)); return *this; }
+    template<typename SourceServiceRevisionsT = Aws::Vector<ServiceRevisionSummary>>
+    void SetSourceServiceRevisions(SourceServiceRevisionsT&& value) { m_sourceServiceRevisionsHasBeenSet = true; m_sourceServiceRevisions = std::forward<SourceServiceRevisionsT>(value); }
+    template<typename SourceServiceRevisionsT = Aws::Vector<ServiceRevisionSummary>>
+    ServiceDeployment& WithSourceServiceRevisions(SourceServiceRevisionsT&& value) { SetSourceServiceRevisions(std::forward<SourceServiceRevisionsT>(value)); return *this;}
+    template<typename SourceServiceRevisionsT = ServiceRevisionSummary>
+    ServiceDeployment& AddSourceServiceRevisions(SourceServiceRevisionsT&& value) { m_sourceServiceRevisionsHasBeenSet = true; m_sourceServiceRevisions.emplace_back(std::forward<SourceServiceRevisionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The workload configuration being deployed.</p>
      */
-    inline const ServiceRevisionSummary& GetTargetServiceRevision() const{ return m_targetServiceRevision; }
+    inline const ServiceRevisionSummary& GetTargetServiceRevision() const { return m_targetServiceRevision; }
     inline bool TargetServiceRevisionHasBeenSet() const { return m_targetServiceRevisionHasBeenSet; }
-    inline void SetTargetServiceRevision(const ServiceRevisionSummary& value) { m_targetServiceRevisionHasBeenSet = true; m_targetServiceRevision = value; }
-    inline void SetTargetServiceRevision(ServiceRevisionSummary&& value) { m_targetServiceRevisionHasBeenSet = true; m_targetServiceRevision = std::move(value); }
-    inline ServiceDeployment& WithTargetServiceRevision(const ServiceRevisionSummary& value) { SetTargetServiceRevision(value); return *this;}
-    inline ServiceDeployment& WithTargetServiceRevision(ServiceRevisionSummary&& value) { SetTargetServiceRevision(std::move(value)); return *this;}
+    template<typename TargetServiceRevisionT = ServiceRevisionSummary>
+    void SetTargetServiceRevision(TargetServiceRevisionT&& value) { m_targetServiceRevisionHasBeenSet = true; m_targetServiceRevision = std::forward<TargetServiceRevisionT>(value); }
+    template<typename TargetServiceRevisionT = ServiceRevisionSummary>
+    ServiceDeployment& WithTargetServiceRevision(TargetServiceRevisionT&& value) { SetTargetServiceRevision(std::forward<TargetServiceRevisionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The service deployment state.</p>
      */
-    inline const ServiceDeploymentStatus& GetStatus() const{ return m_status; }
+    inline ServiceDeploymentStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ServiceDeploymentStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ServiceDeploymentStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ServiceDeployment& WithStatus(const ServiceDeploymentStatus& value) { SetStatus(value); return *this;}
-    inline ServiceDeployment& WithStatus(ServiceDeploymentStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ServiceDeploymentStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ServiceDeployment& WithStatus(ServiceDeploymentStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -204,24 +196,22 @@ namespace Model
      * <p>Information about why the service deployment is in the current status. For
      * example, the circuit breaker detected a failure.</p>
      */
-    inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
+    inline const Aws::String& GetStatusReason() const { return m_statusReason; }
     inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
-    inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
-    inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
-    inline void SetStatusReason(const char* value) { m_statusReasonHasBeenSet = true; m_statusReason.assign(value); }
-    inline ServiceDeployment& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
-    inline ServiceDeployment& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
-    inline ServiceDeployment& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
+    template<typename StatusReasonT = Aws::String>
+    void SetStatusReason(StatusReasonT&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::forward<StatusReasonT>(value); }
+    template<typename StatusReasonT = Aws::String>
+    ServiceDeployment& WithStatusReason(StatusReasonT&& value) { SetStatusReason(std::forward<StatusReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const DeploymentConfiguration& GetDeploymentConfiguration() const{ return m_deploymentConfiguration; }
+    inline const DeploymentConfiguration& GetDeploymentConfiguration() const { return m_deploymentConfiguration; }
     inline bool DeploymentConfigurationHasBeenSet() const { return m_deploymentConfigurationHasBeenSet; }
-    inline void SetDeploymentConfiguration(const DeploymentConfiguration& value) { m_deploymentConfigurationHasBeenSet = true; m_deploymentConfiguration = value; }
-    inline void SetDeploymentConfiguration(DeploymentConfiguration&& value) { m_deploymentConfigurationHasBeenSet = true; m_deploymentConfiguration = std::move(value); }
-    inline ServiceDeployment& WithDeploymentConfiguration(const DeploymentConfiguration& value) { SetDeploymentConfiguration(value); return *this;}
-    inline ServiceDeployment& WithDeploymentConfiguration(DeploymentConfiguration&& value) { SetDeploymentConfiguration(std::move(value)); return *this;}
+    template<typename DeploymentConfigurationT = DeploymentConfiguration>
+    void SetDeploymentConfiguration(DeploymentConfigurationT&& value) { m_deploymentConfigurationHasBeenSet = true; m_deploymentConfiguration = std::forward<DeploymentConfigurationT>(value); }
+    template<typename DeploymentConfigurationT = DeploymentConfiguration>
+    ServiceDeployment& WithDeploymentConfiguration(DeploymentConfigurationT&& value) { SetDeploymentConfiguration(std::forward<DeploymentConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -229,12 +219,12 @@ namespace Model
      * <p>The rollback options the service deployment uses when the deployment
      * fails.</p>
      */
-    inline const Rollback& GetRollback() const{ return m_rollback; }
+    inline const Rollback& GetRollback() const { return m_rollback; }
     inline bool RollbackHasBeenSet() const { return m_rollbackHasBeenSet; }
-    inline void SetRollback(const Rollback& value) { m_rollbackHasBeenSet = true; m_rollback = value; }
-    inline void SetRollback(Rollback&& value) { m_rollbackHasBeenSet = true; m_rollback = std::move(value); }
-    inline ServiceDeployment& WithRollback(const Rollback& value) { SetRollback(value); return *this;}
-    inline ServiceDeployment& WithRollback(Rollback&& value) { SetRollback(std::move(value)); return *this;}
+    template<typename RollbackT = Rollback>
+    void SetRollback(RollbackT&& value) { m_rollbackHasBeenSet = true; m_rollback = std::forward<RollbackT>(value); }
+    template<typename RollbackT = Rollback>
+    ServiceDeployment& WithRollback(RollbackT&& value) { SetRollback(std::forward<RollbackT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -242,24 +232,24 @@ namespace Model
      * <p>The circuit breaker configuration that determines a service deployment
      * failed.</p>
      */
-    inline const ServiceDeploymentCircuitBreaker& GetDeploymentCircuitBreaker() const{ return m_deploymentCircuitBreaker; }
+    inline const ServiceDeploymentCircuitBreaker& GetDeploymentCircuitBreaker() const { return m_deploymentCircuitBreaker; }
     inline bool DeploymentCircuitBreakerHasBeenSet() const { return m_deploymentCircuitBreakerHasBeenSet; }
-    inline void SetDeploymentCircuitBreaker(const ServiceDeploymentCircuitBreaker& value) { m_deploymentCircuitBreakerHasBeenSet = true; m_deploymentCircuitBreaker = value; }
-    inline void SetDeploymentCircuitBreaker(ServiceDeploymentCircuitBreaker&& value) { m_deploymentCircuitBreakerHasBeenSet = true; m_deploymentCircuitBreaker = std::move(value); }
-    inline ServiceDeployment& WithDeploymentCircuitBreaker(const ServiceDeploymentCircuitBreaker& value) { SetDeploymentCircuitBreaker(value); return *this;}
-    inline ServiceDeployment& WithDeploymentCircuitBreaker(ServiceDeploymentCircuitBreaker&& value) { SetDeploymentCircuitBreaker(std::move(value)); return *this;}
+    template<typename DeploymentCircuitBreakerT = ServiceDeploymentCircuitBreaker>
+    void SetDeploymentCircuitBreaker(DeploymentCircuitBreakerT&& value) { m_deploymentCircuitBreakerHasBeenSet = true; m_deploymentCircuitBreaker = std::forward<DeploymentCircuitBreakerT>(value); }
+    template<typename DeploymentCircuitBreakerT = ServiceDeploymentCircuitBreaker>
+    ServiceDeployment& WithDeploymentCircuitBreaker(DeploymentCircuitBreakerT&& value) { SetDeploymentCircuitBreaker(std::forward<DeploymentCircuitBreakerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The CloudWatch alarms that determine when a service deployment fails.</p>
      */
-    inline const ServiceDeploymentAlarms& GetAlarms() const{ return m_alarms; }
+    inline const ServiceDeploymentAlarms& GetAlarms() const { return m_alarms; }
     inline bool AlarmsHasBeenSet() const { return m_alarmsHasBeenSet; }
-    inline void SetAlarms(const ServiceDeploymentAlarms& value) { m_alarmsHasBeenSet = true; m_alarms = value; }
-    inline void SetAlarms(ServiceDeploymentAlarms&& value) { m_alarmsHasBeenSet = true; m_alarms = std::move(value); }
-    inline ServiceDeployment& WithAlarms(const ServiceDeploymentAlarms& value) { SetAlarms(value); return *this;}
-    inline ServiceDeployment& WithAlarms(ServiceDeploymentAlarms&& value) { SetAlarms(std::move(value)); return *this;}
+    template<typename AlarmsT = ServiceDeploymentAlarms>
+    void SetAlarms(AlarmsT&& value) { m_alarmsHasBeenSet = true; m_alarms = std::forward<AlarmsT>(value); }
+    template<typename AlarmsT = ServiceDeploymentAlarms>
+    ServiceDeployment& WithAlarms(AlarmsT&& value) { SetAlarms(std::forward<AlarmsT>(value)); return *this;}
     ///@}
   private:
 
@@ -272,19 +262,19 @@ namespace Model
     Aws::String m_clusterArn;
     bool m_clusterArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startedAt;
+    Aws::Utils::DateTime m_startedAt{};
     bool m_startedAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_finishedAt;
+    Aws::Utils::DateTime m_finishedAt{};
     bool m_finishedAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_stoppedAt;
+    Aws::Utils::DateTime m_stoppedAt{};
     bool m_stoppedAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
+    Aws::Utils::DateTime m_updatedAt{};
     bool m_updatedAtHasBeenSet = false;
 
     Aws::Vector<ServiceRevisionSummary> m_sourceServiceRevisions;
@@ -293,7 +283,7 @@ namespace Model
     ServiceRevisionSummary m_targetServiceRevision;
     bool m_targetServiceRevisionHasBeenSet = false;
 
-    ServiceDeploymentStatus m_status;
+    ServiceDeploymentStatus m_status{ServiceDeploymentStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;

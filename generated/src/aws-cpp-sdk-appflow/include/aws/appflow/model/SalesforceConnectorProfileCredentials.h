@@ -34,7 +34,7 @@ namespace Model
   class SalesforceConnectorProfileCredentials
   {
   public:
-    AWS_APPFLOW_API SalesforceConnectorProfileCredentials();
+    AWS_APPFLOW_API SalesforceConnectorProfileCredentials() = default;
     AWS_APPFLOW_API SalesforceConnectorProfileCredentials(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API SalesforceConnectorProfileCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p> The credentials used to access protected Salesforce resources. </p>
      */
-    inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
+    inline const Aws::String& GetAccessToken() const { return m_accessToken; }
     inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
-    inline void SetAccessToken(const Aws::String& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
-    inline void SetAccessToken(Aws::String&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::move(value); }
-    inline void SetAccessToken(const char* value) { m_accessTokenHasBeenSet = true; m_accessToken.assign(value); }
-    inline SalesforceConnectorProfileCredentials& WithAccessToken(const Aws::String& value) { SetAccessToken(value); return *this;}
-    inline SalesforceConnectorProfileCredentials& WithAccessToken(Aws::String&& value) { SetAccessToken(std::move(value)); return *this;}
-    inline SalesforceConnectorProfileCredentials& WithAccessToken(const char* value) { SetAccessToken(value); return *this;}
+    template<typename AccessTokenT = Aws::String>
+    void SetAccessToken(AccessTokenT&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::forward<AccessTokenT>(value); }
+    template<typename AccessTokenT = Aws::String>
+    SalesforceConnectorProfileCredentials& WithAccessToken(AccessTokenT&& value) { SetAccessToken(std::forward<AccessTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The credentials used to acquire new access tokens. </p>
      */
-    inline const Aws::String& GetRefreshToken() const{ return m_refreshToken; }
+    inline const Aws::String& GetRefreshToken() const { return m_refreshToken; }
     inline bool RefreshTokenHasBeenSet() const { return m_refreshTokenHasBeenSet; }
-    inline void SetRefreshToken(const Aws::String& value) { m_refreshTokenHasBeenSet = true; m_refreshToken = value; }
-    inline void SetRefreshToken(Aws::String&& value) { m_refreshTokenHasBeenSet = true; m_refreshToken = std::move(value); }
-    inline void SetRefreshToken(const char* value) { m_refreshTokenHasBeenSet = true; m_refreshToken.assign(value); }
-    inline SalesforceConnectorProfileCredentials& WithRefreshToken(const Aws::String& value) { SetRefreshToken(value); return *this;}
-    inline SalesforceConnectorProfileCredentials& WithRefreshToken(Aws::String&& value) { SetRefreshToken(std::move(value)); return *this;}
-    inline SalesforceConnectorProfileCredentials& WithRefreshToken(const char* value) { SetRefreshToken(value); return *this;}
+    template<typename RefreshTokenT = Aws::String>
+    void SetRefreshToken(RefreshTokenT&& value) { m_refreshTokenHasBeenSet = true; m_refreshToken = std::forward<RefreshTokenT>(value); }
+    template<typename RefreshTokenT = Aws::String>
+    SalesforceConnectorProfileCredentials& WithRefreshToken(RefreshTokenT&& value) { SetRefreshToken(std::forward<RefreshTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,12 +69,12 @@ namespace Model
      * <p> The OAuth requirement needed to request security tokens from the connector
      * endpoint. </p>
      */
-    inline const ConnectorOAuthRequest& GetOAuthRequest() const{ return m_oAuthRequest; }
+    inline const ConnectorOAuthRequest& GetOAuthRequest() const { return m_oAuthRequest; }
     inline bool OAuthRequestHasBeenSet() const { return m_oAuthRequestHasBeenSet; }
-    inline void SetOAuthRequest(const ConnectorOAuthRequest& value) { m_oAuthRequestHasBeenSet = true; m_oAuthRequest = value; }
-    inline void SetOAuthRequest(ConnectorOAuthRequest&& value) { m_oAuthRequestHasBeenSet = true; m_oAuthRequest = std::move(value); }
-    inline SalesforceConnectorProfileCredentials& WithOAuthRequest(const ConnectorOAuthRequest& value) { SetOAuthRequest(value); return *this;}
-    inline SalesforceConnectorProfileCredentials& WithOAuthRequest(ConnectorOAuthRequest&& value) { SetOAuthRequest(std::move(value)); return *this;}
+    template<typename OAuthRequestT = ConnectorOAuthRequest>
+    void SetOAuthRequest(OAuthRequestT&& value) { m_oAuthRequestHasBeenSet = true; m_oAuthRequest = std::forward<OAuthRequestT>(value); }
+    template<typename OAuthRequestT = ConnectorOAuthRequest>
+    SalesforceConnectorProfileCredentials& WithOAuthRequest(OAuthRequestT&& value) { SetOAuthRequest(std::forward<OAuthRequestT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,14 +82,12 @@ namespace Model
      * <p> The secret manager ARN, which contains the client ID and client secret of
      * the connected app. </p>
      */
-    inline const Aws::String& GetClientCredentialsArn() const{ return m_clientCredentialsArn; }
+    inline const Aws::String& GetClientCredentialsArn() const { return m_clientCredentialsArn; }
     inline bool ClientCredentialsArnHasBeenSet() const { return m_clientCredentialsArnHasBeenSet; }
-    inline void SetClientCredentialsArn(const Aws::String& value) { m_clientCredentialsArnHasBeenSet = true; m_clientCredentialsArn = value; }
-    inline void SetClientCredentialsArn(Aws::String&& value) { m_clientCredentialsArnHasBeenSet = true; m_clientCredentialsArn = std::move(value); }
-    inline void SetClientCredentialsArn(const char* value) { m_clientCredentialsArnHasBeenSet = true; m_clientCredentialsArn.assign(value); }
-    inline SalesforceConnectorProfileCredentials& WithClientCredentialsArn(const Aws::String& value) { SetClientCredentialsArn(value); return *this;}
-    inline SalesforceConnectorProfileCredentials& WithClientCredentialsArn(Aws::String&& value) { SetClientCredentialsArn(std::move(value)); return *this;}
-    inline SalesforceConnectorProfileCredentials& WithClientCredentialsArn(const char* value) { SetClientCredentialsArn(value); return *this;}
+    template<typename ClientCredentialsArnT = Aws::String>
+    void SetClientCredentialsArn(ClientCredentialsArnT&& value) { m_clientCredentialsArnHasBeenSet = true; m_clientCredentialsArn = std::forward<ClientCredentialsArnT>(value); }
+    template<typename ClientCredentialsArnT = Aws::String>
+    SalesforceConnectorProfileCredentials& WithClientCredentialsArn(ClientCredentialsArnT&& value) { SetClientCredentialsArn(std::forward<ClientCredentialsArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,12 +107,10 @@ namespace Model
      * </dl>  <p>The CLIENT_CREDENTIALS value is not supported for
      * Salesforce.</p> 
      */
-    inline const OAuth2GrantType& GetOAuth2GrantType() const{ return m_oAuth2GrantType; }
+    inline OAuth2GrantType GetOAuth2GrantType() const { return m_oAuth2GrantType; }
     inline bool OAuth2GrantTypeHasBeenSet() const { return m_oAuth2GrantTypeHasBeenSet; }
-    inline void SetOAuth2GrantType(const OAuth2GrantType& value) { m_oAuth2GrantTypeHasBeenSet = true; m_oAuth2GrantType = value; }
-    inline void SetOAuth2GrantType(OAuth2GrantType&& value) { m_oAuth2GrantTypeHasBeenSet = true; m_oAuth2GrantType = std::move(value); }
-    inline SalesforceConnectorProfileCredentials& WithOAuth2GrantType(const OAuth2GrantType& value) { SetOAuth2GrantType(value); return *this;}
-    inline SalesforceConnectorProfileCredentials& WithOAuth2GrantType(OAuth2GrantType&& value) { SetOAuth2GrantType(std::move(value)); return *this;}
+    inline void SetOAuth2GrantType(OAuth2GrantType value) { m_oAuth2GrantTypeHasBeenSet = true; m_oAuth2GrantType = value; }
+    inline SalesforceConnectorProfileCredentials& WithOAuth2GrantType(OAuth2GrantType value) { SetOAuth2GrantType(value); return *this;}
     ///@}
 
     ///@{
@@ -126,14 +118,12 @@ namespace Model
      * <p>A JSON web token (JWT) that authorizes Amazon AppFlow to access your
      * Salesforce records.</p>
      */
-    inline const Aws::String& GetJwtToken() const{ return m_jwtToken; }
+    inline const Aws::String& GetJwtToken() const { return m_jwtToken; }
     inline bool JwtTokenHasBeenSet() const { return m_jwtTokenHasBeenSet; }
-    inline void SetJwtToken(const Aws::String& value) { m_jwtTokenHasBeenSet = true; m_jwtToken = value; }
-    inline void SetJwtToken(Aws::String&& value) { m_jwtTokenHasBeenSet = true; m_jwtToken = std::move(value); }
-    inline void SetJwtToken(const char* value) { m_jwtTokenHasBeenSet = true; m_jwtToken.assign(value); }
-    inline SalesforceConnectorProfileCredentials& WithJwtToken(const Aws::String& value) { SetJwtToken(value); return *this;}
-    inline SalesforceConnectorProfileCredentials& WithJwtToken(Aws::String&& value) { SetJwtToken(std::move(value)); return *this;}
-    inline SalesforceConnectorProfileCredentials& WithJwtToken(const char* value) { SetJwtToken(value); return *this;}
+    template<typename JwtTokenT = Aws::String>
+    void SetJwtToken(JwtTokenT&& value) { m_jwtTokenHasBeenSet = true; m_jwtToken = std::forward<JwtTokenT>(value); }
+    template<typename JwtTokenT = Aws::String>
+    SalesforceConnectorProfileCredentials& WithJwtToken(JwtTokenT&& value) { SetJwtToken(std::forward<JwtTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -149,7 +139,7 @@ namespace Model
     Aws::String m_clientCredentialsArn;
     bool m_clientCredentialsArnHasBeenSet = false;
 
-    OAuth2GrantType m_oAuth2GrantType;
+    OAuth2GrantType m_oAuth2GrantType{OAuth2GrantType::NOT_SET};
     bool m_oAuth2GrantTypeHasBeenSet = false;
 
     Aws::String m_jwtToken;

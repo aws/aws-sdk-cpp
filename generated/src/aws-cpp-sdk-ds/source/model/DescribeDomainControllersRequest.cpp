@@ -12,15 +12,6 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeDomainControllersRequest::DescribeDomainControllersRequest() : 
-    m_directoryIdHasBeenSet(false),
-    m_domainControllerIdsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDomainControllersRequest::SerializePayload() const
 {
   JsonValue payload;

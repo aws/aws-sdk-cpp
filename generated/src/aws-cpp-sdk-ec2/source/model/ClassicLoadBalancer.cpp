@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ClassicLoadBalancer::ClassicLoadBalancer() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 ClassicLoadBalancer::ClassicLoadBalancer(const XmlNode& xmlNode)
-  : ClassicLoadBalancer()
 {
   *this = xmlNode;
 }

@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-TaskTemplateDefaults::TaskTemplateDefaults() : 
-    m_defaultFieldValuesHasBeenSet(false)
-{
-}
-
 TaskTemplateDefaults::TaskTemplateDefaults(JsonView jsonValue)
-  : TaskTemplateDefaults()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ TaskTemplateDefaults& TaskTemplateDefaults::operator =(JsonView jsonValue)
     }
     m_defaultFieldValuesHasBeenSet = true;
   }
-
   return *this;
 }
 

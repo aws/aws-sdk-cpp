@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeDomainsResult::DescribeDomainsResult()
-{
-}
-
 DescribeDomainsResult::DescribeDomainsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,18 +38,21 @@ DescribeDomainsResult& DescribeDomainsResult::operator =(const Aws::AmazonWebSer
     if(!domainStatusListNode.IsNull())
     {
       XmlNode domainStatusListMember = domainStatusListNode.FirstChild("member");
+      m_domainStatusListHasBeenSet = !domainStatusListMember.IsNull();
       while(!domainStatusListMember.IsNull())
       {
         m_domainStatusList.push_back(domainStatusListMember);
         domainStatusListMember = domainStatusListMember.NextNode("member");
       }
 
+      m_domainStatusListHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::CloudSearch::Model::DescribeDomainsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

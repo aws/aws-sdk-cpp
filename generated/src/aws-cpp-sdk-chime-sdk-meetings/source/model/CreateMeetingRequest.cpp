@@ -12,20 +12,6 @@ using namespace Aws::ChimeSDKMeetings::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateMeetingRequest::CreateMeetingRequest() : 
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_mediaRegionHasBeenSet(false),
-    m_meetingHostIdHasBeenSet(false),
-    m_externalMeetingIdHasBeenSet(false),
-    m_notificationsConfigurationHasBeenSet(false),
-    m_meetingFeaturesHasBeenSet(false),
-    m_primaryMeetingIdHasBeenSet(false),
-    m_tenantIdsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateMeetingRequest::SerializePayload() const
 {
   JsonValue payload;

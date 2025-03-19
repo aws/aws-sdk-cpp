@@ -18,14 +18,7 @@ namespace ResourceGroups
 namespace Model
 {
 
-ListTagSyncTasksFilter::ListTagSyncTasksFilter() : 
-    m_groupArnHasBeenSet(false),
-    m_groupNameHasBeenSet(false)
-{
-}
-
 ListTagSyncTasksFilter::ListTagSyncTasksFilter(JsonView jsonValue)
-  : ListTagSyncTasksFilter()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ListTagSyncTasksFilter& ListTagSyncTasksFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GroupArn"))
   {
     m_groupArn = jsonValue.GetString("GroupArn");
-
     m_groupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupName"))
   {
     m_groupName = jsonValue.GetString("GroupName");
-
     m_groupNameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class GetXssMatchSetResult
   {
   public:
-    AWS_WAF_API GetXssMatchSetResult();
+    AWS_WAF_API GetXssMatchSetResult() = default;
     AWS_WAF_API GetXssMatchSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WAF_API GetXssMatchSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -50,28 +50,28 @@ namespace Model
      * </p> </li> <li> <p> <a>FieldToMatch</a>: Contains <code>Data</code> and
      * <code>Type</code> </p> </li> </ul>
      */
-    inline const XssMatchSet& GetXssMatchSet() const{ return m_xssMatchSet; }
-    inline void SetXssMatchSet(const XssMatchSet& value) { m_xssMatchSet = value; }
-    inline void SetXssMatchSet(XssMatchSet&& value) { m_xssMatchSet = std::move(value); }
-    inline GetXssMatchSetResult& WithXssMatchSet(const XssMatchSet& value) { SetXssMatchSet(value); return *this;}
-    inline GetXssMatchSetResult& WithXssMatchSet(XssMatchSet&& value) { SetXssMatchSet(std::move(value)); return *this;}
+    inline const XssMatchSet& GetXssMatchSet() const { return m_xssMatchSet; }
+    template<typename XssMatchSetT = XssMatchSet>
+    void SetXssMatchSet(XssMatchSetT&& value) { m_xssMatchSetHasBeenSet = true; m_xssMatchSet = std::forward<XssMatchSetT>(value); }
+    template<typename XssMatchSetT = XssMatchSet>
+    GetXssMatchSetResult& WithXssMatchSet(XssMatchSetT&& value) { SetXssMatchSet(std::forward<XssMatchSetT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetXssMatchSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetXssMatchSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetXssMatchSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetXssMatchSetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     XssMatchSet m_xssMatchSet;
+    bool m_xssMatchSetHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

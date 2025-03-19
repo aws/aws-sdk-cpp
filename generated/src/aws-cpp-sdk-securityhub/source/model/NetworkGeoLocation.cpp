@@ -18,18 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-NetworkGeoLocation::NetworkGeoLocation() : 
-    m_cityHasBeenSet(false),
-    m_countryHasBeenSet(false),
-    m_lat(0.0),
-    m_latHasBeenSet(false),
-    m_lon(0.0),
-    m_lonHasBeenSet(false)
-{
-}
-
 NetworkGeoLocation::NetworkGeoLocation(JsonView jsonValue)
-  : NetworkGeoLocation()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ NetworkGeoLocation& NetworkGeoLocation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("City"))
   {
     m_city = jsonValue.GetString("City");
-
     m_cityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Country"))
   {
     m_country = jsonValue.GetString("Country");
-
     m_countryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Lat"))
   {
     m_lat = jsonValue.GetDouble("Lat");
-
     m_latHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Lon"))
   {
     m_lon = jsonValue.GetDouble("Lon");
-
     m_lonHasBeenSet = true;
   }
-
   return *this;
 }
 

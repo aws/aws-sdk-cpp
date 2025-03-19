@@ -10,12 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-TagUserRequest::TagUserRequest() : 
-    m_userNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String TagUserRequest::SerializePayload() const
 {
   Aws::StringStream ss;

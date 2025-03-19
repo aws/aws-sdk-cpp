@@ -18,16 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-ChallengeResponseType::ChallengeResponseType() : 
-    m_challengeName(ChallengeName::NOT_SET),
-    m_challengeNameHasBeenSet(false),
-    m_challengeResponse(ChallengeResponse::NOT_SET),
-    m_challengeResponseHasBeenSet(false)
-{
-}
-
 ChallengeResponseType::ChallengeResponseType(JsonView jsonValue)
-  : ChallengeResponseType()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ChallengeResponseType& ChallengeResponseType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ChallengeName"))
   {
     m_challengeName = ChallengeNameMapper::GetChallengeNameForName(jsonValue.GetString("ChallengeName"));
-
     m_challengeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChallengeResponse"))
   {
     m_challengeResponse = ChallengeResponseMapper::GetChallengeResponseForName(jsonValue.GetString("ChallengeResponse"));
-
     m_challengeResponseHasBeenSet = true;
   }
-
   return *this;
 }
 

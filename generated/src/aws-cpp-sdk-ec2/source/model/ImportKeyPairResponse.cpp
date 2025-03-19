@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ImportKeyPairResponse::ImportKeyPairResponse()
-{
-}
-
 ImportKeyPairResponse::ImportKeyPairResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,27 +38,32 @@ ImportKeyPairResponse& ImportKeyPairResponse::operator =(const Aws::AmazonWebSer
     if(!keyFingerprintNode.IsNull())
     {
       m_keyFingerprint = Aws::Utils::Xml::DecodeEscapedXmlText(keyFingerprintNode.GetText());
+      m_keyFingerprintHasBeenSet = true;
     }
     XmlNode keyNameNode = resultNode.FirstChild("keyName");
     if(!keyNameNode.IsNull())
     {
       m_keyName = Aws::Utils::Xml::DecodeEscapedXmlText(keyNameNode.GetText());
+      m_keyNameHasBeenSet = true;
     }
     XmlNode keyPairIdNode = resultNode.FirstChild("keyPairId");
     if(!keyPairIdNode.IsNull())
     {
       m_keyPairId = Aws::Utils::Xml::DecodeEscapedXmlText(keyPairIdNode.GetText());
+      m_keyPairIdHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
+      m_tagsHasBeenSet = true;
     }
   }
 
@@ -71,6 +72,7 @@ ImportKeyPairResponse& ImportKeyPairResponse::operator =(const Aws::AmazonWebSer
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::ImportKeyPairResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

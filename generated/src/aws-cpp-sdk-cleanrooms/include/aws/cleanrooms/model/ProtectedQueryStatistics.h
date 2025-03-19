@@ -32,7 +32,7 @@ namespace Model
   class ProtectedQueryStatistics
   {
   public:
-    AWS_CLEANROOMS_API ProtectedQueryStatistics();
+    AWS_CLEANROOMS_API ProtectedQueryStatistics() = default;
     AWS_CLEANROOMS_API ProtectedQueryStatistics(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API ProtectedQueryStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * <p>The duration of the protected query, from creation until query completion, in
      * milliseconds.</p>
      */
-    inline long long GetTotalDurationInMillis() const{ return m_totalDurationInMillis; }
+    inline long long GetTotalDurationInMillis() const { return m_totalDurationInMillis; }
     inline bool TotalDurationInMillisHasBeenSet() const { return m_totalDurationInMillisHasBeenSet; }
     inline void SetTotalDurationInMillis(long long value) { m_totalDurationInMillisHasBeenSet = true; m_totalDurationInMillis = value; }
     inline ProtectedQueryStatistics& WithTotalDurationInMillis(long long value) { SetTotalDurationInMillis(value); return *this;}
@@ -53,16 +53,16 @@ namespace Model
     /**
      * <p> The billed resource utilization.</p>
      */
-    inline const BilledResourceUtilization& GetBilledResourceUtilization() const{ return m_billedResourceUtilization; }
+    inline const BilledResourceUtilization& GetBilledResourceUtilization() const { return m_billedResourceUtilization; }
     inline bool BilledResourceUtilizationHasBeenSet() const { return m_billedResourceUtilizationHasBeenSet; }
-    inline void SetBilledResourceUtilization(const BilledResourceUtilization& value) { m_billedResourceUtilizationHasBeenSet = true; m_billedResourceUtilization = value; }
-    inline void SetBilledResourceUtilization(BilledResourceUtilization&& value) { m_billedResourceUtilizationHasBeenSet = true; m_billedResourceUtilization = std::move(value); }
-    inline ProtectedQueryStatistics& WithBilledResourceUtilization(const BilledResourceUtilization& value) { SetBilledResourceUtilization(value); return *this;}
-    inline ProtectedQueryStatistics& WithBilledResourceUtilization(BilledResourceUtilization&& value) { SetBilledResourceUtilization(std::move(value)); return *this;}
+    template<typename BilledResourceUtilizationT = BilledResourceUtilization>
+    void SetBilledResourceUtilization(BilledResourceUtilizationT&& value) { m_billedResourceUtilizationHasBeenSet = true; m_billedResourceUtilization = std::forward<BilledResourceUtilizationT>(value); }
+    template<typename BilledResourceUtilizationT = BilledResourceUtilization>
+    ProtectedQueryStatistics& WithBilledResourceUtilization(BilledResourceUtilizationT&& value) { SetBilledResourceUtilization(std::forward<BilledResourceUtilizationT>(value)); return *this;}
     ///@}
   private:
 
-    long long m_totalDurationInMillis;
+    long long m_totalDurationInMillis{0};
     bool m_totalDurationInMillisHasBeenSet = false;
 
     BilledResourceUtilization m_billedResourceUtilization;

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteApplicationCloudWatchLoggingOptionResult::DeleteApplicationCloudWatchLoggingOptionResult() : 
-    m_applicationVersionId(0)
-{
-}
-
 DeleteApplicationCloudWatchLoggingOptionResult::DeleteApplicationCloudWatchLoggingOptionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteApplicationCloudWatchLoggingOptionResult()
 {
   *this = result;
 }
@@ -34,15 +28,13 @@ DeleteApplicationCloudWatchLoggingOptionResult& DeleteApplicationCloudWatchLoggi
   if(jsonValue.ValueExists("ApplicationARN"))
   {
     m_applicationARN = jsonValue.GetString("ApplicationARN");
-
+    m_applicationARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationVersionId"))
   {
     m_applicationVersionId = jsonValue.GetInt64("ApplicationVersionId");
-
+    m_applicationVersionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CloudWatchLoggingOptionDescriptions"))
   {
     Aws::Utils::Array<JsonView> cloudWatchLoggingOptionDescriptionsJsonList = jsonValue.GetArray("CloudWatchLoggingOptionDescriptions");
@@ -50,20 +42,20 @@ DeleteApplicationCloudWatchLoggingOptionResult& DeleteApplicationCloudWatchLoggi
     {
       m_cloudWatchLoggingOptionDescriptions.push_back(cloudWatchLoggingOptionDescriptionsJsonList[cloudWatchLoggingOptionDescriptionsIndex].AsObject());
     }
+    m_cloudWatchLoggingOptionDescriptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OperationId"))
   {
     m_operationId = jsonValue.GetString("OperationId");
-
+    m_operationIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

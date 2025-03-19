@@ -32,7 +32,7 @@ namespace Model
   class MacHost
   {
   public:
-    AWS_EC2_API MacHost();
+    AWS_EC2_API MacHost() = default;
     AWS_EC2_API MacHost(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API MacHost& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p> The EC2 Mac Dedicated Host ID. </p>
      */
-    inline const Aws::String& GetHostId() const{ return m_hostId; }
+    inline const Aws::String& GetHostId() const { return m_hostId; }
     inline bool HostIdHasBeenSet() const { return m_hostIdHasBeenSet; }
-    inline void SetHostId(const Aws::String& value) { m_hostIdHasBeenSet = true; m_hostId = value; }
-    inline void SetHostId(Aws::String&& value) { m_hostIdHasBeenSet = true; m_hostId = std::move(value); }
-    inline void SetHostId(const char* value) { m_hostIdHasBeenSet = true; m_hostId.assign(value); }
-    inline MacHost& WithHostId(const Aws::String& value) { SetHostId(value); return *this;}
-    inline MacHost& WithHostId(Aws::String&& value) { SetHostId(std::move(value)); return *this;}
-    inline MacHost& WithHostId(const char* value) { SetHostId(value); return *this;}
+    template<typename HostIdT = Aws::String>
+    void SetHostId(HostIdT&& value) { m_hostIdHasBeenSet = true; m_hostId = std::forward<HostIdT>(value); }
+    template<typename HostIdT = Aws::String>
+    MacHost& WithHostId(HostIdT&& value) { SetHostId(std::forward<HostIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,15 +57,14 @@ namespace Model
      * <p> The latest macOS versions that the EC2 Mac Dedicated Host can launch without
      * being upgraded. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetMacOSLatestSupportedVersions() const{ return m_macOSLatestSupportedVersions; }
+    inline const Aws::Vector<Aws::String>& GetMacOSLatestSupportedVersions() const { return m_macOSLatestSupportedVersions; }
     inline bool MacOSLatestSupportedVersionsHasBeenSet() const { return m_macOSLatestSupportedVersionsHasBeenSet; }
-    inline void SetMacOSLatestSupportedVersions(const Aws::Vector<Aws::String>& value) { m_macOSLatestSupportedVersionsHasBeenSet = true; m_macOSLatestSupportedVersions = value; }
-    inline void SetMacOSLatestSupportedVersions(Aws::Vector<Aws::String>&& value) { m_macOSLatestSupportedVersionsHasBeenSet = true; m_macOSLatestSupportedVersions = std::move(value); }
-    inline MacHost& WithMacOSLatestSupportedVersions(const Aws::Vector<Aws::String>& value) { SetMacOSLatestSupportedVersions(value); return *this;}
-    inline MacHost& WithMacOSLatestSupportedVersions(Aws::Vector<Aws::String>&& value) { SetMacOSLatestSupportedVersions(std::move(value)); return *this;}
-    inline MacHost& AddMacOSLatestSupportedVersions(const Aws::String& value) { m_macOSLatestSupportedVersionsHasBeenSet = true; m_macOSLatestSupportedVersions.push_back(value); return *this; }
-    inline MacHost& AddMacOSLatestSupportedVersions(Aws::String&& value) { m_macOSLatestSupportedVersionsHasBeenSet = true; m_macOSLatestSupportedVersions.push_back(std::move(value)); return *this; }
-    inline MacHost& AddMacOSLatestSupportedVersions(const char* value) { m_macOSLatestSupportedVersionsHasBeenSet = true; m_macOSLatestSupportedVersions.push_back(value); return *this; }
+    template<typename MacOSLatestSupportedVersionsT = Aws::Vector<Aws::String>>
+    void SetMacOSLatestSupportedVersions(MacOSLatestSupportedVersionsT&& value) { m_macOSLatestSupportedVersionsHasBeenSet = true; m_macOSLatestSupportedVersions = std::forward<MacOSLatestSupportedVersionsT>(value); }
+    template<typename MacOSLatestSupportedVersionsT = Aws::Vector<Aws::String>>
+    MacHost& WithMacOSLatestSupportedVersions(MacOSLatestSupportedVersionsT&& value) { SetMacOSLatestSupportedVersions(std::forward<MacOSLatestSupportedVersionsT>(value)); return *this;}
+    template<typename MacOSLatestSupportedVersionsT = Aws::String>
+    MacHost& AddMacOSLatestSupportedVersions(MacOSLatestSupportedVersionsT&& value) { m_macOSLatestSupportedVersionsHasBeenSet = true; m_macOSLatestSupportedVersions.emplace_back(std::forward<MacOSLatestSupportedVersionsT>(value)); return *this; }
     ///@}
   private:
 

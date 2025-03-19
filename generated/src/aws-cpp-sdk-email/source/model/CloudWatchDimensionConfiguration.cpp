@@ -20,16 +20,7 @@ namespace SES
 namespace Model
 {
 
-CloudWatchDimensionConfiguration::CloudWatchDimensionConfiguration() : 
-    m_dimensionNameHasBeenSet(false),
-    m_dimensionValueSource(DimensionValueSource::NOT_SET),
-    m_dimensionValueSourceHasBeenSet(false),
-    m_defaultDimensionValueHasBeenSet(false)
-{
-}
-
 CloudWatchDimensionConfiguration::CloudWatchDimensionConfiguration(const XmlNode& xmlNode)
-  : CloudWatchDimensionConfiguration()
 {
   *this = xmlNode;
 }
@@ -49,7 +40,7 @@ CloudWatchDimensionConfiguration& CloudWatchDimensionConfiguration::operator =(c
     XmlNode dimensionValueSourceNode = resultNode.FirstChild("DimensionValueSource");
     if(!dimensionValueSourceNode.IsNull())
     {
-      m_dimensionValueSource = DimensionValueSourceMapper::GetDimensionValueSourceForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dimensionValueSourceNode.GetText()).c_str()).c_str());
+      m_dimensionValueSource = DimensionValueSourceMapper::GetDimensionValueSourceForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dimensionValueSourceNode.GetText()).c_str()));
       m_dimensionValueSourceHasBeenSet = true;
     }
     XmlNode defaultDimensionValueNode = resultNode.FirstChild("DefaultDimensionValue");

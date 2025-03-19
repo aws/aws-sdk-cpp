@@ -12,14 +12,6 @@ using namespace Aws::RolesAnywhere::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutAttributeMappingRequest::PutAttributeMappingRequest() : 
-    m_certificateField(CertificateField::NOT_SET),
-    m_certificateFieldHasBeenSet(false),
-    m_mappingRulesHasBeenSet(false),
-    m_profileIdHasBeenSet(false)
-{
-}
-
 Aws::String PutAttributeMappingRequest::SerializePayload() const
 {
   JsonValue payload;

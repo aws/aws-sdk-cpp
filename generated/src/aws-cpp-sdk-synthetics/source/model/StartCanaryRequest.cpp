@@ -12,11 +12,6 @@ using namespace Aws::Synthetics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartCanaryRequest::StartCanaryRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String StartCanaryRequest::SerializePayload() const
 {
   return {};

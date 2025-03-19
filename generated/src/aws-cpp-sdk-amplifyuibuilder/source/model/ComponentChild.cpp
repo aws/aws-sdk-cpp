@@ -18,18 +18,7 @@ namespace AmplifyUIBuilder
 namespace Model
 {
 
-ComponentChild::ComponentChild() : 
-    m_componentTypeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_propertiesHasBeenSet(false),
-    m_childrenHasBeenSet(false),
-    m_eventsHasBeenSet(false),
-    m_sourceIdHasBeenSet(false)
-{
-}
-
 ComponentChild::ComponentChild(JsonView jsonValue)
-  : ComponentChild()
 {
   *this = jsonValue;
 }
@@ -39,17 +28,13 @@ ComponentChild& ComponentChild::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("componentType"))
   {
     m_componentType = jsonValue.GetString("componentType");
-
     m_componentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("properties"))
   {
     Aws::Map<Aws::String, JsonView> propertiesJsonMap = jsonValue.GetObject("properties").GetAllObjects();
@@ -59,7 +44,6 @@ ComponentChild& ComponentChild::operator =(JsonView jsonValue)
     }
     m_propertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("children"))
   {
     Aws::Utils::Array<JsonView> childrenJsonList = jsonValue.GetArray("children");
@@ -69,7 +53,6 @@ ComponentChild& ComponentChild::operator =(JsonView jsonValue)
     }
     m_childrenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("events"))
   {
     Aws::Map<Aws::String, JsonView> eventsJsonMap = jsonValue.GetObject("events").GetAllObjects();
@@ -79,14 +62,11 @@ ComponentChild& ComponentChild::operator =(JsonView jsonValue)
     }
     m_eventsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceId"))
   {
     m_sourceId = jsonValue.GetString("sourceId");
-
     m_sourceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

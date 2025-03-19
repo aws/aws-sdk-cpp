@@ -20,14 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-OriginAccessControl::OriginAccessControl() : 
-    m_idHasBeenSet(false),
-    m_originAccessControlConfigHasBeenSet(false)
-{
-}
-
 OriginAccessControl::OriginAccessControl(const XmlNode& xmlNode)
-  : OriginAccessControl()
 {
   *this = xmlNode;
 }

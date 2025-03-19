@@ -18,18 +18,7 @@ namespace Glue
 namespace Model
 {
 
-BinaryColumnStatisticsData::BinaryColumnStatisticsData() : 
-    m_maximumLength(0),
-    m_maximumLengthHasBeenSet(false),
-    m_averageLength(0.0),
-    m_averageLengthHasBeenSet(false),
-    m_numberOfNulls(0),
-    m_numberOfNullsHasBeenSet(false)
-{
-}
-
 BinaryColumnStatisticsData::BinaryColumnStatisticsData(JsonView jsonValue)
-  : BinaryColumnStatisticsData()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ BinaryColumnStatisticsData& BinaryColumnStatisticsData::operator =(JsonView json
   if(jsonValue.ValueExists("MaximumLength"))
   {
     m_maximumLength = jsonValue.GetInt64("MaximumLength");
-
     m_maximumLengthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AverageLength"))
   {
     m_averageLength = jsonValue.GetDouble("AverageLength");
-
     m_averageLengthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfNulls"))
   {
     m_numberOfNulls = jsonValue.GetInt64("NumberOfNulls");
-
     m_numberOfNullsHasBeenSet = true;
   }
-
   return *this;
 }
 

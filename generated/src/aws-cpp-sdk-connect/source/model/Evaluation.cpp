@@ -18,23 +18,7 @@ namespace Connect
 namespace Model
 {
 
-Evaluation::Evaluation() : 
-    m_evaluationIdHasBeenSet(false),
-    m_evaluationArnHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_answersHasBeenSet(false),
-    m_notesHasBeenSet(false),
-    m_status(EvaluationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_scoresHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Evaluation::Evaluation(JsonView jsonValue)
-  : Evaluation()
 {
   *this = jsonValue;
 }
@@ -44,24 +28,18 @@ Evaluation& Evaluation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EvaluationId"))
   {
     m_evaluationId = jsonValue.GetString("EvaluationId");
-
     m_evaluationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluationArn"))
   {
     m_evaluationArn = jsonValue.GetString("EvaluationArn");
-
     m_evaluationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Metadata"))
   {
     m_metadata = jsonValue.GetObject("Metadata");
-
     m_metadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Answers"))
   {
     Aws::Map<Aws::String, JsonView> answersJsonMap = jsonValue.GetObject("Answers").GetAllObjects();
@@ -71,7 +49,6 @@ Evaluation& Evaluation::operator =(JsonView jsonValue)
     }
     m_answersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Notes"))
   {
     Aws::Map<Aws::String, JsonView> notesJsonMap = jsonValue.GetObject("Notes").GetAllObjects();
@@ -81,14 +58,11 @@ Evaluation& Evaluation::operator =(JsonView jsonValue)
     }
     m_notesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = EvaluationStatusMapper::GetEvaluationStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Scores"))
   {
     Aws::Map<Aws::String, JsonView> scoresJsonMap = jsonValue.GetObject("Scores").GetAllObjects();
@@ -98,21 +72,16 @@ Evaluation& Evaluation::operator =(JsonView jsonValue)
     }
     m_scoresHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -122,7 +91,6 @@ Evaluation& Evaluation::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

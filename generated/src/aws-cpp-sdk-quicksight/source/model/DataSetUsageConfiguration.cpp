@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DataSetUsageConfiguration::DataSetUsageConfiguration() : 
-    m_disableUseAsDirectQuerySource(false),
-    m_disableUseAsDirectQuerySourceHasBeenSet(false),
-    m_disableUseAsImportedSource(false),
-    m_disableUseAsImportedSourceHasBeenSet(false)
-{
-}
-
 DataSetUsageConfiguration::DataSetUsageConfiguration(JsonView jsonValue)
-  : DataSetUsageConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ DataSetUsageConfiguration& DataSetUsageConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("DisableUseAsDirectQuerySource"))
   {
     m_disableUseAsDirectQuerySource = jsonValue.GetBool("DisableUseAsDirectQuerySource");
-
     m_disableUseAsDirectQuerySourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisableUseAsImportedSource"))
   {
     m_disableUseAsImportedSource = jsonValue.GetBool("DisableUseAsImportedSource");
-
     m_disableUseAsImportedSourceHasBeenSet = true;
   }
-
   return *this;
 }
 

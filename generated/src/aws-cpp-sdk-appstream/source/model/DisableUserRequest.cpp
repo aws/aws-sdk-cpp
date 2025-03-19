@@ -12,13 +12,6 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisableUserRequest::DisableUserRequest() : 
-    m_userNameHasBeenSet(false),
-    m_authenticationType(AuthenticationType::NOT_SET),
-    m_authenticationTypeHasBeenSet(false)
-{
-}
-
 Aws::String DisableUserRequest::SerializePayload() const
 {
   JsonValue payload;

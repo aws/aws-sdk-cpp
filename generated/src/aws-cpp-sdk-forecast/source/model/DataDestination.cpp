@@ -18,13 +18,7 @@ namespace ForecastService
 namespace Model
 {
 
-DataDestination::DataDestination() : 
-    m_s3ConfigHasBeenSet(false)
-{
-}
-
 DataDestination::DataDestination(JsonView jsonValue)
-  : DataDestination()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DataDestination& DataDestination::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3Config"))
   {
     m_s3Config = jsonValue.GetObject("S3Config");
-
     m_s3ConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

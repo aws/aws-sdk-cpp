@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListRecommendationFeedbackRequest::ListRecommendationFeedbackRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_codeReviewArnHasBeenSet(false),
-    m_userIdsHasBeenSet(false),
-    m_recommendationIdsHasBeenSet(false)
-{
-}
-
 Aws::String ListRecommendationFeedbackRequest::SerializePayload() const
 {
   return {};

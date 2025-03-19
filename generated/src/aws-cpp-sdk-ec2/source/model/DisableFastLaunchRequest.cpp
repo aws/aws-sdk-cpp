@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DisableFastLaunchRequest::DisableFastLaunchRequest() : 
-    m_imageIdHasBeenSet(false),
-    m_force(false),
-    m_forceHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String DisableFastLaunchRequest::SerializePayload() const
 {
   Aws::StringStream ss;

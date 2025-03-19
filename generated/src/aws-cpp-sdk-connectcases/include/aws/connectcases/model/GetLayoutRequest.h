@@ -21,7 +21,7 @@ namespace Model
   class GetLayoutRequest : public ConnectCasesRequest
   {
   public:
-    AWS_CONNECTCASES_API GetLayoutRequest();
+    AWS_CONNECTCASES_API GetLayoutRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>The unique identifier of the Cases domain. </p>
      */
-    inline const Aws::String& GetDomainId() const{ return m_domainId; }
+    inline const Aws::String& GetDomainId() const { return m_domainId; }
     inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
-    inline void SetDomainId(const Aws::String& value) { m_domainIdHasBeenSet = true; m_domainId = value; }
-    inline void SetDomainId(Aws::String&& value) { m_domainIdHasBeenSet = true; m_domainId = std::move(value); }
-    inline void SetDomainId(const char* value) { m_domainIdHasBeenSet = true; m_domainId.assign(value); }
-    inline GetLayoutRequest& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
-    inline GetLayoutRequest& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
-    inline GetLayoutRequest& WithDomainId(const char* value) { SetDomainId(value); return *this;}
+    template<typename DomainIdT = Aws::String>
+    void SetDomainId(DomainIdT&& value) { m_domainIdHasBeenSet = true; m_domainId = std::forward<DomainIdT>(value); }
+    template<typename DomainIdT = Aws::String>
+    GetLayoutRequest& WithDomainId(DomainIdT&& value) { SetDomainId(std::forward<DomainIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the layout.</p>
      */
-    inline const Aws::String& GetLayoutId() const{ return m_layoutId; }
+    inline const Aws::String& GetLayoutId() const { return m_layoutId; }
     inline bool LayoutIdHasBeenSet() const { return m_layoutIdHasBeenSet; }
-    inline void SetLayoutId(const Aws::String& value) { m_layoutIdHasBeenSet = true; m_layoutId = value; }
-    inline void SetLayoutId(Aws::String&& value) { m_layoutIdHasBeenSet = true; m_layoutId = std::move(value); }
-    inline void SetLayoutId(const char* value) { m_layoutIdHasBeenSet = true; m_layoutId.assign(value); }
-    inline GetLayoutRequest& WithLayoutId(const Aws::String& value) { SetLayoutId(value); return *this;}
-    inline GetLayoutRequest& WithLayoutId(Aws::String&& value) { SetLayoutId(std::move(value)); return *this;}
-    inline GetLayoutRequest& WithLayoutId(const char* value) { SetLayoutId(value); return *this;}
+    template<typename LayoutIdT = Aws::String>
+    void SetLayoutId(LayoutIdT&& value) { m_layoutIdHasBeenSet = true; m_layoutId = std::forward<LayoutIdT>(value); }
+    template<typename LayoutIdT = Aws::String>
+    GetLayoutRequest& WithLayoutId(LayoutIdT&& value) { SetLayoutId(std::forward<LayoutIdT>(value)); return *this;}
     ///@}
   private:
 

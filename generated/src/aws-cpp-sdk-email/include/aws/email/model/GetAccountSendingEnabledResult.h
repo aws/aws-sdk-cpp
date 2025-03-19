@@ -33,7 +33,7 @@ namespace Model
   class GetAccountSendingEnabledResult
   {
   public:
-    AWS_SES_API GetAccountSendingEnabledResult();
+    AWS_SES_API GetAccountSendingEnabledResult() = default;
     AWS_SES_API GetAccountSendingEnabledResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_SES_API GetAccountSendingEnabledResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -43,24 +43,26 @@ namespace Model
      * <p>Describes whether email sending is enabled or disabled for your Amazon SES
      * account in the current Amazon Web Services Region.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
-    inline void SetEnabled(bool value) { m_enabled = value; }
+    inline bool GetEnabled() const { return m_enabled; }
+    inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline GetAccountSendingEnabledResult& WithEnabled(bool value) { SetEnabled(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline GetAccountSendingEnabledResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline GetAccountSendingEnabledResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    GetAccountSendingEnabledResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
+    bool m_enabledHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

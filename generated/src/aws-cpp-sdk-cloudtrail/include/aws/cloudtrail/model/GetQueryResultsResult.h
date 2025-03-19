@@ -31,7 +31,7 @@ namespace Model
   class GetQueryResultsResult
   {
   public:
-    AWS_CLOUDTRAIL_API GetQueryResultsResult();
+    AWS_CLOUDTRAIL_API GetQueryResultsResult() = default;
     AWS_CLOUDTRAIL_API GetQueryResultsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDTRAIL_API GetQueryResultsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,86 +42,84 @@ namespace Model
      * <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>,
      * <code>TIMED_OUT</code>, or <code>CANCELLED</code>.</p>
      */
-    inline const QueryStatus& GetQueryStatus() const{ return m_queryStatus; }
-    inline void SetQueryStatus(const QueryStatus& value) { m_queryStatus = value; }
-    inline void SetQueryStatus(QueryStatus&& value) { m_queryStatus = std::move(value); }
-    inline GetQueryResultsResult& WithQueryStatus(const QueryStatus& value) { SetQueryStatus(value); return *this;}
-    inline GetQueryResultsResult& WithQueryStatus(QueryStatus&& value) { SetQueryStatus(std::move(value)); return *this;}
+    inline QueryStatus GetQueryStatus() const { return m_queryStatus; }
+    inline void SetQueryStatus(QueryStatus value) { m_queryStatusHasBeenSet = true; m_queryStatus = value; }
+    inline GetQueryResultsResult& WithQueryStatus(QueryStatus value) { SetQueryStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Shows the count of query results.</p>
      */
-    inline const QueryStatistics& GetQueryStatistics() const{ return m_queryStatistics; }
-    inline void SetQueryStatistics(const QueryStatistics& value) { m_queryStatistics = value; }
-    inline void SetQueryStatistics(QueryStatistics&& value) { m_queryStatistics = std::move(value); }
-    inline GetQueryResultsResult& WithQueryStatistics(const QueryStatistics& value) { SetQueryStatistics(value); return *this;}
-    inline GetQueryResultsResult& WithQueryStatistics(QueryStatistics&& value) { SetQueryStatistics(std::move(value)); return *this;}
+    inline const QueryStatistics& GetQueryStatistics() const { return m_queryStatistics; }
+    template<typename QueryStatisticsT = QueryStatistics>
+    void SetQueryStatistics(QueryStatisticsT&& value) { m_queryStatisticsHasBeenSet = true; m_queryStatistics = std::forward<QueryStatisticsT>(value); }
+    template<typename QueryStatisticsT = QueryStatistics>
+    GetQueryResultsResult& WithQueryStatistics(QueryStatisticsT&& value) { SetQueryStatistics(std::forward<QueryStatisticsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains the individual event results of the query.</p>
      */
-    inline const Aws::Vector<Aws::Vector<Aws::Map<Aws::String, Aws::String>>>& GetQueryResultRows() const{ return m_queryResultRows; }
-    inline void SetQueryResultRows(const Aws::Vector<Aws::Vector<Aws::Map<Aws::String, Aws::String>>>& value) { m_queryResultRows = value; }
-    inline void SetQueryResultRows(Aws::Vector<Aws::Vector<Aws::Map<Aws::String, Aws::String>>>&& value) { m_queryResultRows = std::move(value); }
-    inline GetQueryResultsResult& WithQueryResultRows(const Aws::Vector<Aws::Vector<Aws::Map<Aws::String, Aws::String>>>& value) { SetQueryResultRows(value); return *this;}
-    inline GetQueryResultsResult& WithQueryResultRows(Aws::Vector<Aws::Vector<Aws::Map<Aws::String, Aws::String>>>&& value) { SetQueryResultRows(std::move(value)); return *this;}
-    inline GetQueryResultsResult& AddQueryResultRows(const Aws::Vector<Aws::Map<Aws::String, Aws::String>>& value) { m_queryResultRows.push_back(value); return *this; }
-    inline GetQueryResultsResult& AddQueryResultRows(Aws::Vector<Aws::Map<Aws::String, Aws::String>>&& value) { m_queryResultRows.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Aws::Vector<Aws::Map<Aws::String, Aws::String>>>& GetQueryResultRows() const { return m_queryResultRows; }
+    template<typename QueryResultRowsT = Aws::Vector<Aws::Vector<Aws::Map<Aws::String, Aws::String>>>>
+    void SetQueryResultRows(QueryResultRowsT&& value) { m_queryResultRowsHasBeenSet = true; m_queryResultRows = std::forward<QueryResultRowsT>(value); }
+    template<typename QueryResultRowsT = Aws::Vector<Aws::Vector<Aws::Map<Aws::String, Aws::String>>>>
+    GetQueryResultsResult& WithQueryResultRows(QueryResultRowsT&& value) { SetQueryResultRows(std::forward<QueryResultRowsT>(value)); return *this;}
+    template<typename QueryResultRowsT = Aws::Vector<Aws::Map<Aws::String, Aws::String>>>
+    GetQueryResultsResult& AddQueryResultRows(QueryResultRowsT&& value) { m_queryResultRowsHasBeenSet = true; m_queryResultRows.emplace_back(std::forward<QueryResultRowsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A token you can use to get the next page of query results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetQueryResultsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetQueryResultsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetQueryResultsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetQueryResultsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The error message returned if a query failed.</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessage.assign(value); }
-    inline GetQueryResultsResult& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline GetQueryResultsResult& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline GetQueryResultsResult& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    GetQueryResultsResult& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetQueryResultsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetQueryResultsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetQueryResultsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetQueryResultsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    QueryStatus m_queryStatus;
+    QueryStatus m_queryStatus{QueryStatus::NOT_SET};
+    bool m_queryStatusHasBeenSet = false;
 
     QueryStatistics m_queryStatistics;
+    bool m_queryStatisticsHasBeenSet = false;
 
     Aws::Vector<Aws::Vector<Aws::Map<Aws::String, Aws::String>>> m_queryResultRows;
+    bool m_queryResultRowsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_errorMessage;
+    bool m_errorMessageHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

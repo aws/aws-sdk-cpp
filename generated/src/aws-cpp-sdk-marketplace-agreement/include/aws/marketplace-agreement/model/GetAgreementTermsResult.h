@@ -29,7 +29,7 @@ namespace Model
   class GetAgreementTermsResult
   {
   public:
-    AWS_AGREEMENTSERVICE_API GetAgreementTermsResult();
+    AWS_AGREEMENTSERVICE_API GetAgreementTermsResult() = default;
     AWS_AGREEMENTSERVICE_API GetAgreementTermsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_AGREEMENTSERVICE_API GetAgreementTermsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,44 @@ namespace Model
      * <p>A subset of terms proposed by the proposer that have been accepted by the
      * acceptor as part of the agreement creation.</p>
      */
-    inline const Aws::Vector<AcceptedTerm>& GetAcceptedTerms() const{ return m_acceptedTerms; }
-    inline void SetAcceptedTerms(const Aws::Vector<AcceptedTerm>& value) { m_acceptedTerms = value; }
-    inline void SetAcceptedTerms(Aws::Vector<AcceptedTerm>&& value) { m_acceptedTerms = std::move(value); }
-    inline GetAgreementTermsResult& WithAcceptedTerms(const Aws::Vector<AcceptedTerm>& value) { SetAcceptedTerms(value); return *this;}
-    inline GetAgreementTermsResult& WithAcceptedTerms(Aws::Vector<AcceptedTerm>&& value) { SetAcceptedTerms(std::move(value)); return *this;}
-    inline GetAgreementTermsResult& AddAcceptedTerms(const AcceptedTerm& value) { m_acceptedTerms.push_back(value); return *this; }
-    inline GetAgreementTermsResult& AddAcceptedTerms(AcceptedTerm&& value) { m_acceptedTerms.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AcceptedTerm>& GetAcceptedTerms() const { return m_acceptedTerms; }
+    template<typename AcceptedTermsT = Aws::Vector<AcceptedTerm>>
+    void SetAcceptedTerms(AcceptedTermsT&& value) { m_acceptedTermsHasBeenSet = true; m_acceptedTerms = std::forward<AcceptedTermsT>(value); }
+    template<typename AcceptedTermsT = Aws::Vector<AcceptedTerm>>
+    GetAgreementTermsResult& WithAcceptedTerms(AcceptedTermsT&& value) { SetAcceptedTerms(std::forward<AcceptedTermsT>(value)); return *this;}
+    template<typename AcceptedTermsT = AcceptedTerm>
+    GetAgreementTermsResult& AddAcceptedTerms(AcceptedTermsT&& value) { m_acceptedTermsHasBeenSet = true; m_acceptedTerms.emplace_back(std::forward<AcceptedTermsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A token to specify where to start pagination</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetAgreementTermsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetAgreementTermsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetAgreementTermsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetAgreementTermsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetAgreementTermsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetAgreementTermsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetAgreementTermsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetAgreementTermsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AcceptedTerm> m_acceptedTerms;
+    bool m_acceptedTermsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

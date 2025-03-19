@@ -18,10 +18,6 @@ namespace WAFV2
 namespace Model
 {
 
-UriPath::UriPath()
-{
-}
-
 UriPath::UriPath(JsonView jsonValue)
 {
   *this = jsonValue;

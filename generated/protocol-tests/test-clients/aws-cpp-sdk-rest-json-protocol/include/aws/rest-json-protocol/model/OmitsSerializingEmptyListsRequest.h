@@ -28,7 +28,7 @@ namespace Model
   class OmitsSerializingEmptyListsRequest : public RestJsonProtocolRequest
   {
   public:
-    AWS_RESTJSONPROTOCOL_API OmitsSerializingEmptyListsRequest();
+    AWS_RESTJSONPROTOCOL_API OmitsSerializingEmptyListsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,82 +43,80 @@ namespace Model
 
     ///@{
     
-    inline const Aws::Vector<Aws::String>& GetQueryStringList() const{ return m_queryStringList; }
+    inline const Aws::Vector<Aws::String>& GetQueryStringList() const { return m_queryStringList; }
     inline bool QueryStringListHasBeenSet() const { return m_queryStringListHasBeenSet; }
-    inline void SetQueryStringList(const Aws::Vector<Aws::String>& value) { m_queryStringListHasBeenSet = true; m_queryStringList = value; }
-    inline void SetQueryStringList(Aws::Vector<Aws::String>&& value) { m_queryStringListHasBeenSet = true; m_queryStringList = std::move(value); }
-    inline OmitsSerializingEmptyListsRequest& WithQueryStringList(const Aws::Vector<Aws::String>& value) { SetQueryStringList(value); return *this;}
-    inline OmitsSerializingEmptyListsRequest& WithQueryStringList(Aws::Vector<Aws::String>&& value) { SetQueryStringList(std::move(value)); return *this;}
-    inline OmitsSerializingEmptyListsRequest& AddQueryStringList(const Aws::String& value) { m_queryStringListHasBeenSet = true; m_queryStringList.push_back(value); return *this; }
-    inline OmitsSerializingEmptyListsRequest& AddQueryStringList(Aws::String&& value) { m_queryStringListHasBeenSet = true; m_queryStringList.push_back(std::move(value)); return *this; }
-    inline OmitsSerializingEmptyListsRequest& AddQueryStringList(const char* value) { m_queryStringListHasBeenSet = true; m_queryStringList.push_back(value); return *this; }
+    template<typename QueryStringListT = Aws::Vector<Aws::String>>
+    void SetQueryStringList(QueryStringListT&& value) { m_queryStringListHasBeenSet = true; m_queryStringList = std::forward<QueryStringListT>(value); }
+    template<typename QueryStringListT = Aws::Vector<Aws::String>>
+    OmitsSerializingEmptyListsRequest& WithQueryStringList(QueryStringListT&& value) { SetQueryStringList(std::forward<QueryStringListT>(value)); return *this;}
+    template<typename QueryStringListT = Aws::String>
+    OmitsSerializingEmptyListsRequest& AddQueryStringList(QueryStringListT&& value) { m_queryStringListHasBeenSet = true; m_queryStringList.emplace_back(std::forward<QueryStringListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<int>& GetQueryIntegerList() const{ return m_queryIntegerList; }
+    inline const Aws::Vector<int>& GetQueryIntegerList() const { return m_queryIntegerList; }
     inline bool QueryIntegerListHasBeenSet() const { return m_queryIntegerListHasBeenSet; }
-    inline void SetQueryIntegerList(const Aws::Vector<int>& value) { m_queryIntegerListHasBeenSet = true; m_queryIntegerList = value; }
-    inline void SetQueryIntegerList(Aws::Vector<int>&& value) { m_queryIntegerListHasBeenSet = true; m_queryIntegerList = std::move(value); }
-    inline OmitsSerializingEmptyListsRequest& WithQueryIntegerList(const Aws::Vector<int>& value) { SetQueryIntegerList(value); return *this;}
-    inline OmitsSerializingEmptyListsRequest& WithQueryIntegerList(Aws::Vector<int>&& value) { SetQueryIntegerList(std::move(value)); return *this;}
+    template<typename QueryIntegerListT = Aws::Vector<int>>
+    void SetQueryIntegerList(QueryIntegerListT&& value) { m_queryIntegerListHasBeenSet = true; m_queryIntegerList = std::forward<QueryIntegerListT>(value); }
+    template<typename QueryIntegerListT = Aws::Vector<int>>
+    OmitsSerializingEmptyListsRequest& WithQueryIntegerList(QueryIntegerListT&& value) { SetQueryIntegerList(std::forward<QueryIntegerListT>(value)); return *this;}
     inline OmitsSerializingEmptyListsRequest& AddQueryIntegerList(int value) { m_queryIntegerListHasBeenSet = true; m_queryIntegerList.push_back(value); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<double>& GetQueryDoubleList() const{ return m_queryDoubleList; }
+    inline const Aws::Vector<double>& GetQueryDoubleList() const { return m_queryDoubleList; }
     inline bool QueryDoubleListHasBeenSet() const { return m_queryDoubleListHasBeenSet; }
-    inline void SetQueryDoubleList(const Aws::Vector<double>& value) { m_queryDoubleListHasBeenSet = true; m_queryDoubleList = value; }
-    inline void SetQueryDoubleList(Aws::Vector<double>&& value) { m_queryDoubleListHasBeenSet = true; m_queryDoubleList = std::move(value); }
-    inline OmitsSerializingEmptyListsRequest& WithQueryDoubleList(const Aws::Vector<double>& value) { SetQueryDoubleList(value); return *this;}
-    inline OmitsSerializingEmptyListsRequest& WithQueryDoubleList(Aws::Vector<double>&& value) { SetQueryDoubleList(std::move(value)); return *this;}
+    template<typename QueryDoubleListT = Aws::Vector<double>>
+    void SetQueryDoubleList(QueryDoubleListT&& value) { m_queryDoubleListHasBeenSet = true; m_queryDoubleList = std::forward<QueryDoubleListT>(value); }
+    template<typename QueryDoubleListT = Aws::Vector<double>>
+    OmitsSerializingEmptyListsRequest& WithQueryDoubleList(QueryDoubleListT&& value) { SetQueryDoubleList(std::forward<QueryDoubleListT>(value)); return *this;}
     inline OmitsSerializingEmptyListsRequest& AddQueryDoubleList(double value) { m_queryDoubleListHasBeenSet = true; m_queryDoubleList.push_back(value); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<bool>& GetQueryBooleanList() const{ return m_queryBooleanList; }
+    inline const Aws::Vector<bool>& GetQueryBooleanList() const { return m_queryBooleanList; }
     inline bool QueryBooleanListHasBeenSet() const { return m_queryBooleanListHasBeenSet; }
-    inline void SetQueryBooleanList(const Aws::Vector<bool>& value) { m_queryBooleanListHasBeenSet = true; m_queryBooleanList = value; }
-    inline void SetQueryBooleanList(Aws::Vector<bool>&& value) { m_queryBooleanListHasBeenSet = true; m_queryBooleanList = std::move(value); }
-    inline OmitsSerializingEmptyListsRequest& WithQueryBooleanList(const Aws::Vector<bool>& value) { SetQueryBooleanList(value); return *this;}
-    inline OmitsSerializingEmptyListsRequest& WithQueryBooleanList(Aws::Vector<bool>&& value) { SetQueryBooleanList(std::move(value)); return *this;}
+    template<typename QueryBooleanListT = Aws::Vector<bool>>
+    void SetQueryBooleanList(QueryBooleanListT&& value) { m_queryBooleanListHasBeenSet = true; m_queryBooleanList = std::forward<QueryBooleanListT>(value); }
+    template<typename QueryBooleanListT = Aws::Vector<bool>>
+    OmitsSerializingEmptyListsRequest& WithQueryBooleanList(QueryBooleanListT&& value) { SetQueryBooleanList(std::forward<QueryBooleanListT>(value)); return *this;}
     inline OmitsSerializingEmptyListsRequest& AddQueryBooleanList(bool value) { m_queryBooleanListHasBeenSet = true; m_queryBooleanList.push_back(value); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<Aws::Utils::DateTime>& GetQueryTimestampList() const{ return m_queryTimestampList; }
+    inline const Aws::Vector<Aws::Utils::DateTime>& GetQueryTimestampList() const { return m_queryTimestampList; }
     inline bool QueryTimestampListHasBeenSet() const { return m_queryTimestampListHasBeenSet; }
-    inline void SetQueryTimestampList(const Aws::Vector<Aws::Utils::DateTime>& value) { m_queryTimestampListHasBeenSet = true; m_queryTimestampList = value; }
-    inline void SetQueryTimestampList(Aws::Vector<Aws::Utils::DateTime>&& value) { m_queryTimestampListHasBeenSet = true; m_queryTimestampList = std::move(value); }
-    inline OmitsSerializingEmptyListsRequest& WithQueryTimestampList(const Aws::Vector<Aws::Utils::DateTime>& value) { SetQueryTimestampList(value); return *this;}
-    inline OmitsSerializingEmptyListsRequest& WithQueryTimestampList(Aws::Vector<Aws::Utils::DateTime>&& value) { SetQueryTimestampList(std::move(value)); return *this;}
-    inline OmitsSerializingEmptyListsRequest& AddQueryTimestampList(const Aws::Utils::DateTime& value) { m_queryTimestampListHasBeenSet = true; m_queryTimestampList.push_back(value); return *this; }
-    inline OmitsSerializingEmptyListsRequest& AddQueryTimestampList(Aws::Utils::DateTime&& value) { m_queryTimestampListHasBeenSet = true; m_queryTimestampList.push_back(std::move(value)); return *this; }
+    template<typename QueryTimestampListT = Aws::Vector<Aws::Utils::DateTime>>
+    void SetQueryTimestampList(QueryTimestampListT&& value) { m_queryTimestampListHasBeenSet = true; m_queryTimestampList = std::forward<QueryTimestampListT>(value); }
+    template<typename QueryTimestampListT = Aws::Vector<Aws::Utils::DateTime>>
+    OmitsSerializingEmptyListsRequest& WithQueryTimestampList(QueryTimestampListT&& value) { SetQueryTimestampList(std::forward<QueryTimestampListT>(value)); return *this;}
+    template<typename QueryTimestampListT = Aws::Utils::DateTime>
+    OmitsSerializingEmptyListsRequest& AddQueryTimestampList(QueryTimestampListT&& value) { m_queryTimestampListHasBeenSet = true; m_queryTimestampList.emplace_back(std::forward<QueryTimestampListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<FooEnum>& GetQueryEnumList() const{ return m_queryEnumList; }
+    inline const Aws::Vector<FooEnum>& GetQueryEnumList() const { return m_queryEnumList; }
     inline bool QueryEnumListHasBeenSet() const { return m_queryEnumListHasBeenSet; }
-    inline void SetQueryEnumList(const Aws::Vector<FooEnum>& value) { m_queryEnumListHasBeenSet = true; m_queryEnumList = value; }
-    inline void SetQueryEnumList(Aws::Vector<FooEnum>&& value) { m_queryEnumListHasBeenSet = true; m_queryEnumList = std::move(value); }
-    inline OmitsSerializingEmptyListsRequest& WithQueryEnumList(const Aws::Vector<FooEnum>& value) { SetQueryEnumList(value); return *this;}
-    inline OmitsSerializingEmptyListsRequest& WithQueryEnumList(Aws::Vector<FooEnum>&& value) { SetQueryEnumList(std::move(value)); return *this;}
-    inline OmitsSerializingEmptyListsRequest& AddQueryEnumList(const FooEnum& value) { m_queryEnumListHasBeenSet = true; m_queryEnumList.push_back(value); return *this; }
-    inline OmitsSerializingEmptyListsRequest& AddQueryEnumList(FooEnum&& value) { m_queryEnumListHasBeenSet = true; m_queryEnumList.push_back(std::move(value)); return *this; }
+    template<typename QueryEnumListT = Aws::Vector<FooEnum>>
+    void SetQueryEnumList(QueryEnumListT&& value) { m_queryEnumListHasBeenSet = true; m_queryEnumList = std::forward<QueryEnumListT>(value); }
+    template<typename QueryEnumListT = Aws::Vector<FooEnum>>
+    OmitsSerializingEmptyListsRequest& WithQueryEnumList(QueryEnumListT&& value) { SetQueryEnumList(std::forward<QueryEnumListT>(value)); return *this;}
+    inline OmitsSerializingEmptyListsRequest& AddQueryEnumList(FooEnum value) { m_queryEnumListHasBeenSet = true; m_queryEnumList.push_back(value); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<int>& GetQueryIntegerEnumList() const{ return m_queryIntegerEnumList; }
+    inline const Aws::Vector<int>& GetQueryIntegerEnumList() const { return m_queryIntegerEnumList; }
     inline bool QueryIntegerEnumListHasBeenSet() const { return m_queryIntegerEnumListHasBeenSet; }
-    inline void SetQueryIntegerEnumList(const Aws::Vector<int>& value) { m_queryIntegerEnumListHasBeenSet = true; m_queryIntegerEnumList = value; }
-    inline void SetQueryIntegerEnumList(Aws::Vector<int>&& value) { m_queryIntegerEnumListHasBeenSet = true; m_queryIntegerEnumList = std::move(value); }
-    inline OmitsSerializingEmptyListsRequest& WithQueryIntegerEnumList(const Aws::Vector<int>& value) { SetQueryIntegerEnumList(value); return *this;}
-    inline OmitsSerializingEmptyListsRequest& WithQueryIntegerEnumList(Aws::Vector<int>&& value) { SetQueryIntegerEnumList(std::move(value)); return *this;}
+    template<typename QueryIntegerEnumListT = Aws::Vector<int>>
+    void SetQueryIntegerEnumList(QueryIntegerEnumListT&& value) { m_queryIntegerEnumListHasBeenSet = true; m_queryIntegerEnumList = std::forward<QueryIntegerEnumListT>(value); }
+    template<typename QueryIntegerEnumListT = Aws::Vector<int>>
+    OmitsSerializingEmptyListsRequest& WithQueryIntegerEnumList(QueryIntegerEnumListT&& value) { SetQueryIntegerEnumList(std::forward<QueryIntegerEnumListT>(value)); return *this;}
     inline OmitsSerializingEmptyListsRequest& AddQueryIntegerEnumList(int value) { m_queryIntegerEnumListHasBeenSet = true; m_queryIntegerEnumList.push_back(value); return *this; }
     ///@}
   private:

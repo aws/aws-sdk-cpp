@@ -18,19 +18,7 @@ namespace PaymentCryptographyData
 namespace Model
 {
 
-VisaAttributes::VisaAttributes() : 
-    m_majorKeyDerivationMode(MajorKeyDerivationMode::NOT_SET),
-    m_majorKeyDerivationModeHasBeenSet(false),
-    m_primaryAccountNumberHasBeenSet(false),
-    m_panSequenceNumberHasBeenSet(false),
-    m_applicationTransactionCounterHasBeenSet(false),
-    m_authorizationRequestKeyIdentifierHasBeenSet(false),
-    m_currentPinAttributesHasBeenSet(false)
-{
-}
-
 VisaAttributes::VisaAttributes(JsonView jsonValue)
-  : VisaAttributes()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ VisaAttributes& VisaAttributes::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MajorKeyDerivationMode"))
   {
     m_majorKeyDerivationMode = MajorKeyDerivationModeMapper::GetMajorKeyDerivationModeForName(jsonValue.GetString("MajorKeyDerivationMode"));
-
     m_majorKeyDerivationModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrimaryAccountNumber"))
   {
     m_primaryAccountNumber = jsonValue.GetString("PrimaryAccountNumber");
-
     m_primaryAccountNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PanSequenceNumber"))
   {
     m_panSequenceNumber = jsonValue.GetString("PanSequenceNumber");
-
     m_panSequenceNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationTransactionCounter"))
   {
     m_applicationTransactionCounter = jsonValue.GetString("ApplicationTransactionCounter");
-
     m_applicationTransactionCounterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthorizationRequestKeyIdentifier"))
   {
     m_authorizationRequestKeyIdentifier = jsonValue.GetString("AuthorizationRequestKeyIdentifier");
-
     m_authorizationRequestKeyIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentPinAttributes"))
   {
     m_currentPinAttributes = jsonValue.GetObject("CurrentPinAttributes");
-
     m_currentPinAttributesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,12 +12,6 @@ using namespace Aws::IoTAnalytics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelPipelineReprocessingRequest::CancelPipelineReprocessingRequest() : 
-    m_pipelineNameHasBeenSet(false),
-    m_reprocessingIdHasBeenSet(false)
-{
-}
-
 Aws::String CancelPipelineReprocessingRequest::SerializePayload() const
 {
   return {};

@@ -18,15 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-S3DeliveryConfiguration::S3DeliveryConfiguration() : 
-    m_suffixPathHasBeenSet(false),
-    m_enableHiveCompatiblePath(false),
-    m_enableHiveCompatiblePathHasBeenSet(false)
-{
-}
-
 S3DeliveryConfiguration::S3DeliveryConfiguration(JsonView jsonValue)
-  : S3DeliveryConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ S3DeliveryConfiguration& S3DeliveryConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("suffixPath"))
   {
     m_suffixPath = jsonValue.GetString("suffixPath");
-
     m_suffixPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enableHiveCompatiblePath"))
   {
     m_enableHiveCompatiblePath = jsonValue.GetBool("enableHiveCompatiblePath");
-
     m_enableHiveCompatiblePathHasBeenSet = true;
   }
-
   return *this;
 }
 

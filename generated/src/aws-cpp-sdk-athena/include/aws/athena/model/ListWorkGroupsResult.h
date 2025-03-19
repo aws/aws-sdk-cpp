@@ -29,7 +29,7 @@ namespace Model
   class ListWorkGroupsResult
   {
   public:
-    AWS_ATHENA_API ListWorkGroupsResult();
+    AWS_ATHENA_API ListWorkGroupsResult() = default;
     AWS_ATHENA_API ListWorkGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ATHENA_API ListWorkGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>A list of <a>WorkGroupSummary</a> objects that include the names,
      * descriptions, creation times, and states for each workgroup.</p>
      */
-    inline const Aws::Vector<WorkGroupSummary>& GetWorkGroups() const{ return m_workGroups; }
-    inline void SetWorkGroups(const Aws::Vector<WorkGroupSummary>& value) { m_workGroups = value; }
-    inline void SetWorkGroups(Aws::Vector<WorkGroupSummary>&& value) { m_workGroups = std::move(value); }
-    inline ListWorkGroupsResult& WithWorkGroups(const Aws::Vector<WorkGroupSummary>& value) { SetWorkGroups(value); return *this;}
-    inline ListWorkGroupsResult& WithWorkGroups(Aws::Vector<WorkGroupSummary>&& value) { SetWorkGroups(std::move(value)); return *this;}
-    inline ListWorkGroupsResult& AddWorkGroups(const WorkGroupSummary& value) { m_workGroups.push_back(value); return *this; }
-    inline ListWorkGroupsResult& AddWorkGroups(WorkGroupSummary&& value) { m_workGroups.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<WorkGroupSummary>& GetWorkGroups() const { return m_workGroups; }
+    template<typename WorkGroupsT = Aws::Vector<WorkGroupSummary>>
+    void SetWorkGroups(WorkGroupsT&& value) { m_workGroupsHasBeenSet = true; m_workGroups = std::forward<WorkGroupsT>(value); }
+    template<typename WorkGroupsT = Aws::Vector<WorkGroupSummary>>
+    ListWorkGroupsResult& WithWorkGroups(WorkGroupsT&& value) { SetWorkGroups(std::forward<WorkGroupsT>(value)); return *this;}
+    template<typename WorkGroupsT = WorkGroupSummary>
+    ListWorkGroupsResult& AddWorkGroups(WorkGroupsT&& value) { m_workGroupsHasBeenSet = true; m_workGroups.emplace_back(std::forward<WorkGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,32 +55,31 @@ namespace Model
      * pass in the <code>NextToken</code> from the response object of the previous page
      * call.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListWorkGroupsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListWorkGroupsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListWorkGroupsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListWorkGroupsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListWorkGroupsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListWorkGroupsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListWorkGroupsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListWorkGroupsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<WorkGroupSummary> m_workGroups;
+    bool m_workGroupsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,7 +29,7 @@ namespace Model
   class HtmlMotionGraphicsSettings
   {
   public:
-    AWS_MEDIALIVE_API HtmlMotionGraphicsSettings();
+    AWS_MEDIALIVE_API HtmlMotionGraphicsSettings() = default;
     AWS_MEDIALIVE_API HtmlMotionGraphicsSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API HtmlMotionGraphicsSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;

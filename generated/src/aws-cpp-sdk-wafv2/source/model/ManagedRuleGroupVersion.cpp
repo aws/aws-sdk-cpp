@@ -18,14 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-ManagedRuleGroupVersion::ManagedRuleGroupVersion() : 
-    m_nameHasBeenSet(false),
-    m_lastUpdateTimestampHasBeenSet(false)
-{
-}
-
 ManagedRuleGroupVersion::ManagedRuleGroupVersion(JsonView jsonValue)
-  : ManagedRuleGroupVersion()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ManagedRuleGroupVersion& ManagedRuleGroupVersion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdateTimestamp"))
   {
     m_lastUpdateTimestamp = jsonValue.GetDouble("LastUpdateTimestamp");
-
     m_lastUpdateTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

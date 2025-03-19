@@ -38,7 +38,7 @@ namespace Model
   class LabelOptions
   {
   public:
-    AWS_CLOUDWATCH_API LabelOptions();
+    AWS_CLOUDWATCH_API LabelOptions() = default;
     AWS_CLOUDWATCH_API LabelOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDWATCH_API LabelOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -54,14 +54,12 @@ namespace Model
      * are the number of minutes. For example, +0130 indicates a time zone that is 1
      * hour and 30 minutes ahead of UTC. The default is +0000. </p>
      */
-    inline const Aws::String& GetTimezone() const{ return m_timezone; }
+    inline const Aws::String& GetTimezone() const { return m_timezone; }
     inline bool TimezoneHasBeenSet() const { return m_timezoneHasBeenSet; }
-    inline void SetTimezone(const Aws::String& value) { m_timezoneHasBeenSet = true; m_timezone = value; }
-    inline void SetTimezone(Aws::String&& value) { m_timezoneHasBeenSet = true; m_timezone = std::move(value); }
-    inline void SetTimezone(const char* value) { m_timezoneHasBeenSet = true; m_timezone.assign(value); }
-    inline LabelOptions& WithTimezone(const Aws::String& value) { SetTimezone(value); return *this;}
-    inline LabelOptions& WithTimezone(Aws::String&& value) { SetTimezone(std::move(value)); return *this;}
-    inline LabelOptions& WithTimezone(const char* value) { SetTimezone(value); return *this;}
+    template<typename TimezoneT = Aws::String>
+    void SetTimezone(TimezoneT&& value) { m_timezoneHasBeenSet = true; m_timezone = std::forward<TimezoneT>(value); }
+    template<typename TimezoneT = Aws::String>
+    LabelOptions& WithTimezone(TimezoneT&& value) { SetTimezone(std::forward<TimezoneT>(value)); return *this;}
     ///@}
   private:
 

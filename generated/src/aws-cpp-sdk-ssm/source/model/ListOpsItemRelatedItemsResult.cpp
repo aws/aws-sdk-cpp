@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListOpsItemRelatedItemsResult::ListOpsItemRelatedItemsResult()
-{
-}
-
 ListOpsItemRelatedItemsResult::ListOpsItemRelatedItemsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListOpsItemRelatedItemsResult& ListOpsItemRelatedItemsResult::operator =(const A
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Summaries"))
   {
     Aws::Utils::Array<JsonView> summariesJsonList = jsonValue.GetArray("Summaries");
@@ -42,14 +37,15 @@ ListOpsItemRelatedItemsResult& ListOpsItemRelatedItemsResult::operator =(const A
     {
       m_summaries.push_back(summariesJsonList[summariesIndex].AsObject());
     }
+    m_summariesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,51 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-PostgreSQLSettings::PostgreSQLSettings() : 
-    m_afterConnectScriptHasBeenSet(false),
-    m_captureDdls(false),
-    m_captureDdlsHasBeenSet(false),
-    m_maxFileSize(0),
-    m_maxFileSizeHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_ddlArtifactsSchemaHasBeenSet(false),
-    m_executeTimeout(0),
-    m_executeTimeoutHasBeenSet(false),
-    m_failTasksOnLobTruncation(false),
-    m_failTasksOnLobTruncationHasBeenSet(false),
-    m_heartbeatEnable(false),
-    m_heartbeatEnableHasBeenSet(false),
-    m_heartbeatSchemaHasBeenSet(false),
-    m_heartbeatFrequency(0),
-    m_heartbeatFrequencyHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_serverNameHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_slotNameHasBeenSet(false),
-    m_pluginName(PluginNameValue::NOT_SET),
-    m_pluginNameHasBeenSet(false),
-    m_secretsManagerAccessRoleArnHasBeenSet(false),
-    m_secretsManagerSecretIdHasBeenSet(false),
-    m_trimSpaceInChar(false),
-    m_trimSpaceInCharHasBeenSet(false),
-    m_mapBooleanAsBoolean(false),
-    m_mapBooleanAsBooleanHasBeenSet(false),
-    m_mapJsonbAsClob(false),
-    m_mapJsonbAsClobHasBeenSet(false),
-    m_mapLongVarcharAs(LongVarcharMappingType::NOT_SET),
-    m_mapLongVarcharAsHasBeenSet(false),
-    m_databaseMode(DatabaseMode::NOT_SET),
-    m_databaseModeHasBeenSet(false),
-    m_babelfishDatabaseNameHasBeenSet(false),
-    m_disableUnicodeSourceFilter(false),
-    m_disableUnicodeSourceFilterHasBeenSet(false)
-{
-}
-
 PostgreSQLSettings::PostgreSQLSettings(JsonView jsonValue)
-  : PostgreSQLSettings()
 {
   *this = jsonValue;
 }
@@ -72,178 +28,128 @@ PostgreSQLSettings& PostgreSQLSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AfterConnectScript"))
   {
     m_afterConnectScript = jsonValue.GetString("AfterConnectScript");
-
     m_afterConnectScriptHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CaptureDdls"))
   {
     m_captureDdls = jsonValue.GetBool("CaptureDdls");
-
     m_captureDdlsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxFileSize"))
   {
     m_maxFileSize = jsonValue.GetInteger("MaxFileSize");
-
     m_maxFileSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseName"))
   {
     m_databaseName = jsonValue.GetString("DatabaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DdlArtifactsSchema"))
   {
     m_ddlArtifactsSchema = jsonValue.GetString("DdlArtifactsSchema");
-
     m_ddlArtifactsSchemaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecuteTimeout"))
   {
     m_executeTimeout = jsonValue.GetInteger("ExecuteTimeout");
-
     m_executeTimeoutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailTasksOnLobTruncation"))
   {
     m_failTasksOnLobTruncation = jsonValue.GetBool("FailTasksOnLobTruncation");
-
     m_failTasksOnLobTruncationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HeartbeatEnable"))
   {
     m_heartbeatEnable = jsonValue.GetBool("HeartbeatEnable");
-
     m_heartbeatEnableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HeartbeatSchema"))
   {
     m_heartbeatSchema = jsonValue.GetString("HeartbeatSchema");
-
     m_heartbeatSchemaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HeartbeatFrequency"))
   {
     m_heartbeatFrequency = jsonValue.GetInteger("HeartbeatFrequency");
-
     m_heartbeatFrequencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Password"))
   {
     m_password = jsonValue.GetString("Password");
-
     m_passwordHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Port"))
   {
     m_port = jsonValue.GetInteger("Port");
-
     m_portHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServerName"))
   {
     m_serverName = jsonValue.GetString("ServerName");
-
     m_serverNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Username"))
   {
     m_username = jsonValue.GetString("Username");
-
     m_usernameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SlotName"))
   {
     m_slotName = jsonValue.GetString("SlotName");
-
     m_slotNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PluginName"))
   {
     m_pluginName = PluginNameValueMapper::GetPluginNameValueForName(jsonValue.GetString("PluginName"));
-
     m_pluginNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretsManagerAccessRoleArn"))
   {
     m_secretsManagerAccessRoleArn = jsonValue.GetString("SecretsManagerAccessRoleArn");
-
     m_secretsManagerAccessRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretsManagerSecretId"))
   {
     m_secretsManagerSecretId = jsonValue.GetString("SecretsManagerSecretId");
-
     m_secretsManagerSecretIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrimSpaceInChar"))
   {
     m_trimSpaceInChar = jsonValue.GetBool("TrimSpaceInChar");
-
     m_trimSpaceInCharHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MapBooleanAsBoolean"))
   {
     m_mapBooleanAsBoolean = jsonValue.GetBool("MapBooleanAsBoolean");
-
     m_mapBooleanAsBooleanHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MapJsonbAsClob"))
   {
     m_mapJsonbAsClob = jsonValue.GetBool("MapJsonbAsClob");
-
     m_mapJsonbAsClobHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MapLongVarcharAs"))
   {
     m_mapLongVarcharAs = LongVarcharMappingTypeMapper::GetLongVarcharMappingTypeForName(jsonValue.GetString("MapLongVarcharAs"));
-
     m_mapLongVarcharAsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseMode"))
   {
     m_databaseMode = DatabaseModeMapper::GetDatabaseModeForName(jsonValue.GetString("DatabaseMode"));
-
     m_databaseModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BabelfishDatabaseName"))
   {
     m_babelfishDatabaseName = jsonValue.GetString("BabelfishDatabaseName");
-
     m_babelfishDatabaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisableUnicodeSourceFilter"))
   {
     m_disableUnicodeSourceFilter = jsonValue.GetBool("DisableUnicodeSourceFilter");
-
     m_disableUnicodeSourceFilterHasBeenSet = true;
   }
-
   return *this;
 }
 

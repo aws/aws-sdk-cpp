@@ -18,15 +18,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-ContentBlockStartEvent::ContentBlockStartEvent() : 
-    m_startHasBeenSet(false),
-    m_contentBlockIndex(0),
-    m_contentBlockIndexHasBeenSet(false)
-{
-}
-
 ContentBlockStartEvent::ContentBlockStartEvent(JsonView jsonValue)
-  : ContentBlockStartEvent()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ContentBlockStartEvent& ContentBlockStartEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("start"))
   {
     m_start = jsonValue.GetObject("start");
-
     m_startHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("contentBlockIndex"))
   {
     m_contentBlockIndex = jsonValue.GetInteger("contentBlockIndex");
-
     m_contentBlockIndexHasBeenSet = true;
   }
-
   return *this;
 }
 

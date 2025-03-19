@@ -18,14 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-InvalidSignal::InvalidSignal() : 
-    m_nameHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 InvalidSignal::InvalidSignal(JsonView jsonValue)
-  : InvalidSignal()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ InvalidSignal& InvalidSignal::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = jsonValue.GetString("reason");
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

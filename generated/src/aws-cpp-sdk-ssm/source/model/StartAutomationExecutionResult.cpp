@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartAutomationExecutionResult::StartAutomationExecutionResult()
-{
-}
-
 StartAutomationExecutionResult::StartAutomationExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ StartAutomationExecutionResult& StartAutomationExecutionResult::operator =(const
   if(jsonValue.ValueExists("AutomationExecutionId"))
   {
     m_automationExecutionId = jsonValue.GetString("AutomationExecutionId");
-
+    m_automationExecutionIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

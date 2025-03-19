@@ -32,7 +32,7 @@ namespace Model
   class BasicAuthenticationConfiguration
   {
   public:
-    AWS_KENDRA_API BasicAuthenticationConfiguration();
+    AWS_KENDRA_API BasicAuthenticationConfiguration() = default;
     AWS_KENDRA_API BasicAuthenticationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API BasicAuthenticationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * credentials.</p> <p>For example, the host name of
      * https://a.example.com/page1.html is "a.example.com".</p>
      */
-    inline const Aws::String& GetHost() const{ return m_host; }
+    inline const Aws::String& GetHost() const { return m_host; }
     inline bool HostHasBeenSet() const { return m_hostHasBeenSet; }
-    inline void SetHost(const Aws::String& value) { m_hostHasBeenSet = true; m_host = value; }
-    inline void SetHost(Aws::String&& value) { m_hostHasBeenSet = true; m_host = std::move(value); }
-    inline void SetHost(const char* value) { m_hostHasBeenSet = true; m_host.assign(value); }
-    inline BasicAuthenticationConfiguration& WithHost(const Aws::String& value) { SetHost(value); return *this;}
-    inline BasicAuthenticationConfiguration& WithHost(Aws::String&& value) { SetHost(std::move(value)); return *this;}
-    inline BasicAuthenticationConfiguration& WithHost(const char* value) { SetHost(value); return *this;}
+    template<typename HostT = Aws::String>
+    void SetHost(HostT&& value) { m_hostHasBeenSet = true; m_host = std::forward<HostT>(value); }
+    template<typename HostT = Aws::String>
+    BasicAuthenticationConfiguration& WithHost(HostT&& value) { SetHost(std::forward<HostT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,7 +58,7 @@ namespace Model
      * authentication credentials.</p> <p>For example, the port for
      * https://a.example.com/page1.html is 443, the standard port for HTTPS.</p>
      */
-    inline int GetPort() const{ return m_port; }
+    inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline BasicAuthenticationConfiguration& WithPort(int value) { SetPort(value); return *this;}
@@ -75,21 +73,19 @@ namespace Model
      * required to connect to a website. The secret stores your credentials of user
      * name and password.</p>
      */
-    inline const Aws::String& GetCredentials() const{ return m_credentials; }
+    inline const Aws::String& GetCredentials() const { return m_credentials; }
     inline bool CredentialsHasBeenSet() const { return m_credentialsHasBeenSet; }
-    inline void SetCredentials(const Aws::String& value) { m_credentialsHasBeenSet = true; m_credentials = value; }
-    inline void SetCredentials(Aws::String&& value) { m_credentialsHasBeenSet = true; m_credentials = std::move(value); }
-    inline void SetCredentials(const char* value) { m_credentialsHasBeenSet = true; m_credentials.assign(value); }
-    inline BasicAuthenticationConfiguration& WithCredentials(const Aws::String& value) { SetCredentials(value); return *this;}
-    inline BasicAuthenticationConfiguration& WithCredentials(Aws::String&& value) { SetCredentials(std::move(value)); return *this;}
-    inline BasicAuthenticationConfiguration& WithCredentials(const char* value) { SetCredentials(value); return *this;}
+    template<typename CredentialsT = Aws::String>
+    void SetCredentials(CredentialsT&& value) { m_credentialsHasBeenSet = true; m_credentials = std::forward<CredentialsT>(value); }
+    template<typename CredentialsT = Aws::String>
+    BasicAuthenticationConfiguration& WithCredentials(CredentialsT&& value) { SetCredentials(std::forward<CredentialsT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_host;
     bool m_hostHasBeenSet = false;
 
-    int m_port;
+    int m_port{0};
     bool m_portHasBeenSet = false;
 
     Aws::String m_credentials;

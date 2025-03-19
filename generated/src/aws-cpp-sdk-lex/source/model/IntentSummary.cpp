@@ -18,22 +18,7 @@ namespace LexRuntimeService
 namespace Model
 {
 
-IntentSummary::IntentSummary() : 
-    m_intentNameHasBeenSet(false),
-    m_checkpointLabelHasBeenSet(false),
-    m_slotsHasBeenSet(false),
-    m_confirmationStatus(ConfirmationStatus::NOT_SET),
-    m_confirmationStatusHasBeenSet(false),
-    m_dialogActionType(DialogActionType::NOT_SET),
-    m_dialogActionTypeHasBeenSet(false),
-    m_fulfillmentState(FulfillmentState::NOT_SET),
-    m_fulfillmentStateHasBeenSet(false),
-    m_slotToElicitHasBeenSet(false)
-{
-}
-
 IntentSummary::IntentSummary(JsonView jsonValue)
-  : IntentSummary()
 {
   *this = jsonValue;
 }
@@ -43,17 +28,13 @@ IntentSummary& IntentSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("intentName"))
   {
     m_intentName = jsonValue.GetString("intentName");
-
     m_intentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("checkpointLabel"))
   {
     m_checkpointLabel = jsonValue.GetString("checkpointLabel");
-
     m_checkpointLabelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("slots"))
   {
     Aws::Map<Aws::String, JsonView> slotsJsonMap = jsonValue.GetObject("slots").GetAllObjects();
@@ -63,35 +44,26 @@ IntentSummary& IntentSummary::operator =(JsonView jsonValue)
     }
     m_slotsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("confirmationStatus"))
   {
     m_confirmationStatus = ConfirmationStatusMapper::GetConfirmationStatusForName(jsonValue.GetString("confirmationStatus"));
-
     m_confirmationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dialogActionType"))
   {
     m_dialogActionType = DialogActionTypeMapper::GetDialogActionTypeForName(jsonValue.GetString("dialogActionType"));
-
     m_dialogActionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fulfillmentState"))
   {
     m_fulfillmentState = FulfillmentStateMapper::GetFulfillmentStateForName(jsonValue.GetString("fulfillmentState"));
-
     m_fulfillmentStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("slotToElicit"))
   {
     m_slotToElicit = jsonValue.GetString("slotToElicit");
-
     m_slotToElicitHasBeenSet = true;
   }
-
   return *this;
 }
 

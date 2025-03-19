@@ -18,19 +18,7 @@ namespace MemoryDB
 namespace Model
 {
 
-User::User() : 
-    m_nameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_accessStringHasBeenSet(false),
-    m_aCLNamesHasBeenSet(false),
-    m_minimumEngineVersionHasBeenSet(false),
-    m_authenticationHasBeenSet(false),
-    m_aRNHasBeenSet(false)
-{
-}
-
 User::User(JsonView jsonValue)
-  : User()
 {
   *this = jsonValue;
 }
@@ -40,24 +28,18 @@ User& User::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccessString"))
   {
     m_accessString = jsonValue.GetString("AccessString");
-
     m_accessStringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ACLNames"))
   {
     Aws::Utils::Array<JsonView> aCLNamesJsonList = jsonValue.GetArray("ACLNames");
@@ -67,28 +49,21 @@ User& User::operator =(JsonView jsonValue)
     }
     m_aCLNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinimumEngineVersion"))
   {
     m_minimumEngineVersion = jsonValue.GetString("MinimumEngineVersion");
-
     m_minimumEngineVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Authentication"))
   {
     m_authentication = jsonValue.GetObject("Authentication");
-
     m_authenticationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ARN"))
   {
     m_aRN = jsonValue.GetString("ARN");
-
     m_aRNHasBeenSet = true;
   }
-
   return *this;
 }
 

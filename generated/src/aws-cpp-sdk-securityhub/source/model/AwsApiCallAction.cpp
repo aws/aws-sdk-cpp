@@ -18,20 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsApiCallAction::AwsApiCallAction() : 
-    m_apiHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_callerTypeHasBeenSet(false),
-    m_remoteIpDetailsHasBeenSet(false),
-    m_domainDetailsHasBeenSet(false),
-    m_affectedResourcesHasBeenSet(false),
-    m_firstSeenHasBeenSet(false),
-    m_lastSeenHasBeenSet(false)
-{
-}
-
 AwsApiCallAction::AwsApiCallAction(JsonView jsonValue)
-  : AwsApiCallAction()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ AwsApiCallAction& AwsApiCallAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Api"))
   {
     m_api = jsonValue.GetString("Api");
-
     m_apiHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceName"))
   {
     m_serviceName = jsonValue.GetString("ServiceName");
-
     m_serviceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CallerType"))
   {
     m_callerType = jsonValue.GetString("CallerType");
-
     m_callerTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RemoteIpDetails"))
   {
     m_remoteIpDetails = jsonValue.GetObject("RemoteIpDetails");
-
     m_remoteIpDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DomainDetails"))
   {
     m_domainDetails = jsonValue.GetObject("DomainDetails");
-
     m_domainDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AffectedResources"))
   {
     Aws::Map<Aws::String, JsonView> affectedResourcesJsonMap = jsonValue.GetObject("AffectedResources").GetAllObjects();
@@ -82,21 +59,16 @@ AwsApiCallAction& AwsApiCallAction::operator =(JsonView jsonValue)
     }
     m_affectedResourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FirstSeen"))
   {
     m_firstSeen = jsonValue.GetString("FirstSeen");
-
     m_firstSeenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastSeen"))
   {
     m_lastSeen = jsonValue.GetString("LastSeen");
-
     m_lastSeenHasBeenSet = true;
   }
-
   return *this;
 }
 

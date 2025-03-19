@@ -26,7 +26,7 @@ namespace Model
   class SearchGroupsRequest : public DirectoryServiceDataRequest
   {
   public:
-    AWS_DIRECTORYSERVICEDATA_API SearchGroupsRequest();
+    AWS_DIRECTORYSERVICEDATA_API SearchGroupsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,21 +43,19 @@ namespace Model
     /**
      * <p> The identifier (ID) of the directory that's associated with the group. </p>
      */
-    inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
+    inline const Aws::String& GetDirectoryId() const { return m_directoryId; }
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
-    inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
-    inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
-    inline SearchGroupsRequest& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
-    inline SearchGroupsRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
-    inline SearchGroupsRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+    template<typename DirectoryIdT = Aws::String>
+    void SetDirectoryId(DirectoryIdT&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::forward<DirectoryIdT>(value); }
+    template<typename DirectoryIdT = Aws::String>
+    SearchGroupsRequest& WithDirectoryId(DirectoryIdT&& value) { SetDirectoryId(std::forward<DirectoryIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The maximum number of results to be returned per request. </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline SearchGroupsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -68,14 +66,12 @@ namespace Model
      * <p> An encoded paging token for paginated calls that can be passed back to
      * retrieve the next page. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline SearchGroupsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline SearchGroupsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline SearchGroupsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    SearchGroupsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,14 +81,12 @@ namespace Model
      * Microsoft AD domain. When no value is defined, only your Managed Microsoft AD
      * groups are returned. </p> <p> This value is case insensitive. </p> 
      */
-    inline const Aws::String& GetRealm() const{ return m_realm; }
+    inline const Aws::String& GetRealm() const { return m_realm; }
     inline bool RealmHasBeenSet() const { return m_realmHasBeenSet; }
-    inline void SetRealm(const Aws::String& value) { m_realmHasBeenSet = true; m_realm = value; }
-    inline void SetRealm(Aws::String&& value) { m_realmHasBeenSet = true; m_realm = std::move(value); }
-    inline void SetRealm(const char* value) { m_realmHasBeenSet = true; m_realm.assign(value); }
-    inline SearchGroupsRequest& WithRealm(const Aws::String& value) { SetRealm(value); return *this;}
-    inline SearchGroupsRequest& WithRealm(Aws::String&& value) { SetRealm(std::move(value)); return *this;}
-    inline SearchGroupsRequest& WithRealm(const char* value) { SetRealm(value); return *this;}
+    template<typename RealmT = Aws::String>
+    void SetRealm(RealmT&& value) { m_realmHasBeenSet = true; m_realm = std::forward<RealmT>(value); }
+    template<typename RealmT = Aws::String>
+    SearchGroupsRequest& WithRealm(RealmT&& value) { SetRealm(std::forward<RealmT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,15 +96,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ad_data_attributes.html">Directory
      * Service Data Attributes</a>. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetSearchAttributes() const{ return m_searchAttributes; }
+    inline const Aws::Vector<Aws::String>& GetSearchAttributes() const { return m_searchAttributes; }
     inline bool SearchAttributesHasBeenSet() const { return m_searchAttributesHasBeenSet; }
-    inline void SetSearchAttributes(const Aws::Vector<Aws::String>& value) { m_searchAttributesHasBeenSet = true; m_searchAttributes = value; }
-    inline void SetSearchAttributes(Aws::Vector<Aws::String>&& value) { m_searchAttributesHasBeenSet = true; m_searchAttributes = std::move(value); }
-    inline SearchGroupsRequest& WithSearchAttributes(const Aws::Vector<Aws::String>& value) { SetSearchAttributes(value); return *this;}
-    inline SearchGroupsRequest& WithSearchAttributes(Aws::Vector<Aws::String>&& value) { SetSearchAttributes(std::move(value)); return *this;}
-    inline SearchGroupsRequest& AddSearchAttributes(const Aws::String& value) { m_searchAttributesHasBeenSet = true; m_searchAttributes.push_back(value); return *this; }
-    inline SearchGroupsRequest& AddSearchAttributes(Aws::String&& value) { m_searchAttributesHasBeenSet = true; m_searchAttributes.push_back(std::move(value)); return *this; }
-    inline SearchGroupsRequest& AddSearchAttributes(const char* value) { m_searchAttributesHasBeenSet = true; m_searchAttributes.push_back(value); return *this; }
+    template<typename SearchAttributesT = Aws::Vector<Aws::String>>
+    void SetSearchAttributes(SearchAttributesT&& value) { m_searchAttributesHasBeenSet = true; m_searchAttributes = std::forward<SearchAttributesT>(value); }
+    template<typename SearchAttributesT = Aws::Vector<Aws::String>>
+    SearchGroupsRequest& WithSearchAttributes(SearchAttributesT&& value) { SetSearchAttributes(std::forward<SearchAttributesT>(value)); return *this;}
+    template<typename SearchAttributesT = Aws::String>
+    SearchGroupsRequest& AddSearchAttributes(SearchAttributesT&& value) { m_searchAttributesHasBeenSet = true; m_searchAttributes.emplace_back(std::forward<SearchAttributesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -121,21 +114,19 @@ namespace Model
      * href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ad_data_attributes.html">Directory
      * Service Data Attributes</a>. </p> 
      */
-    inline const Aws::String& GetSearchString() const{ return m_searchString; }
+    inline const Aws::String& GetSearchString() const { return m_searchString; }
     inline bool SearchStringHasBeenSet() const { return m_searchStringHasBeenSet; }
-    inline void SetSearchString(const Aws::String& value) { m_searchStringHasBeenSet = true; m_searchString = value; }
-    inline void SetSearchString(Aws::String&& value) { m_searchStringHasBeenSet = true; m_searchString = std::move(value); }
-    inline void SetSearchString(const char* value) { m_searchStringHasBeenSet = true; m_searchString.assign(value); }
-    inline SearchGroupsRequest& WithSearchString(const Aws::String& value) { SetSearchString(value); return *this;}
-    inline SearchGroupsRequest& WithSearchString(Aws::String&& value) { SetSearchString(std::move(value)); return *this;}
-    inline SearchGroupsRequest& WithSearchString(const char* value) { SetSearchString(value); return *this;}
+    template<typename SearchStringT = Aws::String>
+    void SetSearchString(SearchStringT&& value) { m_searchStringHasBeenSet = true; m_searchString = std::forward<SearchStringT>(value); }
+    template<typename SearchStringT = Aws::String>
+    SearchGroupsRequest& WithSearchString(SearchStringT&& value) { SetSearchString(std::forward<SearchStringT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_directoryId;
     bool m_directoryIdHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

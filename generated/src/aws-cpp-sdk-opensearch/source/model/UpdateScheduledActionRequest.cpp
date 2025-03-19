@@ -12,18 +12,6 @@ using namespace Aws::OpenSearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateScheduledActionRequest::UpdateScheduledActionRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_actionIDHasBeenSet(false),
-    m_actionType(ActionType::NOT_SET),
-    m_actionTypeHasBeenSet(false),
-    m_scheduleAt(ScheduleAt::NOT_SET),
-    m_scheduleAtHasBeenSet(false),
-    m_desiredStartTime(0),
-    m_desiredStartTimeHasBeenSet(false)
-{
-}
-
 Aws::String UpdateScheduledActionRequest::SerializePayload() const
 {
   JsonValue payload;

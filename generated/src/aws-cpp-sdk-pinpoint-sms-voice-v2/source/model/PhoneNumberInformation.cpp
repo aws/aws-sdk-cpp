@@ -18,36 +18,7 @@ namespace PinpointSMSVoiceV2
 namespace Model
 {
 
-PhoneNumberInformation::PhoneNumberInformation() : 
-    m_phoneNumberArnHasBeenSet(false),
-    m_phoneNumberIdHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false),
-    m_status(NumberStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_isoCountryCodeHasBeenSet(false),
-    m_messageType(MessageType::NOT_SET),
-    m_messageTypeHasBeenSet(false),
-    m_numberCapabilitiesHasBeenSet(false),
-    m_numberType(NumberType::NOT_SET),
-    m_numberTypeHasBeenSet(false),
-    m_monthlyLeasingPriceHasBeenSet(false),
-    m_twoWayEnabled(false),
-    m_twoWayEnabledHasBeenSet(false),
-    m_twoWayChannelArnHasBeenSet(false),
-    m_twoWayChannelRoleHasBeenSet(false),
-    m_selfManagedOptOutsEnabled(false),
-    m_selfManagedOptOutsEnabledHasBeenSet(false),
-    m_optOutListNameHasBeenSet(false),
-    m_deletionProtectionEnabled(false),
-    m_deletionProtectionEnabledHasBeenSet(false),
-    m_poolIdHasBeenSet(false),
-    m_registrationIdHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false)
-{
-}
-
 PhoneNumberInformation::PhoneNumberInformation(JsonView jsonValue)
-  : PhoneNumberInformation()
 {
   *this = jsonValue;
 }
@@ -57,45 +28,33 @@ PhoneNumberInformation& PhoneNumberInformation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PhoneNumberArn"))
   {
     m_phoneNumberArn = jsonValue.GetString("PhoneNumberArn");
-
     m_phoneNumberArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PhoneNumberId"))
   {
     m_phoneNumberId = jsonValue.GetString("PhoneNumberId");
-
     m_phoneNumberIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PhoneNumber"))
   {
     m_phoneNumber = jsonValue.GetString("PhoneNumber");
-
     m_phoneNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = NumberStatusMapper::GetNumberStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsoCountryCode"))
   {
     m_isoCountryCode = jsonValue.GetString("IsoCountryCode");
-
     m_isoCountryCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MessageType"))
   {
     m_messageType = MessageTypeMapper::GetMessageTypeForName(jsonValue.GetString("MessageType"));
-
     m_messageTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberCapabilities"))
   {
     Aws::Utils::Array<JsonView> numberCapabilitiesJsonList = jsonValue.GetArray("NumberCapabilities");
@@ -105,84 +64,61 @@ PhoneNumberInformation& PhoneNumberInformation::operator =(JsonView jsonValue)
     }
     m_numberCapabilitiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberType"))
   {
     m_numberType = NumberTypeMapper::GetNumberTypeForName(jsonValue.GetString("NumberType"));
-
     m_numberTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MonthlyLeasingPrice"))
   {
     m_monthlyLeasingPrice = jsonValue.GetString("MonthlyLeasingPrice");
-
     m_monthlyLeasingPriceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TwoWayEnabled"))
   {
     m_twoWayEnabled = jsonValue.GetBool("TwoWayEnabled");
-
     m_twoWayEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TwoWayChannelArn"))
   {
     m_twoWayChannelArn = jsonValue.GetString("TwoWayChannelArn");
-
     m_twoWayChannelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TwoWayChannelRole"))
   {
     m_twoWayChannelRole = jsonValue.GetString("TwoWayChannelRole");
-
     m_twoWayChannelRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SelfManagedOptOutsEnabled"))
   {
     m_selfManagedOptOutsEnabled = jsonValue.GetBool("SelfManagedOptOutsEnabled");
-
     m_selfManagedOptOutsEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OptOutListName"))
   {
     m_optOutListName = jsonValue.GetString("OptOutListName");
-
     m_optOutListNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeletionProtectionEnabled"))
   {
     m_deletionProtectionEnabled = jsonValue.GetBool("DeletionProtectionEnabled");
-
     m_deletionProtectionEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PoolId"))
   {
     m_poolId = jsonValue.GetString("PoolId");
-
     m_poolIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegistrationId"))
   {
     m_registrationId = jsonValue.GetString("RegistrationId");
-
     m_registrationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

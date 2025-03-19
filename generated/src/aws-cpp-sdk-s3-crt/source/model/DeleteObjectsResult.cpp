@@ -16,13 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteObjectsResult::DeleteObjectsResult() : 
-    m_requestCharged(RequestCharged::NOT_SET)
-{
-}
-
 DeleteObjectsResult::DeleteObjectsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : DeleteObjectsResult()
 {
   *this = result;
 }
@@ -38,23 +32,27 @@ DeleteObjectsResult& DeleteObjectsResult::operator =(const Aws::AmazonWebService
     if(!deletedNode.IsNull())
     {
       XmlNode deletedMember = deletedNode;
+      m_deletedHasBeenSet = !deletedMember.IsNull();
       while(!deletedMember.IsNull())
       {
         m_deleted.push_back(deletedMember);
         deletedMember = deletedMember.NextNode("Deleted");
       }
 
+      m_deletedHasBeenSet = true;
     }
     XmlNode errorsNode = resultNode.FirstChild("Error");
     if(!errorsNode.IsNull())
     {
       XmlNode errorMember = errorsNode;
+      m_errorsHasBeenSet = !errorMember.IsNull();
       while(!errorMember.IsNull())
       {
         m_errors.push_back(errorMember);
         errorMember = errorMember.NextNode("Error");
       }
 
+      m_errorsHasBeenSet = true;
     }
   }
 
@@ -63,12 +61,14 @@ DeleteObjectsResult& DeleteObjectsResult::operator =(const Aws::AmazonWebService
   if(requestChargedIter != headers.end())
   {
     m_requestCharged = RequestChargedMapper::GetRequestChargedForName(requestChargedIter->second);
+    m_requestChargedHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amz-request-id");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

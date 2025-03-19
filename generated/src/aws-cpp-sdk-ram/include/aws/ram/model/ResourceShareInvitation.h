@@ -34,7 +34,7 @@ namespace Model
   class ResourceShareInvitation
   {
   public:
-    AWS_RAM_API ResourceShareInvitation();
+    AWS_RAM_API ResourceShareInvitation() = default;
     AWS_RAM_API ResourceShareInvitation(Aws::Utils::Json::JsonView jsonValue);
     AWS_RAM_API ResourceShareInvitation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RAM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,28 +46,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of the invitation.</p>
      */
-    inline const Aws::String& GetResourceShareInvitationArn() const{ return m_resourceShareInvitationArn; }
+    inline const Aws::String& GetResourceShareInvitationArn() const { return m_resourceShareInvitationArn; }
     inline bool ResourceShareInvitationArnHasBeenSet() const { return m_resourceShareInvitationArnHasBeenSet; }
-    inline void SetResourceShareInvitationArn(const Aws::String& value) { m_resourceShareInvitationArnHasBeenSet = true; m_resourceShareInvitationArn = value; }
-    inline void SetResourceShareInvitationArn(Aws::String&& value) { m_resourceShareInvitationArnHasBeenSet = true; m_resourceShareInvitationArn = std::move(value); }
-    inline void SetResourceShareInvitationArn(const char* value) { m_resourceShareInvitationArnHasBeenSet = true; m_resourceShareInvitationArn.assign(value); }
-    inline ResourceShareInvitation& WithResourceShareInvitationArn(const Aws::String& value) { SetResourceShareInvitationArn(value); return *this;}
-    inline ResourceShareInvitation& WithResourceShareInvitationArn(Aws::String&& value) { SetResourceShareInvitationArn(std::move(value)); return *this;}
-    inline ResourceShareInvitation& WithResourceShareInvitationArn(const char* value) { SetResourceShareInvitationArn(value); return *this;}
+    template<typename ResourceShareInvitationArnT = Aws::String>
+    void SetResourceShareInvitationArn(ResourceShareInvitationArnT&& value) { m_resourceShareInvitationArnHasBeenSet = true; m_resourceShareInvitationArn = std::forward<ResourceShareInvitationArnT>(value); }
+    template<typename ResourceShareInvitationArnT = Aws::String>
+    ResourceShareInvitation& WithResourceShareInvitationArn(ResourceShareInvitationArnT&& value) { SetResourceShareInvitationArn(std::forward<ResourceShareInvitationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the resource share.</p>
      */
-    inline const Aws::String& GetResourceShareName() const{ return m_resourceShareName; }
+    inline const Aws::String& GetResourceShareName() const { return m_resourceShareName; }
     inline bool ResourceShareNameHasBeenSet() const { return m_resourceShareNameHasBeenSet; }
-    inline void SetResourceShareName(const Aws::String& value) { m_resourceShareNameHasBeenSet = true; m_resourceShareName = value; }
-    inline void SetResourceShareName(Aws::String&& value) { m_resourceShareNameHasBeenSet = true; m_resourceShareName = std::move(value); }
-    inline void SetResourceShareName(const char* value) { m_resourceShareNameHasBeenSet = true; m_resourceShareName.assign(value); }
-    inline ResourceShareInvitation& WithResourceShareName(const Aws::String& value) { SetResourceShareName(value); return *this;}
-    inline ResourceShareInvitation& WithResourceShareName(Aws::String&& value) { SetResourceShareName(std::move(value)); return *this;}
-    inline ResourceShareInvitation& WithResourceShareName(const char* value) { SetResourceShareName(value); return *this;}
+    template<typename ResourceShareNameT = Aws::String>
+    void SetResourceShareName(ResourceShareNameT&& value) { m_resourceShareNameHasBeenSet = true; m_resourceShareName = std::forward<ResourceShareNameT>(value); }
+    template<typename ResourceShareNameT = Aws::String>
+    ResourceShareInvitation& WithResourceShareName(ResourceShareNameT&& value) { SetResourceShareName(std::forward<ResourceShareNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,66 +72,58 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of the resource share</p>
      */
-    inline const Aws::String& GetResourceShareArn() const{ return m_resourceShareArn; }
+    inline const Aws::String& GetResourceShareArn() const { return m_resourceShareArn; }
     inline bool ResourceShareArnHasBeenSet() const { return m_resourceShareArnHasBeenSet; }
-    inline void SetResourceShareArn(const Aws::String& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = value; }
-    inline void SetResourceShareArn(Aws::String&& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = std::move(value); }
-    inline void SetResourceShareArn(const char* value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn.assign(value); }
-    inline ResourceShareInvitation& WithResourceShareArn(const Aws::String& value) { SetResourceShareArn(value); return *this;}
-    inline ResourceShareInvitation& WithResourceShareArn(Aws::String&& value) { SetResourceShareArn(std::move(value)); return *this;}
-    inline ResourceShareInvitation& WithResourceShareArn(const char* value) { SetResourceShareArn(value); return *this;}
+    template<typename ResourceShareArnT = Aws::String>
+    void SetResourceShareArn(ResourceShareArnT&& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = std::forward<ResourceShareArnT>(value); }
+    template<typename ResourceShareArnT = Aws::String>
+    ResourceShareInvitation& WithResourceShareArn(ResourceShareArnT&& value) { SetResourceShareArn(std::forward<ResourceShareArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Amazon Web Services account that sent the invitation.</p>
      */
-    inline const Aws::String& GetSenderAccountId() const{ return m_senderAccountId; }
+    inline const Aws::String& GetSenderAccountId() const { return m_senderAccountId; }
     inline bool SenderAccountIdHasBeenSet() const { return m_senderAccountIdHasBeenSet; }
-    inline void SetSenderAccountId(const Aws::String& value) { m_senderAccountIdHasBeenSet = true; m_senderAccountId = value; }
-    inline void SetSenderAccountId(Aws::String&& value) { m_senderAccountIdHasBeenSet = true; m_senderAccountId = std::move(value); }
-    inline void SetSenderAccountId(const char* value) { m_senderAccountIdHasBeenSet = true; m_senderAccountId.assign(value); }
-    inline ResourceShareInvitation& WithSenderAccountId(const Aws::String& value) { SetSenderAccountId(value); return *this;}
-    inline ResourceShareInvitation& WithSenderAccountId(Aws::String&& value) { SetSenderAccountId(std::move(value)); return *this;}
-    inline ResourceShareInvitation& WithSenderAccountId(const char* value) { SetSenderAccountId(value); return *this;}
+    template<typename SenderAccountIdT = Aws::String>
+    void SetSenderAccountId(SenderAccountIdT&& value) { m_senderAccountIdHasBeenSet = true; m_senderAccountId = std::forward<SenderAccountIdT>(value); }
+    template<typename SenderAccountIdT = Aws::String>
+    ResourceShareInvitation& WithSenderAccountId(SenderAccountIdT&& value) { SetSenderAccountId(std::forward<SenderAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Amazon Web Services account that received the invitation.</p>
      */
-    inline const Aws::String& GetReceiverAccountId() const{ return m_receiverAccountId; }
+    inline const Aws::String& GetReceiverAccountId() const { return m_receiverAccountId; }
     inline bool ReceiverAccountIdHasBeenSet() const { return m_receiverAccountIdHasBeenSet; }
-    inline void SetReceiverAccountId(const Aws::String& value) { m_receiverAccountIdHasBeenSet = true; m_receiverAccountId = value; }
-    inline void SetReceiverAccountId(Aws::String&& value) { m_receiverAccountIdHasBeenSet = true; m_receiverAccountId = std::move(value); }
-    inline void SetReceiverAccountId(const char* value) { m_receiverAccountIdHasBeenSet = true; m_receiverAccountId.assign(value); }
-    inline ResourceShareInvitation& WithReceiverAccountId(const Aws::String& value) { SetReceiverAccountId(value); return *this;}
-    inline ResourceShareInvitation& WithReceiverAccountId(Aws::String&& value) { SetReceiverAccountId(std::move(value)); return *this;}
-    inline ResourceShareInvitation& WithReceiverAccountId(const char* value) { SetReceiverAccountId(value); return *this;}
+    template<typename ReceiverAccountIdT = Aws::String>
+    void SetReceiverAccountId(ReceiverAccountIdT&& value) { m_receiverAccountIdHasBeenSet = true; m_receiverAccountId = std::forward<ReceiverAccountIdT>(value); }
+    template<typename ReceiverAccountIdT = Aws::String>
+    ResourceShareInvitation& WithReceiverAccountId(ReceiverAccountIdT&& value) { SetReceiverAccountId(std::forward<ReceiverAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time when the invitation was sent.</p>
      */
-    inline const Aws::Utils::DateTime& GetInvitationTimestamp() const{ return m_invitationTimestamp; }
+    inline const Aws::Utils::DateTime& GetInvitationTimestamp() const { return m_invitationTimestamp; }
     inline bool InvitationTimestampHasBeenSet() const { return m_invitationTimestampHasBeenSet; }
-    inline void SetInvitationTimestamp(const Aws::Utils::DateTime& value) { m_invitationTimestampHasBeenSet = true; m_invitationTimestamp = value; }
-    inline void SetInvitationTimestamp(Aws::Utils::DateTime&& value) { m_invitationTimestampHasBeenSet = true; m_invitationTimestamp = std::move(value); }
-    inline ResourceShareInvitation& WithInvitationTimestamp(const Aws::Utils::DateTime& value) { SetInvitationTimestamp(value); return *this;}
-    inline ResourceShareInvitation& WithInvitationTimestamp(Aws::Utils::DateTime&& value) { SetInvitationTimestamp(std::move(value)); return *this;}
+    template<typename InvitationTimestampT = Aws::Utils::DateTime>
+    void SetInvitationTimestamp(InvitationTimestampT&& value) { m_invitationTimestampHasBeenSet = true; m_invitationTimestamp = std::forward<InvitationTimestampT>(value); }
+    template<typename InvitationTimestampT = Aws::Utils::DateTime>
+    ResourceShareInvitation& WithInvitationTimestamp(InvitationTimestampT&& value) { SetInvitationTimestamp(std::forward<InvitationTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current status of the invitation.</p>
      */
-    inline const ResourceShareInvitationStatus& GetStatus() const{ return m_status; }
+    inline ResourceShareInvitationStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ResourceShareInvitationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ResourceShareInvitationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ResourceShareInvitation& WithStatus(const ResourceShareInvitationStatus& value) { SetStatus(value); return *this;}
-    inline ResourceShareInvitation& WithStatus(ResourceShareInvitationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ResourceShareInvitationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ResourceShareInvitation& WithStatus(ResourceShareInvitationStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -145,14 +133,12 @@ namespace Model
      * Resource Name (ARN)</a> of the IAM user or role that received the
      * invitation.</p>
      */
-    inline const Aws::String& GetReceiverArn() const{ return m_receiverArn; }
+    inline const Aws::String& GetReceiverArn() const { return m_receiverArn; }
     inline bool ReceiverArnHasBeenSet() const { return m_receiverArnHasBeenSet; }
-    inline void SetReceiverArn(const Aws::String& value) { m_receiverArnHasBeenSet = true; m_receiverArn = value; }
-    inline void SetReceiverArn(Aws::String&& value) { m_receiverArnHasBeenSet = true; m_receiverArn = std::move(value); }
-    inline void SetReceiverArn(const char* value) { m_receiverArnHasBeenSet = true; m_receiverArn.assign(value); }
-    inline ResourceShareInvitation& WithReceiverArn(const Aws::String& value) { SetReceiverArn(value); return *this;}
-    inline ResourceShareInvitation& WithReceiverArn(Aws::String&& value) { SetReceiverArn(std::move(value)); return *this;}
-    inline ResourceShareInvitation& WithReceiverArn(const char* value) { SetReceiverArn(value); return *this;}
+    template<typename ReceiverArnT = Aws::String>
+    void SetReceiverArn(ReceiverArnT&& value) { m_receiverArnHasBeenSet = true; m_receiverArn = std::forward<ReceiverArnT>(value); }
+    template<typename ReceiverArnT = Aws::String>
+    ResourceShareInvitation& WithReceiverArn(ReceiverArnT&& value) { SetReceiverArn(std::forward<ReceiverArnT>(value)); return *this;}
     ///@}
   private:
 
@@ -171,10 +157,10 @@ namespace Model
     Aws::String m_receiverAccountId;
     bool m_receiverAccountIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_invitationTimestamp;
+    Aws::Utils::DateTime m_invitationTimestamp{};
     bool m_invitationTimestampHasBeenSet = false;
 
-    ResourceShareInvitationStatus m_status;
+    ResourceShareInvitationStatus m_status{ResourceShareInvitationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_receiverArn;

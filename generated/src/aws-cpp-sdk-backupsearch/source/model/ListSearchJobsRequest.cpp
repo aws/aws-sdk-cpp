@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListSearchJobsRequest::ListSearchJobsRequest() : 
-    m_byStatus(SearchJobState::NOT_SET),
-    m_byStatusHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListSearchJobsRequest::SerializePayload() const
 {
   return {};

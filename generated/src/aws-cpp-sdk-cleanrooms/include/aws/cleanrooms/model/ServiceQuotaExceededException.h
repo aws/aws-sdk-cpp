@@ -32,7 +32,7 @@ namespace Model
   class ServiceQuotaExceededException
   {
   public:
-    AWS_CLEANROOMS_API ServiceQuotaExceededException();
+    AWS_CLEANROOMS_API ServiceQuotaExceededException() = default;
     AWS_CLEANROOMS_API ServiceQuotaExceededException(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API ServiceQuotaExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,35 +40,31 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline ServiceQuotaExceededException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline ServiceQuotaExceededException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline ServiceQuotaExceededException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    ServiceQuotaExceededException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the quota.</p>
      */
-    inline const Aws::String& GetQuotaName() const{ return m_quotaName; }
+    inline const Aws::String& GetQuotaName() const { return m_quotaName; }
     inline bool QuotaNameHasBeenSet() const { return m_quotaNameHasBeenSet; }
-    inline void SetQuotaName(const Aws::String& value) { m_quotaNameHasBeenSet = true; m_quotaName = value; }
-    inline void SetQuotaName(Aws::String&& value) { m_quotaNameHasBeenSet = true; m_quotaName = std::move(value); }
-    inline void SetQuotaName(const char* value) { m_quotaNameHasBeenSet = true; m_quotaName.assign(value); }
-    inline ServiceQuotaExceededException& WithQuotaName(const Aws::String& value) { SetQuotaName(value); return *this;}
-    inline ServiceQuotaExceededException& WithQuotaName(Aws::String&& value) { SetQuotaName(std::move(value)); return *this;}
-    inline ServiceQuotaExceededException& WithQuotaName(const char* value) { SetQuotaName(value); return *this;}
+    template<typename QuotaNameT = Aws::String>
+    void SetQuotaName(QuotaNameT&& value) { m_quotaNameHasBeenSet = true; m_quotaName = std::forward<QuotaNameT>(value); }
+    template<typename QuotaNameT = Aws::String>
+    ServiceQuotaExceededException& WithQuotaName(QuotaNameT&& value) { SetQuotaName(std::forward<QuotaNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of the quota.</p>
      */
-    inline double GetQuotaValue() const{ return m_quotaValue; }
+    inline double GetQuotaValue() const { return m_quotaValue; }
     inline bool QuotaValueHasBeenSet() const { return m_quotaValueHasBeenSet; }
     inline void SetQuotaValue(double value) { m_quotaValueHasBeenSet = true; m_quotaValue = value; }
     inline ServiceQuotaExceededException& WithQuotaValue(double value) { SetQuotaValue(value); return *this;}
@@ -81,7 +77,7 @@ namespace Model
     Aws::String m_quotaName;
     bool m_quotaNameHasBeenSet = false;
 
-    double m_quotaValue;
+    double m_quotaValue{0.0};
     bool m_quotaValueHasBeenSet = false;
   };
 

@@ -18,31 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-DocDbSettings::DocDbSettings() : 
-    m_usernameHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_serverNameHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_nestingLevel(NestingLevelValue::NOT_SET),
-    m_nestingLevelHasBeenSet(false),
-    m_extractDocId(false),
-    m_extractDocIdHasBeenSet(false),
-    m_docsToInvestigate(0),
-    m_docsToInvestigateHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_secretsManagerAccessRoleArnHasBeenSet(false),
-    m_secretsManagerSecretIdHasBeenSet(false),
-    m_useUpdateLookUp(false),
-    m_useUpdateLookUpHasBeenSet(false),
-    m_replicateShardCollections(false),
-    m_replicateShardCollectionsHasBeenSet(false)
-{
-}
-
 DocDbSettings::DocDbSettings(JsonView jsonValue)
-  : DocDbSettings()
 {
   *this = jsonValue;
 }
@@ -52,94 +28,68 @@ DocDbSettings& DocDbSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Username"))
   {
     m_username = jsonValue.GetString("Username");
-
     m_usernameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Password"))
   {
     m_password = jsonValue.GetString("Password");
-
     m_passwordHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServerName"))
   {
     m_serverName = jsonValue.GetString("ServerName");
-
     m_serverNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Port"))
   {
     m_port = jsonValue.GetInteger("Port");
-
     m_portHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseName"))
   {
     m_databaseName = jsonValue.GetString("DatabaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NestingLevel"))
   {
     m_nestingLevel = NestingLevelValueMapper::GetNestingLevelValueForName(jsonValue.GetString("NestingLevel"));
-
     m_nestingLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExtractDocId"))
   {
     m_extractDocId = jsonValue.GetBool("ExtractDocId");
-
     m_extractDocIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocsToInvestigate"))
   {
     m_docsToInvestigate = jsonValue.GetInteger("DocsToInvestigate");
-
     m_docsToInvestigateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretsManagerAccessRoleArn"))
   {
     m_secretsManagerAccessRoleArn = jsonValue.GetString("SecretsManagerAccessRoleArn");
-
     m_secretsManagerAccessRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretsManagerSecretId"))
   {
     m_secretsManagerSecretId = jsonValue.GetString("SecretsManagerSecretId");
-
     m_secretsManagerSecretIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UseUpdateLookUp"))
   {
     m_useUpdateLookUp = jsonValue.GetBool("UseUpdateLookUp");
-
     m_useUpdateLookUpHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicateShardCollections"))
   {
     m_replicateShardCollections = jsonValue.GetBool("ReplicateShardCollections");
-
     m_replicateShardCollectionsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace IoT
 namespace Model
 {
 
-HttpAuthorization::HttpAuthorization() : 
-    m_sigv4HasBeenSet(false)
-{
-}
-
 HttpAuthorization::HttpAuthorization(JsonView jsonValue)
-  : HttpAuthorization()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ HttpAuthorization& HttpAuthorization::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sigv4"))
   {
     m_sigv4 = jsonValue.GetObject("sigv4");
-
     m_sigv4HasBeenSet = true;
   }
-
   return *this;
 }
 

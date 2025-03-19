@@ -18,13 +18,7 @@ namespace EventBridge
 namespace Model
 {
 
-EndpointEventBus::EndpointEventBus() : 
-    m_eventBusArnHasBeenSet(false)
-{
-}
-
 EndpointEventBus::EndpointEventBus(JsonView jsonValue)
-  : EndpointEventBus()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EndpointEventBus& EndpointEventBus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EventBusArn"))
   {
     m_eventBusArn = jsonValue.GetString("EventBusArn");
-
     m_eventBusArnHasBeenSet = true;
   }
-
   return *this;
 }
 

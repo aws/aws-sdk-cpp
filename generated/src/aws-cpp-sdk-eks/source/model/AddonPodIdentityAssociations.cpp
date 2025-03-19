@@ -18,14 +18,7 @@ namespace EKS
 namespace Model
 {
 
-AddonPodIdentityAssociations::AddonPodIdentityAssociations() : 
-    m_serviceAccountHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 AddonPodIdentityAssociations::AddonPodIdentityAssociations(JsonView jsonValue)
-  : AddonPodIdentityAssociations()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AddonPodIdentityAssociations& AddonPodIdentityAssociations::operator =(JsonView 
   if(jsonValue.ValueExists("serviceAccount"))
   {
     m_serviceAccount = jsonValue.GetString("serviceAccount");
-
     m_serviceAccountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

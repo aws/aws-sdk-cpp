@@ -34,7 +34,7 @@ namespace Model
   class FaceRecord
   {
   public:
-    AWS_REKOGNITION_API FaceRecord();
+    AWS_REKOGNITION_API FaceRecord() = default;
     AWS_REKOGNITION_API FaceRecord(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API FaceRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,24 +45,24 @@ namespace Model
      * <p>Describes the face properties such as the bounding box, face ID, image ID of
      * the input image, and external image ID that you assigned. </p>
      */
-    inline const Face& GetFace() const{ return m_face; }
+    inline const Face& GetFace() const { return m_face; }
     inline bool FaceHasBeenSet() const { return m_faceHasBeenSet; }
-    inline void SetFace(const Face& value) { m_faceHasBeenSet = true; m_face = value; }
-    inline void SetFace(Face&& value) { m_faceHasBeenSet = true; m_face = std::move(value); }
-    inline FaceRecord& WithFace(const Face& value) { SetFace(value); return *this;}
-    inline FaceRecord& WithFace(Face&& value) { SetFace(std::move(value)); return *this;}
+    template<typename FaceT = Face>
+    void SetFace(FaceT&& value) { m_faceHasBeenSet = true; m_face = std::forward<FaceT>(value); }
+    template<typename FaceT = Face>
+    FaceRecord& WithFace(FaceT&& value) { SetFace(std::forward<FaceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Structure containing attributes of the face that the algorithm detected.</p>
      */
-    inline const FaceDetail& GetFaceDetail() const{ return m_faceDetail; }
+    inline const FaceDetail& GetFaceDetail() const { return m_faceDetail; }
     inline bool FaceDetailHasBeenSet() const { return m_faceDetailHasBeenSet; }
-    inline void SetFaceDetail(const FaceDetail& value) { m_faceDetailHasBeenSet = true; m_faceDetail = value; }
-    inline void SetFaceDetail(FaceDetail&& value) { m_faceDetailHasBeenSet = true; m_faceDetail = std::move(value); }
-    inline FaceRecord& WithFaceDetail(const FaceDetail& value) { SetFaceDetail(value); return *this;}
-    inline FaceRecord& WithFaceDetail(FaceDetail&& value) { SetFaceDetail(std::move(value)); return *this;}
+    template<typename FaceDetailT = FaceDetail>
+    void SetFaceDetail(FaceDetailT&& value) { m_faceDetailHasBeenSet = true; m_faceDetail = std::forward<FaceDetailT>(value); }
+    template<typename FaceDetailT = FaceDetail>
+    FaceRecord& WithFaceDetail(FaceDetailT&& value) { SetFaceDetail(std::forward<FaceDetailT>(value)); return *this;}
     ///@}
   private:
 

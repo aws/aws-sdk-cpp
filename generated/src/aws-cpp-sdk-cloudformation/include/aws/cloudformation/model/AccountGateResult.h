@@ -44,7 +44,7 @@ namespace Model
   class AccountGateResult
   {
   public:
-    AWS_CLOUDFORMATION_API AccountGateResult();
+    AWS_CLOUDFORMATION_API AccountGateResult() = default;
     AWS_CLOUDFORMATION_API AccountGateResult(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFORMATION_API AccountGateResult& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -75,12 +75,10 @@ namespace Model
      * CloudFormation skips the stack set operation in this account and Region.</p>
      * </li> </ul> </li> </ul>
      */
-    inline const AccountGateStatus& GetStatus() const{ return m_status; }
+    inline AccountGateStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const AccountGateStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(AccountGateStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline AccountGateResult& WithStatus(const AccountGateStatus& value) { SetStatus(value); return *this;}
-    inline AccountGateResult& WithStatus(AccountGateStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(AccountGateStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline AccountGateResult& WithStatus(AccountGateStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -88,18 +86,16 @@ namespace Model
      * <p>The reason for the account gate status assigned to this account and Region
      * for the stack set operation.</p>
      */
-    inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
+    inline const Aws::String& GetStatusReason() const { return m_statusReason; }
     inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
-    inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
-    inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
-    inline void SetStatusReason(const char* value) { m_statusReasonHasBeenSet = true; m_statusReason.assign(value); }
-    inline AccountGateResult& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
-    inline AccountGateResult& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
-    inline AccountGateResult& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
+    template<typename StatusReasonT = Aws::String>
+    void SetStatusReason(StatusReasonT&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::forward<StatusReasonT>(value); }
+    template<typename StatusReasonT = Aws::String>
+    AccountGateResult& WithStatusReason(StatusReasonT&& value) { SetStatusReason(std::forward<StatusReasonT>(value)); return *this;}
     ///@}
   private:
 
-    AccountGateStatus m_status;
+    AccountGateStatus m_status{AccountGateStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;

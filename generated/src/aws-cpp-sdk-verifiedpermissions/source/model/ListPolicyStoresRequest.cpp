@@ -12,13 +12,6 @@ using namespace Aws::VerifiedPermissions::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListPolicyStoresRequest::ListPolicyStoresRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListPolicyStoresRequest::SerializePayload() const
 {
   JsonValue payload;

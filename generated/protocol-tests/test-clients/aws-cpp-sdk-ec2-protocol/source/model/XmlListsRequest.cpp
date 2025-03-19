@@ -10,10 +10,6 @@
 using namespace Aws::EC2Protocol::Model;
 using namespace Aws::Utils;
 
-XmlListsRequest::XmlListsRequest()
-{
-}
-
 Aws::String XmlListsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

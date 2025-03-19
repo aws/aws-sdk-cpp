@@ -32,7 +32,7 @@ namespace Model
   class AdConditioningConfiguration
   {
   public:
-    AWS_MEDIATAILOR_API AdConditioningConfiguration();
+    AWS_MEDIATAILOR_API AdConditioningConfiguration() = default;
     AWS_MEDIATAILOR_API AdConditioningConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API AdConditioningConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,16 +49,14 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/precondition-ads.html">https://docs.aws.amazon.com/precondition-ads.html</a>.</p>
      */
-    inline const StreamingMediaFileConditioning& GetStreamingMediaFileConditioning() const{ return m_streamingMediaFileConditioning; }
+    inline StreamingMediaFileConditioning GetStreamingMediaFileConditioning() const { return m_streamingMediaFileConditioning; }
     inline bool StreamingMediaFileConditioningHasBeenSet() const { return m_streamingMediaFileConditioningHasBeenSet; }
-    inline void SetStreamingMediaFileConditioning(const StreamingMediaFileConditioning& value) { m_streamingMediaFileConditioningHasBeenSet = true; m_streamingMediaFileConditioning = value; }
-    inline void SetStreamingMediaFileConditioning(StreamingMediaFileConditioning&& value) { m_streamingMediaFileConditioningHasBeenSet = true; m_streamingMediaFileConditioning = std::move(value); }
-    inline AdConditioningConfiguration& WithStreamingMediaFileConditioning(const StreamingMediaFileConditioning& value) { SetStreamingMediaFileConditioning(value); return *this;}
-    inline AdConditioningConfiguration& WithStreamingMediaFileConditioning(StreamingMediaFileConditioning&& value) { SetStreamingMediaFileConditioning(std::move(value)); return *this;}
+    inline void SetStreamingMediaFileConditioning(StreamingMediaFileConditioning value) { m_streamingMediaFileConditioningHasBeenSet = true; m_streamingMediaFileConditioning = value; }
+    inline AdConditioningConfiguration& WithStreamingMediaFileConditioning(StreamingMediaFileConditioning value) { SetStreamingMediaFileConditioning(value); return *this;}
     ///@}
   private:
 
-    StreamingMediaFileConditioning m_streamingMediaFileConditioning;
+    StreamingMediaFileConditioning m_streamingMediaFileConditioning{StreamingMediaFileConditioning::NOT_SET};
     bool m_streamingMediaFileConditioningHasBeenSet = false;
   };
 

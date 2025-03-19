@@ -18,13 +18,7 @@ namespace DevOpsGuru
 namespace Model
 {
 
-SnsChannelConfig::SnsChannelConfig() : 
-    m_topicArnHasBeenSet(false)
-{
-}
-
 SnsChannelConfig::SnsChannelConfig(JsonView jsonValue)
-  : SnsChannelConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SnsChannelConfig& SnsChannelConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TopicArn"))
   {
     m_topicArn = jsonValue.GetString("TopicArn");
-
     m_topicArnHasBeenSet = true;
   }
-
   return *this;
 }
 

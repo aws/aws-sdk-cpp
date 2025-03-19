@@ -34,7 +34,7 @@ namespace Model
   class DescribeEnvironmentResourcesResult
   {
   public:
-    AWS_ELASTICBEANSTALK_API DescribeEnvironmentResourcesResult();
+    AWS_ELASTICBEANSTALK_API DescribeEnvironmentResourcesResult() = default;
     AWS_ELASTICBEANSTALK_API DescribeEnvironmentResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ELASTICBEANSTALK_API DescribeEnvironmentResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -43,26 +43,28 @@ namespace Model
     /**
      * <p> A list of <a>EnvironmentResourceDescription</a>. </p>
      */
-    inline const EnvironmentResourceDescription& GetEnvironmentResources() const{ return m_environmentResources; }
-    inline void SetEnvironmentResources(const EnvironmentResourceDescription& value) { m_environmentResources = value; }
-    inline void SetEnvironmentResources(EnvironmentResourceDescription&& value) { m_environmentResources = std::move(value); }
-    inline DescribeEnvironmentResourcesResult& WithEnvironmentResources(const EnvironmentResourceDescription& value) { SetEnvironmentResources(value); return *this;}
-    inline DescribeEnvironmentResourcesResult& WithEnvironmentResources(EnvironmentResourceDescription&& value) { SetEnvironmentResources(std::move(value)); return *this;}
+    inline const EnvironmentResourceDescription& GetEnvironmentResources() const { return m_environmentResources; }
+    template<typename EnvironmentResourcesT = EnvironmentResourceDescription>
+    void SetEnvironmentResources(EnvironmentResourcesT&& value) { m_environmentResourcesHasBeenSet = true; m_environmentResources = std::forward<EnvironmentResourcesT>(value); }
+    template<typename EnvironmentResourcesT = EnvironmentResourceDescription>
+    DescribeEnvironmentResourcesResult& WithEnvironmentResources(EnvironmentResourcesT&& value) { SetEnvironmentResources(std::forward<EnvironmentResourcesT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeEnvironmentResourcesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeEnvironmentResourcesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeEnvironmentResourcesResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     EnvironmentResourceDescription m_environmentResources;
+    bool m_environmentResourcesHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

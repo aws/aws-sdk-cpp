@@ -18,14 +18,7 @@ namespace Budgets
 namespace Model
 {
 
-BudgetNotificationsForAccount::BudgetNotificationsForAccount() : 
-    m_notificationsHasBeenSet(false),
-    m_budgetNameHasBeenSet(false)
-{
-}
-
 BudgetNotificationsForAccount::BudgetNotificationsForAccount(JsonView jsonValue)
-  : BudgetNotificationsForAccount()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ BudgetNotificationsForAccount& BudgetNotificationsForAccount::operator =(JsonVie
     }
     m_notificationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BudgetName"))
   {
     m_budgetName = jsonValue.GetString("BudgetName");
-
     m_budgetNameHasBeenSet = true;
   }
-
   return *this;
 }
 

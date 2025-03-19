@@ -18,19 +18,7 @@ namespace ElasticsearchService
 namespace Model
 {
 
-UpgradeStepItem::UpgradeStepItem() : 
-    m_upgradeStep(UpgradeStep::NOT_SET),
-    m_upgradeStepHasBeenSet(false),
-    m_upgradeStepStatus(UpgradeStatus::NOT_SET),
-    m_upgradeStepStatusHasBeenSet(false),
-    m_issuesHasBeenSet(false),
-    m_progressPercent(0.0),
-    m_progressPercentHasBeenSet(false)
-{
-}
-
 UpgradeStepItem::UpgradeStepItem(JsonView jsonValue)
-  : UpgradeStepItem()
 {
   *this = jsonValue;
 }
@@ -40,17 +28,13 @@ UpgradeStepItem& UpgradeStepItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("UpgradeStep"))
   {
     m_upgradeStep = UpgradeStepMapper::GetUpgradeStepForName(jsonValue.GetString("UpgradeStep"));
-
     m_upgradeStepHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpgradeStepStatus"))
   {
     m_upgradeStepStatus = UpgradeStatusMapper::GetUpgradeStatusForName(jsonValue.GetString("UpgradeStepStatus"));
-
     m_upgradeStepStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Issues"))
   {
     Aws::Utils::Array<JsonView> issuesJsonList = jsonValue.GetArray("Issues");
@@ -60,14 +44,11 @@ UpgradeStepItem& UpgradeStepItem::operator =(JsonView jsonValue)
     }
     m_issuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProgressPercent"))
   {
     m_progressPercent = jsonValue.GetDouble("ProgressPercent");
-
     m_progressPercentHasBeenSet = true;
   }
-
   return *this;
 }
 

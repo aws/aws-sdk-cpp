@@ -12,11 +12,6 @@ using namespace Aws::Inspector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeAssessmentTargetsRequest::DescribeAssessmentTargetsRequest() : 
-    m_assessmentTargetArnsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAssessmentTargetsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,12 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeFieldIndexesRequest::DescribeFieldIndexesRequest() : 
-    m_logGroupIdentifiersHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeFieldIndexesRequest::SerializePayload() const
 {
   JsonValue payload;

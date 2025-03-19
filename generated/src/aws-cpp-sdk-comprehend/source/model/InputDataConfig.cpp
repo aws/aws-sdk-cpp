@@ -18,16 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-InputDataConfig::InputDataConfig() : 
-    m_s3UriHasBeenSet(false),
-    m_inputFormat(InputFormat::NOT_SET),
-    m_inputFormatHasBeenSet(false),
-    m_documentReaderConfigHasBeenSet(false)
-{
-}
-
 InputDataConfig::InputDataConfig(JsonView jsonValue)
-  : InputDataConfig()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ InputDataConfig& InputDataConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3Uri"))
   {
     m_s3Uri = jsonValue.GetString("S3Uri");
-
     m_s3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InputFormat"))
   {
     m_inputFormat = InputFormatMapper::GetInputFormatForName(jsonValue.GetString("InputFormat"));
-
     m_inputFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentReaderConfig"))
   {
     m_documentReaderConfig = jsonValue.GetObject("DocumentReaderConfig");
-
     m_documentReaderConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

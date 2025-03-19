@@ -28,7 +28,7 @@ namespace Model
   class CreateNotificationConfigurationResult
   {
   public:
-    AWS_IOTMANAGEDINTEGRATIONS_API CreateNotificationConfigurationResult();
+    AWS_IOTMANAGEDINTEGRATIONS_API CreateNotificationConfigurationResult() = default;
     AWS_IOTMANAGEDINTEGRATIONS_API CreateNotificationConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTMANAGEDINTEGRATIONS_API CreateNotificationConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,26 @@ namespace Model
      * <p>The type of event triggering a device notification to the customer-managed
      * destination.</p>
      */
-    inline const EventType& GetEventType() const{ return m_eventType; }
-    inline void SetEventType(const EventType& value) { m_eventType = value; }
-    inline void SetEventType(EventType&& value) { m_eventType = std::move(value); }
-    inline CreateNotificationConfigurationResult& WithEventType(const EventType& value) { SetEventType(value); return *this;}
-    inline CreateNotificationConfigurationResult& WithEventType(EventType&& value) { SetEventType(std::move(value)); return *this;}
+    inline EventType GetEventType() const { return m_eventType; }
+    inline void SetEventType(EventType value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
+    inline CreateNotificationConfigurationResult& WithEventType(EventType value) { SetEventType(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateNotificationConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateNotificationConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateNotificationConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateNotificationConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    EventType m_eventType;
+    EventType m_eventType{EventType::NOT_SET};
+    bool m_eventTypeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

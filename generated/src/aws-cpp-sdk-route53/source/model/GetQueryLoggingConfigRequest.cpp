@@ -14,10 +14,6 @@ using namespace Aws::Route53::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-GetQueryLoggingConfigRequest::GetQueryLoggingConfigRequest() : 
-    m_idHasBeenSet(false)
-{
-}
 
 Aws::String GetQueryLoggingConfigRequest::SerializePayload() const
 {

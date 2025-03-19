@@ -12,12 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeletePendingAggregationRequestRequest::DeletePendingAggregationRequestRequest() : 
-    m_requesterAccountIdHasBeenSet(false),
-    m_requesterAwsRegionHasBeenSet(false)
-{
-}
-
 Aws::String DeletePendingAggregationRequestRequest::SerializePayload() const
 {
   JsonValue payload;

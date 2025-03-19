@@ -22,7 +22,7 @@ namespace Model
   class UpdateResourceRequest : public CloudControlApiRequest
   {
   public:
-    AWS_CLOUDCONTROLAPI_API UpdateResourceRequest();
+    AWS_CLOUDCONTROLAPI_API UpdateResourceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The name of the resource type.</p>
      */
-    inline const Aws::String& GetTypeName() const{ return m_typeName; }
+    inline const Aws::String& GetTypeName() const { return m_typeName; }
     inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
-    inline void SetTypeName(const Aws::String& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
-    inline void SetTypeName(Aws::String&& value) { m_typeNameHasBeenSet = true; m_typeName = std::move(value); }
-    inline void SetTypeName(const char* value) { m_typeNameHasBeenSet = true; m_typeName.assign(value); }
-    inline UpdateResourceRequest& WithTypeName(const Aws::String& value) { SetTypeName(value); return *this;}
-    inline UpdateResourceRequest& WithTypeName(Aws::String&& value) { SetTypeName(std::move(value)); return *this;}
-    inline UpdateResourceRequest& WithTypeName(const char* value) { SetTypeName(value); return *this;}
+    template<typename TypeNameT = Aws::String>
+    void SetTypeName(TypeNameT&& value) { m_typeNameHasBeenSet = true; m_typeName = std::forward<TypeNameT>(value); }
+    template<typename TypeNameT = Aws::String>
+    UpdateResourceRequest& WithTypeName(TypeNameT&& value) { SetTypeName(std::forward<TypeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +53,12 @@ namespace Model
      * operation. If you do not specify a resource version, CloudFormation uses the
      * default version.</p>
      */
-    inline const Aws::String& GetTypeVersionId() const{ return m_typeVersionId; }
+    inline const Aws::String& GetTypeVersionId() const { return m_typeVersionId; }
     inline bool TypeVersionIdHasBeenSet() const { return m_typeVersionIdHasBeenSet; }
-    inline void SetTypeVersionId(const Aws::String& value) { m_typeVersionIdHasBeenSet = true; m_typeVersionId = value; }
-    inline void SetTypeVersionId(Aws::String&& value) { m_typeVersionIdHasBeenSet = true; m_typeVersionId = std::move(value); }
-    inline void SetTypeVersionId(const char* value) { m_typeVersionIdHasBeenSet = true; m_typeVersionId.assign(value); }
-    inline UpdateResourceRequest& WithTypeVersionId(const Aws::String& value) { SetTypeVersionId(value); return *this;}
-    inline UpdateResourceRequest& WithTypeVersionId(Aws::String&& value) { SetTypeVersionId(std::move(value)); return *this;}
-    inline UpdateResourceRequest& WithTypeVersionId(const char* value) { SetTypeVersionId(value); return *this;}
+    template<typename TypeVersionIdT = Aws::String>
+    void SetTypeVersionId(TypeVersionIdT&& value) { m_typeVersionIdHasBeenSet = true; m_typeVersionId = std::forward<TypeVersionIdT>(value); }
+    template<typename TypeVersionIdT = Aws::String>
+    UpdateResourceRequest& WithTypeVersionId(TypeVersionIdT&& value) { SetTypeVersionId(std::forward<TypeVersionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,14 +77,12 @@ namespace Model
      * credentials</a> in the <i>Amazon Web Services Cloud Control API User
      * Guide</i>.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline UpdateResourceRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline UpdateResourceRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline UpdateResourceRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    UpdateResourceRequest& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,14 +99,12 @@ namespace Model
      * resource operation requests are unique</a> in the <i>Amazon Web Services Cloud
      * Control API User Guide</i>.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline UpdateResourceRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline UpdateResourceRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline UpdateResourceRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    UpdateResourceRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -130,14 +122,12 @@ namespace Model
      * resources</a> in the <i>Amazon Web Services Cloud Control API User
      * Guide</i>.</p>
      */
-    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-    inline UpdateResourceRequest& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-    inline UpdateResourceRequest& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline UpdateResourceRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    UpdateResourceRequest& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -149,14 +139,12 @@ namespace Model
      * the patch document</a> in the <i>Amazon Web Services Cloud Control API User
      * Guide</i>.</p>
      */
-    inline const Aws::String& GetPatchDocument() const{ return m_patchDocument; }
+    inline const Aws::String& GetPatchDocument() const { return m_patchDocument; }
     inline bool PatchDocumentHasBeenSet() const { return m_patchDocumentHasBeenSet; }
-    inline void SetPatchDocument(const Aws::String& value) { m_patchDocumentHasBeenSet = true; m_patchDocument = value; }
-    inline void SetPatchDocument(Aws::String&& value) { m_patchDocumentHasBeenSet = true; m_patchDocument = std::move(value); }
-    inline void SetPatchDocument(const char* value) { m_patchDocumentHasBeenSet = true; m_patchDocument.assign(value); }
-    inline UpdateResourceRequest& WithPatchDocument(const Aws::String& value) { SetPatchDocument(value); return *this;}
-    inline UpdateResourceRequest& WithPatchDocument(Aws::String&& value) { SetPatchDocument(std::move(value)); return *this;}
-    inline UpdateResourceRequest& WithPatchDocument(const char* value) { SetPatchDocument(value); return *this;}
+    template<typename PatchDocumentT = Aws::String>
+    void SetPatchDocument(PatchDocumentT&& value) { m_patchDocumentHasBeenSet = true; m_patchDocument = std::forward<PatchDocumentT>(value); }
+    template<typename PatchDocumentT = Aws::String>
+    UpdateResourceRequest& WithPatchDocument(PatchDocumentT&& value) { SetPatchDocument(std::forward<PatchDocumentT>(value)); return *this;}
     ///@}
   private:
 

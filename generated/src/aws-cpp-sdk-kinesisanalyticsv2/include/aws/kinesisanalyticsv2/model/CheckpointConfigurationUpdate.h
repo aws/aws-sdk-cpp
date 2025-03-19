@@ -32,7 +32,7 @@ namespace Model
   class CheckpointConfigurationUpdate
   {
   public:
-    AWS_KINESISANALYTICSV2_API CheckpointConfigurationUpdate();
+    AWS_KINESISANALYTICSV2_API CheckpointConfigurationUpdate() = default;
     AWS_KINESISANALYTICSV2_API CheckpointConfigurationUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API CheckpointConfigurationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,12 +50,10 @@ namespace Model
      * true</p> </li> <li> <p> <b>CheckpointInterval:</b> 60000</p> </li> <li> <p>
      * <b>MinPauseBetweenCheckpoints:</b> 5000</p> </li> </ul> 
      */
-    inline const ConfigurationType& GetConfigurationTypeUpdate() const{ return m_configurationTypeUpdate; }
+    inline ConfigurationType GetConfigurationTypeUpdate() const { return m_configurationTypeUpdate; }
     inline bool ConfigurationTypeUpdateHasBeenSet() const { return m_configurationTypeUpdateHasBeenSet; }
-    inline void SetConfigurationTypeUpdate(const ConfigurationType& value) { m_configurationTypeUpdateHasBeenSet = true; m_configurationTypeUpdate = value; }
-    inline void SetConfigurationTypeUpdate(ConfigurationType&& value) { m_configurationTypeUpdateHasBeenSet = true; m_configurationTypeUpdate = std::move(value); }
-    inline CheckpointConfigurationUpdate& WithConfigurationTypeUpdate(const ConfigurationType& value) { SetConfigurationTypeUpdate(value); return *this;}
-    inline CheckpointConfigurationUpdate& WithConfigurationTypeUpdate(ConfigurationType&& value) { SetConfigurationTypeUpdate(std::move(value)); return *this;}
+    inline void SetConfigurationTypeUpdate(ConfigurationType value) { m_configurationTypeUpdateHasBeenSet = true; m_configurationTypeUpdate = value; }
+    inline CheckpointConfigurationUpdate& WithConfigurationTypeUpdate(ConfigurationType value) { SetConfigurationTypeUpdate(value); return *this;}
     ///@}
 
     ///@{
@@ -66,7 +64,7 @@ namespace Model
      * <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value
      * is set to another value using this API or in application code.</p> 
      */
-    inline bool GetCheckpointingEnabledUpdate() const{ return m_checkpointingEnabledUpdate; }
+    inline bool GetCheckpointingEnabledUpdate() const { return m_checkpointingEnabledUpdate; }
     inline bool CheckpointingEnabledUpdateHasBeenSet() const { return m_checkpointingEnabledUpdateHasBeenSet; }
     inline void SetCheckpointingEnabledUpdate(bool value) { m_checkpointingEnabledUpdateHasBeenSet = true; m_checkpointingEnabledUpdate = value; }
     inline CheckpointConfigurationUpdate& WithCheckpointingEnabledUpdate(bool value) { SetCheckpointingEnabledUpdate(value); return *this;}
@@ -81,7 +79,7 @@ namespace Model
      * if this value is set to another value using this API or in application code.</p>
      * 
      */
-    inline long long GetCheckpointIntervalUpdate() const{ return m_checkpointIntervalUpdate; }
+    inline long long GetCheckpointIntervalUpdate() const { return m_checkpointIntervalUpdate; }
     inline bool CheckpointIntervalUpdateHasBeenSet() const { return m_checkpointIntervalUpdateHasBeenSet; }
     inline void SetCheckpointIntervalUpdate(long long value) { m_checkpointIntervalUpdateHasBeenSet = true; m_checkpointIntervalUpdate = value; }
     inline CheckpointConfigurationUpdate& WithCheckpointIntervalUpdate(long long value) { SetCheckpointIntervalUpdate(value); return *this;}
@@ -96,23 +94,23 @@ namespace Model
      * 5000, even if this value is set using this API or in application code.</p>
      * 
      */
-    inline long long GetMinPauseBetweenCheckpointsUpdate() const{ return m_minPauseBetweenCheckpointsUpdate; }
+    inline long long GetMinPauseBetweenCheckpointsUpdate() const { return m_minPauseBetweenCheckpointsUpdate; }
     inline bool MinPauseBetweenCheckpointsUpdateHasBeenSet() const { return m_minPauseBetweenCheckpointsUpdateHasBeenSet; }
     inline void SetMinPauseBetweenCheckpointsUpdate(long long value) { m_minPauseBetweenCheckpointsUpdateHasBeenSet = true; m_minPauseBetweenCheckpointsUpdate = value; }
     inline CheckpointConfigurationUpdate& WithMinPauseBetweenCheckpointsUpdate(long long value) { SetMinPauseBetweenCheckpointsUpdate(value); return *this;}
     ///@}
   private:
 
-    ConfigurationType m_configurationTypeUpdate;
+    ConfigurationType m_configurationTypeUpdate{ConfigurationType::NOT_SET};
     bool m_configurationTypeUpdateHasBeenSet = false;
 
-    bool m_checkpointingEnabledUpdate;
+    bool m_checkpointingEnabledUpdate{false};
     bool m_checkpointingEnabledUpdateHasBeenSet = false;
 
-    long long m_checkpointIntervalUpdate;
+    long long m_checkpointIntervalUpdate{0};
     bool m_checkpointIntervalUpdateHasBeenSet = false;
 
-    long long m_minPauseBetweenCheckpointsUpdate;
+    long long m_minPauseBetweenCheckpointsUpdate{0};
     bool m_minPauseBetweenCheckpointsUpdateHasBeenSet = false;
   };
 

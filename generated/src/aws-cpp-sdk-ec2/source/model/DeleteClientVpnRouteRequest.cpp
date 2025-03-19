@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeleteClientVpnRouteRequest::DeleteClientVpnRouteRequest() : 
-    m_clientVpnEndpointIdHasBeenSet(false),
-    m_targetVpcSubnetIdHasBeenSet(false),
-    m_destinationCidrBlockHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String DeleteClientVpnRouteRequest::SerializePayload() const
 {
   Aws::StringStream ss;

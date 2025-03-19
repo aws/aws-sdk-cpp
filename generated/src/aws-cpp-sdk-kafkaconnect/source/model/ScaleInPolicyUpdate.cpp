@@ -18,14 +18,7 @@ namespace KafkaConnect
 namespace Model
 {
 
-ScaleInPolicyUpdate::ScaleInPolicyUpdate() : 
-    m_cpuUtilizationPercentage(0),
-    m_cpuUtilizationPercentageHasBeenSet(false)
-{
-}
-
 ScaleInPolicyUpdate::ScaleInPolicyUpdate(JsonView jsonValue)
-  : ScaleInPolicyUpdate()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ScaleInPolicyUpdate& ScaleInPolicyUpdate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("cpuUtilizationPercentage"))
   {
     m_cpuUtilizationPercentage = jsonValue.GetInteger("cpuUtilizationPercentage");
-
     m_cpuUtilizationPercentageHasBeenSet = true;
   }
-
   return *this;
 }
 

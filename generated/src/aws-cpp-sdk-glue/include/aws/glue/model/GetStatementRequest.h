@@ -21,7 +21,7 @@ namespace Model
   class GetStatementRequest : public GlueRequest
   {
   public:
-    AWS_GLUE_API GetStatementRequest();
+    AWS_GLUE_API GetStatementRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,21 +38,19 @@ namespace Model
     /**
      * <p>The Session ID of the statement.</p>
      */
-    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
     inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-    inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
-    inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
-    inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
-    inline GetStatementRequest& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-    inline GetStatementRequest& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-    inline GetStatementRequest& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    GetStatementRequest& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Id of the statement.</p>
      */
-    inline int GetId() const{ return m_id; }
+    inline int GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
     inline void SetId(int value) { m_idHasBeenSet = true; m_id = value; }
     inline GetStatementRequest& WithId(int value) { SetId(value); return *this;}
@@ -62,21 +60,19 @@ namespace Model
     /**
      * <p>The origin of the request.</p>
      */
-    inline const Aws::String& GetRequestOrigin() const{ return m_requestOrigin; }
+    inline const Aws::String& GetRequestOrigin() const { return m_requestOrigin; }
     inline bool RequestOriginHasBeenSet() const { return m_requestOriginHasBeenSet; }
-    inline void SetRequestOrigin(const Aws::String& value) { m_requestOriginHasBeenSet = true; m_requestOrigin = value; }
-    inline void SetRequestOrigin(Aws::String&& value) { m_requestOriginHasBeenSet = true; m_requestOrigin = std::move(value); }
-    inline void SetRequestOrigin(const char* value) { m_requestOriginHasBeenSet = true; m_requestOrigin.assign(value); }
-    inline GetStatementRequest& WithRequestOrigin(const Aws::String& value) { SetRequestOrigin(value); return *this;}
-    inline GetStatementRequest& WithRequestOrigin(Aws::String&& value) { SetRequestOrigin(std::move(value)); return *this;}
-    inline GetStatementRequest& WithRequestOrigin(const char* value) { SetRequestOrigin(value); return *this;}
+    template<typename RequestOriginT = Aws::String>
+    void SetRequestOrigin(RequestOriginT&& value) { m_requestOriginHasBeenSet = true; m_requestOrigin = std::forward<RequestOriginT>(value); }
+    template<typename RequestOriginT = Aws::String>
+    GetStatementRequest& WithRequestOrigin(RequestOriginT&& value) { SetRequestOrigin(std::forward<RequestOriginT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_sessionId;
     bool m_sessionIdHasBeenSet = false;
 
-    int m_id;
+    int m_id{0};
     bool m_idHasBeenSet = false;
 
     Aws::String m_requestOrigin;

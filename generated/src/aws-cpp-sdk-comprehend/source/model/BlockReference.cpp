@@ -18,18 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-BlockReference::BlockReference() : 
-    m_blockIdHasBeenSet(false),
-    m_beginOffset(0),
-    m_beginOffsetHasBeenSet(false),
-    m_endOffset(0),
-    m_endOffsetHasBeenSet(false),
-    m_childBlocksHasBeenSet(false)
-{
-}
-
 BlockReference::BlockReference(JsonView jsonValue)
-  : BlockReference()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ BlockReference& BlockReference::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BlockId"))
   {
     m_blockId = jsonValue.GetString("BlockId");
-
     m_blockIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BeginOffset"))
   {
     m_beginOffset = jsonValue.GetInteger("BeginOffset");
-
     m_beginOffsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndOffset"))
   {
     m_endOffset = jsonValue.GetInteger("EndOffset");
-
     m_endOffsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChildBlocks"))
   {
     Aws::Utils::Array<JsonView> childBlocksJsonList = jsonValue.GetArray("ChildBlocks");
@@ -66,7 +49,6 @@ BlockReference& BlockReference::operator =(JsonView jsonValue)
     }
     m_childBlocksHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetDomainNameRequest::GetDomainNameRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_domainNameIdHasBeenSet(false)
-{
-}
-
 Aws::String GetDomainNameRequest::SerializePayload() const
 {
   return {};

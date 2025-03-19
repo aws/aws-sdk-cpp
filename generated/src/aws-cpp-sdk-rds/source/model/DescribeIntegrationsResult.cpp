@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeIntegrationsResult::DescribeIntegrationsResult()
-{
-}
-
 DescribeIntegrationsResult::DescribeIntegrationsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ DescribeIntegrationsResult& DescribeIntegrationsResult::operator =(const Aws::Am
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
     XmlNode integrationsNode = resultNode.FirstChild("Integrations");
     if(!integrationsNode.IsNull())
     {
       XmlNode integrationsMember = integrationsNode.FirstChild("Integration");
+      m_integrationsHasBeenSet = !integrationsMember.IsNull();
       while(!integrationsMember.IsNull())
       {
         m_integrations.push_back(integrationsMember);
         integrationsMember = integrationsMember.NextNode("Integration");
       }
 
+      m_integrationsHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::DescribeIntegrationsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

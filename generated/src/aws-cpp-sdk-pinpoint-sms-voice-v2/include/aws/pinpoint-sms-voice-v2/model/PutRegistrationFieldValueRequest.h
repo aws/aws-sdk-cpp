@@ -22,7 +22,7 @@ namespace Model
   class PutRegistrationFieldValueRequest : public PinpointSMSVoiceV2Request
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API PutRegistrationFieldValueRequest();
+    AWS_PINPOINTSMSVOICEV2_API PutRegistrationFieldValueRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The unique identifier for the registration.</p>
      */
-    inline const Aws::String& GetRegistrationId() const{ return m_registrationId; }
+    inline const Aws::String& GetRegistrationId() const { return m_registrationId; }
     inline bool RegistrationIdHasBeenSet() const { return m_registrationIdHasBeenSet; }
-    inline void SetRegistrationId(const Aws::String& value) { m_registrationIdHasBeenSet = true; m_registrationId = value; }
-    inline void SetRegistrationId(Aws::String&& value) { m_registrationIdHasBeenSet = true; m_registrationId = std::move(value); }
-    inline void SetRegistrationId(const char* value) { m_registrationIdHasBeenSet = true; m_registrationId.assign(value); }
-    inline PutRegistrationFieldValueRequest& WithRegistrationId(const Aws::String& value) { SetRegistrationId(value); return *this;}
-    inline PutRegistrationFieldValueRequest& WithRegistrationId(Aws::String&& value) { SetRegistrationId(std::move(value)); return *this;}
-    inline PutRegistrationFieldValueRequest& WithRegistrationId(const char* value) { SetRegistrationId(value); return *this;}
+    template<typename RegistrationIdT = Aws::String>
+    void SetRegistrationId(RegistrationIdT&& value) { m_registrationIdHasBeenSet = true; m_registrationId = std::forward<RegistrationIdT>(value); }
+    template<typename RegistrationIdT = Aws::String>
+    PutRegistrationFieldValueRequest& WithRegistrationId(RegistrationIdT&& value) { SetRegistrationId(std::forward<RegistrationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,57 +52,50 @@ namespace Model
      * <p>The path to the registration form field. You can use
      * <a>DescribeRegistrationFieldDefinitions</a> for a list of <b>FieldPaths</b>.</p>
      */
-    inline const Aws::String& GetFieldPath() const{ return m_fieldPath; }
+    inline const Aws::String& GetFieldPath() const { return m_fieldPath; }
     inline bool FieldPathHasBeenSet() const { return m_fieldPathHasBeenSet; }
-    inline void SetFieldPath(const Aws::String& value) { m_fieldPathHasBeenSet = true; m_fieldPath = value; }
-    inline void SetFieldPath(Aws::String&& value) { m_fieldPathHasBeenSet = true; m_fieldPath = std::move(value); }
-    inline void SetFieldPath(const char* value) { m_fieldPathHasBeenSet = true; m_fieldPath.assign(value); }
-    inline PutRegistrationFieldValueRequest& WithFieldPath(const Aws::String& value) { SetFieldPath(value); return *this;}
-    inline PutRegistrationFieldValueRequest& WithFieldPath(Aws::String&& value) { SetFieldPath(std::move(value)); return *this;}
-    inline PutRegistrationFieldValueRequest& WithFieldPath(const char* value) { SetFieldPath(value); return *this;}
+    template<typename FieldPathT = Aws::String>
+    void SetFieldPath(FieldPathT&& value) { m_fieldPathHasBeenSet = true; m_fieldPath = std::forward<FieldPathT>(value); }
+    template<typename FieldPathT = Aws::String>
+    PutRegistrationFieldValueRequest& WithFieldPath(FieldPathT&& value) { SetFieldPath(std::forward<FieldPathT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of values for the form field.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSelectChoices() const{ return m_selectChoices; }
+    inline const Aws::Vector<Aws::String>& GetSelectChoices() const { return m_selectChoices; }
     inline bool SelectChoicesHasBeenSet() const { return m_selectChoicesHasBeenSet; }
-    inline void SetSelectChoices(const Aws::Vector<Aws::String>& value) { m_selectChoicesHasBeenSet = true; m_selectChoices = value; }
-    inline void SetSelectChoices(Aws::Vector<Aws::String>&& value) { m_selectChoicesHasBeenSet = true; m_selectChoices = std::move(value); }
-    inline PutRegistrationFieldValueRequest& WithSelectChoices(const Aws::Vector<Aws::String>& value) { SetSelectChoices(value); return *this;}
-    inline PutRegistrationFieldValueRequest& WithSelectChoices(Aws::Vector<Aws::String>&& value) { SetSelectChoices(std::move(value)); return *this;}
-    inline PutRegistrationFieldValueRequest& AddSelectChoices(const Aws::String& value) { m_selectChoicesHasBeenSet = true; m_selectChoices.push_back(value); return *this; }
-    inline PutRegistrationFieldValueRequest& AddSelectChoices(Aws::String&& value) { m_selectChoicesHasBeenSet = true; m_selectChoices.push_back(std::move(value)); return *this; }
-    inline PutRegistrationFieldValueRequest& AddSelectChoices(const char* value) { m_selectChoicesHasBeenSet = true; m_selectChoices.push_back(value); return *this; }
+    template<typename SelectChoicesT = Aws::Vector<Aws::String>>
+    void SetSelectChoices(SelectChoicesT&& value) { m_selectChoicesHasBeenSet = true; m_selectChoices = std::forward<SelectChoicesT>(value); }
+    template<typename SelectChoicesT = Aws::Vector<Aws::String>>
+    PutRegistrationFieldValueRequest& WithSelectChoices(SelectChoicesT&& value) { SetSelectChoices(std::forward<SelectChoicesT>(value)); return *this;}
+    template<typename SelectChoicesT = Aws::String>
+    PutRegistrationFieldValueRequest& AddSelectChoices(SelectChoicesT&& value) { m_selectChoicesHasBeenSet = true; m_selectChoices.emplace_back(std::forward<SelectChoicesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The text data for a free form field.</p>
      */
-    inline const Aws::String& GetTextValue() const{ return m_textValue; }
+    inline const Aws::String& GetTextValue() const { return m_textValue; }
     inline bool TextValueHasBeenSet() const { return m_textValueHasBeenSet; }
-    inline void SetTextValue(const Aws::String& value) { m_textValueHasBeenSet = true; m_textValue = value; }
-    inline void SetTextValue(Aws::String&& value) { m_textValueHasBeenSet = true; m_textValue = std::move(value); }
-    inline void SetTextValue(const char* value) { m_textValueHasBeenSet = true; m_textValue.assign(value); }
-    inline PutRegistrationFieldValueRequest& WithTextValue(const Aws::String& value) { SetTextValue(value); return *this;}
-    inline PutRegistrationFieldValueRequest& WithTextValue(Aws::String&& value) { SetTextValue(std::move(value)); return *this;}
-    inline PutRegistrationFieldValueRequest& WithTextValue(const char* value) { SetTextValue(value); return *this;}
+    template<typename TextValueT = Aws::String>
+    void SetTextValue(TextValueT&& value) { m_textValueHasBeenSet = true; m_textValue = std::forward<TextValueT>(value); }
+    template<typename TextValueT = Aws::String>
+    PutRegistrationFieldValueRequest& WithTextValue(TextValueT&& value) { SetTextValue(std::forward<TextValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier for the registration attachment.</p>
      */
-    inline const Aws::String& GetRegistrationAttachmentId() const{ return m_registrationAttachmentId; }
+    inline const Aws::String& GetRegistrationAttachmentId() const { return m_registrationAttachmentId; }
     inline bool RegistrationAttachmentIdHasBeenSet() const { return m_registrationAttachmentIdHasBeenSet; }
-    inline void SetRegistrationAttachmentId(const Aws::String& value) { m_registrationAttachmentIdHasBeenSet = true; m_registrationAttachmentId = value; }
-    inline void SetRegistrationAttachmentId(Aws::String&& value) { m_registrationAttachmentIdHasBeenSet = true; m_registrationAttachmentId = std::move(value); }
-    inline void SetRegistrationAttachmentId(const char* value) { m_registrationAttachmentIdHasBeenSet = true; m_registrationAttachmentId.assign(value); }
-    inline PutRegistrationFieldValueRequest& WithRegistrationAttachmentId(const Aws::String& value) { SetRegistrationAttachmentId(value); return *this;}
-    inline PutRegistrationFieldValueRequest& WithRegistrationAttachmentId(Aws::String&& value) { SetRegistrationAttachmentId(std::move(value)); return *this;}
-    inline PutRegistrationFieldValueRequest& WithRegistrationAttachmentId(const char* value) { SetRegistrationAttachmentId(value); return *this;}
+    template<typename RegistrationAttachmentIdT = Aws::String>
+    void SetRegistrationAttachmentId(RegistrationAttachmentIdT&& value) { m_registrationAttachmentIdHasBeenSet = true; m_registrationAttachmentId = std::forward<RegistrationAttachmentIdT>(value); }
+    template<typename RegistrationAttachmentIdT = Aws::String>
+    PutRegistrationFieldValueRequest& WithRegistrationAttachmentId(RegistrationAttachmentIdT&& value) { SetRegistrationAttachmentId(std::forward<RegistrationAttachmentIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,15 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-AudioChannelMapping::AudioChannelMapping() : 
-    m_inputChannelLevelsHasBeenSet(false),
-    m_outputChannel(0),
-    m_outputChannelHasBeenSet(false)
-{
-}
-
 AudioChannelMapping::AudioChannelMapping(JsonView jsonValue)
-  : AudioChannelMapping()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ AudioChannelMapping& AudioChannelMapping::operator =(JsonView jsonValue)
     }
     m_inputChannelLevelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputChannel"))
   {
     m_outputChannel = jsonValue.GetInteger("outputChannel");
-
     m_outputChannelHasBeenSet = true;
   }
-
   return *this;
 }
 

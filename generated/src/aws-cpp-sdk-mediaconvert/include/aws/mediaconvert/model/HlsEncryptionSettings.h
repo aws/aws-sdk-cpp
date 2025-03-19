@@ -37,7 +37,7 @@ namespace Model
   class HlsEncryptionSettings
   {
   public:
-    AWS_MEDIACONVERT_API HlsEncryptionSettings();
+    AWS_MEDIACONVERT_API HlsEncryptionSettings() = default;
     AWS_MEDIACONVERT_API HlsEncryptionSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API HlsEncryptionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * If this parameter is not set then the Initialization Vector will follow the
      * segment number by default.
      */
-    inline const Aws::String& GetConstantInitializationVector() const{ return m_constantInitializationVector; }
+    inline const Aws::String& GetConstantInitializationVector() const { return m_constantInitializationVector; }
     inline bool ConstantInitializationVectorHasBeenSet() const { return m_constantInitializationVectorHasBeenSet; }
-    inline void SetConstantInitializationVector(const Aws::String& value) { m_constantInitializationVectorHasBeenSet = true; m_constantInitializationVector = value; }
-    inline void SetConstantInitializationVector(Aws::String&& value) { m_constantInitializationVectorHasBeenSet = true; m_constantInitializationVector = std::move(value); }
-    inline void SetConstantInitializationVector(const char* value) { m_constantInitializationVectorHasBeenSet = true; m_constantInitializationVector.assign(value); }
-    inline HlsEncryptionSettings& WithConstantInitializationVector(const Aws::String& value) { SetConstantInitializationVector(value); return *this;}
-    inline HlsEncryptionSettings& WithConstantInitializationVector(Aws::String&& value) { SetConstantInitializationVector(std::move(value)); return *this;}
-    inline HlsEncryptionSettings& WithConstantInitializationVector(const char* value) { SetConstantInitializationVector(value); return *this;}
+    template<typename ConstantInitializationVectorT = Aws::String>
+    void SetConstantInitializationVector(ConstantInitializationVectorT&& value) { m_constantInitializationVectorHasBeenSet = true; m_constantInitializationVector = std::forward<ConstantInitializationVectorT>(value); }
+    template<typename ConstantInitializationVectorT = Aws::String>
+    HlsEncryptionSettings& WithConstantInitializationVector(ConstantInitializationVectorT&& value) { SetConstantInitializationVector(std::forward<ConstantInitializationVectorT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,12 +62,10 @@ namespace Model
      * Encrypts the segments with the given encryption scheme. Leave blank to disable.
      * Selecting 'Disabled' in the web interface also disables encryption.
      */
-    inline const HlsEncryptionType& GetEncryptionMethod() const{ return m_encryptionMethod; }
+    inline HlsEncryptionType GetEncryptionMethod() const { return m_encryptionMethod; }
     inline bool EncryptionMethodHasBeenSet() const { return m_encryptionMethodHasBeenSet; }
-    inline void SetEncryptionMethod(const HlsEncryptionType& value) { m_encryptionMethodHasBeenSet = true; m_encryptionMethod = value; }
-    inline void SetEncryptionMethod(HlsEncryptionType&& value) { m_encryptionMethodHasBeenSet = true; m_encryptionMethod = std::move(value); }
-    inline HlsEncryptionSettings& WithEncryptionMethod(const HlsEncryptionType& value) { SetEncryptionMethod(value); return *this;}
-    inline HlsEncryptionSettings& WithEncryptionMethod(HlsEncryptionType&& value) { SetEncryptionMethod(std::move(value)); return *this;}
+    inline void SetEncryptionMethod(HlsEncryptionType value) { m_encryptionMethodHasBeenSet = true; m_encryptionMethod = value; }
+    inline HlsEncryptionSettings& WithEncryptionMethod(HlsEncryptionType value) { SetEncryptionMethod(value); return *this;}
     ///@}
 
     ///@{
@@ -78,12 +74,10 @@ namespace Model
      * for encrypting blocks. If set to INCLUDE, Initialization Vector is listed in the
      * manifest. Otherwise Initialization Vector is not in the manifest.
      */
-    inline const HlsInitializationVectorInManifest& GetInitializationVectorInManifest() const{ return m_initializationVectorInManifest; }
+    inline HlsInitializationVectorInManifest GetInitializationVectorInManifest() const { return m_initializationVectorInManifest; }
     inline bool InitializationVectorInManifestHasBeenSet() const { return m_initializationVectorInManifestHasBeenSet; }
-    inline void SetInitializationVectorInManifest(const HlsInitializationVectorInManifest& value) { m_initializationVectorInManifestHasBeenSet = true; m_initializationVectorInManifest = value; }
-    inline void SetInitializationVectorInManifest(HlsInitializationVectorInManifest&& value) { m_initializationVectorInManifestHasBeenSet = true; m_initializationVectorInManifest = std::move(value); }
-    inline HlsEncryptionSettings& WithInitializationVectorInManifest(const HlsInitializationVectorInManifest& value) { SetInitializationVectorInManifest(value); return *this;}
-    inline HlsEncryptionSettings& WithInitializationVectorInManifest(HlsInitializationVectorInManifest&& value) { SetInitializationVectorInManifest(std::move(value)); return *this;}
+    inline void SetInitializationVectorInManifest(HlsInitializationVectorInManifest value) { m_initializationVectorInManifestHasBeenSet = true; m_initializationVectorInManifest = value; }
+    inline HlsEncryptionSettings& WithInitializationVectorInManifest(HlsInitializationVectorInManifest value) { SetInitializationVectorInManifest(value); return *this;}
     ///@}
 
     ///@{
@@ -91,12 +85,10 @@ namespace Model
      * Enable this setting to insert the EXT-X-SESSION-KEY element into the master
      * playlist. This allows for offline Apple HLS FairPlay content protection.
      */
-    inline const HlsOfflineEncrypted& GetOfflineEncrypted() const{ return m_offlineEncrypted; }
+    inline HlsOfflineEncrypted GetOfflineEncrypted() const { return m_offlineEncrypted; }
     inline bool OfflineEncryptedHasBeenSet() const { return m_offlineEncryptedHasBeenSet; }
-    inline void SetOfflineEncrypted(const HlsOfflineEncrypted& value) { m_offlineEncryptedHasBeenSet = true; m_offlineEncrypted = value; }
-    inline void SetOfflineEncrypted(HlsOfflineEncrypted&& value) { m_offlineEncryptedHasBeenSet = true; m_offlineEncrypted = std::move(value); }
-    inline HlsEncryptionSettings& WithOfflineEncrypted(const HlsOfflineEncrypted& value) { SetOfflineEncrypted(value); return *this;}
-    inline HlsEncryptionSettings& WithOfflineEncrypted(HlsOfflineEncrypted&& value) { SetOfflineEncrypted(std::move(value)); return *this;}
+    inline void SetOfflineEncrypted(HlsOfflineEncrypted value) { m_offlineEncryptedHasBeenSet = true; m_offlineEncrypted = value; }
+    inline HlsEncryptionSettings& WithOfflineEncrypted(HlsOfflineEncrypted value) { SetOfflineEncrypted(value); return *this;}
     ///@}
 
     ///@{
@@ -105,24 +97,24 @@ namespace Model
      * when doing DRM encryption with a SPEKE-compliant key provider. If your output
      * group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
      */
-    inline const SpekeKeyProvider& GetSpekeKeyProvider() const{ return m_spekeKeyProvider; }
+    inline const SpekeKeyProvider& GetSpekeKeyProvider() const { return m_spekeKeyProvider; }
     inline bool SpekeKeyProviderHasBeenSet() const { return m_spekeKeyProviderHasBeenSet; }
-    inline void SetSpekeKeyProvider(const SpekeKeyProvider& value) { m_spekeKeyProviderHasBeenSet = true; m_spekeKeyProvider = value; }
-    inline void SetSpekeKeyProvider(SpekeKeyProvider&& value) { m_spekeKeyProviderHasBeenSet = true; m_spekeKeyProvider = std::move(value); }
-    inline HlsEncryptionSettings& WithSpekeKeyProvider(const SpekeKeyProvider& value) { SetSpekeKeyProvider(value); return *this;}
-    inline HlsEncryptionSettings& WithSpekeKeyProvider(SpekeKeyProvider&& value) { SetSpekeKeyProvider(std::move(value)); return *this;}
+    template<typename SpekeKeyProviderT = SpekeKeyProvider>
+    void SetSpekeKeyProvider(SpekeKeyProviderT&& value) { m_spekeKeyProviderHasBeenSet = true; m_spekeKeyProvider = std::forward<SpekeKeyProviderT>(value); }
+    template<typename SpekeKeyProviderT = SpekeKeyProvider>
+    HlsEncryptionSettings& WithSpekeKeyProvider(SpekeKeyProviderT&& value) { SetSpekeKeyProvider(std::forward<SpekeKeyProviderT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Use these settings to set up encryption with a static key provider.
      */
-    inline const StaticKeyProvider& GetStaticKeyProvider() const{ return m_staticKeyProvider; }
+    inline const StaticKeyProvider& GetStaticKeyProvider() const { return m_staticKeyProvider; }
     inline bool StaticKeyProviderHasBeenSet() const { return m_staticKeyProviderHasBeenSet; }
-    inline void SetStaticKeyProvider(const StaticKeyProvider& value) { m_staticKeyProviderHasBeenSet = true; m_staticKeyProvider = value; }
-    inline void SetStaticKeyProvider(StaticKeyProvider&& value) { m_staticKeyProviderHasBeenSet = true; m_staticKeyProvider = std::move(value); }
-    inline HlsEncryptionSettings& WithStaticKeyProvider(const StaticKeyProvider& value) { SetStaticKeyProvider(value); return *this;}
-    inline HlsEncryptionSettings& WithStaticKeyProvider(StaticKeyProvider&& value) { SetStaticKeyProvider(std::move(value)); return *this;}
+    template<typename StaticKeyProviderT = StaticKeyProvider>
+    void SetStaticKeyProvider(StaticKeyProviderT&& value) { m_staticKeyProviderHasBeenSet = true; m_staticKeyProvider = std::forward<StaticKeyProviderT>(value); }
+    template<typename StaticKeyProviderT = StaticKeyProvider>
+    HlsEncryptionSettings& WithStaticKeyProvider(StaticKeyProviderT&& value) { SetStaticKeyProvider(std::forward<StaticKeyProviderT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -131,25 +123,23 @@ namespace Model
      * follows the SPEKE standard. For more information about SPEKE, see
      * https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html.
      */
-    inline const HlsKeyProviderType& GetType() const{ return m_type; }
+    inline HlsKeyProviderType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const HlsKeyProviderType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(HlsKeyProviderType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline HlsEncryptionSettings& WithType(const HlsKeyProviderType& value) { SetType(value); return *this;}
-    inline HlsEncryptionSettings& WithType(HlsKeyProviderType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(HlsKeyProviderType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline HlsEncryptionSettings& WithType(HlsKeyProviderType value) { SetType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_constantInitializationVector;
     bool m_constantInitializationVectorHasBeenSet = false;
 
-    HlsEncryptionType m_encryptionMethod;
+    HlsEncryptionType m_encryptionMethod{HlsEncryptionType::NOT_SET};
     bool m_encryptionMethodHasBeenSet = false;
 
-    HlsInitializationVectorInManifest m_initializationVectorInManifest;
+    HlsInitializationVectorInManifest m_initializationVectorInManifest{HlsInitializationVectorInManifest::NOT_SET};
     bool m_initializationVectorInManifestHasBeenSet = false;
 
-    HlsOfflineEncrypted m_offlineEncrypted;
+    HlsOfflineEncrypted m_offlineEncrypted{HlsOfflineEncrypted::NOT_SET};
     bool m_offlineEncryptedHasBeenSet = false;
 
     SpekeKeyProvider m_spekeKeyProvider;
@@ -158,7 +148,7 @@ namespace Model
     StaticKeyProvider m_staticKeyProvider;
     bool m_staticKeyProviderHasBeenSet = false;
 
-    HlsKeyProviderType m_type;
+    HlsKeyProviderType m_type{HlsKeyProviderType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

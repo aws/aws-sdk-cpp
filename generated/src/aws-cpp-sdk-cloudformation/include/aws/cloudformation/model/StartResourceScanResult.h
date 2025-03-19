@@ -28,7 +28,7 @@ namespace Model
   class StartResourceScanResult
   {
   public:
-    AWS_CLOUDFORMATION_API StartResourceScanResult();
+    AWS_CLOUDFORMATION_API StartResourceScanResult() = default;
     AWS_CLOUDFORMATION_API StartResourceScanResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDFORMATION_API StartResourceScanResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -41,28 +41,28 @@ namespace Model
      * <code>arn:aws:cloudformation:<i>us-east-1</i>:<i>123456789012</i>:resourceScan/<i>f5b490f7-7ed4-428a-aa06-31ff25db0772</i>
      * </code>.</p>
      */
-    inline const Aws::String& GetResourceScanId() const{ return m_resourceScanId; }
-    inline void SetResourceScanId(const Aws::String& value) { m_resourceScanId = value; }
-    inline void SetResourceScanId(Aws::String&& value) { m_resourceScanId = std::move(value); }
-    inline void SetResourceScanId(const char* value) { m_resourceScanId.assign(value); }
-    inline StartResourceScanResult& WithResourceScanId(const Aws::String& value) { SetResourceScanId(value); return *this;}
-    inline StartResourceScanResult& WithResourceScanId(Aws::String&& value) { SetResourceScanId(std::move(value)); return *this;}
-    inline StartResourceScanResult& WithResourceScanId(const char* value) { SetResourceScanId(value); return *this;}
+    inline const Aws::String& GetResourceScanId() const { return m_resourceScanId; }
+    template<typename ResourceScanIdT = Aws::String>
+    void SetResourceScanId(ResourceScanIdT&& value) { m_resourceScanIdHasBeenSet = true; m_resourceScanId = std::forward<ResourceScanIdT>(value); }
+    template<typename ResourceScanIdT = Aws::String>
+    StartResourceScanResult& WithResourceScanId(ResourceScanIdT&& value) { SetResourceScanId(std::forward<ResourceScanIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline StartResourceScanResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline StartResourceScanResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    StartResourceScanResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_resourceScanId;
+    bool m_resourceScanIdHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

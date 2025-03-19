@@ -18,21 +18,7 @@ namespace BCMPricingCalculator
 namespace Model
 {
 
-BatchCreateWorkloadEstimateUsageEntry::BatchCreateWorkloadEstimateUsageEntry() : 
-    m_serviceCodeHasBeenSet(false),
-    m_usageTypeHasBeenSet(false),
-    m_operationHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_groupHasBeenSet(false),
-    m_usageAccountIdHasBeenSet(false),
-    m_amount(0.0),
-    m_amountHasBeenSet(false),
-    m_historicalUsageHasBeenSet(false)
-{
-}
-
 BatchCreateWorkloadEstimateUsageEntry::BatchCreateWorkloadEstimateUsageEntry(JsonView jsonValue)
-  : BatchCreateWorkloadEstimateUsageEntry()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ BatchCreateWorkloadEstimateUsageEntry& BatchCreateWorkloadEstimateUsageEntry::op
   if(jsonValue.ValueExists("serviceCode"))
   {
     m_serviceCode = jsonValue.GetString("serviceCode");
-
     m_serviceCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("usageType"))
   {
     m_usageType = jsonValue.GetString("usageType");
-
     m_usageTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operation"))
   {
     m_operation = jsonValue.GetString("operation");
-
     m_operationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("group"))
   {
     m_group = jsonValue.GetString("group");
-
     m_groupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("usageAccountId"))
   {
     m_usageAccountId = jsonValue.GetString("usageAccountId");
-
     m_usageAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("amount"))
   {
     m_amount = jsonValue.GetDouble("amount");
-
     m_amountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("historicalUsage"))
   {
     m_historicalUsage = jsonValue.GetObject("historicalUsage");
-
     m_historicalUsageHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -46,7 +46,7 @@ namespace Model
   class ClusterSetting
   {
   public:
-    AWS_ECS_API ClusterSetting();
+    AWS_ECS_API ClusterSetting() = default;
     AWS_ECS_API ClusterSetting(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API ClusterSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -57,12 +57,10 @@ namespace Model
      * <p>The name of the cluster setting. The value is <code>containerInsights</code>
      * .</p>
      */
-    inline const ClusterSettingName& GetName() const{ return m_name; }
+    inline ClusterSettingName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const ClusterSettingName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(ClusterSettingName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline ClusterSetting& WithName(const ClusterSettingName& value) { SetName(value); return *this;}
-    inline ClusterSetting& WithName(ClusterSettingName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(ClusterSettingName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline ClusterSetting& WithName(ClusterSettingName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -78,18 +76,16 @@ namespace Model
      * or <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSettingDefault.html">PutAccountSettingDefault</a>.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline ClusterSetting& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline ClusterSetting& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline ClusterSetting& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    ClusterSetting& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
-    ClusterSettingName m_name;
+    ClusterSettingName m_name{ClusterSettingName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::String m_value;

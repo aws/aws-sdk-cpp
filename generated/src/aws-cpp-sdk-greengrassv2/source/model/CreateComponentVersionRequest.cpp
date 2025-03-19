@@ -13,15 +13,6 @@ using namespace Aws::GreengrassV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateComponentVersionRequest::CreateComponentVersionRequest() : 
-    m_inlineRecipeHasBeenSet(false),
-    m_lambdaFunctionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateComponentVersionRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -27,7 +27,7 @@ namespace Model
   class ListEksAnywhereSubscriptionsRequest : public EKSRequest
   {
   public:
-    AWS_EKS_API ListEksAnywhereSubscriptionsRequest();
+    AWS_EKS_API ListEksAnywhereSubscriptionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -51,7 +51,7 @@ namespace Model
      * use this parameter, ListEksAnywhereSubscriptions returns up to 10 results and a
      * nextToken value if applicable.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListEksAnywhereSubscriptionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -65,32 +65,29 @@ namespace Model
      * continues from the end of the previous results that returned the
      * <code>nextToken</code> value.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListEksAnywhereSubscriptionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListEksAnywhereSubscriptionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListEksAnywhereSubscriptionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListEksAnywhereSubscriptionsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of subscription statuses to filter on.</p>
      */
-    inline const Aws::Vector<EksAnywhereSubscriptionStatus>& GetIncludeStatus() const{ return m_includeStatus; }
+    inline const Aws::Vector<EksAnywhereSubscriptionStatus>& GetIncludeStatus() const { return m_includeStatus; }
     inline bool IncludeStatusHasBeenSet() const { return m_includeStatusHasBeenSet; }
-    inline void SetIncludeStatus(const Aws::Vector<EksAnywhereSubscriptionStatus>& value) { m_includeStatusHasBeenSet = true; m_includeStatus = value; }
-    inline void SetIncludeStatus(Aws::Vector<EksAnywhereSubscriptionStatus>&& value) { m_includeStatusHasBeenSet = true; m_includeStatus = std::move(value); }
-    inline ListEksAnywhereSubscriptionsRequest& WithIncludeStatus(const Aws::Vector<EksAnywhereSubscriptionStatus>& value) { SetIncludeStatus(value); return *this;}
-    inline ListEksAnywhereSubscriptionsRequest& WithIncludeStatus(Aws::Vector<EksAnywhereSubscriptionStatus>&& value) { SetIncludeStatus(std::move(value)); return *this;}
-    inline ListEksAnywhereSubscriptionsRequest& AddIncludeStatus(const EksAnywhereSubscriptionStatus& value) { m_includeStatusHasBeenSet = true; m_includeStatus.push_back(value); return *this; }
-    inline ListEksAnywhereSubscriptionsRequest& AddIncludeStatus(EksAnywhereSubscriptionStatus&& value) { m_includeStatusHasBeenSet = true; m_includeStatus.push_back(std::move(value)); return *this; }
+    template<typename IncludeStatusT = Aws::Vector<EksAnywhereSubscriptionStatus>>
+    void SetIncludeStatus(IncludeStatusT&& value) { m_includeStatusHasBeenSet = true; m_includeStatus = std::forward<IncludeStatusT>(value); }
+    template<typename IncludeStatusT = Aws::Vector<EksAnywhereSubscriptionStatus>>
+    ListEksAnywhereSubscriptionsRequest& WithIncludeStatus(IncludeStatusT&& value) { SetIncludeStatus(std::forward<IncludeStatusT>(value)); return *this;}
+    inline ListEksAnywhereSubscriptionsRequest& AddIncludeStatus(EksAnywhereSubscriptionStatus value) { m_includeStatusHasBeenSet = true; m_includeStatus.push_back(value); return *this; }
     ///@}
   private:
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

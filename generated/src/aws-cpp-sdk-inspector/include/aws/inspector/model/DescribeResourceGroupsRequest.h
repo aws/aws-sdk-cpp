@@ -22,7 +22,7 @@ namespace Model
   class DescribeResourceGroupsRequest : public InspectorRequest
   {
   public:
-    AWS_INSPECTOR_API DescribeResourceGroupsRequest();
+    AWS_INSPECTOR_API DescribeResourceGroupsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,15 +39,14 @@ namespace Model
     /**
      * <p>The ARN that specifies the resource group that you want to describe.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetResourceGroupArns() const{ return m_resourceGroupArns; }
+    inline const Aws::Vector<Aws::String>& GetResourceGroupArns() const { return m_resourceGroupArns; }
     inline bool ResourceGroupArnsHasBeenSet() const { return m_resourceGroupArnsHasBeenSet; }
-    inline void SetResourceGroupArns(const Aws::Vector<Aws::String>& value) { m_resourceGroupArnsHasBeenSet = true; m_resourceGroupArns = value; }
-    inline void SetResourceGroupArns(Aws::Vector<Aws::String>&& value) { m_resourceGroupArnsHasBeenSet = true; m_resourceGroupArns = std::move(value); }
-    inline DescribeResourceGroupsRequest& WithResourceGroupArns(const Aws::Vector<Aws::String>& value) { SetResourceGroupArns(value); return *this;}
-    inline DescribeResourceGroupsRequest& WithResourceGroupArns(Aws::Vector<Aws::String>&& value) { SetResourceGroupArns(std::move(value)); return *this;}
-    inline DescribeResourceGroupsRequest& AddResourceGroupArns(const Aws::String& value) { m_resourceGroupArnsHasBeenSet = true; m_resourceGroupArns.push_back(value); return *this; }
-    inline DescribeResourceGroupsRequest& AddResourceGroupArns(Aws::String&& value) { m_resourceGroupArnsHasBeenSet = true; m_resourceGroupArns.push_back(std::move(value)); return *this; }
-    inline DescribeResourceGroupsRequest& AddResourceGroupArns(const char* value) { m_resourceGroupArnsHasBeenSet = true; m_resourceGroupArns.push_back(value); return *this; }
+    template<typename ResourceGroupArnsT = Aws::Vector<Aws::String>>
+    void SetResourceGroupArns(ResourceGroupArnsT&& value) { m_resourceGroupArnsHasBeenSet = true; m_resourceGroupArns = std::forward<ResourceGroupArnsT>(value); }
+    template<typename ResourceGroupArnsT = Aws::Vector<Aws::String>>
+    DescribeResourceGroupsRequest& WithResourceGroupArns(ResourceGroupArnsT&& value) { SetResourceGroupArns(std::forward<ResourceGroupArnsT>(value)); return *this;}
+    template<typename ResourceGroupArnsT = Aws::String>
+    DescribeResourceGroupsRequest& AddResourceGroupArns(ResourceGroupArnsT&& value) { m_resourceGroupArnsHasBeenSet = true; m_resourceGroupArns.emplace_back(std::forward<ResourceGroupArnsT>(value)); return *this; }
     ///@}
   private:
 

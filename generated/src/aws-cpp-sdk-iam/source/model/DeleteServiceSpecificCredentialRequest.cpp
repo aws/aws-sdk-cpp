@@ -10,12 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-DeleteServiceSpecificCredentialRequest::DeleteServiceSpecificCredentialRequest() : 
-    m_userNameHasBeenSet(false),
-    m_serviceSpecificCredentialIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteServiceSpecificCredentialRequest::SerializePayload() const
 {
   Aws::StringStream ss;

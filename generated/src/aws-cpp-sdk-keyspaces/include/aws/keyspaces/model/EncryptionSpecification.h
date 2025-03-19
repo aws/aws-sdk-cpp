@@ -46,7 +46,7 @@ namespace Model
   class EncryptionSpecification
   {
   public:
-    AWS_KEYSPACES_API EncryptionSpecification();
+    AWS_KEYSPACES_API EncryptionSpecification() = default;
     AWS_KEYSPACES_API EncryptionSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_KEYSPACES_API EncryptionSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KEYSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -65,12 +65,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption
      * at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
      */
-    inline const EncryptionType& GetType() const{ return m_type; }
+    inline EncryptionType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const EncryptionType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(EncryptionType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline EncryptionSpecification& WithType(const EncryptionType& value) { SetType(value); return *this;}
-    inline EncryptionSpecification& WithType(EncryptionType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(EncryptionType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline EncryptionSpecification& WithType(EncryptionType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -78,18 +76,16 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the customer managed KMS key, for example
      * <code>kms_key_identifier:ARN</code>.</p>
      */
-    inline const Aws::String& GetKmsKeyIdentifier() const{ return m_kmsKeyIdentifier; }
+    inline const Aws::String& GetKmsKeyIdentifier() const { return m_kmsKeyIdentifier; }
     inline bool KmsKeyIdentifierHasBeenSet() const { return m_kmsKeyIdentifierHasBeenSet; }
-    inline void SetKmsKeyIdentifier(const Aws::String& value) { m_kmsKeyIdentifierHasBeenSet = true; m_kmsKeyIdentifier = value; }
-    inline void SetKmsKeyIdentifier(Aws::String&& value) { m_kmsKeyIdentifierHasBeenSet = true; m_kmsKeyIdentifier = std::move(value); }
-    inline void SetKmsKeyIdentifier(const char* value) { m_kmsKeyIdentifierHasBeenSet = true; m_kmsKeyIdentifier.assign(value); }
-    inline EncryptionSpecification& WithKmsKeyIdentifier(const Aws::String& value) { SetKmsKeyIdentifier(value); return *this;}
-    inline EncryptionSpecification& WithKmsKeyIdentifier(Aws::String&& value) { SetKmsKeyIdentifier(std::move(value)); return *this;}
-    inline EncryptionSpecification& WithKmsKeyIdentifier(const char* value) { SetKmsKeyIdentifier(value); return *this;}
+    template<typename KmsKeyIdentifierT = Aws::String>
+    void SetKmsKeyIdentifier(KmsKeyIdentifierT&& value) { m_kmsKeyIdentifierHasBeenSet = true; m_kmsKeyIdentifier = std::forward<KmsKeyIdentifierT>(value); }
+    template<typename KmsKeyIdentifierT = Aws::String>
+    EncryptionSpecification& WithKmsKeyIdentifier(KmsKeyIdentifierT&& value) { SetKmsKeyIdentifier(std::forward<KmsKeyIdentifierT>(value)); return *this;}
     ///@}
   private:
 
-    EncryptionType m_type;
+    EncryptionType m_type{EncryptionType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_kmsKeyIdentifier;

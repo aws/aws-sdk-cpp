@@ -18,25 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-DatasetProperties::DatasetProperties() : 
-    m_datasetArnHasBeenSet(false),
-    m_datasetNameHasBeenSet(false),
-    m_datasetType(DatasetType::NOT_SET),
-    m_datasetTypeHasBeenSet(false),
-    m_datasetS3UriHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(DatasetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_numberOfDocuments(0),
-    m_numberOfDocumentsHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
-{
-}
-
 DatasetProperties::DatasetProperties(JsonView jsonValue)
-  : DatasetProperties()
 {
   *this = jsonValue;
 }
@@ -46,73 +28,53 @@ DatasetProperties& DatasetProperties::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DatasetArn"))
   {
     m_datasetArn = jsonValue.GetString("DatasetArn");
-
     m_datasetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatasetName"))
   {
     m_datasetName = jsonValue.GetString("DatasetName");
-
     m_datasetNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatasetType"))
   {
     m_datasetType = DatasetTypeMapper::GetDatasetTypeForName(jsonValue.GetString("DatasetType"));
-
     m_datasetTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatasetS3Uri"))
   {
     m_datasetS3Uri = jsonValue.GetString("DatasetS3Uri");
-
     m_datasetS3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = DatasetStatusMapper::GetDatasetStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfDocuments"))
   {
     m_numberOfDocuments = jsonValue.GetInt64("NumberOfDocuments");
-
     m_numberOfDocumentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

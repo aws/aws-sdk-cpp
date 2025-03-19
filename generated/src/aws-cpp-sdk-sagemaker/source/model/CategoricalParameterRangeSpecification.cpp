@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-CategoricalParameterRangeSpecification::CategoricalParameterRangeSpecification() : 
-    m_valuesHasBeenSet(false)
-{
-}
-
 CategoricalParameterRangeSpecification::CategoricalParameterRangeSpecification(JsonView jsonValue)
-  : CategoricalParameterRangeSpecification()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ CategoricalParameterRangeSpecification& CategoricalParameterRangeSpecification::
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

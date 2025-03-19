@@ -18,15 +18,7 @@ namespace AuditManager
 namespace Model
 {
 
-AssessmentReportsDestination::AssessmentReportsDestination() : 
-    m_destinationType(AssessmentReportDestinationType::NOT_SET),
-    m_destinationTypeHasBeenSet(false),
-    m_destinationHasBeenSet(false)
-{
-}
-
 AssessmentReportsDestination::AssessmentReportsDestination(JsonView jsonValue)
-  : AssessmentReportsDestination()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AssessmentReportsDestination& AssessmentReportsDestination::operator =(JsonView 
   if(jsonValue.ValueExists("destinationType"))
   {
     m_destinationType = AssessmentReportDestinationTypeMapper::GetAssessmentReportDestinationTypeForName(jsonValue.GetString("destinationType"));
-
     m_destinationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destination"))
   {
     m_destination = jsonValue.GetString("destination");
-
     m_destinationHasBeenSet = true;
   }
-
   return *this;
 }
 

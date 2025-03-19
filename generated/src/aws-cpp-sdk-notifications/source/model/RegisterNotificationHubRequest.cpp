@@ -12,11 +12,6 @@ using namespace Aws::Notifications::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterNotificationHubRequest::RegisterNotificationHubRequest() : 
-    m_notificationHubRegionHasBeenSet(false)
-{
-}
-
 Aws::String RegisterNotificationHubRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,14 +18,7 @@ namespace Route53Resolver
 namespace Model
 {
 
-UpdateIpAddress::UpdateIpAddress() : 
-    m_ipIdHasBeenSet(false),
-    m_ipv6HasBeenSet(false)
-{
-}
-
 UpdateIpAddress::UpdateIpAddress(JsonView jsonValue)
-  : UpdateIpAddress()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ UpdateIpAddress& UpdateIpAddress::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IpId"))
   {
     m_ipId = jsonValue.GetString("IpId");
-
     m_ipIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ipv6"))
   {
     m_ipv6 = jsonValue.GetString("Ipv6");
-
     m_ipv6HasBeenSet = true;
   }
-
   return *this;
 }
 

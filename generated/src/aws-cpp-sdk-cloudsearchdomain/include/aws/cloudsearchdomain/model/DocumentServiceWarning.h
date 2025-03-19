@@ -32,7 +32,7 @@ namespace Model
   class DocumentServiceWarning
   {
   public:
-    AWS_CLOUDSEARCHDOMAIN_API DocumentServiceWarning();
+    AWS_CLOUDSEARCHDOMAIN_API DocumentServiceWarning() = default;
     AWS_CLOUDSEARCHDOMAIN_API DocumentServiceWarning(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDSEARCHDOMAIN_API DocumentServiceWarning& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDSEARCHDOMAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The description for a warning returned by the document service.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline DocumentServiceWarning& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline DocumentServiceWarning& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline DocumentServiceWarning& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    DocumentServiceWarning& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 

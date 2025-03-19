@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteTransitGatewayPeeringAttachmentResponse::DeleteTransitGatewayPeeringAttachmentResponse()
-{
-}
-
 DeleteTransitGatewayPeeringAttachmentResponse::DeleteTransitGatewayPeeringAttachmentResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DeleteTransitGatewayPeeringAttachmentResponse& DeleteTransitGatewayPeeringAttach
     if(!transitGatewayPeeringAttachmentNode.IsNull())
     {
       m_transitGatewayPeeringAttachment = transitGatewayPeeringAttachmentNode;
+      m_transitGatewayPeeringAttachmentHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ DeleteTransitGatewayPeeringAttachmentResponse& DeleteTransitGatewayPeeringAttach
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DeleteTransitGatewayPeeringAttachmentResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

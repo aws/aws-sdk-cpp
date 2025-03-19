@@ -34,7 +34,7 @@ namespace Model
   class DefaultServerSideEncryption
   {
   public:
-    AWS_GUARDDUTY_API DefaultServerSideEncryption();
+    AWS_GUARDDUTY_API DefaultServerSideEncryption() = default;
     AWS_GUARDDUTY_API DefaultServerSideEncryption(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API DefaultServerSideEncryption& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The type of encryption used for objects within the S3 bucket.</p>
      */
-    inline const Aws::String& GetEncryptionType() const{ return m_encryptionType; }
+    inline const Aws::String& GetEncryptionType() const { return m_encryptionType; }
     inline bool EncryptionTypeHasBeenSet() const { return m_encryptionTypeHasBeenSet; }
-    inline void SetEncryptionType(const Aws::String& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = value; }
-    inline void SetEncryptionType(Aws::String&& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = std::move(value); }
-    inline void SetEncryptionType(const char* value) { m_encryptionTypeHasBeenSet = true; m_encryptionType.assign(value); }
-    inline DefaultServerSideEncryption& WithEncryptionType(const Aws::String& value) { SetEncryptionType(value); return *this;}
-    inline DefaultServerSideEncryption& WithEncryptionType(Aws::String&& value) { SetEncryptionType(std::move(value)); return *this;}
-    inline DefaultServerSideEncryption& WithEncryptionType(const char* value) { SetEncryptionType(value); return *this;}
+    template<typename EncryptionTypeT = Aws::String>
+    void SetEncryptionType(EncryptionTypeT&& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = std::forward<EncryptionTypeT>(value); }
+    template<typename EncryptionTypeT = Aws::String>
+    DefaultServerSideEncryption& WithEncryptionType(EncryptionTypeT&& value) { SetEncryptionType(std::forward<EncryptionTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the KMS encryption key. Only available if
      * the bucket <code>EncryptionType</code> is <code>aws:kms</code>.</p>
      */
-    inline const Aws::String& GetKmsMasterKeyArn() const{ return m_kmsMasterKeyArn; }
+    inline const Aws::String& GetKmsMasterKeyArn() const { return m_kmsMasterKeyArn; }
     inline bool KmsMasterKeyArnHasBeenSet() const { return m_kmsMasterKeyArnHasBeenSet; }
-    inline void SetKmsMasterKeyArn(const Aws::String& value) { m_kmsMasterKeyArnHasBeenSet = true; m_kmsMasterKeyArn = value; }
-    inline void SetKmsMasterKeyArn(Aws::String&& value) { m_kmsMasterKeyArnHasBeenSet = true; m_kmsMasterKeyArn = std::move(value); }
-    inline void SetKmsMasterKeyArn(const char* value) { m_kmsMasterKeyArnHasBeenSet = true; m_kmsMasterKeyArn.assign(value); }
-    inline DefaultServerSideEncryption& WithKmsMasterKeyArn(const Aws::String& value) { SetKmsMasterKeyArn(value); return *this;}
-    inline DefaultServerSideEncryption& WithKmsMasterKeyArn(Aws::String&& value) { SetKmsMasterKeyArn(std::move(value)); return *this;}
-    inline DefaultServerSideEncryption& WithKmsMasterKeyArn(const char* value) { SetKmsMasterKeyArn(value); return *this;}
+    template<typename KmsMasterKeyArnT = Aws::String>
+    void SetKmsMasterKeyArn(KmsMasterKeyArnT&& value) { m_kmsMasterKeyArnHasBeenSet = true; m_kmsMasterKeyArn = std::forward<KmsMasterKeyArnT>(value); }
+    template<typename KmsMasterKeyArnT = Aws::String>
+    DefaultServerSideEncryption& WithKmsMasterKeyArn(KmsMasterKeyArnT&& value) { SetKmsMasterKeyArn(std::forward<KmsMasterKeyArnT>(value)); return *this;}
     ///@}
   private:
 

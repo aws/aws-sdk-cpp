@@ -10,12 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-AcceptReservedNodeExchangeRequest::AcceptReservedNodeExchangeRequest() : 
-    m_reservedNodeIdHasBeenSet(false),
-    m_targetReservedNodeOfferingIdHasBeenSet(false)
-{
-}
-
 Aws::String AcceptReservedNodeExchangeRequest::SerializePayload() const
 {
   Aws::StringStream ss;

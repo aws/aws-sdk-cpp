@@ -46,7 +46,7 @@ namespace Model
   class SecretsManagerSecretConfiguration
   {
   public:
-    AWS_ACCESSANALYZER_API SecretsManagerSecretConfiguration();
+    AWS_ACCESSANALYZER_API SecretsManagerSecretConfiguration() = default;
     AWS_ACCESSANALYZER_API SecretsManagerSecretConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API SecretsManagerSecretConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,14 +56,12 @@ namespace Model
     /**
      * <p>The proposed ARN, key ID, or alias of the KMS key.</p>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline SecretsManagerSecretConfiguration& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline SecretsManagerSecretConfiguration& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline SecretsManagerSecretConfiguration& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    SecretsManagerSecretConfiguration& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +69,12 @@ namespace Model
      * <p>The proposed resource policy defining who can access or manage the
      * secret.</p>
      */
-    inline const Aws::String& GetSecretPolicy() const{ return m_secretPolicy; }
+    inline const Aws::String& GetSecretPolicy() const { return m_secretPolicy; }
     inline bool SecretPolicyHasBeenSet() const { return m_secretPolicyHasBeenSet; }
-    inline void SetSecretPolicy(const Aws::String& value) { m_secretPolicyHasBeenSet = true; m_secretPolicy = value; }
-    inline void SetSecretPolicy(Aws::String&& value) { m_secretPolicyHasBeenSet = true; m_secretPolicy = std::move(value); }
-    inline void SetSecretPolicy(const char* value) { m_secretPolicyHasBeenSet = true; m_secretPolicy.assign(value); }
-    inline SecretsManagerSecretConfiguration& WithSecretPolicy(const Aws::String& value) { SetSecretPolicy(value); return *this;}
-    inline SecretsManagerSecretConfiguration& WithSecretPolicy(Aws::String&& value) { SetSecretPolicy(std::move(value)); return *this;}
-    inline SecretsManagerSecretConfiguration& WithSecretPolicy(const char* value) { SetSecretPolicy(value); return *this;}
+    template<typename SecretPolicyT = Aws::String>
+    void SetSecretPolicy(SecretPolicyT&& value) { m_secretPolicyHasBeenSet = true; m_secretPolicy = std::forward<SecretPolicyT>(value); }
+    template<typename SecretPolicyT = Aws::String>
+    SecretsManagerSecretConfiguration& WithSecretPolicy(SecretPolicyT&& value) { SetSecretPolicy(std::forward<SecretPolicyT>(value)); return *this;}
     ///@}
   private:
 

@@ -20,18 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CreateVerifiedAccessEndpointEniOptions::CreateVerifiedAccessEndpointEniOptions() : 
-    m_networkInterfaceIdHasBeenSet(false),
-    m_protocol(VerifiedAccessEndpointProtocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_portRangesHasBeenSet(false)
-{
-}
-
 CreateVerifiedAccessEndpointEniOptions::CreateVerifiedAccessEndpointEniOptions(const XmlNode& xmlNode)
-  : CreateVerifiedAccessEndpointEniOptions()
 {
   *this = xmlNode;
 }
@@ -51,7 +40,7 @@ CreateVerifiedAccessEndpointEniOptions& CreateVerifiedAccessEndpointEniOptions::
     XmlNode protocolNode = resultNode.FirstChild("Protocol");
     if(!protocolNode.IsNull())
     {
-      m_protocol = VerifiedAccessEndpointProtocolMapper::GetVerifiedAccessEndpointProtocolForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText()).c_str()).c_str());
+      m_protocol = VerifiedAccessEndpointProtocolMapper::GetVerifiedAccessEndpointProtocolForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText()).c_str()));
       m_protocolHasBeenSet = true;
     }
     XmlNode portNode = resultNode.FirstChild("Port");
@@ -64,6 +53,7 @@ CreateVerifiedAccessEndpointEniOptions& CreateVerifiedAccessEndpointEniOptions::
     if(!portRangesNode.IsNull())
     {
       XmlNode portRangesMember = portRangesNode.FirstChild("item");
+      m_portRangesHasBeenSet = !portRangesMember.IsNull();
       while(!portRangesMember.IsNull())
       {
         m_portRanges.push_back(portRangesMember);

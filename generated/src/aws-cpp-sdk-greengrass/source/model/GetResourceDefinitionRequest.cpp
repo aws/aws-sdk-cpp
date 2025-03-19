@@ -12,11 +12,6 @@ using namespace Aws::Greengrass::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetResourceDefinitionRequest::GetResourceDefinitionRequest() : 
-    m_resourceDefinitionIdHasBeenSet(false)
-{
-}
-
 Aws::String GetResourceDefinitionRequest::SerializePayload() const
 {
   return {};

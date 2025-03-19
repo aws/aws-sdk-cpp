@@ -34,7 +34,7 @@ namespace Model
   class ConformancePackEvaluationFilters
   {
   public:
-    AWS_CONFIGSERVICE_API ConformancePackEvaluationFilters();
+    AWS_CONFIGSERVICE_API ConformancePackEvaluationFilters() = default;
     AWS_CONFIGSERVICE_API ConformancePackEvaluationFilters(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API ConformancePackEvaluationFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,15 +44,14 @@ namespace Model
     /**
      * <p>Filters the results by Config rule names.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetConfigRuleNames() const{ return m_configRuleNames; }
+    inline const Aws::Vector<Aws::String>& GetConfigRuleNames() const { return m_configRuleNames; }
     inline bool ConfigRuleNamesHasBeenSet() const { return m_configRuleNamesHasBeenSet; }
-    inline void SetConfigRuleNames(const Aws::Vector<Aws::String>& value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames = value; }
-    inline void SetConfigRuleNames(Aws::Vector<Aws::String>&& value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames = std::move(value); }
-    inline ConformancePackEvaluationFilters& WithConfigRuleNames(const Aws::Vector<Aws::String>& value) { SetConfigRuleNames(value); return *this;}
-    inline ConformancePackEvaluationFilters& WithConfigRuleNames(Aws::Vector<Aws::String>&& value) { SetConfigRuleNames(std::move(value)); return *this;}
-    inline ConformancePackEvaluationFilters& AddConfigRuleNames(const Aws::String& value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames.push_back(value); return *this; }
-    inline ConformancePackEvaluationFilters& AddConfigRuleNames(Aws::String&& value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames.push_back(std::move(value)); return *this; }
-    inline ConformancePackEvaluationFilters& AddConfigRuleNames(const char* value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames.push_back(value); return *this; }
+    template<typename ConfigRuleNamesT = Aws::Vector<Aws::String>>
+    void SetConfigRuleNames(ConfigRuleNamesT&& value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames = std::forward<ConfigRuleNamesT>(value); }
+    template<typename ConfigRuleNamesT = Aws::Vector<Aws::String>>
+    ConformancePackEvaluationFilters& WithConfigRuleNames(ConfigRuleNamesT&& value) { SetConfigRuleNames(std::forward<ConfigRuleNamesT>(value)); return *this;}
+    template<typename ConfigRuleNamesT = Aws::String>
+    ConformancePackEvaluationFilters& AddConfigRuleNames(ConfigRuleNamesT&& value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames.emplace_back(std::forward<ConfigRuleNamesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -61,12 +60,10 @@ namespace Model
      * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
      * <code>INSUFFICIENT_DATA</code> is not supported.</p>
      */
-    inline const ConformancePackComplianceType& GetComplianceType() const{ return m_complianceType; }
+    inline ConformancePackComplianceType GetComplianceType() const { return m_complianceType; }
     inline bool ComplianceTypeHasBeenSet() const { return m_complianceTypeHasBeenSet; }
-    inline void SetComplianceType(const ConformancePackComplianceType& value) { m_complianceTypeHasBeenSet = true; m_complianceType = value; }
-    inline void SetComplianceType(ConformancePackComplianceType&& value) { m_complianceTypeHasBeenSet = true; m_complianceType = std::move(value); }
-    inline ConformancePackEvaluationFilters& WithComplianceType(const ConformancePackComplianceType& value) { SetComplianceType(value); return *this;}
-    inline ConformancePackEvaluationFilters& WithComplianceType(ConformancePackComplianceType&& value) { SetComplianceType(std::move(value)); return *this;}
+    inline void SetComplianceType(ConformancePackComplianceType value) { m_complianceTypeHasBeenSet = true; m_complianceType = value; }
+    inline ConformancePackEvaluationFilters& WithComplianceType(ConformancePackComplianceType value) { SetComplianceType(value); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +71,12 @@ namespace Model
      * <p>Filters the results by the resource type (for example,
      * <code>"AWS::EC2::Instance"</code>). </p>
      */
-    inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+    inline const Aws::String& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
-    inline ConformancePackEvaluationFilters& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-    inline ConformancePackEvaluationFilters& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-    inline ConformancePackEvaluationFilters& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+    template<typename ResourceTypeT = Aws::String>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = Aws::String>
+    ConformancePackEvaluationFilters& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,22 +85,21 @@ namespace Model
      * you provide resource type. If there is no resource type, you will see an
      * error.</p> 
      */
-    inline const Aws::Vector<Aws::String>& GetResourceIds() const{ return m_resourceIds; }
+    inline const Aws::Vector<Aws::String>& GetResourceIds() const { return m_resourceIds; }
     inline bool ResourceIdsHasBeenSet() const { return m_resourceIdsHasBeenSet; }
-    inline void SetResourceIds(const Aws::Vector<Aws::String>& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = value; }
-    inline void SetResourceIds(Aws::Vector<Aws::String>&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = std::move(value); }
-    inline ConformancePackEvaluationFilters& WithResourceIds(const Aws::Vector<Aws::String>& value) { SetResourceIds(value); return *this;}
-    inline ConformancePackEvaluationFilters& WithResourceIds(Aws::Vector<Aws::String>&& value) { SetResourceIds(std::move(value)); return *this;}
-    inline ConformancePackEvaluationFilters& AddResourceIds(const Aws::String& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
-    inline ConformancePackEvaluationFilters& AddResourceIds(Aws::String&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(std::move(value)); return *this; }
-    inline ConformancePackEvaluationFilters& AddResourceIds(const char* value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
+    template<typename ResourceIdsT = Aws::Vector<Aws::String>>
+    void SetResourceIds(ResourceIdsT&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = std::forward<ResourceIdsT>(value); }
+    template<typename ResourceIdsT = Aws::Vector<Aws::String>>
+    ConformancePackEvaluationFilters& WithResourceIds(ResourceIdsT&& value) { SetResourceIds(std::forward<ResourceIdsT>(value)); return *this;}
+    template<typename ResourceIdsT = Aws::String>
+    ConformancePackEvaluationFilters& AddResourceIds(ResourceIdsT&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.emplace_back(std::forward<ResourceIdsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_configRuleNames;
     bool m_configRuleNamesHasBeenSet = false;
 
-    ConformancePackComplianceType m_complianceType;
+    ConformancePackComplianceType m_complianceType{ConformancePackComplianceType::NOT_SET};
     bool m_complianceTypeHasBeenSet = false;
 
     Aws::String m_resourceType;

@@ -18,15 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-RedshiftConfiguration::RedshiftConfiguration() : 
-    m_queryEngineConfigurationHasBeenSet(false),
-    m_queryGenerationConfigurationHasBeenSet(false),
-    m_storageConfigurationsHasBeenSet(false)
-{
-}
-
 RedshiftConfiguration::RedshiftConfiguration(JsonView jsonValue)
-  : RedshiftConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ RedshiftConfiguration& RedshiftConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("queryEngineConfiguration"))
   {
     m_queryEngineConfiguration = jsonValue.GetObject("queryEngineConfiguration");
-
     m_queryEngineConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queryGenerationConfiguration"))
   {
     m_queryGenerationConfiguration = jsonValue.GetObject("queryGenerationConfiguration");
-
     m_queryGenerationConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storageConfigurations"))
   {
     Aws::Utils::Array<JsonView> storageConfigurationsJsonList = jsonValue.GetArray("storageConfigurations");
@@ -56,7 +44,6 @@ RedshiftConfiguration& RedshiftConfiguration::operator =(JsonView jsonValue)
     }
     m_storageConfigurationsHasBeenSet = true;
   }
-
   return *this;
 }
 

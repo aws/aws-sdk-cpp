@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeIpamPoolsResponse::DescribeIpamPoolsResponse()
-{
-}
-
 DescribeIpamPoolsResponse::DescribeIpamPoolsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ DescribeIpamPoolsResponse& DescribeIpamPoolsResponse::operator =(const Aws::Amaz
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
     XmlNode ipamPoolsNode = resultNode.FirstChild("ipamPoolSet");
     if(!ipamPoolsNode.IsNull())
     {
       XmlNode ipamPoolsMember = ipamPoolsNode.FirstChild("item");
+      m_ipamPoolsHasBeenSet = !ipamPoolsMember.IsNull();
       while(!ipamPoolsMember.IsNull())
       {
         m_ipamPools.push_back(ipamPoolsMember);
         ipamPoolsMember = ipamPoolsMember.NextNode("item");
       }
 
+      m_ipamPoolsHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ DescribeIpamPoolsResponse& DescribeIpamPoolsResponse::operator =(const Aws::Amaz
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeIpamPoolsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

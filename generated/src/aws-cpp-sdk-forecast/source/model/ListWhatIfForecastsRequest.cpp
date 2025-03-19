@@ -12,14 +12,6 @@ using namespace Aws::ForecastService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListWhatIfForecastsRequest::ListWhatIfForecastsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_filtersHasBeenSet(false)
-{
-}
-
 Aws::String ListWhatIfForecastsRequest::SerializePayload() const
 {
   JsonValue payload;

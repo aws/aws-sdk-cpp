@@ -39,7 +39,7 @@ namespace Model
   class ContainerRestartPolicy
   {
   public:
-    AWS_ECS_API ContainerRestartPolicy();
+    AWS_ECS_API ContainerRestartPolicy() = default;
     AWS_ECS_API ContainerRestartPolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API ContainerRestartPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,7 +49,7 @@ namespace Model
     /**
      * <p>Specifies whether a restart policy is enabled for the container.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline ContainerRestartPolicy& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -61,12 +61,12 @@ namespace Model
      * on. You can specify a maximum of 50 container exit codes. By default, Amazon ECS
      * does not ignore any exit codes.</p>
      */
-    inline const Aws::Vector<int>& GetIgnoredExitCodes() const{ return m_ignoredExitCodes; }
+    inline const Aws::Vector<int>& GetIgnoredExitCodes() const { return m_ignoredExitCodes; }
     inline bool IgnoredExitCodesHasBeenSet() const { return m_ignoredExitCodesHasBeenSet; }
-    inline void SetIgnoredExitCodes(const Aws::Vector<int>& value) { m_ignoredExitCodesHasBeenSet = true; m_ignoredExitCodes = value; }
-    inline void SetIgnoredExitCodes(Aws::Vector<int>&& value) { m_ignoredExitCodesHasBeenSet = true; m_ignoredExitCodes = std::move(value); }
-    inline ContainerRestartPolicy& WithIgnoredExitCodes(const Aws::Vector<int>& value) { SetIgnoredExitCodes(value); return *this;}
-    inline ContainerRestartPolicy& WithIgnoredExitCodes(Aws::Vector<int>&& value) { SetIgnoredExitCodes(std::move(value)); return *this;}
+    template<typename IgnoredExitCodesT = Aws::Vector<int>>
+    void SetIgnoredExitCodes(IgnoredExitCodesT&& value) { m_ignoredExitCodesHasBeenSet = true; m_ignoredExitCodes = std::forward<IgnoredExitCodesT>(value); }
+    template<typename IgnoredExitCodesT = Aws::Vector<int>>
+    ContainerRestartPolicy& WithIgnoredExitCodes(IgnoredExitCodesT&& value) { SetIgnoredExitCodes(std::forward<IgnoredExitCodesT>(value)); return *this;}
     inline ContainerRestartPolicy& AddIgnoredExitCodes(int value) { m_ignoredExitCodesHasBeenSet = true; m_ignoredExitCodes.push_back(value); return *this; }
     ///@}
 
@@ -80,20 +80,20 @@ namespace Model
      * <code>restartAttemptPeriod</code> of 1800 seconds. By default, a container must
      * run for 300 seconds before it can be restarted.</p>
      */
-    inline int GetRestartAttemptPeriod() const{ return m_restartAttemptPeriod; }
+    inline int GetRestartAttemptPeriod() const { return m_restartAttemptPeriod; }
     inline bool RestartAttemptPeriodHasBeenSet() const { return m_restartAttemptPeriodHasBeenSet; }
     inline void SetRestartAttemptPeriod(int value) { m_restartAttemptPeriodHasBeenSet = true; m_restartAttemptPeriod = value; }
     inline ContainerRestartPolicy& WithRestartAttemptPeriod(int value) { SetRestartAttemptPeriod(value); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
     Aws::Vector<int> m_ignoredExitCodes;
     bool m_ignoredExitCodesHasBeenSet = false;
 
-    int m_restartAttemptPeriod;
+    int m_restartAttemptPeriod{0};
     bool m_restartAttemptPeriodHasBeenSet = false;
   };
 

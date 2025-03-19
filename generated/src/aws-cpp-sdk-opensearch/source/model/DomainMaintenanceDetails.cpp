@@ -18,22 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-DomainMaintenanceDetails::DomainMaintenanceDetails() : 
-    m_maintenanceIdHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_action(MaintenanceType::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_nodeIdHasBeenSet(false),
-    m_status(MaintenanceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 DomainMaintenanceDetails::DomainMaintenanceDetails(JsonView jsonValue)
-  : DomainMaintenanceDetails()
 {
   *this = jsonValue;
 }
@@ -43,59 +28,43 @@ DomainMaintenanceDetails& DomainMaintenanceDetails::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("MaintenanceId"))
   {
     m_maintenanceId = jsonValue.GetString("MaintenanceId");
-
     m_maintenanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DomainName"))
   {
     m_domainName = jsonValue.GetString("DomainName");
-
     m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Action"))
   {
     m_action = MaintenanceTypeMapper::GetMaintenanceTypeForName(jsonValue.GetString("Action"));
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NodeId"))
   {
     m_nodeId = jsonValue.GetString("NodeId");
-
     m_nodeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = MaintenanceStatusMapper::GetMaintenanceStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("UpdatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

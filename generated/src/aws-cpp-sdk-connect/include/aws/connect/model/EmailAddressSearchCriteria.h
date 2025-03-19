@@ -33,7 +33,7 @@ namespace Model
   class EmailAddressSearchCriteria
   {
   public:
-    AWS_CONNECT_API EmailAddressSearchCriteria();
+    AWS_CONNECT_API EmailAddressSearchCriteria() = default;
     AWS_CONNECT_API EmailAddressSearchCriteria(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API EmailAddressSearchCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
      * <p>A list of conditions which would be applied together with an OR
      * condition.</p>
      */
-    inline const Aws::Vector<EmailAddressSearchCriteria>& GetOrConditions() const{ return m_orConditions; }
+    inline const Aws::Vector<EmailAddressSearchCriteria>& GetOrConditions() const { return m_orConditions; }
     inline bool OrConditionsHasBeenSet() const { return m_orConditionsHasBeenSet; }
-    inline void SetOrConditions(const Aws::Vector<EmailAddressSearchCriteria>& value) { m_orConditionsHasBeenSet = true; m_orConditions = value; }
-    inline void SetOrConditions(Aws::Vector<EmailAddressSearchCriteria>&& value) { m_orConditionsHasBeenSet = true; m_orConditions = std::move(value); }
-    inline EmailAddressSearchCriteria& WithOrConditions(const Aws::Vector<EmailAddressSearchCriteria>& value) { SetOrConditions(value); return *this;}
-    inline EmailAddressSearchCriteria& WithOrConditions(Aws::Vector<EmailAddressSearchCriteria>&& value) { SetOrConditions(std::move(value)); return *this;}
-    inline EmailAddressSearchCriteria& AddOrConditions(const EmailAddressSearchCriteria& value) { m_orConditionsHasBeenSet = true; m_orConditions.push_back(value); return *this; }
-    inline EmailAddressSearchCriteria& AddOrConditions(EmailAddressSearchCriteria&& value) { m_orConditionsHasBeenSet = true; m_orConditions.push_back(std::move(value)); return *this; }
+    template<typename OrConditionsT = Aws::Vector<EmailAddressSearchCriteria>>
+    void SetOrConditions(OrConditionsT&& value) { m_orConditionsHasBeenSet = true; m_orConditions = std::forward<OrConditionsT>(value); }
+    template<typename OrConditionsT = Aws::Vector<EmailAddressSearchCriteria>>
+    EmailAddressSearchCriteria& WithOrConditions(OrConditionsT&& value) { SetOrConditions(std::forward<OrConditionsT>(value)); return *this;}
+    template<typename OrConditionsT = EmailAddressSearchCriteria>
+    EmailAddressSearchCriteria& AddOrConditions(OrConditionsT&& value) { m_orConditionsHasBeenSet = true; m_orConditions.emplace_back(std::forward<OrConditionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -59,24 +59,24 @@ namespace Model
      * <p>A list of conditions which would be applied together with an AND
      * condition.</p>
      */
-    inline const Aws::Vector<EmailAddressSearchCriteria>& GetAndConditions() const{ return m_andConditions; }
+    inline const Aws::Vector<EmailAddressSearchCriteria>& GetAndConditions() const { return m_andConditions; }
     inline bool AndConditionsHasBeenSet() const { return m_andConditionsHasBeenSet; }
-    inline void SetAndConditions(const Aws::Vector<EmailAddressSearchCriteria>& value) { m_andConditionsHasBeenSet = true; m_andConditions = value; }
-    inline void SetAndConditions(Aws::Vector<EmailAddressSearchCriteria>&& value) { m_andConditionsHasBeenSet = true; m_andConditions = std::move(value); }
-    inline EmailAddressSearchCriteria& WithAndConditions(const Aws::Vector<EmailAddressSearchCriteria>& value) { SetAndConditions(value); return *this;}
-    inline EmailAddressSearchCriteria& WithAndConditions(Aws::Vector<EmailAddressSearchCriteria>&& value) { SetAndConditions(std::move(value)); return *this;}
-    inline EmailAddressSearchCriteria& AddAndConditions(const EmailAddressSearchCriteria& value) { m_andConditionsHasBeenSet = true; m_andConditions.push_back(value); return *this; }
-    inline EmailAddressSearchCriteria& AddAndConditions(EmailAddressSearchCriteria&& value) { m_andConditionsHasBeenSet = true; m_andConditions.push_back(std::move(value)); return *this; }
+    template<typename AndConditionsT = Aws::Vector<EmailAddressSearchCriteria>>
+    void SetAndConditions(AndConditionsT&& value) { m_andConditionsHasBeenSet = true; m_andConditions = std::forward<AndConditionsT>(value); }
+    template<typename AndConditionsT = Aws::Vector<EmailAddressSearchCriteria>>
+    EmailAddressSearchCriteria& WithAndConditions(AndConditionsT&& value) { SetAndConditions(std::forward<AndConditionsT>(value)); return *this;}
+    template<typename AndConditionsT = EmailAddressSearchCriteria>
+    EmailAddressSearchCriteria& AddAndConditions(AndConditionsT&& value) { m_andConditionsHasBeenSet = true; m_andConditions.emplace_back(std::forward<AndConditionsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const StringCondition& GetStringCondition() const{ return m_stringCondition; }
+    inline const StringCondition& GetStringCondition() const { return m_stringCondition; }
     inline bool StringConditionHasBeenSet() const { return m_stringConditionHasBeenSet; }
-    inline void SetStringCondition(const StringCondition& value) { m_stringConditionHasBeenSet = true; m_stringCondition = value; }
-    inline void SetStringCondition(StringCondition&& value) { m_stringConditionHasBeenSet = true; m_stringCondition = std::move(value); }
-    inline EmailAddressSearchCriteria& WithStringCondition(const StringCondition& value) { SetStringCondition(value); return *this;}
-    inline EmailAddressSearchCriteria& WithStringCondition(StringCondition&& value) { SetStringCondition(std::move(value)); return *this;}
+    template<typename StringConditionT = StringCondition>
+    void SetStringCondition(StringConditionT&& value) { m_stringConditionHasBeenSet = true; m_stringCondition = std::forward<StringConditionT>(value); }
+    template<typename StringConditionT = StringCondition>
+    EmailAddressSearchCriteria& WithStringCondition(StringConditionT&& value) { SetStringCondition(std::forward<StringConditionT>(value)); return *this;}
     ///@}
   private:
 

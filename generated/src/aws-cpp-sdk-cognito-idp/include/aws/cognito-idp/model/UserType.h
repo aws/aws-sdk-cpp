@@ -36,7 +36,7 @@ namespace Model
   class UserType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API UserType();
+    AWS_COGNITOIDENTITYPROVIDER_API UserType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API UserType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API UserType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,28 +46,26 @@ namespace Model
     /**
      * <p>The user's username.</p>
      */
-    inline const Aws::String& GetUsername() const{ return m_username; }
+    inline const Aws::String& GetUsername() const { return m_username; }
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
-    inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
-    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
-    inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
-    inline UserType& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
-    inline UserType& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
-    inline UserType& WithUsername(const char* value) { SetUsername(value); return *this;}
+    template<typename UsernameT = Aws::String>
+    void SetUsername(UsernameT&& value) { m_usernameHasBeenSet = true; m_username = std::forward<UsernameT>(value); }
+    template<typename UsernameT = Aws::String>
+    UserType& WithUsername(UsernameT&& value) { SetUsername(std::forward<UsernameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Names and values of a user's attributes, for example <code>email</code>.</p>
      */
-    inline const Aws::Vector<AttributeType>& GetAttributes() const{ return m_attributes; }
+    inline const Aws::Vector<AttributeType>& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const Aws::Vector<AttributeType>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(Aws::Vector<AttributeType>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline UserType& WithAttributes(const Aws::Vector<AttributeType>& value) { SetAttributes(value); return *this;}
-    inline UserType& WithAttributes(Aws::Vector<AttributeType>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline UserType& AddAttributes(const AttributeType& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
-    inline UserType& AddAttributes(AttributeType&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
+    template<typename AttributesT = Aws::Vector<AttributeType>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Vector<AttributeType>>
+    UserType& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    template<typename AttributesT = AttributeType>
+    UserType& AddAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes.emplace_back(std::forward<AttributesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -76,12 +74,12 @@ namespace Model
      * timestamp in UNIX epoch time format. Your SDK might render the output in a
      * human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
      */
-    inline const Aws::Utils::DateTime& GetUserCreateDate() const{ return m_userCreateDate; }
+    inline const Aws::Utils::DateTime& GetUserCreateDate() const { return m_userCreateDate; }
     inline bool UserCreateDateHasBeenSet() const { return m_userCreateDateHasBeenSet; }
-    inline void SetUserCreateDate(const Aws::Utils::DateTime& value) { m_userCreateDateHasBeenSet = true; m_userCreateDate = value; }
-    inline void SetUserCreateDate(Aws::Utils::DateTime&& value) { m_userCreateDateHasBeenSet = true; m_userCreateDate = std::move(value); }
-    inline UserType& WithUserCreateDate(const Aws::Utils::DateTime& value) { SetUserCreateDate(value); return *this;}
-    inline UserType& WithUserCreateDate(Aws::Utils::DateTime&& value) { SetUserCreateDate(std::move(value)); return *this;}
+    template<typename UserCreateDateT = Aws::Utils::DateTime>
+    void SetUserCreateDate(UserCreateDateT&& value) { m_userCreateDateHasBeenSet = true; m_userCreateDate = std::forward<UserCreateDateT>(value); }
+    template<typename UserCreateDateT = Aws::Utils::DateTime>
+    UserType& WithUserCreateDate(UserCreateDateT&& value) { SetUserCreateDate(std::forward<UserCreateDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,19 +88,19 @@ namespace Model
      * timestamp in UNIX epoch time format. Your SDK might render the output in a
      * human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
      */
-    inline const Aws::Utils::DateTime& GetUserLastModifiedDate() const{ return m_userLastModifiedDate; }
+    inline const Aws::Utils::DateTime& GetUserLastModifiedDate() const { return m_userLastModifiedDate; }
     inline bool UserLastModifiedDateHasBeenSet() const { return m_userLastModifiedDateHasBeenSet; }
-    inline void SetUserLastModifiedDate(const Aws::Utils::DateTime& value) { m_userLastModifiedDateHasBeenSet = true; m_userLastModifiedDate = value; }
-    inline void SetUserLastModifiedDate(Aws::Utils::DateTime&& value) { m_userLastModifiedDateHasBeenSet = true; m_userLastModifiedDate = std::move(value); }
-    inline UserType& WithUserLastModifiedDate(const Aws::Utils::DateTime& value) { SetUserLastModifiedDate(value); return *this;}
-    inline UserType& WithUserLastModifiedDate(Aws::Utils::DateTime&& value) { SetUserLastModifiedDate(std::move(value)); return *this;}
+    template<typename UserLastModifiedDateT = Aws::Utils::DateTime>
+    void SetUserLastModifiedDate(UserLastModifiedDateT&& value) { m_userLastModifiedDateHasBeenSet = true; m_userLastModifiedDate = std::forward<UserLastModifiedDateT>(value); }
+    template<typename UserLastModifiedDateT = Aws::Utils::DateTime>
+    UserType& WithUserLastModifiedDate(UserLastModifiedDateT&& value) { SetUserLastModifiedDate(std::forward<UserLastModifiedDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether the user's account is enabled or disabled.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline UserType& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -122,26 +120,24 @@ namespace Model
      * <p>The statuses <code>ARCHIVED</code>, <code>UNKNOWN</code>, and
      * <code>COMPROMISED</code> are no longer used.</p>
      */
-    inline const UserStatusType& GetUserStatus() const{ return m_userStatus; }
+    inline UserStatusType GetUserStatus() const { return m_userStatus; }
     inline bool UserStatusHasBeenSet() const { return m_userStatusHasBeenSet; }
-    inline void SetUserStatus(const UserStatusType& value) { m_userStatusHasBeenSet = true; m_userStatus = value; }
-    inline void SetUserStatus(UserStatusType&& value) { m_userStatusHasBeenSet = true; m_userStatus = std::move(value); }
-    inline UserType& WithUserStatus(const UserStatusType& value) { SetUserStatus(value); return *this;}
-    inline UserType& WithUserStatus(UserStatusType&& value) { SetUserStatus(std::move(value)); return *this;}
+    inline void SetUserStatus(UserStatusType value) { m_userStatusHasBeenSet = true; m_userStatus = value; }
+    inline UserType& WithUserStatus(UserStatusType value) { SetUserStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The user's MFA configuration.</p>
      */
-    inline const Aws::Vector<MFAOptionType>& GetMFAOptions() const{ return m_mFAOptions; }
+    inline const Aws::Vector<MFAOptionType>& GetMFAOptions() const { return m_mFAOptions; }
     inline bool MFAOptionsHasBeenSet() const { return m_mFAOptionsHasBeenSet; }
-    inline void SetMFAOptions(const Aws::Vector<MFAOptionType>& value) { m_mFAOptionsHasBeenSet = true; m_mFAOptions = value; }
-    inline void SetMFAOptions(Aws::Vector<MFAOptionType>&& value) { m_mFAOptionsHasBeenSet = true; m_mFAOptions = std::move(value); }
-    inline UserType& WithMFAOptions(const Aws::Vector<MFAOptionType>& value) { SetMFAOptions(value); return *this;}
-    inline UserType& WithMFAOptions(Aws::Vector<MFAOptionType>&& value) { SetMFAOptions(std::move(value)); return *this;}
-    inline UserType& AddMFAOptions(const MFAOptionType& value) { m_mFAOptionsHasBeenSet = true; m_mFAOptions.push_back(value); return *this; }
-    inline UserType& AddMFAOptions(MFAOptionType&& value) { m_mFAOptionsHasBeenSet = true; m_mFAOptions.push_back(std::move(value)); return *this; }
+    template<typename MFAOptionsT = Aws::Vector<MFAOptionType>>
+    void SetMFAOptions(MFAOptionsT&& value) { m_mFAOptionsHasBeenSet = true; m_mFAOptions = std::forward<MFAOptionsT>(value); }
+    template<typename MFAOptionsT = Aws::Vector<MFAOptionType>>
+    UserType& WithMFAOptions(MFAOptionsT&& value) { SetMFAOptions(std::forward<MFAOptionsT>(value)); return *this;}
+    template<typename MFAOptionsT = MFAOptionType>
+    UserType& AddMFAOptions(MFAOptionsT&& value) { m_mFAOptionsHasBeenSet = true; m_mFAOptions.emplace_back(std::forward<MFAOptionsT>(value)); return *this; }
     ///@}
   private:
 
@@ -151,16 +147,16 @@ namespace Model
     Aws::Vector<AttributeType> m_attributes;
     bool m_attributesHasBeenSet = false;
 
-    Aws::Utils::DateTime m_userCreateDate;
+    Aws::Utils::DateTime m_userCreateDate{};
     bool m_userCreateDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_userLastModifiedDate;
+    Aws::Utils::DateTime m_userLastModifiedDate{};
     bool m_userLastModifiedDateHasBeenSet = false;
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
-    UserStatusType m_userStatus;
+    UserStatusType m_userStatus{UserStatusType::NOT_SET};
     bool m_userStatusHasBeenSet = false;
 
     Aws::Vector<MFAOptionType> m_mFAOptions;

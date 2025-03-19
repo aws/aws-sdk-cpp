@@ -18,14 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-FleetAdvisorLsaAnalysisResponse::FleetAdvisorLsaAnalysisResponse() : 
-    m_lsaAnalysisIdHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 FleetAdvisorLsaAnalysisResponse::FleetAdvisorLsaAnalysisResponse(JsonView jsonValue)
-  : FleetAdvisorLsaAnalysisResponse()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ FleetAdvisorLsaAnalysisResponse& FleetAdvisorLsaAnalysisResponse::operator =(Jso
   if(jsonValue.ValueExists("LsaAnalysisId"))
   {
     m_lsaAnalysisId = jsonValue.GetString("LsaAnalysisId");
-
     m_lsaAnalysisIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ResumeWorkflowRunResult::ResumeWorkflowRunResult()
-{
-}
-
 ResumeWorkflowRunResult::ResumeWorkflowRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ResumeWorkflowRunResult& ResumeWorkflowRunResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("RunId"))
   {
     m_runId = jsonValue.GetString("RunId");
-
+    m_runIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NodeIds"))
   {
     Aws::Utils::Array<JsonView> nodeIdsJsonList = jsonValue.GetArray("NodeIds");
@@ -42,14 +37,15 @@ ResumeWorkflowRunResult& ResumeWorkflowRunResult::operator =(const Aws::AmazonWe
     {
       m_nodeIds.push_back(nodeIdsJsonList[nodeIdsIndex].AsString());
     }
+    m_nodeIdsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -20,17 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-DashboardEntry::DashboardEntry() : 
-    m_dashboardNameHasBeenSet(false),
-    m_dashboardArnHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false)
-{
-}
-
 DashboardEntry::DashboardEntry(const XmlNode& xmlNode)
-  : DashboardEntry()
 {
   *this = xmlNode;
 }

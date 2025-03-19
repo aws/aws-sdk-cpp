@@ -42,7 +42,7 @@ namespace Model
   class DateTimeRange
   {
   public:
-    AWS_HEALTH_API DateTimeRange();
+    AWS_HEALTH_API DateTimeRange() = default;
     AWS_HEALTH_API DateTimeRange(Aws::Utils::Json::JsonView jsonValue);
     AWS_HEALTH_API DateTimeRange& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_HEALTH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,31 +52,31 @@ namespace Model
     /**
      * <p>The starting date and time of a time range.</p>
      */
-    inline const Aws::Utils::DateTime& GetFrom() const{ return m_from; }
+    inline const Aws::Utils::DateTime& GetFrom() const { return m_from; }
     inline bool FromHasBeenSet() const { return m_fromHasBeenSet; }
-    inline void SetFrom(const Aws::Utils::DateTime& value) { m_fromHasBeenSet = true; m_from = value; }
-    inline void SetFrom(Aws::Utils::DateTime&& value) { m_fromHasBeenSet = true; m_from = std::move(value); }
-    inline DateTimeRange& WithFrom(const Aws::Utils::DateTime& value) { SetFrom(value); return *this;}
-    inline DateTimeRange& WithFrom(Aws::Utils::DateTime&& value) { SetFrom(std::move(value)); return *this;}
+    template<typename FromT = Aws::Utils::DateTime>
+    void SetFrom(FromT&& value) { m_fromHasBeenSet = true; m_from = std::forward<FromT>(value); }
+    template<typename FromT = Aws::Utils::DateTime>
+    DateTimeRange& WithFrom(FromT&& value) { SetFrom(std::forward<FromT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ending date and time of a time range.</p>
      */
-    inline const Aws::Utils::DateTime& GetTo() const{ return m_to; }
+    inline const Aws::Utils::DateTime& GetTo() const { return m_to; }
     inline bool ToHasBeenSet() const { return m_toHasBeenSet; }
-    inline void SetTo(const Aws::Utils::DateTime& value) { m_toHasBeenSet = true; m_to = value; }
-    inline void SetTo(Aws::Utils::DateTime&& value) { m_toHasBeenSet = true; m_to = std::move(value); }
-    inline DateTimeRange& WithTo(const Aws::Utils::DateTime& value) { SetTo(value); return *this;}
-    inline DateTimeRange& WithTo(Aws::Utils::DateTime&& value) { SetTo(std::move(value)); return *this;}
+    template<typename ToT = Aws::Utils::DateTime>
+    void SetTo(ToT&& value) { m_toHasBeenSet = true; m_to = std::forward<ToT>(value); }
+    template<typename ToT = Aws::Utils::DateTime>
+    DateTimeRange& WithTo(ToT&& value) { SetTo(std::forward<ToT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_from;
+    Aws::Utils::DateTime m_from{};
     bool m_fromHasBeenSet = false;
 
-    Aws::Utils::DateTime m_to;
+    Aws::Utils::DateTime m_to{};
     bool m_toHasBeenSet = false;
   };
 

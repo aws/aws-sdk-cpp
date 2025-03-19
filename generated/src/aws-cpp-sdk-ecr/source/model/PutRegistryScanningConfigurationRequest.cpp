@@ -12,13 +12,6 @@ using namespace Aws::ECR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutRegistryScanningConfigurationRequest::PutRegistryScanningConfigurationRequest() : 
-    m_scanType(ScanType::NOT_SET),
-    m_scanTypeHasBeenSet(false),
-    m_rulesHasBeenSet(false)
-{
-}
-
 Aws::String PutRegistryScanningConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

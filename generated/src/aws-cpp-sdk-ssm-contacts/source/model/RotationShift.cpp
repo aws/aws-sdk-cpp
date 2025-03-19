@@ -18,18 +18,7 @@ namespace SSMContacts
 namespace Model
 {
 
-RotationShift::RotationShift() : 
-    m_contactIdsHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_type(ShiftType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_shiftDetailsHasBeenSet(false)
-{
-}
-
 RotationShift::RotationShift(JsonView jsonValue)
-  : RotationShift()
 {
   *this = jsonValue;
 }
@@ -45,35 +34,26 @@ RotationShift& RotationShift::operator =(JsonView jsonValue)
     }
     m_contactIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ShiftTypeMapper::GetShiftTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ShiftDetails"))
   {
     m_shiftDetails = jsonValue.GetObject("ShiftDetails");
-
     m_shiftDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

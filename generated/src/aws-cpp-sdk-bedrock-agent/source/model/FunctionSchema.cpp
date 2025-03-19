@@ -18,13 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-FunctionSchema::FunctionSchema() : 
-    m_functionsHasBeenSet(false)
-{
-}
-
 FunctionSchema::FunctionSchema(JsonView jsonValue)
-  : FunctionSchema()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ FunctionSchema& FunctionSchema::operator =(JsonView jsonValue)
     }
     m_functionsHasBeenSet = true;
   }
-
   return *this;
 }
 

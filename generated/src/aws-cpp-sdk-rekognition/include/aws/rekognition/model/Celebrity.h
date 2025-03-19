@@ -35,7 +35,7 @@ namespace Model
   class Celebrity
   {
   public:
-    AWS_REKOGNITION_API Celebrity();
+    AWS_REKOGNITION_API Celebrity() = default;
     AWS_REKOGNITION_API Celebrity(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Celebrity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,43 +46,38 @@ namespace Model
      * <p>An array of URLs pointing to additional information about the celebrity. If
      * there is no additional information about the celebrity, this list is empty.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetUrls() const{ return m_urls; }
+    inline const Aws::Vector<Aws::String>& GetUrls() const { return m_urls; }
     inline bool UrlsHasBeenSet() const { return m_urlsHasBeenSet; }
-    inline void SetUrls(const Aws::Vector<Aws::String>& value) { m_urlsHasBeenSet = true; m_urls = value; }
-    inline void SetUrls(Aws::Vector<Aws::String>&& value) { m_urlsHasBeenSet = true; m_urls = std::move(value); }
-    inline Celebrity& WithUrls(const Aws::Vector<Aws::String>& value) { SetUrls(value); return *this;}
-    inline Celebrity& WithUrls(Aws::Vector<Aws::String>&& value) { SetUrls(std::move(value)); return *this;}
-    inline Celebrity& AddUrls(const Aws::String& value) { m_urlsHasBeenSet = true; m_urls.push_back(value); return *this; }
-    inline Celebrity& AddUrls(Aws::String&& value) { m_urlsHasBeenSet = true; m_urls.push_back(std::move(value)); return *this; }
-    inline Celebrity& AddUrls(const char* value) { m_urlsHasBeenSet = true; m_urls.push_back(value); return *this; }
+    template<typename UrlsT = Aws::Vector<Aws::String>>
+    void SetUrls(UrlsT&& value) { m_urlsHasBeenSet = true; m_urls = std::forward<UrlsT>(value); }
+    template<typename UrlsT = Aws::Vector<Aws::String>>
+    Celebrity& WithUrls(UrlsT&& value) { SetUrls(std::forward<UrlsT>(value)); return *this;}
+    template<typename UrlsT = Aws::String>
+    Celebrity& AddUrls(UrlsT&& value) { m_urlsHasBeenSet = true; m_urls.emplace_back(std::forward<UrlsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The name of the celebrity.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Celebrity& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Celebrity& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Celebrity& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Celebrity& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier for the celebrity. </p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline Celebrity& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline Celebrity& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline Celebrity& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    Celebrity& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,12 +85,12 @@ namespace Model
      * <p>Provides information about the celebrity's face, such as its location on the
      * image.</p>
      */
-    inline const ComparedFace& GetFace() const{ return m_face; }
+    inline const ComparedFace& GetFace() const { return m_face; }
     inline bool FaceHasBeenSet() const { return m_faceHasBeenSet; }
-    inline void SetFace(const ComparedFace& value) { m_faceHasBeenSet = true; m_face = value; }
-    inline void SetFace(ComparedFace&& value) { m_faceHasBeenSet = true; m_face = std::move(value); }
-    inline Celebrity& WithFace(const ComparedFace& value) { SetFace(value); return *this;}
-    inline Celebrity& WithFace(ComparedFace&& value) { SetFace(std::move(value)); return *this;}
+    template<typename FaceT = ComparedFace>
+    void SetFace(FaceT&& value) { m_faceHasBeenSet = true; m_face = std::forward<FaceT>(value); }
+    template<typename FaceT = ComparedFace>
+    Celebrity& WithFace(FaceT&& value) { SetFace(std::forward<FaceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,7 +98,7 @@ namespace Model
      * <p>The confidence, in percentage, that Amazon Rekognition has that the
      * recognized face is the celebrity.</p>
      */
-    inline double GetMatchConfidence() const{ return m_matchConfidence; }
+    inline double GetMatchConfidence() const { return m_matchConfidence; }
     inline bool MatchConfidenceHasBeenSet() const { return m_matchConfidenceHasBeenSet; }
     inline void SetMatchConfidence(double value) { m_matchConfidenceHasBeenSet = true; m_matchConfidence = value; }
     inline Celebrity& WithMatchConfidence(double value) { SetMatchConfidence(value); return *this;}
@@ -111,12 +106,12 @@ namespace Model
 
     ///@{
     
-    inline const KnownGender& GetKnownGender() const{ return m_knownGender; }
+    inline const KnownGender& GetKnownGender() const { return m_knownGender; }
     inline bool KnownGenderHasBeenSet() const { return m_knownGenderHasBeenSet; }
-    inline void SetKnownGender(const KnownGender& value) { m_knownGenderHasBeenSet = true; m_knownGender = value; }
-    inline void SetKnownGender(KnownGender&& value) { m_knownGenderHasBeenSet = true; m_knownGender = std::move(value); }
-    inline Celebrity& WithKnownGender(const KnownGender& value) { SetKnownGender(value); return *this;}
-    inline Celebrity& WithKnownGender(KnownGender&& value) { SetKnownGender(std::move(value)); return *this;}
+    template<typename KnownGenderT = KnownGender>
+    void SetKnownGender(KnownGenderT&& value) { m_knownGenderHasBeenSet = true; m_knownGender = std::forward<KnownGenderT>(value); }
+    template<typename KnownGenderT = KnownGender>
+    Celebrity& WithKnownGender(KnownGenderT&& value) { SetKnownGender(std::forward<KnownGenderT>(value)); return *this;}
     ///@}
   private:
 
@@ -132,7 +127,7 @@ namespace Model
     ComparedFace m_face;
     bool m_faceHasBeenSet = false;
 
-    double m_matchConfidence;
+    double m_matchConfidence{0.0};
     bool m_matchConfidenceHasBeenSet = false;
 
     KnownGender m_knownGender;

@@ -54,7 +54,7 @@ namespace Model
   class ExclusionByResourceTypes
   {
   public:
-    AWS_CONFIGSERVICE_API ExclusionByResourceTypes();
+    AWS_CONFIGSERVICE_API ExclusionByResourceTypes() = default;
     AWS_CONFIGSERVICE_API ExclusionByResourceTypes(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API ExclusionByResourceTypes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -65,14 +65,13 @@ namespace Model
      * <p>A comma-separated list of resource types to exclude from recording by the
      * configuration recorder.</p>
      */
-    inline const Aws::Vector<ResourceType>& GetResourceTypes() const{ return m_resourceTypes; }
+    inline const Aws::Vector<ResourceType>& GetResourceTypes() const { return m_resourceTypes; }
     inline bool ResourceTypesHasBeenSet() const { return m_resourceTypesHasBeenSet; }
-    inline void SetResourceTypes(const Aws::Vector<ResourceType>& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = value; }
-    inline void SetResourceTypes(Aws::Vector<ResourceType>&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = std::move(value); }
-    inline ExclusionByResourceTypes& WithResourceTypes(const Aws::Vector<ResourceType>& value) { SetResourceTypes(value); return *this;}
-    inline ExclusionByResourceTypes& WithResourceTypes(Aws::Vector<ResourceType>&& value) { SetResourceTypes(std::move(value)); return *this;}
-    inline ExclusionByResourceTypes& AddResourceTypes(const ResourceType& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
-    inline ExclusionByResourceTypes& AddResourceTypes(ResourceType&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(std::move(value)); return *this; }
+    template<typename ResourceTypesT = Aws::Vector<ResourceType>>
+    void SetResourceTypes(ResourceTypesT&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = std::forward<ResourceTypesT>(value); }
+    template<typename ResourceTypesT = Aws::Vector<ResourceType>>
+    ExclusionByResourceTypes& WithResourceTypes(ResourceTypesT&& value) { SetResourceTypes(std::forward<ResourceTypesT>(value)); return *this;}
+    inline ExclusionByResourceTypes& AddResourceTypes(ResourceType value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
     ///@}
   private:
 

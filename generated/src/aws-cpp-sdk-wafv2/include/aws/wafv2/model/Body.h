@@ -33,7 +33,7 @@ namespace Model
   class Body
   {
   public:
-    AWS_WAFV2_API Body();
+    AWS_WAFV2_API Body() = default;
     AWS_WAFV2_API Body(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Body& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -61,16 +61,14 @@ namespace Model
      * action settings, so that you block any request whose body is over the limit.
      * </p> <p>Default: <code>CONTINUE</code> </p>
      */
-    inline const OversizeHandling& GetOversizeHandling() const{ return m_oversizeHandling; }
+    inline OversizeHandling GetOversizeHandling() const { return m_oversizeHandling; }
     inline bool OversizeHandlingHasBeenSet() const { return m_oversizeHandlingHasBeenSet; }
-    inline void SetOversizeHandling(const OversizeHandling& value) { m_oversizeHandlingHasBeenSet = true; m_oversizeHandling = value; }
-    inline void SetOversizeHandling(OversizeHandling&& value) { m_oversizeHandlingHasBeenSet = true; m_oversizeHandling = std::move(value); }
-    inline Body& WithOversizeHandling(const OversizeHandling& value) { SetOversizeHandling(value); return *this;}
-    inline Body& WithOversizeHandling(OversizeHandling&& value) { SetOversizeHandling(std::move(value)); return *this;}
+    inline void SetOversizeHandling(OversizeHandling value) { m_oversizeHandlingHasBeenSet = true; m_oversizeHandling = value; }
+    inline Body& WithOversizeHandling(OversizeHandling value) { SetOversizeHandling(value); return *this;}
     ///@}
   private:
 
-    OversizeHandling m_oversizeHandling;
+    OversizeHandling m_oversizeHandling{OversizeHandling::NOT_SET};
     bool m_oversizeHandlingHasBeenSet = false;
   };
 

@@ -31,7 +31,7 @@ namespace Model
   class ColumnType
   {
   public:
-    AWS_IOTSITEWISE_API ColumnType();
+    AWS_IOTSITEWISE_API ColumnType() = default;
     AWS_IOTSITEWISE_API ColumnType(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API ColumnType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,16 +41,14 @@ namespace Model
     /**
      * <p>The allowed data types that the column has as it's value.</p>
      */
-    inline const ScalarType& GetScalarType() const{ return m_scalarType; }
+    inline ScalarType GetScalarType() const { return m_scalarType; }
     inline bool ScalarTypeHasBeenSet() const { return m_scalarTypeHasBeenSet; }
-    inline void SetScalarType(const ScalarType& value) { m_scalarTypeHasBeenSet = true; m_scalarType = value; }
-    inline void SetScalarType(ScalarType&& value) { m_scalarTypeHasBeenSet = true; m_scalarType = std::move(value); }
-    inline ColumnType& WithScalarType(const ScalarType& value) { SetScalarType(value); return *this;}
-    inline ColumnType& WithScalarType(ScalarType&& value) { SetScalarType(std::move(value)); return *this;}
+    inline void SetScalarType(ScalarType value) { m_scalarTypeHasBeenSet = true; m_scalarType = value; }
+    inline ColumnType& WithScalarType(ScalarType value) { SetScalarType(value); return *this;}
     ///@}
   private:
 
-    ScalarType m_scalarType;
+    ScalarType m_scalarType{ScalarType::NOT_SET};
     bool m_scalarTypeHasBeenSet = false;
   };
 

@@ -18,13 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-EnvironmentInfo::EnvironmentInfo() : 
-    m_availabilityZoneInformationHasBeenSet(false)
-{
-}
-
 EnvironmentInfo::EnvironmentInfo(JsonView jsonValue)
-  : EnvironmentInfo()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ EnvironmentInfo& EnvironmentInfo::operator =(JsonView jsonValue)
     }
     m_availabilityZoneInformationHasBeenSet = true;
   }
-
   return *this;
 }
 

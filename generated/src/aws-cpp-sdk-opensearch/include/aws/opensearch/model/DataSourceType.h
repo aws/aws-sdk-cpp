@@ -31,7 +31,7 @@ namespace Model
   class DataSourceType
   {
   public:
-    AWS_OPENSEARCHSERVICE_API DataSourceType();
+    AWS_OPENSEARCHSERVICE_API DataSourceType() = default;
     AWS_OPENSEARCHSERVICE_API DataSourceType(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API DataSourceType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>An Amazon S3 data source.</p>
      */
-    inline const S3GlueDataCatalog& GetS3GlueDataCatalog() const{ return m_s3GlueDataCatalog; }
+    inline const S3GlueDataCatalog& GetS3GlueDataCatalog() const { return m_s3GlueDataCatalog; }
     inline bool S3GlueDataCatalogHasBeenSet() const { return m_s3GlueDataCatalogHasBeenSet; }
-    inline void SetS3GlueDataCatalog(const S3GlueDataCatalog& value) { m_s3GlueDataCatalogHasBeenSet = true; m_s3GlueDataCatalog = value; }
-    inline void SetS3GlueDataCatalog(S3GlueDataCatalog&& value) { m_s3GlueDataCatalogHasBeenSet = true; m_s3GlueDataCatalog = std::move(value); }
-    inline DataSourceType& WithS3GlueDataCatalog(const S3GlueDataCatalog& value) { SetS3GlueDataCatalog(value); return *this;}
-    inline DataSourceType& WithS3GlueDataCatalog(S3GlueDataCatalog&& value) { SetS3GlueDataCatalog(std::move(value)); return *this;}
+    template<typename S3GlueDataCatalogT = S3GlueDataCatalog>
+    void SetS3GlueDataCatalog(S3GlueDataCatalogT&& value) { m_s3GlueDataCatalogHasBeenSet = true; m_s3GlueDataCatalog = std::forward<S3GlueDataCatalogT>(value); }
+    template<typename S3GlueDataCatalogT = S3GlueDataCatalog>
+    DataSourceType& WithS3GlueDataCatalog(S3GlueDataCatalogT&& value) { SetS3GlueDataCatalog(std::forward<S3GlueDataCatalogT>(value)); return *this;}
     ///@}
   private:
 

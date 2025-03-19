@@ -12,11 +12,6 @@ using namespace Aws::Greengrass::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetConnectivityInfoRequest::GetConnectivityInfoRequest() : 
-    m_thingNameHasBeenSet(false)
-{
-}
-
 Aws::String GetConnectivityInfoRequest::SerializePayload() const
 {
   return {};

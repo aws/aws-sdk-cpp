@@ -10,12 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-CancelUpdateStackRequest::CancelUpdateStackRequest() : 
-    m_stackNameHasBeenSet(false),
-    m_clientRequestTokenHasBeenSet(false)
-{
-}
-
 Aws::String CancelUpdateStackRequest::SerializePayload() const
 {
   Aws::StringStream ss;

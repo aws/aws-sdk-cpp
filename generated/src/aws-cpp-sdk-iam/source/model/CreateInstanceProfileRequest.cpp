@@ -10,13 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-CreateInstanceProfileRequest::CreateInstanceProfileRequest() : 
-    m_instanceProfileNameHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateInstanceProfileRequest::SerializePayload() const
 {
   Aws::StringStream ss;

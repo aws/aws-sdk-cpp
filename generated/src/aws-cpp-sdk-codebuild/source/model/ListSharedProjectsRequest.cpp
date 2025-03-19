@@ -12,17 +12,6 @@ using namespace Aws::CodeBuild::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListSharedProjectsRequest::ListSharedProjectsRequest() : 
-    m_sortBy(SharedResourceSortByType::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrderType::NOT_SET),
-    m_sortOrderHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListSharedProjectsRequest::SerializePayload() const
 {
   JsonValue payload;

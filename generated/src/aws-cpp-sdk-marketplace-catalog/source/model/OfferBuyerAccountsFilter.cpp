@@ -18,13 +18,7 @@ namespace MarketplaceCatalog
 namespace Model
 {
 
-OfferBuyerAccountsFilter::OfferBuyerAccountsFilter() : 
-    m_wildCardValueHasBeenSet(false)
-{
-}
-
 OfferBuyerAccountsFilter::OfferBuyerAccountsFilter(JsonView jsonValue)
-  : OfferBuyerAccountsFilter()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ OfferBuyerAccountsFilter& OfferBuyerAccountsFilter::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("WildCardValue"))
   {
     m_wildCardValue = jsonValue.GetString("WildCardValue");
-
     m_wildCardValueHasBeenSet = true;
   }
-
   return *this;
 }
 

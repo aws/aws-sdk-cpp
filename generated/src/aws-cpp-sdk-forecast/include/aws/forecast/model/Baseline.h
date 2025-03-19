@@ -33,7 +33,7 @@ namespace Model
   class Baseline
   {
   public:
-    AWS_FORECASTSERVICE_API Baseline();
+    AWS_FORECASTSERVICE_API Baseline() = default;
     AWS_FORECASTSERVICE_API Baseline(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API Baseline& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,12 @@ namespace Model
      * baseline for comparison purposes as you use your predictor and the metrics
      * change.</p>
      */
-    inline const PredictorBaseline& GetPredictorBaseline() const{ return m_predictorBaseline; }
+    inline const PredictorBaseline& GetPredictorBaseline() const { return m_predictorBaseline; }
     inline bool PredictorBaselineHasBeenSet() const { return m_predictorBaselineHasBeenSet; }
-    inline void SetPredictorBaseline(const PredictorBaseline& value) { m_predictorBaselineHasBeenSet = true; m_predictorBaseline = value; }
-    inline void SetPredictorBaseline(PredictorBaseline&& value) { m_predictorBaselineHasBeenSet = true; m_predictorBaseline = std::move(value); }
-    inline Baseline& WithPredictorBaseline(const PredictorBaseline& value) { SetPredictorBaseline(value); return *this;}
-    inline Baseline& WithPredictorBaseline(PredictorBaseline&& value) { SetPredictorBaseline(std::move(value)); return *this;}
+    template<typename PredictorBaselineT = PredictorBaseline>
+    void SetPredictorBaseline(PredictorBaselineT&& value) { m_predictorBaselineHasBeenSet = true; m_predictorBaseline = std::forward<PredictorBaselineT>(value); }
+    template<typename PredictorBaselineT = PredictorBaseline>
+    Baseline& WithPredictorBaseline(PredictorBaselineT&& value) { SetPredictorBaseline(std::forward<PredictorBaselineT>(value)); return *this;}
     ///@}
   private:
 

@@ -33,7 +33,7 @@ namespace Model
   class BatchCreateWorkloadEstimateUsageEntry
   {
   public:
-    AWS_BCMPRICINGCALCULATOR_API BatchCreateWorkloadEstimateUsageEntry();
+    AWS_BCMPRICINGCALCULATOR_API BatchCreateWorkloadEstimateUsageEntry() = default;
     AWS_BCMPRICINGCALCULATOR_API BatchCreateWorkloadEstimateUsageEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMPRICINGCALCULATOR_API BatchCreateWorkloadEstimateUsageEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMPRICINGCALCULATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,91 +43,79 @@ namespace Model
     /**
      * <p> The Amazon Web Services service code for this usage estimate. </p>
      */
-    inline const Aws::String& GetServiceCode() const{ return m_serviceCode; }
+    inline const Aws::String& GetServiceCode() const { return m_serviceCode; }
     inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
-    inline void SetServiceCode(const Aws::String& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = value; }
-    inline void SetServiceCode(Aws::String&& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = std::move(value); }
-    inline void SetServiceCode(const char* value) { m_serviceCodeHasBeenSet = true; m_serviceCode.assign(value); }
-    inline BatchCreateWorkloadEstimateUsageEntry& WithServiceCode(const Aws::String& value) { SetServiceCode(value); return *this;}
-    inline BatchCreateWorkloadEstimateUsageEntry& WithServiceCode(Aws::String&& value) { SetServiceCode(std::move(value)); return *this;}
-    inline BatchCreateWorkloadEstimateUsageEntry& WithServiceCode(const char* value) { SetServiceCode(value); return *this;}
+    template<typename ServiceCodeT = Aws::String>
+    void SetServiceCode(ServiceCodeT&& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = std::forward<ServiceCodeT>(value); }
+    template<typename ServiceCodeT = Aws::String>
+    BatchCreateWorkloadEstimateUsageEntry& WithServiceCode(ServiceCodeT&& value) { SetServiceCode(std::forward<ServiceCodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The type of usage being estimated. </p>
      */
-    inline const Aws::String& GetUsageType() const{ return m_usageType; }
+    inline const Aws::String& GetUsageType() const { return m_usageType; }
     inline bool UsageTypeHasBeenSet() const { return m_usageTypeHasBeenSet; }
-    inline void SetUsageType(const Aws::String& value) { m_usageTypeHasBeenSet = true; m_usageType = value; }
-    inline void SetUsageType(Aws::String&& value) { m_usageTypeHasBeenSet = true; m_usageType = std::move(value); }
-    inline void SetUsageType(const char* value) { m_usageTypeHasBeenSet = true; m_usageType.assign(value); }
-    inline BatchCreateWorkloadEstimateUsageEntry& WithUsageType(const Aws::String& value) { SetUsageType(value); return *this;}
-    inline BatchCreateWorkloadEstimateUsageEntry& WithUsageType(Aws::String&& value) { SetUsageType(std::move(value)); return *this;}
-    inline BatchCreateWorkloadEstimateUsageEntry& WithUsageType(const char* value) { SetUsageType(value); return *this;}
+    template<typename UsageTypeT = Aws::String>
+    void SetUsageType(UsageTypeT&& value) { m_usageTypeHasBeenSet = true; m_usageType = std::forward<UsageTypeT>(value); }
+    template<typename UsageTypeT = Aws::String>
+    BatchCreateWorkloadEstimateUsageEntry& WithUsageType(UsageTypeT&& value) { SetUsageType(std::forward<UsageTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The specific operation associated with this usage estimate. </p>
      */
-    inline const Aws::String& GetOperation() const{ return m_operation; }
+    inline const Aws::String& GetOperation() const { return m_operation; }
     inline bool OperationHasBeenSet() const { return m_operationHasBeenSet; }
-    inline void SetOperation(const Aws::String& value) { m_operationHasBeenSet = true; m_operation = value; }
-    inline void SetOperation(Aws::String&& value) { m_operationHasBeenSet = true; m_operation = std::move(value); }
-    inline void SetOperation(const char* value) { m_operationHasBeenSet = true; m_operation.assign(value); }
-    inline BatchCreateWorkloadEstimateUsageEntry& WithOperation(const Aws::String& value) { SetOperation(value); return *this;}
-    inline BatchCreateWorkloadEstimateUsageEntry& WithOperation(Aws::String&& value) { SetOperation(std::move(value)); return *this;}
-    inline BatchCreateWorkloadEstimateUsageEntry& WithOperation(const char* value) { SetOperation(value); return *this;}
+    template<typename OperationT = Aws::String>
+    void SetOperation(OperationT&& value) { m_operationHasBeenSet = true; m_operation = std::forward<OperationT>(value); }
+    template<typename OperationT = Aws::String>
+    BatchCreateWorkloadEstimateUsageEntry& WithOperation(OperationT&& value) { SetOperation(std::forward<OperationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> A unique identifier for this entry in the batch operation. </p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline BatchCreateWorkloadEstimateUsageEntry& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline BatchCreateWorkloadEstimateUsageEntry& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline BatchCreateWorkloadEstimateUsageEntry& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    BatchCreateWorkloadEstimateUsageEntry& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> An optional group identifier for the usage estimate. </p>
      */
-    inline const Aws::String& GetGroup() const{ return m_group; }
+    inline const Aws::String& GetGroup() const { return m_group; }
     inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
-    inline void SetGroup(const Aws::String& value) { m_groupHasBeenSet = true; m_group = value; }
-    inline void SetGroup(Aws::String&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
-    inline void SetGroup(const char* value) { m_groupHasBeenSet = true; m_group.assign(value); }
-    inline BatchCreateWorkloadEstimateUsageEntry& WithGroup(const Aws::String& value) { SetGroup(value); return *this;}
-    inline BatchCreateWorkloadEstimateUsageEntry& WithGroup(Aws::String&& value) { SetGroup(std::move(value)); return *this;}
-    inline BatchCreateWorkloadEstimateUsageEntry& WithGroup(const char* value) { SetGroup(value); return *this;}
+    template<typename GroupT = Aws::String>
+    void SetGroup(GroupT&& value) { m_groupHasBeenSet = true; m_group = std::forward<GroupT>(value); }
+    template<typename GroupT = Aws::String>
+    BatchCreateWorkloadEstimateUsageEntry& WithGroup(GroupT&& value) { SetGroup(std::forward<GroupT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The Amazon Web Services account ID associated with this usage estimate. </p>
      */
-    inline const Aws::String& GetUsageAccountId() const{ return m_usageAccountId; }
+    inline const Aws::String& GetUsageAccountId() const { return m_usageAccountId; }
     inline bool UsageAccountIdHasBeenSet() const { return m_usageAccountIdHasBeenSet; }
-    inline void SetUsageAccountId(const Aws::String& value) { m_usageAccountIdHasBeenSet = true; m_usageAccountId = value; }
-    inline void SetUsageAccountId(Aws::String&& value) { m_usageAccountIdHasBeenSet = true; m_usageAccountId = std::move(value); }
-    inline void SetUsageAccountId(const char* value) { m_usageAccountIdHasBeenSet = true; m_usageAccountId.assign(value); }
-    inline BatchCreateWorkloadEstimateUsageEntry& WithUsageAccountId(const Aws::String& value) { SetUsageAccountId(value); return *this;}
-    inline BatchCreateWorkloadEstimateUsageEntry& WithUsageAccountId(Aws::String&& value) { SetUsageAccountId(std::move(value)); return *this;}
-    inline BatchCreateWorkloadEstimateUsageEntry& WithUsageAccountId(const char* value) { SetUsageAccountId(value); return *this;}
+    template<typename UsageAccountIdT = Aws::String>
+    void SetUsageAccountId(UsageAccountIdT&& value) { m_usageAccountIdHasBeenSet = true; m_usageAccountId = std::forward<UsageAccountIdT>(value); }
+    template<typename UsageAccountIdT = Aws::String>
+    BatchCreateWorkloadEstimateUsageEntry& WithUsageAccountId(UsageAccountIdT&& value) { SetUsageAccountId(std::forward<UsageAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The estimated usage amount. </p>
      */
-    inline double GetAmount() const{ return m_amount; }
+    inline double GetAmount() const { return m_amount; }
     inline bool AmountHasBeenSet() const { return m_amountHasBeenSet; }
     inline void SetAmount(double value) { m_amountHasBeenSet = true; m_amount = value; }
     inline BatchCreateWorkloadEstimateUsageEntry& WithAmount(double value) { SetAmount(value); return *this;}
@@ -137,12 +125,12 @@ namespace Model
     /**
      * <p> Historical usage data associated with this estimate, if available. </p>
      */
-    inline const HistoricalUsageEntity& GetHistoricalUsage() const{ return m_historicalUsage; }
+    inline const HistoricalUsageEntity& GetHistoricalUsage() const { return m_historicalUsage; }
     inline bool HistoricalUsageHasBeenSet() const { return m_historicalUsageHasBeenSet; }
-    inline void SetHistoricalUsage(const HistoricalUsageEntity& value) { m_historicalUsageHasBeenSet = true; m_historicalUsage = value; }
-    inline void SetHistoricalUsage(HistoricalUsageEntity&& value) { m_historicalUsageHasBeenSet = true; m_historicalUsage = std::move(value); }
-    inline BatchCreateWorkloadEstimateUsageEntry& WithHistoricalUsage(const HistoricalUsageEntity& value) { SetHistoricalUsage(value); return *this;}
-    inline BatchCreateWorkloadEstimateUsageEntry& WithHistoricalUsage(HistoricalUsageEntity&& value) { SetHistoricalUsage(std::move(value)); return *this;}
+    template<typename HistoricalUsageT = HistoricalUsageEntity>
+    void SetHistoricalUsage(HistoricalUsageT&& value) { m_historicalUsageHasBeenSet = true; m_historicalUsage = std::forward<HistoricalUsageT>(value); }
+    template<typename HistoricalUsageT = HistoricalUsageEntity>
+    BatchCreateWorkloadEstimateUsageEntry& WithHistoricalUsage(HistoricalUsageT&& value) { SetHistoricalUsage(std::forward<HistoricalUsageT>(value)); return *this;}
     ///@}
   private:
 
@@ -164,7 +152,7 @@ namespace Model
     Aws::String m_usageAccountId;
     bool m_usageAccountIdHasBeenSet = false;
 
-    double m_amount;
+    double m_amount{0.0};
     bool m_amountHasBeenSet = false;
 
     HistoricalUsageEntity m_historicalUsage;

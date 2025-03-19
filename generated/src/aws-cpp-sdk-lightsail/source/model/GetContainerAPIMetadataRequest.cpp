@@ -12,10 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetContainerAPIMetadataRequest::GetContainerAPIMetadataRequest()
-{
-}
-
 Aws::String GetContainerAPIMetadataRequest::SerializePayload() const
 {
   return "{}";

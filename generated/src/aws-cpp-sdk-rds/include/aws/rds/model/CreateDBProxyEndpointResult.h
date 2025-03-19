@@ -28,7 +28,7 @@ namespace Model
   class CreateDBProxyEndpointResult
   {
   public:
-    AWS_RDS_API CreateDBProxyEndpointResult();
+    AWS_RDS_API CreateDBProxyEndpointResult() = default;
     AWS_RDS_API CreateDBProxyEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_RDS_API CreateDBProxyEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -40,26 +40,28 @@ namespace Model
      * read/write or read-only operations, or using a different VPC than the proxy's
      * default VPC.</p>
      */
-    inline const DBProxyEndpoint& GetDBProxyEndpoint() const{ return m_dBProxyEndpoint; }
-    inline void SetDBProxyEndpoint(const DBProxyEndpoint& value) { m_dBProxyEndpoint = value; }
-    inline void SetDBProxyEndpoint(DBProxyEndpoint&& value) { m_dBProxyEndpoint = std::move(value); }
-    inline CreateDBProxyEndpointResult& WithDBProxyEndpoint(const DBProxyEndpoint& value) { SetDBProxyEndpoint(value); return *this;}
-    inline CreateDBProxyEndpointResult& WithDBProxyEndpoint(DBProxyEndpoint&& value) { SetDBProxyEndpoint(std::move(value)); return *this;}
+    inline const DBProxyEndpoint& GetDBProxyEndpoint() const { return m_dBProxyEndpoint; }
+    template<typename DBProxyEndpointT = DBProxyEndpoint>
+    void SetDBProxyEndpoint(DBProxyEndpointT&& value) { m_dBProxyEndpointHasBeenSet = true; m_dBProxyEndpoint = std::forward<DBProxyEndpointT>(value); }
+    template<typename DBProxyEndpointT = DBProxyEndpoint>
+    CreateDBProxyEndpointResult& WithDBProxyEndpoint(DBProxyEndpointT&& value) { SetDBProxyEndpoint(std::forward<DBProxyEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CreateDBProxyEndpointResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CreateDBProxyEndpointResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CreateDBProxyEndpointResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     DBProxyEndpoint m_dBProxyEndpoint;
+    bool m_dBProxyEndpointHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

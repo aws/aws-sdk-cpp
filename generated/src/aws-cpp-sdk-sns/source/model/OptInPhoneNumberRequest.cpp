@@ -10,11 +10,6 @@
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-OptInPhoneNumberRequest::OptInPhoneNumberRequest() : 
-    m_phoneNumberHasBeenSet(false)
-{
-}
-
 Aws::String OptInPhoneNumberRequest::SerializePayload() const
 {
   Aws::StringStream ss;

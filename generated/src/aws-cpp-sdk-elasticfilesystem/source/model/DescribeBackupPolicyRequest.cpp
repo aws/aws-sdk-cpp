@@ -12,11 +12,6 @@ using namespace Aws::EFS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeBackupPolicyRequest::DescribeBackupPolicyRequest() : 
-    m_fileSystemIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeBackupPolicyRequest::SerializePayload() const
 {
   return {};

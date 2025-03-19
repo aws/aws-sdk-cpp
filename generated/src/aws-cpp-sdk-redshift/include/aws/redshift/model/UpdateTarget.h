@@ -34,7 +34,7 @@ namespace Model
   class UpdateTarget
   {
   public:
-    AWS_REDSHIFT_API UpdateTarget();
+    AWS_REDSHIFT_API UpdateTarget() = default;
     AWS_REDSHIFT_API UpdateTarget(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_REDSHIFT_API UpdateTarget& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,42 +46,38 @@ namespace Model
     /**
      * <p>The name of the new maintenance track.</p>
      */
-    inline const Aws::String& GetMaintenanceTrackName() const{ return m_maintenanceTrackName; }
+    inline const Aws::String& GetMaintenanceTrackName() const { return m_maintenanceTrackName; }
     inline bool MaintenanceTrackNameHasBeenSet() const { return m_maintenanceTrackNameHasBeenSet; }
-    inline void SetMaintenanceTrackName(const Aws::String& value) { m_maintenanceTrackNameHasBeenSet = true; m_maintenanceTrackName = value; }
-    inline void SetMaintenanceTrackName(Aws::String&& value) { m_maintenanceTrackNameHasBeenSet = true; m_maintenanceTrackName = std::move(value); }
-    inline void SetMaintenanceTrackName(const char* value) { m_maintenanceTrackNameHasBeenSet = true; m_maintenanceTrackName.assign(value); }
-    inline UpdateTarget& WithMaintenanceTrackName(const Aws::String& value) { SetMaintenanceTrackName(value); return *this;}
-    inline UpdateTarget& WithMaintenanceTrackName(Aws::String&& value) { SetMaintenanceTrackName(std::move(value)); return *this;}
-    inline UpdateTarget& WithMaintenanceTrackName(const char* value) { SetMaintenanceTrackName(value); return *this;}
+    template<typename MaintenanceTrackNameT = Aws::String>
+    void SetMaintenanceTrackName(MaintenanceTrackNameT&& value) { m_maintenanceTrackNameHasBeenSet = true; m_maintenanceTrackName = std::forward<MaintenanceTrackNameT>(value); }
+    template<typename MaintenanceTrackNameT = Aws::String>
+    UpdateTarget& WithMaintenanceTrackName(MaintenanceTrackNameT&& value) { SetMaintenanceTrackName(std::forward<MaintenanceTrackNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The cluster version for the new maintenance track.</p>
      */
-    inline const Aws::String& GetDatabaseVersion() const{ return m_databaseVersion; }
+    inline const Aws::String& GetDatabaseVersion() const { return m_databaseVersion; }
     inline bool DatabaseVersionHasBeenSet() const { return m_databaseVersionHasBeenSet; }
-    inline void SetDatabaseVersion(const Aws::String& value) { m_databaseVersionHasBeenSet = true; m_databaseVersion = value; }
-    inline void SetDatabaseVersion(Aws::String&& value) { m_databaseVersionHasBeenSet = true; m_databaseVersion = std::move(value); }
-    inline void SetDatabaseVersion(const char* value) { m_databaseVersionHasBeenSet = true; m_databaseVersion.assign(value); }
-    inline UpdateTarget& WithDatabaseVersion(const Aws::String& value) { SetDatabaseVersion(value); return *this;}
-    inline UpdateTarget& WithDatabaseVersion(Aws::String&& value) { SetDatabaseVersion(std::move(value)); return *this;}
-    inline UpdateTarget& WithDatabaseVersion(const char* value) { SetDatabaseVersion(value); return *this;}
+    template<typename DatabaseVersionT = Aws::String>
+    void SetDatabaseVersion(DatabaseVersionT&& value) { m_databaseVersionHasBeenSet = true; m_databaseVersion = std::forward<DatabaseVersionT>(value); }
+    template<typename DatabaseVersionT = Aws::String>
+    UpdateTarget& WithDatabaseVersion(DatabaseVersionT&& value) { SetDatabaseVersion(std::forward<DatabaseVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of operations supported by the maintenance track.</p>
      */
-    inline const Aws::Vector<SupportedOperation>& GetSupportedOperations() const{ return m_supportedOperations; }
+    inline const Aws::Vector<SupportedOperation>& GetSupportedOperations() const { return m_supportedOperations; }
     inline bool SupportedOperationsHasBeenSet() const { return m_supportedOperationsHasBeenSet; }
-    inline void SetSupportedOperations(const Aws::Vector<SupportedOperation>& value) { m_supportedOperationsHasBeenSet = true; m_supportedOperations = value; }
-    inline void SetSupportedOperations(Aws::Vector<SupportedOperation>&& value) { m_supportedOperationsHasBeenSet = true; m_supportedOperations = std::move(value); }
-    inline UpdateTarget& WithSupportedOperations(const Aws::Vector<SupportedOperation>& value) { SetSupportedOperations(value); return *this;}
-    inline UpdateTarget& WithSupportedOperations(Aws::Vector<SupportedOperation>&& value) { SetSupportedOperations(std::move(value)); return *this;}
-    inline UpdateTarget& AddSupportedOperations(const SupportedOperation& value) { m_supportedOperationsHasBeenSet = true; m_supportedOperations.push_back(value); return *this; }
-    inline UpdateTarget& AddSupportedOperations(SupportedOperation&& value) { m_supportedOperationsHasBeenSet = true; m_supportedOperations.push_back(std::move(value)); return *this; }
+    template<typename SupportedOperationsT = Aws::Vector<SupportedOperation>>
+    void SetSupportedOperations(SupportedOperationsT&& value) { m_supportedOperationsHasBeenSet = true; m_supportedOperations = std::forward<SupportedOperationsT>(value); }
+    template<typename SupportedOperationsT = Aws::Vector<SupportedOperation>>
+    UpdateTarget& WithSupportedOperations(SupportedOperationsT&& value) { SetSupportedOperations(std::forward<SupportedOperationsT>(value)); return *this;}
+    template<typename SupportedOperationsT = SupportedOperation>
+    UpdateTarget& AddSupportedOperations(SupportedOperationsT&& value) { m_supportedOperationsHasBeenSet = true; m_supportedOperations.emplace_back(std::forward<SupportedOperationsT>(value)); return *this; }
     ///@}
   private:
 

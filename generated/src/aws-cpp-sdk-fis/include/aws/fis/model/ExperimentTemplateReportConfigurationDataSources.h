@@ -33,7 +33,7 @@ namespace Model
   class ExperimentTemplateReportConfigurationDataSources
   {
   public:
-    AWS_FIS_API ExperimentTemplateReportConfigurationDataSources();
+    AWS_FIS_API ExperimentTemplateReportConfigurationDataSources() = default;
     AWS_FIS_API ExperimentTemplateReportConfigurationDataSources(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIS_API ExperimentTemplateReportConfigurationDataSources& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
      * <p>The CloudWatch dashboards to include as data sources in the experiment
      * report.</p>
      */
-    inline const Aws::Vector<ExperimentTemplateReportConfigurationCloudWatchDashboard>& GetCloudWatchDashboards() const{ return m_cloudWatchDashboards; }
+    inline const Aws::Vector<ExperimentTemplateReportConfigurationCloudWatchDashboard>& GetCloudWatchDashboards() const { return m_cloudWatchDashboards; }
     inline bool CloudWatchDashboardsHasBeenSet() const { return m_cloudWatchDashboardsHasBeenSet; }
-    inline void SetCloudWatchDashboards(const Aws::Vector<ExperimentTemplateReportConfigurationCloudWatchDashboard>& value) { m_cloudWatchDashboardsHasBeenSet = true; m_cloudWatchDashboards = value; }
-    inline void SetCloudWatchDashboards(Aws::Vector<ExperimentTemplateReportConfigurationCloudWatchDashboard>&& value) { m_cloudWatchDashboardsHasBeenSet = true; m_cloudWatchDashboards = std::move(value); }
-    inline ExperimentTemplateReportConfigurationDataSources& WithCloudWatchDashboards(const Aws::Vector<ExperimentTemplateReportConfigurationCloudWatchDashboard>& value) { SetCloudWatchDashboards(value); return *this;}
-    inline ExperimentTemplateReportConfigurationDataSources& WithCloudWatchDashboards(Aws::Vector<ExperimentTemplateReportConfigurationCloudWatchDashboard>&& value) { SetCloudWatchDashboards(std::move(value)); return *this;}
-    inline ExperimentTemplateReportConfigurationDataSources& AddCloudWatchDashboards(const ExperimentTemplateReportConfigurationCloudWatchDashboard& value) { m_cloudWatchDashboardsHasBeenSet = true; m_cloudWatchDashboards.push_back(value); return *this; }
-    inline ExperimentTemplateReportConfigurationDataSources& AddCloudWatchDashboards(ExperimentTemplateReportConfigurationCloudWatchDashboard&& value) { m_cloudWatchDashboardsHasBeenSet = true; m_cloudWatchDashboards.push_back(std::move(value)); return *this; }
+    template<typename CloudWatchDashboardsT = Aws::Vector<ExperimentTemplateReportConfigurationCloudWatchDashboard>>
+    void SetCloudWatchDashboards(CloudWatchDashboardsT&& value) { m_cloudWatchDashboardsHasBeenSet = true; m_cloudWatchDashboards = std::forward<CloudWatchDashboardsT>(value); }
+    template<typename CloudWatchDashboardsT = Aws::Vector<ExperimentTemplateReportConfigurationCloudWatchDashboard>>
+    ExperimentTemplateReportConfigurationDataSources& WithCloudWatchDashboards(CloudWatchDashboardsT&& value) { SetCloudWatchDashboards(std::forward<CloudWatchDashboardsT>(value)); return *this;}
+    template<typename CloudWatchDashboardsT = ExperimentTemplateReportConfigurationCloudWatchDashboard>
+    ExperimentTemplateReportConfigurationDataSources& AddCloudWatchDashboards(CloudWatchDashboardsT&& value) { m_cloudWatchDashboardsHasBeenSet = true; m_cloudWatchDashboards.emplace_back(std::forward<CloudWatchDashboardsT>(value)); return *this; }
     ///@}
   private:
 

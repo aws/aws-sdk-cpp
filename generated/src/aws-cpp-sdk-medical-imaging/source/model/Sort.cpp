@@ -18,16 +18,7 @@ namespace MedicalImaging
 namespace Model
 {
 
-Sort::Sort() : 
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false),
-    m_sortField(SortField::NOT_SET),
-    m_sortFieldHasBeenSet(false)
-{
-}
-
 Sort::Sort(JsonView jsonValue)
-  : Sort()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ Sort& Sort::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sortOrder"))
   {
     m_sortOrder = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("sortOrder"));
-
     m_sortOrderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sortField"))
   {
     m_sortField = SortFieldMapper::GetSortFieldForName(jsonValue.GetString("sortField"));
-
     m_sortFieldHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,10 +12,6 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteUsageReportSubscriptionRequest::DeleteUsageReportSubscriptionRequest()
-{
-}
-
 Aws::String DeleteUsageReportSubscriptionRequest::SerializePayload() const
 {
   return "{}";

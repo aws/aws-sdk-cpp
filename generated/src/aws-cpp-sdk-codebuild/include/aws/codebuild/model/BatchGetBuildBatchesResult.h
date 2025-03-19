@@ -29,7 +29,7 @@ namespace Model
   class BatchGetBuildBatchesResult
   {
   public:
-    AWS_CODEBUILD_API BatchGetBuildBatchesResult();
+    AWS_CODEBUILD_API BatchGetBuildBatchesResult() = default;
     AWS_CODEBUILD_API BatchGetBuildBatchesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODEBUILD_API BatchGetBuildBatchesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>An array of <code>BuildBatch</code> objects that represent the retrieved
      * batch builds.</p>
      */
-    inline const Aws::Vector<BuildBatch>& GetBuildBatches() const{ return m_buildBatches; }
-    inline void SetBuildBatches(const Aws::Vector<BuildBatch>& value) { m_buildBatches = value; }
-    inline void SetBuildBatches(Aws::Vector<BuildBatch>&& value) { m_buildBatches = std::move(value); }
-    inline BatchGetBuildBatchesResult& WithBuildBatches(const Aws::Vector<BuildBatch>& value) { SetBuildBatches(value); return *this;}
-    inline BatchGetBuildBatchesResult& WithBuildBatches(Aws::Vector<BuildBatch>&& value) { SetBuildBatches(std::move(value)); return *this;}
-    inline BatchGetBuildBatchesResult& AddBuildBatches(const BuildBatch& value) { m_buildBatches.push_back(value); return *this; }
-    inline BatchGetBuildBatchesResult& AddBuildBatches(BuildBatch&& value) { m_buildBatches.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BuildBatch>& GetBuildBatches() const { return m_buildBatches; }
+    template<typename BuildBatchesT = Aws::Vector<BuildBatch>>
+    void SetBuildBatches(BuildBatchesT&& value) { m_buildBatchesHasBeenSet = true; m_buildBatches = std::forward<BuildBatchesT>(value); }
+    template<typename BuildBatchesT = Aws::Vector<BuildBatch>>
+    BatchGetBuildBatchesResult& WithBuildBatches(BuildBatchesT&& value) { SetBuildBatches(std::forward<BuildBatchesT>(value)); return *this;}
+    template<typename BuildBatchesT = BuildBatch>
+    BatchGetBuildBatchesResult& AddBuildBatches(BuildBatchesT&& value) { m_buildBatchesHasBeenSet = true; m_buildBatches.emplace_back(std::forward<BuildBatchesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,33 +53,33 @@ namespace Model
      * <p>An array that contains the identifiers of any batch builds that are not
      * found.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetBuildBatchesNotFound() const{ return m_buildBatchesNotFound; }
-    inline void SetBuildBatchesNotFound(const Aws::Vector<Aws::String>& value) { m_buildBatchesNotFound = value; }
-    inline void SetBuildBatchesNotFound(Aws::Vector<Aws::String>&& value) { m_buildBatchesNotFound = std::move(value); }
-    inline BatchGetBuildBatchesResult& WithBuildBatchesNotFound(const Aws::Vector<Aws::String>& value) { SetBuildBatchesNotFound(value); return *this;}
-    inline BatchGetBuildBatchesResult& WithBuildBatchesNotFound(Aws::Vector<Aws::String>&& value) { SetBuildBatchesNotFound(std::move(value)); return *this;}
-    inline BatchGetBuildBatchesResult& AddBuildBatchesNotFound(const Aws::String& value) { m_buildBatchesNotFound.push_back(value); return *this; }
-    inline BatchGetBuildBatchesResult& AddBuildBatchesNotFound(Aws::String&& value) { m_buildBatchesNotFound.push_back(std::move(value)); return *this; }
-    inline BatchGetBuildBatchesResult& AddBuildBatchesNotFound(const char* value) { m_buildBatchesNotFound.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetBuildBatchesNotFound() const { return m_buildBatchesNotFound; }
+    template<typename BuildBatchesNotFoundT = Aws::Vector<Aws::String>>
+    void SetBuildBatchesNotFound(BuildBatchesNotFoundT&& value) { m_buildBatchesNotFoundHasBeenSet = true; m_buildBatchesNotFound = std::forward<BuildBatchesNotFoundT>(value); }
+    template<typename BuildBatchesNotFoundT = Aws::Vector<Aws::String>>
+    BatchGetBuildBatchesResult& WithBuildBatchesNotFound(BuildBatchesNotFoundT&& value) { SetBuildBatchesNotFound(std::forward<BuildBatchesNotFoundT>(value)); return *this;}
+    template<typename BuildBatchesNotFoundT = Aws::String>
+    BatchGetBuildBatchesResult& AddBuildBatchesNotFound(BuildBatchesNotFoundT&& value) { m_buildBatchesNotFoundHasBeenSet = true; m_buildBatchesNotFound.emplace_back(std::forward<BuildBatchesNotFoundT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchGetBuildBatchesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchGetBuildBatchesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchGetBuildBatchesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchGetBuildBatchesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<BuildBatch> m_buildBatches;
+    bool m_buildBatchesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_buildBatchesNotFound;
+    bool m_buildBatchesNotFoundHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

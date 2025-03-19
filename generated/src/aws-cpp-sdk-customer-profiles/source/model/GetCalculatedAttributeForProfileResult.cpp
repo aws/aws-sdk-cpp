@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetCalculatedAttributeForProfileResult::GetCalculatedAttributeForProfileResult()
-{
-}
-
 GetCalculatedAttributeForProfileResult::GetCalculatedAttributeForProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,33 +28,30 @@ GetCalculatedAttributeForProfileResult& GetCalculatedAttributeForProfileResult::
   if(jsonValue.ValueExists("CalculatedAttributeName"))
   {
     m_calculatedAttributeName = jsonValue.GetString("CalculatedAttributeName");
-
+    m_calculatedAttributeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayName"))
   {
     m_displayName = jsonValue.GetString("DisplayName");
-
+    m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsDataPartial"))
   {
     m_isDataPartial = jsonValue.GetString("IsDataPartial");
-
+    m_isDataPartialHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
+    m_valueHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -20,23 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InstanceNetworkInterfaceAttachment::InstanceNetworkInterfaceAttachment() : 
-    m_attachTimeHasBeenSet(false),
-    m_attachmentIdHasBeenSet(false),
-    m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false),
-    m_deviceIndex(0),
-    m_deviceIndexHasBeenSet(false),
-    m_status(AttachmentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_networkCardIndex(0),
-    m_networkCardIndexHasBeenSet(false),
-    m_enaSrdSpecificationHasBeenSet(false)
-{
-}
-
 InstanceNetworkInterfaceAttachment::InstanceNetworkInterfaceAttachment(const XmlNode& xmlNode)
-  : InstanceNetworkInterfaceAttachment()
 {
   *this = xmlNode;
 }
@@ -74,7 +58,7 @@ InstanceNetworkInterfaceAttachment& InstanceNetworkInterfaceAttachment::operator
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
-      m_status = AttachmentStatusMapper::GetAttachmentStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = AttachmentStatusMapper::GetAttachmentStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
     XmlNode networkCardIndexNode = resultNode.FirstChild("networkCardIndex");

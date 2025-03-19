@@ -12,17 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateFlowDefinitionRequest::CreateFlowDefinitionRequest() : 
-    m_flowDefinitionNameHasBeenSet(false),
-    m_humanLoopRequestSourceHasBeenSet(false),
-    m_humanLoopActivationConfigHasBeenSet(false),
-    m_humanLoopConfigHasBeenSet(false),
-    m_outputConfigHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateFlowDefinitionRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -33,7 +33,7 @@ namespace Model
   class M2ManagedApplicationStepSummary
   {
   public:
-    AWS_APPTEST_API M2ManagedApplicationStepSummary();
+    AWS_APPTEST_API M2ManagedApplicationStepSummary() = default;
     AWS_APPTEST_API M2ManagedApplicationStepSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API M2ManagedApplicationStepSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p>The step input of the AWS Mainframe Modernization managed application step
      * summary.</p>
      */
-    inline const M2ManagedApplicationStepInput& GetStepInput() const{ return m_stepInput; }
+    inline const M2ManagedApplicationStepInput& GetStepInput() const { return m_stepInput; }
     inline bool StepInputHasBeenSet() const { return m_stepInputHasBeenSet; }
-    inline void SetStepInput(const M2ManagedApplicationStepInput& value) { m_stepInputHasBeenSet = true; m_stepInput = value; }
-    inline void SetStepInput(M2ManagedApplicationStepInput&& value) { m_stepInputHasBeenSet = true; m_stepInput = std::move(value); }
-    inline M2ManagedApplicationStepSummary& WithStepInput(const M2ManagedApplicationStepInput& value) { SetStepInput(value); return *this;}
-    inline M2ManagedApplicationStepSummary& WithStepInput(M2ManagedApplicationStepInput&& value) { SetStepInput(std::move(value)); return *this;}
+    template<typename StepInputT = M2ManagedApplicationStepInput>
+    void SetStepInput(StepInputT&& value) { m_stepInputHasBeenSet = true; m_stepInput = std::forward<StepInputT>(value); }
+    template<typename StepInputT = M2ManagedApplicationStepInput>
+    M2ManagedApplicationStepSummary& WithStepInput(StepInputT&& value) { SetStepInput(std::forward<StepInputT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +57,12 @@ namespace Model
      * <p>The step output of the AWS Mainframe Modernization managed application step
      * summary.</p>
      */
-    inline const M2ManagedApplicationStepOutput& GetStepOutput() const{ return m_stepOutput; }
+    inline const M2ManagedApplicationStepOutput& GetStepOutput() const { return m_stepOutput; }
     inline bool StepOutputHasBeenSet() const { return m_stepOutputHasBeenSet; }
-    inline void SetStepOutput(const M2ManagedApplicationStepOutput& value) { m_stepOutputHasBeenSet = true; m_stepOutput = value; }
-    inline void SetStepOutput(M2ManagedApplicationStepOutput&& value) { m_stepOutputHasBeenSet = true; m_stepOutput = std::move(value); }
-    inline M2ManagedApplicationStepSummary& WithStepOutput(const M2ManagedApplicationStepOutput& value) { SetStepOutput(value); return *this;}
-    inline M2ManagedApplicationStepSummary& WithStepOutput(M2ManagedApplicationStepOutput&& value) { SetStepOutput(std::move(value)); return *this;}
+    template<typename StepOutputT = M2ManagedApplicationStepOutput>
+    void SetStepOutput(StepOutputT&& value) { m_stepOutputHasBeenSet = true; m_stepOutput = std::forward<StepOutputT>(value); }
+    template<typename StepOutputT = M2ManagedApplicationStepOutput>
+    M2ManagedApplicationStepSummary& WithStepOutput(StepOutputT&& value) { SetStepOutput(std::forward<StepOutputT>(value)); return *this;}
     ///@}
   private:
 

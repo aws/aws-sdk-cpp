@@ -20,16 +20,7 @@ namespace Route53
 namespace Model
 {
 
-ReusableDelegationSetLimit::ReusableDelegationSetLimit() : 
-    m_type(ReusableDelegationSetLimitType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_value(0),
-    m_valueHasBeenSet(false)
-{
-}
-
 ReusableDelegationSetLimit::ReusableDelegationSetLimit(const XmlNode& xmlNode)
-  : ReusableDelegationSetLimit()
 {
   *this = xmlNode;
 }
@@ -43,7 +34,7 @@ ReusableDelegationSetLimit& ReusableDelegationSetLimit::operator =(const XmlNode
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = ReusableDelegationSetLimitTypeMapper::GetReusableDelegationSetLimitTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = ReusableDelegationSetLimitTypeMapper::GetReusableDelegationSetLimitTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
     }
     XmlNode valueNode = resultNode.FirstChild("Value");

@@ -18,18 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-ReplicationInfo::ReplicationInfo() : 
-    m_consumerGroupReplicationHasBeenSet(false),
-    m_sourceKafkaClusterArnHasBeenSet(false),
-    m_targetCompressionType(TargetCompressionType::NOT_SET),
-    m_targetCompressionTypeHasBeenSet(false),
-    m_targetKafkaClusterArnHasBeenSet(false),
-    m_topicReplicationHasBeenSet(false)
-{
-}
-
 ReplicationInfo::ReplicationInfo(JsonView jsonValue)
-  : ReplicationInfo()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ ReplicationInfo& ReplicationInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("consumerGroupReplication"))
   {
     m_consumerGroupReplication = jsonValue.GetObject("consumerGroupReplication");
-
     m_consumerGroupReplicationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceKafkaClusterArn"))
   {
     m_sourceKafkaClusterArn = jsonValue.GetString("sourceKafkaClusterArn");
-
     m_sourceKafkaClusterArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetCompressionType"))
   {
     m_targetCompressionType = TargetCompressionTypeMapper::GetTargetCompressionTypeForName(jsonValue.GetString("targetCompressionType"));
-
     m_targetCompressionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetKafkaClusterArn"))
   {
     m_targetKafkaClusterArn = jsonValue.GetString("targetKafkaClusterArn");
-
     m_targetKafkaClusterArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("topicReplication"))
   {
     m_topicReplication = jsonValue.GetObject("topicReplication");
-
     m_topicReplicationHasBeenSet = true;
   }
-
   return *this;
 }
 

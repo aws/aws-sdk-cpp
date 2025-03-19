@@ -32,7 +32,7 @@ namespace Model
   class GetDomainResult
   {
   public:
-    AWS_CUSTOMERPROFILES_API GetDomainResult();
+    AWS_CUSTOMERPROFILES_API GetDomainResult() = default;
     AWS_CUSTOMERPROFILES_API GetDomainResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CUSTOMERPROFILES_API GetDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,21 +41,19 @@ namespace Model
     /**
      * <p>The unique name of the domain.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
-    inline void SetDomainName(const Aws::String& value) { m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainName.assign(value); }
-    inline GetDomainResult& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline GetDomainResult& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline GetDomainResult& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    GetDomainResult& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The default number of days until the data within the domain expires.</p>
      */
-    inline int GetDefaultExpirationDays() const{ return m_defaultExpirationDays; }
-    inline void SetDefaultExpirationDays(int value) { m_defaultExpirationDays = value; }
+    inline int GetDefaultExpirationDays() const { return m_defaultExpirationDays; }
+    inline void SetDefaultExpirationDays(int value) { m_defaultExpirationDaysHasBeenSet = true; m_defaultExpirationDays = value; }
     inline GetDomainResult& WithDefaultExpirationDays(int value) { SetDefaultExpirationDays(value); return *this;}
     ///@}
 
@@ -65,13 +63,11 @@ namespace Model
      * specific type of encryption key is specified. It is used to encrypt all data
      * before it is placed in permanent or semi-permanent storage.</p>
      */
-    inline const Aws::String& GetDefaultEncryptionKey() const{ return m_defaultEncryptionKey; }
-    inline void SetDefaultEncryptionKey(const Aws::String& value) { m_defaultEncryptionKey = value; }
-    inline void SetDefaultEncryptionKey(Aws::String&& value) { m_defaultEncryptionKey = std::move(value); }
-    inline void SetDefaultEncryptionKey(const char* value) { m_defaultEncryptionKey.assign(value); }
-    inline GetDomainResult& WithDefaultEncryptionKey(const Aws::String& value) { SetDefaultEncryptionKey(value); return *this;}
-    inline GetDomainResult& WithDefaultEncryptionKey(Aws::String&& value) { SetDefaultEncryptionKey(std::move(value)); return *this;}
-    inline GetDomainResult& WithDefaultEncryptionKey(const char* value) { SetDefaultEncryptionKey(value); return *this;}
+    inline const Aws::String& GetDefaultEncryptionKey() const { return m_defaultEncryptionKey; }
+    template<typename DefaultEncryptionKeyT = Aws::String>
+    void SetDefaultEncryptionKey(DefaultEncryptionKeyT&& value) { m_defaultEncryptionKeyHasBeenSet = true; m_defaultEncryptionKey = std::forward<DefaultEncryptionKeyT>(value); }
+    template<typename DefaultEncryptionKeyT = Aws::String>
+    GetDomainResult& WithDefaultEncryptionKey(DefaultEncryptionKeyT&& value) { SetDefaultEncryptionKey(std::forward<DefaultEncryptionKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,24 +75,22 @@ namespace Model
      * <p>The URL of the SQS dead letter queue, which is used for reporting errors
      * associated with ingesting data from third party applications.</p>
      */
-    inline const Aws::String& GetDeadLetterQueueUrl() const{ return m_deadLetterQueueUrl; }
-    inline void SetDeadLetterQueueUrl(const Aws::String& value) { m_deadLetterQueueUrl = value; }
-    inline void SetDeadLetterQueueUrl(Aws::String&& value) { m_deadLetterQueueUrl = std::move(value); }
-    inline void SetDeadLetterQueueUrl(const char* value) { m_deadLetterQueueUrl.assign(value); }
-    inline GetDomainResult& WithDeadLetterQueueUrl(const Aws::String& value) { SetDeadLetterQueueUrl(value); return *this;}
-    inline GetDomainResult& WithDeadLetterQueueUrl(Aws::String&& value) { SetDeadLetterQueueUrl(std::move(value)); return *this;}
-    inline GetDomainResult& WithDeadLetterQueueUrl(const char* value) { SetDeadLetterQueueUrl(value); return *this;}
+    inline const Aws::String& GetDeadLetterQueueUrl() const { return m_deadLetterQueueUrl; }
+    template<typename DeadLetterQueueUrlT = Aws::String>
+    void SetDeadLetterQueueUrl(DeadLetterQueueUrlT&& value) { m_deadLetterQueueUrlHasBeenSet = true; m_deadLetterQueueUrl = std::forward<DeadLetterQueueUrlT>(value); }
+    template<typename DeadLetterQueueUrlT = Aws::String>
+    GetDomainResult& WithDeadLetterQueueUrl(DeadLetterQueueUrlT&& value) { SetDeadLetterQueueUrl(std::forward<DeadLetterQueueUrlT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Usage-specific statistics about the domain.</p>
      */
-    inline const DomainStats& GetStats() const{ return m_stats; }
-    inline void SetStats(const DomainStats& value) { m_stats = value; }
-    inline void SetStats(DomainStats&& value) { m_stats = std::move(value); }
-    inline GetDomainResult& WithStats(const DomainStats& value) { SetStats(value); return *this;}
-    inline GetDomainResult& WithStats(DomainStats&& value) { SetStats(std::move(value)); return *this;}
+    inline const DomainStats& GetStats() const { return m_stats; }
+    template<typename StatsT = DomainStats>
+    void SetStats(StatsT&& value) { m_statsHasBeenSet = true; m_stats = std::forward<StatsT>(value); }
+    template<typename StatsT = DomainStats>
+    GetDomainResult& WithStats(StatsT&& value) { SetStats(std::forward<StatsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,11 +106,11 @@ namespace Model
      * <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can
      * download the results from S3.</p>
      */
-    inline const MatchingResponse& GetMatching() const{ return m_matching; }
-    inline void SetMatching(const MatchingResponse& value) { m_matching = value; }
-    inline void SetMatching(MatchingResponse&& value) { m_matching = std::move(value); }
-    inline GetDomainResult& WithMatching(const MatchingResponse& value) { SetMatching(value); return *this;}
-    inline GetDomainResult& WithMatching(MatchingResponse&& value) { SetMatching(std::move(value)); return *this;}
+    inline const MatchingResponse& GetMatching() const { return m_matching; }
+    template<typename MatchingT = MatchingResponse>
+    void SetMatching(MatchingT&& value) { m_matchingHasBeenSet = true; m_matching = std::forward<MatchingT>(value); }
+    template<typename MatchingT = MatchingResponse>
+    GetDomainResult& WithMatching(MatchingT&& value) { SetMatching(std::forward<MatchingT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -130,86 +124,92 @@ namespace Model
      * <code>ExportingConfig</code> in the <code>RuleBasedMatchingRequest</code>, you
      * can download the results from S3.</p>
      */
-    inline const RuleBasedMatchingResponse& GetRuleBasedMatching() const{ return m_ruleBasedMatching; }
-    inline void SetRuleBasedMatching(const RuleBasedMatchingResponse& value) { m_ruleBasedMatching = value; }
-    inline void SetRuleBasedMatching(RuleBasedMatchingResponse&& value) { m_ruleBasedMatching = std::move(value); }
-    inline GetDomainResult& WithRuleBasedMatching(const RuleBasedMatchingResponse& value) { SetRuleBasedMatching(value); return *this;}
-    inline GetDomainResult& WithRuleBasedMatching(RuleBasedMatchingResponse&& value) { SetRuleBasedMatching(std::move(value)); return *this;}
+    inline const RuleBasedMatchingResponse& GetRuleBasedMatching() const { return m_ruleBasedMatching; }
+    template<typename RuleBasedMatchingT = RuleBasedMatchingResponse>
+    void SetRuleBasedMatching(RuleBasedMatchingT&& value) { m_ruleBasedMatchingHasBeenSet = true; m_ruleBasedMatching = std::forward<RuleBasedMatchingT>(value); }
+    template<typename RuleBasedMatchingT = RuleBasedMatchingResponse>
+    GetDomainResult& WithRuleBasedMatching(RuleBasedMatchingT&& value) { SetRuleBasedMatching(std::forward<RuleBasedMatchingT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp of when the domain was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline GetDomainResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline GetDomainResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    GetDomainResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp of when the domain was most recently edited.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
-    inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAt = value; }
-    inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAt = std::move(value); }
-    inline GetDomainResult& WithLastUpdatedAt(const Aws::Utils::DateTime& value) { SetLastUpdatedAt(value); return *this;}
-    inline GetDomainResult& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    GetDomainResult& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags used to organize, track, or control access for this resource.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline GetDomainResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline GetDomainResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline GetDomainResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline GetDomainResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetDomainResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetDomainResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetDomainResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetDomainResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetDomainResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    GetDomainResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    GetDomainResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetDomainResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetDomainResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetDomainResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetDomainResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_domainName;
+    bool m_domainNameHasBeenSet = false;
 
-    int m_defaultExpirationDays;
+    int m_defaultExpirationDays{0};
+    bool m_defaultExpirationDaysHasBeenSet = false;
 
     Aws::String m_defaultEncryptionKey;
+    bool m_defaultEncryptionKeyHasBeenSet = false;
 
     Aws::String m_deadLetterQueueUrl;
+    bool m_deadLetterQueueUrlHasBeenSet = false;
 
     DomainStats m_stats;
+    bool m_statsHasBeenSet = false;
 
     MatchingResponse m_matching;
+    bool m_matchingHasBeenSet = false;
 
     RuleBasedMatchingResponse m_ruleBasedMatching;
+    bool m_ruleBasedMatchingHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedAt;
+    Aws::Utils::DateTime m_lastUpdatedAt{};
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

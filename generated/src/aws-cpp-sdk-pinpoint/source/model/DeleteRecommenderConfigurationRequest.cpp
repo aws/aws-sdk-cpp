@@ -12,11 +12,6 @@ using namespace Aws::Pinpoint::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteRecommenderConfigurationRequest::DeleteRecommenderConfigurationRequest() : 
-    m_recommenderIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRecommenderConfigurationRequest::SerializePayload() const
 {
   return {};

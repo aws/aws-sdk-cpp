@@ -33,7 +33,7 @@ namespace Model
   class PollForTaskResult
   {
   public:
-    AWS_DATAPIPELINE_API PollForTaskResult();
+    AWS_DATAPIPELINE_API PollForTaskResult() = default;
     AWS_DATAPIPELINE_API PollForTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATAPIPELINE_API PollForTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -46,28 +46,28 @@ namespace Model
      * runner uses <code>taskId</code> in subsequent calls to <a>ReportTaskProgress</a>
      * and <a>SetTaskStatus</a>.</p>
      */
-    inline const TaskObject& GetTaskObject() const{ return m_taskObject; }
-    inline void SetTaskObject(const TaskObject& value) { m_taskObject = value; }
-    inline void SetTaskObject(TaskObject&& value) { m_taskObject = std::move(value); }
-    inline PollForTaskResult& WithTaskObject(const TaskObject& value) { SetTaskObject(value); return *this;}
-    inline PollForTaskResult& WithTaskObject(TaskObject&& value) { SetTaskObject(std::move(value)); return *this;}
+    inline const TaskObject& GetTaskObject() const { return m_taskObject; }
+    template<typename TaskObjectT = TaskObject>
+    void SetTaskObject(TaskObjectT&& value) { m_taskObjectHasBeenSet = true; m_taskObject = std::forward<TaskObjectT>(value); }
+    template<typename TaskObjectT = TaskObject>
+    PollForTaskResult& WithTaskObject(TaskObjectT&& value) { SetTaskObject(std::forward<TaskObjectT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PollForTaskResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PollForTaskResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PollForTaskResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PollForTaskResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     TaskObject m_taskObject;
+    bool m_taskObjectHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,21 +18,7 @@ namespace Proton
 namespace Model
 {
 
-EnvironmentTemplateSummary::EnvironmentTemplateSummary() : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_lastModifiedAtHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_provisioning(Provisioning::NOT_SET),
-    m_provisioningHasBeenSet(false),
-    m_recommendedVersionHasBeenSet(false)
-{
-}
-
 EnvironmentTemplateSummary::EnvironmentTemplateSummary(JsonView jsonValue)
-  : EnvironmentTemplateSummary()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ EnvironmentTemplateSummary& EnvironmentTemplateSummary::operator =(JsonView json
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("displayName"))
   {
     m_displayName = jsonValue.GetString("displayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedAt"))
   {
     m_lastModifiedAt = jsonValue.GetDouble("lastModifiedAt");
-
     m_lastModifiedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("provisioning"))
   {
     m_provisioning = ProvisioningMapper::GetProvisioningForName(jsonValue.GetString("provisioning"));
-
     m_provisioningHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recommendedVersion"))
   {
     m_recommendedVersion = jsonValue.GetString("recommendedVersion");
-
     m_recommendedVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

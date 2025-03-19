@@ -29,7 +29,7 @@ namespace Model
   class ListApplicationAssociationsResult
   {
   public:
-    AWS_APPINTEGRATIONSSERVICE_API ListApplicationAssociationsResult();
+    AWS_APPINTEGRATIONSSERVICE_API ListApplicationAssociationsResult() = default;
     AWS_APPINTEGRATIONSSERVICE_API ListApplicationAssociationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPINTEGRATIONSSERVICE_API ListApplicationAssociationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>List of Application Associations for the Application.</p>
      */
-    inline const Aws::Vector<ApplicationAssociationSummary>& GetApplicationAssociations() const{ return m_applicationAssociations; }
-    inline void SetApplicationAssociations(const Aws::Vector<ApplicationAssociationSummary>& value) { m_applicationAssociations = value; }
-    inline void SetApplicationAssociations(Aws::Vector<ApplicationAssociationSummary>&& value) { m_applicationAssociations = std::move(value); }
-    inline ListApplicationAssociationsResult& WithApplicationAssociations(const Aws::Vector<ApplicationAssociationSummary>& value) { SetApplicationAssociations(value); return *this;}
-    inline ListApplicationAssociationsResult& WithApplicationAssociations(Aws::Vector<ApplicationAssociationSummary>&& value) { SetApplicationAssociations(std::move(value)); return *this;}
-    inline ListApplicationAssociationsResult& AddApplicationAssociations(const ApplicationAssociationSummary& value) { m_applicationAssociations.push_back(value); return *this; }
-    inline ListApplicationAssociationsResult& AddApplicationAssociations(ApplicationAssociationSummary&& value) { m_applicationAssociations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ApplicationAssociationSummary>& GetApplicationAssociations() const { return m_applicationAssociations; }
+    template<typename ApplicationAssociationsT = Aws::Vector<ApplicationAssociationSummary>>
+    void SetApplicationAssociations(ApplicationAssociationsT&& value) { m_applicationAssociationsHasBeenSet = true; m_applicationAssociations = std::forward<ApplicationAssociationsT>(value); }
+    template<typename ApplicationAssociationsT = Aws::Vector<ApplicationAssociationSummary>>
+    ListApplicationAssociationsResult& WithApplicationAssociations(ApplicationAssociationsT&& value) { SetApplicationAssociations(std::forward<ApplicationAssociationsT>(value)); return *this;}
+    template<typename ApplicationAssociationsT = ApplicationAssociationSummary>
+    ListApplicationAssociationsResult& AddApplicationAssociations(ApplicationAssociationsT&& value) { m_applicationAssociationsHasBeenSet = true; m_applicationAssociations.emplace_back(std::forward<ApplicationAssociationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>If there are additional results, this is the token for the next set of
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListApplicationAssociationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListApplicationAssociationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListApplicationAssociationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListApplicationAssociationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListApplicationAssociationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListApplicationAssociationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListApplicationAssociationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListApplicationAssociationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ApplicationAssociationSummary> m_applicationAssociations;
+    bool m_applicationAssociationsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

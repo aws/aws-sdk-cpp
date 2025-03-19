@@ -33,7 +33,7 @@ namespace Model
   class IndexAttachment
   {
   public:
-    AWS_CLOUDDIRECTORY_API IndexAttachment();
+    AWS_CLOUDDIRECTORY_API IndexAttachment() = default;
     AWS_CLOUDDIRECTORY_API IndexAttachment(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API IndexAttachment& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>The indexed attribute values.</p>
      */
-    inline const Aws::Vector<AttributeKeyAndValue>& GetIndexedAttributes() const{ return m_indexedAttributes; }
+    inline const Aws::Vector<AttributeKeyAndValue>& GetIndexedAttributes() const { return m_indexedAttributes; }
     inline bool IndexedAttributesHasBeenSet() const { return m_indexedAttributesHasBeenSet; }
-    inline void SetIndexedAttributes(const Aws::Vector<AttributeKeyAndValue>& value) { m_indexedAttributesHasBeenSet = true; m_indexedAttributes = value; }
-    inline void SetIndexedAttributes(Aws::Vector<AttributeKeyAndValue>&& value) { m_indexedAttributesHasBeenSet = true; m_indexedAttributes = std::move(value); }
-    inline IndexAttachment& WithIndexedAttributes(const Aws::Vector<AttributeKeyAndValue>& value) { SetIndexedAttributes(value); return *this;}
-    inline IndexAttachment& WithIndexedAttributes(Aws::Vector<AttributeKeyAndValue>&& value) { SetIndexedAttributes(std::move(value)); return *this;}
-    inline IndexAttachment& AddIndexedAttributes(const AttributeKeyAndValue& value) { m_indexedAttributesHasBeenSet = true; m_indexedAttributes.push_back(value); return *this; }
-    inline IndexAttachment& AddIndexedAttributes(AttributeKeyAndValue&& value) { m_indexedAttributesHasBeenSet = true; m_indexedAttributes.push_back(std::move(value)); return *this; }
+    template<typename IndexedAttributesT = Aws::Vector<AttributeKeyAndValue>>
+    void SetIndexedAttributes(IndexedAttributesT&& value) { m_indexedAttributesHasBeenSet = true; m_indexedAttributes = std::forward<IndexedAttributesT>(value); }
+    template<typename IndexedAttributesT = Aws::Vector<AttributeKeyAndValue>>
+    IndexAttachment& WithIndexedAttributes(IndexedAttributesT&& value) { SetIndexedAttributes(std::forward<IndexedAttributesT>(value)); return *this;}
+    template<typename IndexedAttributesT = AttributeKeyAndValue>
+    IndexAttachment& AddIndexedAttributes(IndexedAttributesT&& value) { m_indexedAttributesHasBeenSet = true; m_indexedAttributes.emplace_back(std::forward<IndexedAttributesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -61,14 +61,12 @@ namespace Model
      * will always contain the <code>ObjectIdentifier</code> of the object on the
      * opposite side of the attachment specified in the query.</p>
      */
-    inline const Aws::String& GetObjectIdentifier() const{ return m_objectIdentifier; }
+    inline const Aws::String& GetObjectIdentifier() const { return m_objectIdentifier; }
     inline bool ObjectIdentifierHasBeenSet() const { return m_objectIdentifierHasBeenSet; }
-    inline void SetObjectIdentifier(const Aws::String& value) { m_objectIdentifierHasBeenSet = true; m_objectIdentifier = value; }
-    inline void SetObjectIdentifier(Aws::String&& value) { m_objectIdentifierHasBeenSet = true; m_objectIdentifier = std::move(value); }
-    inline void SetObjectIdentifier(const char* value) { m_objectIdentifierHasBeenSet = true; m_objectIdentifier.assign(value); }
-    inline IndexAttachment& WithObjectIdentifier(const Aws::String& value) { SetObjectIdentifier(value); return *this;}
-    inline IndexAttachment& WithObjectIdentifier(Aws::String&& value) { SetObjectIdentifier(std::move(value)); return *this;}
-    inline IndexAttachment& WithObjectIdentifier(const char* value) { SetObjectIdentifier(value); return *this;}
+    template<typename ObjectIdentifierT = Aws::String>
+    void SetObjectIdentifier(ObjectIdentifierT&& value) { m_objectIdentifierHasBeenSet = true; m_objectIdentifier = std::forward<ObjectIdentifierT>(value); }
+    template<typename ObjectIdentifierT = Aws::String>
+    IndexAttachment& WithObjectIdentifier(ObjectIdentifierT&& value) { SetObjectIdentifier(std::forward<ObjectIdentifierT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,15 +18,7 @@ namespace ChimeSDKMeetings
 namespace Model
 {
 
-UnprocessableEntityException::UnprocessableEntityException() : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 UnprocessableEntityException::UnprocessableEntityException(JsonView jsonValue)
-  : UnprocessableEntityException()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ UnprocessableEntityException& UnprocessableEntityException::operator =(JsonView 
   if(jsonValue.ValueExists("Code"))
   {
     m_code = jsonValue.GetString("Code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestId"))
   {
     m_requestId = jsonValue.GetString("RequestId");
-
     m_requestIdHasBeenSet = true;
   }
-
   return *this;
 }
 

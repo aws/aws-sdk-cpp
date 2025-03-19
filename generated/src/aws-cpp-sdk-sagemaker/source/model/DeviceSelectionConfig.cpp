@@ -18,18 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-DeviceSelectionConfig::DeviceSelectionConfig() : 
-    m_deviceSubsetType(DeviceSubsetType::NOT_SET),
-    m_deviceSubsetTypeHasBeenSet(false),
-    m_percentage(0),
-    m_percentageHasBeenSet(false),
-    m_deviceNamesHasBeenSet(false),
-    m_deviceNameContainsHasBeenSet(false)
-{
-}
-
 DeviceSelectionConfig::DeviceSelectionConfig(JsonView jsonValue)
-  : DeviceSelectionConfig()
 {
   *this = jsonValue;
 }
@@ -39,17 +28,13 @@ DeviceSelectionConfig& DeviceSelectionConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DeviceSubsetType"))
   {
     m_deviceSubsetType = DeviceSubsetTypeMapper::GetDeviceSubsetTypeForName(jsonValue.GetString("DeviceSubsetType"));
-
     m_deviceSubsetTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Percentage"))
   {
     m_percentage = jsonValue.GetInteger("Percentage");
-
     m_percentageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeviceNames"))
   {
     Aws::Utils::Array<JsonView> deviceNamesJsonList = jsonValue.GetArray("DeviceNames");
@@ -59,14 +44,11 @@ DeviceSelectionConfig& DeviceSelectionConfig::operator =(JsonView jsonValue)
     }
     m_deviceNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeviceNameContains"))
   {
     m_deviceNameContains = jsonValue.GetString("DeviceNameContains");
-
     m_deviceNameContainsHasBeenSet = true;
   }
-
   return *this;
 }
 

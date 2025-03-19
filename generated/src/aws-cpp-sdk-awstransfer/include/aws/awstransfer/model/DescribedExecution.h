@@ -37,7 +37,7 @@ namespace Model
   class DescribedExecution
   {
   public:
-    AWS_TRANSFER_API DescribedExecution();
+    AWS_TRANSFER_API DescribedExecution() = default;
     AWS_TRANSFER_API DescribedExecution(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API DescribedExecution& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
     /**
      * <p>A unique identifier for the execution of a workflow.</p>
      */
-    inline const Aws::String& GetExecutionId() const{ return m_executionId; }
+    inline const Aws::String& GetExecutionId() const { return m_executionId; }
     inline bool ExecutionIdHasBeenSet() const { return m_executionIdHasBeenSet; }
-    inline void SetExecutionId(const Aws::String& value) { m_executionIdHasBeenSet = true; m_executionId = value; }
-    inline void SetExecutionId(Aws::String&& value) { m_executionIdHasBeenSet = true; m_executionId = std::move(value); }
-    inline void SetExecutionId(const char* value) { m_executionIdHasBeenSet = true; m_executionId.assign(value); }
-    inline DescribedExecution& WithExecutionId(const Aws::String& value) { SetExecutionId(value); return *this;}
-    inline DescribedExecution& WithExecutionId(Aws::String&& value) { SetExecutionId(std::move(value)); return *this;}
-    inline DescribedExecution& WithExecutionId(const char* value) { SetExecutionId(value); return *this;}
+    template<typename ExecutionIdT = Aws::String>
+    void SetExecutionId(ExecutionIdT&& value) { m_executionIdHasBeenSet = true; m_executionId = std::forward<ExecutionIdT>(value); }
+    template<typename ExecutionIdT = Aws::String>
+    DescribedExecution& WithExecutionId(ExecutionIdT&& value) { SetExecutionId(std::forward<ExecutionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,12 +61,12 @@ namespace Model
      * file location when the execution begins: if the file is being copied, this is
      * the initial (as opposed to destination) file location.</p>
      */
-    inline const FileLocation& GetInitialFileLocation() const{ return m_initialFileLocation; }
+    inline const FileLocation& GetInitialFileLocation() const { return m_initialFileLocation; }
     inline bool InitialFileLocationHasBeenSet() const { return m_initialFileLocationHasBeenSet; }
-    inline void SetInitialFileLocation(const FileLocation& value) { m_initialFileLocationHasBeenSet = true; m_initialFileLocation = value; }
-    inline void SetInitialFileLocation(FileLocation&& value) { m_initialFileLocationHasBeenSet = true; m_initialFileLocation = std::move(value); }
-    inline DescribedExecution& WithInitialFileLocation(const FileLocation& value) { SetInitialFileLocation(value); return *this;}
-    inline DescribedExecution& WithInitialFileLocation(FileLocation&& value) { SetInitialFileLocation(std::move(value)); return *this;}
+    template<typename InitialFileLocationT = FileLocation>
+    void SetInitialFileLocation(InitialFileLocationT&& value) { m_initialFileLocationHasBeenSet = true; m_initialFileLocation = std::forward<InitialFileLocationT>(value); }
+    template<typename InitialFileLocationT = FileLocation>
+    DescribedExecution& WithInitialFileLocation(InitialFileLocationT&& value) { SetInitialFileLocation(std::forward<InitialFileLocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,48 +74,46 @@ namespace Model
      * <p>A container object for the session details that are associated with a
      * workflow.</p>
      */
-    inline const ServiceMetadata& GetServiceMetadata() const{ return m_serviceMetadata; }
+    inline const ServiceMetadata& GetServiceMetadata() const { return m_serviceMetadata; }
     inline bool ServiceMetadataHasBeenSet() const { return m_serviceMetadataHasBeenSet; }
-    inline void SetServiceMetadata(const ServiceMetadata& value) { m_serviceMetadataHasBeenSet = true; m_serviceMetadata = value; }
-    inline void SetServiceMetadata(ServiceMetadata&& value) { m_serviceMetadataHasBeenSet = true; m_serviceMetadata = std::move(value); }
-    inline DescribedExecution& WithServiceMetadata(const ServiceMetadata& value) { SetServiceMetadata(value); return *this;}
-    inline DescribedExecution& WithServiceMetadata(ServiceMetadata&& value) { SetServiceMetadata(std::move(value)); return *this;}
+    template<typename ServiceMetadataT = ServiceMetadata>
+    void SetServiceMetadata(ServiceMetadataT&& value) { m_serviceMetadataHasBeenSet = true; m_serviceMetadata = std::forward<ServiceMetadataT>(value); }
+    template<typename ServiceMetadataT = ServiceMetadata>
+    DescribedExecution& WithServiceMetadata(ServiceMetadataT&& value) { SetServiceMetadata(std::forward<ServiceMetadataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The IAM role associated with the execution.</p>
      */
-    inline const Aws::String& GetExecutionRole() const{ return m_executionRole; }
+    inline const Aws::String& GetExecutionRole() const { return m_executionRole; }
     inline bool ExecutionRoleHasBeenSet() const { return m_executionRoleHasBeenSet; }
-    inline void SetExecutionRole(const Aws::String& value) { m_executionRoleHasBeenSet = true; m_executionRole = value; }
-    inline void SetExecutionRole(Aws::String&& value) { m_executionRoleHasBeenSet = true; m_executionRole = std::move(value); }
-    inline void SetExecutionRole(const char* value) { m_executionRoleHasBeenSet = true; m_executionRole.assign(value); }
-    inline DescribedExecution& WithExecutionRole(const Aws::String& value) { SetExecutionRole(value); return *this;}
-    inline DescribedExecution& WithExecutionRole(Aws::String&& value) { SetExecutionRole(std::move(value)); return *this;}
-    inline DescribedExecution& WithExecutionRole(const char* value) { SetExecutionRole(value); return *this;}
+    template<typename ExecutionRoleT = Aws::String>
+    void SetExecutionRole(ExecutionRoleT&& value) { m_executionRoleHasBeenSet = true; m_executionRole = std::forward<ExecutionRoleT>(value); }
+    template<typename ExecutionRoleT = Aws::String>
+    DescribedExecution& WithExecutionRole(ExecutionRoleT&& value) { SetExecutionRole(std::forward<ExecutionRoleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The IAM logging role associated with the execution.</p>
      */
-    inline const LoggingConfiguration& GetLoggingConfiguration() const{ return m_loggingConfiguration; }
+    inline const LoggingConfiguration& GetLoggingConfiguration() const { return m_loggingConfiguration; }
     inline bool LoggingConfigurationHasBeenSet() const { return m_loggingConfigurationHasBeenSet; }
-    inline void SetLoggingConfiguration(const LoggingConfiguration& value) { m_loggingConfigurationHasBeenSet = true; m_loggingConfiguration = value; }
-    inline void SetLoggingConfiguration(LoggingConfiguration&& value) { m_loggingConfigurationHasBeenSet = true; m_loggingConfiguration = std::move(value); }
-    inline DescribedExecution& WithLoggingConfiguration(const LoggingConfiguration& value) { SetLoggingConfiguration(value); return *this;}
-    inline DescribedExecution& WithLoggingConfiguration(LoggingConfiguration&& value) { SetLoggingConfiguration(std::move(value)); return *this;}
+    template<typename LoggingConfigurationT = LoggingConfiguration>
+    void SetLoggingConfiguration(LoggingConfigurationT&& value) { m_loggingConfigurationHasBeenSet = true; m_loggingConfiguration = std::forward<LoggingConfigurationT>(value); }
+    template<typename LoggingConfigurationT = LoggingConfiguration>
+    DescribedExecution& WithLoggingConfiguration(LoggingConfigurationT&& value) { SetLoggingConfiguration(std::forward<LoggingConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const PosixProfile& GetPosixProfile() const{ return m_posixProfile; }
+    inline const PosixProfile& GetPosixProfile() const { return m_posixProfile; }
     inline bool PosixProfileHasBeenSet() const { return m_posixProfileHasBeenSet; }
-    inline void SetPosixProfile(const PosixProfile& value) { m_posixProfileHasBeenSet = true; m_posixProfile = value; }
-    inline void SetPosixProfile(PosixProfile&& value) { m_posixProfileHasBeenSet = true; m_posixProfile = std::move(value); }
-    inline DescribedExecution& WithPosixProfile(const PosixProfile& value) { SetPosixProfile(value); return *this;}
-    inline DescribedExecution& WithPosixProfile(PosixProfile&& value) { SetPosixProfile(std::move(value)); return *this;}
+    template<typename PosixProfileT = PosixProfile>
+    void SetPosixProfile(PosixProfileT&& value) { m_posixProfileHasBeenSet = true; m_posixProfile = std::forward<PosixProfileT>(value); }
+    template<typename PosixProfileT = PosixProfile>
+    DescribedExecution& WithPosixProfile(PosixProfileT&& value) { SetPosixProfile(std::forward<PosixProfileT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -125,12 +121,10 @@ namespace Model
      * <p>The status is one of the execution. Can be in progress, completed, exception
      * encountered, or handling the exception. </p>
      */
-    inline const ExecutionStatus& GetStatus() const{ return m_status; }
+    inline ExecutionStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ExecutionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ExecutionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline DescribedExecution& WithStatus(const ExecutionStatus& value) { SetStatus(value); return *this;}
-    inline DescribedExecution& WithStatus(ExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ExecutionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DescribedExecution& WithStatus(ExecutionStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -139,12 +133,12 @@ namespace Model
      * steps along with the details of each step, error type and message (if any), and
      * the <code>OnExceptionSteps</code> structure.</p>
      */
-    inline const ExecutionResults& GetResults() const{ return m_results; }
+    inline const ExecutionResults& GetResults() const { return m_results; }
     inline bool ResultsHasBeenSet() const { return m_resultsHasBeenSet; }
-    inline void SetResults(const ExecutionResults& value) { m_resultsHasBeenSet = true; m_results = value; }
-    inline void SetResults(ExecutionResults&& value) { m_resultsHasBeenSet = true; m_results = std::move(value); }
-    inline DescribedExecution& WithResults(const ExecutionResults& value) { SetResults(value); return *this;}
-    inline DescribedExecution& WithResults(ExecutionResults&& value) { SetResults(std::move(value)); return *this;}
+    template<typename ResultsT = ExecutionResults>
+    void SetResults(ResultsT&& value) { m_resultsHasBeenSet = true; m_results = std::forward<ResultsT>(value); }
+    template<typename ResultsT = ExecutionResults>
+    DescribedExecution& WithResults(ResultsT&& value) { SetResults(std::forward<ResultsT>(value)); return *this;}
     ///@}
   private:
 
@@ -166,7 +160,7 @@ namespace Model
     PosixProfile m_posixProfile;
     bool m_posixProfileHasBeenSet = false;
 
-    ExecutionStatus m_status;
+    ExecutionStatus m_status{ExecutionStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     ExecutionResults m_results;

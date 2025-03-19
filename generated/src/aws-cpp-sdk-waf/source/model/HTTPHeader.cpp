@@ -18,14 +18,7 @@ namespace WAF
 namespace Model
 {
 
-HTTPHeader::HTTPHeader() : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 HTTPHeader::HTTPHeader(JsonView jsonValue)
-  : HTTPHeader()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ HTTPHeader& HTTPHeader::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

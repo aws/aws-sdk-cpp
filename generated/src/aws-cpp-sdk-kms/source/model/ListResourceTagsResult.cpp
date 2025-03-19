@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListResourceTagsResult::ListResourceTagsResult() : 
-    m_truncated(false)
-{
-}
-
 ListResourceTagsResult::ListResourceTagsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ListResourceTagsResult()
 {
   *this = result;
 }
@@ -38,26 +32,25 @@ ListResourceTagsResult& ListResourceTagsResult::operator =(const Aws::AmazonWebS
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
+    m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextMarker"))
   {
     m_nextMarker = jsonValue.GetString("NextMarker");
-
+    m_nextMarkerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Truncated"))
   {
     m_truncated = jsonValue.GetBool("Truncated");
-
+    m_truncatedHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

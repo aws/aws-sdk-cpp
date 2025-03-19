@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteEntityResult::DeleteEntityResult() : 
-    m_state(State::NOT_SET)
-{
-}
-
 DeleteEntityResult::DeleteEntityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteEntityResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ DeleteEntityResult& DeleteEntityResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("state"))
   {
     m_state = StateMapper::GetStateForName(jsonValue.GetString("state"));
-
+    m_stateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

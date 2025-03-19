@@ -35,7 +35,7 @@ namespace Model
   class TargetHealthDescription
   {
   public:
-    AWS_ELASTICLOADBALANCINGV2_API TargetHealthDescription();
+    AWS_ELASTICLOADBALANCINGV2_API TargetHealthDescription() = default;
     AWS_ELASTICLOADBALANCINGV2_API TargetHealthDescription(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICLOADBALANCINGV2_API TargetHealthDescription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,38 +47,36 @@ namespace Model
     /**
      * <p>The description of the target.</p>
      */
-    inline const TargetDescription& GetTarget() const{ return m_target; }
+    inline const TargetDescription& GetTarget() const { return m_target; }
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-    inline void SetTarget(const TargetDescription& value) { m_targetHasBeenSet = true; m_target = value; }
-    inline void SetTarget(TargetDescription&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-    inline TargetHealthDescription& WithTarget(const TargetDescription& value) { SetTarget(value); return *this;}
-    inline TargetHealthDescription& WithTarget(TargetDescription&& value) { SetTarget(std::move(value)); return *this;}
+    template<typename TargetT = TargetDescription>
+    void SetTarget(TargetT&& value) { m_targetHasBeenSet = true; m_target = std::forward<TargetT>(value); }
+    template<typename TargetT = TargetDescription>
+    TargetHealthDescription& WithTarget(TargetT&& value) { SetTarget(std::forward<TargetT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The port to use to connect with the target.</p>
      */
-    inline const Aws::String& GetHealthCheckPort() const{ return m_healthCheckPort; }
+    inline const Aws::String& GetHealthCheckPort() const { return m_healthCheckPort; }
     inline bool HealthCheckPortHasBeenSet() const { return m_healthCheckPortHasBeenSet; }
-    inline void SetHealthCheckPort(const Aws::String& value) { m_healthCheckPortHasBeenSet = true; m_healthCheckPort = value; }
-    inline void SetHealthCheckPort(Aws::String&& value) { m_healthCheckPortHasBeenSet = true; m_healthCheckPort = std::move(value); }
-    inline void SetHealthCheckPort(const char* value) { m_healthCheckPortHasBeenSet = true; m_healthCheckPort.assign(value); }
-    inline TargetHealthDescription& WithHealthCheckPort(const Aws::String& value) { SetHealthCheckPort(value); return *this;}
-    inline TargetHealthDescription& WithHealthCheckPort(Aws::String&& value) { SetHealthCheckPort(std::move(value)); return *this;}
-    inline TargetHealthDescription& WithHealthCheckPort(const char* value) { SetHealthCheckPort(value); return *this;}
+    template<typename HealthCheckPortT = Aws::String>
+    void SetHealthCheckPort(HealthCheckPortT&& value) { m_healthCheckPortHasBeenSet = true; m_healthCheckPort = std::forward<HealthCheckPortT>(value); }
+    template<typename HealthCheckPortT = Aws::String>
+    TargetHealthDescription& WithHealthCheckPort(HealthCheckPortT&& value) { SetHealthCheckPort(std::forward<HealthCheckPortT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The health information for the target.</p>
      */
-    inline const TargetHealth& GetTargetHealth() const{ return m_targetHealth; }
+    inline const TargetHealth& GetTargetHealth() const { return m_targetHealth; }
     inline bool TargetHealthHasBeenSet() const { return m_targetHealthHasBeenSet; }
-    inline void SetTargetHealth(const TargetHealth& value) { m_targetHealthHasBeenSet = true; m_targetHealth = value; }
-    inline void SetTargetHealth(TargetHealth&& value) { m_targetHealthHasBeenSet = true; m_targetHealth = std::move(value); }
-    inline TargetHealthDescription& WithTargetHealth(const TargetHealth& value) { SetTargetHealth(value); return *this;}
-    inline TargetHealthDescription& WithTargetHealth(TargetHealth&& value) { SetTargetHealth(std::move(value)); return *this;}
+    template<typename TargetHealthT = TargetHealth>
+    void SetTargetHealth(TargetHealthT&& value) { m_targetHealthHasBeenSet = true; m_targetHealth = std::forward<TargetHealthT>(value); }
+    template<typename TargetHealthT = TargetHealth>
+    TargetHealthDescription& WithTargetHealth(TargetHealthT&& value) { SetTargetHealth(std::forward<TargetHealthT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,24 +85,24 @@ namespace Model
      * detected, the result is <code>normal</code>.</p> <p>If anomalies were detected,
      * the result is <code>anomalous</code>.</p>
      */
-    inline const AnomalyDetection& GetAnomalyDetection() const{ return m_anomalyDetection; }
+    inline const AnomalyDetection& GetAnomalyDetection() const { return m_anomalyDetection; }
     inline bool AnomalyDetectionHasBeenSet() const { return m_anomalyDetectionHasBeenSet; }
-    inline void SetAnomalyDetection(const AnomalyDetection& value) { m_anomalyDetectionHasBeenSet = true; m_anomalyDetection = value; }
-    inline void SetAnomalyDetection(AnomalyDetection&& value) { m_anomalyDetectionHasBeenSet = true; m_anomalyDetection = std::move(value); }
-    inline TargetHealthDescription& WithAnomalyDetection(const AnomalyDetection& value) { SetAnomalyDetection(value); return *this;}
-    inline TargetHealthDescription& WithAnomalyDetection(AnomalyDetection&& value) { SetAnomalyDetection(std::move(value)); return *this;}
+    template<typename AnomalyDetectionT = AnomalyDetection>
+    void SetAnomalyDetection(AnomalyDetectionT&& value) { m_anomalyDetectionHasBeenSet = true; m_anomalyDetection = std::forward<AnomalyDetectionT>(value); }
+    template<typename AnomalyDetectionT = AnomalyDetection>
+    TargetHealthDescription& WithAnomalyDetection(AnomalyDetectionT&& value) { SetAnomalyDetection(std::forward<AnomalyDetectionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The administrative override information for the target.</p>
      */
-    inline const AdministrativeOverride& GetAdministrativeOverride() const{ return m_administrativeOverride; }
+    inline const AdministrativeOverride& GetAdministrativeOverride() const { return m_administrativeOverride; }
     inline bool AdministrativeOverrideHasBeenSet() const { return m_administrativeOverrideHasBeenSet; }
-    inline void SetAdministrativeOverride(const AdministrativeOverride& value) { m_administrativeOverrideHasBeenSet = true; m_administrativeOverride = value; }
-    inline void SetAdministrativeOverride(AdministrativeOverride&& value) { m_administrativeOverrideHasBeenSet = true; m_administrativeOverride = std::move(value); }
-    inline TargetHealthDescription& WithAdministrativeOverride(const AdministrativeOverride& value) { SetAdministrativeOverride(value); return *this;}
-    inline TargetHealthDescription& WithAdministrativeOverride(AdministrativeOverride&& value) { SetAdministrativeOverride(std::move(value)); return *this;}
+    template<typename AdministrativeOverrideT = AdministrativeOverride>
+    void SetAdministrativeOverride(AdministrativeOverrideT&& value) { m_administrativeOverrideHasBeenSet = true; m_administrativeOverride = std::forward<AdministrativeOverrideT>(value); }
+    template<typename AdministrativeOverrideT = AdministrativeOverride>
+    TargetHealthDescription& WithAdministrativeOverride(AdministrativeOverrideT&& value) { SetAdministrativeOverride(std::forward<AdministrativeOverrideT>(value)); return *this;}
     ///@}
   private:
 

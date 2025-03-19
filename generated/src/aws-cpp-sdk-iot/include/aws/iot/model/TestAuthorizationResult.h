@@ -29,7 +29,7 @@ namespace Model
   class TestAuthorizationResult
   {
   public:
-    AWS_IOT_API TestAuthorizationResult();
+    AWS_IOT_API TestAuthorizationResult() = default;
     AWS_IOT_API TestAuthorizationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API TestAuthorizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>The authentication results.</p>
      */
-    inline const Aws::Vector<AuthResult>& GetAuthResults() const{ return m_authResults; }
-    inline void SetAuthResults(const Aws::Vector<AuthResult>& value) { m_authResults = value; }
-    inline void SetAuthResults(Aws::Vector<AuthResult>&& value) { m_authResults = std::move(value); }
-    inline TestAuthorizationResult& WithAuthResults(const Aws::Vector<AuthResult>& value) { SetAuthResults(value); return *this;}
-    inline TestAuthorizationResult& WithAuthResults(Aws::Vector<AuthResult>&& value) { SetAuthResults(std::move(value)); return *this;}
-    inline TestAuthorizationResult& AddAuthResults(const AuthResult& value) { m_authResults.push_back(value); return *this; }
-    inline TestAuthorizationResult& AddAuthResults(AuthResult&& value) { m_authResults.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AuthResult>& GetAuthResults() const { return m_authResults; }
+    template<typename AuthResultsT = Aws::Vector<AuthResult>>
+    void SetAuthResults(AuthResultsT&& value) { m_authResultsHasBeenSet = true; m_authResults = std::forward<AuthResultsT>(value); }
+    template<typename AuthResultsT = Aws::Vector<AuthResult>>
+    TestAuthorizationResult& WithAuthResults(AuthResultsT&& value) { SetAuthResults(std::forward<AuthResultsT>(value)); return *this;}
+    template<typename AuthResultsT = AuthResult>
+    TestAuthorizationResult& AddAuthResults(AuthResultsT&& value) { m_authResultsHasBeenSet = true; m_authResults.emplace_back(std::forward<AuthResultsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline TestAuthorizationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline TestAuthorizationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline TestAuthorizationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    TestAuthorizationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AuthResult> m_authResults;
+    bool m_authResultsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

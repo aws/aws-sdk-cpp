@@ -18,14 +18,7 @@ namespace IoT
 namespace Model
 {
 
-HttpContext::HttpContext() : 
-    m_headersHasBeenSet(false),
-    m_queryStringHasBeenSet(false)
-{
-}
-
 HttpContext::HttpContext(JsonView jsonValue)
-  : HttpContext()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ HttpContext& HttpContext::operator =(JsonView jsonValue)
     }
     m_headersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queryString"))
   {
     m_queryString = jsonValue.GetString("queryString");
-
     m_queryStringHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -35,7 +35,7 @@ namespace Model
   class SchemaAnalysisRuleRequest
   {
   public:
-    AWS_CLEANROOMS_API SchemaAnalysisRuleRequest();
+    AWS_CLEANROOMS_API SchemaAnalysisRuleRequest() = default;
     AWS_CLEANROOMS_API SchemaAnalysisRuleRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API SchemaAnalysisRuleRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,33 +45,29 @@ namespace Model
     /**
      * <p>The name of the analysis rule schema that you are requesting.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline SchemaAnalysisRuleRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline SchemaAnalysisRuleRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline SchemaAnalysisRuleRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    SchemaAnalysisRuleRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of analysis rule schema that you are requesting.</p>
      */
-    inline const AnalysisRuleType& GetType() const{ return m_type; }
+    inline AnalysisRuleType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const AnalysisRuleType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(AnalysisRuleType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline SchemaAnalysisRuleRequest& WithType(const AnalysisRuleType& value) { SetType(value); return *this;}
-    inline SchemaAnalysisRuleRequest& WithType(AnalysisRuleType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(AnalysisRuleType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline SchemaAnalysisRuleRequest& WithType(AnalysisRuleType value) { SetType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    AnalysisRuleType m_type;
+    AnalysisRuleType m_type{AnalysisRuleType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

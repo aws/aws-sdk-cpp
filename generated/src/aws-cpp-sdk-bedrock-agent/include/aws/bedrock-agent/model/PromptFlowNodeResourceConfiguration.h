@@ -32,7 +32,7 @@ namespace Model
   class PromptFlowNodeResourceConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API PromptFlowNodeResourceConfiguration();
+    AWS_BEDROCKAGENT_API PromptFlowNodeResourceConfiguration() = default;
     AWS_BEDROCKAGENT_API PromptFlowNodeResourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API PromptFlowNodeResourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the prompt from Prompt management.</p>
      */
-    inline const Aws::String& GetPromptArn() const{ return m_promptArn; }
+    inline const Aws::String& GetPromptArn() const { return m_promptArn; }
     inline bool PromptArnHasBeenSet() const { return m_promptArnHasBeenSet; }
-    inline void SetPromptArn(const Aws::String& value) { m_promptArnHasBeenSet = true; m_promptArn = value; }
-    inline void SetPromptArn(Aws::String&& value) { m_promptArnHasBeenSet = true; m_promptArn = std::move(value); }
-    inline void SetPromptArn(const char* value) { m_promptArnHasBeenSet = true; m_promptArn.assign(value); }
-    inline PromptFlowNodeResourceConfiguration& WithPromptArn(const Aws::String& value) { SetPromptArn(value); return *this;}
-    inline PromptFlowNodeResourceConfiguration& WithPromptArn(Aws::String&& value) { SetPromptArn(std::move(value)); return *this;}
-    inline PromptFlowNodeResourceConfiguration& WithPromptArn(const char* value) { SetPromptArn(value); return *this;}
+    template<typename PromptArnT = Aws::String>
+    void SetPromptArn(PromptArnT&& value) { m_promptArnHasBeenSet = true; m_promptArn = std::forward<PromptArnT>(value); }
+    template<typename PromptArnT = Aws::String>
+    PromptFlowNodeResourceConfiguration& WithPromptArn(PromptArnT&& value) { SetPromptArn(std::forward<PromptArnT>(value)); return *this;}
     ///@}
   private:
 

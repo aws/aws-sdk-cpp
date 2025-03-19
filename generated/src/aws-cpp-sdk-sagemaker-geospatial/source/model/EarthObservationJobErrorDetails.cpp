@@ -18,15 +18,7 @@ namespace SageMakerGeospatial
 namespace Model
 {
 
-EarthObservationJobErrorDetails::EarthObservationJobErrorDetails() : 
-    m_messageHasBeenSet(false),
-    m_type(EarthObservationJobErrorType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 EarthObservationJobErrorDetails::EarthObservationJobErrorDetails(JsonView jsonValue)
-  : EarthObservationJobErrorDetails()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ EarthObservationJobErrorDetails& EarthObservationJobErrorDetails::operator =(Jso
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = EarthObservationJobErrorTypeMapper::GetEarthObservationJobErrorTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DisableEbsEncryptionByDefaultResponse::DisableEbsEncryptionByDefaultResponse() : 
-    m_ebsEncryptionByDefault(false)
-{
-}
-
 DisableEbsEncryptionByDefaultResponse::DisableEbsEncryptionByDefaultResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : DisableEbsEncryptionByDefaultResponse()
 {
   *this = result;
 }
@@ -44,6 +38,7 @@ DisableEbsEncryptionByDefaultResponse& DisableEbsEncryptionByDefaultResponse::op
     if(!ebsEncryptionByDefaultNode.IsNull())
     {
       m_ebsEncryptionByDefault = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ebsEncryptionByDefaultNode.GetText()).c_str()).c_str());
+      m_ebsEncryptionByDefaultHasBeenSet = true;
     }
   }
 
@@ -52,6 +47,7 @@ DisableEbsEncryptionByDefaultResponse& DisableEbsEncryptionByDefaultResponse::op
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DisableEbsEncryptionByDefaultResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

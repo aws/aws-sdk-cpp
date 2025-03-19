@@ -32,7 +32,7 @@ namespace Model
   class WebhookFilterRule
   {
   public:
-    AWS_CODEPIPELINE_API WebhookFilterRule();
+    AWS_CODEPIPELINE_API WebhookFilterRule() = default;
     AWS_CODEPIPELINE_API WebhookFilterRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API WebhookFilterRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * information, see <a href="https://github.com/json-path/JsonPath">Java JsonPath
      * implementation</a> in GitHub.</p>
      */
-    inline const Aws::String& GetJsonPath() const{ return m_jsonPath; }
+    inline const Aws::String& GetJsonPath() const { return m_jsonPath; }
     inline bool JsonPathHasBeenSet() const { return m_jsonPathHasBeenSet; }
-    inline void SetJsonPath(const Aws::String& value) { m_jsonPathHasBeenSet = true; m_jsonPath = value; }
-    inline void SetJsonPath(Aws::String&& value) { m_jsonPathHasBeenSet = true; m_jsonPath = std::move(value); }
-    inline void SetJsonPath(const char* value) { m_jsonPathHasBeenSet = true; m_jsonPath.assign(value); }
-    inline WebhookFilterRule& WithJsonPath(const Aws::String& value) { SetJsonPath(value); return *this;}
-    inline WebhookFilterRule& WithJsonPath(Aws::String&& value) { SetJsonPath(std::move(value)); return *this;}
-    inline WebhookFilterRule& WithJsonPath(const char* value) { SetJsonPath(value); return *this;}
+    template<typename JsonPathT = Aws::String>
+    void SetJsonPath(JsonPathT&& value) { m_jsonPathHasBeenSet = true; m_jsonPath = std::forward<JsonPathT>(value); }
+    template<typename JsonPathT = Aws::String>
+    WebhookFilterRule& WithJsonPath(JsonPathT&& value) { SetJsonPath(std::forward<JsonPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +68,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Pipeline
      * Structure Reference Action Requirements</a>.</p>
      */
-    inline const Aws::String& GetMatchEquals() const{ return m_matchEquals; }
+    inline const Aws::String& GetMatchEquals() const { return m_matchEquals; }
     inline bool MatchEqualsHasBeenSet() const { return m_matchEqualsHasBeenSet; }
-    inline void SetMatchEquals(const Aws::String& value) { m_matchEqualsHasBeenSet = true; m_matchEquals = value; }
-    inline void SetMatchEquals(Aws::String&& value) { m_matchEqualsHasBeenSet = true; m_matchEquals = std::move(value); }
-    inline void SetMatchEquals(const char* value) { m_matchEqualsHasBeenSet = true; m_matchEquals.assign(value); }
-    inline WebhookFilterRule& WithMatchEquals(const Aws::String& value) { SetMatchEquals(value); return *this;}
-    inline WebhookFilterRule& WithMatchEquals(Aws::String&& value) { SetMatchEquals(std::move(value)); return *this;}
-    inline WebhookFilterRule& WithMatchEquals(const char* value) { SetMatchEquals(value); return *this;}
+    template<typename MatchEqualsT = Aws::String>
+    void SetMatchEquals(MatchEqualsT&& value) { m_matchEqualsHasBeenSet = true; m_matchEquals = std::forward<MatchEqualsT>(value); }
+    template<typename MatchEqualsT = Aws::String>
+    WebhookFilterRule& WithMatchEquals(MatchEqualsT&& value) { SetMatchEquals(std::forward<MatchEqualsT>(value)); return *this;}
     ///@}
   private:
 

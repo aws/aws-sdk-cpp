@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-CommonAttributeAndCondition::CommonAttributeAndCondition() : 
-    m_tagConditionsHasBeenSet(false)
-{
-}
-
 CommonAttributeAndCondition::CommonAttributeAndCondition(JsonView jsonValue)
-  : CommonAttributeAndCondition()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ CommonAttributeAndCondition& CommonAttributeAndCondition::operator =(JsonView js
     }
     m_tagConditionsHasBeenSet = true;
   }
-
   return *this;
 }
 

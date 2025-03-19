@@ -18,17 +18,7 @@ namespace tnb
 namespace Model
 {
 
-GetSolNetworkOperationMetadata::GetSolNetworkOperationMetadata() : 
-    m_createdAtHasBeenSet(false),
-    m_instantiateMetadataHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false),
-    m_modifyVnfInfoMetadataHasBeenSet(false),
-    m_updateNsMetadataHasBeenSet(false)
-{
-}
-
 GetSolNetworkOperationMetadata::GetSolNetworkOperationMetadata(JsonView jsonValue)
-  : GetSolNetworkOperationMetadata()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ GetSolNetworkOperationMetadata& GetSolNetworkOperationMetadata::operator =(JsonV
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instantiateMetadata"))
   {
     m_instantiateMetadata = jsonValue.GetObject("instantiateMetadata");
-
     m_instantiateMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModified"))
   {
     m_lastModified = jsonValue.GetString("lastModified");
-
     m_lastModifiedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modifyVnfInfoMetadata"))
   {
     m_modifyVnfInfoMetadata = jsonValue.GetObject("modifyVnfInfoMetadata");
-
     m_modifyVnfInfoMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateNsMetadata"))
   {
     m_updateNsMetadata = jsonValue.GetObject("updateNsMetadata");
-
     m_updateNsMetadataHasBeenSet = true;
   }
-
   return *this;
 }
 

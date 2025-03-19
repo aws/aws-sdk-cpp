@@ -34,7 +34,7 @@ namespace Model
   class GetArchiveMessageContentResult
   {
   public:
-    AWS_MAILMANAGER_API GetArchiveMessageContentResult();
+    AWS_MAILMANAGER_API GetArchiveMessageContentResult() = default;
     AWS_MAILMANAGER_API GetArchiveMessageContentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MAILMANAGER_API GetArchiveMessageContentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,28 +43,28 @@ namespace Model
     /**
      * <p>The textual body content of the email message.</p>
      */
-    inline const MessageBody& GetBody() const{ return m_body; }
-    inline void SetBody(const MessageBody& value) { m_body = value; }
-    inline void SetBody(MessageBody&& value) { m_body = std::move(value); }
-    inline GetArchiveMessageContentResult& WithBody(const MessageBody& value) { SetBody(value); return *this;}
-    inline GetArchiveMessageContentResult& WithBody(MessageBody&& value) { SetBody(std::move(value)); return *this;}
+    inline const MessageBody& GetBody() const { return m_body; }
+    template<typename BodyT = MessageBody>
+    void SetBody(BodyT&& value) { m_bodyHasBeenSet = true; m_body = std::forward<BodyT>(value); }
+    template<typename BodyT = MessageBody>
+    GetArchiveMessageContentResult& WithBody(BodyT&& value) { SetBody(std::forward<BodyT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetArchiveMessageContentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetArchiveMessageContentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetArchiveMessageContentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetArchiveMessageContentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     MessageBody m_body;
+    bool m_bodyHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

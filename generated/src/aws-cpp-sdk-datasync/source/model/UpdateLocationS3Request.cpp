@@ -12,15 +12,6 @@ using namespace Aws::DataSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateLocationS3Request::UpdateLocationS3Request() : 
-    m_locationArnHasBeenSet(false),
-    m_subdirectoryHasBeenSet(false),
-    m_s3StorageClass(S3StorageClass::NOT_SET),
-    m_s3StorageClassHasBeenSet(false),
-    m_s3ConfigHasBeenSet(false)
-{
-}
-
 Aws::String UpdateLocationS3Request::SerializePayload() const
 {
   JsonValue payload;

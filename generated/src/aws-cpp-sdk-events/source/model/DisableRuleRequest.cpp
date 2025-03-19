@@ -12,12 +12,6 @@ using namespace Aws::CloudWatchEvents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisableRuleRequest::DisableRuleRequest() : 
-    m_nameHasBeenSet(false),
-    m_eventBusNameHasBeenSet(false)
-{
-}
-
 Aws::String DisableRuleRequest::SerializePayload() const
 {
   JsonValue payload;

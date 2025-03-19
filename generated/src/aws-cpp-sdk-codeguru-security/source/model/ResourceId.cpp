@@ -18,13 +18,7 @@ namespace CodeGuruSecurity
 namespace Model
 {
 
-ResourceId::ResourceId() : 
-    m_codeArtifactIdHasBeenSet(false)
-{
-}
-
 ResourceId::ResourceId(JsonView jsonValue)
-  : ResourceId()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ResourceId& ResourceId::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("codeArtifactId"))
   {
     m_codeArtifactId = jsonValue.GetString("codeArtifactId");
-
     m_codeArtifactIdHasBeenSet = true;
   }
-
   return *this;
 }
 

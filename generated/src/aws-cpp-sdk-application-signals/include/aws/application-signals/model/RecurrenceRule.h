@@ -32,7 +32,7 @@ namespace Model
   class RecurrenceRule
   {
   public:
-    AWS_APPLICATIONSIGNALS_API RecurrenceRule();
+    AWS_APPLICATIONSIGNALS_API RecurrenceRule() = default;
     AWS_APPLICATIONSIGNALS_API RecurrenceRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONSIGNALS_API RecurrenceRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONSIGNALS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>A cron or rate expression that specifies the schedule for the exclusion
      * window.</p>
      */
-    inline const Aws::String& GetExpression() const{ return m_expression; }
+    inline const Aws::String& GetExpression() const { return m_expression; }
     inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
-    inline void SetExpression(const Aws::String& value) { m_expressionHasBeenSet = true; m_expression = value; }
-    inline void SetExpression(Aws::String&& value) { m_expressionHasBeenSet = true; m_expression = std::move(value); }
-    inline void SetExpression(const char* value) { m_expressionHasBeenSet = true; m_expression.assign(value); }
-    inline RecurrenceRule& WithExpression(const Aws::String& value) { SetExpression(value); return *this;}
-    inline RecurrenceRule& WithExpression(Aws::String&& value) { SetExpression(std::move(value)); return *this;}
-    inline RecurrenceRule& WithExpression(const char* value) { SetExpression(value); return *this;}
+    template<typename ExpressionT = Aws::String>
+    void SetExpression(ExpressionT&& value) { m_expressionHasBeenSet = true; m_expression = std::forward<ExpressionT>(value); }
+    template<typename ExpressionT = Aws::String>
+    RecurrenceRule& WithExpression(ExpressionT&& value) { SetExpression(std::forward<ExpressionT>(value)); return *this;}
     ///@}
   private:
 

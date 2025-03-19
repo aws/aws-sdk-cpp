@@ -18,22 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-NamespaceInfoV2::NamespaceInfoV2() : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_capacityRegionHasBeenSet(false),
-    m_creationStatus(NamespaceStatus::NOT_SET),
-    m_creationStatusHasBeenSet(false),
-    m_identityStore(IdentityStore::NOT_SET),
-    m_identityStoreHasBeenSet(false),
-    m_namespaceErrorHasBeenSet(false),
-    m_iamIdentityCenterApplicationArnHasBeenSet(false),
-    m_iamIdentityCenterInstanceArnHasBeenSet(false)
-{
-}
-
 NamespaceInfoV2::NamespaceInfoV2(JsonView jsonValue)
-  : NamespaceInfoV2()
 {
   *this = jsonValue;
 }
@@ -43,59 +28,43 @@ NamespaceInfoV2& NamespaceInfoV2::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CapacityRegion"))
   {
     m_capacityRegion = jsonValue.GetString("CapacityRegion");
-
     m_capacityRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationStatus"))
   {
     m_creationStatus = NamespaceStatusMapper::GetNamespaceStatusForName(jsonValue.GetString("CreationStatus"));
-
     m_creationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdentityStore"))
   {
     m_identityStore = IdentityStoreMapper::GetIdentityStoreForName(jsonValue.GetString("IdentityStore"));
-
     m_identityStoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NamespaceError"))
   {
     m_namespaceError = jsonValue.GetObject("NamespaceError");
-
     m_namespaceErrorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IamIdentityCenterApplicationArn"))
   {
     m_iamIdentityCenterApplicationArn = jsonValue.GetString("IamIdentityCenterApplicationArn");
-
     m_iamIdentityCenterApplicationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IamIdentityCenterInstanceArn"))
   {
     m_iamIdentityCenterInstanceArn = jsonValue.GetString("IamIdentityCenterInstanceArn");
-
     m_iamIdentityCenterInstanceArnHasBeenSet = true;
   }
-
   return *this;
 }
 

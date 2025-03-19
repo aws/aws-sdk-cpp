@@ -10,16 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-UploadServerCertificateRequest::UploadServerCertificateRequest() : 
-    m_pathHasBeenSet(false),
-    m_serverCertificateNameHasBeenSet(false),
-    m_certificateBodyHasBeenSet(false),
-    m_privateKeyHasBeenSet(false),
-    m_certificateChainHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String UploadServerCertificateRequest::SerializePayload() const
 {
   Aws::StringStream ss;

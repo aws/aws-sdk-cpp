@@ -12,15 +12,6 @@ using namespace Aws::BillingConductor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateCustomLineItemRequest::UpdateCustomLineItemRequest() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_chargeDetailsHasBeenSet(false),
-    m_billingPeriodRangeHasBeenSet(false)
-{
-}
-
 Aws::String UpdateCustomLineItemRequest::SerializePayload() const
 {
   JsonValue payload;

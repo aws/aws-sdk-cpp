@@ -18,13 +18,7 @@ namespace TaxSettings
 namespace Model
 {
 
-EstoniaAdditionalInfo::EstoniaAdditionalInfo() : 
-    m_registryCommercialCodeHasBeenSet(false)
-{
-}
-
 EstoniaAdditionalInfo::EstoniaAdditionalInfo(JsonView jsonValue)
-  : EstoniaAdditionalInfo()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EstoniaAdditionalInfo& EstoniaAdditionalInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("registryCommercialCode"))
   {
     m_registryCommercialCode = jsonValue.GetString("registryCommercialCode");
-
     m_registryCommercialCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

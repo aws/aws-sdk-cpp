@@ -20,25 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VpnConnectionOptionsSpecification::VpnConnectionOptionsSpecification() : 
-    m_enableAcceleration(false),
-    m_enableAccelerationHasBeenSet(false),
-    m_tunnelInsideIpVersion(TunnelInsideIpVersion::NOT_SET),
-    m_tunnelInsideIpVersionHasBeenSet(false),
-    m_tunnelOptionsHasBeenSet(false),
-    m_localIpv4NetworkCidrHasBeenSet(false),
-    m_remoteIpv4NetworkCidrHasBeenSet(false),
-    m_localIpv6NetworkCidrHasBeenSet(false),
-    m_remoteIpv6NetworkCidrHasBeenSet(false),
-    m_outsideIpAddressTypeHasBeenSet(false),
-    m_transportTransitGatewayAttachmentIdHasBeenSet(false),
-    m_staticRoutesOnly(false),
-    m_staticRoutesOnlyHasBeenSet(false)
-{
-}
-
 VpnConnectionOptionsSpecification::VpnConnectionOptionsSpecification(const XmlNode& xmlNode)
-  : VpnConnectionOptionsSpecification()
 {
   *this = xmlNode;
 }
@@ -58,13 +40,14 @@ VpnConnectionOptionsSpecification& VpnConnectionOptionsSpecification::operator =
     XmlNode tunnelInsideIpVersionNode = resultNode.FirstChild("TunnelInsideIpVersion");
     if(!tunnelInsideIpVersionNode.IsNull())
     {
-      m_tunnelInsideIpVersion = TunnelInsideIpVersionMapper::GetTunnelInsideIpVersionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tunnelInsideIpVersionNode.GetText()).c_str()).c_str());
+      m_tunnelInsideIpVersion = TunnelInsideIpVersionMapper::GetTunnelInsideIpVersionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tunnelInsideIpVersionNode.GetText()).c_str()));
       m_tunnelInsideIpVersionHasBeenSet = true;
     }
     XmlNode tunnelOptionsNode = resultNode.FirstChild("TunnelOptions");
     if(!tunnelOptionsNode.IsNull())
     {
       XmlNode tunnelOptionsMember = tunnelOptionsNode.FirstChild("member");
+      m_tunnelOptionsHasBeenSet = !tunnelOptionsMember.IsNull();
       while(!tunnelOptionsMember.IsNull())
       {
         m_tunnelOptions.push_back(tunnelOptionsMember);

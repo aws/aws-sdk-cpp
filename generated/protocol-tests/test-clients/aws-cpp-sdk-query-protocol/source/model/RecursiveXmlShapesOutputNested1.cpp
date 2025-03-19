@@ -21,14 +21,7 @@ namespace QueryProtocol
 namespace Model
 {
 
-RecursiveXmlShapesOutputNested1::RecursiveXmlShapesOutputNested1() : 
-    m_fooHasBeenSet(false),
-    m_nestedHasBeenSet(false)
-{
-}
-
 RecursiveXmlShapesOutputNested1::RecursiveXmlShapesOutputNested1(const XmlNode& xmlNode)
-  : RecursiveXmlShapesOutputNested1()
 {
   *this = xmlNode;
 }

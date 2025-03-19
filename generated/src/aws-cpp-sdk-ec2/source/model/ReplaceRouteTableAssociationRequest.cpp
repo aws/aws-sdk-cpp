@@ -10,14 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ReplaceRouteTableAssociationRequest::ReplaceRouteTableAssociationRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_associationIdHasBeenSet(false),
-    m_routeTableIdHasBeenSet(false)
-{
-}
-
 Aws::String ReplaceRouteTableAssociationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

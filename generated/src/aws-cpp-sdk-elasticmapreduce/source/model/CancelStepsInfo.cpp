@@ -18,16 +18,7 @@ namespace EMR
 namespace Model
 {
 
-CancelStepsInfo::CancelStepsInfo() : 
-    m_stepIdHasBeenSet(false),
-    m_status(CancelStepsRequestStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 CancelStepsInfo::CancelStepsInfo(JsonView jsonValue)
-  : CancelStepsInfo()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ CancelStepsInfo& CancelStepsInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StepId"))
   {
     m_stepId = jsonValue.GetString("StepId");
-
     m_stepIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = CancelStepsRequestStatusMapper::GetCancelStepsRequestStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Reason"))
   {
     m_reason = jsonValue.GetString("Reason");
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

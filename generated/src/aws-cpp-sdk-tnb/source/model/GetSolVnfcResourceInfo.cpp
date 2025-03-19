@@ -18,13 +18,7 @@ namespace tnb
 namespace Model
 {
 
-GetSolVnfcResourceInfo::GetSolVnfcResourceInfo() : 
-    m_metadataHasBeenSet(false)
-{
-}
-
 GetSolVnfcResourceInfo::GetSolVnfcResourceInfo(JsonView jsonValue)
-  : GetSolVnfcResourceInfo()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ GetSolVnfcResourceInfo& GetSolVnfcResourceInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("metadata"))
   {
     m_metadata = jsonValue.GetObject("metadata");
-
     m_metadataHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -19,7 +19,7 @@ namespace Model
   class GetResourcesSummaryRequest : public ProtonRequest
   {
   public:
-    AWS_PROTON_API GetResourcesSummaryRequest();
+    AWS_PROTON_API GetResourcesSummaryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

@@ -32,7 +32,7 @@ namespace Model
   class JourneyEmailMessage
   {
   public:
-    AWS_PINPOINT_API JourneyEmailMessage();
+    AWS_PINPOINT_API JourneyEmailMessage() = default;
     AWS_PINPOINT_API JourneyEmailMessage(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API JourneyEmailMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * address is the FromAddress specified for the email channel for the
      * application.</p>
      */
-    inline const Aws::String& GetFromAddress() const{ return m_fromAddress; }
+    inline const Aws::String& GetFromAddress() const { return m_fromAddress; }
     inline bool FromAddressHasBeenSet() const { return m_fromAddressHasBeenSet; }
-    inline void SetFromAddress(const Aws::String& value) { m_fromAddressHasBeenSet = true; m_fromAddress = value; }
-    inline void SetFromAddress(Aws::String&& value) { m_fromAddressHasBeenSet = true; m_fromAddress = std::move(value); }
-    inline void SetFromAddress(const char* value) { m_fromAddressHasBeenSet = true; m_fromAddress.assign(value); }
-    inline JourneyEmailMessage& WithFromAddress(const Aws::String& value) { SetFromAddress(value); return *this;}
-    inline JourneyEmailMessage& WithFromAddress(Aws::String&& value) { SetFromAddress(std::move(value)); return *this;}
-    inline JourneyEmailMessage& WithFromAddress(const char* value) { SetFromAddress(value); return *this;}
+    template<typename FromAddressT = Aws::String>
+    void SetFromAddress(FromAddressT&& value) { m_fromAddressHasBeenSet = true; m_fromAddress = std::forward<FromAddressT>(value); }
+    template<typename FromAddressT = Aws::String>
+    JourneyEmailMessage& WithFromAddress(FromAddressT&& value) { SetFromAddress(std::forward<FromAddressT>(value)); return *this;}
     ///@}
   private:
 

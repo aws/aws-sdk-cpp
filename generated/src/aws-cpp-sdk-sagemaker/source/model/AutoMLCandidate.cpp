@@ -18,26 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-AutoMLCandidate::AutoMLCandidate() : 
-    m_candidateNameHasBeenSet(false),
-    m_finalAutoMLJobObjectiveMetricHasBeenSet(false),
-    m_objectiveStatus(ObjectiveStatus::NOT_SET),
-    m_objectiveStatusHasBeenSet(false),
-    m_candidateStepsHasBeenSet(false),
-    m_candidateStatus(CandidateStatus::NOT_SET),
-    m_candidateStatusHasBeenSet(false),
-    m_inferenceContainersHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_candidatePropertiesHasBeenSet(false),
-    m_inferenceContainerDefinitionsHasBeenSet(false)
-{
-}
-
 AutoMLCandidate::AutoMLCandidate(JsonView jsonValue)
-  : AutoMLCandidate()
 {
   *this = jsonValue;
 }
@@ -47,24 +28,18 @@ AutoMLCandidate& AutoMLCandidate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CandidateName"))
   {
     m_candidateName = jsonValue.GetString("CandidateName");
-
     m_candidateNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FinalAutoMLJobObjectiveMetric"))
   {
     m_finalAutoMLJobObjectiveMetric = jsonValue.GetObject("FinalAutoMLJobObjectiveMetric");
-
     m_finalAutoMLJobObjectiveMetricHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ObjectiveStatus"))
   {
     m_objectiveStatus = ObjectiveStatusMapper::GetObjectiveStatusForName(jsonValue.GetString("ObjectiveStatus"));
-
     m_objectiveStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CandidateSteps"))
   {
     Aws::Utils::Array<JsonView> candidateStepsJsonList = jsonValue.GetArray("CandidateSteps");
@@ -74,14 +49,11 @@ AutoMLCandidate& AutoMLCandidate::operator =(JsonView jsonValue)
     }
     m_candidateStepsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CandidateStatus"))
   {
     m_candidateStatus = CandidateStatusMapper::GetCandidateStatusForName(jsonValue.GetString("CandidateStatus"));
-
     m_candidateStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InferenceContainers"))
   {
     Aws::Utils::Array<JsonView> inferenceContainersJsonList = jsonValue.GetArray("InferenceContainers");
@@ -91,42 +63,31 @@ AutoMLCandidate& AutoMLCandidate::operator =(JsonView jsonValue)
     }
     m_inferenceContainersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = jsonValue.GetString("FailureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CandidateProperties"))
   {
     m_candidateProperties = jsonValue.GetObject("CandidateProperties");
-
     m_candidatePropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InferenceContainerDefinitions"))
   {
     Aws::Map<Aws::String, JsonView> inferenceContainerDefinitionsJsonMap = jsonValue.GetObject("InferenceContainerDefinitions").GetAllObjects();
@@ -143,7 +104,6 @@ AutoMLCandidate& AutoMLCandidate::operator =(JsonView jsonValue)
     }
     m_inferenceContainerDefinitionsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,15 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetExportTaskResult::GetExportTaskResult() : 
-    m_status(ExportTaskStatus::NOT_SET),
-    m_format(ExportFormat::NOT_SET),
-    m_parquetType(ParquetType::NOT_SET)
-{
-}
-
 GetExportTaskResult::GetExportTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetExportTaskResult()
 {
   *this = result;
 }
@@ -36,75 +28,65 @@ GetExportTaskResult& GetExportTaskResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("graphId"))
   {
     m_graphId = jsonValue.GetString("graphId");
-
+    m_graphIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
+    m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskId"))
   {
     m_taskId = jsonValue.GetString("taskId");
-
+    m_taskIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ExportTaskStatusMapper::GetExportTaskStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("format"))
   {
     m_format = ExportFormatMapper::GetExportFormatForName(jsonValue.GetString("format"));
-
+    m_formatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destination"))
   {
     m_destination = jsonValue.GetString("destination");
-
+    m_destinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsKeyIdentifier"))
   {
     m_kmsKeyIdentifier = jsonValue.GetString("kmsKeyIdentifier");
-
+    m_kmsKeyIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parquetType"))
   {
     m_parquetType = ParquetTypeMapper::GetParquetTypeForName(jsonValue.GetString("parquetType"));
-
+    m_parquetTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusReason"))
   {
     m_statusReason = jsonValue.GetString("statusReason");
-
+    m_statusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("exportTaskDetails"))
   {
     m_exportTaskDetails = jsonValue.GetObject("exportTaskDetails");
-
+    m_exportTaskDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("exportFilter"))
   {
     m_exportFilter = jsonValue.GetObject("exportFilter");
-
+    m_exportFilterHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

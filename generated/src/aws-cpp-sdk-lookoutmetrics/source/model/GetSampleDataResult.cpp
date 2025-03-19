@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSampleDataResult::GetSampleDataResult()
-{
-}
-
 GetSampleDataResult::GetSampleDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ GetSampleDataResult& GetSampleDataResult::operator =(const Aws::AmazonWebService
     {
       m_headerValues.push_back(headerValuesJsonList[headerValuesIndex].AsString());
     }
+    m_headerValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SampleRows"))
   {
     Aws::Utils::Array<JsonView> sampleRowsJsonList = jsonValue.GetArray("SampleRows");
@@ -52,14 +48,15 @@ GetSampleDataResult& GetSampleDataResult::operator =(const Aws::AmazonWebService
       }
       m_sampleRows.push_back(std::move(sampleRowList));
     }
+    m_sampleRowsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

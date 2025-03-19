@@ -18,13 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-PartnerWatermarking::PartnerWatermarking() : 
-    m_nexguardFileMarkerSettingsHasBeenSet(false)
-{
-}
-
 PartnerWatermarking::PartnerWatermarking(JsonView jsonValue)
-  : PartnerWatermarking()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PartnerWatermarking& PartnerWatermarking::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("nexguardFileMarkerSettings"))
   {
     m_nexguardFileMarkerSettings = jsonValue.GetObject("nexguardFileMarkerSettings");
-
     m_nexguardFileMarkerSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

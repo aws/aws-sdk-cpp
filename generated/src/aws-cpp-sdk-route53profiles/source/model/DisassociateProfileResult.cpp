@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DisassociateProfileResult::DisassociateProfileResult()
-{
-}
-
 DisassociateProfileResult::DisassociateProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DisassociateProfileResult& DisassociateProfileResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("ProfileAssociation"))
   {
     m_profileAssociation = jsonValue.GetObject("ProfileAssociation");
-
+    m_profileAssociationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

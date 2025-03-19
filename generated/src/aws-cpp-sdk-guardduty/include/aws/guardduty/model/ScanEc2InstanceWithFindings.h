@@ -30,7 +30,7 @@ namespace Model
   class ScanEc2InstanceWithFindings
   {
   public:
-    AWS_GUARDDUTY_API ScanEc2InstanceWithFindings();
+    AWS_GUARDDUTY_API ScanEc2InstanceWithFindings() = default;
     AWS_GUARDDUTY_API ScanEc2InstanceWithFindings(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API ScanEc2InstanceWithFindings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
     /**
      * <p>Describes the configuration for scanning EBS volumes as data source.</p>
      */
-    inline bool GetEbsVolumes() const{ return m_ebsVolumes; }
+    inline bool GetEbsVolumes() const { return m_ebsVolumes; }
     inline bool EbsVolumesHasBeenSet() const { return m_ebsVolumesHasBeenSet; }
     inline void SetEbsVolumes(bool value) { m_ebsVolumesHasBeenSet = true; m_ebsVolumes = value; }
     inline ScanEc2InstanceWithFindings& WithEbsVolumes(bool value) { SetEbsVolumes(value); return *this;}
     ///@}
   private:
 
-    bool m_ebsVolumes;
+    bool m_ebsVolumes{false};
     bool m_ebsVolumesHasBeenSet = false;
   };
 

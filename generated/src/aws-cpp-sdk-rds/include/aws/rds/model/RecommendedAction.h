@@ -37,7 +37,7 @@ namespace Model
   class RecommendedAction
   {
   public:
-    AWS_RDS_API RecommendedAction();
+    AWS_RDS_API RecommendedAction() = default;
     AWS_RDS_API RecommendedAction(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_RDS_API RecommendedAction& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -49,14 +49,12 @@ namespace Model
     /**
      * <p>The unique identifier of the recommended action.</p>
      */
-    inline const Aws::String& GetActionId() const{ return m_actionId; }
+    inline const Aws::String& GetActionId() const { return m_actionId; }
     inline bool ActionIdHasBeenSet() const { return m_actionIdHasBeenSet; }
-    inline void SetActionId(const Aws::String& value) { m_actionIdHasBeenSet = true; m_actionId = value; }
-    inline void SetActionId(Aws::String&& value) { m_actionIdHasBeenSet = true; m_actionId = std::move(value); }
-    inline void SetActionId(const char* value) { m_actionIdHasBeenSet = true; m_actionId.assign(value); }
-    inline RecommendedAction& WithActionId(const Aws::String& value) { SetActionId(value); return *this;}
-    inline RecommendedAction& WithActionId(Aws::String&& value) { SetActionId(std::move(value)); return *this;}
-    inline RecommendedAction& WithActionId(const char* value) { SetActionId(value); return *this;}
+    template<typename ActionIdT = Aws::String>
+    void SetActionId(ActionIdT&& value) { m_actionIdHasBeenSet = true; m_actionId = std::forward<ActionIdT>(value); }
+    template<typename ActionIdT = Aws::String>
+    RecommendedAction& WithActionId(ActionIdT&& value) { SetActionId(std::forward<ActionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * <p>A short description to summarize the action. The description might contain
      * markdown.</p>
      */
-    inline const Aws::String& GetTitle() const{ return m_title; }
+    inline const Aws::String& GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-    inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
-    inline RecommendedAction& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-    inline RecommendedAction& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-    inline RecommendedAction& WithTitle(const char* value) { SetTitle(value); return *this;}
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    RecommendedAction& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,42 +75,38 @@ namespace Model
      * <p>A detailed description of the action. The description might contain
      * markdown.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline RecommendedAction& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline RecommendedAction& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline RecommendedAction& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    RecommendedAction& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An API operation for the action.</p>
      */
-    inline const Aws::String& GetOperation() const{ return m_operation; }
+    inline const Aws::String& GetOperation() const { return m_operation; }
     inline bool OperationHasBeenSet() const { return m_operationHasBeenSet; }
-    inline void SetOperation(const Aws::String& value) { m_operationHasBeenSet = true; m_operation = value; }
-    inline void SetOperation(Aws::String&& value) { m_operationHasBeenSet = true; m_operation = std::move(value); }
-    inline void SetOperation(const char* value) { m_operationHasBeenSet = true; m_operation.assign(value); }
-    inline RecommendedAction& WithOperation(const Aws::String& value) { SetOperation(value); return *this;}
-    inline RecommendedAction& WithOperation(Aws::String&& value) { SetOperation(std::move(value)); return *this;}
-    inline RecommendedAction& WithOperation(const char* value) { SetOperation(value); return *this;}
+    template<typename OperationT = Aws::String>
+    void SetOperation(OperationT&& value) { m_operationHasBeenSet = true; m_operation = std::forward<OperationT>(value); }
+    template<typename OperationT = Aws::String>
+    RecommendedAction& WithOperation(OperationT&& value) { SetOperation(std::forward<OperationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The parameters for the API operation.</p>
      */
-    inline const Aws::Vector<RecommendedActionParameter>& GetParameters() const{ return m_parameters; }
+    inline const Aws::Vector<RecommendedActionParameter>& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const Aws::Vector<RecommendedActionParameter>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(Aws::Vector<RecommendedActionParameter>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline RecommendedAction& WithParameters(const Aws::Vector<RecommendedActionParameter>& value) { SetParameters(value); return *this;}
-    inline RecommendedAction& WithParameters(Aws::Vector<RecommendedActionParameter>&& value) { SetParameters(std::move(value)); return *this;}
-    inline RecommendedAction& AddParameters(const RecommendedActionParameter& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
-    inline RecommendedAction& AddParameters(RecommendedActionParameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
+    template<typename ParametersT = Aws::Vector<RecommendedActionParameter>>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::Vector<RecommendedActionParameter>>
+    RecommendedAction& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
+    template<typename ParametersT = RecommendedActionParameter>
+    RecommendedAction& AddParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters.emplace_back(std::forward<ParametersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -126,15 +118,14 @@ namespace Model
      * <code>next-maintainance-window</code> - The action is applied during the next
      * scheduled maintainance.</p> </li> </ul>
      */
-    inline const Aws::Vector<Aws::String>& GetApplyModes() const{ return m_applyModes; }
+    inline const Aws::Vector<Aws::String>& GetApplyModes() const { return m_applyModes; }
     inline bool ApplyModesHasBeenSet() const { return m_applyModesHasBeenSet; }
-    inline void SetApplyModes(const Aws::Vector<Aws::String>& value) { m_applyModesHasBeenSet = true; m_applyModes = value; }
-    inline void SetApplyModes(Aws::Vector<Aws::String>&& value) { m_applyModesHasBeenSet = true; m_applyModes = std::move(value); }
-    inline RecommendedAction& WithApplyModes(const Aws::Vector<Aws::String>& value) { SetApplyModes(value); return *this;}
-    inline RecommendedAction& WithApplyModes(Aws::Vector<Aws::String>&& value) { SetApplyModes(std::move(value)); return *this;}
-    inline RecommendedAction& AddApplyModes(const Aws::String& value) { m_applyModesHasBeenSet = true; m_applyModes.push_back(value); return *this; }
-    inline RecommendedAction& AddApplyModes(Aws::String&& value) { m_applyModesHasBeenSet = true; m_applyModes.push_back(std::move(value)); return *this; }
-    inline RecommendedAction& AddApplyModes(const char* value) { m_applyModesHasBeenSet = true; m_applyModes.push_back(value); return *this; }
+    template<typename ApplyModesT = Aws::Vector<Aws::String>>
+    void SetApplyModes(ApplyModesT&& value) { m_applyModesHasBeenSet = true; m_applyModes = std::forward<ApplyModesT>(value); }
+    template<typename ApplyModesT = Aws::Vector<Aws::String>>
+    RecommendedAction& WithApplyModes(ApplyModesT&& value) { SetApplyModes(std::forward<ApplyModesT>(value)); return *this;}
+    template<typename ApplyModesT = Aws::String>
+    RecommendedAction& AddApplyModes(ApplyModesT&& value) { m_applyModesHasBeenSet = true; m_applyModes.emplace_back(std::forward<ApplyModesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -143,40 +134,38 @@ namespace Model
      * <li> <p> <code>applied</code> </p> </li> <li> <p> <code>scheduled</code> </p>
      * </li> <li> <p> <code>resolved</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline RecommendedAction& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline RecommendedAction& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline RecommendedAction& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    RecommendedAction& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The details of the issue.</p>
      */
-    inline const IssueDetails& GetIssueDetails() const{ return m_issueDetails; }
+    inline const IssueDetails& GetIssueDetails() const { return m_issueDetails; }
     inline bool IssueDetailsHasBeenSet() const { return m_issueDetailsHasBeenSet; }
-    inline void SetIssueDetails(const IssueDetails& value) { m_issueDetailsHasBeenSet = true; m_issueDetails = value; }
-    inline void SetIssueDetails(IssueDetails&& value) { m_issueDetailsHasBeenSet = true; m_issueDetails = std::move(value); }
-    inline RecommendedAction& WithIssueDetails(const IssueDetails& value) { SetIssueDetails(value); return *this;}
-    inline RecommendedAction& WithIssueDetails(IssueDetails&& value) { SetIssueDetails(std::move(value)); return *this;}
+    template<typename IssueDetailsT = IssueDetails>
+    void SetIssueDetails(IssueDetailsT&& value) { m_issueDetailsHasBeenSet = true; m_issueDetails = std::forward<IssueDetailsT>(value); }
+    template<typename IssueDetailsT = IssueDetails>
+    RecommendedAction& WithIssueDetails(IssueDetailsT&& value) { SetIssueDetails(std::forward<IssueDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The supporting attributes to explain the recommended action.</p>
      */
-    inline const Aws::Vector<ContextAttribute>& GetContextAttributes() const{ return m_contextAttributes; }
+    inline const Aws::Vector<ContextAttribute>& GetContextAttributes() const { return m_contextAttributes; }
     inline bool ContextAttributesHasBeenSet() const { return m_contextAttributesHasBeenSet; }
-    inline void SetContextAttributes(const Aws::Vector<ContextAttribute>& value) { m_contextAttributesHasBeenSet = true; m_contextAttributes = value; }
-    inline void SetContextAttributes(Aws::Vector<ContextAttribute>&& value) { m_contextAttributesHasBeenSet = true; m_contextAttributes = std::move(value); }
-    inline RecommendedAction& WithContextAttributes(const Aws::Vector<ContextAttribute>& value) { SetContextAttributes(value); return *this;}
-    inline RecommendedAction& WithContextAttributes(Aws::Vector<ContextAttribute>&& value) { SetContextAttributes(std::move(value)); return *this;}
-    inline RecommendedAction& AddContextAttributes(const ContextAttribute& value) { m_contextAttributesHasBeenSet = true; m_contextAttributes.push_back(value); return *this; }
-    inline RecommendedAction& AddContextAttributes(ContextAttribute&& value) { m_contextAttributesHasBeenSet = true; m_contextAttributes.push_back(std::move(value)); return *this; }
+    template<typename ContextAttributesT = Aws::Vector<ContextAttribute>>
+    void SetContextAttributes(ContextAttributesT&& value) { m_contextAttributesHasBeenSet = true; m_contextAttributes = std::forward<ContextAttributesT>(value); }
+    template<typename ContextAttributesT = Aws::Vector<ContextAttribute>>
+    RecommendedAction& WithContextAttributes(ContextAttributesT&& value) { SetContextAttributes(std::forward<ContextAttributesT>(value)); return *this;}
+    template<typename ContextAttributesT = ContextAttribute>
+    RecommendedAction& AddContextAttributes(ContextAttributesT&& value) { m_contextAttributesHasBeenSet = true; m_contextAttributes.emplace_back(std::forward<ContextAttributesT>(value)); return *this; }
     ///@}
   private:
 

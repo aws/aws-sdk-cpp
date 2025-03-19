@@ -20,29 +20,7 @@ namespace EC2
 namespace Model
 {
 
-Ec2InstanceConnectEndpoint::Ec2InstanceConnectEndpoint() : 
-    m_ownerIdHasBeenSet(false),
-    m_instanceConnectEndpointIdHasBeenSet(false),
-    m_instanceConnectEndpointArnHasBeenSet(false),
-    m_state(Ec2InstanceConnectEndpointState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateMessageHasBeenSet(false),
-    m_dnsNameHasBeenSet(false),
-    m_fipsDnsNameHasBeenSet(false),
-    m_networkInterfaceIdsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_preserveClientIp(false),
-    m_preserveClientIpHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Ec2InstanceConnectEndpoint::Ec2InstanceConnectEndpoint(const XmlNode& xmlNode)
-  : Ec2InstanceConnectEndpoint()
 {
   *this = xmlNode;
 }
@@ -74,7 +52,7 @@ Ec2InstanceConnectEndpoint& Ec2InstanceConnectEndpoint::operator =(const XmlNode
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = Ec2InstanceConnectEndpointStateMapper::GetEc2InstanceConnectEndpointStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = Ec2InstanceConnectEndpointStateMapper::GetEc2InstanceConnectEndpointStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode stateMessageNode = resultNode.FirstChild("stateMessage");
@@ -99,6 +77,7 @@ Ec2InstanceConnectEndpoint& Ec2InstanceConnectEndpoint::operator =(const XmlNode
     if(!networkInterfaceIdsNode.IsNull())
     {
       XmlNode networkInterfaceIdsMember = networkInterfaceIdsNode.FirstChild("item");
+      m_networkInterfaceIdsHasBeenSet = !networkInterfaceIdsMember.IsNull();
       while(!networkInterfaceIdsMember.IsNull())
       {
         m_networkInterfaceIds.push_back(networkInterfaceIdsMember.GetText());
@@ -141,6 +120,7 @@ Ec2InstanceConnectEndpoint& Ec2InstanceConnectEndpoint::operator =(const XmlNode
     if(!securityGroupIdsNode.IsNull())
     {
       XmlNode securityGroupIdsMember = securityGroupIdsNode.FirstChild("item");
+      m_securityGroupIdsHasBeenSet = !securityGroupIdsMember.IsNull();
       while(!securityGroupIdsMember.IsNull())
       {
         m_securityGroupIds.push_back(securityGroupIdsMember.GetText());
@@ -153,6 +133,7 @@ Ec2InstanceConnectEndpoint& Ec2InstanceConnectEndpoint::operator =(const XmlNode
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

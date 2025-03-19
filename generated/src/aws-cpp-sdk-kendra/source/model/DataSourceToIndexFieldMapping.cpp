@@ -18,15 +18,7 @@ namespace kendra
 namespace Model
 {
 
-DataSourceToIndexFieldMapping::DataSourceToIndexFieldMapping() : 
-    m_dataSourceFieldNameHasBeenSet(false),
-    m_dateFieldFormatHasBeenSet(false),
-    m_indexFieldNameHasBeenSet(false)
-{
-}
-
 DataSourceToIndexFieldMapping::DataSourceToIndexFieldMapping(JsonView jsonValue)
-  : DataSourceToIndexFieldMapping()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DataSourceToIndexFieldMapping& DataSourceToIndexFieldMapping::operator =(JsonVie
   if(jsonValue.ValueExists("DataSourceFieldName"))
   {
     m_dataSourceFieldName = jsonValue.GetString("DataSourceFieldName");
-
     m_dataSourceFieldNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DateFieldFormat"))
   {
     m_dateFieldFormat = jsonValue.GetString("DateFieldFormat");
-
     m_dateFieldFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IndexFieldName"))
   {
     m_indexFieldName = jsonValue.GetString("IndexFieldName");
-
     m_indexFieldNameHasBeenSet = true;
   }
-
   return *this;
 }
 

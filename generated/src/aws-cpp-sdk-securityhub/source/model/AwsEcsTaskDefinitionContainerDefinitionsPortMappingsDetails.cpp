@@ -18,17 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails() : 
-    m_containerPort(0),
-    m_containerPortHasBeenSet(false),
-    m_hostPort(0),
-    m_hostPortHasBeenSet(false),
-    m_protocolHasBeenSet(false)
-{
-}
-
 AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails(JsonView jsonValue)
-  : AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails& AwsEcsTaskDefinitio
   if(jsonValue.ValueExists("ContainerPort"))
   {
     m_containerPort = jsonValue.GetInteger("ContainerPort");
-
     m_containerPortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HostPort"))
   {
     m_hostPort = jsonValue.GetInteger("HostPort");
-
     m_hostPortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Protocol"))
   {
     m_protocol = jsonValue.GetString("Protocol");
-
     m_protocolHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -28,7 +28,7 @@ namespace Model
   class RespondDecisionTaskCompletedRequest : public SWFRequest
   {
   public:
-    AWS_SWF_API RespondDecisionTaskCompletedRequest();
+    AWS_SWF_API RespondDecisionTaskCompletedRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -49,14 +49,12 @@ namespace Model
      * <code>taskToken</code> must also be passed. This enables it to provide its
      * progress and respond with results.</p> 
      */
-    inline const Aws::String& GetTaskToken() const{ return m_taskToken; }
+    inline const Aws::String& GetTaskToken() const { return m_taskToken; }
     inline bool TaskTokenHasBeenSet() const { return m_taskTokenHasBeenSet; }
-    inline void SetTaskToken(const Aws::String& value) { m_taskTokenHasBeenSet = true; m_taskToken = value; }
-    inline void SetTaskToken(Aws::String&& value) { m_taskTokenHasBeenSet = true; m_taskToken = std::move(value); }
-    inline void SetTaskToken(const char* value) { m_taskTokenHasBeenSet = true; m_taskToken.assign(value); }
-    inline RespondDecisionTaskCompletedRequest& WithTaskToken(const Aws::String& value) { SetTaskToken(value); return *this;}
-    inline RespondDecisionTaskCompletedRequest& WithTaskToken(Aws::String&& value) { SetTaskToken(std::move(value)); return *this;}
-    inline RespondDecisionTaskCompletedRequest& WithTaskToken(const char* value) { SetTaskToken(value); return *this;}
+    template<typename TaskTokenT = Aws::String>
+    void SetTaskToken(TaskTokenT&& value) { m_taskTokenHasBeenSet = true; m_taskToken = std::forward<TaskTokenT>(value); }
+    template<typename TaskTokenT = Aws::String>
+    RespondDecisionTaskCompletedRequest& WithTaskToken(TaskTokenT&& value) { SetTaskToken(std::forward<TaskTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,28 +63,26 @@ namespace Model
      * this decision task. See the docs for the <a>Decision</a> structure for
      * details.</p>
      */
-    inline const Aws::Vector<Decision>& GetDecisions() const{ return m_decisions; }
+    inline const Aws::Vector<Decision>& GetDecisions() const { return m_decisions; }
     inline bool DecisionsHasBeenSet() const { return m_decisionsHasBeenSet; }
-    inline void SetDecisions(const Aws::Vector<Decision>& value) { m_decisionsHasBeenSet = true; m_decisions = value; }
-    inline void SetDecisions(Aws::Vector<Decision>&& value) { m_decisionsHasBeenSet = true; m_decisions = std::move(value); }
-    inline RespondDecisionTaskCompletedRequest& WithDecisions(const Aws::Vector<Decision>& value) { SetDecisions(value); return *this;}
-    inline RespondDecisionTaskCompletedRequest& WithDecisions(Aws::Vector<Decision>&& value) { SetDecisions(std::move(value)); return *this;}
-    inline RespondDecisionTaskCompletedRequest& AddDecisions(const Decision& value) { m_decisionsHasBeenSet = true; m_decisions.push_back(value); return *this; }
-    inline RespondDecisionTaskCompletedRequest& AddDecisions(Decision&& value) { m_decisionsHasBeenSet = true; m_decisions.push_back(std::move(value)); return *this; }
+    template<typename DecisionsT = Aws::Vector<Decision>>
+    void SetDecisions(DecisionsT&& value) { m_decisionsHasBeenSet = true; m_decisions = std::forward<DecisionsT>(value); }
+    template<typename DecisionsT = Aws::Vector<Decision>>
+    RespondDecisionTaskCompletedRequest& WithDecisions(DecisionsT&& value) { SetDecisions(std::forward<DecisionsT>(value)); return *this;}
+    template<typename DecisionsT = Decision>
+    RespondDecisionTaskCompletedRequest& AddDecisions(DecisionsT&& value) { m_decisionsHasBeenSet = true; m_decisions.emplace_back(std::forward<DecisionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>User defined context to add to workflow execution.</p>
      */
-    inline const Aws::String& GetExecutionContext() const{ return m_executionContext; }
+    inline const Aws::String& GetExecutionContext() const { return m_executionContext; }
     inline bool ExecutionContextHasBeenSet() const { return m_executionContextHasBeenSet; }
-    inline void SetExecutionContext(const Aws::String& value) { m_executionContextHasBeenSet = true; m_executionContext = value; }
-    inline void SetExecutionContext(Aws::String&& value) { m_executionContextHasBeenSet = true; m_executionContext = std::move(value); }
-    inline void SetExecutionContext(const char* value) { m_executionContextHasBeenSet = true; m_executionContext.assign(value); }
-    inline RespondDecisionTaskCompletedRequest& WithExecutionContext(const Aws::String& value) { SetExecutionContext(value); return *this;}
-    inline RespondDecisionTaskCompletedRequest& WithExecutionContext(Aws::String&& value) { SetExecutionContext(std::move(value)); return *this;}
-    inline RespondDecisionTaskCompletedRequest& WithExecutionContext(const char* value) { SetExecutionContext(value); return *this;}
+    template<typename ExecutionContextT = Aws::String>
+    void SetExecutionContext(ExecutionContextT&& value) { m_executionContextHasBeenSet = true; m_executionContext = std::forward<ExecutionContextT>(value); }
+    template<typename ExecutionContextT = Aws::String>
+    RespondDecisionTaskCompletedRequest& WithExecutionContext(ExecutionContextT&& value) { SetExecutionContext(std::forward<ExecutionContextT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,12 +91,12 @@ namespace Model
      * execution. This list overrides the original task list you specified while
      * starting the workflow execution. </p>
      */
-    inline const TaskList& GetTaskList() const{ return m_taskList; }
+    inline const TaskList& GetTaskList() const { return m_taskList; }
     inline bool TaskListHasBeenSet() const { return m_taskListHasBeenSet; }
-    inline void SetTaskList(const TaskList& value) { m_taskListHasBeenSet = true; m_taskList = value; }
-    inline void SetTaskList(TaskList&& value) { m_taskListHasBeenSet = true; m_taskList = std::move(value); }
-    inline RespondDecisionTaskCompletedRequest& WithTaskList(const TaskList& value) { SetTaskList(value); return *this;}
-    inline RespondDecisionTaskCompletedRequest& WithTaskList(TaskList&& value) { SetTaskList(std::move(value)); return *this;}
+    template<typename TaskListT = TaskList>
+    void SetTaskList(TaskListT&& value) { m_taskListHasBeenSet = true; m_taskList = std::forward<TaskListT>(value); }
+    template<typename TaskListT = TaskList>
+    RespondDecisionTaskCompletedRequest& WithTaskList(TaskListT&& value) { SetTaskList(std::forward<TaskListT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,14 +111,12 @@ namespace Model
      * start-to-close timeout, Amazon SWF will also revert the override and schedule a
      * new decision task to the original task list.</p>
      */
-    inline const Aws::String& GetTaskListScheduleToStartTimeout() const{ return m_taskListScheduleToStartTimeout; }
+    inline const Aws::String& GetTaskListScheduleToStartTimeout() const { return m_taskListScheduleToStartTimeout; }
     inline bool TaskListScheduleToStartTimeoutHasBeenSet() const { return m_taskListScheduleToStartTimeoutHasBeenSet; }
-    inline void SetTaskListScheduleToStartTimeout(const Aws::String& value) { m_taskListScheduleToStartTimeoutHasBeenSet = true; m_taskListScheduleToStartTimeout = value; }
-    inline void SetTaskListScheduleToStartTimeout(Aws::String&& value) { m_taskListScheduleToStartTimeoutHasBeenSet = true; m_taskListScheduleToStartTimeout = std::move(value); }
-    inline void SetTaskListScheduleToStartTimeout(const char* value) { m_taskListScheduleToStartTimeoutHasBeenSet = true; m_taskListScheduleToStartTimeout.assign(value); }
-    inline RespondDecisionTaskCompletedRequest& WithTaskListScheduleToStartTimeout(const Aws::String& value) { SetTaskListScheduleToStartTimeout(value); return *this;}
-    inline RespondDecisionTaskCompletedRequest& WithTaskListScheduleToStartTimeout(Aws::String&& value) { SetTaskListScheduleToStartTimeout(std::move(value)); return *this;}
-    inline RespondDecisionTaskCompletedRequest& WithTaskListScheduleToStartTimeout(const char* value) { SetTaskListScheduleToStartTimeout(value); return *this;}
+    template<typename TaskListScheduleToStartTimeoutT = Aws::String>
+    void SetTaskListScheduleToStartTimeout(TaskListScheduleToStartTimeoutT&& value) { m_taskListScheduleToStartTimeoutHasBeenSet = true; m_taskListScheduleToStartTimeout = std::forward<TaskListScheduleToStartTimeoutT>(value); }
+    template<typename TaskListScheduleToStartTimeoutT = Aws::String>
+    RespondDecisionTaskCompletedRequest& WithTaskListScheduleToStartTimeout(TaskListScheduleToStartTimeoutT&& value) { SetTaskListScheduleToStartTimeout(std::forward<TaskListScheduleToStartTimeoutT>(value)); return *this;}
     ///@}
   private:
 

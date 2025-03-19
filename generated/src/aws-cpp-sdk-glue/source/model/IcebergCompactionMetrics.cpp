@@ -18,20 +18,7 @@ namespace Glue
 namespace Model
 {
 
-IcebergCompactionMetrics::IcebergCompactionMetrics() : 
-    m_numberOfBytesCompacted(0),
-    m_numberOfBytesCompactedHasBeenSet(false),
-    m_numberOfFilesCompacted(0),
-    m_numberOfFilesCompactedHasBeenSet(false),
-    m_numberOfDpus(0),
-    m_numberOfDpusHasBeenSet(false),
-    m_jobDurationInHour(0.0),
-    m_jobDurationInHourHasBeenSet(false)
-{
-}
-
 IcebergCompactionMetrics::IcebergCompactionMetrics(JsonView jsonValue)
-  : IcebergCompactionMetrics()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ IcebergCompactionMetrics& IcebergCompactionMetrics::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("NumberOfBytesCompacted"))
   {
     m_numberOfBytesCompacted = jsonValue.GetInt64("NumberOfBytesCompacted");
-
     m_numberOfBytesCompactedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfFilesCompacted"))
   {
     m_numberOfFilesCompacted = jsonValue.GetInt64("NumberOfFilesCompacted");
-
     m_numberOfFilesCompactedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfDpus"))
   {
     m_numberOfDpus = jsonValue.GetInteger("NumberOfDpus");
-
     m_numberOfDpusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobDurationInHour"))
   {
     m_jobDurationInHour = jsonValue.GetDouble("JobDurationInHour");
-
     m_jobDurationInHourHasBeenSet = true;
   }
-
   return *this;
 }
 

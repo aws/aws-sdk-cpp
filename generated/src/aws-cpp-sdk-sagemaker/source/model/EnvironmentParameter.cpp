@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-EnvironmentParameter::EnvironmentParameter() : 
-    m_keyHasBeenSet(false),
-    m_valueTypeHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 EnvironmentParameter::EnvironmentParameter(JsonView jsonValue)
-  : EnvironmentParameter()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ EnvironmentParameter& EnvironmentParameter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValueType"))
   {
     m_valueType = jsonValue.GetString("ValueType");
-
     m_valueTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

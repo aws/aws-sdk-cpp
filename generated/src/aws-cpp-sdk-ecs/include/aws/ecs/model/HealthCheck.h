@@ -113,7 +113,7 @@ namespace Model
   class HealthCheck
   {
   public:
-    AWS_ECS_API HealthCheck();
+    AWS_ECS_API HealthCheck() = default;
     AWS_ECS_API HealthCheck(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API HealthCheck& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -134,15 +134,14 @@ namespace Model
      * failure. For more information, see <code>HealthCheck</code> in the docker
      * container create command.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCommand() const{ return m_command; }
+    inline const Aws::Vector<Aws::String>& GetCommand() const { return m_command; }
     inline bool CommandHasBeenSet() const { return m_commandHasBeenSet; }
-    inline void SetCommand(const Aws::Vector<Aws::String>& value) { m_commandHasBeenSet = true; m_command = value; }
-    inline void SetCommand(Aws::Vector<Aws::String>&& value) { m_commandHasBeenSet = true; m_command = std::move(value); }
-    inline HealthCheck& WithCommand(const Aws::Vector<Aws::String>& value) { SetCommand(value); return *this;}
-    inline HealthCheck& WithCommand(Aws::Vector<Aws::String>&& value) { SetCommand(std::move(value)); return *this;}
-    inline HealthCheck& AddCommand(const Aws::String& value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }
-    inline HealthCheck& AddCommand(Aws::String&& value) { m_commandHasBeenSet = true; m_command.push_back(std::move(value)); return *this; }
-    inline HealthCheck& AddCommand(const char* value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }
+    template<typename CommandT = Aws::Vector<Aws::String>>
+    void SetCommand(CommandT&& value) { m_commandHasBeenSet = true; m_command = std::forward<CommandT>(value); }
+    template<typename CommandT = Aws::Vector<Aws::String>>
+    HealthCheck& WithCommand(CommandT&& value) { SetCommand(std::forward<CommandT>(value)); return *this;}
+    template<typename CommandT = Aws::String>
+    HealthCheck& AddCommand(CommandT&& value) { m_commandHasBeenSet = true; m_command.emplace_back(std::forward<CommandT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -151,7 +150,7 @@ namespace Model
      * specify between 5 and 300 seconds. The default value is 30 seconds. This value
      * applies only when you specify a <code>command</code>. </p>
      */
-    inline int GetInterval() const{ return m_interval; }
+    inline int GetInterval() const { return m_interval; }
     inline bool IntervalHasBeenSet() const { return m_intervalHasBeenSet; }
     inline void SetInterval(int value) { m_intervalHasBeenSet = true; m_interval = value; }
     inline HealthCheck& WithInterval(int value) { SetInterval(value); return *this;}
@@ -164,7 +163,7 @@ namespace Model
      * value is 5. This value applies only when you specify a <code>command</code>.
      * </p>
      */
-    inline int GetTimeout() const{ return m_timeout; }
+    inline int GetTimeout() const { return m_timeout; }
     inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
     inline void SetTimeout(int value) { m_timeoutHasBeenSet = true; m_timeout = value; }
     inline HealthCheck& WithTimeout(int value) { SetTimeout(value); return *this;}
@@ -177,7 +176,7 @@ namespace Model
      * value is 3. This value applies only when you specify a <code>command</code>.
      * </p>
      */
-    inline int GetRetries() const{ return m_retries; }
+    inline int GetRetries() const { return m_retries; }
     inline bool RetriesHasBeenSet() const { return m_retriesHasBeenSet; }
     inline void SetRetries(int value) { m_retriesHasBeenSet = true; m_retries = value; }
     inline HealthCheck& WithRetries(int value) { SetRetries(value); return *this;}
@@ -193,7 +192,7 @@ namespace Model
      * the container is considered healthy and any subsequent failures count toward the
      * maximum number of retries.</p> 
      */
-    inline int GetStartPeriod() const{ return m_startPeriod; }
+    inline int GetStartPeriod() const { return m_startPeriod; }
     inline bool StartPeriodHasBeenSet() const { return m_startPeriodHasBeenSet; }
     inline void SetStartPeriod(int value) { m_startPeriodHasBeenSet = true; m_startPeriod = value; }
     inline HealthCheck& WithStartPeriod(int value) { SetStartPeriod(value); return *this;}
@@ -203,16 +202,16 @@ namespace Model
     Aws::Vector<Aws::String> m_command;
     bool m_commandHasBeenSet = false;
 
-    int m_interval;
+    int m_interval{0};
     bool m_intervalHasBeenSet = false;
 
-    int m_timeout;
+    int m_timeout{0};
     bool m_timeoutHasBeenSet = false;
 
-    int m_retries;
+    int m_retries{0};
     bool m_retriesHasBeenSet = false;
 
-    int m_startPeriod;
+    int m_startPeriod{0};
     bool m_startPeriodHasBeenSet = false;
   };
 

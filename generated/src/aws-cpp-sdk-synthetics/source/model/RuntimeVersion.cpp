@@ -18,16 +18,7 @@ namespace Synthetics
 namespace Model
 {
 
-RuntimeVersion::RuntimeVersion() : 
-    m_versionNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_releaseDateHasBeenSet(false),
-    m_deprecationDateHasBeenSet(false)
-{
-}
-
 RuntimeVersion::RuntimeVersion(JsonView jsonValue)
-  : RuntimeVersion()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ RuntimeVersion& RuntimeVersion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VersionName"))
   {
     m_versionName = jsonValue.GetString("VersionName");
-
     m_versionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReleaseDate"))
   {
     m_releaseDate = jsonValue.GetDouble("ReleaseDate");
-
     m_releaseDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeprecationDate"))
   {
     m_deprecationDate = jsonValue.GetDouble("DeprecationDate");
-
     m_deprecationDateHasBeenSet = true;
   }
-
   return *this;
 }
 

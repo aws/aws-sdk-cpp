@@ -12,11 +12,6 @@ using namespace Aws::Cloud9::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeEnvironmentsRequest::DescribeEnvironmentsRequest() : 
-    m_environmentIdsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeEnvironmentsRequest::SerializePayload() const
 {
   JsonValue payload;

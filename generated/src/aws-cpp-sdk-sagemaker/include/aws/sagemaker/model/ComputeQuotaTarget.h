@@ -32,7 +32,7 @@ namespace Model
   class ComputeQuotaTarget
   {
   public:
-    AWS_SAGEMAKER_API ComputeQuotaTarget();
+    AWS_SAGEMAKER_API ComputeQuotaTarget() = default;
     AWS_SAGEMAKER_API ComputeQuotaTarget(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ComputeQuotaTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>Name of the team to allocate compute resources to.</p>
      */
-    inline const Aws::String& GetTeamName() const{ return m_teamName; }
+    inline const Aws::String& GetTeamName() const { return m_teamName; }
     inline bool TeamNameHasBeenSet() const { return m_teamNameHasBeenSet; }
-    inline void SetTeamName(const Aws::String& value) { m_teamNameHasBeenSet = true; m_teamName = value; }
-    inline void SetTeamName(Aws::String&& value) { m_teamNameHasBeenSet = true; m_teamName = std::move(value); }
-    inline void SetTeamName(const char* value) { m_teamNameHasBeenSet = true; m_teamName.assign(value); }
-    inline ComputeQuotaTarget& WithTeamName(const Aws::String& value) { SetTeamName(value); return *this;}
-    inline ComputeQuotaTarget& WithTeamName(Aws::String&& value) { SetTeamName(std::move(value)); return *this;}
-    inline ComputeQuotaTarget& WithTeamName(const char* value) { SetTeamName(value); return *this;}
+    template<typename TeamNameT = Aws::String>
+    void SetTeamName(TeamNameT&& value) { m_teamNameHasBeenSet = true; m_teamName = std::forward<TeamNameT>(value); }
+    template<typename TeamNameT = Aws::String>
+    ComputeQuotaTarget& WithTeamName(TeamNameT&& value) { SetTeamName(std::forward<TeamNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,7 +57,7 @@ namespace Model
      * <code>FairShare</code> is enabled.</p> <p>A weight of 0 is the lowest priority
      * and 100 is the highest. Weight 0 is the default.</p>
      */
-    inline int GetFairShareWeight() const{ return m_fairShareWeight; }
+    inline int GetFairShareWeight() const { return m_fairShareWeight; }
     inline bool FairShareWeightHasBeenSet() const { return m_fairShareWeightHasBeenSet; }
     inline void SetFairShareWeight(int value) { m_fairShareWeightHasBeenSet = true; m_fairShareWeight = value; }
     inline ComputeQuotaTarget& WithFairShareWeight(int value) { SetFairShareWeight(value); return *this;}
@@ -69,7 +67,7 @@ namespace Model
     Aws::String m_teamName;
     bool m_teamNameHasBeenSet = false;
 
-    int m_fairShareWeight;
+    int m_fairShareWeight{0};
     bool m_fairShareWeightHasBeenSet = false;
   };
 

@@ -10,14 +10,6 @@
 using namespace Aws::STS::Model;
 using namespace Aws::Utils;
 
-GetSessionTokenRequest::GetSessionTokenRequest() : 
-    m_durationSeconds(0),
-    m_durationSecondsHasBeenSet(false),
-    m_serialNumberHasBeenSet(false),
-    m_tokenCodeHasBeenSet(false)
-{
-}
-
 Aws::String GetSessionTokenRequest::SerializePayload() const
 {
   Aws::StringStream ss;

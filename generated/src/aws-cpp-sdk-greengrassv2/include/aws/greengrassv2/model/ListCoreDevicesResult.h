@@ -29,7 +29,7 @@ namespace Model
   class ListCoreDevicesResult
   {
   public:
-    AWS_GREENGRASSV2_API ListCoreDevicesResult();
+    AWS_GREENGRASSV2_API ListCoreDevicesResult() = default;
     AWS_GREENGRASSV2_API ListCoreDevicesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GREENGRASSV2_API ListCoreDevicesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list that summarizes each core device.</p>
      */
-    inline const Aws::Vector<CoreDevice>& GetCoreDevices() const{ return m_coreDevices; }
-    inline void SetCoreDevices(const Aws::Vector<CoreDevice>& value) { m_coreDevices = value; }
-    inline void SetCoreDevices(Aws::Vector<CoreDevice>&& value) { m_coreDevices = std::move(value); }
-    inline ListCoreDevicesResult& WithCoreDevices(const Aws::Vector<CoreDevice>& value) { SetCoreDevices(value); return *this;}
-    inline ListCoreDevicesResult& WithCoreDevices(Aws::Vector<CoreDevice>&& value) { SetCoreDevices(std::move(value)); return *this;}
-    inline ListCoreDevicesResult& AddCoreDevices(const CoreDevice& value) { m_coreDevices.push_back(value); return *this; }
-    inline ListCoreDevicesResult& AddCoreDevices(CoreDevice&& value) { m_coreDevices.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CoreDevice>& GetCoreDevices() const { return m_coreDevices; }
+    template<typename CoreDevicesT = Aws::Vector<CoreDevice>>
+    void SetCoreDevices(CoreDevicesT&& value) { m_coreDevicesHasBeenSet = true; m_coreDevices = std::forward<CoreDevicesT>(value); }
+    template<typename CoreDevicesT = Aws::Vector<CoreDevice>>
+    ListCoreDevicesResult& WithCoreDevices(CoreDevicesT&& value) { SetCoreDevices(std::forward<CoreDevicesT>(value)); return *this;}
+    template<typename CoreDevicesT = CoreDevice>
+    ListCoreDevicesResult& AddCoreDevices(CoreDevicesT&& value) { m_coreDevicesHasBeenSet = true; m_coreDevices.emplace_back(std::forward<CoreDevicesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The token for the next set of results, or null if there are no additional
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListCoreDevicesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCoreDevicesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCoreDevicesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCoreDevicesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListCoreDevicesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListCoreDevicesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListCoreDevicesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListCoreDevicesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<CoreDevice> m_coreDevices;
+    bool m_coreDevicesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

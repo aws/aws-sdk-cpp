@@ -12,15 +12,6 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeTrustsRequest::DescribeTrustsRequest() : 
-    m_directoryIdHasBeenSet(false),
-    m_trustIdsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String DescribeTrustsRequest::SerializePayload() const
 {
   JsonValue payload;

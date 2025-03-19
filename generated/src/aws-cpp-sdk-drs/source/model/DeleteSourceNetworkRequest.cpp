@@ -12,11 +12,6 @@ using namespace Aws::drs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSourceNetworkRequest::DeleteSourceNetworkRequest() : 
-    m_sourceNetworkIDHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSourceNetworkRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListWorkloadDeploymentPatternsResult::ListWorkloadDeploymentPatternsResult()
-{
-}
-
 ListWorkloadDeploymentPatternsResult::ListWorkloadDeploymentPatternsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListWorkloadDeploymentPatternsResult& ListWorkloadDeploymentPatternsResult::oper
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workloadDeploymentPatterns"))
   {
     Aws::Utils::Array<JsonView> workloadDeploymentPatternsJsonList = jsonValue.GetArray("workloadDeploymentPatterns");
@@ -42,14 +37,15 @@ ListWorkloadDeploymentPatternsResult& ListWorkloadDeploymentPatternsResult::oper
     {
       m_workloadDeploymentPatterns.push_back(workloadDeploymentPatternsJsonList[workloadDeploymentPatternsIndex].AsObject());
     }
+    m_workloadDeploymentPatternsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

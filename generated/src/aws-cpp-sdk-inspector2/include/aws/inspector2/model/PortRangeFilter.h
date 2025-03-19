@@ -30,7 +30,7 @@ namespace Model
   class PortRangeFilter
   {
   public:
-    AWS_INSPECTOR2_API PortRangeFilter();
+    AWS_INSPECTOR2_API PortRangeFilter() = default;
     AWS_INSPECTOR2_API PortRangeFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API PortRangeFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>The port number the port range begins at.</p>
      */
-    inline int GetBeginInclusive() const{ return m_beginInclusive; }
+    inline int GetBeginInclusive() const { return m_beginInclusive; }
     inline bool BeginInclusiveHasBeenSet() const { return m_beginInclusiveHasBeenSet; }
     inline void SetBeginInclusive(int value) { m_beginInclusiveHasBeenSet = true; m_beginInclusive = value; }
     inline PortRangeFilter& WithBeginInclusive(int value) { SetBeginInclusive(value); return *this;}
@@ -50,17 +50,17 @@ namespace Model
     /**
      * <p>The port number the port range ends at.</p>
      */
-    inline int GetEndInclusive() const{ return m_endInclusive; }
+    inline int GetEndInclusive() const { return m_endInclusive; }
     inline bool EndInclusiveHasBeenSet() const { return m_endInclusiveHasBeenSet; }
     inline void SetEndInclusive(int value) { m_endInclusiveHasBeenSet = true; m_endInclusive = value; }
     inline PortRangeFilter& WithEndInclusive(int value) { SetEndInclusive(value); return *this;}
     ///@}
   private:
 
-    int m_beginInclusive;
+    int m_beginInclusive{0};
     bool m_beginInclusiveHasBeenSet = false;
 
-    int m_endInclusive;
+    int m_endInclusive{0};
     bool m_endInclusiveHasBeenSet = false;
   };
 

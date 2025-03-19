@@ -12,11 +12,6 @@ using namespace Aws::ElasticsearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetUpgradeStatusRequest::GetUpgradeStatusRequest() : 
-    m_domainNameHasBeenSet(false)
-{
-}
-
 Aws::String GetUpgradeStatusRequest::SerializePayload() const
 {
   return {};

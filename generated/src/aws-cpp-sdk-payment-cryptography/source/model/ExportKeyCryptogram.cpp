@@ -18,16 +18,7 @@ namespace PaymentCryptography
 namespace Model
 {
 
-ExportKeyCryptogram::ExportKeyCryptogram() : 
-    m_certificateAuthorityPublicKeyIdentifierHasBeenSet(false),
-    m_wrappingKeyCertificateHasBeenSet(false),
-    m_wrappingSpec(WrappingKeySpec::NOT_SET),
-    m_wrappingSpecHasBeenSet(false)
-{
-}
-
 ExportKeyCryptogram::ExportKeyCryptogram(JsonView jsonValue)
-  : ExportKeyCryptogram()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ExportKeyCryptogram& ExportKeyCryptogram::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CertificateAuthorityPublicKeyIdentifier"))
   {
     m_certificateAuthorityPublicKeyIdentifier = jsonValue.GetString("CertificateAuthorityPublicKeyIdentifier");
-
     m_certificateAuthorityPublicKeyIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WrappingKeyCertificate"))
   {
     m_wrappingKeyCertificate = jsonValue.GetString("WrappingKeyCertificate");
-
     m_wrappingKeyCertificateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WrappingSpec"))
   {
     m_wrappingSpec = WrappingKeySpecMapper::GetWrappingKeySpecForName(jsonValue.GetString("WrappingSpec"));
-
     m_wrappingSpecHasBeenSet = true;
   }
-
   return *this;
 }
 

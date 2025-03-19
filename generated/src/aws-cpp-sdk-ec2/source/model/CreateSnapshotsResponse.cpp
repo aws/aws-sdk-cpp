@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateSnapshotsResponse::CreateSnapshotsResponse()
-{
-}
-
 CreateSnapshotsResponse::CreateSnapshotsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ CreateSnapshotsResponse& CreateSnapshotsResponse::operator =(const Aws::AmazonWe
     if(!snapshotsNode.IsNull())
     {
       XmlNode snapshotsMember = snapshotsNode.FirstChild("item");
+      m_snapshotsHasBeenSet = !snapshotsMember.IsNull();
       while(!snapshotsMember.IsNull())
       {
         m_snapshots.push_back(snapshotsMember);
         snapshotsMember = snapshotsMember.NextNode("item");
       }
 
+      m_snapshotsHasBeenSet = true;
     }
   }
 
@@ -56,6 +54,7 @@ CreateSnapshotsResponse& CreateSnapshotsResponse::operator =(const Aws::AmazonWe
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::CreateSnapshotsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

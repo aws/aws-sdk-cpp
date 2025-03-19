@@ -18,14 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-CloudWatchLogGroupLogDestination::CloudWatchLogGroupLogDestination() : 
-    m_cloudWatchLogGroupArnHasBeenSet(false),
-    m_logPrefixHasBeenSet(false)
-{
-}
-
 CloudWatchLogGroupLogDestination::CloudWatchLogGroupLogDestination(JsonView jsonValue)
-  : CloudWatchLogGroupLogDestination()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CloudWatchLogGroupLogDestination& CloudWatchLogGroupLogDestination::operator =(J
   if(jsonValue.ValueExists("cloudWatchLogGroupArn"))
   {
     m_cloudWatchLogGroupArn = jsonValue.GetString("cloudWatchLogGroupArn");
-
     m_cloudWatchLogGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logPrefix"))
   {
     m_logPrefix = jsonValue.GetString("logPrefix");
-
     m_logPrefixHasBeenSet = true;
   }
-
   return *this;
 }
 

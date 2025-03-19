@@ -40,7 +40,7 @@ namespace Model
   class AccessPreviewFinding
   {
   public:
-    AWS_ACCESSANALYZER_API AccessPreviewFinding();
+    AWS_ACCESSANALYZER_API AccessPreviewFinding() = default;
     AWS_ACCESSANALYZER_API AccessPreviewFinding(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API AccessPreviewFinding& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,14 +52,12 @@ namespace Model
      * in the list of access preview findings and is not related to the finding ID in
      * Access Analyzer.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline AccessPreviewFinding& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline AccessPreviewFinding& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline AccessPreviewFinding& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    AccessPreviewFinding& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,26 +65,22 @@ namespace Model
      * <p>The existing ID of the finding in IAM Access Analyzer, provided only for
      * existing findings.</p>
      */
-    inline const Aws::String& GetExistingFindingId() const{ return m_existingFindingId; }
+    inline const Aws::String& GetExistingFindingId() const { return m_existingFindingId; }
     inline bool ExistingFindingIdHasBeenSet() const { return m_existingFindingIdHasBeenSet; }
-    inline void SetExistingFindingId(const Aws::String& value) { m_existingFindingIdHasBeenSet = true; m_existingFindingId = value; }
-    inline void SetExistingFindingId(Aws::String&& value) { m_existingFindingIdHasBeenSet = true; m_existingFindingId = std::move(value); }
-    inline void SetExistingFindingId(const char* value) { m_existingFindingIdHasBeenSet = true; m_existingFindingId.assign(value); }
-    inline AccessPreviewFinding& WithExistingFindingId(const Aws::String& value) { SetExistingFindingId(value); return *this;}
-    inline AccessPreviewFinding& WithExistingFindingId(Aws::String&& value) { SetExistingFindingId(std::move(value)); return *this;}
-    inline AccessPreviewFinding& WithExistingFindingId(const char* value) { SetExistingFindingId(value); return *this;}
+    template<typename ExistingFindingIdT = Aws::String>
+    void SetExistingFindingId(ExistingFindingIdT&& value) { m_existingFindingIdHasBeenSet = true; m_existingFindingId = std::forward<ExistingFindingIdT>(value); }
+    template<typename ExistingFindingIdT = Aws::String>
+    AccessPreviewFinding& WithExistingFindingId(ExistingFindingIdT&& value) { SetExistingFindingId(std::forward<ExistingFindingIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The existing status of the finding, provided only for existing findings.</p>
      */
-    inline const FindingStatus& GetExistingFindingStatus() const{ return m_existingFindingStatus; }
+    inline FindingStatus GetExistingFindingStatus() const { return m_existingFindingStatus; }
     inline bool ExistingFindingStatusHasBeenSet() const { return m_existingFindingStatusHasBeenSet; }
-    inline void SetExistingFindingStatus(const FindingStatus& value) { m_existingFindingStatusHasBeenSet = true; m_existingFindingStatus = value; }
-    inline void SetExistingFindingStatus(FindingStatus&& value) { m_existingFindingStatusHasBeenSet = true; m_existingFindingStatus = std::move(value); }
-    inline AccessPreviewFinding& WithExistingFindingStatus(const FindingStatus& value) { SetExistingFindingStatus(value); return *this;}
-    inline AccessPreviewFinding& WithExistingFindingStatus(FindingStatus&& value) { SetExistingFindingStatus(std::move(value)); return *this;}
+    inline void SetExistingFindingStatus(FindingStatus value) { m_existingFindingStatusHasBeenSet = true; m_existingFindingStatus = value; }
+    inline AccessPreviewFinding& WithExistingFindingStatus(FindingStatus value) { SetExistingFindingStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -94,19 +88,16 @@ namespace Model
      * <p>The external principal that has access to a resource within the zone of
      * trust.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetPrincipal() const{ return m_principal; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetPrincipal() const { return m_principal; }
     inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }
-    inline void SetPrincipal(const Aws::Map<Aws::String, Aws::String>& value) { m_principalHasBeenSet = true; m_principal = value; }
-    inline void SetPrincipal(Aws::Map<Aws::String, Aws::String>&& value) { m_principalHasBeenSet = true; m_principal = std::move(value); }
-    inline AccessPreviewFinding& WithPrincipal(const Aws::Map<Aws::String, Aws::String>& value) { SetPrincipal(value); return *this;}
-    inline AccessPreviewFinding& WithPrincipal(Aws::Map<Aws::String, Aws::String>&& value) { SetPrincipal(std::move(value)); return *this;}
-    inline AccessPreviewFinding& AddPrincipal(const Aws::String& key, const Aws::String& value) { m_principalHasBeenSet = true; m_principal.emplace(key, value); return *this; }
-    inline AccessPreviewFinding& AddPrincipal(Aws::String&& key, const Aws::String& value) { m_principalHasBeenSet = true; m_principal.emplace(std::move(key), value); return *this; }
-    inline AccessPreviewFinding& AddPrincipal(const Aws::String& key, Aws::String&& value) { m_principalHasBeenSet = true; m_principal.emplace(key, std::move(value)); return *this; }
-    inline AccessPreviewFinding& AddPrincipal(Aws::String&& key, Aws::String&& value) { m_principalHasBeenSet = true; m_principal.emplace(std::move(key), std::move(value)); return *this; }
-    inline AccessPreviewFinding& AddPrincipal(const char* key, Aws::String&& value) { m_principalHasBeenSet = true; m_principal.emplace(key, std::move(value)); return *this; }
-    inline AccessPreviewFinding& AddPrincipal(Aws::String&& key, const char* value) { m_principalHasBeenSet = true; m_principal.emplace(std::move(key), value); return *this; }
-    inline AccessPreviewFinding& AddPrincipal(const char* key, const char* value) { m_principalHasBeenSet = true; m_principal.emplace(key, value); return *this; }
+    template<typename PrincipalT = Aws::Map<Aws::String, Aws::String>>
+    void SetPrincipal(PrincipalT&& value) { m_principalHasBeenSet = true; m_principal = std::forward<PrincipalT>(value); }
+    template<typename PrincipalT = Aws::Map<Aws::String, Aws::String>>
+    AccessPreviewFinding& WithPrincipal(PrincipalT&& value) { SetPrincipal(std::forward<PrincipalT>(value)); return *this;}
+    template<typename PrincipalKeyT = Aws::String, typename PrincipalValueT = Aws::String>
+    AccessPreviewFinding& AddPrincipal(PrincipalKeyT&& key, PrincipalValueT&& value) {
+      m_principalHasBeenSet = true; m_principal.emplace(std::forward<PrincipalKeyT>(key), std::forward<PrincipalValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -114,15 +105,14 @@ namespace Model
      * <p>The action in the analyzed policy statement that an external principal has
      * permission to perform.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAction() const{ return m_action; }
+    inline const Aws::Vector<Aws::String>& GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const Aws::Vector<Aws::String>& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(Aws::Vector<Aws::String>&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline AccessPreviewFinding& WithAction(const Aws::Vector<Aws::String>& value) { SetAction(value); return *this;}
-    inline AccessPreviewFinding& WithAction(Aws::Vector<Aws::String>&& value) { SetAction(std::move(value)); return *this;}
-    inline AccessPreviewFinding& AddAction(const Aws::String& value) { m_actionHasBeenSet = true; m_action.push_back(value); return *this; }
-    inline AccessPreviewFinding& AddAction(Aws::String&& value) { m_actionHasBeenSet = true; m_action.push_back(std::move(value)); return *this; }
-    inline AccessPreviewFinding& AddAction(const char* value) { m_actionHasBeenSet = true; m_action.push_back(value); return *this; }
+    template<typename ActionT = Aws::Vector<Aws::String>>
+    void SetAction(ActionT&& value) { m_actionHasBeenSet = true; m_action = std::forward<ActionT>(value); }
+    template<typename ActionT = Aws::Vector<Aws::String>>
+    AccessPreviewFinding& WithAction(ActionT&& value) { SetAction(std::forward<ActionT>(value)); return *this;}
+    template<typename ActionT = Aws::String>
+    AccessPreviewFinding& AddAction(ActionT&& value) { m_actionHasBeenSet = true; m_action.emplace_back(std::forward<ActionT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -130,19 +120,16 @@ namespace Model
      * <p>The condition in the analyzed policy statement that resulted in a
      * finding.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetCondition() const{ return m_condition; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetCondition() const { return m_condition; }
     inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
-    inline void SetCondition(const Aws::Map<Aws::String, Aws::String>& value) { m_conditionHasBeenSet = true; m_condition = value; }
-    inline void SetCondition(Aws::Map<Aws::String, Aws::String>&& value) { m_conditionHasBeenSet = true; m_condition = std::move(value); }
-    inline AccessPreviewFinding& WithCondition(const Aws::Map<Aws::String, Aws::String>& value) { SetCondition(value); return *this;}
-    inline AccessPreviewFinding& WithCondition(Aws::Map<Aws::String, Aws::String>&& value) { SetCondition(std::move(value)); return *this;}
-    inline AccessPreviewFinding& AddCondition(const Aws::String& key, const Aws::String& value) { m_conditionHasBeenSet = true; m_condition.emplace(key, value); return *this; }
-    inline AccessPreviewFinding& AddCondition(Aws::String&& key, const Aws::String& value) { m_conditionHasBeenSet = true; m_condition.emplace(std::move(key), value); return *this; }
-    inline AccessPreviewFinding& AddCondition(const Aws::String& key, Aws::String&& value) { m_conditionHasBeenSet = true; m_condition.emplace(key, std::move(value)); return *this; }
-    inline AccessPreviewFinding& AddCondition(Aws::String&& key, Aws::String&& value) { m_conditionHasBeenSet = true; m_condition.emplace(std::move(key), std::move(value)); return *this; }
-    inline AccessPreviewFinding& AddCondition(const char* key, Aws::String&& value) { m_conditionHasBeenSet = true; m_condition.emplace(key, std::move(value)); return *this; }
-    inline AccessPreviewFinding& AddCondition(Aws::String&& key, const char* value) { m_conditionHasBeenSet = true; m_condition.emplace(std::move(key), value); return *this; }
-    inline AccessPreviewFinding& AddCondition(const char* key, const char* value) { m_conditionHasBeenSet = true; m_condition.emplace(key, value); return *this; }
+    template<typename ConditionT = Aws::Map<Aws::String, Aws::String>>
+    void SetCondition(ConditionT&& value) { m_conditionHasBeenSet = true; m_condition = std::forward<ConditionT>(value); }
+    template<typename ConditionT = Aws::Map<Aws::String, Aws::String>>
+    AccessPreviewFinding& WithCondition(ConditionT&& value) { SetCondition(std::forward<ConditionT>(value)); return *this;}
+    template<typename ConditionKeyT = Aws::String, typename ConditionValueT = Aws::String>
+    AccessPreviewFinding& AddCondition(ConditionKeyT&& key, ConditionValueT&& value) {
+      m_conditionHasBeenSet = true; m_condition.emplace(std::forward<ConditionKeyT>(key), std::forward<ConditionValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -150,14 +137,12 @@ namespace Model
      * <p>The resource that an external principal has access to. This is the resource
      * associated with the access preview.</p>
      */
-    inline const Aws::String& GetResource() const{ return m_resource; }
+    inline const Aws::String& GetResource() const { return m_resource; }
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
-    inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
-    inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
-    inline void SetResource(const char* value) { m_resourceHasBeenSet = true; m_resource.assign(value); }
-    inline AccessPreviewFinding& WithResource(const Aws::String& value) { SetResource(value); return *this;}
-    inline AccessPreviewFinding& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
-    inline AccessPreviewFinding& WithResource(const char* value) { SetResource(value); return *this;}
+    template<typename ResourceT = Aws::String>
+    void SetResource(ResourceT&& value) { m_resourceHasBeenSet = true; m_resource = std::forward<ResourceT>(value); }
+    template<typename ResourceT = Aws::String>
+    AccessPreviewFinding& WithResource(ResourceT&& value) { SetResource(std::forward<ResourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -165,7 +150,7 @@ namespace Model
      * <p>Indicates whether the policy that generated the finding allows public access
      * to the resource.</p>
      */
-    inline bool GetIsPublic() const{ return m_isPublic; }
+    inline bool GetIsPublic() const { return m_isPublic; }
     inline bool IsPublicHasBeenSet() const { return m_isPublicHasBeenSet; }
     inline void SetIsPublic(bool value) { m_isPublicHasBeenSet = true; m_isPublic = value; }
     inline AccessPreviewFinding& WithIsPublic(bool value) { SetIsPublic(value); return *this;}
@@ -175,24 +160,22 @@ namespace Model
     /**
      * <p>The type of the resource that can be accessed in the finding.</p>
      */
-    inline const ResourceType& GetResourceType() const{ return m_resourceType; }
+    inline ResourceType GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline AccessPreviewFinding& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
-    inline AccessPreviewFinding& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    inline void SetResourceType(ResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline AccessPreviewFinding& WithResourceType(ResourceType value) { SetResourceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time at which the access preview finding was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline AccessPreviewFinding& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline AccessPreviewFinding& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    AccessPreviewFinding& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -208,12 +191,10 @@ namespace Model
      * finding would become <code>Resolved</code> as a result of the proposed
      * permissions change.</p>
      */
-    inline const FindingChangeType& GetChangeType() const{ return m_changeType; }
+    inline FindingChangeType GetChangeType() const { return m_changeType; }
     inline bool ChangeTypeHasBeenSet() const { return m_changeTypeHasBeenSet; }
-    inline void SetChangeType(const FindingChangeType& value) { m_changeTypeHasBeenSet = true; m_changeType = value; }
-    inline void SetChangeType(FindingChangeType&& value) { m_changeTypeHasBeenSet = true; m_changeType = std::move(value); }
-    inline AccessPreviewFinding& WithChangeType(const FindingChangeType& value) { SetChangeType(value); return *this;}
-    inline AccessPreviewFinding& WithChangeType(FindingChangeType&& value) { SetChangeType(std::move(value)); return *this;}
+    inline void SetChangeType(FindingChangeType value) { m_changeTypeHasBeenSet = true; m_changeType = value; }
+    inline AccessPreviewFinding& WithChangeType(FindingChangeType value) { SetChangeType(value); return *this;}
     ///@}
 
     ///@{
@@ -224,12 +205,10 @@ namespace Model
      * <code>Active</code> indicates the existing <code>Active</code> finding would
      * become <code>Resolved</code> as a result of the proposed permissions change.</p>
      */
-    inline const FindingStatus& GetStatus() const{ return m_status; }
+    inline FindingStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const FindingStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(FindingStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline AccessPreviewFinding& WithStatus(const FindingStatus& value) { SetStatus(value); return *this;}
-    inline AccessPreviewFinding& WithStatus(FindingStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(FindingStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline AccessPreviewFinding& WithStatus(FindingStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -238,28 +217,24 @@ namespace Model
      * Web Services resources, the owning account is the account in which the resource
      * was created.</p>
      */
-    inline const Aws::String& GetResourceOwnerAccount() const{ return m_resourceOwnerAccount; }
+    inline const Aws::String& GetResourceOwnerAccount() const { return m_resourceOwnerAccount; }
     inline bool ResourceOwnerAccountHasBeenSet() const { return m_resourceOwnerAccountHasBeenSet; }
-    inline void SetResourceOwnerAccount(const Aws::String& value) { m_resourceOwnerAccountHasBeenSet = true; m_resourceOwnerAccount = value; }
-    inline void SetResourceOwnerAccount(Aws::String&& value) { m_resourceOwnerAccountHasBeenSet = true; m_resourceOwnerAccount = std::move(value); }
-    inline void SetResourceOwnerAccount(const char* value) { m_resourceOwnerAccountHasBeenSet = true; m_resourceOwnerAccount.assign(value); }
-    inline AccessPreviewFinding& WithResourceOwnerAccount(const Aws::String& value) { SetResourceOwnerAccount(value); return *this;}
-    inline AccessPreviewFinding& WithResourceOwnerAccount(Aws::String&& value) { SetResourceOwnerAccount(std::move(value)); return *this;}
-    inline AccessPreviewFinding& WithResourceOwnerAccount(const char* value) { SetResourceOwnerAccount(value); return *this;}
+    template<typename ResourceOwnerAccountT = Aws::String>
+    void SetResourceOwnerAccount(ResourceOwnerAccountT&& value) { m_resourceOwnerAccountHasBeenSet = true; m_resourceOwnerAccount = std::forward<ResourceOwnerAccountT>(value); }
+    template<typename ResourceOwnerAccountT = Aws::String>
+    AccessPreviewFinding& WithResourceOwnerAccount(ResourceOwnerAccountT&& value) { SetResourceOwnerAccount(std::forward<ResourceOwnerAccountT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An error.</p>
      */
-    inline const Aws::String& GetError() const{ return m_error; }
+    inline const Aws::String& GetError() const { return m_error; }
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-    inline void SetError(const Aws::String& value) { m_errorHasBeenSet = true; m_error = value; }
-    inline void SetError(Aws::String&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-    inline void SetError(const char* value) { m_errorHasBeenSet = true; m_error.assign(value); }
-    inline AccessPreviewFinding& WithError(const Aws::String& value) { SetError(value); return *this;}
-    inline AccessPreviewFinding& WithError(Aws::String&& value) { SetError(std::move(value)); return *this;}
-    inline AccessPreviewFinding& WithError(const char* value) { SetError(value); return *this;}
+    template<typename ErrorT = Aws::String>
+    void SetError(ErrorT&& value) { m_errorHasBeenSet = true; m_error = std::forward<ErrorT>(value); }
+    template<typename ErrorT = Aws::String>
+    AccessPreviewFinding& WithError(ErrorT&& value) { SetError(std::forward<ErrorT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -267,14 +242,14 @@ namespace Model
      * <p>The sources of the finding. This indicates how the access that generated the
      * finding is granted. It is populated for Amazon S3 bucket findings.</p>
      */
-    inline const Aws::Vector<FindingSource>& GetSources() const{ return m_sources; }
+    inline const Aws::Vector<FindingSource>& GetSources() const { return m_sources; }
     inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }
-    inline void SetSources(const Aws::Vector<FindingSource>& value) { m_sourcesHasBeenSet = true; m_sources = value; }
-    inline void SetSources(Aws::Vector<FindingSource>&& value) { m_sourcesHasBeenSet = true; m_sources = std::move(value); }
-    inline AccessPreviewFinding& WithSources(const Aws::Vector<FindingSource>& value) { SetSources(value); return *this;}
-    inline AccessPreviewFinding& WithSources(Aws::Vector<FindingSource>&& value) { SetSources(std::move(value)); return *this;}
-    inline AccessPreviewFinding& AddSources(const FindingSource& value) { m_sourcesHasBeenSet = true; m_sources.push_back(value); return *this; }
-    inline AccessPreviewFinding& AddSources(FindingSource&& value) { m_sourcesHasBeenSet = true; m_sources.push_back(std::move(value)); return *this; }
+    template<typename SourcesT = Aws::Vector<FindingSource>>
+    void SetSources(SourcesT&& value) { m_sourcesHasBeenSet = true; m_sources = std::forward<SourcesT>(value); }
+    template<typename SourcesT = Aws::Vector<FindingSource>>
+    AccessPreviewFinding& WithSources(SourcesT&& value) { SetSources(std::forward<SourcesT>(value)); return *this;}
+    template<typename SourcesT = FindingSource>
+    AccessPreviewFinding& AddSources(SourcesT&& value) { m_sourcesHasBeenSet = true; m_sources.emplace_back(std::forward<SourcesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -282,12 +257,10 @@ namespace Model
      * <p>The type of restriction applied to the finding by the resource owner with an
      * Organizations resource control policy (RCP).</p>
      */
-    inline const ResourceControlPolicyRestriction& GetResourceControlPolicyRestriction() const{ return m_resourceControlPolicyRestriction; }
+    inline ResourceControlPolicyRestriction GetResourceControlPolicyRestriction() const { return m_resourceControlPolicyRestriction; }
     inline bool ResourceControlPolicyRestrictionHasBeenSet() const { return m_resourceControlPolicyRestrictionHasBeenSet; }
-    inline void SetResourceControlPolicyRestriction(const ResourceControlPolicyRestriction& value) { m_resourceControlPolicyRestrictionHasBeenSet = true; m_resourceControlPolicyRestriction = value; }
-    inline void SetResourceControlPolicyRestriction(ResourceControlPolicyRestriction&& value) { m_resourceControlPolicyRestrictionHasBeenSet = true; m_resourceControlPolicyRestriction = std::move(value); }
-    inline AccessPreviewFinding& WithResourceControlPolicyRestriction(const ResourceControlPolicyRestriction& value) { SetResourceControlPolicyRestriction(value); return *this;}
-    inline AccessPreviewFinding& WithResourceControlPolicyRestriction(ResourceControlPolicyRestriction&& value) { SetResourceControlPolicyRestriction(std::move(value)); return *this;}
+    inline void SetResourceControlPolicyRestriction(ResourceControlPolicyRestriction value) { m_resourceControlPolicyRestrictionHasBeenSet = true; m_resourceControlPolicyRestriction = value; }
+    inline AccessPreviewFinding& WithResourceControlPolicyRestriction(ResourceControlPolicyRestriction value) { SetResourceControlPolicyRestriction(value); return *this;}
     ///@}
   private:
 
@@ -297,7 +270,7 @@ namespace Model
     Aws::String m_existingFindingId;
     bool m_existingFindingIdHasBeenSet = false;
 
-    FindingStatus m_existingFindingStatus;
+    FindingStatus m_existingFindingStatus{FindingStatus::NOT_SET};
     bool m_existingFindingStatusHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_principal;
@@ -312,19 +285,19 @@ namespace Model
     Aws::String m_resource;
     bool m_resourceHasBeenSet = false;
 
-    bool m_isPublic;
+    bool m_isPublic{false};
     bool m_isPublicHasBeenSet = false;
 
-    ResourceType m_resourceType;
+    ResourceType m_resourceType{ResourceType::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
-    FindingChangeType m_changeType;
+    FindingChangeType m_changeType{FindingChangeType::NOT_SET};
     bool m_changeTypeHasBeenSet = false;
 
-    FindingStatus m_status;
+    FindingStatus m_status{FindingStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_resourceOwnerAccount;
@@ -336,7 +309,7 @@ namespace Model
     Aws::Vector<FindingSource> m_sources;
     bool m_sourcesHasBeenSet = false;
 
-    ResourceControlPolicyRestriction m_resourceControlPolicyRestriction;
+    ResourceControlPolicyRestriction m_resourceControlPolicyRestriction{ResourceControlPolicyRestriction::NOT_SET};
     bool m_resourceControlPolicyRestrictionHasBeenSet = false;
   };
 

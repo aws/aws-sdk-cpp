@@ -34,7 +34,7 @@ namespace Model
   class BandMathConfigInput
   {
   public:
-    AWS_SAGEMAKERGEOSPATIAL_API BandMathConfigInput();
+    AWS_SAGEMAKERGEOSPATIAL_API BandMathConfigInput() = default;
     AWS_SAGEMAKERGEOSPATIAL_API BandMathConfigInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERGEOSPATIAL_API BandMathConfigInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
     /**
      * <p>CustomIndices that are computed.</p>
      */
-    inline const CustomIndicesInput& GetCustomIndices() const{ return m_customIndices; }
+    inline const CustomIndicesInput& GetCustomIndices() const { return m_customIndices; }
     inline bool CustomIndicesHasBeenSet() const { return m_customIndicesHasBeenSet; }
-    inline void SetCustomIndices(const CustomIndicesInput& value) { m_customIndicesHasBeenSet = true; m_customIndices = value; }
-    inline void SetCustomIndices(CustomIndicesInput&& value) { m_customIndicesHasBeenSet = true; m_customIndices = std::move(value); }
-    inline BandMathConfigInput& WithCustomIndices(const CustomIndicesInput& value) { SetCustomIndices(value); return *this;}
-    inline BandMathConfigInput& WithCustomIndices(CustomIndicesInput&& value) { SetCustomIndices(std::move(value)); return *this;}
+    template<typename CustomIndicesT = CustomIndicesInput>
+    void SetCustomIndices(CustomIndicesT&& value) { m_customIndicesHasBeenSet = true; m_customIndices = std::forward<CustomIndicesT>(value); }
+    template<typename CustomIndicesT = CustomIndicesInput>
+    BandMathConfigInput& WithCustomIndices(CustomIndicesT&& value) { SetCustomIndices(std::forward<CustomIndicesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,15 +58,14 @@ namespace Model
      * <code>NDVI</code>, <code>EVI2</code>, <code>MSAVI</code>, <code>NDWI</code>,
      * <code>NDMI</code>, <code>NDSI</code>, and <code>WDRVI</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPredefinedIndices() const{ return m_predefinedIndices; }
+    inline const Aws::Vector<Aws::String>& GetPredefinedIndices() const { return m_predefinedIndices; }
     inline bool PredefinedIndicesHasBeenSet() const { return m_predefinedIndicesHasBeenSet; }
-    inline void SetPredefinedIndices(const Aws::Vector<Aws::String>& value) { m_predefinedIndicesHasBeenSet = true; m_predefinedIndices = value; }
-    inline void SetPredefinedIndices(Aws::Vector<Aws::String>&& value) { m_predefinedIndicesHasBeenSet = true; m_predefinedIndices = std::move(value); }
-    inline BandMathConfigInput& WithPredefinedIndices(const Aws::Vector<Aws::String>& value) { SetPredefinedIndices(value); return *this;}
-    inline BandMathConfigInput& WithPredefinedIndices(Aws::Vector<Aws::String>&& value) { SetPredefinedIndices(std::move(value)); return *this;}
-    inline BandMathConfigInput& AddPredefinedIndices(const Aws::String& value) { m_predefinedIndicesHasBeenSet = true; m_predefinedIndices.push_back(value); return *this; }
-    inline BandMathConfigInput& AddPredefinedIndices(Aws::String&& value) { m_predefinedIndicesHasBeenSet = true; m_predefinedIndices.push_back(std::move(value)); return *this; }
-    inline BandMathConfigInput& AddPredefinedIndices(const char* value) { m_predefinedIndicesHasBeenSet = true; m_predefinedIndices.push_back(value); return *this; }
+    template<typename PredefinedIndicesT = Aws::Vector<Aws::String>>
+    void SetPredefinedIndices(PredefinedIndicesT&& value) { m_predefinedIndicesHasBeenSet = true; m_predefinedIndices = std::forward<PredefinedIndicesT>(value); }
+    template<typename PredefinedIndicesT = Aws::Vector<Aws::String>>
+    BandMathConfigInput& WithPredefinedIndices(PredefinedIndicesT&& value) { SetPredefinedIndices(std::forward<PredefinedIndicesT>(value)); return *this;}
+    template<typename PredefinedIndicesT = Aws::String>
+    BandMathConfigInput& AddPredefinedIndices(PredefinedIndicesT&& value) { m_predefinedIndicesHasBeenSet = true; m_predefinedIndices.emplace_back(std::forward<PredefinedIndicesT>(value)); return *this; }
     ///@}
   private:
 

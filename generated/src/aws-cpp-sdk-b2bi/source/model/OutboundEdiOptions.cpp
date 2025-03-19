@@ -18,13 +18,7 @@ namespace B2BI
 namespace Model
 {
 
-OutboundEdiOptions::OutboundEdiOptions() : 
-    m_x12HasBeenSet(false)
-{
-}
-
 OutboundEdiOptions::OutboundEdiOptions(JsonView jsonValue)
-  : OutboundEdiOptions()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ OutboundEdiOptions& OutboundEdiOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("x12"))
   {
     m_x12 = jsonValue.GetObject("x12");
-
     m_x12HasBeenSet = true;
   }
-
   return *this;
 }
 

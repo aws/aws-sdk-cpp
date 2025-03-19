@@ -18,15 +18,7 @@ namespace ConnectCases
 namespace Model
 {
 
-AuditEventField::AuditEventField() : 
-    m_eventFieldIdHasBeenSet(false),
-    m_newValueHasBeenSet(false),
-    m_oldValueHasBeenSet(false)
-{
-}
-
 AuditEventField::AuditEventField(JsonView jsonValue)
-  : AuditEventField()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AuditEventField& AuditEventField::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("eventFieldId"))
   {
     m_eventFieldId = jsonValue.GetString("eventFieldId");
-
     m_eventFieldIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("newValue"))
   {
     m_newValue = jsonValue.GetObject("newValue");
-
     m_newValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("oldValue"))
   {
     m_oldValue = jsonValue.GetObject("oldValue");
-
     m_oldValueHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace Proton
 namespace Model
 {
 
-RepositoryBranchInput::RepositoryBranchInput() : 
-    m_branchHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_provider(RepositoryProvider::NOT_SET),
-    m_providerHasBeenSet(false)
-{
-}
-
 RepositoryBranchInput::RepositoryBranchInput(JsonView jsonValue)
-  : RepositoryBranchInput()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ RepositoryBranchInput& RepositoryBranchInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("branch"))
   {
     m_branch = jsonValue.GetString("branch");
-
     m_branchHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("provider"))
   {
     m_provider = RepositoryProviderMapper::GetRepositoryProviderForName(jsonValue.GetString("provider"));
-
     m_providerHasBeenSet = true;
   }
-
   return *this;
 }
 

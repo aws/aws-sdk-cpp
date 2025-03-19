@@ -12,12 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopWorkflowRunRequest::StopWorkflowRunRequest() : 
-    m_nameHasBeenSet(false),
-    m_runIdHasBeenSet(false)
-{
-}
-
 Aws::String StopWorkflowRunRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -22,7 +22,7 @@ namespace Model
   class CreateHomeRegionControlRequest : public MigrationHubConfigRequest
   {
   public:
-    AWS_MIGRATIONHUBCONFIG_API CreateHomeRegionControlRequest();
+    AWS_MIGRATIONHUBCONFIG_API CreateHomeRegionControlRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The name of the home region of the calling account.</p>
      */
-    inline const Aws::String& GetHomeRegion() const{ return m_homeRegion; }
+    inline const Aws::String& GetHomeRegion() const { return m_homeRegion; }
     inline bool HomeRegionHasBeenSet() const { return m_homeRegionHasBeenSet; }
-    inline void SetHomeRegion(const Aws::String& value) { m_homeRegionHasBeenSet = true; m_homeRegion = value; }
-    inline void SetHomeRegion(Aws::String&& value) { m_homeRegionHasBeenSet = true; m_homeRegion = std::move(value); }
-    inline void SetHomeRegion(const char* value) { m_homeRegionHasBeenSet = true; m_homeRegion.assign(value); }
-    inline CreateHomeRegionControlRequest& WithHomeRegion(const Aws::String& value) { SetHomeRegion(value); return *this;}
-    inline CreateHomeRegionControlRequest& WithHomeRegion(Aws::String&& value) { SetHomeRegion(std::move(value)); return *this;}
-    inline CreateHomeRegionControlRequest& WithHomeRegion(const char* value) { SetHomeRegion(value); return *this;}
+    template<typename HomeRegionT = Aws::String>
+    void SetHomeRegion(HomeRegionT&& value) { m_homeRegionHasBeenSet = true; m_homeRegion = std::forward<HomeRegionT>(value); }
+    template<typename HomeRegionT = Aws::String>
+    CreateHomeRegionControlRequest& WithHomeRegion(HomeRegionT&& value) { SetHomeRegion(std::forward<HomeRegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,12 +52,12 @@ namespace Model
      * <p>The account for which this command sets up a home region control. The
      * <code>Target</code> is always of type <code>ACCOUNT</code>.</p>
      */
-    inline const Target& GetTarget() const{ return m_target; }
+    inline const Target& GetTarget() const { return m_target; }
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-    inline void SetTarget(const Target& value) { m_targetHasBeenSet = true; m_target = value; }
-    inline void SetTarget(Target&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-    inline CreateHomeRegionControlRequest& WithTarget(const Target& value) { SetTarget(value); return *this;}
-    inline CreateHomeRegionControlRequest& WithTarget(Target&& value) { SetTarget(std::move(value)); return *this;}
+    template<typename TargetT = Target>
+    void SetTarget(TargetT&& value) { m_targetHasBeenSet = true; m_target = std::forward<TargetT>(value); }
+    template<typename TargetT = Target>
+    CreateHomeRegionControlRequest& WithTarget(TargetT&& value) { SetTarget(std::forward<TargetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,7 +65,7 @@ namespace Model
      * <p>Optional Boolean flag to indicate whether any effect should take place. It
      * tests whether the caller has permission to make the call.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline CreateHomeRegionControlRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -80,7 +78,7 @@ namespace Model
     Target m_target;
     bool m_targetHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

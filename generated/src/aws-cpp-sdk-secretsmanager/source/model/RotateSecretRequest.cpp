@@ -12,17 +12,6 @@ using namespace Aws::SecretsManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RotateSecretRequest::RotateSecretRequest() : 
-    m_secretIdHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_rotationLambdaARNHasBeenSet(false),
-    m_rotationRulesHasBeenSet(false),
-    m_rotateImmediately(false),
-    m_rotateImmediatelyHasBeenSet(false)
-{
-}
-
 Aws::String RotateSecretRequest::SerializePayload() const
 {
   JsonValue payload;

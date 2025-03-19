@@ -18,13 +18,7 @@ namespace EMRContainers
 namespace Model
 {
 
-ParametricS3MonitoringConfiguration::ParametricS3MonitoringConfiguration() : 
-    m_logUriHasBeenSet(false)
-{
-}
-
 ParametricS3MonitoringConfiguration::ParametricS3MonitoringConfiguration(JsonView jsonValue)
-  : ParametricS3MonitoringConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ParametricS3MonitoringConfiguration& ParametricS3MonitoringConfiguration::operat
   if(jsonValue.ValueExists("logUri"))
   {
     m_logUri = jsonValue.GetString("logUri");
-
     m_logUriHasBeenSet = true;
   }
-
   return *this;
 }
 

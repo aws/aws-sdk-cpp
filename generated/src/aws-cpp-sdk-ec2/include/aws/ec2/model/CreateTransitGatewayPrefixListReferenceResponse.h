@@ -28,7 +28,7 @@ namespace Model
   class CreateTransitGatewayPrefixListReferenceResponse
   {
   public:
-    AWS_EC2_API CreateTransitGatewayPrefixListReferenceResponse();
+    AWS_EC2_API CreateTransitGatewayPrefixListReferenceResponse() = default;
     AWS_EC2_API CreateTransitGatewayPrefixListReferenceResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API CreateTransitGatewayPrefixListReferenceResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>Information about the prefix list reference.</p>
      */
-    inline const TransitGatewayPrefixListReference& GetTransitGatewayPrefixListReference() const{ return m_transitGatewayPrefixListReference; }
-    inline void SetTransitGatewayPrefixListReference(const TransitGatewayPrefixListReference& value) { m_transitGatewayPrefixListReference = value; }
-    inline void SetTransitGatewayPrefixListReference(TransitGatewayPrefixListReference&& value) { m_transitGatewayPrefixListReference = std::move(value); }
-    inline CreateTransitGatewayPrefixListReferenceResponse& WithTransitGatewayPrefixListReference(const TransitGatewayPrefixListReference& value) { SetTransitGatewayPrefixListReference(value); return *this;}
-    inline CreateTransitGatewayPrefixListReferenceResponse& WithTransitGatewayPrefixListReference(TransitGatewayPrefixListReference&& value) { SetTransitGatewayPrefixListReference(std::move(value)); return *this;}
+    inline const TransitGatewayPrefixListReference& GetTransitGatewayPrefixListReference() const { return m_transitGatewayPrefixListReference; }
+    template<typename TransitGatewayPrefixListReferenceT = TransitGatewayPrefixListReference>
+    void SetTransitGatewayPrefixListReference(TransitGatewayPrefixListReferenceT&& value) { m_transitGatewayPrefixListReferenceHasBeenSet = true; m_transitGatewayPrefixListReference = std::forward<TransitGatewayPrefixListReferenceT>(value); }
+    template<typename TransitGatewayPrefixListReferenceT = TransitGatewayPrefixListReference>
+    CreateTransitGatewayPrefixListReferenceResponse& WithTransitGatewayPrefixListReference(TransitGatewayPrefixListReferenceT&& value) { SetTransitGatewayPrefixListReference(std::forward<TransitGatewayPrefixListReferenceT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CreateTransitGatewayPrefixListReferenceResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CreateTransitGatewayPrefixListReferenceResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CreateTransitGatewayPrefixListReferenceResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     TransitGatewayPrefixListReference m_transitGatewayPrefixListReference;
+    bool m_transitGatewayPrefixListReferenceHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

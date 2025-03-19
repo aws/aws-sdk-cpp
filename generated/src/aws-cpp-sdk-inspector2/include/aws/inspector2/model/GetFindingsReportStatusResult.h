@@ -31,7 +31,7 @@ namespace Model
   class GetFindingsReportStatusResult
   {
   public:
-    AWS_INSPECTOR2_API GetFindingsReportStatusResult();
+    AWS_INSPECTOR2_API GetFindingsReportStatusResult() = default;
     AWS_INSPECTOR2_API GetFindingsReportStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_INSPECTOR2_API GetFindingsReportStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,97 +40,94 @@ namespace Model
     /**
      * <p>The destination of the report.</p>
      */
-    inline const Destination& GetDestination() const{ return m_destination; }
-    inline void SetDestination(const Destination& value) { m_destination = value; }
-    inline void SetDestination(Destination&& value) { m_destination = std::move(value); }
-    inline GetFindingsReportStatusResult& WithDestination(const Destination& value) { SetDestination(value); return *this;}
-    inline GetFindingsReportStatusResult& WithDestination(Destination&& value) { SetDestination(std::move(value)); return *this;}
+    inline const Destination& GetDestination() const { return m_destination; }
+    template<typename DestinationT = Destination>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = Destination>
+    GetFindingsReportStatusResult& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The error code of the report.</p>
      */
-    inline const ReportingErrorCode& GetErrorCode() const{ return m_errorCode; }
-    inline void SetErrorCode(const ReportingErrorCode& value) { m_errorCode = value; }
-    inline void SetErrorCode(ReportingErrorCode&& value) { m_errorCode = std::move(value); }
-    inline GetFindingsReportStatusResult& WithErrorCode(const ReportingErrorCode& value) { SetErrorCode(value); return *this;}
-    inline GetFindingsReportStatusResult& WithErrorCode(ReportingErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
+    inline ReportingErrorCode GetErrorCode() const { return m_errorCode; }
+    inline void SetErrorCode(ReportingErrorCode value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
+    inline GetFindingsReportStatusResult& WithErrorCode(ReportingErrorCode value) { SetErrorCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The error message of the report.</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessage.assign(value); }
-    inline GetFindingsReportStatusResult& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline GetFindingsReportStatusResult& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline GetFindingsReportStatusResult& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    GetFindingsReportStatusResult& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The filter criteria associated with the report.</p>
      */
-    inline const FilterCriteria& GetFilterCriteria() const{ return m_filterCriteria; }
-    inline void SetFilterCriteria(const FilterCriteria& value) { m_filterCriteria = value; }
-    inline void SetFilterCriteria(FilterCriteria&& value) { m_filterCriteria = std::move(value); }
-    inline GetFindingsReportStatusResult& WithFilterCriteria(const FilterCriteria& value) { SetFilterCriteria(value); return *this;}
-    inline GetFindingsReportStatusResult& WithFilterCriteria(FilterCriteria&& value) { SetFilterCriteria(std::move(value)); return *this;}
+    inline const FilterCriteria& GetFilterCriteria() const { return m_filterCriteria; }
+    template<typename FilterCriteriaT = FilterCriteria>
+    void SetFilterCriteria(FilterCriteriaT&& value) { m_filterCriteriaHasBeenSet = true; m_filterCriteria = std::forward<FilterCriteriaT>(value); }
+    template<typename FilterCriteriaT = FilterCriteria>
+    GetFindingsReportStatusResult& WithFilterCriteria(FilterCriteriaT&& value) { SetFilterCriteria(std::forward<FilterCriteriaT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the report.</p>
      */
-    inline const Aws::String& GetReportId() const{ return m_reportId; }
-    inline void SetReportId(const Aws::String& value) { m_reportId = value; }
-    inline void SetReportId(Aws::String&& value) { m_reportId = std::move(value); }
-    inline void SetReportId(const char* value) { m_reportId.assign(value); }
-    inline GetFindingsReportStatusResult& WithReportId(const Aws::String& value) { SetReportId(value); return *this;}
-    inline GetFindingsReportStatusResult& WithReportId(Aws::String&& value) { SetReportId(std::move(value)); return *this;}
-    inline GetFindingsReportStatusResult& WithReportId(const char* value) { SetReportId(value); return *this;}
+    inline const Aws::String& GetReportId() const { return m_reportId; }
+    template<typename ReportIdT = Aws::String>
+    void SetReportId(ReportIdT&& value) { m_reportIdHasBeenSet = true; m_reportId = std::forward<ReportIdT>(value); }
+    template<typename ReportIdT = Aws::String>
+    GetFindingsReportStatusResult& WithReportId(ReportIdT&& value) { SetReportId(std::forward<ReportIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the report.</p>
      */
-    inline const ExternalReportStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const ExternalReportStatus& value) { m_status = value; }
-    inline void SetStatus(ExternalReportStatus&& value) { m_status = std::move(value); }
-    inline GetFindingsReportStatusResult& WithStatus(const ExternalReportStatus& value) { SetStatus(value); return *this;}
-    inline GetFindingsReportStatusResult& WithStatus(ExternalReportStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline ExternalReportStatus GetStatus() const { return m_status; }
+    inline void SetStatus(ExternalReportStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetFindingsReportStatusResult& WithStatus(ExternalReportStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetFindingsReportStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetFindingsReportStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetFindingsReportStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetFindingsReportStatusResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Destination m_destination;
+    bool m_destinationHasBeenSet = false;
 
-    ReportingErrorCode m_errorCode;
+    ReportingErrorCode m_errorCode{ReportingErrorCode::NOT_SET};
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
+    bool m_errorMessageHasBeenSet = false;
 
     FilterCriteria m_filterCriteria;
+    bool m_filterCriteriaHasBeenSet = false;
 
     Aws::String m_reportId;
+    bool m_reportIdHasBeenSet = false;
 
-    ExternalReportStatus m_status;
+    ExternalReportStatus m_status{ExternalReportStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeNetworkInsightsAnalysesResponse::DescribeNetworkInsightsAnalysesResponse()
-{
-}
-
 DescribeNetworkInsightsAnalysesResponse::DescribeNetworkInsightsAnalysesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ DescribeNetworkInsightsAnalysesResponse& DescribeNetworkInsightsAnalysesResponse
     if(!networkInsightsAnalysesNode.IsNull())
     {
       XmlNode networkInsightsAnalysesMember = networkInsightsAnalysesNode.FirstChild("item");
+      m_networkInsightsAnalysesHasBeenSet = !networkInsightsAnalysesMember.IsNull();
       while(!networkInsightsAnalysesMember.IsNull())
       {
         m_networkInsightsAnalyses.push_back(networkInsightsAnalysesMember);
         networkInsightsAnalysesMember = networkInsightsAnalysesMember.NextNode("item");
       }
 
+      m_networkInsightsAnalysesHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ DescribeNetworkInsightsAnalysesResponse& DescribeNetworkInsightsAnalysesResponse
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeNetworkInsightsAnalysesResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

@@ -34,7 +34,7 @@ namespace Model
   class CisScanResultDetailsFilterCriteria
   {
   public:
-    AWS_INSPECTOR2_API CisScanResultDetailsFilterCriteria();
+    AWS_INSPECTOR2_API CisScanResultDetailsFilterCriteria() = default;
     AWS_INSPECTOR2_API CisScanResultDetailsFilterCriteria(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API CisScanResultDetailsFilterCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,42 +44,42 @@ namespace Model
     /**
      * <p>The criteria's check ID filters.</p>
      */
-    inline const Aws::Vector<CisStringFilter>& GetCheckIdFilters() const{ return m_checkIdFilters; }
+    inline const Aws::Vector<CisStringFilter>& GetCheckIdFilters() const { return m_checkIdFilters; }
     inline bool CheckIdFiltersHasBeenSet() const { return m_checkIdFiltersHasBeenSet; }
-    inline void SetCheckIdFilters(const Aws::Vector<CisStringFilter>& value) { m_checkIdFiltersHasBeenSet = true; m_checkIdFilters = value; }
-    inline void SetCheckIdFilters(Aws::Vector<CisStringFilter>&& value) { m_checkIdFiltersHasBeenSet = true; m_checkIdFilters = std::move(value); }
-    inline CisScanResultDetailsFilterCriteria& WithCheckIdFilters(const Aws::Vector<CisStringFilter>& value) { SetCheckIdFilters(value); return *this;}
-    inline CisScanResultDetailsFilterCriteria& WithCheckIdFilters(Aws::Vector<CisStringFilter>&& value) { SetCheckIdFilters(std::move(value)); return *this;}
-    inline CisScanResultDetailsFilterCriteria& AddCheckIdFilters(const CisStringFilter& value) { m_checkIdFiltersHasBeenSet = true; m_checkIdFilters.push_back(value); return *this; }
-    inline CisScanResultDetailsFilterCriteria& AddCheckIdFilters(CisStringFilter&& value) { m_checkIdFiltersHasBeenSet = true; m_checkIdFilters.push_back(std::move(value)); return *this; }
+    template<typename CheckIdFiltersT = Aws::Vector<CisStringFilter>>
+    void SetCheckIdFilters(CheckIdFiltersT&& value) { m_checkIdFiltersHasBeenSet = true; m_checkIdFilters = std::forward<CheckIdFiltersT>(value); }
+    template<typename CheckIdFiltersT = Aws::Vector<CisStringFilter>>
+    CisScanResultDetailsFilterCriteria& WithCheckIdFilters(CheckIdFiltersT&& value) { SetCheckIdFilters(std::forward<CheckIdFiltersT>(value)); return *this;}
+    template<typename CheckIdFiltersT = CisStringFilter>
+    CisScanResultDetailsFilterCriteria& AddCheckIdFilters(CheckIdFiltersT&& value) { m_checkIdFiltersHasBeenSet = true; m_checkIdFilters.emplace_back(std::forward<CheckIdFiltersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The criteria's finding ARN filters.</p>
      */
-    inline const Aws::Vector<CisStringFilter>& GetFindingArnFilters() const{ return m_findingArnFilters; }
+    inline const Aws::Vector<CisStringFilter>& GetFindingArnFilters() const { return m_findingArnFilters; }
     inline bool FindingArnFiltersHasBeenSet() const { return m_findingArnFiltersHasBeenSet; }
-    inline void SetFindingArnFilters(const Aws::Vector<CisStringFilter>& value) { m_findingArnFiltersHasBeenSet = true; m_findingArnFilters = value; }
-    inline void SetFindingArnFilters(Aws::Vector<CisStringFilter>&& value) { m_findingArnFiltersHasBeenSet = true; m_findingArnFilters = std::move(value); }
-    inline CisScanResultDetailsFilterCriteria& WithFindingArnFilters(const Aws::Vector<CisStringFilter>& value) { SetFindingArnFilters(value); return *this;}
-    inline CisScanResultDetailsFilterCriteria& WithFindingArnFilters(Aws::Vector<CisStringFilter>&& value) { SetFindingArnFilters(std::move(value)); return *this;}
-    inline CisScanResultDetailsFilterCriteria& AddFindingArnFilters(const CisStringFilter& value) { m_findingArnFiltersHasBeenSet = true; m_findingArnFilters.push_back(value); return *this; }
-    inline CisScanResultDetailsFilterCriteria& AddFindingArnFilters(CisStringFilter&& value) { m_findingArnFiltersHasBeenSet = true; m_findingArnFilters.push_back(std::move(value)); return *this; }
+    template<typename FindingArnFiltersT = Aws::Vector<CisStringFilter>>
+    void SetFindingArnFilters(FindingArnFiltersT&& value) { m_findingArnFiltersHasBeenSet = true; m_findingArnFilters = std::forward<FindingArnFiltersT>(value); }
+    template<typename FindingArnFiltersT = Aws::Vector<CisStringFilter>>
+    CisScanResultDetailsFilterCriteria& WithFindingArnFilters(FindingArnFiltersT&& value) { SetFindingArnFilters(std::forward<FindingArnFiltersT>(value)); return *this;}
+    template<typename FindingArnFiltersT = CisStringFilter>
+    CisScanResultDetailsFilterCriteria& AddFindingArnFilters(FindingArnFiltersT&& value) { m_findingArnFiltersHasBeenSet = true; m_findingArnFilters.emplace_back(std::forward<FindingArnFiltersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The criteria's finding status filters.</p>
      */
-    inline const Aws::Vector<CisFindingStatusFilter>& GetFindingStatusFilters() const{ return m_findingStatusFilters; }
+    inline const Aws::Vector<CisFindingStatusFilter>& GetFindingStatusFilters() const { return m_findingStatusFilters; }
     inline bool FindingStatusFiltersHasBeenSet() const { return m_findingStatusFiltersHasBeenSet; }
-    inline void SetFindingStatusFilters(const Aws::Vector<CisFindingStatusFilter>& value) { m_findingStatusFiltersHasBeenSet = true; m_findingStatusFilters = value; }
-    inline void SetFindingStatusFilters(Aws::Vector<CisFindingStatusFilter>&& value) { m_findingStatusFiltersHasBeenSet = true; m_findingStatusFilters = std::move(value); }
-    inline CisScanResultDetailsFilterCriteria& WithFindingStatusFilters(const Aws::Vector<CisFindingStatusFilter>& value) { SetFindingStatusFilters(value); return *this;}
-    inline CisScanResultDetailsFilterCriteria& WithFindingStatusFilters(Aws::Vector<CisFindingStatusFilter>&& value) { SetFindingStatusFilters(std::move(value)); return *this;}
-    inline CisScanResultDetailsFilterCriteria& AddFindingStatusFilters(const CisFindingStatusFilter& value) { m_findingStatusFiltersHasBeenSet = true; m_findingStatusFilters.push_back(value); return *this; }
-    inline CisScanResultDetailsFilterCriteria& AddFindingStatusFilters(CisFindingStatusFilter&& value) { m_findingStatusFiltersHasBeenSet = true; m_findingStatusFilters.push_back(std::move(value)); return *this; }
+    template<typename FindingStatusFiltersT = Aws::Vector<CisFindingStatusFilter>>
+    void SetFindingStatusFilters(FindingStatusFiltersT&& value) { m_findingStatusFiltersHasBeenSet = true; m_findingStatusFilters = std::forward<FindingStatusFiltersT>(value); }
+    template<typename FindingStatusFiltersT = Aws::Vector<CisFindingStatusFilter>>
+    CisScanResultDetailsFilterCriteria& WithFindingStatusFilters(FindingStatusFiltersT&& value) { SetFindingStatusFilters(std::forward<FindingStatusFiltersT>(value)); return *this;}
+    template<typename FindingStatusFiltersT = CisFindingStatusFilter>
+    CisScanResultDetailsFilterCriteria& AddFindingStatusFilters(FindingStatusFiltersT&& value) { m_findingStatusFiltersHasBeenSet = true; m_findingStatusFilters.emplace_back(std::forward<FindingStatusFiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -87,28 +87,28 @@ namespace Model
      * <p> The criteria's security level filters. . Security level refers to the
      * Benchmark levels that CIS assigns to a profile. </p>
      */
-    inline const Aws::Vector<CisSecurityLevelFilter>& GetSecurityLevelFilters() const{ return m_securityLevelFilters; }
+    inline const Aws::Vector<CisSecurityLevelFilter>& GetSecurityLevelFilters() const { return m_securityLevelFilters; }
     inline bool SecurityLevelFiltersHasBeenSet() const { return m_securityLevelFiltersHasBeenSet; }
-    inline void SetSecurityLevelFilters(const Aws::Vector<CisSecurityLevelFilter>& value) { m_securityLevelFiltersHasBeenSet = true; m_securityLevelFilters = value; }
-    inline void SetSecurityLevelFilters(Aws::Vector<CisSecurityLevelFilter>&& value) { m_securityLevelFiltersHasBeenSet = true; m_securityLevelFilters = std::move(value); }
-    inline CisScanResultDetailsFilterCriteria& WithSecurityLevelFilters(const Aws::Vector<CisSecurityLevelFilter>& value) { SetSecurityLevelFilters(value); return *this;}
-    inline CisScanResultDetailsFilterCriteria& WithSecurityLevelFilters(Aws::Vector<CisSecurityLevelFilter>&& value) { SetSecurityLevelFilters(std::move(value)); return *this;}
-    inline CisScanResultDetailsFilterCriteria& AddSecurityLevelFilters(const CisSecurityLevelFilter& value) { m_securityLevelFiltersHasBeenSet = true; m_securityLevelFilters.push_back(value); return *this; }
-    inline CisScanResultDetailsFilterCriteria& AddSecurityLevelFilters(CisSecurityLevelFilter&& value) { m_securityLevelFiltersHasBeenSet = true; m_securityLevelFilters.push_back(std::move(value)); return *this; }
+    template<typename SecurityLevelFiltersT = Aws::Vector<CisSecurityLevelFilter>>
+    void SetSecurityLevelFilters(SecurityLevelFiltersT&& value) { m_securityLevelFiltersHasBeenSet = true; m_securityLevelFilters = std::forward<SecurityLevelFiltersT>(value); }
+    template<typename SecurityLevelFiltersT = Aws::Vector<CisSecurityLevelFilter>>
+    CisScanResultDetailsFilterCriteria& WithSecurityLevelFilters(SecurityLevelFiltersT&& value) { SetSecurityLevelFilters(std::forward<SecurityLevelFiltersT>(value)); return *this;}
+    template<typename SecurityLevelFiltersT = CisSecurityLevelFilter>
+    CisScanResultDetailsFilterCriteria& AddSecurityLevelFilters(SecurityLevelFiltersT&& value) { m_securityLevelFiltersHasBeenSet = true; m_securityLevelFilters.emplace_back(std::forward<SecurityLevelFiltersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The criteria's title filters.</p>
      */
-    inline const Aws::Vector<CisStringFilter>& GetTitleFilters() const{ return m_titleFilters; }
+    inline const Aws::Vector<CisStringFilter>& GetTitleFilters() const { return m_titleFilters; }
     inline bool TitleFiltersHasBeenSet() const { return m_titleFiltersHasBeenSet; }
-    inline void SetTitleFilters(const Aws::Vector<CisStringFilter>& value) { m_titleFiltersHasBeenSet = true; m_titleFilters = value; }
-    inline void SetTitleFilters(Aws::Vector<CisStringFilter>&& value) { m_titleFiltersHasBeenSet = true; m_titleFilters = std::move(value); }
-    inline CisScanResultDetailsFilterCriteria& WithTitleFilters(const Aws::Vector<CisStringFilter>& value) { SetTitleFilters(value); return *this;}
-    inline CisScanResultDetailsFilterCriteria& WithTitleFilters(Aws::Vector<CisStringFilter>&& value) { SetTitleFilters(std::move(value)); return *this;}
-    inline CisScanResultDetailsFilterCriteria& AddTitleFilters(const CisStringFilter& value) { m_titleFiltersHasBeenSet = true; m_titleFilters.push_back(value); return *this; }
-    inline CisScanResultDetailsFilterCriteria& AddTitleFilters(CisStringFilter&& value) { m_titleFiltersHasBeenSet = true; m_titleFilters.push_back(std::move(value)); return *this; }
+    template<typename TitleFiltersT = Aws::Vector<CisStringFilter>>
+    void SetTitleFilters(TitleFiltersT&& value) { m_titleFiltersHasBeenSet = true; m_titleFilters = std::forward<TitleFiltersT>(value); }
+    template<typename TitleFiltersT = Aws::Vector<CisStringFilter>>
+    CisScanResultDetailsFilterCriteria& WithTitleFilters(TitleFiltersT&& value) { SetTitleFilters(std::forward<TitleFiltersT>(value)); return *this;}
+    template<typename TitleFiltersT = CisStringFilter>
+    CisScanResultDetailsFilterCriteria& AddTitleFilters(TitleFiltersT&& value) { m_titleFiltersHasBeenSet = true; m_titleFilters.emplace_back(std::forward<TitleFiltersT>(value)); return *this; }
     ///@}
   private:
 

@@ -12,11 +12,6 @@ using namespace Aws::BedrockDataAutomationRuntime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDataAutomationStatusRequest::GetDataAutomationStatusRequest() : 
-    m_invocationArnHasBeenSet(false)
-{
-}
-
 Aws::String GetDataAutomationStatusRequest::SerializePayload() const
 {
   JsonValue payload;

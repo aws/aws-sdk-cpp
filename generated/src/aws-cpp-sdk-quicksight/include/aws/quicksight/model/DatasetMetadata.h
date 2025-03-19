@@ -37,7 +37,7 @@ namespace Model
   class DatasetMetadata
   {
   public:
-    AWS_QUICKSIGHT_API DatasetMetadata();
+    AWS_QUICKSIGHT_API DatasetMetadata() = default;
     AWS_QUICKSIGHT_API DatasetMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API DatasetMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,110 +47,104 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the dataset.</p>
      */
-    inline const Aws::String& GetDatasetArn() const{ return m_datasetArn; }
+    inline const Aws::String& GetDatasetArn() const { return m_datasetArn; }
     inline bool DatasetArnHasBeenSet() const { return m_datasetArnHasBeenSet; }
-    inline void SetDatasetArn(const Aws::String& value) { m_datasetArnHasBeenSet = true; m_datasetArn = value; }
-    inline void SetDatasetArn(Aws::String&& value) { m_datasetArnHasBeenSet = true; m_datasetArn = std::move(value); }
-    inline void SetDatasetArn(const char* value) { m_datasetArnHasBeenSet = true; m_datasetArn.assign(value); }
-    inline DatasetMetadata& WithDatasetArn(const Aws::String& value) { SetDatasetArn(value); return *this;}
-    inline DatasetMetadata& WithDatasetArn(Aws::String&& value) { SetDatasetArn(std::move(value)); return *this;}
-    inline DatasetMetadata& WithDatasetArn(const char* value) { SetDatasetArn(value); return *this;}
+    template<typename DatasetArnT = Aws::String>
+    void SetDatasetArn(DatasetArnT&& value) { m_datasetArnHasBeenSet = true; m_datasetArn = std::forward<DatasetArnT>(value); }
+    template<typename DatasetArnT = Aws::String>
+    DatasetMetadata& WithDatasetArn(DatasetArnT&& value) { SetDatasetArn(std::forward<DatasetArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the dataset.</p>
      */
-    inline const Aws::String& GetDatasetName() const{ return m_datasetName; }
+    inline const Aws::String& GetDatasetName() const { return m_datasetName; }
     inline bool DatasetNameHasBeenSet() const { return m_datasetNameHasBeenSet; }
-    inline void SetDatasetName(const Aws::String& value) { m_datasetNameHasBeenSet = true; m_datasetName = value; }
-    inline void SetDatasetName(Aws::String&& value) { m_datasetNameHasBeenSet = true; m_datasetName = std::move(value); }
-    inline void SetDatasetName(const char* value) { m_datasetNameHasBeenSet = true; m_datasetName.assign(value); }
-    inline DatasetMetadata& WithDatasetName(const Aws::String& value) { SetDatasetName(value); return *this;}
-    inline DatasetMetadata& WithDatasetName(Aws::String&& value) { SetDatasetName(std::move(value)); return *this;}
-    inline DatasetMetadata& WithDatasetName(const char* value) { SetDatasetName(value); return *this;}
+    template<typename DatasetNameT = Aws::String>
+    void SetDatasetName(DatasetNameT&& value) { m_datasetNameHasBeenSet = true; m_datasetName = std::forward<DatasetNameT>(value); }
+    template<typename DatasetNameT = Aws::String>
+    DatasetMetadata& WithDatasetName(DatasetNameT&& value) { SetDatasetName(std::forward<DatasetNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the dataset.</p>
      */
-    inline const Aws::String& GetDatasetDescription() const{ return m_datasetDescription; }
+    inline const Aws::String& GetDatasetDescription() const { return m_datasetDescription; }
     inline bool DatasetDescriptionHasBeenSet() const { return m_datasetDescriptionHasBeenSet; }
-    inline void SetDatasetDescription(const Aws::String& value) { m_datasetDescriptionHasBeenSet = true; m_datasetDescription = value; }
-    inline void SetDatasetDescription(Aws::String&& value) { m_datasetDescriptionHasBeenSet = true; m_datasetDescription = std::move(value); }
-    inline void SetDatasetDescription(const char* value) { m_datasetDescriptionHasBeenSet = true; m_datasetDescription.assign(value); }
-    inline DatasetMetadata& WithDatasetDescription(const Aws::String& value) { SetDatasetDescription(value); return *this;}
-    inline DatasetMetadata& WithDatasetDescription(Aws::String&& value) { SetDatasetDescription(std::move(value)); return *this;}
-    inline DatasetMetadata& WithDatasetDescription(const char* value) { SetDatasetDescription(value); return *this;}
+    template<typename DatasetDescriptionT = Aws::String>
+    void SetDatasetDescription(DatasetDescriptionT&& value) { m_datasetDescriptionHasBeenSet = true; m_datasetDescription = std::forward<DatasetDescriptionT>(value); }
+    template<typename DatasetDescriptionT = Aws::String>
+    DatasetMetadata& WithDatasetDescription(DatasetDescriptionT&& value) { SetDatasetDescription(std::forward<DatasetDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The definition of a data aggregation.</p>
      */
-    inline const DataAggregation& GetDataAggregation() const{ return m_dataAggregation; }
+    inline const DataAggregation& GetDataAggregation() const { return m_dataAggregation; }
     inline bool DataAggregationHasBeenSet() const { return m_dataAggregationHasBeenSet; }
-    inline void SetDataAggregation(const DataAggregation& value) { m_dataAggregationHasBeenSet = true; m_dataAggregation = value; }
-    inline void SetDataAggregation(DataAggregation&& value) { m_dataAggregationHasBeenSet = true; m_dataAggregation = std::move(value); }
-    inline DatasetMetadata& WithDataAggregation(const DataAggregation& value) { SetDataAggregation(value); return *this;}
-    inline DatasetMetadata& WithDataAggregation(DataAggregation&& value) { SetDataAggregation(std::move(value)); return *this;}
+    template<typename DataAggregationT = DataAggregation>
+    void SetDataAggregation(DataAggregationT&& value) { m_dataAggregationHasBeenSet = true; m_dataAggregation = std::forward<DataAggregationT>(value); }
+    template<typename DataAggregationT = DataAggregation>
+    DatasetMetadata& WithDataAggregation(DataAggregationT&& value) { SetDataAggregation(std::forward<DataAggregationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of filter definitions.</p>
      */
-    inline const Aws::Vector<TopicFilter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<TopicFilter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<TopicFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<TopicFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline DatasetMetadata& WithFilters(const Aws::Vector<TopicFilter>& value) { SetFilters(value); return *this;}
-    inline DatasetMetadata& WithFilters(Aws::Vector<TopicFilter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline DatasetMetadata& AddFilters(const TopicFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline DatasetMetadata& AddFilters(TopicFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<TopicFilter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<TopicFilter>>
+    DatasetMetadata& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = TopicFilter>
+    DatasetMetadata& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The list of column definitions.</p>
      */
-    inline const Aws::Vector<TopicColumn>& GetColumns() const{ return m_columns; }
+    inline const Aws::Vector<TopicColumn>& GetColumns() const { return m_columns; }
     inline bool ColumnsHasBeenSet() const { return m_columnsHasBeenSet; }
-    inline void SetColumns(const Aws::Vector<TopicColumn>& value) { m_columnsHasBeenSet = true; m_columns = value; }
-    inline void SetColumns(Aws::Vector<TopicColumn>&& value) { m_columnsHasBeenSet = true; m_columns = std::move(value); }
-    inline DatasetMetadata& WithColumns(const Aws::Vector<TopicColumn>& value) { SetColumns(value); return *this;}
-    inline DatasetMetadata& WithColumns(Aws::Vector<TopicColumn>&& value) { SetColumns(std::move(value)); return *this;}
-    inline DatasetMetadata& AddColumns(const TopicColumn& value) { m_columnsHasBeenSet = true; m_columns.push_back(value); return *this; }
-    inline DatasetMetadata& AddColumns(TopicColumn&& value) { m_columnsHasBeenSet = true; m_columns.push_back(std::move(value)); return *this; }
+    template<typename ColumnsT = Aws::Vector<TopicColumn>>
+    void SetColumns(ColumnsT&& value) { m_columnsHasBeenSet = true; m_columns = std::forward<ColumnsT>(value); }
+    template<typename ColumnsT = Aws::Vector<TopicColumn>>
+    DatasetMetadata& WithColumns(ColumnsT&& value) { SetColumns(std::forward<ColumnsT>(value)); return *this;}
+    template<typename ColumnsT = TopicColumn>
+    DatasetMetadata& AddColumns(ColumnsT&& value) { m_columnsHasBeenSet = true; m_columns.emplace_back(std::forward<ColumnsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The list of calculated field definitions.</p>
      */
-    inline const Aws::Vector<TopicCalculatedField>& GetCalculatedFields() const{ return m_calculatedFields; }
+    inline const Aws::Vector<TopicCalculatedField>& GetCalculatedFields() const { return m_calculatedFields; }
     inline bool CalculatedFieldsHasBeenSet() const { return m_calculatedFieldsHasBeenSet; }
-    inline void SetCalculatedFields(const Aws::Vector<TopicCalculatedField>& value) { m_calculatedFieldsHasBeenSet = true; m_calculatedFields = value; }
-    inline void SetCalculatedFields(Aws::Vector<TopicCalculatedField>&& value) { m_calculatedFieldsHasBeenSet = true; m_calculatedFields = std::move(value); }
-    inline DatasetMetadata& WithCalculatedFields(const Aws::Vector<TopicCalculatedField>& value) { SetCalculatedFields(value); return *this;}
-    inline DatasetMetadata& WithCalculatedFields(Aws::Vector<TopicCalculatedField>&& value) { SetCalculatedFields(std::move(value)); return *this;}
-    inline DatasetMetadata& AddCalculatedFields(const TopicCalculatedField& value) { m_calculatedFieldsHasBeenSet = true; m_calculatedFields.push_back(value); return *this; }
-    inline DatasetMetadata& AddCalculatedFields(TopicCalculatedField&& value) { m_calculatedFieldsHasBeenSet = true; m_calculatedFields.push_back(std::move(value)); return *this; }
+    template<typename CalculatedFieldsT = Aws::Vector<TopicCalculatedField>>
+    void SetCalculatedFields(CalculatedFieldsT&& value) { m_calculatedFieldsHasBeenSet = true; m_calculatedFields = std::forward<CalculatedFieldsT>(value); }
+    template<typename CalculatedFieldsT = Aws::Vector<TopicCalculatedField>>
+    DatasetMetadata& WithCalculatedFields(CalculatedFieldsT&& value) { SetCalculatedFields(std::forward<CalculatedFieldsT>(value)); return *this;}
+    template<typename CalculatedFieldsT = TopicCalculatedField>
+    DatasetMetadata& AddCalculatedFields(CalculatedFieldsT&& value) { m_calculatedFieldsHasBeenSet = true; m_calculatedFields.emplace_back(std::forward<CalculatedFieldsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The list of named entities definitions.</p>
      */
-    inline const Aws::Vector<TopicNamedEntity>& GetNamedEntities() const{ return m_namedEntities; }
+    inline const Aws::Vector<TopicNamedEntity>& GetNamedEntities() const { return m_namedEntities; }
     inline bool NamedEntitiesHasBeenSet() const { return m_namedEntitiesHasBeenSet; }
-    inline void SetNamedEntities(const Aws::Vector<TopicNamedEntity>& value) { m_namedEntitiesHasBeenSet = true; m_namedEntities = value; }
-    inline void SetNamedEntities(Aws::Vector<TopicNamedEntity>&& value) { m_namedEntitiesHasBeenSet = true; m_namedEntities = std::move(value); }
-    inline DatasetMetadata& WithNamedEntities(const Aws::Vector<TopicNamedEntity>& value) { SetNamedEntities(value); return *this;}
-    inline DatasetMetadata& WithNamedEntities(Aws::Vector<TopicNamedEntity>&& value) { SetNamedEntities(std::move(value)); return *this;}
-    inline DatasetMetadata& AddNamedEntities(const TopicNamedEntity& value) { m_namedEntitiesHasBeenSet = true; m_namedEntities.push_back(value); return *this; }
-    inline DatasetMetadata& AddNamedEntities(TopicNamedEntity&& value) { m_namedEntitiesHasBeenSet = true; m_namedEntities.push_back(std::move(value)); return *this; }
+    template<typename NamedEntitiesT = Aws::Vector<TopicNamedEntity>>
+    void SetNamedEntities(NamedEntitiesT&& value) { m_namedEntitiesHasBeenSet = true; m_namedEntities = std::forward<NamedEntitiesT>(value); }
+    template<typename NamedEntitiesT = Aws::Vector<TopicNamedEntity>>
+    DatasetMetadata& WithNamedEntities(NamedEntitiesT&& value) { SetNamedEntities(std::forward<NamedEntitiesT>(value)); return *this;}
+    template<typename NamedEntitiesT = TopicNamedEntity>
+    DatasetMetadata& AddNamedEntities(NamedEntitiesT&& value) { m_namedEntitiesHasBeenSet = true; m_namedEntities.emplace_back(std::forward<NamedEntitiesT>(value)); return *this; }
     ///@}
   private:
 

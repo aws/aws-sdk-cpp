@@ -35,7 +35,7 @@ namespace Model
   class BatchGetOnPremisesInstancesResult
   {
   public:
-    AWS_CODEDEPLOY_API BatchGetOnPremisesInstancesResult();
+    AWS_CODEDEPLOY_API BatchGetOnPremisesInstancesResult() = default;
     AWS_CODEDEPLOY_API BatchGetOnPremisesInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODEDEPLOY_API BatchGetOnPremisesInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,30 +44,30 @@ namespace Model
     /**
      * <p>Information about the on-premises instances.</p>
      */
-    inline const Aws::Vector<InstanceInfo>& GetInstanceInfos() const{ return m_instanceInfos; }
-    inline void SetInstanceInfos(const Aws::Vector<InstanceInfo>& value) { m_instanceInfos = value; }
-    inline void SetInstanceInfos(Aws::Vector<InstanceInfo>&& value) { m_instanceInfos = std::move(value); }
-    inline BatchGetOnPremisesInstancesResult& WithInstanceInfos(const Aws::Vector<InstanceInfo>& value) { SetInstanceInfos(value); return *this;}
-    inline BatchGetOnPremisesInstancesResult& WithInstanceInfos(Aws::Vector<InstanceInfo>&& value) { SetInstanceInfos(std::move(value)); return *this;}
-    inline BatchGetOnPremisesInstancesResult& AddInstanceInfos(const InstanceInfo& value) { m_instanceInfos.push_back(value); return *this; }
-    inline BatchGetOnPremisesInstancesResult& AddInstanceInfos(InstanceInfo&& value) { m_instanceInfos.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<InstanceInfo>& GetInstanceInfos() const { return m_instanceInfos; }
+    template<typename InstanceInfosT = Aws::Vector<InstanceInfo>>
+    void SetInstanceInfos(InstanceInfosT&& value) { m_instanceInfosHasBeenSet = true; m_instanceInfos = std::forward<InstanceInfosT>(value); }
+    template<typename InstanceInfosT = Aws::Vector<InstanceInfo>>
+    BatchGetOnPremisesInstancesResult& WithInstanceInfos(InstanceInfosT&& value) { SetInstanceInfos(std::forward<InstanceInfosT>(value)); return *this;}
+    template<typename InstanceInfosT = InstanceInfo>
+    BatchGetOnPremisesInstancesResult& AddInstanceInfos(InstanceInfosT&& value) { m_instanceInfosHasBeenSet = true; m_instanceInfos.emplace_back(std::forward<InstanceInfosT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchGetOnPremisesInstancesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchGetOnPremisesInstancesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchGetOnPremisesInstancesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchGetOnPremisesInstancesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<InstanceInfo> m_instanceInfos;
+    bool m_instanceInfosHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

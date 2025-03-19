@@ -33,7 +33,7 @@ namespace Model
   class InlineAgentPayloadPart
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API InlineAgentPayloadPart();
+    AWS_BEDROCKAGENTRUNTIME_API InlineAgentPayloadPart() = default;
     AWS_BEDROCKAGENTRUNTIME_API InlineAgentPayloadPart(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API InlineAgentPayloadPart& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,31 +43,31 @@ namespace Model
     /**
      * <p>Contains citations for a part of an agent response.</p>
      */
-    inline const Attribution& GetAttribution() const{ return m_attribution; }
+    inline const Attribution& GetAttribution() const { return m_attribution; }
     inline bool AttributionHasBeenSet() const { return m_attributionHasBeenSet; }
-    inline void SetAttribution(const Attribution& value) { m_attributionHasBeenSet = true; m_attribution = value; }
-    inline void SetAttribution(Attribution&& value) { m_attributionHasBeenSet = true; m_attribution = std::move(value); }
-    inline InlineAgentPayloadPart& WithAttribution(const Attribution& value) { SetAttribution(value); return *this;}
-    inline InlineAgentPayloadPart& WithAttribution(Attribution&& value) { SetAttribution(std::move(value)); return *this;}
+    template<typename AttributionT = Attribution>
+    void SetAttribution(AttributionT&& value) { m_attributionHasBeenSet = true; m_attribution = std::forward<AttributionT>(value); }
+    template<typename AttributionT = Attribution>
+    InlineAgentPayloadPart& WithAttribution(AttributionT&& value) { SetAttribution(std::forward<AttributionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A part of the agent response in bytes.</p>
      */
-    inline const Aws::Utils::CryptoBuffer& GetBytes() const{ return m_bytes; }
+    inline const Aws::Utils::CryptoBuffer& GetBytes() const { return m_bytes; }
     inline bool BytesHasBeenSet() const { return m_bytesHasBeenSet; }
-    inline void SetBytes(const Aws::Utils::CryptoBuffer& value) { m_bytesHasBeenSet = true; m_bytes = value; }
-    inline void SetBytes(Aws::Utils::CryptoBuffer&& value) { m_bytesHasBeenSet = true; m_bytes = std::move(value); }
-    inline InlineAgentPayloadPart& WithBytes(const Aws::Utils::CryptoBuffer& value) { SetBytes(value); return *this;}
-    inline InlineAgentPayloadPart& WithBytes(Aws::Utils::CryptoBuffer&& value) { SetBytes(std::move(value)); return *this;}
+    template<typename BytesT = Aws::Utils::CryptoBuffer>
+    void SetBytes(BytesT&& value) { m_bytesHasBeenSet = true; m_bytes = std::forward<BytesT>(value); }
+    template<typename BytesT = Aws::Utils::CryptoBuffer>
+    InlineAgentPayloadPart& WithBytes(BytesT&& value) { SetBytes(std::forward<BytesT>(value)); return *this;}
     ///@}
   private:
 
     Attribution m_attribution;
     bool m_attributionHasBeenSet = false;
 
-    Aws::Utils::CryptoBuffer m_bytes;
+    Aws::Utils::CryptoBuffer m_bytes{};
     bool m_bytesHasBeenSet = false;
   };
 

@@ -18,13 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-MulticastGroupByFuotaTask::MulticastGroupByFuotaTask() : 
-    m_idHasBeenSet(false)
-{
-}
-
 MulticastGroupByFuotaTask::MulticastGroupByFuotaTask(JsonView jsonValue)
-  : MulticastGroupByFuotaTask()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MulticastGroupByFuotaTask& MulticastGroupByFuotaTask::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   return *this;
 }
 

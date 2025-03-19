@@ -20,19 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-ResponseHeadersPolicyConfig::ResponseHeadersPolicyConfig() : 
-    m_commentHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_corsConfigHasBeenSet(false),
-    m_securityHeadersConfigHasBeenSet(false),
-    m_serverTimingHeadersConfigHasBeenSet(false),
-    m_customHeadersConfigHasBeenSet(false),
-    m_removeHeadersConfigHasBeenSet(false)
-{
-}
-
 ResponseHeadersPolicyConfig::ResponseHeadersPolicyConfig(const XmlNode& xmlNode)
-  : ResponseHeadersPolicyConfig()
 {
   *this = xmlNode;
 }

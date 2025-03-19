@@ -36,7 +36,7 @@ namespace Model
   class CostCategoryRule
   {
   public:
-    AWS_COSTEXPLORER_API CostCategoryRule();
+    AWS_COSTEXPLORER_API CostCategoryRule() = default;
     AWS_COSTEXPLORER_API CostCategoryRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API CostCategoryRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline CostCategoryRule& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline CostCategoryRule& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline CostCategoryRule& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    CostCategoryRule& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,12 +67,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-cost-categories.html#cost-categories-terms">Term
      * Comparisons</a> in the <i>Billing and Cost Management User Guide</i>.</p>
      */
-    inline const Expression& GetRule() const{ return m_rule; }
+    inline const Expression& GetRule() const { return m_rule; }
     inline bool RuleHasBeenSet() const { return m_ruleHasBeenSet; }
-    inline void SetRule(const Expression& value) { m_ruleHasBeenSet = true; m_rule = value; }
-    inline void SetRule(Expression&& value) { m_ruleHasBeenSet = true; m_rule = std::move(value); }
-    inline CostCategoryRule& WithRule(const Expression& value) { SetRule(value); return *this;}
-    inline CostCategoryRule& WithRule(Expression&& value) { SetRule(std::move(value)); return *this;}
+    template<typename RuleT = Expression>
+    void SetRule(RuleT&& value) { m_ruleHasBeenSet = true; m_rule = std::forward<RuleT>(value); }
+    template<typename RuleT = Expression>
+    CostCategoryRule& WithRule(RuleT&& value) { SetRule(std::forward<RuleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,12 +80,12 @@ namespace Model
      * <p>The value the line item is categorized as if the line item contains the
      * matched dimension.</p>
      */
-    inline const CostCategoryInheritedValueDimension& GetInheritedValue() const{ return m_inheritedValue; }
+    inline const CostCategoryInheritedValueDimension& GetInheritedValue() const { return m_inheritedValue; }
     inline bool InheritedValueHasBeenSet() const { return m_inheritedValueHasBeenSet; }
-    inline void SetInheritedValue(const CostCategoryInheritedValueDimension& value) { m_inheritedValueHasBeenSet = true; m_inheritedValue = value; }
-    inline void SetInheritedValue(CostCategoryInheritedValueDimension&& value) { m_inheritedValueHasBeenSet = true; m_inheritedValue = std::move(value); }
-    inline CostCategoryRule& WithInheritedValue(const CostCategoryInheritedValueDimension& value) { SetInheritedValue(value); return *this;}
-    inline CostCategoryRule& WithInheritedValue(CostCategoryInheritedValueDimension&& value) { SetInheritedValue(std::move(value)); return *this;}
+    template<typename InheritedValueT = CostCategoryInheritedValueDimension>
+    void SetInheritedValue(InheritedValueT&& value) { m_inheritedValueHasBeenSet = true; m_inheritedValue = std::forward<InheritedValueT>(value); }
+    template<typename InheritedValueT = CostCategoryInheritedValueDimension>
+    CostCategoryRule& WithInheritedValue(InheritedValueT&& value) { SetInheritedValue(std::forward<InheritedValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,12 +100,10 @@ namespace Model
      * key. First, choose an inherited value rule type, and then choose the tag
      * dimension and specify the tag key to use.</p>
      */
-    inline const CostCategoryRuleType& GetType() const{ return m_type; }
+    inline CostCategoryRuleType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const CostCategoryRuleType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(CostCategoryRuleType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline CostCategoryRule& WithType(const CostCategoryRuleType& value) { SetType(value); return *this;}
-    inline CostCategoryRule& WithType(CostCategoryRuleType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(CostCategoryRuleType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline CostCategoryRule& WithType(CostCategoryRuleType value) { SetType(value); return *this;}
     ///@}
   private:
 
@@ -120,7 +116,7 @@ namespace Model
     CostCategoryInheritedValueDimension m_inheritedValue;
     bool m_inheritedValueHasBeenSet = false;
 
-    CostCategoryRuleType m_type;
+    CostCategoryRuleType m_type{CostCategoryRuleType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

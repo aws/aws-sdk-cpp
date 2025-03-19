@@ -12,11 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeCacheReportRequest::DescribeCacheReportRequest() : 
-    m_cacheReportARNHasBeenSet(false)
-{
-}
-
 Aws::String DescribeCacheReportRequest::SerializePayload() const
 {
   JsonValue payload;

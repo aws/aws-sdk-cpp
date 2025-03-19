@@ -34,7 +34,7 @@ namespace Model
   class ImportSnapshotTask
   {
   public:
-    AWS_EC2_API ImportSnapshotTask();
+    AWS_EC2_API ImportSnapshotTask() = default;
     AWS_EC2_API ImportSnapshotTask(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API ImportSnapshotTask& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,54 +46,50 @@ namespace Model
     /**
      * <p>A description of the import snapshot task.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline ImportSnapshotTask& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ImportSnapshotTask& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ImportSnapshotTask& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ImportSnapshotTask& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the import snapshot task.</p>
      */
-    inline const Aws::String& GetImportTaskId() const{ return m_importTaskId; }
+    inline const Aws::String& GetImportTaskId() const { return m_importTaskId; }
     inline bool ImportTaskIdHasBeenSet() const { return m_importTaskIdHasBeenSet; }
-    inline void SetImportTaskId(const Aws::String& value) { m_importTaskIdHasBeenSet = true; m_importTaskId = value; }
-    inline void SetImportTaskId(Aws::String&& value) { m_importTaskIdHasBeenSet = true; m_importTaskId = std::move(value); }
-    inline void SetImportTaskId(const char* value) { m_importTaskIdHasBeenSet = true; m_importTaskId.assign(value); }
-    inline ImportSnapshotTask& WithImportTaskId(const Aws::String& value) { SetImportTaskId(value); return *this;}
-    inline ImportSnapshotTask& WithImportTaskId(Aws::String&& value) { SetImportTaskId(std::move(value)); return *this;}
-    inline ImportSnapshotTask& WithImportTaskId(const char* value) { SetImportTaskId(value); return *this;}
+    template<typename ImportTaskIdT = Aws::String>
+    void SetImportTaskId(ImportTaskIdT&& value) { m_importTaskIdHasBeenSet = true; m_importTaskId = std::forward<ImportTaskIdT>(value); }
+    template<typename ImportTaskIdT = Aws::String>
+    ImportSnapshotTask& WithImportTaskId(ImportTaskIdT&& value) { SetImportTaskId(std::forward<ImportTaskIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Describes an import snapshot task.</p>
      */
-    inline const SnapshotTaskDetail& GetSnapshotTaskDetail() const{ return m_snapshotTaskDetail; }
+    inline const SnapshotTaskDetail& GetSnapshotTaskDetail() const { return m_snapshotTaskDetail; }
     inline bool SnapshotTaskDetailHasBeenSet() const { return m_snapshotTaskDetailHasBeenSet; }
-    inline void SetSnapshotTaskDetail(const SnapshotTaskDetail& value) { m_snapshotTaskDetailHasBeenSet = true; m_snapshotTaskDetail = value; }
-    inline void SetSnapshotTaskDetail(SnapshotTaskDetail&& value) { m_snapshotTaskDetailHasBeenSet = true; m_snapshotTaskDetail = std::move(value); }
-    inline ImportSnapshotTask& WithSnapshotTaskDetail(const SnapshotTaskDetail& value) { SetSnapshotTaskDetail(value); return *this;}
-    inline ImportSnapshotTask& WithSnapshotTaskDetail(SnapshotTaskDetail&& value) { SetSnapshotTaskDetail(std::move(value)); return *this;}
+    template<typename SnapshotTaskDetailT = SnapshotTaskDetail>
+    void SetSnapshotTaskDetail(SnapshotTaskDetailT&& value) { m_snapshotTaskDetailHasBeenSet = true; m_snapshotTaskDetail = std::forward<SnapshotTaskDetailT>(value); }
+    template<typename SnapshotTaskDetailT = SnapshotTaskDetail>
+    ImportSnapshotTask& WithSnapshotTaskDetail(SnapshotTaskDetailT&& value) { SetSnapshotTaskDetail(std::forward<SnapshotTaskDetailT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags for the import snapshot task.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline ImportSnapshotTask& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline ImportSnapshotTask& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline ImportSnapshotTask& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline ImportSnapshotTask& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    ImportSnapshotTask& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    ImportSnapshotTask& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

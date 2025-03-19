@@ -21,7 +21,7 @@ namespace Model
   class SendContactMethodVerificationRequest : public LightsailRequest
   {
   public:
-    AWS_LIGHTSAIL_API SendContactMethodVerificationRequest();
+    AWS_LIGHTSAIL_API SendContactMethodVerificationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,16 +39,14 @@ namespace Model
      * <p>The protocol to verify, such as <code>Email</code> or <code>SMS</code> (text
      * messaging).</p>
      */
-    inline const ContactMethodVerificationProtocol& GetProtocol() const{ return m_protocol; }
+    inline ContactMethodVerificationProtocol GetProtocol() const { return m_protocol; }
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-    inline void SetProtocol(const ContactMethodVerificationProtocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
-    inline void SetProtocol(ContactMethodVerificationProtocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
-    inline SendContactMethodVerificationRequest& WithProtocol(const ContactMethodVerificationProtocol& value) { SetProtocol(value); return *this;}
-    inline SendContactMethodVerificationRequest& WithProtocol(ContactMethodVerificationProtocol&& value) { SetProtocol(std::move(value)); return *this;}
+    inline void SetProtocol(ContactMethodVerificationProtocol value) { m_protocolHasBeenSet = true; m_protocol = value; }
+    inline SendContactMethodVerificationRequest& WithProtocol(ContactMethodVerificationProtocol value) { SetProtocol(value); return *this;}
     ///@}
   private:
 
-    ContactMethodVerificationProtocol m_protocol;
+    ContactMethodVerificationProtocol m_protocol{ContactMethodVerificationProtocol::NOT_SET};
     bool m_protocolHasBeenSet = false;
   };
 

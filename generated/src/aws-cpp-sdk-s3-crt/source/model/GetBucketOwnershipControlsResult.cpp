@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetBucketOwnershipControlsResult::GetBucketOwnershipControlsResult()
-{
-}
-
 GetBucketOwnershipControlsResult::GetBucketOwnershipControlsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -33,6 +29,7 @@ GetBucketOwnershipControlsResult& GetBucketOwnershipControlsResult::operator =(c
   if(!resultNode.IsNull())
   {
     m_ownershipControls = resultNode;
+    m_ownershipControlsHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
@@ -40,6 +37,7 @@ GetBucketOwnershipControlsResult& GetBucketOwnershipControlsResult::operator =(c
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

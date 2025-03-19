@@ -36,7 +36,7 @@ namespace Model
   class MonitoringConfiguration
   {
   public:
-    AWS_KINESISANALYTICSV2_API MonitoringConfiguration();
+    AWS_KINESISANALYTICSV2_API MonitoringConfiguration() = default;
     AWS_KINESISANALYTICSV2_API MonitoringConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API MonitoringConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,10 @@ namespace Model
      * application. You must set this property to <code>CUSTOM</code> in order to set
      * the <code>LogLevel</code> or <code>MetricsLevel</code> parameters.</p>
      */
-    inline const ConfigurationType& GetConfigurationType() const{ return m_configurationType; }
+    inline ConfigurationType GetConfigurationType() const { return m_configurationType; }
     inline bool ConfigurationTypeHasBeenSet() const { return m_configurationTypeHasBeenSet; }
-    inline void SetConfigurationType(const ConfigurationType& value) { m_configurationTypeHasBeenSet = true; m_configurationType = value; }
-    inline void SetConfigurationType(ConfigurationType&& value) { m_configurationTypeHasBeenSet = true; m_configurationType = std::move(value); }
-    inline MonitoringConfiguration& WithConfigurationType(const ConfigurationType& value) { SetConfigurationType(value); return *this;}
-    inline MonitoringConfiguration& WithConfigurationType(ConfigurationType&& value) { SetConfigurationType(std::move(value)); return *this;}
+    inline void SetConfigurationType(ConfigurationType value) { m_configurationTypeHasBeenSet = true; m_configurationType = value; }
+    inline MonitoringConfiguration& WithConfigurationType(ConfigurationType value) { SetConfigurationType(value); return *this;}
     ///@}
 
     ///@{
@@ -62,34 +60,30 @@ namespace Model
      * <code>Parallelism</code> level is not recommended for applications with a
      * Parallelism over 64 due to excessive costs.</p>
      */
-    inline const MetricsLevel& GetMetricsLevel() const{ return m_metricsLevel; }
+    inline MetricsLevel GetMetricsLevel() const { return m_metricsLevel; }
     inline bool MetricsLevelHasBeenSet() const { return m_metricsLevelHasBeenSet; }
-    inline void SetMetricsLevel(const MetricsLevel& value) { m_metricsLevelHasBeenSet = true; m_metricsLevel = value; }
-    inline void SetMetricsLevel(MetricsLevel&& value) { m_metricsLevelHasBeenSet = true; m_metricsLevel = std::move(value); }
-    inline MonitoringConfiguration& WithMetricsLevel(const MetricsLevel& value) { SetMetricsLevel(value); return *this;}
-    inline MonitoringConfiguration& WithMetricsLevel(MetricsLevel&& value) { SetMetricsLevel(std::move(value)); return *this;}
+    inline void SetMetricsLevel(MetricsLevel value) { m_metricsLevelHasBeenSet = true; m_metricsLevel = value; }
+    inline MonitoringConfiguration& WithMetricsLevel(MetricsLevel value) { SetMetricsLevel(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Describes the verbosity of the CloudWatch Logs for an application.</p>
      */
-    inline const LogLevel& GetLogLevel() const{ return m_logLevel; }
+    inline LogLevel GetLogLevel() const { return m_logLevel; }
     inline bool LogLevelHasBeenSet() const { return m_logLevelHasBeenSet; }
-    inline void SetLogLevel(const LogLevel& value) { m_logLevelHasBeenSet = true; m_logLevel = value; }
-    inline void SetLogLevel(LogLevel&& value) { m_logLevelHasBeenSet = true; m_logLevel = std::move(value); }
-    inline MonitoringConfiguration& WithLogLevel(const LogLevel& value) { SetLogLevel(value); return *this;}
-    inline MonitoringConfiguration& WithLogLevel(LogLevel&& value) { SetLogLevel(std::move(value)); return *this;}
+    inline void SetLogLevel(LogLevel value) { m_logLevelHasBeenSet = true; m_logLevel = value; }
+    inline MonitoringConfiguration& WithLogLevel(LogLevel value) { SetLogLevel(value); return *this;}
     ///@}
   private:
 
-    ConfigurationType m_configurationType;
+    ConfigurationType m_configurationType{ConfigurationType::NOT_SET};
     bool m_configurationTypeHasBeenSet = false;
 
-    MetricsLevel m_metricsLevel;
+    MetricsLevel m_metricsLevel{MetricsLevel::NOT_SET};
     bool m_metricsLevelHasBeenSet = false;
 
-    LogLevel m_logLevel;
+    LogLevel m_logLevel{LogLevel::NOT_SET};
     bool m_logLevelHasBeenSet = false;
   };
 

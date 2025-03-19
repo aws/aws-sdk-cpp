@@ -18,17 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-RegexPatternSet::RegexPatternSet() : 
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_regularExpressionListHasBeenSet(false)
-{
-}
-
 RegexPatternSet::RegexPatternSet(JsonView jsonValue)
-  : RegexPatternSet()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ RegexPatternSet& RegexPatternSet::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ARN"))
   {
     m_aRN = jsonValue.GetString("ARN");
-
     m_aRNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegularExpressionList"))
   {
     Aws::Utils::Array<JsonView> regularExpressionListJsonList = jsonValue.GetArray("RegularExpressionList");
@@ -72,7 +54,6 @@ RegexPatternSet& RegexPatternSet::operator =(JsonView jsonValue)
     }
     m_regularExpressionListHasBeenSet = true;
   }
-
   return *this;
 }
 

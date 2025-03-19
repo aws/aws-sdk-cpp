@@ -37,7 +37,7 @@ namespace Model
   class CriterionAdditionalProperties
   {
   public:
-    AWS_MACIE2_API CriterionAdditionalProperties();
+    AWS_MACIE2_API CriterionAdditionalProperties() = default;
     AWS_MACIE2_API CriterionAdditionalProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API CriterionAdditionalProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,15 +48,14 @@ namespace Model
      * <p>The value for the property matches (equals) the specified value. If you
      * specify multiple values, Macie uses OR logic to join the values.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetEq() const{ return m_eq; }
+    inline const Aws::Vector<Aws::String>& GetEq() const { return m_eq; }
     inline bool EqHasBeenSet() const { return m_eqHasBeenSet; }
-    inline void SetEq(const Aws::Vector<Aws::String>& value) { m_eqHasBeenSet = true; m_eq = value; }
-    inline void SetEq(Aws::Vector<Aws::String>&& value) { m_eqHasBeenSet = true; m_eq = std::move(value); }
-    inline CriterionAdditionalProperties& WithEq(const Aws::Vector<Aws::String>& value) { SetEq(value); return *this;}
-    inline CriterionAdditionalProperties& WithEq(Aws::Vector<Aws::String>&& value) { SetEq(std::move(value)); return *this;}
-    inline CriterionAdditionalProperties& AddEq(const Aws::String& value) { m_eqHasBeenSet = true; m_eq.push_back(value); return *this; }
-    inline CriterionAdditionalProperties& AddEq(Aws::String&& value) { m_eqHasBeenSet = true; m_eq.push_back(std::move(value)); return *this; }
-    inline CriterionAdditionalProperties& AddEq(const char* value) { m_eqHasBeenSet = true; m_eq.push_back(value); return *this; }
+    template<typename EqT = Aws::Vector<Aws::String>>
+    void SetEq(EqT&& value) { m_eqHasBeenSet = true; m_eq = std::forward<EqT>(value); }
+    template<typename EqT = Aws::Vector<Aws::String>>
+    CriterionAdditionalProperties& WithEq(EqT&& value) { SetEq(std::forward<EqT>(value)); return *this;}
+    template<typename EqT = Aws::String>
+    CriterionAdditionalProperties& AddEq(EqT&& value) { m_eqHasBeenSet = true; m_eq.emplace_back(std::forward<EqT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -70,22 +69,21 @@ namespace Model
      * resourcesAffected.s3Object.tags.value, sensitiveData.category, and
      * sensitiveData.detections.type.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetEqExactMatch() const{ return m_eqExactMatch; }
+    inline const Aws::Vector<Aws::String>& GetEqExactMatch() const { return m_eqExactMatch; }
     inline bool EqExactMatchHasBeenSet() const { return m_eqExactMatchHasBeenSet; }
-    inline void SetEqExactMatch(const Aws::Vector<Aws::String>& value) { m_eqExactMatchHasBeenSet = true; m_eqExactMatch = value; }
-    inline void SetEqExactMatch(Aws::Vector<Aws::String>&& value) { m_eqExactMatchHasBeenSet = true; m_eqExactMatch = std::move(value); }
-    inline CriterionAdditionalProperties& WithEqExactMatch(const Aws::Vector<Aws::String>& value) { SetEqExactMatch(value); return *this;}
-    inline CriterionAdditionalProperties& WithEqExactMatch(Aws::Vector<Aws::String>&& value) { SetEqExactMatch(std::move(value)); return *this;}
-    inline CriterionAdditionalProperties& AddEqExactMatch(const Aws::String& value) { m_eqExactMatchHasBeenSet = true; m_eqExactMatch.push_back(value); return *this; }
-    inline CriterionAdditionalProperties& AddEqExactMatch(Aws::String&& value) { m_eqExactMatchHasBeenSet = true; m_eqExactMatch.push_back(std::move(value)); return *this; }
-    inline CriterionAdditionalProperties& AddEqExactMatch(const char* value) { m_eqExactMatchHasBeenSet = true; m_eqExactMatch.push_back(value); return *this; }
+    template<typename EqExactMatchT = Aws::Vector<Aws::String>>
+    void SetEqExactMatch(EqExactMatchT&& value) { m_eqExactMatchHasBeenSet = true; m_eqExactMatch = std::forward<EqExactMatchT>(value); }
+    template<typename EqExactMatchT = Aws::Vector<Aws::String>>
+    CriterionAdditionalProperties& WithEqExactMatch(EqExactMatchT&& value) { SetEqExactMatch(std::forward<EqExactMatchT>(value)); return *this;}
+    template<typename EqExactMatchT = Aws::String>
+    CriterionAdditionalProperties& AddEqExactMatch(EqExactMatchT&& value) { m_eqExactMatchHasBeenSet = true; m_eqExactMatch.emplace_back(std::forward<EqExactMatchT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The value for the property is greater than the specified value.</p>
      */
-    inline long long GetGt() const{ return m_gt; }
+    inline long long GetGt() const { return m_gt; }
     inline bool GtHasBeenSet() const { return m_gtHasBeenSet; }
     inline void SetGt(long long value) { m_gtHasBeenSet = true; m_gt = value; }
     inline CriterionAdditionalProperties& WithGt(long long value) { SetGt(value); return *this;}
@@ -96,7 +94,7 @@ namespace Model
      * <p>The value for the property is greater than or equal to the specified
      * value.</p>
      */
-    inline long long GetGte() const{ return m_gte; }
+    inline long long GetGte() const { return m_gte; }
     inline bool GteHasBeenSet() const { return m_gteHasBeenSet; }
     inline void SetGte(long long value) { m_gteHasBeenSet = true; m_gte = value; }
     inline CriterionAdditionalProperties& WithGte(long long value) { SetGte(value); return *this;}
@@ -106,7 +104,7 @@ namespace Model
     /**
      * <p>The value for the property is less than the specified value.</p>
      */
-    inline long long GetLt() const{ return m_lt; }
+    inline long long GetLt() const { return m_lt; }
     inline bool LtHasBeenSet() const { return m_ltHasBeenSet; }
     inline void SetLt(long long value) { m_ltHasBeenSet = true; m_lt = value; }
     inline CriterionAdditionalProperties& WithLt(long long value) { SetLt(value); return *this;}
@@ -116,7 +114,7 @@ namespace Model
     /**
      * <p>The value for the property is less than or equal to the specified value.</p>
      */
-    inline long long GetLte() const{ return m_lte; }
+    inline long long GetLte() const { return m_lte; }
     inline bool LteHasBeenSet() const { return m_lteHasBeenSet; }
     inline void SetLte(long long value) { m_lteHasBeenSet = true; m_lte = value; }
     inline CriterionAdditionalProperties& WithLte(long long value) { SetLte(value); return *this;}
@@ -127,15 +125,14 @@ namespace Model
      * <p>The value for the property doesn't match (doesn't equal) the specified value.
      * If you specify multiple values, Macie uses OR logic to join the values.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetNeq() const{ return m_neq; }
+    inline const Aws::Vector<Aws::String>& GetNeq() const { return m_neq; }
     inline bool NeqHasBeenSet() const { return m_neqHasBeenSet; }
-    inline void SetNeq(const Aws::Vector<Aws::String>& value) { m_neqHasBeenSet = true; m_neq = value; }
-    inline void SetNeq(Aws::Vector<Aws::String>&& value) { m_neqHasBeenSet = true; m_neq = std::move(value); }
-    inline CriterionAdditionalProperties& WithNeq(const Aws::Vector<Aws::String>& value) { SetNeq(value); return *this;}
-    inline CriterionAdditionalProperties& WithNeq(Aws::Vector<Aws::String>&& value) { SetNeq(std::move(value)); return *this;}
-    inline CriterionAdditionalProperties& AddNeq(const Aws::String& value) { m_neqHasBeenSet = true; m_neq.push_back(value); return *this; }
-    inline CriterionAdditionalProperties& AddNeq(Aws::String&& value) { m_neqHasBeenSet = true; m_neq.push_back(std::move(value)); return *this; }
-    inline CriterionAdditionalProperties& AddNeq(const char* value) { m_neqHasBeenSet = true; m_neq.push_back(value); return *this; }
+    template<typename NeqT = Aws::Vector<Aws::String>>
+    void SetNeq(NeqT&& value) { m_neqHasBeenSet = true; m_neq = std::forward<NeqT>(value); }
+    template<typename NeqT = Aws::Vector<Aws::String>>
+    CriterionAdditionalProperties& WithNeq(NeqT&& value) { SetNeq(std::forward<NeqT>(value)); return *this;}
+    template<typename NeqT = Aws::String>
+    CriterionAdditionalProperties& AddNeq(NeqT&& value) { m_neqHasBeenSet = true; m_neq.emplace_back(std::forward<NeqT>(value)); return *this; }
     ///@}
   private:
 
@@ -145,16 +142,16 @@ namespace Model
     Aws::Vector<Aws::String> m_eqExactMatch;
     bool m_eqExactMatchHasBeenSet = false;
 
-    long long m_gt;
+    long long m_gt{0};
     bool m_gtHasBeenSet = false;
 
-    long long m_gte;
+    long long m_gte{0};
     bool m_gteHasBeenSet = false;
 
-    long long m_lt;
+    long long m_lt{0};
     bool m_ltHasBeenSet = false;
 
-    long long m_lte;
+    long long m_lte{0};
     bool m_lteHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_neq;

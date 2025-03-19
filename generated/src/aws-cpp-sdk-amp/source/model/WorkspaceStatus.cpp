@@ -18,14 +18,7 @@ namespace PrometheusService
 namespace Model
 {
 
-WorkspaceStatus::WorkspaceStatus() : 
-    m_statusCode(WorkspaceStatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false)
-{
-}
-
 WorkspaceStatus::WorkspaceStatus(JsonView jsonValue)
-  : WorkspaceStatus()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ WorkspaceStatus& WorkspaceStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("statusCode"))
   {
     m_statusCode = WorkspaceStatusCodeMapper::GetWorkspaceStatusCodeForName(jsonValue.GetString("statusCode"));
-
     m_statusCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace DataPipeline
 namespace Model
 {
 
-Selector::Selector() : 
-    m_fieldNameHasBeenSet(false),
-    m_operatorHasBeenSet(false)
-{
-}
-
 Selector::Selector(JsonView jsonValue)
-  : Selector()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Selector& Selector::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fieldName"))
   {
     m_fieldName = jsonValue.GetString("fieldName");
-
     m_fieldNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operator"))
   {
     m_operator = jsonValue.GetObject("operator");
-
     m_operatorHasBeenSet = true;
   }
-
   return *this;
 }
 

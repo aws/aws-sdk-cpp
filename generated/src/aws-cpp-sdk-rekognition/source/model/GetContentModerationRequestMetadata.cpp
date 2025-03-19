@@ -18,16 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-GetContentModerationRequestMetadata::GetContentModerationRequestMetadata() : 
-    m_sortBy(ContentModerationSortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_aggregateBy(ContentModerationAggregateBy::NOT_SET),
-    m_aggregateByHasBeenSet(false)
-{
-}
-
 GetContentModerationRequestMetadata::GetContentModerationRequestMetadata(JsonView jsonValue)
-  : GetContentModerationRequestMetadata()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ GetContentModerationRequestMetadata& GetContentModerationRequestMetadata::operat
   if(jsonValue.ValueExists("SortBy"))
   {
     m_sortBy = ContentModerationSortByMapper::GetContentModerationSortByForName(jsonValue.GetString("SortBy"));
-
     m_sortByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AggregateBy"))
   {
     m_aggregateBy = ContentModerationAggregateByMapper::GetContentModerationAggregateByForName(jsonValue.GetString("AggregateBy"));
-
     m_aggregateByHasBeenSet = true;
   }
-
   return *this;
 }
 

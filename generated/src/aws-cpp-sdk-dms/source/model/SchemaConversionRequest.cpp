@@ -18,17 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-SchemaConversionRequest::SchemaConversionRequest() : 
-    m_statusHasBeenSet(false),
-    m_requestIdentifierHasBeenSet(false),
-    m_migrationProjectArnHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_exportSqlDetailsHasBeenSet(false)
-{
-}
-
 SchemaConversionRequest::SchemaConversionRequest(JsonView jsonValue)
-  : SchemaConversionRequest()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ SchemaConversionRequest& SchemaConversionRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestIdentifier"))
   {
     m_requestIdentifier = jsonValue.GetString("RequestIdentifier");
-
     m_requestIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MigrationProjectArn"))
   {
     m_migrationProjectArn = jsonValue.GetString("MigrationProjectArn");
-
     m_migrationProjectArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Error"))
   {
     m_error = jsonValue.GetObject("Error");
-
     m_errorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExportSqlDetails"))
   {
     m_exportSqlDetails = jsonValue.GetObject("ExportSqlDetails");
-
     m_exportSqlDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,25 +12,6 @@ using namespace Aws::PI::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeDimensionKeysRequest::DescribeDimensionKeysRequest() : 
-    m_serviceType(ServiceType::NOT_SET),
-    m_serviceTypeHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_metricHasBeenSet(false),
-    m_periodInSeconds(0),
-    m_periodInSecondsHasBeenSet(false),
-    m_groupByHasBeenSet(false),
-    m_additionalMetricsHasBeenSet(false),
-    m_partitionByHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDimensionKeysRequest::SerializePayload() const
 {
   JsonValue payload;

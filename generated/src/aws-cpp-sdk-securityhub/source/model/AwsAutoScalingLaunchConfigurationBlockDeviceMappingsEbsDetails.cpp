@@ -18,22 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails() : 
-    m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false),
-    m_volumeSize(0),
-    m_volumeSizeHasBeenSet(false),
-    m_volumeTypeHasBeenSet(false)
-{
-}
-
 AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails(JsonView jsonValue)
-  : AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails()
 {
   *this = jsonValue;
 }
@@ -43,45 +28,33 @@ AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails& AwsAutoScalingLa
   if(jsonValue.ValueExists("DeleteOnTermination"))
   {
     m_deleteOnTermination = jsonValue.GetBool("DeleteOnTermination");
-
     m_deleteOnTerminationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Encrypted"))
   {
     m_encrypted = jsonValue.GetBool("Encrypted");
-
     m_encryptedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Iops"))
   {
     m_iops = jsonValue.GetInteger("Iops");
-
     m_iopsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnapshotId"))
   {
     m_snapshotId = jsonValue.GetString("SnapshotId");
-
     m_snapshotIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeSize"))
   {
     m_volumeSize = jsonValue.GetInteger("VolumeSize");
-
     m_volumeSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeType"))
   {
     m_volumeType = jsonValue.GetString("VolumeType");
-
     m_volumeTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

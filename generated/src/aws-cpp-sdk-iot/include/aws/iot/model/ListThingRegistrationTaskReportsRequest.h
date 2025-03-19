@@ -26,7 +26,7 @@ namespace Model
   class ListThingRegistrationTaskReportsRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API ListThingRegistrationTaskReportsRequest();
+    AWS_IOT_API ListThingRegistrationTaskReportsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,26 +43,22 @@ namespace Model
     /**
      * <p>The id of the task.</p>
      */
-    inline const Aws::String& GetTaskId() const{ return m_taskId; }
+    inline const Aws::String& GetTaskId() const { return m_taskId; }
     inline bool TaskIdHasBeenSet() const { return m_taskIdHasBeenSet; }
-    inline void SetTaskId(const Aws::String& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
-    inline void SetTaskId(Aws::String&& value) { m_taskIdHasBeenSet = true; m_taskId = std::move(value); }
-    inline void SetTaskId(const char* value) { m_taskIdHasBeenSet = true; m_taskId.assign(value); }
-    inline ListThingRegistrationTaskReportsRequest& WithTaskId(const Aws::String& value) { SetTaskId(value); return *this;}
-    inline ListThingRegistrationTaskReportsRequest& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
-    inline ListThingRegistrationTaskReportsRequest& WithTaskId(const char* value) { SetTaskId(value); return *this;}
+    template<typename TaskIdT = Aws::String>
+    void SetTaskId(TaskIdT&& value) { m_taskIdHasBeenSet = true; m_taskId = std::forward<TaskIdT>(value); }
+    template<typename TaskIdT = Aws::String>
+    ListThingRegistrationTaskReportsRequest& WithTaskId(TaskIdT&& value) { SetTaskId(std::forward<TaskIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of task report.</p>
      */
-    inline const ReportType& GetReportType() const{ return m_reportType; }
+    inline ReportType GetReportType() const { return m_reportType; }
     inline bool ReportTypeHasBeenSet() const { return m_reportTypeHasBeenSet; }
-    inline void SetReportType(const ReportType& value) { m_reportTypeHasBeenSet = true; m_reportType = value; }
-    inline void SetReportType(ReportType&& value) { m_reportTypeHasBeenSet = true; m_reportType = std::move(value); }
-    inline ListThingRegistrationTaskReportsRequest& WithReportType(const ReportType& value) { SetReportType(value); return *this;}
-    inline ListThingRegistrationTaskReportsRequest& WithReportType(ReportType&& value) { SetReportType(std::move(value)); return *this;}
+    inline void SetReportType(ReportType value) { m_reportTypeHasBeenSet = true; m_reportType = value; }
+    inline ListThingRegistrationTaskReportsRequest& WithReportType(ReportType value) { SetReportType(value); return *this;}
     ///@}
 
     ///@{
@@ -71,21 +67,19 @@ namespace Model
      * previous response; otherwise <b>null</b> to receive the first set of
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListThingRegistrationTaskReportsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListThingRegistrationTaskReportsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListThingRegistrationTaskReportsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListThingRegistrationTaskReportsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return per request.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListThingRegistrationTaskReportsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -95,13 +89,13 @@ namespace Model
     Aws::String m_taskId;
     bool m_taskIdHasBeenSet = false;
 
-    ReportType m_reportType;
+    ReportType m_reportType{ReportType::NOT_SET};
     bool m_reportTypeHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

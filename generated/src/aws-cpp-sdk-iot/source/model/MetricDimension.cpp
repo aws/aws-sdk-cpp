@@ -18,15 +18,7 @@ namespace IoT
 namespace Model
 {
 
-MetricDimension::MetricDimension() : 
-    m_dimensionNameHasBeenSet(false),
-    m_operator(DimensionValueOperator::NOT_SET),
-    m_operatorHasBeenSet(false)
-{
-}
-
 MetricDimension::MetricDimension(JsonView jsonValue)
-  : MetricDimension()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ MetricDimension& MetricDimension::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("dimensionName"))
   {
     m_dimensionName = jsonValue.GetString("dimensionName");
-
     m_dimensionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operator"))
   {
     m_operator = DimensionValueOperatorMapper::GetDimensionValueOperatorForName(jsonValue.GetString("operator"));
-
     m_operatorHasBeenSet = true;
   }
-
   return *this;
 }
 

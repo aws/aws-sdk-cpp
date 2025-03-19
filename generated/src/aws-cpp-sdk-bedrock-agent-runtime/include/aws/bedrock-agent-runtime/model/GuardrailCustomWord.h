@@ -33,7 +33,7 @@ namespace Model
   class GuardrailCustomWord
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API GuardrailCustomWord();
+    AWS_BEDROCKAGENTRUNTIME_API GuardrailCustomWord() = default;
     AWS_BEDROCKAGENTRUNTIME_API GuardrailCustomWord(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API GuardrailCustomWord& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,30 +43,26 @@ namespace Model
     /**
      * <p>The action details for the custom word filter in the Guardrail.</p>
      */
-    inline const GuardrailWordPolicyAction& GetAction() const{ return m_action; }
+    inline GuardrailWordPolicyAction GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const GuardrailWordPolicyAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(GuardrailWordPolicyAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline GuardrailCustomWord& WithAction(const GuardrailWordPolicyAction& value) { SetAction(value); return *this;}
-    inline GuardrailCustomWord& WithAction(GuardrailWordPolicyAction&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(GuardrailWordPolicyAction value) { m_actionHasBeenSet = true; m_action = value; }
+    inline GuardrailCustomWord& WithAction(GuardrailWordPolicyAction value) { SetAction(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The match details for the custom word filter in the Guardrail.</p>
      */
-    inline const Aws::String& GetMatch() const{ return m_match; }
+    inline const Aws::String& GetMatch() const { return m_match; }
     inline bool MatchHasBeenSet() const { return m_matchHasBeenSet; }
-    inline void SetMatch(const Aws::String& value) { m_matchHasBeenSet = true; m_match = value; }
-    inline void SetMatch(Aws::String&& value) { m_matchHasBeenSet = true; m_match = std::move(value); }
-    inline void SetMatch(const char* value) { m_matchHasBeenSet = true; m_match.assign(value); }
-    inline GuardrailCustomWord& WithMatch(const Aws::String& value) { SetMatch(value); return *this;}
-    inline GuardrailCustomWord& WithMatch(Aws::String&& value) { SetMatch(std::move(value)); return *this;}
-    inline GuardrailCustomWord& WithMatch(const char* value) { SetMatch(value); return *this;}
+    template<typename MatchT = Aws::String>
+    void SetMatch(MatchT&& value) { m_matchHasBeenSet = true; m_match = std::forward<MatchT>(value); }
+    template<typename MatchT = Aws::String>
+    GuardrailCustomWord& WithMatch(MatchT&& value) { SetMatch(std::forward<MatchT>(value)); return *this;}
     ///@}
   private:
 
-    GuardrailWordPolicyAction m_action;
+    GuardrailWordPolicyAction m_action{GuardrailWordPolicyAction::NOT_SET};
     bool m_actionHasBeenSet = false;
 
     Aws::String m_match;

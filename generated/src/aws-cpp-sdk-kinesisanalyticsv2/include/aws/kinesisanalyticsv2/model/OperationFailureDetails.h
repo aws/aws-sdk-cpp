@@ -32,7 +32,7 @@ namespace Model
   class OperationFailureDetails
   {
   public:
-    AWS_KINESISANALYTICSV2_API OperationFailureDetails();
+    AWS_KINESISANALYTICSV2_API OperationFailureDetails() = default;
     AWS_KINESISANALYTICSV2_API OperationFailureDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API OperationFailureDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,22 @@ namespace Model
      * Provides the operation ID of a system-rollback operation executed due to failure
      * in the current operation
      */
-    inline const Aws::String& GetRollbackOperationId() const{ return m_rollbackOperationId; }
+    inline const Aws::String& GetRollbackOperationId() const { return m_rollbackOperationId; }
     inline bool RollbackOperationIdHasBeenSet() const { return m_rollbackOperationIdHasBeenSet; }
-    inline void SetRollbackOperationId(const Aws::String& value) { m_rollbackOperationIdHasBeenSet = true; m_rollbackOperationId = value; }
-    inline void SetRollbackOperationId(Aws::String&& value) { m_rollbackOperationIdHasBeenSet = true; m_rollbackOperationId = std::move(value); }
-    inline void SetRollbackOperationId(const char* value) { m_rollbackOperationIdHasBeenSet = true; m_rollbackOperationId.assign(value); }
-    inline OperationFailureDetails& WithRollbackOperationId(const Aws::String& value) { SetRollbackOperationId(value); return *this;}
-    inline OperationFailureDetails& WithRollbackOperationId(Aws::String&& value) { SetRollbackOperationId(std::move(value)); return *this;}
-    inline OperationFailureDetails& WithRollbackOperationId(const char* value) { SetRollbackOperationId(value); return *this;}
+    template<typename RollbackOperationIdT = Aws::String>
+    void SetRollbackOperationId(RollbackOperationIdT&& value) { m_rollbackOperationIdHasBeenSet = true; m_rollbackOperationId = std::forward<RollbackOperationIdT>(value); }
+    template<typename RollbackOperationIdT = Aws::String>
+    OperationFailureDetails& WithRollbackOperationId(RollbackOperationIdT&& value) { SetRollbackOperationId(std::forward<RollbackOperationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ErrorInfo& GetErrorInfo() const{ return m_errorInfo; }
+    inline const ErrorInfo& GetErrorInfo() const { return m_errorInfo; }
     inline bool ErrorInfoHasBeenSet() const { return m_errorInfoHasBeenSet; }
-    inline void SetErrorInfo(const ErrorInfo& value) { m_errorInfoHasBeenSet = true; m_errorInfo = value; }
-    inline void SetErrorInfo(ErrorInfo&& value) { m_errorInfoHasBeenSet = true; m_errorInfo = std::move(value); }
-    inline OperationFailureDetails& WithErrorInfo(const ErrorInfo& value) { SetErrorInfo(value); return *this;}
-    inline OperationFailureDetails& WithErrorInfo(ErrorInfo&& value) { SetErrorInfo(std::move(value)); return *this;}
+    template<typename ErrorInfoT = ErrorInfo>
+    void SetErrorInfo(ErrorInfoT&& value) { m_errorInfoHasBeenSet = true; m_errorInfo = std::forward<ErrorInfoT>(value); }
+    template<typename ErrorInfoT = ErrorInfo>
+    OperationFailureDetails& WithErrorInfo(ErrorInfoT&& value) { SetErrorInfo(std::forward<ErrorInfoT>(value)); return *this;}
     ///@}
   private:
 

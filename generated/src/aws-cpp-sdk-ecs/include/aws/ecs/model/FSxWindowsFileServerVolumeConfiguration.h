@@ -38,7 +38,7 @@ namespace Model
   class FSxWindowsFileServerVolumeConfiguration
   {
   public:
-    AWS_ECS_API FSxWindowsFileServerVolumeConfiguration();
+    AWS_ECS_API FSxWindowsFileServerVolumeConfiguration() = default;
     AWS_ECS_API FSxWindowsFileServerVolumeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API FSxWindowsFileServerVolumeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
     /**
      * <p>The Amazon FSx for Windows File Server file system ID to use.</p>
      */
-    inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
+    inline const Aws::String& GetFileSystemId() const { return m_fileSystemId; }
     inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
-    inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
-    inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::move(value); }
-    inline void SetFileSystemId(const char* value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId.assign(value); }
-    inline FSxWindowsFileServerVolumeConfiguration& WithFileSystemId(const Aws::String& value) { SetFileSystemId(value); return *this;}
-    inline FSxWindowsFileServerVolumeConfiguration& WithFileSystemId(Aws::String&& value) { SetFileSystemId(std::move(value)); return *this;}
-    inline FSxWindowsFileServerVolumeConfiguration& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
+    template<typename FileSystemIdT = Aws::String>
+    void SetFileSystemId(FileSystemIdT&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::forward<FileSystemIdT>(value); }
+    template<typename FileSystemIdT = Aws::String>
+    FSxWindowsFileServerVolumeConfiguration& WithFileSystemId(FileSystemIdT&& value) { SetFileSystemId(std::forward<FileSystemIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * <p>The directory within the Amazon FSx for Windows File Server file system to
      * mount as the root directory inside the host.</p>
      */
-    inline const Aws::String& GetRootDirectory() const{ return m_rootDirectory; }
+    inline const Aws::String& GetRootDirectory() const { return m_rootDirectory; }
     inline bool RootDirectoryHasBeenSet() const { return m_rootDirectoryHasBeenSet; }
-    inline void SetRootDirectory(const Aws::String& value) { m_rootDirectoryHasBeenSet = true; m_rootDirectory = value; }
-    inline void SetRootDirectory(Aws::String&& value) { m_rootDirectoryHasBeenSet = true; m_rootDirectory = std::move(value); }
-    inline void SetRootDirectory(const char* value) { m_rootDirectoryHasBeenSet = true; m_rootDirectory.assign(value); }
-    inline FSxWindowsFileServerVolumeConfiguration& WithRootDirectory(const Aws::String& value) { SetRootDirectory(value); return *this;}
-    inline FSxWindowsFileServerVolumeConfiguration& WithRootDirectory(Aws::String&& value) { SetRootDirectory(std::move(value)); return *this;}
-    inline FSxWindowsFileServerVolumeConfiguration& WithRootDirectory(const char* value) { SetRootDirectory(value); return *this;}
+    template<typename RootDirectoryT = Aws::String>
+    void SetRootDirectory(RootDirectoryT&& value) { m_rootDirectoryHasBeenSet = true; m_rootDirectory = std::forward<RootDirectoryT>(value); }
+    template<typename RootDirectoryT = Aws::String>
+    FSxWindowsFileServerVolumeConfiguration& WithRootDirectory(RootDirectoryT&& value) { SetRootDirectory(std::forward<RootDirectoryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,12 +74,12 @@ namespace Model
      * <p>The authorization configuration details for the Amazon FSx for Windows File
      * Server file system.</p>
      */
-    inline const FSxWindowsFileServerAuthorizationConfig& GetAuthorizationConfig() const{ return m_authorizationConfig; }
+    inline const FSxWindowsFileServerAuthorizationConfig& GetAuthorizationConfig() const { return m_authorizationConfig; }
     inline bool AuthorizationConfigHasBeenSet() const { return m_authorizationConfigHasBeenSet; }
-    inline void SetAuthorizationConfig(const FSxWindowsFileServerAuthorizationConfig& value) { m_authorizationConfigHasBeenSet = true; m_authorizationConfig = value; }
-    inline void SetAuthorizationConfig(FSxWindowsFileServerAuthorizationConfig&& value) { m_authorizationConfigHasBeenSet = true; m_authorizationConfig = std::move(value); }
-    inline FSxWindowsFileServerVolumeConfiguration& WithAuthorizationConfig(const FSxWindowsFileServerAuthorizationConfig& value) { SetAuthorizationConfig(value); return *this;}
-    inline FSxWindowsFileServerVolumeConfiguration& WithAuthorizationConfig(FSxWindowsFileServerAuthorizationConfig&& value) { SetAuthorizationConfig(std::move(value)); return *this;}
+    template<typename AuthorizationConfigT = FSxWindowsFileServerAuthorizationConfig>
+    void SetAuthorizationConfig(AuthorizationConfigT&& value) { m_authorizationConfigHasBeenSet = true; m_authorizationConfig = std::forward<AuthorizationConfigT>(value); }
+    template<typename AuthorizationConfigT = FSxWindowsFileServerAuthorizationConfig>
+    FSxWindowsFileServerVolumeConfiguration& WithAuthorizationConfig(AuthorizationConfigT&& value) { SetAuthorizationConfig(std::forward<AuthorizationConfigT>(value)); return *this;}
     ///@}
   private:
 

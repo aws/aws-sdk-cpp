@@ -18,15 +18,7 @@ namespace SocialMessaging
 namespace Model
 {
 
-WabaSetupFinalization::WabaSetupFinalization() : 
-    m_idHasBeenSet(false),
-    m_eventDestinationsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 WabaSetupFinalization::WabaSetupFinalization(JsonView jsonValue)
-  : WabaSetupFinalization()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ WabaSetupFinalization& WabaSetupFinalization::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventDestinations"))
   {
     Aws::Utils::Array<JsonView> eventDestinationsJsonList = jsonValue.GetArray("eventDestinations");
@@ -49,7 +39,6 @@ WabaSetupFinalization& WabaSetupFinalization::operator =(JsonView jsonValue)
     }
     m_eventDestinationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -59,7 +48,6 @@ WabaSetupFinalization& WabaSetupFinalization::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

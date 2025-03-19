@@ -12,15 +12,6 @@ using namespace Aws::CodePipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopPipelineExecutionRequest::StopPipelineExecutionRequest() : 
-    m_pipelineNameHasBeenSet(false),
-    m_pipelineExecutionIdHasBeenSet(false),
-    m_abandon(false),
-    m_abandonHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 Aws::String StopPipelineExecutionRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -46,7 +46,7 @@ namespace Model
   class RawMessageContent
   {
   public:
-    AWS_WORKMAILMESSAGEFLOW_API RawMessageContent();
+    AWS_WORKMAILMESSAGEFLOW_API RawMessageContent() = default;
     AWS_WORKMAILMESSAGEFLOW_API RawMessageContent(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKMAILMESSAGEFLOW_API RawMessageContent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKMAILMESSAGEFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,12 +56,12 @@ namespace Model
     /**
      * <p>The S3 reference of an email message.</p>
      */
-    inline const S3Reference& GetS3Reference() const{ return m_s3Reference; }
+    inline const S3Reference& GetS3Reference() const { return m_s3Reference; }
     inline bool S3ReferenceHasBeenSet() const { return m_s3ReferenceHasBeenSet; }
-    inline void SetS3Reference(const S3Reference& value) { m_s3ReferenceHasBeenSet = true; m_s3Reference = value; }
-    inline void SetS3Reference(S3Reference&& value) { m_s3ReferenceHasBeenSet = true; m_s3Reference = std::move(value); }
-    inline RawMessageContent& WithS3Reference(const S3Reference& value) { SetS3Reference(value); return *this;}
-    inline RawMessageContent& WithS3Reference(S3Reference&& value) { SetS3Reference(std::move(value)); return *this;}
+    template<typename S3ReferenceT = S3Reference>
+    void SetS3Reference(S3ReferenceT&& value) { m_s3ReferenceHasBeenSet = true; m_s3Reference = std::forward<S3ReferenceT>(value); }
+    template<typename S3ReferenceT = S3Reference>
+    RawMessageContent& WithS3Reference(S3ReferenceT&& value) { SetS3Reference(std::forward<S3ReferenceT>(value)); return *this;}
     ///@}
   private:
 

@@ -24,7 +24,7 @@
 #else
     #set($isEventStreamInput = false)
 #end
-#if(!$subShape.primitive)
+#if(!$subShape.primitive && !$subShape.enum)
 #set($rawCppType = ${cppType})
 #set($cppType = "const ${rawCppType}&")
 #set($moveType = "${rawCppType}&&")
@@ -34,39 +34,30 @@
 #else
 #set($returnType = ${cppType})
 #end
-#set ($required = '')
-#if(!$isEventStreamInput && !$member.value.required && $useRequiredField)
-#set ($required = "${CppViewHelper.computeVariableHasBeenSetName($member.key)} = true; ")
-#end
+#set ($setHasBeenSet = "${CppViewHelper.computeVariableHasBeenSetName($member.key)} = true; ")
 #set($memberVariableName = $CppViewHelper.computeMemberVariableName($member.key))
 #set($memberKeyWithFirstLetterCapitalized = $CppViewHelper.capitalizeFirstChar($member.key))
 #set($hasBeenSetBody = " { return ${CppViewHelper.computeVariableHasBeenSetName($member.key)}; }")
 #set($witherWithCopy = " { Set${memberKeyWithFirstLetterCapitalized}(value); return *this;}")
-#set($witherWithMove = " { Set${memberKeyWithFirstLetterCapitalized}(std::move(value)); return *this;}")
-#set($adderWithCopy = " { ${required}${memberVariableName}.push_back(value); return *this; }")
-#set($adderWithMove = " { ${required}${memberVariableName}.push_back(std::move(value)); return *this; }")
+#set($witherWithMove = " { Set${memberKeyWithFirstLetterCapitalized}(std::forward<${memberKeyWithFirstLetterCapitalized}T>(value)); return *this;}")
+#set($adderWithCopy = " { ${setHasBeenSet}${memberVariableName}.push_back(value); return *this; }")
+#set($adderWithMove = " { ${setHasBeenSet}${memberVariableName}.emplace_back(std::forward<${memberKeyWithFirstLetterCapitalized}T>(value)); return *this; }")
 #if($member.value.shape.getName() == $shape.getName() && $member.value.shape.list)
 #set($getterBody = "{ return ${memberVariableName}[0]; }")
-#set($setterWithCopy = " { ${required}${memberVariableName}.resize(1); ${memberVariableName}[0] = value; }")
-#set($setterWithMove = " { ${required}${memberVariableName}.resize(1); ${memberVariableName}[0] = std::move(value); }")
+#set($setterWithCopy = " { ${setHasBeenSet}${memberVariableName}.resize(1); ${memberVariableName}[0] = value; }")
+#set($setterWithMove = " { ${setHasBeenSet}${memberVariableName}.resize(1); ${memberVariableName}[0] = std::forward<${memberKeyWithFirstLetterCapitalized}T>(value); }")
 #elseif($member.value.shape.isMutuallyReferencedWith($shape) || $member.value.shape.getName() == $shape.getName())
-#set($hasBeenSetBody = ";")
-#set($getterBody = ";")
+#set($getterBody = "{$nl      return *${memberVariableName};$nl    }")
 #set($setterWithCopy = ";")
-#set($setterWithMove = ";")
-#set($witherWithCopy = ";")
-#set($witherWithMove = ";")
-#set($adderWithCopy = ";")
-#set($adderWithMove = ";")
-#set($inline = "$exportMacro ")
+#set($setterWithMove = " {$nl      ${setHasBeenSet}$nl      ${memberVariableName} = Aws::MakeShared<$CppViewHelper.computeCppType($member.value.shape)>(" + '"' + "${typeInfo.className}" + '"' + ", std::forward<${memberKeyWithFirstLetterCapitalized}T>(value));$nl    }")
 #elseif($member.value.isChecksumMember())
-#set($getterBody = "{ return ${memberVariableName}; }")
-#set($setterWithCopy = " { ${required}${memberVariableName} = value; SetChecksumAlgorithm(ChecksumAlgorithm::${member.value.getChecksumEnumMember()}); }")
-#set($setterWithMove = " { ${required}${memberVariableName} = std::move(value); SetChecksumAlgorithm(ChecksumAlgorithm::${member.value.getChecksumEnumMember()}); }")
+#set($getterBody = " { return ${memberVariableName}; }")
+#set($setterWithCopy = " { ${setHasBeenSet}${memberVariableName} = value; SetChecksumAlgorithm(ChecksumAlgorithm::${member.value.getChecksumEnumMember()}); }")
+#set($setterWithMove = " { ${setHasBeenSet}${memberVariableName} = std::forward<${memberKeyWithFirstLetterCapitalized}T>(value); SetChecksumAlgorithm(ChecksumAlgorithm::${member.value.getChecksumEnumMember()}); }")
 #else
-#set($getterBody = "{ return ${memberVariableName}; }")
-#set($setterWithCopy = " { ${required}${memberVariableName} = value; }")
-#set($setterWithMove = " { ${required}${memberVariableName} = std::move(value); }")
+#set($getterBody = " { return ${memberVariableName}; }")
+#set($setterWithCopy = " { ${setHasBeenSet}${memberVariableName} = value; }")
+#set($setterWithMove = " { ${setHasBeenSet}${memberVariableName} = std::forward<${memberKeyWithFirstLetterCapitalized}T>(value); }")
 #end
 #set($getterFunctionName = "Get${memberKeyWithFirstLetterCapitalized}")
 #if($getterFunctionName == ${member.value.shape.name})
@@ -97,78 +88,48 @@
 #if(!$member.value.required && $useRequiredField)
     ${inline}bool ${memberKeyWithFirstLetterCapitalized}HasBeenSet() const${hasBeenSetBody}
 #end
+#if(!$subShape.primitive && !$subShape.enum)
+    template<typename ${memberKeyWithFirstLetterCapitalized}T = $rawCppType>
+    void Set${memberKeyWithFirstLetterCapitalized}(${memberKeyWithFirstLetterCapitalized}T&& value)${setterWithMove}
+#else
     ${inline}void Set${memberKeyWithFirstLetterCapitalized}(${cppType} value)${setterWithCopy}
-#if(!$subShape.primitive)
-    ${inline}void Set${memberKeyWithFirstLetterCapitalized}(${moveType} value)${setterWithMove}
 #end
-#if($member.value.shape.string && !$member.value.isChecksumMember())
-    ${inline}void Set${memberKeyWithFirstLetterCapitalized}(const char* value) { ${required}${memberVariableName}.assign(value); }
-#elseif($member.value.shape.string && $member.value.isChecksumMember())
-    ${inline}void Set${memberKeyWithFirstLetterCapitalized}(const char* value) { ${required}${memberVariableName}.assign(value); SetChecksumAlgorithm(ChecksumAlgorithm::${member.value.getChecksumEnumMember()}); }
+#if($member.value.shape.string && $member.value.isChecksumMember())
+    ${inline}void Set${memberKeyWithFirstLetterCapitalized}(const char* value) { ${setHasBeenSet}${memberVariableName}.assign(value); SetChecksumAlgorithm(ChecksumAlgorithm::${member.value.getChecksumEnumMember()}); }
 #end
+#if(!$subShape.primitive && !$subShape.enum)
+    template<typename ${memberKeyWithFirstLetterCapitalized}T = $rawCppType>
+    ${classNameRef} With${memberKeyWithFirstLetterCapitalized}(${memberKeyWithFirstLetterCapitalized}T&& value)${witherWithMove}
+#else
     ${inline}${classNameRef} With${memberKeyWithFirstLetterCapitalized}(${cppType} value)${witherWithCopy}
-#if(!$subShape.primitive)
-    ${inline}${classNameRef} With${memberKeyWithFirstLetterCapitalized}(${moveType} value)${witherWithMove}
-#end
-#if($member.value.shape.string)
-    ${inline}${classNameRef} With${memberKeyWithFirstLetterCapitalized}(const char* value)${witherWithCopy}
 #end
 #end
-#if($member.value.shape.map)##TODO: replace Adder functions with $adderWithCopy for map type.
+#if($member.value.shape.map)
 #set($mapMember = $member.value.shape)
 #set($keyType = $CppViewHelper.computeCppType($mapMember.mapKey.shape))
 #set($valueType = $CppViewHelper.computeCppType($mapMember.mapValue.shape))
-#if(!$mapMember.mapKey.shape.primitive)
-#set($rawKeyType = $keyType)
-#set($keyType = "const ${rawKeyType}&")
-#set($keyMoveType = "${rawKeyType}&&")
-#end
-#if(!$mapMember.mapValue.shape.primitive)
-#set($rawValueType = $valueType)
-#set($valueType = "const ${rawValueType}&")
-#set($valueMoveType = "${rawValueType}&&")
-#end
-    ${inline}${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${keyType} key, ${valueType} value) { ${required}${memberVariableName}.emplace(key, value); return *this; }
-#if(!$mapMember.mapKey.shape.primitive)
-    ${inline}${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${keyMoveType} key, ${valueType} value) { ${required}${memberVariableName}.emplace(std::move(key), value); return *this; }
-#end
-#if(!$mapMember.mapValue.shape.primitive)
-    ${inline}${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${keyType} key, ${valueMoveType} value) { ${required}${memberVariableName}.emplace(key, std::move(value)); return *this; }
-#end
-#if(!$mapMember.mapKey.shape.primitive && !$mapMember.mapValue.shape.primitive)
-    ${inline}${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${keyMoveType} key, ${valueMoveType} value) { ${required}${memberVariableName}.emplace(std::move(key), std::move(value)); return *this; }
-#end
-#if($mapMember.mapKey.shape.string || $mapMember.mapValue.shape.string)
-#if($mapMember.mapKey.shape.string)
-#set($keyType = 'const char*')
-#if(!$mapMember.mapValue.shape.primitive)
-    ${inline}${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${keyType} key, ${valueMoveType} value) { ${required}${memberVariableName}.emplace(key, std::move(value)); return *this; }
-#end
-#end
-#if($mapMember.mapValue.shape.string)
-#set($valueType = 'const char*')
-#if(!$mapMember.mapKey.shape.primitive)
-    ${inline}${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${keyMoveType} key, ${valueType} value) { ${required}${memberVariableName}.emplace(std::move(key), value); return *this; }
-#end
-#end
-    ${inline}${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${keyType} key, ${valueType} value) { ${required}${memberVariableName}.emplace(key, value); return *this; }
+#if(!$mapMember.mapKey.shape.primitive && !$mapMember.mapKey.shape.enum && !$mapMember.mapValue.shape.primitive && !$mapMember.mapValue.shape.enum)
+#set($keyTemplType = "${memberKeyWithFirstLetterCapitalized}KeyT")
+#set($valueTemplType = "${memberKeyWithFirstLetterCapitalized}ValueT")
+    template<typename ${keyTemplType} = $keyType, typename ${valueTemplType} = $valueType>
+    ${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${keyTemplType}&& key, ${valueTemplType}&& value) {
+      ${setHasBeenSet}${memberVariableName}.emplace(std::forward<${keyTemplType}>(key), std::forward<${valueTemplType}>(value)); return *this;
+    }
+#else
+    ${inline}${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${keyType} key, ${valueType} value) {
+      ${setHasBeenSet}${memberVariableName}.emplace(key, value); return *this;
+    }
 #end
 #end
 #if($member.value.shape.list)
 #set($listMember = $member.value.shape)
 #set($valueType = $CppViewHelper.computeCppType($listMember.listMember.shape))
-#if(!$listMember.listMember.shape.primitive)
-#set($rawValueType = "${valueType}")
-#set($valueType = "const ${rawValueType}&")
-#set($moveValueType = "${rawValueType}&&")
-#end
+#if(!$listMember.listMember.shape.primitive && !$listMember.listMember.shape.enum)
+#set($valueTemplType = "${memberKeyWithFirstLetterCapitalized}T")
+    template<typename ${valueTemplType} = $valueType>
+    ${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${valueTemplType}&& value) { ${setHasBeenSet}${memberVariableName}.emplace_back(std::forward<${valueTemplType}>(value)); return *this; }
+#else
     ${inline}${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${valueType} value)$adderWithCopy
-#if(!$listMember.listMember.shape.primitive)
-    ${inline}${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${moveValueType} value)$adderWithMove
-#end
-#if($listMember.listMember.shape.string)
-#set($valueType = 'const char*')
-    ${inline}${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${valueType} value) { ${required}${memberVariableName}.push_back(value); return *this; }
 #end
 #end
     ///@}
@@ -187,7 +148,7 @@
 #end
 #if($operation.result.shape.hasEventStreamMembers())
     ${operation.name}Handler m_handler;
-    Aws::Utils::Event::EventStreamDecoder m_decoder;
+    Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
 
 #end
 #end##if($shape.members.size() > 0)

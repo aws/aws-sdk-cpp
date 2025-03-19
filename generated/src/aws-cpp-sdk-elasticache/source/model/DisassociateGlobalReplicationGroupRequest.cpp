@@ -10,13 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-DisassociateGlobalReplicationGroupRequest::DisassociateGlobalReplicationGroupRequest() : 
-    m_globalReplicationGroupIdHasBeenSet(false),
-    m_replicationGroupIdHasBeenSet(false),
-    m_replicationGroupRegionHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateGlobalReplicationGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

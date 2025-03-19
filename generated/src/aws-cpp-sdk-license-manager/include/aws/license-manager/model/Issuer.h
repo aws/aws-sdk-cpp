@@ -31,7 +31,7 @@ namespace Model
   class Issuer
   {
   public:
-    AWS_LICENSEMANAGER_API Issuer();
+    AWS_LICENSEMANAGER_API Issuer() = default;
     AWS_LICENSEMANAGER_API Issuer(Aws::Utils::Json::JsonView jsonValue);
     AWS_LICENSEMANAGER_API Issuer& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>Issuer name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Issuer& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Issuer& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Issuer& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Issuer& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * usage of sign and verify, and support the RSASSA-PSS SHA-256 signing
      * algorithm.</p>
      */
-    inline const Aws::String& GetSignKey() const{ return m_signKey; }
+    inline const Aws::String& GetSignKey() const { return m_signKey; }
     inline bool SignKeyHasBeenSet() const { return m_signKeyHasBeenSet; }
-    inline void SetSignKey(const Aws::String& value) { m_signKeyHasBeenSet = true; m_signKey = value; }
-    inline void SetSignKey(Aws::String&& value) { m_signKeyHasBeenSet = true; m_signKey = std::move(value); }
-    inline void SetSignKey(const char* value) { m_signKeyHasBeenSet = true; m_signKey.assign(value); }
-    inline Issuer& WithSignKey(const Aws::String& value) { SetSignKey(value); return *this;}
-    inline Issuer& WithSignKey(Aws::String&& value) { SetSignKey(std::move(value)); return *this;}
-    inline Issuer& WithSignKey(const char* value) { SetSignKey(value); return *this;}
+    template<typename SignKeyT = Aws::String>
+    void SetSignKey(SignKeyT&& value) { m_signKeyHasBeenSet = true; m_signKey = std::forward<SignKeyT>(value); }
+    template<typename SignKeyT = Aws::String>
+    Issuer& WithSignKey(SignKeyT&& value) { SetSignKey(std::forward<SignKeyT>(value)); return *this;}
     ///@}
   private:
 

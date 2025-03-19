@@ -18,10 +18,6 @@ namespace Appflow
 namespace Model
 {
 
-S3Metadata::S3Metadata()
-{
-}
-
 S3Metadata::S3Metadata(JsonView jsonValue)
 {
   *this = jsonValue;

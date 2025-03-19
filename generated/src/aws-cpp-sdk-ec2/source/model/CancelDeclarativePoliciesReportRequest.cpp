@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CancelDeclarativePoliciesReportRequest::CancelDeclarativePoliciesReportRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_reportIdHasBeenSet(false)
-{
-}
-
 Aws::String CancelDeclarativePoliciesReportRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAccountConfigurationResult::GetAccountConfigurationResult()
-{
-}
-
 GetAccountConfigurationResult::GetAccountConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetAccountConfigurationResult& GetAccountConfigurationResult::operator =(const A
   if(jsonValue.ValueExists("ExpiryEvents"))
   {
     m_expiryEvents = jsonValue.GetObject("ExpiryEvents");
-
+    m_expiryEventsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

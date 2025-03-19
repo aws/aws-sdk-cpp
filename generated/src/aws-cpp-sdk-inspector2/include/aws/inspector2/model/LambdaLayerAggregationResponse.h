@@ -33,7 +33,7 @@ namespace Model
   class LambdaLayerAggregationResponse
   {
   public:
-    AWS_INSPECTOR2_API LambdaLayerAggregationResponse();
+    AWS_INSPECTOR2_API LambdaLayerAggregationResponse() = default;
     AWS_INSPECTOR2_API LambdaLayerAggregationResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API LambdaLayerAggregationResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The account ID of the Amazon Web Services Lambda function layer.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline LambdaLayerAggregationResponse& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline LambdaLayerAggregationResponse& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline LambdaLayerAggregationResponse& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    LambdaLayerAggregationResponse& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The names of the Amazon Web Services Lambda functions associated with the
      * layers.</p>
      */
-    inline const Aws::String& GetFunctionName() const{ return m_functionName; }
+    inline const Aws::String& GetFunctionName() const { return m_functionName; }
     inline bool FunctionNameHasBeenSet() const { return m_functionNameHasBeenSet; }
-    inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
-    inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
-    inline void SetFunctionName(const char* value) { m_functionNameHasBeenSet = true; m_functionName.assign(value); }
-    inline LambdaLayerAggregationResponse& WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
-    inline LambdaLayerAggregationResponse& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
-    inline LambdaLayerAggregationResponse& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
+    template<typename FunctionNameT = Aws::String>
+    void SetFunctionName(FunctionNameT&& value) { m_functionNameHasBeenSet = true; m_functionName = std::forward<FunctionNameT>(value); }
+    template<typename FunctionNameT = Aws::String>
+    LambdaLayerAggregationResponse& WithFunctionName(FunctionNameT&& value) { SetFunctionName(std::forward<FunctionNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,40 +69,36 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Lambda function
      * layer.</p>
      */
-    inline const Aws::String& GetLayerArn() const{ return m_layerArn; }
+    inline const Aws::String& GetLayerArn() const { return m_layerArn; }
     inline bool LayerArnHasBeenSet() const { return m_layerArnHasBeenSet; }
-    inline void SetLayerArn(const Aws::String& value) { m_layerArnHasBeenSet = true; m_layerArn = value; }
-    inline void SetLayerArn(Aws::String&& value) { m_layerArnHasBeenSet = true; m_layerArn = std::move(value); }
-    inline void SetLayerArn(const char* value) { m_layerArnHasBeenSet = true; m_layerArn.assign(value); }
-    inline LambdaLayerAggregationResponse& WithLayerArn(const Aws::String& value) { SetLayerArn(value); return *this;}
-    inline LambdaLayerAggregationResponse& WithLayerArn(Aws::String&& value) { SetLayerArn(std::move(value)); return *this;}
-    inline LambdaLayerAggregationResponse& WithLayerArn(const char* value) { SetLayerArn(value); return *this;}
+    template<typename LayerArnT = Aws::String>
+    void SetLayerArn(LayerArnT&& value) { m_layerArnHasBeenSet = true; m_layerArn = std::forward<LayerArnT>(value); }
+    template<typename LayerArnT = Aws::String>
+    LambdaLayerAggregationResponse& WithLayerArn(LayerArnT&& value) { SetLayerArn(std::forward<LayerArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Resource ID of the Amazon Web Services Lambda function layer.</p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline LambdaLayerAggregationResponse& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline LambdaLayerAggregationResponse& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline LambdaLayerAggregationResponse& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    LambdaLayerAggregationResponse& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An object that contains the counts of aggregated finding per severity.</p>
      */
-    inline const SeverityCounts& GetSeverityCounts() const{ return m_severityCounts; }
+    inline const SeverityCounts& GetSeverityCounts() const { return m_severityCounts; }
     inline bool SeverityCountsHasBeenSet() const { return m_severityCountsHasBeenSet; }
-    inline void SetSeverityCounts(const SeverityCounts& value) { m_severityCountsHasBeenSet = true; m_severityCounts = value; }
-    inline void SetSeverityCounts(SeverityCounts&& value) { m_severityCountsHasBeenSet = true; m_severityCounts = std::move(value); }
-    inline LambdaLayerAggregationResponse& WithSeverityCounts(const SeverityCounts& value) { SetSeverityCounts(value); return *this;}
-    inline LambdaLayerAggregationResponse& WithSeverityCounts(SeverityCounts&& value) { SetSeverityCounts(std::move(value)); return *this;}
+    template<typename SeverityCountsT = SeverityCounts>
+    void SetSeverityCounts(SeverityCountsT&& value) { m_severityCountsHasBeenSet = true; m_severityCounts = std::forward<SeverityCountsT>(value); }
+    template<typename SeverityCountsT = SeverityCounts>
+    LambdaLayerAggregationResponse& WithSeverityCounts(SeverityCountsT&& value) { SetSeverityCounts(std::forward<SeverityCountsT>(value)); return *this;}
     ///@}
   private:
 

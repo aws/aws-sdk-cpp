@@ -12,12 +12,6 @@ using namespace Aws::CleanRoomsML::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelTrainedModelRequest::CancelTrainedModelRequest() : 
-    m_membershipIdentifierHasBeenSet(false),
-    m_trainedModelArnHasBeenSet(false)
-{
-}
-
 Aws::String CancelTrainedModelRequest::SerializePayload() const
 {
   return {};

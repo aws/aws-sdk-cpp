@@ -29,7 +29,7 @@ namespace Model
   class BatchGetInvoiceProfileResult
   {
   public:
-    AWS_INVOICING_API BatchGetInvoiceProfileResult();
+    AWS_INVOICING_API BatchGetInvoiceProfileResult() = default;
     AWS_INVOICING_API BatchGetInvoiceProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_INVOICING_API BatchGetInvoiceProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p> A list of invoice profiles corresponding to the requested accounts. </p>
      */
-    inline const Aws::Vector<InvoiceProfile>& GetProfiles() const{ return m_profiles; }
-    inline void SetProfiles(const Aws::Vector<InvoiceProfile>& value) { m_profiles = value; }
-    inline void SetProfiles(Aws::Vector<InvoiceProfile>&& value) { m_profiles = std::move(value); }
-    inline BatchGetInvoiceProfileResult& WithProfiles(const Aws::Vector<InvoiceProfile>& value) { SetProfiles(value); return *this;}
-    inline BatchGetInvoiceProfileResult& WithProfiles(Aws::Vector<InvoiceProfile>&& value) { SetProfiles(std::move(value)); return *this;}
-    inline BatchGetInvoiceProfileResult& AddProfiles(const InvoiceProfile& value) { m_profiles.push_back(value); return *this; }
-    inline BatchGetInvoiceProfileResult& AddProfiles(InvoiceProfile&& value) { m_profiles.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<InvoiceProfile>& GetProfiles() const { return m_profiles; }
+    template<typename ProfilesT = Aws::Vector<InvoiceProfile>>
+    void SetProfiles(ProfilesT&& value) { m_profilesHasBeenSet = true; m_profiles = std::forward<ProfilesT>(value); }
+    template<typename ProfilesT = Aws::Vector<InvoiceProfile>>
+    BatchGetInvoiceProfileResult& WithProfiles(ProfilesT&& value) { SetProfiles(std::forward<ProfilesT>(value)); return *this;}
+    template<typename ProfilesT = InvoiceProfile>
+    BatchGetInvoiceProfileResult& AddProfiles(ProfilesT&& value) { m_profilesHasBeenSet = true; m_profiles.emplace_back(std::forward<ProfilesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchGetInvoiceProfileResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchGetInvoiceProfileResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchGetInvoiceProfileResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchGetInvoiceProfileResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<InvoiceProfile> m_profiles;
+    bool m_profilesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

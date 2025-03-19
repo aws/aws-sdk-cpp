@@ -34,7 +34,7 @@ namespace Model
   class TimeSeriesIdentifiers
   {
   public:
-    AWS_FORECASTSERVICE_API TimeSeriesIdentifiers();
+    AWS_FORECASTSERVICE_API TimeSeriesIdentifiers() = default;
     AWS_FORECASTSERVICE_API TimeSeriesIdentifiers(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API TimeSeriesIdentifiers& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,36 +42,34 @@ namespace Model
 
     ///@{
     
-    inline const DataSource& GetDataSource() const{ return m_dataSource; }
+    inline const DataSource& GetDataSource() const { return m_dataSource; }
     inline bool DataSourceHasBeenSet() const { return m_dataSourceHasBeenSet; }
-    inline void SetDataSource(const DataSource& value) { m_dataSourceHasBeenSet = true; m_dataSource = value; }
-    inline void SetDataSource(DataSource&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::move(value); }
-    inline TimeSeriesIdentifiers& WithDataSource(const DataSource& value) { SetDataSource(value); return *this;}
-    inline TimeSeriesIdentifiers& WithDataSource(DataSource&& value) { SetDataSource(std::move(value)); return *this;}
+    template<typename DataSourceT = DataSource>
+    void SetDataSource(DataSourceT&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::forward<DataSourceT>(value); }
+    template<typename DataSourceT = DataSource>
+    TimeSeriesIdentifiers& WithDataSource(DataSourceT&& value) { SetDataSource(std::forward<DataSourceT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Schema& GetSchema() const{ return m_schema; }
+    inline const Schema& GetSchema() const { return m_schema; }
     inline bool SchemaHasBeenSet() const { return m_schemaHasBeenSet; }
-    inline void SetSchema(const Schema& value) { m_schemaHasBeenSet = true; m_schema = value; }
-    inline void SetSchema(Schema&& value) { m_schemaHasBeenSet = true; m_schema = std::move(value); }
-    inline TimeSeriesIdentifiers& WithSchema(const Schema& value) { SetSchema(value); return *this;}
-    inline TimeSeriesIdentifiers& WithSchema(Schema&& value) { SetSchema(std::move(value)); return *this;}
+    template<typename SchemaT = Schema>
+    void SetSchema(SchemaT&& value) { m_schemaHasBeenSet = true; m_schema = std::forward<SchemaT>(value); }
+    template<typename SchemaT = Schema>
+    TimeSeriesIdentifiers& WithSchema(SchemaT&& value) { SetSchema(std::forward<SchemaT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The format of the data, either CSV or PARQUET.</p>
      */
-    inline const Aws::String& GetFormat() const{ return m_format; }
+    inline const Aws::String& GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const Aws::String& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(Aws::String&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline void SetFormat(const char* value) { m_formatHasBeenSet = true; m_format.assign(value); }
-    inline TimeSeriesIdentifiers& WithFormat(const Aws::String& value) { SetFormat(value); return *this;}
-    inline TimeSeriesIdentifiers& WithFormat(Aws::String&& value) { SetFormat(std::move(value)); return *this;}
-    inline TimeSeriesIdentifiers& WithFormat(const char* value) { SetFormat(value); return *this;}
+    template<typename FormatT = Aws::String>
+    void SetFormat(FormatT&& value) { m_formatHasBeenSet = true; m_format = std::forward<FormatT>(value); }
+    template<typename FormatT = Aws::String>
+    TimeSeriesIdentifiers& WithFormat(FormatT&& value) { SetFormat(std::forward<FormatT>(value)); return *this;}
     ///@}
   private:
 

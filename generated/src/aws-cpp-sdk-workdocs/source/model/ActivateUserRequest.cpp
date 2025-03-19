@@ -13,12 +13,6 @@ using namespace Aws::WorkDocs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ActivateUserRequest::ActivateUserRequest() : 
-    m_userIdHasBeenSet(false),
-    m_authenticationTokenHasBeenSet(false)
-{
-}
-
 Aws::String ActivateUserRequest::SerializePayload() const
 {
   return {};

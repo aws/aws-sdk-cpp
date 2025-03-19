@@ -37,7 +37,7 @@ namespace Model
   class PolicyRole
   {
   public:
-    AWS_IAM_API PolicyRole();
+    AWS_IAM_API PolicyRole() = default;
     AWS_IAM_API PolicyRole(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_IAM_API PolicyRole& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -49,14 +49,12 @@ namespace Model
     /**
      * <p>The name (friendly name, not ARN) identifying the role.</p>
      */
-    inline const Aws::String& GetRoleName() const{ return m_roleName; }
+    inline const Aws::String& GetRoleName() const { return m_roleName; }
     inline bool RoleNameHasBeenSet() const { return m_roleNameHasBeenSet; }
-    inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
-    inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = std::move(value); }
-    inline void SetRoleName(const char* value) { m_roleNameHasBeenSet = true; m_roleName.assign(value); }
-    inline PolicyRole& WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
-    inline PolicyRole& WithRoleName(Aws::String&& value) { SetRoleName(std::move(value)); return *this;}
-    inline PolicyRole& WithRoleName(const char* value) { SetRoleName(value); return *this;}
+    template<typename RoleNameT = Aws::String>
+    void SetRoleName(RoleNameT&& value) { m_roleNameHasBeenSet = true; m_roleName = std::forward<RoleNameT>(value); }
+    template<typename RoleNameT = Aws::String>
+    PolicyRole& WithRoleName(RoleNameT&& value) { SetRoleName(std::forward<RoleNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,14 +64,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
      * identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
-    inline const Aws::String& GetRoleId() const{ return m_roleId; }
+    inline const Aws::String& GetRoleId() const { return m_roleId; }
     inline bool RoleIdHasBeenSet() const { return m_roleIdHasBeenSet; }
-    inline void SetRoleId(const Aws::String& value) { m_roleIdHasBeenSet = true; m_roleId = value; }
-    inline void SetRoleId(Aws::String&& value) { m_roleIdHasBeenSet = true; m_roleId = std::move(value); }
-    inline void SetRoleId(const char* value) { m_roleIdHasBeenSet = true; m_roleId.assign(value); }
-    inline PolicyRole& WithRoleId(const Aws::String& value) { SetRoleId(value); return *this;}
-    inline PolicyRole& WithRoleId(Aws::String&& value) { SetRoleId(std::move(value)); return *this;}
-    inline PolicyRole& WithRoleId(const char* value) { SetRoleId(value); return *this;}
+    template<typename RoleIdT = Aws::String>
+    void SetRoleId(RoleIdT&& value) { m_roleIdHasBeenSet = true; m_roleId = std::forward<RoleIdT>(value); }
+    template<typename RoleIdT = Aws::String>
+    PolicyRole& WithRoleId(RoleIdT&& value) { SetRoleId(std::forward<RoleIdT>(value)); return *this;}
     ///@}
   private:
 

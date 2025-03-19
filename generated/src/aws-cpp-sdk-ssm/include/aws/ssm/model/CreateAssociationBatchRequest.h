@@ -22,7 +22,7 @@ namespace Model
   class CreateAssociationBatchRequest : public SSMRequest
   {
   public:
-    AWS_SSM_API CreateAssociationBatchRequest();
+    AWS_SSM_API CreateAssociationBatchRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,14 @@ namespace Model
     /**
      * <p>One or more associations.</p>
      */
-    inline const Aws::Vector<CreateAssociationBatchRequestEntry>& GetEntries() const{ return m_entries; }
+    inline const Aws::Vector<CreateAssociationBatchRequestEntry>& GetEntries() const { return m_entries; }
     inline bool EntriesHasBeenSet() const { return m_entriesHasBeenSet; }
-    inline void SetEntries(const Aws::Vector<CreateAssociationBatchRequestEntry>& value) { m_entriesHasBeenSet = true; m_entries = value; }
-    inline void SetEntries(Aws::Vector<CreateAssociationBatchRequestEntry>&& value) { m_entriesHasBeenSet = true; m_entries = std::move(value); }
-    inline CreateAssociationBatchRequest& WithEntries(const Aws::Vector<CreateAssociationBatchRequestEntry>& value) { SetEntries(value); return *this;}
-    inline CreateAssociationBatchRequest& WithEntries(Aws::Vector<CreateAssociationBatchRequestEntry>&& value) { SetEntries(std::move(value)); return *this;}
-    inline CreateAssociationBatchRequest& AddEntries(const CreateAssociationBatchRequestEntry& value) { m_entriesHasBeenSet = true; m_entries.push_back(value); return *this; }
-    inline CreateAssociationBatchRequest& AddEntries(CreateAssociationBatchRequestEntry&& value) { m_entriesHasBeenSet = true; m_entries.push_back(std::move(value)); return *this; }
+    template<typename EntriesT = Aws::Vector<CreateAssociationBatchRequestEntry>>
+    void SetEntries(EntriesT&& value) { m_entriesHasBeenSet = true; m_entries = std::forward<EntriesT>(value); }
+    template<typename EntriesT = Aws::Vector<CreateAssociationBatchRequestEntry>>
+    CreateAssociationBatchRequest& WithEntries(EntriesT&& value) { SetEntries(std::forward<EntriesT>(value)); return *this;}
+    template<typename EntriesT = CreateAssociationBatchRequestEntry>
+    CreateAssociationBatchRequest& AddEntries(EntriesT&& value) { m_entriesHasBeenSet = true; m_entries.emplace_back(std::forward<EntriesT>(value)); return *this; }
     ///@}
   private:
 

@@ -31,7 +31,7 @@ namespace Model
   class ResultAttribute
   {
   public:
-    AWS_SSM_API ResultAttribute();
+    AWS_SSM_API ResultAttribute() = default;
     AWS_SSM_API ResultAttribute(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API ResultAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <code>AWS:InstanceInformation</code>. Default Value:
      * <code>AWS:InstanceInformation</code>.</p>
      */
-    inline const Aws::String& GetTypeName() const{ return m_typeName; }
+    inline const Aws::String& GetTypeName() const { return m_typeName; }
     inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
-    inline void SetTypeName(const Aws::String& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
-    inline void SetTypeName(Aws::String&& value) { m_typeNameHasBeenSet = true; m_typeName = std::move(value); }
-    inline void SetTypeName(const char* value) { m_typeNameHasBeenSet = true; m_typeName.assign(value); }
-    inline ResultAttribute& WithTypeName(const Aws::String& value) { SetTypeName(value); return *this;}
-    inline ResultAttribute& WithTypeName(Aws::String&& value) { SetTypeName(std::move(value)); return *this;}
-    inline ResultAttribute& WithTypeName(const char* value) { SetTypeName(value); return *this;}
+    template<typename TypeNameT = Aws::String>
+    void SetTypeName(TypeNameT&& value) { m_typeNameHasBeenSet = true; m_typeName = std::forward<TypeNameT>(value); }
+    template<typename TypeNameT = Aws::String>
+    ResultAttribute& WithTypeName(TypeNameT&& value) { SetTypeName(std::forward<TypeNameT>(value)); return *this;}
     ///@}
   private:
 

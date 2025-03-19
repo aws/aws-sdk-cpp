@@ -29,7 +29,7 @@ namespace Model
   class SearchUserProfilesResult
   {
   public:
-    AWS_DATAZONE_API SearchUserProfilesResult();
+    AWS_DATAZONE_API SearchUserProfilesResult() = default;
     AWS_DATAZONE_API SearchUserProfilesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATAZONE_API SearchUserProfilesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The results of the <code>SearchUserProfiles</code> action.</p>
      */
-    inline const Aws::Vector<UserProfileSummary>& GetItems() const{ return m_items; }
-    inline void SetItems(const Aws::Vector<UserProfileSummary>& value) { m_items = value; }
-    inline void SetItems(Aws::Vector<UserProfileSummary>&& value) { m_items = std::move(value); }
-    inline SearchUserProfilesResult& WithItems(const Aws::Vector<UserProfileSummary>& value) { SetItems(value); return *this;}
-    inline SearchUserProfilesResult& WithItems(Aws::Vector<UserProfileSummary>&& value) { SetItems(std::move(value)); return *this;}
-    inline SearchUserProfilesResult& AddItems(const UserProfileSummary& value) { m_items.push_back(value); return *this; }
-    inline SearchUserProfilesResult& AddItems(UserProfileSummary&& value) { m_items.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<UserProfileSummary>& GetItems() const { return m_items; }
+    template<typename ItemsT = Aws::Vector<UserProfileSummary>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<UserProfileSummary>>
+    SearchUserProfilesResult& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = UserProfileSummary>
+    SearchUserProfilesResult& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -56,32 +56,31 @@ namespace Model
      * <code>NextToken</code> value in a subsequent call to
      * <code>SearchUserProfiles</code> to list the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline SearchUserProfilesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline SearchUserProfilesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline SearchUserProfilesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    SearchUserProfilesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline SearchUserProfilesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline SearchUserProfilesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline SearchUserProfilesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    SearchUserProfilesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<UserProfileSummary> m_items;
+    bool m_itemsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

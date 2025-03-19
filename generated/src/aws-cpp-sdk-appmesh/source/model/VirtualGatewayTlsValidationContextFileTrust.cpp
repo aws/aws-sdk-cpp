@@ -18,13 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-VirtualGatewayTlsValidationContextFileTrust::VirtualGatewayTlsValidationContextFileTrust() : 
-    m_certificateChainHasBeenSet(false)
-{
-}
-
 VirtualGatewayTlsValidationContextFileTrust::VirtualGatewayTlsValidationContextFileTrust(JsonView jsonValue)
-  : VirtualGatewayTlsValidationContextFileTrust()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ VirtualGatewayTlsValidationContextFileTrust& VirtualGatewayTlsValidationContextF
   if(jsonValue.ValueExists("certificateChain"))
   {
     m_certificateChain = jsonValue.GetString("certificateChain");
-
     m_certificateChainHasBeenSet = true;
   }
-
   return *this;
 }
 

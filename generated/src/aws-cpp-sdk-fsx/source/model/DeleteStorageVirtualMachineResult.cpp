@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteStorageVirtualMachineResult::DeleteStorageVirtualMachineResult() : 
-    m_lifecycle(StorageVirtualMachineLifecycle::NOT_SET)
-{
-}
-
 DeleteStorageVirtualMachineResult::DeleteStorageVirtualMachineResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteStorageVirtualMachineResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ DeleteStorageVirtualMachineResult& DeleteStorageVirtualMachineResult::operator =
   if(jsonValue.ValueExists("StorageVirtualMachineId"))
   {
     m_storageVirtualMachineId = jsonValue.GetString("StorageVirtualMachineId");
-
+    m_storageVirtualMachineIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Lifecycle"))
   {
     m_lifecycle = StorageVirtualMachineLifecycleMapper::GetStorageVirtualMachineLifecycleForName(jsonValue.GetString("Lifecycle"));
-
+    m_lifecycleHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

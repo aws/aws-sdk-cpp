@@ -18,22 +18,7 @@ namespace Inspector
 namespace Model
 {
 
-NetworkInterface::NetworkInterface() : 
-    m_networkInterfaceIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_privateDnsNameHasBeenSet(false),
-    m_privateIpAddressHasBeenSet(false),
-    m_privateIpAddressesHasBeenSet(false),
-    m_publicDnsNameHasBeenSet(false),
-    m_publicIpHasBeenSet(false),
-    m_ipv6AddressesHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false)
-{
-}
-
 NetworkInterface::NetworkInterface(JsonView jsonValue)
-  : NetworkInterface()
 {
   *this = jsonValue;
 }
@@ -43,38 +28,28 @@ NetworkInterface& NetworkInterface::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("networkInterfaceId"))
   {
     m_networkInterfaceId = jsonValue.GetString("networkInterfaceId");
-
     m_networkInterfaceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subnetId"))
   {
     m_subnetId = jsonValue.GetString("subnetId");
-
     m_subnetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcId"))
   {
     m_vpcId = jsonValue.GetString("vpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("privateDnsName"))
   {
     m_privateDnsName = jsonValue.GetString("privateDnsName");
-
     m_privateDnsNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("privateIpAddress"))
   {
     m_privateIpAddress = jsonValue.GetString("privateIpAddress");
-
     m_privateIpAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("privateIpAddresses"))
   {
     Aws::Utils::Array<JsonView> privateIpAddressesJsonList = jsonValue.GetArray("privateIpAddresses");
@@ -84,21 +59,16 @@ NetworkInterface& NetworkInterface::operator =(JsonView jsonValue)
     }
     m_privateIpAddressesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("publicDnsName"))
   {
     m_publicDnsName = jsonValue.GetString("publicDnsName");
-
     m_publicDnsNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("publicIp"))
   {
     m_publicIp = jsonValue.GetString("publicIp");
-
     m_publicIpHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ipv6Addresses"))
   {
     Aws::Utils::Array<JsonView> ipv6AddressesJsonList = jsonValue.GetArray("ipv6Addresses");
@@ -108,7 +78,6 @@ NetworkInterface& NetworkInterface::operator =(JsonView jsonValue)
     }
     m_ipv6AddressesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("securityGroups"))
   {
     Aws::Utils::Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("securityGroups");
@@ -118,7 +87,6 @@ NetworkInterface& NetworkInterface::operator =(JsonView jsonValue)
     }
     m_securityGroupsHasBeenSet = true;
   }
-
   return *this;
 }
 

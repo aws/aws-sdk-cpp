@@ -18,20 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-EmbeddedSourceSettings::EmbeddedSourceSettings() : 
-    m_convert608To708(EmbeddedConvert608To708::NOT_SET),
-    m_convert608To708HasBeenSet(false),
-    m_source608ChannelNumber(0),
-    m_source608ChannelNumberHasBeenSet(false),
-    m_source608TrackNumber(0),
-    m_source608TrackNumberHasBeenSet(false),
-    m_terminateCaptions(EmbeddedTerminateCaptions::NOT_SET),
-    m_terminateCaptionsHasBeenSet(false)
-{
-}
-
 EmbeddedSourceSettings::EmbeddedSourceSettings(JsonView jsonValue)
-  : EmbeddedSourceSettings()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ EmbeddedSourceSettings& EmbeddedSourceSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("convert608To708"))
   {
     m_convert608To708 = EmbeddedConvert608To708Mapper::GetEmbeddedConvert608To708ForName(jsonValue.GetString("convert608To708"));
-
     m_convert608To708HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("source608ChannelNumber"))
   {
     m_source608ChannelNumber = jsonValue.GetInteger("source608ChannelNumber");
-
     m_source608ChannelNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("source608TrackNumber"))
   {
     m_source608TrackNumber = jsonValue.GetInteger("source608TrackNumber");
-
     m_source608TrackNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("terminateCaptions"))
   {
     m_terminateCaptions = EmbeddedTerminateCaptionsMapper::GetEmbeddedTerminateCaptionsForName(jsonValue.GetString("terminateCaptions"));
-
     m_terminateCaptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

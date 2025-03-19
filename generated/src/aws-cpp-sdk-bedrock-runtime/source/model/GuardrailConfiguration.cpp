@@ -18,16 +18,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-GuardrailConfiguration::GuardrailConfiguration() : 
-    m_guardrailIdentifierHasBeenSet(false),
-    m_guardrailVersionHasBeenSet(false),
-    m_trace(GuardrailTrace::NOT_SET),
-    m_traceHasBeenSet(false)
-{
-}
-
 GuardrailConfiguration::GuardrailConfiguration(JsonView jsonValue)
-  : GuardrailConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ GuardrailConfiguration& GuardrailConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("guardrailIdentifier"))
   {
     m_guardrailIdentifier = jsonValue.GetString("guardrailIdentifier");
-
     m_guardrailIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("guardrailVersion"))
   {
     m_guardrailVersion = jsonValue.GetString("guardrailVersion");
-
     m_guardrailVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("trace"))
   {
     m_trace = GuardrailTraceMapper::GetGuardrailTraceForName(jsonValue.GetString("trace"));
-
     m_traceHasBeenSet = true;
   }
-
   return *this;
 }
 

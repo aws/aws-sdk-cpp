@@ -35,7 +35,7 @@ namespace Model
   class InstancePropertyFilter
   {
   public:
-    AWS_SSM_API InstancePropertyFilter();
+    AWS_SSM_API InstancePropertyFilter() = default;
     AWS_SSM_API InstancePropertyFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API InstancePropertyFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,31 +45,28 @@ namespace Model
     /**
      * <p>The name of the filter.</p>
      */
-    inline const InstancePropertyFilterKey& GetKey() const{ return m_key; }
+    inline InstancePropertyFilterKey GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const InstancePropertyFilterKey& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(InstancePropertyFilterKey&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline InstancePropertyFilter& WithKey(const InstancePropertyFilterKey& value) { SetKey(value); return *this;}
-    inline InstancePropertyFilter& WithKey(InstancePropertyFilterKey&& value) { SetKey(std::move(value)); return *this;}
+    inline void SetKey(InstancePropertyFilterKey value) { m_keyHasBeenSet = true; m_key = value; }
+    inline InstancePropertyFilter& WithKey(InstancePropertyFilterKey value) { SetKey(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The filter values.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValueSet() const{ return m_valueSet; }
+    inline const Aws::Vector<Aws::String>& GetValueSet() const { return m_valueSet; }
     inline bool ValueSetHasBeenSet() const { return m_valueSetHasBeenSet; }
-    inline void SetValueSet(const Aws::Vector<Aws::String>& value) { m_valueSetHasBeenSet = true; m_valueSet = value; }
-    inline void SetValueSet(Aws::Vector<Aws::String>&& value) { m_valueSetHasBeenSet = true; m_valueSet = std::move(value); }
-    inline InstancePropertyFilter& WithValueSet(const Aws::Vector<Aws::String>& value) { SetValueSet(value); return *this;}
-    inline InstancePropertyFilter& WithValueSet(Aws::Vector<Aws::String>&& value) { SetValueSet(std::move(value)); return *this;}
-    inline InstancePropertyFilter& AddValueSet(const Aws::String& value) { m_valueSetHasBeenSet = true; m_valueSet.push_back(value); return *this; }
-    inline InstancePropertyFilter& AddValueSet(Aws::String&& value) { m_valueSetHasBeenSet = true; m_valueSet.push_back(std::move(value)); return *this; }
-    inline InstancePropertyFilter& AddValueSet(const char* value) { m_valueSetHasBeenSet = true; m_valueSet.push_back(value); return *this; }
+    template<typename ValueSetT = Aws::Vector<Aws::String>>
+    void SetValueSet(ValueSetT&& value) { m_valueSetHasBeenSet = true; m_valueSet = std::forward<ValueSetT>(value); }
+    template<typename ValueSetT = Aws::Vector<Aws::String>>
+    InstancePropertyFilter& WithValueSet(ValueSetT&& value) { SetValueSet(std::forward<ValueSetT>(value)); return *this;}
+    template<typename ValueSetT = Aws::String>
+    InstancePropertyFilter& AddValueSet(ValueSetT&& value) { m_valueSetHasBeenSet = true; m_valueSet.emplace_back(std::forward<ValueSetT>(value)); return *this; }
     ///@}
   private:
 
-    InstancePropertyFilterKey m_key;
+    InstancePropertyFilterKey m_key{InstancePropertyFilterKey::NOT_SET};
     bool m_keyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_valueSet;

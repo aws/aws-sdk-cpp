@@ -21,7 +21,7 @@ namespace Model
   class NullOperationRequest : public JsonProtocolRequest
   {
   public:
-    AWS_JSONPROTOCOL_API NullOperationRequest();
+    AWS_JSONPROTOCOL_API NullOperationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,26 +36,22 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetString() const{ return m_string; }
+    inline const Aws::String& GetString() const { return m_string; }
     inline bool StringHasBeenSet() const { return m_stringHasBeenSet; }
-    inline void SetString(const Aws::String& value) { m_stringHasBeenSet = true; m_string = value; }
-    inline void SetString(Aws::String&& value) { m_stringHasBeenSet = true; m_string = std::move(value); }
-    inline void SetString(const char* value) { m_stringHasBeenSet = true; m_string.assign(value); }
-    inline NullOperationRequest& WithString(const Aws::String& value) { SetString(value); return *this;}
-    inline NullOperationRequest& WithString(Aws::String&& value) { SetString(std::move(value)); return *this;}
-    inline NullOperationRequest& WithString(const char* value) { SetString(value); return *this;}
+    template<typename StringT = Aws::String>
+    void SetString(StringT&& value) { m_stringHasBeenSet = true; m_string = std::forward<StringT>(value); }
+    template<typename StringT = Aws::String>
+    NullOperationRequest& WithString(StringT&& value) { SetString(std::forward<StringT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
-    inline NullOperationRequest& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline NullOperationRequest& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline NullOperationRequest& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    NullOperationRequest& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -22,7 +22,7 @@ namespace Model
   class BatchDeleteWorkloadEstimateUsageRequest : public BCMPricingCalculatorRequest
   {
   public:
-    AWS_BCMPRICINGCALCULATOR_API BatchDeleteWorkloadEstimateUsageRequest();
+    AWS_BCMPRICINGCALCULATOR_API BatchDeleteWorkloadEstimateUsageRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,29 +40,26 @@ namespace Model
      * <p> The ID of the Workload estimate for which you want to delete the modeled
      * usage. </p>
      */
-    inline const Aws::String& GetWorkloadEstimateId() const{ return m_workloadEstimateId; }
+    inline const Aws::String& GetWorkloadEstimateId() const { return m_workloadEstimateId; }
     inline bool WorkloadEstimateIdHasBeenSet() const { return m_workloadEstimateIdHasBeenSet; }
-    inline void SetWorkloadEstimateId(const Aws::String& value) { m_workloadEstimateIdHasBeenSet = true; m_workloadEstimateId = value; }
-    inline void SetWorkloadEstimateId(Aws::String&& value) { m_workloadEstimateIdHasBeenSet = true; m_workloadEstimateId = std::move(value); }
-    inline void SetWorkloadEstimateId(const char* value) { m_workloadEstimateIdHasBeenSet = true; m_workloadEstimateId.assign(value); }
-    inline BatchDeleteWorkloadEstimateUsageRequest& WithWorkloadEstimateId(const Aws::String& value) { SetWorkloadEstimateId(value); return *this;}
-    inline BatchDeleteWorkloadEstimateUsageRequest& WithWorkloadEstimateId(Aws::String&& value) { SetWorkloadEstimateId(std::move(value)); return *this;}
-    inline BatchDeleteWorkloadEstimateUsageRequest& WithWorkloadEstimateId(const char* value) { SetWorkloadEstimateId(value); return *this;}
+    template<typename WorkloadEstimateIdT = Aws::String>
+    void SetWorkloadEstimateId(WorkloadEstimateIdT&& value) { m_workloadEstimateIdHasBeenSet = true; m_workloadEstimateId = std::forward<WorkloadEstimateIdT>(value); }
+    template<typename WorkloadEstimateIdT = Aws::String>
+    BatchDeleteWorkloadEstimateUsageRequest& WithWorkloadEstimateId(WorkloadEstimateIdT&& value) { SetWorkloadEstimateId(std::forward<WorkloadEstimateIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> List of usage that you want to delete from the Workload estimate. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetIds() const{ return m_ids; }
+    inline const Aws::Vector<Aws::String>& GetIds() const { return m_ids; }
     inline bool IdsHasBeenSet() const { return m_idsHasBeenSet; }
-    inline void SetIds(const Aws::Vector<Aws::String>& value) { m_idsHasBeenSet = true; m_ids = value; }
-    inline void SetIds(Aws::Vector<Aws::String>&& value) { m_idsHasBeenSet = true; m_ids = std::move(value); }
-    inline BatchDeleteWorkloadEstimateUsageRequest& WithIds(const Aws::Vector<Aws::String>& value) { SetIds(value); return *this;}
-    inline BatchDeleteWorkloadEstimateUsageRequest& WithIds(Aws::Vector<Aws::String>&& value) { SetIds(std::move(value)); return *this;}
-    inline BatchDeleteWorkloadEstimateUsageRequest& AddIds(const Aws::String& value) { m_idsHasBeenSet = true; m_ids.push_back(value); return *this; }
-    inline BatchDeleteWorkloadEstimateUsageRequest& AddIds(Aws::String&& value) { m_idsHasBeenSet = true; m_ids.push_back(std::move(value)); return *this; }
-    inline BatchDeleteWorkloadEstimateUsageRequest& AddIds(const char* value) { m_idsHasBeenSet = true; m_ids.push_back(value); return *this; }
+    template<typename IdsT = Aws::Vector<Aws::String>>
+    void SetIds(IdsT&& value) { m_idsHasBeenSet = true; m_ids = std::forward<IdsT>(value); }
+    template<typename IdsT = Aws::Vector<Aws::String>>
+    BatchDeleteWorkloadEstimateUsageRequest& WithIds(IdsT&& value) { SetIds(std::forward<IdsT>(value)); return *this;}
+    template<typename IdsT = Aws::String>
+    BatchDeleteWorkloadEstimateUsageRequest& AddIds(IdsT&& value) { m_idsHasBeenSet = true; m_ids.emplace_back(std::forward<IdsT>(value)); return *this; }
     ///@}
   private:
 

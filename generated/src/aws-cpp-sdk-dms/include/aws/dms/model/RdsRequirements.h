@@ -32,7 +32,7 @@ namespace Model
   class RdsRequirements
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API RdsRequirements();
+    AWS_DATABASEMIGRATIONSERVICE_API RdsRequirements() = default;
     AWS_DATABASEMIGRATIONSERVICE_API RdsRequirements(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API RdsRequirements& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,21 +42,19 @@ namespace Model
     /**
      * <p>The required target Amazon RDS engine edition.</p>
      */
-    inline const Aws::String& GetEngineEdition() const{ return m_engineEdition; }
+    inline const Aws::String& GetEngineEdition() const { return m_engineEdition; }
     inline bool EngineEditionHasBeenSet() const { return m_engineEditionHasBeenSet; }
-    inline void SetEngineEdition(const Aws::String& value) { m_engineEditionHasBeenSet = true; m_engineEdition = value; }
-    inline void SetEngineEdition(Aws::String&& value) { m_engineEditionHasBeenSet = true; m_engineEdition = std::move(value); }
-    inline void SetEngineEdition(const char* value) { m_engineEditionHasBeenSet = true; m_engineEdition.assign(value); }
-    inline RdsRequirements& WithEngineEdition(const Aws::String& value) { SetEngineEdition(value); return *this;}
-    inline RdsRequirements& WithEngineEdition(Aws::String&& value) { SetEngineEdition(std::move(value)); return *this;}
-    inline RdsRequirements& WithEngineEdition(const char* value) { SetEngineEdition(value); return *this;}
+    template<typename EngineEditionT = Aws::String>
+    void SetEngineEdition(EngineEditionT&& value) { m_engineEditionHasBeenSet = true; m_engineEdition = std::forward<EngineEditionT>(value); }
+    template<typename EngineEditionT = Aws::String>
+    RdsRequirements& WithEngineEdition(EngineEditionT&& value) { SetEngineEdition(std::forward<EngineEditionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The required number of virtual CPUs (vCPU) on the Amazon RDS DB instance.</p>
      */
-    inline double GetInstanceVcpu() const{ return m_instanceVcpu; }
+    inline double GetInstanceVcpu() const { return m_instanceVcpu; }
     inline bool InstanceVcpuHasBeenSet() const { return m_instanceVcpuHasBeenSet; }
     inline void SetInstanceVcpu(double value) { m_instanceVcpuHasBeenSet = true; m_instanceVcpu = value; }
     inline RdsRequirements& WithInstanceVcpu(double value) { SetInstanceVcpu(value); return *this;}
@@ -66,7 +64,7 @@ namespace Model
     /**
      * <p>The required memory on the Amazon RDS DB instance.</p>
      */
-    inline double GetInstanceMemory() const{ return m_instanceMemory; }
+    inline double GetInstanceMemory() const { return m_instanceMemory; }
     inline bool InstanceMemoryHasBeenSet() const { return m_instanceMemoryHasBeenSet; }
     inline void SetInstanceMemory(double value) { m_instanceMemoryHasBeenSet = true; m_instanceMemory = value; }
     inline RdsRequirements& WithInstanceMemory(double value) { SetInstanceMemory(value); return *this;}
@@ -76,7 +74,7 @@ namespace Model
     /**
      * <p>The required Amazon RDS DB instance storage size.</p>
      */
-    inline int GetStorageSize() const{ return m_storageSize; }
+    inline int GetStorageSize() const { return m_storageSize; }
     inline bool StorageSizeHasBeenSet() const { return m_storageSizeHasBeenSet; }
     inline void SetStorageSize(int value) { m_storageSizeHasBeenSet = true; m_storageSize = value; }
     inline RdsRequirements& WithStorageSize(int value) { SetStorageSize(value); return *this;}
@@ -87,7 +85,7 @@ namespace Model
      * <p>The required number of I/O operations completed each second (IOPS) on your
      * Amazon RDS DB instance.</p>
      */
-    inline int GetStorageIops() const{ return m_storageIops; }
+    inline int GetStorageIops() const { return m_storageIops; }
     inline bool StorageIopsHasBeenSet() const { return m_storageIopsHasBeenSet; }
     inline void SetStorageIops(int value) { m_storageIopsHasBeenSet = true; m_storageIops = value; }
     inline RdsRequirements& WithStorageIops(int value) { SetStorageIops(value); return *this;}
@@ -99,44 +97,40 @@ namespace Model
      * include <code>"MULTI_AZ"</code> for Multi-AZ deployments and
      * <code>"SINGLE_AZ"</code> for Single-AZ deployments.</p>
      */
-    inline const Aws::String& GetDeploymentOption() const{ return m_deploymentOption; }
+    inline const Aws::String& GetDeploymentOption() const { return m_deploymentOption; }
     inline bool DeploymentOptionHasBeenSet() const { return m_deploymentOptionHasBeenSet; }
-    inline void SetDeploymentOption(const Aws::String& value) { m_deploymentOptionHasBeenSet = true; m_deploymentOption = value; }
-    inline void SetDeploymentOption(Aws::String&& value) { m_deploymentOptionHasBeenSet = true; m_deploymentOption = std::move(value); }
-    inline void SetDeploymentOption(const char* value) { m_deploymentOptionHasBeenSet = true; m_deploymentOption.assign(value); }
-    inline RdsRequirements& WithDeploymentOption(const Aws::String& value) { SetDeploymentOption(value); return *this;}
-    inline RdsRequirements& WithDeploymentOption(Aws::String&& value) { SetDeploymentOption(std::move(value)); return *this;}
-    inline RdsRequirements& WithDeploymentOption(const char* value) { SetDeploymentOption(value); return *this;}
+    template<typename DeploymentOptionT = Aws::String>
+    void SetDeploymentOption(DeploymentOptionT&& value) { m_deploymentOptionHasBeenSet = true; m_deploymentOption = std::forward<DeploymentOptionT>(value); }
+    template<typename DeploymentOptionT = Aws::String>
+    RdsRequirements& WithDeploymentOption(DeploymentOptionT&& value) { SetDeploymentOption(std::forward<DeploymentOptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The required target Amazon RDS engine version.</p>
      */
-    inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+    inline const Aws::String& GetEngineVersion() const { return m_engineVersion; }
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
-    inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
-    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
-    inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
-    inline RdsRequirements& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
-    inline RdsRequirements& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
-    inline RdsRequirements& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
+    template<typename EngineVersionT = Aws::String>
+    void SetEngineVersion(EngineVersionT&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::forward<EngineVersionT>(value); }
+    template<typename EngineVersionT = Aws::String>
+    RdsRequirements& WithEngineVersion(EngineVersionT&& value) { SetEngineVersion(std::forward<EngineVersionT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_engineEdition;
     bool m_engineEditionHasBeenSet = false;
 
-    double m_instanceVcpu;
+    double m_instanceVcpu{0.0};
     bool m_instanceVcpuHasBeenSet = false;
 
-    double m_instanceMemory;
+    double m_instanceMemory{0.0};
     bool m_instanceMemoryHasBeenSet = false;
 
-    int m_storageSize;
+    int m_storageSize{0};
     bool m_storageSizeHasBeenSet = false;
 
-    int m_storageIops;
+    int m_storageIops{0};
     bool m_storageIopsHasBeenSet = false;
 
     Aws::String m_deploymentOption;

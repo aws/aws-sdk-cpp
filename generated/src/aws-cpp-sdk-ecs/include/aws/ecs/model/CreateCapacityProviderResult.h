@@ -28,7 +28,7 @@ namespace Model
   class CreateCapacityProviderResult
   {
   public:
-    AWS_ECS_API CreateCapacityProviderResult();
+    AWS_ECS_API CreateCapacityProviderResult() = default;
     AWS_ECS_API CreateCapacityProviderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ECS_API CreateCapacityProviderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The full description of the new capacity provider.</p>
      */
-    inline const CapacityProvider& GetCapacityProvider() const{ return m_capacityProvider; }
-    inline void SetCapacityProvider(const CapacityProvider& value) { m_capacityProvider = value; }
-    inline void SetCapacityProvider(CapacityProvider&& value) { m_capacityProvider = std::move(value); }
-    inline CreateCapacityProviderResult& WithCapacityProvider(const CapacityProvider& value) { SetCapacityProvider(value); return *this;}
-    inline CreateCapacityProviderResult& WithCapacityProvider(CapacityProvider&& value) { SetCapacityProvider(std::move(value)); return *this;}
+    inline const CapacityProvider& GetCapacityProvider() const { return m_capacityProvider; }
+    template<typename CapacityProviderT = CapacityProvider>
+    void SetCapacityProvider(CapacityProviderT&& value) { m_capacityProviderHasBeenSet = true; m_capacityProvider = std::forward<CapacityProviderT>(value); }
+    template<typename CapacityProviderT = CapacityProvider>
+    CreateCapacityProviderResult& WithCapacityProvider(CapacityProviderT&& value) { SetCapacityProvider(std::forward<CapacityProviderT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateCapacityProviderResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateCapacityProviderResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateCapacityProviderResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateCapacityProviderResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     CapacityProvider m_capacityProvider;
+    bool m_capacityProviderHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

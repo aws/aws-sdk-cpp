@@ -18,16 +18,7 @@ namespace LexModelBuildingService
 namespace Model
 {
 
-Prompt::Prompt() : 
-    m_messagesHasBeenSet(false),
-    m_maxAttempts(0),
-    m_maxAttemptsHasBeenSet(false),
-    m_responseCardHasBeenSet(false)
-{
-}
-
 Prompt::Prompt(JsonView jsonValue)
-  : Prompt()
 {
   *this = jsonValue;
 }
@@ -43,21 +34,16 @@ Prompt& Prompt::operator =(JsonView jsonValue)
     }
     m_messagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxAttempts"))
   {
     m_maxAttempts = jsonValue.GetInteger("maxAttempts");
-
     m_maxAttemptsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("responseCard"))
   {
     m_responseCard = jsonValue.GetString("responseCard");
-
     m_responseCardHasBeenSet = true;
   }
-
   return *this;
 }
 

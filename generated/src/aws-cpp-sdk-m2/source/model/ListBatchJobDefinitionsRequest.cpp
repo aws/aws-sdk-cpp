@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListBatchJobDefinitionsRequest::ListBatchJobDefinitionsRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_prefixHasBeenSet(false)
-{
-}
-
 Aws::String ListBatchJobDefinitionsRequest::SerializePayload() const
 {
   return {};

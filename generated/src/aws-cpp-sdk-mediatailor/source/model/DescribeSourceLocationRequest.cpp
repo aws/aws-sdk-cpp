@@ -12,11 +12,6 @@ using namespace Aws::MediaTailor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeSourceLocationRequest::DescribeSourceLocationRequest() : 
-    m_sourceLocationNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeSourceLocationRequest::SerializePayload() const
 {
   return {};

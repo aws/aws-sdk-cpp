@@ -18,13 +18,7 @@ namespace mgn
 namespace Model
 {
 
-ListImportsRequestFilters::ListImportsRequestFilters() : 
-    m_importIDsHasBeenSet(false)
-{
-}
-
 ListImportsRequestFilters::ListImportsRequestFilters(JsonView jsonValue)
-  : ListImportsRequestFilters()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ListImportsRequestFilters& ListImportsRequestFilters::operator =(JsonView jsonVa
     }
     m_importIDsHasBeenSet = true;
   }
-
   return *this;
 }
 

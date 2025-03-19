@@ -31,7 +31,7 @@ namespace Model
   class UpdateAppResult
   {
   public:
-    AWS_SMS_API UpdateAppResult();
+    AWS_SMS_API UpdateAppResult() = default;
     AWS_SMS_API UpdateAppResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SMS_API UpdateAppResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,58 +40,60 @@ namespace Model
     /**
      * <p>A summary description of the application.</p>
      */
-    inline const AppSummary& GetAppSummary() const{ return m_appSummary; }
-    inline void SetAppSummary(const AppSummary& value) { m_appSummary = value; }
-    inline void SetAppSummary(AppSummary&& value) { m_appSummary = std::move(value); }
-    inline UpdateAppResult& WithAppSummary(const AppSummary& value) { SetAppSummary(value); return *this;}
-    inline UpdateAppResult& WithAppSummary(AppSummary&& value) { SetAppSummary(std::move(value)); return *this;}
+    inline const AppSummary& GetAppSummary() const { return m_appSummary; }
+    template<typename AppSummaryT = AppSummary>
+    void SetAppSummary(AppSummaryT&& value) { m_appSummaryHasBeenSet = true; m_appSummary = std::forward<AppSummaryT>(value); }
+    template<typename AppSummaryT = AppSummary>
+    UpdateAppResult& WithAppSummary(AppSummaryT&& value) { SetAppSummary(std::forward<AppSummaryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The updated server groups in the application.</p>
      */
-    inline const Aws::Vector<ServerGroup>& GetServerGroups() const{ return m_serverGroups; }
-    inline void SetServerGroups(const Aws::Vector<ServerGroup>& value) { m_serverGroups = value; }
-    inline void SetServerGroups(Aws::Vector<ServerGroup>&& value) { m_serverGroups = std::move(value); }
-    inline UpdateAppResult& WithServerGroups(const Aws::Vector<ServerGroup>& value) { SetServerGroups(value); return *this;}
-    inline UpdateAppResult& WithServerGroups(Aws::Vector<ServerGroup>&& value) { SetServerGroups(std::move(value)); return *this;}
-    inline UpdateAppResult& AddServerGroups(const ServerGroup& value) { m_serverGroups.push_back(value); return *this; }
-    inline UpdateAppResult& AddServerGroups(ServerGroup&& value) { m_serverGroups.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ServerGroup>& GetServerGroups() const { return m_serverGroups; }
+    template<typename ServerGroupsT = Aws::Vector<ServerGroup>>
+    void SetServerGroups(ServerGroupsT&& value) { m_serverGroupsHasBeenSet = true; m_serverGroups = std::forward<ServerGroupsT>(value); }
+    template<typename ServerGroupsT = Aws::Vector<ServerGroup>>
+    UpdateAppResult& WithServerGroups(ServerGroupsT&& value) { SetServerGroups(std::forward<ServerGroupsT>(value)); return *this;}
+    template<typename ServerGroupsT = ServerGroup>
+    UpdateAppResult& AddServerGroups(ServerGroupsT&& value) { m_serverGroupsHasBeenSet = true; m_serverGroups.emplace_back(std::forward<ServerGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The tags associated with the application.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
-    inline UpdateAppResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline UpdateAppResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline UpdateAppResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
-    inline UpdateAppResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    UpdateAppResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    UpdateAppResult& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateAppResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateAppResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateAppResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateAppResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AppSummary m_appSummary;
+    bool m_appSummaryHasBeenSet = false;
 
     Aws::Vector<ServerGroup> m_serverGroups;
+    bool m_serverGroupsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

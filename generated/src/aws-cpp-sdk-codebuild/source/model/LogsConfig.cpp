@@ -18,14 +18,7 @@ namespace CodeBuild
 namespace Model
 {
 
-LogsConfig::LogsConfig() : 
-    m_cloudWatchLogsHasBeenSet(false),
-    m_s3LogsHasBeenSet(false)
-{
-}
-
 LogsConfig::LogsConfig(JsonView jsonValue)
-  : LogsConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ LogsConfig& LogsConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("cloudWatchLogs"))
   {
     m_cloudWatchLogs = jsonValue.GetObject("cloudWatchLogs");
-
     m_cloudWatchLogsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3Logs"))
   {
     m_s3Logs = jsonValue.GetObject("s3Logs");
-
     m_s3LogsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -35,7 +35,7 @@ namespace Model
   class AuthenticationMode
   {
   public:
-    AWS_MEMORYDB_API AuthenticationMode();
+    AWS_MEMORYDB_API AuthenticationMode() = default;
     AWS_MEMORYDB_API AuthenticationMode(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEMORYDB_API AuthenticationMode& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,31 +46,28 @@ namespace Model
      * <p>Indicates whether the user requires a password to authenticate. All
      * newly-created users require a password.</p>
      */
-    inline const InputAuthenticationType& GetType() const{ return m_type; }
+    inline InputAuthenticationType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const InputAuthenticationType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(InputAuthenticationType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline AuthenticationMode& WithType(const InputAuthenticationType& value) { SetType(value); return *this;}
-    inline AuthenticationMode& WithType(InputAuthenticationType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(InputAuthenticationType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline AuthenticationMode& WithType(InputAuthenticationType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The password(s) used for authentication</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPasswords() const{ return m_passwords; }
+    inline const Aws::Vector<Aws::String>& GetPasswords() const { return m_passwords; }
     inline bool PasswordsHasBeenSet() const { return m_passwordsHasBeenSet; }
-    inline void SetPasswords(const Aws::Vector<Aws::String>& value) { m_passwordsHasBeenSet = true; m_passwords = value; }
-    inline void SetPasswords(Aws::Vector<Aws::String>&& value) { m_passwordsHasBeenSet = true; m_passwords = std::move(value); }
-    inline AuthenticationMode& WithPasswords(const Aws::Vector<Aws::String>& value) { SetPasswords(value); return *this;}
-    inline AuthenticationMode& WithPasswords(Aws::Vector<Aws::String>&& value) { SetPasswords(std::move(value)); return *this;}
-    inline AuthenticationMode& AddPasswords(const Aws::String& value) { m_passwordsHasBeenSet = true; m_passwords.push_back(value); return *this; }
-    inline AuthenticationMode& AddPasswords(Aws::String&& value) { m_passwordsHasBeenSet = true; m_passwords.push_back(std::move(value)); return *this; }
-    inline AuthenticationMode& AddPasswords(const char* value) { m_passwordsHasBeenSet = true; m_passwords.push_back(value); return *this; }
+    template<typename PasswordsT = Aws::Vector<Aws::String>>
+    void SetPasswords(PasswordsT&& value) { m_passwordsHasBeenSet = true; m_passwords = std::forward<PasswordsT>(value); }
+    template<typename PasswordsT = Aws::Vector<Aws::String>>
+    AuthenticationMode& WithPasswords(PasswordsT&& value) { SetPasswords(std::forward<PasswordsT>(value)); return *this;}
+    template<typename PasswordsT = Aws::String>
+    AuthenticationMode& AddPasswords(PasswordsT&& value) { m_passwordsHasBeenSet = true; m_passwords.emplace_back(std::forward<PasswordsT>(value)); return *this; }
     ///@}
   private:
 
-    InputAuthenticationType m_type;
+    InputAuthenticationType m_type{InputAuthenticationType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_passwords;

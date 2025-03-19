@@ -20,18 +20,7 @@ namespace IAM
 namespace Model
 {
 
-SigningCertificate::SigningCertificate() : 
-    m_userNameHasBeenSet(false),
-    m_certificateIdHasBeenSet(false),
-    m_certificateBodyHasBeenSet(false),
-    m_status(StatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_uploadDateHasBeenSet(false)
-{
-}
-
 SigningCertificate::SigningCertificate(const XmlNode& xmlNode)
-  : SigningCertificate()
 {
   *this = xmlNode;
 }
@@ -63,7 +52,7 @@ SigningCertificate& SigningCertificate::operator =(const XmlNode& xmlNode)
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = StatusTypeMapper::GetStatusTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = StatusTypeMapper::GetStatusTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
     XmlNode uploadDateNode = resultNode.FirstChild("UploadDate");

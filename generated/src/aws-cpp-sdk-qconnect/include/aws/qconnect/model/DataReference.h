@@ -32,7 +32,7 @@ namespace Model
   class DataReference
   {
   public:
-    AWS_QCONNECT_API DataReference();
+    AWS_QCONNECT_API DataReference() = default;
     AWS_QCONNECT_API DataReference(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API DataReference& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,24 +40,24 @@ namespace Model
 
     ///@{
     
-    inline const ContentReference& GetContentReference() const{ return m_contentReference; }
+    inline const ContentReference& GetContentReference() const { return m_contentReference; }
     inline bool ContentReferenceHasBeenSet() const { return m_contentReferenceHasBeenSet; }
-    inline void SetContentReference(const ContentReference& value) { m_contentReferenceHasBeenSet = true; m_contentReference = value; }
-    inline void SetContentReference(ContentReference&& value) { m_contentReferenceHasBeenSet = true; m_contentReference = std::move(value); }
-    inline DataReference& WithContentReference(const ContentReference& value) { SetContentReference(value); return *this;}
-    inline DataReference& WithContentReference(ContentReference&& value) { SetContentReference(std::move(value)); return *this;}
+    template<typename ContentReferenceT = ContentReference>
+    void SetContentReference(ContentReferenceT&& value) { m_contentReferenceHasBeenSet = true; m_contentReference = std::forward<ContentReferenceT>(value); }
+    template<typename ContentReferenceT = ContentReference>
+    DataReference& WithContentReference(ContentReferenceT&& value) { SetContentReference(std::forward<ContentReferenceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Reference information about the generative content.</p>
      */
-    inline const GenerativeReference& GetGenerativeReference() const{ return m_generativeReference; }
+    inline const GenerativeReference& GetGenerativeReference() const { return m_generativeReference; }
     inline bool GenerativeReferenceHasBeenSet() const { return m_generativeReferenceHasBeenSet; }
-    inline void SetGenerativeReference(const GenerativeReference& value) { m_generativeReferenceHasBeenSet = true; m_generativeReference = value; }
-    inline void SetGenerativeReference(GenerativeReference&& value) { m_generativeReferenceHasBeenSet = true; m_generativeReference = std::move(value); }
-    inline DataReference& WithGenerativeReference(const GenerativeReference& value) { SetGenerativeReference(value); return *this;}
-    inline DataReference& WithGenerativeReference(GenerativeReference&& value) { SetGenerativeReference(std::move(value)); return *this;}
+    template<typename GenerativeReferenceT = GenerativeReference>
+    void SetGenerativeReference(GenerativeReferenceT&& value) { m_generativeReferenceHasBeenSet = true; m_generativeReference = std::forward<GenerativeReferenceT>(value); }
+    template<typename GenerativeReferenceT = GenerativeReference>
+    DataReference& WithGenerativeReference(GenerativeReferenceT&& value) { SetGenerativeReference(std::forward<GenerativeReferenceT>(value)); return *this;}
     ///@}
   private:
 

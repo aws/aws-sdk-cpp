@@ -18,20 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-DataCaptureConfig::DataCaptureConfig() : 
-    m_enableCapture(false),
-    m_enableCaptureHasBeenSet(false),
-    m_initialSamplingPercentage(0),
-    m_initialSamplingPercentageHasBeenSet(false),
-    m_destinationS3UriHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_captureOptionsHasBeenSet(false),
-    m_captureContentTypeHeaderHasBeenSet(false)
-{
-}
-
 DataCaptureConfig::DataCaptureConfig(JsonView jsonValue)
-  : DataCaptureConfig()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ DataCaptureConfig& DataCaptureConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EnableCapture"))
   {
     m_enableCapture = jsonValue.GetBool("EnableCapture");
-
     m_enableCaptureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InitialSamplingPercentage"))
   {
     m_initialSamplingPercentage = jsonValue.GetInteger("InitialSamplingPercentage");
-
     m_initialSamplingPercentageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationS3Uri"))
   {
     m_destinationS3Uri = jsonValue.GetString("DestinationS3Uri");
-
     m_destinationS3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CaptureOptions"))
   {
     Aws::Utils::Array<JsonView> captureOptionsJsonList = jsonValue.GetArray("CaptureOptions");
@@ -75,14 +54,11 @@ DataCaptureConfig& DataCaptureConfig::operator =(JsonView jsonValue)
     }
     m_captureOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CaptureContentTypeHeader"))
   {
     m_captureContentTypeHeader = jsonValue.GetObject("CaptureContentTypeHeader");
-
     m_captureContentTypeHeaderHasBeenSet = true;
   }
-
   return *this;
 }
 

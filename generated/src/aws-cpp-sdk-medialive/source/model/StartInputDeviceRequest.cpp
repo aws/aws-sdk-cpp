@@ -12,11 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartInputDeviceRequest::StartInputDeviceRequest() : 
-    m_inputDeviceIdHasBeenSet(false)
-{
-}
-
 Aws::String StartInputDeviceRequest::SerializePayload() const
 {
   return {};

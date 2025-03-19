@@ -12,11 +12,6 @@ using namespace Aws::chatbot::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteChimeWebhookConfigurationRequest::DeleteChimeWebhookConfigurationRequest() : 
-    m_chatConfigurationArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteChimeWebhookConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

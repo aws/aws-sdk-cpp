@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeInstanceHealthResult::DescribeInstanceHealthResult()
-{
-}
-
 DescribeInstanceHealthResult::DescribeInstanceHealthResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,18 +38,21 @@ DescribeInstanceHealthResult& DescribeInstanceHealthResult::operator =(const Aws
     if(!instanceStatesNode.IsNull())
     {
       XmlNode instanceStatesMember = instanceStatesNode.FirstChild("member");
+      m_instanceStatesHasBeenSet = !instanceStatesMember.IsNull();
       while(!instanceStatesMember.IsNull())
       {
         m_instanceStates.push_back(instanceStatesMember);
         instanceStatesMember = instanceStatesMember.NextNode("member");
       }
 
+      m_instanceStatesHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElasticLoadBalancing::Model::DescribeInstanceHealthResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

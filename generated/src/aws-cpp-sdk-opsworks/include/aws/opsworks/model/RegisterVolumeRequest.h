@@ -21,7 +21,7 @@ namespace Model
   class RegisterVolumeRequest : public OpsWorksRequest
   {
   public:
-    AWS_OPSWORKS_API RegisterVolumeRequest();
+    AWS_OPSWORKS_API RegisterVolumeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
     /**
      * <p>The Amazon EBS volume ID.</p>
      */
-    inline const Aws::String& GetEc2VolumeId() const{ return m_ec2VolumeId; }
+    inline const Aws::String& GetEc2VolumeId() const { return m_ec2VolumeId; }
     inline bool Ec2VolumeIdHasBeenSet() const { return m_ec2VolumeIdHasBeenSet; }
-    inline void SetEc2VolumeId(const Aws::String& value) { m_ec2VolumeIdHasBeenSet = true; m_ec2VolumeId = value; }
-    inline void SetEc2VolumeId(Aws::String&& value) { m_ec2VolumeIdHasBeenSet = true; m_ec2VolumeId = std::move(value); }
-    inline void SetEc2VolumeId(const char* value) { m_ec2VolumeIdHasBeenSet = true; m_ec2VolumeId.assign(value); }
-    inline RegisterVolumeRequest& WithEc2VolumeId(const Aws::String& value) { SetEc2VolumeId(value); return *this;}
-    inline RegisterVolumeRequest& WithEc2VolumeId(Aws::String&& value) { SetEc2VolumeId(std::move(value)); return *this;}
-    inline RegisterVolumeRequest& WithEc2VolumeId(const char* value) { SetEc2VolumeId(value); return *this;}
+    template<typename Ec2VolumeIdT = Aws::String>
+    void SetEc2VolumeId(Ec2VolumeIdT&& value) { m_ec2VolumeIdHasBeenSet = true; m_ec2VolumeId = std::forward<Ec2VolumeIdT>(value); }
+    template<typename Ec2VolumeIdT = Aws::String>
+    RegisterVolumeRequest& WithEc2VolumeId(Ec2VolumeIdT&& value) { SetEc2VolumeId(std::forward<Ec2VolumeIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The stack ID.</p>
      */
-    inline const Aws::String& GetStackId() const{ return m_stackId; }
+    inline const Aws::String& GetStackId() const { return m_stackId; }
     inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
-    inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
-    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = std::move(value); }
-    inline void SetStackId(const char* value) { m_stackIdHasBeenSet = true; m_stackId.assign(value); }
-    inline RegisterVolumeRequest& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
-    inline RegisterVolumeRequest& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
-    inline RegisterVolumeRequest& WithStackId(const char* value) { SetStackId(value); return *this;}
+    template<typename StackIdT = Aws::String>
+    void SetStackId(StackIdT&& value) { m_stackIdHasBeenSet = true; m_stackId = std::forward<StackIdT>(value); }
+    template<typename StackIdT = Aws::String>
+    RegisterVolumeRequest& WithStackId(StackIdT&& value) { SetStackId(std::forward<StackIdT>(value)); return *this;}
     ///@}
   private:
 

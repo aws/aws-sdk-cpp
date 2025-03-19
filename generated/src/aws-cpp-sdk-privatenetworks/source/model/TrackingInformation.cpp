@@ -18,13 +18,7 @@ namespace PrivateNetworks
 namespace Model
 {
 
-TrackingInformation::TrackingInformation() : 
-    m_trackingNumberHasBeenSet(false)
-{
-}
-
 TrackingInformation::TrackingInformation(JsonView jsonValue)
-  : TrackingInformation()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TrackingInformation& TrackingInformation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("trackingNumber"))
   {
     m_trackingNumber = jsonValue.GetString("trackingNumber");
-
     m_trackingNumberHasBeenSet = true;
   }
-
   return *this;
 }
 

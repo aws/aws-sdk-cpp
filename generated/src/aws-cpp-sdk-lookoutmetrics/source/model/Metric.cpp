@@ -18,16 +18,7 @@ namespace LookoutMetrics
 namespace Model
 {
 
-Metric::Metric() : 
-    m_metricNameHasBeenSet(false),
-    m_aggregationFunction(AggregationFunction::NOT_SET),
-    m_aggregationFunctionHasBeenSet(false),
-    m_namespaceHasBeenSet(false)
-{
-}
-
 Metric::Metric(JsonView jsonValue)
-  : Metric()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ Metric& Metric::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MetricName"))
   {
     m_metricName = jsonValue.GetString("MetricName");
-
     m_metricNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AggregationFunction"))
   {
     m_aggregationFunction = AggregationFunctionMapper::GetAggregationFunctionForName(jsonValue.GetString("AggregationFunction"));
-
     m_aggregationFunctionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Namespace"))
   {
     m_namespace = jsonValue.GetString("Namespace");
-
     m_namespaceHasBeenSet = true;
   }
-
   return *this;
 }
 

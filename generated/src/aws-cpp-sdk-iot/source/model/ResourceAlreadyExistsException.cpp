@@ -18,15 +18,7 @@ namespace IoT
 namespace Model
 {
 
-ResourceAlreadyExistsException::ResourceAlreadyExistsException() : 
-    m_messageHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 ResourceAlreadyExistsException::ResourceAlreadyExistsException(JsonView jsonValue)
-  : ResourceAlreadyExistsException()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ResourceAlreadyExistsException& ResourceAlreadyExistsException::operator =(JsonV
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceId"))
   {
     m_resourceId = jsonValue.GetString("resourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceArn"))
   {
     m_resourceArn = jsonValue.GetString("resourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   return *this;
 }
 

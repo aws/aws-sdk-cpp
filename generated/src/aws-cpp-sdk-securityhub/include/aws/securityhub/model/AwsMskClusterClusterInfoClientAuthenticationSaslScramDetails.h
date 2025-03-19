@@ -29,7 +29,7 @@ namespace Model
   class AwsMskClusterClusterInfoClientAuthenticationSaslScramDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsMskClusterClusterInfoClientAuthenticationSaslScramDetails();
+    AWS_SECURITYHUB_API AwsMskClusterClusterInfoClientAuthenticationSaslScramDetails() = default;
     AWS_SECURITYHUB_API AwsMskClusterClusterInfoClientAuthenticationSaslScramDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsMskClusterClusterInfoClientAuthenticationSaslScramDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,14 +39,14 @@ namespace Model
     /**
      * <p> Indicates whether SASL/SCRAM authentication is enabled or not.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline AwsMskClusterClusterInfoClientAuthenticationSaslScramDetails& WithEnabled(bool value) { SetEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
   };
 

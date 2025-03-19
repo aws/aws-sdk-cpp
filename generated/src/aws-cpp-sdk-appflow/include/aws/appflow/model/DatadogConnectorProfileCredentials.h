@@ -32,7 +32,7 @@ namespace Model
   class DatadogConnectorProfileCredentials
   {
   public:
-    AWS_APPFLOW_API DatadogConnectorProfileCredentials();
+    AWS_APPFLOW_API DatadogConnectorProfileCredentials() = default;
     AWS_APPFLOW_API DatadogConnectorProfileCredentials(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API DatadogConnectorProfileCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p> A unique alphanumeric identifier used to authenticate a user, developer, or
      * calling program to your API. </p>
      */
-    inline const Aws::String& GetApiKey() const{ return m_apiKey; }
+    inline const Aws::String& GetApiKey() const { return m_apiKey; }
     inline bool ApiKeyHasBeenSet() const { return m_apiKeyHasBeenSet; }
-    inline void SetApiKey(const Aws::String& value) { m_apiKeyHasBeenSet = true; m_apiKey = value; }
-    inline void SetApiKey(Aws::String&& value) { m_apiKeyHasBeenSet = true; m_apiKey = std::move(value); }
-    inline void SetApiKey(const char* value) { m_apiKeyHasBeenSet = true; m_apiKey.assign(value); }
-    inline DatadogConnectorProfileCredentials& WithApiKey(const Aws::String& value) { SetApiKey(value); return *this;}
-    inline DatadogConnectorProfileCredentials& WithApiKey(Aws::String&& value) { SetApiKey(std::move(value)); return *this;}
-    inline DatadogConnectorProfileCredentials& WithApiKey(const char* value) { SetApiKey(value); return *this;}
+    template<typename ApiKeyT = Aws::String>
+    void SetApiKey(ApiKeyT&& value) { m_apiKeyHasBeenSet = true; m_apiKey = std::forward<ApiKeyT>(value); }
+    template<typename ApiKeyT = Aws::String>
+    DatadogConnectorProfileCredentials& WithApiKey(ApiKeyT&& value) { SetApiKey(std::forward<ApiKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * account that created them. The application key is used to log all requests made
      * to the API. </p>
      */
-    inline const Aws::String& GetApplicationKey() const{ return m_applicationKey; }
+    inline const Aws::String& GetApplicationKey() const { return m_applicationKey; }
     inline bool ApplicationKeyHasBeenSet() const { return m_applicationKeyHasBeenSet; }
-    inline void SetApplicationKey(const Aws::String& value) { m_applicationKeyHasBeenSet = true; m_applicationKey = value; }
-    inline void SetApplicationKey(Aws::String&& value) { m_applicationKeyHasBeenSet = true; m_applicationKey = std::move(value); }
-    inline void SetApplicationKey(const char* value) { m_applicationKeyHasBeenSet = true; m_applicationKey.assign(value); }
-    inline DatadogConnectorProfileCredentials& WithApplicationKey(const Aws::String& value) { SetApplicationKey(value); return *this;}
-    inline DatadogConnectorProfileCredentials& WithApplicationKey(Aws::String&& value) { SetApplicationKey(std::move(value)); return *this;}
-    inline DatadogConnectorProfileCredentials& WithApplicationKey(const char* value) { SetApplicationKey(value); return *this;}
+    template<typename ApplicationKeyT = Aws::String>
+    void SetApplicationKey(ApplicationKeyT&& value) { m_applicationKeyHasBeenSet = true; m_applicationKey = std::forward<ApplicationKeyT>(value); }
+    template<typename ApplicationKeyT = Aws::String>
+    DatadogConnectorProfileCredentials& WithApplicationKey(ApplicationKeyT&& value) { SetApplicationKey(std::forward<ApplicationKeyT>(value)); return *this;}
     ///@}
   private:
 

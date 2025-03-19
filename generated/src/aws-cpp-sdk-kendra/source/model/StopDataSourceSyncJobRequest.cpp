@@ -12,12 +12,6 @@ using namespace Aws::kendra::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopDataSourceSyncJobRequest::StopDataSourceSyncJobRequest() : 
-    m_idHasBeenSet(false),
-    m_indexIdHasBeenSet(false)
-{
-}
-
 Aws::String StopDataSourceSyncJobRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -34,7 +34,7 @@ namespace Model
   class DescribeVpnConnectionsResponse
   {
   public:
-    AWS_EC2_API DescribeVpnConnectionsResponse();
+    AWS_EC2_API DescribeVpnConnectionsResponse() = default;
     AWS_EC2_API DescribeVpnConnectionsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DescribeVpnConnectionsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -43,28 +43,30 @@ namespace Model
     /**
      * <p>Information about one or more VPN connections.</p>
      */
-    inline const Aws::Vector<VpnConnection>& GetVpnConnections() const{ return m_vpnConnections; }
-    inline void SetVpnConnections(const Aws::Vector<VpnConnection>& value) { m_vpnConnections = value; }
-    inline void SetVpnConnections(Aws::Vector<VpnConnection>&& value) { m_vpnConnections = std::move(value); }
-    inline DescribeVpnConnectionsResponse& WithVpnConnections(const Aws::Vector<VpnConnection>& value) { SetVpnConnections(value); return *this;}
-    inline DescribeVpnConnectionsResponse& WithVpnConnections(Aws::Vector<VpnConnection>&& value) { SetVpnConnections(std::move(value)); return *this;}
-    inline DescribeVpnConnectionsResponse& AddVpnConnections(const VpnConnection& value) { m_vpnConnections.push_back(value); return *this; }
-    inline DescribeVpnConnectionsResponse& AddVpnConnections(VpnConnection&& value) { m_vpnConnections.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<VpnConnection>& GetVpnConnections() const { return m_vpnConnections; }
+    template<typename VpnConnectionsT = Aws::Vector<VpnConnection>>
+    void SetVpnConnections(VpnConnectionsT&& value) { m_vpnConnectionsHasBeenSet = true; m_vpnConnections = std::forward<VpnConnectionsT>(value); }
+    template<typename VpnConnectionsT = Aws::Vector<VpnConnection>>
+    DescribeVpnConnectionsResponse& WithVpnConnections(VpnConnectionsT&& value) { SetVpnConnections(std::forward<VpnConnectionsT>(value)); return *this;}
+    template<typename VpnConnectionsT = VpnConnection>
+    DescribeVpnConnectionsResponse& AddVpnConnections(VpnConnectionsT&& value) { m_vpnConnectionsHasBeenSet = true; m_vpnConnections.emplace_back(std::forward<VpnConnectionsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeVpnConnectionsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeVpnConnectionsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeVpnConnectionsResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<VpnConnection> m_vpnConnections;
+    bool m_vpnConnectionsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,13 +18,7 @@ namespace kendra
 namespace Model
 {
 
-FeaturedDocument::FeaturedDocument() : 
-    m_idHasBeenSet(false)
-{
-}
-
 FeaturedDocument::FeaturedDocument(JsonView jsonValue)
-  : FeaturedDocument()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ FeaturedDocument& FeaturedDocument::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   return *this;
 }
 

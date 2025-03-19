@@ -12,14 +12,6 @@ using namespace Aws::Personalize::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSchemaRequest::CreateSchemaRequest() : 
-    m_nameHasBeenSet(false),
-    m_schemaHasBeenSet(false),
-    m_domain(Domain::NOT_SET),
-    m_domainHasBeenSet(false)
-{
-}
-
 Aws::String CreateSchemaRequest::SerializePayload() const
 {
   JsonValue payload;

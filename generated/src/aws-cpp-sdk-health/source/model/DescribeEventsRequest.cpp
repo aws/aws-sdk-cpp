@@ -12,15 +12,6 @@ using namespace Aws::Health::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeEventsRequest::DescribeEventsRequest() : 
-    m_filterHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_localeHasBeenSet(false)
-{
-}
-
 Aws::String DescribeEventsRequest::SerializePayload() const
 {
   JsonValue payload;

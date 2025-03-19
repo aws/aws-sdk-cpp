@@ -36,7 +36,7 @@ namespace Model
   class ListReusableDelegationSetsResult
   {
   public:
-    AWS_ROUTE53_API ListReusableDelegationSetsResult();
+    AWS_ROUTE53_API ListReusableDelegationSetsResult() = default;
     AWS_ROUTE53_API ListReusableDelegationSetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ROUTE53_API ListReusableDelegationSetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -47,13 +47,13 @@ namespace Model
      * reusable delegation set that was created by the current Amazon Web Services
      * account.</p>
      */
-    inline const Aws::Vector<DelegationSet>& GetDelegationSets() const{ return m_delegationSets; }
-    inline void SetDelegationSets(const Aws::Vector<DelegationSet>& value) { m_delegationSets = value; }
-    inline void SetDelegationSets(Aws::Vector<DelegationSet>&& value) { m_delegationSets = std::move(value); }
-    inline ListReusableDelegationSetsResult& WithDelegationSets(const Aws::Vector<DelegationSet>& value) { SetDelegationSets(value); return *this;}
-    inline ListReusableDelegationSetsResult& WithDelegationSets(Aws::Vector<DelegationSet>&& value) { SetDelegationSets(std::move(value)); return *this;}
-    inline ListReusableDelegationSetsResult& AddDelegationSets(const DelegationSet& value) { m_delegationSets.push_back(value); return *this; }
-    inline ListReusableDelegationSetsResult& AddDelegationSets(DelegationSet&& value) { m_delegationSets.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DelegationSet>& GetDelegationSets() const { return m_delegationSets; }
+    template<typename DelegationSetsT = Aws::Vector<DelegationSet>>
+    void SetDelegationSets(DelegationSetsT&& value) { m_delegationSetsHasBeenSet = true; m_delegationSets = std::forward<DelegationSetsT>(value); }
+    template<typename DelegationSetsT = Aws::Vector<DelegationSet>>
+    ListReusableDelegationSetsResult& WithDelegationSets(DelegationSetsT&& value) { SetDelegationSets(std::forward<DelegationSetsT>(value)); return *this;}
+    template<typename DelegationSetsT = DelegationSet>
+    ListReusableDelegationSetsResult& AddDelegationSets(DelegationSetsT&& value) { m_delegationSetsHasBeenSet = true; m_delegationSets.emplace_back(std::forward<DelegationSetsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -63,13 +63,11 @@ namespace Model
      * you specified for the <code>marker</code> parameter in the request that produced
      * the current response.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
-    inline void SetMarker(const Aws::String& value) { m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_marker.assign(value); }
-    inline ListReusableDelegationSetsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline ListReusableDelegationSetsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline ListReusableDelegationSetsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    inline const Aws::String& GetMarker() const { return m_marker; }
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    ListReusableDelegationSetsResult& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,8 +75,8 @@ namespace Model
      * <p>A flag that indicates whether there are more reusable delegation sets to be
      * listed.</p>
      */
-    inline bool GetIsTruncated() const{ return m_isTruncated; }
-    inline void SetIsTruncated(bool value) { m_isTruncated = value; }
+    inline bool GetIsTruncated() const { return m_isTruncated; }
+    inline void SetIsTruncated(bool value) { m_isTruncatedHasBeenSet = true; m_isTruncated = value; }
     inline ListReusableDelegationSetsResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
     ///@}
 
@@ -90,13 +88,11 @@ namespace Model
      * <code>ListReusableDelegationSets</code> request and specify the value of
      * <code>NextMarker</code> in the <code>marker</code> parameter.</p>
      */
-    inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
-    inline void SetNextMarker(const Aws::String& value) { m_nextMarker = value; }
-    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
-    inline void SetNextMarker(const char* value) { m_nextMarker.assign(value); }
-    inline ListReusableDelegationSetsResult& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
-    inline ListReusableDelegationSetsResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
-    inline ListReusableDelegationSetsResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
+    inline const Aws::String& GetNextMarker() const { return m_nextMarker; }
+    template<typename NextMarkerT = Aws::String>
+    void SetNextMarker(NextMarkerT&& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = std::forward<NextMarkerT>(value); }
+    template<typename NextMarkerT = Aws::String>
+    ListReusableDelegationSetsResult& WithNextMarker(NextMarkerT&& value) { SetNextMarker(std::forward<NextMarkerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,38 +101,40 @@ namespace Model
      * call to <code>ListReusableDelegationSets</code> that produced the current
      * response.</p>
      */
-    inline const Aws::String& GetMaxItems() const{ return m_maxItems; }
-    inline void SetMaxItems(const Aws::String& value) { m_maxItems = value; }
-    inline void SetMaxItems(Aws::String&& value) { m_maxItems = std::move(value); }
-    inline void SetMaxItems(const char* value) { m_maxItems.assign(value); }
-    inline ListReusableDelegationSetsResult& WithMaxItems(const Aws::String& value) { SetMaxItems(value); return *this;}
-    inline ListReusableDelegationSetsResult& WithMaxItems(Aws::String&& value) { SetMaxItems(std::move(value)); return *this;}
-    inline ListReusableDelegationSetsResult& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
+    inline const Aws::String& GetMaxItems() const { return m_maxItems; }
+    template<typename MaxItemsT = Aws::String>
+    void SetMaxItems(MaxItemsT&& value) { m_maxItemsHasBeenSet = true; m_maxItems = std::forward<MaxItemsT>(value); }
+    template<typename MaxItemsT = Aws::String>
+    ListReusableDelegationSetsResult& WithMaxItems(MaxItemsT&& value) { SetMaxItems(std::forward<MaxItemsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListReusableDelegationSetsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListReusableDelegationSetsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListReusableDelegationSetsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListReusableDelegationSetsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DelegationSet> m_delegationSets;
+    bool m_delegationSetsHasBeenSet = false;
 
     Aws::String m_marker;
+    bool m_markerHasBeenSet = false;
 
-    bool m_isTruncated;
+    bool m_isTruncated{false};
+    bool m_isTruncatedHasBeenSet = false;
 
     Aws::String m_nextMarker;
+    bool m_nextMarkerHasBeenSet = false;
 
     Aws::String m_maxItems;
+    bool m_maxItemsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,18 +18,7 @@ namespace MediaPackage
 namespace Model
 {
 
-SpekeKeyProvider::SpekeKeyProvider() : 
-    m_certificateArnHasBeenSet(false),
-    m_encryptionContractConfigurationHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_systemIdsHasBeenSet(false),
-    m_urlHasBeenSet(false)
-{
-}
-
 SpekeKeyProvider::SpekeKeyProvider(JsonView jsonValue)
-  : SpekeKeyProvider()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ SpekeKeyProvider& SpekeKeyProvider::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("certificateArn"))
   {
     m_certificateArn = jsonValue.GetString("certificateArn");
-
     m_certificateArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encryptionContractConfiguration"))
   {
     m_encryptionContractConfiguration = jsonValue.GetObject("encryptionContractConfiguration");
-
     m_encryptionContractConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceId"))
   {
     m_resourceId = jsonValue.GetString("resourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("systemIds"))
   {
     Aws::Utils::Array<JsonView> systemIdsJsonList = jsonValue.GetArray("systemIds");
@@ -73,14 +54,11 @@ SpekeKeyProvider& SpekeKeyProvider::operator =(JsonView jsonValue)
     }
     m_systemIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("url"))
   {
     m_url = jsonValue.GetString("url");
-
     m_urlHasBeenSet = true;
   }
-
   return *this;
 }
 

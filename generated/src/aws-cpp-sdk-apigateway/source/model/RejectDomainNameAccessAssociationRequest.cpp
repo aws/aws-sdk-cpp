@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-RejectDomainNameAccessAssociationRequest::RejectDomainNameAccessAssociationRequest() : 
-    m_domainNameAccessAssociationArnHasBeenSet(false),
-    m_domainNameArnHasBeenSet(false)
-{
-}
-
 Aws::String RejectDomainNameAccessAssociationRequest::SerializePayload() const
 {
   return {};

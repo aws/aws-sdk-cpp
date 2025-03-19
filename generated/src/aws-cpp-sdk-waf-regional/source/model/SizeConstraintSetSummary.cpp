@@ -18,14 +18,7 @@ namespace WAFRegional
 namespace Model
 {
 
-SizeConstraintSetSummary::SizeConstraintSetSummary() : 
-    m_sizeConstraintSetIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 SizeConstraintSetSummary::SizeConstraintSetSummary(JsonView jsonValue)
-  : SizeConstraintSetSummary()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SizeConstraintSetSummary& SizeConstraintSetSummary::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("SizeConstraintSetId"))
   {
     m_sizeConstraintSetId = jsonValue.GetString("SizeConstraintSetId");
-
     m_sizeConstraintSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

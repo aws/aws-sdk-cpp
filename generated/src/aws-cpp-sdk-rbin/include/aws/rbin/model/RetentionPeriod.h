@@ -32,7 +32,7 @@ namespace Model
   class RetentionPeriod
   {
   public:
-    AWS_RECYCLEBIN_API RetentionPeriod();
+    AWS_RECYCLEBIN_API RetentionPeriod() = default;
     AWS_RECYCLEBIN_API RetentionPeriod(Aws::Utils::Json::JsonView jsonValue);
     AWS_RECYCLEBIN_API RetentionPeriod& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RECYCLEBIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * <p>The period value for which the retention rule is to retain resources. The
      * period is measured using the unit specified for <b>RetentionPeriodUnit</b>.</p>
      */
-    inline int GetRetentionPeriodValue() const{ return m_retentionPeriodValue; }
+    inline int GetRetentionPeriodValue() const { return m_retentionPeriodValue; }
     inline bool RetentionPeriodValueHasBeenSet() const { return m_retentionPeriodValueHasBeenSet; }
     inline void SetRetentionPeriodValue(int value) { m_retentionPeriodValueHasBeenSet = true; m_retentionPeriodValue = value; }
     inline RetentionPeriod& WithRetentionPeriodValue(int value) { SetRetentionPeriodValue(value); return *this;}
@@ -54,19 +54,17 @@ namespace Model
      * <p>The unit of time in which the retention period is measured. Currently, only
      * <code>DAYS</code> is supported.</p>
      */
-    inline const RetentionPeriodUnit& GetRetentionPeriodUnit() const{ return m_retentionPeriodUnit; }
+    inline RetentionPeriodUnit GetRetentionPeriodUnit() const { return m_retentionPeriodUnit; }
     inline bool RetentionPeriodUnitHasBeenSet() const { return m_retentionPeriodUnitHasBeenSet; }
-    inline void SetRetentionPeriodUnit(const RetentionPeriodUnit& value) { m_retentionPeriodUnitHasBeenSet = true; m_retentionPeriodUnit = value; }
-    inline void SetRetentionPeriodUnit(RetentionPeriodUnit&& value) { m_retentionPeriodUnitHasBeenSet = true; m_retentionPeriodUnit = std::move(value); }
-    inline RetentionPeriod& WithRetentionPeriodUnit(const RetentionPeriodUnit& value) { SetRetentionPeriodUnit(value); return *this;}
-    inline RetentionPeriod& WithRetentionPeriodUnit(RetentionPeriodUnit&& value) { SetRetentionPeriodUnit(std::move(value)); return *this;}
+    inline void SetRetentionPeriodUnit(RetentionPeriodUnit value) { m_retentionPeriodUnitHasBeenSet = true; m_retentionPeriodUnit = value; }
+    inline RetentionPeriod& WithRetentionPeriodUnit(RetentionPeriodUnit value) { SetRetentionPeriodUnit(value); return *this;}
     ///@}
   private:
 
-    int m_retentionPeriodValue;
+    int m_retentionPeriodValue{0};
     bool m_retentionPeriodValueHasBeenSet = false;
 
-    RetentionPeriodUnit m_retentionPeriodUnit;
+    RetentionPeriodUnit m_retentionPeriodUnit{RetentionPeriodUnit::NOT_SET};
     bool m_retentionPeriodUnitHasBeenSet = false;
   };
 

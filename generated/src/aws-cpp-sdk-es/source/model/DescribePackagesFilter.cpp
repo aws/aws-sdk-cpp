@@ -18,15 +18,7 @@ namespace ElasticsearchService
 namespace Model
 {
 
-DescribePackagesFilter::DescribePackagesFilter() : 
-    m_name(DescribePackagesFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 DescribePackagesFilter::DescribePackagesFilter(JsonView jsonValue)
-  : DescribePackagesFilter()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ DescribePackagesFilter& DescribePackagesFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = DescribePackagesFilterNameMapper::GetDescribePackagesFilterNameForName(jsonValue.GetString("Name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     Aws::Utils::Array<JsonView> valueJsonList = jsonValue.GetArray("Value");
@@ -49,7 +39,6 @@ DescribePackagesFilter& DescribePackagesFilter::operator =(JsonView jsonValue)
     }
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateAIGuardrailVersionResult::CreateAIGuardrailVersionResult() : 
-    m_versionNumber(0)
-{
-}
-
 CreateAIGuardrailVersionResult::CreateAIGuardrailVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateAIGuardrailVersionResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ CreateAIGuardrailVersionResult& CreateAIGuardrailVersionResult::operator =(const
   if(jsonValue.ValueExists("aiGuardrail"))
   {
     m_aiGuardrail = jsonValue.GetObject("aiGuardrail");
-
+    m_aiGuardrailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("versionNumber"))
   {
     m_versionNumber = jsonValue.GetInt64("versionNumber");
-
+    m_versionNumberHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

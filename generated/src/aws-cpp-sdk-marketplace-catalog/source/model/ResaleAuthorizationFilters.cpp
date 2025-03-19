@@ -18,25 +18,7 @@ namespace MarketplaceCatalog
 namespace Model
 {
 
-ResaleAuthorizationFilters::ResaleAuthorizationFilters() : 
-    m_entityIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_productIdHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_availabilityEndDateHasBeenSet(false),
-    m_manufacturerAccountIdHasBeenSet(false),
-    m_productNameHasBeenSet(false),
-    m_manufacturerLegalNameHasBeenSet(false),
-    m_resellerAccountIDHasBeenSet(false),
-    m_resellerLegalNameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_offerExtendedStatusHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false)
-{
-}
-
 ResaleAuthorizationFilters::ResaleAuthorizationFilters(JsonView jsonValue)
-  : ResaleAuthorizationFilters()
 {
   *this = jsonValue;
 }
@@ -46,94 +28,68 @@ ResaleAuthorizationFilters& ResaleAuthorizationFilters::operator =(JsonView json
   if(jsonValue.ValueExists("EntityId"))
   {
     m_entityId = jsonValue.GetObject("EntityId");
-
     m_entityIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetObject("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProductId"))
   {
     m_productId = jsonValue.GetObject("ProductId");
-
     m_productIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedDate"))
   {
     m_createdDate = jsonValue.GetObject("CreatedDate");
-
     m_createdDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailabilityEndDate"))
   {
     m_availabilityEndDate = jsonValue.GetObject("AvailabilityEndDate");
-
     m_availabilityEndDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ManufacturerAccountId"))
   {
     m_manufacturerAccountId = jsonValue.GetObject("ManufacturerAccountId");
-
     m_manufacturerAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProductName"))
   {
     m_productName = jsonValue.GetObject("ProductName");
-
     m_productNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ManufacturerLegalName"))
   {
     m_manufacturerLegalName = jsonValue.GetObject("ManufacturerLegalName");
-
     m_manufacturerLegalNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResellerAccountID"))
   {
     m_resellerAccountID = jsonValue.GetObject("ResellerAccountID");
-
     m_resellerAccountIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResellerLegalName"))
   {
     m_resellerLegalName = jsonValue.GetObject("ResellerLegalName");
-
     m_resellerLegalNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetObject("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OfferExtendedStatus"))
   {
     m_offerExtendedStatus = jsonValue.GetObject("OfferExtendedStatus");
-
     m_offerExtendedStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetObject("LastModifiedDate");
-
     m_lastModifiedDateHasBeenSet = true;
   }
-
   return *this;
 }
 

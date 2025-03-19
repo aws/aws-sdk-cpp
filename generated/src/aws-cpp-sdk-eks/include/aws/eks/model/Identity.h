@@ -31,7 +31,7 @@ namespace Model
   class Identity
   {
   public:
-    AWS_EKS_API Identity();
+    AWS_EKS_API Identity() = default;
     AWS_EKS_API Identity(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API Identity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
      * <p>An object representing the <a href="https://openid.net/connect/">OpenID
      * Connect</a> identity provider information.</p>
      */
-    inline const OIDC& GetOidc() const{ return m_oidc; }
+    inline const OIDC& GetOidc() const { return m_oidc; }
     inline bool OidcHasBeenSet() const { return m_oidcHasBeenSet; }
-    inline void SetOidc(const OIDC& value) { m_oidcHasBeenSet = true; m_oidc = value; }
-    inline void SetOidc(OIDC&& value) { m_oidcHasBeenSet = true; m_oidc = std::move(value); }
-    inline Identity& WithOidc(const OIDC& value) { SetOidc(value); return *this;}
-    inline Identity& WithOidc(OIDC&& value) { SetOidc(std::move(value)); return *this;}
+    template<typename OidcT = OIDC>
+    void SetOidc(OidcT&& value) { m_oidcHasBeenSet = true; m_oidc = std::forward<OidcT>(value); }
+    template<typename OidcT = OIDC>
+    Identity& WithOidc(OidcT&& value) { SetOidc(std::forward<OidcT>(value)); return *this;}
     ///@}
   private:
 

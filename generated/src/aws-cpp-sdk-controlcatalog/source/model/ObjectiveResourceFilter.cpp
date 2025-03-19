@@ -18,13 +18,7 @@ namespace ControlCatalog
 namespace Model
 {
 
-ObjectiveResourceFilter::ObjectiveResourceFilter() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 ObjectiveResourceFilter::ObjectiveResourceFilter(JsonView jsonValue)
-  : ObjectiveResourceFilter()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ObjectiveResourceFilter& ObjectiveResourceFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

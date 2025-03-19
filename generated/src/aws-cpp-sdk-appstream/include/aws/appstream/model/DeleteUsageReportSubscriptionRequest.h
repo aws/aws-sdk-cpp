@@ -19,7 +19,7 @@ namespace Model
   class DeleteUsageReportSubscriptionRequest : public AppStreamRequest
   {
   public:
-    AWS_APPSTREAM_API DeleteUsageReportSubscriptionRequest();
+    AWS_APPSTREAM_API DeleteUsageReportSubscriptionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

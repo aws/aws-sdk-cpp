@@ -18,20 +18,7 @@ namespace IoTTwinMaker
 namespace Model
 {
 
-MetadataTransferJobProgress::MetadataTransferJobProgress() : 
-    m_totalCount(0),
-    m_totalCountHasBeenSet(false),
-    m_succeededCount(0),
-    m_succeededCountHasBeenSet(false),
-    m_skippedCount(0),
-    m_skippedCountHasBeenSet(false),
-    m_failedCount(0),
-    m_failedCountHasBeenSet(false)
-{
-}
-
 MetadataTransferJobProgress::MetadataTransferJobProgress(JsonView jsonValue)
-  : MetadataTransferJobProgress()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ MetadataTransferJobProgress& MetadataTransferJobProgress::operator =(JsonView js
   if(jsonValue.ValueExists("totalCount"))
   {
     m_totalCount = jsonValue.GetInteger("totalCount");
-
     m_totalCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("succeededCount"))
   {
     m_succeededCount = jsonValue.GetInteger("succeededCount");
-
     m_succeededCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("skippedCount"))
   {
     m_skippedCount = jsonValue.GetInteger("skippedCount");
-
     m_skippedCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failedCount"))
   {
     m_failedCount = jsonValue.GetInteger("failedCount");
-
     m_failedCountHasBeenSet = true;
   }
-
   return *this;
 }
 

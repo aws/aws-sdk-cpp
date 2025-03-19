@@ -12,16 +12,6 @@ using namespace Aws::ResilienceHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ImportResourcesToDraftAppVersionRequest::ImportResourcesToDraftAppVersionRequest() : 
-    m_appArnHasBeenSet(false),
-    m_eksSourcesHasBeenSet(false),
-    m_importStrategy(ResourceImportStrategyType::NOT_SET),
-    m_importStrategyHasBeenSet(false),
-    m_sourceArnsHasBeenSet(false),
-    m_terraformSourcesHasBeenSet(false)
-{
-}
-
 Aws::String ImportResourcesToDraftAppVersionRequest::SerializePayload() const
 {
   JsonValue payload;

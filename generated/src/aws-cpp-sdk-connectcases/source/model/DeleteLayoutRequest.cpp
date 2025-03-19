@@ -12,12 +12,6 @@ using namespace Aws::ConnectCases::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteLayoutRequest::DeleteLayoutRequest() : 
-    m_domainIdHasBeenSet(false),
-    m_layoutIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteLayoutRequest::SerializePayload() const
 {
   return {};

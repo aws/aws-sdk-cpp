@@ -33,7 +33,7 @@ namespace Model
   class DeployAsApplicationConfigurationUpdate
   {
   public:
-    AWS_KINESISANALYTICSV2_API DeployAsApplicationConfigurationUpdate();
+    AWS_KINESISANALYTICSV2_API DeployAsApplicationConfigurationUpdate() = default;
     AWS_KINESISANALYTICSV2_API DeployAsApplicationConfigurationUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API DeployAsApplicationConfigurationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p>Updates to the location that holds the data required to specify an Amazon
      * Data Analytics application.</p>
      */
-    inline const S3ContentBaseLocationUpdate& GetS3ContentLocationUpdate() const{ return m_s3ContentLocationUpdate; }
+    inline const S3ContentBaseLocationUpdate& GetS3ContentLocationUpdate() const { return m_s3ContentLocationUpdate; }
     inline bool S3ContentLocationUpdateHasBeenSet() const { return m_s3ContentLocationUpdateHasBeenSet; }
-    inline void SetS3ContentLocationUpdate(const S3ContentBaseLocationUpdate& value) { m_s3ContentLocationUpdateHasBeenSet = true; m_s3ContentLocationUpdate = value; }
-    inline void SetS3ContentLocationUpdate(S3ContentBaseLocationUpdate&& value) { m_s3ContentLocationUpdateHasBeenSet = true; m_s3ContentLocationUpdate = std::move(value); }
-    inline DeployAsApplicationConfigurationUpdate& WithS3ContentLocationUpdate(const S3ContentBaseLocationUpdate& value) { SetS3ContentLocationUpdate(value); return *this;}
-    inline DeployAsApplicationConfigurationUpdate& WithS3ContentLocationUpdate(S3ContentBaseLocationUpdate&& value) { SetS3ContentLocationUpdate(std::move(value)); return *this;}
+    template<typename S3ContentLocationUpdateT = S3ContentBaseLocationUpdate>
+    void SetS3ContentLocationUpdate(S3ContentLocationUpdateT&& value) { m_s3ContentLocationUpdateHasBeenSet = true; m_s3ContentLocationUpdate = std::forward<S3ContentLocationUpdateT>(value); }
+    template<typename S3ContentLocationUpdateT = S3ContentBaseLocationUpdate>
+    DeployAsApplicationConfigurationUpdate& WithS3ContentLocationUpdate(S3ContentLocationUpdateT&& value) { SetS3ContentLocationUpdate(std::forward<S3ContentLocationUpdateT>(value)); return *this;}
     ///@}
   private:
 

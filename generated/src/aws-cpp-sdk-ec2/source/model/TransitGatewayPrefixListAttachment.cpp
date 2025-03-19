@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TransitGatewayPrefixListAttachment::TransitGatewayPrefixListAttachment() : 
-    m_transitGatewayAttachmentIdHasBeenSet(false),
-    m_resourceType(TransitGatewayAttachmentResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false)
-{
-}
-
 TransitGatewayPrefixListAttachment::TransitGatewayPrefixListAttachment(const XmlNode& xmlNode)
-  : TransitGatewayPrefixListAttachment()
 {
   *this = xmlNode;
 }
@@ -49,7 +40,7 @@ TransitGatewayPrefixListAttachment& TransitGatewayPrefixListAttachment::operator
     XmlNode resourceTypeNode = resultNode.FirstChild("resourceType");
     if(!resourceTypeNode.IsNull())
     {
-      m_resourceType = TransitGatewayAttachmentResourceTypeMapper::GetTransitGatewayAttachmentResourceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText()).c_str()).c_str());
+      m_resourceType = TransitGatewayAttachmentResourceTypeMapper::GetTransitGatewayAttachmentResourceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText()).c_str()));
       m_resourceTypeHasBeenSet = true;
     }
     XmlNode resourceIdNode = resultNode.FirstChild("resourceId");

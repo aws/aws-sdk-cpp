@@ -10,11 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-StopDBClusterRequest::StopDBClusterRequest() : 
-    m_dBClusterIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String StopDBClusterRequest::SerializePayload() const
 {
   Aws::StringStream ss;

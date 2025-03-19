@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-EvaluateFeatureResult::EvaluateFeatureResult()
-{
-}
-
 EvaluateFeatureResult::EvaluateFeatureResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,33 +28,30 @@ EvaluateFeatureResult& EvaluateFeatureResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("details"))
   {
     m_details = jsonValue.GetString("details");
-
+    m_detailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = jsonValue.GetString("reason");
-
+    m_reasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetObject("value");
-
+    m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("variation"))
   {
     m_variation = jsonValue.GetString("variation");
-
+    m_variationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

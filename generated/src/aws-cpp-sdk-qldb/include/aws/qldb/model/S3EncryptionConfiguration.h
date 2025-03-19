@@ -34,7 +34,7 @@ namespace Model
   class S3EncryptionConfiguration
   {
   public:
-    AWS_QLDB_API S3EncryptionConfiguration();
+    AWS_QLDB_API S3EncryptionConfiguration() = default;
     AWS_QLDB_API S3EncryptionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QLDB_API S3EncryptionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QLDB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,10 @@ namespace Model
      * Data Using Server-Side Encryption</a> in the <i>Amazon S3 Developer
      * Guide</i>.</p>
      */
-    inline const S3ObjectEncryptionType& GetObjectEncryptionType() const{ return m_objectEncryptionType; }
+    inline S3ObjectEncryptionType GetObjectEncryptionType() const { return m_objectEncryptionType; }
     inline bool ObjectEncryptionTypeHasBeenSet() const { return m_objectEncryptionTypeHasBeenSet; }
-    inline void SetObjectEncryptionType(const S3ObjectEncryptionType& value) { m_objectEncryptionTypeHasBeenSet = true; m_objectEncryptionType = value; }
-    inline void SetObjectEncryptionType(S3ObjectEncryptionType&& value) { m_objectEncryptionTypeHasBeenSet = true; m_objectEncryptionType = std::move(value); }
-    inline S3EncryptionConfiguration& WithObjectEncryptionType(const S3ObjectEncryptionType& value) { SetObjectEncryptionType(value); return *this;}
-    inline S3EncryptionConfiguration& WithObjectEncryptionType(S3ObjectEncryptionType&& value) { SetObjectEncryptionType(std::move(value)); return *this;}
+    inline void SetObjectEncryptionType(S3ObjectEncryptionType value) { m_objectEncryptionTypeHasBeenSet = true; m_objectEncryptionType = value; }
+    inline S3EncryptionConfiguration& WithObjectEncryptionType(S3ObjectEncryptionType value) { SetObjectEncryptionType(value); return *this;}
     ///@}
 
     ///@{
@@ -65,18 +63,16 @@ namespace Model
      * required if you specify <code>SSE_S3</code> as the
      * <code>ObjectEncryptionType</code>.</p>
      */
-    inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
+    inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
-    inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
-    inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
-    inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
-    inline S3EncryptionConfiguration& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
-    inline S3EncryptionConfiguration& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
-    inline S3EncryptionConfiguration& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
+    template<typename KmsKeyArnT = Aws::String>
+    void SetKmsKeyArn(KmsKeyArnT&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::forward<KmsKeyArnT>(value); }
+    template<typename KmsKeyArnT = Aws::String>
+    S3EncryptionConfiguration& WithKmsKeyArn(KmsKeyArnT&& value) { SetKmsKeyArn(std::forward<KmsKeyArnT>(value)); return *this;}
     ///@}
   private:
 
-    S3ObjectEncryptionType m_objectEncryptionType;
+    S3ObjectEncryptionType m_objectEncryptionType{S3ObjectEncryptionType::NOT_SET};
     bool m_objectEncryptionTypeHasBeenSet = false;
 
     Aws::String m_kmsKeyArn;

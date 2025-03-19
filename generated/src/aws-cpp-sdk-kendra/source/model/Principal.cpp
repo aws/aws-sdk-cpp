@@ -18,18 +18,7 @@ namespace kendra
 namespace Model
 {
 
-Principal::Principal() : 
-    m_nameHasBeenSet(false),
-    m_type(PrincipalType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_access(ReadAccessType::NOT_SET),
-    m_accessHasBeenSet(false),
-    m_dataSourceIdHasBeenSet(false)
-{
-}
-
 Principal::Principal(JsonView jsonValue)
-  : Principal()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ Principal& Principal::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = PrincipalTypeMapper::GetPrincipalTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Access"))
   {
     m_access = ReadAccessTypeMapper::GetReadAccessTypeForName(jsonValue.GetString("Access"));
-
     m_accessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSourceId"))
   {
     m_dataSourceId = jsonValue.GetString("DataSourceId");
-
     m_dataSourceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

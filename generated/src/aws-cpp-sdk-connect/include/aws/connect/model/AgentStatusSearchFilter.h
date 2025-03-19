@@ -31,7 +31,7 @@ namespace Model
   class AgentStatusSearchFilter
   {
   public:
-    AWS_CONNECT_API AgentStatusSearchFilter();
+    AWS_CONNECT_API AgentStatusSearchFilter() = default;
     AWS_CONNECT_API AgentStatusSearchFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API AgentStatusSearchFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
      * <p>The inner list specifies conditions that need to be applied with
      * <code>AND</code> operator.</p> </li> </ul>
      */
-    inline const ControlPlaneAttributeFilter& GetAttributeFilter() const{ return m_attributeFilter; }
+    inline const ControlPlaneAttributeFilter& GetAttributeFilter() const { return m_attributeFilter; }
     inline bool AttributeFilterHasBeenSet() const { return m_attributeFilterHasBeenSet; }
-    inline void SetAttributeFilter(const ControlPlaneAttributeFilter& value) { m_attributeFilterHasBeenSet = true; m_attributeFilter = value; }
-    inline void SetAttributeFilter(ControlPlaneAttributeFilter&& value) { m_attributeFilterHasBeenSet = true; m_attributeFilter = std::move(value); }
-    inline AgentStatusSearchFilter& WithAttributeFilter(const ControlPlaneAttributeFilter& value) { SetAttributeFilter(value); return *this;}
-    inline AgentStatusSearchFilter& WithAttributeFilter(ControlPlaneAttributeFilter&& value) { SetAttributeFilter(std::move(value)); return *this;}
+    template<typename AttributeFilterT = ControlPlaneAttributeFilter>
+    void SetAttributeFilter(AttributeFilterT&& value) { m_attributeFilterHasBeenSet = true; m_attributeFilter = std::forward<AttributeFilterT>(value); }
+    template<typename AttributeFilterT = ControlPlaneAttributeFilter>
+    AgentStatusSearchFilter& WithAttributeFilter(AttributeFilterT&& value) { SetAttributeFilter(std::forward<AttributeFilterT>(value)); return *this;}
     ///@}
   private:
 

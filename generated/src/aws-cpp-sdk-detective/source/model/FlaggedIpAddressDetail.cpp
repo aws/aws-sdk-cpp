@@ -18,15 +18,7 @@ namespace Detective
 namespace Model
 {
 
-FlaggedIpAddressDetail::FlaggedIpAddressDetail() : 
-    m_ipAddressHasBeenSet(false),
-    m_reason(Reason::NOT_SET),
-    m_reasonHasBeenSet(false)
-{
-}
-
 FlaggedIpAddressDetail::FlaggedIpAddressDetail(JsonView jsonValue)
-  : FlaggedIpAddressDetail()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ FlaggedIpAddressDetail& FlaggedIpAddressDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IpAddress"))
   {
     m_ipAddress = jsonValue.GetString("IpAddress");
-
     m_ipAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Reason"))
   {
     m_reason = ReasonMapper::GetReasonForName(jsonValue.GetString("Reason"));
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

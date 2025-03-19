@@ -18,16 +18,7 @@ namespace ElasticTranscoder
 namespace Model
 {
 
-Notifications::Notifications() : 
-    m_progressingHasBeenSet(false),
-    m_completedHasBeenSet(false),
-    m_warningHasBeenSet(false),
-    m_errorHasBeenSet(false)
-{
-}
-
 Notifications::Notifications(JsonView jsonValue)
-  : Notifications()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ Notifications& Notifications::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Progressing"))
   {
     m_progressing = jsonValue.GetString("Progressing");
-
     m_progressingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Completed"))
   {
     m_completed = jsonValue.GetString("Completed");
-
     m_completedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Warning"))
   {
     m_warning = jsonValue.GetString("Warning");
-
     m_warningHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Error"))
   {
     m_error = jsonValue.GetString("Error");
-
     m_errorHasBeenSet = true;
   }
-
   return *this;
 }
 

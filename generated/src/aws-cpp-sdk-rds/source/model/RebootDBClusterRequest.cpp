@@ -10,11 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-RebootDBClusterRequest::RebootDBClusterRequest() : 
-    m_dBClusterIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String RebootDBClusterRequest::SerializePayload() const
 {
   Aws::StringStream ss;

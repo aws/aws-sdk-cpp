@@ -32,7 +32,7 @@ namespace Model
   class SnsTopicSinkConfiguration
   {
   public:
-    AWS_CHIMESDKMEDIAPIPELINES_API SnsTopicSinkConfiguration();
+    AWS_CHIMESDKMEDIAPIPELINES_API SnsTopicSinkConfiguration() = default;
     AWS_CHIMESDKMEDIAPIPELINES_API SnsTopicSinkConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API SnsTopicSinkConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The ARN of the SNS sink.</p>
      */
-    inline const Aws::String& GetInsightsTarget() const{ return m_insightsTarget; }
+    inline const Aws::String& GetInsightsTarget() const { return m_insightsTarget; }
     inline bool InsightsTargetHasBeenSet() const { return m_insightsTargetHasBeenSet; }
-    inline void SetInsightsTarget(const Aws::String& value) { m_insightsTargetHasBeenSet = true; m_insightsTarget = value; }
-    inline void SetInsightsTarget(Aws::String&& value) { m_insightsTargetHasBeenSet = true; m_insightsTarget = std::move(value); }
-    inline void SetInsightsTarget(const char* value) { m_insightsTargetHasBeenSet = true; m_insightsTarget.assign(value); }
-    inline SnsTopicSinkConfiguration& WithInsightsTarget(const Aws::String& value) { SetInsightsTarget(value); return *this;}
-    inline SnsTopicSinkConfiguration& WithInsightsTarget(Aws::String&& value) { SetInsightsTarget(std::move(value)); return *this;}
-    inline SnsTopicSinkConfiguration& WithInsightsTarget(const char* value) { SetInsightsTarget(value); return *this;}
+    template<typename InsightsTargetT = Aws::String>
+    void SetInsightsTarget(InsightsTargetT&& value) { m_insightsTargetHasBeenSet = true; m_insightsTarget = std::forward<InsightsTargetT>(value); }
+    template<typename InsightsTargetT = Aws::String>
+    SnsTopicSinkConfiguration& WithInsightsTarget(InsightsTargetT&& value) { SetInsightsTarget(std::forward<InsightsTargetT>(value)); return *this;}
     ///@}
   private:
 

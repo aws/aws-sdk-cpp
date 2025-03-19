@@ -29,7 +29,7 @@ namespace Model
   class Scte35ReturnToNetworkScheduleActionSettings
   {
   public:
-    AWS_MEDIALIVE_API Scte35ReturnToNetworkScheduleActionSettings();
+    AWS_MEDIALIVE_API Scte35ReturnToNetworkScheduleActionSettings() = default;
     AWS_MEDIALIVE_API Scte35ReturnToNetworkScheduleActionSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Scte35ReturnToNetworkScheduleActionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,14 +39,14 @@ namespace Model
     /**
      * The splice_event_id for the SCTE-35 splice_insert, as defined in SCTE-35.
      */
-    inline long long GetSpliceEventId() const{ return m_spliceEventId; }
+    inline long long GetSpliceEventId() const { return m_spliceEventId; }
     inline bool SpliceEventIdHasBeenSet() const { return m_spliceEventIdHasBeenSet; }
     inline void SetSpliceEventId(long long value) { m_spliceEventIdHasBeenSet = true; m_spliceEventId = value; }
     inline Scte35ReturnToNetworkScheduleActionSettings& WithSpliceEventId(long long value) { SetSpliceEventId(value); return *this;}
     ///@}
   private:
 
-    long long m_spliceEventId;
+    long long m_spliceEventId{0};
     bool m_spliceEventIdHasBeenSet = false;
   };
 

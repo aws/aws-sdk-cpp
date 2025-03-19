@@ -18,18 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-AutoMLJobConfig::AutoMLJobConfig() : 
-    m_completionCriteriaHasBeenSet(false),
-    m_securityConfigHasBeenSet(false),
-    m_candidateGenerationConfigHasBeenSet(false),
-    m_dataSplitConfigHasBeenSet(false),
-    m_mode(AutoMLMode::NOT_SET),
-    m_modeHasBeenSet(false)
-{
-}
-
 AutoMLJobConfig::AutoMLJobConfig(JsonView jsonValue)
-  : AutoMLJobConfig()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ AutoMLJobConfig& AutoMLJobConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CompletionCriteria"))
   {
     m_completionCriteria = jsonValue.GetObject("CompletionCriteria");
-
     m_completionCriteriaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityConfig"))
   {
     m_securityConfig = jsonValue.GetObject("SecurityConfig");
-
     m_securityConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CandidateGenerationConfig"))
   {
     m_candidateGenerationConfig = jsonValue.GetObject("CandidateGenerationConfig");
-
     m_candidateGenerationConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSplitConfig"))
   {
     m_dataSplitConfig = jsonValue.GetObject("DataSplitConfig");
-
     m_dataSplitConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Mode"))
   {
     m_mode = AutoMLModeMapper::GetAutoMLModeForName(jsonValue.GetString("Mode"));
-
     m_modeHasBeenSet = true;
   }
-
   return *this;
 }
 

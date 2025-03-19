@@ -21,7 +21,7 @@ namespace Model
   class DeleteClusterRequest : public ECSRequest
   {
   public:
-    AWS_ECS_API DeleteClusterRequest();
+    AWS_ECS_API DeleteClusterRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster to
      * delete.</p>
      */
-    inline const Aws::String& GetCluster() const{ return m_cluster; }
+    inline const Aws::String& GetCluster() const { return m_cluster; }
     inline bool ClusterHasBeenSet() const { return m_clusterHasBeenSet; }
-    inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
-    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = std::move(value); }
-    inline void SetCluster(const char* value) { m_clusterHasBeenSet = true; m_cluster.assign(value); }
-    inline DeleteClusterRequest& WithCluster(const Aws::String& value) { SetCluster(value); return *this;}
-    inline DeleteClusterRequest& WithCluster(Aws::String&& value) { SetCluster(std::move(value)); return *this;}
-    inline DeleteClusterRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
+    template<typename ClusterT = Aws::String>
+    void SetCluster(ClusterT&& value) { m_clusterHasBeenSet = true; m_cluster = std::forward<ClusterT>(value); }
+    template<typename ClusterT = Aws::String>
+    DeleteClusterRequest& WithCluster(ClusterT&& value) { SetCluster(std::forward<ClusterT>(value)); return *this;}
     ///@}
   private:
 

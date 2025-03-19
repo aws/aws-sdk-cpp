@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InstanceMaintenanceOptions::InstanceMaintenanceOptions() : 
-    m_autoRecovery(InstanceAutoRecoveryState::NOT_SET),
-    m_autoRecoveryHasBeenSet(false)
-{
-}
-
 InstanceMaintenanceOptions::InstanceMaintenanceOptions(const XmlNode& xmlNode)
-  : InstanceMaintenanceOptions()
 {
   *this = xmlNode;
 }
@@ -41,7 +34,7 @@ InstanceMaintenanceOptions& InstanceMaintenanceOptions::operator =(const XmlNode
     XmlNode autoRecoveryNode = resultNode.FirstChild("autoRecovery");
     if(!autoRecoveryNode.IsNull())
     {
-      m_autoRecovery = InstanceAutoRecoveryStateMapper::GetInstanceAutoRecoveryStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(autoRecoveryNode.GetText()).c_str()).c_str());
+      m_autoRecovery = InstanceAutoRecoveryStateMapper::GetInstanceAutoRecoveryStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(autoRecoveryNode.GetText()).c_str()));
       m_autoRecoveryHasBeenSet = true;
     }
   }

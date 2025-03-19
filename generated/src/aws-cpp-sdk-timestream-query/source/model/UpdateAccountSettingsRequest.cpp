@@ -12,15 +12,6 @@ using namespace Aws::TimestreamQuery::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAccountSettingsRequest::UpdateAccountSettingsRequest() : 
-    m_maxQueryTCU(0),
-    m_maxQueryTCUHasBeenSet(false),
-    m_queryPricingModel(QueryPricingModel::NOT_SET),
-    m_queryPricingModelHasBeenSet(false),
-    m_queryComputeHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAccountSettingsRequest::SerializePayload() const
 {
   JsonValue payload;

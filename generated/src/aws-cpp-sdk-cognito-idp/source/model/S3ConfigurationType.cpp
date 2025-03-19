@@ -18,13 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-S3ConfigurationType::S3ConfigurationType() : 
-    m_bucketArnHasBeenSet(false)
-{
-}
-
 S3ConfigurationType::S3ConfigurationType(JsonView jsonValue)
-  : S3ConfigurationType()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ S3ConfigurationType& S3ConfigurationType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BucketArn"))
   {
     m_bucketArn = jsonValue.GetString("BucketArn");
-
     m_bucketArnHasBeenSet = true;
   }
-
   return *this;
 }
 

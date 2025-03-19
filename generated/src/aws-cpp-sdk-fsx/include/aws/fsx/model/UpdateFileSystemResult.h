@@ -34,7 +34,7 @@ namespace Model
   class UpdateFileSystemResult
   {
   public:
-    AWS_FSX_API UpdateFileSystemResult();
+    AWS_FSX_API UpdateFileSystemResult() = default;
     AWS_FSX_API UpdateFileSystemResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FSX_API UpdateFileSystemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,28 +43,28 @@ namespace Model
     /**
      * <p>A description of the file system that was updated.</p>
      */
-    inline const FileSystem& GetFileSystem() const{ return m_fileSystem; }
-    inline void SetFileSystem(const FileSystem& value) { m_fileSystem = value; }
-    inline void SetFileSystem(FileSystem&& value) { m_fileSystem = std::move(value); }
-    inline UpdateFileSystemResult& WithFileSystem(const FileSystem& value) { SetFileSystem(value); return *this;}
-    inline UpdateFileSystemResult& WithFileSystem(FileSystem&& value) { SetFileSystem(std::move(value)); return *this;}
+    inline const FileSystem& GetFileSystem() const { return m_fileSystem; }
+    template<typename FileSystemT = FileSystem>
+    void SetFileSystem(FileSystemT&& value) { m_fileSystemHasBeenSet = true; m_fileSystem = std::forward<FileSystemT>(value); }
+    template<typename FileSystemT = FileSystem>
+    UpdateFileSystemResult& WithFileSystem(FileSystemT&& value) { SetFileSystem(std::forward<FileSystemT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateFileSystemResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateFileSystemResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateFileSystemResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateFileSystemResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     FileSystem m_fileSystem;
+    bool m_fileSystemHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

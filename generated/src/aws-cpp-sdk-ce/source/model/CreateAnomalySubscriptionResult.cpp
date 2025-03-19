@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateAnomalySubscriptionResult::CreateAnomalySubscriptionResult()
-{
-}
-
 CreateAnomalySubscriptionResult::CreateAnomalySubscriptionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateAnomalySubscriptionResult& CreateAnomalySubscriptionResult::operator =(con
   if(jsonValue.ValueExists("SubscriptionArn"))
   {
     m_subscriptionArn = jsonValue.GetString("SubscriptionArn");
-
+    m_subscriptionArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

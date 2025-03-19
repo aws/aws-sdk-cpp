@@ -37,7 +37,7 @@ namespace Model
   class Tag
   {
   public:
-    AWS_CHATBOT_API Tag();
+    AWS_CHATBOT_API Tag() = default;
     AWS_CHATBOT_API Tag(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHATBOT_API Tag& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHATBOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,28 +47,24 @@ namespace Model
     /**
      * <p>The key of the tag.</p>
      */
-    inline const Aws::String& GetTagKey() const{ return m_tagKey; }
+    inline const Aws::String& GetTagKey() const { return m_tagKey; }
     inline bool TagKeyHasBeenSet() const { return m_tagKeyHasBeenSet; }
-    inline void SetTagKey(const Aws::String& value) { m_tagKeyHasBeenSet = true; m_tagKey = value; }
-    inline void SetTagKey(Aws::String&& value) { m_tagKeyHasBeenSet = true; m_tagKey = std::move(value); }
-    inline void SetTagKey(const char* value) { m_tagKeyHasBeenSet = true; m_tagKey.assign(value); }
-    inline Tag& WithTagKey(const Aws::String& value) { SetTagKey(value); return *this;}
-    inline Tag& WithTagKey(Aws::String&& value) { SetTagKey(std::move(value)); return *this;}
-    inline Tag& WithTagKey(const char* value) { SetTagKey(value); return *this;}
+    template<typename TagKeyT = Aws::String>
+    void SetTagKey(TagKeyT&& value) { m_tagKeyHasBeenSet = true; m_tagKey = std::forward<TagKeyT>(value); }
+    template<typename TagKeyT = Aws::String>
+    Tag& WithTagKey(TagKeyT&& value) { SetTagKey(std::forward<TagKeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of the tag.</p>
      */
-    inline const Aws::String& GetTagValue() const{ return m_tagValue; }
+    inline const Aws::String& GetTagValue() const { return m_tagValue; }
     inline bool TagValueHasBeenSet() const { return m_tagValueHasBeenSet; }
-    inline void SetTagValue(const Aws::String& value) { m_tagValueHasBeenSet = true; m_tagValue = value; }
-    inline void SetTagValue(Aws::String&& value) { m_tagValueHasBeenSet = true; m_tagValue = std::move(value); }
-    inline void SetTagValue(const char* value) { m_tagValueHasBeenSet = true; m_tagValue.assign(value); }
-    inline Tag& WithTagValue(const Aws::String& value) { SetTagValue(value); return *this;}
-    inline Tag& WithTagValue(Aws::String&& value) { SetTagValue(std::move(value)); return *this;}
-    inline Tag& WithTagValue(const char* value) { SetTagValue(value); return *this;}
+    template<typename TagValueT = Aws::String>
+    void SetTagValue(TagValueT&& value) { m_tagValueHasBeenSet = true; m_tagValue = std::forward<TagValueT>(value); }
+    template<typename TagValueT = Aws::String>
+    Tag& WithTagValue(TagValueT&& value) { SetTagValue(std::forward<TagValueT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,21 +12,6 @@ using namespace Aws::ChimeSDKVoice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateProxySessionRequest::CreateProxySessionRequest() : 
-    m_voiceConnectorIdHasBeenSet(false),
-    m_participantPhoneNumbersHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_expiryMinutes(0),
-    m_expiryMinutesHasBeenSet(false),
-    m_capabilitiesHasBeenSet(false),
-    m_numberSelectionBehavior(NumberSelectionBehavior::NOT_SET),
-    m_numberSelectionBehaviorHasBeenSet(false),
-    m_geoMatchLevel(GeoMatchLevel::NOT_SET),
-    m_geoMatchLevelHasBeenSet(false),
-    m_geoMatchParamsHasBeenSet(false)
-{
-}
-
 Aws::String CreateProxySessionRequest::SerializePayload() const
 {
   JsonValue payload;

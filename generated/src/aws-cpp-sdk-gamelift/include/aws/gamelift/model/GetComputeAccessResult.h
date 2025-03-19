@@ -30,7 +30,7 @@ namespace Model
   class GetComputeAccessResult
   {
   public:
-    AWS_GAMELIFT_API GetComputeAccessResult();
+    AWS_GAMELIFT_API GetComputeAccessResult() = default;
     AWS_GAMELIFT_API GetComputeAccessResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GAMELIFT_API GetComputeAccessResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,11 @@ namespace Model
     /**
      * <p>The ID of the fleet that holds the compute resource to be accessed.</p>
      */
-    inline const Aws::String& GetFleetId() const{ return m_fleetId; }
-    inline void SetFleetId(const Aws::String& value) { m_fleetId = value; }
-    inline void SetFleetId(Aws::String&& value) { m_fleetId = std::move(value); }
-    inline void SetFleetId(const char* value) { m_fleetId.assign(value); }
-    inline GetComputeAccessResult& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
-    inline GetComputeAccessResult& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
-    inline GetComputeAccessResult& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+    inline const Aws::String& GetFleetId() const { return m_fleetId; }
+    template<typename FleetIdT = Aws::String>
+    void SetFleetId(FleetIdT&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::forward<FleetIdT>(value); }
+    template<typename FleetIdT = Aws::String>
+    GetComputeAccessResult& WithFleetId(FleetIdT&& value) { SetFleetId(std::forward<FleetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,13 +54,11 @@ namespace Model
      * ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
-    inline const Aws::String& GetFleetArn() const{ return m_fleetArn; }
-    inline void SetFleetArn(const Aws::String& value) { m_fleetArn = value; }
-    inline void SetFleetArn(Aws::String&& value) { m_fleetArn = std::move(value); }
-    inline void SetFleetArn(const char* value) { m_fleetArn.assign(value); }
-    inline GetComputeAccessResult& WithFleetArn(const Aws::String& value) { SetFleetArn(value); return *this;}
-    inline GetComputeAccessResult& WithFleetArn(Aws::String&& value) { SetFleetArn(std::move(value)); return *this;}
-    inline GetComputeAccessResult& WithFleetArn(const char* value) { SetFleetArn(value); return *this;}
+    inline const Aws::String& GetFleetArn() const { return m_fleetArn; }
+    template<typename FleetArnT = Aws::String>
+    void SetFleetArn(FleetArnT&& value) { m_fleetArnHasBeenSet = true; m_fleetArn = std::forward<FleetArnT>(value); }
+    template<typename FleetArnT = Aws::String>
+    GetComputeAccessResult& WithFleetArn(FleetArnT&& value) { SetFleetArn(std::forward<FleetArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,13 +66,11 @@ namespace Model
      * <p>The identifier of the compute resource to be accessed. This value might be
      * either a compute name or an instance ID.</p>
      */
-    inline const Aws::String& GetComputeName() const{ return m_computeName; }
-    inline void SetComputeName(const Aws::String& value) { m_computeName = value; }
-    inline void SetComputeName(Aws::String&& value) { m_computeName = std::move(value); }
-    inline void SetComputeName(const char* value) { m_computeName.assign(value); }
-    inline GetComputeAccessResult& WithComputeName(const Aws::String& value) { SetComputeName(value); return *this;}
-    inline GetComputeAccessResult& WithComputeName(Aws::String&& value) { SetComputeName(std::move(value)); return *this;}
-    inline GetComputeAccessResult& WithComputeName(const char* value) { SetComputeName(value); return *this;}
+    inline const Aws::String& GetComputeName() const { return m_computeName; }
+    template<typename ComputeNameT = Aws::String>
+    void SetComputeName(ComputeNameT&& value) { m_computeNameHasBeenSet = true; m_computeName = std::forward<ComputeNameT>(value); }
+    template<typename ComputeNameT = Aws::String>
+    GetComputeAccessResult& WithComputeName(ComputeNameT&& value) { SetComputeName(std::forward<ComputeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,13 +81,11 @@ namespace Model
      * it. ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
-    inline const Aws::String& GetComputeArn() const{ return m_computeArn; }
-    inline void SetComputeArn(const Aws::String& value) { m_computeArn = value; }
-    inline void SetComputeArn(Aws::String&& value) { m_computeArn = std::move(value); }
-    inline void SetComputeArn(const char* value) { m_computeArn.assign(value); }
-    inline GetComputeAccessResult& WithComputeArn(const Aws::String& value) { SetComputeArn(value); return *this;}
-    inline GetComputeAccessResult& WithComputeArn(Aws::String&& value) { SetComputeArn(std::move(value)); return *this;}
-    inline GetComputeAccessResult& WithComputeArn(const char* value) { SetComputeArn(value); return *this;}
+    inline const Aws::String& GetComputeArn() const { return m_computeArn; }
+    template<typename ComputeArnT = Aws::String>
+    void SetComputeArn(ComputeArnT&& value) { m_computeArnHasBeenSet = true; m_computeArn = std::forward<ComputeArnT>(value); }
+    template<typename ComputeArnT = Aws::String>
+    GetComputeAccessResult& WithComputeArn(ComputeArnT&& value) { SetComputeArn(std::forward<ComputeArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,24 +93,22 @@ namespace Model
      * <p>A set of temporary Amazon Web Services credentials for use when connecting to
      * the compute resource with Amazon EC2 Systems Manager (SSM).</p>
      */
-    inline const AwsCredentials& GetCredentials() const{ return m_credentials; }
-    inline void SetCredentials(const AwsCredentials& value) { m_credentials = value; }
-    inline void SetCredentials(AwsCredentials&& value) { m_credentials = std::move(value); }
-    inline GetComputeAccessResult& WithCredentials(const AwsCredentials& value) { SetCredentials(value); return *this;}
-    inline GetComputeAccessResult& WithCredentials(AwsCredentials&& value) { SetCredentials(std::move(value)); return *this;}
+    inline const AwsCredentials& GetCredentials() const { return m_credentials; }
+    template<typename CredentialsT = AwsCredentials>
+    void SetCredentials(CredentialsT&& value) { m_credentialsHasBeenSet = true; m_credentials = std::forward<CredentialsT>(value); }
+    template<typename CredentialsT = AwsCredentials>
+    GetComputeAccessResult& WithCredentials(CredentialsT&& value) { SetCredentials(std::forward<CredentialsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The instance ID where the compute resource is running.</p>
      */
-    inline const Aws::String& GetTarget() const{ return m_target; }
-    inline void SetTarget(const Aws::String& value) { m_target = value; }
-    inline void SetTarget(Aws::String&& value) { m_target = std::move(value); }
-    inline void SetTarget(const char* value) { m_target.assign(value); }
-    inline GetComputeAccessResult& WithTarget(const Aws::String& value) { SetTarget(value); return *this;}
-    inline GetComputeAccessResult& WithTarget(Aws::String&& value) { SetTarget(std::move(value)); return *this;}
-    inline GetComputeAccessResult& WithTarget(const char* value) { SetTarget(value); return *this;}
+    inline const Aws::String& GetTarget() const { return m_target; }
+    template<typename TargetT = Aws::String>
+    void SetTarget(TargetT&& value) { m_targetHasBeenSet = true; m_target = std::forward<TargetT>(value); }
+    template<typename TargetT = Aws::String>
+    GetComputeAccessResult& WithTarget(TargetT&& value) { SetTarget(std::forward<TargetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -127,42 +117,48 @@ namespace Model
      * container runtime ID with Docker commands to connect to a specific container.
      * </p>
      */
-    inline const Aws::Vector<ContainerIdentifier>& GetContainerIdentifiers() const{ return m_containerIdentifiers; }
-    inline void SetContainerIdentifiers(const Aws::Vector<ContainerIdentifier>& value) { m_containerIdentifiers = value; }
-    inline void SetContainerIdentifiers(Aws::Vector<ContainerIdentifier>&& value) { m_containerIdentifiers = std::move(value); }
-    inline GetComputeAccessResult& WithContainerIdentifiers(const Aws::Vector<ContainerIdentifier>& value) { SetContainerIdentifiers(value); return *this;}
-    inline GetComputeAccessResult& WithContainerIdentifiers(Aws::Vector<ContainerIdentifier>&& value) { SetContainerIdentifiers(std::move(value)); return *this;}
-    inline GetComputeAccessResult& AddContainerIdentifiers(const ContainerIdentifier& value) { m_containerIdentifiers.push_back(value); return *this; }
-    inline GetComputeAccessResult& AddContainerIdentifiers(ContainerIdentifier&& value) { m_containerIdentifiers.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ContainerIdentifier>& GetContainerIdentifiers() const { return m_containerIdentifiers; }
+    template<typename ContainerIdentifiersT = Aws::Vector<ContainerIdentifier>>
+    void SetContainerIdentifiers(ContainerIdentifiersT&& value) { m_containerIdentifiersHasBeenSet = true; m_containerIdentifiers = std::forward<ContainerIdentifiersT>(value); }
+    template<typename ContainerIdentifiersT = Aws::Vector<ContainerIdentifier>>
+    GetComputeAccessResult& WithContainerIdentifiers(ContainerIdentifiersT&& value) { SetContainerIdentifiers(std::forward<ContainerIdentifiersT>(value)); return *this;}
+    template<typename ContainerIdentifiersT = ContainerIdentifier>
+    GetComputeAccessResult& AddContainerIdentifiers(ContainerIdentifiersT&& value) { m_containerIdentifiersHasBeenSet = true; m_containerIdentifiers.emplace_back(std::forward<ContainerIdentifiersT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetComputeAccessResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetComputeAccessResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetComputeAccessResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetComputeAccessResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_fleetId;
+    bool m_fleetIdHasBeenSet = false;
 
     Aws::String m_fleetArn;
+    bool m_fleetArnHasBeenSet = false;
 
     Aws::String m_computeName;
+    bool m_computeNameHasBeenSet = false;
 
     Aws::String m_computeArn;
+    bool m_computeArnHasBeenSet = false;
 
     AwsCredentials m_credentials;
+    bool m_credentialsHasBeenSet = false;
 
     Aws::String m_target;
+    bool m_targetHasBeenSet = false;
 
     Aws::Vector<ContainerIdentifier> m_containerIdentifiers;
+    bool m_containerIdentifiersHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,15 +18,7 @@ namespace BillingConductor
 namespace Model
 {
 
-CustomLineItemPercentageChargeDetails::CustomLineItemPercentageChargeDetails() : 
-    m_percentageValue(0.0),
-    m_percentageValueHasBeenSet(false),
-    m_associatedValuesHasBeenSet(false)
-{
-}
-
 CustomLineItemPercentageChargeDetails::CustomLineItemPercentageChargeDetails(JsonView jsonValue)
-  : CustomLineItemPercentageChargeDetails()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ CustomLineItemPercentageChargeDetails& CustomLineItemPercentageChargeDetails::op
   if(jsonValue.ValueExists("PercentageValue"))
   {
     m_percentageValue = jsonValue.GetDouble("PercentageValue");
-
     m_percentageValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssociatedValues"))
   {
     Aws::Utils::Array<JsonView> associatedValuesJsonList = jsonValue.GetArray("AssociatedValues");
@@ -49,7 +39,6 @@ CustomLineItemPercentageChargeDetails& CustomLineItemPercentageChargeDetails::op
     }
     m_associatedValuesHasBeenSet = true;
   }
-
   return *this;
 }
 

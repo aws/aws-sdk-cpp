@@ -10,10 +10,6 @@
 using namespace Aws::QueryProtocol::Model;
 using namespace Aws::Utils;
 
-HostWithPathOperationRequest::HostWithPathOperationRequest()
-{
-}
-
 Aws::String HostWithPathOperationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

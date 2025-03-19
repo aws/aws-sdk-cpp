@@ -39,7 +39,7 @@ namespace Model
   class NonTalkTimeFilter
   {
   public:
-    AWS_TRANSCRIBESERVICE_API NonTalkTimeFilter();
+    AWS_TRANSCRIBESERVICE_API NonTalkTimeFilter() = default;
     AWS_TRANSCRIBESERVICE_API NonTalkTimeFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API NonTalkTimeFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,7 +51,7 @@ namespace Model
      * to flag. For example, you can flag a silent period that lasts 30,000
      * milliseconds.</p>
      */
-    inline long long GetThreshold() const{ return m_threshold; }
+    inline long long GetThreshold() const { return m_threshold; }
     inline bool ThresholdHasBeenSet() const { return m_thresholdHasBeenSet; }
     inline void SetThreshold(long long value) { m_thresholdHasBeenSet = true; m_threshold = value; }
     inline NonTalkTimeFilter& WithThreshold(long long value) { SetThreshold(value); return *this;}
@@ -63,12 +63,12 @@ namespace Model
      * during which you want to search for a period of silence. See for more
      * detail.</p>
      */
-    inline const AbsoluteTimeRange& GetAbsoluteTimeRange() const{ return m_absoluteTimeRange; }
+    inline const AbsoluteTimeRange& GetAbsoluteTimeRange() const { return m_absoluteTimeRange; }
     inline bool AbsoluteTimeRangeHasBeenSet() const { return m_absoluteTimeRangeHasBeenSet; }
-    inline void SetAbsoluteTimeRange(const AbsoluteTimeRange& value) { m_absoluteTimeRangeHasBeenSet = true; m_absoluteTimeRange = value; }
-    inline void SetAbsoluteTimeRange(AbsoluteTimeRange&& value) { m_absoluteTimeRangeHasBeenSet = true; m_absoluteTimeRange = std::move(value); }
-    inline NonTalkTimeFilter& WithAbsoluteTimeRange(const AbsoluteTimeRange& value) { SetAbsoluteTimeRange(value); return *this;}
-    inline NonTalkTimeFilter& WithAbsoluteTimeRange(AbsoluteTimeRange&& value) { SetAbsoluteTimeRange(std::move(value)); return *this;}
+    template<typename AbsoluteTimeRangeT = AbsoluteTimeRange>
+    void SetAbsoluteTimeRange(AbsoluteTimeRangeT&& value) { m_absoluteTimeRangeHasBeenSet = true; m_absoluteTimeRange = std::forward<AbsoluteTimeRangeT>(value); }
+    template<typename AbsoluteTimeRangeT = AbsoluteTimeRange>
+    NonTalkTimeFilter& WithAbsoluteTimeRange(AbsoluteTimeRangeT&& value) { SetAbsoluteTimeRange(std::forward<AbsoluteTimeRangeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,12 +77,12 @@ namespace Model
      * during which you want to search for a period of silence. See for more
      * detail.</p>
      */
-    inline const RelativeTimeRange& GetRelativeTimeRange() const{ return m_relativeTimeRange; }
+    inline const RelativeTimeRange& GetRelativeTimeRange() const { return m_relativeTimeRange; }
     inline bool RelativeTimeRangeHasBeenSet() const { return m_relativeTimeRangeHasBeenSet; }
-    inline void SetRelativeTimeRange(const RelativeTimeRange& value) { m_relativeTimeRangeHasBeenSet = true; m_relativeTimeRange = value; }
-    inline void SetRelativeTimeRange(RelativeTimeRange&& value) { m_relativeTimeRangeHasBeenSet = true; m_relativeTimeRange = std::move(value); }
-    inline NonTalkTimeFilter& WithRelativeTimeRange(const RelativeTimeRange& value) { SetRelativeTimeRange(value); return *this;}
-    inline NonTalkTimeFilter& WithRelativeTimeRange(RelativeTimeRange&& value) { SetRelativeTimeRange(std::move(value)); return *this;}
+    template<typename RelativeTimeRangeT = RelativeTimeRange>
+    void SetRelativeTimeRange(RelativeTimeRangeT&& value) { m_relativeTimeRangeHasBeenSet = true; m_relativeTimeRange = std::forward<RelativeTimeRangeT>(value); }
+    template<typename RelativeTimeRangeT = RelativeTimeRange>
+    NonTalkTimeFilter& WithRelativeTimeRange(RelativeTimeRangeT&& value) { SetRelativeTimeRange(std::forward<RelativeTimeRangeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,14 +90,14 @@ namespace Model
      * <p>Set to <code>TRUE</code> to flag periods of speech. Set to <code>FALSE</code>
      * to flag periods of silence</p>
      */
-    inline bool GetNegate() const{ return m_negate; }
+    inline bool GetNegate() const { return m_negate; }
     inline bool NegateHasBeenSet() const { return m_negateHasBeenSet; }
     inline void SetNegate(bool value) { m_negateHasBeenSet = true; m_negate = value; }
     inline NonTalkTimeFilter& WithNegate(bool value) { SetNegate(value); return *this;}
     ///@}
   private:
 
-    long long m_threshold;
+    long long m_threshold{0};
     bool m_thresholdHasBeenSet = false;
 
     AbsoluteTimeRange m_absoluteTimeRange;
@@ -106,7 +106,7 @@ namespace Model
     RelativeTimeRange m_relativeTimeRange;
     bool m_relativeTimeRangeHasBeenSet = false;
 
-    bool m_negate;
+    bool m_negate{false};
     bool m_negateHasBeenSet = false;
   };
 

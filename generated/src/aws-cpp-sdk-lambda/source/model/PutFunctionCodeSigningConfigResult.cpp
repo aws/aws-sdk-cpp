@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutFunctionCodeSigningConfigResult::PutFunctionCodeSigningConfigResult()
-{
-}
-
 PutFunctionCodeSigningConfigResult::PutFunctionCodeSigningConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ PutFunctionCodeSigningConfigResult& PutFunctionCodeSigningConfigResult::operator
   if(jsonValue.ValueExists("CodeSigningConfigArn"))
   {
     m_codeSigningConfigArn = jsonValue.GetString("CodeSigningConfigArn");
-
+    m_codeSigningConfigArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FunctionName"))
   {
     m_functionName = jsonValue.GetString("FunctionName");
-
+    m_functionNameHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -12,13 +12,6 @@ using namespace Aws::Macie2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateClassificationJobRequest::UpdateClassificationJobRequest() : 
-    m_jobIdHasBeenSet(false),
-    m_jobStatus(JobStatus::NOT_SET),
-    m_jobStatusHasBeenSet(false)
-{
-}
-
 Aws::String UpdateClassificationJobRequest::SerializePayload() const
 {
   JsonValue payload;

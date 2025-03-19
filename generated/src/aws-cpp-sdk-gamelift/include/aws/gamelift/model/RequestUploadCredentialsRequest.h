@@ -21,7 +21,7 @@ namespace Model
   class RequestUploadCredentialsRequest : public GameLiftRequest
   {
   public:
-    AWS_GAMELIFT_API RequestUploadCredentialsRequest();
+    AWS_GAMELIFT_API RequestUploadCredentialsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>A unique identifier for the build to get credentials for. You can use either
      * the build ID or ARN value. </p>
      */
-    inline const Aws::String& GetBuildId() const{ return m_buildId; }
+    inline const Aws::String& GetBuildId() const { return m_buildId; }
     inline bool BuildIdHasBeenSet() const { return m_buildIdHasBeenSet; }
-    inline void SetBuildId(const Aws::String& value) { m_buildIdHasBeenSet = true; m_buildId = value; }
-    inline void SetBuildId(Aws::String&& value) { m_buildIdHasBeenSet = true; m_buildId = std::move(value); }
-    inline void SetBuildId(const char* value) { m_buildIdHasBeenSet = true; m_buildId.assign(value); }
-    inline RequestUploadCredentialsRequest& WithBuildId(const Aws::String& value) { SetBuildId(value); return *this;}
-    inline RequestUploadCredentialsRequest& WithBuildId(Aws::String&& value) { SetBuildId(std::move(value)); return *this;}
-    inline RequestUploadCredentialsRequest& WithBuildId(const char* value) { SetBuildId(value); return *this;}
+    template<typename BuildIdT = Aws::String>
+    void SetBuildId(BuildIdT&& value) { m_buildIdHasBeenSet = true; m_buildId = std::forward<BuildIdT>(value); }
+    template<typename BuildIdT = Aws::String>
+    RequestUploadCredentialsRequest& WithBuildId(BuildIdT&& value) { SetBuildId(std::forward<BuildIdT>(value)); return *this;}
     ///@}
   private:
 

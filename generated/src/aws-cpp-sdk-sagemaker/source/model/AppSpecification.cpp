@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-AppSpecification::AppSpecification() : 
-    m_imageUriHasBeenSet(false),
-    m_containerEntrypointHasBeenSet(false),
-    m_containerArgumentsHasBeenSet(false)
-{
-}
-
 AppSpecification::AppSpecification(JsonView jsonValue)
-  : AppSpecification()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ AppSpecification& AppSpecification::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ImageUri"))
   {
     m_imageUri = jsonValue.GetString("ImageUri");
-
     m_imageUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContainerEntrypoint"))
   {
     Aws::Utils::Array<JsonView> containerEntrypointJsonList = jsonValue.GetArray("ContainerEntrypoint");
@@ -49,7 +39,6 @@ AppSpecification& AppSpecification::operator =(JsonView jsonValue)
     }
     m_containerEntrypointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContainerArguments"))
   {
     Aws::Utils::Array<JsonView> containerArgumentsJsonList = jsonValue.GetArray("ContainerArguments");
@@ -59,7 +48,6 @@ AppSpecification& AppSpecification::operator =(JsonView jsonValue)
     }
     m_containerArgumentsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace LicenseManagerUserSubscriptions
 namespace Model
 {
 
-ServerEndpoint::ServerEndpoint() : 
-    m_endpointHasBeenSet(false)
-{
-}
-
 ServerEndpoint::ServerEndpoint(JsonView jsonValue)
-  : ServerEndpoint()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ServerEndpoint& ServerEndpoint::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Endpoint"))
   {
     m_endpoint = jsonValue.GetString("Endpoint");
-
     m_endpointHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace NetworkFirewall
 namespace Model
 {
 
-ReferenceSets::ReferenceSets() : 
-    m_iPSetReferencesHasBeenSet(false)
-{
-}
-
 ReferenceSets::ReferenceSets(JsonView jsonValue)
-  : ReferenceSets()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ReferenceSets& ReferenceSets::operator =(JsonView jsonValue)
     }
     m_iPSetReferencesHasBeenSet = true;
   }
-
   return *this;
 }
 

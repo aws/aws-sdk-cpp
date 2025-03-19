@@ -18,19 +18,7 @@ namespace IoTThingsGraph
 namespace Model
 {
 
-FlowExecutionSummary::FlowExecutionSummary() : 
-    m_flowExecutionIdHasBeenSet(false),
-    m_status(FlowExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_systemInstanceIdHasBeenSet(false),
-    m_flowTemplateIdHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 FlowExecutionSummary::FlowExecutionSummary(JsonView jsonValue)
-  : FlowExecutionSummary()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ FlowExecutionSummary& FlowExecutionSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("flowExecutionId"))
   {
     m_flowExecutionId = jsonValue.GetString("flowExecutionId");
-
     m_flowExecutionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = FlowExecutionStatusMapper::GetFlowExecutionStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("systemInstanceId"))
   {
     m_systemInstanceId = jsonValue.GetString("systemInstanceId");
-
     m_systemInstanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("flowTemplateId"))
   {
     m_flowTemplateId = jsonValue.GetString("flowTemplateId");
-
     m_flowTemplateIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,25 +18,7 @@ namespace Connect
 namespace Model
 {
 
-AttachedFile::AttachedFile() : 
-    m_creationTimeHasBeenSet(false),
-    m_fileArnHasBeenSet(false),
-    m_fileIdHasBeenSet(false),
-    m_fileNameHasBeenSet(false),
-    m_fileSizeInBytes(0),
-    m_fileSizeInBytesHasBeenSet(false),
-    m_fileStatus(FileStatusType::NOT_SET),
-    m_fileStatusHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_fileUseCaseType(FileUseCaseType::NOT_SET),
-    m_fileUseCaseTypeHasBeenSet(false),
-    m_associatedResourceArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 AttachedFile::AttachedFile(JsonView jsonValue)
-  : AttachedFile()
 {
   *this = jsonValue;
 }
@@ -46,66 +28,48 @@ AttachedFile& AttachedFile::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetString("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileArn"))
   {
     m_fileArn = jsonValue.GetString("FileArn");
-
     m_fileArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileId"))
   {
     m_fileId = jsonValue.GetString("FileId");
-
     m_fileIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileName"))
   {
     m_fileName = jsonValue.GetString("FileName");
-
     m_fileNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileSizeInBytes"))
   {
     m_fileSizeInBytes = jsonValue.GetInt64("FileSizeInBytes");
-
     m_fileSizeInBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileStatus"))
   {
     m_fileStatus = FileStatusTypeMapper::GetFileStatusTypeForName(jsonValue.GetString("FileStatus"));
-
     m_fileStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedBy"))
   {
     m_createdBy = jsonValue.GetObject("CreatedBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileUseCaseType"))
   {
     m_fileUseCaseType = FileUseCaseTypeMapper::GetFileUseCaseTypeForName(jsonValue.GetString("FileUseCaseType"));
-
     m_fileUseCaseTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssociatedResourceArn"))
   {
     m_associatedResourceArn = jsonValue.GetString("AssociatedResourceArn");
-
     m_associatedResourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -115,7 +79,6 @@ AttachedFile& AttachedFile::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

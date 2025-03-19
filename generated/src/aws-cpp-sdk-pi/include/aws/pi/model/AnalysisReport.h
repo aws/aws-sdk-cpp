@@ -37,7 +37,7 @@ namespace Model
   class AnalysisReport
   {
   public:
-    AWS_PI_API AnalysisReport();
+    AWS_PI_API AnalysisReport() = default;
     AWS_PI_API AnalysisReport(Aws::Utils::Json::JsonView jsonValue);
     AWS_PI_API AnalysisReport& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PI_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,28 +47,24 @@ namespace Model
     /**
      * <p>The name of the analysis report.</p>
      */
-    inline const Aws::String& GetAnalysisReportId() const{ return m_analysisReportId; }
+    inline const Aws::String& GetAnalysisReportId() const { return m_analysisReportId; }
     inline bool AnalysisReportIdHasBeenSet() const { return m_analysisReportIdHasBeenSet; }
-    inline void SetAnalysisReportId(const Aws::String& value) { m_analysisReportIdHasBeenSet = true; m_analysisReportId = value; }
-    inline void SetAnalysisReportId(Aws::String&& value) { m_analysisReportIdHasBeenSet = true; m_analysisReportId = std::move(value); }
-    inline void SetAnalysisReportId(const char* value) { m_analysisReportIdHasBeenSet = true; m_analysisReportId.assign(value); }
-    inline AnalysisReport& WithAnalysisReportId(const Aws::String& value) { SetAnalysisReportId(value); return *this;}
-    inline AnalysisReport& WithAnalysisReportId(Aws::String&& value) { SetAnalysisReportId(std::move(value)); return *this;}
-    inline AnalysisReport& WithAnalysisReportId(const char* value) { SetAnalysisReportId(value); return *this;}
+    template<typename AnalysisReportIdT = Aws::String>
+    void SetAnalysisReportId(AnalysisReportIdT&& value) { m_analysisReportIdHasBeenSet = true; m_analysisReportId = std::forward<AnalysisReportIdT>(value); }
+    template<typename AnalysisReportIdT = Aws::String>
+    AnalysisReport& WithAnalysisReportId(AnalysisReportIdT&& value) { SetAnalysisReportId(std::forward<AnalysisReportIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the analysis report.</p>
      */
-    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-    inline AnalysisReport& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-    inline AnalysisReport& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline AnalysisReport& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    AnalysisReport& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,74 +73,70 @@ namespace Model
      * Insights returns metrics. Valid values are as follows:</p> <ul> <li> <p>
      * <code>RDS</code> </p> </li> <li> <p> <code>DOCDB</code> </p> </li> </ul>
      */
-    inline const ServiceType& GetServiceType() const{ return m_serviceType; }
+    inline ServiceType GetServiceType() const { return m_serviceType; }
     inline bool ServiceTypeHasBeenSet() const { return m_serviceTypeHasBeenSet; }
-    inline void SetServiceType(const ServiceType& value) { m_serviceTypeHasBeenSet = true; m_serviceType = value; }
-    inline void SetServiceType(ServiceType&& value) { m_serviceTypeHasBeenSet = true; m_serviceType = std::move(value); }
-    inline AnalysisReport& WithServiceType(const ServiceType& value) { SetServiceType(value); return *this;}
-    inline AnalysisReport& WithServiceType(ServiceType&& value) { SetServiceType(std::move(value)); return *this;}
+    inline void SetServiceType(ServiceType value) { m_serviceTypeHasBeenSet = true; m_serviceType = value; }
+    inline AnalysisReport& WithServiceType(ServiceType value) { SetServiceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time you created the analysis report.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
+    inline const Aws::Utils::DateTime& GetCreateTime() const { return m_createTime; }
     inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
-    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
-    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = std::move(value); }
-    inline AnalysisReport& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
-    inline AnalysisReport& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    void SetCreateTime(CreateTimeT&& value) { m_createTimeHasBeenSet = true; m_createTime = std::forward<CreateTimeT>(value); }
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    AnalysisReport& WithCreateTime(CreateTimeT&& value) { SetCreateTime(std::forward<CreateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The analysis start time in the report.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline AnalysisReport& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline AnalysisReport& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    AnalysisReport& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The analysis end time in the report.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline AnalysisReport& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline AnalysisReport& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    AnalysisReport& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the created analysis report.</p>
      */
-    inline const AnalysisStatus& GetStatus() const{ return m_status; }
+    inline AnalysisStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const AnalysisStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(AnalysisStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline AnalysisReport& WithStatus(const AnalysisStatus& value) { SetStatus(value); return *this;}
-    inline AnalysisReport& WithStatus(AnalysisStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(AnalysisStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline AnalysisReport& WithStatus(AnalysisStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of identified insights in the analysis report.</p>
      */
-    inline const Aws::Vector<Insight>& GetInsights() const{ return m_insights; }
+    inline const Aws::Vector<Insight>& GetInsights() const { return m_insights; }
     inline bool InsightsHasBeenSet() const { return m_insightsHasBeenSet; }
-    inline void SetInsights(const Aws::Vector<Insight>& value) { m_insightsHasBeenSet = true; m_insights = value; }
-    inline void SetInsights(Aws::Vector<Insight>&& value) { m_insightsHasBeenSet = true; m_insights = std::move(value); }
-    inline AnalysisReport& WithInsights(const Aws::Vector<Insight>& value) { SetInsights(value); return *this;}
-    inline AnalysisReport& WithInsights(Aws::Vector<Insight>&& value) { SetInsights(std::move(value)); return *this;}
-    inline AnalysisReport& AddInsights(const Insight& value) { m_insightsHasBeenSet = true; m_insights.push_back(value); return *this; }
-    inline AnalysisReport& AddInsights(Insight&& value) { m_insightsHasBeenSet = true; m_insights.push_back(std::move(value)); return *this; }
+    template<typename InsightsT = Aws::Vector<Insight>>
+    void SetInsights(InsightsT&& value) { m_insightsHasBeenSet = true; m_insights = std::forward<InsightsT>(value); }
+    template<typename InsightsT = Aws::Vector<Insight>>
+    AnalysisReport& WithInsights(InsightsT&& value) { SetInsights(std::forward<InsightsT>(value)); return *this;}
+    template<typename InsightsT = Insight>
+    AnalysisReport& AddInsights(InsightsT&& value) { m_insightsHasBeenSet = true; m_insights.emplace_back(std::forward<InsightsT>(value)); return *this; }
     ///@}
   private:
 
@@ -154,19 +146,19 @@ namespace Model
     Aws::String m_identifier;
     bool m_identifierHasBeenSet = false;
 
-    ServiceType m_serviceType;
+    ServiceType m_serviceType{ServiceType::NOT_SET};
     bool m_serviceTypeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createTime;
+    Aws::Utils::DateTime m_createTime{};
     bool m_createTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
 
-    AnalysisStatus m_status;
+    AnalysisStatus m_status{AnalysisStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::Vector<Insight> m_insights;

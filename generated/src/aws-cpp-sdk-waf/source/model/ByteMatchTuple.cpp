@@ -19,18 +19,7 @@ namespace WAF
 namespace Model
 {
 
-ByteMatchTuple::ByteMatchTuple() : 
-    m_fieldToMatchHasBeenSet(false),
-    m_targetStringHasBeenSet(false),
-    m_textTransformation(TextTransformation::NOT_SET),
-    m_textTransformationHasBeenSet(false),
-    m_positionalConstraint(PositionalConstraint::NOT_SET),
-    m_positionalConstraintHasBeenSet(false)
-{
-}
-
 ByteMatchTuple::ByteMatchTuple(JsonView jsonValue)
-  : ByteMatchTuple()
 {
   *this = jsonValue;
 }
@@ -40,30 +29,23 @@ ByteMatchTuple& ByteMatchTuple::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FieldToMatch"))
   {
     m_fieldToMatch = jsonValue.GetObject("FieldToMatch");
-
     m_fieldToMatchHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetString"))
   {
     m_targetString = HashingUtils::Base64Decode(jsonValue.GetString("TargetString"));
     m_targetStringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TextTransformation"))
   {
     m_textTransformation = TextTransformationMapper::GetTextTransformationForName(jsonValue.GetString("TextTransformation"));
-
     m_textTransformationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PositionalConstraint"))
   {
     m_positionalConstraint = PositionalConstraintMapper::GetPositionalConstraintForName(jsonValue.GetString("PositionalConstraint"));
-
     m_positionalConstraintHasBeenSet = true;
   }
-
   return *this;
 }
 

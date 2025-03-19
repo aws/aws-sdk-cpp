@@ -18,20 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-AxisDisplayOptions::AxisDisplayOptions() : 
-    m_tickLabelOptionsHasBeenSet(false),
-    m_axisLineVisibility(Visibility::NOT_SET),
-    m_axisLineVisibilityHasBeenSet(false),
-    m_gridLineVisibility(Visibility::NOT_SET),
-    m_gridLineVisibilityHasBeenSet(false),
-    m_dataOptionsHasBeenSet(false),
-    m_scrollbarOptionsHasBeenSet(false),
-    m_axisOffsetHasBeenSet(false)
-{
-}
-
 AxisDisplayOptions::AxisDisplayOptions(JsonView jsonValue)
-  : AxisDisplayOptions()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ AxisDisplayOptions& AxisDisplayOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TickLabelOptions"))
   {
     m_tickLabelOptions = jsonValue.GetObject("TickLabelOptions");
-
     m_tickLabelOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AxisLineVisibility"))
   {
     m_axisLineVisibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("AxisLineVisibility"));
-
     m_axisLineVisibilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GridLineVisibility"))
   {
     m_gridLineVisibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("GridLineVisibility"));
-
     m_gridLineVisibilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataOptions"))
   {
     m_dataOptions = jsonValue.GetObject("DataOptions");
-
     m_dataOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScrollbarOptions"))
   {
     m_scrollbarOptions = jsonValue.GetObject("ScrollbarOptions");
-
     m_scrollbarOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AxisOffset"))
   {
     m_axisOffset = jsonValue.GetString("AxisOffset");
-
     m_axisOffsetHasBeenSet = true;
   }
-
   return *this;
 }
 

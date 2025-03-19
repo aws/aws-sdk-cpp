@@ -18,13 +18,7 @@ namespace S3Tables
 namespace Model
 {
 
-IcebergMetadata::IcebergMetadata() : 
-    m_schemaHasBeenSet(false)
-{
-}
-
 IcebergMetadata::IcebergMetadata(JsonView jsonValue)
-  : IcebergMetadata()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ IcebergMetadata& IcebergMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("schema"))
   {
     m_schema = jsonValue.GetObject("schema");
-
     m_schemaHasBeenSet = true;
   }
-
   return *this;
 }
 

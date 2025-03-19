@@ -38,7 +38,7 @@ namespace Model
   class CapacitySpecification
   {
   public:
-    AWS_KEYSPACES_API CapacitySpecification();
+    AWS_KEYSPACES_API CapacitySpecification() = default;
     AWS_KEYSPACES_API CapacitySpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_KEYSPACES_API CapacitySpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KEYSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,12 +55,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write
      * capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
      */
-    inline const ThroughputMode& GetThroughputMode() const{ return m_throughputMode; }
+    inline ThroughputMode GetThroughputMode() const { return m_throughputMode; }
     inline bool ThroughputModeHasBeenSet() const { return m_throughputModeHasBeenSet; }
-    inline void SetThroughputMode(const ThroughputMode& value) { m_throughputModeHasBeenSet = true; m_throughputMode = value; }
-    inline void SetThroughputMode(ThroughputMode&& value) { m_throughputModeHasBeenSet = true; m_throughputMode = std::move(value); }
-    inline CapacitySpecification& WithThroughputMode(const ThroughputMode& value) { SetThroughputMode(value); return *this;}
-    inline CapacitySpecification& WithThroughputMode(ThroughputMode&& value) { SetThroughputMode(std::move(value)); return *this;}
+    inline void SetThroughputMode(ThroughputMode value) { m_throughputModeHasBeenSet = true; m_throughputMode = value; }
+    inline CapacitySpecification& WithThroughputMode(ThroughputMode value) { SetThroughputMode(value); return *this;}
     ///@}
 
     ///@{
@@ -68,7 +66,7 @@ namespace Model
      * <p>The throughput capacity specified for <code>read</code> operations defined in
      * <code>read capacity units</code> <code>(RCUs)</code>.</p>
      */
-    inline long long GetReadCapacityUnits() const{ return m_readCapacityUnits; }
+    inline long long GetReadCapacityUnits() const { return m_readCapacityUnits; }
     inline bool ReadCapacityUnitsHasBeenSet() const { return m_readCapacityUnitsHasBeenSet; }
     inline void SetReadCapacityUnits(long long value) { m_readCapacityUnitsHasBeenSet = true; m_readCapacityUnits = value; }
     inline CapacitySpecification& WithReadCapacityUnits(long long value) { SetReadCapacityUnits(value); return *this;}
@@ -79,20 +77,20 @@ namespace Model
      * <p>The throughput capacity specified for <code>write</code> operations defined
      * in <code>write capacity units</code> <code>(WCUs)</code>.</p>
      */
-    inline long long GetWriteCapacityUnits() const{ return m_writeCapacityUnits; }
+    inline long long GetWriteCapacityUnits() const { return m_writeCapacityUnits; }
     inline bool WriteCapacityUnitsHasBeenSet() const { return m_writeCapacityUnitsHasBeenSet; }
     inline void SetWriteCapacityUnits(long long value) { m_writeCapacityUnitsHasBeenSet = true; m_writeCapacityUnits = value; }
     inline CapacitySpecification& WithWriteCapacityUnits(long long value) { SetWriteCapacityUnits(value); return *this;}
     ///@}
   private:
 
-    ThroughputMode m_throughputMode;
+    ThroughputMode m_throughputMode{ThroughputMode::NOT_SET};
     bool m_throughputModeHasBeenSet = false;
 
-    long long m_readCapacityUnits;
+    long long m_readCapacityUnits{0};
     bool m_readCapacityUnitsHasBeenSet = false;
 
-    long long m_writeCapacityUnits;
+    long long m_writeCapacityUnits{0};
     bool m_writeCapacityUnitsHasBeenSet = false;
   };
 

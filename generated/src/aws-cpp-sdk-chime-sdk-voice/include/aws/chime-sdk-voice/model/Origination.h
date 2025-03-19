@@ -35,7 +35,7 @@ namespace Model
   class Origination
   {
   public:
-    AWS_CHIMESDKVOICE_API Origination();
+    AWS_CHIMESDKVOICE_API Origination() = default;
     AWS_CHIMESDKVOICE_API Origination(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKVOICE_API Origination& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,14 @@ namespace Model
      * Minimum value of 1. Maximum value of 20. This parameter is not required, but you
      * must specify this parameter or <code>Disabled</code>.</p>
      */
-    inline const Aws::Vector<OriginationRoute>& GetRoutes() const{ return m_routes; }
+    inline const Aws::Vector<OriginationRoute>& GetRoutes() const { return m_routes; }
     inline bool RoutesHasBeenSet() const { return m_routesHasBeenSet; }
-    inline void SetRoutes(const Aws::Vector<OriginationRoute>& value) { m_routesHasBeenSet = true; m_routes = value; }
-    inline void SetRoutes(Aws::Vector<OriginationRoute>&& value) { m_routesHasBeenSet = true; m_routes = std::move(value); }
-    inline Origination& WithRoutes(const Aws::Vector<OriginationRoute>& value) { SetRoutes(value); return *this;}
-    inline Origination& WithRoutes(Aws::Vector<OriginationRoute>&& value) { SetRoutes(std::move(value)); return *this;}
-    inline Origination& AddRoutes(const OriginationRoute& value) { m_routesHasBeenSet = true; m_routes.push_back(value); return *this; }
-    inline Origination& AddRoutes(OriginationRoute&& value) { m_routesHasBeenSet = true; m_routes.push_back(std::move(value)); return *this; }
+    template<typename RoutesT = Aws::Vector<OriginationRoute>>
+    void SetRoutes(RoutesT&& value) { m_routesHasBeenSet = true; m_routes = std::forward<RoutesT>(value); }
+    template<typename RoutesT = Aws::Vector<OriginationRoute>>
+    Origination& WithRoutes(RoutesT&& value) { SetRoutes(std::forward<RoutesT>(value)); return *this;}
+    template<typename RoutesT = OriginationRoute>
+    Origination& AddRoutes(RoutesT&& value) { m_routesHasBeenSet = true; m_routes.emplace_back(std::forward<RoutesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -63,7 +63,7 @@ namespace Model
      * your Amazon Chime SDK Voice Connector. This parameter is not required, but you
      * must specify this parameter or <code>Routes</code>.</p>
      */
-    inline bool GetDisabled() const{ return m_disabled; }
+    inline bool GetDisabled() const { return m_disabled; }
     inline bool DisabledHasBeenSet() const { return m_disabledHasBeenSet; }
     inline void SetDisabled(bool value) { m_disabledHasBeenSet = true; m_disabled = value; }
     inline Origination& WithDisabled(bool value) { SetDisabled(value); return *this;}
@@ -73,7 +73,7 @@ namespace Model
     Aws::Vector<OriginationRoute> m_routes;
     bool m_routesHasBeenSet = false;
 
-    bool m_disabled;
+    bool m_disabled{false};
     bool m_disabledHasBeenSet = false;
   };
 

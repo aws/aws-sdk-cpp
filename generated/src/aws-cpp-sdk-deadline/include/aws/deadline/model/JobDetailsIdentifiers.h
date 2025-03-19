@@ -31,7 +31,7 @@ namespace Model
   class JobDetailsIdentifiers
   {
   public:
-    AWS_DEADLINE_API JobDetailsIdentifiers();
+    AWS_DEADLINE_API JobDetailsIdentifiers() = default;
     AWS_DEADLINE_API JobDetailsIdentifiers(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API JobDetailsIdentifiers& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The job ID.</p>
      */
-    inline const Aws::String& GetJobId() const{ return m_jobId; }
+    inline const Aws::String& GetJobId() const { return m_jobId; }
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-    inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-    inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-    inline JobDetailsIdentifiers& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-    inline JobDetailsIdentifiers& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-    inline JobDetailsIdentifiers& WithJobId(const char* value) { SetJobId(value); return *this;}
+    template<typename JobIdT = Aws::String>
+    void SetJobId(JobIdT&& value) { m_jobIdHasBeenSet = true; m_jobId = std::forward<JobIdT>(value); }
+    template<typename JobIdT = Aws::String>
+    JobDetailsIdentifiers& WithJobId(JobIdT&& value) { SetJobId(std::forward<JobIdT>(value)); return *this;}
     ///@}
   private:
 

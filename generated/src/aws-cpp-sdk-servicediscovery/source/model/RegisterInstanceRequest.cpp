@@ -12,15 +12,6 @@ using namespace Aws::ServiceDiscovery::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterInstanceRequest::RegisterInstanceRequest() : 
-    m_serviceIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_creatorRequestId(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_creatorRequestIdHasBeenSet(true),
-    m_attributesHasBeenSet(false)
-{
-}
-
 Aws::String RegisterInstanceRequest::SerializePayload() const
 {
   JsonValue payload;

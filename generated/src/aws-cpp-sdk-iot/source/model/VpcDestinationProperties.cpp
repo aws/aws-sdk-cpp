@@ -18,16 +18,7 @@ namespace IoT
 namespace Model
 {
 
-VpcDestinationProperties::VpcDestinationProperties() : 
-    m_subnetIdsHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 VpcDestinationProperties::VpcDestinationProperties(JsonView jsonValue)
-  : VpcDestinationProperties()
 {
   *this = jsonValue;
 }
@@ -43,7 +34,6 @@ VpcDestinationProperties& VpcDestinationProperties::operator =(JsonView jsonValu
     }
     m_subnetIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("securityGroups"))
   {
     Aws::Utils::Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("securityGroups");
@@ -53,21 +43,16 @@ VpcDestinationProperties& VpcDestinationProperties::operator =(JsonView jsonValu
     }
     m_securityGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcId"))
   {
     m_vpcId = jsonValue.GetString("vpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class GeospatialColor
   {
   public:
-    AWS_QUICKSIGHT_API GeospatialColor();
+    AWS_QUICKSIGHT_API GeospatialColor() = default;
     AWS_QUICKSIGHT_API GeospatialColor(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API GeospatialColor& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,36 +44,36 @@ namespace Model
     /**
      * <p>The visualization properties for the solid color.</p>
      */
-    inline const GeospatialSolidColor& GetSolid() const{ return m_solid; }
+    inline const GeospatialSolidColor& GetSolid() const { return m_solid; }
     inline bool SolidHasBeenSet() const { return m_solidHasBeenSet; }
-    inline void SetSolid(const GeospatialSolidColor& value) { m_solidHasBeenSet = true; m_solid = value; }
-    inline void SetSolid(GeospatialSolidColor&& value) { m_solidHasBeenSet = true; m_solid = std::move(value); }
-    inline GeospatialColor& WithSolid(const GeospatialSolidColor& value) { SetSolid(value); return *this;}
-    inline GeospatialColor& WithSolid(GeospatialSolidColor&& value) { SetSolid(std::move(value)); return *this;}
+    template<typename SolidT = GeospatialSolidColor>
+    void SetSolid(SolidT&& value) { m_solidHasBeenSet = true; m_solid = std::forward<SolidT>(value); }
+    template<typename SolidT = GeospatialSolidColor>
+    GeospatialColor& WithSolid(SolidT&& value) { SetSolid(std::forward<SolidT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The visualization properties for the gradient color.</p>
      */
-    inline const GeospatialGradientColor& GetGradient() const{ return m_gradient; }
+    inline const GeospatialGradientColor& GetGradient() const { return m_gradient; }
     inline bool GradientHasBeenSet() const { return m_gradientHasBeenSet; }
-    inline void SetGradient(const GeospatialGradientColor& value) { m_gradientHasBeenSet = true; m_gradient = value; }
-    inline void SetGradient(GeospatialGradientColor&& value) { m_gradientHasBeenSet = true; m_gradient = std::move(value); }
-    inline GeospatialColor& WithGradient(const GeospatialGradientColor& value) { SetGradient(value); return *this;}
-    inline GeospatialColor& WithGradient(GeospatialGradientColor&& value) { SetGradient(std::move(value)); return *this;}
+    template<typename GradientT = GeospatialGradientColor>
+    void SetGradient(GradientT&& value) { m_gradientHasBeenSet = true; m_gradient = std::forward<GradientT>(value); }
+    template<typename GradientT = GeospatialGradientColor>
+    GeospatialColor& WithGradient(GradientT&& value) { SetGradient(std::forward<GradientT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The visualization properties for the categorical color.</p>
      */
-    inline const GeospatialCategoricalColor& GetCategorical() const{ return m_categorical; }
+    inline const GeospatialCategoricalColor& GetCategorical() const { return m_categorical; }
     inline bool CategoricalHasBeenSet() const { return m_categoricalHasBeenSet; }
-    inline void SetCategorical(const GeospatialCategoricalColor& value) { m_categoricalHasBeenSet = true; m_categorical = value; }
-    inline void SetCategorical(GeospatialCategoricalColor&& value) { m_categoricalHasBeenSet = true; m_categorical = std::move(value); }
-    inline GeospatialColor& WithCategorical(const GeospatialCategoricalColor& value) { SetCategorical(value); return *this;}
-    inline GeospatialColor& WithCategorical(GeospatialCategoricalColor&& value) { SetCategorical(std::move(value)); return *this;}
+    template<typename CategoricalT = GeospatialCategoricalColor>
+    void SetCategorical(CategoricalT&& value) { m_categoricalHasBeenSet = true; m_categorical = std::forward<CategoricalT>(value); }
+    template<typename CategoricalT = GeospatialCategoricalColor>
+    GeospatialColor& WithCategorical(CategoricalT&& value) { SetCategorical(std::forward<CategoricalT>(value)); return *this;}
     ///@}
   private:
 

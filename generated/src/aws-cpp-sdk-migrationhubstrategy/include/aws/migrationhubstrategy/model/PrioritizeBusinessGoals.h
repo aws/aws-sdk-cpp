@@ -31,7 +31,7 @@ namespace Model
   class PrioritizeBusinessGoals
   {
   public:
-    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API PrioritizeBusinessGoals();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API PrioritizeBusinessGoals() = default;
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API PrioritizeBusinessGoals(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API PrioritizeBusinessGoals& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p> Rank of business goals based on priority. </p>
      */
-    inline const BusinessGoals& GetBusinessGoals() const{ return m_businessGoals; }
+    inline const BusinessGoals& GetBusinessGoals() const { return m_businessGoals; }
     inline bool BusinessGoalsHasBeenSet() const { return m_businessGoalsHasBeenSet; }
-    inline void SetBusinessGoals(const BusinessGoals& value) { m_businessGoalsHasBeenSet = true; m_businessGoals = value; }
-    inline void SetBusinessGoals(BusinessGoals&& value) { m_businessGoalsHasBeenSet = true; m_businessGoals = std::move(value); }
-    inline PrioritizeBusinessGoals& WithBusinessGoals(const BusinessGoals& value) { SetBusinessGoals(value); return *this;}
-    inline PrioritizeBusinessGoals& WithBusinessGoals(BusinessGoals&& value) { SetBusinessGoals(std::move(value)); return *this;}
+    template<typename BusinessGoalsT = BusinessGoals>
+    void SetBusinessGoals(BusinessGoalsT&& value) { m_businessGoalsHasBeenSet = true; m_businessGoals = std::forward<BusinessGoalsT>(value); }
+    template<typename BusinessGoalsT = BusinessGoals>
+    PrioritizeBusinessGoals& WithBusinessGoals(BusinessGoalsT&& value) { SetBusinessGoals(std::forward<BusinessGoalsT>(value)); return *this;}
     ///@}
   private:
 

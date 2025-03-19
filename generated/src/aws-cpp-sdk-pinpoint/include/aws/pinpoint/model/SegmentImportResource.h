@@ -35,7 +35,7 @@ namespace Model
   class SegmentImportResource
   {
   public:
-    AWS_PINPOINT_API SegmentImportResource();
+    AWS_PINPOINT_API SegmentImportResource() = default;
     AWS_PINPOINT_API SegmentImportResource(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API SegmentImportResource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,15 +46,15 @@ namespace Model
      * <p>The number of channel types in the endpoint definitions that were imported to
      * create the segment.</p>
      */
-    inline const Aws::Map<Aws::String, int>& GetChannelCounts() const{ return m_channelCounts; }
+    inline const Aws::Map<Aws::String, int>& GetChannelCounts() const { return m_channelCounts; }
     inline bool ChannelCountsHasBeenSet() const { return m_channelCountsHasBeenSet; }
-    inline void SetChannelCounts(const Aws::Map<Aws::String, int>& value) { m_channelCountsHasBeenSet = true; m_channelCounts = value; }
-    inline void SetChannelCounts(Aws::Map<Aws::String, int>&& value) { m_channelCountsHasBeenSet = true; m_channelCounts = std::move(value); }
-    inline SegmentImportResource& WithChannelCounts(const Aws::Map<Aws::String, int>& value) { SetChannelCounts(value); return *this;}
-    inline SegmentImportResource& WithChannelCounts(Aws::Map<Aws::String, int>&& value) { SetChannelCounts(std::move(value)); return *this;}
-    inline SegmentImportResource& AddChannelCounts(const Aws::String& key, int value) { m_channelCountsHasBeenSet = true; m_channelCounts.emplace(key, value); return *this; }
-    inline SegmentImportResource& AddChannelCounts(Aws::String&& key, int value) { m_channelCountsHasBeenSet = true; m_channelCounts.emplace(std::move(key), value); return *this; }
-    inline SegmentImportResource& AddChannelCounts(const char* key, int value) { m_channelCountsHasBeenSet = true; m_channelCounts.emplace(key, value); return *this; }
+    template<typename ChannelCountsT = Aws::Map<Aws::String, int>>
+    void SetChannelCounts(ChannelCountsT&& value) { m_channelCountsHasBeenSet = true; m_channelCounts = std::forward<ChannelCountsT>(value); }
+    template<typename ChannelCountsT = Aws::Map<Aws::String, int>>
+    SegmentImportResource& WithChannelCounts(ChannelCountsT&& value) { SetChannelCounts(std::forward<ChannelCountsT>(value)); return *this;}
+    inline SegmentImportResource& AddChannelCounts(Aws::String key, int value) {
+      m_channelCountsHasBeenSet = true; m_channelCounts.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
@@ -65,14 +65,12 @@ namespace Model
      * don't recommend use of external IDs for IAM roles that are assumed by Amazon
      * Pinpoint.</p>
      */
-    inline const Aws::String& GetExternalId() const{ return m_externalId; }
+    inline const Aws::String& GetExternalId() const { return m_externalId; }
     inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
-    inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
-    inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
-    inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
-    inline SegmentImportResource& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
-    inline SegmentImportResource& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
-    inline SegmentImportResource& WithExternalId(const char* value) { SetExternalId(value); return *this;}
+    template<typename ExternalIdT = Aws::String>
+    void SetExternalId(ExternalIdT&& value) { m_externalIdHasBeenSet = true; m_externalId = std::forward<ExternalIdT>(value); }
+    template<typename ExternalIdT = Aws::String>
+    SegmentImportResource& WithExternalId(ExternalIdT&& value) { SetExternalId(std::forward<ExternalIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,12 +79,10 @@ namespace Model
      * values are: CSV, for comma-separated values format; and, JSON, for
      * newline-delimited JSON format.</p>
      */
-    inline const Format& GetFormat() const{ return m_format; }
+    inline Format GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const Format& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(Format&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline SegmentImportResource& WithFormat(const Format& value) { SetFormat(value); return *this;}
-    inline SegmentImportResource& WithFormat(Format&& value) { SetFormat(std::move(value)); return *this;}
+    inline void SetFormat(Format value) { m_formatHasBeenSet = true; m_format = value; }
+    inline SegmentImportResource& WithFormat(Format value) { SetFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -95,14 +91,12 @@ namespace Model
      * (IAM) role that authorized Amazon Pinpoint to access the Amazon S3 location to
      * import endpoint definitions from.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline SegmentImportResource& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline SegmentImportResource& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline SegmentImportResource& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    SegmentImportResource& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,14 +104,12 @@ namespace Model
      * <p>The URL of the Amazon Simple Storage Service (Amazon S3) bucket that the
      * endpoint definitions were imported from to create the segment.</p>
      */
-    inline const Aws::String& GetS3Url() const{ return m_s3Url; }
+    inline const Aws::String& GetS3Url() const { return m_s3Url; }
     inline bool S3UrlHasBeenSet() const { return m_s3UrlHasBeenSet; }
-    inline void SetS3Url(const Aws::String& value) { m_s3UrlHasBeenSet = true; m_s3Url = value; }
-    inline void SetS3Url(Aws::String&& value) { m_s3UrlHasBeenSet = true; m_s3Url = std::move(value); }
-    inline void SetS3Url(const char* value) { m_s3UrlHasBeenSet = true; m_s3Url.assign(value); }
-    inline SegmentImportResource& WithS3Url(const Aws::String& value) { SetS3Url(value); return *this;}
-    inline SegmentImportResource& WithS3Url(Aws::String&& value) { SetS3Url(std::move(value)); return *this;}
-    inline SegmentImportResource& WithS3Url(const char* value) { SetS3Url(value); return *this;}
+    template<typename S3UrlT = Aws::String>
+    void SetS3Url(S3UrlT&& value) { m_s3UrlHasBeenSet = true; m_s3Url = std::forward<S3UrlT>(value); }
+    template<typename S3UrlT = Aws::String>
+    SegmentImportResource& WithS3Url(S3UrlT&& value) { SetS3Url(std::forward<S3UrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -125,7 +117,7 @@ namespace Model
      * <p>The number of endpoint definitions that were imported successfully to create
      * the segment.</p>
      */
-    inline int GetSize() const{ return m_size; }
+    inline int GetSize() const { return m_size; }
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
     inline void SetSize(int value) { m_sizeHasBeenSet = true; m_size = value; }
     inline SegmentImportResource& WithSize(int value) { SetSize(value); return *this;}
@@ -138,7 +130,7 @@ namespace Model
     Aws::String m_externalId;
     bool m_externalIdHasBeenSet = false;
 
-    Format m_format;
+    Format m_format{Format::NOT_SET};
     bool m_formatHasBeenSet = false;
 
     Aws::String m_roleArn;
@@ -147,7 +139,7 @@ namespace Model
     Aws::String m_s3Url;
     bool m_s3UrlHasBeenSet = false;
 
-    int m_size;
+    int m_size{0};
     bool m_sizeHasBeenSet = false;
   };
 

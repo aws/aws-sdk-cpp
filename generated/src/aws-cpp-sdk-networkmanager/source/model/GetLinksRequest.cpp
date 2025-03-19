@@ -15,18 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetLinksRequest::GetLinksRequest() : 
-    m_globalNetworkIdHasBeenSet(false),
-    m_linkIdsHasBeenSet(false),
-    m_siteIdHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_providerHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetLinksRequest::SerializePayload() const
 {
   return {};

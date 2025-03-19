@@ -18,45 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-IsolineTruckOptions::IsolineTruckOptions() : 
-    m_axleCount(0),
-    m_axleCountHasBeenSet(false),
-    m_engineType(IsolineEngineType::NOT_SET),
-    m_engineTypeHasBeenSet(false),
-    m_grossWeight(0),
-    m_grossWeightHasBeenSet(false),
-    m_hazardousCargosHasBeenSet(false),
-    m_height(0),
-    m_heightHasBeenSet(false),
-    m_heightAboveFirstAxle(0),
-    m_heightAboveFirstAxleHasBeenSet(false),
-    m_kpraLength(0),
-    m_kpraLengthHasBeenSet(false),
-    m_length(0),
-    m_lengthHasBeenSet(false),
-    m_licensePlateHasBeenSet(false),
-    m_maxSpeed(0.0),
-    m_maxSpeedHasBeenSet(false),
-    m_occupancy(0),
-    m_occupancyHasBeenSet(false),
-    m_payloadCapacity(0),
-    m_payloadCapacityHasBeenSet(false),
-    m_tireCount(0),
-    m_tireCountHasBeenSet(false),
-    m_trailerHasBeenSet(false),
-    m_truckType(IsolineTruckType::NOT_SET),
-    m_truckTypeHasBeenSet(false),
-    m_tunnelRestrictionCodeHasBeenSet(false),
-    m_weightPerAxle(0),
-    m_weightPerAxleHasBeenSet(false),
-    m_weightPerAxleGroupHasBeenSet(false),
-    m_width(0),
-    m_widthHasBeenSet(false)
-{
-}
-
 IsolineTruckOptions::IsolineTruckOptions(JsonView jsonValue)
-  : IsolineTruckOptions()
 {
   *this = jsonValue;
 }
@@ -66,24 +28,18 @@ IsolineTruckOptions& IsolineTruckOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AxleCount"))
   {
     m_axleCount = jsonValue.GetInteger("AxleCount");
-
     m_axleCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EngineType"))
   {
     m_engineType = IsolineEngineTypeMapper::GetIsolineEngineTypeForName(jsonValue.GetString("EngineType"));
-
     m_engineTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GrossWeight"))
   {
     m_grossWeight = jsonValue.GetInt64("GrossWeight");
-
     m_grossWeightHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HazardousCargos"))
   {
     Aws::Utils::Array<JsonView> hazardousCargosJsonList = jsonValue.GetArray("HazardousCargos");
@@ -93,112 +49,81 @@ IsolineTruckOptions& IsolineTruckOptions::operator =(JsonView jsonValue)
     }
     m_hazardousCargosHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Height"))
   {
     m_height = jsonValue.GetInt64("Height");
-
     m_heightHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HeightAboveFirstAxle"))
   {
     m_heightAboveFirstAxle = jsonValue.GetInt64("HeightAboveFirstAxle");
-
     m_heightAboveFirstAxleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KpraLength"))
   {
     m_kpraLength = jsonValue.GetInt64("KpraLength");
-
     m_kpraLengthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Length"))
   {
     m_length = jsonValue.GetInt64("Length");
-
     m_lengthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LicensePlate"))
   {
     m_licensePlate = jsonValue.GetObject("LicensePlate");
-
     m_licensePlateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxSpeed"))
   {
     m_maxSpeed = jsonValue.GetDouble("MaxSpeed");
-
     m_maxSpeedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Occupancy"))
   {
     m_occupancy = jsonValue.GetInteger("Occupancy");
-
     m_occupancyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PayloadCapacity"))
   {
     m_payloadCapacity = jsonValue.GetInt64("PayloadCapacity");
-
     m_payloadCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TireCount"))
   {
     m_tireCount = jsonValue.GetInteger("TireCount");
-
     m_tireCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Trailer"))
   {
     m_trailer = jsonValue.GetObject("Trailer");
-
     m_trailerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TruckType"))
   {
     m_truckType = IsolineTruckTypeMapper::GetIsolineTruckTypeForName(jsonValue.GetString("TruckType"));
-
     m_truckTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TunnelRestrictionCode"))
   {
     m_tunnelRestrictionCode = jsonValue.GetString("TunnelRestrictionCode");
-
     m_tunnelRestrictionCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WeightPerAxle"))
   {
     m_weightPerAxle = jsonValue.GetInt64("WeightPerAxle");
-
     m_weightPerAxleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WeightPerAxleGroup"))
   {
     m_weightPerAxleGroup = jsonValue.GetObject("WeightPerAxleGroup");
-
     m_weightPerAxleGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Width"))
   {
     m_width = jsonValue.GetInt64("Width");
-
     m_widthHasBeenSet = true;
   }
-
   return *this;
 }
 

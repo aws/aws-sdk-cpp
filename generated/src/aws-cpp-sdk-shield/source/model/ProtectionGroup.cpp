@@ -18,21 +18,7 @@ namespace Shield
 namespace Model
 {
 
-ProtectionGroup::ProtectionGroup() : 
-    m_protectionGroupIdHasBeenSet(false),
-    m_aggregation(ProtectionGroupAggregation::NOT_SET),
-    m_aggregationHasBeenSet(false),
-    m_pattern(ProtectionGroupPattern::NOT_SET),
-    m_patternHasBeenSet(false),
-    m_resourceType(ProtectedResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_membersHasBeenSet(false),
-    m_protectionGroupArnHasBeenSet(false)
-{
-}
-
 ProtectionGroup::ProtectionGroup(JsonView jsonValue)
-  : ProtectionGroup()
 {
   *this = jsonValue;
 }
@@ -42,31 +28,23 @@ ProtectionGroup& ProtectionGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ProtectionGroupId"))
   {
     m_protectionGroupId = jsonValue.GetString("ProtectionGroupId");
-
     m_protectionGroupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Aggregation"))
   {
     m_aggregation = ProtectionGroupAggregationMapper::GetProtectionGroupAggregationForName(jsonValue.GetString("Aggregation"));
-
     m_aggregationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Pattern"))
   {
     m_pattern = ProtectionGroupPatternMapper::GetProtectionGroupPatternForName(jsonValue.GetString("Pattern"));
-
     m_patternHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = ProtectedResourceTypeMapper::GetProtectedResourceTypeForName(jsonValue.GetString("ResourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Members"))
   {
     Aws::Utils::Array<JsonView> membersJsonList = jsonValue.GetArray("Members");
@@ -76,14 +54,11 @@ ProtectionGroup& ProtectionGroup::operator =(JsonView jsonValue)
     }
     m_membersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProtectionGroupArn"))
   {
     m_protectionGroupArn = jsonValue.GetString("ProtectionGroupArn");
-
     m_protectionGroupArnHasBeenSet = true;
   }
-
   return *this;
 }
 

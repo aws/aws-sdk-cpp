@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-CategoryFilterConfiguration::CategoryFilterConfiguration() : 
-    m_filterListConfigurationHasBeenSet(false),
-    m_customFilterListConfigurationHasBeenSet(false),
-    m_customFilterConfigurationHasBeenSet(false)
-{
-}
-
 CategoryFilterConfiguration::CategoryFilterConfiguration(JsonView jsonValue)
-  : CategoryFilterConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ CategoryFilterConfiguration& CategoryFilterConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("FilterListConfiguration"))
   {
     m_filterListConfiguration = jsonValue.GetObject("FilterListConfiguration");
-
     m_filterListConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomFilterListConfiguration"))
   {
     m_customFilterListConfiguration = jsonValue.GetObject("CustomFilterListConfiguration");
-
     m_customFilterListConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomFilterConfiguration"))
   {
     m_customFilterConfiguration = jsonValue.GetObject("CustomFilterConfiguration");
-
     m_customFilterConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

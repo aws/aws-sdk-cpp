@@ -12,15 +12,6 @@ using namespace Aws::KMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeCustomKeyStoresRequest::DescribeCustomKeyStoresRequest() : 
-    m_customKeyStoreIdHasBeenSet(false),
-    m_customKeyStoreNameHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String DescribeCustomKeyStoresRequest::SerializePayload() const
 {
   JsonValue payload;

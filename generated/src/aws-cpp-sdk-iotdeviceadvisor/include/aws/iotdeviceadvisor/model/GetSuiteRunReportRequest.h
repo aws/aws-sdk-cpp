@@ -21,7 +21,7 @@ namespace Model
   class GetSuiteRunReportRequest : public IoTDeviceAdvisorRequest
   {
   public:
-    AWS_IOTDEVICEADVISOR_API GetSuiteRunReportRequest();
+    AWS_IOTDEVICEADVISOR_API GetSuiteRunReportRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>Suite definition ID of the test suite.</p>
      */
-    inline const Aws::String& GetSuiteDefinitionId() const{ return m_suiteDefinitionId; }
+    inline const Aws::String& GetSuiteDefinitionId() const { return m_suiteDefinitionId; }
     inline bool SuiteDefinitionIdHasBeenSet() const { return m_suiteDefinitionIdHasBeenSet; }
-    inline void SetSuiteDefinitionId(const Aws::String& value) { m_suiteDefinitionIdHasBeenSet = true; m_suiteDefinitionId = value; }
-    inline void SetSuiteDefinitionId(Aws::String&& value) { m_suiteDefinitionIdHasBeenSet = true; m_suiteDefinitionId = std::move(value); }
-    inline void SetSuiteDefinitionId(const char* value) { m_suiteDefinitionIdHasBeenSet = true; m_suiteDefinitionId.assign(value); }
-    inline GetSuiteRunReportRequest& WithSuiteDefinitionId(const Aws::String& value) { SetSuiteDefinitionId(value); return *this;}
-    inline GetSuiteRunReportRequest& WithSuiteDefinitionId(Aws::String&& value) { SetSuiteDefinitionId(std::move(value)); return *this;}
-    inline GetSuiteRunReportRequest& WithSuiteDefinitionId(const char* value) { SetSuiteDefinitionId(value); return *this;}
+    template<typename SuiteDefinitionIdT = Aws::String>
+    void SetSuiteDefinitionId(SuiteDefinitionIdT&& value) { m_suiteDefinitionIdHasBeenSet = true; m_suiteDefinitionId = std::forward<SuiteDefinitionIdT>(value); }
+    template<typename SuiteDefinitionIdT = Aws::String>
+    GetSuiteRunReportRequest& WithSuiteDefinitionId(SuiteDefinitionIdT&& value) { SetSuiteDefinitionId(std::forward<SuiteDefinitionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Suite run ID of the test suite run.</p>
      */
-    inline const Aws::String& GetSuiteRunId() const{ return m_suiteRunId; }
+    inline const Aws::String& GetSuiteRunId() const { return m_suiteRunId; }
     inline bool SuiteRunIdHasBeenSet() const { return m_suiteRunIdHasBeenSet; }
-    inline void SetSuiteRunId(const Aws::String& value) { m_suiteRunIdHasBeenSet = true; m_suiteRunId = value; }
-    inline void SetSuiteRunId(Aws::String&& value) { m_suiteRunIdHasBeenSet = true; m_suiteRunId = std::move(value); }
-    inline void SetSuiteRunId(const char* value) { m_suiteRunIdHasBeenSet = true; m_suiteRunId.assign(value); }
-    inline GetSuiteRunReportRequest& WithSuiteRunId(const Aws::String& value) { SetSuiteRunId(value); return *this;}
-    inline GetSuiteRunReportRequest& WithSuiteRunId(Aws::String&& value) { SetSuiteRunId(std::move(value)); return *this;}
-    inline GetSuiteRunReportRequest& WithSuiteRunId(const char* value) { SetSuiteRunId(value); return *this;}
+    template<typename SuiteRunIdT = Aws::String>
+    void SetSuiteRunId(SuiteRunIdT&& value) { m_suiteRunIdHasBeenSet = true; m_suiteRunId = std::forward<SuiteRunIdT>(value); }
+    template<typename SuiteRunIdT = Aws::String>
+    GetSuiteRunReportRequest& WithSuiteRunId(SuiteRunIdT&& value) { SetSuiteRunId(std::forward<SuiteRunIdT>(value)); return *this;}
     ///@}
   private:
 

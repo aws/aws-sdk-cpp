@@ -18,14 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-GuardrailSensitiveInformationPolicyAssessment::GuardrailSensitiveInformationPolicyAssessment() : 
-    m_piiEntitiesHasBeenSet(false),
-    m_regexesHasBeenSet(false)
-{
-}
-
 GuardrailSensitiveInformationPolicyAssessment::GuardrailSensitiveInformationPolicyAssessment(JsonView jsonValue)
-  : GuardrailSensitiveInformationPolicyAssessment()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ GuardrailSensitiveInformationPolicyAssessment& GuardrailSensitiveInformationPoli
     }
     m_piiEntitiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("regexes"))
   {
     Aws::Utils::Array<JsonView> regexesJsonList = jsonValue.GetArray("regexes");
@@ -51,7 +43,6 @@ GuardrailSensitiveInformationPolicyAssessment& GuardrailSensitiveInformationPoli
     }
     m_regexesHasBeenSet = true;
   }
-
   return *this;
 }
 

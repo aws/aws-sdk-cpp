@@ -28,7 +28,7 @@ namespace Model
   class GetDataAccessRequest : public S3ControlRequest
   {
   public:
-    AWS_S3CONTROL_API GetDataAccessRequest();
+    AWS_S3CONTROL_API GetDataAccessRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -53,14 +53,12 @@ namespace Model
     /**
      * <p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline GetDataAccessRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline GetDataAccessRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline GetDataAccessRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    GetDataAccessRequest& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +67,12 @@ namespace Model
      * credentials. If the requesting account has an access grant for this data, S3
      * Access Grants vends temporary access credentials in the response.</p>
      */
-    inline const Aws::String& GetTarget() const{ return m_target; }
+    inline const Aws::String& GetTarget() const { return m_target; }
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-    inline void SetTarget(const Aws::String& value) { m_targetHasBeenSet = true; m_target = value; }
-    inline void SetTarget(Aws::String&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-    inline void SetTarget(const char* value) { m_targetHasBeenSet = true; m_target.assign(value); }
-    inline GetDataAccessRequest& WithTarget(const Aws::String& value) { SetTarget(value); return *this;}
-    inline GetDataAccessRequest& WithTarget(Aws::String&& value) { SetTarget(std::move(value)); return *this;}
-    inline GetDataAccessRequest& WithTarget(const char* value) { SetTarget(value); return *this;}
+    template<typename TargetT = Aws::String>
+    void SetTarget(TargetT&& value) { m_targetHasBeenSet = true; m_target = std::forward<TargetT>(value); }
+    template<typename TargetT = Aws::String>
+    GetDataAccessRequest& WithTarget(TargetT&& value) { SetTarget(std::forward<TargetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,12 +83,10 @@ namespace Model
      * access to the S3 data.</p> </li> <li> <p> <code>READWRITE</code> – Grant both
      * read and write access to the S3 data.</p> </li> </ul>
      */
-    inline const Permission& GetPermission() const{ return m_permission; }
+    inline Permission GetPermission() const { return m_permission; }
     inline bool PermissionHasBeenSet() const { return m_permissionHasBeenSet; }
-    inline void SetPermission(const Permission& value) { m_permissionHasBeenSet = true; m_permission = value; }
-    inline void SetPermission(Permission&& value) { m_permissionHasBeenSet = true; m_permission = std::move(value); }
-    inline GetDataAccessRequest& WithPermission(const Permission& value) { SetPermission(value); return *this;}
-    inline GetDataAccessRequest& WithPermission(Permission&& value) { SetPermission(std::move(value)); return *this;}
+    inline void SetPermission(Permission value) { m_permissionHasBeenSet = true; m_permission = value; }
+    inline GetDataAccessRequest& WithPermission(Permission value) { SetPermission(value); return *this;}
     ///@}
 
     ///@{
@@ -103,7 +97,7 @@ namespace Model
      * 43200 seconds (12 hours). If the grantee requests a value higher than this
      * maximum, the operation fails. </p>
      */
-    inline int GetDurationSeconds() const{ return m_durationSeconds; }
+    inline int GetDurationSeconds() const { return m_durationSeconds; }
     inline bool DurationSecondsHasBeenSet() const { return m_durationSecondsHasBeenSet; }
     inline void SetDurationSeconds(int value) { m_durationSecondsHasBeenSet = true; m_durationSeconds = value; }
     inline GetDataAccessRequest& WithDurationSeconds(int value) { SetDurationSeconds(value); return *this;}
@@ -119,12 +113,10 @@ namespace Model
      * as long as the requested scope is the same as or a subset of the grant scope.
      * </p> </li> </ul>
      */
-    inline const Privilege& GetPrivilege() const{ return m_privilege; }
+    inline Privilege GetPrivilege() const { return m_privilege; }
     inline bool PrivilegeHasBeenSet() const { return m_privilegeHasBeenSet; }
-    inline void SetPrivilege(const Privilege& value) { m_privilegeHasBeenSet = true; m_privilege = value; }
-    inline void SetPrivilege(Privilege&& value) { m_privilegeHasBeenSet = true; m_privilege = std::move(value); }
-    inline GetDataAccessRequest& WithPrivilege(const Privilege& value) { SetPrivilege(value); return *this;}
-    inline GetDataAccessRequest& WithPrivilege(Privilege&& value) { SetPrivilege(std::move(value)); return *this;}
+    inline void SetPrivilege(Privilege value) { m_privilegeHasBeenSet = true; m_privilege = value; }
+    inline GetDataAccessRequest& WithPrivilege(Privilege value) { SetPrivilege(value); return *this;}
     ///@}
 
     ///@{
@@ -134,12 +126,10 @@ namespace Model
      * access is a path to an object. Do not pass this value if the target data is a
      * bucket or a bucket and a prefix. </p>
      */
-    inline const S3PrefixType& GetTargetType() const{ return m_targetType; }
+    inline S3PrefixType GetTargetType() const { return m_targetType; }
     inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
-    inline void SetTargetType(const S3PrefixType& value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
-    inline void SetTargetType(S3PrefixType&& value) { m_targetTypeHasBeenSet = true; m_targetType = std::move(value); }
-    inline GetDataAccessRequest& WithTargetType(const S3PrefixType& value) { SetTargetType(value); return *this;}
-    inline GetDataAccessRequest& WithTargetType(S3PrefixType&& value) { SetTargetType(std::move(value)); return *this;}
+    inline void SetTargetType(S3PrefixType value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
+    inline GetDataAccessRequest& WithTargetType(S3PrefixType value) { SetTargetType(value); return *this;}
     ///@}
   private:
 
@@ -149,16 +139,16 @@ namespace Model
     Aws::String m_target;
     bool m_targetHasBeenSet = false;
 
-    Permission m_permission;
+    Permission m_permission{Permission::NOT_SET};
     bool m_permissionHasBeenSet = false;
 
-    int m_durationSeconds;
+    int m_durationSeconds{0};
     bool m_durationSecondsHasBeenSet = false;
 
-    Privilege m_privilege;
+    Privilege m_privilege{Privilege::NOT_SET};
     bool m_privilegeHasBeenSet = false;
 
-    S3PrefixType m_targetType;
+    S3PrefixType m_targetType{S3PrefixType::NOT_SET};
     bool m_targetTypeHasBeenSet = false;
   };
 

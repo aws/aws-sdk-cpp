@@ -12,11 +12,6 @@ using namespace Aws::Bedrock::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchDeleteEvaluationJobRequest::BatchDeleteEvaluationJobRequest() : 
-    m_jobIdentifiersHasBeenSet(false)
-{
-}
-
 Aws::String BatchDeleteEvaluationJobRequest::SerializePayload() const
 {
   JsonValue payload;

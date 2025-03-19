@@ -18,22 +18,7 @@ namespace FSx
 namespace Model
 {
 
-Snapshot::Snapshot() : 
-    m_resourceARNHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_volumeIdHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lifecycle(SnapshotLifecycle::NOT_SET),
-    m_lifecycleHasBeenSet(false),
-    m_lifecycleTransitionReasonHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_administrativeActionsHasBeenSet(false)
-{
-}
-
 Snapshot::Snapshot(JsonView jsonValue)
-  : Snapshot()
 {
   *this = jsonValue;
 }
@@ -43,52 +28,38 @@ Snapshot& Snapshot::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ResourceARN"))
   {
     m_resourceARN = jsonValue.GetString("ResourceARN");
-
     m_resourceARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnapshotId"))
   {
     m_snapshotId = jsonValue.GetString("SnapshotId");
-
     m_snapshotIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeId"))
   {
     m_volumeId = jsonValue.GetString("VolumeId");
-
     m_volumeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Lifecycle"))
   {
     m_lifecycle = SnapshotLifecycleMapper::GetSnapshotLifecycleForName(jsonValue.GetString("Lifecycle"));
-
     m_lifecycleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LifecycleTransitionReason"))
   {
     m_lifecycleTransitionReason = jsonValue.GetObject("LifecycleTransitionReason");
-
     m_lifecycleTransitionReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -98,7 +69,6 @@ Snapshot& Snapshot::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdministrativeActions"))
   {
     Aws::Utils::Array<JsonView> administrativeActionsJsonList = jsonValue.GetArray("AdministrativeActions");
@@ -108,7 +78,6 @@ Snapshot& Snapshot::operator =(JsonView jsonValue)
     }
     m_administrativeActionsHasBeenSet = true;
   }
-
   return *this;
 }
 

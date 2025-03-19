@@ -27,7 +27,7 @@ namespace Model
   class UpdateTestCaseResult
   {
   public:
-    AWS_APPTEST_API UpdateTestCaseResult();
+    AWS_APPTEST_API UpdateTestCaseResult() = default;
     AWS_APPTEST_API UpdateTestCaseResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPTEST_API UpdateTestCaseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,41 +36,40 @@ namespace Model
     /**
      * <p>The test case ID of the test case.</p>
      */
-    inline const Aws::String& GetTestCaseId() const{ return m_testCaseId; }
-    inline void SetTestCaseId(const Aws::String& value) { m_testCaseId = value; }
-    inline void SetTestCaseId(Aws::String&& value) { m_testCaseId = std::move(value); }
-    inline void SetTestCaseId(const char* value) { m_testCaseId.assign(value); }
-    inline UpdateTestCaseResult& WithTestCaseId(const Aws::String& value) { SetTestCaseId(value); return *this;}
-    inline UpdateTestCaseResult& WithTestCaseId(Aws::String&& value) { SetTestCaseId(std::move(value)); return *this;}
-    inline UpdateTestCaseResult& WithTestCaseId(const char* value) { SetTestCaseId(value); return *this;}
+    inline const Aws::String& GetTestCaseId() const { return m_testCaseId; }
+    template<typename TestCaseIdT = Aws::String>
+    void SetTestCaseId(TestCaseIdT&& value) { m_testCaseIdHasBeenSet = true; m_testCaseId = std::forward<TestCaseIdT>(value); }
+    template<typename TestCaseIdT = Aws::String>
+    UpdateTestCaseResult& WithTestCaseId(TestCaseIdT&& value) { SetTestCaseId(std::forward<TestCaseIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The test case version of the test case.</p>
      */
-    inline int GetTestCaseVersion() const{ return m_testCaseVersion; }
-    inline void SetTestCaseVersion(int value) { m_testCaseVersion = value; }
+    inline int GetTestCaseVersion() const { return m_testCaseVersion; }
+    inline void SetTestCaseVersion(int value) { m_testCaseVersionHasBeenSet = true; m_testCaseVersion = value; }
     inline UpdateTestCaseResult& WithTestCaseVersion(int value) { SetTestCaseVersion(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateTestCaseResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateTestCaseResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateTestCaseResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateTestCaseResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_testCaseId;
+    bool m_testCaseIdHasBeenSet = false;
 
-    int m_testCaseVersion;
+    int m_testCaseVersion{0};
+    bool m_testCaseVersionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

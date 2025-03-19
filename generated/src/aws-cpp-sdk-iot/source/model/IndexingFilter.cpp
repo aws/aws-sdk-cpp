@@ -18,14 +18,7 @@ namespace IoT
 namespace Model
 {
 
-IndexingFilter::IndexingFilter() : 
-    m_namedShadowNamesHasBeenSet(false),
-    m_geoLocationsHasBeenSet(false)
-{
-}
-
 IndexingFilter::IndexingFilter(JsonView jsonValue)
-  : IndexingFilter()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ IndexingFilter& IndexingFilter::operator =(JsonView jsonValue)
     }
     m_namedShadowNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("geoLocations"))
   {
     Aws::Utils::Array<JsonView> geoLocationsJsonList = jsonValue.GetArray("geoLocations");
@@ -51,7 +43,6 @@ IndexingFilter& IndexingFilter::operator =(JsonView jsonValue)
     }
     m_geoLocationsHasBeenSet = true;
   }
-
   return *this;
 }
 

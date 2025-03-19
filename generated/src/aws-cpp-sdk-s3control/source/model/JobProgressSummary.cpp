@@ -20,19 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-JobProgressSummary::JobProgressSummary() : 
-    m_totalNumberOfTasks(0),
-    m_totalNumberOfTasksHasBeenSet(false),
-    m_numberOfTasksSucceeded(0),
-    m_numberOfTasksSucceededHasBeenSet(false),
-    m_numberOfTasksFailed(0),
-    m_numberOfTasksFailedHasBeenSet(false),
-    m_timersHasBeenSet(false)
-{
-}
-
 JobProgressSummary::JobProgressSummary(const XmlNode& xmlNode)
-  : JobProgressSummary()
 {
   *this = xmlNode;
 }

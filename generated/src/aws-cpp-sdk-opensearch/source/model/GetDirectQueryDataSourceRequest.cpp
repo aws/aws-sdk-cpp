@@ -12,11 +12,6 @@ using namespace Aws::OpenSearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDirectQueryDataSourceRequest::GetDirectQueryDataSourceRequest() : 
-    m_dataSourceNameHasBeenSet(false)
-{
-}
-
 Aws::String GetDirectQueryDataSourceRequest::SerializePayload() const
 {
   return {};

@@ -28,35 +28,35 @@ namespace Model
   class SendOTPMessageResult
   {
   public:
-    AWS_PINPOINT_API SendOTPMessageResult();
+    AWS_PINPOINT_API SendOTPMessageResult() = default;
     AWS_PINPOINT_API SendOTPMessageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINT_API SendOTPMessageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const MessageResponse& GetMessageResponse() const{ return m_messageResponse; }
-    inline void SetMessageResponse(const MessageResponse& value) { m_messageResponse = value; }
-    inline void SetMessageResponse(MessageResponse&& value) { m_messageResponse = std::move(value); }
-    inline SendOTPMessageResult& WithMessageResponse(const MessageResponse& value) { SetMessageResponse(value); return *this;}
-    inline SendOTPMessageResult& WithMessageResponse(MessageResponse&& value) { SetMessageResponse(std::move(value)); return *this;}
+    inline const MessageResponse& GetMessageResponse() const { return m_messageResponse; }
+    template<typename MessageResponseT = MessageResponse>
+    void SetMessageResponse(MessageResponseT&& value) { m_messageResponseHasBeenSet = true; m_messageResponse = std::forward<MessageResponseT>(value); }
+    template<typename MessageResponseT = MessageResponse>
+    SendOTPMessageResult& WithMessageResponse(MessageResponseT&& value) { SetMessageResponse(std::forward<MessageResponseT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline SendOTPMessageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline SendOTPMessageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline SendOTPMessageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    SendOTPMessageResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     MessageResponse m_messageResponse;
+    bool m_messageResponseHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

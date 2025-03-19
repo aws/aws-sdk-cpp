@@ -18,13 +18,7 @@ namespace KafkaConnect
 namespace Model
 {
 
-CustomPluginLocation::CustomPluginLocation() : 
-    m_s3LocationHasBeenSet(false)
-{
-}
-
 CustomPluginLocation::CustomPluginLocation(JsonView jsonValue)
-  : CustomPluginLocation()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CustomPluginLocation& CustomPluginLocation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3Location"))
   {
     m_s3Location = jsonValue.GetObject("s3Location");
-
     m_s3LocationHasBeenSet = true;
   }
-
   return *this;
 }
 

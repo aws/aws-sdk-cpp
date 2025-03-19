@@ -18,13 +18,7 @@ namespace ControlCatalog
 namespace Model
 {
 
-ObjectiveFilter::ObjectiveFilter() : 
-    m_domainsHasBeenSet(false)
-{
-}
-
 ObjectiveFilter::ObjectiveFilter(JsonView jsonValue)
-  : ObjectiveFilter()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ObjectiveFilter& ObjectiveFilter::operator =(JsonView jsonValue)
     }
     m_domainsHasBeenSet = true;
   }
-
   return *this;
 }
 

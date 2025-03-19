@@ -18,17 +18,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-BatchWriteException::BatchWriteException() : 
-    m_index(0),
-    m_indexHasBeenSet(false),
-    m_type(BatchWriteExceptionType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 BatchWriteException::BatchWriteException(JsonView jsonValue)
-  : BatchWriteException()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ BatchWriteException& BatchWriteException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Index"))
   {
     m_index = jsonValue.GetInteger("Index");
-
     m_indexHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = BatchWriteExceptionTypeMapper::GetBatchWriteExceptionTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

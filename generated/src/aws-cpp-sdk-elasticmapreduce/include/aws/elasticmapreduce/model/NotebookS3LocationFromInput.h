@@ -32,7 +32,7 @@ namespace Model
   class NotebookS3LocationFromInput
   {
   public:
-    AWS_EMR_API NotebookS3LocationFromInput();
+    AWS_EMR_API NotebookS3LocationFromInput() = default;
     AWS_EMR_API NotebookS3LocationFromInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API NotebookS3LocationFromInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The Amazon S3 bucket that stores the notebook execution input.</p>
      */
-    inline const Aws::String& GetBucket() const{ return m_bucket; }
+    inline const Aws::String& GetBucket() const { return m_bucket; }
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
-    inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
-    inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
-    inline NotebookS3LocationFromInput& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
-    inline NotebookS3LocationFromInput& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
-    inline NotebookS3LocationFromInput& WithBucket(const char* value) { SetBucket(value); return *this;}
+    template<typename BucketT = Aws::String>
+    void SetBucket(BucketT&& value) { m_bucketHasBeenSet = true; m_bucket = std::forward<BucketT>(value); }
+    template<typename BucketT = Aws::String>
+    NotebookS3LocationFromInput& WithBucket(BucketT&& value) { SetBucket(std::forward<BucketT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>The key to the Amazon S3 location that stores the notebook execution
      * input.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline NotebookS3LocationFromInput& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline NotebookS3LocationFromInput& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline NotebookS3LocationFromInput& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    NotebookS3LocationFromInput& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
   private:
 

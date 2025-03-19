@@ -18,18 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-AudioNormalizationSettings::AudioNormalizationSettings() : 
-    m_algorithm(AudioNormalizationAlgorithm::NOT_SET),
-    m_algorithmHasBeenSet(false),
-    m_algorithmControl(AudioNormalizationAlgorithmControl::NOT_SET),
-    m_algorithmControlHasBeenSet(false),
-    m_targetLkfs(0.0),
-    m_targetLkfsHasBeenSet(false)
-{
-}
-
 AudioNormalizationSettings::AudioNormalizationSettings(JsonView jsonValue)
-  : AudioNormalizationSettings()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ AudioNormalizationSettings& AudioNormalizationSettings::operator =(JsonView json
   if(jsonValue.ValueExists("algorithm"))
   {
     m_algorithm = AudioNormalizationAlgorithmMapper::GetAudioNormalizationAlgorithmForName(jsonValue.GetString("algorithm"));
-
     m_algorithmHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("algorithmControl"))
   {
     m_algorithmControl = AudioNormalizationAlgorithmControlMapper::GetAudioNormalizationAlgorithmControlForName(jsonValue.GetString("algorithmControl"));
-
     m_algorithmControlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetLkfs"))
   {
     m_targetLkfs = jsonValue.GetDouble("targetLkfs");
-
     m_targetLkfsHasBeenSet = true;
   }
-
   return *this;
 }
 

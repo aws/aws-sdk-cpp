@@ -30,7 +30,7 @@ namespace Model
   class GetTableResult
   {
   public:
-    AWS_BCMDATAEXPORTS_API GetTableResult();
+    AWS_BCMDATAEXPORTS_API GetTableResult() = default;
     AWS_BCMDATAEXPORTS_API GetTableResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BCMDATAEXPORTS_API GetTableResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,39 +39,35 @@ namespace Model
     /**
      * <p>The table description.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline GetTableResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline GetTableResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline GetTableResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    GetTableResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The schema of the table.</p>
      */
-    inline const Aws::Vector<Column>& GetSchema() const{ return m_schema; }
-    inline void SetSchema(const Aws::Vector<Column>& value) { m_schema = value; }
-    inline void SetSchema(Aws::Vector<Column>&& value) { m_schema = std::move(value); }
-    inline GetTableResult& WithSchema(const Aws::Vector<Column>& value) { SetSchema(value); return *this;}
-    inline GetTableResult& WithSchema(Aws::Vector<Column>&& value) { SetSchema(std::move(value)); return *this;}
-    inline GetTableResult& AddSchema(const Column& value) { m_schema.push_back(value); return *this; }
-    inline GetTableResult& AddSchema(Column&& value) { m_schema.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Column>& GetSchema() const { return m_schema; }
+    template<typename SchemaT = Aws::Vector<Column>>
+    void SetSchema(SchemaT&& value) { m_schemaHasBeenSet = true; m_schema = std::forward<SchemaT>(value); }
+    template<typename SchemaT = Aws::Vector<Column>>
+    GetTableResult& WithSchema(SchemaT&& value) { SetSchema(std::forward<SchemaT>(value)); return *this;}
+    template<typename SchemaT = Column>
+    GetTableResult& AddSchema(SchemaT&& value) { m_schemaHasBeenSet = true; m_schema.emplace_back(std::forward<SchemaT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The name of the table.</p>
      */
-    inline const Aws::String& GetTableName() const{ return m_tableName; }
-    inline void SetTableName(const Aws::String& value) { m_tableName = value; }
-    inline void SetTableName(Aws::String&& value) { m_tableName = std::move(value); }
-    inline void SetTableName(const char* value) { m_tableName.assign(value); }
-    inline GetTableResult& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-    inline GetTableResult& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-    inline GetTableResult& WithTableName(const char* value) { SetTableName(value); return *this;}
+    inline const Aws::String& GetTableName() const { return m_tableName; }
+    template<typename TableNameT = Aws::String>
+    void SetTableName(TableNameT&& value) { m_tableNameHasBeenSet = true; m_tableName = std::forward<TableNameT>(value); }
+    template<typename TableNameT = Aws::String>
+    GetTableResult& WithTableName(TableNameT&& value) { SetTableName(std::forward<TableNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,41 +77,41 @@ namespace Model
      * Tables are not required to have any TableProperties. Each table property has a
      * default value that it assumes if not specified.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTableProperties() const{ return m_tableProperties; }
-    inline void SetTableProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_tableProperties = value; }
-    inline void SetTableProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_tableProperties = std::move(value); }
-    inline GetTableResult& WithTableProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetTableProperties(value); return *this;}
-    inline GetTableResult& WithTableProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetTableProperties(std::move(value)); return *this;}
-    inline GetTableResult& AddTableProperties(const Aws::String& key, const Aws::String& value) { m_tableProperties.emplace(key, value); return *this; }
-    inline GetTableResult& AddTableProperties(Aws::String&& key, const Aws::String& value) { m_tableProperties.emplace(std::move(key), value); return *this; }
-    inline GetTableResult& AddTableProperties(const Aws::String& key, Aws::String&& value) { m_tableProperties.emplace(key, std::move(value)); return *this; }
-    inline GetTableResult& AddTableProperties(Aws::String&& key, Aws::String&& value) { m_tableProperties.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetTableResult& AddTableProperties(const char* key, Aws::String&& value) { m_tableProperties.emplace(key, std::move(value)); return *this; }
-    inline GetTableResult& AddTableProperties(Aws::String&& key, const char* value) { m_tableProperties.emplace(std::move(key), value); return *this; }
-    inline GetTableResult& AddTableProperties(const char* key, const char* value) { m_tableProperties.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTableProperties() const { return m_tableProperties; }
+    template<typename TablePropertiesT = Aws::Map<Aws::String, Aws::String>>
+    void SetTableProperties(TablePropertiesT&& value) { m_tablePropertiesHasBeenSet = true; m_tableProperties = std::forward<TablePropertiesT>(value); }
+    template<typename TablePropertiesT = Aws::Map<Aws::String, Aws::String>>
+    GetTableResult& WithTableProperties(TablePropertiesT&& value) { SetTableProperties(std::forward<TablePropertiesT>(value)); return *this;}
+    template<typename TablePropertiesKeyT = Aws::String, typename TablePropertiesValueT = Aws::String>
+    GetTableResult& AddTableProperties(TablePropertiesKeyT&& key, TablePropertiesValueT&& value) {
+      m_tablePropertiesHasBeenSet = true; m_tableProperties.emplace(std::forward<TablePropertiesKeyT>(key), std::forward<TablePropertiesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetTableResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetTableResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetTableResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetTableResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Column> m_schema;
+    bool m_schemaHasBeenSet = false;
 
     Aws::String m_tableName;
+    bool m_tableNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tableProperties;
+    bool m_tablePropertiesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

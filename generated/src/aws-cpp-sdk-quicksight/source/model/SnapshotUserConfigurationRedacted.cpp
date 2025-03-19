@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-SnapshotUserConfigurationRedacted::SnapshotUserConfigurationRedacted() : 
-    m_anonymousUsersHasBeenSet(false)
-{
-}
-
 SnapshotUserConfigurationRedacted::SnapshotUserConfigurationRedacted(JsonView jsonValue)
-  : SnapshotUserConfigurationRedacted()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ SnapshotUserConfigurationRedacted& SnapshotUserConfigurationRedacted::operator =
     }
     m_anonymousUsersHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-DuplicateConnectionsFlowValidationDetails::DuplicateConnectionsFlowValidationDetails() : 
-    m_sourceHasBeenSet(false),
-    m_targetHasBeenSet(false)
-{
-}
-
 DuplicateConnectionsFlowValidationDetails::DuplicateConnectionsFlowValidationDetails(JsonView jsonValue)
-  : DuplicateConnectionsFlowValidationDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DuplicateConnectionsFlowValidationDetails& DuplicateConnectionsFlowValidationDet
   if(jsonValue.ValueExists("source"))
   {
     m_source = jsonValue.GetString("source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("target"))
   {
     m_target = jsonValue.GetString("target");
-
     m_targetHasBeenSet = true;
   }
-
   return *this;
 }
 

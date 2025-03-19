@@ -12,17 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SearchUserProfilesRequest::SearchUserProfilesRequest() : 
-    m_domainIdentifierHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_searchTextHasBeenSet(false),
-    m_userType(UserSearchType::NOT_SET),
-    m_userTypeHasBeenSet(false)
-{
-}
-
 Aws::String SearchUserProfilesRequest::SerializePayload() const
 {
   JsonValue payload;

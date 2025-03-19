@@ -21,7 +21,7 @@ namespace Model
   class ArchiveWaveRequest : public MgnRequest
   {
   public:
-    AWS_MGN_API ArchiveWaveRequest();
+    AWS_MGN_API ArchiveWaveRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>Account ID.</p>
      */
-    inline const Aws::String& GetAccountID() const{ return m_accountID; }
+    inline const Aws::String& GetAccountID() const { return m_accountID; }
     inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
-    inline void SetAccountID(const Aws::String& value) { m_accountIDHasBeenSet = true; m_accountID = value; }
-    inline void SetAccountID(Aws::String&& value) { m_accountIDHasBeenSet = true; m_accountID = std::move(value); }
-    inline void SetAccountID(const char* value) { m_accountIDHasBeenSet = true; m_accountID.assign(value); }
-    inline ArchiveWaveRequest& WithAccountID(const Aws::String& value) { SetAccountID(value); return *this;}
-    inline ArchiveWaveRequest& WithAccountID(Aws::String&& value) { SetAccountID(std::move(value)); return *this;}
-    inline ArchiveWaveRequest& WithAccountID(const char* value) { SetAccountID(value); return *this;}
+    template<typename AccountIDT = Aws::String>
+    void SetAccountID(AccountIDT&& value) { m_accountIDHasBeenSet = true; m_accountID = std::forward<AccountIDT>(value); }
+    template<typename AccountIDT = Aws::String>
+    ArchiveWaveRequest& WithAccountID(AccountIDT&& value) { SetAccountID(std::forward<AccountIDT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Wave ID.</p>
      */
-    inline const Aws::String& GetWaveID() const{ return m_waveID; }
+    inline const Aws::String& GetWaveID() const { return m_waveID; }
     inline bool WaveIDHasBeenSet() const { return m_waveIDHasBeenSet; }
-    inline void SetWaveID(const Aws::String& value) { m_waveIDHasBeenSet = true; m_waveID = value; }
-    inline void SetWaveID(Aws::String&& value) { m_waveIDHasBeenSet = true; m_waveID = std::move(value); }
-    inline void SetWaveID(const char* value) { m_waveIDHasBeenSet = true; m_waveID.assign(value); }
-    inline ArchiveWaveRequest& WithWaveID(const Aws::String& value) { SetWaveID(value); return *this;}
-    inline ArchiveWaveRequest& WithWaveID(Aws::String&& value) { SetWaveID(std::move(value)); return *this;}
-    inline ArchiveWaveRequest& WithWaveID(const char* value) { SetWaveID(value); return *this;}
+    template<typename WaveIDT = Aws::String>
+    void SetWaveID(WaveIDT&& value) { m_waveIDHasBeenSet = true; m_waveID = std::forward<WaveIDT>(value); }
+    template<typename WaveIDT = Aws::String>
+    ArchiveWaveRequest& WithWaveID(WaveIDT&& value) { SetWaveID(std::forward<WaveIDT>(value)); return *this;}
     ///@}
   private:
 

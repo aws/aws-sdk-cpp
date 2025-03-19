@@ -37,7 +37,7 @@ namespace Model
   class NamespaceRuleBasedProperties
   {
   public:
-    AWS_ENTITYRESOLUTION_API NamespaceRuleBasedProperties();
+    AWS_ENTITYRESOLUTION_API NamespaceRuleBasedProperties() = default;
     AWS_ENTITYRESOLUTION_API NamespaceRuleBasedProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_ENTITYRESOLUTION_API NamespaceRuleBasedProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ENTITYRESOLUTION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -58,12 +58,10 @@ namespace Model
      * field of Profile A matches the value of the <code>Email</code> field of Profile
      * B.</p>
      */
-    inline const AttributeMatchingModel& GetAttributeMatchingModel() const{ return m_attributeMatchingModel; }
+    inline AttributeMatchingModel GetAttributeMatchingModel() const { return m_attributeMatchingModel; }
     inline bool AttributeMatchingModelHasBeenSet() const { return m_attributeMatchingModelHasBeenSet; }
-    inline void SetAttributeMatchingModel(const AttributeMatchingModel& value) { m_attributeMatchingModelHasBeenSet = true; m_attributeMatchingModel = value; }
-    inline void SetAttributeMatchingModel(AttributeMatchingModel&& value) { m_attributeMatchingModelHasBeenSet = true; m_attributeMatchingModel = std::move(value); }
-    inline NamespaceRuleBasedProperties& WithAttributeMatchingModel(const AttributeMatchingModel& value) { SetAttributeMatchingModel(value); return *this;}
-    inline NamespaceRuleBasedProperties& WithAttributeMatchingModel(AttributeMatchingModel&& value) { SetAttributeMatchingModel(std::move(value)); return *this;}
+    inline void SetAttributeMatchingModel(AttributeMatchingModel value) { m_attributeMatchingModelHasBeenSet = true; m_attributeMatchingModel = value; }
+    inline NamespaceRuleBasedProperties& WithAttributeMatchingModel(AttributeMatchingModel value) { SetAttributeMatchingModel(value); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +72,13 @@ namespace Model
      * the value is set to <code>MANY_SOURCE_TO_ONE_TARGET</code>, all matching records
      * in the source are matched to one record in the target.</p>
      */
-    inline const Aws::Vector<RecordMatchingModel>& GetRecordMatchingModels() const{ return m_recordMatchingModels; }
+    inline const Aws::Vector<RecordMatchingModel>& GetRecordMatchingModels() const { return m_recordMatchingModels; }
     inline bool RecordMatchingModelsHasBeenSet() const { return m_recordMatchingModelsHasBeenSet; }
-    inline void SetRecordMatchingModels(const Aws::Vector<RecordMatchingModel>& value) { m_recordMatchingModelsHasBeenSet = true; m_recordMatchingModels = value; }
-    inline void SetRecordMatchingModels(Aws::Vector<RecordMatchingModel>&& value) { m_recordMatchingModelsHasBeenSet = true; m_recordMatchingModels = std::move(value); }
-    inline NamespaceRuleBasedProperties& WithRecordMatchingModels(const Aws::Vector<RecordMatchingModel>& value) { SetRecordMatchingModels(value); return *this;}
-    inline NamespaceRuleBasedProperties& WithRecordMatchingModels(Aws::Vector<RecordMatchingModel>&& value) { SetRecordMatchingModels(std::move(value)); return *this;}
-    inline NamespaceRuleBasedProperties& AddRecordMatchingModels(const RecordMatchingModel& value) { m_recordMatchingModelsHasBeenSet = true; m_recordMatchingModels.push_back(value); return *this; }
-    inline NamespaceRuleBasedProperties& AddRecordMatchingModels(RecordMatchingModel&& value) { m_recordMatchingModelsHasBeenSet = true; m_recordMatchingModels.push_back(std::move(value)); return *this; }
+    template<typename RecordMatchingModelsT = Aws::Vector<RecordMatchingModel>>
+    void SetRecordMatchingModels(RecordMatchingModelsT&& value) { m_recordMatchingModelsHasBeenSet = true; m_recordMatchingModels = std::forward<RecordMatchingModelsT>(value); }
+    template<typename RecordMatchingModelsT = Aws::Vector<RecordMatchingModel>>
+    NamespaceRuleBasedProperties& WithRecordMatchingModels(RecordMatchingModelsT&& value) { SetRecordMatchingModels(std::forward<RecordMatchingModelsT>(value)); return *this;}
+    inline NamespaceRuleBasedProperties& AddRecordMatchingModels(RecordMatchingModel value) { m_recordMatchingModelsHasBeenSet = true; m_recordMatchingModels.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -89,32 +86,31 @@ namespace Model
      * <p> The sets of rules you can use in an ID mapping workflow. The limitations
      * specified for the source and target must be compatible.</p>
      */
-    inline const Aws::Vector<IdMappingWorkflowRuleDefinitionType>& GetRuleDefinitionTypes() const{ return m_ruleDefinitionTypes; }
+    inline const Aws::Vector<IdMappingWorkflowRuleDefinitionType>& GetRuleDefinitionTypes() const { return m_ruleDefinitionTypes; }
     inline bool RuleDefinitionTypesHasBeenSet() const { return m_ruleDefinitionTypesHasBeenSet; }
-    inline void SetRuleDefinitionTypes(const Aws::Vector<IdMappingWorkflowRuleDefinitionType>& value) { m_ruleDefinitionTypesHasBeenSet = true; m_ruleDefinitionTypes = value; }
-    inline void SetRuleDefinitionTypes(Aws::Vector<IdMappingWorkflowRuleDefinitionType>&& value) { m_ruleDefinitionTypesHasBeenSet = true; m_ruleDefinitionTypes = std::move(value); }
-    inline NamespaceRuleBasedProperties& WithRuleDefinitionTypes(const Aws::Vector<IdMappingWorkflowRuleDefinitionType>& value) { SetRuleDefinitionTypes(value); return *this;}
-    inline NamespaceRuleBasedProperties& WithRuleDefinitionTypes(Aws::Vector<IdMappingWorkflowRuleDefinitionType>&& value) { SetRuleDefinitionTypes(std::move(value)); return *this;}
-    inline NamespaceRuleBasedProperties& AddRuleDefinitionTypes(const IdMappingWorkflowRuleDefinitionType& value) { m_ruleDefinitionTypesHasBeenSet = true; m_ruleDefinitionTypes.push_back(value); return *this; }
-    inline NamespaceRuleBasedProperties& AddRuleDefinitionTypes(IdMappingWorkflowRuleDefinitionType&& value) { m_ruleDefinitionTypesHasBeenSet = true; m_ruleDefinitionTypes.push_back(std::move(value)); return *this; }
+    template<typename RuleDefinitionTypesT = Aws::Vector<IdMappingWorkflowRuleDefinitionType>>
+    void SetRuleDefinitionTypes(RuleDefinitionTypesT&& value) { m_ruleDefinitionTypesHasBeenSet = true; m_ruleDefinitionTypes = std::forward<RuleDefinitionTypesT>(value); }
+    template<typename RuleDefinitionTypesT = Aws::Vector<IdMappingWorkflowRuleDefinitionType>>
+    NamespaceRuleBasedProperties& WithRuleDefinitionTypes(RuleDefinitionTypesT&& value) { SetRuleDefinitionTypes(std::forward<RuleDefinitionTypesT>(value)); return *this;}
+    inline NamespaceRuleBasedProperties& AddRuleDefinitionTypes(IdMappingWorkflowRuleDefinitionType value) { m_ruleDefinitionTypesHasBeenSet = true; m_ruleDefinitionTypes.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> The rules for the ID namespace.</p>
      */
-    inline const Aws::Vector<Rule>& GetRules() const{ return m_rules; }
+    inline const Aws::Vector<Rule>& GetRules() const { return m_rules; }
     inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
-    inline void SetRules(const Aws::Vector<Rule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
-    inline void SetRules(Aws::Vector<Rule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
-    inline NamespaceRuleBasedProperties& WithRules(const Aws::Vector<Rule>& value) { SetRules(value); return *this;}
-    inline NamespaceRuleBasedProperties& WithRules(Aws::Vector<Rule>&& value) { SetRules(std::move(value)); return *this;}
-    inline NamespaceRuleBasedProperties& AddRules(const Rule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
-    inline NamespaceRuleBasedProperties& AddRules(Rule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
+    template<typename RulesT = Aws::Vector<Rule>>
+    void SetRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules = std::forward<RulesT>(value); }
+    template<typename RulesT = Aws::Vector<Rule>>
+    NamespaceRuleBasedProperties& WithRules(RulesT&& value) { SetRules(std::forward<RulesT>(value)); return *this;}
+    template<typename RulesT = Rule>
+    NamespaceRuleBasedProperties& AddRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules.emplace_back(std::forward<RulesT>(value)); return *this; }
     ///@}
   private:
 
-    AttributeMatchingModel m_attributeMatchingModel;
+    AttributeMatchingModel m_attributeMatchingModel{AttributeMatchingModel::NOT_SET};
     bool m_attributeMatchingModelHasBeenSet = false;
 
     Aws::Vector<RecordMatchingModel> m_recordMatchingModels;

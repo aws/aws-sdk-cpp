@@ -12,11 +12,6 @@ using namespace Aws::GroundStation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAgentConfigurationRequest::GetAgentConfigurationRequest() : 
-    m_agentIdHasBeenSet(false)
-{
-}
-
 Aws::String GetAgentConfigurationRequest::SerializePayload() const
 {
   return {};

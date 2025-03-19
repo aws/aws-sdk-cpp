@@ -29,7 +29,7 @@ namespace Model
   class ListReplaysResult
   {
   public:
-    AWS_CLOUDWATCHEVENTS_API ListReplaysResult();
+    AWS_CLOUDWATCHEVENTS_API ListReplaysResult() = default;
     AWS_CLOUDWATCHEVENTS_API ListReplaysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDWATCHEVENTS_API ListReplaysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>An array of <code>Replay</code> objects that contain information about the
      * replay.</p>
      */
-    inline const Aws::Vector<Replay>& GetReplays() const{ return m_replays; }
-    inline void SetReplays(const Aws::Vector<Replay>& value) { m_replays = value; }
-    inline void SetReplays(Aws::Vector<Replay>&& value) { m_replays = std::move(value); }
-    inline ListReplaysResult& WithReplays(const Aws::Vector<Replay>& value) { SetReplays(value); return *this;}
-    inline ListReplaysResult& WithReplays(Aws::Vector<Replay>&& value) { SetReplays(std::move(value)); return *this;}
-    inline ListReplaysResult& AddReplays(const Replay& value) { m_replays.push_back(value); return *this; }
-    inline ListReplaysResult& AddReplays(Replay&& value) { m_replays.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Replay>& GetReplays() const { return m_replays; }
+    template<typename ReplaysT = Aws::Vector<Replay>>
+    void SetReplays(ReplaysT&& value) { m_replaysHasBeenSet = true; m_replays = std::forward<ReplaysT>(value); }
+    template<typename ReplaysT = Aws::Vector<Replay>>
+    ListReplaysResult& WithReplays(ReplaysT&& value) { SetReplays(std::forward<ReplaysT>(value)); return *this;}
+    template<typename ReplaysT = Replay>
+    ListReplaysResult& AddReplays(ReplaysT&& value) { m_replaysHasBeenSet = true; m_replays.emplace_back(std::forward<ReplaysT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * <p>The token returned by a previous call to retrieve the next set of
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListReplaysResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListReplaysResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListReplaysResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListReplaysResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListReplaysResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListReplaysResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListReplaysResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListReplaysResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Replay> m_replays;
+    bool m_replaysHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

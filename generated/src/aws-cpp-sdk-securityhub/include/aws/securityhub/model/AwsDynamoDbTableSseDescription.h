@@ -32,7 +32,7 @@ namespace Model
   class AwsDynamoDbTableSseDescription
   {
   public:
-    AWS_SECURITYHUB_API AwsDynamoDbTableSseDescription();
+    AWS_SECURITYHUB_API AwsDynamoDbTableSseDescription() = default;
     AWS_SECURITYHUB_API AwsDynamoDbTableSseDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsDynamoDbTableSseDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,56 +45,48 @@ namespace Model
      * formatting of timestamp fields in Security Hub, see <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
      */
-    inline const Aws::String& GetInaccessibleEncryptionDateTime() const{ return m_inaccessibleEncryptionDateTime; }
+    inline const Aws::String& GetInaccessibleEncryptionDateTime() const { return m_inaccessibleEncryptionDateTime; }
     inline bool InaccessibleEncryptionDateTimeHasBeenSet() const { return m_inaccessibleEncryptionDateTimeHasBeenSet; }
-    inline void SetInaccessibleEncryptionDateTime(const Aws::String& value) { m_inaccessibleEncryptionDateTimeHasBeenSet = true; m_inaccessibleEncryptionDateTime = value; }
-    inline void SetInaccessibleEncryptionDateTime(Aws::String&& value) { m_inaccessibleEncryptionDateTimeHasBeenSet = true; m_inaccessibleEncryptionDateTime = std::move(value); }
-    inline void SetInaccessibleEncryptionDateTime(const char* value) { m_inaccessibleEncryptionDateTimeHasBeenSet = true; m_inaccessibleEncryptionDateTime.assign(value); }
-    inline AwsDynamoDbTableSseDescription& WithInaccessibleEncryptionDateTime(const Aws::String& value) { SetInaccessibleEncryptionDateTime(value); return *this;}
-    inline AwsDynamoDbTableSseDescription& WithInaccessibleEncryptionDateTime(Aws::String&& value) { SetInaccessibleEncryptionDateTime(std::move(value)); return *this;}
-    inline AwsDynamoDbTableSseDescription& WithInaccessibleEncryptionDateTime(const char* value) { SetInaccessibleEncryptionDateTime(value); return *this;}
+    template<typename InaccessibleEncryptionDateTimeT = Aws::String>
+    void SetInaccessibleEncryptionDateTime(InaccessibleEncryptionDateTimeT&& value) { m_inaccessibleEncryptionDateTimeHasBeenSet = true; m_inaccessibleEncryptionDateTime = std::forward<InaccessibleEncryptionDateTimeT>(value); }
+    template<typename InaccessibleEncryptionDateTimeT = Aws::String>
+    AwsDynamoDbTableSseDescription& WithInaccessibleEncryptionDateTime(InaccessibleEncryptionDateTimeT&& value) { SetInaccessibleEncryptionDateTime(std::forward<InaccessibleEncryptionDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the server-side encryption.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline AwsDynamoDbTableSseDescription& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline AwsDynamoDbTableSseDescription& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline AwsDynamoDbTableSseDescription& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    AwsDynamoDbTableSseDescription& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of server-side encryption.</p>
      */
-    inline const Aws::String& GetSseType() const{ return m_sseType; }
+    inline const Aws::String& GetSseType() const { return m_sseType; }
     inline bool SseTypeHasBeenSet() const { return m_sseTypeHasBeenSet; }
-    inline void SetSseType(const Aws::String& value) { m_sseTypeHasBeenSet = true; m_sseType = value; }
-    inline void SetSseType(Aws::String&& value) { m_sseTypeHasBeenSet = true; m_sseType = std::move(value); }
-    inline void SetSseType(const char* value) { m_sseTypeHasBeenSet = true; m_sseType.assign(value); }
-    inline AwsDynamoDbTableSseDescription& WithSseType(const Aws::String& value) { SetSseType(value); return *this;}
-    inline AwsDynamoDbTableSseDescription& WithSseType(Aws::String&& value) { SetSseType(std::move(value)); return *this;}
-    inline AwsDynamoDbTableSseDescription& WithSseType(const char* value) { SetSseType(value); return *this;}
+    template<typename SseTypeT = Aws::String>
+    void SetSseType(SseTypeT&& value) { m_sseTypeHasBeenSet = true; m_sseType = std::forward<SseTypeT>(value); }
+    template<typename SseTypeT = Aws::String>
+    AwsDynamoDbTableSseDescription& WithSseType(SseTypeT&& value) { SetSseType(std::forward<SseTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the KMS key that is used for the KMS encryption.</p>
      */
-    inline const Aws::String& GetKmsMasterKeyArn() const{ return m_kmsMasterKeyArn; }
+    inline const Aws::String& GetKmsMasterKeyArn() const { return m_kmsMasterKeyArn; }
     inline bool KmsMasterKeyArnHasBeenSet() const { return m_kmsMasterKeyArnHasBeenSet; }
-    inline void SetKmsMasterKeyArn(const Aws::String& value) { m_kmsMasterKeyArnHasBeenSet = true; m_kmsMasterKeyArn = value; }
-    inline void SetKmsMasterKeyArn(Aws::String&& value) { m_kmsMasterKeyArnHasBeenSet = true; m_kmsMasterKeyArn = std::move(value); }
-    inline void SetKmsMasterKeyArn(const char* value) { m_kmsMasterKeyArnHasBeenSet = true; m_kmsMasterKeyArn.assign(value); }
-    inline AwsDynamoDbTableSseDescription& WithKmsMasterKeyArn(const Aws::String& value) { SetKmsMasterKeyArn(value); return *this;}
-    inline AwsDynamoDbTableSseDescription& WithKmsMasterKeyArn(Aws::String&& value) { SetKmsMasterKeyArn(std::move(value)); return *this;}
-    inline AwsDynamoDbTableSseDescription& WithKmsMasterKeyArn(const char* value) { SetKmsMasterKeyArn(value); return *this;}
+    template<typename KmsMasterKeyArnT = Aws::String>
+    void SetKmsMasterKeyArn(KmsMasterKeyArnT&& value) { m_kmsMasterKeyArnHasBeenSet = true; m_kmsMasterKeyArn = std::forward<KmsMasterKeyArnT>(value); }
+    template<typename KmsMasterKeyArnT = Aws::String>
+    AwsDynamoDbTableSseDescription& WithKmsMasterKeyArn(KmsMasterKeyArnT&& value) { SetKmsMasterKeyArn(std::forward<KmsMasterKeyArnT>(value)); return *this;}
     ///@}
   private:
 

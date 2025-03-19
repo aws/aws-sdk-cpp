@@ -28,7 +28,7 @@ namespace Model
   class GetQueryLoggingConfigResult
   {
   public:
-    AWS_ROUTE53_API GetQueryLoggingConfigResult();
+    AWS_ROUTE53_API GetQueryLoggingConfigResult() = default;
     AWS_ROUTE53_API GetQueryLoggingConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ROUTE53_API GetQueryLoggingConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -40,28 +40,28 @@ namespace Model
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetQueryLoggingConfig.html">GetQueryLoggingConfig</a>
      * request.</p>
      */
-    inline const QueryLoggingConfig& GetQueryLoggingConfig() const{ return m_queryLoggingConfig; }
-    inline void SetQueryLoggingConfig(const QueryLoggingConfig& value) { m_queryLoggingConfig = value; }
-    inline void SetQueryLoggingConfig(QueryLoggingConfig&& value) { m_queryLoggingConfig = std::move(value); }
-    inline GetQueryLoggingConfigResult& WithQueryLoggingConfig(const QueryLoggingConfig& value) { SetQueryLoggingConfig(value); return *this;}
-    inline GetQueryLoggingConfigResult& WithQueryLoggingConfig(QueryLoggingConfig&& value) { SetQueryLoggingConfig(std::move(value)); return *this;}
+    inline const QueryLoggingConfig& GetQueryLoggingConfig() const { return m_queryLoggingConfig; }
+    template<typename QueryLoggingConfigT = QueryLoggingConfig>
+    void SetQueryLoggingConfig(QueryLoggingConfigT&& value) { m_queryLoggingConfigHasBeenSet = true; m_queryLoggingConfig = std::forward<QueryLoggingConfigT>(value); }
+    template<typename QueryLoggingConfigT = QueryLoggingConfig>
+    GetQueryLoggingConfigResult& WithQueryLoggingConfig(QueryLoggingConfigT&& value) { SetQueryLoggingConfig(std::forward<QueryLoggingConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetQueryLoggingConfigResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetQueryLoggingConfigResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetQueryLoggingConfigResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetQueryLoggingConfigResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     QueryLoggingConfig m_queryLoggingConfig;
+    bool m_queryLoggingConfigHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

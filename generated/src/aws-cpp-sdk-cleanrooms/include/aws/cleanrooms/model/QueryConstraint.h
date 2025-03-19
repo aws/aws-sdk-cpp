@@ -32,7 +32,7 @@ namespace Model
   class QueryConstraint
   {
   public:
-    AWS_CLEANROOMS_API QueryConstraint();
+    AWS_CLEANROOMS_API QueryConstraint() = default;
     AWS_CLEANROOMS_API QueryConstraint(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API QueryConstraint& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>An array of column names that specifies which columns are required in the
      * JOIN statement.</p>
      */
-    inline const QueryConstraintRequireOverlap& GetRequireOverlap() const{ return m_requireOverlap; }
+    inline const QueryConstraintRequireOverlap& GetRequireOverlap() const { return m_requireOverlap; }
     inline bool RequireOverlapHasBeenSet() const { return m_requireOverlapHasBeenSet; }
-    inline void SetRequireOverlap(const QueryConstraintRequireOverlap& value) { m_requireOverlapHasBeenSet = true; m_requireOverlap = value; }
-    inline void SetRequireOverlap(QueryConstraintRequireOverlap&& value) { m_requireOverlapHasBeenSet = true; m_requireOverlap = std::move(value); }
-    inline QueryConstraint& WithRequireOverlap(const QueryConstraintRequireOverlap& value) { SetRequireOverlap(value); return *this;}
-    inline QueryConstraint& WithRequireOverlap(QueryConstraintRequireOverlap&& value) { SetRequireOverlap(std::move(value)); return *this;}
+    template<typename RequireOverlapT = QueryConstraintRequireOverlap>
+    void SetRequireOverlap(RequireOverlapT&& value) { m_requireOverlapHasBeenSet = true; m_requireOverlap = std::forward<RequireOverlapT>(value); }
+    template<typename RequireOverlapT = QueryConstraintRequireOverlap>
+    QueryConstraint& WithRequireOverlap(RequireOverlapT&& value) { SetRequireOverlap(std::forward<RequireOverlapT>(value)); return *this;}
     ///@}
   private:
 

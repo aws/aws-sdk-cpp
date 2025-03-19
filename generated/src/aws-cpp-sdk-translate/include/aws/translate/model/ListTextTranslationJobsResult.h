@@ -29,7 +29,7 @@ namespace Model
   class ListTextTranslationJobsResult
   {
   public:
-    AWS_TRANSLATE_API ListTextTranslationJobsResult();
+    AWS_TRANSLATE_API ListTextTranslationJobsResult() = default;
     AWS_TRANSLATE_API ListTextTranslationJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TRANSLATE_API ListTextTranslationJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list containing the properties of each job that is returned.</p>
      */
-    inline const Aws::Vector<TextTranslationJobProperties>& GetTextTranslationJobPropertiesList() const{ return m_textTranslationJobPropertiesList; }
-    inline void SetTextTranslationJobPropertiesList(const Aws::Vector<TextTranslationJobProperties>& value) { m_textTranslationJobPropertiesList = value; }
-    inline void SetTextTranslationJobPropertiesList(Aws::Vector<TextTranslationJobProperties>&& value) { m_textTranslationJobPropertiesList = std::move(value); }
-    inline ListTextTranslationJobsResult& WithTextTranslationJobPropertiesList(const Aws::Vector<TextTranslationJobProperties>& value) { SetTextTranslationJobPropertiesList(value); return *this;}
-    inline ListTextTranslationJobsResult& WithTextTranslationJobPropertiesList(Aws::Vector<TextTranslationJobProperties>&& value) { SetTextTranslationJobPropertiesList(std::move(value)); return *this;}
-    inline ListTextTranslationJobsResult& AddTextTranslationJobPropertiesList(const TextTranslationJobProperties& value) { m_textTranslationJobPropertiesList.push_back(value); return *this; }
-    inline ListTextTranslationJobsResult& AddTextTranslationJobPropertiesList(TextTranslationJobProperties&& value) { m_textTranslationJobPropertiesList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TextTranslationJobProperties>& GetTextTranslationJobPropertiesList() const { return m_textTranslationJobPropertiesList; }
+    template<typename TextTranslationJobPropertiesListT = Aws::Vector<TextTranslationJobProperties>>
+    void SetTextTranslationJobPropertiesList(TextTranslationJobPropertiesListT&& value) { m_textTranslationJobPropertiesListHasBeenSet = true; m_textTranslationJobPropertiesList = std::forward<TextTranslationJobPropertiesListT>(value); }
+    template<typename TextTranslationJobPropertiesListT = Aws::Vector<TextTranslationJobProperties>>
+    ListTextTranslationJobsResult& WithTextTranslationJobPropertiesList(TextTranslationJobPropertiesListT&& value) { SetTextTranslationJobPropertiesList(std::forward<TextTranslationJobPropertiesListT>(value)); return *this;}
+    template<typename TextTranslationJobPropertiesListT = TextTranslationJobProperties>
+    ListTextTranslationJobsResult& AddTextTranslationJobPropertiesList(TextTranslationJobPropertiesListT&& value) { m_textTranslationJobPropertiesListHasBeenSet = true; m_textTranslationJobPropertiesList.emplace_back(std::forward<TextTranslationJobPropertiesListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListTextTranslationJobsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListTextTranslationJobsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListTextTranslationJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListTextTranslationJobsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListTextTranslationJobsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListTextTranslationJobsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListTextTranslationJobsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListTextTranslationJobsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<TextTranslationJobProperties> m_textTranslationJobPropertiesList;
+    bool m_textTranslationJobPropertiesListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

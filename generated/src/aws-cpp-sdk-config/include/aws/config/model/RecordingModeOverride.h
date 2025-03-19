@@ -35,7 +35,7 @@ namespace Model
   class RecordingModeOverride
   {
   public:
-    AWS_CONFIGSERVICE_API RecordingModeOverride();
+    AWS_CONFIGSERVICE_API RecordingModeOverride() = default;
     AWS_CONFIGSERVICE_API RecordingModeOverride(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API RecordingModeOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>A description that you provide for the override.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline RecordingModeOverride& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline RecordingModeOverride& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline RecordingModeOverride& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    RecordingModeOverride& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,13 @@ namespace Model
      * <code>AWS::Config::ConformancePackCompliance</code> </p> </li> <li> <p>
      * <code>AWS::Config::ConfigurationRecorder</code> </p> </li> </ul> 
      */
-    inline const Aws::Vector<ResourceType>& GetResourceTypes() const{ return m_resourceTypes; }
+    inline const Aws::Vector<ResourceType>& GetResourceTypes() const { return m_resourceTypes; }
     inline bool ResourceTypesHasBeenSet() const { return m_resourceTypesHasBeenSet; }
-    inline void SetResourceTypes(const Aws::Vector<ResourceType>& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = value; }
-    inline void SetResourceTypes(Aws::Vector<ResourceType>&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = std::move(value); }
-    inline RecordingModeOverride& WithResourceTypes(const Aws::Vector<ResourceType>& value) { SetResourceTypes(value); return *this;}
-    inline RecordingModeOverride& WithResourceTypes(Aws::Vector<ResourceType>&& value) { SetResourceTypes(std::move(value)); return *this;}
-    inline RecordingModeOverride& AddResourceTypes(const ResourceType& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
-    inline RecordingModeOverride& AddResourceTypes(ResourceType&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(std::move(value)); return *this; }
+    template<typename ResourceTypesT = Aws::Vector<ResourceType>>
+    void SetResourceTypes(ResourceTypesT&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = std::forward<ResourceTypesT>(value); }
+    template<typename ResourceTypesT = Aws::Vector<ResourceType>>
+    RecordingModeOverride& WithResourceTypes(ResourceTypesT&& value) { SetResourceTypes(std::forward<ResourceTypesT>(value)); return *this;}
+    inline RecordingModeOverride& AddResourceTypes(ResourceType value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -86,12 +83,10 @@ namespace Model
      * resources. If you are using Firewall Manager, it is recommended that you set the
      * recording frequency to Continuous.</p> 
      */
-    inline const RecordingFrequency& GetRecordingFrequency() const{ return m_recordingFrequency; }
+    inline RecordingFrequency GetRecordingFrequency() const { return m_recordingFrequency; }
     inline bool RecordingFrequencyHasBeenSet() const { return m_recordingFrequencyHasBeenSet; }
-    inline void SetRecordingFrequency(const RecordingFrequency& value) { m_recordingFrequencyHasBeenSet = true; m_recordingFrequency = value; }
-    inline void SetRecordingFrequency(RecordingFrequency&& value) { m_recordingFrequencyHasBeenSet = true; m_recordingFrequency = std::move(value); }
-    inline RecordingModeOverride& WithRecordingFrequency(const RecordingFrequency& value) { SetRecordingFrequency(value); return *this;}
-    inline RecordingModeOverride& WithRecordingFrequency(RecordingFrequency&& value) { SetRecordingFrequency(std::move(value)); return *this;}
+    inline void SetRecordingFrequency(RecordingFrequency value) { m_recordingFrequencyHasBeenSet = true; m_recordingFrequency = value; }
+    inline RecordingModeOverride& WithRecordingFrequency(RecordingFrequency value) { SetRecordingFrequency(value); return *this;}
     ///@}
   private:
 
@@ -101,7 +96,7 @@ namespace Model
     Aws::Vector<ResourceType> m_resourceTypes;
     bool m_resourceTypesHasBeenSet = false;
 
-    RecordingFrequency m_recordingFrequency;
+    RecordingFrequency m_recordingFrequency{RecordingFrequency::NOT_SET};
     bool m_recordingFrequencyHasBeenSet = false;
   };
 

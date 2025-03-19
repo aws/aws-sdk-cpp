@@ -42,7 +42,7 @@ namespace Model
   class CachePolicyConfig
   {
   public:
-    AWS_CLOUDFRONT_API CachePolicyConfig();
+    AWS_CLOUDFRONT_API CachePolicyConfig() = default;
     AWS_CLOUDFRONT_API CachePolicyConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API CachePolicyConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -54,28 +54,24 @@ namespace Model
      * <p>A comment to describe the cache policy. The comment cannot be longer than 128
      * characters.</p>
      */
-    inline const Aws::String& GetComment() const{ return m_comment; }
+    inline const Aws::String& GetComment() const { return m_comment; }
     inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
-    inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
-    inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
-    inline void SetComment(const char* value) { m_commentHasBeenSet = true; m_comment.assign(value); }
-    inline CachePolicyConfig& WithComment(const Aws::String& value) { SetComment(value); return *this;}
-    inline CachePolicyConfig& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
-    inline CachePolicyConfig& WithComment(const char* value) { SetComment(value); return *this;}
+    template<typename CommentT = Aws::String>
+    void SetComment(CommentT&& value) { m_commentHasBeenSet = true; m_comment = std::forward<CommentT>(value); }
+    template<typename CommentT = Aws::String>
+    CachePolicyConfig& WithComment(CommentT&& value) { SetComment(std::forward<CommentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique name to identify the cache policy.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CachePolicyConfig& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CachePolicyConfig& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CachePolicyConfig& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CachePolicyConfig& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,7 +88,7 @@ namespace Model
      * seconds, then the default value for this field is the same as the value of
      * <code>MinTTL</code>.</p>
      */
-    inline long long GetDefaultTTL() const{ return m_defaultTTL; }
+    inline long long GetDefaultTTL() const { return m_defaultTTL; }
     inline bool DefaultTTLHasBeenSet() const { return m_defaultTTLHasBeenSet; }
     inline void SetDefaultTTL(long long value) { m_defaultTTLHasBeenSet = true; m_defaultTTL = value; }
     inline CachePolicyConfig& WithDefaultTTL(long long value) { SetDefaultTTL(value); return *this;}
@@ -112,7 +108,7 @@ namespace Model
      * <code>DefaultTTL</code> is more than 31536000 seconds, then the default value
      * for this field is the same as the value of <code>DefaultTTL</code>.</p>
      */
-    inline long long GetMaxTTL() const{ return m_maxTTL; }
+    inline long long GetMaxTTL() const { return m_maxTTL; }
     inline bool MaxTTLHasBeenSet() const { return m_maxTTLHasBeenSet; }
     inline void SetMaxTTL(long long value) { m_maxTTLHasBeenSet = true; m_maxTTL = value; }
     inline CachePolicyConfig& WithMaxTTL(long long value) { SetMaxTTL(value); return *this;}
@@ -127,7 +123,7 @@ namespace Model
      * How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon
      * CloudFront Developer Guide</i>.</p>
      */
-    inline long long GetMinTTL() const{ return m_minTTL; }
+    inline long long GetMinTTL() const { return m_minTTL; }
     inline bool MinTTLHasBeenSet() const { return m_minTTLHasBeenSet; }
     inline void SetMinTTL(long long value) { m_minTTLHasBeenSet = true; m_minTTL = value; }
     inline CachePolicyConfig& WithMinTTL(long long value) { SetMinTTL(value); return *this;}
@@ -139,12 +135,12 @@ namespace Model
      * The values included in the cache key are also included in requests that
      * CloudFront sends to the origin.</p>
      */
-    inline const ParametersInCacheKeyAndForwardedToOrigin& GetParametersInCacheKeyAndForwardedToOrigin() const{ return m_parametersInCacheKeyAndForwardedToOrigin; }
+    inline const ParametersInCacheKeyAndForwardedToOrigin& GetParametersInCacheKeyAndForwardedToOrigin() const { return m_parametersInCacheKeyAndForwardedToOrigin; }
     inline bool ParametersInCacheKeyAndForwardedToOriginHasBeenSet() const { return m_parametersInCacheKeyAndForwardedToOriginHasBeenSet; }
-    inline void SetParametersInCacheKeyAndForwardedToOrigin(const ParametersInCacheKeyAndForwardedToOrigin& value) { m_parametersInCacheKeyAndForwardedToOriginHasBeenSet = true; m_parametersInCacheKeyAndForwardedToOrigin = value; }
-    inline void SetParametersInCacheKeyAndForwardedToOrigin(ParametersInCacheKeyAndForwardedToOrigin&& value) { m_parametersInCacheKeyAndForwardedToOriginHasBeenSet = true; m_parametersInCacheKeyAndForwardedToOrigin = std::move(value); }
-    inline CachePolicyConfig& WithParametersInCacheKeyAndForwardedToOrigin(const ParametersInCacheKeyAndForwardedToOrigin& value) { SetParametersInCacheKeyAndForwardedToOrigin(value); return *this;}
-    inline CachePolicyConfig& WithParametersInCacheKeyAndForwardedToOrigin(ParametersInCacheKeyAndForwardedToOrigin&& value) { SetParametersInCacheKeyAndForwardedToOrigin(std::move(value)); return *this;}
+    template<typename ParametersInCacheKeyAndForwardedToOriginT = ParametersInCacheKeyAndForwardedToOrigin>
+    void SetParametersInCacheKeyAndForwardedToOrigin(ParametersInCacheKeyAndForwardedToOriginT&& value) { m_parametersInCacheKeyAndForwardedToOriginHasBeenSet = true; m_parametersInCacheKeyAndForwardedToOrigin = std::forward<ParametersInCacheKeyAndForwardedToOriginT>(value); }
+    template<typename ParametersInCacheKeyAndForwardedToOriginT = ParametersInCacheKeyAndForwardedToOrigin>
+    CachePolicyConfig& WithParametersInCacheKeyAndForwardedToOrigin(ParametersInCacheKeyAndForwardedToOriginT&& value) { SetParametersInCacheKeyAndForwardedToOrigin(std::forward<ParametersInCacheKeyAndForwardedToOriginT>(value)); return *this;}
     ///@}
   private:
 
@@ -154,13 +150,13 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    long long m_defaultTTL;
+    long long m_defaultTTL{0};
     bool m_defaultTTLHasBeenSet = false;
 
-    long long m_maxTTL;
+    long long m_maxTTL{0};
     bool m_maxTTLHasBeenSet = false;
 
-    long long m_minTTL;
+    long long m_minTTL{0};
     bool m_minTTLHasBeenSet = false;
 
     ParametersInCacheKeyAndForwardedToOrigin m_parametersInCacheKeyAndForwardedToOrigin;

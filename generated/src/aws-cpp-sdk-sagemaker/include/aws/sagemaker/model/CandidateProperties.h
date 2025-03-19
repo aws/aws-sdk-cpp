@@ -33,7 +33,7 @@ namespace Model
   class CandidateProperties
   {
   public:
-    AWS_SAGEMAKER_API CandidateProperties();
+    AWS_SAGEMAKER_API CandidateProperties() = default;
     AWS_SAGEMAKER_API CandidateProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API CandidateProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,26 @@ namespace Model
     /**
      * <p>The Amazon S3 prefix to the artifacts generated for an AutoML candidate.</p>
      */
-    inline const CandidateArtifactLocations& GetCandidateArtifactLocations() const{ return m_candidateArtifactLocations; }
+    inline const CandidateArtifactLocations& GetCandidateArtifactLocations() const { return m_candidateArtifactLocations; }
     inline bool CandidateArtifactLocationsHasBeenSet() const { return m_candidateArtifactLocationsHasBeenSet; }
-    inline void SetCandidateArtifactLocations(const CandidateArtifactLocations& value) { m_candidateArtifactLocationsHasBeenSet = true; m_candidateArtifactLocations = value; }
-    inline void SetCandidateArtifactLocations(CandidateArtifactLocations&& value) { m_candidateArtifactLocationsHasBeenSet = true; m_candidateArtifactLocations = std::move(value); }
-    inline CandidateProperties& WithCandidateArtifactLocations(const CandidateArtifactLocations& value) { SetCandidateArtifactLocations(value); return *this;}
-    inline CandidateProperties& WithCandidateArtifactLocations(CandidateArtifactLocations&& value) { SetCandidateArtifactLocations(std::move(value)); return *this;}
+    template<typename CandidateArtifactLocationsT = CandidateArtifactLocations>
+    void SetCandidateArtifactLocations(CandidateArtifactLocationsT&& value) { m_candidateArtifactLocationsHasBeenSet = true; m_candidateArtifactLocations = std::forward<CandidateArtifactLocationsT>(value); }
+    template<typename CandidateArtifactLocationsT = CandidateArtifactLocations>
+    CandidateProperties& WithCandidateArtifactLocations(CandidateArtifactLocationsT&& value) { SetCandidateArtifactLocations(std::forward<CandidateArtifactLocationsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the candidate metrics for an AutoML job.</p>
      */
-    inline const Aws::Vector<MetricDatum>& GetCandidateMetrics() const{ return m_candidateMetrics; }
+    inline const Aws::Vector<MetricDatum>& GetCandidateMetrics() const { return m_candidateMetrics; }
     inline bool CandidateMetricsHasBeenSet() const { return m_candidateMetricsHasBeenSet; }
-    inline void SetCandidateMetrics(const Aws::Vector<MetricDatum>& value) { m_candidateMetricsHasBeenSet = true; m_candidateMetrics = value; }
-    inline void SetCandidateMetrics(Aws::Vector<MetricDatum>&& value) { m_candidateMetricsHasBeenSet = true; m_candidateMetrics = std::move(value); }
-    inline CandidateProperties& WithCandidateMetrics(const Aws::Vector<MetricDatum>& value) { SetCandidateMetrics(value); return *this;}
-    inline CandidateProperties& WithCandidateMetrics(Aws::Vector<MetricDatum>&& value) { SetCandidateMetrics(std::move(value)); return *this;}
-    inline CandidateProperties& AddCandidateMetrics(const MetricDatum& value) { m_candidateMetricsHasBeenSet = true; m_candidateMetrics.push_back(value); return *this; }
-    inline CandidateProperties& AddCandidateMetrics(MetricDatum&& value) { m_candidateMetricsHasBeenSet = true; m_candidateMetrics.push_back(std::move(value)); return *this; }
+    template<typename CandidateMetricsT = Aws::Vector<MetricDatum>>
+    void SetCandidateMetrics(CandidateMetricsT&& value) { m_candidateMetricsHasBeenSet = true; m_candidateMetrics = std::forward<CandidateMetricsT>(value); }
+    template<typename CandidateMetricsT = Aws::Vector<MetricDatum>>
+    CandidateProperties& WithCandidateMetrics(CandidateMetricsT&& value) { SetCandidateMetrics(std::forward<CandidateMetricsT>(value)); return *this;}
+    template<typename CandidateMetricsT = MetricDatum>
+    CandidateProperties& AddCandidateMetrics(CandidateMetricsT&& value) { m_candidateMetricsHasBeenSet = true; m_candidateMetrics.emplace_back(std::forward<CandidateMetricsT>(value)); return *this; }
     ///@}
   private:
 

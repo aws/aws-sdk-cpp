@@ -18,16 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-CSV::CSV() : 
-    m_quoteCharacterHasBeenSet(false),
-    m_delimiterHasBeenSet(false),
-    m_columnsHasBeenSet(false),
-    m_sourceHasBeenSet(false)
-{
-}
-
 CSV::CSV(JsonView jsonValue)
-  : CSV()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ CSV& CSV::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("quoteCharacter"))
   {
     m_quoteCharacter = jsonValue.GetString("quoteCharacter");
-
     m_quoteCharacterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("delimiter"))
   {
     m_delimiter = jsonValue.GetString("delimiter");
-
     m_delimiterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("columns"))
   {
     Aws::Utils::Array<JsonView> columnsJsonList = jsonValue.GetArray("columns");
@@ -57,14 +44,11 @@ CSV& CSV::operator =(JsonView jsonValue)
     }
     m_columnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("source"))
   {
     m_source = jsonValue.GetString("source");
-
     m_sourceHasBeenSet = true;
   }
-
   return *this;
 }
 

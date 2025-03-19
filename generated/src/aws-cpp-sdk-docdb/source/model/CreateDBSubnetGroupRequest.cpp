@@ -10,14 +10,6 @@
 using namespace Aws::DocDB::Model;
 using namespace Aws::Utils;
 
-CreateDBSubnetGroupRequest::CreateDBSubnetGroupRequest() : 
-    m_dBSubnetGroupNameHasBeenSet(false),
-    m_dBSubnetGroupDescriptionHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateDBSubnetGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -18,20 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-ConfigurationOptions::ConfigurationOptions() : 
-    m_integerHasBeenSet(false),
-    m_integerListHasBeenSet(false),
-    m_doubleHasBeenSet(false),
-    m_stringHasBeenSet(false),
-    m_stringListHasBeenSet(false),
-    m_booleanHasBeenSet(false),
-    m_enumHasBeenSet(false),
-    m_enumListHasBeenSet(false)
-{
-}
-
 ConfigurationOptions::ConfigurationOptions(JsonView jsonValue)
-  : ConfigurationOptions()
 {
   *this = jsonValue;
 }
@@ -41,59 +28,43 @@ ConfigurationOptions& ConfigurationOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Integer"))
   {
     m_integer = jsonValue.GetObject("Integer");
-
     m_integerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IntegerList"))
   {
     m_integerList = jsonValue.GetObject("IntegerList");
-
     m_integerListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Double"))
   {
     m_double = jsonValue.GetObject("Double");
-
     m_doubleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("String"))
   {
     m_string = jsonValue.GetObject("String");
-
     m_stringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StringList"))
   {
     m_stringList = jsonValue.GetObject("StringList");
-
     m_stringListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Boolean"))
   {
     m_boolean = jsonValue.GetObject("Boolean");
-
     m_booleanHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Enum"))
   {
     m_enum = jsonValue.GetObject("Enum");
-
     m_enumHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnumList"))
   {
     m_enumList = jsonValue.GetObject("EnumList");
-
     m_enumListHasBeenSet = true;
   }
-
   return *this;
 }
 

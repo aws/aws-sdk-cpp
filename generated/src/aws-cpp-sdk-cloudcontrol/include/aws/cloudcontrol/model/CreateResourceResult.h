@@ -28,7 +28,7 @@ namespace Model
   class CreateResourceResult
   {
   public:
-    AWS_CLOUDCONTROLAPI_API CreateResourceResult();
+    AWS_CLOUDCONTROLAPI_API CreateResourceResult() = default;
     AWS_CLOUDCONTROLAPI_API CreateResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDCONTROLAPI_API CreateResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,28 +42,28 @@ namespace Model
      * using the <code>RequestToken</code> of the <code>ProgressEvent</code> returned
      * by <code>CreateResource</code>.</p>
      */
-    inline const ProgressEvent& GetProgressEvent() const{ return m_progressEvent; }
-    inline void SetProgressEvent(const ProgressEvent& value) { m_progressEvent = value; }
-    inline void SetProgressEvent(ProgressEvent&& value) { m_progressEvent = std::move(value); }
-    inline CreateResourceResult& WithProgressEvent(const ProgressEvent& value) { SetProgressEvent(value); return *this;}
-    inline CreateResourceResult& WithProgressEvent(ProgressEvent&& value) { SetProgressEvent(std::move(value)); return *this;}
+    inline const ProgressEvent& GetProgressEvent() const { return m_progressEvent; }
+    template<typename ProgressEventT = ProgressEvent>
+    void SetProgressEvent(ProgressEventT&& value) { m_progressEventHasBeenSet = true; m_progressEvent = std::forward<ProgressEventT>(value); }
+    template<typename ProgressEventT = ProgressEvent>
+    CreateResourceResult& WithProgressEvent(ProgressEventT&& value) { SetProgressEvent(std::forward<ProgressEventT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateResourceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateResourceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateResourceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateResourceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ProgressEvent m_progressEvent;
+    bool m_progressEventHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

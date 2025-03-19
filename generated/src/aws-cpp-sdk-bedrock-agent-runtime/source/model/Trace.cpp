@@ -18,19 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-Trace::Trace() : 
-    m_customOrchestrationTraceHasBeenSet(false),
-    m_failureTraceHasBeenSet(false),
-    m_guardrailTraceHasBeenSet(false),
-    m_orchestrationTraceHasBeenSet(false),
-    m_postProcessingTraceHasBeenSet(false),
-    m_preProcessingTraceHasBeenSet(false),
-    m_routingClassifierTraceHasBeenSet(false)
-{
-}
-
 Trace::Trace(JsonView jsonValue)
-  : Trace()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ Trace& Trace::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("customOrchestrationTrace"))
   {
     m_customOrchestrationTrace = jsonValue.GetObject("customOrchestrationTrace");
-
     m_customOrchestrationTraceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureTrace"))
   {
     m_failureTrace = jsonValue.GetObject("failureTrace");
-
     m_failureTraceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("guardrailTrace"))
   {
     m_guardrailTrace = jsonValue.GetObject("guardrailTrace");
-
     m_guardrailTraceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("orchestrationTrace"))
   {
     m_orchestrationTrace = jsonValue.GetObject("orchestrationTrace");
-
     m_orchestrationTraceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("postProcessingTrace"))
   {
     m_postProcessingTrace = jsonValue.GetObject("postProcessingTrace");
-
     m_postProcessingTraceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("preProcessingTrace"))
   {
     m_preProcessingTrace = jsonValue.GetObject("preProcessingTrace");
-
     m_preProcessingTraceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("routingClassifierTrace"))
   {
     m_routingClassifierTrace = jsonValue.GetObject("routingClassifierTrace");
-
     m_routingClassifierTraceHasBeenSet = true;
   }
-
   return *this;
 }
 

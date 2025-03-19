@@ -18,14 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-UserPoolPolicyType::UserPoolPolicyType() : 
-    m_passwordPolicyHasBeenSet(false),
-    m_signInPolicyHasBeenSet(false)
-{
-}
-
 UserPoolPolicyType::UserPoolPolicyType(JsonView jsonValue)
-  : UserPoolPolicyType()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ UserPoolPolicyType& UserPoolPolicyType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PasswordPolicy"))
   {
     m_passwordPolicy = jsonValue.GetObject("PasswordPolicy");
-
     m_passwordPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SignInPolicy"))
   {
     m_signInPolicy = jsonValue.GetObject("SignInPolicy");
-
     m_signInPolicyHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class RepositorySyncEvent
   {
   public:
-    AWS_PROTON_API RepositorySyncEvent();
+    AWS_PROTON_API RepositorySyncEvent() = default;
     AWS_PROTON_API RepositorySyncEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_PROTON_API RepositorySyncEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PROTON_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,54 +43,48 @@ namespace Model
     /**
      * <p>Event detail for a repository sync attempt.</p>
      */
-    inline const Aws::String& GetEvent() const{ return m_event; }
+    inline const Aws::String& GetEvent() const { return m_event; }
     inline bool EventHasBeenSet() const { return m_eventHasBeenSet; }
-    inline void SetEvent(const Aws::String& value) { m_eventHasBeenSet = true; m_event = value; }
-    inline void SetEvent(Aws::String&& value) { m_eventHasBeenSet = true; m_event = std::move(value); }
-    inline void SetEvent(const char* value) { m_eventHasBeenSet = true; m_event.assign(value); }
-    inline RepositorySyncEvent& WithEvent(const Aws::String& value) { SetEvent(value); return *this;}
-    inline RepositorySyncEvent& WithEvent(Aws::String&& value) { SetEvent(std::move(value)); return *this;}
-    inline RepositorySyncEvent& WithEvent(const char* value) { SetEvent(value); return *this;}
+    template<typename EventT = Aws::String>
+    void SetEvent(EventT&& value) { m_eventHasBeenSet = true; m_event = std::forward<EventT>(value); }
+    template<typename EventT = Aws::String>
+    RepositorySyncEvent& WithEvent(EventT&& value) { SetEvent(std::forward<EventT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The external ID of the sync event.</p>
      */
-    inline const Aws::String& GetExternalId() const{ return m_externalId; }
+    inline const Aws::String& GetExternalId() const { return m_externalId; }
     inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
-    inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
-    inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
-    inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
-    inline RepositorySyncEvent& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
-    inline RepositorySyncEvent& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
-    inline RepositorySyncEvent& WithExternalId(const char* value) { SetExternalId(value); return *this;}
+    template<typename ExternalIdT = Aws::String>
+    void SetExternalId(ExternalIdT&& value) { m_externalIdHasBeenSet = true; m_externalId = std::forward<ExternalIdT>(value); }
+    template<typename ExternalIdT = Aws::String>
+    RepositorySyncEvent& WithExternalId(ExternalIdT&& value) { SetExternalId(std::forward<ExternalIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time that the sync event occurred.</p>
      */
-    inline const Aws::Utils::DateTime& GetTime() const{ return m_time; }
+    inline const Aws::Utils::DateTime& GetTime() const { return m_time; }
     inline bool TimeHasBeenSet() const { return m_timeHasBeenSet; }
-    inline void SetTime(const Aws::Utils::DateTime& value) { m_timeHasBeenSet = true; m_time = value; }
-    inline void SetTime(Aws::Utils::DateTime&& value) { m_timeHasBeenSet = true; m_time = std::move(value); }
-    inline RepositorySyncEvent& WithTime(const Aws::Utils::DateTime& value) { SetTime(value); return *this;}
-    inline RepositorySyncEvent& WithTime(Aws::Utils::DateTime&& value) { SetTime(std::move(value)); return *this;}
+    template<typename TimeT = Aws::Utils::DateTime>
+    void SetTime(TimeT&& value) { m_timeHasBeenSet = true; m_time = std::forward<TimeT>(value); }
+    template<typename TimeT = Aws::Utils::DateTime>
+    RepositorySyncEvent& WithTime(TimeT&& value) { SetTime(std::forward<TimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of event.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline RepositorySyncEvent& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline RepositorySyncEvent& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline RepositorySyncEvent& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    RepositorySyncEvent& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
   private:
 
@@ -100,7 +94,7 @@ namespace Model
     Aws::String m_externalId;
     bool m_externalIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_time;
+    Aws::Utils::DateTime m_time{};
     bool m_timeHasBeenSet = false;
 
     Aws::String m_type;

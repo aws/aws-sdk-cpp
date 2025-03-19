@@ -18,14 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-DefaultMessage::DefaultMessage() : 
-    m_bodyHasBeenSet(false),
-    m_substitutionsHasBeenSet(false)
-{
-}
-
 DefaultMessage::DefaultMessage(JsonView jsonValue)
-  : DefaultMessage()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ DefaultMessage& DefaultMessage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Body"))
   {
     m_body = jsonValue.GetString("Body");
-
     m_bodyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Substitutions"))
   {
     Aws::Map<Aws::String, JsonView> substitutionsJsonMap = jsonValue.GetObject("Substitutions").GetAllObjects();
@@ -55,7 +46,6 @@ DefaultMessage& DefaultMessage::operator =(JsonView jsonValue)
     }
     m_substitutionsHasBeenSet = true;
   }
-
   return *this;
 }
 

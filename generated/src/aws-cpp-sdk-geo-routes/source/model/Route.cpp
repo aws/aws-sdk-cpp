@@ -18,15 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-Route::Route() : 
-    m_legsHasBeenSet(false),
-    m_majorRoadLabelsHasBeenSet(false),
-    m_summaryHasBeenSet(false)
-{
-}
-
 Route::Route(JsonView jsonValue)
-  : Route()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ Route& Route::operator =(JsonView jsonValue)
     }
     m_legsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MajorRoadLabels"))
   {
     Aws::Utils::Array<JsonView> majorRoadLabelsJsonList = jsonValue.GetArray("MajorRoadLabels");
@@ -52,14 +43,11 @@ Route& Route::operator =(JsonView jsonValue)
     }
     m_majorRoadLabelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Summary"))
   {
     m_summary = jsonValue.GetObject("Summary");
-
     m_summaryHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -26,7 +26,7 @@ namespace Model
   class CreateTapesRequest : public StorageGatewayRequest
   {
   public:
-    AWS_STORAGEGATEWAY_API CreateTapesRequest();
+    AWS_STORAGEGATEWAY_API CreateTapesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * associate the virtual tapes with. Use the <a>ListGateways</a> operation to
      * return a list of gateways for your account and Amazon Web Services Region.</p>
      */
-    inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
+    inline const Aws::String& GetGatewayARN() const { return m_gatewayARN; }
     inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
-    inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
-    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::move(value); }
-    inline void SetGatewayARN(const char* value) { m_gatewayARNHasBeenSet = true; m_gatewayARN.assign(value); }
-    inline CreateTapesRequest& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
-    inline CreateTapesRequest& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
-    inline CreateTapesRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+    template<typename GatewayARNT = Aws::String>
+    void SetGatewayARN(GatewayARNT&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::forward<GatewayARNT>(value); }
+    template<typename GatewayARNT = Aws::String>
+    CreateTapesRequest& WithGatewayARN(GatewayARNT&& value) { SetGatewayARN(std::forward<GatewayARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,7 +58,7 @@ namespace Model
      * <p>The size, in bytes, of the virtual tapes that you want to create.</p> 
      * <p>The size must be aligned by gigabyte (1024*1024*1024 bytes).</p> 
      */
-    inline long long GetTapeSizeInBytes() const{ return m_tapeSizeInBytes; }
+    inline long long GetTapeSizeInBytes() const { return m_tapeSizeInBytes; }
     inline bool TapeSizeInBytesHasBeenSet() const { return m_tapeSizeInBytesHasBeenSet; }
     inline void SetTapeSizeInBytes(long long value) { m_tapeSizeInBytesHasBeenSet = true; m_tapeSizeInBytes = value; }
     inline CreateTapesRequest& WithTapeSizeInBytes(long long value) { SetTapeSizeInBytes(value); return *this;}
@@ -73,21 +71,19 @@ namespace Model
      *  <p>Using the same <code>ClientToken</code> prevents creating the tape
      * multiple times.</p> 
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateTapesRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateTapesRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateTapesRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateTapesRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of virtual tapes that you want to create.</p>
      */
-    inline int GetNumTapesToCreate() const{ return m_numTapesToCreate; }
+    inline int GetNumTapesToCreate() const { return m_numTapesToCreate; }
     inline bool NumTapesToCreateHasBeenSet() const { return m_numTapesToCreateHasBeenSet; }
     inline void SetNumTapesToCreate(int value) { m_numTapesToCreateHasBeenSet = true; m_numTapesToCreate = value; }
     inline CreateTapesRequest& WithNumTapesToCreate(int value) { SetNumTapesToCreate(value); return *this;}
@@ -100,14 +96,12 @@ namespace Model
      * characters in length and must be one of the uppercase letters from A to Z.</p>
      * 
      */
-    inline const Aws::String& GetTapeBarcodePrefix() const{ return m_tapeBarcodePrefix; }
+    inline const Aws::String& GetTapeBarcodePrefix() const { return m_tapeBarcodePrefix; }
     inline bool TapeBarcodePrefixHasBeenSet() const { return m_tapeBarcodePrefixHasBeenSet; }
-    inline void SetTapeBarcodePrefix(const Aws::String& value) { m_tapeBarcodePrefixHasBeenSet = true; m_tapeBarcodePrefix = value; }
-    inline void SetTapeBarcodePrefix(Aws::String&& value) { m_tapeBarcodePrefixHasBeenSet = true; m_tapeBarcodePrefix = std::move(value); }
-    inline void SetTapeBarcodePrefix(const char* value) { m_tapeBarcodePrefixHasBeenSet = true; m_tapeBarcodePrefix.assign(value); }
-    inline CreateTapesRequest& WithTapeBarcodePrefix(const Aws::String& value) { SetTapeBarcodePrefix(value); return *this;}
-    inline CreateTapesRequest& WithTapeBarcodePrefix(Aws::String&& value) { SetTapeBarcodePrefix(std::move(value)); return *this;}
-    inline CreateTapesRequest& WithTapeBarcodePrefix(const char* value) { SetTapeBarcodePrefix(value); return *this;}
+    template<typename TapeBarcodePrefixT = Aws::String>
+    void SetTapeBarcodePrefix(TapeBarcodePrefixT&& value) { m_tapeBarcodePrefixHasBeenSet = true; m_tapeBarcodePrefix = std::forward<TapeBarcodePrefixT>(value); }
+    template<typename TapeBarcodePrefixT = Aws::String>
+    CreateTapesRequest& WithTapeBarcodePrefix(TapeBarcodePrefixT&& value) { SetTapeBarcodePrefix(std::forward<TapeBarcodePrefixT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,7 +110,7 @@ namespace Model
      * own KMS key, or <code>false</code> to use a key managed by Amazon S3.
      * Optional.</p> <p>Valid Values: <code>true</code> | <code>false</code> </p>
      */
-    inline bool GetKMSEncrypted() const{ return m_kMSEncrypted; }
+    inline bool GetKMSEncrypted() const { return m_kMSEncrypted; }
     inline bool KMSEncryptedHasBeenSet() const { return m_kMSEncryptedHasBeenSet; }
     inline void SetKMSEncrypted(bool value) { m_kMSEncryptedHasBeenSet = true; m_kMSEncrypted = value; }
     inline CreateTapesRequest& WithKMSEncrypted(bool value) { SetKMSEncrypted(value); return *this;}
@@ -129,14 +123,12 @@ namespace Model
      * asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is
      * <code>true</code>. Optional.</p>
      */
-    inline const Aws::String& GetKMSKey() const{ return m_kMSKey; }
+    inline const Aws::String& GetKMSKey() const { return m_kMSKey; }
     inline bool KMSKeyHasBeenSet() const { return m_kMSKeyHasBeenSet; }
-    inline void SetKMSKey(const Aws::String& value) { m_kMSKeyHasBeenSet = true; m_kMSKey = value; }
-    inline void SetKMSKey(Aws::String&& value) { m_kMSKeyHasBeenSet = true; m_kMSKey = std::move(value); }
-    inline void SetKMSKey(const char* value) { m_kMSKeyHasBeenSet = true; m_kMSKey.assign(value); }
-    inline CreateTapesRequest& WithKMSKey(const Aws::String& value) { SetKMSKey(value); return *this;}
-    inline CreateTapesRequest& WithKMSKey(Aws::String&& value) { SetKMSKey(std::move(value)); return *this;}
-    inline CreateTapesRequest& WithKMSKey(const char* value) { SetKMSKey(value); return *this;}
+    template<typename KMSKeyT = Aws::String>
+    void SetKMSKey(KMSKeyT&& value) { m_kMSKeyHasBeenSet = true; m_kMSKey = std::forward<KMSKeyT>(value); }
+    template<typename KMSKeyT = Aws::String>
+    CreateTapesRequest& WithKMSKey(KMSKeyT&& value) { SetKMSKey(std::forward<KMSKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -147,14 +139,12 @@ namespace Model
      * archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive)
      * that corresponds to the pool.</p>
      */
-    inline const Aws::String& GetPoolId() const{ return m_poolId; }
+    inline const Aws::String& GetPoolId() const { return m_poolId; }
     inline bool PoolIdHasBeenSet() const { return m_poolIdHasBeenSet; }
-    inline void SetPoolId(const Aws::String& value) { m_poolIdHasBeenSet = true; m_poolId = value; }
-    inline void SetPoolId(Aws::String&& value) { m_poolIdHasBeenSet = true; m_poolId = std::move(value); }
-    inline void SetPoolId(const char* value) { m_poolIdHasBeenSet = true; m_poolId.assign(value); }
-    inline CreateTapesRequest& WithPoolId(const Aws::String& value) { SetPoolId(value); return *this;}
-    inline CreateTapesRequest& WithPoolId(Aws::String&& value) { SetPoolId(std::move(value)); return *this;}
-    inline CreateTapesRequest& WithPoolId(const char* value) { SetPoolId(value); return *this;}
+    template<typename PoolIdT = Aws::String>
+    void SetPoolId(PoolIdT&& value) { m_poolIdHasBeenSet = true; m_poolId = std::forward<PoolIdT>(value); }
+    template<typename PoolIdT = Aws::String>
+    CreateTapesRequest& WithPoolId(PoolIdT&& value) { SetPoolId(std::forward<PoolIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -162,7 +152,7 @@ namespace Model
      * <p>Set to <code>TRUE</code> if the tape you are creating is to be configured as
      * a write-once-read-many (WORM) tape.</p>
      */
-    inline bool GetWorm() const{ return m_worm; }
+    inline bool GetWorm() const { return m_worm; }
     inline bool WormHasBeenSet() const { return m_wormHasBeenSet; }
     inline void SetWorm(bool value) { m_wormHasBeenSet = true; m_worm = value; }
     inline CreateTapesRequest& WithWorm(bool value) { SetWorm(value); return *this;}
@@ -176,33 +166,33 @@ namespace Model
      * characters: + - = . _ : / @. The maximum length of a tag's key is 128
      * characters, and the maximum length for a tag's value is 256.</p> 
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateTapesRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateTapesRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateTapesRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateTapesRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateTapesRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateTapesRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_gatewayARN;
     bool m_gatewayARNHasBeenSet = false;
 
-    long long m_tapeSizeInBytes;
+    long long m_tapeSizeInBytes{0};
     bool m_tapeSizeInBytesHasBeenSet = false;
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
 
-    int m_numTapesToCreate;
+    int m_numTapesToCreate{0};
     bool m_numTapesToCreateHasBeenSet = false;
 
     Aws::String m_tapeBarcodePrefix;
     bool m_tapeBarcodePrefixHasBeenSet = false;
 
-    bool m_kMSEncrypted;
+    bool m_kMSEncrypted{false};
     bool m_kMSEncryptedHasBeenSet = false;
 
     Aws::String m_kMSKey;
@@ -211,7 +201,7 @@ namespace Model
     Aws::String m_poolId;
     bool m_poolIdHasBeenSet = false;
 
-    bool m_worm;
+    bool m_worm{false};
     bool m_wormHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;

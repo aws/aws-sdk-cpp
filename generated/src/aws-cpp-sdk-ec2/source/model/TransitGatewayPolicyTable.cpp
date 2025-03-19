@@ -20,18 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TransitGatewayPolicyTable::TransitGatewayPolicyTable() : 
-    m_transitGatewayPolicyTableIdHasBeenSet(false),
-    m_transitGatewayIdHasBeenSet(false),
-    m_state(TransitGatewayPolicyTableState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 TransitGatewayPolicyTable::TransitGatewayPolicyTable(const XmlNode& xmlNode)
-  : TransitGatewayPolicyTable()
 {
   *this = xmlNode;
 }
@@ -57,7 +46,7 @@ TransitGatewayPolicyTable& TransitGatewayPolicyTable::operator =(const XmlNode& 
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = TransitGatewayPolicyTableStateMapper::GetTransitGatewayPolicyTableStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = TransitGatewayPolicyTableStateMapper::GetTransitGatewayPolicyTableStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode creationTimeNode = resultNode.FirstChild("creationTime");
@@ -70,6 +59,7 @@ TransitGatewayPolicyTable& TransitGatewayPolicyTable::operator =(const XmlNode& 
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

@@ -23,7 +23,7 @@ namespace Model
   class UpdateSensitivityInspectionTemplateRequest : public Macie2Request
   {
   public:
-    AWS_MACIE2_API UpdateSensitivityInspectionTemplateRequest();
+    AWS_MACIE2_API UpdateSensitivityInspectionTemplateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>A custom description of the template. The description can contain as many as
      * 200 characters.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateSensitivityInspectionTemplateRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateSensitivityInspectionTemplateRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateSensitivityInspectionTemplateRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateSensitivityInspectionTemplateRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +56,12 @@ namespace Model
      * SensitivityInspectionTemplateIncludes.customDataIdentifierIds properties,
      * respectively.</p>
      */
-    inline const SensitivityInspectionTemplateExcludes& GetExcludes() const{ return m_excludes; }
+    inline const SensitivityInspectionTemplateExcludes& GetExcludes() const { return m_excludes; }
     inline bool ExcludesHasBeenSet() const { return m_excludesHasBeenSet; }
-    inline void SetExcludes(const SensitivityInspectionTemplateExcludes& value) { m_excludesHasBeenSet = true; m_excludes = value; }
-    inline void SetExcludes(SensitivityInspectionTemplateExcludes&& value) { m_excludesHasBeenSet = true; m_excludes = std::move(value); }
-    inline UpdateSensitivityInspectionTemplateRequest& WithExcludes(const SensitivityInspectionTemplateExcludes& value) { SetExcludes(value); return *this;}
-    inline UpdateSensitivityInspectionTemplateRequest& WithExcludes(SensitivityInspectionTemplateExcludes&& value) { SetExcludes(std::move(value)); return *this;}
+    template<typename ExcludesT = SensitivityInspectionTemplateExcludes>
+    void SetExcludes(ExcludesT&& value) { m_excludesHasBeenSet = true; m_excludes = std::forward<ExcludesT>(value); }
+    template<typename ExcludesT = SensitivityInspectionTemplateExcludes>
+    UpdateSensitivityInspectionTemplateRequest& WithExcludes(ExcludesT&& value) { SetExcludes(std::forward<ExcludesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +69,12 @@ namespace Model
      * <p>The unique identifier for the Amazon Macie resource that the request applies
      * to.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline UpdateSensitivityInspectionTemplateRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline UpdateSensitivityInspectionTemplateRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline UpdateSensitivityInspectionTemplateRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    UpdateSensitivityInspectionTemplateRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,12 +82,12 @@ namespace Model
      * <p>The allow lists, custom data identifiers, and managed data identifiers to
      * explicitly include (use) when performing automated sensitive data discovery.</p>
      */
-    inline const SensitivityInspectionTemplateIncludes& GetIncludes() const{ return m_includes; }
+    inline const SensitivityInspectionTemplateIncludes& GetIncludes() const { return m_includes; }
     inline bool IncludesHasBeenSet() const { return m_includesHasBeenSet; }
-    inline void SetIncludes(const SensitivityInspectionTemplateIncludes& value) { m_includesHasBeenSet = true; m_includes = value; }
-    inline void SetIncludes(SensitivityInspectionTemplateIncludes&& value) { m_includesHasBeenSet = true; m_includes = std::move(value); }
-    inline UpdateSensitivityInspectionTemplateRequest& WithIncludes(const SensitivityInspectionTemplateIncludes& value) { SetIncludes(value); return *this;}
-    inline UpdateSensitivityInspectionTemplateRequest& WithIncludes(SensitivityInspectionTemplateIncludes&& value) { SetIncludes(std::move(value)); return *this;}
+    template<typename IncludesT = SensitivityInspectionTemplateIncludes>
+    void SetIncludes(IncludesT&& value) { m_includesHasBeenSet = true; m_includes = std::forward<IncludesT>(value); }
+    template<typename IncludesT = SensitivityInspectionTemplateIncludes>
+    UpdateSensitivityInspectionTemplateRequest& WithIncludes(IncludesT&& value) { SetIncludes(std::forward<IncludesT>(value)); return *this;}
     ///@}
   private:
 

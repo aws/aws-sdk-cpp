@@ -15,17 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListResourceEndpointAssociationsRequest::ListResourceEndpointAssociationsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_resourceConfigurationIdentifierHasBeenSet(false),
-    m_resourceEndpointAssociationIdentifierHasBeenSet(false),
-    m_vpcEndpointIdHasBeenSet(false),
-    m_vpcEndpointOwnerHasBeenSet(false)
-{
-}
-
 Aws::String ListResourceEndpointAssociationsRequest::SerializePayload() const
 {
   return {};

@@ -18,18 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsGuardDutyDetectorDataSourcesDetails::AwsGuardDutyDetectorDataSourcesDetails() : 
-    m_cloudTrailHasBeenSet(false),
-    m_dnsLogsHasBeenSet(false),
-    m_flowLogsHasBeenSet(false),
-    m_kubernetesHasBeenSet(false),
-    m_malwareProtectionHasBeenSet(false),
-    m_s3LogsHasBeenSet(false)
-{
-}
-
 AwsGuardDutyDetectorDataSourcesDetails::AwsGuardDutyDetectorDataSourcesDetails(JsonView jsonValue)
-  : AwsGuardDutyDetectorDataSourcesDetails()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ AwsGuardDutyDetectorDataSourcesDetails& AwsGuardDutyDetectorDataSourcesDetails::
   if(jsonValue.ValueExists("CloudTrail"))
   {
     m_cloudTrail = jsonValue.GetObject("CloudTrail");
-
     m_cloudTrailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DnsLogs"))
   {
     m_dnsLogs = jsonValue.GetObject("DnsLogs");
-
     m_dnsLogsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FlowLogs"))
   {
     m_flowLogs = jsonValue.GetObject("FlowLogs");
-
     m_flowLogsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Kubernetes"))
   {
     m_kubernetes = jsonValue.GetObject("Kubernetes");
-
     m_kubernetesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MalwareProtection"))
   {
     m_malwareProtection = jsonValue.GetObject("MalwareProtection");
-
     m_malwareProtectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Logs"))
   {
     m_s3Logs = jsonValue.GetObject("S3Logs");
-
     m_s3LogsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,17 +18,7 @@ namespace AppSync
 namespace Model
 {
 
-DataSourceIntrospectionModel::DataSourceIntrospectionModel() : 
-    m_nameHasBeenSet(false),
-    m_fieldsHasBeenSet(false),
-    m_primaryKeyHasBeenSet(false),
-    m_indexesHasBeenSet(false),
-    m_sdlHasBeenSet(false)
-{
-}
-
 DataSourceIntrospectionModel::DataSourceIntrospectionModel(JsonView jsonValue)
-  : DataSourceIntrospectionModel()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ DataSourceIntrospectionModel& DataSourceIntrospectionModel::operator =(JsonView 
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fields"))
   {
     Aws::Utils::Array<JsonView> fieldsJsonList = jsonValue.GetArray("fields");
@@ -51,14 +39,11 @@ DataSourceIntrospectionModel& DataSourceIntrospectionModel::operator =(JsonView 
     }
     m_fieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("primaryKey"))
   {
     m_primaryKey = jsonValue.GetObject("primaryKey");
-
     m_primaryKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("indexes"))
   {
     Aws::Utils::Array<JsonView> indexesJsonList = jsonValue.GetArray("indexes");
@@ -68,14 +53,11 @@ DataSourceIntrospectionModel& DataSourceIntrospectionModel::operator =(JsonView 
     }
     m_indexesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sdl"))
   {
     m_sdl = jsonValue.GetString("sdl");
-
     m_sdlHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class NodeFrameworkAttributes
   {
   public:
-    AWS_MANAGEDBLOCKCHAIN_API NodeFrameworkAttributes();
+    AWS_MANAGEDBLOCKCHAIN_API NodeFrameworkAttributes() = default;
     AWS_MANAGEDBLOCKCHAIN_API NodeFrameworkAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAIN_API NodeFrameworkAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p>Attributes of Hyperledger Fabric for a peer node on a Managed Blockchain
      * network that uses Hyperledger Fabric.</p>
      */
-    inline const NodeFabricAttributes& GetFabric() const{ return m_fabric; }
+    inline const NodeFabricAttributes& GetFabric() const { return m_fabric; }
     inline bool FabricHasBeenSet() const { return m_fabricHasBeenSet; }
-    inline void SetFabric(const NodeFabricAttributes& value) { m_fabricHasBeenSet = true; m_fabric = value; }
-    inline void SetFabric(NodeFabricAttributes&& value) { m_fabricHasBeenSet = true; m_fabric = std::move(value); }
-    inline NodeFrameworkAttributes& WithFabric(const NodeFabricAttributes& value) { SetFabric(value); return *this;}
-    inline NodeFrameworkAttributes& WithFabric(NodeFabricAttributes&& value) { SetFabric(std::move(value)); return *this;}
+    template<typename FabricT = NodeFabricAttributes>
+    void SetFabric(FabricT&& value) { m_fabricHasBeenSet = true; m_fabric = std::forward<FabricT>(value); }
+    template<typename FabricT = NodeFabricAttributes>
+    NodeFrameworkAttributes& WithFabric(FabricT&& value) { SetFabric(std::forward<FabricT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +57,12 @@ namespace Model
      * <p>Attributes of Ethereum for a node on a Managed Blockchain network that uses
      * Ethereum. </p>
      */
-    inline const NodeEthereumAttributes& GetEthereum() const{ return m_ethereum; }
+    inline const NodeEthereumAttributes& GetEthereum() const { return m_ethereum; }
     inline bool EthereumHasBeenSet() const { return m_ethereumHasBeenSet; }
-    inline void SetEthereum(const NodeEthereumAttributes& value) { m_ethereumHasBeenSet = true; m_ethereum = value; }
-    inline void SetEthereum(NodeEthereumAttributes&& value) { m_ethereumHasBeenSet = true; m_ethereum = std::move(value); }
-    inline NodeFrameworkAttributes& WithEthereum(const NodeEthereumAttributes& value) { SetEthereum(value); return *this;}
-    inline NodeFrameworkAttributes& WithEthereum(NodeEthereumAttributes&& value) { SetEthereum(std::move(value)); return *this;}
+    template<typename EthereumT = NodeEthereumAttributes>
+    void SetEthereum(EthereumT&& value) { m_ethereumHasBeenSet = true; m_ethereum = std::forward<EthereumT>(value); }
+    template<typename EthereumT = NodeEthereumAttributes>
+    NodeFrameworkAttributes& WithEthereum(EthereumT&& value) { SetEthereum(std::forward<EthereumT>(value)); return *this;}
     ///@}
   private:
 

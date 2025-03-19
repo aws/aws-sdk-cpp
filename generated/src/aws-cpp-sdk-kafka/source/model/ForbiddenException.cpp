@@ -18,14 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-ForbiddenException::ForbiddenException() : 
-    m_invalidParameterHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 ForbiddenException::ForbiddenException(JsonView jsonValue)
-  : ForbiddenException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ForbiddenException& ForbiddenException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("invalidParameter"))
   {
     m_invalidParameter = jsonValue.GetString("invalidParameter");
-
     m_invalidParameterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

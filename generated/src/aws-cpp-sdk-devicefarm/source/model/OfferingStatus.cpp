@@ -18,18 +18,7 @@ namespace DeviceFarm
 namespace Model
 {
 
-OfferingStatus::OfferingStatus() : 
-    m_type(OfferingTransactionType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_offeringHasBeenSet(false),
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_effectiveOnHasBeenSet(false)
-{
-}
-
 OfferingStatus::OfferingStatus(JsonView jsonValue)
-  : OfferingStatus()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ OfferingStatus& OfferingStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = OfferingTransactionTypeMapper::GetOfferingTransactionTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("offering"))
   {
     m_offering = jsonValue.GetObject("offering");
-
     m_offeringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("quantity"))
   {
     m_quantity = jsonValue.GetInteger("quantity");
-
     m_quantityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("effectiveOn"))
   {
     m_effectiveOn = jsonValue.GetDouble("effectiveOn");
-
     m_effectiveOnHasBeenSet = true;
   }
-
   return *this;
 }
 

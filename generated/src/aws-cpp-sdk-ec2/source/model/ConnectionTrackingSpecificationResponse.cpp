@@ -20,18 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ConnectionTrackingSpecificationResponse::ConnectionTrackingSpecificationResponse() : 
-    m_tcpEstablishedTimeout(0),
-    m_tcpEstablishedTimeoutHasBeenSet(false),
-    m_udpStreamTimeout(0),
-    m_udpStreamTimeoutHasBeenSet(false),
-    m_udpTimeout(0),
-    m_udpTimeoutHasBeenSet(false)
-{
-}
-
 ConnectionTrackingSpecificationResponse::ConnectionTrackingSpecificationResponse(const XmlNode& xmlNode)
-  : ConnectionTrackingSpecificationResponse()
 {
   *this = xmlNode;
 }

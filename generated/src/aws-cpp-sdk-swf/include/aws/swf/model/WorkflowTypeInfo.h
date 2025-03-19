@@ -34,7 +34,7 @@ namespace Model
   class WorkflowTypeInfo
   {
   public:
-    AWS_SWF_API WorkflowTypeInfo();
+    AWS_SWF_API WorkflowTypeInfo() = default;
     AWS_SWF_API WorkflowTypeInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API WorkflowTypeInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,24 +44,22 @@ namespace Model
     /**
      * <p>The workflow type this information is about.</p>
      */
-    inline const WorkflowType& GetWorkflowType() const{ return m_workflowType; }
+    inline const WorkflowType& GetWorkflowType() const { return m_workflowType; }
     inline bool WorkflowTypeHasBeenSet() const { return m_workflowTypeHasBeenSet; }
-    inline void SetWorkflowType(const WorkflowType& value) { m_workflowTypeHasBeenSet = true; m_workflowType = value; }
-    inline void SetWorkflowType(WorkflowType&& value) { m_workflowTypeHasBeenSet = true; m_workflowType = std::move(value); }
-    inline WorkflowTypeInfo& WithWorkflowType(const WorkflowType& value) { SetWorkflowType(value); return *this;}
-    inline WorkflowTypeInfo& WithWorkflowType(WorkflowType&& value) { SetWorkflowType(std::move(value)); return *this;}
+    template<typename WorkflowTypeT = WorkflowType>
+    void SetWorkflowType(WorkflowTypeT&& value) { m_workflowTypeHasBeenSet = true; m_workflowType = std::forward<WorkflowTypeT>(value); }
+    template<typename WorkflowTypeT = WorkflowType>
+    WorkflowTypeInfo& WithWorkflowType(WorkflowTypeT&& value) { SetWorkflowType(std::forward<WorkflowTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current status of the workflow type.</p>
      */
-    inline const RegistrationStatus& GetStatus() const{ return m_status; }
+    inline RegistrationStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const RegistrationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(RegistrationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline WorkflowTypeInfo& WithStatus(const RegistrationStatus& value) { SetStatus(value); return *this;}
-    inline WorkflowTypeInfo& WithStatus(RegistrationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(RegistrationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline WorkflowTypeInfo& WithStatus(RegistrationStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -69,26 +67,24 @@ namespace Model
      * <p>The description of the type registered through
      * <a>RegisterWorkflowType</a>.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline WorkflowTypeInfo& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline WorkflowTypeInfo& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline WorkflowTypeInfo& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    WorkflowTypeInfo& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date when this type was registered.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
+    inline const Aws::Utils::DateTime& GetCreationDate() const { return m_creationDate; }
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
-    inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
-    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
-    inline WorkflowTypeInfo& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
-    inline WorkflowTypeInfo& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    void SetCreationDate(CreationDateT&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::forward<CreationDateT>(value); }
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    WorkflowTypeInfo& WithCreationDate(CreationDateT&& value) { SetCreationDate(std::forward<CreationDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,28 +92,28 @@ namespace Model
      * <p>If the type is in deprecated state, then it is set to the date when the type
      * was deprecated.</p>
      */
-    inline const Aws::Utils::DateTime& GetDeprecationDate() const{ return m_deprecationDate; }
+    inline const Aws::Utils::DateTime& GetDeprecationDate() const { return m_deprecationDate; }
     inline bool DeprecationDateHasBeenSet() const { return m_deprecationDateHasBeenSet; }
-    inline void SetDeprecationDate(const Aws::Utils::DateTime& value) { m_deprecationDateHasBeenSet = true; m_deprecationDate = value; }
-    inline void SetDeprecationDate(Aws::Utils::DateTime&& value) { m_deprecationDateHasBeenSet = true; m_deprecationDate = std::move(value); }
-    inline WorkflowTypeInfo& WithDeprecationDate(const Aws::Utils::DateTime& value) { SetDeprecationDate(value); return *this;}
-    inline WorkflowTypeInfo& WithDeprecationDate(Aws::Utils::DateTime&& value) { SetDeprecationDate(std::move(value)); return *this;}
+    template<typename DeprecationDateT = Aws::Utils::DateTime>
+    void SetDeprecationDate(DeprecationDateT&& value) { m_deprecationDateHasBeenSet = true; m_deprecationDate = std::forward<DeprecationDateT>(value); }
+    template<typename DeprecationDateT = Aws::Utils::DateTime>
+    WorkflowTypeInfo& WithDeprecationDate(DeprecationDateT&& value) { SetDeprecationDate(std::forward<DeprecationDateT>(value)); return *this;}
     ///@}
   private:
 
     WorkflowType m_workflowType;
     bool m_workflowTypeHasBeenSet = false;
 
-    RegistrationStatus m_status;
+    RegistrationStatus m_status{RegistrationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDate;
+    Aws::Utils::DateTime m_creationDate{};
     bool m_creationDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_deprecationDate;
+    Aws::Utils::DateTime m_deprecationDate{};
     bool m_deprecationDateHasBeenSet = false;
   };
 

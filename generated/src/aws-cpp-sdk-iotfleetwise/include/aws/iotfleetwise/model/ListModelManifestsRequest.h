@@ -22,7 +22,7 @@ namespace Model
   class ListModelManifestsRequest : public IoTFleetWiseRequest
   {
   public:
-    AWS_IOTFLEETWISE_API ListModelManifestsRequest();
+    AWS_IOTFLEETWISE_API ListModelManifestsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <p> The ARN of a signal catalog. If you specify a signal catalog, only the
      * vehicle models associated with it are returned.</p>
      */
-    inline const Aws::String& GetSignalCatalogArn() const{ return m_signalCatalogArn; }
+    inline const Aws::String& GetSignalCatalogArn() const { return m_signalCatalogArn; }
     inline bool SignalCatalogArnHasBeenSet() const { return m_signalCatalogArnHasBeenSet; }
-    inline void SetSignalCatalogArn(const Aws::String& value) { m_signalCatalogArnHasBeenSet = true; m_signalCatalogArn = value; }
-    inline void SetSignalCatalogArn(Aws::String&& value) { m_signalCatalogArnHasBeenSet = true; m_signalCatalogArn = std::move(value); }
-    inline void SetSignalCatalogArn(const char* value) { m_signalCatalogArnHasBeenSet = true; m_signalCatalogArn.assign(value); }
-    inline ListModelManifestsRequest& WithSignalCatalogArn(const Aws::String& value) { SetSignalCatalogArn(value); return *this;}
-    inline ListModelManifestsRequest& WithSignalCatalogArn(Aws::String&& value) { SetSignalCatalogArn(std::move(value)); return *this;}
-    inline ListModelManifestsRequest& WithSignalCatalogArn(const char* value) { SetSignalCatalogArn(value); return *this;}
+    template<typename SignalCatalogArnT = Aws::String>
+    void SetSignalCatalogArn(SignalCatalogArnT&& value) { m_signalCatalogArnHasBeenSet = true; m_signalCatalogArn = std::forward<SignalCatalogArnT>(value); }
+    template<typename SignalCatalogArnT = Aws::String>
+    ListModelManifestsRequest& WithSignalCatalogArn(SignalCatalogArnT&& value) { SetSignalCatalogArn(std::forward<SignalCatalogArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,21 +57,19 @@ namespace Model
      * token. When all results have been returned, the response does not contain a
      * pagination token value. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListModelManifestsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListModelManifestsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListModelManifestsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListModelManifestsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of items to return, between 1 and 100, inclusive.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListModelManifestsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -85,12 +81,10 @@ namespace Model
      * <code>METADATA_ONLY</code>, the list response includes: model manifest name,
      * Amazon Resource Name (ARN), creation time, and last modification time.</p>
      */
-    inline const ListResponseScope& GetListResponseScope() const{ return m_listResponseScope; }
+    inline ListResponseScope GetListResponseScope() const { return m_listResponseScope; }
     inline bool ListResponseScopeHasBeenSet() const { return m_listResponseScopeHasBeenSet; }
-    inline void SetListResponseScope(const ListResponseScope& value) { m_listResponseScopeHasBeenSet = true; m_listResponseScope = value; }
-    inline void SetListResponseScope(ListResponseScope&& value) { m_listResponseScopeHasBeenSet = true; m_listResponseScope = std::move(value); }
-    inline ListModelManifestsRequest& WithListResponseScope(const ListResponseScope& value) { SetListResponseScope(value); return *this;}
-    inline ListModelManifestsRequest& WithListResponseScope(ListResponseScope&& value) { SetListResponseScope(std::move(value)); return *this;}
+    inline void SetListResponseScope(ListResponseScope value) { m_listResponseScopeHasBeenSet = true; m_listResponseScope = value; }
+    inline ListModelManifestsRequest& WithListResponseScope(ListResponseScope value) { SetListResponseScope(value); return *this;}
     ///@}
   private:
 
@@ -100,10 +94,10 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
-    ListResponseScope m_listResponseScope;
+    ListResponseScope m_listResponseScope{ListResponseScope::NOT_SET};
     bool m_listResponseScopeHasBeenSet = false;
   };
 

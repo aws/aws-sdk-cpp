@@ -26,7 +26,7 @@ namespace Model
   class StopInferenceExperimentRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API StopInferenceExperimentRequest();
+    AWS_SAGEMAKER_API StopInferenceExperimentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The name of the inference experiment to stop.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline StopInferenceExperimentRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline StopInferenceExperimentRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline StopInferenceExperimentRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    StopInferenceExperimentRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,18 +59,15 @@ namespace Model
      * <code>Remove</code> - Delete the variant</p> </li> <li> <p> <code>Retain</code>
      * - Keep the variant as it is</p> </li> </ul>
      */
-    inline const Aws::Map<Aws::String, ModelVariantAction>& GetModelVariantActions() const{ return m_modelVariantActions; }
+    inline const Aws::Map<Aws::String, ModelVariantAction>& GetModelVariantActions() const { return m_modelVariantActions; }
     inline bool ModelVariantActionsHasBeenSet() const { return m_modelVariantActionsHasBeenSet; }
-    inline void SetModelVariantActions(const Aws::Map<Aws::String, ModelVariantAction>& value) { m_modelVariantActionsHasBeenSet = true; m_modelVariantActions = value; }
-    inline void SetModelVariantActions(Aws::Map<Aws::String, ModelVariantAction>&& value) { m_modelVariantActionsHasBeenSet = true; m_modelVariantActions = std::move(value); }
-    inline StopInferenceExperimentRequest& WithModelVariantActions(const Aws::Map<Aws::String, ModelVariantAction>& value) { SetModelVariantActions(value); return *this;}
-    inline StopInferenceExperimentRequest& WithModelVariantActions(Aws::Map<Aws::String, ModelVariantAction>&& value) { SetModelVariantActions(std::move(value)); return *this;}
-    inline StopInferenceExperimentRequest& AddModelVariantActions(const Aws::String& key, const ModelVariantAction& value) { m_modelVariantActionsHasBeenSet = true; m_modelVariantActions.emplace(key, value); return *this; }
-    inline StopInferenceExperimentRequest& AddModelVariantActions(Aws::String&& key, const ModelVariantAction& value) { m_modelVariantActionsHasBeenSet = true; m_modelVariantActions.emplace(std::move(key), value); return *this; }
-    inline StopInferenceExperimentRequest& AddModelVariantActions(const Aws::String& key, ModelVariantAction&& value) { m_modelVariantActionsHasBeenSet = true; m_modelVariantActions.emplace(key, std::move(value)); return *this; }
-    inline StopInferenceExperimentRequest& AddModelVariantActions(Aws::String&& key, ModelVariantAction&& value) { m_modelVariantActionsHasBeenSet = true; m_modelVariantActions.emplace(std::move(key), std::move(value)); return *this; }
-    inline StopInferenceExperimentRequest& AddModelVariantActions(const char* key, ModelVariantAction&& value) { m_modelVariantActionsHasBeenSet = true; m_modelVariantActions.emplace(key, std::move(value)); return *this; }
-    inline StopInferenceExperimentRequest& AddModelVariantActions(const char* key, const ModelVariantAction& value) { m_modelVariantActionsHasBeenSet = true; m_modelVariantActions.emplace(key, value); return *this; }
+    template<typename ModelVariantActionsT = Aws::Map<Aws::String, ModelVariantAction>>
+    void SetModelVariantActions(ModelVariantActionsT&& value) { m_modelVariantActionsHasBeenSet = true; m_modelVariantActions = std::forward<ModelVariantActionsT>(value); }
+    template<typename ModelVariantActionsT = Aws::Map<Aws::String, ModelVariantAction>>
+    StopInferenceExperimentRequest& WithModelVariantActions(ModelVariantActionsT&& value) { SetModelVariantActions(std::forward<ModelVariantActionsT>(value)); return *this;}
+    inline StopInferenceExperimentRequest& AddModelVariantActions(Aws::String key, ModelVariantAction value) {
+      m_modelVariantActionsHasBeenSet = true; m_modelVariantActions.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
@@ -82,14 +77,14 @@ namespace Model
      * <code>ModelVariantConfig</code> describes the infrastructure configuration for
      * deploying the corresponding variant. </p>
      */
-    inline const Aws::Vector<ModelVariantConfig>& GetDesiredModelVariants() const{ return m_desiredModelVariants; }
+    inline const Aws::Vector<ModelVariantConfig>& GetDesiredModelVariants() const { return m_desiredModelVariants; }
     inline bool DesiredModelVariantsHasBeenSet() const { return m_desiredModelVariantsHasBeenSet; }
-    inline void SetDesiredModelVariants(const Aws::Vector<ModelVariantConfig>& value) { m_desiredModelVariantsHasBeenSet = true; m_desiredModelVariants = value; }
-    inline void SetDesiredModelVariants(Aws::Vector<ModelVariantConfig>&& value) { m_desiredModelVariantsHasBeenSet = true; m_desiredModelVariants = std::move(value); }
-    inline StopInferenceExperimentRequest& WithDesiredModelVariants(const Aws::Vector<ModelVariantConfig>& value) { SetDesiredModelVariants(value); return *this;}
-    inline StopInferenceExperimentRequest& WithDesiredModelVariants(Aws::Vector<ModelVariantConfig>&& value) { SetDesiredModelVariants(std::move(value)); return *this;}
-    inline StopInferenceExperimentRequest& AddDesiredModelVariants(const ModelVariantConfig& value) { m_desiredModelVariantsHasBeenSet = true; m_desiredModelVariants.push_back(value); return *this; }
-    inline StopInferenceExperimentRequest& AddDesiredModelVariants(ModelVariantConfig&& value) { m_desiredModelVariantsHasBeenSet = true; m_desiredModelVariants.push_back(std::move(value)); return *this; }
+    template<typename DesiredModelVariantsT = Aws::Vector<ModelVariantConfig>>
+    void SetDesiredModelVariants(DesiredModelVariantsT&& value) { m_desiredModelVariantsHasBeenSet = true; m_desiredModelVariants = std::forward<DesiredModelVariantsT>(value); }
+    template<typename DesiredModelVariantsT = Aws::Vector<ModelVariantConfig>>
+    StopInferenceExperimentRequest& WithDesiredModelVariants(DesiredModelVariantsT&& value) { SetDesiredModelVariants(std::forward<DesiredModelVariantsT>(value)); return *this;}
+    template<typename DesiredModelVariantsT = ModelVariantConfig>
+    StopInferenceExperimentRequest& AddDesiredModelVariants(DesiredModelVariantsT&& value) { m_desiredModelVariantsHasBeenSet = true; m_desiredModelVariants.emplace_back(std::forward<DesiredModelVariantsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -99,26 +94,22 @@ namespace Model
      * completed successfully</p> </li> <li> <p> <code>Cancelled</code>: The experiment
      * was canceled</p> </li> </ul>
      */
-    inline const InferenceExperimentStopDesiredState& GetDesiredState() const{ return m_desiredState; }
+    inline InferenceExperimentStopDesiredState GetDesiredState() const { return m_desiredState; }
     inline bool DesiredStateHasBeenSet() const { return m_desiredStateHasBeenSet; }
-    inline void SetDesiredState(const InferenceExperimentStopDesiredState& value) { m_desiredStateHasBeenSet = true; m_desiredState = value; }
-    inline void SetDesiredState(InferenceExperimentStopDesiredState&& value) { m_desiredStateHasBeenSet = true; m_desiredState = std::move(value); }
-    inline StopInferenceExperimentRequest& WithDesiredState(const InferenceExperimentStopDesiredState& value) { SetDesiredState(value); return *this;}
-    inline StopInferenceExperimentRequest& WithDesiredState(InferenceExperimentStopDesiredState&& value) { SetDesiredState(std::move(value)); return *this;}
+    inline void SetDesiredState(InferenceExperimentStopDesiredState value) { m_desiredStateHasBeenSet = true; m_desiredState = value; }
+    inline StopInferenceExperimentRequest& WithDesiredState(InferenceExperimentStopDesiredState value) { SetDesiredState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The reason for stopping the experiment.</p>
      */
-    inline const Aws::String& GetReason() const{ return m_reason; }
+    inline const Aws::String& GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-    inline StopInferenceExperimentRequest& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-    inline StopInferenceExperimentRequest& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-    inline StopInferenceExperimentRequest& WithReason(const char* value) { SetReason(value); return *this;}
+    template<typename ReasonT = Aws::String>
+    void SetReason(ReasonT&& value) { m_reasonHasBeenSet = true; m_reason = std::forward<ReasonT>(value); }
+    template<typename ReasonT = Aws::String>
+    StopInferenceExperimentRequest& WithReason(ReasonT&& value) { SetReason(std::forward<ReasonT>(value)); return *this;}
     ///@}
   private:
 
@@ -131,7 +122,7 @@ namespace Model
     Aws::Vector<ModelVariantConfig> m_desiredModelVariants;
     bool m_desiredModelVariantsHasBeenSet = false;
 
-    InferenceExperimentStopDesiredState m_desiredState;
+    InferenceExperimentStopDesiredState m_desiredState{InferenceExperimentStopDesiredState::NOT_SET};
     bool m_desiredStateHasBeenSet = false;
 
     Aws::String m_reason;

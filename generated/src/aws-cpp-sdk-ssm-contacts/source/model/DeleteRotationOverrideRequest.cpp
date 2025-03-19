@@ -12,12 +12,6 @@ using namespace Aws::SSMContacts::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteRotationOverrideRequest::DeleteRotationOverrideRequest() : 
-    m_rotationIdHasBeenSet(false),
-    m_rotationOverrideIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRotationOverrideRequest::SerializePayload() const
 {
   JsonValue payload;

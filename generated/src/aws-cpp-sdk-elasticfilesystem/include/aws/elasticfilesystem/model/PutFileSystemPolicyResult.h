@@ -27,7 +27,7 @@ namespace Model
   class PutFileSystemPolicyResult
   {
   public:
-    AWS_EFS_API PutFileSystemPolicyResult();
+    AWS_EFS_API PutFileSystemPolicyResult() = default;
     AWS_EFS_API PutFileSystemPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_EFS_API PutFileSystemPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,45 +37,42 @@ namespace Model
      * <p>Specifies the EFS file system to which the <code>FileSystemPolicy</code>
      * applies.</p>
      */
-    inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
-    inline void SetFileSystemId(const Aws::String& value) { m_fileSystemId = value; }
-    inline void SetFileSystemId(Aws::String&& value) { m_fileSystemId = std::move(value); }
-    inline void SetFileSystemId(const char* value) { m_fileSystemId.assign(value); }
-    inline PutFileSystemPolicyResult& WithFileSystemId(const Aws::String& value) { SetFileSystemId(value); return *this;}
-    inline PutFileSystemPolicyResult& WithFileSystemId(Aws::String&& value) { SetFileSystemId(std::move(value)); return *this;}
-    inline PutFileSystemPolicyResult& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
+    inline const Aws::String& GetFileSystemId() const { return m_fileSystemId; }
+    template<typename FileSystemIdT = Aws::String>
+    void SetFileSystemId(FileSystemIdT&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::forward<FileSystemIdT>(value); }
+    template<typename FileSystemIdT = Aws::String>
+    PutFileSystemPolicyResult& WithFileSystemId(FileSystemIdT&& value) { SetFileSystemId(std::forward<FileSystemIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The JSON formatted <code>FileSystemPolicy</code> for the EFS file system.</p>
      */
-    inline const Aws::String& GetPolicy() const{ return m_policy; }
-    inline void SetPolicy(const Aws::String& value) { m_policy = value; }
-    inline void SetPolicy(Aws::String&& value) { m_policy = std::move(value); }
-    inline void SetPolicy(const char* value) { m_policy.assign(value); }
-    inline PutFileSystemPolicyResult& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
-    inline PutFileSystemPolicyResult& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
-    inline PutFileSystemPolicyResult& WithPolicy(const char* value) { SetPolicy(value); return *this;}
+    inline const Aws::String& GetPolicy() const { return m_policy; }
+    template<typename PolicyT = Aws::String>
+    void SetPolicy(PolicyT&& value) { m_policyHasBeenSet = true; m_policy = std::forward<PolicyT>(value); }
+    template<typename PolicyT = Aws::String>
+    PutFileSystemPolicyResult& WithPolicy(PolicyT&& value) { SetPolicy(std::forward<PolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutFileSystemPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutFileSystemPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutFileSystemPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutFileSystemPolicyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_fileSystemId;
+    bool m_fileSystemIdHasBeenSet = false;
 
     Aws::String m_policy;
+    bool m_policyHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,17 +12,6 @@ using namespace Aws::VerifiedPermissions::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-IsAuthorizedWithTokenRequest::IsAuthorizedWithTokenRequest() : 
-    m_policyStoreIdHasBeenSet(false),
-    m_identityTokenHasBeenSet(false),
-    m_accessTokenHasBeenSet(false),
-    m_actionHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_contextHasBeenSet(false),
-    m_entitiesHasBeenSet(false)
-{
-}
-
 Aws::String IsAuthorizedWithTokenRequest::SerializePayload() const
 {
   JsonValue payload;

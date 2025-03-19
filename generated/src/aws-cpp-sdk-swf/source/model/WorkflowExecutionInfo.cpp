@@ -18,24 +18,7 @@ namespace SWF
 namespace Model
 {
 
-WorkflowExecutionInfo::WorkflowExecutionInfo() : 
-    m_executionHasBeenSet(false),
-    m_workflowTypeHasBeenSet(false),
-    m_startTimestampHasBeenSet(false),
-    m_closeTimestampHasBeenSet(false),
-    m_executionStatus(ExecutionStatus::NOT_SET),
-    m_executionStatusHasBeenSet(false),
-    m_closeStatus(CloseStatus::NOT_SET),
-    m_closeStatusHasBeenSet(false),
-    m_parentHasBeenSet(false),
-    m_tagListHasBeenSet(false),
-    m_cancelRequested(false),
-    m_cancelRequestedHasBeenSet(false)
-{
-}
-
 WorkflowExecutionInfo::WorkflowExecutionInfo(JsonView jsonValue)
-  : WorkflowExecutionInfo()
 {
   *this = jsonValue;
 }
@@ -45,52 +28,38 @@ WorkflowExecutionInfo& WorkflowExecutionInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("execution"))
   {
     m_execution = jsonValue.GetObject("execution");
-
     m_executionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workflowType"))
   {
     m_workflowType = jsonValue.GetObject("workflowType");
-
     m_workflowTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTimestamp"))
   {
     m_startTimestamp = jsonValue.GetDouble("startTimestamp");
-
     m_startTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("closeTimestamp"))
   {
     m_closeTimestamp = jsonValue.GetDouble("closeTimestamp");
-
     m_closeTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionStatus"))
   {
     m_executionStatus = ExecutionStatusMapper::GetExecutionStatusForName(jsonValue.GetString("executionStatus"));
-
     m_executionStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("closeStatus"))
   {
     m_closeStatus = CloseStatusMapper::GetCloseStatusForName(jsonValue.GetString("closeStatus"));
-
     m_closeStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parent"))
   {
     m_parent = jsonValue.GetObject("parent");
-
     m_parentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tagList"))
   {
     Aws::Utils::Array<JsonView> tagListJsonList = jsonValue.GetArray("tagList");
@@ -100,14 +69,11 @@ WorkflowExecutionInfo& WorkflowExecutionInfo::operator =(JsonView jsonValue)
     }
     m_tagListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cancelRequested"))
   {
     m_cancelRequested = jsonValue.GetBool("cancelRequested");
-
     m_cancelRequestedHasBeenSet = true;
   }
-
   return *this;
 }
 

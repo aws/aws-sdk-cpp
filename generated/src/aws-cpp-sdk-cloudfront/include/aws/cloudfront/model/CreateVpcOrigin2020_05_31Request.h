@@ -22,7 +22,7 @@ namespace Model
   class CreateVpcOrigin2020_05_31Request : public CloudFrontRequest
   {
   public:
-    AWS_CLOUDFRONT_API CreateVpcOrigin2020_05_31Request();
+    AWS_CLOUDFRONT_API CreateVpcOrigin2020_05_31Request() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,22 +37,22 @@ namespace Model
     /**
      * <p>The VPC origin endpoint configuration.</p>
      */
-    inline const VpcOriginEndpointConfig& GetVpcOriginEndpointConfig() const{ return m_vpcOriginEndpointConfig; }
+    inline const VpcOriginEndpointConfig& GetVpcOriginEndpointConfig() const { return m_vpcOriginEndpointConfig; }
     inline bool VpcOriginEndpointConfigHasBeenSet() const { return m_vpcOriginEndpointConfigHasBeenSet; }
-    inline void SetVpcOriginEndpointConfig(const VpcOriginEndpointConfig& value) { m_vpcOriginEndpointConfigHasBeenSet = true; m_vpcOriginEndpointConfig = value; }
-    inline void SetVpcOriginEndpointConfig(VpcOriginEndpointConfig&& value) { m_vpcOriginEndpointConfigHasBeenSet = true; m_vpcOriginEndpointConfig = std::move(value); }
-    inline CreateVpcOrigin2020_05_31Request& WithVpcOriginEndpointConfig(const VpcOriginEndpointConfig& value) { SetVpcOriginEndpointConfig(value); return *this;}
-    inline CreateVpcOrigin2020_05_31Request& WithVpcOriginEndpointConfig(VpcOriginEndpointConfig&& value) { SetVpcOriginEndpointConfig(std::move(value)); return *this;}
+    template<typename VpcOriginEndpointConfigT = VpcOriginEndpointConfig>
+    void SetVpcOriginEndpointConfig(VpcOriginEndpointConfigT&& value) { m_vpcOriginEndpointConfigHasBeenSet = true; m_vpcOriginEndpointConfig = std::forward<VpcOriginEndpointConfigT>(value); }
+    template<typename VpcOriginEndpointConfigT = VpcOriginEndpointConfig>
+    CreateVpcOrigin2020_05_31Request& WithVpcOriginEndpointConfig(VpcOriginEndpointConfigT&& value) { SetVpcOriginEndpointConfig(std::forward<VpcOriginEndpointConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Tags& GetTags() const{ return m_tags; }
+    inline const Tags& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Tags& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Tags&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateVpcOrigin2020_05_31Request& WithTags(const Tags& value) { SetTags(value); return *this;}
-    inline CreateVpcOrigin2020_05_31Request& WithTags(Tags&& value) { SetTags(std::move(value)); return *this;}
+    template<typename TagsT = Tags>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Tags>
+    CreateVpcOrigin2020_05_31Request& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
     ///@}
   private:
 

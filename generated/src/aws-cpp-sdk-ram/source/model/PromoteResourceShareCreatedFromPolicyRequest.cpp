@@ -15,11 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-PromoteResourceShareCreatedFromPolicyRequest::PromoteResourceShareCreatedFromPolicyRequest() : 
-    m_resourceShareArnHasBeenSet(false)
-{
-}
-
 Aws::String PromoteResourceShareCreatedFromPolicyRequest::SerializePayload() const
 {
   return {};

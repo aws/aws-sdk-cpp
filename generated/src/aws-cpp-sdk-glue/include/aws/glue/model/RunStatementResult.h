@@ -27,7 +27,7 @@ namespace Model
   class RunStatementResult
   {
   public:
-    AWS_GLUE_API RunStatementResult();
+    AWS_GLUE_API RunStatementResult() = default;
     AWS_GLUE_API RunStatementResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUE_API RunStatementResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,26 +36,26 @@ namespace Model
     /**
      * <p>Returns the Id of the statement that was run.</p>
      */
-    inline int GetId() const{ return m_id; }
-    inline void SetId(int value) { m_id = value; }
+    inline int GetId() const { return m_id; }
+    inline void SetId(int value) { m_idHasBeenSet = true; m_id = value; }
     inline RunStatementResult& WithId(int value) { SetId(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline RunStatementResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline RunStatementResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline RunStatementResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    RunStatementResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    int m_id;
+    int m_id{0};
+    bool m_idHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

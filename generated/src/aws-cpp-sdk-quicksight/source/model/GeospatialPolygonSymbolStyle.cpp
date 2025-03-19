@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-GeospatialPolygonSymbolStyle::GeospatialPolygonSymbolStyle() : 
-    m_fillColorHasBeenSet(false),
-    m_strokeColorHasBeenSet(false),
-    m_strokeWidthHasBeenSet(false)
-{
-}
-
 GeospatialPolygonSymbolStyle::GeospatialPolygonSymbolStyle(JsonView jsonValue)
-  : GeospatialPolygonSymbolStyle()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ GeospatialPolygonSymbolStyle& GeospatialPolygonSymbolStyle::operator =(JsonView 
   if(jsonValue.ValueExists("FillColor"))
   {
     m_fillColor = jsonValue.GetObject("FillColor");
-
     m_fillColorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StrokeColor"))
   {
     m_strokeColor = jsonValue.GetObject("StrokeColor");
-
     m_strokeColorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StrokeWidth"))
   {
     m_strokeWidth = jsonValue.GetObject("StrokeWidth");
-
     m_strokeWidthHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace Omics
 namespace Model
 {
 
-StoreOptions::StoreOptions() : 
-    m_tsvStoreOptionsHasBeenSet(false)
-{
-}
-
 StoreOptions::StoreOptions(JsonView jsonValue)
-  : StoreOptions()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ StoreOptions& StoreOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("tsvStoreOptions"))
   {
     m_tsvStoreOptions = jsonValue.GetObject("tsvStoreOptions");
-
     m_tsvStoreOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

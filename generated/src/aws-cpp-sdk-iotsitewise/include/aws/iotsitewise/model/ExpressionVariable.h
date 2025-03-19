@@ -32,7 +32,7 @@ namespace Model
   class ExpressionVariable
   {
   public:
-    AWS_IOTSITEWISE_API ExpressionVariable();
+    AWS_IOTSITEWISE_API ExpressionVariable() = default;
     AWS_IOTSITEWISE_API ExpressionVariable(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API ExpressionVariable& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,26 +42,24 @@ namespace Model
     /**
      * <p>The friendly name of the variable to be used in the expression.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ExpressionVariable& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ExpressionVariable& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ExpressionVariable& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ExpressionVariable& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The variable that identifies an asset property from which to use values.</p>
      */
-    inline const VariableValue& GetValue() const{ return m_value; }
+    inline const VariableValue& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const VariableValue& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(VariableValue&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline ExpressionVariable& WithValue(const VariableValue& value) { SetValue(value); return *this;}
-    inline ExpressionVariable& WithValue(VariableValue&& value) { SetValue(std::move(value)); return *this;}
+    template<typename ValueT = VariableValue>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = VariableValue>
+    ExpressionVariable& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 

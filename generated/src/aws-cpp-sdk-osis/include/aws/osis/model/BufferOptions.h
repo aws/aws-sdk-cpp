@@ -33,7 +33,7 @@ namespace Model
   class BufferOptions
   {
   public:
-    AWS_OSIS_API BufferOptions();
+    AWS_OSIS_API BufferOptions() = default;
     AWS_OSIS_API BufferOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_OSIS_API BufferOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OSIS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>Whether persistent buffering should be enabled.</p>
      */
-    inline bool GetPersistentBufferEnabled() const{ return m_persistentBufferEnabled; }
+    inline bool GetPersistentBufferEnabled() const { return m_persistentBufferEnabled; }
     inline bool PersistentBufferEnabledHasBeenSet() const { return m_persistentBufferEnabledHasBeenSet; }
     inline void SetPersistentBufferEnabled(bool value) { m_persistentBufferEnabledHasBeenSet = true; m_persistentBufferEnabled = value; }
     inline BufferOptions& WithPersistentBufferEnabled(bool value) { SetPersistentBufferEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_persistentBufferEnabled;
+    bool m_persistentBufferEnabled{false};
     bool m_persistentBufferEnabledHasBeenSet = false;
   };
 

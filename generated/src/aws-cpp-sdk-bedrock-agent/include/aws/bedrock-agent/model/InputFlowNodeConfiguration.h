@@ -31,7 +31,7 @@ namespace Model
   class InputFlowNodeConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API InputFlowNodeConfiguration();
+    AWS_BEDROCKAGENT_API InputFlowNodeConfiguration() = default;
     AWS_BEDROCKAGENT_API InputFlowNodeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API InputFlowNodeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;

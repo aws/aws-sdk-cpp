@@ -23,7 +23,7 @@ namespace Model
   class UpdateFileCacheRequest : public FSxRequest
   {
   public:
-    AWS_FSX_API UpdateFileCacheRequest();
+    AWS_FSX_API UpdateFileCacheRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,38 +40,34 @@ namespace Model
     /**
      * <p>The ID of the cache that you are updating.</p>
      */
-    inline const Aws::String& GetFileCacheId() const{ return m_fileCacheId; }
+    inline const Aws::String& GetFileCacheId() const { return m_fileCacheId; }
     inline bool FileCacheIdHasBeenSet() const { return m_fileCacheIdHasBeenSet; }
-    inline void SetFileCacheId(const Aws::String& value) { m_fileCacheIdHasBeenSet = true; m_fileCacheId = value; }
-    inline void SetFileCacheId(Aws::String&& value) { m_fileCacheIdHasBeenSet = true; m_fileCacheId = std::move(value); }
-    inline void SetFileCacheId(const char* value) { m_fileCacheIdHasBeenSet = true; m_fileCacheId.assign(value); }
-    inline UpdateFileCacheRequest& WithFileCacheId(const Aws::String& value) { SetFileCacheId(value); return *this;}
-    inline UpdateFileCacheRequest& WithFileCacheId(Aws::String&& value) { SetFileCacheId(std::move(value)); return *this;}
-    inline UpdateFileCacheRequest& WithFileCacheId(const char* value) { SetFileCacheId(value); return *this;}
+    template<typename FileCacheIdT = Aws::String>
+    void SetFileCacheId(FileCacheIdT&& value) { m_fileCacheIdHasBeenSet = true; m_fileCacheId = std::forward<FileCacheIdT>(value); }
+    template<typename FileCacheIdT = Aws::String>
+    UpdateFileCacheRequest& WithFileCacheId(FileCacheIdT&& value) { SetFileCacheId(std::forward<FileCacheIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline UpdateFileCacheRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline UpdateFileCacheRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline UpdateFileCacheRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    UpdateFileCacheRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration updates for an Amazon File Cache resource.</p>
      */
-    inline const UpdateFileCacheLustreConfiguration& GetLustreConfiguration() const{ return m_lustreConfiguration; }
+    inline const UpdateFileCacheLustreConfiguration& GetLustreConfiguration() const { return m_lustreConfiguration; }
     inline bool LustreConfigurationHasBeenSet() const { return m_lustreConfigurationHasBeenSet; }
-    inline void SetLustreConfiguration(const UpdateFileCacheLustreConfiguration& value) { m_lustreConfigurationHasBeenSet = true; m_lustreConfiguration = value; }
-    inline void SetLustreConfiguration(UpdateFileCacheLustreConfiguration&& value) { m_lustreConfigurationHasBeenSet = true; m_lustreConfiguration = std::move(value); }
-    inline UpdateFileCacheRequest& WithLustreConfiguration(const UpdateFileCacheLustreConfiguration& value) { SetLustreConfiguration(value); return *this;}
-    inline UpdateFileCacheRequest& WithLustreConfiguration(UpdateFileCacheLustreConfiguration&& value) { SetLustreConfiguration(std::move(value)); return *this;}
+    template<typename LustreConfigurationT = UpdateFileCacheLustreConfiguration>
+    void SetLustreConfiguration(LustreConfigurationT&& value) { m_lustreConfigurationHasBeenSet = true; m_lustreConfiguration = std::forward<LustreConfigurationT>(value); }
+    template<typename LustreConfigurationT = UpdateFileCacheLustreConfiguration>
+    UpdateFileCacheRequest& WithLustreConfiguration(LustreConfigurationT&& value) { SetLustreConfiguration(std::forward<LustreConfigurationT>(value)); return *this;}
     ///@}
   private:
 

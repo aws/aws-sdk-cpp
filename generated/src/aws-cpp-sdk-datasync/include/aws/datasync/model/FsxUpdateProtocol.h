@@ -36,7 +36,7 @@ namespace Model
   class FsxUpdateProtocol
   {
   public:
-    AWS_DATASYNC_API FsxUpdateProtocol();
+    AWS_DATASYNC_API FsxUpdateProtocol() = default;
     AWS_DATASYNC_API FsxUpdateProtocol(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API FsxUpdateProtocol& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
 
     ///@{
     
-    inline const FsxProtocolNfs& GetNFS() const{ return m_nFS; }
+    inline const FsxProtocolNfs& GetNFS() const { return m_nFS; }
     inline bool NFSHasBeenSet() const { return m_nFSHasBeenSet; }
-    inline void SetNFS(const FsxProtocolNfs& value) { m_nFSHasBeenSet = true; m_nFS = value; }
-    inline void SetNFS(FsxProtocolNfs&& value) { m_nFSHasBeenSet = true; m_nFS = std::move(value); }
-    inline FsxUpdateProtocol& WithNFS(const FsxProtocolNfs& value) { SetNFS(value); return *this;}
-    inline FsxUpdateProtocol& WithNFS(FsxProtocolNfs&& value) { SetNFS(std::move(value)); return *this;}
+    template<typename NFST = FsxProtocolNfs>
+    void SetNFS(NFST&& value) { m_nFSHasBeenSet = true; m_nFS = std::forward<NFST>(value); }
+    template<typename NFST = FsxProtocolNfs>
+    FsxUpdateProtocol& WithNFS(NFST&& value) { SetNFS(std::forward<NFST>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +58,12 @@ namespace Model
      * uses to access your FSx for ONTAP file system's storage virtual machine
      * (SVM).</p>
      */
-    inline const FsxUpdateProtocolSmb& GetSMB() const{ return m_sMB; }
+    inline const FsxUpdateProtocolSmb& GetSMB() const { return m_sMB; }
     inline bool SMBHasBeenSet() const { return m_sMBHasBeenSet; }
-    inline void SetSMB(const FsxUpdateProtocolSmb& value) { m_sMBHasBeenSet = true; m_sMB = value; }
-    inline void SetSMB(FsxUpdateProtocolSmb&& value) { m_sMBHasBeenSet = true; m_sMB = std::move(value); }
-    inline FsxUpdateProtocol& WithSMB(const FsxUpdateProtocolSmb& value) { SetSMB(value); return *this;}
-    inline FsxUpdateProtocol& WithSMB(FsxUpdateProtocolSmb&& value) { SetSMB(std::move(value)); return *this;}
+    template<typename SMBT = FsxUpdateProtocolSmb>
+    void SetSMB(SMBT&& value) { m_sMBHasBeenSet = true; m_sMB = std::forward<SMBT>(value); }
+    template<typename SMBT = FsxUpdateProtocolSmb>
+    FsxUpdateProtocol& WithSMB(SMBT&& value) { SetSMB(std::forward<SMBT>(value)); return *this;}
     ///@}
   private:
 

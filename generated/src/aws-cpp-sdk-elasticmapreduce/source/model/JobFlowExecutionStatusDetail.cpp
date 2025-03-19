@@ -18,19 +18,7 @@ namespace EMR
 namespace Model
 {
 
-JobFlowExecutionStatusDetail::JobFlowExecutionStatusDetail() : 
-    m_state(JobFlowExecutionState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_startDateTimeHasBeenSet(false),
-    m_readyDateTimeHasBeenSet(false),
-    m_endDateTimeHasBeenSet(false),
-    m_lastStateChangeReasonHasBeenSet(false)
-{
-}
-
 JobFlowExecutionStatusDetail::JobFlowExecutionStatusDetail(JsonView jsonValue)
-  : JobFlowExecutionStatusDetail()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ JobFlowExecutionStatusDetail& JobFlowExecutionStatusDetail::operator =(JsonView 
   if(jsonValue.ValueExists("State"))
   {
     m_state = JobFlowExecutionStateMapper::GetJobFlowExecutionStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("CreationDateTime");
-
     m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartDateTime"))
   {
     m_startDateTime = jsonValue.GetDouble("StartDateTime");
-
     m_startDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReadyDateTime"))
   {
     m_readyDateTime = jsonValue.GetDouble("ReadyDateTime");
-
     m_readyDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndDateTime"))
   {
     m_endDateTime = jsonValue.GetDouble("EndDateTime");
-
     m_endDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastStateChangeReason"))
   {
     m_lastStateChangeReason = jsonValue.GetString("LastStateChangeReason");
-
     m_lastStateChangeReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

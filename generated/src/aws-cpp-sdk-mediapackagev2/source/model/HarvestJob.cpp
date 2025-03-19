@@ -18,27 +18,7 @@ namespace mediapackagev2
 namespace Model
 {
 
-HarvestJob::HarvestJob() : 
-    m_channelGroupNameHasBeenSet(false),
-    m_channelNameHasBeenSet(false),
-    m_originEndpointNameHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_harvestJobNameHasBeenSet(false),
-    m_harvestedManifestsHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_scheduleConfigurationHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false),
-    m_status(HarvestJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_eTagHasBeenSet(false)
-{
-}
-
 HarvestJob::HarvestJob(JsonView jsonValue)
-  : HarvestJob()
 {
   *this = jsonValue;
 }
@@ -48,101 +28,73 @@ HarvestJob& HarvestJob::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ChannelGroupName"))
   {
     m_channelGroupName = jsonValue.GetString("ChannelGroupName");
-
     m_channelGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChannelName"))
   {
     m_channelName = jsonValue.GetString("ChannelName");
-
     m_channelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OriginEndpointName"))
   {
     m_originEndpointName = jsonValue.GetString("OriginEndpointName");
-
     m_originEndpointNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Destination"))
   {
     m_destination = jsonValue.GetObject("Destination");
-
     m_destinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HarvestJobName"))
   {
     m_harvestJobName = jsonValue.GetString("HarvestJobName");
-
     m_harvestJobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HarvestedManifests"))
   {
     m_harvestedManifests = jsonValue.GetObject("HarvestedManifests");
-
     m_harvestedManifestsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScheduleConfiguration"))
   {
     m_scheduleConfiguration = jsonValue.GetObject("ScheduleConfiguration");
-
     m_scheduleConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModifiedAt"))
   {
     m_modifiedAt = jsonValue.GetDouble("ModifiedAt");
-
     m_modifiedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = HarvestJobStatusMapper::GetHarvestJobStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ETag"))
   {
     m_eTag = jsonValue.GetString("ETag");
-
     m_eTagHasBeenSet = true;
   }
-
   return *this;
 }
 

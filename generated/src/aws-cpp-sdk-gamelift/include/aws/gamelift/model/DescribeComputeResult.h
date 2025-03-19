@@ -28,7 +28,7 @@ namespace Model
   class DescribeComputeResult
   {
   public:
-    AWS_GAMELIFT_API DescribeComputeResult();
+    AWS_GAMELIFT_API DescribeComputeResult() = default;
     AWS_GAMELIFT_API DescribeComputeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GAMELIFT_API DescribeComputeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The set of properties for the requested compute resource.</p>
      */
-    inline const Compute& GetCompute() const{ return m_compute; }
-    inline void SetCompute(const Compute& value) { m_compute = value; }
-    inline void SetCompute(Compute&& value) { m_compute = std::move(value); }
-    inline DescribeComputeResult& WithCompute(const Compute& value) { SetCompute(value); return *this;}
-    inline DescribeComputeResult& WithCompute(Compute&& value) { SetCompute(std::move(value)); return *this;}
+    inline const Compute& GetCompute() const { return m_compute; }
+    template<typename ComputeT = Compute>
+    void SetCompute(ComputeT&& value) { m_computeHasBeenSet = true; m_compute = std::forward<ComputeT>(value); }
+    template<typename ComputeT = Compute>
+    DescribeComputeResult& WithCompute(ComputeT&& value) { SetCompute(std::forward<ComputeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeComputeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeComputeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeComputeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeComputeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Compute m_compute;
+    bool m_computeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

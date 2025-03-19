@@ -12,11 +12,6 @@ using namespace Aws::NetworkManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetConnectPeerRequest::GetConnectPeerRequest() : 
-    m_connectPeerIdHasBeenSet(false)
-{
-}
-
 Aws::String GetConnectPeerRequest::SerializePayload() const
 {
   return {};

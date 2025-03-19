@@ -28,7 +28,7 @@ namespace Model
   class ModifyVpcBlockPublicAccessExclusionResponse
   {
   public:
-    AWS_EC2_API ModifyVpcBlockPublicAccessExclusionResponse();
+    AWS_EC2_API ModifyVpcBlockPublicAccessExclusionResponse() = default;
     AWS_EC2_API ModifyVpcBlockPublicAccessExclusionResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API ModifyVpcBlockPublicAccessExclusionResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>Details related to the exclusion.</p>
      */
-    inline const VpcBlockPublicAccessExclusion& GetVpcBlockPublicAccessExclusion() const{ return m_vpcBlockPublicAccessExclusion; }
-    inline void SetVpcBlockPublicAccessExclusion(const VpcBlockPublicAccessExclusion& value) { m_vpcBlockPublicAccessExclusion = value; }
-    inline void SetVpcBlockPublicAccessExclusion(VpcBlockPublicAccessExclusion&& value) { m_vpcBlockPublicAccessExclusion = std::move(value); }
-    inline ModifyVpcBlockPublicAccessExclusionResponse& WithVpcBlockPublicAccessExclusion(const VpcBlockPublicAccessExclusion& value) { SetVpcBlockPublicAccessExclusion(value); return *this;}
-    inline ModifyVpcBlockPublicAccessExclusionResponse& WithVpcBlockPublicAccessExclusion(VpcBlockPublicAccessExclusion&& value) { SetVpcBlockPublicAccessExclusion(std::move(value)); return *this;}
+    inline const VpcBlockPublicAccessExclusion& GetVpcBlockPublicAccessExclusion() const { return m_vpcBlockPublicAccessExclusion; }
+    template<typename VpcBlockPublicAccessExclusionT = VpcBlockPublicAccessExclusion>
+    void SetVpcBlockPublicAccessExclusion(VpcBlockPublicAccessExclusionT&& value) { m_vpcBlockPublicAccessExclusionHasBeenSet = true; m_vpcBlockPublicAccessExclusion = std::forward<VpcBlockPublicAccessExclusionT>(value); }
+    template<typename VpcBlockPublicAccessExclusionT = VpcBlockPublicAccessExclusion>
+    ModifyVpcBlockPublicAccessExclusionResponse& WithVpcBlockPublicAccessExclusion(VpcBlockPublicAccessExclusionT&& value) { SetVpcBlockPublicAccessExclusion(std::forward<VpcBlockPublicAccessExclusionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ModifyVpcBlockPublicAccessExclusionResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ModifyVpcBlockPublicAccessExclusionResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ModifyVpcBlockPublicAccessExclusionResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     VpcBlockPublicAccessExclusion m_vpcBlockPublicAccessExclusion;
+    bool m_vpcBlockPublicAccessExclusionHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,15 +18,7 @@ namespace SFN
 namespace Model
 {
 
-ActivityListItem::ActivityListItem() : 
-    m_activityArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
-{
-}
-
 ActivityListItem::ActivityListItem(JsonView jsonValue)
-  : ActivityListItem()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ActivityListItem& ActivityListItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("activityArn"))
   {
     m_activityArn = jsonValue.GetString("activityArn");
-
     m_activityArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDate"))
   {
     m_creationDate = jsonValue.GetDouble("creationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,14 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-Region::Region() : 
-    m_bucketHasBeenSet(false),
-    m_bucketAccountIdHasBeenSet(false)
-{
-}
-
 Region::Region(const XmlNode& xmlNode)
-  : Region()
 {
   *this = xmlNode;
 }

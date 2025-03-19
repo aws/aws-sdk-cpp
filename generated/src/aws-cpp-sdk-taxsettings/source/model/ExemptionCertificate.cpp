@@ -19,14 +19,7 @@ namespace TaxSettings
 namespace Model
 {
 
-ExemptionCertificate::ExemptionCertificate() : 
-    m_documentFileHasBeenSet(false),
-    m_documentNameHasBeenSet(false)
-{
-}
-
 ExemptionCertificate::ExemptionCertificate(JsonView jsonValue)
-  : ExemptionCertificate()
 {
   *this = jsonValue;
 }
@@ -38,14 +31,11 @@ ExemptionCertificate& ExemptionCertificate::operator =(JsonView jsonValue)
     m_documentFile = HashingUtils::Base64Decode(jsonValue.GetString("documentFile"));
     m_documentFileHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("documentName"))
   {
     m_documentName = jsonValue.GetString("documentName");
-
     m_documentNameHasBeenSet = true;
   }
-
   return *this;
 }
 

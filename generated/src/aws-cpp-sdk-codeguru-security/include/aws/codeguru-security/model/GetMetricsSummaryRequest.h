@@ -25,7 +25,7 @@ namespace Model
   class GetMetricsSummaryRequest : public CodeGuruSecurityRequest
   {
   public:
-    AWS_CODEGURUSECURITY_API GetMetricsSummaryRequest();
+    AWS_CODEGURUSECURITY_API GetMetricsSummaryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,16 +43,16 @@ namespace Model
      * <p>The date you want to retrieve summary metrics from, rounded to the nearest
      * day. The date must be within the past two years.</p>
      */
-    inline const Aws::Utils::DateTime& GetDate() const{ return m_date; }
+    inline const Aws::Utils::DateTime& GetDate() const { return m_date; }
     inline bool DateHasBeenSet() const { return m_dateHasBeenSet; }
-    inline void SetDate(const Aws::Utils::DateTime& value) { m_dateHasBeenSet = true; m_date = value; }
-    inline void SetDate(Aws::Utils::DateTime&& value) { m_dateHasBeenSet = true; m_date = std::move(value); }
-    inline GetMetricsSummaryRequest& WithDate(const Aws::Utils::DateTime& value) { SetDate(value); return *this;}
-    inline GetMetricsSummaryRequest& WithDate(Aws::Utils::DateTime&& value) { SetDate(std::move(value)); return *this;}
+    template<typename DateT = Aws::Utils::DateTime>
+    void SetDate(DateT&& value) { m_dateHasBeenSet = true; m_date = std::forward<DateT>(value); }
+    template<typename DateT = Aws::Utils::DateTime>
+    GetMetricsSummaryRequest& WithDate(DateT&& value) { SetDate(std::forward<DateT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_date;
+    Aws::Utils::DateTime m_date{};
     bool m_dateHasBeenSet = false;
   };
 

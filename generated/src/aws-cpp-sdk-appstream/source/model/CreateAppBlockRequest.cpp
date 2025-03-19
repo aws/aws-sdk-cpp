@@ -12,19 +12,6 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAppBlockRequest::CreateAppBlockRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_sourceS3LocationHasBeenSet(false),
-    m_setupScriptDetailsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_postSetupScriptDetailsHasBeenSet(false),
-    m_packagingType(PackagingType::NOT_SET),
-    m_packagingTypeHasBeenSet(false)
-{
-}
-
 Aws::String CreateAppBlockRequest::SerializePayload() const
 {
   JsonValue payload;

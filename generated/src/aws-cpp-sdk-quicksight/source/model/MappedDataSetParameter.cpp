@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-MappedDataSetParameter::MappedDataSetParameter() : 
-    m_dataSetIdentifierHasBeenSet(false),
-    m_dataSetParameterNameHasBeenSet(false)
-{
-}
-
 MappedDataSetParameter::MappedDataSetParameter(JsonView jsonValue)
-  : MappedDataSetParameter()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ MappedDataSetParameter& MappedDataSetParameter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DataSetIdentifier"))
   {
     m_dataSetIdentifier = jsonValue.GetString("DataSetIdentifier");
-
     m_dataSetIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSetParameterName"))
   {
     m_dataSetParameterName = jsonValue.GetString("DataSetParameterName");
-
     m_dataSetParameterNameHasBeenSet = true;
   }
-
   return *this;
 }
 

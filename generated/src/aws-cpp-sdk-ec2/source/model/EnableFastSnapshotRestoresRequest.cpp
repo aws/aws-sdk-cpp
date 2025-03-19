@@ -10,14 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-EnableFastSnapshotRestoresRequest::EnableFastSnapshotRestoresRequest() : 
-    m_availabilityZonesHasBeenSet(false),
-    m_sourceSnapshotIdsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String EnableFastSnapshotRestoresRequest::SerializePayload() const
 {
   Aws::StringStream ss;

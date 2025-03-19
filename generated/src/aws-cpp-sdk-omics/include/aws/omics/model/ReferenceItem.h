@@ -31,7 +31,7 @@ namespace Model
   class ReferenceItem
   {
   public:
-    AWS_OMICS_API ReferenceItem();
+    AWS_OMICS_API ReferenceItem() = default;
     AWS_OMICS_API ReferenceItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API ReferenceItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The reference's ARN.</p>
      */
-    inline const Aws::String& GetReferenceArn() const{ return m_referenceArn; }
+    inline const Aws::String& GetReferenceArn() const { return m_referenceArn; }
     inline bool ReferenceArnHasBeenSet() const { return m_referenceArnHasBeenSet; }
-    inline void SetReferenceArn(const Aws::String& value) { m_referenceArnHasBeenSet = true; m_referenceArn = value; }
-    inline void SetReferenceArn(Aws::String&& value) { m_referenceArnHasBeenSet = true; m_referenceArn = std::move(value); }
-    inline void SetReferenceArn(const char* value) { m_referenceArnHasBeenSet = true; m_referenceArn.assign(value); }
-    inline ReferenceItem& WithReferenceArn(const Aws::String& value) { SetReferenceArn(value); return *this;}
-    inline ReferenceItem& WithReferenceArn(Aws::String&& value) { SetReferenceArn(std::move(value)); return *this;}
-    inline ReferenceItem& WithReferenceArn(const char* value) { SetReferenceArn(value); return *this;}
+    template<typename ReferenceArnT = Aws::String>
+    void SetReferenceArn(ReferenceArnT&& value) { m_referenceArnHasBeenSet = true; m_referenceArn = std::forward<ReferenceArnT>(value); }
+    template<typename ReferenceArnT = Aws::String>
+    ReferenceItem& WithReferenceArn(ReferenceArnT&& value) { SetReferenceArn(std::forward<ReferenceArnT>(value)); return *this;}
     ///@}
   private:
 

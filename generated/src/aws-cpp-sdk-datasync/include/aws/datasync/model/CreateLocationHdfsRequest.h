@@ -27,7 +27,7 @@ namespace Model
   class CreateLocationHdfsRequest : public DataSyncRequest
   {
   public:
-    AWS_DATASYNC_API CreateLocationHdfsRequest();
+    AWS_DATASYNC_API CreateLocationHdfsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
      * from or write data to the HDFS cluster. If the subdirectory isn't specified, it
      * will default to <code>/</code>.</p>
      */
-    inline const Aws::String& GetSubdirectory() const{ return m_subdirectory; }
+    inline const Aws::String& GetSubdirectory() const { return m_subdirectory; }
     inline bool SubdirectoryHasBeenSet() const { return m_subdirectoryHasBeenSet; }
-    inline void SetSubdirectory(const Aws::String& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = value; }
-    inline void SetSubdirectory(Aws::String&& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = std::move(value); }
-    inline void SetSubdirectory(const char* value) { m_subdirectoryHasBeenSet = true; m_subdirectory.assign(value); }
-    inline CreateLocationHdfsRequest& WithSubdirectory(const Aws::String& value) { SetSubdirectory(value); return *this;}
-    inline CreateLocationHdfsRequest& WithSubdirectory(Aws::String&& value) { SetSubdirectory(std::move(value)); return *this;}
-    inline CreateLocationHdfsRequest& WithSubdirectory(const char* value) { SetSubdirectory(value); return *this;}
+    template<typename SubdirectoryT = Aws::String>
+    void SetSubdirectory(SubdirectoryT&& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = std::forward<SubdirectoryT>(value); }
+    template<typename SubdirectoryT = Aws::String>
+    CreateLocationHdfsRequest& WithSubdirectory(SubdirectoryT&& value) { SetSubdirectory(std::forward<SubdirectoryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,14 @@ namespace Model
      * NameNode contains the information to map blocks of data to the DataNodes. You
      * can use only one NameNode.</p>
      */
-    inline const Aws::Vector<HdfsNameNode>& GetNameNodes() const{ return m_nameNodes; }
+    inline const Aws::Vector<HdfsNameNode>& GetNameNodes() const { return m_nameNodes; }
     inline bool NameNodesHasBeenSet() const { return m_nameNodesHasBeenSet; }
-    inline void SetNameNodes(const Aws::Vector<HdfsNameNode>& value) { m_nameNodesHasBeenSet = true; m_nameNodes = value; }
-    inline void SetNameNodes(Aws::Vector<HdfsNameNode>&& value) { m_nameNodesHasBeenSet = true; m_nameNodes = std::move(value); }
-    inline CreateLocationHdfsRequest& WithNameNodes(const Aws::Vector<HdfsNameNode>& value) { SetNameNodes(value); return *this;}
-    inline CreateLocationHdfsRequest& WithNameNodes(Aws::Vector<HdfsNameNode>&& value) { SetNameNodes(std::move(value)); return *this;}
-    inline CreateLocationHdfsRequest& AddNameNodes(const HdfsNameNode& value) { m_nameNodesHasBeenSet = true; m_nameNodes.push_back(value); return *this; }
-    inline CreateLocationHdfsRequest& AddNameNodes(HdfsNameNode&& value) { m_nameNodesHasBeenSet = true; m_nameNodes.push_back(std::move(value)); return *this; }
+    template<typename NameNodesT = Aws::Vector<HdfsNameNode>>
+    void SetNameNodes(NameNodesT&& value) { m_nameNodesHasBeenSet = true; m_nameNodes = std::forward<NameNodesT>(value); }
+    template<typename NameNodesT = Aws::Vector<HdfsNameNode>>
+    CreateLocationHdfsRequest& WithNameNodes(NameNodesT&& value) { SetNameNodes(std::forward<NameNodesT>(value)); return *this;}
+    template<typename NameNodesT = HdfsNameNode>
+    CreateLocationHdfsRequest& AddNameNodes(NameNodesT&& value) { m_nameNodesHasBeenSet = true; m_nameNodes.emplace_back(std::forward<NameNodesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -78,7 +76,7 @@ namespace Model
      * <p>The size of data blocks to write into the HDFS cluster. The block size must
      * be a multiple of 512 bytes. The default block size is 128 mebibytes (MiB).</p>
      */
-    inline int GetBlockSize() const{ return m_blockSize; }
+    inline int GetBlockSize() const { return m_blockSize; }
     inline bool BlockSizeHasBeenSet() const { return m_blockSizeHasBeenSet; }
     inline void SetBlockSize(int value) { m_blockSizeHasBeenSet = true; m_blockSize = value; }
     inline CreateLocationHdfsRequest& WithBlockSize(int value) { SetBlockSize(value); return *this;}
@@ -89,7 +87,7 @@ namespace Model
      * <p>The number of DataNodes to replicate the data to when writing to the HDFS
      * cluster. By default, data is replicated to three DataNodes.</p>
      */
-    inline int GetReplicationFactor() const{ return m_replicationFactor; }
+    inline int GetReplicationFactor() const { return m_replicationFactor; }
     inline bool ReplicationFactorHasBeenSet() const { return m_replicationFactorHasBeenSet; }
     inline void SetReplicationFactor(int value) { m_replicationFactorHasBeenSet = true; m_replicationFactor = value; }
     inline CreateLocationHdfsRequest& WithReplicationFactor(int value) { SetReplicationFactor(value); return *this;}
@@ -99,14 +97,12 @@ namespace Model
     /**
      * <p>The URI of the HDFS cluster's Key Management Server (KMS). </p>
      */
-    inline const Aws::String& GetKmsKeyProviderUri() const{ return m_kmsKeyProviderUri; }
+    inline const Aws::String& GetKmsKeyProviderUri() const { return m_kmsKeyProviderUri; }
     inline bool KmsKeyProviderUriHasBeenSet() const { return m_kmsKeyProviderUriHasBeenSet; }
-    inline void SetKmsKeyProviderUri(const Aws::String& value) { m_kmsKeyProviderUriHasBeenSet = true; m_kmsKeyProviderUri = value; }
-    inline void SetKmsKeyProviderUri(Aws::String&& value) { m_kmsKeyProviderUriHasBeenSet = true; m_kmsKeyProviderUri = std::move(value); }
-    inline void SetKmsKeyProviderUri(const char* value) { m_kmsKeyProviderUriHasBeenSet = true; m_kmsKeyProviderUri.assign(value); }
-    inline CreateLocationHdfsRequest& WithKmsKeyProviderUri(const Aws::String& value) { SetKmsKeyProviderUri(value); return *this;}
-    inline CreateLocationHdfsRequest& WithKmsKeyProviderUri(Aws::String&& value) { SetKmsKeyProviderUri(std::move(value)); return *this;}
-    inline CreateLocationHdfsRequest& WithKmsKeyProviderUri(const char* value) { SetKmsKeyProviderUri(value); return *this;}
+    template<typename KmsKeyProviderUriT = Aws::String>
+    void SetKmsKeyProviderUri(KmsKeyProviderUriT&& value) { m_kmsKeyProviderUriHasBeenSet = true; m_kmsKeyProviderUri = std::forward<KmsKeyProviderUriT>(value); }
+    template<typename KmsKeyProviderUriT = Aws::String>
+    CreateLocationHdfsRequest& WithKmsKeyProviderUri(KmsKeyProviderUriT&& value) { SetKmsKeyProviderUri(std::forward<KmsKeyProviderUriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -119,24 +115,22 @@ namespace Model
      * <code>DataTransferProtection</code>, the other parameter assumes the same value.
      * </p>
      */
-    inline const QopConfiguration& GetQopConfiguration() const{ return m_qopConfiguration; }
+    inline const QopConfiguration& GetQopConfiguration() const { return m_qopConfiguration; }
     inline bool QopConfigurationHasBeenSet() const { return m_qopConfigurationHasBeenSet; }
-    inline void SetQopConfiguration(const QopConfiguration& value) { m_qopConfigurationHasBeenSet = true; m_qopConfiguration = value; }
-    inline void SetQopConfiguration(QopConfiguration&& value) { m_qopConfigurationHasBeenSet = true; m_qopConfiguration = std::move(value); }
-    inline CreateLocationHdfsRequest& WithQopConfiguration(const QopConfiguration& value) { SetQopConfiguration(value); return *this;}
-    inline CreateLocationHdfsRequest& WithQopConfiguration(QopConfiguration&& value) { SetQopConfiguration(std::move(value)); return *this;}
+    template<typename QopConfigurationT = QopConfiguration>
+    void SetQopConfiguration(QopConfigurationT&& value) { m_qopConfigurationHasBeenSet = true; m_qopConfiguration = std::forward<QopConfigurationT>(value); }
+    template<typename QopConfigurationT = QopConfiguration>
+    CreateLocationHdfsRequest& WithQopConfiguration(QopConfigurationT&& value) { SetQopConfiguration(std::forward<QopConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of authentication used to determine the identity of the user. </p>
      */
-    inline const HdfsAuthenticationType& GetAuthenticationType() const{ return m_authenticationType; }
+    inline HdfsAuthenticationType GetAuthenticationType() const { return m_authenticationType; }
     inline bool AuthenticationTypeHasBeenSet() const { return m_authenticationTypeHasBeenSet; }
-    inline void SetAuthenticationType(const HdfsAuthenticationType& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = value; }
-    inline void SetAuthenticationType(HdfsAuthenticationType&& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = std::move(value); }
-    inline CreateLocationHdfsRequest& WithAuthenticationType(const HdfsAuthenticationType& value) { SetAuthenticationType(value); return *this;}
-    inline CreateLocationHdfsRequest& WithAuthenticationType(HdfsAuthenticationType&& value) { SetAuthenticationType(std::move(value)); return *this;}
+    inline void SetAuthenticationType(HdfsAuthenticationType value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = value; }
+    inline CreateLocationHdfsRequest& WithAuthenticationType(HdfsAuthenticationType value) { SetAuthenticationType(value); return *this;}
     ///@}
 
     ///@{
@@ -145,14 +139,12 @@ namespace Model
      *  <p>If <code>SIMPLE</code> is specified for
      * <code>AuthenticationType</code>, this parameter is required. </p> 
      */
-    inline const Aws::String& GetSimpleUser() const{ return m_simpleUser; }
+    inline const Aws::String& GetSimpleUser() const { return m_simpleUser; }
     inline bool SimpleUserHasBeenSet() const { return m_simpleUserHasBeenSet; }
-    inline void SetSimpleUser(const Aws::String& value) { m_simpleUserHasBeenSet = true; m_simpleUser = value; }
-    inline void SetSimpleUser(Aws::String&& value) { m_simpleUserHasBeenSet = true; m_simpleUser = std::move(value); }
-    inline void SetSimpleUser(const char* value) { m_simpleUserHasBeenSet = true; m_simpleUser.assign(value); }
-    inline CreateLocationHdfsRequest& WithSimpleUser(const Aws::String& value) { SetSimpleUser(value); return *this;}
-    inline CreateLocationHdfsRequest& WithSimpleUser(Aws::String&& value) { SetSimpleUser(std::move(value)); return *this;}
-    inline CreateLocationHdfsRequest& WithSimpleUser(const char* value) { SetSimpleUser(value); return *this;}
+    template<typename SimpleUserT = Aws::String>
+    void SetSimpleUser(SimpleUserT&& value) { m_simpleUserHasBeenSet = true; m_simpleUser = std::forward<SimpleUserT>(value); }
+    template<typename SimpleUserT = Aws::String>
+    CreateLocationHdfsRequest& WithSimpleUser(SimpleUserT&& value) { SetSimpleUser(std::forward<SimpleUserT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -161,14 +153,12 @@ namespace Model
      * cluster. </p>  <p>If <code>KERBEROS</code> is specified for
      * <code>AuthenticationType</code>, this parameter is required.</p> 
      */
-    inline const Aws::String& GetKerberosPrincipal() const{ return m_kerberosPrincipal; }
+    inline const Aws::String& GetKerberosPrincipal() const { return m_kerberosPrincipal; }
     inline bool KerberosPrincipalHasBeenSet() const { return m_kerberosPrincipalHasBeenSet; }
-    inline void SetKerberosPrincipal(const Aws::String& value) { m_kerberosPrincipalHasBeenSet = true; m_kerberosPrincipal = value; }
-    inline void SetKerberosPrincipal(Aws::String&& value) { m_kerberosPrincipalHasBeenSet = true; m_kerberosPrincipal = std::move(value); }
-    inline void SetKerberosPrincipal(const char* value) { m_kerberosPrincipalHasBeenSet = true; m_kerberosPrincipal.assign(value); }
-    inline CreateLocationHdfsRequest& WithKerberosPrincipal(const Aws::String& value) { SetKerberosPrincipal(value); return *this;}
-    inline CreateLocationHdfsRequest& WithKerberosPrincipal(Aws::String&& value) { SetKerberosPrincipal(std::move(value)); return *this;}
-    inline CreateLocationHdfsRequest& WithKerberosPrincipal(const char* value) { SetKerberosPrincipal(value); return *this;}
+    template<typename KerberosPrincipalT = Aws::String>
+    void SetKerberosPrincipal(KerberosPrincipalT&& value) { m_kerberosPrincipalHasBeenSet = true; m_kerberosPrincipal = std::forward<KerberosPrincipalT>(value); }
+    template<typename KerberosPrincipalT = Aws::String>
+    CreateLocationHdfsRequest& WithKerberosPrincipal(KerberosPrincipalT&& value) { SetKerberosPrincipal(std::forward<KerberosPrincipalT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -180,12 +170,12 @@ namespace Model
      * <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this
      * parameter is required. </p> 
      */
-    inline const Aws::Utils::ByteBuffer& GetKerberosKeytab() const{ return m_kerberosKeytab; }
+    inline const Aws::Utils::ByteBuffer& GetKerberosKeytab() const { return m_kerberosKeytab; }
     inline bool KerberosKeytabHasBeenSet() const { return m_kerberosKeytabHasBeenSet; }
-    inline void SetKerberosKeytab(const Aws::Utils::ByteBuffer& value) { m_kerberosKeytabHasBeenSet = true; m_kerberosKeytab = value; }
-    inline void SetKerberosKeytab(Aws::Utils::ByteBuffer&& value) { m_kerberosKeytabHasBeenSet = true; m_kerberosKeytab = std::move(value); }
-    inline CreateLocationHdfsRequest& WithKerberosKeytab(const Aws::Utils::ByteBuffer& value) { SetKerberosKeytab(value); return *this;}
-    inline CreateLocationHdfsRequest& WithKerberosKeytab(Aws::Utils::ByteBuffer&& value) { SetKerberosKeytab(std::move(value)); return *this;}
+    template<typename KerberosKeytabT = Aws::Utils::ByteBuffer>
+    void SetKerberosKeytab(KerberosKeytabT&& value) { m_kerberosKeytabHasBeenSet = true; m_kerberosKeytab = std::forward<KerberosKeytabT>(value); }
+    template<typename KerberosKeytabT = Aws::Utils::ByteBuffer>
+    CreateLocationHdfsRequest& WithKerberosKeytab(KerberosKeytabT&& value) { SetKerberosKeytab(std::forward<KerberosKeytabT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -197,12 +187,12 @@ namespace Model
      * <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this
      * parameter is required.</p> 
      */
-    inline const Aws::Utils::ByteBuffer& GetKerberosKrb5Conf() const{ return m_kerberosKrb5Conf; }
+    inline const Aws::Utils::ByteBuffer& GetKerberosKrb5Conf() const { return m_kerberosKrb5Conf; }
     inline bool KerberosKrb5ConfHasBeenSet() const { return m_kerberosKrb5ConfHasBeenSet; }
-    inline void SetKerberosKrb5Conf(const Aws::Utils::ByteBuffer& value) { m_kerberosKrb5ConfHasBeenSet = true; m_kerberosKrb5Conf = value; }
-    inline void SetKerberosKrb5Conf(Aws::Utils::ByteBuffer&& value) { m_kerberosKrb5ConfHasBeenSet = true; m_kerberosKrb5Conf = std::move(value); }
-    inline CreateLocationHdfsRequest& WithKerberosKrb5Conf(const Aws::Utils::ByteBuffer& value) { SetKerberosKrb5Conf(value); return *this;}
-    inline CreateLocationHdfsRequest& WithKerberosKrb5Conf(Aws::Utils::ByteBuffer&& value) { SetKerberosKrb5Conf(std::move(value)); return *this;}
+    template<typename KerberosKrb5ConfT = Aws::Utils::ByteBuffer>
+    void SetKerberosKrb5Conf(KerberosKrb5ConfT&& value) { m_kerberosKrb5ConfHasBeenSet = true; m_kerberosKrb5Conf = std::forward<KerberosKrb5ConfT>(value); }
+    template<typename KerberosKrb5ConfT = Aws::Utils::ByteBuffer>
+    CreateLocationHdfsRequest& WithKerberosKrb5Conf(KerberosKrb5ConfT&& value) { SetKerberosKrb5Conf(std::forward<KerberosKrb5ConfT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -210,15 +200,14 @@ namespace Model
      * <p>The Amazon Resource Names (ARNs) of the DataSync agents that can connect to
      * your HDFS cluster.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAgentArns() const{ return m_agentArns; }
+    inline const Aws::Vector<Aws::String>& GetAgentArns() const { return m_agentArns; }
     inline bool AgentArnsHasBeenSet() const { return m_agentArnsHasBeenSet; }
-    inline void SetAgentArns(const Aws::Vector<Aws::String>& value) { m_agentArnsHasBeenSet = true; m_agentArns = value; }
-    inline void SetAgentArns(Aws::Vector<Aws::String>&& value) { m_agentArnsHasBeenSet = true; m_agentArns = std::move(value); }
-    inline CreateLocationHdfsRequest& WithAgentArns(const Aws::Vector<Aws::String>& value) { SetAgentArns(value); return *this;}
-    inline CreateLocationHdfsRequest& WithAgentArns(Aws::Vector<Aws::String>&& value) { SetAgentArns(std::move(value)); return *this;}
-    inline CreateLocationHdfsRequest& AddAgentArns(const Aws::String& value) { m_agentArnsHasBeenSet = true; m_agentArns.push_back(value); return *this; }
-    inline CreateLocationHdfsRequest& AddAgentArns(Aws::String&& value) { m_agentArnsHasBeenSet = true; m_agentArns.push_back(std::move(value)); return *this; }
-    inline CreateLocationHdfsRequest& AddAgentArns(const char* value) { m_agentArnsHasBeenSet = true; m_agentArns.push_back(value); return *this; }
+    template<typename AgentArnsT = Aws::Vector<Aws::String>>
+    void SetAgentArns(AgentArnsT&& value) { m_agentArnsHasBeenSet = true; m_agentArns = std::forward<AgentArnsT>(value); }
+    template<typename AgentArnsT = Aws::Vector<Aws::String>>
+    CreateLocationHdfsRequest& WithAgentArns(AgentArnsT&& value) { SetAgentArns(std::forward<AgentArnsT>(value)); return *this;}
+    template<typename AgentArnsT = Aws::String>
+    CreateLocationHdfsRequest& AddAgentArns(AgentArnsT&& value) { m_agentArnsHasBeenSet = true; m_agentArns.emplace_back(std::forward<AgentArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -227,14 +216,14 @@ namespace Model
      * location. The value can be an empty string. We recommend using tags to name your
      * resources. </p>
      */
-    inline const Aws::Vector<TagListEntry>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<TagListEntry>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<TagListEntry>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<TagListEntry>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateLocationHdfsRequest& WithTags(const Aws::Vector<TagListEntry>& value) { SetTags(value); return *this;}
-    inline CreateLocationHdfsRequest& WithTags(Aws::Vector<TagListEntry>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateLocationHdfsRequest& AddTags(const TagListEntry& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateLocationHdfsRequest& AddTags(TagListEntry&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<TagListEntry>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<TagListEntry>>
+    CreateLocationHdfsRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = TagListEntry>
+    CreateLocationHdfsRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
@@ -244,10 +233,10 @@ namespace Model
     Aws::Vector<HdfsNameNode> m_nameNodes;
     bool m_nameNodesHasBeenSet = false;
 
-    int m_blockSize;
+    int m_blockSize{0};
     bool m_blockSizeHasBeenSet = false;
 
-    int m_replicationFactor;
+    int m_replicationFactor{0};
     bool m_replicationFactorHasBeenSet = false;
 
     Aws::String m_kmsKeyProviderUri;
@@ -256,7 +245,7 @@ namespace Model
     QopConfiguration m_qopConfiguration;
     bool m_qopConfigurationHasBeenSet = false;
 
-    HdfsAuthenticationType m_authenticationType;
+    HdfsAuthenticationType m_authenticationType{HdfsAuthenticationType::NOT_SET};
     bool m_authenticationTypeHasBeenSet = false;
 
     Aws::String m_simpleUser;
@@ -265,10 +254,10 @@ namespace Model
     Aws::String m_kerberosPrincipal;
     bool m_kerberosPrincipalHasBeenSet = false;
 
-    Aws::Utils::ByteBuffer m_kerberosKeytab;
+    Aws::Utils::ByteBuffer m_kerberosKeytab{};
     bool m_kerberosKeytabHasBeenSet = false;
 
-    Aws::Utils::ByteBuffer m_kerberosKrb5Conf;
+    Aws::Utils::ByteBuffer m_kerberosKrb5Conf{};
     bool m_kerberosKrb5ConfHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_agentArns;

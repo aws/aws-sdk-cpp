@@ -18,14 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-LoRaWANJoinEventNotificationConfigurations::LoRaWANJoinEventNotificationConfigurations() : 
-    m_devEuiEventTopic(EventNotificationTopicStatus::NOT_SET),
-    m_devEuiEventTopicHasBeenSet(false)
-{
-}
-
 LoRaWANJoinEventNotificationConfigurations::LoRaWANJoinEventNotificationConfigurations(JsonView jsonValue)
-  : LoRaWANJoinEventNotificationConfigurations()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ LoRaWANJoinEventNotificationConfigurations& LoRaWANJoinEventNotificationConfigur
   if(jsonValue.ValueExists("DevEuiEventTopic"))
   {
     m_devEuiEventTopic = EventNotificationTopicStatusMapper::GetEventNotificationTopicStatusForName(jsonValue.GetString("DevEuiEventTopic"));
-
     m_devEuiEventTopicHasBeenSet = true;
   }
-
   return *this;
 }
 

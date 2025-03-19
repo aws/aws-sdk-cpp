@@ -18,14 +18,7 @@ namespace AppRunner
 namespace Model
 {
 
-IngressConfiguration::IngressConfiguration() : 
-    m_isPubliclyAccessible(false),
-    m_isPubliclyAccessibleHasBeenSet(false)
-{
-}
-
 IngressConfiguration::IngressConfiguration(JsonView jsonValue)
-  : IngressConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ IngressConfiguration& IngressConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IsPubliclyAccessible"))
   {
     m_isPubliclyAccessible = jsonValue.GetBool("IsPubliclyAccessible");
-
     m_isPubliclyAccessibleHasBeenSet = true;
   }
-
   return *this;
 }
 

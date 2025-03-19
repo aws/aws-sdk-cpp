@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeIndexFieldsResult::DescribeIndexFieldsResult()
-{
-}
-
 DescribeIndexFieldsResult::DescribeIndexFieldsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,18 +38,21 @@ DescribeIndexFieldsResult& DescribeIndexFieldsResult::operator =(const Aws::Amaz
     if(!indexFieldsNode.IsNull())
     {
       XmlNode indexFieldsMember = indexFieldsNode.FirstChild("member");
+      m_indexFieldsHasBeenSet = !indexFieldsMember.IsNull();
       while(!indexFieldsMember.IsNull())
       {
         m_indexFields.push_back(indexFieldsMember);
         indexFieldsMember = indexFieldsMember.NextNode("member");
       }
 
+      m_indexFieldsHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::CloudSearch::Model::DescribeIndexFieldsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

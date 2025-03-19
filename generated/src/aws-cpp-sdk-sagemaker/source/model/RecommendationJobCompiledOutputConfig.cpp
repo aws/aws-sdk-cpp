@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-RecommendationJobCompiledOutputConfig::RecommendationJobCompiledOutputConfig() : 
-    m_s3OutputUriHasBeenSet(false)
-{
-}
-
 RecommendationJobCompiledOutputConfig::RecommendationJobCompiledOutputConfig(JsonView jsonValue)
-  : RecommendationJobCompiledOutputConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RecommendationJobCompiledOutputConfig& RecommendationJobCompiledOutputConfig::op
   if(jsonValue.ValueExists("S3OutputUri"))
   {
     m_s3OutputUri = jsonValue.GetString("S3OutputUri");
-
     m_s3OutputUriHasBeenSet = true;
   }
-
   return *this;
 }
 

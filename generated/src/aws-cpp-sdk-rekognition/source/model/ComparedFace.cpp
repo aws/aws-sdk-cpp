@@ -18,20 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-ComparedFace::ComparedFace() : 
-    m_boundingBoxHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false),
-    m_landmarksHasBeenSet(false),
-    m_poseHasBeenSet(false),
-    m_qualityHasBeenSet(false),
-    m_emotionsHasBeenSet(false),
-    m_smileHasBeenSet(false)
-{
-}
-
 ComparedFace::ComparedFace(JsonView jsonValue)
-  : ComparedFace()
 {
   *this = jsonValue;
 }
@@ -41,17 +28,13 @@ ComparedFace& ComparedFace::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BoundingBox"))
   {
     m_boundingBox = jsonValue.GetObject("BoundingBox");
-
     m_boundingBoxHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Confidence"))
   {
     m_confidence = jsonValue.GetDouble("Confidence");
-
     m_confidenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Landmarks"))
   {
     Aws::Utils::Array<JsonView> landmarksJsonList = jsonValue.GetArray("Landmarks");
@@ -61,21 +44,16 @@ ComparedFace& ComparedFace::operator =(JsonView jsonValue)
     }
     m_landmarksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Pose"))
   {
     m_pose = jsonValue.GetObject("Pose");
-
     m_poseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Quality"))
   {
     m_quality = jsonValue.GetObject("Quality");
-
     m_qualityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Emotions"))
   {
     Aws::Utils::Array<JsonView> emotionsJsonList = jsonValue.GetArray("Emotions");
@@ -85,14 +63,11 @@ ComparedFace& ComparedFace::operator =(JsonView jsonValue)
     }
     m_emotionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Smile"))
   {
     m_smile = jsonValue.GetObject("Smile");
-
     m_smileHasBeenSet = true;
   }
-
   return *this;
 }
 

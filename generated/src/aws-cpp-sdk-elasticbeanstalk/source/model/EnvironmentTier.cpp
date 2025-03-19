@@ -20,15 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-EnvironmentTier::EnvironmentTier() : 
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 EnvironmentTier::EnvironmentTier(const XmlNode& xmlNode)
-  : EnvironmentTier()
 {
   *this = xmlNode;
 }

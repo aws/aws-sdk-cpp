@@ -18,14 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-ItemPath::ItemPath() : 
-    m_nestedItemPathHasBeenSet(false),
-    m_hashHasBeenSet(false)
-{
-}
-
 ItemPath::ItemPath(JsonView jsonValue)
-  : ItemPath()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ItemPath& ItemPath::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("nestedItemPath"))
   {
     m_nestedItemPath = jsonValue.GetString("nestedItemPath");
-
     m_nestedItemPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hash"))
   {
     m_hash = jsonValue.GetString("hash");
-
     m_hashHasBeenSet = true;
   }
-
   return *this;
 }
 

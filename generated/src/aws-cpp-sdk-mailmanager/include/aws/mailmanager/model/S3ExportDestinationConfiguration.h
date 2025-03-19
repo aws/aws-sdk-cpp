@@ -32,7 +32,7 @@ namespace Model
   class S3ExportDestinationConfiguration
   {
   public:
-    AWS_MAILMANAGER_API S3ExportDestinationConfiguration();
+    AWS_MAILMANAGER_API S3ExportDestinationConfiguration() = default;
     AWS_MAILMANAGER_API S3ExportDestinationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API S3ExportDestinationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The S3 location to deliver the exported email data.</p>
      */
-    inline const Aws::String& GetS3Location() const{ return m_s3Location; }
+    inline const Aws::String& GetS3Location() const { return m_s3Location; }
     inline bool S3LocationHasBeenSet() const { return m_s3LocationHasBeenSet; }
-    inline void SetS3Location(const Aws::String& value) { m_s3LocationHasBeenSet = true; m_s3Location = value; }
-    inline void SetS3Location(Aws::String&& value) { m_s3LocationHasBeenSet = true; m_s3Location = std::move(value); }
-    inline void SetS3Location(const char* value) { m_s3LocationHasBeenSet = true; m_s3Location.assign(value); }
-    inline S3ExportDestinationConfiguration& WithS3Location(const Aws::String& value) { SetS3Location(value); return *this;}
-    inline S3ExportDestinationConfiguration& WithS3Location(Aws::String&& value) { SetS3Location(std::move(value)); return *this;}
-    inline S3ExportDestinationConfiguration& WithS3Location(const char* value) { SetS3Location(value); return *this;}
+    template<typename S3LocationT = Aws::String>
+    void SetS3Location(S3LocationT&& value) { m_s3LocationHasBeenSet = true; m_s3Location = std::forward<S3LocationT>(value); }
+    template<typename S3LocationT = Aws::String>
+    S3ExportDestinationConfiguration& WithS3Location(S3LocationT&& value) { SetS3Location(std::forward<S3LocationT>(value)); return *this;}
     ///@}
   private:
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AddBridgeSourcesResult::AddBridgeSourcesResult()
-{
-}
-
 AddBridgeSourcesResult::AddBridgeSourcesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ AddBridgeSourcesResult& AddBridgeSourcesResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("bridgeArn"))
   {
     m_bridgeArn = jsonValue.GetString("bridgeArn");
-
+    m_bridgeArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sources"))
   {
     Aws::Utils::Array<JsonView> sourcesJsonList = jsonValue.GetArray("sources");
@@ -42,14 +37,15 @@ AddBridgeSourcesResult& AddBridgeSourcesResult::operator =(const Aws::AmazonWebS
     {
       m_sources.push_back(sourcesJsonList[sourcesIndex].AsObject());
     }
+    m_sourcesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

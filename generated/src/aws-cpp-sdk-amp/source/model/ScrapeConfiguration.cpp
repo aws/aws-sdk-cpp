@@ -19,13 +19,7 @@ namespace PrometheusService
 namespace Model
 {
 
-ScrapeConfiguration::ScrapeConfiguration() : 
-    m_configurationBlobHasBeenSet(false)
-{
-}
-
 ScrapeConfiguration::ScrapeConfiguration(JsonView jsonValue)
-  : ScrapeConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,7 +31,6 @@ ScrapeConfiguration& ScrapeConfiguration::operator =(JsonView jsonValue)
     m_configurationBlob = HashingUtils::Base64Decode(jsonValue.GetString("configurationBlob"));
     m_configurationBlobHasBeenSet = true;
   }
-
   return *this;
 }
 

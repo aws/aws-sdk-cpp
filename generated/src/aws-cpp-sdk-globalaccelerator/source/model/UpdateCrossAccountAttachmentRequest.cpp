@@ -12,16 +12,6 @@ using namespace Aws::GlobalAccelerator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateCrossAccountAttachmentRequest::UpdateCrossAccountAttachmentRequest() : 
-    m_attachmentArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_addPrincipalsHasBeenSet(false),
-    m_removePrincipalsHasBeenSet(false),
-    m_addResourcesHasBeenSet(false),
-    m_removeResourcesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateCrossAccountAttachmentRequest::SerializePayload() const
 {
   JsonValue payload;

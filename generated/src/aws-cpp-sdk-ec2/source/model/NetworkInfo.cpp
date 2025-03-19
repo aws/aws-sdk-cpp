@@ -20,36 +20,7 @@ namespace EC2
 namespace Model
 {
 
-NetworkInfo::NetworkInfo() : 
-    m_networkPerformanceHasBeenSet(false),
-    m_maximumNetworkInterfaces(0),
-    m_maximumNetworkInterfacesHasBeenSet(false),
-    m_maximumNetworkCards(0),
-    m_maximumNetworkCardsHasBeenSet(false),
-    m_defaultNetworkCardIndex(0),
-    m_defaultNetworkCardIndexHasBeenSet(false),
-    m_networkCardsHasBeenSet(false),
-    m_ipv4AddressesPerInterface(0),
-    m_ipv4AddressesPerInterfaceHasBeenSet(false),
-    m_ipv6AddressesPerInterface(0),
-    m_ipv6AddressesPerInterfaceHasBeenSet(false),
-    m_ipv6Supported(false),
-    m_ipv6SupportedHasBeenSet(false),
-    m_enaSupport(EnaSupport::NOT_SET),
-    m_enaSupportHasBeenSet(false),
-    m_efaSupported(false),
-    m_efaSupportedHasBeenSet(false),
-    m_efaInfoHasBeenSet(false),
-    m_encryptionInTransitSupported(false),
-    m_encryptionInTransitSupportedHasBeenSet(false),
-    m_enaSrdSupported(false),
-    m_enaSrdSupportedHasBeenSet(false),
-    m_bandwidthWeightingsHasBeenSet(false)
-{
-}
-
 NetworkInfo::NetworkInfo(const XmlNode& xmlNode)
-  : NetworkInfo()
 {
   *this = xmlNode;
 }
@@ -88,6 +59,7 @@ NetworkInfo& NetworkInfo::operator =(const XmlNode& xmlNode)
     if(!networkCardsNode.IsNull())
     {
       XmlNode networkCardsMember = networkCardsNode.FirstChild("item");
+      m_networkCardsHasBeenSet = !networkCardsMember.IsNull();
       while(!networkCardsMember.IsNull())
       {
         m_networkCards.push_back(networkCardsMember);
@@ -117,7 +89,7 @@ NetworkInfo& NetworkInfo::operator =(const XmlNode& xmlNode)
     XmlNode enaSupportNode = resultNode.FirstChild("enaSupport");
     if(!enaSupportNode.IsNull())
     {
-      m_enaSupport = EnaSupportMapper::GetEnaSupportForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enaSupportNode.GetText()).c_str()).c_str());
+      m_enaSupport = EnaSupportMapper::GetEnaSupportForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enaSupportNode.GetText()).c_str()));
       m_enaSupportHasBeenSet = true;
     }
     XmlNode efaSupportedNode = resultNode.FirstChild("efaSupported");
@@ -148,6 +120,7 @@ NetworkInfo& NetworkInfo::operator =(const XmlNode& xmlNode)
     if(!bandwidthWeightingsNode.IsNull())
     {
       XmlNode bandwidthWeightingsMember = bandwidthWeightingsNode.FirstChild("item");
+      m_bandwidthWeightingsHasBeenSet = !bandwidthWeightingsMember.IsNull();
       while(!bandwidthWeightingsMember.IsNull())
       {
         m_bandwidthWeightings.push_back(BandwidthWeightingTypeMapper::GetBandwidthWeightingTypeForName(StringUtils::Trim(bandwidthWeightingsMember.GetText().c_str())));

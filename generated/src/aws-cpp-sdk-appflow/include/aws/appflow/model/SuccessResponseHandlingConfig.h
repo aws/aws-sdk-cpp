@@ -34,7 +34,7 @@ namespace Model
   class SuccessResponseHandlingConfig
   {
   public:
-    AWS_APPFLOW_API SuccessResponseHandlingConfig();
+    AWS_APPFLOW_API SuccessResponseHandlingConfig() = default;
     AWS_APPFLOW_API SuccessResponseHandlingConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API SuccessResponseHandlingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p>The Amazon S3 bucket prefix.</p>
      */
-    inline const Aws::String& GetBucketPrefix() const{ return m_bucketPrefix; }
+    inline const Aws::String& GetBucketPrefix() const { return m_bucketPrefix; }
     inline bool BucketPrefixHasBeenSet() const { return m_bucketPrefixHasBeenSet; }
-    inline void SetBucketPrefix(const Aws::String& value) { m_bucketPrefixHasBeenSet = true; m_bucketPrefix = value; }
-    inline void SetBucketPrefix(Aws::String&& value) { m_bucketPrefixHasBeenSet = true; m_bucketPrefix = std::move(value); }
-    inline void SetBucketPrefix(const char* value) { m_bucketPrefixHasBeenSet = true; m_bucketPrefix.assign(value); }
-    inline SuccessResponseHandlingConfig& WithBucketPrefix(const Aws::String& value) { SetBucketPrefix(value); return *this;}
-    inline SuccessResponseHandlingConfig& WithBucketPrefix(Aws::String&& value) { SetBucketPrefix(std::move(value)); return *this;}
-    inline SuccessResponseHandlingConfig& WithBucketPrefix(const char* value) { SetBucketPrefix(value); return *this;}
+    template<typename BucketPrefixT = Aws::String>
+    void SetBucketPrefix(BucketPrefixT&& value) { m_bucketPrefixHasBeenSet = true; m_bucketPrefix = std::forward<BucketPrefixT>(value); }
+    template<typename BucketPrefixT = Aws::String>
+    SuccessResponseHandlingConfig& WithBucketPrefix(BucketPrefixT&& value) { SetBucketPrefix(std::forward<BucketPrefixT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the Amazon S3 bucket.</p>
      */
-    inline const Aws::String& GetBucketName() const{ return m_bucketName; }
+    inline const Aws::String& GetBucketName() const { return m_bucketName; }
     inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
-    inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
-    inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::move(value); }
-    inline void SetBucketName(const char* value) { m_bucketNameHasBeenSet = true; m_bucketName.assign(value); }
-    inline SuccessResponseHandlingConfig& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
-    inline SuccessResponseHandlingConfig& WithBucketName(Aws::String&& value) { SetBucketName(std::move(value)); return *this;}
-    inline SuccessResponseHandlingConfig& WithBucketName(const char* value) { SetBucketName(value); return *this;}
+    template<typename BucketNameT = Aws::String>
+    void SetBucketName(BucketNameT&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::forward<BucketNameT>(value); }
+    template<typename BucketNameT = Aws::String>
+    SuccessResponseHandlingConfig& WithBucketName(BucketNameT&& value) { SetBucketName(std::forward<BucketNameT>(value)); return *this;}
     ///@}
   private:
 

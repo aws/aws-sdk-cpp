@@ -18,16 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-ScanStatus::ScanStatus() : 
-    m_reason(ScanStatusReason::NOT_SET),
-    m_reasonHasBeenSet(false),
-    m_statusCode(ScanStatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false)
-{
-}
-
 ScanStatus::ScanStatus(JsonView jsonValue)
-  : ScanStatus()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ScanStatus& ScanStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = ScanStatusReasonMapper::GetScanStatusReasonForName(jsonValue.GetString("reason"));
-
     m_reasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusCode"))
   {
     m_statusCode = ScanStatusCodeMapper::GetScanStatusCodeForName(jsonValue.GetString("statusCode"));
-
     m_statusCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

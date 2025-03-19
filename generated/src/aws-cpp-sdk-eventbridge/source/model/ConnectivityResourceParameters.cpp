@@ -18,13 +18,7 @@ namespace EventBridge
 namespace Model
 {
 
-ConnectivityResourceParameters::ConnectivityResourceParameters() : 
-    m_resourceParametersHasBeenSet(false)
-{
-}
-
 ConnectivityResourceParameters::ConnectivityResourceParameters(JsonView jsonValue)
-  : ConnectivityResourceParameters()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ConnectivityResourceParameters& ConnectivityResourceParameters::operator =(JsonV
   if(jsonValue.ValueExists("ResourceParameters"))
   {
     m_resourceParameters = jsonValue.GetObject("ResourceParameters");
-
     m_resourceParametersHasBeenSet = true;
   }
-
   return *this;
 }
 

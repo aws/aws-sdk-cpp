@@ -18,15 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-BlockerDeclaration::BlockerDeclaration() : 
-    m_nameHasBeenSet(false),
-    m_type(BlockerType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 BlockerDeclaration::BlockerDeclaration(JsonView jsonValue)
-  : BlockerDeclaration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ BlockerDeclaration& BlockerDeclaration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = BlockerTypeMapper::GetBlockerTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

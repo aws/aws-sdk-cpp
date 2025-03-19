@@ -18,13 +18,7 @@ namespace RDSDataService
 namespace Model
 {
 
-Record::Record() : 
-    m_valuesHasBeenSet(false)
-{
-}
-
 Record::Record(JsonView jsonValue)
-  : Record()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ Record& Record::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

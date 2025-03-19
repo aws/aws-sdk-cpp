@@ -32,7 +32,7 @@ namespace Model
   class DescribeMlflowTrackingServerResult
   {
   public:
-    AWS_SAGEMAKER_API DescribeMlflowTrackingServerResult();
+    AWS_SAGEMAKER_API DescribeMlflowTrackingServerResult() = default;
     AWS_SAGEMAKER_API DescribeMlflowTrackingServerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API DescribeMlflowTrackingServerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,26 +41,22 @@ namespace Model
     /**
      * <p>The ARN of the described tracking server.</p>
      */
-    inline const Aws::String& GetTrackingServerArn() const{ return m_trackingServerArn; }
-    inline void SetTrackingServerArn(const Aws::String& value) { m_trackingServerArn = value; }
-    inline void SetTrackingServerArn(Aws::String&& value) { m_trackingServerArn = std::move(value); }
-    inline void SetTrackingServerArn(const char* value) { m_trackingServerArn.assign(value); }
-    inline DescribeMlflowTrackingServerResult& WithTrackingServerArn(const Aws::String& value) { SetTrackingServerArn(value); return *this;}
-    inline DescribeMlflowTrackingServerResult& WithTrackingServerArn(Aws::String&& value) { SetTrackingServerArn(std::move(value)); return *this;}
-    inline DescribeMlflowTrackingServerResult& WithTrackingServerArn(const char* value) { SetTrackingServerArn(value); return *this;}
+    inline const Aws::String& GetTrackingServerArn() const { return m_trackingServerArn; }
+    template<typename TrackingServerArnT = Aws::String>
+    void SetTrackingServerArn(TrackingServerArnT&& value) { m_trackingServerArnHasBeenSet = true; m_trackingServerArn = std::forward<TrackingServerArnT>(value); }
+    template<typename TrackingServerArnT = Aws::String>
+    DescribeMlflowTrackingServerResult& WithTrackingServerArn(TrackingServerArnT&& value) { SetTrackingServerArn(std::forward<TrackingServerArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the described tracking server.</p>
      */
-    inline const Aws::String& GetTrackingServerName() const{ return m_trackingServerName; }
-    inline void SetTrackingServerName(const Aws::String& value) { m_trackingServerName = value; }
-    inline void SetTrackingServerName(Aws::String&& value) { m_trackingServerName = std::move(value); }
-    inline void SetTrackingServerName(const char* value) { m_trackingServerName.assign(value); }
-    inline DescribeMlflowTrackingServerResult& WithTrackingServerName(const Aws::String& value) { SetTrackingServerName(value); return *this;}
-    inline DescribeMlflowTrackingServerResult& WithTrackingServerName(Aws::String&& value) { SetTrackingServerName(std::move(value)); return *this;}
-    inline DescribeMlflowTrackingServerResult& WithTrackingServerName(const char* value) { SetTrackingServerName(value); return *this;}
+    inline const Aws::String& GetTrackingServerName() const { return m_trackingServerName; }
+    template<typename TrackingServerNameT = Aws::String>
+    void SetTrackingServerName(TrackingServerNameT&& value) { m_trackingServerNameHasBeenSet = true; m_trackingServerName = std::forward<TrackingServerNameT>(value); }
+    template<typename TrackingServerNameT = Aws::String>
+    DescribeMlflowTrackingServerResult& WithTrackingServerName(TrackingServerNameT&& value) { SetTrackingServerName(std::forward<TrackingServerNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,37 +64,31 @@ namespace Model
      * <p>The S3 URI of the general purpose bucket used as the MLflow Tracking Server
      * artifact store.</p>
      */
-    inline const Aws::String& GetArtifactStoreUri() const{ return m_artifactStoreUri; }
-    inline void SetArtifactStoreUri(const Aws::String& value) { m_artifactStoreUri = value; }
-    inline void SetArtifactStoreUri(Aws::String&& value) { m_artifactStoreUri = std::move(value); }
-    inline void SetArtifactStoreUri(const char* value) { m_artifactStoreUri.assign(value); }
-    inline DescribeMlflowTrackingServerResult& WithArtifactStoreUri(const Aws::String& value) { SetArtifactStoreUri(value); return *this;}
-    inline DescribeMlflowTrackingServerResult& WithArtifactStoreUri(Aws::String&& value) { SetArtifactStoreUri(std::move(value)); return *this;}
-    inline DescribeMlflowTrackingServerResult& WithArtifactStoreUri(const char* value) { SetArtifactStoreUri(value); return *this;}
+    inline const Aws::String& GetArtifactStoreUri() const { return m_artifactStoreUri; }
+    template<typename ArtifactStoreUriT = Aws::String>
+    void SetArtifactStoreUri(ArtifactStoreUriT&& value) { m_artifactStoreUriHasBeenSet = true; m_artifactStoreUri = std::forward<ArtifactStoreUriT>(value); }
+    template<typename ArtifactStoreUriT = Aws::String>
+    DescribeMlflowTrackingServerResult& WithArtifactStoreUri(ArtifactStoreUriT&& value) { SetArtifactStoreUri(std::forward<ArtifactStoreUriT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The size of the described tracking server.</p>
      */
-    inline const TrackingServerSize& GetTrackingServerSize() const{ return m_trackingServerSize; }
-    inline void SetTrackingServerSize(const TrackingServerSize& value) { m_trackingServerSize = value; }
-    inline void SetTrackingServerSize(TrackingServerSize&& value) { m_trackingServerSize = std::move(value); }
-    inline DescribeMlflowTrackingServerResult& WithTrackingServerSize(const TrackingServerSize& value) { SetTrackingServerSize(value); return *this;}
-    inline DescribeMlflowTrackingServerResult& WithTrackingServerSize(TrackingServerSize&& value) { SetTrackingServerSize(std::move(value)); return *this;}
+    inline TrackingServerSize GetTrackingServerSize() const { return m_trackingServerSize; }
+    inline void SetTrackingServerSize(TrackingServerSize value) { m_trackingServerSizeHasBeenSet = true; m_trackingServerSize = value; }
+    inline DescribeMlflowTrackingServerResult& WithTrackingServerSize(TrackingServerSize value) { SetTrackingServerSize(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The MLflow version used for the described tracking server.</p>
      */
-    inline const Aws::String& GetMlflowVersion() const{ return m_mlflowVersion; }
-    inline void SetMlflowVersion(const Aws::String& value) { m_mlflowVersion = value; }
-    inline void SetMlflowVersion(Aws::String&& value) { m_mlflowVersion = std::move(value); }
-    inline void SetMlflowVersion(const char* value) { m_mlflowVersion.assign(value); }
-    inline DescribeMlflowTrackingServerResult& WithMlflowVersion(const Aws::String& value) { SetMlflowVersion(value); return *this;}
-    inline DescribeMlflowTrackingServerResult& WithMlflowVersion(Aws::String&& value) { SetMlflowVersion(std::move(value)); return *this;}
-    inline DescribeMlflowTrackingServerResult& WithMlflowVersion(const char* value) { SetMlflowVersion(value); return *this;}
+    inline const Aws::String& GetMlflowVersion() const { return m_mlflowVersion; }
+    template<typename MlflowVersionT = Aws::String>
+    void SetMlflowVersion(MlflowVersionT&& value) { m_mlflowVersionHasBeenSet = true; m_mlflowVersion = std::forward<MlflowVersionT>(value); }
+    template<typename MlflowVersionT = Aws::String>
+    DescribeMlflowTrackingServerResult& WithMlflowVersion(MlflowVersionT&& value) { SetMlflowVersion(std::forward<MlflowVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,35 +97,29 @@ namespace Model
      * described MLflow Tracking Server uses to access the artifact store in Amazon
      * S3.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
-    inline DescribeMlflowTrackingServerResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline DescribeMlflowTrackingServerResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline DescribeMlflowTrackingServerResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    DescribeMlflowTrackingServerResult& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current creation status of the described MLflow Tracking Server.</p>
      */
-    inline const TrackingServerStatus& GetTrackingServerStatus() const{ return m_trackingServerStatus; }
-    inline void SetTrackingServerStatus(const TrackingServerStatus& value) { m_trackingServerStatus = value; }
-    inline void SetTrackingServerStatus(TrackingServerStatus&& value) { m_trackingServerStatus = std::move(value); }
-    inline DescribeMlflowTrackingServerResult& WithTrackingServerStatus(const TrackingServerStatus& value) { SetTrackingServerStatus(value); return *this;}
-    inline DescribeMlflowTrackingServerResult& WithTrackingServerStatus(TrackingServerStatus&& value) { SetTrackingServerStatus(std::move(value)); return *this;}
+    inline TrackingServerStatus GetTrackingServerStatus() const { return m_trackingServerStatus; }
+    inline void SetTrackingServerStatus(TrackingServerStatus value) { m_trackingServerStatusHasBeenSet = true; m_trackingServerStatus = value; }
+    inline DescribeMlflowTrackingServerResult& WithTrackingServerStatus(TrackingServerStatus value) { SetTrackingServerStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Whether the described MLflow Tracking Server is currently active.</p>
      */
-    inline const IsTrackingServerActive& GetIsActive() const{ return m_isActive; }
-    inline void SetIsActive(const IsTrackingServerActive& value) { m_isActive = value; }
-    inline void SetIsActive(IsTrackingServerActive&& value) { m_isActive = std::move(value); }
-    inline DescribeMlflowTrackingServerResult& WithIsActive(const IsTrackingServerActive& value) { SetIsActive(value); return *this;}
-    inline DescribeMlflowTrackingServerResult& WithIsActive(IsTrackingServerActive&& value) { SetIsActive(std::move(value)); return *this;}
+    inline IsTrackingServerActive GetIsActive() const { return m_isActive; }
+    inline void SetIsActive(IsTrackingServerActive value) { m_isActiveHasBeenSet = true; m_isActive = value; }
+    inline DescribeMlflowTrackingServerResult& WithIsActive(IsTrackingServerActive value) { SetIsActive(value); return *this;}
     ///@}
 
     ///@{
@@ -143,13 +127,11 @@ namespace Model
      * <p>The URL to connect to the MLflow user interface for the described tracking
      * server.</p>
      */
-    inline const Aws::String& GetTrackingServerUrl() const{ return m_trackingServerUrl; }
-    inline void SetTrackingServerUrl(const Aws::String& value) { m_trackingServerUrl = value; }
-    inline void SetTrackingServerUrl(Aws::String&& value) { m_trackingServerUrl = std::move(value); }
-    inline void SetTrackingServerUrl(const char* value) { m_trackingServerUrl.assign(value); }
-    inline DescribeMlflowTrackingServerResult& WithTrackingServerUrl(const Aws::String& value) { SetTrackingServerUrl(value); return *this;}
-    inline DescribeMlflowTrackingServerResult& WithTrackingServerUrl(Aws::String&& value) { SetTrackingServerUrl(std::move(value)); return *this;}
-    inline DescribeMlflowTrackingServerResult& WithTrackingServerUrl(const char* value) { SetTrackingServerUrl(value); return *this;}
+    inline const Aws::String& GetTrackingServerUrl() const { return m_trackingServerUrl; }
+    template<typename TrackingServerUrlT = Aws::String>
+    void SetTrackingServerUrl(TrackingServerUrlT&& value) { m_trackingServerUrlHasBeenSet = true; m_trackingServerUrl = std::forward<TrackingServerUrlT>(value); }
+    template<typename TrackingServerUrlT = Aws::String>
+    DescribeMlflowTrackingServerResult& WithTrackingServerUrl(TrackingServerUrlT&& value) { SetTrackingServerUrl(std::forward<TrackingServerUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -157,13 +139,11 @@ namespace Model
      * <p>The day and time of the week when weekly maintenance occurs on the described
      * tracking server.</p>
      */
-    inline const Aws::String& GetWeeklyMaintenanceWindowStart() const{ return m_weeklyMaintenanceWindowStart; }
-    inline void SetWeeklyMaintenanceWindowStart(const Aws::String& value) { m_weeklyMaintenanceWindowStart = value; }
-    inline void SetWeeklyMaintenanceWindowStart(Aws::String&& value) { m_weeklyMaintenanceWindowStart = std::move(value); }
-    inline void SetWeeklyMaintenanceWindowStart(const char* value) { m_weeklyMaintenanceWindowStart.assign(value); }
-    inline DescribeMlflowTrackingServerResult& WithWeeklyMaintenanceWindowStart(const Aws::String& value) { SetWeeklyMaintenanceWindowStart(value); return *this;}
-    inline DescribeMlflowTrackingServerResult& WithWeeklyMaintenanceWindowStart(Aws::String&& value) { SetWeeklyMaintenanceWindowStart(std::move(value)); return *this;}
-    inline DescribeMlflowTrackingServerResult& WithWeeklyMaintenanceWindowStart(const char* value) { SetWeeklyMaintenanceWindowStart(value); return *this;}
+    inline const Aws::String& GetWeeklyMaintenanceWindowStart() const { return m_weeklyMaintenanceWindowStart; }
+    template<typename WeeklyMaintenanceWindowStartT = Aws::String>
+    void SetWeeklyMaintenanceWindowStart(WeeklyMaintenanceWindowStartT&& value) { m_weeklyMaintenanceWindowStartHasBeenSet = true; m_weeklyMaintenanceWindowStart = std::forward<WeeklyMaintenanceWindowStartT>(value); }
+    template<typename WeeklyMaintenanceWindowStartT = Aws::String>
+    DescribeMlflowTrackingServerResult& WithWeeklyMaintenanceWindowStart(WeeklyMaintenanceWindowStartT&& value) { SetWeeklyMaintenanceWindowStart(std::forward<WeeklyMaintenanceWindowStartT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -171,8 +151,8 @@ namespace Model
      * <p>Whether automatic registration of new MLflow models to the SageMaker Model
      * Registry is enabled.</p>
      */
-    inline bool GetAutomaticModelRegistration() const{ return m_automaticModelRegistration; }
-    inline void SetAutomaticModelRegistration(bool value) { m_automaticModelRegistration = value; }
+    inline bool GetAutomaticModelRegistration() const { return m_automaticModelRegistration; }
+    inline void SetAutomaticModelRegistration(bool value) { m_automaticModelRegistrationHasBeenSet = true; m_automaticModelRegistration = value; }
     inline DescribeMlflowTrackingServerResult& WithAutomaticModelRegistration(bool value) { SetAutomaticModelRegistration(value); return *this;}
     ///@}
 
@@ -180,20 +160,20 @@ namespace Model
     /**
      * <p>The timestamp of when the described MLflow Tracking Server was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline DescribeMlflowTrackingServerResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline DescribeMlflowTrackingServerResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    DescribeMlflowTrackingServerResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const UserContext& GetCreatedBy() const{ return m_createdBy; }
-    inline void SetCreatedBy(const UserContext& value) { m_createdBy = value; }
-    inline void SetCreatedBy(UserContext&& value) { m_createdBy = std::move(value); }
-    inline DescribeMlflowTrackingServerResult& WithCreatedBy(const UserContext& value) { SetCreatedBy(value); return *this;}
-    inline DescribeMlflowTrackingServerResult& WithCreatedBy(UserContext&& value) { SetCreatedBy(std::move(value)); return *this;}
+    inline const UserContext& GetCreatedBy() const { return m_createdBy; }
+    template<typename CreatedByT = UserContext>
+    void SetCreatedBy(CreatedByT&& value) { m_createdByHasBeenSet = true; m_createdBy = std::forward<CreatedByT>(value); }
+    template<typename CreatedByT = UserContext>
+    DescribeMlflowTrackingServerResult& WithCreatedBy(CreatedByT&& value) { SetCreatedBy(std::forward<CreatedByT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -201,65 +181,79 @@ namespace Model
      * <p>The timestamp of when the described MLflow Tracking Server was last
      * modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
-    inline DescribeMlflowTrackingServerResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline DescribeMlflowTrackingServerResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    DescribeMlflowTrackingServerResult& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const UserContext& GetLastModifiedBy() const{ return m_lastModifiedBy; }
-    inline void SetLastModifiedBy(const UserContext& value) { m_lastModifiedBy = value; }
-    inline void SetLastModifiedBy(UserContext&& value) { m_lastModifiedBy = std::move(value); }
-    inline DescribeMlflowTrackingServerResult& WithLastModifiedBy(const UserContext& value) { SetLastModifiedBy(value); return *this;}
-    inline DescribeMlflowTrackingServerResult& WithLastModifiedBy(UserContext&& value) { SetLastModifiedBy(std::move(value)); return *this;}
+    inline const UserContext& GetLastModifiedBy() const { return m_lastModifiedBy; }
+    template<typename LastModifiedByT = UserContext>
+    void SetLastModifiedBy(LastModifiedByT&& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = std::forward<LastModifiedByT>(value); }
+    template<typename LastModifiedByT = UserContext>
+    DescribeMlflowTrackingServerResult& WithLastModifiedBy(LastModifiedByT&& value) { SetLastModifiedBy(std::forward<LastModifiedByT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeMlflowTrackingServerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeMlflowTrackingServerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeMlflowTrackingServerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeMlflowTrackingServerResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_trackingServerArn;
+    bool m_trackingServerArnHasBeenSet = false;
 
     Aws::String m_trackingServerName;
+    bool m_trackingServerNameHasBeenSet = false;
 
     Aws::String m_artifactStoreUri;
+    bool m_artifactStoreUriHasBeenSet = false;
 
-    TrackingServerSize m_trackingServerSize;
+    TrackingServerSize m_trackingServerSize{TrackingServerSize::NOT_SET};
+    bool m_trackingServerSizeHasBeenSet = false;
 
     Aws::String m_mlflowVersion;
+    bool m_mlflowVersionHasBeenSet = false;
 
     Aws::String m_roleArn;
+    bool m_roleArnHasBeenSet = false;
 
-    TrackingServerStatus m_trackingServerStatus;
+    TrackingServerStatus m_trackingServerStatus{TrackingServerStatus::NOT_SET};
+    bool m_trackingServerStatusHasBeenSet = false;
 
-    IsTrackingServerActive m_isActive;
+    IsTrackingServerActive m_isActive{IsTrackingServerActive::NOT_SET};
+    bool m_isActiveHasBeenSet = false;
 
     Aws::String m_trackingServerUrl;
+    bool m_trackingServerUrlHasBeenSet = false;
 
     Aws::String m_weeklyMaintenanceWindowStart;
+    bool m_weeklyMaintenanceWindowStartHasBeenSet = false;
 
-    bool m_automaticModelRegistration;
+    bool m_automaticModelRegistration{false};
+    bool m_automaticModelRegistrationHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
     UserContext m_createdBy;
+    bool m_createdByHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     UserContext m_lastModifiedBy;
+    bool m_lastModifiedByHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

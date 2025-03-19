@@ -12,17 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateContactRoutingDataRequest::UpdateContactRoutingDataRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_contactIdHasBeenSet(false),
-    m_queueTimeAdjustmentSeconds(0),
-    m_queueTimeAdjustmentSecondsHasBeenSet(false),
-    m_queuePriority(0),
-    m_queuePriorityHasBeenSet(false),
-    m_routingCriteriaHasBeenSet(false)
-{
-}
-
 Aws::String UpdateContactRoutingDataRequest::SerializePayload() const
 {
   JsonValue payload;

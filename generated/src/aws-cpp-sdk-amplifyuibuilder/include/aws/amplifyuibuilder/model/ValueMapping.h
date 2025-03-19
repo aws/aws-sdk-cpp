@@ -33,7 +33,7 @@ namespace Model
   class ValueMapping
   {
   public:
-    AWS_AMPLIFYUIBUILDER_API ValueMapping();
+    AWS_AMPLIFYUIBUILDER_API ValueMapping() = default;
     AWS_AMPLIFYUIBUILDER_API ValueMapping(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API ValueMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>The value to display for the complex object.</p>
      */
-    inline const FormInputValueProperty& GetDisplayValue() const{ return m_displayValue; }
+    inline const FormInputValueProperty& GetDisplayValue() const { return m_displayValue; }
     inline bool DisplayValueHasBeenSet() const { return m_displayValueHasBeenSet; }
-    inline void SetDisplayValue(const FormInputValueProperty& value) { m_displayValueHasBeenSet = true; m_displayValue = value; }
-    inline void SetDisplayValue(FormInputValueProperty&& value) { m_displayValueHasBeenSet = true; m_displayValue = std::move(value); }
-    inline ValueMapping& WithDisplayValue(const FormInputValueProperty& value) { SetDisplayValue(value); return *this;}
-    inline ValueMapping& WithDisplayValue(FormInputValueProperty&& value) { SetDisplayValue(std::move(value)); return *this;}
+    template<typename DisplayValueT = FormInputValueProperty>
+    void SetDisplayValue(DisplayValueT&& value) { m_displayValueHasBeenSet = true; m_displayValue = std::forward<DisplayValueT>(value); }
+    template<typename DisplayValueT = FormInputValueProperty>
+    ValueMapping& WithDisplayValue(DisplayValueT&& value) { SetDisplayValue(std::forward<DisplayValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The complex object.</p>
      */
-    inline const FormInputValueProperty& GetValue() const{ return m_value; }
+    inline const FormInputValueProperty& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const FormInputValueProperty& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(FormInputValueProperty&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline ValueMapping& WithValue(const FormInputValueProperty& value) { SetValue(value); return *this;}
-    inline ValueMapping& WithValue(FormInputValueProperty&& value) { SetValue(std::move(value)); return *this;}
+    template<typename ValueT = FormInputValueProperty>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = FormInputValueProperty>
+    ValueMapping& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 

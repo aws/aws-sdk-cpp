@@ -29,7 +29,7 @@ namespace Model
   class ListStageDevicesResult
   {
   public:
-    AWS_SAGEMAKER_API ListStageDevicesResult();
+    AWS_SAGEMAKER_API ListStageDevicesResult() = default;
     AWS_SAGEMAKER_API ListStageDevicesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API ListStageDevicesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>List of summaries of devices allocated to the stage.</p>
      */
-    inline const Aws::Vector<DeviceDeploymentSummary>& GetDeviceDeploymentSummaries() const{ return m_deviceDeploymentSummaries; }
-    inline void SetDeviceDeploymentSummaries(const Aws::Vector<DeviceDeploymentSummary>& value) { m_deviceDeploymentSummaries = value; }
-    inline void SetDeviceDeploymentSummaries(Aws::Vector<DeviceDeploymentSummary>&& value) { m_deviceDeploymentSummaries = std::move(value); }
-    inline ListStageDevicesResult& WithDeviceDeploymentSummaries(const Aws::Vector<DeviceDeploymentSummary>& value) { SetDeviceDeploymentSummaries(value); return *this;}
-    inline ListStageDevicesResult& WithDeviceDeploymentSummaries(Aws::Vector<DeviceDeploymentSummary>&& value) { SetDeviceDeploymentSummaries(std::move(value)); return *this;}
-    inline ListStageDevicesResult& AddDeviceDeploymentSummaries(const DeviceDeploymentSummary& value) { m_deviceDeploymentSummaries.push_back(value); return *this; }
-    inline ListStageDevicesResult& AddDeviceDeploymentSummaries(DeviceDeploymentSummary&& value) { m_deviceDeploymentSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DeviceDeploymentSummary>& GetDeviceDeploymentSummaries() const { return m_deviceDeploymentSummaries; }
+    template<typename DeviceDeploymentSummariesT = Aws::Vector<DeviceDeploymentSummary>>
+    void SetDeviceDeploymentSummaries(DeviceDeploymentSummariesT&& value) { m_deviceDeploymentSummariesHasBeenSet = true; m_deviceDeploymentSummaries = std::forward<DeviceDeploymentSummariesT>(value); }
+    template<typename DeviceDeploymentSummariesT = Aws::Vector<DeviceDeploymentSummary>>
+    ListStageDevicesResult& WithDeviceDeploymentSummaries(DeviceDeploymentSummariesT&& value) { SetDeviceDeploymentSummaries(std::forward<DeviceDeploymentSummariesT>(value)); return *this;}
+    template<typename DeviceDeploymentSummariesT = DeviceDeploymentSummary>
+    ListStageDevicesResult& AddDeviceDeploymentSummaries(DeviceDeploymentSummariesT&& value) { m_deviceDeploymentSummariesHasBeenSet = true; m_deviceDeploymentSummaries.emplace_back(std::forward<DeviceDeploymentSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The token to use when calling the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListStageDevicesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListStageDevicesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListStageDevicesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListStageDevicesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListStageDevicesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListStageDevicesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListStageDevicesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListStageDevicesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DeviceDeploymentSummary> m_deviceDeploymentSummaries;
+    bool m_deviceDeploymentSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

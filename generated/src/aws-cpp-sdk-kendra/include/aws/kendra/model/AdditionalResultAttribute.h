@@ -33,7 +33,7 @@ namespace Model
   class AdditionalResultAttribute
   {
   public:
-    AWS_KENDRA_API AdditionalResultAttribute();
+    AWS_KENDRA_API AdditionalResultAttribute() = default;
     AWS_KENDRA_API AdditionalResultAttribute(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API AdditionalResultAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,45 +43,41 @@ namespace Model
     /**
      * <p>The key that identifies the attribute.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline AdditionalResultAttribute& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline AdditionalResultAttribute& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline AdditionalResultAttribute& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    AdditionalResultAttribute& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The data type of the <code>Value</code> property.</p>
      */
-    inline const AdditionalResultAttributeValueType& GetValueType() const{ return m_valueType; }
+    inline AdditionalResultAttributeValueType GetValueType() const { return m_valueType; }
     inline bool ValueTypeHasBeenSet() const { return m_valueTypeHasBeenSet; }
-    inline void SetValueType(const AdditionalResultAttributeValueType& value) { m_valueTypeHasBeenSet = true; m_valueType = value; }
-    inline void SetValueType(AdditionalResultAttributeValueType&& value) { m_valueTypeHasBeenSet = true; m_valueType = std::move(value); }
-    inline AdditionalResultAttribute& WithValueType(const AdditionalResultAttributeValueType& value) { SetValueType(value); return *this;}
-    inline AdditionalResultAttribute& WithValueType(AdditionalResultAttributeValueType&& value) { SetValueType(std::move(value)); return *this;}
+    inline void SetValueType(AdditionalResultAttributeValueType value) { m_valueTypeHasBeenSet = true; m_valueType = value; }
+    inline AdditionalResultAttribute& WithValueType(AdditionalResultAttributeValueType value) { SetValueType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An object that contains the attribute value.</p>
      */
-    inline const AdditionalResultAttributeValue& GetValue() const{ return m_value; }
+    inline const AdditionalResultAttributeValue& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const AdditionalResultAttributeValue& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(AdditionalResultAttributeValue&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline AdditionalResultAttribute& WithValue(const AdditionalResultAttributeValue& value) { SetValue(value); return *this;}
-    inline AdditionalResultAttribute& WithValue(AdditionalResultAttributeValue&& value) { SetValue(std::move(value)); return *this;}
+    template<typename ValueT = AdditionalResultAttributeValue>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = AdditionalResultAttributeValue>
+    AdditionalResultAttribute& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_key;
     bool m_keyHasBeenSet = false;
 
-    AdditionalResultAttributeValueType m_valueType;
+    AdditionalResultAttributeValueType m_valueType{AdditionalResultAttributeValueType::NOT_SET};
     bool m_valueTypeHasBeenSet = false;
 
     AdditionalResultAttributeValue m_value;

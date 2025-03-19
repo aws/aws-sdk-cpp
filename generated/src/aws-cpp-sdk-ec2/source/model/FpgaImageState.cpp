@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-FpgaImageState::FpgaImageState() : 
-    m_code(FpgaImageStateCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 FpgaImageState::FpgaImageState(const XmlNode& xmlNode)
-  : FpgaImageState()
 {
   *this = xmlNode;
 }
@@ -42,7 +34,7 @@ FpgaImageState& FpgaImageState::operator =(const XmlNode& xmlNode)
     XmlNode codeNode = resultNode.FirstChild("code");
     if(!codeNode.IsNull())
     {
-      m_code = FpgaImageStateCodeMapper::GetFpgaImageStateCodeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(codeNode.GetText()).c_str()).c_str());
+      m_code = FpgaImageStateCodeMapper::GetFpgaImageStateCodeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(codeNode.GetText()).c_str()));
       m_codeHasBeenSet = true;
     }
     XmlNode messageNode = resultNode.FirstChild("message");

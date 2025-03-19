@@ -34,7 +34,7 @@ namespace Model
   class IteratorFlowNodeConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API IteratorFlowNodeConfiguration();
+    AWS_BEDROCKAGENT_API IteratorFlowNodeConfiguration() = default;
     AWS_BEDROCKAGENT_API IteratorFlowNodeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API IteratorFlowNodeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeConfigurationRecordersResult::DescribeConfigurationRecordersResult()
-{
-}
-
 DescribeConfigurationRecordersResult::DescribeConfigurationRecordersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ DescribeConfigurationRecordersResult& DescribeConfigurationRecordersResult::oper
     {
       m_configurationRecorders.push_back(configurationRecordersJsonList[configurationRecordersIndex].AsObject());
     }
+    m_configurationRecordersHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

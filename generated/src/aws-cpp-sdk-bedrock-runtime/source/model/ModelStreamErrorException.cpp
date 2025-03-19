@@ -18,16 +18,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-ModelStreamErrorException::ModelStreamErrorException() : 
-    m_messageHasBeenSet(false),
-    m_originalStatusCode(0),
-    m_originalStatusCodeHasBeenSet(false),
-    m_originalMessageHasBeenSet(false)
-{
-}
-
 ModelStreamErrorException::ModelStreamErrorException(JsonView jsonValue)
-  : ModelStreamErrorException()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ModelStreamErrorException& ModelStreamErrorException::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("originalStatusCode"))
   {
     m_originalStatusCode = jsonValue.GetInteger("originalStatusCode");
-
     m_originalStatusCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("originalMessage"))
   {
     m_originalMessage = jsonValue.GetString("originalMessage");
-
     m_originalMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

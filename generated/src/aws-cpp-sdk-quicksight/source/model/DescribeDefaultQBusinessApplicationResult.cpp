@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeDefaultQBusinessApplicationResult::DescribeDefaultQBusinessApplicationResult() : 
-    m_status(0)
-{
-}
-
 DescribeDefaultQBusinessApplicationResult::DescribeDefaultQBusinessApplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeDefaultQBusinessApplicationResult()
 {
   *this = result;
 }
@@ -34,19 +28,19 @@ DescribeDefaultQBusinessApplicationResult& DescribeDefaultQBusinessApplicationRe
   if(jsonValue.ValueExists("ApplicationId"))
   {
     m_applicationId = jsonValue.GetString("ApplicationId");
-
+    m_applicationIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

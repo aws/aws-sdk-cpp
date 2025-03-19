@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ExportTransitGatewayRoutesResponse::ExportTransitGatewayRoutesResponse()
-{
-}
-
 ExportTransitGatewayRoutesResponse::ExportTransitGatewayRoutesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ ExportTransitGatewayRoutesResponse& ExportTransitGatewayRoutesResponse::operator
     if(!s3LocationNode.IsNull())
     {
       m_s3Location = Aws::Utils::Xml::DecodeEscapedXmlText(s3LocationNode.GetText());
+      m_s3LocationHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ ExportTransitGatewayRoutesResponse& ExportTransitGatewayRoutesResponse::operator
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::ExportTransitGatewayRoutesResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

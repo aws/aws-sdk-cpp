@@ -18,19 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-ContainerServiceDeployment::ContainerServiceDeployment() : 
-    m_version(0),
-    m_versionHasBeenSet(false),
-    m_state(ContainerServiceDeploymentState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_containersHasBeenSet(false),
-    m_publicEndpointHasBeenSet(false),
-    m_createdAtHasBeenSet(false)
-{
-}
-
 ContainerServiceDeployment::ContainerServiceDeployment(JsonView jsonValue)
-  : ContainerServiceDeployment()
 {
   *this = jsonValue;
 }
@@ -40,17 +28,13 @@ ContainerServiceDeployment& ContainerServiceDeployment::operator =(JsonView json
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetInteger("version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = ContainerServiceDeploymentStateMapper::GetContainerServiceDeploymentStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("containers"))
   {
     Aws::Map<Aws::String, JsonView> containersJsonMap = jsonValue.GetObject("containers").GetAllObjects();
@@ -60,21 +44,16 @@ ContainerServiceDeployment& ContainerServiceDeployment::operator =(JsonView json
     }
     m_containersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("publicEndpoint"))
   {
     m_publicEndpoint = jsonValue.GetObject("publicEndpoint");
-
     m_publicEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   return *this;
 }
 

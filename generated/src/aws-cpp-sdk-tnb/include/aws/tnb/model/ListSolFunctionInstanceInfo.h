@@ -36,7 +36,7 @@ namespace Model
   class ListSolFunctionInstanceInfo
   {
   public:
-    AWS_TNB_API ListSolFunctionInstanceInfo();
+    AWS_TNB_API ListSolFunctionInstanceInfo() = default;
     AWS_TNB_API ListSolFunctionInstanceInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_TNB_API ListSolFunctionInstanceInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TNB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,104 +46,92 @@ namespace Model
     /**
      * <p>Network function instance ARN.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline ListSolFunctionInstanceInfo& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline ListSolFunctionInstanceInfo& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline ListSolFunctionInstanceInfo& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    ListSolFunctionInstanceInfo& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Network function instance ID.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline ListSolFunctionInstanceInfo& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline ListSolFunctionInstanceInfo& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline ListSolFunctionInstanceInfo& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ListSolFunctionInstanceInfo& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const GetSolInstantiatedVnfInfo& GetInstantiatedVnfInfo() const{ return m_instantiatedVnfInfo; }
+    inline const GetSolInstantiatedVnfInfo& GetInstantiatedVnfInfo() const { return m_instantiatedVnfInfo; }
     inline bool InstantiatedVnfInfoHasBeenSet() const { return m_instantiatedVnfInfoHasBeenSet; }
-    inline void SetInstantiatedVnfInfo(const GetSolInstantiatedVnfInfo& value) { m_instantiatedVnfInfoHasBeenSet = true; m_instantiatedVnfInfo = value; }
-    inline void SetInstantiatedVnfInfo(GetSolInstantiatedVnfInfo&& value) { m_instantiatedVnfInfoHasBeenSet = true; m_instantiatedVnfInfo = std::move(value); }
-    inline ListSolFunctionInstanceInfo& WithInstantiatedVnfInfo(const GetSolInstantiatedVnfInfo& value) { SetInstantiatedVnfInfo(value); return *this;}
-    inline ListSolFunctionInstanceInfo& WithInstantiatedVnfInfo(GetSolInstantiatedVnfInfo&& value) { SetInstantiatedVnfInfo(std::move(value)); return *this;}
+    template<typename InstantiatedVnfInfoT = GetSolInstantiatedVnfInfo>
+    void SetInstantiatedVnfInfo(InstantiatedVnfInfoT&& value) { m_instantiatedVnfInfoHasBeenSet = true; m_instantiatedVnfInfo = std::forward<InstantiatedVnfInfoT>(value); }
+    template<typename InstantiatedVnfInfoT = GetSolInstantiatedVnfInfo>
+    ListSolFunctionInstanceInfo& WithInstantiatedVnfInfo(InstantiatedVnfInfoT&& value) { SetInstantiatedVnfInfo(std::forward<InstantiatedVnfInfoT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Network function instance instantiation state.</p>
      */
-    inline const VnfInstantiationState& GetInstantiationState() const{ return m_instantiationState; }
+    inline VnfInstantiationState GetInstantiationState() const { return m_instantiationState; }
     inline bool InstantiationStateHasBeenSet() const { return m_instantiationStateHasBeenSet; }
-    inline void SetInstantiationState(const VnfInstantiationState& value) { m_instantiationStateHasBeenSet = true; m_instantiationState = value; }
-    inline void SetInstantiationState(VnfInstantiationState&& value) { m_instantiationStateHasBeenSet = true; m_instantiationState = std::move(value); }
-    inline ListSolFunctionInstanceInfo& WithInstantiationState(const VnfInstantiationState& value) { SetInstantiationState(value); return *this;}
-    inline ListSolFunctionInstanceInfo& WithInstantiationState(VnfInstantiationState&& value) { SetInstantiationState(std::move(value)); return *this;}
+    inline void SetInstantiationState(VnfInstantiationState value) { m_instantiationStateHasBeenSet = true; m_instantiationState = value; }
+    inline ListSolFunctionInstanceInfo& WithInstantiationState(VnfInstantiationState value) { SetInstantiationState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Network function instance metadata.</p>
      */
-    inline const ListSolFunctionInstanceMetadata& GetMetadata() const{ return m_metadata; }
+    inline const ListSolFunctionInstanceMetadata& GetMetadata() const { return m_metadata; }
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
-    inline void SetMetadata(const ListSolFunctionInstanceMetadata& value) { m_metadataHasBeenSet = true; m_metadata = value; }
-    inline void SetMetadata(ListSolFunctionInstanceMetadata&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
-    inline ListSolFunctionInstanceInfo& WithMetadata(const ListSolFunctionInstanceMetadata& value) { SetMetadata(value); return *this;}
-    inline ListSolFunctionInstanceInfo& WithMetadata(ListSolFunctionInstanceMetadata&& value) { SetMetadata(std::move(value)); return *this;}
+    template<typename MetadataT = ListSolFunctionInstanceMetadata>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = ListSolFunctionInstanceMetadata>
+    ListSolFunctionInstanceInfo& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Network instance ID.</p>
      */
-    inline const Aws::String& GetNsInstanceId() const{ return m_nsInstanceId; }
+    inline const Aws::String& GetNsInstanceId() const { return m_nsInstanceId; }
     inline bool NsInstanceIdHasBeenSet() const { return m_nsInstanceIdHasBeenSet; }
-    inline void SetNsInstanceId(const Aws::String& value) { m_nsInstanceIdHasBeenSet = true; m_nsInstanceId = value; }
-    inline void SetNsInstanceId(Aws::String&& value) { m_nsInstanceIdHasBeenSet = true; m_nsInstanceId = std::move(value); }
-    inline void SetNsInstanceId(const char* value) { m_nsInstanceIdHasBeenSet = true; m_nsInstanceId.assign(value); }
-    inline ListSolFunctionInstanceInfo& WithNsInstanceId(const Aws::String& value) { SetNsInstanceId(value); return *this;}
-    inline ListSolFunctionInstanceInfo& WithNsInstanceId(Aws::String&& value) { SetNsInstanceId(std::move(value)); return *this;}
-    inline ListSolFunctionInstanceInfo& WithNsInstanceId(const char* value) { SetNsInstanceId(value); return *this;}
+    template<typename NsInstanceIdT = Aws::String>
+    void SetNsInstanceId(NsInstanceIdT&& value) { m_nsInstanceIdHasBeenSet = true; m_nsInstanceId = std::forward<NsInstanceIdT>(value); }
+    template<typename NsInstanceIdT = Aws::String>
+    ListSolFunctionInstanceInfo& WithNsInstanceId(NsInstanceIdT&& value) { SetNsInstanceId(std::forward<NsInstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Function package ID.</p>
      */
-    inline const Aws::String& GetVnfPkgId() const{ return m_vnfPkgId; }
+    inline const Aws::String& GetVnfPkgId() const { return m_vnfPkgId; }
     inline bool VnfPkgIdHasBeenSet() const { return m_vnfPkgIdHasBeenSet; }
-    inline void SetVnfPkgId(const Aws::String& value) { m_vnfPkgIdHasBeenSet = true; m_vnfPkgId = value; }
-    inline void SetVnfPkgId(Aws::String&& value) { m_vnfPkgIdHasBeenSet = true; m_vnfPkgId = std::move(value); }
-    inline void SetVnfPkgId(const char* value) { m_vnfPkgIdHasBeenSet = true; m_vnfPkgId.assign(value); }
-    inline ListSolFunctionInstanceInfo& WithVnfPkgId(const Aws::String& value) { SetVnfPkgId(value); return *this;}
-    inline ListSolFunctionInstanceInfo& WithVnfPkgId(Aws::String&& value) { SetVnfPkgId(std::move(value)); return *this;}
-    inline ListSolFunctionInstanceInfo& WithVnfPkgId(const char* value) { SetVnfPkgId(value); return *this;}
+    template<typename VnfPkgIdT = Aws::String>
+    void SetVnfPkgId(VnfPkgIdT&& value) { m_vnfPkgIdHasBeenSet = true; m_vnfPkgId = std::forward<VnfPkgIdT>(value); }
+    template<typename VnfPkgIdT = Aws::String>
+    ListSolFunctionInstanceInfo& WithVnfPkgId(VnfPkgIdT&& value) { SetVnfPkgId(std::forward<VnfPkgIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Function package name.</p>
      */
-    inline const Aws::String& GetVnfPkgName() const{ return m_vnfPkgName; }
+    inline const Aws::String& GetVnfPkgName() const { return m_vnfPkgName; }
     inline bool VnfPkgNameHasBeenSet() const { return m_vnfPkgNameHasBeenSet; }
-    inline void SetVnfPkgName(const Aws::String& value) { m_vnfPkgNameHasBeenSet = true; m_vnfPkgName = value; }
-    inline void SetVnfPkgName(Aws::String&& value) { m_vnfPkgNameHasBeenSet = true; m_vnfPkgName = std::move(value); }
-    inline void SetVnfPkgName(const char* value) { m_vnfPkgNameHasBeenSet = true; m_vnfPkgName.assign(value); }
-    inline ListSolFunctionInstanceInfo& WithVnfPkgName(const Aws::String& value) { SetVnfPkgName(value); return *this;}
-    inline ListSolFunctionInstanceInfo& WithVnfPkgName(Aws::String&& value) { SetVnfPkgName(std::move(value)); return *this;}
-    inline ListSolFunctionInstanceInfo& WithVnfPkgName(const char* value) { SetVnfPkgName(value); return *this;}
+    template<typename VnfPkgNameT = Aws::String>
+    void SetVnfPkgName(VnfPkgNameT&& value) { m_vnfPkgNameHasBeenSet = true; m_vnfPkgName = std::forward<VnfPkgNameT>(value); }
+    template<typename VnfPkgNameT = Aws::String>
+    ListSolFunctionInstanceInfo& WithVnfPkgName(VnfPkgNameT&& value) { SetVnfPkgName(std::forward<VnfPkgNameT>(value)); return *this;}
     ///@}
   private:
 
@@ -156,7 +144,7 @@ namespace Model
     GetSolInstantiatedVnfInfo m_instantiatedVnfInfo;
     bool m_instantiatedVnfInfoHasBeenSet = false;
 
-    VnfInstantiationState m_instantiationState;
+    VnfInstantiationState m_instantiationState{VnfInstantiationState::NOT_SET};
     bool m_instantiationStateHasBeenSet = false;
 
     ListSolFunctionInstanceMetadata m_metadata;

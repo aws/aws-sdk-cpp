@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateUsageResult::UpdateUsageResult()
-{
-}
-
 UpdateUsageResult::UpdateUsageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,23 @@ UpdateUsageResult& UpdateUsageResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("usagePlanId"))
   {
     m_usagePlanId = jsonValue.GetString("usagePlanId");
-
+    m_usagePlanIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startDate"))
   {
     m_startDate = jsonValue.GetString("startDate");
-
+    m_startDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endDate"))
   {
     m_endDate = jsonValue.GetString("endDate");
-
+    m_endDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("position"))
   {
     m_position = jsonValue.GetString("position");
-
+    m_positionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Map<Aws::String, JsonView> valuesJsonMap = jsonValue.GetObject("values").GetAllObjects();
@@ -74,14 +66,15 @@ UpdateUsageResult& UpdateUsageResult::operator =(const Aws::AmazonWebServiceResu
       }
       m_items[valuesItem.first] = std::move(listOfUsageList);
     }
+    m_itemsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

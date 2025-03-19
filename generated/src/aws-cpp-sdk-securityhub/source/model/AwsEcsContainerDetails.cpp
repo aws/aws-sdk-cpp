@@ -18,17 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEcsContainerDetails::AwsEcsContainerDetails() : 
-    m_nameHasBeenSet(false),
-    m_imageHasBeenSet(false),
-    m_mountPointsHasBeenSet(false),
-    m_privileged(false),
-    m_privilegedHasBeenSet(false)
-{
-}
-
 AwsEcsContainerDetails::AwsEcsContainerDetails(JsonView jsonValue)
-  : AwsEcsContainerDetails()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ AwsEcsContainerDetails& AwsEcsContainerDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Image"))
   {
     m_image = jsonValue.GetString("Image");
-
     m_imageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MountPoints"))
   {
     Aws::Utils::Array<JsonView> mountPointsJsonList = jsonValue.GetArray("MountPoints");
@@ -58,14 +44,11 @@ AwsEcsContainerDetails& AwsEcsContainerDetails::operator =(JsonView jsonValue)
     }
     m_mountPointsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Privileged"))
   {
     m_privileged = jsonValue.GetBool("Privileged");
-
     m_privilegedHasBeenSet = true;
   }
-
   return *this;
 }
 

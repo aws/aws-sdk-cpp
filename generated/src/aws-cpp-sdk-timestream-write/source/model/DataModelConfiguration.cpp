@@ -18,14 +18,7 @@ namespace TimestreamWrite
 namespace Model
 {
 
-DataModelConfiguration::DataModelConfiguration() : 
-    m_dataModelHasBeenSet(false),
-    m_dataModelS3ConfigurationHasBeenSet(false)
-{
-}
-
 DataModelConfiguration::DataModelConfiguration(JsonView jsonValue)
-  : DataModelConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DataModelConfiguration& DataModelConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DataModel"))
   {
     m_dataModel = jsonValue.GetObject("DataModel");
-
     m_dataModelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataModelS3Configuration"))
   {
     m_dataModelS3Configuration = jsonValue.GetObject("DataModelS3Configuration");
-
     m_dataModelS3ConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -35,7 +35,7 @@ namespace Model
   class ConfigurableUpfrontPricingTermConfiguration
   {
   public:
-    AWS_AGREEMENTSERVICE_API ConfigurableUpfrontPricingTermConfiguration();
+    AWS_AGREEMENTSERVICE_API ConfigurableUpfrontPricingTermConfiguration() = default;
     AWS_AGREEMENTSERVICE_API ConfigurableUpfrontPricingTermConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_AGREEMENTSERVICE_API ConfigurableUpfrontPricingTermConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AGREEMENTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,14 @@ namespace Model
      * <p>Defines the dimensions that the acceptor has purchased from the overall set
      * of dimensions presented in the rate card.</p>
      */
-    inline const Aws::Vector<Dimension>& GetDimensions() const{ return m_dimensions; }
+    inline const Aws::Vector<Dimension>& GetDimensions() const { return m_dimensions; }
     inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
-    inline void SetDimensions(const Aws::Vector<Dimension>& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
-    inline void SetDimensions(Aws::Vector<Dimension>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::move(value); }
-    inline ConfigurableUpfrontPricingTermConfiguration& WithDimensions(const Aws::Vector<Dimension>& value) { SetDimensions(value); return *this;}
-    inline ConfigurableUpfrontPricingTermConfiguration& WithDimensions(Aws::Vector<Dimension>&& value) { SetDimensions(std::move(value)); return *this;}
-    inline ConfigurableUpfrontPricingTermConfiguration& AddDimensions(const Dimension& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
-    inline ConfigurableUpfrontPricingTermConfiguration& AddDimensions(Dimension&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(std::move(value)); return *this; }
+    template<typename DimensionsT = Aws::Vector<Dimension>>
+    void SetDimensions(DimensionsT&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::forward<DimensionsT>(value); }
+    template<typename DimensionsT = Aws::Vector<Dimension>>
+    ConfigurableUpfrontPricingTermConfiguration& WithDimensions(DimensionsT&& value) { SetDimensions(std::forward<DimensionsT>(value)); return *this;}
+    template<typename DimensionsT = Dimension>
+    ConfigurableUpfrontPricingTermConfiguration& AddDimensions(DimensionsT&& value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace_back(std::forward<DimensionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -61,14 +61,12 @@ namespace Model
      * <p>Defines the length of time for which the particular pricing/dimension is
      * being purchased by the acceptor.</p>
      */
-    inline const Aws::String& GetSelectorValue() const{ return m_selectorValue; }
+    inline const Aws::String& GetSelectorValue() const { return m_selectorValue; }
     inline bool SelectorValueHasBeenSet() const { return m_selectorValueHasBeenSet; }
-    inline void SetSelectorValue(const Aws::String& value) { m_selectorValueHasBeenSet = true; m_selectorValue = value; }
-    inline void SetSelectorValue(Aws::String&& value) { m_selectorValueHasBeenSet = true; m_selectorValue = std::move(value); }
-    inline void SetSelectorValue(const char* value) { m_selectorValueHasBeenSet = true; m_selectorValue.assign(value); }
-    inline ConfigurableUpfrontPricingTermConfiguration& WithSelectorValue(const Aws::String& value) { SetSelectorValue(value); return *this;}
-    inline ConfigurableUpfrontPricingTermConfiguration& WithSelectorValue(Aws::String&& value) { SetSelectorValue(std::move(value)); return *this;}
-    inline ConfigurableUpfrontPricingTermConfiguration& WithSelectorValue(const char* value) { SetSelectorValue(value); return *this;}
+    template<typename SelectorValueT = Aws::String>
+    void SetSelectorValue(SelectorValueT&& value) { m_selectorValueHasBeenSet = true; m_selectorValue = std::forward<SelectorValueT>(value); }
+    template<typename SelectorValueT = Aws::String>
+    ConfigurableUpfrontPricingTermConfiguration& WithSelectorValue(SelectorValueT&& value) { SetSelectorValue(std::forward<SelectorValueT>(value)); return *this;}
     ///@}
   private:
 

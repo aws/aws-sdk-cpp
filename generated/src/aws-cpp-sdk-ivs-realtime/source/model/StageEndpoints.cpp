@@ -18,16 +18,7 @@ namespace ivsrealtime
 namespace Model
 {
 
-StageEndpoints::StageEndpoints() : 
-    m_eventsHasBeenSet(false),
-    m_whipHasBeenSet(false),
-    m_rtmpHasBeenSet(false),
-    m_rtmpsHasBeenSet(false)
-{
-}
-
 StageEndpoints::StageEndpoints(JsonView jsonValue)
-  : StageEndpoints()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ StageEndpoints& StageEndpoints::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("events"))
   {
     m_events = jsonValue.GetString("events");
-
     m_eventsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("whip"))
   {
     m_whip = jsonValue.GetString("whip");
-
     m_whipHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rtmp"))
   {
     m_rtmp = jsonValue.GetString("rtmp");
-
     m_rtmpHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rtmps"))
   {
     m_rtmps = jsonValue.GetString("rtmps");
-
     m_rtmpsHasBeenSet = true;
   }
-
   return *this;
 }
 

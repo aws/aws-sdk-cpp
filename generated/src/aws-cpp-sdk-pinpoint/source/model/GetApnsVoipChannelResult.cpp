@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetApnsVoipChannelResult::GetApnsVoipChannelResult()
-{
-}
-
 GetApnsVoipChannelResult::GetApnsVoipChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -30,12 +26,14 @@ GetApnsVoipChannelResult& GetApnsVoipChannelResult::operator =(const Aws::Amazon
 {
   JsonView jsonValue = result.GetPayload().View();
   m_aPNSVoipChannelResponse = jsonValue;
+  m_aPNSVoipChannelResponseHasBeenSet = true;
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

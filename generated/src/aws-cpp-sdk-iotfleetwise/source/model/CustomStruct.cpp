@@ -18,16 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-CustomStruct::CustomStruct() : 
-    m_fullyQualifiedNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_deprecationMessageHasBeenSet(false),
-    m_commentHasBeenSet(false)
-{
-}
-
 CustomStruct::CustomStruct(JsonView jsonValue)
-  : CustomStruct()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ CustomStruct& CustomStruct::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fullyQualifiedName"))
   {
     m_fullyQualifiedName = jsonValue.GetString("fullyQualifiedName");
-
     m_fullyQualifiedNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deprecationMessage"))
   {
     m_deprecationMessage = jsonValue.GetString("deprecationMessage");
-
     m_deprecationMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("comment"))
   {
     m_comment = jsonValue.GetString("comment");
-
     m_commentHasBeenSet = true;
   }
-
   return *this;
 }
 

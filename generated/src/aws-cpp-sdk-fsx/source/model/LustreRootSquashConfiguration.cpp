@@ -18,14 +18,7 @@ namespace FSx
 namespace Model
 {
 
-LustreRootSquashConfiguration::LustreRootSquashConfiguration() : 
-    m_rootSquashHasBeenSet(false),
-    m_noSquashNidsHasBeenSet(false)
-{
-}
-
 LustreRootSquashConfiguration::LustreRootSquashConfiguration(JsonView jsonValue)
-  : LustreRootSquashConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ LustreRootSquashConfiguration& LustreRootSquashConfiguration::operator =(JsonVie
   if(jsonValue.ValueExists("RootSquash"))
   {
     m_rootSquash = jsonValue.GetString("RootSquash");
-
     m_rootSquashHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NoSquashNids"))
   {
     Aws::Utils::Array<JsonView> noSquashNidsJsonList = jsonValue.GetArray("NoSquashNids");
@@ -48,7 +39,6 @@ LustreRootSquashConfiguration& LustreRootSquashConfiguration::operator =(JsonVie
     }
     m_noSquashNidsHasBeenSet = true;
   }
-
   return *this;
 }
 

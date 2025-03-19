@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateProfileResourceAssociationResult::UpdateProfileResourceAssociationResult()
-{
-}
-
 UpdateProfileResourceAssociationResult::UpdateProfileResourceAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ UpdateProfileResourceAssociationResult& UpdateProfileResourceAssociationResult::
   if(jsonValue.ValueExists("ProfileResourceAssociation"))
   {
     m_profileResourceAssociation = jsonValue.GetObject("ProfileResourceAssociation");
-
+    m_profileResourceAssociationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

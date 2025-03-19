@@ -12,13 +12,6 @@ using namespace Aws::CodeArtifact::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListDomainsRequest::ListDomainsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListDomainsRequest::SerializePayload() const
 {
   JsonValue payload;

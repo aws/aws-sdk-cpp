@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetGroupCertificateAuthorityResult::GetGroupCertificateAuthorityResult()
-{
-}
-
 GetGroupCertificateAuthorityResult::GetGroupCertificateAuthorityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ GetGroupCertificateAuthorityResult& GetGroupCertificateAuthorityResult::operator
   if(jsonValue.ValueExists("GroupCertificateAuthorityArn"))
   {
     m_groupCertificateAuthorityArn = jsonValue.GetString("GroupCertificateAuthorityArn");
-
+    m_groupCertificateAuthorityArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupCertificateAuthorityId"))
   {
     m_groupCertificateAuthorityId = jsonValue.GetString("GroupCertificateAuthorityId");
-
+    m_groupCertificateAuthorityIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PemEncodedCertificate"))
   {
     m_pemEncodedCertificate = jsonValue.GetString("PemEncodedCertificate");
-
+    m_pemEncodedCertificateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

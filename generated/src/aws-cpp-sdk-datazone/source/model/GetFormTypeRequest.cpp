@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetFormTypeRequest::GetFormTypeRequest() : 
-    m_domainIdentifierHasBeenSet(false),
-    m_formTypeIdentifierHasBeenSet(false),
-    m_revisionHasBeenSet(false)
-{
-}
-
 Aws::String GetFormTypeRequest::SerializePayload() const
 {
   return {};

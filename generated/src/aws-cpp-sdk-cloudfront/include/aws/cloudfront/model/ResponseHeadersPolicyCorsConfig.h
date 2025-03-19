@@ -38,7 +38,7 @@ namespace Model
   class ResponseHeadersPolicyCorsConfig
   {
   public:
-    AWS_CLOUDFRONT_API ResponseHeadersPolicyCorsConfig();
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyCorsConfig() = default;
     AWS_CLOUDFRONT_API ResponseHeadersPolicyCorsConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API ResponseHeadersPolicyCorsConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -54,12 +54,12 @@ namespace Model
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin">Access-Control-Allow-Origin</a>
      * in the MDN Web Docs.</p>
      */
-    inline const ResponseHeadersPolicyAccessControlAllowOrigins& GetAccessControlAllowOrigins() const{ return m_accessControlAllowOrigins; }
+    inline const ResponseHeadersPolicyAccessControlAllowOrigins& GetAccessControlAllowOrigins() const { return m_accessControlAllowOrigins; }
     inline bool AccessControlAllowOriginsHasBeenSet() const { return m_accessControlAllowOriginsHasBeenSet; }
-    inline void SetAccessControlAllowOrigins(const ResponseHeadersPolicyAccessControlAllowOrigins& value) { m_accessControlAllowOriginsHasBeenSet = true; m_accessControlAllowOrigins = value; }
-    inline void SetAccessControlAllowOrigins(ResponseHeadersPolicyAccessControlAllowOrigins&& value) { m_accessControlAllowOriginsHasBeenSet = true; m_accessControlAllowOrigins = std::move(value); }
-    inline ResponseHeadersPolicyCorsConfig& WithAccessControlAllowOrigins(const ResponseHeadersPolicyAccessControlAllowOrigins& value) { SetAccessControlAllowOrigins(value); return *this;}
-    inline ResponseHeadersPolicyCorsConfig& WithAccessControlAllowOrigins(ResponseHeadersPolicyAccessControlAllowOrigins&& value) { SetAccessControlAllowOrigins(std::move(value)); return *this;}
+    template<typename AccessControlAllowOriginsT = ResponseHeadersPolicyAccessControlAllowOrigins>
+    void SetAccessControlAllowOrigins(AccessControlAllowOriginsT&& value) { m_accessControlAllowOriginsHasBeenSet = true; m_accessControlAllowOrigins = std::forward<AccessControlAllowOriginsT>(value); }
+    template<typename AccessControlAllowOriginsT = ResponseHeadersPolicyAccessControlAllowOrigins>
+    ResponseHeadersPolicyCorsConfig& WithAccessControlAllowOrigins(AccessControlAllowOriginsT&& value) { SetAccessControlAllowOrigins(std::forward<AccessControlAllowOriginsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,12 +71,12 @@ namespace Model
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Headers">Access-Control-Allow-Headers</a>
      * in the MDN Web Docs.</p>
      */
-    inline const ResponseHeadersPolicyAccessControlAllowHeaders& GetAccessControlAllowHeaders() const{ return m_accessControlAllowHeaders; }
+    inline const ResponseHeadersPolicyAccessControlAllowHeaders& GetAccessControlAllowHeaders() const { return m_accessControlAllowHeaders; }
     inline bool AccessControlAllowHeadersHasBeenSet() const { return m_accessControlAllowHeadersHasBeenSet; }
-    inline void SetAccessControlAllowHeaders(const ResponseHeadersPolicyAccessControlAllowHeaders& value) { m_accessControlAllowHeadersHasBeenSet = true; m_accessControlAllowHeaders = value; }
-    inline void SetAccessControlAllowHeaders(ResponseHeadersPolicyAccessControlAllowHeaders&& value) { m_accessControlAllowHeadersHasBeenSet = true; m_accessControlAllowHeaders = std::move(value); }
-    inline ResponseHeadersPolicyCorsConfig& WithAccessControlAllowHeaders(const ResponseHeadersPolicyAccessControlAllowHeaders& value) { SetAccessControlAllowHeaders(value); return *this;}
-    inline ResponseHeadersPolicyCorsConfig& WithAccessControlAllowHeaders(ResponseHeadersPolicyAccessControlAllowHeaders&& value) { SetAccessControlAllowHeaders(std::move(value)); return *this;}
+    template<typename AccessControlAllowHeadersT = ResponseHeadersPolicyAccessControlAllowHeaders>
+    void SetAccessControlAllowHeaders(AccessControlAllowHeadersT&& value) { m_accessControlAllowHeadersHasBeenSet = true; m_accessControlAllowHeaders = std::forward<AccessControlAllowHeadersT>(value); }
+    template<typename AccessControlAllowHeadersT = ResponseHeadersPolicyAccessControlAllowHeaders>
+    ResponseHeadersPolicyCorsConfig& WithAccessControlAllowHeaders(AccessControlAllowHeadersT&& value) { SetAccessControlAllowHeaders(std::forward<AccessControlAllowHeadersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,12 +88,12 @@ namespace Model
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Methods">Access-Control-Allow-Methods</a>
      * in the MDN Web Docs.</p>
      */
-    inline const ResponseHeadersPolicyAccessControlAllowMethods& GetAccessControlAllowMethods() const{ return m_accessControlAllowMethods; }
+    inline const ResponseHeadersPolicyAccessControlAllowMethods& GetAccessControlAllowMethods() const { return m_accessControlAllowMethods; }
     inline bool AccessControlAllowMethodsHasBeenSet() const { return m_accessControlAllowMethodsHasBeenSet; }
-    inline void SetAccessControlAllowMethods(const ResponseHeadersPolicyAccessControlAllowMethods& value) { m_accessControlAllowMethodsHasBeenSet = true; m_accessControlAllowMethods = value; }
-    inline void SetAccessControlAllowMethods(ResponseHeadersPolicyAccessControlAllowMethods&& value) { m_accessControlAllowMethodsHasBeenSet = true; m_accessControlAllowMethods = std::move(value); }
-    inline ResponseHeadersPolicyCorsConfig& WithAccessControlAllowMethods(const ResponseHeadersPolicyAccessControlAllowMethods& value) { SetAccessControlAllowMethods(value); return *this;}
-    inline ResponseHeadersPolicyCorsConfig& WithAccessControlAllowMethods(ResponseHeadersPolicyAccessControlAllowMethods&& value) { SetAccessControlAllowMethods(std::move(value)); return *this;}
+    template<typename AccessControlAllowMethodsT = ResponseHeadersPolicyAccessControlAllowMethods>
+    void SetAccessControlAllowMethods(AccessControlAllowMethodsT&& value) { m_accessControlAllowMethodsHasBeenSet = true; m_accessControlAllowMethods = std::forward<AccessControlAllowMethodsT>(value); }
+    template<typename AccessControlAllowMethodsT = ResponseHeadersPolicyAccessControlAllowMethods>
+    ResponseHeadersPolicyCorsConfig& WithAccessControlAllowMethods(AccessControlAllowMethodsT&& value) { SetAccessControlAllowMethods(std::forward<AccessControlAllowMethodsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,7 +105,7 @@ namespace Model
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Credentials">Access-Control-Allow-Credentials</a>
      * in the MDN Web Docs.</p>
      */
-    inline bool GetAccessControlAllowCredentials() const{ return m_accessControlAllowCredentials; }
+    inline bool GetAccessControlAllowCredentials() const { return m_accessControlAllowCredentials; }
     inline bool AccessControlAllowCredentialsHasBeenSet() const { return m_accessControlAllowCredentialsHasBeenSet; }
     inline void SetAccessControlAllowCredentials(bool value) { m_accessControlAllowCredentialsHasBeenSet = true; m_accessControlAllowCredentials = value; }
     inline ResponseHeadersPolicyCorsConfig& WithAccessControlAllowCredentials(bool value) { SetAccessControlAllowCredentials(value); return *this;}
@@ -120,12 +120,12 @@ namespace Model
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Expose-Headers">Access-Control-Expose-Headers</a>
      * in the MDN Web Docs.</p>
      */
-    inline const ResponseHeadersPolicyAccessControlExposeHeaders& GetAccessControlExposeHeaders() const{ return m_accessControlExposeHeaders; }
+    inline const ResponseHeadersPolicyAccessControlExposeHeaders& GetAccessControlExposeHeaders() const { return m_accessControlExposeHeaders; }
     inline bool AccessControlExposeHeadersHasBeenSet() const { return m_accessControlExposeHeadersHasBeenSet; }
-    inline void SetAccessControlExposeHeaders(const ResponseHeadersPolicyAccessControlExposeHeaders& value) { m_accessControlExposeHeadersHasBeenSet = true; m_accessControlExposeHeaders = value; }
-    inline void SetAccessControlExposeHeaders(ResponseHeadersPolicyAccessControlExposeHeaders&& value) { m_accessControlExposeHeadersHasBeenSet = true; m_accessControlExposeHeaders = std::move(value); }
-    inline ResponseHeadersPolicyCorsConfig& WithAccessControlExposeHeaders(const ResponseHeadersPolicyAccessControlExposeHeaders& value) { SetAccessControlExposeHeaders(value); return *this;}
-    inline ResponseHeadersPolicyCorsConfig& WithAccessControlExposeHeaders(ResponseHeadersPolicyAccessControlExposeHeaders&& value) { SetAccessControlExposeHeaders(std::move(value)); return *this;}
+    template<typename AccessControlExposeHeadersT = ResponseHeadersPolicyAccessControlExposeHeaders>
+    void SetAccessControlExposeHeaders(AccessControlExposeHeadersT&& value) { m_accessControlExposeHeadersHasBeenSet = true; m_accessControlExposeHeaders = std::forward<AccessControlExposeHeadersT>(value); }
+    template<typename AccessControlExposeHeadersT = ResponseHeadersPolicyAccessControlExposeHeaders>
+    ResponseHeadersPolicyCorsConfig& WithAccessControlExposeHeaders(AccessControlExposeHeadersT&& value) { SetAccessControlExposeHeaders(std::forward<AccessControlExposeHeadersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -137,7 +137,7 @@ namespace Model
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Max-Age">Access-Control-Max-Age</a>
      * in the MDN Web Docs.</p>
      */
-    inline int GetAccessControlMaxAgeSec() const{ return m_accessControlMaxAgeSec; }
+    inline int GetAccessControlMaxAgeSec() const { return m_accessControlMaxAgeSec; }
     inline bool AccessControlMaxAgeSecHasBeenSet() const { return m_accessControlMaxAgeSecHasBeenSet; }
     inline void SetAccessControlMaxAgeSec(int value) { m_accessControlMaxAgeSecHasBeenSet = true; m_accessControlMaxAgeSec = value; }
     inline ResponseHeadersPolicyCorsConfig& WithAccessControlMaxAgeSec(int value) { SetAccessControlMaxAgeSec(value); return *this;}
@@ -149,7 +149,7 @@ namespace Model
      * received from the origin with the ones specified in this response headers
      * policy.</p>
      */
-    inline bool GetOriginOverride() const{ return m_originOverride; }
+    inline bool GetOriginOverride() const { return m_originOverride; }
     inline bool OriginOverrideHasBeenSet() const { return m_originOverrideHasBeenSet; }
     inline void SetOriginOverride(bool value) { m_originOverrideHasBeenSet = true; m_originOverride = value; }
     inline ResponseHeadersPolicyCorsConfig& WithOriginOverride(bool value) { SetOriginOverride(value); return *this;}
@@ -165,16 +165,16 @@ namespace Model
     ResponseHeadersPolicyAccessControlAllowMethods m_accessControlAllowMethods;
     bool m_accessControlAllowMethodsHasBeenSet = false;
 
-    bool m_accessControlAllowCredentials;
+    bool m_accessControlAllowCredentials{false};
     bool m_accessControlAllowCredentialsHasBeenSet = false;
 
     ResponseHeadersPolicyAccessControlExposeHeaders m_accessControlExposeHeaders;
     bool m_accessControlExposeHeadersHasBeenSet = false;
 
-    int m_accessControlMaxAgeSec;
+    int m_accessControlMaxAgeSec{0};
     bool m_accessControlMaxAgeSecHasBeenSet = false;
 
-    bool m_originOverride;
+    bool m_originOverride{false};
     bool m_originOverrideHasBeenSet = false;
   };
 

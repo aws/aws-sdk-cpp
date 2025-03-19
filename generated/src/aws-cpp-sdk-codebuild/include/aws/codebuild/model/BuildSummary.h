@@ -36,7 +36,7 @@ namespace Model
   class BuildSummary
   {
   public:
-    AWS_CODEBUILD_API BuildSummary();
+    AWS_CODEBUILD_API BuildSummary() = default;
     AWS_CODEBUILD_API BuildSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API BuildSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,26 +46,24 @@ namespace Model
     /**
      * <p>The batch build ARN.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline BuildSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline BuildSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline BuildSummary& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    BuildSummary& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>When the build was started, expressed in Unix time format.</p>
      */
-    inline const Aws::Utils::DateTime& GetRequestedOn() const{ return m_requestedOn; }
+    inline const Aws::Utils::DateTime& GetRequestedOn() const { return m_requestedOn; }
     inline bool RequestedOnHasBeenSet() const { return m_requestedOnHasBeenSet; }
-    inline void SetRequestedOn(const Aws::Utils::DateTime& value) { m_requestedOnHasBeenSet = true; m_requestedOn = value; }
-    inline void SetRequestedOn(Aws::Utils::DateTime&& value) { m_requestedOnHasBeenSet = true; m_requestedOn = std::move(value); }
-    inline BuildSummary& WithRequestedOn(const Aws::Utils::DateTime& value) { SetRequestedOn(value); return *this;}
-    inline BuildSummary& WithRequestedOn(Aws::Utils::DateTime&& value) { SetRequestedOn(std::move(value)); return *this;}
+    template<typename RequestedOnT = Aws::Utils::DateTime>
+    void SetRequestedOn(RequestedOnT&& value) { m_requestedOnHasBeenSet = true; m_requestedOn = std::forward<RequestedOnT>(value); }
+    template<typename RequestedOnT = Aws::Utils::DateTime>
+    BuildSummary& WithRequestedOn(RequestedOnT&& value) { SetRequestedOn(std::forward<RequestedOnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,12 +75,10 @@ namespace Model
      * <dt>SUCCEEDED</dt> <dd> <p>The build group succeeded.</p> </dd>
      * <dt>TIMED_OUT</dt> <dd> <p>The build group timed out.</p> </dd> </dl>
      */
-    inline const StatusType& GetBuildStatus() const{ return m_buildStatus; }
+    inline StatusType GetBuildStatus() const { return m_buildStatus; }
     inline bool BuildStatusHasBeenSet() const { return m_buildStatusHasBeenSet; }
-    inline void SetBuildStatus(const StatusType& value) { m_buildStatusHasBeenSet = true; m_buildStatus = value; }
-    inline void SetBuildStatus(StatusType&& value) { m_buildStatusHasBeenSet = true; m_buildStatus = std::move(value); }
-    inline BuildSummary& WithBuildStatus(const StatusType& value) { SetBuildStatus(value); return *this;}
-    inline BuildSummary& WithBuildStatus(StatusType&& value) { SetBuildStatus(std::move(value)); return *this;}
+    inline void SetBuildStatus(StatusType value) { m_buildStatusHasBeenSet = true; m_buildStatus = value; }
+    inline BuildSummary& WithBuildStatus(StatusType value) { SetBuildStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -90,12 +86,12 @@ namespace Model
      * <p>A <code>ResolvedArtifact</code> object that represents the primary build
      * artifacts for the build group.</p>
      */
-    inline const ResolvedArtifact& GetPrimaryArtifact() const{ return m_primaryArtifact; }
+    inline const ResolvedArtifact& GetPrimaryArtifact() const { return m_primaryArtifact; }
     inline bool PrimaryArtifactHasBeenSet() const { return m_primaryArtifactHasBeenSet; }
-    inline void SetPrimaryArtifact(const ResolvedArtifact& value) { m_primaryArtifactHasBeenSet = true; m_primaryArtifact = value; }
-    inline void SetPrimaryArtifact(ResolvedArtifact&& value) { m_primaryArtifactHasBeenSet = true; m_primaryArtifact = std::move(value); }
-    inline BuildSummary& WithPrimaryArtifact(const ResolvedArtifact& value) { SetPrimaryArtifact(value); return *this;}
-    inline BuildSummary& WithPrimaryArtifact(ResolvedArtifact&& value) { SetPrimaryArtifact(std::move(value)); return *this;}
+    template<typename PrimaryArtifactT = ResolvedArtifact>
+    void SetPrimaryArtifact(PrimaryArtifactT&& value) { m_primaryArtifactHasBeenSet = true; m_primaryArtifact = std::forward<PrimaryArtifactT>(value); }
+    template<typename PrimaryArtifactT = ResolvedArtifact>
+    BuildSummary& WithPrimaryArtifact(PrimaryArtifactT&& value) { SetPrimaryArtifact(std::forward<PrimaryArtifactT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,24 +99,24 @@ namespace Model
      * <p>An array of <code>ResolvedArtifact</code> objects that represents the
      * secondary build artifacts for the build group.</p>
      */
-    inline const Aws::Vector<ResolvedArtifact>& GetSecondaryArtifacts() const{ return m_secondaryArtifacts; }
+    inline const Aws::Vector<ResolvedArtifact>& GetSecondaryArtifacts() const { return m_secondaryArtifacts; }
     inline bool SecondaryArtifactsHasBeenSet() const { return m_secondaryArtifactsHasBeenSet; }
-    inline void SetSecondaryArtifacts(const Aws::Vector<ResolvedArtifact>& value) { m_secondaryArtifactsHasBeenSet = true; m_secondaryArtifacts = value; }
-    inline void SetSecondaryArtifacts(Aws::Vector<ResolvedArtifact>&& value) { m_secondaryArtifactsHasBeenSet = true; m_secondaryArtifacts = std::move(value); }
-    inline BuildSummary& WithSecondaryArtifacts(const Aws::Vector<ResolvedArtifact>& value) { SetSecondaryArtifacts(value); return *this;}
-    inline BuildSummary& WithSecondaryArtifacts(Aws::Vector<ResolvedArtifact>&& value) { SetSecondaryArtifacts(std::move(value)); return *this;}
-    inline BuildSummary& AddSecondaryArtifacts(const ResolvedArtifact& value) { m_secondaryArtifactsHasBeenSet = true; m_secondaryArtifacts.push_back(value); return *this; }
-    inline BuildSummary& AddSecondaryArtifacts(ResolvedArtifact&& value) { m_secondaryArtifactsHasBeenSet = true; m_secondaryArtifacts.push_back(std::move(value)); return *this; }
+    template<typename SecondaryArtifactsT = Aws::Vector<ResolvedArtifact>>
+    void SetSecondaryArtifacts(SecondaryArtifactsT&& value) { m_secondaryArtifactsHasBeenSet = true; m_secondaryArtifacts = std::forward<SecondaryArtifactsT>(value); }
+    template<typename SecondaryArtifactsT = Aws::Vector<ResolvedArtifact>>
+    BuildSummary& WithSecondaryArtifacts(SecondaryArtifactsT&& value) { SetSecondaryArtifacts(std::forward<SecondaryArtifactsT>(value)); return *this;}
+    template<typename SecondaryArtifactsT = ResolvedArtifact>
+    BuildSummary& AddSecondaryArtifacts(SecondaryArtifactsT&& value) { m_secondaryArtifactsHasBeenSet = true; m_secondaryArtifacts.emplace_back(std::forward<SecondaryArtifactsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_requestedOn;
+    Aws::Utils::DateTime m_requestedOn{};
     bool m_requestedOnHasBeenSet = false;
 
-    StatusType m_buildStatus;
+    StatusType m_buildStatus{StatusType::NOT_SET};
     bool m_buildStatusHasBeenSet = false;
 
     ResolvedArtifact m_primaryArtifact;

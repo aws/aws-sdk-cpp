@@ -20,22 +20,7 @@ namespace CloudSearch
 namespace Model
 {
 
-LiteralOptions::LiteralOptions() : 
-    m_defaultValueHasBeenSet(false),
-    m_sourceFieldHasBeenSet(false),
-    m_facetEnabled(false),
-    m_facetEnabledHasBeenSet(false),
-    m_searchEnabled(false),
-    m_searchEnabledHasBeenSet(false),
-    m_returnEnabled(false),
-    m_returnEnabledHasBeenSet(false),
-    m_sortEnabled(false),
-    m_sortEnabledHasBeenSet(false)
-{
-}
-
 LiteralOptions::LiteralOptions(const XmlNode& xmlNode)
-  : LiteralOptions()
 {
   *this = xmlNode;
 }

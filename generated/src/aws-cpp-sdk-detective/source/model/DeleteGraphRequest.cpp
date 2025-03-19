@@ -12,11 +12,6 @@ using namespace Aws::Detective::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteGraphRequest::DeleteGraphRequest() : 
-    m_graphArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteGraphRequest::SerializePayload() const
 {
   JsonValue payload;

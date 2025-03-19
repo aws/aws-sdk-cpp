@@ -12,13 +12,6 @@ using namespace Aws::WAFRegional::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListSqlInjectionMatchSetsRequest::ListSqlInjectionMatchSetsRequest() : 
-    m_nextMarkerHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String ListSqlInjectionMatchSetsRequest::SerializePayload() const
 {
   JsonValue payload;

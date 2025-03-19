@@ -18,18 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-SageMakerEndpoint::SageMakerEndpoint() : 
-    m_initialInstanceCount(0),
-    m_initialInstanceCountHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_executionRoleHasBeenSet(false),
-    m_kmsEncryptionKeyHasBeenSet(false),
-    m_vpcHasBeenSet(false)
-{
-}
-
 SageMakerEndpoint::SageMakerEndpoint(JsonView jsonValue)
-  : SageMakerEndpoint()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ SageMakerEndpoint& SageMakerEndpoint::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("initialInstanceCount"))
   {
     m_initialInstanceCount = jsonValue.GetInteger("initialInstanceCount");
-
     m_initialInstanceCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceType"))
   {
     m_instanceType = jsonValue.GetString("instanceType");
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionRole"))
   {
     m_executionRole = jsonValue.GetString("executionRole");
-
     m_executionRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsEncryptionKey"))
   {
     m_kmsEncryptionKey = jsonValue.GetString("kmsEncryptionKey");
-
     m_kmsEncryptionKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpc"))
   {
     m_vpc = jsonValue.GetObject("vpc");
-
     m_vpcHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -36,7 +36,7 @@ namespace Model
   class ApplicationResourceLifecycleConfig
   {
   public:
-    AWS_ELASTICBEANSTALK_API ApplicationResourceLifecycleConfig();
+    AWS_ELASTICBEANSTALK_API ApplicationResourceLifecycleConfig() = default;
     AWS_ELASTICBEANSTALK_API ApplicationResourceLifecycleConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICBEANSTALK_API ApplicationResourceLifecycleConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -56,26 +56,24 @@ namespace Model
      * <code>UpdateApplicationResourceLifecycle</code> calls. You can, however, specify
      * it in subsequent calls to change the Service Role to another value.</p>
      */
-    inline const Aws::String& GetServiceRole() const{ return m_serviceRole; }
+    inline const Aws::String& GetServiceRole() const { return m_serviceRole; }
     inline bool ServiceRoleHasBeenSet() const { return m_serviceRoleHasBeenSet; }
-    inline void SetServiceRole(const Aws::String& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = value; }
-    inline void SetServiceRole(Aws::String&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = std::move(value); }
-    inline void SetServiceRole(const char* value) { m_serviceRoleHasBeenSet = true; m_serviceRole.assign(value); }
-    inline ApplicationResourceLifecycleConfig& WithServiceRole(const Aws::String& value) { SetServiceRole(value); return *this;}
-    inline ApplicationResourceLifecycleConfig& WithServiceRole(Aws::String&& value) { SetServiceRole(std::move(value)); return *this;}
-    inline ApplicationResourceLifecycleConfig& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
+    template<typename ServiceRoleT = Aws::String>
+    void SetServiceRole(ServiceRoleT&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = std::forward<ServiceRoleT>(value); }
+    template<typename ServiceRoleT = Aws::String>
+    ApplicationResourceLifecycleConfig& WithServiceRole(ServiceRoleT&& value) { SetServiceRole(std::forward<ServiceRoleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Defines lifecycle settings for application versions.</p>
      */
-    inline const ApplicationVersionLifecycleConfig& GetVersionLifecycleConfig() const{ return m_versionLifecycleConfig; }
+    inline const ApplicationVersionLifecycleConfig& GetVersionLifecycleConfig() const { return m_versionLifecycleConfig; }
     inline bool VersionLifecycleConfigHasBeenSet() const { return m_versionLifecycleConfigHasBeenSet; }
-    inline void SetVersionLifecycleConfig(const ApplicationVersionLifecycleConfig& value) { m_versionLifecycleConfigHasBeenSet = true; m_versionLifecycleConfig = value; }
-    inline void SetVersionLifecycleConfig(ApplicationVersionLifecycleConfig&& value) { m_versionLifecycleConfigHasBeenSet = true; m_versionLifecycleConfig = std::move(value); }
-    inline ApplicationResourceLifecycleConfig& WithVersionLifecycleConfig(const ApplicationVersionLifecycleConfig& value) { SetVersionLifecycleConfig(value); return *this;}
-    inline ApplicationResourceLifecycleConfig& WithVersionLifecycleConfig(ApplicationVersionLifecycleConfig&& value) { SetVersionLifecycleConfig(std::move(value)); return *this;}
+    template<typename VersionLifecycleConfigT = ApplicationVersionLifecycleConfig>
+    void SetVersionLifecycleConfig(VersionLifecycleConfigT&& value) { m_versionLifecycleConfigHasBeenSet = true; m_versionLifecycleConfig = std::forward<VersionLifecycleConfigT>(value); }
+    template<typename VersionLifecycleConfigT = ApplicationVersionLifecycleConfig>
+    ApplicationResourceLifecycleConfig& WithVersionLifecycleConfig(VersionLifecycleConfigT&& value) { SetVersionLifecycleConfig(std::forward<VersionLifecycleConfigT>(value)); return *this;}
     ///@}
   private:
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateTransitGatewayRouteTableAnnouncementResponse::CreateTransitGatewayRouteTableAnnouncementResponse()
-{
-}
-
 CreateTransitGatewayRouteTableAnnouncementResponse::CreateTransitGatewayRouteTableAnnouncementResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ CreateTransitGatewayRouteTableAnnouncementResponse& CreateTransitGatewayRouteTab
     if(!transitGatewayRouteTableAnnouncementNode.IsNull())
     {
       m_transitGatewayRouteTableAnnouncement = transitGatewayRouteTableAnnouncementNode;
+      m_transitGatewayRouteTableAnnouncementHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ CreateTransitGatewayRouteTableAnnouncementResponse& CreateTransitGatewayRouteTab
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::CreateTransitGatewayRouteTableAnnouncementResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

@@ -17,15 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAccountResult::GetAccountResult() : 
-    m_sendingEnabled(false),
-    m_dedicatedIpAutoWarmupEnabled(false),
-    m_productionAccessEnabled(false)
-{
-}
-
 GetAccountResult::GetAccountResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetAccountResult()
 {
   *this = result;
 }
@@ -36,39 +28,35 @@ GetAccountResult& GetAccountResult::operator =(const Aws::AmazonWebServiceResult
   if(jsonValue.ValueExists("SendQuota"))
   {
     m_sendQuota = jsonValue.GetObject("SendQuota");
-
+    m_sendQuotaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SendingEnabled"))
   {
     m_sendingEnabled = jsonValue.GetBool("SendingEnabled");
-
+    m_sendingEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DedicatedIpAutoWarmupEnabled"))
   {
     m_dedicatedIpAutoWarmupEnabled = jsonValue.GetBool("DedicatedIpAutoWarmupEnabled");
-
+    m_dedicatedIpAutoWarmupEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnforcementStatus"))
   {
     m_enforcementStatus = jsonValue.GetString("EnforcementStatus");
-
+    m_enforcementStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProductionAccessEnabled"))
   {
     m_productionAccessEnabled = jsonValue.GetBool("ProductionAccessEnabled");
-
+    m_productionAccessEnabledHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,15 +18,7 @@ namespace drs
 namespace Model
 {
 
-DescribeSourceServersRequestFilters::DescribeSourceServersRequestFilters() : 
-    m_hardwareIdHasBeenSet(false),
-    m_sourceServerIDsHasBeenSet(false),
-    m_stagingAccountIDsHasBeenSet(false)
-{
-}
-
 DescribeSourceServersRequestFilters::DescribeSourceServersRequestFilters(JsonView jsonValue)
-  : DescribeSourceServersRequestFilters()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ DescribeSourceServersRequestFilters& DescribeSourceServersRequestFilters::operat
   if(jsonValue.ValueExists("hardwareId"))
   {
     m_hardwareId = jsonValue.GetString("hardwareId");
-
     m_hardwareIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceServerIDs"))
   {
     Aws::Utils::Array<JsonView> sourceServerIDsJsonList = jsonValue.GetArray("sourceServerIDs");
@@ -49,7 +39,6 @@ DescribeSourceServersRequestFilters& DescribeSourceServersRequestFilters::operat
     }
     m_sourceServerIDsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stagingAccountIDs"))
   {
     Aws::Utils::Array<JsonView> stagingAccountIDsJsonList = jsonValue.GetArray("stagingAccountIDs");
@@ -59,7 +48,6 @@ DescribeSourceServersRequestFilters& DescribeSourceServersRequestFilters::operat
     }
     m_stagingAccountIDsHasBeenSet = true;
   }
-
   return *this;
 }
 

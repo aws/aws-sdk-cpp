@@ -32,7 +32,7 @@ namespace Model
   class Period
   {
   public:
-    AWS_CUSTOMERPROFILES_API Period();
+    AWS_CUSTOMERPROFILES_API Period() = default;
     AWS_CUSTOMERPROFILES_API Period(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API Period& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,19 +42,17 @@ namespace Model
     /**
      * <p>The unit of time.</p>
      */
-    inline const PeriodUnit& GetUnit() const{ return m_unit; }
+    inline PeriodUnit GetUnit() const { return m_unit; }
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-    inline void SetUnit(const PeriodUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
-    inline void SetUnit(PeriodUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-    inline Period& WithUnit(const PeriodUnit& value) { SetUnit(value); return *this;}
-    inline Period& WithUnit(PeriodUnit&& value) { SetUnit(std::move(value)); return *this;}
+    inline void SetUnit(PeriodUnit value) { m_unitHasBeenSet = true; m_unit = value; }
+    inline Period& WithUnit(PeriodUnit value) { SetUnit(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The amount of time of the specified unit.</p>
      */
-    inline int GetValue() const{ return m_value; }
+    inline int GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(int value) { m_valueHasBeenSet = true; m_value = value; }
     inline Period& WithValue(int value) { SetValue(value); return *this;}
@@ -64,7 +62,7 @@ namespace Model
     /**
      * <p>The maximum allowed number of destination invocations per profile.</p>
      */
-    inline int GetMaxInvocationsPerProfile() const{ return m_maxInvocationsPerProfile; }
+    inline int GetMaxInvocationsPerProfile() const { return m_maxInvocationsPerProfile; }
     inline bool MaxInvocationsPerProfileHasBeenSet() const { return m_maxInvocationsPerProfileHasBeenSet; }
     inline void SetMaxInvocationsPerProfile(int value) { m_maxInvocationsPerProfileHasBeenSet = true; m_maxInvocationsPerProfile = value; }
     inline Period& WithMaxInvocationsPerProfile(int value) { SetMaxInvocationsPerProfile(value); return *this;}
@@ -75,23 +73,23 @@ namespace Model
      * <p>If set to true, there is no limit on the number of destination invocations
      * per profile. The default is false.</p>
      */
-    inline bool GetUnlimited() const{ return m_unlimited; }
+    inline bool GetUnlimited() const { return m_unlimited; }
     inline bool UnlimitedHasBeenSet() const { return m_unlimitedHasBeenSet; }
     inline void SetUnlimited(bool value) { m_unlimitedHasBeenSet = true; m_unlimited = value; }
     inline Period& WithUnlimited(bool value) { SetUnlimited(value); return *this;}
     ///@}
   private:
 
-    PeriodUnit m_unit;
+    PeriodUnit m_unit{PeriodUnit::NOT_SET};
     bool m_unitHasBeenSet = false;
 
-    int m_value;
+    int m_value{0};
     bool m_valueHasBeenSet = false;
 
-    int m_maxInvocationsPerProfile;
+    int m_maxInvocationsPerProfile{0};
     bool m_maxInvocationsPerProfileHasBeenSet = false;
 
-    bool m_unlimited;
+    bool m_unlimited{false};
     bool m_unlimitedHasBeenSet = false;
   };
 

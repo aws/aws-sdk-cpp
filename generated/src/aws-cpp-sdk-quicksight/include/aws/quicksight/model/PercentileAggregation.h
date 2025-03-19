@@ -30,7 +30,7 @@ namespace Model
   class PercentileAggregation
   {
   public:
-    AWS_QUICKSIGHT_API PercentileAggregation();
+    AWS_QUICKSIGHT_API PercentileAggregation() = default;
     AWS_QUICKSIGHT_API PercentileAggregation(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API PercentileAggregation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,14 @@ namespace Model
      * <p>The percentile value. This value can be any numeric constant 0–100. A
      * percentile value of 50 computes the median value of the measure.</p>
      */
-    inline double GetPercentileValue() const{ return m_percentileValue; }
+    inline double GetPercentileValue() const { return m_percentileValue; }
     inline bool PercentileValueHasBeenSet() const { return m_percentileValueHasBeenSet; }
     inline void SetPercentileValue(double value) { m_percentileValueHasBeenSet = true; m_percentileValue = value; }
     inline PercentileAggregation& WithPercentileValue(double value) { SetPercentileValue(value); return *this;}
     ///@}
   private:
 
-    double m_percentileValue;
+    double m_percentileValue{0.0};
     bool m_percentileValueHasBeenSet = false;
   };
 

@@ -18,18 +18,7 @@ namespace Glue
 namespace Model
 {
 
-IcebergOrphanFileDeletionMetrics::IcebergOrphanFileDeletionMetrics() : 
-    m_numberOfOrphanFilesDeleted(0),
-    m_numberOfOrphanFilesDeletedHasBeenSet(false),
-    m_numberOfDpus(0),
-    m_numberOfDpusHasBeenSet(false),
-    m_jobDurationInHour(0.0),
-    m_jobDurationInHourHasBeenSet(false)
-{
-}
-
 IcebergOrphanFileDeletionMetrics::IcebergOrphanFileDeletionMetrics(JsonView jsonValue)
-  : IcebergOrphanFileDeletionMetrics()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ IcebergOrphanFileDeletionMetrics& IcebergOrphanFileDeletionMetrics::operator =(J
   if(jsonValue.ValueExists("NumberOfOrphanFilesDeleted"))
   {
     m_numberOfOrphanFilesDeleted = jsonValue.GetInt64("NumberOfOrphanFilesDeleted");
-
     m_numberOfOrphanFilesDeletedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfDpus"))
   {
     m_numberOfDpus = jsonValue.GetInteger("NumberOfDpus");
-
     m_numberOfDpusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobDurationInHour"))
   {
     m_jobDurationInHour = jsonValue.GetDouble("JobDurationInHour");
-
     m_jobDurationInHourHasBeenSet = true;
   }
-
   return *this;
 }
 

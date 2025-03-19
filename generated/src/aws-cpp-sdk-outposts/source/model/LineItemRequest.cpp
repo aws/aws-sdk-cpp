@@ -18,15 +18,7 @@ namespace Outposts
 namespace Model
 {
 
-LineItemRequest::LineItemRequest() : 
-    m_catalogItemIdHasBeenSet(false),
-    m_quantity(0),
-    m_quantityHasBeenSet(false)
-{
-}
-
 LineItemRequest::LineItemRequest(JsonView jsonValue)
-  : LineItemRequest()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ LineItemRequest& LineItemRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CatalogItemId"))
   {
     m_catalogItemId = jsonValue.GetString("CatalogItemId");
-
     m_catalogItemIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Quantity"))
   {
     m_quantity = jsonValue.GetInteger("Quantity");
-
     m_quantityHasBeenSet = true;
   }
-
   return *this;
 }
 

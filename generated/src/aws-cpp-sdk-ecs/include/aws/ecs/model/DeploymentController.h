@@ -32,7 +32,7 @@ namespace Model
   class DeploymentController
   {
   public:
-    AWS_ECS_API DeploymentController();
+    AWS_ECS_API DeploymentController() = default;
     AWS_ECS_API DeploymentController(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API DeploymentController& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -67,16 +67,14 @@ namespace Model
      * Amazon ECS services using a third-party controller </a> in the <i>Amazon Elastic
      * Container Service Developer Guide</i>.</p> </dd> </dl>
      */
-    inline const DeploymentControllerType& GetType() const{ return m_type; }
+    inline DeploymentControllerType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const DeploymentControllerType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(DeploymentControllerType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline DeploymentController& WithType(const DeploymentControllerType& value) { SetType(value); return *this;}
-    inline DeploymentController& WithType(DeploymentControllerType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(DeploymentControllerType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline DeploymentController& WithType(DeploymentControllerType value) { SetType(value); return *this;}
     ///@}
   private:
 
-    DeploymentControllerType m_type;
+    DeploymentControllerType m_type{DeploymentControllerType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

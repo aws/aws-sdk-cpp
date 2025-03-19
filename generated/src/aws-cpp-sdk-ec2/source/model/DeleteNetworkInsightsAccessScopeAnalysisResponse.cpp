@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteNetworkInsightsAccessScopeAnalysisResponse::DeleteNetworkInsightsAccessScopeAnalysisResponse()
-{
-}
-
 DeleteNetworkInsightsAccessScopeAnalysisResponse::DeleteNetworkInsightsAccessScopeAnalysisResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DeleteNetworkInsightsAccessScopeAnalysisResponse& DeleteNetworkInsightsAccessSco
     if(!networkInsightsAccessScopeAnalysisIdNode.IsNull())
     {
       m_networkInsightsAccessScopeAnalysisId = Aws::Utils::Xml::DecodeEscapedXmlText(networkInsightsAccessScopeAnalysisIdNode.GetText());
+      m_networkInsightsAccessScopeAnalysisIdHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ DeleteNetworkInsightsAccessScopeAnalysisResponse& DeleteNetworkInsightsAccessSco
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DeleteNetworkInsightsAccessScopeAnalysisResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

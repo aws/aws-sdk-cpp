@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateWorkspacesPoolResult::CreateWorkspacesPoolResult()
-{
-}
-
 CreateWorkspacesPoolResult::CreateWorkspacesPoolResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateWorkspacesPoolResult& CreateWorkspacesPoolResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("WorkspacesPool"))
   {
     m_workspacesPool = jsonValue.GetObject("WorkspacesPool");
-
+    m_workspacesPoolHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

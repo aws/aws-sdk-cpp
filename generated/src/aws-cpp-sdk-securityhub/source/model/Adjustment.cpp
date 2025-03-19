@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-Adjustment::Adjustment() : 
-    m_metricHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 Adjustment::Adjustment(JsonView jsonValue)
-  : Adjustment()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Adjustment& Adjustment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Metric"))
   {
     m_metric = jsonValue.GetString("Metric");
-
     m_metricHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Reason"))
   {
     m_reason = jsonValue.GetString("Reason");
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

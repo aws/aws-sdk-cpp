@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetDashboardForJobRunRequest::GetDashboardForJobRunRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_jobRunIdHasBeenSet(false),
-    m_attempt(0),
-    m_attemptHasBeenSet(false),
-    m_accessSystemProfileLogs(false),
-    m_accessSystemProfileLogsHasBeenSet(false)
-{
-}
-
 Aws::String GetDashboardForJobRunRequest::SerializePayload() const
 {
   return {};

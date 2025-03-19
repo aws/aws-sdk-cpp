@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-PutAuditEventsRequest::PutAuditEventsRequest() : 
-    m_auditEventsHasBeenSet(false),
-    m_channelArnHasBeenSet(false),
-    m_externalIdHasBeenSet(false)
-{
-}
-
 Aws::String PutAuditEventsRequest::SerializePayload() const
 {
   JsonValue payload;

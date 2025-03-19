@@ -20,14 +20,7 @@ namespace ElasticLoadBalancing
 namespace Model
 {
 
-SourceSecurityGroup::SourceSecurityGroup() : 
-    m_ownerAliasHasBeenSet(false),
-    m_groupNameHasBeenSet(false)
-{
-}
-
 SourceSecurityGroup::SourceSecurityGroup(const XmlNode& xmlNode)
-  : SourceSecurityGroup()
 {
   *this = xmlNode;
 }

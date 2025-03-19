@@ -35,7 +35,7 @@ namespace Model
   class S3RepositoryDetails
   {
   public:
-    AWS_CODEGURUREVIEWER_API S3RepositoryDetails();
+    AWS_CODEGURUREVIEWER_API S3RepositoryDetails() = default;
     AWS_CODEGURUREVIEWER_API S3RepositoryDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUREVIEWER_API S3RepositoryDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUREVIEWER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * <p>The name of the S3 bucket used for associating a new S3 repository. It must
      * begin with <code>codeguru-reviewer-</code>. </p>
      */
-    inline const Aws::String& GetBucketName() const{ return m_bucketName; }
+    inline const Aws::String& GetBucketName() const { return m_bucketName; }
     inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
-    inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
-    inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::move(value); }
-    inline void SetBucketName(const char* value) { m_bucketNameHasBeenSet = true; m_bucketName.assign(value); }
-    inline S3RepositoryDetails& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
-    inline S3RepositoryDetails& WithBucketName(Aws::String&& value) { SetBucketName(std::move(value)); return *this;}
-    inline S3RepositoryDetails& WithBucketName(const char* value) { SetBucketName(value); return *this;}
+    template<typename BucketNameT = Aws::String>
+    void SetBucketName(BucketNameT&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::forward<BucketNameT>(value); }
+    template<typename BucketNameT = Aws::String>
+    S3RepositoryDetails& WithBucketName(BucketNameT&& value) { SetBucketName(std::forward<BucketNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,12 +60,12 @@ namespace Model
      * includes the S3 object key for a source code .zip file and for a build artifacts
      * .zip file that contains .jar or .class files.</p>
      */
-    inline const CodeArtifacts& GetCodeArtifacts() const{ return m_codeArtifacts; }
+    inline const CodeArtifacts& GetCodeArtifacts() const { return m_codeArtifacts; }
     inline bool CodeArtifactsHasBeenSet() const { return m_codeArtifactsHasBeenSet; }
-    inline void SetCodeArtifacts(const CodeArtifacts& value) { m_codeArtifactsHasBeenSet = true; m_codeArtifacts = value; }
-    inline void SetCodeArtifacts(CodeArtifacts&& value) { m_codeArtifactsHasBeenSet = true; m_codeArtifacts = std::move(value); }
-    inline S3RepositoryDetails& WithCodeArtifacts(const CodeArtifacts& value) { SetCodeArtifacts(value); return *this;}
-    inline S3RepositoryDetails& WithCodeArtifacts(CodeArtifacts&& value) { SetCodeArtifacts(std::move(value)); return *this;}
+    template<typename CodeArtifactsT = CodeArtifacts>
+    void SetCodeArtifacts(CodeArtifactsT&& value) { m_codeArtifactsHasBeenSet = true; m_codeArtifacts = std::forward<CodeArtifactsT>(value); }
+    template<typename CodeArtifactsT = CodeArtifacts>
+    S3RepositoryDetails& WithCodeArtifacts(CodeArtifactsT&& value) { SetCodeArtifacts(std::forward<CodeArtifactsT>(value)); return *this;}
     ///@}
   private:
 

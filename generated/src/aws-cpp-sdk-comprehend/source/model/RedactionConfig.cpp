@@ -18,16 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-RedactionConfig::RedactionConfig() : 
-    m_piiEntityTypesHasBeenSet(false),
-    m_maskMode(PiiEntitiesDetectionMaskMode::NOT_SET),
-    m_maskModeHasBeenSet(false),
-    m_maskCharacterHasBeenSet(false)
-{
-}
-
 RedactionConfig::RedactionConfig(JsonView jsonValue)
-  : RedactionConfig()
 {
   *this = jsonValue;
 }
@@ -43,21 +34,16 @@ RedactionConfig& RedactionConfig::operator =(JsonView jsonValue)
     }
     m_piiEntityTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaskMode"))
   {
     m_maskMode = PiiEntitiesDetectionMaskModeMapper::GetPiiEntitiesDetectionMaskModeForName(jsonValue.GetString("MaskMode"));
-
     m_maskModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaskCharacter"))
   {
     m_maskCharacter = jsonValue.GetString("MaskCharacter");
-
     m_maskCharacterHasBeenSet = true;
   }
-
   return *this;
 }
 

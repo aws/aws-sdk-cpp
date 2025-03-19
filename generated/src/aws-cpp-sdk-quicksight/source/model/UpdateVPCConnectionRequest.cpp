@@ -12,17 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateVPCConnectionRequest::UpdateVPCConnectionRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_vPCConnectionIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_dnsResolversHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 Aws::String UpdateVPCConnectionRequest::SerializePayload() const
 {
   JsonValue payload;

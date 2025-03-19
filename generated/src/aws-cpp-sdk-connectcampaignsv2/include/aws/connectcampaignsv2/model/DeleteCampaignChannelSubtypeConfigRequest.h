@@ -30,7 +30,7 @@ namespace Model
   class DeleteCampaignChannelSubtypeConfigRequest : public ConnectCampaignsV2Request
   {
   public:
-    AWS_CONNECTCAMPAIGNSV2_API DeleteCampaignChannelSubtypeConfigRequest();
+    AWS_CONNECTCAMPAIGNSV2_API DeleteCampaignChannelSubtypeConfigRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,31 +45,27 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline DeleteCampaignChannelSubtypeConfigRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline DeleteCampaignChannelSubtypeConfigRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline DeleteCampaignChannelSubtypeConfigRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    DeleteCampaignChannelSubtypeConfigRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ChannelSubtype& GetChannelSubtype() const{ return m_channelSubtype; }
+    inline ChannelSubtype GetChannelSubtype() const { return m_channelSubtype; }
     inline bool ChannelSubtypeHasBeenSet() const { return m_channelSubtypeHasBeenSet; }
-    inline void SetChannelSubtype(const ChannelSubtype& value) { m_channelSubtypeHasBeenSet = true; m_channelSubtype = value; }
-    inline void SetChannelSubtype(ChannelSubtype&& value) { m_channelSubtypeHasBeenSet = true; m_channelSubtype = std::move(value); }
-    inline DeleteCampaignChannelSubtypeConfigRequest& WithChannelSubtype(const ChannelSubtype& value) { SetChannelSubtype(value); return *this;}
-    inline DeleteCampaignChannelSubtypeConfigRequest& WithChannelSubtype(ChannelSubtype&& value) { SetChannelSubtype(std::move(value)); return *this;}
+    inline void SetChannelSubtype(ChannelSubtype value) { m_channelSubtypeHasBeenSet = true; m_channelSubtype = value; }
+    inline DeleteCampaignChannelSubtypeConfigRequest& WithChannelSubtype(ChannelSubtype value) { SetChannelSubtype(value); return *this;}
     ///@}
   private:
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    ChannelSubtype m_channelSubtype;
+    ChannelSubtype m_channelSubtype{ChannelSubtype::NOT_SET};
     bool m_channelSubtypeHasBeenSet = false;
   };
 

@@ -23,7 +23,7 @@ namespace Model
   class ListResourcesRequest : public LakeFormationRequest
   {
   public:
-    AWS_LAKEFORMATION_API ListResourcesRequest();
+    AWS_LAKEFORMATION_API ListResourcesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,21 +39,21 @@ namespace Model
      * <p>Any applicable row-level and/or column-level filtering conditions for the
      * resources.</p>
      */
-    inline const Aws::Vector<FilterCondition>& GetFilterConditionList() const{ return m_filterConditionList; }
+    inline const Aws::Vector<FilterCondition>& GetFilterConditionList() const { return m_filterConditionList; }
     inline bool FilterConditionListHasBeenSet() const { return m_filterConditionListHasBeenSet; }
-    inline void SetFilterConditionList(const Aws::Vector<FilterCondition>& value) { m_filterConditionListHasBeenSet = true; m_filterConditionList = value; }
-    inline void SetFilterConditionList(Aws::Vector<FilterCondition>&& value) { m_filterConditionListHasBeenSet = true; m_filterConditionList = std::move(value); }
-    inline ListResourcesRequest& WithFilterConditionList(const Aws::Vector<FilterCondition>& value) { SetFilterConditionList(value); return *this;}
-    inline ListResourcesRequest& WithFilterConditionList(Aws::Vector<FilterCondition>&& value) { SetFilterConditionList(std::move(value)); return *this;}
-    inline ListResourcesRequest& AddFilterConditionList(const FilterCondition& value) { m_filterConditionListHasBeenSet = true; m_filterConditionList.push_back(value); return *this; }
-    inline ListResourcesRequest& AddFilterConditionList(FilterCondition&& value) { m_filterConditionListHasBeenSet = true; m_filterConditionList.push_back(std::move(value)); return *this; }
+    template<typename FilterConditionListT = Aws::Vector<FilterCondition>>
+    void SetFilterConditionList(FilterConditionListT&& value) { m_filterConditionListHasBeenSet = true; m_filterConditionList = std::forward<FilterConditionListT>(value); }
+    template<typename FilterConditionListT = Aws::Vector<FilterCondition>>
+    ListResourcesRequest& WithFilterConditionList(FilterConditionListT&& value) { SetFilterConditionList(std::forward<FilterConditionListT>(value)); return *this;}
+    template<typename FilterConditionListT = FilterCondition>
+    ListResourcesRequest& AddFilterConditionList(FilterConditionListT&& value) { m_filterConditionListHasBeenSet = true; m_filterConditionList.emplace_back(std::forward<FilterConditionListT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of resource results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListResourcesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -64,21 +64,19 @@ namespace Model
      * <p>A continuation token, if this is not the first call to retrieve these
      * resources.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListResourcesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListResourcesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListResourcesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListResourcesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<FilterCondition> m_filterConditionList;
     bool m_filterConditionListHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

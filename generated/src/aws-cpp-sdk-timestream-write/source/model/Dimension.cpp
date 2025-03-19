@@ -18,16 +18,7 @@ namespace TimestreamWrite
 namespace Model
 {
 
-Dimension::Dimension() : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_dimensionValueType(DimensionValueType::NOT_SET),
-    m_dimensionValueTypeHasBeenSet(false)
-{
-}
-
 Dimension::Dimension(JsonView jsonValue)
-  : Dimension()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ Dimension& Dimension::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DimensionValueType"))
   {
     m_dimensionValueType = DimensionValueTypeMapper::GetDimensionValueTypeForName(jsonValue.GetString("DimensionValueType"));
-
     m_dimensionValueTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

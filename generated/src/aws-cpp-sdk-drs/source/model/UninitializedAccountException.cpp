@@ -18,14 +18,7 @@ namespace drs
 namespace Model
 {
 
-UninitializedAccountException::UninitializedAccountException() : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 UninitializedAccountException::UninitializedAccountException(JsonView jsonValue)
-  : UninitializedAccountException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ UninitializedAccountException& UninitializedAccountException::operator =(JsonVie
   if(jsonValue.ValueExists("code"))
   {
     m_code = jsonValue.GetString("code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

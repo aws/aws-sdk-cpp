@@ -27,7 +27,7 @@ namespace Model
   class TestInvokeAuthorizerRequest : public APIGatewayRequest
   {
   public:
-    AWS_APIGATEWAY_API TestInvokeAuthorizerRequest();
+    AWS_APIGATEWAY_API TestInvokeAuthorizerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The string identifier of the associated RestApi.</p>
      */
-    inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
+    inline const Aws::String& GetRestApiId() const { return m_restApiId; }
     inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
-    inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
-    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
-    inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
-    inline TestInvokeAuthorizerRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
-    inline TestInvokeAuthorizerRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
-    inline TestInvokeAuthorizerRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+    template<typename RestApiIdT = Aws::String>
+    void SetRestApiId(RestApiIdT&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::forward<RestApiIdT>(value); }
+    template<typename RestApiIdT = Aws::String>
+    TestInvokeAuthorizerRequest& WithRestApiId(RestApiIdT&& value) { SetRestApiId(std::forward<RestApiIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies a test invoke authorizer request's Authorizer ID.</p>
      */
-    inline const Aws::String& GetAuthorizerId() const{ return m_authorizerId; }
+    inline const Aws::String& GetAuthorizerId() const { return m_authorizerId; }
     inline bool AuthorizerIdHasBeenSet() const { return m_authorizerIdHasBeenSet; }
-    inline void SetAuthorizerId(const Aws::String& value) { m_authorizerIdHasBeenSet = true; m_authorizerId = value; }
-    inline void SetAuthorizerId(Aws::String&& value) { m_authorizerIdHasBeenSet = true; m_authorizerId = std::move(value); }
-    inline void SetAuthorizerId(const char* value) { m_authorizerIdHasBeenSet = true; m_authorizerId.assign(value); }
-    inline TestInvokeAuthorizerRequest& WithAuthorizerId(const Aws::String& value) { SetAuthorizerId(value); return *this;}
-    inline TestInvokeAuthorizerRequest& WithAuthorizerId(Aws::String&& value) { SetAuthorizerId(std::move(value)); return *this;}
-    inline TestInvokeAuthorizerRequest& WithAuthorizerId(const char* value) { SetAuthorizerId(value); return *this;}
+    template<typename AuthorizerIdT = Aws::String>
+    void SetAuthorizerId(AuthorizerIdT&& value) { m_authorizerIdHasBeenSet = true; m_authorizerId = std::forward<AuthorizerIdT>(value); }
+    template<typename AuthorizerIdT = Aws::String>
+    TestInvokeAuthorizerRequest& WithAuthorizerId(AuthorizerIdT&& value) { SetAuthorizerId(std::forward<AuthorizerIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,18 +68,16 @@ namespace Model
      * invocation request. This is where the incoming authorization token, or identity
      * source, may be specified.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetMultiValueHeaders() const{ return m_multiValueHeaders; }
+    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetMultiValueHeaders() const { return m_multiValueHeaders; }
     inline bool MultiValueHeadersHasBeenSet() const { return m_multiValueHeadersHasBeenSet; }
-    inline void SetMultiValueHeaders(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_multiValueHeadersHasBeenSet = true; m_multiValueHeaders = value; }
-    inline void SetMultiValueHeaders(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_multiValueHeadersHasBeenSet = true; m_multiValueHeaders = std::move(value); }
-    inline TestInvokeAuthorizerRequest& WithMultiValueHeaders(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetMultiValueHeaders(value); return *this;}
-    inline TestInvokeAuthorizerRequest& WithMultiValueHeaders(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetMultiValueHeaders(std::move(value)); return *this;}
-    inline TestInvokeAuthorizerRequest& AddMultiValueHeaders(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_multiValueHeadersHasBeenSet = true; m_multiValueHeaders.emplace(key, value); return *this; }
-    inline TestInvokeAuthorizerRequest& AddMultiValueHeaders(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_multiValueHeadersHasBeenSet = true; m_multiValueHeaders.emplace(std::move(key), value); return *this; }
-    inline TestInvokeAuthorizerRequest& AddMultiValueHeaders(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_multiValueHeadersHasBeenSet = true; m_multiValueHeaders.emplace(key, std::move(value)); return *this; }
-    inline TestInvokeAuthorizerRequest& AddMultiValueHeaders(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_multiValueHeadersHasBeenSet = true; m_multiValueHeaders.emplace(std::move(key), std::move(value)); return *this; }
-    inline TestInvokeAuthorizerRequest& AddMultiValueHeaders(const char* key, Aws::Vector<Aws::String>&& value) { m_multiValueHeadersHasBeenSet = true; m_multiValueHeaders.emplace(key, std::move(value)); return *this; }
-    inline TestInvokeAuthorizerRequest& AddMultiValueHeaders(const char* key, const Aws::Vector<Aws::String>& value) { m_multiValueHeadersHasBeenSet = true; m_multiValueHeaders.emplace(key, value); return *this; }
+    template<typename MultiValueHeadersT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    void SetMultiValueHeaders(MultiValueHeadersT&& value) { m_multiValueHeadersHasBeenSet = true; m_multiValueHeaders = std::forward<MultiValueHeadersT>(value); }
+    template<typename MultiValueHeadersT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    TestInvokeAuthorizerRequest& WithMultiValueHeaders(MultiValueHeadersT&& value) { SetMultiValueHeaders(std::forward<MultiValueHeadersT>(value)); return *this;}
+    template<typename MultiValueHeadersKeyT = Aws::String, typename MultiValueHeadersValueT = Aws::Vector<Aws::String>>
+    TestInvokeAuthorizerRequest& AddMultiValueHeaders(MultiValueHeadersKeyT&& key, MultiValueHeadersValueT&& value) {
+      m_multiValueHeadersHasBeenSet = true; m_multiValueHeaders.emplace(std::forward<MultiValueHeadersKeyT>(key), std::forward<MultiValueHeadersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -91,14 +85,12 @@ namespace Model
      * <p>The URI path, including query string, of the simulated invocation request.
      * Use this to specify path parameters and query string parameters.</p>
      */
-    inline const Aws::String& GetPathWithQueryString() const{ return m_pathWithQueryString; }
+    inline const Aws::String& GetPathWithQueryString() const { return m_pathWithQueryString; }
     inline bool PathWithQueryStringHasBeenSet() const { return m_pathWithQueryStringHasBeenSet; }
-    inline void SetPathWithQueryString(const Aws::String& value) { m_pathWithQueryStringHasBeenSet = true; m_pathWithQueryString = value; }
-    inline void SetPathWithQueryString(Aws::String&& value) { m_pathWithQueryStringHasBeenSet = true; m_pathWithQueryString = std::move(value); }
-    inline void SetPathWithQueryString(const char* value) { m_pathWithQueryStringHasBeenSet = true; m_pathWithQueryString.assign(value); }
-    inline TestInvokeAuthorizerRequest& WithPathWithQueryString(const Aws::String& value) { SetPathWithQueryString(value); return *this;}
-    inline TestInvokeAuthorizerRequest& WithPathWithQueryString(Aws::String&& value) { SetPathWithQueryString(std::move(value)); return *this;}
-    inline TestInvokeAuthorizerRequest& WithPathWithQueryString(const char* value) { SetPathWithQueryString(value); return *this;}
+    template<typename PathWithQueryStringT = Aws::String>
+    void SetPathWithQueryString(PathWithQueryStringT&& value) { m_pathWithQueryStringHasBeenSet = true; m_pathWithQueryString = std::forward<PathWithQueryStringT>(value); }
+    template<typename PathWithQueryStringT = Aws::String>
+    TestInvokeAuthorizerRequest& WithPathWithQueryString(PathWithQueryStringT&& value) { SetPathWithQueryString(std::forward<PathWithQueryStringT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,52 +98,44 @@ namespace Model
      * <p>A key-value map of stage variables to simulate an invocation on a deployed
      * Stage.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetStageVariables() const{ return m_stageVariables; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetStageVariables() const { return m_stageVariables; }
     inline bool StageVariablesHasBeenSet() const { return m_stageVariablesHasBeenSet; }
-    inline void SetStageVariables(const Aws::Map<Aws::String, Aws::String>& value) { m_stageVariablesHasBeenSet = true; m_stageVariables = value; }
-    inline void SetStageVariables(Aws::Map<Aws::String, Aws::String>&& value) { m_stageVariablesHasBeenSet = true; m_stageVariables = std::move(value); }
-    inline TestInvokeAuthorizerRequest& WithStageVariables(const Aws::Map<Aws::String, Aws::String>& value) { SetStageVariables(value); return *this;}
-    inline TestInvokeAuthorizerRequest& WithStageVariables(Aws::Map<Aws::String, Aws::String>&& value) { SetStageVariables(std::move(value)); return *this;}
-    inline TestInvokeAuthorizerRequest& AddStageVariables(const Aws::String& key, const Aws::String& value) { m_stageVariablesHasBeenSet = true; m_stageVariables.emplace(key, value); return *this; }
-    inline TestInvokeAuthorizerRequest& AddStageVariables(Aws::String&& key, const Aws::String& value) { m_stageVariablesHasBeenSet = true; m_stageVariables.emplace(std::move(key), value); return *this; }
-    inline TestInvokeAuthorizerRequest& AddStageVariables(const Aws::String& key, Aws::String&& value) { m_stageVariablesHasBeenSet = true; m_stageVariables.emplace(key, std::move(value)); return *this; }
-    inline TestInvokeAuthorizerRequest& AddStageVariables(Aws::String&& key, Aws::String&& value) { m_stageVariablesHasBeenSet = true; m_stageVariables.emplace(std::move(key), std::move(value)); return *this; }
-    inline TestInvokeAuthorizerRequest& AddStageVariables(const char* key, Aws::String&& value) { m_stageVariablesHasBeenSet = true; m_stageVariables.emplace(key, std::move(value)); return *this; }
-    inline TestInvokeAuthorizerRequest& AddStageVariables(Aws::String&& key, const char* value) { m_stageVariablesHasBeenSet = true; m_stageVariables.emplace(std::move(key), value); return *this; }
-    inline TestInvokeAuthorizerRequest& AddStageVariables(const char* key, const char* value) { m_stageVariablesHasBeenSet = true; m_stageVariables.emplace(key, value); return *this; }
+    template<typename StageVariablesT = Aws::Map<Aws::String, Aws::String>>
+    void SetStageVariables(StageVariablesT&& value) { m_stageVariablesHasBeenSet = true; m_stageVariables = std::forward<StageVariablesT>(value); }
+    template<typename StageVariablesT = Aws::Map<Aws::String, Aws::String>>
+    TestInvokeAuthorizerRequest& WithStageVariables(StageVariablesT&& value) { SetStageVariables(std::forward<StageVariablesT>(value)); return *this;}
+    template<typename StageVariablesKeyT = Aws::String, typename StageVariablesValueT = Aws::String>
+    TestInvokeAuthorizerRequest& AddStageVariables(StageVariablesKeyT&& key, StageVariablesValueT&& value) {
+      m_stageVariablesHasBeenSet = true; m_stageVariables.emplace(std::forward<StageVariablesKeyT>(key), std::forward<StageVariablesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>A key-value map of additional context variables.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetAdditionalContext() const{ return m_additionalContext; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetAdditionalContext() const { return m_additionalContext; }
     inline bool AdditionalContextHasBeenSet() const { return m_additionalContextHasBeenSet; }
-    inline void SetAdditionalContext(const Aws::Map<Aws::String, Aws::String>& value) { m_additionalContextHasBeenSet = true; m_additionalContext = value; }
-    inline void SetAdditionalContext(Aws::Map<Aws::String, Aws::String>&& value) { m_additionalContextHasBeenSet = true; m_additionalContext = std::move(value); }
-    inline TestInvokeAuthorizerRequest& WithAdditionalContext(const Aws::Map<Aws::String, Aws::String>& value) { SetAdditionalContext(value); return *this;}
-    inline TestInvokeAuthorizerRequest& WithAdditionalContext(Aws::Map<Aws::String, Aws::String>&& value) { SetAdditionalContext(std::move(value)); return *this;}
-    inline TestInvokeAuthorizerRequest& AddAdditionalContext(const Aws::String& key, const Aws::String& value) { m_additionalContextHasBeenSet = true; m_additionalContext.emplace(key, value); return *this; }
-    inline TestInvokeAuthorizerRequest& AddAdditionalContext(Aws::String&& key, const Aws::String& value) { m_additionalContextHasBeenSet = true; m_additionalContext.emplace(std::move(key), value); return *this; }
-    inline TestInvokeAuthorizerRequest& AddAdditionalContext(const Aws::String& key, Aws::String&& value) { m_additionalContextHasBeenSet = true; m_additionalContext.emplace(key, std::move(value)); return *this; }
-    inline TestInvokeAuthorizerRequest& AddAdditionalContext(Aws::String&& key, Aws::String&& value) { m_additionalContextHasBeenSet = true; m_additionalContext.emplace(std::move(key), std::move(value)); return *this; }
-    inline TestInvokeAuthorizerRequest& AddAdditionalContext(const char* key, Aws::String&& value) { m_additionalContextHasBeenSet = true; m_additionalContext.emplace(key, std::move(value)); return *this; }
-    inline TestInvokeAuthorizerRequest& AddAdditionalContext(Aws::String&& key, const char* value) { m_additionalContextHasBeenSet = true; m_additionalContext.emplace(std::move(key), value); return *this; }
-    inline TestInvokeAuthorizerRequest& AddAdditionalContext(const char* key, const char* value) { m_additionalContextHasBeenSet = true; m_additionalContext.emplace(key, value); return *this; }
+    template<typename AdditionalContextT = Aws::Map<Aws::String, Aws::String>>
+    void SetAdditionalContext(AdditionalContextT&& value) { m_additionalContextHasBeenSet = true; m_additionalContext = std::forward<AdditionalContextT>(value); }
+    template<typename AdditionalContextT = Aws::Map<Aws::String, Aws::String>>
+    TestInvokeAuthorizerRequest& WithAdditionalContext(AdditionalContextT&& value) { SetAdditionalContext(std::forward<AdditionalContextT>(value)); return *this;}
+    template<typename AdditionalContextKeyT = Aws::String, typename AdditionalContextValueT = Aws::String>
+    TestInvokeAuthorizerRequest& AddAdditionalContext(AdditionalContextKeyT&& key, AdditionalContextValueT&& value) {
+      m_additionalContextHasBeenSet = true; m_additionalContext.emplace(std::forward<AdditionalContextKeyT>(key), std::forward<AdditionalContextValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The simulated request body of an incoming invocation request.</p>
      */
-    inline const Aws::String& GetRequestBody() const{ return m_requestBody; }
+    inline const Aws::String& GetRequestBody() const { return m_requestBody; }
     inline bool RequestBodyHasBeenSet() const { return m_requestBodyHasBeenSet; }
-    inline void SetRequestBody(const Aws::String& value) { m_requestBodyHasBeenSet = true; m_requestBody = value; }
-    inline void SetRequestBody(Aws::String&& value) { m_requestBodyHasBeenSet = true; m_requestBody = std::move(value); }
-    inline void SetRequestBody(const char* value) { m_requestBodyHasBeenSet = true; m_requestBody.assign(value); }
-    inline TestInvokeAuthorizerRequest& WithRequestBody(const Aws::String& value) { SetRequestBody(value); return *this;}
-    inline TestInvokeAuthorizerRequest& WithRequestBody(Aws::String&& value) { SetRequestBody(std::move(value)); return *this;}
-    inline TestInvokeAuthorizerRequest& WithRequestBody(const char* value) { SetRequestBody(value); return *this;}
+    template<typename RequestBodyT = Aws::String>
+    void SetRequestBody(RequestBodyT&& value) { m_requestBodyHasBeenSet = true; m_requestBody = std::forward<RequestBodyT>(value); }
+    template<typename RequestBodyT = Aws::String>
+    TestInvokeAuthorizerRequest& WithRequestBody(RequestBodyT&& value) { SetRequestBody(std::forward<RequestBodyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -160,19 +144,16 @@ namespace Model
      * is where the incoming authorization token, or identity source, should be
      * specified.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetRequestHeaders() const{ return m_requestHeaders; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetRequestHeaders() const { return m_requestHeaders; }
     inline bool RequestHeadersHasBeenSet() const { return m_requestHeadersHasBeenSet; }
-    inline void SetRequestHeaders(const Aws::Map<Aws::String, Aws::String>& value) { m_requestHeadersHasBeenSet = true; m_requestHeaders = value; }
-    inline void SetRequestHeaders(Aws::Map<Aws::String, Aws::String>&& value) { m_requestHeadersHasBeenSet = true; m_requestHeaders = std::move(value); }
-    inline TestInvokeAuthorizerRequest& WithRequestHeaders(const Aws::Map<Aws::String, Aws::String>& value) { SetRequestHeaders(value); return *this;}
-    inline TestInvokeAuthorizerRequest& WithRequestHeaders(Aws::Map<Aws::String, Aws::String>&& value) { SetRequestHeaders(std::move(value)); return *this;}
-    inline TestInvokeAuthorizerRequest& AddRequestHeaders(const Aws::String& key, const Aws::String& value) { m_requestHeadersHasBeenSet = true; m_requestHeaders.emplace(key, value); return *this; }
-    inline TestInvokeAuthorizerRequest& AddRequestHeaders(Aws::String&& key, const Aws::String& value) { m_requestHeadersHasBeenSet = true; m_requestHeaders.emplace(std::move(key), value); return *this; }
-    inline TestInvokeAuthorizerRequest& AddRequestHeaders(const Aws::String& key, Aws::String&& value) { m_requestHeadersHasBeenSet = true; m_requestHeaders.emplace(key, std::move(value)); return *this; }
-    inline TestInvokeAuthorizerRequest& AddRequestHeaders(Aws::String&& key, Aws::String&& value) { m_requestHeadersHasBeenSet = true; m_requestHeaders.emplace(std::move(key), std::move(value)); return *this; }
-    inline TestInvokeAuthorizerRequest& AddRequestHeaders(const char* key, Aws::String&& value) { m_requestHeadersHasBeenSet = true; m_requestHeaders.emplace(key, std::move(value)); return *this; }
-    inline TestInvokeAuthorizerRequest& AddRequestHeaders(Aws::String&& key, const char* value) { m_requestHeadersHasBeenSet = true; m_requestHeaders.emplace(std::move(key), value); return *this; }
-    inline TestInvokeAuthorizerRequest& AddRequestHeaders(const char* key, const char* value) { m_requestHeadersHasBeenSet = true; m_requestHeaders.emplace(key, value); return *this; }
+    template<typename RequestHeadersT = Aws::Map<Aws::String, Aws::String>>
+    void SetRequestHeaders(RequestHeadersT&& value) { m_requestHeadersHasBeenSet = true; m_requestHeaders = std::forward<RequestHeadersT>(value); }
+    template<typename RequestHeadersT = Aws::Map<Aws::String, Aws::String>>
+    TestInvokeAuthorizerRequest& WithRequestHeaders(RequestHeadersT&& value) { SetRequestHeaders(std::forward<RequestHeadersT>(value)); return *this;}
+    template<typename RequestHeadersKeyT = Aws::String, typename RequestHeadersValueT = Aws::String>
+    TestInvokeAuthorizerRequest& AddRequestHeaders(RequestHeadersKeyT&& key, RequestHeadersValueT&& value) {
+      m_requestHeadersHasBeenSet = true; m_requestHeaders.emplace(std::forward<RequestHeadersKeyT>(key), std::forward<RequestHeadersValueT>(value)); return *this;
+    }
     ///@}
   private:
 

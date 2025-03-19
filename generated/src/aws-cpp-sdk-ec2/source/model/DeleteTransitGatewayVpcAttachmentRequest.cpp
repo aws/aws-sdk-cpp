@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeleteTransitGatewayVpcAttachmentRequest::DeleteTransitGatewayVpcAttachmentRequest() : 
-    m_transitGatewayAttachmentIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTransitGatewayVpcAttachmentRequest::SerializePayload() const
 {
   Aws::StringStream ss;

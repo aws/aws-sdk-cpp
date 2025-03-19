@@ -35,7 +35,7 @@ namespace Model
   class PredictiveScalingPolicyConfiguration
   {
   public:
-    AWS_APPLICATIONAUTOSCALING_API PredictiveScalingPolicyConfiguration();
+    AWS_APPLICATIONAUTOSCALING_API PredictiveScalingPolicyConfiguration() = default;
     AWS_APPLICATIONAUTOSCALING_API PredictiveScalingPolicyConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONAUTOSCALING_API PredictiveScalingPolicyConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONAUTOSCALING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,14 @@ namespace Model
      * single metric pair, or a target value and one scaling metric and one load
      * metric.</p>
      */
-    inline const Aws::Vector<PredictiveScalingMetricSpecification>& GetMetricSpecifications() const{ return m_metricSpecifications; }
+    inline const Aws::Vector<PredictiveScalingMetricSpecification>& GetMetricSpecifications() const { return m_metricSpecifications; }
     inline bool MetricSpecificationsHasBeenSet() const { return m_metricSpecificationsHasBeenSet; }
-    inline void SetMetricSpecifications(const Aws::Vector<PredictiveScalingMetricSpecification>& value) { m_metricSpecificationsHasBeenSet = true; m_metricSpecifications = value; }
-    inline void SetMetricSpecifications(Aws::Vector<PredictiveScalingMetricSpecification>&& value) { m_metricSpecificationsHasBeenSet = true; m_metricSpecifications = std::move(value); }
-    inline PredictiveScalingPolicyConfiguration& WithMetricSpecifications(const Aws::Vector<PredictiveScalingMetricSpecification>& value) { SetMetricSpecifications(value); return *this;}
-    inline PredictiveScalingPolicyConfiguration& WithMetricSpecifications(Aws::Vector<PredictiveScalingMetricSpecification>&& value) { SetMetricSpecifications(std::move(value)); return *this;}
-    inline PredictiveScalingPolicyConfiguration& AddMetricSpecifications(const PredictiveScalingMetricSpecification& value) { m_metricSpecificationsHasBeenSet = true; m_metricSpecifications.push_back(value); return *this; }
-    inline PredictiveScalingPolicyConfiguration& AddMetricSpecifications(PredictiveScalingMetricSpecification&& value) { m_metricSpecificationsHasBeenSet = true; m_metricSpecifications.push_back(std::move(value)); return *this; }
+    template<typename MetricSpecificationsT = Aws::Vector<PredictiveScalingMetricSpecification>>
+    void SetMetricSpecifications(MetricSpecificationsT&& value) { m_metricSpecificationsHasBeenSet = true; m_metricSpecifications = std::forward<MetricSpecificationsT>(value); }
+    template<typename MetricSpecificationsT = Aws::Vector<PredictiveScalingMetricSpecification>>
+    PredictiveScalingPolicyConfiguration& WithMetricSpecifications(MetricSpecificationsT&& value) { SetMetricSpecifications(std::forward<MetricSpecificationsT>(value)); return *this;}
+    template<typename MetricSpecificationsT = PredictiveScalingMetricSpecification>
+    PredictiveScalingPolicyConfiguration& AddMetricSpecifications(MetricSpecificationsT&& value) { m_metricSpecificationsHasBeenSet = true; m_metricSpecifications.emplace_back(std::forward<MetricSpecificationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -64,12 +64,10 @@ namespace Model
      * <p> The predictive scaling mode. Defaults to <code>ForecastOnly</code> if not
      * specified. </p>
      */
-    inline const PredictiveScalingMode& GetMode() const{ return m_mode; }
+    inline PredictiveScalingMode GetMode() const { return m_mode; }
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-    inline void SetMode(const PredictiveScalingMode& value) { m_modeHasBeenSet = true; m_mode = value; }
-    inline void SetMode(PredictiveScalingMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
-    inline PredictiveScalingPolicyConfiguration& WithMode(const PredictiveScalingMode& value) { SetMode(value); return *this;}
-    inline PredictiveScalingPolicyConfiguration& WithMode(PredictiveScalingMode&& value) { SetMode(std::move(value)); return *this;}
+    inline void SetMode(PredictiveScalingMode value) { m_modeHasBeenSet = true; m_mode = value; }
+    inline PredictiveScalingPolicyConfiguration& WithMode(PredictiveScalingMode value) { SetMode(value); return *this;}
     ///@}
 
     ///@{
@@ -78,7 +76,7 @@ namespace Model
      * <p>The value must be less than the forecast interval duration of 3600 seconds
      * (60 minutes). Defaults to 300 seconds if not specified. </p>
      */
-    inline int GetSchedulingBufferTime() const{ return m_schedulingBufferTime; }
+    inline int GetSchedulingBufferTime() const { return m_schedulingBufferTime; }
     inline bool SchedulingBufferTimeHasBeenSet() const { return m_schedulingBufferTimeHasBeenSet; }
     inline void SetSchedulingBufferTime(int value) { m_schedulingBufferTimeHasBeenSet = true; m_schedulingBufferTime = value; }
     inline PredictiveScalingPolicyConfiguration& WithSchedulingBufferTime(int value) { SetSchedulingBufferTime(value); return *this;}
@@ -90,12 +88,10 @@ namespace Model
      * approaches or exceeds the maximum capacity. Defaults to
      * <code>HonorMaxCapacity</code> if not specified. </p>
      */
-    inline const PredictiveScalingMaxCapacityBreachBehavior& GetMaxCapacityBreachBehavior() const{ return m_maxCapacityBreachBehavior; }
+    inline PredictiveScalingMaxCapacityBreachBehavior GetMaxCapacityBreachBehavior() const { return m_maxCapacityBreachBehavior; }
     inline bool MaxCapacityBreachBehaviorHasBeenSet() const { return m_maxCapacityBreachBehaviorHasBeenSet; }
-    inline void SetMaxCapacityBreachBehavior(const PredictiveScalingMaxCapacityBreachBehavior& value) { m_maxCapacityBreachBehaviorHasBeenSet = true; m_maxCapacityBreachBehavior = value; }
-    inline void SetMaxCapacityBreachBehavior(PredictiveScalingMaxCapacityBreachBehavior&& value) { m_maxCapacityBreachBehaviorHasBeenSet = true; m_maxCapacityBreachBehavior = std::move(value); }
-    inline PredictiveScalingPolicyConfiguration& WithMaxCapacityBreachBehavior(const PredictiveScalingMaxCapacityBreachBehavior& value) { SetMaxCapacityBreachBehavior(value); return *this;}
-    inline PredictiveScalingPolicyConfiguration& WithMaxCapacityBreachBehavior(PredictiveScalingMaxCapacityBreachBehavior&& value) { SetMaxCapacityBreachBehavior(std::move(value)); return *this;}
+    inline void SetMaxCapacityBreachBehavior(PredictiveScalingMaxCapacityBreachBehavior value) { m_maxCapacityBreachBehaviorHasBeenSet = true; m_maxCapacityBreachBehavior = value; }
+    inline PredictiveScalingPolicyConfiguration& WithMaxCapacityBreachBehavior(PredictiveScalingMaxCapacityBreachBehavior value) { SetMaxCapacityBreachBehavior(value); return *this;}
     ///@}
 
     ///@{
@@ -108,7 +104,7 @@ namespace Model
      * the <code>MaxCapacityBreachBehavior</code> property is set to
      * <code>IncreaseMaxCapacity</code>, and cannot be used otherwise.</p>
      */
-    inline int GetMaxCapacityBuffer() const{ return m_maxCapacityBuffer; }
+    inline int GetMaxCapacityBuffer() const { return m_maxCapacityBuffer; }
     inline bool MaxCapacityBufferHasBeenSet() const { return m_maxCapacityBufferHasBeenSet; }
     inline void SetMaxCapacityBuffer(int value) { m_maxCapacityBufferHasBeenSet = true; m_maxCapacityBuffer = value; }
     inline PredictiveScalingPolicyConfiguration& WithMaxCapacityBuffer(int value) { SetMaxCapacityBuffer(value); return *this;}
@@ -118,16 +114,16 @@ namespace Model
     Aws::Vector<PredictiveScalingMetricSpecification> m_metricSpecifications;
     bool m_metricSpecificationsHasBeenSet = false;
 
-    PredictiveScalingMode m_mode;
+    PredictiveScalingMode m_mode{PredictiveScalingMode::NOT_SET};
     bool m_modeHasBeenSet = false;
 
-    int m_schedulingBufferTime;
+    int m_schedulingBufferTime{0};
     bool m_schedulingBufferTimeHasBeenSet = false;
 
-    PredictiveScalingMaxCapacityBreachBehavior m_maxCapacityBreachBehavior;
+    PredictiveScalingMaxCapacityBreachBehavior m_maxCapacityBreachBehavior{PredictiveScalingMaxCapacityBreachBehavior::NOT_SET};
     bool m_maxCapacityBreachBehaviorHasBeenSet = false;
 
-    int m_maxCapacityBuffer;
+    int m_maxCapacityBuffer{0};
     bool m_maxCapacityBufferHasBeenSet = false;
   };
 

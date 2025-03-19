@@ -18,15 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-HttpEndpointConfiguration::HttpEndpointConfiguration() : 
-    m_urlHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_accessKeyHasBeenSet(false)
-{
-}
-
 HttpEndpointConfiguration::HttpEndpointConfiguration(JsonView jsonValue)
-  : HttpEndpointConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ HttpEndpointConfiguration& HttpEndpointConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Url"))
   {
     m_url = jsonValue.GetString("Url");
-
     m_urlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccessKey"))
   {
     m_accessKey = jsonValue.GetString("AccessKey");
-
     m_accessKeyHasBeenSet = true;
   }
-
   return *this;
 }
 

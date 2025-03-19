@@ -37,7 +37,7 @@ namespace Model
   class TargetTrackingMetricStat
   {
   public:
-    AWS_APPLICATIONAUTOSCALING_API TargetTrackingMetricStat();
+    AWS_APPLICATIONAUTOSCALING_API TargetTrackingMetricStat() = default;
     AWS_APPLICATIONAUTOSCALING_API TargetTrackingMetricStat(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONAUTOSCALING_API TargetTrackingMetricStat& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONAUTOSCALING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,12 +52,12 @@ namespace Model
      * object that is returned by a call to <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.</p>
      */
-    inline const TargetTrackingMetric& GetMetric() const{ return m_metric; }
+    inline const TargetTrackingMetric& GetMetric() const { return m_metric; }
     inline bool MetricHasBeenSet() const { return m_metricHasBeenSet; }
-    inline void SetMetric(const TargetTrackingMetric& value) { m_metricHasBeenSet = true; m_metric = value; }
-    inline void SetMetric(TargetTrackingMetric&& value) { m_metricHasBeenSet = true; m_metric = std::move(value); }
-    inline TargetTrackingMetricStat& WithMetric(const TargetTrackingMetric& value) { SetMetric(value); return *this;}
-    inline TargetTrackingMetricStat& WithMetric(TargetTrackingMetric&& value) { SetMetric(std::move(value)); return *this;}
+    template<typename MetricT = TargetTrackingMetric>
+    void SetMetric(MetricT&& value) { m_metricHasBeenSet = true; m_metric = std::forward<MetricT>(value); }
+    template<typename MetricT = TargetTrackingMetric>
+    TargetTrackingMetricStat& WithMetric(MetricT&& value) { SetMetric(std::forward<MetricT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +68,12 @@ namespace Model
      * in the <i>Amazon CloudWatch User Guide</i>.</p> <p>The most commonly used metric
      * for scaling is <code>Average</code>.</p>
      */
-    inline const Aws::String& GetStat() const{ return m_stat; }
+    inline const Aws::String& GetStat() const { return m_stat; }
     inline bool StatHasBeenSet() const { return m_statHasBeenSet; }
-    inline void SetStat(const Aws::String& value) { m_statHasBeenSet = true; m_stat = value; }
-    inline void SetStat(Aws::String&& value) { m_statHasBeenSet = true; m_stat = std::move(value); }
-    inline void SetStat(const char* value) { m_statHasBeenSet = true; m_stat.assign(value); }
-    inline TargetTrackingMetricStat& WithStat(const Aws::String& value) { SetStat(value); return *this;}
-    inline TargetTrackingMetricStat& WithStat(Aws::String&& value) { SetStat(std::move(value)); return *this;}
-    inline TargetTrackingMetricStat& WithStat(const char* value) { SetStat(value); return *this;}
+    template<typename StatT = Aws::String>
+    void SetStat(StatT&& value) { m_statHasBeenSet = true; m_stat = std::forward<StatT>(value); }
+    template<typename StatT = Aws::String>
+    TargetTrackingMetricStat& WithStat(StatT&& value) { SetStat(std::forward<StatT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,14 +83,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">MetricDatum</a>
      * data type in the <i>Amazon CloudWatch API Reference</i>.</p>
      */
-    inline const Aws::String& GetUnit() const{ return m_unit; }
+    inline const Aws::String& GetUnit() const { return m_unit; }
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-    inline void SetUnit(const Aws::String& value) { m_unitHasBeenSet = true; m_unit = value; }
-    inline void SetUnit(Aws::String&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-    inline void SetUnit(const char* value) { m_unitHasBeenSet = true; m_unit.assign(value); }
-    inline TargetTrackingMetricStat& WithUnit(const Aws::String& value) { SetUnit(value); return *this;}
-    inline TargetTrackingMetricStat& WithUnit(Aws::String&& value) { SetUnit(std::move(value)); return *this;}
-    inline TargetTrackingMetricStat& WithUnit(const char* value) { SetUnit(value); return *this;}
+    template<typename UnitT = Aws::String>
+    void SetUnit(UnitT&& value) { m_unitHasBeenSet = true; m_unit = std::forward<UnitT>(value); }
+    template<typename UnitT = Aws::String>
+    TargetTrackingMetricStat& WithUnit(UnitT&& value) { SetUnit(std::forward<UnitT>(value)); return *this;}
     ///@}
   private:
 

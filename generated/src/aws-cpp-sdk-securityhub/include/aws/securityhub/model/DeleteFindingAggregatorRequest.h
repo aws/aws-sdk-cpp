@@ -21,7 +21,7 @@ namespace Model
   class DeleteFindingAggregatorRequest : public SecurityHubRequest
   {
   public:
-    AWS_SECURITYHUB_API DeleteFindingAggregatorRequest();
+    AWS_SECURITYHUB_API DeleteFindingAggregatorRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p>The ARN of the finding aggregator to delete. To obtain the ARN, use
      * <code>ListFindingAggregators</code>.</p>
      */
-    inline const Aws::String& GetFindingAggregatorArn() const{ return m_findingAggregatorArn; }
+    inline const Aws::String& GetFindingAggregatorArn() const { return m_findingAggregatorArn; }
     inline bool FindingAggregatorArnHasBeenSet() const { return m_findingAggregatorArnHasBeenSet; }
-    inline void SetFindingAggregatorArn(const Aws::String& value) { m_findingAggregatorArnHasBeenSet = true; m_findingAggregatorArn = value; }
-    inline void SetFindingAggregatorArn(Aws::String&& value) { m_findingAggregatorArnHasBeenSet = true; m_findingAggregatorArn = std::move(value); }
-    inline void SetFindingAggregatorArn(const char* value) { m_findingAggregatorArnHasBeenSet = true; m_findingAggregatorArn.assign(value); }
-    inline DeleteFindingAggregatorRequest& WithFindingAggregatorArn(const Aws::String& value) { SetFindingAggregatorArn(value); return *this;}
-    inline DeleteFindingAggregatorRequest& WithFindingAggregatorArn(Aws::String&& value) { SetFindingAggregatorArn(std::move(value)); return *this;}
-    inline DeleteFindingAggregatorRequest& WithFindingAggregatorArn(const char* value) { SetFindingAggregatorArn(value); return *this;}
+    template<typename FindingAggregatorArnT = Aws::String>
+    void SetFindingAggregatorArn(FindingAggregatorArnT&& value) { m_findingAggregatorArnHasBeenSet = true; m_findingAggregatorArn = std::forward<FindingAggregatorArnT>(value); }
+    template<typename FindingAggregatorArnT = Aws::String>
+    DeleteFindingAggregatorRequest& WithFindingAggregatorArn(FindingAggregatorArnT&& value) { SetFindingAggregatorArn(std::forward<FindingAggregatorArnT>(value)); return *this;}
     ///@}
   private:
 

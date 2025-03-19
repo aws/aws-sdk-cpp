@@ -33,7 +33,7 @@ namespace Model
   class DashboardSourceTemplate
   {
   public:
-    AWS_QUICKSIGHT_API DashboardSourceTemplate();
+    AWS_QUICKSIGHT_API DashboardSourceTemplate() = default;
     AWS_QUICKSIGHT_API DashboardSourceTemplate(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API DashboardSourceTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,26 @@ namespace Model
     /**
      * <p>Dataset references.</p>
      */
-    inline const Aws::Vector<DataSetReference>& GetDataSetReferences() const{ return m_dataSetReferences; }
+    inline const Aws::Vector<DataSetReference>& GetDataSetReferences() const { return m_dataSetReferences; }
     inline bool DataSetReferencesHasBeenSet() const { return m_dataSetReferencesHasBeenSet; }
-    inline void SetDataSetReferences(const Aws::Vector<DataSetReference>& value) { m_dataSetReferencesHasBeenSet = true; m_dataSetReferences = value; }
-    inline void SetDataSetReferences(Aws::Vector<DataSetReference>&& value) { m_dataSetReferencesHasBeenSet = true; m_dataSetReferences = std::move(value); }
-    inline DashboardSourceTemplate& WithDataSetReferences(const Aws::Vector<DataSetReference>& value) { SetDataSetReferences(value); return *this;}
-    inline DashboardSourceTemplate& WithDataSetReferences(Aws::Vector<DataSetReference>&& value) { SetDataSetReferences(std::move(value)); return *this;}
-    inline DashboardSourceTemplate& AddDataSetReferences(const DataSetReference& value) { m_dataSetReferencesHasBeenSet = true; m_dataSetReferences.push_back(value); return *this; }
-    inline DashboardSourceTemplate& AddDataSetReferences(DataSetReference&& value) { m_dataSetReferencesHasBeenSet = true; m_dataSetReferences.push_back(std::move(value)); return *this; }
+    template<typename DataSetReferencesT = Aws::Vector<DataSetReference>>
+    void SetDataSetReferences(DataSetReferencesT&& value) { m_dataSetReferencesHasBeenSet = true; m_dataSetReferences = std::forward<DataSetReferencesT>(value); }
+    template<typename DataSetReferencesT = Aws::Vector<DataSetReference>>
+    DashboardSourceTemplate& WithDataSetReferences(DataSetReferencesT&& value) { SetDataSetReferences(std::forward<DataSetReferencesT>(value)); return *this;}
+    template<typename DataSetReferencesT = DataSetReference>
+    DashboardSourceTemplate& AddDataSetReferences(DataSetReferencesT&& value) { m_dataSetReferencesHasBeenSet = true; m_dataSetReferences.emplace_back(std::forward<DataSetReferencesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline DashboardSourceTemplate& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline DashboardSourceTemplate& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline DashboardSourceTemplate& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    DashboardSourceTemplate& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
   private:
 

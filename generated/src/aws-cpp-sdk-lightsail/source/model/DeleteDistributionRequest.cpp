@@ -12,11 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDistributionRequest::DeleteDistributionRequest() : 
-    m_distributionNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDistributionRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,13 +18,7 @@ namespace AppFabric
 namespace Model
 {
 
-ProcessingConfiguration::ProcessingConfiguration() : 
-    m_auditLogHasBeenSet(false)
-{
-}
-
 ProcessingConfiguration::ProcessingConfiguration(JsonView jsonValue)
-  : ProcessingConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ProcessingConfiguration& ProcessingConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("auditLog"))
   {
     m_auditLog = jsonValue.GetObject("auditLog");
-
     m_auditLogHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-FindingAggregationAccountDetails::FindingAggregationAccountDetails() : 
-    m_accountHasBeenSet(false),
-    m_numberOfActiveFindings(0),
-    m_numberOfActiveFindingsHasBeenSet(false),
-    m_detailsHasBeenSet(false)
-{
-}
-
 FindingAggregationAccountDetails::FindingAggregationAccountDetails(JsonView jsonValue)
-  : FindingAggregationAccountDetails()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ FindingAggregationAccountDetails& FindingAggregationAccountDetails::operator =(J
   if(jsonValue.ValueExists("account"))
   {
     m_account = jsonValue.GetString("account");
-
     m_accountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numberOfActiveFindings"))
   {
     m_numberOfActiveFindings = jsonValue.GetInteger("numberOfActiveFindings");
-
     m_numberOfActiveFindingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("details"))
   {
     Aws::Map<Aws::String, JsonView> detailsJsonMap = jsonValue.GetObject("details").GetAllObjects();
@@ -57,7 +44,6 @@ FindingAggregationAccountDetails& FindingAggregationAccountDetails::operator =(J
     }
     m_detailsHasBeenSet = true;
   }
-
   return *this;
 }
 

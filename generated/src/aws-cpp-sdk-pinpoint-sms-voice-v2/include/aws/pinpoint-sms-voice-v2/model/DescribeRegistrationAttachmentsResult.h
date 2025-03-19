@@ -29,7 +29,7 @@ namespace Model
   class DescribeRegistrationAttachmentsResult
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API DescribeRegistrationAttachmentsResult();
+    AWS_PINPOINTSMSVOICEV2_API DescribeRegistrationAttachmentsResult() = default;
     AWS_PINPOINTSMSVOICEV2_API DescribeRegistrationAttachmentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINTSMSVOICEV2_API DescribeRegistrationAttachmentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>An array of <b>RegistrationAttachments</b> objects that contain the details
      * for the requested registration attachments. </p>
      */
-    inline const Aws::Vector<RegistrationAttachmentsInformation>& GetRegistrationAttachments() const{ return m_registrationAttachments; }
-    inline void SetRegistrationAttachments(const Aws::Vector<RegistrationAttachmentsInformation>& value) { m_registrationAttachments = value; }
-    inline void SetRegistrationAttachments(Aws::Vector<RegistrationAttachmentsInformation>&& value) { m_registrationAttachments = std::move(value); }
-    inline DescribeRegistrationAttachmentsResult& WithRegistrationAttachments(const Aws::Vector<RegistrationAttachmentsInformation>& value) { SetRegistrationAttachments(value); return *this;}
-    inline DescribeRegistrationAttachmentsResult& WithRegistrationAttachments(Aws::Vector<RegistrationAttachmentsInformation>&& value) { SetRegistrationAttachments(std::move(value)); return *this;}
-    inline DescribeRegistrationAttachmentsResult& AddRegistrationAttachments(const RegistrationAttachmentsInformation& value) { m_registrationAttachments.push_back(value); return *this; }
-    inline DescribeRegistrationAttachmentsResult& AddRegistrationAttachments(RegistrationAttachmentsInformation&& value) { m_registrationAttachments.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RegistrationAttachmentsInformation>& GetRegistrationAttachments() const { return m_registrationAttachments; }
+    template<typename RegistrationAttachmentsT = Aws::Vector<RegistrationAttachmentsInformation>>
+    void SetRegistrationAttachments(RegistrationAttachmentsT&& value) { m_registrationAttachmentsHasBeenSet = true; m_registrationAttachments = std::forward<RegistrationAttachmentsT>(value); }
+    template<typename RegistrationAttachmentsT = Aws::Vector<RegistrationAttachmentsInformation>>
+    DescribeRegistrationAttachmentsResult& WithRegistrationAttachments(RegistrationAttachmentsT&& value) { SetRegistrationAttachments(std::forward<RegistrationAttachmentsT>(value)); return *this;}
+    template<typename RegistrationAttachmentsT = RegistrationAttachmentsInformation>
+    DescribeRegistrationAttachmentsResult& AddRegistrationAttachments(RegistrationAttachmentsT&& value) { m_registrationAttachmentsHasBeenSet = true; m_registrationAttachments.emplace_back(std::forward<RegistrationAttachmentsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * <p>The token to be used for the next set of paginated results. You don't need to
      * supply a value for this field in the initial request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeRegistrationAttachmentsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeRegistrationAttachmentsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeRegistrationAttachmentsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeRegistrationAttachmentsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeRegistrationAttachmentsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeRegistrationAttachmentsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeRegistrationAttachmentsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeRegistrationAttachmentsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<RegistrationAttachmentsInformation> m_registrationAttachments;
+    bool m_registrationAttachmentsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

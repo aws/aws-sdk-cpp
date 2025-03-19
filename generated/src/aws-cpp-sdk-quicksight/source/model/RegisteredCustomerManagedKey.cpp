@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-RegisteredCustomerManagedKey::RegisteredCustomerManagedKey() : 
-    m_keyArnHasBeenSet(false),
-    m_defaultKey(false),
-    m_defaultKeyHasBeenSet(false)
-{
-}
-
 RegisteredCustomerManagedKey::RegisteredCustomerManagedKey(JsonView jsonValue)
-  : RegisteredCustomerManagedKey()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ RegisteredCustomerManagedKey& RegisteredCustomerManagedKey::operator =(JsonView 
   if(jsonValue.ValueExists("KeyArn"))
   {
     m_keyArn = jsonValue.GetString("KeyArn");
-
     m_keyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultKey"))
   {
     m_defaultKey = jsonValue.GetBool("DefaultKey");
-
     m_defaultKeyHasBeenSet = true;
   }
-
   return *this;
 }
 

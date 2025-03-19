@@ -18,13 +18,7 @@ namespace OSIS
 namespace Model
 {
 
-ValidationMessage::ValidationMessage() : 
-    m_messageHasBeenSet(false)
-{
-}
-
 ValidationMessage::ValidationMessage(JsonView jsonValue)
-  : ValidationMessage()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ValidationMessage& ValidationMessage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

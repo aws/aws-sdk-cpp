@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-HyperParameterTuningJobStrategyConfig::HyperParameterTuningJobStrategyConfig() : 
-    m_hyperbandStrategyConfigHasBeenSet(false)
-{
-}
-
 HyperParameterTuningJobStrategyConfig::HyperParameterTuningJobStrategyConfig(JsonView jsonValue)
-  : HyperParameterTuningJobStrategyConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ HyperParameterTuningJobStrategyConfig& HyperParameterTuningJobStrategyConfig::op
   if(jsonValue.ValueExists("HyperbandStrategyConfig"))
   {
     m_hyperbandStrategyConfig = jsonValue.GetObject("HyperbandStrategyConfig");
-
     m_hyperbandStrategyConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

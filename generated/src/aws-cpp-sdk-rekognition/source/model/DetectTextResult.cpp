@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DetectTextResult::DetectTextResult()
-{
-}
-
 DetectTextResult::DetectTextResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ DetectTextResult& DetectTextResult::operator =(const Aws::AmazonWebServiceResult
     {
       m_textDetections.push_back(textDetectionsJsonList[textDetectionsIndex].AsObject());
     }
+    m_textDetectionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TextModelVersion"))
   {
     m_textModelVersion = jsonValue.GetString("TextModelVersion");
-
+    m_textModelVersionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,20 +18,7 @@ namespace IoT
 namespace Model
 {
 
-TopicRuleDestinationSummary::TopicRuleDestinationSummary() : 
-    m_arnHasBeenSet(false),
-    m_status(TopicRuleDestinationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_httpUrlSummaryHasBeenSet(false),
-    m_vpcDestinationSummaryHasBeenSet(false)
-{
-}
-
 TopicRuleDestinationSummary::TopicRuleDestinationSummary(JsonView jsonValue)
-  : TopicRuleDestinationSummary()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ TopicRuleDestinationSummary& TopicRuleDestinationSummary::operator =(JsonView js
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = TopicRuleDestinationStatusMapper::GetTopicRuleDestinationStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetDouble("lastUpdatedAt");
-
     m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusReason"))
   {
     m_statusReason = jsonValue.GetString("statusReason");
-
     m_statusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("httpUrlSummary"))
   {
     m_httpUrlSummary = jsonValue.GetObject("httpUrlSummary");
-
     m_httpUrlSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcDestinationSummary"))
   {
     m_vpcDestinationSummary = jsonValue.GetObject("vpcDestinationSummary");
-
     m_vpcDestinationSummaryHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -31,7 +31,7 @@ namespace Model
   class PositionSolverDetails
   {
   public:
-    AWS_IOTWIRELESS_API PositionSolverDetails();
+    AWS_IOTWIRELESS_API PositionSolverDetails() = default;
     AWS_IOTWIRELESS_API PositionSolverDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API PositionSolverDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The Semtech GNSS solver object details.</p>
      */
-    inline const SemtechGnssDetail& GetSemtechGnss() const{ return m_semtechGnss; }
+    inline const SemtechGnssDetail& GetSemtechGnss() const { return m_semtechGnss; }
     inline bool SemtechGnssHasBeenSet() const { return m_semtechGnssHasBeenSet; }
-    inline void SetSemtechGnss(const SemtechGnssDetail& value) { m_semtechGnssHasBeenSet = true; m_semtechGnss = value; }
-    inline void SetSemtechGnss(SemtechGnssDetail&& value) { m_semtechGnssHasBeenSet = true; m_semtechGnss = std::move(value); }
-    inline PositionSolverDetails& WithSemtechGnss(const SemtechGnssDetail& value) { SetSemtechGnss(value); return *this;}
-    inline PositionSolverDetails& WithSemtechGnss(SemtechGnssDetail&& value) { SetSemtechGnss(std::move(value)); return *this;}
+    template<typename SemtechGnssT = SemtechGnssDetail>
+    void SetSemtechGnss(SemtechGnssT&& value) { m_semtechGnssHasBeenSet = true; m_semtechGnss = std::forward<SemtechGnssT>(value); }
+    template<typename SemtechGnssT = SemtechGnssDetail>
+    PositionSolverDetails& WithSemtechGnss(SemtechGnssT&& value) { SetSemtechGnss(std::forward<SemtechGnssT>(value)); return *this;}
     ///@}
   private:
 

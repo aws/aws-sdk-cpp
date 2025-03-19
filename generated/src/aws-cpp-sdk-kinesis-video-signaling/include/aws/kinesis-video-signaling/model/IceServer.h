@@ -32,7 +32,7 @@ namespace Model
   class IceServer
   {
   public:
-    AWS_KINESISVIDEOSIGNALINGCHANNELS_API IceServer();
+    AWS_KINESISVIDEOSIGNALINGCHANNELS_API IceServer() = default;
     AWS_KINESISVIDEOSIGNALINGCHANNELS_API IceServer(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISVIDEOSIGNALINGCHANNELS_API IceServer& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISVIDEOSIGNALINGCHANNELS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,43 +45,38 @@ namespace Model
      * spec. These URIs provide the different addresses and/or protocols that can be
      * used to reach the TURN server.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetUris() const{ return m_uris; }
+    inline const Aws::Vector<Aws::String>& GetUris() const { return m_uris; }
     inline bool UrisHasBeenSet() const { return m_urisHasBeenSet; }
-    inline void SetUris(const Aws::Vector<Aws::String>& value) { m_urisHasBeenSet = true; m_uris = value; }
-    inline void SetUris(Aws::Vector<Aws::String>&& value) { m_urisHasBeenSet = true; m_uris = std::move(value); }
-    inline IceServer& WithUris(const Aws::Vector<Aws::String>& value) { SetUris(value); return *this;}
-    inline IceServer& WithUris(Aws::Vector<Aws::String>&& value) { SetUris(std::move(value)); return *this;}
-    inline IceServer& AddUris(const Aws::String& value) { m_urisHasBeenSet = true; m_uris.push_back(value); return *this; }
-    inline IceServer& AddUris(Aws::String&& value) { m_urisHasBeenSet = true; m_uris.push_back(std::move(value)); return *this; }
-    inline IceServer& AddUris(const char* value) { m_urisHasBeenSet = true; m_uris.push_back(value); return *this; }
+    template<typename UrisT = Aws::Vector<Aws::String>>
+    void SetUris(UrisT&& value) { m_urisHasBeenSet = true; m_uris = std::forward<UrisT>(value); }
+    template<typename UrisT = Aws::Vector<Aws::String>>
+    IceServer& WithUris(UrisT&& value) { SetUris(std::forward<UrisT>(value)); return *this;}
+    template<typename UrisT = Aws::String>
+    IceServer& AddUris(UrisT&& value) { m_urisHasBeenSet = true; m_uris.emplace_back(std::forward<UrisT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A username to login to the ICE server.</p>
      */
-    inline const Aws::String& GetUsername() const{ return m_username; }
+    inline const Aws::String& GetUsername() const { return m_username; }
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
-    inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
-    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
-    inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
-    inline IceServer& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
-    inline IceServer& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
-    inline IceServer& WithUsername(const char* value) { SetUsername(value); return *this;}
+    template<typename UsernameT = Aws::String>
+    void SetUsername(UsernameT&& value) { m_usernameHasBeenSet = true; m_username = std::forward<UsernameT>(value); }
+    template<typename UsernameT = Aws::String>
+    IceServer& WithUsername(UsernameT&& value) { SetUsername(std::forward<UsernameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A password to login to the ICE server.</p>
      */
-    inline const Aws::String& GetPassword() const{ return m_password; }
+    inline const Aws::String& GetPassword() const { return m_password; }
     inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
-    inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
-    inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = std::move(value); }
-    inline void SetPassword(const char* value) { m_passwordHasBeenSet = true; m_password.assign(value); }
-    inline IceServer& WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
-    inline IceServer& WithPassword(Aws::String&& value) { SetPassword(std::move(value)); return *this;}
-    inline IceServer& WithPassword(const char* value) { SetPassword(value); return *this;}
+    template<typename PasswordT = Aws::String>
+    void SetPassword(PasswordT&& value) { m_passwordHasBeenSet = true; m_password = std::forward<PasswordT>(value); }
+    template<typename PasswordT = Aws::String>
+    IceServer& WithPassword(PasswordT&& value) { SetPassword(std::forward<PasswordT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,7 +84,7 @@ namespace Model
      * <p>The period of time, in seconds, during which the username and password are
      * valid.</p>
      */
-    inline int GetTtl() const{ return m_ttl; }
+    inline int GetTtl() const { return m_ttl; }
     inline bool TtlHasBeenSet() const { return m_ttlHasBeenSet; }
     inline void SetTtl(int value) { m_ttlHasBeenSet = true; m_ttl = value; }
     inline IceServer& WithTtl(int value) { SetTtl(value); return *this;}
@@ -105,7 +100,7 @@ namespace Model
     Aws::String m_password;
     bool m_passwordHasBeenSet = false;
 
-    int m_ttl;
+    int m_ttl{0};
     bool m_ttlHasBeenSet = false;
   };
 

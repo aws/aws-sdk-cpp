@@ -28,7 +28,7 @@ namespace Model
   class GetCisScanReportResult
   {
   public:
-    AWS_INSPECTOR2_API GetCisScanReportResult();
+    AWS_INSPECTOR2_API GetCisScanReportResult() = default;
     AWS_INSPECTOR2_API GetCisScanReportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_INSPECTOR2_API GetCisScanReportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,43 +37,40 @@ namespace Model
     /**
      * <p>The status.</p>
      */
-    inline const CisReportStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const CisReportStatus& value) { m_status = value; }
-    inline void SetStatus(CisReportStatus&& value) { m_status = std::move(value); }
-    inline GetCisScanReportResult& WithStatus(const CisReportStatus& value) { SetStatus(value); return *this;}
-    inline GetCisScanReportResult& WithStatus(CisReportStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline CisReportStatus GetStatus() const { return m_status; }
+    inline void SetStatus(CisReportStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetCisScanReportResult& WithStatus(CisReportStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The URL where a PDF or CSV of the CIS scan report can be downloaded. </p>
      */
-    inline const Aws::String& GetUrl() const{ return m_url; }
-    inline void SetUrl(const Aws::String& value) { m_url = value; }
-    inline void SetUrl(Aws::String&& value) { m_url = std::move(value); }
-    inline void SetUrl(const char* value) { m_url.assign(value); }
-    inline GetCisScanReportResult& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
-    inline GetCisScanReportResult& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
-    inline GetCisScanReportResult& WithUrl(const char* value) { SetUrl(value); return *this;}
+    inline const Aws::String& GetUrl() const { return m_url; }
+    template<typename UrlT = Aws::String>
+    void SetUrl(UrlT&& value) { m_urlHasBeenSet = true; m_url = std::forward<UrlT>(value); }
+    template<typename UrlT = Aws::String>
+    GetCisScanReportResult& WithUrl(UrlT&& value) { SetUrl(std::forward<UrlT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetCisScanReportResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetCisScanReportResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetCisScanReportResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetCisScanReportResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    CisReportStatus m_status;
+    CisReportStatus m_status{CisReportStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_url;
+    bool m_urlHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

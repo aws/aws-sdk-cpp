@@ -31,7 +31,7 @@ namespace Model
   class RealtimeMetricsSubscriptionConfig
   {
   public:
-    AWS_CLOUDFRONT_API RealtimeMetricsSubscriptionConfig();
+    AWS_CLOUDFRONT_API RealtimeMetricsSubscriptionConfig() = default;
     AWS_CLOUDFRONT_API RealtimeMetricsSubscriptionConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API RealtimeMetricsSubscriptionConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,16 +43,14 @@ namespace Model
      * <p>A flag that indicates whether additional CloudWatch metrics are enabled for a
      * given CloudFront distribution.</p>
      */
-    inline const RealtimeMetricsSubscriptionStatus& GetRealtimeMetricsSubscriptionStatus() const{ return m_realtimeMetricsSubscriptionStatus; }
+    inline RealtimeMetricsSubscriptionStatus GetRealtimeMetricsSubscriptionStatus() const { return m_realtimeMetricsSubscriptionStatus; }
     inline bool RealtimeMetricsSubscriptionStatusHasBeenSet() const { return m_realtimeMetricsSubscriptionStatusHasBeenSet; }
-    inline void SetRealtimeMetricsSubscriptionStatus(const RealtimeMetricsSubscriptionStatus& value) { m_realtimeMetricsSubscriptionStatusHasBeenSet = true; m_realtimeMetricsSubscriptionStatus = value; }
-    inline void SetRealtimeMetricsSubscriptionStatus(RealtimeMetricsSubscriptionStatus&& value) { m_realtimeMetricsSubscriptionStatusHasBeenSet = true; m_realtimeMetricsSubscriptionStatus = std::move(value); }
-    inline RealtimeMetricsSubscriptionConfig& WithRealtimeMetricsSubscriptionStatus(const RealtimeMetricsSubscriptionStatus& value) { SetRealtimeMetricsSubscriptionStatus(value); return *this;}
-    inline RealtimeMetricsSubscriptionConfig& WithRealtimeMetricsSubscriptionStatus(RealtimeMetricsSubscriptionStatus&& value) { SetRealtimeMetricsSubscriptionStatus(std::move(value)); return *this;}
+    inline void SetRealtimeMetricsSubscriptionStatus(RealtimeMetricsSubscriptionStatus value) { m_realtimeMetricsSubscriptionStatusHasBeenSet = true; m_realtimeMetricsSubscriptionStatus = value; }
+    inline RealtimeMetricsSubscriptionConfig& WithRealtimeMetricsSubscriptionStatus(RealtimeMetricsSubscriptionStatus value) { SetRealtimeMetricsSubscriptionStatus(value); return *this;}
     ///@}
   private:
 
-    RealtimeMetricsSubscriptionStatus m_realtimeMetricsSubscriptionStatus;
+    RealtimeMetricsSubscriptionStatus m_realtimeMetricsSubscriptionStatus{RealtimeMetricsSubscriptionStatus::NOT_SET};
     bool m_realtimeMetricsSubscriptionStatusHasBeenSet = false;
   };
 

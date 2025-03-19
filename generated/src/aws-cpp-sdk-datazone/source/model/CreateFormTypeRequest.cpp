@@ -12,17 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateFormTypeRequest::CreateFormTypeRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_domainIdentifierHasBeenSet(false),
-    m_modelHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_owningProjectIdentifierHasBeenSet(false),
-    m_status(FormTypeStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 Aws::String CreateFormTypeRequest::SerializePayload() const
 {
   JsonValue payload;

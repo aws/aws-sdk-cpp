@@ -34,7 +34,7 @@ namespace Model
   class ParametersFilter
   {
   public:
-    AWS_SSM_API ParametersFilter();
+    AWS_SSM_API ParametersFilter() = default;
     AWS_SSM_API ParametersFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API ParametersFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,31 +44,28 @@ namespace Model
     /**
      * <p>The name of the filter.</p>
      */
-    inline const ParametersFilterKey& GetKey() const{ return m_key; }
+    inline ParametersFilterKey GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const ParametersFilterKey& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(ParametersFilterKey&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline ParametersFilter& WithKey(const ParametersFilterKey& value) { SetKey(value); return *this;}
-    inline ParametersFilter& WithKey(ParametersFilterKey&& value) { SetKey(std::move(value)); return *this;}
+    inline void SetKey(ParametersFilterKey value) { m_keyHasBeenSet = true; m_key = value; }
+    inline ParametersFilter& WithKey(ParametersFilterKey value) { SetKey(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The filter values.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline ParametersFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline ParametersFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline ParametersFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline ParametersFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline ParametersFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    ParametersFilter& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    ParametersFilter& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
   private:
 
-    ParametersFilterKey m_key;
+    ParametersFilterKey m_key{ParametersFilterKey::NOT_SET};
     bool m_keyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;

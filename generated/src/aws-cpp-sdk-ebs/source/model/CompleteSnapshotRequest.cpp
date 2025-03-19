@@ -13,18 +13,6 @@ using namespace Aws::EBS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CompleteSnapshotRequest::CompleteSnapshotRequest() : 
-    m_snapshotIdHasBeenSet(false),
-    m_changedBlocksCount(0),
-    m_changedBlocksCountHasBeenSet(false),
-    m_checksumHasBeenSet(false),
-    m_checksumAlgorithm(ChecksumAlgorithm::NOT_SET),
-    m_checksumAlgorithmHasBeenSet(false),
-    m_checksumAggregationMethod(ChecksumAggregationMethod::NOT_SET),
-    m_checksumAggregationMethodHasBeenSet(false)
-{
-}
-
 Aws::String CompleteSnapshotRequest::SerializePayload() const
 {
   return {};

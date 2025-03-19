@@ -18,27 +18,7 @@ namespace kendra
 namespace Model
 {
 
-QueryResultItem::QueryResultItem() : 
-    m_idHasBeenSet(false),
-    m_type(QueryResultType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_format(QueryResultFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_additionalAttributesHasBeenSet(false),
-    m_documentIdHasBeenSet(false),
-    m_documentTitleHasBeenSet(false),
-    m_documentExcerptHasBeenSet(false),
-    m_documentURIHasBeenSet(false),
-    m_documentAttributesHasBeenSet(false),
-    m_scoreAttributesHasBeenSet(false),
-    m_feedbackTokenHasBeenSet(false),
-    m_tableExcerptHasBeenSet(false),
-    m_collapsedResultDetailHasBeenSet(false)
-{
-}
-
 QueryResultItem::QueryResultItem(JsonView jsonValue)
-  : QueryResultItem()
 {
   *this = jsonValue;
 }
@@ -48,24 +28,18 @@ QueryResultItem& QueryResultItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = QueryResultTypeMapper::GetQueryResultTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Format"))
   {
     m_format = QueryResultFormatMapper::GetQueryResultFormatForName(jsonValue.GetString("Format"));
-
     m_formatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdditionalAttributes"))
   {
     Aws::Utils::Array<JsonView> additionalAttributesJsonList = jsonValue.GetArray("AdditionalAttributes");
@@ -75,35 +49,26 @@ QueryResultItem& QueryResultItem::operator =(JsonView jsonValue)
     }
     m_additionalAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentId"))
   {
     m_documentId = jsonValue.GetString("DocumentId");
-
     m_documentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentTitle"))
   {
     m_documentTitle = jsonValue.GetObject("DocumentTitle");
-
     m_documentTitleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentExcerpt"))
   {
     m_documentExcerpt = jsonValue.GetObject("DocumentExcerpt");
-
     m_documentExcerptHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentURI"))
   {
     m_documentURI = jsonValue.GetString("DocumentURI");
-
     m_documentURIHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentAttributes"))
   {
     Aws::Utils::Array<JsonView> documentAttributesJsonList = jsonValue.GetArray("DocumentAttributes");
@@ -113,35 +78,26 @@ QueryResultItem& QueryResultItem::operator =(JsonView jsonValue)
     }
     m_documentAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScoreAttributes"))
   {
     m_scoreAttributes = jsonValue.GetObject("ScoreAttributes");
-
     m_scoreAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FeedbackToken"))
   {
     m_feedbackToken = jsonValue.GetString("FeedbackToken");
-
     m_feedbackTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableExcerpt"))
   {
     m_tableExcerpt = jsonValue.GetObject("TableExcerpt");
-
     m_tableExcerptHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CollapsedResultDetail"))
   {
     m_collapsedResultDetail = jsonValue.GetObject("CollapsedResultDetail");
-
     m_collapsedResultDetailHasBeenSet = true;
   }
-
   return *this;
 }
 

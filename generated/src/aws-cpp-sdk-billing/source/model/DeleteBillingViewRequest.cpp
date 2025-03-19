@@ -12,11 +12,6 @@ using namespace Aws::Billing::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteBillingViewRequest::DeleteBillingViewRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteBillingViewRequest::SerializePayload() const
 {
   JsonValue payload;

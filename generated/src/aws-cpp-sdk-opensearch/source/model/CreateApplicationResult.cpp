@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateApplicationResult::CreateApplicationResult()
-{
-}
-
 CreateApplicationResult::CreateApplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,18 @@ CreateApplicationResult& CreateApplicationResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataSources"))
   {
     Aws::Utils::Array<JsonView> dataSourcesJsonList = jsonValue.GetArray("dataSources");
@@ -54,14 +47,13 @@ CreateApplicationResult& CreateApplicationResult::operator =(const Aws::AmazonWe
     {
       m_dataSources.push_back(dataSourcesJsonList[dataSourcesIndex].AsObject());
     }
+    m_dataSourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("iamIdentityCenterOptions"))
   {
     m_iamIdentityCenterOptions = jsonValue.GetObject("iamIdentityCenterOptions");
-
+    m_iamIdentityCenterOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("appConfigs"))
   {
     Aws::Utils::Array<JsonView> appConfigsJsonList = jsonValue.GetArray("appConfigs");
@@ -69,8 +61,8 @@ CreateApplicationResult& CreateApplicationResult::operator =(const Aws::AmazonWe
     {
       m_appConfigs.push_back(appConfigsJsonList[appConfigsIndex].AsObject());
     }
+    m_appConfigsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tagList"))
   {
     Aws::Utils::Array<JsonView> tagListJsonList = jsonValue.GetArray("tagList");
@@ -78,20 +70,20 @@ CreateApplicationResult& CreateApplicationResult::operator =(const Aws::AmazonWe
     {
       m_tagList.push_back(tagListJsonList[tagListIndex].AsObject());
     }
+    m_tagListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
+    m_createdAtHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,16 +18,7 @@ namespace kendra
 namespace Model
 {
 
-AdditionalResultAttribute::AdditionalResultAttribute() : 
-    m_keyHasBeenSet(false),
-    m_valueType(AdditionalResultAttributeValueType::NOT_SET),
-    m_valueTypeHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 AdditionalResultAttribute::AdditionalResultAttribute(JsonView jsonValue)
-  : AdditionalResultAttribute()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ AdditionalResultAttribute& AdditionalResultAttribute::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValueType"))
   {
     m_valueType = AdditionalResultAttributeValueTypeMapper::GetAdditionalResultAttributeValueTypeForName(jsonValue.GetString("ValueType"));
-
     m_valueTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetObject("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

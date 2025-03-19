@@ -12,12 +12,6 @@ using namespace Aws::Proton::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateServiceSyncBlockerRequest::UpdateServiceSyncBlockerRequest() : 
-    m_idHasBeenSet(false),
-    m_resolvedReasonHasBeenSet(false)
-{
-}
-
 Aws::String UpdateServiceSyncBlockerRequest::SerializePayload() const
 {
   JsonValue payload;

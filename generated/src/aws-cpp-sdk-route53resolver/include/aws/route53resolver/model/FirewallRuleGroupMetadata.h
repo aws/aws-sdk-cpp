@@ -36,7 +36,7 @@ namespace Model
   class FirewallRuleGroupMetadata
   {
   public:
-    AWS_ROUTE53RESOLVER_API FirewallRuleGroupMetadata();
+    AWS_ROUTE53RESOLVER_API FirewallRuleGroupMetadata() = default;
     AWS_ROUTE53RESOLVER_API FirewallRuleGroupMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53RESOLVER_API FirewallRuleGroupMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53RESOLVER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,42 +46,36 @@ namespace Model
     /**
      * <p>The ID of the rule group. </p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline FirewallRuleGroupMetadata& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline FirewallRuleGroupMetadata& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline FirewallRuleGroupMetadata& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    FirewallRuleGroupMetadata& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN (Amazon Resource Name) of the rule group.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline FirewallRuleGroupMetadata& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline FirewallRuleGroupMetadata& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline FirewallRuleGroupMetadata& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    FirewallRuleGroupMetadata& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the rule group.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline FirewallRuleGroupMetadata& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline FirewallRuleGroupMetadata& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline FirewallRuleGroupMetadata& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    FirewallRuleGroupMetadata& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,14 +84,12 @@ namespace Model
      * group. When a rule group is shared with your account, this is the account that
      * has shared the rule group with you. </p>
      */
-    inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
+    inline const Aws::String& GetOwnerId() const { return m_ownerId; }
     inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
-    inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
-    inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
-    inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
-    inline FirewallRuleGroupMetadata& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
-    inline FirewallRuleGroupMetadata& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
-    inline FirewallRuleGroupMetadata& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
+    template<typename OwnerIdT = Aws::String>
+    void SetOwnerId(OwnerIdT&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::forward<OwnerIdT>(value); }
+    template<typename OwnerIdT = Aws::String>
+    FirewallRuleGroupMetadata& WithOwnerId(OwnerIdT&& value) { SetOwnerId(std::forward<OwnerIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,14 +98,12 @@ namespace Model
      * retry failed requests without the risk of running the operation twice. This can
      * be any unique string, for example, a timestamp. </p>
      */
-    inline const Aws::String& GetCreatorRequestId() const{ return m_creatorRequestId; }
+    inline const Aws::String& GetCreatorRequestId() const { return m_creatorRequestId; }
     inline bool CreatorRequestIdHasBeenSet() const { return m_creatorRequestIdHasBeenSet; }
-    inline void SetCreatorRequestId(const Aws::String& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = value; }
-    inline void SetCreatorRequestId(Aws::String&& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = std::move(value); }
-    inline void SetCreatorRequestId(const char* value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId.assign(value); }
-    inline FirewallRuleGroupMetadata& WithCreatorRequestId(const Aws::String& value) { SetCreatorRequestId(value); return *this;}
-    inline FirewallRuleGroupMetadata& WithCreatorRequestId(Aws::String&& value) { SetCreatorRequestId(std::move(value)); return *this;}
-    inline FirewallRuleGroupMetadata& WithCreatorRequestId(const char* value) { SetCreatorRequestId(value); return *this;}
+    template<typename CreatorRequestIdT = Aws::String>
+    void SetCreatorRequestId(CreatorRequestIdT&& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = std::forward<CreatorRequestIdT>(value); }
+    template<typename CreatorRequestIdT = Aws::String>
+    FirewallRuleGroupMetadata& WithCreatorRequestId(CreatorRequestIdT&& value) { SetCreatorRequestId(std::forward<CreatorRequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -122,12 +112,10 @@ namespace Model
      * was shared with the current account by another Amazon Web Services account.
      * Sharing is configured through Resource Access Manager (RAM).</p>
      */
-    inline const ShareStatus& GetShareStatus() const{ return m_shareStatus; }
+    inline ShareStatus GetShareStatus() const { return m_shareStatus; }
     inline bool ShareStatusHasBeenSet() const { return m_shareStatusHasBeenSet; }
-    inline void SetShareStatus(const ShareStatus& value) { m_shareStatusHasBeenSet = true; m_shareStatus = value; }
-    inline void SetShareStatus(ShareStatus&& value) { m_shareStatusHasBeenSet = true; m_shareStatus = std::move(value); }
-    inline FirewallRuleGroupMetadata& WithShareStatus(const ShareStatus& value) { SetShareStatus(value); return *this;}
-    inline FirewallRuleGroupMetadata& WithShareStatus(ShareStatus&& value) { SetShareStatus(std::move(value)); return *this;}
+    inline void SetShareStatus(ShareStatus value) { m_shareStatusHasBeenSet = true; m_shareStatus = value; }
+    inline FirewallRuleGroupMetadata& WithShareStatus(ShareStatus value) { SetShareStatus(value); return *this;}
     ///@}
   private:
 
@@ -146,7 +134,7 @@ namespace Model
     Aws::String m_creatorRequestId;
     bool m_creatorRequestIdHasBeenSet = false;
 
-    ShareStatus m_shareStatus;
+    ShareStatus m_shareStatus{ShareStatus::NOT_SET};
     bool m_shareStatusHasBeenSet = false;
   };
 

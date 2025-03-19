@@ -35,52 +35,51 @@ namespace Model
   class ListEventBridgeRuleTemplatesResult
   {
   public:
-    AWS_MEDIALIVE_API ListEventBridgeRuleTemplatesResult();
+    AWS_MEDIALIVE_API ListEventBridgeRuleTemplatesResult() = default;
     AWS_MEDIALIVE_API ListEventBridgeRuleTemplatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIALIVE_API ListEventBridgeRuleTemplatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::Vector<EventBridgeRuleTemplateSummary>& GetEventBridgeRuleTemplates() const{ return m_eventBridgeRuleTemplates; }
-    inline void SetEventBridgeRuleTemplates(const Aws::Vector<EventBridgeRuleTemplateSummary>& value) { m_eventBridgeRuleTemplates = value; }
-    inline void SetEventBridgeRuleTemplates(Aws::Vector<EventBridgeRuleTemplateSummary>&& value) { m_eventBridgeRuleTemplates = std::move(value); }
-    inline ListEventBridgeRuleTemplatesResult& WithEventBridgeRuleTemplates(const Aws::Vector<EventBridgeRuleTemplateSummary>& value) { SetEventBridgeRuleTemplates(value); return *this;}
-    inline ListEventBridgeRuleTemplatesResult& WithEventBridgeRuleTemplates(Aws::Vector<EventBridgeRuleTemplateSummary>&& value) { SetEventBridgeRuleTemplates(std::move(value)); return *this;}
-    inline ListEventBridgeRuleTemplatesResult& AddEventBridgeRuleTemplates(const EventBridgeRuleTemplateSummary& value) { m_eventBridgeRuleTemplates.push_back(value); return *this; }
-    inline ListEventBridgeRuleTemplatesResult& AddEventBridgeRuleTemplates(EventBridgeRuleTemplateSummary&& value) { m_eventBridgeRuleTemplates.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<EventBridgeRuleTemplateSummary>& GetEventBridgeRuleTemplates() const { return m_eventBridgeRuleTemplates; }
+    template<typename EventBridgeRuleTemplatesT = Aws::Vector<EventBridgeRuleTemplateSummary>>
+    void SetEventBridgeRuleTemplates(EventBridgeRuleTemplatesT&& value) { m_eventBridgeRuleTemplatesHasBeenSet = true; m_eventBridgeRuleTemplates = std::forward<EventBridgeRuleTemplatesT>(value); }
+    template<typename EventBridgeRuleTemplatesT = Aws::Vector<EventBridgeRuleTemplateSummary>>
+    ListEventBridgeRuleTemplatesResult& WithEventBridgeRuleTemplates(EventBridgeRuleTemplatesT&& value) { SetEventBridgeRuleTemplates(std::forward<EventBridgeRuleTemplatesT>(value)); return *this;}
+    template<typename EventBridgeRuleTemplatesT = EventBridgeRuleTemplateSummary>
+    ListEventBridgeRuleTemplatesResult& AddEventBridgeRuleTemplates(EventBridgeRuleTemplatesT&& value) { m_eventBridgeRuleTemplatesHasBeenSet = true; m_eventBridgeRuleTemplates.emplace_back(std::forward<EventBridgeRuleTemplatesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * A token used to retrieve the next set of results in paginated list responses.
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListEventBridgeRuleTemplatesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListEventBridgeRuleTemplatesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListEventBridgeRuleTemplatesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListEventBridgeRuleTemplatesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListEventBridgeRuleTemplatesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListEventBridgeRuleTemplatesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListEventBridgeRuleTemplatesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListEventBridgeRuleTemplatesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<EventBridgeRuleTemplateSummary> m_eventBridgeRuleTemplates;
+    bool m_eventBridgeRuleTemplatesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

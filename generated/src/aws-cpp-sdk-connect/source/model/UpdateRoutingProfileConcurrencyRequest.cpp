@@ -12,13 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateRoutingProfileConcurrencyRequest::UpdateRoutingProfileConcurrencyRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_routingProfileIdHasBeenSet(false),
-    m_mediaConcurrenciesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateRoutingProfileConcurrencyRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -28,7 +28,7 @@ namespace Model
   class DescribeAuthenticationProfileResult
   {
   public:
-    AWS_CONNECT_API DescribeAuthenticationProfileResult();
+    AWS_CONNECT_API DescribeAuthenticationProfileResult() = default;
     AWS_CONNECT_API DescribeAuthenticationProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECT_API DescribeAuthenticationProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The authentication profile object being described.</p>
      */
-    inline const AuthenticationProfile& GetAuthenticationProfile() const{ return m_authenticationProfile; }
-    inline void SetAuthenticationProfile(const AuthenticationProfile& value) { m_authenticationProfile = value; }
-    inline void SetAuthenticationProfile(AuthenticationProfile&& value) { m_authenticationProfile = std::move(value); }
-    inline DescribeAuthenticationProfileResult& WithAuthenticationProfile(const AuthenticationProfile& value) { SetAuthenticationProfile(value); return *this;}
-    inline DescribeAuthenticationProfileResult& WithAuthenticationProfile(AuthenticationProfile&& value) { SetAuthenticationProfile(std::move(value)); return *this;}
+    inline const AuthenticationProfile& GetAuthenticationProfile() const { return m_authenticationProfile; }
+    template<typename AuthenticationProfileT = AuthenticationProfile>
+    void SetAuthenticationProfile(AuthenticationProfileT&& value) { m_authenticationProfileHasBeenSet = true; m_authenticationProfile = std::forward<AuthenticationProfileT>(value); }
+    template<typename AuthenticationProfileT = AuthenticationProfile>
+    DescribeAuthenticationProfileResult& WithAuthenticationProfile(AuthenticationProfileT&& value) { SetAuthenticationProfile(std::forward<AuthenticationProfileT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeAuthenticationProfileResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeAuthenticationProfileResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeAuthenticationProfileResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeAuthenticationProfileResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AuthenticationProfile m_authenticationProfile;
+    bool m_authenticationProfileHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,7 +32,7 @@ namespace Model
   class ProcessorParameter
   {
   public:
-    AWS_FIREHOSE_API ProcessorParameter();
+    AWS_FIREHOSE_API ProcessorParameter() = default;
     AWS_FIREHOSE_API ProcessorParameter(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API ProcessorParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,30 +47,26 @@ namespace Model
      * destinations, except Splunk. For Splunk, the default buffering hint is 256 KB.
      * </p>
      */
-    inline const ProcessorParameterName& GetParameterName() const{ return m_parameterName; }
+    inline ProcessorParameterName GetParameterName() const { return m_parameterName; }
     inline bool ParameterNameHasBeenSet() const { return m_parameterNameHasBeenSet; }
-    inline void SetParameterName(const ProcessorParameterName& value) { m_parameterNameHasBeenSet = true; m_parameterName = value; }
-    inline void SetParameterName(ProcessorParameterName&& value) { m_parameterNameHasBeenSet = true; m_parameterName = std::move(value); }
-    inline ProcessorParameter& WithParameterName(const ProcessorParameterName& value) { SetParameterName(value); return *this;}
-    inline ProcessorParameter& WithParameterName(ProcessorParameterName&& value) { SetParameterName(std::move(value)); return *this;}
+    inline void SetParameterName(ProcessorParameterName value) { m_parameterNameHasBeenSet = true; m_parameterName = value; }
+    inline ProcessorParameter& WithParameterName(ProcessorParameterName value) { SetParameterName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The parameter value.</p>
      */
-    inline const Aws::String& GetParameterValue() const{ return m_parameterValue; }
+    inline const Aws::String& GetParameterValue() const { return m_parameterValue; }
     inline bool ParameterValueHasBeenSet() const { return m_parameterValueHasBeenSet; }
-    inline void SetParameterValue(const Aws::String& value) { m_parameterValueHasBeenSet = true; m_parameterValue = value; }
-    inline void SetParameterValue(Aws::String&& value) { m_parameterValueHasBeenSet = true; m_parameterValue = std::move(value); }
-    inline void SetParameterValue(const char* value) { m_parameterValueHasBeenSet = true; m_parameterValue.assign(value); }
-    inline ProcessorParameter& WithParameterValue(const Aws::String& value) { SetParameterValue(value); return *this;}
-    inline ProcessorParameter& WithParameterValue(Aws::String&& value) { SetParameterValue(std::move(value)); return *this;}
-    inline ProcessorParameter& WithParameterValue(const char* value) { SetParameterValue(value); return *this;}
+    template<typename ParameterValueT = Aws::String>
+    void SetParameterValue(ParameterValueT&& value) { m_parameterValueHasBeenSet = true; m_parameterValue = std::forward<ParameterValueT>(value); }
+    template<typename ParameterValueT = Aws::String>
+    ProcessorParameter& WithParameterValue(ParameterValueT&& value) { SetParameterValue(std::forward<ParameterValueT>(value)); return *this;}
     ///@}
   private:
 
-    ProcessorParameterName m_parameterName;
+    ProcessorParameterName m_parameterName{ProcessorParameterName::NOT_SET};
     bool m_parameterNameHasBeenSet = false;
 
     Aws::String m_parameterValue;

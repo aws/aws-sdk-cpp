@@ -12,16 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeSessionsRequest::DescribeSessionsRequest() : 
-    m_state(SessionState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_filtersHasBeenSet(false)
-{
-}
-
 Aws::String DescribeSessionsRequest::SerializePayload() const
 {
   JsonValue payload;

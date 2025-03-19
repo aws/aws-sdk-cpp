@@ -30,7 +30,7 @@ namespace Model
   class GetSearchResultExportJobResult
   {
   public:
-    AWS_BACKUPSEARCH_API GetSearchResultExportJobResult();
+    AWS_BACKUPSEARCH_API GetSearchResultExportJobResult() = default;
     AWS_BACKUPSEARCH_API GetSearchResultExportJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BACKUPSEARCH_API GetSearchResultExportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,11 @@ namespace Model
     /**
      * <p>This is the unique string that identifies the specified export job.</p>
      */
-    inline const Aws::String& GetExportJobIdentifier() const{ return m_exportJobIdentifier; }
-    inline void SetExportJobIdentifier(const Aws::String& value) { m_exportJobIdentifier = value; }
-    inline void SetExportJobIdentifier(Aws::String&& value) { m_exportJobIdentifier = std::move(value); }
-    inline void SetExportJobIdentifier(const char* value) { m_exportJobIdentifier.assign(value); }
-    inline GetSearchResultExportJobResult& WithExportJobIdentifier(const Aws::String& value) { SetExportJobIdentifier(value); return *this;}
-    inline GetSearchResultExportJobResult& WithExportJobIdentifier(Aws::String&& value) { SetExportJobIdentifier(std::move(value)); return *this;}
-    inline GetSearchResultExportJobResult& WithExportJobIdentifier(const char* value) { SetExportJobIdentifier(value); return *this;}
+    inline const Aws::String& GetExportJobIdentifier() const { return m_exportJobIdentifier; }
+    template<typename ExportJobIdentifierT = Aws::String>
+    void SetExportJobIdentifier(ExportJobIdentifierT&& value) { m_exportJobIdentifierHasBeenSet = true; m_exportJobIdentifier = std::forward<ExportJobIdentifierT>(value); }
+    template<typename ExportJobIdentifierT = Aws::String>
+    GetSearchResultExportJobResult& WithExportJobIdentifier(ExportJobIdentifierT&& value) { SetExportJobIdentifier(std::forward<ExportJobIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,24 +51,20 @@ namespace Model
      * <p>The unique Amazon Resource Name (ARN) that uniquely identifies the export
      * job.</p>
      */
-    inline const Aws::String& GetExportJobArn() const{ return m_exportJobArn; }
-    inline void SetExportJobArn(const Aws::String& value) { m_exportJobArn = value; }
-    inline void SetExportJobArn(Aws::String&& value) { m_exportJobArn = std::move(value); }
-    inline void SetExportJobArn(const char* value) { m_exportJobArn.assign(value); }
-    inline GetSearchResultExportJobResult& WithExportJobArn(const Aws::String& value) { SetExportJobArn(value); return *this;}
-    inline GetSearchResultExportJobResult& WithExportJobArn(Aws::String&& value) { SetExportJobArn(std::move(value)); return *this;}
-    inline GetSearchResultExportJobResult& WithExportJobArn(const char* value) { SetExportJobArn(value); return *this;}
+    inline const Aws::String& GetExportJobArn() const { return m_exportJobArn; }
+    template<typename ExportJobArnT = Aws::String>
+    void SetExportJobArn(ExportJobArnT&& value) { m_exportJobArnHasBeenSet = true; m_exportJobArn = std::forward<ExportJobArnT>(value); }
+    template<typename ExportJobArnT = Aws::String>
+    GetSearchResultExportJobResult& WithExportJobArn(ExportJobArnT&& value) { SetExportJobArn(std::forward<ExportJobArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>This is the current status of the export job.</p>
      */
-    inline const ExportJobStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const ExportJobStatus& value) { m_status = value; }
-    inline void SetStatus(ExportJobStatus&& value) { m_status = std::move(value); }
-    inline GetSearchResultExportJobResult& WithStatus(const ExportJobStatus& value) { SetStatus(value); return *this;}
-    inline GetSearchResultExportJobResult& WithStatus(ExportJobStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline ExportJobStatus GetStatus() const { return m_status; }
+    inline void SetStatus(ExportJobStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetSearchResultExportJobResult& WithStatus(ExportJobStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -80,11 +74,11 @@ namespace Model
      * accurate to milliseconds. For example, the value 1516925490.087 represents
      * Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline GetSearchResultExportJobResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline GetSearchResultExportJobResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    GetSearchResultExportJobResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,11 +88,11 @@ namespace Model
      * accurate to milliseconds. For example, the value 1516925490.087 represents
      * Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
-    inline const Aws::Utils::DateTime& GetCompletionTime() const{ return m_completionTime; }
-    inline void SetCompletionTime(const Aws::Utils::DateTime& value) { m_completionTime = value; }
-    inline void SetCompletionTime(Aws::Utils::DateTime&& value) { m_completionTime = std::move(value); }
-    inline GetSearchResultExportJobResult& WithCompletionTime(const Aws::Utils::DateTime& value) { SetCompletionTime(value); return *this;}
-    inline GetSearchResultExportJobResult& WithCompletionTime(Aws::Utils::DateTime&& value) { SetCompletionTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCompletionTime() const { return m_completionTime; }
+    template<typename CompletionTimeT = Aws::Utils::DateTime>
+    void SetCompletionTime(CompletionTimeT&& value) { m_completionTimeHasBeenSet = true; m_completionTime = std::forward<CompletionTimeT>(value); }
+    template<typename CompletionTimeT = Aws::Utils::DateTime>
+    GetSearchResultExportJobResult& WithCompletionTime(CompletionTimeT&& value) { SetCompletionTime(std::forward<CompletionTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,13 +100,11 @@ namespace Model
      * <p>A status message is a string that is returned for search job with a status of
      * <code>FAILED</code>, along with steps to remedy and retry the operation.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessage.assign(value); }
-    inline GetSearchResultExportJobResult& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline GetSearchResultExportJobResult& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline GetSearchResultExportJobResult& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    GetSearchResultExportJobResult& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,11 +112,11 @@ namespace Model
      * <p>The export specification consists of the destination S3 bucket to which the
      * search results were exported, along with the destination prefix.</p>
      */
-    inline const ExportSpecification& GetExportSpecification() const{ return m_exportSpecification; }
-    inline void SetExportSpecification(const ExportSpecification& value) { m_exportSpecification = value; }
-    inline void SetExportSpecification(ExportSpecification&& value) { m_exportSpecification = std::move(value); }
-    inline GetSearchResultExportJobResult& WithExportSpecification(const ExportSpecification& value) { SetExportSpecification(value); return *this;}
-    inline GetSearchResultExportJobResult& WithExportSpecification(ExportSpecification&& value) { SetExportSpecification(std::move(value)); return *this;}
+    inline const ExportSpecification& GetExportSpecification() const { return m_exportSpecification; }
+    template<typename ExportSpecificationT = ExportSpecification>
+    void SetExportSpecification(ExportSpecificationT&& value) { m_exportSpecificationHasBeenSet = true; m_exportSpecification = std::forward<ExportSpecificationT>(value); }
+    template<typename ExportSpecificationT = ExportSpecification>
+    GetSearchResultExportJobResult& WithExportSpecification(ExportSpecificationT&& value) { SetExportSpecification(std::forward<ExportSpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -132,44 +124,49 @@ namespace Model
      * <p>The unique string that identifies the Amazon Resource Name (ARN) of the
      * specified search job.</p>
      */
-    inline const Aws::String& GetSearchJobArn() const{ return m_searchJobArn; }
-    inline void SetSearchJobArn(const Aws::String& value) { m_searchJobArn = value; }
-    inline void SetSearchJobArn(Aws::String&& value) { m_searchJobArn = std::move(value); }
-    inline void SetSearchJobArn(const char* value) { m_searchJobArn.assign(value); }
-    inline GetSearchResultExportJobResult& WithSearchJobArn(const Aws::String& value) { SetSearchJobArn(value); return *this;}
-    inline GetSearchResultExportJobResult& WithSearchJobArn(Aws::String&& value) { SetSearchJobArn(std::move(value)); return *this;}
-    inline GetSearchResultExportJobResult& WithSearchJobArn(const char* value) { SetSearchJobArn(value); return *this;}
+    inline const Aws::String& GetSearchJobArn() const { return m_searchJobArn; }
+    template<typename SearchJobArnT = Aws::String>
+    void SetSearchJobArn(SearchJobArnT&& value) { m_searchJobArnHasBeenSet = true; m_searchJobArn = std::forward<SearchJobArnT>(value); }
+    template<typename SearchJobArnT = Aws::String>
+    GetSearchResultExportJobResult& WithSearchJobArn(SearchJobArnT&& value) { SetSearchJobArn(std::forward<SearchJobArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetSearchResultExportJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetSearchResultExportJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetSearchResultExportJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetSearchResultExportJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_exportJobIdentifier;
+    bool m_exportJobIdentifierHasBeenSet = false;
 
     Aws::String m_exportJobArn;
+    bool m_exportJobArnHasBeenSet = false;
 
-    ExportJobStatus m_status;
+    ExportJobStatus m_status{ExportJobStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_completionTime;
+    Aws::Utils::DateTime m_completionTime{};
+    bool m_completionTimeHasBeenSet = false;
 
     Aws::String m_statusMessage;
+    bool m_statusMessageHasBeenSet = false;
 
     ExportSpecification m_exportSpecification;
+    bool m_exportSpecificationHasBeenSet = false;
 
     Aws::String m_searchJobArn;
+    bool m_searchJobArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

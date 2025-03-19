@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-CognitoMemberDefinition::CognitoMemberDefinition() : 
-    m_userPoolHasBeenSet(false),
-    m_userGroupHasBeenSet(false),
-    m_clientIdHasBeenSet(false)
-{
-}
-
 CognitoMemberDefinition::CognitoMemberDefinition(JsonView jsonValue)
-  : CognitoMemberDefinition()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ CognitoMemberDefinition& CognitoMemberDefinition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("UserPool"))
   {
     m_userPool = jsonValue.GetString("UserPool");
-
     m_userPoolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserGroup"))
   {
     m_userGroup = jsonValue.GetString("UserGroup");
-
     m_userGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClientId"))
   {
     m_clientId = jsonValue.GetString("ClientId");
-
     m_clientIdHasBeenSet = true;
   }
-
   return *this;
 }
 

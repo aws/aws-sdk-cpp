@@ -18,17 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-Cookies::Cookies() : 
-    m_matchPatternHasBeenSet(false),
-    m_matchScope(MapMatchScope::NOT_SET),
-    m_matchScopeHasBeenSet(false),
-    m_oversizeHandling(OversizeHandling::NOT_SET),
-    m_oversizeHandlingHasBeenSet(false)
-{
-}
-
 Cookies::Cookies(JsonView jsonValue)
-  : Cookies()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ Cookies& Cookies::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MatchPattern"))
   {
     m_matchPattern = jsonValue.GetObject("MatchPattern");
-
     m_matchPatternHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MatchScope"))
   {
     m_matchScope = MapMatchScopeMapper::GetMapMatchScopeForName(jsonValue.GetString("MatchScope"));
-
     m_matchScopeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OversizeHandling"))
   {
     m_oversizeHandling = OversizeHandlingMapper::GetOversizeHandlingForName(jsonValue.GetString("OversizeHandling"));
-
     m_oversizeHandlingHasBeenSet = true;
   }
-
   return *this;
 }
 

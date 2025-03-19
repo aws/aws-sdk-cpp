@@ -30,7 +30,7 @@ namespace Model
   class GetAutomatedDiscoveryConfigurationResult
   {
   public:
-    AWS_MACIE2_API GetAutomatedDiscoveryConfigurationResult();
+    AWS_MACIE2_API GetAutomatedDiscoveryConfigurationResult() = default;
     AWS_MACIE2_API GetAutomatedDiscoveryConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MACIE2_API GetAutomatedDiscoveryConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,11 +42,9 @@ namespace Model
      * existing accounts and new member accounts; NEW, enable it only for new member
      * accounts; and, NONE, don't enable it for any accounts.</p>
      */
-    inline const AutoEnableMode& GetAutoEnableOrganizationMembers() const{ return m_autoEnableOrganizationMembers; }
-    inline void SetAutoEnableOrganizationMembers(const AutoEnableMode& value) { m_autoEnableOrganizationMembers = value; }
-    inline void SetAutoEnableOrganizationMembers(AutoEnableMode&& value) { m_autoEnableOrganizationMembers = std::move(value); }
-    inline GetAutomatedDiscoveryConfigurationResult& WithAutoEnableOrganizationMembers(const AutoEnableMode& value) { SetAutoEnableOrganizationMembers(value); return *this;}
-    inline GetAutomatedDiscoveryConfigurationResult& WithAutoEnableOrganizationMembers(AutoEnableMode&& value) { SetAutoEnableOrganizationMembers(std::move(value)); return *this;}
+    inline AutoEnableMode GetAutoEnableOrganizationMembers() const { return m_autoEnableOrganizationMembers; }
+    inline void SetAutoEnableOrganizationMembers(AutoEnableMode value) { m_autoEnableOrganizationMembersHasBeenSet = true; m_autoEnableOrganizationMembers = value; }
+    inline GetAutomatedDiscoveryConfigurationResult& WithAutoEnableOrganizationMembers(AutoEnableMode value) { SetAutoEnableOrganizationMembers(value); return *this;}
     ///@}
 
     ///@{
@@ -55,13 +53,11 @@ namespace Model
      * performing automated sensitive data discovery. The classification scope
      * specifies S3 buckets to exclude from analyses.</p>
      */
-    inline const Aws::String& GetClassificationScopeId() const{ return m_classificationScopeId; }
-    inline void SetClassificationScopeId(const Aws::String& value) { m_classificationScopeId = value; }
-    inline void SetClassificationScopeId(Aws::String&& value) { m_classificationScopeId = std::move(value); }
-    inline void SetClassificationScopeId(const char* value) { m_classificationScopeId.assign(value); }
-    inline GetAutomatedDiscoveryConfigurationResult& WithClassificationScopeId(const Aws::String& value) { SetClassificationScopeId(value); return *this;}
-    inline GetAutomatedDiscoveryConfigurationResult& WithClassificationScopeId(Aws::String&& value) { SetClassificationScopeId(std::move(value)); return *this;}
-    inline GetAutomatedDiscoveryConfigurationResult& WithClassificationScopeId(const char* value) { SetClassificationScopeId(value); return *this;}
+    inline const Aws::String& GetClassificationScopeId() const { return m_classificationScopeId; }
+    template<typename ClassificationScopeIdT = Aws::String>
+    void SetClassificationScopeId(ClassificationScopeIdT&& value) { m_classificationScopeIdHasBeenSet = true; m_classificationScopeId = std::forward<ClassificationScopeIdT>(value); }
+    template<typename ClassificationScopeIdT = Aws::String>
+    GetAutomatedDiscoveryConfigurationResult& WithClassificationScopeId(ClassificationScopeIdT&& value) { SetClassificationScopeId(std::forward<ClassificationScopeIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,11 +66,11 @@ namespace Model
      * sensitive data discovery was most recently disabled. This value is null if
      * automated sensitive data discovery is currently enabled.</p>
      */
-    inline const Aws::Utils::DateTime& GetDisabledAt() const{ return m_disabledAt; }
-    inline void SetDisabledAt(const Aws::Utils::DateTime& value) { m_disabledAt = value; }
-    inline void SetDisabledAt(Aws::Utils::DateTime&& value) { m_disabledAt = std::move(value); }
-    inline GetAutomatedDiscoveryConfigurationResult& WithDisabledAt(const Aws::Utils::DateTime& value) { SetDisabledAt(value); return *this;}
-    inline GetAutomatedDiscoveryConfigurationResult& WithDisabledAt(Aws::Utils::DateTime&& value) { SetDisabledAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetDisabledAt() const { return m_disabledAt; }
+    template<typename DisabledAtT = Aws::Utils::DateTime>
+    void SetDisabledAt(DisabledAtT&& value) { m_disabledAtHasBeenSet = true; m_disabledAt = std::forward<DisabledAtT>(value); }
+    template<typename DisabledAtT = Aws::Utils::DateTime>
+    GetAutomatedDiscoveryConfigurationResult& WithDisabledAt(DisabledAtT&& value) { SetDisabledAt(std::forward<DisabledAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,11 +79,11 @@ namespace Model
      * sensitive data discovery was initially enabled. This value is null if automated
      * sensitive data discovery has never been enabled.</p>
      */
-    inline const Aws::Utils::DateTime& GetFirstEnabledAt() const{ return m_firstEnabledAt; }
-    inline void SetFirstEnabledAt(const Aws::Utils::DateTime& value) { m_firstEnabledAt = value; }
-    inline void SetFirstEnabledAt(Aws::Utils::DateTime&& value) { m_firstEnabledAt = std::move(value); }
-    inline GetAutomatedDiscoveryConfigurationResult& WithFirstEnabledAt(const Aws::Utils::DateTime& value) { SetFirstEnabledAt(value); return *this;}
-    inline GetAutomatedDiscoveryConfigurationResult& WithFirstEnabledAt(Aws::Utils::DateTime&& value) { SetFirstEnabledAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetFirstEnabledAt() const { return m_firstEnabledAt; }
+    template<typename FirstEnabledAtT = Aws::Utils::DateTime>
+    void SetFirstEnabledAt(FirstEnabledAtT&& value) { m_firstEnabledAtHasBeenSet = true; m_firstEnabledAt = std::forward<FirstEnabledAtT>(value); }
+    template<typename FirstEnabledAtT = Aws::Utils::DateTime>
+    GetAutomatedDiscoveryConfigurationResult& WithFirstEnabledAt(FirstEnabledAtT&& value) { SetFirstEnabledAt(std::forward<FirstEnabledAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,11 +92,11 @@ namespace Model
      * configuration settings or status of automated sensitive data discovery was most
      * recently changed.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
-    inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAt = value; }
-    inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAt = std::move(value); }
-    inline GetAutomatedDiscoveryConfigurationResult& WithLastUpdatedAt(const Aws::Utils::DateTime& value) { SetLastUpdatedAt(value); return *this;}
-    inline GetAutomatedDiscoveryConfigurationResult& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    GetAutomatedDiscoveryConfigurationResult& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,13 +106,11 @@ namespace Model
      * allow lists, custom data identifiers, and managed data identifiers to use when
      * analyzing data.</p>
      */
-    inline const Aws::String& GetSensitivityInspectionTemplateId() const{ return m_sensitivityInspectionTemplateId; }
-    inline void SetSensitivityInspectionTemplateId(const Aws::String& value) { m_sensitivityInspectionTemplateId = value; }
-    inline void SetSensitivityInspectionTemplateId(Aws::String&& value) { m_sensitivityInspectionTemplateId = std::move(value); }
-    inline void SetSensitivityInspectionTemplateId(const char* value) { m_sensitivityInspectionTemplateId.assign(value); }
-    inline GetAutomatedDiscoveryConfigurationResult& WithSensitivityInspectionTemplateId(const Aws::String& value) { SetSensitivityInspectionTemplateId(value); return *this;}
-    inline GetAutomatedDiscoveryConfigurationResult& WithSensitivityInspectionTemplateId(Aws::String&& value) { SetSensitivityInspectionTemplateId(std::move(value)); return *this;}
-    inline GetAutomatedDiscoveryConfigurationResult& WithSensitivityInspectionTemplateId(const char* value) { SetSensitivityInspectionTemplateId(value); return *this;}
+    inline const Aws::String& GetSensitivityInspectionTemplateId() const { return m_sensitivityInspectionTemplateId; }
+    template<typename SensitivityInspectionTemplateIdT = Aws::String>
+    void SetSensitivityInspectionTemplateId(SensitivityInspectionTemplateIdT&& value) { m_sensitivityInspectionTemplateIdHasBeenSet = true; m_sensitivityInspectionTemplateId = std::forward<SensitivityInspectionTemplateIdT>(value); }
+    template<typename SensitivityInspectionTemplateIdT = Aws::String>
+    GetAutomatedDiscoveryConfigurationResult& WithSensitivityInspectionTemplateId(SensitivityInspectionTemplateIdT&& value) { SetSensitivityInspectionTemplateId(std::forward<SensitivityInspectionTemplateIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -126,40 +120,44 @@ namespace Model
      * automated sensitive data discovery activities; and, DISABLED, don't perform
      * automated sensitive data discovery activities.</p>
      */
-    inline const AutomatedDiscoveryStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const AutomatedDiscoveryStatus& value) { m_status = value; }
-    inline void SetStatus(AutomatedDiscoveryStatus&& value) { m_status = std::move(value); }
-    inline GetAutomatedDiscoveryConfigurationResult& WithStatus(const AutomatedDiscoveryStatus& value) { SetStatus(value); return *this;}
-    inline GetAutomatedDiscoveryConfigurationResult& WithStatus(AutomatedDiscoveryStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline AutomatedDiscoveryStatus GetStatus() const { return m_status; }
+    inline void SetStatus(AutomatedDiscoveryStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetAutomatedDiscoveryConfigurationResult& WithStatus(AutomatedDiscoveryStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetAutomatedDiscoveryConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetAutomatedDiscoveryConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetAutomatedDiscoveryConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetAutomatedDiscoveryConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    AutoEnableMode m_autoEnableOrganizationMembers;
+    AutoEnableMode m_autoEnableOrganizationMembers{AutoEnableMode::NOT_SET};
+    bool m_autoEnableOrganizationMembersHasBeenSet = false;
 
     Aws::String m_classificationScopeId;
+    bool m_classificationScopeIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_disabledAt;
+    Aws::Utils::DateTime m_disabledAt{};
+    bool m_disabledAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_firstEnabledAt;
+    Aws::Utils::DateTime m_firstEnabledAt{};
+    bool m_firstEnabledAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedAt;
+    Aws::Utils::DateTime m_lastUpdatedAt{};
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::String m_sensitivityInspectionTemplateId;
+    bool m_sensitivityInspectionTemplateIdHasBeenSet = false;
 
-    AutomatedDiscoveryStatus m_status;
+    AutomatedDiscoveryStatus m_status{AutomatedDiscoveryStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

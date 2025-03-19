@@ -18,15 +18,7 @@ namespace KafkaConnect
 namespace Model
 {
 
-CustomPluginFileDescription::CustomPluginFileDescription() : 
-    m_fileMd5HasBeenSet(false),
-    m_fileSize(0),
-    m_fileSizeHasBeenSet(false)
-{
-}
-
 CustomPluginFileDescription::CustomPluginFileDescription(JsonView jsonValue)
-  : CustomPluginFileDescription()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ CustomPluginFileDescription& CustomPluginFileDescription::operator =(JsonView js
   if(jsonValue.ValueExists("fileMd5"))
   {
     m_fileMd5 = jsonValue.GetString("fileMd5");
-
     m_fileMd5HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fileSize"))
   {
     m_fileSize = jsonValue.GetInt64("fileSize");
-
     m_fileSizeHasBeenSet = true;
   }
-
   return *this;
 }
 

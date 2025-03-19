@@ -12,12 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetComputeAccessRequest::GetComputeAccessRequest() : 
-    m_fleetIdHasBeenSet(false),
-    m_computeNameHasBeenSet(false)
-{
-}
-
 Aws::String GetComputeAccessRequest::SerializePayload() const
 {
   JsonValue payload;

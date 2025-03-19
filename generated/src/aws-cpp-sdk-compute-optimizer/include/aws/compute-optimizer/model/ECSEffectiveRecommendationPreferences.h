@@ -32,7 +32,7 @@ namespace Model
   class ECSEffectiveRecommendationPreferences
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API ECSEffectiveRecommendationPreferences();
+    AWS_COMPUTEOPTIMIZER_API ECSEffectiveRecommendationPreferences() = default;
     AWS_COMPUTEOPTIMIZER_API ECSEffectiveRecommendationPreferences(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API ECSEffectiveRecommendationPreferences& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p> Describes the savings estimation mode preference applied for calculating
      * savings opportunity for Amazon ECS services. </p>
      */
-    inline const ECSSavingsEstimationMode& GetSavingsEstimationMode() const{ return m_savingsEstimationMode; }
+    inline const ECSSavingsEstimationMode& GetSavingsEstimationMode() const { return m_savingsEstimationMode; }
     inline bool SavingsEstimationModeHasBeenSet() const { return m_savingsEstimationModeHasBeenSet; }
-    inline void SetSavingsEstimationMode(const ECSSavingsEstimationMode& value) { m_savingsEstimationModeHasBeenSet = true; m_savingsEstimationMode = value; }
-    inline void SetSavingsEstimationMode(ECSSavingsEstimationMode&& value) { m_savingsEstimationModeHasBeenSet = true; m_savingsEstimationMode = std::move(value); }
-    inline ECSEffectiveRecommendationPreferences& WithSavingsEstimationMode(const ECSSavingsEstimationMode& value) { SetSavingsEstimationMode(value); return *this;}
-    inline ECSEffectiveRecommendationPreferences& WithSavingsEstimationMode(ECSSavingsEstimationMode&& value) { SetSavingsEstimationMode(std::move(value)); return *this;}
+    template<typename SavingsEstimationModeT = ECSSavingsEstimationMode>
+    void SetSavingsEstimationMode(SavingsEstimationModeT&& value) { m_savingsEstimationModeHasBeenSet = true; m_savingsEstimationMode = std::forward<SavingsEstimationModeT>(value); }
+    template<typename SavingsEstimationModeT = ECSSavingsEstimationMode>
+    ECSEffectiveRecommendationPreferences& WithSavingsEstimationMode(SavingsEstimationModeT&& value) { SetSavingsEstimationMode(std::forward<SavingsEstimationModeT>(value)); return *this;}
     ///@}
   private:
 

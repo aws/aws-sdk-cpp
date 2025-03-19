@@ -18,13 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-ResourceSnapshotPayload::ResourceSnapshotPayload() : 
-    m_opportunitySummaryHasBeenSet(false)
-{
-}
-
 ResourceSnapshotPayload::ResourceSnapshotPayload(JsonView jsonValue)
-  : ResourceSnapshotPayload()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ResourceSnapshotPayload& ResourceSnapshotPayload::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OpportunitySummary"))
   {
     m_opportunitySummary = jsonValue.GetObject("OpportunitySummary");
-
     m_opportunitySummaryHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class ModelBiasBaselineConfig
   {
   public:
-    AWS_SAGEMAKER_API ModelBiasBaselineConfig();
+    AWS_SAGEMAKER_API ModelBiasBaselineConfig() = default;
     AWS_SAGEMAKER_API ModelBiasBaselineConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ModelBiasBaselineConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,22 @@ namespace Model
     /**
      * <p>The name of the baseline model bias job.</p>
      */
-    inline const Aws::String& GetBaseliningJobName() const{ return m_baseliningJobName; }
+    inline const Aws::String& GetBaseliningJobName() const { return m_baseliningJobName; }
     inline bool BaseliningJobNameHasBeenSet() const { return m_baseliningJobNameHasBeenSet; }
-    inline void SetBaseliningJobName(const Aws::String& value) { m_baseliningJobNameHasBeenSet = true; m_baseliningJobName = value; }
-    inline void SetBaseliningJobName(Aws::String&& value) { m_baseliningJobNameHasBeenSet = true; m_baseliningJobName = std::move(value); }
-    inline void SetBaseliningJobName(const char* value) { m_baseliningJobNameHasBeenSet = true; m_baseliningJobName.assign(value); }
-    inline ModelBiasBaselineConfig& WithBaseliningJobName(const Aws::String& value) { SetBaseliningJobName(value); return *this;}
-    inline ModelBiasBaselineConfig& WithBaseliningJobName(Aws::String&& value) { SetBaseliningJobName(std::move(value)); return *this;}
-    inline ModelBiasBaselineConfig& WithBaseliningJobName(const char* value) { SetBaseliningJobName(value); return *this;}
+    template<typename BaseliningJobNameT = Aws::String>
+    void SetBaseliningJobName(BaseliningJobNameT&& value) { m_baseliningJobNameHasBeenSet = true; m_baseliningJobName = std::forward<BaseliningJobNameT>(value); }
+    template<typename BaseliningJobNameT = Aws::String>
+    ModelBiasBaselineConfig& WithBaseliningJobName(BaseliningJobNameT&& value) { SetBaseliningJobName(std::forward<BaseliningJobNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const MonitoringConstraintsResource& GetConstraintsResource() const{ return m_constraintsResource; }
+    inline const MonitoringConstraintsResource& GetConstraintsResource() const { return m_constraintsResource; }
     inline bool ConstraintsResourceHasBeenSet() const { return m_constraintsResourceHasBeenSet; }
-    inline void SetConstraintsResource(const MonitoringConstraintsResource& value) { m_constraintsResourceHasBeenSet = true; m_constraintsResource = value; }
-    inline void SetConstraintsResource(MonitoringConstraintsResource&& value) { m_constraintsResourceHasBeenSet = true; m_constraintsResource = std::move(value); }
-    inline ModelBiasBaselineConfig& WithConstraintsResource(const MonitoringConstraintsResource& value) { SetConstraintsResource(value); return *this;}
-    inline ModelBiasBaselineConfig& WithConstraintsResource(MonitoringConstraintsResource&& value) { SetConstraintsResource(std::move(value)); return *this;}
+    template<typename ConstraintsResourceT = MonitoringConstraintsResource>
+    void SetConstraintsResource(ConstraintsResourceT&& value) { m_constraintsResourceHasBeenSet = true; m_constraintsResource = std::forward<ConstraintsResourceT>(value); }
+    template<typename ConstraintsResourceT = MonitoringConstraintsResource>
+    ModelBiasBaselineConfig& WithConstraintsResource(ConstraintsResourceT&& value) { SetConstraintsResource(std::forward<ConstraintsResourceT>(value)); return *this;}
     ///@}
   private:
 

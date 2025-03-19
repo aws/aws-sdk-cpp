@@ -33,7 +33,7 @@ namespace Model
   class PivotFieldSortOptions
   {
   public:
-    AWS_QUICKSIGHT_API PivotFieldSortOptions();
+    AWS_QUICKSIGHT_API PivotFieldSortOptions() = default;
     AWS_QUICKSIGHT_API PivotFieldSortOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API PivotFieldSortOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,24 @@ namespace Model
     /**
      * <p>The field ID for the field sort options.</p>
      */
-    inline const Aws::String& GetFieldId() const{ return m_fieldId; }
+    inline const Aws::String& GetFieldId() const { return m_fieldId; }
     inline bool FieldIdHasBeenSet() const { return m_fieldIdHasBeenSet; }
-    inline void SetFieldId(const Aws::String& value) { m_fieldIdHasBeenSet = true; m_fieldId = value; }
-    inline void SetFieldId(Aws::String&& value) { m_fieldIdHasBeenSet = true; m_fieldId = std::move(value); }
-    inline void SetFieldId(const char* value) { m_fieldIdHasBeenSet = true; m_fieldId.assign(value); }
-    inline PivotFieldSortOptions& WithFieldId(const Aws::String& value) { SetFieldId(value); return *this;}
-    inline PivotFieldSortOptions& WithFieldId(Aws::String&& value) { SetFieldId(std::move(value)); return *this;}
-    inline PivotFieldSortOptions& WithFieldId(const char* value) { SetFieldId(value); return *this;}
+    template<typename FieldIdT = Aws::String>
+    void SetFieldId(FieldIdT&& value) { m_fieldIdHasBeenSet = true; m_fieldId = std::forward<FieldIdT>(value); }
+    template<typename FieldIdT = Aws::String>
+    PivotFieldSortOptions& WithFieldId(FieldIdT&& value) { SetFieldId(std::forward<FieldIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The sort by field for the field sort options.</p>
      */
-    inline const PivotTableSortBy& GetSortBy() const{ return m_sortBy; }
+    inline const PivotTableSortBy& GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const PivotTableSortBy& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(PivotTableSortBy&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline PivotFieldSortOptions& WithSortBy(const PivotTableSortBy& value) { SetSortBy(value); return *this;}
-    inline PivotFieldSortOptions& WithSortBy(PivotTableSortBy&& value) { SetSortBy(std::move(value)); return *this;}
+    template<typename SortByT = PivotTableSortBy>
+    void SetSortBy(SortByT&& value) { m_sortByHasBeenSet = true; m_sortBy = std::forward<SortByT>(value); }
+    template<typename SortByT = PivotTableSortBy>
+    PivotFieldSortOptions& WithSortBy(SortByT&& value) { SetSortBy(std::forward<SortByT>(value)); return *this;}
     ///@}
   private:
 

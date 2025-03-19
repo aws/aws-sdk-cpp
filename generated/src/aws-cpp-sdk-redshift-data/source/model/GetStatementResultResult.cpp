@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetStatementResultResult::GetStatementResultResult() : 
-    m_totalNumRows(0)
-{
-}
-
 GetStatementResultResult::GetStatementResultResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetStatementResultResult()
 {
   *this = result;
 }
@@ -38,14 +32,13 @@ GetStatementResultResult& GetStatementResultResult::operator =(const Aws::Amazon
     {
       m_columnMetadata.push_back(columnMetadataJsonList[columnMetadataIndex].AsObject());
     }
+    m_columnMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Records"))
   {
     Aws::Utils::Array<JsonView> recordsJsonList = jsonValue.GetArray("Records");
@@ -60,20 +53,20 @@ GetStatementResultResult& GetStatementResultResult::operator =(const Aws::Amazon
       }
       m_records.push_back(std::move(fieldListList));
     }
+    m_recordsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalNumRows"))
   {
     m_totalNumRows = jsonValue.GetInt64("TotalNumRows");
-
+    m_totalNumRowsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

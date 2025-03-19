@@ -12,11 +12,6 @@ using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteResourcesByExternalIdRequest::DeleteResourcesByExternalIdRequest() : 
-    m_externalIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteResourcesByExternalIdRequest::SerializePayload() const
 {
   JsonValue payload;

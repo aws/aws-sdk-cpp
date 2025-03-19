@@ -18,18 +18,7 @@ namespace mgn
 namespace Model
 {
 
-PostLaunchActions::PostLaunchActions() : 
-    m_cloudWatchLogGroupNameHasBeenSet(false),
-    m_deployment(PostLaunchActionsDeploymentType::NOT_SET),
-    m_deploymentHasBeenSet(false),
-    m_s3LogBucketHasBeenSet(false),
-    m_s3OutputKeyPrefixHasBeenSet(false),
-    m_ssmDocumentsHasBeenSet(false)
-{
-}
-
 PostLaunchActions::PostLaunchActions(JsonView jsonValue)
-  : PostLaunchActions()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ PostLaunchActions& PostLaunchActions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("cloudWatchLogGroupName"))
   {
     m_cloudWatchLogGroupName = jsonValue.GetString("cloudWatchLogGroupName");
-
     m_cloudWatchLogGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deployment"))
   {
     m_deployment = PostLaunchActionsDeploymentTypeMapper::GetPostLaunchActionsDeploymentTypeForName(jsonValue.GetString("deployment"));
-
     m_deploymentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3LogBucket"))
   {
     m_s3LogBucket = jsonValue.GetString("s3LogBucket");
-
     m_s3LogBucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3OutputKeyPrefix"))
   {
     m_s3OutputKeyPrefix = jsonValue.GetString("s3OutputKeyPrefix");
-
     m_s3OutputKeyPrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ssmDocuments"))
   {
     Aws::Utils::Array<JsonView> ssmDocumentsJsonList = jsonValue.GetArray("ssmDocuments");
@@ -73,7 +54,6 @@ PostLaunchActions& PostLaunchActions::operator =(JsonView jsonValue)
     }
     m_ssmDocumentsHasBeenSet = true;
   }
-
   return *this;
 }
 

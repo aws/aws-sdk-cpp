@@ -18,63 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsSecurityFinding::AwsSecurityFinding() : 
-    m_schemaVersionHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_productArnHasBeenSet(false),
-    m_productNameHasBeenSet(false),
-    m_companyNameHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_generatorIdHasBeenSet(false),
-    m_awsAccountIdHasBeenSet(false),
-    m_typesHasBeenSet(false),
-    m_firstObservedAtHasBeenSet(false),
-    m_lastObservedAtHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_severityHasBeenSet(false),
-    m_confidence(0),
-    m_confidenceHasBeenSet(false),
-    m_criticality(0),
-    m_criticalityHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_remediationHasBeenSet(false),
-    m_sourceUrlHasBeenSet(false),
-    m_productFieldsHasBeenSet(false),
-    m_userDefinedFieldsHasBeenSet(false),
-    m_malwareHasBeenSet(false),
-    m_networkHasBeenSet(false),
-    m_networkPathHasBeenSet(false),
-    m_processHasBeenSet(false),
-    m_threatsHasBeenSet(false),
-    m_threatIntelIndicatorsHasBeenSet(false),
-    m_resourcesHasBeenSet(false),
-    m_complianceHasBeenSet(false),
-    m_verificationState(VerificationState::NOT_SET),
-    m_verificationStateHasBeenSet(false),
-    m_workflowState(WorkflowState::NOT_SET),
-    m_workflowStateHasBeenSet(false),
-    m_workflowHasBeenSet(false),
-    m_recordState(RecordState::NOT_SET),
-    m_recordStateHasBeenSet(false),
-    m_relatedFindingsHasBeenSet(false),
-    m_noteHasBeenSet(false),
-    m_vulnerabilitiesHasBeenSet(false),
-    m_patchSummaryHasBeenSet(false),
-    m_actionHasBeenSet(false),
-    m_findingProviderFieldsHasBeenSet(false),
-    m_sample(false),
-    m_sampleHasBeenSet(false),
-    m_generatorDetailsHasBeenSet(false),
-    m_processedAtHasBeenSet(false),
-    m_awsAccountNameHasBeenSet(false),
-    m_detectionHasBeenSet(false)
-{
-}
-
 AwsSecurityFinding::AwsSecurityFinding(JsonView jsonValue)
-  : AwsSecurityFinding()
 {
   *this = jsonValue;
 }
@@ -84,59 +28,43 @@ AwsSecurityFinding& AwsSecurityFinding::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SchemaVersion"))
   {
     m_schemaVersion = jsonValue.GetString("SchemaVersion");
-
     m_schemaVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProductArn"))
   {
     m_productArn = jsonValue.GetString("ProductArn");
-
     m_productArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProductName"))
   {
     m_productName = jsonValue.GetString("ProductName");
-
     m_productNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompanyName"))
   {
     m_companyName = jsonValue.GetString("CompanyName");
-
     m_companyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetString("Region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GeneratorId"))
   {
     m_generatorId = jsonValue.GetString("GeneratorId");
-
     m_generatorIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AwsAccountId"))
   {
     m_awsAccountId = jsonValue.GetString("AwsAccountId");
-
     m_awsAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Types"))
   {
     Aws::Utils::Array<JsonView> typesJsonList = jsonValue.GetArray("Types");
@@ -146,84 +74,61 @@ AwsSecurityFinding& AwsSecurityFinding::operator =(JsonView jsonValue)
     }
     m_typesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FirstObservedAt"))
   {
     m_firstObservedAt = jsonValue.GetString("FirstObservedAt");
-
     m_firstObservedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastObservedAt"))
   {
     m_lastObservedAt = jsonValue.GetString("LastObservedAt");
-
     m_lastObservedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetString("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetString("UpdatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Severity"))
   {
     m_severity = jsonValue.GetObject("Severity");
-
     m_severityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Confidence"))
   {
     m_confidence = jsonValue.GetInteger("Confidence");
-
     m_confidenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Criticality"))
   {
     m_criticality = jsonValue.GetInteger("Criticality");
-
     m_criticalityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Title"))
   {
     m_title = jsonValue.GetString("Title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Remediation"))
   {
     m_remediation = jsonValue.GetObject("Remediation");
-
     m_remediationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceUrl"))
   {
     m_sourceUrl = jsonValue.GetString("SourceUrl");
-
     m_sourceUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProductFields"))
   {
     Aws::Map<Aws::String, JsonView> productFieldsJsonMap = jsonValue.GetObject("ProductFields").GetAllObjects();
@@ -233,7 +138,6 @@ AwsSecurityFinding& AwsSecurityFinding::operator =(JsonView jsonValue)
     }
     m_productFieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserDefinedFields"))
   {
     Aws::Map<Aws::String, JsonView> userDefinedFieldsJsonMap = jsonValue.GetObject("UserDefinedFields").GetAllObjects();
@@ -243,7 +147,6 @@ AwsSecurityFinding& AwsSecurityFinding::operator =(JsonView jsonValue)
     }
     m_userDefinedFieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Malware"))
   {
     Aws::Utils::Array<JsonView> malwareJsonList = jsonValue.GetArray("Malware");
@@ -253,14 +156,11 @@ AwsSecurityFinding& AwsSecurityFinding::operator =(JsonView jsonValue)
     }
     m_malwareHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Network"))
   {
     m_network = jsonValue.GetObject("Network");
-
     m_networkHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkPath"))
   {
     Aws::Utils::Array<JsonView> networkPathJsonList = jsonValue.GetArray("NetworkPath");
@@ -270,14 +170,11 @@ AwsSecurityFinding& AwsSecurityFinding::operator =(JsonView jsonValue)
     }
     m_networkPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Process"))
   {
     m_process = jsonValue.GetObject("Process");
-
     m_processHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Threats"))
   {
     Aws::Utils::Array<JsonView> threatsJsonList = jsonValue.GetArray("Threats");
@@ -287,7 +184,6 @@ AwsSecurityFinding& AwsSecurityFinding::operator =(JsonView jsonValue)
     }
     m_threatsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ThreatIntelIndicators"))
   {
     Aws::Utils::Array<JsonView> threatIntelIndicatorsJsonList = jsonValue.GetArray("ThreatIntelIndicators");
@@ -297,7 +193,6 @@ AwsSecurityFinding& AwsSecurityFinding::operator =(JsonView jsonValue)
     }
     m_threatIntelIndicatorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Resources"))
   {
     Aws::Utils::Array<JsonView> resourcesJsonList = jsonValue.GetArray("Resources");
@@ -307,42 +202,31 @@ AwsSecurityFinding& AwsSecurityFinding::operator =(JsonView jsonValue)
     }
     m_resourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Compliance"))
   {
     m_compliance = jsonValue.GetObject("Compliance");
-
     m_complianceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VerificationState"))
   {
     m_verificationState = VerificationStateMapper::GetVerificationStateForName(jsonValue.GetString("VerificationState"));
-
     m_verificationStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkflowState"))
   {
     m_workflowState = WorkflowStateMapper::GetWorkflowStateForName(jsonValue.GetString("WorkflowState"));
-
     m_workflowStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Workflow"))
   {
     m_workflow = jsonValue.GetObject("Workflow");
-
     m_workflowHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecordState"))
   {
     m_recordState = RecordStateMapper::GetRecordStateForName(jsonValue.GetString("RecordState"));
-
     m_recordStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RelatedFindings"))
   {
     Aws::Utils::Array<JsonView> relatedFindingsJsonList = jsonValue.GetArray("RelatedFindings");
@@ -352,14 +236,11 @@ AwsSecurityFinding& AwsSecurityFinding::operator =(JsonView jsonValue)
     }
     m_relatedFindingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Note"))
   {
     m_note = jsonValue.GetObject("Note");
-
     m_noteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Vulnerabilities"))
   {
     Aws::Utils::Array<JsonView> vulnerabilitiesJsonList = jsonValue.GetArray("Vulnerabilities");
@@ -369,63 +250,46 @@ AwsSecurityFinding& AwsSecurityFinding::operator =(JsonView jsonValue)
     }
     m_vulnerabilitiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PatchSummary"))
   {
     m_patchSummary = jsonValue.GetObject("PatchSummary");
-
     m_patchSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Action"))
   {
     m_action = jsonValue.GetObject("Action");
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FindingProviderFields"))
   {
     m_findingProviderFields = jsonValue.GetObject("FindingProviderFields");
-
     m_findingProviderFieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Sample"))
   {
     m_sample = jsonValue.GetBool("Sample");
-
     m_sampleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GeneratorDetails"))
   {
     m_generatorDetails = jsonValue.GetObject("GeneratorDetails");
-
     m_generatorDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProcessedAt"))
   {
     m_processedAt = jsonValue.GetString("ProcessedAt");
-
     m_processedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AwsAccountName"))
   {
     m_awsAccountName = jsonValue.GetString("AwsAccountName");
-
     m_awsAccountNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Detection"))
   {
     m_detection = jsonValue.GetObject("Detection");
-
     m_detectionHasBeenSet = true;
   }
-
   return *this;
 }
 

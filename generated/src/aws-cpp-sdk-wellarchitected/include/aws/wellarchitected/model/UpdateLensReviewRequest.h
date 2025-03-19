@@ -26,7 +26,7 @@ namespace Model
   class UpdateLensReviewRequest : public WellArchitectedRequest
   {
   public:
-    AWS_WELLARCHITECTED_API UpdateLensReviewRequest();
+    AWS_WELLARCHITECTED_API UpdateLensReviewRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,67 +39,58 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetWorkloadId() const{ return m_workloadId; }
+    inline const Aws::String& GetWorkloadId() const { return m_workloadId; }
     inline bool WorkloadIdHasBeenSet() const { return m_workloadIdHasBeenSet; }
-    inline void SetWorkloadId(const Aws::String& value) { m_workloadIdHasBeenSet = true; m_workloadId = value; }
-    inline void SetWorkloadId(Aws::String&& value) { m_workloadIdHasBeenSet = true; m_workloadId = std::move(value); }
-    inline void SetWorkloadId(const char* value) { m_workloadIdHasBeenSet = true; m_workloadId.assign(value); }
-    inline UpdateLensReviewRequest& WithWorkloadId(const Aws::String& value) { SetWorkloadId(value); return *this;}
-    inline UpdateLensReviewRequest& WithWorkloadId(Aws::String&& value) { SetWorkloadId(std::move(value)); return *this;}
-    inline UpdateLensReviewRequest& WithWorkloadId(const char* value) { SetWorkloadId(value); return *this;}
+    template<typename WorkloadIdT = Aws::String>
+    void SetWorkloadId(WorkloadIdT&& value) { m_workloadIdHasBeenSet = true; m_workloadId = std::forward<WorkloadIdT>(value); }
+    template<typename WorkloadIdT = Aws::String>
+    UpdateLensReviewRequest& WithWorkloadId(WorkloadIdT&& value) { SetWorkloadId(std::forward<WorkloadIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetLensAlias() const{ return m_lensAlias; }
+    inline const Aws::String& GetLensAlias() const { return m_lensAlias; }
     inline bool LensAliasHasBeenSet() const { return m_lensAliasHasBeenSet; }
-    inline void SetLensAlias(const Aws::String& value) { m_lensAliasHasBeenSet = true; m_lensAlias = value; }
-    inline void SetLensAlias(Aws::String&& value) { m_lensAliasHasBeenSet = true; m_lensAlias = std::move(value); }
-    inline void SetLensAlias(const char* value) { m_lensAliasHasBeenSet = true; m_lensAlias.assign(value); }
-    inline UpdateLensReviewRequest& WithLensAlias(const Aws::String& value) { SetLensAlias(value); return *this;}
-    inline UpdateLensReviewRequest& WithLensAlias(Aws::String&& value) { SetLensAlias(std::move(value)); return *this;}
-    inline UpdateLensReviewRequest& WithLensAlias(const char* value) { SetLensAlias(value); return *this;}
+    template<typename LensAliasT = Aws::String>
+    void SetLensAlias(LensAliasT&& value) { m_lensAliasHasBeenSet = true; m_lensAlias = std::forward<LensAliasT>(value); }
+    template<typename LensAliasT = Aws::String>
+    UpdateLensReviewRequest& WithLensAlias(LensAliasT&& value) { SetLensAlias(std::forward<LensAliasT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetLensNotes() const{ return m_lensNotes; }
+    inline const Aws::String& GetLensNotes() const { return m_lensNotes; }
     inline bool LensNotesHasBeenSet() const { return m_lensNotesHasBeenSet; }
-    inline void SetLensNotes(const Aws::String& value) { m_lensNotesHasBeenSet = true; m_lensNotes = value; }
-    inline void SetLensNotes(Aws::String&& value) { m_lensNotesHasBeenSet = true; m_lensNotes = std::move(value); }
-    inline void SetLensNotes(const char* value) { m_lensNotesHasBeenSet = true; m_lensNotes.assign(value); }
-    inline UpdateLensReviewRequest& WithLensNotes(const Aws::String& value) { SetLensNotes(value); return *this;}
-    inline UpdateLensReviewRequest& WithLensNotes(Aws::String&& value) { SetLensNotes(std::move(value)); return *this;}
-    inline UpdateLensReviewRequest& WithLensNotes(const char* value) { SetLensNotes(value); return *this;}
+    template<typename LensNotesT = Aws::String>
+    void SetLensNotes(LensNotesT&& value) { m_lensNotesHasBeenSet = true; m_lensNotes = std::forward<LensNotesT>(value); }
+    template<typename LensNotesT = Aws::String>
+    UpdateLensReviewRequest& WithLensNotes(LensNotesT&& value) { SetLensNotes(std::forward<LensNotesT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Map<Aws::String, Aws::String>& GetPillarNotes() const{ return m_pillarNotes; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetPillarNotes() const { return m_pillarNotes; }
     inline bool PillarNotesHasBeenSet() const { return m_pillarNotesHasBeenSet; }
-    inline void SetPillarNotes(const Aws::Map<Aws::String, Aws::String>& value) { m_pillarNotesHasBeenSet = true; m_pillarNotes = value; }
-    inline void SetPillarNotes(Aws::Map<Aws::String, Aws::String>&& value) { m_pillarNotesHasBeenSet = true; m_pillarNotes = std::move(value); }
-    inline UpdateLensReviewRequest& WithPillarNotes(const Aws::Map<Aws::String, Aws::String>& value) { SetPillarNotes(value); return *this;}
-    inline UpdateLensReviewRequest& WithPillarNotes(Aws::Map<Aws::String, Aws::String>&& value) { SetPillarNotes(std::move(value)); return *this;}
-    inline UpdateLensReviewRequest& AddPillarNotes(const Aws::String& key, const Aws::String& value) { m_pillarNotesHasBeenSet = true; m_pillarNotes.emplace(key, value); return *this; }
-    inline UpdateLensReviewRequest& AddPillarNotes(Aws::String&& key, const Aws::String& value) { m_pillarNotesHasBeenSet = true; m_pillarNotes.emplace(std::move(key), value); return *this; }
-    inline UpdateLensReviewRequest& AddPillarNotes(const Aws::String& key, Aws::String&& value) { m_pillarNotesHasBeenSet = true; m_pillarNotes.emplace(key, std::move(value)); return *this; }
-    inline UpdateLensReviewRequest& AddPillarNotes(Aws::String&& key, Aws::String&& value) { m_pillarNotesHasBeenSet = true; m_pillarNotes.emplace(std::move(key), std::move(value)); return *this; }
-    inline UpdateLensReviewRequest& AddPillarNotes(const char* key, Aws::String&& value) { m_pillarNotesHasBeenSet = true; m_pillarNotes.emplace(key, std::move(value)); return *this; }
-    inline UpdateLensReviewRequest& AddPillarNotes(Aws::String&& key, const char* value) { m_pillarNotesHasBeenSet = true; m_pillarNotes.emplace(std::move(key), value); return *this; }
-    inline UpdateLensReviewRequest& AddPillarNotes(const char* key, const char* value) { m_pillarNotesHasBeenSet = true; m_pillarNotes.emplace(key, value); return *this; }
+    template<typename PillarNotesT = Aws::Map<Aws::String, Aws::String>>
+    void SetPillarNotes(PillarNotesT&& value) { m_pillarNotesHasBeenSet = true; m_pillarNotes = std::forward<PillarNotesT>(value); }
+    template<typename PillarNotesT = Aws::Map<Aws::String, Aws::String>>
+    UpdateLensReviewRequest& WithPillarNotes(PillarNotesT&& value) { SetPillarNotes(std::forward<PillarNotesT>(value)); return *this;}
+    template<typename PillarNotesKeyT = Aws::String, typename PillarNotesValueT = Aws::String>
+    UpdateLensReviewRequest& AddPillarNotes(PillarNotesKeyT&& key, PillarNotesValueT&& value) {
+      m_pillarNotesHasBeenSet = true; m_pillarNotes.emplace(std::forward<PillarNotesKeyT>(key), std::forward<PillarNotesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>Configuration of the Jira integration.</p>
      */
-    inline const JiraSelectedQuestionConfiguration& GetJiraConfiguration() const{ return m_jiraConfiguration; }
+    inline const JiraSelectedQuestionConfiguration& GetJiraConfiguration() const { return m_jiraConfiguration; }
     inline bool JiraConfigurationHasBeenSet() const { return m_jiraConfigurationHasBeenSet; }
-    inline void SetJiraConfiguration(const JiraSelectedQuestionConfiguration& value) { m_jiraConfigurationHasBeenSet = true; m_jiraConfiguration = value; }
-    inline void SetJiraConfiguration(JiraSelectedQuestionConfiguration&& value) { m_jiraConfigurationHasBeenSet = true; m_jiraConfiguration = std::move(value); }
-    inline UpdateLensReviewRequest& WithJiraConfiguration(const JiraSelectedQuestionConfiguration& value) { SetJiraConfiguration(value); return *this;}
-    inline UpdateLensReviewRequest& WithJiraConfiguration(JiraSelectedQuestionConfiguration&& value) { SetJiraConfiguration(std::move(value)); return *this;}
+    template<typename JiraConfigurationT = JiraSelectedQuestionConfiguration>
+    void SetJiraConfiguration(JiraConfigurationT&& value) { m_jiraConfigurationHasBeenSet = true; m_jiraConfiguration = std::forward<JiraConfigurationT>(value); }
+    template<typename JiraConfigurationT = JiraSelectedQuestionConfiguration>
+    UpdateLensReviewRequest& WithJiraConfiguration(JiraConfigurationT&& value) { SetJiraConfiguration(std::forward<JiraConfigurationT>(value)); return *this;}
     ///@}
   private:
 

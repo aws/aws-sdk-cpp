@@ -28,7 +28,7 @@ namespace Model
   class UpdateLaunchResult
   {
   public:
-    AWS_CLOUDWATCHEVIDENTLY_API UpdateLaunchResult();
+    AWS_CLOUDWATCHEVIDENTLY_API UpdateLaunchResult() = default;
     AWS_CLOUDWATCHEVIDENTLY_API UpdateLaunchResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDWATCHEVIDENTLY_API UpdateLaunchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>A structure that contains the new configuration of the launch that was
      * updated.</p>
      */
-    inline const Launch& GetLaunch() const{ return m_launch; }
-    inline void SetLaunch(const Launch& value) { m_launch = value; }
-    inline void SetLaunch(Launch&& value) { m_launch = std::move(value); }
-    inline UpdateLaunchResult& WithLaunch(const Launch& value) { SetLaunch(value); return *this;}
-    inline UpdateLaunchResult& WithLaunch(Launch&& value) { SetLaunch(std::move(value)); return *this;}
+    inline const Launch& GetLaunch() const { return m_launch; }
+    template<typename LaunchT = Launch>
+    void SetLaunch(LaunchT&& value) { m_launchHasBeenSet = true; m_launch = std::forward<LaunchT>(value); }
+    template<typename LaunchT = Launch>
+    UpdateLaunchResult& WithLaunch(LaunchT&& value) { SetLaunch(std::forward<LaunchT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateLaunchResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateLaunchResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateLaunchResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateLaunchResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Launch m_launch;
+    bool m_launchHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,28 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutAlarmRequest::PutAlarmRequest() : 
-    m_alarmNameHasBeenSet(false),
-    m_metricName(MetricName::NOT_SET),
-    m_metricNameHasBeenSet(false),
-    m_monitoredResourceNameHasBeenSet(false),
-    m_comparisonOperator(ComparisonOperator::NOT_SET),
-    m_comparisonOperatorHasBeenSet(false),
-    m_threshold(0.0),
-    m_thresholdHasBeenSet(false),
-    m_evaluationPeriods(0),
-    m_evaluationPeriodsHasBeenSet(false),
-    m_datapointsToAlarm(0),
-    m_datapointsToAlarmHasBeenSet(false),
-    m_treatMissingData(TreatMissingData::NOT_SET),
-    m_treatMissingDataHasBeenSet(false),
-    m_contactProtocolsHasBeenSet(false),
-    m_notificationTriggersHasBeenSet(false),
-    m_notificationEnabled(false),
-    m_notificationEnabledHasBeenSet(false)
-{
-}
-
 Aws::String PutAlarmRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -30,7 +30,7 @@ namespace Model
   class RateIncreaseCriteria
   {
   public:
-    AWS_IOT_API RateIncreaseCriteria();
+    AWS_IOT_API RateIncreaseCriteria() = default;
     AWS_IOT_API RateIncreaseCriteria(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API RateIncreaseCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
      * <p>The threshold for number of notified things that will initiate the increase
      * in rate of rollout.</p>
      */
-    inline int GetNumberOfNotifiedThings() const{ return m_numberOfNotifiedThings; }
+    inline int GetNumberOfNotifiedThings() const { return m_numberOfNotifiedThings; }
     inline bool NumberOfNotifiedThingsHasBeenSet() const { return m_numberOfNotifiedThingsHasBeenSet; }
     inline void SetNumberOfNotifiedThings(int value) { m_numberOfNotifiedThingsHasBeenSet = true; m_numberOfNotifiedThings = value; }
     inline RateIncreaseCriteria& WithNumberOfNotifiedThings(int value) { SetNumberOfNotifiedThings(value); return *this;}
@@ -52,17 +52,17 @@ namespace Model
      * <p>The threshold for number of succeeded things that will initiate the increase
      * in rate of rollout.</p>
      */
-    inline int GetNumberOfSucceededThings() const{ return m_numberOfSucceededThings; }
+    inline int GetNumberOfSucceededThings() const { return m_numberOfSucceededThings; }
     inline bool NumberOfSucceededThingsHasBeenSet() const { return m_numberOfSucceededThingsHasBeenSet; }
     inline void SetNumberOfSucceededThings(int value) { m_numberOfSucceededThingsHasBeenSet = true; m_numberOfSucceededThings = value; }
     inline RateIncreaseCriteria& WithNumberOfSucceededThings(int value) { SetNumberOfSucceededThings(value); return *this;}
     ///@}
   private:
 
-    int m_numberOfNotifiedThings;
+    int m_numberOfNotifiedThings{0};
     bool m_numberOfNotifiedThingsHasBeenSet = false;
 
-    int m_numberOfSucceededThings;
+    int m_numberOfSucceededThings{0};
     bool m_numberOfSucceededThingsHasBeenSet = false;
   };
 

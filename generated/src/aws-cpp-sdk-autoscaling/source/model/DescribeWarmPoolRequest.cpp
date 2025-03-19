@@ -10,14 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-DescribeWarmPoolRequest::DescribeWarmPoolRequest() : 
-    m_autoScalingGroupNameHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeWarmPoolRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -18,16 +18,7 @@ namespace Panorama
 namespace Model
 {
 
-PackageVersionOutputConfig::PackageVersionOutputConfig() : 
-    m_markLatest(false),
-    m_markLatestHasBeenSet(false),
-    m_packageNameHasBeenSet(false),
-    m_packageVersionHasBeenSet(false)
-{
-}
-
 PackageVersionOutputConfig::PackageVersionOutputConfig(JsonView jsonValue)
-  : PackageVersionOutputConfig()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ PackageVersionOutputConfig& PackageVersionOutputConfig::operator =(JsonView json
   if(jsonValue.ValueExists("MarkLatest"))
   {
     m_markLatest = jsonValue.GetBool("MarkLatest");
-
     m_markLatestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PackageName"))
   {
     m_packageName = jsonValue.GetString("PackageName");
-
     m_packageNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PackageVersion"))
   {
     m_packageVersion = jsonValue.GetString("PackageVersion");
-
     m_packageVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

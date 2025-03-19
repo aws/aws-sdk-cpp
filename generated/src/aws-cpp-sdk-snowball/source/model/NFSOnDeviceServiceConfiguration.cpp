@@ -18,16 +18,7 @@ namespace Snowball
 namespace Model
 {
 
-NFSOnDeviceServiceConfiguration::NFSOnDeviceServiceConfiguration() : 
-    m_storageLimit(0),
-    m_storageLimitHasBeenSet(false),
-    m_storageUnit(StorageUnit::NOT_SET),
-    m_storageUnitHasBeenSet(false)
-{
-}
-
 NFSOnDeviceServiceConfiguration::NFSOnDeviceServiceConfiguration(JsonView jsonValue)
-  : NFSOnDeviceServiceConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ NFSOnDeviceServiceConfiguration& NFSOnDeviceServiceConfiguration::operator =(Jso
   if(jsonValue.ValueExists("StorageLimit"))
   {
     m_storageLimit = jsonValue.GetInteger("StorageLimit");
-
     m_storageLimitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StorageUnit"))
   {
     m_storageUnit = StorageUnitMapper::GetStorageUnitForName(jsonValue.GetString("StorageUnit"));
-
     m_storageUnitHasBeenSet = true;
   }
-
   return *this;
 }
 

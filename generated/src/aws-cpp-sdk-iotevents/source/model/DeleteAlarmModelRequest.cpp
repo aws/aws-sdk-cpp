@@ -12,11 +12,6 @@ using namespace Aws::IoTEvents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAlarmModelRequest::DeleteAlarmModelRequest() : 
-    m_alarmModelNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAlarmModelRequest::SerializePayload() const
 {
   return {};

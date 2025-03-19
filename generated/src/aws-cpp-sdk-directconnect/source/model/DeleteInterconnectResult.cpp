@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteInterconnectResult::DeleteInterconnectResult() : 
-    m_interconnectState(InterconnectState::NOT_SET)
-{
-}
-
 DeleteInterconnectResult::DeleteInterconnectResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteInterconnectResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ DeleteInterconnectResult& DeleteInterconnectResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("interconnectState"))
   {
     m_interconnectState = InterconnectStateMapper::GetInterconnectStateForName(jsonValue.GetString("interconnectState"));
-
+    m_interconnectStateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

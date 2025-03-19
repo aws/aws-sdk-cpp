@@ -18,19 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-ReplicaSettingsUpdate::ReplicaSettingsUpdate() : 
-    m_regionNameHasBeenSet(false),
-    m_replicaProvisionedReadCapacityUnits(0),
-    m_replicaProvisionedReadCapacityUnitsHasBeenSet(false),
-    m_replicaProvisionedReadCapacityAutoScalingSettingsUpdateHasBeenSet(false),
-    m_replicaGlobalSecondaryIndexSettingsUpdateHasBeenSet(false),
-    m_replicaTableClass(TableClass::NOT_SET),
-    m_replicaTableClassHasBeenSet(false)
-{
-}
-
 ReplicaSettingsUpdate::ReplicaSettingsUpdate(JsonView jsonValue)
-  : ReplicaSettingsUpdate()
 {
   *this = jsonValue;
 }
@@ -40,24 +28,18 @@ ReplicaSettingsUpdate& ReplicaSettingsUpdate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RegionName"))
   {
     m_regionName = jsonValue.GetString("RegionName");
-
     m_regionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicaProvisionedReadCapacityUnits"))
   {
     m_replicaProvisionedReadCapacityUnits = jsonValue.GetInt64("ReplicaProvisionedReadCapacityUnits");
-
     m_replicaProvisionedReadCapacityUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicaProvisionedReadCapacityAutoScalingSettingsUpdate"))
   {
     m_replicaProvisionedReadCapacityAutoScalingSettingsUpdate = jsonValue.GetObject("ReplicaProvisionedReadCapacityAutoScalingSettingsUpdate");
-
     m_replicaProvisionedReadCapacityAutoScalingSettingsUpdateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicaGlobalSecondaryIndexSettingsUpdate"))
   {
     Aws::Utils::Array<JsonView> replicaGlobalSecondaryIndexSettingsUpdateJsonList = jsonValue.GetArray("ReplicaGlobalSecondaryIndexSettingsUpdate");
@@ -67,14 +49,11 @@ ReplicaSettingsUpdate& ReplicaSettingsUpdate::operator =(JsonView jsonValue)
     }
     m_replicaGlobalSecondaryIndexSettingsUpdateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicaTableClass"))
   {
     m_replicaTableClass = TableClassMapper::GetTableClassForName(jsonValue.GetString("ReplicaTableClass"));
-
     m_replicaTableClassHasBeenSet = true;
   }
-
   return *this;
 }
 

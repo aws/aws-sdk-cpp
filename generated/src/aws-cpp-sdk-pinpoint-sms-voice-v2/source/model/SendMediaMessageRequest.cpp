@@ -12,24 +12,6 @@ using namespace Aws::PinpointSMSVoiceV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SendMediaMessageRequest::SendMediaMessageRequest() : 
-    m_destinationPhoneNumberHasBeenSet(false),
-    m_originationIdentityHasBeenSet(false),
-    m_messageBodyHasBeenSet(false),
-    m_mediaUrlsHasBeenSet(false),
-    m_configurationSetNameHasBeenSet(false),
-    m_maxPriceHasBeenSet(false),
-    m_timeToLive(0),
-    m_timeToLiveHasBeenSet(false),
-    m_contextHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_protectConfigurationIdHasBeenSet(false),
-    m_messageFeedbackEnabled(false),
-    m_messageFeedbackEnabledHasBeenSet(false)
-{
-}
-
 Aws::String SendMediaMessageRequest::SerializePayload() const
 {
   JsonValue payload;

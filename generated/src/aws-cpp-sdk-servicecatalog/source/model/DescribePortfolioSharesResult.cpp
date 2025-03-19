@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribePortfolioSharesResult::DescribePortfolioSharesResult()
-{
-}
-
 DescribePortfolioSharesResult::DescribePortfolioSharesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DescribePortfolioSharesResult& DescribePortfolioSharesResult::operator =(const A
   if(jsonValue.ValueExists("NextPageToken"))
   {
     m_nextPageToken = jsonValue.GetString("NextPageToken");
-
+    m_nextPageTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PortfolioShareDetails"))
   {
     Aws::Utils::Array<JsonView> portfolioShareDetailsJsonList = jsonValue.GetArray("PortfolioShareDetails");
@@ -42,14 +37,15 @@ DescribePortfolioSharesResult& DescribePortfolioSharesResult::operator =(const A
     {
       m_portfolioShareDetails.push_back(portfolioShareDetailsJsonList[portfolioShareDetailsIndex].AsObject());
     }
+    m_portfolioShareDetailsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

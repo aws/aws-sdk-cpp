@@ -12,16 +12,6 @@ using namespace Aws::Personalize::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDatasetGroupRequest::CreateDatasetGroupRequest() : 
-    m_nameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false),
-    m_domain(Domain::NOT_SET),
-    m_domainHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateDatasetGroupRequest::SerializePayload() const
 {
   JsonValue payload;

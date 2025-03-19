@@ -18,16 +18,7 @@ namespace PaymentCryptographyData
 namespace Model
 {
 
-SessionKeyMastercard::SessionKeyMastercard() : 
-    m_primaryAccountNumberHasBeenSet(false),
-    m_panSequenceNumberHasBeenSet(false),
-    m_applicationTransactionCounterHasBeenSet(false),
-    m_unpredictableNumberHasBeenSet(false)
-{
-}
-
 SessionKeyMastercard::SessionKeyMastercard(JsonView jsonValue)
-  : SessionKeyMastercard()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ SessionKeyMastercard& SessionKeyMastercard::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PrimaryAccountNumber"))
   {
     m_primaryAccountNumber = jsonValue.GetString("PrimaryAccountNumber");
-
     m_primaryAccountNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PanSequenceNumber"))
   {
     m_panSequenceNumber = jsonValue.GetString("PanSequenceNumber");
-
     m_panSequenceNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationTransactionCounter"))
   {
     m_applicationTransactionCounter = jsonValue.GetString("ApplicationTransactionCounter");
-
     m_applicationTransactionCounterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UnpredictableNumber"))
   {
     m_unpredictableNumber = jsonValue.GetString("UnpredictableNumber");
-
     m_unpredictableNumberHasBeenSet = true;
   }
-
   return *this;
 }
 

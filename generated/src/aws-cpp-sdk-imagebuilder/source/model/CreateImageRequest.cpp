@@ -12,23 +12,6 @@ using namespace Aws::imagebuilder::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateImageRequest::CreateImageRequest() : 
-    m_imageRecipeArnHasBeenSet(false),
-    m_containerRecipeArnHasBeenSet(false),
-    m_distributionConfigurationArnHasBeenSet(false),
-    m_infrastructureConfigurationArnHasBeenSet(false),
-    m_imageTestsConfigurationHasBeenSet(false),
-    m_enhancedImageMetadataEnabled(false),
-    m_enhancedImageMetadataEnabledHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_imageScanningConfigurationHasBeenSet(false),
-    m_workflowsHasBeenSet(false),
-    m_executionRoleHasBeenSet(false)
-{
-}
-
 Aws::String CreateImageRequest::SerializePayload() const
 {
   JsonValue payload;

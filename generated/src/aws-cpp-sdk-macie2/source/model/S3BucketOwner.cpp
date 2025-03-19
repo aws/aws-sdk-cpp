@@ -18,14 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-S3BucketOwner::S3BucketOwner() : 
-    m_displayNameHasBeenSet(false),
-    m_idHasBeenSet(false)
-{
-}
-
 S3BucketOwner::S3BucketOwner(JsonView jsonValue)
-  : S3BucketOwner()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ S3BucketOwner& S3BucketOwner::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("displayName"))
   {
     m_displayName = jsonValue.GetString("displayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   return *this;
 }
 

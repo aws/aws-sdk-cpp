@@ -18,15 +18,7 @@ namespace ServiceDiscovery
 namespace Model
 {
 
-ServiceAlreadyExists::ServiceAlreadyExists() : 
-    m_messageHasBeenSet(false),
-    m_creatorRequestIdHasBeenSet(false),
-    m_serviceIdHasBeenSet(false)
-{
-}
-
 ServiceAlreadyExists::ServiceAlreadyExists(JsonView jsonValue)
-  : ServiceAlreadyExists()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ServiceAlreadyExists& ServiceAlreadyExists::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatorRequestId"))
   {
     m_creatorRequestId = jsonValue.GetString("CreatorRequestId");
-
     m_creatorRequestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceId"))
   {
     m_serviceId = jsonValue.GetString("ServiceId");
-
     m_serviceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

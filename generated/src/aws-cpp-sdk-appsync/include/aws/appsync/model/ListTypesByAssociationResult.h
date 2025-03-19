@@ -29,7 +29,7 @@ namespace Model
   class ListTypesByAssociationResult
   {
   public:
-    AWS_APPSYNC_API ListTypesByAssociationResult();
+    AWS_APPSYNC_API ListTypesByAssociationResult() = default;
     AWS_APPSYNC_API ListTypesByAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPSYNC_API ListTypesByAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The <code>Type</code> objects.</p>
      */
-    inline const Aws::Vector<Type>& GetTypes() const{ return m_types; }
-    inline void SetTypes(const Aws::Vector<Type>& value) { m_types = value; }
-    inline void SetTypes(Aws::Vector<Type>&& value) { m_types = std::move(value); }
-    inline ListTypesByAssociationResult& WithTypes(const Aws::Vector<Type>& value) { SetTypes(value); return *this;}
-    inline ListTypesByAssociationResult& WithTypes(Aws::Vector<Type>&& value) { SetTypes(std::move(value)); return *this;}
-    inline ListTypesByAssociationResult& AddTypes(const Type& value) { m_types.push_back(value); return *this; }
-    inline ListTypesByAssociationResult& AddTypes(Type&& value) { m_types.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Type>& GetTypes() const { return m_types; }
+    template<typename TypesT = Aws::Vector<Type>>
+    void SetTypes(TypesT&& value) { m_typesHasBeenSet = true; m_types = std::forward<TypesT>(value); }
+    template<typename TypesT = Aws::Vector<Type>>
+    ListTypesByAssociationResult& WithTypes(TypesT&& value) { SetTypes(std::forward<TypesT>(value)); return *this;}
+    template<typename TypesT = Type>
+    ListTypesByAssociationResult& AddTypes(TypesT&& value) { m_typesHasBeenSet = true; m_types.emplace_back(std::forward<TypesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>An identifier that was returned from the previous call to this operation,
      * which you can use to return the next set of items in the list.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListTypesByAssociationResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListTypesByAssociationResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListTypesByAssociationResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListTypesByAssociationResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListTypesByAssociationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListTypesByAssociationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListTypesByAssociationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListTypesByAssociationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Type> m_types;
+    bool m_typesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

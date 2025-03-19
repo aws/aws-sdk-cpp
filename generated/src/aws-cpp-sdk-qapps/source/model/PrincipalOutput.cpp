@@ -18,16 +18,7 @@ namespace QApps
 namespace Model
 {
 
-PrincipalOutput::PrincipalOutput() : 
-    m_userIdHasBeenSet(false),
-    m_userType(PrincipalOutputUserTypeEnum::NOT_SET),
-    m_userTypeHasBeenSet(false),
-    m_emailHasBeenSet(false)
-{
-}
-
 PrincipalOutput::PrincipalOutput(JsonView jsonValue)
-  : PrincipalOutput()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ PrincipalOutput& PrincipalOutput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("userId"))
   {
     m_userId = jsonValue.GetString("userId");
-
     m_userIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userType"))
   {
     m_userType = PrincipalOutputUserTypeEnumMapper::GetPrincipalOutputUserTypeEnumForName(jsonValue.GetString("userType"));
-
     m_userTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("email"))
   {
     m_email = jsonValue.GetString("email");
-
     m_emailHasBeenSet = true;
   }
-
   return *this;
 }
 

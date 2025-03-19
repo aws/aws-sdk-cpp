@@ -33,7 +33,7 @@ namespace Model
   class WaypointOptimizationImpedingWaypoint
   {
   public:
-    AWS_GEOROUTES_API WaypointOptimizationImpedingWaypoint();
+    AWS_GEOROUTES_API WaypointOptimizationImpedingWaypoint() = default;
     AWS_GEOROUTES_API WaypointOptimizationImpedingWaypoint(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API WaypointOptimizationImpedingWaypoint& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,40 +43,38 @@ namespace Model
     /**
      * <p>Failed constraints for an impeding waypoint.</p>
      */
-    inline const Aws::Vector<WaypointOptimizationFailedConstraint>& GetFailedConstraints() const{ return m_failedConstraints; }
+    inline const Aws::Vector<WaypointOptimizationFailedConstraint>& GetFailedConstraints() const { return m_failedConstraints; }
     inline bool FailedConstraintsHasBeenSet() const { return m_failedConstraintsHasBeenSet; }
-    inline void SetFailedConstraints(const Aws::Vector<WaypointOptimizationFailedConstraint>& value) { m_failedConstraintsHasBeenSet = true; m_failedConstraints = value; }
-    inline void SetFailedConstraints(Aws::Vector<WaypointOptimizationFailedConstraint>&& value) { m_failedConstraintsHasBeenSet = true; m_failedConstraints = std::move(value); }
-    inline WaypointOptimizationImpedingWaypoint& WithFailedConstraints(const Aws::Vector<WaypointOptimizationFailedConstraint>& value) { SetFailedConstraints(value); return *this;}
-    inline WaypointOptimizationImpedingWaypoint& WithFailedConstraints(Aws::Vector<WaypointOptimizationFailedConstraint>&& value) { SetFailedConstraints(std::move(value)); return *this;}
-    inline WaypointOptimizationImpedingWaypoint& AddFailedConstraints(const WaypointOptimizationFailedConstraint& value) { m_failedConstraintsHasBeenSet = true; m_failedConstraints.push_back(value); return *this; }
-    inline WaypointOptimizationImpedingWaypoint& AddFailedConstraints(WaypointOptimizationFailedConstraint&& value) { m_failedConstraintsHasBeenSet = true; m_failedConstraints.push_back(std::move(value)); return *this; }
+    template<typename FailedConstraintsT = Aws::Vector<WaypointOptimizationFailedConstraint>>
+    void SetFailedConstraints(FailedConstraintsT&& value) { m_failedConstraintsHasBeenSet = true; m_failedConstraints = std::forward<FailedConstraintsT>(value); }
+    template<typename FailedConstraintsT = Aws::Vector<WaypointOptimizationFailedConstraint>>
+    WaypointOptimizationImpedingWaypoint& WithFailedConstraints(FailedConstraintsT&& value) { SetFailedConstraints(std::forward<FailedConstraintsT>(value)); return *this;}
+    template<typename FailedConstraintsT = WaypointOptimizationFailedConstraint>
+    WaypointOptimizationImpedingWaypoint& AddFailedConstraints(FailedConstraintsT&& value) { m_failedConstraintsHasBeenSet = true; m_failedConstraints.emplace_back(std::forward<FailedConstraintsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The waypoint Id.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline WaypointOptimizationImpedingWaypoint& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline WaypointOptimizationImpedingWaypoint& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline WaypointOptimizationImpedingWaypoint& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    WaypointOptimizationImpedingWaypoint& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Position defined as <code>[longitude, latitude]</code>.</p>
      */
-    inline const Aws::Vector<double>& GetPosition() const{ return m_position; }
+    inline const Aws::Vector<double>& GetPosition() const { return m_position; }
     inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
-    inline void SetPosition(const Aws::Vector<double>& value) { m_positionHasBeenSet = true; m_position = value; }
-    inline void SetPosition(Aws::Vector<double>&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
-    inline WaypointOptimizationImpedingWaypoint& WithPosition(const Aws::Vector<double>& value) { SetPosition(value); return *this;}
-    inline WaypointOptimizationImpedingWaypoint& WithPosition(Aws::Vector<double>&& value) { SetPosition(std::move(value)); return *this;}
+    template<typename PositionT = Aws::Vector<double>>
+    void SetPosition(PositionT&& value) { m_positionHasBeenSet = true; m_position = std::forward<PositionT>(value); }
+    template<typename PositionT = Aws::Vector<double>>
+    WaypointOptimizationImpedingWaypoint& WithPosition(PositionT&& value) { SetPosition(std::forward<PositionT>(value)); return *this;}
     inline WaypointOptimizationImpedingWaypoint& AddPosition(double value) { m_positionHasBeenSet = true; m_position.push_back(value); return *this; }
     ///@}
   private:

@@ -18,14 +18,7 @@ namespace AmplifyUIBuilder
 namespace Model
 {
 
-ValueMapping::ValueMapping() : 
-    m_displayValueHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 ValueMapping::ValueMapping(JsonView jsonValue)
-  : ValueMapping()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ValueMapping& ValueMapping::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("displayValue"))
   {
     m_displayValue = jsonValue.GetObject("displayValue");
-
     m_displayValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetObject("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

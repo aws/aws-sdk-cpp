@@ -29,7 +29,7 @@ namespace Model
   class GetKeyPairsResult
   {
   public:
-    AWS_LIGHTSAIL_API GetKeyPairsResult();
+    AWS_LIGHTSAIL_API GetKeyPairsResult() = default;
     AWS_LIGHTSAIL_API GetKeyPairsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LIGHTSAIL_API GetKeyPairsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>An array of key-value pairs containing information about the key pairs.</p>
      */
-    inline const Aws::Vector<KeyPair>& GetKeyPairs() const{ return m_keyPairs; }
-    inline void SetKeyPairs(const Aws::Vector<KeyPair>& value) { m_keyPairs = value; }
-    inline void SetKeyPairs(Aws::Vector<KeyPair>&& value) { m_keyPairs = std::move(value); }
-    inline GetKeyPairsResult& WithKeyPairs(const Aws::Vector<KeyPair>& value) { SetKeyPairs(value); return *this;}
-    inline GetKeyPairsResult& WithKeyPairs(Aws::Vector<KeyPair>&& value) { SetKeyPairs(std::move(value)); return *this;}
-    inline GetKeyPairsResult& AddKeyPairs(const KeyPair& value) { m_keyPairs.push_back(value); return *this; }
-    inline GetKeyPairsResult& AddKeyPairs(KeyPair&& value) { m_keyPairs.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<KeyPair>& GetKeyPairs() const { return m_keyPairs; }
+    template<typename KeyPairsT = Aws::Vector<KeyPair>>
+    void SetKeyPairs(KeyPairsT&& value) { m_keyPairsHasBeenSet = true; m_keyPairs = std::forward<KeyPairsT>(value); }
+    template<typename KeyPairsT = Aws::Vector<KeyPair>>
+    GetKeyPairsResult& WithKeyPairs(KeyPairsT&& value) { SetKeyPairs(std::forward<KeyPairsT>(value)); return *this;}
+    template<typename KeyPairsT = KeyPair>
+    GetKeyPairsResult& AddKeyPairs(KeyPairsT&& value) { m_keyPairsHasBeenSet = true; m_keyPairs.emplace_back(std::forward<KeyPairsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,32 +55,31 @@ namespace Model
      * request and specify the next page token using the <code>pageToken</code>
      * parameter.</p>
      */
-    inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
-    inline void SetNextPageToken(const Aws::String& value) { m_nextPageToken = value; }
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
-    inline void SetNextPageToken(const char* value) { m_nextPageToken.assign(value); }
-    inline GetKeyPairsResult& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
-    inline GetKeyPairsResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
-    inline GetKeyPairsResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
+    inline const Aws::String& GetNextPageToken() const { return m_nextPageToken; }
+    template<typename NextPageTokenT = Aws::String>
+    void SetNextPageToken(NextPageTokenT&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::forward<NextPageTokenT>(value); }
+    template<typename NextPageTokenT = Aws::String>
+    GetKeyPairsResult& WithNextPageToken(NextPageTokenT&& value) { SetNextPageToken(std::forward<NextPageTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetKeyPairsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetKeyPairsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetKeyPairsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetKeyPairsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<KeyPair> m_keyPairs;
+    bool m_keyPairsHasBeenSet = false;
 
     Aws::String m_nextPageToken;
+    bool m_nextPageTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

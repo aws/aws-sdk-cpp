@@ -21,7 +21,7 @@ namespace Model
   class StartProjectVersionRequest : public RekognitionRequest
   {
   public:
-    AWS_REKOGNITION_API StartProjectVersionRequest();
+    AWS_REKOGNITION_API StartProjectVersionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The Amazon Resource Name(ARN) of the model version that you want to
      * start.</p>
      */
-    inline const Aws::String& GetProjectVersionArn() const{ return m_projectVersionArn; }
+    inline const Aws::String& GetProjectVersionArn() const { return m_projectVersionArn; }
     inline bool ProjectVersionArnHasBeenSet() const { return m_projectVersionArnHasBeenSet; }
-    inline void SetProjectVersionArn(const Aws::String& value) { m_projectVersionArnHasBeenSet = true; m_projectVersionArn = value; }
-    inline void SetProjectVersionArn(Aws::String&& value) { m_projectVersionArnHasBeenSet = true; m_projectVersionArn = std::move(value); }
-    inline void SetProjectVersionArn(const char* value) { m_projectVersionArnHasBeenSet = true; m_projectVersionArn.assign(value); }
-    inline StartProjectVersionRequest& WithProjectVersionArn(const Aws::String& value) { SetProjectVersionArn(value); return *this;}
-    inline StartProjectVersionRequest& WithProjectVersionArn(Aws::String&& value) { SetProjectVersionArn(std::move(value)); return *this;}
-    inline StartProjectVersionRequest& WithProjectVersionArn(const char* value) { SetProjectVersionArn(value); return *this;}
+    template<typename ProjectVersionArnT = Aws::String>
+    void SetProjectVersionArn(ProjectVersionArnT&& value) { m_projectVersionArnHasBeenSet = true; m_projectVersionArn = std::forward<ProjectVersionArnT>(value); }
+    template<typename ProjectVersionArnT = Aws::String>
+    StartProjectVersionRequest& WithProjectVersionArn(ProjectVersionArnT&& value) { SetProjectVersionArn(std::forward<ProjectVersionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,7 +54,7 @@ namespace Model
      * throughput of your model. You are charged for the number of inference units that
      * you use. </p>
      */
-    inline int GetMinInferenceUnits() const{ return m_minInferenceUnits; }
+    inline int GetMinInferenceUnits() const { return m_minInferenceUnits; }
     inline bool MinInferenceUnitsHasBeenSet() const { return m_minInferenceUnitsHasBeenSet; }
     inline void SetMinInferenceUnits(int value) { m_minInferenceUnitsHasBeenSet = true; m_minInferenceUnits = value; }
     inline StartProjectVersionRequest& WithMinInferenceUnits(int value) { SetMinInferenceUnits(value); return *this;}
@@ -68,7 +66,7 @@ namespace Model
      * you don't specify a value, Amazon Rekognition Custom Labels doesn't auto-scale
      * the model.</p>
      */
-    inline int GetMaxInferenceUnits() const{ return m_maxInferenceUnits; }
+    inline int GetMaxInferenceUnits() const { return m_maxInferenceUnits; }
     inline bool MaxInferenceUnitsHasBeenSet() const { return m_maxInferenceUnitsHasBeenSet; }
     inline void SetMaxInferenceUnits(int value) { m_maxInferenceUnitsHasBeenSet = true; m_maxInferenceUnits = value; }
     inline StartProjectVersionRequest& WithMaxInferenceUnits(int value) { SetMaxInferenceUnits(value); return *this;}
@@ -78,10 +76,10 @@ namespace Model
     Aws::String m_projectVersionArn;
     bool m_projectVersionArnHasBeenSet = false;
 
-    int m_minInferenceUnits;
+    int m_minInferenceUnits{0};
     bool m_minInferenceUnitsHasBeenSet = false;
 
-    int m_maxInferenceUnits;
+    int m_maxInferenceUnits{0};
     bool m_maxInferenceUnitsHasBeenSet = false;
   };
 

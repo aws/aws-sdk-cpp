@@ -18,15 +18,7 @@ namespace AuditManager
 namespace Model
 {
 
-ManualEvidence::ManualEvidence() : 
-    m_s3ResourcePathHasBeenSet(false),
-    m_textResponseHasBeenSet(false),
-    m_evidenceFileNameHasBeenSet(false)
-{
-}
-
 ManualEvidence::ManualEvidence(JsonView jsonValue)
-  : ManualEvidence()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ManualEvidence& ManualEvidence::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3ResourcePath"))
   {
     m_s3ResourcePath = jsonValue.GetString("s3ResourcePath");
-
     m_s3ResourcePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("textResponse"))
   {
     m_textResponse = jsonValue.GetString("textResponse");
-
     m_textResponseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("evidenceFileName"))
   {
     m_evidenceFileName = jsonValue.GetString("evidenceFileName");
-
     m_evidenceFileNameHasBeenSet = true;
   }
-
   return *this;
 }
 

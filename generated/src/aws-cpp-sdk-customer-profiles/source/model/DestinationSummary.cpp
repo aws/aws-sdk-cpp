@@ -18,16 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-DestinationSummary::DestinationSummary() : 
-    m_uriHasBeenSet(false),
-    m_status(EventStreamDestinationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_unhealthySinceHasBeenSet(false)
-{
-}
-
 DestinationSummary::DestinationSummary(JsonView jsonValue)
-  : DestinationSummary()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ DestinationSummary& DestinationSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Uri"))
   {
     m_uri = jsonValue.GetString("Uri");
-
     m_uriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = EventStreamDestinationStatusMapper::GetEventStreamDestinationStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UnhealthySince"))
   {
     m_unhealthySince = jsonValue.GetDouble("UnhealthySince");
-
     m_unhealthySinceHasBeenSet = true;
   }
-
   return *this;
 }
 

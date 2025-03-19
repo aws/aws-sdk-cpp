@@ -12,17 +12,6 @@ using namespace Aws::AppRunner::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateServiceRequest::UpdateServiceRequest() : 
-    m_serviceArnHasBeenSet(false),
-    m_sourceConfigurationHasBeenSet(false),
-    m_instanceConfigurationHasBeenSet(false),
-    m_autoScalingConfigurationArnHasBeenSet(false),
-    m_healthCheckConfigurationHasBeenSet(false),
-    m_networkConfigurationHasBeenSet(false),
-    m_observabilityConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateServiceRequest::SerializePayload() const
 {
   JsonValue payload;

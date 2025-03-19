@@ -18,32 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-GcpMySQLSettings::GcpMySQLSettings() : 
-    m_afterConnectScriptHasBeenSet(false),
-    m_cleanSourceMetadataOnMismatch(false),
-    m_cleanSourceMetadataOnMismatchHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_eventsPollInterval(0),
-    m_eventsPollIntervalHasBeenSet(false),
-    m_targetDbType(TargetDbType::NOT_SET),
-    m_targetDbTypeHasBeenSet(false),
-    m_maxFileSize(0),
-    m_maxFileSizeHasBeenSet(false),
-    m_parallelLoadThreads(0),
-    m_parallelLoadThreadsHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_serverNameHasBeenSet(false),
-    m_serverTimezoneHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_secretsManagerAccessRoleArnHasBeenSet(false),
-    m_secretsManagerSecretIdHasBeenSet(false)
-{
-}
-
 GcpMySQLSettings::GcpMySQLSettings(JsonView jsonValue)
-  : GcpMySQLSettings()
 {
   *this = jsonValue;
 }
@@ -53,101 +28,73 @@ GcpMySQLSettings& GcpMySQLSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AfterConnectScript"))
   {
     m_afterConnectScript = jsonValue.GetString("AfterConnectScript");
-
     m_afterConnectScriptHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CleanSourceMetadataOnMismatch"))
   {
     m_cleanSourceMetadataOnMismatch = jsonValue.GetBool("CleanSourceMetadataOnMismatch");
-
     m_cleanSourceMetadataOnMismatchHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseName"))
   {
     m_databaseName = jsonValue.GetString("DatabaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventsPollInterval"))
   {
     m_eventsPollInterval = jsonValue.GetInteger("EventsPollInterval");
-
     m_eventsPollIntervalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetDbType"))
   {
     m_targetDbType = TargetDbTypeMapper::GetTargetDbTypeForName(jsonValue.GetString("TargetDbType"));
-
     m_targetDbTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxFileSize"))
   {
     m_maxFileSize = jsonValue.GetInteger("MaxFileSize");
-
     m_maxFileSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParallelLoadThreads"))
   {
     m_parallelLoadThreads = jsonValue.GetInteger("ParallelLoadThreads");
-
     m_parallelLoadThreadsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Password"))
   {
     m_password = jsonValue.GetString("Password");
-
     m_passwordHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Port"))
   {
     m_port = jsonValue.GetInteger("Port");
-
     m_portHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServerName"))
   {
     m_serverName = jsonValue.GetString("ServerName");
-
     m_serverNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServerTimezone"))
   {
     m_serverTimezone = jsonValue.GetString("ServerTimezone");
-
     m_serverTimezoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Username"))
   {
     m_username = jsonValue.GetString("Username");
-
     m_usernameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretsManagerAccessRoleArn"))
   {
     m_secretsManagerAccessRoleArn = jsonValue.GetString("SecretsManagerAccessRoleArn");
-
     m_secretsManagerAccessRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretsManagerSecretId"))
   {
     m_secretsManagerSecretId = jsonValue.GetString("SecretsManagerSecretId");
-
     m_secretsManagerSecretIdHasBeenSet = true;
   }
-
   return *this;
 }
 

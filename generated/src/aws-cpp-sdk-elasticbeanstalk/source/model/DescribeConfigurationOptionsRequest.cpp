@@ -10,16 +10,6 @@
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-DescribeConfigurationOptionsRequest::DescribeConfigurationOptionsRequest() : 
-    m_applicationNameHasBeenSet(false),
-    m_templateNameHasBeenSet(false),
-    m_environmentNameHasBeenSet(false),
-    m_solutionStackNameHasBeenSet(false),
-    m_platformArnHasBeenSet(false),
-    m_optionsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeConfigurationOptionsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

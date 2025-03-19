@@ -32,7 +32,7 @@ namespace Model
   class StringConfigurationOptions
   {
   public:
-    AWS_SECURITYHUB_API StringConfigurationOptions();
+    AWS_SECURITYHUB_API StringConfigurationOptions() = default;
     AWS_SECURITYHUB_API StringConfigurationOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API StringConfigurationOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p> The Security Hub default value for a control parameter that is a string.
      * </p>
      */
-    inline const Aws::String& GetDefaultValue() const{ return m_defaultValue; }
+    inline const Aws::String& GetDefaultValue() const { return m_defaultValue; }
     inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
-    inline void SetDefaultValue(const Aws::String& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
-    inline void SetDefaultValue(Aws::String&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::move(value); }
-    inline void SetDefaultValue(const char* value) { m_defaultValueHasBeenSet = true; m_defaultValue.assign(value); }
-    inline StringConfigurationOptions& WithDefaultValue(const Aws::String& value) { SetDefaultValue(value); return *this;}
-    inline StringConfigurationOptions& WithDefaultValue(Aws::String&& value) { SetDefaultValue(std::move(value)); return *this;}
-    inline StringConfigurationOptions& WithDefaultValue(const char* value) { SetDefaultValue(value); return *this;}
+    template<typename DefaultValueT = Aws::String>
+    void SetDefaultValue(DefaultValueT&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::forward<DefaultValueT>(value); }
+    template<typename DefaultValueT = Aws::String>
+    StringConfigurationOptions& WithDefaultValue(DefaultValueT&& value) { SetDefaultValue(std::forward<DefaultValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,28 +56,24 @@ namespace Model
      * <p> An RE2 regular expression that Security Hub uses to validate a user-provided
      * control parameter string. </p>
      */
-    inline const Aws::String& GetRe2Expression() const{ return m_re2Expression; }
+    inline const Aws::String& GetRe2Expression() const { return m_re2Expression; }
     inline bool Re2ExpressionHasBeenSet() const { return m_re2ExpressionHasBeenSet; }
-    inline void SetRe2Expression(const Aws::String& value) { m_re2ExpressionHasBeenSet = true; m_re2Expression = value; }
-    inline void SetRe2Expression(Aws::String&& value) { m_re2ExpressionHasBeenSet = true; m_re2Expression = std::move(value); }
-    inline void SetRe2Expression(const char* value) { m_re2ExpressionHasBeenSet = true; m_re2Expression.assign(value); }
-    inline StringConfigurationOptions& WithRe2Expression(const Aws::String& value) { SetRe2Expression(value); return *this;}
-    inline StringConfigurationOptions& WithRe2Expression(Aws::String&& value) { SetRe2Expression(std::move(value)); return *this;}
-    inline StringConfigurationOptions& WithRe2Expression(const char* value) { SetRe2Expression(value); return *this;}
+    template<typename Re2ExpressionT = Aws::String>
+    void SetRe2Expression(Re2ExpressionT&& value) { m_re2ExpressionHasBeenSet = true; m_re2Expression = std::forward<Re2ExpressionT>(value); }
+    template<typename Re2ExpressionT = Aws::String>
+    StringConfigurationOptions& WithRe2Expression(Re2ExpressionT&& value) { SetRe2Expression(std::forward<Re2ExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The description of the RE2 regular expression. </p>
      */
-    inline const Aws::String& GetExpressionDescription() const{ return m_expressionDescription; }
+    inline const Aws::String& GetExpressionDescription() const { return m_expressionDescription; }
     inline bool ExpressionDescriptionHasBeenSet() const { return m_expressionDescriptionHasBeenSet; }
-    inline void SetExpressionDescription(const Aws::String& value) { m_expressionDescriptionHasBeenSet = true; m_expressionDescription = value; }
-    inline void SetExpressionDescription(Aws::String&& value) { m_expressionDescriptionHasBeenSet = true; m_expressionDescription = std::move(value); }
-    inline void SetExpressionDescription(const char* value) { m_expressionDescriptionHasBeenSet = true; m_expressionDescription.assign(value); }
-    inline StringConfigurationOptions& WithExpressionDescription(const Aws::String& value) { SetExpressionDescription(value); return *this;}
-    inline StringConfigurationOptions& WithExpressionDescription(Aws::String&& value) { SetExpressionDescription(std::move(value)); return *this;}
-    inline StringConfigurationOptions& WithExpressionDescription(const char* value) { SetExpressionDescription(value); return *this;}
+    template<typename ExpressionDescriptionT = Aws::String>
+    void SetExpressionDescription(ExpressionDescriptionT&& value) { m_expressionDescriptionHasBeenSet = true; m_expressionDescription = std::forward<ExpressionDescriptionT>(value); }
+    template<typename ExpressionDescriptionT = Aws::String>
+    StringConfigurationOptions& WithExpressionDescription(ExpressionDescriptionT&& value) { SetExpressionDescription(std::forward<ExpressionDescriptionT>(value)); return *this;}
     ///@}
   private:
 

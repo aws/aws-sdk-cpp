@@ -33,7 +33,7 @@ namespace Model
   class SplitStringEntry
   {
   public:
-    AWS_CLOUDWATCHLOGS_API SplitStringEntry();
+    AWS_CLOUDWATCHLOGS_API SplitStringEntry() = default;
     AWS_CLOUDWATCHLOGS_API SplitStringEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API SplitStringEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The key of the field to split.</p>
      */
-    inline const Aws::String& GetSource() const{ return m_source; }
+    inline const Aws::String& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
-    inline SplitStringEntry& WithSource(const Aws::String& value) { SetSource(value); return *this;}
-    inline SplitStringEntry& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
-    inline SplitStringEntry& WithSource(const char* value) { SetSource(value); return *this;}
+    template<typename SourceT = Aws::String>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = Aws::String>
+    SplitStringEntry& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The separator characters to split the string entry on.</p>
      */
-    inline const Aws::String& GetDelimiter() const{ return m_delimiter; }
+    inline const Aws::String& GetDelimiter() const { return m_delimiter; }
     inline bool DelimiterHasBeenSet() const { return m_delimiterHasBeenSet; }
-    inline void SetDelimiter(const Aws::String& value) { m_delimiterHasBeenSet = true; m_delimiter = value; }
-    inline void SetDelimiter(Aws::String&& value) { m_delimiterHasBeenSet = true; m_delimiter = std::move(value); }
-    inline void SetDelimiter(const char* value) { m_delimiterHasBeenSet = true; m_delimiter.assign(value); }
-    inline SplitStringEntry& WithDelimiter(const Aws::String& value) { SetDelimiter(value); return *this;}
-    inline SplitStringEntry& WithDelimiter(Aws::String&& value) { SetDelimiter(std::move(value)); return *this;}
-    inline SplitStringEntry& WithDelimiter(const char* value) { SetDelimiter(value); return *this;}
+    template<typename DelimiterT = Aws::String>
+    void SetDelimiter(DelimiterT&& value) { m_delimiterHasBeenSet = true; m_delimiter = std::forward<DelimiterT>(value); }
+    template<typename DelimiterT = Aws::String>
+    SplitStringEntry& WithDelimiter(DelimiterT&& value) { SetDelimiter(std::forward<DelimiterT>(value)); return *this;}
     ///@}
   private:
 

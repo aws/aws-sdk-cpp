@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-SubmitAutoEvaluationActionDefinition::SubmitAutoEvaluationActionDefinition() : 
-    m_evaluationFormIdHasBeenSet(false)
-{
-}
-
 SubmitAutoEvaluationActionDefinition::SubmitAutoEvaluationActionDefinition(JsonView jsonValue)
-  : SubmitAutoEvaluationActionDefinition()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SubmitAutoEvaluationActionDefinition& SubmitAutoEvaluationActionDefinition::oper
   if(jsonValue.ValueExists("EvaluationFormId"))
   {
     m_evaluationFormId = jsonValue.GetString("EvaluationFormId");
-
     m_evaluationFormIdHasBeenSet = true;
   }
-
   return *this;
 }
 

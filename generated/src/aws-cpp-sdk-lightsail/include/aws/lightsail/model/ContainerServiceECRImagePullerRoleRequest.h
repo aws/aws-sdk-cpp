@@ -41,7 +41,7 @@ namespace Model
   class ContainerServiceECRImagePullerRoleRequest
   {
   public:
-    AWS_LIGHTSAIL_API ContainerServiceECRImagePullerRoleRequest();
+    AWS_LIGHTSAIL_API ContainerServiceECRImagePullerRoleRequest() = default;
     AWS_LIGHTSAIL_API ContainerServiceECRImagePullerRoleRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API ContainerServiceECRImagePullerRoleRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,14 @@ namespace Model
     /**
      * <p>A Boolean value that indicates whether to activate the role.</p>
      */
-    inline bool GetIsActive() const{ return m_isActive; }
+    inline bool GetIsActive() const { return m_isActive; }
     inline bool IsActiveHasBeenSet() const { return m_isActiveHasBeenSet; }
     inline void SetIsActive(bool value) { m_isActiveHasBeenSet = true; m_isActive = value; }
     inline ContainerServiceECRImagePullerRoleRequest& WithIsActive(bool value) { SetIsActive(value); return *this;}
     ///@}
   private:
 
-    bool m_isActive;
+    bool m_isActive{false};
     bool m_isActiveHasBeenSet = false;
   };
 

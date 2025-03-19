@@ -32,7 +32,7 @@ namespace Model
   class Expiry
   {
   public:
-    AWS_CONNECT_API Expiry();
+    AWS_CONNECT_API Expiry() = default;
     AWS_CONNECT_API Expiry(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Expiry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>The number of seconds to wait before expiring the routing step.</p>
      */
-    inline int GetDurationInSeconds() const{ return m_durationInSeconds; }
+    inline int GetDurationInSeconds() const { return m_durationInSeconds; }
     inline bool DurationInSecondsHasBeenSet() const { return m_durationInSecondsHasBeenSet; }
     inline void SetDurationInSeconds(int value) { m_durationInSecondsHasBeenSet = true; m_durationInSeconds = value; }
     inline Expiry& WithDurationInSeconds(int value) { SetDurationInSeconds(value); return *this;}
@@ -52,19 +52,19 @@ namespace Model
     /**
      * <p>The timestamp indicating when the routing step expires.</p>
      */
-    inline const Aws::Utils::DateTime& GetExpiryTimestamp() const{ return m_expiryTimestamp; }
+    inline const Aws::Utils::DateTime& GetExpiryTimestamp() const { return m_expiryTimestamp; }
     inline bool ExpiryTimestampHasBeenSet() const { return m_expiryTimestampHasBeenSet; }
-    inline void SetExpiryTimestamp(const Aws::Utils::DateTime& value) { m_expiryTimestampHasBeenSet = true; m_expiryTimestamp = value; }
-    inline void SetExpiryTimestamp(Aws::Utils::DateTime&& value) { m_expiryTimestampHasBeenSet = true; m_expiryTimestamp = std::move(value); }
-    inline Expiry& WithExpiryTimestamp(const Aws::Utils::DateTime& value) { SetExpiryTimestamp(value); return *this;}
-    inline Expiry& WithExpiryTimestamp(Aws::Utils::DateTime&& value) { SetExpiryTimestamp(std::move(value)); return *this;}
+    template<typename ExpiryTimestampT = Aws::Utils::DateTime>
+    void SetExpiryTimestamp(ExpiryTimestampT&& value) { m_expiryTimestampHasBeenSet = true; m_expiryTimestamp = std::forward<ExpiryTimestampT>(value); }
+    template<typename ExpiryTimestampT = Aws::Utils::DateTime>
+    Expiry& WithExpiryTimestamp(ExpiryTimestampT&& value) { SetExpiryTimestamp(std::forward<ExpiryTimestampT>(value)); return *this;}
     ///@}
   private:
 
-    int m_durationInSeconds;
+    int m_durationInSeconds{0};
     bool m_durationInSecondsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_expiryTimestamp;
+    Aws::Utils::DateTime m_expiryTimestamp{};
     bool m_expiryTimestampHasBeenSet = false;
   };
 

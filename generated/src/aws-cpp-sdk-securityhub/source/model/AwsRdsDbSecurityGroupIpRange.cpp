@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsRdsDbSecurityGroupIpRange::AwsRdsDbSecurityGroupIpRange() : 
-    m_cidrIpHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 AwsRdsDbSecurityGroupIpRange::AwsRdsDbSecurityGroupIpRange(JsonView jsonValue)
-  : AwsRdsDbSecurityGroupIpRange()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsRdsDbSecurityGroupIpRange& AwsRdsDbSecurityGroupIpRange::operator =(JsonView 
   if(jsonValue.ValueExists("CidrIp"))
   {
     m_cidrIp = jsonValue.GetString("CidrIp");
-
     m_cidrIpHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

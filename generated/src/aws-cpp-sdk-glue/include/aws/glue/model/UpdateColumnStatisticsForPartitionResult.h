@@ -29,7 +29,7 @@ namespace Model
   class UpdateColumnStatisticsForPartitionResult
   {
   public:
-    AWS_GLUE_API UpdateColumnStatisticsForPartitionResult();
+    AWS_GLUE_API UpdateColumnStatisticsForPartitionResult() = default;
     AWS_GLUE_API UpdateColumnStatisticsForPartitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUE_API UpdateColumnStatisticsForPartitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>Error occurred during updating column statistics data.</p>
      */
-    inline const Aws::Vector<ColumnStatisticsError>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<ColumnStatisticsError>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<ColumnStatisticsError>&& value) { m_errors = std::move(value); }
-    inline UpdateColumnStatisticsForPartitionResult& WithErrors(const Aws::Vector<ColumnStatisticsError>& value) { SetErrors(value); return *this;}
-    inline UpdateColumnStatisticsForPartitionResult& WithErrors(Aws::Vector<ColumnStatisticsError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline UpdateColumnStatisticsForPartitionResult& AddErrors(const ColumnStatisticsError& value) { m_errors.push_back(value); return *this; }
-    inline UpdateColumnStatisticsForPartitionResult& AddErrors(ColumnStatisticsError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ColumnStatisticsError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<ColumnStatisticsError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<ColumnStatisticsError>>
+    UpdateColumnStatisticsForPartitionResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = ColumnStatisticsError>
+    UpdateColumnStatisticsForPartitionResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateColumnStatisticsForPartitionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateColumnStatisticsForPartitionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateColumnStatisticsForPartitionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateColumnStatisticsForPartitionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ColumnStatisticsError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

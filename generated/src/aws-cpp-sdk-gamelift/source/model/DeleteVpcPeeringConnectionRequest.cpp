@@ -12,12 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteVpcPeeringConnectionRequest::DeleteVpcPeeringConnectionRequest() : 
-    m_fleetIdHasBeenSet(false),
-    m_vpcPeeringConnectionIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteVpcPeeringConnectionRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,16 +18,7 @@ namespace SecurityIR
 namespace Model
 {
 
-OptInFeature::OptInFeature() : 
-    m_featureName(OptInFeatureName::NOT_SET),
-    m_featureNameHasBeenSet(false),
-    m_isEnabled(false),
-    m_isEnabledHasBeenSet(false)
-{
-}
-
 OptInFeature::OptInFeature(JsonView jsonValue)
-  : OptInFeature()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ OptInFeature& OptInFeature::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("featureName"))
   {
     m_featureName = OptInFeatureNameMapper::GetOptInFeatureNameForName(jsonValue.GetString("featureName"));
-
     m_featureNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isEnabled"))
   {
     m_isEnabled = jsonValue.GetBool("isEnabled");
-
     m_isEnabledHasBeenSet = true;
   }
-
   return *this;
 }
 

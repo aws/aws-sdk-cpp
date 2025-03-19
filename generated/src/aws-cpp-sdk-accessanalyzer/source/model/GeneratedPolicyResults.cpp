@@ -18,14 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-GeneratedPolicyResults::GeneratedPolicyResults() : 
-    m_propertiesHasBeenSet(false),
-    m_generatedPoliciesHasBeenSet(false)
-{
-}
-
 GeneratedPolicyResults::GeneratedPolicyResults(JsonView jsonValue)
-  : GeneratedPolicyResults()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ GeneratedPolicyResults& GeneratedPolicyResults::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("properties"))
   {
     m_properties = jsonValue.GetObject("properties");
-
     m_propertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("generatedPolicies"))
   {
     Aws::Utils::Array<JsonView> generatedPoliciesJsonList = jsonValue.GetArray("generatedPolicies");
@@ -48,7 +39,6 @@ GeneratedPolicyResults& GeneratedPolicyResults::operator =(JsonView jsonValue)
     }
     m_generatedPoliciesHasBeenSet = true;
   }
-
   return *this;
 }
 

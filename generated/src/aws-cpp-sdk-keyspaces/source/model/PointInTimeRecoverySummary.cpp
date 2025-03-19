@@ -18,15 +18,7 @@ namespace Keyspaces
 namespace Model
 {
 
-PointInTimeRecoverySummary::PointInTimeRecoverySummary() : 
-    m_status(PointInTimeRecoveryStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_earliestRestorableTimestampHasBeenSet(false)
-{
-}
-
 PointInTimeRecoverySummary::PointInTimeRecoverySummary(JsonView jsonValue)
-  : PointInTimeRecoverySummary()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ PointInTimeRecoverySummary& PointInTimeRecoverySummary::operator =(JsonView json
   if(jsonValue.ValueExists("status"))
   {
     m_status = PointInTimeRecoveryStatusMapper::GetPointInTimeRecoveryStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("earliestRestorableTimestamp"))
   {
     m_earliestRestorableTimestamp = jsonValue.GetDouble("earliestRestorableTimestamp");
-
     m_earliestRestorableTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

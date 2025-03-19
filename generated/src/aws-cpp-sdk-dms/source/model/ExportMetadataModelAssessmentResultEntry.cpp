@@ -18,14 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-ExportMetadataModelAssessmentResultEntry::ExportMetadataModelAssessmentResultEntry() : 
-    m_s3ObjectKeyHasBeenSet(false),
-    m_objectURLHasBeenSet(false)
-{
-}
-
 ExportMetadataModelAssessmentResultEntry::ExportMetadataModelAssessmentResultEntry(JsonView jsonValue)
-  : ExportMetadataModelAssessmentResultEntry()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ExportMetadataModelAssessmentResultEntry& ExportMetadataModelAssessmentResultEnt
   if(jsonValue.ValueExists("S3ObjectKey"))
   {
     m_s3ObjectKey = jsonValue.GetString("S3ObjectKey");
-
     m_s3ObjectKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ObjectURL"))
   {
     m_objectURL = jsonValue.GetString("ObjectURL");
-
     m_objectURLHasBeenSet = true;
   }
-
   return *this;
 }
 

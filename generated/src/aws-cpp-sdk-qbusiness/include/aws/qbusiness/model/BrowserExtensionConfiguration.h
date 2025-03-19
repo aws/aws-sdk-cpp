@@ -33,7 +33,7 @@ namespace Model
   class BrowserExtensionConfiguration
   {
   public:
-    AWS_QBUSINESS_API BrowserExtensionConfiguration();
+    AWS_QBUSINESS_API BrowserExtensionConfiguration() = default;
     AWS_QBUSINESS_API BrowserExtensionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API BrowserExtensionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,13 @@ namespace Model
      * <p> <code>CHROME</code> and <code>FIREFOX</code> — Enable the extension for
      * Chromium-based browsers and Mozilla Firefox.</p> </li> </ul>
      */
-    inline const Aws::Vector<BrowserExtension>& GetEnabledBrowserExtensions() const{ return m_enabledBrowserExtensions; }
+    inline const Aws::Vector<BrowserExtension>& GetEnabledBrowserExtensions() const { return m_enabledBrowserExtensions; }
     inline bool EnabledBrowserExtensionsHasBeenSet() const { return m_enabledBrowserExtensionsHasBeenSet; }
-    inline void SetEnabledBrowserExtensions(const Aws::Vector<BrowserExtension>& value) { m_enabledBrowserExtensionsHasBeenSet = true; m_enabledBrowserExtensions = value; }
-    inline void SetEnabledBrowserExtensions(Aws::Vector<BrowserExtension>&& value) { m_enabledBrowserExtensionsHasBeenSet = true; m_enabledBrowserExtensions = std::move(value); }
-    inline BrowserExtensionConfiguration& WithEnabledBrowserExtensions(const Aws::Vector<BrowserExtension>& value) { SetEnabledBrowserExtensions(value); return *this;}
-    inline BrowserExtensionConfiguration& WithEnabledBrowserExtensions(Aws::Vector<BrowserExtension>&& value) { SetEnabledBrowserExtensions(std::move(value)); return *this;}
-    inline BrowserExtensionConfiguration& AddEnabledBrowserExtensions(const BrowserExtension& value) { m_enabledBrowserExtensionsHasBeenSet = true; m_enabledBrowserExtensions.push_back(value); return *this; }
-    inline BrowserExtensionConfiguration& AddEnabledBrowserExtensions(BrowserExtension&& value) { m_enabledBrowserExtensionsHasBeenSet = true; m_enabledBrowserExtensions.push_back(std::move(value)); return *this; }
+    template<typename EnabledBrowserExtensionsT = Aws::Vector<BrowserExtension>>
+    void SetEnabledBrowserExtensions(EnabledBrowserExtensionsT&& value) { m_enabledBrowserExtensionsHasBeenSet = true; m_enabledBrowserExtensions = std::forward<EnabledBrowserExtensionsT>(value); }
+    template<typename EnabledBrowserExtensionsT = Aws::Vector<BrowserExtension>>
+    BrowserExtensionConfiguration& WithEnabledBrowserExtensions(EnabledBrowserExtensionsT&& value) { SetEnabledBrowserExtensions(std::forward<EnabledBrowserExtensionsT>(value)); return *this;}
+    inline BrowserExtensionConfiguration& AddEnabledBrowserExtensions(BrowserExtension value) { m_enabledBrowserExtensionsHasBeenSet = true; m_enabledBrowserExtensions.push_back(value); return *this; }
     ///@}
   private:
 

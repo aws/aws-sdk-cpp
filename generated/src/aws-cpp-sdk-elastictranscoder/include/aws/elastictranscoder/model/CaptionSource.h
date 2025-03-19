@@ -33,7 +33,7 @@ namespace Model
   class CaptionSource
   {
   public:
-    AWS_ELASTICTRANSCODER_API CaptionSource();
+    AWS_ELASTICTRANSCODER_API CaptionSource() = default;
     AWS_ELASTICTRANSCODER_API CaptionSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICTRANSCODER_API CaptionSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The name of the sidecar caption file that you want Elastic Transcoder to
      * include in the output file.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline CaptionSource& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline CaptionSource& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline CaptionSource& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    CaptionSource& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * more information on ISO language codes and language names, see the List of ISO
      * 639-1 codes.</p>
      */
-    inline const Aws::String& GetLanguage() const{ return m_language; }
+    inline const Aws::String& GetLanguage() const { return m_language; }
     inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
-    inline void SetLanguage(const Aws::String& value) { m_languageHasBeenSet = true; m_language = value; }
-    inline void SetLanguage(Aws::String&& value) { m_languageHasBeenSet = true; m_language = std::move(value); }
-    inline void SetLanguage(const char* value) { m_languageHasBeenSet = true; m_language.assign(value); }
-    inline CaptionSource& WithLanguage(const Aws::String& value) { SetLanguage(value); return *this;}
-    inline CaptionSource& WithLanguage(Aws::String&& value) { SetLanguage(std::move(value)); return *this;}
-    inline CaptionSource& WithLanguage(const char* value) { SetLanguage(value); return *this;}
+    template<typename LanguageT = Aws::String>
+    void SetLanguage(LanguageT&& value) { m_languageHasBeenSet = true; m_language = std::forward<LanguageT>(value); }
+    template<typename LanguageT = Aws::String>
+    CaptionSource& WithLanguage(LanguageT&& value) { SetLanguage(std::forward<LanguageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,14 +76,12 @@ namespace Model
      * much of the video to encode before including captions.</p> <p>Specify the
      * TimeOffset in the form [+-]SS.sss or [+-]HH:mm:SS.ss.</p>
      */
-    inline const Aws::String& GetTimeOffset() const{ return m_timeOffset; }
+    inline const Aws::String& GetTimeOffset() const { return m_timeOffset; }
     inline bool TimeOffsetHasBeenSet() const { return m_timeOffsetHasBeenSet; }
-    inline void SetTimeOffset(const Aws::String& value) { m_timeOffsetHasBeenSet = true; m_timeOffset = value; }
-    inline void SetTimeOffset(Aws::String&& value) { m_timeOffsetHasBeenSet = true; m_timeOffset = std::move(value); }
-    inline void SetTimeOffset(const char* value) { m_timeOffsetHasBeenSet = true; m_timeOffset.assign(value); }
-    inline CaptionSource& WithTimeOffset(const Aws::String& value) { SetTimeOffset(value); return *this;}
-    inline CaptionSource& WithTimeOffset(Aws::String&& value) { SetTimeOffset(std::move(value)); return *this;}
-    inline CaptionSource& WithTimeOffset(const char* value) { SetTimeOffset(value); return *this;}
+    template<typename TimeOffsetT = Aws::String>
+    void SetTimeOffset(TimeOffsetT&& value) { m_timeOffsetHasBeenSet = true; m_timeOffset = std::forward<TimeOffsetT>(value); }
+    template<typename TimeOffsetT = Aws::String>
+    CaptionSource& WithTimeOffset(TimeOffsetT&& value) { SetTimeOffset(std::forward<TimeOffsetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,14 +90,12 @@ namespace Model
      * recommend that you put the caption language name here, in the language of the
      * captions.</p>
      */
-    inline const Aws::String& GetLabel() const{ return m_label; }
+    inline const Aws::String& GetLabel() const { return m_label; }
     inline bool LabelHasBeenSet() const { return m_labelHasBeenSet; }
-    inline void SetLabel(const Aws::String& value) { m_labelHasBeenSet = true; m_label = value; }
-    inline void SetLabel(Aws::String&& value) { m_labelHasBeenSet = true; m_label = std::move(value); }
-    inline void SetLabel(const char* value) { m_labelHasBeenSet = true; m_label.assign(value); }
-    inline CaptionSource& WithLabel(const Aws::String& value) { SetLabel(value); return *this;}
-    inline CaptionSource& WithLabel(Aws::String&& value) { SetLabel(std::move(value)); return *this;}
-    inline CaptionSource& WithLabel(const char* value) { SetLabel(value); return *this;}
+    template<typename LabelT = Aws::String>
+    void SetLabel(LabelT&& value) { m_labelHasBeenSet = true; m_label = std::forward<LabelT>(value); }
+    template<typename LabelT = Aws::String>
+    CaptionSource& WithLabel(LabelT&& value) { SetLabel(std::forward<LabelT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,12 +104,12 @@ namespace Model
      * your caption sources, or that you want Elastic Transcoder to apply to your
      * caption sources.</p>
      */
-    inline const Encryption& GetEncryption() const{ return m_encryption; }
+    inline const Encryption& GetEncryption() const { return m_encryption; }
     inline bool EncryptionHasBeenSet() const { return m_encryptionHasBeenSet; }
-    inline void SetEncryption(const Encryption& value) { m_encryptionHasBeenSet = true; m_encryption = value; }
-    inline void SetEncryption(Encryption&& value) { m_encryptionHasBeenSet = true; m_encryption = std::move(value); }
-    inline CaptionSource& WithEncryption(const Encryption& value) { SetEncryption(value); return *this;}
-    inline CaptionSource& WithEncryption(Encryption&& value) { SetEncryption(std::move(value)); return *this;}
+    template<typename EncryptionT = Encryption>
+    void SetEncryption(EncryptionT&& value) { m_encryptionHasBeenSet = true; m_encryption = std::forward<EncryptionT>(value); }
+    template<typename EncryptionT = Encryption>
+    CaptionSource& WithEncryption(EncryptionT&& value) { SetEncryption(std::forward<EncryptionT>(value)); return *this;}
     ///@}
   private:
 

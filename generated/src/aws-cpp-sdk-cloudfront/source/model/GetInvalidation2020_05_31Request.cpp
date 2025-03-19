@@ -14,11 +14,6 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-GetInvalidation2020_05_31Request::GetInvalidation2020_05_31Request() : 
-    m_distributionIdHasBeenSet(false),
-    m_idHasBeenSet(false)
-{
-}
 
 Aws::String GetInvalidation2020_05_31Request::SerializePayload() const
 {

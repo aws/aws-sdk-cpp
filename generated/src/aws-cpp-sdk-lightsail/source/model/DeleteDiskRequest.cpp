@@ -12,13 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDiskRequest::DeleteDiskRequest() : 
-    m_diskNameHasBeenSet(false),
-    m_forceDeleteAddOns(false),
-    m_forceDeleteAddOnsHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDiskRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -33,7 +33,7 @@ namespace Model
   class AssessmentRunStateChange
   {
   public:
-    AWS_INSPECTOR_API AssessmentRunStateChange();
+    AWS_INSPECTOR_API AssessmentRunStateChange() = default;
     AWS_INSPECTOR_API AssessmentRunStateChange(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR_API AssessmentRunStateChange& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,31 +43,29 @@ namespace Model
     /**
      * <p>The last time the assessment run state changed.</p>
      */
-    inline const Aws::Utils::DateTime& GetStateChangedAt() const{ return m_stateChangedAt; }
+    inline const Aws::Utils::DateTime& GetStateChangedAt() const { return m_stateChangedAt; }
     inline bool StateChangedAtHasBeenSet() const { return m_stateChangedAtHasBeenSet; }
-    inline void SetStateChangedAt(const Aws::Utils::DateTime& value) { m_stateChangedAtHasBeenSet = true; m_stateChangedAt = value; }
-    inline void SetStateChangedAt(Aws::Utils::DateTime&& value) { m_stateChangedAtHasBeenSet = true; m_stateChangedAt = std::move(value); }
-    inline AssessmentRunStateChange& WithStateChangedAt(const Aws::Utils::DateTime& value) { SetStateChangedAt(value); return *this;}
-    inline AssessmentRunStateChange& WithStateChangedAt(Aws::Utils::DateTime&& value) { SetStateChangedAt(std::move(value)); return *this;}
+    template<typename StateChangedAtT = Aws::Utils::DateTime>
+    void SetStateChangedAt(StateChangedAtT&& value) { m_stateChangedAtHasBeenSet = true; m_stateChangedAt = std::forward<StateChangedAtT>(value); }
+    template<typename StateChangedAtT = Aws::Utils::DateTime>
+    AssessmentRunStateChange& WithStateChangedAt(StateChangedAtT&& value) { SetStateChangedAt(std::forward<StateChangedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The assessment run state.</p>
      */
-    inline const AssessmentRunState& GetState() const{ return m_state; }
+    inline AssessmentRunState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const AssessmentRunState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(AssessmentRunState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline AssessmentRunStateChange& WithState(const AssessmentRunState& value) { SetState(value); return *this;}
-    inline AssessmentRunStateChange& WithState(AssessmentRunState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(AssessmentRunState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline AssessmentRunStateChange& WithState(AssessmentRunState value) { SetState(value); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_stateChangedAt;
+    Aws::Utils::DateTime m_stateChangedAt{};
     bool m_stateChangedAtHasBeenSet = false;
 
-    AssessmentRunState m_state;
+    AssessmentRunState m_state{AssessmentRunState::NOT_SET};
     bool m_stateHasBeenSet = false;
   };
 

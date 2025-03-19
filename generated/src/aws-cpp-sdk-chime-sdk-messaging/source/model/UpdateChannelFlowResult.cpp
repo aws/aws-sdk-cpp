@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateChannelFlowResult::UpdateChannelFlowResult()
-{
-}
-
 UpdateChannelFlowResult::UpdateChannelFlowResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ UpdateChannelFlowResult& UpdateChannelFlowResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("ChannelFlowArn"))
   {
     m_channelFlowArn = jsonValue.GetString("ChannelFlowArn");
-
+    m_channelFlowArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

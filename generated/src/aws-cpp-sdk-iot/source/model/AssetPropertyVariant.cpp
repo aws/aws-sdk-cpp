@@ -18,16 +18,7 @@ namespace IoT
 namespace Model
 {
 
-AssetPropertyVariant::AssetPropertyVariant() : 
-    m_stringValueHasBeenSet(false),
-    m_integerValueHasBeenSet(false),
-    m_doubleValueHasBeenSet(false),
-    m_booleanValueHasBeenSet(false)
-{
-}
-
 AssetPropertyVariant::AssetPropertyVariant(JsonView jsonValue)
-  : AssetPropertyVariant()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ AssetPropertyVariant& AssetPropertyVariant::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("stringValue"))
   {
     m_stringValue = jsonValue.GetString("stringValue");
-
     m_stringValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("integerValue"))
   {
     m_integerValue = jsonValue.GetString("integerValue");
-
     m_integerValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("doubleValue"))
   {
     m_doubleValue = jsonValue.GetString("doubleValue");
-
     m_doubleValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("booleanValue"))
   {
     m_booleanValue = jsonValue.GetString("booleanValue");
-
     m_booleanValueHasBeenSet = true;
   }
-
   return *this;
 }
 

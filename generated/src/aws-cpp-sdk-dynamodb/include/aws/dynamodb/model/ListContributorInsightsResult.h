@@ -29,7 +29,7 @@ namespace Model
   class ListContributorInsightsResult
   {
   public:
-    AWS_DYNAMODB_API ListContributorInsightsResult();
+    AWS_DYNAMODB_API ListContributorInsightsResult() = default;
     AWS_DYNAMODB_API ListContributorInsightsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DYNAMODB_API ListContributorInsightsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>A list of ContributorInsightsSummary.</p>
      */
-    inline const Aws::Vector<ContributorInsightsSummary>& GetContributorInsightsSummaries() const{ return m_contributorInsightsSummaries; }
-    inline void SetContributorInsightsSummaries(const Aws::Vector<ContributorInsightsSummary>& value) { m_contributorInsightsSummaries = value; }
-    inline void SetContributorInsightsSummaries(Aws::Vector<ContributorInsightsSummary>&& value) { m_contributorInsightsSummaries = std::move(value); }
-    inline ListContributorInsightsResult& WithContributorInsightsSummaries(const Aws::Vector<ContributorInsightsSummary>& value) { SetContributorInsightsSummaries(value); return *this;}
-    inline ListContributorInsightsResult& WithContributorInsightsSummaries(Aws::Vector<ContributorInsightsSummary>&& value) { SetContributorInsightsSummaries(std::move(value)); return *this;}
-    inline ListContributorInsightsResult& AddContributorInsightsSummaries(const ContributorInsightsSummary& value) { m_contributorInsightsSummaries.push_back(value); return *this; }
-    inline ListContributorInsightsResult& AddContributorInsightsSummaries(ContributorInsightsSummary&& value) { m_contributorInsightsSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ContributorInsightsSummary>& GetContributorInsightsSummaries() const { return m_contributorInsightsSummaries; }
+    template<typename ContributorInsightsSummariesT = Aws::Vector<ContributorInsightsSummary>>
+    void SetContributorInsightsSummaries(ContributorInsightsSummariesT&& value) { m_contributorInsightsSummariesHasBeenSet = true; m_contributorInsightsSummaries = std::forward<ContributorInsightsSummariesT>(value); }
+    template<typename ContributorInsightsSummariesT = Aws::Vector<ContributorInsightsSummary>>
+    ListContributorInsightsResult& WithContributorInsightsSummaries(ContributorInsightsSummariesT&& value) { SetContributorInsightsSummaries(std::forward<ContributorInsightsSummariesT>(value)); return *this;}
+    template<typename ContributorInsightsSummariesT = ContributorInsightsSummary>
+    ListContributorInsightsResult& AddContributorInsightsSummaries(ContributorInsightsSummariesT&& value) { m_contributorInsightsSummariesHasBeenSet = true; m_contributorInsightsSummaries.emplace_back(std::forward<ContributorInsightsSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A token to go to the next page if there is one.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListContributorInsightsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListContributorInsightsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListContributorInsightsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListContributorInsightsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListContributorInsightsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListContributorInsightsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListContributorInsightsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListContributorInsightsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ContributorInsightsSummary> m_contributorInsightsSummaries;
+    bool m_contributorInsightsSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,20 +18,7 @@ namespace deadline
 namespace Model
 {
 
-FleetMember::FleetMember() : 
-    m_farmIdHasBeenSet(false),
-    m_fleetIdHasBeenSet(false),
-    m_principalIdHasBeenSet(false),
-    m_principalType(PrincipalType::NOT_SET),
-    m_principalTypeHasBeenSet(false),
-    m_identityStoreIdHasBeenSet(false),
-    m_membershipLevel(MembershipLevel::NOT_SET),
-    m_membershipLevelHasBeenSet(false)
-{
-}
-
 FleetMember::FleetMember(JsonView jsonValue)
-  : FleetMember()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ FleetMember& FleetMember::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("farmId"))
   {
     m_farmId = jsonValue.GetString("farmId");
-
     m_farmIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fleetId"))
   {
     m_fleetId = jsonValue.GetString("fleetId");
-
     m_fleetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("principalId"))
   {
     m_principalId = jsonValue.GetString("principalId");
-
     m_principalIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("principalType"))
   {
     m_principalType = PrincipalTypeMapper::GetPrincipalTypeForName(jsonValue.GetString("principalType"));
-
     m_principalTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("identityStoreId"))
   {
     m_identityStoreId = jsonValue.GetString("identityStoreId");
-
     m_identityStoreIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("membershipLevel"))
   {
     m_membershipLevel = MembershipLevelMapper::GetMembershipLevelForName(jsonValue.GetString("membershipLevel"));
-
     m_membershipLevelHasBeenSet = true;
   }
-
   return *this;
 }
 

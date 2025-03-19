@@ -15,24 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-CopyPackageVersionsRequest::CopyPackageVersionsRequest() : 
-    m_domainHasBeenSet(false),
-    m_domainOwnerHasBeenSet(false),
-    m_sourceRepositoryHasBeenSet(false),
-    m_destinationRepositoryHasBeenSet(false),
-    m_format(PackageFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_packageHasBeenSet(false),
-    m_versionsHasBeenSet(false),
-    m_versionRevisionsHasBeenSet(false),
-    m_allowOverwrite(false),
-    m_allowOverwriteHasBeenSet(false),
-    m_includeFromUpstream(false),
-    m_includeFromUpstreamHasBeenSet(false)
-{
-}
-
 Aws::String CopyPackageVersionsRequest::SerializePayload() const
 {
   JsonValue payload;

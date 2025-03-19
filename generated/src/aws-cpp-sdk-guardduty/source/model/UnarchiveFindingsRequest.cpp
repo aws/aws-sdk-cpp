@@ -12,12 +12,6 @@ using namespace Aws::GuardDuty::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UnarchiveFindingsRequest::UnarchiveFindingsRequest() : 
-    m_detectorIdHasBeenSet(false),
-    m_findingIdsHasBeenSet(false)
-{
-}
-
 Aws::String UnarchiveFindingsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,13 +12,6 @@ using namespace Aws::WAFV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAPIKeyRequest::CreateAPIKeyRequest() : 
-    m_scope(Scope::NOT_SET),
-    m_scopeHasBeenSet(false),
-    m_tokenDomainsHasBeenSet(false)
-{
-}
-
 Aws::String CreateAPIKeyRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -39,7 +39,7 @@ namespace Model
   class PolicyVersion
   {
   public:
-    AWS_IAM_API PolicyVersion();
+    AWS_IAM_API PolicyVersion() = default;
     AWS_IAM_API PolicyVersion(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_IAM_API PolicyVersion& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -60,14 +60,12 @@ namespace Model
      * <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
      * and SDKs provide similar functionality.</p>
      */
-    inline const Aws::String& GetDocument() const{ return m_document; }
+    inline const Aws::String& GetDocument() const { return m_document; }
     inline bool DocumentHasBeenSet() const { return m_documentHasBeenSet; }
-    inline void SetDocument(const Aws::String& value) { m_documentHasBeenSet = true; m_document = value; }
-    inline void SetDocument(Aws::String&& value) { m_documentHasBeenSet = true; m_document = std::move(value); }
-    inline void SetDocument(const char* value) { m_documentHasBeenSet = true; m_document.assign(value); }
-    inline PolicyVersion& WithDocument(const Aws::String& value) { SetDocument(value); return *this;}
-    inline PolicyVersion& WithDocument(Aws::String&& value) { SetDocument(std::move(value)); return *this;}
-    inline PolicyVersion& WithDocument(const char* value) { SetDocument(value); return *this;}
+    template<typename DocumentT = Aws::String>
+    void SetDocument(DocumentT&& value) { m_documentHasBeenSet = true; m_document = std::forward<DocumentT>(value); }
+    template<typename DocumentT = Aws::String>
+    PolicyVersion& WithDocument(DocumentT&& value) { SetDocument(std::forward<DocumentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,14 +74,12 @@ namespace Model
      * always begin with <code>v</code> (always lowercase). When a policy is created,
      * the first policy version is <code>v1</code>. </p>
      */
-    inline const Aws::String& GetVersionId() const{ return m_versionId; }
+    inline const Aws::String& GetVersionId() const { return m_versionId; }
     inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
-    inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
-    inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
-    inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
-    inline PolicyVersion& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
-    inline PolicyVersion& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
-    inline PolicyVersion& WithVersionId(const char* value) { SetVersionId(value); return *this;}
+    template<typename VersionIdT = Aws::String>
+    void SetVersionId(VersionIdT&& value) { m_versionIdHasBeenSet = true; m_versionId = std::forward<VersionIdT>(value); }
+    template<typename VersionIdT = Aws::String>
+    PolicyVersion& WithVersionId(VersionIdT&& value) { SetVersionId(std::forward<VersionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,7 +87,7 @@ namespace Model
      * <p>Specifies whether the policy version is set as the policy's default
      * version.</p>
      */
-    inline bool GetIsDefaultVersion() const{ return m_isDefaultVersion; }
+    inline bool GetIsDefaultVersion() const { return m_isDefaultVersion; }
     inline bool IsDefaultVersionHasBeenSet() const { return m_isDefaultVersionHasBeenSet; }
     inline void SetIsDefaultVersion(bool value) { m_isDefaultVersionHasBeenSet = true; m_isDefaultVersion = value; }
     inline PolicyVersion& WithIsDefaultVersion(bool value) { SetIsDefaultVersion(value); return *this;}
@@ -102,12 +98,12 @@ namespace Model
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the policy version was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreateDate() const{ return m_createDate; }
+    inline const Aws::Utils::DateTime& GetCreateDate() const { return m_createDate; }
     inline bool CreateDateHasBeenSet() const { return m_createDateHasBeenSet; }
-    inline void SetCreateDate(const Aws::Utils::DateTime& value) { m_createDateHasBeenSet = true; m_createDate = value; }
-    inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDateHasBeenSet = true; m_createDate = std::move(value); }
-    inline PolicyVersion& WithCreateDate(const Aws::Utils::DateTime& value) { SetCreateDate(value); return *this;}
-    inline PolicyVersion& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
+    template<typename CreateDateT = Aws::Utils::DateTime>
+    void SetCreateDate(CreateDateT&& value) { m_createDateHasBeenSet = true; m_createDate = std::forward<CreateDateT>(value); }
+    template<typename CreateDateT = Aws::Utils::DateTime>
+    PolicyVersion& WithCreateDate(CreateDateT&& value) { SetCreateDate(std::forward<CreateDateT>(value)); return *this;}
     ///@}
   private:
 
@@ -117,10 +113,10 @@ namespace Model
     Aws::String m_versionId;
     bool m_versionIdHasBeenSet = false;
 
-    bool m_isDefaultVersion;
+    bool m_isDefaultVersion{false};
     bool m_isDefaultVersionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createDate;
+    Aws::Utils::DateTime m_createDate{};
     bool m_createDateHasBeenSet = false;
   };
 

@@ -38,7 +38,7 @@ namespace Model
   class Facet
   {
   public:
-    AWS_KENDRA_API Facet();
+    AWS_KENDRA_API Facet() = default;
     AWS_KENDRA_API Facet(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Facet& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
     /**
      * <p>The unique key for the document attribute.</p>
      */
-    inline const Aws::String& GetDocumentAttributeKey() const{ return m_documentAttributeKey; }
+    inline const Aws::String& GetDocumentAttributeKey() const { return m_documentAttributeKey; }
     inline bool DocumentAttributeKeyHasBeenSet() const { return m_documentAttributeKeyHasBeenSet; }
-    inline void SetDocumentAttributeKey(const Aws::String& value) { m_documentAttributeKeyHasBeenSet = true; m_documentAttributeKey = value; }
-    inline void SetDocumentAttributeKey(Aws::String&& value) { m_documentAttributeKeyHasBeenSet = true; m_documentAttributeKey = std::move(value); }
-    inline void SetDocumentAttributeKey(const char* value) { m_documentAttributeKeyHasBeenSet = true; m_documentAttributeKey.assign(value); }
-    inline Facet& WithDocumentAttributeKey(const Aws::String& value) { SetDocumentAttributeKey(value); return *this;}
-    inline Facet& WithDocumentAttributeKey(Aws::String&& value) { SetDocumentAttributeKey(std::move(value)); return *this;}
-    inline Facet& WithDocumentAttributeKey(const char* value) { SetDocumentAttributeKey(value); return *this;}
+    template<typename DocumentAttributeKeyT = Aws::String>
+    void SetDocumentAttributeKey(DocumentAttributeKeyT&& value) { m_documentAttributeKeyHasBeenSet = true; m_documentAttributeKey = std::forward<DocumentAttributeKeyT>(value); }
+    template<typename DocumentAttributeKeyT = Aws::String>
+    Facet& WithDocumentAttributeKey(DocumentAttributeKeyT&& value) { SetDocumentAttributeKey(std::forward<DocumentAttributeKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +69,14 @@ namespace Model
      * increase this limit, contact <a
      * href="http://aws.amazon.com/contact-us/">Support</a>.</p>
      */
-    inline const Aws::Vector<Facet>& GetFacets() const{ return m_facets; }
+    inline const Aws::Vector<Facet>& GetFacets() const { return m_facets; }
     inline bool FacetsHasBeenSet() const { return m_facetsHasBeenSet; }
-    inline void SetFacets(const Aws::Vector<Facet>& value) { m_facetsHasBeenSet = true; m_facets = value; }
-    inline void SetFacets(Aws::Vector<Facet>&& value) { m_facetsHasBeenSet = true; m_facets = std::move(value); }
-    inline Facet& WithFacets(const Aws::Vector<Facet>& value) { SetFacets(value); return *this;}
-    inline Facet& WithFacets(Aws::Vector<Facet>&& value) { SetFacets(std::move(value)); return *this;}
-    inline Facet& AddFacets(const Facet& value) { m_facetsHasBeenSet = true; m_facets.push_back(value); return *this; }
-    inline Facet& AddFacets(Facet&& value) { m_facetsHasBeenSet = true; m_facets.push_back(std::move(value)); return *this; }
+    template<typename FacetsT = Aws::Vector<Facet>>
+    void SetFacets(FacetsT&& value) { m_facetsHasBeenSet = true; m_facets = std::forward<FacetsT>(value); }
+    template<typename FacetsT = Aws::Vector<Facet>>
+    Facet& WithFacets(FacetsT&& value) { SetFacets(std::forward<FacetsT>(value)); return *this;}
+    template<typename FacetsT = Facet>
+    Facet& AddFacets(FacetsT&& value) { m_facetsHasBeenSet = true; m_facets.emplace_back(std::forward<FacetsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -87,7 +85,7 @@ namespace Model
      * to limit the number of facet values to less than 10. If you want to increase the
      * default, contact <a href="http://aws.amazon.com/contact-us/">Support</a>.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline Facet& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -100,7 +98,7 @@ namespace Model
     Aws::Vector<Facet> m_facets;
     bool m_facetsHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

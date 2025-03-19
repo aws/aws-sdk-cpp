@@ -18,15 +18,7 @@ namespace CloudWatchEvents
 namespace Model
 {
 
-EventBus::EventBus() : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_policyHasBeenSet(false)
-{
-}
-
 EventBus::EventBus(JsonView jsonValue)
-  : EventBus()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ EventBus& EventBus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Policy"))
   {
     m_policy = jsonValue.GetString("Policy");
-
     m_policyHasBeenSet = true;
   }
-
   return *this;
 }
 

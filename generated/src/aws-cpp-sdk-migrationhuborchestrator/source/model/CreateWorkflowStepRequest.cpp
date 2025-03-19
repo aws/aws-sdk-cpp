@@ -12,21 +12,6 @@ using namespace Aws::MigrationHubOrchestrator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateWorkflowStepRequest::CreateWorkflowStepRequest() : 
-    m_nameHasBeenSet(false),
-    m_stepGroupIdHasBeenSet(false),
-    m_workflowIdHasBeenSet(false),
-    m_stepActionType(StepActionType::NOT_SET),
-    m_stepActionTypeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_workflowStepAutomationConfigurationHasBeenSet(false),
-    m_stepTargetHasBeenSet(false),
-    m_outputsHasBeenSet(false),
-    m_previousHasBeenSet(false),
-    m_nextHasBeenSet(false)
-{
-}
-
 Aws::String CreateWorkflowStepRequest::SerializePayload() const
 {
   JsonValue payload;

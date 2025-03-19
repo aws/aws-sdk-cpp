@@ -18,17 +18,7 @@ namespace Connect
 namespace Model
 {
 
-EmailAddressMetadata::EmailAddressMetadata() : 
-    m_emailAddressIdHasBeenSet(false),
-    m_emailAddressArnHasBeenSet(false),
-    m_emailAddressHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_displayNameHasBeenSet(false)
-{
-}
-
 EmailAddressMetadata::EmailAddressMetadata(JsonView jsonValue)
-  : EmailAddressMetadata()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ EmailAddressMetadata& EmailAddressMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EmailAddressId"))
   {
     m_emailAddressId = jsonValue.GetString("EmailAddressId");
-
     m_emailAddressIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EmailAddressArn"))
   {
     m_emailAddressArn = jsonValue.GetString("EmailAddressArn");
-
     m_emailAddressArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EmailAddress"))
   {
     m_emailAddress = jsonValue.GetString("EmailAddress");
-
     m_emailAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayName"))
   {
     m_displayName = jsonValue.GetString("DisplayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   return *this;
 }
 

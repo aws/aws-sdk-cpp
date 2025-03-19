@@ -12,11 +12,6 @@ using namespace Aws::AppIntegrationsService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteEventIntegrationRequest::DeleteEventIntegrationRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteEventIntegrationRequest::SerializePayload() const
 {
   return {};

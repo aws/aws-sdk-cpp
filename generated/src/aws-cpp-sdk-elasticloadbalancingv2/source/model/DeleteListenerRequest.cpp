@@ -10,11 +10,6 @@
 using namespace Aws::ElasticLoadBalancingv2::Model;
 using namespace Aws::Utils;
 
-DeleteListenerRequest::DeleteListenerRequest() : 
-    m_listenerArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteListenerRequest::SerializePayload() const
 {
   Aws::StringStream ss;

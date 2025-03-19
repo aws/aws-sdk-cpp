@@ -23,7 +23,7 @@ namespace Model
   class UpdateCampaignRequest : public IoTFleetWiseRequest
   {
   public:
-    AWS_IOTFLEETWISE_API UpdateCampaignRequest();
+    AWS_IOTFLEETWISE_API UpdateCampaignRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,24 @@ namespace Model
     /**
      * <p> The name of the campaign to update. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateCampaignRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateCampaignRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateCampaignRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateCampaignRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the campaign.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateCampaignRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateCampaignRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateCampaignRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateCampaignRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,15 +65,14 @@ namespace Model
      * <p> A list of vehicle attributes to associate with a signal. </p> <p>Default: An
      * empty array</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDataExtraDimensions() const{ return m_dataExtraDimensions; }
+    inline const Aws::Vector<Aws::String>& GetDataExtraDimensions() const { return m_dataExtraDimensions; }
     inline bool DataExtraDimensionsHasBeenSet() const { return m_dataExtraDimensionsHasBeenSet; }
-    inline void SetDataExtraDimensions(const Aws::Vector<Aws::String>& value) { m_dataExtraDimensionsHasBeenSet = true; m_dataExtraDimensions = value; }
-    inline void SetDataExtraDimensions(Aws::Vector<Aws::String>&& value) { m_dataExtraDimensionsHasBeenSet = true; m_dataExtraDimensions = std::move(value); }
-    inline UpdateCampaignRequest& WithDataExtraDimensions(const Aws::Vector<Aws::String>& value) { SetDataExtraDimensions(value); return *this;}
-    inline UpdateCampaignRequest& WithDataExtraDimensions(Aws::Vector<Aws::String>&& value) { SetDataExtraDimensions(std::move(value)); return *this;}
-    inline UpdateCampaignRequest& AddDataExtraDimensions(const Aws::String& value) { m_dataExtraDimensionsHasBeenSet = true; m_dataExtraDimensions.push_back(value); return *this; }
-    inline UpdateCampaignRequest& AddDataExtraDimensions(Aws::String&& value) { m_dataExtraDimensionsHasBeenSet = true; m_dataExtraDimensions.push_back(std::move(value)); return *this; }
-    inline UpdateCampaignRequest& AddDataExtraDimensions(const char* value) { m_dataExtraDimensionsHasBeenSet = true; m_dataExtraDimensions.push_back(value); return *this; }
+    template<typename DataExtraDimensionsT = Aws::Vector<Aws::String>>
+    void SetDataExtraDimensions(DataExtraDimensionsT&& value) { m_dataExtraDimensionsHasBeenSet = true; m_dataExtraDimensions = std::forward<DataExtraDimensionsT>(value); }
+    template<typename DataExtraDimensionsT = Aws::Vector<Aws::String>>
+    UpdateCampaignRequest& WithDataExtraDimensions(DataExtraDimensionsT&& value) { SetDataExtraDimensions(std::forward<DataExtraDimensionsT>(value)); return *this;}
+    template<typename DataExtraDimensionsT = Aws::String>
+    UpdateCampaignRequest& AddDataExtraDimensions(DataExtraDimensionsT&& value) { m_dataExtraDimensionsHasBeenSet = true; m_dataExtraDimensions.emplace_back(std::forward<DataExtraDimensionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -92,12 +87,10 @@ namespace Model
      * data.</p> </li> <li> <p> <code>UPDATE</code> - To update a campaign. </p> </li>
      * </ul>
      */
-    inline const UpdateCampaignAction& GetAction() const{ return m_action; }
+    inline UpdateCampaignAction GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const UpdateCampaignAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(UpdateCampaignAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline UpdateCampaignRequest& WithAction(const UpdateCampaignAction& value) { SetAction(value); return *this;}
-    inline UpdateCampaignRequest& WithAction(UpdateCampaignAction&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(UpdateCampaignAction value) { m_actionHasBeenSet = true; m_action = value; }
+    inline UpdateCampaignRequest& WithAction(UpdateCampaignAction value) { SetAction(value); return *this;}
     ///@}
   private:
 
@@ -110,7 +103,7 @@ namespace Model
     Aws::Vector<Aws::String> m_dataExtraDimensions;
     bool m_dataExtraDimensionsHasBeenSet = false;
 
-    UpdateCampaignAction m_action;
+    UpdateCampaignAction m_action{UpdateCampaignAction::NOT_SET};
     bool m_actionHasBeenSet = false;
   };
 

@@ -18,15 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-LocalPortDetails::LocalPortDetails() : 
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_portNameHasBeenSet(false)
-{
-}
-
 LocalPortDetails::LocalPortDetails(JsonView jsonValue)
-  : LocalPortDetails()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ LocalPortDetails& LocalPortDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("port"))
   {
     m_port = jsonValue.GetInteger("port");
-
     m_portHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("portName"))
   {
     m_portName = jsonValue.GetString("portName");
-
     m_portNameHasBeenSet = true;
   }
-
   return *this;
 }
 

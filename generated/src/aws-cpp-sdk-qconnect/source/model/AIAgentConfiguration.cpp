@@ -18,15 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-AIAgentConfiguration::AIAgentConfiguration() : 
-    m_answerRecommendationAIAgentConfigurationHasBeenSet(false),
-    m_manualSearchAIAgentConfigurationHasBeenSet(false),
-    m_selfServiceAIAgentConfigurationHasBeenSet(false)
-{
-}
-
 AIAgentConfiguration::AIAgentConfiguration(JsonView jsonValue)
-  : AIAgentConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AIAgentConfiguration& AIAgentConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("answerRecommendationAIAgentConfiguration"))
   {
     m_answerRecommendationAIAgentConfiguration = jsonValue.GetObject("answerRecommendationAIAgentConfiguration");
-
     m_answerRecommendationAIAgentConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("manualSearchAIAgentConfiguration"))
   {
     m_manualSearchAIAgentConfiguration = jsonValue.GetObject("manualSearchAIAgentConfiguration");
-
     m_manualSearchAIAgentConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("selfServiceAIAgentConfiguration"))
   {
     m_selfServiceAIAgentConfiguration = jsonValue.GetObject("selfServiceAIAgentConfiguration");
-
     m_selfServiceAIAgentConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

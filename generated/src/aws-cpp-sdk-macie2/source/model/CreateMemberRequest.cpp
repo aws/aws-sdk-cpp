@@ -12,12 +12,6 @@ using namespace Aws::Macie2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateMemberRequest::CreateMemberRequest() : 
-    m_accountHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateMemberRequest::SerializePayload() const
 {
   JsonValue payload;

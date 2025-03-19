@@ -18,14 +18,7 @@ namespace deadline
 namespace Model
 {
 
-AssignedSessionAction::AssignedSessionAction() : 
-    m_sessionActionIdHasBeenSet(false),
-    m_definitionHasBeenSet(false)
-{
-}
-
 AssignedSessionAction::AssignedSessionAction(JsonView jsonValue)
-  : AssignedSessionAction()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AssignedSessionAction& AssignedSessionAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sessionActionId"))
   {
     m_sessionActionId = jsonValue.GetString("sessionActionId");
-
     m_sessionActionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("definition"))
   {
     m_definition = jsonValue.GetObject("definition");
-
     m_definitionHasBeenSet = true;
   }
-
   return *this;
 }
 

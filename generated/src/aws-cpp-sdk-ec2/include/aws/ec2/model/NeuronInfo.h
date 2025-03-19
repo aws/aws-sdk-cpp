@@ -33,7 +33,7 @@ namespace Model
   class NeuronInfo
   {
   public:
-    AWS_EC2_API NeuronInfo();
+    AWS_EC2_API NeuronInfo() = default;
     AWS_EC2_API NeuronInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API NeuronInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,14 +45,14 @@ namespace Model
     /**
      * <p>Describes the neuron accelerators for the instance type.</p>
      */
-    inline const Aws::Vector<NeuronDeviceInfo>& GetNeuronDevices() const{ return m_neuronDevices; }
+    inline const Aws::Vector<NeuronDeviceInfo>& GetNeuronDevices() const { return m_neuronDevices; }
     inline bool NeuronDevicesHasBeenSet() const { return m_neuronDevicesHasBeenSet; }
-    inline void SetNeuronDevices(const Aws::Vector<NeuronDeviceInfo>& value) { m_neuronDevicesHasBeenSet = true; m_neuronDevices = value; }
-    inline void SetNeuronDevices(Aws::Vector<NeuronDeviceInfo>&& value) { m_neuronDevicesHasBeenSet = true; m_neuronDevices = std::move(value); }
-    inline NeuronInfo& WithNeuronDevices(const Aws::Vector<NeuronDeviceInfo>& value) { SetNeuronDevices(value); return *this;}
-    inline NeuronInfo& WithNeuronDevices(Aws::Vector<NeuronDeviceInfo>&& value) { SetNeuronDevices(std::move(value)); return *this;}
-    inline NeuronInfo& AddNeuronDevices(const NeuronDeviceInfo& value) { m_neuronDevicesHasBeenSet = true; m_neuronDevices.push_back(value); return *this; }
-    inline NeuronInfo& AddNeuronDevices(NeuronDeviceInfo&& value) { m_neuronDevicesHasBeenSet = true; m_neuronDevices.push_back(std::move(value)); return *this; }
+    template<typename NeuronDevicesT = Aws::Vector<NeuronDeviceInfo>>
+    void SetNeuronDevices(NeuronDevicesT&& value) { m_neuronDevicesHasBeenSet = true; m_neuronDevices = std::forward<NeuronDevicesT>(value); }
+    template<typename NeuronDevicesT = Aws::Vector<NeuronDeviceInfo>>
+    NeuronInfo& WithNeuronDevices(NeuronDevicesT&& value) { SetNeuronDevices(std::forward<NeuronDevicesT>(value)); return *this;}
+    template<typename NeuronDevicesT = NeuronDeviceInfo>
+    NeuronInfo& AddNeuronDevices(NeuronDevicesT&& value) { m_neuronDevicesHasBeenSet = true; m_neuronDevices.emplace_back(std::forward<NeuronDevicesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -60,7 +60,7 @@ namespace Model
      * <p>The total size of the memory for the neuron accelerators for the instance
      * type, in MiB.</p>
      */
-    inline int GetTotalNeuronDeviceMemoryInMiB() const{ return m_totalNeuronDeviceMemoryInMiB; }
+    inline int GetTotalNeuronDeviceMemoryInMiB() const { return m_totalNeuronDeviceMemoryInMiB; }
     inline bool TotalNeuronDeviceMemoryInMiBHasBeenSet() const { return m_totalNeuronDeviceMemoryInMiBHasBeenSet; }
     inline void SetTotalNeuronDeviceMemoryInMiB(int value) { m_totalNeuronDeviceMemoryInMiBHasBeenSet = true; m_totalNeuronDeviceMemoryInMiB = value; }
     inline NeuronInfo& WithTotalNeuronDeviceMemoryInMiB(int value) { SetTotalNeuronDeviceMemoryInMiB(value); return *this;}
@@ -70,7 +70,7 @@ namespace Model
     Aws::Vector<NeuronDeviceInfo> m_neuronDevices;
     bool m_neuronDevicesHasBeenSet = false;
 
-    int m_totalNeuronDeviceMemoryInMiB;
+    int m_totalNeuronDeviceMemoryInMiB{0};
     bool m_totalNeuronDeviceMemoryInMiBHasBeenSet = false;
   };
 

@@ -18,14 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteVehicleSummary::RouteVehicleSummary() : 
-    m_overviewHasBeenSet(false),
-    m_travelOnlyHasBeenSet(false)
-{
-}
-
 RouteVehicleSummary::RouteVehicleSummary(JsonView jsonValue)
-  : RouteVehicleSummary()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RouteVehicleSummary& RouteVehicleSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Overview"))
   {
     m_overview = jsonValue.GetObject("Overview");
-
     m_overviewHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TravelOnly"))
   {
     m_travelOnly = jsonValue.GetObject("TravelOnly");
-
     m_travelOnlyHasBeenSet = true;
   }
-
   return *this;
 }
 

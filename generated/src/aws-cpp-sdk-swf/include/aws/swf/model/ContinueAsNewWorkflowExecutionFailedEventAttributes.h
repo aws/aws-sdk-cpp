@@ -32,7 +32,7 @@ namespace Model
   class ContinueAsNewWorkflowExecutionFailedEventAttributes
   {
   public:
-    AWS_SWF_API ContinueAsNewWorkflowExecutionFailedEventAttributes();
+    AWS_SWF_API ContinueAsNewWorkflowExecutionFailedEventAttributes() = default;
     AWS_SWF_API ContinueAsNewWorkflowExecutionFailedEventAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API ContinueAsNewWorkflowExecutionFailedEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,10 @@ namespace Model
      * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
      * Guide</i>.</p> 
      */
-    inline const ContinueAsNewWorkflowExecutionFailedCause& GetCause() const{ return m_cause; }
+    inline ContinueAsNewWorkflowExecutionFailedCause GetCause() const { return m_cause; }
     inline bool CauseHasBeenSet() const { return m_causeHasBeenSet; }
-    inline void SetCause(const ContinueAsNewWorkflowExecutionFailedCause& value) { m_causeHasBeenSet = true; m_cause = value; }
-    inline void SetCause(ContinueAsNewWorkflowExecutionFailedCause&& value) { m_causeHasBeenSet = true; m_cause = std::move(value); }
-    inline ContinueAsNewWorkflowExecutionFailedEventAttributes& WithCause(const ContinueAsNewWorkflowExecutionFailedCause& value) { SetCause(value); return *this;}
-    inline ContinueAsNewWorkflowExecutionFailedEventAttributes& WithCause(ContinueAsNewWorkflowExecutionFailedCause&& value) { SetCause(std::move(value)); return *this;}
+    inline void SetCause(ContinueAsNewWorkflowExecutionFailedCause value) { m_causeHasBeenSet = true; m_cause = value; }
+    inline ContinueAsNewWorkflowExecutionFailedEventAttributes& WithCause(ContinueAsNewWorkflowExecutionFailedCause value) { SetCause(value); return *this;}
     ///@}
 
     ///@{
@@ -64,17 +62,17 @@ namespace Model
      * diagnosing problems by tracing back the chain of events leading up to this
      * event.</p>
      */
-    inline long long GetDecisionTaskCompletedEventId() const{ return m_decisionTaskCompletedEventId; }
+    inline long long GetDecisionTaskCompletedEventId() const { return m_decisionTaskCompletedEventId; }
     inline bool DecisionTaskCompletedEventIdHasBeenSet() const { return m_decisionTaskCompletedEventIdHasBeenSet; }
     inline void SetDecisionTaskCompletedEventId(long long value) { m_decisionTaskCompletedEventIdHasBeenSet = true; m_decisionTaskCompletedEventId = value; }
     inline ContinueAsNewWorkflowExecutionFailedEventAttributes& WithDecisionTaskCompletedEventId(long long value) { SetDecisionTaskCompletedEventId(value); return *this;}
     ///@}
   private:
 
-    ContinueAsNewWorkflowExecutionFailedCause m_cause;
+    ContinueAsNewWorkflowExecutionFailedCause m_cause{ContinueAsNewWorkflowExecutionFailedCause::NOT_SET};
     bool m_causeHasBeenSet = false;
 
-    long long m_decisionTaskCompletedEventId;
+    long long m_decisionTaskCompletedEventId{0};
     bool m_decisionTaskCompletedEventIdHasBeenSet = false;
   };
 

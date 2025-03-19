@@ -28,35 +28,35 @@ namespace Model
   class CreateImportJobResult
   {
   public:
-    AWS_PINPOINT_API CreateImportJobResult();
+    AWS_PINPOINT_API CreateImportJobResult() = default;
     AWS_PINPOINT_API CreateImportJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINT_API CreateImportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const ImportJobResponse& GetImportJobResponse() const{ return m_importJobResponse; }
-    inline void SetImportJobResponse(const ImportJobResponse& value) { m_importJobResponse = value; }
-    inline void SetImportJobResponse(ImportJobResponse&& value) { m_importJobResponse = std::move(value); }
-    inline CreateImportJobResult& WithImportJobResponse(const ImportJobResponse& value) { SetImportJobResponse(value); return *this;}
-    inline CreateImportJobResult& WithImportJobResponse(ImportJobResponse&& value) { SetImportJobResponse(std::move(value)); return *this;}
+    inline const ImportJobResponse& GetImportJobResponse() const { return m_importJobResponse; }
+    template<typename ImportJobResponseT = ImportJobResponse>
+    void SetImportJobResponse(ImportJobResponseT&& value) { m_importJobResponseHasBeenSet = true; m_importJobResponse = std::forward<ImportJobResponseT>(value); }
+    template<typename ImportJobResponseT = ImportJobResponse>
+    CreateImportJobResult& WithImportJobResponse(ImportJobResponseT&& value) { SetImportJobResponse(std::forward<ImportJobResponseT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateImportJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateImportJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateImportJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateImportJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ImportJobResponse m_importJobResponse;
+    bool m_importJobResponseHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

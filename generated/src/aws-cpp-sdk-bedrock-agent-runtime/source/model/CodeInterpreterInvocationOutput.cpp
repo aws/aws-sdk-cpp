@@ -18,17 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-CodeInterpreterInvocationOutput::CodeInterpreterInvocationOutput() : 
-    m_executionErrorHasBeenSet(false),
-    m_executionOutputHasBeenSet(false),
-    m_executionTimeout(false),
-    m_executionTimeoutHasBeenSet(false),
-    m_filesHasBeenSet(false)
-{
-}
-
 CodeInterpreterInvocationOutput::CodeInterpreterInvocationOutput(JsonView jsonValue)
-  : CodeInterpreterInvocationOutput()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ CodeInterpreterInvocationOutput& CodeInterpreterInvocationOutput::operator =(Jso
   if(jsonValue.ValueExists("executionError"))
   {
     m_executionError = jsonValue.GetString("executionError");
-
     m_executionErrorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionOutput"))
   {
     m_executionOutput = jsonValue.GetString("executionOutput");
-
     m_executionOutputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionTimeout"))
   {
     m_executionTimeout = jsonValue.GetBool("executionTimeout");
-
     m_executionTimeoutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("files"))
   {
     Aws::Utils::Array<JsonView> filesJsonList = jsonValue.GetArray("files");
@@ -65,7 +49,6 @@ CodeInterpreterInvocationOutput& CodeInterpreterInvocationOutput::operator =(Jso
     }
     m_filesHasBeenSet = true;
   }
-
   return *this;
 }
 

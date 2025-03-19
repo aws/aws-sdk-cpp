@@ -32,7 +32,7 @@ namespace Model
   class OfferAvailabilityEndDateFilter
   {
   public:
-    AWS_MARKETPLACECATALOG_API OfferAvailabilityEndDateFilter();
+    AWS_MARKETPLACECATALOG_API OfferAvailabilityEndDateFilter() = default;
     AWS_MARKETPLACECATALOG_API OfferAvailabilityEndDateFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_MARKETPLACECATALOG_API OfferAvailabilityEndDateFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MARKETPLACECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>Allows filtering on the <code>AvailabilityEndDate</code> of an offer with
      * date range as input.</p>
      */
-    inline const OfferAvailabilityEndDateFilterDateRange& GetDateRange() const{ return m_dateRange; }
+    inline const OfferAvailabilityEndDateFilterDateRange& GetDateRange() const { return m_dateRange; }
     inline bool DateRangeHasBeenSet() const { return m_dateRangeHasBeenSet; }
-    inline void SetDateRange(const OfferAvailabilityEndDateFilterDateRange& value) { m_dateRangeHasBeenSet = true; m_dateRange = value; }
-    inline void SetDateRange(OfferAvailabilityEndDateFilterDateRange&& value) { m_dateRangeHasBeenSet = true; m_dateRange = std::move(value); }
-    inline OfferAvailabilityEndDateFilter& WithDateRange(const OfferAvailabilityEndDateFilterDateRange& value) { SetDateRange(value); return *this;}
-    inline OfferAvailabilityEndDateFilter& WithDateRange(OfferAvailabilityEndDateFilterDateRange&& value) { SetDateRange(std::move(value)); return *this;}
+    template<typename DateRangeT = OfferAvailabilityEndDateFilterDateRange>
+    void SetDateRange(DateRangeT&& value) { m_dateRangeHasBeenSet = true; m_dateRange = std::forward<DateRangeT>(value); }
+    template<typename DateRangeT = OfferAvailabilityEndDateFilterDateRange>
+    OfferAvailabilityEndDateFilter& WithDateRange(DateRangeT&& value) { SetDateRange(std::forward<DateRangeT>(value)); return *this;}
     ///@}
   private:
 

@@ -17,16 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ModifyActivityStreamResult::ModifyActivityStreamResult() : 
-    m_status(ActivityStreamStatus::NOT_SET),
-    m_mode(ActivityStreamMode::NOT_SET),
-    m_engineNativeAuditFieldsIncluded(false),
-    m_policyStatus(ActivityStreamPolicyStatus::NOT_SET)
-{
-}
-
 ModifyActivityStreamResult::ModifyActivityStreamResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : ModifyActivityStreamResult()
 {
   *this = result;
 }
@@ -47,37 +38,44 @@ ModifyActivityStreamResult& ModifyActivityStreamResult::operator =(const Aws::Am
     if(!kmsKeyIdNode.IsNull())
     {
       m_kmsKeyId = Aws::Utils::Xml::DecodeEscapedXmlText(kmsKeyIdNode.GetText());
+      m_kmsKeyIdHasBeenSet = true;
     }
     XmlNode kinesisStreamNameNode = resultNode.FirstChild("KinesisStreamName");
     if(!kinesisStreamNameNode.IsNull())
     {
       m_kinesisStreamName = Aws::Utils::Xml::DecodeEscapedXmlText(kinesisStreamNameNode.GetText());
+      m_kinesisStreamNameHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = ActivityStreamStatusMapper::GetActivityStreamStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = ActivityStreamStatusMapper::GetActivityStreamStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
+      m_statusHasBeenSet = true;
     }
     XmlNode modeNode = resultNode.FirstChild("Mode");
     if(!modeNode.IsNull())
     {
-      m_mode = ActivityStreamModeMapper::GetActivityStreamModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(modeNode.GetText()).c_str()).c_str());
+      m_mode = ActivityStreamModeMapper::GetActivityStreamModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(modeNode.GetText()).c_str()));
+      m_modeHasBeenSet = true;
     }
     XmlNode engineNativeAuditFieldsIncludedNode = resultNode.FirstChild("EngineNativeAuditFieldsIncluded");
     if(!engineNativeAuditFieldsIncludedNode.IsNull())
     {
       m_engineNativeAuditFieldsIncluded = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(engineNativeAuditFieldsIncludedNode.GetText()).c_str()).c_str());
+      m_engineNativeAuditFieldsIncludedHasBeenSet = true;
     }
     XmlNode policyStatusNode = resultNode.FirstChild("PolicyStatus");
     if(!policyStatusNode.IsNull())
     {
-      m_policyStatus = ActivityStreamPolicyStatusMapper::GetActivityStreamPolicyStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(policyStatusNode.GetText()).c_str()).c_str());
+      m_policyStatus = ActivityStreamPolicyStatusMapper::GetActivityStreamPolicyStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(policyStatusNode.GetText()).c_str()));
+      m_policyStatusHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::ModifyActivityStreamResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

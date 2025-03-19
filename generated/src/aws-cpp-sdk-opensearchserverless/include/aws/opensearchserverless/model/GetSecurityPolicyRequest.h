@@ -22,7 +22,7 @@ namespace Model
   class GetSecurityPolicyRequest : public OpenSearchServerlessRequest
   {
   public:
-    AWS_OPENSEARCHSERVERLESS_API GetSecurityPolicyRequest();
+    AWS_OPENSEARCHSERVERLESS_API GetSecurityPolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,30 +39,26 @@ namespace Model
     /**
      * <p>The type of security policy.</p>
      */
-    inline const SecurityPolicyType& GetType() const{ return m_type; }
+    inline SecurityPolicyType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const SecurityPolicyType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(SecurityPolicyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline GetSecurityPolicyRequest& WithType(const SecurityPolicyType& value) { SetType(value); return *this;}
-    inline GetSecurityPolicyRequest& WithType(SecurityPolicyType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(SecurityPolicyType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline GetSecurityPolicyRequest& WithType(SecurityPolicyType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the security policy.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline GetSecurityPolicyRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetSecurityPolicyRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetSecurityPolicyRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetSecurityPolicyRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 
-    SecurityPolicyType m_type;
+    SecurityPolicyType m_type{SecurityPolicyType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_name;

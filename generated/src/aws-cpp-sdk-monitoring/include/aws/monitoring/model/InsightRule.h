@@ -35,7 +35,7 @@ namespace Model
   class InsightRule
   {
   public:
-    AWS_CLOUDWATCH_API InsightRule();
+    AWS_CLOUDWATCH_API InsightRule() = default;
     AWS_CLOUDWATCH_API InsightRule(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDWATCH_API InsightRule& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,28 +47,24 @@ namespace Model
     /**
      * <p>The name of the rule.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline InsightRule& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline InsightRule& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline InsightRule& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    InsightRule& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether the rule is enabled or disabled.</p>
      */
-    inline const Aws::String& GetState() const{ return m_state; }
+    inline const Aws::String& GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const Aws::String& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline void SetState(const char* value) { m_stateHasBeenSet = true; m_state.assign(value); }
-    inline InsightRule& WithState(const Aws::String& value) { SetState(value); return *this;}
-    inline InsightRule& WithState(Aws::String&& value) { SetState(std::move(value)); return *this;}
-    inline InsightRule& WithState(const char* value) { SetState(value); return *this;}
+    template<typename StateT = Aws::String>
+    void SetState(StateT&& value) { m_stateHasBeenSet = true; m_state = std::forward<StateT>(value); }
+    template<typename StateT = Aws::String>
+    InsightRule& WithState(StateT&& value) { SetState(std::forward<StateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +73,12 @@ namespace Model
      * "Version": 1}</code>. For managed rules, this is <code>{"Name":
      * "ServiceLogRule", "Version": 1}</code> </p>
      */
-    inline const Aws::String& GetSchema() const{ return m_schema; }
+    inline const Aws::String& GetSchema() const { return m_schema; }
     inline bool SchemaHasBeenSet() const { return m_schemaHasBeenSet; }
-    inline void SetSchema(const Aws::String& value) { m_schemaHasBeenSet = true; m_schema = value; }
-    inline void SetSchema(Aws::String&& value) { m_schemaHasBeenSet = true; m_schema = std::move(value); }
-    inline void SetSchema(const char* value) { m_schemaHasBeenSet = true; m_schema.assign(value); }
-    inline InsightRule& WithSchema(const Aws::String& value) { SetSchema(value); return *this;}
-    inline InsightRule& WithSchema(Aws::String&& value) { SetSchema(std::move(value)); return *this;}
-    inline InsightRule& WithSchema(const char* value) { SetSchema(value); return *this;}
+    template<typename SchemaT = Aws::String>
+    void SetSchema(SchemaT&& value) { m_schemaHasBeenSet = true; m_schema = std::forward<SchemaT>(value); }
+    template<typename SchemaT = Aws::String>
+    InsightRule& WithSchema(SchemaT&& value) { SetSchema(std::forward<SchemaT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,21 +90,19 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights-RuleSyntax.html">Contributor
      * Insights Rule Syntax</a>.</p>
      */
-    inline const Aws::String& GetDefinition() const{ return m_definition; }
+    inline const Aws::String& GetDefinition() const { return m_definition; }
     inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
-    inline void SetDefinition(const Aws::String& value) { m_definitionHasBeenSet = true; m_definition = value; }
-    inline void SetDefinition(Aws::String&& value) { m_definitionHasBeenSet = true; m_definition = std::move(value); }
-    inline void SetDefinition(const char* value) { m_definitionHasBeenSet = true; m_definition.assign(value); }
-    inline InsightRule& WithDefinition(const Aws::String& value) { SetDefinition(value); return *this;}
-    inline InsightRule& WithDefinition(Aws::String&& value) { SetDefinition(std::move(value)); return *this;}
-    inline InsightRule& WithDefinition(const char* value) { SetDefinition(value); return *this;}
+    template<typename DefinitionT = Aws::String>
+    void SetDefinition(DefinitionT&& value) { m_definitionHasBeenSet = true; m_definition = std::forward<DefinitionT>(value); }
+    template<typename DefinitionT = Aws::String>
+    InsightRule& WithDefinition(DefinitionT&& value) { SetDefinition(std::forward<DefinitionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> An optional built-in rule that Amazon Web Services manages. </p>
      */
-    inline bool GetManagedRule() const{ return m_managedRule; }
+    inline bool GetManagedRule() const { return m_managedRule; }
     inline bool ManagedRuleHasBeenSet() const { return m_managedRuleHasBeenSet; }
     inline void SetManagedRule(bool value) { m_managedRuleHasBeenSet = true; m_managedRule = value; }
     inline InsightRule& WithManagedRule(bool value) { SetManagedRule(value); return *this;}
@@ -129,7 +121,7 @@ namespace Model
     Aws::String m_definition;
     bool m_definitionHasBeenSet = false;
 
-    bool m_managedRule;
+    bool m_managedRule{false};
     bool m_managedRuleHasBeenSet = false;
   };
 

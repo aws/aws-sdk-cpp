@@ -20,14 +20,7 @@ namespace RDS
 namespace Model
 {
 
-ContextAttribute::ContextAttribute() : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 ContextAttribute::ContextAttribute(const XmlNode& xmlNode)
-  : ContextAttribute()
 {
   *this = xmlNode;
 }

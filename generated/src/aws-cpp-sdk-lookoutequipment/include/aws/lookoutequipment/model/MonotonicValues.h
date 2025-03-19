@@ -33,7 +33,7 @@ namespace Model
   class MonotonicValues
   {
   public:
-    AWS_LOOKOUTEQUIPMENT_API MonotonicValues();
+    AWS_LOOKOUTEQUIPMENT_API MonotonicValues() = default;
     AWS_LOOKOUTEQUIPMENT_API MonotonicValues(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTEQUIPMENT_API MonotonicValues& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
      * <p> Indicates whether there is a potential data issue related to having
      * monotonic values. </p>
      */
-    inline const StatisticalIssueStatus& GetStatus() const{ return m_status; }
+    inline StatisticalIssueStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const StatisticalIssueStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(StatisticalIssueStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline MonotonicValues& WithStatus(const StatisticalIssueStatus& value) { SetStatus(value); return *this;}
-    inline MonotonicValues& WithStatus(StatisticalIssueStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(StatisticalIssueStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline MonotonicValues& WithStatus(StatisticalIssueStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -57,19 +55,17 @@ namespace Model
      * <p> Indicates the monotonicity of values. Can be INCREASING, DECREASING, or
      * STATIC. </p>
      */
-    inline const Monotonicity& GetMonotonicity() const{ return m_monotonicity; }
+    inline Monotonicity GetMonotonicity() const { return m_monotonicity; }
     inline bool MonotonicityHasBeenSet() const { return m_monotonicityHasBeenSet; }
-    inline void SetMonotonicity(const Monotonicity& value) { m_monotonicityHasBeenSet = true; m_monotonicity = value; }
-    inline void SetMonotonicity(Monotonicity&& value) { m_monotonicityHasBeenSet = true; m_monotonicity = std::move(value); }
-    inline MonotonicValues& WithMonotonicity(const Monotonicity& value) { SetMonotonicity(value); return *this;}
-    inline MonotonicValues& WithMonotonicity(Monotonicity&& value) { SetMonotonicity(std::move(value)); return *this;}
+    inline void SetMonotonicity(Monotonicity value) { m_monotonicityHasBeenSet = true; m_monotonicity = value; }
+    inline MonotonicValues& WithMonotonicity(Monotonicity value) { SetMonotonicity(value); return *this;}
     ///@}
   private:
 
-    StatisticalIssueStatus m_status;
+    StatisticalIssueStatus m_status{StatisticalIssueStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    Monotonicity m_monotonicity;
+    Monotonicity m_monotonicity{Monotonicity::NOT_SET};
     bool m_monotonicityHasBeenSet = false;
   };
 

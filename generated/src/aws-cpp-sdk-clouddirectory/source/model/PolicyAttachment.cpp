@@ -18,15 +18,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-PolicyAttachment::PolicyAttachment() : 
-    m_policyIdHasBeenSet(false),
-    m_objectIdentifierHasBeenSet(false),
-    m_policyTypeHasBeenSet(false)
-{
-}
-
 PolicyAttachment::PolicyAttachment(JsonView jsonValue)
-  : PolicyAttachment()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ PolicyAttachment& PolicyAttachment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PolicyId"))
   {
     m_policyId = jsonValue.GetString("PolicyId");
-
     m_policyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ObjectIdentifier"))
   {
     m_objectIdentifier = jsonValue.GetString("ObjectIdentifier");
-
     m_objectIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolicyType"))
   {
     m_policyType = jsonValue.GetString("PolicyType");
-
     m_policyTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

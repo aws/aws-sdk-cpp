@@ -14,10 +14,6 @@ using namespace Aws::RestXmlProtocol::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-RecursiveShapesRequest::RecursiveShapesRequest() : 
-    m_nestedHasBeenSet(false)
-{
-}
 
 Aws::String RecursiveShapesRequest::SerializePayload() const
 {

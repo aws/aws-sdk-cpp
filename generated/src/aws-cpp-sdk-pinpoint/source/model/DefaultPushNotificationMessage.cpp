@@ -18,21 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-DefaultPushNotificationMessage::DefaultPushNotificationMessage() : 
-    m_action(Action::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_bodyHasBeenSet(false),
-    m_dataHasBeenSet(false),
-    m_silentPush(false),
-    m_silentPushHasBeenSet(false),
-    m_substitutionsHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_urlHasBeenSet(false)
-{
-}
-
 DefaultPushNotificationMessage::DefaultPushNotificationMessage(JsonView jsonValue)
-  : DefaultPushNotificationMessage()
 {
   *this = jsonValue;
 }
@@ -42,17 +28,13 @@ DefaultPushNotificationMessage& DefaultPushNotificationMessage::operator =(JsonV
   if(jsonValue.ValueExists("Action"))
   {
     m_action = ActionMapper::GetActionForName(jsonValue.GetString("Action"));
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Body"))
   {
     m_body = jsonValue.GetString("Body");
-
     m_bodyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Data"))
   {
     Aws::Map<Aws::String, JsonView> dataJsonMap = jsonValue.GetObject("Data").GetAllObjects();
@@ -62,14 +44,11 @@ DefaultPushNotificationMessage& DefaultPushNotificationMessage::operator =(JsonV
     }
     m_dataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SilentPush"))
   {
     m_silentPush = jsonValue.GetBool("SilentPush");
-
     m_silentPushHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Substitutions"))
   {
     Aws::Map<Aws::String, JsonView> substitutionsJsonMap = jsonValue.GetObject("Substitutions").GetAllObjects();
@@ -86,21 +65,16 @@ DefaultPushNotificationMessage& DefaultPushNotificationMessage::operator =(JsonV
     }
     m_substitutionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Title"))
   {
     m_title = jsonValue.GetString("Title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Url"))
   {
     m_url = jsonValue.GetString("Url");
-
     m_urlHasBeenSet = true;
   }
-
   return *this;
 }
 

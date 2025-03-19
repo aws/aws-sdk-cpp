@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-AssociateUserSettingsRequest::AssociateUserSettingsRequest() : 
-    m_portalArnHasBeenSet(false),
-    m_userSettingsArnHasBeenSet(false)
-{
-}
-
 Aws::String AssociateUserSettingsRequest::SerializePayload() const
 {
   return {};

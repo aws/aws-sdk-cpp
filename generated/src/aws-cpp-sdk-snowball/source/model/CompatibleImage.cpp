@@ -18,14 +18,7 @@ namespace Snowball
 namespace Model
 {
 
-CompatibleImage::CompatibleImage() : 
-    m_amiIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 CompatibleImage::CompatibleImage(JsonView jsonValue)
-  : CompatibleImage()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CompatibleImage& CompatibleImage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AmiId"))
   {
     m_amiId = jsonValue.GetString("AmiId");
-
     m_amiIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

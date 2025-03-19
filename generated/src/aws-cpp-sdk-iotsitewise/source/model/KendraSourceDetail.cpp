@@ -18,14 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-KendraSourceDetail::KendraSourceDetail() : 
-    m_knowledgeBaseArnHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 KendraSourceDetail::KendraSourceDetail(JsonView jsonValue)
-  : KendraSourceDetail()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ KendraSourceDetail& KendraSourceDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("knowledgeBaseArn"))
   {
     m_knowledgeBaseArn = jsonValue.GetString("knowledgeBaseArn");
-
     m_knowledgeBaseArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

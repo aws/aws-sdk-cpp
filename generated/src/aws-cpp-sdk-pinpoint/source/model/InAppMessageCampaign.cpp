@@ -18,24 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-InAppMessageCampaign::InAppMessageCampaign() : 
-    m_campaignIdHasBeenSet(false),
-    m_dailyCap(0),
-    m_dailyCapHasBeenSet(false),
-    m_inAppMessageHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_sessionCap(0),
-    m_sessionCapHasBeenSet(false),
-    m_totalCap(0),
-    m_totalCapHasBeenSet(false),
-    m_treatmentIdHasBeenSet(false)
-{
-}
-
 InAppMessageCampaign::InAppMessageCampaign(JsonView jsonValue)
-  : InAppMessageCampaign()
 {
   *this = jsonValue;
 }
@@ -45,59 +28,43 @@ InAppMessageCampaign& InAppMessageCampaign::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CampaignId"))
   {
     m_campaignId = jsonValue.GetString("CampaignId");
-
     m_campaignIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DailyCap"))
   {
     m_dailyCap = jsonValue.GetInteger("DailyCap");
-
     m_dailyCapHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InAppMessage"))
   {
     m_inAppMessage = jsonValue.GetObject("InAppMessage");
-
     m_inAppMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Priority"))
   {
     m_priority = jsonValue.GetInteger("Priority");
-
     m_priorityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Schedule"))
   {
     m_schedule = jsonValue.GetObject("Schedule");
-
     m_scheduleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SessionCap"))
   {
     m_sessionCap = jsonValue.GetInteger("SessionCap");
-
     m_sessionCapHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalCap"))
   {
     m_totalCap = jsonValue.GetInteger("TotalCap");
-
     m_totalCapHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TreatmentId"))
   {
     m_treatmentId = jsonValue.GetString("TreatmentId");
-
     m_treatmentIdHasBeenSet = true;
   }
-
   return *this;
 }
 

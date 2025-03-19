@@ -40,7 +40,7 @@ namespace Model
   class ClusterMetadata
   {
   public:
-    AWS_SNOWBALL_API ClusterMetadata();
+    AWS_SNOWBALL_API ClusterMetadata() = default;
     AWS_SNOWBALL_API ClusterMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_SNOWBALL_API ClusterMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,28 +50,24 @@ namespace Model
     /**
      * <p>The automatically generated ID for a cluster.</p>
      */
-    inline const Aws::String& GetClusterId() const{ return m_clusterId; }
+    inline const Aws::String& GetClusterId() const { return m_clusterId; }
     inline bool ClusterIdHasBeenSet() const { return m_clusterIdHasBeenSet; }
-    inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
-    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::move(value); }
-    inline void SetClusterId(const char* value) { m_clusterIdHasBeenSet = true; m_clusterId.assign(value); }
-    inline ClusterMetadata& WithClusterId(const Aws::String& value) { SetClusterId(value); return *this;}
-    inline ClusterMetadata& WithClusterId(Aws::String&& value) { SetClusterId(std::move(value)); return *this;}
-    inline ClusterMetadata& WithClusterId(const char* value) { SetClusterId(value); return *this;}
+    template<typename ClusterIdT = Aws::String>
+    void SetClusterId(ClusterIdT&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::forward<ClusterIdT>(value); }
+    template<typename ClusterIdT = Aws::String>
+    ClusterMetadata& WithClusterId(ClusterIdT&& value) { SetClusterId(std::forward<ClusterIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The optional description of the cluster.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline ClusterMetadata& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ClusterMetadata& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ClusterMetadata& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ClusterMetadata& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,14 +77,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
      * API action in Key Management Service (KMS.</p>
      */
-    inline const Aws::String& GetKmsKeyARN() const{ return m_kmsKeyARN; }
+    inline const Aws::String& GetKmsKeyARN() const { return m_kmsKeyARN; }
     inline bool KmsKeyARNHasBeenSet() const { return m_kmsKeyARNHasBeenSet; }
-    inline void SetKmsKeyARN(const Aws::String& value) { m_kmsKeyARNHasBeenSet = true; m_kmsKeyARN = value; }
-    inline void SetKmsKeyARN(Aws::String&& value) { m_kmsKeyARNHasBeenSet = true; m_kmsKeyARN = std::move(value); }
-    inline void SetKmsKeyARN(const char* value) { m_kmsKeyARNHasBeenSet = true; m_kmsKeyARN.assign(value); }
-    inline ClusterMetadata& WithKmsKeyARN(const Aws::String& value) { SetKmsKeyARN(value); return *this;}
-    inline ClusterMetadata& WithKmsKeyARN(Aws::String&& value) { SetKmsKeyARN(std::move(value)); return *this;}
-    inline ClusterMetadata& WithKmsKeyARN(const char* value) { SetKmsKeyARN(value); return *this;}
+    template<typename KmsKeyARNT = Aws::String>
+    void SetKmsKeyARN(KmsKeyARNT&& value) { m_kmsKeyARNHasBeenSet = true; m_kmsKeyARN = std::forward<KmsKeyARNT>(value); }
+    template<typename KmsKeyARNT = Aws::String>
+    ClusterMetadata& WithKmsKeyARN(KmsKeyARNT&& value) { SetKmsKeyARN(std::forward<KmsKeyARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,26 +91,22 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
      * API action in Identity and Access Management (IAM).</p>
      */
-    inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
+    inline const Aws::String& GetRoleARN() const { return m_roleARN; }
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
-    inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
-    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
-    inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
-    inline ClusterMetadata& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
-    inline ClusterMetadata& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
-    inline ClusterMetadata& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
+    template<typename RoleARNT = Aws::String>
+    void SetRoleARN(RoleARNT&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::forward<RoleARNT>(value); }
+    template<typename RoleARNT = Aws::String>
+    ClusterMetadata& WithRoleARN(RoleARNT&& value) { SetRoleARN(std::forward<RoleARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current status of the cluster.</p>
      */
-    inline const ClusterState& GetClusterState() const{ return m_clusterState; }
+    inline ClusterState GetClusterState() const { return m_clusterState; }
     inline bool ClusterStateHasBeenSet() const { return m_clusterStateHasBeenSet; }
-    inline void SetClusterState(const ClusterState& value) { m_clusterStateHasBeenSet = true; m_clusterState = value; }
-    inline void SetClusterState(ClusterState&& value) { m_clusterStateHasBeenSet = true; m_clusterState = std::move(value); }
-    inline ClusterMetadata& WithClusterState(const ClusterState& value) { SetClusterState(value); return *this;}
-    inline ClusterMetadata& WithClusterState(ClusterState&& value) { SetClusterState(std::move(value)); return *this;}
+    inline void SetClusterState(ClusterState value) { m_clusterStateHasBeenSet = true; m_clusterState = value; }
+    inline ClusterMetadata& WithClusterState(ClusterState value) { SetClusterState(value); return *this;}
     ///@}
 
     ///@{
@@ -124,12 +114,10 @@ namespace Model
      * <p>The type of job for this cluster. Currently, the only job type supported for
      * clusters is <code>LOCAL_USE</code>.</p>
      */
-    inline const JobType& GetJobType() const{ return m_jobType; }
+    inline JobType GetJobType() const { return m_jobType; }
     inline bool JobTypeHasBeenSet() const { return m_jobTypeHasBeenSet; }
-    inline void SetJobType(const JobType& value) { m_jobTypeHasBeenSet = true; m_jobType = value; }
-    inline void SetJobType(JobType&& value) { m_jobTypeHasBeenSet = true; m_jobType = std::move(value); }
-    inline ClusterMetadata& WithJobType(const JobType& value) { SetJobType(value); return *this;}
-    inline ClusterMetadata& WithJobType(JobType&& value) { SetJobType(std::move(value)); return *this;}
+    inline void SetJobType(JobType value) { m_jobTypeHasBeenSet = true; m_jobType = value; }
+    inline ClusterMetadata& WithJobType(JobType value) { SetJobType(value); return *this;}
     ///@}
 
     ///@{
@@ -138,24 +126,22 @@ namespace Model
      * cluster jobs, Amazon Web Services Snow Family currently supports only the
      * <code>EDGE</code> device type.</p> 
      */
-    inline const SnowballType& GetSnowballType() const{ return m_snowballType; }
+    inline SnowballType GetSnowballType() const { return m_snowballType; }
     inline bool SnowballTypeHasBeenSet() const { return m_snowballTypeHasBeenSet; }
-    inline void SetSnowballType(const SnowballType& value) { m_snowballTypeHasBeenSet = true; m_snowballType = value; }
-    inline void SetSnowballType(SnowballType&& value) { m_snowballTypeHasBeenSet = true; m_snowballType = std::move(value); }
-    inline ClusterMetadata& WithSnowballType(const SnowballType& value) { SetSnowballType(value); return *this;}
-    inline ClusterMetadata& WithSnowballType(SnowballType&& value) { SetSnowballType(std::move(value)); return *this;}
+    inline void SetSnowballType(SnowballType value) { m_snowballTypeHasBeenSet = true; m_snowballType = value; }
+    inline ClusterMetadata& WithSnowballType(SnowballType value) { SetSnowballType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The creation date for this cluster.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
+    inline const Aws::Utils::DateTime& GetCreationDate() const { return m_creationDate; }
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
-    inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
-    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
-    inline ClusterMetadata& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
-    inline ClusterMetadata& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    void SetCreationDate(CreationDateT&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::forward<CreationDateT>(value); }
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    ClusterMetadata& WithCreationDate(CreationDateT&& value) { SetCreationDate(std::forward<CreationDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -163,26 +149,24 @@ namespace Model
      * <p>The arrays of <a>JobResource</a> objects that can include updated
      * <a>S3Resource</a> objects or <a>LambdaResource</a> objects.</p>
      */
-    inline const JobResource& GetResources() const{ return m_resources; }
+    inline const JobResource& GetResources() const { return m_resources; }
     inline bool ResourcesHasBeenSet() const { return m_resourcesHasBeenSet; }
-    inline void SetResources(const JobResource& value) { m_resourcesHasBeenSet = true; m_resources = value; }
-    inline void SetResources(JobResource&& value) { m_resourcesHasBeenSet = true; m_resources = std::move(value); }
-    inline ClusterMetadata& WithResources(const JobResource& value) { SetResources(value); return *this;}
-    inline ClusterMetadata& WithResources(JobResource&& value) { SetResources(std::move(value)); return *this;}
+    template<typename ResourcesT = JobResource>
+    void SetResources(ResourcesT&& value) { m_resourcesHasBeenSet = true; m_resources = std::forward<ResourcesT>(value); }
+    template<typename ResourcesT = JobResource>
+    ClusterMetadata& WithResources(ResourcesT&& value) { SetResources(std::forward<ResourcesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The automatically generated ID for a specific address.</p>
      */
-    inline const Aws::String& GetAddressId() const{ return m_addressId; }
+    inline const Aws::String& GetAddressId() const { return m_addressId; }
     inline bool AddressIdHasBeenSet() const { return m_addressIdHasBeenSet; }
-    inline void SetAddressId(const Aws::String& value) { m_addressIdHasBeenSet = true; m_addressId = value; }
-    inline void SetAddressId(Aws::String&& value) { m_addressIdHasBeenSet = true; m_addressId = std::move(value); }
-    inline void SetAddressId(const char* value) { m_addressIdHasBeenSet = true; m_addressId.assign(value); }
-    inline ClusterMetadata& WithAddressId(const Aws::String& value) { SetAddressId(value); return *this;}
-    inline ClusterMetadata& WithAddressId(Aws::String&& value) { SetAddressId(std::move(value)); return *this;}
-    inline ClusterMetadata& WithAddressId(const char* value) { SetAddressId(value); return *this;}
+    template<typename AddressIdT = Aws::String>
+    void SetAddressId(AddressIdT&& value) { m_addressIdHasBeenSet = true; m_addressId = std::forward<AddressIdT>(value); }
+    template<typename AddressIdT = Aws::String>
+    ClusterMetadata& WithAddressId(AddressIdT&& value) { SetAddressId(std::forward<AddressIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -199,12 +183,10 @@ namespace Model
      * one to seven days.</p> </li> <li> <p>In the US, you have access to one-day
      * shipping and two-day shipping.</p> </li> </ul>
      */
-    inline const ShippingOption& GetShippingOption() const{ return m_shippingOption; }
+    inline ShippingOption GetShippingOption() const { return m_shippingOption; }
     inline bool ShippingOptionHasBeenSet() const { return m_shippingOptionHasBeenSet; }
-    inline void SetShippingOption(const ShippingOption& value) { m_shippingOptionHasBeenSet = true; m_shippingOption = value; }
-    inline void SetShippingOption(ShippingOption&& value) { m_shippingOptionHasBeenSet = true; m_shippingOption = std::move(value); }
-    inline ClusterMetadata& WithShippingOption(const ShippingOption& value) { SetShippingOption(value); return *this;}
-    inline ClusterMetadata& WithShippingOption(ShippingOption&& value) { SetShippingOption(std::move(value)); return *this;}
+    inline void SetShippingOption(ShippingOption value) { m_shippingOptionHasBeenSet = true; m_shippingOption = value; }
+    inline ClusterMetadata& WithShippingOption(ShippingOption value) { SetShippingOption(value); return *this;}
     ///@}
 
     ///@{
@@ -212,12 +194,12 @@ namespace Model
      * <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for
      * this cluster.</p>
      */
-    inline const Notification& GetNotification() const{ return m_notification; }
+    inline const Notification& GetNotification() const { return m_notification; }
     inline bool NotificationHasBeenSet() const { return m_notificationHasBeenSet; }
-    inline void SetNotification(const Notification& value) { m_notificationHasBeenSet = true; m_notification = value; }
-    inline void SetNotification(Notification&& value) { m_notificationHasBeenSet = true; m_notification = std::move(value); }
-    inline ClusterMetadata& WithNotification(const Notification& value) { SetNotification(value); return *this;}
-    inline ClusterMetadata& WithNotification(Notification&& value) { SetNotification(std::move(value)); return *this;}
+    template<typename NotificationT = Notification>
+    void SetNotification(NotificationT&& value) { m_notificationHasBeenSet = true; m_notification = std::forward<NotificationT>(value); }
+    template<typename NotificationT = Notification>
+    ClusterMetadata& WithNotification(NotificationT&& value) { SetNotification(std::forward<NotificationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -225,26 +207,24 @@ namespace Model
      * <p>The ID of the address that you want a cluster shipped to, after it will be
      * shipped to its primary address. This field is not supported in most regions.</p>
      */
-    inline const Aws::String& GetForwardingAddressId() const{ return m_forwardingAddressId; }
+    inline const Aws::String& GetForwardingAddressId() const { return m_forwardingAddressId; }
     inline bool ForwardingAddressIdHasBeenSet() const { return m_forwardingAddressIdHasBeenSet; }
-    inline void SetForwardingAddressId(const Aws::String& value) { m_forwardingAddressIdHasBeenSet = true; m_forwardingAddressId = value; }
-    inline void SetForwardingAddressId(Aws::String&& value) { m_forwardingAddressIdHasBeenSet = true; m_forwardingAddressId = std::move(value); }
-    inline void SetForwardingAddressId(const char* value) { m_forwardingAddressIdHasBeenSet = true; m_forwardingAddressId.assign(value); }
-    inline ClusterMetadata& WithForwardingAddressId(const Aws::String& value) { SetForwardingAddressId(value); return *this;}
-    inline ClusterMetadata& WithForwardingAddressId(Aws::String&& value) { SetForwardingAddressId(std::move(value)); return *this;}
-    inline ClusterMetadata& WithForwardingAddressId(const char* value) { SetForwardingAddressId(value); return *this;}
+    template<typename ForwardingAddressIdT = Aws::String>
+    void SetForwardingAddressId(ForwardingAddressIdT&& value) { m_forwardingAddressIdHasBeenSet = true; m_forwardingAddressId = std::forward<ForwardingAddressIdT>(value); }
+    template<typename ForwardingAddressIdT = Aws::String>
+    ClusterMetadata& WithForwardingAddressId(ForwardingAddressIdT&& value) { SetForwardingAddressId(std::forward<ForwardingAddressIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tax documents required in your Amazon Web Services Region.</p>
      */
-    inline const TaxDocuments& GetTaxDocuments() const{ return m_taxDocuments; }
+    inline const TaxDocuments& GetTaxDocuments() const { return m_taxDocuments; }
     inline bool TaxDocumentsHasBeenSet() const { return m_taxDocumentsHasBeenSet; }
-    inline void SetTaxDocuments(const TaxDocuments& value) { m_taxDocumentsHasBeenSet = true; m_taxDocuments = value; }
-    inline void SetTaxDocuments(TaxDocuments&& value) { m_taxDocumentsHasBeenSet = true; m_taxDocuments = std::move(value); }
-    inline ClusterMetadata& WithTaxDocuments(const TaxDocuments& value) { SetTaxDocuments(value); return *this;}
-    inline ClusterMetadata& WithTaxDocuments(TaxDocuments&& value) { SetTaxDocuments(std::move(value)); return *this;}
+    template<typename TaxDocumentsT = TaxDocuments>
+    void SetTaxDocuments(TaxDocumentsT&& value) { m_taxDocumentsHasBeenSet = true; m_taxDocuments = std::forward<TaxDocumentsT>(value); }
+    template<typename TaxDocumentsT = TaxDocuments>
+    ClusterMetadata& WithTaxDocuments(TaxDocumentsT&& value) { SetTaxDocuments(std::forward<TaxDocumentsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -252,12 +232,12 @@ namespace Model
      * <p>Represents metadata and configuration settings for services on an Amazon Web
      * Services Snow Family device.</p>
      */
-    inline const OnDeviceServiceConfiguration& GetOnDeviceServiceConfiguration() const{ return m_onDeviceServiceConfiguration; }
+    inline const OnDeviceServiceConfiguration& GetOnDeviceServiceConfiguration() const { return m_onDeviceServiceConfiguration; }
     inline bool OnDeviceServiceConfigurationHasBeenSet() const { return m_onDeviceServiceConfigurationHasBeenSet; }
-    inline void SetOnDeviceServiceConfiguration(const OnDeviceServiceConfiguration& value) { m_onDeviceServiceConfigurationHasBeenSet = true; m_onDeviceServiceConfiguration = value; }
-    inline void SetOnDeviceServiceConfiguration(OnDeviceServiceConfiguration&& value) { m_onDeviceServiceConfigurationHasBeenSet = true; m_onDeviceServiceConfiguration = std::move(value); }
-    inline ClusterMetadata& WithOnDeviceServiceConfiguration(const OnDeviceServiceConfiguration& value) { SetOnDeviceServiceConfiguration(value); return *this;}
-    inline ClusterMetadata& WithOnDeviceServiceConfiguration(OnDeviceServiceConfiguration&& value) { SetOnDeviceServiceConfiguration(std::move(value)); return *this;}
+    template<typename OnDeviceServiceConfigurationT = OnDeviceServiceConfiguration>
+    void SetOnDeviceServiceConfiguration(OnDeviceServiceConfigurationT&& value) { m_onDeviceServiceConfigurationHasBeenSet = true; m_onDeviceServiceConfiguration = std::forward<OnDeviceServiceConfigurationT>(value); }
+    template<typename OnDeviceServiceConfigurationT = OnDeviceServiceConfiguration>
+    ClusterMetadata& WithOnDeviceServiceConfiguration(OnDeviceServiceConfigurationT&& value) { SetOnDeviceServiceConfiguration(std::forward<OnDeviceServiceConfigurationT>(value)); return *this;}
     ///@}
   private:
 
@@ -273,16 +253,16 @@ namespace Model
     Aws::String m_roleARN;
     bool m_roleARNHasBeenSet = false;
 
-    ClusterState m_clusterState;
+    ClusterState m_clusterState{ClusterState::NOT_SET};
     bool m_clusterStateHasBeenSet = false;
 
-    JobType m_jobType;
+    JobType m_jobType{JobType::NOT_SET};
     bool m_jobTypeHasBeenSet = false;
 
-    SnowballType m_snowballType;
+    SnowballType m_snowballType{SnowballType::NOT_SET};
     bool m_snowballTypeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDate;
+    Aws::Utils::DateTime m_creationDate{};
     bool m_creationDateHasBeenSet = false;
 
     JobResource m_resources;
@@ -291,7 +271,7 @@ namespace Model
     Aws::String m_addressId;
     bool m_addressIdHasBeenSet = false;
 
-    ShippingOption m_shippingOption;
+    ShippingOption m_shippingOption{ShippingOption::NOT_SET};
     bool m_shippingOptionHasBeenSet = false;
 
     Notification m_notification;

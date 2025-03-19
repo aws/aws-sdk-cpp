@@ -18,16 +18,7 @@ namespace Connect
 namespace Model
 {
 
-MetricFilterV2::MetricFilterV2() : 
-    m_metricFilterKeyHasBeenSet(false),
-    m_metricFilterValuesHasBeenSet(false),
-    m_negate(false),
-    m_negateHasBeenSet(false)
-{
-}
-
 MetricFilterV2::MetricFilterV2(JsonView jsonValue)
-  : MetricFilterV2()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ MetricFilterV2& MetricFilterV2::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MetricFilterKey"))
   {
     m_metricFilterKey = jsonValue.GetString("MetricFilterKey");
-
     m_metricFilterKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricFilterValues"))
   {
     Aws::Utils::Array<JsonView> metricFilterValuesJsonList = jsonValue.GetArray("MetricFilterValues");
@@ -50,14 +39,11 @@ MetricFilterV2& MetricFilterV2::operator =(JsonView jsonValue)
     }
     m_metricFilterValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Negate"))
   {
     m_negate = jsonValue.GetBool("Negate");
-
     m_negateHasBeenSet = true;
   }
-
   return *this;
 }
 

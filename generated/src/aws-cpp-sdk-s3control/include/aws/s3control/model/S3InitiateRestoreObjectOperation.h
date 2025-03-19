@@ -34,7 +34,7 @@ namespace Model
   class S3InitiateRestoreObjectOperation
   {
   public:
-    AWS_S3CONTROL_API S3InitiateRestoreObjectOperation();
+    AWS_S3CONTROL_API S3InitiateRestoreObjectOperation() = default;
     AWS_S3CONTROL_API S3InitiateRestoreObjectOperation(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API S3InitiateRestoreObjectOperation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -57,7 +57,7 @@ namespace Model
      * but not both types in the same job. If you need to restore objects of both types
      * you <i>must</i> create separate Batch Operations jobs. </p>
      */
-    inline int GetExpirationInDays() const{ return m_expirationInDays; }
+    inline int GetExpirationInDays() const { return m_expirationInDays; }
     inline bool ExpirationInDaysHasBeenSet() const { return m_expirationInDaysHasBeenSet; }
     inline void SetExpirationInDays(int value) { m_expirationInDaysHasBeenSet = true; m_expirationInDays = value; }
     inline S3InitiateRestoreObjectOperation& WithExpirationInDays(int value) { SetExpirationInDays(value); return *this;}
@@ -68,19 +68,17 @@ namespace Model
      * <p>S3 Batch Operations supports <code>STANDARD</code> and <code>BULK</code>
      * retrieval tiers, but not the <code>EXPEDITED</code> retrieval tier.</p>
      */
-    inline const S3GlacierJobTier& GetGlacierJobTier() const{ return m_glacierJobTier; }
+    inline S3GlacierJobTier GetGlacierJobTier() const { return m_glacierJobTier; }
     inline bool GlacierJobTierHasBeenSet() const { return m_glacierJobTierHasBeenSet; }
-    inline void SetGlacierJobTier(const S3GlacierJobTier& value) { m_glacierJobTierHasBeenSet = true; m_glacierJobTier = value; }
-    inline void SetGlacierJobTier(S3GlacierJobTier&& value) { m_glacierJobTierHasBeenSet = true; m_glacierJobTier = std::move(value); }
-    inline S3InitiateRestoreObjectOperation& WithGlacierJobTier(const S3GlacierJobTier& value) { SetGlacierJobTier(value); return *this;}
-    inline S3InitiateRestoreObjectOperation& WithGlacierJobTier(S3GlacierJobTier&& value) { SetGlacierJobTier(std::move(value)); return *this;}
+    inline void SetGlacierJobTier(S3GlacierJobTier value) { m_glacierJobTierHasBeenSet = true; m_glacierJobTier = value; }
+    inline S3InitiateRestoreObjectOperation& WithGlacierJobTier(S3GlacierJobTier value) { SetGlacierJobTier(value); return *this;}
     ///@}
   private:
 
-    int m_expirationInDays;
+    int m_expirationInDays{0};
     bool m_expirationInDaysHasBeenSet = false;
 
-    S3GlacierJobTier m_glacierJobTier;
+    S3GlacierJobTier m_glacierJobTier{S3GlacierJobTier::NOT_SET};
     bool m_glacierJobTierHasBeenSet = false;
   };
 

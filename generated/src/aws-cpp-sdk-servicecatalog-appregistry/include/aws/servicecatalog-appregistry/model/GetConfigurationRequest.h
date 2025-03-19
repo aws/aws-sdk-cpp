@@ -19,7 +19,7 @@ namespace Model
   class GetConfigurationRequest : public AppRegistryRequest
   {
   public:
-    AWS_APPREGISTRY_API GetConfigurationRequest();
+    AWS_APPREGISTRY_API GetConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

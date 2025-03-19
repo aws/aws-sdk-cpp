@@ -12,11 +12,6 @@ using namespace Aws::CodeCatalyst::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAccessTokenRequest::DeleteAccessTokenRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAccessTokenRequest::SerializePayload() const
 {
   return {};

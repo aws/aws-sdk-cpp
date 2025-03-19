@@ -29,7 +29,7 @@ namespace Model
   class ContentBlockStopEvent
   {
   public:
-    AWS_BEDROCKRUNTIME_API ContentBlockStopEvent();
+    AWS_BEDROCKRUNTIME_API ContentBlockStopEvent() = default;
     AWS_BEDROCKRUNTIME_API ContentBlockStopEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API ContentBlockStopEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,14 +39,14 @@ namespace Model
     /**
      * <p>The index for a content block.</p>
      */
-    inline int GetContentBlockIndex() const{ return m_contentBlockIndex; }
+    inline int GetContentBlockIndex() const { return m_contentBlockIndex; }
     inline bool ContentBlockIndexHasBeenSet() const { return m_contentBlockIndexHasBeenSet; }
     inline void SetContentBlockIndex(int value) { m_contentBlockIndexHasBeenSet = true; m_contentBlockIndex = value; }
     inline ContentBlockStopEvent& WithContentBlockIndex(int value) { SetContentBlockIndex(value); return *this;}
     ///@}
   private:
 
-    int m_contentBlockIndex;
+    int m_contentBlockIndex{0};
     bool m_contentBlockIndexHasBeenSet = false;
   };
 

@@ -18,15 +18,7 @@ namespace ApiGatewayV2
 namespace Model
 {
 
-MutualTlsAuthentication::MutualTlsAuthentication() : 
-    m_truststoreUriHasBeenSet(false),
-    m_truststoreVersionHasBeenSet(false),
-    m_truststoreWarningsHasBeenSet(false)
-{
-}
-
 MutualTlsAuthentication::MutualTlsAuthentication(JsonView jsonValue)
-  : MutualTlsAuthentication()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ MutualTlsAuthentication& MutualTlsAuthentication::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("truststoreUri"))
   {
     m_truststoreUri = jsonValue.GetString("truststoreUri");
-
     m_truststoreUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("truststoreVersion"))
   {
     m_truststoreVersion = jsonValue.GetString("truststoreVersion");
-
     m_truststoreVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("truststoreWarnings"))
   {
     Aws::Utils::Array<JsonView> truststoreWarningsJsonList = jsonValue.GetArray("truststoreWarnings");
@@ -56,7 +44,6 @@ MutualTlsAuthentication& MutualTlsAuthentication::operator =(JsonView jsonValue)
     }
     m_truststoreWarningsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class LayersListItem
   {
   public:
-    AWS_LAMBDA_API LayersListItem();
+    AWS_LAMBDA_API LayersListItem() = default;
     AWS_LAMBDA_API LayersListItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API LayersListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,40 +44,36 @@ namespace Model
     /**
      * <p>The name of the layer.</p>
      */
-    inline const Aws::String& GetLayerName() const{ return m_layerName; }
+    inline const Aws::String& GetLayerName() const { return m_layerName; }
     inline bool LayerNameHasBeenSet() const { return m_layerNameHasBeenSet; }
-    inline void SetLayerName(const Aws::String& value) { m_layerNameHasBeenSet = true; m_layerName = value; }
-    inline void SetLayerName(Aws::String&& value) { m_layerNameHasBeenSet = true; m_layerName = std::move(value); }
-    inline void SetLayerName(const char* value) { m_layerNameHasBeenSet = true; m_layerName.assign(value); }
-    inline LayersListItem& WithLayerName(const Aws::String& value) { SetLayerName(value); return *this;}
-    inline LayersListItem& WithLayerName(Aws::String&& value) { SetLayerName(std::move(value)); return *this;}
-    inline LayersListItem& WithLayerName(const char* value) { SetLayerName(value); return *this;}
+    template<typename LayerNameT = Aws::String>
+    void SetLayerName(LayerNameT&& value) { m_layerNameHasBeenSet = true; m_layerName = std::forward<LayerNameT>(value); }
+    template<typename LayerNameT = Aws::String>
+    LayersListItem& WithLayerName(LayerNameT&& value) { SetLayerName(std::forward<LayerNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the function layer.</p>
      */
-    inline const Aws::String& GetLayerArn() const{ return m_layerArn; }
+    inline const Aws::String& GetLayerArn() const { return m_layerArn; }
     inline bool LayerArnHasBeenSet() const { return m_layerArnHasBeenSet; }
-    inline void SetLayerArn(const Aws::String& value) { m_layerArnHasBeenSet = true; m_layerArn = value; }
-    inline void SetLayerArn(Aws::String&& value) { m_layerArnHasBeenSet = true; m_layerArn = std::move(value); }
-    inline void SetLayerArn(const char* value) { m_layerArnHasBeenSet = true; m_layerArn.assign(value); }
-    inline LayersListItem& WithLayerArn(const Aws::String& value) { SetLayerArn(value); return *this;}
-    inline LayersListItem& WithLayerArn(Aws::String&& value) { SetLayerArn(std::move(value)); return *this;}
-    inline LayersListItem& WithLayerArn(const char* value) { SetLayerArn(value); return *this;}
+    template<typename LayerArnT = Aws::String>
+    void SetLayerArn(LayerArnT&& value) { m_layerArnHasBeenSet = true; m_layerArn = std::forward<LayerArnT>(value); }
+    template<typename LayerArnT = Aws::String>
+    LayersListItem& WithLayerArn(LayerArnT&& value) { SetLayerArn(std::forward<LayerArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The newest version of the layer.</p>
      */
-    inline const LayerVersionsListItem& GetLatestMatchingVersion() const{ return m_latestMatchingVersion; }
+    inline const LayerVersionsListItem& GetLatestMatchingVersion() const { return m_latestMatchingVersion; }
     inline bool LatestMatchingVersionHasBeenSet() const { return m_latestMatchingVersionHasBeenSet; }
-    inline void SetLatestMatchingVersion(const LayerVersionsListItem& value) { m_latestMatchingVersionHasBeenSet = true; m_latestMatchingVersion = value; }
-    inline void SetLatestMatchingVersion(LayerVersionsListItem&& value) { m_latestMatchingVersionHasBeenSet = true; m_latestMatchingVersion = std::move(value); }
-    inline LayersListItem& WithLatestMatchingVersion(const LayerVersionsListItem& value) { SetLatestMatchingVersion(value); return *this;}
-    inline LayersListItem& WithLatestMatchingVersion(LayerVersionsListItem&& value) { SetLatestMatchingVersion(std::move(value)); return *this;}
+    template<typename LatestMatchingVersionT = LayerVersionsListItem>
+    void SetLatestMatchingVersion(LatestMatchingVersionT&& value) { m_latestMatchingVersionHasBeenSet = true; m_latestMatchingVersion = std::forward<LatestMatchingVersionT>(value); }
+    template<typename LatestMatchingVersionT = LayerVersionsListItem>
+    LayersListItem& WithLatestMatchingVersion(LatestMatchingVersionT&& value) { SetLatestMatchingVersion(std::forward<LatestMatchingVersionT>(value)); return *this;}
     ///@}
   private:
 

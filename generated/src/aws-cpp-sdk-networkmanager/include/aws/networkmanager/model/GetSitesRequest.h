@@ -26,7 +26,7 @@ namespace Model
   class GetSitesRequest : public NetworkManagerRequest
   {
   public:
-    AWS_NETWORKMANAGER_API GetSitesRequest();
+    AWS_NETWORKMANAGER_API GetSitesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,36 +43,33 @@ namespace Model
     /**
      * <p>The ID of the global network.</p>
      */
-    inline const Aws::String& GetGlobalNetworkId() const{ return m_globalNetworkId; }
+    inline const Aws::String& GetGlobalNetworkId() const { return m_globalNetworkId; }
     inline bool GlobalNetworkIdHasBeenSet() const { return m_globalNetworkIdHasBeenSet; }
-    inline void SetGlobalNetworkId(const Aws::String& value) { m_globalNetworkIdHasBeenSet = true; m_globalNetworkId = value; }
-    inline void SetGlobalNetworkId(Aws::String&& value) { m_globalNetworkIdHasBeenSet = true; m_globalNetworkId = std::move(value); }
-    inline void SetGlobalNetworkId(const char* value) { m_globalNetworkIdHasBeenSet = true; m_globalNetworkId.assign(value); }
-    inline GetSitesRequest& WithGlobalNetworkId(const Aws::String& value) { SetGlobalNetworkId(value); return *this;}
-    inline GetSitesRequest& WithGlobalNetworkId(Aws::String&& value) { SetGlobalNetworkId(std::move(value)); return *this;}
-    inline GetSitesRequest& WithGlobalNetworkId(const char* value) { SetGlobalNetworkId(value); return *this;}
+    template<typename GlobalNetworkIdT = Aws::String>
+    void SetGlobalNetworkId(GlobalNetworkIdT&& value) { m_globalNetworkIdHasBeenSet = true; m_globalNetworkId = std::forward<GlobalNetworkIdT>(value); }
+    template<typename GlobalNetworkIdT = Aws::String>
+    GetSitesRequest& WithGlobalNetworkId(GlobalNetworkIdT&& value) { SetGlobalNetworkId(std::forward<GlobalNetworkIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>One or more site IDs. The maximum is 10.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSiteIds() const{ return m_siteIds; }
+    inline const Aws::Vector<Aws::String>& GetSiteIds() const { return m_siteIds; }
     inline bool SiteIdsHasBeenSet() const { return m_siteIdsHasBeenSet; }
-    inline void SetSiteIds(const Aws::Vector<Aws::String>& value) { m_siteIdsHasBeenSet = true; m_siteIds = value; }
-    inline void SetSiteIds(Aws::Vector<Aws::String>&& value) { m_siteIdsHasBeenSet = true; m_siteIds = std::move(value); }
-    inline GetSitesRequest& WithSiteIds(const Aws::Vector<Aws::String>& value) { SetSiteIds(value); return *this;}
-    inline GetSitesRequest& WithSiteIds(Aws::Vector<Aws::String>&& value) { SetSiteIds(std::move(value)); return *this;}
-    inline GetSitesRequest& AddSiteIds(const Aws::String& value) { m_siteIdsHasBeenSet = true; m_siteIds.push_back(value); return *this; }
-    inline GetSitesRequest& AddSiteIds(Aws::String&& value) { m_siteIdsHasBeenSet = true; m_siteIds.push_back(std::move(value)); return *this; }
-    inline GetSitesRequest& AddSiteIds(const char* value) { m_siteIdsHasBeenSet = true; m_siteIds.push_back(value); return *this; }
+    template<typename SiteIdsT = Aws::Vector<Aws::String>>
+    void SetSiteIds(SiteIdsT&& value) { m_siteIdsHasBeenSet = true; m_siteIds = std::forward<SiteIdsT>(value); }
+    template<typename SiteIdsT = Aws::Vector<Aws::String>>
+    GetSitesRequest& WithSiteIds(SiteIdsT&& value) { SetSiteIds(std::forward<SiteIdsT>(value)); return *this;}
+    template<typename SiteIdsT = Aws::String>
+    GetSitesRequest& AddSiteIds(SiteIdsT&& value) { m_siteIdsHasBeenSet = true; m_siteIds.emplace_back(std::forward<SiteIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetSitesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -82,14 +79,12 @@ namespace Model
     /**
      * <p>The token for the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetSitesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetSitesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetSitesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetSitesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -99,7 +94,7 @@ namespace Model
     Aws::Vector<Aws::String> m_siteIds;
     bool m_siteIdsHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

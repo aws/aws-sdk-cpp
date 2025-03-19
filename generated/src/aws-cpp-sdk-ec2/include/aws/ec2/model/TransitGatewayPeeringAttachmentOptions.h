@@ -32,7 +32,7 @@ namespace Model
   class TransitGatewayPeeringAttachmentOptions
   {
   public:
-    AWS_EC2_API TransitGatewayPeeringAttachmentOptions();
+    AWS_EC2_API TransitGatewayPeeringAttachmentOptions() = default;
     AWS_EC2_API TransitGatewayPeeringAttachmentOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API TransitGatewayPeeringAttachmentOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,16 +45,14 @@ namespace Model
      * <p>Describes whether dynamic routing is enabled or disabled for the transit
      * gateway peering attachment.</p>
      */
-    inline const DynamicRoutingValue& GetDynamicRouting() const{ return m_dynamicRouting; }
+    inline DynamicRoutingValue GetDynamicRouting() const { return m_dynamicRouting; }
     inline bool DynamicRoutingHasBeenSet() const { return m_dynamicRoutingHasBeenSet; }
-    inline void SetDynamicRouting(const DynamicRoutingValue& value) { m_dynamicRoutingHasBeenSet = true; m_dynamicRouting = value; }
-    inline void SetDynamicRouting(DynamicRoutingValue&& value) { m_dynamicRoutingHasBeenSet = true; m_dynamicRouting = std::move(value); }
-    inline TransitGatewayPeeringAttachmentOptions& WithDynamicRouting(const DynamicRoutingValue& value) { SetDynamicRouting(value); return *this;}
-    inline TransitGatewayPeeringAttachmentOptions& WithDynamicRouting(DynamicRoutingValue&& value) { SetDynamicRouting(std::move(value)); return *this;}
+    inline void SetDynamicRouting(DynamicRoutingValue value) { m_dynamicRoutingHasBeenSet = true; m_dynamicRouting = value; }
+    inline TransitGatewayPeeringAttachmentOptions& WithDynamicRouting(DynamicRoutingValue value) { SetDynamicRouting(value); return *this;}
     ///@}
   private:
 
-    DynamicRoutingValue m_dynamicRouting;
+    DynamicRoutingValue m_dynamicRouting{DynamicRoutingValue::NOT_SET};
     bool m_dynamicRoutingHasBeenSet = false;
   };
 

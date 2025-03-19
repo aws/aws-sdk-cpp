@@ -18,13 +18,7 @@ namespace AppTest
 namespace Model
 {
 
-CompareActionSummary::CompareActionSummary() : 
-    m_typeHasBeenSet(false)
-{
-}
-
 CompareActionSummary::CompareActionSummary(JsonView jsonValue)
-  : CompareActionSummary()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CompareActionSummary& CompareActionSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetObject("type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-AIGuardrailWordPolicyConfig::AIGuardrailWordPolicyConfig() : 
-    m_managedWordListsConfigHasBeenSet(false),
-    m_wordsConfigHasBeenSet(false)
-{
-}
-
 AIGuardrailWordPolicyConfig::AIGuardrailWordPolicyConfig(JsonView jsonValue)
-  : AIGuardrailWordPolicyConfig()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ AIGuardrailWordPolicyConfig& AIGuardrailWordPolicyConfig::operator =(JsonView js
     }
     m_managedWordListsConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("wordsConfig"))
   {
     Aws::Utils::Array<JsonView> wordsConfigJsonList = jsonValue.GetArray("wordsConfig");
@@ -51,7 +43,6 @@ AIGuardrailWordPolicyConfig& AIGuardrailWordPolicyConfig::operator =(JsonView js
     }
     m_wordsConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

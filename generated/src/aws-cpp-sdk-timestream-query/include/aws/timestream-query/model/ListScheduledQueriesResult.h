@@ -29,7 +29,7 @@ namespace Model
   class ListScheduledQueriesResult
   {
   public:
-    AWS_TIMESTREAMQUERY_API ListScheduledQueriesResult();
+    AWS_TIMESTREAMQUERY_API ListScheduledQueriesResult() = default;
     AWS_TIMESTREAMQUERY_API ListScheduledQueriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TIMESTREAMQUERY_API ListScheduledQueriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list of scheduled queries.</p>
      */
-    inline const Aws::Vector<ScheduledQuery>& GetScheduledQueries() const{ return m_scheduledQueries; }
-    inline void SetScheduledQueries(const Aws::Vector<ScheduledQuery>& value) { m_scheduledQueries = value; }
-    inline void SetScheduledQueries(Aws::Vector<ScheduledQuery>&& value) { m_scheduledQueries = std::move(value); }
-    inline ListScheduledQueriesResult& WithScheduledQueries(const Aws::Vector<ScheduledQuery>& value) { SetScheduledQueries(value); return *this;}
-    inline ListScheduledQueriesResult& WithScheduledQueries(Aws::Vector<ScheduledQuery>&& value) { SetScheduledQueries(std::move(value)); return *this;}
-    inline ListScheduledQueriesResult& AddScheduledQueries(const ScheduledQuery& value) { m_scheduledQueries.push_back(value); return *this; }
-    inline ListScheduledQueriesResult& AddScheduledQueries(ScheduledQuery&& value) { m_scheduledQueries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ScheduledQuery>& GetScheduledQueries() const { return m_scheduledQueries; }
+    template<typename ScheduledQueriesT = Aws::Vector<ScheduledQuery>>
+    void SetScheduledQueries(ScheduledQueriesT&& value) { m_scheduledQueriesHasBeenSet = true; m_scheduledQueries = std::forward<ScheduledQueriesT>(value); }
+    template<typename ScheduledQueriesT = Aws::Vector<ScheduledQuery>>
+    ListScheduledQueriesResult& WithScheduledQueries(ScheduledQueriesT&& value) { SetScheduledQueries(std::forward<ScheduledQueriesT>(value)); return *this;}
+    template<typename ScheduledQueriesT = ScheduledQuery>
+    ListScheduledQueriesResult& AddScheduledQueries(ScheduledQueriesT&& value) { m_scheduledQueriesHasBeenSet = true; m_scheduledQueries.emplace_back(std::forward<ScheduledQueriesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>A token to specify where to start paginating. This is the NextToken from a
      * previously truncated response.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListScheduledQueriesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListScheduledQueriesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListScheduledQueriesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListScheduledQueriesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListScheduledQueriesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListScheduledQueriesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListScheduledQueriesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListScheduledQueriesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ScheduledQuery> m_scheduledQueries;
+    bool m_scheduledQueriesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

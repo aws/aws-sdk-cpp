@@ -18,14 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-VirtualNodeTcpConnectionPool::VirtualNodeTcpConnectionPool() : 
-    m_maxConnections(0),
-    m_maxConnectionsHasBeenSet(false)
-{
-}
-
 VirtualNodeTcpConnectionPool::VirtualNodeTcpConnectionPool(JsonView jsonValue)
-  : VirtualNodeTcpConnectionPool()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ VirtualNodeTcpConnectionPool& VirtualNodeTcpConnectionPool::operator =(JsonView 
   if(jsonValue.ValueExists("maxConnections"))
   {
     m_maxConnections = jsonValue.GetInteger("maxConnections");
-
     m_maxConnectionsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeHumanTaskUiResult::DescribeHumanTaskUiResult() : 
-    m_humanTaskUiStatus(HumanTaskUiStatus::NOT_SET)
-{
-}
-
 DescribeHumanTaskUiResult::DescribeHumanTaskUiResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeHumanTaskUiResult()
 {
   *this = result;
 }
@@ -34,39 +28,35 @@ DescribeHumanTaskUiResult& DescribeHumanTaskUiResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("HumanTaskUiArn"))
   {
     m_humanTaskUiArn = jsonValue.GetString("HumanTaskUiArn");
-
+    m_humanTaskUiArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HumanTaskUiName"))
   {
     m_humanTaskUiName = jsonValue.GetString("HumanTaskUiName");
-
+    m_humanTaskUiNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HumanTaskUiStatus"))
   {
     m_humanTaskUiStatus = HumanTaskUiStatusMapper::GetHumanTaskUiStatusForName(jsonValue.GetString("HumanTaskUiStatus"));
-
+    m_humanTaskUiStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UiTemplate"))
   {
     m_uiTemplate = jsonValue.GetObject("UiTemplate");
-
+    m_uiTemplateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

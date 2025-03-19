@@ -28,7 +28,7 @@ namespace Model
   class DescribeDatasetGroupResult
   {
   public:
-    AWS_PERSONALIZE_API DescribeDatasetGroupResult();
+    AWS_PERSONALIZE_API DescribeDatasetGroupResult() = default;
     AWS_PERSONALIZE_API DescribeDatasetGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PERSONALIZE_API DescribeDatasetGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>A listing of the dataset group's properties.</p>
      */
-    inline const DatasetGroup& GetDatasetGroup() const{ return m_datasetGroup; }
-    inline void SetDatasetGroup(const DatasetGroup& value) { m_datasetGroup = value; }
-    inline void SetDatasetGroup(DatasetGroup&& value) { m_datasetGroup = std::move(value); }
-    inline DescribeDatasetGroupResult& WithDatasetGroup(const DatasetGroup& value) { SetDatasetGroup(value); return *this;}
-    inline DescribeDatasetGroupResult& WithDatasetGroup(DatasetGroup&& value) { SetDatasetGroup(std::move(value)); return *this;}
+    inline const DatasetGroup& GetDatasetGroup() const { return m_datasetGroup; }
+    template<typename DatasetGroupT = DatasetGroup>
+    void SetDatasetGroup(DatasetGroupT&& value) { m_datasetGroupHasBeenSet = true; m_datasetGroup = std::forward<DatasetGroupT>(value); }
+    template<typename DatasetGroupT = DatasetGroup>
+    DescribeDatasetGroupResult& WithDatasetGroup(DatasetGroupT&& value) { SetDatasetGroup(std::forward<DatasetGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeDatasetGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeDatasetGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeDatasetGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeDatasetGroupResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DatasetGroup m_datasetGroup;
+    bool m_datasetGroupHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

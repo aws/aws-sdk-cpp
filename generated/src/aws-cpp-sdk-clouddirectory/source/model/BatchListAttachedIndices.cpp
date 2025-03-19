@@ -18,16 +18,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-BatchListAttachedIndices::BatchListAttachedIndices() : 
-    m_targetReferenceHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 BatchListAttachedIndices::BatchListAttachedIndices(JsonView jsonValue)
-  : BatchListAttachedIndices()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ BatchListAttachedIndices& BatchListAttachedIndices::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("TargetReference"))
   {
     m_targetReference = jsonValue.GetObject("TargetReference");
-
     m_targetReferenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
     m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxResults"))
   {
     m_maxResults = jsonValue.GetInteger("MaxResults");
-
     m_maxResultsHasBeenSet = true;
   }
-
   return *this;
 }
 

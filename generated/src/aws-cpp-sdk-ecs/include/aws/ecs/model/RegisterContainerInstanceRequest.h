@@ -27,7 +27,7 @@ namespace Model
   class RegisterContainerInstanceRequest : public ECSRequest
   {
   public:
-    AWS_ECS_API RegisterContainerInstanceRequest();
+    AWS_ECS_API RegisterContainerInstanceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
      * your container instance with. If you do not specify a cluster, the default
      * cluster is assumed.</p>
      */
-    inline const Aws::String& GetCluster() const{ return m_cluster; }
+    inline const Aws::String& GetCluster() const { return m_cluster; }
     inline bool ClusterHasBeenSet() const { return m_clusterHasBeenSet; }
-    inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
-    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = std::move(value); }
-    inline void SetCluster(const char* value) { m_clusterHasBeenSet = true; m_cluster.assign(value); }
-    inline RegisterContainerInstanceRequest& WithCluster(const Aws::String& value) { SetCluster(value); return *this;}
-    inline RegisterContainerInstanceRequest& WithCluster(Aws::String&& value) { SetCluster(std::move(value)); return *this;}
-    inline RegisterContainerInstanceRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
+    template<typename ClusterT = Aws::String>
+    void SetCluster(ClusterT&& value) { m_clusterHasBeenSet = true; m_cluster = std::forward<ClusterT>(value); }
+    template<typename ClusterT = Aws::String>
+    RegisterContainerInstanceRequest& WithCluster(ClusterT&& value) { SetCluster(std::forward<ClusterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * <code>curl
      * http://169.254.169.254/latest/dynamic/instance-identity/document/</code> </p>
      */
-    inline const Aws::String& GetInstanceIdentityDocument() const{ return m_instanceIdentityDocument; }
+    inline const Aws::String& GetInstanceIdentityDocument() const { return m_instanceIdentityDocument; }
     inline bool InstanceIdentityDocumentHasBeenSet() const { return m_instanceIdentityDocumentHasBeenSet; }
-    inline void SetInstanceIdentityDocument(const Aws::String& value) { m_instanceIdentityDocumentHasBeenSet = true; m_instanceIdentityDocument = value; }
-    inline void SetInstanceIdentityDocument(Aws::String&& value) { m_instanceIdentityDocumentHasBeenSet = true; m_instanceIdentityDocument = std::move(value); }
-    inline void SetInstanceIdentityDocument(const char* value) { m_instanceIdentityDocumentHasBeenSet = true; m_instanceIdentityDocument.assign(value); }
-    inline RegisterContainerInstanceRequest& WithInstanceIdentityDocument(const Aws::String& value) { SetInstanceIdentityDocument(value); return *this;}
-    inline RegisterContainerInstanceRequest& WithInstanceIdentityDocument(Aws::String&& value) { SetInstanceIdentityDocument(std::move(value)); return *this;}
-    inline RegisterContainerInstanceRequest& WithInstanceIdentityDocument(const char* value) { SetInstanceIdentityDocument(value); return *this;}
+    template<typename InstanceIdentityDocumentT = Aws::String>
+    void SetInstanceIdentityDocument(InstanceIdentityDocumentT&& value) { m_instanceIdentityDocumentHasBeenSet = true; m_instanceIdentityDocument = std::forward<InstanceIdentityDocumentT>(value); }
+    template<typename InstanceIdentityDocumentT = Aws::String>
+    RegisterContainerInstanceRequest& WithInstanceIdentityDocument(InstanceIdentityDocumentT&& value) { SetInstanceIdentityDocument(std::forward<InstanceIdentityDocumentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,28 +76,26 @@ namespace Model
      * <code>curl
      * http://169.254.169.254/latest/dynamic/instance-identity/signature/</code> </p>
      */
-    inline const Aws::String& GetInstanceIdentityDocumentSignature() const{ return m_instanceIdentityDocumentSignature; }
+    inline const Aws::String& GetInstanceIdentityDocumentSignature() const { return m_instanceIdentityDocumentSignature; }
     inline bool InstanceIdentityDocumentSignatureHasBeenSet() const { return m_instanceIdentityDocumentSignatureHasBeenSet; }
-    inline void SetInstanceIdentityDocumentSignature(const Aws::String& value) { m_instanceIdentityDocumentSignatureHasBeenSet = true; m_instanceIdentityDocumentSignature = value; }
-    inline void SetInstanceIdentityDocumentSignature(Aws::String&& value) { m_instanceIdentityDocumentSignatureHasBeenSet = true; m_instanceIdentityDocumentSignature = std::move(value); }
-    inline void SetInstanceIdentityDocumentSignature(const char* value) { m_instanceIdentityDocumentSignatureHasBeenSet = true; m_instanceIdentityDocumentSignature.assign(value); }
-    inline RegisterContainerInstanceRequest& WithInstanceIdentityDocumentSignature(const Aws::String& value) { SetInstanceIdentityDocumentSignature(value); return *this;}
-    inline RegisterContainerInstanceRequest& WithInstanceIdentityDocumentSignature(Aws::String&& value) { SetInstanceIdentityDocumentSignature(std::move(value)); return *this;}
-    inline RegisterContainerInstanceRequest& WithInstanceIdentityDocumentSignature(const char* value) { SetInstanceIdentityDocumentSignature(value); return *this;}
+    template<typename InstanceIdentityDocumentSignatureT = Aws::String>
+    void SetInstanceIdentityDocumentSignature(InstanceIdentityDocumentSignatureT&& value) { m_instanceIdentityDocumentSignatureHasBeenSet = true; m_instanceIdentityDocumentSignature = std::forward<InstanceIdentityDocumentSignatureT>(value); }
+    template<typename InstanceIdentityDocumentSignatureT = Aws::String>
+    RegisterContainerInstanceRequest& WithInstanceIdentityDocumentSignature(InstanceIdentityDocumentSignatureT&& value) { SetInstanceIdentityDocumentSignature(std::forward<InstanceIdentityDocumentSignatureT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resources available on the instance.</p>
      */
-    inline const Aws::Vector<Resource>& GetTotalResources() const{ return m_totalResources; }
+    inline const Aws::Vector<Resource>& GetTotalResources() const { return m_totalResources; }
     inline bool TotalResourcesHasBeenSet() const { return m_totalResourcesHasBeenSet; }
-    inline void SetTotalResources(const Aws::Vector<Resource>& value) { m_totalResourcesHasBeenSet = true; m_totalResources = value; }
-    inline void SetTotalResources(Aws::Vector<Resource>&& value) { m_totalResourcesHasBeenSet = true; m_totalResources = std::move(value); }
-    inline RegisterContainerInstanceRequest& WithTotalResources(const Aws::Vector<Resource>& value) { SetTotalResources(value); return *this;}
-    inline RegisterContainerInstanceRequest& WithTotalResources(Aws::Vector<Resource>&& value) { SetTotalResources(std::move(value)); return *this;}
-    inline RegisterContainerInstanceRequest& AddTotalResources(const Resource& value) { m_totalResourcesHasBeenSet = true; m_totalResources.push_back(value); return *this; }
-    inline RegisterContainerInstanceRequest& AddTotalResources(Resource&& value) { m_totalResourcesHasBeenSet = true; m_totalResources.push_back(std::move(value)); return *this; }
+    template<typename TotalResourcesT = Aws::Vector<Resource>>
+    void SetTotalResources(TotalResourcesT&& value) { m_totalResourcesHasBeenSet = true; m_totalResources = std::forward<TotalResourcesT>(value); }
+    template<typename TotalResourcesT = Aws::Vector<Resource>>
+    RegisterContainerInstanceRequest& WithTotalResources(TotalResourcesT&& value) { SetTotalResources(std::forward<TotalResourcesT>(value)); return *this;}
+    template<typename TotalResourcesT = Resource>
+    RegisterContainerInstanceRequest& AddTotalResources(TotalResourcesT&& value) { m_totalResourcesHasBeenSet = true; m_totalResources.emplace_back(std::forward<TotalResourcesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -109,40 +103,38 @@ namespace Model
      * <p>The version information for the Amazon ECS container agent and Docker daemon
      * that runs on the container instance.</p>
      */
-    inline const VersionInfo& GetVersionInfo() const{ return m_versionInfo; }
+    inline const VersionInfo& GetVersionInfo() const { return m_versionInfo; }
     inline bool VersionInfoHasBeenSet() const { return m_versionInfoHasBeenSet; }
-    inline void SetVersionInfo(const VersionInfo& value) { m_versionInfoHasBeenSet = true; m_versionInfo = value; }
-    inline void SetVersionInfo(VersionInfo&& value) { m_versionInfoHasBeenSet = true; m_versionInfo = std::move(value); }
-    inline RegisterContainerInstanceRequest& WithVersionInfo(const VersionInfo& value) { SetVersionInfo(value); return *this;}
-    inline RegisterContainerInstanceRequest& WithVersionInfo(VersionInfo&& value) { SetVersionInfo(std::move(value)); return *this;}
+    template<typename VersionInfoT = VersionInfo>
+    void SetVersionInfo(VersionInfoT&& value) { m_versionInfoHasBeenSet = true; m_versionInfo = std::forward<VersionInfoT>(value); }
+    template<typename VersionInfoT = VersionInfo>
+    RegisterContainerInstanceRequest& WithVersionInfo(VersionInfoT&& value) { SetVersionInfo(std::forward<VersionInfoT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the container instance (if it was previously registered).</p>
      */
-    inline const Aws::String& GetContainerInstanceArn() const{ return m_containerInstanceArn; }
+    inline const Aws::String& GetContainerInstanceArn() const { return m_containerInstanceArn; }
     inline bool ContainerInstanceArnHasBeenSet() const { return m_containerInstanceArnHasBeenSet; }
-    inline void SetContainerInstanceArn(const Aws::String& value) { m_containerInstanceArnHasBeenSet = true; m_containerInstanceArn = value; }
-    inline void SetContainerInstanceArn(Aws::String&& value) { m_containerInstanceArnHasBeenSet = true; m_containerInstanceArn = std::move(value); }
-    inline void SetContainerInstanceArn(const char* value) { m_containerInstanceArnHasBeenSet = true; m_containerInstanceArn.assign(value); }
-    inline RegisterContainerInstanceRequest& WithContainerInstanceArn(const Aws::String& value) { SetContainerInstanceArn(value); return *this;}
-    inline RegisterContainerInstanceRequest& WithContainerInstanceArn(Aws::String&& value) { SetContainerInstanceArn(std::move(value)); return *this;}
-    inline RegisterContainerInstanceRequest& WithContainerInstanceArn(const char* value) { SetContainerInstanceArn(value); return *this;}
+    template<typename ContainerInstanceArnT = Aws::String>
+    void SetContainerInstanceArn(ContainerInstanceArnT&& value) { m_containerInstanceArnHasBeenSet = true; m_containerInstanceArn = std::forward<ContainerInstanceArnT>(value); }
+    template<typename ContainerInstanceArnT = Aws::String>
+    RegisterContainerInstanceRequest& WithContainerInstanceArn(ContainerInstanceArnT&& value) { SetContainerInstanceArn(std::forward<ContainerInstanceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The container instance attributes that this container instance supports.</p>
      */
-    inline const Aws::Vector<Attribute>& GetAttributes() const{ return m_attributes; }
+    inline const Aws::Vector<Attribute>& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const Aws::Vector<Attribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(Aws::Vector<Attribute>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline RegisterContainerInstanceRequest& WithAttributes(const Aws::Vector<Attribute>& value) { SetAttributes(value); return *this;}
-    inline RegisterContainerInstanceRequest& WithAttributes(Aws::Vector<Attribute>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline RegisterContainerInstanceRequest& AddAttributes(const Attribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
-    inline RegisterContainerInstanceRequest& AddAttributes(Attribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
+    template<typename AttributesT = Aws::Vector<Attribute>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Vector<Attribute>>
+    RegisterContainerInstanceRequest& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    template<typename AttributesT = Attribute>
+    RegisterContainerInstanceRequest& AddAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes.emplace_back(std::forward<AttributesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -150,14 +142,14 @@ namespace Model
      * <p>The devices that are available on the container instance. The only supported
      * device type is a GPU.</p>
      */
-    inline const Aws::Vector<PlatformDevice>& GetPlatformDevices() const{ return m_platformDevices; }
+    inline const Aws::Vector<PlatformDevice>& GetPlatformDevices() const { return m_platformDevices; }
     inline bool PlatformDevicesHasBeenSet() const { return m_platformDevicesHasBeenSet; }
-    inline void SetPlatformDevices(const Aws::Vector<PlatformDevice>& value) { m_platformDevicesHasBeenSet = true; m_platformDevices = value; }
-    inline void SetPlatformDevices(Aws::Vector<PlatformDevice>&& value) { m_platformDevicesHasBeenSet = true; m_platformDevices = std::move(value); }
-    inline RegisterContainerInstanceRequest& WithPlatformDevices(const Aws::Vector<PlatformDevice>& value) { SetPlatformDevices(value); return *this;}
-    inline RegisterContainerInstanceRequest& WithPlatformDevices(Aws::Vector<PlatformDevice>&& value) { SetPlatformDevices(std::move(value)); return *this;}
-    inline RegisterContainerInstanceRequest& AddPlatformDevices(const PlatformDevice& value) { m_platformDevicesHasBeenSet = true; m_platformDevices.push_back(value); return *this; }
-    inline RegisterContainerInstanceRequest& AddPlatformDevices(PlatformDevice&& value) { m_platformDevicesHasBeenSet = true; m_platformDevices.push_back(std::move(value)); return *this; }
+    template<typename PlatformDevicesT = Aws::Vector<PlatformDevice>>
+    void SetPlatformDevices(PlatformDevicesT&& value) { m_platformDevicesHasBeenSet = true; m_platformDevices = std::forward<PlatformDevicesT>(value); }
+    template<typename PlatformDevicesT = Aws::Vector<PlatformDevice>>
+    RegisterContainerInstanceRequest& WithPlatformDevices(PlatformDevicesT&& value) { SetPlatformDevices(std::forward<PlatformDevicesT>(value)); return *this;}
+    template<typename PlatformDevicesT = PlatformDevice>
+    RegisterContainerInstanceRequest& AddPlatformDevices(PlatformDevicesT&& value) { m_platformDevicesHasBeenSet = true; m_platformDevices.emplace_back(std::forward<PlatformDevicesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -179,14 +171,14 @@ namespace Model
      * edit or delete tag keys or values with this prefix. Tags with this prefix do not
      * count against your tags per resource limit.</p> </li> </ul>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline RegisterContainerInstanceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline RegisterContainerInstanceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline RegisterContainerInstanceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline RegisterContainerInstanceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    RegisterContainerInstanceRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    RegisterContainerInstanceRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

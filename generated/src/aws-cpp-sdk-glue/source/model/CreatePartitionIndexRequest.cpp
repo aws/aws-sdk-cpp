@@ -12,14 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreatePartitionIndexRequest::CreatePartitionIndexRequest() : 
-    m_catalogIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_partitionIndexHasBeenSet(false)
-{
-}
-
 Aws::String CreatePartitionIndexRequest::SerializePayload() const
 {
   JsonValue payload;

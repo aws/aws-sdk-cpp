@@ -38,7 +38,7 @@ namespace Model
   class SchemaSummary
   {
   public:
-    AWS_CLEANROOMS_API SchemaSummary();
+    AWS_CLEANROOMS_API SchemaSummary() = default;
     AWS_CLEANROOMS_API SchemaSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API SchemaSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,26 +48,22 @@ namespace Model
     /**
      * <p>The name for the schema object.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline SchemaSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline SchemaSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline SchemaSummary& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    SchemaSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of schema object.</p>
      */
-    inline const SchemaType& GetType() const{ return m_type; }
+    inline SchemaType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const SchemaType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(SchemaType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline SchemaSummary& WithType(const SchemaType& value) { SetType(value); return *this;}
-    inline SchemaSummary& WithType(SchemaType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(SchemaType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline SchemaSummary& WithType(SchemaType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -75,80 +71,73 @@ namespace Model
      * <p>The unique account ID for the Amazon Web Services account that owns the
      * schema.</p>
      */
-    inline const Aws::String& GetCreatorAccountId() const{ return m_creatorAccountId; }
+    inline const Aws::String& GetCreatorAccountId() const { return m_creatorAccountId; }
     inline bool CreatorAccountIdHasBeenSet() const { return m_creatorAccountIdHasBeenSet; }
-    inline void SetCreatorAccountId(const Aws::String& value) { m_creatorAccountIdHasBeenSet = true; m_creatorAccountId = value; }
-    inline void SetCreatorAccountId(Aws::String&& value) { m_creatorAccountIdHasBeenSet = true; m_creatorAccountId = std::move(value); }
-    inline void SetCreatorAccountId(const char* value) { m_creatorAccountIdHasBeenSet = true; m_creatorAccountId.assign(value); }
-    inline SchemaSummary& WithCreatorAccountId(const Aws::String& value) { SetCreatorAccountId(value); return *this;}
-    inline SchemaSummary& WithCreatorAccountId(Aws::String&& value) { SetCreatorAccountId(std::move(value)); return *this;}
-    inline SchemaSummary& WithCreatorAccountId(const char* value) { SetCreatorAccountId(value); return *this;}
+    template<typename CreatorAccountIdT = Aws::String>
+    void SetCreatorAccountId(CreatorAccountIdT&& value) { m_creatorAccountIdHasBeenSet = true; m_creatorAccountId = std::forward<CreatorAccountIdT>(value); }
+    template<typename CreatorAccountIdT = Aws::String>
+    SchemaSummary& WithCreatorAccountId(CreatorAccountIdT&& value) { SetCreatorAccountId(std::forward<CreatorAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time the schema object was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
+    inline const Aws::Utils::DateTime& GetCreateTime() const { return m_createTime; }
     inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
-    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
-    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = std::move(value); }
-    inline SchemaSummary& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
-    inline SchemaSummary& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    void SetCreateTime(CreateTimeT&& value) { m_createTimeHasBeenSet = true; m_createTime = std::forward<CreateTimeT>(value); }
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    SchemaSummary& WithCreateTime(CreateTimeT&& value) { SetCreateTime(std::forward<CreateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time the schema object was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
+    inline const Aws::Utils::DateTime& GetUpdateTime() const { return m_updateTime; }
     inline bool UpdateTimeHasBeenSet() const { return m_updateTimeHasBeenSet; }
-    inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTimeHasBeenSet = true; m_updateTime = value; }
-    inline void SetUpdateTime(Aws::Utils::DateTime&& value) { m_updateTimeHasBeenSet = true; m_updateTime = std::move(value); }
-    inline SchemaSummary& WithUpdateTime(const Aws::Utils::DateTime& value) { SetUpdateTime(value); return *this;}
-    inline SchemaSummary& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
+    template<typename UpdateTimeT = Aws::Utils::DateTime>
+    void SetUpdateTime(UpdateTimeT&& value) { m_updateTimeHasBeenSet = true; m_updateTime = std::forward<UpdateTimeT>(value); }
+    template<typename UpdateTimeT = Aws::Utils::DateTime>
+    SchemaSummary& WithUpdateTime(UpdateTimeT&& value) { SetUpdateTime(std::forward<UpdateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique ID for the collaboration that the schema belongs to.</p>
      */
-    inline const Aws::String& GetCollaborationId() const{ return m_collaborationId; }
+    inline const Aws::String& GetCollaborationId() const { return m_collaborationId; }
     inline bool CollaborationIdHasBeenSet() const { return m_collaborationIdHasBeenSet; }
-    inline void SetCollaborationId(const Aws::String& value) { m_collaborationIdHasBeenSet = true; m_collaborationId = value; }
-    inline void SetCollaborationId(Aws::String&& value) { m_collaborationIdHasBeenSet = true; m_collaborationId = std::move(value); }
-    inline void SetCollaborationId(const char* value) { m_collaborationIdHasBeenSet = true; m_collaborationId.assign(value); }
-    inline SchemaSummary& WithCollaborationId(const Aws::String& value) { SetCollaborationId(value); return *this;}
-    inline SchemaSummary& WithCollaborationId(Aws::String&& value) { SetCollaborationId(std::move(value)); return *this;}
-    inline SchemaSummary& WithCollaborationId(const char* value) { SetCollaborationId(value); return *this;}
+    template<typename CollaborationIdT = Aws::String>
+    void SetCollaborationId(CollaborationIdT&& value) { m_collaborationIdHasBeenSet = true; m_collaborationId = std::forward<CollaborationIdT>(value); }
+    template<typename CollaborationIdT = Aws::String>
+    SchemaSummary& WithCollaborationId(CollaborationIdT&& value) { SetCollaborationId(std::forward<CollaborationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique ARN for the collaboration that the schema belongs to.</p>
      */
-    inline const Aws::String& GetCollaborationArn() const{ return m_collaborationArn; }
+    inline const Aws::String& GetCollaborationArn() const { return m_collaborationArn; }
     inline bool CollaborationArnHasBeenSet() const { return m_collaborationArnHasBeenSet; }
-    inline void SetCollaborationArn(const Aws::String& value) { m_collaborationArnHasBeenSet = true; m_collaborationArn = value; }
-    inline void SetCollaborationArn(Aws::String&& value) { m_collaborationArnHasBeenSet = true; m_collaborationArn = std::move(value); }
-    inline void SetCollaborationArn(const char* value) { m_collaborationArnHasBeenSet = true; m_collaborationArn.assign(value); }
-    inline SchemaSummary& WithCollaborationArn(const Aws::String& value) { SetCollaborationArn(value); return *this;}
-    inline SchemaSummary& WithCollaborationArn(Aws::String&& value) { SetCollaborationArn(std::move(value)); return *this;}
-    inline SchemaSummary& WithCollaborationArn(const char* value) { SetCollaborationArn(value); return *this;}
+    template<typename CollaborationArnT = Aws::String>
+    void SetCollaborationArn(CollaborationArnT&& value) { m_collaborationArnHasBeenSet = true; m_collaborationArn = std::forward<CollaborationArnT>(value); }
+    template<typename CollaborationArnT = Aws::String>
+    SchemaSummary& WithCollaborationArn(CollaborationArnT&& value) { SetCollaborationArn(std::forward<CollaborationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The types of analysis rules that are associated with this schema object.</p>
      */
-    inline const Aws::Vector<AnalysisRuleType>& GetAnalysisRuleTypes() const{ return m_analysisRuleTypes; }
+    inline const Aws::Vector<AnalysisRuleType>& GetAnalysisRuleTypes() const { return m_analysisRuleTypes; }
     inline bool AnalysisRuleTypesHasBeenSet() const { return m_analysisRuleTypesHasBeenSet; }
-    inline void SetAnalysisRuleTypes(const Aws::Vector<AnalysisRuleType>& value) { m_analysisRuleTypesHasBeenSet = true; m_analysisRuleTypes = value; }
-    inline void SetAnalysisRuleTypes(Aws::Vector<AnalysisRuleType>&& value) { m_analysisRuleTypesHasBeenSet = true; m_analysisRuleTypes = std::move(value); }
-    inline SchemaSummary& WithAnalysisRuleTypes(const Aws::Vector<AnalysisRuleType>& value) { SetAnalysisRuleTypes(value); return *this;}
-    inline SchemaSummary& WithAnalysisRuleTypes(Aws::Vector<AnalysisRuleType>&& value) { SetAnalysisRuleTypes(std::move(value)); return *this;}
-    inline SchemaSummary& AddAnalysisRuleTypes(const AnalysisRuleType& value) { m_analysisRuleTypesHasBeenSet = true; m_analysisRuleTypes.push_back(value); return *this; }
-    inline SchemaSummary& AddAnalysisRuleTypes(AnalysisRuleType&& value) { m_analysisRuleTypesHasBeenSet = true; m_analysisRuleTypes.push_back(std::move(value)); return *this; }
+    template<typename AnalysisRuleTypesT = Aws::Vector<AnalysisRuleType>>
+    void SetAnalysisRuleTypes(AnalysisRuleTypesT&& value) { m_analysisRuleTypesHasBeenSet = true; m_analysisRuleTypes = std::forward<AnalysisRuleTypesT>(value); }
+    template<typename AnalysisRuleTypesT = Aws::Vector<AnalysisRuleType>>
+    SchemaSummary& WithAnalysisRuleTypes(AnalysisRuleTypesT&& value) { SetAnalysisRuleTypes(std::forward<AnalysisRuleTypesT>(value)); return *this;}
+    inline SchemaSummary& AddAnalysisRuleTypes(AnalysisRuleType value) { m_analysisRuleTypesHasBeenSet = true; m_analysisRuleTypes.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -159,42 +148,39 @@ namespace Model
      * this table.</p> <p> <code>MULTIPLE</code> allows both SQL queries and PySpark
      * jobs to be run directly on this table.</p>
      */
-    inline const AnalysisMethod& GetAnalysisMethod() const{ return m_analysisMethod; }
+    inline AnalysisMethod GetAnalysisMethod() const { return m_analysisMethod; }
     inline bool AnalysisMethodHasBeenSet() const { return m_analysisMethodHasBeenSet; }
-    inline void SetAnalysisMethod(const AnalysisMethod& value) { m_analysisMethodHasBeenSet = true; m_analysisMethod = value; }
-    inline void SetAnalysisMethod(AnalysisMethod&& value) { m_analysisMethodHasBeenSet = true; m_analysisMethod = std::move(value); }
-    inline SchemaSummary& WithAnalysisMethod(const AnalysisMethod& value) { SetAnalysisMethod(value); return *this;}
-    inline SchemaSummary& WithAnalysisMethod(AnalysisMethod&& value) { SetAnalysisMethod(std::move(value)); return *this;}
+    inline void SetAnalysisMethod(AnalysisMethod value) { m_analysisMethodHasBeenSet = true; m_analysisMethod = value; }
+    inline SchemaSummary& WithAnalysisMethod(AnalysisMethod value) { SetAnalysisMethod(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The selected analysis methods for the schema.</p>
      */
-    inline const Aws::Vector<SelectedAnalysisMethod>& GetSelectedAnalysisMethods() const{ return m_selectedAnalysisMethods; }
+    inline const Aws::Vector<SelectedAnalysisMethod>& GetSelectedAnalysisMethods() const { return m_selectedAnalysisMethods; }
     inline bool SelectedAnalysisMethodsHasBeenSet() const { return m_selectedAnalysisMethodsHasBeenSet; }
-    inline void SetSelectedAnalysisMethods(const Aws::Vector<SelectedAnalysisMethod>& value) { m_selectedAnalysisMethodsHasBeenSet = true; m_selectedAnalysisMethods = value; }
-    inline void SetSelectedAnalysisMethods(Aws::Vector<SelectedAnalysisMethod>&& value) { m_selectedAnalysisMethodsHasBeenSet = true; m_selectedAnalysisMethods = std::move(value); }
-    inline SchemaSummary& WithSelectedAnalysisMethods(const Aws::Vector<SelectedAnalysisMethod>& value) { SetSelectedAnalysisMethods(value); return *this;}
-    inline SchemaSummary& WithSelectedAnalysisMethods(Aws::Vector<SelectedAnalysisMethod>&& value) { SetSelectedAnalysisMethods(std::move(value)); return *this;}
-    inline SchemaSummary& AddSelectedAnalysisMethods(const SelectedAnalysisMethod& value) { m_selectedAnalysisMethodsHasBeenSet = true; m_selectedAnalysisMethods.push_back(value); return *this; }
-    inline SchemaSummary& AddSelectedAnalysisMethods(SelectedAnalysisMethod&& value) { m_selectedAnalysisMethodsHasBeenSet = true; m_selectedAnalysisMethods.push_back(std::move(value)); return *this; }
+    template<typename SelectedAnalysisMethodsT = Aws::Vector<SelectedAnalysisMethod>>
+    void SetSelectedAnalysisMethods(SelectedAnalysisMethodsT&& value) { m_selectedAnalysisMethodsHasBeenSet = true; m_selectedAnalysisMethods = std::forward<SelectedAnalysisMethodsT>(value); }
+    template<typename SelectedAnalysisMethodsT = Aws::Vector<SelectedAnalysisMethod>>
+    SchemaSummary& WithSelectedAnalysisMethods(SelectedAnalysisMethodsT&& value) { SetSelectedAnalysisMethods(std::forward<SelectedAnalysisMethodsT>(value)); return *this;}
+    inline SchemaSummary& AddSelectedAnalysisMethods(SelectedAnalysisMethod value) { m_selectedAnalysisMethodsHasBeenSet = true; m_selectedAnalysisMethods.push_back(value); return *this; }
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    SchemaType m_type;
+    SchemaType m_type{SchemaType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_creatorAccountId;
     bool m_creatorAccountIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createTime;
+    Aws::Utils::DateTime m_createTime{};
     bool m_createTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updateTime;
+    Aws::Utils::DateTime m_updateTime{};
     bool m_updateTimeHasBeenSet = false;
 
     Aws::String m_collaborationId;
@@ -206,7 +192,7 @@ namespace Model
     Aws::Vector<AnalysisRuleType> m_analysisRuleTypes;
     bool m_analysisRuleTypesHasBeenSet = false;
 
-    AnalysisMethod m_analysisMethod;
+    AnalysisMethod m_analysisMethod{AnalysisMethod::NOT_SET};
     bool m_analysisMethodHasBeenSet = false;
 
     Aws::Vector<SelectedAnalysisMethod> m_selectedAnalysisMethods;

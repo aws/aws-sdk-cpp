@@ -18,20 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-OpenSearchIntegrationDetails::OpenSearchIntegrationDetails() : 
-    m_dataSourceHasBeenSet(false),
-    m_applicationHasBeenSet(false),
-    m_collectionHasBeenSet(false),
-    m_workspaceHasBeenSet(false),
-    m_encryptionPolicyHasBeenSet(false),
-    m_networkPolicyHasBeenSet(false),
-    m_accessPolicyHasBeenSet(false),
-    m_lifecyclePolicyHasBeenSet(false)
-{
-}
-
 OpenSearchIntegrationDetails::OpenSearchIntegrationDetails(JsonView jsonValue)
-  : OpenSearchIntegrationDetails()
 {
   *this = jsonValue;
 }
@@ -41,59 +28,43 @@ OpenSearchIntegrationDetails& OpenSearchIntegrationDetails::operator =(JsonView 
   if(jsonValue.ValueExists("dataSource"))
   {
     m_dataSource = jsonValue.GetObject("dataSource");
-
     m_dataSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("application"))
   {
     m_application = jsonValue.GetObject("application");
-
     m_applicationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("collection"))
   {
     m_collection = jsonValue.GetObject("collection");
-
     m_collectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workspace"))
   {
     m_workspace = jsonValue.GetObject("workspace");
-
     m_workspaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encryptionPolicy"))
   {
     m_encryptionPolicy = jsonValue.GetObject("encryptionPolicy");
-
     m_encryptionPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkPolicy"))
   {
     m_networkPolicy = jsonValue.GetObject("networkPolicy");
-
     m_networkPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accessPolicy"))
   {
     m_accessPolicy = jsonValue.GetObject("accessPolicy");
-
     m_accessPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lifecyclePolicy"))
   {
     m_lifecyclePolicy = jsonValue.GetObject("lifecyclePolicy");
-
     m_lifecyclePolicyHasBeenSet = true;
   }
-
   return *this;
 }
 

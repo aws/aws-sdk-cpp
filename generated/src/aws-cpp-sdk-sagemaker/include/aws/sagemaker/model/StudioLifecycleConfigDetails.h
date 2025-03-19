@@ -34,7 +34,7 @@ namespace Model
   class StudioLifecycleConfigDetails
   {
   public:
-    AWS_SAGEMAKER_API StudioLifecycleConfigDetails();
+    AWS_SAGEMAKER_API StudioLifecycleConfigDetails() = default;
     AWS_SAGEMAKER_API StudioLifecycleConfigDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API StudioLifecycleConfigDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration.</p>
      */
-    inline const Aws::String& GetStudioLifecycleConfigArn() const{ return m_studioLifecycleConfigArn; }
+    inline const Aws::String& GetStudioLifecycleConfigArn() const { return m_studioLifecycleConfigArn; }
     inline bool StudioLifecycleConfigArnHasBeenSet() const { return m_studioLifecycleConfigArnHasBeenSet; }
-    inline void SetStudioLifecycleConfigArn(const Aws::String& value) { m_studioLifecycleConfigArnHasBeenSet = true; m_studioLifecycleConfigArn = value; }
-    inline void SetStudioLifecycleConfigArn(Aws::String&& value) { m_studioLifecycleConfigArnHasBeenSet = true; m_studioLifecycleConfigArn = std::move(value); }
-    inline void SetStudioLifecycleConfigArn(const char* value) { m_studioLifecycleConfigArnHasBeenSet = true; m_studioLifecycleConfigArn.assign(value); }
-    inline StudioLifecycleConfigDetails& WithStudioLifecycleConfigArn(const Aws::String& value) { SetStudioLifecycleConfigArn(value); return *this;}
-    inline StudioLifecycleConfigDetails& WithStudioLifecycleConfigArn(Aws::String&& value) { SetStudioLifecycleConfigArn(std::move(value)); return *this;}
-    inline StudioLifecycleConfigDetails& WithStudioLifecycleConfigArn(const char* value) { SetStudioLifecycleConfigArn(value); return *this;}
+    template<typename StudioLifecycleConfigArnT = Aws::String>
+    void SetStudioLifecycleConfigArn(StudioLifecycleConfigArnT&& value) { m_studioLifecycleConfigArnHasBeenSet = true; m_studioLifecycleConfigArn = std::forward<StudioLifecycleConfigArnT>(value); }
+    template<typename StudioLifecycleConfigArnT = Aws::String>
+    StudioLifecycleConfigDetails& WithStudioLifecycleConfigArn(StudioLifecycleConfigArnT&& value) { SetStudioLifecycleConfigArn(std::forward<StudioLifecycleConfigArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the Amazon SageMaker AI Studio Lifecycle Configuration.</p>
      */
-    inline const Aws::String& GetStudioLifecycleConfigName() const{ return m_studioLifecycleConfigName; }
+    inline const Aws::String& GetStudioLifecycleConfigName() const { return m_studioLifecycleConfigName; }
     inline bool StudioLifecycleConfigNameHasBeenSet() const { return m_studioLifecycleConfigNameHasBeenSet; }
-    inline void SetStudioLifecycleConfigName(const Aws::String& value) { m_studioLifecycleConfigNameHasBeenSet = true; m_studioLifecycleConfigName = value; }
-    inline void SetStudioLifecycleConfigName(Aws::String&& value) { m_studioLifecycleConfigNameHasBeenSet = true; m_studioLifecycleConfigName = std::move(value); }
-    inline void SetStudioLifecycleConfigName(const char* value) { m_studioLifecycleConfigNameHasBeenSet = true; m_studioLifecycleConfigName.assign(value); }
-    inline StudioLifecycleConfigDetails& WithStudioLifecycleConfigName(const Aws::String& value) { SetStudioLifecycleConfigName(value); return *this;}
-    inline StudioLifecycleConfigDetails& WithStudioLifecycleConfigName(Aws::String&& value) { SetStudioLifecycleConfigName(std::move(value)); return *this;}
-    inline StudioLifecycleConfigDetails& WithStudioLifecycleConfigName(const char* value) { SetStudioLifecycleConfigName(value); return *this;}
+    template<typename StudioLifecycleConfigNameT = Aws::String>
+    void SetStudioLifecycleConfigName(StudioLifecycleConfigNameT&& value) { m_studioLifecycleConfigNameHasBeenSet = true; m_studioLifecycleConfigName = std::forward<StudioLifecycleConfigNameT>(value); }
+    template<typename StudioLifecycleConfigNameT = Aws::String>
+    StudioLifecycleConfigDetails& WithStudioLifecycleConfigName(StudioLifecycleConfigNameT&& value) { SetStudioLifecycleConfigName(std::forward<StudioLifecycleConfigNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,12 +69,12 @@ namespace Model
      * <p>The creation time of the Amazon SageMaker AI Studio Lifecycle
      * Configuration.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline StudioLifecycleConfigDetails& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline StudioLifecycleConfigDetails& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    StudioLifecycleConfigDetails& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,24 +82,22 @@ namespace Model
      * <p>This value is equivalent to CreationTime because Amazon SageMaker AI Studio
      * Lifecycle Configurations are immutable.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
-    inline StudioLifecycleConfigDetails& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline StudioLifecycleConfigDetails& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    StudioLifecycleConfigDetails& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The App type to which the Lifecycle Configuration is attached.</p>
      */
-    inline const StudioLifecycleConfigAppType& GetStudioLifecycleConfigAppType() const{ return m_studioLifecycleConfigAppType; }
+    inline StudioLifecycleConfigAppType GetStudioLifecycleConfigAppType() const { return m_studioLifecycleConfigAppType; }
     inline bool StudioLifecycleConfigAppTypeHasBeenSet() const { return m_studioLifecycleConfigAppTypeHasBeenSet; }
-    inline void SetStudioLifecycleConfigAppType(const StudioLifecycleConfigAppType& value) { m_studioLifecycleConfigAppTypeHasBeenSet = true; m_studioLifecycleConfigAppType = value; }
-    inline void SetStudioLifecycleConfigAppType(StudioLifecycleConfigAppType&& value) { m_studioLifecycleConfigAppTypeHasBeenSet = true; m_studioLifecycleConfigAppType = std::move(value); }
-    inline StudioLifecycleConfigDetails& WithStudioLifecycleConfigAppType(const StudioLifecycleConfigAppType& value) { SetStudioLifecycleConfigAppType(value); return *this;}
-    inline StudioLifecycleConfigDetails& WithStudioLifecycleConfigAppType(StudioLifecycleConfigAppType&& value) { SetStudioLifecycleConfigAppType(std::move(value)); return *this;}
+    inline void SetStudioLifecycleConfigAppType(StudioLifecycleConfigAppType value) { m_studioLifecycleConfigAppTypeHasBeenSet = true; m_studioLifecycleConfigAppType = value; }
+    inline StudioLifecycleConfigDetails& WithStudioLifecycleConfigAppType(StudioLifecycleConfigAppType value) { SetStudioLifecycleConfigAppType(value); return *this;}
     ///@}
   private:
 
@@ -113,13 +107,13 @@ namespace Model
     Aws::String m_studioLifecycleConfigName;
     bool m_studioLifecycleConfigNameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
     bool m_lastModifiedTimeHasBeenSet = false;
 
-    StudioLifecycleConfigAppType m_studioLifecycleConfigAppType;
+    StudioLifecycleConfigAppType m_studioLifecycleConfigAppType{StudioLifecycleConfigAppType::NOT_SET};
     bool m_studioLifecycleConfigAppTypeHasBeenSet = false;
   };
 

@@ -20,20 +20,7 @@ namespace RDS
 namespace Model
 {
 
-ConnectionPoolConfiguration::ConnectionPoolConfiguration() : 
-    m_maxConnectionsPercent(0),
-    m_maxConnectionsPercentHasBeenSet(false),
-    m_maxIdleConnectionsPercent(0),
-    m_maxIdleConnectionsPercentHasBeenSet(false),
-    m_connectionBorrowTimeout(0),
-    m_connectionBorrowTimeoutHasBeenSet(false),
-    m_sessionPinningFiltersHasBeenSet(false),
-    m_initQueryHasBeenSet(false)
-{
-}
-
 ConnectionPoolConfiguration::ConnectionPoolConfiguration(const XmlNode& xmlNode)
-  : ConnectionPoolConfiguration()
 {
   *this = xmlNode;
 }
@@ -66,6 +53,7 @@ ConnectionPoolConfiguration& ConnectionPoolConfiguration::operator =(const XmlNo
     if(!sessionPinningFiltersNode.IsNull())
     {
       XmlNode sessionPinningFiltersMember = sessionPinningFiltersNode.FirstChild("member");
+      m_sessionPinningFiltersHasBeenSet = !sessionPinningFiltersMember.IsNull();
       while(!sessionPinningFiltersMember.IsNull())
       {
         m_sessionPinningFilters.push_back(sessionPinningFiltersMember.GetText());

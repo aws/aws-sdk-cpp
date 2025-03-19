@@ -12,11 +12,6 @@ using namespace Aws::CloudTrail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeregisterOrganizationDelegatedAdminRequest::DeregisterOrganizationDelegatedAdminRequest() : 
-    m_delegatedAdminAccountIdHasBeenSet(false)
-{
-}
-
 Aws::String DeregisterOrganizationDelegatedAdminRequest::SerializePayload() const
 {
   JsonValue payload;

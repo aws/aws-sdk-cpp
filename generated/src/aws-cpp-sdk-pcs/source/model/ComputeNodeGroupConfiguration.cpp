@@ -18,13 +18,7 @@ namespace PCS
 namespace Model
 {
 
-ComputeNodeGroupConfiguration::ComputeNodeGroupConfiguration() : 
-    m_computeNodeGroupIdHasBeenSet(false)
-{
-}
-
 ComputeNodeGroupConfiguration::ComputeNodeGroupConfiguration(JsonView jsonValue)
-  : ComputeNodeGroupConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ComputeNodeGroupConfiguration& ComputeNodeGroupConfiguration::operator =(JsonVie
   if(jsonValue.ValueExists("computeNodeGroupId"))
   {
     m_computeNodeGroupId = jsonValue.GetString("computeNodeGroupId");
-
     m_computeNodeGroupIdHasBeenSet = true;
   }
-
   return *this;
 }
 

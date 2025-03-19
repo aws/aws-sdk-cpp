@@ -29,7 +29,7 @@ namespace Model
   class ListCrlsResult
   {
   public:
-    AWS_ROLESANYWHERE_API ListCrlsResult();
+    AWS_ROLESANYWHERE_API ListCrlsResult() = default;
     AWS_ROLESANYWHERE_API ListCrlsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROLESANYWHERE_API ListCrlsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list of certificate revocation lists (CRL). </p>
      */
-    inline const Aws::Vector<CrlDetail>& GetCrls() const{ return m_crls; }
-    inline void SetCrls(const Aws::Vector<CrlDetail>& value) { m_crls = value; }
-    inline void SetCrls(Aws::Vector<CrlDetail>&& value) { m_crls = std::move(value); }
-    inline ListCrlsResult& WithCrls(const Aws::Vector<CrlDetail>& value) { SetCrls(value); return *this;}
-    inline ListCrlsResult& WithCrls(Aws::Vector<CrlDetail>&& value) { SetCrls(std::move(value)); return *this;}
-    inline ListCrlsResult& AddCrls(const CrlDetail& value) { m_crls.push_back(value); return *this; }
-    inline ListCrlsResult& AddCrls(CrlDetail&& value) { m_crls.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CrlDetail>& GetCrls() const { return m_crls; }
+    template<typename CrlsT = Aws::Vector<CrlDetail>>
+    void SetCrls(CrlsT&& value) { m_crlsHasBeenSet = true; m_crls = std::forward<CrlsT>(value); }
+    template<typename CrlsT = Aws::Vector<CrlDetail>>
+    ListCrlsResult& WithCrls(CrlsT&& value) { SetCrls(std::forward<CrlsT>(value)); return *this;}
+    template<typename CrlsT = CrlDetail>
+    ListCrlsResult& AddCrls(CrlsT&& value) { m_crlsHasBeenSet = true; m_crls.emplace_back(std::forward<CrlsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * request did not show all results. To get the next results, make the request
      * again with this value.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListCrlsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCrlsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCrlsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCrlsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListCrlsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListCrlsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListCrlsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListCrlsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<CrlDetail> m_crls;
+    bool m_crlsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

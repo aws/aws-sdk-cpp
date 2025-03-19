@@ -28,7 +28,7 @@ namespace Model
   class CreateAutoPredictorRequest : public ForecastServiceRequest
   {
   public:
-    AWS_FORECASTSERVICE_API CreateAutoPredictorRequest();
+    AWS_FORECASTSERVICE_API CreateAutoPredictorRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>A unique name for the predictor</p>
      */
-    inline const Aws::String& GetPredictorName() const{ return m_predictorName; }
+    inline const Aws::String& GetPredictorName() const { return m_predictorName; }
     inline bool PredictorNameHasBeenSet() const { return m_predictorNameHasBeenSet; }
-    inline void SetPredictorName(const Aws::String& value) { m_predictorNameHasBeenSet = true; m_predictorName = value; }
-    inline void SetPredictorName(Aws::String&& value) { m_predictorNameHasBeenSet = true; m_predictorName = std::move(value); }
-    inline void SetPredictorName(const char* value) { m_predictorNameHasBeenSet = true; m_predictorName.assign(value); }
-    inline CreateAutoPredictorRequest& WithPredictorName(const Aws::String& value) { SetPredictorName(value); return *this;}
-    inline CreateAutoPredictorRequest& WithPredictorName(Aws::String&& value) { SetPredictorName(std::move(value)); return *this;}
-    inline CreateAutoPredictorRequest& WithPredictorName(const char* value) { SetPredictorName(value); return *this;}
+    template<typename PredictorNameT = Aws::String>
+    void SetPredictorName(PredictorNameT&& value) { m_predictorNameHasBeenSet = true; m_predictorName = std::forward<PredictorNameT>(value); }
+    template<typename PredictorNameT = Aws::String>
+    CreateAutoPredictorRequest& WithPredictorName(PredictorNameT&& value) { SetPredictorName(std::forward<PredictorNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,7 +64,7 @@ namespace Model
      * existing AutoPredictor, you cannot update the forecast horizon parameter. You
      * can meet this requirement by providing longer time-series in the dataset.</p>
      */
-    inline int GetForecastHorizon() const{ return m_forecastHorizon; }
+    inline int GetForecastHorizon() const { return m_forecastHorizon; }
     inline bool ForecastHorizonHasBeenSet() const { return m_forecastHorizonHasBeenSet; }
     inline void SetForecastHorizon(int value) { m_forecastHorizonHasBeenSet = true; m_forecastHorizon = value; }
     inline CreateAutoPredictorRequest& WithForecastHorizon(int value) { SetForecastHorizon(value); return *this;}
@@ -79,15 +77,14 @@ namespace Model
      * of 0.01 or higher. You can also specify the mean forecast with
      * <code>mean</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetForecastTypes() const{ return m_forecastTypes; }
+    inline const Aws::Vector<Aws::String>& GetForecastTypes() const { return m_forecastTypes; }
     inline bool ForecastTypesHasBeenSet() const { return m_forecastTypesHasBeenSet; }
-    inline void SetForecastTypes(const Aws::Vector<Aws::String>& value) { m_forecastTypesHasBeenSet = true; m_forecastTypes = value; }
-    inline void SetForecastTypes(Aws::Vector<Aws::String>&& value) { m_forecastTypesHasBeenSet = true; m_forecastTypes = std::move(value); }
-    inline CreateAutoPredictorRequest& WithForecastTypes(const Aws::Vector<Aws::String>& value) { SetForecastTypes(value); return *this;}
-    inline CreateAutoPredictorRequest& WithForecastTypes(Aws::Vector<Aws::String>&& value) { SetForecastTypes(std::move(value)); return *this;}
-    inline CreateAutoPredictorRequest& AddForecastTypes(const Aws::String& value) { m_forecastTypesHasBeenSet = true; m_forecastTypes.push_back(value); return *this; }
-    inline CreateAutoPredictorRequest& AddForecastTypes(Aws::String&& value) { m_forecastTypesHasBeenSet = true; m_forecastTypes.push_back(std::move(value)); return *this; }
-    inline CreateAutoPredictorRequest& AddForecastTypes(const char* value) { m_forecastTypesHasBeenSet = true; m_forecastTypes.push_back(value); return *this; }
+    template<typename ForecastTypesT = Aws::Vector<Aws::String>>
+    void SetForecastTypes(ForecastTypesT&& value) { m_forecastTypesHasBeenSet = true; m_forecastTypes = std::forward<ForecastTypesT>(value); }
+    template<typename ForecastTypesT = Aws::Vector<Aws::String>>
+    CreateAutoPredictorRequest& WithForecastTypes(ForecastTypesT&& value) { SetForecastTypes(std::forward<ForecastTypesT>(value)); return *this;}
+    template<typename ForecastTypesT = Aws::String>
+    CreateAutoPredictorRequest& AddForecastTypes(ForecastTypesT&& value) { m_forecastTypesHasBeenSet = true; m_forecastTypes.emplace_back(std::forward<ForecastTypesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -98,15 +95,14 @@ namespace Model
      * you would specify <code>store_id</code> as a dimension to group sales forecasts
      * for each store.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetForecastDimensions() const{ return m_forecastDimensions; }
+    inline const Aws::Vector<Aws::String>& GetForecastDimensions() const { return m_forecastDimensions; }
     inline bool ForecastDimensionsHasBeenSet() const { return m_forecastDimensionsHasBeenSet; }
-    inline void SetForecastDimensions(const Aws::Vector<Aws::String>& value) { m_forecastDimensionsHasBeenSet = true; m_forecastDimensions = value; }
-    inline void SetForecastDimensions(Aws::Vector<Aws::String>&& value) { m_forecastDimensionsHasBeenSet = true; m_forecastDimensions = std::move(value); }
-    inline CreateAutoPredictorRequest& WithForecastDimensions(const Aws::Vector<Aws::String>& value) { SetForecastDimensions(value); return *this;}
-    inline CreateAutoPredictorRequest& WithForecastDimensions(Aws::Vector<Aws::String>&& value) { SetForecastDimensions(std::move(value)); return *this;}
-    inline CreateAutoPredictorRequest& AddForecastDimensions(const Aws::String& value) { m_forecastDimensionsHasBeenSet = true; m_forecastDimensions.push_back(value); return *this; }
-    inline CreateAutoPredictorRequest& AddForecastDimensions(Aws::String&& value) { m_forecastDimensionsHasBeenSet = true; m_forecastDimensions.push_back(std::move(value)); return *this; }
-    inline CreateAutoPredictorRequest& AddForecastDimensions(const char* value) { m_forecastDimensionsHasBeenSet = true; m_forecastDimensions.push_back(value); return *this; }
+    template<typename ForecastDimensionsT = Aws::Vector<Aws::String>>
+    void SetForecastDimensions(ForecastDimensionsT&& value) { m_forecastDimensionsHasBeenSet = true; m_forecastDimensions = std::forward<ForecastDimensionsT>(value); }
+    template<typename ForecastDimensionsT = Aws::Vector<Aws::String>>
+    CreateAutoPredictorRequest& WithForecastDimensions(ForecastDimensionsT&& value) { SetForecastDimensions(std::forward<ForecastDimensionsT>(value)); return *this;}
+    template<typename ForecastDimensionsT = Aws::String>
+    CreateAutoPredictorRequest& AddForecastDimensions(ForecastDimensionsT&& value) { m_forecastDimensionsHasBeenSet = true; m_forecastDimensions.emplace_back(std::forward<ForecastDimensionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -126,14 +122,12 @@ namespace Model
      * dataset is provided, the frequency must be equal to the RELATED_TIME_SERIES
      * dataset frequency.</p>
      */
-    inline const Aws::String& GetForecastFrequency() const{ return m_forecastFrequency; }
+    inline const Aws::String& GetForecastFrequency() const { return m_forecastFrequency; }
     inline bool ForecastFrequencyHasBeenSet() const { return m_forecastFrequencyHasBeenSet; }
-    inline void SetForecastFrequency(const Aws::String& value) { m_forecastFrequencyHasBeenSet = true; m_forecastFrequency = value; }
-    inline void SetForecastFrequency(Aws::String&& value) { m_forecastFrequencyHasBeenSet = true; m_forecastFrequency = std::move(value); }
-    inline void SetForecastFrequency(const char* value) { m_forecastFrequencyHasBeenSet = true; m_forecastFrequency.assign(value); }
-    inline CreateAutoPredictorRequest& WithForecastFrequency(const Aws::String& value) { SetForecastFrequency(value); return *this;}
-    inline CreateAutoPredictorRequest& WithForecastFrequency(Aws::String&& value) { SetForecastFrequency(std::move(value)); return *this;}
-    inline CreateAutoPredictorRequest& WithForecastFrequency(const char* value) { SetForecastFrequency(value); return *this;}
+    template<typename ForecastFrequencyT = Aws::String>
+    void SetForecastFrequency(ForecastFrequencyT&& value) { m_forecastFrequencyHasBeenSet = true; m_forecastFrequency = std::forward<ForecastFrequencyT>(value); }
+    template<typename ForecastFrequencyT = Aws::String>
+    CreateAutoPredictorRequest& WithForecastFrequency(ForecastFrequencyT&& value) { SetForecastFrequency(std::forward<ForecastFrequencyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -141,22 +135,22 @@ namespace Model
      * <p>The data configuration for your dataset group and any additional
      * datasets.</p>
      */
-    inline const DataConfig& GetDataConfig() const{ return m_dataConfig; }
+    inline const DataConfig& GetDataConfig() const { return m_dataConfig; }
     inline bool DataConfigHasBeenSet() const { return m_dataConfigHasBeenSet; }
-    inline void SetDataConfig(const DataConfig& value) { m_dataConfigHasBeenSet = true; m_dataConfig = value; }
-    inline void SetDataConfig(DataConfig&& value) { m_dataConfigHasBeenSet = true; m_dataConfig = std::move(value); }
-    inline CreateAutoPredictorRequest& WithDataConfig(const DataConfig& value) { SetDataConfig(value); return *this;}
-    inline CreateAutoPredictorRequest& WithDataConfig(DataConfig&& value) { SetDataConfig(std::move(value)); return *this;}
+    template<typename DataConfigT = DataConfig>
+    void SetDataConfig(DataConfigT&& value) { m_dataConfigHasBeenSet = true; m_dataConfig = std::forward<DataConfigT>(value); }
+    template<typename DataConfigT = DataConfig>
+    CreateAutoPredictorRequest& WithDataConfig(DataConfigT&& value) { SetDataConfig(std::forward<DataConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const EncryptionConfig& GetEncryptionConfig() const{ return m_encryptionConfig; }
+    inline const EncryptionConfig& GetEncryptionConfig() const { return m_encryptionConfig; }
     inline bool EncryptionConfigHasBeenSet() const { return m_encryptionConfigHasBeenSet; }
-    inline void SetEncryptionConfig(const EncryptionConfig& value) { m_encryptionConfigHasBeenSet = true; m_encryptionConfig = value; }
-    inline void SetEncryptionConfig(EncryptionConfig&& value) { m_encryptionConfigHasBeenSet = true; m_encryptionConfig = std::move(value); }
-    inline CreateAutoPredictorRequest& WithEncryptionConfig(const EncryptionConfig& value) { SetEncryptionConfig(value); return *this;}
-    inline CreateAutoPredictorRequest& WithEncryptionConfig(EncryptionConfig&& value) { SetEncryptionConfig(std::move(value)); return *this;}
+    template<typename EncryptionConfigT = EncryptionConfig>
+    void SetEncryptionConfig(EncryptionConfigT&& value) { m_encryptionConfigHasBeenSet = true; m_encryptionConfig = std::forward<EncryptionConfigT>(value); }
+    template<typename EncryptionConfigT = EncryptionConfig>
+    CreateAutoPredictorRequest& WithEncryptionConfig(EncryptionConfigT&& value) { SetEncryptionConfig(std::forward<EncryptionConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -168,33 +162,29 @@ namespace Model
      * <code>PredictorName</code>. The value for <code>PredictorName</code> must be a
      * unique predictor name.</p>
      */
-    inline const Aws::String& GetReferencePredictorArn() const{ return m_referencePredictorArn; }
+    inline const Aws::String& GetReferencePredictorArn() const { return m_referencePredictorArn; }
     inline bool ReferencePredictorArnHasBeenSet() const { return m_referencePredictorArnHasBeenSet; }
-    inline void SetReferencePredictorArn(const Aws::String& value) { m_referencePredictorArnHasBeenSet = true; m_referencePredictorArn = value; }
-    inline void SetReferencePredictorArn(Aws::String&& value) { m_referencePredictorArnHasBeenSet = true; m_referencePredictorArn = std::move(value); }
-    inline void SetReferencePredictorArn(const char* value) { m_referencePredictorArnHasBeenSet = true; m_referencePredictorArn.assign(value); }
-    inline CreateAutoPredictorRequest& WithReferencePredictorArn(const Aws::String& value) { SetReferencePredictorArn(value); return *this;}
-    inline CreateAutoPredictorRequest& WithReferencePredictorArn(Aws::String&& value) { SetReferencePredictorArn(std::move(value)); return *this;}
-    inline CreateAutoPredictorRequest& WithReferencePredictorArn(const char* value) { SetReferencePredictorArn(value); return *this;}
+    template<typename ReferencePredictorArnT = Aws::String>
+    void SetReferencePredictorArn(ReferencePredictorArnT&& value) { m_referencePredictorArnHasBeenSet = true; m_referencePredictorArn = std::forward<ReferencePredictorArnT>(value); }
+    template<typename ReferencePredictorArnT = Aws::String>
+    CreateAutoPredictorRequest& WithReferencePredictorArn(ReferencePredictorArnT&& value) { SetReferencePredictorArn(std::forward<ReferencePredictorArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The accuracy metric used to optimize the predictor.</p>
      */
-    inline const OptimizationMetric& GetOptimizationMetric() const{ return m_optimizationMetric; }
+    inline OptimizationMetric GetOptimizationMetric() const { return m_optimizationMetric; }
     inline bool OptimizationMetricHasBeenSet() const { return m_optimizationMetricHasBeenSet; }
-    inline void SetOptimizationMetric(const OptimizationMetric& value) { m_optimizationMetricHasBeenSet = true; m_optimizationMetric = value; }
-    inline void SetOptimizationMetric(OptimizationMetric&& value) { m_optimizationMetricHasBeenSet = true; m_optimizationMetric = std::move(value); }
-    inline CreateAutoPredictorRequest& WithOptimizationMetric(const OptimizationMetric& value) { SetOptimizationMetric(value); return *this;}
-    inline CreateAutoPredictorRequest& WithOptimizationMetric(OptimizationMetric&& value) { SetOptimizationMetric(std::move(value)); return *this;}
+    inline void SetOptimizationMetric(OptimizationMetric value) { m_optimizationMetricHasBeenSet = true; m_optimizationMetric = value; }
+    inline CreateAutoPredictorRequest& WithOptimizationMetric(OptimizationMetric value) { SetOptimizationMetric(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Create an Explainability resource for the predictor.</p>
      */
-    inline bool GetExplainPredictor() const{ return m_explainPredictor; }
+    inline bool GetExplainPredictor() const { return m_explainPredictor; }
     inline bool ExplainPredictorHasBeenSet() const { return m_explainPredictorHasBeenSet; }
     inline void SetExplainPredictor(bool value) { m_explainPredictorHasBeenSet = true; m_explainPredictor = value; }
     inline CreateAutoPredictorRequest& WithExplainPredictor(bool value) { SetExplainPredictor(value); return *this;}
@@ -220,14 +210,14 @@ namespace Model
      * your tags per resource limit. You cannot edit or delete tag keys with this
      * prefix.</p> </li> </ul>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateAutoPredictorRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateAutoPredictorRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateAutoPredictorRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateAutoPredictorRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateAutoPredictorRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateAutoPredictorRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -239,12 +229,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring.html">Predictor
      * Monitoring</a>.</p>
      */
-    inline const MonitorConfig& GetMonitorConfig() const{ return m_monitorConfig; }
+    inline const MonitorConfig& GetMonitorConfig() const { return m_monitorConfig; }
     inline bool MonitorConfigHasBeenSet() const { return m_monitorConfigHasBeenSet; }
-    inline void SetMonitorConfig(const MonitorConfig& value) { m_monitorConfigHasBeenSet = true; m_monitorConfig = value; }
-    inline void SetMonitorConfig(MonitorConfig&& value) { m_monitorConfigHasBeenSet = true; m_monitorConfig = std::move(value); }
-    inline CreateAutoPredictorRequest& WithMonitorConfig(const MonitorConfig& value) { SetMonitorConfig(value); return *this;}
-    inline CreateAutoPredictorRequest& WithMonitorConfig(MonitorConfig&& value) { SetMonitorConfig(std::move(value)); return *this;}
+    template<typename MonitorConfigT = MonitorConfig>
+    void SetMonitorConfig(MonitorConfigT&& value) { m_monitorConfigHasBeenSet = true; m_monitorConfig = std::forward<MonitorConfigT>(value); }
+    template<typename MonitorConfigT = MonitorConfig>
+    CreateAutoPredictorRequest& WithMonitorConfig(MonitorConfigT&& value) { SetMonitorConfig(std::forward<MonitorConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -259,19 +249,19 @@ namespace Model
      * href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#default-time-boundaries">Default
      * Time Boundaries</a>.</p>
      */
-    inline const TimeAlignmentBoundary& GetTimeAlignmentBoundary() const{ return m_timeAlignmentBoundary; }
+    inline const TimeAlignmentBoundary& GetTimeAlignmentBoundary() const { return m_timeAlignmentBoundary; }
     inline bool TimeAlignmentBoundaryHasBeenSet() const { return m_timeAlignmentBoundaryHasBeenSet; }
-    inline void SetTimeAlignmentBoundary(const TimeAlignmentBoundary& value) { m_timeAlignmentBoundaryHasBeenSet = true; m_timeAlignmentBoundary = value; }
-    inline void SetTimeAlignmentBoundary(TimeAlignmentBoundary&& value) { m_timeAlignmentBoundaryHasBeenSet = true; m_timeAlignmentBoundary = std::move(value); }
-    inline CreateAutoPredictorRequest& WithTimeAlignmentBoundary(const TimeAlignmentBoundary& value) { SetTimeAlignmentBoundary(value); return *this;}
-    inline CreateAutoPredictorRequest& WithTimeAlignmentBoundary(TimeAlignmentBoundary&& value) { SetTimeAlignmentBoundary(std::move(value)); return *this;}
+    template<typename TimeAlignmentBoundaryT = TimeAlignmentBoundary>
+    void SetTimeAlignmentBoundary(TimeAlignmentBoundaryT&& value) { m_timeAlignmentBoundaryHasBeenSet = true; m_timeAlignmentBoundary = std::forward<TimeAlignmentBoundaryT>(value); }
+    template<typename TimeAlignmentBoundaryT = TimeAlignmentBoundary>
+    CreateAutoPredictorRequest& WithTimeAlignmentBoundary(TimeAlignmentBoundaryT&& value) { SetTimeAlignmentBoundary(std::forward<TimeAlignmentBoundaryT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_predictorName;
     bool m_predictorNameHasBeenSet = false;
 
-    int m_forecastHorizon;
+    int m_forecastHorizon{0};
     bool m_forecastHorizonHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_forecastTypes;
@@ -292,10 +282,10 @@ namespace Model
     Aws::String m_referencePredictorArn;
     bool m_referencePredictorArnHasBeenSet = false;
 
-    OptimizationMetric m_optimizationMetric;
+    OptimizationMetric m_optimizationMetric{OptimizationMetric::NOT_SET};
     bool m_optimizationMetricHasBeenSet = false;
 
-    bool m_explainPredictor;
+    bool m_explainPredictor{false};
     bool m_explainPredictorHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;

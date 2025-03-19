@@ -12,11 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetExecutionPreviewRequest::GetExecutionPreviewRequest() : 
-    m_executionPreviewIdHasBeenSet(false)
-{
-}
-
 Aws::String GetExecutionPreviewRequest::SerializePayload() const
 {
   JsonValue payload;

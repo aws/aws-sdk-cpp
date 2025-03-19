@@ -33,7 +33,7 @@ namespace Model
   class ApprovalRule
   {
   public:
-    AWS_CODECOMMIT_API ApprovalRule();
+    AWS_CODECOMMIT_API ApprovalRule() = default;
     AWS_CODECOMMIT_API ApprovalRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECOMMIT_API ApprovalRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,56 +43,48 @@ namespace Model
     /**
      * <p>The system-generated ID of the approval rule.</p>
      */
-    inline const Aws::String& GetApprovalRuleId() const{ return m_approvalRuleId; }
+    inline const Aws::String& GetApprovalRuleId() const { return m_approvalRuleId; }
     inline bool ApprovalRuleIdHasBeenSet() const { return m_approvalRuleIdHasBeenSet; }
-    inline void SetApprovalRuleId(const Aws::String& value) { m_approvalRuleIdHasBeenSet = true; m_approvalRuleId = value; }
-    inline void SetApprovalRuleId(Aws::String&& value) { m_approvalRuleIdHasBeenSet = true; m_approvalRuleId = std::move(value); }
-    inline void SetApprovalRuleId(const char* value) { m_approvalRuleIdHasBeenSet = true; m_approvalRuleId.assign(value); }
-    inline ApprovalRule& WithApprovalRuleId(const Aws::String& value) { SetApprovalRuleId(value); return *this;}
-    inline ApprovalRule& WithApprovalRuleId(Aws::String&& value) { SetApprovalRuleId(std::move(value)); return *this;}
-    inline ApprovalRule& WithApprovalRuleId(const char* value) { SetApprovalRuleId(value); return *this;}
+    template<typename ApprovalRuleIdT = Aws::String>
+    void SetApprovalRuleId(ApprovalRuleIdT&& value) { m_approvalRuleIdHasBeenSet = true; m_approvalRuleId = std::forward<ApprovalRuleIdT>(value); }
+    template<typename ApprovalRuleIdT = Aws::String>
+    ApprovalRule& WithApprovalRuleId(ApprovalRuleIdT&& value) { SetApprovalRuleId(std::forward<ApprovalRuleIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the approval rule.</p>
      */
-    inline const Aws::String& GetApprovalRuleName() const{ return m_approvalRuleName; }
+    inline const Aws::String& GetApprovalRuleName() const { return m_approvalRuleName; }
     inline bool ApprovalRuleNameHasBeenSet() const { return m_approvalRuleNameHasBeenSet; }
-    inline void SetApprovalRuleName(const Aws::String& value) { m_approvalRuleNameHasBeenSet = true; m_approvalRuleName = value; }
-    inline void SetApprovalRuleName(Aws::String&& value) { m_approvalRuleNameHasBeenSet = true; m_approvalRuleName = std::move(value); }
-    inline void SetApprovalRuleName(const char* value) { m_approvalRuleNameHasBeenSet = true; m_approvalRuleName.assign(value); }
-    inline ApprovalRule& WithApprovalRuleName(const Aws::String& value) { SetApprovalRuleName(value); return *this;}
-    inline ApprovalRule& WithApprovalRuleName(Aws::String&& value) { SetApprovalRuleName(std::move(value)); return *this;}
-    inline ApprovalRule& WithApprovalRuleName(const char* value) { SetApprovalRuleName(value); return *this;}
+    template<typename ApprovalRuleNameT = Aws::String>
+    void SetApprovalRuleName(ApprovalRuleNameT&& value) { m_approvalRuleNameHasBeenSet = true; m_approvalRuleName = std::forward<ApprovalRuleNameT>(value); }
+    template<typename ApprovalRuleNameT = Aws::String>
+    ApprovalRule& WithApprovalRuleName(ApprovalRuleNameT&& value) { SetApprovalRuleName(std::forward<ApprovalRuleNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The content of the approval rule.</p>
      */
-    inline const Aws::String& GetApprovalRuleContent() const{ return m_approvalRuleContent; }
+    inline const Aws::String& GetApprovalRuleContent() const { return m_approvalRuleContent; }
     inline bool ApprovalRuleContentHasBeenSet() const { return m_approvalRuleContentHasBeenSet; }
-    inline void SetApprovalRuleContent(const Aws::String& value) { m_approvalRuleContentHasBeenSet = true; m_approvalRuleContent = value; }
-    inline void SetApprovalRuleContent(Aws::String&& value) { m_approvalRuleContentHasBeenSet = true; m_approvalRuleContent = std::move(value); }
-    inline void SetApprovalRuleContent(const char* value) { m_approvalRuleContentHasBeenSet = true; m_approvalRuleContent.assign(value); }
-    inline ApprovalRule& WithApprovalRuleContent(const Aws::String& value) { SetApprovalRuleContent(value); return *this;}
-    inline ApprovalRule& WithApprovalRuleContent(Aws::String&& value) { SetApprovalRuleContent(std::move(value)); return *this;}
-    inline ApprovalRule& WithApprovalRuleContent(const char* value) { SetApprovalRuleContent(value); return *this;}
+    template<typename ApprovalRuleContentT = Aws::String>
+    void SetApprovalRuleContent(ApprovalRuleContentT&& value) { m_approvalRuleContentHasBeenSet = true; m_approvalRuleContent = std::forward<ApprovalRuleContentT>(value); }
+    template<typename ApprovalRuleContentT = Aws::String>
+    ApprovalRule& WithApprovalRuleContent(ApprovalRuleContentT&& value) { SetApprovalRuleContent(std::forward<ApprovalRuleContentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The SHA-256 hash signature for the content of the approval rule.</p>
      */
-    inline const Aws::String& GetRuleContentSha256() const{ return m_ruleContentSha256; }
+    inline const Aws::String& GetRuleContentSha256() const { return m_ruleContentSha256; }
     inline bool RuleContentSha256HasBeenSet() const { return m_ruleContentSha256HasBeenSet; }
-    inline void SetRuleContentSha256(const Aws::String& value) { m_ruleContentSha256HasBeenSet = true; m_ruleContentSha256 = value; }
-    inline void SetRuleContentSha256(Aws::String&& value) { m_ruleContentSha256HasBeenSet = true; m_ruleContentSha256 = std::move(value); }
-    inline void SetRuleContentSha256(const char* value) { m_ruleContentSha256HasBeenSet = true; m_ruleContentSha256.assign(value); }
-    inline ApprovalRule& WithRuleContentSha256(const Aws::String& value) { SetRuleContentSha256(value); return *this;}
-    inline ApprovalRule& WithRuleContentSha256(Aws::String&& value) { SetRuleContentSha256(std::move(value)); return *this;}
-    inline ApprovalRule& WithRuleContentSha256(const char* value) { SetRuleContentSha256(value); return *this;}
+    template<typename RuleContentSha256T = Aws::String>
+    void SetRuleContentSha256(RuleContentSha256T&& value) { m_ruleContentSha256HasBeenSet = true; m_ruleContentSha256 = std::forward<RuleContentSha256T>(value); }
+    template<typename RuleContentSha256T = Aws::String>
+    ApprovalRule& WithRuleContentSha256(RuleContentSha256T&& value) { SetRuleContentSha256(std::forward<RuleContentSha256T>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,24 +92,24 @@ namespace Model
      * <p>The date the approval rule was most recently changed, in timestamp
      * format.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedDate() const{ return m_lastModifiedDate; }
+    inline const Aws::Utils::DateTime& GetLastModifiedDate() const { return m_lastModifiedDate; }
     inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
-    inline void SetLastModifiedDate(const Aws::Utils::DateTime& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
-    inline void SetLastModifiedDate(Aws::Utils::DateTime&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::move(value); }
-    inline ApprovalRule& WithLastModifiedDate(const Aws::Utils::DateTime& value) { SetLastModifiedDate(value); return *this;}
-    inline ApprovalRule& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
+    template<typename LastModifiedDateT = Aws::Utils::DateTime>
+    void SetLastModifiedDate(LastModifiedDateT&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::forward<LastModifiedDateT>(value); }
+    template<typename LastModifiedDateT = Aws::Utils::DateTime>
+    ApprovalRule& WithLastModifiedDate(LastModifiedDateT&& value) { SetLastModifiedDate(std::forward<LastModifiedDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date the approval rule was created, in timestamp format.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
+    inline const Aws::Utils::DateTime& GetCreationDate() const { return m_creationDate; }
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
-    inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
-    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
-    inline ApprovalRule& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
-    inline ApprovalRule& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    void SetCreationDate(CreationDateT&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::forward<CreationDateT>(value); }
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    ApprovalRule& WithCreationDate(CreationDateT&& value) { SetCreationDate(std::forward<CreationDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -125,26 +117,24 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the user who made the most recent changes
      * to the approval rule.</p>
      */
-    inline const Aws::String& GetLastModifiedUser() const{ return m_lastModifiedUser; }
+    inline const Aws::String& GetLastModifiedUser() const { return m_lastModifiedUser; }
     inline bool LastModifiedUserHasBeenSet() const { return m_lastModifiedUserHasBeenSet; }
-    inline void SetLastModifiedUser(const Aws::String& value) { m_lastModifiedUserHasBeenSet = true; m_lastModifiedUser = value; }
-    inline void SetLastModifiedUser(Aws::String&& value) { m_lastModifiedUserHasBeenSet = true; m_lastModifiedUser = std::move(value); }
-    inline void SetLastModifiedUser(const char* value) { m_lastModifiedUserHasBeenSet = true; m_lastModifiedUser.assign(value); }
-    inline ApprovalRule& WithLastModifiedUser(const Aws::String& value) { SetLastModifiedUser(value); return *this;}
-    inline ApprovalRule& WithLastModifiedUser(Aws::String&& value) { SetLastModifiedUser(std::move(value)); return *this;}
-    inline ApprovalRule& WithLastModifiedUser(const char* value) { SetLastModifiedUser(value); return *this;}
+    template<typename LastModifiedUserT = Aws::String>
+    void SetLastModifiedUser(LastModifiedUserT&& value) { m_lastModifiedUserHasBeenSet = true; m_lastModifiedUser = std::forward<LastModifiedUserT>(value); }
+    template<typename LastModifiedUserT = Aws::String>
+    ApprovalRule& WithLastModifiedUser(LastModifiedUserT&& value) { SetLastModifiedUser(std::forward<LastModifiedUserT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The approval rule template used to create the rule.</p>
      */
-    inline const OriginApprovalRuleTemplate& GetOriginApprovalRuleTemplate() const{ return m_originApprovalRuleTemplate; }
+    inline const OriginApprovalRuleTemplate& GetOriginApprovalRuleTemplate() const { return m_originApprovalRuleTemplate; }
     inline bool OriginApprovalRuleTemplateHasBeenSet() const { return m_originApprovalRuleTemplateHasBeenSet; }
-    inline void SetOriginApprovalRuleTemplate(const OriginApprovalRuleTemplate& value) { m_originApprovalRuleTemplateHasBeenSet = true; m_originApprovalRuleTemplate = value; }
-    inline void SetOriginApprovalRuleTemplate(OriginApprovalRuleTemplate&& value) { m_originApprovalRuleTemplateHasBeenSet = true; m_originApprovalRuleTemplate = std::move(value); }
-    inline ApprovalRule& WithOriginApprovalRuleTemplate(const OriginApprovalRuleTemplate& value) { SetOriginApprovalRuleTemplate(value); return *this;}
-    inline ApprovalRule& WithOriginApprovalRuleTemplate(OriginApprovalRuleTemplate&& value) { SetOriginApprovalRuleTemplate(std::move(value)); return *this;}
+    template<typename OriginApprovalRuleTemplateT = OriginApprovalRuleTemplate>
+    void SetOriginApprovalRuleTemplate(OriginApprovalRuleTemplateT&& value) { m_originApprovalRuleTemplateHasBeenSet = true; m_originApprovalRuleTemplate = std::forward<OriginApprovalRuleTemplateT>(value); }
+    template<typename OriginApprovalRuleTemplateT = OriginApprovalRuleTemplate>
+    ApprovalRule& WithOriginApprovalRuleTemplate(OriginApprovalRuleTemplateT&& value) { SetOriginApprovalRuleTemplate(std::forward<OriginApprovalRuleTemplateT>(value)); return *this;}
     ///@}
   private:
 
@@ -160,10 +150,10 @@ namespace Model
     Aws::String m_ruleContentSha256;
     bool m_ruleContentSha256HasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedDate;
+    Aws::Utils::DateTime m_lastModifiedDate{};
     bool m_lastModifiedDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDate;
+    Aws::Utils::DateTime m_creationDate{};
     bool m_creationDateHasBeenSet = false;
 
     Aws::String m_lastModifiedUser;

@@ -12,12 +12,6 @@ using namespace Aws::IdentityStore::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteGroupMembershipRequest::DeleteGroupMembershipRequest() : 
-    m_identityStoreIdHasBeenSet(false),
-    m_membershipIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteGroupMembershipRequest::SerializePayload() const
 {
   JsonValue payload;

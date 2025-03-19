@@ -12,12 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteClientBrandingRequest::DeleteClientBrandingRequest() : 
-    m_resourceIdHasBeenSet(false),
-    m_platformsHasBeenSet(false)
-{
-}
-
 Aws::String DeleteClientBrandingRequest::SerializePayload() const
 {
   JsonValue payload;

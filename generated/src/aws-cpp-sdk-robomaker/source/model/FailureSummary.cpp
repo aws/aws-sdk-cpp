@@ -18,15 +18,7 @@ namespace RoboMaker
 namespace Model
 {
 
-FailureSummary::FailureSummary() : 
-    m_totalFailureCount(0),
-    m_totalFailureCountHasBeenSet(false),
-    m_failuresHasBeenSet(false)
-{
-}
-
 FailureSummary::FailureSummary(JsonView jsonValue)
-  : FailureSummary()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ FailureSummary& FailureSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("totalFailureCount"))
   {
     m_totalFailureCount = jsonValue.GetInteger("totalFailureCount");
-
     m_totalFailureCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failures"))
   {
     Aws::Utils::Array<JsonView> failuresJsonList = jsonValue.GetArray("failures");
@@ -49,7 +39,6 @@ FailureSummary& FailureSummary::operator =(JsonView jsonValue)
     }
     m_failuresHasBeenSet = true;
   }
-
   return *this;
 }
 

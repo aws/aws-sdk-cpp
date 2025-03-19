@@ -35,7 +35,7 @@ namespace Model
   class RegistrationAttachmentsInformation
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API RegistrationAttachmentsInformation();
+    AWS_PINPOINTSMSVOICEV2_API RegistrationAttachmentsInformation() = default;
     AWS_PINPOINTSMSVOICEV2_API RegistrationAttachmentsInformation(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINTSMSVOICEV2_API RegistrationAttachmentsInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINTSMSVOICEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the registration attachment.</p>
      */
-    inline const Aws::String& GetRegistrationAttachmentArn() const{ return m_registrationAttachmentArn; }
+    inline const Aws::String& GetRegistrationAttachmentArn() const { return m_registrationAttachmentArn; }
     inline bool RegistrationAttachmentArnHasBeenSet() const { return m_registrationAttachmentArnHasBeenSet; }
-    inline void SetRegistrationAttachmentArn(const Aws::String& value) { m_registrationAttachmentArnHasBeenSet = true; m_registrationAttachmentArn = value; }
-    inline void SetRegistrationAttachmentArn(Aws::String&& value) { m_registrationAttachmentArnHasBeenSet = true; m_registrationAttachmentArn = std::move(value); }
-    inline void SetRegistrationAttachmentArn(const char* value) { m_registrationAttachmentArnHasBeenSet = true; m_registrationAttachmentArn.assign(value); }
-    inline RegistrationAttachmentsInformation& WithRegistrationAttachmentArn(const Aws::String& value) { SetRegistrationAttachmentArn(value); return *this;}
-    inline RegistrationAttachmentsInformation& WithRegistrationAttachmentArn(Aws::String&& value) { SetRegistrationAttachmentArn(std::move(value)); return *this;}
-    inline RegistrationAttachmentsInformation& WithRegistrationAttachmentArn(const char* value) { SetRegistrationAttachmentArn(value); return *this;}
+    template<typename RegistrationAttachmentArnT = Aws::String>
+    void SetRegistrationAttachmentArn(RegistrationAttachmentArnT&& value) { m_registrationAttachmentArnHasBeenSet = true; m_registrationAttachmentArn = std::forward<RegistrationAttachmentArnT>(value); }
+    template<typename RegistrationAttachmentArnT = Aws::String>
+    RegistrationAttachmentsInformation& WithRegistrationAttachmentArn(RegistrationAttachmentArnT&& value) { SetRegistrationAttachmentArn(std::forward<RegistrationAttachmentArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier for the registration attachment.</p>
      */
-    inline const Aws::String& GetRegistrationAttachmentId() const{ return m_registrationAttachmentId; }
+    inline const Aws::String& GetRegistrationAttachmentId() const { return m_registrationAttachmentId; }
     inline bool RegistrationAttachmentIdHasBeenSet() const { return m_registrationAttachmentIdHasBeenSet; }
-    inline void SetRegistrationAttachmentId(const Aws::String& value) { m_registrationAttachmentIdHasBeenSet = true; m_registrationAttachmentId = value; }
-    inline void SetRegistrationAttachmentId(Aws::String&& value) { m_registrationAttachmentIdHasBeenSet = true; m_registrationAttachmentId = std::move(value); }
-    inline void SetRegistrationAttachmentId(const char* value) { m_registrationAttachmentIdHasBeenSet = true; m_registrationAttachmentId.assign(value); }
-    inline RegistrationAttachmentsInformation& WithRegistrationAttachmentId(const Aws::String& value) { SetRegistrationAttachmentId(value); return *this;}
-    inline RegistrationAttachmentsInformation& WithRegistrationAttachmentId(Aws::String&& value) { SetRegistrationAttachmentId(std::move(value)); return *this;}
-    inline RegistrationAttachmentsInformation& WithRegistrationAttachmentId(const char* value) { SetRegistrationAttachmentId(value); return *this;}
+    template<typename RegistrationAttachmentIdT = Aws::String>
+    void SetRegistrationAttachmentId(RegistrationAttachmentIdT&& value) { m_registrationAttachmentIdHasBeenSet = true; m_registrationAttachmentId = std::forward<RegistrationAttachmentIdT>(value); }
+    template<typename RegistrationAttachmentIdT = Aws::String>
+    RegistrationAttachmentsInformation& WithRegistrationAttachmentId(RegistrationAttachmentIdT&& value) { SetRegistrationAttachmentId(std::forward<RegistrationAttachmentIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,24 +73,20 @@ namespace Model
      * <li> <p> <code>UPLOAD_FAILED</code> The attachment failed to uploaded.</p> </li>
      * <li> <p> <code>DELETED</code> The attachment has been deleted..</p> </li> </ul>
      */
-    inline const AttachmentStatus& GetAttachmentStatus() const{ return m_attachmentStatus; }
+    inline AttachmentStatus GetAttachmentStatus() const { return m_attachmentStatus; }
     inline bool AttachmentStatusHasBeenSet() const { return m_attachmentStatusHasBeenSet; }
-    inline void SetAttachmentStatus(const AttachmentStatus& value) { m_attachmentStatusHasBeenSet = true; m_attachmentStatus = value; }
-    inline void SetAttachmentStatus(AttachmentStatus&& value) { m_attachmentStatusHasBeenSet = true; m_attachmentStatus = std::move(value); }
-    inline RegistrationAttachmentsInformation& WithAttachmentStatus(const AttachmentStatus& value) { SetAttachmentStatus(value); return *this;}
-    inline RegistrationAttachmentsInformation& WithAttachmentStatus(AttachmentStatus&& value) { SetAttachmentStatus(std::move(value)); return *this;}
+    inline void SetAttachmentStatus(AttachmentStatus value) { m_attachmentStatusHasBeenSet = true; m_attachmentStatus = value; }
+    inline RegistrationAttachmentsInformation& WithAttachmentStatus(AttachmentStatus value) { SetAttachmentStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of why the upload didn't successfully complete.</p>
      */
-    inline const AttachmentUploadErrorReason& GetAttachmentUploadErrorReason() const{ return m_attachmentUploadErrorReason; }
+    inline AttachmentUploadErrorReason GetAttachmentUploadErrorReason() const { return m_attachmentUploadErrorReason; }
     inline bool AttachmentUploadErrorReasonHasBeenSet() const { return m_attachmentUploadErrorReasonHasBeenSet; }
-    inline void SetAttachmentUploadErrorReason(const AttachmentUploadErrorReason& value) { m_attachmentUploadErrorReasonHasBeenSet = true; m_attachmentUploadErrorReason = value; }
-    inline void SetAttachmentUploadErrorReason(AttachmentUploadErrorReason&& value) { m_attachmentUploadErrorReasonHasBeenSet = true; m_attachmentUploadErrorReason = std::move(value); }
-    inline RegistrationAttachmentsInformation& WithAttachmentUploadErrorReason(const AttachmentUploadErrorReason& value) { SetAttachmentUploadErrorReason(value); return *this;}
-    inline RegistrationAttachmentsInformation& WithAttachmentUploadErrorReason(AttachmentUploadErrorReason&& value) { SetAttachmentUploadErrorReason(std::move(value)); return *this;}
+    inline void SetAttachmentUploadErrorReason(AttachmentUploadErrorReason value) { m_attachmentUploadErrorReasonHasBeenSet = true; m_attachmentUploadErrorReason = value; }
+    inline RegistrationAttachmentsInformation& WithAttachmentUploadErrorReason(AttachmentUploadErrorReason value) { SetAttachmentUploadErrorReason(value); return *this;}
     ///@}
 
     ///@{
@@ -102,12 +94,12 @@ namespace Model
      * <p>The time when the registration attachment was created, in <a
      * href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const{ return m_createdTimestamp; }
+    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const { return m_createdTimestamp; }
     inline bool CreatedTimestampHasBeenSet() const { return m_createdTimestampHasBeenSet; }
-    inline void SetCreatedTimestamp(const Aws::Utils::DateTime& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = value; }
-    inline void SetCreatedTimestamp(Aws::Utils::DateTime&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::move(value); }
-    inline RegistrationAttachmentsInformation& WithCreatedTimestamp(const Aws::Utils::DateTime& value) { SetCreatedTimestamp(value); return *this;}
-    inline RegistrationAttachmentsInformation& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    void SetCreatedTimestamp(CreatedTimestampT&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::forward<CreatedTimestampT>(value); }
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    RegistrationAttachmentsInformation& WithCreatedTimestamp(CreatedTimestampT&& value) { SetCreatedTimestamp(std::forward<CreatedTimestampT>(value)); return *this;}
     ///@}
   private:
 
@@ -117,13 +109,13 @@ namespace Model
     Aws::String m_registrationAttachmentId;
     bool m_registrationAttachmentIdHasBeenSet = false;
 
-    AttachmentStatus m_attachmentStatus;
+    AttachmentStatus m_attachmentStatus{AttachmentStatus::NOT_SET};
     bool m_attachmentStatusHasBeenSet = false;
 
-    AttachmentUploadErrorReason m_attachmentUploadErrorReason;
+    AttachmentUploadErrorReason m_attachmentUploadErrorReason{AttachmentUploadErrorReason::NOT_SET};
     bool m_attachmentUploadErrorReasonHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTimestamp;
+    Aws::Utils::DateTime m_createdTimestamp{};
     bool m_createdTimestampHasBeenSet = false;
   };
 

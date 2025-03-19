@@ -33,7 +33,7 @@ namespace Model
   class DestinationDetails
   {
   public:
-    AWS_ELASTICACHE_API DestinationDetails();
+    AWS_ELASTICACHE_API DestinationDetails() = default;
     AWS_ELASTICACHE_API DestinationDetails(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICACHE_API DestinationDetails& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,24 +45,24 @@ namespace Model
     /**
      * <p>The configuration details of the CloudWatch Logs destination.</p>
      */
-    inline const CloudWatchLogsDestinationDetails& GetCloudWatchLogsDetails() const{ return m_cloudWatchLogsDetails; }
+    inline const CloudWatchLogsDestinationDetails& GetCloudWatchLogsDetails() const { return m_cloudWatchLogsDetails; }
     inline bool CloudWatchLogsDetailsHasBeenSet() const { return m_cloudWatchLogsDetailsHasBeenSet; }
-    inline void SetCloudWatchLogsDetails(const CloudWatchLogsDestinationDetails& value) { m_cloudWatchLogsDetailsHasBeenSet = true; m_cloudWatchLogsDetails = value; }
-    inline void SetCloudWatchLogsDetails(CloudWatchLogsDestinationDetails&& value) { m_cloudWatchLogsDetailsHasBeenSet = true; m_cloudWatchLogsDetails = std::move(value); }
-    inline DestinationDetails& WithCloudWatchLogsDetails(const CloudWatchLogsDestinationDetails& value) { SetCloudWatchLogsDetails(value); return *this;}
-    inline DestinationDetails& WithCloudWatchLogsDetails(CloudWatchLogsDestinationDetails&& value) { SetCloudWatchLogsDetails(std::move(value)); return *this;}
+    template<typename CloudWatchLogsDetailsT = CloudWatchLogsDestinationDetails>
+    void SetCloudWatchLogsDetails(CloudWatchLogsDetailsT&& value) { m_cloudWatchLogsDetailsHasBeenSet = true; m_cloudWatchLogsDetails = std::forward<CloudWatchLogsDetailsT>(value); }
+    template<typename CloudWatchLogsDetailsT = CloudWatchLogsDestinationDetails>
+    DestinationDetails& WithCloudWatchLogsDetails(CloudWatchLogsDetailsT&& value) { SetCloudWatchLogsDetails(std::forward<CloudWatchLogsDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration details of the Kinesis Data Firehose destination.</p>
      */
-    inline const KinesisFirehoseDestinationDetails& GetKinesisFirehoseDetails() const{ return m_kinesisFirehoseDetails; }
+    inline const KinesisFirehoseDestinationDetails& GetKinesisFirehoseDetails() const { return m_kinesisFirehoseDetails; }
     inline bool KinesisFirehoseDetailsHasBeenSet() const { return m_kinesisFirehoseDetailsHasBeenSet; }
-    inline void SetKinesisFirehoseDetails(const KinesisFirehoseDestinationDetails& value) { m_kinesisFirehoseDetailsHasBeenSet = true; m_kinesisFirehoseDetails = value; }
-    inline void SetKinesisFirehoseDetails(KinesisFirehoseDestinationDetails&& value) { m_kinesisFirehoseDetailsHasBeenSet = true; m_kinesisFirehoseDetails = std::move(value); }
-    inline DestinationDetails& WithKinesisFirehoseDetails(const KinesisFirehoseDestinationDetails& value) { SetKinesisFirehoseDetails(value); return *this;}
-    inline DestinationDetails& WithKinesisFirehoseDetails(KinesisFirehoseDestinationDetails&& value) { SetKinesisFirehoseDetails(std::move(value)); return *this;}
+    template<typename KinesisFirehoseDetailsT = KinesisFirehoseDestinationDetails>
+    void SetKinesisFirehoseDetails(KinesisFirehoseDetailsT&& value) { m_kinesisFirehoseDetailsHasBeenSet = true; m_kinesisFirehoseDetails = std::forward<KinesisFirehoseDetailsT>(value); }
+    template<typename KinesisFirehoseDetailsT = KinesisFirehoseDestinationDetails>
+    DestinationDetails& WithKinesisFirehoseDetails(KinesisFirehoseDetailsT&& value) { SetKinesisFirehoseDetails(std::forward<KinesisFirehoseDetailsT>(value)); return *this;}
     ///@}
   private:
 

@@ -15,12 +15,6 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-UpdateCachePolicy2020_05_31Request::UpdateCachePolicy2020_05_31Request() : 
-    m_cachePolicyConfigHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_ifMatchHasBeenSet(false)
-{
-}
 
 Aws::String UpdateCachePolicy2020_05_31Request::SerializePayload() const
 {

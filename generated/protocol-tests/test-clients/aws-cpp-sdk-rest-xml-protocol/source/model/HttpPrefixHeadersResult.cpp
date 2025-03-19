@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-HttpPrefixHeadersResult::HttpPrefixHeadersResult()
-{
-}
-
 HttpPrefixHeadersResult::HttpPrefixHeadersResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -39,6 +35,7 @@ HttpPrefixHeadersResult& HttpPrefixHeadersResult::operator =(const Aws::AmazonWe
   if(fooIter != headers.end())
   {
     m_foo = fooIter->second;
+    m_fooHasBeenSet = true;
   }
 
   std::size_t prefixSize = sizeof("x-foo-") - 1; //subtract the NULL terminator out
@@ -49,6 +46,7 @@ HttpPrefixHeadersResult& HttpPrefixHeadersResult::operator =(const Aws::AmazonWe
     if(foundPrefix != std::string::npos)
     {
       m_fooMap[item.first.substr(prefixSize)] = item.second;
+      m_fooMapHasBeenSet = true;
     }
   }
 
@@ -56,6 +54,7 @@ HttpPrefixHeadersResult& HttpPrefixHeadersResult::operator =(const Aws::AmazonWe
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

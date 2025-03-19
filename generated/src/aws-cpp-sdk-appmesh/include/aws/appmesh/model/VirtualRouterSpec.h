@@ -33,7 +33,7 @@ namespace Model
   class VirtualRouterSpec
   {
   public:
-    AWS_APPMESH_API VirtualRouterSpec();
+    AWS_APPMESH_API VirtualRouterSpec() = default;
     AWS_APPMESH_API VirtualRouterSpec(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API VirtualRouterSpec& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
      * <p>The listeners that the virtual router is expected to receive inbound traffic
      * from. You can specify one listener.</p>
      */
-    inline const Aws::Vector<VirtualRouterListener>& GetListeners() const{ return m_listeners; }
+    inline const Aws::Vector<VirtualRouterListener>& GetListeners() const { return m_listeners; }
     inline bool ListenersHasBeenSet() const { return m_listenersHasBeenSet; }
-    inline void SetListeners(const Aws::Vector<VirtualRouterListener>& value) { m_listenersHasBeenSet = true; m_listeners = value; }
-    inline void SetListeners(Aws::Vector<VirtualRouterListener>&& value) { m_listenersHasBeenSet = true; m_listeners = std::move(value); }
-    inline VirtualRouterSpec& WithListeners(const Aws::Vector<VirtualRouterListener>& value) { SetListeners(value); return *this;}
-    inline VirtualRouterSpec& WithListeners(Aws::Vector<VirtualRouterListener>&& value) { SetListeners(std::move(value)); return *this;}
-    inline VirtualRouterSpec& AddListeners(const VirtualRouterListener& value) { m_listenersHasBeenSet = true; m_listeners.push_back(value); return *this; }
-    inline VirtualRouterSpec& AddListeners(VirtualRouterListener&& value) { m_listenersHasBeenSet = true; m_listeners.push_back(std::move(value)); return *this; }
+    template<typename ListenersT = Aws::Vector<VirtualRouterListener>>
+    void SetListeners(ListenersT&& value) { m_listenersHasBeenSet = true; m_listeners = std::forward<ListenersT>(value); }
+    template<typename ListenersT = Aws::Vector<VirtualRouterListener>>
+    VirtualRouterSpec& WithListeners(ListenersT&& value) { SetListeners(std::forward<ListenersT>(value)); return *this;}
+    template<typename ListenersT = VirtualRouterListener>
+    VirtualRouterSpec& AddListeners(ListenersT&& value) { m_listenersHasBeenSet = true; m_listeners.emplace_back(std::forward<ListenersT>(value)); return *this; }
     ///@}
   private:
 

@@ -20,17 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-ListStorageLensConfigurationEntry::ListStorageLensConfigurationEntry() : 
-    m_idHasBeenSet(false),
-    m_storageLensArnHasBeenSet(false),
-    m_homeRegionHasBeenSet(false),
-    m_isEnabled(false),
-    m_isEnabledHasBeenSet(false)
-{
-}
-
 ListStorageLensConfigurationEntry::ListStorageLensConfigurationEntry(const XmlNode& xmlNode)
-  : ListStorageLensConfigurationEntry()
 {
   *this = xmlNode;
 }

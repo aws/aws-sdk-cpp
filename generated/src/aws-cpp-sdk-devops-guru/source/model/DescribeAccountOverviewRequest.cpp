@@ -12,12 +12,6 @@ using namespace Aws::DevOpsGuru::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeAccountOverviewRequest::DescribeAccountOverviewRequest() : 
-    m_fromTimeHasBeenSet(false),
-    m_toTimeHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAccountOverviewRequest::SerializePayload() const
 {
   JsonValue payload;

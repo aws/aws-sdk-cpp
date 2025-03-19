@@ -22,7 +22,7 @@ namespace Model
   class DescribeScalingActivitiesRequest : public AutoScalingRequest
   {
   public:
-    AWS_AUTOSCALING_API DescribeScalingActivitiesRequest();
+    AWS_AUTOSCALING_API DescribeScalingActivitiesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,29 +45,26 @@ namespace Model
      * Scaling group, the results are limited to that group.</p> <p>Array Members:
      * Maximum number of 50 IDs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetActivityIds() const{ return m_activityIds; }
+    inline const Aws::Vector<Aws::String>& GetActivityIds() const { return m_activityIds; }
     inline bool ActivityIdsHasBeenSet() const { return m_activityIdsHasBeenSet; }
-    inline void SetActivityIds(const Aws::Vector<Aws::String>& value) { m_activityIdsHasBeenSet = true; m_activityIds = value; }
-    inline void SetActivityIds(Aws::Vector<Aws::String>&& value) { m_activityIdsHasBeenSet = true; m_activityIds = std::move(value); }
-    inline DescribeScalingActivitiesRequest& WithActivityIds(const Aws::Vector<Aws::String>& value) { SetActivityIds(value); return *this;}
-    inline DescribeScalingActivitiesRequest& WithActivityIds(Aws::Vector<Aws::String>&& value) { SetActivityIds(std::move(value)); return *this;}
-    inline DescribeScalingActivitiesRequest& AddActivityIds(const Aws::String& value) { m_activityIdsHasBeenSet = true; m_activityIds.push_back(value); return *this; }
-    inline DescribeScalingActivitiesRequest& AddActivityIds(Aws::String&& value) { m_activityIdsHasBeenSet = true; m_activityIds.push_back(std::move(value)); return *this; }
-    inline DescribeScalingActivitiesRequest& AddActivityIds(const char* value) { m_activityIdsHasBeenSet = true; m_activityIds.push_back(value); return *this; }
+    template<typename ActivityIdsT = Aws::Vector<Aws::String>>
+    void SetActivityIds(ActivityIdsT&& value) { m_activityIdsHasBeenSet = true; m_activityIds = std::forward<ActivityIdsT>(value); }
+    template<typename ActivityIdsT = Aws::Vector<Aws::String>>
+    DescribeScalingActivitiesRequest& WithActivityIds(ActivityIdsT&& value) { SetActivityIds(std::forward<ActivityIdsT>(value)); return *this;}
+    template<typename ActivityIdsT = Aws::String>
+    DescribeScalingActivitiesRequest& AddActivityIds(ActivityIdsT&& value) { m_activityIdsHasBeenSet = true; m_activityIds.emplace_back(std::forward<ActivityIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The name of the Auto Scaling group.</p>
      */
-    inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
+    inline const Aws::String& GetAutoScalingGroupName() const { return m_autoScalingGroupName; }
     inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
-    inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
-    inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::move(value); }
-    inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName.assign(value); }
-    inline DescribeScalingActivitiesRequest& WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
-    inline DescribeScalingActivitiesRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(std::move(value)); return *this;}
-    inline DescribeScalingActivitiesRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
+    template<typename AutoScalingGroupNameT = Aws::String>
+    void SetAutoScalingGroupName(AutoScalingGroupNameT&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::forward<AutoScalingGroupNameT>(value); }
+    template<typename AutoScalingGroupNameT = Aws::String>
+    DescribeScalingActivitiesRequest& WithAutoScalingGroupName(AutoScalingGroupNameT&& value) { SetAutoScalingGroupName(std::forward<AutoScalingGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,7 +72,7 @@ namespace Model
      * <p>Indicates whether to include scaling activity from deleted Auto Scaling
      * groups.</p>
      */
-    inline bool GetIncludeDeletedGroups() const{ return m_includeDeletedGroups; }
+    inline bool GetIncludeDeletedGroups() const { return m_includeDeletedGroups; }
     inline bool IncludeDeletedGroupsHasBeenSet() const { return m_includeDeletedGroupsHasBeenSet; }
     inline void SetIncludeDeletedGroups(bool value) { m_includeDeletedGroupsHasBeenSet = true; m_includeDeletedGroups = value; }
     inline DescribeScalingActivitiesRequest& WithIncludeDeletedGroups(bool value) { SetIncludeDeletedGroups(value); return *this;}
@@ -86,7 +83,7 @@ namespace Model
      * <p>The maximum number of items to return with this call. The default value is
      * <code>100</code> and the maximum value is <code>100</code>.</p>
      */
-    inline int GetMaxRecords() const{ return m_maxRecords; }
+    inline int GetMaxRecords() const { return m_maxRecords; }
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
     inline DescribeScalingActivitiesRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
@@ -97,14 +94,12 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeScalingActivitiesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeScalingActivitiesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeScalingActivitiesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeScalingActivitiesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -114,10 +109,10 @@ namespace Model
     Aws::String m_autoScalingGroupName;
     bool m_autoScalingGroupNameHasBeenSet = false;
 
-    bool m_includeDeletedGroups;
+    bool m_includeDeletedGroups{false};
     bool m_includeDeletedGroupsHasBeenSet = false;
 
-    int m_maxRecords;
+    int m_maxRecords{0};
     bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_nextToken;

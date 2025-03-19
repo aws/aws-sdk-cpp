@@ -18,16 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-GPSCoordinates::GPSCoordinates() : 
-    m_latitude(0.0),
-    m_latitudeHasBeenSet(false),
-    m_longitude(0.0),
-    m_longitudeHasBeenSet(false)
-{
-}
-
 GPSCoordinates::GPSCoordinates(JsonView jsonValue)
-  : GPSCoordinates()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ GPSCoordinates& GPSCoordinates::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Latitude"))
   {
     m_latitude = jsonValue.GetDouble("Latitude");
-
     m_latitudeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Longitude"))
   {
     m_longitude = jsonValue.GetDouble("Longitude");
-
     m_longitudeHasBeenSet = true;
   }
-
   return *this;
 }
 

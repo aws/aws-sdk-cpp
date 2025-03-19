@@ -7,8 +7,8 @@
 #include <aws/query-protocol/QueryProtocol_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSAllocator.h>
 #include <utility>
-#include <memory>
 
 namespace Aws
 {
@@ -28,7 +28,7 @@ namespace Model
   class RecursiveXmlShapesOutputNested2
   {
   public:
-    AWS_QUERYPROTOCOL_API RecursiveXmlShapesOutputNested2();
+    AWS_QUERYPROTOCOL_API RecursiveXmlShapesOutputNested2() = default;
     AWS_QUERYPROTOCOL_API RecursiveXmlShapesOutputNested2(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_QUERYPROTOCOL_API RecursiveXmlShapesOutputNested2& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -38,24 +38,27 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetBar() const{ return m_bar; }
+    inline const Aws::String& GetBar() const { return m_bar; }
     inline bool BarHasBeenSet() const { return m_barHasBeenSet; }
-    inline void SetBar(const Aws::String& value) { m_barHasBeenSet = true; m_bar = value; }
-    inline void SetBar(Aws::String&& value) { m_barHasBeenSet = true; m_bar = std::move(value); }
-    inline void SetBar(const char* value) { m_barHasBeenSet = true; m_bar.assign(value); }
-    inline RecursiveXmlShapesOutputNested2& WithBar(const Aws::String& value) { SetBar(value); return *this;}
-    inline RecursiveXmlShapesOutputNested2& WithBar(Aws::String&& value) { SetBar(std::move(value)); return *this;}
-    inline RecursiveXmlShapesOutputNested2& WithBar(const char* value) { SetBar(value); return *this;}
+    template<typename BarT = Aws::String>
+    void SetBar(BarT&& value) { m_barHasBeenSet = true; m_bar = std::forward<BarT>(value); }
+    template<typename BarT = Aws::String>
+    RecursiveXmlShapesOutputNested2& WithBar(BarT&& value) { SetBar(std::forward<BarT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    AWS_QUERYPROTOCOL_API const RecursiveXmlShapesOutputNested1& GetRecursiveMember() const;
-    AWS_QUERYPROTOCOL_API bool RecursiveMemberHasBeenSet() const;
-    AWS_QUERYPROTOCOL_API void SetRecursiveMember(const RecursiveXmlShapesOutputNested1& value);
-    AWS_QUERYPROTOCOL_API void SetRecursiveMember(RecursiveXmlShapesOutputNested1&& value);
-    AWS_QUERYPROTOCOL_API RecursiveXmlShapesOutputNested2& WithRecursiveMember(const RecursiveXmlShapesOutputNested1& value);
-    AWS_QUERYPROTOCOL_API RecursiveXmlShapesOutputNested2& WithRecursiveMember(RecursiveXmlShapesOutputNested1&& value);
+    inline const RecursiveXmlShapesOutputNested1& GetRecursiveMember() const{
+      return *m_recursiveMember;
+    }
+    inline bool RecursiveMemberHasBeenSet() const { return m_recursiveMemberHasBeenSet; }
+    template<typename RecursiveMemberT = RecursiveXmlShapesOutputNested1>
+    void SetRecursiveMember(RecursiveMemberT&& value) {
+      m_recursiveMemberHasBeenSet = true; 
+      m_recursiveMember = Aws::MakeShared<RecursiveXmlShapesOutputNested1>("RecursiveXmlShapesOutputNested2", std::forward<RecursiveMemberT>(value));
+    }
+    template<typename RecursiveMemberT = RecursiveXmlShapesOutputNested1>
+    RecursiveXmlShapesOutputNested2& WithRecursiveMember(RecursiveMemberT&& value) { SetRecursiveMember(std::forward<RecursiveMemberT>(value)); return *this;}
     ///@}
   private:
 

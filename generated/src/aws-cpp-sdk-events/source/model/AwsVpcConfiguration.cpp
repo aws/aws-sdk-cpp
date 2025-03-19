@@ -18,16 +18,7 @@ namespace CloudWatchEvents
 namespace Model
 {
 
-AwsVpcConfiguration::AwsVpcConfiguration() : 
-    m_subnetsHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_assignPublicIp(AssignPublicIp::NOT_SET),
-    m_assignPublicIpHasBeenSet(false)
-{
-}
-
 AwsVpcConfiguration::AwsVpcConfiguration(JsonView jsonValue)
-  : AwsVpcConfiguration()
 {
   *this = jsonValue;
 }
@@ -43,7 +34,6 @@ AwsVpcConfiguration& AwsVpcConfiguration::operator =(JsonView jsonValue)
     }
     m_subnetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityGroups"))
   {
     Aws::Utils::Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("SecurityGroups");
@@ -53,14 +43,11 @@ AwsVpcConfiguration& AwsVpcConfiguration::operator =(JsonView jsonValue)
     }
     m_securityGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssignPublicIp"))
   {
     m_assignPublicIp = AssignPublicIpMapper::GetAssignPublicIpForName(jsonValue.GetString("AssignPublicIp"));
-
     m_assignPublicIpHasBeenSet = true;
   }
-
   return *this;
 }
 

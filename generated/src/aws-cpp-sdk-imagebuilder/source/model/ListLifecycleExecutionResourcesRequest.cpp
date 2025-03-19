@@ -12,15 +12,6 @@ using namespace Aws::imagebuilder::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListLifecycleExecutionResourcesRequest::ListLifecycleExecutionResourcesRequest() : 
-    m_lifecycleExecutionIdHasBeenSet(false),
-    m_parentResourceIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListLifecycleExecutionResourcesRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -34,7 +34,7 @@ namespace Model
   class Condition
   {
   public:
-    AWS_S3_API Condition();
+    AWS_S3_API Condition() = default;
     AWS_S3_API Condition(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3_API Condition& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -49,14 +49,12 @@ namespace Model
      * <code>KeyPrefixEquals</code> is not specified. If both are specified, then both
      * must be true for the redirect to be applied.</p>
      */
-    inline const Aws::String& GetHttpErrorCodeReturnedEquals() const{ return m_httpErrorCodeReturnedEquals; }
+    inline const Aws::String& GetHttpErrorCodeReturnedEquals() const { return m_httpErrorCodeReturnedEquals; }
     inline bool HttpErrorCodeReturnedEqualsHasBeenSet() const { return m_httpErrorCodeReturnedEqualsHasBeenSet; }
-    inline void SetHttpErrorCodeReturnedEquals(const Aws::String& value) { m_httpErrorCodeReturnedEqualsHasBeenSet = true; m_httpErrorCodeReturnedEquals = value; }
-    inline void SetHttpErrorCodeReturnedEquals(Aws::String&& value) { m_httpErrorCodeReturnedEqualsHasBeenSet = true; m_httpErrorCodeReturnedEquals = std::move(value); }
-    inline void SetHttpErrorCodeReturnedEquals(const char* value) { m_httpErrorCodeReturnedEqualsHasBeenSet = true; m_httpErrorCodeReturnedEquals.assign(value); }
-    inline Condition& WithHttpErrorCodeReturnedEquals(const Aws::String& value) { SetHttpErrorCodeReturnedEquals(value); return *this;}
-    inline Condition& WithHttpErrorCodeReturnedEquals(Aws::String&& value) { SetHttpErrorCodeReturnedEquals(std::move(value)); return *this;}
-    inline Condition& WithHttpErrorCodeReturnedEquals(const char* value) { SetHttpErrorCodeReturnedEquals(value); return *this;}
+    template<typename HttpErrorCodeReturnedEqualsT = Aws::String>
+    void SetHttpErrorCodeReturnedEquals(HttpErrorCodeReturnedEqualsT&& value) { m_httpErrorCodeReturnedEqualsHasBeenSet = true; m_httpErrorCodeReturnedEquals = std::forward<HttpErrorCodeReturnedEqualsT>(value); }
+    template<typename HttpErrorCodeReturnedEqualsT = Aws::String>
+    Condition& WithHttpErrorCodeReturnedEquals(HttpErrorCodeReturnedEqualsT&& value) { SetHttpErrorCodeReturnedEquals(std::forward<HttpErrorCodeReturnedEqualsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +72,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
      * XML related object key constraints</a>.</p> 
      */
-    inline const Aws::String& GetKeyPrefixEquals() const{ return m_keyPrefixEquals; }
+    inline const Aws::String& GetKeyPrefixEquals() const { return m_keyPrefixEquals; }
     inline bool KeyPrefixEqualsHasBeenSet() const { return m_keyPrefixEqualsHasBeenSet; }
-    inline void SetKeyPrefixEquals(const Aws::String& value) { m_keyPrefixEqualsHasBeenSet = true; m_keyPrefixEquals = value; }
-    inline void SetKeyPrefixEquals(Aws::String&& value) { m_keyPrefixEqualsHasBeenSet = true; m_keyPrefixEquals = std::move(value); }
-    inline void SetKeyPrefixEquals(const char* value) { m_keyPrefixEqualsHasBeenSet = true; m_keyPrefixEquals.assign(value); }
-    inline Condition& WithKeyPrefixEquals(const Aws::String& value) { SetKeyPrefixEquals(value); return *this;}
-    inline Condition& WithKeyPrefixEquals(Aws::String&& value) { SetKeyPrefixEquals(std::move(value)); return *this;}
-    inline Condition& WithKeyPrefixEquals(const char* value) { SetKeyPrefixEquals(value); return *this;}
+    template<typename KeyPrefixEqualsT = Aws::String>
+    void SetKeyPrefixEquals(KeyPrefixEqualsT&& value) { m_keyPrefixEqualsHasBeenSet = true; m_keyPrefixEquals = std::forward<KeyPrefixEqualsT>(value); }
+    template<typename KeyPrefixEqualsT = Aws::String>
+    Condition& WithKeyPrefixEquals(KeyPrefixEqualsT&& value) { SetKeyPrefixEquals(std::forward<KeyPrefixEqualsT>(value)); return *this;}
     ///@}
   private:
 

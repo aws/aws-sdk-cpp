@@ -18,14 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-IsolineShapeGeometry::IsolineShapeGeometry() : 
-    m_polygonHasBeenSet(false),
-    m_polylinePolygonHasBeenSet(false)
-{
-}
-
 IsolineShapeGeometry::IsolineShapeGeometry(JsonView jsonValue)
-  : IsolineShapeGeometry()
 {
   *this = jsonValue;
 }
@@ -55,7 +48,6 @@ IsolineShapeGeometry& IsolineShapeGeometry::operator =(JsonView jsonValue)
     }
     m_polygonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolylinePolygon"))
   {
     Aws::Utils::Array<JsonView> polylinePolygonJsonList = jsonValue.GetArray("PolylinePolygon");
@@ -65,7 +57,6 @@ IsolineShapeGeometry& IsolineShapeGeometry::operator =(JsonView jsonValue)
     }
     m_polylinePolygonHasBeenSet = true;
   }
-
   return *this;
 }
 

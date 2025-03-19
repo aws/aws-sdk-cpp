@@ -30,7 +30,7 @@ namespace Model
   class InteractiveConfiguration
   {
   public:
-    AWS_EMRSERVERLESS_API InteractiveConfiguration();
+    AWS_EMRSERVERLESS_API InteractiveConfiguration() = default;
     AWS_EMRSERVERLESS_API InteractiveConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRSERVERLESS_API InteractiveConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
      * <p>Enables you to connect an application to Amazon EMR Studio to run interactive
      * workloads in a notebook.</p>
      */
-    inline bool GetStudioEnabled() const{ return m_studioEnabled; }
+    inline bool GetStudioEnabled() const { return m_studioEnabled; }
     inline bool StudioEnabledHasBeenSet() const { return m_studioEnabledHasBeenSet; }
     inline void SetStudioEnabled(bool value) { m_studioEnabledHasBeenSet = true; m_studioEnabled = value; }
     inline InteractiveConfiguration& WithStudioEnabled(bool value) { SetStudioEnabled(value); return *this;}
@@ -52,17 +52,17 @@ namespace Model
      * <p>Enables an Apache Livy endpoint that you can connect to and run interactive
      * jobs.</p>
      */
-    inline bool GetLivyEndpointEnabled() const{ return m_livyEndpointEnabled; }
+    inline bool GetLivyEndpointEnabled() const { return m_livyEndpointEnabled; }
     inline bool LivyEndpointEnabledHasBeenSet() const { return m_livyEndpointEnabledHasBeenSet; }
     inline void SetLivyEndpointEnabled(bool value) { m_livyEndpointEnabledHasBeenSet = true; m_livyEndpointEnabled = value; }
     inline InteractiveConfiguration& WithLivyEndpointEnabled(bool value) { SetLivyEndpointEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_studioEnabled;
+    bool m_studioEnabled{false};
     bool m_studioEnabledHasBeenSet = false;
 
-    bool m_livyEndpointEnabled;
+    bool m_livyEndpointEnabled{false};
     bool m_livyEndpointEnabledHasBeenSet = false;
   };
 

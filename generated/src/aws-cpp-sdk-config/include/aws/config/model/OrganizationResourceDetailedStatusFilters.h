@@ -33,7 +33,7 @@ namespace Model
   class OrganizationResourceDetailedStatusFilters
   {
   public:
-    AWS_CONFIGSERVICE_API OrganizationResourceDetailedStatusFilters();
+    AWS_CONFIGSERVICE_API OrganizationResourceDetailedStatusFilters() = default;
     AWS_CONFIGSERVICE_API OrganizationResourceDetailedStatusFilters(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API OrganizationResourceDetailedStatusFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The 12-digit account ID of the member account within an organization.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline OrganizationResourceDetailedStatusFilters& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline OrganizationResourceDetailedStatusFilters& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline OrganizationResourceDetailedStatusFilters& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    OrganizationResourceDetailedStatusFilters& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,19 +77,17 @@ namespace Model
      * <code>UPDATE_FAILED</code> when conformance pack deletion has failed in the
      * member account.</p> </li> </ul>
      */
-    inline const OrganizationResourceDetailedStatus& GetStatus() const{ return m_status; }
+    inline OrganizationResourceDetailedStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const OrganizationResourceDetailedStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(OrganizationResourceDetailedStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline OrganizationResourceDetailedStatusFilters& WithStatus(const OrganizationResourceDetailedStatus& value) { SetStatus(value); return *this;}
-    inline OrganizationResourceDetailedStatusFilters& WithStatus(OrganizationResourceDetailedStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(OrganizationResourceDetailedStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline OrganizationResourceDetailedStatusFilters& WithStatus(OrganizationResourceDetailedStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet = false;
 
-    OrganizationResourceDetailedStatus m_status;
+    OrganizationResourceDetailedStatus m_status{OrganizationResourceDetailedStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

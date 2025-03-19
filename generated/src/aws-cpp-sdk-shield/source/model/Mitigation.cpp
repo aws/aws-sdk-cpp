@@ -18,13 +18,7 @@ namespace Shield
 namespace Model
 {
 
-Mitigation::Mitigation() : 
-    m_mitigationNameHasBeenSet(false)
-{
-}
-
 Mitigation::Mitigation(JsonView jsonValue)
-  : Mitigation()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Mitigation& Mitigation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MitigationName"))
   {
     m_mitigationName = jsonValue.GetString("MitigationName");
-
     m_mitigationNameHasBeenSet = true;
   }
-
   return *this;
 }
 

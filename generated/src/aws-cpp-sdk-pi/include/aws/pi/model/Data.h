@@ -35,7 +35,7 @@ namespace Model
   class Data
   {
   public:
-    AWS_PI_API Data();
+    AWS_PI_API Data() = default;
     AWS_PI_API Data(Aws::Utils::Json::JsonView jsonValue);
     AWS_PI_API Data& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PI_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,12 @@ namespace Model
      * insight. The <code>name</code> field refers to a Performance Insights metric.
      * </p>
      */
-    inline const PerformanceInsightsMetric& GetPerformanceInsightsMetric() const{ return m_performanceInsightsMetric; }
+    inline const PerformanceInsightsMetric& GetPerformanceInsightsMetric() const { return m_performanceInsightsMetric; }
     inline bool PerformanceInsightsMetricHasBeenSet() const { return m_performanceInsightsMetricHasBeenSet; }
-    inline void SetPerformanceInsightsMetric(const PerformanceInsightsMetric& value) { m_performanceInsightsMetricHasBeenSet = true; m_performanceInsightsMetric = value; }
-    inline void SetPerformanceInsightsMetric(PerformanceInsightsMetric&& value) { m_performanceInsightsMetricHasBeenSet = true; m_performanceInsightsMetric = std::move(value); }
-    inline Data& WithPerformanceInsightsMetric(const PerformanceInsightsMetric& value) { SetPerformanceInsightsMetric(value); return *this;}
-    inline Data& WithPerformanceInsightsMetric(PerformanceInsightsMetric&& value) { SetPerformanceInsightsMetric(std::move(value)); return *this;}
+    template<typename PerformanceInsightsMetricT = PerformanceInsightsMetric>
+    void SetPerformanceInsightsMetric(PerformanceInsightsMetricT&& value) { m_performanceInsightsMetricHasBeenSet = true; m_performanceInsightsMetric = std::forward<PerformanceInsightsMetricT>(value); }
+    template<typename PerformanceInsightsMetricT = PerformanceInsightsMetric>
+    Data& WithPerformanceInsightsMetric(PerformanceInsightsMetricT&& value) { SetPerformanceInsightsMetric(std::forward<PerformanceInsightsMetricT>(value)); return *this;}
     ///@}
   private:
 

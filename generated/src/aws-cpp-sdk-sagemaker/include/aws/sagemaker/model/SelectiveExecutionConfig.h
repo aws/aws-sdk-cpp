@@ -34,7 +34,7 @@ namespace Model
   class SelectiveExecutionConfig
   {
   public:
-    AWS_SAGEMAKER_API SelectiveExecutionConfig();
+    AWS_SAGEMAKER_API SelectiveExecutionConfig() = default;
     AWS_SAGEMAKER_API SelectiveExecutionConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API SelectiveExecutionConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-selective-ex.html">Selective
      * Execution for Pipeline Steps</a>.</p>
      */
-    inline const Aws::String& GetSourcePipelineExecutionArn() const{ return m_sourcePipelineExecutionArn; }
+    inline const Aws::String& GetSourcePipelineExecutionArn() const { return m_sourcePipelineExecutionArn; }
     inline bool SourcePipelineExecutionArnHasBeenSet() const { return m_sourcePipelineExecutionArnHasBeenSet; }
-    inline void SetSourcePipelineExecutionArn(const Aws::String& value) { m_sourcePipelineExecutionArnHasBeenSet = true; m_sourcePipelineExecutionArn = value; }
-    inline void SetSourcePipelineExecutionArn(Aws::String&& value) { m_sourcePipelineExecutionArnHasBeenSet = true; m_sourcePipelineExecutionArn = std::move(value); }
-    inline void SetSourcePipelineExecutionArn(const char* value) { m_sourcePipelineExecutionArnHasBeenSet = true; m_sourcePipelineExecutionArn.assign(value); }
-    inline SelectiveExecutionConfig& WithSourcePipelineExecutionArn(const Aws::String& value) { SetSourcePipelineExecutionArn(value); return *this;}
-    inline SelectiveExecutionConfig& WithSourcePipelineExecutionArn(Aws::String&& value) { SetSourcePipelineExecutionArn(std::move(value)); return *this;}
-    inline SelectiveExecutionConfig& WithSourcePipelineExecutionArn(const char* value) { SetSourcePipelineExecutionArn(value); return *this;}
+    template<typename SourcePipelineExecutionArnT = Aws::String>
+    void SetSourcePipelineExecutionArn(SourcePipelineExecutionArnT&& value) { m_sourcePipelineExecutionArnHasBeenSet = true; m_sourcePipelineExecutionArn = std::forward<SourcePipelineExecutionArnT>(value); }
+    template<typename SourcePipelineExecutionArnT = Aws::String>
+    SelectiveExecutionConfig& WithSourcePipelineExecutionArn(SourcePipelineExecutionArnT&& value) { SetSourcePipelineExecutionArn(std::forward<SourcePipelineExecutionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,14 +64,14 @@ namespace Model
      * <p>A list of pipeline steps to run. All step(s) in all path(s) between two
      * selected steps should be included.</p>
      */
-    inline const Aws::Vector<SelectedStep>& GetSelectedSteps() const{ return m_selectedSteps; }
+    inline const Aws::Vector<SelectedStep>& GetSelectedSteps() const { return m_selectedSteps; }
     inline bool SelectedStepsHasBeenSet() const { return m_selectedStepsHasBeenSet; }
-    inline void SetSelectedSteps(const Aws::Vector<SelectedStep>& value) { m_selectedStepsHasBeenSet = true; m_selectedSteps = value; }
-    inline void SetSelectedSteps(Aws::Vector<SelectedStep>&& value) { m_selectedStepsHasBeenSet = true; m_selectedSteps = std::move(value); }
-    inline SelectiveExecutionConfig& WithSelectedSteps(const Aws::Vector<SelectedStep>& value) { SetSelectedSteps(value); return *this;}
-    inline SelectiveExecutionConfig& WithSelectedSteps(Aws::Vector<SelectedStep>&& value) { SetSelectedSteps(std::move(value)); return *this;}
-    inline SelectiveExecutionConfig& AddSelectedSteps(const SelectedStep& value) { m_selectedStepsHasBeenSet = true; m_selectedSteps.push_back(value); return *this; }
-    inline SelectiveExecutionConfig& AddSelectedSteps(SelectedStep&& value) { m_selectedStepsHasBeenSet = true; m_selectedSteps.push_back(std::move(value)); return *this; }
+    template<typename SelectedStepsT = Aws::Vector<SelectedStep>>
+    void SetSelectedSteps(SelectedStepsT&& value) { m_selectedStepsHasBeenSet = true; m_selectedSteps = std::forward<SelectedStepsT>(value); }
+    template<typename SelectedStepsT = Aws::Vector<SelectedStep>>
+    SelectiveExecutionConfig& WithSelectedSteps(SelectedStepsT&& value) { SetSelectedSteps(std::forward<SelectedStepsT>(value)); return *this;}
+    template<typename SelectedStepsT = SelectedStep>
+    SelectiveExecutionConfig& AddSelectedSteps(SelectedStepsT&& value) { m_selectedStepsHasBeenSet = true; m_selectedSteps.emplace_back(std::forward<SelectedStepsT>(value)); return *this; }
     ///@}
   private:
 

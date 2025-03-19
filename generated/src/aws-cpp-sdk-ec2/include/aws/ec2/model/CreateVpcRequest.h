@@ -24,7 +24,7 @@ namespace Model
   class CreateVpcRequest : public EC2Request
   {
   public:
-    AWS_EC2_API CreateVpcRequest();
+    AWS_EC2_API CreateVpcRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
      * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
      * <code>100.68.0.0/18</code>.</p>
      */
-    inline const Aws::String& GetCidrBlock() const{ return m_cidrBlock; }
+    inline const Aws::String& GetCidrBlock() const { return m_cidrBlock; }
     inline bool CidrBlockHasBeenSet() const { return m_cidrBlockHasBeenSet; }
-    inline void SetCidrBlock(const Aws::String& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
-    inline void SetCidrBlock(Aws::String&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = std::move(value); }
-    inline void SetCidrBlock(const char* value) { m_cidrBlockHasBeenSet = true; m_cidrBlock.assign(value); }
-    inline CreateVpcRequest& WithCidrBlock(const Aws::String& value) { SetCidrBlock(value); return *this;}
-    inline CreateVpcRequest& WithCidrBlock(Aws::String&& value) { SetCidrBlock(std::move(value)); return *this;}
-    inline CreateVpcRequest& WithCidrBlock(const char* value) { SetCidrBlock(value); return *this;}
+    template<typename CidrBlockT = Aws::String>
+    void SetCidrBlock(CidrBlockT&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = std::forward<CidrBlockT>(value); }
+    template<typename CidrBlockT = Aws::String>
+    CreateVpcRequest& WithCidrBlock(CidrBlockT&& value) { SetCidrBlock(std::forward<CidrBlockT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * <p>The ID of an IPv6 address pool from which to allocate the IPv6 CIDR
      * block.</p>
      */
-    inline const Aws::String& GetIpv6Pool() const{ return m_ipv6Pool; }
+    inline const Aws::String& GetIpv6Pool() const { return m_ipv6Pool; }
     inline bool Ipv6PoolHasBeenSet() const { return m_ipv6PoolHasBeenSet; }
-    inline void SetIpv6Pool(const Aws::String& value) { m_ipv6PoolHasBeenSet = true; m_ipv6Pool = value; }
-    inline void SetIpv6Pool(Aws::String&& value) { m_ipv6PoolHasBeenSet = true; m_ipv6Pool = std::move(value); }
-    inline void SetIpv6Pool(const char* value) { m_ipv6PoolHasBeenSet = true; m_ipv6Pool.assign(value); }
-    inline CreateVpcRequest& WithIpv6Pool(const Aws::String& value) { SetIpv6Pool(value); return *this;}
-    inline CreateVpcRequest& WithIpv6Pool(Aws::String&& value) { SetIpv6Pool(std::move(value)); return *this;}
-    inline CreateVpcRequest& WithIpv6Pool(const char* value) { SetIpv6Pool(value); return *this;}
+    template<typename Ipv6PoolT = Aws::String>
+    void SetIpv6Pool(Ipv6PoolT&& value) { m_ipv6PoolHasBeenSet = true; m_ipv6Pool = std::forward<Ipv6PoolT>(value); }
+    template<typename Ipv6PoolT = Aws::String>
+    CreateVpcRequest& WithIpv6Pool(Ipv6PoolT&& value) { SetIpv6Pool(std::forward<Ipv6PoolT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +73,12 @@ namespace Model
      * <code>Ipv6Pool</code> in the request.</p> <p>To let Amazon choose the IPv6 CIDR
      * block for you, omit this parameter.</p>
      */
-    inline const Aws::String& GetIpv6CidrBlock() const{ return m_ipv6CidrBlock; }
+    inline const Aws::String& GetIpv6CidrBlock() const { return m_ipv6CidrBlock; }
     inline bool Ipv6CidrBlockHasBeenSet() const { return m_ipv6CidrBlockHasBeenSet; }
-    inline void SetIpv6CidrBlock(const Aws::String& value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock = value; }
-    inline void SetIpv6CidrBlock(Aws::String&& value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock = std::move(value); }
-    inline void SetIpv6CidrBlock(const char* value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock.assign(value); }
-    inline CreateVpcRequest& WithIpv6CidrBlock(const Aws::String& value) { SetIpv6CidrBlock(value); return *this;}
-    inline CreateVpcRequest& WithIpv6CidrBlock(Aws::String&& value) { SetIpv6CidrBlock(std::move(value)); return *this;}
-    inline CreateVpcRequest& WithIpv6CidrBlock(const char* value) { SetIpv6CidrBlock(value); return *this;}
+    template<typename Ipv6CidrBlockT = Aws::String>
+    void SetIpv6CidrBlock(Ipv6CidrBlockT&& value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock = std::forward<Ipv6CidrBlockT>(value); }
+    template<typename Ipv6CidrBlockT = Aws::String>
+    CreateVpcRequest& WithIpv6CidrBlock(Ipv6CidrBlockT&& value) { SetIpv6CidrBlock(std::forward<Ipv6CidrBlockT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,14 +88,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is
      * IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
      */
-    inline const Aws::String& GetIpv4IpamPoolId() const{ return m_ipv4IpamPoolId; }
+    inline const Aws::String& GetIpv4IpamPoolId() const { return m_ipv4IpamPoolId; }
     inline bool Ipv4IpamPoolIdHasBeenSet() const { return m_ipv4IpamPoolIdHasBeenSet; }
-    inline void SetIpv4IpamPoolId(const Aws::String& value) { m_ipv4IpamPoolIdHasBeenSet = true; m_ipv4IpamPoolId = value; }
-    inline void SetIpv4IpamPoolId(Aws::String&& value) { m_ipv4IpamPoolIdHasBeenSet = true; m_ipv4IpamPoolId = std::move(value); }
-    inline void SetIpv4IpamPoolId(const char* value) { m_ipv4IpamPoolIdHasBeenSet = true; m_ipv4IpamPoolId.assign(value); }
-    inline CreateVpcRequest& WithIpv4IpamPoolId(const Aws::String& value) { SetIpv4IpamPoolId(value); return *this;}
-    inline CreateVpcRequest& WithIpv4IpamPoolId(Aws::String&& value) { SetIpv4IpamPoolId(std::move(value)); return *this;}
-    inline CreateVpcRequest& WithIpv4IpamPoolId(const char* value) { SetIpv4IpamPoolId(value); return *this;}
+    template<typename Ipv4IpamPoolIdT = Aws::String>
+    void SetIpv4IpamPoolId(Ipv4IpamPoolIdT&& value) { m_ipv4IpamPoolIdHasBeenSet = true; m_ipv4IpamPoolId = std::forward<Ipv4IpamPoolIdT>(value); }
+    template<typename Ipv4IpamPoolIdT = Aws::String>
+    CreateVpcRequest& WithIpv4IpamPoolId(Ipv4IpamPoolIdT&& value) { SetIpv4IpamPoolId(std::forward<Ipv4IpamPoolIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,7 +103,7 @@ namespace Model
      * <a href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What
      * is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
-    inline int GetIpv4NetmaskLength() const{ return m_ipv4NetmaskLength; }
+    inline int GetIpv4NetmaskLength() const { return m_ipv4NetmaskLength; }
     inline bool Ipv4NetmaskLengthHasBeenSet() const { return m_ipv4NetmaskLengthHasBeenSet; }
     inline void SetIpv4NetmaskLength(int value) { m_ipv4NetmaskLengthHasBeenSet = true; m_ipv4NetmaskLength = value; }
     inline CreateVpcRequest& WithIpv4NetmaskLength(int value) { SetIpv4NetmaskLength(value); return *this;}
@@ -127,14 +119,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is
      * IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
-    inline const Aws::String& GetIpv6IpamPoolId() const{ return m_ipv6IpamPoolId; }
+    inline const Aws::String& GetIpv6IpamPoolId() const { return m_ipv6IpamPoolId; }
     inline bool Ipv6IpamPoolIdHasBeenSet() const { return m_ipv6IpamPoolIdHasBeenSet; }
-    inline void SetIpv6IpamPoolId(const Aws::String& value) { m_ipv6IpamPoolIdHasBeenSet = true; m_ipv6IpamPoolId = value; }
-    inline void SetIpv6IpamPoolId(Aws::String&& value) { m_ipv6IpamPoolIdHasBeenSet = true; m_ipv6IpamPoolId = std::move(value); }
-    inline void SetIpv6IpamPoolId(const char* value) { m_ipv6IpamPoolIdHasBeenSet = true; m_ipv6IpamPoolId.assign(value); }
-    inline CreateVpcRequest& WithIpv6IpamPoolId(const Aws::String& value) { SetIpv6IpamPoolId(value); return *this;}
-    inline CreateVpcRequest& WithIpv6IpamPoolId(Aws::String&& value) { SetIpv6IpamPoolId(std::move(value)); return *this;}
-    inline CreateVpcRequest& WithIpv6IpamPoolId(const char* value) { SetIpv6IpamPoolId(value); return *this;}
+    template<typename Ipv6IpamPoolIdT = Aws::String>
+    void SetIpv6IpamPoolId(Ipv6IpamPoolIdT&& value) { m_ipv6IpamPoolIdHasBeenSet = true; m_ipv6IpamPoolId = std::forward<Ipv6IpamPoolIdT>(value); }
+    template<typename Ipv6IpamPoolIdT = Aws::String>
+    CreateVpcRequest& WithIpv6IpamPoolId(Ipv6IpamPoolIdT&& value) { SetIpv6IpamPoolId(std::forward<Ipv6IpamPoolIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -144,7 +134,7 @@ namespace Model
      * <a href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What
      * is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
-    inline int GetIpv6NetmaskLength() const{ return m_ipv6NetmaskLength; }
+    inline int GetIpv6NetmaskLength() const { return m_ipv6NetmaskLength; }
     inline bool Ipv6NetmaskLengthHasBeenSet() const { return m_ipv6NetmaskLengthHasBeenSet; }
     inline void SetIpv6NetmaskLength(int value) { m_ipv6NetmaskLengthHasBeenSet = true; m_ipv6NetmaskLength = value; }
     inline CreateVpcRequest& WithIpv6NetmaskLength(int value) { SetIpv6NetmaskLength(value); return *this;}
@@ -157,28 +147,26 @@ namespace Model
      * <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this
      * parameter.</p>
      */
-    inline const Aws::String& GetIpv6CidrBlockNetworkBorderGroup() const{ return m_ipv6CidrBlockNetworkBorderGroup; }
+    inline const Aws::String& GetIpv6CidrBlockNetworkBorderGroup() const { return m_ipv6CidrBlockNetworkBorderGroup; }
     inline bool Ipv6CidrBlockNetworkBorderGroupHasBeenSet() const { return m_ipv6CidrBlockNetworkBorderGroupHasBeenSet; }
-    inline void SetIpv6CidrBlockNetworkBorderGroup(const Aws::String& value) { m_ipv6CidrBlockNetworkBorderGroupHasBeenSet = true; m_ipv6CidrBlockNetworkBorderGroup = value; }
-    inline void SetIpv6CidrBlockNetworkBorderGroup(Aws::String&& value) { m_ipv6CidrBlockNetworkBorderGroupHasBeenSet = true; m_ipv6CidrBlockNetworkBorderGroup = std::move(value); }
-    inline void SetIpv6CidrBlockNetworkBorderGroup(const char* value) { m_ipv6CidrBlockNetworkBorderGroupHasBeenSet = true; m_ipv6CidrBlockNetworkBorderGroup.assign(value); }
-    inline CreateVpcRequest& WithIpv6CidrBlockNetworkBorderGroup(const Aws::String& value) { SetIpv6CidrBlockNetworkBorderGroup(value); return *this;}
-    inline CreateVpcRequest& WithIpv6CidrBlockNetworkBorderGroup(Aws::String&& value) { SetIpv6CidrBlockNetworkBorderGroup(std::move(value)); return *this;}
-    inline CreateVpcRequest& WithIpv6CidrBlockNetworkBorderGroup(const char* value) { SetIpv6CidrBlockNetworkBorderGroup(value); return *this;}
+    template<typename Ipv6CidrBlockNetworkBorderGroupT = Aws::String>
+    void SetIpv6CidrBlockNetworkBorderGroup(Ipv6CidrBlockNetworkBorderGroupT&& value) { m_ipv6CidrBlockNetworkBorderGroupHasBeenSet = true; m_ipv6CidrBlockNetworkBorderGroup = std::forward<Ipv6CidrBlockNetworkBorderGroupT>(value); }
+    template<typename Ipv6CidrBlockNetworkBorderGroupT = Aws::String>
+    CreateVpcRequest& WithIpv6CidrBlockNetworkBorderGroup(Ipv6CidrBlockNetworkBorderGroupT&& value) { SetIpv6CidrBlockNetworkBorderGroup(std::forward<Ipv6CidrBlockNetworkBorderGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags to assign to the VPC.</p>
      */
-    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const { return m_tagSpecifications; }
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
-    inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
-    inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
-    inline CreateVpcRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
-    inline CreateVpcRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
-    inline CreateVpcRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
-    inline CreateVpcRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
+    template<typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+    void SetTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::forward<TagSpecificationsT>(value); }
+    template<typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+    CreateVpcRequest& WithTagSpecifications(TagSpecificationsT&& value) { SetTagSpecifications(std::forward<TagSpecificationsT>(value)); return *this;}
+    template<typename TagSpecificationsT = TagSpecification>
+    CreateVpcRequest& AddTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.emplace_back(std::forward<TagSpecificationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -188,7 +176,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline CreateVpcRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -206,12 +194,10 @@ namespace Model
      * <code>default</code> or <code>dedicated</code> values only.</p> <p>Default:
      * <code>default</code> </p>
      */
-    inline const Tenancy& GetInstanceTenancy() const{ return m_instanceTenancy; }
+    inline Tenancy GetInstanceTenancy() const { return m_instanceTenancy; }
     inline bool InstanceTenancyHasBeenSet() const { return m_instanceTenancyHasBeenSet; }
-    inline void SetInstanceTenancy(const Tenancy& value) { m_instanceTenancyHasBeenSet = true; m_instanceTenancy = value; }
-    inline void SetInstanceTenancy(Tenancy&& value) { m_instanceTenancyHasBeenSet = true; m_instanceTenancy = std::move(value); }
-    inline CreateVpcRequest& WithInstanceTenancy(const Tenancy& value) { SetInstanceTenancy(value); return *this;}
-    inline CreateVpcRequest& WithInstanceTenancy(Tenancy&& value) { SetInstanceTenancy(std::move(value)); return *this;}
+    inline void SetInstanceTenancy(Tenancy value) { m_instanceTenancyHasBeenSet = true; m_instanceTenancy = value; }
+    inline CreateVpcRequest& WithInstanceTenancy(Tenancy value) { SetInstanceTenancy(value); return *this;}
     ///@}
 
     ///@{
@@ -220,7 +206,7 @@ namespace Model
      * VPC. You cannot specify the range of IP addresses, or the size of the CIDR
      * block.</p>
      */
-    inline bool GetAmazonProvidedIpv6CidrBlock() const{ return m_amazonProvidedIpv6CidrBlock; }
+    inline bool GetAmazonProvidedIpv6CidrBlock() const { return m_amazonProvidedIpv6CidrBlock; }
     inline bool AmazonProvidedIpv6CidrBlockHasBeenSet() const { return m_amazonProvidedIpv6CidrBlockHasBeenSet; }
     inline void SetAmazonProvidedIpv6CidrBlock(bool value) { m_amazonProvidedIpv6CidrBlockHasBeenSet = true; m_amazonProvidedIpv6CidrBlock = value; }
     inline CreateVpcRequest& WithAmazonProvidedIpv6CidrBlock(bool value) { SetAmazonProvidedIpv6CidrBlock(value); return *this;}
@@ -239,13 +225,13 @@ namespace Model
     Aws::String m_ipv4IpamPoolId;
     bool m_ipv4IpamPoolIdHasBeenSet = false;
 
-    int m_ipv4NetmaskLength;
+    int m_ipv4NetmaskLength{0};
     bool m_ipv4NetmaskLengthHasBeenSet = false;
 
     Aws::String m_ipv6IpamPoolId;
     bool m_ipv6IpamPoolIdHasBeenSet = false;
 
-    int m_ipv6NetmaskLength;
+    int m_ipv6NetmaskLength{0};
     bool m_ipv6NetmaskLengthHasBeenSet = false;
 
     Aws::String m_ipv6CidrBlockNetworkBorderGroup;
@@ -254,13 +240,13 @@ namespace Model
     Aws::Vector<TagSpecification> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
-    Tenancy m_instanceTenancy;
+    Tenancy m_instanceTenancy{Tenancy::NOT_SET};
     bool m_instanceTenancyHasBeenSet = false;
 
-    bool m_amazonProvidedIpv6CidrBlock;
+    bool m_amazonProvidedIpv6CidrBlock{false};
     bool m_amazonProvidedIpv6CidrBlockHasBeenSet = false;
   };
 

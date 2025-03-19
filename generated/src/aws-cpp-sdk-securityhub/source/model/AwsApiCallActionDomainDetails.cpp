@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsApiCallActionDomainDetails::AwsApiCallActionDomainDetails() : 
-    m_domainHasBeenSet(false)
-{
-}
-
 AwsApiCallActionDomainDetails::AwsApiCallActionDomainDetails(JsonView jsonValue)
-  : AwsApiCallActionDomainDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AwsApiCallActionDomainDetails& AwsApiCallActionDomainDetails::operator =(JsonVie
   if(jsonValue.ValueExists("Domain"))
   {
     m_domain = jsonValue.GetString("Domain");
-
     m_domainHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,17 +18,7 @@ namespace ApiGatewayV2
 namespace Model
 {
 
-RouteResponse::RouteResponse() : 
-    m_modelSelectionExpressionHasBeenSet(false),
-    m_responseModelsHasBeenSet(false),
-    m_responseParametersHasBeenSet(false),
-    m_routeResponseIdHasBeenSet(false),
-    m_routeResponseKeyHasBeenSet(false)
-{
-}
-
 RouteResponse::RouteResponse(JsonView jsonValue)
-  : RouteResponse()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ RouteResponse& RouteResponse::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("modelSelectionExpression"))
   {
     m_modelSelectionExpression = jsonValue.GetString("modelSelectionExpression");
-
     m_modelSelectionExpressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("responseModels"))
   {
     Aws::Map<Aws::String, JsonView> responseModelsJsonMap = jsonValue.GetObject("responseModels").GetAllObjects();
@@ -51,7 +39,6 @@ RouteResponse& RouteResponse::operator =(JsonView jsonValue)
     }
     m_responseModelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("responseParameters"))
   {
     Aws::Map<Aws::String, JsonView> responseParametersJsonMap = jsonValue.GetObject("responseParameters").GetAllObjects();
@@ -61,21 +48,16 @@ RouteResponse& RouteResponse::operator =(JsonView jsonValue)
     }
     m_responseParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("routeResponseId"))
   {
     m_routeResponseId = jsonValue.GetString("routeResponseId");
-
     m_routeResponseIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("routeResponseKey"))
   {
     m_routeResponseKey = jsonValue.GetString("routeResponseKey");
-
     m_routeResponseKeyHasBeenSet = true;
   }
-
   return *this;
 }
 

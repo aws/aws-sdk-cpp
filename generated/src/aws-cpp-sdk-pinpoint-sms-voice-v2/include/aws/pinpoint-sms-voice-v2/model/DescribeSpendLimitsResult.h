@@ -29,7 +29,7 @@ namespace Model
   class DescribeSpendLimitsResult
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API DescribeSpendLimitsResult();
+    AWS_PINPOINTSMSVOICEV2_API DescribeSpendLimitsResult() = default;
     AWS_PINPOINTSMSVOICEV2_API DescribeSpendLimitsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINTSMSVOICEV2_API DescribeSpendLimitsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>An array of SpendLimit objects that contain the details for the requested
      * spend limits.</p>
      */
-    inline const Aws::Vector<SpendLimit>& GetSpendLimits() const{ return m_spendLimits; }
-    inline void SetSpendLimits(const Aws::Vector<SpendLimit>& value) { m_spendLimits = value; }
-    inline void SetSpendLimits(Aws::Vector<SpendLimit>&& value) { m_spendLimits = std::move(value); }
-    inline DescribeSpendLimitsResult& WithSpendLimits(const Aws::Vector<SpendLimit>& value) { SetSpendLimits(value); return *this;}
-    inline DescribeSpendLimitsResult& WithSpendLimits(Aws::Vector<SpendLimit>&& value) { SetSpendLimits(std::move(value)); return *this;}
-    inline DescribeSpendLimitsResult& AddSpendLimits(const SpendLimit& value) { m_spendLimits.push_back(value); return *this; }
-    inline DescribeSpendLimitsResult& AddSpendLimits(SpendLimit&& value) { m_spendLimits.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SpendLimit>& GetSpendLimits() const { return m_spendLimits; }
+    template<typename SpendLimitsT = Aws::Vector<SpendLimit>>
+    void SetSpendLimits(SpendLimitsT&& value) { m_spendLimitsHasBeenSet = true; m_spendLimits = std::forward<SpendLimitsT>(value); }
+    template<typename SpendLimitsT = Aws::Vector<SpendLimit>>
+    DescribeSpendLimitsResult& WithSpendLimits(SpendLimitsT&& value) { SetSpendLimits(std::forward<SpendLimitsT>(value)); return *this;}
+    template<typename SpendLimitsT = SpendLimit>
+    DescribeSpendLimitsResult& AddSpendLimits(SpendLimitsT&& value) { m_spendLimitsHasBeenSet = true; m_spendLimits.emplace_back(std::forward<SpendLimitsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * <p>The token to be used for the next set of paginated results. If this field is
      * empty then there are no more results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeSpendLimitsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeSpendLimitsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeSpendLimitsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeSpendLimitsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeSpendLimitsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeSpendLimitsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeSpendLimitsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeSpendLimitsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<SpendLimit> m_spendLimits;
+    bool m_spendLimitsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

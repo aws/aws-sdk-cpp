@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TablePinnedFieldOptions::TablePinnedFieldOptions() : 
-    m_pinnedLeftFieldsHasBeenSet(false)
-{
-}
-
 TablePinnedFieldOptions::TablePinnedFieldOptions(JsonView jsonValue)
-  : TablePinnedFieldOptions()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ TablePinnedFieldOptions& TablePinnedFieldOptions::operator =(JsonView jsonValue)
     }
     m_pinnedLeftFieldsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,16 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-ZonalCapacityReservationState::ZonalCapacityReservationState() : 
-    m_stateHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_effectiveCapacityUnits(0.0),
-    m_effectiveCapacityUnitsHasBeenSet(false)
-{
-}
-
 ZonalCapacityReservationState::ZonalCapacityReservationState(const XmlNode& xmlNode)
-  : ZonalCapacityReservationState()
 {
   *this = xmlNode;
 }

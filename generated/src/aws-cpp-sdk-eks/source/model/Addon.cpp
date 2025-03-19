@@ -18,28 +18,7 @@ namespace EKS
 namespace Model
 {
 
-Addon::Addon() : 
-    m_addonNameHasBeenSet(false),
-    m_clusterNameHasBeenSet(false),
-    m_status(AddonStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_addonVersionHasBeenSet(false),
-    m_healthHasBeenSet(false),
-    m_addonArnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false),
-    m_serviceAccountRoleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_publisherHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_marketplaceInformationHasBeenSet(false),
-    m_configurationValuesHasBeenSet(false),
-    m_podIdentityAssociationsHasBeenSet(false)
-{
-}
-
 Addon::Addon(JsonView jsonValue)
-  : Addon()
 {
   *this = jsonValue;
 }
@@ -49,66 +28,48 @@ Addon& Addon::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("addonName"))
   {
     m_addonName = jsonValue.GetString("addonName");
-
     m_addonNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clusterName"))
   {
     m_clusterName = jsonValue.GetString("clusterName");
-
     m_clusterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = AddonStatusMapper::GetAddonStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("addonVersion"))
   {
     m_addonVersion = jsonValue.GetString("addonVersion");
-
     m_addonVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("health"))
   {
     m_health = jsonValue.GetObject("health");
-
     m_healthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("addonArn"))
   {
     m_addonArn = jsonValue.GetString("addonArn");
-
     m_addonArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modifiedAt"))
   {
     m_modifiedAt = jsonValue.GetDouble("modifiedAt");
-
     m_modifiedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceAccountRoleArn"))
   {
     m_serviceAccountRoleArn = jsonValue.GetString("serviceAccountRoleArn");
-
     m_serviceAccountRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -118,35 +79,26 @@ Addon& Addon::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("publisher"))
   {
     m_publisher = jsonValue.GetString("publisher");
-
     m_publisherHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("owner"))
   {
     m_owner = jsonValue.GetString("owner");
-
     m_ownerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("marketplaceInformation"))
   {
     m_marketplaceInformation = jsonValue.GetObject("marketplaceInformation");
-
     m_marketplaceInformationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configurationValues"))
   {
     m_configurationValues = jsonValue.GetString("configurationValues");
-
     m_configurationValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("podIdentityAssociations"))
   {
     Aws::Utils::Array<JsonView> podIdentityAssociationsJsonList = jsonValue.GetArray("podIdentityAssociations");
@@ -156,7 +108,6 @@ Addon& Addon::operator =(JsonView jsonValue)
     }
     m_podIdentityAssociationsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class DescribeThingResult
   {
   public:
-    AWS_IOT_API DescribeThingResult();
+    AWS_IOT_API DescribeThingResult() = default;
     AWS_IOT_API DescribeThingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API DescribeThingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -48,83 +48,70 @@ namespace Model
      * organize your IoT fleet without removing the flexibility of the underlying
      * device certificate model or shadows.</p>
      */
-    inline const Aws::String& GetDefaultClientId() const{ return m_defaultClientId; }
-    inline void SetDefaultClientId(const Aws::String& value) { m_defaultClientId = value; }
-    inline void SetDefaultClientId(Aws::String&& value) { m_defaultClientId = std::move(value); }
-    inline void SetDefaultClientId(const char* value) { m_defaultClientId.assign(value); }
-    inline DescribeThingResult& WithDefaultClientId(const Aws::String& value) { SetDefaultClientId(value); return *this;}
-    inline DescribeThingResult& WithDefaultClientId(Aws::String&& value) { SetDefaultClientId(std::move(value)); return *this;}
-    inline DescribeThingResult& WithDefaultClientId(const char* value) { SetDefaultClientId(value); return *this;}
+    inline const Aws::String& GetDefaultClientId() const { return m_defaultClientId; }
+    template<typename DefaultClientIdT = Aws::String>
+    void SetDefaultClientId(DefaultClientIdT&& value) { m_defaultClientIdHasBeenSet = true; m_defaultClientId = std::forward<DefaultClientIdT>(value); }
+    template<typename DefaultClientIdT = Aws::String>
+    DescribeThingResult& WithDefaultClientId(DefaultClientIdT&& value) { SetDefaultClientId(std::forward<DefaultClientIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the thing.</p>
      */
-    inline const Aws::String& GetThingName() const{ return m_thingName; }
-    inline void SetThingName(const Aws::String& value) { m_thingName = value; }
-    inline void SetThingName(Aws::String&& value) { m_thingName = std::move(value); }
-    inline void SetThingName(const char* value) { m_thingName.assign(value); }
-    inline DescribeThingResult& WithThingName(const Aws::String& value) { SetThingName(value); return *this;}
-    inline DescribeThingResult& WithThingName(Aws::String&& value) { SetThingName(std::move(value)); return *this;}
-    inline DescribeThingResult& WithThingName(const char* value) { SetThingName(value); return *this;}
+    inline const Aws::String& GetThingName() const { return m_thingName; }
+    template<typename ThingNameT = Aws::String>
+    void SetThingName(ThingNameT&& value) { m_thingNameHasBeenSet = true; m_thingName = std::forward<ThingNameT>(value); }
+    template<typename ThingNameT = Aws::String>
+    DescribeThingResult& WithThingName(ThingNameT&& value) { SetThingName(std::forward<ThingNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the thing to describe.</p>
      */
-    inline const Aws::String& GetThingId() const{ return m_thingId; }
-    inline void SetThingId(const Aws::String& value) { m_thingId = value; }
-    inline void SetThingId(Aws::String&& value) { m_thingId = std::move(value); }
-    inline void SetThingId(const char* value) { m_thingId.assign(value); }
-    inline DescribeThingResult& WithThingId(const Aws::String& value) { SetThingId(value); return *this;}
-    inline DescribeThingResult& WithThingId(Aws::String&& value) { SetThingId(std::move(value)); return *this;}
-    inline DescribeThingResult& WithThingId(const char* value) { SetThingId(value); return *this;}
+    inline const Aws::String& GetThingId() const { return m_thingId; }
+    template<typename ThingIdT = Aws::String>
+    void SetThingId(ThingIdT&& value) { m_thingIdHasBeenSet = true; m_thingId = std::forward<ThingIdT>(value); }
+    template<typename ThingIdT = Aws::String>
+    DescribeThingResult& WithThingId(ThingIdT&& value) { SetThingId(std::forward<ThingIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the thing to describe.</p>
      */
-    inline const Aws::String& GetThingArn() const{ return m_thingArn; }
-    inline void SetThingArn(const Aws::String& value) { m_thingArn = value; }
-    inline void SetThingArn(Aws::String&& value) { m_thingArn = std::move(value); }
-    inline void SetThingArn(const char* value) { m_thingArn.assign(value); }
-    inline DescribeThingResult& WithThingArn(const Aws::String& value) { SetThingArn(value); return *this;}
-    inline DescribeThingResult& WithThingArn(Aws::String&& value) { SetThingArn(std::move(value)); return *this;}
-    inline DescribeThingResult& WithThingArn(const char* value) { SetThingArn(value); return *this;}
+    inline const Aws::String& GetThingArn() const { return m_thingArn; }
+    template<typename ThingArnT = Aws::String>
+    void SetThingArn(ThingArnT&& value) { m_thingArnHasBeenSet = true; m_thingArn = std::forward<ThingArnT>(value); }
+    template<typename ThingArnT = Aws::String>
+    DescribeThingResult& WithThingArn(ThingArnT&& value) { SetThingArn(std::forward<ThingArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The thing type name.</p>
      */
-    inline const Aws::String& GetThingTypeName() const{ return m_thingTypeName; }
-    inline void SetThingTypeName(const Aws::String& value) { m_thingTypeName = value; }
-    inline void SetThingTypeName(Aws::String&& value) { m_thingTypeName = std::move(value); }
-    inline void SetThingTypeName(const char* value) { m_thingTypeName.assign(value); }
-    inline DescribeThingResult& WithThingTypeName(const Aws::String& value) { SetThingTypeName(value); return *this;}
-    inline DescribeThingResult& WithThingTypeName(Aws::String&& value) { SetThingTypeName(std::move(value)); return *this;}
-    inline DescribeThingResult& WithThingTypeName(const char* value) { SetThingTypeName(value); return *this;}
+    inline const Aws::String& GetThingTypeName() const { return m_thingTypeName; }
+    template<typename ThingTypeNameT = Aws::String>
+    void SetThingTypeName(ThingTypeNameT&& value) { m_thingTypeNameHasBeenSet = true; m_thingTypeName = std::forward<ThingTypeNameT>(value); }
+    template<typename ThingTypeNameT = Aws::String>
+    DescribeThingResult& WithThingTypeName(ThingTypeNameT&& value) { SetThingTypeName(std::forward<ThingTypeNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The thing attributes.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
-    inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributes = value; }
-    inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributes = std::move(value); }
-    inline DescribeThingResult& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
-    inline DescribeThingResult& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline DescribeThingResult& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributes.emplace(key, value); return *this; }
-    inline DescribeThingResult& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributes.emplace(std::move(key), value); return *this; }
-    inline DescribeThingResult& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributes.emplace(key, std::move(value)); return *this; }
-    inline DescribeThingResult& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline DescribeThingResult& AddAttributes(const char* key, Aws::String&& value) { m_attributes.emplace(key, std::move(value)); return *this; }
-    inline DescribeThingResult& AddAttributes(Aws::String&& key, const char* value) { m_attributes.emplace(std::move(key), value); return *this; }
-    inline DescribeThingResult& AddAttributes(const char* key, const char* value) { m_attributes.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const { return m_attributes; }
+    template<typename AttributesT = Aws::Map<Aws::String, Aws::String>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Map<Aws::String, Aws::String>>
+    DescribeThingResult& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    template<typename AttributesKeyT = Aws::String, typename AttributesValueT = Aws::String>
+    DescribeThingResult& AddAttributes(AttributesKeyT&& key, AttributesValueT&& value) {
+      m_attributesHasBeenSet = true; m_attributes.emplace(std::forward<AttributesKeyT>(key), std::forward<AttributesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -134,8 +121,8 @@ namespace Model
      * version information in the <code>expectedVersion</code> parameter of the
      * <code>UpdateThing</code> and <code>DeleteThing</code> calls.</p> 
      */
-    inline long long GetVersion() const{ return m_version; }
-    inline void SetVersion(long long value) { m_version = value; }
+    inline long long GetVersion() const { return m_version; }
+    inline void SetVersion(long long value) { m_versionHasBeenSet = true; m_version = value; }
     inline DescribeThingResult& WithVersion(long long value) { SetVersion(value); return *this;}
     ///@}
 
@@ -143,44 +130,49 @@ namespace Model
     /**
      * <p>The name of the billing group the thing belongs to.</p>
      */
-    inline const Aws::String& GetBillingGroupName() const{ return m_billingGroupName; }
-    inline void SetBillingGroupName(const Aws::String& value) { m_billingGroupName = value; }
-    inline void SetBillingGroupName(Aws::String&& value) { m_billingGroupName = std::move(value); }
-    inline void SetBillingGroupName(const char* value) { m_billingGroupName.assign(value); }
-    inline DescribeThingResult& WithBillingGroupName(const Aws::String& value) { SetBillingGroupName(value); return *this;}
-    inline DescribeThingResult& WithBillingGroupName(Aws::String&& value) { SetBillingGroupName(std::move(value)); return *this;}
-    inline DescribeThingResult& WithBillingGroupName(const char* value) { SetBillingGroupName(value); return *this;}
+    inline const Aws::String& GetBillingGroupName() const { return m_billingGroupName; }
+    template<typename BillingGroupNameT = Aws::String>
+    void SetBillingGroupName(BillingGroupNameT&& value) { m_billingGroupNameHasBeenSet = true; m_billingGroupName = std::forward<BillingGroupNameT>(value); }
+    template<typename BillingGroupNameT = Aws::String>
+    DescribeThingResult& WithBillingGroupName(BillingGroupNameT&& value) { SetBillingGroupName(std::forward<BillingGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeThingResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeThingResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeThingResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeThingResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_defaultClientId;
+    bool m_defaultClientIdHasBeenSet = false;
 
     Aws::String m_thingName;
+    bool m_thingNameHasBeenSet = false;
 
     Aws::String m_thingId;
+    bool m_thingIdHasBeenSet = false;
 
     Aws::String m_thingArn;
+    bool m_thingArnHasBeenSet = false;
 
     Aws::String m_thingTypeName;
+    bool m_thingTypeNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
+    bool m_attributesHasBeenSet = false;
 
-    long long m_version;
+    long long m_version{0};
+    bool m_versionHasBeenSet = false;
 
     Aws::String m_billingGroupName;
+    bool m_billingGroupNameHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

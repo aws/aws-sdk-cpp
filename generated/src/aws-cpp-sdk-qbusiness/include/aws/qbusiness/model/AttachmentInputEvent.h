@@ -32,7 +32,7 @@ namespace Model
   class AttachmentInputEvent
   {
   public:
-    AWS_QBUSINESS_API AttachmentInputEvent();
+    AWS_QBUSINESS_API AttachmentInputEvent() = default;
     AWS_QBUSINESS_API AttachmentInputEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API AttachmentInputEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,12 +40,12 @@ namespace Model
 
     ///@{
     
-    inline const AttachmentInput& GetAttachment() const{ return m_attachment; }
+    inline const AttachmentInput& GetAttachment() const { return m_attachment; }
     inline bool AttachmentHasBeenSet() const { return m_attachmentHasBeenSet; }
-    inline void SetAttachment(const AttachmentInput& value) { m_attachmentHasBeenSet = true; m_attachment = value; }
-    inline void SetAttachment(AttachmentInput&& value) { m_attachmentHasBeenSet = true; m_attachment = std::move(value); }
-    inline AttachmentInputEvent& WithAttachment(const AttachmentInput& value) { SetAttachment(value); return *this;}
-    inline AttachmentInputEvent& WithAttachment(AttachmentInput&& value) { SetAttachment(std::move(value)); return *this;}
+    template<typename AttachmentT = AttachmentInput>
+    void SetAttachment(AttachmentT&& value) { m_attachmentHasBeenSet = true; m_attachment = std::forward<AttachmentT>(value); }
+    template<typename AttachmentT = AttachmentInput>
+    AttachmentInputEvent& WithAttachment(AttachmentT&& value) { SetAttachment(std::forward<AttachmentT>(value)); return *this;}
     ///@}
   private:
 

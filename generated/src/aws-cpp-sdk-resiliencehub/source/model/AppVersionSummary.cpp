@@ -18,17 +18,7 @@ namespace ResilienceHub
 namespace Model
 {
 
-AppVersionSummary::AppVersionSummary() : 
-    m_appVersionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_identifier(0),
-    m_identifierHasBeenSet(false),
-    m_versionNameHasBeenSet(false)
-{
-}
-
 AppVersionSummary::AppVersionSummary(JsonView jsonValue)
-  : AppVersionSummary()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ AppVersionSummary& AppVersionSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("appVersion"))
   {
     m_appVersion = jsonValue.GetString("appVersion");
-
     m_appVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetDouble("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("identifier"))
   {
     m_identifier = jsonValue.GetInt64("identifier");
-
     m_identifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("versionName"))
   {
     m_versionName = jsonValue.GetString("versionName");
-
     m_versionNameHasBeenSet = true;
   }
-
   return *this;
 }
 

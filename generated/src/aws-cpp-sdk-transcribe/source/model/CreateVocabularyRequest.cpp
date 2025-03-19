@@ -12,17 +12,6 @@ using namespace Aws::TranscribeService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateVocabularyRequest::CreateVocabularyRequest() : 
-    m_vocabularyNameHasBeenSet(false),
-    m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_phrasesHasBeenSet(false),
-    m_vocabularyFileUriHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_dataAccessRoleArnHasBeenSet(false)
-{
-}
-
 Aws::String CreateVocabularyRequest::SerializePayload() const
 {
   JsonValue payload;

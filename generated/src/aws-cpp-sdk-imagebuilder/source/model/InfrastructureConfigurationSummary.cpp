@@ -18,22 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-InfrastructureConfigurationSummary::InfrastructureConfigurationSummary() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_dateUpdatedHasBeenSet(false),
-    m_resourceTagsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_instanceTypesHasBeenSet(false),
-    m_instanceProfileNameHasBeenSet(false),
-    m_placementHasBeenSet(false)
-{
-}
-
 InfrastructureConfigurationSummary::InfrastructureConfigurationSummary(JsonView jsonValue)
-  : InfrastructureConfigurationSummary()
 {
   *this = jsonValue;
 }
@@ -43,38 +28,28 @@ InfrastructureConfigurationSummary& InfrastructureConfigurationSummary::operator
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dateCreated"))
   {
     m_dateCreated = jsonValue.GetString("dateCreated");
-
     m_dateCreatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dateUpdated"))
   {
     m_dateUpdated = jsonValue.GetString("dateUpdated");
-
     m_dateUpdatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceTags"))
   {
     Aws::Map<Aws::String, JsonView> resourceTagsJsonMap = jsonValue.GetObject("resourceTags").GetAllObjects();
@@ -84,7 +59,6 @@ InfrastructureConfigurationSummary& InfrastructureConfigurationSummary::operator
     }
     m_resourceTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -94,7 +68,6 @@ InfrastructureConfigurationSummary& InfrastructureConfigurationSummary::operator
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceTypes"))
   {
     Aws::Utils::Array<JsonView> instanceTypesJsonList = jsonValue.GetArray("instanceTypes");
@@ -104,21 +77,16 @@ InfrastructureConfigurationSummary& InfrastructureConfigurationSummary::operator
     }
     m_instanceTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceProfileName"))
   {
     m_instanceProfileName = jsonValue.GetString("instanceProfileName");
-
     m_instanceProfileNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("placement"))
   {
     m_placement = jsonValue.GetObject("placement");
-
     m_placementHasBeenSet = true;
   }
-
   return *this;
 }
 

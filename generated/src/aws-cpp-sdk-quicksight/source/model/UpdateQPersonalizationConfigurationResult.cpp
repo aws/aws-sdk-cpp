@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateQPersonalizationConfigurationResult::UpdateQPersonalizationConfigurationResult() : 
-    m_personalizationMode(PersonalizationMode::NOT_SET),
-    m_status(0)
-{
-}
-
 UpdateQPersonalizationConfigurationResult::UpdateQPersonalizationConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateQPersonalizationConfigurationResult()
 {
   *this = result;
 }
@@ -35,19 +28,19 @@ UpdateQPersonalizationConfigurationResult& UpdateQPersonalizationConfigurationRe
   if(jsonValue.ValueExists("PersonalizationMode"))
   {
     m_personalizationMode = PersonalizationModeMapper::GetPersonalizationModeForName(jsonValue.GetString("PersonalizationMode"));
-
+    m_personalizationModeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

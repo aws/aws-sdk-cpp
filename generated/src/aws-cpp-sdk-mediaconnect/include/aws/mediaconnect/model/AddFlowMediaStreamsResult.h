@@ -29,7 +29,7 @@ namespace Model
   class AddFlowMediaStreamsResult
   {
   public:
-    AWS_MEDIACONNECT_API AddFlowMediaStreamsResult();
+    AWS_MEDIACONNECT_API AddFlowMediaStreamsResult() = default;
     AWS_MEDIACONNECT_API AddFlowMediaStreamsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIACONNECT_API AddFlowMediaStreamsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * The ARN of the flow that you added media streams to.
      */
-    inline const Aws::String& GetFlowArn() const{ return m_flowArn; }
-    inline void SetFlowArn(const Aws::String& value) { m_flowArn = value; }
-    inline void SetFlowArn(Aws::String&& value) { m_flowArn = std::move(value); }
-    inline void SetFlowArn(const char* value) { m_flowArn.assign(value); }
-    inline AddFlowMediaStreamsResult& WithFlowArn(const Aws::String& value) { SetFlowArn(value); return *this;}
-    inline AddFlowMediaStreamsResult& WithFlowArn(Aws::String&& value) { SetFlowArn(std::move(value)); return *this;}
-    inline AddFlowMediaStreamsResult& WithFlowArn(const char* value) { SetFlowArn(value); return *this;}
+    inline const Aws::String& GetFlowArn() const { return m_flowArn; }
+    template<typename FlowArnT = Aws::String>
+    void SetFlowArn(FlowArnT&& value) { m_flowArnHasBeenSet = true; m_flowArn = std::forward<FlowArnT>(value); }
+    template<typename FlowArnT = Aws::String>
+    AddFlowMediaStreamsResult& WithFlowArn(FlowArnT&& value) { SetFlowArn(std::forward<FlowArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The media streams that you added to the flow.
      */
-    inline const Aws::Vector<MediaStream>& GetMediaStreams() const{ return m_mediaStreams; }
-    inline void SetMediaStreams(const Aws::Vector<MediaStream>& value) { m_mediaStreams = value; }
-    inline void SetMediaStreams(Aws::Vector<MediaStream>&& value) { m_mediaStreams = std::move(value); }
-    inline AddFlowMediaStreamsResult& WithMediaStreams(const Aws::Vector<MediaStream>& value) { SetMediaStreams(value); return *this;}
-    inline AddFlowMediaStreamsResult& WithMediaStreams(Aws::Vector<MediaStream>&& value) { SetMediaStreams(std::move(value)); return *this;}
-    inline AddFlowMediaStreamsResult& AddMediaStreams(const MediaStream& value) { m_mediaStreams.push_back(value); return *this; }
-    inline AddFlowMediaStreamsResult& AddMediaStreams(MediaStream&& value) { m_mediaStreams.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<MediaStream>& GetMediaStreams() const { return m_mediaStreams; }
+    template<typename MediaStreamsT = Aws::Vector<MediaStream>>
+    void SetMediaStreams(MediaStreamsT&& value) { m_mediaStreamsHasBeenSet = true; m_mediaStreams = std::forward<MediaStreamsT>(value); }
+    template<typename MediaStreamsT = Aws::Vector<MediaStream>>
+    AddFlowMediaStreamsResult& WithMediaStreams(MediaStreamsT&& value) { SetMediaStreams(std::forward<MediaStreamsT>(value)); return *this;}
+    template<typename MediaStreamsT = MediaStream>
+    AddFlowMediaStreamsResult& AddMediaStreams(MediaStreamsT&& value) { m_mediaStreamsHasBeenSet = true; m_mediaStreams.emplace_back(std::forward<MediaStreamsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AddFlowMediaStreamsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AddFlowMediaStreamsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AddFlowMediaStreamsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AddFlowMediaStreamsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_flowArn;
+    bool m_flowArnHasBeenSet = false;
 
     Aws::Vector<MediaStream> m_mediaStreams;
+    bool m_mediaStreamsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

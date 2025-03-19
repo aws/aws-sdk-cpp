@@ -18,15 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-UnprocessedScramSecret::UnprocessedScramSecret() : 
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_secretArnHasBeenSet(false)
-{
-}
-
 UnprocessedScramSecret::UnprocessedScramSecret(JsonView jsonValue)
-  : UnprocessedScramSecret()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ UnprocessedScramSecret& UnprocessedScramSecret::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("errorCode"))
   {
     m_errorCode = jsonValue.GetString("errorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("secretArn"))
   {
     m_secretArn = jsonValue.GetString("secretArn");
-
     m_secretArnHasBeenSet = true;
   }
-
   return *this;
 }
 
